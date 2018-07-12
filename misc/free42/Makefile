@@ -2,6 +2,7 @@
 
 PORTNAME=	free42
 DISTVERSION=	2.0.21
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://thomasokken.com/free42/upstream/
 DISTNAME=	${PORTNAME}-nologo-${DISTVERSION}
@@ -23,26 +24,35 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		dos2unix gmake localbase pkgconfig tar:tgz
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
 USE_XORG=	x11 xmu
-DOS2UNIX_FILES=	gtk/IntelRDFPMathLib20U1/LIBRARY/float128/op_system.h
+DOS2UNIX_FILES=	gtk/IntelRDFPMathLib20U1/LIBRARY/float128/op_system.h gtk/IntelRDFPMathLib20U1/LIBRARY/float128/architecture.h
 
 CXXFLAGS+=	-Wno-c++11-narrowing -Wno-constant-conversion # to accommodate some code breaking with clang-50
 BUILD_WRKSRC=	${WRKSRC}/gtk
+
+VARIANTS=	bin dec
+
+.for v in ${VARIANTS}
+PLIST_FILES+=	bin/${PORTNAME}${v}
+.endfor
 
 post-extract:
 	@cd ${BUILD_WRKSRC} && tar xvfz ../inteldecimal/IntelRDFPMathLib20U1.tar.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|snprintf(free42dirname, FILENAMELEN, "%s/\.free42", home)|strcpy(free42dirname, "${DATADIR}")|' \
-		${BUILD_WRKSRC}/shell_main.cc
+	@${REINPLACE_CMD} -e 's|(free42dirname)|("${DATADIR}/skins")|' \
+		${BUILD_WRKSRC}/shell_skin.cc
 
 do-build:
-	@cd ${BUILD_WRKSRC} && \
+.for v in ${VARIANTS}
+	@${CP} -r ${BUILD_WRKSRC} ${BUILD_WRKSRC}-${v}
+	@cd ${BUILD_WRKSRC}-${v} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} cleaner && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD}
-		# TODO do we need decimal fp arithmetic?: ${MAKE_CMD} BCD_MATH=1 SKIN_SYS_DIR="${DATADIR}"
+		${SETENV} ${MAKE_ENV} ${v:S/dec/BCD_MATH=1/:S/bin//} ${MAKE_CMD}
+.endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/free42bin ${STAGEDIR}${PREFIX}/bin/
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} skins ${STAGEDIR}${DATADIR}
+.for v in ${VARIANTS}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}-${v}/free42${v} ${STAGEDIR}${PREFIX}/bin/
+.endfor
 
 .include <bsd.port.mk>
