@@ -36,7 +36,7 @@ DOCS_INSTALL_TARGET=	docs install_html HTMLDIR=${STAGEDIR}${DOCSDIR}
 pre-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 
-pre-install-EXAMPLES-on:
+pre-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
