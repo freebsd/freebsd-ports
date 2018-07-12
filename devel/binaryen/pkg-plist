@@ -1,0 +1,14 @@
+bin/asm2wasm
+bin/wasm-as
+bin/wasm-ctor-eval
+bin/wasm-dis
+bin/wasm-emscripten-finalize
+bin/wasm-merge
+bin/wasm-metadce
+bin/wasm-opt
+bin/wasm-reduce
+bin/wasm-shell
+bin/wasm2asm
+include/binaryen-c.h
+lib/libbinaryen.so
+%%DATADIR%%/wasm.js
