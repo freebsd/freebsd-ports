@@ -1,0 +1,6 @@
+Ryu is a component-based software defined networking framework that provides a
+well-defined API that make it easy for developers to create new network
+management and control applications. Ryu supports various protocols for managing
+network devices, such as OpenFlow, Netconf, and OF-config.
+
+WWW: http://osrg.github.io/ryu/
