@@ -1,6 +1,6 @@
---- uim/uim.h.orig	2013-06-30 04:26:09 UTC
+--- uim/uim.h.orig	2017-08-14 00:07:27 UTC
 +++ uim/uim.h
-@@ -430,7 +430,7 @@ struct uim_code_converter {
+@@ -531,7 +531,7 @@ struct uim_code_converter {
   *
   * @return 0 on success, otherwise -1
   */

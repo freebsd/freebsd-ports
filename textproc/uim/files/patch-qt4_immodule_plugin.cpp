@@ -8,14 +8,14 @@ Date:   Sun Mar 2 13:26:18 2014 +0200
       - Stop relying on implicit includes that may not always work and
         explicitly include <clocale> for the setlocale(3) call.
 
---- qt4/immodule/plugin.cpp.orig	2013-06-30 04:26:20 UTC
+--- qt4/immodule/plugin.cpp.orig	2017-08-14 00:07:27 UTC
 +++ qt4/immodule/plugin.cpp
-@@ -34,6 +34,8 @@
+@@ -36,6 +36,8 @@
  
- #include "plugin.h"
+ #include <clocale>
  
 +#include <clocale>
 +
  #include <QtCore/QStringList>
- #include <QtGui/QInputContext>
- #ifdef Q_WS_X11
+ #if QT_VERSION < 0x050000
+ # ifdef Q_WS_X11
