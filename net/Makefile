@@ -470,6 +470,7 @@
     SUBDIR += micro_inetd
     SUBDIR += micro_proxy
     SUBDIR += minidlna
+    SUBDIR += mininet
     SUBDIR += minisapserver
     SUBDIR += minissdpd
     SUBDIR += miniupnpc
