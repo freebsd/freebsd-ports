@@ -912,6 +912,7 @@
     SUBDIR += xvmixer
     SUBDIR += xwave
     SUBDIR += yell
+    SUBDIR += ympd
     SUBDIR += yoshimi
     SUBDIR += zam-plugins-lv2
     SUBDIR += zinf

@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: ympd
+# REQUIRE: DAEMON NETWORKING musicpd
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable ympd:
+#
+# ympd_enable (bool): set to NO by default.
+# Set it to YES to enable ympd.
+#
+# ympd_flags  (string): optional flags to pass through to daemon
+
+. /etc/rc.subr
+
+name=ympd
+rcvar=ympd_enable
+desc="A lightweight web UI for audio/musicpd"
+
+# defaults
+: ${ympd_enable:=NO}
+: ${ympd_flags:=""}
+
+load_rc_config ${name}
+
+start_cmd="ympd_start"
+
+command="%%PREFIX%%/bin/${name}"
+pidfile="/var/run/${name}.pid"
+
+ympd_start () {
+    echo "Starting ympd."
+    /usr/sbin/daemon -t ${name} -f -p ${pidfile} ${command} ${ympd_flags}
+}
+
+run_rc_command "$1"

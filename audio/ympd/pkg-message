@@ -1,0 +1,11 @@
+To configure ympd, assuming it is running on the same system as
+audio/musicpd itself:
+
+sysrc ympd_enable=YES
+service ympd start
+
+You may optionally configure additional flags for the daemon:
+
+sysrc ympd_flags="--webport localhost:9000 --user=nobody"
+
+See ympd(1) for further details.
