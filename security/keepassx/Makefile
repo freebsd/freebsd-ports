@@ -8,7 +8,7 @@ MASTER_SITES=	https://www.keepassx.org/releases/${PORTVERSION}/ \
 		http://www.keepassx.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross Platform Password Manager
 
 DATADIR=	${PREFIX}/share/${PORTNAME:tl}
