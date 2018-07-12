@@ -23,6 +23,6 @@ USE_GNOME=	glib20 gtk30
 PLIST_FILES=	lib/zathura/ps.so share/applications/zathura-ps.desktop
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/zathura/ps.so
+	@${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/zathura/ps.so
 
 .include <bsd.port.mk>
