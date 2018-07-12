@@ -1,0 +1,34 @@
+Linux DVB API applications and utilities.
+
+All applications support the DVB-S, DVB-C, DVB-T, and ATSC standards.
+
+Main User Applications:
+util/scan	- Scan for channels on your digital TV device.
+util/gnutv	- Tune, watch and stream your TV.
+
+General Utilities:
+util/dvbdate	- Set your clock from digital TV.
+util/dvbnet	- Control digital data network interfaces.
+util/dvbtraffic	- Monitor traffic on a digital device.
+util/femon	- Monitor the tuning on a digital TV device.
+util/zap	- *Just* tunes a digital device - really intended for developers.
+util/gotox	- Simple Rotor control utility
+util/alevt	- Teletext capture and display utility
+
+Hardware Specific Utilities:
+util/av7110_loadkeys	- Load remote keys into an av7110 based card
+util/dib3000-watch	- Monitor DIB3000 demodulators
+util/dst-utils		- Utilities for DST based cards.
+util/ttusb_dec_reset	- Reset a TechnoTrends TTUSB DEC device.
+
+Libraries:
+lib/libdvbapi	- Interface library to digital TV devices.
+lib/libdvbcfg	- Library to parse/create digital TV channel configuration files.
+lib/libdvbsec	- Library for Satellite Equipment Control operations.
+lib/libucsi	- Fast MPEG2 Transport Stream SI table parsing library.
+lib/libdvben50221- Complete implementation of a Cenelec EN 50221 CAM stack.
+lib/libdvbmisc	- Miscellaneous utilities used by the other libraries.
+
+Various testing applications also live in test.
+
+WWW: https://linuxtv.org/hg/dvb-apps/
