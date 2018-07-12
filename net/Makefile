@@ -1345,6 +1345,7 @@
     SUBDIR += rubygem-whois
     SUBDIR += rubygem-xmlrpc
     SUBDIR += rude
+    SUBDIR += ryu
     SUBDIR += s3ql
     SUBDIR += samba46
     SUBDIR += samba47
