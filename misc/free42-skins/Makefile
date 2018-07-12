@@ -2,6 +2,7 @@
 
 PORTNAME=	free42-skins
 DISTVERSION=	g20180711
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://thomasokken.com/free42/skins/
 DISTNAME=	desktop-skins
@@ -12,7 +13,7 @@ COMMENT=	Skins for free42, simulation of the HP-42S scientific calculator
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	free42>0:misc/free42
+RUN_DEPENDS=	free42>0:misc/free42
 
 USES=		zip
 NO_WRKSUBDIR=	yes
