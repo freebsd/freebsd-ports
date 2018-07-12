@@ -1,0 +1,31 @@
+--- nyan/CMakeLists.txt.orig	2018-07-12 20:09:17 UTC
++++ nyan/CMakeLists.txt
+@@ -11,7 +11,7 @@ if (APPLE)
+     endif ()
+ endif ()
+ 
+-find_package(FLEX 2.6 REQUIRED)
++find_package(FLEX 2.5 REQUIRED)
+ 
+ set(nyanl_cpp "${CMAKE_CURRENT_BINARY_DIR}/flex.gen.cpp")
+ set(nyanl_h "${CMAKE_CURRENT_BINARY_DIR}/flex.gen.h")
+@@ -77,10 +77,15 @@ add_library(nyan SHARED
+ add_library(nyan::nyan ALIAS nyan)
+ 
+ if(UNIX)
+-	target_link_libraries(nyan
+-		${CMAKE_DL_LIBS}
+-	)
+-
++	if("${CMAKE_SYSTEM_NAME}" MATCHES "(Free|Net|Open)BSD")
++	  find_library(EXECINFO_LIBRARY execinfo)
++	  target_link_libraries(nyan ${CMAKE_DL_LIBS} ${EXECINFO_LIBRARY})
++        elseif("${CMAKE_SYSTEM_NAME}" MATCHES "DragonFly")
++	  find_library(EXECINFO_LIBRARY execinfo)
++	  target_link_libraries(nyan ${CMAKE_DL_LIBS} ${EXECINFO_LIBRARY})
++	else()
++	   target_link_libraries(nyan ${CMAKE_DL_LIBS})
++	endif()
+ 	if(NOT APPLE)
+ 		# for ld on macOS: "The default is to treat undefined symbols as errors."
+ 		set_target_properties(nyan PROPERTIES LINK_FLAGS "-Wl,--no-undefined")

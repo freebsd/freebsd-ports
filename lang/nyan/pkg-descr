@@ -1,0 +1,6 @@
+nyan is a data description language, It is a mixture of python, json, patch,
+wml, yaml and some new ideas. It stores hierarchical objects with key-value
+pairs in a database with the key idea that changes in a parent affect all
+children.
+
+WWW: https://github.com/SFTtech/nyan
