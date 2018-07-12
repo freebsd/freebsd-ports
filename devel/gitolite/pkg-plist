@@ -40,6 +40,7 @@ libexec/gitolite/check-g2-compat
 libexec/gitolite/commands/1plus1
 libexec/gitolite/commands/D
 libexec/gitolite/commands/access
+libexec/gitolite/commands/compile-template-data
 libexec/gitolite/commands/config
 libexec/gitolite/commands/create
 libexec/gitolite/commands/creator
@@ -93,3 +94,19 @@ libexec/gitolite/triggers/set-default-roles
 libexec/gitolite/triggers/upstream
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/README.markdown
+%%CONTRIB%%%%DATADIR%%/commands/compile-1
+%%CONTRIB%%%%DATADIR%%/commands/ukm
+%%CONTRIB%%%%DATADIR%%/hooks/repo-specific/save-push-signatures
+%%CONTRIB%%%%DATADIR%%/lib/Apache/gitolite.conf
+%%CONTRIB%%%%DATADIR%%/lib/Gitolite/Triggers/RedmineUserAlias.pm
+%%CONTRIB%%%%DATADIR%%/t/ukm.t
+%%CONTRIB%%%%DATADIR%%/triggers/IP-check
+%%CONTRIB%%%%DATADIR%%/triggers/file_mirror
+%%CONTRIB%%%%DATADIR%%/utils/ad_groups.sh
+%%CONTRIB%%%%DATADIR%%/utils/gitolite-local
+%%CONTRIB%%%%DATADIR%%/utils/ipa_groups.pl
+%%CONTRIB%%%%DATADIR%%/utils/ldap_groups.sh
+%%CONTRIB%%%%DATADIR%%/utils/rc-format-v3.4
+%%CONTRIB%%%%DATADIR%%/utils/testconf
+%%CONTRIB%%share/vim/vimfiles/indent/gitolite.vim
+%%CONTRIB%%share/vim/vimfiles/syntax/gitolite.vim

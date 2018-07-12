@@ -1,11 +1,11 @@
---- src/triggers/post-compile/ssh-authkeys-split.orig	2017-07-02 14:01:25 UTC
+--- src/triggers/post-compile/ssh-authkeys-split.orig	2018-07-12 07:50:58 UTC
 +++ src/triggers/post-compile/ssh-authkeys-split
-@@ -66,7 +66,7 @@ do
-             echo 1>&2 "ssh-authkeys-split: bad line $seq in keydir/$k"
-             rm -f $f
-         fi
+@@ -73,7 +73,7 @@ do
+     seq=0
+     while read line
+     do
 -        (( seq++ ))
-+        seq=$(( $seq + 1 ))
-     done < $k
- 
-     # now delete the original file
++	seq=$(( $seq + 1 ))
+         [ -z "$line" ] && continue
+         f=$SKD/$base@$seq.pub
+         echo "$line" > $f
