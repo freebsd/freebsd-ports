@@ -1,9 +1,9 @@
 # Created by: Ilya Bakulin <webmaster@kibab.com>
 # $FreeBSD$
 
-PORTNAME=	wpa_gui
+PORTNAME=	wpa_supplicant_gui
 PORTVERSION=	2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://w1.fi/releases/ \
 		http://partmedia.users.sourceforge.net/dist/:icons \
