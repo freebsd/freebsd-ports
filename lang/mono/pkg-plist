@@ -1130,6 +1130,7 @@ lib/mono/4.5/Microsoft.Common.tasks
 lib/mono/4.5/Microsoft.VisualBasic.targets
 lib/mono/4.5/Microsoft.VisualC.dll
 lib/mono/4.5/Microsoft.Web.Infrastructure.dll
+lib/mono/4.5/Mono.Btls.Interface.dll
 lib/mono/4.5/Mono.CSharp.dll
 lib/mono/4.5/Mono.Cairo.dll
 lib/mono/4.5/Mono.CodeContracts.dll
@@ -2406,6 +2407,8 @@ lib/mono/4.7.1-api/cscompmgd.dll
 lib/mono/4.7.1-api/mscorlib.dll
 lib/mono/gac/Accessibility/4.0.0.0__b03f5f7f11d50a3a/Accessibility.dll
 lib/mono/gac/Accessibility/4.0.0.0__b03f5f7f11d50a3a/Accessibility.pdb
+lib/mono/gac/Mono.Btls.Interface/4.0.0.0__0738eb9f132ed756/Mono.Btls.Interface.dll
+lib/mono/gac/Mono.Btls.Interface/4.0.0.0__0738eb9f132ed756/Mono.Btls.Interface.pdb
 lib/mono/gac/Commons.Xml.Relaxng/4.0.0.0__0738eb9f132ed756/Commons.Xml.Relaxng.dll
 lib/mono/gac/Commons.Xml.Relaxng/4.0.0.0__0738eb9f132ed756/Commons.Xml.Relaxng.pdb
 lib/mono/gac/CustomMarshalers/4.0.0.0__b03f5f7f11d50a3a/CustomMarshalers.dll
