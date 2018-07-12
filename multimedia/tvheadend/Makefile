@@ -34,8 +34,6 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 USE_RC_SUBR=	${PORTNAME}
 
-PORTSCOUT=	limitw:1,even
-
 SHEBANG_FILES=	${WRKSRC}/Autobuild.sh \
 		${WRKSRC}/configure \
 		${WRKSRC}/support/apt-update \
