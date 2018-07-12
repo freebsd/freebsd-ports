@@ -1539,7 +1539,7 @@
     SUBDIR += wmwifi
     SUBDIR += wmwlmon
     SUBDIR += wol
-    SUBDIR += wpa_gui
+    SUBDIR += wpa_supplicant_gui
     SUBDIR += wping
     SUBDIR += x11vnc
     SUBDIR += x2goclient
