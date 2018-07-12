@@ -1,0 +1,11 @@
+--- Examples/GUI/Qt/GraphicsView/CMakeLists.txt.orig	2018-05-11 14:34:24 UTC
++++ Examples/GUI/Qt/GraphicsView/CMakeLists.txt
+@@ -62,7 +62,7 @@ if(VTK_QT_VERSION VERSION_GREATER "4")
+   add_executable(qtgraphicsview MACOSX_BUNDLE
+     ${Srcs} ${Hdrs} ${MOC_Hdrs} ${QRC_Srcs})
+   qt5_use_modules(qtgraphicsview Core Gui Widgets
+-                  WebKit WebKitWidgets OpenGL OpenGLExtensions)
++                  WebKit WebKitWidgets OpenGL)
+   target_link_libraries(qtgraphicsview ${VTK_LIBRARIES})
+ else()
+   find_package(Qt4 REQUIRED)
