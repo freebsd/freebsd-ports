@@ -28,6 +28,7 @@ WRKSRC=		${WRKDIR}/firefox-${PORTVERSION}esr/js/src
 PATCH_WRKSRC=	${WRKDIR}/firefox-${PORTVERSION}esr/
 
 CONFIGURE_ARGS=	--with-pthreads \
+		--prefix=${PREFIX:Q} \
 		--target=${CONFIGURE_TARGET} \
 		--with-intl-api \
 		--with-system-zlib \
