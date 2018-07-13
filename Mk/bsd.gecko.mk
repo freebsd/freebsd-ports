@@ -114,7 +114,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/python${PYTHON3_DEFAULT}:lang/python${PYTHON3_D
 MOZ_EXPORT+=	PYTHON3="${LOCALBASE}/bin/python${PYTHON3_DEFAULT}"
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSREL} == 11.1
+.if ${OPSYS} == FreeBSD && ${OSREL} == 11.1 && ${MOZILLA_VER:R:R} < 49
 LLD_UNSAFE=	yes
 .endif
 
