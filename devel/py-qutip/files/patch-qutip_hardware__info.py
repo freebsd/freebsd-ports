@@ -1,8 +1,8 @@
 Same as https://github.com/qutip/qutip/pull/895, but the PR patch doesn't merge with this version
 
---- qutip/hardware_info.py.orig	2016-12-06 23:45:34 UTC
+--- qutip/hardware_info.py.orig	2018-05-09 07:35:04 UTC
 +++ qutip/hardware_info.py
-@@ -80,6 +80,14 @@ def _linux_hardware_info():
+@@ -85,6 +85,14 @@ def _linux_hardware_info():
      results.update({'os': 'Linux'})
      return results
  
@@ -17,12 +17,12 @@ Same as https://github.com/qutip/qutip/pull/895, but the PR patch doesn't merge 
  
  def _win_hardware_info():
      try:
-@@ -114,6 +122,8 @@ def hardware_info():
-             out = _win_hardware_info()
-         elif sys.platform in ['linux', 'linux2']:
-             out = _linux_hardware_info()
-+        elif sys.platform.startswith('freebsd'):
-+            out = _freebsd_hardware_info()
-         else:
-             out = {}
-     except:
+@@ -118,6 +126,8 @@ def hardware_info():
+         out = _win_hardware_info()
+     elif sys.platform in ['linux', 'linux2']:
+         out = _linux_hardware_info()
++    elif sys.platform.startswith('freebsd'):
++        out = _freebsd_hardware_info()
+     else:
+         out = {}
+     return out
