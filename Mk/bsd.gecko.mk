@@ -92,7 +92,7 @@ CONFIGURE_OUTSOURCE=	yes
 BUNDLE_LIBS=	yes
 
 .if ${MOZILLA_VER:R:R} >= 49
-USES+=		compiler:c++14-lang
+USES+=		compiler:c++17-lang
 CPPFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
 			-D_DECLARE_C99_LDBL_MATH # XXX ports/193528
 .else
