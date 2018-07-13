@@ -14,6 +14,9 @@ COMMENT=	Theme for RoundCube Web Mail
 LICENSE=	NONE APACHE20
 LICENSE_COMB=	multi
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=0.2:mail/roundcube@${PHP_FLAVOR}
 
 USES=		php:flavors

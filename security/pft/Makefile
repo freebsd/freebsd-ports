@@ -13,6 +13,9 @@ COMMENT=	Printer Job Language library and tool
 
 LICENSE=	NONE
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 NO_WRKSUBDIR=	yes
 
 USES=		gmake tar:tgz

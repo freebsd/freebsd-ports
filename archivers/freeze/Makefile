@@ -14,6 +14,9 @@ COMMENT=	Compression program - often used in QNX
 
 LICENSE=	NONE
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 CONFLICTS_INSTALL=	mlt-[0-9]*
 GNU_CONFIGURE=	yes
 ALL_TARGET=	prog

@@ -13,6 +13,9 @@ COMMENT=	Command-line interface to the resolver library
 
 LICENSE=	NONE
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 PLIST_FILES=	bin/gh
 
 do-extract:

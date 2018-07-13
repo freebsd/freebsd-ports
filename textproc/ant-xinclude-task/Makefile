@@ -13,6 +13,9 @@ COMMENT=	XInclude task for Jakarta Ant
 
 LICENSE=	NONE
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 BUILD_DEPENDS=	${JAVALIBDIR}/xincluder.jar:textproc/xincluder
 
 USE_JAVA=	yes

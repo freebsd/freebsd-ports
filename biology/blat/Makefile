@@ -13,6 +13,9 @@ COMMENT=	Fast tool for local sequence similarity searches
 
 LICENSE=	NONE
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 LIB_DEPENDS=	libpng.so:graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}Src

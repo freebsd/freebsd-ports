@@ -14,6 +14,9 @@ COMMENT=	Petri-Net Simulator for Xwindows
 
 LICENSE=	NONE
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 NO_WRKSUBDIR=	yes
 
 USE_XORG=	x11 xaw xmu xt xext

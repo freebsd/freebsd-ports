@@ -12,6 +12,9 @@ COMMENT=	Curses realtime statistics for the Huawei E169 modem
 
 LICENSE=	NONE
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 USES=		ncurses
 PLIST_FILES=	bin/e169-stats
 

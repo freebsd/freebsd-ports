@@ -21,6 +21,9 @@ COMMENT=	Portable emulator for the Philips P2000 home computer
 
 LICENSE=	NONE # and commercial distribution is explicitly prohibited
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 M2000TAPES=	3DDoolhof2.cas		\
 		BrickWall.cas		\
 		Componist.cas		\

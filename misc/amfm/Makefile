@@ -14,6 +14,9 @@ COMMENT=	THANKO USB AM/FM Radio controller
 
 LICENSE=	NONE
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 LIB_DEPENDS=	libhid.so:devel/libhid
 
 do-extract:

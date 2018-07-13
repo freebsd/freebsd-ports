@@ -13,6 +13,9 @@ COMMENT=	X11 Go (weiqi, baduk) client for the Internet Go Server
 LICENSE=	GPLv2+ NONE # some files have unclear license
 LICENSE_COMB=	multi
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt

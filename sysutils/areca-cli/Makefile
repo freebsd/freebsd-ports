@@ -15,6 +15,9 @@ COMMENT=	Command Line Interface for the Areca ARC-xxxx RAID controllers
 
 LICENSE=	NONE
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 ONLY_FOR_ARCHS=	i386 amd64
 
 PERIODICSCRIPT=	407.status-areca-raid

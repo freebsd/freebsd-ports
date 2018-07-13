@@ -12,6 +12,9 @@ COMMENT=	PPM to Pilot bitmap converter
 
 LICENSE=	NONE
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 LIB_DEPENDS=	libnetpbm.so:graphics/netpbm
 
 USES=		localbase:ldflags
