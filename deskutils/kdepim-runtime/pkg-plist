@@ -1372,6 +1372,7 @@ share/locale/pt/LC_MESSAGES/kio_akonadi.mo
 share/locale/pt/LC_MESSAGES/kio_pop3.mo
 share/locale/pt/LC_MESSAGES/libfolderarchivesettings.mo
 share/locale/pt_BR/LC_MESSAGES/accountwizard_contacts.mo
+share/locale/pt_BR/LC_MESSAGES/accountwizard_ews.mo
 share/locale/pt_BR/LC_MESSAGES/accountwizard_ical.mo
 share/locale/pt_BR/LC_MESSAGES/accountwizard_imap.mo
 share/locale/pt_BR/LC_MESSAGES/accountwizard_kolab.mo
