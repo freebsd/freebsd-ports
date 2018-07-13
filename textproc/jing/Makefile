@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	jing
-PORTVERSION=	2015.11.27
+PORTVERSION=	2017.09.14
 CATEGORIES=	textproc java
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yasu@utahime.org
 COMMENT=	RELAX NG validator in Java
 
 LICENSE=	BSD3CLAUSE
@@ -17,7 +17,7 @@ BROKEN_armv7=		fails to build: modbuild.xml: Java returned: 1
 USE_GITHUB=	yes
 GH_ACCOUNT=	relaxng
 GH_PROJECT=	jing-trang
-GH_TAGNAME=	1e74846
+GH_TAGNAME=	bf4bafa
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -30,7 +30,7 @@ PORTDOCS=	*
 
 SUB_FILES=	jing.sh
 
-PLIST_FILES=	bin/jing %%JAVAJARDIR%%/jing.jar
+PLIST_FILES=	bin/jing ${JAVAJARDIR}/jing.jar
 
 do-build:
 	(cd ${WRKSRC} && JAVA_HOME=${JAVA_HOME} ./ant)
@@ -38,6 +38,8 @@ do-build:
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/jing.sh ${STAGEDIR}${PREFIX}/bin/jing
 	${INSTALL_DATA} ${WRKSRC}/build/jing.jar ${STAGEDIR}${JAVAJARDIR}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
