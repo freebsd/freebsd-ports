@@ -939,6 +939,7 @@
     SUBDIR += py-flask-httpauth
     SUBDIR += py-flask-kerberos
     SUBDIR += py-flask-saml
+    SUBDIR += py-fteproxy
     SUBDIR += py-gixy
     SUBDIR += py-gnupg
     SUBDIR += py-gnutls
