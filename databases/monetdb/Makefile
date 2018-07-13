@@ -3,7 +3,7 @@
 
 PORTNAME=	monetdb
 PORTVERSION=	11.15.19
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.monetdb.org/downloads/sources/Feb2013-SP6/
 DISTNAME=	MonetDB-${PORTVERSION}
@@ -117,8 +117,6 @@ RDF_CONFIGURE_ENABLE=		rdf
 SPHINXCLIENT_LIB_DEPENDS=	libsphinxclient.so:textproc/libsphinxclient
 RUBYGEMS_BUILD_DEPENDS=		gem:devel/ruby-gems
 RUBYGEMS_RUN_DEPENDS=		gem:devel/ruby-gems
-PYTHON3_BUILD_DEPENDS=		python3:lang/python3
-PYTHON3_RUN_DEPENDS=		python3:lang/python3
 CURL_LIB_DEPENDS=		libcurl.so:ftp/curl
 FITS_LIB_DEPENDS=		libcfitsio.so:astro/cfitsio
 GEOM_LIB_DEPENDS=		libgeos.so:graphics/geos

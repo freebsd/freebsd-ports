@@ -3,7 +3,7 @@
 
 PORTNAME=	fvwm
 PORTVERSION=	2.6.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/fvwmorg/fvwm/releases/download/${PORTVERSION}/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -13,10 +13,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Popular virtual window manager for X
 
-BUILD_DEPENDS=	python3:lang/python3
 RUN_DEPENDS=	gm4:devel/m4 \
-		p5-XML-Parser>=0:textproc/p5-XML-Parser \
-		python3:lang/python3
+		p5-XML-Parser>=0:textproc/p5-XML-Parser
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
@@ -24,10 +22,9 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 CONFLICTS?=	fvwm1-1.* fvwm-2.[457].*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-mandoc --without-gnome --disable-gtk
-CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
+CONFIGURE_ARGS=	--disable-mandoc --without-gnome --disable-gtk \
+		ac_cv_path_PYTHON=${PYTHON_CMD}
 USES=		gmake perl5 pkgconfig python:3.4+ gettext readline
-USE_PYTHON=	xdg
 USE_XORG=	xcursor xft xinerama xpm xrender x11 ice xext
 USE_GNOME=	cairo
 
