@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	wdas
 GH_PROJECT=	SeExpr
 
-USES=		bison cmake compiler:c++0x pyqt:4 python qt:4
+USES=		bison cmake compiler:c++0x pyqt:4 python:2.7 qt:4
 USE_PYQT=	gui_build sip_build
 USE_QT=		moc_build qmake_build rcc_build uic_build gui opengl
 BINARY_ALIAS=	sip=sip-${PYTHON_VER}
