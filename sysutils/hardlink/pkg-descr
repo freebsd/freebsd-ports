@@ -1,4 +1,4 @@
 hardlink is a tool which detects multiple copies of the same file and replaces
 them with hardlinks.
 
-WWW: http://jak-linux.org/projects/hardlink/
+WWW: https://jak-linux.org/projects/hardlink/
