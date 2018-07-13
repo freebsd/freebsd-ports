@@ -16,6 +16,8 @@ COMMENT=	Sound synthesizer
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		swig3.0:devel/swig30 \
 		gmm++>0:math/gmm++
