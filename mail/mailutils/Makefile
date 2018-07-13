@@ -62,7 +62,7 @@ NLS_CONFIGURE_ENABLE=	nls
 
 PAM_CONFIGURE_ENABLE=	pam
 
-PYTHON_BUILD_DEPENDS=	python-config:lang/python
+PYTHON_BINARY_ALIAS=	python-config=python${PYTHON_VER}-config
 PYTHON_USES=		python:2.7
 PYTHON_CONFIGURE_ENABLE=python
 
