@@ -1,10 +1,10 @@
-TIMESTAMP = 1530699178
-SHA256 (tsenart-vegeta-v8.0.0_GH0.tar.gz) = 2ba28f8c2cbefae62150e48fa426a341b881c457b241df8416d5e8e2899a75d6
-SIZE (tsenart-vegeta-v8.0.0_GH0.tar.gz) = 114861
+TIMESTAMP = 1531467037
+SHA256 (tsenart-vegeta-v8.1.1-6f06594_GH0.tar.gz) = e31ca94b4009e93633a0445b24578b90044fb5330fe8fdde7d70059ce3eb5666
+SIZE (tsenart-vegeta-v8.1.1-6f06594_GH0.tar.gz) = 118665
 SHA256 (streadway-quantile-b0c5887_GH0.tar.gz) = f9d29902009510bcd68638fbdd6942f04c1b3def7c1efee730601fed8fdbd0ae
 SIZE (streadway-quantile-b0c5887_GH0.tar.gz) = 4862
-SHA256 (golang-net-ed29d75_GH0.tar.gz) = 33ddec453b73663a830962a27ae65d486b3acecb95f9572bd93f44be67ef289d
-SIZE (golang-net-ed29d75_GH0.tar.gz) = 954673
+SHA256 (golang-net-d0887ba_GH0.tar.gz) = 0297602aba362ef51f022fe954fe5bdc53cd426620000b5bb98bdc48bfdbb265
+SIZE (golang-net-d0887ba_GH0.tar.gz) = 959205
 SHA256 (golang-text-v0.3.0_GH0.tar.gz) = 8f4c9a048345befc7beccd09267737ee1f55c7b35e5ff80f344ec9e0aa90febb
 SIZE (golang-text-v0.3.0_GH0.tar.gz) = 6102619
 SHA256 (lucasb-eyer-go-colorful-v1.0_GH0.tar.gz) = 7bad1f3ae46d9f2f4e635e4b3f65424e1be9c131864630c5a99d512bc0bf2266
