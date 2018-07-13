@@ -13,6 +13,9 @@ COMMENT=	SlideShow Viewer
 
 LICENSE=	GPLv2
 
+DEPRECATED=	depends on expiring graphics/gnustep-slideshowkit
+EXPIRATION_DATE=	2018-08-15
+
 USES=		tar:bzip2 gnustep
 USE_GNUSTEP=	back build
 LIB_DEPENDS=	libSlideShow.so:graphics/gnustep-slideshowkit
