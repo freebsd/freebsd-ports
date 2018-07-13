@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openclonk
-DISTVERSION=	8.0
+DISTVERSION=	8.1
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.openclonk.org/builds/release/${DISTVERSION}/
 
