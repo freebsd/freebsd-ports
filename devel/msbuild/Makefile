@@ -14,8 +14,7 @@ COMMENT=	Build platform for .NET and Visual Studio
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	bash:shells/bash \
-		python:lang/python
+BUILD_DEPENDS=	bash:shells/bash
 
 NUGET_FEEDS=	DOTNET_CORE NUGET ROSLYN ROSLYN_TOOLS SYMREADER_CONVERTER
 NUGET_LAYOUT=	dotnet
