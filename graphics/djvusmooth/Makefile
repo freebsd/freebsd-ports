@@ -18,7 +18,7 @@ RUN_DEPENDS=	djvulibre>0:graphics/djvulibre \
 		${PYTHON_PKGNAMEPREFIX}python-djvulibre>0:graphics/py-djvulibre@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wxPython30>0:x11-toolkits/py-wxPython30@${PY_FLAVOR}
 
-USES=		desktop-file-utils gettext-tools python
+USES=		desktop-file-utils gettext-tools python:2.7
 USE_GITHUB=	yes
 GH_ACCOUNT=	jwilk
 USE_PYTHON=	distutils autoplist noflavors
