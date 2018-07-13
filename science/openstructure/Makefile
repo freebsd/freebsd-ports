@@ -2,8 +2,9 @@
 
 PORTNAME=	openstructure
 DISTVERSION=	1.7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
+MASTER_SITES=	https://git.scicore.unibas.ch/schwede/${PORTNAME}/repository/${DISTVERSION}/archive.tar.gz?dummy=/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Molecular modelling and visualization environment
@@ -21,10 +22,6 @@ RUN_DEPENDS=	${PYNUMPY} \
 		bash:shells/bash
 
 USES=		cmake:outsource eigen:3 python pyqt:4 qt:4 shebangfix
-USE_GITLAB=	yes
-GL_SITE=	https://git.scicore.unibas.ch/
-GL_ACCOUNT=	schwede
-GL_COMMIT=	${DISTVERSION}
 SHEBANG_FILES=	scripts/dng.in scripts/ost.in scripts/ost_config.in
 USE_QT=		corelib gui network opengl xml qmake_build moc_build rcc_build uic_build
 USE_PYQT=	core gui
@@ -35,8 +32,9 @@ BINARY_ALIAS=	python=${PYTHON_CMD}
 CMAKE_ARGS=	-DPYTHON_INCLUDE_PATH=${PYTHON_INCLUDEDIR} \
 		-DPYTHON_LIBRARIES=${PYTHON_LIBDIR} \
 		-DFREEBSD_BOOST_PYTHON_COMPONENT=python${PYTHON_VER:S/.//} \
-		-DFREEBSD_PYTHON_LIBRARY=python${PYTHON_VER} \
-		-DCMAKE_CXX_FLAGS='-std=c++98' # c++98 is needed until 1.8.0 to prevent C++ code build breakage
+		-DFREEBSD_PYTHON_LIBRARY=python${PYTHON_VER}
+
+USE_CXXSTD=c++98 # c++98 is needed until 1.8.0 to prevent C++ code build breakage
 
 post-extract:
 	@${MV} ${WRKSRC}-* ${WRKSRC}
