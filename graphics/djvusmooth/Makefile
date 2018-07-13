@@ -15,8 +15,8 @@ BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl \
 		docbook-xml>0:textproc/docbook-xml
 RUN_DEPENDS=	djvulibre>0:graphics/djvulibre \
-		${PYTHON_PKGNAMEPREFIX}python-djvulibre>0:graphics/py-djvulibre \
-		${PYTHON_PKGNAMEPREFIX}wxPython30>0:x11-toolkits/py-wxPython30
+		${PYTHON_PKGNAMEPREFIX}python-djvulibre>0:graphics/py-djvulibre@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wxPython30>0:x11-toolkits/py-wxPython30@${PY_FLAVOR}
 
 USES=		desktop-file-utils gettext-tools python
 USE_GITHUB=	yes
