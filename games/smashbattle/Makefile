@@ -13,6 +13,9 @@ COMMENT=	8-bit style platform battle game
 
 LICENSE=	NONE
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/battle/Battle
 
 EXTRACT_AFTER_ARGS=	-d ${WRKDIR}/${DISTNAME}

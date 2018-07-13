@@ -14,6 +14,8 @@ COMMENT=	Environmentally friendly, ink saving typeface
 LICENSE=	NONE
 
 BROKEN=		unfetchable
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
 
 USES=		fonts zip
 NO_BUILD=	yes

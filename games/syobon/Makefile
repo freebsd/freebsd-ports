@@ -16,6 +16,9 @@ LICENSE=	NONE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Platform game as Super Mario Bros
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		dos2unix gmake pkgconfig

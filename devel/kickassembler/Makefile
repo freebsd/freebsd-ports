@@ -12,6 +12,9 @@ COMMENT=	Advanced MOS 65xx assembler with embedded script language
 
 LICENSE=	NONE
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 USES=		zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

@@ -12,6 +12,9 @@ COMMENT=	Programs to convert .dbf files to MySQL tables and vice versa
 
 LICENSE=	NONE
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 USES=		mysql
 
 PORTDOCS=	README

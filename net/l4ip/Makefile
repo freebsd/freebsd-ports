@@ -13,6 +13,9 @@ COMMENT=	L4 health check daemon for IPFILTER
 
 LICENSE=	NONE
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 USES=		gmake ssl tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 

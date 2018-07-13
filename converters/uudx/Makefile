@@ -12,6 +12,9 @@ COMMENT=	Extractor from uuencoded files
 
 LICENSE=	NONE
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 BUILD_DEPENDS=	nkf:japanese/nkf
 
 USES=		dos2unix lha

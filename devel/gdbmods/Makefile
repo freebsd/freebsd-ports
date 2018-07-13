@@ -14,6 +14,9 @@ COMMENT=	Wrapper for gdb -k to provide kld symbol information
 
 LICENSE=	NONE
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

@@ -12,6 +12,9 @@ COMMENT=	Lightweight DHCP Relay Agent with GIF tunnel support
 
 LICENSE=	NONE
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 LIB_DEPENDS=	libdnet.so:net/libdnet
 
 USE_RC_SUBR=	${PORTNAME}

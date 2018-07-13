@@ -12,6 +12,9 @@ COMMENT=	Swiss railway clock emulation, and a fancy default appearance
 
 LICENSE=	NONE
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 USES=		imake tar:Z
 USE_XORG=	ice sm x11 xext xmu xt
 

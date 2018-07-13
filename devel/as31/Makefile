@@ -13,6 +13,9 @@ COMMENT=	Free 8051 assembler
 
 LICENSE=	NONE
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 # GNU make(1) allows parallel (-jX) builds to work: we plug a race in
 # "bison" rule (which outputs multiple files) via order prerequisites
 # (see files/patch-Makefile)

@@ -18,6 +18,9 @@ COMMENT=	Core War optimizer written in Perl
 LICENSE=	NONE PD GPLv2+ # only single 3d party file has license defined
 LICENSE_COMB=	multi
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 RUN_DEPENDS=	p5-Tk>=0:x11-toolkits/p5-Tk
 
 USES=		perl5 zip

@@ -15,6 +15,9 @@ COMMENT=	Gnome theme with FreeBSD Colors
 
 LICENSE=	NONE
 
+DEPRECATED=	unknown license
+EXPIRATION_DATE=	2018-08-15
+
 RUN_DEPENDS=	gtk-engines2>=2.7.4_1:x11-themes/gtk-engines2 \
 		gnome-themes>=2.11.91:x11-themes/gnome-themes
 
