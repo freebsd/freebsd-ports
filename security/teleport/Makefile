@@ -47,7 +47,7 @@ post-patch:
 		${WRKDIR}/${GO_TELEPORT_SRC_DIR}/version.mk
 	@${FIND} ${WRKDIR} -type f -exec ${SED} -i '' \
 		-e 's|\/var\/lib|/var/db|g' \
-		-e 's|\/usr\/bin\/hostname|/bin/hostname|g' {} \;
+		-e 's|\/usr\/bin\/hostname|/bin/hostname|g' {} +
 
 do-build:
 	@cd ${WRKDIR}/${GO_TELEPORT_SRC_DIR} && \
