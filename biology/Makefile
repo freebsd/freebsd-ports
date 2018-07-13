@@ -26,6 +26,7 @@
     SUBDIR += ddocent
     SUBDIR += diamond
     SUBDIR += emboss
+    SUBDIR += exonerate
     SUBDIR += fasta
     SUBDIR += fasta3
     SUBDIR += fastahack
