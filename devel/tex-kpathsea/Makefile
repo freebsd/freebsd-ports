@@ -12,6 +12,8 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Path searching library for TeX
 
+LICENSE=	LGPL21+
+
 USES=		libtool pathfix tar:xz
 USE_LDCONFIG=	yes
 USE_TEX=	yes
