@@ -24,6 +24,6 @@ LDFLAGS+=	-lexecinfo
 
 PLIST_FILES=	bin/tmate-slave
 
-PORTSCOUT=	skipv:1.8,1.7
+PORTSCOUT=	skipv:1.8,1.7,to_copy,base
 
 .include <bsd.port.mk>
