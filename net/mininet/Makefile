@@ -18,7 +18,7 @@ RUN_DEPENDS=	iperf>=0:benchmarks/iperf \
 		socat>=0:net/socat \
 		bash:shells/bash
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils
 
 USE_GITHUB=	yes
