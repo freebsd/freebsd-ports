@@ -568,5 +568,6 @@
     SUBDIR += ytree
     SUBDIR += zoneinfo
     SUBDIR += zygrib
+    SUBDIR += zygrib-maps
 
 .include <bsd.port.subdir.mk>
