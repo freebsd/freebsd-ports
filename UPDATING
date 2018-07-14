@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180714:
+  AFFECTS: users of dns/dnsdist
+  AUTHOR: cpm@FreeBSD.org
+
+  After discussing with several users, we noticed that quite a lot of them
+  were not aware that enabling the dnsdist's console without a key, even
+  restricted to the local host, could be a security issue and allow privilege
+  escalation by allowing an unprivileged user to connect to the console and
+  execute Lua code as the dnsdist user. We therefore decided to refuse any
+  connection to the console until a key has been set, so please check that
+  you do set a key before upgrading if you use the console.  
+
+  For further details read: 
+  https://blog.powerdns.com/2018/07/10/dnsdist-1-3-2-released/
+
 20180704:
   AFFECTS: users of www/gitlab
   AUTHOR: mfechner@FreeBSD.org
