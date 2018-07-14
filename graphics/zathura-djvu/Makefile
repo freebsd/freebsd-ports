@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zathura-djvu
-PORTVERSION=	0.2.6
-PORTREVISION=	3
+PORTVERSION=	0.2.8
 CATEGORIES=	graphics
 MASTER_SITES=	https://pwmt.org/projects/zathura/plugins/download/ \
 		http://www.madpilot.net/~mad/pwmt.org/
@@ -18,15 +17,14 @@ LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre
 BUILD_DEPENDS=	zathura:graphics/zathura
 RUN_DEPENDS=	zathura:graphics/zathura
 
-PLIST_FILES=	lib/zathura/djvu.so share/applications/zathura-djvu.desktop
-
 USE_GNOME=	glib20 gtk30
-USES=		compiler:c11 desktop-file-utils gmake pkgconfig
+USES=		meson ninja compiler:c11 desktop-file-utils pkgconfig tar:xz
 
-PLIST_FILES=	lib/zathura/djvu.so \
-		share/applications/zathura-djvu.desktop
+PLIST_FILES=	lib/zathura/libdjvu.so \
+		share/appdata/org.pwmt.zathura-djvu.metainfo.xml \
+		share/applications/org.pwmt.zathura-djvu.desktop
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/zathura/djvu.so
+pre-configure:
+	${REINPLACE_CMD} "s:join_paths(datadir, 'metainfo'):join_paths(datadir, 'appdata'):" ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
