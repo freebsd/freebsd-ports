@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zathura-cb
-PORTVERSION=	0.1.6
-PORTREVISION=	3
+PORTVERSION=	0.1.8
 CATEGORIES=	graphics
 MASTER_SITES=	https://pwmt.org/projects/zathura-cb/download/ \
 		http://www.madpilot.net/~mad/pwmt.org/
@@ -16,12 +15,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	zathura:graphics/zathura
 RUN_DEPENDS=	zathura:graphics/zathura
 
-PLIST_FILES=	lib/zathura/cb.so share/applications/zathura-cb.desktop
-
-USES=		compiler:c11 desktop-file-utils gmake pkgconfig libarchive ssl
+USES=		meson ninja compiler:c11 desktop-file-utils pkgconfig libarchive ssl tar:xz
 USE_GNOME=	glib20 gtk30
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/zathura/cb.so
+PLIST_FILES=	lib/zathura/libcb.so \
+		share/appdata/org.pwmt.zathura-cb.metainfo.xml \
+		share/applications/org.pwmt.zathura-cb.desktop
+
+pre-configure:
+	${REINPLACE_CMD} "s:join_paths(datadir, 'metainfo'):join_paths(datadir, 'appdata'):" ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
