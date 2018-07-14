@@ -1,0 +1,15 @@
+The experimental drm-next-kmod port can be enabled for amdgpu (for AMD
+GPUs starting with the HD7000 series / Tahiti) or i915kms (for Intel
+APUs starting with HD3000 / Sandy Bridge) through kld_list in
+/etc/rc.conf. radeonkms for older AMD GPUs can be loaded and there are
+some positive reports if EFI boot is NOT enabled (similar to amdgpu).
+
+For amdgpu: kld_list="amdgpu"
+For Intel: kld_list="/boot/modules/i915kms.ko"
+For radeonkms: kld_list="/boot/modules/radeonkms.ko"
+
+Please ensure that all users requiring graphics are members of the
+"video" group.
+
+Older generations are supported by the stable kms modules (radeonkms / 
+i915kms) in base.
