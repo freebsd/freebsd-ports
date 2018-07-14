@@ -24,7 +24,6 @@ lib/erlang/lib/parse_trans-%%VERSION%%/src/parse_trans_pp.erl
 %%PORTDOCS%%%%DOCSDIR%%/parse_trans_mod.md
 %%PORTDOCS%%%%DOCSDIR%%/parse_trans_pp.md
 %%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ct_expand_test.erl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex1.erl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ex_codegen.erl
