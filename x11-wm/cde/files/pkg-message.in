@@ -9,11 +9,11 @@ afterwards).
 It is also necessary to enable the Subprocess Control Service (and dtcms for
 the calendar to work).
 
-# service rpcbind rcvar | grep -q 'rpcbind_enable="[Yy]' || \
-    echo rpcbind_enable=yes >> /etc/rc.conf
-# echo dtspc_enable=yes >> /etc/rc.conf
-# echo dtcms_enable=yes >> /etc/rc.conf
+# sysrc rpcbind_enable=yes
+# sysrc dtspc_enable=yes
+# sysrc dtcms_enable=yes
+# service rpcbind start && service dtspc start && service dtcms start
 
 To start the Common Desktop Environment,
-
-% env LANG=C startx /usr/dt/bin/Xsession
+% ln -s /usr/dt/bin/Xsession ~/.Xsession
+% env LANG=C startx
