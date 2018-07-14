@@ -10,6 +10,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org development aclocal macros
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 XORG_CAT=	util
 
