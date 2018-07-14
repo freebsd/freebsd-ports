@@ -1,0 +1,5 @@
+amdgpu, i915, and radeon DRM modules for the linuxkpi-based KMS components.
+Currently corresponding to Linux 4.15 DRM. This is the development version.
+amdgpu and radeonkms are known to fail with EFI boot.
+
+WWW: https://github.com/FreeBSDDesktop/kms-drm
