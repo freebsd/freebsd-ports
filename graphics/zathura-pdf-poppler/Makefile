@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zathura-pdf-poppler
-PORTVERSION=	0.2.7
-PORTREVISION=	4
+PORTVERSION=	0.2.9
 CATEGORIES=	graphics
 MASTER_SITES=	https://pwmt.org/projects/zathura/plugins/download/ \
 		http://www.madpilot.net/~mad/pwmt.org/
@@ -19,15 +18,15 @@ BUILD_DEPENDS=	zathura:graphics/zathura
 RUN_DEPENDS=	zathura:graphics/zathura
 
 USE_GNOME=	glib20 gtk30
-USES=		compiler:c11 desktop-file-utils gmake pkgconfig
+USES=		meson ninja compiler:c11 desktop-file-utils pkgconfig tar:xz
 
 CONFLICTS=	zathura-pdf-mupdf-[0-9]*
 
-PLIST_FILES=	lib/zathura/pdf.so \
-		share/appdata/zathura-pdf-poppler.metainfo.xml \
-		share/applications/zathura-pdf-poppler.desktop
+PLIST_FILES=	lib/zathura/libpdf-poppler.so \
+		share/appdata/org.pwmt.zathura-pdf-poppler.metainfo.xml \
+		share/applications/org.pwmt.zathura-pdf-poppler.desktop
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${LOCALBASE}/lib/zathura/pdf.so
+pre-configure:
+	${REINPLACE_CMD} "s:join_paths(datadir, 'metainfo'):join_paths(datadir, 'appdata'):" ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
