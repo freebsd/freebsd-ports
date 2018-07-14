@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mupdf
-PORTVERSION=	1.12.0
+PORTVERSION=	1.13.0
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
 CATEGORIES=	graphics
@@ -27,6 +27,7 @@ CFLAGS+=	-I${WRKSRC}/include/mupdf -fPIC
 LIBS+=		-L${LOCALBASE}/lib
 MAKE_ARGS=	build=release prefix=${PREFIX} mandir=${PREFIX}/man verbose=yes \
 		SOVERSION=${PORTVERSION}
+ALL_TARGET=	all extra
 USES=		cpe compiler:c++11-lang gmake jpeg pkgconfig
 USE_XORG=	x11 xcursor xext xinerama xrandr
 USE_GL=		gl glut
@@ -61,6 +62,12 @@ post-patch:
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/bin/mupdf-x11 ${STAGEDIR}${PREFIX}/bin/mupdf
+	${INSTALL_PROGRAM} \
+		${WRKSRC}/build/release/mjsgen \
+		${WRKSRC}/build/release/mujstest \
+		${WRKSRC}/build/release/mupdf-x11-curl \
+		${WRKSRC}/build/release/muraster \
+		${STAGEDIR}${PREFIX}/bin
 	${LN} -s libmupdf.so.${PORTVERSION} \
 		${STAGEDIR}${PREFIX}/lib/libmupdf.so
 	${LN} -s libmupdfthird.so.${PORTVERSION} \
