@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libva-intel-driver
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -11,7 +11,8 @@ COMMENT=	VAAPI intel driver
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libva.so:multimedia/libva
+LIB_DEPENDS=	libva.so:multimedia/libva \
+		libdrm.so:graphics/libdrm
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 
 GNU_CONFIGURE=	yes
