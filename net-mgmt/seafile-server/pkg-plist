@@ -97,7 +97,9 @@ libdata/pkgconfig/libseafile.pc
 %%SEAFILE_SERVER%%/upgrade/sql/6.3.0/mysql/%%USERS%%.sql
 %%SEAFILE_SERVER%%/upgrade/sql/6.3.0/mysql/seahub.sql
 %%SEAFILE_SERVER%%/upgrade/sql/6.3.0/sqlite3/ccnet/groupmgr.sql
+%%SEAFILE_SERVER%%/upgrade/sql/6.3.0/sqlite3/ccnet/usermgr.sql
 %%SEAFILE_SERVER%%/upgrade/sql/6.3.0/sqlite3/seafevents.sql
+%%SEAFILE_SERVER%%/upgrade/sql/6.3.0/sqlite3/%%USERS%%.sql
 %%SEAFILE_SERVER%%/upgrade/sql/6.3.0/sqlite3/seahub.sql
 %%SEAFILE_SERVER%%/upgrade/upgrade_1.2_1.3.sh
 %%SEAFILE_SERVER%%/upgrade/upgrade_1.3_1.4.sh
