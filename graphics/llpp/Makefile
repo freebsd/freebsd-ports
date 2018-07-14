@@ -3,7 +3,7 @@
 
 PORTNAME=	llpp
 PORTVERSION=	25
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://repo.or.cz/llpp.git/snapshot/
 DISTNAME=	v${PORTVERSION}
