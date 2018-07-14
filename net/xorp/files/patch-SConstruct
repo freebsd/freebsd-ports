@@ -1,4 +1,4 @@
---- SConstruct.orig	2012-01-11 17:56:10 UTC
+--- SConstruct.orig	2018-07-11 16:37:51 UTC
 +++ SConstruct
 @@ -162,22 +162,13 @@ if (len(COMMAND_LINE_TARGETS) == 0):
  
@@ -25,11 +25,55 @@
  		  variables = vars)
  
  prefix = env['prefix']
-@@ -880,6 +871,7 @@ env.AppendUnique(CFLAGS = [
-     '-Wcast-align',
+@@ -853,20 +844,6 @@ if env['enable_boost']:
+ 
+ # Some platforms have alignment warnings that cannot easily be
+ # fixed, so we can't enable Werror for them.
+-if ((build != "i386-pc-mingw32") and
+-    (host_cpu == "i686" or
+-     host_cpu == "i386" or
+-     host_cpu == "x86_64")):
+-        env.AppendUnique(CFLAGS = [
+-	        '-Werror',
+-		])
+-	env.AppendUnique(CXXFLAGS = [
+-		'-Werror',
+-		])
+-else:
+-	print "WARNING:  Detected funky platform, will not enable -Werror compile option: ", host_cpu
+-	
+-
+ # NOTE: gcc specific flags.
+ env.AppendUnique(CFLAGS = [
+     '-W',
+@@ -874,12 +851,14 @@ env.AppendUnique(CFLAGS = [
+     '-Wwrite-strings',
+     '-Wbad-function-cast',
+     '-Wmissing-prototypes',
+-    '-Wcast-qual',
++    '-Wno-cast-qual',
++    '-Wno-sign-compare',
+     '-Wmissing-declarations',
+     '-Wpointer-arith',
+-    '-Wcast-align',
      '-Wstrict-prototypes',
      '-Wnested-externs',
 +    '-Wno-unused-function',
++    '-Wno-unused-parameter',
+     '-pipe',
+     ])
+ 
+@@ -887,11 +866,10 @@ env.AppendUnique(CXXFLAGS = [
+     '-W',
+     '-Wall',
+     '-Wwrite-strings',
+-    '-Wcast-qual',
++    '-Wno-cast-qual',
++    '-Wno-sign-compare', 
+     '-Wpointer-arith',
+-    '-Wcast-align',
+     '-Woverloaded-virtual',
+-    '-ftemplate-depth-25',
      '-pipe',
      ])
  
