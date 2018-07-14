@@ -567,5 +567,6 @@
     SUBDIR += yaunc
     SUBDIR += ytree
     SUBDIR += zoneinfo
+    SUBDIR += zygrib
 
 .include <bsd.port.subdir.mk>
