@@ -5,13 +5,13 @@ include/zathura/macros.h
 include/zathura/page.h
 include/zathura/plugin-api.h
 include/zathura/types.h
-include/zathura/version.h
+include/zathura/zathura-version.h
 libdata/pkgconfig/zathura.pc
 man/man1/zathura.1.gz
 man/man5/zathurarc.5.gz
-share/appdata/zathura.appdata.xml
-share/applications/zathura.desktop
+share/applications/org.pwmt.zathura.desktop
 share/dbus-1/interfaces/org.pwmt.zathura.xml
+%%NLS%%share/icons/hicolor/128x128/apps/org.pwmt.zathura.png
 %%NLS%%share/locale/ca/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/de/LC_MESSAGES/zathura.mo
@@ -26,6 +26,7 @@ share/dbus-1/interfaces/org.pwmt.zathura.xml
 %%NLS%%share/locale/id_ID/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/it/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/zathura.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/no/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/zathura.mo
@@ -33,3 +34,4 @@ share/dbus-1/interfaces/org.pwmt.zathura.xml
 %%NLS%%share/locale/ta_IN/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/zathura.mo
 %%NLS%%share/locale/uk_UA/LC_MESSAGES/zathura.mo
+%%NLS%%share/metainfo/org.pwmt.zathura.appdata.xml
