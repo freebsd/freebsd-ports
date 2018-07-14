@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	erlang-
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Job scheduler and load regulation for Erlang
 
-USES=		erlang:rebar
+USES=		erlang:rebar3
 USE_GITHUB=	yes
 GH_ACCOUNT=	uwiger
 
