@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webcamd
-PORTVERSION=	4.12.0.1
+PORTVERSION=	4.17.0.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://home.selasky.org:8192/distfiles/
