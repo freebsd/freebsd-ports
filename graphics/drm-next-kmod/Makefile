@@ -17,7 +17,7 @@ ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64
 
 RUN_DEPENDS=	gpu-firmware-kmod>=g20180319:graphics/gpu-firmware-kmod
 
-CONFLICTS_INSTALL=	drm-stable-kmod
+CONFLICTS_INSTALL=	drm-devel-kmod drm-stable-kmod
 
 OPTIONS_DEFINE=	DEBUG
 
