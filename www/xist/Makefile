@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xist
-PORTVERSION=	5.33
+PORTVERSION=	5.34
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://ftp.livinglogic.de/xist/
