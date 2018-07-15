@@ -2,25 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	gpredict
-PORTVERSION=	1.3
-PORTREVISION=	1
+DISTVERSION=	2.2.1
 CATEGORIES=	comms hamradio
-MASTER_SITES=	SF/${PORTNAME}/Gpredict/${PORTVERSION}
+MASTER_SITES=	https://github.com/csete/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio satellite tracking and prediction
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libhamlib.so:comms/hamlib \
-		libcurl.so:ftp/curl \
-		libgoocanvas.so:graphics/goocanvas
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libhamlib.so:comms/hamlib \
+		libgoocanvas-2.0.so:graphics/goocanvas2 \
+		libgps.so:astro/gpsd
 
+USES=		gettext gmake pkgconfig tar:bz2
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
-USES=		gettext gmake pkgconfig
-USE_GNOME=	gtk20 intltool
+USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 
 post-patch:
 	@${REINPLACE_CMD} -e \
