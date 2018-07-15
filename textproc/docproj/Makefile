@@ -38,7 +38,7 @@ OPTIONS_DEFAULT+=	SVN
 CJK_DESC=		CJK support
 CJK_RUN_DEPENDS=	html2text:textproc/html2text
 DBLATEX_DESC=		dblatex PDF renderer (experimental, requires TeXLive)
-DBLATEX_RUN_DEPENDS=	dblatex:textproc/dblatex \
+DBLATEX_RUN_DEPENDS=	dblatex:textproc/dblatex
 DBLATEX_USE=		TEX=xetex
 FOP_DESC=		FOP PDF renderer (requires Java)
 FOP_RUN_DEPENDS=	fop:textproc/fop \
