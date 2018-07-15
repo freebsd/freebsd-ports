@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	evolvotron
-PORTVERSION=	0.6.3
-PORTREVISION=	9
+DISTVERSION=	0.7.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -13,21 +12,21 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generative software that evolves images/textures/patterns
 
-LICENSE=	GPLv3+ # LICENSE file is GPLv2 though
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_powerpc64=	fails to link: evolvotron.o: undefined reference to boost::program_options::options_description::options_description
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-USES=		python qmake qt:4
-USE_QT=		corelib gui xml moc_build
+USES=		compiler:c++11-lib python qmake qt:5
+USE_QT=		core gui widgets xml buildtools_build
+USE_GL=		gl
 QMAKE_ARGS=	VERSION_NUMBER="${PORTVERSION}"
 QMAKE_SOURCE_PATH=	${WRKSRC}/main.pro
-MAKE_JOBS_UNSAFE=	yes
+USE_CXXSTD=	c++11
 
-PORTDOCS=	NEWS README TODO USAGE evolvotron.html
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 INSTALLS_ICONS=	yes
 ICON_SIZES=	32x32 48x48 64x64 72x72 96x96 128x128
@@ -37,9 +36,7 @@ DESKTOP_ENTRIES="Evolvotron" "Interactive image generator" "${PORTNAME}" \
 
 OPTIONS_DEFINE=	DOCS
 
-.for i in libevolvotron libfunction
-CXXFLAGS+=	-include ${WRKSRC}/${i}/${i}_precompiled.h
-.endfor
+PORTDOCS=	NEWS README TODO USAGE evolvotron.html
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -64,6 +61,9 @@ do-install:
 	cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} ${m} \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/
 .endfor
+
+post-install: # delete static libs installed by mistake
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

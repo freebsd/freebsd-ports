@@ -1,8 +1,6 @@
 bin/evolvotron
 bin/evolvotron_mutate
 bin/evolvotron_render
-lib/libevolvotron.a
-lib/libfunction.a
 man/man1/evolvotron.1.gz
 man/man1/evolvotron_mutate.1.gz
 man/man1/evolvotron_render.1.gz
