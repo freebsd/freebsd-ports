@@ -61,7 +61,6 @@ man/man1/arm-elf-dlltool.1.gz
 man/man1/arm-elf-elfedit.1.gz
 man/man1/arm-elf-gprof.1.gz
 man/man1/arm-elf-ld.1.gz
-man/man1/arm-elf-nlmconv.1.gz
 man/man1/arm-elf-nm.1.gz
 man/man1/arm-elf-objcopy.1.gz
 man/man1/arm-elf-objdump.1.gz
