@@ -1,4 +1,4 @@
---- configure.ac.orig	2018-03-17 13:41:22 UTC
+--- configure.ac.orig	2018-07-15 15:12:12 UTC
 +++ configure.ac
 @@ -114,7 +114,6 @@ PKG_CHECK_MODULES(SHOTWELL, [
                               gstreamer-plugins-base-1.0 >= 1.0.0
