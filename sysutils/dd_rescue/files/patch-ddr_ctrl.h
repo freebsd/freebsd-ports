@@ -1,5 +1,5 @@
---- ddr_ctrl.h.orig	2014-06-29 00:49:05.000000000 +0900
-+++ ddr_ctrl.h	2014-06-29 00:49:52.000000000 +0900
+--- ddr_ctrl.h.orig	2016-12-28 22:37:15 UTC
++++ ddr_ctrl.h
 @@ -10,6 +10,8 @@
  #ifndef _DDR_CTRL_H
  #define _DDR_CTRL_H

@@ -1,6 +1,6 @@
---- pread64.h.orig	2014-06-29 00:37:49.000000000 +0900
-+++ pread64.h	2014-06-29 00:39:50.000000000 +0900
-@@ -94,7 +94,7 @@
+--- pread64.h.orig	2015-04-15 08:56:38 UTC
++++ pread64.h
+@@ -94,7 +94,7 @@ static inline ssize_t pread64(int fd, vo
  {
  	return pread(fd, buf, sz, off);
  }

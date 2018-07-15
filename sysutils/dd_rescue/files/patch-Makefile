@@ -1,28 +1,28 @@
---- Makefile.orig	2014-05-27 20:31:21.000000000 +0900
-+++ Makefile	2014-08-06 21:41:59.000000000 +0900
-@@ -6,10 +6,7 @@
- 
+--- Makefile.orig	2017-12-03 21:01:05 UTC
++++ Makefile
+@@ -7,10 +7,7 @@ VERSION = 1.99.8
  DESTDIR = 
+ SRCDIR = .
  
 -CC = gcc
 -RPM_OPT_FLAGS = -Os -Wall -g -D_FORTIFY_SOURCE=2
--CFLAGS = $(RPM_OPT_FLAGS) $(EXTRA_CFLAGS) -DHAVE_CONFIG_H
+-CFLAGS = $(RPM_OPT_FLAGS) $(EXTRA_CFLAGS) -DHAVE_CONFIG_H -I .
 -CFLAGS_OPT = $(CFLAGS) -O3
 +CFLAGS_OPT = $(CFLAGS) -DHAVE_CONFIG_H
  INSTALL = install
  INSTALLFLAGS = -s
  prefix = $(DESTDIR)/usr
-@@ -32,7 +29,7 @@
- LIB = lib
+@@ -34,7 +31,7 @@ LIB = lib
  LIBDIR = /usr/$(LIB)
  COMPILER = $(shell $(CC) --version | head -n1)
--DEFINES = -DVERSION=\"$(VERSION)\"  -D__COMPILER__="\"$(COMPILER)\"" # -DPLUGSEARCH="\"$(LIBDIR)\""
-+DEFINES = -DVERSION=\"$(VERSION)\"  -D__COMPILER__="\"$(COMPILER)\"" -DHAVE_CONFIG_H # -DPLUGSEARCH="\"$(LIBDIR)\""
+ ID = $(shell git describe --tags || cat REL-ID)
+-DEFINES = -DVERSION=\"$(VERSION)\"  -D__COMPILER__="\"$(COMPILER)\"" -DID=\"$(ID)\" # -DPLUGSEARCH="\"$(LIBDIR)\""
++DEFINES = -DVERSION=\"$(VERSION)\"  -D__COMPILER__="\"$(COMPILER)\"" -DID=\"$(ID)\" -DHAVE_CONFIG_H # -DPLUGSEARCH="\"$(LIBDIR)\""
  OUT = -o dd_rescue
- 
- LZOP = $(shell type -p lzop || type -P true)
-@@ -46,12 +43,6 @@
-   HAVE_LZO=0
+ PIC = -fPIC
+ PIE = -fPIE
+@@ -63,19 +60,13 @@ else
+   HAVE_OPENSSL=0
  endif
  
 -ifeq ($(CC),wcl386)
@@ -31,24 +31,32 @@
 -  OUT = ""
 -endif
 -
- HAVE_AVX2 := $(shell echo "" | $(CC) -mavx2 -xc - 2>&1 | grep unrecognized || echo 1)
- HAVE_SSE42 := $(shell echo "" | $(CC) -msse4.2 -xc - 2>&1 | grep unrecognized || echo 1)
+ MACH := $(shell uname -m | tr A-Z a-z | sed 's/i[3456]86/i386/')
  
-@@ -74,7 +65,7 @@
+ ISX86 := 0
+ ifeq ($(MACH),i386)
+   ISX86 := 1
  endif
- endif
- 
 -ifeq ($(MACH),x86_64)
 +ifeq ($(MACH),amd64)
- 	LIB = lib64
- 	OBJECTS2 = find_nonzero_sse2.o
- ifeq ($(HAVE_SSE42),1)
-@@ -180,7 +171,7 @@
- 	$(CC) $(CFLAGS) -DNO_LIBDL $(DEFINES) $< $(OUT) $(OBJECTS) $(OBJECTS2) $(LIBDIR)/libfallocate.a
+   ISX86 := 1
+   LIB = lib64
+ endif
+@@ -243,7 +234,7 @@ libddr_MD5.so: libddr_hash.so
+ 	ln -sf $< $@
  
- dd_rescue: dd_rescue.c $(HEADERS) $(OBJECTS) $(OBJECTS2)
--	$(CC) $(CFLAGS) $(DEFINES) $< $(OUT) $(OBJECTS) $(OBJECTS2) -ldl
-+	$(CC) $(CFLAGS) $(DEFINES) $< $(OUT) $(OBJECTS) $(OBJECTS2)
+ libddr_lzo.so: libddr_lzo.po
+-	$(CC) -shared -o $@ $^ -llzo2
++	$(CC) -shared -o $@ $^ $(EXTRA_LDFLAGS) -llzo2
  
- md5: md5.c md5.h hash.h config.h
- 	$(CC) $(CFLAGS_OPT) -DMD5_MAIN -o $@ $<
+ libddr_null.so: libddr_null.po
+ 	$(CC) -shared -o $@ $^
+@@ -306,7 +297,7 @@ libfalloc-static: $(SRCDIR)/dd_rescue.c 
+ 
+ # This is the default built
+ dd_rescue: $(SRCDIR)/dd_rescue.c $(DDR_HEADERS) $(OBJECTS) $(OBJECTS2)
+-	$(CC) $(CFLAGS) $(PIE) $(LDPIE) $(DEFINES) $< $(OUT) $(OBJECTS) $(OBJECTS2) -ldl $(EXTRA_LDFLAGS) $(RDYNAMIC)
++	$(CC) $(CFLAGS) $(PIE) $(LDPIE) $(DEFINES) $< $(OUT) $(OBJECTS) $(OBJECTS2) $(EXTRA_LDFLAGS) $(RDYNAMIC)
+ 
+ # Test programs 
+ md5: $(SRCDIR)/md5.c $(SRCDIR)/md5.h $(SRCDIR)/hash.h config.h
