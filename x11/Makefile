@@ -6,6 +6,7 @@
     SUBDIR += 3ddesktop
     SUBDIR += 9box
     SUBDIR += 9menu
+    SUBDIR += admiral
     SUBDIR += alacritty
     SUBDIR += alltray
     SUBDIR += alttab
