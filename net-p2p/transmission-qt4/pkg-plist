@@ -1,8 +1,0 @@
-bin/transmission-qt
-man/man1/transmission-qt.1.gz
-share/applications/transmission-qt.desktop
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README-qt4
-share/pixmaps/transmission-qt.png

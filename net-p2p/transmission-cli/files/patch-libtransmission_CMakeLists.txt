@@ -1,0 +1,11 @@
+--- libtransmission/CMakeLists.txt.orig	2018-07-10 05:34:13 UTC
++++ libtransmission/CMakeLists.txt
+@@ -281,7 +281,7 @@ if(ENABLE_TESTS)
+             set(${TP}_TEST_BASENAME "${T}")
+         endif()
+         add_executable(${TP} ${${TP}_TEST_BASENAME}-test.c ${${T}-test_ADD_SOURCES})
+-        target_link_libraries(${TP} ${TR_NAME} ${TR_NAME}-test)
++        target_link_libraries(${TP} ${TR_NAME} ${TR_NAME}-test ${DHT_LIBRARIES})
+         if(DEFINED ${T}-test_DEFINITIONS)
+             target_compile_definitions(${TP} PRIVATE ${${T}-test_DEFINITIONS})
+         endif()
