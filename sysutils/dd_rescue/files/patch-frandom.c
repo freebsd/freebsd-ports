@@ -1,5 +1,5 @@
---- frandom.c.orig	2013-01-27 02:43:19.000000000 +0900
-+++ frandom.c	2013-01-27 02:43:29.000000000 +0900
+--- frandom.c.orig	2016-12-28 21:17:50 UTC
++++ frandom.c
 @@ -16,7 +16,7 @@
  #include <stdlib.h>
  #include <stdio.h>
@@ -7,5 +7,5 @@
 -#include <asm/errno.h>
 +#include <sys/errno.h>
  #include <unistd.h>
- #include <time.h>
  
+ #ifdef HAVE_CONFIG_H

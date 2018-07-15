@@ -1,5 +1,9 @@
 bin/dd_rescue
+lib/libddr_crypt.so
 lib/libddr_hash.so
 lib/libddr_null.so
+lib/libddr_lzo.so
 man/man1/dd_rescue.1.gz
+man/man1/ddr_crypt.1.gz
+man/man1/ddr_lzo.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.dd_rescue

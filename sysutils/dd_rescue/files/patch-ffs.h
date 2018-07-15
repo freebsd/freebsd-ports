@@ -1,5 +1,5 @@
---- ffs.h.orig	2014-02-22 05:39:33.000000000 +0900
-+++ ffs.h	2014-08-13 22:46:51.000000000 +0900
+--- ffs.h.orig	2015-08-27 15:45:57 UTC
++++ ffs.h
 @@ -27,7 +27,15 @@
  #ifdef HAVE_ENDIAN_H
  #include <endian.h>
@@ -16,7 +16,7 @@
  
  #ifdef HAVE_FFS
  # define myffs(x) ffs(x)
-@@ -50,12 +58,9 @@
+@@ -54,12 +62,9 @@
  # define myffsl(x) myffsl_c(x)
  #endif
  
@@ -28,9 +28,9 @@
 -# error Need to define __WORDSIZE
 -#endif
  
- #ifndef HAVE_FFS
- /** Find first (lowest) bit set in word val, returns a val b/w 1 and __WORDSIZE, 0 if no bit is set */
-@@ -88,7 +93,7 @@
+ //#ifndef HAVE_FFS
+ #ifdef NEED_FFSL_C
+@@ -93,7 +98,7 @@ static int myffsl_c(unsigned long val)
  }
  #endif
  
@@ -39,9 +39,9 @@
  /** Find last (highest) bit set in word val, returns a val b/w __WORDSIZE and 1, 0 if no bit is set */
  static int myflsl(unsigned long val)
  {
-@@ -117,6 +122,8 @@
- 	}
+@@ -132,6 +137,8 @@ static int myflsl(unsigned long val)
  	return res;
+ #endif
  }
 +#else
 +# define myflsl(x) flsl(x)
