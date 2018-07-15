@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libskk
-DISTVERSION=	1.0.3
+DISTVERSION=	1.0.4
 CATEGORIES=	japanese
 
 MAINTAINER=	hiroto.kagotani@gmail.com
