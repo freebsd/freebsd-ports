@@ -1,25 +1,24 @@
 # $FreeBSD$
 
-CATEGORIES=	www net-p2p
+CATEGORIES=	www
 PKGNAMESUFFIX=	-web
 
-MAINTAINER=	crees@FreeBSD.org
-COMMENT=	Fast and lightweight WebUI for Transmission BitTorrent client
-
-DESCR=		${.CURDIR}/pkg-descr
-MASTERDIR=	${.CURDIR}/../../net-p2p/transmission-cli
-PLIST=		${NONEXISTENT}
-SLAVEPORT=	web
-
+USES=		cpe
+NO_ARCH=	yes
+NO_BUILD=	yes
 PORTDATA=	web
 
-NO_BUILD=	yes
+MASTERDIR=	${.CURDIR}/../../net-p2p/transmission-cli
+DESCR=		${.CURDIR}/pkg-descr
+PLIST=		${NONEXISTENT}
 
-post-extract:
-	@${FIND} ${WRKSRC}/web -name Makefile.* -delete
+SLAVEPORT=	web
 
-do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/web
-	(cd ${WRKSRC}/web && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/web)
+#post-extract:
+#	@${FIND} ${WRKSRC}/web \( -name '*.am' -o -name '*.in' \
+		-o -name '*.scss' \) -delete
+
+#do-install:
+#	( cd ${WRKSRC} && ${COPYTREE_SHARE} web ${STAGEDIR}${DATADIR} )
 
 .include "${MASTERDIR}/Makefile"

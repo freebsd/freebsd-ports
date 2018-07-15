@@ -2,8 +2,11 @@ bin/transmission-gtk
 man/man1/transmission-gtk.1.gz
 share/applications/transmission-gtk.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/rpc-spec.txt
+%%PORTDOCS%%%%DOCSDIR%%/send-email-when-torrent-done.sh
 share/icons/hicolor/16x16/apps/transmission.png
 share/icons/hicolor/22x22/apps/transmission.png
 share/icons/hicolor/24x24/apps/transmission.png
@@ -48,8 +51,8 @@ share/locale/gv/LC_MESSAGES/transmission-gtk.mo
 share/locale/he/LC_MESSAGES/transmission-gtk.mo
 share/locale/hi/LC_MESSAGES/transmission-gtk.mo
 share/locale/hr/LC_MESSAGES/transmission-gtk.mo
-share/locale/hy/LC_MESSAGES/transmission-gtk.mo
 share/locale/hu/LC_MESSAGES/transmission-gtk.mo
+share/locale/hy/LC_MESSAGES/transmission-gtk.mo
 share/locale/ia/LC_MESSAGES/transmission-gtk.mo
 share/locale/id/LC_MESSAGES/transmission-gtk.mo
 share/locale/is/LC_MESSAGES/transmission-gtk.mo
@@ -99,4 +102,3 @@ share/locale/uz/LC_MESSAGES/transmission-gtk.mo
 share/locale/vi/LC_MESSAGES/transmission-gtk.mo
 share/locale/zh_CN/LC_MESSAGES/transmission-gtk.mo
 share/locale/zh_TW/LC_MESSAGES/transmission-gtk.mo
-share/pixmaps/transmission.png

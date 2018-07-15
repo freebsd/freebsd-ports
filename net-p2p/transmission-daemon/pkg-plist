@@ -3,6 +3,9 @@ bin/transmission-remote
 man/man1/transmission-daemon.1.gz
 man/man1/transmission-remote.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/rpc-spec.txt
+%%PORTDOCS%%%%DOCSDIR%%/send-email-when-torrent-done.sh
 @dir %%ETCDIR%%/home

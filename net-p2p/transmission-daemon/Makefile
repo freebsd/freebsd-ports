@@ -2,28 +2,18 @@
 
 PKGNAMESUFFIX=	-daemon
 
-MAINTAINER=	crees@FreeBSD.org
-COMMENT=	Fast and lightweight daemon BitTorrent client
+USES=		ssl
+NLS_USES=	gettext-runtime:run
 
-RUN_DEPENDS=	${GEN_RUN_DEPENDS}
-
-DESCR=		${.CURDIR}/pkg-descr
-MASTERDIR=	${.CURDIR}/../transmission-cli
-PLIST=		${.CURDIR}/pkg-plist
-SLAVEPORT=	daemon
-PKGMESSAGE=	${.CURDIR}/pkg-message
-
-USE_RC_SUBR=	transmission
 USERS=		transmission
 GROUPS=		transmission
+USE_RC_SUBR=	transmission
 
-EXTRA_CONF_ARGS=--disable-cli \
-		--enable-daemon \
-		--without-gtk \
-		--disable-mac \
-		--disable-nls
+MASTERDIR=	${.CURDIR}/../transmission-cli
+DESCR=		${.CURDIR}/pkg-descr
+PKGMESSAGE=	${.CURDIR}/pkg-message
+PLIST=		${.CURDIR}/pkg-plist
 
-post-install:
-		${MKDIR} ${STAGEDIR}${ETCDIR}/home
+SLAVEPORT=	daemon
 
 .include "${MASTERDIR}/Makefile"
