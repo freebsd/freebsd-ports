@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tdfiglet
-PORTVERSION=	0.0.0.1
+PORTVERSION=	0.3
 CATEGORIES=	misc
 
 MAINTAINER=	zi@FreeBSD.org
@@ -13,11 +13,9 @@ ALL_TARGET=	default
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tat3r
-GH_TAGNAME=	b0860ce
-#GH_TAGNAME=	b0860ceca3f8d7fa9e3fa8180a0e491d06494afe
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,fonts,${DATADIR}," ${WRKSRC}/${PORTNAME}.c
+	@${REINPLACE_CMD} -Ee "s,^(FONTDIR := ).*,\1${DATADIR}," ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
