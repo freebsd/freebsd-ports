@@ -11,7 +11,7 @@ COMMENT=	Weather data visualization, GRIB file viewer
 
 LICENSE=	GPLv3
 
-BROKEN_FreeBSD_10=	g2clib/libg2c.a: could not read symbols: File format not recognized
+BROKEN_i386=	g2clib/libg2c.a: could not read symbols: File format not recognized
 
 FETCH_DEPENDS=	curl:ftp/curl
 LIB_DEPENDS=	libjasper.so:graphics/jasper \
