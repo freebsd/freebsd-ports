@@ -1,0 +1,83 @@
+commit 8ffab3ae0ea3
+Author: Karl Tomlinson <karlt+@karlt.net>
+Date:   Tue Jul 3 17:23:09 2018 +1200
+
+    Bug 1472925 - Keep a strong reference to MediaStreamGraph from GraphDriver. r=padenot, a=lizzard
+---
+ dom/media/GraphDriver.cpp      | 7 ++++---
+ dom/media/GraphDriver.h        | 6 ++----
+ dom/media/MediaStreamGraph.cpp | 3 ++-
+ 3 files changed, 8 insertions(+), 8 deletions(-)
+
+diff --git dom/media/GraphDriver.cpp dom/media/GraphDriver.cpp
+index fd003ac9dbc6a..197debf299582 100644
+--- dom/media/GraphDriver.cpp
++++ dom/media/GraphDriver.cpp
+@@ -179,7 +179,8 @@ class MediaStreamGraphInitThreadRunnable : public Runn
+   NS_IMETHOD Run() override
+   {
+     LOG(LogLevel::Debug,
+-        ("Starting a new system driver for graph %p", mDriver->mGraphImpl));
++        ("Starting a new system driver for graph %p",
++         mDriver->mGraphImpl.get()));
+ 
+     RefPtr<GraphDriver> previousDriver;
+     {
+@@ -217,7 +218,7 @@ void
+ ThreadedDriver::Start()
+ {
+   LOG(LogLevel::Debug,
+-      ("Starting thread for a SystemClockDriver  %p", mGraphImpl));
++      ("Starting thread for a SystemClockDriver  %p", mGraphImpl.get()));
+   Unused << NS_WARN_IF(mThread);
+   if (!mThread) { // Ensure we haven't already started it
+     nsCOMPtr<nsIRunnable> event = new MediaStreamGraphInitThreadRunnable(this);
+@@ -784,7 +785,7 @@ void
+ AudioCallbackDriver::Resume()
+ {
+   LOG(LogLevel::Debug,
+-      ("Resuming audio threads for MediaStreamGraph %p", mGraphImpl));
++      ("Resuming audio threads for MediaStreamGraph %p", mGraphImpl.get()));
+   if (cubeb_stream_start(mAudioStream) != CUBEB_OK) {
+     NS_WARNING("Could not start cubeb stream for MSG.");
+   }
+@@ -859,7 +860,7 @@ AudioCallbackDriver::Revive()
+   } else {
+     LOG(LogLevel::Debug,
+         ("Starting audio threads for MediaStreamGraph %p from a new thread.",
+-         mGraphImpl));
++         mGraphImpl.get()));
+     RefPtr<AsyncCubebTask> initEvent =
+       new AsyncCubebTask(this, AsyncCubebOperation::INIT);
+     initEvent->Dispatch();
+diff --git dom/media/GraphDriver.h dom/media/GraphDriver.h
+index 5c085dc36bff5..ca77b5752569f 100644
+--- dom/media/GraphDriver.h
++++ dom/media/GraphDriver.h
+@@ -211,10 +211,8 @@ protected:
+   // Time of the end of this graph iteration. This must be accessed while having
+   // the monitor.
+   GraphTime mIterationEnd;
+-  // The MediaStreamGraphImpl that owns this driver. This has a lifetime longer
+-  // than the driver, and will never be null. Hence, it can be accesed without
+-  // monitor.
+-  MediaStreamGraphImpl* mGraphImpl;
++  // The MediaStreamGraphImpl associated with this driver.
++  const RefPtr<MediaStreamGraphImpl> mGraphImpl;
+ 
+   // This is used on the main thread (during initialization), and the graph
+   // thread. No monitor needed because we know the graph thread does not run
+diff --git dom/media/MediaStreamGraph.cpp dom/media/MediaStreamGraph.cpp
+index a3c8b26c2663d..4e6175e0d9fed 100644
+--- dom/media/MediaStreamGraph.cpp
++++ dom/media/MediaStreamGraph.cpp
+@@ -3661,7 +3661,8 @@ MediaStreamGraphImpl::Destroy()
+   // First unregister from memory reporting.
+   UnregisterWeakMemoryReporter(this);
+ 
+-  // Clear the self reference which will destroy this instance.
++  // Clear the self reference which will destroy this instance if all
++  // associated GraphDrivers are destroyed.
+   mSelfRef = nullptr;
+ }
+ 
