@@ -1,6 +1,6 @@
---- src/core/cpufeatures.c.orig	2016-02-02 16:12:42 UTC
+--- src/core/cpufeatures.c.orig	2018-07-13 15:12:57 UTC
 +++ src/core/cpufeatures.c
-@@ -60,7 +60,7 @@ void getCPUFeatures(CPUFeatures *cpuFeat
+@@ -69,7 +69,7 @@ void getCPUFeatures(CPUFeatures *cpuFeatures) {
          }
      }
  }
@@ -13,21 +13,21 @@
  #endif
  }
  #else
--#error Do not know how to get CPU features.
+-#warning "Do not know how to get CPU features."
 +void getCPUFeatures(CPUFeatures *cpuFeatures) {
 +    memset(cpuFeatures, 0, sizeof(CPUFeatures));
 +
 +    cpuFeatures->can_run_vs = 1;
 +}
  #endif
---- src/core/cpufeatures.h.orig	2016-02-02 16:12:42 UTC
+--- src/core/cpufeatures.h.orig	2018-07-13 15:12:57 UTC
 +++ src/core/cpufeatures.h
-@@ -51,8 +51,6 @@ typedef struct CPUFeatures {
+@@ -59,8 +59,6 @@ typedef struct CPUFeatures {
      char efp_double;
      char dfp;
      char vsx;
 -#else
--#error No VS_TARGET_CPU_* defined/handled!
+-#warning "No VS_TARGET_CPU_* defined/handled!"
  #endif
  } CPUFeatures;
  
