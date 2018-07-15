@@ -1761,6 +1761,7 @@
     SUBDIR += uim-kde4
     SUBDIR += uim-m17nlib
     SUBDIR += uim-qt4
+    SUBDIR += uim-qt5
     SUBDIR += uml2svg
     SUBDIR += uncle
     SUBDIR += uncrustify

@@ -1,0 +1,6 @@
+bin/uim-chardict-qt5
+bin/uim-im-switcher-qt5
+bin/uim-pref-qt5
+bin/uim-toolbar-qt5
+%%QT_PLUGINDIR%%/platforminputcontexts/libuimplatforminputcontextplugin.so
+libexec/uim-candwin-qt5
