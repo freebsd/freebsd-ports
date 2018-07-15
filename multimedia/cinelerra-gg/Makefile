@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	cinelerra-gg
-DISTVERSION=	5.1-20180705
+DISTVERSION=	5.1-20180714
 DISTVERSIONSUFFIX=	-${REV:C/(.......).*/\1/}
-PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://git.cinelerra-cv.org/gitweb?p=goodguy/cinelerra.git;a=snapshot;h=${REV};sf=tgz;dummy=/ # tarballs are @ https://cinelerra-cv.org/five/pkgs/src/
 
@@ -28,6 +27,8 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgif.so:graphics/giflib \
+		libIex-2_2.so:graphics/ilmbase \
+		libIlmImf.so:graphics/OpenEXR \
 		libogg.so:audio/libogg \
 		libopenjp2.so:graphics/openjpeg \
 		libopus.so:audio/opus \
@@ -43,9 +44,9 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libx265.so:multimedia/x265
 RUN_DEPENDS=	bash:shells/bash
 
-EXTRA_PATCHES=	${BUILD_WRKSRC}/bsd.patch:-p1
+EXTRA_PATCHES=	${BUILD_WRKSRC}/blds/bsd.patch:-p1
 
-REV=		34dd3a28727fc230ba5abbed50766d671a2b8055 # git revision
+REV=		502b6f3b6fd04f6b01c6d70dcb81aa304dd0db1c # git revision
 
 USES=		autoreconf gettext-runtime gettext-tools gmake iconv:wchar_t jpeg localbase makeinfo shebangfix
 SHEBANG_GLOB=	*.sh *.bld
@@ -95,9 +96,6 @@ post-patch:
 	# correct the bash interpreter path
 	@cd ${CONFIGURE_WRKSRC}/cinelerra && ${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
 		../configure.ac bdcreate.C dvdcreate.C shbtnprefs.C
-
-post-install-LV2-on:
-	@${RMDIR} ${STAGEDIR}${DATADIR}/lv2
 
 do-configure: # configure needs bash
 	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/bash configure ${CONFIGURE_ARGS}
