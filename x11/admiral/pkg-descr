@@ -1,0 +1,21 @@
+Merge concurrent outputs for a status bar.
+
+Programs like lemonbar and i3bar have become popular in recent years, and with
+good reason. These programs read from standard input and then output what they
+receive on a status bar. For the most part, their output is identical to their
+input, but they accept some format strings which allow the user to specify
+things like colors, justification, and clickable areas.
+
+A typical status bar script looks something like this: a shell script, is used
+to collect and format the output of various commands. The main problem with this
+method is that it's rather difficult to handle timing correctly. A counter
+showing the number of outdated programs on the system can be updated less
+frequently than a clock.
+
+Admiral runs programs specified by the user and prints their output. It allows
+for a clear separation of different sections, which simplifies configuration.
+Each program is run in its own thread. This means that each section is updated
+independently of the other sections. It also means that if something fails, it
+fails independently of the other sections.
+
+WWW: https://github.com/sector-f/admiral
