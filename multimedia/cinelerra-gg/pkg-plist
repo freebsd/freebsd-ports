@@ -1250,3 +1250,4 @@ share/locale/zh/LC_MESSAGES/cin.mo
 share/pixmaps/cin.svg
 share/pixmaps/cin.xpm
 @dir lib/cin/plugins/picon/cinfinity
+@dir %%DATADIR%%/lv2
