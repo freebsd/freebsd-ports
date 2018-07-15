@@ -1,0 +1,11 @@
+--- configure.ac.orig	2018-07-15 08:54:28 UTC
++++ configure.ac
+@@ -15,7 +15,7 @@ AC_CONFIG_HEADERS([config.h])
+ AC_PROG_CC
+ AC_PROG_INSTALL
+ 
+-AX_CFLAGS_WARN_ALL
++#AX_CFLAGS_WARN_ALL
+ 
+ ## This PKG_CHECK_MODULES can be replaced by the following three
+ ## AC_SEARCH_LIBSs and the non-Cygwin setting of AM_LDFLAGS and
