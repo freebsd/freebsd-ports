@@ -1,7 +1,0 @@
---- config/sidekiq.yml.orig	2018-03-11 14:13:13 UTC
-+++ config/sidekiq.yml
-@@ -33,3 +33,4 @@
-   backup_cleanup_scheduler:
-     cron: '<%= Random.rand(0..59) %> <%= Random.rand(3..5) %> * * *'
-     class: Scheduler::BackupCleanupScheduler
-+:pidfile: /var/run/mastodon/mastodon_workers.pid

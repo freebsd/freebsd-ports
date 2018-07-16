@@ -1,6 +1,0 @@
-This implements a spell checker to Text::SpellChecker
-using ZConf::GUI.
-
-textspellchecker - Spell checker script.
-
-WWW: https://metacpan.org/release/Text-SpellChecker-GUI

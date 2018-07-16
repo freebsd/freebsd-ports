@@ -10331,3 +10331,21 @@ lang/gcc47|lang/gcc6|2018-07-15|Has expired: Unsupported by upstream. Use GCC 6 
 net-p2p/transmission-qt4|net-p2p/transmission-qt@qt4|2018-07-15|Moved into flavored version
 net-p2p/transmission-qt5|net-p2p/transmission-qt@qt5|2018-07-15|Moved into flavored version
 java/jaf||2018-07-16|Included in JRE since 1.6 version
+net/p5-ZConf-Bookmarks||2018-07-16|Has expired: Unmaintained
+net/p5-ZConf||2018-07-16|Has expired: Unmaintained
+textproc/p5-Text-SpellChecker-GUI||2018-07-16|Has expired: Unmaintained
+deskutils/p5-ZConf-Runner-GUI-GTK||2018-07-16|Has expired: Unmaintained
+deskutils/p5-ZConf-BGSet||2018-07-16|Has expired: Unmaintained
+deskutils/p5-ZConf-Runner||2018-07-16|Has expired: Unmaintained
+graphics/p5-Image-Size-FillFullSelect||2018-07-16|Has expired: Unmaintained
+graphics/p5-Imager-AverageGray||2018-07-16|Has expired: Unmaintained
+mail/p5-Mail-IMAPTalk-MailCache||2018-07-16|Has expired: Unmaintained
+mail/p5-ZConf-Mail||2018-07-16|Has expired: Unmaintained
+mail/p5-Mail-Cache||2018-07-16|Has expired: Unmaintained
+www/p5-ZConf-RSS||2018-07-16|Has expired: Unmaintained
+www/p5-ZConf-RSS-GUI-GTK||2018-07-16|Has expired: Unmaintained
+devel/p5-ZConf-GUI||2018-07-16|Has expired: Unmaintained
+net-im/mastodon||2018-07-16|Has expired: Breaks too frequently
+x11-fm/p5-PerlFM||2018-07-16|Has expired: Unmaintained
+astro/p5-ZConf-Weather||2018-07-16|Has expired: Unmaintained
+sysutils/p5-ZConf-Cron||2018-07-16|Has expired: Unmaintained

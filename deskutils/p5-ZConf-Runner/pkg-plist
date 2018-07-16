@@ -1,7 +1,0 @@
-bin/zcrunner
-%%SITE_PERL%%/ZConf/Runner.pm
-%%SITE_PERL%%/ZConf/Runner/GUI.pm
-%%SITE_PERL%%/ZConf/Runner/GUI/Curses.pm
-%%PERL5_MAN3%%/ZConf::Runner.3.gz
-%%PERL5_MAN3%%/ZConf::Runner::GUI.3.gz
-%%PERL5_MAN3%%/ZConf::Runner::GUI::Curses.3.gz

@@ -1,5 +1,0 @@
-bin/zbgset
-bin/zbgset-pt
-bin/zbgset-admin
-%%SITE_PERL%%/ZConf/BGSet.pm
-%%PERL5_MAN3%%/ZConf::BGSet.3.gz

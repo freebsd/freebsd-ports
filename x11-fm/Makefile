@@ -23,7 +23,6 @@
     SUBDIR += mucommander
     SUBDIR += nautilus
     SUBDIR += nemo
-    SUBDIR += p5-PerlFM
     SUBDIR += pcmanfm
     SUBDIR += pcmanfm-qt
     SUBDIR += pcmanfmqt-l10n

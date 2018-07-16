@@ -385,7 +385,6 @@
     SUBDIR += p5-Mail-Box-IMAP4-SSL
     SUBDIR += p5-Mail-Box-Parser-C
     SUBDIR += p5-Mail-Bulkmail
-    SUBDIR += p5-Mail-Cache
     SUBDIR += p5-Mail-CheckUser
     SUBDIR += p5-Mail-ClamAV
     SUBDIR += p5-Mail-DKIM
@@ -401,7 +400,6 @@
     SUBDIR += p5-Mail-Graph
     SUBDIR += p5-Mail-IMAPClient
     SUBDIR += p5-Mail-IMAPTalk
-    SUBDIR += p5-Mail-IMAPTalk-MailCache
     SUBDIR += p5-Mail-LMLM
     SUBDIR += p5-Mail-ListDetector
     SUBDIR += p5-Mail-MailStats
@@ -457,7 +455,6 @@
     SUBDIR += p5-URI-imaps
     SUBDIR += p5-WWW-GMail
     SUBDIR += p5-WWW-Hotmail
-    SUBDIR += p5-ZConf-Mail
     SUBDIR += p5-qpsmtpd
     SUBDIR += panda-cclient
     SUBDIR += panda-imap

@@ -1,8 +1,0 @@
-Mastodon is an alternative implementation of GNU social, a free,
-open-source social network.  It is a decentralized alternative to
-commercial platforms based on ActivityStreams, Webfinger, PubsubHubbub
-and Salmon.  The project focuses on creating a clean REST API and a good
-user interface.  Ruby on Rails is used for the back-end, while React.js
-and Redux are used for the dynamic front-end.
-
-WWW: https://github.com/tootsuite/mastodon

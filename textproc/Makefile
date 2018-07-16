@@ -947,7 +947,6 @@
     SUBDIR += p5-Text-SimpleTemplate
     SUBDIR += p5-Text-Soundex
     SUBDIR += p5-Text-SpellChecker
-    SUBDIR += p5-Text-SpellChecker-GUI
     SUBDIR += p5-Text-Striphigh
     SUBDIR += p5-Text-Table
     SUBDIR += p5-Text-Table-Manifold

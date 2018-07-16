@@ -1365,8 +1365,6 @@
     SUBDIR += p5-WebService-YouTube
     SUBDIR += p5-WordPress-XMLRPC
     SUBDIR += p5-Yahoo-Search
-    SUBDIR += p5-ZConf-RSS
-    SUBDIR += p5-ZConf-RSS-GUI-GTK
     SUBDIR += p5-chklinks
     SUBDIR += p5-jQuery-File-Upload
     SUBDIR += p5-libapreq2

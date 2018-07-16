@@ -1,6 +1,0 @@
-bin/textspellchecker
-bin/curses-textspellchecker
-%%PERL5_MAN3%%/Text::SpellChecker::GUI.3.gz
-%%PERL5_MAN3%%/Text::SpellChecker::GUI::Curses.3.gz
-%%SITE_PERL%%/Text/SpellChecker/GUI.pm
-%%SITE_PERL%%/Text/SpellChecker/GUI/Curses.pm
