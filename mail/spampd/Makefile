@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	spampd
-PORTVERSION=	2.42
-PORTREVISION=	2
+PORTVERSION=	2.51
 CATEGORIES=	mail perl5
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Spamassassin SMTP Proxy
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
 
 RUN_DEPENDS=	spamc:mail/spamassassin \
 		p5-Net-Server>=0:net/p5-Net-Server
