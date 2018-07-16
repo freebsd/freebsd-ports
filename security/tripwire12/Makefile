@@ -12,6 +12,8 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	File system security and verification program
 
 BROKEN=		unfetchable
+DEPRECATED=	unfetchable
+EXPIRATION_DATE=	2018-07-31
 NO_CDROM=	cannot be redistributed for more than the cost of duplication
 NO_PACKAGE=	requires local database to be built
 ONLY_FOR_ARCHS=	i386
