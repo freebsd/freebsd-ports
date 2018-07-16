@@ -1,3 +1,3 @@
-TIMESTAMP = 1508301522
-SHA256 (samtools-htslib-1.6_GH0.tar.gz) = 4215c9153c27603cbaaf542f2ec128c5e839380d6df6edd4dbf67955170740c6
-SIZE (samtools-htslib-1.6_GH0.tar.gz) = 1155672
+TIMESTAMP = 1528766078
+SHA256 (samtools-htslib-1.8_GH0.tar.gz) = ad52105c0f9ce6474c8f5d2f208b8e71982436ee1ca5225162932b08aff48b23
+SIZE (samtools-htslib-1.8_GH0.tar.gz) = 1262465
