@@ -11,6 +11,7 @@ COMMENT=	File duplicate detection CLI utility
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=	undefined reference to `_binary_man_dupd_start'
 NOT_FOR_ARCHS=	arm armv6 armv7 i386 mips powerpc
 NOT_FOR_ARCHS_REASON=	test fails on large files on 32-bit
 
