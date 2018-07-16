@@ -11,6 +11,9 @@ COMMENT=	Networking and Cryptography (NaCl) library
 
 LICENSE=	MIT
 
+DEPRECATED=	Obsoleted by update of www/gitlab-ce. Please use security/rubygem-rbnacl instead.
+EXPIRATION_DATE=	2018-07-31
+
 LIB_DEPENDS=	libsodium.so:security/libsodium
 BUILD_DEPENDS=	rubygem-bundler>=0:sysutils/rubygem-bundler
 RUN_DEPENDS=	rubygem-ffi>=0:devel/rubygem-ffi

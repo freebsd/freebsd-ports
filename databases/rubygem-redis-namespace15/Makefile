@@ -9,6 +9,9 @@ PKGNAMESUFFIX=	15
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Ruby client class for Redis with namespace support
 
+DEPRECATED=	Obsoleted by update of www/gitlab-ce. Please use databases/rubygem-redis-namespace instead.
+EXPIRATION_DATE=	2018-07-31
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
