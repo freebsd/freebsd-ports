@@ -5,7 +5,10 @@ bin/flam3-convert
 include/flam3.h
 include/isaac.h
 include/isaacs.h
-lib/libflam3.a
+include/rect.c
+lib/libflam3.so
+lib/libflam3.so.0
+lib/libflam3.so.0.0.0
 libdata/pkgconfig/flam3.pc
 share/flam3/flam3-palettes.xml
 man/man1/flam3-animate.1.gz
