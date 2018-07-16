@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	timescaledb
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	databases
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -12,38 +12,13 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:c11 cmake:outsource pgsql:9.6,10
-USE_LDCONFIG=	yes
 
 USE_GITHUB=	YES
 GH_ACCOUNT=	timescale
 
 WANT_PGSQL=	server
 
-SUB_LIST+=	PORTVERSION=${PORTVERSION}
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 SUB_FILES=	pkg-message
-
-PLIST_FILES=	lib/postgresql/timescaledb.so \
-		lib/postgresql/timescaledb-0.10.0.so \
-		share/postgresql/extension/timescaledb--0.1.0--0.10.0.sql \
-		share/postgresql/extension/timescaledb--0.2.0--0.10.0.sql \
-		share/postgresql/extension/timescaledb--0.3.0--0.10.0.sql \
-		share/postgresql/extension/timescaledb--0.4.0--0.10.0.sql \
-		share/postgresql/extension/timescaledb--0.4.1--0.10.0.sql \
-		share/postgresql/extension/timescaledb--0.4.2--0.10.0.sql \
-		share/postgresql/extension/timescaledb--0.5.0--0.10.0.sql \
-		share/postgresql/extension/timescaledb--0.6.0--0.10.0.sql \
-		share/postgresql/extension/timescaledb--0.6.1--0.10.0.sql \
-		share/postgresql/extension/timescaledb--0.7.0--0.10.0.sql \
-		share/postgresql/extension/timescaledb--0.7.1--0.10.0.sql \
-		share/postgresql/extension/timescaledb--0.8.0--0.10.0.sql \
-		share/postgresql/extension/timescaledb--0.9.0--0.10.0.sql \
-		share/postgresql/extension/timescaledb--0.9.1--0.10.0.sql \
-		share/postgresql/extension/timescaledb--0.9.2--0.10.0.sql \
-		share/postgresql/extension/timescaledb--0.10.0.sql \
-		share/postgresql/extension/timescaledb.control
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/timescaledb.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/timescaledb-${PORTVERSION}.so
 
 .include <bsd.port.mk>
