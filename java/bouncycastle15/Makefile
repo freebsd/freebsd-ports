@@ -3,6 +3,7 @@
 
 PORTNAME=	bouncycastle
 PORTVERSION=	1.60
+PORTREVISION=	1
 CATEGORIES=	java security
 MASTER_SITES=	http://www.bouncycastle.org/download/ \
 		http://polydistortion.net/bc/download/
@@ -14,11 +15,9 @@ COMMENT=	Cleanroom build of Java Cryptography Extensions
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${JAVALIBDIR}/activation.jar:java/jaf \
-		${JAVALIBDIR}/mail.jar:java/javamail \
+BUILD_DEPENDS=	${JAVALIBDIR}/mail.jar:java/javamail \
 		${JAVALIBDIR}/junit.jar:java/junit
-RUN_DEPENDS=	${JAVALIBDIR}/activation.jar:java/jaf \
-		${JAVALIBDIR}/mail.jar:java/javamail
+RUN_DEPENDS=	${JAVALIBDIR}/mail.jar:java/javamail
 
 OPTIONS_DEFINE=	DOCS ZIPSRC
 OPTIONS_DEFAULT=	ZIPSRC
