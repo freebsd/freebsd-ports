@@ -149,6 +149,8 @@
 %%WWWDIR%%/Aws/Crypto/MetadataStrategyInterface.php
 %%WWWDIR%%/Aws/DAX/DAXClient.php
 %%WWWDIR%%/Aws/DAX/Exception/DAXException.php
+%%WWWDIR%%/Aws/DLM/DLMClient.php
+%%WWWDIR%%/Aws/DLM/Exception/DLMException.php
 %%WWWDIR%%/Aws/DataPipeline/DataPipelineClient.php
 %%WWWDIR%%/Aws/DataPipeline/Exception/DataPipelineException.php
 %%WWWDIR%%/Aws/DatabaseMigrationService/DatabaseMigrationServiceClient.php
@@ -283,6 +285,8 @@
 %%WWWDIR%%/Aws/MTurk/MTurkClient.php
 %%WWWDIR%%/Aws/MachineLearning/Exception/MachineLearningException.php
 %%WWWDIR%%/Aws/MachineLearning/MachineLearningClient.php
+%%WWWDIR%%/Aws/Macie/Exception/MacieException.php
+%%WWWDIR%%/Aws/Macie/MacieClient.php
 %%WWWDIR%%/Aws/MarketplaceCommerceAnalytics/Exception/MarketplaceCommerceAnalyticsException.php
 %%WWWDIR%%/Aws/MarketplaceCommerceAnalytics/MarketplaceCommerceAnalyticsClient.php
 %%WWWDIR%%/Aws/MarketplaceEntitlementService/Exception/MarketplaceEntitlementServiceException.php
@@ -452,6 +456,7 @@
 %%WWWDIR%%/Aws/data/acm/2015-12-08/api-2.json.php
 %%WWWDIR%%/Aws/data/acm/2015-12-08/paginators-1.json.php
 %%WWWDIR%%/Aws/data/acm/2015-12-08/smoke.json.php
+%%WWWDIR%%/Aws/data/acm/2015-12-08/waiters-2.json.php
 %%WWWDIR%%/Aws/data/alexaforbusiness/2017-11-09/api-2.json.php
 %%WWWDIR%%/Aws/data/alexaforbusiness/2017-11-09/paginators-1.json.php
 %%WWWDIR%%/Aws/data/apigateway/2015-07-09/api-2.json.php
@@ -462,6 +467,7 @@
 %%WWWDIR%%/Aws/data/application-autoscaling/2016-02-06/smoke.json.php
 %%WWWDIR%%/Aws/data/appstream/2016-12-01/api-2.json.php
 %%WWWDIR%%/Aws/data/appstream/2016-12-01/paginators-1.json.php
+%%WWWDIR%%/Aws/data/appstream/2016-12-01/smoke.json.php
 %%WWWDIR%%/Aws/data/appstream/2016-12-01/waiters-2.json.php
 %%WWWDIR%%/Aws/data/appsync/2017-07-25/api-2.json.php
 %%WWWDIR%%/Aws/data/appsync/2017-07-25/paginators-1.json.php
@@ -483,6 +489,8 @@
 %%WWWDIR%%/Aws/data/cloud9/2017-09-23/paginators-1.json.php
 %%WWWDIR%%/Aws/data/clouddirectory/2016-05-10/api-2.json.php
 %%WWWDIR%%/Aws/data/clouddirectory/2016-05-10/paginators-1.json.php
+%%WWWDIR%%/Aws/data/clouddirectory/2017-01-11/api-2.json.php
+%%WWWDIR%%/Aws/data/clouddirectory/2017-01-11/paginators-1.json.php
 %%WWWDIR%%/Aws/data/cloudformation/2010-05-15/api-2.json.php
 %%WWWDIR%%/Aws/data/cloudformation/2010-05-15/paginators-1.json.php
 %%WWWDIR%%/Aws/data/cloudformation/2010-05-15/waiters-2.json.php
@@ -531,6 +539,7 @@
 %%WWWDIR%%/Aws/data/cloudtrail/2013-11-01/paginators-1.json.php
 %%WWWDIR%%/Aws/data/codebuild/2016-10-06/api-2.json.php
 %%WWWDIR%%/Aws/data/codebuild/2016-10-06/paginators-1.json.php
+%%WWWDIR%%/Aws/data/codebuild/2016-10-06/smoke.json.php
 %%WWWDIR%%/Aws/data/codecommit/2015-04-13/api-2.json.php
 %%WWWDIR%%/Aws/data/codecommit/2015-04-13/paginators-1.json.php
 %%WWWDIR%%/Aws/data/codecommit/2015-04-13/smoke.json.php
@@ -569,6 +578,8 @@
 %%WWWDIR%%/Aws/data/directconnect/2012-10-25/paginators-1.json.php
 %%WWWDIR%%/Aws/data/discovery/2015-11-01/api-2.json.php
 %%WWWDIR%%/Aws/data/discovery/2015-11-01/paginators-1.json.php
+%%WWWDIR%%/Aws/data/dlm/2018-01-12/api-2.json.php
+%%WWWDIR%%/Aws/data/dlm/2018-01-12/paginators-1.json.php
 %%WWWDIR%%/Aws/data/dms/2016-01-01/api-2.json.php
 %%WWWDIR%%/Aws/data/dms/2016-01-01/paginators-1.json.php
 %%WWWDIR%%/Aws/data/dms/2016-01-01/smoke.json.php
@@ -614,6 +625,7 @@
 %%WWWDIR%%/Aws/data/elasticbeanstalk/2010-12-01/smoke.json.php
 %%WWWDIR%%/Aws/data/elasticfilesystem/2015-02-01/api-2.json.php
 %%WWWDIR%%/Aws/data/elasticfilesystem/2015-02-01/paginators-1.json.php
+%%WWWDIR%%/Aws/data/elasticfilesystem/2015-02-01/smoke.json.php
 %%WWWDIR%%/Aws/data/elasticloadbalancing/2012-06-01/api-2.json.php
 %%WWWDIR%%/Aws/data/elasticloadbalancing/2012-06-01/paginators-1.json.php
 %%WWWDIR%%/Aws/data/elasticloadbalancing/2012-06-01/waiters-2.json.php
@@ -623,6 +635,7 @@
 %%WWWDIR%%/Aws/data/elasticloadbalancingv2/2015-12-01/waiters-2.json.php
 %%WWWDIR%%/Aws/data/elasticmapreduce/2009-03-31/api-2.json.php
 %%WWWDIR%%/Aws/data/elasticmapreduce/2009-03-31/paginators-1.json.php
+%%WWWDIR%%/Aws/data/elasticmapreduce/2009-03-31/smoke.json.php
 %%WWWDIR%%/Aws/data/elasticmapreduce/2009-03-31/waiters-2.json.php
 %%WWWDIR%%/Aws/data/elastictranscoder/2012-09-25/api-2.json.php
 %%WWWDIR%%/Aws/data/elastictranscoder/2012-09-25/paginators-1.json.php
@@ -704,6 +717,8 @@
 %%WWWDIR%%/Aws/data/machinelearning/2014-12-12/api-2.json.php
 %%WWWDIR%%/Aws/data/machinelearning/2014-12-12/paginators-1.json.php
 %%WWWDIR%%/Aws/data/machinelearning/2014-12-12/waiters-2.json.php
+%%WWWDIR%%/Aws/data/macie/2017-12-19/api-2.json.php
+%%WWWDIR%%/Aws/data/macie/2017-12-19/paginators-1.json.php
 %%WWWDIR%%/Aws/data/manifest.json.php
 %%WWWDIR%%/Aws/data/marketplacecommerceanalytics/2015-07-01/api-2.json.php
 %%WWWDIR%%/Aws/data/marketplacecommerceanalytics/2015-07-01/paginators-1.json.php
@@ -789,6 +804,7 @@
 %%WWWDIR%%/Aws/data/sagemaker/2017-07-24/waiters-2.json.php
 %%WWWDIR%%/Aws/data/secretsmanager/2017-10-17/api-2.json.php
 %%WWWDIR%%/Aws/data/secretsmanager/2017-10-17/paginators-1.json.php
+%%WWWDIR%%/Aws/data/secretsmanager/2017-10-17/smoke.json.php
 %%WWWDIR%%/Aws/data/serverlessrepo/2017-09-08/api-2.json.php
 %%WWWDIR%%/Aws/data/serverlessrepo/2017-09-08/paginators-1.json.php
 %%WWWDIR%%/Aws/data/servicecatalog/2015-12-10/api-2.json.php
