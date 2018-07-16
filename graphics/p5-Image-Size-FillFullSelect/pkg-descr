@@ -1,9 +1,0 @@
-Decides if the fill setting for an image should be either fill, in meaning the
-image should be resized to fix the screen, or full which means it should be
-scaled to fit the screen.
-
-use Image::Size::FillFullSelect;
-my $iffs = Image::Size::FillFullSelect->new();
-my $FFselection = $iffs->select("someImage.gif");
-
-WWW: https://metacpan.org/release/Image-Size-FillFullSelect

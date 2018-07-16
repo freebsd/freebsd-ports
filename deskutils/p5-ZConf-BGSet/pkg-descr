@@ -1,9 +1,0 @@
-A versitile background setter supporting random backgrounds
-that uses ZConf as the setting storage backend.
-
-zbgset - Background setter.
-zbgset-admin - Manages the settings.
-zbgset-pt - Automatically populate a path based on fill type
-    and average gray.
-
-WWW: https://metacpan.org/release/ZConf-BGSet

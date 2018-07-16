@@ -1,9 +1,0 @@
-bin/zcrss-addfeed
-bin/zcrss-admin
-bin/zcrss-browse
-bin/zcrss-get
-bin/zcrss-managetemplates
-%%SITE_PERL%%/ZConf/RSS.pm
-%%SITE_PERL%%/ZConf/RSS/GUI.pm
-%%PERL5_MAN3%%/ZConf::RSS.3.gz
-%%PERL5_MAN3%%/ZConf::RSS::GUI.3.gz

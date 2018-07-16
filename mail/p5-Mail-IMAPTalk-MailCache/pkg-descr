@@ -1,4 +1,0 @@
-This provides methods for caching mail information for
-Mail::IMAPTalk using Mail::Cache.
-
-WWW: https://metacpan.org/release/Mail-IMAPTalk-MailCache

@@ -3774,7 +3774,6 @@
     SUBDIR += p5-Xporter
     SUBDIR += p5-YAML-AppConfig
     SUBDIR += p5-Yada-Yada-Yada
-    SUBDIR += p5-ZConf-GUI
     SUBDIR += p5-ZML
     SUBDIR += p5-accessors
     SUBDIR += p5-accessors-fast

@@ -1,7 +1,0 @@
-This module implements various functions needed for making a ZConf backed mail
-cleint. It also currently includes two small utilities, listed below.
-
-zcgetmail - A getmail replacement using ZConf::Mail.
-zcmailaccount - Manages the accounts.
-
-WWW: https://metacpan.org/release/ZConf-Mail

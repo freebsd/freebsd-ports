@@ -1,9 +1,0 @@
-bin/zcgui-set
-bin/zcgui-lm
-bin/zcgui-la
-bin/zcgui-which
-bin/zcgui-get
-bin/zcgui-sux
-bin/zcgui-gux
-%%SITE_PERL%%/ZConf/GUI.pm
-%%PERL5_MAN3%%/ZConf::GUI.3.gz

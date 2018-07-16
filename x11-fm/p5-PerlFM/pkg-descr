@@ -1,6 +1,0 @@
-A basic file manager writen in Perl and using ZConf::Runner
-to figure out what todo with files and ZConf::Bookmark to
-store bookmarks.
-
-
-WWW: https://metacpan.org/release/PerlFM

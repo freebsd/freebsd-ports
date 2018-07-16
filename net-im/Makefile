@@ -86,7 +86,6 @@
     SUBDIR += licq-qt-gui
     SUBDIR += linux-telegram-desktop
     SUBDIR += loudmouth
-    SUBDIR += mastodon
     SUBDIR += matterircd
     SUBDIR += mbpurple
     SUBDIR += mcabber

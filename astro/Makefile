@@ -77,7 +77,6 @@
     SUBDIR += p5-Misc-Quality
     SUBDIR += p5-Starlink-AST
     SUBDIR += p5-Weather-Underground
-    SUBDIR += p5-ZConf-Weather
     SUBDIR += phoon
     SUBDIR += planets
     SUBDIR += pp3

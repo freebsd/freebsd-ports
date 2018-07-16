@@ -1,4 +1,0 @@
-bin/zcgetmail
-bin/zcmailaccount
-%%SITE_PERL%%/ZConf/Mail.pm
-%%PERL5_MAN3%%/ZConf::Mail.3.gz
