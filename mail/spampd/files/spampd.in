@@ -9,7 +9,11 @@
 #
 # spampd_enable (bool):		Set it to "YES" to enable spampd
 #				Default is "NO"
-# spampd_flags
+# spampd_flags:			Flags to spampd
+# spampd_extra_flags:		Additional flags, so one can
+#                               keep defaults in spampd_flags, e.g.
+#                               spampd_extra_flags="--sef" to add
+#                               "X-Envelope-From" header.
 
 . /etc/rc.subr
 
@@ -23,7 +27,7 @@ rcvar=spampd_enable
 load_rc_config $name
 
 command="%%PREFIX%%/sbin/$name"
-command_args="--pid=${spampd_pidfile}"
+command_args="--setsid --pid=${spampd_pidfile} ${spampd_extra_flags}"
 command_interpreter="%%PERL%% -T"
 pidfile="${spampd_pidfile}"
 
