@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	stress-ng
-PORTVERSION=	0.09.32
+PORTVERSION=	0.09.33
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://kernel.ubuntu.com/~cking/tarballs/stress-ng/
 
@@ -20,7 +20,7 @@ PLIST_FILES=	bin/stress-ng man/man1/stress-ng.1.gz
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200056 && ${ARCH} == i386
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1102000 && ${ARCH} == i386
 BROKEN=	undefined reference to '__atomic_fetch_add_8'
 .endif
 
