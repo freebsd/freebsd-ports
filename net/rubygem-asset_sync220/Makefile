@@ -11,6 +11,9 @@ COMMENT=	Synchronizes Assets between Rails and S3
 
 LICENSE=	MIT
 
+DEPRECATED=	Obsoleted by update of www/gitlab-ce. Please use net/rubygem-asset_sync instead.
+EXPIRATION_DATE=	2018-07-31
+
 RUN_DEPENDS=	rubygem-activemodel4>=4.1.0:databases/rubygem-activemodel4 \
 		rubygem-fog-core>=0:devel/rubygem-fog-core \
 		rubygem-mime-types>=2.99:misc/rubygem-mime-types \

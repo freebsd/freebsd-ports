@@ -12,6 +12,9 @@ COMMENT=	Entities - a simple Facade to use with your models and API
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Obsoleted by update of www/gitlab-ce. Please use devel/rubygem-grape-entity instead.
+EXPIRATION_DATE=	2018-07-31
+
 RUN_DEPENDS=	rubygem-activesupport4>=4.0:devel/rubygem-activesupport4 \
 		rubygem-multi_json>=1.3.2:devel/rubygem-multi_json
 
