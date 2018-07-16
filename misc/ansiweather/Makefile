@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansiweather
-PORTVERSION=	1.12.0
+PORTVERSION=	1.13.0
 CATEGORIES=	misc
 
 MAINTAINER=	dbaio@FreeBSD.org
