@@ -1,8 +1,7 @@
 --- PATCHES.orig	2018-05-19 20:39:17 UTC
 +++ PATCHES
-@@ -1 +1,2 @@
+@@ -0,0 +1 @@
 +patch-1.5.6.cb.reverse_reply.2
- patch-1.5.4.cd.ifdef.1
 --- init.h.orig	2018-05-19 20:37:42 UTC
 +++ init.h
 @@ -2748,6 +2748,13 @@
