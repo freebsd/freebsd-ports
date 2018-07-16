@@ -1,3 +1,3 @@
-TIMESTAMP = 1497433366
-SHA256 (dgoulet-torsocks-v2.2.0_GH0.tar.gz) = 36216a1e30f47fa0e5be84761e0d72133196c8a042716017da56e9439338c87d
-SIZE (dgoulet-torsocks-v2.2.0_GH0.tar.gz) = 115269
+TIMESTAMP = 1530802906
+SHA256 (torsocks-2.2.0.tar.xz) = 29e8c8cefa677dfb493ea6f2449576a7a9abebd221547037f9381d9ed44bd92f
+SIZE (torsocks-2.2.0.tar.xz) = 309916
