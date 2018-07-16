@@ -3,6 +3,7 @@
 
 PORTNAME=	apache-jmeter
 PORTVERSION=	2.11
+PORTREVISION=	1
 CATEGORIES=	www benchmarks java
 MASTER_SITES=	APACHE/jmeter/binaries
 
@@ -14,7 +15,7 @@ LICENSE=	APACHE20
 # These are JAR-files installed by other ports. The list should keep
 # growing until all Java applications install just their own JARs -- not
 # the 3rd-party ones:
-RUN_DEPENDS=	${JAVALIBDIR}/activation.jar:java/jaf	\
+RUN_DEPENDS=	\
 		${JAVALIBDIR}/avalon-framework.jar:devel/avalon-framework	\
 		${JAVALIBDIR}/commons-codec.jar:java/jakarta-commons-codec	\
 		${JAVALIBDIR}/commons-collections.jar:java/jakarta-commons-collections	\

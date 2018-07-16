@@ -10330,3 +10330,4 @@ net/wpa_gui|net/wpa_supplicant_gui|2018-07-12|Rename to wpa_supplicant_gui for e
 lang/gcc47|lang/gcc6|2018-07-15|Has expired: Unsupported by upstream. Use GCC 6 or newer instead.
 net-p2p/transmission-qt4|net-p2p/transmission-qt@qt4|2018-07-15|Moved into flavored version
 net-p2p/transmission-qt5|net-p2p/transmission-qt@qt5|2018-07-15|Moved into flavored version
+java/jaf||2018-07-16|Included in JRE since 1.6 version

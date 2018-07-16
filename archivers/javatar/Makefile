@@ -3,14 +3,12 @@
 
 PORTNAME=	javatar
 PORTVERSION=	2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers java
 MASTER_SITES=	http://www.gjt.org/download/time/java/tar/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java tar archive I/O package
-
-RUN_DEPENDS=	${JAVALIBDIR}/activation.jar:java/jaf
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
