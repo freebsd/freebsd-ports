@@ -2262,6 +2262,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/jka-compr.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/json.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/json.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/jsonrpc.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/jsonrpc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/kermit.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/kermit.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/kmacro.el.gz
@@ -2760,12 +2762,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/soap-inspect.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/socks.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/socks.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/starttls.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/starttls.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/telnet.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/telnet.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/tls.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/net/tls.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-adb.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-adb.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-archive.el.gz
@@ -2928,10 +2926,14 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/s-region.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/sregex.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/sregex.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/starttls.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/starttls.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/sup-mouse.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/sup-mouse.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/terminal.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/terminal.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/tls.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/tls.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/tpu-edt.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/tpu-edt.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/tpu-extras.el.gz
