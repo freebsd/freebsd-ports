@@ -13,7 +13,7 @@ COMMENT=	Easy way to make any app work through Tor
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
 
-USES=		alias autoreconf gmake libtool tar:xz
+USES=		alias gmake libtool tar:xz
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
