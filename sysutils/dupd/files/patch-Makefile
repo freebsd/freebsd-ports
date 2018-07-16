@@ -1,19 +1,39 @@
---- Makefile.orig	2017-02-26 10:05:09 UTC
+--- Makefile.orig	2018-03-21 18:56:42 UTC
 +++ Makefile
-@@ -20,7 +20,6 @@
- TOP:=$(shell  pwd)
+@@ -21,7 +21,7 @@ TOP:=$(shell  pwd)
  BUILD_OS:=$(shell uname)
+ BUILD_MACHINE:=$(shell uname -m)
  VERSION:=$(shell cat version)
 -GITHASH:=$(shell git rev-parse HEAD)
++GITHASH:=
  OPTGEN:=$(shell which optgen | head -c1)
  
  ifeq ($(LCOV_OUTPUT_DIR),)
-@@ -98,7 +97,7 @@ $(BUILD)/%.o: src/%.c src/%.h
- 		 -c $< -o $@
+@@ -66,14 +66,12 @@ USAGE=$(BUILD)/usage.o
+ USAGE_ARCH=-O elf64-x86-64 -B i386
+ endif
  
- $(BUILD)/usage.o: man/dupd
--	$(OBJCP) -I binary $(USAGE_ARCH) man/dupd $(BUILD)/usage.o
-+	ld -r -b binary -o $(BUILD)/usage.o man/dupd
+-ifeq ($(BUILD_OS),FreeBSD)
+-INC+=-I/usr/local/include
+-LIB+=-L/usr/local/lib
++INC+=-I${PREFIX}/include
++LIB+=-L${PREFIX}/lib
+ OBJCP=objcopy
+-CFLAGS=-m64 -DDIRENT_HAS_TYPE
+-USAGE=$(BUILD)/usage.o
++CFLAGS+=-DDIRENT_HAS_TYPE -D_FILE_OFFSET_BITS=64
++USAGE=
+ USAGE_ARCH=-O elf64-x86-64 -B i386
+-endif
  
- clean:
- 	rm -f dupd
+ ifeq ($(BUILD_OS),SunOS)
+ CC=gcc
+@@ -92,7 +90,7 @@ endif
+ ifeq ($(DEBUG),1)
+ OPT=-g $(DEBUGOPT)
+ else
+-OPT=-O3
++#OPT=-O3
+ endif
+ 
+ 

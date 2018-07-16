@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dupd
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	tom@hur.st
@@ -11,23 +11,21 @@ COMMENT=	File duplicate detection CLI utility
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+NOT_FOR_ARCHS=	arm armv6 armv7 i386 mips powerpc
+NOT_FOR_ARCHS_REASON=	test fails on large files on 32-bit
+
+USES=	gmake perl5 ssl sqlite:3
+USE_PERL5=	test
+
+TEST_DEPENDS+=	bash:shells/bash
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	jvirkki
-GH_PROJECT=	libbloom:libbloom
-GH_TAGNAME=	v1.4:libbloom
 
-USES=	gmake ssl sqlite:3
-LLD_UNSAFE=	yes
+ALL_TARGET=	dupd
+TEST_TARGET=	test
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
-
-MAKE_ARGS=	LIB="-L${PREFIX}/lib" INC="-I${WRKSRC_libbloom} -I${PREFIX}/include" \
-		LIBBLOOM_LIB="${WRKSRC_libbloom}/build" USAGE="${WRKSRC}/build/usage.o" \
-		DIRENT_HAS_TYPE=1 GITHASH=c25a635e1d27ebf5759875a7ff907d8eec7f5be9
-
-do-build:
-	(cd ${WRKSRC_libbloom} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${WRKSRC_libbloom}/build/libbloom.a MM=-DGRR)
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS})
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
