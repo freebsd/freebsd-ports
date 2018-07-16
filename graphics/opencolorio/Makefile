@@ -37,13 +37,6 @@ CMAKE_ARGS+=	-DOCIO_USE_SSE:BOOL=ON
 CMAKE_ARGS+=	-DOCIO_USE_SSE:BOOL=OFF
 .endif
 
-BROKEN_aarch64=		Does not compile: error: use of undeclared identifier __builtin_ia32_emms
-BROKEN_armv6=		Does not compile: error: use of undeclared identifier __builtin_ia32_emms
-BROKEN_armv7=		Does not compile: error: use of undeclared identifier __builtin_ia32_emms
-BROKEN_mips64=		Does not compile: error: unrecognized command line option -msse2
-BROKEN_powerpc64=	Does not compile: error: unrecognized command line option -msse2
-BROKEN_sparc64=		Does not compile: error: unrecognized command line option -msse2
-
 .include <bsd.port.options.mk>
 
 .if defined(OCIO_SLAVE) && ${OCIO_SLAVE} == tools
