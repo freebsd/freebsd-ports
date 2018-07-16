@@ -2,12 +2,11 @@
 
 PORTNAME=	qtkeychain
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
-PORTREVISION=	1
+DISTVERSION=	0.9.0
 CATEGORIES=	security
 PKGNAMESUFFIX=	-${FLAVOR}
 
-MAINTAINER=	6yearold@gmail.com
+MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Platform independent Qt API for storing passwords
 
 LICENSE=	BSD2CLAUSE
