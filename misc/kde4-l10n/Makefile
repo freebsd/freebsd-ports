@@ -29,7 +29,6 @@ pt_BR_PORT=	portuguese/kde4-l10n-pt_BR
 pt_PORT=	portuguese/kde4-l10n
 ru_PORT=	russian/kde4-l10n
 uk_PORT=	ukrainian/kde4-l10n
-vi_PORT=	vietnamese/kde4-l10n
 zh_CN_PORT=	chinese/kde4-l10n-zh_CN
 zh_TW_PORT=	chinese/kde4-l10n-zh_TW
 

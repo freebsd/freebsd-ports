@@ -26,7 +26,6 @@ pt_BR_CATEGORY=	portuguese
 pt_CATEGORY=	portuguese
 ru_CATEGORY=	russian
 uk_CATEGORY=	ukrainian
-vi_CATEGORY=	vietnamese
 
 en_GB_aspell_PORT_PREFIX=	en-
 en_GB_aspell_DETECT_PREFIX=	en-
