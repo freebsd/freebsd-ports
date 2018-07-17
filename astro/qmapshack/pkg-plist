@@ -4,6 +4,7 @@ bin/qmt_map2jnx
 bin/qmt_rgb2pct
 man/man1/qmapshack.1.gz
 man/man1/qmaptool.1.gz
+man/man1/qmt_map2jnx.1.gz
 man/man1/qmt_rgb2pct.1.gz
 share/applications/qmapshack.desktop
 share/applications/qmaptool.desktop
@@ -51,5 +52,6 @@ share/qmt_rgb2pct/translations/qmt_rgb2pct_de.qm
 %%DATADIR%%/translations/qmapshack_de.qm
 %%DATADIR%%/translations/qmapshack_es.qm
 %%DATADIR%%/translations/qmapshack_fr.qm
+%%DATADIR%%/translations/qmapshack_it.qm
 %%DATADIR%%/translations/qmapshack_nl.qm
 %%DATADIR%%/translations/qmapshack_ru.qm
