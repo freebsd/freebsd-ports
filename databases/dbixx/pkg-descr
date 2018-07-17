@@ -1,0 +1,7 @@
+DbiXX SQL connectivity library is a C++ wrapper for LibDBI C library. It
+provides an object oriented, C++ friendly, exception safe interface to execute
+SQL queries in a safe manner.
+
+It is licensed under LGPL v2.1.
+
+WWW: http://cppcms.com/wikipp/en/page/ref_dbixx
