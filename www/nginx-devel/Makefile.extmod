@@ -166,10 +166,8 @@ HTTP_UPSTREAM_FAIR_GH_TUPLE=		cryptofuture:nginx-upstream-fair:b5be36f:upstreamf
 HTTP_UPSTREAM_FAIR_VARS=		DSO_EXTMODS+=upstreamfair
 
 HTTP_UPSTREAM_STICKY_IMPLIES=		HTTP_SSL
-HTTP_UPSTREAM_STICKY_MASTER_SITES=	https://bitbucket.org/nginx-goodies/nginx-sticky-module-ng/get/:upstreamsticky
-HTTP_UPSTREAM_STICKY_DISTFILES=		08a395c66e42.tar.gz:upstreamsticky
-HTTP_UPSTREAM_STICKY_CONFIGURE_ON=	--add-module=${WRKDIR}/nginx-goodies-nginx-sticky-module-ng-08a395c66e42/
-HTTP_UPSTREAM_STICKY_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_sticky_misc.c
+HTTP_UPSTREAM_STICKY_GH_TUPLE=          thomsonreuters:nginx-sticky-module-ng:0d58565:upstreamsticky
+HTTP_UPSTREAM_STICKY_CONFIGURE_ON=      --add-module=${WRKSRC_upstreamsticky}
 
 HTTP_VIDEO_THUMBEXTRACTOR_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 					libavcodec.so:multimedia/ffmpeg \
