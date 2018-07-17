@@ -6,7 +6,7 @@
 # continue to be used and eventually be removed from mirrors.
 
 GCC_BRANCH=		6
-GCC_POINT=		5.0
+GCC_POINT=		4.1
 GCC_VERSION=		${GCC_BRANCH}.${GCC_POINT}
 SNAPSHOT=		20180516
 BUILD_RELEASE=		no
