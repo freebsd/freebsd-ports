@@ -2,13 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	harfbuzz
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.4
 PORTREVISION?=	0
 CATEGORIES=	print
 MASTER_SITES=	http://www.freedesktop.org/software/harfbuzz/release/
-
-PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES=	20a318d06aca.patch:-p1 2aae617a84f4.patch:-p1
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	OpenType text shaping engine
@@ -25,7 +22,7 @@ CONFIGURE_ARGS=	--with-graphite2 --with-gobject=yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-PLIST_SUB+=	LIBVER=0.10800.3
+PLIST_SUB+=	LIBVER=0.10800.4
 
 HARFBUZZ_SLAVE?=	no
 
