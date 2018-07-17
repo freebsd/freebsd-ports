@@ -6,7 +6,7 @@ PORTVERSION=	2.2.1
 CATEGORIES=	net
 MASTER_SITES=	SF/urlget/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ndowens.fbsd@yandex.com
 COMMENT=	Lightweight and full-featured graphical download manager
 
 LICENSE=	LGPL21
