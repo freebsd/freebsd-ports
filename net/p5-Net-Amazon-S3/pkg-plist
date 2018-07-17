@@ -1,11 +1,9 @@
 bin/s3cl
-%%SITE_PERL%%/Net/Amazon/S3.pm
 %%SITE_PERL%%/Net/Amazon/S3/Bucket.pm
-%%SITE_PERL%%/Net/Amazon/S3/Client.pm
 %%SITE_PERL%%/Net/Amazon/S3/Client/Bucket.pm
 %%SITE_PERL%%/Net/Amazon/S3/Client/Object.pm
+%%SITE_PERL%%/Net/Amazon/S3/Client.pm
 %%SITE_PERL%%/Net/Amazon/S3/HTTPRequest.pm
-%%SITE_PERL%%/Net/Amazon/S3/Request.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/AbortMultipartUpload.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/CompleteMultipartUpload.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/CreateBucket.pm
@@ -15,8 +13,8 @@ bin/s3cl
 %%SITE_PERL%%/Net/Amazon/S3/Request/DeleteObject.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/GetBucketAccessControl.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/GetBucketLocationConstraint.pm
-%%SITE_PERL%%/Net/Amazon/S3/Request/GetObject.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/GetObjectAccessControl.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request/GetObject.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/InitiateMultipartUpload.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/ListAllMyBuckets.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/ListBucket.pm
@@ -25,6 +23,13 @@ bin/s3cl
 %%SITE_PERL%%/Net/Amazon/S3/Request/PutPart.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/SetBucketAccessControl.pm
 %%SITE_PERL%%/Net/Amazon/S3/Request/SetObjectAccessControl.pm
+%%SITE_PERL%%/Net/Amazon/S3/Request.pm
+%%SITE_PERL%%/Net/Amazon/S3/Role/Bucket.pm
+%%SITE_PERL%%/Net/Amazon/S3/Signature/V2.pm
+%%SITE_PERL%%/Net/Amazon/S3/Signature/V4Implementation.pm
+%%SITE_PERL%%/Net/Amazon/S3/Signature/V4.pm
+%%SITE_PERL%%/Net/Amazon/S3/Signature.pm
+%%SITE_PERL%%/Net/Amazon/S3.pm
 %%PERL5_MAN3%%/Net::Amazon::S3.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Bucket.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Client.3.gz
@@ -51,4 +56,9 @@ bin/s3cl
 %%PERL5_MAN3%%/Net::Amazon::S3::Request::PutPart.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Request::SetBucketAccessControl.3.gz
 %%PERL5_MAN3%%/Net::Amazon::S3::Request::SetObjectAccessControl.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Role::Bucket.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Signature.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Signature::V2.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Signature::V4.3.gz
+%%PERL5_MAN3%%/Net::Amazon::S3::Signature::V4Implementation.3.gz
 %%PERL5_MAN1%%/s3cl.1.gz
