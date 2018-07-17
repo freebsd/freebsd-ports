@@ -39,61 +39,62 @@ include/SuperCollider/plugin_interface/SC_World.h
 include/SuperCollider/plugin_interface/SC_sndfile_stub.h
 include/SuperCollider/plugin_interface/Unroll.h
 include/SuperCollider/plugin_interface/sc_msg_iter.h
+include/SuperCollider/server/ErrorMessage.hpp
 include/SuperCollider/server/SC_OSC_Commands.h
 include/SuperCollider/server/SC_WorldOptions.h
+%%SUPERNOVA%%lib/SuperCollider/plugins/BinaryOpUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/BinaryOpUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/ChaosUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/ChaosUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/DelayUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/DelayUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/DemandUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/DemandUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/DiskIO_UGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/DiskIO_UGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/DynNoiseUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/DynNoiseUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/FFT_UGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/FFT_UGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/FilterUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/FilterUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/GendynUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/GendynUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/GrainUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/GrainUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/IOUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/IOUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/LFUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/LFUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/ML_UGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/ML_UGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/MulAddUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/MulAddUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/NoiseUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/NoiseUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/OscUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/OscUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/PV_ThirdParty.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/PV_ThirdParty_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/PanUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/PanUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/PhysicalModelingUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/PhysicalModelingUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/ReverbUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/ReverbUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/TestUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/TestUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/TriggerUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/TriggerUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/UIUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/UIUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/UnaryOpUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/UnaryOpUGens_supernova.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/UnpackFFTUGens.so
+%%SUPERNOVA%%lib/SuperCollider/plugins/UnpackFFTUGens_supernova.so
 lib/libscsynth.so
 lib/libscsynth.so.1
 lib/libscsynth.so.1.0.0
-lib/SuperCollider/plugins/BinaryOpUGens.so
-lib/SuperCollider/plugins/ChaosUGens.so
-lib/SuperCollider/plugins/DelayUGens.so
-lib/SuperCollider/plugins/DemandUGens.so
-lib/SuperCollider/plugins/DiskIO_UGens.so
-lib/SuperCollider/plugins/DynNoiseUGens.so
-lib/SuperCollider/plugins/FFT_UGens.so
-lib/SuperCollider/plugins/FilterUGens.so
-lib/SuperCollider/plugins/GendynUGens.so
-lib/SuperCollider/plugins/GrainUGens.so
-lib/SuperCollider/plugins/IOUGens.so
-lib/SuperCollider/plugins/LFUGens.so
-lib/SuperCollider/plugins/ML_UGens.so
-lib/SuperCollider/plugins/MulAddUGens.so
-lib/SuperCollider/plugins/NoiseUGens.so
-lib/SuperCollider/plugins/OscUGens.so
-lib/SuperCollider/plugins/PV_ThirdParty.so
-lib/SuperCollider/plugins/PanUGens.so
-lib/SuperCollider/plugins/PhysicalModelingUGens.so
-lib/SuperCollider/plugins/ReverbUGens.so
-lib/SuperCollider/plugins/TestUGens.so
-lib/SuperCollider/plugins/TriggerUGens.so
-lib/SuperCollider/plugins/UIUGens.so
-lib/SuperCollider/plugins/UnaryOpUGens.so
-lib/SuperCollider/plugins/UnpackFFTUGens.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/BinaryOpUGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/ChaosUGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/DelayUGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/DemandUGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/DiskIO_UGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/DynNoiseUGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/FFT_UGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/FilterUGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/GendynUGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/GrainUGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/IOUGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/LFUGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/ML_UGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/MulAddUGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/NoiseUGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/OscUGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/PV_ThirdParty_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/PanUGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/PhysicalModelingUGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/ReverbUGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/TestUGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/TriggerUGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/UIUGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/UnaryOpUGens_supernova.so
-%%SUPERNOVA%%lib/SuperCollider/plugins/UnpackFFTUGens_supernova.so
 share/SuperCollider/AUTHORS
 share/SuperCollider/CHANGELOG.md
 share/SuperCollider/COPYING
@@ -292,6 +293,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/EZScroller.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/EZSlider.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/EZText.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/EmacsDocument.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Env.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/EnvGate.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/EnvGen.schelp
@@ -340,6 +342,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/FreqScopeView.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/FreqShift.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/FuncFilterPattern.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/FuncStream.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Function.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/FunctionDef.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/FunctionList.schelp
@@ -525,7 +528,6 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/MouseButton.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/MouseX.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/MouseY.schelp
-%%HELP%%share/SuperCollider/HelpSource/Classes/MovieView.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/MulAdd.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/MultiLevelIdentityDictionary.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/MultiOutUGen.schelp
@@ -581,6 +583,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/OnePole.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/OneZero.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Onsets.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/Operand.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Order.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/OrderedIdentitySet.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Osc.schelp
@@ -656,6 +659,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pbus.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pcauchy.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pchain.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/Pclump.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pclutch.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pcollect.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Pconst.schelp
@@ -801,8 +805,10 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/RangeSlider.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/RawArray.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/RawPointer.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/ReadableNodeIDAllocator.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/RecNodeProxy.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/RecordBuf.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/Recorder.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Rect.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Ref.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/RefCopy.schelp
@@ -830,9 +836,11 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/SOS.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/SampleDur.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/SampleRate.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/Sanitize.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Saw.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/ScIDE.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Scale.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/ScelDocument.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Scheduler.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Schmidt.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/ScopeOut.schelp
@@ -855,6 +863,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/ServerMeterView.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/ServerOptions.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/ServerQuit.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/ServerStatusWatcher.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/ServerTree.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Set.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/SetResetFF.schelp
@@ -925,8 +934,6 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/TWChoose.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/TWindex.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/TabFileReader.schelp
-%%HELP%%share/SuperCollider/HelpSource/Classes/TabletSlider2D.schelp
-%%HELP%%share/SuperCollider/HelpSource/Classes/TabletView.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Tap.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Task.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/TaskProxy.schelp
@@ -959,6 +966,8 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/UnaryOpStream.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/UnaryOpUGen.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/UniqueID.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/UnitTest.schelp
+%%HELP%%share/SuperCollider/HelpSource/Classes/UnitTestScript.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/UnixFILE.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Unpack1FFT.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/UnpackFFT.schelp
@@ -972,7 +981,6 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Classes/VarSaw.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Vibrato.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/View.schelp
-%%HELP%%share/SuperCollider/HelpSource/Classes/ViewRedirect.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Volume.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Warp.schelp
 %%HELP%%share/SuperCollider/HelpSource/Classes/Warp1.schelp
@@ -1010,11 +1018,13 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Guides/ListComprehensions.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/MIDI.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/More-On-Getting-Help.schelp
+%%HELP%%share/SuperCollider/HelpSource/Guides/MultiClient_Setups.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/Multichannel-Expansion.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/News-3_5.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/News-3_6.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/News-3_7.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/News-3_8.schelp
+%%HELP%%share/SuperCollider/HelpSource/Guides/News-3_9.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/News-Qt-GUI.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/NodeMessaging.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/Non-Realtime-Synthesis.schelp
@@ -1023,6 +1033,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Guides/Polymorphism.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/Randomness.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/SCIde.schelp
+%%HELP%%share/SuperCollider/HelpSource/Guides/Server-Guide.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/ServerTiming.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/Spawning.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/SuperColliderAU.schelp
@@ -1039,6 +1050,7 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Guides/WritingClasses.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/WritingHelp.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/WritingPrimitives.schelp
+%%HELP%%share/SuperCollider/HelpSource/Guides/WritingTests.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/WritingUGens.schelp
 %%HELP%%share/SuperCollider/HelpSource/Guides/s8kfFC-clientServerEn.png
 %%HELP%%share/SuperCollider/HelpSource/Guides/scEn.png
@@ -1046,8 +1058,6 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Guides/sc_ide_overview_scaled.png
 %%HELP%%share/SuperCollider/HelpSource/Guides/server.png
 %%HELP%%share/SuperCollider/HelpSource/Guides/standalones.schelp
-%%HELP%%share/SuperCollider/HelpSource/Guides/standalones_build.png
-%%HELP%%share/SuperCollider/HelpSource/Guides/standalones_rename.png
 %%HELP%%share/SuperCollider/HelpSource/Guides/structureEn.png
 %%HELP%%share/SuperCollider/HelpSource/Help.schelp
 %%HELP%%share/SuperCollider/HelpSource/OldHelpWrapper.html
@@ -1103,14 +1113,12 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Reference/StartupFile.schelp
 %%HELP%%share/SuperCollider/HelpSource/Reference/Syntax-Shortcuts.schelp
 %%HELP%%share/SuperCollider/HelpSource/Reference/Synth-Definition-File-Format.schelp
-%%HELP%%share/SuperCollider/HelpSource/Reference/UGen-doneActions.schelp
 %%HELP%%share/SuperCollider/HelpSource/Reference/asTarget.schelp
 %%HELP%%share/SuperCollider/HelpSource/Reference/default_group.schelp
 %%HELP%%share/SuperCollider/HelpSource/Reference/functions.png
 %%HELP%%share/SuperCollider/HelpSource/Reference/gui.schelp
 %%HELP%%share/SuperCollider/HelpSource/Reference/gui_alignments.schelp
 %%HELP%%share/SuperCollider/HelpSource/Reference/if.schelp
-%%HELP%%share/SuperCollider/HelpSource/Reference/initClass.schelp
 %%HELP%%share/SuperCollider/HelpSource/Reference/loop.schelp
 %%HELP%%share/SuperCollider/HelpSource/Reference/matchItem.schelp
 %%HELP%%share/SuperCollider/HelpSource/Reference/palette_color_groups.schelp
@@ -1233,6 +1241,8 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/Tutorials/Streams-Patterns-Events6.schelp
 %%HELP%%share/SuperCollider/HelpSource/Tutorials/Streams-Patterns-Events7.schelp
 %%HELP%%share/SuperCollider/HelpSource/Tutorials/Tutorial.schelp
+%%HELP%%share/SuperCollider/HelpSource/browse.css
+%%HELP%%share/SuperCollider/HelpSource/browse.js
 %%HELP%%share/SuperCollider/HelpSource/images/SC_icon.png
 %%HELP%%share/SuperCollider/HelpSource/images/Swamp.png
 %%HELP%%share/SuperCollider/HelpSource/images/duck_alpha.png
@@ -1240,21 +1250,22 @@ share/SuperCollider/HID_Support/hut/hut_8_ledpage.yaml
 %%HELP%%share/SuperCollider/HelpSource/images/icon.supercollider.png
 %%HELP%%share/SuperCollider/HelpSource/images/lastnode.png
 %%HELP%%share/SuperCollider/HelpSource/images/node.png
+%%HELP%%share/SuperCollider/HelpSource/images/plugin.png
+%%HELP%%share/SuperCollider/HelpSource/images/plugin.svg
 %%HELP%%share/SuperCollider/HelpSource/images/vduck2.jpg
 %%HELP%%share/SuperCollider/HelpSource/images/vline.png
 %%HELP%%share/SuperCollider/HelpSource/lang-sc.js
 %%HELP%%share/SuperCollider/HelpSource/prettify.js
 %%HELP%%share/SuperCollider/HelpSource/scdoc.css
 %%HELP%%share/SuperCollider/HelpSource/scdoc.js
+%%HELP%%share/SuperCollider/HelpSource/search.js
 %%HELP%%share/SuperCollider/HelpSource/syntax_colors.html
 share/SuperCollider/README.md
 share/SuperCollider/README_LINUX.md
-share/SuperCollider/SCClassLibrary/Common/Audio/AudioIn.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/BEQSuite.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/BasicOpsUGen.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/BufIO.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/Chaos.sc
-share/SuperCollider/SCClassLibrary/Common/Audio/CheckBadValues.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/Compander.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/DelayWr.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/Delays.sc
@@ -1275,7 +1286,6 @@ share/SuperCollider/SCClassLibrary/Common/Audio/Hilbert.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/IEnvGen.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/InOut.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/InfoUGens.sc
-share/SuperCollider/SCClassLibrary/Common/Audio/InterplEnv.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/Line.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/MacUGens.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/MachineListening.sc
@@ -1290,11 +1300,13 @@ share/SuperCollider/SCClassLibrary/Common/Audio/PhysicalModel.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/PitchShift.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/Pluck.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/Poll.sc
+share/SuperCollider/SCClassLibrary/Common/Audio/SoundIn.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/Splay.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/SynthDef.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/SynthDefOld.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/SynthDesc.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/SystemSynthDefs.sc
+share/SuperCollider/SCClassLibrary/Common/Audio/TestUGens.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/Trig.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/UGen.sc
 share/SuperCollider/SCClassLibrary/Common/Audio/canFreeSynth.sc
@@ -1334,15 +1346,13 @@ share/SuperCollider/SCClassLibrary/Common/Control/HIDMatchers.sc
 share/SuperCollider/SCClassLibrary/Common/Control/HID_API.sc
 share/SuperCollider/SCClassLibrary/Common/Control/MIDIOut.sc
 share/SuperCollider/SCClassLibrary/Common/Control/MIDIResponder.sc
-share/SuperCollider/SCClassLibrary/Common/Control/Module.sc
 share/SuperCollider/SCClassLibrary/Common/Control/NetAddr.sc
 share/SuperCollider/SCClassLibrary/Common/Control/Node.sc
 share/SuperCollider/SCClassLibrary/Common/Control/NodeControl.sc
 share/SuperCollider/SCClassLibrary/Common/Control/NodeWatcher.sc
-share/SuperCollider/SCClassLibrary/Common/Control/OSC.sc
 share/SuperCollider/SCClassLibrary/Common/Control/OSCBundle.sc
-share/SuperCollider/SCClassLibrary/Common/Control/OSCpathResponder.sc
-share/SuperCollider/SCClassLibrary/Common/Control/OSCresponder.sc
+share/SuperCollider/SCClassLibrary/Common/Control/ReadableNodeIDAllocator.sc
+share/SuperCollider/SCClassLibrary/Common/Control/Recorder.sc
 share/SuperCollider/SCClassLibrary/Common/Control/ResponseDefs.sc
 share/SuperCollider/SCClassLibrary/Common/Control/ScopeBuffer.sc
 share/SuperCollider/SCClassLibrary/Common/Control/Score.sc
@@ -1353,7 +1363,6 @@ share/SuperCollider/SCClassLibrary/Common/Control/SkipJack.sc
 share/SuperCollider/SCClassLibrary/Common/Control/Spec.sc
 share/SuperCollider/SCClassLibrary/Common/Control/SystemActions.sc
 share/SuperCollider/SCClassLibrary/Common/Control/Volume.sc
-share/SuperCollider/SCClassLibrary/Common/Control/WII.sc
 share/SuperCollider/SCClassLibrary/Common/Control/asBus.sc
 share/SuperCollider/SCClassLibrary/Common/Control/asDefName.sc
 share/SuperCollider/SCClassLibrary/Common/Control/asGroup.sc
@@ -1375,13 +1384,13 @@ share/SuperCollider/SCClassLibrary/Common/Core/Condition.sc
 share/SuperCollider/SCClassLibrary/Common/Core/Error.sc
 share/SuperCollider/SCClassLibrary/Common/Core/Finalize.sc
 share/SuperCollider/SCClassLibrary/Common/Core/Function.sc
-share/SuperCollider/SCClassLibrary/Common/Core/Infinitum.sc
 share/SuperCollider/SCClassLibrary/Common/Core/Kernel.sc
 share/SuperCollider/SCClassLibrary/Common/Core/LanguageConfig.sc
 share/SuperCollider/SCClassLibrary/Common/Core/Message.sc
 share/SuperCollider/SCClassLibrary/Common/Core/Model.sc
 share/SuperCollider/SCClassLibrary/Common/Core/Nil.sc
 share/SuperCollider/SCClassLibrary/Common/Core/Object.sc
+share/SuperCollider/SCClassLibrary/Common/Core/Operand.sc
 share/SuperCollider/SCClassLibrary/Common/Core/Ref.sc
 share/SuperCollider/SCClassLibrary/Common/Core/Semaphore.sc
 share/SuperCollider/SCClassLibrary/Common/Core/Symbol.sc
@@ -1444,7 +1453,6 @@ share/SuperCollider/SCClassLibrary/Common/GUI/PlusGUI/Control/ServerPlusGUI.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/PlusGUI/Control/SynthDescLibPlusGUI.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/PlusGUI/Control/SynthDescPlusGUI.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/PlusGUI/Control/UGen-scope.sc
-share/SuperCollider/SCClassLibrary/Common/GUI/PlusGUI/Control/WiiMoteGUI.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/PlusGUI/Control/scopeResponse.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/PlusGUI/Control/server-meter.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/PlusGUI/Control/server-scope.sc
@@ -1453,6 +1461,7 @@ share/SuperCollider/SCClassLibrary/Common/GUI/PlusGUI/Core/HistoryGui.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/PlusGUI/Core/KernelPlusGUI.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/PlusGUI/Core/NilPlusGUI.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/PlusGUI/Core/ObjectPlusGUI.sc
+share/SuperCollider/SCClassLibrary/Common/GUI/PlusGUI/Core/extGuiHistory.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/PlusGUI/Files/FilePlusGUI.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/PlusGUI/Math/PlotView.sc
 share/SuperCollider/SCClassLibrary/Common/GUI/backwardsCompatibility/GUI.sc
@@ -1513,10 +1522,11 @@ share/SuperCollider/SCClassLibrary/Common/Streams/Rest.sc
 share/SuperCollider/SCClassLibrary/Common/Streams/Stream.sc
 share/SuperCollider/SCClassLibrary/Common/Streams/TabFileReader.sc
 share/SuperCollider/SCClassLibrary/Common/Streams/TimePatterns.sc
+share/SuperCollider/SCClassLibrary/Common/UnitTesting/MixedBundleTester.sc
+share/SuperCollider/SCClassLibrary/Common/UnitTesting/UnitTest.sc
 share/SuperCollider/SCClassLibrary/Common/Unix/Unix.sc
 share/SuperCollider/SCClassLibrary/Common/Unix/UnixFILE.sc
 share/SuperCollider/SCClassLibrary/DefaultLibrary/Main.sc
-share/SuperCollider/SCClassLibrary/DefaultLibrary/MyLFSaw.sc
 share/SuperCollider/SCClassLibrary/DefaultLibrary/dumpFullInterface.sc
 share/SuperCollider/SCClassLibrary/DefaultLibrary/extNumber.sc
 share/SuperCollider/SCClassLibrary/JITLib/GUI/EnvirGui.sc
@@ -1554,26 +1564,36 @@ share/SuperCollider/SCClassLibrary/Platform/Platform.sc
 share/SuperCollider/SCClassLibrary/Platform/linux/LID.sc
 share/SuperCollider/SCClassLibrary/Platform/linux/LIDGui.sc
 share/SuperCollider/SCClassLibrary/Platform/linux/LinuxPlatform.sc
-share/SuperCollider/SCClassLibrary/Platform/linux/extMIDIOut.sc
+share/SuperCollider/SCClassLibrary/Platform/linux/SystemOverwrites/extMIDIOut.sc
 share/SuperCollider/SCClassLibrary/Platform/linux/extMain.sc
 share/SuperCollider/SCClassLibrary/SCDoc/Help.sc
 share/SuperCollider/SCClassLibrary/SCDoc/SCDoc.sc
 share/SuperCollider/SCClassLibrary/SCDoc/SCDocRenderer.sc
 share/SuperCollider/SCClassLibrary/SCDoc/TODO
 share/SuperCollider/SCClassLibrary/backwards_compatibility/PMOsc.sc
-share/SuperCollider/SCClassLibrary/deprecated/3.8/deprecated-3.8.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.9/AudioIn.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.9/Donce.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.9/HistoryGui.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.9/InterplEnv.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.9/JITLib.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.9/TDuty_old.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.9/WII.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.9/Watcher.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.9/WiiMoteGUI.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.9/deprecated-3.9.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.9/osc/OSCpathResponder.sc
+share/SuperCollider/SCClassLibrary/deprecated/3.9/osc/OSCresponder.sc
 share/SuperCollider/SCClassLibrary/scide_scqt/ScIDE.sc
 share/SuperCollider/examples/GUI examples/ColorBrowser.scd
 share/SuperCollider/examples/GUI examples/GUI_examples1.scd
 share/SuperCollider/examples/GUI examples/GUI_examples2.scd
 share/SuperCollider/examples/GUI examples/Nick's LetterGimmick.scd
-share/SuperCollider/examples/GUI examples/SCScope view x,y plot.scd
 share/SuperCollider/examples/GUI examples/ScopeExample.scd
 share/SuperCollider/examples/GUI examples/TwoMultiSlidersInOne.scd
 share/SuperCollider/examples/GUI examples/analog-drum-tuner.scd
 share/SuperCollider/examples/GUI examples/rotary hommage duchamp.scd
-share/SuperCollider/examples/GUI examples/scimage_animation.scd
 share/SuperCollider/examples/GUI examples/strike.scd
+share/SuperCollider/examples/GUI examples/x-y-plot.scd
 share/SuperCollider/examples/between_languages/fortran_supercollider.scd
 share/SuperCollider/examples/demonstrations/100 FM Synths.scd
 share/SuperCollider/examples/demonstrations/Atari2600.scd
@@ -1624,7 +1644,6 @@ share/SuperCollider/examples/research_and_tools/ASA.scd
 share/SuperCollider/examples/research_and_tools/Diamond.scd
 share/SuperCollider/examples/research_and_tools/SeminaireMusical.scd
 share/SuperCollider/examples/research_and_tools/ShepardTones SignalBuf.scd
-share/SuperCollider/examples/research_and_tools/html-help-color-fixer.scd
 share/SuperCollider/examples/research_and_tools/trochoid curve.scd
 share/SuperCollider/sounds/SinedPink.aiff
 share/SuperCollider/sounds/a11wlk01-44_1.aiff

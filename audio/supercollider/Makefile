@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	supercollider
-PORTVERSION=	3.8.0
-PORTREVISION=	6
+DISTVERSION=	3.9.3
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/supercollider/supercollider/releases/download/Version-${PORTVERSION}/
 DISTNAME=	SuperCollider-${PORTVERSION}-Source-linux
@@ -25,6 +24,7 @@ USES=		cmake:outsource iconv localbase pkgconfig qt:5 readline \
 USE_QT=		buildtools_build concurrent core gui linguisttools location \
 		network opengl printsupport qmake_build qml quick sensors \
 		sql webkit widgets
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/SuperCollider-Source
@@ -48,7 +48,6 @@ SUPERNOVA_DESC=	Build with supernova as optional audio synthesis server
 
 HELP_CMAKE_BOOL=	INSTALL_HELP
 SUPERNOVA_CMAKE_BOOL=	SUPERNOVA
-SUPERNOVA_USE=		XORG=x11
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|MATCHES "Linux" AND|MATCHES "FreeBSD" AND|' \
