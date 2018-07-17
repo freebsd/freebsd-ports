@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cgal
-PORTVERSION=	4.11.1
+PORTVERSION=	4.11.2
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/${PORTNAME:tu}/${PORTNAME}/releases/download/releases/${DISTNAME}/
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
