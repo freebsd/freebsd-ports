@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server programs for a replicated high-performance network file system
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2018-08-20
 
 LIB_DEPENDS=	liblwp.so:devel/lwp \
 		librpc2.so:devel/rpc2 \

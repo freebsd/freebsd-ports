@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Support libraries of science/ghemical port
 
 BROKEN=		fails to configure
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2018-08-20
 
 BUILD_DEPENDS=	obabel:science/openbabel \
 		intltool-update:textproc/intltool \

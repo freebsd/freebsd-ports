@@ -15,6 +15,8 @@ LICENSE=		BSD2CLAUSE
 LICENSE_FILE=		${WRKSRC}/COPYRIGHT
 
 BROKEN=			fails to build: cipher_aes128_ctr_nacl.c:36:10: 'crypto_stream_aes128ctr.h' file not found
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2018-08-20
 
 LIB_DEPENDS=		libjson-c.so:devel/json-c       \
 			libsodium.so:security/libsodium \

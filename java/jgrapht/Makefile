@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java package for mathematical graph-theory objects and algorithms
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2018-08-20
 
 USES=		dos2unix zip
 DOS2UNIX_GLOB=	*.xml *.java

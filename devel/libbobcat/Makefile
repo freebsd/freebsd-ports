@@ -14,6 +14,8 @@ COMMENT=	Brokken's Own Base Classes And Templates
 LICENSE=	GPLv3
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2018-08-20
 
 BUILD_DEPENDS=	icmake:devel/icmake \
 		yodl>=3.0:textproc/yodl

@@ -11,6 +11,8 @@ MAINTAINER=	tdir@tundraware.com
 COMMENT=	Advanced file directory display utility
 
 BROKEN=		license forbids modification, but the port cannot be used without it
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2018-08-20
 
 LICENSE=	TundraWare
 LICENSE_NAME=	TundraWare license

@@ -17,6 +17,8 @@ MAINTAINER=	dk@farm.org
 COMMENT=	Portable MSX/MSX2/MSX2+ Emulator
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2018-08-20
 
 USE_XORG=	x11 xext
 USES=		dos2unix gmake zip

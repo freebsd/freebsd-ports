@@ -11,6 +11,8 @@ COMMENT=	Visualisation tool for CHERI / BERI streamtraces
 
 LICENSE=	MIT
 
+DEPRECATED=	Depends on broken and expiring cheritrace-devel
+EXPIRATION_DATE=	2018-08-20
 BROKEN_aarch64=		does not compile: error: unexpected token in argument list
 
 USES=		gnustep

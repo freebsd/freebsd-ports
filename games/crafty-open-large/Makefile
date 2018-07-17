@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Large opening book for crafty
 
 BROKEN=		conflicts with games/crafty
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2018-08-20
 
 BUILD_DEPENDS=	crafty:games/crafty
 RUN_DEPENDS=	crafty:games/crafty

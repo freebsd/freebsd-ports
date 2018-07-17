@@ -13,6 +13,9 @@ COMMENT=	Computational chemistry software package
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	Depends on broken and expiring libghemical
+EXPIRATION_DATE=	2018-08-20
+
 LIB_DEPENDS=	libmopac7.so:biology/mopac \
 		libghemical.so:science/libghemical \
 		liboglappth.so:science/liboglappth \
