@@ -1,10 +1,10 @@
+bin/m17n-db
+bin/tbl2mim.awk
+libdata/pkgconfig/m17n-db.pc
 %%NLS%%share/locale/de/LC_MESSAGES/m17n-db.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/m17n-db.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/m17n-db.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/m17n-db.mo
-bin/m17n-db
-bin/tbl2mim.awk
-libdata/pkgconfig/m17n-db.pc
 share/m17n/8859-10.map
 share/m17n/8859-11.map
 share/m17n/8859-13.map
@@ -262,6 +262,7 @@ share/m17n/he-kbd.mim
 share/m17n/he.lnm
 share/m17n/hi-inscript.mim
 share/m17n/hi-itrans.mim
+share/m17n/hi-optitransv2.mim
 share/m17n/hi-phonetic.mim
 share/m17n/hi-remington.mim
 share/m17n/hi-typewriter.mim
@@ -269,6 +270,7 @@ share/m17n/hi-vedmata.mim
 share/m17n/hi.lnm
 share/m17n/hr-kbd.mim
 share/m17n/hr.lnm
+share/m17n/hu-rovas-post.mim
 share/m17n/hu.lnm
 share/m17n/hy-kbd.mim
 share/m17n/hy.lnm
@@ -302,6 +304,7 @@ share/m17n/icons/gu-phonetic.png
 share/m17n/icons/he-kbd.png
 share/m17n/icons/hi-inscript.png
 share/m17n/icons/hi-itrans.png
+share/m17n/icons/hi-optitransv2.png
 share/m17n/icons/hi-phonetic.png
 share/m17n/icons/hi-remington.png
 share/m17n/icons/hi-typewriter.png
@@ -318,6 +321,7 @@ share/m17n/icons/km-yannis.png
 share/m17n/icons/kn-inscript.png
 share/m17n/icons/kn-itrans.png
 share/m17n/icons/kn-kgp.png
+share/m17n/icons/kn-optitransv2.png
 share/m17n/icons/ko-han2.png
 share/m17n/icons/ko-romaja.png
 share/m17n/icons/latn-post.png
@@ -333,6 +337,7 @@ share/m17n/icons/ml-swanalekha.png
 share/m17n/icons/mr-inscript.png
 share/m17n/icons/my-kbd.png
 share/m17n/icons/ne-rom.png
+share/m17n/icons/ne-trad-ttf.png
 share/m17n/icons/ne-trad.png
 share/m17n/icons/or-inscript.png
 share/m17n/icons/or-itrans.png
@@ -418,6 +423,7 @@ share/m17n/km.lnm
 share/m17n/kn-inscript.mim
 share/m17n/kn-itrans.mim
 share/m17n/kn-kgp.mim
+share/m17n/kn-optitransv2.mim
 share/m17n/kn-typewriter.mim
 share/m17n/kn.lnm
 share/m17n/ko-han2.mim
@@ -443,6 +449,7 @@ share/m17n/mai-inscript.mim
 share/m17n/math-latex.mim
 share/m17n/mdb.dir
 share/m17n/mk.lnm
+share/m17n/ml-enhanced-inscript.mim
 share/m17n/ml-inscript.mim
 share/m17n/ml-itrans.mim
 share/m17n/ml-mozhi.mim
@@ -453,12 +460,16 @@ share/m17n/mn.lnm
 share/m17n/mr-inscript.mim
 share/m17n/mr-itrans.mim
 share/m17n/mr-phonetic.mim
+share/m17n/mr-remington.mim
+share/m17n/mr-typewriter.mim
 share/m17n/mr.lnm
 share/m17n/ms.lnm
 share/m17n/mt.lnm
 share/m17n/my-kbd.mim
 share/m17n/nb.lnm
+share/m17n/ne-rom-translit.mim
 share/m17n/ne-rom.mim
+share/m17n/ne-trad-ttf.mim
 share/m17n/ne-trad.mim
 share/m17n/nl.lnm
 share/m17n/nn.lnm
@@ -539,8 +550,8 @@ share/m17n/tig.lnm
 share/m17n/tr.lnm
 share/m17n/truetype.fst
 share/m17n/tt.lnm
-share/m17n/ua-kbd.mim
 share/m17n/ug-kbd.mim
+share/m17n/uk-kbd.mim
 share/m17n/uk.lnm
 share/m17n/unicode.mim
 share/m17n/ur-phonetic.mim

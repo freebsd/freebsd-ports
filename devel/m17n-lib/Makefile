@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	m17n-lib
-PORTVERSION=	1.7.0
-PORTREVISION=	3
+PORTVERSION=	1.8.0
 CATEGORIES=	devel textproc
 MASTER_SITES=	SAVANNAH/m17n
 
@@ -13,18 +12,17 @@ COMMENT=	Library for the multilingual text handling
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	bison:devel/bison \
-		m17n-db>=1.6.4:devel/m17n-db
+BUILD_DEPENDS=	m17n-db>=1.8.0:devel/m17n-db
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libfribidi.so:converters/fribidi \
 		libgd.so:graphics/gd \
 		libotf.so:print/libotf
-RUN_DEPENDS=	m17n-db>=1.6.4:devel/m17n-db
+RUN_DEPENDS=	m17n-db>=1.8.0:devel/m17n-db
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		autoreconf gettext-tools libtool pathfix pkgconfig
+USES=		autoreconf bison gettext-tools libtool pathfix pkgconfig
 USE_XORG=	ice sm x11 xaw xft xmu xrender xt
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
