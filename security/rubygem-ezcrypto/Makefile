@@ -3,6 +3,7 @@
 
 PORTNAME=	ezcrypto
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
