@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	proj
-PORTVERSION=	4.9.3
+PORTVERSION=	5.1.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/proj/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATUM_GRID_FILES}
@@ -14,7 +14,7 @@ COMMENT=	Cartographic Projections library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DATUM_GRID_FILES=	proj-datumgrid-1.6.zip
+DATUM_GRID_FILES=	proj-datumgrid-1.7.zip
 
 GNU_CONFIGURE=	yes
 USES=		compiler gmake libtool pathfix
@@ -27,10 +27,6 @@ INSTALL_TARGET=	install-strip
 
 post-extract:
 	@${TAR} -xf ${DISTDIR}/${DATUM_GRID_FILES} -C ${WRKSRC}/nad
-
-pre-configure:
-	@${REINPLACE_CMD} -e 's|gcc|${COMPILER_TYPE}|' \
-		${WRKSRC}/cmake/Proj4SystemInfo.cmake
 
 post-install:
 .for m in 1 3
