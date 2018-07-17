@@ -13,7 +13,6 @@
     SUBDIR += ansiweather
     SUBDIR += apparix
     SUBDIR += artikulate
-    SUBDIR += artikulate-kde4
     SUBDIR += asbutton
     SUBDIR += asr-manpages
     SUBDIR += astrolog
