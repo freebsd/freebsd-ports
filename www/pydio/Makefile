@@ -14,6 +14,8 @@ LICENSE=	AGPLv3
 PORTSCOUT=	limitw:1,even
 
 BROKEN=		It is wrong to have the entire files owned by www user
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2018-08-20
 
 NO_BUILD=	yes
 NO_ARCH=	yes

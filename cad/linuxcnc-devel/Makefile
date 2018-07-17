@@ -13,6 +13,8 @@ COMMENT=	Open Source CNC machine controller
 LICENSE=	GPLv2
 
 BROKEN=		wrong DEPENDS
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2018-08-20
 
 LIB_DEPENDS=	libBLT25.so:x11-toolkits/blt \
 		${PY_BOOST} \

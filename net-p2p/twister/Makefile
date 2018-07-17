@@ -19,6 +19,8 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs	\
 		libleveldb.so:databases/leveldb
 
 BROKEN=		fails to build with boost 1.66, see bug 224134
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2018-08-20
 BROKEN_powerpc64=	Does not build: /usr/bin/ld: final link failed: Bad value
 
 OPTIONS_DEFINE=	DOCS

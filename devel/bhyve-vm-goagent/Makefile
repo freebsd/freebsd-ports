@@ -12,6 +12,8 @@ COMMENT=	Agent developed in Go that runs inside guest vm
 LICENSE=	BSD2CLAUSE
 
 BROKEN=		attempts to download dependencies during build
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2018-08-20
 
 ONLY_FOR_ARCHS=	amd64 i386
 

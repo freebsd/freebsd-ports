@@ -17,6 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs
 
 BROKEN=		fails to build with boost 1.66, see bug 224186
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2018-08-20
 BROKEN_powerpc64=	fails to build: util.cpp: undefined reference to boost::program_options::to_internal
 
 OPTIONS_DEFINE=	X11 UPNP QRCODES DBUS

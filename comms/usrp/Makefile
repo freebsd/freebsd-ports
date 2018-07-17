@@ -11,6 +11,8 @@ MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Ettus Research USRP driver framework
 
 BROKEN=		fails to build with boost 1.66, see bug 224088
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2018-08-20
 
 LIB_DEPENDS=	${PY_BOOST}
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:devel/boost-libs \

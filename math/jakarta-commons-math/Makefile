@@ -19,6 +19,8 @@ COMMENT=	Java library of self-contained mathematics and statistics components
 LICENSE=	APACHE20
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 5 months
+EXPIRATION_DATE=	2018-08-20
 
 USE_ANT=	yes
 USE_JAVA=	yes
