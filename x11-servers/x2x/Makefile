@@ -11,7 +11,7 @@ COMMENT=	Program to link multiple X servers together
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf pkgconfig
+USES=		autoreconf gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	dottedmag
 GH_TAGNAME=	e62a535
