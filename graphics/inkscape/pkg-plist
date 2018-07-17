@@ -702,8 +702,6 @@ share/icons/hicolor/48x48/apps/inkscape.png
 %%DATADIR%%/tutorials/pixelart-dialog.ru.png
 %%DATADIR%%/tutorials/pixelart-dialog.sk.png
 %%DATADIR%%/tutorials/pixelart-dialog.zh_TW.png
-%%DATADIR%%/tutorials/potrace.be.png
-%%DATADIR%%/tutorials/potrace.ca.png
 %%DATADIR%%/tutorials/potrace.de.png
 %%DATADIR%%/tutorials/potrace.el.png
 %%DATADIR%%/tutorials/potrace.en.png
@@ -723,7 +721,6 @@ share/icons/hicolor/48x48/apps/inkscape.png
 %%DATADIR%%/tutorials/potrace.sk.png
 %%DATADIR%%/tutorials/potrace.sl.png
 %%DATADIR%%/tutorials/potrace.vi.png
-%%DATADIR%%/tutorials/potrace.zh_CN.png
 %%DATADIR%%/tutorials/potrace.zh_TW.png
 %%DATADIR%%/tutorials/tutorial-advanced.be.svg
 %%DATADIR%%/tutorials/tutorial-advanced.ca.svg
@@ -734,6 +731,7 @@ share/icons/hicolor/48x48/apps/inkscape.png
 %%DATADIR%%/tutorials/tutorial-advanced.eu.svg
 %%DATADIR%%/tutorials/tutorial-advanced.fa.svg
 %%DATADIR%%/tutorials/tutorial-advanced.fr.svg
+%%DATADIR%%/tutorials/tutorial-advanced.gl.svg
 %%DATADIR%%/tutorials/tutorial-advanced.hu.svg
 %%DATADIR%%/tutorials/tutorial-advanced.id.svg
 %%DATADIR%%/tutorials/tutorial-advanced.it.svg
@@ -788,6 +786,7 @@ share/icons/hicolor/48x48/apps/inkscape.png
 %%DATADIR%%/tutorials/tutorial-calligraphy.eu.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.fa.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.fr.svg
+%%DATADIR%%/tutorials/tutorial-calligraphy.gl.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.hu.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.id.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.ja.svg
@@ -809,6 +808,7 @@ share/icons/hicolor/48x48/apps/inkscape.png
 %%DATADIR%%/tutorials/tutorial-elements.eu.svg
 %%DATADIR%%/tutorials/tutorial-elements.fa.svg
 %%DATADIR%%/tutorials/tutorial-elements.fr.svg
+%%DATADIR%%/tutorials/tutorial-elements.gl.svg
 %%DATADIR%%/tutorials/tutorial-elements.hu.svg
 %%DATADIR%%/tutorials/tutorial-elements.id.svg
 %%DATADIR%%/tutorials/tutorial-elements.it.svg
@@ -826,6 +826,7 @@ share/icons/hicolor/48x48/apps/inkscape.png
 %%DATADIR%%/tutorials/tutorial-interpolate.de.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.el.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.fr.svg
+%%DATADIR%%/tutorials/tutorial-interpolate.gl.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.hu.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.ja.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.nl.svg
@@ -871,6 +872,7 @@ share/icons/hicolor/48x48/apps/inkscape.png
 %%DATADIR%%/tutorials/tutorial-tips.eu.svg
 %%DATADIR%%/tutorials/tutorial-tips.fa.svg
 %%DATADIR%%/tutorials/tutorial-tips.fr.svg
+%%DATADIR%%/tutorials/tutorial-tips.gl.svg
 %%DATADIR%%/tutorials/tutorial-tips.hu.svg
 %%DATADIR%%/tutorials/tutorial-tips.id.svg
 %%DATADIR%%/tutorials/tutorial-tips.it.svg
