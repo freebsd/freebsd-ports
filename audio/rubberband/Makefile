@@ -2,35 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	rubberband
-PORTVERSION=	1.8.1
-PORTREVISION=	2
+DISTVERSION=	1.8.2
 CATEGORIES=	audio
-MASTER_SITES=	http://breakfastquay.com/files/releases/23/
+MASTER_SITES=	https://breakfastquay.com/files/releases/
+
+PATCH_SITES=	https://github.com/breakfastquay/${PORTNAME}/commit/
+PATCHFILES=	03202fa4749c0b4e264f2115bb49028267e2a572.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Vamp audio analysis plugin SDK
+COMMENT=	Audio time-stretching and pitch-shifting library and utility program
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
+BUILD_DEPENDS=	ladspa>0:audio/ladspa \
+		lv2>0:audio/lv2
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libsamplerate.so:audio/libsamplerate \
 		libvamp-sdk.so:audio/vamp-plugin-sdk \
 		libfftw3.so:math/fftw3
-RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 
-USES=		gmake pathfix pkgconfig tar:bzip2
+USES=		gmake pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-
-CFLAGS+=	-I${LOCALBASE}/include
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rubberband
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librubberband.so.[0-9].*
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ladspa/*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/vamp/*.so
 
 .include <bsd.port.mk>
