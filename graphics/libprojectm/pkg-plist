@@ -1,13 +1,24 @@
+%%JACK%%bin/projectM-jack
+%%PULSEAUDIO%%bin/projectM-pulseaudio
+include/libprojectM-qt/qprojectm_mainwindow.hpp
 include/libprojectM/Common.hpp
 include/libprojectM/PCM.hpp
 include/libprojectM/dlldefs.h
 include/libprojectM/event.h
 include/libprojectM/fatal.h
 include/libprojectM/projectM.hpp
+lib/libprojectM-qt.so
+lib/libprojectM-qt.so.1
+lib/libprojectM-qt.so.1.10
 lib/libprojectM.so
 lib/libprojectM.so.2
-lib/libprojectM.so.2.00
+lib/libprojectM.so.2.1.0
+lib/libvisual-0.4/actor/libprojectM_libvisual.so
+libdata/pkgconfig/libprojectM-qt.pc
 libdata/pkgconfig/libprojectM.pc
+%%JACK%%share/applications/projectM-jack.desktop
+%%PULSEAUDIO%%share/applications/projectM-pulseaudio.desktop
+share/pixmaps/prjm16-transparent.svg
 @sample share/projectM/config.inp.sample
 share/projectM/fonts/Vera.ttf
 share/projectM/fonts/VeraMono.ttf

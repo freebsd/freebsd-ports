@@ -1,0 +1,20 @@
+--- src/libprojectM/CMakeLists.txt.orig	2018-07-17 06:57:00 UTC
++++ src/libprojectM/CMakeLists.txt
+@@ -199,7 +199,7 @@ if(BUILD_PROJECTM_STATIC)
+ 				${GLEW_LIBRARY}
+ 				${FTGL_LINK_TARGETS}
+ 				${MATH_LIBRARIES}
+-				dl
++				${CMAKE_DL_LIBS}
+ 				${OPENGL_LIBRARIES}
+ 	)
+ else(BUILD_PROJECTM_STATIC)
+@@ -210,7 +210,7 @@ else(BUILD_PROJECTM_STATIC)
+ 				${GLEW_LIBRARY}
+ 				${FTGL_LINK_TARGETS}
+ 				${MATH_LIBRARIES}
+-				dl
++				${CMAKE_DL_LIBS}
+ 				${OPENGL_LIBRARIES}
+ 	)
+ endif(BUILD_PROJECTM_STATIC)
