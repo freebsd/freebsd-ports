@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	lzma
-PORTVERSION=	16.04
+PORTVERSION=	18.05
 CATEGORIES=	archivers
 MASTER_SITES=	SF/sevenzip/LZMA%20SDK/
 DISTNAME=	lzma${PORTVERSION:S/.//g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ndowens.fbsd@yandex.com
 COMMENT=	High-ratio LZMA compressor
 
 CONFLICTS=	lzmautils-[0-9]* xz-[0-9]*
