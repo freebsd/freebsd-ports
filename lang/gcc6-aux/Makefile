@@ -4,6 +4,7 @@
 PORTNAME=	gcc6-aux
 PORTVERSION=	${SNAPSHOT}
 PORTREVISION=	${MAIN_PR}
+PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
 		LOCAL/marino:boot GCC/${MS_SUBDIR}
