@@ -1,6 +1,6 @@
---- configure.orig	2017-10-18 07:06:30 UTC
+--- configure.orig	2018-07-16 14:56:48 UTC
 +++ configure
-@@ -139,10 +139,14 @@ CXX_FLAGS=""
+@@ -138,10 +138,14 @@ CXX_FLAGS=""
  if [ "$OS" = "freebsd" ]; then
    INCCURL="-I/usr/local/include"
    LIBCURL="-L/usr/local/lib -lcurl"
@@ -15,7 +15,7 @@
  else
    INCCURL=""
    LIBCURL="-lcurl"
-@@ -437,6 +441,9 @@ check_gcc()
+@@ -436,6 +440,9 @@ check_gcc()
        elif [ $cc_maj -eq 4 -a $cc_min -eq 0 -a "$OS" = "darwin" ]; then
          log_success "found version $cc_ver"
        # gcc-4.0 is allowed for Darwin only
@@ -25,7 +25,7 @@
        elif [ $cc_maj -lt 4 \
               -o \( $cc_maj -eq 4 -a $cc_min -lt 4 -a "$OS" != "darwin" \) \
               -o \( $cc_maj -eq 4 -a $cc_min -lt 2 -a "$OS"  = "darwin" \) \
-@@ -1233,7 +1240,7 @@ extern "C" int main(void)
+@@ -1204,7 +1211,7 @@ extern "C" int main(void)
  #endif
  }
  EOF
@@ -34,7 +34,7 @@
      test_execute
    fi
  }
-@@ -1533,8 +1540,7 @@ EOF
+@@ -1504,8 +1511,7 @@ EOF
          if [ $? -eq 0 ]; then
            echo "(Qt5 from pkg-config)" >> $LOG
            FLGQT5=`pkg-config Qt5Core --cflags`
@@ -44,7 +44,16 @@
            INCQT5=`strip_I "$FLGQT5"`
            LIBDIR5=`pkg-config Qt5Core --variable=libdir`
            LIBQT5=`pkg-config Qt5Core --libs`
-@@ -1994,8 +2000,8 @@ EOF
+@@ -1644,7 +1650,7 @@ check_libopus()
+       fi
+       cat > $ODIR.tmp_src.cc << EOF
+ #include <cstdio>
+-#include <opus/opus.h>
++#include <opus.h>
+ extern "C" int main(void)
+ {
+   OpusEncoder *test;
+@@ -1976,8 +1982,8 @@ EOF
          echo "compiling the following source file:" >> $LOG
          cat $ODIR.tmp_src.cc >> $LOG
          echo "using the following command line:" >> $LOG
@@ -55,7 +64,7 @@
          if [ $? -eq 0 ]; then
            found=1
            break
-@@ -2468,7 +2474,7 @@ for option in "$@"; do
+@@ -2449,7 +2455,7 @@ for option in "$@"; do
      --with-openssl-dir=*)
        OPENSSLDIR=`echo $option | cut -d'=' -f2`
        INCCRYPTO="-I${OPENSSLDIR}/include"
@@ -64,16 +73,16 @@
        ;;
      --with-ow-dir=*)
        WATCOM=`echo $option | cut -d'=' -f2`
-@@ -2748,7 +2754,7 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
-   # don't check for yasm for the time beeing as 0.40 and 0.50 both have known bugs
-   # [ "$OS" != "darwin" ] && check_yasm
-   [ "$OS" != "darwin"  ] && check_xsltproc
--  [ "$OS" != "darwin"  ] && check_mkisofs
-+  [ "$OS" != "darwin" -a "$OS" != "freebsd" ] && check_mkisofs
- fi
- 
- # the libraries
-@@ -2803,13 +2809,20 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
+@@ -2763,7 +2769,7 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
+   check_ssl
+   check_curl
+   [ $WITH_LIBVPX -eq 1 ] && check_vpx
+-  check_libopus
++  [ $OSE -eq 0 -a "$OS" != "win" ] && check_libopus
+  [ "$OS" != "darwin"  ] && check_z
+   [ "$OS" != "darwin"  ] && check_png
+   [ $OSE -eq 0 -a "$OS" = "linux" ] && check_pam
+@@ -2784,13 +2790,20 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
    [ $WITH_PYTHON -eq 1 ] && check_python
    [ $WITH_JAVA   -eq 1 ] && check_java
  
@@ -95,8 +104,8 @@
   fi
  fi
  
-@@ -2826,14 +2839,6 @@ if [ "$OS" = "linux" ]; then
-     cnf_append "VBOX_WITH_ADDITION_DRIVERS" ""
+@@ -2806,14 +2819,6 @@ if [ "$OS" = "linux" ]; then
+     cnf_append "VBOX_WITHOUT_LINUX_TEST_BUILDS" "1"
    fi
    if [ $ONLY_ADDITIONS -eq 0 ]; then
 -    if [ $WITH_ALSA -eq 1 ]; then
