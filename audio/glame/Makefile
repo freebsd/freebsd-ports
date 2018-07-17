@@ -12,7 +12,7 @@ COMMENT=	Powerful, fast, stable, and easily extensible sound editor for GNOME
 
 BROKEN=		Does not build
 DEPRECATED=	Does not build
-DEPRECATION_DATE=	2018-04-27
+EXPIRATION_DATE=	2018-07-27
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 LIB_DEPENDS=	libmp3lame.so:audio/lame \
