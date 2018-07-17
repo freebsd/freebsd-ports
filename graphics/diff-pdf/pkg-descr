@@ -1,0 +1,9 @@
+A tool for visual comparison of two PDFs.
+
+It takes two PDF files as arguments.
+If given the --pdf option, output-diff produces a PDF file with
+visually highlighted differences.
+Another option is to compare the two files visually in a simple GUI,
+using the --view argument.
+
+WWW: http://vslavik.github.io/diff-pdf/
