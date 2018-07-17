@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymongo
-PORTVERSION=	3.7.0
+PORTVERSION=	3.7.1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,6 @@ LICENSE=	APACHE20
 CONFLICTS_INSTALL=	py[0-9][0-9]-pymongo28
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
