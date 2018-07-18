@@ -14,6 +14,8 @@ COMMENT=	Old school roguelike game
 WRKSRC_SUBDIR=	source
 
 USES=		ncurses tar:tbz2
+USE_CXXSTD=	gnu++98
+CXXFLAGS+=	-fsigned-char
 MAKEFILE=	makefile.bsd
 
 PORTDOCS=	buglist.txt crawl.txt
