@@ -1,6 +1,6 @@
---- build/build.xml.orig	2017-03-16 17:38:01 UTC
+--- build/build.xml.orig	2017-09-28 14:43:01 UTC
 +++ build/build.xml
-@@ -100,7 +100,7 @@
+@@ -102,7 +102,7 @@
    </fileset>
  
    <target name="build" description="Build Arduino.">
@@ -9,15 +9,15 @@
  
      <antcall target="generate-hourly-build-txt"/>
    </target>
-@@ -184,37 +184,9 @@
+@@ -186,37 +186,9 @@
      <echo file="${target.path}/lib/version.txt" message="${version}" />
  
      <antcall target="assemble-libraries" />
 -
 -    <!-- Add WiFi101 updater tool -->
 -    <antcall target="unzip">
--      <param name="archive_file" value="shared/WiFi101-Updater-ArduinoIDE-Plugin-0.9.0.zip" />
--      <param name="archive_url" value="https://github.com/arduino-libraries/WiFi101-FirmwareUpdater-Plugin/releases/download/v0.9.0/WiFi101-Updater-ArduinoIDE-Plugin-0.9.0.zip" />
+-      <param name="archive_file" value="shared/WiFi101-Updater-ArduinoIDE-Plugin-0.9.1.zip" />
+-      <param name="archive_url" value="https://github.com/arduino-libraries/WiFi101-FirmwareUpdater-Plugin/releases/download/v0.9.1/WiFi101-Updater-ArduinoIDE-Plugin-0.9.1.zip" />
 -      <param name="final_folder" value="${target.path}/tools/WiFi101" />
 -      <param name="dest_folder" value="${target.path}/tools/" />
 -    </antcall>
@@ -47,9 +47,9 @@
        <!-- Fix wrong permissions from zip file root folder -->
        <chmod perm="755" dir="${target.path}/reference/Galileo_help_files" />
        <chmod perm="755" dir="${target.path}/reference/Edison_help_files" />
-@@ -239,6 +211,9 @@
-     <download-library name="SD" version="1.1.1"/>
-     <download-library githubuser="Adafruit" name="Adafruit_CircuitPlayground" version="1.6.4"/>
+@@ -243,6 +215,9 @@
+     <download-library name="LiquidCrystal" version="1.0.7"/>
+     <download-library githubuser="Adafruit" name="Adafruit_CircuitPlayground" version="1.6.8" foldername="Adafruit_Circuit_Playground"/>
    </target>
 +  <target name="assemble-libraries-light" if="light_bundle">
 +    <mkdir dir="${target.path}/libraries" />
@@ -57,7 +57,7 @@
  
    <macrodef name="download-library">
      <attribute name="name"/>
-@@ -257,13 +232,17 @@
+@@ -262,13 +237,17 @@
    </macrodef>
  
    <!-- copy hardware folder -->
@@ -76,7 +76,7 @@
  
    <!-- - - - - - - - - -->
    <!-- Revision check  -->
-@@ -638,53 +617,15 @@
+@@ -642,53 +621,15 @@
    </target>
  
    <target name="linux-libastyle-x86" depends="linux-build" description="Download libastyle.so for x86/x64 arch">

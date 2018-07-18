@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	arduino
-PORTVERSION=	1.8.2
-PORTREVISION=	3
+PORTVERSION=	1.8.5
 CATEGORIES=	devel java
 PKGNAMESUFFIX=	18
 DIST_SUBDIR=	${PORTNAME}
@@ -23,20 +22,21 @@ RUN_DEPENDS=	arduino-builder:devel/arduino-builder \
 CONFLICTS=	arduino-[0-9]*
 
 BUNDLE_GH_ACCOUNT=	arduino-libraries
-BUNDLE_LIBRARIES=	Firmata:2.5.5:firmata \
+BUNDLE_LIBRARIES=	Firmata:2.5.6:firmata \
 			Bridge:1.6.3:bridge \
-			Robot_Control:1.0.2:robotcontrol \
-			Robot_Motor:1.0.2:robotmotor \
-			RobotIRremote:1.0.2:robotir \
+			Robot_Control:1.0.4:robotcontrol \
+			Robot_Motor:1.0.3:robotmotor \
+			RobotIRremote:2.0.0:robotir \
 			SpacebrewYun:1.0.1:spacebrew \
-			Temboo:1.1.8:temboo \
+			Temboo:1.2.1:temboo \
 			Esplora:1.0.4:esplora \
 			Mouse:1.0.1:mouse \
 			Keyboard:1.0.1:keyboard \
 			SD:1.1.1:sd \
-			Servo:1.1.2:servo
+			Servo:1.1.2:servo \
+			LiquidCrystal:1.0.7:liquidcrystal
 
-GH_TUPLE+=	${BUNDLE_GH_ACCOUNT}:WiFi101-FirmwareUpdater-Plugin:v0.9.0:wifi10/linux/work/tools/WiFi101
+GH_TUPLE+=	${BUNDLE_GH_ACCOUNT}:WiFi101-FirmwareUpdater-Plugin:v0.9.2:wifi10/linux/work/tools/WiFi101
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arduino
@@ -98,7 +98,7 @@ do-install:
 	(cd ${WRKSRC}/../ && ${COPYTREE_SHARE} "libraries" ${STAGEDIR}${PREFIX}/${PORTNAME} ${FIND_EXPR})
 	${RM} ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/libastylej.so
 	${RM} ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/liblistSerialsj.so
-	${RM} ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/jssc-2.8.0.jar
+	${RM} ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/jssc-2.8.0-arduino1.jar
 	${LN} -s ../../lib/jni/libastylej-arduino.so ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/libastylej.so
 	${LN} -s ../../lib/jni/liblistSerialsj.so ${STAGEDIR}${PREFIX}/${PORTNAME}/lib/liblistSerialsj.so
 	${INSTALL_SCRIPT} ${BUILD_DIR}/arduino ${STAGEDIR}${PREFIX}/${PORTNAME}
