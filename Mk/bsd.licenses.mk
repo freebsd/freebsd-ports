@@ -601,7 +601,7 @@ debug-license: check-license
 .if ${_LICENSE_PERMS:Mauto-accept}
 	@${ECHO_MSG} "===>  License allows being auto-accepted"
 .else
-	@${ECHO_MSG} "===>  License does not allows being auto-accepted"
+	@${ECHO_MSG} "===>  License requires manual intervention by the user to accept its terms"
 .endif
 
 
