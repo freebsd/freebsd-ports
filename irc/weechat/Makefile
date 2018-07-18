@@ -66,9 +66,11 @@ MANPAGES_CMAKE_ON=	-DMANDIR=${MANPREFIX}/man
 MANPAGES_BUILD_DEPENDS=	${LOCALBASE}/bin/asciidoctor:textproc/rubygem-asciidoctor
 NLS_USES=		gettext
 PERL_USES=		perl5
-PHP_USES=		php:embed
+PHP_USES=		php:build,embed
 PYTHON_USES=		python
 RUBY_USE=		ruby=yes
+TCL_CMAKE_ON=		-DTCL_VERSION:STRING="${TCL_VER}" \
+			-DTCL_TCLSH:PATH="${TCLSH}"
 TCL_USES=		tcl:85+
 
 .include <bsd.port.pre.mk>
