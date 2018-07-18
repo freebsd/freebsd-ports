@@ -2,37 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	ucarp
-PORTVERSION=	1.5.2
-PORTREVISION=	2
+PORTVERSION=	1.5.2.20171201
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/ucarp/ \
-		http://download.pureftpd.org/pub/ucarp/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Userlevel Common Address Redundancy Protocol
 
-USES=	tar:bzip2
+LICENSE=	ISC
+LICENSE_NAME=	ISC License
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-OPTIONS_DEFINE=	SCRIPTS
-OPTIONS_DEFAULT=SCRIPTS
-
-SCRIPTS_DESC=	Install scripts to manage virtual IP
-
-.include <bsd.port.options.mk>
-
+USES=		autoreconf libtool
+USE_GITHUB=	yes
+GH_ACCOUNT=	jedisct1
+GH_PROJECT=	UCarp
+GH_TAGNAME=	4f339d4
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-nls
 
 USE_RC_SUBR=	ucarp
 
 PLIST_FILES=	sbin/ucarp
 
-.if ${PORT_OPTIONS:MSCRIPTS}
-PLIST_FILES+=	sbin/ucarp-up \
-		sbin/ucarp-down
-post-install:
-		${INSTALL_SCRIPT} ${WRKSRC}/examples/bsd/vip-up.sh ${STAGEDIR}${PREFIX}/sbin/ucarp-up
-		${INSTALL_SCRIPT} ${WRKSRC}/examples/bsd/vip-down.sh ${STAGEDIR}${PREFIX}/sbin/ucarp-down
-.endif
+OPTIONS_DEFINE=		SCRIPTS
+OPTIONS_DEFAULT=	SCRIPTS
+
+SCRIPTS_DESC=		Install scripts to manage virtual IP
+SCRIPTS_PLIST_FILES=	sbin/ucarp-up sbin/ucarp-down
+
+pre-configure:
+	@${TOUCH} ${WRKSRC}/config.rpath ${WRKSRC}/ABOUT-NLS
+
+post-install-SCRIPTS-on:
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/bsd/vip-up.sh ${STAGEDIR}${PREFIX}/sbin/ucarp-up
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/bsd/vip-down.sh ${STAGEDIR}${PREFIX}/sbin/ucarp-down
 
 .include <bsd.port.mk>
