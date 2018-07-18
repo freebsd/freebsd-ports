@@ -1,0 +1,19 @@
+--- src/lib/chemistry/qc/cints/Makefile.orig	2018-07-17 20:59:43 UTC
++++ src/lib/chemistry/qc/cints/Makefile
+@@ -52,13 +52,13 @@ LIBOBJ := $(LIBOBJ:%.cc=%.$(OBJSUF))
+ 
+ LTLINKLIBOPTS += $(LDFLAGS)
+ ifeq ($(HAVE_LIBINT),yes)
+-  LTLINKLIBOPTS += -lint
++  LTLINKLIBOPTS += -L$(PREFIX)/lib -lint
+ endif
+ ifeq ($(HAVE_LIBR12),yes)
+-  LTLINKLIBOPTS += -lr12
++  LTLINKLIBOPTS +=  -L$(PREFIX)/lib -lr12
+ endif
+ ifeq ($(HAVE_LIBDERIV),yes)
+-  LTLINKLIBOPTS += -lderiv
++  LTLINKLIBOPTS +=  -L$(PREFIX)/lib -lderiv
+ endif
+ 
+ DISTFILES = $(TESTCSRC) $(INC) Makefile
