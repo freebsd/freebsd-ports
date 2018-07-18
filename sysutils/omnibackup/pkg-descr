@@ -1,0 +1,21 @@
+OmniBackup is a MIT-licensed, feature rich, pure Bash script which assists you
+in taking periocdic backups from OpenLDAP, PostgreSQL, MariaDB / MySQL and your
+filesystem. It also lets you extend OmniBackup by creating custom backup
+scenarios and defining your own customized scripts.
+
+Configuration in OmniBackup is done through JSON. It also provides plenty of
+compression and cryptography algorithms such as LZMA2, gzip and bzip2
+compression algorithms, and AES-128, AES-192 and AES-256 symmetric cryptography
+algorithms. Furthermore, it has support for RSA signatures to verify the backup
+origin and integrity on remote servers. MD4, MD5, MDC-2, RIPEMD160, SHA, SHA-1,
+SHA-224, SHA-256, SHA-384, SHA-512 and WHIRLPOOL are supported as backup
+integrity hash algorithms.
+
+It supports multiple backup servers and as many as reports recipients through
+email. It has the optional ability to follow symbolic links or to preserve
+permissions inside backup files. And, last but not least it provides random
+passphrase generation for encrypted archives with variable length and patterns
+or a unique passphrase for all backups. It's also possible to encrypt each
+passphrase by using RSA public keys for individual backup servers.
+
+WWW: https://github.com/NuLL3rr0r/omnibackup

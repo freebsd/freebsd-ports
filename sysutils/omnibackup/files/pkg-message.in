@@ -1,0 +1,32 @@
+###############################################################################
+
+In order to run OmniBackup, you will need to create and configure the main
+configuration file, e.g.:
+
+$ cp -p %%LOCALBASE%%/etc/omnibackup/config.json.sample \
+      %%LOCALBASE%%/etc/omnibackup/config.json
+
+or, create it in the root users' home directory:
+
+$ cp -p %%LOCALBASE%%/etc/omnibackup/config.json.sample \
+      %%ROOT_HOME%%/.omnibackup/config.json
+
+In order to take automatic backups every 24 hours at 01:00am UTC run this
+command:
+
+$ crontab -e -u root
+
+Then add the following lines to the root users' crontab:
+
+# OmniBackup daily backups
+00      01      *       *       *       %%LOCALBASE%%/bin/omnibackup
+
+To avoid data loss, make sure to consult the documentation at:
+
+* %%LOCALBASE%%/share/doc/omnibackup/README.md
+or
+* https://github.com/NuLL3rr0r/omnibackup
+
+Before you use it in production.
+
+###############################################################################
