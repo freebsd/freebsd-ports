@@ -222,6 +222,12 @@ GROUPS=	git
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+post-patch:
+	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config/gitlab.yml.example \
+		${WRKSRC}/config/unicorn.rb.example \
+		${WRKSRC}/lib/support/nginx/gitlab \
+		${WRKSRC}/lib/support/nginx/gitlab-ssl
+
 post-patch-MYSQL-on:
 	${CP} ${WRKSRC}/config/database.yml.mysql ${WRKSRC}/config/database.yml.sample
 
