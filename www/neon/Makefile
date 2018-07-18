@@ -3,6 +3,7 @@
 
 PORTNAME=	neon
 PORTVERSION=	0.30.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/lev
 
@@ -59,10 +60,4 @@ post-patch:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libneon.so.27.*
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MOPENSSL} && ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
