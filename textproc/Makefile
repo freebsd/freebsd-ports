@@ -200,6 +200,7 @@
     SUBDIR += fo-aspell
     SUBDIR += foiltex
     SUBDIR += fop
+    SUBDIR += fox-xml
     SUBDIR += fpc-aspell
     SUBDIR += fpc-libxml2
     SUBDIR += freexl

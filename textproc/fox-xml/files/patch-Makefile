@@ -1,0 +1,19 @@
+--- Makefile.orig	2018-07-14 00:41:18 UTC
++++ Makefile
+@@ -12,12 +12,12 @@ objsdir:
+ # use from the local directory (which would just need a one-line fix in 
+ # FoX-config.in). We restore the origional FoX-config so local version still works.
+ install: objsdir $(BUILD_TARGETS)
+-	$(MKDIR_P) $(install_prefix)/lib $(install_prefix)/finclude $(install_prefix)/bin
+-	$(INSTALL) objs/lib/* $(install_prefix)/lib
+-	$(INSTALL) -m 644 objs/finclude/* $(install_prefix)/finclude
++	$(MKDIR_P) $(DESTDIR)$(install_prefix)/lib $(DESTDIR)$(install_prefix)/include $(DESTDIR)$(install_prefix)/bin
++	$(INSTALL) objs/lib/* $(DESTDIR)$(install_prefix)/lib
++	$(INSTALL) -m 644 objs/finclude/* $(DESTDIR)$(install_prefix)/include
+ 	sed -e s#comp_prefix=.*#comp_prefix=$(install_prefix)# FoX-config > FoX-config.tmp
+ 	mv FoX-config FoX-config.old ; mv FoX-config.tmp FoX-config
+-	$(INSTALL) FoX-config $(install_prefix)/bin
++	$(INSTALL) FoX-config $(DESTDIR)$(install_prefix)/bin
+ 	mv FoX-config.old FoX-config
+ #
+ examples_build: $(BUILD_TARGETS)
