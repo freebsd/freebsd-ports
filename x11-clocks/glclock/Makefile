@@ -15,7 +15,6 @@ USE_GL=		gl glu glut
 MAKEFILE=	makefile
 
 CFLAGS+=	-DIMAGE_PATH="\\\"${PREFIX}/lib/X11/glclock/\\\""
-CXXFLAGS+=	-Wno-c++11-narrowing
 
 PLIST_FILES=	${PROGRAMS:S,^,bin/,} ${SCRIPTS:S,^,bin/,} \
 		${TEXTURES:S,^,lib/X11/glclock/,}
