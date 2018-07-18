@@ -3,28 +3,33 @@
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
-PORTREVISION=	33
+PORTREVISION=	34
 CATEGORIES=	science parallel
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Massively Parallel Quantum Chemistry Program
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=		fails to compile: lapack.h:2:10: 'chemistry/qc/mbptr12/f77sym.h' file not found
 
 LIB_DEPENDS=	libint.so:science/libint
+RUN_DEPENDS=	wish:x11-toolkits/tk-wrapper
 
+CONFLICTS_BUILD=	ga # devel/ga: it links to libarmci.so, has HAVE_ARMCI defined, and hits some bug
+
+USES=		fortran gmake libtool localbase perl5 shebangfix tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-production \
 		--enable-shared \
 		--with-cc-optflags="${CFLAGS}" \
 		--with-cxx-optflags="${CXXFLAGS}" \
 		--with-sc-datadir=${DATADIR}
-LIBS+=		-Wl,--as-needed -lexecinfo -Wl,--no-as-needed
 ALL_TARGET=	default
 INSTALL_TARGET=	install install_devel
 DESTDIRNAME=	installroot
-USES=		fortran gmake libtool localbase perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	src/bin/mpqc/ccarunproc src/bin/mpqc/mpqcrunproc
 USE_LDCONFIG=	yes
 
@@ -44,7 +49,7 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			dot:graphics/graphviz
 ICC_BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:lang/icc
 MPICH_CONFIGURE_ENABLE=	parallel
-MPICH_LIB_DEPENDS=	libmpi.so.12:net/mpich
+MPICH_LIB_DEPENDS=	libmpich.so:net/mpich2
 OPTIFLAGS_CFLAGS=	-ffast-math
 OPTIFLAGS_CXXFLAGS=	-ffast-math
 
@@ -62,6 +67,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's/-lblas/${BLASLIB}/' -e 's/-llapack/${LAPACKLIB}/' \
 		-e 's/pthread_join(0,0)/pthread_create(0,0,0,0)/' \
+		-e 's|/usr/bin/wish|${LOCALBASE}/bin/wish|' \
 		${WRKSRC}/configure
 
 do-build-DOXYGEN-on:
