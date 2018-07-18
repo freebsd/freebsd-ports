@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	sieve-connect
-PORTVERSION=	0.88
+DISTVERSION=	0.89
 CATEGORIES=	mail
-MASTER_SITES=	http://people.spodhuis.org/phil.pennock/software/ \
-		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
+MASTER_SITES=	http://people.spodhuis.org/phil.pennock/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line client for the MANAGESIEVE protocol
@@ -24,6 +23,7 @@ RUN_DEPENDS=	p5-Authen-SASL>=0:security/p5-Authen-SASL \
 
 USES=		perl5 tar:bzip2 shebangfix
 SHEBANG_FILES=	sieve-connect.pl
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/sieve-connect \
 		man/man1/sieve-connect.1.gz

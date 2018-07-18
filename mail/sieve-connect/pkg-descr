@@ -17,4 +17,4 @@ sieve-connect is designed to be both a tool which can be invoked from scripts
 and also a decent interactive client. It should also be a drop-in replacement
 for "sieveshell", as supplied with Cyrus IMAP.
 
-WWW: http://people.spodhuis.org/phil.pennock/software/
+WWW: https://people.spodhuis.org/phil.pennock/software/
