@@ -10,6 +10,9 @@ MASTER_SITES=	https://downloads.videolan.org/pub/videolan/x265/ \
 		http://mirror.leaseweb.com/videolan/x265/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
+PATCH_SITES=	http://hg.videolan.org/${PORTNAME}/raw-rev/
+PATCHFILES=	450421921079:-p2
+
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	H.265/High Efficiency Video Coding (HEVC) format
 
