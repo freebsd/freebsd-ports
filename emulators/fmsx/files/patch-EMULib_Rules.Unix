@@ -1,12 +1,13 @@
---- EMULib/Rules.Unix.orig	2014-01-30 23:32:06.000000000 +0700
-+++ EMULib/Rules.Unix	2014-01-30 23:30:52.000000000 +0700
+--- EMULib/Rules.Unix.orig	2018-07-18 04:13:18 UTC
++++ EMULib/Rules.Unix
 @@ -6,7 +6,7 @@
  
  include ../../EMULib/Rules.gcc
  
 -CFLAGS += -I$(EMULIB)/Unix -I/usr/X11R6/include
+-DEFINES+= -DUNIX -DMITSHM -DBPS16 -DPULSE_AUDIO
+-LIBS   += -lX11 -lXext -lpulse-simple
 +CFLAGS += -I$(EMULIB)/Unix -I${LOCALBASE}/include $(DEBUG_FLAGS)
- DEFINES+= -DUNIX -DMITSHM -DBPS16
--LIBS   += -lX11 -lXext
++DEFINES+= -DUNIX -DMITSHM
 +LIBS   += -L${LOCALBASE}/lib -lX11 -lXext
  OBJECTS+= $(EMUUNIX)
