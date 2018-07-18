@@ -15,7 +15,8 @@ If you are using MySQL, here's the short version of the instructions:
   $ mysql -uroot -e"GRANT ALL ON glpi.* TO USERNAME@localhost IDENTIFIED BY 'PASSWORD'" glpi
   (choose your own values for USERNAME and PASSWORD)
 
-Make sur Apache supports PHP (www/mod_php5) and add a config file for GLPI in Includes/glpi.conf:
+Make sure Apache supports PHP (www/mod_php5) and add a config file for
+GLPI in Includes/glpi.conf:
 
     Alias /glpi %%PREFIX%%/%%GLPIDIR%%
     <Directory %%PREFIX%%/%%GLPIDIR%%>
