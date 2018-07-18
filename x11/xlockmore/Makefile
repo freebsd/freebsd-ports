@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xlockmore
-PORTVERSION=	5.54
-PORTREVISION=	2
+PORTVERSION=	5.55
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.sillycycle.com/xlock/ \
 		LOCAL/jgh/x11/${PORTNAME}/
@@ -161,6 +160,8 @@ pre-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/xglockrc/ s|PROGRAM|DATA|' ${WRKSRC}/xglock/Makefile.in
+	@${REINPLACE_CMD} -e 's|$$(SOUNDPATH)|$$(DESTDIR)$$(SOUNDPATH)|g' ${WRKSRC}/modes/Makefile.in
+	@${REINPLACE_CMD} -e '/$$(ETCDIR)play.sh/ s|$$(INSTALL_PROGRAM)|$$(INSTALL_PROGRAM:N-s)|' ${WRKSRC}/modes/Makefile.in
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000
 	@${REINPLACE_CMD} -e 's|/usr/games/fortune|/usr/bin/fortune|' ${WRKSRC}/modes/Makefile.in
 .endif

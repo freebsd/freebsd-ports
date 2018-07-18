@@ -2,8 +2,13 @@
 @mode 4111
 @owner root
 bin/xlock
+bin/play.sh
 @mode
 @owner
 lib/X11/app-defaults/XLock
 man/man1/xlock.1.gz
+share/xlock/sounds/complete.au
+share/xlock/sounds/identify-please.au
+share/xlock/sounds/not-programmed.au
+share/xlock/sounds/thank-you.au
 %%GTK2%%share/xlock/xglockrc
