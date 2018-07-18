@@ -16,4 +16,10 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200072
+BROKEN=		Fails to build.
+.endif
+
+.include <bsd.port.post.mk>
