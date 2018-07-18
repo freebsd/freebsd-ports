@@ -1,0 +1,13 @@
+--- kodev/Makefile.orig	2018-07-09 12:06:06 UTC
++++ kodev/Makefile
+@@ -11,8 +11,8 @@ S_SRC=	../src/cli.c
+ CFLAGS+=-Wall -Werror -Wstrict-prototypes -Wmissing-prototypes
+ CFLAGS+=-Wmissing-declarations -Wshadow -Wpointer-arith -Wcast-qual
+ CFLAGS+=-Wsign-compare -Iincludes -std=c99 -pedantic
+-CFLAGS+=-DPREFIX='"$(PREFIX)"'
+-LDFLAGS=-lcrypto
++CFLAGS+=-DPREFIX='"$(PREFIX)"' -I${OPENSSLINC}
++LDFLAGS+=-L${OPENSSLLIB} -lcrypto
+ 
+ ifneq ("$(NOOPT)", "")
+ 	CFLAGS+=-O0
