@@ -591,7 +591,7 @@ debug-license: check-license
 .if ${_LICENSE_PERMS:Mpkg-mirror}
 	@${ECHO_MSG} "===>  License allows mirroring pre-built packages"
 .else
-	@${ECHO_MSG} "===>  License does not allows selling pre-build packages"
+	@${ECHO_MSG} "===>  License does not allows mirroring pre-build packages"
 .endif
 .if ${_LICENSE_PERMS:Mpkg-sell}
 	@${ECHO_MSG} "===>  License allows selling pre-build packages"
