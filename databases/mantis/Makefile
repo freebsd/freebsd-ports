@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mantis
-PORTVERSION=	2.6.0
+PORTVERSION=	2.9.0
 CATEGORIES=	databases www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -25,7 +25,7 @@ GH_PROJECT=	mantisbt:DEFAULT \
 		parsedown:lib_parsedown \
 		PHPMailer:lib_phpmailer \
 		securimage:lib_securimage
-GH_TAGNAME=	063cce6182568cf2eba81e3ca59cdd67606e7bab:DEFAULT \
+GH_TAGNAME=	798792eebed2e699a98c4e94f4aeb4c35eba55f8:DEFAULT \
 		0beaf61f94c3e6359ee0cdaf7b23ad4b365d761f:api_swaggerui \
 		cc2c13e337f1441e3aa1e17497722c1cd98b281b:lib_adodb \
 		6a7ddc0598810bdb91d270b489cec2e1033e047f:lib_disposable \
@@ -42,7 +42,7 @@ OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL
 OPTIONS_GROUP=		PLUGINS
 OPTIONS_GROUP_PLUGINS=	ACTIVITY ANNOUNCE COLORIZED CUSTOMREPORTER \
-			EMAILREP EVENTLOG FLTBUGLST JQUERYCHOSEN \
+			EMAILREP EVENTLOG FLTBUGLST GAUGE JQUERYCHOSEN \
 			JQUERYUI LIGHTBOX PIWIK SAMPLEAUTH SLACK \
 			SNIPPETS SI TASKODROME TIMETRACKING
 OPTIONS_DEFAULT=	MYSQL
@@ -57,7 +57,7 @@ ACTIVITY_GH_SUBDIR=	plugins/Activity:activity
 ANNOUNCE_DESC=		Announcements
 ANNOUNCE_GH_ACCOUNT=	mantisbt-plugins:announce
 ANNOUNCE_GH_PROJECT=	Announce:announce
-ANNOUNCE_GH_TAGNAME=	b9459924d88b8a9503d6ee9c37045d857d7da57e:announce
+ANNOUNCE_GH_TAGNAME=	f6a31c41e5dac73b99906cb3e6745def7f11f98a:announce
 ANNOUNCE_GH_SUBDIR=	plugins/Announce:announce
 
 COLORIZED_DESC=		Colorized Theme
@@ -75,7 +75,7 @@ CUSTOMREPORTER_GH_SUBDIR=	plugins/CustomReporter:customreporter
 EMAILREP_DESC=		Allows to report an issue by sending an email
 EMAILREP_GH_ACCOUNT=	mantisbt-plugins:emailrep
 EMAILREP_GH_PROJECT=	EmailReporting:emailrep
-EMAILREP_GH_TAGNAME=	bcee020b3ce4bf91678a3f48d213660cf9902968:emailrep
+EMAILREP_GH_TAGNAME=	81e7f0bda136f330ef6f535ad29b09b2c91dc0b4:emailrep
 EMAILREP_GH_SUBDIR=	plugins/EmailReporting:emailrep
 
 EVENTLOG_DESC=		Allows MantisBT components to log data
@@ -89,6 +89,12 @@ FLTBUGLST_GH_ACCOUNT=	mantisbt-plugins:fltbuglst
 FLTBUGLST_GH_PROJECT=	FilterBugList:fltbuglst
 FLTBUGLST_GH_TAGNAME=	4de5242dcf3ced656cffbf14776ce41089c07e49:fltbuglst
 FLTBUGLST_GH_SUBDIR=	plugins/FilterBugList:fltbuglst
+
+GAUGE_DESC=		Voting for tickets
+GAUGE_GH_ACCOUNT=	mantisbt-plugins:gauge
+GAUGE_GH_PROJECT=	GaugeSupport:gauge
+GAUGE_GH_TAGNAME=	5fd657c713c6ee5ff2ae8bfbedb30a700d38f2db:gauge
+GAUGE_GH_SUBDIR=	plugins/GaugeSupport:gauge
 
 JQUERYCHOSEN_DESC=		Support the Library Chosen to MantisBT
 JQUERYCHOSEN_GH_ACCOUNT=	mantisbt-plugins:jquerychosen
@@ -120,25 +126,25 @@ SAMPLEAUTH_GH_SUBDIR=	plugins/SampleAuth:sampleauth
 SLACK_DESC=		Slack integration
 SLACK_GH_ACCOUNT=	mantisbt-plugins:slack
 SLACK_GH_PROJECT=	Slack:slack
-SLACK_GH_TAGNAME=	b054ea2446f7ac8cf9487cf72a9d9b7bca46f350:slack
+SLACK_GH_TAGNAME=	8aa67a830ca791936c05eede149d240d95579bcb:slack
 SLACK_GH_SUBDIR=	plugins/Slack:slack
 
-SNIPPETS_DESC=		Slack integration
+SNIPPETS_DESC=		Text snippets that can be pasted into text fields
 SNIPPETS_GH_ACCOUNT=	mantisbt-plugins:snippets
 SNIPPETS_GH_PROJECT=	snippets:snippets
-SNIPPETS_GH_TAGNAME=	ae08cb9845ad8a206dff7b4cad8c3dd7ffe611a5:snippets
+SNIPPETS_GH_TAGNAME=	543b7a47640fa0a03b620ab08968d0e67a3d9b6f:snippets
 SNIPPETS_GH_SUBDIR=	plugins/Snippets:snippets
 
 SI_DESC=		Source control integration
 SI_GH_ACCOUNT=		mantisbt-plugins:si
 SI_GH_PROJECT=		source-integration:si
-SI_GH_TAGNAME=		5aec11023a9c242a67f2255e24b4377d28c6a4f4:si
+SI_GH_TAGNAME=		0c060a63850f1a97edd5ca63ddf99d29936f24a9:si
 SI_USE=			php=curl
 
 TASKODROME_DESC=	Interactive scrum board
 TASKODROME_GH_ACCOUNT=	mantisbt-plugins:taskodrome
 TASKODROME_GH_PROJECT=	Taskodrome:taskodrome
-TASKODROME_GH_TAGNAME=	c9bc06c0d7fcf8683f2534263a117970ee4e418d:taskodrome
+TASKODROME_GH_TAGNAME=	8e46633fdc303c32e6ce4777d8fabc1ce31cc589:taskodrome
 
 TIMETRACKING_DESC=	Time Tracking
 TIMETRACKING_GH_ACCOUNT=mantisbt-plugins:timetracking
@@ -156,7 +162,7 @@ SUB_FILES=	pkg-message
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 post-extract:
-	@${MV} ${WRKSRC_api_swaggerui}/dist/* ${WRKSRC}/api/rest/swagger/
+	@${MV} ${WRKSRC_api_swaggerui}/dist ${WRKSRC}/api/rest/swagger
 	@${MV} ${WRKSRC}/api/rest/swagger/index.html ${WRKSRC}/api/rest/swagger/index.php
 
 post-extract-COLORIZED-on:
