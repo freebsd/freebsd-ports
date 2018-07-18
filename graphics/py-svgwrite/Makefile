@@ -6,7 +6,7 @@ CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lwhsu@FeeeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Python library to create SVG drawings
 
 LICENSE=	MIT
