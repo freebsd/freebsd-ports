@@ -1,0 +1,6 @@
+FoX is an XML library written in Fortran 95. It allows software developers to
+read, write and modify XML documents from Fortran applications without the
+complications of dealing with multi-language development. FoX can be freely
+redistributed as part of open source and commercial software packages.
+
+WWW: https://homepages.see.leeds.ac.uk/~earawa/FoX/
