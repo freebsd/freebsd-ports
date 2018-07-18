@@ -916,16 +916,18 @@ flavors()
 
 license()
 {
-	local autoaccept pkgmirror #distsell distmirror pkgsell
+	local lic autoaccept pkgmirror #distsell distmirror pkgsell
 
 	if [ -n "$LICENSE" ]; then
-		case "$LICENSE_PERMS" in
-			auto-accept) autoaccept=1 ;;
-			#dist-mirror) distmirror=1 ;;
-			#dist-sell)   distsell=1   ;;
-			pkg-mirror)  pkgmirror=1  ;;
-			#pkg-sell)    pkgsell=1    ;;
-		esac
+		for lic in $LICENSE_PERMS; do
+			case "$lic" in
+				auto-accept) autoaccept=1 ;;
+				#dist-mirror) distmirror=1 ;;
+				#dist-sell)   distsell=1   ;;
+				pkg-mirror)  pkgmirror=1  ;;
+				#pkg-sell)    pkgsell=1    ;;
+			esac
+		done
 
 		if [ -z "$autoaccept" ]; then
 			warn "License is not auto-accepted, packages will not be built, ports depending on this one will be ignored."
