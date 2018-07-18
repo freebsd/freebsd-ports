@@ -33,6 +33,7 @@ include/znc/znc.h
 include/znc/zncconfig.h
 include/znc/ZNCDebug.h
 include/znc/ZNCString.h
+lib/znc/admindebug.so
 lib/znc/adminlog.so
 lib/znc/alias.so
 lib/znc/autoattach.so
