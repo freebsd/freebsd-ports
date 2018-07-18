@@ -6,7 +6,7 @@ PORTVERSION=	20080808
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
-MAINTAINER=	alexey@renatasystems.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kaspersky Anti-Spam 3.x library
 
 WRKSRC=		${WRKDIR}/libspamtest

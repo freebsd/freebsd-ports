@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
-MAINTAINER=	alexey@renatasystems.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to generate OpenLDAP statistics reports
 
 NO_ARCH=	yes

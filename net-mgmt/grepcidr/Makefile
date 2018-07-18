@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt textproc
 MASTER_SITES=	http://www.pc-tools.net/files/unix/ \
 		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
-MAINTAINER=	alexey@renatasystems.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filter IP addresses matching IPv4 CIDR/network specification
 
 LICENSE=	GPLv2

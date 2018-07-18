@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://gael.roualland.free.fr/${PORTNAME}/
 
-MAINTAINER=	alexey@renatasystems.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network interface statistics monitoring tool
 
 GNU_CONFIGURE=	yes

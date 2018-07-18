@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.percona.com/downloads/percona-monitoring-plugins/${PORTNAME}-${PORTVERSION}/source/tarball/ \
 		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
-MAINTAINER=	alexey@renatasystems.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cacti templates for MySQL, Apache, Memcached, and more by Percona
 
 LICENSE=	GPLv2

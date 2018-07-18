@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/ucarp/ \
 		http://download.pureftpd.org/pub/ucarp/
 
-MAINTAINER=	alexey@renatasystems.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Userlevel Common Address Redundancy Protocol
 
 USES=	tar:bzip2

@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.rulesemporium.com/programs/ \
 EXTRACT_SUFX=	.txt
 EXTRACT_ONLY=
 
-MAINTAINER=	alexey@renatasystems.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates top spam/ham rules fired for SpamAssassin installations
 
 USES=		perl5 shebangfix
