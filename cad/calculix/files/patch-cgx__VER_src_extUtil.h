@@ -1,5 +1,5 @@
---- cgx_2.13/src/extUtil.h.orig	2017-04-28 10:12:50 UTC
-+++ cgx_2.13/src/extUtil.h
+--- cgx_2.14/src/extUtil.h.orig	2017-04-28 10:12:50 UTC
++++ cgx_2.14/src/extUtil.h
 @@ -9,6 +9,7 @@
  #else
    #define DEV_NULL   " >/dev/null"

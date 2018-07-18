@@ -1,5 +1,5 @@
---- cgx_2.13/src/uselibSNL.cpp.orig	2017-10-07 09:58:00 UTC
-+++ cgx_2.13/src/uselibSNL.cpp
+--- cgx_2.14/src/uselibSNL.cpp.orig	2017-10-07 09:58:00 UTC
++++ cgx_2.14/src/uselibSNL.cpp
 @@ -934,7 +934,7 @@ int createBlendedNurbs(int nr, Points **
    // (5)   create the cgx nurbs
    // printf(" create blended nurbs\n"); 

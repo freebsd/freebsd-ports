@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calculix
-PORTVERSION=	2.13
-PORTREVISION=	2
+PORTVERSION=	2.14
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	${DIST_SOURCES}
@@ -83,6 +82,11 @@ do-install:
 	  ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
+	# Some garbage crept in
+	@${RM} ${WRKSRC}/${CGX_VER}/examples/OpenFOAM/couette/constant/polyMesh/*~
+	@${RM} ${WRKSRC}/${CGX_VER}/examples/OpenFOAM/couette/constant/*~
+	@${RM} ${WRKSRC}/${CGX_VER}/examples/OpenFOAM/couette/system/*~
+	@${RM} ${WRKSRC}/${CGX_VER}/examples/ifwhiledemo/*.*~
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${WRKSRC}/${CGX_VER}/examples && ${COPYTREE_SHARE} . \
 	  ${STAGEDIR}${EXAMPLESDIR})
