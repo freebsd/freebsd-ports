@@ -504,6 +504,7 @@
     SUBDIR += xpr
     SUBDIR += xpra
     SUBDIR += xprehashprinterlist
+    SUBDIR += xprintidle
     SUBDIR += xprompt
     SUBDIR += xprop
     SUBDIR += xproto

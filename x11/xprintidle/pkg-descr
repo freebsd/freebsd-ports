@@ -1,0 +1,4 @@
+A utility that queries the X server for the user's idle time and prints it
+to stdout (in milliseconds).
+
+WWW: https://github.com/g0hl1n/xprintidle
