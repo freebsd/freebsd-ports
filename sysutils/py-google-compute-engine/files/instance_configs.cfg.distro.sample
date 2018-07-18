@@ -5,4 +5,4 @@ usermod_cmd = pw usermod {user} -G {groups}
 groupadd_cmd = pw groupadd {group}
 
 [MetadataScripts]
-default_shell = /bin/bash
+default_shell = /bin/sh
