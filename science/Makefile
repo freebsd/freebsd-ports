@@ -218,6 +218,7 @@
     SUBDIR += pynn
     SUBDIR += qcl
     SUBDIR += qtresistors
+    SUBDIR += quantum-espresso
     SUBDIR += rdkit
     SUBDIR += rmf
     SUBDIR += rubygem-ai4r

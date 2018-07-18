@@ -1,0 +1,14 @@
+Quantum ESPRESSO is an integrated suite of open-source computer codes
+for electronic-structure calculations and materials modeling at the nanoscale.
+It is based on density-functional theory, plane waves, and pseudopotentials.
+
+Quantum ESPRESSO has evolved into a distribution of independent and
+inter-operable codes in the spirit of an open-source project. The Quantum
+ESPRESSO distribution consists of a "historical" core set of components, and
+a set of plug-ins that perform more advanced tasks, plus a number of third-party
+packages designed to be inter-operable with the core components. Researchers
+active in the field of electronic-structure calculations are encouraged to
+participate in the project by contributing their own codes or by implementing
+their own ideas into existing codes.
+
+WWW: https://www.quantum-espresso.org/
