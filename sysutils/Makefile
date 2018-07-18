@@ -634,6 +634,7 @@
     SUBDIR += lttng-ust
     SUBDIR += luckybackup
     SUBDIR += lxinput
+    SUBDIR += lxqt-qtplugin
     SUBDIR += lxsplit
     SUBDIR += lxtask
     SUBDIR += lxterminal
