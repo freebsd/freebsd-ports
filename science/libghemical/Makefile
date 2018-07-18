@@ -28,7 +28,7 @@ USE_GL=		gl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	LD_PRELOAD=${LOCALBASE}/lib/gcc6/libgcc_s.so # workaround: otherwise configure fails
+CONFIGURE_ENV=	LD_PRELOAD=${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so # workaround: otherwise configure fails
 
 CONFIGURE_ARGS+=	--enable-mpqc
 CPPFLAGS+=	-I${LOCALBASE}/include
