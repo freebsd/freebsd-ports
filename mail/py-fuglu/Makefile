@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fuglu
-PORTVERSION=	0.6.6
+PORTVERSION=	0.8.0
 CATEGORIES=	mail python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +13,11 @@ COMMENT=	Mail scanning daemon for Postfix written in Python
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	postfix:mail/postfix \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rarfile>0:archivers/py-rarfile@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lzma>0:archivers/py-lzma@${PY_FLAVOR}
 
-USES=		python:2.7
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 USE_RC_SUBR=	fuglu
