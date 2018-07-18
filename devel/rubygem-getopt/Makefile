@@ -6,7 +6,7 @@ PORTVERSION=	1.4.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	alexey@renatasystems.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line parsing with Ruby
 
 NO_ARCH=	yes

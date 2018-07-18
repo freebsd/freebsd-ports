@@ -9,7 +9,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://renatasystems.org/pub/FreeBSD/ports/distfiles/ \
 		ftp://ftp.nsk.su/pub/RinetSoftware/
 
-MAINTAINER=	alexey@renatasystems.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full screen visualization of network traffic
 
 CONFLICTS=	trafshow-4.* trafshow3-*

@@ -6,7 +6,7 @@ PORTVERSION=	2.8
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
-MAINTAINER=	alexey@renatasystems.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates MySQL backups on a periodic basis
 
 LICENSE=	BSD2CLAUSE
