@@ -11,20 +11,24 @@ MASTER_SITES=	http://bioinformatics.org/ghemical/download/release20111012/	\
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Support libraries of science/ghemical port
 
-BROKEN=		fails to configure
-DEPRECATED=	Broken for more than 5 months
-EXPIRATION_DATE=	2018-08-20
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	obabel:science/openbabel \
 		intltool-update:textproc/intltool \
 		ld:devel/binutils
-LIB_DEPENDS=	libmpqc.so:science/mpqc \
-		libf2c.so:lang/f2c
+LIB_DEPENDS=	libblas.so:math/blas \
+		libint.so:science/libint \
+		libf2c.so:lang/f2c \
+		liblapack.so:math/lapack \
+		libmpqc.so:science/mpqc
 
 USES=		fortran gettext gmake pathfix pkgconfig libtool
 USE_GL=		gl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+CONFIGURE_ENV=	LD_PRELOAD=${LOCALBASE}/lib/gcc6/libgcc_s.so # workaround: otherwise configure fails
 
 CONFIGURE_ARGS+=	--enable-mpqc
 CPPFLAGS+=	-I${LOCALBASE}/include
