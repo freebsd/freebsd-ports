@@ -5,7 +5,7 @@
      # external_https: ["1.1.1.1:443", "[2001::1]:443"] # If defined, enables custom domain and certificate support in GitLab Pages
      admin:
 -      address: unix:/home/git/gitlab/tmp/sockets/private/pages-admin.socket # TCP connections are supported too (e.g. tcp://host:port)
-+      address: unix:/usr/local/www/gitlab-ce/tmp/sockets/private/pages-admin.socket # TCP connections are supported too (e.g. tcp://host:port)
++      address: unix:%%PREFIX%%/www/gitlab-ce/tmp/sockets/private/pages-admin.socket # TCP connections are supported too (e.g. tcp://host:port)
  
    ## Mattermost
    ## For enabling Add to Mattermost button
@@ -14,7 +14,7 @@
    gitaly:
      # Path to the directory containing Gitaly client executables.
 -    client_path: /home/git/gitaly/bin
-+    client_path: /usr/local/share/gitaly/bin
++    client_path: %%PREFIX%%/share/gitaly/bin
      # Default Gitaly authentication token. Can be overriden per storage. Can
      # be left blank when Gitaly is running locally on a Unix socket, which
      # is the normal way to deploy Gitaly.
@@ -25,7 +25,7 @@
 -        path: /home/git/repositories/
 -        gitaly_address: unix:/home/git/gitlab/tmp/sockets/private/gitaly.socket # TCP connections are supported too (e.g. tcp://host:port)
 +        path: /usr/home/git/repositories/
-+        gitaly_address: unix:/usr/local/www/gitlab-ce/tmp/sockets/private/gitaly.socket # TCP connections are supported too (e.g. tcp://host:port)
++        gitaly_address: unix:%%PREFIX%%/www/gitlab-ce/tmp/sockets/private/gitaly.socket # TCP connections are supported too (e.g. tcp://host:port)
          # gitaly_token: 'special token' # Optional: override global gitaly.token for this storage.
  
    ## Backup settings
@@ -35,8 +35,8 @@
    gitlab_shell:
 -    path: /home/git/gitlab-shell/
 -    hooks_path: /home/git/gitlab-shell/hooks/
-+    path: /usr/local/share/gitlab-shell/
-+    hooks_path: /usr/local/share/gitlab-shell/hooks/
++    path: %%PREFIX%%/share/gitlab-shell/
++    hooks_path: %%PREFIX/share/gitlab-shell/hooks/
  
      # File that contains the secret key for verifying access for gitlab-shell.
      # Default is '.gitlab_shell_secret' relative to Rails.root (i.e. root of the GitLab app).
@@ -50,7 +50,7 @@
    # Use the default values unless you really know what you are doing
    git:
 -    bin_path: /usr/bin/git
-+    bin_path: /usr/local/bin/git
++    bin_path: %%PREFIX%%/bin/git
  
    ## Webpack settings
    # If enabled, this will tell rails to serve frontend assets from the webpack-dev-server running

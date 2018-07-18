@@ -5,7 +5,7 @@
    # Gitlab socket file,
    # for Omnibus this would be: unix:/var/opt/gitlab/gitlab-workhorse/socket
 -  server unix:/home/git/gitlab/tmp/sockets/gitlab-workhorse.socket fail_timeout=0;
-+  server unix:/usr/local/www/gitlab-ce/tmp/sockets/gitlab-workhorse.socket fail_timeout=0;
++  server unix:%%PREFIX%%/www/gitlab-ce/tmp/sockets/gitlab-workhorse.socket fail_timeout=0;
  }
  
  map $http_upgrade $connection_upgrade_gitlab {
@@ -14,7 +14,7 @@
      # Location to the Gitlab's public directory,
      # for Omnibus this would be: /opt/gitlab/embedded/service/gitlab-rails/public.
 -    root /home/git/gitlab/public;
-+    root /usr/local/www/gitlab-ce/public;
++    root %%PREFIX%%/www/gitlab-ce/public;
      internal;
    }
  

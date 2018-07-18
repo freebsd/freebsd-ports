@@ -24,7 +24,7 @@
 #
 #  gitlab_enable="YES"
 
-PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
+PATH="/sbin:/bin:/usr/sbin:/usr/bin:%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin"
 
 . /etc/rc.subr
 
@@ -51,7 +51,7 @@ RAILS_ENV="production"
 # Script variable names should be lower-case not to conflict with
 # internal /bin/sh variables such as PATH, EDITOR or SHELL.
 app_user="git"
-app_root="/usr/local/www/gitlab-ce"
+app_root="%%PREFIX%%/www/gitlab-ce"
 pid_path="$app_root/tmp/pids"
 socket_path="$app_root/tmp/sockets"
 rails_socket="$socket_path/gitlab.socket"
@@ -79,7 +79,7 @@ gitlab_pages_options="-pages-domain example.com -pages-root $app_root/shared/pag
 gitlab_pages_log="$app_root/log/gitlab-pages.log"
 shell_path="/bin/bash"
 gitaly_enabled=true
-gitaly_dir="/usr/local/share/gitaly"
+gitaly_dir="%%PREFIX%%/share/gitaly"
 gitaly_pid_path="$pid_path/gitaly.pid"
 gitaly_log="$app_root/log/gitaly.log"
 
@@ -91,18 +91,18 @@ if [ "$USER" != "$app_user" ]; then
   # Regenerate the Gemfile.lock for all related products
   echo "Regenerate Gitlab Gemfile.lock"
   rm -f "${app_root}"/Gemfile.lock
-  if ! su -l ${app_user} -c "cd ${app_root} && /usr/local/bin/bundle install --local --quiet"; then
+  if ! su -l ${app_user} -c "cd ${app_root} && %%LOCALBASE%%/bin/bundle install --local --quiet"; then
     echo "Could not create Gemfile.lock for gitlab, please report this using FreeBSD Bugtracker, https://bugs.freebsd.org/"
     exit 1
   fi
   echo "Regenerate Gitaly Gemfile.lock"
   rm -f "${gitaly_dir}"/ruby/Gemfile.lock
-  if ! su -l root -c "cd ${gitaly_dir}/ruby && /usr/local/bin/bundle install --local --quiet"; then
+  if ! su -l root -c "cd ${gitaly_dir}/ruby && %%LOCALBASE%%/bin/bundle install --local --quiet"; then
     echo "Could not create Gemfile.lock for gitaly, please report this using FreeBSD Bugtracker, https://bugs.freebsd.org/"
     exit 1
   fi
 
-  eval su - "$app_user" -c $(echo \")/usr/local/etc/rc.d/gitlab "$@"$(echo \"); exit;
+  eval su - "$app_user" -c $(echo \")%%LOCALBASE%%/etc/rc.d/gitlab "$@"$(echo \"); exit;
 fi
 
 # Switch to the gitlab path, exit on failure.
