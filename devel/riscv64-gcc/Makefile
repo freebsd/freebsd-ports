@@ -2,7 +2,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	7.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 PKGNAMEPREFIX=	riscv64-
 
@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd-riscv
 GH_PROJECT=	riscv-gcc
-GH_TAGNAME=	2ea300e
+GH_TAGNAME=	49b9ee4
 
 GCC_TARGET=	${PKGNAMEPREFIX}unknown-${OPSYS:tl}${OSREL}
 
@@ -41,7 +41,6 @@ CONFIGURE_ARGS=	--target=${GCC_TARGET} \
 		--with-as=${LOCALBASE}/bin/${PKGNAMEPREFIX}unknown-${OPSYS:tl}${OSREL}-as \
 		--with-ld=${LOCALBASE}/bin/${PKGNAMEPREFIX}unknown-${OPSYS:tl}${OSREL}-ld \
 		--disable-werror \
-		--disable-shared \
 		--enable-threads \
 		--enable-tls \
 		--enable-languages=c,c++ \
