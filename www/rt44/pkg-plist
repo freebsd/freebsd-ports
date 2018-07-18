@@ -127,6 +127,7 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/Groups.pm
 %%SITE_PERL%%/RT/Handle.pm
 %%SITE_PERL%%/RT/I18N.pm
+%%SITE_PERL%%/RT/I18N/Extract.pm
 %%SITE_PERL%%/RT/I18N/cs.pm
 %%SITE_PERL%%/RT/I18N/de.pm
 %%SITE_PERL%%/RT/I18N/fr.pm
@@ -279,6 +280,7 @@ sbin/rt-externalize-attachments
 sbin/rt-fulltext-indexer
 sbin/rt-importer
 sbin/rt-ldapimport
+sbin/rt-passwd
 sbin/rt-preferences-viewer
 sbin/rt-serializer
 sbin/rt-server
@@ -1165,6 +1167,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/Users
 %%DATADIR%%/html/SelfService/Helpers/ShortcutHelp
 %%DATADIR%%/html/SelfService/Helpers/Upload/Add
+%%DATADIR%%/html/SelfService/Helpers/Upload/Delete
 %%DATADIR%%/html/SelfService/Prefs.html
 %%DATADIR%%/html/SelfService/Update.html
 %%DATADIR%%/html/SelfService/index.html

@@ -7,6 +7,7 @@
 ### CGI::Emulate::PSGI
 ### CGI::PSGI 0.12
 ### Class::Accessor::Fast
+### Clone
 ### Convert::Color
 ### Crypt::Eksblowfish
 ### CSS::Minifier::XS
@@ -93,6 +94,7 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-CSS-Squish>=0.06:textproc/p5-CSS-Squish				\
 		p5-CSS-Minifier-XS>=0:textproc/p5-CSS-Minifier-XS			\
 		p5-Class-Accessor>=0:devel/p5-Class-Accessor				\
+		p5-Clone>=0:devel/p5-Clone						\
 		p5-Convert-Color>0:graphics/p5-Convert-Color				\
 		p5-Crypt-Eksblowfish>0:security/p5-Crypt-Eksblowfish			\
 		p5-DBI>=1.37:databases/p5-DBI						\
@@ -155,23 +157,20 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-XML-RSS>=1.05:textproc/p5-XML-RSS
 
 ### --- MAILGATE ---
-### Crypt::SSLeay
 ### Getopt::Long                           perl std
 ### LWP::Protocol::https
-### LWP::UserAgent 6.0
+### LWP::UserAgent 6.02
 ### Mozilla::CA
-### Net::SSL
 ### Pod::Usage                             perl std
 
-MAILGATE_DEPS=	p5-libwww>6.0:www/p5-libwww \
-		p5-Crypt-SSLeay>0:security/p5-Crypt-SSLeay \
+MAILGATE_DEPS=	p5-libwww>6.02:www/p5-libwww \
 		p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https \
 		p5-Mozilla-CA>0:www/p5-Mozilla-CA
 
 ### --- CLI ---
 ### Getopt::Long 2.24                     perl std
 ### HTTP::Request::Common
-### LWP
+### LWP 6.02
 ### Term::ReadKey
 ### Term::ReadLine                        perl std
 ### Text::ParseWords                      perl std
