@@ -32,6 +32,7 @@
 %%PATEST%%bin/patest_underflow
 %%PATEST%%bin/patest_wire
 %%JACK%%include/pa_jack.h
+include/pa_unix_oss.h
 include/portaudio.h
 lib/libportaudio.a
 lib/libportaudio.so
