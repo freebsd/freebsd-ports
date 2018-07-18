@@ -3,6 +3,7 @@
 PORTNAME=	qtkeychain
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -15,11 +16,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 FLAVORS=	qt4 qt5
 FLAVOR?=	${FLAVORS:[1]}
 
-USES=		cmake
+USES=		cmake localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	frankosterfeld
 USE_LDCONFIG=	yes
-USE_KDE=	ecm
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
 .  if ${FLAVOR} == qt4
@@ -35,5 +35,12 @@ PLIST_SUB+=	PLIST_QT_PREFIX_UPCASE=Qt5 PLIST_QT_PREFIX=qt5
 PLIST=		${PKGDIR}/pkg-plist.${FLAVOR}
 .  endif
 
+OPTIONS_DEFINE=		LIBSECRET
+OPTIONS_DEFAULT=	LIBSECRET
+
+LIBSECRET_DESC=		Enable libsecret backend
+
+LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
+LIBSECRET_CMAKE_BOOL=	LIBSECRET_SUPPORT
 
 .include <bsd.port.mk>
