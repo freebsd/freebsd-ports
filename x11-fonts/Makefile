@@ -114,7 +114,7 @@
     SUBDIR += google-fonts
     SUBDIR += hack-font
     SUBDIR += hanazono-fonts-ttf
-    SUBDIR += hasklig
+    SUBDIR += Hasklig
     SUBDIR += inconsolata-lgc-ttf
     SUBDIR += inconsolata-ttf
     SUBDIR += indic-ttf

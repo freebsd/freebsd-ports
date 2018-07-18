@@ -1,14 +1,15 @@
-# Created by: arrowdodger <6yearold@gmail.com>
+# Created by: arrowd <6yearold@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	hasklig
-PORTVERSION=	0.9
+PORTNAME=	Hasklig
+DISTVERSION=	1.1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/i-tu/Hasklig/releases/download/${PORTVERSION}/
-DISTNAME=	Hasklig-${PORTVERSION}
 
-MAINTAINER=	6yearold@gmail.com
+MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Haskell code font with monospaced ligatures
+
+LICENSE=	OFL11
 
 USES=		fonts zip
 NO_BUILD=	yes

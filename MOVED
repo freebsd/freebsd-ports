@@ -10349,6 +10349,7 @@ net-im/mastodon||2018-07-16|Has expired: Breaks too frequently
 x11-fm/p5-PerlFM||2018-07-16|Has expired: Unmaintained
 astro/p5-ZConf-Weather||2018-07-16|Has expired: Unmaintained
 sysutils/p5-ZConf-Cron||2018-07-16|Has expired: Unmaintained
+x11-fonts/hasklig|x11-fonts/Hasklig|2018-07-16|Name correctly after upstream
 misc/artikulate-kde4||2018-07-17|Has expired: broken for more than three years
 vietnamese/kde4-l10||2018-07-17|Has expired: broken for more than three years
 graphics/projectm-libvisual|graphics/libprojectm|2018-07-17|Code of projectm-libvisual was merged into graphics/libprojectm
