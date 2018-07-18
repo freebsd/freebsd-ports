@@ -575,6 +575,36 @@ clean-for-cdrom-list:
 IGNORE=		License ${_LICENSE} needs confirmation, but BATCH is defined
 .endif
 
+# This should probably be incrementally done while parsing all the license
+# possibilities.
+debug-license: check-license
+.if ${_LICENSE_PERMS:Mdist-mirror}
+	@${ECHO_MSG} "===>  License allows mirroring distribution files"
+.else
+	@${ECHO_MSG} "===>  License does not allows mirroring distribution files"
+.endif
+.if ${_LICENSE_PERMS:Mdist-sell}
+	@${ECHO_MSG} "===>  License allows selling distribution files"
+.else
+	@${ECHO_MSG} "===>  License does not allows selling distribution files"
+.endif
+.if ${_LICENSE_PERMS:Mpkg-mirror}
+	@${ECHO_MSG} "===>  License allows mirroring pre-built packages"
+.else
+	@${ECHO_MSG} "===>  License does not allows selling pre-build packages"
+.endif
+.if ${_LICENSE_PERMS:Mpkg-sell}
+	@${ECHO_MSG} "===>  License allows selling pre-build packages"
+.else
+	@${ECHO_MSG} "===>  License does not allows selling pre-build packages"
+.endif
+.if ${_LICENSE_PERMS:Mauto-accept}
+	@${ECHO_MSG} "===>  License allows being auto-accepted"
+.else
+	@${ECHO_MSG} "===>  License does not allows being auto-accepted"
+.endif
+
+
 check-license:
 .if defined(_LICENSE_ERROR)
 		@${ECHO_MSG} "===>  License not correctly defined: ${_LICENSE_ERROR}"
@@ -771,6 +801,11 @@ install-license:
 .endif
 
 .else	# !LICENSE
+
+debug-license:
+.	if defined(LICENSE_VERBOSE)
+	@${ECHO_MSG} "===>  License debug empty, port has not defined LICENSE"
+.	endif
 
 check-license:
 .	if defined(LICENSE_VERBOSE)
