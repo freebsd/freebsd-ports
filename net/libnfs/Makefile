@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libnfs
-PORTVERSION=	2.0.0
+PORTVERSION=	3.0.0
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	net
 
@@ -12,6 +12,9 @@ COMMENT=	Client library for accessing NFS shares over a network
 LICENSE=	LGPL21 GPLv3
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+PLIST_SUB=	SHLIB=${SHLIB}
+SHLIB=		12
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf gmake libtool pkgconfig

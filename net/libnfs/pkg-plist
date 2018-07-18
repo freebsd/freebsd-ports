@@ -3,8 +3,8 @@ bin/nfs-cp
 bin/nfs-ls
 lib/libnfs.a
 lib/libnfs.so
-lib/libnfs.so.11
-lib/libnfs.so.11.0.0
+lib/libnfs.so.%%SHLIB%%
+lib/libnfs.so.%%SHLIB%%.0.0
 include/nfsc/libnfs-raw-mount.h
 include/nfsc/libnfs-raw-nfs.h
 include/nfsc/libnfs-raw-nfs4.h
