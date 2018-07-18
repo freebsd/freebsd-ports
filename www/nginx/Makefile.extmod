@@ -211,11 +211,10 @@ MODSECURITY_LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 				libyajl.so:devel/yajl
 MODSECURITY_USE=		GNOME=libxml2
 MODSECURITY_USES=		apache:2.2+ pkgconfig shebangfix
-MODSECURITY_MASTER_SITES=	http://www.modsecurity.org/tarball/2.9.1S/RC/rc/:modsecurity
-MODSECURITY_DISTFILES=		modsecurity-2.9.1.tar.gz:modsecurity
-MODSECURITY_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure \
-				${PATCHDIR}/extra-patch-ngx_http_modsecurity.c
-MODSECURITY_VARS=		WRKSRC_modsecurity=${WRKDIR}/modsecurity-2.9.1
+MODSECURITY_MASTER_SITES=	http://www.modsecurity.org/tarball/2.9.2S/RC/rc/:modsecurity
+MODSECURITY_DISTFILES=		modsecurity-2.9.2.tar.gz:modsecurity
+MODSECURITY_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure
+MODSECURITY_VARS=		WRKSRC_modsecurity=${WRKDIR}/modsecurity-2.9.2
 
 MODSECURITY3_LIB_DEPENDS=	libmodsecurity.so:www/mod_security3
 MODSECURITY3_GH_TUPLE=		SpiderLabs:ModSecurity-nginx:4cde86b:modsec

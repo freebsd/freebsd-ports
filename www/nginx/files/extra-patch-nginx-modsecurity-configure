@@ -1,6 +1,6 @@
---- ../modsecurity-2.9.1/configure.orig	2016-02-07 12:45:53.346098000 -0500
-+++ ../modsecurity-2.9.1/configure	2016-02-07 12:47:50.081558000 -0500
-@@ -14949,7 +14949,7 @@
+--- ../modsecurity-2.9.2/configure.orig	2018-07-17 14:12:34.223173000 +0200
++++ ../modsecurity-2.9.2/configure	2018-07-17 14:16:23.284534000 +0200
+@@ -15715,7 +15715,7 @@ LUA_CPPFLAGS=""
  LUA_LDADD=""
  LUA_LDFLAGS=""
  LUA_CONFIG=${PKG_CONFIG}
@@ -9,7 +9,7 @@
  LUA_SONAMES="so la sl dll dylib a"
  
  
-@@ -14965,7 +14965,7 @@
+@@ -15731,7 +15731,7 @@ case "${with_lua}" in #(
    no) :
      test_paths= ;; #(
    yes) :
@@ -18,7 +18,7 @@
    *) :
      test_paths="${with_lua}" ;;
  esac
-@@ -15019,7 +15019,7 @@
+@@ -15785,7 +15785,7 @@ $as_echo "$as_me: lua CFLAGS: $LUA_CFLAG
      LUA_LDADD="`${LUA_CONFIG} ${LUA_PKGNAME} --libs-only-l`"
      if test "$verbose_output" -eq 1; then { $as_echo "$as_me:${as_lineno-$LINENO}: lua LDADD: $LUA_LDADD" >&5
  $as_echo "$as_me: lua LDADD: $LUA_LDADD" >&6;}; fi
