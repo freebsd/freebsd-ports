@@ -1,6 +1,6 @@
---- EMULib/Rules.gcc.orig	2014-01-31 00:39:34.000000000 +0700
-+++ EMULib/Rules.gcc	2014-01-31 00:40:38.000000000 +0700
-@@ -6,12 +6,12 @@
+--- EMULib/Rules.gcc.orig	2018-07-18 11:20:20 UTC
++++ EMULib/Rules.gcc
+@@ -7,14 +7,14 @@ LIB68K	= $(BASEDIR)/M68000
  LIBGBZ	= $(BASEDIR)/GBZ80
  PRIVATE	= $(BASEDIR)/Private
  
@@ -15,5 +15,8 @@
 -CFLAGS	= -O2 -pthread -I. -I.. -I$(EMULIB)
 +CFLAGS	+= -pthread -I. -I.. -I$(EMULIB)
  DEFINES = -DZLIB
- LIBS    = -lz -lpthread
+-LIBS    = -lz -lpthread
++LIBS    += -lz -lpthread
  
+ # EMULib sound, console, and other utility functions 
+ OBJECTS	= $(EMULIB)/EMULib.o $(EMULIB)/Sound.o   \
