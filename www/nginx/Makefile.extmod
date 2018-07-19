@@ -31,9 +31,8 @@ CT_GH_TUPLE=		grahamedgecombe:nginx-ct:v1.3.2:ct
 CT_VARS=		DSO_EXTMODS+=ct
 CT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-ct-LibreSSL
 
-ECHO_GH_TUPLE=		openresty:echo-nginx-module:46334b3:echo
+ECHO_GH_TUPLE=		openresty:echo-nginx-module:c65f5c6:echo
 ECHO_VARS=		DSO_EXTMODS+=echo
-ECHO_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_echo_request_info.c
 
 DRIZZLE_LIB_DEPENDS=	libdrizzle.so:databases/libdrizzle
 DRIZZLE_CONFIGURE_ENV=	LIBDRIZZLE_INC=${LOCALBASE}/include \
@@ -52,7 +51,7 @@ ENCRYPTSESSION_IMPLIES=		DEVEL_KIT
 ENCRYPTSESSION_GH_TUPLE=	openresty:encrypted-session-nginx-module:v0.07:encryptsession
 ENCRYPTSESSION_VARS=		DSO_EXTMODS+=encryptsession
 
-FASTDFS_GH_TUPLE=	happyfish100:fastdfs-nginx-module:85347be:fastdfs
+FASTDFS_GH_TUPLE=	happyfish100:fastdfs-nginx-module:8796a7d:fastdfs
 FASTDFS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-fastdfs-src-config \
 			${PATCHDIR}/extra-patch-fastdfs-src-mod_fastdfs.conf
 FASTDFS_BUILD_DEPENDS=	${LOCALBASE}/include/fastcommon/logger.h:devel/libfastcommon \
@@ -77,7 +76,7 @@ HEADERS_MORE_VARS=		DSO_EXTMODS+=headers_more
 HTTP_ACCEPT_LANGUAGE_GH_TUPLE=		giom:nginx_accept_language_module:2f69842:accept_language
 HTTP_ACCEPT_LANGUAGE_CONFIGURE_ON=	--add-module=${WRKSRC_accept_language}
 
-HTTP_AUTH_DIGEST_GH_TUPLE=	atomx:nginx-http-auth-digest:274490c:auth_digest
+HTTP_AUTH_DIGEST_GH_TUPLE=	atomx:nginx-http-auth-digest:cd86418:auth_digest
 HTTP_AUTH_DIGEST_VARS=		DSO_EXTMODS+=auth_digest
 
 HTTP_AUTH_KRB5_GH_TUPLE=	stnoonan:spnego-http-auth-nginx-module:7e028a5:auth_krb5
