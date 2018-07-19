@@ -18,11 +18,6 @@ GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-# This directory is handled by net/GeoIP
-	@${REINPLACE_CMD} -e '/MKDIR_P.*(datarootdir)\/GeoIP/ d' \
-		${WRKSRC}/Makefile.am
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/GeoIP
 	${MV} ${STAGEDIR}${DOCSDIR}/GeoIP.conf.default \
