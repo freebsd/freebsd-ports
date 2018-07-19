@@ -1,0 +1,38 @@
+--- environment_variables.orig	2018-07-04 09:14:20 UTC
++++ environment_variables
+@@ -17,11 +17,14 @@ export LC_ALL
+ 
+ # The following should be good for most cases 
+ 
+-PREFIX=`cd ../../.. ; pwd`
++if [ -z "$PREFIX" ]; then
++  echo "Please set the PREFIX environment variable"
++  exit 1
++fi
+ BIN_DIR=$PREFIX/bin
+-PSEUDO_DIR=$PREFIX/pseudo
++PSEUDO_DIR=$PREFIX/share/quantum-espresso/pseudo
+ # Beware: everything in $TMP_DIR will be destroyed !
+-TMP_DIR=$PREFIX/tempdir
++TMP_DIR=/tmp
+ 
+ # There should be no need to change anything below this line
+ 
+@@ -57,7 +60,7 @@ fi
+ # parallelism, do not run on too many processors
+ 
+ PARA_PREFIX=" "
+-PARA_PREFIX="mpirun -np 4"
++#PARA_PREFIX="mpirun -np 4"
+ #
+ # available flags: 
+ #                  -ni n        number of images        (or -nimage)
+@@ -68,7 +71,7 @@ PARA_PREFIX="mpirun -np 4"
+ #                  -nd n        number of processors for linear algebra 
+ #                                            (or -ndiag, -northo) 
+ #
+-PARA_POSTFIX=" -nk 1 -nd 1 -nb 1 -nt 1 "
++#PARA_POSTFIX=" -nk 1 -nd 1 -nb 1 -nt 1 "
+ #
+ # The following variables are used for image parallelization of PHonon 
+ # (see example in PHonon/examples/Image_example) 

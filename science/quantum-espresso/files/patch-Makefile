@@ -1,0 +1,23 @@
+--- Makefile.orig	2018-07-19 01:55:24 UTC
++++ Makefile
+@@ -264,11 +264,11 @@ links : bindir
+ #########################################################
+ 
+ install : 
+-	@if test -d bin ; then mkdir -p $(PREFIX)/bin ; \
++	@if test -d bin ; then mkdir -p $(DESTDIR)$(PREFIX)/bin ; \
+ 	for x in `find * ! -path "test-suite/*" -name *.x -type f` ; do \
+-		cp $$x $(PREFIX)/bin/ ; done ; \
++		cp $$x $(DESTDIR)$(PREFIX)/bin/ ; done ; \
+ 	fi
+-	@echo 'Quantum ESPRESSO binaries installed in $(PREFIX)/bin'
++	@echo 'Quantum ESPRESSO binaries installed in $(DESTDIR)$(PREFIX)/bin'
+ 
+ #########################################################
+ # Run test-suite for numerical regression testing
+@@ -376,3 +376,5 @@ doc_clean :
+ depend: libiotk
+ 	@echo 'Checking dependencies...'
+ 	- ( if test -x install/makedeps.sh ; then install/makedeps.sh ; fi)
++
++.PHONY: install
