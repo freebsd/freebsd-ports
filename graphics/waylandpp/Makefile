@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	waylandpp
-DISTVERSION=	0.2.2
+DISTVERSION=	0.2.3
 CATEGORIES=	graphics
 
 MAINTAINER=	tobik@FreeBSD.org
