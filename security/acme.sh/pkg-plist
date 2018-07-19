@@ -20,6 +20,7 @@ sbin/acme.sh
 %%EXAMPLESDIR%%/deploy/vault_cli.sh
 %%EXAMPLESDIR%%/deploy/vsftpd.sh
 %%EXAMPLESDIR%%/dnsapi/README.md
+%%EXAMPLESDIR%%/dnsapi/dns_acmedns.sh
 %%EXAMPLESDIR%%/dnsapi/dns_ad.sh
 %%EXAMPLESDIR%%/dnsapi/dns_ali.sh
 %%EXAMPLESDIR%%/dnsapi/dns_autodns.sh
@@ -38,6 +39,7 @@ sbin/acme.sh
 %%EXAMPLESDIR%%/dnsapi/dns_duckdns.sh
 %%EXAMPLESDIR%%/dnsapi/dns_dyn.sh
 %%EXAMPLESDIR%%/dnsapi/dns_dynu.sh
+%%EXAMPLESDIR%%/dnsapi/dns_euserv.sh
 %%EXAMPLESDIR%%/dnsapi/dns_freedns.sh
 %%EXAMPLESDIR%%/dnsapi/dns_gandi_livedns.sh
 %%EXAMPLESDIR%%/dnsapi/dns_gd.sh
@@ -49,6 +51,7 @@ sbin/acme.sh
 %%EXAMPLESDIR%%/dnsapi/dns_knot.sh
 %%EXAMPLESDIR%%/dnsapi/dns_lexicon.sh
 %%EXAMPLESDIR%%/dnsapi/dns_linode.sh
+%%EXAMPLESDIR%%/dnsapi/dns_loopia.sh
 %%EXAMPLESDIR%%/dnsapi/dns_lua.sh
 %%EXAMPLESDIR%%/dnsapi/dns_me.sh
 %%EXAMPLESDIR%%/dnsapi/dns_myapi.sh
@@ -60,6 +63,7 @@ sbin/acme.sh
 %%EXAMPLESDIR%%/dnsapi/dns_pdns.sh
 %%EXAMPLESDIR%%/dnsapi/dns_selectel.sh
 %%EXAMPLESDIR%%/dnsapi/dns_servercow.sh
+%%EXAMPLESDIR%%/dnsapi/dns_tele3.sh
 %%EXAMPLESDIR%%/dnsapi/dns_unoeuro.sh
 %%EXAMPLESDIR%%/dnsapi/dns_vscale.sh
 %%EXAMPLESDIR%%/dnsapi/dns_yandex.sh
