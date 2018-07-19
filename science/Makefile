@@ -247,6 +247,7 @@
     SUBDIR += v_sim
     SUBDIR += vmd
     SUBDIR += voro++
+    SUBDIR += xcrysden
     SUBDIR += xfce4-equake-plugin
     SUBDIR += xmakemol
 
