@@ -7,6 +7,7 @@ include/KF5/Attica/Attica/BuildServiceJob
 include/KF5/Attica/Attica/BuildServiceJobOutput
 include/KF5/Attica/Attica/Category
 include/KF5/Attica/Attica/Comment
+include/KF5/Attica/Attica/Config
 include/KF5/Attica/Attica/Content
 include/KF5/Attica/Attica/DeleteJob
 include/KF5/Attica/Attica/Distribution
@@ -47,6 +48,7 @@ include/KF5/Attica/attica/buildservicejob.h
 include/KF5/Attica/attica/buildservicejoboutput.h
 include/KF5/Attica/attica/category.h
 include/KF5/Attica/attica/comment.h
+include/KF5/Attica/attica/config.h
 include/KF5/Attica/attica/content.h
 include/KF5/Attica/attica/deletejob.h
 include/KF5/Attica/attica/distribution.h

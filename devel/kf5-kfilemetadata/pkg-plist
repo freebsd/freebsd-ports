@@ -1,4 +1,5 @@
 etc/xdg/kfilemetadata.categories
+include/KF5/KFileMetaData/KFileMetaData/EmbeddedImageData
 include/KF5/KFileMetaData/KFileMetaData/ExtractionResult
 include/KF5/KFileMetaData/KFileMetaData/Extractor
 include/KF5/KFileMetaData/KFileMetaData/ExtractorCollection
@@ -13,6 +14,7 @@ include/KF5/KFileMetaData/KFileMetaData/WriteData
 include/KF5/KFileMetaData/KFileMetaData/Writer
 include/KF5/KFileMetaData/KFileMetaData/WriterCollection
 include/KF5/KFileMetaData/KFileMetaData/WriterPlugin
+include/KF5/KFileMetaData/kfilemetadata/embeddedimagedata.h
 include/KF5/KFileMetaData/kfilemetadata/extractionresult.h
 include/KF5/KFileMetaData/kfilemetadata/extractor.h
 include/KF5/KFileMetaData/kfilemetadata/extractorcollection.h

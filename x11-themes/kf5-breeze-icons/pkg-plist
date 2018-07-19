@@ -336,6 +336,7 @@ share/icons/breeze-dark/actions/16/dvipng.svg
 share/icons/breeze-dark/actions/16/dvips.svg
 share/icons/breeze-dark/actions/16/dynamic-amarok.svg
 share/icons/breeze-dark/actions/16/edit-bomb.svg
+share/icons/breeze-dark/actions/16/edit-clear-all.svg
 share/icons/breeze-dark/actions/16/edit-clear-history.svg
 share/icons/breeze-dark/actions/16/edit-clear-list.svg
 share/icons/breeze-dark/actions/16/edit-clear-locationbar-ltr.svg
@@ -1919,6 +1920,7 @@ share/icons/breeze-dark/actions/22/dvisearch.svg
 share/icons/breeze-dark/actions/22/dynamic-amarok.svg
 share/icons/breeze-dark/actions/22/earthquake.svg
 share/icons/breeze-dark/actions/22/edit-bomb.svg
+share/icons/breeze-dark/actions/22/edit-clear-all.svg
 share/icons/breeze-dark/actions/22/edit-clear-history.svg
 share/icons/breeze-dark/actions/22/edit-clear-list.svg
 share/icons/breeze-dark/actions/22/edit-clear-locationbar-ltr.svg
@@ -3478,6 +3480,7 @@ share/icons/breeze-dark/actions/24/draw-triangle3.svg
 share/icons/breeze-dark/actions/24/draw-triangle4.svg
 share/icons/breeze-dark/actions/24/draw-watercolor.svg
 share/icons/breeze-dark/actions/24/edit-bomb.svg
+share/icons/breeze-dark/actions/24/edit-clear-all.svg
 share/icons/breeze-dark/actions/24/edit-clear-history.svg
 share/icons/breeze-dark/actions/24/edit-clear-list.svg
 share/icons/breeze-dark/actions/24/edit-clear-locationbar-ltr.svg
@@ -8205,6 +8208,7 @@ share/icons/breeze/actions/16/dvipng.svg
 share/icons/breeze/actions/16/dvips.svg
 share/icons/breeze/actions/16/dynamic-amarok.svg
 share/icons/breeze/actions/16/edit-bomb.svg
+share/icons/breeze/actions/16/edit-clear-all.svg
 share/icons/breeze/actions/16/edit-clear-history.svg
 share/icons/breeze/actions/16/edit-clear-list.svg
 share/icons/breeze/actions/16/edit-clear-locationbar-ltr.svg
@@ -9788,6 +9792,7 @@ share/icons/breeze/actions/22/dvisearch.svg
 share/icons/breeze/actions/22/dynamic-amarok.svg
 share/icons/breeze/actions/22/earthquake.svg
 share/icons/breeze/actions/22/edit-bomb.svg
+share/icons/breeze/actions/22/edit-clear-all.svg
 share/icons/breeze/actions/22/edit-clear-history.svg
 share/icons/breeze/actions/22/edit-clear-list.svg
 share/icons/breeze/actions/22/edit-clear-locationbar-ltr.svg
@@ -11347,6 +11352,7 @@ share/icons/breeze/actions/24/draw-triangle3.svg
 share/icons/breeze/actions/24/draw-triangle4.svg
 share/icons/breeze/actions/24/draw-watercolor.svg
 share/icons/breeze/actions/24/edit-bomb.svg
+share/icons/breeze/actions/24/edit-clear-all.svg
 share/icons/breeze/actions/24/edit-clear-history.svg
 share/icons/breeze/actions/24/edit-clear-list.svg
 share/icons/breeze/actions/24/edit-clear-locationbar-ltr.svg
