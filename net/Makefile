@@ -532,6 +532,7 @@
     SUBDIR += nload
     SUBDIR += nmsg
     SUBDIR += nncp
+    SUBDIR += nng
     SUBDIR += nocatsplash
     SUBDIR += norm
     SUBDIR += nph
