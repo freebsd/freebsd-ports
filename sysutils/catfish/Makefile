@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	catfish
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.6
 CATEGORIES=	sysutils
-MASTER_SITES=	http://launchpad.net/catfish-search/1.4/1.4.1/+download/
+MASTER_SITES=	XFCE/src/apps/${PORTNAME:tl}/${PORTVERSION:R}
+DIST_SUBDIR=	xfce4
 
-MAINTAINER=	jpaetzel@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	GTK search utility
 
 LICENSE=	GPLv3
@@ -17,9 +18,15 @@ RUN_DEPENDS=	\
 	gksu:sysutils/gksu
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-USES=		python:2.7
+USES=		desktop-file-utils python:2.7 tar:bz2
 USE_PYTHON=	distutils
 USE_GNOME=	gtk30 intltool pygobject3
+
+OPTIONS_DEFINE=	ZEITGEIST
+OPTIONS_DEFAULT=ZEITGEIST
+
+ZEITGEIST_DESC=	Provide recent search suggestions
+ZEITGEIST_LIB_DEPENDS=	libzeitgeist-2.0.so:sysutils/zeitgeist
 
 .include <bsd.port.pre.mk>
 
