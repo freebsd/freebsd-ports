@@ -1,0 +1,64 @@
+#########################################################################
+#
+#  System-dependent definitions suitable for compiling xcrysden using
+#  a system shared libraries (needs Tcl/Tk/GL/GLU/FFTW libraries)
+#
+########################################################################
+
+
+#------------------------------------------------------------------------
+# if you have a GNU make it is better to set the MAKE variable to point
+# to gnu make
+#------------------------------------------------------------------------
+MAKE = make
+
+
+#------------------------------------------------------------------------
+# compilers & flags
+#------------------------------------------------------------------------
+CFLAGS = -ffast-math -funroll-loops -fPIC -DUSE_FONTS -pedantic -Wall -DUSE_INTERP_RESULT
+CC     = gcc -g
+#LDLIB  = -ldl
+MATH   = -lm -lc
+
+FFLAGS = 
+FC     = gfortran -fdefault-double-8 -fdefault-real-8 -O2
+
+#-------------------------------------------
+#debug options
+#CFLAGS = -g
+#-------------------------------------------
+
+
+#------------------------------------------------------------------------
+# X-libraries & include files
+#------------------------------------------------------------------------
+X_LIB     = -lXmu -lX11 
+X_INCDIR  =
+
+#------------------------------------------------------------------------
+#
+# Libraries
+#
+
+TCL_LIB      = -L/usr/local/lib -ltcl86
+TK_LIB       = -L/usr/local/lib -ltk86
+GLU_LIB      = -L/usr/local/lib -lGLU
+GL_LIB       = -L/usr/local/lib -lGL
+FFTW3_LIB    = -L/usr/local/lib -lfftw3
+EXT_LIB      = -L/usr/local/lib -lgl2ps
+# this is only used for some testing purposes
+#MESCHACH_LIB = -lmeschach
+
+#
+# Include directories
+#
+
+TCL_INCDIR      = -I/usr/local/include/tcl8.6
+TK_INCDIR       = -I/usr/local/include/tk8.6
+GL_INCDIR       = -I/usr/local/include
+FFTW3_INCDIR    = -I/usr/local/include
+# this is only used for some testing purposes
+#MESCHACH_INCDIR =
+
+#------------------------------------------------------------------------
