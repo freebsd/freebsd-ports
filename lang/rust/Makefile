@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION?=	1.26.2
+PORTVERSION?=	1.27.1
 PORTREVISION?=
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
@@ -36,6 +36,8 @@ LIB_DEPENDS=		libcurl.so:ftp/curl \
 ONLY_FOR_ARCHS?=	aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
 
+BROKEN_aarch64=		fails to build: bootstrap compiler crashes
+
 # FIXME: The bootstrapped rustc adds -L/usr/local/lib in front of
 # the LDFLAGS. When stage0's rustc is linked, it picks the installed
 # librust*so and fails.
@@ -44,13 +46,13 @@ ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
 CONFLICTS_INSTALL?=	rust-nightly
 
 # See WRKSRC/src/stage0.txt for this date and version values.
-BOOTSTRAPS_DATE?=		2018-03-29
+BOOTSTRAPS_DATE?=		2018-05-10
 
-RUST_BOOTSTRAP_VERSION?=	1.25.0
+RUST_BOOTSTRAP_VERSION?=	1.26.0
 RUSTC_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
 RUST_STD_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
 
-CARGO_BOOTSTRAP_VERSION?=	0.26.0
+CARGO_BOOTSTRAP_VERSION?=	0.27.0
 CARGO_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
 
 RUST_CHANNEL=	${PKGNAMESUFFIX:Ustable:S/^-//}
@@ -250,7 +252,7 @@ do-install:
 	cd ${WRKSRC} && \
 	${SETENV} ${X_PY_ENV} \
 		DESTDIR=${STAGEDIR} \
-	${X_PY_CMD} install \
+	${X_PY_CMD} 'install' \
 		--verbose \
 		--config ./config.toml \
 		--jobs ${MAKE_JOBS_NUMBER}
@@ -334,8 +336,8 @@ do-test:
 		--jobs ${MAKE_JOBS_NUMBER}
 
 makesum-all-archs:
-	${MAKE} makesum ARCH=${ONLY_FOR_ARCHS:[1]}
-.for arch in ${ONLY_FOR_ARCHS:[2..-1]}
+	${MAKE} makesum ARCH=${ONLY_FOR_ARCHS:O:[1]}
+.for arch in ${ONLY_FOR_ARCHS:O:[2..-1]}
 	${MAKE} makesum ARCH=${arch} DISTINFO_FILE=${DISTINFO_FILE}.${arch}
 	${GREP} ${RUST_ARCH_${arch}} ${DISTINFO_FILE}.${arch} >> ${DISTINFO_FILE}
 	${RM} ${DISTINFO_FILE}.${arch}

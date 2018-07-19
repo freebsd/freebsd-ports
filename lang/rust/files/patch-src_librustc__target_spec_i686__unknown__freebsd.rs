@@ -1,6 +1,6 @@
---- src/librustc_back/target/i686_unknown_freebsd.rs.orig	2017-10-09 20:04:51 UTC
-+++ src/librustc_back/target/i686_unknown_freebsd.rs
-@@ -13,7 +13,7 @@ use target::{Target, TargetResult};
+--- src/librustc_target/spec/i686_unknown_freebsd.rs.orig	2018-06-19 04:35:53 UTC
++++ src/librustc_target/spec/i686_unknown_freebsd.rs
+@@ -12,7 +12,7 @@ use spec::{LinkerFlavor, Target, TargetResult};
  
  pub fn target() -> TargetResult {
      let mut base = super::freebsd_base::opts();
