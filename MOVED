@@ -10294,3 +10294,4 @@ www/libxul||2018-06-22|Has expired: NPAPI are no longer supported
 mail/postfix211||2018-06-24|Has expired: Not supported anymore by vendor. Please choose a new one version
 mail/postfix211-sasl||2018-06-24|Has expired: Not supported anymore by vendor. Please choose a new one version
 devel/py-binplist||2018-06-26|Has expired: Not depended upon anymore, no longer maintained upstream
+www/gitlab|www/gitlab-ce|2018-07-04|Port renamed to match name on gitlab.org

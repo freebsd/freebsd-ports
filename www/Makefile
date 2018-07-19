@@ -200,7 +200,7 @@
     SUBDIR += getleft
     SUBDIR += gist
     SUBDIR += gitea
-    SUBDIR += gitlab
+    SUBDIR += gitlab-ce
     SUBDIR += gitlab-pages
     SUBDIR += gitlab-workhorse
     SUBDIR += glassfish

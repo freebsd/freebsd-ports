@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180704:
+  AFFECTS: users of www/gitlab
+  AUTHOR: mfechner@FreeBSD.org
+
+  The gitlab port uses the package from gitlab.org instead of github.org.
+  For this the port was renamed from gitlab to gitlab-ce.
+  Please follow the instructions very carefully to not lose your data!
+  Not only the package was renamed, also the directory name changed.
+
+  You can find the current instruction here:
+  https://gitlab.fechner.net/mfechner/Gitlab-docu/blob/master/update/10.8-11.0-freebsd.md
+
+  Please note the update was only tested for an update from 10.8.5 to 11.0.2.
+  If your version of gitlab was released before 2014-03-13 you cannot update
+  to this version. You need to make an intermediate update to an earlier
+  version before.
+
 20180701:
   AFFECTS: users of devel/bats
   AUTHOR: lifanov@FreeBSD.org
