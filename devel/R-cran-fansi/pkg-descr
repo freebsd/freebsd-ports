@@ -1,0 +1,4 @@
+Counterparts to R string manipulation functions that account for
+the effects of ANSI text formatting control sequences.
+
+WWW: https://cran.r-project.org/web/packages/fansi/
