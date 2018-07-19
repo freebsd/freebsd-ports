@@ -1,0 +1,104 @@
+# this sample config gives you a feel for how h2o can be used
+# and a high-security configuration for TLS and HTTP headers
+# see https://h2o.examp1e.net/ for detailed documentation
+# and h2o --help for command-line options and settings
+user: www
+pid-file: /var/run/h2o.pid
+# log normal access to file
+access-log: /var/log/h2o/access.log
+# send errors to syslog
+error-log:  "| logger -i -p daemon.err -t h2o"
+
+# as of 2017-12-01 the following TLS config and headers, with
+# DNS CAA records and custom diffie-hellmann parameters via
+# `openssl dhparam -out %%PREFIX%%/etc/ssl/dhparam.pem 4096`
+# will get you:
+
+# A+ on https://www.ssllabs.com/ssltest/
+listen: 80
+listen:
+  port: 443
+  ssl:
+    # using at least TLS1.2 restricts many older devices
+    minimum-version: TLSv1.1
+    dh-file: %%PREFIX%%/etc/ssl/dhparam.pem
+    # generate your own certificates with security/acme-client
+    certificate-file: %%PREFIX%%/etc/ssl/acme/example.org/fullchain.pem
+    key-file: %%PREFIX%%/etc/ssl/acme/private/example.org/privkey.pem
+    cipher-preference: server
+    cipher-suite: ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA:ECDHE-ECDSA-DES-CBC3-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:DES-CBC3-SHA:!DSS
+
+# A+ on https://securityheaders.io/
+header.add: "x-frame-options: deny"
+header.add: "X-XSS-Protection: 1; mode=block"
+header.add: "X-Content-Type-Options: nosniff"
+header.add: "X-UA-Compatible: IE=Edge"
+header.add: "Referrer-Policy: strict-origin"
+header.add: "Cache-Control: no-transform"
+header.add: "Content-Security-Policy: default-src https:"
+# 6 months HSTS pinning
+header.add: "Strict-Transport-Security: max-age=16000000"
+
+# no patience for slow users
+http1-request-timeout: 10
+http2-idle-timeout: 10
+# limit POST bodies
+limit-request-body: 10485760 # 10MiB
+max-connections: 1024
+
+file.mime.addtypes:
+  image/svg+xml: .svg
+  text/plain: .log
+  text/css: .css
+  application/atom+xml: .xml
+  application/zip: .zip
+  application/json: .json
+  "text/html; charset=utf-8": .html
+
+# per-host configurations
+hosts:
+  # a basic fileserver
+  www.example.org:
+    # enable Apache-style directory listings
+    file.dirlisting: on
+    file.send-gzip: on
+    paths:
+      "/":
+        file.dir: "/var/www/www.example.org"
+      # a simple permanent URL redirect
+      "/blog":
+        redirect:
+          status: 301
+          url: https://blog.example.org/
+      # a password-restricted url
+      "/server-status":
+        mruby.handler: |
+          require "htpasswd.rb"
+          Htpasswd.new("%%ETCDIR%%/private/htpasswd", "example.org")
+        status: ON
+      # redireect Lets Encrypt ACME protocol to a specific challenge directory
+      "/.well-known/acme-challenge":
+        file.dir: "/var/www/acme"
+  # virtual directory layout to support serving FreeBSD packages built by poudriere
+  pkg.example.org:
+    paths:
+      "/poudriere":
+        file.dir: "%%PREFIX%%/poudriere/data/logs/bulk"
+      "/FreeBSD:10:amd64":
+        file.dir: "%%PREFIX%%/poudriere/data/packages/10_amd64-default/"
+      "/FreeBSD:11:amd64":
+        file.dir: "%%PREFIX%%/poudriere/data/packages/11_amd64-default/"
+  # a simple ruby-powered embedded JSON API
+  api.example.net:
+    paths:
+      "/ok.json":
+        mruby.handler: |
+          Proc.new do |env|
+            [200, {'content-type' => 'application/json'}, ['{"status":"ok"}']]
+          end
+  # a websockets-aware reverse proxy
+  ws.example.net:
+    paths:
+      "/":
+        proxy.websocket: ON
+        proxy.reverse.url: "http://localhost:1080/"
