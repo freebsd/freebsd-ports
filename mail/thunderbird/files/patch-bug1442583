@@ -1,0 +1,39 @@
+commit 7371a080accd
+Author: Lars T Hansen <lhansen@mozilla.com>
+Date:   Mon Mar 5 09:55:28 2018 +0100
+
+    Bug 1442583 - Properly initialize ARM64 icache flushing machinery.  r=sstangl
+    
+    --HG--
+    extra : rebase_source : 73b5921da1fa0a19d6072e35d09bd7b528bb6bfc
+    extra : intermediate-source : 19516efbbf6750ba04e11c7099586d5be2fe818f
+    extra : source : 4316cc82d6302edf839a4af6fcb815f0ffa9f65c
+---
+ js/src/jit/ProcessExecutableMemory.cpp | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git js/src/jit/ProcessExecutableMemory.cpp js/src/jit/ProcessExecutableMemory.cpp
+index e763a9d68dc17..8a6d50b6a7845 100644
+--- js/src/jit/ProcessExecutableMemory.cpp
++++ js/src/jit/ProcessExecutableMemory.cpp
+@@ -20,6 +20,9 @@
+ #include "jsutil.h"
+ 
+ #include "gc/Memory.h"
++#ifdef JS_CODEGEN_ARM64
++# include "jit/arm64/vixl/Cpu-vixl.h"
++#endif
+ #include "threading/LockGuard.h"
+ #include "threading/Mutex.h"
+ #include "util/Windows.h"
+@@ -621,6 +624,10 @@ js::jit::DeallocateExecutableMemory(void* addr, size_t bytes)
+ bool
+ js::jit::InitProcessExecutableMemory()
+ {
++#ifdef JS_CODEGEN_ARM64
++    // Initialize instruction cache flushing.
++    vixl::CPU::SetUp();
++#endif
+     return execMemory.init();
+ }
+ 
