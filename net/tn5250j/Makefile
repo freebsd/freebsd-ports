@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	saper@saper.info
 COMMENT=	5250 terminal emulator for the AS/400 written in Java
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	${JAVALIBDIR}/mail.jar:java/javamail \
 		${JYTHON_JAR}:lang/jython \
 		${JAVALIBDIR}/jt400.jar:sysutils/jtopen \
