@@ -31,6 +31,7 @@
     SUBDIR += R-cran-data.table
     SUBDIR += R-cran-doParallel
     SUBDIR += R-cran-evaluate
+    SUBDIR += R-cran-fansi
     SUBDIR += R-cran-foreach
     SUBDIR += R-cran-gbm
     SUBDIR += R-cran-gdata
