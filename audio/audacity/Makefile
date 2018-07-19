@@ -4,7 +4,7 @@
 PORTNAME=	audacity
 PORTVERSION=	2.2.2
 DISTVERSIONPREFIX=	Audacity-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	xxjack12xx@gmail.com
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	autogen:devel/autogen \
 		cmake:devel/cmake
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libexpat.so:textproc/expat2 \
+		libportaudio.so:audio/portaudio \
 		libsoxr.so:audio/libsoxr \
 		libsndfile.so:audio/libsndfile
 
@@ -69,7 +70,7 @@ CONFIGURE_ARGS+=	--disable-option-checking \
 			--with-libsndfile=system \
 			--with-libsoxr=system \
 			--with-midi \
-			--with-portaudio \
+			--with-portaudio=system \
 			--with-portmixer=yes \
 			--with-widgetextra
 
