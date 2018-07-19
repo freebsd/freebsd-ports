@@ -12,6 +12,8 @@ COMMENT=	PostScript support for Zathura PDF viewer
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to stage
+
 LIB_DEPENDS=	libspectre.so:print/libspectre
 BUILD_DEPENDS=	zathura:graphics/zathura
 RUN_DEPENDS=	zathura:graphics/zathura
