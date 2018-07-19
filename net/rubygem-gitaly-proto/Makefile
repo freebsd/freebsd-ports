@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly-proto
-PORTVERSION=	0.100.0
+PORTVERSION=	0.101.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Protobuf specifications and client libraries for Gitaly
 
 LICENSE=	MIT
