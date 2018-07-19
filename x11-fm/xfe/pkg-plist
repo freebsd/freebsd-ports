@@ -19,6 +19,7 @@ share/applications/xfw.desktop
 %%NLS%%share/locale/es/LC_MESSAGES/xfe.mo
 %%NLS%%share/locale/es_AR/LC_MESSAGES/xfe.mo
 %%NLS%%share/locale/es_CO/LC_MESSAGES/xfe.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/xfe.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xfe.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xfe.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xfe.mo
