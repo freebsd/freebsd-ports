@@ -2,9 +2,9 @@
 
 PORTNAME=	puppetserver
 PORTVERSION=	2.8.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils java
-MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
+MASTER_SITES=	https://downloads.puppetlabs.com/puppet/
 
 MAINTAINER=	freebsd@zleslie.info
 COMMENT=	Puppet Server running in the JVM
