@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+
+# S50cleanhome
+# a script to clean up users' Mozilla home directories to make upgrading
+# less painful.
+
+# We run in our own subshell
+
+# First, verify protocol
+[ "$1" != "start" ] && exit 1
+[ -z "${MOZ_PIS_API}" -o ${MOZ_PIS_API} -ne 2 ] && exit 1
+[ -z "${MOZ_PIS_MOZBINDIR}" -o ! -d "${MOZ_PIS_MOZBINDIR}" ] && exit 1
+[ -z "${HOME}" -o ! -d "${HOME}" ] && exit 1
+[ -z "${MOZ_PIS_USER_DIR}" -o ! -d "${HOME}/${MOZ_PIS_USER_DIR}" ] && exit 1
+
+# Try to cleanup ${HOME}/${MOZ_PIS_USER_DIR}
+
+if [ -f "${HOME}/${MOZ_PIS_USER_DIR}/profiles.ini" ]; then
+    sed -e '/Path=/! d' -e "s,Path=,${HOME}/${MOZ_PIS_USER_DIR}/," \
+    	"${HOME}/${MOZ_PIS_USER_DIR}/profiles.ini" \
+	| while read dir
+    do
+	[ ! -d "${dir}" ] && continue
+	# Debian does this for new builds
+	# rm -f "${dir}/XUL.mfasl"
+	# force a rebuild of compreg.dat and xpti.dat for new installations
+	[ "${dir}/compreg.dat" -ot "${MOZ_PIS_MOZBINDIR}/components.ini" ] &&
+		rm -f "${dir}/compatibility.ini" "${dir}/XUL.mfasl"
+    done
+fi

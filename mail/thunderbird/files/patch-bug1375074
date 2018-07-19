@@ -1,0 +1,82 @@
+commit fc25eb4380d0
+Author: Lars T Hansen <lhansen@mozilla.com>
+Date:   Wed Feb 28 13:57:52 2018 +0100
+
+    Bug 1375074 - Save and restore non-volatile x28 on ARM64 for generated unboxed object constructor.  r=sstangl
+    
+    --HG--
+    extra : rebase_source : 4a2824b23cf7453d07c962123f780c0ff2fd5292
+    extra : source : dec6ab6522a4eb4b3c2defc5078b38ed904f3383
+---
+ js/src/jit-test/tests/bug1375074.js | 18 ++++++++++++++++++
+ js/src/vm/UnboxedObject.cpp         | 25 ++++++++++++++++++++++++-
+ 2 files changed, 42 insertions(+), 1 deletion(-)
+
+diff --git js/src/jit-test/tests/bug1375074.js js/src/jit-test/tests/bug1375074.js
+new file mode 100644
+index 0000000000000..8bf01d96903fc
+--- /dev/null
++++ js/src/jit-test/tests/bug1375074.js
+@@ -0,0 +1,18 @@
++// This forces the VM to start creating unboxed objects and thus stresses a
++// particular path into generated code for a specialized unboxed object
++// constructor.
++
++var K = 2000;			// 2000 should be plenty
++var s = "[";
++var i;
++for ( i=0; i < K-1; i++ )
++    s = s + `{"i":${i}},`;
++s += `{"i":${i}}]`;
++var v = JSON.parse(s);
++
++assertEq(v.length == K, true);
++
++for ( i=0; i < K; i++) {
++    assertEq(v[i] instanceof Object, true);
++    assertEq(v[i].i, i);
++}
+diff --git js/src/vm/UnboxedObject.cpp js/src/vm/UnboxedObject.cpp
+index c8c178965c488..5badf328ede4f 100644
+--- js/src/vm/UnboxedObject.cpp
++++ js/src/vm/UnboxedObject.cpp
+@@ -95,7 +95,15 @@ UnboxedLayout::makeConstructorCode(JSContext* cx, HandleObjectGroup group)
+ #endif
+ 
+ #ifdef JS_CODEGEN_ARM64
+-    // ARM64 communicates stack address via sp, but uses a pseudo-sp for addressing.
++    // ARM64 communicates stack address via sp, but uses a pseudo-sp (PSP) for
++    // addressing.  The register we use for PSP may however also be used by
++    // calling code, and it is nonvolatile, so save it.  Do this as a special
++    // case first because the generic save/restore code needs the PSP to be
++    // initialized already.
++    MOZ_ASSERT(PseudoStackPointer64.Is(masm.GetStackPointer64()));
++    masm.Str(PseudoStackPointer64, vixl::MemOperand(sp, -16, vixl::PreIndex));
++
++    // Initialize the PSP from the SP.
+     masm.initStackPtr();
+ #endif
+ 
+@@ -233,7 +241,22 @@ UnboxedLayout::makeConstructorCode(JSContext* cx, HandleObjectGroup group)
+         masm.pop(ScratchDoubleReg);
+     masm.PopRegsInMask(savedNonVolatileRegisters);
+ 
++#ifdef JS_CODEGEN_ARM64
++    // Now restore the value that was in the PSP register on entry, and return.
++
++    // Obtain the correct SP from the PSP.
++    masm.Mov(sp, PseudoStackPointer64);
++
++    // Restore the saved value of the PSP register, this value is whatever the
++    // caller had saved in it, not any actual SP value, and it must not be
++    // overwritten subsequently.
++    masm.Ldr(PseudoStackPointer64, vixl::MemOperand(sp, 16, vixl::PostIndex));
++
++    // Perform a plain Ret(), as abiret() will move SP <- PSP and that is wrong.
++    masm.Ret(vixl::lr);
++#else
+     masm.abiret();
++#endif
+ 
+     masm.bind(&failureStoreOther);
+ 

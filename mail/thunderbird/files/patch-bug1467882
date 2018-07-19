@@ -1,0 +1,137 @@
+
+# HG changeset patch
+# User Alex Chronopoulos <achronop@gmail.com>
+# Date 1528999505 25200
+# Node ID 0e40938905915ec04bbbccb4f093182a6785ac3a
+# Parent  a75f33744de61543dc840cbb0324fedf997c3931
+Bug 1467882 - Update cubeb from upstream to 0677b30. r=kinetik
+
+diff --git a/media/libcubeb/README_MOZILLA b/media/libcubeb/README_MOZILLA
+--- media/libcubeb/README_MOZILLA
++++ media/libcubeb/README_MOZILLA
+@@ -1,8 +1,8 @@
+ The source from this directory was copied from the cubeb
+ git repository using the update.sh script.  The only changes
+ made were those applied by update.sh and the addition of
+ Makefile.in build files for the Mozilla build system.
+ 
+ The cubeb git repository is: git://github.com/kinetiknz/cubeb.git
+ 
+-The git commit ID used was abf6ae235b0f15a2656f2d8692ac13708188165e (2018-06-01 13:02:45 +1200)
++The git commit ID used was 0677b3027b78c629586b099b5155aa6ac7422674 (2018-06-12 08:48:55 -0700)
+diff --git a/media/libcubeb/src/cubeb_sndio.c b/media/libcubeb/src/cubeb_sndio.c
+--- media/libcubeb/src/cubeb_sndio.c
++++ media/libcubeb/src/cubeb_sndio.c
+@@ -46,27 +46,43 @@ struct cubeb_stream {
+   unsigned int pbpf;              /* play bytes per frame */
+   unsigned int rchan;             /* number of rec channels */
+   unsigned int pchan;             /* number of play channels */
+   unsigned int nblks;		  /* number of blocks in the buffer */
+   uint64_t hwpos;                 /* frame number Joe hears right now */
+   uint64_t swpos;                 /* number of frames produced/consumed */
+   cubeb_data_callback data_cb;    /* cb to preapare data */
+   cubeb_state_callback state_cb;  /* cb to notify about state changes */
++  float volume;			  /* current volume */
+ };
+ 
+ static void
+-float_to_s16(void *ptr, long nsamp)
++s16_setvol(void *ptr, long nsamp, float volume)
++{
++  int16_t *dst = ptr;
++  int32_t mult = volume * 32768;
++  int32_t s;
++
++  while (nsamp-- > 0) {
++    s = *dst;
++    s = (s * mult) >> 15;
++    *(dst++) = s;
++  }
++}
++
++static void
++float_to_s16(void *ptr, long nsamp, float volume)
+ {
+   int16_t *dst = ptr;
+   float *src = ptr;
++  float mult = volume * 32768;
+   int s;
+ 
+   while (nsamp-- > 0) {
+-    s = lrintf(*(src++) * 32768);
++    s = lrintf(*(src++) * mult);
+     if (s < -32768)
+       s = -32768;
+     else if (s > 32767)
+       s = 32767;
+     *(dst++) = s;
+   }
+ }
+ 
+@@ -164,18 +180,22 @@ sndio_mainloop(void *arg)
+         /* need to write (aka drain) the partial play block we got */
+         pend = nfr * s->pbpf;
+         eof = 1;
+       }
+ 
+       if (prime > 0)
+         prime--;
+ 
+-      if ((s->mode & SIO_PLAY) && s->conv)
+-          float_to_s16(s->pbuf, nfr * s->pchan);
++      if (s->mode & SIO_PLAY) {
++        if (s->conv)
++          float_to_s16(s->pbuf, nfr * s->pchan, s->volume);
++        else
++          s16_setvol(s->pbuf, nfr * s->pchan, s->volume);
++      }
+ 
+       if (s->mode & SIO_REC)
+         rstart = 0;
+       if (s->mode & SIO_PLAY)
+         pstart = 0;
+     }
+ 
+     events = 0;
+@@ -367,16 +387,17 @@ sndio_stream_init(cubeb * context,
+     if (s->pbuf == NULL)
+       goto err;
+   }
+   if (s->mode & SIO_REC) {
+     s->rbuf = malloc(bps * rpar.rchan * rpar.round);
+     if (s->rbuf == NULL)
+       goto err;
+   }
++  s->volume = 1.;
+   *stream = s;
+   DPR("sndio_stream_init() end, ok\n");
+   (void)context;
+   (void)stream_name;
+   return CUBEB_OK;
+ err:
+   if (s->hdl)
+     sio_close(s->hdl);
+@@ -471,17 +492,21 @@ sndio_stream_get_position(cubeb_stream *
+   return CUBEB_OK;
+ }
+ 
+ static int
+ sndio_stream_set_volume(cubeb_stream *s, float volume)
+ {
+   DPR("sndio_stream_set_volume(%f)\n", volume);
+   pthread_mutex_lock(&s->mtx);
+-  sio_setvol(s->hdl, SIO_MAXVOL * volume);
++  if (volume < 0.)
++    volume = 0.;
++  else if (volume > 1.0)
++    volume = 1.;
++  s->volume = volume;
+   pthread_mutex_unlock(&s->mtx);
+   return CUBEB_OK;
+ }
+ 
+ int
+ sndio_stream_get_latency(cubeb_stream * stm, uint32_t * latency)
+ {
+   // http://www.openbsd.org/cgi-bin/man.cgi?query=sio_open
+

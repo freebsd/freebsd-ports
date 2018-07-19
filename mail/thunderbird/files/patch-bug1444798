@@ -1,0 +1,45 @@
+commit 7871e211ec43
+Author: sotaro <sotaro.ikeda.g@gmail.com>
+Date:   Fri Mar 16 21:03:59 2018 +0900
+
+    Bug 1444798 - Fix ExternalImageCallback func types r=jrmuizel
+---
+ gfx/webrender_bindings/src/bindings.rs | 11 +++++++----
+ 1 file changed, 7 insertions(+), 4 deletions(-)
+
+diff --git gfx/webrender_bindings/src/bindings.rs gfx/webrender_bindings/src/bindings.rs
+index 8517d7dd33e5..cf885ee713f3 100644
+--- gfx/webrender_bindings/src/bindings.rs
++++ gfx/webrender_bindings/src/bindings.rs
+@@ -312,8 +312,8 @@ struct WrExternalImage {
+     size: usize,
+ }
+ 
+-type LockExternalImageCallback = fn(*mut c_void, WrExternalImageId, u8) -> WrExternalImage;
+-type UnlockExternalImageCallback = fn(*mut c_void, WrExternalImageId, u8);
++type LockExternalImageCallback = unsafe extern "C" fn(*mut c_void, WrExternalImageId, u8) -> WrExternalImage;
++type UnlockExternalImageCallback = unsafe extern "C" fn(*mut c_void, WrExternalImageId, u8);
+ 
+ #[repr(C)]
+ pub struct WrExternalImageHandler {
+@@ -327,7 +327,8 @@ impl ExternalImageHandler for WrExternalImageHandler {
+             id: ExternalImageId,
+             channel_index: u8)
+             -> ExternalImage {
+-        let image = (self.lock_func)(self.external_image_obj, id.into(), channel_index);
++
++        let image = unsafe { (self.lock_func)(self.external_image_obj, id.into(), channel_index) };
+         ExternalImage {
+             uv: TexelRect::new(image.u0, image.v0, image.u1, image.v1),
+             source: match image.image_type {
+@@ -341,7 +342,9 @@ impl ExternalImageHandler for WrExternalImageHandler {
+     fn unlock(&mut self,
+               id: ExternalImageId,
+               channel_index: u8) {
+-        (self.unlock_func)(self.external_image_obj, id.into(), channel_index);
++        unsafe {
++            (self.unlock_func)(self.external_image_obj, id.into(), channel_index);
++        }
+     }
+ }
+ 
