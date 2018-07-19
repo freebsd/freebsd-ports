@@ -129,6 +129,7 @@
     SUBDIR += bulk_extractor
     SUBDIR += burp
     SUBDIR += busybox
+    SUBDIR += bvm
     SUBDIR += byobu
     SUBDIR += catfish
     SUBDIR += cbsd
