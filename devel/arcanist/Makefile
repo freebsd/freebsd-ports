@@ -2,6 +2,7 @@
 
 PORTNAME=	arcanist
 PORTVERSION=	20180420
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -34,5 +35,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_DESTDIR}
 	cd ${WRKSRC} ; ${PAX} -rw * ${STAGEDIR}${PREFIX}/${PHP_DESTDIR}
 	${LN} -sf ../${PHP_DESTDIR}/scripts/arcanist.php ${STAGEDIR}${PREFIX}/bin/arc
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions/
+	${RLN} ${STAGEDIR}${PREFIX}/${PHP_DESTDIR}/resources/shell/bash-completion ${STAGEDIR}${PREFIX}/share/bash-completion/completions/arc
 
 .include <bsd.port.mk>

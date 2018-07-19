@@ -921,3 +921,4 @@ lib/php/arcanist/src/workflow/ArcanistWhichWorkflow.php
 lib/php/arcanist/src/workflow/ArcanistWorkflow.php
 lib/php/arcanist/src/workflow/exception/ArcanistCapabilityNotSupportedException.php
 lib/php/arcanist/src/workingcopyidentity/ArcanistWorkingCopyIdentity.php
+share/bash-completion/completions/arc
