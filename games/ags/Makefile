@@ -1,9 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	ags
-DISTVERSIONPREFIX=	v.
-DISTVERSION=	3.4.1.13
+DISTVERSION=	3.4.1.14
 CATEGORIES=	games
+MASTER_SITES=	https://github.com/adventuregamestudio/ags/releases/download/v.${DISTVERSION}/
+DISTNAME=	ags_linux_v.${DISTVERSION}
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Adventure Game Studio Engine
@@ -18,12 +19,7 @@ LIB_DEPENDS=	liballeg.so:devel/allegro \
 		libvorbis.so:audio/libvorbis \
 		libfreetype.so:print/freetype2
 
-BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-std=c++11"
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	adventuregamestudio
-
-USES=		gmake localbase pkgconfig tar:xz
+USES=		compiler:c++11-lib gmake localbase pkgconfig tar:xz
 USE_XORG=	x11
 
 BUILD_WRKSRC=	${WRKSRC}/Engine
