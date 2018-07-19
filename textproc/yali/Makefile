@@ -14,6 +14,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	tsparks@appliedops.net
 COMMENT=	YALI: Yet Another LOLCODE Interpreter
 
+LICENSE=	BSD
+
 RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 		p5-Parse-RecDescent>=0:devel/p5-Parse-RecDescent
 
@@ -22,6 +24,7 @@ USE_PERL5=	run
 SHEBANG_FILES=	${DISTFILES}
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/yali
