@@ -1712,6 +1712,7 @@ share/icons/oxygen/base/16x16/actions/view-time-schedule-insert.png
 share/icons/oxygen/base/16x16/actions/view-time-schedule.png
 share/icons/oxygen/base/16x16/actions/view-web-browser-dom-tree.png
 share/icons/oxygen/base/16x16/actions/viewimage.png
+share/icons/oxygen/base/16x16/actions/visibility.png
 share/icons/oxygen/base/16x16/actions/window-close.png
 share/icons/oxygen/base/16x16/actions/window-duplicate.png
 share/icons/oxygen/base/16x16/actions/window-new.png
@@ -3484,6 +3485,7 @@ share/icons/oxygen/base/22x22/actions/view-time-schedule-insert.png
 share/icons/oxygen/base/22x22/actions/view-time-schedule.png
 share/icons/oxygen/base/22x22/actions/view-web-browser-dom-tree.png
 share/icons/oxygen/base/22x22/actions/viewimage.png
+share/icons/oxygen/base/22x22/actions/visibility.png
 share/icons/oxygen/base/22x22/actions/window-close.png
 share/icons/oxygen/base/22x22/actions/window-duplicate.png
 share/icons/oxygen/base/22x22/actions/window-new.png
@@ -5610,6 +5612,7 @@ share/icons/oxygen/base/32x32/actions/view-time-schedule-edit.png
 share/icons/oxygen/base/32x32/actions/view-time-schedule-insert.png
 share/icons/oxygen/base/32x32/actions/view-time-schedule.png
 share/icons/oxygen/base/32x32/actions/view-web-browser-dom-tree.png
+share/icons/oxygen/base/32x32/actions/visibility.png
 share/icons/oxygen/base/32x32/actions/window-close.png
 share/icons/oxygen/base/32x32/actions/window-duplicate.png
 share/icons/oxygen/base/32x32/actions/window-new.png
@@ -7062,6 +7065,7 @@ share/icons/oxygen/base/48x48/actions/view-time-schedule-edit.png
 share/icons/oxygen/base/48x48/actions/view-time-schedule-insert.png
 share/icons/oxygen/base/48x48/actions/view-time-schedule.png
 share/icons/oxygen/base/48x48/actions/view-web-browser-dom-tree.png
+share/icons/oxygen/base/48x48/actions/visibility.png
 share/icons/oxygen/base/48x48/actions/window-close.png
 share/icons/oxygen/base/48x48/actions/window-duplicate.png
 share/icons/oxygen/base/48x48/actions/window-new.png

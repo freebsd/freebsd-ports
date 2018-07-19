@@ -25,7 +25,6 @@ lib/cmake/KF5QQC2DeskopStyle/KF5QQC2DeskopStyleConfigVersion.cmake
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/ProgressBar.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/RadioButton.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/RadioDelegate.qml
-%%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/RadioIndicator.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/RangeSlider.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/RoundButton.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/ScrollBar.qml
