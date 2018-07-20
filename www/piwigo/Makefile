@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	piwigo
-DISTVERSION=	2.9.3
+DISTVERSION=	2.9.4
 CATEGORIES=	www
 MASTER_SITES=	http://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/
 
