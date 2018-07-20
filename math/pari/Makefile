@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pari
-DISTVERSION=	2.9.5
+DISTVERSION=	2.11.0
 PORTEPOCH=	2
 CATEGORIES=	math
 MASTER_SITES=	http://pari.math.u-bordeaux.fr/pub/pari/unix/ \
