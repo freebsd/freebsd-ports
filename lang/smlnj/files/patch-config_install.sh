@@ -1,6 +1,6 @@
---- config/install.sh.orig	2014-08-22 15:20:03.000000000 +0200
-+++ config/install.sh	2014-08-23 14:19:47.061124086 +0200
-@@ -17,6 +17,8 @@
+--- config/install.sh.orig	2014-08-22 13:20:03 UTC
++++ config/install.sh
+@@ -17,6 +17,8 @@ else
      nolib=false
  fi
  
@@ -9,7 +9,7 @@
  if [ x${INSTALL_QUIETLY} = xtrue ] ; then
      export CM_VERBOSE
      CM_VERBOSE=false
-@@ -37,6 +39,28 @@
+@@ -37,6 +39,28 @@ complain() {
      exit 1
  }
  
@@ -38,7 +38,7 @@
  this=$0
  
  
-@@ -96,7 +120,28 @@
+@@ -96,7 +120,28 @@ trap 'cd "$ROOT"; rm -f $tmpfiles' 0 1 2 3 15
  # Especially important is CM_PATHCONFIG.
  #
  export CM_PATHCONFIG
@@ -68,7 +68,7 @@
  #
  # the release version that we are installing
  #
-@@ -326,7 +371,12 @@
+@@ -326,7 +371,12 @@ fi
  # the name of the bin files directory
  #
  BOOT_ARCHIVE=boot.$ARCH-unix
@@ -82,7 +82,7 @@
  
  #
  # build the run-time system
-@@ -335,9 +385,15 @@
+@@ -335,9 +385,15 @@ if [ -x "$RUNDIR"/run.$ARCH-$OPSYS ]; then
      vsay $this: Run-time system already exists.
  else
      "$CONFIGDIR"/unpack "$ROOT" runtime
@@ -94,12 +94,12 @@
      cd "$BASEDIR"/runtime/objs
      echo $this: Compiling the run-time system.
 -    $MAKE -f mk.$ARCH-$OPSYS $EXTRA_DEFS
-+    echo "$MAKE -f mk.$ARCH-$OPSYS $EXTRA_DEFS AS=\""$AS\"" CFLAGS=\"$CFLAGS\""
-+    $MAKE -f mk.$ARCH-$OPSYS $EXTRA_DEFS AS="$AS" CFLAGS="$CFLAGS"
++    echo "$MAKE -f mk.$ARCH-$OPSYS $EXTRA_DEFS AS=\""$AS\"" CFLAGS=\"$CFLAGS\" LDFLAGS=\"$LDFLAGS\""
++    $MAKE -f mk.$ARCH-$OPSYS $EXTRA_DEFS AS="$AS" CFLAGS="$CFLAGS" LDFLAGS="$LDFLAGS"
      if [ -x run.$ARCH-$OPSYS ]; then
  	mv run.$ARCH-$OPSYS "$RUNDIR"
  	if [ -f runx.$ARCH-$OPSYS ]; then
-@@ -349,7 +405,7 @@
+@@ -349,7 +405,7 @@ else
  	if [ -f run.$ARCH-$OPSYS.a ]; then
  	    mv run.$ARCH-$OPSYS.a "$RUNDIR"
  	fi
@@ -108,7 +108,7 @@
      else
  	complain "$this: !!! Run-time system build failed for some reason."
      fi
-@@ -375,7 +431,7 @@
+@@ -375,7 +431,7 @@ if [ -r "$HEAPDIR"/sml.$HEAP_SUFFIX ]; then
  	complain "$this !!! Unable to re-create heap image (sml.$HEAP_SUFFIX)."
      fi
  else
@@ -117,7 +117,7 @@
  
      fish "$ROOT"/"$BOOT_FILES"/smlnj/basis
  
-@@ -410,7 +466,7 @@
+@@ -410,7 +466,7 @@ else
  	    cd "$ROOT"/"$BOOT_FILES"
  	    for anchor in * ; do
  		if [ -d $anchor ] ; then
@@ -126,7 +126,7 @@
  		    move $anchor "$LIBDIR"/$anchor
  		fi
  	    done
-@@ -433,6 +489,18 @@
+@@ -433,6 +489,18 @@ installdriver _ml-build ml-build
  
  cd "$ROOT"
  
@@ -145,7 +145,7 @@
  #
  # Now do all the rest using the precompiled installer
  # (see base/system/smlnj/installer for details)
-@@ -442,6 +510,12 @@
+@@ -442,6 +510,12 @@ if [ $nolib = false ] ; then
      export ROOT INSTALLDIR CONFIGDIR BINDIR
      CM_TOLERATE_TOOL_FAILURES=true
      export CM_TOLERATE_TOOL_FAILURES
@@ -158,10 +158,11 @@
      if "$BINDIR"/sml -m \$smlnj/installer.cm
      then
  	vsay $this: Installation complete.
-@@ -450,4 +524,19 @@
+@@ -449,5 +523,20 @@ if [ $nolib = false ] ; then
+ 	complain "$this: !!! Installation of libraries and programs failed."
      fi
  fi
- 
++
 +# Finish staging by removing the $STAGEDIR prefix from the driver scripts.
 +if [ -n "$STAGEDIR" ]
 +then
@@ -176,5 +177,5 @@
 +do
 +	do_patch $p
 +done
-+
+ 
  exit 0
