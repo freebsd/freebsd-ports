@@ -5,6 +5,7 @@ bin/nopaste
 %%SITE_PERL%%/App/Nopaste/Service/Codepeek.pm
 %%SITE_PERL%%/App/Nopaste/Service/Debian.pm
 %%SITE_PERL%%/App/Nopaste/Service/Gist.pm
+%%SITE_PERL%%/App/Nopaste/Service/GitLab.pm
 %%SITE_PERL%%/App/Nopaste/Service/Mojopaste.pm
 %%SITE_PERL%%/App/Nopaste/Service/PastebinCom.pm
 %%SITE_PERL%%/App/Nopaste/Service/Pastie.pm
@@ -19,6 +20,7 @@ bin/nopaste
 %%PERL5_MAN3%%/App::Nopaste::Service::Codepeek.3.gz
 %%PERL5_MAN3%%/App::Nopaste::Service::Debian.3.gz
 %%PERL5_MAN3%%/App::Nopaste::Service::Gist.3.gz
+%%PERL5_MAN3%%/App::Nopaste::Service::GitLab.3.gz
 %%PERL5_MAN3%%/App::Nopaste::Service::Mojopaste.3.gz
 %%PERL5_MAN3%%/App::Nopaste::Service::PastebinCom.3.gz
 %%PERL5_MAN3%%/App::Nopaste::Service::Pastie.3.gz
