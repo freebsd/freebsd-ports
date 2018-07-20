@@ -1,0 +1,14 @@
+This project provides an LV2 plugin architecture for the Faust programming
+language. The package contains the Faust architecture and templates for the
+needed LV2 manifest (ttl) files, a collection of sample plugins written in
+Faust, and a generic GNU Makefile as well as a shell script to compile plugins
+using the architecture.
+
+faust-lv2 is free and open source software. The latest source can be found in
+the git repository at https://bitbucket.org/agraef/faust-lv2. In the downloads
+section of this site you can also find released tarballs along with my faust-lv2
+paper for the 2013 Linux Audio Conference. Please use the issue tracker for bug
+reports and requests. You're also invited to join one of Grame's Faust mailing
+lists to discuss faust-lv2 or Faust in general.
+
+WWW: https://bitbucket.org/agraef/faust-lv2

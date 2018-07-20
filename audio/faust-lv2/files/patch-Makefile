@@ -1,0 +1,20 @@
+--- Makefile.orig	2018-07-20 20:26:02 UTC
++++ Makefile
+@@ -117,7 +117,7 @@ endif
+ #KEEP = true
+ 
+ # Default compilation flags.
+-CFLAGS = -O3
++CFLAGS ?= -O3
+ # Use this for debugging output instead.
+ #CFLAGS = -g -O2
+ 
+@@ -145,7 +145,7 @@ EXTRA_CFLAGS += -fPIC
+ endif
+ ifneq "$(findstring x86,$(host))" ""
+ # architecture-specific options for x86 and x86_64
+-EXTRA_CFLAGS += -msse -ffast-math
++EXTRA_CFLAGS += -ffast-math
+ endif
+ 
+ # DSP sources and derived files.
