@@ -33,6 +33,7 @@ USE_SDL=	sdl2
 USE_XORG=	x11 xpm
 INSTALLS_ICONS=	yes
 CMAKE_ARGS=	-DAudio_TK:STRING="OpenAL"
+LLD_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|DESTINATION games|DESTINATION bin|' \

@@ -1,6 +1,14 @@
---- CMakeLists.txt.orig	2018-02-08 07:27:37 UTC
+--- CMakeLists.txt.orig	2018-03-16 17:25:33 UTC
 +++ CMakeLists.txt
-@@ -320,8 +320,6 @@ if(READLINE_FOUND)
+@@ -91,7 +91,6 @@ function(add_linker_flags)
+ 	endforeach()
+ endfunction()
+ 
+-CHECK_CXX_COMPILER_FLAG("-flto" USE_GCC_STYLE_LTCG)
+ if(USE_GCC_STYLE_LTCG)
+ 	set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -flto")
+ 	set(CMAKE_CXX_FLAGS_MINSIZEREL "${CMAKE_CXX_FLAGS_MINSIZEREL} -flto")
+@@ -337,8 +336,6 @@ if(READLINE_FOUND)
  endif()
  SET(HAVE_LIBREADLINE ${READLINE_FOUND} CACHE INTERNAL "libreadline available")
  
@@ -9,7 +17,7 @@
  # Select an audio library
  find_package("Audio")
  if(Audio_FOUND)
-@@ -339,8 +337,6 @@ set(HAVE_SDL ${SDL2_FOUND})
+@@ -356,8 +353,6 @@ set(HAVE_SDL ${SDL2_FOUND})
  include_directories(SYSTEM ${SDL2_INCLUDE_DIRS})
  
  # Qt5 for editor
