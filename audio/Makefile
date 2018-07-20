@@ -147,6 +147,7 @@
     SUBDIR += fabla2-lv2
     SUBDIR += fapg
     SUBDIR += faust
+    SUBDIR += faustlive
     SUBDIR += fcplay
     SUBDIR += fdk-aac
     SUBDIR += fdmf
