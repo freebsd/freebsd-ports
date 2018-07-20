@@ -3,6 +3,7 @@
 
 PORTNAME=	freedoko
 PORTVERSION=	0.7.16
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/free-doko/FreeDoko%20source
 DISTNAME=	FreeDoko_${PORTVERSION}.src
@@ -17,7 +18,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C/\.src$//}/src
 
 USES=		compiler:c++14-lang gmake pkgconfig zip:infozip
 USE_CXXSTD=	c++14
-USE_GNOME=	gtkmm30
+USE_GNOME=	gdkpixbuf2 gtkmm30
 LLD_UNSAFE=	yes
 MAKE_ENV=	OS="${OPSYS}" DATADIR="${DATADIR}" DOCSDIR="${DOCSDIR}"
 
@@ -28,7 +29,7 @@ NETWORK_DESC=		Network support
 NETWORK_LIB_DEPENDS=	libgnet-2.0.so:net/gnet2
 NETWORK_MAKE_ENV=	USE_NETWORK=true
 
-OPENAL_USES=		openal:alut
+OPENAL_USES=		openal:al,alut
 OPENAL_MAKE_ENV=	INCLUDE_SOUND_ALUT="$$(pkg-config --cflags freealut)" \
 			LIBS_SOUND_ALUT="$$(pkg-config --libs freealut)" \
 			USE_SOUND=true USE_SOUND_ALUT=true
@@ -71,7 +72,7 @@ do-install:
 	(cd ${WRKSRC}/../data && ${COPYTREE_SHARE} ${i} \
 		${STAGEDIR}${DATADIR} "! -name *Makefile*")
 .endfor
-	${LN} -sf ${DATADIR}/icon.png \
+	${RLN} ${STAGEDIR}${DATADIR}/icon.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/FreeDoko.png
 
 post-install-DOCS-on:
