@@ -3,6 +3,7 @@
 
 PORTNAME=	paraview
 DISTVERSION=	5.5.1
+PORTREVISION=	1
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${VERMAJORMINOR}/
 DISTNAME=	ParaView-v${PORTVERSION}
@@ -32,7 +33,7 @@ RUN_DEPENDS=	bash:shells/bash	\
 		${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		alias cmake:outsource jpeg localbase python:2.7 qt:5 shebangfix
-USE_QT=		core gui help network sql widgets x11extras buildtools_build qmake_build
+USE_QT=		core gui help network sql widgets x11extras xmlpatterns buildtools_build qmake_build
 USE_GL=		gl glu
 USE_XORG=	x11 xt xext ice xdmcp xau xcb xfixes xdamage xxf86vm xrender sm dri3proto
 USE_LDCONFIG=	yes
