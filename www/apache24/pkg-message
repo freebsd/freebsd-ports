@@ -20,4 +20,3 @@ Please compare the existing httpd.conf with httpd.conf.sample
 and merge missing modules/instructions into httpd.conf!
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-

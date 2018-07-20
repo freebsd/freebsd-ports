@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache24
-PORTVERSION=	2.4.33
-PORTREVISION=	1
+PORTVERSION=	2.4.34
 CATEGORIES=	www ipv6
 MASTER_SITES=	APACHE_HTTPD
 DISTNAME=	httpd-${PORTVERSION}
@@ -35,9 +34,6 @@ SUB_LIST+=	MPMF="000_mpm_prefork_fallback.conf"
 USERS=		www
 GROUPS=		www
 
-WITH_HTTP_PORT?=	80
-WITH_SSL_PORT?=		443
-
 .include "${.CURDIR}/Makefile.options"
 .include "${.CURDIR}/Makefile.options.desc"
 OPTIONS_SUB=	yes
@@ -67,8 +63,10 @@ MPM_SHARED_SUB_LIST_OFF=	MPM_FALLBACK_CHECK="\#"
 AUTHNZ_LDAP_CONFIGURE_ON=	--enable-authnz-ldap
 BROTLI_CONFIGURE_WITH=		brotli=${LOCALBASE}
 BROTLI_LIB_DEPENDS=		libbrotlicommon.so:archivers/brotli
-HTTP2_CONFIGURE_ON=		--with-nghttp2=${LOCALBASE}
+HTTP2_CONFIGURE_ON=		--with-nghttp2=${LOCALBASE} \
+				--with-ssl=${OPENSSLBASE}
 HTTP2_LIB_DEPENDS=		libnghttp2.so:www/libnghttp2
+HTTP2_USES=			ssl
 IPV4_MAPPED_CONFIGURE_ENABLE=	v4-mapped
 LDAP_CONFIGURE_ON=		--enable-ldap=shared
 LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:lang/luajit
@@ -78,7 +76,7 @@ LUA_CONFIGURE_WITH=		lua=${LOCALBASE}
 LUA_USES=			lua
 MD_CONFIGURE_ON=		--with-curl=${LOCALBASE} \
 				--with-jansson=${LOCALBASE} \
-				--with-openssl=${OPENSSLBASE}
+				--with-ssl=${OPENSSLBASE}
 MD_LIB_DEPENDS=			libcurl.so:ftp/curl \
 				libjansson.so:devel/jansson
 MD_USES=			ssl
@@ -87,14 +85,11 @@ PROXY_HTTP2_CONFIGURE_ON=	--with-nghttp2=${LOCALBASE}
 PROXY_HTTP2_LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 SOCACHE_DC_CONFIGURE_ON=	--with-distcache=${LOCALBASE}
 SOCACHE_DC_LIB_DEPENDS=		libdistcache.so:security/distcache
-XML2ENC_USE=			GNOME=libxml2
-
 # Note: OpenSSL version (base/ports) depends how devel/apr1 was built
 #  apu-1-config --(includes|ldflags) and apr_rules.mk
-SSL_CFLAGS=			-I${OPENSSLINC}
 SSL_CONFIGURE_ON=		--with-ssl=${OPENSSLBASE}
-SSL_LDFLAGS=			-L${OPENSSLLIB}
 SSL_USES=			ssl
+XML2ENC_USE=			GNOME=libxml2
 
 ETC_SUBDIRS=		Includes envvars.d extra modules.d
 
@@ -110,9 +105,6 @@ PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 
 CONFIGURE_ARGS+=--prefix=${PREFIX_RELDEST} \
 		--enable-layout=FreeBSD \
-		--with-port=${WITH_HTTP_PORT} \
-		--with-sslport=${WITH_SSL_PORT} \
-		--with-expat=${LOCALBASE} \
 		--enable-http \
 		--with-pcre=${LOCALBASE} \
 		--with-apr=${APR_CONFIG} \
@@ -155,7 +147,7 @@ IGNORE=	AUTH_BASIC and AUTH_DIGEST need at least one AUTHN provider
 .endif
 
 .if ${PORT_OPTIONS:MAUTH_BASIC} && empty(PORT_OPTIONS:MAUTHZ*)
-IGNORE=	AUTH_BASIC need at least one AUTHZ provider
+IGNORE=	AUTH_BASIC needs at least one AUTHZ provider
 .endif
 
 # Non options-NG option handling
@@ -165,7 +157,7 @@ CONFIGURE_ARGS+=	--with-libxml2=${LOCALBASE}/include/libxml2
 CONFIGURE_ARGS+=	--without-libxml2
 .endif
 
-# WITH_STATIC_SUPPORT, WITH_DEBUG, WITH_EXCEPTION_HOOK 
+# WITH_STATIC_SUPPORT, WITH_DEBUG, WITH_EXCEPTION_HOOK
 # Only to be used for special builds
 .if defined(WITH_STATIC_SUPPORT)
 CONFIGURE_ARGS+=	--enable-static-support
