@@ -12,8 +12,6 @@ DIST_SUBDIR=	qmail
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DomainKeys implementation for qmail
 
-BROKEN_aarch64=		fails to link: scan_ulong.c:(.text+0x0): duplicate symbol 'scan_ulong'
-
 LIB_DEPENDS+=	libdomainkeys.so:mail/libdomainkeys
 
 PATCH_SITES=	QMAIL
