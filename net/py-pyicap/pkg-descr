@@ -1,0 +1,13 @@
+A Python framework for writing ICAP servers (RFC 3507).
+
+ICAP is a protocol that is used by HTTP proxies to ask a separate service (an
+ICAP server) to do modification on HTTP requests and responses it proxies. Such
+proxy is an ICAP client.
+ICAP can be used to check permissions, scan viruses, place ads or otherwise
+modify the headers, content or request URL or HTTP requests and/or responses.
+These can be done without modifying the proxy server's code.
+
+The popular proxy software Squid 3.x supports the ICAP protocol, and this
+framework was tested with Squid3.
+
+WWW: https://github.com/netom/pyicap

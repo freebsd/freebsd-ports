@@ -1096,6 +1096,7 @@
     SUBDIR += py-port-for
     SUBDIR += py-portend
     SUBDIR += py-pygeoip
+    SUBDIR += py-pyicap
     SUBDIR += py-pynmsg
     SUBDIR += py-pynsq
     SUBDIR += py-pypcap
