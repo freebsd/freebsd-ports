@@ -61,11 +61,20 @@ typedef struct PaSndioHostApiRepresentation
 	PaUtilStreamInterface callback;
 	PaUtilStreamInterface blocking;
 	/*
-	 * sndio has no device discovery mechanism, so expose only
-	 * the default device, the user will have a chance to change it
-	 * using the environment variable
+	 * sndio has no device discovery mechanism and PortAudio has
+	 * no way of accepting raw device strings from users.
+	 * Normally we just expose the default device, which can be
+	 * changed via the AUDIODEVICE environment variable, but we
+	 * also allow specifying a list of up to 16 devices via the
+	 * PA_SNDIO_AUDIODEVICES environment variable.
+	 *
+	 * Example:
+	 * PA_SNDIO_AUDIODEVICES=default:snd/0.monitor:snd@remote/0
 	 */
-	PaDeviceInfo *infos[1], default_info;
+#define PA_SNDIO_AUDIODEVICES_MAX	16
+	PaDeviceInfo device_info[PA_SNDIO_AUDIODEVICES_MAX];
+	PaDeviceInfo *infos[PA_SNDIO_AUDIODEVICES_MAX];
+	char *audiodevices;
 } PaSndioHostApiRepresentation;
 
 /*
@@ -248,6 +257,7 @@ OpenStream(struct PaUtilHostApiRepresentation *hostApi,
 	unsigned mode;
 	int inch, onch;
 	PaSampleFormat ifmt, ofmt, siofmt;
+	const char *dev;
 
 	DPR("OpenStream:\n");
 
@@ -257,7 +267,7 @@ OpenStream(struct PaUtilHostApiRepresentation *hostApi,
 	sio_initpar(&par);
 
 	if (outputPar && outputPar->channelCount > 0) {
-		if (outputPar->device != 0) {
+		if (outputPar->device >= sndioHostApi->base.info.deviceCount) {
 			DPR("OpenStream: %d: bad output device\n", outputPar->device);
 			return paInvalidDevice;
 		}
@@ -273,7 +283,7 @@ OpenStream(struct PaUtilHostApiRepresentation *hostApi,
 		mode |= SIO_PLAY;
 	}
 	if (inputPar && inputPar->channelCount > 0) {
-		if (inputPar->device != 0) {
+		if (inputPar->device >= sndioHostApi->base.info.deviceCount) {
 			DPR("OpenStream: %d: bad input device\n", inputPar->device);
 			return paInvalidDevice;
 		}
@@ -294,7 +304,14 @@ OpenStream(struct PaUtilHostApiRepresentation *hostApi,
 
 	DPR("OpenStream: mode = %x, trying rate = %u\n", mode, par.rate);
 
-	hdl = sio_open(SIO_DEVANY, mode, 0);
+	if (outputPar) {
+		dev = sndioHostApi->device_info[outputPar->device].name;
+	} else if (inputPar) {
+		dev = sndioHostApi->device_info[inputPar->device].name;
+	} else {
+		return paUnanticipatedHostError;
+	}
+	hdl = sio_open(dev, mode, 0);
 	if (hdl == NULL)
 		return paUnanticipatedHostError;
 	if (!sio_setpar(hdl, &par)) {
@@ -636,7 +653,25 @@ IsFormatSupported(struct PaUtilHostApiRepresentation *hostApi,
 static void
 Terminate(struct PaUtilHostApiRepresentation *hostApi)
 {
+	PaSndioHostApiRepresentation *sndioHostApi;
+	sndioHostApi = (PaSndioHostApiRepresentation *)hostApi;
+	free(sndioHostApi->audiodevices);
 	PaUtil_FreeMemory(hostApi);
+}
+
+static void
+InitDeviceInfo(PaDeviceInfo *info, PaHostApiIndex hostApiIndex, const char *name)
+{
+	info->structVersion = 2;
+	info->name = name;
+	info->hostApi = hostApiIndex;
+	info->maxInputChannels = 128;
+	info->maxOutputChannels = 128;
+	info->defaultLowInputLatency = 0.01;
+	info->defaultLowOutputLatency = 0.01;
+	info->defaultHighInputLatency = 0.5;
+	info->defaultHighOutputLatency = 0.5;
+	info->defaultSampleRate = 48000;
 }
 
 PaError
@@ -645,7 +680,10 @@ PaSndio_Initialize(PaUtilHostApiRepresentation **hostApi, PaHostApiIndex hostApi
 	PaSndioHostApiRepresentation *sndioHostApi;
 	PaDeviceInfo *info;
 	struct sio_hdl *hdl;
-	
+	char *audiodevices;
+	char *device;
+	size_t deviceCount;
+
 	DPR("PaSndio_Initialize: initializing...\n");
 
 	/* unusable APIs should return paNoError and a NULL hostApi */
@@ -655,24 +693,38 @@ PaSndio_Initialize(PaUtilHostApiRepresentation **hostApi, PaHostApiIndex hostApi
 	if (sndioHostApi == NULL)
 		return paNoError;
 
-	info = &sndioHostApi->default_info;
-	info->structVersion = 2;
-	info->name = "default";
-	info->hostApi = hostApiIndex;
-	info->maxInputChannels = 128;
-	info->maxOutputChannels = 128;
-	info->defaultLowInputLatency = 0.01;
-	info->defaultLowOutputLatency = 0.01;
-	info->defaultHighInputLatency = 0.5;
-	info->defaultHighOutputLatency = 0.5;
-	info->defaultSampleRate = 48000;
+	// Add default device
+	info = &sndioHostApi->device_info[0];
+	InitDeviceInfo(info, hostApiIndex, SIO_DEVANY);
 	sndioHostApi->infos[0] = info;
-	
+	deviceCount = 1;
+
+	// Add additional devices as specified in the PA_SNDIO_AUDIODEVICES
+	// environment variable as a colon separated list
+	sndioHostApi->audiodevices = NULL;
+	audiodevices = getenv("PA_SNDIO_AUDIODEVICES");
+	if (audiodevices != NULL) {
+		sndioHostApi->audiodevices = strdup(audiodevices);
+		if (sndioHostApi->audiodevices == NULL)
+			return paNoError;
+
+		audiodevices = sndioHostApi->audiodevices;
+		while ((device = strsep(&audiodevices, ":")) != NULL &&
+			deviceCount < PA_SNDIO_AUDIODEVICES_MAX) {
+			if (*device == '\0')
+				continue;
+			info = &sndioHostApi->device_info[deviceCount];
+			InitDeviceInfo(info, hostApiIndex, device);
+			sndioHostApi->infos[deviceCount] = info;
+			deviceCount++;
+		}
+	}
+
 	*hostApi = &sndioHostApi->base;
 	(*hostApi)->info.structVersion = 1;
 	(*hostApi)->info.type = paSndio;
 	(*hostApi)->info.name = "sndio";
-	(*hostApi)->info.deviceCount = 1;
+	(*hostApi)->info.deviceCount = deviceCount;
 	(*hostApi)->info.defaultInputDevice = 0;
 	(*hostApi)->info.defaultOutputDevice = 0;
 	(*hostApi)->deviceInfos = sndioHostApi->infos;
