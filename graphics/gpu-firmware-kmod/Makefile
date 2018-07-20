@@ -4,7 +4,7 @@
 PORTNAME=	gpu-firmware-kmod
 PORTVERSION=	g20180319
 PORTREVISION=	1
-CATEGORIES=	graphics kld
+CATEGORIES=	graphics
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Firmware modules for the linuxkpi-based KMS components
