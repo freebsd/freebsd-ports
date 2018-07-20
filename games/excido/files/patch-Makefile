@@ -24,7 +24,7 @@
  
  $(TARGET): $(OBJS)
 -	$(CC) $(CFLAGS) -o $(TARGET) $(LIBS) $(OBJS)
-+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(LIBS) $(OBJS)
++	$(CXX) $(LDFLAGS) -o $(TARGET) $(LIBS) $(OBJS)
  
  clean:
  	rm -f $(OBJS) $(TARGET)
