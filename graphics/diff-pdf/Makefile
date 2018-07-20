@@ -12,6 +12,8 @@ COMMENT=	Tool for visually comparing two PDFs
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to configure
+
 LIB_DEPENDS=	libpoppler.so:graphics/poppler \
 		libpoppler-glib.so:graphics/poppler-glib
 
