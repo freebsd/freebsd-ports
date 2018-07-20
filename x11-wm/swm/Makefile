@@ -14,6 +14,10 @@ COMMENT=	Window manager for low-memory systems, with title bars and shading
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
+BROKEN=		upstream no longer maintained, the screen turns black after starting swm
+DEPRECATED=	upstream no longer maintained, the screen turns black after starting swm
+EXPIRATION_DATE=	2018-09-20
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S,c,,}
 BUILD_WRKSRC=	${WRKSRC}/src
 
