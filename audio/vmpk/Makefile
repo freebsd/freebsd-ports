@@ -1,9 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vmpk
-DISTVERSION=	0.6.2
-DISTVERSIONSUFFIX=	a
-PORTREVISION=	1
+DISTVERSION=	0.7.0
 CATEGORIES=	audio
 MASTER_SITES=	https://phoenixnap.dl.sourceforge.net/project/vmpk/vmpk/${PORTVERSION}/
 
@@ -20,7 +18,7 @@ USE_QT=		core gui network svg widgets x11extras \
 		buildtools_build linguisttools_build qmake_build
 USE_XORG=	xcb
 
-CMAKE_ARGS=	-DXSLTPROC_EXECUTABLE="OFF"
+CMAKE_OFF=	XSLTPROC_EXECUTABLE
 
 OPTIONS_DEFINE=	DBUS
 OPTIONS_SUB=		yes
