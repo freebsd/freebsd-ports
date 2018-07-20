@@ -4,7 +4,7 @@
 PORTNAME=	drm-stable-kmod
 PORTVERSION=	g20180619
 PORTREVISION=	1
-CATEGORIES=	graphics kld
+CATEGORIES=	graphics
 
 MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	DRM modules for the linuxkpi-based KMS components

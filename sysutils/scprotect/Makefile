@@ -3,7 +3,7 @@
 
 PORTNAME=	scprotect
 PORTVERSION=	20091116
-CATEGORIES=	sysutils kld
+CATEGORIES=	sysutils
 MASTER_SITES=	http://dindin.ru/download/
 
 MAINTAINER=	ports@FreeBSD.org

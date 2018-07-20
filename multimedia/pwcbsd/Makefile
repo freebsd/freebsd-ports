@@ -4,7 +4,7 @@
 PORTNAME=	pwcbsd
 PORTVERSION=	1.4.1
 PORTREVISION=	12
-CATEGORIES=	multimedia sysutils kld
+CATEGORIES=	multimedia sysutils
 MASTER_SITES=	http://raaf.atspace.org/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/ \
 		LOCAL/miwi
