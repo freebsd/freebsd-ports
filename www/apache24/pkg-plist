@@ -253,7 +253,7 @@ sbin/split-logfile
 %%DATADIR%%/misc/index.html
 @postexec [ -f %D/%%WWWDIR%%/data/index.html ] || cp %D/%%DATADIR%%/misc/index.html %D/%%WWWDIR%%/data/index.html
 @(,,0400) %%WWWDIR%%/cgi-bin/printenv
-@comment %%WWWDIR%%/cgi-bin/printenv.vbs 
+@comment %%WWWDIR%%/cgi-bin/printenv.vbs
 @comment %%WWWDIR%%/cgi-bin/printenv.wsf
 @(,,0400) %%WWWDIR%%/cgi-bin/test-cgi
 %%WWWDIR%%/error/HTTP_BAD_GATEWAY.html.var
