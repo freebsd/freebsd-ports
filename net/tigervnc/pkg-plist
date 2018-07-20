@@ -12,6 +12,7 @@ man/man1/vncconfig.1.gz
 man/man1/Xvnc.1.gz
 %%VIEWER%%man/man1/vncviewer.1.gz
 %%NLS%%share/locale/bg/LC_MESSAGES/tigervnc.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/da/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/de/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/el/LC_MESSAGES/tigervnc.mo
@@ -21,6 +22,7 @@ man/man1/Xvnc.1.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/fur/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/tigervnc.mo
+%%NLS%%share/locale/id/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/it/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/tigervnc.mo
@@ -33,7 +35,7 @@ man/man1/Xvnc.1.gz
 %%NLS%%share/locale/uk/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/tigervnc.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/tigervnc.mo
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.rst
 %%PORTDOCS%%%%DOCSDIR%%/LICENCE.TXT
 %%VIEWER%%share/icons/hicolor/16x16/apps/tigervnc.png
 %%VIEWER%%share/icons/hicolor/22x22/apps/tigervnc.png

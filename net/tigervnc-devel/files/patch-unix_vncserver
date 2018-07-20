@@ -1,4 +1,4 @@
---- unix/vncserver.orig	2017-04-19 13:27:31 UTC
+--- unix/vncserver.orig	2017-05-16 13:53:28 UTC
 +++ unix/vncserver
 @@ -532,7 +532,7 @@ sub CheckDisplayNumber
  
