@@ -18,6 +18,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C/\.src$//}/src
 USES=		compiler:c++14-lang gmake pkgconfig zip:infozip
 USE_CXXSTD=	c++14
 USE_GNOME=	gtkmm30
+LLD_UNSAFE=	yes
 MAKE_ENV=	OS="${OPSYS}" DATADIR="${DATADIR}" DOCSDIR="${DOCSDIR}"
 
 OPTIONS_DEFINE=		DOCS NETWORK OPENAL
