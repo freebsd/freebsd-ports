@@ -3,6 +3,7 @@
 
 PORTNAME=	faust
 DISTVERSION=	2.5.23
+PORTREVISION=	1
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,14 +21,15 @@ GH_TUPLE=	grame-cncm:faustlibraries:f889fe1:libs/libraries \
 		ThatOtherPerson:xxd:cd8ecce:xxd/xxd-replacement
 USE_CXXSTD=	c++11
 SHEBANG_FILES=	tools/faust2appls/* tools/benchmark/faustbench
-LLVM_VERSION=	50
+LLVM_VERSION=	60
 MAKE_ENV=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_VERSION}
 
-OPTIONS_DEFINE=	HIGHLIGHT HTTPD_LIB
+OPTIONS_DEFINE=		HIGHLIGHT HTTPD_LIB
 OPTIONS_DEFAULT=	HIGHLIGHT HTTPD_LIB
-HIGHLIGHT_DESC=	Syntax highlighting in Kate, gedit, Highlight, vim
-HTTPD_LIB_DESC=	Build httpd support library
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
+
+HIGHLIGHT_DESC=		Syntax highlighting in Kate, gedit, Highlight, vim
+HTTPD_LIB_DESC=		Build httpd support library
 
 HTTPD_LIB_ALL_TARGET=	all httpd
 HTTPD_LIB_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
