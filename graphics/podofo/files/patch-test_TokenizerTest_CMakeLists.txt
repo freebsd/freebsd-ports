@@ -1,0 +1,11 @@
+Prior to 3.12 cmake silently created an empty destination directory if the origin of the copy_directory does not exist.
+
+--- test/TokenizerTest/CMakeLists.txt.orig	2007-09-16 09:33:38 UTC
++++ test/TokenizerTest/CMakeLists.txt
+@@ -7,5 +7,6 @@ ADD_DEPENDENCIES(TokenizerTest ${PODOFO_DEPEND_TARGET}
+ ADD_CUSTOM_COMMAND(
+     TARGET TokenizerTest
+     POST_BUILD
++    COMMAND "${CMAKE_COMMAND}" -E make_directory "${CMAKE_CURRENT_SOURCE_DIR}/objects"
+     COMMAND "${CMAKE_COMMAND}" -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/objects" "${CMAKE_CURRENT_BINARY_DIR}/objects"
+     )
