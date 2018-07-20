@@ -13,6 +13,9 @@ COMMENT=	X version of who is on the air
 
 LICENSE=	GPLv2
 
+DEPRECATED=	No server message and no upstream releases
+EXPIRATION_DATE=	2018-07-27
+
 USES=		gmake pkgconfig libtool
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
@@ -28,7 +31,7 @@ post-install:
 	${WRKSRC}/INSTALL \
 	${WRKSRC}/NEWS \
 	${WRKSRC}/TODO
-	@${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>
