@@ -1,5 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD$
-
-JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -cp "%%JAVAJARDIR%%/jline.jar:%%JAVAJARDIR%%/clojure.jar:%%JAVAJARDIR%%/swank-clojure-1.4.2.jar:$CLASSPATH" %%CLOJURE_JLINE_RUNNER%% clojure.main "$@"

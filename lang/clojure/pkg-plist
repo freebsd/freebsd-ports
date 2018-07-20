@@ -1,0 +1,7 @@
+bin/clj
+bin/clojure
+man/man1/clj.1.gz
+man/man1/clojure.1.gz
+%%DATADIR%%/libexec/clojure-tools-%%PORTVERSION%%.jar
+%%DATADIR%%/deps.edn
+%%DATADIR%%/example-deps.edn
