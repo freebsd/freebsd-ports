@@ -19,6 +19,7 @@ USES=	compiler
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	EMACS=no
+MAKE_ENV+=	AM_MAKEFLAGS=${_MAKE_JOBS}
 TEST_TARGET=	check-examples check
 OPTIONS_SUB=	please
 
