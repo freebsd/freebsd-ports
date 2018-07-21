@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine-mono
-DISTVERSION=	4.7.1
+DISTVERSION=	4.7.3
 CATEGORIES=	emulators
 MASTER_SITES=	http://dl.winehq.org/wine/wine-mono/${DISTVERSION}/
 PKGNAMESUFFIX=	-devel
