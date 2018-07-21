@@ -10354,3 +10354,4 @@ misc/artikulate-kde4||2018-07-17|Has expired: broken for more than three years
 vietnamese/kde4-l10||2018-07-17|Has expired: broken for more than three years
 graphics/projectm-libvisual|graphics/libprojectm|2018-07-17|Code of projectm-libvisual was merged into graphics/libprojectm
 graphics/yafray|graphics/yafaray|2018-07-20|Project renamed
+lang/spec.alpha||2018-07-21|Unused in the ports tree
