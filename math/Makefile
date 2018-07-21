@@ -836,6 +836,7 @@
     SUBDIR += xspread
     SUBDIR += xtensor
     SUBDIR += yacas
+    SUBDIR += yices
     SUBDIR += z3
     SUBDIR += zimpl
 
