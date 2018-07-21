@@ -1,2 +1,3 @@
-SHA256 (ruby/rubysdl-2.1.3.1.tar.gz) = 167f162766a9309ac3b241591be2928a7fbefe32559f1458d89b4a0121500f72
-SIZE (ruby/rubysdl-2.1.3.1.tar.gz) = 795543
+TIMESTAMP = 1532165196
+SHA256 (ruby/rubysdl-2.2.0.tar.gz) = 2f4787b57faef7722bca2d7030ee72ee6ce6d03a2124ee48682d7613b21239a7
+SIZE (ruby/rubysdl-2.2.0.tar.gz) = 799369
