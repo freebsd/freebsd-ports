@@ -1,0 +1,28 @@
+--- Makefile.build.orig	2018-06-29 04:11:11 UTC
++++ Makefile.build
+@@ -131,7 +131,7 @@ static_objsubdirs := $(srcsubdirs:%=$(st
+ # build_dir/dist: binaries + libraries with distribution not linked with GMP
+ # build_dir/static_dist: includes GMP (statically linked)
+ #
+-dist_dir = $(build_dir)/dist
++dist_dir = $(build_dir)
+ static_dist_dir = $(build_dir)/static_dist
+ 
+ 
+@@ -448,7 +448,7 @@ install-default:
+ 	$(MKDIR_P) $(DESTDIR)$(bindir)
+ 	$(MKDIR_P) $(DESTDIR)$(libdir)
+ 	$(MKDIR_P) $(DESTDIR)$(includedir)
+-	$(INSTALL) -m 664 $(dist_dir)/include/* $(DESTDIR)$(includedir)
++	$(INSTALL) -m 664 $(dist_dir)/../../src/include/* $(DESTDIR)$(includedir)
+ 	$(INSTALL) $(dist_dir)/bin/* $(DESTDIR)$(bindir)
+ 	$(INSTALL) $(dist_dir)/lib/* $(DESTDIR)$(libdir)
+ 
+@@ -467,7 +467,6 @@ install-linux install-unix: install-defa
+ # be added to the hints file.' In other words, ldconfig on FreeBSD doesn't create the symbolic link,
+ # as on Linux.
+ install-freebsd: install-default
+-	$(LDCONFIG) -m $(DESTDIR)$(libdir) && (cd $(DESTDIR)$(libdir) && $(LN_S) -f libyices.so.$(MAJOR).$(MINOR) libyices.so)
+ 
+ #
+ # cygwin and mingw install: copy the DLLs in $(bindir)

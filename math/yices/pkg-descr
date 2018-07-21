@@ -1,0 +1,11 @@
+Yices 2 is an SMT solver that decides the satisfiability of formulas containing
+uninterpreted function symbols with equality, real and integer arithmetic,
+bitvectors, scalar types, and tuples. Yices 2 supports both linear and nonlinear
+arithmetic.
+
+Yices 2 can process input written in the SMT-LIB notation (both versions 2.0 and
+1.2 are supported). Alternatively, you can write specifications using Yices 2's
+own specification language, which includes tuples and scalar types. You can also
+use Yices 2 as a library in your software.
+
+WWW: http://yices.csl.sri.com/

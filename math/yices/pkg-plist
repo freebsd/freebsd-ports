@@ -1,0 +1,13 @@
+bin/yices_main
+bin/yices_sat
+bin/yices_sat_new
+bin/yices_smt
+bin/yices_smt2
+bin/yices_smtcomp
+include/yices.h
+include/yices_exit_codes.h
+include/yices_limits.h
+include/yices_types.h
+lib/libyices.so
+lib/libyices.so.2
+lib/libyices.so.2.6
