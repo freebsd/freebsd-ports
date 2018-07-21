@@ -306,6 +306,7 @@
     SUBDIR += libmissing
     SUBDIR += libocas
     SUBDIR += liborigin
+    SUBDIR += libpoly
     SUBDIR += libqalculate
     SUBDIR += libranlip
     SUBDIR += librsb
