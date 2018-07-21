@@ -680,6 +680,7 @@
     SUBDIR += py-intspan
     SUBDIR += py-keras
     SUBDIR += py-levmar
+    SUBDIR += py-libpoly
     SUBDIR += py-luminol
     SUBDIR += py-mathdom
     SUBDIR += py-matplotlib

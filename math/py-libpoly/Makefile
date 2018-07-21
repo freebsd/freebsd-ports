@@ -1,0 +1,35 @@
+# $FreeBSD$
+
+PORTNAME=	libpoly
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.7
+CATEGORIES=	math
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Python binding for libpoly
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENCE
+
+LIB_DEPENDS=	libpoly.so:math/libpoly
+
+USES=		cmake:outsource localbase:ldflags python:2.7
+USE_GITHUB=	yes
+GH_ACCOUNT=	SRI-CSL
+USE_LDCONFIG=	yes
+USE_PYTHON=	distutils autoplist
+
+CFLAGS+=	-I${WRKSRC}/include
+LDFLAGS+=	-lpoly
+
+BUILD_WRKSRC=	${WRKSRC}/python
+INSTALL_WRKSRC=	${WRKSRC}/python
+
+do-build:
+	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_BUILD_TARGET} ${PYDISTUTILS_BUILDARGS}
+
+do-install:
+	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} ${PYDISTUTILS_INSTALL_TARGET} ${PYDISTUTILS_INSTALLARGS}
+
+.include <bsd.port.mk>
