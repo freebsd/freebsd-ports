@@ -349,6 +349,7 @@ lib/calibre/calibre/ebooks/markdown/treeprocessors.py
 lib/calibre/calibre/ebooks/markdown/util.py
 lib/calibre/calibre/ebooks/metadata/__init__.py
 lib/calibre/calibre/ebooks/metadata/archive.py
+lib/calibre/calibre/ebooks/metadata/author_mapper.py
 lib/calibre/calibre/ebooks/metadata/book/__init__.py
 lib/calibre/calibre/ebooks/metadata/book/base.py
 lib/calibre/calibre/ebooks/metadata/book/formatter.py
@@ -668,6 +669,7 @@ lib/calibre/calibre/gui2/actions/__init__.py
 lib/calibre/calibre/gui2/actions/add_to_library.py
 lib/calibre/calibre/gui2/actions/add.py
 lib/calibre/calibre/gui2/actions/annotate.py
+lib/calibre/calibre/gui2/actions/author_mapper.py
 lib/calibre/calibre/gui2/actions/catalog.py
 lib/calibre/calibre/gui2/actions/choose_library.py
 lib/calibre/calibre/gui2/actions/convert.py
@@ -703,6 +705,7 @@ lib/calibre/calibre/gui2/actions/view.py
 lib/calibre/calibre/gui2/actions/virtual_library.py
 lib/calibre/calibre/gui2/add_filters.py
 lib/calibre/calibre/gui2/add.py
+lib/calibre/calibre/gui2/author_mapper.py
 lib/calibre/calibre/gui2/auto_add.py
 lib/calibre/calibre/gui2/bars.py
 lib/calibre/calibre/gui2/book_details.py
