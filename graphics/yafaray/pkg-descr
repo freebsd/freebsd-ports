@@ -1,0 +1,9 @@
+YafaRay is a free open-source montecarlo raytracing engine released under the
+LGPL 2.1 license. Raytracing is a rendering technique for generating realistic
+images by tracing the path of light through a 3D scene. A render engine consists
+of a specialised computer program that interacts with a host 3D application to
+provide specific raytracing capabilities "on demand". The YafaRay engine can be
+used in the following 3D applications: Blender, Edificius, pCon-planner and
+Wings 3D.
+
+WWW: http://www.yafaray.org/
