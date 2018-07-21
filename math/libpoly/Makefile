@@ -1,0 +1,23 @@
+# $FreeBSD$
+
+PORTNAME=	libpoly
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.7
+CATEGORIES=	math
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	C library for manipulating polynomials
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENCE
+
+LIB_DEPENDS=	libgmp.so:math/gmp
+
+USES=		cmake:outsource
+USE_GITHUB=	yes
+GH_ACCOUNT=	SRI-CSL
+USE_LDCONFIG=	yes
+
+CMAKE_OFF=	LIBPOLY_BUILD_PYTHON_API LIBPOLY_BUILD_STATIC LIBPOLY_BUILD_STATIC_PIC
+
+.include <bsd.port.mk>
