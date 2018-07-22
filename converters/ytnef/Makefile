@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ytnef
-PORTVERSION=	1.9.2
+PORTVERSION=	1.9.3
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	converters mail
@@ -15,12 +15,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	p5-MIME-Tools>=0:mail/p5-MIME-Tools
 
+USES=		autoreconf libtool pathfix perl5 shebangfix
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Yeraze
 
-USES=		autoreconf libtool pathfix perl5 shebangfix
-SHEBANG_FILES=	ytnef/ytnefprocess
 USE_PERL5=	run
+
+SHEBANG_FILES=	ytnef/ytnefprocess
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
