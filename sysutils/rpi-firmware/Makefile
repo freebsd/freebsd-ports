@@ -25,9 +25,12 @@ PSCI_DIR=	${WRKDIR}/${PSCI_MONITOR}
 BUILD_WRKSRC=	${PSCI_DIR}
 INSTALL_DIR=	${PREFIX}/share/${PORTNAME}
 
+CONFIG_TXT_FILES=	config.txt config_rpi_0_w.txt config_rpi3.txt
+
 do-patch:
-	${CP} ${FILESDIR}/config.txt ${FILESDIR}/config_rpi_0_w.txt \
-	${FILESDIR}/config_rpi3.txt ${WRKSRC}/boot/
+.for i in ${CONFIG_TXT_FILES}
+	${CP} ${FILESDIR}/${i} ${WRKSRC}/boot/
+.endfor
 
 post-patch:
 	${RM} ${WRKSRC}/boot/kernel.img
