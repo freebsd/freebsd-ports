@@ -1,6 +1,6 @@
---- src/base/configuration.cpp.orig	2018-04-22 17:53:43 UTC
+--- src/base/configuration.cpp.orig	2018-06-25 21:13:17 UTC
 +++ src/base/configuration.cpp
-@@ -291,7 +291,7 @@ std::string Configuration::getCompiler() {
+@@ -405,7 +405,7 @@ std::string Configuration::getCompiler() {
  }
  
  std::string Configuration::getCompiledDateTime() {
