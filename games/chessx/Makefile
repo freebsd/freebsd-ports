@@ -1,21 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	chessx
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.4.6
 CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Qt 4 chess database application
+COMMENT=	Qt 5 chess database application
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		desktop-file-utils qmake qt:4 shared-mime-info tar:tgz
-USE_QT=		corelib gui svg network linguisttools_build \
-		moc_build qmake_build rcc_build uic_build
-QMAKE_ARGS+=	QMAKE_LRELEASE=${LRELEASE}
+USES=		desktop-file-utils qmake:outsource qt:5 shared-mime-info tar:tgz
+USE_QT=		buildtools_build concurrent core gui linguisttools_build multimedia \
+		network opengl printsupport svg widgets xml
 
 PLIST_FILES=	bin/chessx \
 		share/applications/chessx.desktop \
@@ -23,10 +21,10 @@ PLIST_FILES=	bin/chessx \
 
 OPTIONS_DEFINE=	STOCKFISH CRAFTY
 
-STOCKFISH_DESC=	Install Stockfish Chess Engine
-STOCKFISH_RUN_DEPENDS=	stockfish:games/stockfish
-
 CRAFTY_DESC=	Install Crafty Chess Application
 CRAFTY_RUN_DEPENDS=	crafty:games/crafty
+
+STOCKFISH_DESC=	Install Stockfish Chess Engine
+STOCKFISH_RUN_DEPENDS=	stockfish:games/stockfish
 
 .include <bsd.port.mk>

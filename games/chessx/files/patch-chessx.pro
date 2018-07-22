@@ -1,6 +1,6 @@
---- chessx.pro.orig	2015-05-05 13:46:26 UTC
+--- chessx.pro.orig	2018-07-21 09:39:34 UTC
 +++ chessx.pro
-@@ -393,6 +393,15 @@ macx {
+@@ -445,6 +445,16 @@ macx {
   QMAKE_INFO_PLIST = mac_osx/Info.plist
  }
  
@@ -13,6 +13,7 @@
 + INSTALLS += target desktop pixmaps
 +}
 +
- RESOURCES = resources.qrc
++
+ RESOURCES = \
+     resources.qrc
  
- TRANSLATIONS = i18n/chessx_de.ts \
