@@ -2,6 +2,7 @@
 
 PORTNAME=	libprojectM
 DISTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	graphics audio
 MASTER_SITES=	SF/${PORTNAME:tl:S/lib//}/${PORTVERSION}/
 DISTNAME=	${PORTNAME:S/lib//}-complete-${DISTVERSION}-Source
@@ -21,6 +22,8 @@ USE_QT=		corelib gui opengl xml moc_build qmake_build rcc_build uic_build
 USE_SDL=	sdl
 USE_GL=		gl glu glew
 USE_LDCONFIG=	yes
+
+USE_CXXSTD=	c++98
 
 CMAKE_ARGS=	-DUSE_OPENMP=OFF # openmp breaks build on 11.x
 CMAKE_OFF=	INCLUDE-PROJECTM-TEST
