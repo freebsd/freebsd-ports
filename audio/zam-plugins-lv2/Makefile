@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	zam-plugins
-DISTVERSION=	3.10
+DISTVERSION=	3.10-13
+DISTVERSIONSUFFIX=	-gfbdbf08
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -26,18 +27,19 @@ LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
 USES=		compiler:c++11-lib gmake localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	zamaudio
-GH_TUPLE=	DISTRHO:DPF:495cb5f:d/dpf
+GH_TUPLE=	DISTRHO:DPF:2786991:d/dpf
 USE_GL=		gl
 USE_XORG=	x11
 
 CFLAGS+=	-I${FILESDIR}
-LDFLAGS+=	-lzita-convolver # TODO this can be reduced to only relevant places
+MAKE_ARGS+=	USE_SYSTEM_LIBS=1
+xLDFLAGS+=	-lzita-convolver # TODO this can be reduced to only relevant places
 
 post-extract:
 	@${RM} -r ${WRKSRC}/lib/zita-convolver-*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|#include "../../lib/zita-convolver-.*/zita-convolver.h"|#include <zita-convolver.h>|' ${WRKSRC}/plugins/Zam*/convolution.*pp
+	#@${REINPLACE_CMD} -e 's|#include "../../lib/zita-convolver-.*/zita-convolver.h"|#include <zita-convolver.h>|' ${WRKSRC}/plugins/Zam*/convolution.*pp
 	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!/bin/sh|' ${WRKSRC}/dpf/utils/generate-ttl.sh
 
 .include <bsd.port.mk>
