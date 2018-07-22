@@ -1,6 +1,6 @@
---- net/net.c.orig	2016-12-20 13:16:48.000000000 -0700
-+++ net/net.c	2017-03-05 08:04:17.606428000 -0700
-@@ -48,6 +48,11 @@
+--- net/net.c.orig	2018-04-24 16:30:47 UTC
++++ net/net.c
+@@ -52,6 +52,11 @@
  #include "net/filter.h"
  #include "qapi/string-output-visitor.h"
  
@@ -12,7 +12,7 @@
  /* Net bridge is currently not supported for W32. */
  #if !defined(_WIN32)
  # define CONFIG_NET_BRIDGE
-@@ -933,7 +938,225 @@
+@@ -929,7 +934,225 @@ static int net_init_nic(const Netdev *netdev, const ch
      return idx;
  }
  
@@ -22,7 +22,7 @@
 +#include <net/bpf.h>
 +#endif
 +#include <pcap.h>
-+
+ 
 +struct PCAPState {
 +    NetClientState     nc;
 +    pcap_t            *handle;
@@ -221,7 +221,7 @@
 +    }
 +    qemu_set_fd_handler(i, pcap_send, NULL, s);
 +#endif /* _WIN32 */
- 
++
 +    return 0;
 +
 +fail:
@@ -238,13 +238,13 @@
  static int (* const net_client_init_fun[NET_CLIENT_DRIVER__MAX])(
      const Netdev *netdev,
      const char *name,
-@@ -961,6 +1182,9 @@
+@@ -955,6 +1178,9 @@ static int (* const net_client_init_fun[NET_CLIENT_DRI
+ #endif
  #ifdef CONFIG_L2TPV3
          [NET_CLIENT_DRIVER_L2TPV3]    = net_init_l2tpv3,
- #endif
++#endif
 +#ifdef CONFIG_PCAP
 +	[NET_CLIENT_DRIVER_PCAP]      = net_init_pcap,
-+#endif
+ #endif
  };
- 
  
