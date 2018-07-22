@@ -298,6 +298,7 @@
     SUBDIR += lapacke
     SUBDIR += laspack
     SUBDIR += ldouble
+    SUBDIR += lean
     SUBDIR += levmar
     SUBDIR += libRmath
     SUBDIR += libflame

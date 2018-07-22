@@ -1,0 +1,26 @@
+--- CMakeLists.txt.orig	2018-06-21 16:27:49 UTC
++++ CMakeLists.txt
+@@ -215,7 +215,7 @@ if (NOT DEFINED CMAKE_MACOSX_RPATH)
+   set(CMAKE_MACOSX_RPATH 0)
+ endif()
+ 
+-if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++if (${CMAKE_SYSTEM_NAME} MATCHES "Linux|.*BSD|DragonFly")
+   # The following options is needed to generate a shared library
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+ endif()
+@@ -304,13 +304,7 @@ else()
+ endif()
+ 
+ # DL
+-if (EMSCRIPTEN)
+-    # no dlopen
+-elseif((${CYGWIN} EQUAL "1") OR (${CMAKE_SYSTEM_NAME} MATCHES "Windows"))
+-  # TODO(Jared): config dlopen windows support
+-else()
+-  set(EXTRA_LIBS ${EXTRA_LIBS} dl)
+-endif()
++set(EXTRA_LIBS ${EXTRA_LIBS} ${CMAKE_DL_LIBS})
+ 
+ # TRACK_MEMORY_USAGE
+ if(TRACK_MEMORY_USAGE)
