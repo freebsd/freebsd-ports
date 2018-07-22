@@ -70,7 +70,8 @@ MAKE_ENV+=	FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
 		XDG_DATA_DIRS=${STAGEDIR}${PREFIX}/share \
 		XDG_CONFIG_HOME=${WRKDIR}/xdg-config \
 		XDG_UTILS_INSTALL_MODE=system \
-		QMAKE=${QMAKE}
+		QMAKE=${QMAKE} \
+		SIP_BIN=sip-${PYTHON_VER}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|#!/usr/bin/env python2|#!${PYTHON_CMD}|" \
