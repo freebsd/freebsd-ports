@@ -12,6 +12,8 @@ COMMENT=	Small, lightweight file manager based on pure Qt
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
+
 USES=		dos2unix qmake qt:4
 DOS2UNIX_REGEX=	.*\.(h|cpp)
 USE_QT=		gui network moc_build rcc_build \
