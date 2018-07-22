@@ -15,8 +15,6 @@ COMMENT?=	C/Ada cross-compiler, target: Android ARMv7
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-BROKEN=		fails to package
-
 BUILD_DEPENDS=	${SYSROOT}>=0:lang/${SYSROOT} \
 		${GDBINUTILS}>=2.21:lang/${GDBINUTILS}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -49,7 +47,7 @@ ARG_TARGET_SPECIFIC?=	--enable-target-optspace \
 ALL_TARGET=		all
 GARCH=			${ARCH:S/amd64/x86_64/}
 BITS=			${GARCH:S/x86_64/64/:S/i386/32/}
-LABEL_TARGET?=		Android ${CPUVERSION}	
+LABEL_TARGET?=		Android ${CPUVERSION}
 OS_LABEL4VERS=		[${OPSYS}${BITS} x ${LABEL_TARGET}]
 WRKSRC=			${WRKDIR}/${IDENTIFICATION}
 BUILD_WRKSRC=		${WRKDIR}/build
