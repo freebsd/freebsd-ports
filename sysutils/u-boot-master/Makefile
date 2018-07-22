@@ -20,8 +20,8 @@ BUILD_DEPENDS+=	gsed:textproc/gsed \
 		mkimage:sysutils/u-boot-tools
 BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
 
-USES=		tar:bz2 gmake python:2.7,build shebangfix bison
-BINARY_ALIAS=	swig=swig3.0 sed=gsed dtc=${LOCALBASE}/bin/dtc
+USES=		bison gmake python:2.7,build shebangfix tar:bz2
+BINARY_ALIAS=	bison=${LOCALBASE}/bin/bison dtc=${LOCALBASE}/bin/dtc sed=gsed swig=swig3.0
 
 SHEBANG_FILES=	tools/binman/binman.py
 SSP_UNSAFE=	yes
@@ -158,8 +158,8 @@ post-patch:
 .if ${UBOOT_ARCH} == arm && !defined(CONFIG_FRAGMENT)
 # For armv6/v7 we want CONFIG_API
 # Use a KConfig fragment for that
-CONFIG_FRAGMENT=       ${FILESDIR}/FreeBSD_Fragment
-FRAGMENT_NAME=         FreeBSD_Fragment
+FRAGMENT_NAME=		FreeBSD_Fragment
+CONFIG_FRAGMENT=	${FILESDIR}/${FRAGMENT_NAME}
 .endif
 
 .if defined(CONFIG_FRAGMENT)
