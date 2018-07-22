@@ -312,6 +312,7 @@ share/gx_head/builder/ladspaliste.glade
 share/gx_head/builder/mainpanel.glade
 share/gx_head/builder/menudef.xml
 share/gx_head/builder/midi.glade
+share/gx_head/builder/midi_channel.glade
 share/gx_head/builder/pluginpreset_connectwindow.glade
 share/gx_head/builder/pluginpreset_inputwindow.glade
 share/gx_head/builder/pluginpreset_listwindow.glade
