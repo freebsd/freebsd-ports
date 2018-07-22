@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zita-convolver
-PORTVERSION=	3.1.0
-PORTREVISION=	2
+DISTVERSION=	4.0.0
 CATEGORIES=	audio
 MASTER_SITES=	http://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 
@@ -23,7 +22,7 @@ WRKSRC_SUBDIR=	libs
 
 PLIST_FILES=	include/zita-convolver.h \
 		lib/libzita-convolver.so \
-		lib/libzita-convolver.so.3 \
+		lib/libzita-convolver.so.4 \
 		lib/libzita-convolver.so.${PORTVERSION}
 
 post-install:

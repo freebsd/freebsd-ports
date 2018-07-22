@@ -1,4 +1,4 @@
---- Makefile.orig	2011-11-20 21:30:54 UTC
+--- Makefile.orig	2018-05-27 13:46:18 UTC
 +++ Makefile
 @@ -21,8 +21,8 @@
  # Modify as required.
@@ -10,9 +10,9 @@
 +LIBDIR = lib
  
  
- MAJVERS = 3
-@@ -33,7 +33,7 @@ VERSION = $(MAJVERS).$(MINVERS)
- CPPFLAGS += -I. -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS -DENABLE_VECTOR_MODE 
+ MAJVERS = 4
+@@ -34,7 +34,7 @@ CPPFLAGS += -I. -D_REENTRANT -D_POSIX_PT
+ CPPFLAGS += -DENABLE_VECTOR_MODE 
  CXXFLAGS += -fPIC -Wall
  CXXFLAGS += -ffast-math -funroll-loops -O3
 -CXXFLAGS += -march=native
@@ -20,7 +20,7 @@
  LDLFAGS += 
  LDLIBS +=
  
-@@ -45,9 +45,10 @@ ZITA-CONVOLVER_DEP = -lfftw3f -lpthread
+@@ -46,9 +46,10 @@ ZITA-CONVOLVER_DEP = -lfftw3f -lpthread
  ZITA-CONVOLVER_O = zita-convolver.o
  ZITA-CONVOLVER_H = zita-convolver.h 
  
@@ -32,7 +32,7 @@
  
  
  install:	$(ZITA-CONVOLVER_MIN)
-@@ -56,7 +57,7 @@ install:	$(ZITA-CONVOLVER_MIN)
+@@ -57,7 +58,7 @@ install:	$(ZITA-CONVOLVER_MIN)
  	install -m 644 $(ZITA-CONVOLVER_H) $(DESTDIR)$(PREFIX)/include
  	install -m 755 $(ZITA-CONVOLVER_MIN) $(DESTDIR)$(PREFIX)/$(LIBDIR)
  	ln -sf $(ZITA-CONVOLVER_MIN) $(DESTDIR)$(PREFIX)/$(LIBDIR)/$(ZITA-CONVOLVER_SO)
