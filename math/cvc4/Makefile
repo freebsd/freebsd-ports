@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cvc4
-PORTVERSION=	1.5
+DISTVERSION=	1.6
 CATEGORIES=	math java
 MASTER_SITES=	https://cvc4.cs.stanford.edu/downloads/builds/src/
 
@@ -13,11 +13,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
 		libboost_system.so:devel/boost-libs
-BUILD_DEPENDS=	gexpr:sysutils/coreutils \
-		bash:shells/bash \
+BUILD_DEPENDS=	bash:shells/bash \
 		antlr3:devel/antlr3
 
-USES=		compiler:c++11-lang pkgconfig gmake libtool shebangfix localbase
+USES=		autoreconf compiler:c++11-lang gmake python:3.5+,build libtool localbase pkgconfig shebangfix
 USE_JAVA=	yes
 JAVA_BUILD=	yes
 
@@ -27,16 +26,20 @@ CONFIGURE_ARGS+=	--disable-dependency-tracking \
 			ANTLR=${LOCALBASE}/bin/antlr3
 CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
 USE_LDCONFIG=		yes
-SHEBANG_FILES=		src/mk* src/theory/mk* src/base/mk* src/expr/mk* src/options/mk* test/regress/run_regression
+SHEBANG_FILES=		src/mk* src/theory/mk* src/base/mk* src/expr/mk* src/options/mk* test/regress/run_regression.py
 
-OPTIONS_DEFINE=		JAVA READLINE DEBUG
+OPTIONS_DEFINE=		CRYPTOMINISAT JAVA READLINE DEBUG
 OPTIONS_RADIO=		NUMLIB
 OPTIONS_RADIO_NUMLIB=	GMP CLN
-OPTIONS_DEFAULT=	READLINE GMP
+OPTIONS_DEFAULT=	CRYPTOMINISAT READLINE GMP
 OPTIONS_SUB=		yes
 
+CRYPTOMINISAT_DESC=	Use CryptoMiniSat as the SAT solver
 GMP_DESC=		Use GMP numeric library
 CLN_DESC=		Use CLN numeric library (disables portfolio mode)
+
+CRYPTOMINISAT_CONFIGURE_ON=	--with-cryptominisat --with-cryptominisat-dir=${LOCALBASE}
+CRYPTOMINISAT_LIB_DEPENDS=	libcryptominisat5.so:math/cryptominisat
 
 JAVA_CONFIGURE_ON=		--enable-language-bindings=c,c++,java \
 				JAVA_CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd" \
@@ -61,14 +64,17 @@ DEBUG_CONFIGURE_ON=		--with-build=debug
 DEBUG_CONFIGURE_OFF=		--with-build=production
 DEBUG_INSTALL_TARGET_OFF=	install-strip
 
-post-patch:
-	${REINPLACE_CMD} -e 's|expr |gexpr |g' ${WRKSRC}/src/options/mkoptions
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREADLINE} || ${PORT_OPTIONS:MCLN}
 LICENSE=		GPLv3
 CONFIGURE_ARGS+=	--enable-gpl
 .endif
+
+# use the fixed compiler version from ports to prevent failures on FreeBSD_10
+LLVM_VERSION=	60
+BUILD_DEPENDS+=	clang${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
+CC=	clang${LLVM_VERSION}
+CXX=	clang++${LLVM_VERSION}
 
 .include <bsd.port.mk>
