@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	guitarix
-DISTVERSION=	0.37.1
-PORTREVISION=	1
+DISTVERSION=	0.37.3
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/
 PKGNAMESUFFIX=	-lv2
@@ -25,6 +24,7 @@ BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		ladspa>0:audio/ladspa # https://sourceforge.net/p/guitarix/bugs/61/
 LIB_DEPENDS=	libavahi-common.so:net/avahi-app \
 		libboost_system.so:devel/boost-libs \
+		libcurl.so:ftp/curl \
 		libfftw3f.so:math/fftw3-float \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
