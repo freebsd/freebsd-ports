@@ -2,8 +2,7 @@
 
 PORTNAME=	opencollada
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.47
-PORTREVISION=	2
+DISTVERSION=	1.6.63
 CATEGORIES=	graphics devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,11 +23,8 @@ GH_PROJECT=	OpenCOLLADA
 USE_GNOME=	libxml2
 USE_LDCONFIG=	${PREFIX}/lib/opencollada
 CFLAGS+=	-I/${LOCALBASE}/include -Wno-narrowing
-CMAKE_ARGS+=	-DUSE_SHARED:BOOL=ON -DUSE_STATIC:BOOL=OFF
-
-# for files/patch-2d66943
-DOS2UNIX_FILES=	COLLADABaseUtils/include/COLLADABUPcreCompiledPattern.h \
-		COLLADABaseUtils/src/COLLADABUURI.cpp
+CMAKE_ON=	USE_SHARED
+CMAKE_OFF=	USE_STATIC
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${OPENCOLLADA_INST_LIBRARY}/cmake|${PREFIX}/share/cmake/Modules|' \
