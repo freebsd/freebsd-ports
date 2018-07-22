@@ -1,26 +1,25 @@
---- configure.orig	2017-04-20 14:57:00 UTC
+--- configure.orig	2018-04-24 16:30:46 UTC
 +++ configure
-@@ -247,7 +247,7 @@
+@@ -369,7 +369,7 @@ DSOSUF=".so"
  LDFLAGS_SHARED="-shared"
  modules="no"
  prefix="/usr/local"
 -mandir="\${prefix}/share/man"
 +mandir="\${prefix}/man"
  datadir="\${prefix}/share"
+ firmwarepath="\${prefix}/share/qemu-firmware"
  qemu_docdir="\${prefix}/share/doc/qemu"
- bindir="\${prefix}/bin"
-@@ -322,6 +322,10 @@
+@@ -449,6 +449,9 @@ numa=""
  tcmalloc="no"
  jemalloc="no"
  replication="yes"
 +pcap="no"
 +pcap_create="no"
 +bpf="no"
-+
+ vxhs=""
+ libxml2=""
  
- # parse CC options first
- for opt do
-@@ -887,6 +891,10 @@
+@@ -1030,6 +1033,10 @@ for opt do
    ;;
    --enable-vnc-png) vnc_png="yes"
    ;;
@@ -31,16 +30,7 @@
    --disable-slirp) slirp="no"
    ;;
    --disable-vde) vde="no"
-@@ -2266,7 +2274,7 @@
-             gtk_cflags="$gtk_cflags $x11_cflags"
-             gtk_libs="$gtk_libs $x11_libs"
-         fi
--        libs_softmmu="$gtk_libs $libs_softmmu"
-+        libs_softmmu="$gtk_libs -lintl $libs_softmmu"
-         gtk="yes"
-     elif test "$gtk" = "yes"; then
-         feature_not_found "gtk" "Install gtk2 or gtk3 devel"
-@@ -2485,6 +2493,14 @@
+@@ -2799,6 +2806,14 @@ if ! check_include "ifaddrs.h" ; then
  fi
  
  ##########################################
@@ -55,13 +45,13 @@
  # VTE probe
  
  if test "$vte" != "no"; then
-@@ -2644,6 +2660,50 @@
+@@ -2969,7 +2984,51 @@ EOF
    fi
  fi
  
 +##########################################
 +# pcap probe
-+
+ 
 +if test "$pcap" = "yes" -a "$pcap" != "no"; then
 +  cat > $TMPC << EOF
 +#include <pcap.h>
@@ -103,10 +93,11 @@
 +  fi
 +  libs_softmmu="$libpcap $libs_softmmu"
 +fi # test "$pcap"
- 
++
  ##########################################
  # VNC SASL detection
-@@ -3970,14 +4030,7 @@
+ if test "$vnc" = "yes" -a "$vnc_sasl" != "no" ; then
+@@ -4331,14 +4390,7 @@ fi
  
  # Check if tools are available to build documentation.
  if test "$docs" != "no" ; then
@@ -121,15 +112,15 @@
  fi
  
  # Search for bswap_32 function
-@@ -5026,6 +5079,7 @@
+@@ -5783,6 +5835,7 @@ echo "Audio drivers     $audio_drv_list"
  echo "Block whitelist (rw) $block_drv_rw_whitelist"
  echo "Block whitelist (ro) $block_drv_ro_whitelist"
  echo "VirtFS support    $virtfs"
 +echo "pcap support      $pcap"
+ echo "Multipath support $mpath"
  echo "VNC support       $vnc"
  if test "$vnc" = "yes" ; then
-     echo "VNC SASL support  $vnc_sasl"
-@@ -5204,6 +5258,15 @@
+@@ -6010,6 +6063,15 @@ fi
  if test "$profiler" = "yes" ; then
    echo "CONFIG_PROFILER=y" >> $config_host_mak
  fi
@@ -145,13 +136,13 @@
  if test "$slirp" = "yes" ; then
    echo "CONFIG_SLIRP=y" >> $config_host_mak
    echo "CONFIG_SMBD_COMMAND=\"$smbd\"" >> $config_host_mak
-@@ -5415,6 +5478,9 @@
+@@ -6247,6 +6309,9 @@ fi
+ # if this macro is set.
  if test "$have_fsxattr" = "yes" ; then
      echo "HAVE_FSXATTR=y" >> $config_host_mak
- fi
++fi
 +if test "$have_ifaddrs_h" = "yes" ; then
 +    echo "HAVE_IFADDRS_H=y" >> $config_host_mak
-+fi
+ fi
  if test "$vte" = "yes" ; then
    echo "CONFIG_VTE=y" >> $config_host_mak
-   echo "VTE_CFLAGS=$vte_cflags" >> $config_host_mak

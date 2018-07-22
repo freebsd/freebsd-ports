@@ -1,5 +1,3 @@
-bin/ivshmem-server
-bin/ivshmem-client
 bin/qemu-ga
 bin/qemu-i386
 bin/qemu-img
@@ -11,6 +9,7 @@ bin/qemu-nbd
 %%NO_X86_TARGETS%%bin/qemu-system-alpha
 %%NO_X86_TARGETS%%bin/qemu-system-arm
 %%NO_X86_TARGETS%%bin/qemu-system-cris
+%%NO_X86_TARGETS%%bin/qemu-system-hppa
 bin/qemu-system-i386
 %%NO_X86_TARGETS%%bin/qemu-system-lm32
 %%NO_X86_TARGETS%%bin/qemu-system-m68k
@@ -26,6 +25,8 @@ bin/qemu-system-i386
 %%NO_X86_TARGETS%%bin/qemu-system-ppc
 %%NO_X86_TARGETS%%bin/qemu-system-ppc64
 %%NO_X86_TARGETS%%bin/qemu-system-ppcemb
+%%NO_X86_TARGETS%%bin/qemu-system-riscv32
+%%NO_X86_TARGETS%%bin/qemu-system-riscv64
 %%NO_X86_TARGETS%%bin/qemu-system-s390x
 %%NO_X86_TARGETS%%bin/qemu-system-sh4
 %%NO_X86_TARGETS%%bin/qemu-system-sh4eb
@@ -38,6 +39,7 @@ bin/qemu-system-x86_64
 %%NO_X86_TARGETS%%bin/qemu-system-xtensaeb
 bin/qemu-x86_64
 man/man1/qemu.1.gz
+man/man7/qemu-block-drivers.7.gz
 man/man1/qemu-img.1.gz
 man/man7/qemu-ga-ref.7.gz
 man/man7/qemu-qmp-ref.7.gz
@@ -47,9 +49,9 @@ man/man8/qemu-nbd.8.gz
 @sample etc/qemu-ifdown.sample
 %%DATADIR%%/QEMU,tcx.bin
 %%DATADIR%%/QEMU,cgthree.bin
-%%DATADIR%%/acpi-dsdt.aml
 %%DATADIR%%/bios-256k.bin
 %%DATADIR%%/bios.bin
+%%DATADIR%%/canyonlands.dtb
 %%DATADIR%%/efi-e1000.rom
 %%DATADIR%%/efi-e1000e.rom
 %%DATADIR%%/efi-eepro100.rom
@@ -58,6 +60,10 @@ man/man8/qemu-nbd.8.gz
 %%DATADIR%%/efi-rtl8139.rom
 %%DATADIR%%/efi-virtio.rom
 %%DATADIR%%/efi-vmxnet3.rom
+%%DATADIR%%/hppa-firmware.img
+%%DATADIR%%/qemu_vga.ndrv
+%%DATADIR%%/s390-netboot.img
+%%DATADIR%%/u-boot-sam460-20100605.bin
 %%DATADIR%%/vgabios.bin
 %%DATADIR%%/vgabios-cirrus.bin
 %%DATADIR%%/vgabios-qxl.bin
