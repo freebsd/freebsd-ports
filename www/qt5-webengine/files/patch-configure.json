@@ -1,0 +1,33 @@
+--- configure.json.orig	2018-04-10 14:50:39 UTC
++++ configure.json
+@@ -16,6 +16,7 @@
+             "printing-and-pdf": "boolean",
+             "proprietary-codecs": "boolean",
+             "pulseaudio": "boolean",
++            "sndio": "boolean",
+             "spellchecker": "boolean",
+             "webrtc": "boolean"
+         }
+@@ -113,6 +114,10 @@
+             "condition": "libs.pulseaudio",
+             "output": [ "privateFeature" ]
+         },
++        "sndio": {
++            "label": "sndio",
++            "output": [ "privateFeature" ]
++        },
+         "pepper-plugins": {
+             "label": "Pepper Plugins",
+             "purpose": "Enables use of Pepper Flash and Widevine plugins.",
+@@ -218,6 +223,11 @@
+                 {
+                     "type": "feature",
+                     "args": "pulseaudio",
++                    "condition": "config.unix"
++                },
++                {
++                    "type": "feature",
++                    "args": "sndio",
+                     "condition": "config.unix"
+                 },
+                 {

@@ -1,0 +1,12 @@
+--- src/3rdparty/chromium/media/BUILD.gn.orig	2018-06-21 14:13:32 UTC
++++ src/3rdparty/chromium/media/BUILD.gn
+@@ -53,6 +53,9 @@ config("media_config") {
+   if (use_cras) {
+     defines += [ "USE_CRAS" ]
+   }
++  if (use_sndio) {
++    defines += [ "USE_SNDIO" ]
++  }
+ }
+ 
+ config("media_implementation") {
