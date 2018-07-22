@@ -61,7 +61,7 @@ CONFIGURE_ENV+=	UNAME_m="powerpc64"
 
 .if ${ARCH} == armv6
 # Override sys.mk including -O in CFLAGS which breaks libgomp building.
-CFLAGS:=	${CFLAGS:S/-O/-O2/g}
+CFLAGS:=	${CFLAGS:S/-O/-O2/}
 . if ${COMPILER_TYPE} == clang
 .  if empty(PORT_OPTIONS:MBOOTSTRAP)
 MAKE_ARGS+=CXXFLAGS+=-fbracket-depth=512
