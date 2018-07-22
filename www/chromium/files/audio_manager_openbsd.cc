@@ -167,10 +167,10 @@ std::unique_ptr<media::AudioManager> CreateAudioManager(
   DLOG(WARNING) << "CreateAudioManager";
 #if defined(USE_SNDIO)
   UMA_HISTOGRAM_ENUMERATION("Media.OpenBSDAudioIO", kSndio, kAudioIOMax + 1);
-  return base::MakeUnique<AudioManagerOpenBSD>(std::move(audio_thread),
+  return std::make_unique<AudioManagerOpenBSD>(std::move(audio_thread),
                                             audio_log_factory);
 #else
-  return base::MakeUnique<FakeAudioManager>(std::move(audio_thread),
+  return std::make_unique<FakeAudioManager>(std::move(audio_thread),
                                             audio_log_factory);
 #endif
 

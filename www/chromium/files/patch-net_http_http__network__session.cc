@@ -1,9 +1,9 @@
---- net/http/http_network_session.cc.orig	2017-04-19 19:06:36 UTC
-+++ net/http/http_network_session.cc
-@@ -23,7 +23,9 @@
+--- net/http/http_network_session.cc.orig	2018-06-13 00:10:22.000000000 +0200
++++ net/http/http_network_session.cc	2018-07-19 15:24:13.890886000 +0200
+@@ -20,7 +20,9 @@
+ #include "base/trace_event/memory_dump_request_args.h"
  #include "base/trace_event/process_memory_dump.h"
  #include "base/values.h"
- #include "net/base/network_throttle_manager_impl.h"
 +#if defined(USE_KERBEROS)
  #include "net/http/http_auth_handler_factory.h"
 +#endif

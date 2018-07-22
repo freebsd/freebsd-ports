@@ -1,12 +1,11 @@
---- content/common/BUILD.gn.orig	2018-03-20 23:05:24.000000000 +0100
-+++ content/common/BUILD.gn	2018-03-29 12:47:23.480593000 +0200
-@@ -431,6 +431,13 @@
+--- content/common/BUILD.gn.orig	2018-06-13 00:10:17.000000000 +0200
++++ content/common/BUILD.gn	2018-07-20 00:38:14.267181000 +0200
+@@ -430,6 +430,12 @@
      libs += [ "android" ]
    }
  
 +  if (is_bsd) {
 +    sources -= [
-+      "quarantine/quarantine_linux.cc",
 +      "sandbox_init_linux.cc",
 +    ]
 +  }

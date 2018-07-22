@@ -1,29 +1,29 @@
---- third_party/sqlite/BUILD.gn.orig	2018-01-04 21:06:22.000000000 +0100
-+++ third_party/sqlite/BUILD.gn	2018-02-03 11:16:06.346330000 +0100
-@@ -118,7 +118,7 @@
-         "USE_PREAD=1",
-       ]
+--- third_party/sqlite/BUILD.gn.orig	2018-06-13 00:11:05.000000000 +0200
++++ third_party/sqlite/BUILD.gn	2018-07-19 20:59:10.723249000 +0200
+@@ -155,7 +155,7 @@
+     # sqlite3Fts3InitTok).
+     cflags += [ "-Wno-unused-function" ]
+   }
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     cflags += [
+       # SQLite doesn"t believe in compiler warnings,
+       # preferring testing.
+@@ -208,7 +208,7 @@
      }
--    if (is_linux || is_android) {
-+    if ((is_linux && !is_bsd) || is_android) {
-       defines += [
-         # Linux provides fdatasync(), a faster equivalent of fsync().
-         "fdatasync=fdatasync",
-@@ -127,7 +127,7 @@
+   }
  
-     # Pull in config.h on Linux.  This allows use of preprocessor macros which
-     # are not available to the build config.
--    if (is_linux) {
-+    if (is_linux && !is_bsd) {
-       defines += [ "_HAVE_SQLITE_CONFIG_H" ]
-     }
+-  if (is_linux || is_android) {
++  if ((is_linux && !is_bsd) || is_android) {
+     defines += [
+       # Linux provides fdatasync(), a faster equivalent of fsync().
+       "fdatasync=fdatasync",
+@@ -243,7 +243,7 @@
+     ":sqlite_warnings",
+   ]
  
-@@ -161,7 +161,7 @@
-       ":sqlite_warnings",
-     ]
- 
--    if (is_linux) {
-+    if (is_linux && !is_bsd) {
-       libs = [ "dl" ]
-     } else if (is_mac || is_ios) {
-       libs = [
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     libs = [ "dl" ]
+   } else if (is_mac || is_ios) {
+     libs = [ "CoreFoundation.framework" ]

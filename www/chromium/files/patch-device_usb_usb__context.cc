@@ -1,20 +1,6 @@
---- device/usb/usb_context.cc.orig	2017-06-05 19:03:07 UTC
-+++ device/usb/usb_context.cc
-@@ -9,8 +9,13 @@
- #include "base/macros.h"
- #include "base/threading/simple_thread.h"
- #include "device/usb/usb_error.h"
-+#if defined(OS_FREEBSD)
-+#include "libusb.h"
-+#define LIBUSB_CALL
-+#else
- #include "third_party/libusb/src/libusb/interrupt.h"
- #include "third_party/libusb/src/libusb/libusb.h"
-+#endif
- 
- namespace device {
- 
-@@ -58,7 +63,9 @@ void UsbContext::UsbEventHandler::Run() {
+--- device/usb/usb_context.cc.orig	2018-06-13 00:10:18.000000000 +0200
++++ device/usb/usb_context.cc	2018-07-20 12:52:29.240720000 +0200
+@@ -58,7 +58,9 @@
  
  void UsbContext::UsbEventHandler::Stop() {
    base::subtle::Release_Store(&running_, 0);

@@ -1,10 +1,10 @@
---- content/browser/zygote_host/zygote_host_impl_linux.h.orig	2017-09-07 23:31:20.865003000 +0200
-+++ content/browser/zygote_host/zygote_host_impl_linux.h	2017-09-07 23:32:15.495651000 +0200
-@@ -37,8 +37,10 @@
-   int GetRendererSandboxStatus() const override;
+--- content/browser/zygote_host/zygote_host_impl_linux.h.orig	2018-06-13 00:10:17.000000000 +0200
++++ content/browser/zygote_host/zygote_host_impl_linux.h	2018-07-19 11:55:28.795795000 +0200
+@@ -41,8 +41,10 @@
+                      base::ScopedFD* control_fd,
+                      base::FileHandleMappingVector additional_remapped_fds);
  
-   pid_t LaunchZygote(base::CommandLine* cmd_line, base::ScopedFD* control_fd);
-+#if !defined(OS_FREEBSD)
++#if !defined(OS_BSD)
    void AdjustRendererOOMScore(base::ProcessHandle process_handle,
                                int score) override;
 +#endif

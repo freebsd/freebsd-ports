@@ -1,24 +1,6 @@
---- chrome/browser/browser_resources.grd.orig	2018-02-24 16:25:09.000000000 +0100
-+++ chrome/browser/browser_resources.grd	2018-03-04 09:28:51.895810000 +0100
-@@ -77,7 +77,7 @@
-       </if>
-     </structures>
-     <includes>
--      <if expr="is_win or is_macosx or is_linux">
-+      <if expr="is_win or is_macosx or is_posix">
-         <include name="IDR_ABOUT_DISCARDS_CSS" file="resources\discards\discards.css" type="BINDATA" />
-         <include name="IDR_ABOUT_DISCARDS_HTML" file="resources\discards\discards.html" flattenhtml="true" allowexternalscript="true" type="BINDATA" />
-         <include name="IDR_ABOUT_DISCARDS_JS" file="resources\discards\discards.js" type="BINDATA" />
-@@ -369,7 +369,7 @@
-       <if expr="chromeos">
-         <include name="IDR_PLUGIN_DB_JSON" file="resources\plugin_metadata\plugins_chromeos.json" type="BINDATA" />
-       </if>
--      <if expr="desktop_linux or (is_android and enable_plugins)">
-+      <if expr="desktop_linux or (is_android and enable_plugins) or is_posix">
-         <include name="IDR_PLUGIN_DB_JSON" file="resources\plugin_metadata\plugins_linux.json" type="BINDATA" />
-       </if>
-       <if expr="is_android">
-@@ -619,7 +619,7 @@
+--- chrome/browser/browser_resources.grd.orig	2018-06-13 00:10:04.000000000 +0200
++++ chrome/browser/browser_resources.grd	2018-07-14 13:48:09.392254000 +0200
+@@ -634,7 +634,7 @@
          <include name="IDR_WELCOME_WIN10_PIN_WEBP" file="resources\welcome\pin.webp" type="BINDATA" />
        </if>
        <include name="IDR_SSL_ERROR_ASSISTANT_PB" file="${root_gen_dir}/chrome/browser/resources/ssl/ssl_error_assistant/ssl_error_assistant.pb" use_base_dir="false" type="BINDATA" />
