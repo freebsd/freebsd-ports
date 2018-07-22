@@ -1,5 +1,5 @@
---- services/device/hid/hid_connection_freebsd.cc.orig	2018-03-26 19:51:55.335784000 -0700
-+++ services/device/hid/hid_connection_freebsd.cc	2018-03-26 22:43:54.916775000 -0700
+--- services/device/hid/hid_connection_freebsd.cc.orig	2018-07-20 13:47:11.556393000 +0200
++++ services/device/hid/hid_connection_freebsd.cc	2018-07-20 15:22:57.210103000 +0200
 @@ -0,0 +1,277 @@
 +// Copyright (c) 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
@@ -180,7 +180,7 @@
 +    : HidConnection(device_info),
 +      blocking_task_runner_(std::move(blocking_task_runner)),
 +      weak_factory_(this) {
-+  helper_ = base::MakeUnique<BlockingTaskHelper>(std::move(fd), device_info,
++  helper_ = std::make_unique<BlockingTaskHelper>(std::move(fd), device_info,
 +                                                 weak_factory_.GetWeakPtr());
 +  blocking_task_runner_->PostTask(
 +      FROM_HERE, base::BindOnce(&BlockingTaskHelper::Start,

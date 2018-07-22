@@ -1,8 +1,8 @@
---- base/process/process_metrics_freebsd.cc.orig	2018-02-24 16:25:08.000000000 +0100
-+++ base/process/process_metrics_freebsd.cc	2018-03-03 19:25:40.067505000 +0100
-@@ -12,6 +12,10 @@
- #include "base/macros.h"
+--- base/process/process_metrics_freebsd.cc.orig	2018-06-13 00:10:01.000000000 +0200
++++ base/process/process_metrics_freebsd.cc	2018-07-20 00:07:42.005261000 +0200
+@@ -13,6 +13,10 @@
  #include "base/memory/ptr_util.h"
+ #include "base/process/process_metrics_iocounters.h"
  
 +#include <unistd.h> /* getpagesize() */
 +#include <fcntl.h>  /* O_RDONLY */
@@ -11,19 +11,7 @@
  namespace base {
  
  ProcessMetrics::ProcessMetrics(ProcessHandle process)
-@@ -25,6 +29,11 @@
-   return WrapUnique(new ProcessMetrics(process));
- }
- 
-+bool GetVmStatInfo(VmStatInfo* vmstat) {
-+  NOTIMPLEMENTED();
-+  return false;
-+}
-+
- size_t ProcessMetrics::GetPagefileUsage() const {
-   struct kinfo_proc info;
-   int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_ };
-@@ -118,6 +127,60 @@
+@@ -61,6 +65,65 @@
    pagesize = getpagesize();
  
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
@@ -81,6 +69,11 @@
 +  meminfo->swap_free = (swap_total - swap_used) * pagesizeKB;
 +
 +  return true;
++}
++
++uint64_t ProcessMetrics::GetVmSwapBytes() const {
++   NOTIMPLEMENTED();
++   return 0;
  }
  
  }  // namespace base

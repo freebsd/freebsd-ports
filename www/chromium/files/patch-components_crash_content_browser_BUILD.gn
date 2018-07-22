@@ -1,5 +1,5 @@
---- components/crash/content/browser/BUILD.gn.orig	2017-12-15 02:04:14.000000000 +0100
-+++ components/crash/content/browser/BUILD.gn	2017-12-24 11:42:34.318970000 +0100
+--- components/crash/content/browser/BUILD.gn.orig	2018-06-13 00:10:13.000000000 +0200
++++ components/crash/content/browser/BUILD.gn	2018-07-18 23:37:00.046473000 +0200
 @@ -24,10 +24,9 @@
      "//components/crash/content/app",
      "//content/public/browser",
@@ -16,8 +16,8 @@
  
    # This is not in the GYP build but this target includes breakpad client
    # headers, so add the dependency here.
--  if (is_posix && !is_ios) {
-+  if (is_posix && !is_ios && !is_bsd) {
+-  if ((is_posix && !is_ios) || is_fuchsia) {
++  if ((is_posix && !is_ios && !is_bsd) || is_fuchsia) {
      configs += [ "//third_party/breakpad:client_config" ]
      public_configs = [ "//third_party/breakpad:client_config" ]
    }

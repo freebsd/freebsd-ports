@@ -1,9 +1,9 @@
---- third_party/zlib/BUILD.gn.orig	2017-06-05 19:03:29 UTC
-+++ third_party/zlib/BUILD.gn
-@@ -117,7 +117,7 @@ static_library("minizip") {
-       "contrib/minizip/iowin32.h",
+--- third_party/zlib/BUILD.gn.orig	2018-06-13 00:11:08.000000000 +0200
++++ third_party/zlib/BUILD.gn	2018-07-19 21:36:13.071700000 +0200
+@@ -327,7 +327,7 @@
      ]
    }
+ 
 -  if (is_mac || is_ios || is_android || is_nacl) {
 +  if (is_mac || is_ios || is_android || is_nacl || is_bsd) {
      # Mac, Android and the BSDs don't have fopen64, ftello64, or fseeko64. We

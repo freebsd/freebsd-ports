@@ -1,6 +1,6 @@
---- net/socket/udp_socket_posix.cc.orig	2018-02-24 16:25:17.000000000 +0100
-+++ net/socket/udp_socket_posix.cc	2018-03-04 03:08:15.161087000 +0100
-@@ -69,7 +69,7 @@
+--- net/socket/udp_socket_posix.cc.orig	2018-06-13 00:10:23.000000000 +0200
++++ net/socket/udp_socket_posix.cc	2018-07-20 14:49:13.507247000 +0200
+@@ -72,7 +72,7 @@
  const base::TimeDelta kActivityMonitorMsThreshold =
      base::TimeDelta::FromMilliseconds(100);
  
@@ -9,7 +9,16 @@
  
  // When enabling multicast using setsockopt(IP_MULTICAST_IF) MacOS and Fuchsia
  // require passing IPv4 address instead of interface index. This function
-@@ -647,13 +647,16 @@
+@@ -656,7 +656,7 @@
+ }
+ 
+ void UDPSocketPosix::SetMsgConfirm(bool confirm) {
+-#if !defined(OS_MACOSX) && !defined(OS_IOS)
++#if !defined(OS_MACOSX) && !defined(OS_IOS) && !defined(OS_BSD)
+   if (confirm) {
+     sendto_flags_ |= MSG_CONFIRM;
+   } else {
+@@ -677,13 +677,16 @@
    DCHECK_CALLED_ON_VALID_THREAD(thread_checker_);
    int value = broadcast ? 1 : 0;
    int rv;
@@ -27,7 +36,7 @@
    rv = setsockopt(socket_, SOL_SOCKET, SO_REUSEPORT, &value, sizeof(value));
    if (rv != 0)
      return MapSystemError(errno);
-@@ -860,19 +863,24 @@
+@@ -925,19 +928,24 @@
    if (multicast_interface_ != 0) {
      switch (addr_family_) {
        case AF_INET: {
@@ -54,7 +63,7 @@
          if (rv)
            return MapSystemError(errno);
          break;
-@@ -934,7 +942,7 @@
+@@ -999,7 +1007,7 @@
        if (addr_family_ != AF_INET)
          return ERR_ADDRESS_INVALID;
  

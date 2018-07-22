@@ -1,6 +1,6 @@
---- BUILD.gn.orig	2018-02-24 16:25:08.000000000 +0100
-+++ BUILD.gn	2018-03-03 19:04:30.972689000 +0100
-@@ -361,7 +361,7 @@
+--- BUILD.gn.orig	2018-06-13 00:09:58.000000000 +0200
++++ BUILD.gn	2018-07-14 12:26:56.482016000 +0200
+@@ -359,7 +359,7 @@
      }
    }
  
@@ -9,16 +9,16 @@
      deps += [
        "//third_party/breakpad:breakpad_unittests",
        "//third_party/breakpad:core-2-minidump",
-@@ -406,8 +406,6 @@
+@@ -401,8 +401,6 @@
        "//net:disk_cache_memory_test",
        "//net:quic_client",
        "//net:quic_server",
 -      "//sandbox/linux:chrome_sandbox",
 -      "//sandbox/linux:sandbox_linux_unittests",
+       "//testing:empty_main",
      ]
  
-     if (use_dbus) {
-@@ -464,10 +462,6 @@
+@@ -460,10 +458,6 @@
          "//chrome/test/chromedriver:chromedriver",
          "//chrome/test/chromedriver:chromedriver_tests",
          "//components/sync:run_sync_testserver",
@@ -29,8 +29,8 @@
          "//media/cast:generate_barcode_video",
          "//media/cast:generate_timecode_audio",
          "//net:crash_cache",
-@@ -522,10 +516,6 @@
-       "//mojo/edk/test:mojo_public_system_perftests",
+@@ -519,10 +513,6 @@
+       "//mojo:mojo_perftests",
        "//services/service_manager/public/cpp",
        "//testing/gmock:gmock_main",
 -      "//third_party/breakpad:dump_syms($host_toolchain)",
@@ -40,16 +40,16 @@
      ]
  
      if (!is_android) {
-@@ -593,7 +583,7 @@
-       deps +=
-           [ "//chrome/installer/mini_installer:next_version_mini_installer" ]
+@@ -598,7 +588,7 @@
+         host_os == "win") {
+       deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
      }
 -  } else if (!is_android && !is_ios && !is_fuchsia) {
 +  } else if (!is_android && !is_ios && !is_fuchsia && !is_bsd) {
      deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -835,7 +825,6 @@
+@@ -818,7 +808,6 @@
        "//ppapi/examples/video_decode",
        "//sandbox/linux:chrome_sandbox",
        "//sandbox/linux:sandbox_linux_unittests",
@@ -57,7 +57,7 @@
  
        # Blocked on https://github.com/catapult-project/catapult/issues/2297
        #"//third_party/catapult/telemetry:bitmaptools",
-@@ -939,7 +928,7 @@
+@@ -921,7 +910,7 @@
        ]
      }
  
@@ -66,7 +66,7 @@
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -948,7 +937,7 @@
+@@ -930,7 +919,7 @@
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -75,7 +75,7 @@
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1064,9 +1053,6 @@
+@@ -1055,9 +1044,6 @@
  
      if (is_win) {
        data_deps += [ "//chrome/installer/mini_installer:mini_installer" ]
@@ -84,4 +84,4 @@
 -          [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
      if (is_win || is_android) {
-       data_deps += [ "//chrome/test:angle_perftests" ]
+       data_deps += [

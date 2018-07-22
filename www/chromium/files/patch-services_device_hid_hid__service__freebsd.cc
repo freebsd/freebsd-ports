@@ -1,5 +1,5 @@
---- services/device/hid/hid_service_freebsd.cc.orig	2018-03-04 05:38:54.466235000 +0100
-+++ services/device/hid/hid_service_freebsd.cc	2018-03-04 08:47:26.934621000 +0100
+--- services/device/hid/hid_service_freebsd.cc.orig	2018-07-20 13:47:11.569682000 +0200
++++ services/device/hid/hid_service_freebsd.cc	2018-07-20 15:20:19.980971000 +0200
 @@ -0,0 +1,371 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
@@ -295,7 +295,7 @@
 +      blocking_task_runner_(
 +          base::CreateSequencedTaskRunnerWithTraits(kBlockingTaskTraits)),
 +      weak_factory_(this) {
-+  helper_ = base::MakeUnique<BlockingTaskHelper>(weak_factory_.GetWeakPtr());
++  helper_ = std::make_unique<BlockingTaskHelper>(weak_factory_.GetWeakPtr());
 +  blocking_task_runner_->PostTask(
 +      FROM_HERE,
 +      base::Bind(&BlockingTaskHelper::Start, base::Unretained(helper_.get())));
@@ -344,7 +344,7 @@
 +
 +  scoped_refptr<HidDeviceInfo> device_info = map_entry->second;
 +
-+  auto params = base::MakeUnique<ConnectParams>(device_info, callback);
++  auto params = std::make_unique<ConnectParams>(device_info, callback);
 +
 +  scoped_refptr<base::SequencedTaskRunner> blocking_task_runner =
 +      params->blocking_task_runner;
