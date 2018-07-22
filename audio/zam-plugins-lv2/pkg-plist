@@ -10,6 +10,7 @@ bin/ZamEQ2
 bin/ZamGEQ31
 bin/ZamGate
 bin/ZamGateX2
+bin/ZamGrains
 bin/ZamHeadX2
 bin/ZamPhono
 bin/ZamTube
@@ -26,10 +27,9 @@ lib/ladspa/ZamEQ2-ladspa.so
 lib/ladspa/ZamGEQ31-ladspa.so
 lib/ladspa/ZamGate-ladspa.so
 lib/ladspa/ZamGateX2-ladspa.so
-lib/ladspa/ZamHeadX2-ladspa.so
+lib/ladspa/ZamGrains-ladspa.so
 lib/ladspa/ZamPhono-ladspa.so
 lib/ladspa/ZamTube-ladspa.so
-lib/ladspa/ZamVerb-ladspa.so
 lib/lv2/ZaMaximX2.lv2/ZaMaximX2_dsp.so
 lib/lv2/ZaMaximX2.lv2/ZaMaximX2_dsp.ttl
 lib/lv2/ZaMaximX2.lv2/ZaMaximX2_ui.so
@@ -101,6 +101,12 @@ lib/lv2/ZamGateX2.lv2/ZamGateX2_ui.so
 lib/lv2/ZamGateX2.lv2/ZamGateX2_ui.ttl
 lib/lv2/ZamGateX2.lv2/manifest.ttl
 lib/lv2/ZamGateX2.lv2/presets.ttl
+lib/lv2/ZamGrains.lv2/ZamGrains_dsp.so
+lib/lv2/ZamGrains.lv2/ZamGrains_dsp.ttl
+lib/lv2/ZamGrains.lv2/ZamGrains_ui.so
+lib/lv2/ZamGrains.lv2/ZamGrains_ui.ttl
+lib/lv2/ZamGrains.lv2/manifest.ttl
+lib/lv2/ZamGrains.lv2/presets.ttl
 lib/lv2/ZamHeadX2.lv2/ZamHeadX2_dsp.so
 lib/lv2/ZamHeadX2.lv2/ZamHeadX2_dsp.ttl
 lib/lv2/ZamHeadX2.lv2/ZamHeadX2_ui.so
@@ -137,6 +143,7 @@ lib/vst/ZamEQ2-vst.so
 lib/vst/ZamGEQ31-vst.so
 lib/vst/ZamGate-vst.so
 lib/vst/ZamGateX2-vst.so
+lib/vst/ZamGrains-vst.so
 lib/vst/ZamHeadX2-vst.so
 lib/vst/ZamPhono-vst.so
 lib/vst/ZamTube-vst.so
