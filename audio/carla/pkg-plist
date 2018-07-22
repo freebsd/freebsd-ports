@@ -43,6 +43,7 @@ lib/lv2/carla.lv2/carlarack.ttl
 lib/lv2/carla.lv2/lfo.ttl
 lib/lv2/carla.lv2/libcarla_utils.so
 lib/lv2/carla.lv2/manifest.ttl
+lib/lv2/carla.lv2/midichanab.ttl
 lib/lv2/carla.lv2/midichanfilter.ttl
 lib/lv2/carla.lv2/midigain.ttl
 lib/lv2/carla.lv2/midijoin.ttl
