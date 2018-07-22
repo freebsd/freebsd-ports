@@ -11,6 +11,7 @@
 %%DATADIR%%/bcm2710-rpi-cm3.dtb
 %%DATADIR%%/bootcode.bin
 %%DATADIR%%/config.txt
+%%DATADIR%%/config_rpi_0_w.txt
 %%DATADIR%%/config_rpi3.txt
 %%DATADIR%%/fixup.dat
 %%DATADIR%%/fixup_cd.dat

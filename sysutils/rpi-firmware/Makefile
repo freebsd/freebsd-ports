@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	rpi-firmware
-PORTVERSION=	1.20180328
+PORTVERSION=	1.20180619
 CATEGORIES=	sysutils
 
-MAINTAINER=	manu@freebsd.org
+MAINTAINER=	uboot@freebsd.org
 COMMENT=	Firmware for RaspberryPi Single Board Computer
 
 LICENSE=	BROADCOM
@@ -26,8 +26,8 @@ BUILD_WRKSRC=	${PSCI_DIR}
 INSTALL_DIR=	${PREFIX}/share/${PORTNAME}
 
 do-patch:
-	${CP} ${FILESDIR}/config.txt ${WRKSRC}/boot/
-	${CP} ${FILESDIR}/config_rpi3.txt ${WRKSRC}/boot/
+	${CP} ${FILESDIR}/config.txt ${FILESDIR}/config_rpi_0_w.txt \
+	${FILESDIR}/config_rpi3.txt ${WRKSRC}/boot/
 
 post-patch:
 	${RM} ${WRKSRC}/boot/kernel.img
