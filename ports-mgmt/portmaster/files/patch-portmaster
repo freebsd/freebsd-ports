@@ -40,7 +40,7 @@
  		if [ -z "$PM_FIRST_PASS" ]; then
  			echo "DISPLAY_LIST='$DISPLAY_LIST'" >> $IPC_SAVE
  			echo "INSTALLED_LIST='$INSTALLED_LIST'" >> $IPC_SAVE
-@@ -308,20 +308,19 @@ safe_exit () {
+@@ -308,50 +308,49 @@ safe_exit () {
  	exit ${1:-0}
  } # safe_exit()
  
@@ -63,12 +63,18 @@
  pm_isdir	() { builtin test -d "$1"; }
 -pm_isdir_pd	() { local dir=$pd/$(dir_part "$1");
 -			builtin test -d "$dir"; }
+-pm_kill   () { kill $* >/dev/null 2>/dev/null; }
 +pm_isdir_pd	() { local dir=$(dir_part "$1");
 +			builtin test -n "$dir" -a -d "$pd/$dir"; }
- pm_kill   () { kill $* >/dev/null 2>/dev/null; }
++pm_kill   () { kill "$@" >/dev/null 2>/dev/null; }
  pm_make   () { ( unset -v CUR_DEPS INSTALLED_LIST PM_DEPTH build_l PM_URB_LIST;
- 		 /usr/bin/nice /usr/bin/make $PM_MAKE_ARGS $*; ); }
-@@ -332,7 +331,7 @@ pm_mktemp () {
+-		 /usr/bin/nice /usr/bin/make $PM_MAKE_ARGS $*; ); }
+-pm_make_b () { /usr/bin/make $PM_MAKE_ARGS BEFOREPORTMK=bpm $*; }
++		 /usr/bin/nice /usr/bin/make $PM_MAKE_ARGS "$@"; ); }
++pm_make_b () { /usr/bin/make $PM_MAKE_ARGS BEFOREPORTMK=bpm "$@"; }
+ pm_mktemp () {
+ 	pm_mktemp_file=`/usr/bin/mktemp -t f-${PM_PARENT_PID}-$1 2>&1` ||
+ 		fail "mktemp for $1 failed:\n       ${pm_mktemp_file#mktemp: }"
  }
  pm_unlink () { [ -e "$1" ] && /bin/unlink $1; }
  pm_islocked	() { local locked; [ -n "$1" ] && locked=`pkg query %k "$1"` &&
@@ -77,6 +83,31 @@
  
  # Superuser versions for commands that need root privileges
  
+-pm_find_s         () { $PM_SU_CMD /usr/bin/find $*; }
++pm_find_s         () { $PM_SU_CMD /usr/bin/find "$@"; }
+ pm_install_s      () { $PM_SU_CMD /usr/bin/install -p -o root -g wheel -m 644 $1 $2; }
+ pm_make_s         () { ( unset -v CUR_DEPS INSTALLED_LIST PM_DEPTH build_l PM_URB_LIST;
+-			 $PM_SU_CMD /usr/bin/nice /usr/bin/make $PM_MAKE_ARGS $*; ); }
++			 $PM_SU_CMD /usr/bin/nice /usr/bin/make $PM_MAKE_ARGS "$@"; ); }
+ pm_mkdir_s        () { $PM_SU_CMD /bin/mkdir -p $1; }
+ pm_pkg_delete_s   () {
+-	$PM_SU_CMD /usr/local/sbin/pkg delete -yf $*;
++	$PM_SU_CMD /usr/local/sbin/pkg delete -yf "$@";
+ 	for d in $* ; do
+ 	    pm_rm_s -rf $pdb/$d
+ 	done
+ }
+-pm_rm_s           () { $PM_SU_CMD /bin/rm $*; }
+-pm_rmdir_s        () { $PM_SU_CMD /bin/rmdir $*; }
++pm_rm_s           () { $PM_SU_CMD /bin/rm "$@"; }
++pm_rmdir_s        () { $PM_SU_CMD /bin/rmdir "$@"; }
+ pm_unlink_s       () { [ -e "$1" ] && $PM_SU_CMD /bin/unlink $1; }
+ 
+-pm_v              () { [ -n "$PM_VERBOSE" ] && echo -e "$*"; }
++pm_v              () { [ -n "$PM_VERBOSE" ] && echo -e "$@"; }
+ pm_sv             () { [ -n "$PM_SU_VERBOSE" ] && echo -e "===>>> SU $*"; }
+ 
+ # Do this here so we can have a reasonably good guess.
 @@ -562,12 +561,37 @@ find_glob_dirs () {
  	return 1
  }
