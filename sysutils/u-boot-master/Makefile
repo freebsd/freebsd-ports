@@ -20,7 +20,7 @@ BUILD_DEPENDS+=	gsed:textproc/gsed \
 		mkimage:sysutils/u-boot-tools
 BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
 
-USES=		tar:bz2 gmake python:2.7,build shebangfix
+USES=		tar:bz2 gmake python:2.7,build shebangfix bison
 BINARY_ALIAS=	swig=swig3.0 sed=gsed dtc=${LOCALBASE}/bin/dtc
 
 SHEBANG_FILES=	tools/binman/binman.py
@@ -29,9 +29,13 @@ UBOOT_DIR=	share/u-boot/${PORTNAME}${PKGNAMESUFFIX}
 INST=		${PREFIX}/${UBOOT_DIR}
 DESCR?=		${.CURDIR}/pkg-descr
 
-MAKE_ARGS+=	V=1 CROSS_COMPILE=${CROSS_COMPILE} DTC=${LOCALBASE}/bin/dtc PYTHON=${PYTHON_CMD} ${ARCHFLAGS}
+MAKE_ARGS+=	V=1 CROSS_COMPILE=${CROSS_COMPILE} PYTHON=${PYTHON_CMD} ${ARCHFLAGS}
 
 NO_ARCH=	yes
+
+# Use upstreamed patches not yet mainlined
+PATCH_DIST_STRIP=	-p1
+PATCH_SITES+=	http://patchwork.ozlabs.org/patch/
 
 # Sanity checks
 .if !defined(MODEL) && !defined(BOARD_CONFIG) && !defined(FAMILY)
@@ -51,13 +55,23 @@ IGNORE+=	FAMILY is not defined
 
 # Overrides for OMAP family
 UBOOT_PLIST_OMAP=u-boot.img MLO
+UBOOT_METADATA_OMAP_FILES=	${UBOOT_PLIST_OMAP}
+UBOOT_METADATA_OMAP_METHOD=	file
 
 # Overrides for ALLWINNER family
-UBOOT_PLIST_ALLWINNER=u-boot.img u-boot-sunxi-with-spl.bin
+UBOOT_PLIST_ALLWINNER=u-boot-sunxi-with-spl.bin
+UBOOT_METADATA_ALLWINNER_FILES=		${UBOOT_PLIST_ALLWINNER}
+UBOOT_METADATA_ALLWINNER_METHOD=	raw
+UBOOT_METADATA_ALLWINNER_RAW_OFFSET=	8
+UBOOT_METADATA_ALLWINNER_RAW_BS=	1k
 
 # Overrides for ALLWINNER64 family
 UBOOT_PLIST_ALLWINNER64=u-boot-sunxi-with-spl.bin
 UBOOT_ARCH_ALLWINNER64=aarch64
+UBOOT_METADATA_ALLWINNER64_FILES=	${UBOOT_PLIST_ALLWINNER}
+UBOOT_METADATA_ALLWINNER64_METHOD=	raw
+UBOOT_METADATA_ALLWINNER64_RAW_OFFSET=	8
+UBOOT_METADATA_ALLWINNER64_RAW_BS=	1k
 
 # Overrides for Zynq 7000 family
 UBOOT_PLIST_ZYNQ_7000=u-boot.img boot.bin uEnv.txt
@@ -65,12 +79,14 @@ UBOOT_MOVE_ZYNQ_7000=${WRKSRC}/spl/boot.bin ${.CURDIR}/files/uEnv.txt
 
 # Overrides for RPI family
 UBOOT_PLIST_RPI=	u-boot.bin
+UBOOT_METADATA_RPI_FILES=	${UBOOT_PLIST_RPI}
+UBOOT_METADATA_RPI_METHOD=	file
 
 # Uboot variables
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
 .endif
-UBOOT_VERSION?=	2018.03
+UBOOT_VERSION?=	2018.07
 
 .if !defined(UBOOT_PLIST) && defined(UBOOT_PLIST_${FAMILY:tu})
 UBOOT_PLIST=${UBOOT_PLIST_${FAMILY:tu}}
@@ -112,26 +128,47 @@ PLIST_FILES+=	${UBOOT_DIR}/${i}
 .endfor
 PLIST_FILES+=	${UBOOT_DIR}/README
 
+.if defined(UBOOT_METADATA_${FAMILY:tu}_METHOD)
+METADATA_METHOD=${UBOOT_METADATA_${FAMILY:tu}_METHOD}
+METADATA_FILES=${UBOOT_METADATA_${FAMILY:tu}_FILES}
+PLIST_FILES+=	${UBOOT_DIR}/metadata
+UBOOT_PLIST+=	metadata
+.if ${METADATA_METHOD} == "raw"
+METADATA_OFFSET=${UBOOT_METADATA_${FAMILY:tu}_RAW_OFFSET}
+METADATA_BS=${UBOOT_METADATA_${FAMILY:tu}_RAW_BS}
+.elif ${METADATA_METHOD} == "file"
+.else
+.error "Unsupported METADATA_METHOD"
+.endif
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|make|${MAKE_CMD}|" ${WRKSRC}/scripts/kconfig/merge_config.sh
-	${CP} ${FILESDIR}/FreeBSD_Fragment ${WRKSRC}/configs/
 	${CP} ${FILESDIR}/boot.cmd ${WRKSRC}/
+.if defined(METADATA_METHOD)
+	@echo "METHOD=uboot-${METADATA_METHOD}" > ${WRKSRC}/metadata
+	@echo "FILES=\"${METADATA_FILES}\"" >> ${WRKSRC}/metadata
+.if ${METADATA_METHOD} == "raw"
+	@echo "OFFSET=${METADATA_OFFSET}" >> ${WRKSRC}/metadata
+	@echo "BS=${METADATA_BS}" >> ${WRKSRC}/metadata
+.elif ${METADATA_METHOD} == "file"
+.endif
+.endif
 
-.if ${UBOOT_ARCH} == arm
+.if ${UBOOT_ARCH} == arm && !defined(CONFIG_FRAGMENT)
 # For armv6/v7 we want CONFIG_API
 # Use a KConfig fragment for that
+CONFIG_FRAGMENT=       ${FILESDIR}/FreeBSD_Fragment
+FRAGMENT_NAME=         FreeBSD_Fragment
+.endif
+
+.if defined(CONFIG_FRAGMENT)
 do-configure:
-	(cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} scripts/kconfig/merge_config.sh configs/${BOARD_CONFIG} configs/FreeBSD_Fragment)
+	${CP} ${CONFIG_FRAGMENT} ${WRKSRC}/configs/
+	(cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} scripts/kconfig/merge_config.sh configs/${BOARD_CONFIG} configs/${FRAGMENT_NAME})
 .else
 do-configure:
 	(cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${MAKE_CMD} ${BOARD_CONFIG})
-.endif
-
-# U-Boot for Allwinner 64bits SoCs is splited in two parts
-# Generate a single binary to ease deployement on sdcard
-.if defined(FAMILY) && ${FAMILY} == allwinner64
-post-build:
-	${CAT} ${WRKSRC}/spl/sunxi-spl.bin ${WRKSRC}/u-boot.itb > ${WRKSRC}/u-boot-sunxi-with-spl.bin
 .endif
 
 .if ${UBOOT_ARCH} == arm
