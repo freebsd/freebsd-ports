@@ -1,4 +1,4 @@
-ChessX is an open source chess database based on Qt4. With ChessX you
+ChessX is an open source chess database based on Qt5. With ChessX you
 can operate on your collection of chess games in many ways: browse,
 edit, add, organize, analyze, etc. Additionally ChessX can interface
 with chess engines via UCI and Winboard protocol.
