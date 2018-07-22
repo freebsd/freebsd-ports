@@ -1,4 +1,5 @@
-bin/CorsixTH
+bin/corsix-th
+share/pixmaps/corsix-th.png
 %%DATADIR%%/Bitmap/aux_ui.dat
 %%DATADIR%%/Bitmap/aux_ui.spec
 %%DATADIR%%/Bitmap/aux_ui.tab
@@ -69,6 +70,7 @@ bin/CorsixTH
 %%DATADIR%%/Lua/calls_dispatcher.lua
 %%DATADIR%%/Lua/class.lua
 %%DATADIR%%/Lua/config_finder.lua
+%%DATADIR%%/Lua/date.lua
 %%DATADIR%%/Lua/debug_script.lua
 %%DATADIR%%/Lua/diagnosis/diag_blood_machine.lua
 %%DATADIR%%/Lua/diagnosis/diag_cardiogram.lua
