@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://oss.sgi.com/projects/inventor/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-/}
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	c47g@gmx.at
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SGI's Open Inventor (TM)
 
 LICENSE=	LGPL21
