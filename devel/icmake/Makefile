@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	icmake
-PORTVERSION=	9.02.07
+PORTVERSION=	9.02.08
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -20,27 +20,32 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 REINPLACE_ARGS=	-I ""
 
-USES=		compiler shebangfix
+USES=		shebangfix
 SHEBANG_FILES=	build comp/build comp/icm_bootstrap comp/updategrammar \
 		comp/updateparser comp/updatescanner dep/build dep/icm_bootstrap \
 		exec/build exec/icm_bootstrap exec/list/test/build exec/string/test/build \
-		icm_bootstrap icm_github icm_install icm_prepare icmake/build \
+		icm_bootstrap icm_gitlab icm_install icm_prepare icmake/build \
 		icmake/icm_bootstrap icmake/setlinks icmbuild/build icmbuild/icm_bootstrap \
 		iuo/bootstrapinstall iuo/install iuo/uninstall pp/build pp/icm_bootstrap \
 		rss/build rss/icm_bootstrap scripts/convert un/build un/icm_bootstrap
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	fbb-git
+USE_GITLAB=	yes
+GL_ACCOUNT=	fbb-git
+GL_COMMIT=	8e3ac3057363162b87279bab1e9ba356eb0aea0f
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} == 42
-CFLAGS+=	-std=gnu99
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|find|find .|g' \
 		${WRKSRC}/icm_prepare
+	@${REINPLACE_CMD} -e 's|tput clear|clear|g' \
+		${WRKSRC}/scripts/icmbuild.in \
+		${WRKSRC}/changelog \
+		${WRKSRC}/icmbuild/usage.c \
+		${WRKSRC}/doc/icmconf.7 \
+		${WRKSRC}/doc/manpage/icmbuild.yo \
+		${WRKSRC}/doc/manpage/icmconf.yo \
+		${WRKSRC}/doc/icmbuild.1
 	@${REINPLACE_CMD} -e 's|sed|gsed|g' \
 		${WRKSRC}/scripts/conversions \
 		${WRKSRC}/scripts/convert
@@ -90,4 +95,4 @@ do-build:
 do-install:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./icm_install strip all ${STAGEDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
