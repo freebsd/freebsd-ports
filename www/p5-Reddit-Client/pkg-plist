@@ -12,6 +12,7 @@
 %%SITE_PERL%%/Reddit/Client/Comment.pm
 %%SITE_PERL%%/Reddit/Client/Link.pm
 %%SITE_PERL%%/Reddit/Client/Message.pm
+%%SITE_PERL%%/Reddit/Client/MoreComments.pm
 %%SITE_PERL%%/Reddit/Client/Request.pm
 %%SITE_PERL%%/Reddit/Client/SubReddit.pm
 %%SITE_PERL%%/Reddit/Client/Thing.pm
