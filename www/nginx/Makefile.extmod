@@ -98,7 +98,7 @@ HTTP_DAV_EXT_CONFIGURE_ON=	--add-module=${WRKSRC_dav_ext}
 HTTP_EVAL_GH_TUPLE=		openresty:nginx-eval-module:582bd25:eval
 HTTP_EVAL_VARS=			DSO_EXTMODS+=eval
 
-HTTP_FANCYINDEX_GH_TUPLE=	aperezdc:ngx-fancyindex:v0.4.2:fancyindex
+HTTP_FANCYINDEX_GH_TUPLE=	aperezdc:ngx-fancyindex:v0.4.3:fancyindex
 HTTP_FANCYINDEX_VARS=		DSO_EXTMODS+=fancyindex
 
 HTTP_FOOTER_GH_TUPLE=		alibaba:nginx-http-footer-filter:1.2.2:footer
@@ -197,7 +197,7 @@ LUA_IMPLIES=		DEVEL_KIT
 LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.0 \
 			LUAJIT_LIB=${LOCALBASE}/lib
-LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.11:lua
+LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.13:lua
 LUA_VARS=		DSO_EXTMODS+=lua
 
 MEMC_GH_TUPLE=		openresty:memc-nginx-module:v0.18:memc
@@ -216,14 +216,14 @@ MODSECURITY_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure
 MODSECURITY_VARS=		WRKSRC_modsecurity=${WRKDIR}/modsecurity-2.9.2
 
 MODSECURITY3_LIB_DEPENDS=	libmodsecurity.so:www/mod_security3
-MODSECURITY3_GH_TUPLE=		SpiderLabs:ModSecurity-nginx:4cde86b:modsec
+MODSECURITY3_GH_TUPLE=		SpiderLabs:ModSecurity-nginx:e4df1aa:modsec
 MODSECURITY3_CONFIGURE_ON=	--add-module=${WRKSRC_modsec}
 
-NAXSI_NGINX_VER=	0.55.3
+NAXSI_NGINX_VER=	0.56
 NAXSI_GH_TUPLE=		nbs-system:naxsi:${NAXSI_NGINX_VER}:naxsi
 NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 
-NJS_GH_TUPLE=		nginx:njs:bb7efcc:njs
+NJS_GH_TUPLE=		nginx:njs:e6fed58:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 
 PASSENGER_NGINX_VER=	5.3.3
