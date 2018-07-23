@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpu-firmware-kmod
-PORTVERSION=	g20180319
+PORTVERSION=	g20180722
 PORTREVISION=	1
 CATEGORIES=	graphics
 
@@ -26,12 +26,12 @@ USES=		kmod uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
 GH_PROJECT=	kms-firmware
-GH_TAGNAME=	8b9df12
+GH_TAGNAME=	1cf9e0b
 
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1101510
-IGNORE=		not supported on 10.x or older, no kernel support
+IGNORE=		not supported on 11.1 or older, no kernel support
 .endif
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000 && ${OSVERSION} < 1200019
 IGNORE=		not supported on older CURRENT, no kernel support
