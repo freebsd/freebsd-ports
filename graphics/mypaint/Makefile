@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mypaint
-PORTVERSION=	1.2.0
-PORTREVISION=	7
+PORTVERSION=	1.2.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/mypaint/mypaint/releases/download/${PORTVERSION:S/^/v/}/
 
