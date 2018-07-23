@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	stress-ng
-PORTVERSION=	0.09.33
+PORTVERSION=	0.09.35
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://kernel.ubuntu.com/~cking/tarballs/stress-ng/
 
@@ -18,14 +18,13 @@ ALL_TARGET=	# empty
 
 PLIST_FILES=	bin/stress-ng man/man1/stress-ng.1.gz
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1102000 && ${ARCH} == i386
-BROKEN=	undefined reference to '__atomic_fetch_add_8'
-.endif
+post-patch:
+	${REINPLACE_CMD} -e \
+		's/int main(void)/int main(void) __attributes__((noinline))/' \
+		${WRKSRC}/stress-atomic.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stress-ng ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/stress-ng.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
