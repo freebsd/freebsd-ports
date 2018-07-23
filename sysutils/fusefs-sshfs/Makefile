@@ -3,6 +3,7 @@
 
 PORTNAME=	sshfs
 PORTVERSION=	3.4.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
@@ -13,8 +14,7 @@ COMMENT=	Mount remote directories over ssh
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
-
+BUILD_DEPENDS=	rst2man:textproc/py-docutils
 
 USES=		fuse:3 gettext meson pkgconfig
 
