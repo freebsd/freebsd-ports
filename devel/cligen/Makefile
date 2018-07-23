@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cligen
-DISTVERSION=	3.7.0-b.2080412
+PORTVERSION=	3.7.0
 CATEGORIES=	devel
 
 MAINTAINER=	dcornejo@netgate.com
@@ -14,13 +14,9 @@ USES=		bison gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	olofhagsand
-GH_TAGNAME=	6da03b06cb5330f3ca9c619779565dceef4f203d
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.3.7
 
 .include <bsd.port.mk>
