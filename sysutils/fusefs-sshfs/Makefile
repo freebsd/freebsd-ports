@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sshfs
-PORTVERSION=	3.3.1
+PORTVERSION=	3.4.0
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
@@ -13,7 +13,8 @@ COMMENT=	Mount remote directories over ssh
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	rst2man:textproc/py-docutils
+BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
+
 
 USES=		fuse:3 gettext meson pkgconfig
 
