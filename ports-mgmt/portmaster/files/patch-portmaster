@@ -498,11 +498,11 @@
 +	flavor=$(flavor_part $portdir)
 +	for dir in $post_clean_l; do
 +		pm_v "===>>> Running 'make clean' for special build dependency $dir"
-+		(pm_make_s -C "$pd/$dir" "${flavor:+FLAVOR=$flavor}" clean NOCLEANDEPENDS=ncd2 >/dev/null)&
++		(pm_make_s -C "$pd/$dir" ${flavor:+FLAVOR=$flavor} clean NOCLEANDEPENDS=ncd2 >/dev/null)&
 +	done
  	pm_v "===>>> Running 'make clean' in the background"
 -	(pm_make_s clean NOCLEANDEPENDS=ncd2 >/dev/null)&
-+	(pm_make_s "${flavor:+FLAVOR=$flavor}" clean NOCLEANDEPENDS=ncd2 >/dev/null)&
++	(pm_make_s ${flavor:+FLAVOR=$flavor} clean NOCLEANDEPENDS=ncd2 >/dev/null)&
  	pm_v
  fi
  if [ -n "$ro_opd" ]; then
