@@ -1,12 +1,10 @@
 %%SITE_PERL%%/File/ChangeNotify.pm
-%%SITE_PERL%%/File/ChangeNotify/ConfigData.pm
 %%SITE_PERL%%/File/ChangeNotify/Event.pm
 %%SITE_PERL%%/File/ChangeNotify/Watcher.pm
 %%SITE_PERL%%/File/ChangeNotify/Watcher/Default.pm
 %%SITE_PERL%%/File/ChangeNotify/Watcher/Inotify.pm
 %%SITE_PERL%%/File/ChangeNotify/Watcher/KQueue.pm
 %%PERL5_MAN3%%/File::ChangeNotify.3.gz
-%%PERL5_MAN3%%/File::ChangeNotify::ConfigData.3.gz
 %%PERL5_MAN3%%/File::ChangeNotify::Event.3.gz
 %%PERL5_MAN3%%/File::ChangeNotify::Watcher.3.gz
 %%PERL5_MAN3%%/File::ChangeNotify::Watcher::Default.3.gz

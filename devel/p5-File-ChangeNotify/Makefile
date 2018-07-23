@@ -2,26 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	File-ChangeNotify
-PORTVERSION=	0.24
-PORTREVISION=	2
+PORTVERSION=	0.28
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Watch for changes to files
 
 LICENSE=	ART20
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Moose>=2:devel/p5-Moose \
-		p5-IO-KQueue>=0:devel/p5-IO-KQueue \
-		p5-MooseX-Params-Validate>=0:devel/p5-MooseX-Params-Validate \
-		p5-MooseX-SemiAffordanceAccessor>=0:devel/p5-MooseX-SemiAffordanceAccessor \
+RUN_DEPENDS=	p5-Moo>=1.006:devel/p5-Moo \
+		p5-Module-Pluggable>=0:devel/p5-Module-Pluggable \
+		p5-Type-Tiny>=0:devel/p5-Type-Tiny \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
-TEST_DEPENDS=	p5-Test-Exception>0:devel/p5-Test-Exception
+TEST_DEPENDS=	p5-Test-Exception>0:devel/p5-Test-Exception \
+		p5-Test-Requires>=0:devel/p5-Test-Requires
 
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	configure
 
 .include <bsd.port.mk>
