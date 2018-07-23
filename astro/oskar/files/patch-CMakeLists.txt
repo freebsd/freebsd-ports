@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2018-07-23 04:35:44 UTC
++++ CMakeLists.txt
+@@ -54,6 +54,7 @@ include_directories(
+     ${PROJECT_SOURCE_DIR}/extern/cfitsio-3.41
+     ${PROJECT_SOURCE_DIR}/extern/Random123
+     ${PROJECT_SOURCE_DIR}/extern/Random123/features
++    ${FREEBSD_FILESDIR}
+ )
+ set(GTEST_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/extern/gtest-1.7.0/include/gtest)
+ 
