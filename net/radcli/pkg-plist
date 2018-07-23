@@ -3,7 +3,7 @@ include/radcli/version.h
 lib/libradcli.a
 lib/libradcli.so
 lib/libradcli.so.4
-lib/libradcli.so.4.1.2
+lib/libradcli.so.4.2.0
 libdata/pkgconfig/radcli.pc
 man/man3/radcli.h.3.gz
 man/man3/rc_aaa.3.gz
@@ -15,6 +15,7 @@ man/man3/rc_aaa_ctx_server.3.gz
 man/man3/rc_acct.3.gz
 man/man3/rc_acct_proxy.3.gz
 man/man3/rc_add_config.3.gz
+man/man3/rc_apply_config.3.gz
 man/man3/rc_auth.3.gz
 man/man3/rc_auth_proxy.3.gz
 man/man3/rc_avpair_add.3.gz
