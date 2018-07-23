@@ -1,13 +1,15 @@
---- Makefile.in.orig	2015-06-28 01:03:37 UTC
+--- Makefile.in.orig	2018-07-23 16:09:48 UTC
 +++ Makefile.in
-@@ -569,51 +569,19 @@ install: install-shared install-archive 
+@@ -558,7 +558,7 @@ install: install-shared install-archive libpcap.pc pca
  		    $(DESTDIR)$(includedir)/$$i; done
  	[ -d $(DESTDIR)$(bindir) ] || \
  	    (mkdir -p $(DESTDIR)$(bindir); chmod 755 $(DESTDIR)$(bindir))
 -	$(INSTALL_PROGRAM) pcap-config $(DESTDIR)$(bindir)/pcap-config
-+	$(INSTALL_DATA) pcap-config $(DESTDIR)$(bindir)/pcap-config
-+	chmod 755 $(DESTDIR)$(bindir)/pcap-config
- 	for i in $(MAN1); do \
++	$(BSD_INSTALL_SCRIPT) pcap-config $(DESTDIR)$(bindir)/pcap-config
+ 	[ -d $(DESTDIR)$(libdir)/pkgconfig ] || \
+ 	    (mkdir -p $(DESTDIR)$(libdir)/pkgconfig; chmod 755 $(DESTDIR)$(libdir)/pkgconfig)
+ 	$(INSTALL_DATA) libpcap.pc $(DESTDIR)$(libdir)/pkgconfig/libpcap.pc
+@@ -566,46 +566,13 @@ install: install-shared install-archive libpcap.pc pca
  		$(INSTALL_DATA) $(srcdir)/$$i \
  		    $(DESTDIR)$(mandir)/man1/$$i; done
  	for i in $(MAN3PCAP_NOEXPAND); do \
@@ -54,7 +56,7 @@
 -	$(LN_S) pcap_tstamp_type_val_to_name.3pcap pcap_tstamp_type_val_to_description.3pcap && \
 -	rm -f pcap_getnonblock.3pcap && \
 -	$(LN_S) pcap_setnonblock.3pcap pcap_getnonblock.3pcap)
-+			$(DESTDIR)$(mandir)/man3/$$j; done
++		    $(DESTDIR)$(mandir)/man3/$$j; done
  	for i in $(MANFILE); do \
  		$(INSTALL_DATA) `echo $$i | sed 's/.manfile.in/.manfile/'` \
  		    $(DESTDIR)$(mandir)/man@MAN_FILE_FORMATS@/`echo $$i | sed 's/.manfile.in/.@MAN_FILE_FORMATS@/'`; done
