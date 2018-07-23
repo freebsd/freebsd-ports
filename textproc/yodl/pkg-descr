@@ -3,4 +3,4 @@ powerful document preparation language.  It also includes converters to
 convert documents written in that language to several formats, including
 ASCII, man page format, LaTeX, DVI, XML, and HTML.
 
-WWW: http://yodl.sourceforge.net/
+WWW: http://fbb-git.gitlab.io/yodl/
