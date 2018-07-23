@@ -3,7 +3,7 @@
 
 PORTNAME=	ntp
 PORTVERSION=	4.2.8p11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
 		http://archive.ntp.org/ntp4/ntp-4.2/ \
@@ -19,9 +19,10 @@ CONFLICTS=	ntp-devel-* openntpd-*
 
 USES=		cpe pathfix shebangfix libedit libtool localbase:ldflags \
 		pkgconfig
+USES+=		autoreconf # until trustedbsd-mac changes accepted upstream
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-leap-smear
+CONFIGURE_ARGS=	--enable-leap-smear --enable-trustedbsd-mac
 
 TEST_TARGET=	check
 
