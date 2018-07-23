@@ -1,0 +1,20 @@
+--- mklove/modules/configure.atomics.orig	2018-07-23 09:49:13 UTC
++++ mklove/modules/configure.atomics
+@@ -93,7 +93,7 @@ int32_t foo (int32_t i) {
+     if ! mkl_compile_check __atomic_64 HAVE_ATOMICS_64 cont CC "" \
+         "
+ #include <inttypes.h>
+-int64_t foo (int64_t i) {
++int64_t foo (int64_t i) __attribute__((noinline)) {
+   return __atomic_add_fetch(&i, 1, __ATOMIC_SEQ_CST);
+ }"
+         then
+@@ -102,7 +102,7 @@ int64_t foo (int64_t i) {
+             cont CC "" \
+             "
+ #include <inttypes.h>
+-int64_t foo (int64_t i) {
++int64_t foo (int64_t i) __attribute__((noinline)) {
+   return __atomic_add_fetch(&i, 1, __ATOMIC_SEQ_CST);
+ }"
+         then
