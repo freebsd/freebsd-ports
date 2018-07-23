@@ -48,6 +48,7 @@
     SUBDIR += nightfall
     SUBDIR += opencpn
     SUBDIR += openuniverse
+    SUBDIR += oskar
     SUBDIR += osmosis
     SUBDIR += p5-Astro
     SUBDIR += p5-Astro-ADS
