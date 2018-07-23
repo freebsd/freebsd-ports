@@ -1,6 +1,6 @@
---- content/renderer/renderer_blink_platform_impl.cc.orig	2017-12-15 02:04:18.000000000 +0100
-+++ content/renderer/renderer_blink_platform_impl.cc	2017-12-31 05:15:48.537395000 +0100
-@@ -124,7 +124,7 @@
+--- content/renderer/renderer_blink_platform_impl.cc.orig	2018-06-13 00:10:17.000000000 +0200
++++ content/renderer/renderer_blink_platform_impl.cc	2018-07-19 13:00:02.053483000 +0200
+@@ -136,7 +136,7 @@
  
  #if defined(OS_POSIX)
  #include "base/file_descriptor_posix.h"
@@ -9,7 +9,7 @@
  #include <map>
  #include <string>
  
-@@ -225,7 +225,7 @@
+@@ -249,7 +249,7 @@
    scoped_refptr<mojom::ThreadSafeFileUtilitiesHostPtr> file_utilities_host_;
  };
  
@@ -18,16 +18,16 @@
  class RendererBlinkPlatformImpl::SandboxSupport
      : public blink::WebSandboxSupport {
   public:
-@@ -267,7 +267,7 @@
-       default_task_runner_(renderer_scheduler->DefaultTaskRunner()),
+@@ -293,7 +293,7 @@
+       default_task_runner_(main_thread_scheduler->DefaultTaskRunner()),
        web_scrollbar_behavior_(new WebScrollbarBehaviorImpl),
-       renderer_scheduler_(renderer_scheduler) {
+       main_thread_scheduler_(main_thread_scheduler) {
 -#if !defined(OS_ANDROID) && !defined(OS_WIN) && !defined(OS_FUCHSIA)
 +#if !defined(OS_ANDROID) && !defined(OS_WIN) && !defined(OS_FUCHSIA) && !defined(OS_BSD)
    if (g_sandbox_enabled && sandboxEnabled()) {
      sandbox_support_.reset(new RendererBlinkPlatformImpl::SandboxSupport);
    } else {
-@@ -316,7 +316,7 @@
+@@ -341,7 +341,7 @@
  }
  
  void RendererBlinkPlatformImpl::Shutdown() {
@@ -36,7 +36,7 @@
    // SandboxSupport contains a map of WebFallbackFont objects, which hold
    // WebStrings and WebVectors, which become invalidated when blink is shut
    // down. Hence, we need to clear that map now, just before blink::shutdown()
-@@ -417,7 +417,7 @@
+@@ -449,7 +449,7 @@
  }
  
  blink::WebSandboxSupport* RendererBlinkPlatformImpl::GetSandboxSupport() {
@@ -45,8 +45,8 @@
    // These platforms do not require sandbox support.
    return NULL;
  #else
-@@ -610,7 +610,7 @@
-   return FontLoader::CGFontRefFromBuffer(font_data, font_data_size, out);
+@@ -657,7 +657,7 @@
+   return content::LoadFont(src_font, out, font_id);
  }
  
 -#elif defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_FUCHSIA)

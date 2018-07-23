@@ -43,3 +43,79 @@
  
      forward_variables_from(invoker,
                             [
+--- build/config/compiler/BUILD.gn.orig	2018-06-13 00:10:02.000000000 +0200
++++ build/config/compiler/BUILD.gn	2018-07-21 13:05:54.418405000 +0200
+@@ -51,7 +51,7 @@
+   # only two architectures that are currently checked in). Turn this off when
+   # you are using a custom toolchain and need to control -B in cflags.
+   linux_use_bundled_binutils =
+-      linux_use_bundled_binutils_override && is_linux &&
++      linux_use_bundled_binutils_override && (is_linux && !is_bsd) &&
+       (current_cpu == "x64" || current_cpu == "x86")
+   binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
+                               root_build_dir)
+@@ -375,8 +375,6 @@
+       "-Wl,-z,relro",
+     ]
+     if (!using_sanitizer) {
+-      ldflags += [ "-Wl,-z,defs" ]
+-
+       # Functions interposed by the sanitizers can make ld think
+       # that some libraries aren't needed when they actually are,
+       # http://crbug.com/234010. As workaround, disable --as-needed.
+@@ -467,7 +465,7 @@
+   # TODO(hans): Remove this once Clang generates better optimized debug info by
+   # default. https://crbug.com/765793
+   if (is_clang && !is_nacl && current_toolchain == host_toolchain &&
+-      target_os != "chromeos") {
++      target_os != "chromeos" && !is_bsd) {
+     cflags += [
+       "-Xclang",
+       "-mllvm",
+@@ -708,7 +706,7 @@
+         cflags += [ "-mtune=$arm_tune" ]
+       }
+     } else if (current_cpu == "arm64") {
+-      if (is_clang && !is_android && !is_nacl && !is_fuchsia) {
++      if (is_clang && !is_android && !is_nacl && !is_fuchsia && !is_bsd) {
+         cflags += [ "--target=aarch64-linux-gnu" ]
+         ldflags += [ "--target=aarch64-linux-gnu" ]
+       }
+@@ -1387,10 +1385,6 @@
+ 
+         # TODO(hans): https://crbug.com/766891
+         "-Wno-null-pointer-arithmetic",
+-
+-        # Ignore warnings about MSVC optimization pragmas.
+-        # TODO(thakis): Only for no_chromium_code? http://crbug.com/505314
+-        "-Wno-ignored-pragma-optimize",
+       ]
+       if (llvm_force_head_revision) {
+         cflags += [
+@@ -2096,7 +2090,7 @@
+         # [1] crrev.com/a81d5ade0b043208e06ad71a38bcf9c348a1a52f
+         cflags += [ "-gdwarf-3" ]
+       }
+-      cflags += [ "-g2" ]
++      cflags += [ "-g0" ]
+     }
+     if (use_debug_fission && !is_nacl) {
+       cflags += [ "-gsplit-dwarf" ]
+@@ -2110,7 +2104,7 @@
+     # DWARF info may be corrupt; offsets in a range list entry are in different
+     # sections" there.  Maybe just a bug in nacl_switch_32.S.
+     if (!is_mac && !is_ios && !is_nacl && target_cpu != "x86" &&
+-        (use_gold || use_lld)) {
++        (use_gold || use_lld) && !is_bsd) {
+       if (is_clang) {
+         # This flag enables the GNU-format pubnames and pubtypes sections,
+         # which lld needs in order to generate a correct GDB index.
+@@ -2207,7 +2201,7 @@
+   if (!is_win && fatal_linker_warnings &&
+       !(is_chromeos && current_cpu == "arm") &&
+       !(is_android && use_order_profiling) && !is_mac && !is_ios &&
+-      current_os != "aix") {
++      current_os != "aix" && !is_bsd) {
+     # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
+     # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
+     # crbug.com/485542

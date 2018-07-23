@@ -1,5 +1,5 @@
---- tools/gn/bootstrap/bootstrap.py.orig	2017-12-23 20:11:27.769312000 +0100
-+++ tools/gn/bootstrap/bootstrap.py	2017-12-23 20:28:42.756301000 +0100
+--- tools/gn/bootstrap/bootstrap.py.orig	2018-06-13 00:11:08.000000000 +0200
++++ tools/gn/bootstrap/bootstrap.py	2018-07-19 21:45:27.959100000 +0200
 @@ -32,9 +32,10 @@
  
  is_win = sys.platform.startswith('win')
@@ -12,15 +12,7 @@
  
  def check_call(cmd, **kwargs):
    logging.debug('Running: %s', ' '.join(cmd))
-@@ -576,7 +577,6 @@
-       'base/trace_event/trace_log_constants.cc',
-       'base/trace_event/tracing_agent.cc',
-       'base/unguessable_token.cc',
--      'base/value_iterators.cc',
-       'base/values.cc',
-       'base/vlog.cc',
-   ])
-@@ -633,6 +633,44 @@
+@@ -712,6 +713,43 @@
          'cflags': cflags + ['-DHAVE_CONFIG_H'],
      }
  
@@ -50,7 +42,6 @@
 +        'base/synchronization/waitable_event_posix.cc',
 +        'base/time/time_exploded_posix.cc',
 +        'base/time/time_now_posix.cc',
-+        'base/value_iterators.cc',
 +    ])
 +    static_libraries['libevent']['include_dirs'].extend([
 +        os.path.join(SRC_ROOT, 'base', 'third_party', 'libevent', 'freebsd')
@@ -63,14 +54,15 @@
 +    cflags.extend(['-Wno-deprecated-register', '-Wno-parentheses-equality'])
 +
    if is_linux or is_aix:
-     ldflags.extend(['-pthread'])
- 
-@@ -671,17 +709,6 @@
+     static_libraries['xdg_user_dirs'] = {
+         'sources': [
+@@ -827,18 +865,6 @@
        ])
        static_libraries['libevent']['sources'].extend([
           'base/third_party/libevent/epoll.c',
 -      ])
 -    else:
+-      ldflags.extend(['-pthread'])
 -      libs.extend(['-lrt'])
 -      static_libraries['base']['sources'].extend([
 -          'base/process/internal_aix.cc'

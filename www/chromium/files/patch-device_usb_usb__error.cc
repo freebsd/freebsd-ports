@@ -1,14 +1,11 @@
---- device/usb/usb_error.cc.orig	2017-04-19 19:06:34 UTC
-+++ device/usb/usb_error.cc
-@@ -4,7 +4,11 @@
- 
- #include "device/usb/usb_error.h"
- 
-+#if defined(OS_FREEBSD)
-+#include "libusb.h"
-+#else
- #include "third_party/libusb/src/libusb/libusb.h"
-+#endif
- 
+--- device/usb/usb_error.cc.orig	2018-06-13 00:10:18.000000000 +0200
++++ device/usb/usb_error.cc	2018-07-20 12:55:34.901660000 +0200
+@@ -9,7 +9,7 @@
  namespace device {
  
+ std::string ConvertPlatformUsbErrorToString(int errcode) {
+-  return libusb_strerror(static_cast<libusb_error>(errcode));
++  return "";
+ }
+ 
+ }  // namespace device
