@@ -3,6 +3,7 @@
 
 PORTNAME=	cfitsio
 PORTVERSION=	3.430
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/ \
@@ -14,7 +15,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for reading and writing files in FITS data format
 
-LIB_DEPENDS=	libf2c.so:lang/f2c
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libf2c.so:lang/f2c
 
 OPTIONS_DEFINE=	DOCS
 
