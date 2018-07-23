@@ -156,7 +156,10 @@ post-patch:
 		${WRKSRC}/src/stage0.txt
 # After patching crates, we need to update their corresponding
 # `.cargo-checksum.json` to reflect the new checksums verified by Cargo.
-	@for dir in "${WRKSRC}/src/vendor/libc" "${WRKSRC}/src/vendor/openssl" "${WRKSRC}/src/vendor/openssl-sys"; do \
+	@for dir in "${WRKSRC}/src/vendor/libc" \
+	"${WRKSRC}/src/vendor/libgit2-sys" \
+	"${WRKSRC}/src/vendor/openssl" \
+	"${WRKSRC}/src/vendor/openssl-sys"; do \
 		if ! test -d "$$dir"; then \
 			continue; \
 		fi; \
