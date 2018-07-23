@@ -139,6 +139,7 @@ lib/groonga/plugins/sharding/keys_parsable.rb
 %%RUBY%%lib/groonga/scripts/ruby/initialize/post.rb
 %%RUBY%%lib/groonga/scripts/ruby/initialize/pre.rb
 %%RUBY%%lib/groonga/scripts/ruby/labeled_arguments.rb
+%%RUBY%%lib/groonga/scripts/ruby/locale_output.rb
 %%RUBY%%lib/groonga/scripts/ruby/logger.rb
 %%RUBY%%lib/groonga/scripts/ruby/logger/level.rb
 %%RUBY%%lib/groonga/scripts/ruby/object.rb
