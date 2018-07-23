@@ -1,6 +1,5 @@
 # $FreeBSD$
 
-MAINTAINER=	manu@FreeBSD.org
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
 MODEL=		rpi2
