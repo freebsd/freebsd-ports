@@ -16,6 +16,7 @@ LIB_DEPENDS=	libublio.so:devel/libublio \
 		libutf8proc.so:textproc/utf8proc
 
 USES=		fuse gmake
+USE_CSTD=	c99
 USE_GITHUB=	yes
 GH_ACCOUNT=	0x09
 GH_TAGNAME=	d021835629c3fb37bd5bf8d364d5196f1db53867
