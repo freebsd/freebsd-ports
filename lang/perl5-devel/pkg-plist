@@ -770,9 +770,9 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%ARCH_LIB%%/CORE/time64.h
 %%ARCH_LIB%%/CORE/time64_config.h
 %%ARCH_LIB%%/CORE/uconfig.h
+%%ARCH_LIB%%/CORE/uni_keywords.h
 %%ARCH_LIB%%/CORE/unicode_constants.h
 %%ARCH_LIB%%/CORE/unixish.h
-%%ARCH_LIB%%/CORE/uni_keywords.h
 %%ARCH_LIB%%/CORE/utf8.h
 %%ARCH_LIB%%/CORE/utfebcdic.h
 %%ARCH_LIB%%/CORE/util.h
@@ -1004,6 +1004,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5280delta.1.gz
 %%MAN1%%/perl5290delta.1.gz
 %%MAN1%%/perl5291delta.1.gz
+%%MAN1%%/perl5292delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -1807,6 +1808,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5280delta.pod
 %%PRIV_LIB%%/pod/perl5290delta.pod
 %%PRIV_LIB%%/pod/perl5291delta.pod
+%%PRIV_LIB%%/pod/perl5292delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
@@ -1981,6 +1983,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/To/Cf.pl
 %%PRIV_LIB%%/unicore/To/Digit.pl
 %%PRIV_LIB%%/unicore/To/Ea.pl
+%%PRIV_LIB%%/unicore/To/EqUIdeo.pl
 %%PRIV_LIB%%/unicore/To/Fold.pl
 %%PRIV_LIB%%/unicore/To/GCB.pl
 %%PRIV_LIB%%/unicore/To/Gc.pl
@@ -2014,11 +2017,11 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/To/WB.pl
 %%PRIV_LIB%%/unicore/To/_PerlLB.pl
 %%PRIV_LIB%%/unicore/To/_PerlSCX.pl
-%%PRIV_LIB%%/unicore/To/_PerlWB.pl
 %%PRIV_LIB%%/unicore/UCD.pl
 %%PRIV_LIB%%/unicore/lib/Age/NA.pl
 %%PRIV_LIB%%/unicore/lib/Age/V100.pl
 %%PRIV_LIB%%/unicore/lib/Age/V11.pl
+%%PRIV_LIB%%/unicore/lib/Age/V110.pl
 %%PRIV_LIB%%/unicore/lib/Age/V20.pl
 %%PRIV_LIB%%/unicore/lib/Age/V30.pl
 %%PRIV_LIB%%/unicore/lib/Age/V31.pl
@@ -2099,9 +2102,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Ea/W.pl
 %%PRIV_LIB%%/unicore/lib/Ext/Y.pl
 %%PRIV_LIB%%/unicore/lib/GCB/CN.pl
-%%PRIV_LIB%%/unicore/lib/GCB/EB.pl
 %%PRIV_LIB%%/unicore/lib/GCB/EX.pl
-%%PRIV_LIB%%/unicore/lib/GCB/GAZ.pl
 %%PRIV_LIB%%/unicore/lib/GCB/LV.pl
 %%PRIV_LIB%%/unicore/lib/GCB/LVT.pl
 %%PRIV_LIB%%/unicore/lib/GCB/PP.pl
@@ -2140,6 +2141,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Gc/Z.pl
 %%PRIV_LIB%%/unicore/lib/Gc/Zs.pl
 %%PRIV_LIB%%/unicore/lib/GrBase/Y.pl
+%%PRIV_LIB%%/unicore/lib/GrExt/Y.pl
 %%PRIV_LIB%%/unicore/lib/Hex/Y.pl
 %%PRIV_LIB%%/unicore/lib/Hst/NA.pl
 %%PRIV_LIB%%/unicore/lib/Hyphen/T.pl
@@ -2147,6 +2149,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/IDS/Y.pl
 %%PRIV_LIB%%/unicore/lib/Ideo/Y.pl
 %%PRIV_LIB%%/unicore/lib/In/10_0.pl
+%%PRIV_LIB%%/unicore/lib/In/11_0.pl
 %%PRIV_LIB%%/unicore/lib/In/2_0.pl
 %%PRIV_LIB%%/unicore/lib/In/2_1.pl
 %%PRIV_LIB%%/unicore/lib/In/3_0.pl
@@ -2205,6 +2208,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Jg/Feh.pl
 %%PRIV_LIB%%/unicore/lib/Jg/Gaf.pl
 %%PRIV_LIB%%/unicore/lib/Jg/Hah.pl
+%%PRIV_LIB%%/unicore/lib/Jg/HanifiRo.pl
 %%PRIV_LIB%%/unicore/lib/Jg/Kaf.pl
 %%PRIV_LIB%%/unicore/lib/Jg/Lam.pl
 %%PRIV_LIB%%/unicore/lib/Jg/NoJoinin.pl
@@ -2216,6 +2220,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Jg/Yeh.pl
 %%PRIV_LIB%%/unicore/lib/Jt/C.pl
 %%PRIV_LIB%%/unicore/lib/Jt/D.pl
+%%PRIV_LIB%%/unicore/lib/Jt/L.pl
 %%PRIV_LIB%%/unicore/lib/Jt/R.pl
 %%PRIV_LIB%%/unicore/lib/Jt/T.pl
 %%PRIV_LIB%%/unicore/lib/Jt/U.pl
@@ -2258,6 +2263,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Nv/100.pl
 %%PRIV_LIB%%/unicore/lib/Nv/1000.pl
 %%PRIV_LIB%%/unicore/lib/Nv/10000.pl
+%%PRIV_LIB%%/unicore/lib/Nv/100000.pl
 %%PRIV_LIB%%/unicore/lib/Nv/11.pl
 %%PRIV_LIB%%/unicore/lib/Nv/12.pl
 %%PRIV_LIB%%/unicore/lib/Nv/13.pl
@@ -2349,6 +2355,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Sc/Dupl.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Geor.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Glag.pl
+%%PRIV_LIB%%/unicore/lib/Sc/Gong.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Gran.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Grek.pl
 %%PRIV_LIB%%/unicore/lib/Sc/Gujr.pl
@@ -2387,6 +2394,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Scx/Ethi.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Geor.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Glag.pl
+%%PRIV_LIB%%/unicore/lib/Scx/Gong.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Gonm.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Gran.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Grek.pl
@@ -2400,7 +2408,9 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Scx/Kana.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Khar.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Khmr.pl
+%%PRIV_LIB%%/unicore/lib/Scx/Khoj.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Knda.pl
+%%PRIV_LIB%%/unicore/lib/Scx/Kthi.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Lana.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Lao.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Latn.pl
@@ -2413,6 +2423,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Scx/Mymr.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Orya.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Phlp.pl
+%%PRIV_LIB%%/unicore/lib/Scx/Rohg.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Shrd.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Sind.pl
 %%PRIV_LIB%%/unicore/lib/Scx/Sinh.pl
@@ -2447,6 +2458,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/WB/ML.pl
 %%PRIV_LIB%%/unicore/lib/WB/MN.pl
 %%PRIV_LIB%%/unicore/lib/WB/NU.pl
+%%PRIV_LIB%%/unicore/lib/WB/WSegSpac.pl
 %%PRIV_LIB%%/unicore/lib/WB/XX.pl
 %%PRIV_LIB%%/unicore/lib/XIDC/Y.pl
 %%PRIV_LIB%%/unicore/lib/XIDS/Y.pl

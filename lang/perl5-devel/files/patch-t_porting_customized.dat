@@ -1,7 +1,7 @@
---- t/porting/customized.dat.orig	2018-04-21 18:42:15 UTC
+--- t/porting/customized.dat.orig	2018-07-23 08:15:38 UTC
 +++ t/porting/customized.dat
-@@ -4,6 +4,7 @@
- Devel::PPPort dist/Devel-PPPort/parts/embed.fnc e030719d9c6921810554a8e2d398543348b4878c
+@@ -3,6 +3,7 @@
+ #     ./perl -I../lib porting/customized.t --regen
  Digest cpan/Digest/Digest.pm 43f7f544cb11842b2f55c73e28930da50774e081
  Encode cpan/Encode/t/truncated_utf8.t 36e6780c20f1d22ed7c97b1a388a63629617451f
 +ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm ac29a8dc1c7d6f0aca4abff0730c05bde1dab3ad
