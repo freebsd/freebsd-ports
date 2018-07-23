@@ -5,11 +5,13 @@ include/pcap.h
 include/pcap/bluetooth.h
 include/pcap/bpf.h
 include/pcap/can_socketcan.h
+include/pcap/compiler-tests.h
 include/pcap/dlt.h
-include/pcap/export-defs.h
+include/pcap/funcattrs.h
 include/pcap/ipnet.h
 include/pcap/namedb.h
 include/pcap/nflog.h
+include/pcap/pcap-inttypes.h
 include/pcap/pcap.h
 include/pcap/sll.h
 include/pcap/usb.h
@@ -18,6 +20,7 @@ lib/libpcap.a
 lib/libpcap.so
 lib/libpcap.so.1
 lib/libpcap.so.%%PORTVERSION%%
+libdata/pkgconfig/libpcap.pc
 man/man1/pcap-config.1.gz
 man/man3/pcap.3.gz
 man/man3/pcap_activate.3.gz
@@ -39,6 +42,7 @@ man/man3/pcap_file.3.gz
 man/man3/pcap_fileno.3.gz
 man/man3/pcap_findalldevs.3.gz
 man/man3/pcap_freecode.3.gz
+man/man3/pcap_get_required_select_timeout.3.gz
 man/man3/pcap_get_selectable_fd.3.gz
 man/man3/pcap_get_tstamp_precision.3.gz
 man/man3/pcap_geterr.3.gz
@@ -60,6 +64,7 @@ man/man3/pcap_set_buffer_size.3.gz
 man/man3/pcap_set_datalink.3.gz
 man/man3/pcap_set_immediate_mode.3.gz
 man/man3/pcap_set_promisc.3.gz
+man/man3/pcap_set_protocol_linux.3.gz
 man/man3/pcap_set_rfmon.3.gz
 man/man3/pcap_set_snaplen.3.gz
 man/man3/pcap_set_timeout.3.gz
