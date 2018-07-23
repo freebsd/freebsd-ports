@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kodi
-DISTVERSION=	18.0.g201806300625
-PORTREVISION=	1
+DISTVERSION=	18.0.g201807222249
 CATEGORIES=	multimedia
 PKGNAMESUFFIX?=	-devel
 
@@ -10,9 +9,8 @@ MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Award winning media center application
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
+LICENSE_FILE=	${WRKSRC}/copying.txt
 
-BROKEN_FreeBSD_10=	does not build
 ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
 
 BUILD_DEPENDS=	rapidjson>=0:devel/rapidjson \
@@ -50,18 +48,18 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 # leads to dependency problems where libcpluff.a is not yet finished
 # building when it's required.
 USES=		autoreconf:build cmake:outsource,noninja compiler:c++11-lib \
-		gettext gmake iconv:wchar_t jpeg libtool pkgconfig python:-2.7 \
+		gettext gmake iconv:wchar_t jpeg libtool pkgconfig python:2.7 \
 		ssl sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
 GH_PROJECT=	xbmc
-GH_TAGNAME=	8063088ceecc6674763c83a63356fe0296b005a8
+GH_TAGNAME=	64a79f3e8c1cc1af0b8dc4f645e60f6c889e3667
 USE_GNOME=	libxslt libxml2
 USE_JAVA=	yes
 JAVA_BUILD=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	kodi-[0-9]*
+CONFLICTS_INSTALL=	kodi
 
 CMAKE_ARGS=	-DLIBDVD_INCLUDE_DIRS="${LOCALBASE}/include" \
 		-DDVDREAD_LIBRARY="${LOCALBASE}/lib/libdvdread.so" \
