@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	radcli
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.10
 CATEGORIES=	net
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	neel@neelc.org
 COMMENT=	Simple RADIUS client library
 
 LICENSE=	BSD2CLAUSE
