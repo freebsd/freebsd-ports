@@ -1,5 +1,5 @@
---- ldap-pwd.c.orig	2008-10-30 21:50:15.000000000 +0100
-+++ ldap-pwd.c	2008-12-06 00:37:30.216966282 +0100
+--- ldap-pwd.c.orig
++++ ldap-pwd.c
 @@ -21,7 +21,10 @@
  static char rcsId[] =
    "$Id: ldap-pwd.c,v 2.48 2008/10/30 20:49:47 lukeh Exp $";

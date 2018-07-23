@@ -1,5 +1,5 @@
---- Makefile.am.orig	2009-11-06 05:28:08.000000000 -0500
-+++ Makefile.am	2010-01-12 23:24:17.000000000 -0500
+--- Makefile.am.orig
++++ Makefile.am
 @@ -9,8 +9,12 @@
  if AIX
  INST_GID=system
