@@ -16,7 +16,7 @@ LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
 BUILD_DEPENDS=	bash:shells/bash \
 		antlr3:devel/antlr3
 
-USES=		autoreconf compiler:c++11-lang gmake python:3.5+,build libtool localbase pkgconfig shebangfix
+USES=		autoreconf gmake python:3.5+,build libtool localbase pkgconfig shebangfix
 USE_JAVA=	yes
 JAVA_BUILD=	yes
 
