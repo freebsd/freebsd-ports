@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmedcon
-PORTVERSION=	0.14.1
-PORTREVISION=	1
+PORTVERSION=	0.15.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/XMedCon-Source/${PORTVERSION}
 
@@ -14,6 +13,11 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 USES=		libtool pkgconfig tar:bzip2
+USE_GNOME=	cairo gdkpixbuf2
+
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/xmedcon \
 		--enable-llcheck

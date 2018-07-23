@@ -42,8 +42,8 @@ include/xmedcon/m-xtract.h
 include/xmedcon/medcon.h
 lib/libmdc.a
 lib/libmdc.so
-lib/libmdc.so.2
-lib/libmdc.so.2.0.1
+lib/libmdc.so.%%GTK3_VERSION%%
+lib/libmdc.so.3
 man/man1/medcon.1.gz
 %%X11%%man/man1/xmedcon.1.gz
 man/man1/xmedcon-config.1.gz
