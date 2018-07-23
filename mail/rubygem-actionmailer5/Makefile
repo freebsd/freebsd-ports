@@ -21,8 +21,8 @@ RUN_DEPENDS=	rubygem-actionpack5>=${PORTVERSION}:www/rubygem-actionpack5 \
 
 PORTSCOUT=	limit:^5\.1\.
 
+USES=		gem
 NO_ARCH=	yes
 USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
