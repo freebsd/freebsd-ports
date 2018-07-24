@@ -3,6 +3,7 @@
 PORTNAME=	z3
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	4.7.1
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -11,24 +12,16 @@ COMMENT=	Z3 Theorem Prover
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-# compiler picks ${LOCALBASE}/include/dictionary.h from iniparser
-CONFLICTS=		iniparser-*
-
+USES=		python:2.7,build
 USE_GITHUB=	yes
 GH_ACCOUNT=	Z3Prover
 
-OPTIONS_DEFINE=		DEBUG STATIC PYTHON GMP
+OPTIONS_DEFINE=		DEBUG STATIC GMP
 
-OPTIONS_DEFAULT=	STATIC PYTHON
+OPTIONS_DEFAULT=	STATIC
 OPTIONS_SUB=		yes
 
 DEBUG_CONFIGURE_ON=	--debug
-
-PYTHON_DESC=		Enable python bindings
-PYTHON_CONFIGURE_ON=	--python
-PYTHON_USES=		python:2.7
-PYTHON_USES_OFF=	python:2.7,build
-PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
 
 STATIC_DESC=		Build static z3 library
 STATIC_CONFIGURE_ON=	--staticlib
