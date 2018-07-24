@@ -3,7 +3,7 @@
 
 PORTNAME=	fusefs-libs3
 DISTVERSIONPREFIX=	fuse-
-DISTVERSION=	3.2.4
+DISTVERSION=	3.2.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	se@freebsd.org
