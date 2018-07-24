@@ -11,4 +11,6 @@ USE_CXXSTD=	gnu++11
 
 CPPFLAGS+=	-DU_USING_ICU_NAMESPACE=1
 
+TEST_TARGET=    test
+
 .include "${MASTERDIR}/Makefile"
