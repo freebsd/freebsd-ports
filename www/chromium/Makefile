@@ -18,8 +18,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
 
 .if !defined(GN_ONLY)
-BUILD_DEPENDS+=	git:devel/git \
-		gperf:devel/gperf \
+BUILD_DEPENDS+=	gperf:devel/gperf \
 		yasm:devel/yasm \
 		ffmpeg>=3.2.2,1:multimedia/ffmpeg \
 		flock:sysutils/flock \
@@ -176,6 +175,7 @@ DEBUG_VARS_OFF=		BUILDTYPE=Release \
 			GN_ARGS+=remove_webcore_debug_symbols=true \
 			WANTSPACE="a fair amount of free disk space (~ 5.8GB)"
 
+DRIVER_BUILD_DEPENDS=	git:devel/git
 DRIVER_MAKE_ARGS=	chromedriver
 
 KERBEROS_VARS=		GN_ARGS+=use_kerberos=true
