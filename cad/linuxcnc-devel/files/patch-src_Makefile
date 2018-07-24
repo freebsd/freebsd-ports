@@ -1,5 +1,5 @@
---- src/Makefile.orig	2017-07-08 02:09:02.000000000 +0100
-+++ src/Makefile	2017-07-06 12:52:07.633525000 +0100
+--- src/Makefile.orig	2017-07-08 22:25:35.000000000 +0100
++++ src/Makefile	2018-07-23 15:16:25.939787000 +0100
 @@ -183,7 +183,7 @@ $(shell $(VECHO) 1>&2 Done reading dependencies)
  endif
  
@@ -24,15 +24,24 @@
  endif
  
  # Rules to make .o (object) files
-@@ -501,7 +503,7 @@ $(patsubst %,../include/%,$(wildcard *.hh)): ../includ
+@@ -499,12 +501,12 @@ $(patsubst %,../include/%,$(wildcard *.h)): ../include
+ $(patsubst %,../include/%,$(wildcard *.hh)): ../include/%.hh: %.hh
+ 	$(Q)-cp $^ $@
  
- DIR=install -d -m 0755 -o root
- FILE=install -m 0644 -o root
+-DIR=install -d -m 0755 -o root
+-FILE=install -m 0644 -o root
 -TREE=cp -dR
++DIR=install -d -m 0755
++FILE=install -m 0644
 +TREE=cp -R
  CONFIGFILE=install -m 0644
- EXE=install -m 0755 -o root
- SETUID=install -m 4755 -o root
+-EXE=install -m 0755 -o root
+-SETUID=install -m 4755 -o root
++EXE=install -m 0755
++SETUID=install -m 4755
+ GLOB=$(wildcard $(1))
+ 
+ ifeq ($(RUN_IN_PLACE),yes)
 @@ -549,7 +551,7 @@ install-dirs:
  		$(DESTDIR)$(sysconfdir)/linuxcnc $(DESTDIR)$(bindir) \
  		$(DESTDIR)$(libdir) $(DESTDIR)$(includedir)/linuxcnc \
