@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	YAML-LibYAML
-DISTVERSION=	0.67
+DISTVERSION=	0.72
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	p5-Filter>=0:devel/p5-Filter
+TEST_DEPENDS=	p5-Filter>=0:devel/p5-Filter \
+		p5-Test-Base>=0:devel/p5-Test-Base
 
 USES=		perl5
 USE_PERL5=	configure
