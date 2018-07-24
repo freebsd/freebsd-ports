@@ -1,0 +1,5 @@
+The xl program is the new tool for managing Xen guest domains. The program can
+be used to create, pause, and shutdown domains. It can also be used to list
+current domains, enable or pin VCPUs, and attach or detach virtual block devices
+
+WWW: https://wiki.xen.org/wiki/XL

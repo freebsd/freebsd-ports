@@ -1,0 +1,39 @@
+From e21ba44f771226a5f6f0ce269aabcfb019eae539 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Roger=20Pau=20Monn=C3=A9?= <roger.pau@citrix.com>
+Date: Thu, 12 Jul 2018 10:48:18 +0200
+Subject: [PATCH] x86: replace '||' usage in the linker script
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+With '|'. The result is the same, and the later works with lld. Fixes
+the following error when building Xen with lld:
+
+ld    -melf_x86_64_fbsd  -T xen.lds -N prelink.o --build-id=sha1 \
+    /root/src/xen/xen/common/symbols-dummy.o -o /root/src/xen/xen/.xen-syms.0
+ld: error: xen.lds:260: malformed number: |
+>>> ASSERT(__image_base__ > (((((((((261 >> 8) * 0xffff000000000000) | (261 << 39))) + ((1 << 39) / 2)) + (64 << 30)) + (1 << 30)) + (1 << 30))) ||
+>>>                                                                                                                                               ^
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
+---
+ xen/arch/x86/xen.lds.S | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/xen/arch/x86/xen.lds.S b/xen/arch/x86/xen.lds.S
+index 70afedd31d..326e885402 100644
+--- a/xen/arch/x86/xen.lds.S
++++ b/xen/arch/x86/xen.lds.S
+@@ -331,7 +331,7 @@ SECTIONS
+   .comment 0 : { *(.comment) }
+ }
+ 
+-ASSERT(__image_base__ > XEN_VIRT_START ||
++ASSERT(__image_base__ > XEN_VIRT_START |
+        __2M_rwdata_end <= XEN_VIRT_END - NR_CPUS * PAGE_SIZE,
+        "Xen image overlaps stubs area")
+ 
+-- 
+2.18.0
+
