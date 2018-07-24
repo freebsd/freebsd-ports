@@ -5,7 +5,7 @@ packed struct), but the pointer argument to kdd_rdmsr() has the normal
 alignment constraints for a uint64_t *.  Use a local variable to make sure
 the passed pointer has the correct alignment.
 
-Reported-by: Roger Pau Monné <roger.pau@citrix.com>
+Reported-by: Roger Pau MonnÃ© <roger.pau@citrix.com>
 Signed-off-by: Tim Deegan <tim@xen.org>
 ---
  tools/debugger/kdd/kdd.c | 4 +++-
