@@ -22,6 +22,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER?=	udo.schweigert@siemens.com
 COMMENT?=	The Mongrel of Mailers (part Elm, Pine, Mush, mh, etc.)
 
+DEPRECATED=	mutt 1.4.x has been out of support for 10+ years use mail/mutt
+EXPIRATION_DATE=	2018-08-20
+
 CONFLICTS?=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-devel-[0-9]* mutt-devel-lite-[0-9]* mutt-lite-[0-9]* zh-mutt-devel-[0-9]* mutt-[^1].[^4]*
 PKGNAMESUFFIX=	14
 
