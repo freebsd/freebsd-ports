@@ -1,0 +1,4 @@
+Python binding for Z3, a high-performance theorem prover developed
+at Microsoft Research.
+
+WWW: https://github.com/Z3Prover/z3
