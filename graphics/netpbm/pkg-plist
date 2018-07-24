@@ -62,7 +62,9 @@ bin/pamfix
 bin/pamflip
 bin/pamfunc
 bin/pamgauss
+bin/pamgetcolor
 bin/pamgradient
+bin/pamlevels
 bin/pamlookup
 bin/pammasksharpen
 bin/pammixinterlace
@@ -388,7 +390,7 @@ include/netpbm/shhopt.h
 lib/libnetpbm.a
 lib/libnetpbm.so
 lib/libnetpbm.so.11
-lib/libnetpbm.so.11.80
+lib/libnetpbm.so.11.83
 %%MANPAGES%%man/man1/411toppm.1.gz
 %%MANPAGES%%man/man1/anytopnm.1.gz
 %%MANPAGES%%man/man1/asciitopgm.1.gz
@@ -457,7 +459,9 @@ lib/libnetpbm.so.11.80
 %%MANPAGES%%man/man1/pamflip.1.gz
 %%MANPAGES%%man/man1/pamfunc.1.gz
 %%MANPAGES%%man/man1/pamgauss.1.gz
+%%MANPAGES%%man/man1/pamgetcolor.1.gz
 %%MANPAGES%%man/man1/pamgradient.1.gz
+%%MANPAGES%%man/man1/pamlevels.1.gz
 %%MANPAGES%%man/man1/pamlookup.1.gz
 %%MANPAGES%%man/man1/pammasksharpen.1.gz
 %%MANPAGES%%man/man1/pammixinterlace.1.gz
@@ -765,6 +769,7 @@ lib/libnetpbm.so.11.80
 %%MANPAGES%%man/man3/libmaketmpfilefd.3.gz
 %%MANPAGES%%man/man3/libnetpbm.3.gz
 %%MANPAGES%%man/man3/libnetpbm_draw.3.gz
+%%MANPAGES%%man/man3/libnetpbm_font.3.gz
 %%MANPAGES%%man/man3/libnetpbm_image.3.gz
 %%MANPAGES%%man/man3/libnetpbm_ug.3.gz
 %%MANPAGES%%man/man3/libpbm.3.gz
