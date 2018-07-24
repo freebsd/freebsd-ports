@@ -5,7 +5,7 @@ PORTVERSION=	4.11.0
 PORTREVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
-PKGNAMESUFFIX=	-kernel
+PKGNAMESUFFIX=	-kernel411
 
 MAINTAINER=	royger@FreeBSD.org
 COMMENT=	Hypervisor using a microkernel design

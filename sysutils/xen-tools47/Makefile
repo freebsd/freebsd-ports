@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xen
-PKGNAMESUFFIX=	-tools
+PKGNAMESUFFIX=	-tools47
 PORTVERSION=	4.7.2
 PORTREVISION=	4
 CATEGORIES=	sysutils emulators
