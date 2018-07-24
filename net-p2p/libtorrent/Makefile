@@ -5,7 +5,7 @@ PORTVERSION=	0.13.7
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://rtorrent.net/downloads/
 
-MAINTAINER=	pipfstarrd@openmailbox.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BitTorrent Library written in C++
 
 LICENSE=	GPLv2+
