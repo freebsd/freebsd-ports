@@ -27,6 +27,7 @@
 
 name="vboxheadless"
 rcvar=vboxheadless_enable
+rc_fast="YES"
 
 command="%%VBOXDIR%%/VBoxHeadless"
 pidbase="/var/run/${name}"
