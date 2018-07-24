@@ -220,9 +220,16 @@ post-patch:
 		${WRKSRC}/plugins/supereq/Makefile.in
 	@${REINPLACE_CMD} -e 's,/etc/timidity++/timidity-freepats.cfg:/etc/timidity/freepats.cfg:/etc/timidity/,${LOCALBASE}/share/,' \
 		${WRKSRC}/plugins/wildmidi/wildmidiplug.c
-	@${REINPLACE_CMD} \
-		-e '/HAVE_OGG" = "yes"/ {n; n; /HAVE_VORBISPLUGIN=yes/d;}' \
+# Clang accepts `-msse2' command line option even on !x86, need better check
+	@${REINPLACE_CMD} -e '25177s,^,#include <xmmintrin.h>,' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/chnresolv/s,const char,signed &,' \
+		${WRKSRC}/plugins/adplug/adplug/s3m.cpp \
+		${WRKSRC}/plugins/adplug/adplug/s3m.h
+	@${REINPLACE_CMD} -e "/sampleConvertTable/s,int8_t,u&, ; \
+		86,+1 { s,',,g; s,\\\\x,0x,g; }" \
+		${WRKSRC}/plugins/sid/sidplay-libs/libsidplay/src/xsid/xsid.cpp \
+		${WRKSRC}/plugins/sid/sidplay-libs/libsidplay/src/xsid/xsid.h
 # Fix build with libzip-1.0
 	@${REINPLACE_CMD} 's,zip_file_t,zip_file_DB,g' \
 		${WRKSRC}/plugins/vfs_zip/vfs_zip.c
