@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jack_umidi
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 CATEGORIES=	audio
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 		http://home.selasky.org:8192/distfiles/
