@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	angband
-PORTVERSION=	4.1.0
+PORTVERSION=	4.1.2
 CATEGORIES=	games
 MASTER_SITES=	http://rephial.org/downloads/${PORTVERSION:R}/
 
@@ -18,7 +18,6 @@ USES=		autoreconf gmake ncurses
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_NCURSES_CONFIG=${TRUE}
 CONFIGURE_ARGS=	--localstatedir=/var
-WRKSRC=		${WRKDIR}/${PORTNAME}-master
 
 CPPFLAGS+=	-I${NCURSESINC}
 LDFLAGS+=	-L${NCURSESLIB} -lncursesw
