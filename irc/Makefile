@@ -122,6 +122,7 @@
     SUBDIR += undernet-ircu
     SUBDIR += unreal
     SUBDIR += weechat
+    SUBDIR += weechat-otr
     SUBDIR += xaric
     SUBDIR += znc
 
