@@ -1,0 +1,41 @@
+From 76c9776e63305c23bca03eba933e7ce2ecbb749c Mon Sep 17 00:00:00 2001
+From: Roger Pau Monne <roger.pau@citrix.com>
+Date: Mon, 23 Jul 2018 17:58:35 +0200
+Subject: [PATCH] docs: use the make wildcard function instead of find
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+The regexp used with find in order to list the man pages doesn't work
+with FreeBSD find, so use a wildcard instead. No functional change.
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+---
+Cc: Ian Jackson <ian.jackson@eu.citrix.com>
+Cc: Wei Liu <wei.liu2@citrix.com>
+---
+ docs/Makefile | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/docs/Makefile b/docs/Makefile
+index b300bb6be1..fba6673db6 100644
+--- a/docs/Makefile
++++ b/docs/Makefile
+@@ -8,10 +8,10 @@ DATE		:= $(shell date +%Y-%m-%d)
+ DOC_ARCHES      := arm x86_32 x86_64
+ 
+ # Documentation sources to build
+-MAN1SRC-y := $(sort $(shell find man/ -regex '.*\.\(pod\|markdown\)\.1' -print))
+-MAN5SRC-y := $(sort $(shell find man/ -regex '.*\.\(pod\|markdown\)\.5' -print))
+-MAN7SRC-y := $(sort $(shell find man/ -regex '.*\.\(pod\|markdown\)\.7' -print))
+-MAN8SRC-y := $(sort $(shell find man/ -regex '.*\.\(pod\|markdown\)\.8' -print))
++MAN1SRC-y := $(sort $(wildcard man/*.pod.1 man/*.markdown.1))
++MAN5SRC-y := $(sort $(wildcard man/*.pod.5 man/*.markdown.5))
++MAN7SRC-y := $(sort $(wildcard man/*.pod.7 man/*.markdown.7))
++MAN8SRC-y := $(sort $(wildcard man/*.pod.8 man/*.markdown.8))
+ 
+ MARKDOWNSRC-y := $(sort $(shell find misc -name '*.markdown' -print))
+ 
+-- 
+2.18.0
+

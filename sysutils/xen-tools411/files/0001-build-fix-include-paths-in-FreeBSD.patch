@@ -1,0 +1,33 @@
+From fe9b60476a548de1c62d6fc985e9741b04479d36 Mon Sep 17 00:00:00 2001
+From: Roger Pau Monne <roger.pau@citrix.com>
+Date: Mon, 2 Jul 2018 10:28:26 +0200
+Subject: [PATCH] build: fix include paths in FreeBSD
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+FreeBSD package manager uses /usr/local/ as the default install path,
+but that's not part of the compiler search path, so add it using the
+APPEND_{LIB/INCLUDES} variables.
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+Acked-by: Wei Liu <wei.liu2@citrix.com>
+---
+ config/FreeBSD.mk | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/config/FreeBSD.mk b/config/FreeBSD.mk
+index afeaefbde2..98a5117e60 100644
+--- a/config/FreeBSD.mk
++++ b/config/FreeBSD.mk
+@@ -3,3 +3,7 @@ include $(XEN_ROOT)/config/StdGNU.mk
+ # No wget on FreeBSD base system
+ WGET = ftp
+ PKG_INSTALLDIR = ${prefix}/libdata/pkgconfig
++
++# Add the default pkg install path
++APPEND_LIB += /usr/local/lib
++APPEND_INCLUDES += /usr/local/include
+-- 
+2.18.0
+

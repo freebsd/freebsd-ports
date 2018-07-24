@@ -1,0 +1,87 @@
+From f7c587fa1341b59f4ff654bd7e55e162f3513130 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Roger=20Pau=20Monn=C3=A9?= <roger.pau@citrix.com>
+Date: Thu, 5 Jul 2018 15:28:56 +0200
+Subject: [PATCH] x86/mtrr: introduce mask to get VCNT from MTRRcap MSR
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+No functional change.
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+Reviewed-by: Jan Beulich <jbeulich@suse.com>
+---
+ xen/arch/x86/cpu/mtrr/main.c    | 2 +-
+ xen/arch/x86/hvm/mtrr.c         | 8 ++++----
+ xen/include/asm-x86/msr-index.h | 2 ++
+ 3 files changed, 7 insertions(+), 5 deletions(-)
+
+diff --git a/xen/arch/x86/cpu/mtrr/main.c b/xen/arch/x86/cpu/mtrr/main.c
+index 56f71a6e1f..e9df53f00d 100644
+--- a/xen/arch/x86/cpu/mtrr/main.c
++++ b/xen/arch/x86/cpu/mtrr/main.c
+@@ -95,7 +95,7 @@ static void __init set_num_var_ranges(void)
+ 		config = 2;
+ 	else if (is_cpu(CENTAUR))
+ 		config = 8;
+-	num_var_ranges = config & 0xff;
++	num_var_ranges = MASK_EXTR(config, MTRRcap_VCNT);
+ }
+ 
+ static void __init init_table(void)
+diff --git a/xen/arch/x86/hvm/mtrr.c b/xen/arch/x86/hvm/mtrr.c
+index c78e5c17ad..c2927fb437 100644
+--- a/xen/arch/x86/hvm/mtrr.c
++++ b/xen/arch/x86/hvm/mtrr.c
+@@ -78,7 +78,7 @@ static uint8_t __read_mostly pat_entry_tbl[PAT_TYPE_NUMS] =
+ bool_t is_var_mtrr_overlapped(const struct mtrr_state *m)
+ {
+     unsigned int seg, i;
+-    unsigned int num_var_ranges = (uint8_t)m->mtrr_cap;
++    unsigned int num_var_ranges = MASK_EXTR(m->mtrr_cap, MTRRcap_VCNT);
+ 
+     for ( i = 0; i < num_var_ranges; i++ )
+     {
+@@ -193,7 +193,7 @@ static int get_mtrr_type(const struct mtrr_state *m,
+    uint8_t     overlap_mtrr = 0;
+    uint8_t     overlap_mtrr_pos = 0;
+    uint64_t    mask = -(uint64_t)PAGE_SIZE << order;
+-   unsigned int seg, num_var_ranges = m->mtrr_cap & 0xff;
++   unsigned int seg, num_var_ranges = MASK_EXTR(m->mtrr_cap, MTRRcap_VCNT);
+ 
+    if ( unlikely(!(m->enabled & 0x2)) )
+        return MTRR_TYPE_UNCACHABLE;
+@@ -483,7 +483,7 @@ bool mtrr_pat_not_equal(const struct vcpu *vd, const struct vcpu *vs)
+ 
+     if ( md->enabled & 2 )
+     {
+-        unsigned int num_var_ranges = (uint8_t)md->mtrr_cap;
++        unsigned int num_var_ranges = MASK_EXTR(md->mtrr_cap, MTRRcap_VCNT);
+ 
+         /* Test default type MSR. */
+         if ( md->def_type != ms->def_type )
+@@ -499,7 +499,7 @@ bool mtrr_pat_not_equal(const struct vcpu *vd, const struct vcpu *vs)
+             return true;
+ 
+         /* Test variable ranges. */
+-        if ( num_var_ranges != (uint8_t)ms->mtrr_cap ||
++        if ( num_var_ranges != MASK_EXTR(ms->mtrr_cap, MTRRcap_VCNT) ||
+              memcmp(md->var_ranges, ms->var_ranges,
+                     num_var_ranges * sizeof(*md->var_ranges)) )
+             return true;
+diff --git a/xen/include/asm-x86/msr-index.h b/xen/include/asm-x86/msr-index.h
+index 8fbccc88a7..95bb66916c 100644
+--- a/xen/include/asm-x86/msr-index.h
++++ b/xen/include/asm-x86/msr-index.h
+@@ -60,6 +60,8 @@
+ #define ATM_LNC_C6_AUTO_DEMOTE		(1UL << 25)
+ 
+ #define MSR_MTRRcap			0x000000fe
++#define MTRRcap_VCNT			0x000000ff
++
+ #define MSR_IA32_BBL_CR_CTL		0x00000119
+ 
+ #define MSR_IA32_SYSENTER_CS		0x00000174
+-- 
+2.18.0
+

@@ -1,0 +1,94 @@
+From 1e34ed7174cce6ab37e420dda9452267301fb7d2 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Roger=20Pau=20Monn=C3=A9?= <roger.pau@citrix.com>
+Date: Mon, 2 Jul 2018 13:07:55 +0200
+Subject: [PATCH 2/2] vpci/msi: fix update of bound MSI interrupts
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Current update process of already bound MSI interrupts is wrong
+because unmap_domain_pirq calls pci_disable_msi, which disables MSI
+interrupts on the device. On the other hand map_domain_pirq doesn't
+enable MSI, so the current update process of already enabled MSI
+entries is wrong because MSI control bit will be disabled by
+unmap_domain_pirq and not re-enabled by map_domain_pirq.
+
+In order to fix this avoid unmapping the PIRQs and just update the
+binding of the PIRQ. A new arch helper to do that is introduced.
+
+Note that MSI-X is not affected because unmap_domain_pirq only
+disables the MSI enable control bit for the MSI case, for MSI-X the
+bit is left untouched by unmap_domain_pirq.
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+Acked-by: Jan Beulich <jbeulich@suse.com>
+---
+ xen/arch/x86/hvm/vmsi.c | 23 +++++++++++++++++++++++
+ xen/drivers/vpci/msi.c  |  3 +--
+ xen/include/xen/vpci.h  |  2 ++
+ 3 files changed, 26 insertions(+), 2 deletions(-)
+
+diff --git a/xen/arch/x86/hvm/vmsi.c b/xen/arch/x86/hvm/vmsi.c
+index acadc23f8d..3001d5c488 100644
+--- a/xen/arch/x86/hvm/vmsi.c
++++ b/xen/arch/x86/hvm/vmsi.c
+@@ -699,6 +699,29 @@ static int vpci_msi_update(const struct pci_dev *pdev, uint32_t data,
+     return 0;
+ }
+ 
++int vpci_msi_arch_update(struct vpci_msi *msi, const struct pci_dev *pdev)
++{
++    int rc;
++
++    ASSERT(msi->arch.pirq != INVALID_PIRQ);
++
++    pcidevs_lock();
++    rc = vpci_msi_update(pdev, msi->data, msi->address, msi->vectors,
++                         msi->arch.pirq, msi->mask);
++    if ( rc )
++    {
++        spin_lock(&pdev->domain->event_lock);
++        unmap_domain_pirq(pdev->domain, msi->arch.pirq);
++        spin_unlock(&pdev->domain->event_lock);
++        pcidevs_unlock();
++        msi->arch.pirq = INVALID_PIRQ;
++        return rc;
++    }
++    pcidevs_unlock();
++
++    return 0;
++}
++
+ static int vpci_msi_enable(const struct pci_dev *pdev, uint32_t data,
+                            uint64_t address, unsigned int nr,
+                            paddr_t table_base, uint32_t mask)
+diff --git a/xen/drivers/vpci/msi.c b/xen/drivers/vpci/msi.c
+index ad26c38a92..8f15ad7bf2 100644
+--- a/xen/drivers/vpci/msi.c
++++ b/xen/drivers/vpci/msi.c
+@@ -87,8 +87,7 @@ static void update_msi(const struct pci_dev *pdev, struct vpci_msi *msi)
+     if ( !msi->enabled )
+         return;
+ 
+-    vpci_msi_arch_disable(msi, pdev);
+-    if ( vpci_msi_arch_enable(msi, pdev, msi->vectors) )
++    if ( vpci_msi_arch_update(msi, pdev) )
+         msi->enabled = false;
+ }
+ 
+diff --git a/xen/include/xen/vpci.h b/xen/include/xen/vpci.h
+index 72d2225a97..af2b8580ee 100644
+--- a/xen/include/xen/vpci.h
++++ b/xen/include/xen/vpci.h
+@@ -159,6 +159,8 @@ int __must_check vpci_msi_arch_enable(struct vpci_msi *msi,
+                                       const struct pci_dev *pdev,
+                                       unsigned int vectors);
+ void vpci_msi_arch_disable(struct vpci_msi *msi, const struct pci_dev *pdev);
++int __must_check vpci_msi_arch_update(struct vpci_msi *msi,
++                                      const struct pci_dev *pdev);
+ void vpci_msi_arch_init(struct vpci_msi *msi);
+ void vpci_msi_arch_print(const struct vpci_msi *msi);
+ 
+-- 
+2.18.0
+

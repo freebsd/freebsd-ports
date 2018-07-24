@@ -1,0 +1,53 @@
+From ec3d58041829e0747d94efa11a44467c3e083b60 Mon Sep 17 00:00:00 2001
+From: Roger Pau Monne <roger.pau@citrix.com>
+Date: Tue, 24 Jul 2018 13:12:18 +0200
+Subject: [PATCH] x86/pvh: change the order of the iommu initialization for
+ Dom0
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+The iommu initialization will also create MMIO mappings in the Dom0
+p2m, so the paging memory pool needs to be allocated or else iommu
+initialization will fail.
+
+Move the call to init the iommu after the Dom0 p2m has been setup in
+order to solve this.
+
+Note that issues caused by this wrong ordering have only been seen
+when using shadow paging.
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+Acked-by: Jan Beulich <jbeulich@suse.com>
+---
+Cc: Jan Beulich <jbeulich@suse.com>
+Cc: Andrew Cooper <andrew.cooper3@citrix.com>
+---
+ xen/arch/x86/hvm/dom0_build.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/xen/arch/x86/hvm/dom0_build.c b/xen/arch/x86/hvm/dom0_build.c
+index 9a833fa4b9..f0cd63b1ec 100644
+--- a/xen/arch/x86/hvm/dom0_build.c
++++ b/xen/arch/x86/hvm/dom0_build.c
+@@ -1093,8 +1093,6 @@ int __init dom0_construct_pvh(struct domain *d, const module_t *image,
+ 
+     printk(XENLOG_INFO "*** Building a PVH Dom%d ***\n", d->domain_id);
+ 
+-    iommu_hwdom_init(d);
+-
+     rc = pvh_setup_p2m(d);
+     if ( rc )
+     {
+@@ -1102,6 +1100,8 @@ int __init dom0_construct_pvh(struct domain *d, const module_t *image,
+         return rc;
+     }
+ 
++    iommu_hwdom_init(d);
++
+     rc = pvh_load_kernel(d, image, image_headroom, initrd, bootstrap_map(image),
+                          cmdline, &entry, &start_info);
+     if ( rc )
+-- 
+2.18.0
+
