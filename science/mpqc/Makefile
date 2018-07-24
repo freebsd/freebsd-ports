@@ -3,7 +3,7 @@
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
-PORTREVISION=	34
+PORTREVISION=	35
 CATEGORIES=	science parallel
 MASTER_SITES=	SF
 
@@ -32,6 +32,7 @@ INSTALL_TARGET=	install install_devel
 DESTDIRNAME=	installroot
 SHEBANG_FILES=	src/bin/mpqc/ccarunproc src/bin/mpqc/mpqcrunproc
 USE_LDCONFIG=	yes
+USE_CXXSTD=	c++98 # workaround https://github.com/ValeevGroup/mpqc/issues/57
 
 OPTIONS_DEFINE=		ATLAS DOXYGEN EXAMPLES ICC MPICH OPTIFLAGS
 OPTIONS_DEFAULT=	DOXYGEN
@@ -69,6 +70,12 @@ post-patch:
 		-e 's/pthread_join(0,0)/pthread_create(0,0,0,0)/' \
 		-e 's|/usr/bin/wish|${LOCALBASE}/bin/wish|' \
 		${WRKSRC}/configure
+
+post-configure: # workaround: https://github.com/ValeevGroup/mpqc/issues/56
+	@${REINPLACE_CMD} -e ' \
+		s|/\* #undef USING_NAMESPACE_STD \*/|#define USING_NAMESPACE_STD 1|; \
+		s|/\* #undef HAVE_SGETN \*/|#define HAVE_SGETN 1|' \
+		${WRKSRC}/src/lib/scconfig.h
 
 do-build-DOXYGEN-on:
 	@(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS})
