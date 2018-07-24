@@ -22,7 +22,7 @@ rcvar=sniproxy_enable
 
 command=%%PREFIX%%/sbin/sniproxy
 
-pidfile=${sniproxy_pidfile:-"/var/run/sniproxy.pid
+pidfile=${sniproxy_pidfile:-"/var/run/sniproxy.pid"}
 
 sniproxy_enable=${sniproxy_enable:-"NO"}
 sniproxy_conf=${sniproxy_conf:-"%%PREFIX%%/etc/sniproxy.conf"}
