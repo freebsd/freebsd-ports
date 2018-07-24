@@ -41,7 +41,6 @@
 %%COCKATRICE%%%%DATADIR%%/themes/VelvetMarble/zones/playerzone.jpg
 %%COCKATRICE%%%%DATADIR%%/themes/VelvetMarble/zones/stackzone.jpg
 %%COCKATRICE%%%%DATADIR%%/themes/VelvetMarble/zones/tablezone.jpg
-%%COCKATRICE%%%%DATADIR%%/translations/cockatrice_ca.qm
 %%COCKATRICE%%%%DATADIR%%/translations/cockatrice_cs.qm
 %%COCKATRICE%%%%DATADIR%%/translations/cockatrice_de.qm
 %%COCKATRICE%%%%DATADIR%%/translations/cockatrice_el.qm
@@ -51,12 +50,10 @@
 %%COCKATRICE%%%%DATADIR%%/translations/cockatrice_et.qm
 %%COCKATRICE%%%%DATADIR%%/translations/cockatrice_fi.qm
 %%COCKATRICE%%%%DATADIR%%/translations/cockatrice_fr.qm
-%%COCKATRICE%%%%DATADIR%%/translations/cockatrice_he.qm
 %%COCKATRICE%%%%DATADIR%%/translations/cockatrice_hu.qm
 %%COCKATRICE%%%%DATADIR%%/translations/cockatrice_it.qm
 %%COCKATRICE%%%%DATADIR%%/translations/cockatrice_ja.qm
 %%COCKATRICE%%%%DATADIR%%/translations/cockatrice_ko.qm
-%%COCKATRICE%%%%DATADIR%%/translations/cockatrice_lt.qm
 %%COCKATRICE%%%%DATADIR%%/translations/cockatrice_nb.qm
 %%COCKATRICE%%%%DATADIR%%/translations/cockatrice_nl.qm
 %%COCKATRICE%%%%DATADIR%%/translations/cockatrice_pl.qm
@@ -66,13 +63,11 @@
 %%COCKATRICE%%%%DATADIR%%/translations/cockatrice_sr.qm
 %%COCKATRICE%%%%DATADIR%%/translations/cockatrice_sv.qm
 %%COCKATRICE%%%%DATADIR%%/translations/cockatrice_tr.qm
-%%COCKATRICE%%%%DATADIR%%/translations/cockatrice_uk.qm
 %%COCKATRICE%%%%DATADIR%%/translations/cockatrice_zh-Hans.qm
 %%COCKATRICE%%share/icons/hicolor/48x48/apps/cockatrice.png
 %%COCKATRICE%%share/icons/hicolor/48x48/apps/oracle.png
 %%COCKATRICE%%share/icons/hicolor/scalable/apps/cockatrice.svg
 %%COCKATRICE%%share/icons/hicolor/scalable/apps/oracle.svg
-%%COCKATRICE%%share/oracle/translations/oracle_ca.qm
 %%COCKATRICE%%share/oracle/translations/oracle_cs.qm
 %%COCKATRICE%%share/oracle/translations/oracle_de.qm
 %%COCKATRICE%%share/oracle/translations/oracle_el.qm
@@ -82,12 +77,10 @@
 %%COCKATRICE%%share/oracle/translations/oracle_et.qm
 %%COCKATRICE%%share/oracle/translations/oracle_fi.qm
 %%COCKATRICE%%share/oracle/translations/oracle_fr.qm
-%%COCKATRICE%%share/oracle/translations/oracle_he.qm
 %%COCKATRICE%%share/oracle/translations/oracle_hu.qm
 %%COCKATRICE%%share/oracle/translations/oracle_it.qm
 %%COCKATRICE%%share/oracle/translations/oracle_ja.qm
 %%COCKATRICE%%share/oracle/translations/oracle_ko.qm
-%%COCKATRICE%%share/oracle/translations/oracle_lt.qm
 %%COCKATRICE%%share/oracle/translations/oracle_nb.qm
 %%COCKATRICE%%share/oracle/translations/oracle_nl.qm
 %%COCKATRICE%%share/oracle/translations/oracle_pl.qm
@@ -97,5 +90,4 @@
 %%COCKATRICE%%share/oracle/translations/oracle_sr.qm
 %%COCKATRICE%%share/oracle/translations/oracle_sv.qm
 %%COCKATRICE%%share/oracle/translations/oracle_tr.qm
-%%COCKATRICE%%share/oracle/translations/oracle_uk.qm
 %%COCKATRICE%%share/oracle/translations/oracle_zh-Hans.qm
