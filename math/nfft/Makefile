@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nfft
-PORTVERSION=	3.4.0
-PORTREVISION=	1
+PORTVERSION=	3.4.1
 CATEGORIES=	math
 
 MAINTAINER=	mike.d.ft402@gmail.com
