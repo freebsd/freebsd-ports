@@ -27,6 +27,7 @@ include/torrent/event.h
 include/torrent/exceptions.h
 include/torrent/hash_string.h
 include/torrent/http.h
+include/torrent/net/socket_address_key.h
 include/torrent/object.h
 include/torrent/object_raw_bencode.h
 include/torrent/object_static_map.h
@@ -49,6 +50,7 @@ include/torrent/torrent.h
 include/torrent/tracker.h
 include/torrent/tracker_controller.h
 include/torrent/tracker_list.h
+include/torrent/utils/directory_events.h
 include/torrent/utils/extents.h
 include/torrent/utils/log.h
 include/torrent/utils/log_buffer.h
@@ -59,7 +61,7 @@ include/torrent/utils/resume.h
 include/torrent/utils/signal_bitfield.h
 include/torrent/utils/thread_base.h
 include/torrent/utils/thread_interrupt.h
+include/torrent/utils/uri_parser.h
 lib/libtorrent.so
-lib/libtorrent.so.19
-lib/libtorrent.so.19.0.0
+lib/libtorrent.so.20.0.0
 libdata/pkgconfig/libtorrent.pc
