@@ -3,4 +3,4 @@ running) window statistic functions, read/write for GIF and ENVI
 binary files, fast calculation of AUC, LogitBoost classifier, base64
 encoder/decoder, round-off error free sum and cumsum, etc.
 
-WWW: http://cran.r-project.org/web/packages/caTools/
+WWW: https://cran.r-project.org/web/packages/caTools/
