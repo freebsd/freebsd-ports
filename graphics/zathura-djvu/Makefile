@@ -17,14 +17,14 @@ LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre
 BUILD_DEPENDS=	zathura:graphics/zathura
 RUN_DEPENDS=	zathura:graphics/zathura
 
-USE_GNOME=	glib20 gtk30
 USES=		meson ninja compiler:c11 desktop-file-utils pkgconfig tar:xz
+USE_GNOME=	glib20 gtk30
 
 PLIST_FILES=	lib/zathura/libdjvu.so \
 		share/appdata/org.pwmt.zathura-djvu.metainfo.xml \
 		share/applications/org.pwmt.zathura-djvu.desktop
 
 pre-configure:
-	${REINPLACE_CMD} "s:join_paths(datadir, 'metainfo'):join_paths(datadir, 'appdata'):" ${WRKSRC}/meson.build
+	@${REINPLACE_CMD} "s:join_paths(datadir, 'metainfo'):join_paths(datadir, 'appdata'):" ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
