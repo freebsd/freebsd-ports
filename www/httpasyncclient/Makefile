@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httpasyncclient
-DISTVERSION=	4.1.3
+DISTVERSION=	4.1.4
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/httpcomponents/${PORTNAME}/binary
 DISTNAME=	httpcomponents-asyncclient-${DISTVERSION}-bin
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/httpclient.jar:www/httpclient
 
 USES=		cpe
 CPE_VENDOR=	apache
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
@@ -28,7 +28,6 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		%%JAVAJARDIR%%/${PORTNAME}-cache.jar
 
 PORTDOCS=	*
-PORTEXAMPLES=	*
 
 .include <bsd.port.options.mk>
 
@@ -45,13 +44,6 @@ do-install:
 	@${ECHO_MSG} -n ">> Installing documentation..."
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/RELEASE_NOTES.txt ${STAGEDIR}/${DOCSDIR}/
-	@${ECHO_MSG} " [DONE]"
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${ECHO_MSG} -n ">> Installing examples..."
-	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples && ${FIND} . \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}/${EXAMPLESDIR} > /dev/null 2>&1
 	@${ECHO_MSG} " [DONE]"
 .endif
 
