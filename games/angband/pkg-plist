@@ -44,6 +44,7 @@
 %%ETCDIR%%/gamedata/terrain.txt
 %%ETCDIR%%/gamedata/trap.txt
 %%ETCDIR%%/gamedata/vault.txt
+%%ETCDIR%%/gamedata/world.txt
 %%DATADIR%%/fonts/10x14x.fon
 %%DATADIR%%/fonts/10x14xb.fon
 %%DATADIR%%/fonts/10x20x.fon
@@ -87,7 +88,6 @@
 %%DATADIR%%/icons/att-256.png
 %%DATADIR%%/icons/att-32.png
 %%DATADIR%%/icons/att-512.png
-%%DATADIR%%/icons/mr-att.png
 %%DATADIR%%/screens/crown.txt
 %%DATADIR%%/screens/dead.txt
 %%DATADIR%%/screens/news.txt
@@ -326,10 +326,10 @@
 %%DATADIR%%/tiles/shockbolt/flvr-shb.prf
 %%DATADIR%%/tiles/shockbolt/graf-shb.prf
 %%DATADIR%%/tiles/shockbolt/xtra-shb.prf
-@dir(,games,775) %%DATADIR%%/user
-@dir(,games,775) %%DATADIR%%/user/save
-@dir(,games,775) %%DATADIR%%/user/scores
-@dir(,games,775) %%DATADIR%%/user/info
 %%DATADIR%%/user/info/dummy.txt
 %%DATADIR%%/user/info/user.hlp
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
+@dir(,games,775) %%DATADIR%%/user
+@dir(,games,775) %%DATADIR%%/user/info
+@dir(,games,775) %%DATADIR%%/user/save
+@dir(,games,775) %%DATADIR%%/user/scores
