@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsixel
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/saitoha/libsixel/releases/download/v${PORTVERSION}/
