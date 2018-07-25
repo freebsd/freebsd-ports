@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Class-STL-Containers
-PORTVERSION=	0.35
-PORTREVISION=	1
+PORTVERSION=	0.37
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,5 +14,6 @@ LICENSE=	GPLv2
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
