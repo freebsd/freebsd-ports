@@ -1,2 +1,3 @@
-SHA256 (pylibmc-1.5.0.tar.gz) = 16255595616a6d78cd786a55cc6431da5b7accf46512df854712a0cdbb3acfaa
-SIZE (pylibmc-1.5.0.tar.gz) = 53077
+TIMESTAMP = 1509247856
+SHA256 (pylibmc-1.5.2.tar.gz) = fc54e28a9f1b5b2ec0c030da29c7ad8a15c2755bd98aaa4142eaf419d5fabb33
+SIZE (pylibmc-1.5.2.tar.gz) = 62262
