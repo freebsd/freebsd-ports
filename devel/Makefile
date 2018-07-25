@@ -1210,6 +1210,9 @@
     SUBDIR += hub
     SUBDIR += hwloc
     SUBDIR += hyperscan
+    SUBDIR += i386-binutils
+    SUBDIR += i386-gcc
+    SUBDIR += i386-xtoolchain-gcc
     SUBDIR += ice
     SUBDIR += icestorm
     SUBDIR += icmake
