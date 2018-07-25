@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vm-to-tor
-PORTVERSION=	0.150519
+PORTVERSION=	1.0
 CATEGORIES=	security net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,12 +11,10 @@ COMMENT=	Connect virtual machines to the tor network
 LICENSE=	BSD4CLAUSE
 
 RUN_DEPENDS=	tor:security/tor \
-		tiny-dhcp-server:net/tiny-network-utilities
+		tiny-network-utilities>=1.0:net/tiny-network-utilities
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yurivict
-GH_TAGNAME=	17bdb91
-
 NO_BUILD=	yes
 NO_ARCH=	yes
 SUB_FILES=	pkg-message
