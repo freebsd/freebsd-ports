@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geoserver
-PORTVERSION=	2.13.1
+PORTVERSION=	2.13.2
 CATEGORIES=	databases geography java
 MASTER_SITES=	SF/${PORTNAME}/GeoServer/${PORTVERSION}/extensions
 PKGNAMESUFFIX=	-mysql-plugin
@@ -21,7 +21,7 @@ NO_ARCH=	yes
 
 GSLIBDIR=	geoserver/webapps/geoserver/WEB-INF/lib
 SUB_FILES=	pkg-message
-PLIST_FILES=	${GSLIBDIR}/gt-jdbc-mysql-19.1.jar \
+PLIST_FILES=	${GSLIBDIR}/gt-jdbc-mysql-19.2.jar \
 		${GSLIBDIR}/mysql-connector-java-5.1.46.jar
 
 do-install:
