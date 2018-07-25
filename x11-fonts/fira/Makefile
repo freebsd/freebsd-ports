@@ -2,21 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	fira
-PORTVERSION=	4.203
+PORTVERSION=	4.301
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://carrois.com/downloads/Fira/
-DISTFILES=	Fira_Code_3_2.zip Fira_Mono_3_2.zip Fira_Sans_4_2.zip
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Sans-serif and monospaced typeface for small screens
+MAINTAINER=	trueos@norwegianrockcat.com
+COMMENT=	Sans-serif, monospaced, and code typeface for small screens
 
 LICENSE=	OFL11
 
-USES=		fonts zip
+USES=		fonts
 USE_XORG=	x11
+USE_GITHUB=	yes
+GH_ACCOUNT=	bBoxType
+GH_PROJECT=	FiraSans
+GH_TAGNAME=	f54eeb3
 NO_ARCH=	yes
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 
 SUB_FILES=	pkg-message
 
@@ -32,7 +33,7 @@ do-install:
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Fira*/PDF/*.pdf ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Fira_Sans_4_2/Fira_4_2_Version_Log.rtf \
+	${INSTALL_DATA} ${WRKSRC}/Fira_Sans_4_3/Fira_4_3_Change_Log.rtf \
 		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
