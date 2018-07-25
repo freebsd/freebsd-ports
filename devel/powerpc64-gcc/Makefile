@@ -71,7 +71,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/LOCAL_INCLUDE_DIR/ d ' \
 		${WRKSRC}//gcc/Makefile.in
 
-.if ${TARGETARCH} == "amd64"
+.if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-unknown-${OPSYS:tl}${OSREL}
 .else
 CONFIGURE_TARGET=	${ARCH}-unknown-${OPSYS:tl}${OSREL}
