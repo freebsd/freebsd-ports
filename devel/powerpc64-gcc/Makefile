@@ -106,7 +106,7 @@ post-install:
 .if empty(PKGNAMEPREFIX:M*-*-)
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/gcc/${GCC_TARGET}/${PORTVERSION}/include-fixed
 .endif
-.if ${TARGETARCH} == "amd64"
+.if ${TARGETARCH} == "amd64" || ${TARGETARCH} == "i386"
 	# Conflicts with sys/x86/include/float.h
 	${RM} ${STAGEDIR}${PREFIX}/lib/gcc/${GCC_TARGET$}/${PORTVERSION}/include/float.h
 .endif
