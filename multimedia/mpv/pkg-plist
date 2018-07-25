@@ -3,10 +3,12 @@ bin/mpv
 include/mpv/client.h
 include/mpv/opengl_cb.h
 include/mpv/qthelper.hpp
+include/mpv/render.h
+include/mpv/render_gl.h
 include/mpv/stream_cb.h
 lib/libmpv.so
 lib/libmpv.so.1
-lib/libmpv.so.1.26.0
+lib/libmpv.so.1.101.0
 libdata/pkgconfig/mpv.pc
 %%MANPAGES%%man/man1/mpv.1.gz
 share/applications/mpv.desktop

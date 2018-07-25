@@ -1,5 +1,5 @@
-TIMESTAMP = 1520367163
-SHA256 (mpv-player-mpv-v0.28.2_GH0.tar.gz) = aada14e025317b5b3e8e58ffaf7902e8b6e4ec347a93d25a7c10d3579426d795
-SIZE (mpv-player-mpv-v0.28.2_GH0.tar.gz) = 2982558
+TIMESTAMP = 1532377368
+SHA256 (mpv-player-mpv-v0.29.0_GH0.tar.gz) = 772af878cee5495dcd342788a6d120b90c5b1e677e225c7198f1e76506427319
+SIZE (mpv-player-mpv-v0.29.0_GH0.tar.gz) = 3057997
 SHA256 (waf-project-waf-waf-1.9.8_GH0.tar.gz) = b487efec83ea33cf8df0495cc5730e245f8dc8784e68aebf3dcf07c6712c5913
 SIZE (waf-project-waf-waf-1.9.8_GH0.tar.gz) = 628874
