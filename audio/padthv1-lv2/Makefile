@@ -2,7 +2,7 @@
 
 PORTNAME=	padthv1
 DISTVERSIONPREFIX=	${PORTNAME}_
-DISTVERSION=	0_9_1
+DISTVERSION=	0_9_2
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -27,9 +27,5 @@ USE_QT=		core gui widgets xml buildtools_build qmake_build
 PLIST_SUB=	SHL3=${PORTVERSION} SHL2=${PORTVERSION:R} SHL1=${PORTVERSION:R:R}
 
 CONFIGURE_ARGS=	--disable-alsa-midi
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/padthv1.lv2/padthv1.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/padthv1.lv2/padthv1_ui.so
 
 .include <bsd.port.mk>
