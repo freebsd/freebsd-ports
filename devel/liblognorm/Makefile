@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblognorm
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	devel net security
 MASTER_SITES=	http://www.liblognorm.com/download/files/download/
 
