@@ -1,5 +1,5 @@
 diff --git gdb/Makefile.in gdb/Makefile.in
-index 17b71c6e7c..282522187b 100644
+index 17b71c6e7c..95e92d08b4 100644
 --- gdb/Makefile.in
 +++ gdb/Makefile.in
 @@ -230,7 +230,8 @@ INCGNU = -I$(srcdir)/gnulib/import -I$(GNULIB_BUILDDIR)/import
@@ -36,7 +36,15 @@ index 17b71c6e7c..282522187b 100644
  	sparc64-linux-tdep.o \
  	sparc64-nbsd-tdep.o \
  	sparc64-obsd-tdep.o \
-@@ -684,6 +688,8 @@ ALL_TARGET_OBS = \
+@@ -670,6 +674,7 @@ ALL_TARGET_OBS = \
+ 	arch/arm-linux.o \
+ 	arch/i386.o \
+ 	arm-bsd-tdep.o \
++	arm-fbsd-kern.o \
+ 	arm-fbsd-tdep.o \
+ 	arm-linux-tdep.o \
+ 	arm-nbsd-tdep.o \
+@@ -684,6 +689,8 @@ ALL_TARGET_OBS = \
  	cris-linux-tdep.o \
  	cris-tdep.o \
  	dicos-tdep.o \
@@ -45,7 +53,7 @@ index 17b71c6e7c..282522187b 100644
  	fbsd-tdep.o \
  	frv-linux-tdep.o \
  	frv-tdep.o \
-@@ -700,6 +706,7 @@ ALL_TARGET_OBS = \
+@@ -700,6 +707,7 @@ ALL_TARGET_OBS = \
  	i386-darwin-tdep.o \
  	i386-dicos-tdep.o \
  	i386-fbsd-tdep.o \
@@ -53,7 +61,7 @@ index 17b71c6e7c..282522187b 100644
  	i386-gnu-tdep.o \
  	i386-go32-tdep.o \
  	i386-linux-tdep.o \
-@@ -724,6 +731,7 @@ ALL_TARGET_OBS = \
+@@ -724,6 +732,7 @@ ALL_TARGET_OBS = \
  	mep-tdep.o \
  	microblaze-linux-tdep.o \
  	microblaze-tdep.o \
@@ -61,7 +69,7 @@ index 17b71c6e7c..282522187b 100644
  	mips-fbsd-tdep.o \
  	mips-linux-tdep.o \
  	mips-nbsd-tdep.o \
-@@ -741,6 +749,7 @@ ALL_TARGET_OBS = \
+@@ -741,6 +750,7 @@ ALL_TARGET_OBS = \
  	nto-tdep.o \
  	obsd-tdep.o \
  	ppc-fbsd-tdep.o \
@@ -69,7 +77,7 @@ index 17b71c6e7c..282522187b 100644
  	ppc-linux-tdep.o \
  	ppc-nbsd-tdep.o \
  	ppc-obsd-tdep.o \
-@@ -1610,7 +1619,7 @@ generated_files = \
+@@ -1610,7 +1620,7 @@ generated_files = \
  # Flags needed to compile Python code
  PYTHON_CFLAGS = @PYTHON_CFLAGS@
  
@@ -78,7 +86,7 @@ index 17b71c6e7c..282522187b 100644
  	@$(MAKE) $(FLAGS_TO_PASS) DO=all "DODIRS=`echo $(SUBDIRS) | sed 's/testsuite//'`" subdir_do
  
  # Rule for compiling .c files in the top-level gdb directory.
-@@ -1920,6 +1929,12 @@ gdb$(EXEEXT): gdb.o $(LIBGDB_OBS) $(ADD_DEPS) $(CDEPS) $(TDEPLIBS)
+@@ -1920,6 +1930,12 @@ gdb$(EXEEXT): gdb.o $(LIBGDB_OBS) $(ADD_DEPS) $(CDEPS) $(TDEPLIBS)
  		-o gdb$(EXEEXT) gdb.o $(LIBGDB_OBS) \
  		$(TDEPLIBS) $(TUI_LIBRARY) $(CLIBS) $(LOADLIBES)
  
@@ -91,7 +99,7 @@ index 17b71c6e7c..282522187b 100644
  # Convenience rule to handle recursion.
  $(LIBGNU) $(GNULIB_H): all-lib
  all-lib: $(GNULIB_BUILDDIR)/Makefile
-@@ -1964,7 +1979,7 @@ clean mostlyclean: $(CONFIG_CLEAN)
+@@ -1964,7 +1980,7 @@ clean mostlyclean: $(CONFIG_CLEAN)
  	@$(MAKE) $(FLAGS_TO_PASS) DO=clean "DODIRS=$(CLEANDIRS)" subdir_do
  	rm -f *.o *.a $(ADD_FILES) *~ init.c-tmp init.l-tmp version.c-tmp
  	rm -f init.c version.c observer.h observer.inc
@@ -100,7 +108,7 @@ index 17b71c6e7c..282522187b 100644
  	rm -f gdb[0-9]$(EXEEXT)
  	rm -f test-cp-name-parser$(EXEEXT)
  	rm -f xml-builtin.c stamp-xml
-@@ -2178,6 +2193,7 @@ MAKEOVERRIDES =
+@@ -2178,6 +2194,7 @@ MAKEOVERRIDES =
  
  ALLDEPFILES = \
  	aarch64-fbsd-nat.c \
@@ -108,7 +116,7 @@ index 17b71c6e7c..282522187b 100644
  	aarch64-fbsd-tdep.c \
  	aarch64-linux-nat.c \
  	aarch64-linux-tdep.c \
-@@ -2195,6 +2211,7 @@ ALLDEPFILES = \
+@@ -2195,6 +2212,7 @@ ALLDEPFILES = \
  	amd64-bsd-nat.c \
  	amd64-darwin-tdep.c \
  	amd64-dicos-tdep.c \
@@ -116,7 +124,15 @@ index 17b71c6e7c..282522187b 100644
  	amd64-fbsd-nat.c \
  	amd64-fbsd-tdep.c \
  	amd64-linux-nat.c \
-@@ -2228,6 +2245,9 @@ ALLDEPFILES = \
+@@ -2209,6 +2227,7 @@ ALLDEPFILES = \
+ 	arc-tdep.c \
+ 	arm.c \
+ 	arm-bsd-tdep.c \
++	arm-fbsd-kern.c \
+ 	arm-fbsd-nat.c \
+ 	arm-fbsd-tdep.c \
+ 	arm-get-next-pcs.c \
+@@ -2228,6 +2247,9 @@ ALLDEPFILES = \
  	darwin-nat.c \
  	dicos-tdep.c \
  	exec.c \
@@ -126,7 +142,7 @@ index 17b71c6e7c..282522187b 100644
  	fbsd-nat.c \
  	fbsd-tdep.c \
  	fork-child.c \
-@@ -2249,6 +2269,7 @@ ALLDEPFILES = \
+@@ -2249,6 +2271,7 @@ ALLDEPFILES = \
  	i386-darwin-nat.c \
  	i386-darwin-tdep.c \
  	i386-dicos-tdep.c \
@@ -134,7 +150,7 @@ index 17b71c6e7c..282522187b 100644
  	i386-fbsd-nat.c \
  	i386-fbsd-tdep.c \
  	i386-gnu-nat.c \
-@@ -2290,6 +2311,7 @@ ALLDEPFILES = \
+@@ -2290,6 +2313,7 @@ ALLDEPFILES = \
  	mingw-hdep.c \
  	mips-fbsd-nat.c \
  	mips-fbsd-tdep.c \
@@ -142,7 +158,7 @@ index 17b71c6e7c..282522187b 100644
  	mips-linux-nat.c \
  	mips-linux-tdep.c \
  	mips-nbsd-nat.c \
-@@ -2307,6 +2329,7 @@ ALLDEPFILES = \
+@@ -2307,6 +2331,7 @@ ALLDEPFILES = \
  	obsd-nat.c \
  	obsd-tdep.c \
  	posix-hdep.c \
@@ -150,7 +166,7 @@ index 17b71c6e7c..282522187b 100644
  	ppc-fbsd-nat.c \
  	ppc-fbsd-tdep.c \
  	ppc-linux-nat.c \
-@@ -2351,6 +2374,7 @@ ALLDEPFILES = \
+@@ -2351,6 +2376,7 @@ ALLDEPFILES = \
  	sparc-sol2-nat.c \
  	sparc-sol2-tdep.c \
  	sparc-tdep.c \
@@ -158,7 +174,7 @@ index 17b71c6e7c..282522187b 100644
  	sparc64-fbsd-nat.c \
  	sparc64-fbsd-tdep.c \
  	sparc64-linux-nat.c \
-@@ -2638,7 +2662,7 @@ endif
+@@ -2638,7 +2664,7 @@ endif
  
  # A list of all the objects we might care about in this build, for
  # dependency tracking.
@@ -283,7 +299,7 @@ index 8e14892722..ada205f34d 100644
  	LOADLIBES='-lkvm'
  	;;
 diff --git gdb/configure.tgt gdb/configure.tgt
-index fb8014a8e8..1a86608840 100644
+index fb8014a8e8..4bb43e366c 100644
 --- gdb/configure.tgt
 +++ gdb/configure.tgt
 @@ -92,7 +92,7 @@ esac
@@ -295,6 +311,24 @@ index fb8014a8e8..1a86608840 100644
  *-*-netbsd* | *-*-knetbsd*-gnu)
  	os_obs="nbsd-tdep.o solib-svr4.o";;
  *-*-openbsd*)
+@@ -109,7 +109,7 @@ aarch64*-*-elf | aarch64*-*-rtems*)
+ 
+ aarch64*-*-freebsd*)
+ 	# Target: FreeBSD/aarch64
+-	gdb_target_obs="aarch64-fbsd-tdep.o"
++	gdb_target_obs="aarch64-fbsd-tdep.o aarch64-fbsd-kern.o"
+ 	;;
+ 
+ aarch64*-*-linux*)
+@@ -162,7 +162,7 @@ arm*-*-linux*)
+ 	;;
+ arm*-*-freebsd*)
+ 	# Target: FreeBSD/arm
+-	gdb_target_obs="arm-fbsd-tdep.o"
++	gdb_target_obs="arm-fbsd-tdep.o arm-fbsd-kern.o"
+ 	;;
+ arm*-*-netbsd* | arm*-*-knetbsd*-gnu)
+ 	# Target: NetBSD/arm
 @@ -249,7 +249,11 @@ i[34567]86-*-dicos*)
  	;;
  i[34567]86-*-freebsd* | i[34567]86-*-kfreebsd*-gnu)
