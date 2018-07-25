@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdatrie
-PORTVERSION=	0.2.11
+PORTVERSION=	0.2.12
 CATEGORIES=	devel
 MASTER_SITES=	http://linux.thai.net/pub/thailinux/software/libthai/
 
