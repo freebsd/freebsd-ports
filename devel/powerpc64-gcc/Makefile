@@ -2,7 +2,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	6.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMEPREFIX?=	powerpc64-
@@ -105,6 +105,10 @@ post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/man/man7/*
 .if empty(PKGNAMEPREFIX:M*-*-)
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/gcc/${GCC_TARGET}/${PORTVERSION}/include-fixed
+.endif
+.if ${TARGETARCH} == "amd64"
+	# Conflicts with sys/x86/include/float.h
+	${RM} ${STAGEDIR}${PREFIX}/lib/gcc/${GCC_TARGET$}/${PORTVERSION}/include/float.h
 .endif
 
 # This port and all its slave ports fail on aarch64 -- but not all

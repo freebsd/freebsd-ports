@@ -35,7 +35,6 @@ lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/cpuid.h
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/cross-stdarg.h
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/emmintrin.h
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/f16cintrin.h
-lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/float.h
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/fma4intrin.h
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/fmaintrin.h
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/include/fxsrintrin.h
