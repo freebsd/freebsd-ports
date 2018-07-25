@@ -3,9 +3,10 @@
 
 PORTNAME=	thunderbird-i18n
 PORTVERSION=	60.0
+PORTREVISION=	1
 CATEGORIES=	mail news net-im
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${DISTVERSION}/linux-i686/xpi \
-		MOZILLA/${PORTNAME:S|-i18n||}/candidates/${DISTVERSION}-candidates/build2/linux-i686/xpi
+		MOZILLA/${PORTNAME:S|-i18n||}/candidates/${DISTVERSION}-candidates/build3/linux-i686/xpi
 PKGNAMEPREFIX=
 DISTFILES=	${THUNDERBIRD_I18N_:S/$/.xpi/}
 DIST_SUBDIR=	xpi/${DISTNAME}
