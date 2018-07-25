@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML_QuickForm_advmultiselect
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	chris@ctgameinfo.com
