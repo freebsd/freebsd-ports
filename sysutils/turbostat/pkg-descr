@@ -1,0 +1,4 @@
+Report processor topology, frequency, idle power-state
+statistics, temperature and power on X86 processors.
+
+WWW: https://github.com/torvalds/linux/tree/master/tools/power/x86/turbostat

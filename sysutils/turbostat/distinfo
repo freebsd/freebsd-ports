@@ -1,0 +1,9 @@
+TIMESTAMP = 1531331060
+SHA256 (turbostat-4.17/turbostat.c) = 23bc86ba086b0b18bfb92619eb66e0c482f7d6c20f5a00d9c333ac2a1c212660
+SIZE (turbostat-4.17/turbostat.c) = 135407
+SHA256 (turbostat-4.17/turbostat.8) = b58eddff29a33ada502627a457021dd70191a4e4bb96b17ff44b1623158b3ed4
+SIZE (turbostat-4.17/turbostat.8) = 18201
+SHA256 (turbostat-4.17/msr-index.h) = f984e5737423ed1e5beea2d543f2f263321f43b74abc31d728f306489279e4cf
+SIZE (turbostat-4.17/msr-index.h) = 29422
+SHA256 (turbostat-4.17/intel-family.h) = c3b888feb0e1a73c0aa6817908c2e71313b1dc2d6c834700d1f983746cc49258
+SIZE (turbostat-4.17/intel-family.h) = 2629

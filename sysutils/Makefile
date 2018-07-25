@@ -1290,6 +1290,7 @@
     SUBDIR += ttyd
     SUBDIR += ttyload
     SUBDIR += tuptime
+    SUBDIR += turbostat
     SUBDIR += tw_cli
     SUBDIR += twmn
     SUBDIR += tzdialog
