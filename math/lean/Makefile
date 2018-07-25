@@ -21,4 +21,6 @@ USE_LDCONFIG=	yes
 
 WRKSRC_SUBDIR=	src
 
+PORTSCOUT=	limit:.*[0-9]*\.[0-9]*$$
+
 .include <bsd.port.mk>
