@@ -736,7 +736,7 @@
     SUBDIR += py-uncertainties
     SUBDIR += py-viper
     SUBDIR += py-yt
-    SUBDIR += py-z3-solver
+    SUBDIR += py-z3
     SUBDIR += qalculate
     SUBDIR += qd
     SUBDIR += qhull
