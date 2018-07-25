@@ -227,7 +227,7 @@ kgdb_resolve_symbol(const char *name, kvaddr_t *kva)
 #endif
 
 static void
-kgdb_trgt_open(const char *arg, int from_tty)
+kgdb_trgt_open(const char *args, int from_tty)
 {
 	struct fbsd_vmcore_ops *ops = (struct fbsd_vmcore_ops *)
 	    gdbarch_data (target_gdbarch(), fbsd_vmcore_data);
@@ -237,6 +237,7 @@ kgdb_trgt_open(const char *arg, int from_tty)
 	struct kthr *kt;
 	kvm_t *nkvm;
 	char *temp, *kernel, *filename;
+	bool writeable;
 	int ontop;
 
 	if (ops == NULL || ops->supply_pcb == NULL || ops->cpu_pcb_addr == NULL)
@@ -247,24 +248,40 @@ kgdb_trgt_open(const char *arg, int from_tty)
 	if (kernel == NULL)
 		error ("Can't open a vmcore without a kernel");
 
-	if (arg != NULL) {
-		filename = tilde_expand (arg);
-		if (!IS_ABSOLUTE_PATH (filename)) {
-			temp = concat (current_directory, "/", filename, NULL);
-			xfree(filename);
-			filename = temp;
+	writeable = false;
+	filename = NULL;
+	if (args != NULL) {
+		gdb_argv built_argv (args);
+
+		for (char **argv = built_argv.get (); *argv != NULL; argv++) {
+			if (**argv == '-') {
+				if (strcmp (*argv, "-w") == 0)
+					writeable = true;
+				else
+					error (_("Invalid argument"));
+			} else {
+				if (filename != NULL)
+					error (_("Invalid argument"));
+
+				filename = tilde_expand (*argv);
+				if (!IS_ABSOLUTE_PATH (filename)) {
+					temp = concat (current_directory, "/",
+					    filename, NULL);
+					xfree(filename);
+					filename = temp;
+				}
+			}
 		}
-	} else
-		filename = NULL;
+	}
 
 	old_chain = make_cleanup (xfree, filename);
 
 #ifdef HAVE_KVM_OPEN2
 	nkvm = kvm_open2(kernel, filename,
-	    write_files ? O_RDWR : O_RDONLY, kvm_err, kgdb_resolve_symbol);
+	    writeable ? O_RDWR : O_RDONLY, kvm_err, kgdb_resolve_symbol);
 #else
 	nkvm = kvm_openfiles(kernel, filename, NULL,
-	    write_files ? O_RDWR : O_RDONLY, kvm_err);
+	    writeable ? O_RDWR : O_RDONLY, kvm_err);
 #endif
 	if (nkvm == NULL)
 		error ("Failed to open vmcore: %s", kvm_err);
@@ -294,6 +311,10 @@ kgdb_trgt_open(const char *arg, int from_tty)
 	TRY {
 		pcb_size = parse_and_eval_long("pcb_size");
 	} CATCH(e, RETURN_MASK_ERROR) {
+		pcb_size = 0;
+	} END_CATCH
+
+	if (pcb_size == 0) {
 		TRY {
 			pcb_size = parse_and_eval_long("sizeof(struct pcb)");
 		} CATCH(e, RETURN_MASK_ERROR) {
@@ -306,7 +327,7 @@ kgdb_trgt_open(const char *arg, int from_tty)
 			pcb_size = sizeof(struct pcb);
 #endif
 		} END_CATCH
-	} END_CATCH
+	}
 
 	kvm = nkvm;
 	vmcore = filename;
@@ -563,8 +584,9 @@ _initialize_kgdb_target(void)
 	kgdb_trgt_ops.to_magic = OPS_MAGIC;
 	kgdb_trgt_ops.to_shortname = "vmcore";
 	kgdb_trgt_ops.to_longname = "kernel core dump file";
-	kgdb_trgt_ops.to_doc = 
-    "Use a vmcore file as a target.  Specify the filename of the vmcore file.";
+	kgdb_trgt_ops.to_doc = "Use a vmcore file as a target.\n\
+If no filename is specified, /dev/mem is used to examine the running kernel.\n\
+target vmcore [-w] [filename]";
 	kgdb_trgt_ops.to_stratum = process_stratum;
 	kgdb_trgt_ops.to_has_memory = kgdb_trgt_return_one;
 	kgdb_trgt_ops.to_has_registers = kgdb_trgt_return_one;

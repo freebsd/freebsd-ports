@@ -81,7 +81,14 @@ amd64fbsd_supply_pcb(struct regcache *regcache, CORE_ADDR pcb_addr)
 {
   gdb_byte buf[8];
   int i;
-  
+
+  memset(buf, 0, sizeof(buf));
+
+  /*
+   * XXX The PCB may have been swapped out.  Supply a dummy %rip value
+   * so as to avoid triggering an exception during stack unwinding.
+   */
+  regcache->raw_supply(AMD64_RIP_REGNUM, buf);
   for (i = 0; i < ARRAY_SIZE (amd64fbsd_pcb_offset); i++)
     if (amd64fbsd_pcb_offset[i] != -1) {
       if (target_read_memory(pcb_addr + amd64fbsd_pcb_offset[i], buf,
