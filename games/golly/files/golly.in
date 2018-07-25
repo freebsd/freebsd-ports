@@ -1,2 +1,0 @@
-#!/bin/sh
-cd %%PREFIX%%/share/golly && ./golly $@
