@@ -140,6 +140,7 @@ include/osmium/osm/area.hpp
 include/osmium/osm/box.hpp
 include/osmium/osm/changeset.hpp
 include/osmium/osm/crc.hpp
+include/osmium/osm/crc_zlib.hpp
 include/osmium/osm/diff_object.hpp
 include/osmium/osm/entity.hpp
 include/osmium/osm/entity_bits.hpp

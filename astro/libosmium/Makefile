@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libosmium
-PORTVERSION=	2.14.0
+PORTVERSION=	2.14.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	astro geography devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -20,10 +19,8 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libgeos.so:graphics/geos \
 		libexpat.so:textproc/expat2
 BUILD_DEPENDS=	sparsehash>=0:devel/sparsehash \
-		${LOCALBASE}/include/utf8.h:devel/utf8cpp \
 		${LOCALBASE}/include/protozero/version.hpp:devel/protozero
-RUN_DEPENDS=	${LOCALBASE}/include/utf8.h:devel/utf8cpp \
-		${LOCALBASE}/include/protozero/version.hpp:devel/protozero
+RUN_DEPENDS=	${LOCALBASE}/include/protozero/version.hpp:devel/protozero
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	osmcode
