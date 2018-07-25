@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180725:
+  AFFECTS: users of textproc/ibus-typing-booster
+  AUTHOR: thierry@FreeBSD.org
+
+  Due to a migration from IBusConfig to GSettings, the old settings are
+  unfortunately lost, so one has to open the setup tool and recreate ones
+  favourite settings.
+
 20180714:
   AFFECTS: users of dns/dnsdist
   AUTHOR: cpm@FreeBSD.org
