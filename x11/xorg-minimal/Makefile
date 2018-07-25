@@ -22,7 +22,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/Xorg:x11-servers/xorg-server \
 .if ${VIDEO_DRIVER} == "nvidia"
 RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/drivers/nvidia_drv.so:x11/nvidia-driver
 .elif ${VIDEO_DRIVER} == "intel"
-RUN_DEPENDS+=	${LOCALBASE}/lib/va/i965_drv_video.so:multimedia/libva-intel-driver
+RUN_DEPENDS+=	${LOCALBASE}/lib/dri/i965_drv_video.so:multimedia/libva-intel-driver
 RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/drivers/${VIDEO_DRIVER}_drv.so:x11-drivers/xf86-video-${VIDEO_DRIVER}
 .else
 RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/drivers/${VIDEO_DRIVER}_drv.so:x11-drivers/xf86-video-${VIDEO_DRIVER}
