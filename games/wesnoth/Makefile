@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.12.6
-PORTREVISION=	11
+PORTVERSION=	1.14.3
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
@@ -29,30 +28,36 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lboost_system
 
 PORTSCOUT=	limitw:1,even
 
-USES=		cmake cpe pkgconfig python:run shebangfix tar:bzip2
-USE_SDL=	image mixer net ttf
+USES=		cmake:outsource cpe pkgconfig python:2.7,run readline:port shebangfix ssl tar:bzip2
+USE_SDL=	image2 mixer2 ttf2
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo pango
 USE_XORG=	ice sm x11 xext
 SHEBANG_FILES=	data/tools/about_cfg_to_wiki \
+		data/tools/addon_manager/html.py \
 		data/tools/campaign2wiki.py \
-		data/tools/castle-cutter/mk-castle.sh \
 		data/tools/expand-terrain-macros.py \
 		data/tools/extractbindings data/tools/imgcheck \
+		data/tools/hexometer.py \
 		data/tools/journeylifter data/tools/rmtrans/rmtrans.py \
 		data/tools/scoutDefault.py data/tools/terrain2wiki.py \
 		data/tools/trackplacer data/tools/unit_tree/TeamColorizer \
+		data/tools/unit_tree/helpers.py \
 		data/tools/unit_tree/overview.py \
 		data/tools/unit_tree/update-wmlunits \
+		data/tools/wesnoth/campaignserver_client.py \
 		data/tools/wesnoth/wescamp.py data/tools/wesnoth/wmldata.py \
 		data/tools/wesnoth/wmlparser.py \
 		data/tools/wesnoth/wmlparser2.py \
+		data/tools/wesnoth/wmlparser3.py \
 		data/tools/wesnoth_addon_manager data/tools/wmlflip \
 		data/tools/wmlindent data/tools/wmllint \
-		data/tools/wmllint-1.4 data/tools/wmllint_gui \
-		data/tools/wmlmove data/tools/wmlscope data/tools/wmlunits \
+		data/tools/wmllint-1.4 \
+		data/tools/wmlunits \
+		data/tools/wmlscope \
 		data/tools/wmlvalidator \
 		data/tools/GUI.pyw
+
 CPE_VENDOR=	${PORTNAME}
 CPE_PRODUCT=	battle_for_wesnoth
 CMAKE_ARGS=	-DMANDIR="man" -DENABLE_STRICT_COMPILATION=off
@@ -60,41 +65,27 @@ CMAKE_ARGS=	-DMANDIR="man" -DENABLE_STRICT_COMPILATION=off
 PORTDOCS=	*
 PORTDATA=	*
 
-OPTIONS_DEFINE=	ANA CAMPAIGN DOCS FRIBIDI LOWMEM NLS \
-		NOTIFY OPENMP RAWSOCKETS SERVER TEST TOOLS
-OPTIONS_DEFAULT=	CAMPAIGN FRIBIDI NOTIFY OPENMP SERVER TOOLS
+OPTIONS_DEFINE=	CAMPAIGN DOCS FRIBIDI NLS \
+		NOTIFY SERVER TEST
+OPTIONS_DEFAULT=	CAMPAIGN FRIBIDI NOTIFY SERVER
 OPTIONS_SUB=	yes
 
-ANA_DESC=	Asynchronous Network API (WIP)
-ANA_CMAKE_ON=	-DUSE_ANA_NETWORK=on
 CAMPAIGN_DESC=	Campaign server
 CAMPAIGN_CMAKE_ON=-DENABLE_CAMPAIGN_SERVER=on
 DOCS_CMAKE_OFF=	-DDOCDIR=none
 FRIBIDI_DESC=	Bidirectional support
 FRIBIDI_LIB_DEPENDS=libfribidi.so:converters/fribidi
 FRIBIDI_CMAKE_OFF=-DENABLE_FRIBIDI=off
-LOWMEM_DESC=	Reduce memory usage (disables animations)
-LOWMEM_CMAKE_ON=-DENABLE_LOW_MEM=on
 NLS_USES=	gettext
 NLS_CMAKE_ON=	-DLOCALEDIR=${PREFIX}/share/locale
 NLS_CMAKE_OFF=	-DENABLE_NLS=off
 NOTIFY_DESC=	Desktop notifications
 NOTIFY_LIB_DEPENDS=libdbus-1.so:devel/dbus
 NOTIFY_CMAKE_OFF=-DENABLE_NOTIFICATIONS=off
-OPENMP_DESC=	OpenMP support
-# -std=gnu++11 is necessary on FreeBSD 10, whose libc++ does not have the
-# `operator delete(void*, size_t)' overload from C++14. GCC 6 defaults to
-# --std=gnu++14, which then breaks the build (bug 219485).
-OPENMP_USE=	CXXSTD=gnu++11
-OPENMP_USES=	compiler:gcc-c++11-lib
-OPENMP_CMAKE_ON=-DENABLE_OMP=on
-RAWSOCKETS_DESC=	Use raw receiving sockets in multiplayer
-RAWSOCKETS_CFLAGS=-DNETWORK_USE_RAW_SOCKETS
 SERVER_DESC=	Server
 SERVER_CMAKE_OFF=-DENABLE_SERVER=off
 TEST_CMAKE_ON=	-DENABLE_TESTS=on
-TOOLS_DESC=	Extra tools for artists and translators
-TOOLS_CMAKE_ON=	-DENABLE_TOOLS=on
+
 
 post-install:
 	${FIND} ${STAGEDIR}${PREFIX}/man -type d -empty -delete
