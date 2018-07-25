@@ -135,7 +135,9 @@ libdata/pkgconfig/gsoapssl.pc
 %%DATADIR%%/import/wsse11.h
 %%DATADIR%%/import/wsse2.h
 %%DATADIR%%/import/wst.h
+%%DATADIR%%/import/wst2.h
 %%DATADIR%%/import/wstx.h
+%%DATADIR%%/import/wstx2.h
 %%DATADIR%%/import/wsu.h
 %%DATADIR%%/import/xenc.h
 %%DATADIR%%/import/xenc2.h
