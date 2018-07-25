@@ -3,6 +3,7 @@
 
 PORTNAME=	unit
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://unit.nginx.org/download/
 
