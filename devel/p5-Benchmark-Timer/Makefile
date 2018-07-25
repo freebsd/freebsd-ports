@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Benchmark-Timer
-PORTVERSION=	0.7107
+PORTVERSION=	0.7112
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,4 +21,5 @@ SAMPLE_BUILD_DEPENDS=	p5-Statistics-TTest>1:math/p5-Statistics-TTest
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 .include <bsd.port.mk>
