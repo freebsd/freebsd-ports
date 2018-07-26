@@ -23,7 +23,6 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-configure
 PKGMESSAGE=
 
 PORTDOCS=	qemu-doc.html qemu-doc.txt
-		
 
 CONFIGURE_ARGS?=--localstatedir=/var --extra-ldflags=-L\"${LOCALBASE}/lib\" \
 		--disable-libssh2 \
@@ -73,8 +72,7 @@ CONFIGURE_ARGS?=--localstatedir=/var --extra-ldflags=-L\"${LOCALBASE}/lib\" \
 		--disable-glusterfs \
 		--disable-tpm \
 		--disable-numa \
-		--disable-blobs \
-		--without-pixman
+		--disable-blobs
 
 LIB_DEPENDS=
 
