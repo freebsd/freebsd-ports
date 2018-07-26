@@ -1,5 +1,5 @@
---- ./libfprint/drivers/vfs301.c.ORIG	2013-06-26 14:13:00.000000000 +0200
-+++ ./libfprint/drivers/vfs301.c	2014-04-21 11:09:12.000000000 +0200
+--- libfprint/drivers/vfs301.c.orig	2017-01-05 17:18:55 UTC
++++ libfprint/drivers/vfs301.c
 @@ -27,7 +27,7 @@
  #include <stdio.h>
  #include <assert.h>
