@@ -3,7 +3,7 @@
 
 PORTNAME=	dhcdrop
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt sysutils
 MASTER_SITES=	http://www.netpatch.ru/projects/dhcdrop/
 
@@ -12,7 +12,7 @@ COMMENT=	Tool for searching and suppressing false DHCP servers
 
 LICENSE=	GPLv2
 
-USES=	tar:bzip2
+USES=		autoreconf libtool tar:bzip2
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 
