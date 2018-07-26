@@ -2,7 +2,7 @@
 
 PORTNAME=	afew
 DISTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>0:textproc/py-chardet@${PY_FLAVOR} \
 		notmuch:mail/notmuch
 
 USES=		python
-USE_PYTHON=	distutils concurrent autoplist noflavors
+USE_PYTHON=	distutils concurrent autoplist
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	MANPAGES DOCS
