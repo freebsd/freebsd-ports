@@ -21,7 +21,6 @@ etc/rc.d/xendriverdomain
 %%ETCDIR%%/README
 %%ETCDIR%%/README.incompatibilities
 %%ETCDIR%%/cpupool
-%%ETCDIR%%/oxenstored.conf
 %%ETCDIR%%/scripts/block
 %%ETCDIR%%/scripts/hotplugpath.sh
 %%ETCDIR%%/scripts/vif-bridge
@@ -282,7 +281,6 @@ sbin/flask-set-bool
 sbin/flask-setenforce
 sbin/gdbsx
 sbin/kdd
-sbin/oxenstored
 sbin/xen-bugtool
 sbin/xen-diag
 sbin/xen-hptool
