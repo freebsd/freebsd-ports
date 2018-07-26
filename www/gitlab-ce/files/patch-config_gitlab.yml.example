@@ -36,7 +36,7 @@
 -    path: /home/git/gitlab-shell/
 -    hooks_path: /home/git/gitlab-shell/hooks/
 +    path: %%PREFIX%%/share/gitlab-shell/
-+    hooks_path: %%PREFIX/share/gitlab-shell/hooks/
++    hooks_path: %%PREFIX%%/share/gitlab-shell/hooks/
  
      # File that contains the secret key for verifying access for gitlab-shell.
      # Default is '.gitlab_shell_secret' relative to Rails.root (i.e. root of the GitLab app).
