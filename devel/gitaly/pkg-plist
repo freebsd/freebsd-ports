@@ -20,9 +20,15 @@
 %%DATADIR%%/ruby/lib/gitaly_server/wiki_service.rb
 %%DATADIR%%/ruby/lib/gitlab/config.rb
 %%DATADIR%%/ruby/lib/gitlab/git.rb
+%%DATADIR%%/ruby/lib/gitlab/git/blob.rb
+%%DATADIR%%/ruby/lib/gitlab/git/commit.rb
 %%DATADIR%%/ruby/lib/gitlab/git/gitaly_remote_repository.rb
 %%DATADIR%%/ruby/lib/gitlab/git/gitlab_projects.rb
+%%DATADIR%%/ruby/lib/gitlab/git/lfs_changes.rb
+%%DATADIR%%/ruby/lib/gitlab/git/pre_receive_error.rb
+%%DATADIR%%/ruby/lib/gitlab/git/remote_mirror.rb
 %%DATADIR%%/ruby/lib/gitlab/git/repository.rb
+%%DATADIR%%/ruby/lib/gitlab/git/wiki.rb
 %%DATADIR%%/ruby/lib/gitlab/git_logger.rb
 %%DATADIR%%/ruby/lib/gitlab/gitaly_client.rb
 %%DATADIR%%/ruby/lib/gitlab/gollum.rb
@@ -69,6 +75,7 @@
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/operation_service.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/path_helper.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/popen.rb
+%%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/pre_receive_error.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/raw_diff_change.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/ref.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/remote_mirror.rb
@@ -89,11 +96,13 @@
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/tree.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/user.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/util.rb
+%%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/version.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/wiki.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/wiki_file.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/wiki_page.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/wiki_page_version.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/utils/strong_memoize.rb
+%%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/version_info.rb
 @(,,555) %%DATADIR%%/bin/gitaly
 @(,,555) %%DATADIR%%/bin/gitaly-ssh
 @sample %%DATADIR%%/config.toml.sample
