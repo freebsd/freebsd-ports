@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rpcalc
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
@@ -21,13 +21,6 @@ CONFIGURE_ARGS=	-p ${PREFIX} -d ${DOCSDIR} -i ${DATADIR}/icons -b ${STAGEDIR}
 NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/rpCalc
-
-DESKTOP_ENTRIES="rpCalc" \
-		"RPN Calculator" \
-		"${DATADIR}/icons/calc_lg.png" \
-		"${PORTNAME}" \
-		"Qt;Utility;Calculator;" \
-		false
 
 do-install:
 	(cd ${WRKSRC} && ${PYTHON_CMD} install.py ${CONFIGURE_ARGS})

@@ -1,4 +1,6 @@
 bin/rpcalc
+share/applications/rpcalc.desktop
+share/icons/hicolor/scalable/apps/rpcalc-icon.svg
 %%DATADIR%%/__pycache__/altbasedialog.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/__pycache__/altbasedialog.cpython-%%PYTHON_SUFFIX%%.%%PYTHON_PYOEXTENSION%%
 %%DATADIR%%/__pycache__/calcbutton.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -43,6 +45,8 @@ bin/rpcalc
 %%DATADIR%%/icons/helphome.png
 %%DATADIR%%/icons/helpnext.png
 %%DATADIR%%/icons/helpprevious.png
+%%DATADIR%%/icons/rpcalc-icon.png
+%%DATADIR%%/icons/rpcalc-icon.svg
 %%DATADIR%%/option.py
 %%DATADIR%%/optiondefaults.py
 %%DATADIR%%/optiondlg.py
