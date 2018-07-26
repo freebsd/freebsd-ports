@@ -1,20 +1,18 @@
-ALURE is a utility library to help manage common tasks with OpenAL applications.
-This includes device enumeration and initialization, file loading,
-and streaming. As of version 1.1, it is X11/MIT licensed, allowing it to be used
-in open- and closed-source programs, freeware or commercial.
+ALURE is a utility library to help manage common tasks with OpenAL
+applications.  This includes device enumeration and initialization,
+file loading, and streaming.
 
-The purpose of this library is to provide pre-made functionality that would
-otherwise be repetitive or difficult to (re)code for various projects
-and platforms, such as loading a sound file into an OpenAL buffer and streaming
-an audio file through a buffer queue. Support for different formats is
-consistant across platforms, so no special checks are needed when loading files,
-and all formats are handled through the same API.
+The purpose of this library is to provide premade functionality
+that would otherwise be repetitive or difficult to (re)code for
+various projects and platforms, such as loading a sound file into
+an OpenAL buffer and streaming an audio file through a buffer queue.
+Support for different formats is consistant across platforms, so
+no special checks are needed when loading files, and all formats
+are handled through the same API.
 
-Currently ALURE includes a basic .wav and .aif file reader,
-and can leverage external libraries such as libSndFile
-(for extended wave formats and several others), VorbisFile (for Ogg Vorbis),
-FLAC (for FLAC and Ogg FLAC), and others. External libraries can also be
-dynamically loaded at run-time, or individually disabled outright at compile
-time.
+Currently ALURE includes a basic .wav and .aif file reader, and can
+leverage external libraries such as libSndFile (for extended wave
+formats and several others), VorbisFile (for Ogg Vorbis), FLAC (for
+FLAC and Ogg FLAC), and others.
 
 WWW: http://kcat.strangesoft.net/alure.html
