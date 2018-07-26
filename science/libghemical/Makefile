@@ -39,6 +39,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lSCbasis -lSCcints -lSCclass \
 		-lSCrender -lSCscf -lSCscmat -lSCsolvent -lSCstate \
 		-lSCsymmetry -lSCwfn \
 		-lgfortran -lpthread -lblas -llapack
+CXXFLAGS+=	-Wno-c++11-narrowing # fix errors like error: non-constant-expression cannot be narrowed from type 'double' to 'fGL'
 PLIST_SUB=	LIBGHEMICAL_VERSION="${PORTVERSION}"
 INSTALL_TARGET=	install-strip
 
