@@ -17,78 +17,59 @@ RUN_DEPENDS=	jsvc:devel/jakarta-commons-daemon
 
 USES=		cpe
 CPE_VENDOR=	apache
-
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
-NO_BUILD=	yes
-NO_ARCH=	yes
-
 USE_RC_SUBR=	${PKGBASE:C/-/_/}
 
-TOMCAT_SUBDIR?=	${DISTNAME:C/([0-9])\.([0-9])(.*)/\1.\2/}
-TOMCAT_HOME=	${PREFIX}/${TOMCAT_SUBDIR}
-TOMCAT_CONF_FILES=	\
-		catalina.policy catalina.properties context.xml logging.properties \
-		server.xml tomcat-users.xml tomcat-users.xsd web.xml \
-		jaspic-providers.xml jaspic-providers.xsd
-
-OPTIONS_DEFINE=	HOST_MANAGER MANAGER DOCS EXAMPLES ROOT
-HOST_MANAGER_DESC=	Install Host Manager application
-MANAGER_DESC=	Install Manager web application
-DOCS_DESC=	Install Documentation web application
-EXAMPLES_DESC=	Install Examples web application
-ROOT_DESC=	Install default ROOT web application
-OPTIONS_DEFAULT=	HOST_MANAGER MANAGER DOCS EXAMPLES ROOT
-OPTIONS_SUB=	yes
-
+NO_ARCH=	yes
+NO_BUILD=	yes
 PLIST_SUB=	T=${TOMCAT_SUBDIR} \
-		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
-
+		WWWOWN=${WWWOWN} \
+		WWWGRP=${WWWGRP}
 SUB_LIST=	TOMCAT_HOME=${TOMCAT_HOME} \
 		TOMCAT_USER=${WWWOWN} \
 		JAVA_HOME=${JAVA_HOME}
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=		HOST_MANAGER MANAGER DOCS EXAMPLES ROOT
+OPTIONS_DEFAULT=	HOST_MANAGER MANAGER DOCS EXAMPLES ROOT
+OPTIONS_SUB=		yes
 
-pre-patch:
-	@${ECHO_MSG} "Installation settings:"
-	@${ECHO_MSG} "   Destination directory:    ${TOMCAT_HOME}"
-	@${ECHO_MSG} "   Location of JDK:          ${JAVA_HOME}"
-	@${ECHO_MSG} "   Location of Java port:    ${JAVA_PORT}"
+DOCS_DESC=		Install Documentation web application
+EXAMPLES_DESC=		Install Examples web application
+HOST_MANAGER_DESC=	Install Host Manager application
+MANAGER_DESC=		Install Manager web application
+ROOT_DESC=		Install default ROOT web application
 
-post-patch:
-	@${FIND} ${WRKSRC} -name '*.bat' -delete
-.for f in ${TOMCAT_CONF_FILES}
-	@${MV} ${WRKSRC}/conf/${f} ${WRKSRC}/conf/${f}.sample
-.endfor
+TOMCAT_SUBDIR?=	${DISTNAME:R}
+TOMCAT_HOME=	${PREFIX}/${TOMCAT_SUBDIR}
 
 do-install:
-	@${ECHO_MSG} -n ">> Creating destination directory..."
 	@${MKDIR} ${STAGEDIR}${TOMCAT_HOME}/logs
 	@${MKDIR} ${STAGEDIR}${TOMCAT_HOME}/endorsed
-	@${ECHO_MSG} " [ DONE ]"
+	${CP} -R ${WRKSRC}/* ${STAGEDIR}${TOMCAT_HOME}
 
-	@${ECHO_MSG} -n ">> Copying files to destination directory..."
-	@${CP} -R ${WRKSRC}/* ${STAGEDIR}${TOMCAT_HOME}
-.if !${PORT_OPTIONS:MHOST_MANAGER}
+post-install:
+	@${RM} ${STAGEDIR}${TOMCAT_HOME}/bin/*.bat
+	(cd ${STAGEDIR}${TOMCAT_HOME}/conf &&\
+		for f in $$(find . -type f); do ${MV} $$f $$f.sample; done)
+	(cd ${STAGEDIR}${TOMCAT_HOME}/webapps &&\
+		for f in host-manager/META-INF/context.xml host-manager/WEB-INF/web.xml \
+			manager/META-INF/context.xml manager/WEB-INF/web.xml; do \
+			${MV} $$f $$f.sample; done)
+
+post-install-HOST_MANAGER-off:
 	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/host-manager
-.endif
-.if !${PORT_OPTIONS:MMANAGER}
+
+post-install-MANAGER-off:
 	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/manager
-.endif
-.if !${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-off:
 	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/docs
-.endif
-.if !${PORT_OPTIONS:MEXAMPLES}
+
+post-install-EXAMPLES-off:
 	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/examples
-.endif
-.if !${PORT_OPTIONS:MROOT}
+
+post-install-ROOT-off:
 	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/ROOT
-.endif
-	@${ECHO_MSG} " [ DONE ]"
 
-	@${ECHO_MSG} -n ">> Fixing permissions..."
-	@${FIND} ${STAGEDIR}${TOMCAT_HOME} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@${ECHO_MSG} " [ DONE ]"
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
