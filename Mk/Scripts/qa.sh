@@ -918,7 +918,9 @@ license()
 {
 	local lic autoaccept pkgmirror #distsell distmirror pkgsell
 
-	if [ -n "$LICENSE" ]; then
+	if [ -n "$DISABLE_LICENSES" ]; then
+		warn "You have disabled the licenses framework with DISABLE_LICENSES, unable to run checks"
+	elif [ -n "$LICENSE" ]; then
 		for lic in $LICENSE_PERMS; do
 			case "$lic" in
 				auto-accept) autoaccept=1 ;;
