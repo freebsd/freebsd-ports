@@ -13,9 +13,10 @@ lib/libguiSQLiteStudio.so.1.0.0
 %%PLUGIN_DB_SQLITE_CIPHER%%lib/sqlitestudio/libDbSqliteCipher.so
 %%PLUGIN_HTML_EXPORT%%lib/sqlitestudio/libHtmlExport.so
 %%PLUGIN_JSON_EXPORT%%lib/sqlitestudio/libJsonExport.so
+%%PLUGIN_MULTI_EDITOR_IMAGE%%lib/sqlitestudio/libMultiEditorImage.so
 %%PLUGIN_PDF_EXPORT%%lib/sqlitestudio/libPdfExport.so
 %%PLUGIN_PRINTING%%lib/sqlitestudio/libPrinting.so
-%%PLUGIN_REGEXP_IMPORT%%lib/sqlitestudio/libRegExpImport.so
+%%PLUGIN_REG_EXP_IMPORT%%lib/sqlitestudio/libRegExpImport.so
 %%PLUGIN_SQL_FORMATTER_SIMPLE%%lib/sqlitestudio/libSqlFormatterSimple.so
 %%PLUGIN_SQL_EXPORT%%lib/sqlitestudio/libSqlExport.so
 %%PLUGIN_SQL_ENTERPRISE_FORMATTER%%lib/sqlitestudio/libSqlEnterpriseFormatter.so

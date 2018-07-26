@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlitestudio
-PORTVERSION=	3.1.1
-PORTREVISION=	5
+DISTVERSION=	3.2.0
 CATEGORIES=	databases
 MASTER_SITES=	http://sqlitestudio.pl/files/sqlitestudio3/complete/tar/
 
@@ -11,30 +10,23 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SQLite database GUI manager
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/guiSQLiteStudio/license.txt
+LICENSE_FILE=	${WRKSRC}/coreSQLiteStudio/licenses/sqlitestudio_license.txt
 
-OPTIONS_DEFINE=		PLUGIN_CSV_IMPORT PLUGIN_CSV_EXPORT PLUGIN_DB_SQLITE_CIPHER PLUGIN_HTML_EXPORT
-OPTIONS_DEFINE+=	PLUGIN_JSON_EXPORT PLUGIN_PDF_EXPORT PLUGIN_PRINTING PLUGIN_REGEXP_IMPORT
-OPTIONS_DEFINE+=	PLUGIN_SQL_FORMATTER_SIMPLE PLUGIN_SQL_EXPORT PLUGIN_SQL_ENTERPRISE_FORMATTER
-OPTIONS_DEFINE+=	PLUGIN_XML_EXPORT
-PLUGIN_CSV_IMPORT_DESC=			Install CsvImport plugin
-PLUGIN_CSV_EXPORT_DESC=			Install CsvExport plugin
-PLUGIN_DB_SQLITE_CIPHER_DESC=		Install DbSqliteCipher plugin
-PLUGIN_HTML_EXPORT_DESC=		Install HtmlExport plugin
-PLUGIN_JSON_EXPORT_DESC=		Install JsonExport plugin
-PLUGIN_PDF_EXPORT_DESC=			Install PdfExport plugin
-PLUGIN_PRINTING_DESC=			Install Printing plugin
-PLUGIN_REGEXP_IMPORT_DESC=		Install RegExp plugin
-PLUGIN_SQL_FORMATTER_SIMPLE_DESC=	Install SqlFormatterSimple plugin
-PLUGIN_SQL_EXPORT_DESC=			Install SqlExport plugin
-PLUGIN_SQL_ENTERPRISE_FORMATTER_DESC=	Install SqlEnterpriseFormatter plugin
-PLUGIN_XML_EXPORT_DESC=			Install XmlExport plugin
-
-OPTIONS_DEFAULT=	PLUGIN_CSV_IMPORT PLUGIN_CSV_EXPORT PLUGIN_HTML_EXPORT
-OPTIONS_DEFAULT+=	PLUGIN_JSON_EXPORT PLUGIN_PDF_EXPORT PLUGIN_PRINTING PLUGIN_REGEXP_IMPORT
-OPTIONS_DEFAULT+=	PLUGIN_SQL_FORMATTER_SIMPLE PLUGIN_SQL_EXPORT PLUGIN_SQL_ENTERPRISE_FORMATTER
-OPTIONS_DEFAULT+=	PLUGIN_XML_EXPORT
+OPTIONS_GROUP=		PLUGINS
+OPTIONS_DEFAULT=	${OPTIONS_GROUP_PLUGINS}
 OPTIONS_SUB=		yes
+PLUGINS_DESC=			Install plugins:
+
+ALL_PLUGINS=		CsvImport CsvExport DbSqliteCipher HtmlExport JsonExport MultiEditorImage PdfExport Printing \
+			RegExpImport SqlFormatterSimple SqlExport SqlEnterpriseFormatter XmlExport
+.for p in ${ALL_PLUGINS}
+OPTIONS_GROUP_PLUGINS+=		PLUGIN${p:C/([A-Z])/_\1/g:tu}
+PLUGIN${p:C/([A-Z])/_\1/g:tu}_DESC=		${p} plugin
+PLUGIN${p:C/([A-Z])/_\1/g:tu}_VARS=	PLUGIN_DIRS+=${p}
+.endfor
+
+PLUGIN_DB_SQLITE_CIPHER_USES=		ssl
+PLUGIN_PRINTING_USE=			QT=printsupport
 
 WRKSRC=		${WRKDIR}/SQLiteStudio3
 
@@ -43,7 +35,6 @@ USE_CXXSTD=	c++11
 USE_QT=		core concurrent gui network script sql sql-sqlite3_run svg widgets xml \
 		uitools buildtools_build linguisttools_build
 USE_GL=		gl
-USE_LDCONFIG=	yes
 
 CXXFLAGS+=	-I${WRKSRC}/coreSQLiteStudio
 
@@ -55,21 +46,6 @@ post-patch:
 	# Patch from http://bugs.sqlitestudio.pl/index.rvt?id=3102
 	@${REINPLACE_CMD} -e 's|^include(.*|include($$$$PWD/../../SQLiteStudio3/plugins.pri)|' \
 		${WRKDIR}/Plugins/DbSqliteCipher/DbSqliteCipher.pro
-
-PLUGIN_DIRS=
-PLUGIN_CSV_IMPORT_VARS=			PLUGIN_DIRS+=CsvImport
-PLUGIN_CSV_EXPORT_VARS=			PLUGIN_DIRS+=CsvExport
-PLUGIN_DB_SQLITE_CIPHER_USES=		ssl
-PLUGIN_DB_SQLITE_CIPHER_VARS=		PLUGIN_DIRS+=DbSqliteCipher
-PLUGIN_HTML_EXPORT_VARS=		PLUGIN_DIRS+=HtmlExport
-PLUGIN_JSON_EXPORT_VARS=		PLUGIN_DIRS+=JsonExport
-PLUGIN_PDF_EXPORT_VARS=			PLUGIN_DIRS+=PdfExport
-PLUGIN_PRINTING_VARS=			PLUGIN_DIRS+=Printing USE_QT+=printsupport
-PLUGIN_REGEXP_IMPORT_VARS=		PLUGIN_DIRS+=RegExpImport
-PLUGIN_SQL_ENTERPRISE_FORMATTER_VARS=	PLUGIN_DIRS+=SqlEnterpriseFormatter
-PLUGIN_SQL_EXPORT_VARS=			PLUGIN_DIRS+=SqlExport
-PLUGIN_SQL_FORMATTER_SIMPLE_VARS=	PLUGIN_DIRS+=SqlFormatterSimple
-PLUGIN_XML_EXPORT_VARS=			PLUGIN_DIRS+=XmlExport
 
 post-configure:
 	# Fix for a suspected bug in qmake: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=210418
