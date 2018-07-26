@@ -29,7 +29,8 @@ LICENSE_COMB=	multi
 .error Please define CROSS_SYSROOT before building
 .endif
 
-GCC_TARGET=	${ARCH}-unknown-${OPSYS:tl}${OSREL}
+TARGETARCH=	${ARCH:S/amd64/x86_64/}
+GCC_TARGET=	${TARGETARCH}-unknown-${OPSYS:tl}${OSREL}
 
 PREFIX=		/usr
 CONFIGURE_ENV=	NM=/usr/bin/nm \
@@ -37,7 +38,7 @@ CONFIGURE_ENV=	NM=/usr/bin/nm \
 		LD_FOR_TARGET=/usr/bin/ld \
 		NM_FOR_TARGET=/usr/bin/nm
 USES=	gmake libtool tar:xz makeinfo
-PLIST_SUB=	TARGETARCH=${ARCH} \
+PLIST_SUB=	TARGETARCH=${TARGETARCH} \
 		OPSYS=${OPSYS:tl} \
 		GCC_TARGET=${GCC_TARGET} \
 		GCC_VERSION=${PORTVERSION}
@@ -66,6 +67,18 @@ INSTALL_TARGET?=	install-gcc
 CONFIGURE_ARGS+= --enable-initfini-array
 .endif
 
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+PLIST_SUB+=	I386="" \
+		FLOAT_H="@comment "
+.else
+PLIST_SUB+=	I386="@comment " \
+		FLOAT_H=""
+.endif
+.if ${ARCH} == "amd64"
+PLIST_SUB+=	AMD64=""
+.else
+PLIST_SUB+=	AMD64="@comment "
+.endif
 .if ${ARCH:Mmips*}
 PLIST_SUB+=	MIPS=""
 .else
@@ -89,11 +102,11 @@ post-patch:
 		${WRKSRC}//gcc/Makefile.in
 
 post-install:
-	${MV} ${STAGEDIR}/usr/bin/gcov-tool ${STAGEDIR}/usr/bin/${GCC_TARGET}-gcov-tool ; \
+	${MV} -f ${STAGEDIR}/usr/bin/gcov-tool ${STAGEDIR}/usr/bin/${GCC_TARGET}-gcov-tool ; \
 	for tool in cpp gcc g++ gcov; do \
-		${MV} ${STAGEDIR}/usr/bin/$${tool} ${STAGEDIR}/usr/bin/${GCC_TARGET}-$${tool} ; \
+		${MV} -f ${STAGEDIR}/usr/bin/$${tool} ${STAGEDIR}/usr/bin/${GCC_TARGET}-$${tool} ; \
 		${LN} -sf ${GCC_TARGET}-$${tool}  ${STAGEDIR}/usr/bin/$${tool} ; \
-		${MV} ${STAGEDIR}/${MANDIR}1/$${tool}.1 ${STAGEDIR}/${MANDIR}1/${GCC_TARGET}-$${tool}.1 ; \
+		${MV} -f ${STAGEDIR}/${MANDIR}1/$${tool}.1 ${STAGEDIR}/${MANDIR}1/${GCC_TARGET}-$${tool}.1 ; \
 		${GZIP_CMD} ${STAGEDIR}/${MANDIR}1/${GCC_TARGET}-$${tool}.1 ; \
 		${LN} -sf ${GCC_TARGET}-$${tool}.1.gz ${STAGEDIR}/${MANDIR}1/$${tool}.1.gz ; \
 	done ; \
@@ -103,5 +116,8 @@ post-install:
 	${LN} -sf ${GCC_TARGET}-gcc.1.gz ${STAGEDIR}/${MANDIR}1/cc.1.gz
 	${RM} -r ${STAGEDIR}/usr/share/info
 	${RM} -r ${STAGEDIR}/usr/lib/gcc/${GCC_TARGET}/${PORTVERSION}/include-fixed
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+	${RM} ${STAGEDIR}/usr/lib/gcc/${GCC_TARGET}/${PORTVERSION}/include/float.h
+.endif
 
 .include <bsd.port.mk>
