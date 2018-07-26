@@ -1,0 +1,21 @@
+--- CMakeLists.txt.orig	2018-07-24 19:18:54 UTC
++++ CMakeLists.txt
+@@ -238,8 +238,8 @@ add_definitions(-DPNG_NO_MMX_CODE) # Do 
+ # libwebp
+ if(WITH_WEBP_SUPPORT)
+   set(WEBP_LIBRARIES webp webpdemux webpmux)
+-  set(WEBP_INCLUDE_DIR ${LIBWEBP_DIR}/src)
+-  include_directories(${WEBP_INCLUDE_DIR})
++  #set(WEBP_INCLUDE_DIR ${LIBWEBP_DIR}/src)
++  #include_directories(${WEBP_INCLUDE_DIR})
+ endif()
+ 
+ # tinyxml
+@@ -391,6 +391,7 @@ if(UNIX AND NOT APPLE AND NOT BEOS)
+   find_package(X11 REQUIRED)
+   include_directories(SYSTEM ${X11_INCLUDE_DIR})
+   list(APPEND PLATFORM_LIBS ${X11_LIBRARIES})
++  set(X11_LIB_SEARCH_PATH ${FREEBSD_LIB_PATH})
+ 
+   if(X11_XShm_FOUND)
+     list(APPEND PLATFORM_LIBS ${X11_Xext_LIB})

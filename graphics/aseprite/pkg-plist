@@ -1,7 +1,11 @@
 bin/aseprite
 %%DATADIR%%/data/convmatr.def
+%%DATADIR%%/data/extensions/adigunpolack-palettes/aap-64.gpl
+%%DATADIR%%/data/extensions/adigunpolack-palettes/aap-micro12.gpl
+%%DATADIR%%/data/extensions/adigunpolack-palettes/aap-splendor128.gpl
+%%DATADIR%%/data/extensions/adigunpolack-palettes/package.json
+%%DATADIR%%/data/extensions/adigunpolack-palettes/simplejpc-16.gpl
 %%DATADIR%%/data/extensions/arne-palettes/a64.gpl
-%%DATADIR%%/data/extensions/arne-palettes/arne-paldac.gpl
 %%DATADIR%%/data/extensions/arne-palettes/arne16.gpl
 %%DATADIR%%/data/extensions/arne-palettes/arne32.gpl
 %%DATADIR%%/data/extensions/arne-palettes/cg-arne.gpl
@@ -10,7 +14,7 @@ bin/aseprite
 %%DATADIR%%/data/extensions/arne-palettes/eroge-copper.gpl
 %%DATADIR%%/data/extensions/arne-palettes/jmp.gpl
 %%DATADIR%%/data/extensions/arne-palettes/package.json
-%%DATADIR%%/data/extensions/arne-palettes/psygnork.gpl
+%%DATADIR%%/data/extensions/arne-palettes/psygnosia.gpl
 %%DATADIR%%/data/extensions/aseprite-theme/LICENSE.txt
 %%DATADIR%%/data/extensions/aseprite-theme/package.json
 %%DATADIR%%/data/extensions/aseprite-theme/sheet.aseprite-data
@@ -25,6 +29,7 @@ bin/aseprite
 %%DATADIR%%/data/extensions/dawnbringer-palettes/db16.gpl
 %%DATADIR%%/data/extensions/dawnbringer-palettes/db32.gpl
 %%DATADIR%%/data/extensions/dawnbringer-palettes/package.json
+%%DATADIR%%/data/extensions/endesga-palettes/arq16.gpl
 %%DATADIR%%/data/extensions/endesga-palettes/arq4.gpl
 %%DATADIR%%/data/extensions/endesga-palettes/edg16.gpl
 %%DATADIR%%/data/extensions/endesga-palettes/edg32.gpl
@@ -62,6 +67,8 @@ bin/aseprite
 %%DATADIR%%/data/extensions/javierguerrero-palettes/package.json
 %%DATADIR%%/data/extensions/pico8-palette/package.json
 %%DATADIR%%/data/extensions/pico8-palette/pico-8.gpl
+%%DATADIR%%/data/extensions/pinetreepizza-palettes/package.json
+%%DATADIR%%/data/extensions/pinetreepizza-palettes/rosy-42.gpl
 %%DATADIR%%/data/extensions/software-palettes/google-ui.gpl
 %%DATADIR%%/data/extensions/software-palettes/monokai.gpl
 %%DATADIR%%/data/extensions/software-palettes/package.json
@@ -94,6 +101,7 @@ bin/aseprite
 %%DATADIR%%/data/pref.xml
 %%DATADIR%%/data/scripts/white_to_alpha.js
 %%DATADIR%%/data/strings/en.ini
+%%DATADIR%%/data/widgets/about.xml
 %%DATADIR%%/data/widgets/advanced_mode.xml
 %%DATADIR%%/data/widgets/brush_slot_params.xml
 %%DATADIR%%/data/widgets/canvas_size.xml

@@ -1,0 +1,13 @@
+--- third_party/CMakeLists.txt.orig	2018-07-26 21:59:46 UTC
++++ third_party/CMakeLists.txt
+@@ -34,8 +34,8 @@ endif()
+ 
+ if(WITH_WEBP_SUPPORT)
+   # Enable img2webp so "webpmux" library is built
+-  set(WEBP_BUILD_IMG2WEBP ON CACHE BOOL "Build the img2webp animation tool.")
+-  add_subdirectory(libwebp)
++  #set(WEBP_BUILD_IMG2WEBP ON CACHE BOOL "Build the img2webp animation tool.")
++  #add_subdirectory(libwebp)
+ endif()
+ 
+ if(NOT USE_SHARED_TINYXML)
