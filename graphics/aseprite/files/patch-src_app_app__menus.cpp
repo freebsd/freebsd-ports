@@ -1,6 +1,6 @@
---- src/app/app_menus.cpp.orig	2017-11-03 13:51:45 UTC
+--- src/app/app_menus.cpp.orig	2018-07-24 19:18:54 UTC
 +++ src/app/app_menus.cpp
-@@ -371,7 +371,7 @@ void AppMenus::initTheme()
+@@ -381,7 +381,7 @@ void AppMenus::initTheme()
        menu->initTheme();
  }
  
@@ -9,16 +9,16 @@
  {
    AppMenuItem* list_menuitem = dynamic_cast<AppMenuItem*>(m_recentListMenuitem);
    MenuItem* menuitem;
-@@ -379,7 +379,7 @@ bool AppMenus::rebuildRecentList()
+@@ -389,7 +389,7 @@ bool AppMenus::rebuildRecentList()
    // Update the recent file list menu item
    if (list_menuitem) {
      if (list_menuitem->hasSubmenuOpened())
 -      return false;
 +      return;
  
-     Command* cmd_open_file = CommandsModule::instance()->getCommandByName(CommandId::OpenFile);
- 
-@@ -426,8 +426,6 @@ bool AppMenus::rebuildRecentList()
+     Command* cmd_open_file =
+       Commands::instance()->byId(CommandId::OpenFile());
+@@ -437,8 +437,6 @@ bool AppMenus::rebuildRecentList()
        }
      }
    }
