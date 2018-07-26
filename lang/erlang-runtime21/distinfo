@@ -1,11 +1,13 @@
-TIMESTAMP = 1531484889
+TIMESTAMP = 1532603635
 SHA256 (erlang/otp_src_21.0.tar.gz) = c7d247c0cad2d2e718eaca2e2dff051136a1347a92097abf19ebf65ea2870131
 SIZE (erlang/otp_src_21.0.tar.gz) = 84146631
-SHA256 (erlang/preloaded-21.0.3.tar.gz) = 71347483f6abebafc8ec9ed2ade74e75a3f9ecc2d7255ead8e0c3dd3af3a6d69
-SIZE (erlang/preloaded-21.0.3.tar.gz) = 330942
+SHA256 (erlang/preloaded-21.0.4.tar.gz) = 05306296ffb76889d063913d039b29f1281bc0431db51b3dd5a52a2fb4e7983a
+SIZE (erlang/preloaded-21.0.4.tar.gz) = 331005
 SHA256 (erlang/patch-otp-21.0.1) = fecd307e12b4ad7f22134947ec3971b2578f7deb53ae406f0076e2813a4c2973
 SIZE (erlang/patch-otp-21.0.1) = 9191
 SHA256 (erlang/patch-otp-21.0.2) = a772ec2dde551270b717696735fbb15ff9d6f609abe8f987ee81b0e70f8c608a
 SIZE (erlang/patch-otp-21.0.2) = 288219
 SHA256 (erlang/patch-otp-21.0.3) = 11113266833b382826c56f2f4cfea97d6c5a5fe7bf2074252340e014b65f8bc0
 SIZE (erlang/patch-otp-21.0.3) = 15834
+SHA256 (erlang/patch-otp-21.0.4) = 425af34f31741d359725f51f6941668eb6d4ff169cd998e5b6a6958eef056d52
+SIZE (erlang/patch-otp-21.0.4) = 10079
