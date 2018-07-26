@@ -587,11 +587,11 @@
 %%EXAMPLES%%%%T%%/webapps/examples/websocket/echo.xhtml
 %%EXAMPLES%%%%T%%/webapps/examples/websocket/index.xhtml
 %%EXAMPLES%%%%T%%/webapps/examples/websocket/snake.xhtml
-%%HOST_MANAGER%%%%T%%/webapps/host-manager/META-INF/context.xml
+@sample %%HOST_MANAGER%%%%T%%/webapps/host-manager/META-INF/context.xml.sample
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/WEB-INF/jsp/401.jsp
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/WEB-INF/jsp/403.jsp
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/WEB-INF/jsp/404.jsp
-%%HOST_MANAGER%%%%T%%/webapps/host-manager/WEB-INF/web.xml
+@sample %%HOST_MANAGER%%%%T%%/webapps/host-manager/WEB-INF/web.xml.sample
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/images/add.gif
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/images/asf-logo.svg
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/images/code.gif
@@ -603,7 +603,7 @@
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/images/void.gif
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/index.jsp
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/manager.xml
-%%MANAGER%%%%T%%/webapps/manager/META-INF/context.xml
+@sample %%MANAGER%%%%T%%/webapps/manager/META-INF/context.xml.sample
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/401.jsp
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/403.jsp
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/404.jsp
@@ -612,7 +612,7 @@
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/connectorTrustedCerts.jsp
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/sessionDetail.jsp
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/sessionsList.jsp
-%%MANAGER%%%%T%%/webapps/manager/WEB-INF/web.xml
+@sample %%MANAGER%%%%T%%/webapps/manager/WEB-INF/web.xml.sample
 %%MANAGER%%%%T%%/webapps/manager/images/add.gif
 %%MANAGER%%%%T%%/webapps/manager/images/asf-logo.svg
 %%MANAGER%%%%T%%/webapps/manager/images/code.gif
