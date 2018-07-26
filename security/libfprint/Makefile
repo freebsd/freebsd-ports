@@ -2,21 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	libfprint
-PORTVERSION=	0.6.0
-PORTREVISION=	3
+PORTVERSION=	0.7.0
 CATEGORIES=	security
-MASTER_SITES=	http://people.freedesktop.org/~hadess/
+MASTER_SITES=	https://people.freedesktop.org/~anarsoul/
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Library for fingerprint reader devices
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libMagickCore-6.so:graphics/ImageMagick \
-		libnss3.so:security/nss
+		libnss3.so:security/nss \
+		libnspr4.so:devel/nspr
 
 GNU_CONFIGURE=	yes
-USES=		libtool pathfix pkgconfig tar:xz ssl
+USES=		libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
+USE_XORG=	pixman
 INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-DHAVE_MEMMEM

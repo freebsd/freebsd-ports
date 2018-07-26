@@ -1,6 +1,6 @@
---- libfprint/Makefile.in~	2011-10-01 23:20:55.218924048 -0500
-+++ libfprint/Makefile.in	2011-10-01 23:23:50.108796610 -0500
-@@ -1195,7 +1195,7 @@ info: info-am
+--- libfprint/Makefile.in.orig	2017-05-14 16:27:17 UTC
++++ libfprint/Makefile.in
+@@ -1578,7 +1578,7 @@ info: info-am
  
  info-am:
  
