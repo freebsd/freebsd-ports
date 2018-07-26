@@ -14,4 +14,4 @@ awk '{
 		gsub(/\\./, ".", a[2])
 		print length(a[2]), sedp
 	}
-}' | sort -rn | awk '{$1=""; print $0}' | paste -s -d ' ' -
+}' | sort -rn | awk '{$1=""; print $0}' > $1

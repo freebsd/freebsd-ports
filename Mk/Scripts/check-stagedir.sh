@@ -88,20 +88,22 @@ setup_plist_seds() {
 		unset PORT_OPTIONS
 	fi
 
-	sed_plist_sub=$(echo "${PLIST_SUB_SED}" | /bin/sh ${SCRIPTSDIR}/plist_sub_sed_sort.sh)
+	sed_plist_sub=$(mktemp -t sed_plist_sub)
+	# We only exit 0 or exit 1
+	trap "rm -f ${sed_plist_sub}" EXIT 1
+	echo "${PLIST_SUB_SED}" | /bin/sh ${SCRIPTSDIR}/plist_sub_sed_sort.sh ${sed_plist_sub}
 	unset PLIST_SUB_SED
 	# Used for generate_plist
-	sed_files_gen="s!^${PREFIX}/!!g; ${sed_plist_sub} \
-	    ${sed_portdocsexamples} /^share\/licenses/d; \
+	sed_files_gen="${sed_portdocsexamples} /^share\/licenses/d; \
 	    \#${LOCALBASE}/lib/debug#d;"
-	sed_dirs_gen="s!^${PREFIX}/!!g; ${sed_plist_sub} s,^,@dir ,; \
+	sed_dirs_gen="s,^,@dir ,; \
 	    ${sed_portdocsexamples} \
 	    /^@dir share\/licenses/d;"
 
 	# These prevent ignoring DOCS/EXAMPLES dirs with sed_portdocsexamples
-	sed_files="s!^${PREFIX}/!!g; ${sed_plist_sub} /^share\/licenses/d; \
+	sed_files="/^share\/licenses/d; \
 	    \#${LOCALBASE}/lib/debug#d;"
-	sed_dirs="s!^${PREFIX}/!!g; ${sed_plist_sub} s,^,@dir ,; \
+	sed_dirs="s,^,@dir ,; \
 	    /^@dir share\/licenses/d;"
 
 }
@@ -114,7 +116,7 @@ generate_plist() {
 	find ${STAGEDIR} -type f -o -type l | sort | \
 	    sed -e "s,${STAGEDIR},," >${WRKDIR}/.staged-files
 	comm -13 ${WRKDIR}/.plist-files ${WRKDIR}/.staged-files | \
-	    sed -e "${sed_files_gen}" \
+	    sed -e "s!^${PREFIX}/!!g;" -f "${sed_plist_sub}" -e "${sed_files_gen}" \
 	     >>${WRKDIR}/.staged-plist || :
 
 	### HANDLE DIRS
@@ -131,7 +133,7 @@ generate_plist() {
 	    >${WRKDIR}/.staged-dirs-dfs-sorted
 	# Find all staged dirs and then sort them by depth-first (find -d -s)
 	comm -13 ${WRKDIR}/.traced-dirs ${WRKDIR}/.staged-dirs-sorted \
-	    | sort_dfs | sed "${sed_dirs_gen}" \
+	    | sort_dfs | sed -e "s!^${PREFIX}/!!g;" -f "${sed_plist_sub}" -e "${sed_dirs_gen}" \
 	    >>${WRKDIR}/.staged-plist || :
 }
 
@@ -185,7 +187,7 @@ check_missing_plist_items() {
 	echo "===> Checking for items in pkg-plist which are not in STAGEDIR"
 	: >${WRKDIR}/.invalid-plist-missing
 	comm -23 ${WRKDIR}/.plist-files-no-comments ${WRKDIR}/.staged-files | \
-	    sed -e "${sed_files}" \
+	    sed -e "s!^${PREFIX}/!!g;" -f "${sed_plist_sub}" -e "${sed_files}" \
 	    >>${WRKDIR}/.invalid-plist-missing || :
 
 	# Look for directories, then sort them by DFS. Must create the dirs
@@ -203,7 +205,7 @@ check_missing_plist_items() {
 	    sed -e "s,^${WRKDIR}/.missing-dirs,," | \
 	    while read -r dir; do \
 	    grep -x "${dir}" ${WRKDIR}/.missing-plist-dirs || :; done | \
-	    sed "${sed_dirs}" \
+	    sed -e "s!^${PREFIX}/!!g;" -f "${sed_plist_sub}" -e "${sed_dirs}" \
 	    >>${WRKDIR}/.invalid-plist-missing || :
 	rm -rf ${WRKDIR}/.missing-dirs
 	if [ -s "${WRKDIR}/.invalid-plist-missing" ]; then
