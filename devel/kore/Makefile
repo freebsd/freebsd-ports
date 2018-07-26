@@ -53,6 +53,7 @@ PGSQL_IMPLIES=		HTTP
 PGSQL_MAKE_ARGS=	PGSQL=1
 PGSQL_USES=		pgsql
 
+PYTHON_BINARY_ALIAS=	python3-config=${PYTHON_CMD}-config
 PYTHON_MAKE_ARGS=	PYTHON=1
 PYTHON_USES=		gettext-runtime python:3.6+
 
@@ -69,13 +70,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%SUFFIX%%|${PKGNAMESUFFIX}|g' \
 		-e 's|%%OPENSSLINC%%|${OPENSSLINC}|g' \
 		${WRKSRC}/src/cli.c ${WRKSRC}/src/utils.c
-
-post-patch-PYTHON-on:
-# BINARY_ALIAS is not an option here because python3?-config will
-# find the wrong install prefix when symlinked and would start
-# outputting bogus paths inside WRKDIR cf. PR 229749.
-	@${REINPLACE_CMD} 's,python3-config,${PYTHON_CMD}-config,' \
-		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kore ${STAGEDIR}${PREFIX}/bin/kore${PKGNAMESUFFIX}
