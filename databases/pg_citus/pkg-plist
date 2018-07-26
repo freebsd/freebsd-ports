@@ -258,4 +258,3 @@ share/postgresql/extension/citus--7.5-6--7.5-7.sql
 share/postgresql/extension/citus--7.5-6.sql
 share/postgresql/extension/citus--7.5-7.sql
 share/postgresql/extension/citus.control
-
