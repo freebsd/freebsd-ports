@@ -1,0 +1,17 @@
+The SOFA Collection consists of libraries of routines in ANSI C. There is a
+suite of vector/matrix routines and various utilities that underpin the
+astronomy algorithms, which include routines for the following:
+
+* Astrometry
+* Calendars
+* Time Scales
+* Ecliptic Coordinates
+* Earth Rotation and Sidereal Time
+* Ephemerides (medium precision)
+* Fundamental Arguments
+* Galactic Coordinates
+* Geocentric/Geodetic Transformations
+* Precession, Nutation and Polar Motion
+* Star Catalog Conversion
+
+WWW: http://www.iausofa.org

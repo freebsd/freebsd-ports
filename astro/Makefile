@@ -103,6 +103,7 @@
     SUBDIR += saoimage
     SUBDIR += sextractor
     SUBDIR += siril
+    SUBDIR += sofa
     SUBDIR += sscalc
     SUBDIR += stardates
     SUBDIR += starplot
