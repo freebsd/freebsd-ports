@@ -90,6 +90,7 @@
     SUBDIR += py-metar
     SUBDIR += py-metpy
     SUBDIR += py-pymetar
+    SUBDIR += py-pysofa
     SUBDIR += py-pywapi
     SUBDIR += py-spacetrack
     SUBDIR += pyephem

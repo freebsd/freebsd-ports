@@ -1,0 +1,6 @@
+pysofa is a Python module for accessing International Astronomical Union's SOFA
+library from python. SOFA (Standards of Fundamental Astronomy) is a set of
+algorithms and procedures that implement standard models used in fundamental
+astronomy.
+
+WWW: https://code.google.com/archive/p/pysofa/
