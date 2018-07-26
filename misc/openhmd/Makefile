@@ -10,7 +10,7 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	API and drivers for immersive technology
 
 LICENSE=	BSL
-xLICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libhidapi.so:comms/hidapi
 
