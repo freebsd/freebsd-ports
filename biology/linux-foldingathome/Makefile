@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	FAH${PORTVERSION:S/.//}-Linux
 EXTRACT_SUFX=	.exe
 
-MAINTAINER=	onatan@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed client for Protein Folding
 
 USES=		linux
