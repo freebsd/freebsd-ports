@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qalculate
-PORTVERSION=	2.2.1
+PORTVERSION=	2.6.1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${PORTVERSION}/
 DISTNAME=	${GH_PROJECT}-${PORTVERSION}
