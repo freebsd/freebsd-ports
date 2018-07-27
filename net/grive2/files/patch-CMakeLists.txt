@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2018-07-25 17:25:43 UTC
++++ CMakeLists.txt
+@@ -9,7 +9,6 @@ set( GRIVE_VERSION "0.5.1-dev" )
+ add_definitions( -DVERSION="${GRIVE_VERSION}" )
+ add_definitions( -D_FILE_OFFSET_BITS=64 -std=c++0x )
+ 
+-add_subdirectory( systemd )
+ add_subdirectory( libgrive )
+ add_subdirectory( grive )
+-	
+\ No newline at end of file
++	
