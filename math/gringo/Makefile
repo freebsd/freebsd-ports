@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-source
 CATEGORIES=	math devel
 MASTER_SITES=	SOURCEFORGE/potassco/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Grounding algorithm based on semi-naive database evaluation
 
 LICENSE=	GPLv3
