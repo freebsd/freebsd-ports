@@ -1,0 +1,10 @@
+This is the theme for the Python documentation.
+
+Note that when adopting this theme, you're also borrowing an element of the
+trust and credibility established by the CPython core developers over the years.
+
+That's fine, and you're welcome to do so for other Python community projects if
+you so choose, but please keep in mind that in doing so you're also choosing to
+accept some of the responsibility for maintaining that collective trust.
+
+WWW: https://pypi.org/project/python-docs-theme/
