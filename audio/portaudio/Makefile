@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	portaudio
-DISTVERSION=	19_20140130
-PORTREVISION=	8
+PORTVERSION=	19.6.0
+PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.portaudio.com/archives/
-DISTNAME=	pa_stable_v${DISTVERSION}
+DISTNAME=	pa_stable_v190600_20161030
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Portable cross-platform Audio API
