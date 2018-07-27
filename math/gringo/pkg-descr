@@ -3,4 +3,4 @@ needed that, given an input program with first-order variables, computes an
 equivalent ground (variable-free) program. Gringo is such a grounder. Its
 output can be processed further with clasp.
 
-WWW: http://potassco.sourceforge.net/
+WWW: https://potassco.org/

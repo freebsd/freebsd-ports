@@ -2,26 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	gringo
-PORTVERSION=	4.5.2
-PORTREVISION=	2
+DISTVERSION=	4.5.4
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	math devel
 MASTER_SITES=	SOURCEFORGE/potassco/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	vsevolod@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Grounding algorithm based on semi-naive database evaluation
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	re2c:devel/re2c
 
 BROKEN_powerpc64=	fails to compile: term.cc: error: pow is not a member of std
 
-USES=		bison compiler:c++11-lib scons
-
-MAKE_ARGS+=	${MAKE_ENV}
+USES=		bison compiler:c++11-lib python:2.7 scons
+MAKE_ARGS=	${MAKE_ENV}
 CXXFLAGS+=	-std=c++11
-MAKE_ENV+=	WITH_LUA=no
+MAKE_ENV=	WITH_LUA=no
 
 # Unhide std::to_string() with GCC < 4.9 (ports/193528)
 CXXFLAGS+=	-D_GLIBCXX_USE_C99
