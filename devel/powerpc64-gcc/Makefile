@@ -84,13 +84,13 @@ MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
 .endif
 
 post-install:
-.for f in cpp gcov gcov-tool
+.for f in cpp gcov gcov-dump gcov-tool
 	@if [ -f ${STAGEDIR}${PREFIX}/bin/$f ] ; then \
 		${MV} ${STAGEDIR}${PREFIX}/bin/$f  \
 		    ${STAGEDIR}${PREFIX}/bin/${GCC_TARGET}-$f ; \
 	fi
 .endfor
-.for f in c++ cpp g++ gcc gcc-ar gcc-nm gcc-ranlib gcov gcov-tool
+.for f in c++ cpp g++ gcc gcc-ar gcc-nm gcc-ranlib gcov gcov-dump gcov-tool
 	@if [ ! -f ${STAGEDIR}${PREFIX}/man/man1/${GCC_TARGET}-$f.1 ] ; then \
 		if [ -f ${STAGEDIR}${PREFIX}/man/man1/$f.1 ] ; then \
 			${CP} ${STAGEDIR}${PREFIX}/man/man1/$f.1  \
