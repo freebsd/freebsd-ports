@@ -1,0 +1,30 @@
+Index: src/bund.c
+===================================================================
+--- src/bund.c	(revision 2246)
++++ src/bund.c	(revision 2247)
+@@ -1394,9 +1394,9 @@ BundUpdateStats(Bund b)
+     b->stats.runts	  += abs(stats.runts - b->oldStats.runts);
+     b->stats.dupFragments += abs(stats.dupFragments - b->oldStats.dupFragments);
+     b->stats.dropFragments += abs(stats.dropFragments - b->oldStats.dropFragments);
++    b->oldStats = stats;
+   }
+ 
+-  b->oldStats = stats;
+ #else
+     NgFuncGetStats64(b, l, &b->stats);
+ #endif
+Index: src/link.c
+===================================================================
+--- src/link.c	(revision 2246)
++++ src/link.c	(revision 2247)
+@@ -1359,9 +1359,9 @@ LinkUpdateStats(Link l)
+         l->stats.runts	  += abs(stats.runts - l->oldStats.runts);
+         l->stats.dupFragments += abs(stats.dupFragments - l->oldStats.dupFragments);
+         l->stats.dropFragments += abs(stats.dropFragments - l->oldStats.dropFragments);
++	l->oldStats = stats;
+     }
+ 
+-    l->oldStats = stats;
+ #else
+     NgFuncGetStats64(l->bund, l->bundleIndex, &l->stats);
+ #endif
