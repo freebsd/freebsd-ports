@@ -1,0 +1,7 @@
+This is the common Sphinx theme for all PyPA projects.
+
+It is derived from the Python docs theme, since PyPA maintains portions of the
+default Python developer experience (specifically, the software installation and
+distribution tools bootstrapped by the ensurepip module).
+
+WWW: https://github.com/pypa/pypa-docs-theme
