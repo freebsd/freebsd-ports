@@ -126,6 +126,7 @@
     SUBDIR += lumina-themes
     SUBDIR += lxappearance
     SUBDIR += lxde-icon-theme
+    SUBDIR += lxqt-themes
     SUBDIR += mate-backgrounds
     SUBDIR += mate-icon-theme
     SUBDIR += mate-icon-theme-faenza
