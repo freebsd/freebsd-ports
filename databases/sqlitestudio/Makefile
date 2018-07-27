@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlitestudio
-DISTVERSION=	3.2.0
+DISTVERSION=	3.2.1
 CATEGORIES=	databases
 MASTER_SITES=	http://sqlitestudio.pl/files/sqlitestudio3/complete/tar/
 
