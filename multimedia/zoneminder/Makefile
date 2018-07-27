@@ -2,7 +2,7 @@
 
 PORTNAME=	zoneminder
 PORTVERSION=	1.30.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 
 MAINTAINER=	bsd@abinet.ru

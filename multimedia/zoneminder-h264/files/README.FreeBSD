@@ -82,6 +82,7 @@ the same server.
 	Enable and start FcgiWrap
 		sysrc fcgiwrap_enable="YES"
 		sysrc fcgiwrap_user="www"
+		sysrc fcgiwrap_socket_owner="www"
 		sysrc fcgiwrap_flags="-c 4"
 
 1.4 PHP is installed as a dependency to ZoneMinder. However, you should 
