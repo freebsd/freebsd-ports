@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xjobs
-PORTVERSION=	20170630
+PORTVERSION=	20170829
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.maier-komor.de/xjobs/
 
