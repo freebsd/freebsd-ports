@@ -3,8 +3,7 @@
 #   $MCom: ports/devel/distcc/Makefile,v 1.3 2007/10/21 02:46:13 ahze Exp $
 
 PORTNAME=	distcc
-PORTVERSION=	3.1
-PORTREVISION=	6
+PORTVERSION=	3.3.2
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libpopt.so:devel/popt
 GNU_CONFIGURE=	yes
 USES=		autoreconf alias gmake libtool pkgconfig
 USE_GITHUB=	yes
-GH_ACCOUNT=     distcc
+GH_ACCOUNT=	distcc
 GH_TAGNAME=	9a09372
 
 GROUPS=		distcc
