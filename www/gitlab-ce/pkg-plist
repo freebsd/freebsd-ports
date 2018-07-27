@@ -11240,7 +11240,6 @@
 %%WWWDIR%%/spec/javascripts/fixtures/event_filter.html.haml
 %%WWWDIR%%/spec/javascripts/fixtures/gl_dropdown.html.haml
 %%WWWDIR%%/spec/javascripts/fixtures/gl_field_errors.html.haml
-%%WWWDIR%%/spec/javascripts/fixtures/graph.html.haml
 %%WWWDIR%%/spec/javascripts/fixtures/groups.rb
 %%WWWDIR%%/spec/javascripts/fixtures/images/green_box.png
 %%WWWDIR%%/spec/javascripts/fixtures/images/red_box.png
@@ -11519,6 +11518,7 @@
 %%WWWDIR%%/spec/javascripts/pipelines/blank_state_spec.js
 %%WWWDIR%%/spec/javascripts/pipelines/empty_state_spec.js
 %%WWWDIR%%/spec/javascripts/pipelines/graph/action_component_spec.js
+%%WWWDIR%%/spec/javascripts/pipelines/graph/dropdown_job_component_spec.js
 %%WWWDIR%%/spec/javascripts/pipelines/graph/graph_component_spec.js
 %%WWWDIR%%/spec/javascripts/pipelines/graph/job_component_spec.js
 %%WWWDIR%%/spec/javascripts/pipelines/graph/job_name_component_spec.js
