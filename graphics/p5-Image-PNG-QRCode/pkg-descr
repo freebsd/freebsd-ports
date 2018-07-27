@@ -1,0 +1,17 @@
+This module converts input text to a PNG image of a QR code containing the
+text. The PNG image can either be stored to a file or it can be a scalar.
+
+Image::PNG::Libpng requires "libpng" to be installed. "libpng" should
+already be installed on most Linux and Windows systems.
+
+This example makes a data URL QR code:
+
+use Image::PNG::QRCode 'qrpng';
+use URI;
+my $data = 'abcdefghijklmnopqrstuvwxyz';
+my $u = URI->new ('data:');
+$u->media_type ('image/png');
+$u->data (qrpng (text => $data));
+print "<img src='$u'>\n";
+
+WWW: https://metacpan.org/pod/Image::PNG::QRCode
