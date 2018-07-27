@@ -6,8 +6,8 @@ include/cdialog/dlg_config.h
 include/cdialog/dlg_keys.h
 lib/libcdialog.a
 lib/libcdialog.so
-lib/libcdialog.so.13
-lib/libcdialog.so.13.0.0
+lib/libcdialog.so.15
+lib/libcdialog.so.15.0.0
 man/man1/cdialog.1.gz
 man/man3/cdialog.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
@@ -114,6 +114,7 @@ man/man3/cdialog.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/menubox-utf8
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/menubox1
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/menubox10
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/menubox11
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/menubox12
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/menubox2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/menubox3
@@ -151,6 +152,7 @@ man/man3/cdialog.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/prgbox2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/programbox
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/programbox2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/programbox3
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/progress
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/progress2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/radiolist
@@ -169,6 +171,7 @@ man/man3/cdialog.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/report-tempfile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/report-yesno
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rotated-data
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/run_test.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/setup-edit
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/setup-tempfile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/setup-utf8
