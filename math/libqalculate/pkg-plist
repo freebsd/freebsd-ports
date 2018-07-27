@@ -7,6 +7,7 @@ include/libqalculate/Function.h
 include/libqalculate/MathStructure.h
 include/libqalculate/Number.h
 include/libqalculate/Prefix.h
+include/libqalculate/QalculateDateTime.h
 include/libqalculate/Unit.h
 include/libqalculate/Variable.h
 include/libqalculate/includes.h
@@ -14,8 +15,8 @@ include/libqalculate/qalculate.h
 include/libqalculate/util.h
 lib/libqalculate.a
 lib/libqalculate.so
-lib/libqalculate.so.14
-lib/libqalculate.so.14.0.0
+lib/libqalculate.so.18
+lib/libqalculate.so.18.0.1
 libdata/pkgconfig/libqalculate.pc
 %%NLS%%share/locale/fr/LC_MESSAGES/libqalculate.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libqalculate.mo

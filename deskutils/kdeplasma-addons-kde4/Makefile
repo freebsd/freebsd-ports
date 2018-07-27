@@ -2,7 +2,7 @@
 
 PORTNAME=	kdeplasma-addons
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	deskutils kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
