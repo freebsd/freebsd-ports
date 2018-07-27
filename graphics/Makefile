@@ -759,6 +759,7 @@
     SUBDIR += p5-Image-ObjectDetect
     SUBDIR += p5-Image-PBMlib
     SUBDIR += p5-Image-PNG-Libpng
+    SUBDIR += p5-Image-PNG-QRCode
     SUBDIR += p5-Image-Pngslimmer
     SUBDIR += p5-Image-Sane
     SUBDIR += p5-Image-Scale

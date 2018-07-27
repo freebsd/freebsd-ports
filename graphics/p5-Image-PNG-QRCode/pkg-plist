@@ -1,0 +1,5 @@
+bin/qrpng
+%%SITE_ARCH%%/Image/PNG/QRCode.pm
+%%SITE_ARCH%%/Image/PNG/QRCode.pod
+%%SITE_ARCH%%/auto/Image/PNG/QRCode/QRCode.so
+%%PERL5_MAN3%%/Image::PNG::QRCode.3.gz
