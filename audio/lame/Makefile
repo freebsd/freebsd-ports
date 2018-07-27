@@ -12,7 +12,7 @@ COMMENT=	Fast MP3 encoder kit
 
 LICENSE=		LGPL20+ PATENTS
 LICENSE_COMB=		multi
-LICENSE_FILE_LGPL20=	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL20+ =	${WRKSRC}/COPYING
 LICENSE_NAME_PATENTS=	Intellectual Property Precaution
 LICENSE_PERMS_PATENTS=	dist-mirror dist-sell no-pkg-mirror no-pkg-sell auto-accept
 LICENSE_TEXT_PATENTS=	http://www.mp3licensing.com/ only talks about the FhG and Technicolor patent portfolio \
@@ -23,7 +23,7 @@ LICENSE_TEXT_PATENTS=	http://www.mp3licensing.com/ only talks about the FhG and 
 			There was no investigation (in the LAME project) about which patent exists, which \
 			one is implemented in LAME, and which one is not (yet) expired. As such it is not \
 			known if LAME could now be distributed as a binary package or not. \
-			Linux distributions seem to go the "let's see if get sued" way, FreeBSD does not \
+			Linux distributions seem to go the "let\'s see if get sued" way, FreeBSD does not \
 			follow this.
 
 USES=		gmake iconv libtool
