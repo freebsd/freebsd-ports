@@ -1,11 +1,18 @@
---- src/CMakeLists.txt.orig	2017-06-10 02:18:06 UTC
+--- src/CMakeLists.txt.orig	2018-07-03 11:39:26 UTC
 +++ src/CMakeLists.txt
-@@ -62,7 +62,7 @@ endif()
+@@ -71,7 +71,7 @@ if(WITH_CFOX)
+   set(RESWRAP_CPP ${RESWRAP} --keep-ext --source --extern)
+   set(RESWRAP_TEXT ${RESWRAP} --keep-ext -t)
+ else()
+-  find_program(RESWRAP NAMES reswrap-1.7 reswrap fox-reswrap)
++  find_program(RESWRAP NAMES reswrap-1.7 reswrap fox-reswrap PATH_SUFFIXES fox-1.7)
+   if(RESWRAP)
+     message(STATUS "Found reswrap: ${RESWRAP}")
+     execute_process(COMMAND ${RESWRAP} -v OUTPUT_VARIABLE RESWRAP_OUTPUT)
+@@ -345,4 +345,4 @@ target_link_libraries(gogglesmm PRIVATE gap ${CFOX}
+                       ${ICE_LIBRARIES}
+                       ${Intl_LIBRARIES})
  
- 
- # Detects reswrap version
--find_program(RESWRAP NAMES reswrap-1.7 reswrap fox-reswrap)
-+find_program(RESWRAP NAMES reswrap-1.7 reswrap fox-reswrap PATH_SUFFIXES fox-1.7)
- if(RESWRAP)
-   message(STATUS "Found reswrap: ${RESWRAP}")
-   execute_process(COMMAND ${RESWRAP} -v OUTPUT_VARIABLE RESWRAP_OUTPUT)
+-install(TARGETS gogglesmm RUNTIME DESTINATION bin)
+\ No newline at end of file
++install(TARGETS gogglesmm RUNTIME DESTINATION bin)
