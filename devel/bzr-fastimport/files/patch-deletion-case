@@ -1,0 +1,66 @@
+Description: Fix a case where deleteion of an entry in a renamed directory is not reproduced
+ correctly in fast-export.  Thanks to Harry Hirsch, Nuno Araujo, and Andrew Huff for the patch.
+Bugs: https://launchpad.net/bugs/430347 https://launchpad.net/bugs/1167690 https://launchpad.net/bugs/1014291
+
+=== modified file 'exporter.py'
+--- a/exporter.py	2014-05-15 09:26:03 +0000
++++ b/exporter.py	2015-05-04 13:08:57 +0000
+@@ -514,6 +514,7 @@
+         #
+         # 1) bzr rm a; bzr mv b a; bzr commit
+         # 2) bzr mv x/y z; bzr rm x; commmit
++        # 3) bzr mv x y; bzr rm y/z; bzr commit
+         #
+         # The first must come out with the delete first like this:
+         #
+@@ -525,6 +526,11 @@
+         # R x/y z
+         # D x
+         #
++        # The third case must come out with delete first like this:
++        #
++        # D x/z
++        # R x y
++        #
+         # So outputting all deletes first or all renames first won't work.
+         # Instead, we need to make multiple passes over the various lists to
+         # get the ordering right.
+@@ -532,6 +538,7 @@
+         must_be_renamed = {}
+         old_to_new = {}
+         deleted_paths = set([p for p, _, _ in deletes])
++        deleted_child_paths = set()
+         for (oldpath, newpath, id_, kind,
+                 text_modified, meta_modified) in renames:
+             emit = kind != 'directory' or not self.plain_format
+@@ -543,6 +550,20 @@
+                 self.note("Skipping empty dir %s in rev %s" % (oldpath,
+                     revision_id))
+                 continue
++                
++            if kind == 'directory':
++                # handling deleted children in renamed directory (case 3 above)
++                for p, e in tree_old.inventory.iter_entries_by_dir(from_dir=id_):
++                    if e.kind == 'directory' or not self.plain_format:
++                        continue
++                    old_child_path = osutils.pathjoin(oldpath, p)
++                    new_child_path = osutils.pathjoin(newpath, p)
++                    if old_child_path in deleted_paths:
++                        file_cmds.append(commands.FileDeleteCommand(old_child_path.encode("utf-8")))
++                        deleted_paths.remove(old_child_path)
++                        deleted_child_paths.add(old_child_path)
++
++                
+             #oldpath = self._adjust_path_for_renames(oldpath, renamed,
+             #    revision_id)
+             renamed.append([oldpath, newpath])
+@@ -561,6 +582,8 @@
+                         continue
+                     old_child_path = osutils.pathjoin(oldpath, p)
+                     new_child_path = osutils.pathjoin(newpath, p)
++                    if old_child_path in deleted_child_paths:
++                        continue
+                     must_be_renamed[old_child_path] = new_child_path
+ 
+         # Add children not already renamed
+
