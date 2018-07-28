@@ -3,7 +3,7 @@
 
 PORTNAME=	ultimatestunts
 PORTVERSION=	0.7.7.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/sourcecode \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -19,13 +19,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 
-USES=		gettext openal:al,alut pkgconfig
+USES=		compiler gettext openal:al,alut pkgconfig
 USE_GL=		gl glu
 USE_SDL=	sdl image
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openal
 MAKE_JOBS_UNSAFE=	yes
+LLD_UNSAFE=	yes
 
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 CPPFLAGS+=	$$(pkgconf --cflags-only-I sdl)
 LDFLAGS+=	$$(pkgconf --libs-only-L sdl)
 
@@ -66,7 +69,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_${s}.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
 .endfor
-	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
+	${RLN} ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps
 
 .if ${PORT_OPTIONS:MDOCS}
