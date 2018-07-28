@@ -28,6 +28,6 @@ USE_PYTHON=	autoplist distutils
 
 ASTROPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astropy>=0:astro/py-astropy@${PY_FLAVOR}
 MATPLOTLIB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=0.98:math/py-matplotlib@${PY_FLAVOR}
-PYGAME_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>=1.8.1:devel/py-game@${PY_FLAVOR}
+PYGAME_RUN_DEPENDS=	${PYGAME}
 
 .include <bsd.port.mk>

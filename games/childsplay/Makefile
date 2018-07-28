@@ -13,9 +13,9 @@ COMMENT=	Educative games for children
 LICENSE=	GPLv3 # only
 LICENSE_FILE=	${WRKSRC}/gpl-3.0.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYGAME}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>0:databases/py-sqlalchemy10@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game@${PY_FLAVOR}
+		${PYGAME}
 
 NO_BUILD=	yes
 
