@@ -4609,6 +4609,7 @@
     SUBDIR += py-iniparse
     SUBDIR += py-initgroups
     SUBDIR += py-instant
+    SUBDIR += py-intbitset
     SUBDIR += py-interface
     SUBDIR += py-intervaltree
     SUBDIR += py-invoke

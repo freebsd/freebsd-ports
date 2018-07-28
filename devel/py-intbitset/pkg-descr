@@ -1,0 +1,19 @@
+The intbitset library provides a set implementation to store sorted unsigned
+integers either 32-bits integers or an infinite range with fast set operations
+implemented via bit vectors in a Python C extension for speed and reduced memory
+usage.
+
+The inbitset class emulates the Python built-in set class interface with some
+additional specific methods such as its own fast dump and load marshalling
+functions.
+
+intbitset additionally support the pickle protocol, the iterator protocol and
+can behave like a sequence that can be sliced. Because the integers are always
+stored sorted, the first element of a non-empty set [0] is also the min()
+integer and the last element [-1] is also the max() integer in the set.
+
+When compared to the standard library set class, intbitset set operations such
+as intersection, union and difference can be up to 5000 faster for dense integer
+sets.
+
+WWW: https://github.com/inveniosoftware/intbitset/
