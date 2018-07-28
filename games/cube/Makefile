@@ -3,7 +3,7 @@
 
 PORTNAME=	cube
 DISTVERSION=	2005_08_29
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 DISTFILES=	${CUBE_DATA} ${CUBE_SRC}
@@ -14,6 +14,7 @@ COMMENT=	OpenGL 3D FPS (first person shooter) game
 LIB_DEPENDS=	libenet.so:net/enet
 
 USES=		dos2unix gmake
+USE_CXXSTD=	gnu++98
 EXTRACT_AFTER_ARGS=--exclude enet
 ALL_TARGET=	#
 
@@ -33,7 +34,7 @@ OPTIONS_SUB=	yes
 
 FLAVOR_DESC=	Clients and servers
 CLIENT_DESC=	Build client
-CLIENT_USE=			GL=glu SDL=image,mixer,sdl XORG=x11
+CLIENT_USE=			GL=gl,glu SDL=image,mixer,sdl XORG=x11
 CLIENT_LDFLAGS=			-lX11
 CLIENT_ALL_TARGET=		client
 OPTIMIZED_CFLAGS_CFLAGS=	-O3 -fomit-frame-pointer
