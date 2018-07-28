@@ -1,0 +1,5 @@
+This package provides a FileLock class that implements a context manager with
+timeouts on top of zc.lockfile, an excellent, cross-platorm implementation of
+file locking.
+
+WWW: https://github.com/yougov/yg.lockfile
