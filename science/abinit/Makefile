@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	abinit
-DISTVERSION=	8.8.3
+DISTVERSION=	8.8.4
 CATEGORIES=	science
 MASTER_SITES=	https://www.abinit.org/sites/default/files/packages/
 
