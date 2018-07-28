@@ -11,12 +11,15 @@ share/themes/Xfce Evolution Bronze/gtk-2.0/options/button-pressed-bent.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/button-pressed-contrast.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Bronze/gtk-2.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/default-button-themed.css
-share/themes/Xfce Evolution Bronze/gtk-2.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Bronze/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Bronze/gtk-2.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Bronze/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Bronze/gtk-2.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Bronze/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Bronze/gtk-2.0/options/menu-separator-relief.css
@@ -39,15 +42,20 @@ share/themes/Xfce Evolution Bronze/gtk-2.0/widgets.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/assets
 share/themes/Xfce Evolution Bronze/gtk-3.0/gtk.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/button-pressed-bent.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/button-pressed-bent_tab.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/button-pressed-contrast.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/button-pressed-contrast_tab.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/default-button-themed.css
-share/themes/Xfce Evolution Bronze/gtk-3.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Bronze/gtk-3.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/menu-separator-relief.css
@@ -58,11 +66,10 @@ share/themes/Xfce Evolution Bronze/gtk-3.0/options/panel-themed-1.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/panel-themed-2.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/panel-themed-3.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/panel-themed.css
-share/themes/Xfce Evolution Bronze/gtk-3.0/options/tab-button-1.css
-share/themes/Xfce Evolution Bronze/gtk-3.0/options/tab-button-2.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/options/tab-notebook.css
+share/themes/Xfce Evolution Bronze/gtk-3.0/options/tab-tab.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Bronze/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Bronze/gtk-3.0/widgets.css
@@ -77,12 +84,15 @@ share/themes/Xfce Evolution Crux/gtk-2.0/options/button-pressed-bent.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/button-pressed-contrast.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Crux/gtk-2.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/default-button-themed.css
-share/themes/Xfce Evolution Crux/gtk-2.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Crux/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Crux/gtk-2.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Crux/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Crux/gtk-2.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Crux/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Crux/gtk-2.0/options/menu-separator-relief.css
@@ -105,15 +115,20 @@ share/themes/Xfce Evolution Crux/gtk-2.0/widgets.css
 share/themes/Xfce Evolution Crux/gtk-3.0/assets
 share/themes/Xfce Evolution Crux/gtk-3.0/gtk.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/button-pressed-bent.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/button-pressed-bent_tab.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/button-pressed-contrast.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/button-pressed-contrast_tab.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/default-button-themed.css
-share/themes/Xfce Evolution Crux/gtk-3.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Crux/gtk-3.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/menu-separator-relief.css
@@ -124,11 +139,10 @@ share/themes/Xfce Evolution Crux/gtk-3.0/options/panel-themed-1.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/panel-themed-2.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/panel-themed-3.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/panel-themed.css
-share/themes/Xfce Evolution Crux/gtk-3.0/options/tab-button-1.css
-share/themes/Xfce Evolution Crux/gtk-3.0/options/tab-button-2.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Crux/gtk-3.0/options/tab-notebook.css
+share/themes/Xfce Evolution Crux/gtk-3.0/options/tab-tab.css
 share/themes/Xfce Evolution Crux/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Crux/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Crux/gtk-3.0/widgets.css
@@ -143,12 +157,15 @@ share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/button-pressed-bent.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/button-pressed-contrast.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/default-button-themed.css
-share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Devilsclaw/gtk-2.0/options/menu-separator-relief.css
@@ -171,15 +188,20 @@ share/themes/Xfce Evolution Devilsclaw/gtk-2.0/widgets.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/assets
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/gtk.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/button-pressed-bent.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/button-pressed-bent_tab.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/button-pressed-contrast.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/button-pressed-contrast_tab.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/default-button-themed.css
-share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/menu-separator-relief.css
@@ -190,11 +212,10 @@ share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/panel-themed-1.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/panel-themed-2.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/panel-themed-3.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/panel-themed.css
-share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/tab-button-1.css
-share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/tab-button-2.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/tab-notebook.css
+share/themes/Xfce Evolution Devilsclaw/gtk-3.0/options/tab-tab.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Devilsclaw/gtk-3.0/widgets.css
@@ -209,12 +230,15 @@ share/themes/Xfce Evolution Graphite/gtk-2.0/options/button-pressed-bent.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/button-pressed-contrast.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Graphite/gtk-2.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/default-button-themed.css
-share/themes/Xfce Evolution Graphite/gtk-2.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Graphite/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Graphite/gtk-2.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Graphite/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Graphite/gtk-2.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Graphite/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Graphite/gtk-2.0/options/menu-separator-relief.css
@@ -237,15 +261,20 @@ share/themes/Xfce Evolution Graphite/gtk-2.0/widgets.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/assets
 share/themes/Xfce Evolution Graphite/gtk-3.0/gtk.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/button-pressed-bent.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/button-pressed-bent_tab.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/button-pressed-contrast.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/button-pressed-contrast_tab.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/default-button-themed.css
-share/themes/Xfce Evolution Graphite/gtk-3.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Graphite/gtk-3.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/menu-separator-relief.css
@@ -256,11 +285,10 @@ share/themes/Xfce Evolution Graphite/gtk-3.0/options/panel-themed-1.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/panel-themed-2.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/panel-themed-3.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/panel-themed.css
-share/themes/Xfce Evolution Graphite/gtk-3.0/options/tab-button-1.css
-share/themes/Xfce Evolution Graphite/gtk-3.0/options/tab-button-2.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/options/tab-notebook.css
+share/themes/Xfce Evolution Graphite/gtk-3.0/options/tab-tab.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Graphite/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Graphite/gtk-3.0/widgets.css
@@ -275,12 +303,15 @@ share/themes/Xfce Evolution Greybird/gtk-2.0/options/button-pressed-bent.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/button-pressed-contrast.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Greybird/gtk-2.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/default-button-themed.css
-share/themes/Xfce Evolution Greybird/gtk-2.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Greybird/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Greybird/gtk-2.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Greybird/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Greybird/gtk-2.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Greybird/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Greybird/gtk-2.0/options/menu-separator-relief.css
@@ -303,15 +334,20 @@ share/themes/Xfce Evolution Greybird/gtk-2.0/widgets.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/assets
 share/themes/Xfce Evolution Greybird/gtk-3.0/gtk.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/button-pressed-bent.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/button-pressed-bent_tab.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/button-pressed-contrast.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/button-pressed-contrast_tab.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/default-button-themed.css
-share/themes/Xfce Evolution Greybird/gtk-3.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Greybird/gtk-3.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/menu-separator-relief.css
@@ -322,14 +358,86 @@ share/themes/Xfce Evolution Greybird/gtk-3.0/options/panel-themed-1.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/panel-themed-2.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/panel-themed-3.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/panel-themed.css
-share/themes/Xfce Evolution Greybird/gtk-3.0/options/tab-button-1.css
-share/themes/Xfce Evolution Greybird/gtk-3.0/options/tab-button-2.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/options/tab-notebook.css
+share/themes/Xfce Evolution Greybird/gtk-3.0/options/tab-tab.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Greybird/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Greybird/gtk-3.0/widgets.css
+share/themes/Xfce Evolution Icelake/00.00
+share/themes/Xfce Evolution Icelake/00.10
+share/themes/Xfce Evolution Icelake/00.20
+share/themes/Xfce Evolution Icelake/00.30
+share/themes/Xfce Evolution Icelake/00.40
+share/themes/Xfce Evolution Icelake/gtk-2.0/assets
+share/themes/Xfce Evolution Icelake/gtk-2.0/gtkrc
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/button-pressed-bent.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/button-pressed-contrast.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/button-pressed-explicit.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/button-pressed-tx.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/default-button-contrast.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/default-button-explicit.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/default-button-off.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/default-button-themed.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/keyboard-navigation-on.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/menu-separator-dark.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/menu-separator-relief.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/panel-black.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/panel-contrast.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/panel-dark-1.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/panel-dark-2.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/panel-dark.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/panel-themed-1.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/panel-themed-2.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/panel-themed-3.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/panel-themed.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/tab-button.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/tab-flat.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/tab-notebook-1.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/tab-notebook-2.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/options/tab-notebook.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/tweaks.css
+share/themes/Xfce Evolution Icelake/gtk-2.0/widgets.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/assets
+share/themes/Xfce Evolution Icelake/gtk-3.0/gtk.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/button-pressed-bent.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/button-pressed-bent_tab.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/button-pressed-contrast.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/button-pressed-contrast_tab.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/button-pressed-explicit.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/button-pressed-tx.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/default-button-contrast.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/default-button-explicit.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/default-button-off.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/default-button-themed.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/keyboard-navigation-on.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/menu-separator-dark.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/menu-separator-relief.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/panel-black.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/panel-contrast.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/panel-dark.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/panel-themed-1.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/panel-themed-2.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/panel-themed-3.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/panel-themed.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/tab-button.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/tab-flat.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/tab-notebook.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/options/tab-tab.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/settings.ini
+share/themes/Xfce Evolution Icelake/gtk-3.0/tweaks.css
+share/themes/Xfce Evolution Icelake/gtk-3.0/widgets.css
 share/themes/Xfce Evolution Rainyday/00.00
 share/themes/Xfce Evolution Rainyday/00.10
 share/themes/Xfce Evolution Rainyday/00.20
@@ -341,12 +449,15 @@ share/themes/Xfce Evolution Rainyday/gtk-2.0/options/button-pressed-bent.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/button-pressed-contrast.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Rainyday/gtk-2.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/default-button-themed.css
-share/themes/Xfce Evolution Rainyday/gtk-2.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Rainyday/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Rainyday/gtk-2.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Rainyday/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Rainyday/gtk-2.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Rainyday/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Rainyday/gtk-2.0/options/menu-separator-relief.css
@@ -369,15 +480,20 @@ share/themes/Xfce Evolution Rainyday/gtk-2.0/widgets.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/assets
 share/themes/Xfce Evolution Rainyday/gtk-3.0/gtk.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/button-pressed-bent.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/button-pressed-bent_tab.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/button-pressed-contrast.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/button-pressed-contrast_tab.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/default-button-themed.css
-share/themes/Xfce Evolution Rainyday/gtk-3.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Rainyday/gtk-3.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/menu-separator-relief.css
@@ -388,11 +504,10 @@ share/themes/Xfce Evolution Rainyday/gtk-3.0/options/panel-themed-1.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/panel-themed-2.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/panel-themed-3.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/panel-themed.css
-share/themes/Xfce Evolution Rainyday/gtk-3.0/options/tab-button-1.css
-share/themes/Xfce Evolution Rainyday/gtk-3.0/options/tab-button-2.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/options/tab-notebook.css
+share/themes/Xfce Evolution Rainyday/gtk-3.0/options/tab-tab.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Rainyday/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Rainyday/gtk-3.0/widgets.css
@@ -407,12 +522,15 @@ share/themes/Xfce Evolution Raleigh/gtk-2.0/options/button-pressed-bent.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/button-pressed-contrast.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Raleigh/gtk-2.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/default-button-themed.css
-share/themes/Xfce Evolution Raleigh/gtk-2.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Raleigh/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Raleigh/gtk-2.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Raleigh/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Raleigh/gtk-2.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Raleigh/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Raleigh/gtk-2.0/options/menu-separator-relief.css
@@ -435,15 +553,20 @@ share/themes/Xfce Evolution Raleigh/gtk-2.0/widgets.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/assets
 share/themes/Xfce Evolution Raleigh/gtk-3.0/gtk.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/button-pressed-bent.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/button-pressed-bent_tab.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/button-pressed-contrast.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/button-pressed-contrast_tab.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/default-button-themed.css
-share/themes/Xfce Evolution Raleigh/gtk-3.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Raleigh/gtk-3.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/menu-separator-relief.css
@@ -454,11 +577,10 @@ share/themes/Xfce Evolution Raleigh/gtk-3.0/options/panel-themed-1.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/panel-themed-2.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/panel-themed-3.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/panel-themed.css
-share/themes/Xfce Evolution Raleigh/gtk-3.0/options/tab-button-1.css
-share/themes/Xfce Evolution Raleigh/gtk-3.0/options/tab-button-2.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/options/tab-notebook.css
+share/themes/Xfce Evolution Raleigh/gtk-3.0/options/tab-tab.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Raleigh/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Raleigh/gtk-3.0/widgets.css
@@ -473,12 +595,15 @@ share/themes/Xfce Evolution Redmond/gtk-2.0/options/button-pressed-bent.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/button-pressed-contrast.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Redmond/gtk-2.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/default-button-themed.css
-share/themes/Xfce Evolution Redmond/gtk-2.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Redmond/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Redmond/gtk-2.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Redmond/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Redmond/gtk-2.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Redmond/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Redmond/gtk-2.0/options/menu-separator-relief.css
@@ -501,15 +626,20 @@ share/themes/Xfce Evolution Redmond/gtk-2.0/widgets.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/assets
 share/themes/Xfce Evolution Redmond/gtk-3.0/gtk.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/button-pressed-bent.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/button-pressed-bent_tab.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/button-pressed-contrast.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/button-pressed-contrast_tab.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/default-button-themed.css
-share/themes/Xfce Evolution Redmond/gtk-3.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Redmond/gtk-3.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/menu-separator-relief.css
@@ -520,11 +650,10 @@ share/themes/Xfce Evolution Redmond/gtk-3.0/options/panel-themed-1.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/panel-themed-2.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/panel-themed-3.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/panel-themed.css
-share/themes/Xfce Evolution Redmond/gtk-3.0/options/tab-button-1.css
-share/themes/Xfce Evolution Redmond/gtk-3.0/options/tab-button-2.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/options/tab-notebook.css
+share/themes/Xfce Evolution Redmond/gtk-3.0/options/tab-tab.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Redmond/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Redmond/gtk-3.0/widgets.css
@@ -539,12 +668,15 @@ share/themes/Xfce Evolution Solaris/gtk-2.0/options/button-pressed-bent.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/button-pressed-contrast.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Solaris/gtk-2.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/default-button-themed.css
-share/themes/Xfce Evolution Solaris/gtk-2.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Solaris/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Solaris/gtk-2.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Solaris/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Solaris/gtk-2.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Solaris/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Solaris/gtk-2.0/options/menu-separator-relief.css
@@ -567,15 +699,20 @@ share/themes/Xfce Evolution Solaris/gtk-2.0/widgets.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/assets
 share/themes/Xfce Evolution Solaris/gtk-3.0/gtk.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/button-pressed-bent.css
+share/themes/Xfce Evolution Solaris/gtk-3.0/options/button-pressed-bent_tab.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/button-pressed-contrast.css
+share/themes/Xfce Evolution Solaris/gtk-3.0/options/button-pressed-contrast_tab.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Solaris/gtk-3.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/default-button-themed.css
-share/themes/Xfce Evolution Solaris/gtk-3.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Solaris/gtk-3.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Solaris/gtk-3.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Solaris/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Solaris/gtk-3.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Solaris/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/menu-separator-relief.css
@@ -586,11 +723,10 @@ share/themes/Xfce Evolution Solaris/gtk-3.0/options/panel-themed-1.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/panel-themed-2.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/panel-themed-3.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/panel-themed.css
-share/themes/Xfce Evolution Solaris/gtk-3.0/options/tab-button-1.css
-share/themes/Xfce Evolution Solaris/gtk-3.0/options/tab-button-2.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/options/tab-notebook.css
+share/themes/Xfce Evolution Solaris/gtk-3.0/options/tab-tab.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Solaris/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Solaris/gtk-3.0/widgets.css
@@ -605,12 +741,15 @@ share/themes/Xfce Evolution Straw/gtk-2.0/options/button-pressed-bent.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/button-pressed-contrast.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Straw/gtk-2.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/default-button-themed.css
-share/themes/Xfce Evolution Straw/gtk-2.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Straw/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Straw/gtk-2.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Straw/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Straw/gtk-2.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Straw/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Straw/gtk-2.0/options/menu-separator-relief.css
@@ -633,15 +772,20 @@ share/themes/Xfce Evolution Straw/gtk-2.0/widgets.css
 share/themes/Xfce Evolution Straw/gtk-3.0/assets
 share/themes/Xfce Evolution Straw/gtk-3.0/gtk.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/button-pressed-bent.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/button-pressed-bent_tab.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/button-pressed-contrast.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/button-pressed-contrast_tab.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/default-button-themed.css
-share/themes/Xfce Evolution Straw/gtk-3.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Straw/gtk-3.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/menu-separator-relief.css
@@ -652,14 +796,86 @@ share/themes/Xfce Evolution Straw/gtk-3.0/options/panel-themed-1.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/panel-themed-2.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/panel-themed-3.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/panel-themed.css
-share/themes/Xfce Evolution Straw/gtk-3.0/options/tab-button-1.css
-share/themes/Xfce Evolution Straw/gtk-3.0/options/tab-button-2.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Straw/gtk-3.0/options/tab-notebook.css
+share/themes/Xfce Evolution Straw/gtk-3.0/options/tab-tab.css
 share/themes/Xfce Evolution Straw/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Straw/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Straw/gtk-3.0/widgets.css
+share/themes/Xfce Evolution Summerfield/00.00
+share/themes/Xfce Evolution Summerfield/00.10
+share/themes/Xfce Evolution Summerfield/00.20
+share/themes/Xfce Evolution Summerfield/00.30
+share/themes/Xfce Evolution Summerfield/00.40
+share/themes/Xfce Evolution Summerfield/gtk-2.0/assets
+share/themes/Xfce Evolution Summerfield/gtk-2.0/gtkrc
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/button-pressed-bent.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/button-pressed-contrast.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/button-pressed-explicit.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/button-pressed-tx.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/default-button-contrast.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/default-button-explicit.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/default-button-off.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/default-button-themed.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/keyboard-navigation-on.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/menu-separator-dark.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/menu-separator-relief.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/panel-black.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/panel-contrast.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/panel-dark-1.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/panel-dark-2.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/panel-dark.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/panel-themed-1.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/panel-themed-2.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/panel-themed-3.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/panel-themed.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/tab-button.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/tab-flat.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/tab-notebook-1.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/tab-notebook-2.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/options/tab-notebook.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/tweaks.css
+share/themes/Xfce Evolution Summerfield/gtk-2.0/widgets.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/assets
+share/themes/Xfce Evolution Summerfield/gtk-3.0/gtk.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/button-pressed-bent.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/button-pressed-bent_tab.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/button-pressed-contrast.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/button-pressed-contrast_tab.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/button-pressed-explicit.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/button-pressed-tx.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/default-button-contrast.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/default-button-explicit.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/default-button-off.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/default-button-themed.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/keyboard-navigation-on.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/menu-separator-dark.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/menu-separator-light.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/menu-separator-relief.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/panel-black.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/panel-contrast.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/panel-dark.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/panel-themed-1.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/panel-themed-2.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/panel-themed-3.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/panel-themed.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/tab-button.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/tab-flat.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/tab-notebook.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/options/tab-tab.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/settings.ini
+share/themes/Xfce Evolution Summerfield/gtk-3.0/tweaks.css
+share/themes/Xfce Evolution Summerfield/gtk-3.0/widgets.css
 share/themes/Xfce Evolution Summerstorm/00.00
 share/themes/Xfce Evolution Summerstorm/00.10
 share/themes/Xfce Evolution Summerstorm/00.20
@@ -671,12 +887,15 @@ share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/button-pressed-bent.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/button-pressed-contrast.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/default-button-themed.css
-share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Summerstorm/gtk-2.0/options/menu-separator-relief.css
@@ -699,15 +918,20 @@ share/themes/Xfce Evolution Summerstorm/gtk-2.0/widgets.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/assets
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/gtk.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/button-pressed-bent.css
+share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/button-pressed-bent_tab.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/button-pressed-contrast.css
+share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/button-pressed-contrast_tab.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/default-button-contrast.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/default-button-explicit.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/default-button-themed.css
-share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/menu-separator-light.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/menu-separator-relief.css
@@ -718,11 +942,10 @@ share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/panel-themed-1.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/panel-themed-2.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/panel-themed-3.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/panel-themed.css
-share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/tab-button-1.css
-share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/tab-button-2.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/tab-notebook.css
+share/themes/Xfce Evolution Summerstorm/gtk-3.0/options/tab-tab.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/settings.ini
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution Summerstorm/gtk-3.0/widgets.css
@@ -746,12 +969,15 @@ share/themes/Xfce Evolution/gtk-2.0/options/button-pressed-bent.css
 share/themes/Xfce Evolution/gtk-2.0/options/button-pressed-contrast.css
 share/themes/Xfce Evolution/gtk-2.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution/gtk-2.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution/gtk-2.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution/gtk-2.0/options/default-button-contrast.css
 share/themes/Xfce Evolution/gtk-2.0/options/default-button-explicit.css
 share/themes/Xfce Evolution/gtk-2.0/options/default-button-off.css
 share/themes/Xfce Evolution/gtk-2.0/options/default-button-themed.css
-share/themes/Xfce Evolution/gtk-2.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution/gtk-2.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution/gtk-2.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution/gtk-2.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution/gtk-2.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution/gtk-2.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution/gtk-2.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution/gtk-2.0/options/menu-separator-light.css
 share/themes/Xfce Evolution/gtk-2.0/options/menu-separator-relief.css
@@ -875,15 +1101,20 @@ share/themes/Xfce Evolution/gtk-3.0/assets/text-select-start.png
 share/themes/Xfce Evolution/gtk-3.0/assets/text-select-start@2.png
 share/themes/Xfce Evolution/gtk-3.0/gtk.css
 share/themes/Xfce Evolution/gtk-3.0/options/button-pressed-bent.css
+share/themes/Xfce Evolution/gtk-3.0/options/button-pressed-bent_tab.css
 share/themes/Xfce Evolution/gtk-3.0/options/button-pressed-contrast.css
+share/themes/Xfce Evolution/gtk-3.0/options/button-pressed-contrast_tab.css
 share/themes/Xfce Evolution/gtk-3.0/options/button-pressed-explicit.css
 share/themes/Xfce Evolution/gtk-3.0/options/button-pressed-themed.css
+share/themes/Xfce Evolution/gtk-3.0/options/button-pressed-tx.css
 share/themes/Xfce Evolution/gtk-3.0/options/default-button-contrast.css
 share/themes/Xfce Evolution/gtk-3.0/options/default-button-explicit.css
 share/themes/Xfce Evolution/gtk-3.0/options/default-button-off.css
 share/themes/Xfce Evolution/gtk-3.0/options/default-button-themed.css
-share/themes/Xfce Evolution/gtk-3.0/options/focus-rectangle-off.css
-share/themes/Xfce Evolution/gtk-3.0/options/focus-rectangle-on.css
+share/themes/Xfce Evolution/gtk-3.0/options/desktop-icon-background-off.css
+share/themes/Xfce Evolution/gtk-3.0/options/desktop-icon-background-on.css
+share/themes/Xfce Evolution/gtk-3.0/options/keyboard-navigation-off.css
+share/themes/Xfce Evolution/gtk-3.0/options/keyboard-navigation-on.css
 share/themes/Xfce Evolution/gtk-3.0/options/menu-separator-dark.css
 share/themes/Xfce Evolution/gtk-3.0/options/menu-separator-light.css
 share/themes/Xfce Evolution/gtk-3.0/options/menu-separator-relief.css
@@ -894,11 +1125,10 @@ share/themes/Xfce Evolution/gtk-3.0/options/panel-themed-1.css
 share/themes/Xfce Evolution/gtk-3.0/options/panel-themed-2.css
 share/themes/Xfce Evolution/gtk-3.0/options/panel-themed-3.css
 share/themes/Xfce Evolution/gtk-3.0/options/panel-themed.css
-share/themes/Xfce Evolution/gtk-3.0/options/tab-button-1.css
-share/themes/Xfce Evolution/gtk-3.0/options/tab-button-2.css
 share/themes/Xfce Evolution/gtk-3.0/options/tab-button.css
 share/themes/Xfce Evolution/gtk-3.0/options/tab-flat.css
 share/themes/Xfce Evolution/gtk-3.0/options/tab-notebook.css
+share/themes/Xfce Evolution/gtk-3.0/options/tab-tab.css
 share/themes/Xfce Evolution/gtk-3.0/settings.ini
 share/themes/Xfce Evolution/gtk-3.0/tweaks.css
 share/themes/Xfce Evolution/gtk-3.0/widgets.css
