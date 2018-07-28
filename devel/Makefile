@@ -4367,6 +4367,7 @@
     SUBDIR += py-backports.tempfile
     SUBDIR += py-backports.weakref
     SUBDIR += py-backports_abc
+    SUBDIR += py-banal
     SUBDIR += py-bandit
     SUBDIR += py-bcdoc
     SUBDIR += py-bidict
