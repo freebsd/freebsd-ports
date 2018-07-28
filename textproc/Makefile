@@ -952,6 +952,7 @@
     SUBDIR += p5-Text-Table
     SUBDIR += p5-Text-Table-ASV
     SUBDIR += p5-Text-Table-Manifold
+    SUBDIR += p5-Text-Table-Tiny
     SUBDIR += p5-Text-Tabs+Wrap
     SUBDIR += p5-Text-TabularDisplay
     SUBDIR += p5-Text-Tags
