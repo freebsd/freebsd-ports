@@ -9,6 +9,7 @@
     SUBDIR += bitchx
     SUBDIR += bitlbee
     SUBDIR += bitlbee-facebook
+    SUBDIR += bitlbee-steam
     SUBDIR += bnc
     SUBDIR += bopm
     SUBDIR += cgiirc
