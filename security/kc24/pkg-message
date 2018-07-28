@@ -1,0 +1,40 @@
+IMPORTANT:
+kc v2.4 has introduced a new database file format that is incompatible
+with the older one (<2.4).
+
+Dump all your data to files before upgrading to version 2.4 and re-import:
+
+1) Dump the old database with the old version of kc:
+
+$ kc -k ~/.kc/default.kcd
+Password:
+<example_chain% > dump kcdump
+Dump OK
+<example_chain% > quit
+$ ls kcdump.xml
+kcdump.xml
+
+2) Make a backup, just in case
+
+$ mv ~/.kc/default.kcd ~/.kc/default.kcd-backup
+
+3) Upgrade kc to version 2.4
+
+4) Create a new, empty database file and import the dump
+
+$ kc
+Creating '~/.kc/default.kcd'
+Using '~/.kc/default.kcd' database.
+New password (empty to cancel):
+New password again (empty to cancel):
+<default% > importxml -k kcdump.xml
+Import OK
+<example_chain% > write
+Save OK
+<example_chain% > quit
+
+5) Test if the import is ok
+
+6) Remove the dump
+
+rm -P kcdump.xml
