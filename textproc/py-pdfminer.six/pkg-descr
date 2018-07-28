@@ -1,0 +1,22 @@
+PDFMiner.six is a fork of PDFMiner using six for Python 2 + 3 compatibility.
+
+PDFMiner is a tool for extracting information from PDF documents. Unlike other
+PDF-related tools, it focuses entirely on getting and analyzing text data.
+
+PDFMiner allows one to obtain the exact location of text in a page, as well as
+other information such as fonts or lines. It includes a PDF converter that can
+transform PDF files into other text formats (such as HTML). It has an extensible
+PDF parser that can be used for other purposes than text analysis.
+
+Features:
+
+- Parse, analyze, and convert PDF documents.
+- PDF-1.7 specification support. (well, almost)
+- CJK languages and vertical writing scripts support.
+- Various font types (Type1, TrueType, Type3, and CID) support.
+- Basic encryption (RC4) support.
+- Outline (TOC) extraction.
+- Tagged contents extraction.
+- Automatic layout analysis.
+
+WWW: https://github.com/pdfminer/pdfminer.six
