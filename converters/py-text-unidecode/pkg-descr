@@ -1,0 +1,7 @@
+text-unidecode is the most basic port of the Text::Unidecode Perl library. There
+are other Python ports of Text::Unidecode (unidecode and isounidecode).
+
+unidecode is GPL, isounidecode uses too much memory, and it didn't support
+Python 3 when this package was created.
+
+WWW: https://github.com/kmike/text-unidecode
