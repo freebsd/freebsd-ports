@@ -1,0 +1,17 @@
+pg_similarity is an extension to support similarity queries on PostgreSQL. The
+implementation is tightly integrated in the RDBMS in the sense that it defines
+operators so instead of the traditional operators (= and <>) you can use ~~~
+and ! (any of these operators represents a similarity function).
+
+pg_similarity has three main components:
+
+* Functions: a set of functions that implements similarity algorithms available
+  in the literature. These functions can be used as UDFs and, will be the base
+  for implementing the similarity operators;
+* Operators: a set of operators defined at the top of similarity functions. They
+  use similarity functions to obtain the similarity threshold and, compare its
+  value to a user-defined threshold to decide if it is a match or not;
+* Session Variables: a set of variables that store similarity function
+  parameters. Theses variables can be defined at run time.
+
+WWW: http://pgsimilarity.projects.pgfoundry.org
