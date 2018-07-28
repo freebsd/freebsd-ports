@@ -15,16 +15,19 @@
 
 . /etc/rc.subr
 
-name="znapzend"
-rcvar="znapzend_enable"
+name=znapzend
+desc="Znapzend backup daemon"
+rcvar=znapzend_enable
 
 load_rc_config $name
 
-: ${znapzend_enable="NO"}
+: ${znapzend_enable:=NO}
 
+extra_commands=reload
+command_interpreter=/usr/local/bin/perl
+sig_reload=HUP
 pidfile=/var/run/${name}.pid
 command=%%PREFIX%%/bin/${name}
-command_args="--daemonize --pidfile=${pidfile}"
+command_args="--daemonize --pidfile=${pidfile} --logto=/var/log/znapzend.log"
 
 run_rc_command "$1"
-
