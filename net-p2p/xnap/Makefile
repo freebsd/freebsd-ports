@@ -15,6 +15,9 @@ COMMENT=	Pure Java napster client; also, supports OpenNap & giFT (FastTrack)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unmaintained. Napster, OpenNap, and FastTrack are dead
+EXPIRATION_DATE=	2018-08-30
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes

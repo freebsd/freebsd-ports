@@ -9,6 +9,9 @@ MASTER_SITES=	SF/nap/nap/${PORTVERSION}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	MP3 sharing, search, and chat client for the OpenNAP network
 
+DEPRECATED=	Unmaintained. Napster and OpenNap are dead
+EXPIRATION_DATE=	2018-08-30
+
 CONFLICTS?=	ru-nap-*
 
 USES=		ncurses
