@@ -1,0 +1,19 @@
+--- configure.in.orig	2018-03-02 20:59:11.000000000 +0800
++++ configure.in	2018-07-19 14:22:04.753721000 +0800
+@@ -3423,7 +3423,6 @@
+ 			: ${LDSHARED='$(CC) -shared'}
+ 			if test "$rb_cv_binary_elf" = yes; then
+ 			    LDFLAGS="$LDFLAGS -rdynamic"
+-			    DLDFLAGS="$DLDFLAGS "'-Wl,-soname,$@'
+ 			else
+ 			  test "$GCC" = yes && test "$rb_cv_prog_gnu_ld" = yes || LDSHARED='$(LD) -Bshareable'
+ 			fi
+@@ -3896,6 +3895,8 @@
+     [freebsd*|dragonfly*], [
+ 	SOLIBS='$(LIBS)'
+ 	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.$(MAJOR)$(MINOR)'
++	RUBY_APPEND_OPTIONS(DLDFLAGS, ['-Wl,-soname,${LIBRUBY_SO}' "$LDFLAGS_OPTDIR"])
++	RUBY_APPEND_OPTIONS(LIBRUBY_DLDFLAGS, ['-Wl,-soname,${LIBRUBY_SO}' "$LDFLAGS_OPTDIR"])
+ 	if test "$rb_cv_binary_elf" != "yes" ; then
+ 	    LIBRUBY_SO="$LIBRUBY_SO.\$(TEENY)"
+ 	    LIBRUBY_ALIASES=''
