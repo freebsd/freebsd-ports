@@ -162,6 +162,7 @@
     SUBDIR += py-iconv
     SUBDIR += py-pint
     SUBDIR += py-rencode
+    SUBDIR += py-text-unidecode
     SUBDIR += py-unidecode
     SUBDIR += py-webencodings
     SUBDIR += py-zfec
