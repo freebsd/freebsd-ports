@@ -1,0 +1,5 @@
+py-url provides helper functions for parsing, sanitizing and normalizing URLs.
+This includes support for escaping, unescaping, punycoding, unpunycoding,
+cleaning parameter and query strings and a little more sanitization.
+
+WWW: https://github.com/seomoz/url-py
