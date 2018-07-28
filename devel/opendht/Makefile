@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opendht
-DISTVERSION=	1.7.2
+DISTVERSION=	1.7.3
 CATEGORIES=	devel net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,6 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libargon2.so:security/libargon2 \
+		libjsoncpp.so:devel/jsoncpp \
 		libmsgpackc.so:devel/msgpack \
 		libnettle.so:security/nettle \
 		libgnutls.so:security/gnutls
