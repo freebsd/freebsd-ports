@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zookeeper
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.2
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libzookeeper_mt.so:devel/libzookeeper
 
+IGNORE_WITH_PHP=56
 USE_PHP=	session:build
 USES=		php:pecl
 
