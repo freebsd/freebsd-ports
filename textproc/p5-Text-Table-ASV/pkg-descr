@@ -1,0 +1,14 @@
+Text::Table::ASV provides a single function, table, which formats a
+two-dimensional array of data as ASV. This is basically a way to generate ASV
+using the same interface as that of Text::Table::Tiny (v0.03) or
+Text::Table::Org.
+
+ASV (ASCII separated values, also sometimes DEL a.k.a. Delimited ASCII) is a
+format similar to TSV (tab separated values). Instead of Tab character ("\t") as
+the field separator, ASV uses "\x1f" (ASCII Unit Separator character) and
+instead of newline ("\n") as the record separator, ASV uses "\x1e" (ASCII Record
+Separator). There is currently no quoting or escaping mechanism provided.
+"\x1c", "\x1d", "\x1e", and "\x1f" characters in cell will be replaced by
+spaces.
+
+WWW: https://metacpan.org/release/Text-Table-ASV

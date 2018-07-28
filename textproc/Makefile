@@ -950,6 +950,7 @@
     SUBDIR += p5-Text-SpellChecker
     SUBDIR += p5-Text-Striphigh
     SUBDIR += p5-Text-Table
+    SUBDIR += p5-Text-Table-ASV
     SUBDIR += p5-Text-Table-Manifold
     SUBDIR += p5-Text-Tabs+Wrap
     SUBDIR += p5-Text-TabularDisplay
