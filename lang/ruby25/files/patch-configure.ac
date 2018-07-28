@@ -1,0 +1,19 @@
+--- configure.ac.orig	2018-01-04 02:12:16.000000000 +0800
++++ configure.ac	2018-07-19 14:45:11.636321000 +0800
+@@ -3245,7 +3245,6 @@
+ 			: ${LDSHARED='$(CC) -shared'}
+ 			AS_IF([test "$rb_cv_binary_elf" = yes], [
+ 			    LDFLAGS="$LDFLAGS -rdynamic"
+-			    DLDFLAGS="$DLDFLAGS "'-Wl,-soname,$@'
+ 			], [
+ 			  test "$GCC" = yes && test "$rb_cv_prog_gnu_ld" = yes || LDSHARED='$(LD) -Bshareable'
+ 			])
+@@ -3724,6 +3723,8 @@
+ 	SOLIBS='$(LIBS)'
+ 	LIBRUBY_SO='lib$(RUBY_SO_NAME).$(SOEXT).$(MAJOR)$(MINOR)'
+ 	LIBRUBY_SONAME='$(LIBRUBY_SO)'
++	RUBY_APPEND_OPTIONS(DLDFLAGS, ['-Wl,-soname,${LIBRUBY_SO}' "$LDFLAGS_OPTDIR"])
++	RUBY_APPEND_OPTIONS(LIBRUBY_DLDFLAGS, ['-Wl,-soname,${LIBRUBY_SO}' "$LDFLAGS_OPTDIR"])
+ 	AS_IF([test "$rb_cv_binary_elf" != "yes" ], [
+ 	    LIBRUBY_SO="$LIBRUBY_SO.\$(TEENY)"
+ 	    LIBRUBY_ALIASES=''
