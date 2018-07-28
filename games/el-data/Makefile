@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	data
-PORTVERSION=	1.9.4
+PORTVERSION=	1.9.5
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.eternal-lands.com/:data \
@@ -22,7 +22,7 @@ DOS2UNIX_GLOB=	*.ini *.txt
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX:S/-//}
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX:S/-/_/}linux
-EL_DATA=	${PKGNAMEPREFIX:S/-/_/}linux_installer_${PORTVERSION:S/.//g}.sh
+EL_DATA=	${PKGNAMEPREFIX:S/-/_/}linux_install_${PORTVERSION:S/.//g}.sh
 
 PORTDATA=	*
 
