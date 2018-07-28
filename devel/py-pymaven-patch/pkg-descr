@@ -1,0 +1,9 @@
+pymaven is a library for working with maven repositories via python. pymaven is
+not intended as a complete replacement of the maven build system, but instead as
+a way for python programs to fetch artifacts and artifact dependencies from
+maven2 repositories. 
+
+Note: This is a forked version from the 2.x branch that supports unicode and
+      uses other routines for data structures.
+
+WWW: https://github.com/nexB/pymaven
