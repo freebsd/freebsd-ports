@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	stella
-PORTVERSION=	4.7.3
-PORTREVISION=	2
+PORTVERSION=	5.1.3
 CATEGORIES=	emulators
-MASTER_SITES=	https://github.com/stella-emu/stella/releases/download/release-${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Multi-platform Atari 2600 VCS emulator
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/License.txt
+
+USE_GITHUB=     yes
+GH_ACCOUNT=	stella-emu
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
