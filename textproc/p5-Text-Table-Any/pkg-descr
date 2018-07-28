@@ -1,0 +1,6 @@
+Text::Table::Any provides a single function, table, which formats a
+two-dimensional array of data as text table, using one of several available
+backends. The interface is modelled after Text::Table::Tiny (0.3);
+Text::Table::Tiny also happens to be the default backend.
+
+WWW: https://metacpan.org/release/Text-Table-Any
