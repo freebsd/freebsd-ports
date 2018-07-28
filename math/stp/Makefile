@@ -3,6 +3,7 @@
 
 PORTNAME=	stp
 DISTVERSION=	2.3.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math
 
@@ -22,5 +23,9 @@ LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 USES=		bison:build cmake:outsource perl5 python
 USE_GITHUB=	yes
 USE_PERL5=	build
+USE_LDCONFIG=	yes
+
+post-install:
+	@${MV} ${STAGEDIR}${PREFIX}/bin/stp-2.1.2 ${STAGEDIR}${PREFIX}/bin/stp
 
 .include <bsd.port.mk>

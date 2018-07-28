@@ -1,5 +1,4 @@
 bin/stp
-bin/stp-2.1.2
 bin/stp_simple
 include/stp/c_interface.h
 lib/cmake/STP/STPConfig.cmake
