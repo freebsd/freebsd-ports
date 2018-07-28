@@ -1,0 +1,5 @@
+Utility library to parse, normalize and compare License expressions for Python
+using a boolean logic engine. The intended use is for expressions using SPDX or
+any other license id scheme. 
+
+WWW: https://github.com/nexB/license-expression
