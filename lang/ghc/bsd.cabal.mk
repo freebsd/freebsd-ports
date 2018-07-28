@@ -325,7 +325,7 @@ add-plist-post: add-plist-cabal
 add-plist-cabal:
 
 .  if !defined(STANDALONE)
-	@${ECHO_CMD} '@postunexec ${LOCALBASE}/bin/ghc-pkg unregister --force ${PORTNAME}-${PORTVERSION}' >> ${TMPPLIST}
+	@${ECHO_CMD} '@postunexec ${LOCALBASE}/bin/ghc-pkg unregister --no-user-package-db --force ${PORTNAME}-${PORTVERSION}' >> ${TMPPLIST}
 .  endif
 
 .  if defined(HADDOCK_AVAILABLE) && ${PORT_OPTIONS:MDOCS}
