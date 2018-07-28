@@ -1,0 +1,21 @@
+PyOCR is an optical character recognition (OCR) tool wrapper for python. That
+is, it helps using various OCR tools from a Python program.
+
+It has been tested only on GNU/Linux systems. It should also work on similar
+systems (*BSD, etc). It may or may not work on Windows, MacOSX, etc.
+
+Supported OCR tools:
+* Libtesseract (Python bindings for the C API)
+* Tesseract (wrapper: fork + exec)
+* Cuneiform (wrapper: fork + exec)
+
+Features:
+* Supports all the image formats supported by Pillow, including jpeg, png, gif,
+  bmp, tiff and others
+* Various output types: text only, bounding boxes, etc.
+* Orientation detection (Tesseract and libtesseract only)
+* Can focus on digits only (Tesseract and libtesseract only)
+* Can save and reload boxes in hOCR format
+* PDF generation (libtesseract only)
+
+WWW: https://gitlab.gnome.org/World/OpenPaperwork/pyocr
