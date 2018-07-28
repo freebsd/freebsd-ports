@@ -3,6 +3,7 @@
 
 PORTNAME=	Crypt-OpenSSL-RSA
 PORTVERSION=	0.30
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +15,10 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0:security/p5-Crypt-OpenSSL-Bignum \
-		p5-Crypt-OpenSSL-Guess>=0.11:security/p5-Crypt-OpenSSL-Guess \
+BUILD_DEPENDS=	p5-Crypt-OpenSSL-Guess>=0.11:security/p5-Crypt-OpenSSL-Guess \
+		${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0:security/p5-Crypt-OpenSSL-Bignum \
 		p5-Crypt-OpenSSL-Random>=0:security/p5-Crypt-OpenSSL-Random
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 ssl
 USE_PERL5=	configure
