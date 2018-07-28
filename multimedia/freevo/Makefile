@@ -11,6 +11,7 @@ MAINTAINER=	fbsd@opal.com
 COMMENT=	Open source digital jukebox
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	mplayer:multimedia/mplayer \
 		mencoder:multimedia/mencoder \
@@ -21,7 +22,7 @@ RUN_DEPENDS=	mplayer:multimedia/mplayer \
 		${PYTHON_SITELIBDIR}/kaa/imlib2/__init__.py:multimedia/py-kaa-imlib2@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/kaa/metadata/__init__.py:multimedia/py-kaa-metadata@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/BeautifulSoup.py:www/py-beautifulsoup32@${PY_FLAVOR} \
-		${PYTHON_SITELIBDIR}/pygame/__init__.py:devel/py-game@${PY_FLAVOR} \
+		${PYGAME} \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/Numeric/Numeric_headers/__init__.py:math/py-numeric@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR}
