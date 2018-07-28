@@ -105,7 +105,7 @@ PLIST=		${.CURDIR}/pkg-plist
 .include "${MASTERDIR}/bsd.pypy.mk"
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && (${OSVERSION} < 1100000 || (${ARCH} != i386 && ${ARCH} != amd64))
+.if ${OPSYS} == FreeBSD && ${ARCH} != i386 && ${ARCH} != amd64
 PYPY_ARGS=	--withoutmod-_vmprof
 .else
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
