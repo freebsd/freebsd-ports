@@ -2,6 +2,7 @@
 
 PORTNAME=	dnsrecon
 DISTVERSION=	0.8.13
+PORTREVISION=	1
 CATEGORIES=	dns
 
 MAINTAINER=	rihaz.jerrin@gmail.com
@@ -10,6 +11,7 @@ COMMENT=	DNS enumeration tool
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>=0:dns/py-dnspython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=0:net/py-netaddr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 
@@ -25,7 +27,9 @@ FILELIST=	namelist.txt subdomains-top1mil-20000.txt \
 		subdomains-top1mil-5000.txt subdomains-top1mil.txt
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|from lib|from dnsrecon|g' ${WRKSRC}/${PORTNAME}.py
+	@${REINPLACE_CMD} -e 's|from lib|from dnsrecon|g' ${WRKSRC}/${PORTNAME}.py \
+							${WRKSRC}/lib/crtenum.py \
+							${WRKSRC}/lib/gooenum.py
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
