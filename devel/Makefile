@@ -4797,6 +4797,7 @@
     SUBDIR += py-palm
     SUBDIR += py-parallax
     SUBDIR += py-parsedatetime
+    SUBDIR += py-patch
     SUBDIR += py-path.py
     SUBDIR += py-pathlib
     SUBDIR += py-pathlib2
