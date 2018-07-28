@@ -581,22 +581,22 @@ debug-license: check-license
 .if ${_LICENSE_PERMS:Mdist-mirror}
 	@${ECHO_MSG} "===>  License allows mirroring distribution files"
 .else
-	@${ECHO_MSG} "===>  License does not allows mirroring distribution files"
+	@${ECHO_MSG} "===>  License does not allow mirroring distribution files"
 .endif
 .if ${_LICENSE_PERMS:Mdist-sell}
 	@${ECHO_MSG} "===>  License allows selling distribution files"
 .else
-	@${ECHO_MSG} "===>  License does not allows selling distribution files"
+	@${ECHO_MSG} "===>  License does not allow selling distribution files"
 .endif
 .if ${_LICENSE_PERMS:Mpkg-mirror}
 	@${ECHO_MSG} "===>  License allows mirroring pre-built packages"
 .else
-	@${ECHO_MSG} "===>  License does not allows mirroring pre-build packages"
+	@${ECHO_MSG} "===>  License does not allow mirroring pre-build packages"
 .endif
 .if ${_LICENSE_PERMS:Mpkg-sell}
 	@${ECHO_MSG} "===>  License allows selling pre-build packages"
 .else
-	@${ECHO_MSG} "===>  License does not allows selling pre-build packages"
+	@${ECHO_MSG} "===>  License does not allow selling pre-build packages"
 .endif
 .if ${_LICENSE_PERMS:Mauto-accept}
 	@${ECHO_MSG} "===>  License allows being auto-accepted"
