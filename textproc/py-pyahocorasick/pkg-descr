@@ -1,0 +1,7 @@
+pyahocorasick is a fast and memory efficient library for exact or approximate
+multi-pattern string search meaning that you can find multiple key strings
+occurrences at once in some input text. The library provides an ahocorasick
+Python module that you can use as a plain dict-like Trie or convert a Trie to an
+automaton for efficient Aho-Corasick search.
+
+WWW: https://github.com/WojciechMula/pyahocorasick
