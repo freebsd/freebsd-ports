@@ -1,5 +1,5 @@
 NNCP (Node to Node copy) is a collection of utilities simplifying
-secure store-and-forward files and mail exchanging.
+secure store-and-forward files, mail and commands exchanging.
 
 This utilities are intended to help build up small size (dozens of
 nodes) ad-hoc friend-to-friend (F2F) statically routed darknet
