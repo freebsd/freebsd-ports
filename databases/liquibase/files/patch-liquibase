@@ -1,13 +1,12 @@
---- liquibase.orig	2015-07-28 18:54:25 UTC
-+++ liquibase
-@@ -1,54 +1,14 @@
+--- liquibase.orig	2018-07-28 21:36:02.294669000 +0200
++++ liquibase	2018-07-28 21:41:44.302244000 +0200
+@@ -1,55 +1,14 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
  
 -if [ ! -n "${LIQUIBASE_HOME+x}" ]; then
 -  # echo "LIQUIBASE_HOME is not set."
-+LIQUIBASE_HOME=`dirname $0`/../share/liquibase
- 
+-
 -  ## resolve links - $0 may be a symlink
 -  PRG="$0"
 -  while [ -h "$PRG" ] ; do
@@ -50,17 +49,20 @@
 -  for i in "$LIQUIBASE_HOME"/liquibase*.jar; do
 -    CP="$CP""$CP_SEPARATOR""$i"
 -  done
+-  CP="$CP""$CP_SEPARATOR""$LIQUIBASE_HOME/lib/"
 -  for i in "$LIQUIBASE_HOME"/lib/*.jar; do
 -    CP="$CP""$CP_SEPARATOR""$i"
 -  done
 -fi
++LIQUIBASE_HOME=`dirname $0`/../share/liquibase
 +CP=.
-+for i in "$LIQUIBASE_HOME"/liquibase*.jar; do
-+  CP="$CP":"$i"
-+done
-+for i in "$LIQUIBASE_HOME"/lib/*.jar; do
-+  CP="$CP":"$i"
-+done
++for i in "$LIQUIBASE_HOME=/liquibase*.jat; do
++	CP="$CP":$i"
++	done
++for i in $LIQUIBASE_HOME"/lib/*.jar; do
++	CP=$CP":$i"
++	done
++.fi
  
  # add any JVM options here
  JAVA_OPTS="${JAVA_OPTS-}"
