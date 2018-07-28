@@ -937,6 +937,7 @@
     SUBDIR += py-pyglet
     SUBDIR += py-pygooglechart
     SUBDIR += py-pygraphviz
+    SUBDIR += py-pypillowfight
     SUBDIR += py-pyproj
     SUBDIR += py-pyqtgraph
     SUBDIR += py-qt4-svg
