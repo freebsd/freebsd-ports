@@ -918,6 +918,7 @@
     SUBDIR += py-certbot-dns-linode
     SUBDIR += py-certbot-dns-luadns
     SUBDIR += py-certbot-dns-nsone
+    SUBDIR += py-certbot-dns-ovh
     SUBDIR += py-certbot-dns-rfc2136
     SUBDIR += py-certbot-dns-route53
     SUBDIR += py-certbot-dns-sakuracloud
