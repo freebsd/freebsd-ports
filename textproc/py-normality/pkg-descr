@@ -1,0 +1,7 @@
+Normality is a Python micro-package that contains a small set of text
+normalization functions for easier re-use. These functions accept a snippet of
+unicode or utf-8 encoded text and remove various classes of characters, such as
+diacritics, punctuation etc. This is useful as a preparation to further text
+analysis.
+
+WWW: https://github.com/pudo/normality

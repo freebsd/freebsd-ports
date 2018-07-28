@@ -1329,6 +1329,7 @@
     SUBDIR += py-mkdocs-nature
     SUBDIR += py-mwparserfromhell
     SUBDIR += py-nltk
+    SUBDIR += py-normality
     SUBDIR += py-numpydoc
     SUBDIR += py-openpyxl
     SUBDIR += py-openstackdocstheme
