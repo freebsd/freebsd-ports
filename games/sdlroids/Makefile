@@ -3,7 +3,7 @@
 
 PORTNAME=	sdlroids
 PORTVERSION=	1.3.4
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -21,7 +21,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share
-USE_GCC=	yes
 USE_CSTD=	gnu89
 USE_SDL=	mixer sdl
 
