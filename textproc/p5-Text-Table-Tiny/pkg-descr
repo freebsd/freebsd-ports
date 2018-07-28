@@ -1,0 +1,4 @@
+Text::Table::Tiny provides a single function, generate_table, which formats a
+two-dimensional array of data as a text table.
+
+WWW: https://metacpan.org/release/Text-Table-Tiny
