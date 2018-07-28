@@ -4,6 +4,7 @@
 PORTNAME=	curlpp
 PORTVERSION=	0.8.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	ftp
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -29,7 +30,7 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/guide.pdf ${STAGEDIR}${DOCSDIR}/
 
-x-post-install-EXAMPLES-on:
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/examples/README ${WRKSRC}/examples/example*.cpp ${STAGEDIR}${EXAMPLESDIR}/
 
