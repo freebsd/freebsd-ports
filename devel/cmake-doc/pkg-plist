@@ -1,4 +1,5 @@
 %%DOCSDIR%%/CMake-%%CMAKEVERSION%%.qch
+%%DOCSDIR%%/html/_sources/command/add_compile_definitions.rst.txt
 %%DOCSDIR%%/html/_sources/command/add_compile_options.rst.txt
 %%DOCSDIR%%/html/_sources/command/add_custom_command.rst.txt
 %%DOCSDIR%%/html/_sources/command/add_custom_target.rst.txt
@@ -121,6 +122,7 @@
 %%DOCSDIR%%/html/_sources/envvar/ASM_DIALECTFLAGS.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/CC.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/CFLAGS.rst.txt
+%%DOCSDIR%%/html/_sources/envvar/CMAKE_BUILD_PARALLEL_LEVEL.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/CMAKE_CONFIG_TYPE.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/CMAKE_MSVCIDE_RUN_PATH.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/CMAKE_OSX_ARCHITECTURES.rst.txt
@@ -135,6 +137,7 @@
 %%DOCSDIR%%/html/_sources/envvar/CXX.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/CXXFLAGS.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/DASHBOARD_TEST_FROM_CTEST.rst.txt
+%%DOCSDIR%%/html/_sources/envvar/DESTDIR.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/FC.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/FFLAGS.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/LDFLAGS.rst.txt
@@ -218,6 +221,7 @@
 %%DOCSDIR%%/html/_sources/module/CPackIFW.rst.txt
 %%DOCSDIR%%/html/_sources/module/CPackIFWConfigureFile.rst.txt
 %%DOCSDIR%%/html/_sources/module/CPackNSIS.rst.txt
+%%DOCSDIR%%/html/_sources/module/CPackNuGet.rst.txt
 %%DOCSDIR%%/html/_sources/module/CPackPackageMaker.rst.txt
 %%DOCSDIR%%/html/_sources/module/CPackProductBuild.rst.txt
 %%DOCSDIR%%/html/_sources/module/CPackRPM.rst.txt
@@ -330,6 +334,7 @@
 %%DOCSDIR%%/html/_sources/module/FindMPI.rst.txt
 %%DOCSDIR%%/html/_sources/module/FindMatlab.rst.txt
 %%DOCSDIR%%/html/_sources/module/FindMotif.rst.txt
+%%DOCSDIR%%/html/_sources/module/FindODBC.rst.txt
 %%DOCSDIR%%/html/_sources/module/FindOpenACC.rst.txt
 %%DOCSDIR%%/html/_sources/module/FindOpenAL.rst.txt
 %%DOCSDIR%%/html/_sources/module/FindOpenCL.rst.txt
@@ -351,6 +356,9 @@
 %%DOCSDIR%%/html/_sources/module/FindPostgreSQL.rst.txt
 %%DOCSDIR%%/html/_sources/module/FindProducer.rst.txt
 %%DOCSDIR%%/html/_sources/module/FindProtobuf.rst.txt
+%%DOCSDIR%%/html/_sources/module/FindPython.rst.txt
+%%DOCSDIR%%/html/_sources/module/FindPython2.rst.txt
+%%DOCSDIR%%/html/_sources/module/FindPython3.rst.txt
 %%DOCSDIR%%/html/_sources/module/FindPythonInterp.rst.txt
 %%DOCSDIR%%/html/_sources/module/FindPythonLibs.rst.txt
 %%DOCSDIR%%/html/_sources/module/FindQt.rst.txt
@@ -506,6 +514,9 @@
 %%DOCSDIR%%/html/_sources/policy/CMP0070.rst.txt
 %%DOCSDIR%%/html/_sources/policy/CMP0071.rst.txt
 %%DOCSDIR%%/html/_sources/policy/CMP0072.rst.txt
+%%DOCSDIR%%/html/_sources/policy/CMP0073.rst.txt
+%%DOCSDIR%%/html/_sources/policy/CMP0074.rst.txt
+%%DOCSDIR%%/html/_sources/policy/CMP0075.rst.txt
 %%DOCSDIR%%/html/_sources/prop_cache/ADVANCED.rst.txt
 %%DOCSDIR%%/html/_sources/prop_cache/HELPSTRING.rst.txt
 %%DOCSDIR%%/html/_sources/prop_cache/MODIFIED.rst.txt
@@ -538,6 +549,7 @@
 %%DOCSDIR%%/html/_sources/prop_dir/RULE_LAUNCH_LINK.rst.txt
 %%DOCSDIR%%/html/_sources/prop_dir/SOURCE_DIR.rst.txt
 %%DOCSDIR%%/html/_sources/prop_dir/SUBDIRECTORIES.rst.txt
+%%DOCSDIR%%/html/_sources/prop_dir/TESTS.rst.txt
 %%DOCSDIR%%/html/_sources/prop_dir/TEST_INCLUDE_FILE.rst.txt
 %%DOCSDIR%%/html/_sources/prop_dir/TEST_INCLUDE_FILES.rst.txt
 %%DOCSDIR%%/html/_sources/prop_dir/VARIABLES.rst.txt
@@ -554,6 +566,7 @@
 %%DOCSDIR%%/html/_sources/prop_gbl/CMAKE_C_KNOWN_FEATURES.rst.txt
 %%DOCSDIR%%/html/_sources/prop_gbl/DEBUG_CONFIGURATIONS.rst.txt
 %%DOCSDIR%%/html/_sources/prop_gbl/DISABLED_FEATURES.rst.txt
+%%DOCSDIR%%/html/_sources/prop_gbl/ECLIPSE_EXTRA_CPROJECT_CONTENTS.rst.txt
 %%DOCSDIR%%/html/_sources/prop_gbl/ECLIPSE_EXTRA_NATURES.rst.txt
 %%DOCSDIR%%/html/_sources/prop_gbl/ENABLED_FEATURES.rst.txt
 %%DOCSDIR%%/html/_sources/prop_gbl/ENABLED_LANGUAGES.rst.txt
@@ -620,6 +633,7 @@
 %%DOCSDIR%%/html/_sources/prop_sf/VS_SHADER_ENTRYPOINT.rst.txt
 %%DOCSDIR%%/html/_sources/prop_sf/VS_SHADER_FLAGS.rst.txt
 %%DOCSDIR%%/html/_sources/prop_sf/VS_SHADER_MODEL.rst.txt
+%%DOCSDIR%%/html/_sources/prop_sf/VS_SHADER_OBJECT_FILE_NAME.rst.txt
 %%DOCSDIR%%/html/_sources/prop_sf/VS_SHADER_OUTPUT_HEADER_FILE.rst.txt
 %%DOCSDIR%%/html/_sources/prop_sf/VS_SHADER_TYPE.rst.txt
 %%DOCSDIR%%/html/_sources/prop_sf/VS_SHADER_VARIABLE_NAME.rst.txt
@@ -643,6 +657,7 @@
 %%DOCSDIR%%/html/_sources/prop_test/MEASUREMENT.rst.txt
 %%DOCSDIR%%/html/_sources/prop_test/PASS_REGULAR_EXPRESSION.rst.txt
 %%DOCSDIR%%/html/_sources/prop_test/PROCESSORS.rst.txt
+%%DOCSDIR%%/html/_sources/prop_test/PROCESSOR_AFFINITY.rst.txt
 %%DOCSDIR%%/html/_sources/prop_test/REQUIRED_FILES.rst.txt
 %%DOCSDIR%%/html/_sources/prop_test/RESOURCE_LOCK.rst.txt
 %%DOCSDIR%%/html/_sources/prop_test/RUN_SERIAL.rst.txt
@@ -692,6 +707,7 @@
 %%DOCSDIR%%/html/_sources/prop_tgt/BUILD_WITH_INSTALL_RPATH.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/BUNDLE.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/BUNDLE_EXTENSION.rst.txt
+%%DOCSDIR%%/html/_sources/prop_tgt/COMMON_LANGUAGE_RUNTIME.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/COMPATIBLE_INTERFACE_BOOL.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/COMPATIBLE_INTERFACE_NUMBER_MAX.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/COMPATIBLE_INTERFACE_NUMBER_MIN.rst.txt
@@ -723,11 +739,13 @@
 %%DOCSDIR%%/html/_sources/prop_tgt/DEBUG_POSTFIX.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/DEFINE_SYMBOL.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/DEPLOYMENT_REMOTE_DIRECTORY.rst.txt
+%%DOCSDIR%%/html/_sources/prop_tgt/DOTNET_TARGET_FRAMEWORK_VERSION.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/ENABLE_EXPORTS.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/EXCLUDE_FROM_ALL.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/EXCLUDE_FROM_DEFAULT_BUILD.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/EXCLUDE_FROM_DEFAULT_BUILD_CONFIG.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/EXPORT_NAME.rst.txt
+%%DOCSDIR%%/html/_sources/prop_tgt/EXPORT_PROPERTIES.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/EchoString.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/FOLDER.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/FRAMEWORK.rst.txt
@@ -739,6 +757,7 @@
 %%DOCSDIR%%/html/_sources/prop_tgt/HAS_CXX.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/IMPLICIT_DEPENDS_INCLUDE_TRANSFORM.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/IMPORTED.rst.txt
+%%DOCSDIR%%/html/_sources/prop_tgt/IMPORTED_COMMON_LANGUAGE_RUNTIME.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/IMPORTED_CONFIGURATIONS.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/IMPORTED_GLOBAL.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/IMPORTED_IMPLIB.rst.txt
@@ -850,6 +869,7 @@
 %%DOCSDIR%%/html/_sources/prop_tgt/VERSION.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/VISIBILITY_INLINES_HIDDEN.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/VS_CONFIGURATION_TYPE.rst.txt
+%%DOCSDIR%%/html/_sources/prop_tgt/VS_DEBUGGER_COMMAND.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/VS_DEBUGGER_WORKING_DIRECTORY.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/VS_DESKTOP_EXTENSIONS_VERSION.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/VS_DOTNET_REFERENCEPROP_refname_TAG_tagname.rst.txt
@@ -885,6 +905,7 @@
 %%DOCSDIR%%/html/_sources/release/3.1.rst.txt
 %%DOCSDIR%%/html/_sources/release/3.10.rst.txt
 %%DOCSDIR%%/html/_sources/release/3.11.rst.txt
+%%DOCSDIR%%/html/_sources/release/3.12.rst.txt
 %%DOCSDIR%%/html/_sources/release/3.2.rst.txt
 %%DOCSDIR%%/html/_sources/release/3.3.rst.txt
 %%DOCSDIR%%/html/_sources/release/3.4.rst.txt
@@ -996,6 +1017,7 @@
 %%DOCSDIR%%/html/_sources/variable/CMAKE_DIRECTORY_LABELS.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_DISABLE_FIND_PACKAGE_PackageName.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_DL_LIBS.rst.txt
+%%DOCSDIR%%/html/_sources/variable/CMAKE_DOTNET_TARGET_FRAMEWORK_VERSION.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_ECLIPSE_GENERATE_LINKED_RESOURCES.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_ECLIPSE_GENERATE_SOURCE_PROJECT.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_ECLIPSE_MAKE_ARGUMENTS.rst.txt
@@ -1030,6 +1052,7 @@
 %%DOCSDIR%%/html/_sources/variable/CMAKE_FIND_ROOT_PATH_MODE_LIBRARY.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_FIND_ROOT_PATH_MODE_PACKAGE.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_FIND_ROOT_PATH_MODE_PROGRAM.rst.txt
+%%DOCSDIR%%/html/_sources/variable/CMAKE_FOLDER.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_FRAMEWORK_PATH.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_Fortran_FORMAT.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_Fortran_MODDIR_DEFAULT.rst.txt
@@ -1186,8 +1209,14 @@
 %%DOCSDIR%%/html/_sources/variable/CMAKE_PREFIX_PATH.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_PROGRAM_PATH.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_PROJECT_DESCRIPTION.rst.txt
+%%DOCSDIR%%/html/_sources/variable/CMAKE_PROJECT_HOMEPAGE_URL.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_PROJECT_NAME.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_PROJECT_PROJECT-NAME_INCLUDE.rst.txt
+%%DOCSDIR%%/html/_sources/variable/CMAKE_PROJECT_VERSION.rst.txt
+%%DOCSDIR%%/html/_sources/variable/CMAKE_PROJECT_VERSION_MAJOR.rst.txt
+%%DOCSDIR%%/html/_sources/variable/CMAKE_PROJECT_VERSION_MINOR.rst.txt
+%%DOCSDIR%%/html/_sources/variable/CMAKE_PROJECT_VERSION_PATCH.rst.txt
+%%DOCSDIR%%/html/_sources/variable/CMAKE_PROJECT_VERSION_TWEAK.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_RANLIB.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_ROOT.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_RUNTIME_OUTPUT_DIRECTORY.rst.txt
@@ -1217,6 +1246,7 @@
 %%DOCSDIR%%/html/_sources/variable/CMAKE_STATIC_LINKER_FLAGS_INIT.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_SUBLIME_TEXT_2_ENV_SETTINGS.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_SUBLIME_TEXT_2_EXCLUDE_BUILD_TREE.rst.txt
+%%DOCSDIR%%/html/_sources/variable/CMAKE_SUPPRESS_REGENERATION.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_SYSROOT.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_SYSROOT_COMPILE.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_SYSROOT_LINK.rst.txt
@@ -1253,6 +1283,14 @@
 %%DOCSDIR%%/html/_sources/variable/CMAKE_VS_PLATFORM_TOOLSET.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_VS_PLATFORM_TOOLSET_CUDA.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_VS_PLATFORM_TOOLSET_HOST_ARCHITECTURE.rst.txt
+%%DOCSDIR%%/html/_sources/variable/CMAKE_VS_PLATFORM_TOOLSET_VERSION.rst.txt
+%%DOCSDIR%%/html/_sources/variable/CMAKE_VS_SDK_EXCLUDE_DIRECTORIES.rst.txt
+%%DOCSDIR%%/html/_sources/variable/CMAKE_VS_SDK_EXECUTABLE_DIRECTORIES.rst.txt
+%%DOCSDIR%%/html/_sources/variable/CMAKE_VS_SDK_INCLUDE_DIRECTORIES.rst.txt
+%%DOCSDIR%%/html/_sources/variable/CMAKE_VS_SDK_LIBRARY_DIRECTORIES.rst.txt
+%%DOCSDIR%%/html/_sources/variable/CMAKE_VS_SDK_LIBRARY_WINRT_DIRECTORIES.rst.txt
+%%DOCSDIR%%/html/_sources/variable/CMAKE_VS_SDK_REFERENCE_DIRECTORIES.rst.txt
+%%DOCSDIR%%/html/_sources/variable/CMAKE_VS_SDK_SOURCE_DIRECTORIES.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_WARN_DEPRECATED.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION.rst.txt
@@ -1358,8 +1396,11 @@
 %%DOCSDIR%%/html/_sources/variable/MSVC80.rst.txt
 %%DOCSDIR%%/html/_sources/variable/MSVC90.rst.txt
 %%DOCSDIR%%/html/_sources/variable/MSVC_IDE.rst.txt
+%%DOCSDIR%%/html/_sources/variable/MSVC_TOOLSET_VERSION.rst.txt
 %%DOCSDIR%%/html/_sources/variable/MSVC_VERSION.rst.txt
 %%DOCSDIR%%/html/_sources/variable/PROJECT-NAME_BINARY_DIR.rst.txt
+%%DOCSDIR%%/html/_sources/variable/PROJECT-NAME_DESCRIPTION.rst.txt
+%%DOCSDIR%%/html/_sources/variable/PROJECT-NAME_HOMEPAGE_URL.rst.txt
 %%DOCSDIR%%/html/_sources/variable/PROJECT-NAME_SOURCE_DIR.rst.txt
 %%DOCSDIR%%/html/_sources/variable/PROJECT-NAME_VERSION.rst.txt
 %%DOCSDIR%%/html/_sources/variable/PROJECT-NAME_VERSION_MAJOR.rst.txt
@@ -1368,6 +1409,7 @@
 %%DOCSDIR%%/html/_sources/variable/PROJECT-NAME_VERSION_TWEAK.rst.txt
 %%DOCSDIR%%/html/_sources/variable/PROJECT_BINARY_DIR.rst.txt
 %%DOCSDIR%%/html/_sources/variable/PROJECT_DESCRIPTION.rst.txt
+%%DOCSDIR%%/html/_sources/variable/PROJECT_HOMEPAGE_URL.rst.txt
 %%DOCSDIR%%/html/_sources/variable/PROJECT_NAME.rst.txt
 %%DOCSDIR%%/html/_sources/variable/PROJECT_SOURCE_DIR.rst.txt
 %%DOCSDIR%%/html/_sources/variable/PROJECT_VERSION.rst.txt
@@ -1408,6 +1450,7 @@
 %%DOCSDIR%%/html/_static/up-pressed.png
 %%DOCSDIR%%/html/_static/up.png
 %%DOCSDIR%%/html/_static/websupport.js
+%%DOCSDIR%%/html/command/add_compile_definitions.html
 %%DOCSDIR%%/html/command/add_compile_options.html
 %%DOCSDIR%%/html/command/add_custom_command.html
 %%DOCSDIR%%/html/command/add_custom_target.html
@@ -1530,6 +1573,7 @@
 %%DOCSDIR%%/html/envvar/ASM_DIALECTFLAGS.html
 %%DOCSDIR%%/html/envvar/CC.html
 %%DOCSDIR%%/html/envvar/CFLAGS.html
+%%DOCSDIR%%/html/envvar/CMAKE_BUILD_PARALLEL_LEVEL.html
 %%DOCSDIR%%/html/envvar/CMAKE_CONFIG_TYPE.html
 %%DOCSDIR%%/html/envvar/CMAKE_MSVCIDE_RUN_PATH.html
 %%DOCSDIR%%/html/envvar/CMAKE_OSX_ARCHITECTURES.html
@@ -1544,6 +1588,7 @@
 %%DOCSDIR%%/html/envvar/CXX.html
 %%DOCSDIR%%/html/envvar/CXXFLAGS.html
 %%DOCSDIR%%/html/envvar/DASHBOARD_TEST_FROM_CTEST.html
+%%DOCSDIR%%/html/envvar/DESTDIR.html
 %%DOCSDIR%%/html/envvar/FC.html
 %%DOCSDIR%%/html/envvar/FFLAGS.html
 %%DOCSDIR%%/html/envvar/LDFLAGS.html
@@ -1628,6 +1673,7 @@
 %%DOCSDIR%%/html/module/CPackIFW.html
 %%DOCSDIR%%/html/module/CPackIFWConfigureFile.html
 %%DOCSDIR%%/html/module/CPackNSIS.html
+%%DOCSDIR%%/html/module/CPackNuGet.html
 %%DOCSDIR%%/html/module/CPackPackageMaker.html
 %%DOCSDIR%%/html/module/CPackProductBuild.html
 %%DOCSDIR%%/html/module/CPackRPM.html
@@ -1740,6 +1786,7 @@
 %%DOCSDIR%%/html/module/FindMPI.html
 %%DOCSDIR%%/html/module/FindMatlab.html
 %%DOCSDIR%%/html/module/FindMotif.html
+%%DOCSDIR%%/html/module/FindODBC.html
 %%DOCSDIR%%/html/module/FindOpenACC.html
 %%DOCSDIR%%/html/module/FindOpenAL.html
 %%DOCSDIR%%/html/module/FindOpenCL.html
@@ -1761,6 +1808,9 @@
 %%DOCSDIR%%/html/module/FindPostgreSQL.html
 %%DOCSDIR%%/html/module/FindProducer.html
 %%DOCSDIR%%/html/module/FindProtobuf.html
+%%DOCSDIR%%/html/module/FindPython.html
+%%DOCSDIR%%/html/module/FindPython2.html
+%%DOCSDIR%%/html/module/FindPython3.html
 %%DOCSDIR%%/html/module/FindPythonInterp.html
 %%DOCSDIR%%/html/module/FindPythonLibs.html
 %%DOCSDIR%%/html/module/FindQt.html
@@ -1917,6 +1967,9 @@
 %%DOCSDIR%%/html/policy/CMP0070.html
 %%DOCSDIR%%/html/policy/CMP0071.html
 %%DOCSDIR%%/html/policy/CMP0072.html
+%%DOCSDIR%%/html/policy/CMP0073.html
+%%DOCSDIR%%/html/policy/CMP0074.html
+%%DOCSDIR%%/html/policy/CMP0075.html
 %%DOCSDIR%%/html/prop_cache/ADVANCED.html
 %%DOCSDIR%%/html/prop_cache/HELPSTRING.html
 %%DOCSDIR%%/html/prop_cache/MODIFIED.html
@@ -1949,6 +2002,7 @@
 %%DOCSDIR%%/html/prop_dir/RULE_LAUNCH_LINK.html
 %%DOCSDIR%%/html/prop_dir/SOURCE_DIR.html
 %%DOCSDIR%%/html/prop_dir/SUBDIRECTORIES.html
+%%DOCSDIR%%/html/prop_dir/TESTS.html
 %%DOCSDIR%%/html/prop_dir/TEST_INCLUDE_FILE.html
 %%DOCSDIR%%/html/prop_dir/TEST_INCLUDE_FILES.html
 %%DOCSDIR%%/html/prop_dir/VARIABLES.html
@@ -1965,6 +2019,7 @@
 %%DOCSDIR%%/html/prop_gbl/CMAKE_C_KNOWN_FEATURES.html
 %%DOCSDIR%%/html/prop_gbl/DEBUG_CONFIGURATIONS.html
 %%DOCSDIR%%/html/prop_gbl/DISABLED_FEATURES.html
+%%DOCSDIR%%/html/prop_gbl/ECLIPSE_EXTRA_CPROJECT_CONTENTS.html
 %%DOCSDIR%%/html/prop_gbl/ECLIPSE_EXTRA_NATURES.html
 %%DOCSDIR%%/html/prop_gbl/ENABLED_FEATURES.html
 %%DOCSDIR%%/html/prop_gbl/ENABLED_LANGUAGES.html
@@ -2031,6 +2086,7 @@
 %%DOCSDIR%%/html/prop_sf/VS_SHADER_ENTRYPOINT.html
 %%DOCSDIR%%/html/prop_sf/VS_SHADER_FLAGS.html
 %%DOCSDIR%%/html/prop_sf/VS_SHADER_MODEL.html
+%%DOCSDIR%%/html/prop_sf/VS_SHADER_OBJECT_FILE_NAME.html
 %%DOCSDIR%%/html/prop_sf/VS_SHADER_OUTPUT_HEADER_FILE.html
 %%DOCSDIR%%/html/prop_sf/VS_SHADER_TYPE.html
 %%DOCSDIR%%/html/prop_sf/VS_SHADER_VARIABLE_NAME.html
@@ -2054,6 +2110,7 @@
 %%DOCSDIR%%/html/prop_test/MEASUREMENT.html
 %%DOCSDIR%%/html/prop_test/PASS_REGULAR_EXPRESSION.html
 %%DOCSDIR%%/html/prop_test/PROCESSORS.html
+%%DOCSDIR%%/html/prop_test/PROCESSOR_AFFINITY.html
 %%DOCSDIR%%/html/prop_test/REQUIRED_FILES.html
 %%DOCSDIR%%/html/prop_test/RESOURCE_LOCK.html
 %%DOCSDIR%%/html/prop_test/RUN_SERIAL.html
@@ -2103,6 +2160,7 @@
 %%DOCSDIR%%/html/prop_tgt/BUILD_WITH_INSTALL_RPATH.html
 %%DOCSDIR%%/html/prop_tgt/BUNDLE.html
 %%DOCSDIR%%/html/prop_tgt/BUNDLE_EXTENSION.html
+%%DOCSDIR%%/html/prop_tgt/COMMON_LANGUAGE_RUNTIME.html
 %%DOCSDIR%%/html/prop_tgt/COMPATIBLE_INTERFACE_BOOL.html
 %%DOCSDIR%%/html/prop_tgt/COMPATIBLE_INTERFACE_NUMBER_MAX.html
 %%DOCSDIR%%/html/prop_tgt/COMPATIBLE_INTERFACE_NUMBER_MIN.html
@@ -2134,11 +2192,13 @@
 %%DOCSDIR%%/html/prop_tgt/DEBUG_POSTFIX.html
 %%DOCSDIR%%/html/prop_tgt/DEFINE_SYMBOL.html
 %%DOCSDIR%%/html/prop_tgt/DEPLOYMENT_REMOTE_DIRECTORY.html
+%%DOCSDIR%%/html/prop_tgt/DOTNET_TARGET_FRAMEWORK_VERSION.html
 %%DOCSDIR%%/html/prop_tgt/ENABLE_EXPORTS.html
 %%DOCSDIR%%/html/prop_tgt/EXCLUDE_FROM_ALL.html
 %%DOCSDIR%%/html/prop_tgt/EXCLUDE_FROM_DEFAULT_BUILD.html
 %%DOCSDIR%%/html/prop_tgt/EXCLUDE_FROM_DEFAULT_BUILD_CONFIG.html
 %%DOCSDIR%%/html/prop_tgt/EXPORT_NAME.html
+%%DOCSDIR%%/html/prop_tgt/EXPORT_PROPERTIES.html
 %%DOCSDIR%%/html/prop_tgt/EchoString.html
 %%DOCSDIR%%/html/prop_tgt/FOLDER.html
 %%DOCSDIR%%/html/prop_tgt/FRAMEWORK.html
@@ -2150,6 +2210,7 @@
 %%DOCSDIR%%/html/prop_tgt/HAS_CXX.html
 %%DOCSDIR%%/html/prop_tgt/IMPLICIT_DEPENDS_INCLUDE_TRANSFORM.html
 %%DOCSDIR%%/html/prop_tgt/IMPORTED.html
+%%DOCSDIR%%/html/prop_tgt/IMPORTED_COMMON_LANGUAGE_RUNTIME.html
 %%DOCSDIR%%/html/prop_tgt/IMPORTED_CONFIGURATIONS.html
 %%DOCSDIR%%/html/prop_tgt/IMPORTED_GLOBAL.html
 %%DOCSDIR%%/html/prop_tgt/IMPORTED_IMPLIB.html
@@ -2261,6 +2322,7 @@
 %%DOCSDIR%%/html/prop_tgt/VERSION.html
 %%DOCSDIR%%/html/prop_tgt/VISIBILITY_INLINES_HIDDEN.html
 %%DOCSDIR%%/html/prop_tgt/VS_CONFIGURATION_TYPE.html
+%%DOCSDIR%%/html/prop_tgt/VS_DEBUGGER_COMMAND.html
 %%DOCSDIR%%/html/prop_tgt/VS_DEBUGGER_WORKING_DIRECTORY.html
 %%DOCSDIR%%/html/prop_tgt/VS_DESKTOP_EXTENSIONS_VERSION.html
 %%DOCSDIR%%/html/prop_tgt/VS_DOTNET_REFERENCEPROP_refname_TAG_tagname.html
@@ -2296,6 +2358,7 @@
 %%DOCSDIR%%/html/release/3.1.html
 %%DOCSDIR%%/html/release/3.10.html
 %%DOCSDIR%%/html/release/3.11.html
+%%DOCSDIR%%/html/release/3.12.html
 %%DOCSDIR%%/html/release/3.2.html
 %%DOCSDIR%%/html/release/3.3.html
 %%DOCSDIR%%/html/release/3.4.html
@@ -2409,6 +2472,7 @@
 %%DOCSDIR%%/html/variable/CMAKE_DIRECTORY_LABELS.html
 %%DOCSDIR%%/html/variable/CMAKE_DISABLE_FIND_PACKAGE_PackageName.html
 %%DOCSDIR%%/html/variable/CMAKE_DL_LIBS.html
+%%DOCSDIR%%/html/variable/CMAKE_DOTNET_TARGET_FRAMEWORK_VERSION.html
 %%DOCSDIR%%/html/variable/CMAKE_ECLIPSE_GENERATE_LINKED_RESOURCES.html
 %%DOCSDIR%%/html/variable/CMAKE_ECLIPSE_GENERATE_SOURCE_PROJECT.html
 %%DOCSDIR%%/html/variable/CMAKE_ECLIPSE_MAKE_ARGUMENTS.html
@@ -2443,6 +2507,7 @@
 %%DOCSDIR%%/html/variable/CMAKE_FIND_ROOT_PATH_MODE_LIBRARY.html
 %%DOCSDIR%%/html/variable/CMAKE_FIND_ROOT_PATH_MODE_PACKAGE.html
 %%DOCSDIR%%/html/variable/CMAKE_FIND_ROOT_PATH_MODE_PROGRAM.html
+%%DOCSDIR%%/html/variable/CMAKE_FOLDER.html
 %%DOCSDIR%%/html/variable/CMAKE_FRAMEWORK_PATH.html
 %%DOCSDIR%%/html/variable/CMAKE_Fortran_FORMAT.html
 %%DOCSDIR%%/html/variable/CMAKE_Fortran_MODDIR_DEFAULT.html
@@ -2599,8 +2664,14 @@
 %%DOCSDIR%%/html/variable/CMAKE_PREFIX_PATH.html
 %%DOCSDIR%%/html/variable/CMAKE_PROGRAM_PATH.html
 %%DOCSDIR%%/html/variable/CMAKE_PROJECT_DESCRIPTION.html
+%%DOCSDIR%%/html/variable/CMAKE_PROJECT_HOMEPAGE_URL.html
 %%DOCSDIR%%/html/variable/CMAKE_PROJECT_NAME.html
 %%DOCSDIR%%/html/variable/CMAKE_PROJECT_PROJECT-NAME_INCLUDE.html
+%%DOCSDIR%%/html/variable/CMAKE_PROJECT_VERSION.html
+%%DOCSDIR%%/html/variable/CMAKE_PROJECT_VERSION_MAJOR.html
+%%DOCSDIR%%/html/variable/CMAKE_PROJECT_VERSION_MINOR.html
+%%DOCSDIR%%/html/variable/CMAKE_PROJECT_VERSION_PATCH.html
+%%DOCSDIR%%/html/variable/CMAKE_PROJECT_VERSION_TWEAK.html
 %%DOCSDIR%%/html/variable/CMAKE_RANLIB.html
 %%DOCSDIR%%/html/variable/CMAKE_ROOT.html
 %%DOCSDIR%%/html/variable/CMAKE_RUNTIME_OUTPUT_DIRECTORY.html
@@ -2630,6 +2701,7 @@
 %%DOCSDIR%%/html/variable/CMAKE_STATIC_LINKER_FLAGS_INIT.html
 %%DOCSDIR%%/html/variable/CMAKE_SUBLIME_TEXT_2_ENV_SETTINGS.html
 %%DOCSDIR%%/html/variable/CMAKE_SUBLIME_TEXT_2_EXCLUDE_BUILD_TREE.html
+%%DOCSDIR%%/html/variable/CMAKE_SUPPRESS_REGENERATION.html
 %%DOCSDIR%%/html/variable/CMAKE_SYSROOT.html
 %%DOCSDIR%%/html/variable/CMAKE_SYSROOT_COMPILE.html
 %%DOCSDIR%%/html/variable/CMAKE_SYSROOT_LINK.html
@@ -2666,6 +2738,14 @@
 %%DOCSDIR%%/html/variable/CMAKE_VS_PLATFORM_TOOLSET.html
 %%DOCSDIR%%/html/variable/CMAKE_VS_PLATFORM_TOOLSET_CUDA.html
 %%DOCSDIR%%/html/variable/CMAKE_VS_PLATFORM_TOOLSET_HOST_ARCHITECTURE.html
+%%DOCSDIR%%/html/variable/CMAKE_VS_PLATFORM_TOOLSET_VERSION.html
+%%DOCSDIR%%/html/variable/CMAKE_VS_SDK_EXCLUDE_DIRECTORIES.html
+%%DOCSDIR%%/html/variable/CMAKE_VS_SDK_EXECUTABLE_DIRECTORIES.html
+%%DOCSDIR%%/html/variable/CMAKE_VS_SDK_INCLUDE_DIRECTORIES.html
+%%DOCSDIR%%/html/variable/CMAKE_VS_SDK_LIBRARY_DIRECTORIES.html
+%%DOCSDIR%%/html/variable/CMAKE_VS_SDK_LIBRARY_WINRT_DIRECTORIES.html
+%%DOCSDIR%%/html/variable/CMAKE_VS_SDK_REFERENCE_DIRECTORIES.html
+%%DOCSDIR%%/html/variable/CMAKE_VS_SDK_SOURCE_DIRECTORIES.html
 %%DOCSDIR%%/html/variable/CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION.html
 %%DOCSDIR%%/html/variable/CMAKE_WARN_DEPRECATED.html
 %%DOCSDIR%%/html/variable/CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION.html
@@ -2771,8 +2851,11 @@
 %%DOCSDIR%%/html/variable/MSVC80.html
 %%DOCSDIR%%/html/variable/MSVC90.html
 %%DOCSDIR%%/html/variable/MSVC_IDE.html
+%%DOCSDIR%%/html/variable/MSVC_TOOLSET_VERSION.html
 %%DOCSDIR%%/html/variable/MSVC_VERSION.html
 %%DOCSDIR%%/html/variable/PROJECT-NAME_BINARY_DIR.html
+%%DOCSDIR%%/html/variable/PROJECT-NAME_DESCRIPTION.html
+%%DOCSDIR%%/html/variable/PROJECT-NAME_HOMEPAGE_URL.html
 %%DOCSDIR%%/html/variable/PROJECT-NAME_SOURCE_DIR.html
 %%DOCSDIR%%/html/variable/PROJECT-NAME_VERSION.html
 %%DOCSDIR%%/html/variable/PROJECT-NAME_VERSION_MAJOR.html
@@ -2781,6 +2864,7 @@
 %%DOCSDIR%%/html/variable/PROJECT-NAME_VERSION_TWEAK.html
 %%DOCSDIR%%/html/variable/PROJECT_BINARY_DIR.html
 %%DOCSDIR%%/html/variable/PROJECT_DESCRIPTION.html
+%%DOCSDIR%%/html/variable/PROJECT_HOMEPAGE_URL.html
 %%DOCSDIR%%/html/variable/PROJECT_NAME.html
 %%DOCSDIR%%/html/variable/PROJECT_SOURCE_DIR.html
 %%DOCSDIR%%/html/variable/PROJECT_VERSION.html
