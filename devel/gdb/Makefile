@@ -3,7 +3,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	8.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -24,7 +24,7 @@ TEST_TARGET=	check
 # C++14.  However, clang in 10.3 crashes while building this port.
 # Requiring C++14 forces 10.3 to use an external version of clang while
 # still using the base system clang on 11.0 and later.
-USES=		compiler:c++14-lang cpe iconv gmake libtool tar:xz
+USES=		compiler:c++14-lang cpe gmake libtool tar:xz
 USE_CSTD=	gnu89
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
