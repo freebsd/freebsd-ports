@@ -1,2 +1,3 @@
-SHA256 (Cache-Memcached-Fast-0.21.tar.gz) = b17c2bc65f886dcd3a8b822d76a50de2f8addfd0b5a857988967adaffc9c7c53
-SIZE (Cache-Memcached-Fast-0.21.tar.gz) = 95139
+TIMESTAMP = 1529873594
+SHA256 (Cache-Memcached-Fast-0.25.tar.gz) = 782a259094c4667871b23cdccd500bd50802d9529f1b3d6ebe2a68f5292c5c46
+SIZE (Cache-Memcached-Fast-0.25.tar.gz) = 104313
