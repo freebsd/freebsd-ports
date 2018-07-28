@@ -5016,6 +5016,7 @@
     SUBDIR += py-sanetime
     SUBDIR += py-sarge
     SUBDIR += py-schema
+    SUBDIR += py-schematics-patched
     SUBDIR += py-scripttest
     SUBDIR += py-sdl2
     SUBDIR += py-selection
