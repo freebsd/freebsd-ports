@@ -1316,6 +1316,7 @@
     SUBDIR += py-libtre
     SUBDIR += py-libxml2
     SUBDIR += py-libxslt
+    SUBDIR += py-license-expression
     SUBDIR += py-ltxml
     SUBDIR += py-m2r
     SUBDIR += py-mako
