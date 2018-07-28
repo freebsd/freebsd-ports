@@ -937,6 +937,7 @@
     SUBDIR += py-pyglet
     SUBDIR += py-pygooglechart
     SUBDIR += py-pygraphviz
+    SUBDIR += py-pyinsane2
     SUBDIR += py-pyocr
     SUBDIR += py-pypillowfight
     SUBDIR += py-pyproj

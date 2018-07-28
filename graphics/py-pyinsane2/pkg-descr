@@ -1,0 +1,13 @@
+Python library to access and use image scanners.
+
+Support for:
+* Sane (Scanners on GNU/Linux, *BSD, MacOSX, etc)
+* WIA 2 (Windows Image Acquisition ; Scanners on Microsoft Windows >= Vista)
+
+It supports:
+* Flatbed
+* Automatic Document Feeder
+* While scanning, can provide chunks of the image for on-the-fly preview
+  (see Paperwork for instance)
+
+WWW: https://gitlab.gnome.org/World/OpenPaperwork/pyinsane/
