@@ -10359,3 +10359,5 @@ emulators/xen-kernel|emulators/xen-kernel47|2018-07-23|Renamed to support multip
 emulators/xen||2018-07-23|Removed to support multiple versions
 math/py-z3-solver|math/py-z3|2018-07-25|Rename to have a more intuitive name
 devel/py-levenshtein|devel/py-python-Levenshtein|2018-07-28|Remove the duplicate
+comms/xwota||2018-07-28|Has expired: No server message and no upstream releases
+audio/glame||2018-07-28|Has expired: Does not build

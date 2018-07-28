@@ -209,7 +209,6 @@
     SUBDIR += gimmix
     SUBDIR += gkrellmms2
     SUBDIR += gkrellmvolume2
-    SUBDIR += glame
     SUBDIR += glurp
     SUBDIR += gmidimonitor
     SUBDIR += gmixer
