@@ -1,0 +1,12 @@
+Ultra-lightweight library to guess whether a file is binary or text, using a
+heuristic similar to Perl's pp_fttext and its analysis. Tests are available for
+these file types:
+
+- Text formats: .txt, .css, .json, .svg, .js, .lua, .pl, .rst
+
+- Binary formats: .png, .gif, .jpg, .tiff, .bmp, .DS_Store, .eot, .otf, .ttf,
+		  .woff, .rgb
+
+It has also tests for numerous encodings.
+
+WWW: https://github.com/audreyr/binaryornot
