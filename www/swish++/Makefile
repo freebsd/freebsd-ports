@@ -13,9 +13,13 @@ COMMENT=	Simple Web Indexing System for Humans: C++ version
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Copying
 
+DEPRECATED=	Unmaintained upstream
+EXPIRATION_DATE=	2018-10-15
+
 RUN_DEPENDS=	wget:ftp/wget
 
 USES=		gmake perl5 shebangfix
+USE_CXXSTD=	c++98
 SHEBANG_FILES=	scripts/searchc.in scripts/splitmail.in scripts/httpindex.in
 perl_OLD_CMD=	%%PERL%%
 MAKEFILE=	GNUmakefile
