@@ -1,2 +1,5 @@
 %%SITE_PERL%%/Net/Flow.pm
+%%SITE_PERL%%/Net/Flow/Constants.pm
 %%PERL5_MAN3%%/Net::Flow.3.gz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flowdump.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/v5_to_v9.pl
