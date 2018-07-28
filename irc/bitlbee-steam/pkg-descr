@@ -1,0 +1,4 @@
+The Steam protocol plugin for bitlbee. This plugin uses the Steam Mobile
+API allowing it to run alongside the main Steam client.
+
+WWW: https://github.com/bitlbee/bitlbee-steam
