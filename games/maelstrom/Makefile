@@ -3,7 +3,7 @@
 
 PORTNAME=	maelstrom
 PORTVERSION=	3.0.6
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games
 MASTER_SITES=	http://slouken.libsdl.org/projects/Maelstrom/src/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -18,6 +18,7 @@ COMMENT=	Asteroids-style game for X Window System
 
 LICENSE=	GPLv2
 
+USE_CXXSTD=	gnu++98
 USE_SDL=	sdl net
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
