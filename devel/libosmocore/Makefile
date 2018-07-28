@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libosmocore
-PORTVERSION=	0.10.2
-PORTREVISION=	1
+PORTVERSION=	0.11.0
 CATEGORIES=	devel
 MASTER_SITES=	http://git.osmocom.org/libosmocore/snapshot/ \
 		http://chaosophia.net/downloads/osmocom/${PORTNAME}/
@@ -15,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_powerpc64=	fails to compile: application.c:179: #pragma GCC diagnostic not allowed inside functions
 
-LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite \
+LIB_DEPENDS=	libgnutls.so:security/gnutls \
+		libpcsclite.so:devel/pcsc-lite \
 		libtalloc.so:devel/talloc
 
 USES=		alias autoreconf gmake libtool pathfix pkgconfig python:2.7 shebangfix
