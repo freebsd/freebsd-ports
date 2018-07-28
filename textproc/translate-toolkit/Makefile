@@ -3,6 +3,7 @@
 
 PORTNAME=	translate-toolkit
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}vobject>=0:deskutils/py-vobject@${PY_FLAVOR} \
 		msghack:devel/gettext-msghack \
 		${PYTHON_PKGNAMEPREFIX}iniparse>=0:devel/py-iniparse@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}levenshtein>=0:devel/py-levenshtein@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-Levenshtein>=0:devel/py-python-Levenshtein@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
 		iso-codes>=1.3:misc/iso-codes \
 		bash:shells/bash \
