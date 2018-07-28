@@ -1,0 +1,14 @@
+The purpose of this (XS) module is to calculate the median (or in principle also
+other statistics) with confidence intervals on a sample. To do that, it uses a
+technique called bootstrapping. In a nutshell, it resamples the sample a lot of
+times and for each resample, it calculates the median. From the distribution of
+medians, it then calculates the confidence limits.
+
+In order to implement the confidence limit calculation, various other functions
+had to be implemented efficiently (both algorithmically efficient and done in
+C). These functions may be useful in their own right and are thus exposed to
+Perl. Most notably, this exposes a median (and general selection) algorithm that
+works in linear time as opposed to the trivial implementation that requires
+O(n*log(n)).
+
+WWW: https://metacpan.org/release/Statistics-CaseResampling
