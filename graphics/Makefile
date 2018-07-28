@@ -558,6 +558,7 @@
     SUBDIR += libpano13
     SUBDIR += libpcd
     SUBDIR += libpgf
+    SUBDIR += libpillowfight
     SUBDIR += libpotrace
     SUBDIR += libprojectm
     SUBDIR += libpuzzle
