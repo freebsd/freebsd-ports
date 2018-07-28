@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	SF/alleg/allegro/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Cross-platform library for games and multimedia programming
 
 LICENSE=	GIFTWARE
