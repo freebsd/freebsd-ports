@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mednafen
-PORTVERSION=	0.9.45.1
-PORTREVISION=	2
+PORTVERSION=	1.21.3
 PORTEPOCH=	1
 CATEGORIES=	emulators games
 MASTER_SITES=	https://mednafen.github.io/releases/files/
@@ -77,8 +76,6 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		-e 's|/usr/X11R6|${LOCALBASE}|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|NetBSD|FreeBSD|' \
-		${WRKSRC}/include/trio/triodef.h
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
