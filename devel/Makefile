@@ -5176,6 +5176,7 @@
     SUBDIR += py-yappi
     SUBDIR += py-yapps2
     SUBDIR += py-ydbf
+    SUBDIR += py-yg.lockfile
     SUBDIR += py-yum-metadata-parser
     SUBDIR += py-yunomi
     SUBDIR += py-z3c.autoinclude
