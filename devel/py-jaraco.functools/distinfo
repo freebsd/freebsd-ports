@@ -1,2 +1,3 @@
-SHA256 (jaraco.functools-1.8.1.tar.gz) = 766cd9caed0c18dfbf744dcd05d1f171f03e64ab8f7363d5b2521ba200383c5a
-SIZE (jaraco.functools-1.8.1.tar.gz) = 6125
+TIMESTAMP = 1530209050
+SHA256 (jaraco.functools-1.19.tar.gz) = 60835b5fba2205d1cab2fd40884a0bb538693bc2f602d54c45ec3bab74c425fc
+SIZE (jaraco.functools-1.19.tar.gz) = 10588
