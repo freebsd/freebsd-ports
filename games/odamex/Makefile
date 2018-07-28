@@ -3,7 +3,7 @@
 
 PORTNAME=	odamex
 PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Odamex/${PORTVERSION}
 DISTNAME=	odamex-src-${PORTVERSION}
@@ -14,9 +14,14 @@ COMMENT=	Client/server multiplayer engine for Doom
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libpng.so:graphics/png
+
 USE_SDL=	sdl mixer
-USES=		cmake dos2unix tar:bzip2
+USES=		cmake compiler dos2unix tar:bzip2
 DOS2UNIX_FILES=	CMakeLists.txt odalaunch/CMakeLists.txt common/d_main.cpp
+
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 OPTIONS_DEFINE=	DOCS LAUNCHER
 
