@@ -19,7 +19,7 @@ LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
 BROKEN_sparc64=		fails to compile due to internal compiler error
 
 GNU_CONFIGURE=	yes
-USE_SDL=	sdl net
+USE_SDL=	sdl2 net2
 USE_GL=		gl glu
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
