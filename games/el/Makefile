@@ -2,26 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	el
-PORTVERSION=	1.9.4.3
-PORTREVISION=	2
+PORTVERSION=	1.9.5.2
 PORTEPOCH=	1
 CATEGORIES=	games
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Eternal Lands is a free 3D MMORPG
 
+BROKEN_powerpc64=	fails to compile: cal3d_io_wrapper.cpp: undefined reference to CalCoreAnimation::setFilename
+BROKEN_sparc64=		fails to build on sparc64
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis \
 		libcal3d.so:graphics/cal3d
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/el.ini:games/el-data
 
-BROKEN_powerpc64=	fails to compile: cal3d_io_wrapper.cpp: undefined reference to CalCoreAnimation::setFilename
-BROKEN_sparc64=		fails to build on sparc64
-
 USES=		compiler:c++11-lang gmake iconv openal:al,alut
 USE_GNOME=	libxml2
 USE_SDL=	sdl net image
-USE_GL=		yes
+USE_GL=		gl
 USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	raduprv
