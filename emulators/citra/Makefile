@@ -17,7 +17,7 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/license.txt
 LICENSE_FILE_MIT=	${WRKSRC}/externals/enet/LICENSE
 LICENSE_FILE_LGPL21+ =	${_LICENSE_STORE}/LGPL21 # soundtouch
 
-BROKEN_FreeBSD_10=	libc++ does not support C++17 features e.g., weak_from_this
+BROKEN_FreeBSD_10=	libc++ does not support C++17 features
 
 BUILD_DEPENDS=	boost-libs>=1.66:devel/boost-libs
 
@@ -39,10 +39,6 @@ GH_TUPLE=	citra-emu:ext-libressl-portable:7d01cb0:libressl/externals/libressl \
 
 USES=		cmake:outsource compiler:c++17-lang iconv localbase:ldflags
 USE_SDL=	sdl2
-EXTRA_PATCHES+=	${EXTRA_PATCHES_${OPSYS}_${OSREL:R}}
-EXTRA_PATCHES_FreeBSD_10=	${PATCHDIR}/extra-patch-c++14
-CXXFLAGS+=	-D_GLIBCXX_USE_C99 -D_GLIBCXX_USE_C99_MATH_TR1 \
-		-D_DECLARE_C99_LDBL_MATH # XXX ports/193528
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
 TEST_TARGET=	test
 
