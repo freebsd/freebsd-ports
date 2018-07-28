@@ -17,6 +17,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-PPI>=1.117:textproc/p5-PPI
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
