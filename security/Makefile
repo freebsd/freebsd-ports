@@ -293,6 +293,7 @@
     SUBDIR += john
     SUBDIR += kbfs
     SUBDIR += kc
+    SUBDIR += kc24
     SUBDIR += kdbx-viewer
     SUBDIR += kedpm
     SUBDIR += keepass

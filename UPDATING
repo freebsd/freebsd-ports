@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180728:
+  AFFECTS: users who upgrade from security/kc to security/kc24
+  AUTHOR: pi@FreeBSD.org
+
+  The ondisk format changes from kc 2.3 to kc 2.4, so please
+  read the kc24 pkg-message file before the upgrade. It describes
+  how to create a backup, the xml dump and how to import the
+  xml dump afterwards.
+
 20180725:
   AFFECTS: users of textproc/ibus-typing-booster
   AUTHOR: thierry@FreeBSD.org
