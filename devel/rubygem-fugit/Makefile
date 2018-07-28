@@ -19,4 +19,7 @@ NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
+# Disable rdoc
+OPTIONS_EXCLUDE=DOCS
+
 .include <bsd.port.mk>
