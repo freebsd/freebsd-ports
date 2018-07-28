@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sdl
-PORTVERSION=	2.1.3.1
-PORTREVISION=	4
+PORTVERSION=	2.2.0
 CATEGORIES=	devel graphics audio ruby
 MASTER_SITES=	https://ohai.github.io/rubysdl/archives/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -50,6 +49,9 @@ DOC_FILESEN=	*.rsd *ref.en.html
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_SUB=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|LOCAL_LIBS|LDFLAGS|g' ${WRKSRC}/extconf.rb
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ruby/site_ruby/${RUBY_VER}/*/sdl_ext.so
