@@ -1,0 +1,4 @@
+simplebayes allows to train the classifier, save the training data
+in cache, and later use this data to classify text.
+
+WWW: https://github.com/hickeroar/simplebayes

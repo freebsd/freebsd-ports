@@ -1392,6 +1392,7 @@
     SUBDIR += py-rxp
     SUBDIR += py-scour
     SUBDIR += py-sgrep
+    SUBDIR += py-simplebayes
     SUBDIR += py-snowballstemmer
     SUBDIR += py-sparqlwrapper
     SUBDIR += py-sphinx
