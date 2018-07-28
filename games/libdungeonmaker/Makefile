@@ -13,6 +13,10 @@ COMMENT=	Program/library that "grows" dungeons for use in isometric games
 
 LICENSE=	GPLv1
 
+DEPRECATED=	Abandonware. Unused in the ports tree
+EXPIRATION_DATE=	2018-08-30
+
+USE_CXXSTD=	gnu++98
 USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message
