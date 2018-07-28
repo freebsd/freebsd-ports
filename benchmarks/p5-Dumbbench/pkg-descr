@@ -1,0 +1,23 @@
+This module attempts to implement reasonably robust benchmarking with little
+extra effort and expertise required from the user. That is to say, benchmarking
+using this module is likely an improvement over
+
+  time some-command --to --benchmark
+
+or
+
+  use Benchmark qw/timethis/;
+  timethis(1000, 'system("some-command", ...)');
+
+The module currently works similar to the former command line, except (in layman
+terms) it will run the command many times, estimate the uncertainty of the
+result and keep iterating until a certain user-defined precision has been
+reached. Then, it calculates the resulting uncertainty and goes through some
+pain to discard bad runs and subtract overhead from the timings. The reported
+timing includes an uncertainty, so that multiple benchmarks can more easily be
+compared.
+
+Please note that Dumbbench works entirely with wallclock time as reported by
+Time::HiRes' time() function.
+
+WWW: https://metacpan.org/release/Dumbbench

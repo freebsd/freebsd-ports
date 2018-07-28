@@ -1,0 +1,17 @@
+bin/dumbbench
+%%SITE_PERL%%/Benchmark/Dumb.pm
+%%SITE_PERL%%/Dumbbench.pm
+%%SITE_PERL%%/Dumbbench/BoxPlot.pm
+%%SITE_PERL%%/Dumbbench/CPUFrequencyPinner.pm
+%%SITE_PERL%%/Dumbbench/Instance.pm
+%%SITE_PERL%%/Dumbbench/Instance/Cmd.pm
+%%SITE_PERL%%/Dumbbench/Instance/PerlEval.pm
+%%SITE_PERL%%/Dumbbench/Instance/PerlSub.pm
+%%SITE_PERL%%/Dumbbench/Result.pm
+%%SITE_PERL%%/Dumbbench/Stats.pm
+%%PERL5_MAN3%%/Benchmark::Dumb.3.gz
+%%PERL5_MAN3%%/Dumbbench.3.gz
+%%PERL5_MAN3%%/Dumbbench::Instance.3.gz
+%%PERL5_MAN3%%/Dumbbench::Instance::Cmd.3.gz
+%%PERL5_MAN3%%/Dumbbench::Instance::PerlEval.3.gz
+%%PERL5_MAN3%%/Dumbbench::Instance::PerlSub.3.gz
