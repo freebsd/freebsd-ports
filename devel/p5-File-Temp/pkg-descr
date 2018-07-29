@@ -1,6 +1,7 @@
-File::Temp is a Perl5 module which can be used to generate temporary files
-(providing a filename and filehandle) or directories.  Possible race
-conditions are avoided and some security checks are performed (e.g. making
-sure the sticky bit is set on world writeable temp directories).
+File::Temp can be used to create and open temporary files in a safe way. There
+is both a function interface and an object-oriented interface. The File::Temp
+constructor or the tempfile() function can be used to return the name and the
+open filehandle of a temporary file. The tempdir() function can be used to
+create a temporary directory.
 
 WWW: https://metacpan.org/release/File-Temp
