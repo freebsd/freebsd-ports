@@ -1,6 +1,6 @@
---- configure.orig	Sun Aug 14 11:21:37 2005
-+++ configure	Sun Aug 14 11:29:43 2005
-@@ -9134,6 +9134,7 @@
+--- configure.orig	2003-03-02 00:23:00 UTC
++++ configure
+@@ -9134,6 +9134,7 @@ if test x$ac_cv_lib_z_uncompress = xno; 
  else
    ID3_NEEDZLIB_TRUE='#'
    ID3_NEEDZLIB_FALSE=
@@ -8,7 +8,7 @@
  fi
  
  
-@@ -9730,14 +9731,13 @@
+@@ -9730,14 +9731,13 @@ fi
    if test ! x$silent = xyes; then
      exec 6>&1
    fi

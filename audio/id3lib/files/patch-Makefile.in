@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Dec  6 10:37:42 2002
-+++ Makefile.in	Fri Dec  6 10:38:10 2002
-@@ -132,8 +132,8 @@
+--- Makefile.in.orig	2003-03-02 00:23:00 UTC
++++ Makefile.in
+@@ -132,8 +132,8 @@ EXTRA_DIST = \
  @ID3_NEEDZLIB_TRUE@zlib_subdir = zlib
  @ID3_NEEDZLIB_FALSE@zlib_subdir = 
  
