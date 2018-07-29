@@ -2,9 +2,17 @@ Pwned Passwords are hundreds of millions of real world passwords exposed in
 data breaches. This exposure makes them unsuitable for ongoing use as they
 are at much greater risk of being used to take over other accounts. 
 
-This script uses a downloaded copy of the pwned passwort hashes available
-from https://haveibeenpwned.com/Passwords/ to allow passwords to be locally
-checked, whether they are known to have been obtained in a data breach and
-therefore should not be used.
+This script offers 2 methods to check whether a password has been exposed
+in an uncovered breach:
+
+1) Online check implemented in such a way that the password to be checked
+   does not need to be sent to the remote database server.
+
+2) Local check against a copy of the pawned passwords database.
+
+Since the local copy of the database requires nearly 20 GB of disk space
+(and a download of more than 10 GB of compressed data) the access via the 
+online check should be preferred, if the compatible with operational and
+security requirements.
 
 WWW: https://haveibeenpwned.com/
