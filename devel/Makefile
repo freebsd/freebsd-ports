@@ -3845,6 +3845,7 @@
     SUBDIR += p5-version
     SUBDIR += p65
     SUBDIR += p8-platform
+    SUBDIR += packr
     SUBDIR += paexec
     SUBDIR += pam_wrapper
     SUBDIR += papi
