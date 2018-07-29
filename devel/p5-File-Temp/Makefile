@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	File-Temp
-PORTVERSION=	0.2306
+PORTVERSION=	0.2308
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Perl5 module to generate temporary files or directories safely
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Generate temporary files or directories safely
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
