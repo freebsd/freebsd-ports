@@ -1,0 +1,11 @@
+This distribution contains a collection of utilities extracted from various
+commandline-based programs I have written, in the hope of trying to find a
+standard base to build these from in future.
+
+Note that "commandline" does not necessarily mean "plain-text running in a
+terminal"; simply that the mode of operation is that the user types a textual
+representation of some action, and the program parses this text in order to
+perform it. This could equally apply to a command input text area in a GUI
+program.
+
+WWW: https://metacpan.org/release/Commandable
