@@ -3,7 +3,7 @@
 
 PORTNAME=	mailman
 PORTVERSION=	2.1.14.j7
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	japanese mail
 MASTER_SITES=	https://docs.python.jp/contrib/mailman/_static/ \
@@ -105,7 +105,7 @@ MAIL_GID?=	courier
 
 .if ${PORT_OPTIONS:MNAMAZU2}
 RUN_DEPENDS+=	mknmz:japanese/namazu2
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Mailman-Cgi-private.py
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Mailman_Cgi_private.py
 .endif
 
 pre-everything::
