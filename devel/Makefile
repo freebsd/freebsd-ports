@@ -1058,6 +1058,7 @@
     SUBDIR += hs-haskell-lexer
     SUBDIR += hs-haskell-src
     SUBDIR += hs-haskell-src-exts
+    SUBDIR += hs-haskell-src-exts-util
     SUBDIR += hs-haskell-src-meta
     SUBDIR += hs-hasktags
     SUBDIR += hs-hex
