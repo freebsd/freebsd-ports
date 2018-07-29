@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tty-markdown
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
