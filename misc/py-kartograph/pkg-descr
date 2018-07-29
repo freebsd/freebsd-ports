@@ -1,0 +1,8 @@
+Kartograph is a simple and lightweight framework for building interactive map
+applications without Google Maps or any other mapping service. It was created
+with the needs of designers and data journalists in mind.
+
+Kartograph is two libraries. One generates beautiful & compact SVGmaps, the
+other helps you to create interactive maps that run across all major browsers.
+
+WWW: https://kartograph.org/docs/kartograph.py/
