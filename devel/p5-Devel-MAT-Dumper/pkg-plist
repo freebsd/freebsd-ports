@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/Devel/MAT/Dumper.pm
+%%SITE_ARCH%%/auto/Devel/MAT/Dumper/Dumper.so
+%%PERL5_MAN3%%/Devel::MAT::Dumper.3.gz
