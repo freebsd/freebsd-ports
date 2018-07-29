@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-wm
-PORTVERSION=	4.12.4
+PORTVERSION=	4.12.5
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	XFCE/src/xfce/xfwm4/${PORTVERSION:R}
 DISTNAME=	xfwm4-${PORTVERSION}
@@ -27,7 +27,6 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USES=		gettext-tools gmake pkgconfig tar:bzip2 xfce
 USE_GNOME=	gtk20 intltool libwnck cairo
-USE_LDCONFIG=	yes
 USE_XFCE=	libmenu
 USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xrandr xrender
 DATADIR=	${PREFIX}/share/xfwm4
