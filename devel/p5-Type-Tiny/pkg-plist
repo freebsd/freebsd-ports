@@ -7,6 +7,7 @@
 %%SITE_PERL%%/Eval/TypeTiny.pm
 %%SITE_PERL%%/Reply/Plugin/TypeTiny.pm
 %%SITE_PERL%%/Test/TypeTiny.pm
+%%SITE_PERL%%/Type/CONTRIBUTING.pod
 %%SITE_PERL%%/Type/Coercion.pm
 %%SITE_PERL%%/Type/Coercion/FromMoose.pm
 %%SITE_PERL%%/Type/Coercion/Union.pm
@@ -42,6 +43,8 @@
 %%SITE_PERL%%/Types/Standard/HashRef.pm
 %%SITE_PERL%%/Types/Standard/Map.pm
 %%SITE_PERL%%/Types/Standard/ScalarRef.pm
+%%SITE_PERL%%/Types/Standard/StrMatch.pm
+%%SITE_PERL%%/Types/Standard/Tied.pm
 %%SITE_PERL%%/Types/Standard/Tuple.pm
 %%SITE_PERL%%/Types/TypeTiny.pm
 %%PERL5_MAN3%%/Devel::TypeTiny::Perl56Compat.3.gz
@@ -53,6 +56,7 @@
 %%PERL5_MAN3%%/Eval::TypeTiny.3.gz
 %%PERL5_MAN3%%/Reply::Plugin::TypeTiny.3.gz
 %%PERL5_MAN3%%/Test::TypeTiny.3.gz
+%%PERL5_MAN3%%/Type::CONTRIBUTING.3.gz
 %%PERL5_MAN3%%/Type::Coercion.3.gz
 %%PERL5_MAN3%%/Type::Coercion::FromMoose.3.gz
 %%PERL5_MAN3%%/Type::Coercion::Union.3.gz
@@ -88,5 +92,7 @@
 %%PERL5_MAN3%%/Types::Standard::HashRef.3.gz
 %%PERL5_MAN3%%/Types::Standard::Map.3.gz
 %%PERL5_MAN3%%/Types::Standard::ScalarRef.3.gz
+%%PERL5_MAN3%%/Types::Standard::StrMatch.3.gz
+%%PERL5_MAN3%%/Types::Standard::Tied.3.gz
 %%PERL5_MAN3%%/Types::Standard::Tuple.3.gz
 %%PERL5_MAN3%%/Types::TypeTiny.3.gz
