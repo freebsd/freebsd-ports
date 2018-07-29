@@ -2187,6 +2187,7 @@
     SUBDIR += p5-Clone-More
     SUBDIR += p5-Clone-PP
     SUBDIR += p5-Code-Perl
+    SUBDIR += p5-Commandable
     SUBDIR += p5-Commands-Guarded
     SUBDIR += p5-CommitBit
     SUBDIR += p5-Compiler-Lexer
