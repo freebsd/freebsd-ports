@@ -1,6 +1,5 @@
-    The rar archiver adds and extracts files to and from an archive. The
-    archive is usually a regular file, whose ends in the ".rar" suffix.
-    The archive could be a medium like a floppy diskette, tape or any other
-    storage device.
+The rar archiver adds and extracts files to and from an archive. The archive is
+usually a regular file, whose ends in the ".rar" suffix. The archive could be a
+medium like a floppy diskette, tape or any other storage device.
 
-WWW: http://www.rarlab.com/
+WWW: https://www.rarlab.com/
