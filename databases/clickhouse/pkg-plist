@@ -7,21 +7,22 @@ bin/clickhouse-extract-from-config
 bin/clickhouse-format
 bin/clickhouse-lld
 bin/clickhouse-local
+bin/clickhouse-obfuscator
 bin/clickhouse-performance-test
 bin/clickhouse-report
 bin/clickhouse-server
-bin/clickhouse-test
+%%TEST%%bin/clickhouse-test
 bin/clickhouse-test-server
 bin/clickhouse-zookeeper-cli
-@dir(clickhouse,,) etc/clickhouse-server
-@dir(clickhouse,,) etc/clickhouse-client
-@sample etc/clickhouse-client/config.xml.sample
-@sample etc/clickhouse-server/config.xml.sample
-@sample etc/clickhouse-server/users.xml.sample
-etc/clickhouse-client/client-test.xml
-etc/clickhouse-server/server-test.xml
+@dir(clickhouse,,) %%ETCDIR%%-server
+@dir(clickhouse,,) %%ETCDIR%%-client
+%%ETCDIR%%-client/client-test.xml
+@sample %%ETCDIR%%-client/config.xml.sample
+@sample %%ETCDIR%%-server/config.xml.sample
+%%ETCDIR%%-server/server-test.xml
+@sample %%ETCDIR%%-server/users.xml.sample
 lib/libclickhouse.so
-lib/libclickhouse.so.1
+lib/libclickhouse.so.18
 lib/libclickhouse.so.%%SOVERSION%%
 %%DATADIR%%-test/external_dictionaries/CTestTestfile.cmake
 %%DATADIR%%-test/external_dictionaries/README.md
@@ -33,11 +34,11 @@ lib/libclickhouse.so.%%SOVERSION%%
 %%DATADIR%%-test/external_dictionaries/dictionary_library/CTestTestfile.cmake
 %%DATADIR%%-test/external_dictionaries/dictionary_library/cmake_install.cmake
 %%DATADIR%%-test/external_dictionaries/dictionary_library/dictionary_library.cpp
+%%DATADIR%%-test/external_dictionaries/dictionary_library/dictionary_library.so
 %%DATADIR%%-test/external_dictionaries/dictionary_library/dictionary_library_c.c
+%%DATADIR%%-test/external_dictionaries/dictionary_library/dictionary_library_c.so
 %%DATADIR%%-test/external_dictionaries/dictionary_library/dictionary_library_empty.cpp
-%%DATADIR%%-test/external_dictionaries/dictionary_library/libdictionary_library.so
-%%DATADIR%%-test/external_dictionaries/dictionary_library/libdictionary_library_c.so
-%%DATADIR%%-test/external_dictionaries/dictionary_library/libdictionary_library_empty.so
+%%DATADIR%%-test/external_dictionaries/dictionary_library/dictionary_library_empty.so
 %%DATADIR%%-test/external_dictionaries/generate_and_test.py
 %%DATADIR%%-test/external_dictionaries/http_server.py
 %%DATADIR%%-test/external_dictionaries/reference/Date.reference
@@ -430,6 +431,8 @@ lib/libclickhouse.so.%%SOVERSION%%
 %%DATADIR%%-test/queries/0_stateless/00146_summing_merge_tree_nested_map.sql
 %%DATADIR%%-test/queries/0_stateless/00147_alter_nested_default.reference
 %%DATADIR%%-test/queries/0_stateless/00147_alter_nested_default.sql
+%%DATADIR%%-test/queries/0_stateless/00148_summing_merge_tree_aggregate_function.reference
+%%DATADIR%%-test/queries/0_stateless/00148_summing_merge_tree_aggregate_function.sql
 %%DATADIR%%-test/queries/0_stateless/00148_summing_merge_tree_nested_map_multiple_values.reference
 %%DATADIR%%-test/queries/0_stateless/00148_summing_merge_tree_nested_map_multiple_values.sql
 %%DATADIR%%-test/queries/0_stateless/00149_function_url_hash.reference
@@ -890,6 +893,9 @@ lib/libclickhouse.so.%%SOVERSION%%
 %%DATADIR%%-test/queries/0_stateless/00386_enum_in_pk.sql
 %%DATADIR%%-test/queries/0_stateless/00386_has_column_in_table.reference
 %%DATADIR%%-test/queries/0_stateless/00386_has_column_in_table.sql
+%%DATADIR%%-test/queries/0_stateless/00386_long_in_pk.python
+%%DATADIR%%-test/queries/0_stateless/00386_long_in_pk.reference
+%%DATADIR%%-test/queries/0_stateless/00386_long_in_pk.sh
 %%DATADIR%%-test/queries/0_stateless/00387_use_client_time_zone.reference
 %%DATADIR%%-test/queries/0_stateless/00387_use_client_time_zone.sh
 %%DATADIR%%-test/queries/0_stateless/00388_enum_with_totals.reference
@@ -1498,14 +1504,124 @@ lib/libclickhouse.so.%%SOVERSION%%
 %%DATADIR%%-test/queries/0_stateless/00622_select_in_parens.sql
 %%DATADIR%%-test/queries/0_stateless/00623_in_partition_key.reference
 %%DATADIR%%-test/queries/0_stateless/00623_in_partition_key.sql
+%%DATADIR%%-test/queries/0_stateless/00623_replicated_truncate_table_zookeeper.reference
+%%DATADIR%%-test/queries/0_stateless/00623_replicated_truncate_table_zookeeper.sql
+%%DATADIR%%-test/queries/0_stateless/00623_truncate_table.reference
+%%DATADIR%%-test/queries/0_stateless/00623_truncate_table.sql
+%%DATADIR%%-test/queries/0_stateless/00623_truncate_table_throw_exception.reference
+%%DATADIR%%-test/queries/0_stateless/00623_truncate_table_throw_exception.sh
 %%DATADIR%%-test/queries/0_stateless/00624_length_utf8.reference
 %%DATADIR%%-test/queries/0_stateless/00624_length_utf8.sql
-%%DATADIR%%-test/queries/0_stateless/99999_prepare.reference
-%%DATADIR%%-test/queries/0_stateless/99999_prepare.sql
+%%DATADIR%%-test/queries/0_stateless/00625_arrays_in_nested.reference
+%%DATADIR%%-test/queries/0_stateless/00625_arrays_in_nested.sql
+%%DATADIR%%-test/queries/0_stateless/00625_query_in_form_data.reference
+%%DATADIR%%-test/queries/0_stateless/00625_query_in_form_data.sh
+%%DATADIR%%-test/queries/0_stateless/00625_summing_merge_tree_merge.reference
+%%DATADIR%%-test/queries/0_stateless/00625_summing_merge_tree_merge.sql
+%%DATADIR%%-test/queries/0_stateless/00626_in_syntax.reference
+%%DATADIR%%-test/queries/0_stateless/00626_in_syntax.sql
+%%DATADIR%%-test/queries/0_stateless/00626_replace_partition_from_table.reference
+%%DATADIR%%-test/queries/0_stateless/00626_replace_partition_from_table.sql
+%%DATADIR%%-test/queries/0_stateless/00626_replace_partition_from_table_zookeeper.reference
+%%DATADIR%%-test/queries/0_stateless/00626_replace_partition_from_table_zookeeper.sql
+%%DATADIR%%-test/queries/0_stateless/00627_recursive_alias.reference
+%%DATADIR%%-test/queries/0_stateless/00627_recursive_alias.sql
+%%DATADIR%%-test/queries/0_stateless/00628_in_lambda_on_merge_table_bug.reference
+%%DATADIR%%-test/queries/0_stateless/00628_in_lambda_on_merge_table_bug.sql
+%%DATADIR%%-test/queries/0_stateless/00630_arbitrary_csv_delimiter.reference
+%%DATADIR%%-test/queries/0_stateless/00630_arbitrary_csv_delimiter.sh
+%%DATADIR%%-test/queries/0_stateless/00631_conditional_computation.reference
+%%DATADIR%%-test/queries/0_stateless/00631_conditional_computation.sql
+%%DATADIR%%-test/queries/0_stateless/00632_aggregation_window_funnel.reference
+%%DATADIR%%-test/queries/0_stateless/00632_aggregation_window_funnel.sql
+%%DATADIR%%-test/queries/0_stateless/00632_get_sample_block_cache.reference
+%%DATADIR%%-test/queries/0_stateless/00632_get_sample_block_cache.sql
+%%DATADIR%%-test/queries/0_stateless/00633_func_or_in.reference
+%%DATADIR%%-test/queries/0_stateless/00633_func_or_in.sql
+%%DATADIR%%-test/queries/0_stateless/00633_materialized_view_and_too_many_parts_zookeeper.reference
+%%DATADIR%%-test/queries/0_stateless/00633_materialized_view_and_too_many_parts_zookeeper.sh
+%%DATADIR%%-test/queries/0_stateless/00634_rename_view.reference
+%%DATADIR%%-test/queries/0_stateless/00634_rename_view.sql
+%%DATADIR%%-test/queries/0_stateless/00635_shard_distinct_order_by.reference
+%%DATADIR%%-test/queries/0_stateless/00635_shard_distinct_order_by.sql
+%%DATADIR%%-test/queries/0_stateless/00636_partition_key_parts_pruning.reference
+%%DATADIR%%-test/queries/0_stateless/00636_partition_key_parts_pruning.sh
+%%DATADIR%%-test/queries/0_stateless/00637_sessions_in_http_interface_and_settings.reference
+%%DATADIR%%-test/queries/0_stateless/00637_sessions_in_http_interface_and_settings.sh
+%%DATADIR%%-test/queries/0_stateless/00638_remote_ssrf.reference
+%%DATADIR%%-test/queries/0_stateless/00638_remote_ssrf.sh.disabled
+%%DATADIR%%-test/queries/0_stateless/00639_startsWith.reference
+%%DATADIR%%-test/queries/0_stateless/00639_startsWith.sql
+%%DATADIR%%-test/queries/0_stateless/00640_endsWith.reference
+%%DATADIR%%-test/queries/0_stateless/00640_endsWith.sql
+%%DATADIR%%-test/queries/0_stateless/00642_cast.reference
+%%DATADIR%%-test/queries/0_stateless/00642_cast.sql
+%%DATADIR%%-test/queries/0_stateless/00643_cast_zookeeper.reference
+%%DATADIR%%-test/queries/0_stateless/00643_cast_zookeeper.sql
+%%DATADIR%%-test/queries/0_stateless/00644_different_expressions_with_same_alias.reference
+%%DATADIR%%-test/queries/0_stateless/00644_different_expressions_with_same_alias.sql
+%%DATADIR%%-test/queries/0_stateless/00645_date_time_input_format.reference
+%%DATADIR%%-test/queries/0_stateless/00645_date_time_input_format.sql
+%%DATADIR%%-test/queries/0_stateless/00646_url_engine.python
+%%DATADIR%%-test/queries/0_stateless/00646_url_engine.reference
+%%DATADIR%%-test/queries/0_stateless/00646_url_engine.sh
+%%DATADIR%%-test/queries/0_stateless/00646_weird_mmx.reference
+%%DATADIR%%-test/queries/0_stateless/00646_weird_mmx.sql
+%%DATADIR%%-test/queries/0_stateless/00647_histogram.reference
+%%DATADIR%%-test/queries/0_stateless/00647_histogram.sql
+%%DATADIR%%-test/queries/0_stateless/00647_select_numbers_with_offset.reference
+%%DATADIR%%-test/queries/0_stateless/00647_select_numbers_with_offset.sql
+%%DATADIR%%-test/queries/0_stateless/00648_replacing_empty_set_from_prewhere.reference
+%%DATADIR%%-test/queries/0_stateless/00648_replacing_empty_set_from_prewhere.sql
+%%DATADIR%%-test/queries/0_stateless/00649_quantile_tdigest_negative.reference
+%%DATADIR%%-test/queries/0_stateless/00649_quantile_tdigest_negative.sql
+%%DATADIR%%-test/queries/0_stateless/00650_array_enumerate_uniq_with_tuples.reference
+%%DATADIR%%-test/queries/0_stateless/00650_array_enumerate_uniq_with_tuples.sql
+%%DATADIR%%-test/queries/0_stateless/00650_csv_with_specified_quote_rule.reference
+%%DATADIR%%-test/queries/0_stateless/00650_csv_with_specified_quote_rule.sh
+%%DATADIR%%-test/queries/0_stateless/00651_default_database_on_client_reconnect.reference
+%%DATADIR%%-test/queries/0_stateless/00651_default_database_on_client_reconnect.sh
+%%DATADIR%%-test/queries/0_stateless/00652_mergetree_mutations.reference
+%%DATADIR%%-test/queries/0_stateless/00652_mergetree_mutations.sh
+%%DATADIR%%-test/queries/0_stateless/00652_replicated_mutations_zookeeper.reference
+%%DATADIR%%-test/queries/0_stateless/00652_replicated_mutations_zookeeper.sh
+%%DATADIR%%-test/queries/0_stateless/00653_monotonic_integer_cast.reference
+%%DATADIR%%-test/queries/0_stateless/00653_monotonic_integer_cast.sql
+%%DATADIR%%-test/queries/0_stateless/00653_running_difference.reference
+%%DATADIR%%-test/queries/0_stateless/00653_running_difference.sql
+%%DATADIR%%-test/queries/0_stateless/00660_optimize_final_without_partition.reference
+%%DATADIR%%-test/queries/0_stateless/00660_optimize_final_without_partition.sql
+%%DATADIR%%-test/queries/0_stateless/00661_array_has_silviucpp.reference
+%%DATADIR%%-test/queries/0_stateless/00661_array_has_silviucpp.sql
+%%DATADIR%%-test/queries/0_stateless/00661_optimize_final_replicated_without_partition_zookeeper.reference
+%%DATADIR%%-test/queries/0_stateless/00661_optimize_final_replicated_without_partition_zookeeper.sql
+%%DATADIR%%-test/queries/0_stateless/00662_array_has_nullable.reference
+%%DATADIR%%-test/queries/0_stateless/00662_array_has_nullable.sql
+%%DATADIR%%-test/queries/0_stateless/00663_tiny_log_empty_insert.reference
+%%DATADIR%%-test/queries/0_stateless/00663_tiny_log_empty_insert.sql
+%%DATADIR%%-test/queries/0_stateless/00664_cast_from_string_to_nullable.reference
+%%DATADIR%%-test/queries/0_stateless/00664_cast_from_string_to_nullable.sql
+%%DATADIR%%-test/queries/0_stateless/00665_alter_nullable_string_to_nullable_uint8.reference
+%%DATADIR%%-test/queries/0_stateless/00665_alter_nullable_string_to_nullable_uint8.sql
+%%DATADIR%%-test/queries/0_stateless/00666_uniq_complex_types.reference
+%%DATADIR%%-test/queries/0_stateless/00666_uniq_complex_types.sql
+%%DATADIR%%-test/queries/0_stateless/00667_compare_arrays_of_different_types.reference
+%%DATADIR%%-test/queries/0_stateless/00667_compare_arrays_of_different_types.sql
+%%DATADIR%%-test/queries/0_stateless/00668_compare_arrays_silviucpp.reference
+%%DATADIR%%-test/queries/0_stateless/00668_compare_arrays_silviucpp.sql
+%%DATADIR%%-test/queries/0_stateless/00670_truncate_temporary_table.reference
+%%DATADIR%%-test/queries/0_stateless/00670_truncate_temporary_table.sql
+%%DATADIR%%-test/queries/0_stateless/00671_max_intersections.reference
+%%DATADIR%%-test/queries/0_stateless/00671_max_intersections.sql
+%%DATADIR%%-test/queries/0_stateless/00672_arrayDistinct.reference
+%%DATADIR%%-test/queries/0_stateless/00672_arrayDistinct.sql
+%%DATADIR%%-test/queries/0_stateless/00673_subquery_prepared_set_performance.reference
+%%DATADIR%%-test/queries/0_stateless/00673_subquery_prepared_set_performance.sql
 %%DATADIR%%-test/queries/shell_config.sh
+@dir %%DATADIR%%/headers
 @dir %%DATADIR%%-test/external_dictionaries/CMakeFiles
 @dir %%DATADIR%%-test/external_dictionaries/clickhouse
 @dir %%DATADIR%%-test/external_dictionaries/generated
-@dir /var/db/clickhouse
-@dir /var/log/clickhouse
-@dir /var/run/clickhouse
+@dir(clickhouse,,) /var/db/clickhouse
+@dir(clickhouse,,) /var/log/clickhouse
+@dir(clickhouse,,) /var/run/clickhouse
