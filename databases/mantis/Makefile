@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mantis
-PORTVERSION=	2.6.0
+PORTVERSION=	2.15.0
 CATEGORIES=	databases www
 
 MAINTAINER=	ports@FreeBSD.org

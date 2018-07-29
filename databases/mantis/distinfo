@@ -1,6 +1,6 @@
-TIMESTAMP = 1506987384
-SHA256 (mantisbt-mantisbt-2.6.0-063cce6182568cf2eba81e3ca59cdd67606e7bab_GH0.tar.gz) = 22c221478380f3cafc9d5ccdaa3916b7826327750ebf75b746b324b77df40855
-SIZE (mantisbt-mantisbt-2.6.0-063cce6182568cf2eba81e3ca59cdd67606e7bab_GH0.tar.gz) = 4523391
+TIMESTAMP = 1532858621
+SHA256 (mantisbt-mantisbt-2.15.0-798792eebed2e699a98c4e94f4aeb4c35eba55f8_GH0.tar.gz) = a6b1bbd8fa7bc7f541e77a59e9f8a6fd496b8f61f2cd0423750ad6731af93522
+SIZE (mantisbt-mantisbt-2.15.0-798792eebed2e699a98c4e94f4aeb4c35eba55f8_GH0.tar.gz) = 4547294
 SHA256 (mantisbt-swagger-ui-0beaf61f94c3e6359ee0cdaf7b23ad4b365d761f_GH0.tar.gz) = 5c67f724da6d2daa8931920b82f92319098badc47b57848c385a942a1420bdf4
 SIZE (mantisbt-swagger-ui-0beaf61f94c3e6359ee0cdaf7b23ad4b365d761f_GH0.tar.gz) = 1401641
 SHA256 (mantisbt-ADOdb-cc2c13e337f1441e3aa1e17497722c1cd98b281b_GH0.tar.gz) = a9334857b2dfefb42273f5296ef89166e6d65fcca26857702bce579ba1add102
