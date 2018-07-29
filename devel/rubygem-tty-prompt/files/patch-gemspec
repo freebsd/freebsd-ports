@@ -1,0 +1,11 @@
+--- tty-prompt.gemspec.orig	2018-07-29 00:36:44 UTC
++++ tty-prompt.gemspec
+@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<necromancer>.freeze, ["~> 0.4.0"])
+       s.add_runtime_dependency(%q<pastel>.freeze, ["~> 0.7.0"])
+       s.add_runtime_dependency(%q<timers>.freeze, ["~> 4.0"])
+-      s.add_runtime_dependency(%q<tty-cursor>.freeze, ["~> 0.5.0"])
++      s.add_runtime_dependency(%q<tty-cursor>.freeze, ["~> 0.5"])
+       s.add_runtime_dependency(%q<tty-reader>.freeze, ["~> 0.3.0"])
+       s.add_development_dependency(%q<bundler>.freeze, ["< 2.0", ">= 1.5.0"])
+       s.add_development_dependency(%q<rake>.freeze, [">= 0"])
