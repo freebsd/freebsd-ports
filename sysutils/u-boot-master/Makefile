@@ -5,9 +5,11 @@
 
 PORTNAME=	u-boot
 PORTVERSION=	${UBOOT_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	-${MODEL}
 MASTER_SITES=	ftp://ftp.denx.de/pub/u-boot/
+DIST_SUBDIR=	u-boot
 
 MAINTAINER?=	uboot@FreeBSD.org
 COMMENT=	Cross-build das u-boot for model ${MODEL}
