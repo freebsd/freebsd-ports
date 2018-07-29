@@ -39,6 +39,7 @@ load_rc_config ${name}
 : ${clickhouse_rundir="/var/run/clickhouse"}
 : ${clickhouse_user="clickhouse"}
 : ${clickhouse_group="clickhouse"}
+: ${clickhouse_logdir="/var/log/clickhouse"}
 : ${clickhouse_dbdir="/var/db/clickhouse"}
 : ${clickhouse_flags=""}
 : ${clickhouse_pidfile="${clickhouse_rundir}/clickhouse.pid"}
@@ -51,6 +52,10 @@ required_files=${clickhouse_config}
 start_precmd=clickhouse_prestart
 
 clickhouse_prestart () {
+	for _dir in ${clickhouse_rundir} ${clickhouse_logdir} ${clickhouse_dbdir}; do
+		install -d -o ${clickhouse_user} -g ${clickhouse_group} ${_dir}
+	done
+
 %%LEGACY_LIMITS%%	if checkyesno clickhouse_limits; then
 %%LEGACY_LIMITS%%		eval `/usr/bin/limits -e -U ${clickhouse_user}` 2>/dev/null
 %%LEGACY_LIMITS%%	else
