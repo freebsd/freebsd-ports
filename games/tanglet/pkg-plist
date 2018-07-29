@@ -2,7 +2,6 @@ bin/tanglet
 share/applications/tanglet.desktop
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/icons/hicolor/1024x1024/apps/tanglet.png
 share/icons/hicolor/128x128/apps/tanglet.png
@@ -51,8 +50,10 @@ share/pixmaps/tanglet.xpm
 %%DATADIR%%/data/nl/dictionary
 %%DATADIR%%/data/nl/name
 %%DATADIR%%/data/nl/words
+%%NLS%%%%DATADIR%%/translations/tanglet_ca.qm
 %%NLS%%%%DATADIR%%/translations/tanglet_cs.qm
 %%NLS%%%%DATADIR%%/translations/tanglet_de.qm
+%%NLS%%%%DATADIR%%/translations/tanglet_el.qm
 %%NLS%%%%DATADIR%%/translations/tanglet_en.qm
 %%NLS%%%%DATADIR%%/translations/tanglet_es.qm
 %%NLS%%%%DATADIR%%/translations/tanglet_es_CL.qm
@@ -64,6 +65,7 @@ share/pixmaps/tanglet.xpm
 %%NLS%%%%DATADIR%%/translations/tanglet_ms.qm
 %%NLS%%%%DATADIR%%/translations/tanglet_nl.qm
 %%NLS%%%%DATADIR%%/translations/tanglet_pl.qm
+%%NLS%%%%DATADIR%%/translations/tanglet_pt.qm
 %%NLS%%%%DATADIR%%/translations/tanglet_ro.qm
 %%NLS%%%%DATADIR%%/translations/tanglet_szl.qm
 %%NLS%%%%DATADIR%%/translations/tanglet_tr.qm
