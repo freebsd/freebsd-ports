@@ -10,7 +10,7 @@
 .Sh DESCRIPTION
 The
 .Nm
-utility checks the passwords piped in via standard input  (one per line)
+utility checks the passwords piped in via standard input (one per line)
 against a huge database of passwords that are known to have been stolen
 in data breaches.
 .Pp
@@ -22,6 +22,15 @@ on standard output and the exit status of
 .Nm
 is set to 1.
 No output is generated for passwords not found in the database.
+.Pp
+The database can be downloaded to a local directory or it can be queried
+by a method that does not make the hash queried known to the remote
+server.
+The remote query is performed if the pawned password database has not
+been fetched and stored on the local system.
+While the remote accesses are not as fast as a local lookup, they will
+query an always up-to-date database and allow to avoid the download and
+storage of this huge database.
 .Pp
 Instead of plain passwords, SHA1 hashes of passwords may be supplied.
 Matches will be reported, but there is no provision to report the

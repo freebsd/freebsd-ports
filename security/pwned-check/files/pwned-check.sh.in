@@ -82,14 +82,20 @@ exitcode=0
 
 lookup ()
 {
-    local hash="$1"
-    look "$hash" pwned-passwords*.txt > /dev/null
+    local hash=$(echo "$1" | tr 'a-z' 'A-Z')
+    if [ "$USEFILES" = yes ]; then
+	look "$hash" pwned-passwords*.txt > /dev/null
+    else
+	expected=${hash#?????}
+	prefix=${hash%$expected}
+	fetch -q -o - https://api.pwnedpasswords.com/range/$prefix 2>/dev/null | grep -i "^$expected:" >/dev/null
+    fi
 }
 
 checkpw ()
 {
     local pwd="$1"
-    local hash=$(echo -n "$pwd" | sha1 | tr 'a-z' 'A-Z')
+    local hash=$(echo -n "$pwd" | sha1)
     if lookup "$hash"; then
 	echo "$pwd"
 	exitcode=1
@@ -102,8 +108,10 @@ checkpw ()
 }
 
 # Main program
-cd "$DBDIR" || errexit "Database directory '$DBDIR' not found."
 export LC_COLLATE=C
+if cd "$DBDIR" && ls pwned-passwords*.txt; then
+	USEFILES=yes
+fi >/dev/null 2>&1
 
 if [ "$#" -gt 0 ]; then
     if [ "$1" = "-u" ]; then
