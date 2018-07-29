@@ -17,7 +17,7 @@ BROKEN_powerpc64=	fails to compile: Sources/libMultiMarkdown/file.h:116: redefin
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		cmake
+USES=		cmake localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	fletcher
 GH_PROJECT=	MultiMarkdown-6
