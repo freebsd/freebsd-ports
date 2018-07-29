@@ -2,6 +2,7 @@
 
 PORTNAME=	freedv
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	https://freedv.com/wp-content/uploads/sites/8/2017/10/ \
 		LOCAL/db

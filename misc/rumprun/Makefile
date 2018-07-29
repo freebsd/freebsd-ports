@@ -2,7 +2,7 @@
 
 PORTNAME=	rumprun
 DISTVERSION=	g20180105
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 
 MAINTAINER=	fabian.freyer@physik.tu-berlin.de

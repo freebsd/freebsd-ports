@@ -4,7 +4,7 @@
 PORTNAME=	polygraph
 PORTVERSION=	4.11.0
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://www.web-polygraph.org/downloads/srcs/
 

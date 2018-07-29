@@ -2,7 +2,7 @@
 
 PORTNAME=	cppunit
 PORTVERSION=	1.14.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/
 

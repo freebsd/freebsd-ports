@@ -3,7 +3,7 @@
 
 PORTNAME=	charmtimetracker
 DISTVERSION=	1.11.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 
 MAINTAINER=	adridg@FreeBSD.org

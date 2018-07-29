@@ -3,7 +3,7 @@
 
 PORTNAME=	soundtouch
 PORTVERSION=	1.9.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.surina.net/soundtouch/
 

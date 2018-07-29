@@ -4,6 +4,7 @@
 PORTNAME=	owncloudclient
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	yonas@fizk.net

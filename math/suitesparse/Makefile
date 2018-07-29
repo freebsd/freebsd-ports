@@ -3,6 +3,7 @@
 
 PORTNAME=	suitesparse
 DISTVERSION=	5.2.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://faculty.cse.tamu.edu/davis/SuiteSparse/
 DISTNAME=	SuiteSparse-${PORTVERSION}

@@ -3,6 +3,7 @@
 
 PORTNAME=	elmerfem
 PORTVERSION=	8.3.20170524
+PORTREVISION=	1
 CATEGORIES=	cad science
 
 MAINTAINER=	ports@FreeBSD.org

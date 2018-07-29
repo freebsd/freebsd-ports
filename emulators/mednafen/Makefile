@@ -2,6 +2,7 @@
 
 PORTNAME=	mednafen
 PORTVERSION=	1.21.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators games
 MASTER_SITES=	https://mednafen.github.io/releases/files/

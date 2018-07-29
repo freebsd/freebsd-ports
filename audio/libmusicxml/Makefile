@@ -2,6 +2,7 @@
 
 PORTNAME=	libmusicxml
 DISTVERSION=	3.11
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org

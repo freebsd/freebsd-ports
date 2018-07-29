@@ -3,6 +3,7 @@
 
 PORTNAME=	opencoarrays
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	lang parallel
 
 MAINTAINER=	as@cmplx.uk

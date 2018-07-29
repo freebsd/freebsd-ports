@@ -3,7 +3,7 @@
 
 PORTNAME=	taskwarrior
 PORTVERSION=	2.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 
 MAINTAINER=	skreuzer@FreeBSD.org

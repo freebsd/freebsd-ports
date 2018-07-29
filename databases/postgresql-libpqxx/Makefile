@@ -3,6 +3,7 @@
 
 PORTNAME=	libpqxx
 PORTVERSION=	6.1.0
+PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql-
 DIST_SUBDIR=	postgresql

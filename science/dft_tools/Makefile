@@ -2,6 +2,7 @@
 
 PORTNAME=	dft_tools
 DISTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org

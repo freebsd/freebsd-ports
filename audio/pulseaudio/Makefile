@@ -6,6 +6,7 @@
 
 PORTNAME=	pulseaudio
 PORTVERSION=	11.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 

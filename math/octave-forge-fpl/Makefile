@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-fpl
 PORTVERSION=	1.3.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

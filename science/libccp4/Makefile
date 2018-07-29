@@ -2,6 +2,7 @@
 
 PORTNAME=	libccp4
 DISTVERSION=	6.5.1
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.ccp4.ac.uk/opensource/
 

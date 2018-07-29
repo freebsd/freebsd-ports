@@ -3,6 +3,7 @@
 
 PORTNAME=	md5deep
 PORTVERSION=	4.4
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	nobutaka@FreeBSD.org

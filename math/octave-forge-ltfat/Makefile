@@ -3,6 +3,7 @@
 
 PORTNAME=	octave-forge-ltfat
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math
 
