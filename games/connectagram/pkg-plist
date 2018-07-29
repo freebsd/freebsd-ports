@@ -16,12 +16,13 @@ share/applications/connectagram.desktop
 %%NLS%%%%DATADIR%%/translations/connectagram_lt.qm
 %%NLS%%%%DATADIR%%/translations/connectagram_nl.qm
 %%NLS%%%%DATADIR%%/translations/connectagram_pl.qm
+%%NLS%%%%DATADIR%%/translations/connectagram_pt.qm
 %%NLS%%%%DATADIR%%/translations/connectagram_ro.qm
 %%NLS%%%%DATADIR%%/translations/connectagram_ru.qm
 %%NLS%%%%DATADIR%%/translations/connectagram_tr.qm
+%%NLS%%%%DATADIR%%/translations/connectagram_uk.qm
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 share/icons/hicolor/1024x1024/apps/connectagram.png
 share/icons/hicolor/128x128/apps/connectagram.png
