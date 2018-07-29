@@ -2463,6 +2463,7 @@
     SUBDIR += p5-Devel-LeakTrace
     SUBDIR += p5-Devel-LexAlias
     SUBDIR += p5-Devel-MAT
+    SUBDIR += p5-Devel-MAT-Dumper
     SUBDIR += p5-Devel-Messenger
     SUBDIR += p5-Devel-Modlist
     SUBDIR += p5-Devel-NYTProf
