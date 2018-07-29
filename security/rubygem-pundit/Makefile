@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pundit
-PORTVERSION=	1.1.0
+PORTVERSION=	2.0.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
