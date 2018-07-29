@@ -7,4 +7,4 @@ file based on your config. It knows how to generate Catalyst, Mojo, and Mason
 app files natively. For other apps, or more complicated setups, you can supply a
 template to Emplacken and it will use that to generate the PSGI app.
 
-WWW: http://search.cpan.org/dist/Emplacken/
+WWW: https://metacpan.org/release/DROLSKY/Emplacken-0.01
