@@ -425,6 +425,7 @@
     SUBDIR += py-progressbar2
     SUBDIR += py-progressbar231
     SUBDIR += py-pyfiglet
+    SUBDIR += py-pykml
     SUBDIR += py-pyprind
     SUBDIR += py-python-geohash
     SUBDIR += py-python-utils
