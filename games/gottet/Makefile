@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gottet
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.7
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/gottet/
@@ -33,7 +33,7 @@ post-patch-NLS-off:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} CREDITS ChangeLog NEWS README \
+	(cd ${WRKSRC} && ${INSTALL_DATA} CREDITS ChangeLog README \
 		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
