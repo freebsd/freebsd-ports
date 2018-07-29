@@ -13,6 +13,7 @@ share/applications/cutemaze.desktop
 %%NLS%%%%DATADIR%%/translations/cutemaze_lt.qm
 %%NLS%%%%DATADIR%%/translations/cutemaze_nl.qm
 %%NLS%%%%DATADIR%%/translations/cutemaze_pl.qm
+%%NLS%%%%DATADIR%%/translations/cutemaze_pt.qm
 %%NLS%%%%DATADIR%%/translations/cutemaze_pt_BR.qm
 %%NLS%%%%DATADIR%%/translations/cutemaze_ro.qm
 %%NLS%%%%DATADIR%%/translations/cutemaze_ru.qm
