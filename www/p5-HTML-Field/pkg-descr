@@ -11,4 +11,4 @@ which is typically repeated several times in a CGI script.
 This bundle includes also HTML::FieldForm, which is a very simple module to
 manage sets of HTML::Field objects.
 
-WWW: http://search.cpan.org/dist/HTML-Field/
+WWW: https://metacpan.org/release/JFRAIRE/HTML-Field-1.19
