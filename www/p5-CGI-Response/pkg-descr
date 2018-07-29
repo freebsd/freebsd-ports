@@ -13,4 +13,4 @@ More advanced applications may employ the Full Interface object
  non-standard headers. Both interfaces try to generate reasonable
  defaults whenever possible.
 
-WWW: http://search.cpan.org/dist/CGI-Response/
+WWW: https://metacpan.org/release/MGH/CGI-Response-0.03
