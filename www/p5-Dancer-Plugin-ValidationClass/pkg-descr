@@ -3,4 +3,4 @@ module for easy, reusable data validation for your Dancer
 applications.  You don't even need to configure it unless your
 environment isn't a typical one.
 
-WWW: http://search.cpan.org/dist/Dancer-Plugin-ValidationClass/
+WWW: https://metacpan.org/release/AWNCORP/Dancer-Plugin-ValidationClass-0.120490
