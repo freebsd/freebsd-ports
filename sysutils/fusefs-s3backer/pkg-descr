@@ -1,0 +1,24 @@
+s3backer is a filesystem that contains a single file backed by the
+Amazon Simple Storage Service (Amazon S3). As a filesystem, it is
+very simple: it provides a single normal file having a fixed size.
+Underneath, the file is divided up into blocks, and the content of
+each block is stored in a unique Amazon S3 object. In other words,
+what s3backer provides is really more like an S3-backed virtual
+hard disk device, rather than a filesystem.
+
+In typical usage, a normal filesystem is mounted on top of the file
+exported by the s3backer filesystem using a loopback mount (or disk
+image mount on Mac OS X).
+
+By not attempting to implement a complete filesystem, which is a
+complex undertaking and difficult to get right, s3backer can stay
+very lightweight and simple. Only three HTTP operations are used:
+GET, PUT, and DELETE. All of the experience and knowledge about
+how to properly implement filesystems that already exists can be
+reused.
+
+By utilizing existing filesystems atop s3backer, you get full UNIX
+filesystem semantics. Subtle bugs or missing functionality relating
+to hard links, extended attributes, POSIX locking, etc. are avoided.
+
+WWW: https://github.com/archiecobbs/s3backer
