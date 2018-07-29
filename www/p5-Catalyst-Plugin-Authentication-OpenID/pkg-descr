@@ -6,4 +6,4 @@ In most cases, you'll want to use this plugin in combination with a session
 plugin for Catalyst. For example, Catalyst::Plugin::Session::FastMmap, which
 uses a memory-mapped database to store session data.
 
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-Authentication-OpenID/
+WWW: https://metacpan.org/release/BTROTT/Catalyst-Plugin-Authentication-OpenID-0.02
