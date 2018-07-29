@@ -1,0 +1,13 @@
+pyKML is a Python package for creating, parsing, manipulating, and validating
+KML, a language for encoding and annotating geographic data.
+
+pyKML is based on the lxml.objectify API which provides a Pythonic API for
+working with XML documents. pyKML adds additional functionality specific to the
+KML language.
+
+KML comes in several flavors. pyKML can be used with KML documents that follow
+the base OGC KML specification, the Google Extensions Namespace, or a
+user-supplied extension to the base KML specification (defined by an XML Schema
+document).
+
+WWW: https://pythonhosted.org/pykml
