@@ -3,7 +3,7 @@
 
 PORTNAME=	ypsilon
 PORTVERSION=	0.9.6.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	lang scheme
 
 MAINTAINER=	vmagerya@gmail.com

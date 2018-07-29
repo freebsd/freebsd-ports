@@ -3,7 +3,7 @@
 
 PORTNAME=	ori
 PORTVERSION=	0.8.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://cdn.bitbucket.org/orifs/ori/downloads/
 

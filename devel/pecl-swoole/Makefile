@@ -3,6 +3,7 @@
 
 PORTNAME=	swoole
 PORTVERSION=	1.10.5
+PORTREVISION=	1
 CATEGORIES=	devel net
 
 MAINTAINER=	vanilla@FreeBSD.org

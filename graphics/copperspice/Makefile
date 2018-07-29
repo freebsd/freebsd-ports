@@ -3,7 +3,7 @@
 
 PORTNAME=	copperspice
 PORTVERSION=	1.3.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.copperspice.com/copperspice/source/
 

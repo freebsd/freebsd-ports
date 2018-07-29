@@ -3,6 +3,7 @@
 
 PORTNAME=	h5utils
 DISTVERSION=	1.13.1
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	aehlig@linta.de

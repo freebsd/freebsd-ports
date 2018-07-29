@@ -7,7 +7,7 @@
 
 PORTNAME=	cryptopp
 PORTVERSION=	5.6.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	http://www.cryptopp.com/
 DISTNAME=	cryptopp${PORTVERSION:S/.//g}

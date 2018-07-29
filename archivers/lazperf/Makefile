@@ -3,6 +3,7 @@
 
 PORTNAME=	lazperf
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	archivers databases geography
 
 MAINTAINER=	lbartoletti@tuxfamily.org

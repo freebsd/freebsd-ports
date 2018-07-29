@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-civil-engineering
 PORTVERSION=	1.0.7
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

@@ -2,6 +2,7 @@
 
 PORTNAME=	libzim
 PORTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	swills@FreeBSD.org

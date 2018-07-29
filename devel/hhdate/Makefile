@@ -4,6 +4,7 @@
 PORTNAME=	hhdate
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	andreas.sommer87@googlemail.com

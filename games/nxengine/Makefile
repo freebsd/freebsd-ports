@@ -2,6 +2,7 @@
 
 PORTNAME=	nxengine
 PORTVERSION=	2.6.3
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 MASTER_SITES+=	https://www.cavestory.org/downloads/:data \

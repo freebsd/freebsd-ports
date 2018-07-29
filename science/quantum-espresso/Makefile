@@ -3,7 +3,7 @@
 PORTNAME=	quantum-espresso
 DISTVERSIONPREFIX=	qe-
 DISTVERSION=	6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://www.quantum-espresso.org/wp-content/uploads/upf_files/:pp
 DIST_SUBDIR=	${PORTNAME}

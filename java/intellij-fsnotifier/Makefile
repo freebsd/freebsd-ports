@@ -3,7 +3,7 @@
 
 PORTNAME=	intellij-fsnotifier
 PORTVERSION=	20160221
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	java devel
 
 MAINTAINER=	ports@FreeBSD.org

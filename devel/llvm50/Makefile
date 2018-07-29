@@ -2,6 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	5.0.2
+PORTREVISION=	1
 PORTREVISON=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	https://releases.llvm.org/${LLVM_RELEASE}/${RCDIR} LOCAL/brooks

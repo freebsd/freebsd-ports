@@ -3,6 +3,7 @@
 
 PORTNAME=	terminology
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	x11 enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 

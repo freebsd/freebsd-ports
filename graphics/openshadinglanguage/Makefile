@@ -4,7 +4,7 @@
 PORTNAME=	openshadinglanguage
 PORTVERSION=	1.8.10
 DISTVERSIONPREFIX=	Release-
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz

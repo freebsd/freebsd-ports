@@ -3,6 +3,7 @@
 
 PORTNAME=	sqlitestudio
 DISTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://sqlitestudio.pl/files/sqlitestudio3/complete/tar/
 
