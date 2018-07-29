@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Type-Tiny
-PORTVERSION=	1.004000
+PORTVERSION=	1.004002
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOBYINK
@@ -20,11 +20,11 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Class-InsideOut>=0:devel/p5-Class-InsideOut \
 		p5-Function-Parameters>=0:devel/p5-Function-Parameters \
 		p5-JSON>=0:converters/p5-JSON \
-		p5-Moo>=1.002001:devel/p5-Moo \
-		p5-Moose>=0:devel/p5-Moose \
+		p5-Moo>=1.006000:devel/p5-Moo \
+		p5-Moose>=2.0000:devel/p5-Moose \
 		p5-MooseX-Types>=0:devel/p5-MooseX-Types \
 		p5-MooseX-Types-Common>=0:devel/p5-MooseX-Types-Common \
-		p5-Mouse>=0:devel/p5-Mouse \
+		p5-Mouse>=1.00:devel/p5-Mouse \
 		p5-MouseX-Types>=0:devel/p5-MouseX-Types \
 		p5-Role-Tiny>=0:devel/p5-Role-Tiny \
 		p5-Sub-Exporter-Lexical>=0:devel/p5-Sub-Exporter-Lexical \
