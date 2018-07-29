@@ -1,0 +1,5 @@
+PTable is a simple Python library designed to make it quick and easy to
+represent tabular data in visually appealing ASCII tables, originally forked
+from PrettyTable.
+
+WWW: https://github.com/kxxoling/PTable
