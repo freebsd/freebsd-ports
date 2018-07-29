@@ -281,6 +281,7 @@ hashtables_port?=                                devel/hs-hashtables
 haskell-lexer_port?=                             devel/hs-haskell-lexer
 haskell-src_port?=                               devel/hs-haskell-src
 haskell-src-exts_port?=                          devel/hs-haskell-src-exts
+haskell-src-exts-util_port?=                     devel/hs-haskell-src-exts-util
 haskell-src-meta_port?=                          devel/hs-haskell-src-meta
 haskell-xmpp_port?=                              net-im/hs-haskell-xmpp
 hasktags_port?=                                  devel/hs-hasktags                               # executable

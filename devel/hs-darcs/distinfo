@@ -1,3 +1,3 @@
-TIMESTAMP = 1525013682
-SHA256 (cabal/darcs-2.14.0.tar.gz) = 19fa0882a1485f03ab0552d6f01d538c2b286c4a38a1fe502e9cf2a78f782803
-SIZE (cabal/darcs-2.14.0.tar.gz) = 1063067
+TIMESTAMP = 1531854433
+SHA256 (cabal/darcs-2.14.1.tar.gz) = 61ddbc99acaf06df3a114437064e9241e0da467c23d1d3fb520a782eee32cd35
+SIZE (cabal/darcs-2.14.1.tar.gz) = 1061952

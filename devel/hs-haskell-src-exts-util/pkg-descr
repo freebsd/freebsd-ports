@@ -1,0 +1,6 @@
+Haskell-Source with Extensions (HSE, haskell-src-exts) is an extension of
+the standard haskell-src package, and handles most registered syntactic
+extensions to Haskell. This package contains helper functions for working
+with haskell-src-exts trees.
+
+WWW: https://github.com/haskell-suite/haskell-src-exts-util

@@ -1,3 +1,3 @@
-TIMESTAMP = 1499544799
-SHA256 (cabal/hint-0.7.0.tar.gz) = 299a735848bd6b2e0bdeeee4b47d9d52f865198fbb9403df3f6571801b3e8155
-SIZE (cabal/hint-0.7.0.tar.gz) = 28138
+TIMESTAMP = 1531857801
+SHA256 (cabal/hint-0.8.0.tar.gz) = 2e702d62c8f56b799d767f3d3707bec12597bc529a051ad90bd5840581551c41
+SIZE (cabal/hint-0.8.0.tar.gz) = 31126

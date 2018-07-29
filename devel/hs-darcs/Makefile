@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	darcs
-PORTVERSION=	2.14.0
-PORTREVISION=	1
+PORTVERSION=	2.14.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -19,8 +18,6 @@ USE_CABAL=	async attoparsec base16-bytestring cryptohash \
 		utf8-string vector zip-archive zlib
 
 EXECUTABLE=	darcs
-
-IGNORE=		Depends on graphics/hs-graphviz, which doesn't compile with recent GHC
 
 MAN1PAGES=	darcs.1
 
