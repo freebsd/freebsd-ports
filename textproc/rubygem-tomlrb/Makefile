@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tomlrb
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
