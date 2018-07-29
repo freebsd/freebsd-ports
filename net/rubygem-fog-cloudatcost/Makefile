@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-cloudatcost
-PORTVERSION=	0.2.3
-PORTREVISION=	2
+PORTVERSION=	0.4.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -13,10 +12,9 @@ COMMENT=	Module for the 'fog' gem to support CloudAtCost
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-fog-core1>=1.41:devel/rubygem-fog-core1 \
-		rubygem-fog-json>=1.0:devel/rubygem-fog-json \
-		rubygem-fog-xml>=0.1:textproc/rubygem-fog-xml \
-		rubygem-ipaddress>=0.8:net/rubygem-ipaddress
+RUN_DEPENDS=	rubygem-fog-core>=0:devel/rubygem-fog-core \
+		rubygem-fog-json>=0:devel/rubygem-fog-json \
+		rubygem-ipaddress>=0:net/rubygem-ipaddress
 
 NO_ARCH=	yes
 USE_RUBY=	yes
