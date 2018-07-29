@@ -11,7 +11,7 @@ COMMENT=	C++ library to build and query a full text inverted index
 
 LICENSE=	GPLv3
 
-USES=		bison iconv libtool makeinfo pathfix
+USES=		bison compiler iconv libtool makeinfo pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-posixmutexes \
 		--localstatedir="${PREFIX}/var" \
@@ -19,6 +19,8 @@ CONFIGURE_ARGS=	--enable-posixmutexes \
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
