@@ -1,6 +1,6 @@
-%%PERL5_MAN3%%/Test::Base.3.gz
-%%PERL5_MAN3%%/Test::Base::Filter.3.gz
 %%SITE_PERL%%/Test/Base.pm
 %%SITE_PERL%%/Test/Base.pod
 %%SITE_PERL%%/Test/Base/Filter.pm
 %%SITE_PERL%%/Test/Base/Filter.pod
+%%PERL5_MAN3%%/Test::Base.3.gz
+%%PERL5_MAN3%%/Test::Base::Filter.3.gz
