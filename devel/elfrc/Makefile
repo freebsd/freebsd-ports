@@ -9,6 +9,9 @@ MASTER_SITES=	http://ktown.kde.org/~frerich/
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	Resource compiler for ELF systems
 
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 PLIST_FILES=	bin/elfrc
 PORTDOCS=	README
 
