@@ -3,6 +3,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	11.1.2
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -86,11 +87,11 @@ RUN_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-dropzonejs-rails07>=0.7.1:www/rubygem-dropzonejs-rails07 \
 	rubygem-fog-aws2>=2.0.1:net/rubygem-fog-aws2 \
 	rubygem-fog-core1>=1.44:devel/rubygem-fog-core1 \
-	rubygem-fog-google>=1.3.3:net/rubygem-fog-google \
+	rubygem-fog-google13>=1.3.3:net/rubygem-fog-google13 \
 	rubygem-fog-local>=0.3:net/rubygem-fog-local \
 	rubygem-fog-openstack>=0.1:net/rubygem-fog-openstack \
 	rubygem-fog-rackspace>=0.1.1:net/rubygem-fog-rackspace \
-	rubygem-fog-aliyun>=0.2.0:net/rubygem-fog-aliyun \
+	rubygem-fog-aliyun02>=0.2.0:net/rubygem-fog-aliyun02 \
 	rubygem-google-api-client>=0.19.8:devel/rubygem-google-api-client \
 	rubygem-unf>=0.1.4:textproc/rubygem-unf \
 	rubygem-seed-fu>=2.3.7:databases/rubygem-seed-fu \
@@ -117,7 +118,7 @@ RUN_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-state_machines-activerecord>=0.5.1:databases/rubygem-state_machines-activerecord \
 	rubygem-acts-as-taggable-on>=5.0:www/rubygem-acts-as-taggable-on \
 	rubygem-sidekiq>=5.1.0:devel/rubygem-sidekiq \
-	rubygem-sidekiq-cron>=0.6.0:devel/rubygem-sidekiq-cron \
+	rubygem-sidekiq-cron0>=0.6.0:devel/rubygem-sidekiq-cron0 \
 	rubygem-redis-namespace>=1.6.0:databases/rubygem-redis-namespace \
 	rubygem-sidekiq-limit_fetch>=3.4:devel/rubygem-sidekiq-limit_fetch \
 	rubygem-rufus-scheduler342>=3.4.0:devel/rubygem-rufus-scheduler342 \
