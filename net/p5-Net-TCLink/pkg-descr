@@ -4,4 +4,4 @@ The protocol (which is the same across all platforms and languages) is
 well-documented in the Web Developer's Guide, so please consult it for
 any questions you may have about the protocol syntax itself.
 
-WWW: http://search.cpan.org/dist/Net_TCLink.pm/
+WWW: https://metacpan.org/release/Net_TCLink
