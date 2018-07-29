@@ -1,6 +1,6 @@
---- libs/Makefile.orig	2015-11-30 20:55:15 UTC
+--- libs/Makefile.orig	2018-07-06 23:45:40 UTC
 +++ libs/Makefile
-@@ -111,6 +111,10 @@
+@@ -111,6 +111,10 @@ ifeq ($(PLATFORM), Linux)
  	PLAT_LINUX := Yes
  	VIS	:= -fvisibility=hidden
  endif
@@ -11,7 +11,7 @@
  
  # boost
  ARCHIVE_BOOST		:= boost_$(VER_BOOST).tar.gz
-@@ -368,9 +372,7 @@
+@@ -368,9 +372,7 @@ libtiff libproj libgeotiff libsqlite lib
  libexpat libgmp libmpfr libssl libcurl libjasper
  
  all: ./local$(MULTI_SUFFIX)/.xpt_libs
@@ -22,7 +22,7 @@
  	@touch ./local$(MULTI_SUFFIX)/.xpt_libs
  	
  clean:
-@@ -629,11 +631,7 @@
+@@ -629,11 +631,7 @@ libsquish: ./local$(MULTI_SUFFIX)/lib/.x
  
  
  libcgal: ./local$(MULTI_SUFFIX)/lib/.xpt_libcgal
@@ -35,7 +35,7 @@
  	@echo "building libcgal..."
  	@-mkdir -p "./local$(MULTI_SUFFIX)/include"
  	@-mkdir -p "./local$(MULTI_SUFFIX)/lib"
-@@ -663,24 +661,17 @@
+@@ -663,24 +661,17 @@ ifdef PLAT_DARWIN
  endif
  ifdef PLAT_LINUX
  	@cd "CGAL-$(VER_CGAL)" && \
@@ -64,3 +64,16 @@
  endif
  ifdef PLAT_MINGW
  	@cd "CGAL-$(VER_CGAL)" && \
+@@ -702,6 +693,12 @@ ifdef PLAT_MINGW
+ 	-DWITH_CGAL_Qt4=OFF $(BE_QUIET) && \
+ 	make $(BE_QUIET) && make install $(BE_QUIET)
+ endif
++	sed -i "" 's|static_cast<limb2>(-1) << sizeof_limb|static_cast<limb2>(-1U  << sizeof_limb)|g' \
++	./local/include/CGAL/MP_Float.h
++#	Placeholder
++#	./local/include/CGAL/Compact_container.h
++	sed -i "" 's|return \&\*rhs == NULL;|return rhs.operator->() == NULL;|'\
++        ./local/include/CGAL/Compact_container.h
+ 	@-rm -rf CGAL-$(VER_CGAL)
+ 	@touch $@
+ 
