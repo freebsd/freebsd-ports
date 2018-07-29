@@ -1,5 +1,5 @@
---- ./info/Makefile.orig	2011-10-19 17:46:38.000000000 +0900
-+++ ./info/Makefile	2011-11-21 19:26:11.000000000 +0900
+--- info/Makefile.orig	2018-06-07 05:48:29 UTC
++++ info/Makefile
 @@ -15,7 +15,7 @@
  ## EDIT THE FOLLOWINGS
  ##
@@ -9,7 +9,7 @@
  infodir=$(prefix)/info
  
  EMACS=emacs
-@@ -48,20 +48,20 @@
+@@ -48,20 +48,20 @@ all: info
  info:
  	sed -e 's/@setfilename mew.ja.info/@setfilename mew.info/' \
  	    -e 's/@set ja/@set en/' mew.texi > tmp.texi

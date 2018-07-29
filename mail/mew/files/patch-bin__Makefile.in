@@ -1,6 +1,6 @@
---- ./bin/Makefile.in.orig	2008-02-18 19:24:27.000000000 +0900
-+++ ./bin/Makefile.in	2010-01-04 12:06:23.000000000 +0900
-@@ -25,7 +25,9 @@
+--- bin/Makefile.in.orig	2018-06-07 05:48:29 UTC
++++ bin/Makefile.in
+@@ -25,7 +25,9 @@ LDFLAGS = @LDFLAGS@
  COFLAG = -o $@ 
  LIBS = @LIBS@
  
@@ -11,7 +11,7 @@
  LN = ln
  RM = rm -f
  MKDIR = mkdir -p
-@@ -105,31 +107,31 @@
+@@ -105,31 +107,31 @@ install: all
  	-@if [ ! -d $(DESTDIR)$(bindir) ]; then \
  		$(MKDIR) $(DESTDIR)$(bindir); \
  	fi

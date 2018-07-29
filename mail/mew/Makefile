@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mew
-PORTVERSION=	6.7
-PORTREVISION=	4
+PORTVERSION=	6.8
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.mew.org/Release/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
@@ -31,7 +30,7 @@ DOCS_INFO=	mew.ja
 PORTDOCS=	00api 00changes.0 00changes.1 00changes.2 00changes.3 \
 		00changes.4.1 00changes.4.2 00changes.5.1 00changes.5.2 \
 		00changes.6.1 00changes.6.2 00changes.6.3 00changes.6.4 \
-		00changes.6.5 00changes.6.6 00changes.6.7 \
+		00changes.6.5 00changes.6.6 00changes.6.7 00changes.6.8 \
 		00diff 00readme dot.emacs dot.mew dot.theme
 
 OPTIONS_DEFINE=	DATABASE DOCS STUNNEL
