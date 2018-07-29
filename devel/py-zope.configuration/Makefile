@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	zope.configuration
-PORTVERSION=	3.8.0
-PORTREVISION=	1
+PORTVERSION=	4.1.0
+PORTREVISION=	0
 CATEGORIES=	devel textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,5 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=0:devel/py-zope.interface@${
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
