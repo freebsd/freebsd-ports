@@ -1,6 +1,6 @@
---- include/id3/globals.h.orig	Sun Feb 22 17:38:28 2004
-+++ include/id3/globals.h	Sun Feb 22 17:38:22 2004
-@@ -480,7 +480,7 @@
+--- include/id3/globals.h.orig	2003-03-02 00:23:00 UTC
++++ include/id3/globals.h
+@@ -480,7 +480,7 @@ ID3_ENUM(Mp3_Frequencies)
    MP3FREQUENCIES_24000HZ = 24000,
    MP3FREQUENCIES_32000HZ = 32000,
    MP3FREQUENCIES_48000HZ = 48000,
