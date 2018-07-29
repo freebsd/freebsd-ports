@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xom
-PORTVERSION=	1.2.10
+PORTVERSION=	1.2.11
 PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	http://www.cafeconleche.org/XOM/
