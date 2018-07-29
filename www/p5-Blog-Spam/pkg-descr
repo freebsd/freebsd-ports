@@ -4,5 +4,5 @@ submitted blog/forum comment is SPAM or not, in real-time.
 We can identify many common SPAM characteristics and using them allow comments
 to be blocked - cutting down on the SPAM that might otherwise affect your site.
 
-WWW: http://search.cpan.org/dist/Blog-Spam/
-WWW: http://blogspam.net/
+WWW: https://metacpan.org/release/SKX/Blog-Spam-1.0.2
+WWW: https://blogspam.net/
