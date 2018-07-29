@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tty
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -23,10 +23,10 @@ RUN_DEPENDS=	rubygem-bundler>=1.16:sysutils/rubygem-bundler \
 		rubygem-tty-editor>=0.4.0:devel/rubygem-tty-editor \
 		rubygem-tty-file>=0.6.0:devel/rubygem-tty-file \
 		rubygem-tty-font>=0.2.0:devel/rubygem-tty-font \
-		rubygem-tty-markdown>=0.3.0:devel/rubygem-tty-markdown \
+		rubygem-tty-markdown>=0.4.0:devel/rubygem-tty-markdown \
 		rubygem-tty-pager>=0.11.0:devel/rubygem-tty-pager \
 		rubygem-tty-platform>=0.1.0:devel/rubygem-tty-platform \
-		rubygem-tty-progressbar>=0.14.0:devel/rubygem-tty-progressbar \
+		rubygem-tty-progressbar>=0.15.0:devel/rubygem-tty-progressbar \
 		rubygem-tty-prompt>=0.16.1:devel/rubygem-tty-prompt \
 		rubygem-tty-screen>=0.6.4:devel/rubygem-tty-screen \
 		rubygem-tty-spinner>=0.8.0:devel/rubygem-tty-spinner \
