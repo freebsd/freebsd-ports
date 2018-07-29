@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	cabextract
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.cabextract.org.uk/
+MASTER_SITES=	https://www.cabextract.org.uk/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Program to extract Microsoft cabinet (.CAB) files
