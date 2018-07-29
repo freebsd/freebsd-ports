@@ -4,6 +4,7 @@ bin/gscan2pdf
 %%SITE_PERL%%/Gscan2pdf/Cuneiform.pm
 %%SITE_PERL%%/Gscan2pdf/Dialog.pm
 %%SITE_PERL%%/Gscan2pdf/Dialog/Renumber.pm
+%%SITE_PERL%%/Gscan2pdf/Dialog/Save.pm
 %%SITE_PERL%%/Gscan2pdf/Dialog/Scan.pm
 %%SITE_PERL%%/Gscan2pdf/Dialog/Scan/CLI.pm
 %%SITE_PERL%%/Gscan2pdf/Dialog/Scan/Image_Sane.pm
