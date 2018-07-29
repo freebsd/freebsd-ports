@@ -1,4 +1,4 @@
 Getopt::Tabular is a Perl 5 module for table-driven argument parsing,
 vaguely inspired by John Ousterhout's Tk_ParseArgv.
 
-WWW: http://search.cpan.org/~gward/Getopt-Tabular-0.3/
+WWW: https://metacpan.org/release/GWARD/Getopt-Tabular-0.3
