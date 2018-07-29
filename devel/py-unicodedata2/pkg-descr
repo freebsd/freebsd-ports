@@ -1,0 +1,7 @@
+unicodedata2 is the unicodedata backport/updates to python 2 and 3.
+
+The versions of this package match unicode versions, so unicodedata2==11.0.0 is
+data from unicode 11.0.0. Additionally this backports support for named aliases
+and named sequences to python2.
+
+WWW: https://github.com/mikekap/unicodedata2
