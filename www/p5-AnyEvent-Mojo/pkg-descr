@@ -2,4 +2,4 @@ This module allows you to integrate Mojo applications with the
 AnyEvent framework. For example, you can run a web interface for a
 long-lived AnyEvent daemon.
 
-WWW: http://search.cpan.org/dist/AnyEvent-Mojo/
+WWW: https://metacpan.org/release/MELO/AnyEvent-Mojo-0.8003
