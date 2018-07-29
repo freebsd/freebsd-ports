@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rbovirt
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.7
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
