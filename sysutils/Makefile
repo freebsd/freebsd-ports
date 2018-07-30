@@ -598,6 +598,7 @@
     SUBDIR += libieee1284
     SUBDIR += libretto-config
     SUBDIR += libsunacl
+    SUBDIR += libsysstat 
     SUBDIR += liburcu
     SUBDIR += libutempter
     SUBDIR += life-preserver
