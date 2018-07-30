@@ -12,13 +12,12 @@ COMMENT=	Dnsforwarder is A simple DNS forwarder
 LICENSE=	GPLv3
 LICENSE_FILES= ${WRKSRC}/LICENSE
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	holmium
-GH_PROJECT=	dnsforwarder
-
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		localbase
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	holmium
 
 PLIST_FILES=	bin/dnsforwarder
 GNU_CONFIGURE=	yes
