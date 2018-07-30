@@ -6,4 +6,4 @@ installed both locally and remotely). According to your SpamAssassin server
 configuration, it can show worse performance than Bogofilter, (slower,
 eating more CPU), but can catch spam with better accuracy.
 
-WWW: http://claws-mail.org/plugin.php?plugin=spamassassin
+WWW: https://www.claws-mail.org/plugin.php?plugin=spamassassin
