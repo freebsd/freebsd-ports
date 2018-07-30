@@ -20,7 +20,7 @@
      }
    
      // read character chunks one by one
-@@ -357,7 +357,7 @@ highscore_entry highscore[HIGHSCORE_ENTR
+@@ -357,7 +357,7 @@ highscore_entry highscore[HIGHSCORE_ENTRIES];
  
  void highscore_save()
  {
@@ -38,7 +38,13 @@
      FILE *fp = fopen(fname,"rb");
      if (fp != NULL) {
  	for (int i=0; i<HIGHSCORE_ENTRIES; i++) {
-@@ -1365,6 +1365,7 @@ void eval_args(int argc, char **argv)
+@@ -1360,11 +1360,12 @@ void eval_args(int argc, char **argv)
+ 	}
+     }
+     if (show_usage) {
+-	printf("Columns "VERSION" - Copyright (C) 1999,2000 Daniel Heck\n");
++	printf("Columns " VERSION " - Copyright (C) 1999,2000 Daniel Heck\n");
+ 	printf("usage: columns [--nosound] [--bg=filename.bmp]\n\n");
      }
  }
  
