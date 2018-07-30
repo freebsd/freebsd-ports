@@ -2,7 +2,7 @@
 
 PORTNAME=	packr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.0
+DISTVERSION=	1.12.1
 CATEGORIES=	devel
 
 MAINTAINER=	dg@syrec.org
@@ -11,12 +11,12 @@ COMMENT=	Simple and easy way to embed static files into Go binaries
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	go:lang/go
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gobuffalo
 GH_SUBDIR=	src/github.com/gobuffalo/packr
-GH_TUPLE=	golang:net:3673e40:net/src/golang.org/x/net \
+GH_TUPLE=	golang:net:c4299a1:net/src/golang.org/x/net \
 		golang:sync:1d60e46:sync/src/golang.org/x/sync \
 		pkg:errors:v0.8.0:errors/src/github.com/pkg/errors \
 		spf13:cobra:7c4570c:cobra/src/github.com/spf13/cobra \
