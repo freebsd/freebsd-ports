@@ -3,19 +3,22 @@
 
 PORTNAME=	moinmoin
 PORTVERSION=	1.9.9
+PORTREVISION=	1
 CATEGORIES=	www python
-MASTER_SITES=	http://static.moinmo.in/files/
+MASTER_SITES=	https://static.moinmo.in/files/
 DISTNAME=	moin-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
-COMMENT=	Python clone of WikiWiki
+COMMENT=	Easy to use, full-featured and extensible wiki software package
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/licenses/COPYING
 
 USES=		cpe python:2.7 shebangfix
-CPE_VENDOR=	moinmo
 USE_PYTHON=	distutils
+
+NO_ARCH=	yes
+CPE_VENDOR=	moinmo
 PYDISTUTILS_PKGNAME=	moin
 SHEBANG_FILES=	wiki/server/moin*
 
@@ -24,6 +27,16 @@ PLIST_SUB+=	PYTHON_SITELIB=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||} \
 SUB_FILES=	pkg-install
 SUB_LIST=	MOINDIR=${MOINDIR} MOINDEST=${MOINDEST} MOINVER=${MOINVER} \
 		HTDOCS=${PYTHON_SITELIBDIR}/MoinMoin/web/static/htdocs
+
+OPTIONS_DEFINE=		RECAPTCHA VERIFYEMAIL
+OPTIONS_DEFAULT=	RECAPTCHA VERIFYEMAIL
+OPTIONS_SUB=		yes
+
+RECAPTCHA_DESC=		reCAPTCHA v2 support
+VERIFYEMAIL_DESC=	Support for verifying new account email addresses
+
+RECAPTCHA_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-recaptchav2
+VERIFYEMAIL_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-verifyemail
 
 CGIUSER?=	www
 CGIGROUP?=	www

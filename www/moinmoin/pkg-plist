@@ -170,6 +170,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/userprofile.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/userprofile.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/action/userprofile.%%PYTHON_PYOEXTENSION%%
+%%VERIFYEMAIL%%%%PYTHON_SITELIBDIR%%/MoinMoin/action/verifyaccount.py
+%%VERIFYEMAIL%%%%PYTHON_SITELIBDIR%%/MoinMoin/action/verifyaccount.pyc
+%%VERIFYEMAIL%%%%PYTHON_SITELIBDIR%%/MoinMoin/action/verifyaccount.%%PYTHON_PYOEXTENSION%%
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth/_PHPsessionParser.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth/_PHPsessionParser.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/auth/_PHPsessionParser.%%PYTHON_PYOEXTENSION%%
@@ -1039,6 +1042,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/security/textcha.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/security/textcha.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/security/textcha.%%PYTHON_PYOEXTENSION%%
+%%RECAPTCHA%%%%PYTHON_SITELIBDIR%%/MoinMoin/security/sec_recaptcha.py
+%%RECAPTCHA%%%%PYTHON_SITELIBDIR%%/MoinMoin/security/sec_recaptcha.pyc
+%%RECAPTCHA%%%%PYTHON_SITELIBDIR%%/MoinMoin/security/sec_recaptcha.%%PYTHON_PYOEXTENSION%%
 %%PYTHON_SITELIBDIR%%/MoinMoin/stats/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/stats/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/stats/__init__.%%PYTHON_PYOEXTENSION%%
