@@ -1,0 +1,32 @@
+--- CMakeLists.txt.orig	2018-05-21 17:16:59 UTC
++++ CMakeLists.txt
+@@ -24,6 +24,16 @@ include(LXQtCreatePkgConfigFile)
+ include(LXQtCreatePortableHeaders)
+ include(LXQtCompilerSettings NO_POLICY_SCOPE)
+ 
++include(CheckIncludeFiles)
++include(CheckLibraryExists)
++
++check_include_files("sys/socket.h;net/if.h;net/if_mib.h;net/if_types.h" HAVE_IF_H)
++check_library_exists(kvm kvm_getswapinfo "kvm.h" HAVE_KVM_H)
++check_library_exists(c sysctlbyname "sys/sysctl.h" HAVE_SYSCTL_H)
++
++configure_file(config.h.in config.h)
++add_definitions("-DHAVE_CONFIG_H=1")
++
+ set(CMAKE_AUTOMOC ON)
+ set(CMAKE_INCLUDE_CURRENT_DIR ON)
+ 
+@@ -81,7 +91,11 @@ add_library(${SYSSTAT_LIBRARY_NAME}
+         ${SYSSTAT_QM_FILES}
+ )
+ 
+-target_link_libraries(${SYSSTAT_LIBRARY_NAME} Qt5::Core)
++if(HAVE_SYSCTL_H AND HAVE_KVM_H)
++    target_link_libraries(${SYSSTAT_LIBRARY_NAME} c kvm Qt5::Core)
++else()
++    target_link_libraries(${SYSSTAT_LIBRARY_NAME} Qt5::Core)
++endif()
+ 
+ set_target_properties(${SYSSTAT_LIBRARY_NAME} PROPERTIES
+     VERSION ${SYSSTAT_VERSION}
