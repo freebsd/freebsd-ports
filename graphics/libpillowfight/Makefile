@@ -14,8 +14,8 @@ BUILD_DEPENDS=	gmake:devel/gmake
 
 USES=		cmake:outsource
 USE_GITLAB=	yes
-GL_SITE=	https://gitlab.gnome.org
-GL_ACCOUNT=	World/OpenPaperwork
+GL_SITE=	https://gitlab.gnome.org/World
+GL_ACCOUNT=	OpenPaperwork
 GL_COMMIT=	3a7ebba75f4c060ac1707900bd8891e8d200b1c6
 USE_LDCONFIG=	yes
 
