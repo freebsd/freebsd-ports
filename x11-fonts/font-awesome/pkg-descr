@@ -1,5 +1,5 @@
 Font Awesome is a suite of pictographic icons for easy scalable vector
-graphics, created and maintained by Dave Gandy.
+graphics.
 
 This package installs only free OTF fonts suitable for use in X.Org
 applications.  The corresponding web fonts aren't installed.  You can find
