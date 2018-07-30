@@ -11,7 +11,7 @@ COMMENT=	Efficient blocker for Firefox, fast and lean
 
 LICENSE=	GPLv3
 
-DEPRECATED:	legacy version, the latest one working with the ports xpi framework
+DEPRECATED=	legacy version, the latest one working with the ports xpi framework
 
 XPI_NUM=	607454
 XPI_ID=		uBlock0@raymondhill.net
