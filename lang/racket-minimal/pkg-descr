@@ -7,7 +7,7 @@ extensive, hyper-linked help system called Help Desk, available
 from the Help menu, the plt-help command line tool, or through a
 web browser.
 
-The racket-textual port provides a text-only version of the Racket
+The racket-minimal port provides a text-only version of the Racket
 environment without X11 dependencies.
 
 WWW: http://racket-lang.org/
