@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pg_dirtyread
-PORTVERSION=	1.2
+PORTVERSION=	2.0
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
@@ -20,6 +20,8 @@ WANT_PGSQL=	server
 
 PLIST_FILES=	lib/postgresql/pg_dirtyread.so \
 		share/postgresql/extension/pg_dirtyread--1.0.sql \
+		share/postgresql/extension/pg_dirtyread--1.0--2.sql \
+		share/postgresql/extension/pg_dirtyread--2.sql \
 		share/postgresql/extension/pg_dirtyread.control
 
 post-install:
