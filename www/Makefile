@@ -239,6 +239,7 @@
     SUBDIR += h2o
     SUBDIR += h2o-devel
     SUBDIR += habari
+    SUBDIR += halberd
     SUBDIR += hastymail2-devel
     SUBDIR += havp
     SUBDIR += helma
