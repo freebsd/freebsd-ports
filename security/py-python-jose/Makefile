@@ -1,7 +1,7 @@
 # Created by: Dan Langille <dvl@sourcefire.com>
 # $FreeBSD$
 
-PORTNAME=       python-jose
+PORTNAME=	python-jose
 PORTVERSION=	3.0.0
 CATEGORIES=	security
 MASTER_SITES=	CHEESESHOP
