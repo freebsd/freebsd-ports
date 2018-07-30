@@ -3,7 +3,7 @@
 
 PORTNAME=	xminehunter
 PORTVERSION=	0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	XCONTRIB/games
 
@@ -17,10 +17,12 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		motif
+USES=		compiler motif
 USE_XORG=	xpm
 ALL_TARGET=	${PORTNAME}
 
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -43,13 +45,12 @@ post-patch:
 		 s|$${CFLAGS}|$${CXXFLAGS}| ; \
 		 s| \($${INSTALL_SCORE_PATH}\)| $${DESTDIR}\1| ; \
 		 s|chmod 333|chmod 633| ; \
-		 s|cp |$${BSD_INSTALL_DATA} | ; \
+		 s|cp |$${BSD_INSTALL_PROGRAM} | ; \
 		 s| \($${INSTALL_BIN_PATH}\)| $${DESTDIR}\1|' \
 		${WRKSRC}/${MAKEFILE}
 
 post-install:
 	(cd ${WRKSRC}/bitmaps && ${INSTALL_DATA} normal.xpm \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.xpm)
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
