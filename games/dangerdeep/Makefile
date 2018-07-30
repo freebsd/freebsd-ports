@@ -14,10 +14,12 @@ COMMENT=	Open source World War II German submarine simulation
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 RUN_DEPENDS=	dangerdeep-data>0:games/dangerdeep-data
 
-USES=		scons
+USES=		compiler scons
 USE_GL=		yes
 USE_SDL=	sdl mixer image net
 
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 MAKE_ARGS=	installbindir=${PREFIX}/bin installdatadir=${DATADIR}
 MAKE_ENV=	X11BASE=${LOCALBASE}
 
