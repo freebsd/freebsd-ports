@@ -12,6 +12,8 @@ COMMENT=	Open Source CNC machine controller
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_10=	use of undeclared identifier '__builtin_ia32_rdtsc'
+
 LIB_DEPENDS=	libBLT25.so:x11-toolkits/blt \
 		${PY_BOOST} \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -26,11 +28,6 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gdkgl/__init__.py:x11-toolkits/py-gtkglext \
 		${LOCALBASE}/lib/Img/libtkimg1.4.7.so:graphics/libimg
 BUILD_DEPENDS=	${RUN_DEPENDS}
-
-## Workaround for a clang crash on 12-CURRENT.
-#BUILD_DEPENDS+=	clang38:lang/clang38
-#CC=		clang38
-#CXX=		clang++38
 
 NO_PACKAGE=	Licensing conflict between LinuxCNC (GPL2) and readline (GPL3)
 
