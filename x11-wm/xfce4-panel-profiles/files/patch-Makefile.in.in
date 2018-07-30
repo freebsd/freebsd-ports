@@ -1,0 +1,11 @@
+--- Makefile.in.in.orig	2018-07-28 10:44:16 UTC
++++ Makefile.in.in
+@@ -56,7 +56,7 @@ install: all
+ 	install data/metainfo/*.xml $(DESTDIR)/$(PREFIX)/share/metainfo
+ 
+ 	cp -rf locale $(DESTDIR)/$(PREFIX)/share
+-	ln -sf $(PREFIX)/share/locale $(DESTDIR)/$(PREFIX)/share/$(APPNAME)/locale
++#	ln -sf $(PREFIX)/share/locale $(DESTDIR)/$(PREFIX)/share/$(APPNAME)/locale
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)/$(PREFIX)/share/applications/$(APPNAME).desktop

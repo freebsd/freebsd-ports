@@ -1,0 +1,47 @@
+bin/xfce4-panel-profiles
+share/applications/xfce4-panel-profiles.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/locale/bg/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/ca/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/cs/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/da/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/de/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/el/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/es/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/fi/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/fr/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/gl/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/he/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/hr/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/it/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/ja/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/kk/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/ko/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/lt/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/nl/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/pl/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/pt/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/pt_BR/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/ru/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/sl/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/sq/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/sr/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/sv/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/tr/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/zh_CN/LC_MESSAGES/xfce4-panel-profiles.mo
+share/locale/zh_TW/LC_MESSAGES/xfce4-panel-profiles.mo
+share/metainfo/org.xfce.PanelProfiles.appdata.xml
+%%DATADIR%%/layouts/GNOME 2.tar.bz2
+%%DATADIR%%/layouts/Redmond.tar.bz2
+%%DATADIR%%/layouts/Xfce 4.12.tar.bz2
+%%DATADIR%%/layouts/Xubuntu Bionic.tar.bz2
+%%DATADIR%%/layouts/Xubuntu Precise.tar.bz2
+%%DATADIR%%/layouts/Xubuntu Trusty.tar.bz2
+%%DATADIR%%/locale
+%%DATADIR%%/xfce4-panel-profiles/panelconfig.py
+%%DATADIR%%/xfce4-panel-profiles/xfce4-panel-profiles.glade
+%%DATADIR%%/xfce4-panel-profiles/xfce4-panel-profiles.py
