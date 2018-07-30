@@ -8,6 +8,9 @@ CATEGORIES=	net www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Easy parsing of URLs
 
+LICENSE=	BSD3CLAUSE
+
 USES=		pear
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
