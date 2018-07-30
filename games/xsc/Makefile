@@ -3,7 +3,7 @@
 
 PORTNAME=	xsc
 PORTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.panix.com/~mbh/xsc/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -16,8 +16,11 @@ COMMENT=	Vector graphics space shoot'em up game
 
 LICENSE=	GPLv2
 
+USES=		compiler
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 PORTDOCS=	AUTHORS ChangeLog  README
 OPTIONS_DEFINE=	DOCS
