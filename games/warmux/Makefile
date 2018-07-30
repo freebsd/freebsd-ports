@@ -19,10 +19,13 @@ LIB_DEPENDS=	libxml++-2.6.so:textproc/libxml++26 \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	cxx_present=yes
-USES=		dos2unix gmake pkgconfig tar:bzip2
+USES=		compiler dos2unix gmake pkgconfig tar:bzip2
 USE_SDL=	sdl image mixer ttf gfx net
 DOS2UNIX_GLOB=	fixed_class.h
 
+# build ignores CXXFLAGS
+CFLAGS+=	${CFLAGS_${CHOSEN_COMPILER_TYPE}}
+CFLAGS_clang=	-Wno-c++11-narrowing
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:R}
 
 OPTIONS_DEFINE=	FRIBIDI SERVER NLS DEBUG
