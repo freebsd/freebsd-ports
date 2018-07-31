@@ -10360,3 +10360,5 @@ emulators/xen||2018-07-23|Removed to support multiple versions
 devel/py-levenshtein|devel/py-python-Levenshtein|2018-07-28|Remove the duplicate
 comms/xwota||2018-07-28|Has expired: No server message and no upstream releases
 audio/glame||2018-07-28|Has expired: Does not build
+net/isc-dhcp43-relay|net/isc-dhcp44-relay|2018-07-31|Has expired: Please upgrade to isc-dhcp44
+net/isc-dhcp43-server|net/isc-dhcp44-server|2018-07-31|Has expired: Please upgrade to isc-dhcp44

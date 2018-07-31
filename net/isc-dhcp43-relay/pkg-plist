@@ -1,3 +1,0 @@
-%%IPV6%%etc/rc.d/isc-dhcrelay6
-sbin/dhcrelay
-man/man8/dhcrelay.8.gz
