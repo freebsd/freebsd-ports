@@ -5684,6 +5684,7 @@
     SUBDIR += rubygem-iobuffer
     SUBDIR += rubygem-iso8601
     SUBDIR += rubygem-jammit
+    SUBDIR += rubygem-jaro_winkler
     SUBDIR += rubygem-jasmine-core
     SUBDIR += rubygem-jbuilder
     SUBDIR += rubygem-jbuilder-rails5
