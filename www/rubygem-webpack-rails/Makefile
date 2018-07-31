@@ -14,9 +14,9 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-railties4>=3.2.0:www/rubygem-railties4
 
-# www/gitlab still depends on this port
+# www/gitlab-ce still depends on this port
 DEPRECATED=	Upstream no longer maintained, use devel/rubygem-webpacker-rails* instead
-EXPIRATION_DATE=2018-06-30
+EXPIRATION_DATE=2018-08-31
 
 NO_ARCH=	yes
 USE_RUBY=	yes
