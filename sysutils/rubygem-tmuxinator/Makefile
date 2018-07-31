@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tmuxinator
-PORTVERSION=	0.11.2
+PORTVERSION=	0.12.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
