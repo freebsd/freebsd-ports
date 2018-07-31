@@ -12,7 +12,7 @@
  ENDIF()
  
 +IF(FALSE)
- MYSQL_ADD_EXECUTABLE(my_print_defaults my_print_defaults.c)
+ MYSQL_ADD_EXECUTABLE(my_print_defaults my_print_defaults.cc)
  TARGET_LINK_LIBRARIES(my_print_defaults  mysys mysys_ssl)
 @@ -142,11 +144,14 @@ IF(WITH_INNOBASE_STORAGE_ENGINE)
    TARGET_LINK_LIBRARIES(innochecksum mysys mysys_ssl ${LZ4_LIBRARY})
