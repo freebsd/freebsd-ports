@@ -2,6 +2,7 @@
 
 PORTNAME=	bashdb
 DISTVERSION=	4.4-0.94
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}/
 
@@ -15,15 +16,12 @@ BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake python shebangfix
-SHEBANG_GLOB=	*.py
+SHEBANG_FILES=	lib/term-highlight.py
 GNU_CONFIGURE=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-INFO=	bashdb
-
-post-install:
-	@${REINPLACE_CMD} -i '' 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|' \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+CONFIGURE_ARGS=	--with-bash=${LOCALBASE}/bin/bash
+INFO=		bashdb
 
 .include <bsd.port.mk>
