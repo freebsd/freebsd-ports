@@ -188,6 +188,7 @@
     SUBDIR += b2
     SUBDIR += babeltrace
     SUBDIR += bam
+    SUBDIR += bashdb
     SUBDIR += bats-core
     SUBDIR += bazel
     SUBDIR += bazel-clang38
