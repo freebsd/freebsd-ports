@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		ldb
-PORTVERSION=		1.3.3
+PORTVERSION=		1.3.4
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		databases
@@ -18,9 +18,9 @@ IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with 
 BUILD_DEPENDS=		${LDB_DEPENDS}
 RUN_DEPENDS=		${LDB_DEPENDS}
 
-LDB_DEPENDS=		talloc>=2.1.11:devel/talloc \
-			tevent>=0.9.35:devel/tevent \
-			tdb>=1.3.15:databases/tdb \
+LDB_DEPENDS=		talloc>=2.1.14:devel/talloc \
+			tevent>=0.9.37:devel/tevent \
+			tdb>=1.3.16:databases/tdb \
 			cmocka>=1.1.1:sysutils/cmocka \
 			popt>=0:devel/popt
 
@@ -44,9 +44,8 @@ PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 
 CONFIGURE_ARGS+=	--bundled-libraries=!talloc,!tevent,!tdb,!popt,!cmocka \
 			--with-modulesdir=${PREFIX}/lib/shared-modules \
-			--with-privatelibdir=${PREFIX}/lib/ldb
-
-CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
+			--with-privatelibdir=${PREFIX}/lib/ldb \
+			--mandir=${MANPREFIX}/man \
 			--with-openldap=${LOCALBASE} \
 			--disable-rpath \
 			--without-gettext
