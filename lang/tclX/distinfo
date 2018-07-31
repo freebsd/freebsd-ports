@@ -1,2 +1,5 @@
-SHA256 (tclx8.4.1.tar.bz2) = a9b41f606ec6c1268b9c78512e6e1cb533bd9ae3e786e650d111fc16ffe758ec
-SIZE (tclx8.4.1.tar.bz2) = 330073
+TIMESTAMP = 1533042244
+SHA256 (tclX/tclx8.4.1.tar.bz2) = a9b41f606ec6c1268b9c78512e6e1cb533bd9ae3e786e650d111fc16ffe758ec
+SIZE (tclX/tclx8.4.1.tar.bz2) = 330073
+SHA256 (tclX/tcl.m4?name=2e84c8) = 64916c55de3e48913546ca08f4c711a62a2a9c74ce26ed3fbd37487c9f48942e
+SIZE (tclX/tcl.m4?name=2e84c8) = 135959
