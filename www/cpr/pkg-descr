@@ -1,0 +1,7 @@
+C++ Requests is a simple wrapper around libcurl inspired by the excellent
+Python Requests project.
+
+Using the more expressive language facilities of C++11, this library captures
+the essence of making network calls into a few concise idioms.
+
+WWW: https://github.com/whoshuu/cpr
