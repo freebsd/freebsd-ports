@@ -135,6 +135,7 @@
     SUBDIR += pr
     SUBDIR += predict
     SUBDIR += py-bulksms
+    SUBDIR += py-esptool
     SUBDIR += py-gammu
     SUBDIR += py-hidapi
     SUBDIR += py-libconcord

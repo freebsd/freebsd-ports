@@ -1,0 +1,4 @@
+A Python-based, open source, platform independent, utility to communicate
+with the ROM bootloader in Espressif ESP8266 & ESP32 chips.
+
+WWW: https://github.com/espressif/esptool
