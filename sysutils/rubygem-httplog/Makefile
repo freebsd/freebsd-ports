@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	httplog
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,8 @@ COMMENT=	Log outgoing HTTP requests
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-colorize>=0.8:devel/rubygem-colorize \
-		rubygem-rack>=1.0:www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack>=1.0:www/rubygem-rack \
+		rubygem-rainbow>=2.0.0:devel/rubygem-rainbow
 
 NO_ARCH=	yes
 USES=		gem
