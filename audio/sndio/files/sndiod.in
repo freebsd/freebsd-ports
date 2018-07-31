@@ -14,9 +14,8 @@ rcvar=sndiod_enable
 
 load_rc_config $name
 
-: ${sndiod_dev="rsnd/$($SYSCTL -n hw.snd.default_unit)"}
 : ${sndiod_enable="NO"}
-: ${sndiod_flags="-f ${sndiod_dev} -c 0:7 -j off -s default -m mon -s monitor"}
+: ${sndiod_flags="-c 0:7 -j off -s default -m mon -s monitor"}
 
 command="%%PREFIX%%/bin/sndiod"
 
