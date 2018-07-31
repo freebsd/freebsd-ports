@@ -64,3 +64,18 @@
  
  install-tzdata:
  	@for i in tzdata; \
+@@ -953,10 +956,13 @@
+ 	    done;
+ 	@echo "Installing header files to $(INCLUDE_INSTALL_DIR)/";
+ 	@for i in $(GENERIC_DIR)/tcl.h $(GENERIC_DIR)/tclDecls.h \
++		$(GENERIC_DIR)/tclInt.h $(GENERIC_DIR)/tclIntDecls.h \
++		$(GENERIC_DIR)/tclIntPlatDecls.h $(GENERIC_DIR)/tclPort.h\
+ 		$(GENERIC_DIR)/tclOO.h $(GENERIC_DIR)/tclOODecls.h \
+ 		$(GENERIC_DIR)/tclPlatDecls.h \
+ 		$(GENERIC_DIR)/tclTomMath.h \
+-		$(GENERIC_DIR)/tclTomMathDecls.h ; \
++		$(GENERIC_DIR)/tclTomMathDecls.h \
++		$(UNIX_DIR)/tclUnixPort.h ; \
+ 	    do \
+ 	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"; \
+ 	    done;
