@@ -19,7 +19,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20180731:
   AFFECTS: users of x11/xorg and all ports with USE_XORG=*proto
-  AUTHOR: zeising@daemonic.se
+  AUTHOR: zeising@FreeBSD.org
 
   The xorg *proto packages have all been merged into one package,
   x11/xorgproto.  This might cause issues with upgrading.  If you
