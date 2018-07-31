@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	money
-PORTVERSION=	6.11.3
+PORTVERSION=	6.12.0
 CATEGORIES=	finance rubygems
 MASTER_SITES=	RG
 
