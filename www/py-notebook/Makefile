@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}terminado>=0.8.1:net/py-terminado@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>=4:www/py-tornado@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=4.2.1:devel/py-traitlets@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}py-prometheus-client>0:net-mgmt/py-prometheus-client@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}prometheus-client>0:net-mgmt/py-prometheus-client@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python
