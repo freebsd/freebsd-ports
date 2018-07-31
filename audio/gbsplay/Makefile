@@ -11,12 +11,11 @@ COMMENT=	Emulates the sound hardware of the Nintendo Game Boy(TM)
 
 LICENSE=	GPLv2
 
+USES=		gmake compiler:c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	mmitch
 GH_TAGNAME=	2c4486e
-
 HAS_CONFIGURE=	yes
-USES=		gmake compiler:c++11-lib
 USE_CSTD=	gnu89
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
