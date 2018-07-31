@@ -3,7 +3,7 @@
 
 PORTNAME=	lesstif
 PORTVERSION=	0.95.2
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 CONFLICTS?=	open-motif-*
 
 USES=		tar:bzip2 libtool
-USE_XORG=	sm ice xt xp xext x11 xextproto xrender xft
+USE_XORG=	sm ice xt xp xext x11 xorgproto xrender xft
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static --enable-shared --enable-production \

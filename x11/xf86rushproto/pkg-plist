@@ -1,3 +1,0 @@
-include/X11/extensions/xf86rush.h
-include/X11/extensions/xf86rushstr.h
-libdata/pkgconfig/xf86rushproto.pc

@@ -2,7 +2,7 @@
 
 PORTNAME=	libXevie
 PORTVERSION=	1.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -11,6 +11,6 @@ COMMENT=	The Xevie library
 LICENSE=	MIT
 
 XORG_CAT=	lib
-USE_XORG=	evieproto x11 xext xextproto xproto:both
+USE_XORG=	x11 xext xorgproto
 
 .include <bsd.port.mk>

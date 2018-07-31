@@ -3,6 +3,7 @@
 
 PORTNAME=	e16
 PORTVERSION=	1.0.18
+PORTREVISION=	1
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}/
 
@@ -29,7 +30,7 @@ NLS_CONFIGURE_OFF=	--disable-nls
 DOCS_CONFIGURE_ON=	--enable-docs=yes
 DOCS_CONFIGURE_OFF=	--enable-docs=no
 
-USE_XORG=	compositeproto damageproto ice sm xextproto x11 xbitmaps \
+USE_XORG=	ice sm xorgproto x11 xbitmaps \
 		xcomposite xdamage xext xfixes xft xinerama xrandr xrender \
 		xxf86vm
 USES=		gettext gmake iconv libtool perl5 pkgconfig shebangfix

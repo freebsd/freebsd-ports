@@ -3,6 +3,7 @@
 
 PORTNAME=	libXfont
 PORTVERSION=	1.5.4
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	x11-fonts
 
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 USES=		cpe
 XORG_CAT=	lib
-USE_XORG=	xproto:both xtrans fontsproto:both fontenc
+USE_XORG=	xorgproto xtrans fontenc
 INSTALL_TARGET=	install-strip
 CPE_PRODUCT=	libxfont
 CPE_VENDOR=	x

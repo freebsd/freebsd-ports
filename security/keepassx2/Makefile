@@ -3,6 +3,7 @@
 
 PORTNAME=	keepassx
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	security
 MASTER_SITES=	https://www.keepassx.org/releases/${PORTVERSION}/
@@ -29,7 +30,7 @@ USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_QT=		corelib gui xml qtestlib uic_build moc_build \
 		qmake_build rcc_build linguisttools
-USE_XORG=	ice inputproto sm x11 xcursor xext xfixes xi xrandr xrender \
+USE_XORG=	ice xorgproto sm x11 xcursor xext xfixes xi xrandr xrender \
 		xt xtst
 
 .include <bsd.port.pre.mk>

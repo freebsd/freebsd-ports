@@ -3,7 +3,7 @@
 
 PORTNAME=	libXmu
 PORTVERSION=	1.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 
@@ -14,6 +14,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 XORG_CAT=	lib
-USE_XORG=	xproto:both x11 xt xext
+USE_XORG=	xorgproto x11 xt xext
 
 .include <bsd.port.mk>

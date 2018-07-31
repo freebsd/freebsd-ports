@@ -3,7 +3,7 @@
 
 PORTNAME=	gnome-control-center
 PORTVERSION=	3.18.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -44,7 +44,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c++11-lib gettext gmake gnome localbase:ldflags pathfix pkgconfig tar:xz
 USE_GNOME=	gnomedesktop3 intltool libxml2
-USE_XORG=	xscrnsaver x11 xxf86misc kbproto xi
+USE_XORG=	xscrnsaver x11 xxf86misc xorgproto xi
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes

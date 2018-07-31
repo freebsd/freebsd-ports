@@ -3,7 +3,7 @@
 
 PORTNAME=	compiz-plugins-main
 PORTVERSION=	0.8.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
@@ -22,7 +22,7 @@ USE_GL=		yes
 USES=		gettext gmake libtool:keepla pathfix pkgconfig tar:bzip2
 USE_CSTD=	gnu89
 USE_GNOME=	gconf2 intltool
-USE_XORG=	glproto
+USE_XORG=	xorgproto
 USE_LDCONFIG=	yes
 
 GCONF_SCHEMAS=	compiz-animation.schemas \

@@ -4,7 +4,7 @@
 PORTNAME=	librime
 PORTVERSION=	1.2.9
 DISTVERSIONPREFIX=	rime-
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	lichray@gmail.com
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 USES=		cmake compiler:c++11-lib pathfix pkgconfig gettext perl5
 USE_PERL5=	build patch
 USE_LDCONFIG=	yes
-USE_XORG=	xproto
+USE_XORG=	xorgproto
 LDFLAGS+=	-lintl
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime

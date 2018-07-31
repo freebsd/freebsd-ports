@@ -3,7 +3,7 @@
 
 PORTNAME=	cairo
 PORTVERSION=	1.14.8
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
@@ -52,7 +52,7 @@ GLIB_DESC=	Enable GObject Functions Feature
 OPTIONS_SUB=	yes
 X11_USE=	xorg=x11,xext,xrender
 X11_CONFIGURE_ENABLE=xlib
-OPENGL_USE=	gl=gl,egl xorg=glproto:both,dri2proto:both
+OPENGL_USE=	gl=gl,egl xorg=xorgproto:both
 OPENGL_CONFIGURE_ENABLE=gl egl
 OPENGL_IMPLIES=	X11
 GLIB_USES=	gettext-runtime

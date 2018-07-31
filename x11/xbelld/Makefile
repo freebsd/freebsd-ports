@@ -14,7 +14,7 @@ COMMENT=	XBellD is a small daemon for replacing the standard X terminal bell
 LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile
 
 USES=		imake tar:tgz
-USE_XORG=	ice sm xtrap xmu xt
+USE_XORG=	ice sm x11 xtrap xmu xt
 USE_GNOME=	esound
 
 # xbelld calls sqrt which requires -lm on some architectures

@@ -3,6 +3,7 @@
 
 PORTNAME=	reduce
 PORTVERSION=	20180117
+PORTREVISION=	1
 CATEGORIES=	math lang
 MASTER_SITES=	SF/${PORTNAME}-algebra/${SFSUBDIR}/
 DISTNAME=	Reduce-svn4372-src
@@ -35,7 +36,7 @@ CPPFLAGS+=	-I${NCURSESINC}
 HAS_CONFIGURE=	yes
 ALL_TARGET=
 
-USE_XORG=	x11 xext xproto xft
+USE_XORG=	x11 xext xorgproto xft
 USES+=		jpeg
 CONFIGURE_ARGS=	--with-csl
 CPPFLAGS+=	`freetype-config --cflags`

@@ -3,7 +3,7 @@
 
 PORTNAME=	jogl
 PORTVERSION=	1.1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics devel java
 MASTER_SITES=	http://download.java.net/media/jogl/builds/archive/jsr-231-1.1.1/
 EXTRACT_SUFX=	-src.zip
@@ -29,8 +29,7 @@ ALL_TARGET=	all
 ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		zip
-USE_XORG=	x11 xau xdamage xdmcp xext xf86vidmodeproto xfixes xproto xt \
-		xxf86vm
+USE_XORG=	x11 xau xdamage xdmcp xext xfixes xorgproto xt xxf86vm
 USE_GL=		gl
 USE_ANT=	yes
 USE_LDCONFIG=	yes

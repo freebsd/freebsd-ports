@@ -3,6 +3,7 @@
 
 PORTNAME=	slock
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/
 
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe
 CPE_VENDOR=	suckless
-USE_XORG=	x11 xext xproto xrandr xt
+USE_XORG=	x11 xext xorgproto xrandr xt
 MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \
 		X11INC="${LOCALBASE}/include" CC="${CC}" \
 		MANPREFIX="${MANPREFIX}/man"

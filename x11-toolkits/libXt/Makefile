@@ -3,6 +3,7 @@
 
 PORTNAME=	libXt
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 
@@ -13,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 XORG_CAT=	lib
-USE_XORG=	x11 sm ice xproto:both kbproto
+USE_XORG=	x11 sm ice xorgproto
 CONFIGURE_ARGS=	--disable-specs
 USES=		cpe
 CPE_PRODUCT=	libxt

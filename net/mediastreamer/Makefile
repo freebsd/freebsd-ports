@@ -3,7 +3,7 @@
 
 PORTNAME=	mediastreamer
 PORTVERSION=	2.14.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	SAVANNAH/linphone/mediastreamer
 
@@ -82,7 +82,7 @@ VPX_CONFIGURE_ENABLE=	vp8
 VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 
 XVIDEO_CONFIGURE_ENABLE=x11 xv
-XVIDEO_USE=		XORG=videoproto,x11,xv
+XVIDEO_USE=		XORG=xorgproto,x11,xv
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug

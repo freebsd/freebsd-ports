@@ -3,6 +3,7 @@
 
 PORTNAME=	gtkhtml
 PORTVERSION=	4.10.0
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	4
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
 
 USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
-USE_XORG=	xinerama xi xrandr xcursor xcomposite xdamage xproto
+USE_XORG=	xinerama xi xrandr xcursor xcomposite xdamage xorgproto
 USE_GNOME=	gnomeprefix intlhack gtk30
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

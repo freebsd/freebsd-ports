@@ -10363,3 +10363,35 @@ audio/glame||2018-07-28|Has expired: Does not build
 net/isc-dhcp43-relay|net/isc-dhcp44-relay|2018-07-31|Has expired: Please upgrade to isc-dhcp44
 net/isc-dhcp43-server|net/isc-dhcp44-server|2018-07-31|Has expired: Please upgrade to isc-dhcp44
 net/isc-dhcp43-client|net/isc-dhcp44-client|2018-07-31|Has expired: Please upgrade to isc-dhcp44
+x11/bigreqsproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/compositeproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/damageproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/dmxproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/dri2proto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/dri3proto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/fixesproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/glproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/inputproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/kbproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/presentproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/printproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/randrproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/recordproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/renderproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/resourceproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/scrnsaverproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/trapproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/videoproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/xcmiscproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/xextproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/xf86dgaproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/xf86driproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/xf86miscproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/xf86rushproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/xf86vidmodeproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/xineramaproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/xproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/xproxymanagementprotocol|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11-fonts/fontcacheproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11-fonts/fontsproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11-fonts/xf86bigfontproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto

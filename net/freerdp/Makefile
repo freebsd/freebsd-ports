@@ -3,7 +3,7 @@
 
 PORTNAME=	freerdp
 DISTVERSION=	2.0.0-rc1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net comms ipv6
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -50,7 +50,7 @@ FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 FFMPEG_CMAKE_BOOL=	WITH_FFMPEG
 
 GSTREAMER_CMAKE_BOOL=	WITH_GSTREAMER_1_0
-GSTREAMER_USE=		gnome=glib20 gstreamer1=yes xorg=x11,xext,xextproto,xrandr
+GSTREAMER_USE=		gnome=glib20 gstreamer1=yes xorg=x11,xext,xorgproto,xrandr
 GSTREAMER_LIB_DEPENDS=	libgstbase-1.0.so:multimedia/gstreamer1
 
 ICU_LIB_DEPENDS=	libicuuc.so:devel/icu
@@ -84,7 +84,7 @@ WAYLAND_CMAKE_BOOL=	WITH_WAYLAND
 X11_DESC=		Build FreeRDP X11 client
 X11_CMAKE_BOOL=		WITH_X11
 X11_CMAKE_OFF=		-DWITH_XKBFILE=OFF
-X11_USE=		xorg=x11,xcursor,xext,xextproto,xfixes,xi,xinerama,xkbfile,xrandr,xrender,xv
+X11_USE=		xorg=x11,xcursor,xext,xorgproto,xfixes,xi,xinerama,xkbfile,xrandr,xrender,xv
 
 .include <bsd.port.pre.mk>
 

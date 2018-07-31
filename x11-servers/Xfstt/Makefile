@@ -3,6 +3,7 @@
 
 PORTNAME=	xfstt
 PORTVERSION=	1.9.2
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://archive.hadrons.org/software/xfstt/
 
@@ -13,7 +14,7 @@ LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 USES=		pkgconfig tar:xz
-USE_XORG=	fontsproto xproto
+USE_XORG=	xorgproto
 USE_RC_SUBR=	xfstt
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-nls

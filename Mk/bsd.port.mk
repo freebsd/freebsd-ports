@@ -1895,10 +1895,10 @@ _GL_egl_BUILD_DEPENDS=		${LOCALBASE}/lib/libEGL.so:graphics/mesa-libs
 _GL_egl_RUN_DEPENDS=		${LOCALBASE}/lib/libEGL.so:graphics/mesa-libs
 _GL_gl_BUILD_DEPENDS=		${LOCALBASE}/lib/libGL.so:graphics/mesa-libs
 _GL_gl_RUN_DEPENDS=			${LOCALBASE}/lib/libGL.so:graphics/mesa-libs
-_GL_gl_USE_XORG=			glproto dri2proto dri3proto
+_GL_gl_USE_XORG=			xorgproto
 _GL_glew_LIB_DEPENDS=		libGLEW.so:graphics/glew
 _GL_glu_LIB_DEPENDS=		libGLU.so:graphics/libGLU
-_GL_glu_USE_XORG=			glproto dri2proto dri3proto
+_GL_glu_USE_XORG=			xorgproto
 _GL_glw_LIB_DEPENDS=		libGLw.so:graphics/libGLw
 _GL_glut_LIB_DEPENDS=		libglut.so:graphics/freeglut
 .if defined(USE_GL)

@@ -1,4 +1,0 @@
-include/X11/extensions/fontcache.h
-include/X11/extensions/fontcacheP.h
-include/X11/extensions/fontcachstr.h
-libdata/pkgconfig/fontcacheproto.pc

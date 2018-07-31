@@ -3,7 +3,7 @@
 
 PORTNAME=	libICE
 PORTVERSION=	1.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 XORG_CAT=	lib
-USE_XORG=	xproto:both xtrans
+USE_XORG=	xorgproto xtrans
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

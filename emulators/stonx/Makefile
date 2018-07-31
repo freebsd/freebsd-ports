@@ -3,6 +3,7 @@
 
 PORTNAME=	stonx
 PORTVERSION=	0.6.7e.6
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/stonx/stonx/0.6.7.6
 DISTNAME=	STonX-0.6.7.6
@@ -23,7 +24,7 @@ RESTRICTED=	Contains ROM (C) by Atari
 TOSIMG?=	tos.img
 USES=		fonts
 FONTNAME=	misc
-USE_XORG=	x11 sm ice xext xextproto
+USE_XORG=	x11 sm ice xext xorgproto
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--x-includes=${LOCALBASE}/include \
 		--x-libraries=${LOCALBASE}/lib

@@ -140,7 +140,7 @@ VDPAU_CONFIGURE_OFF=	--disable-vdpau
 VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 VPX_CONFIGURE_OFF=	--disable-libvpx-lavc
 
-X11_USE=		XORG=x11,xext,xproto,xscrnsaver
+X11_USE=		XORG=x11,xext,xorgproto,xscrnsaver
 X11_CONFIGURE_OFF=	--disable-x11
 
 X11DGA_USE=		XORG=xxf86dga
@@ -154,7 +154,7 @@ X11VM_IMPLIES=		X11
 X264_LIB_DEPENDS=	libx264.so:multimedia/libx264
 X264_CONFIGURE_OFF=	--disable-x264
 
-XINERAMA_USE=		XORG=xinerama,xineramaproto
+XINERAMA_USE=		XORG=xinerama,xorgproto
 XINERAMA_CONFIGURE_OFF=	--disable-xinerama
 XINERAMA_IMPLIES=	X11
 

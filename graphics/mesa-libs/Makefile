@@ -3,11 +3,12 @@
 
 PORTNAME=	mesa-libs
 PORTVERSION=	${MESAVERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL libraries that support GLX and EGL clients
 
-USE_XORG=	dri2proto dri3proto glproto presentproto x11 xcb xdamage xext \
+USE_XORG=	xorgproto x11 xcb xdamage xext \
 		xfixes xshmfence xxf86vm
 
 OPTIONS_DEFINE=	WAYLAND

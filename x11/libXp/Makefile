@@ -3,6 +3,7 @@
 
 PORTNAME=	libXp
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -12,7 +13,7 @@ COMMENT=	X print library
 LICENSE=	MIT
 
 XORG_CAT=	lib
-USE_XORG=	x11 xext xextproto xau printproto:both
+USE_XORG=	x11 xext xau xorgproto
 USES+=	cpe
 CPE_PRODUCT=	libxp
 CPE_VENDOR=	x

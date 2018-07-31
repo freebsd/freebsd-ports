@@ -4,7 +4,7 @@
 PORTNAME=		open-vm-tools
 PORTVERSION=		${RELEASE_VER}
 DISTVERSIONPREFIX=	stable-
-PORTREVISION=	1
+PORTREVISION=		2
 PORTEPOCH=		2
 CATEGORIES=		emulators
 
@@ -30,7 +30,7 @@ DNET_DESC=		libdnet support
 LIBNOTIFY_DESC=		Desktop notification support
 
 X11_CONFIGURE_WITH=	x gtk2 gtkmm
-X11_USE=		xorg=ice,sm,x11,xext,xi,xinerama,xineramaproto,xrandr,xrender,xtst \
+X11_USE=		xorg=ice,sm,x11,xext,xi,xinerama,xorgproto,xrandr,xrender,xtst \
 			gnome=gdkpixbuf2,gtk20,gtkmm24
 X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2

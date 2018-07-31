@@ -3,13 +3,14 @@
 
 PORTNAME=	lndir
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	unixmania@gmail.com
 COMMENT=	Create a shadow directory of symbolic links to another directory tree
 
 XORG_CAT=	util
-USE_XORG=	xproto
+USE_XORG=	xorgproto
 
 PLIST_FILES=	bin/lndir \
 		man/man1/lndir.1.gz

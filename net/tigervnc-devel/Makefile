@@ -2,6 +2,7 @@
 
 PORTNAME=	tigervnc
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net x11-servers
 PKGNAMESUFFIX=	-devel
@@ -36,11 +37,8 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	TigerVNC
 
-USE_XORG+=	bigreqsproto compositeproto damageproto fixesproto fontsproto glproto \
-		ice inputproto kbproto pixman presentproto randrproto renderproto \
-		resourceproto scrnsaverproto sm videoproto x11 xau xcmiscproto xdamage \
-		xdmcp xext xextproto xfixes xfont xkbfile xorg-macros xproto xrandr \
-		xrender xtrans xtst
+USE_XORG+=	ice pixman sm x11 xau xdamage xdmcp xext xfixes xfont xkbfile \
+		xorg-macros xorgproto xrandr xrender xtrans xtst
 
 CFLAGS+=	-fPIC
 
