@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rails-settings-cached
-PORTVERSION=	0.6.6
+PORTVERSION=	0.7.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5
