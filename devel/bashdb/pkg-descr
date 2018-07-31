@@ -1,0 +1,6 @@
+The Bash Debugger Project is a source-code debugger for bash that follows the
+gdb command syntax. The version 4.0 series is a complete rewrite of the previous
+series along the lines of my other POSIX shell debuggers and other debuggers
+mentioned below.
+
+WWW: http://bashdb.sourceforge.net/
