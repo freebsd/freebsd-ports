@@ -25,6 +25,6 @@ load_rc_config $name
 command=%%PREFIX%%/bin/urbackupsrv
 pidfile=/var/run/urbackupsrv.pid
 
-command_args="run -d -w $pidfile"
+command_args="run -d -w $pidfile -c %%PREFIX%%/etc/urbackup/urbackupsrv.conf"
 
 run_rc_command "$1"

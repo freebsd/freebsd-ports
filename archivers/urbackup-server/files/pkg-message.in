@@ -6,10 +6,16 @@ archivers/urbackup-server includes an RC script:
 TO START URBACKUP SERVER ON BOOT:
 sysrc urbackup_server_enable=YES
 
-START MANUALLY:
+TO START MANUALLY:
 service urbackup_server start
 
-Once started, visit the following to configure:
+The server daemon's configuration file is located at:
+%%PREFIX%%/etc/urbackup/urbackupsrv.conf
+
+Log rotation can be configured at:
+%%PREFIX%%/etc/newsyslog.conf.d/urbackupsrv.conf
+
+Once started, configure backup settings and manage backups at:
 http://localhost:55414
 
 SECURITY WARNING:

@@ -4,6 +4,8 @@ bin/urbackupsrv
 @mode 0444
 man/man1/urbackupsrv.1.gz
 @mode 0644
+@sample etc/urbackup/urbackupsrv.conf.sample
+@sample etc/newsyslog.conf.d/urbackupsrv.conf.sample
 share/urbackup/server-license.txt
 share/urbackup/urbackup_ecdsa409k1.pub
 share/urbackup/www/css/bootstrap-flat-extras.chash-958e73e0ffd138319a4c6be29fa24392.min.css
@@ -140,3 +142,6 @@ share/urbackup/www/swf/flashExport.swf
 @owner urbackup
 @group urbackup
 @dir /var/urbackup
+@mode 0555
+@owner root
+@group wheel
