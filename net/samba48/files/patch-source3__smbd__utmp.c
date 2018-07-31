@@ -1,5 +1,5 @@
---- source3/smbd/utmp.c.orig	2018-01-15 04:41:58.000000000 +0800
-+++ source3/smbd/utmp.c	2018-05-25 14:06:42.746302000 +0800
+--- source3/smbd/utmp.c.orig	2018-01-15 12:41:58 UTC
++++ source3/smbd/utmp.c
 @@ -257,7 +257,7 @@ static char *uw_pathname(TALLOC_CTX *ctx
   Update utmp file directly.  No subroutine interface: probably a BSD system.
  ****************************************************************************/

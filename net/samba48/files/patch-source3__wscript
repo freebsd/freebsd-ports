@@ -1,5 +1,5 @@
---- source3/wscript.orig	2018-03-02 04:18:10.000000000 +0800
-+++ source3/wscript	2018-05-25 13:41:10.834885000 +0800
+--- source3/wscript.orig	2018-03-02 12:18:10 UTC
++++ source3/wscript
 @@ -47,6 +47,7 @@ def set_options(opt):
      opt.SAMBA3_ADD_OPTION('sendfile-support')
      opt.SAMBA3_ADD_OPTION('utmp')

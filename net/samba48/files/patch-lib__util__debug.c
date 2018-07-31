@@ -1,12 +1,22 @@
 --- lib/util/debug.c.orig	2017-09-17 19:15:34 UTC
 +++ lib/util/debug.c
-@@ -750,12 +750,21 @@ static void debug_dump_status(int level)
+@@ -653,7 +653,8 @@ static int debug_lookup_classname_int(co
+ {
+ 	size_t i;
+ 
+-	if (!classname) return -1;
++	if (!classname)
++		return -1;
+ 
+ 	for (i=0; i < debug_num_classes; i++) {
+ 		if (strcmp(classname, classname_table[i])==0)
+@@ -752,12 +753,21 @@ static void debug_dump_status(int level)
  	}
  }
  
 +static void debug_set_all_levels(int level)
 +{
-+	int i;
++	size_t i;
 +	/* Array is debug_num_classes long */
 +	for (i = DBGC_ALL; i < debug_num_classes; i++) {
 +		DEBUGLEVEL_CLASS[i] = level;
@@ -23,7 +33,7 @@
  
  	class_name = strtok_r(param, ":", &saveptr);
  	if (class_name == NULL) {
-@@ -772,7 +781,13 @@ static bool debug_parse_param(char *para
+@@ -774,7 +784,13 @@ static bool debug_parse_param(char *para
  		return false;
  	}
  
@@ -38,16 +48,16 @@
  
  	return true;
  }
-@@ -788,7 +803,7 @@ bool debug_parse_levels(const char *para
+@@ -790,7 +806,7 @@ bool debug_parse_levels(const char *para
  	size_t str_len = strlen(params_str);
  	char str[str_len+1];
  	char *tok, *saveptr;
--	int i;
+-	size_t i;
 +	int level = 0;
  
  	/* Just in case */
  	debug_init();
-@@ -804,16 +819,11 @@ bool debug_parse_levels(const char *para
+@@ -806,16 +822,11 @@ bool debug_parse_levels(const char *para
  	 * v.s. "all:10", this is the traditional way to set DEBUGLEVEL
  	 */
  	if (isdigit(tok[0])) {
