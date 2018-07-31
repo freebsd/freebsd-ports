@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gpgme
-PORTVERSION=	1.10.0
-PORTREVISION?=	2
+PORTVERSION=	1.11.1
+PORTREVISION?=	0
 CATEGORIES?=	security
 MASTER_SITES=	GNUPG/gpgme
 
@@ -16,11 +16,8 @@ LICENSE_FILE?=	${WRKSRC}/COPYING.LESSER
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error
 
-USES=		cpe gmake libtool localbase:ldflags shebangfix tar:bzip2
+USES=		cpe gmake libtool localbase:ldflags tar:bzip2
 USE_LDCONFIG=	yes
-
-SHEBANG_FILES=	tests/gpg/pinentry
-bash_CMD=	/bin/sh
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
