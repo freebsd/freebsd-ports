@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rack-cache
-PORTVERSION=	1.7.2
+PORTVERSION=	1.8.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
