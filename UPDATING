@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20180731:
+  AFFECTS: users of audio/sndio
+  AUTHOR: tobik@FreeBSD.org
+
+  sndiod(8) will now use the default audio device /dev/dsp instead
+  of /dev/dsp0 if no device was specified.
+
+  The location of ~/.aucat_cookie has moved to ~/.sndio/cookie.  If
+  you share audio devices via sndiod(8) on the network or between
+  local users, please migrate it manually to the new location to
+  guarantee a smooth upgrade.
+
+20180731:
   AFFECTS: users of x11/xorg and all ports with USE_XORG=*proto
   AUTHOR: zeising@daemonic.se
 

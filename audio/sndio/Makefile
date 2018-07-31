@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sndio
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.sndio.org/
 
