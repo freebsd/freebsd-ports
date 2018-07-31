@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	shoulda
-PORTVERSION=	3.5.0
-PORTREVISION=	1
+PORTVERSION=	3.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-shoulda-context>=1.0.1:devel/rubygem-shoulda-context \
-		rubygem-shoulda-matchers>=1.4.1:devel/rubygem-shoulda-matchers
+		rubygem-shoulda-matchers>=3.0:devel/rubygem-shoulda-matchers
 
 NO_ARCH=	yes
 USE_RUBY=	yes
