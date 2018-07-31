@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	powerpack
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
