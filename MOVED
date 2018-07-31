@@ -10362,3 +10362,4 @@ comms/xwota||2018-07-28|Has expired: No server message and no upstream releases
 audio/glame||2018-07-28|Has expired: Does not build
 net/isc-dhcp43-relay|net/isc-dhcp44-relay|2018-07-31|Has expired: Please upgrade to isc-dhcp44
 net/isc-dhcp43-server|net/isc-dhcp44-server|2018-07-31|Has expired: Please upgrade to isc-dhcp44
+net/isc-dhcp43-client|net/isc-dhcp44-client|2018-07-31|Has expired: Please upgrade to isc-dhcp44
