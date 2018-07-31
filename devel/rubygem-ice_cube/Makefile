@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ice_cube
-PORTVERSION=	0.16.2
+PORTVERSION=	0.16.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
