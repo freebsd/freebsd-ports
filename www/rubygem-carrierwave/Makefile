@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	carrierwave
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
