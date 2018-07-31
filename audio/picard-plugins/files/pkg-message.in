@@ -4,14 +4,14 @@ Due to toolchain issues, if you enabled the BPM option, the bpm plugin
 will probably not work out-of-the-box. Upon startup, picard will likely
 write to stderr something like:
 
-  Original error was: /lib/libgcc_s.so.1: version GCC_4.6.0 required by 
-  %%LOCALBASE%%/lib/gcc%%GCC_VER%%/libgfortran.so.3 not found
+  Original error was: /lib/libgcc_s.so.1: version GCC_4.8.0 required by 
+  %%LOCALBASE%%/lib/gcc%%GCC_VER%%/libgfortran.so.4 not found
 
 This will not affect other plugins or picard operations. If you wish to
 use the bpm plugin, you can use the following workaround until a better
 solution can be worked out:
 
-  $ env LD_LIBARARY_PATH=%%LOCALBASE%%/lib/gcc%%GCC_VER%% picard
+  $ env LD_LIBRARY_PATH=%%LOCALBASE%%/lib/gcc%%GCC_VER%% picard
 
 See: https://wiki.freebsd.org/libgcc%20problem
 
