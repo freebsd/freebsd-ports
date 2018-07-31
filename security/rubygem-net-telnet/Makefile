@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	net-telnet
-PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTVERSION=	0.2.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
