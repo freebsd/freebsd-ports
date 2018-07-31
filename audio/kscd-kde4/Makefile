@@ -3,7 +3,7 @@
 
 PORTNAME=	kscd
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
@@ -11,7 +11,8 @@ COMMENT=	CD Player for KDE
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libmusicbrainz3.so:audio/libmusicbrainz3
+LIB_DEPENDS=	libdiscid.so:audio/libdiscid \
+		libmusicbrainz5.so:audio/libmusicbrainz5
 
 USES=		cmake:outsource kde:4 qt:4 tar:xz
 USE_KDE=	kdelibs automoc4
