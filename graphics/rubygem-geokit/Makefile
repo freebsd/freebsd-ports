@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geokit
-PORTVERSION=	1.12.0
+PORTVERSION=	1.13.1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
