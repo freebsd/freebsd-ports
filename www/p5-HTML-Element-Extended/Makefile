@@ -11,10 +11,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extended interface to HTML::Tree's HTML::Element class
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-HTML-Tree>=3.01:www/p5-HTML-Tree
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
