@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis-activesupport
-PORTVERSION=	5.0.4
+PORTVERSION=	5.0.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails50
