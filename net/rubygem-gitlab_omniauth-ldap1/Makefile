@@ -12,6 +12,9 @@ COMMENT=	LDAP strategy for OmniAuth
 
 LICENSE=	MIT
 
+DEPRECATED=	Use net/rubygem-gitlab_omniauth-ldap instead
+EXPIRATION_DATE=2018-08-31
+
 RUN_DEPENDS=	rubygem-net-ldap>=0.9:net/rubygem-net-ldap \
 		rubygem-omniauth>=1.0:security/rubygem-omniauth \
 		rubygem-pyu-ruby-sasl>=0.0.3.1:security/rubygem-pyu-ruby-sasl \
