@@ -2,7 +2,7 @@
 
 PORTNAME=		ldb
 PORTVERSION=		1.1.29
-PORTREVISION=		1
+PORTREVISION=		2
 PORTEPOCH=		0
 CATEGORIES=		databases
 MASTER_SITES=		SAMBA
@@ -152,7 +152,7 @@ post-install:
 			lib/libpyldb-util.so \
 			lib/libpyldb-util.so.1 \
 			lib/ldb/libpytalloc-util.so.2
-				${RM} ${STAGEDIR}${PREFIX}/${file}
+				${RM} ${STAGEDIR}${PREFIX}/${f}
 .endfor
 .for f in		${PYTHON_SITELIBDIR}/ldb.so \
 			${PYTHON_SITELIBDIR}/_ldb_text.py \
@@ -162,7 +162,7 @@ post-install:
 			${PYTHON_SITELIBDIR}/tdb.so \
 			${PYTHON_SITELIBDIR}/tevent.py \
 			${PKGCONFIGDIR}/pyldb-util.pc
-				${RM} ${STAGEDIR}/${file}
+				${RM} ${STAGEDIR}/${f}
 .endfor
 			${RMDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 			${RMDIR} ${STAGEDIR}${PYTHON_LIBDIR}
