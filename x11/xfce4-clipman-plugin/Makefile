@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-clipman-plugin
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -21,7 +22,7 @@ USES=		gettext gmake libtool pkgconfig tar:bzip2 xfce:gtk3
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk30 intltool glib20 cairo
 USE_XFCE=	panel
-USE_XORG=	ice sm x11 xtst xproto
+USE_XORG=	ice sm x11 xtst xorgproto
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 

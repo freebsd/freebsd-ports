@@ -3,7 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.2.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX?=	-additions
@@ -102,7 +102,7 @@ VBOX_LIBS=	VBoxEGL.so \
 .if ${PORT_OPTIONS:MX11}
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/xorg-server.pc:x11-servers/xorg-server
 RUN_DEPENDS+=	xrandr:x11/xrandr
-USE_XORG+=	inputproto x11 xcursor xext xmu xorg-server xrandr xt
+USE_XORG+=	xorgproto x11 xcursor xext xmu xorg-server xrandr xt
 USES+=		pkgconfig
 VBOX_WITH_X11=	1
 XORG_DRV_ABI=	pkgconf --modversion xorg-server | \

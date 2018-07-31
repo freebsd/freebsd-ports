@@ -2,6 +2,7 @@
 
 PORTNAME=	nxcomp
 PORTVERSION=	3.5.0.32
+PORTREVISION=	1
 MASTER_SITES=	http://code.x2go.org/releases/source/nx-libs/
 CATEGORIES=	x11 devel
 DISTNAME=	nx-libs-${PORTVERSION}-lite
@@ -12,7 +13,7 @@ COMMENT=	NX X11 protocol compression libraries
 WRKSRC=		${WRKDIR}/nx-libs-${PORTVERSION}/${PORTNAME}
 
 USES=		autoreconf gmake jpeg
-USE_XORG=	xproto
+USE_XORG=	xorgproto
 GNU_CONFIGURE=	yes
 LIB_DEPENDS=	libpng.so:graphics/png
 

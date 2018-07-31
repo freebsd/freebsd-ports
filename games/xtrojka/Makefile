@@ -2,7 +2,7 @@
 
 PORTNAME=	xtrojka
 PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SUNSITE/games/arcade/tetris
 DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//g}
@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//g}
 MAINTAINER=	ports@edwinm.ik.nu
 COMMENT=	Game of skill similar to T*tris
 
-USE_XORG=	x11 xt xproto xaw xmu xext
+USE_XORG=	x11 xt xorgproto xaw xmu xext
 MAKE_JOBS_UNSAFE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 INSTALL_TARGET=	install PREFIX=${STAGEDIR}${PREFIX}

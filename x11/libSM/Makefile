@@ -3,7 +3,7 @@
 
 PORTNAME=	libSM
 PORTVERSION=	1.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 USES=		pathfix
 XORG_CAT=	lib
-USE_XORG=	ice xproto:both xtrans
+USE_XORG=	ice xorgproto xtrans
 
 CONFIGURE_ARGS+=--disable-docs --without-xmlto
 

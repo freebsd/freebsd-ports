@@ -3,7 +3,7 @@
 
 PORTNAME=	wmtunlo
 PORTVERSION=	0.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://www.gnu-darwin.org/distfiles/ \
 		http://cvsup.theplanet.com/distfiles/
@@ -13,7 +13,7 @@ COMMENT=	Falling-down-a-tunnel dockapp
 
 LICENSE=	GPLv2
 
-USE_XORG=	x11 xpm xextproto
+USE_XORG=	x11 xpm xorgproto
 ALL_TARGET=	wmtunlo
 
 OPTIONS_DEFINE=	EXAMPLES

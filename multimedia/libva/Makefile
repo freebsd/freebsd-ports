@@ -2,6 +2,7 @@
 
 PORTNAME=	libva
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -15,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libdrm.so:graphics/libdrm
 
 USES=		autoreconf gmake libtool localbase pkgconfig tar:bzip2
-USE_XORG=	glproto pciaccess x11 xext xfixes
+USE_XORG=	xorgproto pciaccess x11 xext xfixes
 USE_GL=		gl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=va

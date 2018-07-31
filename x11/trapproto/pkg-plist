@@ -1,8 +1,0 @@
-include/X11/extensions/xtrapbits.h
-include/X11/extensions/xtrapddmi.h
-include/X11/extensions/xtrapdi.h
-include/X11/extensions/xtrapemacros.h
-include/X11/extensions/xtraplib.h
-include/X11/extensions/xtraplibp.h
-include/X11/extensions/xtrapproto.h
-libdata/pkgconfig/trapproto.pc

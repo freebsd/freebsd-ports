@@ -93,12 +93,10 @@
     SUBDIR += font-util
     SUBDIR += font-winitzki-cyrillic
     SUBDIR += font-xfree86-type1
-    SUBDIR += fontcacheproto
     SUBDIR += fontconfig
     SUBDIR += fontconfig-reference
     SUBDIR += fontmatrix
     SUBDIR += fonts-indic
-    SUBDIR += fontsproto
     SUBDIR += fonttosfnt
     SUBDIR += freefont-ttf
     SUBDIR += freefonts
@@ -196,7 +194,6 @@
     SUBDIR += vollkorn-ttf
     SUBDIR += webfonts
     SUBDIR += wqy
-    SUBDIR += xf86bigfontproto
     SUBDIR += xfontsel
     SUBDIR += xfs
     SUBDIR += xfsinfo

@@ -2,6 +2,7 @@
 
 PORTNAME=	xcursor-themes
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 
 MAINTAINER=	x11@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xcursorgen:x11/xcursorgen
 
-USE_XORG=	xextproto
+USE_XORG=	xorgproto
 
 XORG_CAT=	data
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	gui
 DISTVERSION=	${QT4_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt4-
 
@@ -19,7 +19,7 @@ USES=		pkgconfig qmake:no_env qt-dist:4
 
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
-USE_XORG=	xrender xrandr xinerama inputproto xfixes \
+USE_XORG=	xrender xrandr xinerama xorgproto xfixes \
 		sm xcursor xext x11 ice xi xt
 
 ALL_TARGET=	first

@@ -3,11 +3,12 @@
 
 PORTNAME=	libosmesa
 PORTVERSION=	${MESAVERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	Off-Screen Mesa implementation of the OpenGL API
 
-USE_XORG=	glproto
+USE_XORG=	xorgproto
 
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"

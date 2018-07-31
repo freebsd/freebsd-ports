@@ -1,2 +1,0 @@
-include/X11/extensions/panoramiXproto.h
-libdata/pkgconfig/xineramaproto.pc

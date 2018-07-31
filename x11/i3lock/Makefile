@@ -3,6 +3,7 @@
 
 PORTNAME=	i3lock
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://i3wm.org/${PORTNAME}/
 
@@ -28,7 +29,7 @@ PLIST_FILES=	"@(,,4755) bin/i3lock" \
 		man/man1/i3lock.1.gz
 
 LDFLAGS+=	${ICONV_LIB}
-USE_XORG=	x11 xcb xt xproto xext
+USE_XORG=	x11 xcb xt xorgproto xext
 USES=		gmake iconv pkgconfig tar:bzip2
 
 PORTDOCS=	CHANGELOG README.md

@@ -3,7 +3,7 @@
 
 PORTNAME=	classpath
 PORTVERSION=	0.99
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	java devel
 MASTER_SITES=	GNU \
 		SAVANNAH
@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 USES=		gmake iconv libtool perl5 pkgconfig
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-USE_XORG=	x11 ice xtst xaw xproto xext
+USE_XORG=	x11 ice xtst xaw xorgproto xext
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

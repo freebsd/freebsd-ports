@@ -3,6 +3,7 @@
 
 PORTNAME=	directfb
 PORTVERSION=	1.4.17
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://sources.buildroot.net/
 DISTNAME=	DirectFB-${PORTVERSION}
@@ -54,7 +55,7 @@ CONFIGURE_ARGS=	--disable-osx --disable-extra-warnings --disable-profiling \
 DOCS_BUILD_DEPENDS=	man2html:textproc/man2html
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype
-X11_USE=	XORG=x11,xext,xproto
+X11_USE=	XORG=x11,xext,xorgproto
 X11_CONFIGURE_ENABLE=	x11
 SDL_USE=	sdl=sdl
 SDL_CONFIGURE_ENABLE=	sdl

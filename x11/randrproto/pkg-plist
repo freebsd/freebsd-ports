@@ -1,4 +1,0 @@
-include/X11/extensions/randr.h
-include/X11/extensions/randrproto.h
-libdata/pkgconfig/randrproto.pc
-%%DOCSDIR%%/randrproto.txt

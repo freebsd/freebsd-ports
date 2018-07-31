@@ -4,7 +4,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	1.2.10
-PORTREVISION=	25
+PORTREVISION=	26
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/gtk+/1.2
 PKGNAMESUFFIX=	12
@@ -15,7 +15,7 @@ COMMENT=	Gimp Toolkit for X11 GUI (previous stable version)
 
 USES=		libtool pathfix perl5
 USE_PERL5=	build
-USE_XORG=	x11 ice xext sm inputproto xi
+USE_XORG=	x11 ice xext sm xorgproto xi
 USE_GNOME=	glib12
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

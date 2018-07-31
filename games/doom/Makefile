@@ -3,7 +3,7 @@
 
 PORTNAME=	doom
 PORTVERSION=	1.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	IDSOFTWARE/source
 DISTNAME=	doomsrc
@@ -21,7 +21,7 @@ NO_CDROM=	Redistribution is limited, see license; Requested by id Software
 ONLY_FOR_ARCHS=	i386
 
 USES=		gmake zip
-USE_XORG=	x11 sm xextproto xext
+USE_XORG=	x11 sm xorgproto xext
 NO_WRKSUBDIR=	yes
 
 DATADIR=	${DMDIR}

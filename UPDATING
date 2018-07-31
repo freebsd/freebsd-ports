@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180731:
+  AFFECTS: users of x11/xorg and all ports with USE_XORG=*proto
+  AUTHOR: zeising@daemonic.se
+
+  The xorg *proto packages have all been merged into one package,
+  x11/xorgproto.  This might cause issues with upgrading.  If you
+  get conflicts between xorgproto and old *proto packages, please
+  remove the old package and install xorgproto again.
+
 20180728:
   AFFECTS: users who upgrade from security/kc to security/kc24
   AUTHOR: pi@FreeBSD.org

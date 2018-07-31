@@ -3,7 +3,7 @@
 
 PORTNAME=	gdm
 PORTVERSION=	3.16.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -46,7 +46,7 @@ CPE_VENDOR=	gnome
 CPE_VENDOR=	gnome_display_manager
 USE_GNOME=	dconf intlhack introspection librsvg2
 USE_LDCONFIG=	yes
-USE_XORG=	dmx dmxproto
+USE_XORG=	dmx xorgproto
 INSTALLS_ICONS=	yes
 USE_RC_SUBR=	gdm
 USE_GNOME_SUBR=	yes

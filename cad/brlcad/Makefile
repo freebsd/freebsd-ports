@@ -3,7 +3,7 @@
 
 PORTNAME=	brlcad
 PORTVERSION=	7.24.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/BRL-CAD%20Source/${PORTVERSION}
 
@@ -30,8 +30,8 @@ CONFLICTS_INSTALL=	py[23][0-9]-epsilon
 USES=		bison cmake:outsource pathfix pkgconfig python:env shebangfix \
 		tar:bzip2 tk:85
 USE_GL=		gl glu
-USE_XORG=	ice inputproto sm x11 xau xcb xdamage xdmcp xext xfixes xft xi \
-		xproto xrender xscrnsaver xt xxf86vm
+USE_XORG=	ice sm x11 xau xcb xdamage xdmcp xext xfixes xft xi \
+		xorgproto xrender xscrnsaver xt xxf86vm
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	src/conv/intaval-g.py
 

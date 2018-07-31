@@ -3,7 +3,7 @@
 
 PORTNAME=	xf86-input-egalax
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	glebius@FreeBSD.org

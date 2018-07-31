@@ -3,7 +3,7 @@
 
 PORTNAME=	xrestop
 PORTVERSION=	0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://projects.o-hand.com/sources/${PORTNAME}/
 
@@ -11,7 +11,7 @@ MAINTAINER=	bland@FreeBSD.org
 COMMENT=	X11 server side resource usage statistics monitor
 
 USES=		gmake pkgconfig ncurses
-USE_XORG=	x11 xext xrender xt xres xproto
+USE_XORG=	x11 xext xrender xt xres xorgproto
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	XLIBS="-L${LOCALBASE}/lib -lX11"

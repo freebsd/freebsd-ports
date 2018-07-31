@@ -3,7 +3,7 @@
 
 PORTNAME?=	xorg-server
 PORTVERSION?=	1.18.4
-PORTREVISION?=	8
+PORTREVISION?=	9
 PORTEPOCH?=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
@@ -36,12 +36,7 @@ OPTIONS_EXCLUDE_sparc64=	HAL
 USES=		gmake libtool perl5 ssl tar:bzip2
 USE_PERL5=	build
 USE_GL+=	gl
-USE_XORG+=	bigreqsproto compositeproto damageproto dri2proto dri3proto \
-		fixesproto fontsproto glproto inputproto kbproto pixman \
-		presentproto randrproto recordproto renderproto \
-		resourceproto scrnsaverproto videoproto xau \
-		xcmiscproto xdmcp xextproto xf86driproto xfont \
-		xineramaproto xkbfile xproto xshmfence xtrans
+USE_XORG+=	pixman xau xdmcp xfont xkbfile xorgproto xshmfence xtrans
 CONFIGURE_ARGS+=--without-doxygen --without-xmlto --without-fop \
 		--localstatedir=/var --with-shared-memory-dir=/tmp \
 		--disable-config-udev --disable-config-udev-kms \
@@ -57,7 +52,7 @@ BUILD_DEPENDS+=	libepoxy>0:graphics/libepoxy	# only for configure
 
 .if ${SLAVE_PORT} == "no"
 USE_GL+=	gbm
-USE_XORG+=	pciaccess xf86dgaproto xf86vidmodeproto
+USE_XORG+=	pciaccess
 CONFIGURE_ARGS+=--disable-dmx --disable-xephyr --disable-xnest --disable-xvfb \
 		--disable-xwayland --enable-xcsecurity
 SUB_FILES=	pkg-install pkg-deinstall

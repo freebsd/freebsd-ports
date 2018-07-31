@@ -2,6 +2,7 @@
 
 PORTNAME=	xf86-video-dummy
 PORTVERSION=	0.3.8
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -11,6 +12,5 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 XORG_CAT=	driver
-USE_XORG=	xf86dgaproto
 
 .include <bsd.port.mk>

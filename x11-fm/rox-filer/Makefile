@@ -2,7 +2,7 @@
 
 PORTNAME=	rox-filer
 PORTVERSION=	2.11
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	SF/rox/rox/${PORTVERSION}
 DISTNAME=	rox-filer-${PORTVERSION}
@@ -12,7 +12,7 @@ COMMENT=	Simple and easy to use graphical file manager
 
 PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 
-USE_XORG=	x11 sm xaw xproto
+USE_XORG=	x11 sm xaw xorgproto
 USE_GNOME=	atk glib20 gtk20 libxml2 pango
 USES=		gmake pkgconfig shared-mime-info tar:bzip2
 

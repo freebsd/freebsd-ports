@@ -3,7 +3,7 @@
 
 PORTNAME=	xsel
 PORTVERSION=	0.04.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	http://BSDforge.com/projects/source/x11/xsel/
 
@@ -15,7 +15,7 @@ LICENSE=	MIT
 CONFLICTS_INSTALL=	xsel-conrad-[0-9]*
 
 USES=		tar:bzip2
-USE_XORG=	xmu xaw xt xproto xkbfile
+USE_XORG=	xmu xaw xt xorgproto xkbfile
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lXt -lXaw -lX11 -lXmu

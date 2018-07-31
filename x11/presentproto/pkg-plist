@@ -1,4 +1,0 @@
-include/X11/extensions/presentproto.h
-include/X11/extensions/presenttokens.h
-libdata/pkgconfig/presentproto.pc
-share/doc/presentproto/presentproto.txt

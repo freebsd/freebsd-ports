@@ -3,7 +3,7 @@
 
 PORTNAME=	links-hacked
 DISTVERSION=	101110
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES?=	www
 MASTER_SITES=	http://xray.sai.msu.ru/~karpov/links-hacked/downloads/
 
@@ -42,7 +42,7 @@ JS_DESC=		Javascript interpreter support (very basic)
 JS_CONFIGURE_ENABLE=	javascript
 SVGALIB_LIB_DEPENDS=	libvga.so:graphics/svgalib
 SVGALIB_CONFIGURE_WITH=	svgalib
-X11_USE=		xorg=x11,xproto
+X11_USE=		xorg=x11,xorgproto
 X11_CONFIGURE_WITH=	x
 
 .include <bsd.port.options.mk>

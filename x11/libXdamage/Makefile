@@ -3,7 +3,7 @@
 
 PORTNAME=	libXdamage
 PORTVERSION=	1.1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -13,6 +13,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 XORG_CAT=	lib
-USE_XORG=	x11 damageproto:both xfixes fixesproto xextproto xproto:both
+USE_XORG=	x11 xfixes xorgproto
 
 .include <bsd.port.mk>

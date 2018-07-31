@@ -3,6 +3,7 @@
 
 PORTNAME=	libXtst
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -11,8 +12,7 @@ COMMENT=	X Test extension
 LICENSE=	MIT
 
 XORG_CAT=	lib
-USE_XORG=	x11 xext recordproto:both xextproto inputproto:both \
-		xi
+USE_XORG=	x11 xext xi xorgproto
 USES+=	cpe
 CPE_PRODUCT=	libxtst
 CPE_VENDOR=	x
