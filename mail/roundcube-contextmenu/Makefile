@@ -20,7 +20,7 @@ NO_ARCH=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	JohnDoh
-GH_PROJECT=	Roundcube-Plugin-Context-Menu
+GH_PROJECT=	roundcube-contextmenu
 
 PLUGINDIR=	${WWWDIR:S,/${PORTNAME}$$,,}/roundcube/plugins/${PORTNAME}
 RCDIR_REL=	${WWWDIR_REL:S,/${PORTNAME}$$,,}/roundcube
