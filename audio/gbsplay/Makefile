@@ -3,7 +3,7 @@
 
 PORTNAME=	gbsplay
 PORTVERSION=	0.0.93.20161217
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -16,7 +16,7 @@ GH_ACCOUNT=	mmitch
 GH_TAGNAME=	2c4486e
 
 HAS_CONFIGURE=	yes
-USES=		gmake compiler:gcc-c++11-lib
+USES=		gmake compiler:c++11-lib
 USE_CSTD=	gnu89
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
