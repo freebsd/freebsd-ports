@@ -120,11 +120,13 @@ diff --git a/source3/smbd/pysmbd.c b/source3/smbd/pysmbd.c
 index 63fc5d68c33..f5a536ee186 100644
 --- a/source3/smbd/pysmbd.c
 +++ b/source3/smbd/pysmbd.c
-@@ -335,6 +335,18 @@ static SMB_ACL_T make_simple_acl(gid_t gid, mode_t chmod_mode)
+@@ -368,6 +368,20 @@ static SMB_ACL_T make_simple_acl(TALLOC_
  	return acl;
  }
  
-+static SMB_ACL_T make_simple_nfsv4_acl(gid_t gid, mode_t chmod_mode)
++static SMB_ACL_T make_simple_nfsv4_acl(TALLOC_CTX *mem_ctx,
++					gid_t gid,
++					mode_t chmod_mode)
 +{
 +	/*
 +	 * This function needs to create an NFSv4 ACL. Currently, the only way
@@ -139,25 +141,10 @@ index 63fc5d68c33..f5a536ee186 100644
  /*
    set a simple ACL on a file, as a test
   */
-@@ -363,6 +375,53 @@ static PyObject *py_smbd_set_simple_acl(PyObject *self, PyObject *args, PyObject
- 	}
+@@ -413,6 +427,53 @@ static PyObject *py_smbd_set_simple_acl(
+ }
  
- 	ret = set_sys_acl_conn(fname, SMB_ACL_TYPE_ACCESS, acl, conn);
-+
-+	TALLOC_FREE(acl);
-+
-+	if (ret != 0) {
-+		TALLOC_FREE(frame);
-+		errno = ret;
-+		return PyErr_SetFromErrno(PyExc_OSError);
-+	}
-+
-+	TALLOC_FREE(frame);
-+
-+	Py_RETURN_NONE;
-+}
-+
-+/*
+ /*
 +  set a simple NFSv4 ACL on a file, as a test
 + */
 +static PyObject *py_smbd_set_simple_nfsv4_acl(PyObject *self, PyObject *args, PyObject *kwargs)
@@ -175,9 +162,13 @@ index 63fc5d68c33..f5a536ee186 100644
 +					 &fname, &mode, &gid, &service))
 +		return NULL;
 +
-+	acl = make_simple_nfsv4_acl(gid, mode);
-+
 +	frame = talloc_stackframe();
++
++	acl = make_simple_nfsv4_acl(frame, gid, mode);
++	if (acl == NULL) {
++		TALLOC_FREE(frame);
++		return NULL;
++	}
 +
 +	conn = get_conn(frame, service);
 +	if (!conn) {
@@ -187,13 +178,24 @@ index 63fc5d68c33..f5a536ee186 100644
 +	/*
 +	 * SMB_ACL_TYPE_ACCESS -> ACL_TYPE_ACCESS -> Not valid for NFSv4 ACL
 +	 */
-+	//ret = set_sys_acl_conn(fname, SMB_ACL_TYPE_ACCESS, acl, conn);
 +	ret = 0;
 +
- 	TALLOC_FREE(acl);
- 
- 	if (ret != 0) {
-@@ -483,7 +542,7 @@ static PyObject *py_smbd_unlink(PyObject *self, PyObject *args, PyObject *kwargs
++	if (ret != 0) {
++		TALLOC_FREE(frame);
++		errno = ret;
++		return PyErr_SetFromErrno(PyExc_OSError);
++	}
++
++	TALLOC_FREE(frame);
++
++	Py_RETURN_NONE;
++}
++
++/*
+   chown a file
+  */
+ static PyObject *py_smbd_chown(PyObject *self, PyObject *args, PyObject *kwargs)
+@@ -519,7 +580,7 @@ static PyObject *py_smbd_unlink(PyObject
  }
  
  /*
@@ -202,7 +204,7 @@ index 63fc5d68c33..f5a536ee186 100644
   */
  static PyObject *py_smbd_have_posix_acls(PyObject *self)
  {
-@@ -494,6 +553,86 @@ static PyObject *py_smbd_have_posix_acls(PyObject *self)
+@@ -530,6 +591,86 @@ static PyObject *py_smbd_have_posix_acls
  #endif
  }
  
@@ -289,7 +291,7 @@ index 63fc5d68c33..f5a536ee186 100644
  /*
    set the NT ACL on a file
   */
-@@ -681,9 +820,24 @@ static PyMethodDef py_smbd_methods[] = {
+@@ -717,9 +858,24 @@ static PyMethodDef py_smbd_methods[] = {
  	{ "have_posix_acls",
  		(PyCFunction)py_smbd_have_posix_acls, METH_NOARGS,
  		NULL },

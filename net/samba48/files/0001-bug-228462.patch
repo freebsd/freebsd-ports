@@ -144,3 +144,39 @@ index 8714007cb8d..5f3dfb30beb 100644
 -- 
 2.16.3
 
+From daa9930fc10459f0567931622e2ffbb636e365f0 Mon Sep 17 00:00:00 2001
+From: Ralph Boehme <slow@samba.org>
+Date: Sat, 19 May 2018 01:35:45 +0200
+Subject: [PATCH] vfs_fruit: fixup broken AFP_Signatures
+
+FreeBSD Bug: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=228462
+
+Signed-off-by: Ralph Boehme <slow@samba.org>
+---
+ source3/modules/vfs_fruit.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/source3/modules/vfs_fruit.c b/source3/modules/vfs_fruit.c
+index d92049cc899..0594fd7a538 100644
+--- a/source3/modules/vfs_fruit.c
++++ b/source3/modules/vfs_fruit.c
+@@ -3935,10 +3935,16 @@ static ssize_t fruit_pread_meta_stream(vfs_handle_struct *handle,
+ {
+ 	ssize_t nread;
+ 	int ret;
++	char *p = (char *)data;
+ 
+ 	nread = SMB_VFS_NEXT_PREAD(handle, fsp, data, n, offset);
+ 
+ 	if (nread == n) {
++		if (offset == 0 && nread > 3 && p[0] == 0 && p[1] == 'F' && p[2] == 'P') {
++			DBG_NOTICE("Fixing AFP_Info of [%s]\n",
++				    fsp_str_dbg(fsp));
++			p[0] = 'A';
++		}
+ 		return nread;
+ 	}
+ 
+-- 
+2.17.0
+
