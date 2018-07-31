@@ -6,4 +6,4 @@ You can keep track of any global setting that you do not want to hard code into
 your rails application.  You can store any kind of object including strings,
 numbers, and arrays.
   
-WWW: https://github.com/huacnlee/rails-settings-cached/
+WWW: https://github.com/huacnlee/rails-settings-cached
