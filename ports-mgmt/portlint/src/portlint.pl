@@ -1713,7 +1713,7 @@ sub checkmakefile {
 		# skip global options
 		next if ($i eq 'DOCS' or $i eq 'NLS' or $i eq 'EXAMPLES' or $i eq 'IPV6' or $i eq 'X11' or $i eq 'DEBUG');
 		if (!grep(/^$i$/, (@mopt, @popt))) {
-			if ($whole !~ /\n${i}_($m)(_\w+)?(.)?=[^\n]+/ and $whole !~ /\n[-\w]+-${i}-(on|off):
+			if ($whole !~ /\n${i}_($m)(_\w+)?(.)?=[^\n]+/) {
      +\n/) {
 				if (!$slaveport) {
 					&perror("WARN", $file, -1, "$i is listed in ".
