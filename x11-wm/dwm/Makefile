@@ -28,7 +28,7 @@ PORTDOCS=	README
 OPTIONS_DEFINE=	DMENUANDSTERM DOCS SUPERASMODKEY VOLUMECONTROL XINERAMA
 OPTIONS_DEFAULT=DMENUANDSTERM XINERAMA
 
-DMENUANDSTERM_DESC=	Install x11/dmenu and x11/st as runtime dependencies
+DMENUANDSTERM_DESC=	Install x11/dmenu and x11/sterm as runtime dependencies
 SUPERASMODKEY_DESC=	Use Super instead of Alt for the dwm mod key
 VOLUMECONTROL_DESC=	Use keys on keyboard to raise or lower volume
 
