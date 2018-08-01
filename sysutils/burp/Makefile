@@ -46,10 +46,4 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/vss_strip
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/burp
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 1200039 && ${CC:T} == "clang"
-BROKEN=		fails to compile due to clang 4.0 regression: util/bdthreads.cc:132:10: ordered comparison between pointer and zero
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
