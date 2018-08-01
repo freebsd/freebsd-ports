@@ -6,6 +6,7 @@ lib/hexchat/plugins/checksum.so
 %%PERL%%lib/hexchat/plugins/perl.so
 %%PYTHON%%lib/hexchat/plugins/python.so
 %%LUA%%%%LUA_LIBDIR%%/hexchat/plugins/lua.so
+%%SYSINFO%%lib/hexchat/plugins/sysinfo.so
 libdata/pkgconfig/hexchat-plugin.pc
 man/man1/hexchat.1.gz
 share/metainfo/io.github.Hexchat.appdata.xml
