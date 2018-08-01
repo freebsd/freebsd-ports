@@ -16,6 +16,8 @@ BROKEN_powerpc64=	fails to configure: C++ compiler cannot create executables
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
+USE_CXXSTD=	c++98
+
 OPTIONS_DEFINE=	GD IMAGEMAGICK
 OPTIONS_DEFAULT=GD
 
