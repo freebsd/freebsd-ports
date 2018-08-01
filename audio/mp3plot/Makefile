@@ -8,9 +8,10 @@ CATEGORIES=	audio
 MASTER_SITES=	http://p.outlyer.net/mp3plot/files/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Mp3 bitrate plot tool
+COMMENT=	MP3 bitrate plot tool
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_powerpc64=	fails to configure: C++ compiler cannot create executables
 
