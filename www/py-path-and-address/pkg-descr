@@ -1,0 +1,9 @@
+Path-and-address resolves ambiguities for command-line interface
+applications with the following pattern:
+
+$ your_app [<path>] [<address>]
+
+The library applies the principal of least surprise to command-line
+interfaces.
+
+WWW: https://github.com/joeyespo/path-and-address
