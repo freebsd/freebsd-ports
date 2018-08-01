@@ -59,7 +59,6 @@
     SUBDIR += emprint
     SUBDIR += erun
     SUBDIR += eterm
-    SUBDIR += evieext
     SUBDIR += evilvte
     SUBDIR += fbdesk
     SUBDIR += fbpanel
