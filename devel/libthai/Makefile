@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libthai
-PORTVERSION=	0.1.27
+DISTVERSION=	0.1.28
 CATEGORIES=	devel
 MASTER_SITES=	http://linux.thai.net/pub/thailinux/software/libthai/
 
