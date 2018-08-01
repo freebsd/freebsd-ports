@@ -498,6 +498,7 @@
     SUBDIR += spamcalc
     SUBDIR += sshbuddy
     SUBDIR += sssnips
+    SUBDIR += survex
     SUBDIR += susv2
     SUBDIR += susv3
     SUBDIR += susv4
