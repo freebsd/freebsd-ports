@@ -1,10 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	minecraft-server
-PORTVERSION=	1.12.2
+PORTVERSION=	1.13
 CATEGORIES=	games java
-MASTER_SITES=	https://s3.amazonaws.com/Minecraft.Download/versions/${PORTVERSION}/
-DISTFILES=	minecraft_server.${PORTVERSION}.jar
+MASTER_SITES=	https://launcher.mojang.com/mc/game/1.13/server/d0caafb8438ebd206f99930cfaecfa6c9a13dca0/
+DISTFILES=	server.jar
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=
 
 MAINTAINER=	freebsd@jonathanprice.org
@@ -60,7 +61,6 @@ do-install:
 	${LN} -sf /var/log/minecraft-server ${STAGEDIR}${PREFIX}/${PORTNAME}/logs
 	${LN} -sf /var/log/minecraft-server/debug ${STAGEDIR}${PREFIX}/${PORTNAME}/debug
 	${LN} -sf /var/db/minecraft-server ${STAGEDIR}${PREFIX}/${PORTNAME}/world
-	${LN} -sf ${PREFIX}/${PORTNAME}/${DISTFILES} ${STAGEDIR}${PREFIX}/${PORTNAME}/minecraft_server.jar
 
 post-install-STANDALONE-on:
 	${INSTALL_SCRIPT} ${WRKDIR}/minecraft-server ${STAGEDIR}${PREFIX}/bin
