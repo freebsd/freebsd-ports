@@ -925,6 +925,7 @@
     SUBDIR += hs-ConfigFile
     SUBDIR += hs-EdisonAPI
     SUBDIR += hs-EdisonCore
+    SUBDIR += hs-GenericPretty
     SUBDIR += hs-Glob
     SUBDIR += hs-HUnit
     SUBDIR += hs-IfElse
@@ -1035,6 +1036,7 @@
     SUBDIR += hs-filemanip
     SUBDIR += hs-filestore
     SUBDIR += hs-fmlist
+    SUBDIR += hs-fortran-src
     SUBDIR += hs-foundation
     SUBDIR += hs-free
     SUBDIR += hs-fsnotify
