@@ -1,5 +1,5 @@
 reversible hexdump is a hexdump/hex2bin-toolkit that dumps to a special
-readable and reversible hexadecimal byte-dump,where you cannot only change
+readable and reversible hexadecimal byte-dump, where you can not only change
 bytes, but also insert or delete bytes. It has a flush-switch, where it will
 output hexbytes for each single char it reads. This is especially useful for
 watching output from slow devices (e.g., serial devices like mice). The
