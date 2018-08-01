@@ -10395,3 +10395,4 @@ x11/xproxymanagementprotocol|x11/xorgproto|2018-07-31|merged into x11/xorgproto
 x11-fonts/fontcacheproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
 x11-fonts/fontsproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
 x11-fonts/xf86bigfontproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
+x11/evieext|x11/xorgproto|2018-08-01|merged into x11/xorgproto
