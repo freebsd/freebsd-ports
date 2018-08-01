@@ -1,6 +1,6 @@
---- Makefile.in	2012-02-26 17:02:28.000000000 -0800
-+++ Makefile.in	2012-12-12 19:11:25.155523995 -0800
-@@ -181,7 +181,7 @@
+--- Makefile.in.orig	2012-02-27 01:02:28 UTC
++++ Makefile.in
+@@ -181,7 +181,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  mtpfs_SOURCES = mtpfs.c mtpfs.h $(am__append_1)
