@@ -14,6 +14,7 @@ BUILD_DEPENDS=	makedepend:devel/makedepend
 
 GNU_CONFIGURE=	yes
 USES=		gmake
+USE_CXXSTD=	c++98
 WRKSRC=		${WRKDIR}/${PORTNAME:S/-/_/}_Tool_${PORTVERSION:S/.//g}
 
 PORTDOCS=	HVS_file_format.txt HVSC_Update.txt SID_file_format.txt
