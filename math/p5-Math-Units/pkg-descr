@@ -1,6 +1,6 @@
 The Math::Units module converts a numeric value in one unit of measurement
-to some other unit. The units must be compatible, i.e. length can not be
-converted to volume. If a conversion can not be made an exception is
+to some other unit. The units must be compatible, i.e. length cannot be
+converted to volume. If a conversion cannot be made an exception is
 thrown.
 
 A combination chaining and reduction algorithm is used to perform the most

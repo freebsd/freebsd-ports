@@ -6,7 +6,7 @@ a word.
 
 You can join letters horizontally, vertically, or diagonally in any
 direction to make a word, so as long as the letters are next to
-each other on the board. However, you can not reuse the same letter
+each other on the board. However, you cannot reuse the same letter
 cells in a single word. Also, each word must be at least three
 letters on a normal board, and four letters on a large board.
 

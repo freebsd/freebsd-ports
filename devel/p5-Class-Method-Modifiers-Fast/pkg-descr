@@ -1,6 +1,6 @@
 Class::Method::Modifiers::Fast provides three modifiers: before,
 around, and after.  before and after are run just before and after the
-method they modify, but can not really affect that original method.
+method they modify, but cannot really affect that original method.
 around is run in place of the original method, with a hook to easily
 call that original method. See the MODIFIERS section for more details
 on how the particular modifiers work.

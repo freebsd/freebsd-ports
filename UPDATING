@@ -6294,7 +6294,7 @@ you update your ports collection, before attempting any port upgrades.
 
   Elasticsearch has been updated to version 1.1.0. If you are updating
   from a version prior to 1.0.0 you will need to do a full cluster
-  shutdown for this update as it can not be performed in a rolling
+  shutdown for this update as it cannot be performed in a rolling
   fashion.
 
 20140401:
@@ -10524,13 +10524,13 @@ you update your ports collection, before attempting any port upgrades.
                       FreeBSD sources.
 
   Also, subversion 1.7.0 changes the working copy format,
-  and a working copy can not be shared between
+  and a working copy cannot be shared between
   subversion 1.7.0 and 1.6.x. Please, think twice before
   upgrading.
 
   Additional the port "devel/subversion16" was created to
   support subversion 1.6.x. Subversion 1.7.x and 1.6.x
-  can not be installed simultaneously!
+  cannot be installed simultaneously!
 
   Binding ports can be built with Subversion 1.7.0 (Default)
   or with Subversion 1.6.x. To build bindings with subversion 1.6.x
@@ -12622,7 +12622,7 @@ or
     o japanese/ibus-mozc
     o devel/py-gyp-devel
 
-  You can not upgrade with portupgrade or portmaster. To upgrade, you
+  You cannot upgrade with portupgrade or portmaster. To upgrade, you
   must deinstall japanese/ibus-mozc first and then install the new
   japanese/ibus-mozc.
 
@@ -14569,7 +14569,7 @@ or
   AUTHOR: pgollucci@FreeBSD.org
 
   www/rt2 www/rt3 www/rt32 www/rt34 are now deprecated and will expire
-  2009-02-01.  All ports now depend on www/rt38 If you can not update
+  2009-02-01.  All ports now depend on www/rt38 If you cannot update
   to www/rt38, www/rt36 is still around.
 
 20081224:

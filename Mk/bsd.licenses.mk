@@ -27,7 +27,7 @@ Licenses_Include_MAINTAINER=         portmgr@FreeBSD.org
 #
 # - Redistribution of modified distfiles, because is never done.
 # - Creating binaries from modified sources, because packages almost always
-#   contain modifications to the source, can not be autodetected (i.e.
+#   contain modifications to the source, cannot be autodetected (i.e.
 #   patch-* in ${FILESDIR}, post-* targets, etc), and these licenses tend to
 #   have more restrictions anyways.
 #

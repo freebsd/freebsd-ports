@@ -9,7 +9,7 @@ Each arrow will disappear after after a given time (15 seconds by default) and
 a new arrow will automagically appear in the control field.
 
 Bears eat penguins (at least in this game). If a bear enter a player's target
-area, the player loses up to 15 points (the score can not become negative)
+area, the player loses up to 15 points (the score cannot become negative)
 Special penguins, marked by a colored ring, score 10 points and launch a
 10 second long special event. See below for a list of events.
 

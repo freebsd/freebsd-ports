@@ -10,7 +10,7 @@
 
    Unlike the standard implementation of NoCeM, this version is optimized
    for the most common case of "spam cancels". In fact, it can do nothing
-   else. It can not be run by a normal user, it does not need or
+   else. It cannot be run by a normal user, it does not need or
    manipulate state like .newsrc files, it processes only "hide" actions,
    and that only by actually deleting the articles.
 
