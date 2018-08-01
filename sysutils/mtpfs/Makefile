@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.adebenham.com/files/mtp/
 MAINTAINER=	jhixson@gmail.com
 COMMENT=	MTP device filesystem
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libmtp.so:multimedia/libmtp \
 		libid3.so:audio/id3lib \
 		libid3tag.so:audio/libid3tag \

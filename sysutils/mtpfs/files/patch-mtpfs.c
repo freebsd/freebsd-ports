@@ -1,6 +1,6 @@
---- mtpfs.c	2012-02-26 16:59:39.000000000 -0800
-+++ mtpfs.c	2012-12-12 19:11:46.955525173 -0800
-@@ -1270,7 +1270,7 @@
+--- mtpfs.c.orig	2012-02-27 00:59:39 UTC
++++ mtpfs.c
+@@ -1270,7 +1270,7 @@ mtpfs_rename (const char *oldname, const
  }
  
  static int
@@ -9,7 +9,7 @@
  {
      DBG("mtpfs_statfs");
      stbuf->f_bsize=1024;
-@@ -1282,7 +1282,7 @@
+@@ -1282,7 +1282,7 @@ mtpfs_statfs (const char *path, struct s
  }
  
  void *
@@ -18,7 +18,7 @@
  {
      LIBMTP_devicestorage_t *storage;
      DBG("mtpfs_init");
-@@ -1298,8 +1298,14 @@
+@@ -1298,8 +1298,14 @@ mtpfs_blank()
      // Do nothing
  }
  
@@ -34,7 +34,7 @@
      .release = mtpfs_release,
      .readdir = mtpfs_readdir,
      .getattr = mtpfs_getattr,
-@@ -1428,7 +1434,7 @@
+@@ -1428,7 +1434,7 @@ main (int argc, char *argv[])
  
      DBG("Start fuse");
  
