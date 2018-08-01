@@ -1,0 +1,6 @@
+Provides lexing, parsing, and basic analyses of Fortran code covering
+standards: FORTRAN 66, FORTRAN 77, Fortran 90, and Fortran 95 and some legacy
+extensions. Includes data flow and basic block analysis, a renamer, and type
+analysis.
+
+WWW: https://github.com/camfort/fortran-src
