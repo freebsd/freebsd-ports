@@ -11,10 +11,13 @@ DISTFILES=	${DBFILES:C,.*:(.*),\1.zip:\1,:C,:docbook-([0-9]+).([0-9]+),:db\1\2,}
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	DocBook SGML DTD
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	${LOCALBASE}/${ISOCAT}:textproc/iso8879 \
 		xmlcatmgr:textproc/xmlcatmgr
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 DBFILES=2.4.1:docbk241	3.0:docbk30	3.1:docbk31 \
 	4.0:docbk40	4.1:docbk41	4.2:docbook-4.2 \
