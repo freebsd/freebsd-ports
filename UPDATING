@@ -26,6 +26,10 @@ you update your ports collection, before attempting any port upgrades.
   get conflicts between xorgproto and old *proto packages, please
   remove the old package and install xorgproto again.
 
+  In order to remove all orphaned ports, including all *proto port,
+  the following can be used after the ports tree has been updated:
+  pkg version -l \? | cut -f 1 -w | grep -v compat | xargs pkg delete -fy
+
 20180728:
   AFFECTS: users who upgrade from security/kc to security/kc24
   AUTHOR: pi@FreeBSD.org
