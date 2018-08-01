@@ -1,3 +1,3 @@
-TIMESTAMP = 1514732045
-SHA256 (minecraft_server.1.12.2.jar) = fe1f9274e6dad9191bf6e6e8e36ee6ebc737f373603df0946aafcded0d53167e
-SIZE (minecraft_server.1.12.2.jar) = 30222121
+TIMESTAMP = 1533069013
+SHA256 (minecraft-server-1.13/server.jar) = e76f3927904d331c969a2c437d5661ac02f24be86062dd1c607bfd4ebdc550b9
+SIZE (minecraft-server-1.13/server.jar) = 32649675

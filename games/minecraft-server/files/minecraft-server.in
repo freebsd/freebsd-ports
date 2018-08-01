@@ -6,4 +6,4 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 cd %%PREFIX%%/minecraft-server
-su -m mcserver -c "java $(cat %%PREFIX%%/etc/minecraft-server/java-args.txt) -jar minecraft_server.%%VERSION%%.jar nogui"
+su -m mcserver -c "java $(cat %%PREFIX%%/etc/minecraft-server/java-args.txt) -jar server.jar nogui"
