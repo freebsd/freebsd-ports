@@ -3,7 +3,7 @@
 
 PORTNAME=	mesa-libs
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL libraries that support GLX and EGL clients
@@ -54,6 +54,11 @@ MESA_INSTALL_WRKSRC+=	src/gbm src/glx
 .if "${MESA_LLVM_VER}" != ""
 MESA_BUILD_WRKSRC+=	src/egl
 MESA_INSTALL_WRKSRC+=	src/egl
+.endif
+
+.if ${ARCH} == "i386"
+# PR230239 Fix the build for i386 when WITH_LLD_IS_LD is set
+LDFLAGS+=-Wl,-z,notext
 .endif
 
 .include "${MASTERDIR}/Makefile.targets"
