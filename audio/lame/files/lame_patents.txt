@@ -1,0 +1,27 @@
+# $FreeBSD$
+
+Intellectual Property Precaution
+
+Verious sources explain that the MP3 patents are expired. Various
+linux distributions provide precompiled LAME packages for download
+since then.
+
+Most sources, (e.g. http://www.mp3licensing.com/) only talk about
+the FhG and Technicolor patent portfolio, but there are also
+portfolios from Sisvel (from Philips) and Nokia (from AT&T -> Lucent
+-> Alcatel).
+
+Some "old" patents are now expired, but there are more recent MP3
+patents. Some of the more recent ones are e.g. multi-channel related.
+Multi-channel (>2 channels) is not implemented in LAME, but this
+doesn't mean that there are other patents which could match what
+is implemented in LAME.
+
+There was no investigation (in the LAME project) about which patent
+exists, which one is implemented in LAME, and which one is not (yet)
+expired. As such it is not known if LAME could now be distributed
+as a binary package or not.
+
+Linux distributions seem to go the "let's see if get sued" way,
+FreeBSD does not follow this.
+
