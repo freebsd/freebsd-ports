@@ -117,6 +117,7 @@ include/eigen3/Eigen/src/Core/arch/CUDA/MathFunctions.h
 include/eigen3/Eigen/src/Core/arch/CUDA/PacketMath.h
 include/eigen3/Eigen/src/Core/arch/CUDA/PacketMathHalf.h
 include/eigen3/Eigen/src/Core/arch/CUDA/TypeCasting.h
+include/eigen3/Eigen/src/Core/arch/Default/ConjHelper.h
 include/eigen3/Eigen/src/Core/arch/Default/Settings.h
 include/eigen3/Eigen/src/Core/arch/NEON/Complex.h
 include/eigen3/Eigen/src/Core/arch/NEON/MathFunctions.h
