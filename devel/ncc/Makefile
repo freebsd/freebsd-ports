@@ -15,9 +15,12 @@ LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 ALL_TARGET=	# empty
 MAKE_ARGS=	CC="${CXX}" LCFLAGS="${CFLAGS}"
-USES=		ncurses python:run shebangfix
+USES=		compiler ncurses python:run shebangfix
 SHEBANG_FILES=	scripts/*.py
-CFLAGS+=	-DNOGNU='\"${PREFIX}/include/ncc/nognu\"' -fpermissive
+# build ignores CXXFLAGS
+CFLAGS+=	-DNOGNU='\"${PREFIX}/include/ncc/nognu\"' -fpermissive \
+		${CFLAGS_${CHOSEN_COMPILER_TYPE}}
+CFLAGS_clang=	-Wno-c++11-narrowing
 
 PORTDOCS=	*
 
