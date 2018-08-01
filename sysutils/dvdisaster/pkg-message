@@ -7,7 +7,7 @@ so the program will not detect any available drives if the user running
 dvdisaster does not have permissions to read /dev/pass*
 
 FreeBSD 9.x does not pre-install an uniform CD-ROM driver for SCSI and ATAPI
-drives. Therefore dvdisaster can not use any ATAPI drives in an out-of-the-box
+drives. Therefore dvdisaster cannot use any ATAPI drives in an out-of-the-box
 FreeBSD 9.x installation.
 
 * Loading the atapicam kernel module by hand

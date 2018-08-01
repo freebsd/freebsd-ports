@@ -224,7 +224,7 @@ CONFIGURE_ARGS+=--enable-vmx=1
 
 .if defined(WITH_CPU_LEVEL)
 .if ${WITH_CPU_LEVEL} < 3 || ${WITH_CPU_LEVEL} > 6
-IGNORE=		can not install: WITH_CPU_LEVEL must be an integer value between 3 and 6
+IGNORE=		cannot install: WITH_CPU_LEVEL must be an integer value between 3 and 6
 .endif
 CONFIGURE_ARGS+=--enable-cpu-level=${WITH_CPU_LEVEL}
 .endif

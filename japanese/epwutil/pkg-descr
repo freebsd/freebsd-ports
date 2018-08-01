@@ -5,7 +5,7 @@ catdump - edit and concatenate the CD-ROM catalogue files.
 squeeze - remove multi-media data(image or audio) and indexes for conditional
           or compound search from the book.
 
-Bookinfo and squeeze can not be used for EPWING V4 and later.
+Bookinfo and squeeze cannot be used for EPWING V4 and later.
 See "Section 5: Restriction" in epwutil.doc.
 
 In use of this programs, you have to check the agreement of your CD-ROM books

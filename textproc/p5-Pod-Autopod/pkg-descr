@@ -4,7 +4,7 @@ like javadoc. So it uses also comments written directly obove the
 method definitions. It is designed to asumes a pm file which
 represents a class.
 
-Of course it can not understand every kind of syntax, parameters,
+Of course it cannot understand every kind of syntax, parameters,
 etc. But the plan is to improve this library in the future to
 understand more and more automatically.
 

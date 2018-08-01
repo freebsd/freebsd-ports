@@ -11,4 +11,4 @@ responsibility for damages incurred with its use.
 This port also creates  two aliases for each of the  fonts -- for koi8-r
 encoding (koi8-u is a superset of koi8-r anyway) and for cronyx foundry.
 Some applications (gtk?) look for -cronyx-*- and/or *-koi8-r explicitly,
-but there is no reason why this fonts can not be used in those cases.
+but there is no reason why this fonts cannot be used in those cases.

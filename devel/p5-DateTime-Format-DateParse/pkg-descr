@@ -5,7 +5,7 @@ If a date doesn't contain a timezone suffix, and zone parameter is not set,
 then the timezone of the returned DateTime object will be set to the local
 timezone. This is consistent with the behavior of Date::Parse.
 If no zone is specified and the date string does specify a timezone/offset or
-if a zone format can not be parsed by DateTime::TimeZone, the returned
+if a zone format cannot be parsed by DateTime::TimeZone, the returned
 DateTime object will have UTC timezone.
 
 WWW: https://metacpan.org/release/DateTime-Format-DateParse

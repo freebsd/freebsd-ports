@@ -8,7 +8,7 @@ with next major advantages:
 - supports asn32 in both asdot and asplain notation, also supports
 "transition" as23456 generation instead of asn32.
 
-However, bgpq3 can not be used as a full replacement of bgpq, because:
+However, bgpq3 cannot be used as a full replacement of bgpq, because:
 - "more specific" prefix filtering is not implemented (and not planned).
 - GateD prefix-filters generation is not implemented (and not planned).
 - Cisco standard access-lists generation is not implemented (and not planned).

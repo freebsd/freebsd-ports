@@ -4,7 +4,7 @@ source code was released, and I began developing a custom OpenGL-only engine
 for it and other mods, which supports Windows WGL and Linux GLX, and has
 greatly improved graphics and image quality.
 
-It can not easily be described, as it is simply an improved Quake, not a total
+It cannot easily be described, as it is simply an improved Quake, not a total
 conversion (yet, anyway).
 
 The realism of shell casings falling to the floor, much improved bullet

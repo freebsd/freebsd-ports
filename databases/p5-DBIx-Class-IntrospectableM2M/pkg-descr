@@ -1,5 +1,5 @@
 Because the many-to-many relationships are not real relationships,
-they can not be introspected with DBIx::Class. Many-to-many
+they cannot be introspected with DBIx::Class. Many-to-many
 relationships are actually just a collection of convenience methods
 installed to bridge two relationships. This DBIx::Class component
 can be used to store all relevant information about these

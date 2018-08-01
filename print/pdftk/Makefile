@@ -37,7 +37,7 @@ PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 pre-configure:
 	@if [ ! -e ${LOCALBASE}/bin/gcj${CSUFF} ]; then \
 		${ECHO_MSG} ""; \
-		${ECHO_MSG} "Can not find gcj${CSUFF}"; \
+		${ECHO_MSG} "Cannot find gcj${CSUFF}"; \
 		${ECHO_MSG} "Please rebuild ${_GCC_PORT} with java support"; \
 		${ECHO_MSG} ""; \
 		exit 1; \

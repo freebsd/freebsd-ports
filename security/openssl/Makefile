@@ -112,7 +112,7 @@ CFLAGS+= -Werror -Qunused-arguments
 .endif
 
 .if ${PREFIX} == /usr
-IGNORE=	the OpenSSL port can not be installed over the base version
+IGNORE=	the OpenSSL port cannot be installed over the base version
 .endif
 
 OPENSSLDIR?=	${PREFIX}/openssl

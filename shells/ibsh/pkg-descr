@@ -1,4 +1,4 @@
-Iron Bars Shell is a restricted Unix shell. The user can not step out of, nor
+Iron Bars Shell is a restricted Unix shell. The user cannot step out of, nor
 access files outside the home directory. It is written in C for Linux. No
 libraries used. It is small, fast, secure. Two ascii configuration files for
 more control.

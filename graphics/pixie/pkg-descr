@@ -1,6 +1,6 @@
 Pixie is a RenderMan like photorealistic renderer. It is being developed
 in the hope that it will be useful for graphics research and for people
-who can not afford a commercial renderer.
+who cannot afford a commercial renderer.
 
 Some of supported features:
 * All RenderMan 3.4 primitives
