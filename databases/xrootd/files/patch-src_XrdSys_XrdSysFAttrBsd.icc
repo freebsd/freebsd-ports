@@ -1,0 +1,42 @@
+--- src/XrdSys/XrdSysFAttrBsd.icc.orig	2018-08-01 05:55:51 UTC
++++ src/XrdSys/XrdSysFAttrBsd.icc
+@@ -68,7 +68,7 @@ int XrdSysFAttr::Get(const char *Aname, 
+ // Obtain the attribute.
+ //
+    ec = (fd < 0 ? extattr_get_file(Path,EXTATTR_NAMESPACE_USER,Aname,Aval,Avsz)
+-                  extattr_get_fd(  fd,  EXTATTR_NAMESPACE_USER,Aname,Aval,Avsz));
++                : extattr_get_fd(  fd,  EXTATTR_NAMESPACE_USER,Aname,Aval,Avsz));
+ 
+ // Diagnose errors. We return 0 on ENOENT to indicate no attribute.
+ //
+@@ -89,8 +89,8 @@ int XrdSysFAttr::List(AList **aPL, const
+ // First obtain the amount of storage we will need for the whole list
+ //
+    *aPL = 0;
+-   Tlen = (fd < 0 ? extattr_get_file(Path,EXTATTR_NAMESPACE_USER, 0, 0)
+-                    extattr_list_fd(   fd,EXTATTR_NAMESPACE_USER, 0, 0));
++   Tlen = (fd < 0 ? extattr_get_file(Path,EXTATTR_NAMESPACE_USER, "", 0, 0)
++                  : extattr_list_fd(   fd,EXTATTR_NAMESPACE_USER, 0, 0));
+    if (Tlen < 0)
+       {if ((ec = Diagnose("list", "*", Path, errno)) == -ENOENT) ec = 0;
+        return ec;
+@@ -109,8 +109,8 @@ int XrdSysFAttr::List(AList **aPL, const
+ // Now get the actual list. We will not recover if someone added an attribute
+ // since the time we actual determined the size of the buffer we need.
+ //
+-   Tlen = (fd < 0 ? extattr_get_file(Path,EXTATTR_NAMESPACE_USER, Buff, Tlen)
+-                    extattr_list_fd(   fd,EXTATTR_NAMESPACE_USER, Buff, Tlen));
++   Tlen = (fd < 0 ? extattr_get_file(Path,EXTATTR_NAMESPACE_USER, "", Buff, Tlen)
++                  : extattr_list_fd(   fd,EXTATTR_NAMESPACE_USER, Buff, Tlen));
+    if (Tlen < 0)
+       {if ((ec = Diagnose("list", "*", Path, errno)) == -ENOENT) ec = 0;
+        free(Buff);
+@@ -160,7 +160,7 @@ int XrdSysFAttr::Set(const char *Aname, 
+ //
+   if (isNew)
+      {ec = (fd < 0 ? extattr_get_file(Path,EXTATTR_NAMESPACE_USER,Aname,0,0)
+-                   : extattr_get_fd(  fd,  EXTATTR_NAMESPACE_USER,Aname,0 0));
++                   : extattr_get_fd(  fd,  EXTATTR_NAMESPACE_USER,Aname,0,0));
+       if (ec >= 0) return -EEXIST;
+      }
+ 
