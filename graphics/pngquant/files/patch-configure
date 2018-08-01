@@ -13,7 +13,7 @@ Index: configure
  SSE=auto
  OPENMP=
  LIBPNG_DIR=.
-@@ -41,7 +41,7 @@
+@@ -35,7 +35,7 @@
          help "--with-libimagequant=<dir>    external libimagequant (lib/ default)"
          help "--with-openmp=static          compile with multicore support"
          help "--with-lcms2/--without-lcms2  compile with color profile support"
@@ -22,7 +22,7 @@ Index: configure
          help "--with-cocoa/--without-cocoa  use Cocoa framework to read images"
  fi
          help "--with-libpng=<dir>           search for libpng in directory"
-@@ -56,35 +56,35 @@
+@@ -50,35 +50,35 @@
      CC=*)
          CC=${i#*=}
          SKIP_CC_CHECK=1
@@ -66,7 +66,7 @@ Index: configure
          ;;
      --with-lcms2)
          LCMS2=1
-@@ -111,16 +111,16 @@
+@@ -103,16 +103,16 @@
          ;;
      --prefix=*)
          PREFIX=${i#*=}
@@ -86,7 +86,7 @@ Index: configure
          ;;
      *)
          echo "warning: unknown switch ${i%%=*} (see $0 --help for the list)"
-@@ -130,7 +130,7 @@
+@@ -122,7 +122,7 @@
  
  # If someone runs sudo make install as very first command, and configure later,
  # $CONFIG cannot be overwritten, and must be deleted before continuing.
@@ -95,7 +95,7 @@ Index: configure
      echo "Cannot overwrite file $CONFIG! Please delete it."
      exit 1
  fi
-@@ -167,7 +167,7 @@
+@@ -159,7 +159,7 @@
  
  find_pkgconfig() {
      local LIBNAME=$1
@@ -104,7 +104,7 @@ Index: configure
          cflags "$(pkg-config --cflags "$LIBNAME")"
          lflags "$(pkg-config --libs "$LIBNAME")"
          LIBRARY_FOUND_VERSION=$(pkg-config --modversion "$LIBNAME")
-@@ -248,9 +248,13 @@
+@@ -240,9 +240,13 @@
          return 0
      fi
  
@@ -121,7 +121,7 @@ Index: configure
              return 0
          fi
      done
-@@ -305,12 +309,8 @@
+@@ -299,12 +303,8 @@
  # SSE
  if [ "$SSE" = 'auto' ]; then
      SSE=0
@@ -136,7 +136,7 @@ Index: configure
  fi
  
  if [ "$SSE" -eq 1 ]; then
-@@ -333,9 +333,8 @@
+@@ -327,9 +327,8 @@
      else
          OPENMPFLAGS="-fopenmp"
      fi
@@ -148,16 +148,14 @@ Index: configure
          cflags "$OPENMPFLAGS"
          lflags "$OPENMPFLAGS"
          status "OpenMP" "yes"
-@@ -342,7 +342,7 @@
+@@ -344,38 +343,35 @@
  fi
  
  # Cocoa
 -if [[ "$OSTYPE" =~ "darwin" ]]; then
 +if echo "$OSTYPE" | grep -q "darwin"; then
-     cflags "-mmacosx-version-min=10.6"
-     lflags "-mmacosx-version-min=10.6"
- fi
-@@ -365,32 +366,29 @@
+     cflags "-mmacosx-version-min=10.7"
+     lflags "-mmacosx-version-min=10.7"
  fi
  
  # pairs of possible *.h and lib*.so locations
@@ -201,7 +199,7 @@ Index: configure
      SOLIBSUFFIX=dll
  else
      SOLIBSUFFIX=so
-@@ -431,7 +429,7 @@
+@@ -416,7 +412,7 @@
  if echo "#include \"png.h\"
      int main(){
      return !png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
@@ -210,7 +208,7 @@ Index: configure
      status "libpng" "custom flags"
      HAS_LIBPNG=1
  fi
-@@ -442,7 +440,7 @@
+@@ -427,7 +423,7 @@
      if [ -n "$PNGH" ]; then
          PNGH_STRING=$(pngh_string "$PNGH")
          PNGH_MAJMIN=$(pngh_majmin "$PNGH")
@@ -219,7 +217,7 @@ Index: configure
              LIBPNGA=$(find_f "$LIBPNG_DIR" "libpng${PNGH_MAJMIN}.a")
              if [ -z "$LIBPNGA" ]; then
                  LIBPNGA=$(find_f "$LIBPNG_DIR" "libpng.a")
-@@ -461,14 +459,19 @@
+@@ -446,14 +442,19 @@
      if find_pkgconfig libpng; then
          HAS_LIBPNG=1
      else
@@ -244,7 +242,7 @@ Index: configure
                      if [ -n "$LIBPNGSO" ]; then
                          cflags "-I${PNGH%/*}"
                          lflags "-L${LIBPNGSO%/*} -lpng${PNGH_MAJMIN}"
-@@ -482,7 +485,7 @@
+@@ -467,7 +468,7 @@
      fi
  fi
  if [ "$HAS_LIBPNG" -eq 0 ]; then
@@ -253,7 +251,7 @@ Index: configure
          LIBPNG_CMD='`brew install libpng`'
      else
          LIBPNG_CMD='`apt-get install libpng16-dev` or `apt-get install libpng-dev` or `yum install libpng-devel`'
-@@ -550,6 +553,6 @@
+@@ -534,6 +535,6 @@
  SOLIBSUFFIX = $SOLIBSUFFIX
  STATICLIBDEPS = $STATICLIBDEPS
  LIQSRCDIR = $LIQSRCDIR

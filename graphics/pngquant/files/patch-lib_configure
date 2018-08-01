@@ -5,7 +5,7 @@ Index: lib/configure
  
  CONFIG="config.mk"
  PREFIX="/usr/local"
-@@ -86,7 +86,7 @@
+@@ -105,7 +105,7 @@
  
  # If someone runs sudo make install as very first command, and configure later,
  # $CONFIG cannot be overwritten, and must be deleted before continuing.
@@ -14,7 +14,7 @@ Index: lib/configure
      echo "Cannot overwrite file $CONFIG! Please delete it."
      exit 1
  fi
-@@ -146,12 +146,8 @@
+@@ -167,12 +167,8 @@
  # SSE
  if [ "$SSE" = 'auto' ]; then
      SSE=0
@@ -29,7 +29,7 @@ Index: lib/configure
  fi
  
  if [ "$SSE" -eq 1 ]; then
-@@ -174,9 +170,8 @@
+@@ -195,9 +191,8 @@
      else
          OPENMPFLAGS="-fopenmp"
      fi
@@ -41,14 +41,14 @@ Index: lib/configure
          cflags "$OPENMPFLAGS"
          lflags "$OPENMPFLAGS"
          status "OpenMP" "yes"
-@@ -191,20 +186,20 @@
+@@ -212,20 +207,20 @@
  fi
  
  # Cocoa
 -if [[ "$OSTYPE" =~ "darwin" ]]; then
 +if echo "$OSTYPE" | grep -q "darwin" ; then
-     cflags "-mmacosx-version-min=10.6"
-     lflags "-mmacosx-version-min=10.6"
+     cflags "-mmacosx-version-min=10.7"
+     lflags "-mmacosx-version-min=10.7"
  fi
  
 -if [[ "$OSTYPE" =~ "darwin" ]]; then
