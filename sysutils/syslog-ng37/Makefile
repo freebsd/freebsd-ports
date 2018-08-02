@@ -3,7 +3,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.7.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils
 #MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
 DISTNAME=	syslog-ng-${DISTVERSION}_with_man
@@ -89,8 +89,8 @@ SQL_LDFLAGS=			-L${LOCALBASE}/lib
 SQL_PLIST_FILES=		lib/syslog-ng/libafsql.so
 
 MONGO_CONFIGURE_ENABLE=		mongodb
-MONGO_BUILD_DEPENDS=		mongo:databases/mongodb
-MONGO_RUN_DEPENDS=		mongo:databases/mongodb
+MONGO_BUILD_DEPENDS=		mongo:databases/mongodb34
+MONGO_RUN_DEPENDS=		mongo:databases/mongodb34
 MONGO_PLIST_FILES=		lib/syslog-ng/libafmongodb.so
 
 JSON_CONFIGURE_ENABLE=		json
