@@ -108,7 +108,7 @@ post-install:
 .endif
 .if ${TARGETARCH} == "amd64" || ${TARGETARCH} == "i386"
 	# Conflicts with sys/x86/include/float.h
-	${RM} ${STAGEDIR}${PREFIX}/lib/gcc/${GCC_TARGET$}/${PORTVERSION}/include/float.h
+	${RM} ${STAGEDIR}${PREFIX}/lib/gcc/${GCC_TARGET}/${PORTVERSION}/include/float.h
 .endif
 
 # This port and all its slave ports fail on aarch64 -- but not all
