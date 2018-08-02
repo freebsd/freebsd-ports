@@ -1,4 +1,4 @@
---- Makefile.orig	2017-09-28 11:22:48 UTC
+--- Makefile.orig	2018-07-18 08:34:29 UTC
 +++ Makefile
 @@ -22,10 +22,10 @@
  # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
@@ -68,10 +68,10 @@
  endif
  
  bcftools: $(OBJS) $(HTSLIB)
-@@ -273,7 +272,7 @@ docs: doc/bcftools.1 doc/bcftools.html
+@@ -278,7 +277,7 @@ docs: doc/bcftools.1 doc/bcftools.html
  # Since there is no make dependency, bcftools.1 can be out-of-date and
  # make docs can be run to update if asciidoc is available
- install: $(PROG) $(PLUGINS)
+ install: $(PROGRAMS) $(PLUGINS)
 -	$(INSTALL_DIR) $(DESTDIR)$(bindir) $(DESTDIR)$(man1dir) $(DESTDIR)$(plugindir)
 +	$(INSTALL_DIR) $(DESTDIR)$(bindir) $(DESTDIR)$(misc_bindir) $(DESTDIR)$(man1dir) $(DESTDIR)$(plugindir)
  	$(INSTALL_PROGRAM) $(PROGRAMS) $(DESTDIR)$(bindir)
