@@ -1,4 +1,7 @@
+%%CFITSIO%%bin/HPXcvt
 bin/fitshdr
+%%CFITSIO%%%%PGPLOT%%bin/wcsgrid
+%%CFITSIO%%bin/wcsware
 include/wcslib
 include/wcslib-%%VERSION%%/cel.h
 include/wcslib-%%VERSION%%/cel.inc
@@ -51,9 +54,12 @@ lib/libwcs-%%VERSION%%.a
 lib/libwcs.a
 lib/libwcs.so
 lib/libwcs.so.5
-lib/libwcs.so.5.18
+lib/libwcs.so.5.19.1
 libdata/pkgconfig/wcslib.pc
+%%CFITSIO%%man/man1/HPXcvt.1.gz
 man/man1/fitshdr.1.gz
+%%CFITSIO%%%%PGPLOT%%man/man1/wcsgrid.1.gz
+%%CFITSIO%%man/man1/wcsware.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.LESSER
