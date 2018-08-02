@@ -11,6 +11,8 @@ COMMENT=	Zstandard bindings for Python, a full-featured version
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.8.0:devel/py-cffi@${PY_FLAVOR}
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
