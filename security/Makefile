@@ -1014,7 +1014,6 @@
     SUBDIR += py-python-nss
     SUBDIR += py-python-openid
     SUBDIR += py-python-registry
-    SUBDIR += py-python-social-auth
     SUBDIR += py-python3-openid
     SUBDIR += py-pywinrm
     SUBDIR += py-rekall
