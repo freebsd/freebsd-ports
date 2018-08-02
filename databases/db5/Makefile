@@ -3,7 +3,7 @@
 
 PORTNAME=	db5
 PORTVERSION=	5.3.28
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	databases java
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
@@ -16,14 +16,14 @@ MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Oracle Berkeley DB, revision ${BDBVER}
 
 LICENSE=	SLEEPYCAT
-LICENSE_NAME=	Sleepycat
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_FILE=	${WRKSRC}/../LICENSE
 LICENSE_GROUPS=	FSF GPL OSI
+LICENSE_NAME=	Sleepycat
+LICENSE_FILE=	${WRKSRC}/../LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BDBVER=		${PORTVERSION:R}
 BDBMAJ=		${BDBVER:R}
-CONFIGURE_ARGS=	--enable-cxx --enable-stl \
+CONFIGURE_ARGS=	--enable-cxx --enable-stl --enable-dbm \
 		--enable-compat185 --enable-dump185 \
 		--includedir=${PREFIX}/include/${PORTNAME} \
 		--libdir=${PREFIX}/lib/${PORTNAME} \
