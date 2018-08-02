@@ -366,6 +366,7 @@
     SUBDIR += julius
     SUBDIR += kexis
     SUBDIR += kid3-kde4
+    SUBDIR += kid3-kf5
     SUBDIR += kid3-qt4
     SUBDIR += kid3-qt5
     SUBDIR += kio-audiocd-kde4
