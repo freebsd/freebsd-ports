@@ -3,7 +3,7 @@
 
 PORTNAME=	netherearth
 PORTVERSION=	0.51
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://move.kirishi.ru/soft/netherearth/
 
@@ -12,8 +12,12 @@ COMMENT=	Remake of the first real time strategy game on the SPECTRUM
 
 GNU_CONFIGURE=	yes
 
-USE_GL=		glut
+USES=		compiler
+USE_GL=		gl glu glut
 USE_SDL=	sdl mixer
+
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 pre-install:
 	if [ ! -d ${STAGEDIR}${PREFIX}/share/netherearth ] ; then \
