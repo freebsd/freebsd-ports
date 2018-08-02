@@ -10410,3 +10410,6 @@ www/rubygem-gollum-lib-gitlab|www/rubygem-gitlab-gollum-lib|2018-08-02|Has expir
 www/py-django-threaded-multihost||2018-08-02|Has expired: Project development unmaintained
 www/py-django-keyedcache||2018-08-02|Has expired: Project development abandoned
 www/py-django-signals-ahoy||2018-08-02|Has expired: Project development unmaintained
+databases/rubygem-redis-namespace15|databases/rubygem-redis-namespace|2018-08-02|Has expired: Obsoleted by update of www/gitlab-ce. Please use databases/rubygem-redis-namespace instead.
+security/py-python-social-auth||2018-08-02|Has expired: Upstream Deprecated
+www/py-django-social-auth||2018-08-02|Has expired: no support for new django
