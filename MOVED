@@ -10396,3 +10396,17 @@ x11-fonts/fontcacheproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
 x11-fonts/fontsproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
 x11-fonts/xf86bigfontproto|x11/xorgproto|2018-07-31|merged into x11/xorgproto
 x11/evieext|x11/xorgproto|2018-08-01|merged into x11/xorgproto
+net/rubygem-gitaly-proto096|net/rubygem-gitaly-proto|2018-08-02|Has expired: Obsoleted by update of www/gitlab-ce. Please use net/rubygem-gitaly-proto instead.
+security/tripwire12||2018-08-02|Has expired: unfetchable
+security/rubygem-rbnacl4|security/rubygem-rbnacl|2018-08-02|Has expired: Obsoleted by update of www/gitlab-ce. Please use security/rubygem-rbnacl instead.
+www/rubygem-gon61|www/rubygem-gon|2018-08-02|Has expired: Obsoleted by update of www/gitlab-ce. Please use www/rubygem-gon instead.
+databases/pgpool-II-33|databases/pgpool-II-35|2018-08-02|Has expired: Will be deprecated by upstream, please switch to newer pgpool versions
+devel/rubygem-grape-entity060|devel/rubygem-grape-entity|2018-08-02|Has expired: Obsoleted by update of www/gitlab-ce. Please use devel/rubygem-grape-entity instead.
+net/rubygem-gitaly-proto099|net/rubygem-gitaly-proto|2018-08-02|Has expired: Obsoleted by update of www/gitlab-ce. Please use net/rubygem-gitaly-proto instead.
+net/rubygem-gitaly-proto095|net/rubygem-gitaly-proto|2018-08-02|Has expired: Obsoleted by update of www/gitlab-ce. Please use net/rubygem-gitaly-proto instead.
+net/rubygem-omniauth-github11|net/rubygem-omniauth-github|2018-08-02|Has expired: Obsoleted by update of www/gitlab-ce. Please use net/rubygem-omniauth-github instead.
+net/rubygem-asset_sync220|net/rubygem-asset_sync|2018-08-02|Has expired: Obsoleted by update of www/gitlab-ce. Please use net/rubygem-asset_sync instead.
+www/rubygem-gollum-lib-gitlab|www/rubygem-gitlab-gollum-lib|2018-08-02|Has expired: Obsoleted by update of www/gitlab-ce. Please use www/rubygem-gitlab-gollum-lib instead.
+www/py-django-threaded-multihost||2018-08-02|Has expired: Project development unmaintained
+www/py-django-keyedcache||2018-08-02|Has expired: Project development abandoned
+www/py-django-signals-ahoy||2018-08-02|Has expired: Project development unmaintained

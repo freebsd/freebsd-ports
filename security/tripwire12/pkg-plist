@@ -1,9 +1,0 @@
-bin/tripwire
-bin/siggen
-man/man5/tw.config.5.gz
-man/man8/siggen.8.gz
-man/man8/tripwire.8.gz
-/var/local/tcheck/tw.config.dist
-@unexec rmdir "/var/local/tcheck" >/dev/null 2>&1 || :
-@unexec rmdir "/var/local" >/dev/null 2>&1 || :
-
