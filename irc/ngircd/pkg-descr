@@ -4,4 +4,4 @@ License. It is simple to configure, can cope with dynamic IP addresses,
 and supports IPv6 as well as SSL. It is written from scratch and not
 based on the original IRCd.
 
-WWW: http://ngircd.barton.de/
+WWW: https://ngircd.barton.de/
