@@ -1,0 +1,4 @@
+bin/opkg-cl
+bin/opkg-key
+man/man1/opkg-cl.1.gz
+man/man1/opkg-key.1.gz
