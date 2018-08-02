@@ -33,6 +33,7 @@
     SUBDIR += dte
     SUBDIR += e3
     SUBDIR += ecce
+    SUBDIR += ecrire
     SUBDIR += edith
     SUBDIR += editorconfig-core-c
     SUBDIR += emacs
