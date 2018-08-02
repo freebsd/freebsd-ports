@@ -574,6 +574,7 @@
     SUBDIR += kldfind
     SUBDIR += kldpatch
     SUBDIR += knutclient-kde4
+    SUBDIR += kops
     SUBDIR += krename
     SUBDIR += kshutdown-kde4
     SUBDIR += ksysguardd-kde4
