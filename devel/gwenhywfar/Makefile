@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	gwenhywfar
-PORTVERSION=	4.19.0
-PORTREVISION?=	1
+PORTVERSION=	4.20.0
+PORTREVISION?=	0
 CATEGORIES=	devel net security
-MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=01&release=207&file=01&dummy=/
+MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=01&release=208&file=02&dummy=/
 
 MAINTAINER?=	jhale@FreeBSD.org
 COMMENT?=	Multi-platform helper library for networking and security applications
