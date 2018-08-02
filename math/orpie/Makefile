@@ -5,7 +5,7 @@ PORTNAME=	orpie
 PORTVERSION=	1.5.2
 PORTREVISION=	4
 CATEGORIES+=	math
-MASTER_SITES=	http://pessimization.com/software/orpie/
+MASTER_SITES=	GENTOO http://pessimization.com/software/orpie/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fullscreen RPN calculator for the console
