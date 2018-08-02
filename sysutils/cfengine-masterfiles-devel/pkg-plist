@@ -16,6 +16,7 @@
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/enterprise/templates/httpd.conf.mustache
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/enterprise/templates/runalerts.php.mustache
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/enterprise/templates/runalerts.sh.mustache
+%%EXAMPLESDIR%%/masterfiles/cfe_internal/recommendations.cf
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/update/cfe_internal_dc_workflow.cf
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/update/cfe_internal_local_git_remote.cf
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/update/cfe_internal_update_from_repository.cf
