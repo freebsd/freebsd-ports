@@ -4410,6 +4410,7 @@
     SUBDIR += py-capstone
     SUBDIR += py-castellan
     SUBDIR += py-cbor
+    SUBDIR += py-cbor2
     SUBDIR += py-cclib
     SUBDIR += py-cdg
     SUBDIR += py-celery
