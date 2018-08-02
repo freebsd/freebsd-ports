@@ -1,5 +1,14 @@
 --- Makefile.in.orig
 +++ Makefile.in
+@@ -81,7 +81,7 @@ CURSES_OOBJS = $(CURSES_CMX) $(CURSES_CO
+ GSL_CMO = gsl/gsl_error.cmo gsl/gsl_blas.cmo gsl/gsl_complex.cmo gsl/gsl_matrix.cmo gsl/gsl_matrix_complex.cmo \
+ 		gsl/gsl_vector.cmo gsl/gsl_vector_complex.cmo gsl/gsl_vector_flat.cmo gsl/gsl_matrix_flat.cmo \
+ 		gsl/gsl_vector_complex_flat.cmo gsl/gsl_matrix_complex_flat.cmo gsl/gsl_vectmat.cmo \
+-		gsl/gsl_permut.cmo gsl/gsl_linalg.cmo gsl/gsl_fun.cmo
++		gsl/gsl_permut.cmo gsl/gsl_linalg.cmo gsl/gsl_fun.cmo gsl/gsl_sf.cmo gsl/gsl_math.cmo
+ GSL_CMX = $(GSL_CMO:.cmo=.cmx)
+ GSL_COBJS = gsl/mlgsl_error.o gsl/mlgsl_blas.o gsl/mlgsl_blas_complex.o gsl/mlgsl_complex.o gsl/mlgsl_blas_float.o \
+ 		 gsl/mlgsl_blas_complex_float.o gsl/mlgsl_matrix_complex.o gsl/mlgsl_matrix_double.o gsl/mlgsl_matrix_float.o \
 @@ -201,7 +201,7 @@
  GSL_INCLUDES = -I ./gsl
  GSL_BFLAGS = -g $(GSL_INCLUDES) -thread
