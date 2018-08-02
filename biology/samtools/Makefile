@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	samtools
-PORTVERSION=	1.6
+DISTVERSION=	1.9
 CATEGORIES=	biology
 
 MAINTAINER=	cartwright@asu.edu
@@ -15,16 +15,15 @@ BUILD_DEPENDS=	htslib>=1.6:biology/htslib
 LIB_DEPENDS=	libhts.so:biology/htslib
 TEST_DEPENDS=	bash:shells/bash
 
+USES=		autoreconf gmake localbase ncurses \
+		perl5 python:env shebangfix
+
 USE_GITHUB=	yes
 
-USES=		autoreconf gmake ncurses perl5 python:env shebangfix
 USE_PERL5=	test
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 SHEBANG_FILES=	misc/*.pl misc/*.py misc/plot-bamstats test/test.pl
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 TEST_TARGET=	test
 
