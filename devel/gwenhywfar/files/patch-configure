@@ -1,18 +1,8 @@
-Prevent SO version rollback
 Fix dectection of fox libs
 Prevent linking to unneeded Qt5 libraries
 
 --- configure.orig	2018-02-10 18:33:05 UTC
 +++ configure
-@@ -2888,7 +2888,7 @@ GWENHYWFAR_VERSION_TAG="stable"
- #
- # SO version for Gwenhywfar
- #
--GWENHYWFAR_SO_CURRENT="78"
-+GWENHYWFAR_SO_CURRENT="79"
- GWENHYWFAR_SO_AGE="19"
- GWENHYWFAR_SO_REVISION="0"
- GWENHYWFAR_SO_EFFECTIVE="`echo \$(($GWENHYWFAR_SO_CURRENT-$GWENHYWFAR_SO_AGE))`"
 @@ -21093,7 +21093,7 @@ $as_echo_n "checking for fox libraries... " >&6; }
  
  # Check whether --with-fox-libs was given.
