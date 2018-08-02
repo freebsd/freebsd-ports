@@ -1,10 +1,10 @@
 bin/bcftools
-bin/samtools_misc/color-chrs.pl
-bin/samtools_misc/guess-ploidy.py
-bin/samtools_misc/plot-roh.py
-bin/samtools_misc/plot-vcfstats
-bin/samtools_misc/run-roh.pl
-bin/samtools_misc/vcfutils.pl
+bin/color-chrs
+bin/guess-ploidy
+bin/plot-roh
+bin/plot-vcfstats
+bin/run-roh
+bin/vcfutils
 libexec/bcftools/GTisec.so
 libexec/bcftools/GTsubset.so
 libexec/bcftools/ad-bias.so
@@ -12,6 +12,7 @@ libexec/bcftools/af-dist.so
 libexec/bcftools/check-ploidy.so
 libexec/bcftools/check-sparsity.so
 libexec/bcftools/color-chrs.so
+libexec/bcftools/contrast.so
 libexec/bcftools/counts.so
 libexec/bcftools/dosage.so
 libexec/bcftools/fill-AN-AC.so
@@ -27,6 +28,9 @@ libexec/bcftools/mendelian.so
 libexec/bcftools/missing2ref.so
 libexec/bcftools/prune.so
 libexec/bcftools/setGT.so
+libexec/bcftools/smpl-stats.so
+libexec/bcftools/split.so
 libexec/bcftools/tag2tag.so
+libexec/bcftools/trio-stats.so
 libexec/bcftools/trio-switch-rate.so
 man/man1/bcftools.1.gz
