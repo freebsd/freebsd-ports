@@ -1161,7 +1161,6 @@
     SUBDIR += rubygem-razorback-scriptNugget
     SUBDIR += rubygem-rbnacl
     SUBDIR += rubygem-rbnacl-libsodium
-    SUBDIR += rubygem-rbnacl4
     SUBDIR += rubygem-recog
     SUBDIR += rubygem-rex-arch
     SUBDIR += rubygem-rex-bin_tools
@@ -1307,7 +1306,6 @@
     SUBDIR += trinokiller
     SUBDIR += tripwire
     SUBDIR += tripwire-131
-    SUBDIR += tripwire12
     SUBDIR += trousers
     SUBDIR += truecrypt
     SUBDIR += tsshbatch

@@ -607,7 +607,6 @@
     SUBDIR += pgmetrics
     SUBDIR += pgmodeler
     SUBDIR += pgpool
-    SUBDIR += pgpool-II-33
     SUBDIR += pgpool-II-35
     SUBDIR += pgpool-II-36
     SUBDIR += pgpool-II-37
