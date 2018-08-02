@@ -1,0 +1,15 @@
+--- src/dbinc/db.in.orig	2017-04-13 14:06:20 UTC
++++ src/dbinc/db.in
+@@ -2997,11 +2997,11 @@ typedef struct {
+ #define	dbmclose	__db_dbm_close@DB_VERSION_UNIQUE_NAME@
+ #if !defined(__cplusplus)
+ #define	delete(a)	__db_dbm_delete@DB_VERSION_UNIQUE_NAME@(a)
++#define	store(a, b)	__db_dbm_store@DB_VERSION_UNIQUE_NAME@(a, b)
+ #endif
+ #define	fetch(a)	__db_dbm_fetch@DB_VERSION_UNIQUE_NAME@(a)
+ #define	firstkey	__db_dbm_firstkey@DB_VERSION_UNIQUE_NAME@
+ #define	nextkey(a)	__db_dbm_nextkey@DB_VERSION_UNIQUE_NAME@(a)
+-#define	store(a, b)	__db_dbm_store@DB_VERSION_UNIQUE_NAME@(a, b)
+ 
+ /*******************************************************
+  * Hsearch historic interface.
