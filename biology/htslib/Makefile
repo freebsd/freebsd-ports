@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	htslib
-DISTVERSION=	1.8
+DISTVERSION=	1.9
 CATEGORIES=	biology devel
 
 MAINTAINER=	cartwright@asu.edu
@@ -14,14 +14,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf gmake localbase pathfix perl5 shebangfix
+USES=		autoreconf gmake localbase \
+		pathfix perl5 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	samtools
 USE_PERL5=	test
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 PATHFIX_MAKEFILEIN=	Makefile
-SHEBANG_FILES=	test/compare_sam.pl test/test.pl
+SHEBANG_FILES=		test/compare_sam.pl \
+			test/test.pl
 
 OPTIONS_DEFINE=		CURL
 OPTIONS_DEFAULT=	CURL
