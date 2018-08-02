@@ -1609,6 +1609,7 @@
     SUBDIR += libtsm
     SUBDIR += libtuntap
     SUBDIR += libublio
+    SUBDIR += libubox
     SUBDIR += libudev-devd
     SUBDIR += libukcprog
     SUBDIR += libunicode
