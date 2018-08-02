@@ -2,7 +2,7 @@
 
 PORTNAME=	kalarm
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -20,7 +20,8 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 USE_KDE+=	akonadi akonadicontacts akonadimime alarmcalendar calendarcore \
 		calendarutils contacts holidays identitymanagement \
 		kdepim-apps-libs libkdepim mailcommon mailtransport mime \
-		pimcommon pimtextedit imap
+		pimcommon pimtextedit imap \
+		kdepim-runtime5_run
 USE_QT=		core dbus gui network phonon4 printsupport widgets x11extras xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes

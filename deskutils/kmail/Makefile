@@ -2,7 +2,7 @@
 
 PORTNAME=	kmail
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -33,7 +33,8 @@ USE_KDE+=	akonadi akonadicontacts akonadimime akonadisearch calendarcore \
 		calendarutils contacts gravatar kdepim-apps-libs \
 		identitymanagement libkdepim libkleo libksieve \
 		kontactinterface ldap mailcommon mailtransport messagelib \
-		mime pimcommon pimtextedit tnef
+		mime pimcommon pimtextedit tnef \
+		kdepim-runtime5_run
 USE_QT=		core dbus gui location network printsupport qml quick \
 		webchannel webengine widgets xml \
 		buildtools_build qmake_build

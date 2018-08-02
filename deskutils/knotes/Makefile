@@ -2,7 +2,7 @@
 
 PORTNAME=	knotes
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -22,7 +22,8 @@ USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadinotes akonadisearch  \
 		calendarcore calendarutils contacts kontactinterface libkdepim \
-		mime pimcommon pimtextedit
+		mime pimcommon pimtextedit \
+		kdepim-runtime5_run
 USE_QT=		core dbus gui network printsupport widgets x11extras xml \
 		buildtools_build qmake_build
 USE_XORG=	ice sm x11 xext
