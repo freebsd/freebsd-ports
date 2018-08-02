@@ -307,7 +307,8 @@ fix-perl-things:
 		${FIND} ${STAGEDIR}${SITE_MAN3} -name '*::README.3' -delete || :
 # Starting at ExtUtils::MakeMaker 7.31_06 and Perl 5.27.1, the base README.pod is
 # no longer installed. So remove any that can be there.
-	@${FIND} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL} -name README.pod -delete || :
+	@[ -d "${STAGEDIR}${PREFIX}/${SITE_PERL_REL}" ] && \
+		${FIND} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL} -name README.pod -delete || :
 
 .  if !target(do-test) && (!empty(USE_PERL5:Mmodbuild*) || !empty(USE_PERL5:Mconfigure))
 TEST_TARGET?=	test
