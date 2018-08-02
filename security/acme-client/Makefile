@@ -3,7 +3,7 @@
 
 PORTNAME=	acme-client
 PORTVERSION=	0.1.16
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONPREFIX=	portable-
 CATEGORIES=	security
 MASTER_SITES=	https://kristaps.bsd.lv/${PORTNAME}/snapshots/ \
@@ -56,17 +56,20 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ! ${SSL_DEFAULT:Mlibressl*}
-. ifnmake describe
-STAGEDIR_libressl!=	${MAKE} -V STAGEDIR -C ${PORTSDIR}/security/libressl
-. endif
-BUILD_DEPENDS+=	${NONEXISTENT}:security/libressl:stage
-CPPFLAGS+=	-I${STAGEDIR_libressl}${LOCALBASE}/include
-LDFLAGS+=	${STAGEDIR_libressl}${LOCALBASE}/lib/libtls.a \
-		${STAGEDIR_libressl}${LOCALBASE}/lib/libssl.a \
-		${STAGEDIR_libressl}${LOCALBASE}/lib/libcrypto.a
-post-configure:
-	${REINPLACE_CMD} 's/-l[a-z]*//g' ${WRKSRC}/GNUmakefile 
+# Requires libtls from LibreSSL
+.if ${SSL_DEFAULT:Mlibressl*}
+CPPFLAGS+=		-I${OPENSSLINC}
+LDFLAGS+=		-L${OPENSSLLIB}
+.else # SSL_DEFAULT
+BUILD_DEPENDS+=		${NONEXISTENT}:security/libressl:stage
+CPPFLAGS+=		-I${WRKDIR}/libressl/include
+LDFLAGS+=		-lpthread -L${WRKDIR}/libressl/lib
+
+# Don't use COPYTREE_SHARE here as it hard links files, and the original files
+# are owned by root, which creates problems of its own.
+pre-configure:
+	@cd `${MAKE} -V STAGEDIR -C ${PORTSDIR}/security/libressl`${PREFIX} \
+	    && ${FIND} -E . ! -name *.so\* | ${CPIO} -dump ${WRKDIR}/libressl >/dev/null 2>&1
 .endif # SSL_DEFAULT
 
 .include <bsd.port.post.mk>
