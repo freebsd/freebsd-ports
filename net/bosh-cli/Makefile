@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bosh-cli
-PORTVERSION=	4.0.1
+PORTVERSION=	5.0.1
 CATEGORIES=	net sysutils
 
 MAINTAINER=	dumbbell@FreeBSD.org
