@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.45.1
+DISTVERSION=	0.46
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -23,7 +23,7 @@ GH_TUPLE=	BurntSushi:locker:a6e239e:locker/src/github.com/BurntSushi/locker \
 		PuerkitoBio:purell:0bcb03f:purell/src/github.com/PuerkitoBio/purell \
 		PuerkitoBio:urlesc:de5bf2a:urlesc/src/github.com/PuerkitoBio/urlesc \
 		alecthomas:assert:405dbfe:assert/src/github.com/alecthomas/assert \
-		alecthomas:chroma:1b755a9:chroma/src/github.com/alecthomas/chroma \
+		alecthomas:chroma:e4dff9a:chroma/src/github.com/alecthomas/chroma \
 		alecthomas:colour:60882d9:colour/src/github.com/alecthomas/colour \
 		alecthomas:repr:f49988b:repr/src/github.com/alecthomas/repr \
 		bep:debounce:844797f:debounce/src/github.com/bep/debounce \
