@@ -2,6 +2,7 @@
 
 PORTNAME=	cloud-init
 PORTVERSION=	18.3
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -40,7 +41,9 @@ ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	currently depends on dmidecode which is x86-only
 
 post-patch:
-	@${RM} ${WRKSRC}/sysvinit/freebsd/cloudinit.orig
+	${REINPLACE_CMD} -e 's|"etc"|"${STAGEDIR}${PREFIX}/etc"|g' ${WRKSRC}/setup.py
+	${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/cloudinit/settings.py
+	@${RM} ${WRKSRC}/sysvinit/freebsd/*.orig
 
 post-build:
 	@cd ${WRKSRC} && ${MV} sysvinit/freebsd/cloudconfig config/cloud.cfg
