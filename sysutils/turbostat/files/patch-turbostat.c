@@ -1,11 +1,12 @@
---- turbostat.c.orig	2018-07-23 18:26:58 UTC
+--- turbostat.c.orig	2018-07-31 20:42:12 UTC
 +++ turbostat.c
-@@ -41,7 +41,30 @@
+@@ -41,7 +41,31 @@
  #include <sched.h>
  #include <time.h>
  #include <cpuid.h>
 +#ifdef __FreeBSD__
 +#include <sys/types.h>
++#include <sys/param.h>
 +#include <sys/cpuctl.h>
 +#include <sys/cpuset.h>
 +#include <sys/ioctl.h>
@@ -31,7 +32,7 @@
  #include <errno.h>
  
  char *proc_stat = "/proc/stat";
-@@ -132,7 +155,9 @@ unsigned int has_misc_feature_control;
+@@ -132,7 +156,9 @@ unsigned int has_misc_feature_control;
  #define RAPL_CORES (RAPL_CORES_ENERGY_STATUS | RAPL_CORES_POWER_LIMIT)
  #define	TJMAX_DEFAULT	100
  
@@ -41,7 +42,7 @@
  
  /*
   * buffer size used by sscanf() for added column names
-@@ -309,6 +334,7 @@ int cpu_migrate(int cpu)
+@@ -309,6 +335,7 @@ int cpu_migrate(int cpu)
  	else
  		return 0;
  }
@@ -49,7 +50,7 @@
  int get_msr_fd(int cpu)
  {
  	char pathname[32];
-@@ -319,18 +345,39 @@ int get_msr_fd(int cpu)
+@@ -319,18 +346,39 @@ int get_msr_fd(int cpu)
  	if (fd)
  		return fd;
  
@@ -90,7 +91,7 @@
  	ssize_t retval;
  
  	retval = pread(get_msr_fd(cpu), msr, sizeof(*msr), offset);
-@@ -340,6 +387,7 @@ int get_msr(int cpu, off_t offset, unsigned long long 
+@@ -340,6 +388,7 @@ int get_msr(int cpu, off_t offset, unsigned long long 
  
  	return 0;
  }
@@ -98,7 +99,7 @@
  
  /*
   * Each string in this array is compared in --show and --hide cmdline.
-@@ -2239,6 +2287,158 @@ int parse_int_file(const char *fmt, ...)
+@@ -2239,6 +2288,173 @@ int parse_int_file(const char *fmt, ...)
  	return value;
  }
  
@@ -121,7 +122,7 @@
 +	else
 +		list->cap = 2;
 +
-+	list->sets = reallocarray(list->sets, list->cap, sizeof(cpuset_t));
++	list->sets = realloc(list->sets, list->cap * sizeof(cpuset_t));
 +}
 +
 +static cpuset_t parse_cpu_mask(const char *i) {
@@ -195,44 +196,6 @@
 +		ncpus += CPU_COUNT(packages.sets + i);
 +}
 +
-+static int get_core_id(int cpu)
-+{
-+	for (int i = 0; i < cores.len; i++) {
-+		if (!CPU_ISSET(cpu, cores.sets + i))
-+			continue;
-+
-+		return i;
-+	}
-+	return -1;
-+}
-+
-+static int get_cpu_position_in_core(int cpu)
-+{
-+	int core = get_core_id(cpu);
-+	if (core < 0)
-+		return -1;
-+
-+	cpuset_t s;
-+	CPU_COPY(cores.sets + core, &s);
-+	for (int i = 0; !CPU_EMPTY(&s); i++) {
-+		int ffs = CPU_FFS(&s) - 1;
-+		if (ffs == cpu)
-+			return i;
-+		CPU_CLR(ffs, &s);
-+	}
-+
-+	return -1;
-+}
-+
-+static int get_num_ht_siblings(int cpu)
-+{
-+	int core = get_core_id(cpu);
-+	if (core < 0)
-+		return 1;
-+
-+	return CPU_COUNT(cores.sets + core);
-+}
-+
 +static int get_physical_package_id(int cpu)
 +{
 +	for (int i = 0; i < packages.len; i++) {
@@ -242,6 +205,59 @@
 +		return i;
 +	}
 +	return -1;
++}
++
++static int get_core_id(int cpu)
++{
++	int package_id = get_physical_package_id(cpu);
++	if (package_id < 0)
++		return -1;
++
++	const cpuset_t *package = packages.sets + package_id;
++
++	for (int i = 0, j = -1; i < cores.len; i++) {
++		if (CPU_OVERLAP(package, cores.sets + i))
++			j++;
++
++		if (!CPU_ISSET(cpu, cores.sets + i))
++			continue;
++
++		return j;
++	}
++	return -1;
++}
++
++static int get_cpu_position_in_core(int cpu)
++{
++	for (int i = 0; i < cores.len; i++) {
++		if (!CPU_ISSET(cpu, cores.sets + i))
++			continue;
++
++		cpuset_t s;
++		CPU_COPY(cores.sets + i, &s);
++		for (int j = 0; !CPU_EMPTY(&s); j++) {
++			int ffs = CPU_FFS(&s) - 1;
++			if (ffs == cpu)
++				return j;
++			CPU_CLR(ffs, &s);
++		}
++
++		return -1;
++	}
++
++	return -1;
++}
++
++static int get_num_ht_siblings(int cpu)
++{
++	for (int i = 0; i < cores.len; i++) {
++		if (!CPU_ISSET(cpu, cores.sets + i))
++			continue;
++
++		return CPU_COUNT(cores.sets + i);
++	}
++
++	return 1;
 +}
 +
 +static int cpu_is_first_core_in_package(int cpu)
@@ -257,7 +273,7 @@
  /*
   * get_cpu_position_in_core(cpu)
   * return the position of the CPU among its HT siblings in the core
-@@ -2326,6 +2526,7 @@ int get_num_ht_siblings(int cpu)
+@@ -2326,6 +2542,7 @@ int get_num_ht_siblings(int cpu)
  	fclose(filep);
  	return matches+1;
  }
@@ -265,7 +281,7 @@
  
  /*
   * run func(thread, core, package) in topology order
-@@ -2371,6 +2572,22 @@ int for_all_cpus_2(int (func)(struct thread_data *, st
+@@ -2371,6 +2588,22 @@ int for_all_cpus_2(int (func)(struct thread_data *, st
  	return 0;
  }
  
@@ -288,7 +304,7 @@
  /*
   * run func(cpu) on every cpu in /proc/stat
   * return max_cpu number
-@@ -2401,6 +2618,7 @@ int for_all_proc_cpus(int (func)(int))
+@@ -2401,6 +2634,7 @@ int for_all_proc_cpus(int (func)(int))
  	fclose(fp);
  	return 0;
  }
@@ -296,7 +312,7 @@
  
  void re_initialize(void)
  {
-@@ -2428,6 +2646,81 @@ int mark_cpu_present(int cpu)
+@@ -2428,6 +2662,85 @@ int mark_cpu_present(int cpu)
  	return 0;
  }
  
@@ -318,17 +334,21 @@
 +	else
 +		intr_map_cap = 2;
 +
-+	intr_map = reallocarray(intr_map, intr_map_cap, sizeof(*intr_map));
++	intr_map = realloc(intr_map, intr_map_cap * sizeof(*intr_map));
 +}
 +
 +static void init_intr_map(void)
 +{
 +	size_t sz = 0;
-+	if (sysctlbyname("hw.intrs", NULL, &sz, NULL, 0))
-+		err(1, "sysctl: hw.intrs: failed");
++	if (sysctlbyname("hw.intrs", NULL, &sz, NULL, 0)) {
++		warn("sysctl: hw.intrs: per-cpu interrupt data will be unavailable");
++		return;
++	}
 +	char *intrs = alloca(sz);
-+	if (sysctlbyname("hw.intrs", intrs, &sz, NULL, 0))
-+		err(1, "sysctl: hw.intrs: failed");
++	if (sysctlbyname("hw.intrs", intrs, &sz, NULL, 0)) {
++		warn("sysctl: hw.intrs: per-cpu interrupt data will be unavailable");
++		return;
++	}
 +
 +	char *i = intrs;
 +	char *j;
@@ -378,7 +398,7 @@
  /*
   * snapshot_proc_interrupts()
   *
-@@ -2491,6 +2784,8 @@ int snapshot_proc_interrupts(void)
+@@ -2491,6 +2804,8 @@ int snapshot_proc_interrupts(void)
  	}
  	return 0;
  }
@@ -387,7 +407,7 @@
  /*
   * snapshot_gfx_rc6_ms()
   *
-@@ -2629,6 +2924,18 @@ restart:
+@@ -2629,6 +2944,18 @@ restart:
  	}
  }
  
@@ -406,7 +426,7 @@
  void check_dev_msr()
  {
  	struct stat sb;
-@@ -2677,6 +2984,7 @@ void check_permissions()
+@@ -2677,6 +3004,7 @@ void check_permissions()
  	if (do_exit)
  		exit(-6);
  }
@@ -414,7 +434,7 @@
  
  /*
   * NHM adds support for additional MSRs:
-@@ -4520,8 +4828,21 @@ void setup_all_buffers(void)
+@@ -4520,8 +4848,21 @@ void setup_all_buffers(void)
  	for_all_proc_cpus(initialize_counters);
  }
  
@@ -436,7 +456,7 @@
  	base_cpu = sched_getcpu();
  	if (base_cpu < 0)
  		err(-ENODEV, "No valid cpus found");
-@@ -4529,6 +4850,7 @@ void set_base_cpu(void)
+@@ -4529,6 +4870,7 @@ void set_base_cpu(void)
  	if (debug > 1)
  		fprintf(outf, "base_cpu = %d\n", base_cpu);
  }
