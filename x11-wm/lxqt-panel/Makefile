@@ -1,0 +1,60 @@
+# Created by: Olivier Duchateau
+# $FreeBSD$
+
+PORTNAME=	lxqt-panel
+PORTVERSION=	0.13.0
+CATEGORIES=	x11-wm
+MASTER_SITES=	LXQT
+
+MAINTAINER=	jsm@FreeBSD.org
+COMMENT=	Panel for the LXQt desktop
+
+LICENSE=	LGPL21+
+
+LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt@qt5 \
+		libxkbcommon.so:x11/libxkbcommon \
+		libxcb-util.so:x11/xcb-util \
+		libsysstat-qt5.so:sysutils/libsysstat
+RUN_DEPENDS=	lxmenu-data>=0.1.2:x11/lxmenu-data
+
+USES=	cmake:outsource compiler:c++11-lib gettext-runtime kde:5 qt:5 \
+	localbase:ldflags lxqt pkgconfig tar:xz
+USE_QT=	buildtools_build qmake_build core dbus gui svg widgets \
+	x11extras xml
+USE_KDE=	windowsystem
+USE_LXQT=	buildtools lxqt globalkeys qtxdg
+USE_XORG=	ice sm x11 xcb xcomposite xdamage xext xfixes xrender
+USE_GNOME=	glib20
+USE_LDCONFIG=	yes
+OPTIONS_RADIO=	SOUND
+OPTIONS_RADIO_SOUND=	ALSA PULSEAUDIO
+OPTIONS_DEFINE=	CPULOAD MOUNT
+OPTIONS_DEFAULT=	PULSEAUDIO
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_CMAKE_ON=	-DVOLUME_USE_PULSEAUDIO:BOOL=OFF
+CPULOAD_LIB_DEPENDS=	libstatgrab.so:devel/libstatgrab
+CPULOAD_CMAKE_OFF=	-DCPULOAD_PLUGIN:BOOL=OFF
+CPULOAD_DESC=	CPU stat plugin
+PULSEAUDIO_CMAKE_ON=	-DVOLUME_USE_ALSA:BOOL=OFF
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+MOUNT_USE=	kde=solid
+MOUNT_CMAKE_OFF=	-DMOUNT_PLUGIN:BOOL=OFF
+MOUNT_DESC=	Mount removable devices support
+OPTIONS_SUB=	yes
+
+LDFLAGS+=	-Xlinker --export-dynamic
+
+CMAKE_ARGS+=	-DSENSORS_PLUGIN:BOOL=OFF \
+	-DNETWORKMONITOR_PLUGIN:BOOL=OFF \
+	-DWITH_SCREENSAVER_FALLBACK:BOOL=OFF
+
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MALSA} && ! ${PORT_OPTIONS:MPULSEAUDIO}
+CMAKE_ARGS+=	-DVOLUME_PLUGIN:BOOL=OFF
+PLIST_SUB+=	SOUND="@comment "
+.elif ${PORT_OPTIONS:MALSA} || ${PORT_OPTIONS:MPULSEAUDIO}
+PLIST_SUB+=	SOUND=""
+.endif
+
+.include <bsd.port.mk>
