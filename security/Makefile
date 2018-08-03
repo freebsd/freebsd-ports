@@ -33,6 +33,7 @@
     SUBDIR += authforce
     SUBDIR += autossh
     SUBDIR += avcheck
+    SUBDIR += aws-iam-authenticator
     SUBDIR += axTLS
     SUBDIR += barnyard2
     SUBDIR += barnyard2-sguil
