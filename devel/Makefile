@@ -196,6 +196,7 @@
     SUBDIR += bbfreeze-loader
     SUBDIR += bcc
     SUBDIR += bcpp
+    SUBDIR += bcunit
     SUBDIR += bear
     SUBDIR += bennugd-core
     SUBDIR += bennugd-modules

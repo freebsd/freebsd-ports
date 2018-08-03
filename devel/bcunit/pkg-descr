@@ -1,0 +1,16 @@
+This is BCUnit, a fork of the defunct project CUnit (see below), with several
+fixes and patches applied.
+
+CUnit is a Unit testing framework for C.
+
+The basic framework is platform/version independent and should be portable to
+all platforms. CUnit provides various interfaces to the framework, some of which
+are platform dependent (e.g. curses on *nix). Building other interfaces should
+be straightforward with the facilities provided in the framework.
+
+CUnit is built as either a static or shared library which provides framework
+support when linked into user testing code. The framework complies with the
+conventional structure of test cases bundled into suites which are registered
+with the framework for running.
+
+WWW: https://gitlab.linphone.org/BC/public/bcunit
