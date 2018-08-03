@@ -1,0 +1,4 @@
+docker-credential-pass provides a helper to use sysutils/password-store to
+keep Docker credentials safe.
+
+WWW: https://github.com/docker/docker-credential-helpers
