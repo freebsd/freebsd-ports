@@ -73,6 +73,7 @@
     SUBDIR += lwm
     SUBDIR += lxappearance-obconf
     SUBDIR += lxmed
+    SUBDIR += lxqt-panel
     SUBDIR += lxsession
     SUBDIR += marco
     SUBDIR += matwm2
