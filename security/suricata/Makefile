@@ -56,7 +56,7 @@ TESTS_DESC=		Unit tests in suricata binary
 GEOIP_LIB_DEPENDS=		libGeoIP.so:net/GeoIP
 GEOIP_CONFIGURE_ON=		--enable-geoip
 
-HTP_PORT_BUILD_DEPENDS=		libhtp>=0.5.24:devel/libhtp
+HTP_PORT_BUILD_DEPENDS=		libhtp>=0.5.27:devel/libhtp
 HTP_PORT_LIB_DEPENDS=		libhtp.so:devel/libhtp
 HTP_PORT_CONFIGURE_ON=		--enable-non-bundled-htp
 HTP_PORT_CONFIGURE_OFF=		--enable-bundled-htp
