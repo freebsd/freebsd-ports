@@ -69,7 +69,7 @@ mythtv:*:119:119::0:0:MythTV pseudo-user:/nonexistent:/bin/sh
 pdns_recursor:*:120:120::0:0:pdns_recursor pseudo-user:/nonexistent:/usr/sbin/nologin
 otrs:*:121:121::0:0:OTRS Administrator:/usr/local/otrs:/bin/csh
 zabbix:*:122:122::0:0:Zabbix NMS:/nonexistent:/bin/sh
-_ntp:*:123:123::0:0:NTP Daemon:/var/empty:/usr/sbin/nologin
+ntpd:*:123:123::0:0:NTP Daemon:/var/db/ntp:/usr/sbin/nologin
 fetchmail:*:124:124::0:0:Fetchmail mail-retrieval daemon:/nonexistent:/usr/sbin/nologin
 postfix:*:125:125::0:0:Postfix Mail System:/var/spool/postfix:/usr/sbin/nologin
 synapse:*:126:141::0:0:Synapse Daemon:/nonexistent:/usr/sbin/nologin
@@ -178,7 +178,7 @@ osrm:*:228:228::0:0:osrm:/nonexistent:/usr/sbin/nologin
 carbon:*:230:230::0:0:osrm:/nonexistent:/usr/sbin/nologin
 foundationdb:*:231:231::0:0:foundationdb:/nonexistent:/usr/sbin/nologin
 archiva:*:232:232::0:0:Archiva Daemon User:/usr/local/archiva:/bin/sh
-# free: 233
+_ntp:*:233:233::0:0:NTP Daemon:/var/empty:/usr/sbin/nologin
 kafka:*:234:234::0:0:Apache Kafka user:/nonexistent:/usr/sbin/nologin
 openhab:*:235:235::0:0:openHAB user:/var/db/openhab2/home:/usr/sbin/nologin
 # free: 236

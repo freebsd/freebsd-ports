@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180803
+  AFFECTS: users of net/openntpd
+  AUTHOR: naddy@FreeBSD.org
+
+  The numerical ID of the "_ntp" user had to be moved after 12.0-CURRENT
+  (revision 336525) took over its value for a user "ntpd" that uses a
+  different privilege model.
+
+  To avoid clashes between the two users, please remove the openntpd
+  package, delete the old UID with
+
+  # pw userdel _ntp
+
+  and re-install openntpd.
+
 20180731:
   AFFECTS: users of audio/sndio
   AUTHOR: tobik@FreeBSD.org
