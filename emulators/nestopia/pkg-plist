@@ -1,4 +1,9 @@
 bin/nestopia
+share/applications/nestopia.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/readme.html
 share/icons/hicolor/128x128/apps/nestopia.png
 share/icons/hicolor/32x32/apps/nestopia.png
 share/icons/hicolor/48x48/apps/nestopia.png
@@ -6,10 +11,4 @@ share/icons/hicolor/64x64/apps/nestopia.png
 share/icons/hicolor/96x96/apps/nestopia.png
 share/icons/hicolor/scalable/apps/nespad.svg
 share/icons/hicolor/scalable/apps/nestopia.svg
-share/applications/nestopia.desktop
 %%DATADIR%%/NstDatabase.xml
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/README.unix
-%%PORTDOCS%%%%DOCSDIR%%/html/readme.html
