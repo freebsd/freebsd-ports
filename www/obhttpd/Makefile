@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	obhttpd
-PORTVERSION=	6.3.20180529
+PORTVERSION=	6.3.20180803
 CATEGORIES=	www
 
 MAINTAINER=	koue@chaosophia.net
