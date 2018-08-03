@@ -54,6 +54,7 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/modules.d/redis.conf
 %%ETCDIR%%/modules.d/regexp.conf
 %%ETCDIR%%/modules.d/replies.conf
+%%ETCDIR%%/modules.d/reputation.conf
 %%ETCDIR%%/modules.d/rspamd_update.conf
 %%ETCDIR%%/modules.d/spamassassin.conf
 %%ETCDIR%%/modules.d/spamtrap.conf
