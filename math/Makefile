@@ -843,6 +843,7 @@
     SUBDIR += yacas
     SUBDIR += yices
     SUBDIR += z3
+    SUBDIR += zegrapher
     SUBDIR += zimpl
 
 .include <bsd.port.subdir.mk>
