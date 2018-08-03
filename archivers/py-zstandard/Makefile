@@ -2,6 +2,7 @@
 
 PORTNAME=	zstandard
 DISTVERSION=	0.9.1
+PORTREVISION=	2
 CATEGORIES=	archivers python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,14 +12,12 @@ COMMENT=	Zstandard bindings for Python, a full-featured version
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN=		fails to build
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.8.0:devel/py-cffi@${PY_FLAVOR}
-LIB_DEPENDS=	libzstd.so:archivers/zstd
+#LIB_DEPENDS=	libzstd.so:archivers/zstd # system-zstd is broken, see comment below
 
 USES=		localbase python
 USE_PYTHON=	distutils autoplist
-PYDISTUTILS_BUILDARGS=	--system-zstd
+#PYDISTUTILS_BUILDARGS=	--system-zstd # broken: https://github.com/indygreg/python-zstandard/issues/52
 
 post-install:
 	@cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} && ${STRIP_CMD} zstd.so _zstd_cffi.so
