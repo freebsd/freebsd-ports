@@ -1,5 +1,0 @@
-libmusicbrainz is a client library for accessing the MusicBrainz database
-allowing metadata lookup for audio files. This is version 3.x which uses the
-deprecated XML Web Service Version 1.
-
-WWW: http://musicbrainz.org/
