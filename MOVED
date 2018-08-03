@@ -10413,3 +10413,4 @@ www/py-django-signals-ahoy||2018-08-02|Has expired: Project development unmainta
 databases/rubygem-redis-namespace15|databases/rubygem-redis-namespace|2018-08-02|Has expired: Obsoleted by update of www/gitlab-ce. Please use databases/rubygem-redis-namespace instead.
 security/py-python-social-auth||2018-08-02|Has expired: Upstream Deprecated
 www/py-django-social-auth||2018-08-02|Has expired: no support for new django
+audio/libmusicbrainz3|audio/libmusicbrainz5|2018-08-03|Has expired: Web Service 1.0 support ending 2018-08-01
