@@ -64,7 +64,7 @@ mythtv:*:119:
 pdns:*:120:
 otrs:*:121:
 zabbix:*:122:
-_ntp:*:123:
+ntpd:*:123:
 fetchmail:*:124:
 postfix:*:125:
 maildrop:*:126:
@@ -173,7 +173,7 @@ kismet:*:229:
 carbon:*:230:
 foundationdb:*:231:
 archiva:*:232:
-# free: 233
+_ntp:*:233:
 kafka:*:234:
 openhab:*:235:
 # free: 236
