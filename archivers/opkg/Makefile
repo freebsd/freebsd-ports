@@ -2,20 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	opkg
-DISTVERSION=	20180802
-DISTVERSIONSUFFIX=	-3b417b9f
-PORTREVISION=	1
+DISTVERSION=	20180803
 CATEGORIES=	archivers sysutils
-MASTER_SITES=	LOCAL/mm/openwrt
+MASTER_SITES=	GH
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	OpenWrt package manager
 
 LICENSE=	GPLv2
 
-OPKG_GITURL=	https://git.openwrt.org/project/opkg-lede.git
+USES=		cmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	mmatuska
+GH_PROJECT=	opkg
+GH_TAGNAME=	b07cde3
 
-USES=		cmake tar:xz
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libubox.a:devel/libubox
 
 .include <bsd.port.pre.mk>
@@ -49,15 +50,5 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/${file}.in \
 		${STAGEDIR}${MANPREFIX}/man/man1/${file}
 .endfor
-
-maintainer-fetch:
-	@${MAKE} clean
-	@${MKDIR} ${WRKSRC}
-	@git clone ${OPKG_GITURL} ${WRKSRC}
-	@cd ${WRKSRC} && git reset --hard ${DISTVERSIONSUFFIX:S|^-||}
-	@${TAR} -c -J -f ${_DISTDIR:S|/$||}/${DISTFILES:M${PORTNAME}-*} \
-		-C ${WRKDIR} --exclude .git ${WRKSRC:S|${WRKDIR}/||}
-	@${MAKE} makesum
-	@${MAKE} clean
 
 .include <bsd.port.post.mk>
