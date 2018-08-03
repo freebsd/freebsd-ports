@@ -4,7 +4,6 @@
 PORTNAME=	opkg
 DISTVERSION=	20180803
 CATEGORIES=	archivers sysutils
-MASTER_SITES=	GH
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	OpenWrt package manager
@@ -14,7 +13,6 @@ LICENSE=	GPLv2
 USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	mmatuska
-GH_PROJECT=	opkg
 GH_TAGNAME=	b07cde3
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libubox.a:devel/libubox
