@@ -4,6 +4,7 @@
 PORTNAME=	opkg
 DISTVERSION=	20180802
 DISTVERSIONSUFFIX=	-3b417b9f
+PORTREVISION=	1
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	LOCAL/mm/openwrt
 
@@ -15,13 +16,14 @@ LICENSE=	GPLv2
 OPKG_GITURL=	https://git.openwrt.org/project/opkg-lede.git
 
 USES=		cmake tar:xz
-LIB_DEPENDS+=	libubox.so:devel/libubox
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libubox.a:devel/libubox
 
 .include <bsd.port.pre.mk>
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS+=	-DLUAPATH="${LUA_MODLIBDIR}" \
+		-DSTATIC_UBOX=1 \
 		-DPATH_SPEC="${LOCALBASE}/sbin:${LOCALBASE}/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 post-patch:
