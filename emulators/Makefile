@@ -132,7 +132,6 @@
     SUBDIR += rubygem-fission
     SUBDIR += simh
     SUBDIR += skyeye
-    SUBDIR += snes9express
     SUBDIR += snes9x-gtk
     SUBDIR += spim
     SUBDIR += stella

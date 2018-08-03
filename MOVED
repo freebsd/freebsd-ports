@@ -10415,3 +10415,4 @@ security/py-python-social-auth||2018-08-02|Has expired: Upstream Deprecated
 www/py-django-social-auth||2018-08-02|Has expired: no support for new django
 audio/libmusicbrainz3|audio/libmusicbrainz5|2018-08-03|Has expired: Web Service 1.0 support ending 2018-08-01
 emulators/snes9x||2018-08-03|Removed: Please use emulators/snes9x-gtk instead of
+emulators/snes9express||2018-08-03|Please use emulators/snes9x-gtk instead
