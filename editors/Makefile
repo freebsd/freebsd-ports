@@ -49,6 +49,7 @@
     SUBDIR += gedit
     SUBDIR += gedit-plugins
     SUBDIR += ghex
+    SUBDIR += ghostwriter
     SUBDIR += gmanedit
     SUBDIR += gnotepad+
     SUBDIR += gobby
