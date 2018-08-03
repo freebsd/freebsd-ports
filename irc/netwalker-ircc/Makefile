@@ -3,14 +3,17 @@
 
 PORTNAME=	netwalker-ircc
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	LOCAL/ehaupt
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight curses-based IRC client
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Upstream gone, very old code base, use modern irc client instead
+EXPIRATION_DATE=	2018-11-03
 
 USES=		ncurses tar:tgz
 
@@ -20,7 +23,7 @@ LDFLAGS+=	-lncurses -lpthread
 
 # does not compile with clang 6.0.0
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200056
-USE_GCC=	yes
+USE_GCC=	6
 .endif
 
 post-patch:
