@@ -1907,6 +1907,7 @@
     SUBDIR += pydio
     SUBDIR += pyjamas
     SUBDIR += qdecoder
+    SUBDIR += qhttpengine
     SUBDIR += qooxdoo
     SUBDIR += qt4-webkit
     SUBDIR += qt5-webchannel
