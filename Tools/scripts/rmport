@@ -39,6 +39,7 @@
 # MAINTAINER=	crees@FreeBSD.org
 #
 
+EDITOR=${EDITOR:-/usr/bin/vi}
 PORTSDIR=${PORTSDIR:-/usr/ports}
 INDEX=${PORTSDIR}/`make -C ${PORTSDIR} -V INDEXFILE`
 
