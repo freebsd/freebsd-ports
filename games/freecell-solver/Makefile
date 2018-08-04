@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freecell-solver
-PORTVERSION=	4.18.0
-PORTREVISION=	1
+PORTVERSION=	4.20.0
 CATEGORIES=	games
 MASTER_SITES=	http://fc-solve.shlomifish.org/downloads/fc-solve/
 
@@ -15,7 +14,8 @@ LICENSE=	MIT
 BUILD_DEPENDS=	p5-Path-Tiny>=0.076:devel/p5-Path-Tiny \
 		p5-Template-Toolkit>=2.26:www/p5-Template-Toolkit \
 		gperf:devel/gperf \
-		asciidoc:textproc/asciidoc
+		asciidoc:textproc/asciidoc \
+		${PYTHON_PKGNAMEPREFIX}random2>=1.0.1:math/py-random2@${PY_FLAVOR}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES TCMALLOC
 TCMALLOC_DESC=	Use Google's TCMalloc
@@ -25,7 +25,8 @@ USE_PERL5=	build
 SHEBANG_FILES=	board_gen/make_pysol_freecell_board.py \
 		board_gen/transpose-freecell-board.py \
 		board_gen/find-freecell-deal-index.py \
-		board_gen/fc_solve_find_index_s2ints.py
+		board_gen/fc_solve_find_index_s2ints.py \
+		patsolve/patsolve/param.py
 CMAKE_ARGS=	-DFCS_WITH_TEST_SUITE:BOOL=OFF
 USE_LDCONFIG=	yes
 
@@ -41,6 +42,7 @@ post-patch:
 .for f in children-playing-ball.sh sentient-pearls.sh
 	@${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' ${WRKSRC}/Presets/presets/${f}
 .endfor
+	@${REINPLACE_CMD} -e 's|COMMAND "python3"|COMMAND "${PYTHON_VERSION}"|' ${WRKSRC}/CMakeLists.txt
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
