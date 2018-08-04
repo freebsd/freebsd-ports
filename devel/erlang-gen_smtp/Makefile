@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gen_smtp
-PORTVERSION=	0.12.0
+PORTVERSION=	0.13
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
 
