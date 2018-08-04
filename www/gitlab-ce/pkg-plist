@@ -6948,6 +6948,7 @@
 %%WWWDIR%%/db/post_migrate/20180608201435_cleanup_merge_requests_allow_collaboration_rename.rb
 %%WWWDIR%%/db/post_migrate/20180629191052_add_partial_index_to_projects_for_last_repository_check_at.rb
 %%WWWDIR%%/db/post_migrate/20180702120647_enqueue_fix_cross_project_label_links.rb
+%%WWWDIR%%/db/post_migrate/20180704145007_update_project_indexes.rb
 @(git,,) %%WWWDIR%%/db/schema.rb
 %%WWWDIR%%/db/seeds.rb
 %%WWWDIR%%/doc/README.md
