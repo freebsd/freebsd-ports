@@ -1,0 +1,22 @@
+--- CMakeLists.txt.orig	2018-08-04 18:48:21 UTC
++++ CMakeLists.txt
+@@ -66,12 +66,18 @@ endif(BUILD_CORE_SUPPORT)
+ ADD_SUBDIRECTORY(src)
+ 
+ IF(BUILD_CORE_SUPPORT)
+-INSTALL (DIRECTORY data examples addons
++INSTALL (DIRECTORY data addons
+ 	     DESTINATION ${CMAKE_INSTALL_PREFIX}/share/morse
+          REGEX .*blend.$ EXCLUDE
+          REGEX .*py.$ EXCLUDE
+ 		 REGEX .*clients.* EXCLUDE
+ 		)
++INSTALL (DIRECTORY examples
++	     DESTINATION ${CMAKE_INSTALL_PREFIX}/share/examples/morse
++         REGEX .*blend.$ EXCLUDE
++         REGEX .*py.$ EXCLUDE
++		 REGEX .*clients.* EXCLUDE
++		)
+ 
+ IF(WIN32)
+ CONFIGURE_FILE(

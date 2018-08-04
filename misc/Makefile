@@ -291,6 +291,7 @@
     SUBDIR += mime-support
     SUBDIR += mirmon
     SUBDIR += mmv
+    SUBDIR += morse
     SUBDIR += mtail
     SUBDIR += mtx
     SUBDIR += najitool
