@@ -19,7 +19,7 @@ PLIST_FILES=	bin/fig2sxd man/man1/fig2sxd.1.gz
 
 .include <bsd.port.pre.mk>
 
-# does not compile with clang 6.0.0
+# Does not compile with clang 6.0.0; PR 226178.
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200056
 USE_GCC=	yes
 .endif
