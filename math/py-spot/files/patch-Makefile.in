@@ -1,0 +1,22 @@
+--- Makefile.in.orig	2018-08-04 07:35:57 UTC
++++ Makefile.in
+@@ -223,8 +223,7 @@ am__define_uniq_tagged_files = \
+ ETAGS = etags
+ CTAGS = ctags
+ CSCOPE = cscope
+-DIST_SUBDIRS = picosat buddy lib ltdl spot bin tests python doc bench \
+-	elisp
++DIST_SUBDIRS = python
+ am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in \
+ 	$(top_srcdir)/doc/org/.dir-locals.el.in \
+ 	$(top_srcdir)/doc/org/g++wrap.in \
+@@ -1153,8 +1152,7 @@ top_srcdir = @top_srcdir@
+ @NEVER_TRUE@NEVER_SUBDIRS = bench elisp
+ @USE_PYTHON_TRUE@PYTHON_SUBDIR = python
+ DOC_SUBDIR = doc
+-SUBDIRS = picosat buddy lib ltdl spot bin tests $(PYTHON_SUBDIR) $(DOC_SUBDIR) \
+-					$(NEVER_SUBDIRS)
++SUBDIRS = $(PYTHON_SUBDIR)
+ 
+ UTF8 = utf8/README.md utf8/utf8.h	\
+   utf8/utf8/checked.h utf8/utf8/core.h utf8/utf8/unchecked.h
