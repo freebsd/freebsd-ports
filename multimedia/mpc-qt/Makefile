@@ -10,7 +10,7 @@ COMMENT=	Qt 5 clone of Media Player Classic based on libmpv
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	mpv>=0.28:multimedia/mpv
+BUILD_DEPENDS=	mpv>=0.28,1:multimedia/mpv
 LIB_DEPENDS=	libmpv.so:multimedia/mpv
 
 USE_GITHUB=	yes
