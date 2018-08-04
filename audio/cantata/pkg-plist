@@ -1,6 +1,4 @@
 bin/cantata
-%%TAGLIB%%etc/dbus-1/system.d/mpd.cantata.mounter.conf
-%%TAGLIB%%lib/cantata/cantata-mounter
 %%REPLAYGAIN%%lib/cantata/cantata-replaygain
 %%TAGLIB%%lib/cantata/cantata-tags
 share/applications/cantata.desktop
@@ -9,7 +7,6 @@ share/applications/cantata.desktop
 %%DATADIR%%/icons/stream.png
 %%DATADIR%%/scripts/cantata-dynamic
 %%DATADIR%%/scripts/cantata-remote
-%%TAGLIB%%%%DATADIR%%/scripts/mount.cifs.wrapper
 %%NLS%%%%DATADIR%%/translations/cantata_cs.qm
 %%NLS%%%%DATADIR%%/translations/cantata_da.qm
 %%NLS%%%%DATADIR%%/translations/cantata_de.qm
@@ -21,9 +18,9 @@ share/applications/cantata.desktop
 %%NLS%%%%DATADIR%%/translations/cantata_ja.qm
 %%NLS%%%%DATADIR%%/translations/cantata_ko.qm
 %%NLS%%%%DATADIR%%/translations/cantata_pl.qm
+%%NLS%%%%DATADIR%%/translations/cantata_pt_BR.qm
 %%NLS%%%%DATADIR%%/translations/cantata_ru.qm
 %%NLS%%%%DATADIR%%/translations/cantata_zh_CN.qm
-%%TAGLIB%%share/dbus-1/system-services/mpd.cantata.mounter.service
 share/icons/hicolor/128x128/apps/cantata.png
 share/icons/hicolor/16x16/apps/cantata.png
 share/icons/hicolor/22x22/apps/cantata.png
