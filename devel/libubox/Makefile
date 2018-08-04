@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjson-c.so:devel/json-c
 
-USES=		cmake lua:51 tar:xz
+USES=		cmake pkgconfig lua:51
 USE_GITHUB=	yes
 GH_ACCOUNT=	mmatuska
 GH_TAGNAME=	c83a84af
