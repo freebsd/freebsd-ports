@@ -1161,6 +1161,7 @@
     SUBDIR += pythondirector
     SUBDIR += qadsl
     SUBDIR += qjsonrpc
+    SUBDIR += qmdnsengine
     SUBDIR += qoauth
     SUBDIR += qoauth-qt5
     SUBDIR += qt4-network
