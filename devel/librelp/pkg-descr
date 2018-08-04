@@ -10,4 +10,4 @@ In this case, a few messages may be duplicated (a problem that also
 exists with plain TCP syslog). Future versions of RELP will address
 this shortcoming.
 
-WWW: http://www.librelp.com/
+WWW: https://www.rsyslog.com/librelp/
