@@ -1,0 +1,24 @@
+Spot is a library for LTL, omega-automata manipulation and model checking.
+
+It has the following notable features:
+* Support for LTL (several syntaxes supported) and a subset of the linear
+  fragment of PSL.
+* Support for omega-automata with arbitrary acceptance condition.
+* Support for transition-based acceptance (state-based acceptance is supported
+  by a reduction to transition-based acceptance).
+* The automaton parser can read a stream of automata written in any of four
+  syntaxes (HOA, never claims, LBTT, DSTAR).
+* Several algorithms for formula manipulation including: simplifying formulas,
+  testing implication or equivalence, testing stutter-invariance, removing some
+  operators by rewriting, translation to automata, testing membership to the
+  temporal hierarchy of Manna & Pnueli...
+* Several algorithms for automata manipulation including: product, emptiness
+  checks, simulation-based reductions, minimization of weak-DBA, removal of
+  useless SCCs, acceptance-condition transformations, determinization, SAT-based
+  minimization of deterministic automata, etc.
+* In addition to the C++ interface, most of its algorithms are usable via
+  command-line tools, and via Python bindings.
+* One command-line tool, called ltlcross, is a rewrite of LBTT, but with support
+  for PSL and automata with arbitrary acceptance conditions.
+
+WWW: https://spot.lrde.epita.fr
