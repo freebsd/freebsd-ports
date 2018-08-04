@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mame
-PORTVERSION=	0.198
+PORTVERSION=	0.200
 CATEGORIES=	emulators
 
 MAINTAINER=	ports@FreeBSD.org
