@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librelp
-PORTVERSION=	1.2.16
+PORTVERSION=	1.2.17
 CATEGORIES=	devel
 MASTER_SITES=	http://download.rsyslog.com/librelp/
 
@@ -11,7 +11,17 @@ COMMENT=	Reliable event logging protocol library
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libgnutls.so:security/gnutls
+OPTIONS_SINGLE=			SSLLIB
+OPTIONS_SINGLE_SSLLIB=		GNUTLS OPENSSL
+OPTIONS_DEFAULT=		GNUTLS
+
+GNUTLS_LIB_DEPENDS=		libgnutls.so:security/gnutls
+GNUTLS_CONFIGURE_ENABLE=	tls
+
+OPENSSL_USES=			ssl
+OPENSSL_CONFIGURE_ENABLE=	tls-openssl
+OPENSSL_CONFIGURE_ENV=		OPENSSL_LIBS=${OPENSSLLIB} \
+				OPENSSL_CFLAGS="-I ${OPENSSLINC}"
 
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
