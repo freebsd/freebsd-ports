@@ -1,0 +1,17 @@
+NitroShare is designed to make transferring files from one device to another
+extremely simple.
+
+The application uses broadcast discovery to find other devices on the local
+network with NitroShare installed.
+
+Features:
+* Runs on FreeBSD/Linux/Android/macOS/Windows
+* Automatic discovery of devices on the local network
+* Simple and intuitive user interface
+* Incredibly fast transfer speeds
+* Transfer entire directories
+* Optional TLS encryption
+* Local HTTP API
+* Completely free and open-source
+
+WWW: https://nitroshare.net/
