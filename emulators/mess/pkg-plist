@@ -66,6 +66,8 @@ libexec/mess/unidasm
 %%DATADIR%%/hash/abc806.xml
 %%DATADIR%%/hash/abc80_cass.xml
 %%DATADIR%%/hash/abc80_flop.xml
+%%DATADIR%%/hash/acrnsys_flop.xml
+%%DATADIR%%/hash/acrnsys_rom.xml
 %%DATADIR%%/hash/adam_cart.xml
 %%DATADIR%%/hash/adam_cass.xml
 %%DATADIR%%/hash/adam_flop.xml
@@ -140,6 +142,7 @@ libexec/mess/unidasm
 %%DATADIR%%/hash/c64_cass.xml
 %%DATADIR%%/hash/c64_flop.xml
 %%DATADIR%%/hash/c65_flop.xml
+%%DATADIR%%/hash/camplynx_cass.xml
 %%DATADIR%%/hash/camplynx_flop.xml
 %%DATADIR%%/hash/casloopy.xml
 %%DATADIR%%/hash/cbm2_cart.xml
@@ -227,6 +230,7 @@ libexec/mess/unidasm
 %%DATADIR%%/hash/hp9835a_rom.xml
 %%DATADIR%%/hash/hp9845a_rom.xml
 %%DATADIR%%/hash/hp9845b_rom.xml
+%%DATADIR%%/hash/hp9k3xx_flop.xml
 %%DATADIR%%/hash/hp_ipc.xml
 %%DATADIR%%/hash/ht68k.xml
 %%DATADIR%%/hash/hx20_rom.xml
@@ -455,6 +459,7 @@ libexec/mess/unidasm
 %%DATADIR%%/hash/specpls3_flop.xml
 %%DATADIR%%/hash/spectrum_cart.xml
 %%DATADIR%%/hash/spectrum_cass.xml
+%%DATADIR%%/hash/squale_cart.xml
 %%DATADIR%%/hash/st_cart.xml
 %%DATADIR%%/hash/st_flop.xml
 %%DATADIR%%/hash/stepone_flop.xml
