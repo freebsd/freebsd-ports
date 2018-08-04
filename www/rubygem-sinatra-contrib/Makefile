@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sinatra-contrib
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,8 @@ COMMENT=	Collection of useful Sinatra extensions
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-multi_json>=0:devel/rubygem-multi_json \
+RUN_DEPENDS=	rubygem-activesupport5>=4.0.0:devel/rubygem-activesupport5 \
+		rubygem-multi_json>=0:devel/rubygem-multi_json \
 		rubygem-mustermann>=1.0:devel/rubygem-mustermann \
 		rubygem-rack-protection>=${PORTVERSION}:www/rubygem-rack-protection \
 		rubygem-sinatra>=${PORTVERSION}:www/rubygem-sinatra \
