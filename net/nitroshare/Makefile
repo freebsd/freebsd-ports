@@ -3,6 +3,7 @@
 PORTNAME=	nitroshare
 DISTVERSION=	0.3.4-642
 DISTVERSIONSUFFIX=	-g2046ccb
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libqhttpengine.so:www/qhttpengine \
-		libqmdnsengine.so:net/qmdnsengine
+		libqmdnsengine.so:dns/qmdnsengine
 
 USES=		cmake:outsource qt:5
 USE_GITHUB=	yes

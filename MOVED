@@ -10418,3 +10418,4 @@ emulators/snes9x||2018-08-03|Removed: Please use emulators/snes9x-gtk instead of
 emulators/snes9express||2018-08-03|Please use emulators/snes9x-gtk instead
 security/rubygem-omniauth-shibboleth12||2018-08-04|Removed
 textproc/rubygem-html-pipeline-gitlab||2018-08-04|Removed
+net/qmdnsengine|dns/qmdnsengine|2018-08-04|Move to a proper category

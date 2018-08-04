@@ -3,7 +3,8 @@
 PORTNAME=	qmdnsengine
 DISTVERSION=	0.1.0-13
 DISTVERSIONSUFFIX=	-gbac0431
-CATEGORIES=	net
+PORTREVISION=	1
+CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multicast DNS library for Qt applications
