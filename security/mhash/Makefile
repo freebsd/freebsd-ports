@@ -16,18 +16,18 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		libtool tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-static --with-gnu-ld
+CONFIGURE_ARGS=	--enable-static --with-gnu-ld
 TEST_TARGET=	check
-
-OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	example.c skid2-authentication
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmhash.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmhash.so
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
