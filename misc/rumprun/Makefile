@@ -13,6 +13,8 @@ LICENSE=	BSD2CLAUSE
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	not yet ported to FreeBSD on other architectures
 
+BROKEN=		fails with current versions of GCC	# PR 230125
+
 USES=		gmake
 USE_GCC=	any
 USE_GITHUB=	yes
