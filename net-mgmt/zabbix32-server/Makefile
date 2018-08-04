@@ -3,7 +3,7 @@
 
 PORTNAME=	zabbix32
 PORTVERSION=	3.2.11
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
@@ -57,7 +57,7 @@ CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
 			--datadir=${ETCDIR} \
 			--with-iconv=${ICONV_PREFIX}
 
-.if ${ZABBIX_BUILD} != "agent"
+.if ${ZABBIX_BUILD} != "agent" && ${ZABBIX_BUILD} != "java"
 LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -66,8 +66,7 @@ SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS+=	--with-net-snmp
 
-OPTIONS_DEFINE=		IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP JAVAGW \
-			LIBXML2
+OPTIONS_DEFINE=		IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP LIBXML2
 
 OPTIONS_DEFAULT=	FPING CURL UNIXODBC MYSQL OPENSSL
 OPTIONS_SUB=		yes
@@ -80,7 +79,6 @@ LDAP_DESC=		Support for LDAP server checks
 NMAP_DESC=		Build/install nmap for o/s detection
 SSH_DESC=		Support for SSH-based checks
 ODBC_DESC=		Support for database checks via ODBC
-JAVAGW_DESC=		Support for Java gateway
 LIBXML2_DESC=		Support for libxml2 (required by monitoring VMware)
 
 OPTIONS_SINGLE=		DB ODBC SSL
@@ -121,18 +119,15 @@ IODBC_LIB_DEPENDS=	libiodbc.so:databases/libiodbc
 
 UNIXODBC_CONFIGURE_WITH=unixodbc
 UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
-.else
+.elif ${ZABBIX_BUILD} == "agent"
 OPTIONS_SINGLE=	SSL
 OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS
-.endif # if ${ZABBIX_BUILD} != "agent"
+.endif # if ${ZABBIX_BUILD} != "agent" && ${ZABBIX_BUILD} != "java"
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
 NMAP_RUN_DEPENDS=	nmap:security/nmap \
 			sudo:security/sudo
-
-JAVAGW_CONFIGURE_ENABLE=java
-JAVAGW_USE=		JAVA=yes
 
 LIBXML2_CONFIGURE_WITH=	libxml2
 LIBXML2_LIB_DEPENDS=	libxml2.so:textproc/libxml2
@@ -177,6 +172,11 @@ post-patch:
 		${WRKSRC}/conf/zabbix_agentd*.conf
 .endif
 
+.if ${ZABBIX_BUILD} == "java"
+	@${REINPLACE_CMD} -e 's#PID_FILE="/tmp/zabbix_java.pid"#PID_FILE="/var/run/zabbix/zabbix_java.pid"#g' \
+		${WRKSRC}/src/zabbix_java/settings.sh
+.endif
+
 .if ${ZABBIX_BUILD} != "agent"
 .  for d in mysql oracle postgresql sqlite3
 	@${REINPLACE_CMD} \
@@ -194,12 +194,13 @@ post-patch:
 
 post-install:
 
-.if ${PORT_OPTIONS:MJAVAGW}
+.if ${ZABBIX_BUILD} == "java"
 	${MV} ${STAGEDIR}${PREFIX}/sbin/zabbix_java/settings.sh \
 		${STAGEDIR}${PREFIX}/sbin/zabbix_java/settings.sh.sample
+	@${MKDIR} ${STAGEDIR}/var/run/zabbix
 .endif
 
-.if ${ZABBIX_BUILD} != "agent"
+.if ${ZABBIX_BUILD} != "agent" && ${ZABBIX_BUILD} != "java"
 	${MKDIR} ${STAGEDIR}${DATADIR}/${ZABBIX_BUILD:Q}/database
 	(cd ${WRKSRC}/upgrades/ && ${COPYTREE_SHARE} dbpatches \
 		${STAGEDIR}${DATADIR}/${ZABBIX_BUILD:Q}/upgrades/)

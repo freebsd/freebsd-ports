@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180804:
+  AFFECTS: net-mgmt/zabbix*-server
+  AUTHOR: dbaio@FreeBSD.org
+
+  The JAVAGW option was removed from the Zabbix Server and an additional slave
+  port was created, zabbix*-java, it installs only Zabbix Java Gateway files,
+  this way is possible to deploy a Zabbix Java Gateway without the need to
+  install Zabbix Server components.
+
+  If you are using the JAVAGW option on Zabbix Server, please, install now the
+  new zabbix*-java port.
+
 20180803
   AFFECTS: users of net/openntpd
   AUTHOR: naddy@FreeBSD.org

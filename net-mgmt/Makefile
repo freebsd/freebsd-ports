@@ -399,22 +399,27 @@
     SUBDIR += yaf
     SUBDIR += zabbix2-agent
     SUBDIR += zabbix2-frontend
+    SUBDIR += zabbix2-java
     SUBDIR += zabbix2-proxy
     SUBDIR += zabbix2-server
     SUBDIR += zabbix22-agent
     SUBDIR += zabbix22-frontend
+    SUBDIR += zabbix22-java
     SUBDIR += zabbix22-proxy
     SUBDIR += zabbix22-server
     SUBDIR += zabbix3-agent
     SUBDIR += zabbix3-frontend
+    SUBDIR += zabbix3-java
     SUBDIR += zabbix3-proxy
     SUBDIR += zabbix3-server
     SUBDIR += zabbix32-agent
     SUBDIR += zabbix32-frontend
+    SUBDIR += zabbix32-java
     SUBDIR += zabbix32-proxy
     SUBDIR += zabbix32-server
     SUBDIR += zabbix34-agent
     SUBDIR += zabbix34-frontend
+    SUBDIR += zabbix34-java
     SUBDIR += zabbix34-proxy
     SUBDIR += zabbix34-server
 

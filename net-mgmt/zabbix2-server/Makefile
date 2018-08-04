@@ -3,7 +3,7 @@
 
 PORTNAME=	zabbix2
 PORTVERSION=	2.0.21
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
@@ -57,12 +57,12 @@ CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
 			--sysconfdir=${ETCDIR} \
 			--datadir=${ETCDIR}
 
-.if ${ZABBIX_BUILD} != "agent"
+.if ${ZABBIX_BUILD} != "agent" && ${ZABBIX_BUILD} != "java"
 SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS+=	--with-net-snmp
 
-OPTIONS_DEFINE=	IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP JAVAGW
+OPTIONS_DEFINE=	IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP
 OPTIONS_DEFAULT=	MYSQL FPING JABBER CURL UNIXODBC
 OPTIONS_SUB=	yes
 
@@ -73,7 +73,6 @@ JABBER_DESC=	Support for Jabber media type
 LDAP_DESC=	Support for LDAP server checks
 NMAP_DESC=	Build/install nmap for o/s detection
 SSH_DESC=	Support for SSH-based checks
-JAVAGW_DESC=	Support for Java gateway
 ODBC_DESC=	Support for database checks via ODBC
 
 OPTIONS_SINGLE=	DB ODBC
@@ -113,15 +112,12 @@ IODBC_LIB_DEPENDS=	libiodbc.so:databases/libiodbc
 
 UNIXODBC_CONFIGURE_WITH=	unixodbc
 UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
-.endif # if ${ZABBIX_BUILD} != "agent"
+.endif # if ${ZABBIX_BUILD} != "agent" && ${ZABBIX_BUILD} != "java"
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
 NMAP_RUN_DEPENDS=	nmap:security/nmap \
 			sudo:security/sudo
-
-JAVAGW_CONFIGURE_ENABLE=	java
-JAVAGW_USE=	JAVA=yes
 
 .include <bsd.port.options.mk>
 
@@ -133,6 +129,10 @@ post-patch:
 		${WRKSRC}/src/zabbix_proxy/proxy.c \
 		${WRKSRC}/src/zabbix_server/server.c
 
+.if ${ZABBIX_BUILD} == "java"
+	@${REINPLACE_CMD} -e 's#PID_FILE="/tmp/zabbix_java.pid"#PID_FILE="/var/run/zabbix/zabbix_java.pid"#g' \
+		${WRKSRC}/src/zabbix_java/settings.sh
+.endif
 
 .if ${ZABBIX_BUILD} != "agent"
 .for d in mysql oracle postgresql sqlite3
@@ -147,11 +147,12 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.orig' \) -exec ${RM} {} +
 
 post-install:
-.if ${PORT_OPTIONS:MJAVAGW}
+.if ${ZABBIX_BUILD} == "java"
 	@${MV} ${STAGEDIR}${PREFIX}/sbin/zabbix_java/settings.sh ${STAGEDIR}${PREFIX}/sbin/zabbix_java/settings.sh.sample
+	@${MKDIR} ${STAGEDIR}/var/run/zabbix
 .endif
 
-.if ${ZABBIX_BUILD} != "agent"
+.if ${ZABBIX_BUILD} != "agent" && ${ZABBIX_BUILD} != "java"
 	@${MKDIR} "${STAGEDIR}${DATADIR}/${ZABBIX_BUILD}/database"
 	@cd ${WRKSRC}/upgrades/ && ${COPYTREE_SHARE} dbpatches ${STAGEDIR}${DATADIR}/${ZABBIX_BUILD}/upgrades/
 	@cd ${WRKSRC}/database/ && ${COPYTREE_SHARE} "ibm_db2 mysql oracle postgresql sqlite3" ${STAGEDIR}${DATADIR}/${ZABBIX_BUILD}/database/
