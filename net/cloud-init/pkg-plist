@@ -1,0 +1,4 @@
+@comment @dir /etc/bash_completion.d
+@comment @dir /%%ETCDIR%%/cloud.cfg.d
+@comment @dir /%%ETCDIR%%/templates
+@comment @dir /%%ETCDIR%%
