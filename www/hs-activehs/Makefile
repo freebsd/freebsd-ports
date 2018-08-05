@@ -10,6 +10,7 @@ COMMENT=	Haskell code presentation tool
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		fails to build
 DEPRECATED=	Doesn't build with recent dependencies
 EXPIRATION_DATE=2018-09-02
 
