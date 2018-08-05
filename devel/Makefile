@@ -1237,6 +1237,7 @@
     SUBDIR += injeqt
     SUBDIR += ioncube
     SUBDIR += ipython
+    SUBDIR += ipython5
     SUBDIR += ireport
     SUBDIR += isa-l
     SUBDIR += isfreedesktop
