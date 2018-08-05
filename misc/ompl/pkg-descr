@@ -1,0 +1,12 @@
+The open motion planning library (OMPL) is a new library for sampling-based
+motion planning, which contains implementations of many state-of-the-art
+planning algorithms. The library is designed in a way that it allows the user
+to easily solve a variety of complex motion planning problems with minimal
+input. OMPL facilitates the addition of new motion planning algorithms, and it
+can be conveniently interfaced with other software components. A simple
+graphical user interface (GUI) built on top of the library, a number of
+tutorials, demos, and programming assignments are designed to teach students
+about sampling-based motion planning. The library is also available for use
+through Robot Operating System (ROS).
+
+WWW: https://bitbucket.org/ompl/ompl/src/default/
