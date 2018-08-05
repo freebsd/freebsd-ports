@@ -3,7 +3,7 @@
 
 PORTNAME=	triangle
 PORTVERSION=	1.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	NL/voronoi
 DISTNAME=	${PORTNAME}
@@ -22,15 +22,17 @@ USE_LDCONFIG=	yes
 
 PLIST_FILES=	bin/${PORTNAME} bin/showme \
 		include/${PORTNAME}.h \
-		lib/lib${PORTNAME}.so
+		lib/lib${PORTNAME}.so \
+		lib/lib${PORTNAME}.so.${PORTVERSION}
 
 post-build:
-	@cd ${WRKSRC} && ${CC} ${CFLAGS} ${LDFLAGS} -shared -fPIC -o lib${PORTNAME}.so ${PORTNAME}.c
+	@cd ${WRKSRC} && ${CC} ${CFLAGS} ${LDFLAGS} -shared -fPIC -Wl,-soname,lib${PORTNAME}.so.${PORTVERSION} -o lib${PORTNAME}.so.${PORTVERSION} ${PORTNAME}.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${WRKSRC}/showme ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/lib${PORTNAME}.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib${PORTNAME}.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib
+	cd ${STAGEDIR}${PREFIX}/lib && ${LN} -s lib${PORTNAME}.so.${PORTVERSION} lib${PORTNAME}.so
 
 do-test: build
 	@cd ${INSTALL_WRKSRC} && ./${PORTNAME} -p A.poly && ./showme A.1.poly
