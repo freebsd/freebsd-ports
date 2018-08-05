@@ -12,11 +12,11 @@ COMMENT=	Perl extension to cache output of time-intensive CGI scripts
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Cache>=0:devel/p5-Cache \
+BUILD_DEPENDS=	p5-URI>=0:net/p5-URI \
+		${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Cache>=0:devel/p5-Cache \
 		p5-Cache-Cache>=0:devel/p5-Cache-Cache \
 		p5-Tie-Restore>=0:devel/p5-Tie-Restore
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-BUILD_DEPENDS+=	p5-URI>=0:net/p5-URI
 TEST_DEPENDS=	p5-File-Slurper>=0:devel/p5-File-Slurper
 
 USES=		perl5
