@@ -1,0 +1,11 @@
+Py++ is an object-oriented framework for creating a code generator for
+Boost.Python library and ctypes package.
+
+Py++ uses few different programming paradigms to help you to expose C++
+declarations to Python. This code generator will not stand on your way.
+It will guide you through the whole process. It will raise warnings in the case
+you are doing something wrong with a link to the explanation. And the most
+important it will save your time - you will not have to update code generator
+script every time source code is changed.
+
+WWW: https://bitbucket.org/ompl/pyplusplus/src
