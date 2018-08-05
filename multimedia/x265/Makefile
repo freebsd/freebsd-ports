@@ -3,6 +3,7 @@
 
 PORTNAME=	x265
 PORTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://downloads.videolan.org/pub/videolan/x265/ \
 		https://mirror.leaseweb.com/videolan/x265/ \
@@ -19,7 +20,7 @@ COMMENT=	H.265/High Efficiency Video Coding (HEVC) format
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC:H}/COPYING
 
-BUILD_DEPENDS=	yasm:devel/yasm
+BUILD_DEPENDS=	nasm:devel/nasm
 
 USES=		cmake compiler:c++14-lang pathfix
 
