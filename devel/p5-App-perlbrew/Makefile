@@ -32,11 +32,4 @@ NO_ARCH=	yes
 USE_PERL5=	modbuildtiny
 USES=		perl5
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 502400
-BUILD_DEPENDS+=	p5-Pod-Usage>=1.68:devel/p5-Pod-Usage
-RUN_DEPENDS+=	p5-Pod-Usage>=1.68:devel/p5-Pod-Usage
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
