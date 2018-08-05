@@ -1,0 +1,6 @@
+This is a low-level, pure Python DBus protocol client. It has an I/O-free core,
+and integration modules for different event loops.
+
+DBus is an inter-process communication system, mainly used in Linux.
+
+WWW: https://gitlab.com/takluyver/jeepney
