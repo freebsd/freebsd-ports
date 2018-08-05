@@ -1,4 +1,4 @@
 Implements a simple Getopt::Std class for command line parsing, as well as a
 Getopt::Long class for more advanced command line parsing.
 
-WWW: https://rubygems.org/gems/getopt
+WWW: https://github.com/djberg96/getopt
