@@ -10,6 +10,8 @@ DISTNAME=	108143-Neutral++_White-${DISTVERSION}
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	White cursor theme based on neutral
 
+BROKEN=		checksum and size mismatch
+
 USES=		tar:xz
 NO_BUILD=	yes
 
