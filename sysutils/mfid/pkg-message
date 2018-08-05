@@ -5,7 +5,7 @@
 !  used in a high performance environment without the need for the    !
 !  data safety and integrity features that Patrol Reads provide.      !
 !                                                                     !
-!  If you value data safety and integrity over performance, you       !
+!  If you value data safety and integrity over performance,           !
 !  you should re-enable Patrol Reads.                                 !
 !                                                                     !
 !  Check if patrol is disabled:                                       !
