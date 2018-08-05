@@ -1,8 +1,10 @@
-The PCI Utilities package contains various utilities dealing
-with the PCI bus, and also a library for portable access to
-PCI configuration registers. It includes `lspci' for listing
-all PCI devices (very useful for debugging of both kernel and
-device drivers) and `setpci' for manual configuration of PCI
-devices.
+The PCI Utilities are a collection of programs for inspecting and manipulating
+configuration of PCI devices, all based on a common portable library libpci.
 
-WWW: http://mj.ucw.cz/sw/pciutils/
+The utilities include:
+- lspci: displays detailed information about all PCI buses and devices in the
+  system
+- setpci: allows reading from and writing to PCI device configuration registers.
+  For example, you can adjust the latency timers with it.
+
+WWW: https://mj.ucw.cz/sw/pciutils/
