@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aphpbreakdown
-DISTVERSION=	2.2.0
+DISTVERSION=	2.2.1
 CATEGORIES=	devel www
 MASTER_SITES=	http://phar.code-mesa.com/
 PKGNAMEPREFIX=  ${PHP_PKGNAMEPREFIX}
