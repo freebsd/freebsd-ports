@@ -3,7 +3,7 @@
 
 PORTNAME=	tomcat
 PORTVERSION=	8.5.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/([0-9])(.*)/\1/}/v${PORTVERSION}/bin
 PKGNAMESUFFIX=	85
@@ -53,13 +53,19 @@ post-install:
 	@${RM} ${STAGEDIR}${TOMCAT_HOME}/bin/*.bat
 	(cd ${STAGEDIR}${TOMCAT_HOME}/conf &&\
 		for f in $$(find . -type f); do ${MV} $$f $$f.sample; done)
+
+post-install-HOST_MANAGER-on:
 	(cd ${STAGEDIR}${TOMCAT_HOME}/webapps &&\
-		for f in host-manager/META-INF/context.xml host-manager/WEB-INF/web.xml \
-			manager/META-INF/context.xml manager/WEB-INF/web.xml; do \
+		for f in host-manager/META-INF/context.xml host-manager/WEB-INF/web.xml; do \
 			${MV} $$f $$f.sample; done)
 
 post-install-HOST_MANAGER-off:
 	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/host-manager
+
+post-install-MANAGER-on:
+	(cd ${STAGEDIR}${TOMCAT_HOME}/webapps &&\
+		for f in manager/META-INF/context.xml manager/WEB-INF/web.xml; do \
+			${MV} $$f $$f.sample; done)
 
 post-install-MANAGER-off:
 	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/manager
