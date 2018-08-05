@@ -1,0 +1,5 @@
+pygccxml is a specialized XML reader that reads the output from CastXML or
+GCCXML. It provides a simple framework to navigate C++ declarations, using
+Python classes.
+
+WWW: https://github.com/gccxml/pygccxml
