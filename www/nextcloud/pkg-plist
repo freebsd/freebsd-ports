@@ -4188,6 +4188,8 @@
 %%WWWDIR%%/apps-pkg/activity/l10n/mn.json
 %%WWWDIR%%/apps-pkg/activity/l10n/ms_MY.js
 %%WWWDIR%%/apps-pkg/activity/l10n/ms_MY.json
+%%WWWDIR%%/apps-pkg/activity/l10n/my.js
+%%WWWDIR%%/apps-pkg/activity/l10n/my.json
 %%WWWDIR%%/apps-pkg/activity/l10n/nb.js
 %%WWWDIR%%/apps-pkg/activity/l10n/nb.json
 %%WWWDIR%%/apps-pkg/activity/l10n/ne.js
@@ -8575,6 +8577,8 @@
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/fr.json
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/gl.js
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/gl.json
+%%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/he.js
+%%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/he.json
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/hu.js
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/hu.json
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/ia.js
@@ -8676,6 +8680,8 @@
 %%WWWDIR%%/apps-pkg/notifications/l10n/el.json
 %%WWWDIR%%/apps-pkg/notifications/l10n/en_GB.js
 %%WWWDIR%%/apps-pkg/notifications/l10n/en_GB.json
+%%WWWDIR%%/apps-pkg/notifications/l10n/eo.js
+%%WWWDIR%%/apps-pkg/notifications/l10n/eo.json
 %%WWWDIR%%/apps-pkg/notifications/l10n/es.js
 %%WWWDIR%%/apps-pkg/notifications/l10n/es.json
 %%WWWDIR%%/apps-pkg/notifications/l10n/es_419.js
@@ -9005,6 +9011,8 @@
 %%WWWDIR%%/apps-pkg/password_policy/l10n/fr.json
 %%WWWDIR%%/apps-pkg/password_policy/l10n/gl.js
 %%WWWDIR%%/apps-pkg/password_policy/l10n/gl.json
+%%WWWDIR%%/apps-pkg/password_policy/l10n/he.js
+%%WWWDIR%%/apps-pkg/password_policy/l10n/he.json
 %%WWWDIR%%/apps-pkg/password_policy/l10n/hu.js
 %%WWWDIR%%/apps-pkg/password_policy/l10n/hu.json
 %%WWWDIR%%/apps-pkg/password_policy/l10n/ia.js
@@ -9348,6 +9356,8 @@
 %%WWWDIR%%/apps-pkg/sharebymail/l10n/fr.json
 %%WWWDIR%%/apps-pkg/sharebymail/l10n/gl.js
 %%WWWDIR%%/apps-pkg/sharebymail/l10n/gl.json
+%%WWWDIR%%/apps-pkg/sharebymail/l10n/he.js
+%%WWWDIR%%/apps-pkg/sharebymail/l10n/he.json
 %%WWWDIR%%/apps-pkg/sharebymail/l10n/hu.js
 %%WWWDIR%%/apps-pkg/sharebymail/l10n/hu.json
 %%WWWDIR%%/apps-pkg/sharebymail/l10n/ia.js
@@ -10690,6 +10700,8 @@
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/fr.json
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/gl.js
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/gl.json
+%%WWWDIR%%/apps-pkg/workflowengine/l10n/he.js
+%%WWWDIR%%/apps-pkg/workflowengine/l10n/he.json
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/hu.js
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/hu.json
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/hu_HU.js
@@ -10974,6 +10986,7 @@
 %%WWWDIR%%/core/doc/admin/_images/ldap-wizard-4-group.png
 %%WWWDIR%%/core/doc/admin/_images/local.png
 %%WWWDIR%%/core/doc/admin/_images/mount_options.png
+%%WWWDIR%%/core/doc/admin/_images/oauth2-settings.png
 %%WWWDIR%%/core/doc/admin/_images/oc_admin_app_page.png
 %%WWWDIR%%/core/doc/admin/_images/openstack.png
 %%WWWDIR%%/core/doc/admin/_images/phpinfo.png
@@ -10988,7 +11001,6 @@
 %%WWWDIR%%/core/doc/admin/_images/smtp-config-php-sendmail.png
 %%WWWDIR%%/core/doc/admin/_images/smtp-config-smtp.png
 %%WWWDIR%%/core/doc/admin/_images/smtp-config-wizard.png
-%%WWWDIR%%/core/doc/admin/_images/theming-log-in-page.png
 %%WWWDIR%%/core/doc/admin/_images/theming.png
 %%WWWDIR%%/core/doc/admin/_images/updater-1-update-available.png
 %%WWWDIR%%/core/doc/admin/_images/updater-2-open-updater.png
@@ -11056,6 +11068,7 @@
 %%WWWDIR%%/core/doc/admin/_sources/configuration_server/index.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_server/language_configuration.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_server/logging_configuration.txt
+%%WWWDIR%%/core/doc/admin/_sources/configuration_server/oauth2.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_server/occ_command.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_server/reverse_proxy_configuration.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration_server/security_setup_warnings.txt
@@ -11233,6 +11246,7 @@
 %%WWWDIR%%/core/doc/admin/configuration_server/index.html
 %%WWWDIR%%/core/doc/admin/configuration_server/language_configuration.html
 %%WWWDIR%%/core/doc/admin/configuration_server/logging_configuration.html
+%%WWWDIR%%/core/doc/admin/configuration_server/oauth2.html
 %%WWWDIR%%/core/doc/admin/configuration_server/occ_command.html
 %%WWWDIR%%/core/doc/admin/configuration_server/reverse_proxy_configuration.html
 %%WWWDIR%%/core/doc/admin/configuration_server/security_setup_warnings.html
@@ -11769,6 +11783,7 @@
 %%WWWDIR%%/core/js/tests/specs/l10nSpec.js
 %%WWWDIR%%/core/js/tests/specs/mimeTypeSpec.js
 %%WWWDIR%%/core/js/tests/specs/oc-backbone-webdavSpec.js
+%%WWWDIR%%/core/js/tests/specs/public/commentsSpec.js
 %%WWWDIR%%/core/js/tests/specs/setupchecksSpec.js
 %%WWWDIR%%/core/js/tests/specs/shareSpec.js
 %%WWWDIR%%/core/js/tests/specs/sharedialoglinkshareview.js
@@ -11852,6 +11867,8 @@
 %%WWWDIR%%/core/l10n/fr.json
 %%WWWDIR%%/core/l10n/he.js
 %%WWWDIR%%/core/l10n/he.json
+%%WWWDIR%%/core/l10n/hr.js
+%%WWWDIR%%/core/l10n/hr.json
 %%WWWDIR%%/core/l10n/hu.js
 %%WWWDIR%%/core/l10n/hu.json
 %%WWWDIR%%/core/l10n/id.js
@@ -11894,8 +11911,6 @@
 %%WWWDIR%%/core/l10n/sr.json
 %%WWWDIR%%/core/l10n/sv.js
 %%WWWDIR%%/core/l10n/sv.json
-%%WWWDIR%%/core/l10n/th.js
-%%WWWDIR%%/core/l10n/th.json
 %%WWWDIR%%/core/l10n/tr.js
 %%WWWDIR%%/core/l10n/tr.json
 %%WWWDIR%%/core/l10n/uk.js
