@@ -1,4 +1,4 @@
-libpci provides a portable layer for read and write access to PCI configuration
-registers. Supported platforms include Linux, FreeBSD, NetBSD and AIX.
+libpci is a common portable library which offers access to the PCI configuration
+space on a variety of operating systems.
 
-WWW: http://mj.ucw.cz/sw/pciutils/
+WWW: https://mj.ucw.cz/sw/pciutils/
