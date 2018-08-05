@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	selenium-webdriver
-PORTVERSION=	3.13.1
+PORTVERSION=	3.14.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
