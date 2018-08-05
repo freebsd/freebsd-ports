@@ -4649,6 +4649,7 @@
     SUBDIR += py-jcc
     SUBDIR += py-jdcal
     SUBDIR += py-jedi
+    SUBDIR += py-jeepney
     SUBDIR += py-jellyfish
     SUBDIR += py-jenkins-job-builder
     SUBDIR += py-jep
