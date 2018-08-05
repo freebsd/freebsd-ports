@@ -20,6 +20,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/automv.py
 %%PYTHON_SITELIBDIR%%/hgext/automv.pyc
 %%PYTHON_SITELIBDIR%%/hgext/automv.pyo
+%%PYTHON_SITELIBDIR%%/hgext/beautifygraph.py
+%%PYTHON_SITELIBDIR%%/hgext/beautifygraph.pyc
+%%PYTHON_SITELIBDIR%%/hgext/beautifygraph.pyo
 %%PYTHON_SITELIBDIR%%/hgext/blackbox.py
 %%PYTHON_SITELIBDIR%%/hgext/blackbox.pyc
 %%PYTHON_SITELIBDIR%%/hgext/blackbox.pyo
@@ -252,9 +255,6 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/hgext/narrow/narrowdirstate.py
 %%PYTHON_SITELIBDIR%%/hgext/narrow/narrowdirstate.pyc
 %%PYTHON_SITELIBDIR%%/hgext/narrow/narrowdirstate.pyo
-%%PYTHON_SITELIBDIR%%/hgext/narrow/narrowmerge.py
-%%PYTHON_SITELIBDIR%%/hgext/narrow/narrowmerge.pyc
-%%PYTHON_SITELIBDIR%%/hgext/narrow/narrowmerge.pyo
 %%PYTHON_SITELIBDIR%%/hgext/narrow/narrowpatch.py
 %%PYTHON_SITELIBDIR%%/hgext/narrow/narrowpatch.pyc
 %%PYTHON_SITELIBDIR%%/hgext/narrow/narrowpatch.pyo
@@ -453,6 +453,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/diffhelper.py
 %%PYTHON_SITELIBDIR%%/mercurial/diffhelper.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/diffhelper.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/diffutil.py
+%%PYTHON_SITELIBDIR%%/mercurial/diffutil.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/diffutil.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/dirstate.py
 %%PYTHON_SITELIBDIR%%/mercurial/dirstate.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/dirstate.pyo
@@ -507,6 +510,7 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/help/common.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/config.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/dates.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/deprecated.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/diffs.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/environment.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/extensions.txt
@@ -770,6 +774,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/stack.py
 %%PYTHON_SITELIBDIR%%/mercurial/stack.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/stack.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/state.py
+%%PYTHON_SITELIBDIR%%/mercurial/state.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/state.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/statichttprepo.py
 %%PYTHON_SITELIBDIR%%/mercurial/statichttprepo.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/statichttprepo.pyo
