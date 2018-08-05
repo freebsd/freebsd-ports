@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cquery
-PORTVERSION=	20180302
+PORTVERSION=	20180718
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -23,7 +23,8 @@ GH_TUPLE=	miloyip:rapidjson:daabb88:rapidjson/third_party/rapidjson \
 		onqtam:doctest:b40b7e7:doctest/third_party/doctest \
 		greg7mdp:sparsepp:1ca7189:sparsepp/third_party/sparsepp \
 		msgpack:msgpack-c:208595b:msgpack/third_party/msgpack-c \
-		emilk:loguru:2c35b5e:loguru/third_party/loguru
+		emilk:loguru:6bf94c:loguru/third_party/loguru \
+		zeux:pugixml:24a7064:pugixml/third_party/pugixml
 
 PLIST_FILES=	bin/cquery
 
