@@ -2,7 +2,7 @@
 
 PORTNAME=	cloud-init
 PORTVERSION=	18.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net python
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -46,6 +46,6 @@ post-patch:
 	@${RM} ${WRKSRC}/sysvinit/freebsd/*.orig
 
 post-build:
-	@cd ${WRKSRC} && ${MV} sysvinit/freebsd/cloudconfig config/cloud.cfg
+	(cd ${WRKSRC} && ${MV} sysvinit/freebsd/cloudconfig config/cloud.cfg)
 
 .include <bsd.port.mk>
