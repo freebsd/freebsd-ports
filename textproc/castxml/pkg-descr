@@ -1,0 +1,8 @@
+Parse C-family source files and optionally write a subset of the Abstract Syntax
+Tree (AST) to a representation in XML.
+
+Source files are parsed as complete translation units using an internal Clang
+compiler. XML output is enabled by the --castxml-output=<v> or --castxml-gccxml
+option.
+
+WWW: https://github.com/CastXML/CastXML
