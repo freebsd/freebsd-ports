@@ -2,7 +2,7 @@
 
 PORTNAME=	urbackup-server
 DISTVERSION=	2.2.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	https://hndl.urbackup.org/Server/${DISTVERSION}/
 
@@ -32,8 +32,8 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/urbackupsrv.conf.sample-daemon \
 		${STAGEDIR}${PREFIX}/etc/urbackup/urbackupsrv.conf.sample
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
-	${INSTALL_DATA} ${FILESDIR}/urbackupsrv.conf.sample-newsyslog \
-		${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/urbackupsrv.conf.sample
+	${INSTALL_DATA} ${FILESDIR}/urbackupsrv.conf-newsyslog \
+		${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/urbackupsrv.conf
 
 	${INSTALL_MAN} ${WRKSRC}/docs/urbackupsrv.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
