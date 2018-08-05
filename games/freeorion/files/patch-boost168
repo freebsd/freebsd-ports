@@ -1,24 +1,5 @@
-https://github.com/freeorion/freeorion/pull/2221
+https://github.com/freeorion/freeorion/pull/2241
 
---- GG/CMakeLists.txt.orig	2018-06-14 14:12:09 UTC
-+++ GG/CMakeLists.txt
-@@ -144,6 +144,16 @@ if(USE_STATIC_LIBS)
-     )
- endif()
- 
-+target_compile_definitions(GiGi
-+    PRIVATE
-+
-+        # Starting with boost 1.68 boost::gil integrates support for
-+        # grayscale-alpha png images, so prefer their implementation
-+        # instead of our hacky gilext code.
-+        $<$<VERSION_LESS:${Boost_MAJOR_VERSION}.${Boost_MINOR_VERSION},1.68>:GIGI_CONFIG_USE_OLD_IMPLEMENTATION_OF_GIL_PNG_IO>
-+        $<$<VERSION_GREATER:${Boost_MAJOR_VERSION}.${Boost_MINOR_VERSION},1.67>:BOOST_GIL_IO_ENABLE_GRAY_ALPHA>
-+)
-+
- target_include_directories(GiGi SYSTEM
-     PRIVATE
-         ${Boost_INCLUDE_DIRS}
 --- GG/src/GUI.cpp.orig	2018-06-14 14:12:09 UTC
 +++ GG/src/GUI.cpp
 @@ -37,14 +37,19 @@
@@ -28,7 +9,7 @@ https://github.com/freeorion/freeorion/pull/2221
 -# if __GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ > 7)
 -#  pragma GCC diagnostic push
 -#  pragma GCC diagnostic ignored "-Wunused-local-typedefs"
-+# if GIGI_CONFIG_USE_OLD_IMPLEMENTATION_OF_GIL_PNG_IO
++# if BOOST_VERSION < 106800
 +#  if __GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ > 7)
 +#   pragma GCC diagnostic push
 +#   pragma GCC diagnostic ignored "-Wunused-local-typedefs"
@@ -77,7 +58,7 @@ https://github.com/freeorion/freeorion/pull/2221
  
  #if GG_HAVE_LIBPNG
 -# include "gilext/io/png_dynamic_io.hpp"
-+# if GIGI_CONFIG_USE_OLD_IMPLEMENTATION_OF_GIL_PNG_IO
++# if BOOST_VERSION < 106800
 +#  include "gilext/io/png_dynamic_io.hpp"
 +#  include "gilext/io/png_io_v2_compat.hpp"
 +# else
