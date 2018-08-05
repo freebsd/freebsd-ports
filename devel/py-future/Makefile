@@ -17,7 +17,7 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
-regression-test: build
+do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
