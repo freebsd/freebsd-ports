@@ -166,6 +166,10 @@ CPP:=			cpp
 .endfor
 .undef V
 
+# Now filter unsupported flags for CC and CXX.
+CFLAGS:=		${CFLAGS:N-mretpoline}
+CXXFLAGS:=		${CXXFLAGS:N-mretpoline}
+
 .if defined(_GCC_PORT_DEPENDS)
 BUILD_DEPENDS+=	${_GCC_PORT_DEPENDS}:lang/${_GCC_PORT}
 RUN_DEPENDS+=	${_GCC_PORT_DEPENDS}:lang/${_GCC_PORT}
