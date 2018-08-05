@@ -12,6 +12,8 @@ COMMENT=	Tool to generate documentation for Elixir projects
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi
 
+BROKEN=		fails to build
+
 USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	elixir-lang
