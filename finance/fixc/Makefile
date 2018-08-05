@@ -1,18 +1,18 @@
 # $FreeBSD$
 
-PORTNAME=	fixc
-PORTVERSION=	1.0
+PORTNAME=		fixc
+PORTVERSION=		1.2
 DISTVERSIONPREFIX=	v
-CATEGORIES=	finance
+CATEGORIES=		finance
 
-MAINTAINER=	blttll@gmail.com
-COMMENT=	Simple Financial Information eXchange (FIX) protocol console client
+MAINTAINER=		blttll@gmail.com
+COMMENT=		Simple Financial Information eXchange (FIX) protocol console client
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
+BUILD_DEPENDS=		${LOCALBASE}/bin/go:lang/go
 
-PLIST_FILES=	bin/fixc
-USE_GITHUB=	yes
-GH_ACCOUNT=	blttll
+PLIST_FILES=		bin/fixc
+USE_GITHUB=		yes
+GH_ACCOUNT=		blttll
 
 do-build:
 	@cd ${WRKSRC} && \
