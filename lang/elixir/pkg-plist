@@ -633,7 +633,7 @@ man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/eex/EEx.html
 %%PORTDOCS%%%%DOCSDIR%%/eex/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/eex/assets/logo.png
-%%PORTDOCS%%%%DOCSDIR%%/eex/dist/app-4b38423804.css
+%%PORTDOCS%%%%DOCSDIR%%/eex/dist/app-240d7fc7e5.css
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/app-a0c90688fa.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/sidebar_items-b44f37d3d1.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/fonts/icomoon.eot
@@ -752,7 +752,7 @@ man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/elixir/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/assets/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/elixir/compatibility-and-deprecations.html
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/app-4b38423804.css
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/app-240d7fc7e5.css
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/app-a0c90688fa.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-cdf4e58b19.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/fonts/icomoon.eot
@@ -790,7 +790,7 @@ man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.html
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/assets/logo.png
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/app-4b38423804.css
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/app-240d7fc7e5.css
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/app-a0c90688fa.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/sidebar_items-ca7df477cf.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/fonts/icomoon.eot
@@ -806,7 +806,7 @@ man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/iex/IEx.html
 %%PORTDOCS%%%%DOCSDIR%%/iex/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/iex/assets/logo.png
-%%PORTDOCS%%%%DOCSDIR%%/iex/dist/app-4b38423804.css
+%%PORTDOCS%%%%DOCSDIR%%/iex/dist/app-240d7fc7e5.css
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/app-a0c90688fa.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/sidebar_items-6ccc90797b.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/fonts/icomoon.eot
@@ -821,7 +821,7 @@ man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/logger/Logger.html
 %%PORTDOCS%%%%DOCSDIR%%/logger/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/logger/assets/logo.png
-%%PORTDOCS%%%%DOCSDIR%%/logger/dist/app-4b38423804.css
+%%PORTDOCS%%%%DOCSDIR%%/logger/dist/app-240d7fc7e5.css
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/app-a0c90688fa.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/sidebar_items-17aeec0e2f.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/fonts/icomoon.eot
@@ -897,7 +897,7 @@ man/man1/mix.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/assets/logo.png
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/app-4b38423804.css
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/app-240d7fc7e5.css
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/app-a0c90688fa.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/sidebar_items-0c0044e6e4.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/fonts/icomoon.eot
