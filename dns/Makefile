@@ -111,6 +111,7 @@
     SUBDIR += mdnsd
     SUBDIR += mydns
     SUBDIR += mydns-ng
+    SUBDIR += namesilo_ddns
     SUBDIR += noip
     SUBDIR += nsd
     SUBDIR += nslint

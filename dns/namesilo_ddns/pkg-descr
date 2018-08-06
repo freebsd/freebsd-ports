@@ -1,0 +1,6 @@
+Dynamic DNS record update with NameSilo.
+
+This is a shell script to update Namesilo's DNS record when IP changed.
+Set to run this script as cronjob in your system.
+
+WWW: https://github.com/crees/namesilo_ddns
