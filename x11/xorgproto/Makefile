@@ -14,4 +14,7 @@ CONFIGURE_ARGS= --without-fop \
 		--without-xsltproc \
 		--enable-legacy
 
+pre-patch:
+	@${MKDIR} ${WRKSRC}/man
+
 .include <bsd.port.mk>
