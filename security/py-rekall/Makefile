@@ -3,6 +3,7 @@
 
 PORTNAME=	rekall
 DISTVERSION=	1.7.2rc1
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rekall_lib>=1.7.1:security/py-rekall_lib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rekall-core>=1.7.1:security/py-rekall-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ipython>=5.0.0:devel/ipython@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}ipython5>=5.0.0:devel/ipython5@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python shebangfix zip
