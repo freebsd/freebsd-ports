@@ -3,6 +3,7 @@
 
 PORTNAME=	umurmur
 DISTVERSION=	0.2.17
+PORTREVISION=	1
 CATEGORIES=	audio net
 
 MAINTAINER=	ayu@commun.jp

@@ -2,6 +2,7 @@
 
 PORTNAME=	ldc
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ldc-developers/ldc/releases/download/v${PORTVERSION}/:source \
 		https://github.com/ldc-developers/ldc/releases/download/v${BOOTVER}/:bootstrap

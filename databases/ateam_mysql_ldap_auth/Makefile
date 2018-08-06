@@ -3,6 +3,7 @@
 
 PORTNAME=	ateam_mysql_ldap_auth
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	ganbold@FreeBSD.org
