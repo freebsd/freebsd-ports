@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	Flask-Migrate
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database schema migrations for Flask applications
 
 LICENSE=	MIT
