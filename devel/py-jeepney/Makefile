@@ -13,6 +13,7 @@ COMMENT=	Low-level, pure Python DBus protocol wrapper
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils
 USES=		python:3.5+
 
