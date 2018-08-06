@@ -1,8 +1,8 @@
---- plugins/node.d/multiping.in.orig	2014-11-24 21:46:24 UTC
+--- plugins/node.d/multiping.in.orig	2018-07-24 11:34:38 UTC
 +++ plugins/node.d/multiping.in
-@@ -59,6 +59,7 @@ if [ -z "$host" ]; then
-     host=${host:-${file_host:-www.google.com}}
- fi
+@@ -58,6 +58,7 @@ Foundation, Inc., 51 Franklin Street, Fi
+ host=${host:-www.google.com}
+ 
  
 +site=0
  if [ "$1" = "config" ]; then

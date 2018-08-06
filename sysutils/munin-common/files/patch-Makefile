@@ -1,6 +1,6 @@
---- Makefile.orig	2018-06-29 00:50:01 UTC
+--- Makefile.orig	2018-07-24 11:34:38 UTC
 +++ Makefile
-@@ -68,60 +68,47 @@ install: install-master-prime install-co
+@@ -93,60 +93,47 @@ install: install-master-prime install-co
  
  install-pre: Makefile Makefile.config
  	@$(CHECKUSER)
@@ -88,7 +88,7 @@
  
  # Not ready to be installed yet
  # $(INSTALL) -m 0755 build/master/_bin/munin-gather $(LIBDIR)/
-@@ -131,36 +118,30 @@ install-node-plugins: install-plugins-pr
+@@ -156,36 +143,30 @@ install-node-plugins: install-plugins-pr
  install-plugins-prime: install-plugins build $(PLUGINS) Makefile Makefile.config
  	@$(CHECKGROUP)
  
@@ -108,14 +108,14 @@
  	@# Process the OS specific plugins at the end. Otherwise they would be overridden by the
  	@# generic ones.
  	for p in build/plugins/node.d/* build/plugins/node.d.$(OSTYPE)/* ; do \
- 	    if test -f "$$p" ; then                            \
- 		echo Installing $$p;                           \
--		$(INSTALL) -m 0755 $$p $(LIBDIR)/plugins/;     \
-+		$(INSTALL) -m 0755 $$p $(DESTDIR)$(LIBDIR)/plugins/;     \
- 	    fi                                                 \
+ 		if test -f "$$p"; then \
+ 			echo Installing $$p; \
+-			$(INSTALL) -m 0755 $$p $(LIBDIR)/plugins/; \
++			$(INSTALL) -m 0755 $$p $(DESTDIR)$(LIBDIR)/plugins/;     \
+ 		fi \
  	done
 -	@# Some HP-UX plugins need *.adv support files in LIBDIR
--	if [ "$(OSTYPE)" = "hp-ux" ]; then mv $(LIBDIR)/plugins/*.adv $(LIBDIR); done
+-	if [ "$(OSTYPE)" = "hp-ux" ]; then mv $(LIBDIR)/plugins/*.adv $(LIBDIR); fi
 -	$(INSTALL) -m 0644 build/plugins/plugins.history $(LIBDIR)/plugins/
 -	$(INSTALL) -m 0644 build/plugins/plugin.sh $(LIBDIR)/plugins/
 +	$(INSTALL) -m 0644 build/plugins/plugins.history $(DESTDIR)$(LIBDIR)/plugins/
@@ -128,15 +128,15 @@
 +	mkdir -p $(DESTDIR)$(JAVALIBDIR)
 +	$(INSTALL) -m 0644 build/plugins/javalib/munin-jmx-plugins.jar $(DESTDIR)$(JAVALIBDIR)/
 +	mkdir -p $(DESTDIR)$(LIBDIR)/plugins
- 	for p in build/plugins/node.d.java/*; do               \
- 	    if test -f "$$p" ; then                            \
- 		echo Installing $$p;                           \
--		$(INSTALL) -m 0755 $$p $(LIBDIR)/plugins/;     \
-+		$(INSTALL) -m 0755 $$p $(DESTDIR)$(LIBDIR)/plugins/;     \
- 	    fi                                                 \
+ 	for p in build/plugins/node.d.java/*; do \
+ 		if test -f "$$p"; then \
+ 			echo Installing $$p; \
+-			$(INSTALL) -m 0755 $$p $(LIBDIR)/plugins/; \
++			$(INSTALL) -m 0755 $$p $(DESTDIR)$(LIBDIR)/plugins/;     \
+ 		fi \
  	done
  
-@@ -171,14 +152,14 @@ install-plugins-java: build-plugins-java
+@@ -196,14 +177,14 @@ install-plugins-java: build-plugins-java
  install-async-prime: install-async
  
  install-async:
@@ -155,7 +155,7 @@
  
  
  install-common-prime: build-common install-common
-@@ -444,7 +425,7 @@ t/install:
+@@ -491,7 +472,7 @@ t/install:
  
  # This builds */Build from Build.PL
  %/Build: %/Build.PL
@@ -164,11 +164,11 @@
  
  build-%: %/Build
  	cd $* && $(PERL) Build
-@@ -461,6 +442,7 @@ install-%: %/Build
-             --install_path sbin=$(SBINDIR)		\
-             --install_path bindoc=$(MANDIR)/man1	\
-             --install_path libdoc=$(MANDIR)/man3	\
-+	    --destdir=$(DESTDIR)
+@@ -507,6 +488,7 @@ install-%: %/Build
+ 		--install_path script=$(BINDIR) \
+ 		--install_path sbin=$(SBINDIR) \
+ 		--install_path bindoc=$(MANDIR)/man1 \
++		--destdir=$(DESTDIR) \
+ 		--install_path libdoc=$(MANDIR)/man3
  
  test-%: %/Build
- 	cd $* && $(PERL) Build test --verbose=0 || true

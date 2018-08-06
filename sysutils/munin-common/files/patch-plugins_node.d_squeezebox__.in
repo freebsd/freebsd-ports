@@ -1,38 +1,38 @@
---- plugins/node.d/squeezebox_.in.orig	2018-03-25 14:01:24 UTC
+--- plugins/node.d/squeezebox_.in.orig	2018-07-24 11:34:38 UTC
 +++ plugins/node.d/squeezebox_.in
-@@ -157,7 +157,7 @@ if [ "$CMD" = "years" ]; then
+@@ -152,7 +152,7 @@ if [ "$CMD" = "years" ]; then
  		printf "graph_order y"
-         echo $years_array | sed 's/ / y/g'
+                 echo "${years_array// / y}"
  
--		for i in `seq 0 $no_of_years`; do
-+		for i in `jot - 0 $no_of_years`; do
- 			year=$(echo ${arr1[$i]})
- 			if [ $year = 0 ]; then
- 				echo y0.label No year
-@@ -172,7 +172,7 @@ if [ "$CMD" = "years" ]; then
- 		done
- 		exit 0
- 	fi
--	for i in `seq 0 $no_of_years`; do
-+	for i in `jot - 0 $no_of_years`; do
- 		year=$(echo ${arr1[$i]})
- 		printf "y%s.value " ${year}
- 		printf "%b" "albums 0 0 year:${year}\nexit\n" | $NC $HOST $PORT | sed 's/%3A/:/g' | cut -d ':' -f 3
-@@ -183,7 +183,7 @@ elif [ "$CMD" = "signalstrength" -o "$CM
-             echo "graph_category radio"
-             COUNT=$(printf "%b" "player count ?\nexit\n" | $NC $HOST $PORT | cut -d " " -f 3)
-             (( COUNT-- ))
--            for ID in $(seq 0 $COUNT); do
-+            for ID in $(jot - 0 $COUNT); do
-                 MAC=$(printf "%b" "player id $ID ?\nexit\n" | $NC $HOST $PORT | cut -d " " -f 4 | sed 's/%3A/:/g')
- 		NAME=$(printf "%b" "player name $MAC ?\nexit\n" | $NC $HOST $PORT | cut -d " " -f 4 | sed 's/%20/ /g')
- 		MAC2=$(echo $MAC | sed 's/://g; s/\./_/g')
-@@ -193,7 +193,7 @@ elif [ "$CMD" = "signalstrength" -o "$CM
+-                for i in $(seq 0 "$no_of_years"); do
++                for i in $(jot - 0 "$no_of_years"); do
+                         year=${arr1[$i]}
+                         if [ "$year" = 0 ]; then
+                                 echo "y0.label No year"
+@@ -167,7 +167,7 @@ if [ "$CMD" = "years" ]; then
+                 done
+                 exit 0
          fi
-         COUNT=$(printf "%b" "player count ?\nexit\n" | $NC $HOST $PORT | cut -d " " -f 3)
+-        for i in $(seq 0 "$no_of_years"); do
++        for i in $(jot - 0 "$no_of_years"); do
+                 year=${arr1[$i]}
+                 printf "y%s.value " "$year"
+                 printf "%b" "albums 0 0 year:${year}\\nexit\\n" | "$NC" "$HOST" "$PORT" | sed 's/%3A/:/g' | cut -d ':' -f 3
+@@ -178,7 +178,7 @@ elif [ "$CMD" = "signalstrength" ] || [ 
+             echo "graph_category radio"
+             COUNT=$(printf "%b" 'player count ?\nexit\n' | "$NC" "$HOST" "$PORT" | cut -d " " -f 3)
+             (( COUNT-- ))
+-            for ID in $(seq 0 "$COUNT"); do
++            for ID in $(jot - 0 "$COUNT"); do
+                 MAC=$(printf "%b" "player id $ID ?\\nexit\\n" | "$NC" "$HOST" "$PORT" | cut -d " " -f 4 | sed 's/%3A/:/g')
+                 NAME=$(printf "%b" "player name $MAC ?\\nexit\\n" | "$NC" "$HOST" "$PORT" | cut -d " " -f 4 | sed 's/%20/ /g')
+                 MAC2=${MAC//:/}
+@@ -189,7 +189,7 @@ elif [ "$CMD" = "signalstrength" ] || [ 
+         fi
+         COUNT=$(printf "%b" 'player count ?\nexit\n' | "$NC" "$HOST" "$PORT" | cut -d " " -f 3)
          (( COUNT-- ))
--        for ID in $(seq 0 $COUNT); do
-+        for ID in $(jot - 0 $COUNT); do
-             MAC=$(printf "%b" "player id $ID ?\nexit\n" | $NC $HOST $PORT | cut -d " " -f 4 | sed 's/%3A/:/g')
-             VAL=$(printf "%b" "$MAC $CMD ?\nexit\n"| $NC $HOST $PORT | cut -d " " -f 2- | sed "s/$CMD //")
-             MAC2=$(echo $MAC| sed 's/://g')
+-        for ID in $(seq 0 "$COUNT"); do
++        for ID in $(jot - 0 "$COUNT"); do
+             MAC=$(printf "%b" "player id $ID ?\\nexit\\n" | "$NC" "$HOST" "$PORT" | cut -d " " -f 4 | sed 's/%3A/:/g')
+             VAL=$(printf "%b" "$MAC $CMD ?\\nexit\\n"| "$NC" "$HOST" "$PORT" | cut -d " " -f 2- | sed "s/$CMD //")
+             MAC2=${MAC//:/}

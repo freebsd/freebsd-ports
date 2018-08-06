@@ -18,7 +18,7 @@ USES=		gmake perl5 cpe
 
 .include "${.CURDIR}/../munin-common/munin.mk"
 
-ALL_TARGET=	build-common-prime
+ALL_TARGET=	build-common
 INSTALL_TARGET=	install-common
 NO_ARCH=	yes
 
