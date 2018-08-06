@@ -4,6 +4,7 @@
 %%SITE_ARCH%%/Filter/cpp.pm
 %%SITE_ARCH%%/Filter/decrypt.pm
 %%SITE_ARCH%%/Filter/exec.pm
+%%SITE_ARCH%%/Filter/m4.pm
 %%SITE_ARCH%%/Filter/sh.pm
 %%SITE_ARCH%%/Filter/tee.pm
 %%SITE_ARCH%%/auto/Filter/Util/Call/Call.so
@@ -16,5 +17,6 @@
 %%PERL5_MAN3%%/Filter::cpp.3.gz
 %%PERL5_MAN3%%/Filter::decrypt.3.gz
 %%PERL5_MAN3%%/Filter::exec.3.gz
+%%PERL5_MAN3%%/Filter::m4.3.gz
 %%PERL5_MAN3%%/Filter::sh.3.gz
 %%PERL5_MAN3%%/Filter::tee.3.gz
