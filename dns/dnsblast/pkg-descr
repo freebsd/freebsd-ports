@@ -1,0 +1,7 @@
+Simple load testing tool for DNS resolvers.
+
+Give it the IP address of a resolver, the total number of queries you want to
+send, the rate (number of packets per second), and dnsblast will tell you how
+well the resolver is able to keep up.
+
+WWW: https://github.com/jedisct1/dnsblast
