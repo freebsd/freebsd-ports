@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipython
-PORTVERSION=	5.8.0
+PORTVERSION=	6.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,11 +20,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>=0:misc/py-pexpect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}prompt_toolkit>=1.0.4:devel/py-prompt_toolkit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}simplegeneric>0.8:devel/py-simplegeneric@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}traitlets>=4.2:devel/py-traitlets@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}traitlets>=4.2:devel/py-traitlets@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jedi>=0.10:devel/py-jedi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}backcall>=0.1.0:devel/py-backcall@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.3+
 USE_PYTHON=	autoplist concurrent distutils
-USE_GCC=	yes # To be removed - Needed as a work-around for numpy, see PR ports/188114
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
@@ -32,9 +33,6 @@ PORTEXAMPLES=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.shutil_get_terminal_size>=0:devel/py-backports.shutil_get_terminal_size@${PY_FLAVOR}
-.endif
 .if ${PYTHON_REL} < 3400
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pathlib2>=0:devel/py-pathlib2@${PY_FLAVOR}
 .endif
