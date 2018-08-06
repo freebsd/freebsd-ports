@@ -48,6 +48,7 @@ share/pixmaps/sigil.png
 %%DATADIR%%/python3lib/xmlprocessor.py
 %%DATADIR%%/python3lib/xmlsanitycheck.py
 %%DATADIR%%/translations/sigil_af.qm
+%%DATADIR%%/translations/sigil_az.qm
 %%DATADIR%%/translations/sigil_ca.qm
 %%DATADIR%%/translations/sigil_cs.qm
 %%DATADIR%%/translations/sigil_da_DK.qm
@@ -68,6 +69,7 @@ share/pixmaps/sigil.png
 %%DATADIR%%/translations/sigil_pt_BR.qm
 %%DATADIR%%/translations/sigil_ru.qm
 %%DATADIR%%/translations/sigil_sr.qm
+%%DATADIR%%/translations/sigil_th.qm
 %%DATADIR%%/translations/sigil_tr.qm
 %%DATADIR%%/translations/sigil_zh.qm
 %%DATADIR%%/translations/sigil_zh_CN.qm
