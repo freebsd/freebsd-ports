@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openfx-misc
-PORTVERSION=	2.3.13
+PORTVERSION=	2.3.14
 CATEGORIES=	graphics
 
 MAINTAINER=	olivier@FreeBSD.org
