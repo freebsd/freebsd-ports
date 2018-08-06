@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180806:
+  AFFECTS: www/tt-rss
+  AUTHOR: thierry@FreeBSD.org
+
+  tt-rss now uses pdo_mysql/pgsql for database acccess; a web server reload
+  will be required if pdo ext. isn't installed.
+
 20180804:
   AFFECTS: net-mgmt/zabbix*-server
   AUTHOR: dbaio@FreeBSD.org
