@@ -2,22 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	libconfig
-PORTVERSION=	1.4.9
-PORTREVISION=	1
+PORTVERSION=	1.7.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
-MASTER_SITES=	http://www.hyperrealm.com/libconfig/
 
 MAINTAINER=	ntarmos@ceid.upatras.gr
 COMMENT=	Simple library for manipulating structured configuration files
 
 LICENSE=	LGPL21
 
-CONFLICTS=	wand-libconfig-[0-9]*
+BUILD_DEPENDS=	makeinfo:print/texinfo
 
-USES=		libtool pathfix
+USES=	autoreconf libtool pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH}
-INFO=		libconfig
+CONFIGURE_ARGS+=	--prefix=${PREFIX}
+
+USE_GITHUB=	YES
+GH_ACCOUNT=	hyperrealm
+
+CONFLICTS=	wand-libconfig-[0-9]*
+
+INFO=	libconfig
 
 .include <bsd.port.mk>
