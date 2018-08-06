@@ -9,11 +9,11 @@ CATEGORIES=	textproc
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	EBML (Extensible Binary Meta Language), sort of binary version of XML
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL
 
 USES=		cmake pathfix tar:bzip2
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Matroska-Org
