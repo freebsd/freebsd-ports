@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspec
-PORTVERSION=	3.7.0
+PORTVERSION=	3.8.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,9 +12,9 @@ COMMENT=	Behaviour Driven Development in Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-rspec-core>=${PORTVERSION:R}:devel/rubygem-rspec-core \
-		rubygem-rspec-expectations>=${PORTVERSION:R}:devel/rubygem-rspec-expectations \
-		rubygem-rspec-mocks>=${PORTVERSION:R}:devel/rubygem-rspec-mocks
+RUN_DEPENDS=	rubygem-rspec-core>=${PORTVERSION:R}.0:devel/rubygem-rspec-core \
+		rubygem-rspec-expectations>=${PORTVERSION:R}.0:devel/rubygem-rspec-expectations \
+		rubygem-rspec-mocks>=${PORTVERSION:R}.0:devel/rubygem-rspec-mocks
 
 NO_ARCH=	yes
 USE_RUBY=	yes
