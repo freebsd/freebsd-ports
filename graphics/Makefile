@@ -492,6 +492,7 @@
     SUBDIR += l2p
     SUBDIR += largetifftools
     SUBDIR += laternamagica
+    SUBDIR += lazpaint
     SUBDIR += lcdtest
     SUBDIR += lcms
     SUBDIR += lcms-python
