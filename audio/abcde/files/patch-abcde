@@ -1,14 +1,11 @@
---- abcde.orig	2018-03-15 16:01:58 UTC
-+++ abcde
-@@ -2108,7 +2108,10 @@ do_discid ()
+--- abcde.orig	2018-08-07 10:53:58.070134000 +0200
++++ abcde	2018-08-07 10:54:34.101817000 +0200
+@@ -2110,7 +2110,7 @@
+ 				CDPARANOIAAUDIOTRACKS="$TRACKS"
  
  				LEADOUT="$(echo "$CDPARANOIAOUTPUT" | grep -Eo '^TOTAL[[:space:]]+([[:digit:]]+)' | get_last)"
- 				OFFSETS="$(echo "$CDPARANOIAOUTPUT" | sed -n -e's/^ .* \([0-9]\+\) \[.*/\1/p')"
--				makeids
-+				case "$CDDBMETHOD" in
-+					cddb) TRACKINFO=$($CDDISCID "$CDROM") ;;
-+					musicbrainz) TRACKINFO=$($MUSICBRAINZ --command id --device "$CDROM") ;;
-+				esac
+-				OFFSETS="$(echo "$CDPARANOIAOUTPUT" | sed -n -e's/^ .* \([0-9]\+\) \[.*/\1/p')"
++				OFFSETS="$(echo "$CDPARANOIAOUTPUT" | awk '/^ +.*\[/ {print $4}')"
+ 				makeids
  				;;
  			*)
- 				# Calculate the cddb discid in all
