@@ -173,6 +173,9 @@ BUILD_DEPENDS+=		${linux_${i:C/:.*//}_DEP}
 .if ${_i_args:Mrun} || empty(_i_args)
 RUN_DEPENDS+=		${linux_${i:C/:.*//}_DEP}
 .endif
+.if !defined(linux_${i:C/:.*//}_DEP)
+DEV_ERROR+=		"USE_LINUX=${i}: package does not exist"
+.endif
 .endfor
 
 .ifdef USE_LINUX_RPM
