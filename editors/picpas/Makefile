@@ -11,6 +11,10 @@ COMMENT=	Multi-platform Pascal for Microchip PIC16F microcontrollers
 
 LICENSE=	GPLv2
 
+gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt4 ${PORTNAME}-qt5
+qt4_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt5
+qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt4
+
 USES=		dos2unix fpc lazarus:flavors
 USE_FPC=	chm fcl-base fcl-image fcl-json fcl-registry fcl-xml pasjpeg regexpr \
 		rtl-objpas x11
@@ -32,10 +36,6 @@ USE_FPC_gtk2=	cairo
 USE_GNOME_gtk2=	cairo
 USE_FPC+=	${USE_FPC_${FLAVOR}}
 USE_GNOME+=	${USE_GNOME_${FLAVOR}}
-
-gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt4 ${PORTNAME}-qt5
-qt4_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt5
-qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt4
 
 LAZARUS_PROJECT_FILES=	Source/PicPas.lpi
 LAZBUILD_ARGS=		-d
