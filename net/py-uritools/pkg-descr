@@ -1,0 +1,14 @@
+This module defines RFC 3986 compliant replacements for the most commonly used
+functions of the Python 2.7 Standard Library urlparse and Python 3 urllib.parse
+modules.
+
+For various reasons, the Python 2 urlparse module is not compliant with current
+Internet standards, does not include Unicode support, and is generally unusable
+with proprietary URI schemes. Python 3's urllib.parse improves on Unicode
+support, but the other issues still remain.
+
+This module aims to provide fully RFC 3986 compliant replacements for some
+commonly used functions found in urlparse and urllib.parse, plus additional
+functions for conveniently composing URIs from their individual components.
+
+WWW: https://github.com/tkem/uritools
