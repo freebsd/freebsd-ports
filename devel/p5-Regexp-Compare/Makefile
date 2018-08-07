@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Regexp-Compare
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,10 +19,4 @@ USES=		perl5
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Regexp/Compare/Compare.so
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 502700
-BROKEN=		does not support 5.27+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
