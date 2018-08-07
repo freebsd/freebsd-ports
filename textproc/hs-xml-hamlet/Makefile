@@ -9,6 +9,7 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Hamlet-style quasiquoter for XML content
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_CABAL=	shakespeare>=1.0 xml-conduit>=1.0
 
