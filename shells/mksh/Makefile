@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mksh
-PORTVERSION=	56b
+PORTVERSION=	56c
 DISTVERSIONPREFIX=	R
 CATEGORIES=	shells
 MASTER_SITES=	http://www.mirbsd.org/MirOS/dist/mir/mksh/ \
