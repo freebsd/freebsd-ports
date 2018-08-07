@@ -1,11 +1,11 @@
---- src/BUILD.orig	2017-07-31 10:06:21.426927000 +0200
-+++ src/BUILD	2017-07-31 10:06:44.279345000 +0200
-@@ -179,7 +179,7 @@
+--- src/BUILD.orig	2018-07-03 14:19:05.449739000 +0000
++++ src/BUILD	2018-07-03 14:20:02.053187000 +0000
+@@ -172,7 +172,7 @@
              "//src/java_tools/singlejar:SingleJar_deploy.jar",
          ],
          "//conditions:default": [
--            "//src/tools/singlejar:singlejar",
+-            "//src/tools/singlejar:singlejar_local",
 +            "//src/java_tools/singlejar:SingleJar_deploy.jar",
          ],
-     }) + select({
-         "//tools/jdk:jdk7": [],
+     }) + ([":embedded_jdk"] if (suffix == "") else []),
+     visibility = [
