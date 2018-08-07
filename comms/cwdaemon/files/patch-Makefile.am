@@ -1,0 +1,17 @@
+--- Makefile.am.orig	2015-10-07 17:45:16 UTC
++++ Makefile.am
+@@ -51,14 +51,8 @@ install-data-local:
+ 	$(INSTALL_DATA) $(srcdir)/doc/schematics/serialport_circuit.jpg $(DESTDIR)$(pkgdatadir)
+ 
+         # The scripts will be installed as executable.
+-	$(INSTALL_SCRIPT) $(srcdir)/examples/example.sh $(DESTDIR)$(pkgdatadir)
+-	$(INSTALL_SCRIPT) $(srcdir)/examples/example.pl $(DESTDIR)$(pkgdatadir)
+ 	$(INSTALL_SCRIPT) $(srcdir)/cwsetup.sh $(DESTDIR)$(pkgdatadir)
+ 
+-	$(INSTALL_DATA) $(srcdir)/examples/README $(DESTDIR)$(pkgdatadir)
+-	$(INSTALL_DATA) $(srcdir)/examples/example.c $(DESTDIR)$(pkgdatadir)
+-	$(INSTALL_DATA) $(srcdir)/examples/Makefile.am $(DESTDIR)$(pkgdatadir)
+-	$(INSTALL_DATA) $(srcdir)/examples/Makefile.in $(DESTDIR)$(pkgdatadir)
+ 	$(INSTALL_DATA) $(srcdir)/cwdaemon.png $(DESTDIR)$(pkgdatadir)
+ 
+ 
