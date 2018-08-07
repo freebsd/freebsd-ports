@@ -1,8 +1,8 @@
---- base/process/process_metrics_freebsd.cc.orig	2018-06-13 00:10:01.000000000 +0200
-+++ base/process/process_metrics_freebsd.cc	2018-07-20 00:07:42.005261000 +0200
-@@ -13,6 +13,10 @@
- #include "base/memory/ptr_util.h"
+--- base/process/process_metrics_freebsd.cc.orig	2018-08-01 00:08:25.000000000 +0200
++++ base/process/process_metrics_freebsd.cc	2018-08-04 21:48:06.554728000 +0200
+@@ -14,11 +14,14 @@
  #include "base/process/process_metrics_iocounters.h"
+ #include "base/stl_util.h"
  
 +#include <unistd.h> /* getpagesize() */
 +#include <fcntl.h>  /* O_RDONLY */
@@ -11,7 +11,13 @@
  namespace base {
  
  ProcessMetrics::ProcessMetrics(ProcessHandle process)
-@@ -61,6 +65,65 @@
+-    : process_(process),
+-      last_cpu_(0) {}
++    : process_(process) {}
+ 
+ // static
+ std::unique_ptr<ProcessMetrics> ProcessMetrics::CreateProcessMetrics(
+@@ -67,6 +70,65 @@
    pagesize = getpagesize();
  
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
