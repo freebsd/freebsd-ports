@@ -1,15 +1,15 @@
---- components/autofill_strings.grdp.orig	2017-12-15 02:04:14.000000000 +0100
-+++ components/autofill_strings.grdp	2017-12-24 11:25:08.009423000 +0100
-@@ -216,7 +216,7 @@
-       Do you want Chromium to save this card?
-     </message>
-   </if>
+--- components/autofill_strings.grdp.orig	2018-08-01 00:08:37.000000000 +0200
++++ components/autofill_strings.grdp	2018-08-04 17:51:10.986958000 +0200
+@@ -195,7 +195,7 @@
+   <message name="IDS_AUTOFILL_SAVE_CARD_PROMPT_CONFIRM" desc="Text to show for the Autofill upload save credit card prompt accept button when more information (e.g., CVC) was needed in order to save the card and was entered.">
+     Confirm
+   </message>
 -  <if expr="is_linux and not chromeos">
 +  <if expr="is_posix and not chromeos">
      <then>
        <message name="IDS_AUTOFILL_SAVE_CARD_PROMPT_TITLE_TO_CLOUD" desc="Title text for the Autofill save card prompt when the card is to be saved by uploading it to Google Payments and also saved locally. The prompt can be either a bubble or an infobar.">
          Do you want to save this card to your Google Account?
-@@ -234,7 +234,7 @@
+@@ -213,7 +213,7 @@
    <message name="IDS_AUTOFILL_SAVE_CARD_PROMPT_UPLOAD_EXPLANATION" desc="Explanation of the effect of the Autofill save card prompt when the card is to be saved by uploading it to Google Payments and also saved locally. The prompt can be either a bubble or an infobar.">
      Pay quickly on sites and apps across devices using cards you have saved with Google.
    </message>
@@ -18,3 +18,12 @@
      <then>
        <message name="IDS_AUTOFILL_SAVE_CARD_PROMPT_UPLOAD_EXPLANATION_V2" desc="Explanation of the effect of the Autofill save card prompt when the card is to be saved by uploading it to Google Payments, according to June 2017 UI guidelines. The prompt will be shown in a bubble below the omnibox.">
          To pay faster next time, save this card to your Google Account.
+@@ -225,7 +225,7 @@
+       </message>
+     </else>
+   </if>
+-  <if expr="is_linux and not chromeos">
++  <if expr="is_posix and not chromeos">
+     <then>
+       <message name="IDS_AUTOFILL_SAVE_CARD_PROMPT_UPLOAD_EXPLANATION_V3" desc="Explanation of the effect of the Autofill save card prompt when the card is to be saved by uploading it to Google Payments, according to April 2018 UI guidelines. The prompt will be shown in a bubble below the omnibox.">
+         To pay faster next time, save your card and billing address to your Google Account.

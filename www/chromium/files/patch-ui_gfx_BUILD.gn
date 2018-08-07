@@ -1,0 +1,11 @@
+--- ui/gfx/BUILD.gn.orig	2018-08-01 00:09:48.000000000 +0200
++++ ui/gfx/BUILD.gn	2018-08-04 22:24:28.133674000 +0200
+@@ -568,7 +568,7 @@
+     deps += [ "//third_party/libdrm" ]
+   }
+ 
+-  if (is_linux || is_android) {
++  if ((is_linux || is_android) && !is_bsd) {
+     deps += [ "//third_party/libsync" ]
+   }
+ 

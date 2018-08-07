@@ -1,6 +1,6 @@
---- third_party/angle/BUILD.gn.orig	2017-09-05 21:06:47.000000000 +0200
-+++ third_party/angle/BUILD.gn	2017-09-10 02:30:29.868194000 +0200
-@@ -239,6 +239,7 @@
+--- third_party/angle/BUILD.gn.orig	2018-08-01 00:10:50.000000000 +0200
++++ third_party/angle/BUILD.gn	2018-08-04 20:58:43.991734000 +0200
+@@ -271,6 +271,7 @@
          "X11",
          "Xi",
          "Xext",
@@ -8,12 +8,14 @@
        ]
      }
    }
-@@ -677,7 +678,7 @@
-       sources += rebase_path(util_gypi.util_win32_sources, ".", "util")
+@@ -844,10 +845,6 @@
+     libs = []
+     if (is_linux) {
+       sources += rebase_path(util_gypi.util_linux_sources, ".", "util")
+-      libs += [
+-        "rt",
+-        "dl",
+-      ]
      }
  
--    if (is_linux) {
-+    if (is_linux && !is_bsd) {
-       sources += rebase_path(util_gypi.util_linux_sources, ".", "util")
-       libs = [
-         "rt",
+     if (is_mac) {

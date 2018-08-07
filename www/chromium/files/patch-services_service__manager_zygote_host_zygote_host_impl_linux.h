@@ -1,6 +1,6 @@
---- content/browser/zygote_host/zygote_host_impl_linux.h.orig	2018-06-13 00:10:17.000000000 +0200
-+++ content/browser/zygote_host/zygote_host_impl_linux.h	2018-07-19 11:55:28.795795000 +0200
-@@ -41,8 +41,10 @@
+--- services/service_manager/zygote/host/zygote_host_impl_linux.h.orig	2018-08-04 19:08:46.425404000 +0200
++++ services/service_manager/zygote/host/zygote_host_impl_linux.h	2018-08-04 19:09:48.783775000 +0200
+@@ -44,8 +44,10 @@
                       base::ScopedFD* control_fd,
                       base::FileHandleMappingVector additional_remapped_fds);
  
