@@ -4,7 +4,7 @@
 PORTNAME=	spyder
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -52,7 +52,7 @@ SPHINX_DESC=	Rich text help on the Object Inspector
 SYMPY_DESC=	Symbolic mathematics in the IPython Console
 
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0.6:textproc/py-sphinx@${PY_FLAVOR}
-IPYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=1.0:devel/ipython@${PY_FLAVOR} \
+IPYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython5>=1.0:devel/ipython5@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pyzmq>=2.1.11:net/py-pyzmq@${PY_FLAVOR}
 MATPLOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=1.0:math/py-matplotlib@${PY_FLAVOR}
 NUMPY_RUN_DEPENDS=	${PYNUMPY}
