@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		pretend
-PORTVERSION=		1.0.8
+PORTVERSION=		1.0.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=		devel python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
@@ -20,5 +20,8 @@ USE_PYTHON=	autoplist distutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	alex
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
 
 .include <bsd.port.mk>
