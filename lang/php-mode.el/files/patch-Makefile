@@ -1,0 +1,11 @@
+--- Makefile.orig	2018-07-26 10:19:39 UTC
++++ Makefile
+@@ -6,7 +6,7 @@ ELCS = $(ELS:.el=.elc)
+ %.elc: %.el
+ 	$(EMACS) -Q -batch -L . -f batch-byte-compile $<
+ 
+-all: autoloads $(ELCS)
++all: $(ELCS)
+ 
+ autoloads: $(AUTOLOADS)
+ 
