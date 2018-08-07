@@ -1,2 +1,3 @@
-SHA256 (pycosat-0.6.1.tar.gz) = d438c488da6dd7bbb23ca8ac10531f1fbbd117bdbc2e6245382c1fe202e483ce
-SIZE (pycosat-0.6.1.tar.gz) = 59270
+TIMESTAMP = 1533608453
+SHA256 (pycosat-0.6.3.zip) = 4c99874946a7e939bb941bbb019dd2c20e6068e3107c91366e7779c69d70e0ed
+SIZE (pycosat-0.6.3.zip) = 66825

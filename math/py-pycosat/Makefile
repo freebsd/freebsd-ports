@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pycosat
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.3
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpicosat.so:math/picosat
 
-USES=		python
+USES=		python zip
 USE_PYTHON=	autoplist distutils
 
 PYDISTUTILS_BUILDARGS=	build_ext \
