@@ -5,7 +5,7 @@ PORTNAME=	tlf
 PORTVERSION=	1.3.0
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.hs-mittweida.de/tb/ \
-		LOCAL/db
+		LOCAL/shurd
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio curses based logging program
