@@ -70,46 +70,46 @@ OPTIONAL_ADDONS=BigNum \
 		Vorbis \
 		Yajl
 
-OPTIONS_GROUP_ADDONS=${OPTIONAL_ADDONS}
+OPTIONS_GROUP_ADDONS=${OPTIONAL_ADDONS:tu}
 
-BigNum_LIB_DEPENDS=	libgmp.so:math/gmp
+BIGNUM_LIB_DEPENDS=	libgmp.so:math/gmp
 CFFI_LIB_DEPENDS=	libffi.so:devel/libffi
-Cairo_USE=		GNOME=cairo
-Clutter_LIB_DEPENDS=	libclutter-glx-1.0.so:graphics/clutter
+CAIRO_USE=		GNOME=cairo
+CLUTTER_LIB_DEPENDS=	libclutter-glx-1.0.so:graphics/clutter
 DBI_LIB_DEPENDS=	libdbi.so:databases/libdbi
-EditLine_USES=		libedit
-Font_LIB_DEPENDS=	libfreetype.so:print/freetype2
-Font_USE=		GL=glut XORG=xmu
+EDITLINE_USES=		libedit
+FONT_LIB_DEPENDS=	libfreetype.so:print/freetype2
+FONT_USE=		GL=glut XORG=xmu
 GLFW_LIB_DEPENDS=	libglfw.so:graphics/glfw2
 GLFW_USE+=		GL=glu,gl XORG=sm,ice,x11,xext,xi
-Image_LIB_DEPENDS=	libpng.so:graphics/png \
+IMAGE_LIB_DEPENDS=	libpng.so:graphics/png \
 			libtiff.so:graphics/tiff
-Image_USES=		jpeg
+IMAGE_USES=		jpeg
 LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
-LibSndFile_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
-Libxml2_USE=		GNOME=libxml2
-Libxml2_USES=		iconv
-Loudmouth_LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth
-Memcached_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
-MySQL_USES=		mysql:client
-Ogg_LIB_DEPENDS=	libogg.so:audio/libogg
-OpenGL_USE=		GL=glut XORG=xmu
-PostgreSQL_USES=	pgsql
-Python_USES=		python:3.3+
+LIBSNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
+LIBXML2_USE=		GNOME=libxml2
+LIBXML2_USES=		iconv
+LOUDMOUTH_LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth
+MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
+MYSQL_USES=		mysql:client
+OGG_LIB_DEPENDS=	libogg.so:audio/libogg
+OPENGL_USE=		GL=glut XORG=xmu
+POSTGRESQL_USES=	pgsql
+PYTHON_USES=		python:3.3+
 QDBM_LIB_DEPENDS=	libqdbm.so:databases/qdbm
-ReadLine_USES=		readline:port
-Regex_LIB_DEPENDS=	libpcre.so:devel/pcre
-SQLite3_USES=		sqlite:3
-SampleRateConverter_LIB_DEPENDS=\
+READLINE_USES=		readline:port
+REGEX_LIB_DEPENDS=	libpcre.so:devel/pcre
+SQLITE3_USES=		sqlite:3
+SAMPLERATECONVERTER_LIB_DEPENDS=\
 			libsamplerate.so:audio/libsamplerate
-Socket_LIB_DEPENDS=	libevent.so:devel/libevent
-TagLib_LIB_DEPENDS=	libtag.so:audio/taglib
-Theora_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
-TokyoCabinet_LIB_DEPENDS=	\
+SOCKET_LIB_DEPENDS=	libevent.so:devel/libevent
+TAGLIB_LIB_DEPENDS=	libtag.so:audio/taglib
+THEORA_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
+TOKYOCABINET_LIB_DEPENDS=	\
 			libtokyocabinet.so:databases/tokyocabinet
 UUID_LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
-Vorbis_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
-Yajl_LIB_DEPENDS=	libyajl.so:devel/yajl
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
+YAJL_LIB_DEPENDS=	libyajl.so:devel/yajl
 
 .include <bsd.port.options.mk>
 
@@ -117,11 +117,11 @@ Yajl_LIB_DEPENDS=	libyajl.so:devel/yajl
 # WE NOW DEFINE THE FULL LIST OF ADDONS
 #
 .for def in ${DEFAULT_ADDONS}
-PLIST_SUB+=	${def}=""
+PLIST_SUB+=	${def:tu}=""
 .endfor
 ADDONS=		${DEFAULT_ADDONS}
-.for opt in ${OPTIONS_GROUP_ADDONS}
-.  if ${PORT_OPTIONS:M${opt}}
+.for opt in ${OPTIONAL_ADDONS}
+.  if ${PORT_OPTIONS:M${opt:tu}}
 ADDONS+=	${opt}
 .  endif
 .endfor
