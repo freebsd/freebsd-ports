@@ -1,0 +1,4 @@
+LazPaint is an image editor with layers and transparency. It supports the 
+format OpenRaster so it can interoperate with MyPaint, Gimp and Krita
+
+WWW: http://wiki.freepascal.org/LazPaint
