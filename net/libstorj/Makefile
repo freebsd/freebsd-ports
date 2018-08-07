@@ -5,7 +5,7 @@ PORTVERSION=	1.0.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
-MAINTAINER=	jhixson@gmail.com
+MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	C library and CLI for encrypted file transfer on the Storj network
 
 LICENSE=	LGPL21+

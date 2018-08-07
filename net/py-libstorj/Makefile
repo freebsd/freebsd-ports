@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jhixson@gmail.com
+MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Python bindings for libstorj
 
 LICENSE=	LGPL21+

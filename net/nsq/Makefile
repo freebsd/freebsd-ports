@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-compat
 CATEGORIES=	net
 
-MAINTAINER=	jhixson@gmail.com
+MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Realtime distributed messaging platform
 
 LICENSE=	MIT
