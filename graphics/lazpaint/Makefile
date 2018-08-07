@@ -11,6 +11,10 @@ COMMENT=	Image editor written in Lazarus
 
 LICENSE=	GPLv3
 
+gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt4 ${PORTNAME}-qt5
+qt4_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt5
+qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt4
+
 USES=		dos2unix fpc lazarus:flavors
 USE_FPC=	chm fcl-base fcl-image fcl-json fcl-net fcl-web fcl-xml \
 		opengl openssl pasjpeg rtl-extra rtl-objpas x11
@@ -27,10 +31,6 @@ USE_FPC_gtk2=	cairo
 USE_GNOME_gtk2=	cairo
 USE_FPC+=	${USE_FPC_${FLAVOR}}
 USE_GNOME+=	${USE_GNOME_${FLAVOR}}
-
-gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt4 ${PORTNAME}-qt5
-qt4_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt5
-qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt4
 
 LAZARUS_PROJECT_FILES=	bgrabitmapnew/bgrabitmap/bgrabitmappack.lpk
 LAZARUS_PROJECT_FILES+=	bgracontrols/bgracontrols.lpk
