@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	txrequests
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.6
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,8 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
+TEST_ENV=	PYTHONPATH=${TEST_WRKSRC}
 do-test:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/trial ${WRKSRC}/test_txrequests.py
+	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${LOCALBASE}/bin/trial ${WRKSRC}/test_txrequests.py
 
 .include <bsd.port.mk>
