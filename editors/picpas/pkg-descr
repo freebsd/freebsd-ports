@@ -1,0 +1,4 @@
+PicPas is a Pascal compiler, written in Lazarus, which generates executable 
+code for midrange PIC microcontrollers (the 16F series).
+
+WWW: https://github.com/t-edson/PicPas
