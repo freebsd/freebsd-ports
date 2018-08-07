@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	cstore_fdw
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Columnar store for analytics with PostgreSQL
 
 LICENSE=	APACHE20
