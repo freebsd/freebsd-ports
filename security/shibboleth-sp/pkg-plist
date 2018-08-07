@@ -8,8 +8,6 @@ etc/shibboleth/metagen.sh
 @sample etc/shibboleth/attribute-policy.xml.dist etc/shibboleth/attribute-policy.xml
 @sample etc/shibboleth/example-metadata.xml.dist etc/shibboleth/example-metadata.xml
 @sample etc/shibboleth/console.logger.dist etc/shibboleth/console.logger
-@sample etc/shibboleth/syslog.logger.dist etc/shibboleth/syslog.logger
-@sample etc/shibboleth/accessError.html.dist etc/shibboleth/accessError.html
 @sample etc/shibboleth/sessionError.html.dist etc/shibboleth/sessionError.html
 @sample etc/shibboleth/metadataError.html.dist etc/shibboleth/metadataError.html
 @sample etc/shibboleth/bindingTemplate.html.dist etc/shibboleth/bindingTemplate.html
@@ -20,6 +18,7 @@ etc/shibboleth/metagen.sh
 @sample etc/shibboleth/example-shibboleth2.xml.dist etc/shibboleth/example-shibboleth2.xml
 @sample etc/shibboleth/protocols.xml.dist etc/shibboleth/protocols.xml
 @sample etc/shibboleth/security-policy.xml.dist etc/shibboleth/security-policy.xml
+etc/shibboleth/seckeygen.sh
 etc/shibboleth/shibd-amazon
 etc/shibboleth/shibd-redhat
 etc/shibboleth/shibd-debian
@@ -43,7 +42,6 @@ include/shibsp/SPConfig.h
 include/shibsp/SPRequest.h
 include/shibsp/ServiceProvider.h
 include/shibsp/SessionCache.h
-include/shibsp/SessionCacheEx.h
 include/shibsp/TransactionLog.h
 include/shibsp/attribute/Attribute.h
 include/shibsp/attribute/AttributeDecoder.h
@@ -93,23 +91,28 @@ include/shibsp/util/SPConstants.h
 include/shibsp/util/TemplateParameters.h
 include/shibsp/version.h
 lib/libshibsp.so
-lib/libshibsp.so.7
-lib/libshibsp.so.7.0.1
+lib/libshibsp.so.8
+lib/libshibsp.so.8.0.2
 lib/shibboleth/adfs.so
 lib/shibboleth/adfs-lite.so
 %%MEMCACHED%%lib/shibboleth/memcache-store.so
 %%ODBC%%lib/shibboleth/odbc-store.so
 lib/shibboleth/plugins-lite.so
 lib/shibboleth/plugins.so
-%%WITH_APACHE_22%%lib/shibboleth/mod_shib_22.so
 %%WITH_APACHE_24%%lib/shibboleth/mod_shib_24.so
 %%FASTCGI%%lib/shibboleth/shibauthorizer
 %%FASTCGI%%lib/shibboleth/shibresponder
 lib/libshibsp-lite.so
-lib/libshibsp-lite.so.7
-lib/libshibsp-lite.so.7.0.1
+lib/libshibsp-lite.so.8
+lib/libshibsp-lite.so.8.0.2
+libdata/pkgconfig/shibsp-lite.pc
+libdata/pkgconfig/shibsp.pc
 sbin/shibd
+share/xml/shibboleth/MetadataExchange.xsd
+share/xml/shibboleth/WS-Trust.xsd
 share/xml/shibboleth/catalog.xml
+share/xml/shibboleth/oasis-200401-wss-wssecurity-secext-1.0.xsd
+share/xml/shibboleth/oasis-200401-wss-wssecurity-utility-1.0.xsd
 share/xml/shibboleth/shibboleth-2.0-afp-mf-basic.xsd
 share/xml/shibboleth/shibboleth-2.0-afp-mf-saml.xsd
 share/xml/shibboleth/shibboleth-2.0-afp.xsd
@@ -117,19 +120,22 @@ share/xml/shibboleth/shibboleth-2.0-attribute-map.xsd
 share/xml/shibboleth/shibboleth-2.0-native-sp-config.xsd
 share/xml/shibboleth/shibboleth-2.0-native-sp-protocols.xsd
 share/xml/shibboleth/shibboleth-2.0-sp-notify.xsd
+share/xml/shibboleth/shibboleth-3.0-native-sp-config.xsd
 share/xml/shibboleth/shibboleth-metadata-1.0.xsd
 share/xml/shibboleth/shibboleth.xsd
-share/xml/shibboleth/WS-Trust.xsd
-share/doc/shibboleth/CREDITS.txt
-share/doc/shibboleth/FASTCGI.LICENSE
-share/doc/shibboleth/LICENSE.txt
-share/doc/shibboleth/LOG4CPP.LICENSE
-share/doc/shibboleth/NOTICE.txt
-share/doc/shibboleth/OPENSSL.LICENSE
-share/doc/shibboleth/README.txt
-share/doc/shibboleth/RELEASE.txt
-share/doc/shibboleth/main.css
-@dir /var/log/shibboleth-www
+share/xml/shibboleth/ws-addr.xsd
+share/xml/shibboleth/ws-authorization.xsd
+share/xml/shibboleth/ws-federation.xsd
+share/xml/shibboleth/ws-securitypolicy-1.2.xsd
+%%DOCSDIR%%/CREDITS.txt
+%%DOCSDIR%%/FASTCGI.LICENSE
+%%DOCSDIR%%/LICENSE.txt
+%%DOCSDIR%%/LOG4CPP.LICENSE
+%%DOCSDIR%%/NOTICE.txt
+%%DOCSDIR%%/OPENSSL.LICENSE
+%%DOCSDIR%%/README.txt
+%%DOCSDIR%%/RELEASE.txt
+%%DOCSDIR%%/main.css
 @dir(%%SHIBD_USER%%,%%SHIBD_GROUP%%,755) /var/log/shibboleth
 @dir(%%SHIBD_USER%%,%%SHIBD_GROUP%%,755) /var/cache/shibboleth
 @dir(%%SHIBD_USER%%,%%WWWGRP%%,750) /var/run/shibboleth

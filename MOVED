@@ -971,7 +971,6 @@ x11-toolkits/gtkada-gcc||2010-01-24|Not really maintained for a while and depend
 x11-toolkits/gtkada-gps||2010-01-28|Has expired: has been broken for 3 months
 x11-fm/velocity||2010-01-28|Has expired: has been broken for 7 months
 x11-drivers/xf86-video-nsc||2010-01-28|Has expired: has been broken for 5 months
-security/shibboleth-sp||2010-01-28|Has expired: has been broken for 3 months
 www/pecl-pecl_http|www/pecl-http|2010-01-31|Duplicate ports
 chinese/stardict2-dict-zh_CN||2010-01-31|Please use chinese/stardict-dict-zh_CN
 math/octave-forge-ann||2010-02-02|Has expired: has been broken for 3 months
@@ -2877,7 +2876,6 @@ news/nntpswitch||2011-11-01|Does not fetch
 news/p5-NewsLib||2011-11-01|Does not fetch
 russian/cyrproxy||2011-11-01|Does not fetch
 science/gerris||2011-11-01|Does not fetch
-security/opensaml||2011-11-01|Does not fetch
 sysutils/wmbattery||2011-11-01|Does not fetch
 textproc/tei-guidelines-p4||2011-11-01|Does not fetch
 textproc/tei-p4||2011-11-01|Does not fetch
@@ -10419,3 +10417,5 @@ emulators/snes9express||2018-08-03|Please use emulators/snes9x-gtk instead
 security/rubygem-omniauth-shibboleth12||2018-08-04|Removed
 textproc/rubygem-html-pipeline-gitlab||2018-08-04|Removed
 net/qmdnsengine|dns/qmdnsengine|2018-08-04|Move to a proper category
+security/shibboleth2-sp|security/shibboleth-sp|2018-08-07|Project updated to version 3, so the 2 suffix is not valid anymore
+security/opensaml2|security/opensaml|2018-08-07|Project updated to version 3, so the 2 suffix is not valid anymore
