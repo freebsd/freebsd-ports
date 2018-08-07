@@ -8,7 +8,7 @@ MASTER_SITES=	https://bin.equinox.io/c/4VmDzA7iaHb/
 DISTNAME=	${PORTNAME}-stable-freebsd-${ARCH:S/i386/386/:S/x86_64/amd64/}
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	jhixson@gmail.com
+MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Secure tunnels to localhost
 
 # run 'ngrok credits' for details

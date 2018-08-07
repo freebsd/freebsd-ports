@@ -7,7 +7,7 @@ PORTREVISION=	3
 PKGNAMESUFFIX=	3
 CATEGORIES=	www
 
-MAINTAINER=	jhixson@gmail.com
+MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Dashboard and graph editor for Graphite, InfluxDB & OpenTSDB
 
 LICENSE=	APACHE20

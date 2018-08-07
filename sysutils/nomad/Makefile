@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.4
 CATEGORIES=	sysutils
 
-MAINTAINER=	jhixson@gmail.com
+MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Cluster manager and scheduler
 
 LICENSE=	MPL20

@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jhixson@gmail.com
+MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Python client for consul
 
 LICENSE=	MIT

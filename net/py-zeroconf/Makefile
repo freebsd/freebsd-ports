@@ -6,7 +6,7 @@ PORTVERSION=	0.20.0
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jhixson@gmail.com
+MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Pure python implementation of multicast DNS service discovery
 
 LICENSE=	LGPL21+

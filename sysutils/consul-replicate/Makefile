@@ -5,7 +5,7 @@ PORTVERSION=	0.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	jhixson@gmail.com
+MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Consul cross-DC KV replication daemon
 
 LICENSE=	MPL20
