@@ -1,0 +1,7 @@
+** A note about Addons **
+
+Addons are no longer part of Io core. Most are now hosted on their dedicated
+repositories under https://github.com/IoLanguage.
+
+Addons are managed using the Eerie package manager, which can be installed
+following the instructions at https://github.com/IoLanguage/eerie.

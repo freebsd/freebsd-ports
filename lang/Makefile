@@ -147,6 +147,7 @@
     SUBDIR += icon
     SUBDIR += intercal
     SUBDIR += io
+    SUBDIR += io-devel
     SUBDIR += itcl
     SUBDIR += itcl4
     SUBDIR += jakarta-commons-jelly

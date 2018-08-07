@@ -1,0 +1,5 @@
+Io is a dynamic prototype-based programming language in the same realm as
+Smalltalk and Self. It revolves around the idea of message passing from object
+to object.
+
+WWW: http://iolanguage.org/
