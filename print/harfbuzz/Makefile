@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	harfbuzz
-PORTVERSION=	1.8.5
+PORTVERSION=	1.8.6
 PORTREVISION?=	0
 CATEGORIES=	print
 MASTER_SITES=	http://www.freedesktop.org/software/harfbuzz/release/
@@ -22,7 +22,7 @@ CONFIGURE_ARGS=	--with-graphite2 --with-gobject=yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-PLIST_SUB+=	LIBVER=0.10800.5
+PLIST_SUB+=	LIBVER=0.10800.6
 
 HARFBUZZ_SLAVE?=	no
 
