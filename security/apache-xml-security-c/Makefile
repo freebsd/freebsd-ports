@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xml-security-c
-PORTVERSION=	1.7.3
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	security
 MASTER_SITES=	APACHE/santuario/c-library
 PKGNAMEPREFIX=	apache-
@@ -13,13 +12,13 @@ COMMENT=	Apache XML security libraries - C++ version
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS+=	libxerces-c.so.3:textproc/xerces-c3
+LIB_DEPENDS+=	libxerces-c.so:textproc/xerces-c3
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-xerces=${LOCALBASE}
-USES=		cpe gmake libtool tar:bzip2 ssl
+CONFIGURE_ARGS=	--disable-dependency-tracking --without-xalan --with-openssl=${OPENSSLBASE}
+USES=		cpe gmake libtool tar:bzip2 ssl pkgconfig autoreconf
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
+CONFIGURE_ENV+=	openssl_LIBS="-L${OPENSSLLIB} -lcrypto" openssl_CFLAGS=-I${OPENSSLBASE}
 
 CPE_PRODUCT=	xml_security_for_c\+\+
 CPE_VENDOR=	apache

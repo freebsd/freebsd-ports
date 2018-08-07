@@ -1,12 +1,10 @@
 # Created by: Janos Mohacsi
 # $FreeBSD$
 
-PORTNAME=	opensaml2
-PORTVERSION=	2.6.1
-PORTREVISION=	2
+PORTNAME=	opensaml
+PORTVERSION=	3.0.0
 CATEGORIES=	security
 MASTER_SITES=	http://shibboleth.net/downloads/c++-opensaml/${PORTVERSION}/
-DISTNAME=	opensaml-${PORTVERSION}
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Open source implementation of SAML2
@@ -21,9 +19,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libxmltooling.so:devel/xmltooling
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-log4shib=${LOCALBASE} --with-openssl=${OPENSSLBASE} \
-		--with-xmltooling=${LOCALBASE} --disable-doxygen-doc
-USES=		gmake libtool pkgconfig tar:bzip2
+CONFIGURE_ARGS+=--disable-doxygen-doc --disable-dependency-tracking
+USES=		gmake libtool pkgconfig tar:bzip2 ssl
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS

@@ -2,25 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	xmltooling
-PORTVERSION=	1.6.4
-PORTREVISION=	1
+PORTVERSION=	3.0.2
 CATEGORIES=	devel security
-MASTER_SITES=	http://shibboleth.net/downloads/c++-opensaml/2.6.1/
+MASTER_SITES=	http://shibboleth.net/downloads/c++-opensaml/3.0.0/
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Low level XML support for SAML
 
-LIB_DEPENDS=	libcurl.so:ftp/curl \
-		liblog4shib.so:devel/log4shib \
-		libxerces-c.so.3:textproc/xerces-c3 \
-		libxml-security-c.so:security/apache-xml-security-c
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		liblog4shib.so:devel/log4shib \
+		libxerces-c.so:textproc/xerces-c3 \
+		libxml-security-c.so:security/apache-xml-security-c
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-log4shib=${LOCALBASE} --with-openssl=${OPENSSLBASE} --with-curl=${LOCALBASE} --disable-doxygen-doc
-USES=		gmake libtool pkgconfig tar:bzip2 ssl
+CONFIGURE_ARGS+=--disable-dependency-tracking --disable-doxygen-doc --with-xmlsec
+USES=		gmake libtool pkgconfig tar:bzip2 ssl autoreconf
 USE_LDCONFIG=	yes
+CONFIGURE_ENV+=	openssl_LIBS="-L${OPENSSLLIB} -lcrypto"  openssl_CFLAGS=-I${OPENSSLBASE}
 
 PORTDOCS=	*
 
@@ -28,9 +29,9 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^pkgdocdir.*=.*,pkgdocdir = ${DOCSDIR},' \
-		${WRKSRC}/doc/Makefile.in
+		${WRKSRC}/doc/Makefile.am
 
 post-patch-DOCS-off:
-	@${REINPLACE_CMD} -e '/^SUBDIRS/s,doc ,,' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s,doc ,,' ${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- configure.ac.orig	2018-07-20 01:39:47 UTC
++++ configure.ac
+@@ -154,7 +154,7 @@ AX_PKG_CHECK_MODULES([$1],,[$2],[$3],
+ ])
+ 
+ AS_IF([test "x$with_xmlsec" != xno],
+-     [XMLSEC_PKG_CHECK([openssl],[openssl],
++     [XMLSEC_PKG_CHECK([openssl],[],
+       [XMLSEC_PKG_CHECK([libcurl],[libcurl],
+        [AX_SAVE_FLAGS
+         CXXFLAGS="$libcurl_CFLAGS $CXXFLAGS"

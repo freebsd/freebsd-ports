@@ -23,6 +23,9 @@ include/xmltooling/encryption/Encrypter.h
 include/xmltooling/encryption/Encryption.h
 include/xmltooling/exceptions.h
 include/xmltooling/impl/AnyElement.h
+include/xmltooling/impl/ManagedResource.h
+include/xmltooling/impl/OpenSSLSecurityHelper.h
+include/xmltooling/impl/OpenSSLSupport.h
 include/xmltooling/impl/UnknownElement.h
 include/xmltooling/io/AbstractXMLObjectMarshaller.h
 include/xmltooling/io/AbstractXMLObjectUnmarshaller.h
@@ -38,6 +41,7 @@ include/xmltooling/security/Credential.h
 include/xmltooling/security/CredentialContext.h
 include/xmltooling/security/CredentialCriteria.h
 include/xmltooling/security/CredentialResolver.h
+include/xmltooling/security/DataSealer.h
 include/xmltooling/security/KeyInfoCredentialContext.h
 include/xmltooling/security/KeyInfoResolver.h
 include/xmltooling/security/OpenSSLCredential.h
@@ -64,7 +68,7 @@ include/xmltooling/soap/SOAPTransport.h
 include/xmltooling/unicode.h
 include/xmltooling/util/CloneInputStream.h
 include/xmltooling/util/CurlURLInputStream.h
-include/xmltooling/util/DateTime.h
+include/xmltooling/util/DirectoryWalker.h
 include/xmltooling/util/NDC.h
 include/xmltooling/util/ParserPool.h
 include/xmltooling/util/PathResolver.h
@@ -82,11 +86,12 @@ include/xmltooling/validation/Validator.h
 include/xmltooling/validation/ValidatorSuite.h
 include/xmltooling/version.h
 lib/libxmltooling-lite.so
-lib/libxmltooling-lite.so.7
-lib/libxmltooling-lite.so.7.0.4
+lib/libxmltooling-lite.so.8
+lib/libxmltooling-lite.so.8.0.2
 lib/libxmltooling.so
-lib/libxmltooling.so.7
-lib/libxmltooling.so.7.0.4
+lib/libxmltooling.so.8
+lib/libxmltooling.so.8.0.2
+libdata/pkgconfig/xmltooling-lite.pc
 libdata/pkgconfig/xmltooling.pc
 share/xml/xmltooling/catalog.xml
 share/xml/xmltooling/soap-envelope.xsd

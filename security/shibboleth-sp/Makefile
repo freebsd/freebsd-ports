@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shibboleth-sp
-PORTVERSION=	2.6.1
-PORTREVISION=	2
+PORTVERSION=	3.0.2
 CATEGORIES=	security www
 MASTER_SITES=	http://shibboleth.net/downloads/service-provider/${PORTVERSION}/
 
@@ -13,17 +12,19 @@ COMMENT=	C++ Shibboleth Service Provider (Internet2) for Apache
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
-LIB_DEPENDS=	libsaml.so:security/opensaml2 \
+LIB_DEPENDS=	libsaml.so:security/opensaml \
 		libxmltooling-lite.so:devel/xmltooling \
 		liblog4shib.so:devel/log4shib \
 		libxerces-c.so:textproc/xerces-c3 \
 		libxml-security-c.so:security/apache-xml-security-c
 
-USES=		gmake tar:bzip2 ssl
+USES=		gmake tar:bzip2 cpe pkgconfig libtool
 GNU_CONFIGURE=	yes
 MAKE_ENV=	NOKEYGEN=YES
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	shibboleth-sp
+DOCSDIR=	${PREFIX}/share/doc/shibboleth
+CPE_VENDOR=	shibboleth
 
 USERS=		shibd
 GROUPS=		shibd
@@ -45,7 +46,7 @@ MEMCACHED_DESC=	Store sessions in memcached
 FASTCGI_DESC=	FastCGI protocol support, e.g. for NGINX
 APACHE_DESC=	Build Apache module
 
-APACHE_USES=	apache:2.2+
+APACHE_USES=	apache:2.4+
 
 ODBC_CONFIGURE_ENABLE=	odbc
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
@@ -66,26 +67,22 @@ SUB_LIST+=	SHIBD_GROUP=${GROUPS}
 PLIST_SUB+=	SHIBD_USER=${USERS}
 PLIST_SUB+=	SHIBD_GROUP=${GROUPS}
 
-CONFIGURE_ARGS+=	--localstatedir=/var --with-log4shib=${LOCALBASE}
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE} --with-xmltooling=${LOCALBASE}
-CONFIGURE_ARGS+=	--disable-doxygen-doc
+CONFIGURE_ARGS+=--localstatedir=/var \
+	       	--disable-doxygen-doc --disable-dependency-tracking
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MAPACHE}
-.if "${APACHE_VERSION}" == 2.2
-CONFIGURE_ARGS+=--disable-apache-24 --enable-apache-22 --with-apxs22=${APXS}
-PLIST_SUB+=	WITH_APACHE_22=""
-PLIST_SUB+=	WITH_APACHE_24="@comment "
-.else
+.if ${PORT_OPTIONS:MAPACHE} && "${APACHE_VERSION}" == 2.4
 CONFIGURE_ARGS+=--disable-apache-22 --enable-apache-24 --with-apxs24=${APXS}
-PLIST_SUB+=	WITH_APACHE_22="@comment "
 PLIST_SUB+=	WITH_APACHE_24=""
-.endif
 .else
 CONFIGURE_ARGS+=--disable-apache-24 --disable-apache-22
-PLIST_SUB+=	WITH_APACHE_22="@comment "
 PLIST_SUB+=	WITH_APACHE_24="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,^pkgdocdir.*=.*,pkgdocdir = ${DOCSDIR},' \
+		-e 's,^pkgwebdir.*=.*,pkgwebdir = ${DOCSDIR},' \
+		${WRKSRC}/doc/Makefile.in ${WRKSRC}/configs/Makefile.in
 
 .include <bsd.port.post.mk>

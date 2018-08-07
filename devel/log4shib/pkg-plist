@@ -1,4 +1,3 @@
-bin/log4shib-config
 include/log4shib/AbortAppender.hh
 include/log4shib/Appender.hh
 include/log4shib/AppenderSkeleton.hh
@@ -42,7 +41,6 @@ include/log4shib/threading/PThreads.hh
 include/log4shib/threading/Threading.hh
 lib/liblog4shib.a
 lib/liblog4shib.so
-lib/liblog4shib.so.1
-lib/liblog4shib.so.1.0.7
+lib/liblog4shib.so.2
+lib/liblog4shib.so.2.0.0
 libdata/pkgconfig/log4shib.pc
-share/aclocal/log4shib.m4
