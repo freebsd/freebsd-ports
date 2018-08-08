@@ -1,0 +1,3 @@
+A library for creating machines and infrastructures idempotently in Chef.
+
+WWW: https://rubygems.org/gems/chef-provisioning
