@@ -3,4 +3,4 @@ of Glyph and Cog, LLC.  It provides PDF rendering functionality as a
 shared library, and uses modern components from Freedesktop.org such as
 fontconfig and cairo to take advantage of modern UNIX desktops.
 
-WWW: http://poppler.freedesktop.org/
+WWW: https://poppler.freedesktop.org/
