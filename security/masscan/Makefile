@@ -24,7 +24,7 @@ PLIST_FILES=	bin/masscan man/man8/masscan.8.gz
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-BUILD_DEPENDS+=	clang38:lang/clang38
+BUILD_DEPENDS+=	clang38:devel/llvm38
 CC=		clang38
 .endif
 
