@@ -1681,7 +1681,6 @@
     SUBDIR += listserialc
     SUBDIR += liteide
     SUBDIR += llbuild
-    SUBDIR += lldb38
     SUBDIR += llnextgen
     SUBDIR += llvm-cheri
     SUBDIR += llvm-devel
