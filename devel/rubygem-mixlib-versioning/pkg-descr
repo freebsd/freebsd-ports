@@ -1,0 +1,4 @@
+General purpose Ruby library that allows you to parse, compare and manipulate
+version strings in multiple formats.
+
+WWW: https://rubygems.org/gems/mixlib-versioning
