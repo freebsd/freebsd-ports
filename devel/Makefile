@@ -5803,6 +5803,7 @@
     SUBDIR += rubygem-os
     SUBDIR += rubygem-p4ruby
     SUBDIR += rubygem-paint
+    SUBDIR += rubygem-paint1
     SUBDIR += rubygem-paperclip
     SUBDIR += rubygem-paperclip-rails5
     SUBDIR += rubygem-paperclip-rails50
