@@ -1,17 +1,6 @@
 --- support-files/CMakeLists.txt.orig	2015-12-23 15:33:33 UTC
 +++ support-files/CMakeLists.txt
-@@ -41,15 +41,18 @@ ELSE()
-   SET(inst_location ${INSTALL_SUPPORTFILESDIR})
- ENDIF()
- 
-+IF(FALSE)
- FOREACH(inifile my-huge my-innodb-heavy-4G my-large my-medium my-small wsrep)
-   CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/${inifile}.cnf.sh 
-                  ${CMAKE_CURRENT_BINARY_DIR}/${inifile}.${ini_file_extension} @ONLY)
-   INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/${inifile}.${ini_file_extension}
-           DESTINATION ${inst_location} COMPONENT IniFiles)
- ENDFOREACH()
-+ENDIF()
+@@ -59,6 +59,7 @@ ENDIF()
  
  IF(UNIX)
    SET(prefix ${CMAKE_INSTALL_PREFIX})
@@ -19,9 +8,9 @@
    FOREACH(script mysqld_multi.server mysql-log-rotate binary-configure wsrep_notify)
      CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/${script}.sh 
                     ${CMAKE_CURRENT_BINARY_DIR}/${script} @ONLY )
-@@ -60,12 +63,14 @@ IF(UNIX)
-     INSTALL(FILES magic DESTINATION ${inst_location} COMPONENT SupportFiles)
-     INSTALL(DIRECTORY policy DESTINATION ${inst_location} COMPONENT SupportFiles)
+@@ -88,12 +89,14 @@ IF(UNIX)
+       ENDFOREACH()
+     ENDIF()
    ENDIF()
 +  ENDIF()
  
@@ -35,7 +24,7 @@
    SET(bindir ${INSTALL_BINDIRABS})
    SET(sbindir ${INSTALL_SBINDIRABS})
    SET(scriptdir ${INSTALL_SCRIPTDIRABS})
-@@ -115,6 +120,7 @@ IF(UNIX)
+@@ -160,6 +163,7 @@ IF(UNIX)
      INSTALL(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/mysql.server
              DESTINATION  ${INSTALL_SYSCONFDIR}/init.d
              RENAME mysql COMPONENT SupportFiles)

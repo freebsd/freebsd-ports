@@ -1,22 +1,22 @@
 --- scripts/CMakeLists.txt.orig	2016-07-14 01:10:23 UTC
 +++ scripts/CMakeLists.txt
-@@ -73,6 +73,7 @@ IF(UNIX)
- )
+@@ -45,6 +45,7 @@ ELSE()
+   MESSAGE(FATAL_ERROR "Cannot concatenate files")
  ENDIF()
  
 +IF(FALSE)
- INSTALL(FILES 
-   ${CMAKE_CURRENT_SOURCE_DIR}/mysql_system_tables.sql 
-   ${CMAKE_CURRENT_SOURCE_DIR}/mysql_system_tables_data.sql
-@@ -83,6 +84,7 @@ INSTALL(FILES 
-   ${FIX_PRIVILEGES_SQL}
-   DESTINATION ${INSTALL_MYSQLSHAREDIR} COMPONENT Server
+ # Build mysql_fix_privilege_tables.c
+ ADD_CUSTOM_COMMAND(
+   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/mysql_fix_privilege_tables_sql.c
+@@ -65,6 +66,7 @@ ADD_CUSTOM_TARGET(GenFixPrivs
+   ALL
+   DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/mysql_fix_privilege_tables_sql.c
  )
 +ENDIF()
  
- # TCMalloc hacks
- IF(MALLOC_LIB)
-@@ -135,6 +137,7 @@ ENDIF()
+ IF(UNIX)
+  FILE(WRITE ${CMAKE_CURRENT_BINARY_DIR}/make_binary_distribution 
+@@ -164,6 +166,7 @@ ENDIF()
  SET(HOSTNAME "hostname")
  SET(MYSQLD_USER "mysql")
  
@@ -24,7 +24,7 @@
  # Required for mysqlbug until autotools are deprecated, once done remove these
  # and expand default cmake variables
  SET(CC ${CMAKE_C_COMPILER})
-@@ -169,6 +172,7 @@ INSTALL_SCRIPT(${CMAKE_CURRENT_BINARY_DI
+@@ -198,6 +201,7 @@ INSTALL_SCRIPT(${CMAKE_CURRENT_BINARY_DI
    DESTINATION ${INSTALL_BINDIR}
    COMPONENT Server
    )
@@ -32,15 +32,15 @@
  
  ENDIF(UNIX)
  
-@@ -194,6 +198,7 @@ ELSE()
-   SET(localstatedir ${MYSQL_DATADIR})
- ENDIF()
+@@ -228,6 +232,7 @@ SET(mysqld_locations "$basedir/${INSTALL
+ SET(errmsg_locations "$basedir/${INSTALL_MYSQLSHAREDIR}/english $basedir/share/english $basedir/share/mysql/english")
+ SET(pkgdata_locations "$basedir/${INSTALL_MYSQLSHAREDIR} $basedir/share $basedir/share/mysql")
  
 +IF()
  IF(UNIX)
  CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/mysql_install_db.sh
    ${CMAKE_CURRENT_BINARY_DIR}/mysql_install_db ESCAPE_QUOTES @ONLY)
-@@ -207,6 +212,7 @@ INSTALL_SCRIPT(
+@@ -241,6 +246,7 @@ INSTALL_SCRIPT(
    COMPONENT Server
    )
  ENDIF()
@@ -48,7 +48,7 @@
  
  SET(prefix "${CMAKE_INSTALL_PREFIX}")
  IF(INSTALL_SYSCONFDIR)
-@@ -294,13 +300,8 @@ ELSE()
+@@ -333,13 +339,8 @@ ELSE()
    SET(BIN_SCRIPTS
      msql2mysql
      mysql_config
@@ -60,5 +60,5 @@
 -    mytop
 -    mysqlhotcopy
      ${SERVER_SCRIPTS}
-     ${WSREP_BINARIES}
+     ${WSREP_SCRIPTS}
      ${SYSTEMD_SCRIPTS}
