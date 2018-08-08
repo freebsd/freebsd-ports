@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xtensor
-DISTVERSION=	0.16.4
+DISTVERSION=	0.17.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,12 +15,12 @@ TEST_DEPENDS=	googletest>0:devel/googletest
 USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	QuantStack
-GH_TUPLE=	QuantStack:xtl:0.4.9:xtl/xtl
+GH_TUPLE=	QuantStack:xtl:0.4.13:xtl/xtl
 NO_BUILD=	yes
 NO_ARCH=	yes
 
 post-install:
-	cd ${WRKSRC}/xtl/include && ${COPYTREE_SHARE} xtl ${STAGEDIR}${PREFIX}/include
+	@cd ${WRKSRC}/xtl/include && ${COPYTREE_SHARE} xtl ${STAGEDIR}${PREFIX}/include
 
 do-test:
 	@${RLN} ${STAGEDIR}${PREFIX}/include ${WRKSRC}/test/staged-include

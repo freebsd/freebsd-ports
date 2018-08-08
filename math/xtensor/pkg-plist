@@ -10,6 +10,7 @@ include/xtensor/xcomplex.hpp
 include/xtensor/xconcepts.hpp
 include/xtensor/xcontainer.hpp
 include/xtensor/xcsv.hpp
+include/xtensor/xdynamic_view.hpp
 include/xtensor/xeval.hpp
 include/xtensor/xexception.hpp
 include/xtensor/xexpression.hpp
@@ -24,6 +25,7 @@ include/xtensor/xiterable.hpp
 include/xtensor/xiterator.hpp
 include/xtensor/xjson.hpp
 include/xtensor/xlayout.hpp
+include/xtensor/xmasked_view.hpp
 include/xtensor/xmath.hpp
 include/xtensor/xnoalias.hpp
 include/xtensor/xnorm.hpp
@@ -58,6 +60,7 @@ include/xtl/xbase64.hpp
 include/xtl/xbasic_fixed_string.hpp
 include/xtl/xclosure.hpp
 include/xtl/xcomplex.hpp
+include/xtl/xcomplex_sequence.hpp
 include/xtl/xdynamic_bitset.hpp
 include/xtl/xfunctional.hpp
 include/xtl/xhash.hpp
