@@ -5529,6 +5529,7 @@
     SUBDIR += rubygem-configatron
     SUBDIR += rubygem-configstruct
     SUBDIR += rubygem-configuration
+    SUBDIR += rubygem-cookbook-omnifetch
     SUBDIR += rubygem-cool.io
     SUBDIR += rubygem-corefines
     SUBDIR += rubygem-crack
