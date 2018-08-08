@@ -5968,6 +5968,7 @@
     SUBDIR += rubygem-slop
     SUBDIR += rubygem-slop3
     SUBDIR += rubygem-soap4r
+    SUBDIR += rubygem-solve
     SUBDIR += rubygem-spring
     SUBDIR += rubygem-spring-rails5
     SUBDIR += rubygem-spring-rails50
