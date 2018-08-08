@@ -4,7 +4,7 @@
 #       it still works as well.
 
 PORTNAME?=	unixcw
-PORTVERSION=	3.5.0
+PORTVERSION=	3.5.1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/unixcw/unixcw-${PORTVERSION}
 DISTNAME=	unixcw_${PORTVERSION}.orig
@@ -20,21 +20,32 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-xcwcp
 .endif
 CONFIGURE_ARGS+=	--includedir="${LOCALBASE}/include" \
-			--libdir="${LOCALBASE}/lib" \
-			--disable-alsa --disable-pulseaudio
+			--libdir="${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+#CONFIGURE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
 
+USES+=		gmake libtool ncurses pathfix pkgconfig autoreconf
 USE_LDCONFIG=	yes
-USES+=		gmake libtool ncurses pathfix pkgconfig
 USE_CSTD=	gnu99
 WRKSRC=		${WRKDIR}/unixcw-${PORTVERSION}
 MAJOR_LIB_VER=	6
-MINOR_LIB_VER=	5.1
+MINOR_LIB_VER=	6.1
 PLIST_SUB=	MAJOR_LIB_VER=${MAJOR_LIB_VER}
 PLIST_SUB+=	MINOR_LIB_VER=${MINOR_LIB_VER}
 
-post-patch:
-	${REINPLACE_CMD} -e 's|curses|ncurses|g' ${WRKSRC}/configure \
-		${WRKSRC}/src/cwcp/Makefile.in
+OPTIONS_DEFINE=	NLS
+OPTIONS_DEFAULT=	NLS
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
+.ifndef XCWCP
+OPTIONS_DEFINE+=	ALSA PULSEAUDIO
+OPTIONS_DEFAULT+=	ALSA PULSEAUDIO
+ALSA_CONFIGURE_ENABLE=	alsa
+PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio
+ALSA_BUILD_DEPENDS=	${LOCALBASE}/include/alsa/asoundlib.h:audio/alsa-lib
+PULSEAUDIO_BUILD_DEPENDS=	${LOCALBASE}/include/pulse/simple.h:audio/portaudio
+.endif
 
 post-install:
 .ifndef XCWCP
