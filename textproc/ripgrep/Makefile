@@ -4,8 +4,7 @@
 # vim: ts=8 noet
 
 PORTNAME=	ripgrep
-DISTVERSION=	0.8.1
-PORTREVISION=	1
+DISTVERSION=	0.9.0
 CATEGORIES=	textproc
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -22,46 +21,50 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	BurntSushi
 
-CARGO_CRATES=	aho-corasick-0.6.4 \
-		ansi_term-0.10.2 \
-		atty-0.2.6 \
-		bitflags-1.0.1 \
+CARGO_CRATES=	aho-corasick-0.6.6 \
+		ansi_term-0.11.0 \
+		atty-0.2.11 \
+		bitflags-1.0.3 \
 		bytecount-0.3.1 \
-		cfg-if-0.1.2 \
-		clap-2.30.0 \
+		cfg-if-0.1.4 \
+		clap-2.32.0 \
 		crossbeam-0.3.2 \
-		encoding_rs-0.7.2 \
+		encoding_rs-0.8.4 \
+		encoding_rs_io-0.1.1 \
 		fnv-1.0.6 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		glob-0.2.11 \
-		lazy_static-1.0.0 \
-		libc-0.2.40 \
-		log-0.4.1 \
+		lazy_static-1.0.2 \
+		libc-0.2.42 \
+		log-0.4.3 \
 		memchr-2.0.1 \
 		memmap-0.6.2 \
 		num_cpus-1.8.0 \
-		rand-0.3.22 \
 		rand-0.4.2 \
-		redox_syscall-0.1.37 \
+		redox_syscall-0.1.40 \
 		redox_termios-0.1.1 \
-		regex-0.2.6 \
-		regex-syntax-0.4.2 \
+		regex-1.0.2 \
+		regex-syntax-0.6.2 \
+		remove_dir_all-0.5.1 \
 		same-file-1.0.2 \
-		simd-0.2.1 \
+		simd-0.2.2 \
 		strsim-0.7.0 \
-		tempdir-0.3.5 \
+		tempdir-0.3.7 \
+		termcolor-1.0.1 \
 		termion-1.5.1 \
-		textwrap-0.9.0 \
+		textwrap-0.10.0 \
 		thread_local-0.3.5 \
-		unicode-width-0.1.4 \
+		ucd-util-0.1.1 \
+		unicode-width-0.1.5 \
 		unreachable-1.0.0 \
 		utf8-ranges-1.0.0 \
 		void-1.0.2 \
 		walkdir-2.1.4 \
-		winapi-0.3.4 \
+		winapi-0.3.5 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		wincolor-1.0.0
 
 RIPGREP_OUTDIR=	${WRKDIR}/cargo-out
 CARGO_ENV=	RIPGREP_OUTDIR=${RIPGREP_OUTDIR}
