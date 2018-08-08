@@ -1,0 +1,16 @@
+--- src/xcwcp/Makefile.am.orig	2018-08-07 21:13:40 UTC
++++ src/xcwcp/Makefile.am
+@@ -61,13 +61,8 @@ CLEANFILES = moc_application.cc
+ 
+ 
+ # Qt5 magic
+-if HOST_IS_FREEBSD
+-moc_application.cc: application.h
+-	$(AC_QT5_MOC) application.h -o application.cc
+-else
+ moc_application.cc: application.h
+ 	$(AC_QT5_MOC) $< -o $@
+-endif
+ 
+ 
+ 
