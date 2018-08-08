@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	aspcud
-PORTVERSION=	1.9.1
-DISTVERSIONSUFFIX=	-source
-PORTREVISION=	10
+PORTVERSION=	1.9.4
+DISTVERSIONPREFIX=     v
 CATEGORIES=	math ports-mgmt sysutils
-MASTER_SITES=	SOURCEFORGE/potassco/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Advanced solver for package dependencies
@@ -19,7 +17,9 @@ RUN_DEPENDS=	gringo:math/gringo \
 		clasp:math/clasp \
 		bash:shells/bash
 
-USES=	compiler:c++11-lang cmake:outsource python:run
+USES=		compiler:c++11-lang cmake:outsource python:run
+USE_GITHUB=	yes
+GH_ACCOUNT=	potassco
 
 CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${MANPREFIX}/man
 
