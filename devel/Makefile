@@ -5751,6 +5751,7 @@
     SUBDIR += rubygem-mixlib-authentication
     SUBDIR += rubygem-mixlib-cli
     SUBDIR += rubygem-mixlib-config
+    SUBDIR += rubygem-mixlib-install
     SUBDIR += rubygem-mixlib-log
     SUBDIR += rubygem-mixlib-shellout
     SUBDIR += rubygem-mixlib-versioning

@@ -1,0 +1,4 @@
+A library for interacting with Chef Software Inc's software distribution
+systems.
+
+WWW: https://rubygems.org/gems/mixlib-install
