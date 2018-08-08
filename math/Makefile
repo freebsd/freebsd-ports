@@ -17,7 +17,6 @@
     SUBDIR += R-cran-MCMCpack
     SUBDIR += R-cran-MSwM
     SUBDIR += R-cran-MatchIt
-    SUBDIR += R-cran-magic
     SUBDIR += R-cran-Matching
     SUBDIR += R-cran-MatrixModels
     SUBDIR += R-cran-NMF
@@ -28,8 +27,8 @@
     SUBDIR += R-cran-RcppRoll
     SUBDIR += R-cran-Rmpfr
     SUBDIR += R-cran-Rsolnp
+    SUBDIR += R-cran-SQUAREM
     SUBDIR += R-cran-SparseM
-    SUBDIR += R-cran-uroot
     SUBDIR += R-cran-VGAM
     SUBDIR += R-cran-Zelig
     SUBDIR += R-cran-assertthat
@@ -64,6 +63,7 @@
     SUBDIR += R-cran-lava
     SUBDIR += R-cran-lazyeval
     SUBDIR += R-cran-lme4
+    SUBDIR += R-cran-magic
     SUBDIR += R-cran-maxLik
     SUBDIR += R-cran-mcmc
     SUBDIR += R-cran-memisc
@@ -91,12 +91,12 @@
     SUBDIR += R-cran-sp
     SUBDIR += R-cran-spData
     SUBDIR += R-cran-spdep
-    SUBDIR += R-cran-SQUAREM
     SUBDIR += R-cran-sspir
     SUBDIR += R-cran-stabledist
     SUBDIR += R-cran-survey
     SUBDIR += R-cran-truncnorm
     SUBDIR += R-cran-units
+    SUBDIR += R-cran-uroot
     SUBDIR += R-cran-xts
     SUBDIR += R-cran-zoo
     SUBDIR += SCIP

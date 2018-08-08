@@ -877,6 +877,7 @@
     SUBDIR += pstoedit
     SUBDIR += pstoepsi
     SUBDIR += ptex
+    SUBDIR += py-OWSLib
     SUBDIR += py-PyOpenGL
     SUBDIR += py-PyOpenGL-accelerate
     SUBDIR += py-PyX
@@ -920,7 +921,6 @@
     SUBDIR += py-opencv
     SUBDIR += py-openexr
     SUBDIR += py-openimageio
-    SUBDIR += py-OWSLib
     SUBDIR += py-paint
     SUBDIR += py-photocollage
     SUBDIR += py-pillow
@@ -1122,8 +1122,8 @@
     SUBDIR += waffle
     SUBDIR += waifu2x-converter-cpp
     SUBDIR += wayland
-    SUBDIR += waylandpp
     SUBDIR += wayland-protocols
+    SUBDIR += waylandpp
     SUBDIR += webp
     SUBDIR += wings
     SUBDIR += wmicons
