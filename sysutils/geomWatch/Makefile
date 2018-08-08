@@ -3,7 +3,7 @@
 
 PORTNAME=	geomWatch
 PORTVERSION=	1.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://isis.poly.edu/~bk/${PORTNAME}/ \
 		http://bk.macroblock.net/${PORTNAME}/ \
@@ -23,6 +23,7 @@ BROKEN_armv7=		fails to compile: call to 'atomic_add_64' is ambiguous
 IGNORE_DragonFly=	requires geom(4) support
 
 USES=		tar:tbz
+USE_CXXSTD=	gnu++98
 
 SUB_FILES=	pkg-message
 
