@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	hgsubversion
-PORTVERSION=	1.8.6
-PORTREVISION=	1
+PORTVERSION=	1.9.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Mercurial extension that allows using it as a Subversion client
 
 LICENSE=	GPLv2
