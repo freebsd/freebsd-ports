@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	s2n
-PORTVERSION=	20170425
+PORTVERSION=	20180802
 CATEGORIES=	security
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -10,20 +10,21 @@ COMMENT=	C99 implementation of the TLS/SSL protocols
 
 LICENSE=	APACHE20
 
-ONLY_FOR_ARCHS=	amd64
+USES=		cmake ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	awslabs
-GH_TAGNAME=	02ade5e
+GH_TAGNAME=	15fa0de
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES TEST
 
-USES=		gmake ssl
 USE_LDCONFIG=	yes
-NO_CONFIGURE=	yes
+CFLAGS+=	-D__USE_BSD=1
 
-SUB_FILES=	pkg-message Makefile
-ALL_TARGET=	bin
+SUB_FILES=	pkg-message
+
+TEST_CMAKE_BOOL=	BUILD_TESTING
+TEST_BUILD_DEPENDS=	gmake:devel/gmake
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CRYPTO_LDFLAGS |&+|' \
@@ -32,18 +33,15 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/tests/LD_PRELOAD/Makefile \
 		${WRKSRC}/tests/fuzz/LD_PRELOAD/Makefile
 
-do-install:
-	${INSTALL_LIB} ${WRKSRC}/lib/libs2n.so* ${STAGEDIR}${LOCALBASE}/lib
+post-build-TEST-on:
+	${GMAKE} PLATFORM=FreeBSD S2N_DONT_MLOCK=yes \
+		CRYPTO_LDFLAGS=-L${LOCALBASE}/lib -C ${WRKSRC}/tests
+
+post-install:
 	${LN} -s libs2n.so ${STAGEDIR}${LOCALBASE}/lib/libs2n.so.0
-	${INSTALL_DATA} ${WRKSRC}/api/s2n* ${STAGEDIR}${LOCALBASE}/include
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} -r ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/bin/*.c ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKDIR}/Makefile ${STAGEDIR}${EXAMPLESDIR}
-
-tests: build
-	${GMAKE} PLATFORM=FreeBSD S2N_DONT_MLOCK=yes \
-		CRYPTO_LDFLAGS=-L${LOCALBASE}/lib -C ${WRKSRC}/tests
 
 .include <bsd.port.mk>
