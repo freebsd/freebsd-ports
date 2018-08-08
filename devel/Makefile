@@ -5762,6 +5762,7 @@
     SUBDIR += rubygem-mkrf
     SUBDIR += rubygem-mmap2
     SUBDIR += rubygem-mocha
+    SUBDIR += rubygem-molinillo
     SUBDIR += rubygem-moneta
     SUBDIR += rubygem-mongo
     SUBDIR += rubygem-mono_logger
