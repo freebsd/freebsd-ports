@@ -1,0 +1,11 @@
+This add-on uses the Stem Tor control port library to connect to a Tor control
+port listening on port 9051 (or on an alternate user-specified port, or UNIX
+file system socket).
+
+This addon protects against guard discovery and related traffic analysis
+attacks. A guard discovery attack enables an adversary to determine the guard
+node(s) that are in use by a Tor client and/or Tor onion service. Once the guard
+node is known, traffic analysis attacks that can deanonymize an onion service
+(or onion service user) become easier.
+
+WWW: https://github.com/mikeperry-tor/vanguards
