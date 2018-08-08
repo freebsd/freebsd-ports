@@ -1,3 +1,5 @@
+https://jira.mariadb.org/browse/MDEV-15961
+
 --- mysys/stacktrace.c.orig	2018-01-27 18:40:37 UTC
 +++ mysys/stacktrace.c
 @@ -34,19 +34,19 @@

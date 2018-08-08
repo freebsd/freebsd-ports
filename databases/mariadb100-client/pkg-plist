@@ -102,3 +102,12 @@ man/man1/mysqldump.1.gz
 man/man1/mysqlimport.1.gz
 man/man1/mysqlshow.1.gz
 man/man1/mysqlslap.1.gz
+@comment bin/mytop
+@comment %%DATADIR%%/SELinux/mariadb.te
+@comment %%DATADIR%%/SELinux/rhel4-mysql.fc
+@comment %%DATADIR%%/SELinux/rhel4-mysql.te
+@comment %%DATADIR%%/binary-configure
+@comment %%DATADIR%%/magic
+@comment %%DATADIR%%/mysql-log-rotate
+@comment %%DATADIR%%/mysql.server
+@comment %%DATADIR%%/mysqld_multi.server
