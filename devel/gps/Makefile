@@ -14,6 +14,9 @@ COMMENT=	GNAT Programming Studio - IDE for Ada and many other languages
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Depends on obsolete LLVM 3.8.
+EXPIRATION_DATE=	2018-08-22
+
 BROKEN_aarch64=		fails to compile: No rule to make target 'default'
 
 BUILD_DEPENDS=	gprbuild:devel/gprbuild \
