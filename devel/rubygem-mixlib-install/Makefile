@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A library to manipulate Chef in Chef
+COMMENT=	Library to interact with the software distribution system in Chef
 
 LICENSE=	APACHE20
 
