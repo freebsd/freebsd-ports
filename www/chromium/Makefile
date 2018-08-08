@@ -3,6 +3,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	68.0.3440.84
+PORTREVISION=	1
 CATEGORIES?=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -133,8 +134,8 @@ GN_ARGS+=	google_api_key="AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8" \
 		google_default_client_secret="IR1za9-1VK0zZ0f_O8MVFicn"
 
 .if !defined(GN_ONLY)
-SUB_FILES=	chromium-browser.desktop chrome
-SUB_LIST+=	COMMENT="${COMMENT}"
+SUB_FILES=	chromium-browser.desktop chrome pkg-message
+SUB_LIST+=	COMMENT="${COMMENT}" DATADIR="${DATADIR}"
 
 OPTIONS_DEFINE=	CODECS CUPS DEBUG DRIVER KERBEROS TEST
 CODECS_DESC=	Compile and enable patented codecs like H.264
