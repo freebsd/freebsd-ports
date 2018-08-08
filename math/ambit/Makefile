@@ -4,7 +4,7 @@ PORTNAME=	ambit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2-37
 DISTVERSIONSUFFIX=	-g9c7049a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 PKGNAMESUFFIX=	-tensor # avoid clash with shells/ambit
 
@@ -31,10 +31,10 @@ CMAKE_ARGS+=	-DENABLE_TESTS:BOOL=OFF # https://github.com/jturney/ambit/issues/2
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
 # It requires clang version >3.6
-BUILD_DEPENDS+=	clang38:devel/llvm38
-RUN_DEPENDS+=	clang38:devel/llvm38
-CC=		clang38
-CXX=		clang++38
+BUILD_DEPENDS+=	clang60:devel/llvm60
+RUN_DEPENDS+=	clang60:devel/llvm60
+CC=		clang60
+CXX=		clang++60
 .endif
 
 .include <bsd.port.post.mk>
