@@ -10422,3 +10422,4 @@ security/opensaml2|security/opensaml|2018-08-07|Project updated to version 3, so
 devel/lldb38|devel/llvm38|2018-08-08|METAPORT removed
 lang/clang38|devel/llvm38|2018-08-08|METAPORT removed
 science/py-tensorflow||2018-08-08|Has expired: build broken
+devel/bazel-clang38|devel/bazel|2018-08-08|Slave port depends on obsolete LLVM version
