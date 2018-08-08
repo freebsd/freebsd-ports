@@ -1,6 +1,6 @@
---- net/base/address_tracker_linux.cc.orig	2018-06-13 00:10:21.000000000 +0200
-+++ net/base/address_tracker_linux.cc	2018-07-19 15:22:53.324530000 +0200
-@@ -19,96 +19,10 @@
+--- net/base/address_tracker_linux.cc.orig	2018-08-01 00:08:53.000000000 +0200
++++ net/base/address_tracker_linux.cc	2018-08-04 20:12:48.684622000 +0200
+@@ -20,96 +20,10 @@
  namespace net {
  namespace internal {
  
@@ -99,7 +99,7 @@
  }
  
  AddressTrackerLinux::AddressTrackerLinux()
-@@ -151,93 +65,8 @@
+@@ -152,93 +66,8 @@
  }
  
  void AddressTrackerLinux::Init() {
@@ -182,7 +182,7 @@
 -  }
 -
 -  if (tracking_) {
--    rv = base::MessageLoopForIO::current()->WatchFileDescriptor(
+-    rv = base::MessageLoopCurrentForIO::Get()->WatchFileDescriptor(
 -        netlink_fd_, true, base::MessagePumpForIO::WATCH_READ, &watcher_, this);
 -    if (rv < 0) {
 -      PLOG(ERROR) << "Could not watch NETLINK socket";
@@ -190,12 +190,12 @@
 -      return;
 -    }
 -  }
-+  NOTIMPLEMENTED();
-+  AbortAndForceOnline();
++NOTIMPLEMENTED();
++AbortAndForceOnline();
  }
  
  void AddressTrackerLinux::AbortAndForceOnline() {
-@@ -248,25 +77,6 @@
+@@ -249,25 +78,6 @@
    connection_type_initialized_cv_.Broadcast();
  }
  
@@ -221,7 +221,7 @@
  NetworkChangeNotifier::ConnectionType
  AddressTrackerLinux::GetCurrentConnectionType() {
    // http://crbug.com/125097
-@@ -317,102 +127,7 @@
+@@ -318,102 +128,7 @@
                                          bool* address_changed,
                                          bool* link_changed,
                                          bool* tunnel_changed) {
@@ -325,7 +325,7 @@
  }
  
  void AddressTrackerLinux::OnFileCanReadWithoutBlocking(int fd) {
-@@ -449,34 +164,7 @@
+@@ -450,34 +165,7 @@
  }
  
  void AddressTrackerLinux::UpdateCurrentConnectionType() {

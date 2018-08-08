@@ -1,6 +1,6 @@
---- content/browser/BUILD.gn.orig	2018-03-20 23:05:23.000000000 +0100
-+++ content/browser/BUILD.gn	2018-03-24 19:29:32.232928000 +0100
-@@ -1711,11 +1711,6 @@
+--- content/browser/BUILD.gn.orig	2018-08-01 00:08:43.000000000 +0200
++++ content/browser/BUILD.gn	2018-08-04 21:53:48.299617000 +0200
+@@ -1802,11 +1802,6 @@
        "tracing/cros_tracing_agent.cc",
        "tracing/cros_tracing_agent.h",
      ]
@@ -11,21 +11,4 @@
 -    ]
    }
  
-   if (is_chromecast && is_linux) {
-@@ -2191,6 +2186,16 @@
-     deps += [
-       "//chromeos",
-       "//chromeos:power_manager_proto",
-+    ]
-+  } else if (is_bsd) {
-+    sources -= [
-+        "zygote_host/zygote_communication_linux.cc",
-+        "zygote_host/zygote_communication_linux.h",
-+        "zygote_host/zygote_host_impl_linux.cc",
-+        "zygote_host/zygote_host_impl_linux.h",
-+        "../zygote/zygote_linux.cc",
-+        "../zygote/zygote_linux.h",
-+        "../zygote/zygote_main_linux.cc",
-     ]
-   }
- 
+   if (is_chromeos || is_android || is_chromecast) {

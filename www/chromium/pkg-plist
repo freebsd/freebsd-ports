@@ -3,6 +3,7 @@ bin/chrome
 %%DATADIR%%/chrome-wrapper
 %%DATADIR%%/chrome_100_percent.pak
 %%DATADIR%%/chrome_200_percent.pak
+%%DATADIR%%/fix-hanging-tabs.sh
 %%DATADIR%%/font_service.service
 %%DATADIR%%/headless_lib.pak
 %%DATADIR%%/icudtl.dat
@@ -185,6 +186,7 @@ bin/chrome
 %%DATADIR%%/resources/inspector/InspectorBackendCommands.js
 %%DATADIR%%/resources/inspector/SupportedCSSProperties.js
 %%DATADIR%%/resources/inspector/Tests.js
+%%DATADIR%%/resources/inspector/accessibility/ARIAProperties.js
 %%DATADIR%%/resources/inspector/accessibility/accessibility_module.js
 %%DATADIR%%/resources/inspector/accessibility_test_runner/accessibility_test_runner_module.js
 %%DATADIR%%/resources/inspector/animation/animation_module.js
@@ -269,6 +271,7 @@ bin/chrome
 %%DATADIR%%/resources/inspector/inspector.js
 %%DATADIR%%/resources/inspector/integration_test_runner.html
 %%DATADIR%%/resources/inspector/integration_test_runner.js
+%%DATADIR%%/resources/inspector/javascript_metadata/javascript_metadata_module.js
 %%DATADIR%%/resources/inspector/js_app.html
 %%DATADIR%%/resources/inspector/js_app.js
 %%DATADIR%%/resources/inspector/js_profiler/js_profiler_module.js

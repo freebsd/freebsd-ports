@@ -1,23 +1,19 @@
---- build/config/BUILDCONFIG.gn.orig	2018-02-24 16:25:08.000000000 +0100
-+++ build/config/BUILDCONFIG.gn	2018-03-03 19:33:34.562749000 +0100
-@@ -131,14 +131,14 @@
+--- build/config/BUILDCONFIG.gn.orig	2018-08-01 00:08:26.000000000 +0200
++++ build/config/BUILDCONFIG.gn	2018-08-04 13:56:21.383564000 +0200
+@@ -131,10 +131,10 @@
    is_official_build = false
  
    # Whether we're a traditional desktop unix.
 -  is_desktop_linux = current_os == "linux"
 +  is_desktop_linux = current_os == "linux" || current_os == "bsd"
  
-   # Set to true when compiling with the Clang compiler. Typically this is used
-   # to configure warnings.
-   is_clang =
-       current_os == "mac" || current_os == "ios" || current_os == "chromeos" ||
-       current_os == "fuchsia" || current_os == "android" ||
--      current_os == "win" ||
-+      current_os == "win" || current_os == "bsd" ||
-       (current_os == "linux" && current_cpu != "s390x" &&
-        current_cpu != "s390" && current_cpu != "ppc64" &&
-        current_cpu != "ppc" && current_cpu != "mips" && current_cpu != "mips64")
-@@ -191,8 +191,8 @@
+   # Set to true when compiling with the Clang compiler.
+-  is_clang = current_os != "linux" ||
++  is_clang = current_os != "linux" || current_os == "bsd" ||
+              (current_cpu != "s390x" && current_cpu != "s390" &&
+               current_cpu != "ppc64" && current_cpu != "ppc" &&
+               current_cpu != "mips" && current_cpu != "mips64")
+@@ -186,8 +186,8 @@
    # TODO(dpranke): Add some sort of assert here that verifies that
    # no toolchain omitted host_toolchain from its toolchain_args().
  
@@ -28,7 +24,7 @@
        # TODO(dpranke) - is_clang normally applies only to the target
        # build, and there is no way to indicate that you want to override
        # it for both the target build *and* the host build. Do we need to
-@@ -226,7 +226,7 @@
+@@ -227,7 +227,7 @@
    assert(host_os == "linux" || host_os == "mac",
           "Android builds are only supported on Linux and Mac hosts.")
    _default_toolchain = "//build/toolchain/android:android_clang_$target_cpu"
@@ -37,7 +33,7 @@
    # See comments in build/toolchain/cros/BUILD.gn about board compiles.
    if (is_clang) {
      _default_toolchain = "//build/toolchain/linux:clang_$target_cpu"
-@@ -296,6 +296,7 @@
+@@ -300,6 +300,7 @@
    is_nacl = false
    is_posix = false
    is_win = true
@@ -45,7 +41,7 @@
  } else if (current_os == "mac") {
    is_android = false
    is_chromeos = false
-@@ -306,6 +307,7 @@
+@@ -310,6 +311,7 @@
    is_nacl = false
    is_posix = true
    is_win = false
@@ -53,7 +49,7 @@
  } else if (current_os == "android") {
    is_android = true
    is_chromeos = false
-@@ -316,6 +318,7 @@
+@@ -320,6 +322,7 @@
    is_nacl = false
    is_posix = true
    is_win = false
@@ -61,7 +57,7 @@
  } else if (current_os == "chromeos") {
    is_android = false
    is_chromeos = true
-@@ -326,6 +329,7 @@
+@@ -330,6 +333,7 @@
    is_nacl = false
    is_posix = true
    is_win = false
@@ -69,7 +65,7 @@
  } else if (current_os == "nacl") {
    # current_os == "nacl" will be passed by the nacl toolchain definition.
    # It is not set by default or on the command line. We treat is as a
-@@ -339,6 +343,7 @@
+@@ -343,6 +347,7 @@
    is_nacl = true
    is_posix = true
    is_win = false
@@ -77,15 +73,15 @@
  } else if (current_os == "fuchsia") {
    is_android = false
    is_chromeos = false
-@@ -349,6 +354,7 @@
+@@ -353,6 +358,7 @@
    is_nacl = false
-   is_posix = true
+   is_posix = false
    is_win = false
 +  is_bsd = false
  } else if (current_os == "ios") {
    is_android = false
    is_chromeos = false
-@@ -359,6 +365,7 @@
+@@ -363,6 +369,7 @@
    is_nacl = false
    is_posix = true
    is_win = false
@@ -93,7 +89,7 @@
  } else if (current_os == "linux") {
    is_android = false
    is_chromeos = false
-@@ -369,6 +376,7 @@
+@@ -373,6 +380,7 @@
    is_nacl = false
    is_posix = true
    is_win = false
@@ -101,7 +97,7 @@
  } else if (current_os == "aix") {
    is_android = false
    is_chromeos = false
-@@ -378,6 +386,18 @@
+@@ -383,6 +391,18 @@
    is_nacl = false
    is_posix = true
    is_win = false

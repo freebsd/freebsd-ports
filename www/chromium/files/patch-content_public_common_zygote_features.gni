@@ -1,8 +1,0 @@
---- content/public/common/zygote_features.gni.orig	2018-03-24 12:14:17.829148000 +0100
-+++ content/public/common/zygote_features.gni	2018-03-24 12:14:28.619495000 +0100
-@@ -2,4 +2,4 @@
- # Use of this source code is governed by a BSD-style license that can be
- # found in the LICENSE file.
- 
--use_zygote_handle = is_posix && !is_android && !is_mac && !is_fuchsia
-+use_zygote_handle = is_posix && !is_android && !is_mac && !is_fuchsia && !is_bsd

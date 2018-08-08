@@ -1,10 +1,28 @@
---- components/crash/core/common/BUILD.gn.orig	2018-03-03 20:58:02.430388000 +0100
-+++ components/crash/core/common/BUILD.gn	2018-03-03 20:58:21.875946000 +0100
-@@ -38,7 +38,6 @@
-       "crash_key_internal.h",
-     ]
+--- components/crash/core/common/BUILD.gn.orig	2018-08-01 00:08:38.000000000 +0200
++++ components/crash/core/common/BUILD.gn	2018-08-05 12:52:29.173813000 +0200
+@@ -6,7 +6,7 @@
+ 
+ declare_args() {
+   # If set to true, this will stub out and disable the entire crash key system.
+-  use_crash_key_stubs = is_fuchsia
++  use_crash_key_stubs = is_fuchsia || is_bsd
+ }
+ 
+ group("common") {
+@@ -88,7 +88,6 @@
+       ]
+     }
  
 -    deps += [ "//third_party/breakpad:client" ]
    }
  }
  
+@@ -143,7 +142,7 @@
+     sources += [ "objc_zombie_unittest.mm" ]
+   }
+ 
+-  if (!is_mac && !is_win && !is_fuchsia) {
++  if (!is_mac && !is_win && !is_fuchsia && !is_bsd) {
+     include_dirs = [ "//third_party/breakpad/breakpad/src/" ]
+     sources += [ "crash_key_breakpad_unittest.cc" ]
+   }
