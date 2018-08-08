@@ -5939,6 +5939,7 @@
     SUBDIR += rubygem-semantic_puppet
     SUBDIR += rubygem-semi_semantic
     SUBDIR += rubygem-semver2
+    SUBDIR += rubygem-semverse
     SUBDIR += rubygem-sentry-raven
     SUBDIR += rubygem-sentry-raven25
     SUBDIR += rubygem-sequel
