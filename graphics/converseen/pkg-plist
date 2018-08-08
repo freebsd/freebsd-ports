@@ -13,5 +13,6 @@ share/applications/converseen.desktop
 %%DATADIR%%/loc/converseen_pt_BR.qm
 %%DATADIR%%/loc/converseen_ru_RU.qm
 %%DATADIR%%/loc/converseen_tr_TR.qm
+%%DATADIR%%/loc/converseen_uk_UA.qm
 share/kservices5/ServiceMenus/converseen_import.desktop
 share/pixmaps/converseen.png
