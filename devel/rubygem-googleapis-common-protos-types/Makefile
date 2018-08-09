@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	googleapis-common-protos-types
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-google-protobuf>=3.0:devel/rubygem-google-protobuf
 
+NO_ARCH=	yes
 USES=		gem
 USE_RUBY=	yes
 
