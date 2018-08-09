@@ -9,3 +9,11 @@
  libdir=${exec_prefix}/lib
  
  Name: OSSP uuid
+@@ -37,6 +37,6 @@ Description: Universally Unique Identifi
+ Version: @UUID_VERSION_RAW@
+ URL: http://www.ossp.org/pkg/lib/uuid/
+ Cflags: -I${includedir}
+-Libs: -L${libdir} -luuid
++Libs: -L${libdir} -lossp-uuid
+ Libs.private: @LIBS@
+
