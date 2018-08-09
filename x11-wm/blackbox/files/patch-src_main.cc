@@ -1,5 +1,5 @@
---- src/main.cc.orig	2013-08-31 16:15:04.709773262 +0200
-+++ src/main.cc	2013-08-31 16:15:45.604774045 +0200
+--- src/main.cc.orig	2005-01-03 09:42:57 UTC
++++ src/main.cc
 @@ -24,6 +24,8 @@
  
  // #define PRINT_SIZES
@@ -9,7 +9,7 @@
  #if defined(PRINT_SIZES)
  #  include "Screen.hh"
  #  include "Slit.hh"
-@@ -69,7 +71,7 @@
+@@ -69,7 +71,7 @@ static void showHelp(int exitval) {
  #endif // SHAPE
           );
  
@@ -18,7 +18,7 @@
  }
  
  int main(int argc, char **argv) {
-@@ -87,13 +89,13 @@
+@@ -87,13 +89,13 @@ int main(int argc, char **argv) {
               "Copyright (c) 1997 - 2000, 2002 - 2005 Bradley T Hughes\n",
               __blackbox_version);
  
@@ -34,7 +34,7 @@
        }
  
        rc_file = argv[i];
-@@ -103,7 +105,7 @@
+@@ -103,7 +105,7 @@ int main(int argc, char **argv) {
  
        if ((++i) >= argc) {
          fprintf(stderr, "error: '-display' requires an argument\n");

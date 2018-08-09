@@ -1,5 +1,5 @@
---- lib/Display.cc.orig	2005-01-03 10:42:38.000000000 +0100
-+++ lib/Display.cc	2013-08-31 15:42:48.395906537 +0200
+--- lib/Display.cc.orig	2005-01-03 09:42:38 UTC
++++ lib/Display.cc
 @@ -25,6 +25,7 @@
  #include "Display.hh"
  
@@ -16,7 +16,7 @@
  namespace bt {
  
    void createBitmapLoader(const Display &display);
-@@ -68,7 +68,7 @@
+@@ -68,7 +68,7 @@ bt::Display::Display(const char *dpy_name, bool multi_
    if (!(xdisplay = XOpenDisplay(dpy_name))) {
      fprintf(stderr, "bt::Display: failed to open display '%s'\n",
              dpy_name ? dpy_name : "");
@@ -25,7 +25,7 @@
    }
  
  #ifdef DEBUG
-@@ -77,7 +77,7 @@
+@@ -77,7 +77,7 @@ bt::Display::Display(const char *dpy_name, bool multi_
  
    if (fcntl(XConnectionNumber(xdisplay), F_SETFD, 1) == -1) {
      fprintf(stderr, "bt::Display: failed to mark connection close-on-exec\n");

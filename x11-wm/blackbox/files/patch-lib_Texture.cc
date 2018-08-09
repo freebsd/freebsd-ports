@@ -1,5 +1,5 @@
---- lib/Texture.cc.orig	2013-08-31 15:55:19.995853042 +0200
-+++ lib/Texture.cc	2013-08-31 15:55:47.288909835 +0200
+--- lib/Texture.cc.orig	2005-03-15 07:01:36 UTC
++++ lib/Texture.cc
 @@ -28,6 +28,7 @@
  #include "Resource.hh"
  
@@ -8,7 +8,7 @@
  
  #include <X11/Xlib.h>
  #include <ctype.h>
-@@ -184,7 +185,7 @@
+@@ -184,7 +185,7 @@ bt::Texture bt::textureResource(const Display &display
  
      const std::string bstr =
        resource.read(name + ".borderWidth", className + ".BorderWidth", "1");
