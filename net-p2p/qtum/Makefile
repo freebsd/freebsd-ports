@@ -3,6 +3,7 @@
 
 PORTNAME=	qtum
 PORTVERSION=	0.15.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	mainnet-ignition-v
 CATEGORIES=	net-p2p finance
 

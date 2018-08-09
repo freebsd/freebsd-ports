@@ -3,6 +3,7 @@
 
 PORTNAME=	solidity
 PORTVERSION=	0.4.23
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ethereum/solidity/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -11,6 +12,8 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Solidity Contract-Oriented Programming Language
 
 LICENSE=	GPLv3
+
+BROKEN=		fails to build with boost 1.68, see bug 230392
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
 LIB_DEPENDS=	libjsoncpp.so:devel/jsoncpp

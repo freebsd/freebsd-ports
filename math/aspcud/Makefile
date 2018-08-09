@@ -3,6 +3,7 @@
 
 PORTNAME=	aspcud
 PORTVERSION=	1.9.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=     v
 CATEGORIES=	math ports-mgmt sysutils
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	monotone
 PORTVERSION=	1.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	devel
 MASTER_SITES=	http://www.monotone.ca/downloads/${PORTVERSION}/
 
