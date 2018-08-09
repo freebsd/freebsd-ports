@@ -1,0 +1,15 @@
+===========================================================================
+Please set the hostname of your fiche server by running:
+sysrc fiche_domain="mypaste.domain.com"
+
+You'll still need a separate webserver configured to serve the content that
+fiche produces in %%WWWDIR%%.
+
+An example nginx config may be found here:
+https://github.com/solusipse/fiche
+
+If you wish to serve the content over HTTPS, please run the following to
+ensure that fiche hands out URLs prefixed with https://:
+
+sysrc fiche_flags="-S"
+===========================================================================
