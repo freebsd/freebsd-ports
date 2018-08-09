@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	igraph
-DISTVERSION=	1.2.1
+DISTVERSION=	1.2.2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,6 +10,8 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Network Analysis and Visualization
 
 LICENSE=	GPLv2+
+
+BROKEN_sparc64=	Does not compile on sparc64: uses i386 assembler
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 CRAN_DEPENDS=	R-cran-magrittr>0:devel/R-cran-magrittr \
@@ -20,10 +22,4 @@ RUN_DEPENDS=	${CRAN_DEPENDS}
 USES=		cran:auto-plist,compiles
 USE_GNOME=	libxml2
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64: uses i386 assembler
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
