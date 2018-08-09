@@ -9,6 +9,12 @@ sysrc urbackup_client_enable=YES
 START MANUALLY:
 service urbackup_client start
 
+The client daemon's configuration file is located at:
+%%PREFIX%%/etc/urbackup/urbackupclient.conf
+
+Log rotation can be configured at:
+%%PREFIX%%/etc/newsyslog.conf.d/urbackupclient.conf
+
 If the GTK2 GUI was built, it can be launched via:
 %%PREFIX%%/bin/urbackupclientctl
 
