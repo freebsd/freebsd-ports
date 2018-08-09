@@ -5,7 +5,7 @@ DISTVERSION=	4.6
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/tortoisehg/targz/downloads/
 
-MAINTAINER=	6yearold@gmail.com
+MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	GUI for Mercurial VCS
 
 LICENSE=	GPLv2
