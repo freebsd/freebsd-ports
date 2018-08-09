@@ -1,6 +1,6 @@
---- src/Slit.cc.orig	2005-01-04 20:58:33.000000000 +0800
-+++ src/Slit.cc	2011-06-21 13:31:00.000000000 +0800
-@@ -248,6 +248,13 @@
+--- src/Slit.cc.orig	2005-01-04 12:58:33 UTC
++++ src/Slit.cc
+@@ -248,6 +248,13 @@ void Slit::reconfigure(void) {
      bt::PixmapCache::find(screen->screenNumber(), texture,
                            frame.rect.width(), frame.rect.height(),
                            frame.pixmap);
