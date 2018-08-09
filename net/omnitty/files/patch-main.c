@@ -1,5 +1,5 @@
---- main.c.orig	2005-10-26 06:08:25.000000000 +0800
-+++ main.c	2011-04-22 23:14:33.000000000 +0800
+--- main.c.orig	2005-10-25 22:08:25 UTC
++++ main.c
 @@ -36,6 +36,7 @@
  /* minimum terminal dimensions to run program */
  #define MIN_REQUIRED_WIDTH 80
@@ -8,7 +8,7 @@
  
  #define REMINDER_LINE "OmNiTTY-R v" OMNITTY_VERSION \
                        "  \007F1\007:menu  \006F2/3\007:sel  \003F4\007:tag" \
-@@ -88,6 +88,12 @@
+@@ -88,6 +89,12 @@ void curses_init() {
     define_key("\e[15~", KEY_F(5)); define_key("\e[17~", KEY_F(6));
     define_key("\e[18~", KEY_F(7)); define_key("\e[19~", KEY_F(8));
     define_key("\e[20~", KEY_F(9)); define_key("\e[21~", KEY_F(10));
@@ -21,7 +21,7 @@
  
     getmaxyx(stdscr, h, w);
     if (h < MIN_REQUIRED_HEIGHT || w < MIN_REQUIRED_WIDTH) {
-@@ -288,10 +289,10 @@
+@@ -288,10 +295,10 @@ static void add_machines_from_file(const char *file) {
  }
  
  static void add_machine() {
@@ -34,7 +34,7 @@
        if (*buf == '@') add_machines_from_file(buf+1);
        else machmgr_add(buf);
     }
-@@ -335,9 +341,10 @@
+@@ -335,9 +342,10 @@ int main(int argc, char **argv) {
  
     while (!quit) {
        if (zombie_count) {
