@@ -3,7 +3,7 @@
 
 PORTNAME=	matrix-synapse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.31.2
+DISTVERSION=	0.33.2
 CATEGORIES=	net-im python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -29,18 +29,19 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=2.5.1:devel/py-jsonschema@${PY_F
 		${PYTHON_PKGNAMEPREFIX}bcrypt>=0.4:security/py-bcrypt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=3.1.1:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydenticon>=0.2:devel/py-pydenticon@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ujson>=1.35:devel/py-ujson@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}blist>=1.3.6:devel/py-blist@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sortedcontainers>0:devel/py-sortedcontainers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysaml2>=4.0.2:security/py-pysaml2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymacaroons-pynacl>=0.9.3:security/py-pymacaroons-pynacl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=0.3.0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}phonenumbers>=8.2.0:devel/py-phonenumbers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}prometheus-client>=0.2.0:net-mgmt/py-prometheus-client@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}prometheus-client>=0.2.0:net-mgmt/py-prometheus-client@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}attrs>0:devel/py-attrs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}netaddr>=0.7.18:net/py-netaddr@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR}
 
 # Conditional requirements that aren't so conditional
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}matrix-angular-sdk>=0.6.6:devel/py-matrix-angular-sdk@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}matrix-angular-sdk>=0.6.8:devel/py-matrix-angular-sdk@${PY_FLAVOR}
 
 # Dependencies that aren't declared in python_dependencies.py which I have discovered
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>=3.10.0:devel/py-simplejson@${PY_FLAVOR} \
