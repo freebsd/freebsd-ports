@@ -148,6 +148,7 @@
     SUBDIR += exabgp
     SUBDIR += exaddos
     SUBDIR += fb
+    SUBDIR += fiche
     SUBDIR += file2pcap
     SUBDIR += findmtu
     SUBDIR += flower
