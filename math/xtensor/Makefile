@@ -20,7 +20,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 post-install:
-	@cd ${WRKSRC}/xtl/include && ${COPYTREE_SHARE} xtl ${STAGEDIR}${PREFIX}/include
+	cd ${WRKSRC}/xtl/include && ${COPYTREE_SHARE} xtl ${STAGEDIR}${PREFIX}/include
 
 do-test:
 	@${RLN} ${STAGEDIR}${PREFIX}/include ${WRKSRC}/test/staged-include
