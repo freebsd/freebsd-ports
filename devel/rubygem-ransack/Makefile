@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ransack
-PORTVERSION=	1.8.8
+PORTVERSION=	1.8.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,8 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-actionpack4>=3.0:www/rubygem-actionpack4 \
 		rubygem-activerecord4>=3.0:databases/rubygem-activerecord4 \
 		rubygem-activesupport4>=3.0:devel/rubygem-activesupport4 \
-		rubygem-i18n>=0:devel/rubygem-i18n \
-		rubygem-polyamorous>=1.3.2:devel/rubygem-polyamorous
+		rubygem-i18n>=0:devel/rubygem-i18n
 
 NO_ARCH=	yes
 USE_RUBY=	yes
