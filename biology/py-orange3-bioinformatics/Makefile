@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	orange3-bioinformatics
-DISTVERSION=	3.1.1
+DISTVERSION=	3.2.0
 CATEGORIES=	biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
