@@ -14,11 +14,6 @@ COMMENT=	C library for Apache Avro
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=	fails to build: error: No atomic implementation
-BROKEN_armv6=	fails to build: error: No atomic implementation
-BROKEN_armv7=	fails to build: error: No atomic implementation
-BROKEN_mips=	fails to build: error: No atomic implementation
-BROKEN_mips64=	fails to build: error: No atomic implementation
 BROKEN_sparc64=	fails to build
 
 LIB_DEPENDS=	libjansson.so:devel/jansson \
