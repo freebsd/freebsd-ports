@@ -247,6 +247,7 @@
     SUBDIR += vmd
     SUBDIR += voro++
     SUBDIR += xcrysden
+    SUBDIR += xdrawchem
     SUBDIR += xfce4-equake-plugin
     SUBDIR += xmakemol
 
