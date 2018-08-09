@@ -34,10 +34,6 @@ bin/morbo
 %%SITE_PERL%%/Mojo/IOLoop/TLS.pm
 %%SITE_PERL%%/Mojo/IOLoop/resources/server.crt
 %%SITE_PERL%%/Mojo/IOLoop/resources/server.key
-%%SITE_PERL%%/Mojo/IOLoop/Stream/HTTPClient.pm
-%%SITE_PERL%%/Mojo/IOLoop/Stream/HTTPServer.pm
-%%SITE_PERL%%/Mojo/IOLoop/Stream/WebSocketClient.pm
-%%SITE_PERL%%/Mojo/IOLoop/Stream/WebSocketServer.pm
 %%SITE_PERL%%/Mojo/JSON.pm
 %%SITE_PERL%%/Mojo/JSON/Pointer.pm
 %%SITE_PERL%%/Mojo/Loader.pm
@@ -178,10 +174,6 @@ bin/morbo
 %%PERL5_MAN3%%/Mojo::IOLoop::Delay.3.gz
 %%PERL5_MAN3%%/Mojo::IOLoop::Server.3.gz
 %%PERL5_MAN3%%/Mojo::IOLoop::Stream.3.gz
-%%PERL5_MAN3%%/Mojo::IOLoop::Stream::HTTPClient.3.gz
-%%PERL5_MAN3%%/Mojo::IOLoop::Stream::HTTPServer.3.gz
-%%PERL5_MAN3%%/Mojo::IOLoop::Stream::WebSocketClient.3.gz
-%%PERL5_MAN3%%/Mojo::IOLoop::Stream::WebSocketServer.3.gz
 %%PERL5_MAN3%%/Mojo::IOLoop::Subprocess.3.gz
 %%PERL5_MAN3%%/Mojo::IOLoop::TLS.3.gz
 %%PERL5_MAN3%%/Mojo::JSON.3.gz
