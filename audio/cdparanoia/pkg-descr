@@ -19,4 +19,4 @@ configuration, happily autodetecting the CDROM, its type, its interface and
 other aspects of the ripping process at runtime.  A single binary can serve
 the diverse hardware of the do-it-yourself computer laboratory from Hell.
 
-WWW: http://www.xiph.org/paranoia/
+WWW: https://www.xiph.org/paranoia/
