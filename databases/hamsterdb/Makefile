@@ -3,7 +3,7 @@
 
 PORTNAME=	hamsterdb
 PORTVERSION=	2.1.11
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	databases
 MASTER_SITES=	http://files.hamsterdb.com/dl/
 

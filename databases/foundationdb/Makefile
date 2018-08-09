@@ -4,6 +4,7 @@
 PORTNAME=	foundationdb
 PORTVERSION=	5.2.5
 #DISTVERSIONPREFIX=	release-
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -14,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than amd64
+BROKEN=		fails to build with boost 1.68, see bug 229697
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \

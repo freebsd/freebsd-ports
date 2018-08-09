@@ -2,6 +2,7 @@
 
 PORTNAME=	rmf
 DISTVERSION=	g20180614
+PORTREVISION=	1
 CATEGORIES=	science graphics
 
 MAINTAINER=	yuri@FreeBSD.org

@@ -2,7 +2,7 @@
 
 PORTNAME=	gstreamer1
 PORTVERSION=	1.2.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/qt-gstreamer/
 PKGNAMESUFFIX=	-${FLAVOR}

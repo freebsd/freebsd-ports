@@ -3,7 +3,7 @@
 
 PORTNAME=	omxplayer
 PORTVERSION=	20161004
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia
 
 MAINTAINER=	mikael.urankar@gmail.com

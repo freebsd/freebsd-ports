@@ -3,7 +3,7 @@
 
 PORTNAME=	uatraits
 PORTVERSION=	20130430
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel www
 MASTER_SITES=	http://people.freebsd.org/~demon/
 
