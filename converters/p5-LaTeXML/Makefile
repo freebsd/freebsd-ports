@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	LaTeXML
-PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTVERSION=	0.8.3
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN \
 		http://dlmf.nist.gov/LaTeXML/releases/
@@ -18,6 +17,7 @@ LICENSE_FILE_CC0-1.0=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-JSON-XS>=0:converters/p5-JSON-XS \
+		p5-Text-Unidecode>=0:converters/p5-Text-Unidecode \
 		p5-IO-String>=0:devel/p5-IO-String \
 		p5-Parse-RecDescent>=0:devel/p5-Parse-RecDescent \
 		p5-Image-Size>=0:graphics/p5-Image-Size \
