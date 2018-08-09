@@ -117,3 +117,4 @@ man/man1/mysqldump.1.gz
 man/man1/mysqlimport.1.gz
 man/man1/mysqlshow.1.gz
 man/man1/mysqlslap.1.gz
+@comment %%DATADIR%%/wsrep.cnf
