@@ -44,7 +44,7 @@ OPTIONS_DEFAULT+=	ALSA PULSEAUDIO
 ALSA_CONFIGURE_ENABLE=	alsa
 PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio
 ALSA_BUILD_DEPENDS=	${LOCALBASE}/include/alsa/asoundlib.h:audio/alsa-lib
-PULSEAUDIO_BUILD_DEPENDS=	${LOCALBASE}/include/pulse/simple.h:audio/portaudio
+PULSEAUDIO_BUILD_DEPENDS=	${LOCALBASE}/include/pulse/simple.h:audio/pulseaudio
 .endif
 
 post-install:
