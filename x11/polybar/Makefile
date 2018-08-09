@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	polybar
-DISTVERSION=	3.2.0
+DISTVERSION=	3.2.1
 CATEGORIES=	x11
 
 MAINTAINER=	lebarondemerde@privacychain.ch
