@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	gstreamer1-plugins-sndio
-PORTVERSION=	1.8.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.8.0.1
 CATEGORIES=	audio
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -17,9 +17,8 @@ LIB_DEPENDS=	libgstaudio-1.0.so:multimedia/gstreamer1-plugins \
 USE_GITHUB=	yes
 GH_ACCOUNT=	t6
 
-USES=		gettext-runtime pkgconfig
+USES=		pkgconfig
 USE_GNOME=	glib20
-USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/gstreamer-1.0/libgstsndio.so
 
