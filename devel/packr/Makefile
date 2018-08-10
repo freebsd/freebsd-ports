@@ -2,7 +2,7 @@
 
 PORTNAME=	packr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.1
+DISTVERSION=	1.13.1
 CATEGORIES=	devel
 
 MAINTAINER=	dg@syrec.org
@@ -16,11 +16,11 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 USE_GITHUB=	yes
 GH_ACCOUNT=	gobuffalo
 GH_SUBDIR=	src/github.com/gobuffalo/packr
-GH_TUPLE=	golang:net:c4299a1:net/src/golang.org/x/net \
+GH_TUPLE=	golang:net:f9ce57c:net/src/golang.org/x/net \
 		golang:sync:1d60e46:sync/src/golang.org/x/sync \
 		pkg:errors:v0.8.0:errors/src/github.com/pkg/errors \
-		spf13:cobra:7c4570c:cobra/src/github.com/spf13/cobra \
-		spf13:pflag:3ebe029:pflag/src/github.com/spf13/pflag
+		spf13:cobra:v0.0.3:cobra/src/github.com/spf13/cobra \
+		spf13:pflag:v1.0.1:pflag/src/github.com/spf13/pflag
 
 PLIST_FILES=	bin/packr
 
