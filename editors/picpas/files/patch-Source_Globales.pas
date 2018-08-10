@@ -1,15 +1,15 @@
---- Source/Globales.pas	2018-04-26 21:02:54.473902000 -0500
-+++ Source/Globales.pas	2018-04-26 21:05:05.270945000 -0500
+--- Source/Globales.pas	2018-08-10 01:10:52.847492000 -0500
++++ Source/Globales.pas	2018-08-10 01:19:30.813221000 -0500
 @@ -5,7 +5,7 @@
  {$mode objfpc}{$H+}
  interface
  uses  Classes, SysUtils, Forms, SynEdit, SynEditKeyCmds, MisUtils,
 -      lclType, FileUtil, LazLogger, Menus ;
-+      lclType, FileUtil, LazLogger, Menus, Process, LazFileUtils, LazUTF8;
++      lclType, FileUtil, LazLogger, Menus,Process, LazFileUtils, LazUTF8 ;
  
  const
    NOM_PROG = 'PicPas';   //nombre de programa
-@@ -26,6 +26,7 @@
+@@ -29,6 +29,7 @@
     archivoEnt  : string;    //archivo de entrada
     MostrarError: Boolean;   //Bandera para mostrar mensajesde error.
     ActConsSeg  : Boolean;   //Activa consultas en segundo plano
@@ -17,21 +17,21 @@
  
  /////////////// Campos para manejo del diccionario //////////
  var
-@@ -173,7 +174,11 @@
+@@ -176,7 +177,11 @@
  
  initialization
    //inicia directorios de la aplicación
--  patApp :=  ExtractFilePath(Application.ExeName);  //incluye el '\' final
+-  patApp      :=  ExtractFilePath(Application.ExeName);  //incluye el '\' final
 +  {$ifdef windows}
 +  patApp := GetEnvironmentVariableUTF8('appdata')+'\PicPas\';
 +  {$else}
 +  patApp :=  GetEnvironmentVariableUTF8('HOME')+'/.config/PicPas/';
 +  {$endif}
-   patSamples := patApp + 'samples';
-   patUnits   := patApp + 'units';
-   patDevices := patApp + 'devices';
-@@ -183,29 +188,74 @@
-   archivoEnt := '';    //archivo de entrada
+   patSamples  := patApp + 'samples';
+   patUnits    := patApp + 'units';
+   patTemp     := patApp + 'temp';
+@@ -189,41 +194,107 @@
+   archivoEnt  := '';    //archivo de entrada
    //verifica existencia de carpetas de trabajo
    try
 +    if not DirectoryExists(patApp) then begin
@@ -61,16 +61,52 @@
 +        CreateDir(patUnits);
 +      {$endif}
      end;
-     if not DirectoryExists(patDevices) then begin
-        msgexc(WA_DIR_NOEXIST, [patDevices]);
--       CreateDir(patDevices);
+     if not DirectoryExists(patDevices10) then begin
+        msgexc(WA_DIR_NOEXIST, [patDevices10]);
+-       CreateDir(patDevices10);
 +      {$ifdef freebsd}
 +       RunCommand('cp', ['-R',
-+        '%%DATADIR%%/devices',
-+        patDevices
++        '%%DATADIR%%/devices10',
++        patDevices10
 +        ], S);
 +      {else}
-+        CreateDir(patDevices);
++        CreateDir(patDevices10);
++      {$endif}
+     end;
+     if not DirectoryExists(patDevices16) then begin
+        msgexc(WA_DIR_NOEXIST, [patDevices16]);
+-       CreateDir(patDevices16);
++      {$ifdef freebsd}
++       RunCommand('cp', ['-R',
++        '%%DATADIR%%/devices16',
++        patDevices16
++        ], S);
++      {else}
++        CreateDir(patDevices16);
++      {$endif}
+     end;
+     if not DirectoryExists(patDevices17) then begin
+        msgexc(WA_DIR_NOEXIST, [patDevices17]);
+-       CreateDir(patDevices17);
++      {$ifdef freebsd}
++       RunCommand('cp', ['-R',
++        '%%DATADIR%%/devices17',
++        patDevices17
++        ], S);
++      {else}
++        CreateDir(patDevices17);
++      {$endif}
+     end;
+     if not DirectoryExists(patDevices18) then begin
+        msgexc(WA_DIR_NOEXIST, [patDevices18]);
+-       CreateDir(patDevices18);
++      {$ifdef freebsd}
++       RunCommand('cp', ['-R',
++        '%%DATADIR%%/devices18',
++        patDevices18
++        ], S);
++      {else}
++        CreateDir(patDevices18);
 +      {$endif}
      end;
      if not DirectoryExists(patTemp) then begin
@@ -79,7 +115,7 @@
 +      {$ifdef freebsd}
 +       RunCommand('cp', ['-R',
 +        '%%DATADIR%%/temp',
-+        patSamples
++        patTemp
 +        ], S);
 +      {else}
 +        CreateDir(patTemp);

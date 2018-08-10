@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	picpas
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -23,22 +23,22 @@ DOS2UNIX_REGEX=	.*\.([txt]|pas|lpi|txt|lfm)
 USE_GITHUB=	yes
 GH_ACCOUNT=	t-edson
 GH_PROJECT=	PicPas
-GH_TAGNAME=	e095d58
+GH_TAGNAME=	cc5d415
 GH_TUPLE=	t-edson:MiConfig:a4a988a:miconfig/miconfig \
 		t-edson:MisUtils:742eff3:misutils/misutils  \
-		t-edson:PicUtils:b38865a:picutils/picutils \
+		t-edson:PicUtils:5f89bdf:picutils/picutils \
 		t-edson:SynFacilUtils:2909899:syncfacilutils/syncfacilutils \
 		t-edson:UtilsGrilla:07744b9:utilsgrilla/utilsgrilla \
-		t-edson:ogEditGraf:4552327:ogeditgraf/ogeeditgraf \
+		t-edson:ogEditGraf:328a207:ogeditgraf/ogeeditgraf \
 		t-edson:t-Xpres:6665922:txpres/txpres
+
+LAZARUS_PROJECT_FILES=	Source/PicPas.lpi
+LAZBUILD_ARGS=		-d
 
 USE_FPC_gtk2=	cairo
 USE_GNOME_gtk2=	cairo
 USE_FPC+=	${USE_FPC_${FLAVOR}}
 USE_GNOME+=	${USE_GNOME_${FLAVOR}}
-
-LAZARUS_PROJECT_FILES=	Source/PicPas.lpi
-LAZBUILD_ARGS=		-d
 
 post-patch:
 	${REINPLACE_CMD} 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/Source/Globales.pas
@@ -46,6 +46,6 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/PicPas-freebsd ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "devices syntax samples temp themes units" ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "devices10 devices16 devices17 syntax samples temp themes units" ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
