@@ -1,9 +1,9 @@
-# Created by: Dave Cottlehuber <dch@skunkwerks.at>
+# Created by: Dave Cottlehuber <dch@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	graphite-api
 PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

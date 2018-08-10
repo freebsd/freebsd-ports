@@ -55,8 +55,7 @@ start_precmd="start_precmd"
 
 start_precmd()
 {
-    test -d "%%GRAPHITEAPI_LOGDIR%%" || install -d -o
-    ${graphiteapi_user} \
+    test -d "%%GRAPHITEAPI_LOGDIR%%" || install -d -o ${graphiteapi_user} \
         -g ${graphiteapi_group} -m 0750 "%%GRAPHITEAPI_LOGDIR%%"
     test -d "%%GRAPHITEAPI_TMPDIR%%" || install -d -o ${graphiteapi_user} \
         -g ${graphiteapi_group} -m 0750 "%%GRAPHITEAPI_TMPDIR%%"
