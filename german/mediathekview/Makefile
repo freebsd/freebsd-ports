@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	mediathekview
-PORTVERSION=	13.0.6
+PORTVERSION=	13.1.2
 CATEGORIES=	german java
 MASTER_SITES=	https://download.mediathekview.de/stabil/
 DISTNAME=	MediathekView-${PORTVERSION}
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filme der oeff. rechtlichen Sender herunterladen und ansehen
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/Copyright/_mediathekView-LICENSE.txt
 
 RUN_DEPENDS=	${LOCALBASE}/openjdk8/bin/javafxpackager:java/openjfx8-devel \
 		flvstreamer:multimedia/flvstreamer
@@ -24,7 +23,6 @@ SUB_FILES=	${PORTNAME}
 NO_ARCH=	yes
 
 INSTALLFILES=	MediathekView.jar MediathekView.ico
-INSTALLDOCS=	Kurzanleitung.pdf Instructions.pdf
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_MULTI=		BACKEND
@@ -49,14 +47,12 @@ DESKTOP_ENTRIES="MediathekView" \
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/lib
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Icons
 .for i in ${INSTALLFILES}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DATADIR}/
 .endfor
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${INSTALLDOCS}
-		${INSTALL_DATA} ${WRKSRC}/Anleitung/${i} ${STAGEDIR}${DOCSDIR}/
-.endfor
 	(cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/lib/)
+	(cd ${WRKSRC}/Icons/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/Icons/)
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
