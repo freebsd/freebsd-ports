@@ -24,6 +24,7 @@
 %%WWWDIR%%/doc/02-Installation.md
 %%WWWDIR%%/doc/03-Configuration.md
 %%WWWDIR%%/doc/04-Templates.md
+%%WWWDIR%%/doc/05-Troubleshooting.md
 %%WWWDIR%%/doc/img/service-detail-view.png
 %%WWWDIR%%/doc/img/service-list.png
 %%WWWDIR%%/library/Graphite/Graphing/Chart.php
@@ -34,6 +35,7 @@
 %%WWWDIR%%/library/Graphite/Graphing/Template.php
 %%WWWDIR%%/library/Graphite/Graphing/Templates.php
 %%WWWDIR%%/library/Graphite/ProvidedHook/Monitoring/DetailviewExtension.php
+%%WWWDIR%%/library/Graphite/Util/InternalProcessTracker.php
 %%WWWDIR%%/library/Graphite/Util/MacroTemplate.php
 %%WWWDIR%%/library/Graphite/Web/Controller/MonitoringAwareController.php
 %%WWWDIR%%/library/Graphite/Web/Controller/TimeRangePickerTrait.php
