@@ -3,7 +3,7 @@
 
 PORTNAME=	dvd+rw-tools
 PORTVERSION=	7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pkix.net/mirror/fy.chalmers.se/ \
 		http://fy.chalmers.se/~appro/linux/DVD+RW/tools/
