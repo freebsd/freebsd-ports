@@ -7,7 +7,7 @@ CATEGORIES=	german java
 MASTER_SITES=	https://download.mediathekview.de/stabil/
 DISTNAME=	MediathekView-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Filme der oeff. rechtlichen Sender herunterladen und ansehen
 
 LICENSE=	GPLv3

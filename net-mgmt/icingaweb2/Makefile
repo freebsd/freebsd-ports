@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.1
 CATEGORIES=	net-mgmt www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Next generation web interface for Icinga 1 and 2
 
 LICENSE=	GPLv2
