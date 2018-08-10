@@ -2,11 +2,10 @@
 
 PORTNAME=	icinga2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.4
-PORTREVISION=	2
+DISTVERSION=	2.9.1
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitoring and management system for hosts, services and networks
 
 LICENSE=	GPLv2

@@ -1,7 +1,7 @@
---- CMakeLists.txt.orig	2018-03-22 10:26:19 UTC
+--- CMakeLists.txt.orig	2018-07-17 12:27:32 UTC
 +++ CMakeLists.txt
 @@ -28,8 +28,8 @@ if(NOT CMAKE_BUILD_TYPE)
-       FORCE)
+     FORCE)
  endif()
  
 -option(ICINGA2_WITH_MYSQL "Build the MySQL IDO module" ON)
@@ -10,4 +10,17 @@
 +option(ICINGA2_WITH_PGSQL "Build the PostgreSQL IDO module" OFF)
  option(ICINGA2_WITH_CHECKER "Build the checker module" ON)
  option(ICINGA2_WITH_COMPAT "Build the compat module" ON)
- option(ICINGA2_WITH_DEMO "Build the demo module" OFF)
+ option(ICINGA2_WITH_LIVESTATUS "Build the Livestatus module" ON)
+@@ -217,6 +217,12 @@ if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
+   endif()
+ endif()
+ 
++if(CMAKE_SYSTEM_NAME MATCHES "FreeBSD.*")
++    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lexecinfo")
++    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -lexecinfo")
++    set(CMAKE_STATIC_LINKER_FLAGS "${CMAKE_STATIC_LINKER_FLAGS} -lexecinfo")
++endif()
++
+ include(CheckCXXCompilerFlag)
+ 
+ function(check_cxx_linker_flag flag var)
