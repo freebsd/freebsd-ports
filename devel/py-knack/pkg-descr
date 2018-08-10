@@ -1,0 +1,24 @@
+Knack is a Python command line parsing framework.  Knack is built around the
+following patterns:
+ - Be consistent with POSIX tools.
+ - CLI success comes from ease and predictability of use so be consistent.
+ - Support Piping and output direction to chain commands together.
+ - Work with GREP, AWK, JQ and other common tools and commands.
+ - Support productivity features like tab completion and parameter value
+   completion.
+ - Commands should follow a "[noun] [noun] [verb]" pattern.
+ - For nouns that only support a single verb, the command should be named as a
+   single hyphenated verb-noun pair.
+ - Commands should support all output types (be consistent).
+ - Exceptions are okay if only a 'raw' format makes sense e.g. XML.
+ - Commands and arguments should have descriptions.
+ - Include examples for the less straightforward commands.
+ - Commands should return an object or dictionary, not strings/bools/etc.;
+   logging.info("Upload of myfile.txt successful") NOT return
+   "Upload successful".
+ - Log to ERROR or WARNING for user messages; don't use print() function (by
+   default it goes to STDOUT).
+ - STDOUT vs. STDERR: STDOUT is used for actual command output. Everything
+   else to STDERR (e.g. log/status/error messages).
+
+WWW: https://github.com/Microsoft/knack
