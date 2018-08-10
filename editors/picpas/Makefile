@@ -32,13 +32,13 @@ GH_TUPLE=	t-edson:MiConfig:a4a988a:miconfig/miconfig \
 		t-edson:ogEditGraf:328a207:ogeditgraf/ogeeditgraf \
 		t-edson:t-Xpres:6665922:txpres/txpres
 
-LAZARUS_PROJECT_FILES=	Source/PicPas.lpi
-LAZBUILD_ARGS=		-d
-
 USE_FPC_gtk2=	cairo
 USE_GNOME_gtk2=	cairo
 USE_FPC+=	${USE_FPC_${FLAVOR}}
 USE_GNOME+=	${USE_GNOME_${FLAVOR}}
+
+LAZARUS_PROJECT_FILES=	Source/PicPas.lpi
+LAZBUILD_ARGS=		-d
 
 post-patch:
 	${REINPLACE_CMD} 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/Source/Globales.pas
