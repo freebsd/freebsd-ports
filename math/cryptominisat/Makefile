@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cryptominisat
-DISTVERSION=	5.6.1
-PORTREVISION=	2
+DISTVERSION=	5.6.3
 CATEGORIES=	math
 
 MAINTAINER=	arrowd@FreeBSD.org
