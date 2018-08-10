@@ -4339,6 +4339,7 @@
     SUBDIR += py-apns2
     SUBDIR += py-appdirs
     SUBDIR += py-application
+    SUBDIR += py-applicationinsights
     SUBDIR += py-apptools
     SUBDIR += py-apscheduler
     SUBDIR += py-archetypes.querywidget
