@@ -639,7 +639,7 @@ index 4424f56..940f8aa 100644
  #endif
  
 +#if defined (MBEDTLS_SSL_DTLS_SRTP)
-+    mbedtls_zeroize( ssl->dtls_srtp_keys, ssl->dtls_srtp_keys_len );
++    mbedtls_platform_zeroize( ssl->dtls_srtp_keys, ssl->dtls_srtp_keys_len );
 +    mbedtls_free( ssl->dtls_srtp_keys );
 +#endif /* MBEDTLS_SSL_DTLS_SRTP */
 +
@@ -654,6 +654,6 @@ index 4424f56..940f8aa 100644
 +    mbedtls_free( conf->dtls_srtp_profiles_list );
 +#endif
 +
-     mbedtls_zeroize( conf, sizeof( mbedtls_ssl_config ) );
+     mbedtls_platform_zeroize( conf, sizeof( mbedtls_ssl_config ) );
  }
  
