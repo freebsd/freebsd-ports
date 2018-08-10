@@ -1,0 +1,4 @@
+CONFIG_API=y
+CONFIG_ARMV7_NONSEC=n
+CONFIG_CMD_CACHE=y
+CONFIG_BOOTCOMMAND="if test ${boot_fit} -eq 1; then run update_to_fit; fi; run findfdt; run init_console; run distro_bootcmd"
