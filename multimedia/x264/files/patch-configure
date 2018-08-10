@@ -91,7 +91,7 @@
          libdl="-ldl"
 +    else
 +        opencl="yes"
-+        define HAVE_OPENCL
++        define HAVE_OPENCL "(BIT_DEPTH==8)"
      fi
      LDFLAGS="$LDFLAGS $libdl"
  fi
