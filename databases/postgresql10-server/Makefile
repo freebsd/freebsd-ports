@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	postgresql
-DISTVERSION?=	10.4
-PORTREVISION?=	1
+DISTVERSION?=	10.5
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
 PKGNAMESUFFIX?= ${PORTVERSION:R}${COMPONENT}
@@ -14,9 +13,9 @@ COMMENT?=	PostgreSQL is the most advanced open-source database available anywher
 LICENSE=	PostgreSQL
 
 .if ${DISTVERSION:C/([0-9]*).*/\1/} == 10
-CONFLICTS+=	${PORTNAME}*-9.*
+CONFLICTS+=	${PORTNAME}9*
 .else
-CONFLICTS+=	${PORTNAME}*-9.[^${PORTVERSION:R:E}].* ${PORTNAME}10*
+CONFLICTS+=	${PORTNAME}9[^${PORTVERSION:R:E}]* ${PORTNAME}10*
 .endif
 
 WRKSRC=		${WRKDIR}/postgresql-${DISTVERSION}
@@ -29,7 +28,6 @@ USES+=		tar:bzip2 cpe
 .if !defined(NO_BUILD)
 USES+=	gmake
 GNU_CONFIGURE=	yes
-LLD_UNSAFE=	yes
 .endif
 
 PG_USER?=	postgres
@@ -102,7 +100,7 @@ USES+=		pkgconfig
 # (requires dump/restore if modified.)
 OPTIONS_DEFINE+=	INTDATE
 INTDATE_DESC=	Builds with 64-bit date/time type
-OPTIONS_DEFAULT+=	XML TZDATA INTDATE
+OPTIONS_DEFAULT+=	TZDATA INTDATE
 .endif
 
 .if !defined(SLAVE_ONLY)

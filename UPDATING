@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180810:
+  AFFECTS: databases/postgresql??-server
+  AUTHOR: girgen@FreeBSD.org
+
+  The PostgreSQL server packages are no longer built with support for the XML
+  datatype per default. To retain support for the XML datatype you should build
+  the port and check the XML option in the option dialog. The reason for this
+  is the bad security reputation of libxml2.
+ 
 20180806:
   AFFECTS: www/tt-rss
   AUTHOR: thierry@FreeBSD.org
