@@ -4,7 +4,7 @@ MASTERDIR=	${.CURDIR}/../u-boot-master
 
 MODEL=		riotboard
 BOARD_CONFIG=	riotboard_defconfig
-FAMILY=		riotboard
+FAMILY=		imx6
 
 UBOOT_PLIST=	u-boot.imx
 

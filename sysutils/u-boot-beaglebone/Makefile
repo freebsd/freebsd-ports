@@ -6,4 +6,7 @@ MODEL=		beaglebone
 BOARD_CONFIG=	am335x_boneblack_defconfig
 FAMILY=		omap
 
+CONFIG_FRAGMENT=	${.CURDIR}/files/bbb_fragment
+FRAGMENT_NAME=		bbb_fragment
+
 .include "${MASTERDIR}/Makefile"
