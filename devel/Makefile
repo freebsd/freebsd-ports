@@ -4682,6 +4682,7 @@
     SUBDIR += py-kid
     SUBDIR += py-kitchen
     SUBDIR += py-kjbuckets
+    SUBDIR += py-knack
     SUBDIR += py-kqueue
     SUBDIR += py-krosspython-kde4
     SUBDIR += py-lazr.config
