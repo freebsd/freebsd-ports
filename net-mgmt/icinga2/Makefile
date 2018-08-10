@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.9.1
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Monitoring and management system for hosts, services and networks
 
 LICENSE=	GPLv2
