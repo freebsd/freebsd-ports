@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mujs
-DISTVERSION=	1.0.3
+DISTVERSION=	1.0.4
 CATEGORIES=	lang devel
 
 MAINTAINER=	yuri@FreeBSD.org

@@ -1,18 +1,18 @@
---- Makefile.orig	2018-03-17 15:44:40 UTC
+--- Makefile.orig	2018-07-30 13:35:39 UTC
 +++ Makefile
-@@ -45,9 +45,9 @@ OUT := build/$(build)
+@@ -49,9 +49,9 @@ OUT := build/$(build)
  SRCS := $(wildcard js*.c utf*.c regexp.c)
  HDRS := $(wildcard js*.h mujs.h utf.h regexp.h)
  
 -default: static
 +default: shared
- static: $(OUT) $(OUT)/mujs $(OUT)/libmujs.a $(OUT)/mujs.pc
+ static: $(OUT)/mujs-pp $(OUT)/mujs $(OUT)/libmujs.a $(OUT)/mujs.pc
 -shared: static $(OUT)/libmujs.so
-+shared: $(OUT) $(OUT)/mujs $(OUT)/libmujs.so $(OUT)/mujs.pc
++shared: $(OUT)/mujs $(OUT)/libmujs.so $(OUT)/mujs.pc
  
  astnames.h: jsparse.h
  	grep -E '(AST|EXP|STM)_' jsparse.h | sed 's/^[^A-Z]*\(AST_\)*/"/;s/,.*/",/' | tr A-Z a-z > $@
-@@ -105,7 +105,7 @@ install-static: install-common
+@@ -115,7 +115,7 @@ install-static: install-common
  install-shared: install-common
  	install -m 755 build/release/libmujs.so $(DESTDIR)$(libdir)
  
