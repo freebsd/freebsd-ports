@@ -2,7 +2,7 @@
 
 PORTNAME=	msx264
 PORTVERSION=	1.5.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia net
 MASTER_SITES=	SAVANNAH/linphone/plugins/sources/
 
