@@ -39,7 +39,7 @@ etc/bash_completion.d/icinga2
 %%MYSQL%%lib/icinga2/libmysql_shim.so
 %%MYSQL%%lib/icinga2/libmysql_shim.so.2.9.1
 %%PGSQL%%lib/icinga2/libpgsql_shim.so
-lib/icinga2/libpgsql_shim.so.2.9.1
+%%PGSQL%%lib/icinga2/libpgsql_shim.so.2.9.1
 lib/icinga2/sbin/icinga2
 libexec/nagios/check_nscp_api
 man/man8/icinga2.8.gz
