@@ -92,9 +92,10 @@ MENU_DESC=			Menuselect Interface Backend
 NEWT_DESC=			Newt User Interface
 
 OPTIONS_GROUP+=			SOUNDS
-OPTIONS_GROUP_SOUNDS=		G729
-SOUNDS_DESC=			Core and Music-on-Hold (MoH) Sound Files
+OPTIONS_GROUP_SOUNDS=		G729 JAPANESE
+SOUNDS_DESC=			Core and/or Music-on-Hold (MoH) Sound Files
 G729_DESC=			Install G.729 format sounds
+JAPANESE_DESC=			Install Japanese voice prompts
 ASTERISK_CORE_G729_SOUNDS=	asterisk-core-sounds-en-g729-1.5.tar.gz
 ASTERISK_MOH_G729_SOUNDS=	asterisk-moh-opsound-g729-2.03.tar.gz
 G729_DISTFILES=			${ASTERISK_CORE_G729_SOUNDS}:g729 \
@@ -142,6 +143,8 @@ GCC_USE=		GCC=yes
 
 GSM_CONFIGURE_WITH=	gsm
 GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
+
+JAPANESE_RUN_DEPENDS=	${LOCALBASE}/share/asterisk/sounds/ja/digits/0.gsm:japanese/asterisk-sounds
 
 LDAP_CONFIGURE_WITH=	ldap
 LDAP_USE=		OPENLDAP=yes
