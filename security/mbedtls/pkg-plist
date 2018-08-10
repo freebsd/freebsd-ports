@@ -46,9 +46,11 @@ bin/mbedtls_ssl_server2
 bin/mbedtls_strerror
 bin/mbedtls_udp_proxy
 bin/mbedtls_udp_proxy_wrapper.sh
+bin/mbedtls_zeroize
 include/mbedtls/aes.h
 include/mbedtls/aesni.h
 include/mbedtls/arc4.h
+include/mbedtls/aria.h
 include/mbedtls/asn1.h
 include/mbedtls/asn1write.h
 include/mbedtls/base64.h
@@ -58,6 +60,8 @@ include/mbedtls/bn_mul.h
 include/mbedtls/camellia.h
 include/mbedtls/ccm.h
 include/mbedtls/certs.h
+include/mbedtls/chacha20.h
+include/mbedtls/chachapoly.h
 include/mbedtls/check_config.h
 include/mbedtls/cipher.h
 include/mbedtls/cipher_internal.h
@@ -78,6 +82,7 @@ include/mbedtls/entropy_poll.h
 include/mbedtls/error.h
 include/mbedtls/gcm.h
 include/mbedtls/havege.h
+include/mbedtls/hkdf.h
 include/mbedtls/hmac_drbg.h
 include/mbedtls/md.h
 include/mbedtls/md2.h
@@ -87,6 +92,7 @@ include/mbedtls/md_internal.h
 include/mbedtls/memory_buffer_alloc.h
 include/mbedtls/net.h
 include/mbedtls/net_sockets.h
+include/mbedtls/nist_kw.h
 include/mbedtls/oid.h
 include/mbedtls/padlock.h
 include/mbedtls/pem.h
@@ -97,6 +103,8 @@ include/mbedtls/pkcs12.h
 include/mbedtls/pkcs5.h
 include/mbedtls/platform.h
 include/mbedtls/platform_time.h
+include/mbedtls/platform_util.h
+include/mbedtls/poly1305.h
 include/mbedtls/ripemd160.h
 include/mbedtls/rsa.h
 include/mbedtls/rsa_internal.h
@@ -119,10 +127,10 @@ include/mbedtls/x509_csr.h
 include/mbedtls/xtea.h
 lib/libmbedcrypto.a
 lib/libmbedcrypto.so
-lib/libmbedcrypto.so.2
+lib/libmbedcrypto.so.3
 lib/libmbedtls.a
 lib/libmbedtls.so
-lib/libmbedtls.so.10
+lib/libmbedtls.so.11
 lib/libmbedx509.a
 lib/libmbedx509.so
 lib/libmbedx509.so.0
