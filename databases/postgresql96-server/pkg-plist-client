@@ -27,6 +27,7 @@ include/pg_config.h
 include/pg_config_ext.h
 include/pg_config_manual.h
 include/pg_config_os.h
+include/pgtypes.h
 include/pgtypes_date.h
 include/pgtypes_error.h
 include/pgtypes_interval.h
@@ -1018,7 +1019,11 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/ru/LC_MESSAGES/pg_dump-9.6.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/pgscripts-9.6.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/psql-9.6.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/ecpg-9.6.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/ecpglib6-9.6.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/libpq5-9.6.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pg_config-9.6.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/pg_dump-9.6.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pgscripts-9.6.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/psql-9.6.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/pg_config-9.6.mo
@@ -1026,6 +1031,9 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/tr/LC_MESSAGES/ecpglib6-9.6.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/libpq5-9.6.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/pg_config-9.6.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/pg_dump-9.6.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/pgscripts-9.6.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/psql-9.6.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ecpg-9.6.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ecpglib6-9.6.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libpq5-9.6.mo

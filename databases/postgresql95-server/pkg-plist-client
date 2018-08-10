@@ -27,6 +27,7 @@ include/pg_config.h
 include/pg_config_ext.h
 include/pg_config_manual.h
 include/pg_config_os.h
+include/pgtypes.h
 include/pgtypes_date.h
 include/pgtypes_error.h
 include/pgtypes_interval.h
