@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xtensor
-DISTVERSION=	0.17.0
+DISTVERSION=	0.17.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ TEST_DEPENDS=	googletest>0:devel/googletest
 USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	QuantStack
-GH_TUPLE=	QuantStack:xtl:0.4.13:xtl/xtl
+GH_TUPLE=	QuantStack:xtl:0.4.14:xtl/xtl
 NO_BUILD=	yes
 NO_ARCH=	yes
 
