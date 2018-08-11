@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	wcd
-PORTVERSION=	6.0.1
+PORTVERSION=	6.0.2
 CATEGORIES=	shells
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ndowens@yahoo.com
 COMMENT=	Command-line program to change directory fast
 
 LICENSE=	GPLv2
