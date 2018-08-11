@@ -42,7 +42,7 @@ NAGIOS4_CONFIGURE_ON=	--with-nagios4
 
 # perl api is really outdated, do not install!
 # Actual version can be found on CPAN
-# http://search.cpan.org/~nierlein/Monitoring-Livestatus/
+# https://metacpan.org/release/Monitoring-Livestatus
 post-extract:
 	@${RM} -r ${WRKSRC}/api/perl
 
