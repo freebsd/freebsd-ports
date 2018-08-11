@@ -688,6 +688,7 @@
     SUBDIR += metalog
     SUBDIR += mfid
     SUBDIR += mgeupsd
+    SUBDIR += minikube
     SUBDIR += minimunin
     SUBDIR += minirsyslogd
     SUBDIR += mixer
