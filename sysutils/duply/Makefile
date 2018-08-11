@@ -3,6 +3,7 @@
 
 PORTNAME=	duply
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://duply.net/projects/ftplicity/files/latest/download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -28,7 +29,6 @@ SUB_FILES=	pkg-message periodic_duply
 
 post-patch:
 	${REINPLACE_CMD} -e "s,/etc/duply,${ETCDIR},g" ${WRKSRC}/duply
-	${REINPLACE_CMD} -e "s,(python,(${PYTHON_CMD},g" ${WRKSRC}/duply
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/duply ${STAGEDIR}${PREFIX}/bin/duply
