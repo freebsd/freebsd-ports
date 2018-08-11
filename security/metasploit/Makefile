@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	4.16.63
-PORTREVISION=	1
+PORTVERSION=	4.17.5
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -27,8 +26,8 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-metasploit-credential>=0:security/rubygem-metasploit-credential \
 		rubygem-metasploit_data_models>=0:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
-		rubygem-metasploit-payloads>=1.3.37:security/rubygem-metasploit-payloads \
-		rubygem-metasploit_payloads-mettle>=0.4.0:security/rubygem-metasploit_payloads-mettle \
+		rubygem-metasploit-payloads>=1.3.40:security/rubygem-metasploit-payloads \
+		rubygem-metasploit_payloads-mettle>=0.4.1:security/rubygem-metasploit_payloads-mettle \
 		rubygem-msgpack1>=0:devel/rubygem-msgpack1 \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
 		rubygem-rubyntlm>=0:net/rubygem-rubyntlm \
@@ -90,7 +89,7 @@ NO_ARCH=	yes
 NO_ARCH_IGNORE=	template_x64_bsd.bin template_x86_bsd.bin CVE-2013-2171.bin
 STRIP=
 
-USES=		python:env shebangfix
+USES=		python shebangfix
 USE_RUBY=	yes
 SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		data/exploits/CVE-2017-17562/install-deps.sh \
@@ -108,6 +107,7 @@ SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		modules/auxiliary/dos/http/slowloris.py \
 		modules/auxiliary/dos/tcp/claymore_dos.py \
 		modules/auxiliary/scanner/smb/impacket/dcomexec.py \
+		modules/auxiliary/scanner/smb/impacket/secretsdump.py \
 		modules/auxiliary/scanner/smb/impacket/wmiexec.py \
 		modules/auxiliary/scanner/ssl/bleichenbacher_oracle.py \
 		modules/auxiliary/scanner/wproxy/att_open_proxy.py \
