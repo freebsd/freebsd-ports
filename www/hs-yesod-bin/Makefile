@@ -8,6 +8,7 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Yesod helper executable
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_CABAL=	async attoparsec>=0.10 base64-bytestring \
 		blaze-builder>=0.2.1.4 conduit>=1.2 conduit-extra \
