@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdb
-PORTVERSION=	8.1
-PORTREVISION=	5
+PORTVERSION=	8.1.1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -35,7 +34,7 @@ CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
 		--with-separate-debug-dir=/usr/lib/debug \
 		${ICONV_CONFIGURE_ARG} \
 		--with-expat=yes --with-libexpat-prefix=${LOCALBASE} \
-		--without-libunwind-ia64
+		--without-libunwind-ia64 --with-system-zlib
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT -Wno-unused-function -Wno-unused-variable
 CFLAGS+=	-Wno-unknown-warning-option
@@ -58,18 +57,21 @@ PLIST_SUB=	VER=${VER}
 
 OPTIONS_DEFINE=	DEBUG GDB_LINK GUILE KGDB PYTHON TUI
 
-OPTIONS_DEFAULT=	GDB_LINK KGDB PYTHON TUI PORT_READLINE PORT_ICONV
+OPTIONS_DEFAULT=	GDB_LINK KGDB PYTHON TUI PORT_READLINE PORT_ICONV SYSTEM_ZLIB
 
-OPTIONS_SINGLE=	READLINE ICONV
+OPTIONS_SINGLE=	READLINE ICONV ZLIB
 OPTIONS_SINGLE_READLINE=	BUNDLED_READLINE PORT_READLINE
-OPTIONS_SINGLE_ICONV=	SYSTEM_ICONV PORT_ICONV
+OPTIONS_SINGLE_ICONV=	PORT_ICONV SYSTEM_ICONV
+OPTIONS_SINGLE_ZLIB=	BUNDLED_ZLIB SYSTEM_ZLIB
 
 GDB_LINK_DESC=		Create ${PREFIX}/bin/gdb symlink
 KGDB_DESC=		Kernel Debugging Support
 BUNDLED_READLINE_DESC=	from gdb distfile
+BUNDLED_ZLIB_DESC=	from gdb distfile
 PORT_READLINE_DESC=	from devel/readline port
 PORT_ICONV_DESC=	use libiconv, with wider charset support
 SYSTEM_ICONV_DESC=	use libc iconv, with no wchar support
+SYSTEM_ZLIB_DESC=	use system zlib
 TUI_DESC=		Text User Interface enabled
 
 OPTIONS_SUB=	yes
@@ -85,12 +87,17 @@ PYTHON_CONFIGURE_ON=	--with-python=${PYTHON_CMD}
 PYTHON_CONFIGURE_OFF=	--without-python
 PYTHON_USES=		python
 SYSTEM_ICONV_USES=	iconv
+SYSTEM_ZLIB_WITH=	system-zlib
 TUI_CONFIGURE_ENABLE=	tui
 
 .include <bsd.port.pre.mk>
 
 .if ! ${PORT_OPTIONS:MBUNDLED_READLINE}
 EXCLUDE+=	readline
+.endif
+
+.if ! ${PORT_OPTIONS:MBUNDLED_ZLIB}
+EXCLUDE+=	zlib
 .endif
 
 .if ${ARCH} == "amd64"
