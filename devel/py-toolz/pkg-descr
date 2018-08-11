@@ -9,4 +9,4 @@ toolz is implemented in three parts:
 These functions come from the legacy of functional languages for list
 processing. They interoperate well to accomplish common complex tasks.
 
-WWW: http://github.com/pytoolz/toolz/
+WWW: https://github.com/pytoolz/toolz
