@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	maec
-PORTVERSION=	4.1.0.13
+PORTVERSION=	4.1.0.14
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	concurrent distutils autoplist
 USE_LOCALE=	en_US.UTF-8
 
 PORTDOCS=	README.rst
