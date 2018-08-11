@@ -2,7 +2,7 @@
 
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.6
+DISTVERSION=	2.3.7
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	freebsd_ports@k-worx.org
