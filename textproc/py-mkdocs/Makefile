@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	mkdocs
-DISTVERSION=	0.17.2-36
-DISTVERSIONSUFFIX=	-gd4c5832
+DISTVERSION=	1.0
 CATEGORIES=	textproc python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	freebsd_ports@k-worx.org
@@ -21,8 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=3.3:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.10:devel/py-yaml@${PY_FLAVOR}
 
 USES=		python
-USE_GITHUB=	yes
 USE_PYTHON=	distutils concurrent autoplist
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
