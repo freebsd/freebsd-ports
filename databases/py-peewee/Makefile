@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	peewee
-DISTVERSION=	3.1.2
+DISTVERSION=	3.6.4
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,5 +27,8 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/playhouse/_speedups.so
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/playhouse/_sqlite_ext.so
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/playhouse/_sqlite_udf.so
+
+do-test:
+	${PYTHON_CMD} ${WRKSRC}/runtests.py
 
 .include <bsd.port.mk>
