@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	psautohint
-PORTVERSION=	1.1.0
-DISTVERSIONPREFIX=	v
+PORTVERSION=	1.7.0
 CATEGORIES=	print python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lantw44@gmail.com
@@ -12,12 +12,13 @@ COMMENT=	Python wrapper for Adobe PostScript autohinter
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>=3.1.2:print/py-fonttools@${PY_FLAVOR}
 
-USES=		python
+USES=		python zip
 USE_PYTHON=	autoplist concurrent distutils
-USE_GITHUB=	yes
 
-GH_ACCOUNT=	adobe-type-tools
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/psautohint/_psautohint.so
 
 .include <bsd.port.mk>
