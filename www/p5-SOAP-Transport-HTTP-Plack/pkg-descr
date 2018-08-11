@@ -1,4 +1,4 @@
-Transport for Plack (http://search.cpan.org/~miyagawa/Plack/) PSGI
+Transport for Plack (https://metacpan.org/release/Plack) PSGI
 toolkit for SOAP::Lite module.
 
 WWW: https://metacpan.org/release/SOAP-Transport-HTTP-Plack
