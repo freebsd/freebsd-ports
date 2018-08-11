@@ -6057,6 +6057,7 @@
     SUBDIR += rubygem-uber
     SUBDIR += rubygem-unicode
     SUBDIR += rubygem-unicode-display_width
+    SUBDIR += rubygem-unicode_utils
     SUBDIR += rubygem-useragent
     SUBDIR += rubygem-uuid
     SUBDIR += rubygem-uuidtools

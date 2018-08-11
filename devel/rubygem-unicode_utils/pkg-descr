@@ -1,0 +1,4 @@
+UnicodeUtils implements Unicode algorithms for case conversion, normalization,
+text segmentation and more in pure Ruby code.
+
+WWW: https://github.com/lang/unicode_utils
