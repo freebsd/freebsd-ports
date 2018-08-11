@@ -5,4 +5,4 @@ support for notifying more than one distinct service for the same message.
 For example, you may wish to notify via e-mail and to Pushover of an alarm
 published as text to the MQTT topic home/monitoring/+.
 
-WWW: http://github.com/jpmens/mqttwarn
+WWW: https://github.com/jpmens/mqttwarn
