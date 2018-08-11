@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby_smb
-PORTVERSION=	0.0.18
+PORTVERSION=	1.0.3
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -18,6 +18,10 @@ RUN_DEPENDS=	rubygem-bindata>=0:devel/rubygem-bindata \
 NO_ARCH=	yes
 
 USE_RUBY=	yes
-USES=		gem
+USES=		gem shebangfix
+SHEBANG_FILES=	examples/delete_file.rb \
+		examples/net_share_enum_all.rb \
+		examples/pipes.rb \
+		examples/rename_file.rb
 
 .include <bsd.port.mk>
