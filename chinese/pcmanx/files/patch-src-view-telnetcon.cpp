@@ -1,5 +1,5 @@
---- src/view/telnetcon.cpp.orig	2010-10-12 21:12:03.000000000 +0800
-+++ src/view/telnetcon.cpp	2010-10-12 21:12:09.000000000 +0800
+--- src/view/telnetcon.cpp.orig	2016-02-16 12:31:46 UTC
++++ src/view/telnetcon.cpp
 @@ -77,7 +77,6 @@
  #ifdef USING_LINUX
  #include <pty.h>
