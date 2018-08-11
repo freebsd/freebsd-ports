@@ -20,8 +20,10 @@
 # backup_duply_opt=""
 #	options passed to duply
 #
-# backup_duply_random="0"
+# backup_duply_random="3600"
 #	randomize backup time
+#	In FreeBSD 12.0 is used the anticongestion function (3600) and this
+#	variable is ignored
 #
 
 if [ -r /etc/defaults/periodic.conf ]
@@ -34,14 +36,20 @@ fi
 : ${backup_duply_command}="bkp_status"
 : ${backup_duply_profile}=""
 : ${backup_duply_opt}=""
-: ${backup_duply_random}="0"
+: ${backup_duply_random}="3600"
 
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin
 export PATH
 
 case "$backup_duply_enable" in
     [Yy][Ee][Ss])
-	eval sleep $(jot -r 1 0 ${backup_duply_random})
+	# In FreeBSD 12.0 the anticongestion function should be used
+	# instead of a hard-coded sleep
+	if [ -n "$anticongestion_sleeptime" ]; then
+		anticongestion
+	else
+		eval sleep $(jot -r 1 0 ${backup_duply_random})
+	fi
 	echo
         echo "Duply Backup:"
         for duply_profile in ${backup_duply_profile}
