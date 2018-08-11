@@ -1,4 +1,4 @@
 This library contains functions for encoding bytestring builders for
 chunked HTTP/1.1 transfer.
 
-WWW: http://github.com/sjakobi/bsb-http-chunked
+WWW: https://github.com/sjakobi/bsb-http-chunked
