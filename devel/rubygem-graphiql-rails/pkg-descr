@@ -2,4 +2,4 @@ Use the GraphiQL IDE for GraphQL with Ruby on Rails.
 This gem includes an engine, a controller and a view
 for integrating GraphiQL with your app.
 
-WWW: http://github.com/rmosolgo/graphiql-rails
+WWW: https://github.com/rmosolgo/graphiql-rails
