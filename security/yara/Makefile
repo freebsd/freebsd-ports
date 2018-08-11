@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yara
-PORTVERSION=	3.7.1
+PORTVERSION=	3.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	VirusTotal
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-magic --enable-dotnet
+CONFIGURE_ARGS=	--enable-magic --enable-dotnet --enable-macho --enable-dex
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USES=		alias autoreconf libtool pathfix ssl
