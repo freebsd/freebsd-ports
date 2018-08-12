@@ -22,9 +22,6 @@ TEST_DEPENDS=	p5-Cpanel-JSON-XS>=0:converters/p5-Cpanel-JSON-XS \
 		p5-Test-Warnings>=0.009:devel/p5-Test-Warnings \
 		p5-Test-Without-Module>=0.17:devel/p5-Test-Without-Module
 
-DEPRECATED=	Deprecated by upstream
-EXPIRATION_DATE=	2017-03-01
-
 # Author preference: Cpanel::JSON::XS > JSON::XS > JSON::PP > JSON > JSON::DWIW
 OPTIONS_DEFINE=	CPANEL JSON_XS JSON_PP JSON JSON_DWIW
 OPTIONS_DEFAULT=CPANEL
