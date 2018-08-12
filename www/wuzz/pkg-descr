@@ -1,0 +1,8 @@
+Wuzz allows to visually inspect what does HTTP protocol return for different
+HTTP argument values.
+
+Wuzz command line arguments are similar to cURL's arguments, so it can be used
+to inspect/modify requests copied from the browser's network inspector with the
+"copy as cURL" feature.
+
+WWW: https://github.com/asciimoo/wuzz
