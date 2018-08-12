@@ -26,6 +26,7 @@
 %%DATADIR%%/overlays/akkordion-iqdacplus.dtbo
 %%DATADIR%%/overlays/allo-boss-dac-pcm512x-audio.dtbo
 %%DATADIR%%/overlays/allo-digione.dtbo
+%%DATADIR%%/overlays/allo-katana-dac-audio.dtbo
 %%DATADIR%%/overlays/allo-piano-dac-pcm512x-audio.dtbo
 %%DATADIR%%/overlays/allo-piano-dac-plus-pcm512x-audio.dtbo
 %%DATADIR%%/overlays/applepi-dac.dtbo
@@ -33,6 +34,7 @@
 %%DATADIR%%/overlays/audioinjector-addons.dtbo
 %%DATADIR%%/overlays/audioinjector-wm8731-audio.dtbo
 %%DATADIR%%/overlays/audremap.dtbo
+%%DATADIR%%/overlays/balena-fin.dtbo
 %%DATADIR%%/overlays/bmp085_i2c-sensor.dtbo
 %%DATADIR%%/overlays/dht11.dtbo
 %%DATADIR%%/overlays/dionaudio-loco-v2.dtbo
@@ -72,9 +74,11 @@
 %%DATADIR%%/overlays/iqaudio-dac.dtbo
 %%DATADIR%%/overlays/iqaudio-dacplus.dtbo
 %%DATADIR%%/overlays/iqaudio-digi-wm8804-audio.dtbo
+%%DATADIR%%/overlays/jedec-spi-nor.dtbo
 %%DATADIR%%/overlays/justboom-dac.dtbo
 %%DATADIR%%/overlays/justboom-digi.dtbo
 %%DATADIR%%/overlays/lirc-rpi.dtbo
+%%DATADIR%%/overlays/ltc294x.dtbo
 %%DATADIR%%/overlays/mbed-dac.dtbo
 %%DATADIR%%/overlays/mcp23017.dtbo
 %%DATADIR%%/overlays/mcp23s17.dtbo
