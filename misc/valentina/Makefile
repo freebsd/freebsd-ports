@@ -12,8 +12,6 @@ COMMENT=	Sewing pattern drafting tool aiming to remake the garment industry
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE_GPL.txt
 
-BROKEN=		fails to build
-
 USES=		desktop-file-utils gmake qmake qt:5
 USE_QT=		concurrent core gui network opengl printsupport svg widgets xml xmlpatterns buildtools_build linguisttools_build testlib_build
 USE_GL=		gl
@@ -24,6 +22,9 @@ BB_PROJECT=	${PORTNAME}
 BB_COMMIT=	fccfd7b0aa17
 
 QMAKE_ARGS=	CONFIG+="noTests" CONFIG+="noRunPath"
+.if !defined(WITH_CCACHE_BUILD) || defined(NO_CCACHE)
+QMAKE_ARGS+=	CONFIG+="no_ccache"
+.endif
 BINARY_ALIAS=	hg=/usr/bin/true
 
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
