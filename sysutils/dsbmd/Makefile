@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsbmd
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freeshell.de/~mk/download/
 
@@ -16,7 +16,7 @@ USES=		tar:tgz
 
 USE_RC_SUBR=	dsbmd
 
-PORTDOCS=	README
+PORTDOCS=	readme.mdoc
 PLIST_FILES=	libexec/dsbmd "@sample etc/dsbmd.conf.sample"
 
 OPTIONS_DEFINE=		DOCS EXFAT EXT4 LKL MTP NTFS PTP
