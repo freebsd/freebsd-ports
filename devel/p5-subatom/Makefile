@@ -22,6 +22,6 @@ USE_PERL5=	modbuild
 USES=		perl5
 
 PLIST_FILES=	bin/subatom \
-		%%PERL5_MAN1%%/subatom.1.gz
+		${SITE_MAN1_REL}/subatom.1.gz
 
 .include <bsd.port.mk>
