@@ -1,8 +1,7 @@
-# Created by: Nikolai Lifanov <lifanov@mail.lifanov.com>
 # $FreeBSD$
 
 PORTNAME=	hashcat
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.1
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	security
@@ -30,8 +29,8 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 MAKE_ARGS=	SHARED=1 \
 		CC="${CC}" \
-		LFLAGS_NATIVE="${LDFLAGS} -lpthread" \
-		CFLAGS_NATIVE="${CFLAGS} -Iinclude -IOpenCL -Iinclude/lzma_sdk"
+		LFLAGS_NATIVE="${LDFLAGS} -lpthread -lm" \
+		CFLAGS_NATIVE="${CFLAGS} -Iinclude -IOpenCL -Ideps/lzma_sdk"
 
 pre-install:
 	${STRIP_CMD} ${WRKSRC}/libhashcat.so.${PORTVERSION}
