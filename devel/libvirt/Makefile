@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	4.5.0
-PORTREVISION=	2
+PORTVERSION=	4.6.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -106,7 +105,7 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-SHLIB_VER=	0.4005.0
+SHLIB_VER=	0.4006.0
 PLIST_SUB+=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
