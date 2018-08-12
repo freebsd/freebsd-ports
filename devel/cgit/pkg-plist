@@ -3,6 +3,7 @@ lib/cgit/filters/commit-links.sh
 lib/cgit/filters/email-gravatar.lua
 lib/cgit/filters/email-gravatar.py
 lib/cgit/filters/email-libravatar.lua
+lib/cgit/filters/file-authentication.lua
 lib/cgit/filters/gentoo-ldap-authentication.lua
 lib/cgit/filters/html-converters/man2html
 lib/cgit/filters/html-converters/md2html
