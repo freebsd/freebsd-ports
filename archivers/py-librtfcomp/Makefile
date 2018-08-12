@@ -25,8 +25,8 @@ USES=		libtool python:2.7
 BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${WRKSRC}/python
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pyrtfcomp.a \
-		%%PYTHON_SITELIBDIR%%/pyrtfcomp.so
+PLIST_FILES=	${PYTHON_SITELIBDIR}/pyrtfcomp.a \
+		${PYTHON_SITELIBDIR}/pyrtfcomp.so
 
 post-patch:
 	@${REINPLACE_CMD} -e '/VISIBILITY=/ s| -fvisibility=hidden||' ${WRKSRC}/configure
