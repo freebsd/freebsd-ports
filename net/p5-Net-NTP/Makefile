@@ -13,7 +13,7 @@ NO_ARCH=	yes
 USE_PERL5=	configure
 USES=		perl5
 
-PLIST_FILES=	%%SITE_PERL%%/Net/NTP.pm \
-		%%PERL5_MAN3%%/Net::NTP.3.gz
+PLIST_FILES=	${SITE_PERL_REL}/Net/NTP.pm \
+		${SITE_MAN3_REL}/Net::NTP.3.gz
 
 .include <bsd.port.mk>
