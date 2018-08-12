@@ -13,6 +13,8 @@ COMMENT=	LV2 plugin architecture for the Faust programming language
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=		fails to link: can't create dynamic relocation R_AARCH64_ADR_PREL_PG_HI21 against symbol: vtable for LV2UI in readonly segment
+
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		faust>0:audio/faust \
 		${LOCALBASE}/include/boost/circular_buffer.hpp:devel/boost-libs
