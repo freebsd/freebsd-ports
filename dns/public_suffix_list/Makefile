@@ -16,8 +16,8 @@ SLAVEDIRS=	dns/p5-Mozilla-PublicSuffix dns/rubygem-public_suffix dns/rubygem-pub
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	%%DATADIR%%/public_suffix_list.dat \
-		%%DATADIR%%/test_psl.txt
+PORTDATA=	public_suffix_list.dat \
+		test_psl.txt
 
 GH_ACCOUNT=	publicsuffix
 GH_PROJECT=	list
