@@ -17,7 +17,7 @@ IGNORE_WITH_PHP=56
 USE_PHP=	session:build
 USES=		php:pecl
 
-PLIST_FILES=	%%DATADIR%%/zookeeper-api.php
+PORTDATA=	zookeeper-api.php
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
