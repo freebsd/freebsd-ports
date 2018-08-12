@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdfsandwich
-DISTVERSION=	0.1.6
+DISTVERSION=	0.1.7
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/pdfsandwich%20${DISTVERSION}/
 
