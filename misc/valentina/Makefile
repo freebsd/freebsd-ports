@@ -16,12 +16,13 @@ USES=		desktop-file-utils gmake qmake qt:5
 USE_QT=		concurrent core gui network opengl printsupport svg widgets xml xmlpatterns buildtools_build linguisttools_build testlib_build
 USE_GL=		gl
 USE_LDCONFIG=	yes
+WITH_CCACHE_BUILD=	yes
 
 BB_ACCOUNT=	dismine
 BB_PROJECT=	${PORTNAME}
 BB_COMMIT=	fccfd7b0aa17
 
-QMAKE_ARGS=	CONFIG+="no_ccache" CONFIG+="noTests" CONFIG+="noRunPath"
+QMAKE_ARGS=	CONFIG+="noTests" CONFIG+="noRunPath"
 BINARY_ALIAS=	hg=/usr/bin/true
 
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
