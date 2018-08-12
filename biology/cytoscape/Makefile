@@ -10,8 +10,8 @@ DISTFILES=	FreeBSD-${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz:maven
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Software to visualize molecular interaction networks, gene expression
 
-LICENSE=	MIT
-xLICENSE_FILE=	${WRKSRC}/license.txt
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/api/LICENSE
 
 BROKEN_aarch64=		fails to build: Cytoscape Third-Party Dependencies (third-party): FAILURE
 BROKEN_armv6=		fails to build: Cytoscape Third-Party Dependencies (third-party): FAILURE

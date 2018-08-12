@@ -1,6 +1,8 @@
-TIMESTAMP = 1530603760
+TIMESTAMP = 1530956058
 SHA256 (FreeBSD-cytoscape-3.6.1-maven-repository.tar.gz) = f3e33e99168b56768d2ee854956e59bcbb888101fd518239887524d692b78f7a
 SIZE (FreeBSD-cytoscape-3.6.1-maven-repository.tar.gz) = 1235655281
+SHA256 (install4j-maven-plugin-1.1.1.jar) = 301f5ca0718e630a62583561fb1a05c26ee40b5dc81ddd1ffc56bb17c813c506
+SIZE (install4j-maven-plugin-1.1.1.jar) = 27105
 SHA256 (cytoscape-cytoscape-3.6.1_GH0.tar.gz) = f172c9e459293661a83d2618da511901410336b76b0c1716697e60f821c2f150
 SIZE (cytoscape-cytoscape-3.6.1_GH0.tar.gz) = 12785
 SHA256 (cytoscape-cytoscape-parent-3.6.1_GH0.tar.gz) = 0786e8d7877fa54d2a64d65209856a4a946df4facd3cbc947e8c65d14a035084
