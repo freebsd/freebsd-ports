@@ -19,6 +19,7 @@ man/man1/%%PORTNAME%%-prune.1.gz
 man/man1/%%PORTNAME%%-rebuild-index.1.gz
 man/man1/%%PORTNAME%%-restore.1.gz
 man/man1/%%PORTNAME%%-snapshots.1.gz
+man/man1/%%PORTNAME%%-stats.1.gz
 man/man1/%%PORTNAME%%-tag.1.gz
 man/man1/%%PORTNAME%%-unlock.1.gz
 man/man1/%%PORTNAME%%-version.1.gz
