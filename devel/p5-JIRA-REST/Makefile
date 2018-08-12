@@ -26,7 +26,7 @@ USES=		perl5
 USE_PERL5=	configure
 NO_ARCH=	yes
 
-PLIST_FILES=	%%SITE_PERL%%/JIRA/REST.pm \
-		%%PERL5_MAN3%%/JIRA::REST.3.gz
+PLIST_FILES=	${SITE_PERL_REL}/JIRA/REST.pm \
+		${SITE_MAN3_REL}/JIRA::REST.3.gz
 
 .include <bsd.port.mk>
