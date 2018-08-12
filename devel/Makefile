@@ -6304,6 +6304,7 @@
     SUBDIR += xsd
     SUBDIR += xtensa-esp32-elf
     SUBDIR += xtl
+    SUBDIR += xtl-quant-stack
     SUBDIR += xtoolchain-llvm-devel
     SUBDIR += xtoolchain-llvm40
     SUBDIR += xtoolchain-llvm50
