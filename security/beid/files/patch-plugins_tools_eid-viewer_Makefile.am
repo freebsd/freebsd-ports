@@ -1,0 +1,20 @@
+--- plugins_tools/eid-viewer/Makefile.am.orig	2018-07-20 12:53:45 UTC
++++ plugins_tools/eid-viewer/Makefile.am
+@@ -51,6 +51,8 @@ libeidviewer_la_SOURCES = \
+ 	cache/cache.cpp \
+ 	conversions/bbannumconv.h \
+ 	conversions/bbannumconv.cpp \
++	conversions/booldecode.h \
++	conversions/booldecode.cpp \
+ 	conversions/genderconv.h \
+ 	conversions/genderconv.cpp \
+ 	conversions/hexnumconv.cpp \
+@@ -74,6 +76,8 @@ libeidviewer_la_SOURCES = \
+ 	conversions/specconv.cpp \
+ 	conversions/specorgconv.h \
+ 	conversions/specorgconv.cpp \
++	conversions/toxmlmemberoffamilyconv.h \
++	conversions/toxmlmemberoffamilyconv.cpp \
+ 	conversions/valdate.h \
+ 	conversions/valdate.cpp \
+ 	conversions/workpermitconv.h \

@@ -1,0 +1,16 @@
+WARNING:
+The private keys on the eID cards are created by the Belgian government and
+not by the citizens.  You should assume that the government can forge digital
+signatures and decrypt encrypted content.
+
+The procfs file system must be mounted on /proc for the PKCS #11 module to
+work.  Add the following line to /etc/fstab and run "mount procfs".
+
+procfs		/proc		procfs	rw		0	0
+
+Make sure you have installed a pcsc-lite driver for your card reader (such
+as devel/libccid) and that pcscd is running (add pcscd_enable="YES" to
+/etc/rc.conf and start the service by running "service pcscd start").
+
+To use your eID in Firefox you have to enable the "eID Belgium" extension
+in the Add-ons Manager.
