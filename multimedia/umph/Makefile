@@ -22,6 +22,6 @@ USE_PERL5=	configure
 USES=		perl5
 
 PLIST_FILES=	bin/umph \
-		%%PERL5_MAN1%%/umph.1.gz
+		${SITE_MAN1_REL}/umph.1.gz
 
 .include <bsd.port.mk>
