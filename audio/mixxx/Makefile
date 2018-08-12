@@ -14,6 +14,8 @@ COMMENT=	DJ mixing application
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=		fails to compile: Exception("invalid machine type")
+BROKEN_powerpc64=	fails to configure: unmet dependencies: Could not find libprotobuf, libchromaprint, libmp4, and libwavpack
 IGNORE=		it will be updated to mixxx 2.1.0. FLAVOR needs portmgr approval
 
 LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
@@ -29,9 +31,6 @@ LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 		libprotobuf.so:devel/protobuf
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-BROKEN_aarch64=		fails to compile: Exception("invalid machine type")
-BROKEN_powerpc64=	fails to configure: unmet dependencies: Could not find libprotobuf, libchromaprint, libmp4, and libwavpack
 
 USES=		qt:4 scons iconv pkgconfig
 USE_QT=		corelib gui network opengl script scripttools sql sql-sqlite3 \
