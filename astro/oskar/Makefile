@@ -11,7 +11,7 @@ ONLY_FOR_ARCHS=		amd64 i386 powerpc powerpc64
 ONLY_FOR_ARCHS_REASON=	gccfeatures.h:54:4: This code has only been tested on x86 and powerpc platforms
 
 LICENSE=	GPLv2
-xLICENSE_FILES=	${WRKSRC}/../COPYING
+LICENSE_FILES=	${WRKSRC}/../COPYING
 
 LIB_DEPENDS=	libcfitsio.so:astro/cfitsio
 
