@@ -6984,6 +6984,7 @@ databases/ruby-dbi|databases/rubygem-dbi|2014-09-21|Replaced by rubygem-dbi
 databases/ruby-dbd_mysql|databases/rubygem-dbd-mysql|2014-09-21|Replaced by rubygem-dbd-mysql
 databases/ruby-dbd_pg|databases/rubygem-dbd-pg|2014-09-21|Replaced by rubygem-dbd-pg
 databases/ruby-dbd_sqlite|databases/rubygem-dbd-sqlite3|2014-09-21|Replaced by rubygem-dbd-sqlite3
+databases/rubygem-dbd-sqlite|databases/rubygem-dbd-sqlite3|2014-09-21|Remove defunctional port, old sqlite driver for ruby is missing
 databases/ruby-dbd-sqlite||2014-09-21|Dysfunctional
 textproc/ruby-amatch|textproc/rubygem-amatch|2014-09-21|Replaced by textproc/rubygem-amatch
 databases/rubygem-aspectr|devel/rubygem-aspectr|2014-09-21|Change category
@@ -9403,6 +9404,7 @@ security/sshguard-pf|security/sshguard|2017-07-20|Merged with security/sshguard
 security/sshguard-null|security/sshguard|2017-07-20|Merged with security/sshguard
 audio/gstreamer1-plugins-mad|audio/gstreamer1-plugins-mpg123|2017-07-21|The GStreamer 1 mad plugin was removed, the mpg123 plugin supplies the same functionality
 x11-toolkits/gstreamer1-plugins-gtksink|x11-toolkits/gstreamer1-plugins-gtk|2017-07-21|The GStreamer 1 gtksink plugin was renamed
+www/rubygem-jquery-ui-rails-rails5||2017-07-22|Remove port that is probably useless (not properly hooked to the build)
 devel/ffcall|devel/libffcall|2017-07-28|Project was renamed
 databases/grass|databases/grass6|2017-07-30|Project was renamed to allow for grass7
 net/rubygem-oauth212|net/rubygem-oauth2|2017-07-31|Has expired: Only created for www/gitlab; please use net/rubygem-oauth2 instead
@@ -9794,6 +9796,7 @@ devel/p5-Parse-Pidl44|devel/p5-Parse-Pidl|2018-01-01|Has expired: use devel/p5-P
 www/rubygem-jwt2|www/rubygem-jwt|2018-01-02|www/rubygem-jwt has been updated to 2.x
 misc/py-qt5-doc||2018-01-02|No longer shipped by upstream
 audio/beast||2018-01-05|Has expired: 4.5 years old version, six versions behind, requires old toolchain, and unmaintained
+devel/rubygem-multipart-post|www/rubygem-multipart-post|2018-01-05|Remove duplicate port
 devel/p5-MooseX-Role-WithOverloading||2018-01-06|Has expired: deprecated by upstream (obsolete with modern Moose)
 devel/p5-Test-Block||2018-01-06|Has expired: Marked as deprecated upstream
 x11-toolkits/qt5-declarative-render2d||2018-01-06|Merged into x11-toolkits/qt5-quick
