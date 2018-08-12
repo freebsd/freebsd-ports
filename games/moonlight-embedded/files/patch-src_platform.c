@@ -1,6 +1,6 @@
---- src/platform.c.orig	2017-07-02 11:38:48 UTC
+--- src/platform.c.orig	2018-08-11 15:43:13 UTC
 +++ src/platform.c
-@@ -163,14 +163,6 @@ AUDIO_RENDERER_CALLBACKS* platform_get_audio(enum plat
+@@ -174,14 +174,6 @@ AUDIO_RENDERER_CALLBACKS* platform_get_audio(enum plat
      if (audio_device == NULL || strcmp(audio_device, "local") == 0 || strcmp(audio_device, "hdmi") == 0)
        return (PAUDIO_RENDERER_CALLBACKS) dlsym(RTLD_DEFAULT, "audio_callbacks_omx");
    #endif

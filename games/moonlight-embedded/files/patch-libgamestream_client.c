@@ -1,6 +1,6 @@
---- libgamestream/client.c.orig	2017-10-24 18:52:11 UTC
+--- libgamestream/client.c.orig	2018-08-11 15:43:13 UTC
 +++ libgamestream/client.c
-@@ -503,7 +503,11 @@ int gs_pair(PSERVER_DATA server, char* pin) {
+@@ -505,7 +505,11 @@ int gs_pair(PSERVER_DATA server, char* pin) {
    RAND_bytes(client_secret_data, 16);
  
    const ASN1_BIT_STRING *asnSignature;

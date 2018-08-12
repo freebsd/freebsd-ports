@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	moonlight-embedded
-DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.6
-PORTREVISION=	1
+DISTVERSION=	2.4.7
 CATEGORIES=	games
+MASTER_SITES=	https://github.com/irtimmer/moonlight-embedded/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Gamestream client
@@ -19,10 +18,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libopus.so:audio/opus \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		cmake localbase:ldflags perl5 pkgconfig ssl
-USE_GITHUB=	yes
-GH_ACCOUNT=	irtimmer
-GH_TUPLE=	irtimmer:moonlight-common-c:186cef0e3a4c104dc224f0ca413345571d79b48c:common/third_party/moonlight-common-c
+USES=		cmake localbase:ldflags perl5 pkgconfig ssl tar:xz
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_SDL=	sdl2

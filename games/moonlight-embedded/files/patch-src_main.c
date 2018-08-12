@@ -1,6 +1,14 @@
---- src/main.c.orig	2017-10-24 18:52:11 UTC
+--- src/main.c.orig	2018-08-11 15:43:13 UTC
 +++ src/main.c
-@@ -115,13 +115,8 @@ static void stream(PSERVER_DATA server, PCONFIGURATION
+@@ -91,7 +91,6 @@ static void stream(PSERVER_DATA server, PCONFIGURATION
+   }
+ 
+   int gamepads = 0;
+-  gamepads += evdev_gamepads;
+   #ifdef HAVE_SDL
+   gamepads += sdl_gamepads;
+   #endif
+@@ -124,13 +123,8 @@ static void stream(PSERVER_DATA server, PCONFIGURATION
    platform_start(system);
    LiStartConnection(&server->serverInfo, &config->stream, &connection_callbacks, platform_get_video(system), platform_get_audio(system, config->audio_device), NULL, drFlags, config->audio_device, 0);
  
@@ -15,15 +23,15 @@
      sdl_loop();
    #endif
  
-@@ -163,7 +158,6 @@ static void help() {
+@@ -172,7 +166,6 @@ static void help() {
    printf("\t-surround\t\tStream 5.1 surround sound (requires GFE 2.7)\n");
    printf("\t-keydir <directory>\tLoad encryption keys from directory\n");
    printf("\t-mapping <file>\t\tUse <file> as gamepad mappings configuration file\n");
--  printf("\t-platform <system>\tSpecify system used for audio, video and input: pi/imx/aml/x11/x11_vdpau/sdl/fake (default auto)\n");
+-  printf("\t-platform <system>\tSpecify system used for audio, video and input: pi/imx/aml/rk/x11/x11_vdpau/sdl/fake (default auto)\n");
    printf("\t-unsupported\t\tTry streaming if GFE version or options are unsupported\n");
    #if defined(HAVE_SDL) || defined(HAVE_X11)
    printf("\n WM options (SDL and X11 only)\n\n");
-@@ -201,8 +195,6 @@ int main(int argc, char* argv[]) {
+@@ -210,8 +203,6 @@ int main(int argc, char* argv[]) {
        exit(-1);
      }
   
@@ -32,7 +40,7 @@
      exit(0); 
    }
  
-@@ -213,12 +205,8 @@ int main(int argc, char* argv[]) {
+@@ -222,12 +213,8 @@ int main(int argc, char* argv[]) {
        exit(-1);
      }
      config.address[0] = 0;
@@ -47,7 +55,7 @@
    }
    
    char host_config_file[128];
-@@ -268,38 +256,8 @@ int main(int argc, char* argv[]) {
+@@ -277,38 +264,8 @@ int main(int argc, char* argv[]) {
      }
      config.stream.supportsHevc = config.codec != CODEC_H264 && (config.codec == CODEC_HEVC || platform_supports_hevc(system));
  
