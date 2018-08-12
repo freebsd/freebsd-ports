@@ -12,6 +12,8 @@ COMMENT=	Conway's Game of Life and other cellular automata
 
 LICENSE=	GPLv2+
 
+BROKEN_aarch64=		fails to configure: missing objdump
+
 USES=		compiler:c++11-lib python:2.7
 USE_GL=		gl glu
 USE_WX=		3.0+
