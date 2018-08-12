@@ -16,7 +16,6 @@ USES=		desktop-file-utils gmake qmake qt:5
 USE_QT=		concurrent core gui network opengl printsupport svg widgets xml xmlpatterns buildtools_build linguisttools_build testlib_build
 USE_GL=		gl
 USE_LDCONFIG=	yes
-WITH_CCACHE_BUILD=	yes
 
 BB_ACCOUNT=	dismine
 BB_PROJECT=	${PORTNAME}
