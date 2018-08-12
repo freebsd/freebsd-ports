@@ -2,8 +2,8 @@
 
 PORTNAME=	Flask-Migrate
 PORTVERSION=	2.2.1
-DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -18,8 +18,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.9:www/py-flask@${PY_FLAVOR} \
 
 USES=		python
 USE_PYTHON=	autoplist distutils
-USE_GITHUB=	yes
-GH_ACCOUNT=	miguelgrinberg
 
 NO_ARCH=	yes
 
