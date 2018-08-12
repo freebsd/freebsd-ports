@@ -7,6 +7,9 @@ CATEGORIES=	astro
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SKA Radio telescope simulator
 
+ONLY_FOR_ARCHS=		amd64 i386 powerpc powerpc64
+ONLY_FOR_ARCHS_REASON=	gccfeatures.h:54:4: This code has only been tested on x86 and powerpc platforms
+
 LICENSE=	GPLv2
 xLICENSE_FILES=	${WRKSRC}/../COPYING
 
