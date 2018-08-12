@@ -148,6 +148,11 @@ SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
 SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
 .endif
 
+# required for SSE-4.2 support on the default Clang++ on 10.4
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
+CXXFLAGS+=	-msse4.2
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT} == base
