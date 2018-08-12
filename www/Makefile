@@ -2480,6 +2480,7 @@
     SUBDIR += wsdlpull
     SUBDIR += wsmake
     SUBDIR += wt
+    SUBDIR += wuzz
     SUBDIR += www6to4
     SUBDIR += wwwoffle
     SUBDIR += xapian-omega
