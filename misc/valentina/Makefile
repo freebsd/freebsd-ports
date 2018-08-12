@@ -1,0 +1,38 @@
+# $FreeBSD$
+
+PORTNAME=	valentina
+DISTVERSION=	0.6.0.0
+DISTVERSIONSUFFIX=	a
+CATEGORIES=	misc
+MASTER_SITES=	http://cdn.bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Sewing pattern drafting tool aiming to remake the garment industry
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE_GPL.txt
+
+BUILD_DEPENDS=	gmake:devel/gmake
+
+USES=		desktop-file-utils qmake qt:5
+USE_QT=		concurrent core gui network opengl printsupport svg widgets xml xmlpatterns buildtools_build linguisttools_build testlib_build
+USE_GL=		gl
+USE_LDCONFIG=	yes
+
+BB_ACCOUNT=	dismine
+BB_PROJECT=	${PORTNAME}
+BB_COMMIT=	fccfd7b0aa17
+
+QMAKE_ARGS=	CONFIG+="no_ccache" CONFIG+="noTests" CONFIG+="noRunPath"
+BINARY_ALIAS=	hg=/usr/bin/true
+
+WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
+
+post-patch:
+	@${REINPLACE_CMD} 's|DEFAULT_PREFIX = /usr|DEFAULT_PREFIX = ${PREFIX}|' ${WRKSRC}/common.pri
+	@${REINPLACE_CMD} 's|/usr/share|${PREFIX}/share|' ${WRKSRC}/src/app/valentina/valentina.pro ${WRKSRC}/src/app/tape/tape.pro
+
+post-configure:
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} 's|$$(MAKE)|${GMAKE}|'
+
+.include <bsd.port.mk>
