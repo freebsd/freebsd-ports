@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	%%DATADIR%%/pci.ids
+PORTDATA=	pci.ids
 
 GH_ACCOUNT=	pciutils
 GH_TAGNAME=	14aaead
