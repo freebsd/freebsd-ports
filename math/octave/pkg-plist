@@ -700,7 +700,6 @@ include/octave-%%OCTAVE_VERSION%%/octave/sparse-util.h
 include/octave-%%OCTAVE_VERSION%%/octave/sparse-xdiv.h
 include/octave-%%OCTAVE_VERSION%%/octave/sparse-xpow.h
 include/octave-%%OCTAVE_VERSION%%/octave/str-vec.h
-include/octave-%%OCTAVE_VERSION%%/octave/sun-utils.h
 include/octave-%%OCTAVE_VERSION%%/octave/svd.h
 include/octave-%%OCTAVE_VERSION%%/octave/symrec.h
 include/octave-%%OCTAVE_VERSION%%/octave/symscope.h
@@ -750,14 +749,14 @@ include/octave-%%OCTAVE_VERSION%%/octave/xnorm.h
 include/octave-%%OCTAVE_VERSION%%/octave/xpow.h
 include/octave-%%OCTAVE_VERSION%%/octave/zfstream.h
 lib/octave/%%OCTAVE_VERSION%%/liboctave.so
-lib/octave/%%OCTAVE_VERSION%%/liboctave.so.5
-lib/octave/%%OCTAVE_VERSION%%/liboctave.so.5.0.0
+lib/octave/%%OCTAVE_VERSION%%/liboctave.so.6
+lib/octave/%%OCTAVE_VERSION%%/liboctave.so.6.0.0
 lib/octave/%%OCTAVE_VERSION%%/liboctgui.so
-lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.3
-lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.3.0.0
+lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.4
+lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.4.0.0
 lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so
-lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.5
-lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.5.0.0
+lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.6
+lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.6.0.0
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/PKG_ADD
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__delaunayn__.oct
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__eigs__.oct
@@ -853,8 +852,6 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-44940/bug-44940.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-44940/class_bug44940.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-46330.tst
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-46497/bug-46497.tst
-%%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-46497/class_bug46497.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-46660/bug-46660.tst
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-46660/class_bug46660.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/etc/tests/fixed/bug-49904.tst
@@ -1302,6 +1299,7 @@ share/metainfo/org.octave.Octave.appdata.xml
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/deprecated/onenormest.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/deprecated/paren.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/deprecated/semicolon.m
+%%DATADIR%%/%%OCTAVE_VERSION%%/m/deprecated/setstr.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/deprecated/sleep.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/deprecated/tmpnam.m
 %%DATADIR%%/%%OCTAVE_VERSION%%/m/deprecated/toascii.m
