@@ -12,9 +12,7 @@ COMMENT=	Sewing pattern drafting tool aiming to remake the garment industry
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE_GPL.txt
 
-BUILD_DEPENDS=	gmake:devel/gmake
-
-USES=		desktop-file-utils qmake qt:5
+USES=		desktop-file-utils gmake qmake qt:5
 USE_QT=		concurrent core gui network opengl printsupport svg widgets xml xmlpatterns buildtools_build linguisttools_build testlib_build
 USE_GL=		gl
 USE_LDCONFIG=	yes
@@ -31,8 +29,5 @@ WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
 post-patch:
 	@${REINPLACE_CMD} 's|DEFAULT_PREFIX = /usr|DEFAULT_PREFIX = ${PREFIX}|' ${WRKSRC}/common.pri
 	@${REINPLACE_CMD} 's|/usr/share|${PREFIX}/share|' ${WRKSRC}/src/app/valentina/valentina.pro ${WRKSRC}/src/app/tape/tape.pro
-
-post-configure:
-	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} 's|$$(MAKE)|${GMAKE}|'
 
 .include <bsd.port.mk>
