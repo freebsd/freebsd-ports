@@ -17,9 +17,9 @@ NO_ARCH=	yes
 USES=		python shebangfix tar:xz
 
 PLIST_FILES=	bin/${PORTNAME} \
-		%%PYTHON_SITELIBDIR%%/${PORTNAME}.py \
-		%%PYTHON_SITELIBDIR%%/${PYCACHE_DIR}${PYCACHE_FILE}.pyc \
-		%%PYTHON_SITELIBDIR%%/${PYCACHE_DIR}${PYCACHE_FILE}.${PYTHON_PYOEXTENSION} \
+		${PYTHON_SITELIBDIR}/${PORTNAME}.py \
+		${PYTHON_SITELIBDIR}/${PYCACHE_DIR}${PYCACHE_FILE}.pyc \
+		${PYTHON_SITELIBDIR}/${PYCACHE_DIR}${PYCACHE_FILE}.${PYTHON_PYOEXTENSION} \
 		man/man1/${PORTNAME}.1.gz \
 		man/man5/${PORTNAME}rc.5.gz
 PORTDATA=	airports places stations zctas zones
@@ -29,7 +29,7 @@ SHEBANG_FILES=	${PORTNAME}
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3200
-PYCACHE_DIR=	# empty
+PYCACHE_DIR=	# none
 PYCACHE_FILE=	${PORTNAME}
 .else
 PYCACHE_DIR=	__pycache__/
