@@ -16,7 +16,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		tar:xz
 
-PLIST_FILES=	%%DATADIR%%/usb.ids
+PORTDATA=	usb.ids
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
