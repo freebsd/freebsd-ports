@@ -39,7 +39,7 @@ gitea_start() {
 		"GITEA_CUSTOM=%%PREFIX%%/etc/${name}" \
 		"HOME=${githome}" \
 		"PATH=%%PREFIX%%/bin:${PATH}" \
-		"USER=%%GITUSER%%" \
+		"USER=${gitea_user}" \
 		$command
 }
 
