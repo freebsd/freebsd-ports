@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jpeg-turbo
-PORTVERSION=	1.5.3
+PORTVERSION=	2.0.0
 PORTREVISION?=	0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/${PORTVERSION}
@@ -15,30 +15,22 @@ LICENSE=	BSD3CLAUSE IJG ZLIB
 LICENSE_COMB=	multi
 LICENSE_GROUPS_IJG=	FSF GPL
 LICENSE_NAME_IJG=	Independent JPEG Group License
-LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/turbojpeg.c
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSE.md
 LICENSE_FILE_IJG=	${WRKSRC}/README.ijg
-LICENSE_FILE_ZLIB=	${WRKSRC}/simd/jsimdext.inc
+LICENSE_FILE_ZLIB=	${WRKSRC}/LICENSE.md
 LICENSE_PERMS_IJG=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		cpe libtool pathfix
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-jpeg8
+USES=		cmake:outsource cpe
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	test
+CMAKE_ON=	WITH_JPEG8
 CPE_VENDOR=	d.r.commander
 CPE_PRODUCT=	libjpeg-turbo
+TEST_TARGET=	test
 
 PORTDOCS=	*
-PORTEXAMPLES=	*
+DOCSDIR=	${PREFIX}/share/doc/libjpeg-turbo
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-DOCS_MAKE_ARGS=		docdir="${DOCSDIR}"
-DOCS_MAKE_ARGS_OFF=	dist_doc_DATA=""
-
-EXAMPLES_MAKE_ARGS=	exampledir="${EXAMPLESDIR}"
-EXAMPLES_MAKE_ARGS_OFF=	dist_example_DATA=""
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
@@ -47,12 +39,9 @@ BUILD_DEPENDS+=	nasm:devel/nasm
 .endif
 
 .if ${SLAVE_PORT} == yes
-# libturbojpeg.a has to be built with PIC for virtualgl
-CONFIGURE_ARGS+=--with-pic
-USES+=		jpeg
 PLIST_SUB+=	JPEG="@comment " LIBTURBOJPEG=""
 .else
-CONFIGURE_ARGS+=--without-turbojpeg
+CMAKE_OFF=	WITH_TURBOJPEG
 CONFLICTS_INSTALL=	jpeg-[0-9]*
 PLIST_SUB+=	JPEG="" LIBTURBOJPEG="@comment "
 .endif
