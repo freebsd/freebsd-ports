@@ -3,14 +3,14 @@
 #   $MCom: ports/net/avahi/Makefile,v 1.30 2011/03/13 17:23:19 kwm Exp $
 
 PORTNAME=	avahi
-PORTVERSION=	0.6.31
-PORTREVISION?=	1
+PORTVERSION=	0.7
+PORTREVISION?=	0
 CATEGORIES?=	net dns
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	"meta-port" for the Avahi service discovery suite
 
-RUN_DEPENDS=	avahi-app>=0.6.31:net/avahi-app
+RUN_DEPENDS=	avahi-app>=0.7:net/avahi-app
 
 USES=		metaport
 
