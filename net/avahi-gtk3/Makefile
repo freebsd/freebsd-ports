@@ -24,10 +24,10 @@ AVAHI_PKGCONFIG=avahi-ui-gtk3.pc
 USE_GNOME+=	cairo gdkpixbuf2 gtk30
 
 do-build:
-	@(cd ${WRKSRC}/avahi-common; ${MAKE_CMD})
-	@(cd ${WRKSRC}/avahi-client; ${MAKE_CMD})
-	@(cd ${WRKSRC}/avahi-glib; ${MAKE_CMD})
-	@(cd ${WRKSRC}/avahi-ui; ${MAKE_CMD} libavahi-ui-gtk3.la)
+	${DO_MAKE_BUILD} -C ${WRKSRC}/avahi-common
+	${DO_MAKE_BUILD} -C ${WRKSRC}/avahi-client
+	${DO_MAKE_BUILD} -C ${WRKSRC}/avahi-glib
+	${DO_MAKE_BUILD} -C ${WRKSRC}/avahi-ui libavahi-ui-gtk3.la
 
 do-install:
 	@(cd ${WRKSRC}/avahi-ui; ${MAKE_CMD} ${MAKE_ARGS} install-libLTLIBRARIES)
