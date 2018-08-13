@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mdocml
-PORTVERSION=	1.14.3
+PORTVERSION=	1.14.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://mdocml.bsd.lv/snapshots/ \
 		LOCAL/uqs
