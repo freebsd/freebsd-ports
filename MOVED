@@ -10430,3 +10430,5 @@ editors/joe2|editors/joe|2018-08-12|Patches from editors/joe2 have been integrat
 security/keepassx||2018-08-13|Has expired: Use keepassx2 or keepassxc instead
 devel/llvm33|devel/llvm60|2018-08-13|Obsolete and unmaintained
 lang/clang33|devel/llvm60|2018-08-13|Obsolete and unmaintained
+devel/llvm34|devel/llvm60|2018-08-13|Obsolete and unmaintained
+lang/clang34|devel/llvm60|2018-08-13|Obsolete and unmaintained
