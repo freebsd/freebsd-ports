@@ -1,0 +1,45 @@
+--- CMakeLists.txt.orig	2018-07-01 17:59:23 UTC
++++ CMakeLists.txt
+@@ -46,11 +46,12 @@ message(STATUS "xeus binary version: v${
+ # Dependencies
+ # ============
+ 
++FIND_PACKAGE(PkgConfig)
+ find_package(nlohmann_json 3.1.1 REQUIRED)
+ find_package(xtl 0.4 REQUIRED)
+-find_package(ZeroMQ 4.2.3 REQUIRED)
+-find_package(cppzmq 4.2.3 REQUIRED)
+-find_package(cryptopp REQUIRED)
++pkg_check_modules(ZeroMQ libzmq>=4.2.3 REQUIRED)
++#find_package(cppzmq 4.2.3 REQUIRED)
++#find_package(cryptopp REQUIRED)
+ 
+ # Source files
+ # ============
+@@ -108,10 +109,9 @@ add_library(xeus SHARED ${XEUS_SOURCES} 
+ target_include_directories(xeus PUBLIC $<BUILD_INTERFACE:${XEUS_INCLUDE_DIR}>
+                                        $<INSTALL_INTERFACE:include>)
+ target_link_libraries(xeus
+-                      PUBLIC cppzmq
+                       PUBLIC nlohmann_json
+                       PUBLIC xtl
+-                      PRIVATE cryptopp-static)
++                      -lcryptopp)
+ 
+ if(NOT MSVC)
+     if(APPLE)
+@@ -139,10 +139,10 @@ include(CMakePushCheckState)
+ cmake_push_check_state()
+ 
+ # HAVE_CRYPTOPP_BYTE_T
+-get_target_property(cryptopp_INCLUDE_DIR cryptopp-static INTERFACE_INCLUDE_DIRECTORIES)
+-get_target_property(cryptopp_LIBRARY cryptopp-static LOCATION)
+-set(CMAKE_REQUIRED_LIBRARIES ${cryptopp_LIBRARY})
+-set(CMAKE_REQUIRED_INCLUDES ${cryptopp_INCLUDE_DIR})
++#get_target_property(cryptopp_INCLUDE_DIR cryptopp INTERFACE_INCLUDE_DIRECTORIES)
++#get_target_property(cryptopp_LIBRARY cryptopp LOCATION)
++set(CMAKE_REQUIRED_LIBRARIES -lcryptopp)
++set(CMAKE_REQUIRED_INCLUDES -I/usr/local/include)
+ check_cxx_source_compiles("
+ #include \"cryptopp/config.h\"
+ int main(){
