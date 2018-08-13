@@ -1,4 +1,5 @@
 include/gexiv2/gexiv2.h
+include/gexiv2/gexiv2-enums.h
 include/gexiv2/gexiv2-log.h
 include/gexiv2/gexiv2-metadata.h
 include/gexiv2/gexiv2-managed-stream.h
@@ -28,7 +29,6 @@ share/gtk-doc/html/gexiv2/home.png
 share/gtk-doc/html/gexiv2/index.html
 share/gtk-doc/html/gexiv2/left-insensitive.png
 share/gtk-doc/html/gexiv2/left.png
-share/gtk-doc/html/gexiv2/object-tree.html
 share/gtk-doc/html/gexiv2/right-insensitive.png
 share/gtk-doc/html/gexiv2/right.png
 share/gtk-doc/html/gexiv2/style.css
