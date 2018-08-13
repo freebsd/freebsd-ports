@@ -1,0 +1,20 @@
+The Onion Box provides a web interface to monitor the operation of a Tor node.
+It is able to monitor any Tor node operated as relay, as bridge and even as
+client - as long as it can establish a connection to the node and authenticate
+successfully.
+
+The connection to the Tor node to be monitored may be established via a local
+ControlSocket or a ControlPort (local or remote). Advanced users may establish
+a connection via the Tor network to a node proving access to it's ControlPort by
+means of a Hidden Service - supporting on demand as well Hidden Service Client
+Authorization.
+
+The Onion Box supports whatever authentication method the Tor node provides.
+
+A single instance of The Onion Box is able to provide monitoring functionality
+for as many nodes as you like.
+
+Above that, The Onion Box is able to display Tor network status protocol data
+for any Tor node known by Onionoo.
+
+WWW: https://github.com/ralphwetzel/theonionbox
