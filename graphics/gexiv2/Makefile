@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gexiv2
-PORTVERSION=	0.10.6
-PORTREVISION=	1
+PORTVERSION=	0.10.8
 CATEGORIES=	graphics
-MASTER_SITES=	GNOME/sources/gexiv2/${PORTVERSION:R}
+# MASTER_SITES=	GNOME/sources/gexiv2/${PORTVERSION:R}
+MASTER_SITES=	GNOME
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	GObject-based wrapper around Exiv2 library
