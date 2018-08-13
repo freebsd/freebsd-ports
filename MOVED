@@ -10426,3 +10426,4 @@ lang/clang38|devel/llvm38|2018-08-08|METAPORT removed
 science/py-tensorflow||2018-08-08|Has expired: build broken
 devel/bazel-clang38|devel/bazel|2018-08-08|Slave port depends on obsolete LLVM version
 security/libbeid|security/beid|2018-08-12|No longer just a library
+editors/joe2|editors/joe|2018-08-12|Patches from editors/joe2 have been integrated into editors/joe
