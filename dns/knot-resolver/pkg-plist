@@ -28,6 +28,7 @@ include/libkres/trie.h
 include/libkres/utils.h
 include/libkres/zonecut.h
 lib/kdns_modules/ahocorasick.so
+lib/kdns_modules/bogus_log.so
 lib/kdns_modules/daf.lua
 lib/kdns_modules/daf/daf.js
 lib/kdns_modules/detect_time_jump.lua
@@ -64,6 +65,7 @@ lib/kdns_modules/predict.lua
 lib/kdns_modules/prefill.lua
 lib/kdns_modules/priming.lua
 lib/kdns_modules/prometheus.lua
+lib/kdns_modules/rebinding.lua
 lib/kdns_modules/renumber.lua
 lib/kdns_modules/serve_stale.lua
 lib/kdns_modules/stats.so
