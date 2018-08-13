@@ -1,7 +1,7 @@
 # Created by: Tom McLaughlin <tmclaugh@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	net dns
 PKGNAMESUFFIX=	-sharp
 
