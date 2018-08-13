@@ -79,6 +79,7 @@ bin/stonesoup
 %%DATADIR%%/dat/des/branches/tomb.des
 %%DATADIR%%/dat/des/branches/vaults.des
 %%DATADIR%%/dat/des/branches/vaults_rooms_empty.des
+%%DATADIR%%/dat/des/branches/vaults_rooms_ghost.des
 %%DATADIR%%/dat/des/branches/vaults_rooms_hard.des
 %%DATADIR%%/dat/des/branches/vaults_rooms_standard.des
 %%DATADIR%%/dat/des/branches/zot.des
@@ -160,6 +161,7 @@ bin/stonesoup
 %%DATADIR%%/dat/des/variable/d_encompass.des
 %%DATADIR%%/dat/des/variable/float.des
 %%DATADIR%%/dat/des/variable/geyser.des
+%%DATADIR%%/dat/des/variable/ghost.des
 %%DATADIR%%/dat/des/variable/grated_community.des
 %%DATADIR%%/dat/des/variable/large_abstract.des
 %%DATADIR%%/dat/des/variable/large_themed.des
@@ -436,6 +438,7 @@ bin/stonesoup
 %%DATADIR%%/dat/dlua/debug.lua
 %%DATADIR%%/dat/dlua/dungeon.lua
 %%DATADIR%%/dat/dlua/fnwrap.lua
+%%DATADIR%%/dat/dlua/ghost.lua
 %%DATADIR%%/dat/dlua/init.lua
 %%DATADIR%%/dat/dlua/iter.lua
 %%DATADIR%%/dat/dlua/lm_named_hatch.lua
@@ -600,6 +603,7 @@ bin/stonesoup
 %%DATADIR%%/settings/dvorak_command_keys.txt
 %%DATADIR%%/settings/ibm_glyphs.txt
 %%DATADIR%%/settings/init.txt
+%%DATADIR%%/settings/neo_command_keys.txt
 %%DATADIR%%/settings/no_vi_command_keys.txt
 %%DATADIR%%/settings/old_unicode_glyphs.txt
 %%DATADIR%%/settings/safe_move_shift.txt

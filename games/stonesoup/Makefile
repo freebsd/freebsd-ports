@@ -2,19 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.21.1
-PORTREVISION=	1
+PORTVERSION=	0.22.0
 CATEGORIES=	games
-MASTER_SITES=	https://crawl.develz.org/release/%SUBDIR%/ \
-		http://crawl.develz.org/release/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION:C/.[0-9]+$//}
-DISTNAME=	stone_soup-${DISTVERSION}
 
 MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Dungeon Crawl Stone Soup - a fun, free rogue-like game
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/../licence.txt
+LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
 BROKEN_powerpc64=	fails to compile: tool/tile.h: 'nullptr' was not declared in this scope
 NOT_FOR_ARCHS=		armv6
@@ -23,12 +18,16 @@ NOT_FOR_ARCHS_REASON=	missing platform \#define or unsupported compiler
 USES=		bison compiler:c++11-lib gmake lua:51 perl5 pkgconfig \
 		shebangfix sqlite tar:xz
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	crawl
+GH_PROJECT=	crawl
+
 USE_PERL5=	build
 SHEBANG_FILES=	util/gen-mi-enum \
 		util/good-depfile
 
 SAVEDIR=	\~/.stonesoup
-WRKSRC=		${WRKDIR}/stone_soup-${PORTVERSION}/source/
+WRKSRC_SUBDIR=	crawl-ref/source
 
 SUB_FILES=	README.FreeBSD
 PLIST_SUB=	SAVEDIR="${SAVEDIR}"
@@ -84,6 +83,9 @@ post-patch-SOUND-on:
 
 post-patch-SOUND-off:
 	@${REINPLACE_CMD} -e "s,%%SOUND%%,// ," ${WRKSRC}/sound.h
+
+pre-build:
+	@${ECHO} ${PORTVERSION} > ${WRKSRC}/util/release_ver
 
 pre-install:
 	@${FIND} ${WRKSRC}/dat -type f -name '*.orig' -delete
