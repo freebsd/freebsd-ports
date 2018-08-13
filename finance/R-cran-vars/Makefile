@@ -2,16 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	vars
-DISTVERSION=	1.5-2
-PORTREVISION=	5
+DISTVERSION=	1.5-3
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	VAR Modelling
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
 
 RUN_DEPENDS=	R-cran-strucchange>0:finance/R-cran-strucchange \
 		R-cran-urca>=1.1.6:finance/R-cran-urca \
