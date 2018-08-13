@@ -5,7 +5,7 @@ PORTNAME=	include-what-you-use
 PORTVERSION=	0.10
 CATEGORIES=	devel
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Tool for use with clang to analyze #includes in C and C++ source files
 
 LICENSE=	NCSA
