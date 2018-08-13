@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sidekiq
-PORTVERSION=	5.2.0
+PORTVERSION=	5.2.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
