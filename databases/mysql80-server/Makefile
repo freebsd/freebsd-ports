@@ -17,8 +17,8 @@ LICENSE=		GPLv2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
 SLAVEDIRS=	databases/mysql80-client
-USES=		bison:build cmake:outsource,noninja compiler:c11 compiler:c++11-lib \
-		cpe libedit localbase perl5 shebangfix ssl
+USES=		bison:build cmake:outsource,noninja compiler:c14 compiler:c++14-lang \
+		compiler:c++14-lib cpe libedit localbase perl5 shebangfix ssl
 
 USE_PERL5=	run
 
@@ -146,11 +146,6 @@ FEDERATED_SUB_LIST_OFF+=	FEDER=""
 SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
 .else
 SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
-.endif
-
-# required for SSE-4.2 support on the default Clang++ on 10.4
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-CXXFLAGS+=	-msse4.2
 .endif
 
 .include <bsd.port.pre.mk>
