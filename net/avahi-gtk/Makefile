@@ -28,10 +28,10 @@ MANPAGES=	bssh.1
 USE_GNOME+=	cairo gdkpixbuf2 libglade2
 
 do-build:
-	@(cd ${WRKSRC}/avahi-common; ${MAKE_CMD})
-	@(cd ${WRKSRC}/avahi-client; ${MAKE_CMD})
-	@(cd ${WRKSRC}/avahi-glib; ${MAKE_CMD})
-	@(cd ${WRKSRC}/avahi-ui; ${MAKE_CMD})
+	@${DO_MAKE_BUILD} -C ${WRKSRC}/avahi-common
+	@${DO_MAKE_BUILD} -C ${WRKSRC}/avahi-client
+	@${DO_MAKE_BUILD} -C ${WRKSRC}/avahi-glib
+	@${DO_MAKE_BUILD} -C ${WRKSRC}/avahi-ui
 
 post-build:
 	@(cd ${WRKSRC}/avahi-discover-standalone && \
