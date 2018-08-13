@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180813:
+  AFFECTS: net/geoipupdate
+  AUTHOR: adamw@FreeBSD.org
+
+  There have been some breaking changes to the GeoIP.conf in version 3.0.0.
+  Read about the changes at
+    https://github.com/maxmind/geoipupdate/blob/master/ChangeLog.md
+  and either edit your GeoIP.conf as needed, or recreate it from
+  GeoIP.conf.sample.
+
 20180810:
   AFFECTS: databases/postgresql??-server
   AUTHOR: girgen@FreeBSD.org
