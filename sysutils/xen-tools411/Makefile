@@ -33,7 +33,7 @@ USES=		cpe gettext gmake libtool localbase:ldflags perl5 pkgconfig \
 		python:2.7 shebangfix
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 # Set ARCH=x86_64 in order to overwrite the environment ARCH=amd64
 MAKE_ARGS=	clang=y ARCH=x86_64
 
