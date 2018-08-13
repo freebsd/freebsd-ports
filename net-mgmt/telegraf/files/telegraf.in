@@ -13,7 +13,12 @@
 #				Default: NO
 # telegraf_conf (str):		telegraf configuration file
 #				Default: ${PREFIX}/etc/telegraf.conf
+# telegraf_user (str):		telegraf daemon user
+#				Default: %%TELEGRAF_USER%%
+# telegraf_group (str):		telegraf daemon group
+#				Default: %%TELEGRAF_GROUP%%
 # telegraf_flags (str):		Extra flags passed to telegraf
+#				Default: -quiet
 
 . /etc/rc.subr
 
@@ -24,19 +29,40 @@ rcvar=telegraf_enable
 load_rc_config $name
 
 : ${telegraf_enable:="NO"}
+: ${telegraf_user:="%%TELEGRAF_USER%%"}
+: ${telegraf_group:="%%TELEGRAF_GROUP%%"}
 : ${telegraf_flags:="-quiet"}
 : ${telegraf_conf:="%%PREFIX%%/etc/${name}.conf"}
+: ${telegraf_options:="${telegraf_flags} -config=${telegraf_conf}"}
 
-# daemon
-start_precmd=telegraf_prestart
+logfile="%%TELEGRAF_LOGDIR%%/${name}.log"
 pidfile="/var/run/${name}.pid"
 command=/usr/sbin/daemon
-command_args="-crP ${pidfile} %%PREFIX%%/bin/${name} ${telegraf_flags} -config=${telegraf_conf} >> /var/log/telegraf.log 2>&1"
-extra_commands="reload"
+start_precmd="telegraf_prestart"
+start_cmd="telegraf_start"
+stop_cmd="telegraf_stop"
 
-telegraf_prestart() {
-# Have to empty rc_flags so they don't get passed to daemon(8)
-        rc_flags=""
+telegraf_prestart()
+{
+    install -d -o ${telegraf_user} -g ${telegraf_group} -m750 %%TELEGRAF_LOGDIR%%
+}
+
+telegraf_start()
+{
+    echo "Starting ${name}"
+    /usr/sbin/daemon -cr -P ${pidfile} -u ${telegraf_user} \
+        %%PREFIX%%/bin/${name} ${telegraf_options} >> ${logfile} 2>&1
+}
+
+telegraf_stop()
+{
+    if [ -f ${pidfile} ] && procstat $(cat ${pidfile}) >/dev/null 2>&1; then
+        local pid=$(cat ${pidfile})
+        echo "Stopping ${name} (pid=${pid})"
+        kill -- -${pid}
+    else
+        echo "${name} isn't running"
+    fi
 }
 
 run_rc_command "$1"
