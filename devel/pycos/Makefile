@@ -6,6 +6,7 @@ PORTVERSION=	4.7.7
 CATEGORIES=	devel net
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Concurrent, Asynchronous, Distributed, Communicating Tasks with Python
