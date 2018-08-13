@@ -1684,7 +1684,6 @@
     SUBDIR += llnextgen
     SUBDIR += llvm-cheri
     SUBDIR += llvm-devel
-    SUBDIR += llvm34
     SUBDIR += llvm35
     SUBDIR += llvm38
     SUBDIR += llvm40
