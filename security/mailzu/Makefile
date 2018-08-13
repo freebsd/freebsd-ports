@@ -14,6 +14,8 @@ COMMENT=	Simple and intuitive web interface to manage amavisd-new quarantine
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+IGNORE_WITH_PHP=	70 71 72
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/amavisd:security/amavisd-new \
 		${PEARDIR}/DB.php:databases/pear-DB@${PHP_FLAVOR} \
 		${PEARDIR}/Mail/mime.php:mail/pear-Mail_Mime@${PHP_FLAVOR} \

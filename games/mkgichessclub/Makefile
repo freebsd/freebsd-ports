@@ -11,6 +11,8 @@ DISTNAME=	MKGIChessClub-${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Chess playing server with a pure web interface
 
+IGNORE_WITH_PHP=	70 71 72
+
 OPTIONS_DEFINE=	GNUCHESS PHALANX DOCS
 GNUCHESS_DESC=	Install gnuchess robot
 PHALANX_DESC=	Install phalanx robot
