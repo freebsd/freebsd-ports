@@ -10428,3 +10428,5 @@ devel/bazel-clang38|devel/bazel|2018-08-08|Slave port depends on obsolete LLVM v
 security/libbeid|security/beid|2018-08-12|No longer just a library
 editors/joe2|editors/joe|2018-08-12|Patches from editors/joe2 have been integrated into editors/joe
 security/keepassx||2018-08-13|Has expired: Use keepassx2 or keepassxc instead
+devel/llvm33|devel/llvm60|2018-08-13|Obsolete and unmaintained
+lang/clang33|devel/llvm60|2018-08-13|Obsolete and unmaintained
