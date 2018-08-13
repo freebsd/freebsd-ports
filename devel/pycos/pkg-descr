@@ -1,0 +1,11 @@
+Pycos is a Python framework for concurrent, asynchronous, network, distributed
+programming and distributed computing, using generator functions, asynchronous
+completions and message passing. pycos can be used to create tasks with
+generator functions, similar to the way threads are created with functions
+using Python's threading module.  Programs developed with pycos have same
+logic and structure as programs with threads, except for a few syntactic
+changes - mostly using yield with asynchronous completions that give control
+to pycos's scheduler, which interleaves executions of generators, similar
+to the way an operating system executes multiple processes
+
+WWW: https://pycos.sourceforge.io/

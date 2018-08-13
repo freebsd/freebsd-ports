@@ -1,0 +1,13 @@
+dispy is a comprehensive, yet easy to use framework for creating
+and using compute clusters to execute computations in parallel
+across multiple processors in a single machine (SMP), among many
+machines in a cluster, grid or cloud. dispy is well suited for data
+parallel (SIMD) paradigm where a computation (Python function or
+standalone program) is evaluated with different (large) datasets
+independently with no communication among computation tasks (except
+for computation tasks sending Provisional/Intermediate Results or
+Transferring Files to the client). If communication/cooperation
+among tasks is needed, Distributed Communicating Processes module
+of pycos framework could be used.
+
+WWW: http://dispy.sourceforge.net/
