@@ -13,6 +13,8 @@ COMMENT=	Open Computer and Software Inventory Next Generation
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+IGNORE_WITH_PHP=	70 71 72
+
 RUN_DEPENDS=	p5-XML-Simple>=0:textproc/p5-XML-Simple \
 		p5-DBI>=0:databases/p5-DBI \
 		p5-DBD-mysql>=0:databases/p5-DBD-mysql \

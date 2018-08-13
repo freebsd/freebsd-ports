@@ -15,6 +15,8 @@ COMMENT=	Bindings allowing Xapian to be used from various programming languages
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+IGNORE_WITH_PHP=	70 71 72
+
 LIB_DEPENDS=	libxapian.so:databases/xapian-core12
 
 CONFLICTS=	xapian-bindings

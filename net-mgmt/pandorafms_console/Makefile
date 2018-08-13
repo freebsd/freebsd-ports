@@ -10,6 +10,8 @@ COMMENT=	Pandora FMS console
 LICENSE=	${PANDORA_LICENSE}
 LICENSE_FILE=	${PANDORA_LICENSE_FILE}
 
+IGNORE_WITH_PHP=	70 71 72
+
 RUN_DEPENDS=	${LOCALBASE}/bin/twopi:graphics/graphviz
 
 USES=		apache:run,2.2+ php:web shebangfix
