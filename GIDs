@@ -824,7 +824,7 @@ _geodns:*:853:
 # free: 881
 # free: 882
 # free: 883
-# free: 884
+telegraf:*:884:
 tcpdump:*:885:
 miniflux:*:886:
 pdagent:*:887:

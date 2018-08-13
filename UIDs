@@ -831,6 +831,7 @@ archiva:*:871:871::0:0:Apache Archiva Daemon:/nonexistent:/usr/sbin/nologin
 # free: 882
 # free: 883
 # free: 884
+telegraf:*:884:884::0:0:telegraf user:/nonexistent:/usr/sbin/nologin
 tcpdump:*:885:885::0:0:tcpdump user:/nonexistent:/usr/sbin/nologin
 miniflux:*:886:886::0:0:Miniflux:/nonexistent:/usr/sbin/nologin
 pdagent:*:887:887::0:0:PagerDuty Agent:/nonexistent:/usr/sbin/nologin

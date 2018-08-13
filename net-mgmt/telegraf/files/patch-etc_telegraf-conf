@@ -1,5 +1,5 @@
---- etc/telegraf.conf.orig	2017-05-17 15:30:36.311581000 +0200
-+++ etc/telegraf.conf	2017-05-17 15:31:02.168614000 +0200
+--- etc/telegraf.conf.orig	2018-08-07 18:32:57 UTC
++++ etc/telegraf.conf
 @@ -61,7 +61,7 @@
    ##       when interval = "250ms", precision will be "1ms"
    ## Precision will NOT be used for service inputs. It is up to each individual

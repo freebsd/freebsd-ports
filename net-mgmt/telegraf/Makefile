@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-DISTVERSION=	1.6.3
+DISTVERSION=	1.7.3
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -10,17 +10,18 @@ COMMENT=	Time-series data collection
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	go>=1.5.0:lang/go
+ONLY_FOR_ARCHS=	amd64 i386
 
-ONLY_FOR_ARCHS=	amd64
+BUILD_DEPENDS=	go>=1.9:lang/go
 
 USE_RC_SUBR=	telegraf
 
 USE_GITHUB=	yes
 
-GH_ACCOUNT=	influxdata:DEFAULT
+GH_ACCOUNT=	influxdata
+GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${GH_PROJECT_DEFAULT}
 GH_TUPLE=	collectd:go-collectd:2ce1445:collectd_org/src/collectd.org \
-		aerospike:aerospike-client-go:9701404:aerospike_client_go/src/github.com/aerospike/aerospike-client-go \
+		aerospike:aerospike-client-go:95e1ad7:aerospike_client_go/src/github.com/aerospike/aerospike-client-go \
 		amir:raidman:c74861f:raidman/src/github.com/amir/raidman \
 		apache:thrift:4aaa92ec:thrift/src/github.com/apache/thrift \
 		aws:aws-sdk-go:c861d27d:aws_sdk_go/src/github.com/aws/aws-sdk-go \
@@ -49,11 +50,12 @@ GH_TUPLE=	collectd:go-collectd:2ce1445:collectd_org/src/collectd.org \
 		golang:protobuf:8ee7999:protobuf/src/github.com/golang/protobuf \
 		golang:snappy:7db9049:snappy/src/github.com/golang/snappy \
 		google:go-cmp:f94e52c:go_cmp/src/github.com/google/go-cmp \
-		gorilla:mux:392c28f:mux/src/github.com/gorilla/mux \
+		gorilla:mux:53c1911:mux/src/github.com/gorilla/mux \
 		hailocab:go-hostpool:e80d13c:go_hostpool/src/github.com/hailocab/go-hostpool \
-		hashicorp:consul:63d2fc68:consul/src/github.com/hashicorp/consul \
+		hashicorp:consul:5174058:consul/src/github.com/hashicorp/consul \
+		influxdata:go-syslog:eecd51d:syslog/src/github.com/influxdata/go-syslog \
 		influxdata:tail:c434825:tail/src/github.com/influxdata/tail \
-		influxdata:toml:5d1d907:toml/src/github.com/influxdata/toml \
+		influxdata:toml:2a2e301:toml/src/github.com/influxdata/toml \
 		influxdata:wlog:7c63b0a:wlog/src/github.com/influxdata/wlog \
 		jackc:pgx:63f58fd:pgx/src/github.com/jackc/pgx \
 		jmespath:go-jmespath:bd40a43:go_jmespath/src/github.com/jmespath/go-jmespath \
@@ -61,13 +63,14 @@ GH_TUPLE=	collectd:go-collectd:2ce1445:collectd_org/src/collectd.org \
 		kardianos:service:6d3a0ee:service/src/github.com/kardianos/service \
 		kballard:go-shellquote:d8ec1a6:go_shellquote/src/github.com/kballard/go-shellquote \
 		matttproud:golang_protobuf_extensions:c12348c:golang_protobuf_extensions/src/github.com/matttproud/golang_protobuf_extensions \
+		Microsoft:ApplicationInsights-Go:3612f58:application_insights/src/github.com/Microsoft/ApplicationInsights-Go \
 		Microsoft:go-winio:ce2922f:go_winio/src/github.com/Microsoft/go-winio \
 		miekg:dns:99f84ae:dns/src/github.com/miekg/dns \
 		mitchellh:mapstructure:d0303fe:mapstructure/src/github.com/mitchellh/mapstructure \
 		multiplay:go-ts3:07477f4:go_ts3/src/github.com/multiplay/go-ts3 \
 		naoina:go-stringutil:6b638e9:go_stringutil/src/github.com/naoina/go-stringutil \
 		nats-io:gnatsd:393bbb7:gnatsd/src/github.com/nats-io/gnatsd \
-		nats-io:go-nats:ea95856:nats/src/github.com/nats-io/nats \
+		nats-io:go-nats:ea95856:nats/src/github.com/nats-io/go-nats \
 		nats-io:nuid:289cccf:nuid/src/github.com/nats-io/nuid \
 		nsqio:go-nsq:eee57a3:go_nsq/src/github.com/nsqio/go-nsq \
 		opencontainers:runc:89ab7f2c:runc/src/github.com/opencontainers/runc \
@@ -90,7 +93,6 @@ GH_TUPLE=	collectd:go-collectd:2ce1445:collectd_org/src/collectd.org \
 		Shopify:sarama:3b1b388:sarama/src/github.com/Shopify/sarama \
 		Sirupsen:logrus:61e43dc:logrus/src/github.com/Sirupsen/logrus \
 		soniah:gosnmp:f15472a:gosnmp/src/github.com/soniah/gosnmp \
-		sparrc:gdm:81089da:gdm/src/github.com/sparrc/gdm \
 		StackExchange:wmi:f3e2bae:wmi/src/github.com/StackExchange/wmi \
 		streadway:amqp:63795da:amqp/src/github.com/streadway/amqp \
 		stretchr:objx:facf9a8:objx/src/github.com/stretchr/objx \
@@ -102,12 +104,13 @@ GH_TUPLE=	collectd:go-collectd:2ce1445:collectd_org/src/collectd.org \
 		wvanbergen:kazoo-go:9689573:kazoo_go/src/github.com/wvanbergen/kazoo-go \
 		yuin:gopher-lua:66c871e:gopher_lua/src/github.com/yuin/gopher-lua \
 		zensqlmonitor:go-mssqldb:ffe5510:go_mssqldb/src/github.com/zensqlmonitor/go-mssqldb \
+		cloudfoundry:clock:e9dc86bb:clock/src/code.cloudfoundry.org/clock \
+		google:go-genproto:11c7f9e:genproto/src/google.golang.org/genproto \
+		grpc:grpc-go:de2209a:grpc/src/google.golang.org/grpc \
 		golang:crypto:dc137be:crypto/src/golang.org/x/crypto \
-		golang:lint:470b6b0:lint/src/golang.org/x/lint \
-		golang:net:f249948:net/src/golang.org/x/net \
+		golang:net:a337091:net/src/golang.org/x/net \
 		golang:sys:7397344:sys/src/golang.org/x/sys \
 		golang:text:506f9d5:text/src/golang.org/x/text \
-		golang:tools:a5b4c53f:tools/src/golang.org/x/tools \
 		fatih:pool:6e328e6:pool_v2/src/gopkg.in/fatih/pool.v2 \
 		gorethink:gorethink:7ab832f:gorethink_v3/src/gopkg.in/gorethink/gorethink.v3 \
 		go-asn1-ber:asn1-ber:4e86f43:asn1_ber/src/gopkg.in/asn1-ber.v1 \
@@ -118,25 +121,30 @@ GH_TUPLE=	collectd:go-collectd:2ce1445:collectd_org/src/collectd.org \
 		go-yaml:yaml:4c78c97:yaml/src/gopkg.in/yaml.v2
 
 SUB_FILES=	telegraf
-SUB_LIST+=	TELEGRAF_PIDDIR=${TELEGRAF_PIDDIR}
-PLIST_SUB=	TELEGRAF_PIDDIR=${TELEGRAF_PIDDIR}
+SUB_LIST=	TELEGRAF_USER=${TELEGRAF_USER} \
+		TELEGRAF_GROUP=${TELEGRAF_GROUP} \
+		TELEGRAF_LOGDIR=${TELEGRAF_LOGDIR}
+PLIST_SUB=	TELEGRAF_USER=${TELEGRAF_USER} \
+		TELEGRAF_GROUP=${TELEGRAF_GROUP} \
+		TELEGRAF_LOGDIR=${TELEGRAF_LOGDIR}
 
-post-patch:
-	@${MKDIR} ${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
-	@cd ${WRKSRC} && ${MV} appveyor.yml CHANGELOG.md CONTRIBUTING.md Godeps \
-		LICENSE Makefile README.md accumulator.go agent aggregator.go cmd docs etc filter \
-		input.go internal logger metric metric.go output.go plugins processor.go scripts selfstat testutil \
-		${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
-	${LN} -s nats ${WRKSRC}/src/github.com/nats-io/go-nats
+TELEGRAF_USER=	telegraf
+TELEGRAF_GROUP=	telegraf
+
+USERS=		${TELEGRAF_USER}
+GROUPS=		${TELEGRAF_GROUP}
+
+TELEGRAF_LOGDIR=/var/log/${PORTNAME}
 
 do-build:
-	@cd ${WRKSRC}/src/github.com/influxdata/${PORTNAME} && \
-		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go install -ldflags "-X main.version=${DISTVERSION}" ./...
+	@cd ${WRKSRC}/${GH_SUBDIR} && \
+		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go install -ldflags "-X main.version=${DISTVERSION}" ./cmd/telegraf
 
 do-install:
+	${MKDIR} ${STAGEDIR}${TELEGRAF_LOGDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} \
-		${WRKSRC}/src/github.com/${GH_ACCOUNT_DEFAULT}/${GH_PROJECT}/etc/${PORTNAME}.conf  \
+		${WRKSRC}/${GH_SUBDIR}/etc/${PORTNAME}.conf  \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 
 .include <bsd.port.mk>
