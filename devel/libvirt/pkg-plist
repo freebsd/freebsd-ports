@@ -397,11 +397,16 @@ lib/libvirt/connection-driver/libvirt_driver_vbox.so
 lib/libvirt/storage-backend/libvirt_storage_backend_fs.so
 %%ZFS%%lib/libvirt/storage-backend/libvirt_storage_backend_zfs.so
 lib/libvirt/storage-file/libvirt_storage_file_fs.so
-%%QEMU%%@dir /var/run/libvirt/qemu
+%%QEMU%%@dir /var/cache/libvirt/qemu
 %%QEMU%%@dir /var/lib/libvirt/qemu/channel/target
 %%QEMU%%@dir /var/lib/libvirt/qemu/channel
 %%QEMU%%@dir /var/lib/libvirt/qemu
-%%QEMU%%@dir /var/cache/libvirt/qemu
+%%QEMU%%@dir /var/lib/libvirt/swtpm
+%%QEMU%%@dir /var/log/swtpm/libvirt/qemu
+%%QEMU%%@dir /var/log/swtpm/libvirt
+%%QEMU%%@dir /var/log/swtpm
+%%QEMU%%@dir /var/run/libvirt/qemu/swtpm
+%%QEMU%%@dir /var/run/libvirt/qemu
 %%XEN%%@dir /var/lib/libvirt/libxl
 %%XEN%%@dir /var/log/libvirt/libxl
 %%XEN%%@dir /var/run/libvirt/libxl
