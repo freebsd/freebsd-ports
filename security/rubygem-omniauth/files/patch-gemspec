@@ -1,0 +1,11 @@
+--- omniauth.gemspec.orig	2018-08-14 14:58:59 UTC
++++ omniauth.gemspec
+@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
+     s.specification_version = 4
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+-      s.add_runtime_dependency(%q<hashie>.freeze, ["< 3.6.0", ">= 3.4.6"])
++      s.add_runtime_dependency(%q<hashie>.freeze, ["< 4", ">= 3.4.6"])
+       s.add_runtime_dependency(%q<rack>.freeze, ["< 3", ">= 1.6.2"])
+       s.add_development_dependency(%q<bundler>.freeze, ["~> 1.14"])
+       s.add_development_dependency(%q<rake>.freeze, ["~> 12.0"])
