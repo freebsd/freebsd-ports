@@ -13,6 +13,9 @@ COMMENT=	Open-source media server for the Roku SoundBridge and iTunes
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Unmaintained.  Use audio/forked-daapd instead
+EXPIRATION_DATE=	2018-09-15
+
 BUILD_DEPENDS=	${LOCALBASE}/include/vorbis/codec.h:audio/libvorbis \
 		${LOCALBASE}/include/FLAC/metadata.h:audio/flac
 RUN_DEPENDS=	oggdec:audio/vorbis-tools \
