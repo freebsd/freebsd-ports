@@ -10,9 +10,9 @@
  ## We will need libeay32.dll and ssleay32.dll when running client executables.
  COPY_OPENSSL_DLLS(copy_openssl_client)
 @@ -41,11 +39,13 @@ COPY_OPENSSL_DLLS(copy_openssl_client)
+ 
  INCLUDE(${MYSQL_CMAKE_SCRIPT_DIR}/compile_flags.cmake)
  
- ADD_DEFINITIONS(${SSL_DEFINES})
 +IF(FALSE)
  MYSQL_ADD_EXECUTABLE(mysql completion_hash.cc mysql.cc readline.cc ../sql-common/sql_string.cc pattern_matcher.cc)
  TARGET_LINK_LIBRARIES(mysql mysqlclient)
