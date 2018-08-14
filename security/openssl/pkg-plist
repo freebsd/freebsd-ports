@@ -1432,6 +1432,7 @@ man/man1/x509.1.gz
 %%MAN3%%man/man3/SSL_get_servername.3.gz
 %%MAN3%%man/man3/SSL_get_servername_type.3.gz
 %%MAN3%%man/man3/SSL_get_session.3.gz
+%%MAN3%%man/man3/SSL_get_shared_ciphers.3.gz
 %%MAN3%%man/man3/SSL_get_shared_curve.3.gz
 %%MAN3%%man/man3/SSL_get_shutdown.3.gz
 %%MAN3%%man/man3/SSL_get_ssl_method.3.gz
