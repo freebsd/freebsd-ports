@@ -36,6 +36,15 @@ index efd57d42d88..83aef966d2a 100644
  
  	err = DNSServiceResolve(&mdns_conn_sdref, 0 /* flags */,
  		browsesrv->ifIndex,
+@@ -91,7 +91,7 @@ static void do_smb_resolve(struct mdns_s
+ 		}
+ 	}
+ 
+-	TALLOC_FREE(fdset);
++	TALLOC_FREE(ctx);
+ 	DNSServiceRefDeallocate(mdns_conn_sdref);
+ }
+ 
 @@ -124,18 +125,19 @@ do_smb_browse_reply(DNSServiceRef sdRef, DNSServiceFlags flags,
  		return;
  	}

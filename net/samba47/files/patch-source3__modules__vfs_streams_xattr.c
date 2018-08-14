@@ -1,4 +1,4 @@
---- source3/modules/vfs_streams_xattr.c.orig	2017-09-17 22:15:34 UTC
+--- source3/modules/vfs_streams_xattr.c.orig	2018-08-11 23:00:01 UTC
 +++ source3/modules/vfs_streams_xattr.c
 @@ -1,10 +1,10 @@
  /*
@@ -30,7 +30,6 @@
 -			      xattr_name, &ea);
 +	result = SMB_VFS_GETXATTR(conn, smb_fname, xattr_name, NULL, 0);
 +	// ? -1
-+//	result = result-1;
 +	return result;
 +}
  
@@ -54,6 +53,7 @@
 -	TALLOC_FREE(ea.value.data);
 -	return result;
 +	pea->value = data_blob_talloc(mem_ctx, NULL, attr_size);
++	/* We may have xattr of a 0 size */
 +	if(pea->value.data == NULL && attr_size) {
 +		DEBUG(5,
 +			("get_xattr_value: for EA '%s' failed to allocate %lu bytes\n",
@@ -141,7 +141,7 @@
  	if (sbuf->st_ex_size == -1) {
  		TALLOC_FREE(smb_fname_base);
  		SET_STAT_INVALID(*sbuf);
-@@ -451,10 +506,10 @@ static int streams_xattr_open(vfs_handle
+@@ -453,10 +508,10 @@ static int streams_xattr_open(vfs_handle
  	pipe_fds[1] = -1;
  	fakefd = pipe_fds[0];
  
@@ -155,7 +155,7 @@
  
  	if (!NT_STATUS_IS_OK(status)
  	    && !NT_STATUS_EQUAL(status, NT_STATUS_NOT_FOUND)) {
-@@ -631,8 +686,8 @@ static int streams_xattr_rename(vfs_hand
+@@ -625,8 +680,8 @@ static int streams_xattr_rename(vfs_hand
  	}
  
  	/* read the old stream */
@@ -166,7 +166,7 @@
  	if (!NT_STATUS_IS_OK(status)) {
  		errno = ENOENT;
  		goto fail;
-@@ -719,14 +774,13 @@ static NTSTATUS walk_xattr_streams(vfs_h
+@@ -713,14 +768,13 @@ static NTSTATUS walk_xattr_streams(vfs_h
  			continue;
  		}
  
@@ -183,7 +183,7 @@
  				names[i],
  				smb_fname->base_name,
  				nt_errstr(status)));
-@@ -788,16 +842,17 @@ struct streaminfo_state {
+@@ -782,16 +836,17 @@ struct streaminfo_state {
  	NTSTATUS status;
  };
  
@@ -204,7 +204,7 @@
  		state->status = NT_STATUS_NO_MEMORY;
  		return false;
  	}
-@@ -917,14 +972,17 @@ static ssize_t streams_xattr_pwrite(vfs_
+@@ -911,14 +966,17 @@ static ssize_t streams_xattr_pwrite(vfs_
  				    files_struct *fsp, const void *data,
  				    size_t n, off_t offset)
  {
@@ -225,7 +225,7 @@
  
  	if (sio == NULL) {
  		return SMB_VFS_NEXT_PWRITE(handle, fsp, data, n, offset);
-@@ -934,6 +992,8 @@ static ssize_t streams_xattr_pwrite(vfs_
+@@ -928,6 +986,8 @@ static ssize_t streams_xattr_pwrite(vfs_
  		return -1;
  	}
  
@@ -234,25 +234,39 @@
  	/* Create an smb_filename with stream_name == NULL. */
  	smb_fname_base = synthetic_smb_fname(talloc_tos(),
  					sio->base,
-@@ -945,35 +1005,28 @@ static ssize_t streams_xattr_pwrite(vfs_
+@@ -935,39 +995,55 @@ static ssize_t streams_xattr_pwrite(vfs_
+ 					NULL,
+ 					fsp->fsp_name->flags);
+ 	if (smb_fname_base == NULL) {
++		TALLOC_FREE(frame);
+ 		errno = ENOMEM;
  		return -1;
  	}
  
 -	status = get_ea_value(talloc_tos(), handle->conn, NULL,
 -			      smb_fname_base, sio->xattr_name, &ea);
-+	status = get_xattr_value(talloc_tos(), handle->conn,
-+				 smb_fname_base, sio->xattr_name, &ea);
- 	if (!NT_STATUS_IS_OK(status)) {
-+		TALLOC_FREE(frame);
- 		return -1;
- 	}
+-	if (!NT_STATUS_IS_OK(status)) {
+-		return -1;
+-	}
 -
 -        if ((offset + n) > ea.value.length-1) {
 -		uint8_t *tmp;
--
++	status = get_xattr_value(talloc_tos(), handle->conn,
++				 smb_fname_base, sio->xattr_name, &ea);
+ 
 -		tmp = talloc_realloc(talloc_tos(), ea.value.data, uint8_t,
 -					   offset + n + 1);
--
++	if (NT_STATUS_EQUAL(status, NT_STATUS_NOT_FOUND)) {
++		/*
++		 * This can happen if we sit behind vfs_fruit:
++		 * fruit_ftruncate calls UNLINK on an attribute
++		 * truncating the "file" to zero length. A later
++		 * pwrite faces a non-existing attribute, we need to
++		 * cope with that here.
++		 *
++		 * This might be not the last word on this.
++		 */
+ 
 -		if (tmp == NULL) {
 -			TALLOC_FREE(ea.value.data);
 -                        errno = ENOMEM;
@@ -262,8 +276,21 @@
 -		ea.value.length = offset + n + 1;
 -		ea.value.data[offset+n] = 0;
 -        }
--
++		ea = (struct ea_struct) {0};
++		ea.name = talloc_strdup(talloc_tos(), sio->xattr_name);
++		if (ea.name == NULL) {
++			TALLOC_FREE(frame);
++			errno = ENOMEM;
++			return -1;
++		}
++		status = NT_STATUS_OK;
++	}
+ 
 -        memcpy(ea.value.data + offset, data, n);
++	if (!NT_STATUS_IS_OK(status)) {
++		TALLOC_FREE(frame);
++		return -1;
++	}
 +	// ? -1
 +	if ((offset + n) > ea.value.length) {
 +		if(!data_blob_realloc(talloc_tos(), &ea.value, offset + n)) {
@@ -284,7 +311,7 @@
  
  	if (ret == -1) {
  		return -1;
-@@ -986,15 +1039,17 @@ static ssize_t streams_xattr_pread(vfs_h
+@@ -980,15 +1056,17 @@ static ssize_t streams_xattr_pread(vfs_h
  				   files_struct *fsp, void *data,
  				   size_t n, off_t offset)
  {
@@ -307,7 +334,7 @@
  
  	if (sio == NULL) {
  		return SMB_VFS_NEXT_PREAD(handle, fsp, data, n, offset);
-@@ -1004,6 +1059,8 @@ static ssize_t streams_xattr_pread(vfs_h
+@@ -998,6 +1076,8 @@ static ssize_t streams_xattr_pread(vfs_h
  		return -1;
  	}
  
@@ -316,7 +343,7 @@
  	/* Create an smb_filename with stream_name == NULL. */
  	smb_fname_base = synthetic_smb_fname(talloc_tos(),
  					sio->base,
-@@ -1011,31 +1068,35 @@ static ssize_t streams_xattr_pread(vfs_h
+@@ -1005,31 +1085,35 @@ static ssize_t streams_xattr_pread(vfs_h
  					NULL,
  					fsp->fsp_name->flags);
  	if (smb_fname_base == NULL) {
@@ -365,7 +392,7 @@
  }
  
  struct streams_xattr_pread_state {
-@@ -1202,16 +1263,18 @@ static int streams_xattr_ftruncate(struc
+@@ -1196,16 +1280,18 @@ static int streams_xattr_ftruncate(struc
  					struct files_struct *fsp,
  					off_t offset)
  {
@@ -391,7 +418,7 @@
  
  	if (sio == NULL) {
  		return SMB_VFS_NEXT_FTRUNCATE(handle, fsp, offset);
-@@ -1221,6 +1284,8 @@ static int streams_xattr_ftruncate(struc
+@@ -1215,6 +1301,8 @@ static int streams_xattr_ftruncate(struc
  		return -1;
  	}
  
@@ -400,7 +427,7 @@
  	/* Create an smb_filename with stream_name == NULL. */
  	smb_fname_base = synthetic_smb_fname(talloc_tos(),
  					sio->base,
-@@ -1228,40 +1293,46 @@ static int streams_xattr_ftruncate(struc
+@@ -1222,40 +1310,46 @@ static int streams_xattr_ftruncate(struc
  					NULL,
  					fsp->fsp_name->flags);
  	if (smb_fname_base == NULL) {
@@ -463,7 +490,7 @@
  
  	if (ret == -1) {
  		return -1;
-@@ -1279,9 +1350,9 @@ static int streams_xattr_fallocate(struc
+@@ -1273,9 +1367,9 @@ static int streams_xattr_fallocate(struc
          struct stream_io *sio =
  		(struct stream_io *)VFS_FETCH_FSP_EXTENSION(handle, fsp);
  

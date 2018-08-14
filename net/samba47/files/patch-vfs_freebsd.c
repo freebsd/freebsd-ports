@@ -67,7 +67,7 @@
 +
 +typedef struct {
 +	enum {
-+		FILE, LINK, FDES
++		EXTATTR_FILE, EXTATTR_LINK, EXTATTR_FDES
 +	} method;
 +	union {
 +		const char *path;
@@ -173,17 +173,17 @@
 +
 +	switch(arg.method) {
 +#if defined(HAVE_EXTATTR_GET_FILE)
-+		case FILE:
++		case EXTATTR_FILE:
 +			result = extattr_get_file(arg.param.path, attr->namespace, attr->name, NULL, 0);
 +			break;
 +#endif
 +#if defined(HAVE_EXTATTR_GET_LINK)
-+		case LINK:
++		case EXTATTR_LINK:
 +			result = extattr_get_link(arg.param.path, attr->namespace, attr->name, NULL, 0);
 +			break;
 +#endif
 +#if defined(HAVE_EXTATTR_GET_FD)
-+		case FDES:
++		case EXTATTR_FDES:
 +			result = extattr_get_fd(arg.param.filedes, attr->namespace, attr->name, NULL, 0);
 +			break;
 +#endif
@@ -235,17 +235,17 @@
 +	for(; ns < ARRAY_SIZE(extattr); ns++) {
 +		switch(arg.method) {
 +#if defined(HAVE_EXTATTR_LIST_FILE)
-+			case FILE:
++			case EXTATTR_FILE:
 +				list_size = extattr_list_file(arg.param.path, extattr[ns].namespace, list, size);
 +				break;
 +#endif
 +#if defined(HAVE_EXTATTR_LIST_LINK)
-+			case LINK:
++			case EXTATTR_LINK:
 +				list_size = extattr_list_link(arg.param.path, extattr[ns].namespace, list, size);
 +				break;
 +#endif
 +#if defined(HAVE_EXTATTR_LIST_FD)
-+			case FDES:
++			case EXTATTR_FDES:
 +				list_size = extattr_list_fd(arg.param.filedes, extattr[ns].namespace, list, size);
 +				break;
 +#endif
@@ -344,7 +344,7 @@
 +				const struct smb_filename *smb_fname,
 +				const char *name)
 +{
-+	extattr_arg arg = { FILE, smb_fname->base_name };
++	extattr_arg arg = { EXTATTR_FILE, smb_fname->base_name };
 +	extattr_attr attr;
 +
 +	if(!freebsd_map_xattr(name, &attr)) {
@@ -369,7 +369,7 @@
 +				size_t size)
 +{
 +#if defined(HAVE_EXTATTR_GET_FILE)
-+	extattr_arg arg = { FILE, .param.path = smb_fname->base_name };
++	extattr_arg arg = { EXTATTR_FILE, .param.path = smb_fname->base_name };
 +	extattr_attr attr;
 +	ssize_t res;
 +
@@ -417,7 +417,7 @@
 +			      void *value, size_t size)
 +{
 +#if defined(HAVE_EXTATTR_GET_FD)
-+	extattr_arg arg = { FDES, .param.filedes = fsp->fh->fd };
++	extattr_arg arg = { EXTATTR_FDES, .param.filedes = fsp->fh->fd };
 +	extattr_attr attr;
 +	ssize_t res;
 +
@@ -466,7 +466,7 @@
 +				size_t size)
 +{
 +#if defined(HAVE_EXTATTR_LIST_FILE)
-+	extattr_arg arg = { FILE, .param.path = smb_fname->base_name };
++	extattr_arg arg = { EXTATTR_FILE, .param.path = smb_fname->base_name };
 +
 +	return freebsd_extattr_list(arg, list, size);
 +#else
@@ -481,7 +481,7 @@
 +			       size_t size)
 +{
 +#if defined(HAVE_EXTATTR_LIST_FD)
-+	extattr_arg arg = { FDES, .param.filedes = fsp->fh->fd };
++	extattr_arg arg = { EXTATTR_FDES, .param.filedes = fsp->fh->fd };
 +
 +	return freebsd_extattr_list(arg, list, size);
 +#else
@@ -564,7 +564,7 @@
 +	}
 +
 +	if (flags) {
-+		extattr_arg arg = { FILE, .param.path = smb_fname->base_name };
++		extattr_arg arg = { EXTATTR_FILE, .param.path = smb_fname->base_name };
 +		/* Check attribute existence */
 +		res = extattr_size(arg, &attr);
 +		if (res < 0) {
@@ -613,7 +613,7 @@
 +	}
 +
 +	if (flags) {
-+		extattr_arg arg = { FDES, .param.filedes = fsp->fh->fd };
++		extattr_arg arg = { EXTATTR_FDES, .param.filedes = fsp->fh->fd };
 +		/* Check attribute existence */
 +		res = extattr_size(arg, &attr);
 +		if (res < 0) {

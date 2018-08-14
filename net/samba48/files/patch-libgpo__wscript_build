@@ -1,9 +1,0 @@
---- libgpo/wscript_build.orig	2018-05-22 10:47:26 UTC
-+++ libgpo/wscript_build
-@@ -10,4 +10,5 @@ bld.SAMBA3_LIBRARY('gpext',
- bld.SAMBA3_PYTHON('python_samba_libgpo', 'pygpo.c',
-                  deps='''pyparam_util gpext talloc ads TOKEN_UTIL
-                  auth pyrpc_util''',
--                 realname='samba/gpo.so')
-+                 realname='samba/gpo.so',
-+                 enabled=bld.CONFIG_SET('HAVE_LDAP'))
