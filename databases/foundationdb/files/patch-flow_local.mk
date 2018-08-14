@@ -8,7 +8,7 @@
 -flow_LDFLAGS :=
 +flow_CFLAGS := -I$(BOOSTDIR)/include -I. -Iflow -DUSE_UCONTEXT
 +flow_LDFLAGS := -L$(BOOSTDIR)/lib
-+flow_LIBS := -lm -lc++ -lpthread -leio -lexecinfo
++flow_LIBS := -lm -lc++ -lpthread -leio -lexecinfo -lboost_system
  
  ifeq ($(PLATFORM),osx)
    flow_CFLAGS += -fasynchronous-unwind-tables -fno-omit-frame-pointer

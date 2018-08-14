@@ -1,4 +1,4 @@
---- Makefile.orig	2018-05-11 01:30:59 UTC
+--- Makefile.orig	2018-08-01 01:25:10 UTC
 +++ Makefile
 @@ -6,6 +6,8 @@ TOPDIR := $(shell pwd)
  
@@ -43,7 +43,7 @@
  OTHER_PROJECTS := bindings/python bindings/ruby bindings/go
  
  CS_MK_GENERATED := $(CS_PROJECTS:=/generated.mk)
-@@ -101,7 +112,7 @@ CPP_MK_GENERATED := $(CPP_PROJECTS:=/generated.mk)
+@@ -101,7 +112,7 @@ CPP_MK_GENERATED := $(CPP_PROJECTS:=/gen
  MK_GENERATED := $(CS_MK_GENERATED) $(CPP_MK_GENERATED)
  
  # build/valgrind.mk needs to be included before any _MK_GENERATED (which in turn includes local.mk)

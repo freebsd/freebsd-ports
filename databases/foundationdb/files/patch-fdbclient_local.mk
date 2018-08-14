@@ -5,7 +5,7 @@
  
  fdbclient_CFLAGS := $(fdbrpc_CFLAGS)
 -
-+fdbclient_LIBS := -lm -lc++ -lpthread -lexecinfo -leio
++fdbclient_LIBS := -lm -lc++ -lpthread -lexecinfo -leio -lboost_system
  fdbclient_GENERATED_SOURCES += fdbclient/FDBOptions.g.h
  
  fdbclient/FDBOptions.g.cpp: fdbclient/FDBOptions.g.h

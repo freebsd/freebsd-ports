@@ -1,6 +1,6 @@
---- flow/Deque.h.orig	2018-05-11 01:30:59 UTC
+--- flow/Deque.h.orig	2018-08-01 01:25:10 UTC
 +++ flow/Deque.h
-@@ -166,7 +166,7 @@ class Deque { (private)
+@@ -166,7 +166,7 @@ private:
  			new (&newArr[i - begin]) T(std::move(arr[i&mask]));
  			arr[i&mask].~T();
  		}
@@ -9,7 +9,7 @@
  		arr = newArr;
  		end -= begin;
  		begin = 0;
-@@ -177,8 +177,8 @@ class Deque { (private)
+@@ -177,8 +177,8 @@ private:
  		for (int i = begin; i != end; i++)
  			arr[i&mask].~T();
  		if(arr)
