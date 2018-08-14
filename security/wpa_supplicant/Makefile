@@ -2,10 +2,11 @@
 
 PORTNAME=	wpa_supplicant
 PORTVERSION=	2.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security net
 MASTER_SITES=	https://w1.fi/releases/
-PATCH_SITES=	https://w1.fi/security/2017-1/
+PATCH_SITES=	https://w1.fi/security/2017-1/ \
+		https://w1.fi/security/2018-1/
 PATCHFILES=	rebased-v2.6-0001-hostapd-Avoid-key-reinstallation-in-FT-handshake.patch \
 	rebased-v2.6-0002-Prevent-reinstallation-of-an-already-in-use-group-ke.patch \
 	rebased-v2.6-0003-Extend-protection-of-GTK-IGTK-reinstallation-of-WNM-.patch \
@@ -13,7 +14,8 @@ PATCHFILES=	rebased-v2.6-0001-hostapd-Avoid-key-reinstallation-in-FT-handshake.p
 	rebased-v2.6-0005-Fix-PTK-rekeying-to-generate-a-new-ANonce.patch \
 	rebased-v2.6-0006-TDLS-Reject-TPK-TK-reconfiguration.patch \
 	rebased-v2.6-0007-WNM-Ignore-WNM-Sleep-Mode-Response-without-pending-r.patch \
-	rebased-v2.6-0008-FT-Do-not-allow-multiple-Reassociation-Response-fram.patch
+	rebased-v2.6-0008-FT-Do-not-allow-multiple-Reassociation-Response-fram.patch \
+	rebased-v2.6-0001-WPA-Ignore-unauthenticated-encrypted-EAPOL-Key-data.patch 
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	cy@FreeBSD.org
