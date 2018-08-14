@@ -15,6 +15,7 @@ LIB_DEPENDS=	libmpc.so:math/mpc
 
 USE_LDCONFIG=	yes
 USES=		tar:xz uidfix
+LLD_UNSAFE=	yes # LLD doesn't grok -z interpose
 
 MAKE_ENV=	LDADD=-lmpc LIB=missing SHLIB_MAJOR="${SHLIB_MAJOR}" \
 		SRCCONF=/dev/null SRCS="${SRCS}" __MAKE_CONF=/dev/null
