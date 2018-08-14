@@ -415,6 +415,7 @@
     SUBDIR += cx_Freeze
     SUBDIR += cxmon
     SUBDIR += cxref
+    SUBDIR += cxxopts
     SUBDIR += cxxtest
     SUBDIR += cxxtools
     SUBDIR += d-feet

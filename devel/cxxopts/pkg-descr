@@ -1,0 +1,12 @@
+This is a lightweight C++ option parser library, supporting the standard GNU
+style syntax for options.
+
+Options can be given as:
+* --long
+* --long=argument
+* --long argument
+* -a
+* -ab
+* -abc argument
+
+WWW: https://github.com/jarro2783/cxxopts
