@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	webob
-PORTVERSION=	1.7.4
+PORTVERSION=	1.8.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,6 +28,10 @@ PORTDOCS=	*
 NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+post-extract-DOCS-on:
+	@(cd ${WRKSRC} && \
+	${LN} -s src/WebOb.egg-info .)
 
 post-install-DOCS-on:
 	@(cd ${WRKSRC}/build/sphinx/html && \
