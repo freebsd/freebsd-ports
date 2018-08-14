@@ -3,7 +3,6 @@
 
 PORTNAME=	emacs
 DISTVERSION=	${EMACS_VER}.${EMACS_REV}
-PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 PKGNAMESUFFIX=	-devel
@@ -16,6 +15,8 @@ COMMENT+=	(No X flavor)
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 FLAVORS=		full nox
 full_CONFLICTS_INSTALL=	emacs-devel-nox
@@ -31,11 +32,15 @@ USE_XORG=	ice sm x11 xcb xext xfixes xinerama xmu xrandr xt
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	9593108
+GH_TAGNAME=	eb787d7
 
 CONFIGURE_ARGS=	--disable-build-details \
 		--localstatedir=/var \
-		--with-gameuser=games:games
+		--with-gameuser=games:games \
+		--without-libsystemd \
+		--without-mini-gmp \
+		--with-wide-int=no
+
 .if ${FLAVOR:U} == nox
 CONFIGURE_ARGS+=	--with-sound=no --without-cairo --without-dbus \
 			--without-gconf --without-gif --without-gsettings \
@@ -186,7 +191,7 @@ XWIDGETS_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 XWIDGETS_IMPLIES=	GTK3
 
 EMACS_VER=	27.0.50
-EMACS_REV=	20180715
+EMACS_REV=	20180813
 
 .include <bsd.port.options.mk>
 

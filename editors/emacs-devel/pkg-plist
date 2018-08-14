@@ -3897,6 +3897,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/xwidget.elc
 %%DATADIR%%/%%EMACS_VER%%/site-lisp/subdirs.el
 %%DATADIR%%/site-lisp/subdirs.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/backtrace.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/backtrace.elc
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/site-lisp/site-start.el
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/alloc.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/atimer.c
@@ -4002,6 +4004,9 @@ share/applications/emacs.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/marker.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/menu.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/menu.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/mini-gmp-emacs.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/mini-gmp.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/mini-gmp.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/minibuf.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-25.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/module-env-26.h
@@ -4016,8 +4021,8 @@ share/applications/emacs.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/ptr-bounds.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/puresize.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/ralloc.c
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/regex.c
-%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/regex.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/regex-emacs.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/regex-emacs.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/region-cache.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/region-cache.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/scroll.c
