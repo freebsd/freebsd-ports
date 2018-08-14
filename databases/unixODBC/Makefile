@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unixODBC
-PORTVERSION=	2.3.6
+PORTVERSION=	2.3.7
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/ \
 		ftp://ftp.unixodbc.org/pub/unixODBC/
