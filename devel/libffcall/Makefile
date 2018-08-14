@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	libffcall
-PORTVERSION=	1.13
+PORTVERSION=	2.1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ndowens@yahoo.com
 COMMENT=	Foreign function call libraries
 
 LICENSE=	GPLv2+
@@ -22,11 +22,10 @@ GNU_CONFIGURE=	yes
 USES=		gmake libtool
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS=	--enable-shared
+CONFIGURE_ARGS=		--enable-shared
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 MAKE_JOBS_UNSAFE=	yes
-
-CFLAGS+=	-fPIC
+CFLAGS+=		-fPIC
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libavcall.so \
