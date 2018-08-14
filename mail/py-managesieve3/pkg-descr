@@ -1,0 +1,4 @@
+A pure Python client implementation of "A Protocol for Remotely
+Managing Sieve Scripts", as defined in RFC-5804.
+
+WWW: https://bitbucket.org/ericvsmith/managesieve3
