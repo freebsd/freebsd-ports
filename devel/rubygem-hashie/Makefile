@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hashie
-PORTVERSION=	3.5.7
+PORTVERSION=	3.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
