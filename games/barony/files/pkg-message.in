@@ -1,0 +1,25 @@
+Barony requires the original game files from Barony: Blessed Edition
+(e.g. 3.1.x) to work properly.  These can come from the GOG.com
+or the Steam versions of the game.
+
+If using the GOG.com version, you should download the Linux version
+barony_cursed_edition_en_3_1_4_20342.sh and use the unzip command
+line to extract the data.
+
+The files will be in a directory named data/noarch/game.  You can
+move the contents of this directory to the %%DATADIR%%
+directory for a global install.  You will also need to fix the
+permissions on the files.
+
+The easiest way to do this is to follow these steps:
+
+$ unzip barony_cursed_edition_en_3_1_4_20342.sh
+$ sudo cp -R data/noarch/game/* %%DATADIR%%
+$ sudo find %%DATADIR%% -type d ! -perm 755 -exec chmod 755 {} \;
+
+As an alternative, the game assets can be placed into a personal folder
+of your choice and the game can be launched with the -datadir= option,
+for example:
+$ barony -datadir=$HOME/.barony
+
+You do not have to fix file permissions in this case.

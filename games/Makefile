@@ -74,6 +74,7 @@
     SUBDIR += ballerburg
     SUBDIR += banihstypos
     SUBDIR += barbie_seahorse_adventures
+    SUBDIR += barony
     SUBDIR += barrage
     SUBDIR += bass
     SUBDIR += bastet
