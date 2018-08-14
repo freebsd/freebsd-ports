@@ -3,7 +3,7 @@
 
 PORTNAME=			${SAMBA4_BASENAME}47
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			1
+PORTREVISION=			0
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -19,10 +19,13 @@ CONFLICTS_INSTALL?=		samba4-4.0.* samba4[1-689]-4.* p5-Parse-Pidl-4.*
 
 EXTRA_PATCHES+=			${PATCHDIR}/0001-Zfs-provision-1.patch:-p1
 EXTRA_PATCHES+=			${PATCHDIR}/0001-Freenas-master-mdns-fixes-22.patch:-p1
+EXTRA_PATCHES+=			${PATCHDIR}/0001-audit.patch:-p1
+EXTRA_PATCHES+=			${PATCHDIR}/0001-bug-13351.patch:-p1
+EXTRA_PATCHES+=			${PATCHDIR}/0001-bug-228462.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.7.7
+SAMBA4_VERSION=			4.7.9
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -119,7 +122,11 @@ UTMP_DESC=			UTMP accounting
 BIND911_DESC=			Use Bind 9.11 as AD DC DNS server frontend
 NSUPDATE_DESC=			Use samba NSUPDATE utility for AD DC
 ##############################################################################
-# XXX: Unconditional dependencies which can't be switched off(if present in the system)
+# XXX: Unconditional dependencies which can't be switched off(if present in
+# the system)
+# Readline(sponsored by Python)
+# XXX: USES=readline pollutes CPPFLAGS, so we explicitly put dependency
+LIB_DEPENDS+=			libreadline.so.7:devel/readline
 # popt
 LIB_DEPENDS+=			libpopt.so:devel/popt
 # inotify
@@ -143,7 +150,7 @@ RUN_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
 #SAMBA4_BUNDLED_TALLOC=		yes
 #SAMBA4_BUNDLED_TEVENT=		yes
 #SAMBA4_BUNDLED_TDB=		yes
-#SAMBA4_BUNDLED_LDB=		yes
+SAMBA4_BUNDLED_LDB=		yes
 SAMBA4_LDB=			12
 # cmocka
 .if defined(SAMBA4_BUNDLED_CMOCKA)
@@ -206,8 +213,8 @@ PLIST_SUB+=			SAMBA4_BUNDLED_LDB=""
 SUB_LIST+=			SAMBA4_BUNDLED_LDB=""
 .else
 .       if ${SAMBA4_LDB} == 13
-BUILD_DEPENDS+=			ldb13>=1.3.2:databases/ldb13
-RUN_DEPENDS+=			ldb13>=1.3.2:databases/ldb13
+BUILD_DEPENDS+=			ldb13>=1.3.3:databases/ldb13
+RUN_DEPENDS+=			ldb13>=1.3.3:databases/ldb13
 .       elif ${SAMBA4_LDB} == 12
 BUILD_DEPENDS+=			ldb12>=1.2.3:databases/ldb12
 RUN_DEPENDS+=			ldb12>=1.2.3:databases/ldb12
@@ -358,7 +365,7 @@ SAMBA4_MODULES+=		idmap_ad idmap_rfc2307 nss-info_template nss-info_rfc2307 nss-
 .if ${PORT_OPTIONS:MDEVELOPER}
 SAMBA4_MODULES+=		auth_skel pdb_test gpext_security gpext_registry gpext_scripts perfcount_test \
 				vfs_fake_dfq vfs_skel_opaque vfs_skel_transparent vfs_shadow_copy_test vfs_fake_acls \
-				vfs_nfs4acl_xattr
+				vfs_nfs4acl_xattr vfs_error_inject
 .endif
 
 .if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
@@ -409,9 +416,9 @@ RUN_DEPENDS+=			${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLA
 # XXX: This is a gross hack to make port use both Python 2.7+ and 3.3+
 # This is not officially supported, use at your own risk
 .if defined(WITH_SAMBA4_PYTHON3) && ${WITH_SAMBA4_PYTHON3:M3\.[0-9]}
-SAMBA4_PYTHON3_VERSION=	${WITH_SAMBA4_PYTHON3}
-SAMBA4_PYTHON3=		python${SAMBA4_PYTHON3_VERSION}
-SAMBA4_PYTHON3_VER=	${SAMBA4_PYTHON3_VERSION:C/\.//}
+SAMBA4_PYTHON3_VERSION=		${WITH_SAMBA4_PYTHON3}
+SAMBA4_PYTHON3=			python${SAMBA4_PYTHON3_VERSION}
+SAMBA4_PYTHON3_VER=		${SAMBA4_PYTHON3_VERSION:C/\.//}
 .if !exists(${PORTSDIR}/lang/python${SAMBA4_PYTHON3_VER})
 .error				unsupported or unknown Python version ${SAMBA4_PYTHON3_VERSION}
 .endif
@@ -461,7 +468,7 @@ MAKE_ENV+=			NOCOLOR=yes WAF_LOG_FORMAT='%(c1)s%(zone)s%(c2)s %(message)s'
 CFLAGS+=			-fno-color-diagnostics
 .endif
 #.if ${readline_ARGS} == port
-#CFLAGS+=			-D_FUNCTION_DEF
+CFLAGS+=			-D_FUNCTION_DEF
 #.endif
 # Make sure that the right version of Python is used by the tools
 # https://bugzilla.samba.org/show_bug.cgi?id=7305
@@ -551,6 +558,10 @@ post-install-rm-junk:
 .for f in vfs_aio_linux.8 vfs_btrfs.8 vfs_ceph.8 vfs_gpfs.8
 				${RM} ${STAGEDIR}${PREFIX}/man/man8/${f}
 .endfor
+.if defined(NO_PYTHON)
+				${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/samba/third_party/dns \
+					 ${STAGEDIR}${PYTHON_SITELIBDIR}/samba/third_party/iso8601
+.endif
 
 post-install: post-install-rm-junk
 				${LN} -sf smb.conf.5.gz ${STAGEDIR}${PREFIX}/man/man5/smb4.conf.5.gz

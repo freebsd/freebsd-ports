@@ -491,7 +491,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/gensec.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/getopt.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/gpclass.py
-%%LDAP%%%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/gpo.so
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/gpo.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/graph.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/hostconfig.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/idmap.py
@@ -598,6 +598,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/dns_base.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/dns_forwarder_helpers/server.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/dns_forwarder.py
+%%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/dns_invalid.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/dns_tkey.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/dns_wildcard.py
 %%SAMBA4_PYTHON2%%%%PYTHON_SITELIBDIR%%/samba/tests/dns.py
@@ -851,6 +852,7 @@ lib/shared-modules/vfs/zfsacl.so
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/dns_base.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/dns_forwarder_helpers/server.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/dns_forwarder.py
+%%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/dns_invalid.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/dns_tkey.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/dns_wildcard.py
 %%SAMBA4_PYTHON3%%%%SAMBA4_PYTHON3_SITELIBDIR%%/samba/tests/dns.py

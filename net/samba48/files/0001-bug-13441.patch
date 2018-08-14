@@ -341,3 +341,34 @@ index 1a05d0bae34..013dec0186a 100644
 -- 
 2.13.6
 
+From 6253a3865e1185f0d0907dadef38167d4ede1845 Mon Sep 17 00:00:00 2001
+From: Volker Lendecke <vl@samba.org>
+Date: Tue, 7 Aug 2018 15:10:31 +0200
+Subject: [PATCH] vfs_fruit: Don't unlink the main file
+
+Follow-up to
+
+Bug: https://bugzilla.samba.org/show_bug.cgi?id=13441
+Signed-off-by: Volker Lendecke <vl@samba.org>
+---
+ source3/modules/vfs_fruit.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/source3/modules/vfs_fruit.c b/source3/modules/vfs_fruit.c
+index ebf0f9842f0..9635116e0ba 100644
+--- a/source3/modules/vfs_fruit.c
++++ b/source3/modules/vfs_fruit.c
+@@ -5570,7 +5570,9 @@ static int fruit_ftruncate(struct vfs_handle_struct *handle,
+ 		  (intmax_t)offset);
+ 
+ 	if (fio == NULL) {
+-		if (offset == 0 && global_fruit_config.nego_aapl) {
++		if (offset == 0 &&
++		    global_fruit_config.nego_aapl &&
++		    fsp->fsp_name->stream_name != NULL) {
+ 			return SMB_VFS_NEXT_UNLINK(handle, fsp->fsp_name);
+ 		}
+ 		return SMB_VFS_NEXT_FTRUNCATE(handle, fsp, offset);
+-- 
+2.11.0
+

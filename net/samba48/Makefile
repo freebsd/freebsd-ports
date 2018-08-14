@@ -31,7 +31,7 @@ EXTRA_PATCHES+=			${PATCHDIR}/0001-bug-228462.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.8.3
+SAMBA4_VERSION=			4.8.4
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -113,7 +113,7 @@ OPTIONS_RADIO=			DNS ZEROCONF
 OPTIONS_RADIO_DNS=		NSUPDATE BIND911
 OPTIONS_RADIO_ZEROCONF=		MDNSRESPONDER AVAHI
 ##############################################################################
-AD_DC_DESC=			Active Directory Domain Controller(implies LDAP)
+AD_DC_DESC=			Active Directory Domain Controller
 ADS_DESC=			Active Directory client(implies LDAP)
 AESNI_DESC=			Accelerated AES crypto functions(amd64 only)
 CLUSTER_DESC=			Clustering
@@ -161,11 +161,11 @@ SAMBA4_BUNDLED_LIBS+=		!libarchive
 BUILD_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
 RUN_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
 ### Bundled libraries
-#SAMBA4_BUNDLED_CMOCKA=		yes
-#SAMBA4_BUNDLED_TALLOC=		yes
-#SAMBA4_BUNDLED_TEVENT=		yes
-#SAMBA4_BUNDLED_TDB=		yes
-SAMBA4_BUNDLED_LDB=		yes
+#SAMBA4_BUNDLED_CMOCKA?=	no
+#SAMBA4_BUNDLED_TALLOC?=	no
+#SAMBA4_BUNDLED_TEVENT?=	no
+#SAMBA4_BUNDLED_TDB?=		no
+SAMBA4_BUNDLED_LDB?=		yes
 SAMBA4_LDB=			13
 # cmocka
 .if defined(SAMBA4_BUNDLED_CMOCKA)
