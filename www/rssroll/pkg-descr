@@ -1,5 +1,5 @@
 Rssroll is a collector of RSS feeds.
 Written in C it uses libxml2 to store feeds into sqlite3
-database. rssroll.cgi allows web browsing of stored feeds.
+database. index.cgi allows web browsing of stored feeds.
 
 WWW: http://chaosophia.net/rssroll/
