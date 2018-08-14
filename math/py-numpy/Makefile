@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	numpy
-PORTVERSION=	1.14.3
-PORTREVISION=	1
+PORTVERSION=	1.15.0
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	math python
@@ -23,17 +22,16 @@ PYDISTUTILS_BUILDARGS=		--fcompiler=gnu95
 PYDISTUTILS_CONFIGUREARGS=	--fcompiler=gnu95
 USES=		fortran python
 USE_GITHUB=	yes
-USE_PYTHON=	concurrent distutils py3kplist cython allflavors
+USE_PYTHON=	concurrent distutils cython allflavors autoplist
 LDFLAGS+=	-shared
 
-OPTIONS_DEFINE=		DOCS SUITESPARSE TESTS
+OPTIONS_DEFINE=		DOCS SUITESPARSE
 OPTIONS_SINGLE=		BLASLIB
 OPTIONS_DEFAULT=	NETLIB SUITESPARSE
 OPTIONS_SINGLE_BLASLIB=	ATLAS NETLIB OPENBLAS
 SUITESPARSE_DESC=	Use AMD and UMFPACK in SuiteSparse
 TESTS_DESC=		Install test suite requirements
 
-PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 PORTDOCS=	*
 
 GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so | ${SED} -e s/libgfortran.so//
@@ -43,9 +41,12 @@ NETLIB_USES=		blaslapack:netlib
 NETLIB_LIB_DEPENDS=	libcblas.so:math/cblas
 OPENBLAS_USES=		blaslapack:openblas
 SUITESPARSE_LIB_DEPENDS=libumfpack.so:math/suitesparse
-TESTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
+TEST_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
+
+post-extract:
+	@${TOUCH} ${WRKSRC}/numpy/f2py/tests/src/temp
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%FC%%|${FC}|" ${WRKSRC}/numpy/distutils/fcompiler/gnu.py
@@ -90,5 +91,8 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-ref-${PORTVERSION:C/\.[0-9]+$/.0/}.pdf ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}-user-${PORTVERSION:C/\.[0-9]+$/.0/}.pdf ${STAGEDIR}${DOCSDIR}
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} runtests.py
 
 .include <bsd.port.post.mk>
