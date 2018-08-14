@@ -3,11 +3,8 @@ bin/jin
 %%DATADIR%%/actions/getserverhelp.jar
 %%DATADIR%%/actions/seek.jar
 %%DATADIR%%/chess.jar
-%%DATADIR%%/copyright.txt
-%%DATADIR%%/icon.png
 %%DATADIR%%/jin.jar
 %%DATADIR%%/libs/board.jar
-%%DATADIR%%/libs/bsh-core-1.2b7.jar
 %%DATADIR%%/libs/console.jar
 %%DATADIR%%/libs/fics/timesealing.jar
 %%DATADIR%%/libs/icc/timestamping.jar
@@ -77,5 +74,3 @@ bin/jin
 %%DATADIR%%/servers/chessclub.jar
 %%DATADIR%%/servers/freechess.jar
 %%DATADIR%%/util.jar
-@dir %%DATADIR%%/actions/fics
-@dir %%DATADIR%%/actions/icc
