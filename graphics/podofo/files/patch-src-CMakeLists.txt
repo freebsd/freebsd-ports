@@ -1,7 +1,7 @@
---- src/CMakeLists.txt.orig	2016-04-21 20:19:17 UTC
+--- src/CMakeLists.txt.orig	2018-03-11 11:42:20 UTC
 +++ src/CMakeLists.txt
-@@ -268,8 +268,8 @@ IF(PODOFO_BUILD_STATIC)
-     ADD_LIBRARY(podofo_static STATIC ${PODOFO_BASE_SOURCES} ${PODOFO_DOC_SOURCES})
+@@ -263,8 +263,8 @@ IF(PODOFO_BUILD_STATIC)
+     ADD_LIBRARY(podofo_static STATIC ${PODOFO_BASE_SOURCES} ${PODOFO_DOC_SOURCES} ${PODOFO_HEADER_FILES})
      TARGET_LINK_LIBRARIES(podofo_static ${PODOFO_LIB_DEPENDS})
      SET_TARGET_PROPERTIES(podofo_static PROPERTIES
 -        VERSION "${PODOFO_LIBVERSION}"
@@ -11,7 +11,7 @@
          CLEAN_DIRECT_OUTPUT 1
          OUTPUT_NAME "podofo"
          COMPILE_FLAGS "-DBUILDING_PODOFO"
-@@ -292,8 +292,8 @@ IF(PODOFO_BUILD_SHARED)
+@@ -287,8 +287,8 @@ IF(PODOFO_BUILD_SHARED)
      # Visual Studio, since it produces invalid warnings about STL
      # use.
      SET_TARGET_PROPERTIES(podofo_shared PROPERTIES

@@ -2,7 +2,7 @@ Prior to 3.12 cmake silently created an empty destination directory if the origi
 
 --- test/TokenizerTest/CMakeLists.txt.orig	2007-09-16 09:33:38 UTC
 +++ test/TokenizerTest/CMakeLists.txt
-@@ -7,5 +7,6 @@ ADD_DEPENDENCIES(TokenizerTest ${PODOFO_DEPEND_TARGET}
+@@ -7,5 +7,6 @@ ADD_DEPENDENCIES(TokenizerTest ${PODOFO_
  ADD_CUSTOM_COMMAND(
      TARGET TokenizerTest
      POST_BUILD
