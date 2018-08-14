@@ -1,0 +1,4 @@
+%%SITE_PERL%%/MojoX/Renderer/Haml.pm
+%%SITE_PERL%%/Mojolicious/Plugin/HamlRenderer.pm
+%%PERL5_MAN3%%/MojoX::Renderer::Haml.3.gz
+%%PERL5_MAN3%%/Mojolicious::Plugin::HamlRenderer.3.gz
