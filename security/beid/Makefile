@@ -11,20 +11,25 @@ COMMENT=	Belgian eID middleware
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libpcsclite.so:devel/pcsc-lite \
+		libproxy.so:net/libproxy
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Fedict
 GH_PROJECT=	eid-mw
 
-USES=		autoreconf gettext-tools gmake libtool pkgconfig
-USE_GNOME=	gtk30
+USES=		autoreconf gettext-tools gmake libtool pkgconfig ssl
+USE_GNOME=	gtk30 libxml2
 GLIB_SCHEMAS=	eid-viewer.gschema.xml
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-p11kit --disable-static --with-gtkvers=3 \
 		--enable-webextension \
-		--with-mozext=${PREFIX}/lib/firefox/browser/extensions
+		--with-mozext=${PREFIX}/lib/firefox/browser/extensions \
+		SSL_CFLAGS="-I${OPENSSLINC}" \
+		SSL_LIBS="-L${OPENSSLLIB} -lcrypto" \
+		SSL_PREFIX="${OPENSSLBASE}"
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	NLS
