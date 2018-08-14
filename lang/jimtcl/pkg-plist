@@ -8,4 +8,5 @@ include/jim-win32compat.h
 include/jim.h
 lib/jim/README.extensions
 lib/jim/tcltest.tcl
-lib/libjim.so.0.77
+lib/libjim.so.%%PORTVERSION%%
+libdata/pkgconfig/jimtcl.pc
