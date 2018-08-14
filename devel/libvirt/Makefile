@@ -3,6 +3,7 @@
 
 PORTNAME=	libvirt
 PORTVERSION=	4.6.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -117,10 +118,10 @@ SUB_LIST+=	PORTVERSION="-${PORTVERSION}"
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQEMU} || ${PORT_OPTIONS:MNSS}
-LIB_DEPENDS+=		libyajl.so:devel/yajl
-CONFIGURE_ARGS+=	--with-yajl=${LOCALBASE}
+LIB_DEPENDS+=		libjansson.so:devel/jansson
+CONFIGURE_ARGS+=	--with-jansson
 .else
-CONFIGURE_ARGS+=	--without-yajl
+CONFIGURE_ARGS+=	--without-jansson
 .endif
 
 .if !${PLIST_SUB:MXEN}
