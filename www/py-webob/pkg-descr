@@ -5,4 +5,4 @@ The objects map much of the specified behavior of HTTP, including
 header parsing and accessors for other standard parts of the
 environment.
 
-WWW: http://webob.org/
+WWW: https://webob.org/
