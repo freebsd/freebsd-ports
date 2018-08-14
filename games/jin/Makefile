@@ -3,40 +3,43 @@
 
 PORTNAME=	jin
 PORTVERSION=	2.14.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-unix
+DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Graphical client for chess servers
 
-NO_BUILD=	yes
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/src/free/jin/legal/copyright.txt
+
+RUN_DEPENDS=	${JAVAJARDIR}/bsh.jar:lang/bsh
+BUILD_DEPENDS=	${RUN_DEPENDS}
+
+USES=		dos2unix
+DOS2UNIX_GLOB=	*.java *.txt
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+USE_ANT=	yes
+
+MAKE_ARGS+=	-lib ${JAVAJARDIR}/bsh.jar
 
 SUB_FILES=	${PORTNAME}
-SUB_LIST=	JINJAR=${JINJAR}
+SUB_LIST=	JINJAR=${JINJAR:Q} JAVA_VERSION=${JAVA_PORT_VERSION:R}
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+
+EXTRACT_AFTER_ARGS=	--exclude 'bsh*.jar'	\
+			--exclude os-specific/unix/jin	\
+			--exclude jgoodies-windows.jar
 
 JINJAR=	${PORTNAME}.jar
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-FIND_DIRS=	. -type d
-FIND_DATA=	. -type f
-RM_FILES=	${PORTNAME} README changelog.txt gpl.txt
-
-post-extract:
-.for f in ${RM_FILES}
-	@${RM} ${WRKSRC}/${f}
-.endfor
-
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@cd ${WRKSRC} && ${FIND} ${FIND_DIRS} -exec ${MKDIR} ${STAGEDIR}${DATADIR}/{} ";"
-	@cd ${WRKSRC} && ${FIND} ${FIND_DATA} -exec ${INSTALL_DATA} {} ${STAGEDIR}${DATADIR}/{} ";"
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${FIND} ${WRKSRC} -empty -delete
+	cd ${WRKSRC}/build && ${COPYTREE_BIN} . ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

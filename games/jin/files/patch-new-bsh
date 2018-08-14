@@ -1,0 +1,34 @@
+The Beanshell API has evolved since 2007, when Jin was last released...
+
+	-mi
+
+--- src/free/jin/gamelogger/LoggingRule.java	2007-03-04 19:55:00 EDT
++++ src/free/jin/gamelogger/LoggingRule.java	2018-08-11 15:50:42 EDT
+@@ -24,4 +24,5 @@
+ import bsh.Interpreter;
+ import bsh.EvalError;
++import bsh.ParseException;
+ 
+   
+@@ -105,5 +106,5 @@
+     Object val = bsh.eval(condition);
+     if (!(val instanceof Boolean))
+-      throw new EvalError("Not a boolean expression");
++      throw new ParseException(condition + ": Not a boolean expression");
+ 
+     this.condition = condition;
+--- src/free/jin/scripter/CommandsScriptDialog.java	2007-03-04 19:54:59 EDT
++++ src/free/jin/scripter/CommandsScriptDialog.java	2018-08-11 15:55:06 EDT
+@@ -32,4 +32,5 @@
+ 
+ import bsh.EvalError;
++import bsh.ParseException;
+ import bsh.Interpreter;
+ import free.jin.I18n;
+@@ -176,5 +177,5 @@
+       Object val = bsh.eval(condition);
+       if (!(val instanceof Boolean))
+-        throw new EvalError("Not a boolean expression");
++        throw new ParseException(condition + ": Not a boolean expression");
+     } catch (EvalError e){
+         I18n i18n = I18n.get(CommandsScriptDialog.class);
