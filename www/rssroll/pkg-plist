@@ -10,4 +10,6 @@ bin/rssroll
 %%WWWDIR%%/html/flak/footer.html
 %%WWWDIR%%/html/flak/header.html
 %%WWWDIR%%/html/main.html
+%%WWWDIR%%/html/summary.rss
+%%WWWDIR%%/html/summary_item.rss
 %%WWWDIR%%/index.cgi
