@@ -2,8 +2,15 @@
 
 PORTNAME=	theonionbox
 PORTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	security net python
 MASTER_SITES=	CHEESESHOP
+
+PATCH_SITES=	https://github.com/ralphwetzel/${PORTNAME}/commit/
+PATCHFILES=	f273bd0bfb90b4a3d9692c613fe93a836df62e00.patch:-p1 \
+		14a2027fd4abd6c59e60994532400ce6bb47f8c6.patch:-p1 \
+		a86c4239b5c13c01e8c405985f08f7795f68d3a6.patch:-p1 \
+		f29082a6d78c8a635312daff95e6bacea5353cd7.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Web interface to monitor Tor node operation
@@ -18,10 +25,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apscheduler>=3.4:devel/py-apscheduler@${PY_F
 		${PYTHON_PKGNAMEPREFIX}stem>=1.5.4:security/py-stem@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tzlocal>=1.4:devel/py-tzlocal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.22:net/py-urllib3@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} # workaround for bug#230613: missing internal sqlite3 module in python
 py27_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}futures>=3.2:devel/py-futures@${PY_FLAVOR}
 
-USES=		dos2unix python
-DOS2UNIX_FILES=	FreeBSD/${PORTNAME}.sh
+USES=		python
 USE_PYTHON=	distutils autoplist noflavors
 NO_ARCH=	yes
 
