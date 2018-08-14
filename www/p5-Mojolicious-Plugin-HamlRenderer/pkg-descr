@@ -1,0 +1,6 @@
+This plugin enables using the HTML Abstraction Markup Language (Haml),
+via Text::Haml, as the rendering engine in Mojolicious apps. Haml pares
+down HTML markup to almost the bare minimum, which speeds up
+development and reduces the likelihood of tag errors.
+
+WWW: https://metacpan.org/release/Mojolicious-Plugin-HamlRenderer
