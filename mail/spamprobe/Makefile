@@ -3,7 +3,7 @@
 
 PORTNAME=		spamprobe
 PORTVERSION=	1.4d
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=		mail
 MASTER_SITES=	SF
 
@@ -12,7 +12,6 @@ COMMENT=	Spam detector using Bayesian analysis of word counts
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-default-8bit
-USE_GCC=	any
 
 PLIST_FILES=	bin/spamprobe man/man1/spamprobe.1.gz
 
