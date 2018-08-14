@@ -5,7 +5,7 @@
  else ifeq ($(PLATFORM),osx)
    fdbbackup_LDFLAGS += -lc++
 +else ifeq ($(PLATFORM),freebsd)
-+  fdbbackup_LDFLAGS += -lc++ -lm -lexecinfo -lpthread -leio
++  fdbbackup_LDFLAGS += -lc++ -lm -lexecinfo -lpthread -leio -lboost_system
  endif
  
  fdbbackup_GENERATED_SOURCES += versions.h

@@ -1,6 +1,6 @@
---- fdbrpc/Platform.cpp.orig	2018-05-11 01:30:59 UTC
+--- fdbrpc/Platform.cpp.orig	2018-08-01 01:25:10 UTC
 +++ fdbrpc/Platform.cpp
-@@ -87,7 +87,7 @@ int eraseDirectoryRecursive(std::string const& dir) {
+@@ -87,7 +87,7 @@ int eraseDirectoryRecursive(std::string 
  	__eraseDirectoryRecurseiveCount = 0;
  #ifdef _WIN32
  	system( ("rd /s /q \"" + dir + "\"").c_str() );

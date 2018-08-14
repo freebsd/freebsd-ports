@@ -1,6 +1,22 @@
---- flow/libs/system/src/error_code.cpp.orig	2018-04-19 02:55:50 UTC
+--- flow/libs/system/src/error_code.cpp.orig	2018-08-01 01:25:10 UTC
 +++ flow/libs/system/src/error_code.cpp
-@@ -48,7 +48,7 @@ namespace
+@@ -15,6 +15,7 @@
+ // the library is being built (possibly exporting rather than importing code)
+ #define BOOST_SYSTEM_SOURCE 
+ 
++#include <boost/version.hpp>
+ #include <boost/system/config.hpp>
+ #include <boost/system/error_code.hpp>
+ #include <boost/cerrno.hpp>
+@@ -37,6 +38,7 @@ using namespace boost::system::errc;
+ 
+ //----------------------------------------------------------------------------//
+ 
++#if BOOST_VERSION < 106800
+ namespace
+ {
+ #if defined(__PGI)
+@@ -48,7 +50,7 @@ namespace
    {
    public:
      generic_error_category(){}
@@ -9,7 +25,7 @@
      std::string    message( int ev ) const;
    };
  
-@@ -56,14 +56,14 @@ namespace
+@@ -56,14 +58,14 @@ namespace
    {
    public:
      system_error_category(){}
@@ -27,7 +43,7 @@
    {
      return "generic";
    }
-@@ -154,12 +154,12 @@ namespace
+@@ -154,12 +156,12 @@ namespace
    }
    //  system_error_category implementation  --------------------------------// 
  
@@ -42,7 +58,7 @@
    {
      switch ( ev )
      {
-@@ -414,13 +414,13 @@ namespace boost
+@@ -414,13 +416,13 @@ namespace boost
                                           //  address for comparison purposes
  # endif
  
@@ -58,3 +74,8 @@
      {
        static const generic_error_category generic_category_const;
        return generic_category_const;
+@@ -428,3 +430,4 @@ namespace boost
+ 
+   } // namespace system
+ } // namespace boost
++#endif

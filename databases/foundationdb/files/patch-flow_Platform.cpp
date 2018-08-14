@@ -1,4 +1,4 @@
---- flow/Platform.cpp.orig	2018-05-11 01:30:59 UTC
+--- flow/Platform.cpp.orig	2018-08-01 01:25:10 UTC
 +++ flow/Platform.cpp
 @@ -71,6 +71,7 @@
  
@@ -8,7 +8,7 @@
  #include <sys/mman.h>
  #include <unistd.h>
  #include <ftw.h>
-@@ -119,7 +120,13 @@
+@@ -119,6 +120,12 @@
  #include <IOKit/IOBSD.h>
  #endif
  
@@ -17,11 +17,10 @@
 +#include <sys/sysctl.h>
 +#include <sys/cpuset.h>
 +#include <sys/resource.h>
- #endif
 +#endif
+ #endif
  
  std::string removeWhitespace(const std::string &t)
- {
 @@ -198,7 +205,7 @@ double getProcessorTimeThread() {
  		throw platform_error();
  	}
@@ -55,7 +54,7 @@
  	return 0;
  #endif
  }
-@@ -427,6 +442,24 @@ void getMachineRAMInfo(MachineRAMInfo& memInfo) {
+@@ -427,6 +442,24 @@ void getMachineRAMInfo(MachineRAMInfo& m
  	memInfo.total = pagesize * (vm_stat.free_count + vm_stat.active_count + vm_stat.inactive_count + vm_stat.wire_count);
  	memInfo.available = pagesize * vm_stat.free_count;
  	memInfo.committed = memInfo.total - memInfo.available;
@@ -80,7 +79,7 @@
  #else
  	#warning getMachineRAMInfo unimplemented on this platform
  #endif
-@@ -435,7 +468,7 @@ void getMachineRAMInfo(MachineRAMInfo& memInfo) {
+@@ -435,7 +468,7 @@ void getMachineRAMInfo(MachineRAMInfo& m
  void getDiskBytes(std::string const& directory, int64_t& free, int64_t& total) {
  	INJECT_FAULT( platform_error, "getDiskBytes" );
  #if defined(__unixish__)
@@ -89,7 +88,7 @@
  	struct statvfs buf;
  	if (statvfs(directory.c_str(), &buf)) {
  		TraceEvent(SevError, "GetDiskBytesStatvfsError").detail("Directory", directory).GetLastError();
-@@ -477,7 +510,7 @@ void getDiskBytes(std::string const& directory, int64_
+@@ -477,7 +510,7 @@ void getDiskBytes(std::string const& dir
  #endif
  }
  
@@ -156,7 +155,7 @@
  	struct timespec ts;
  	clock_gettime(CLOCK_REALTIME, &ts);
  	return uint64_t(ts.tv_sec) * 1e9 + ts.tv_nsec;
-@@ -1481,7 +1538,7 @@ static void *allocateInternal(size_t length, bool larg
+@@ -1481,7 +1538,7 @@ static void *allocateInternal(size_t len
  		flags |= MAP_HUGETLB;
  
  	return mmap(NULL, length, PROT_READ|PROT_WRITE, flags, -1, 0);
@@ -177,7 +176,7 @@
  #endif
  }
  
-@@ -1615,7 +1677,7 @@ void renameFile( std::string const& fromPath, std::str
+@@ -1615,7 +1677,7 @@ void renameFile( std::string const& from
  		//renamedFile();
  		return;
  	}
@@ -186,7 +185,7 @@
  	if (!rename( fromPath.c_str(), toPath.c_str() )) {
  		//FIXME: We cannot inject faults after renaming the file, because we could end up with two asyncFileNonDurable open for the same file
  		//renamedFile();
-@@ -1733,7 +1795,7 @@ bool createDirectory( std::string const& directory ) {
+@@ -1733,7 +1795,7 @@ bool createDirectory( std::string const&
  	}
  	TraceEvent(SevError, "CreateDirectory").detail("Directory", directory).GetLastError();
  	throw platform_error();
@@ -195,7 +194,7 @@
  	size_t sep = 0;
  	do {
  		sep = directory.find_first_of('/', sep + 1);
-@@ -1774,7 +1836,7 @@ std::string abspath( std::string const& filename ) {
+@@ -1774,7 +1836,7 @@ std::string abspath( std::string const& 
  		if (*x == '/')
  			*x = CANONICAL_PATH_SEPARATOR;
  	return nameBuffer;
@@ -222,7 +221,7 @@
  	return S_ISREG(fileAttributes) && StringRef(name).endsWith(extension);
  #else
  	#error Port me!
-@@ -1858,7 +1920,7 @@ bool acceptFile( FILE_ATTRIBUTE_DATA fileAttributes, s
+@@ -1858,7 +1920,7 @@ bool acceptFile( FILE_ATTRIBUTE_DATA fil
  bool acceptDirectory( FILE_ATTRIBUTE_DATA fileAttributes, std::string name, std::string extension ) {
  #ifdef _WIN32
  	return (fileAttributes & FILE_ATTRIBUTE_DIRECTORY) != 0;
@@ -231,7 +230,7 @@
  	return S_ISDIR(fileAttributes);
  #else
  	#error Port me!
-@@ -1894,7 +1956,7 @@ std::vector<std::string> findFiles( std::string const&
+@@ -1894,7 +1956,7 @@ std::vector<std::string> findFiles( std:
  		}
  		FindClose(h);
  	}
@@ -240,7 +239,7 @@
  	DIR *dip;
  
  	if ((dip = opendir(directory.c_str())) != NULL) {
-@@ -1958,7 +2020,7 @@ void findFilesRecursively(std::string path, std::vecto
+@@ -1958,7 +2020,7 @@ void findFilesRecursively(std::string pa
  void threadSleep( double seconds ) {
  #ifdef _WIN32
  	Sleep( (DWORD)(seconds * 1e3) );
@@ -249,7 +248,7 @@
  	struct timespec req, rem;
  
  	req.tv_sec = seconds;
-@@ -1996,7 +2058,7 @@ void makeTemporary( const char* filename ) {
+@@ -1996,7 +2058,7 @@ void makeTemporary( const char* filename
  THREAD_HANDLE startThread(void (*func) (void *), void *arg) {
  	return (void *)_beginthread(func, 0, arg);
  }
@@ -258,7 +257,7 @@
  THREAD_HANDLE startThread(void *(*func) (void *), void *arg) {
  	pthread_t t;
  	pthread_create(&t, NULL, func, arg);
-@@ -2009,7 +2071,7 @@ THREAD_HANDLE startThread(void *(*func) (void *), void
+@@ -2009,7 +2071,7 @@ THREAD_HANDLE startThread(void *(*func) 
  void waitThread(THREAD_HANDLE thread) {
  #ifdef _WIN32
  	WaitForSingleObject(thread, INFINITE);
@@ -267,7 +266,7 @@
  	pthread_join(thread, NULL);
  #else
  	#error Port me!
-@@ -2038,7 +2100,7 @@ int64_t fileSize(std::string const& filename) {
+@@ -2038,7 +2100,7 @@ int64_t fileSize(std::string const& file
  		return 0;
  	else
  		return file_status.st_size;
@@ -276,7 +275,7 @@
  	struct stat file_status;
  	if(stat(filename.c_str(), &file_status) != 0)
  		return 0;
-@@ -2181,6 +2243,8 @@ std::string getDefaultPluginPath( const char* plugin_n
+@@ -2181,6 +2243,8 @@ std::string getDefaultPluginPath( const 
  	return format( "/usr/lib/foundationdb/plugins/%s.so", plugin_name );
  #elif defined(__APPLE__)
  	return format( "/usr/local/foundationdb/plugins/%s.dylib", plugin_name );
@@ -294,7 +293,7 @@
  #error Port me!
  #endif
  
-@@ -2446,7 +2510,7 @@ bool isLibraryLoaded(const char* lib_path) {
+@@ -2446,7 +2510,7 @@ bool isLibraryLoaded(const char* lib_pat
  }
  
  void* loadLibrary(const char* lib_path) {

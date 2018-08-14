@@ -1,3 +1,3 @@
-TIMESTAMP = 1529928229
-SHA256 (apple-foundationdb-5.2.5_GH0.tar.gz) = 25056568dfe283456f5b6b6ff822db133ecafc78319a29b6243c536f357d13b5
-SIZE (apple-foundationdb-5.2.5_GH0.tar.gz) = 4495658
+TIMESTAMP = 1534256583
+SHA256 (apple-foundationdb-5.2.8_GH0.tar.gz) = c276c91a8bfc6f6aaeceeec26f4b3d5a79d806c7a4e66a9138e3299a232eede1
+SIZE (apple-foundationdb-5.2.8_GH0.tar.gz) = 4499309

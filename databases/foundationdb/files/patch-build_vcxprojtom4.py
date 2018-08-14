@@ -1,4 +1,4 @@
---- build/vcxprojtom4.py.orig	2018-05-31 02:52:54 UTC
+--- build/vcxprojtom4.py.orig	2018-08-14 14:24:41 UTC
 +++ build/vcxprojtom4.py
 @@ -23,8 +23,8 @@
  import sys
@@ -48,7 +48,7 @@
      sys.exit()
  
  sources = [node.getAttribute("Include").replace('\\', '/') for node in
-@@ -70,4 +70,4 @@ sources = [node.getAttribute("Include").replace('\\', 
+@@ -70,4 +70,4 @@ sources = [node.getAttribute("Include").
             dom.getElementsByTagName("ClInclude")
             if not node.getElementsByTagName("ExcludedFromBuild") and node.hasAttribute("Include")]
  

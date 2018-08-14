@@ -5,7 +5,7 @@
  else ifeq ($(PLATFORM),osx)
    fdbserver_LDFLAGS += -lc++
 +else ifeq ($(PLATFORM),freebsd)
-+  fdbserver_LDFLAGS += -lc++ -lm -lpthread -lexecinfo -leio
++  fdbserver_LDFLAGS += -lc++ -lm -lpthread -lexecinfo -leio -lboost_system
  endif
  
  ifeq ($(WORKLOADS),false)

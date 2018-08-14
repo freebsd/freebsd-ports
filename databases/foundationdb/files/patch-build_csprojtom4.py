@@ -1,4 +1,4 @@
---- build/csprojtom4.py.orig	2018-05-31 02:58:48 UTC
+--- build/csprojtom4.py.orig	2018-08-14 14:24:41 UTC
 +++ build/csprojtom4.py
 @@ -1,5 +1,5 @@
  #!/usr/local/bin/python2.7
@@ -45,7 +45,7 @@
      sys.exit()
  
  sources = [node.getAttribute("Include").replace('\\', '/') for node in
-@@ -55,5 +55,5 @@ sources = [node.getAttribute("Include").replace('\\', 
+@@ -55,5 +55,5 @@ sources = [node.getAttribute("Include").
  assemblies = [node.getAttribute("Include") for node in
                dom.getElementsByTagName("Reference")]
  
