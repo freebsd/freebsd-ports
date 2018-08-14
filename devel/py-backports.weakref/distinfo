@@ -1,3 +1,3 @@
-TIMESTAMP = 1498112280
-SHA256 (backports.weakref-1.0rc1.tar.gz) = 8813bf712a66b3d8b85dc289e1104ed220f1878cf981e2fe756dfaabe9a82892
-SIZE (backports.weakref-1.0rc1.tar.gz) = 7761
+TIMESTAMP = 1534255342
+SHA256 (backports.weakref-1.0.post1.tar.gz) = bc4170a29915f8b22c9e7c4939701859650f2eb84184aee80da329ac0b9825c2
+SIZE (backports.weakref-1.0.post1.tar.gz) = 10574
