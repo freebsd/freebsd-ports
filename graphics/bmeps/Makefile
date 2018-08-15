@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bmpp
-DISTVERSION=	4.15.0
+DISTVERSION=	4.18.1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION}
 DISTNAME=	dktools-${PORTVERSION}
@@ -29,9 +29,6 @@ CONFIGURE_ENV=	ac_cv_header_sys_termios_h=no\
 		DESTDIR=${STAGEDIR}
 
 PLIST_FILES=	bin/bmpp man/man1/bmpp.1.gz
-
-post-patch:
-	@${REINPLACE_CMD} 's@sz->lsz =@st->lsz =@' ${WRKSRC}/dk3sf.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bmpp ${STAGEDIR}${PREFIX}/bin
