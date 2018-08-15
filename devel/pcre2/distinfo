@@ -1,2 +1,3 @@
-SHA256 (pcre2-10.21.tar.gz) = 1cfd43caffe07fe7f2cfafc74c8f0d87b38d80bbb63226a1193407476508e317
-SIZE (pcre2-10.21.tar.gz) = 1943713
+TIMESTAMP = 1531321198
+SHA256 (pcre2-10.31.tar.gz) = e11ebd99dd23a7bccc9127d95d9978101b5f3cf0a6e7d25a1b1ca165a97166c4
+SIZE (pcre2-10.31.tar.gz) = 2130574
