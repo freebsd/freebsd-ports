@@ -1,6 +1,6 @@
---- src/docsis_snmp.c.orig	Wed Oct 12 07:30:20 2005
-+++ src/docsis_snmp.c	Sun Jun 10 18:25:36 2007
-@@ -20,6 +20,8 @@
+--- src/docsis_snmp.c.orig	2015-10-18 20:28:25 UTC
++++ src/docsis_snmp.c
+@@ -21,6 +21,8 @@
   *  DOCSIS is a registered trademark of Cablelabs, http://www.cablelabs.com
   */
  
