@@ -7,8 +7,8 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://www.freehackers.org/~tnagy/release/:source1
-DISTFILES=	${WAF_RELEASE}${EXTRACT_SUFX}:source1
+MASTER_SITES=	https://waf.io/:waf
+DISTFILES=	${WAF_RELEASE}${EXTRACT_SUFX}:waf
 
 MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Free and open-source general-purpose video player
