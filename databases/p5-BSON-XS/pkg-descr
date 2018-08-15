@@ -1,0 +1,5 @@
+BSON::XS contains an XS implementation for BSON encoding and decoding. There is
+no public API. Use the BSON module and it will choose the best implementation
+for you.
+
+WWW: https://metacpan.org/release/BSON-XS
