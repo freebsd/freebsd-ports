@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdecaf
-PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	security
 MASTER_SITES=	SF/ed448goldilocks/
 
