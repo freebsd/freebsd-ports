@@ -56,6 +56,7 @@ lib/lighttpd/mod_scgi.so
 lib/lighttpd/mod_secdownload.so
 lib/lighttpd/mod_setenv.so
 lib/lighttpd/mod_simple_vhost.so
+lib/lighttpd/mod_sockproxy.so
 lib/lighttpd/mod_ssi.so
 lib/lighttpd/mod_staticfile.so
 lib/lighttpd/mod_status.so
