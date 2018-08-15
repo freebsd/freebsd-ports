@@ -1,0 +1,3 @@
+%%SITE_ARCH%%/BSON/XS.pm
+%%SITE_ARCH%%/auto/BSON/XS/XS.so
+%%PERL5_MAN3%%/BSON::XS.3.gz
