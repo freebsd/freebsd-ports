@@ -1,0 +1,8 @@
+--- Makefile.orig	2018-07-02 17:45:52.000000000 +0200
++++ Makefile	2018-07-04 10:35:57.228161000 +0200
+@@ -1,4 +1,4 @@
+-SHELL=/bin/bash -o pipefail -o errexit
++SHELL=/usr/local/bin/bash -o pipefail -o errexit
+ 
+ include config.mk
+ include platform.mk
