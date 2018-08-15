@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xosview
-PORTVERSION=	1.19
+DISTVERSION=	1.20
 CATEGORIES=	sysutils
 
 MAINTAINER=	otacilio.neto@bsd.com.br
@@ -11,14 +11,15 @@ COMMENT=	Graphical performance meter
 LICENSE=	BSD4CLAUSE GPLv2
 LICENSE_COMB=	multi
 
+BROKEN_FreeBSD_12=	Due to changes in sys/vmmeter.h (r328134)
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	uses x86-specific hardware resources
 
+USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	hills
 
 USE_XORG=	x11 xpm
-USES=		gmake
 MAKE_ENV=	OPTFLAGS="" PLATFORM=bsd MANDIR=${MANPREFIX}/man
 ALL_TARGET=	xosview
 
