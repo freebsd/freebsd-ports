@@ -2,7 +2,7 @@
 
 PORTNAME=	git-lfs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.0
+DISTVERSION=	2.5.1
 CATEGORIES=	devel
 
 MAINTAINER=	kenji@k2r.org
@@ -18,8 +18,6 @@ USE_GITHUB=	yes
 PLIST_FILES=	bin/git-lfs
 
 GO_PKGNAME=	github.com/${PORTNAME}/${PORTNAME}
-
-# See https://github.com/git-lfs/git-lfs/issues/3159
 
 do-build:
 	@cd ${GO_WRKSRC} && ${MKDIR} ${WRKSRC}/.tmp && \
