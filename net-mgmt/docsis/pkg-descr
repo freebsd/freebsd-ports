@@ -3,4 +3,4 @@ configuration files for DOCSIS-compliant cable modems. DOCSIS stands
 for Data over Cable Service Interface Specification and is a standard
 developed by Cablelabs.
 
-WWW: http://docsis.sourceforge.net/
+WWW: https://github.com/rlaager/docsis
