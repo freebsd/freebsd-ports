@@ -1,4 +1,4 @@
---- pafy/backend_youtube_dl.py.orig	2016-03-05 21:47:16 UTC
+--- pafy/backend_youtube_dl.py.orig	2018-02-11 21:15:57 UTC
 +++ pafy/backend_youtube_dl.py
 @@ -8,6 +8,9 @@ if sys.version_info[:2] >= (3, 0):
  else:
