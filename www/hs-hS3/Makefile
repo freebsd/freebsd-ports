@@ -10,6 +10,9 @@ COMMENT=	Interface to Amazon's Simple Storage Service (S3)
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Not being developed upstream
+EXPIRATION_DATE=	2018-09-15
+
 USE_CABAL=	Crypto>=4.1.0 dataenc HTTP>=4000.0.0 hxt>=9.0.0 \
 		MissingH>=0.18.6 network>=2.6 network-uri>=2.6 random \
 		regex-compat utf8-string

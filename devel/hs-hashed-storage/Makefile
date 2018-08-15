@@ -10,6 +10,9 @@ COMMENT=	Hashed file storage support code
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Not being developed upstream
+EXPIRATION_DATE=	2018-09-15
+
 USE_CABAL=	dataenc extensible-exceptions mmap>=0.5 mtl zlib
 
 FLAGS_DISABLE=		test
