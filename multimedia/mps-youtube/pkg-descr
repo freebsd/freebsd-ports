@@ -9,8 +9,8 @@ Main features:
  - Download audio/video
  - Convert to mp3 & other formats (requires ffmpeg or avconv)
  - View video comments
- - Works with Python 2.7+ and 3.x
+ - Works with 3.x
  - Works with Windows, Linux and Mac OS X
  - Requires mplayer or mpv
 
-WWW: https://github.com/np1/mps-youtube
+WWW: https://github.com/mps-youtube/mps-youtube

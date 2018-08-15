@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mps-youtube
-PORTVERSION=	0.2.7.1
-PORTREVISION=	3
+PORTVERSION=	0.2.8
+PORTREVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	CHEESESHOP
 
@@ -11,6 +11,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Terminal based YouTube jukebox with playlist management
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	ca_root_nss>=3.17.3:security/ca_root_nss \
 		${PYTHON_PKGNAMEPREFIX}pafy>=0.5.0:www/py-pafy@${PY_FLAVOR}
