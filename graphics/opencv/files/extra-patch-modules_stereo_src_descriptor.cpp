@@ -1,4 +1,4 @@
-https://github.com/opencv/opencv_contrib/pull/1715
+https://github.com/opencv/opencv_contrib/commit/4e10bc5dae62
 
 --- modules/stereo/src/descriptor.cpp.orig	2018-02-22 13:38:31 UTC
 +++ modules/stereo/src/descriptor.cpp
@@ -8,8 +8,8 @@ https://github.com/opencv/opencv_contrib/pull/1715
          {
 -            CV_Assert(image.size > 0);
 -            CV_Assert(cost.size > 0);
-+            CV_Assert(*image.size > 0);
-+            CV_Assert(*cost.size > 0);
++            CV_Assert(!image.empty());
++            CV_Assert(!cost.empty());
              CV_Assert(windowSize % 2 != 0);
              int win = windowSize / 2;
              float scalling = ((float) 1) / (windowSize * windowSize);
