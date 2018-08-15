@@ -1,13 +1,18 @@
---- projects/CMakeLists.txt.orig	2017-01-01 11:36:50 UTC
+--- projects/CMakeLists.txt.orig	2018-08-14 06:56:08 UTC
 +++ projects/CMakeLists.txt
-@@ -25,7 +25,9 @@ if(${LLVM_BUILD_RUNTIME})
-     # first.
+@@ -8,7 +8,6 @@ foreach(entry ${entries})
+        (NOT ${entry} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR}/dragonegg) AND
+        (NOT ${entry} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR}/libcxx) AND
+        (NOT ${entry} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR}/libcxxabi) AND
+-       (NOT ${entry} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR}/libunwind) AND
+        (NOT ${entry} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR}/test-suite) AND
+        (NOT ${entry} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR}/parallel-libs) AND
+        (NOT ${entry} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR}/openmp))
+@@ -27,7 +26,6 @@ if(${LLVM_BUILD_RUNTIME})
+   if(NOT MSVC OR LLVM_FORCE_BUILD_RUNTIME)
+     # Add the projects in reverse order of their dependencies so that the
+     # dependent projects can see the target names of their dependencies.
+-    add_llvm_external_project(libunwind)
      add_llvm_external_project(libcxxabi)
      add_llvm_external_project(libcxx)
--    add_llvm_external_project(libunwind)
-+    if(FALSE)
-+        add_llvm_external_project(libunwind)
-+    endif()
    endif()
-   if(NOT LLVM_BUILD_EXTERNAL_COMPILER_RT)
-     add_llvm_external_project(compiler-rt)
