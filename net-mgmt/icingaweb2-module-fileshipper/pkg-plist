@@ -1,4 +1,5 @@
 %%WWWDIR%%/.github/ISSUE_TEMPLATE.md
+%%WWWDIR%%/.gitignore
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
 %%WWWDIR%%/contrib/git-hooks/post-merge
@@ -15,5 +16,9 @@
 %%WWWDIR%%/doc/screenshot/fileshipper/07_fileshipper-whole-directory.png
 %%WWWDIR%%/library/Fileshipper/ProvidedHook/Director/ImportSource.php
 %%WWWDIR%%/library/Fileshipper/ProvidedHook/Director/ShipConfigFiles.php
+%%WWWDIR%%/library/Fileshipper/Xlsx/Utils.php
+%%WWWDIR%%/library/Fileshipper/Xlsx/Workbook.php
+%%WWWDIR%%/library/Fileshipper/Xlsx/Worksheet.php
 %%WWWDIR%%/module.info
+%%WWWDIR%%/phpcs.xml
 %%WWWDIR%%/run.php
