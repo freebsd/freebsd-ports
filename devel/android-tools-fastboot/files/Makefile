@@ -34,25 +34,11 @@ SRCS+=	stringprintf.cpp
 SRCS+=	strings.cpp
 
 # required by fastboot
-.PATH: ${.CURDIR}/../ext4_utils
-SRCS+=	allocate.c
-SRCS+=	contents.c
-SRCS+=	crc16.c
-SRCS+=	ext4_sb.c
-SRCS+=	ext4_utils.c
-SRCS+=	ext4fixup.c
-SRCS+=	extent.c
-SRCS+=	indirect.c
-SRCS+=	make_ext4fs.c
-SRCS+=	sha1.c
-SRCS+=	wipe.c
-
-# required by fastboot
 .PATH: ${.CURDIR}/../libcutils
 SRCS+=	android_get_control_file.cpp
 SRCS+=	../libcutils/sockets.cpp
-SRCS+=	socket_inaddr_any_server_unix.c
-SRCS+=	socket_network_client_unix.c
+SRCS+=	socket_inaddr_any_server_unix.cpp
+SRCS+=	socket_network_client_unix.cpp
 SRCS+=	sockets_unix.cpp
 CPPFLAGS.sockets.cpp+=	-o ${.TARGET} # XXX pre-r279980
 
@@ -70,19 +56,7 @@ SRCS+=	logprint.c
 SRCS+=	stderr_write.c
 SRCS+=	test_utils.cpp
 
-# required by ext4_utils
-.PATH:	${.CURDIR}/../libselinux/src
-SRCS+=	callbacks.c
-SRCS+=	check_context.c
-SRCS+=	freecon.c
-SRCS+=	init.c
-SRCS+=	label.c
-SRCS+=	label_android_property.c
-SRCS+=	label_file.c
-SRCS+=	label_support.c
-CPPFLAGS.label_file.c+=	-D_WITH_GETLINE
-
-# required by fastboot and ext4_utils
+# required by fastboot
 .PATH:	${.CURDIR}/../libsparse
 SRCS+=	backed_block.c
 SRCS+=	output_file.c
@@ -109,15 +83,11 @@ CPPFLAGS+=	-DFAKE_LOG_DEVICE=1
 CPPFLAGS+=	-I${.CURDIR}
 CPPFLAGS+=	-I${.CURDIR}/../include
 CPPFLAGS+=	-I${.CURDIR}/../adb
-CPPFLAGS+=	-I${.CURDIR}/../mkbootimg
+CPPFLAGS+=	-I${.CURDIR}/../mkbootimg/include/bootimg
 CPPFLAGS+=	-I${.CURDIR}/../base/include
-CPPFLAGS+=	-I${.CURDIR}/../ext4_utils/include
-CPPFLAGS+=	-I${.CURDIR}/../f2fs_utils
-CPPFLAGS+=	-I${.CURDIR}/../libselinux/include
 CPPFLAGS+=	-I${.CURDIR}/../libsparse/include
 CPPFLAGS+=	-I${.CURDIR}/../libziparchive/include
 CPPFLAGS+=	${CPPFLAGS.${.IMPSRC:T}}
-CPPFLAGS+=	$$(${PKG_CONFIG} libpcre --cflags 2>/dev/null)
 CPPFLAGS+=	$$(${PKG_CONFIG} libusb-1.0 --cflags 2>/dev/null)
 CXXFLAGS+=	-D__STDC_LIMIT_MACROS # DragonFly
 CXXFLAGS+=	-std=gnu++11
@@ -127,10 +97,9 @@ CFLAGS+=	${CPPFLAGS}
 CXXFLAGS+=	${CPPFLAGS}
 .endif
 
-LDADD+=	$$(${PKG_CONFIG} libpcre --libs 2>/dev/null || echo -lpcre)
 LDADD+=	$$(${PKG_CONFIG} libusb-1.0 --libs 2>/dev/null || echo -lusb)
 LDADD+=	-lz \-lpthread
-DPADD+=	${LIBPCRE} ${LIBPTHREAD} ${LIBUSB} ${LIBZ}
+DPADD+=	${LIBPTHREAD} ${LIBUSB} ${LIBZ}
 
 PKG_CONFIG?=	pkg-config
 
