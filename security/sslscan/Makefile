@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sslscan
-PORTVERSION=	1.11.10
-DISTVERSIONSUFFIX=	-${GH_ACCOUNT}
+PORTVERSION=	1.11.11
 CATEGORIES=	security
 
 MAINTAINER=	gavin@FreeBSD.org
@@ -18,6 +17,7 @@ UNSAFESSL_DESC=	Use openssl-unsafe as libssl provider (SSLv2 etc.)
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	rbsec
+GH_TAGNAME=	96ad4ff
 
 UNSAFESSL_USES_OFF=	ssl
 UNSAFESSL_BUILD_DEPENDS=	${LOCALBASE}/openssl-unsafe/lib/libssl.so:security/openssl-unsafe
