@@ -3,11 +3,12 @@
 
 PORTNAME=	openvpn-admin
 PORTVERSION=	1.9.4
-PORTREVISION=	5
+DISTVERSIONSUFFIX=	-2
+PORTREVISION=	6
 CATEGORIES=	security gnome
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/release-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	egypcio@googlemail.com
 COMMENT=	GUI frontend to openvpn
 
 LICENSE=	LGPL21+
@@ -15,8 +16,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	openvpn:security/openvpn
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/b//}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_ARCH=	yes
 USES=		gettext gmake pkgconfig
 USE_GNOME=	gtksharp20 intltool
 GNU_CONFIGURE=	yes
