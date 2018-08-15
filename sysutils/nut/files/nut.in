@@ -17,6 +17,7 @@
 #
 nut_enable=${nut_enable:-"NO"}
 nut_prefix=${nut_prefix:-"%%PREFIX%%"}
+nut_upsshut=${nut_upsshut:-"NO"}
 
 . /etc/rc.subr
 
