@@ -2,6 +2,7 @@ lib/postgresql/timescaledb-%%PORTVERSION%%.so
 lib/postgresql/timescaledb.so
 share/postgresql/extension/timescaledb--0.1.0--%%PORTVERSION%%.sql
 share/postgresql/extension/timescaledb--0.10.0--%%PORTVERSION%%.sql
+share/postgresql/extension/timescaledb--0.10.1--%%PORTVERSION%%.sql
 share/postgresql/extension/timescaledb--%%PORTVERSION%%.sql
 share/postgresql/extension/timescaledb--0.2.0--%%PORTVERSION%%.sql
 share/postgresql/extension/timescaledb--0.3.0--%%PORTVERSION%%.sql
