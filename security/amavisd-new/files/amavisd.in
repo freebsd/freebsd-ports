@@ -38,10 +38,6 @@ start_precmd()
 {
 	rm -rf %%AMAVISDIR%%/tmp/* %%AMAVISDIR%%/tmp/.* 2>/dev/null || true
 	if [ ${amavisd_ram} ];then
-	  echo "========================================================"
-	  echo "WARNING: using ramdisk is reported to be unstable and"
-	  echo "thus it is highly recommended to be turned off."
-	  echo "========================================================"
 	  df %%AMAVISDIR%%/tmp | grep -E '^(/dev/md|tmpfs)' > /dev/null
 	  if [ $? -eq 1 ]; then
 	    mdmfs -s ${amavisd_ram} -p 750 -w %%AMAVISUSER%%:%%AMAVISGROUP%% md %%AMAVISDIR%%/tmp || true
