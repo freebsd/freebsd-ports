@@ -2,7 +2,7 @@
 
 PORTNAME=	icingaweb2-module-fileshipper
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
+DISTVERSION=	1.1.0
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	lme@FreeBSD.org
