@@ -2,7 +2,7 @@
 
 PORTNAME=	icingaweb2-module-grafana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.5
+DISTVERSION=	1.3.1
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	lme@FreeBSD.org
