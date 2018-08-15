@@ -4,7 +4,7 @@
 PORTNAME=	electric
 PORTVERSION=	9.07
 CATEGORIES=	cad java
-MASTER_SITES=	GNU/${PORTNAME:S/-ng//} \
+MASTER_SITES=	GNU \
 		http://www.staticfreesoft.com/:1 \
 		http://www.staticfreesoft.com/jmanual/:2
 PKGNAMESUFFIX=	-ng
