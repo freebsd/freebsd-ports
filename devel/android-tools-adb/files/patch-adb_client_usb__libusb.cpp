@@ -9,6 +9,14 @@
  
  #include <android-base/file.h>
  #include <android-base/logging.h>
+@@ -39,6 +39,7 @@
+ 
+ #include "adb.h"
+ #include "adb_utils.h"
++#include "sysdeps/chrono.h"
+ #include "transport.h"
+ #include "usb.h"
+ 
 @@ -89,7 +89,11 @@ struct transfer_info {
  };
  
