@@ -12,10 +12,10 @@ to /etc/sysctl.conf:
 FreeBSD 11.0-RELEASE and newer have this set by default.
 
 --II--
-Chromium has a known problem of hanging tabs. The workaround
-for this problem is to mount ~/.cache/chromium as memory-fs.
-In order to do this, before you run Chromium, please run the
-following script as root once for each user who uses Chromium
-(replace {user}/{group} with your user/group names):
+Chromium has a known problem of hanging tabs. The bug has been fixed
+in r337328. Therefore, it is recommended to upgrade the system after
+the correction date.
 
-    # %%DATADIR%%/fix-hanging-tabs.sh {user} {group}
+    # svn diff -c337328 --summarize svn://svn.freebsd.org/base
+
+See PR 212812 for further details.

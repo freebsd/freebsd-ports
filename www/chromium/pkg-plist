@@ -3,7 +3,6 @@ bin/chrome
 %%DATADIR%%/chrome-wrapper
 %%DATADIR%%/chrome_100_percent.pak
 %%DATADIR%%/chrome_200_percent.pak
-%%DATADIR%%/fix-hanging-tabs.sh
 %%DATADIR%%/font_service.service
 %%DATADIR%%/headless_lib.pak
 %%DATADIR%%/icudtl.dat
