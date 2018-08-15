@@ -4,7 +4,7 @@
      ADB_USB_INTERFACE(libusb::usb_handle*);
  }
  
-+#if defined(__linux__) || defined(__APPLE__)
++#if defined(__linux__) || defined(__APPLE__) || defined(_WIN32)
  namespace native {
      struct usb_handle;
      ADB_USB_INTERFACE(native::usb_handle*);

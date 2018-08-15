@@ -21,7 +21,7 @@
  };
  
  namespace libusb {
-+#if defined(__linux__) || defined(__APPLE__)
++#if defined(__linux__) || defined(__APPLE__) || defined(_WIN32)
  struct usb_handle : public ::usb_handle {
 +#else
 +struct usb_handle {
