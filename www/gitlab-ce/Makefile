@@ -241,6 +241,9 @@ post-patch-PGSQL-off:
 	${REINPLACE_CMD} -e "/gem 'pg'/d" ${WRKSRC}/Gemfile
 	${REINPLACE_CMD} -e "/gem 'peek-pg'/d" ${WRKSRC}/Gemfile
 
+pre-install:
+	(cd ${WRKSRC} && rm Gemfile.lock && bundle install --local)
+
 do-install:
 	${FIND} ${WRKSRC} -name '*.orig' -delete
 	${FIND} ${WRKSRC} -name '*.bak' -delete
