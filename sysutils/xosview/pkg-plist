@@ -1,3 +1,4 @@
 @(,kmem,2555) bin/xosview
 lib/X11/app-defaults/XOsview
 man/man1/xosview.1.gz
+share/icons/hicolor/32x32/apps/xosview.png

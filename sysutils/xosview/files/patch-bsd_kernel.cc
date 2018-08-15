@@ -1,6 +1,6 @@
---- bsd/kernel.cc.orig	2017-07-02 01:38:15 UTC
+--- bsd/kernel.cc.orig	2017-11-04 15:05:59 UTC
 +++ bsd/kernel.cc
-@@ -93,6 +93,9 @@ static int mib_uvm[2] = { CTL_VM, VM_UVMEXP2 };
+@@ -93,6 +93,9 @@ static int mib_uvm[2] = { CTL_VM, VM_UVM
  static int mib_uvm[2] = { CTL_VM, VM_UVMEXP };
  #endif
  #else
@@ -10,7 +10,7 @@
  #include <sys/vmmeter.h>
  #endif
  
-@@ -328,7 +331,9 @@ BSDGetPageStats(uint64_t *meminfo, uint64_t *pageinfo)
+@@ -328,7 +331,9 @@ BSDGetPageStats(uint64_t *meminfo, uint6
  	GET_VM_STATS(v_active_count);
  	GET_VM_STATS(v_inactive_count);
  	GET_VM_STATS(v_wire_count);
@@ -20,7 +20,7 @@
  	GET_VM_STATS(v_free_count);
  	GET_VM_STATS(v_page_size);
  	GET_VM_STATS(v_vnodepgsin);
-@@ -350,7 +355,9 @@ BSDGetPageStats(uint64_t *meminfo, uint64_t *pageinfo)
+@@ -350,7 +355,9 @@ BSDGetPageStats(uint64_t *meminfo, uint6
  		meminfo[0] = (uint64_t)vm.v_active_count * vm.v_page_size;
  		meminfo[1] = (uint64_t)vm.v_inactive_count * vm.v_page_size;
  		meminfo[2] = (uint64_t)vm.v_wire_count * vm.v_page_size;
@@ -30,3 +30,12 @@
  		meminfo[4] = (uint64_t)vm.v_free_count * vm.v_page_size;
  #else  /* XOSVIEW_DFBSD */
  		meminfo[0] = (uint64_t)vms.v_active_count * vms.v_page_size;
+@@ -654,7 +661,7 @@ DevStat_Init(void) {
+ 
+ uint64_t
+ DevStat_Get(uint64_t *read_bytes, uint64_t *write_bytes) {
+-	register int dn;
++	int dn;
+ 	long double busy_seconds;
+ 	uint64_t reads, writes, total_bytes = 0;
+ 	struct devinfo *tmp_dinfo;
