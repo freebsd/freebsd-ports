@@ -1,4 +1,4 @@
---- Makefile.orig	2017-10-16 23:18:47 UTC
+--- Makefile.orig	2018-08-15 16:19:30 UTC
 +++ Makefile
 @@ -19,7 +19,7 @@ BUILD_IBIN = build/obj/bin
  
@@ -6,8 +6,8 @@
  
 -ifeq ($(UNAME),Darwin)
 +ifeq ($(UNAME),FreeBSD)
- CC = clang
- CXX = clang++
+ CC ?= clang
+ CXX ?= clang++
  else
 @@ -49,8 +49,6 @@ endif
  
