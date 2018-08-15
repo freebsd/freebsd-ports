@@ -199,7 +199,6 @@
     SUBDIR += memcacheq
     SUBDIR += metakit
     SUBDIR += monetdb
-    SUBDIR += mongodb
     SUBDIR += mongodb32
     SUBDIR += mongodb32-tools
     SUBDIR += mongodb34

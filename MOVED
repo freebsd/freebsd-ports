@@ -10432,3 +10432,4 @@ devel/llvm33|devel/llvm60|2018-08-13|Obsolete and unmaintained
 lang/clang33|devel/llvm60|2018-08-13|Obsolete and unmaintained
 devel/llvm34|devel/llvm60|2018-08-13|Obsolete and unmaintained
 lang/clang34|devel/llvm60|2018-08-13|Obsolete and unmaintained
+databases/mongodb|databases/mongodb34|2018-08-15|Has expired: End of Life October 2016
