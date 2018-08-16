@@ -5,7 +5,7 @@ PORTNAME=	docsis
 PORTVERSION=	0.9.8
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	plcmaechler@gmail.com
 COMMENT=	Binary configuration file encoder/decoder
 
 LICENSE=	GPLv2+
