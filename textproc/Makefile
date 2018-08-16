@@ -1382,6 +1382,7 @@
     SUBDIR += py-qt5-xml
     SUBDIR += py-qt5-xmlpatterns
     SUBDIR += py-rdflib
+    SUBDIR += py-recommonmark
     SUBDIR += py-regex
     SUBDIR += py-reno
     SUBDIR += py-reverend
