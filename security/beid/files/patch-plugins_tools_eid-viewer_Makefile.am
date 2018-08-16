@@ -18,3 +18,14 @@
  	conversions/valdate.h \
  	conversions/valdate.cpp \
  	conversions/workpermitconv.h \
+@@ -193,7 +197,9 @@ dist_trust_DATA = \
+ 	certs/belgiumrca4.pem
+ 
+ install-data-hook:
+-	$(SSL_PREFIX)/bin/c_rehash $(DESTDIR)/$(trustdir)
++	(cd $(DESTDIR)/$(trustdir) && for i in *.pem; do \
++	ln -sfh $$i $$($(SSL_PREFIX)/bin/openssl x509 -hash -noout -in $$i).0; \
++	done)
+ 
+ gtk/viewer_glade.h: gtk/viewer.glade
+ 	$(top_srcdir)/plugins_tools/aboutmw/gtk/gen.sh VIEWER_GLADE_H VIEWER_GLADE_STRING < $^ > $@
