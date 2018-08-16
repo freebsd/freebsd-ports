@@ -3,6 +3,7 @@
 
 PORTNAME=	gogrepo
 PORTVERSION=	0.3a
+PORT_REVISION=	2
 CATEGORIES=	games net
 
 MAINTAINER=	se@FreeBSD.org
@@ -15,7 +16,7 @@ RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/html5lib/html5parser.py:www/py-html5lib 
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	eddie3
-GH_TAGNAME=	c7f3dd0
+GH_TAGNAME=	d64d45a
 
 USES=		python shebangfix
 SHEBANG_FILES=	gogrepo.py
