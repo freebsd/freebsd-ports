@@ -14,8 +14,8 @@ COMMENT=	Graphical client for chess servers
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/src/free/jin/legal/copyright.txt
 
-RUN_DEPENDS=	${JAVAJARDIR}/bsh.jar:lang/bsh
 BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	${JAVAJARDIR}/bsh.jar:lang/bsh
 
 USES=		dos2unix
 DOS2UNIX_GLOB=	*.java *.txt
