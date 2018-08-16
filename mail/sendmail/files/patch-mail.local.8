@@ -1,6 +1,6 @@
---- mail.local/mail.local.8.orig	2003-10-20 22:26:51.000000000 +0200
-+++ mail.local/mail.local.8	2008-05-04 11:55:42.000000000 +0200
-@@ -16,9 +16,9 @@
+--- mail.local/mail.local.8.orig	2014-03-05 00:59:45 UTC
++++ mail.local/mail.local.8
+@@ -16,9 +16,9 @@ mail.local
  \- store mail in a mailbox
  .SH SYNOPSIS
  .B mail.local
@@ -12,7 +12,7 @@
  \fIfrom\fR|\fB\-r\fR
  .IR from ]
  .RB [ \-h
-@@ -38,6 +38,11 @@
+@@ -38,6 +38,11 @@ The options are as follows:
  .B \-7
  Do not advertise 8BITMIME support in LMTP mode.
  .TP 
@@ -24,7 +24,7 @@
  .B \-b
  Return a permanent error instead of a temporary error
  if a mailbox exceeds quota.
-@@ -56,6 +61,13 @@
+@@ -56,6 +61,13 @@ Specify the sender's name.
  .TP
  .B \-l
  Turn on LMTP mode.
@@ -38,7 +38,7 @@
  .TP 
  .BI \-r " from"
  Specify the sender's name (for backward compatibility).
-@@ -120,7 +132,7 @@
+@@ -120,7 +132,7 @@ Used to set the appropriate time zone on
  .SH FILES
  .PD 0.2v
  .TP 2.2i
@@ -47,7 +47,7 @@
  temporary files
  .TP
  /var/mail/user
-@@ -131,7 +143,6 @@
+@@ -131,7 +143,6 @@ lock file for a user's default mailbox
  .PD
  .SH SEE ALSO
  mail(1), 

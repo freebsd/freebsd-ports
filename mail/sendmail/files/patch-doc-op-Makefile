@@ -1,6 +1,6 @@
---- doc/op/Makefile.orig	2011-08-01 19:46:12.000000000 +0200
-+++ doc/op/Makefile	2011-08-01 19:47:45.000000000 +0200
-@@ -12,7 +12,7 @@
+--- doc/op/Makefile.orig	2014-03-05 00:59:45 UTC
++++ doc/op/Makefile
+@@ -12,7 +12,7 @@ PS2PDF_CMD=	ps2pdf
  PIC=		${PIC_CMD} -C
  EQNASCII=	${EQN_CMD} -C -Tascii
  EQNPS=		${EQN_CMD} -C -Tps

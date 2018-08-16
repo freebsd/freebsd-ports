@@ -1,6 +1,6 @@
---- cf/sh/makeinfo.sh.orig	1999-02-07 08:26:25.000000000 +0100
-+++ cf/sh/makeinfo.sh	2008-05-04 11:55:42.000000000 +0200
-@@ -52,7 +52,7 @@
+--- cf/sh/makeinfo.sh.orig	2014-03-05 00:59:45 UTC
++++ cf/sh/makeinfo.sh
+@@ -52,7 +52,7 @@ then
  else
  	host=`uname -n`
  fi
