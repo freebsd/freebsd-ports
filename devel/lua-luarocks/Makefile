@@ -6,7 +6,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://${PORTNAME}.github.io/${PORTNAME}/releases/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Package manager for Lua modules
 
 LICENSE=	MIT
