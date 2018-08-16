@@ -2,13 +2,15 @@
 
 PORTNAME=	rox-filer
 PORTVERSION=	2.11
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	SF/rox/rox/${PORTVERSION}
 DISTNAME=	rox-filer-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Simple and easy to use graphical file manager
+
+LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 
