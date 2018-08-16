@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	68.0.3440.84
-PORTREVISION=	1
+PORTVERSION=	68.0.3440.106
 CATEGORIES?=	www
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -135,7 +134,7 @@ GN_ARGS+=	google_api_key="AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8" \
 
 .if !defined(GN_ONLY)
 SUB_FILES=	chromium-browser.desktop chrome pkg-message
-SUB_LIST+=	COMMENT="${COMMENT}" DATADIR="${DATADIR}"
+SUB_LIST+=	COMMENT="${COMMENT}"
 
 OPTIONS_DEFINE=	CODECS CUPS DEBUG DRIVER KERBEROS TEST
 CODECS_DESC=	Compile and enable patented codecs like H.264
@@ -167,13 +166,13 @@ DEBUG_VARS=		BUILDTYPE=Debug \
 			GN_ARGS+=is_debug=true \
 			GN_ARGS+=is_component_build=false \
 			GN_BOOTSTRAP_FLAGS+=--debug \
-			WANTSPACE="lots of free disk space (~ 12GB)"
+			WANTSPACE="lots of free disk space (~ 13GB)"
 DEBUG_VARS_OFF=		BUILDTYPE=Release \
 			GN_ARGS+=is_debug=false \
 			GN_ARGS+=is_official_build=true \
 			GN_ARGS+=symbol_level=0 \
 			GN_ARGS+=remove_webcore_debug_symbols=true \
-			WANTSPACE="a fair amount of free disk space (~ 5.8GB)"
+			WANTSPACE="a fair amount of free disk space (~ 6.5GB)"
 
 DRIVER_BUILD_DEPENDS=	git:devel/git
 DRIVER_MAKE_ARGS=	chromedriver
@@ -298,7 +297,6 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/swiftshader/${g} \
 		${STAGEDIR}${DATADIR}/swiftshader
 .endfor
-	${INSTALL_SCRIPT} ${FILESDIR}/fix-hanging-tabs.sh ${STAGEDIR}${DATADIR}
 
 post-install-DEBUG-on:
 	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/*.so \
