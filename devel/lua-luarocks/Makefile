@@ -2,8 +2,8 @@
 
 PORTNAME=	luarocks
 PORTVERSION=	2.4.4
-DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
+MASTER_SITES=	https://${PORTNAME}.github.io/${PORTNAME}/releases/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,9 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	zip:archivers/zip \
 		curl:ftp/curl
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	keplerproject
 
 NO_ARCH=	yes
 HAS_CONFIGURE=	yes
