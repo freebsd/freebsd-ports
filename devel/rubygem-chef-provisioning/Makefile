@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	chef-provisioning
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A library for creating machines and infrastructures idempotently in Chef
+COMMENT=	Library for creating machines and infrastructures idempotently in Chef
 
 LICENSE=	APACHE20
 
@@ -21,6 +21,7 @@ RUN_DEPENDS=	rubygem-cheffish>=4.0:devel/rubygem-cheffish \
 		rubygem-winrm-elevated>=1.0:sysutils/rubygem-winrm-elevated \
 		rubygem-winrm-fs>=1.0:sysutils/rubygem-winrm-fs
 
+NO_ARCH=	yes
 USES=		gem
 USE_RUBY=	yes
 

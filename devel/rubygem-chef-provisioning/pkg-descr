@@ -4,4 +4,4 @@ converge their infrastructure to the desired state. It has a plugin model
 (called Drivers) to manage different infrastructures, including AWS, Azure
 and Fog.
 
-WWW: https://rubygems.org/gems/chef-provisioning
+WWW: https://github.com/chef/chef-provisioning
