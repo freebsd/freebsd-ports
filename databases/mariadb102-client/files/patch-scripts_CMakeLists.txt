@@ -1,30 +1,31 @@
 --- scripts/CMakeLists.txt.orig	2017-04-04 19:11:52 UTC
 +++ scripts/CMakeLists.txt
-@@ -90,6 +90,7 @@ SET(ADD_GIS_SP_EOL ";")
- CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/maria_add_gis_sp.sql.in
-   ${CMAKE_CURRENT_BINARY_DIR}/maria_add_gis_sp_bootstrap.sql ESCAPE_QUOTES @ONLY)
+@@ -21,7 +21,7 @@ IF(NOT CMAKE_CROSSCOMPILING)
+  TARGET_LINK_LIBRARIES(comp_sql)
+ ENDIF()
  
+-
 +IF(NOT WITHOUT_SERVER)
- INSTALL(FILES 
-   ${CMAKE_CURRENT_SOURCE_DIR}/mysql_system_tables.sql 
-   ${CMAKE_CURRENT_SOURCE_DIR}/mysql_system_tables_data.sql
-@@ -102,6 +103,7 @@ INSTALL(FILES 
-   ${FIX_PRIVILEGES_SQL}
-   DESTINATION ${INSTALL_MYSQLSHAREDIR} COMPONENT Server
+ # Build mysql_fix_privilege_tables.sql (concatenate 3 sql scripts)
+ IF(NOT WIN32 OR CMAKE_CROSSCOMPILING)
+   FIND_PROGRAM(CAT_EXECUTABLE cat DOC "path to the executable")
+@@ -65,6 +65,7 @@ ADD_CUSTOM_TARGET(GenFixPrivs
+   ALL
+   DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/mysql_fix_privilege_tables_sql.c
  )
 +ENDIF()
  
- # TCMalloc hacks
- IF(MALLOC_LIB)
-@@ -177,6 +179,7 @@ ELSE()
-   SET(localstatedir ${MYSQL_DATADIR})
+ IF(UNIX)
+  FILE(WRITE ${CMAKE_CURRENT_BINARY_DIR}/make_binary_distribution 
+@@ -126,6 +127,7 @@ ELSE()
+   SET (PERL_PATH "/usr/bin/perl")
  ENDIF()
  
 +IF(NOT WITHOUT_SERVER)
  IF(UNIX)
- CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/mysql_install_db.sh
-   ${CMAKE_CURRENT_BINARY_DIR}/mysql_install_db ESCAPE_QUOTES @ONLY)
-@@ -190,6 +193,7 @@ INSTALL_SCRIPT(
+   # FIND_PROC and CHECK_PID are used by mysqld_safe
+ IF(CMAKE_SYSTEM_NAME MATCHES "Linux")
+@@ -207,6 +209,7 @@ INSTALL_SCRIPT(
    COMPONENT Server
    )
  ENDIF()
@@ -32,7 +33,7 @@
  
  SET(prefix "${CMAKE_INSTALL_PREFIX}")
  IF(INSTALL_SYSCONFDIR)
-@@ -277,13 +281,8 @@ ELSE()
+@@ -298,13 +301,8 @@ ELSE()
    SET(BIN_SCRIPTS
      msql2mysql
      mysql_config
