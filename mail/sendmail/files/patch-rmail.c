@@ -1,6 +1,6 @@
---- rmail/rmail.c.orig	2001-09-18 23:45:29.000000000 +0200
-+++ rmail/rmail.c	2008-05-04 11:55:42.000000000 +0200
-@@ -276,7 +276,11 @@
+--- rmail/rmail.c.orig	2014-03-05 00:59:45 UTC
++++ rmail/rmail.c
+@@ -276,7 +276,11 @@ main(argc, argv)
  	args[i++] = _PATH_SENDMAIL;	/* Build sendmail's argument list. */
  	args[i++] = "-G";		/* relay submission */
  	args[i++] = "-oee";		/* No errors, just status. */

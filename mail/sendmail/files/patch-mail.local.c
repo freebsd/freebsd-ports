@@ -1,6 +1,6 @@
---- mail.local/mail.local.c.orig	2008-02-19 08:13:30.000000000 +0100
-+++ mail.local/mail.local.c	2008-05-04 11:59:31.000000000 +0200
-@@ -153,6 +153,8 @@
+--- mail.local/mail.local.c.orig	2014-06-12 17:30:47 UTC
++++ mail.local/mail.local.c
+@@ -153,6 +153,8 @@ int	ExitVal = EX_OK;		/* sysexits.h erro
  bool	HoldErrs = false;		/* Hold errors in ErrBuf */
  bool	LMTPMode = false;
  bool	BounceQuota = false;		/* permanent error when over quota */
@@ -9,7 +9,7 @@
  bool	CloseMBDB = false;
  char	*HomeMailFile = NULL;		/* store mail in homedir */
  
-@@ -234,12 +236,12 @@
+@@ -234,12 +236,12 @@ main(argc, argv)
  		sm_exit(EX_CONFIG);
  	}
  #if HASHSPOOL
@@ -25,7 +25,7 @@
  #  endif /* _FFR_SPOOL_PATH */
  #endif /* HASHSPOOL */
  	{
-@@ -249,6 +251,10 @@
+@@ -249,6 +251,10 @@ main(argc, argv)
  			EightBitMime = false;
  			break;
  
@@ -36,7 +36,7 @@
  		  case 'b':		/* bounce mail when over quota. */
  			BounceQuota = true;
  			break;
-@@ -342,6 +348,10 @@
+@@ -342,6 +348,10 @@ main(argc, argv)
  			break;
  #endif /* HASHSPOOL || _FFR_SPOOL_PATH */
  
@@ -47,7 +47,7 @@
  		  case '?':
  		  default:
  			usage();
-@@ -351,7 +361,8 @@
+@@ -351,7 +361,8 @@ main(argc, argv)
  	argv += optind;
  
  	/* initialize biff structures */
@@ -57,7 +57,7 @@
  
  	err = sm_mbdb_initialize(mbdbname);
  	if (err != EX_OK)
-@@ -1273,6 +1284,7 @@
+@@ -1273,6 +1284,7 @@ tryagain:
  
  	/* Get the starting offset of the new message */
  	curoff = lseek(mbfd, (off_t) 0, SEEK_END);
@@ -65,7 +65,7 @@
  	(void) sm_snprintf(biffmsg, sizeof(biffmsg), "%s@%lld\n",
  			   name, (LONGLONG_T) curoff);
  
-@@ -1335,7 +1347,7 @@
+@@ -1335,7 +1347,7 @@ tryagain:
  	}
  
  	/* Flush to disk, don't wait for update. */
@@ -74,7 +74,7 @@
  	{
  		mailerr("450 4.2.0", "%s: %s", path, sm_errstring(errno));
  err3:
-@@ -1402,7 +1414,7 @@
+@@ -1402,7 +1414,7 @@ err0:		(void) setreuid(0, 0);
  		/* Attempt to truncate back to pre-write size */
  		goto err3;
  	}
@@ -83,7 +83,7 @@
  		notifybiff(biffmsg);
  
  	if (setreuid(0, 0) < 0)
-@@ -1582,9 +1594,9 @@
+@@ -1582,9 +1594,9 @@ usage()
  {
  	ExitVal = EX_USAGE;
  # if _FFR_SPOOL_PATH

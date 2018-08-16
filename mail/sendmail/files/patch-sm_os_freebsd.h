@@ -1,4 +1,4 @@
---- include/sm/os/sm_os_freebsd.h.orig
+--- include/sm/os/sm_os_freebsd.h.orig	2014-03-05 00:59:45 UTC
 +++ include/sm/os/sm_os_freebsd.h
 @@ -34,7 +34,11 @@
  # define SM_CONF_SHM	1
