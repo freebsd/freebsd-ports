@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kops
-PORTVERSION=	1.9.2
+PORTVERSION=	1.10.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -25,7 +25,7 @@ post-patch:
 
 do-build:
 	cd ${WRKSRC} && \
-		GOPATH=${WRKDIR} ${GMAKE}
+		GOPATH=${WRKDIR} ${GMAKE} VERSION=${PORTVERSION}
 
 do-install:
 	${INSTALL_PROGRAM} \
