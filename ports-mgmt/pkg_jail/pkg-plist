@@ -1,0 +1,14 @@
+bin/allservice
+bin/check-allservice
+bin/pkg_jail
+bin/pkg_update
+man/man1/allservice.1.gz
+man/man1/check-allservice.1.gz
+man/man1/pkg_jail.1.gz
+man/man1/pkg_update.1.gz
+man/man8/make-base.8.gz
+man/man8/update-base.8.gz
+man/man8/update-pkg.8.gz
+sbin/make-base
+sbin/update-base
+sbin/update-pkg
