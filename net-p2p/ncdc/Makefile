@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ncdc
-PORTVERSION=	1.19.1
-PORTREVISION=	7
+PORTVERSION=	1.20
 CATEGORIES=	net-p2p
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
-		http://dev.yorhel.nl/download/
+MASTER_SITES=	http://dev.yorhel.nl/download/
 
 MAINTAINER=	earl1k@mail.ru
 COMMENT=	Lightweight direct connect client with ncurses interface
