@@ -1,3 +1,4 @@
+bin/gotools
 bin/liteide
 lib/liteide/libliteapp.so
 lib/liteide/libliteapp.so.1
