@@ -3,7 +3,7 @@
 
 PORTNAME=	alertmanager
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.0
+DISTVERSION=	0.15.2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	michal@hanu.la
