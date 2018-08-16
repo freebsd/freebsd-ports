@@ -1,11 +1,11 @@
 # Created by: Clement Laforet
 # $FreeBSD$
 
-PORTNAME=	haproxy17
+PORTNAME=	haproxy
 PORTVERSION=	1.7.11
 CATEGORIES=	net www
 MASTER_SITES=	http://www.haproxy.org/download/1.7/src/
-DISTNAME=	haproxy-${PORTVERSION}
+PKGNAMESUFFIX=	17
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Reliable, high performance TCP/HTTP load balancer
