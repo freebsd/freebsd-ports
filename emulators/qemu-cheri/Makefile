@@ -43,6 +43,7 @@ CONFIGURE_ARGS+= \
 		--disable-sdl \
 		--disable-vte \
 		--disable-xen \
+		--smbd=${LOCALBASE}/sbin/smbd \
 		--extra-cflags="-g ${EXTRA_CFLAGS}" \
 		--localstatedir=/var
 EXTRA_CFLAGS=	-DCHERI_UNALIGNED
