@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgFormatter
-PORTVERSION=	2.0
+PORTVERSION=	3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -16,5 +16,6 @@ USES=		perl5
 USE_PERL5=	configure
 USE_GITHUB=	yes
 GH_ACCOUNT=	darold
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
