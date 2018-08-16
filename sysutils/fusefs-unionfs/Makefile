@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	unionfs
-PORTVERSION=	1.0
+PORTVERSION=	2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ndowens@yahoo.com
 COMMENT=	FUSE based implementation of the well-known unionfs
 
 LICENSE=	BSD3CLAUSE
