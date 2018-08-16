@@ -41,6 +41,7 @@
 %%ETCDIR%%/gamedata/room_template.txt
 %%ETCDIR%%/gamedata/slay.txt
 %%ETCDIR%%/gamedata/store.txt
+%%ETCDIR%%/gamedata/summon.txt
 %%ETCDIR%%/gamedata/terrain.txt
 %%ETCDIR%%/gamedata/trap.txt
 %%ETCDIR%%/gamedata/vault.txt
