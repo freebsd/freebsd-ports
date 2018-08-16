@@ -2674,6 +2674,8 @@
 %%WWWDIR%%/installation/language/km-KH/km-KH.xml
 %%WWWDIR%%/installation/language/ko-KR/ko-KR.ini
 %%WWWDIR%%/installation/language/ko-KR/ko-KR.xml
+%%WWWDIR%%/installation/language/lt-LT/lt-LT.ini
+%%WWWDIR%%/installation/language/lt-LT/lt-LT.xml
 %%WWWDIR%%/installation/language/lv-LV/lv-LV.ini
 %%WWWDIR%%/installation/language/lv-LV/lv-LV.xml
 %%WWWDIR%%/installation/language/mk-MK/mk-MK.ini
@@ -5414,6 +5416,7 @@
 %%WWWDIR%%/media/system/js/fields/calendar-locales/ja.js
 %%WWWDIR%%/media/system/js/fields/calendar-locales/ka.js
 %%WWWDIR%%/media/system/js/fields/calendar-locales/ko.js
+%%WWWDIR%%/media/system/js/fields/calendar-locales/lt.js
 %%WWWDIR%%/media/system/js/fields/calendar-locales/mk.js
 %%WWWDIR%%/media/system/js/fields/calendar-locales/nb.js
 %%WWWDIR%%/media/system/js/fields/calendar-locales/nl.js
