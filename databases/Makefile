@@ -51,7 +51,6 @@
     SUBDIR += db6
     SUBDIR += dbconnect
     SUBDIR += dbf
-    SUBDIR += dbf2mysql
     SUBDIR += dbh
     SUBDIR += dbixx
     SUBDIR += dbow

@@ -147,7 +147,6 @@
     SUBDIR += arpc
     SUBDIR += art
     SUBDIR += artifactory
-    SUBDIR += as31
     SUBDIR += asl
     SUBDIR += asmutils
     SUBDIR += asmx
@@ -695,7 +694,6 @@
     SUBDIR += gconfmm26
     SUBDIR += gcvs
     SUBDIR += gdb
-    SUBDIR += gdbmods
     SUBDIR += gdcm
     SUBDIR += geany
     SUBDIR += geany-plugin-addons
@@ -1334,7 +1332,6 @@
     SUBDIR += kf5-kunitconversion
     SUBDIR += kf5-solid
     SUBDIR += kf5-threadweaver
-    SUBDIR += kickassembler
     SUBDIR += kimwitu
     SUBDIR += kio-extras
     SUBDIR += kodi-platform

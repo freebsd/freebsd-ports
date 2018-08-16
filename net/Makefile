@@ -118,7 +118,6 @@
     SUBDIR += dhcpdump
     SUBDIR += dhcperf
     SUBDIR += dhcping
-    SUBDIR += dhcprelay
     SUBDIR += dhcprelya
     SUBDIR += dictd
     SUBDIR += dictd-database
@@ -133,7 +132,6 @@
     SUBDIR += dtcp
     SUBDIR += dtcpclient
     SUBDIR += dual-dhclient
-    SUBDIR += e169-stats
     SUBDIR += easysoap
     SUBDIR += echoping
     SUBDIR += elixir-kafka_ex
@@ -356,7 +354,6 @@
     SUBDIR += ktnef
     SUBDIR += kwooty
     SUBDIR += l2tpd
-    SUBDIR += l4ip
     SUBDIR += ladvd
     SUBDIR += lambdamoo
     SUBDIR += latd
@@ -1466,7 +1463,6 @@
     SUBDIR += tn5250j
     SUBDIR += toonel
     SUBDIR += torsocks
-    SUBDIR += traceroute
     SUBDIR += traefik
     SUBDIR += traff
     SUBDIR += trafshow

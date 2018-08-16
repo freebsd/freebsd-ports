@@ -9,7 +9,6 @@
     SUBDIR += adwaita-qt
     SUBDIR += arc-gruvbox-theme
     SUBDIR += audacious-skins
-    SUBDIR += beastie
     SUBDIR += claws-mail-themes
     SUBDIR += clearlooks
     SUBDIR += clearlooks-metacity

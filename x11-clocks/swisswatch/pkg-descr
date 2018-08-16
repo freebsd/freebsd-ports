@@ -1,9 +1,0 @@
-Swisswatch is a fancy Swiss railway clock emulator.
-
-This program support color display, you must add belong lines to ~/.Xdefaults.
-
-#if COLOR
-swisswatch*customization:                 -color
-#endif
-
-and exec `xrdb $HOME/.Xdefaults'.

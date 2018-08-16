@@ -1,7 +1,0 @@
-A version of 'traceroute' that shows the AS network number of each hop.
-
-NOTE: The ASN lookup feature currently only works on RIPE registered ASNs.
-
-Chris Dabrowski
-chris@vader.org
-chrisd@demon.net

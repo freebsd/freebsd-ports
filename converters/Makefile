@@ -183,7 +183,6 @@
     SUBDIR += tuc
     SUBDIR += unix2dos
     SUBDIR += uudeview
-    SUBDIR += uudx
     SUBDIR += uulib
     SUBDIR += vda2fbd
     SUBDIR += wkhtmltopdf
