@@ -39,7 +39,6 @@
     SUBDIR += rclock
     SUBDIR += sanduhr
     SUBDIR += stopwatch
-    SUBDIR += swisswatch
     SUBDIR += t3d
     SUBDIR += tclock
     SUBDIR += tktz

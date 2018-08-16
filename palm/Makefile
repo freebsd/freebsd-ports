@@ -16,7 +16,6 @@
     SUBDIR += pilot-link
     SUBDIR += pilot_makedoc
     SUBDIR += pilrc
-    SUBDIR += ppmtoTbmp
     SUBDIR += synce-libsynce
 
 .include <bsd.port.subdir.mk>

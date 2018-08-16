@@ -599,7 +599,6 @@
     SUBDIR += roundcube-automatic_addressbook
     SUBDIR += roundcube-carddav
     SUBDIR += roundcube-contextmenu
-    SUBDIR += roundcube-groupvice
     SUBDIR += roundcube-html5_notifier
     SUBDIR += roundcube-identity_smtp
     SUBDIR += roundcube-login_info

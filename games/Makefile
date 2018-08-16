@@ -765,7 +765,6 @@
     SUBDIR += opentyrian
     SUBDIR += openxcom
     SUBDIR += openyahtzee
-    SUBDIR += optimax
     SUBDIR += orbital_eunuchs_sniper
     SUBDIR += osgg
     SUBDIR += outerspace
@@ -966,7 +965,6 @@
     SUBDIR += slashem-tty
     SUBDIR += slump
     SUBDIR += slune
-    SUBDIR += smashbattle
     SUBDIR += sokoban
     SUBDIR += sol
     SUBDIR += solarconquest
@@ -1007,7 +1005,6 @@
     SUBDIR += supertuxkart
     SUBDIR += swell-foop
     SUBDIR += sxsame
-    SUBDIR += syobon
     SUBDIR += tads
     SUBDIR += taipan
     SUBDIR += taisei
@@ -1160,7 +1157,6 @@
     SUBDIR += xgalaga++
     SUBDIR += xgalaga-sdl
     SUBDIR += xglk
-    SUBDIR += xgospel
     SUBDIR += xhexagons
     SUBDIR += xhime
     SUBDIR += xinfocom

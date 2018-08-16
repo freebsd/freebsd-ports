@@ -10433,3 +10433,30 @@ lang/clang33|devel/llvm60|2018-08-13|Obsolete and unmaintained
 devel/llvm34|devel/llvm60|2018-08-13|Obsolete and unmaintained
 lang/clang34|devel/llvm60|2018-08-13|Obsolete and unmaintained
 databases/mongodb|databases/mongodb34|2018-08-15|Has expired: End of Life October 2016
+net/traceroute||2018-08-16|Has expired: Upstream gone
+net/e169-stats||2018-08-16|Has expired: unknown license
+net/l4ip||2018-08-16|Has expired: unknown license
+net/dhcprelay||2018-08-16|Has expired: unknown license
+emulators/m2000||2018-08-16|Has expired: unknown license
+textproc/ant-xinclude-task||2018-08-16|Has expired: unknown license
+textproc/bomstrip||2018-08-16|Has expired: unknown license
+x11-fonts/ecofont||2018-08-16|Has expired: unknown license
+mail/roundcube-groupvice||2018-08-16|Has expired: unknown license
+security/pft||2018-08-16|Has expired: unknown license
+devel/kickassembler||2018-08-16|Has expired: unknown license
+devel/gdbmods||2018-08-16|Has expired: unknown license
+devel/as31||2018-08-16|Has expired: unknown license
+databases/dbf2mysql||2018-08-16|Has expired: unknown license
+misc/xpns||2018-08-16|Has expired: unknown license
+misc/amfm||2018-08-16|Has expired: unknown license
+games/smashbattle||2018-08-16|Has expired: unknown license
+games/syobon||2018-08-16|Has expired: unknown license
+games/optimax||2018-08-16|Has expired: unknown license
+games/xgospel||2018-08-16|Has expired: unknown license
+biology/blat||2018-08-16|Has expired: unknown license
+x11-clocks/swisswatch||2018-08-16|Has expired: unknown license
+palm/ppmtoTbmp||2018-08-16|Has expired: unknown license
+dns/ghtool||2018-08-16|Has expired: unknown license
+x11-themes/beastie||2018-08-16|Has expired: unknown license
+converters/uudx||2018-08-16|Has expired: unknown license
+sysutils/areca-cli||2018-08-16|Has expired: unknown license

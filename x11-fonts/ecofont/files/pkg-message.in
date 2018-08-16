@@ -1,8 +1,0 @@
-You need to have enabled X.org's freetype module to use TrueType fonts. Ensure
-the following line is in the "Modules" section of xorg.conf:
-
-	Load "freetype"
-
-Then append the following to xorg.conf's "Files" section:
-
-	FontPath "%%FONTSDIR%%"

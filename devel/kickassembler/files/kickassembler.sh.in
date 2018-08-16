@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# Execution wrapper for KickAssembler
-#
-# Written by Uffe Jakobsen <uffe@uffe.org>
-#
-
-JAVA_VERSION="%%JAVA_VERSION%%"
-%%LOCALBASE%%/bin/java -jar %%JAVASHAREDIR%%/%%PORTNAME%%/KickAss.jar ${@}
