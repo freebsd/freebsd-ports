@@ -15,8 +15,6 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/backends.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/be-fe-changes.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/binding-possibilities.txt
-%%PORTDOCS%%%%DOCSDIR%%/design-thoughts/buffer-redesign.txt
-%%PORTDOCS%%%%DOCSDIR%%/design-thoughts/buffers.fig
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/config-language.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/connection-reuse.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/connection-sharing.txt
@@ -31,8 +29,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/haproxy.1
 %%PORTDOCS%%%%DOCSDIR%%/internals/acl.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/body-parsing.txt
-%%PORTDOCS%%%%DOCSDIR%%/internals/buffer-operations.txt
-%%PORTDOCS%%%%DOCSDIR%%/internals/buffer-ops.fig
+%%PORTDOCS%%%%DOCSDIR%%/internals/buffer-api.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/connect-status.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/connection-header.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/connection-scale.txt
@@ -52,6 +49,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/lua_socket.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/lua_socket.pdf
 %%PORTDOCS%%%%DOCSDIR%%/internals/naming.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/notes-layers.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/pattern.dia
 %%PORTDOCS%%%%DOCSDIR%%/internals/pattern.pdf
 %%PORTDOCS%%%%DOCSDIR%%/internals/polling-states.fig
@@ -75,6 +73,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/peers-v2.0.txt
 %%PORTDOCS%%%%DOCSDIR%%/proxy-protocol.txt
 %%PORTDOCS%%%%DOCSDIR%%/queuing.fig
+%%PORTDOCS%%%%DOCSDIR%%/regression-testing.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/acl-content-sw.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/check
