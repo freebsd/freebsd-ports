@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	herbstluftwm
-PORTVERSION=	0.7.0
-PORTREVISION=	3
+PORTVERSION=	0.7.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://herbstluftwm.org/tarballs/
 
@@ -18,19 +17,17 @@ USE_GNOME=	glib20
 
 MAKE_ARGS=	PREFIX=${PREFIX} SYSCONFDIR=${PREFIX}/etc \
 		DOCSDIR=${DOCSDIR} EXAMPLESDIR=${EXAMPLESDIR} \
+		FISHCOMPLETIONDIR=${PREFIX}/share/fish/completions \
 		MANDIR=${PREFIX}/man LDXX=${CXX} \
 		COLOR=0
 
-OPTIONS_DEFINE=	BASH ZSH DOCS EXAMPLES DEFAULTCONF
-DEFAULTCONF_DESC=Install default configuration (requires bash)
-OPTIONS_DEFAULT+=DEFAULTCONF
+OPTIONS_DEFINE=	BASH FISH ZSH DOCS EXAMPLES
 OPTIONS_SUB=	yes
 
 ALL_TARGET=	all-nodoc
 INSTALL_TARGET=	install-nodoc
 DOCS_ALL_TARGET=	doc
 DOCS_INSTALL_TARGET=	install
-DEFAULTCONF_RUN_DEPENDS=bash:shells/bash
 
 .include <bsd.port.options.mk>
 
@@ -39,14 +36,14 @@ post-patch:
 .if ! ${PORT_OPTIONS:MBASH}
 	${REINPLACE_CMD} -e '/BASHCOMPLETIONDIR/d' ${WRKSRC}/Makefile
 .endif
+.if ! ${PORT_OPTIONS:MFISH}
+	${REINPLACE_CMD} -e '/FISHCOMPLETIONDIR/d' ${WRKSRC}/Makefile
+.endif
 .if ! ${PORT_OPTIONS:MZSH}
 	${REINPLACE_CMD} -e '/ZSHCOMPLETIONDIR/d' ${WRKSRC}/Makefile
 .endif
 .if ! ${PORT_OPTIONS:MEXAMPLES}
 	${REINPLACE_CMD} -e '/EXAMPLESDIR/d' ${WRKSRC}/Makefile
-.endif
-.if ! ${PORT_OPTIONS:MDEFAULTCONF}
-	${REINPLACE_CMD} -e '/CONFIGDIR/d' ${WRKSRC}/Makefile
 .endif
 
 do-install-DOCS-off:

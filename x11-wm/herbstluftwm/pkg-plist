@@ -1,10 +1,11 @@
 bin/dmenu_run_hlwm
 bin/herbstclient
 bin/herbstluftwm
-%%DEFAULTCONF%%etc/xdg/herbstluftwm/autostart
-%%DEFAULTCONF%%etc/xdg/herbstluftwm/panel.sh
-%%DEFAULTCONF%%etc/xdg/herbstluftwm/restartpanels.sh
+etc/xdg/herbstluftwm/autostart
+etc/xdg/herbstluftwm/panel.sh
+etc/xdg/herbstluftwm/restartpanels.sh
 %%BASH%%etc/bash_completion.d/herbstclient-completion
+%%FISH%%share/fish/completions/herbstclient.fish
 man/man1/herbstclient.1.gz
 man/man1/herbstluftwm.1.gz
 man/man7/herbstluftwm-tutorial.7.gz
@@ -19,6 +20,7 @@ man/man7/herbstluftwm-tutorial.7.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dumpbeautify.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/exec_on_tag.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/execwith.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/float-maximize.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/floatmon.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/herbstcommander.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/keychain.sh
