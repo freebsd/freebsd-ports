@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	angband
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.3
 CATEGORIES=	games
 MASTER_SITES=	http://rephial.org/downloads/${PORTVERSION:R}/
 
@@ -10,9 +10,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rogue-like game with color, X11 support
 
 LICENSE=	GPLv2
-
-OPTIONS_DEFINE=	SDL X11 DOCS
-OPTIONS_DEFAULT=X11
 
 USES=		autoreconf gmake ncurses
 GNU_CONFIGURE=	yes
@@ -22,11 +19,12 @@ CONFIGURE_ARGS=	--localstatedir=/var
 CPPFLAGS+=	-I${NCURSESINC}
 LDFLAGS+=	-L${NCURSESLIB} -lncursesw
 
-DOCS_BUILD_DEPENDS=	rst2html:textproc/py-docutils
+OPTIONS_DEFINE=	SDL X11 DOCS
+OPTIONS_DEFAULT=X11
 
+DOCS_BUILD_DEPENDS=	rst2html:textproc/py-docutils
 SDL_USE=		SDL=image,mixer,ttf,sdl
 SDL_CONFIGURE_ENABLE=	sdl
-
 X11_USE=		XORG=ice,sm,x11
 X11_RUN_DEPENDS=	xorg-fonts-miscbitmaps>=0:x11-fonts/xorg-fonts-miscbitmaps
 X11_CONFIGURE_ENABLE=	x11
