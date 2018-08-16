@@ -19,8 +19,6 @@ include/xrdp_client_info.h
 include/xrdp_constants.h
 include/xrdp_rail.h
 include/xrdp_sockets.h
-lib/pulse-%%PULSE_VERSION%%/modules/module-xrdp-sink.so
-lib/pulse-%%PULSE_VERSION%%/modules/module-xrdp-source.so
 libdata/pkgconfig/libpainter.pc
 libdata/pkgconfig/rfxcodec.pc
 libdata/pkgconfig/xrdp.pc
