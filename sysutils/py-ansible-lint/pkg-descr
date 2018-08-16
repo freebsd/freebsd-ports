@@ -1,0 +1,4 @@
+ansible-lint checks playbooks for practices and behaviour that could
+potentially be improved.
+
+WWW: https://github.com/willthames/ansible-lint
