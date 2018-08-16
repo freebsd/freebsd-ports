@@ -3,7 +3,7 @@
 
 PORTNAME=	codelite
 PORTVERSION=	11.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors devel
 
 MAINTAINER=	mmokhi@FreeBSD.org
