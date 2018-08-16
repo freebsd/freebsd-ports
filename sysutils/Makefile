@@ -959,6 +959,7 @@
     SUBDIR += pxattr
     SUBDIR += py-XenAPI
     SUBDIR += py-analyzemft
+    SUBDIR += py-ansible-lint
     SUBDIR += py-bcfg2
     SUBDIR += py-cdmi
     SUBDIR += py-consul
