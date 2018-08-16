@@ -2,42 +2,41 @@
 # $FreeBSD$
 
 PORTNAME=	ntl
-PORTVERSION=	6.0.0
+PORTVERSION=	11.2.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.shoup.net/ntl/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ndowens@yahoo.com
 COMMENT=	Victor Shoup's Number Theory Library
 
-# ntl is faster with libgmp4, but you can disable it
-.if !defined(WITHOUT_GMP)
-LIB_DEPENDS=	libgmp.so:math/gmp
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/../doc/copying.txt
 
-CONFIGURE_ARGS=	NTL_GMP_LIP=on
-.endif
-
-USES=		perl5
+USES=		perl5 libtool
+USE_LDCONFIG=	yes
 USE_PERL5=	build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	AR="${AR}" \
-		CC="${CC}" CFLAGS="${CFLAGS}" \
 		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		DEF_PREFIX="${LOCALBASE}" \
-		LDFLAGS="${LDFLAGS}" NTL_STD_CXX=on \
-		PREFIX="${PREFIX}" RANLIB="${RANLIB}"
+		LDFLAGS="${LDFLAGS}" PREFIX="${PREFIX}" \
+		RANLIB="${RANLIB}" SHARED=on
 
 CFLAGS+=	-fPIC
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKEFILE=	makefile
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS GMP
+OPTIONS_DEFAULT=	GMP
 
-do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/NTL
-	${INSTALL_DATA} ${WRKSRC}/../include/NTL/* ${STAGEDIR}${PREFIX}/include/NTL/
-	${INSTALL_DATA} ${WRKSRC}/ntl.a ${STAGEDIR}${PREFIX}/lib/libntl.a
+GMP_DESC=		Arbitrary precision arithmetic(Faster)
+GMP_CONFIGURE_OFF=	NTL_GMP_LIP=off
+GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 
-post-install-DOCS-on:
+NTLDOCSDIR=		share/doc/NTL
+PLIST_SUB=		NTLDOCS=${NTLDOCSDIR}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/* ${STAGEDIR}${DOCSDIR}
 
