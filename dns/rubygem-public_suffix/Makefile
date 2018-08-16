@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	public_suffix
-PORTVERSION=	3.0.2
-PORTREVISION=	2
+PORTVERSION=	3.0.3
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby domain name parser based on the Public Suffix List
 
 LICENSE=	MIT
