@@ -1,6 +1,6 @@
 bin/luarocks-%%LUA_VER%%
 bin/luarocks-admin-%%LUA_VER%%
-%%ETCDIR%%/config-%%LUA_VER%%.lua
+@sample %%ETCDIR%%/config-%%LUA_VER%%.lua.sample
 %%LUA_MODSHAREDIR%%/luarocks/add.lua
 %%LUA_MODSHAREDIR%%/luarocks/admin_remove.lua
 %%LUA_MODSHAREDIR%%/luarocks/build.lua

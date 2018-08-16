@@ -39,6 +39,8 @@ post-patch:
 # Don't install unprefixed binaries to avoid package conflict with
 # luarocks built against different lang/lua* versions
 	@${REINPLACE_CMD} '/ln -/d' ${WRKSRC}/Makefile.install.inc
+# Let @sample manage default config
+	@${REINPLACE_CMD} '/CONFIG_FILE = /s/$$/.sample/' ${WRKSRC}/Makefile
 
 post-build:
 # NO_ARCH requires https://bugs.archlinux.org/task/40388
