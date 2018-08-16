@@ -6,6 +6,8 @@
 %%OCAML_SITELIBDIR%%/curl/curl.cmti
 %%OCAML_SITELIBDIR%%/curl/curl.cmx
 %%OCAML_SITELIBDIR%%/curl/curl.cmxa
+%%OCAML_SITELIBDIR%%/curl/curl.cmxs
+%%LWT%%%%OCAML_SITELIBDIR%%/curl/curl_lwt.cmxs
 %%OCAML_SITELIBDIR%%/curl/curl.mli
 %%LWT%%%%OCAML_SITELIBDIR%%/curl/curl_lwt.cmi
 %%LWT%%%%OCAML_SITELIBDIR%%/curl/curl_lwt.cmo
