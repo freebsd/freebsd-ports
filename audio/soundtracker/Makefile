@@ -3,7 +3,7 @@
 
 PORTNAME=	soundtracker
 PORTVERSION=	0.6.8
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	audio
 MASTER_SITES=	http://www.soundtracker.org/dl/v${PORTVERSION:R}/
 
@@ -16,17 +16,18 @@ LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
 GNU_CONFIGURE=	yes
 USES=		compiler pathfix pkgconfig
-USE_GNOME=	esound gdkpixbuf
+USE_GNOME=	gdkpixbuf
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	JACK SDL NLS
 OPTIONS_DEFINE_i386=	ASM
+OPTIONS_DEFAULT=	SDL
 OPTIONS_SUB=	yes
 ASM_DESC=	Use optimized assembly (potentially unstable)
 
-CONFIGURE_ARGS+=	--disable-gnome
+CONFIGURE_ARGS+=	--disable-alsa --disable-esd --disable-gnome
 
 DESKTOP_ENTRIES="SoundTracker" "Pattern-oriented music editor" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.xpm" \
