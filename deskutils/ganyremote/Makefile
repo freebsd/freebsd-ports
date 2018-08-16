@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ganyremote
-PORTVERSION=	6.3.3
-PORTREVISION=	1
+PORTVERSION=	7.0
 CATEGORIES=	deskutils comms gnome
 MASTER_SITES=	SF/anyremote/${PORTNAME}/${PORTVERSION}
 
@@ -15,13 +14,20 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	anyremote:comms/anyremote
 
-USES=		gettext python:2.7 shebangfix
+USES=		python:2.7 shebangfix
 SHEBANG_FILES=	ganyremote
-USE_GNOME=	pygtk2
+USE_GNOME=	pygobject3 gtk30
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	DOCS
+PORTDOCS=	AUTHORS ChangeLog README
+
+OPTIONS_DEFINE=			DOCS IMAGEMAGICK NLS
+OPTIONS_SUB=			yes
+IMAGEMAGICK_DESC=		ImageMagick Support
+IMAGEMAGICK_RUN_DEPENDS=	ImageMagick>0:graphics/ImageMagick7
+IMAGEMAGICK_USES+=		gettext
+NLS_CONFIGURE_ENABLE=		nls
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -31,5 +37,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/DESTDIR/s|cp -r|cp -R| ; \
 		 /DESTDIR/s|COPYING||' ${WRKSRC}/Makefile.in
+#do-install-DOCS-off:
+#	${RM} -r ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
