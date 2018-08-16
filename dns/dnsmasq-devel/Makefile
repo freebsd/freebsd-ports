@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.77rc5
+DISTVERSION=	2.80test3
 PORTEPOCH=	2
 CATEGORIES=	dns ipv6
-MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
-#MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/test-releases/
+#MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/release-candidates/
+MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/test-releases/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -14,7 +14,6 @@ COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
 
 LICENSE=	GPLv2
 
-IGNORE=		build stable version instead, it is newer than this release candidate
 CONFLICTS_INSTALL=dnsmasq-2*
 
 PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
@@ -33,7 +32,7 @@ OPTIONS_RADIO_INTL=	IDN NLS
 INTL_DESC=	Internationalization Support Level
 NLS_DESC=	IDN+NLS: Int'l Domain Names & National Language support
 IDN_DESC=	IDN: Int'l Domain Names WITHOUT full NLS
-IPSET_DESC=	Dynamic firewall managment of resolved names (require PF)
+IPSET_DESC=	Dynamic firewall management of resolved names (needs PF)
 LUA_DESC=	Support lease-change scripts written in Lua
 DNSSEC_DESC=	Enable DNSSEC caching and validation
 USES=		cpe shebangfix tar:xz
@@ -82,7 +81,7 @@ USES+=		lua
 .endif
 
 .if ${PORT_OPTIONS:MDNSSEC}
-CFLAGS+=	-DHAVE_DNSSEC
+CFLAGS+=	-DHAVE_DNSSEC -I${LOCALBASE}/include
 USES+=		pkgconfig
 LIB_DEPENDS+=	libnettle.so:security/nettle
 LIB_DEPENDS+=	libgmp.so:math/gmp
