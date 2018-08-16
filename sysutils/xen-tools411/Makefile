@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools411
 PORTVERSION=	4.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
@@ -45,6 +45,9 @@ EXTRA_PATCHES+=	${FILESDIR}/0001-x86-replace-usage-in-the-linker-script.patch:-p
 		${FILESDIR}/0002-x86-efi-split-compiler-vs-linker-support.patch:-p1
 # Fix docs build
 EXTRA_PATCHES+=	${FILESDIR}/0001-docs-use-the-make-wildcard-function-instead-of-find.patch:-p1
+# XSA-273 and XSA-272
+EXTRA_PATCHES+=	${FILESDIR}/0031-tools-oxenstored-Make-evaluation-order-explicit.patch:-p1 \
+		${FILESDIR}/0041-xl.conf-Add-global-affinity-masks.patch:-p1
 
 CONFIGURE_ARGS+= --with-system-seabios=${LOCALBASE}/share/seabios/bios.bin
 
