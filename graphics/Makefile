@@ -630,6 +630,7 @@
     SUBDIR += metacam
     SUBDIR += metapixel
     SUBDIR += mhgui
+    SUBDIR += minder
     SUBDIR += ming
     SUBDIR += mirage
     SUBDIR += mmrecover
