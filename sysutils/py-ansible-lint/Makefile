@@ -6,7 +6,7 @@ CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	mseaman@FreeBSD.org
+MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Checks playbooks for sub-optimal practices and behaviour
 
 LICENSE=	MIT
