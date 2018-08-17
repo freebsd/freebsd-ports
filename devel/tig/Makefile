@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	tig
-PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTVERSION=	2.4.1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/jonas/tig/releases/download/${DISTNAME}/
 
-MAINTAINER=	dharrigan@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text-mode interface for git
 
 LICENSE=	GPLv2
