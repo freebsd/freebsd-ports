@@ -5047,6 +5047,7 @@
     SUBDIR += py-setuptools_scm
     SUBDIR += py-sh
     SUBDIR += py-shapely
+    SUBDIR += py-shellingham
     SUBDIR += py-should_dsl
     SUBDIR += py-simpleeval
     SUBDIR += py-simplegeneric
