@@ -480,6 +480,7 @@
     SUBDIR += healthd
     SUBDIR += heartbeat
     SUBDIR += heirloom
+    SUBDIR += helm
     SUBDIR += hextools
     SUBDIR += hfm
     SUBDIR += hfsexplorer
