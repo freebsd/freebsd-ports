@@ -1,6 +1,6 @@
---- ROX-Filer/src/configure.orig
+--- ROX-Filer/src/configure.orig	2011-10-09 14:32:14 UTC
 +++ ROX-Filer/src/configure
-@@ -2134,10 +2134,6 @@
+@@ -2134,10 +2134,6 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  ac_config_headers="$ac_config_headers config.h"
  
  

@@ -2,21 +2,24 @@
 
 PORTNAME=	rox-filer
 PORTVERSION=	2.11
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	SF/rox/rox/${PORTVERSION}
-DISTNAME=	rox-filer-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Simple and easy to use graphical file manager
 
-LIB_DEPENDS=	libinotify.so:devel/libinotify
+LICENSE=	GPLv2+
+
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libinotify.so:devel/libinotify
 
 PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 
-USE_XORG=	x11 sm xaw xorgproto
-USE_GNOME=	atk glib20 gtk20 libxml2 pango
-USES=		gmake pkgconfig shared-mime-info tar:bzip2
+USES=		gettext-runtime:build gmake pkgconfig shared-mime-info tar:bzip2
+USE_XORG=	ice sm x11 xaw xorgproto
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 libxml2 pango
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		APP_DIR=${WRKSRC}/ROX-Filer
@@ -26,24 +29,30 @@ BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
 ALL_TARGET=
 LIBS+=			-lm
 
+OPTIONS_DEFINE=		NLS
+OPTIONS_DEFAULT=	NLS
+
+NLS_USES=		gettext-runtime:run
+
 post-configure:
-	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
-                ${CONFIGURE_WRKSRC}/configure \
-                ${CONFIGURE_WRKSRC}/choices.c \
-                ${CONFIGURE_WRKSRC}/support.c \
-                ${CONFIGURE_WRKSRC}/type.c \
-                ${CONFIGURE_WRKSRC}/usericons.c \
-                ${CONFIGURE_WRKSRC}/xdgmime.c
-	@${TOUCH} ${CONFIGURE_WRKSRC}/config.status
+	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
+	   ${CONFIGURE_WRKSRC}/configure \
+	   ${CONFIGURE_WRKSRC}/choices.c \
+	   ${CONFIGURE_WRKSRC}/support.c \
+	   ${CONFIGURE_WRKSRC}/type.c \
+	   ${CONFIGURE_WRKSRC}/usericons.c \
+	   ${CONFIGURE_WRKSRC}/xdgmime.c
+	${TOUCH} ${CONFIGURE_WRKSRC}/config.status
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/apps/ROX-Filer
-	cd ${WRKSRC}/ROX-Filer && ${CP} -r .DirIcon AppInfo.xml AppRun Help Messages Options.xml ROX ROX-Filer Templates.ui images style.css subclasses ${STAGEDIR}${PREFIX}/apps/ROX-Filer
+	${MKDIR} ${STAGEDIR}${PREFIX}/apps/ROX-Filer
+	cd ${WRKSRC}/ROX-Filer && ${CP} -r .DirIcon AppInfo.xml AppRun \
+	   Help Messages Options.xml ROX ROX-Filer Templates.ui images \
+	   style.css subclasses ${STAGEDIR}${PREFIX}/apps/ROX-Filer
 	cd ${WRKSRC} && ${CP} -r Choices ${STAGEDIR}${PREFIX}/share/
 	${CAT} ${FILESDIR}/rox | ${SED} -e "s|%%PREFIX%%|${PREFIX}|" > ${STAGEDIR}${PREFIX}/bin/rox
-	${CHMOD} 755 ${STAGEDIR}${PREFIX}/bin/rox
 	${INSTALL_MAN} ${WRKSRC}/rox.1 ${STAGEDIR}${PREFIX}/man/man1
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages
 	${INSTALL_DATA} ${WRKSRC}/rox.xml ${STAGEDIR}${PREFIX}/share/mime/packages
 
 .include <bsd.port.mk>
