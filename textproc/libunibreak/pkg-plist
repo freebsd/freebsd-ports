@@ -1,9 +1,12 @@
+include/graphemebreak.h
 include/linebreak.h
 include/linebreakdef.h
+include/unibreakbase.h
+include/unibreakdef.h
 include/wordbreak.h
-include/wordbreakdef.h
+lib/liblinebreak.a
 lib/libunibreak.a
 lib/libunibreak.so
-lib/libunibreak.so.1
-lib/libunibreak.so.1.0.1
+lib/libunibreak.so.3
+lib/libunibreak.so.3.1.0
 libdata/pkgconfig/libunibreak.pc
