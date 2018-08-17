@@ -11,11 +11,12 @@ COMMENT=	Simple, open source, cross-platform Go IDE
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
-RUN_DEPENDS=	${LOCALBASE}/bin/go:lang/go \
-		${LOCALBASE}/bin/gocode:devel/go-gocode
+BUILD_DEPENDS=	go:lang/go
+RUN_DEPENDS=	go:lang/go \
+		gocode:devel/go-gocode
 
 FLAVORS=	qt5 qt4
+FLAVOR?=	${FLAVORS:[1]}
 
 qt4_CONFLICTS_INSTALL=	${PORTNAME}
 qt4_PKGNAMESUFFIX=	-qt4
