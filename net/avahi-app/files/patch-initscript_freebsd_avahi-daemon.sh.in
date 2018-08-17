@@ -1,12 +1,6 @@
 --- initscript/freebsd/avahi-daemon.sh.in.orig	2017-07-10 10:14:59 UTC
 +++ initscript/freebsd/avahi-daemon.sh.in
-@@ -4,23 +4,28 @@
- #
- # PROVIDE: avahi_daemon
- # REQUIRE: DAEMON dbus
-+# BEFORE: mountd
- # KEYWORD: FreeBSD
- #
+@@ -9,18 +9,22 @@
  # Avahi's mDNSResponder, a Zeroconf (Bonjour) service advertisement daemon.
  #
  
