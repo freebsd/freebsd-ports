@@ -143,7 +143,7 @@ apps/ROX-Filer/images/rox-xattr.png
 apps/ROX-Filer/images/symlink.png
 apps/ROX-Filer/style.css
 apps/ROX-Filer/subclasses
-bin/rox
+@(,,755) bin/rox
 man/man1/rox.1.gz
 share/Choices/MIME-types/application_postscript
 share/Choices/MIME-types/text

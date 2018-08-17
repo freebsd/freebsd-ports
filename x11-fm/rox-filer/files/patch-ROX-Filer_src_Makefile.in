@@ -1,6 +1,6 @@
---- ROX-Filer/src/Makefile.in.orig	2011-10-09 16:31:59.000000000 +0200
-+++ ROX-Filer/src/Makefile.in	2018-07-31 22:30:30.674172000 +0200
-@@ -7,7 +7,7 @@
+--- ROX-Filer/src/Makefile.in.orig	2011-10-09 14:31:59 UTC
++++ ROX-Filer/src/Makefile.in
+@@ -7,7 +7,7 @@ CC = @CC@
  .SUFFIXES: .c .o
  
  PKG_CONFIG = @PKG_CONFIG@
@@ -9,7 +9,7 @@
  #PROF = -fprofile-arcs -pg
  
  PKG_CONFIG_FLAGS=
-@@ -47,10 +47,7 @@
+@@ -47,10 +47,7 @@ OBJECTS = abox.o action.o appinfo.o appm
  ${PROG}: ${OBJECTS}
  	${CC} -o "${PROG}" ${OBJECTS} ${LDFLAGS}
  	mv "${PROG}" "${PLATFORM_DIR}"
