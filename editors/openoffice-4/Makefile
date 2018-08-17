@@ -121,7 +121,7 @@ EXECBASE?=		openoffice-${AOOSUFFIX}
 
 USES=		autoreconf bison compiler:c++11-lib cpe \
 		desktop-file-utils \
-		gettext-runtime gmake iconv jpeg perl5 pkgconfig python \
+		gettext-runtime gmake iconv jpeg perl5 pkgconfig python:2.7 \
 		shared-mime-info ssl tar:bzip2
 USE_GL=		gl glu
 USE_GNOME=	gtk20 libxslt libidl glib20
