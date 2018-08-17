@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openxpki
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
@@ -74,7 +74,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		p5-XML-Filter-XInclude>=0:textproc/p5-XML-Filter-XInclude \
 		p5-XML-SAX-Writer>=0:textproc/p5-XML-SAX-Writer \
 		p5-XML-Validator-Schema>=0:textproc/p5-XML-Validator-Schema \
-		p5-openxpki-i18n>=0.20.0.1:security/p5-openxpki-i18n \
+		p5-openxpki-i18n>=2.0.3:security/p5-openxpki-i18n \
 		p5-perl-ldap>=0:net/p5-perl-ldap
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
