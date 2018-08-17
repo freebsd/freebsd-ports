@@ -300,6 +300,7 @@
     SUBDIR += ec2-scripts
     SUBDIR += edid-decode
     SUBDIR += eject
+    SUBDIR += eksctl
     SUBDIR += endian
     SUBDIR += enteruser
     SUBDIR += entr
