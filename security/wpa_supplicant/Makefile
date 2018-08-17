@@ -5,8 +5,10 @@ PORTVERSION=	2.6
 PORTREVISION=	3
 CATEGORIES=	security net
 MASTER_SITES=	https://w1.fi/releases/
+
 PATCH_SITES=	https://w1.fi/security/2017-1/:2017_1 \
 		https://w1.fi/security/2018-1/:2018_1
+
 PATCHFILES=	rebased-v2.6-0001-hostapd-Avoid-key-reinstallation-in-FT-handshake.patch:2017_1 \
 	rebased-v2.6-0002-Prevent-reinstallation-of-an-already-in-use-group-ke.patch:2017_1 \
 	rebased-v2.6-0003-Extend-protection-of-GTK-IGTK-reinstallation-of-WNM-.patch:2017_1 \
