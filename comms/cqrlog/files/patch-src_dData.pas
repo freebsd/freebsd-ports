@@ -1,4 +1,4 @@
---- src/dData.pas.orig	2018-07-11 03:36:41 UTC
+--- src/dData.pas.orig	2018-06-17 12:42:42 UTC
 +++ src/dData.pas
 @@ -904,22 +904,22 @@ begin
    if not DirectoryExistsUTF8(fHomeDir+'members') then
@@ -73,7 +73,7 @@
    if Result = '' then  //don't know where mysqld is, so hopefully will be in  $PATH
      Result := 'mysqld'
  end;
-@@ -4209,17 +4209,7 @@ begin
+@@ -4209,22 +4209,13 @@ begin
    Result := '';
    Paths := TStringList.Create;
    try
@@ -88,7 +88,15 @@
 -    Paths.Add('/usr/lib/');
 -    Paths.Add('/lib/');
 -    Paths.Add('/usr/lib/mysql/');
++    Paths.Add('%%LOCALBASE%%/lib/mysql/');
 +    Paths.Add('%%LOCALBASE%%/lib/');
  
-     Result := MyFindFile('libmariadbclient.so*', Paths);
+-    Result := MyFindFile('libmariadbclient.so*', Paths);
++    Result := MyFindFile('libmariadbclient.so', Paths);
      if (Result='') then
+     begin
+-      Result := MyFindFile('libmysqlclient.so*', Paths)
++      Result := MyFindFile('libmysqlclient.so', Paths)
+     end
+   finally
+     FreeAndNil(Paths)
