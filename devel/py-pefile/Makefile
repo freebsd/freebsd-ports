@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pefile
-PORTVERSION=	2017.11.5
+PORTVERSION=	2018.8.8
 CATEGORIES=	devel python
 MASTER_SITES=	https://github.com/erocarrera/pefile/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
