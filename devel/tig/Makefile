@@ -3,6 +3,7 @@
 
 PORTNAME=	tig
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/jonas/tig/releases/download/${DISTNAME}/
 
@@ -17,25 +18,22 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE}
 MAKE_ARGS=	V=1
 
-ALL_TARGET=	all strip
-INSTALL_TARGET=	install
+INSTALL_TARGET=	install install-doc-man
 
-PLIST_FILES=	bin/tig etc/tigrc
+PLIST_FILES=	bin/tig \
+		etc/tigrc \
+		man/man1/tig.1.gz \
+		man/man5/tigrc.5.gz \
+		man/man7/tigmanual.7.gz
 
-OPTIONS_DEFINE=	GIT MANPAGES
-OPTIONS_DEFAULT=MANPAGES
+OPTIONS_DEFINE=	GIT
 
 GIT_DESC=	Install devel/git as runtime dependency
 
 GIT_RUN_DEPENDS=	git:devel/git
 GIT_VARS_OFF=	PKGMESSAGE="${.CURDIR}/pkg-message-git"
 
-MANPAGES_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
-			xmlto:textproc/xmlto
-MANPAGES_ALL_TARGET=	doc-man
-MANPAGES_INSTALL_TARGET=	install-doc-man
-MANPAGES_PLIST_FILES=	man/man1/tig.1.gz \
-			man/man5/tigrc.5.gz \
-			man/man7/tigmanual.7.gz
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/tig
 
 .include <bsd.port.mk>
