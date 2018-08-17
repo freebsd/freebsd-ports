@@ -6,6 +6,7 @@ PORTVERSION=	2.6
 PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://w1.fi/releases/
+
 PATCH_SITES=	https://w1.fi/security/2017-1/:2017_1 \
 		https://w1.fi/security/2018-1/:2018_1
 
