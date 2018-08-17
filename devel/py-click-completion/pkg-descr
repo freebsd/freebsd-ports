@@ -1,0 +1,9 @@
+Add automatic completion support for fish, Zsh, Bash and PowerShell to
+Click.
+
+All the supported shells are able to complete all the command line
+arguments and options defined with click. In addition, fish and Zsh
+are also displaying the options and commands help during the
+completion.
+
+WWW: https://github.com/click-contrib/click-completion
