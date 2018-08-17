@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	3.8.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/${PRE_}releases/${LLVM_RELEASE}/${RCDIR}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
@@ -12,7 +12,8 @@ PKGNAMESUFFIX=	${LLVM_SUFFIX}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang
 
-BROKEN_armv6=		fails to compile: fatal error: llvm/IR/Attributes.inc file not found
+DEPRECATED=	Obsolete and unmaintained
+
 BROKEN_powerpc64=	fails to compile: internal compiler error: Killed (program cc1plus)
 
 LLVM_RELEASE=	${DISTVERSION:C/rc.*//}
@@ -24,7 +25,7 @@ LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 
-USES=		cmake:outsource compiler:c++11-lib libedit perl5 tar:xz \
+USES=		cmake:outsource,noninja compiler:c++11-lib libedit perl5 tar:xz \
 		shebangfix
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
 SHEBANG_FILES=	utils/lit/lit.py utils/llvm-lit/llvm-lit.in \
@@ -43,11 +44,11 @@ CMAKE_ARGS=
 CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH="share/man"
 
 OPTIONS_DEFINE=	CLANG DOCS EXTRAS LIT LLD LLDB
-OPTIONS_DEFINE_amd64=	COMPILER_RT GOLD OPENMP
-OPTIONS_DEFINE_i386=	COMPILER_RT OPENMP
+OPTIONS_DEFINE_amd64=	GOLD OPENMP
+OPTIONS_DEFINE_i386=	OPENMP
 OPTIONS_DEFAULT=	CLANG EXTRAS LIT LLD LLDB
-OPTIONS_DEFAULT_amd64=	COMPILER_RT GOLD OPENMP
-OPTIONS_DEFAULT_i386=	COMPILER_RT OPENMP
+OPTIONS_DEFAULT_amd64=	GOLD OPENMP
+OPTIONS_DEFAULT_i386=	OPENMP
 OPTIONS_SUB=	yes
 
 PLIST_FILES=
