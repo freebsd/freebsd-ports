@@ -1,4 +1,4 @@
-TIMESTAMP = 1508200169
+TIMESTAMP = 1534471067
 SHA256 (hostapd-2.6.tar.gz) = 01526b90c1d23bec4b0f052039cc4456c2fd19347b4d830d1d58a0a6aea7117d
 SIZE (hostapd-2.6.tar.gz) = 1822341
 SHA256 (rebased-v2.6-0001-hostapd-Avoid-key-reinstallation-in-FT-handshake.patch) = 529113cc81256c6178f3c1cf25dd8d3f33e6d770e4a180bd31c6ab7e4917f40b
@@ -15,3 +15,5 @@ SHA256 (rebased-v2.6-0006-TDLS-Reject-TPK-TK-reconfiguration.patch) = 596d4d3b63
 SIZE (rebased-v2.6-0006-TDLS-Reject-TPK-TK-reconfiguration.patch) = 4309
 SHA256 (rebased-v2.6-0008-FT-Do-not-allow-multiple-Reassociation-Response-fram.patch) = c8840d857b9432f3b488113c85c1ff5d4a4b8d81078b7033388dae1e990843b1
 SIZE (rebased-v2.6-0008-FT-Do-not-allow-multiple-Reassociation-Response-fram.patch) = 2750
+SHA256 (rebased-v2.6-0001-WPA-Ignore-unauthenticated-encrypted-EAPOL-Key-data.patch) = 960c3cf2a514479b0b4cf09665186a1a9f5d28e8b05dec23db75c6cc13eb1f7c
+SIZE (rebased-v2.6-0001-WPA-Ignore-unauthenticated-encrypted-EAPOL-Key-data.patch) = 1999
