@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	emojione-color-font-ttf
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/eosrei/emojione-color-font/releases/download/v${PORTVERSION}/
 DISTNAME=	EmojiOneColor-SVGinOT-${PORTVERSION}
