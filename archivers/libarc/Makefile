@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.onicos.com/staff/iz/release/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny C decompression library for several popular compression formats
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 SOLIB=		libarc.so
 SOVERSION=	1
 
