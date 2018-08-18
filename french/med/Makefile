@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	med
-DISTVERSION=	3.2.1
-PORTREVISION=	3
+DISTVERSION=	3.3.1
 CATEGORIES=	french science
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -27,10 +26,10 @@ CONFIGURE_ENV=	WISH=${WISH} H5DUMP=h5dump-18
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 TEST_WRKSRC=	${WRKSRC}/tests
-TEST_TARGET=	check  # XXX: 1 of 16 tests fail
+TEST_TARGET=	check  # XXX: some fail
 TEST_ENV=	${MAKE_ENV} HDF5_DISABLE_VERSION_CHECK=1
 
-LIBVER=		1.8.0
+LIBVER=		1.9.1
 PLIST_SUB+=	VE=${LIBVER}
 
 PATCH_TK_SCRIPTS=	tools/mdump/xmdump2.in tools/mdump/xmdump3.in

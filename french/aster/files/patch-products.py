@@ -1,4 +1,4 @@
---- products.py.orig	2017-08-26 13:56:41 UTC
+--- products.py.orig	2018-08-02 11:02:24 UTC
 +++ products.py
 @@ -118,8 +118,8 @@ def setup_hdf5(dep, summary, **kargs):
  
@@ -11,17 +11,17 @@
           } ),
           ('Extract'  , {}),
           # gcc>=4.9 not supported by configure, should not use -ansi
-@@ -723,7 +723,8 @@ def setup_aster(dep, summary, **kargs):
-            'HOME_MUMPS', 'HOME_ZMAT', 'HOME_MPI', 'INCLUDE_MUMPS', 'HOME_METIS',
+@@ -674,7 +674,8 @@ def setup_aster(dep, summary, **kargs):
+            'HOME_MUMPS', 'HOME_MPI', 'INCLUDE_MUMPS', 'HOME_METIS',
             'HOME_MED', 'HOME_HDF', 'HOME_MFRONT',
-            #'HOME_GMSH', 'HOME_GIBI', 'HOME_HOMARD', optional
+            #'HOME_GMSH', 'HOME_HOMARD', optional
 -           'LD', 'CC', 'F90', 'CXXLIB', 'OTHERLIB', 'SYSLIB', ],
 +           'LD', 'CC', 'F90', 'CXXLIB', 'OTHERLIB', 'SYSLIB', 'CFLAGS', 'LDFLAGS',
 +           'CFLAGS_DBG', 'FFLAGS', 'FFLAGS_DBG','F90FLAGS', 'F90FLAGS_DBG', 'CXXLIB', ],
        reqobj=['file:?ASTER_ROOT?/bin/as_run',
                'file:?ASTER_ROOT?/etc/codeaster/profile.sh'],
     )
-@@ -777,7 +778,8 @@ def setup_aster(dep, summary, **kargs):
+@@ -726,7 +727,8 @@ def setup_aster(dep, summary, **kargs):
              'capturestderr' : False,
           }),
           ('Make'  , {
