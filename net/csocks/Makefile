@@ -3,6 +3,7 @@
 
 PORTNAME=	csocks
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	http://csocks.altervista.org/download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
