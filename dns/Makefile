@@ -196,6 +196,7 @@
     SUBDIR += py-ldns
     SUBDIR += py-namebench
     SUBDIR += py-publicsuffix
+    SUBDIR += py-publicsuffixlist
     SUBDIR += py-py3dns
     SUBDIR += py-pycares
     SUBDIR += py-pydnstable
