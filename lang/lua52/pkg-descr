@@ -18,4 +18,4 @@ Lua is implemented as a small library of C functions, written in ANSI C, and
 compiles unmodified in all known platforms. The implementation goals are
 simplicity, efficiency, portability, and low embedding cost.
 
-WWW: http://www.lua.org/
+WWW: https://www.lua.org/
