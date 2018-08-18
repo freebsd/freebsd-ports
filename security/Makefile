@@ -423,6 +423,7 @@
     SUBDIR += morphis
     SUBDIR += munge
     SUBDIR += mussh
+    SUBDIR += n2n
     SUBDIR += nacl
     SUBDIR += ncrack
     SUBDIR += ncrypt
