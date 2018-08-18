@@ -1,0 +1,33 @@
+--- CMakeLists.txt.orig	2018-08-15 11:38:48 UTC
++++ CMakeLists.txt
+@@ -11,6 +11,8 @@ project(xeus-cling)
+ 
+ set(XCPP_SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
+ 
++link_directories(${CMAKE_INSTALL_PREFIX}/lib)
++
+ # Versionning
+ # ===========
+ 
+@@ -102,10 +104,10 @@ add_definitions(-DLLVM_DIR="${LLVM_BINAR
+ ################
+ 
+ find_package(xeus 0.13 REQUIRED)
+-find_package(cppzmq 4.2.3 REQUIRED)
++#find_package(cppzmq 4.2.3 REQUIRED)
+ find_package(pugixml REQUIRED)
+ 
+-find_package(Clang REQUIRED)
++#find_package(Clang REQUIRED)
+ find_package(Cling REQUIRED)
+ find_package(cxxopts REQUIRED)
+ 
+@@ -305,6 +307,8 @@ set(XCPP_TAGCONFS_DIR ${CMAKE_CURRENT_SO
+ install(DIRECTORY ${XCPP_TAGCONFS_DIR}
+         DESTINATION ${XCPP_CONF_DIR})
+ 
++target_link_libraries(xeus-cling -lclangAST -lLLVMSupport -lzmq)
++
+ # Add definitions for the kernel to find tagfiles.
+ add_definitions(-DXCPP_TAGFILES_DIR="${CMAKE_INSTALL_PREFIX}/${XCPP_DATA_DIR}/tagfiles")
+ add_definitions(-DXCPP_TAGCONFS_DIR="${CMAKE_INSTALL_PREFIX}/${XCPP_CONF_DIR}/tags.d")

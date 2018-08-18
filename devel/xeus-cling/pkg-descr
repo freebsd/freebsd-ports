@@ -1,0 +1,8 @@
+xeus-cling is a Jupyter kernel for C++ based on the C++ interpreter cling and
+the native implementation of the Jupyter protocol xeus.
+
+In order to use xeus-cling, please launch the jupyter notebook with jupyter
+notebook and launch a new C++ notebook by selecting the C++14 kernel in the new
+dropdown.
+
+WWW: https://github.com/QuantStack/xeus-cling

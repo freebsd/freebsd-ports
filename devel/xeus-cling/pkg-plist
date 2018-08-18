@@ -1,0 +1,16 @@
+bin/xeus-cling
+etc/xcpp/tags.d/stl.json
+etc/xcpp/tags.d/xtensor.json
+include/xcpp/xdisplay.hpp
+include/xcpp/xmime.hpp
+share/jupyter/kernels/xeus-cling-cpp11/kernel.json
+share/jupyter/kernels/xeus-cling-cpp11/logo-32x32.png
+share/jupyter/kernels/xeus-cling-cpp11/logo-64x64.png
+share/jupyter/kernels/xeus-cling-cpp14/kernel.json
+share/jupyter/kernels/xeus-cling-cpp14/logo-32x32.png
+share/jupyter/kernels/xeus-cling-cpp14/logo-64x64.png
+share/jupyter/kernels/xeus-cling-cpp17/kernel.json
+share/jupyter/kernels/xeus-cling-cpp17/logo-32x32.png
+share/jupyter/kernels/xeus-cling-cpp17/logo-64x64.png
+share/xcpp/tagfiles/cppreference-doxygen-web.tag
+share/xcpp/tagfiles/xtensor.tag
