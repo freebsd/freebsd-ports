@@ -5,7 +5,7 @@ PORTVERSION=	1.4.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	comms
 
-MAINTAINER=	manu@freebsd.org
+MAINTAINER=	manu@FreeBSD.org
 COMMENT=	Tools to help hacking Allwinner devices
 
 LICENSE=	GPLv2+

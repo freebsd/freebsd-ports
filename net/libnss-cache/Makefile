@@ -6,7 +6,7 @@ PORTVERSION=	0.15
 DISTVERSIONPREFIX=	version/
 CATEGORIES=	net
 
-MAINTAINER=	kbowling@freebsd.org
+MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	NSS module for directory services using an indexed, local disk cache
 
 LICENSE=	LGPL3

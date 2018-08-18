@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	brnrd@freebsd.org
+MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Full featured password manager for Nextcloud
 
 LICENSE=	AGPLv3

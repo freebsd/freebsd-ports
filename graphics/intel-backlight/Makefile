@@ -5,7 +5,7 @@ PORTNAME=		intel-backlight
 DISTVERSION=		20180303
 CATEGORIES=		graphics
 
-MAINTAINER=		jmd@freebsd.org
+MAINTAINER=		jmd@FreeBSD.org
 COMMENT=		Control backlight on various modern Intel(R) GPUs
 
 LICENSE=		MIT

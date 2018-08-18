@@ -5,7 +5,7 @@ PORTVERSION=	1.2.20180112
 CATEGORIES=	sysutils
 MASTER_SITES=	GH
 
-MAINTAINER=	manu@freebsd.org
+MAINTAINER=	manu@FreeBSD.org
 COMMENT=	Arm Trusted Framework for Allwinner SoCs
 
 LICENSE=	BSD2CLAUSE BSD3CLAUSE GPLv2+
