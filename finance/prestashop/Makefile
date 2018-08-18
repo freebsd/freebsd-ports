@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	prestashop
-PORTVERSION=	1.7.4.1
+PORTVERSION=	1.7.4.2
 CATEGORIES=	finance www
 MASTER_SITES=	http://www.prestashop.com/download/old/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -10,12 +10,11 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open-Source e-Commerce Software for Web 2.0
 
-EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
-USES=		cpe shebangfix zip
+USES=		cpe shebangfix zip:infozip
 NO_BUILD=	yes
 PRESTADIR=	www/${PORTNAME}
 PLIST=		${WRKDIR}/plist
-USE_PHP=	ctype curl dom filter gd mcrypt mysqli pdo_mysql \
+USE_PHP=	ctype curl dom filter gd intl mcrypt mysqli pdo_mysql \
 		posix session simplexml soap
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
