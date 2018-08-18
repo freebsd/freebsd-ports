@@ -6330,6 +6330,7 @@
     SUBDIR += z80-asm
     SUBDIR += z80asm
     SUBDIR += z80ex
+    SUBDIR += zanata-cli
     SUBDIR += zapcc
     SUBDIR += zeal
     SUBDIR += zookeeper

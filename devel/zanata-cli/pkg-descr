@@ -1,0 +1,9 @@
+The Zanata Command line client (CLI) is the perfect way to connect to a Zanata
+server to push and pull content.
+
+Features:
+  - Initialize a Translation project from the command line.
+  - Push source content to the Zanata server.
+  - Pull translated content from the Zanata server.
+
+WWW: http://docs.zanata.org/en/release/client/
