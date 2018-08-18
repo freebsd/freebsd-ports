@@ -544,6 +544,7 @@
     SUBDIR += vdmfec
     SUBDIR += vera
     SUBDIR += vifm
+    SUBDIR += visp
     SUBDIR += viz
     SUBDIR += whichman
     SUBDIR += window

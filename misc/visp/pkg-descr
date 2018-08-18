@@ -1,0 +1,11 @@
+ViSP standing for Visual Servoing Platform is a modular cross platform library
+that allows prototyping and developing applications using visual tracking and
+visual servoing technics at the heart of the researches done by Inria Lagadic
+team. ViSP is able to compute control laws that can be applied to robotic
+systems. It provides a set of visual features that can be tracked using real
+time image processing or computer vision algorithms. ViSP provides also
+simulation capabilities. ViSP can be useful in robotics, computer vision,
+augmented reality and computer animation. Our YouTube channel gives an overview
+of the applications that could be tackled.
+
+WWW: https://visp.inria.fr/

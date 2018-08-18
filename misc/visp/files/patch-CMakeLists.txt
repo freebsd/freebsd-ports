@@ -1,0 +1,13 @@
+https://github.com/lagadic/visp/issues/423
+
+--- CMakeLists.txt.orig	2018-08-18 08:03:58 UTC
++++ CMakeLists.txt
+@@ -605,7 +605,7 @@ if(UNIX)
+     )
+     install(FILES
+       ${VISP_BINARY_DIR}/doc/man/man1/visp-config.1.gz
+-      DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/man/man1
++      DESTINATION man/man1
+       PERMISSIONS OWNER_READ GROUP_READ WORLD_READ OWNER_WRITE
+       COMPONENT dev
+     )
