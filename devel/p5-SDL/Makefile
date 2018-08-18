@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	SDL
-PORTVERSION=	2.540
-PORTREVISION=	9
+PORTVERSION=	2.548
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,12 +12,15 @@ COMMENT=	Perl Bindings for SDL
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Alien-SDL>=1.426:devel/p5-Alien-SDL
+BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libsmpeg.so:multimedia/smpeg
-RUN_DEPENDS=	p5-Alien-SDL>=1.426:devel/p5-Alien-SDL \
+RUN_DEPENDS=	p5-Alien-SDL>=1.446:devel/p5-Alien-SDL \
+		p5-File-ShareDir>=1.0:devel/p5-File-ShareDir \
 		p5-Tie-Simple>=0:devel/p5-Tie-Simple
+TEST_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
+		p5-Test-Most>=0.21:devel/p5-Test-Most
 
 USES=		jpeg perl5
 USE_GL=		glu
