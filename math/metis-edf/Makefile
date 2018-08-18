@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metis-edf
-DISTVERSION=	5.1.0-aster1
+DISTVERSION=	5.1.0-aster4
 PORTEPOCH=	1
 CATEGORIES=	math
 
