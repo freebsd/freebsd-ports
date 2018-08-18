@@ -15,7 +15,6 @@ USES=		gmake ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ntop
-GH_PROJECT=	${PORTNAME}
 
 PLIST_FILES=	sbin/edge \
 		sbin/supernode \
