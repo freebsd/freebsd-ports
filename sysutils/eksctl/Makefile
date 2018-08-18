@@ -13,6 +13,8 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	kubectl:sysutils/kubectl \
 		aws-iam-authenticator:security/aws-iam-authenticator
 
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 USES=		go
 
 USE_GITHUB=	yes
