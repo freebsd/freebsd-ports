@@ -1,0 +1,13 @@
+--- Makefile.orig	2018-08-17 12:16:07 UTC
++++ Makefile
+@@ -4,8 +4,8 @@ N2N_OSNAME=$(shell uname -p)
+ 
+ ########
+ 
+-CC=gcc
+-DEBUG?=-g3
++CC?=gcc
++#DEBUG?=-g3
+ #OPTIMIZATION?=-O2
+ WARN?=-Wall -Wshadow -Wpointer-arith -Wmissing-declarations -Wnested-externs
+ 
