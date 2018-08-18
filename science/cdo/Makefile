@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	cdo
-PORTVERSION=	1.9.4
-PORTREVISION=	1
+PORTVERSION=	1.9.5
 CATEGORIES=	science
-MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/17374/ \
+MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/18264/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -70,6 +69,9 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| contrib||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|$$(libdir)/\($$$$pkgconfigfile\)|${PREFIX}/libdata/\1|' ${WRKSRC}/libcdi/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|unsigned32 |uint32_t |' ${WRKSRC}/libcdi/src/cdilib.c ${WRKSRC}/libcdi/src/util.c
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/libcdi/src/cdi.inc ${STAGEDIR}${PREFIX}/include/cdi.inc
 
 test-NETCDF-on:
 	@cd ${WRKSRC}/ && ${SETENV} CDO_PATH=src/cdo src/cdotest
