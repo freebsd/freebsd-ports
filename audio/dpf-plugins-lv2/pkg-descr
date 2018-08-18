@@ -1,0 +1,15 @@
+Collection of DPF-based plugins.
+They come in LADSPA, DSSI, LV2 and VST2 formats, but only LV2
+plugins are included in the port.
+
+The list of plugins:
+* glBars
+* Kars
+* Max-Gen examples (MaBitcrush, MaFreeverb, MaGigaverb, MaPitchshift)
+* Mini-Series (3BandEQ. 3BandSplitter, PingPongPan)
+* ndc-Plugs (Amplitude Imposer, Cycle Shifter, Soul Force)
+* MVerb
+* Nekobi
+* ProM
+
+WWW: https://github.com/DISTRHO/DPF-Plugins

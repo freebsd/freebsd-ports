@@ -1,0 +1,11 @@
+--- dpf/utils/lv2-ttl-generator/GNUmakefile.orig	2018-08-18 06:55:42 UTC
++++ dpf/utils/lv2-ttl-generator/GNUmakefile
+@@ -9,7 +9,7 @@ build: ../lv2_ttl_generator
+ endif
+ 
+ ../lv2_ttl_generator: lv2_ttl_generator.c
+-	$(CC) $< $(CFLAGS) -o $@ $(LDFLAGS) -ldl
++	$(CC) $< $(CFLAGS) -o $@ $(LDFLAGS)
+ 
+ ../lv2_ttl_generator.exe: lv2_ttl_generator.c
+ 	$(CC) $< $(CFLAGS) -o $@ $(LDFLAGS) -static
