@@ -20,6 +20,12 @@ OPTIONS_DEFAULT=MMX
 
 MMX_CONFIGURE_ENABLE=	mmx
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH}=="i386"
+LLD_UNSAFE=	yes # cf. PR 226980
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|AC_DEFUN(AM_PATH_LIBFAME|AC_DEFUN([AM_PATH_LIBFAME]|g' \
