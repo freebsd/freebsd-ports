@@ -4196,6 +4196,7 @@
     SUBDIR += poxml
     SUBDIR += poxml-kde4
     SUBDIR += ppl
+    SUBDIR += pprof
     SUBDIR += pragmarcs
     SUBDIR += premake
     SUBDIR += premake4
