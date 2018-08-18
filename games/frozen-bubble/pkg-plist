@@ -1,12 +1,6 @@
 bin/fb-server
 bin/frozen-bubble
 bin/frozen-bubble-editor
-%%PERL5_MAN3%%/Games::FrozenBubble.3.gz
-%%PERL5_MAN3%%/Games::FrozenBubble::LevelEditor.3.gz
-%%PERL5_MAN3%%/Games::FrozenBubble::MDKCommon.3.gz
-%%PERL5_MAN3%%/Games::FrozenBubble::Net.3.gz
-%%PERL5_MAN3%%/Games::FrozenBubble::NetDiscover.3.gz
-%%PERL5_MAN3%%/Games::FrozenBubble::Stuff.3.gz
 %%SITE_ARCH%%/Games/FrozenBubble.pm
 %%SITE_ARCH%%/Games/FrozenBubble/CStuff.pm
 %%SITE_ARCH%%/Games/FrozenBubble/Config.pm
@@ -3272,4 +3266,10 @@ bin/frozen-bubble-editor
 %%SITE_ARCH%%/auto/share/dist/Games-FrozenBubble/snd/typewriter.ogg
 %%PERL5_MAN1%%/frozen-bubble-editor.1.gz
 %%PERL5_MAN1%%/frozen-bubble.1.gz
+%%PERL5_MAN3%%/Games::FrozenBubble.3.gz
+%%PERL5_MAN3%%/Games::FrozenBubble::LevelEditor.3.gz
+%%PERL5_MAN3%%/Games::FrozenBubble::MDKCommon.3.gz
+%%PERL5_MAN3%%/Games::FrozenBubble::Net.3.gz
+%%PERL5_MAN3%%/Games::FrozenBubble::NetDiscover.3.gz
+%%PERL5_MAN3%%/Games::FrozenBubble::Stuff.3.gz
 share/pixmaps/frozen-bubble.png
