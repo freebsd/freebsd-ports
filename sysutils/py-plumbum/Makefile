@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	plumbum
-PORTVERSION=	1.6.6
-PORTREVISION=	1
+PORTVERSION=	1.6.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python
-USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
+USE_GITHUB=	yes
 GH_ACCOUNT=	tomerfiliba
 
 do-test:
