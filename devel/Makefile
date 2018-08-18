@@ -196,6 +196,7 @@
     SUBDIR += bcpp
     SUBDIR += bcunit
     SUBDIR += bear
+    SUBDIR += benchmark
     SUBDIR += bennugd-core
     SUBDIR += bennugd-modules
     SUBDIR += bglibs
