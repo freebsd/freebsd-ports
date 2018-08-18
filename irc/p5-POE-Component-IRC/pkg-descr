@@ -5,4 +5,4 @@ session cares about and where to connect to, and it sends back
 interesting IRC events when they happen.  You make the client do things
 by sending it events.
 
-WWW: http://metacpan.org/release/POE-Component-IRC/
+WWW: https://metacpan.org/release/POE-Component-IRC
