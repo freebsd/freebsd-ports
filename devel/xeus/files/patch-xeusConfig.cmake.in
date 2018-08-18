@@ -1,0 +1,17 @@
+--- xeusConfig.cmake.in.orig	2018-08-17 22:53:12 UTC
++++ xeusConfig.cmake.in
+@@ -20,11 +20,12 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_L
+ @XEUS_CONFIG_CODE@
+ 
+ include(CMakeFindDependencyMacro)
++FIND_PACKAGE(PkgConfig)
+ find_dependency(xtl 0.4)
+ find_dependency(nlohmann_json 3.1.1)
+ find_dependency(xtl 0.4)
+-find_dependency(ZeroMQ 4.2.3)
+-find_dependency(cppzmq 4.2.3)
++pkg_check_modules(ZeroMQ libzmq>=4.2.3 REQUIRED)
++#find_dependency(cppzmq 4.2.3)
+ if(UNIX AND NOT APPLE)
+   find_dependency(LibUUID)
+ endif()
