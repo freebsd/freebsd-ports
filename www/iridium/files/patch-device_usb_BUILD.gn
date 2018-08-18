@@ -1,0 +1,21 @@
+--- device/usb/BUILD.gn.orig	2017-06-16 17:45:56.630063000 +0200
++++ device/usb/BUILD.gn	2017-06-16 17:59:22.070474000 +0200
+@@ -97,10 +97,17 @@
+     libs = [ "setupapi.lib" ]
+   }
+ 
+-  if (is_android || is_chromeos || is_linux) {
++  if (is_android || is_chromeos || (is_linux && !is_bsd)) {
+     sources += [
+       "usb_device_handle_usbfs.cc",
+       "usb_device_handle_usbfs.h",
++    ]
++  }
++
++  if (is_bsd) {
++    sources -= [
++      "usb_device_linux.cc",
++      "usb_device_linux.h",
+     ]
+   }
+ 

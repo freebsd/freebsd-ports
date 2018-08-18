@@ -1,6 +1,6 @@
---- ui/views/views_delegate.cc.orig	2017-04-19 19:06:55 UTC
+--- ui/views/views_delegate.cc.orig	2017-06-05 19:03:30 UTC
 +++ ui/views/views_delegate.cc
-@@ -71,7 +71,7 @@ HICON ViewsDelegate::GetDefaultWindowIco
+@@ -85,7 +85,7 @@ HICON ViewsDelegate::GetDefaultWindowIcon() const {
  bool ViewsDelegate::IsWindowInMetro(gfx::NativeWindow window) const {
    return false;
  }

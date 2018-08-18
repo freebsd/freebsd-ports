@@ -1,6 +1,6 @@
---- build/config/BUILDCONFIG.gn.orig	2017-04-19 19:06:28 UTC
-+++ build/config/BUILDCONFIG.gn
-@@ -131,12 +131,13 @@ declare_args() {
+--- build/config/BUILDCONFIG.gn.orig	2018-05-09 21:05:34.000000000 +0200
++++ build/config/BUILDCONFIG.gn	2018-08-16 02:56:08.556687000 +0200
+@@ -131,14 +131,14 @@
    is_official_build = false
  
    # Whether we're a traditional desktop unix.
@@ -9,14 +9,15 @@
  
    # Set to true when compiling with the Clang compiler. Typically this is used
    # to configure warnings.
-   is_clang = current_os == "mac" || current_os == "ios" ||
--             current_os == "linux" || current_os == "chromeos"
-+             current_os == "linux" || current_os == "chromeos" ||
-+             current_os == "bsd"
- 
-   # Allows the path to a custom target toolchain to be injected as a single
-   # argument, and set as the default toolchain.
-@@ -185,8 +186,8 @@ if (host_toolchain == "") {
+   is_clang =
+       current_os == "mac" || current_os == "ios" || current_os == "chromeos" ||
+       current_os == "fuchsia" || current_os == "android" ||
+-      current_os == "win" ||
++      current_os == "win" || current_os == "bsd" ||
+       (current_os == "linux" && current_cpu != "s390x" &&
+        current_cpu != "s390" && current_cpu != "ppc64" &&
+        current_cpu != "ppc" && current_cpu != "mips" && current_cpu != "mips64")
+@@ -190,8 +190,8 @@
    # TODO(dpranke): Add some sort of assert here that verifies that
    # no toolchain omitted host_toolchain from its toolchain_args().
  
@@ -27,40 +28,95 @@
        # TODO(dpranke) - is_clang normally applies only to the target
        # build, and there is no way to indicate that you want to override
        # it for both the target build *and* the host build. Do we need to
-@@ -222,7 +223,7 @@ if (target_os == "android") {
-   } else {
-     _default_toolchain = "//build/toolchain/android:android_$target_cpu"
-   }
+@@ -225,7 +225,7 @@
+   assert(host_os == "linux" || host_os == "mac",
+          "Android builds are only supported on Linux and Mac hosts.")
+   _default_toolchain = "//build/toolchain/android:android_clang_$target_cpu"
 -} else if (target_os == "chromeos" || target_os == "linux") {
 +} else if (target_os == "chromeos" || target_os == "linux" || target_os == "bsd") {
    # See comments in build/toolchain/cros/BUILD.gn about board compiles.
    if (is_clang) {
      _default_toolchain = "//build/toolchain/linux:clang_$target_cpu"
-@@ -342,8 +343,17 @@ if (current_os == "win" || current_os ==
+@@ -298,6 +298,7 @@
+   is_nacl = false
+   is_posix = false
+   is_win = true
++  is_bsd = false
+ } else if (current_os == "mac") {
+   is_android = false
+   is_chromeos = false
+@@ -308,6 +309,7 @@
    is_nacl = false
    is_posix = true
    is_win = false
++  is_bsd = false
+ } else if (current_os == "android") {
+   is_android = true
+   is_chromeos = false
+@@ -318,6 +320,7 @@
+   is_nacl = false
+   is_posix = true
+   is_win = false
++  is_bsd = false
+ } else if (current_os == "chromeos") {
+   is_android = false
+   is_chromeos = true
+@@ -328,6 +331,7 @@
+   is_nacl = false
+   is_posix = true
+   is_win = false
++  is_bsd = false
+ } else if (current_os == "nacl") {
+   # current_os == "nacl" will be passed by the nacl toolchain definition.
+   # It is not set by default or on the command line. We treat is as a
+@@ -341,6 +345,7 @@
+   is_nacl = true
+   is_posix = true
+   is_win = false
++  is_bsd = false
+ } else if (current_os == "fuchsia") {
+   is_android = false
+   is_chromeos = false
+@@ -351,6 +356,7 @@
+   is_nacl = false
+   is_posix = false
+   is_win = false
++  is_bsd = false
+ } else if (current_os == "ios") {
+   is_android = false
+   is_chromeos = false
+@@ -361,6 +367,7 @@
+   is_nacl = false
+   is_posix = true
+   is_win = false
++  is_bsd = false
+ } else if (current_os == "linux") {
+   is_android = false
+   is_chromeos = false
+@@ -371,6 +378,7 @@
+   is_nacl = false
+   is_posix = true
+   is_win = false
++  is_bsd = false
+ } else if (current_os == "aix") {
+   is_android = false
+   is_chromeos = false
+@@ -381,6 +389,18 @@
+   is_nacl = false
+   is_posix = true
+   is_win = false
++  is_bsd = false
 +} else if (current_os == "bsd") {
 +  is_android = false
 +  is_chromeos = false
++  is_fuchsia = false
 +  is_ios = false
-+  is_linux = false
-+  is_bsd = true
++  is_linux = true
 +  is_mac = false
 +  is_nacl = false
 +  is_posix = true
 +  is_win = false
++  is_bsd = true
  }
--
+ 
  # =============================================================================
- # SOURCES FILTERS
- # =============================================================================
-@@ -412,7 +422,7 @@ if (!is_ios) {
- if (!is_mac && !is_ios) {
-   sources_assignment_filter += [ "*.mm" ]
- }
--if (!is_linux) {
-+if (!is_linux && !is_bsd) {
-   sources_assignment_filter += [
-     "*_linux.h",
-     "*_linux.cc",

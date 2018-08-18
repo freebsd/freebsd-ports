@@ -1,0 +1,10 @@
+--- services/network/BUILD.gn.orig	2018-08-04 19:29:41.578469000 +0200
++++ services/network/BUILD.gn	2018-08-04 19:29:55.745503000 +0200
+@@ -138,7 +138,6 @@
+ 
+   if (is_linux) {
+     deps += [
+-      "//sandbox/linux:sandbox_services",
+       "//services/service_manager/sandbox:sandbox",
+     ]
+   }

@@ -1,6 +1,6 @@
---- base/files/file_path_unittest.cc.orig	2017-04-19 19:06:28 UTC
+--- base/files/file_path_unittest.cc.orig	2017-06-05 19:03:00 UTC
 +++ base/files/file_path_unittest.cc
-@@ -1133,7 +1133,7 @@ TEST_F(FilePathTest, FromUTF8Unsafe_And_
+@@ -1133,7 +1133,7 @@ TEST_F(FilePathTest, FromUTF8Unsafe_And_AsUTF8Unsafe) 
        "\xEF\xBC\xA1\xEF\xBC\xA2\xEF\xBC\xA3.txt" },
    };
  

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iridium
-PORTVERSION=	58.0
-PORTREVISION=	19
+PORTVERSION=	2018.5.67
 CATEGORIES=	www
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
@@ -27,9 +26,11 @@ BUILD_DEPENDS=	gperf:devel/gperf \
 		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR}
 
-LIB_DEPENDS=	libspeechd.so:accessibility/speech-dispatcher \
+LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
+		libspeechd.so:accessibility/speech-dispatcher \
 		libsnappy.so:archivers/snappy \
 		libFLAC.so:audio/flac \
+		libopus.so:audio/opus \
 		libspeex.so:audio/speex \
 		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
@@ -44,22 +45,22 @@ LIB_DEPENDS=	libspeechd.so:accessibility/speech-dispatcher \
 		libpng.so:graphics/png \
 		libwebp.so:graphics/webp \
 		libavcodec.so:multimedia/ffmpeg \
-		libcups.so:print/cups \
+		libopenh264.so:multimedia/openh264 \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libharfbuzz-icu.so:print/harfbuzz-icu \
 		libgcrypt.so:security/libgcrypt \
-		libgnome-keyring.so:security/libgnome-keyring \
+		libsecret-1.so:security/libsecret \
 		libnss3.so:security/nss \
 		libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
-		droid-fonts-ttf>0:x11-fonts/droid-fonts-ttf
+		noto-lite>0:x11-fonts/noto-lite
 
 ONLY_FOR_ARCHS=	amd64 i386
-USES=		bison desktop-file-utils jpeg ninja perl5 \
-		pkgconfig python:2.7,build shebangfix tar:xz
+USES=		bison desktop-file-utils jpeg ninja perl5 pkgconfig \
+		python:2.7,build shebangfix tar:xz
 
 USE_PERL5=	build
 USE_XORG=	x11 xcb xcomposite xcursor xext xdamage xfixes xi \
@@ -77,37 +78,40 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 # replace_gn_files.py script, some parts just turned on/off for target host
 # OS "target_os == is_bsd", like libusb, libpci.
 GN_ARGS+=	clang_use_chrome_plugins=false \
-		enable_media_router=true \
 		enable_nacl=false \
 		enable_one_click_signin=true \
 		enable_remoting=false \
-		enable_webrtc=false \
 		fieldtrial_testing_like_official_build=true \
 		is_clang=true \
 		toolkit_views=true \
 		treat_warnings_as_errors=false \
 		use_allocator="none" \
+		use_allocator_shim=false \
 		use_aura=true \
-		use_cups=true \
-		use_experimental_allocator_shim=false \
+		use_bundled_fontconfig=false \
+		use_custom_libcxx=false \
+		use_gnome_keyring=false \
 		use_gtk3=true \
 		use_lld=true \
 		use_sysroot=false \
+		use_system_freetype=true \
+		use_system_harfbuzz=true \
 		use_system_libjpeg=true \
-		use_system_sqlite=false   # chrome has additional patches
+		extra_cxxflags="-I${LOCALBASE}/include" \
+		extra_ldflags="-L${LOCALBASE}/lib"
 # TODO: investigate building with these options:
-# use_system_harfbuzz use_system_minigbm
+# use_system_minigbm
 GN_BOOTSTRAP_FLAGS=	--no-clean --no-rebuild
 
-SUB_FILES=	iridium-browser.desktop iridium
+SUB_FILES=	iridium-browser.desktop iridium pkg-message
 SUB_LIST+=	COMMENT="${COMMENT}"
 
-OPTIONS_DEFINE=	CODECS DEBUG GCONF KERBEROS
+OPTIONS_DEFINE=	CODECS CUPS DEBUG KERBEROS
 CODECS_DESC=	Compile and enable patented codecs like H.264
 OPTIONS_GROUP=		AUDIO
 OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO SNDIO
 
-OPTIONS_DEFAULT=	ALSA CODECS GCONF KERBEROS
+OPTIONS_DEFAULT=	ALSA CODECS CUPS KERBEROS
 OPTIONS_SUB=		yes
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
@@ -123,19 +127,21 @@ CODECS_VARS_OFF=	GN_ARGS+=ffmpeg_branding="Chromium" \
 			GN_ARGS+=proprietary_codecs=false \
 			GN_ARGS+=enable_hevc_demuxing=false
 
+CUPS_LIB_DEPENDS=	libcups.so:print/cups
+CUPS_VARS=		GN_ARGS+=use_cups=true
+CUPS_VARS_OFF=		GN_ARGS+=use_cups=false
+
 DEBUG_VARS=		BUILDTYPE=Debug \
 			GN_ARGS+=is_debug=true \
+			GN_ARGS+=is_component_buils=false \
 			GN_BOOTSTRAP_FLAGS+=--debug \
-			WANTSPACE="lots of free diskspace (~ 8.5GB)"
+			WANTSPACE="lots of free diskspace (~ 13GB)"
 DEBUG_VARS_OFF=		BUILDTYPE=Release \
 			GN_ARGS+=is_debug=false \
+			GN_ARGS+=is_official_build=true \
 			GN_ARGS+=symbol_level=0 \
 			GN_ARGS+=remove_webcore_debug_symbols=true \
-			WANTSPACE="a fair amount of free diskspace (~ 3.7GB)"
-
-GCONF_USE=		GNOME=gconf2
-GCONF_VARS=		GN_ARGS+=use_gconf=true
-GCONF_VARS_OFF=		GN_ARGS+=use_gconf=false
+			WANTSPACE="a fair amount of free diskspace (~ 6.5GB)"
 
 KERBEROS_VARS=		GN_ARGS+=use_kerberos=true
 KERBEROS_VARS_OFF=	GN_ARGS+=use_kerberos=false
@@ -176,6 +182,11 @@ pre-everything::
 	@${ECHO_MSG} "and ${WANTSPACE}."
 	@${ECHO_MSG}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|@@PACKAGE@@|iridium|' \
+			-e 's|@@MENUNAME@@|Iridium Web Browser|' \
+			${WRKSRC}/chrome/app/resources/manpage.1.in
+
 post-patch-SNDIO-on:
 	@${MKDIR} ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd
 	@${CP} ${FILESDIR}/sndio_output.* ${WRKSRC}/media/audio/sndio
@@ -189,7 +200,7 @@ pre-configure:
 	#./build/linux/unbundle/remove_bundled_libraries.py [list of preserved]
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
-		ffmpeg flac harfbuzz-ng libwebp libxml libxslt snappy yasm || ${FALSE}
+		ffmpeg flac freetype harfbuzz-ng libdrm libusb libwebp libxml libxslt openh264 opus snappy yasm || ${FALSE}
 
 do-configure:
 	# GN generator bootstrapping and generating ninja files
@@ -200,28 +211,23 @@ do-configure:
 		gen --args='${GN_ARGS}' out/${BUILDTYPE}
 
 	# Setup nodejs dependency
-	@${MKDIR} ${WRKSRC}/third_party/node/linux/node-linux-x64/bin
-	${LN} -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/linux/node-linux-x64/bin/node
+	@${MKDIR} ${WRKSRC}/third_party/node/freebsd/node-freebsd-x64/bin
+	${LN} -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/freebsd/node-freebsd-x64/bin/node
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-.for m in font_service test_ime_driver ui
-	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${m}.service \
-		${STAGEDIR}${DATADIR}
-.endfor
-	${INSTALL_MAN} ${WRKSRC}/out/${BUILDTYPE}/chrome.1 ${STAGEDIR}${MANPREFIX}/man/man1/iridium.1
+	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/*.service ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/chrome/app/resources/manpage.1.in \
+		${STAGEDIR}${MANPREFIX}/man/man1/iridium.1
 .for s in 22 24 48 64 128 256
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps
 	${INSTALL_DATA} ${WRKSRC}/chrome/app/theme/chromium/product_logo_${s}.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps/iridium.png
 .endfor
-.for p in chrome_100_percent chrome_200_percent headless_lib keyboard_resources \
-	resources mus_app_resources_100 mus_app_resources_200 mus_app_resources_strings \
-	views_mus_resources
-	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${p}.pak \
-		${STAGEDIR}${DATADIR}
-.endfor
-.for d in icudtl.dat natives_blob.bin snapshot_blob.bin
+	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/*.png ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/*.pak ${STAGEDIR}${DATADIR}
+
+.for d in protoc icudtl.dat mksnapshot natives_blob.bin snapshot_blob.bin v8_context_snapshot.bin
 	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${d} ${STAGEDIR}${DATADIR}
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/chrome \
@@ -232,7 +238,19 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/iridium-browser.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/iridium ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/mksnapshot \
+.for f in libEGL.so libGLESv2.so
+	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/${f} ${STAGEDIR}${DATADIR}
+.endfor
+	@${MKDIR} ${STAGEDIR}${DATADIR}/swiftshader
+.for g in libEGL.so libGLESv2.so
+	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/swiftshader/${g} \
+		${STAGEDIR}${DATADIR}/swiftshader
+.endfor
+
+post-install-DEBUG-on:
+	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/*.so \
+		${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/character_data_generator \
 		${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

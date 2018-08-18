@@ -1,6 +1,6 @@
---- media/capture/video/file_video_capture_device_factory.cc.orig	2017-04-19 19:06:35 UTC
+--- media/capture/video/file_video_capture_device_factory.cc.orig	2017-06-05 19:03:08 UTC
 +++ media/capture/video/file_video_capture_device_factory.cc
-@@ -53,7 +53,7 @@ void FileVideoCaptureDeviceFactory::GetD
+@@ -53,7 +53,7 @@ void FileVideoCaptureDeviceFactory::GetDeviceDescripto
  #elif defined(OS_MACOSX)
        command_line_file_path.value(), kFileVideoCaptureDeviceName,
        VideoCaptureApi::MACOSX_AVFOUNDATION

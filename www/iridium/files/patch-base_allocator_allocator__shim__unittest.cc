@@ -1,6 +1,6 @@
---- base/allocator/allocator_shim_unittest.cc.orig	2017-04-19 19:06:28 UTC
+--- base/allocator/allocator_shim_unittest.cc.orig	2017-06-05 19:03:00 UTC
 +++ base/allocator/allocator_shim_unittest.cc
-@@ -289,7 +289,7 @@ TEST_F(AllocatorShimTest, InterceptLibcS
+@@ -293,7 +293,7 @@ TEST_F(AllocatorShimTest, InterceptLibcSymbols) {
    ASSERT_GE(aligned_allocs_intercepted_by_size[61], 1u);
  #endif  // !OS_WIN
  
@@ -9,7 +9,7 @@
    void* memalign_ptr = memalign(128, 53);
    ASSERT_NE(nullptr, memalign_ptr);
    ASSERT_EQ(0u, reinterpret_cast<uintptr_t>(memalign_ptr) % 128);
-@@ -302,7 +302,7 @@ TEST_F(AllocatorShimTest, InterceptLibcS
+@@ -306,7 +306,7 @@ TEST_F(AllocatorShimTest, InterceptLibcSymbols) {
    ASSERT_GE(aligned_allocs_intercepted_by_alignment[kPageSize], 1u);
    // pvalloc rounds the size up to the next page.
    ASSERT_GE(aligned_allocs_intercepted_by_size[kPageSize], 1u);
@@ -18,7 +18,7 @@
  
    char* realloc_ptr = static_cast<char*>(malloc(10));
    strcpy(realloc_ptr, "foobar");
-@@ -318,13 +318,13 @@ TEST_F(AllocatorShimTest, InterceptLibcS
+@@ -322,13 +322,13 @@ TEST_F(AllocatorShimTest, InterceptLibcSymbols) {
    free(zero_alloc_ptr);
    ASSERT_GE(frees_intercepted_by_addr[Hash(zero_alloc_ptr)], 1u);
  

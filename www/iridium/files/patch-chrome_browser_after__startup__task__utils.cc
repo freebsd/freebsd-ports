@@ -1,6 +1,6 @@
---- chrome/browser/after_startup_task_utils.cc.orig	2017-05-02 19:02:47 UTC
+--- chrome/browser/after_startup_task_utils.cc.orig	2017-06-05 19:03:01 UTC
 +++ chrome/browser/after_startup_task_utils.cc
-@@ -93,7 +93,7 @@ void QueueTask(std::unique_ptr<AfterStar
+@@ -99,7 +99,7 @@ void QueueTask(std::unique_ptr<AfterStartupTask> queue
  
  void SetBrowserStartupIsComplete() {
    DCHECK_CURRENTLY_ON(BrowserThread::UI);

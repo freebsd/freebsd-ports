@@ -1,6 +1,6 @@
---- ui/message_center/views/message_view_factory.cc.orig	2017-04-19 19:06:54 UTC
+--- ui/message_center/views/message_view_factory.cc.orig	2017-06-05 19:03:30 UTC
 +++ ui/message_center/views/message_view_factory.cc
-@@ -43,7 +43,7 @@ MessageView* MessageViewFactory::Create(
+@@ -43,7 +43,7 @@ MessageView* MessageViewFactory::Create(MessageCenterC
        notification_view = new NotificationView(controller, notification);
    }
  

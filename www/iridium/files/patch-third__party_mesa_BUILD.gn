@@ -1,4 +1,4 @@
---- third_party/mesa/BUILD.gn.orig	2017-04-19 19:06:52 UTC
+--- third_party/mesa/BUILD.gn.orig	2017-06-05 19:03:28 UTC
 +++ third_party/mesa/BUILD.gn
 @@ -90,6 +90,10 @@ config("mesa_internal_config") {
      defines += [ "_GNU_SOURCE" ]
@@ -11,13 +11,3 @@
    if (is_win) {
      defines += [
        # Generated files use const only if __cplusplus or __STDC__ is defined.
-@@ -757,7 +761,8 @@ loadable_module("osmesa") {
-   ]
- 
-   # Required for the allocator implementation, which is not used on Mac.
--  if (!is_mac) {
-+  # For BSD, there's no poing to include everything.
-+  if (!is_mac && !is_bsd) {
-     deps += [ "//base" ]
-   }
- 

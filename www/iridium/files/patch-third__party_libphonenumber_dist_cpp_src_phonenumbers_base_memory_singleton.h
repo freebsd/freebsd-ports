@@ -1,6 +1,6 @@
---- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/memory/singleton.h.orig	2017-04-19 19:07:47 UTC
+--- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/memory/singleton.h.orig	2017-06-05 19:04:19 UTC
 +++ third_party/libphonenumber/dist/cpp/src/phonenumbers/base/memory/singleton.h
-@@ -56,7 +56,7 @@ template <class T> boost::once_flag Sing
+@@ -56,7 +56,7 @@ template <class T> boost::once_flag Singleton<T>::flag
  #include "phonenumbers/base/logging.h"
  #include "phonenumbers/base/thread_checker.h"
  

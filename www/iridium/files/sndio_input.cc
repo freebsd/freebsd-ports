@@ -15,11 +15,13 @@
 
 namespace media {
 
+static const SampleFormat kSampleFormat = kSampleFormatS16;
+
 void sndio_in_onmove(void *arg, int delta) {
   NOTIMPLEMENTED();
   SndioAudioInputStream* self = static_cast<SndioAudioInputStream*>(arg);
 
-  self->hw_delay_ = delta - self->params_.GetBytesPerFrame();
+  self->hw_delay_ = delta - self->params_.GetBytesPerFrame(kSampleFormat);
 }
 
 void *sndio_in_threadstart(void *arg) {
@@ -36,9 +38,7 @@ SndioAudioInputStream::SndioAudioInputStream(AudioManagerBase* audio_manager,
     : audio_manager_(audio_manager),
       device_name_(device_name),
       params_(params),
-      bytes_per_buffer_(params.frames_per_buffer() *
-                        (params.channels() * params.bits_per_sample()) /
-                        8),
+      bytes_per_buffer_(params.GetBytesPerBuffer(kSampleFormat)),
       buffer_duration_(base::TimeDelta::FromMicroseconds(
           params.frames_per_buffer() * base::Time::kMicrosecondsPerSecond /
           static_cast<float>(params.sample_rate()))),
@@ -66,7 +66,7 @@ bool SndioAudioInputStream::Open() {
   sio_initpar(&par);
   par.rate = params_.sample_rate();
   par.pchan = params_.channels();
-  par.bits = params_.bits_per_sample();
+  par.bits = SampleFormatToBytesPerChannel(kSampleFormat);
   par.bps = par.bits / 8;
   par.sig = sig = par.bits != 8 ? 1 : 0;
   par.le = SIO_LE_NATIVE;
@@ -88,7 +88,7 @@ bool SndioAudioInputStream::Open() {
 
   if (par.rate  != (unsigned int)params_.sample_rate() ||
       par.pchan != (unsigned int)params_.channels() ||
-      par.bits  != (unsigned int)params_.bits_per_sample() ||
+      par.bits  != (unsigned int)SampleFormatToBytesPerChannel(kSampleFormat) ||
       par.sig   != (unsigned int)sig ||
       (par.bps > 1 && par.le != SIO_LE_NATIVE) ||
       (par.bits != par.bps * 8)) {
@@ -121,31 +121,6 @@ void SndioAudioInputStream::Start(AudioInputCallback* callback) {
 
 void SndioAudioInputStream::ReadAudio() {
   NOTIMPLEMENTED();
-  DCHECK(callback_);
-
-  int num_buffers = sndio_rec_bufsize_ / params_.frames_per_buffer();
-  double normalized_volume = 0.0;
-
-  // Update the AGC volume level once every second. Note that, |volume| is
-  // also updated each time SetVolume() is called through IPC by the
-  // render-side AGC.
-  GetAgcVolume(&normalized_volume);
-
-  while (num_buffers--) {
-    int frames_read = sio_read(device_handle_, audio_buffer_.get(),
-                                         params_.frames_per_buffer());
-    if (frames_read == params_.frames_per_buffer()) {
-      audio_bus_->FromInterleaved(audio_buffer_.get(),
-                                  audio_bus_->frames(),
-                                  params_.bits_per_sample() / 8);
-      callback_->OnData(
-          this, audio_bus_.get(), hw_delay_, normalized_volume);
-    } else {
-      LOG(WARNING) << "sio_read() returning less than expected frames: "
-                   << frames_read << " vs. " << params_.frames_per_buffer()
-                   << ". Dropping this buffer.";
-    }
-  }
 }
 
 void SndioAudioInputStream::Stop() {
@@ -185,6 +160,11 @@ double SndioAudioInputStream::GetVolume() {
 
 bool SndioAudioInputStream::IsMuted() {
   return false;
+}
+
+void SndioAudioInputStream::SetOutputDeviceForAec(
+    const std::string& output_device_id) {
+// Not supported. Do nothing.
 }
 
 }  // namespace media
