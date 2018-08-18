@@ -3,14 +3,12 @@
 // found in the LICENSE file.
 
 #include "base/metrics/histogram_macros.h"
+#include "base/memory/ptr_util.h"
 
 #include "media/audio/openbsd/audio_manager_openbsd.h"
 
 #include "media/audio/audio_device_description.h"
 #include "media/audio/audio_output_dispatcher.h"
-#if defined(USE_PULSEAUDIO)
-#include "media/audio/pulse/audio_manager_pulse.h"
-#endif
 #if defined(USE_SNDIO)
 #include "media/audio/sndio/sndio_input.h"
 #include "media/audio/sndio/sndio_output.h"
@@ -48,10 +46,6 @@ bool AudioManagerOpenBSD::HasAudioInputDevices() {
   return true;
 }
 
-void AudioManagerOpenBSD::ShowAudioInputSettings() {
-  NOTIMPLEMENTED();
-}
-
 void AudioManagerOpenBSD::GetAudioInputDeviceNames(
     AudioDeviceNames* device_names) {
   DCHECK(device_names->empty());
@@ -79,15 +73,12 @@ AudioParameters AudioManagerOpenBSD::GetInputStreamParameters(
 
   return AudioParameters(
       AudioParameters::AUDIO_PCM_LOW_LATENCY, CHANNEL_LAYOUT_STEREO,
-      kDefaultSampleRate, 16, buffer_size);
+      kDefaultSampleRate, buffer_size);
 }
 
-AudioManagerOpenBSD::AudioManagerOpenBSD(
-    scoped_refptr<base::SingleThreadTaskRunner> task_runner,
-    scoped_refptr<base::SingleThreadTaskRunner> worker_task_runner,
-    AudioLogFactory* audio_log_factory)
-    : AudioManagerBase(std::move(task_runner),
-                       std::move(worker_task_runner),
+AudioManagerOpenBSD::AudioManagerOpenBSD(std::unique_ptr<AudioThread> audio_thread,
+                                         AudioLogFactory* audio_log_factory)
+    : AudioManagerBase(std::move(audio_thread),
                        audio_log_factory) {
   DLOG(WARNING) << "AudioManagerOpenBSD";
   SetMaxOutputStreamsAllowed(kMaxOutputStreams);
@@ -139,10 +130,8 @@ AudioParameters AudioManagerOpenBSD::GetPreferredOutputStreamParameters(
   ChannelLayout channel_layout = CHANNEL_LAYOUT_STEREO;
   int sample_rate = kDefaultSampleRate;
   int buffer_size = kDefaultOutputBufferSize;
-  int bits_per_sample = 16;
   if (input_params.IsValid()) {
     sample_rate = input_params.sample_rate();
-    bits_per_sample = input_params.bits_per_sample();
     channel_layout = input_params.channel_layout();
     buffer_size = std::min(buffer_size, input_params.frames_per_buffer());
   }
@@ -153,7 +142,7 @@ AudioParameters AudioManagerOpenBSD::GetPreferredOutputStreamParameters(
 
   return AudioParameters(
       AudioParameters::AUDIO_PCM_LOW_LATENCY, channel_layout,
-      sample_rate, bits_per_sample, buffer_size);
+      sample_rate, buffer_size);
 }
 
 AudioInputStream* AudioManagerOpenBSD::MakeInputStream(
@@ -170,34 +159,17 @@ AudioOutputStream* AudioManagerOpenBSD::MakeOutputStream(
 }
 #endif
 
-ScopedAudioManagerPtr CreateAudioManager(
-    scoped_refptr<base::SingleThreadTaskRunner> task_runner,
-    scoped_refptr<base::SingleThreadTaskRunner> worker_task_runner,
+std::unique_ptr<media::AudioManager> CreateAudioManager(
+    std::unique_ptr<AudioThread> audio_thread,
     AudioLogFactory* audio_log_factory) {
   DLOG(WARNING) << "CreateAudioManager";
-#if defined(USE_PULSEAUDIO)
-  // Do not move task runners when creating AudioManagerPulse.
-  // If the creation fails, we need to use the task runners to create other
-  // AudioManager implementations.
-  std::unique_ptr<AudioManagerPulse, AudioManagerDeleter> manager(
-      new AudioManagerPulse(task_runner, worker_task_runner,
-                            audio_log_factory));
-  if (manager->Init()) {
-    UMA_HISTOGRAM_ENUMERATION("Media.OpenBSDAudioIO", kPulse, kAudioIOMax + 1);
-    return std::move(manager);
-  }
-  DVLOG(1) << "PulseAudio is not available on the OS";
-#endif
-
 #if defined(USE_SNDIO)
   UMA_HISTOGRAM_ENUMERATION("Media.OpenBSDAudioIO", kSndio, kAudioIOMax + 1);
-  return ScopedAudioManagerPtr(
-      new AudioManagerOpenBSD(std::move(task_runner),
-                              std::move(worker_task_runner),audio_log_factory));
+  return std::make_unique<AudioManagerOpenBSD>(std::move(audio_thread),
+                                            audio_log_factory);
 #else
-  return ScopedAudioManagerPtr(
-      new FakeAudioManager(std::move(task_runner),
-                           std::move(worker_task_runner), audio_log_factory));
+  return std::make_unique<FakeAudioManager>(std::move(audio_thread),
+                                            audio_log_factory);
 #endif
 
 }

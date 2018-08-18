@@ -1,6 +1,6 @@
---- components/storage_monitor/BUILD.gn.orig	2017-04-19 19:06:33 UTC
-+++ components/storage_monitor/BUILD.gn
-@@ -65,6 +65,21 @@ static_library("storage_monitor") {
+--- components/storage_monitor/BUILD.gn.orig	2017-12-15 02:04:15.000000000 +0100
++++ components/storage_monitor/BUILD.gn	2017-12-30 01:29:29.688538000 +0100
+@@ -65,6 +65,17 @@
      ]
    }
  
@@ -8,10 +8,6 @@
 +    sources -= [
 +      "mtab_watcher_linux.cc",
 +      "mtab_watcher_linux.h",
-+      "storage_monitor_linux.cc",
-+      "storage_monitor_linux.h",
-+      "udev_util_linux.cc",
-+      "udev_util_linux.h",
 +    ]
 +    sources += [
 +      "storage_monitor_freebsd.cc",

@@ -1,16 +1,16 @@
---- chrome/browser/chrome_browser_main.cc.orig	2017-04-24 14:40:28 UTC
-+++ chrome/browser/chrome_browser_main.cc
-@@ -181,7 +181,7 @@
- #include "chrome/browser/lifetime/application_lifetime.h"
- #endif  // defined(OS_ANDROID)
+--- chrome/browser/chrome_browser_main.cc.orig	2018-06-13 00:10:04.000000000 +0200
++++ chrome/browser/chrome_browser_main.cc	2018-07-14 13:55:52.288113000 +0200
+@@ -211,7 +211,7 @@
+ #include "chromeos/settings/cros_settings_names.h"
+ #endif  // defined(OS_CHROMEOS)
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
  #include "chrome/browser/first_run/upgrade_util_linux.h"
  #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
  
-@@ -276,7 +276,7 @@
- #endif
+@@ -251,7 +251,7 @@
+ #endif  // defined(OS_WIN)
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
 -    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
@@ -18,43 +18,29 @@
  #include "chrome/browser/metrics/desktop_session_duration/desktop_session_duration_tracker.h"
  #endif
  
-@@ -479,10 +479,10 @@ void RegisterComponentsForUpdate() {
+@@ -1342,10 +1342,10 @@
+   }
+ #endif  // !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
  
- #if !defined(OS_ANDROID)
-   RegisterPepperFlashComponent(cus);
--#if !defined(OS_CHROMEOS)
-+#if !defined(OS_CHROMEOS) && !defined(OS_BSD)
-   RegisterSwiftShaderComponent(cus);
-   RegisterWidevineCdmComponent(cus);
--#endif  // !defined(OS_CHROMEOS)
-+#endif  // !defined(OS_CHROMEOS) && !defined(OS_BSD)
- #endif  // !defined(OS_ANDROID)
+-#if defined(OS_LINUX) || defined(OS_OPENBSD)
++#if defined(OS_LINUX)
+   // Set the product channel for crash reports.
+   breakpad::SetChannelCrashKey(chrome::GetChannelName());
+-#endif  // defined(OS_LINUX) || defined(OS_OPENBSD)
++#endif  // defined(OS_LINUX)
  
- #if !defined(DISABLE_NACL) && !defined(OS_ANDROID)
-@@ -764,7 +764,7 @@ void ChromeBrowserMainParts::SetupFieldT
-   field_trial_synchronizer_ = new FieldTrialSynchronizer();
+ #if defined(OS_MACOSX)
+   // Get the Keychain API to register for distributed notifications on the main
+@@ -1369,7 +1369,7 @@
+   }
  
  #if defined(OS_WIN) || defined(OS_MACOSX) || \
 -    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
 +    (defined(OS_LINUX) && !defined(OS_CHROMEOS) || defined(OS_BSD))
    metrics::DesktopSessionDurationTracker::Initialize();
  #endif
- 
-@@ -1194,11 +1194,11 @@ int ChromeBrowserMainParts::PreCreateThr
-   }
- #endif  // !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
- 
--#if defined(OS_LINUX) || defined(OS_OPENBSD)
-+#if defined(OS_LINUX) || defined(OS_BSD)
-   // Set the product channel for crash reports.
-   base::debug::SetCrashKeyValue(crash_keys::kChannel,
-                                 chrome::GetChannelString());
--#endif  // defined(OS_LINUX) || defined(OS_OPENBSD)
-+#endif  // defined(OS_LINUX) || defined(OS_BSD)
- 
-   // Initialize tracking synchronizer system.
-   tracking_synchronizer_ = new metrics::TrackingSynchronizer(
-@@ -1387,7 +1387,7 @@ void ChromeBrowserMainParts::PreBrowserS
+   metrics::RendererUptimeTracker::Initialize();
+@@ -1514,7 +1514,7 @@
  
  // Start the tab manager here so that we give the most amount of time for the
  // other services to start up before we start adjusting the oom priority.

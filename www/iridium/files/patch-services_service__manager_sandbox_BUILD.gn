@@ -1,0 +1,11 @@
+--- services/service_manager/sandbox/BUILD.gn.orig	2018-03-03 20:51:40.189699000 +0100
++++ services/service_manager/sandbox/BUILD.gn	2018-03-03 20:51:56.739150000 +0100
+@@ -23,7 +23,7 @@
+   deps = [
+     "//base",
+   ]
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     sources += [
+       "linux/bpf_base_policy_linux.cc",
+       "linux/bpf_base_policy_linux.h",

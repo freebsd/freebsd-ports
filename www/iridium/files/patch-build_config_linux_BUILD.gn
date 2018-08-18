@@ -1,0 +1,11 @@
+--- build/config/linux/BUILD.gn.orig	2018-07-19 22:09:59.968726000 +0200
++++ build/config/linux/BUILD.gn	2018-07-19 22:10:16.334896000 +0200
+@@ -28,7 +28,7 @@
+   }
+ 
+   if ((!is_chromeos || default_toolchain != "//build/toolchain/cros:target") &&
+-      (!use_custom_libcxx || current_cpu == "mipsel")) {
++      (!use_custom_libcxx || current_cpu == "mipsel") && !is_bsd) {
+     libs = [ "atomic" ]
+   }
+ }

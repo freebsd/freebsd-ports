@@ -1,0 +1,22 @@
+--- services/device/hid/BUILD.gn.orig	2018-03-04 02:07:03.748216000 +0100
++++ services/device/hid/BUILD.gn	2018-03-04 02:10:30.278997000 +0100
+@@ -52,6 +52,19 @@
+     deps += [ "//device/udev_linux" ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "hid_connection_linux.cc",
++      "hid_connection_linux.h",
++    ]
++    sources += [
++      "hid_connection_freebsd.cc",
++      "hid_connection_freebsd.h",
++      "hid_service_freebsd.cc",
++      "hid_service_freebsd.h",
++    ]
++  }
++
+   if (is_chromeos) {
+     deps += [ "//chromeos" ]
+   }

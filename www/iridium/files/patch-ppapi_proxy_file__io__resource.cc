@@ -1,6 +1,6 @@
---- ppapi/proxy/file_io_resource.cc.orig	2017-04-19 19:06:36 UTC
+--- ppapi/proxy/file_io_resource.cc.orig	2017-06-05 19:03:10 UTC
 +++ ppapi/proxy/file_io_resource.cc
-@@ -285,17 +285,19 @@ int32_t FileIOResource::Write(int64_t of
+@@ -285,17 +285,19 @@ int32_t FileIOResource::Write(int64_t offset,
  
    if (check_quota_) {
      int64_t increase = 0;
@@ -24,7 +24,7 @@
      }
  
      if (increase > 0) {
-@@ -319,7 +321,7 @@ int32_t FileIOResource::Write(int64_t of
+@@ -319,7 +321,7 @@ int32_t FileIOResource::Write(int64_t offset,
        if (append)
          append_mode_write_amount_ += bytes_to_write;
        else
@@ -33,7 +33,7 @@
      }
    }
    return WriteValidated(offset, buffer, bytes_to_write, callback);
-@@ -597,9 +599,9 @@ void FileIOResource::OnRequestWriteQuota
+@@ -597,9 +599,9 @@ void FileIOResource::OnRequestWriteQuotaComplete(
    } else {
      DCHECK_LE(offset + bytes_to_write - max_written_offset_, granted);
  

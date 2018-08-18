@@ -1,6 +1,6 @@
---- base/debug/thread_heap_usage_tracker.cc.orig	2017-04-19 19:06:28 UTC
+--- base/debug/thread_heap_usage_tracker.cc.orig	2017-06-05 19:03:00 UTC
 +++ base/debug/thread_heap_usage_tracker.cc
-@@ -16,11 +16,13 @@
+@@ -16,10 +16,12 @@
  #include "base/threading/thread_local_storage.h"
  #include "build/build_config.h"
  
@@ -9,8 +9,7 @@
  #include <malloc/malloc.h>
  #else
  #include <malloc.h>
- #endif
 +#endif
+ #endif
  
  namespace base {
- namespace debug {

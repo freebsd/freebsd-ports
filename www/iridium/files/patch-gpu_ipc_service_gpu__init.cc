@@ -1,38 +1,29 @@
---- gpu/ipc/service/gpu_init.cc.orig	2017-04-19 19:06:34 UTC
-+++ gpu/ipc/service/gpu_init.cc
-@@ -76,7 +76,7 @@ void GetGpuInfoFromCommandLine(gpu::GPUI
-   }
+--- gpu/ipc/service/gpu_init.cc.orig	2018-06-13 00:10:19.000000000 +0200
++++ gpu/ipc/service/gpu_init.cc	2018-07-19 14:45:14.322631000 +0200
+@@ -70,7 +70,7 @@
  }
+ #endif  // defined(OS_MACOSX)
  
--#if !defined(OS_MACOSX)
-+#if !defined(OS_MACOSX) && !defined(OS_BSD)
- void CollectGraphicsInfo(gpu::GPUInfo& gpu_info) {
-   TRACE_EVENT0("gpu,startup", "Collect Graphics Info");
- 
-@@ -95,7 +95,7 @@ void CollectGraphicsInfo(gpu::GPUInfo& g
-       break;
-   }
- }
--#endif  // defined(OS_MACOSX)
-+#endif  // defined(OS_MACOSX) && defined(OS_BSD)
- 
- #if defined(OS_LINUX) && !defined(OS_CHROMEOS)
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(IS_CHROMECAST)
++#if defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(IS_CHROMECAST) && !defined(OS_BSD)
  bool CanAccessNvidiaDeviceFile() {
-@@ -194,7 +194,7 @@ bool GpuInit::InitializeAndStartSandbox(
-   // By skipping the following code on Mac, we don't really lose anything,
-   // because the basic GPU information is passed down from the host process.
-   base::TimeTicks before_collect_context_graphics_info = base::TimeTicks::Now();
--#if !defined(OS_MACOSX)
-+#if !defined(OS_MACOSX) && !defined(OS_BSD)
-   CollectGraphicsInfo(gpu_info_);
-   if (gpu_info_.context_info_state == gpu::kCollectInfoFatalFailure)
+   bool res = true;
+   base::AssertBlockingAllowed();
+@@ -106,7 +106,7 @@
+   // crash during feature collection.
+   gpu::SetKeysForCrashLogging(gpu_info_);
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_BSD)
+   if (gpu_info_.gpu.vendor_id == 0x10de &&  // NVIDIA
+       gpu_info_.driver_vendor == "NVIDIA" && !CanAccessNvidiaDeviceFile())
      return false;
-@@ -211,7 +211,7 @@ bool GpuInit::InitializeAndStartSandbox(
-     gpu::ApplyGpuDriverBugWorkarounds(
-         gpu_info_, const_cast<base::CommandLine*>(&command_line));
-   }
--#endif  // !defined(OS_MACOSX)
-+#endif  // !defined(OS_MACOSX) && !defined(OS_BSD)
+@@ -172,7 +172,7 @@
+   sandbox_helper_->PreSandboxStartup();
  
-   gpu_feature_info_ = gpu::GetGpuFeatureInfo(gpu_info_, command_line);
- 
+   bool attempted_startsandbox = false;
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) && !defined(OS_BSD)
+   // On Chrome OS ARM Mali, GPU driver userspace creates threads when
+   // initializing a GL context, so start the sandbox early.
+   // TODO(zmo): Need to collect OS version before this.

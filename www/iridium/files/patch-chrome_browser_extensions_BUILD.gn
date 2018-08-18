@@ -1,24 +1,6 @@
---- chrome/browser/extensions/BUILD.gn.orig	2017-04-19 19:06:29 UTC
-+++ chrome/browser/extensions/BUILD.gn
-@@ -1040,7 +1040,7 @@ static_library("extensions") {
-     sources -= [ "global_shortcut_listener_ozone.cc" ]
-   }
- 
--  if (is_linux) {
-+  if (is_linux || is_bsd) {
-     deps += [ "//build/linux:fontconfig" ]
- 
-     if (use_dbus) {
-@@ -1100,7 +1100,7 @@ static_library("extensions") {
-     ]
-   }
- 
--  if (is_win || (is_linux && !is_chromeos)) {
-+  if (is_win || ((is_linux || is_bsd) && !is_chromeos)) {
-     sources += [
-       "api/input_ime/input_ime_api.cc",
-       "api/input_ime/input_ime_api.h",
-@@ -1133,6 +1133,12 @@ static_library("extensions") {
+--- chrome/browser/extensions/BUILD.gn.orig	2017-12-15 02:04:08.000000000 +0100
++++ chrome/browser/extensions/BUILD.gn	2017-12-30 01:58:47.411895000 +0100
+@@ -1117,6 +1117,12 @@
      defines += [ "ENABLE_HOTWORDING" ]
    }
  
@@ -30,4 +12,4 @@
 +
    if (enable_service_discovery) {
      sources += [
-       "api/mdns/dns_sd_delegate.cc",
+       "api/mdns/mdns_api.cc",

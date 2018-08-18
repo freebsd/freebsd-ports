@@ -1,34 +1,29 @@
---- chrome/browser/about_flags.cc.orig	2017-04-19 19:06:29 UTC
-+++ chrome/browser/about_flags.cc
-@@ -856,7 +856,7 @@ const FeatureEntry kFeatureEntries[] = {
-      kOsLinux | kOsCrOS | kOsWin | kOsAndroid,
-      ENABLE_DISABLE_VALUE_TYPE(switches::kEnableSmoothScrolling,
-                                switches::kDisableSmoothScrolling)},
--#if defined(USE_AURA) || defined(OS_LINUX)
-+#if defined(USE_AURA) || defined(OS_LINUX) || defined(OS_BSD)
-     {"overlay-scrollbars", IDS_FLAGS_OVERLAY_SCROLLBARS_NAME,
-      IDS_FLAGS_OVERLAY_SCROLLBARS_DESCRIPTION,
-      // Uses the system preference on Mac (a different implementation).
-@@ -1374,11 +1374,11 @@ const FeatureEntry kFeatureEntries[] = {
-      ENABLE_DISABLE_VALUE_TYPE(switches::kEnableTranslateNewUX,
-                                switches::kDisableTranslateNewUX)},
- #endif  // OS_MACOSX
--#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_BSD)
-     {"translate-2016q2-ui", IDS_FLAGS_TRANSLATE_2016Q2_UI_NAME,
-      IDS_FLAGS_TRANSLATE_2016Q2_UI_DESCRIPTION, kOsCrOS | kOsWin | kOsLinux,
-      FEATURE_VALUE_TYPE(translate::kTranslateUI2016Q2)},
--#endif  // OS_LINUX || OS_WIN || OS_CHROMEOS
-+#endif  // OS_LINUX || OS_WIN || OS_CHROMEOS || OS_BSD
-     {"translate-lang-by-ulp", IDS_FLAGS_TRANSLATE_LANGUAGE_BY_ULP_NAME,
-      IDS_FLAGS_TRANSLATE_LANGUAGE_BY_ULP_DESCRIPTION, kOsAll,
-      FEATURE_VALUE_TYPE(translate::kTranslateLanguageByULP)},
-@@ -1802,7 +1802,7 @@ const FeatureEntry kFeatureEntries[] = {
-      IDS_FLAGS_ENABLE_MATERIAL_DESIGN_EXTENSIONS_DESCRIPTION, kOsDesktop,
+--- chrome/browser/about_flags.cc.orig	2018-05-09 21:05:36.000000000 +0200
++++ chrome/browser/about_flags.cc	2018-08-16 03:29:45.979149000 +0200
+@@ -593,7 +593,7 @@
+      switches::kForceDirectionRTL},
+ };
+ 
+-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
+ // Feature used to enable the identification of open tabs given URLs in
+ // suggestions, and converting those suggestions to ones that allow switching to
+ // the tab if found.  Currently only on the desktop. Includes button option
+@@ -2441,7 +2441,7 @@
+      flag_descriptions::kEnableMaterialDesignExtensionsDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kMaterialDesignExtensions)},
  #endif  // ENABLE_EXTENSIONS
 -#if defined(OS_WIN) || defined(OS_LINUX)
 +#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_BSD)
-     {"enable-input-ime-api", IDS_FLAGS_ENABLE_INPUT_IME_API_NAME,
-      IDS_FLAGS_ENABLE_INPUT_IME_API_DESCRIPTION, kOsWin | kOsLinux,
+     {"enable-input-ime-api", flag_descriptions::kEnableInputImeApiName,
+      flag_descriptions::kEnableInputImeApiDescription, kOsWin | kOsLinux,
       ENABLE_DISABLE_VALUE_TYPE(switches::kEnableInputImeAPI,
+@@ -3058,7 +3058,7 @@
+      flag_descriptions::kLeftToRightUrlsDescription, kOsDesktop,
+      FEATURE_VALUE_TYPE(features::kLeftToRightUrls)},
+ 
+-#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_WIN) || defined(OS_BSD)
+     {"omnibox-entity-suggestions",
+      flag_descriptions::kOmniboxEntitySuggestionsName,
+      flag_descriptions::kOmniboxEntitySuggestionsDescription, kOsDesktop,

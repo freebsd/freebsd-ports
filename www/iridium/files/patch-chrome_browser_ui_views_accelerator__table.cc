@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/accelerator_table.cc.orig	2017-04-19 19:06:30 UTC
-+++ chrome/browser/ui/views/accelerator_table.cc
-@@ -54,7 +54,7 @@ const AcceleratorMapping kAcceleratorMap
+--- chrome/browser/ui/views/accelerator_table.cc.orig	2018-05-09 21:05:40.000000000 +0200
++++ chrome/browser/ui/views/accelerator_table.cc	2018-08-16 09:05:20.123832000 +0200
+@@ -48,7 +48,7 @@
    { ui::VKEY_S, kPlatformModifier, IDC_SAVE_PAGE },
    { ui::VKEY_9, kPlatformModifier, IDC_SELECT_LAST_TAB },
    { ui::VKEY_NUMPAD9, kPlatformModifier, IDC_SELECT_LAST_TAB },
@@ -9,7 +9,7 @@
    { ui::VKEY_9, ui::EF_ALT_DOWN, IDC_SELECT_LAST_TAB },
    { ui::VKEY_NUMPAD9, ui::EF_ALT_DOWN, IDC_SELECT_LAST_TAB },
    { ui::VKEY_NEXT, ui::EF_CONTROL_DOWN | ui::EF_SHIFT_DOWN, IDC_MOVE_TAB_NEXT },
-@@ -84,7 +84,7 @@ const AcceleratorMapping kAcceleratorMap
+@@ -78,7 +78,7 @@
    { ui::VKEY_NUMPAD7, kPlatformModifier, IDC_SELECT_TAB_6 },
    { ui::VKEY_8, kPlatformModifier, IDC_SELECT_TAB_7 },
    { ui::VKEY_NUMPAD8, kPlatformModifier, IDC_SELECT_TAB_7 },
@@ -18,7 +18,7 @@
    { ui::VKEY_1, ui::EF_ALT_DOWN, IDC_SELECT_TAB_0 },
    { ui::VKEY_NUMPAD1, ui::EF_ALT_DOWN, IDC_SELECT_TAB_0 },
    { ui::VKEY_2, ui::EF_ALT_DOWN, IDC_SELECT_TAB_1 },
-@@ -129,7 +129,7 @@ const AcceleratorMapping kAcceleratorMap
+@@ -123,7 +123,7 @@
  #endif  // !OS_MACOSX
  
    // Platform-specific key maps.

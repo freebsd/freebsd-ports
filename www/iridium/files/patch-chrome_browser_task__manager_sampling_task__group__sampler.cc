@@ -1,4 +1,4 @@
---- chrome/browser/task_manager/sampling/task_group_sampler.cc.orig	2017-04-19 19:06:30 UTC
+--- chrome/browser/task_manager/sampling/task_group_sampler.cc.orig	2017-06-05 19:03:03 UTC
 +++ chrome/browser/task_manager/sampling/task_group_sampler.cc
 @@ -36,9 +36,9 @@ TaskGroupSampler::TaskGroupSampler(
      const OnCpuRefreshCallback& on_cpu_refresh,
@@ -24,7 +24,7 @@
        on_process_priority_callback_(on_process_priority) {
    DCHECK(blocking_pool_runner.get());
  
-@@ -80,7 +80,7 @@ void TaskGroupSampler::Refresh(int64_t r
+@@ -80,7 +80,7 @@ void TaskGroupSampler::Refresh(int64_t refresh_flags) 
          on_memory_refresh_callback_);
    }
  
@@ -33,7 +33,7 @@
    if (TaskManagerObserver::IsResourceRefreshEnabled(REFRESH_TYPE_IDLE_WAKEUPS,
                                                      refresh_flags)) {
      base::PostTaskAndReplyWithResult(
-@@ -89,7 +89,7 @@ void TaskGroupSampler::Refresh(int64_t r
+@@ -89,7 +89,7 @@ void TaskGroupSampler::Refresh(int64_t refresh_flags) 
          base::Bind(&TaskGroupSampler::RefreshIdleWakeupsPerSecond, this),
          on_idle_wakeups_callback_);
    }

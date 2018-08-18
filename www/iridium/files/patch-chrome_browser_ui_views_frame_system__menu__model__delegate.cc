@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/system_menu_model_delegate.cc.orig	2017-04-19 19:06:30 UTC
+--- chrome/browser/ui/views/frame/system_menu_model_delegate.cc.orig	2017-06-05 19:03:03 UTC
 +++ chrome/browser/ui/views/frame/system_menu_model_delegate.cc
 @@ -13,7 +13,7 @@
  #include "components/sessions/core/tab_restore_service.h"
@@ -9,7 +9,7 @@
  #include "chrome/common/pref_names.h"
  #include "components/prefs/pref_service.h"
  #endif
-@@ -29,7 +29,7 @@ SystemMenuModelDelegate::~SystemMenuMode
+@@ -29,7 +29,7 @@ SystemMenuModelDelegate::~SystemMenuModelDelegate() {
  }
  
  bool SystemMenuModelDelegate::IsCommandIdChecked(int command_id) const {

@@ -1,6 +1,6 @@
---- chrome/browser/task_manager/sampling/task_group_sampler.h.orig	2017-04-19 19:06:30 UTC
+--- chrome/browser/task_manager/sampling/task_group_sampler.h.orig	2017-06-05 19:03:03 UTC
 +++ chrome/browser/task_manager/sampling/task_group_sampler.h
-@@ -45,9 +45,9 @@ class TaskGroupSampler : public base::Re
+@@ -45,9 +45,9 @@ class TaskGroupSampler : public base::RefCountedThread
    using OnCpuRefreshCallback = base::Callback<void(double)>;
    using OnMemoryRefreshCallback = base::Callback<void(MemoryUsageStats)>;
    using OnIdleWakeupsCallback = base::Callback<void(int)>;
@@ -12,7 +12,7 @@
    using OnProcessPriorityCallback = base::Callback<void(bool)>;
  
    TaskGroupSampler(
-@@ -56,9 +56,9 @@ class TaskGroupSampler : public base::Re
+@@ -56,9 +56,9 @@ class TaskGroupSampler : public base::RefCountedThread
        const OnCpuRefreshCallback& on_cpu_refresh,
        const OnMemoryRefreshCallback& on_memory_refresh,
        const OnIdleWakeupsCallback& on_idle_wakeups,
@@ -24,7 +24,7 @@
        const OnProcessPriorityCallback& on_process_priority);
  
    // Refreshes the expensive process' stats (CPU usage, memory usage, and idle
-@@ -73,9 +73,9 @@ class TaskGroupSampler : public base::Re
+@@ -73,9 +73,9 @@ class TaskGroupSampler : public base::RefCountedThread
    double RefreshCpuUsage();
    MemoryUsageStats RefreshMemoryUsage();
    int RefreshIdleWakeupsPerSecond();
@@ -36,7 +36,7 @@
    bool RefreshProcessPriority();
  
    // The process that holds the handle that we own so that we can use it for
-@@ -93,9 +93,9 @@ class TaskGroupSampler : public base::Re
+@@ -93,9 +93,9 @@ class TaskGroupSampler : public base::RefCountedThread
    const OnCpuRefreshCallback on_cpu_refresh_callback_;
    const OnMemoryRefreshCallback on_memory_refresh_callback_;
    const OnIdleWakeupsCallback on_idle_wakeups_callback_;

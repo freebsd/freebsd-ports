@@ -1,6 +1,6 @@
---- net/BUILD.gn.orig	2017-04-19 21:06:36.000000000 +0200
-+++ net/BUILD.gn	2017-07-05 02:17:00.063914000 +0200
-@@ -79,7 +79,7 @@
+--- net/BUILD.gn.orig	2017-12-15 02:04:22.000000000 +0100
++++ net/BUILD.gn	2017-12-30 02:46:23.419099000 +0100
+@@ -99,7 +99,7 @@
    net_configs += [ "//build/config/linux/gconf" ]
  }
  
@@ -9,10 +9,12 @@
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1824,6 +1824,17 @@
-       sources -= [ "disk_cache/blockfile/file_posix.cc" ]
-     }
+@@ -1954,6 +1954,17 @@
+       ]
  
+       sources -= [ "disk_cache/blockfile/file_posix.cc" ]
++    }
++
 +    if (is_bsd) {
 +      sources -= [
 +         "base/address_tracker_linux.cc",
@@ -22,64 +24,6 @@
 +         "base/network_interfaces_linux.cc",
 +      ]
 +      sources += [ "base/network_interfaces_freebsd.cc" ]
-+    }
-+
+     }
+ 
      if (is_ios || is_mac) {
-       sources += [
-         "base/mac/url_conversions.h",
-@@ -2773,7 +2784,7 @@
-   }
- }
- 
--if (is_linux || is_mac) {
-+if (is_linux || is_bsd || is_mac) {
-   executable("cachetool") {
-     testonly = true
-     sources = [
-@@ -2802,7 +2813,7 @@
-   }
- }
- 
--if (is_linux) {
-+if (is_linux || is_bsd) {
-   static_library("epoll_server") {
-     sources = [
-       "tools/epoll_server/epoll_server.cc",
-@@ -2906,7 +2917,7 @@
-   }
- }
- 
--if (is_android || is_linux) {
-+if (is_android || is_linux || is_bsd) {
-   executable("disk_cache_memory_test") {
-     testonly = true
-     sources = [
-@@ -4767,7 +4778,7 @@
-     "third_party/nist-pkits/",
-   ]
- 
--  if (is_linux || is_mac || is_win) {
-+  if (is_linux || is_bsd || is_mac || is_win) {
-     deps += [
-       "//third_party/pyftpdlib/",
-       "//third_party/pywebsocket/",
-@@ -4790,7 +4801,7 @@
-   if (is_desktop_linux) {
-     deps += [ ":epoll_quic_tools" ]
-   }
--  if (is_linux) {
-+  if (is_linux || is_bsd) {
-     sources += [
-       "tools/quic/chlo_extractor_test.cc",
-       "tools/quic/end_to_end_test.cc",
-@@ -4850,6 +4861,10 @@
- 
-   if (is_chromeos) {
-     sources -= [ "proxy/proxy_config_service_linux_unittest.cc" ]
-+  }
-+
-+  if (is_bsd) {
-+    sources -= [ "base/address_tracker_linux_unittest.cc" ]
-   }
- 
-   if (!is_proto_quic && v8_use_external_startup_data) {

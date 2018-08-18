@@ -1,15 +1,15 @@
---- chrome/browser/chrome_content_browser_client.h.orig	2017-04-19 19:06:29 UTC
-+++ chrome/browser/chrome_content_browser_client.h
-@@ -270,12 +270,12 @@ class ChromeContentBrowserClient : publi
+--- chrome/browser/chrome_content_browser_client.h.orig	2018-06-13 00:10:04.000000000 +0200
++++ chrome/browser/chrome_content_browser_client.h	2018-07-14 14:13:02.407023000 +0200
+@@ -299,12 +299,12 @@
+   void OverridePageVisibilityState(
        content::RenderFrameHost* render_frame_host,
-       blink::WebPageVisibilityState* visibility_state) override;
- 
+       blink::mojom::PageVisibilityState* visibility_state) override;
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
    void GetAdditionalMappedFilesForChildProcess(
        const base::CommandLine& command_line,
        int child_process_id,
-       content::FileDescriptorInfo* mappings) override;
+       content::PosixFileDescriptorInfo* mappings) override;
 -#endif  // defined(OS_POSIX) && !defined(OS_MACOSX)
 +#endif  // defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
  #if defined(OS_WIN)

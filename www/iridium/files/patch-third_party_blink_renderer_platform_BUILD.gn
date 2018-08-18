@@ -1,0 +1,10 @@
+--- third_party/blink/renderer/platform/BUILD.gn.orig	2018-07-19 20:33:30.438352000 +0200
++++ third_party/blink/renderer/platform/BUILD.gn	2018-07-19 20:34:04.587283000 +0200
+@@ -146,6 +146,7 @@
+     "//build/win:default_exe_manifest",
+     "//third_party/icu",
+   ]
++  libs = [ "cxxrt" ]
+ }
+ 
+ # This isn't strictly necessary since we can just add the deps to "platform",

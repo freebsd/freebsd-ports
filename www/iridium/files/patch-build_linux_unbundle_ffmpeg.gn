@@ -1,0 +1,22 @@
+--- build/linux/unbundle/ffmpeg.gn.orig	2018-07-20 01:03:59.604084000 +0200
++++ build/linux/unbundle/ffmpeg.gn	2018-07-20 01:04:45.406745000 +0200
+@@ -14,8 +14,8 @@
+   ]
+ }
+ 
+-buildflag_header("ffmpeg_buildflags") {
+-  header = "ffmpeg_buildflags.h"
++buildflag_header("ffmpeg_features") {
++  header = "ffmpeg_features.h"
+   flags = [ "USE_SYSTEM_FFMPEG=true" ]
+ }
+ 
+@@ -30,7 +30,7 @@
+ 
+ source_set("ffmpeg") {
+   deps = [
+-    ":ffmpeg_buildflags",
++    ":ffmpeg_features",
+     ":ffmpeg_shim",
+   ]
+   public_configs = [ ":system_ffmpeg" ]

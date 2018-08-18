@@ -1,9 +1,9 @@
---- components/autofill/content/renderer/password_form_conversion_utils.cc.orig	2017-04-19 19:06:32 UTC
-+++ components/autofill/content/renderer/password_form_conversion_utils.cc
-@@ -28,7 +28,11 @@
- #include "third_party/WebKit/public/web/WebFormControlElement.h"
- #include "third_party/WebKit/public/web/WebFrame.h"
- #include "third_party/WebKit/public/web/WebInputElement.h"
+--- components/autofill/content/renderer/password_form_conversion_utils.cc.orig	2018-05-09 21:05:44.000000000 +0200
++++ components/autofill/content/renderer/password_form_conversion_utils.cc	2018-08-16 09:39:51.905373000 +0200
+@@ -34,7 +34,11 @@
+ #include "third_party/blink/public/web/web_form_control_element.h"
+ #include "third_party/blink/public/web/web_input_element.h"
+ #include "third_party/blink/public/web/web_local_frame.h"
 +#if defined(OS_BSD)
 +#include <re2/re2.h>
 +#else

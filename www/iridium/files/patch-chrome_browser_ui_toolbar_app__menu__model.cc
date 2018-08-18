@@ -1,6 +1,6 @@
---- chrome/browser/ui/toolbar/app_menu_model.cc.orig	2017-04-19 19:06:30 UTC
+--- chrome/browser/ui/toolbar/app_menu_model.cc.orig	2017-06-05 19:03:03 UTC
 +++ chrome/browser/ui/toolbar/app_menu_model.cc
-@@ -631,7 +631,7 @@ bool AppMenuModel::IsCommandIdVisible(in
+@@ -619,7 +619,7 @@ bool AppMenuModel::IsCommandIdVisible(int command_id) 
      case IDC_UPGRADE_DIALOG:
        return browser_defaults::kShowUpgradeMenuItem &&
            UpgradeDetector::GetInstance()->notify_upgrade();

@@ -1,0 +1,22 @@
+--- cc/BUILD.gn.orig	2017-12-30 06:26:13.722587000 +0100
++++ cc/BUILD.gn	2017-12-30 06:26:46.042197000 +0100
+@@ -541,7 +541,7 @@
+     "//ui/gl:test_support",
+     "//ui/latency",
+   ]
+-  if (!is_android) {
++  if (!is_android && !is_bsd) {
+     data_deps = [
+       "//third_party/mesa:osmesa",
+     ]
+@@ -717,10 +717,6 @@
+     "//ui/gfx/geometry",
+     "//ui/gl",
+     "//ui/gl:test_support",
+-  ]
+-
+-  data_deps = [
+-    "//third_party/mesa:osmesa",
+   ]
+ }
+ 
