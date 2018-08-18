@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	devcpu-
 DISTFILES=	microcode-20180807.tgz:intel \
 		amd64-microcode.20180525.tar.xz:amd
 
-MAINTAINER=	sbruno@freebsd.org
+MAINTAINER=	sbruno@FreeBSD.org
 COMMENT=	Intel and AMD CPUs microcode updates
 
 LICENSE=	EULA

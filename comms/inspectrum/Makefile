@@ -7,7 +7,7 @@ PORTVERSION=	g20180708
 #DISTVERSIONPREFIX=	v
 CATEGORIES=	comms hamradio
 
-MAINTAINER=	mr@freebsd.org
+MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Offline radio signal analyser
 
 LICENSE=	GPLv3

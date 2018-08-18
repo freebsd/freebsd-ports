@@ -5,7 +5,7 @@ PORTVERSION=	0.0.20180530
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	brooks@freebsd.org
+MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	CommonMark bridge for docutils and Sphinx
 
 LICENSE=	MIT

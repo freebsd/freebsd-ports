@@ -4,7 +4,7 @@ PORTNAME=	rpi-firmware
 PORTVERSION=	1.20180619
 CATEGORIES=	sysutils
 
-MAINTAINER=	uboot@freebsd.org
+MAINTAINER=	uboot@FreeBSD.org
 COMMENT=	Firmware for RaspberryPi Single Board Computer
 
 LICENSE=	BROADCOM

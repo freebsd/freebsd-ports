@@ -7,7 +7,7 @@ PORTREVISION=	1
 DISTVERSIONPREFIX=	version/
 CATEGORIES=	net python
 
-MAINTAINER=	kbowling@freebsd.org
+MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Python utility to create a local cache of directory services
 
 LICENSE=	GPLv2

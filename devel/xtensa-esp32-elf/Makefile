@@ -32,7 +32,7 @@ DISTFILES=	binutils-2.25.1.tar.bz2:source1 \
 		newlib-2.2.0.tar.gz:source10
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	leres@freebsd.org
+MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Espressif ESP32 toolchain
 
 LICENSE=	GPLv2 LGPL21
