@@ -1,6 +1,6 @@
---- src/Makefile.orig	2015-01-05 16:04:52 UTC
+--- src/Makefile.orig	2018-06-25 17:46:36 UTC
 +++ src/Makefile
-@@ -6,12 +6,12 @@
+@@ -6,12 +6,13 @@
  # Your platform. See PLATS for possible values.
  PLAT= none
  
@@ -10,13 +10,14 @@
 +CFLAGS= -Wall -Wextra -DLUA_COMPAT_5_2 $(SYSCFLAGS) $(MYCFLAGS)
  LDFLAGS= $(SYSLDFLAGS) $(MYLDFLAGS)
  LIBS= -lm $(SYSLIBS) $(MYLIBS)
++SOLIBS= -lm
  
 -AR= ar rcu
 +AR= ar
  RANLIB= ranlib
  RM= rm -f
  
-@@ -19,8 +19,8 @@ SYSCFLAGS=
+@@ -19,8 +20,8 @@ SYSCFLAGS=
  SYSLDFLAGS=
  SYSLIBS=
  
@@ -27,7 +28,7 @@
  MYLIBS=
  MYOBJS=
  
-@@ -38,12 +38,13 @@ BASE_O= $(CORE_O) $(LIB_O) $(MYOBJS)
+@@ -38,12 +39,13 @@ BASE_O= $(CORE_O) $(LIB_O) $(MYOBJS)
  
  LUA_T=	lua
  LUA_O=	lua.o
@@ -42,12 +43,12 @@
  ALL_A= $(LUA_A)
  
  # Targets start here.
-@@ -55,8 +56,11 @@ o:	$(ALL_O)
+@@ -55,8 +57,11 @@ o:	$(ALL_O)
  
  a:	$(ALL_A)
  
 +$(LUA_SO):	$(CORE_O) $(LIB_O)
-+	$(CC) -o $@ $(CFLAGS) $(LDFLAGS) $(MYLDFLAGS) -shared -Wl,-soname=$(LUA_SONAME) $?
++	$(CC) -o $@ $(CFLAGS) $(LDFLAGS) $(MYLDFLAGS) -shared -Wl,-soname=$(LUA_SONAME) $? $(SOLIBS)
 +
  $(LUA_A): $(BASE_O)
 -	$(AR) $@ $(BASE_O)

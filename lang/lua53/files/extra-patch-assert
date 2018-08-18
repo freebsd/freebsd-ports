@@ -1,0 +1,11 @@
+--- src/lprefix.h.orig	2018-07-14 23:49:59.792621000 +0100
++++ src/lprefix.h	2018-07-14 23:50:20.856546000 +0100
+@@ -7,6 +7,8 @@
+ #ifndef lprefix_h
+ #define lprefix_h
+ 
++#include <assert.h>
++#define lua_assert(c_) assert(c_)
+ 
+ /*
+ ** Allows POSIX/XSI stuff

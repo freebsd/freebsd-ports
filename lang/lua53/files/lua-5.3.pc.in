@@ -4,7 +4,7 @@ includedir=%%includedir%%
 soname=%%soname%%
 
 Name: Lua
-Description: An Extensible Extension Language
+Description: Powerful, efficient, lightweight, embeddable scripting language.
 Version: ${version}
 Libs: -L${libdir} -l${soname} -lm
 Cflags: -I${includedir}
