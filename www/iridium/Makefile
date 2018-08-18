@@ -3,6 +3,7 @@
 
 PORTNAME=	iridium
 PORTVERSION=	2018.5.67
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
@@ -61,15 +62,16 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 ONLY_FOR_ARCHS=	amd64 i386
 USES=		bison desktop-file-utils jpeg ninja perl5 pkgconfig \
 		python:2.7,build shebangfix tar:xz
-
+USE_GL=		gl
+USE_LDCONFIG=	${DATADIR}
 USE_PERL5=	build
 USE_XORG=	x11 xcb xcomposite xcursor xext xdamage xfixes xi \
 		xorgproto xrandr xrender xscrnsaver xtst
-USE_GNOME=	atk dconf glib20 gtk20 gtk30 libxml2 libxslt
+USE_GNOME=	atk dconf glib20 gtk30 libxml2 libxslt
 MAKE_ARGS=	-C out/${BUILDTYPE}
+BINARY_ALIAS=	python=${PYTHON_CMD}
 ALL_TARGET=	chrome
 INSTALLS_ICONS=	yes
-BINARY_ALIAS=	python=${PYTHON_CMD}
 
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 
