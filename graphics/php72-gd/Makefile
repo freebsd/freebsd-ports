@@ -2,8 +2,6 @@
 
 CATEGORIES=	graphics
 
-PORTREVISION=  1
-
 MASTERDIR=	${.CURDIR}/../../lang/php72
 
 PKGNAMESUFFIX=	-gd
