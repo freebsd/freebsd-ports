@@ -39,11 +39,7 @@ PORTEXAMPLES=	example.cfg
 
 MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLIBWRAP}
-MAKE_ENV+=	USELIBWRAP=1
-.endif
+LIBWRAP_MAKE_ENV=	USELIBWRAP=1
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's,^(release=)$$,\1${PORTVERSION},' \
