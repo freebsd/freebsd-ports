@@ -1,0 +1,11 @@
+bin/statsite
+@sample etc/statsite.conf.sample
+%%DATADIR%%/sinks/__init__.py
+%%DATADIR%%/sinks/binary_sink.py
+%%DATADIR%%/sinks/cloudwatch.sh
+%%DATADIR%%/sinks/gmetric.py
+%%DATADIR%%/sinks/graphite.py
+%%DATADIR%%/sinks/influxdb.py
+%%DATADIR%%/sinks/librato.py
+%%DATADIR%%/sinks/opentsdb.js
+%%DATADIR%%/sinks/statsite_json_sink.rb
