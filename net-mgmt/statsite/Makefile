@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	statsite
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
@@ -11,16 +11,26 @@ COMMENT=	C implementation of statsd
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		scons
+USES=		autoreconf
+GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	armon
+
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 USERS=		statsd
 GROUPS=		statsd
 
-PLIST_FILES=	bin/statsite
+OPTIONS_DEFINE=	DOCS
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/statsite ${STAGEDIR}/${PREFIX}/bin/
+PORTDOCS=	README.md
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/rpm/statsite.conf.example \
+		${STAGEDIR}${PREFIX}/etc/statsite.conf.sample
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
