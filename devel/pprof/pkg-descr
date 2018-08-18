@@ -1,0 +1,14 @@
+pprof is a tool for visualization and analysis of profiling data.
+
+pprof reads a collection of profiling samples in profile.proto format and
+generates reports to visualize and help analyze the data. It can generate
+both text and graphical reports (through the use of the dot visualization
+package).
+
+Profiles can be read from a local file, or over http. Multiple profiles of
+the same type can be aggregated or compared.
+
+If the profile samples contain machine addresses, pprof can symbolize them
+through the use of the native binutils tools (addr2line and nm).
+
+WWW: https://github.com/google/pprof
