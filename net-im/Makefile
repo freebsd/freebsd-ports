@@ -207,7 +207,6 @@
     SUBDIR += tkabber-plugins
     SUBDIR += toot
     SUBDIR += tox
-    SUBDIR += tox12
     SUBDIR += toxbot
     SUBDIR += toxic
     SUBDIR += toxins

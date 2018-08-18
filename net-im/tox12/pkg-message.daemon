@@ -1,4 +1,0 @@
-
-Warning: your public key will be logged at the level INFO. Check that your
-/etc/syslog is configured to log these messages if you need it (to publicize
-it).
