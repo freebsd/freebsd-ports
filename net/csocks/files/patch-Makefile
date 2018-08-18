@@ -7,7 +7,7 @@
 -
  # flags to compile object files that can be used in a dynamic library
 -CFLAGS = -Wall -fPIC -g -c -O2 -std=c99 -fno-strict-aliasing -D'LINUX' -D'CSOCKS_PATH_LIBC="libc.so.6"' -D'CSOCKS_LIBCONNECT="libc.so.6"' -D'CSOCKS_CONF="/etc/csocks.conf"'
-+CFLAGS += -fPIC -std=c99 -fno-strict-aliasing -D'LINUX' -D'CSOCKS_PATH_LIBC="libc.so.7"' -D'CSOCKS_LIBCONNECT="libc.so.7"' -D'CSOCKS_CONF="${PREFIX}/etc/csocks.conf"'
++CFLAGS += -fPIC -std=c99 -fno-strict-aliasing -D'CSOCKS_CONF="${PREFIX}/etc/csocks.conf"'
  
  # on some platforms, use '-fpic' instead.
  
