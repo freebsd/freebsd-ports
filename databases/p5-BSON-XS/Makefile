@@ -23,9 +23,10 @@ TEST_DEPENDS=	p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
 		p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Tie-IxHash>=0:devel/p5-Tie-IxHash
 
-CFLAGS+=	-DBSON_COMPILATION
-USE_PERL5=	configure
 USES=		perl5 gmake
+USE_PERL5=	configure
+
+CFLAGS+=	-DBSON_COMPILATION
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/BSON/XS/XS.so
