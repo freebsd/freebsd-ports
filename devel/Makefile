@@ -6298,6 +6298,7 @@
     SUBDIR += xdg-utils
     SUBDIR += xdgpaths
     SUBDIR += xeus
+    SUBDIR += xeus-cling
     SUBDIR += xfce4-dev-tools
     SUBDIR += xfce4-vala
     SUBDIR += xmake
