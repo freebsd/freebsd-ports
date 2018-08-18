@@ -2,4 +2,4 @@ The fstrcmp package provides a library which may be used to make
 fuzzy comparisons of strings and byte arrays.  It also provides
 simple commands for use in shell scripts.
 
-wWW: http://fstrcmp.sourceforge.net/
+WWW: http://fstrcmp.sourceforge.net/
