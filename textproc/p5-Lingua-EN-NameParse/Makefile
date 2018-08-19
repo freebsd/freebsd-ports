@@ -13,8 +13,8 @@ COMMENT=	Routines for manipulating a person's name #'
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Parse-RecDescent>=1:devel/p5-Parse-RecDescent
 BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Parse-RecDescent>=1:devel/p5-Parse-RecDescent
 
 USES=		dos2unix perl5
 USE_PERL5=	configure
