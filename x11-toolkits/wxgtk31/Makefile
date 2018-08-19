@@ -3,7 +3,7 @@
 PORTNAME=	wx
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	31-gtk3
 
@@ -70,6 +70,11 @@ WEBKIT_CONFIGURE_ENABLE=	webview
 WEBKIT_LIB_DEPENDS=		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
 .include <bsd.port.pre.mk>
+
+# TLS is broken on armv6/7, PR 229396
+.if ${ARCH} == armv6 || ${ARCH} == armv7
+CONFIGURE_ARGS+=--disable-tls
+.endif
 
 # PR 196703, 197031
 .if ${CHOSEN_COMPILER_TYPE} == gcc
