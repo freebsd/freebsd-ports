@@ -1121,6 +1121,7 @@ lib/wine/api-ms-win-crt-stdio-l1-1-0.dll.so
 lib/wine/api-ms-win-crt-string-l1-1-0.dll.so
 lib/wine/api-ms-win-crt-time-l1-1-0.dll.so
 lib/wine/api-ms-win-crt-utility-l1-1-0.dll.so
+lib/wine/api-ms-win-devices-config-l1-1-0.dll.so
 lib/wine/api-ms-win-devices-config-l1-1-1.dll.so
 lib/wine/api-ms-win-devices-query-l1-1-1.dll.so
 lib/wine/api-ms-win-downlevel-advapi32-l1-1-0.dll.so
@@ -1548,6 +1549,7 @@ lib/wine/fakedlls/api-ms-win-crt-stdio-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-crt-string-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-crt-time-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-crt-utility-l1-1-0.dll
+lib/wine/fakedlls/api-ms-win-devices-config-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-devices-config-l1-1-1.dll
 lib/wine/fakedlls/api-ms-win-devices-query-l1-1-1.dll
 lib/wine/fakedlls/api-ms-win-downlevel-advapi32-l1-1-0.dll
