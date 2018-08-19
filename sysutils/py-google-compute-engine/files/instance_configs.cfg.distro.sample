@@ -6,3 +6,7 @@ groupadd_cmd = pw groupadd {group}
 
 [MetadataScripts]
 default_shell = /bin/sh
+
+[InstanceSetup]
+set_multiqueue = false
+optimize_local_ssd = false
