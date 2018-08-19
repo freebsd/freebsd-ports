@@ -1,0 +1,60 @@
+--- configure.orig	2018-08-19 20:25:18 UTC
++++ configure
+@@ -4064,7 +4064,7 @@ fi
+ 
+ 
+ CFLAGS=""
+-CXXFLAGS="-std=c++0x -DGAME_HAS_HERO_PARTICLE -DUSE_ONLINE_UPDATE"
++CXXFLAGS="-std=c++0x -DGAME_HAS_HERO_PARTICLE"
+ 
+ if test "x$GCC" = xyes; then
+    CFLAGS="$CFLAGS -W -Wall"
+@@ -4255,48 +4255,6 @@ $as_echo "Adding special ingredients for mingw32" >&6;
+     LIBS="$LIBS -lopengl32 -lpng -lz -ljpeg -lstdc++ -lws2_32 -lwinmm"
+     CXXFLAGS="$CXXFLAGS -DCURL_STATICLIB"
+ else
+-    LIBS="-L/usr/local/lib -L/usr/X11R6/lib $LIBS"
+-    CXXFLAGS="$CXXFLAGS -I/usr/X11R6/include"
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lcurl-gnutls" >&5
+-$as_echo_n "checking for main in -lcurl-gnutls... " >&6; }
+-if test "${ac_cv_lib_curl_gnutls_main+set}" = set; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lcurl-gnutls  $LIBS"
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-
+-
+-int
+-main ()
+-{
+-return main ();
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_curl_gnutls_main=yes
+-else
+-  ac_cv_lib_curl_gnutls_main=no
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
+-LIBS=$ac_check_lib_save_LIBS
+-fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_curl_gnutls_main" >&5
+-$as_echo "$ac_cv_lib_curl_gnutls_main" >&6; }
+-if test "x$ac_cv_lib_curl_gnutls_main" = x""yes; then :
+-  cat >>confdefs.h <<_ACEOF
+-#define HAVE_LIBCURL_GNUTLS 1
+-_ACEOF
+-
+-  LIBS="-lcurl-gnutls $LIBS"
+-
+-else
+-  as_fn_error $? "libcurl-gnutls is needed" "$LINENO" 5
+-fi
+ 
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -ltinyxml" >&5
+ $as_echo_n "checking for main in -ltinyxml... " >&6; }

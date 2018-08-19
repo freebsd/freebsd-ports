@@ -1,6 +1,6 @@
---- utilssdl/PNG.cpp.orig	2004-12-18 03:41:42.000000000 +0100
-+++ utilssdl/PNG.cpp	2012-05-08 07:00:15.000000000 +0200
-@@ -45,7 +45,7 @@
+--- utilssdl/PNG.cpp.orig	2010-10-17 01:09:50 UTC
++++ utilssdl/PNG.cpp
+@@ -56,7 +56,7 @@ void PNG::writeData( png_structp png, png_bytep data, 
  {
      png_size_t check;
  
@@ -9,7 +9,7 @@
      if( check != length)
      {
  	png_error( png, "Write Error");
-@@ -72,7 +72,7 @@
+@@ -83,7 +83,7 @@ bool PNG::init( FILE *fp, int width, int height)
  	return false;
      }
  
