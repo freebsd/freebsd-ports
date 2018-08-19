@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	e16-themes
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	x11-themes enlightenment
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}
 
