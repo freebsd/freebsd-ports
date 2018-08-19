@@ -659,6 +659,7 @@
     SUBDIR += ogre3d
     SUBDIR += okular
     SUBDIR += okular-kde4
+    SUBDIR += open3d
     SUBDIR += opencollada
     SUBDIR += opencolorio
     SUBDIR += opencolorio-tools
