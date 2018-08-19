@@ -1,0 +1,16 @@
+cbindgen generates C bindings from Rust code. Unlike rusty-cheddar it
+supports generics, C++ enum class and template specialization as well
+as multiple modules and crates. It's primarily developed for WebRender
+but has been designed to support any project.
+
+Features:
+* Builds bindings for a crate, its mods, its dependent crates, and their mods
+* Only the necessary types for exposed functions are given bindings
+* Can specify annotations for controlling some aspects of binding
+* Support for generic structs and unions
+* Support for exporting constants and statics
+* Customizable formatting, can be used in C or C++ projects
+* Support for generating #ifdef's for #[cfg] attributes
+* Support for #[repr(sized)] tagged enum's
+
+WWW: https://github.com/eqrion/cbindgen
