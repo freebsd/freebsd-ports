@@ -2,7 +2,7 @@
 
 PORTNAME=	go14
 PORTVERSION=	1.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://golang.org/dl/
 DISTNAME=	go${PORTVERSION}.src
@@ -62,6 +62,7 @@ do-build:
 		CC=${CC} \
 		GOROOT=${WRKSRC} GOROOT_FINAL=${PREFIX}/go14 \
 		GOBIN= GOARCH=${GOARCH} GOOS=${OPSYS:tl} \
+		GO386=387 \
 		CGO_ENABLED=0 \
 		${SH} make.bash
 
