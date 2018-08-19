@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bwping
-PORTVERSION=	1.7
+PORTVERSION=	1.9
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -12,6 +12,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	sbin/bwping man/man8/bwping.8.gz
 
@@ -24,14 +25,6 @@ CONFIGURE_ENV+=	ac_cv_ipv6=yes
 PLIST_FILES+=	sbin/bwping6 man/man8/bwping6.8.gz
 .else
 CONFIGURE_ENV+=	ac_cv_ipv6=no
-.endif
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/bwping
-	${CHMOD} 4555 ${STAGEDIR}${PREFIX}/sbin/bwping
-.if ${PORT_OPTIONS:MIPV6}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/bwping6
-	${CHMOD} 4555 ${STAGEDIR}${PREFIX}/sbin/bwping6
 .endif
 
 .include <bsd.port.mk>
