@@ -1,19 +1,17 @@
-# Created by: David Naylor <dbn@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kivy
-PORTVERSION=	1.10.0
-PORTREVISION=	3
+PORTVERSION=	1.10.1
 CATEGORIES=	x11-toolkits python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	Kivy-${PORTVERSION}
 
 MAINTAINER=	dbn@FreeBSD.org
 COMMENT=	Python NUI library for rapid application development
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		fails to build with cython 0.28
 
 BUILD_DEPENDS=	git:devel/git \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR}
@@ -24,14 +22,13 @@ TEST_DEPENDS=	nosetests-${PYTHON_VER}:devel/py-nose@${PY_FLAVOR}
 MAKE_ENV=	KIVY_NO_CONFIG=yes KIVY_NO_FILELOG=yes USE_OPENGL_ES2=1 \
 		PYTHONPATH=${WRKSRC}
 
-USES=		display:test python:2.7 uniquefiles:dirs
-USE_GITHUB=	yes
+USES=		display:test python:2.7+ shebangfix uniquefiles:dirs
 USE_GL=		egl gl glesv2
 USE_PYTHON=	autoplist concurrent cython distutils
-
 PYDISTUTILS_BUILD_TARGET=	build_ext
 PYDISTUTILS_BUILDARGS=		--inplace
 PYDISTUTILS_EGGINFO=		Kivy-${PORTVERSION}-py${PYTHON_VER}.egg-info
+SHEBANG_FILES=	kivy/tools/pep8checker/pre-commit.githook
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFAULT=	ENCHANT OPENCV PYGAME
