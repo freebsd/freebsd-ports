@@ -1,0 +1,11 @@
+--- External/CMakeLists.txt.orig	2018-08-19 05:58:00 UTC
++++ External/CMakeLists.txt
+@@ -159,7 +159,7 @@ if (BUILD_TINYFILEDIALOGS)
+     set(tinyfiledialogs_LIBRARIES tinyfiledialogs)
+     INSTALL_HEADERS(tinyfiledialogs)
+ else ()
+-    message(SEND_ERROR "TINYFILEDIALOGS dependency not met.")
++    #message(SEND_ERROR "TINYFILEDIALOGS dependency not met.")
+ endif ()
+ 
+ # rply

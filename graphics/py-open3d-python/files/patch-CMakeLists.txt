@@ -1,0 +1,69 @@
+--- CMakeLists.txt.orig	2018-07-01 05:50:57 UTC
++++ CMakeLists.txt
+@@ -181,26 +181,26 @@ include_directories(${PROJECT_SOURCE_DIR
+ include_directories(${EXTERNAL_INCLUDE_DIRS})
+ 
+ # Open3D libraries
+-add_subdirectory(Core)
+-add_subdirectory(Tools)
+-add_subdirectory(IO)
+-add_subdirectory(Visualization)
++#add_subdirectory(Core)
++#add_subdirectory(Tools)
++#add_subdirectory(IO)
++#add_subdirectory(Visualization)
+ 
+-add_library(${CMAKE_PROJECT_NAME} $<TARGET_OBJECTS:Core> $<TARGET_OBJECTS:IO> $<TARGET_OBJECTS:Visualization>)
++#add_library(${CMAKE_PROJECT_NAME} $<TARGET_OBJECTS:Core> $<TARGET_OBJECTS:IO> $<TARGET_OBJECTS:Visualization>)
+ 
+ # headless rendering
+ if (ENABLE_HEADLESS_RENDERING)
+     find_package(OSMesa REQUIRED)
+-    include_directories(${OSMESA_INCLUDE_DIR})
+-    target_link_libraries(${CMAKE_PROJECT_NAME} ${OSMESA_LIBRARY})
++    #include_directories(${OSMESA_INCLUDE_DIR})
++    #target_link_libraries(${CMAKE_PROJECT_NAME} ${OSMESA_LIBRARY})
+ else ()
+     find_package(OpenGL REQUIRED)
+-    target_link_libraries(${CMAKE_PROJECT_NAME} ${OPENGL_LIBRARIES})
++    #target_link_libraries(${CMAKE_PROJECT_NAME} ${OPENGL_LIBRARIES})
+ endif ()
+ 
+-target_link_libraries(${CMAKE_PROJECT_NAME}
+-                      ${EXTERNAL_LIBRARIES}
+-                      ${OMP_LIBRARIES})
++#target_link_libraries(${CMAKE_PROJECT_NAME}
++#                      ${EXTERNAL_LIBRARIES}
++#                      ${OMP_LIBRARIES})
+ 
+ # Tests
+ if (BUILD_TESTS)
+@@ -259,19 +259,19 @@ configure_file(Open3DConfigVersion.cmake
+                "${PROJECT_BINARY_DIR}/Open3DConfigVersion.cmake" @ONLY)
+ 
+ # install
+-install(TARGETS ${CMAKE_PROJECT_NAME}
+-        RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin
+-        LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
+-        ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
++#install(TARGETS ${CMAKE_PROJECT_NAME}
++#        RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin
++#        LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
++#        ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
+ 
+ file(GLOB HEADERS_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/*.h")
+-install(FILES ${HEADERS_ROOT} DESTINATION ${CMAKE_INSTALL_PREFIX}/include/${CMAKE_PROJECT_NAME})
++#install(FILES ${HEADERS_ROOT} DESTINATION ${CMAKE_INSTALL_PREFIX}/include/${CMAKE_PROJECT_NAME})
+ 
+ # Install the Open3DConfig.cmake and Open3DConfigVersion.cmake
+-install(FILES
+-        "${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/Open3DConfig.cmake"
+-        "${PROJECT_BINARY_DIR}/Open3DConfigVersion.cmake"
+-        DESTINATION "${INSTALL_CMAKE_DIR}" COMPONENT dev)
++#install(FILES
++#        "${PROJECT_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/Open3DConfig.cmake"
++#        "${PROJECT_BINARY_DIR}/Open3DConfigVersion.cmake"
++#        DESTINATION "${INSTALL_CMAKE_DIR}" COMPONENT dev)
+ 
+ # uninstall target
+ if (NOT TARGET uninstall)

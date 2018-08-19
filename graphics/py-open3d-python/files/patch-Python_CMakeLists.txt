@@ -1,0 +1,22 @@
+--- Python/CMakeLists.txt.orig	2018-07-01 05:50:57 UTC
++++ Python/CMakeLists.txt
+@@ -29,8 +29,8 @@ target_link_libraries(${PACKAGE_NAME} PR
+ file(GLOB PY_HELPER_FILES "Helper/*.py")
+ add_custom_target(PythonHelper ALL SOURCES ${PY_HELPER_FILES})
+ set_target_properties(PythonHelper PROPERTIES FOLDER "Python")
+-add_custom_command(TARGET PythonHelper POST_BUILD
+-COMMAND ${CMAKE_COMMAND} -E copy_directory "${PROJECT_SOURCE_DIR}/Python/Helper/" "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/${CMAKE_CFG_INTDIR}")
++#add_custom_command(TARGET PythonHelper POST_BUILD
++#COMMAND ${CMAKE_COMMAND} -E copy_directory "${PROJECT_SOURCE_DIR}/Python/Helper" "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/")
+ add_dependencies(${PACKAGE_NAME} PythonHelper)
+ 
+ if (BUILD_PYTHON_TESTS)
+@@ -70,7 +70,7 @@ set_target_properties(${PACKAGE_NAME} PR
+                       ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}/Python")
+ 
+ # find the python site-packages location
+-execute_process(COMMAND ${PYTHON_EXECUTABLE} -m site --user-site OUTPUT_VARIABLE PYTHON_SITE_PACKAGES OUTPUT_STRIP_TRAILING_WHITESPACE)
++#execute_process(COMMAND ${PYTHON_EXECUTABLE} -m site --user-site OUTPUT_VARIABLE PYTHON_SITE_PACKAGES OUTPUT_STRIP_TRAILING_WHITESPACE)
+ 
+ # configure installer to copy the python module to the python site-packages
+ install(TARGETS ${PACKAGE_NAME} DESTINATION ${PYTHON_SITE_PACKAGES})
