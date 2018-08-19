@@ -11,8 +11,6 @@
 
 namespace media {
 
-static const SampleFormat kSampleFormat = kSampleFormatS16;
-
 void sndio_onmove(void *arg, int delta) {
   SndioAudioOutputStream* self = static_cast<SndioAudioOutputStream*>(arg);
 
@@ -37,7 +35,7 @@ SndioAudioOutputStream::SndioAudioOutputStream(const AudioParameters& params,
     : manager(manager),
       params(params),
       audio_bus(AudioBus::Create(params)),
-      bytes_per_frame(params.GetBytesPerFrame(kSampleFormat)),
+      bytes_per_frame(params.GetBytesPerFrame()),
       state(kClosed),
       mutex(PTHREAD_MUTEX_INITIALIZER) {
 }
@@ -59,7 +57,7 @@ bool SndioAudioOutputStream::Open() {
   sio_initpar(&par);
   par.rate = params.sample_rate();
   par.pchan = params.channels();
-  par.bits = SampleFormatToBitsPerChannel(kSampleFormat);
+  par.bits = params.bits_per_sample();
   par.bps = par.bits / 8;
   par.sig = sig = par.bits != 8 ? 1 : 0;
   par.le = SIO_LE_NATIVE;
@@ -76,7 +74,7 @@ bool SndioAudioOutputStream::Open() {
   }
   if (par.rate  != (unsigned int)params.sample_rate() ||
       par.pchan != (unsigned int)params.channels() ||
-      par.bits  != (unsigned int)SampleFormatToBitsPerChannel(kSampleFormat) ||
+      par.bits  != (unsigned int)params.bits_per_sample() ||
       par.sig   != (unsigned int)sig ||
       (par.bps > 1 && par.le != SIO_LE_NATIVE) ||
       (par.bits != par.bps * 8)) {
@@ -86,7 +84,7 @@ bool SndioAudioOutputStream::Open() {
   state = kStopped;
   volpending = 0;
   vol = 0;
-  buffer = new char[audio_bus->frames() * params.GetBytesPerFrame(kSampleFormat)];
+  buffer = new char[audio_bus->frames() * params.GetBytesPerFrame()];
   sio_onmove(hdl, sndio_onmove, this);
   sio_onvol(hdl, sndio_onvol, this);
   return true;
@@ -155,16 +153,16 @@ void SndioAudioOutputStream::RealTimeThread(void) {
     // Get data to play
     const base::TimeDelta delay = AudioTimestampHelper::FramesToTime(hw_delay, params.sample_rate() * 1000);
     count = source->OnMoreData(delay, base::TimeTicks::Now(), 0, audio_bus.get());
-    audio_bus->ToInterleaved(count, SampleFormatToBytesPerChannel(kSampleFormat), buffer);
+    audio_bus->ToInterleaved(count, params.bits_per_sample() / 8, buffer);
     if (count == 0) {
       // We have to submit something to the device
       count = audio_bus->frames();
-      memset(buffer, 0, count * params.GetBytesPerFrame(kSampleFormat));
+      memset(buffer, 0, count * params.GetBytesPerFrame());
       LOG(WARNING) << "No data to play, running empty cycle.";
     }
 
     // Submit data to the device
-    avail = count * params.GetBytesPerFrame(kSampleFormat);
+    avail = count * params.GetBytesPerFrame();
     count = sio_write(hdl, buffer, avail);
     if (count == 0) {
       LOG(WARNING) << "Audio device disconnected.";

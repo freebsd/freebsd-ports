@@ -59,7 +59,6 @@ class SndioAudioInputStream : public AgcAudioStream<AudioInputStream> {
   void SetVolume(double volume) override;
   double GetVolume() override;
   bool IsMuted() override;
-  void SetOutputDeviceForAec(const std::string& output_device_id) override;
 
   // C-linkage call-backs are friends to access private data
   friend void sndio_in_onmove(void *arg, int delta);
