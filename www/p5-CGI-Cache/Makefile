@@ -19,6 +19,8 @@ RUN_DEPENDS=	p5-Cache>=0:devel/p5-Cache \
 		p5-Tie-Restore>=0:devel/p5-Tie-Restore
 TEST_DEPENDS=	p5-File-Slurper>=0:devel/p5-File-Slurper
 
+PORTSCOUT=	skipv:1.4213
+
 USES=		perl5
 USE_PERL5=	configure
 
