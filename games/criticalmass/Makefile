@@ -25,11 +25,6 @@ USE_CXXSTD=	gnu++98
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-optimize
 
-# libtinyxml is linked using cc and thus is not linked with libc++
-# which leads to most configure checks failing here; apply a band-aid
-# and use CXX for everything
-CC=		${CXX}
-
 CONFLICTS=	shaaft-[0-9]*
 
 PLIST_FILES=	bin/Packer \
