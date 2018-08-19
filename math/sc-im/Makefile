@@ -1,9 +1,10 @@
 # $FreeBSD$
 
-PORTNAME=	sc-im
-PORTVERSION=	0.7.0
+PORTNAME=		sc-im
+PORTVERSION=		0.7.0
 DISTVERSIONPREFIX=	v
-CATEGORIES=	math
+PORTREVISION=		1
+CATEGORIES=		math
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Ncurses spreadsheet program for terminal
