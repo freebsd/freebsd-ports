@@ -16,18 +16,10 @@ USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	istio
-
-post-patch:
-	${LN} -s ${WRKSRC}/vendor ${WRKSRC}/src
-	${MKDIR} ${WRKSRC}/src/istio.io/istio/istioctl
-	${LN} -s ${WRKSRC}/istioctl/cmd ${WRKSRC}/src/istio.io/istio/istioctl/cmd
-	${LN} -s ${WRKSRC}/istioctl/pkg ${WRKSRC}/src/istio.io/istio/istioctl/pkg
-	${LN} -s ${WRKSRC}/mixer ${WRKSRC}/src/istio.io/istio/mixer
-	${LN} -s ${WRKSRC}/pilot ${WRKSRC}/src/istio.io/istio/pilot
-	${LN} -s ${WRKSRC}/pkg ${WRKSRC}/src/istio.io/istio/pkg
+GH_SUBDIR=	src/istio.io/istio
 
 do-build:
-	cd ${WRKSRC} && \
+	cd ${WRKSRC}/${GH_SUBDIR} && \
 		GOPATH=${WRKSRC} go build -o ${WRKSRC}/bin/istioctl \
 		-ldflags="-X istio.io/istio/pkg/version.buildVersion=${PORTVERSION} \
 		-X istio.io/istio/pkg/version.buildGitRevision=unknown \
