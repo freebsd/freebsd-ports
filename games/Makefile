@@ -25,6 +25,7 @@
     SUBDIR += acm
     SUBDIR += adom
     SUBDIR += adonthell
+    SUBDIR += adonthell-wastesedge
     SUBDIR += aestats
     SUBDIR += affenspiel
     SUBDIR += afternoonstalker
