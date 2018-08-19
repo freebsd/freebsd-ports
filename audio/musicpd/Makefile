@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	musicpd
-PORTVERSION=	0.20.20
-PORTREVISION=	2
+PORTVERSION=	0.20.21
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -110,7 +109,8 @@ MPG123_LIB_DEPENDS=libmpg123.so:audio/mpg123
 MUSEPACK_CONFIGURE_ENABLE=mpc
 MUSEPACK_LIB_DEPENDS=libmpcdec.so:audio/musepack
 OPENAL_CONFIGURE_ENABLE=openal
-OPENAL_LIB_DEPENDS=libopenal.so:audio/openal
+OPENAL_USES=	openal
+OPENAL_VARS=	LLD_UNSAFE=yes # cf. PR 226980
 OPUS_CONFIGURE_ENABLE=opus
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus \
 			libogg.so:audio/libogg
