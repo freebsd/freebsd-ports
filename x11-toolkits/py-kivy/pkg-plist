@@ -104,7 +104,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/_images/demo__touchtracer__main__py.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/demo__touchtracer__main__py1.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/dropdown.gif
-%%PORTDOCS%%%%DOCSDIR%%/_images/faust_github.jpg
 %%PORTDOCS%%%%DOCSDIR%%/_images/filechooser_icon.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/filechooser_list.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/floatlayout.gif
@@ -172,6 +171,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_images/textinput-mono.jpg
 %%PORTDOCS%%%%DOCSDIR%%/_images/textinput-multi.jpg
 %%PORTDOCS%%%%DOCSDIR%%/_images/texture_example_image.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/togglebutton.jpg
 %%PORTDOCS%%%%DOCSDIR%%/_images/treeview.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/unicode-char.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/videoplayer-annotation.jpg
@@ -258,6 +258,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_modules/kivy/uix/behaviors/focus.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/kivy/uix/behaviors/knspace.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/kivy/uix/behaviors/togglebutton.html
+%%PORTDOCS%%%%DOCSDIR%%/_modules/kivy/uix/behaviors/touchripple.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/kivy/uix/boxlayout.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/kivy/uix/bubble.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/kivy/uix/button.html
@@ -280,6 +281,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_modules/kivy/uix/pagelayout.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/kivy/uix/popup.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/kivy/uix/progressbar.html
+%%PORTDOCS%%%%DOCSDIR%%/_modules/kivy/uix/recyclelayout.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/kivy/uix/recycleview.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/kivy/uix/recycleview/datamodel.html
 %%PORTDOCS%%%%DOCSDIR%%/_modules/kivy/uix/recycleview/layout.html
@@ -448,6 +450,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.behaviors.focus.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.behaviors.knspace.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.behaviors.togglebutton.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.behaviors.touchripple.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.behaviors.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.boxlayout.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/api-kivy.uix.bubble.rst.txt
@@ -574,6 +577,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_sources/guide/packaging.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/guide/widgets.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/index.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/installation/deps-cython.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/installation/installation-android.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/installation/installation-linux.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/installation/installation-osx.rst.txt
@@ -757,6 +761,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/api-kivy.uix.behaviors.html
 %%PORTDOCS%%%%DOCSDIR%%/api-kivy.uix.behaviors.knspace.html
 %%PORTDOCS%%%%DOCSDIR%%/api-kivy.uix.behaviors.togglebutton.html
+%%PORTDOCS%%%%DOCSDIR%%/api-kivy.uix.behaviors.touchripple.html
 %%PORTDOCS%%%%DOCSDIR%%/api-kivy.uix.boxlayout.html
 %%PORTDOCS%%%%DOCSDIR%%/api-kivy.uix.bubble.html
 %%PORTDOCS%%%%DOCSDIR%%/api-kivy.uix.button.html
@@ -883,6 +888,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/guide/packaging.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/widgets.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/installation/deps-cython.html
 %%PORTDOCS%%%%DOCSDIR%%/installation/installation-android.html
 %%PORTDOCS%%%%DOCSDIR%%/installation/installation-linux.html
 %%PORTDOCS%%%%DOCSDIR%%/installation/installation-osx.html
