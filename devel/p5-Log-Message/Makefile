@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Powerful and flexible message logging mechanism
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Params-Check>=0:devel/p5-Params-Check \
 		p5-Module-Load>=0:devel/p5-Module-Load \
 		p5-Locale-Maketext-Simple>=0:devel/p5-Locale-Maketext-Simple
@@ -19,5 +22,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
