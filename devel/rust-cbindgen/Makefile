@@ -6,7 +6,7 @@ DISTVERSION=	0.6.1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	rust-
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Generate C bindings from Rust code
 
 LICENSE=	MPL20
