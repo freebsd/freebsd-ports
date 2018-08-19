@@ -3,7 +3,7 @@
 
 PORTNAME=	epplets
 PORTVERSION=	0.14
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}
 
@@ -17,13 +17,19 @@ RUN_DEPENDS=	e16:x11-wm/e16 \
 
 USES=		gmake libtool pkgconfig
 USE_XORG=	xext
-USE_GNOME=	esound
 USE_GL=		glut
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-auto-respawn
+
+OPTIONS_DEFINE=	ESOUND
+OPTIONS_DEFAULT=ESOUND
+OPTIONS_SUB=	yes
+
+ESOUND_CONFIGURE_ENABLE=	esd
+ESOUND_USE=			GNOME=esound
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<machine/soundcard\.h>|<sys/soundcard.h>|g' \
