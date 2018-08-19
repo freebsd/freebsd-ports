@@ -6090,6 +6090,7 @@
     SUBDIR += rudeconfig
     SUBDIR += rudiments
     SUBDIR += runsnakerun
+    SUBDIR += rust-cbindgen
     SUBDIR += rvi
     SUBDIR += rvm
     SUBDIR += sabre
