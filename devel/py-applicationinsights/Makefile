@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	applicationinsights
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.5
+DISTVERSION=	0.11.6
 CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbn@FreeBSD.org
@@ -14,10 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		python
 USE_PYTHON=	autoplist distutils
-USE_GITHUB=	yes
-GH_ACCOUNT=	Microsoft
-GH_PROJECT=	ApplicationInsights-Python
 
 NO_ARCH=	yes
+
+do-test:
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test)
 
 .include <bsd.port.mk>
