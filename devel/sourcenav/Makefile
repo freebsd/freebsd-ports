@@ -3,7 +3,7 @@
 
 PORTNAME=	sourcenav
 PORTVERSION=	4.5
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/NG${PORTVERSION}
@@ -19,7 +19,6 @@ BROKEN_aarch64=		fails to build: undefined reference to fpsetround
 
 USES=		shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/snavigator/demo/c++/contrib/perl/sample_client
-USE_GCC=	yes
 USE_XORG=	x11
 
 HAS_CONFIGURE=	yes
@@ -34,6 +33,7 @@ post-patch:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sourcenav/bin/wish8.3
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sourcenav/bin/tclsh8.3
-	${LN} -s ${PREFIX}/sourcenav/bin/snavigator ${STAGEDIR}${PREFIX}/bin/snavigator
+	${RLN} ${STAGEDIR}${PREFIX}/sourcenav/bin/snavigator \
+		${STAGEDIR}${PREFIX}/bin/snavigator
 
 .include <bsd.port.mk>
