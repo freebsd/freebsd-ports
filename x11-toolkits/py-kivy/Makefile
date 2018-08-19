@@ -22,7 +22,7 @@ TEST_DEPENDS=	nosetests-${PYTHON_VER}:devel/py-nose@${PY_FLAVOR}
 MAKE_ENV=	KIVY_NO_CONFIG=yes KIVY_NO_FILELOG=yes USE_OPENGL_ES2=1 \
 		PYTHONPATH=${WRKSRC}
 
-USES=		display:test python:2.7+ shebangfix uniquefiles:dirs
+USES=		display:test python:2.7 shebangfix uniquefiles:dirs
 USE_GL=		egl gl glesv2
 USE_PYTHON=	autoplist concurrent cython distutils
 PYDISTUTILS_BUILD_TARGET=	build_ext
