@@ -28,10 +28,8 @@ man/man1/ar.1.gz
 man/man1/as.1.gz
 man/man1/c++filt.1.gz
 man/man1/gprof.1.gz
-man/man1/dlltool.1.gz
 man/man1/elfedit.1.gz
 man/man1/ld.1.gz
-man/man1/nlmconv.1.gz
 man/man1/nm.1.gz
 man/man1/objcopy.1.gz
 man/man1/objdump.1.gz
@@ -40,8 +38,6 @@ man/man1/readelf.1.gz
 man/man1/size.1.gz
 man/man1/strings.1.gz
 man/man1/strip.1.gz
-man/man1/windmc.1.gz
-man/man1/windres.1.gz
 %%NLS%%share/locale/bg/LC_MESSAGES/binutils.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/ld.mo
