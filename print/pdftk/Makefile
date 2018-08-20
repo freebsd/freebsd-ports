@@ -8,7 +8,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/ LOCAL/mat/pdftk
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple tool for doing everyday things with PDF documents
 
 LICENSE=	GPLv2
