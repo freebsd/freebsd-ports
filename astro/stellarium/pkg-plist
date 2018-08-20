@@ -16,7 +16,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/data/constellations_boundaries.dat
 %%DATADIR%%/data/constellations_spans.dat
 %%DATADIR%%/data/countryCodes.dat
-%%DATADIR%%/data/default_config.ini
+%%DATADIR%%/data/default_cfg.ini
 %%DATADIR%%/data/iso3166.tab
 %%DATADIR%%/data/iso639-1.utf8
 %%DATADIR%%/data/nomenclature.fab
@@ -658,6 +658,10 @@ share/pixmaps/stellarium.xpm
 %%SCRIPTS%%%%DATADIR%%/scripts/lunar_partial.ssc
 %%SCRIPTS%%%%DATADIR%%/scripts/lunar_total.ssc
 %%SCRIPTS%%%%DATADIR%%/scripts/messier_tour.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/morsels_1.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/morsels_2.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/morsels_3.ssc
+%%SCRIPTS%%%%DATADIR%%/scripts/morsels_4.ssc
 %%SCRIPTS%%%%DATADIR%%/scripts/phobos_phun_1.ssc
 %%SCRIPTS%%%%DATADIR%%/scripts/phobos_phun_2.ssc
 %%SCRIPTS%%%%DATADIR%%/scripts/phobos_phun_3.ssc
@@ -1055,6 +1059,16 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/korean/description.uk.utf8
 %%DATADIR%%/skycultures/korean/info.ini
 %%DATADIR%%/skycultures/korean/star_names.fab
+%%DATADIR%%/skycultures/lokono/constellation_names.eng.fab
+%%DATADIR%%/skycultures/lokono/constellations_boundaries.dat
+%%DATADIR%%/skycultures/lokono/constellationsart.fab
+%%DATADIR%%/skycultures/lokono/constellationship.fab
+%%DATADIR%%/skycultures/lokono/description.en.utf8
+%%DATADIR%%/skycultures/lokono/info.ini
+%%DATADIR%%/skycultures/lokono/lokono_map_1.png
+%%DATADIR%%/skycultures/lokono/planet_names.fab
+%%DATADIR%%/skycultures/lokono/schulz.png
+%%DATADIR%%/skycultures/lokono/star_names.fab
 %%DATADIR%%/skycultures/macedonian/constellation_names.eng.fab
 %%DATADIR%%/skycultures/macedonian/constellationsart.fab
 %%DATADIR%%/skycultures/macedonian/constellationship.fab
@@ -1099,6 +1113,10 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/skycultures/maori/info.ini
 %%DATADIR%%/skycultures/maori/planet_names.fab
 %%DATADIR%%/skycultures/maori/star_names.fab
+%%DATADIR%%/skycultures/maori/tainui.png
+%%DATADIR%%/skycultures/maori/taki.png
+%%DATADIR%%/skycultures/maori/tama.png
+%%DATADIR%%/skycultures/maori/taura.png
 %%DATADIR%%/skycultures/mongolian/constellation_names.eng.fab
 %%DATADIR%%/skycultures/mongolian/constellation_names.fr.fab
 %%DATADIR%%/skycultures/mongolian/constellationship.fab
@@ -1457,12 +1475,14 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/textures/cross.png
 %%DATADIR%%/textures/deimos.png
 %%DATADIR%%/textures/dione.png
+%%DATADIR%%/textures/dysnomia.png
 %%DATADIR%%/textures/earth-clouds.png
 %%DATADIR%%/textures/earth-shadow.png
 %%DATADIR%%/textures/earth_cmap.png
 %%DATADIR%%/textures/earthmap.png
 %%DATADIR%%/textures/enceladus.png
 %%DATADIR%%/textures/epimetheus.png
+%%DATADIR%%/textures/eris.png
 %%DATADIR%%/textures/eros.png
 %%DATADIR%%/textures/europa.png
 %%DATADIR%%/textures/fog.png
@@ -1649,6 +1669,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/translations/stellarium-planetary-features/tt.qm
 %%DATADIR%%/translations/stellarium-planetary-features/ug.qm
 %%DATADIR%%/translations/stellarium-planetary-features/uk.qm
+%%DATADIR%%/translations/stellarium-planetary-features/ur.qm
 %%DATADIR%%/translations/stellarium-planetary-features/uz.qm
 %%DATADIR%%/translations/stellarium-planetary-features/vi.qm
 %%DATADIR%%/translations/stellarium-planetary-features/wa.qm
@@ -1770,6 +1791,7 @@ share/pixmaps/stellarium.xpm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/tt.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/ug.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/uk.qm
+%%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/ur.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/uz.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/vi.qm
 %%SCRIPTS%%%%DATADIR%%/translations/stellarium-remotecontrol/wa.qm
@@ -1906,6 +1928,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/translations/stellarium-skycultures/tt.qm
 %%DATADIR%%/translations/stellarium-skycultures/ug.qm
 %%DATADIR%%/translations/stellarium-skycultures/uk.qm
+%%DATADIR%%/translations/stellarium-skycultures/ur.qm
 %%DATADIR%%/translations/stellarium-skycultures/uz.qm
 %%DATADIR%%/translations/stellarium-skycultures/vi.qm
 %%DATADIR%%/translations/stellarium-skycultures/wa.qm
@@ -2042,6 +2065,7 @@ share/pixmaps/stellarium.xpm
 %%DATADIR%%/translations/stellarium/tt.qm
 %%DATADIR%%/translations/stellarium/ug.qm
 %%DATADIR%%/translations/stellarium/uk.qm
+%%DATADIR%%/translations/stellarium/ur.qm
 %%DATADIR%%/translations/stellarium/uz.qm
 %%DATADIR%%/translations/stellarium/vi.qm
 %%DATADIR%%/translations/stellarium/wa.qm
