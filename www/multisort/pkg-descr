@@ -7,4 +7,4 @@ and using round-robin DNS to do load distribution. With multisort, you
 can take the various logfiles from each server and merge them into a
 single file for analysis.
 
-WWW: http://www.xach.com/multisort/
+WWW: https://www.xach.com/multisort/
