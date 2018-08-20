@@ -1,0 +1,12 @@
+--- gst-libs/ext/libav/configure.orig	2018-08-07 16:03:13 UTC
++++ gst-libs/ext/libav/configure
+@@ -2133,6 +2133,9 @@ fi
+ 
+ # Deal with common $arch aliases
+ case "$arch" in
++    aarch64|arm64)
++        arch="aarch64"
++    ;;
+     arm*)
+         arch="arm"
+     ;;
