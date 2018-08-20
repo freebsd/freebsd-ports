@@ -12,12 +12,14 @@ share/icons/hicolor/64x64/apps/edgar.png
 %%NLS%%share/locale/da/LC_MESSAGES/edgar.mo
 %%NLS%%share/locale/de/LC_MESSAGES/edgar.mo
 %%NLS%%share/locale/el/LC_MESSAGES/edgar.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/edgar.mo
 %%NLS%%share/locale/en_US/LC_MESSAGES/edgar.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/edgar.mo
 %%NLS%%share/locale/es/LC_MESSAGES/edgar.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/edgar.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/edgar.mo
 %%NLS%%share/locale/hi/LC_MESSAGES/edgar.mo
+%%NLS%%share/locale/id/LC_MESSAGES/edgar.mo
 %%NLS%%share/locale/it/LC_MESSAGES/edgar.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/edgar.mo
 %%NLS%%share/locale/jv/LC_MESSAGES/edgar.mo
