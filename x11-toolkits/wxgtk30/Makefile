@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	wx
-PORTVERSION=	3.0.3.1
+PORTVERSION=	3.0.4
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	30-gtk2
@@ -64,6 +65,11 @@ WEBKIT_CONFIGURE_ENABLE=	webview
 WEBKIT_LIB_DEPENDS=	libwebkitgtk-1.0.so:www/webkit-gtk2
 
 .include <bsd.port.pre.mk>
+
+# TLS is broken on armv6/7, PR 229396
+.if ${ARCH} == armv6 || ${ARCH} == armv7
+CONFIGURE_ARGS+=--disable-tls
+.endif
 
 # PR 196703, 197031
 .if ${CHOSEN_COMPILER_TYPE} == gcc
