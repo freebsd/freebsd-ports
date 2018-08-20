@@ -127,8 +127,8 @@ CPPFLAGS+=		-D__builtin_ms_va_list=__builtin_va_list \
 			-D__builtin_ms_va_copy=__builtin_va_copy
 .endif
 
-# Wine assumes a WoW64 package is available however WoW64 is not yet available on FreeBSD.
-# Also fix the desktop file.
+# Wine assumes a WoW64 package is available, however WoW64 is not yet
+# available on FreeBSD. Also fix the desktop file.
 post-patch:
 	${REINPLACE_CMD} 's|/wine|/wine64|g' ${WRKSRC}/tools/wineapploader.in
 	${REINPLACE_CMD} '/Exec/s|wine|wine64|g' ${WRKSRC}/loader/wine.desktop
