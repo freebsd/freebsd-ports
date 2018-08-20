@@ -9,7 +9,6 @@ include/pkg.h
 lib/libpkg.a
 lib/libpkg.so
 lib/libpkg.so.4
-lib/libpkg.so.4.0.0
 libdata/pkgconfig/pkg.pc
 man/man3/pkg_printf.3.gz
 man/man3/pkg_repos.3.gz
