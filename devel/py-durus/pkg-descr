@@ -8,4 +8,4 @@ instance which includes commit() and abort() methods so that changes
 are transactional. Durus is best suited to collections of less than a
 million instances with relatively stable state.
 
-WWW: http://www.mems-exchange.org/software/durus/
+WWW: https://www.mems-exchange.org/software/
