@@ -2,20 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	guile-lib
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.6.1
 CATEGORIES=	devel scheme
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ndowens@yahoo.com
 COMMENT=	Repository of useful code written in Guile Scheme
 
-BUILD_DEPENDS=	guile:lang/guile
-RUN_DEPENDS=	guile:lang/guile
+LICENSE=	LGPL3 GPLv3
+LICENSE_COMB=	multi
 
-BROKEN_armv6=		fails to compile: stack overflow
 BROKEN_armv7=		fails to compile: stack overflow
 
-USES=		gmake
+BUILD_DEPENDS=	guile2>0:lang/guile2
+RUN_DEPENDS=	guile2>0:lang/guile2
+
+TEST_TARGET=	check
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 
 INFO=	guile-library
