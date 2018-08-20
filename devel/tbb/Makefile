@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tbb
-PORTVERSION=	2018.2
+PORTVERSION=	2018.5
 CATEGORIES=	devel
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -10,7 +10,7 @@ COMMENT=	Library that provides thread building blocks
 
 LICENSE=	APACHE20
 
-ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386
 ONLY_FOR_ARCHS_REASON=	has not been ported to this platform
 
 USES=	compiler gmake tar:tgz
