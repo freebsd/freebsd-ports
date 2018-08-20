@@ -172,6 +172,7 @@
     SUBDIR += lumina-screenshot
     SUBDIR += lumina-textedit
     SUBDIR += lumina-xdg-entry
+    SUBDIR += lxqt-notificationd
     SUBDIR += mat
     SUBDIR += mate-notification-daemon
     SUBDIR += mate-utils
