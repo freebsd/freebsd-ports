@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	eduke32
-PORTVERSION=	20180218
+PORTVERSION=	20180809
 CATEGORIES=	games
 MASTER_SITES=	http://dukeworld.duke4.net/eduke32/synthesis/${PORTVERSION}-${SVNREVISION}/:eduke32 \
 		http://www.duke4.org/files/nightfright/hrp/:hrp \
 		http://burnbit.com/download/447717/:hrp \
 		http://www.duke4.org/files/nightfright/related/:related \
-		ftp://ftp.3drealms.com/share/:shareware
+		ftp://ftp.3drealms.com/share/:shareware \
+		https://anongoth.pl/:voxel
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}-${SVNREVISION}${EXTRACT_SUFX}:eduke32
 EXTRACT_ONLY=	${PORTNAME}_src_${PORTVERSION}-${SVNREVISION}${EXTRACT_SUFX}
 
@@ -35,7 +36,7 @@ USE_GL=		gl glu
 USE_GNOME=	gtk20
 USE_SDL=	sdl2 mixer2
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}-${SVNREVISION}
-SVNREVISION=	6675
+SVNREVISION=	6969
 DATADIR=	${PREFIX}/share/duke3d
 SUB_FILES=	pkg-message
 MAKEFILE=	GNUmakefile
@@ -47,6 +48,7 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=		EXAMPLES GCC HRP OFFENSIVE SHAREWARE VOXEL
 OPTIONS_DEFINE_i386=	ASM
 OPTIONS_DEFAULT_i386=	ASM
+OPTIONS_DEFAULT_amd64=	GCC
 OPTIONS_DEFAULT_powerpc=	GCC
 OPTIONS_DEFAULT_sparc64=	GCC
 
@@ -66,7 +68,7 @@ SHAREWARE_EXTRACT_ONLY=	3dduke13.zip
 SHAREWARE_DISTFILES=	3dduke13.zip:shareware
 SHAREWARE_PLIST_FILES=	${DATADIR}/duke3d.grp ${DATADIR}/duke.rts
 VOXEL_DESC=		Install Voxel Pack
-VOXEL_DISTFILES=	duke3d_voxels.zip:related
+VOXEL_DISTFILES=	duke3d_voxels.zip:voxel
 VOXEL_PLIST_FILES=	${DATADIR}/duke3d_voxels.zip
 
 post-extract-SHAREWARE-on:
