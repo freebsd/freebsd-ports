@@ -19,23 +19,20 @@ USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	weaveworks
+GH_SUBDIR=	src/github.com/weaveworks/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
 
-post-patch:
-	${LN} -s ${WRKSRC}/vendor ${WRKSRC}/src
-	${MKDIR} ${WRKSRC}/src/github.com/weaveworks/eksctl
-	${LN} -s ${WRKSRC}/pkg ${WRKSRC}/src/github.com/weaveworks/eksctl/pkg
-
 do-build:
-	cd ${WRKSRC}/cmd/${PORTNAME} && \
+	cd ${WRKSRC}/${GH_SUBDIR} && \
 		GOPATH=${WRKSRC} go build \
 		-ldflags="-X main.gitCommit=${PORTVERSION} \
-		-X main.builtAt=$$(date +'%s')"
+		-X main.builtAt=$$(date +'%s')" \
+		./cmd/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} \
-		${WRKSRC}/cmd/${PORTNAME}/${PORTNAME} \
+		${WRKSRC}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
