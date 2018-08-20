@@ -3,7 +3,9 @@
 
 PORTNAME=	opkg
 DISTVERSION=	20180803
+PORTREVISION=	1
 CATEGORIES=	archivers sysutils
+PKGNAMESUFFIX=	-openwrt
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	OpenWrt package manager
