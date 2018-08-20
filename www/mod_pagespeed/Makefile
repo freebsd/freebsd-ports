@@ -9,6 +9,7 @@ MASTER_SITES=	LOCAL/mmokhi:boringssl,chromium_base,chromium_build,googleurl,gfla
 		https://dl.google.com/closure-compiler/:closurezip
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DISTFILES=	${NON_GH_DISTS}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mmokhi@FreeBSD.org
 COMMENT=	Apache module for rewriting web pages to reduce latency

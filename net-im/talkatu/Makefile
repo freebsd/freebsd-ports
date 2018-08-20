@@ -5,6 +5,7 @@ PORTVERSION=	g2018081801
 CATEGORIES=	net-im
 MASTER_SITES=	https://bitbucket.org/rw_grim/talkatu/get/
 DISTNAME=	d0bd69e7ca26
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Collection of Gtk+ widgets that are useful for chat applications
