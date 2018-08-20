@@ -496,7 +496,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/advanced.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/all-about-zfs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/applications.html
-%%DOCSDIR%%/%%DOCLANG%%/books/faq/bibliography.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-drives.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-kbd-mice.html
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/compatibility-other.html
@@ -818,6 +817,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-documentation.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-freebsdupdate.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/usb-device-mode-network.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/usb-device-mode-storage.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/usb-device-mode-terminals.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/usb-device-mode.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/usb-disks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/userppp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-synopsis.html
@@ -879,6 +882,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/pmake/theway.html
 %%DOCSDIR%%/%%DOCLANG%%/books/pmake/variables.html
 %%DOCSDIR%%/%%DOCLANG%%/books/pmake/writeanddebug.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/binary-alias.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/build-cluster.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/building.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/bundled-libs.html
@@ -1087,7 +1091,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-kde.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-lua.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-lxqt.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-mozilla.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-perl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-php.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-python.html

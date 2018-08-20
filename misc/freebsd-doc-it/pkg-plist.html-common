@@ -1,12 +1,3 @@
-%%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/new-users/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/docbook.css
-%%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/fig1.png
-%%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/fig2.png
-%%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/fig3.png
-%%DOCSDIR%%/%%DOCLANG%%/articles/vm-design/fig4.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking/isdn-bus.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking/isdn-twisted-pair.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/advanced-networking/natd.png
@@ -143,4 +134,3 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization/virtualpc-freebsd7.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization/virtualpc-freebsd8.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization/virtualpc-freebsd9.png
-%%DOCSDIR%%/%%DOCLANG%%/books/unix-introduction/docbook.css
