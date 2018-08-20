@@ -7,6 +7,7 @@ CATEGORIES=		security net
 MASTER_SITES=		https://git.universe-factory.net/fastd/snapshot/
 PKGNAMESUFFIX=		-devel
 DISTNAME=		999b87b80302dbc14e23ef3dff187b91dae7fab5
+DIST_SUBDIR=		${PORTNAME}
 
 MAINTAINER=		crest_maintainer@rlwinm.de
 COMMENT=		Fast and Secure Tunnelling Daemon
