@@ -1,12 +1,14 @@
-backend/src/llvm/llvm_unroll.cpp:209:22: error: no member named 'markAsRemoved' in 'llvm::LoopInfo'
-            loopInfo.markAsRemoved(parentL);
-            ~~~~~~~~ ^
-backend/src/llvm/llvm_to_gen.cpp:325:43: error: reference to type 'std::unique_ptr<DiagnosticHandler>' could not bind to an rvalue of type 'void (*)(const llvm::DiagnosticInfo &, void *)'
-    mod.getContext().setDiagnosticHandler(&gbeDiagnosticHandler,&dc);
-                                          ^~~~~~~~~~~~~~~~~~~~~
-/usr/local/llvm60/include/llvm/IR/LLVMContext.h:213:66: note: passing argument to parameter 'DH' here
-  void setDiagnosticHandler(std::unique_ptr<DiagnosticHandler> &&DH,
-                                                                 ^
+commit 6e60548adee0
+Author: Rebecca N. Palmer <rebecca_palmer@zoho.com>
+Date:   Sat Jul 21 20:04:00 2018 +0100
+
+    Add LLVM 6.0 support
+    
+    LLVMContext::setDiagnosticHandler and LoopInfo::markAsRemoved
+    have been renamed.
+    
+    Signed-off-by: Rebecca N. Palmer <rebecca_palmer@zoho.com>
+    Reviewed-by: Yang Rong <rong.r.yang@intel.com>
 
 --- backend/src/llvm/llvm_to_gen.cpp.orig	2017-10-24 06:04:48 UTC
 +++ backend/src/llvm/llvm_to_gen.cpp
@@ -14,7 +16,7 @@ backend/src/llvm/llvm_to_gen.cpp:325:43: error: reference to type 'std::unique_p
      DataLayout DL(&mod);
      
      gbeDiagnosticContext dc;
-+#if LLVM_VERSION_MAJOR * 10 + LLVM_VERSION_MINOR >= 60
++#if LLVM_VERSION_MAJOR >= 6
 +    mod.getContext().setDiagnosticHandlerCallBack(&gbeDiagnosticHandler,&dc);
 +#else
      mod.getContext().setDiagnosticHandler(&gbeDiagnosticHandler,&dc);
@@ -29,7 +31,7 @@ backend/src/llvm/llvm_to_gen.cpp:325:43: error: reference to type 'std::unique_p
              //Don't change the unrollID if doesn't force unroll.
              //setUnrollID(parentL, false);
 -#if LLVM_VERSION_MAJOR * 10 + LLVM_VERSION_MINOR >= 38
-+#if LLVM_VERSION_MAJOR * 10 + LLVM_VERSION_MINOR >= 60
++#if LLVM_VERSION_MAJOR >= 6
 +            loopInfo.erase(parentL);
 +#elif LLVM_VERSION_MAJOR * 10 + LLVM_VERSION_MINOR >= 38
              loopInfo.markAsRemoved(parentL);
