@@ -2139,7 +2139,6 @@
 %%SEAHUBDIR%%/tools/update-seahub-db_0.9.4_to_0.9.5.py
 @owner %%USERS%%
 @group %%GROUPS%%
-%%SEAFILE_SERVER%%/runtime/seahub.conf
 %%SEAHUBDIR%%/setenv.sh
 %%SEAHUBDIR%%/run-seahub.sh
 %%SEAHUBDIR%%/send_user_notifications.sh

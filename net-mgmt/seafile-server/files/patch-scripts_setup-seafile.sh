@@ -1,6 +1,6 @@
---- scripts/setup-seafile.sh.orig	2017-03-13 02:59:56 UTC
+--- scripts/setup-seafile.sh.orig	2018-08-19 23:40:51 UTC
 +++ scripts/setup-seafile.sh
-@@ -15,6 +15,8 @@ use_existing_seafile="false"
+@@ -17,6 +17,8 @@ use_existing_seafile="false"
  
  server_manual_http="https://github.com/haiwen/seafile/wiki"
  
@@ -9,7 +9,7 @@
  function welcome () {
      echo "-----------------------------------------------------------------"
      echo "This script will guide you to config and setup your seafile server."
-@@ -318,10 +320,17 @@ fi
+@@ -352,10 +354,17 @@ fi
  }
  
  function copy_user_manuals() {
@@ -28,7 +28,7 @@
  }
  
  function parse_params() {
-@@ -673,6 +682,13 @@ chmod 0600 "$dest_settings_py"
+@@ -713,6 +722,13 @@ chmod 0600 "$dest_settings_py"
  chmod 0700 "$default_ccnet_conf_dir"
  chmod 0700 "$seafile_data_dir"
  chmod 0700 "$default_conf_dir"
@@ -42,7 +42,7 @@
  
  # -------------------------------------------
  # copy user manuals to library template
-@@ -689,9 +705,18 @@ echo
+@@ -729,9 +745,17 @@ echo
  echo "-----------------------------------------------------------------"
  echo "Your seafile server configuration has been completed successfully." 
  echo "-----------------------------------------------------------------"
@@ -54,7 +54,6 @@
 +	echo "run seafile server:     sysrc seafile_enable=YES"
 +	echo "                        service seafile { start | stop | restart }"
 +	echo "run seahub  server:     sysrc seahub_enable=YES"
-+	echo "fastcgi (optional):     sysrc seahub_fastcgi=1"
 +	echo "                        service seahub { start | stop | restart }"
 +	echo "run reset-admin:        ./reset-admin.sh"
 +else
