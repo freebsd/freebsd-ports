@@ -1,7 +1,6 @@
 # $FreeBSD$
 
-PORTVERSION=	2.5.6
-PORTREVISION=	1
+PORTVERSION=	2.5.8
 PKGNAMESUFFIX=	25
 
 CONFLICTS=	ansible-* ansible1-* ansible23-* ansible24-*
