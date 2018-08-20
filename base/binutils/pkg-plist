@@ -8,6 +8,11 @@ bin/%%BUTARGET%%-ld
 bin/%%BUTARGET%%-ld.bfd
 %%OBJCOPY%%bin/%%BUTARGET%%-objcopy
 bin/%%BUTARGET%%-objdump
+%%BUTARGET%%/bin/as
+%%BUTARGET%%/bin/ld
+%%BUTARGET%%/bin/ld.bfd
+%%OBJCOPY%%%%BUTARGET%%/bin/objcopy
+%%BUTARGET%%/bin/objdump
 %%I386%%%%BUTARGET%%/lib/ldscripts/elf_i386.x
 %%I386%%%%BUTARGET%%/lib/ldscripts/elf_i386.xbn
 %%I386%%%%BUTARGET%%/lib/ldscripts/elf_i386.xc
