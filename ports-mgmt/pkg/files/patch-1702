@@ -1,0 +1,13 @@
+diff --git a/libpkg/pkg.c b/libpkg/pkg.c
+index 0c472b39..b4ee9ec3 100644
+--- libpkg/pkg.c
++++ libpkg/pkg.c
+@@ -1668,7 +1668,7 @@ pkg_is_config_file(struct pkg *p, const char *path,
+ 		return (false);
+ 
+ 	kh_find(pkg_config_files, p->config_files, path, *cfile);
+-	if (cfile == NULL) {
++	if (*cfile == NULL) {
+ 		*file = NULL;
+ 		return (false);
+ 	}
