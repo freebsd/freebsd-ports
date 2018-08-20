@@ -49,10 +49,7 @@ while [ $# -gt 0 ]
 do
     if [ -f "$1/Makefile" ]; then
         # See what the port thinks its PORTREVISION is and save that.
-        startdir=`pwd`
-        cd "$1"
-        pre=$(make -V PORTREVISION)
-        cd "$startdir"
+        pre=$(make -C "$1" -V PORTREVISION)
 
         # If the Makefile exists, continue and empty the tempfile, set up variables
 	echo -n > $tempfile
@@ -100,9 +97,7 @@ do
             fi
 
             # See what the port now has for PORTREVISION.
-            cd "$1"
-            post=$(make -V PORTREVISION)
-            cd "$startdir"
+            post=$(make -C "$1" -V PORTREVISION)
 
             if [ "$post" -le "$pre" ]; then
                 printc "ERROR: $1 PORTREVISION went backwards from $pre to $post!" "red"
