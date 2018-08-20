@@ -225,6 +225,7 @@
     SUBDIR += mairix
     SUBDIR += masqmail
     SUBDIR += mb2md
+    SUBDIR += mblaze
     SUBDIR += mbox2imap
     SUBDIR += mbox2mdir
     SUBDIR += mboxcheck-applet
