@@ -142,6 +142,7 @@
 %%DOCSDIR%%/html/_sources/envvar/FFLAGS.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/LDFLAGS.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/MACOSX_DEPLOYMENT_TARGET.rst.txt
+%%DOCSDIR%%/html/_sources/envvar/PackageName_ROOT.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/RC.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/RCFLAGS.rst.txt
 %%DOCSDIR%%/html/_sources/generator/Borland Makefiles.rst.txt
@@ -1398,6 +1399,7 @@
 %%DOCSDIR%%/html/_sources/variable/MSVC_IDE.rst.txt
 %%DOCSDIR%%/html/_sources/variable/MSVC_TOOLSET_VERSION.rst.txt
 %%DOCSDIR%%/html/_sources/variable/MSVC_VERSION.rst.txt
+%%DOCSDIR%%/html/_sources/variable/PackageName_ROOT.rst.txt
 %%DOCSDIR%%/html/_sources/variable/PROJECT-NAME_BINARY_DIR.rst.txt
 %%DOCSDIR%%/html/_sources/variable/PROJECT-NAME_DESCRIPTION.rst.txt
 %%DOCSDIR%%/html/_sources/variable/PROJECT-NAME_HOMEPAGE_URL.rst.txt
@@ -1593,6 +1595,7 @@
 %%DOCSDIR%%/html/envvar/FFLAGS.html
 %%DOCSDIR%%/html/envvar/LDFLAGS.html
 %%DOCSDIR%%/html/envvar/MACOSX_DEPLOYMENT_TARGET.html
+%%DOCSDIR%%/html/envvar/PackageName_ROOT.html
 %%DOCSDIR%%/html/envvar/RC.html
 %%DOCSDIR%%/html/envvar/RCFLAGS.html
 %%DOCSDIR%%/html/generator/Borland Makefiles.html
@@ -2853,6 +2856,7 @@
 %%DOCSDIR%%/html/variable/MSVC_IDE.html
 %%DOCSDIR%%/html/variable/MSVC_TOOLSET_VERSION.html
 %%DOCSDIR%%/html/variable/MSVC_VERSION.html
+%%DOCSDIR%%/html/variable/PackageName_ROOT.html
 %%DOCSDIR%%/html/variable/PROJECT-NAME_BINARY_DIR.html
 %%DOCSDIR%%/html/variable/PROJECT-NAME_DESCRIPTION.html
 %%DOCSDIR%%/html/variable/PROJECT-NAME_HOMEPAGE_URL.html

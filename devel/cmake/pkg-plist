@@ -170,6 +170,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/envvar/FFLAGS.rst
 %%DATADIR%%/Help/envvar/LDFLAGS.rst
 %%DATADIR%%/Help/envvar/MACOSX_DEPLOYMENT_TARGET.rst
+%%DATADIR%%/Help/envvar/PackageName_ROOT.rst
 %%DATADIR%%/Help/envvar/RC.rst
 %%DATADIR%%/Help/envvar/RCFLAGS.rst
 %%DATADIR%%/Help/generator/Borland Makefiles.rst
@@ -1443,6 +1444,7 @@ share/aclocal/cmake.m4
 %%DATADIR%%/Help/variable/MSVC_IDE.rst
 %%DATADIR%%/Help/variable/MSVC_TOOLSET_VERSION.rst
 %%DATADIR%%/Help/variable/MSVC_VERSION.rst
+%%DATADIR%%/Help/variable/PackageName_ROOT.rst
 %%DATADIR%%/Help/variable/PROJECT-NAME_BINARY_DIR.rst
 %%DATADIR%%/Help/variable/PROJECT-NAME_DESCRIPTION.rst
 %%DATADIR%%/Help/variable/PROJECT-NAME_HOMEPAGE_URL.rst
