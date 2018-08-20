@@ -4,4 +4,4 @@ Kerberos.framework, and instead offer a limited set of functions that do what is
 needed for client/server Kerberos authentication based on
 <http://www.ietf.org/rfc/rfc4559.txt>.
 
-WWW: http://trac.calendarserver.org/
+WWW: https://github.com/apple/ccs-pykerberos
