@@ -217,6 +217,7 @@
     SUBDIR += pycdf
     SUBDIR += pynn
     SUBDIR += qcl
+    SUBDIR += qmcpack
     SUBDIR += qtresistors
     SUBDIR += quantum-espresso
     SUBDIR += rdkit
