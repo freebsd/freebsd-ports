@@ -1,4 +1,4 @@
---- scripts/setup-seafile-mysql.py.orig	2017-03-18 16:19:38 UTC
+--- scripts/setup-seafile-mysql.py.orig	2018-08-19 23:40:51 UTC
 +++ scripts/setup-seafile-mysql.py
 @@ -19,6 +19,8 @@ from ConfigParser import ConfigParser
  
@@ -9,7 +9,7 @@
  
  try:
      import readline # pylint: disable=W0611
-@@ -422,8 +424,6 @@ Please choose a way to initialize seafile databases:
+@@ -424,8 +426,6 @@ Please choose a way to initialize seafil
          if not re.match(r'^[a-zA-Z0-9_\-\.]+$', host):
              raise InvalidAnswer('%s is not a valid host' % Utils.highlight(host))
  
@@ -18,7 +18,7 @@
          return host
  
      def ask_mysql_host(self):
-@@ -1167,17 +1167,23 @@ share_name = /
+@@ -1209,17 +1209,23 @@ limit_request_line = 8190
  
  class UserManualHandler(object):
      def __init__(self):
@@ -43,7 +43,7 @@
  
  def report_config():
      print
-@@ -1242,6 +1248,8 @@ def create_seafile_server_symlink():
+@@ -1284,6 +1290,8 @@ def create_seafile_server_symlink():
  def set_file_perm():
      filemode = 0600
      dirmode = 0700
@@ -52,7 +52,7 @@
      files = [
          seahub_config.seahub_settings_py,
      ]
-@@ -1253,8 +1261,10 @@ def set_file_perm():
+@@ -1295,8 +1303,10 @@ def set_file_perm():
      ]
      for fpath in files:
          os.chmod(fpath, filemode)
@@ -63,7 +63,7 @@
  
  env_mgr = EnvManager()
  ccnet_config = CcnetConfigurator()
-@@ -1445,8 +1455,12 @@ def report_success():
+@@ -1488,8 +1498,11 @@ def report_success():
  Your seafile server configuration has been finished successfully.
  -----------------------------------------------------------------
  
@@ -72,7 +72,6 @@
 +run seafile server:     sysrc seafile_enable=YES
 +                        service seafile { start | stop | restart }
 +run seahub  server:     sysrc seahub_enable=YES
-+fastcgi (optional):     sysrc seahub_fastcgi=1
 +                        service seahub { start | stop | restart }
 +run reset-admin:        ./reset-admin.sh
  
