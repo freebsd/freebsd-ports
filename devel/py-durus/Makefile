@@ -16,6 +16,8 @@ COMMENT=	Persistent object storage system for Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		fails to package
+
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
