@@ -96,7 +96,6 @@
     SUBDIR += transmission-qt
     SUBDIR += transmission-remote-gui
     SUBDIR += tribler
-    SUBDIR += twister
     SUBDIR += uhub
     SUBDIR += valknut
     SUBDIR += verlihub
