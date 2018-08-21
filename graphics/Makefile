@@ -533,6 +533,7 @@
     SUBDIR += libgnomecanvasmm26
     SUBDIR += libgphoto2
     SUBDIR += libgxps
+    SUBDIR += libheif
     SUBDIR += libimg
     SUBDIR += libiptcdata
     SUBDIR += libjpeg-turbo
