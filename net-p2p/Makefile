@@ -21,7 +21,6 @@
     SUBDIR += dclib
     SUBDIR += deluge
     SUBDIR += deluge-cli
-    SUBDIR += dogecoin
     SUBDIR += ed2k
     SUBDIR += edonkey-tool-hash
     SUBDIR += eiskaltdcpp-cli
