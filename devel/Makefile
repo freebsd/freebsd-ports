@@ -200,14 +200,12 @@
     SUBDIR += bennugd-core
     SUBDIR += bennugd-modules
     SUBDIR += bglibs
-    SUBDIR += bhyve-vm-goagent
     SUBDIR += bicyclerepair
     SUBDIR += bin86
     SUBDIR += binaryen
     SUBDIR += bingrep
     SUBDIR += binutils
     SUBDIR += bison
-    SUBDIR += bisoncpp
     SUBDIR += blame
     SUBDIR += blitz
     SUBDIR += bmake
@@ -287,8 +285,6 @@
     SUBDIR += check
     SUBDIR += checkbashisms
     SUBDIR += checkheaders
-    SUBDIR += cheritrace-devel
-    SUBDIR += cherivis-devel
     SUBDIR += chromium-gn
     SUBDIR += chrpath
     SUBDIR += chruby
@@ -1255,7 +1251,6 @@
     SUBDIR += jam
     SUBDIR += jansson
     SUBDIR += java-findbugs
-    SUBDIR += javolution
     SUBDIR += jclassinfo
     SUBDIR += jcmdline
     SUBDIR += jech-dht

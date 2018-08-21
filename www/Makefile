@@ -1905,7 +1905,6 @@
     SUBDIR += py-zope.app.wsgi
     SUBDIR += pyblosxom
     SUBDIR += pycarddav
-    SUBDIR += pydio
     SUBDIR += pyjamas
     SUBDIR += qdecoder
     SUBDIR += qhttpengine

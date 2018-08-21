@@ -374,7 +374,6 @@
     SUBDIR += ucc
     SUBDIR += urweb
     SUBDIR += v8
-    SUBDIR += v8-devel
     SUBDIR += vala
     SUBDIR += visualworks
     SUBDIR += yabasic

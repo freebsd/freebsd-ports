@@ -1,5 +1,0 @@
-Fluentd is a log collector daemon written in Ruby.  Fluentd receives
-logs as JSON streams, buffers them, and sends them to other systems
-like MySQL, MongoDB, or even other instances of Fluentd.
-
-WWW: http://fluentd.org/

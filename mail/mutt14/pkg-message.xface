@@ -1,8 +1,0 @@
-
-************************************************************
-  To enable the XFACE support in mutt you also have to add
-        set xface=yes
-  to your ~/.muttrc
-  Additional information is provided by news/slrnface
-************************************************************
-

@@ -1,5 +1,0 @@
-A tool for viewing streamtraces from the BERI and CHERI processors from SRI
-International and the University of Cambridge.  CheriVis uses LLVM to read
-object code and to disassemble MIPS instructions.
-
-WWW: https://github.com/CTSRD-CHERI/CheriVis
