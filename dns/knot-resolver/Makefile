@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	knot-resolver
-DISTVERSION=	2.4.1
+DISTVERSION=	2.3.0
+PORTREVISION=	2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-resolver/ \
 		https://dns.company/downloads/knot-resolver/
@@ -12,14 +13,11 @@ COMMENT=	Caching full resolver implementation
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	bash:shells/bash \
-		git:devel/git
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libknot.so:dns/knot2 \
 		liblmdb.so:databases/lmdb \
 		libluajit-5.1.so:lang/luajit \
 		libuv.so:devel/libuv
-TEST_DEPENDS=	cmocka>=1.1.1:sysutils/cmocka
 
 CONFLICTS=	knot-1.* knot1-[0-6].*
 
@@ -29,11 +27,10 @@ MAKE_ARGS+=	MANDIR=${PREFIX}/man
 MAKE_ARGS+=	PKGCONFIGDIR=${PREFIX}/libdata/pkgconfig
 MAKE_ARGS+=	lmdb_CFLAGS=-I${PREFIX}/include lmdb_LIBS=-llmdb
 
-USES=		gmake libedit libtool ncurses pkgconfig shebangfix tar:xz
-SHEBANG_FILES=	scripts/coverage_env.sh
+USES=		gmake libedit libtool ncurses pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	COOKIES DNSTAP DOXYGEN GO TRUSTANCHOR
+OPTIONS_DEFINE=	COOKIES DNSTAP DOXYGEN GO MEMCACHED REDIS TRUSTANCHOR
 
 COOKIES_DESC=			cookies
 COOKIES_LIB_DEPENDS=		libnettle.so:security/nettle
@@ -64,6 +61,18 @@ GO_BUILD_DEPENDS=		go>=1.5:lang/go
 GO_MAKE_ARGS_ON=		HAS_go=yes
 GO_MAKE_ARGS_OFF=		HAS_go=no
 
+MEMCACHED_DESC=			memcached in-memory data-backend
+MEMCACHED_LIB_DEPENDS=		libmemcached.so:databases/libmemcached
+MEMCACHED_MAKE_ARGS_ON=		HAS_libmemcached=yes
+MEMCACHED_MAKE_ARGS_OFF=	HAS_libmemcached=no
+MEMCACHED_PLIST_FILES=		lib/kdns_modules/memcached.so
+
+REDIS_DESC=			redis in-memory data-backend
+REDIS_LIB_DEPENDS=		libhiredis.so:databases/hiredis
+REDIS_MAKE_ARGS_ON=		HAS_hiredis=yes
+REDIS_MAKE_ARGS_OFF=		HAS_hiredis=no
+REDIS_PLIST_FILES=		lib/kdns_modules/redis.so
+
 TRUSTANCHOR_DESC=		Trust anchor bootstrapping and stats
 TRUSTANCHOR_USES=		lua
 TRUSTANCHOR_MAKE_ARGS_ON=	HAS_ltn12=yes HAS_ssl.https=yes
@@ -80,10 +89,10 @@ STRIP_TARGETS=	sbin/kresd			\
 		sbin/kresc			\
 		lib/libkres.so.7		\
 		lib/kdns_modules/ahocorasick.so	\
-		lib/kdns_modules/bogus_log.so	\
 		lib/kdns_modules/cookies.so	\
 		lib/kdns_modules/dnstap.so	\
 		lib/kdns_modules/hints.so	\
+		lib/kdns_modules/kmemcached.so	\
 		lib/kdns_modules/stats.so
 
 post-install:
