@@ -1,4 +1,4 @@
-Skrooge is a personal finances manager for KDE. It allows you to
+Skrooge is a personal finances manager powered by KDE. It allows you to
 keep track of your expenses and incomes, categorize them, and build
 reports of them.
 
@@ -14,7 +14,7 @@ Here is the list of main features of Skrooge:
  * Scheduled operations
  * Track refund of your expenses
  * Automatically process operations based on search conditions
- * Multi currencies
+ * Multiple currencies
  * Dashboard
 
-WWW: http://skrooge.org
+WWW: https://skrooge.org
