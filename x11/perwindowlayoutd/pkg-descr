@@ -1,0 +1,8 @@
+Sometimes you want to setup switching keyboard layouts using X11 server --
+because there is no DE plugin, or it's broken, or lacks needed functionality.
+You can easily configure X11 server to switch keyboard layouts, but I could
+not find way of keeping layout for each window separately using only the X11
+server.  Hence this package.  It is similar to kbdd and xxkb but might work
+better under some configurations and/or window managers.
+
+WWW: https://sourceforge.net/projects/perwindowlayout/
