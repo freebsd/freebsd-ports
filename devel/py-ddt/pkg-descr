@@ -2,4 +2,4 @@ DDT (Data-Driven Tests) allows you to multiply one test case by
 running it with different test data, and make it appear as multiple
 test cases.
 
-WWW: http://readthedocs.org/projects/ddt/
+WWW: https://readthedocs.org/projects/ddt/
