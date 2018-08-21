@@ -294,7 +294,6 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/plugins/netlist_form_cadstar-RINF.xsl
 %%DATADIR%%/plugins/netlist_form_cadstar.xsl
 %%DATADIR%%/plugins/netlist_form_pads-pcb.asc.xsl
-%%DATADIR%%/scripting/kicad_pyshell/__init__.py
 %%DATADIR%%/scripting/plugins/FPC_wizard.py
 %%DATADIR%%/scripting/plugins/FootprintWizardBase.py
 %%DATADIR%%/scripting/plugins/PadArray.py

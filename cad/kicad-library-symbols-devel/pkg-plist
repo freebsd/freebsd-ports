@@ -92,6 +92,8 @@
 %%DATADIR%%/library/Driver_Motor.lib
 %%DATADIR%%/library/Driver_Relay.dcm
 %%DATADIR%%/library/Driver_Relay.lib
+%%DATADIR%%/library/FPGA_Lattice.dcm
+%%DATADIR%%/library/FPGA_Lattice.lib
 %%DATADIR%%/library/FPGA_Microsemi.dcm
 %%DATADIR%%/library/FPGA_Microsemi.lib
 %%DATADIR%%/library/FPGA_Xilinx.dcm
