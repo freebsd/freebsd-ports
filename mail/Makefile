@@ -263,7 +263,6 @@
     SUBDIR += mulberry
     SUBDIR += mutt
     SUBDIR += mutt-lite
-    SUBDIR += mutt14-lite
     SUBDIR += mutt_vc_query
     SUBDIR += muttils
     SUBDIR += nbsmtp
