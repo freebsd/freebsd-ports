@@ -1,0 +1,15 @@
+bin/heif-convert
+bin/heif-enc
+bin/heif-info
+bin/heif-thumbnailer
+include/libheif/heif.h
+include/libheif/heif_cxx.h
+include/libheif/heif_plugin.h
+include/libheif/heif_version.h
+lib/libheif.a
+lib/libheif.so
+lib/libheif.so.1
+lib/libheif.so.1.3.2
+libdata/pkgconfig/libheif.pc
+share/mime/packages/heif.xml
+share/thumbnailers/heif.thumbnailer
