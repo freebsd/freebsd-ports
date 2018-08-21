@@ -220,6 +220,7 @@
     SUBDIR += qmcpack
     SUBDIR += qtresistors
     SUBDIR += quantum-espresso
+    SUBDIR += qwalk
     SUBDIR += rdkit
     SUBDIR += rmf
     SUBDIR += rubygem-ai4r
