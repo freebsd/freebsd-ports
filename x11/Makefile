@@ -258,6 +258,7 @@
     SUBDIR += p5-XTerm-Conf
     SUBDIR += pantheon-terminal
     SUBDIR += pcdm
+    SUBDIR += perwindowlayoutd
     SUBDIR += pipeglade
     SUBDIR += pixman
     SUBDIR += plasma-scriptengine-python-kde4
