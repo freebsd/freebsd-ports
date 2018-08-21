@@ -10485,3 +10485,6 @@ math/hfst||2018-08-21|Has expired: Broken for more than 5 months
 math/octave-forge-communications||2018-08-21|Has expired: Broken for more than 5 months
 lang/v8-devel||2018-08-21|Has expired: Broken for more than 5 months
 sysutils/rubygem-fluentd010||2018-08-21|Has expired: Broken for more than 5 months
+mail/mutt14-lite||2018-08-21|Remove expired slave port
+net/coda6_client||2018-08-21|Remove expired slave port
+net/openmq-client|2018-08-21|Remove expired slave port
