@@ -3,21 +3,21 @@
 
 PORTNAME=	cli53
 DISTVERSION=	0.8.12
+PORTREVISION=	1
 CATEGORIES=	dns
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Command line management of Route53 domains
 
 LICENSE=	MIT
-
-BUILD_DEPENDS=  go>=1.5:lang/go
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	barnybug
 
 WRKSRC_SUBDIR=	cmd/cli53
-GO_PKGNAME=     github.com/${GH_ACCOUNT}/${PORTNAME}/cmd/cli53
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}/cmd/cli53
 PLIST_FILES=	bin/cli53
 
 post-extract:
