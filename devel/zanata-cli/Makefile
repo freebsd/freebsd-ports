@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zanata-cli
-PORTVERSION=	4.6.1
+PORTVERSION=	4.6.2
 DISTVERSIONSUFFIX=	-dist
 CATEGORIES=	devel java
 MASTER_SITES=	http://repo.maven.apache.org/maven2/org/zanata/${PORTNAME}/${PORTVERSION}/
@@ -16,6 +16,7 @@ USE_JAVA=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+PLIST_SUB=	ZANATA_VERSION=${PORTVERSION}
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
