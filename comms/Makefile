@@ -191,7 +191,6 @@
     SUBDIR += uird
     SUBDIR += unixcw
     SUBDIR += usbmuxd
-    SUBDIR += usrp
     SUBDIR += viewfax
     SUBDIR += vrflash
     SUBDIR += wsjt
