@@ -2,6 +2,4 @@ MPDCon is a graphical client for MPD, the Music Player Daemon
 (http://www.musicpd.org). With it you can manage your playlists,
 browse the song collection and control the daemon.
 
-LICENSE: GPL2 or later
-
-WWW: http://www.musicpd.org/MPDCon.shtml
+WWW: http://gap.nongnu.org/mpdcon/
