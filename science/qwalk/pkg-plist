@@ -1,0 +1,10 @@
+bin/abinit2qmc
+bin/crystal2qmc
+bin/g032qmc
+bin/gamess2qmc
+bin/gamessci2qmc
+bin/gosling
+bin/heg2qmc
+bin/nwchem2qmc
+bin/qwalk
+bin/siesta2qmc
