@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	obs-studio
-DISTVERSION=	21.1.2
-PORTREVISION=	2
+DISTVERSION=	22.0.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,6 +21,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libjack.so:audio/jack \
 		libjansson.so:devel/jansson \
 		libluajit-5.1.so:lang/luajit \
+		libmbedtls.so:security/mbedtls \
 		libpulse.so:audio/pulseaudio \
 		libspeexdsp.so:audio/speexdsp \
 		libsysinfo.so:devel/libsysinfo \
@@ -39,6 +39,7 @@ USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DUNIX_STRUCTURE:BOOL=ON \
 		-DOBS_VERSION_OVERRIDE:STRING="${PORTVERSION}"
+CFLAGS+=	-D_WITH_GETLINE
 
 BROKEN_aarch64=		Fails to compile: invalid conversion between vector type and integer type
 
