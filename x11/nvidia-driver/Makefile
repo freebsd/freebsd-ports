@@ -113,6 +113,10 @@ MAKE_ENV+=	WITHOUT_LINUX=yes
 .endif
 
 post-patch: .SILENT
+# KPI of kmem_alloc_contig() changed in FreeBSD src r338143
+.if ${OSVERSION} >= 1200079
+	${REINPLACE_CMD} -e 's/kmem_alloc_contig(kmem_arena, /kmem_alloc_contig(/' ${WRKSRC}/src/${NVSRC}/nvidia_subr.c
+.endif
 # We should support -CURRENT: kill the check
 	${REINPLACE_CMD} -e '24,26d' ${WRKSRC}/src/${NVSRC}/nv-freebsd.h
 # Adjust Linux headers #include's after FreeBSD src r246085
