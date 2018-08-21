@@ -3,7 +3,7 @@
 
 PORTNAME=	magicfilter
 PORTVERSION=	2.3.h
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	print
 MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/magicfilter/
 
@@ -22,7 +22,7 @@ CONFIGURE_ENV+=		LOCALBASE=${LOCALBASE}
 
 .if exists(${LOCALBASE}/lib/libmagic.so)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmagic.so:sysutils/file
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 .endif
 
 .include <bsd.port.mk>
