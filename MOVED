@@ -10490,3 +10490,4 @@ net/coda6_client||2018-08-21|Remove expired slave port
 net/openmq-client||2018-08-21|Remove expired slave port
 net-p2p/twister||2018-08-21|Has expired: Broken for more than 5 months
 comms/usrp||2018-08-21|Has expired: Broken for more than 5 months
+devel/libbobcat||2018-08-21|Has expired: Broken for more than 5 months

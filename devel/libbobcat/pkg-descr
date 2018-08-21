@@ -1,6 +1,0 @@
-Bobcat is an acronym of `Brokken's Own Base Classes And Templates'.  It
-is a shared library implementing C++ classes that are frequently used in
-software developed by Frank Brokken.  Frank's existing programs will
-depend on `bobcat' in the near future.
-
-WWW: http://bobcat.sourceforge.net/
