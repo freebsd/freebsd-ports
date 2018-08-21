@@ -1,3 +1,3 @@
-TIMESTAMP = 1485281047
-SHA256 (django_openstack_auth-3.1.0.tar.gz) = a1e53a2b90876e5dc4ac932d00e0dedfb0871d110b9799ee6f7ea35a884bc057
-SIZE (django_openstack_auth-3.1.0.tar.gz) = 69759
+TIMESTAMP = 1533377993
+SHA256 (django_openstack_auth-3.6.1.tar.gz) = 9a441fdea3f662fd727f020f479b3e89c96a2cc442c49539634c996a967dd378
+SIZE (django_openstack_auth-3.6.1.tar.gz) = 74678
