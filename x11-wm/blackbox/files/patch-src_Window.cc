@@ -1,5 +1,5 @@
---- src/Window.cc.orig	2013-08-31 15:58:41.720845042 +0200
-+++ src/Window.cc	2013-08-31 16:00:13.671837757 +0200
+--- src/Window.cc.orig	2005-10-18 08:01:41 UTC
++++ src/Window.cc
 @@ -33,6 +33,8 @@
  #include "Workspace.hh"
  #include "blackbox.hh"
@@ -9,7 +9,7 @@
  #include <Pen.hh>
  #include <PixmapCache.hh>
  #include <Unicode.hh>
-@@ -3699,14 +3701,14 @@
+@@ -3699,14 +3701,14 @@ void collisionAdjust(int *dx, int *dy, int x, int y,
               wtop = y,
            wbottom = y + height - 1,
    // left, right, top + bottom are for rect, douterleft = left border of rect
@@ -32,7 +32,7 @@
  
    if ((wtop <= rect.bottom() && wbottom >= rect.top())
        || doutertop <= snap_distance
-@@ -3749,8 +3751,8 @@
+@@ -3749,8 +3751,8 @@ void collisionAdjust(int *dx, int *dy, int x, int y,
      const int cwy = y + height / 2;
      const int crx = rect.x() + rect.width() / 2;
      const int cry = rect.y() + rect.height() / 2;
@@ -43,7 +43,7 @@
      if (cdx <= snap_distance)
        // snap to horizontal center
        *dx = x - (rect.x() + ((rect.width() - width) / 2));
-@@ -3773,13 +3775,13 @@
+@@ -3773,13 +3775,13 @@ void BlackboxWindow::snapAdjust(int *x, int *y) {
    if (edge_distance) {
      collisionAdjust(&dx, &dy, *x, *y, frame.rect.width(), frame.rect.height(),
                      _screen->availableArea(), edge_distance, true);
@@ -61,7 +61,7 @@
      }
    }
    if (win_distance) {
-@@ -3791,8 +3793,8 @@
+@@ -3791,8 +3793,8 @@ void BlackboxWindow::snapAdjust(int *x, int *y) {
            win->workspace() == _screen->currentWorkspace()) {
          collisionAdjust(&dx, &dy, *x, *y, frame.rect.width(),
                          frame.rect.height(), win->frame.rect, win_distance);

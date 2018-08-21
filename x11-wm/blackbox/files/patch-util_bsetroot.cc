@@ -1,5 +1,5 @@
---- util/bsetroot.cc.orig	2013-08-31 16:18:50.697762748 +0200
-+++ util/bsetroot.cc	2013-08-31 16:19:53.695753444 +0200
+--- util/bsetroot.cc.orig	2005-03-15 07:01:37 UTC
++++ util/bsetroot.cc
 @@ -28,6 +28,7 @@
  #include <Texture.hh>
  
@@ -8,7 +8,7 @@
  
  #include <X11/Xatom.h>
  #include <stdio.h>
-@@ -68,11 +69,11 @@
+@@ -68,11 +69,11 @@ bsetroot::bsetroot(int argc, char **argv, char *dpy_na
      } else if (! strcmp("-mod", argv[i])) {
        if ((++i) >= argc) usage();
  
@@ -22,7 +22,7 @@
  
        if (mod_x < 1) mod_x = 1;
        if (mod_y < 1) mod_y = 1;
-@@ -336,7 +337,7 @@
+@@ -336,7 +337,7 @@ void bsetroot::usage(int exit_code) {
            "  -to <color>              gradient end color\n\n"
            "  -solid <color>           solid color\n\n"
            "  -help                    print this help text and exit\n");
@@ -31,7 +31,7 @@
  }
  
  int main(int argc, char **argv) {
-@@ -350,7 +351,7 @@
+@@ -350,7 +351,7 @@ int main(int argc, char **argv) {
        if ((++i) >= argc) {
          fprintf(stderr, "error: '-display' requires an argument\n");
  
