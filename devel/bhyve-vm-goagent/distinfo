@@ -1,7 +1,0 @@
-TIMESTAMP = 1520447374
-SHA256 (freenas-bhyve-vm-goagent-v1.0-a640870c90752e01af30e394ce7c8157f4371a1b_GH0.tar.gz) = 71ff3e116f6a4298ec683154b6deadad22d0bc7e1e9541c2f765991714d7ba15
-SIZE (freenas-bhyve-vm-goagent-v1.0-a640870c90752e01af30e394ce7c8157f4371a1b_GH0.tar.gz) = 7262
-SHA256 (gorilla-websocket-v1.2.0_GH0.tar.gz) = 04d1c4fa839a01d32d3c8c558370a964d83b5c980f74c4b965f3dd04f8cb9276
-SIZE (gorilla-websocket-v1.2.0_GH0.tar.gz) = 42984
-SHA256 (shirou-gopsutil-v2.17.12_GH0.tar.gz) = 0abdee29c3c70d9860d8177e70b9bbb0651af4e48b03cfbb36bdf53300fa7268
-SIZE (shirou-gopsutil-v2.17.12_GH0.tar.gz) = 107887

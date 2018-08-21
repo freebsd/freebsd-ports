@@ -179,9 +179,6 @@
     SUBDIR += crack-attack
     SUBDIR += craft
     SUBDIR += crafty
-    SUBDIR += crafty-open-enormous
-    SUBDIR += crafty-open-large
-    SUBDIR += crafty-open-medium
     SUBDIR += crafty-tablebase-no-pawn
     SUBDIR += crashtest
     SUBDIR += cre

@@ -622,7 +622,6 @@
     SUBDIR += php-mdcached
     SUBDIR += php-memcache
     SUBDIR += php-xapian
-    SUBDIR += php5-pdo_cassandra
     SUBDIR += php5-tarantool
     SUBDIR += php56-dba
     SUBDIR += php56-interbase
