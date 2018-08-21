@@ -1370,7 +1370,6 @@
     SUBDIR += libbegemot
     SUBDIR += libbfd
     SUBDIR += libbinio
-    SUBDIR += libbobcat
     SUBDIR += libbonobo
     SUBDIR += libbonobo-reference
     SUBDIR += libbson
