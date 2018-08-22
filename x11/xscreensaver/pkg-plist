@@ -72,6 +72,7 @@ bin/xscreensaver-hacks/euler2d
 bin/xscreensaver-hacks/extrusion
 bin/xscreensaver-hacks/fadeplot
 bin/xscreensaver-hacks/fiberlamp
+bin/xscreensaver-hacks/filmleader
 bin/xscreensaver-hacks/fireworkx
 bin/xscreensaver-hacks/flame
 bin/xscreensaver-hacks/flipflop
@@ -92,6 +93,7 @@ bin/xscreensaver-hacks/glblur
 bin/xscreensaver-hacks/glcells
 bin/xscreensaver-hacks/gleidescope
 bin/xscreensaver-hacks/glhanoi
+bin/xscreensaver-hacks/glitchpeg
 bin/xscreensaver-hacks/glknots
 bin/xscreensaver-hacks/glmatrix
 bin/xscreensaver-hacks/glplanet
@@ -220,6 +222,7 @@ bin/xscreensaver-hacks/twang
 bin/xscreensaver-hacks/unicrud
 bin/xscreensaver-hacks/unknownpleasures
 bin/xscreensaver-hacks/vermiculate
+bin/xscreensaver-hacks/vfeedback
 bin/xscreensaver-hacks/vidwhacker
 bin/xscreensaver-hacks/vigilance
 bin/xscreensaver-hacks/voronoi
@@ -314,6 +317,7 @@ man/man6/euler2d.6.gz
 man/man6/extrusion.6.gz
 man/man6/fadeplot.6.gz
 man/man6/fiberlamp.6.gz
+man/man6/filmleader.6.gz
 man/man6/fireworkx.6.gz
 man/man6/flame.6.gz
 man/man6/flipflop.6.gz
@@ -334,6 +338,7 @@ man/man6/glblur.6.gz
 man/man6/glcells.6.gz
 man/man6/gleidescope.6.gz
 man/man6/glhanoi.6.gz
+man/man6/glitchpeg.6.gz
 man/man6/glknots.6.gz
 man/man6/glmatrix.6.gz
 man/man6/glplanet.6.gz
@@ -458,6 +463,7 @@ man/man6/twang.6.gz
 man/man6/unicrud.6.gz
 man/man6/unknownpleasures.6.gz
 man/man6/vermiculate.6.gz
+man/man6/vfeedback.6.gz
 man/man6/vidwhacker.6.gz
 man/man6/vigilance.6.gz
 man/man6/voronoi.6.gz
@@ -571,6 +577,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/extrusion.xml
 %%DATADIR%%/config/fadeplot.xml
 %%DATADIR%%/config/fiberlamp.xml
+%%DATADIR%%/config/filmleader.xml
 %%DATADIR%%/config/fireworkx.xml
 %%DATADIR%%/config/flame.xml
 %%DATADIR%%/config/flipflop.xml
@@ -591,6 +598,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/glcells.xml
 %%DATADIR%%/config/gleidescope.xml
 %%DATADIR%%/config/glhanoi.xml
+%%DATADIR%%/config/glitchpeg.xml
 %%DATADIR%%/config/glknots.xml
 %%DATADIR%%/config/glmatrix.xml
 %%DATADIR%%/config/glplanet.xml
@@ -716,6 +724,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/unicrud.xml
 %%DATADIR%%/config/unknownpleasures.xml
 %%DATADIR%%/config/vermiculate.xml
+%%DATADIR%%/config/vfeedback.xml
 %%DATADIR%%/config/vidwhacker.xml
 %%DATADIR%%/config/vigilance.xml
 %%DATADIR%%/config/voronoi.xml
