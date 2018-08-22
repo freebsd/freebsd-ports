@@ -1,10 +1,18 @@
-A fast erasure codec which can be used with the command-line, C,
-Python, or Haskell.
+The zfec package implements an "erasure code", or "forward error correction
+code".
 
-Fast, portable, programmable erasure coding a.k.a. "forward error
-correction": the generation of redundant blocks of information such
-that if some blocks are lost then the original data can be recovered
-from the remaining blocks. The zfec package includes command-line
-tools, C API, Python API, and Haskell API.
+The most widely known example of an erasure code is the RAID-5 algorithm which
+makes it so that in the event of the loss of any one hard drive, the stored data
+can be completely recovered. The algorithm in the zfec package has a similar
+effect, but instead of recovering from the loss of only a single element, it can
+be parameterized to choose in advance the number of elements whose loss it can
+tolerate.
 
-WWW: https://pypi.org/project/zfec/
+This package is largely based on the old "fec" library by Luigi Rizzo et al.,
+which is a mature and optimized implementation of erasure coding. The zfec
+package makes several changes from the original "fec" package, including
+addition of the Python API, refactoring of the C API to support zero-copy
+operation, a few clean-ups and optimizations of the core code itself, and the
+addition of a command-line tool named "zfec".
+
+WWW: https://github.com/tahoe-lafs/zfec
