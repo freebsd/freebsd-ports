@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmt
-DISTVERSION=	4.5.17
+DISTVERSION=	4.5.18
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.soest.hawaii.edu/%SUBDIR%/ \
