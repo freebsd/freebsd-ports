@@ -1,4 +1,4 @@
---- Telegram/SourceFiles/base/build_config.h.orig	2018-02-06 05:52:11 UTC
+--- Telegram/SourceFiles/base/build_config.h.orig	2018-08-04 18:53:40 UTC
 +++ Telegram/SourceFiles/base/build_config.h
 @@ -13,7 +13,7 @@ https://github.com/telegramdesktop/tdesk
  

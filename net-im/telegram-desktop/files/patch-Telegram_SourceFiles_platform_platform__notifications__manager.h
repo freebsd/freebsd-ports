@@ -1,4 +1,4 @@
---- Telegram/SourceFiles/platform/platform_notifications_manager.h.orig	2018-02-06 05:55:59 UTC
+--- Telegram/SourceFiles/platform/platform_notifications_manager.h.orig	2018-08-04 18:53:40 UTC
 +++ Telegram/SourceFiles/platform/platform_notifications_manager.h
 @@ -26,8 +26,8 @@ void FlashBounce();
  

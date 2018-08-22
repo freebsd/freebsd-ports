@@ -1,4 +1,4 @@
---- Telegram/SourceFiles/layout.cpp.orig	2018-04-08 17:34:33 UTC
+--- Telegram/SourceFiles/layout.cpp.orig	2018-08-04 18:53:40 UTC
 +++ Telegram/SourceFiles/layout.cpp
 @@ -206,16 +206,16 @@ bool documentIsExecutableName(const QStr
  		*result = qsl("\

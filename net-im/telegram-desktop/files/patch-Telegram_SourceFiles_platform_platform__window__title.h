@@ -1,4 +1,4 @@
---- Telegram/SourceFiles/platform/platform_window_title.h.orig	2018-02-06 05:56:19 UTC
+--- Telegram/SourceFiles/platform/platform_window_title.h.orig	2018-08-04 18:53:40 UTC
 +++ Telegram/SourceFiles/platform/platform_window_title.h
 @@ -25,7 +25,7 @@ void PreviewWindowFramePaint(QImage &pre
  #include "platform/mac/window_title_mac.h"

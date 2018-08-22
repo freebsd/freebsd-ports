@@ -1,6 +1,6 @@
---- Telegram/SourceFiles/platform/platform_file_utilities.h.orig	2018-02-06 05:55:41 UTC
+--- Telegram/SourceFiles/platform/platform_file_utilities.h.orig	2018-08-04 18:53:40 UTC
 +++ Telegram/SourceFiles/platform/platform_file_utilities.h
-@@ -38,8 +38,8 @@ bool Get(QStringList &files, QByteArray 
+@@ -45,8 +45,8 @@ bool Get(
  
  #ifdef Q_OS_MAC
  #include "platform/mac/file_utilities_mac.h"

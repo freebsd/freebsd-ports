@@ -1,4 +1,4 @@
---- Telegram/SourceFiles/platform/platform_main_window.h.orig	2018-02-06 05:55:51 UTC
+--- Telegram/SourceFiles/platform/platform_main_window.h.orig	2018-08-04 18:53:40 UTC
 +++ Telegram/SourceFiles/platform/platform_main_window.h
 @@ -19,8 +19,8 @@ class MainWindow;
  

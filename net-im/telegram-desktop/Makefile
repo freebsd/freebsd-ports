@@ -2,8 +2,7 @@
 
 PORTNAME=	telegram-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.17
-PORTREVISION=	1
+DISTVERSION=	1.3.12
 CATEGORIES=	net-im
 
 MAINTAINER=	henry.hu.sh@gmail.com
@@ -29,12 +28,13 @@ GH_ACCOUNT=	telegramdesktop
 GH_PROJECT=	tdesktop
 GH_TUPLE=	catchorg:Catch2:5ca44b68:catch/Telegram/ThirdParty/Catch \
 		mapbox:variant:550ac2f:variant/Telegram/ThirdParty/variant \
-		Microsoft:GSL:9d65e74:gsl/Telegram/ThirdParty/GSL \
-		telegramdesktop:libtgvoip:6e0e102:libtgvoip/Telegram/ThirdParty/libtgvoip \
-		telegramdesktop:crl:344cbde9:crl/Telegram/ThirdParty/crl
-USE_GNOME=	glib20 gtk30
+		Microsoft:GSL:d846fe5:gsl/Telegram/ThirdParty/GSL \
+		telegramdesktop:libtgvoip:5380aab:libtgvoip/Telegram/ThirdParty/libtgvoip \
+		telegramdesktop:crl:527ad27:crl/Telegram/ThirdParty/crl
+USE_GNOME=	glib20
 USE_QT=		core gui imageformats network widgets buildtools_build qmake_build dbus
 USE_XORG=	x11 xcb
+INSTALLS_ICONS=	yes
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/out/Release
 
@@ -45,12 +45,22 @@ GYP_DEFINES=	TDESKTOP_DISABLE_CRASH_REPORTS,TDESKTOP_DISABLE_AUTOUPDATE,TDESKTOP
 # If both of them are not installed, then voice calls do not work, but other functionalities still work.
 OPTIONS_MULTI=	AUDIO
 OPTIONS_MULTI_AUDIO=	ALSA PULSEAUDIO
+OPTIONS_DEFINE=	GTK
 OPTIONS_DEFAULT=	ALSA
 
 AUDIO_DESC=	Audio backend for voice calls
+GTK_DESC=	Gtk integration (Use Gtk dialogs, etc.)
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGTK}
+USE_GNOME+=	gtk30
+.else
+GYP_DEFINES:=	${GYP_DEFINES},TDESKTOP_DISABLE_GTK_INTEGRATION
+.endif
 
 .include <bsd.port.pre.mk>
 
