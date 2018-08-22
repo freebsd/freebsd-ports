@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Amazon-Signature-V4
-PORTVERSION=	0.14
-PORTREVISION=	2
+PORTVERSION=	0.18
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,12 +12,11 @@ COMMENT=	Perl extension for AWS signature V4, AWS4-HMAC-SHA256
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	\
-	p5-DateTime-Format-Strptime>0:devel/p5-DateTime-Format-Strptime \
-	p5-File-Slurp>0:devel/p5-File-Slurp \
-	p5-HTTP-Message>=0:www/p5-HTTP-Message \
-	p5-libwww>0:www/p5-libwww
+RUN_DEPENDS=	p5-URI>=0:net/p5-URI \
+		p5-Digest-SHA>=0:security/p5-Digest-SHA \
+		p5-Time-Piece>1.17:devel/p5-Time-Piece
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-File-Slurper>0:devel/p5-File-Slurper
 
 USES=		perl5
 USE_PERL5=	configure
