@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lilv
-PORTVERSION=	0.24.2
+PORTVERSION=	0.24.4
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
