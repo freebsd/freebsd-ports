@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sratom
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.2
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
@@ -19,7 +19,9 @@ USES=		pkgconfig python:build tar:bzip2 waf
 
 USE_LDCONFIG=	yes
 
+PLIST_SUB=	VERSION=${PORTVERSION}
+
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsratom-0.so.0.6.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsratom-0.so.${PORTVERSION}
 
 .include <bsd.port.mk>
