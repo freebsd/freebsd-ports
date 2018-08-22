@@ -1,4 +1,4 @@
---- lib/xdg/tg.protocol.orig	2018-02-06 05:50:37 UTC
+--- lib/xdg/tg.protocol.orig	2018-08-04 18:53:40 UTC
 +++ lib/xdg/tg.protocol
 @@ -1,5 +1,5 @@
  [Protocol]

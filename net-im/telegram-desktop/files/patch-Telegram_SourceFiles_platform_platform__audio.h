@@ -1,4 +1,4 @@
---- Telegram/SourceFiles/platform/platform_audio.h.orig	2018-02-06 05:55:32 UTC
+--- Telegram/SourceFiles/platform/platform_audio.h.orig	2018-08-04 18:53:40 UTC
 +++ Telegram/SourceFiles/platform/platform_audio.h
 @@ -19,7 +19,7 @@ void DeInit();
  

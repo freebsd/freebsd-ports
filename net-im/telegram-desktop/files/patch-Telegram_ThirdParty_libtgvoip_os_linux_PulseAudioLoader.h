@@ -1,4 +1,4 @@
---- Telegram/ThirdParty/libtgvoip/os/linux/PulseAudioLoader.h.orig	2018-02-07 04:46:43 UTC
+--- Telegram/ThirdParty/libtgvoip/os/linux/PulseAudioLoader.h.orig	2018-07-17 16:48:21 UTC
 +++ Telegram/ThirdParty/libtgvoip/os/linux/PulseAudioLoader.h
 @@ -9,6 +9,10 @@
  

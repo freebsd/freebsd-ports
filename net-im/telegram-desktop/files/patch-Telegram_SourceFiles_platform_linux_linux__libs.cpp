@@ -1,4 +1,4 @@
---- Telegram/SourceFiles/platform/linux/linux_libs.cpp.orig	2018-02-06 05:57:25 UTC
+--- Telegram/SourceFiles/platform/linux/linux_libs.cpp.orig	2018-08-04 18:53:40 UTC
 +++ Telegram/SourceFiles/platform/linux/linux_libs.cpp
 @@ -121,6 +121,7 @@ bool setupGtkBase(QLibrary &lib_gtk) {
  	return true;

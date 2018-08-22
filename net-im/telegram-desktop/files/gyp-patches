@@ -1,15 +1,53 @@
---- Telegram/gyp/qt_rcc.gypi.orig	2018-01-03 10:46:01 UTC
-+++ Telegram/gyp/qt_rcc.gypi
+--- Telegram/gyp/codegen_rules.gypi.orig	2018-08-04 18:53:40 UTC
++++ Telegram/gyp/codegen_rules.gypi
 @@ -15,7 +15,7 @@
-       '<(SHARED_INTERMEDIATE_DIR)/<(_target_name)/qrc/qrc_<(RULE_INPUT_ROOT).cpp',
+       '<(SHARED_INTERMEDIATE_DIR)/update_dependent_styles.timestamp',
      ],
      'action': [
--      '<(qt_loc)/bin/rcc<(exe_ext)',
-+      '%%QT_BINDIR%%/rcc',
-       '-name', '<(RULE_INPUT_ROOT)',
-       '-no-compress',
-       '<(RULE_INPUT_PATH)',
---- Telegram/gyp/qt_moc.gypi.orig	2018-01-03 10:46:01 UTC
+-      'python', '<(DEPTH)/update_dependent.py', '--styles',
++      '%%PYTHON_CMD%%', '<(DEPTH)/update_dependent.py', '--styles',
+       '-I', '<(res_loc)', '-I', '<(src_loc)',
+       '-o', '<(SHARED_INTERMEDIATE_DIR)/update_dependent_styles.timestamp',
+       '<@(style_files)',
+@@ -26,13 +26,13 @@
+     'inputs': [
+       '<(DEPTH)/update_dependent.py',
+       '<@(qrc_files)',
+-      '<!@(python <(DEPTH)/update_dependent.py --qrc_list <@(qrc_files))',
++      '<!@(%%PYTHON_CMD%% <(DEPTH)/update_dependent.py --qrc_list <@(qrc_files))',
+     ],
+     'outputs': [
+       '<(SHARED_INTERMEDIATE_DIR)/update_dependent_qrc.timestamp',
+     ],
+     'action': [
+-      'python', '<(DEPTH)/update_dependent.py', '--qrc',
++      '%%PYTHON_CMD%%', '<(DEPTH)/update_dependent.py', '--qrc',
+       '-o', '<(SHARED_INTERMEDIATE_DIR)/update_dependent_qrc.timestamp',
+       '<@(qrc_files)',
+     ],
+--- Telegram/gyp/lib_export.gyp.orig	2018-08-04 18:53:40 UTC
++++ Telegram/gyp/lib_export.gyp
+@@ -48,7 +48,7 @@
+     'include_dirs': [
+       '<(src_loc)',
+       '<(SHARED_INTERMEDIATE_DIR)',
+-      '<(libs_loc)/range-v3/include',
++      '%%LOCALBASE%%',
+       '<(submodules_loc)/GSL/include',
+       '<(submodules_loc)/variant/include',
+       '<(submodules_loc)/crl/src',
+--- Telegram/gyp/lib_scheme.gyp.orig	2018-08-04 18:53:40 UTC
++++ Telegram/gyp/lib_scheme.gyp
+@@ -48,7 +48,7 @@
+         '<(SHARED_INTERMEDIATE_DIR)/scheme.h',
+       ],
+       'action': [
+-        'python', '<(src_loc)/codegen/scheme/codegen_scheme.py',
++        '%%PYTHON_CMD%%', '<(src_loc)/codegen/scheme/codegen_scheme.py',
+         '-o', '<(SHARED_INTERMEDIATE_DIR)', '<(res_loc)/scheme.tl',
+       ],
+       'message': 'codegen_scheme-ing scheme.tl..',
+--- Telegram/gyp/qt_moc.gypi.orig	2018-08-04 18:53:40 UTC
 +++ Telegram/gyp/qt_moc.gypi
 @@ -12,12 +12,12 @@
        '<(SHARED_INTERMEDIATE_DIR)/<(_target_name)/moc/moc_<(RULE_INPUT_ROOT).cpp',
@@ -26,7 +64,18 @@
        # '<!@(python -c "for s in \'<@(_include_dirs)\'.split(\' \'): print(\'-I\' + s)")',
        '<(RULE_INPUT_PATH)',
        '-o', '<(SHARED_INTERMEDIATE_DIR)/<(_target_name)/moc/moc_<(RULE_INPUT_ROOT).cpp',
---- Telegram/gyp/qt.gypi.orig	2018-01-03 10:46:01 UTC
+--- Telegram/gyp/qt_rcc.gypi.orig	2018-08-04 18:53:40 UTC
++++ Telegram/gyp/qt_rcc.gypi
+@@ -15,7 +15,7 @@
+       '<(SHARED_INTERMEDIATE_DIR)/<(_target_name)/qrc/qrc_<(RULE_INPUT_ROOT).cpp',
+     ],
+     'action': [
+-      '<(qt_loc)/bin/rcc<(exe_ext)',
++      '%%QT_BINDIR%%/rcc',
+       '-name', '<(RULE_INPUT_ROOT)',
+       '-no-compress',
+       '<(RULE_INPUT_PATH)',
+--- Telegram/gyp/qt.gypi.orig	2018-08-04 18:53:40 UTC
 +++ Telegram/gyp/qt.gypi
 @@ -14,25 +14,21 @@
                [ 'build_macold', {
@@ -184,18 +233,18 @@
          '-pthread',
          '-rdynamic',
        ],
---- Telegram/gyp/telegram_linux.gypi.orig	2018-01-03 10:46:01 UTC
+--- Telegram/gyp/telegram_linux.gypi.orig	2018-08-04 18:53:40 UTC
 +++ Telegram/gyp/telegram_linux.gypi
-@@ -7,7 +7,7 @@
- {
-   'conditions': [[ 'build_linux', {
-     'variables': {
+@@ -10,7 +10,7 @@
+       'variables': {
+         'build_defines%': '',
+       },
 -      'not_need_gtk%': '<!(python -c "print(\'TDESKTOP_DISABLE_GTK_INTEGRATION\' in \'<(build_defines)\')")',
 +      'not_need_gtk%': '<!(%%PYTHON_CMD%% -c "print(\'TDESKTOP_DISABLE_GTK_INTEGRATION\' in \'<(build_defines)\')")',
        'pkgconfig_libs': [
  # In order to work libxkbcommon must be linked statically,
  # PKGCONFIG links it like "-L/usr/local/lib -lxkbcommon"
-@@ -20,10 +20,11 @@
+@@ -23,10 +23,11 @@
        'linux_path_va%': '/usr/local',
        'linux_path_vdpau%': '/usr/local',
        'linux_path_breakpad%': '/usr/local',
@@ -208,7 +257,7 @@
        '/usr/local/include',
        '<(linux_path_ffmpeg)/include',
        '<(linux_path_openal)/include',
-@@ -32,6 +33,7 @@
+@@ -35,6 +36,7 @@
        '<(linux_path_range)/include',
      ],
      'library_dirs': [
@@ -216,7 +265,7 @@
        '/usr/local/lib',
        '<(linux_path_ffmpeg)/lib',
        '<(linux_path_openal)/lib',
-@@ -40,25 +42,15 @@
+@@ -43,25 +45,16 @@
        '<(linux_path_breakpad)/lib',
      ],
      'libraries': [
@@ -239,6 +288,7 @@
 -      'libvdpau.a',
 -      'libdrm.a',
 -      'libz.a',
++      'lzma',
 +      'openal',
 +      'avformat',
 +      'avcodec',
@@ -251,7 +301,7 @@
  #      '<!(pkg-config 2> /dev/null --libs <@(pkgconfig_libs))',
      ],
      'cflags_cc': [
-@@ -67,7 +59,6 @@
+@@ -71,7 +64,6 @@
      'ldflags': [
        '-Wl,-wrap,aligned_alloc',
        '-Wl,-wrap,secure_getenv',
@@ -259,29 +309,24 @@
        '-Wl,--no-as-needed,-lrt',
      ],
      'configurations': {
-@@ -86,7 +77,7 @@
+@@ -79,13 +71,16 @@
+         'cflags_c': [
+           '-Ofast',
+           '-fno-strict-aliasing',
++          %%CFLAGS%%
+         ],
+         'cflags_cc': [
+           '-Ofast',
+           '-fno-strict-aliasing',
++          %%CXXFLAGS%%
+         ],
+         'ldflags': [
+           '-Ofast',
++          %%LDFLAGS%%
+         ],
        },
      },
-     'conditions': [
--      [ '"<!(uname -p)" == "x86_64"', {
-+      [ '"<!(uname -m)" == "x86_64"', {
-         # 32 bit version can't be linked with debug info or LTO,
-         # virtual memory exhausted :(
-         'cflags_c': [ '-g' ],
-@@ -94,9 +85,9 @@
-         'ldflags': [ '-g' ],
-         'configurations': {
-           'Release': {
--            'cflags_c': [ '-flto' ],
--            'cflags_cc': [ '-flto' ],
--            'ldflags': [ '-flto' ],
-+            'cflags_c': [ %%CFLAGS%% ],
-+            'cflags_cc': [ %%CXXFLAGS%% ],
-+            'ldflags': [ %%LDFLAGS%% ],
-           },
-         },
-       }, {
-@@ -105,10 +96,7 @@
+@@ -96,10 +91,7 @@
          ],
        }], ['not_need_gtk!="True"', {
          'cflags_cc': [
@@ -293,24 +338,25 @@
          ],
        }]
      ],
---- Telegram/gyp/Telegram.gyp.orig	2018-01-03 10:46:01 UTC
+--- Telegram/gyp/Telegram.gyp.orig	2018-08-04 18:53:40 UTC
 +++ Telegram/gyp/Telegram.gyp
-@@ -49,7 +49,7 @@
+@@ -51,7 +51,7 @@
          'pt-BR',
        ],
        'build_defines%': '',
 -      'list_sources_command': 'python <(DEPTH)/list_sources.py --input <(DEPTH)/telegram_sources.txt --replace src_loc=<(src_loc)',
 +      'list_sources_command': '%%PYTHON_CMD%% <(DEPTH)/list_sources.py --input <(DEPTH)/telegram_sources.txt --replace src_loc=<(src_loc)',
+       'pch_source': '<(src_loc)/stdafx.cpp',
+       'pch_header': '<(src_loc)/stdafx.h',
      },
-     'includes': [
-       'common_executable.gypi',
-@@ -69,30 +69,20 @@
+@@ -74,31 +74,21 @@
        'codegen.gyp:codegen_numbers',
        'codegen.gyp:codegen_style',
        'tests/tests.gyp:tests',
 -      'utils.gyp:Updater',
        '../ThirdParty/libtgvoip/libtgvoip.gyp:libtgvoip',
        'crl.gyp:crl',
+       'lib_export.gyp:lib_export',
      ],
  
      'defines': [
@@ -337,8 +383,8 @@
        '<(emoji_suggestions_loc)',
        '<(submodules_loc)/GSL/include',
        '<(submodules_loc)/variant/include',
-@@ -105,7 +95,7 @@
-       'telegram_sources.txt',
+@@ -115,7 +105,7 @@
+       '<(res_loc)/export_html/images/back@2x.png',
      ],
      'sources!': [
 -      '<!@(<(list_sources_command) <(qt_moc_list_sources_arg) --exclude_for <(build_os))',
@@ -346,7 +392,18 @@
      ],
      'conditions': [
        [ '"<(official_build_target)" != ""', {
---- Telegram/ThirdParty/libtgvoip/libtgvoip.gyp.orig	2018-02-06 06:51:56 UTC
+--- Telegram/gyp/tests/tests.gyp.orig	2018-08-04 18:53:40 UTC
++++ Telegram/gyp/tests/tests.gyp
+@@ -13,7 +13,7 @@
+     'src_loc': '../../SourceFiles',
+     'submodules_loc': '../../ThirdParty',
+     'mac_target': '10.10',
+-    'list_tests_command': 'python <(DEPTH)/tests/list_tests.py --input <(DEPTH)/tests/tests_list.txt',
++    'list_tests_command': '%%PYTHON_CMD%% <(DEPTH)/tests/list_tests.py --input <(DEPTH)/tests/tests_list.txt',
+   },
+   'targets': [{
+     'target_name': 'tests',
+--- Telegram/ThirdParty/libtgvoip/libtgvoip.gyp.orig	2018-07-17 16:48:21 UTC
 +++ Telegram/ThirdParty/libtgvoip/libtgvoip.gyp
 @@ -13,11 +13,12 @@
          'variables': {
@@ -362,7 +419,7 @@
          ],
          'direct_dependent_settings': {
            'include_dirs': [
-@@ -259,7 +260,7 @@
+@@ -263,7 +264,7 @@
              },
            ],
            [
@@ -371,7 +428,7 @@
                'sources/': [['exclude', '<(tgvoip_src_loc)/os/linux/']],
              },
            ],
-@@ -378,12 +379,13 @@
+@@ -382,12 +383,15 @@
              },
            ],
            [
@@ -380,56 +437,12 @@
                'defines': [
                  'WEBRTC_POSIX',
                ],
-               'cflags_cc': [
-                 '-msse2',
-+                '-std=c++11',
-               ],
-               'direct_dependent_settings': {
-                 'libraries': [
---- Telegram/gyp/codegen_rules.gypi.orig	2018-02-06 06:53:18 UTC
-+++ Telegram/gyp/codegen_rules.gypi
-@@ -15,7 +15,7 @@
-       '<(SHARED_INTERMEDIATE_DIR)/update_dependent_styles.timestamp',
-     ],
-     'action': [
--      'python', '<(DEPTH)/update_dependent.py', '--styles',
-+      '%%PYTHON_CMD%%', '<(DEPTH)/update_dependent.py', '--styles',
-       '-I', '<(res_loc)', '-I', '<(src_loc)',
-       '-o', '<(SHARED_INTERMEDIATE_DIR)/update_dependent_styles.timestamp',
-       '<@(style_files)',
-@@ -26,13 +26,13 @@
-     'inputs': [
-       '<(DEPTH)/update_dependent.py',
-       '<@(qrc_files)',
--      '<!@(python <(DEPTH)/update_dependent.py --qrc_list <@(qrc_files))',
-+      '<!@(%%PYTHON_CMD%% <(DEPTH)/update_dependent.py --qrc_list <@(qrc_files))',
-     ],
-     'outputs': [
-       '<(SHARED_INTERMEDIATE_DIR)/update_dependent_qrc.timestamp',
-     ],
-     'action': [
--      'python', '<(DEPTH)/update_dependent.py', '--qrc',
-+      '%%PYTHON_CMD%%', '<(DEPTH)/update_dependent.py', '--qrc',
-       '-o', '<(SHARED_INTERMEDIATE_DIR)/update_dependent_qrc.timestamp',
-       '<@(qrc_files)',
-     ],
-@@ -109,7 +109,7 @@
-       '<(SHARED_INTERMEDIATE_DIR)/scheme.h',
-     ],
-     'action': [
--      'python', '<(src_loc)/codegen/scheme/codegen_scheme.py',
-+      '%%PYTHON_CMD%%', '<(src_loc)/codegen/scheme/codegen_scheme.py',
-       '-o', '<(SHARED_INTERMEDIATE_DIR)', '<(res_loc)/scheme.tl',
-     ],
-     'message': 'codegen_scheme-ing scheme.tl..',
---- Telegram/gyp/tests/tests.gyp.orig	2018-02-06 06:53:50 UTC
-+++ Telegram/gyp/tests/tests.gyp
-@@ -13,7 +13,7 @@
-     'src_loc': '../../SourceFiles',
-     'submodules_loc': '../../ThirdParty',
-     'mac_target': '10.10',
--    'list_tests_command': 'python <(DEPTH)/tests/list_tests.py --input <(DEPTH)/tests/tests_list.txt',
-+    'list_tests_command': '%%PYTHON_CMD%% <(DEPTH)/tests/list_tests.py --input <(DEPTH)/tests/tests_list.txt',
-   },
-   'targets': [{
-     'target_name': 'tests',
++              'cflags_cc': [
++                '-std=gnu++11',
++              ],
+               'conditions': [
+-                [ '"<!(uname -m)" == "i686"', {
++                [ '"<!(uname -m)" == "i386"', {
+                   'cflags_cc': [
+                     '-msse2',
+                   ],

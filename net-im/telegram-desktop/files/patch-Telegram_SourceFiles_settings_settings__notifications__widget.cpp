@@ -1,4 +1,4 @@
---- Telegram/SourceFiles/settings/settings_notifications_widget.cpp.orig	2018-02-06 06:27:16 UTC
+--- Telegram/SourceFiles/settings/settings_notifications_widget.cpp.orig	2018-08-04 18:53:40 UTC
 +++ Telegram/SourceFiles/settings/settings_notifications_widget.cpp
 @@ -69,9 +69,9 @@ void NotificationsWidget::createNotifica
  	if (Platform::Notifications::Supported()) {

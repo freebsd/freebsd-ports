@@ -1,4 +1,4 @@
---- Telegram/SourceFiles/boxes/notifications_box.cpp.orig	2018-02-06 06:26:42 UTC
+--- Telegram/SourceFiles/boxes/notifications_box.cpp.orig	2018-08-04 18:53:40 UTC
 +++ Telegram/SourceFiles/boxes/notifications_box.cpp
 @@ -84,11 +84,11 @@ private:
  		_deleted = true;
