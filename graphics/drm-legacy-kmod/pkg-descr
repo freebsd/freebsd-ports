@@ -1,0 +1,5 @@
+Legacy DRM bits that used to be in base before their removal prior to release
+of 12.0. For newer Intel and AMD hardware, please use one of the LinuxKPI-based
+ports (drm-next-kmod, drm-stable-kmod, drm-devel-kmod).
+
+WWW: https://github.com/FreeBSDDesktop/drm-legacy
