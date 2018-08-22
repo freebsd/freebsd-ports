@@ -5,10 +5,15 @@ lib/libruin.so.0
 lib/libruin.so.0.0.0
 lib/libruin/css/xhtml.css
 lib/libruin/css/xul.css
+lib/libruin/scheme/scss/common.scm
+lib/libruin/scheme/scss/interface/sdom.scm
 lib/libruin/scheme/scss/lexer.scm
 lib/libruin/scheme/scss/parser.scm
+lib/libruin/scheme/scss/properties.scm
 lib/libruin/scheme/scss/scss.scm
+lib/libruin/scheme/sdom/common.scm
 lib/libruin/scheme/sdom/core.scm
 lib/libruin/scheme/sdom/events.scm
+lib/libruin/scheme/sdom/parser.scm
 man/man3/ruin.3.gz
 %%DATADIR%%/ChangeLog
