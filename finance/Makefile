@@ -27,6 +27,7 @@
     SUBDIR += beanie
     SUBDIR += bitcoin-armory
     SUBDIR += cbb
+    SUBDIR += cointop
     SUBDIR += electrum
     SUBDIR += expense
     SUBDIR += fixc
