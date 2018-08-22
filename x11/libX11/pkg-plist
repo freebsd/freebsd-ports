@@ -874,6 +874,7 @@ man/man3/XkbGetKeyboard.3.gz
 man/man3/XkbGetKeyboardByName.3.gz
 man/man3/XkbGetMap.3.gz
 man/man3/XkbGetNameChanges.3.gz
+man/man3/XkbGetNamedDeviceIndicator.3.gz
 man/man3/XkbGetNamedGeometry.3.gz
 man/man3/XkbGetNamedIndicator.3.gz
 man/man3/XkbGetNames.3.gz
@@ -954,6 +955,7 @@ man/man3/XkbSetIgnoreLockMods.3.gz
 man/man3/XkbSetIndicatorMap.3.gz
 man/man3/XkbSetMap.3.gz
 man/man3/XkbSetModActionVMods.3.gz
+man/man3/XkbSetNamedDeviceIndicator.3.gz
 man/man3/XkbSetNamedIndicator.3.gz
 man/man3/XkbSetNames.3.gz
 man/man3/XkbSetPtrActionX.3.gz
