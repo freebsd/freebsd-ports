@@ -2,10 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	bitcoin
-PORTVERSION=	0.16.1
-DISTVERSIONPREFIX=	v
-PORTREVISION?=	2
+PORTVERSION=	0.16.2
+PORTREVISION?=	0
 CATEGORIES=	net-p2p finance
+MASTER_SITES=	https://bitcoincore.org/bin/bitcoin-core-${PORTVERSION}/:DEFAULT \
+		LOCAL/swills:icon
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} bitcoin128.png:icon
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${_DISTFILES:N*.png}
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT?=	Virtual Peer-to-Peer Currency Client (QT)
@@ -18,7 +22,6 @@ LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 BROKEN_powerpc64=	fails to compile: util.cpp: undefined reference to boost::program_options::to_internal
 
 USES=		autoreconf compiler:c++11-lib gmake libtool pkgconfig qt:5 shebangfix ssl
-USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 
 SLAVE_PORT?=	no
@@ -119,11 +122,9 @@ CONFIGURE_ARGS+=--disable-asm
 .if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
 
 post-install:
-	${REINPLACE_CMD} -e 's,=/usr,=${PREFIX},' \
-		${WRKSRC}/contrib/debian/bitcoin-qt.desktop
-	${INSTALL} ${WRKSRC}/contrib/debian/bitcoin-qt.desktop \
+	${INSTALL} ${FILESDIR}/bitcoin-qt.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
-	${INSTALL} ${WRKSRC}/share/pixmaps/bitcoin128.png \
+	${INSTALL} ${DISTDIR}/${DIST_SUBDIR}/bitcoin128.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 .endif
