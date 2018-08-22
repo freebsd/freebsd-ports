@@ -3,9 +3,10 @@
 
 PORTNAME=	chromium
 PORTVERSION=	68.0.3440.106
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	www
-MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
+MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
+		LOCAL/cpm/chromium/:fonts
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	chromium@FreeBSD.org
@@ -195,9 +196,9 @@ SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 
 .endif
 
-.include "Makefile.tests"
-TEST_ALL_TARGET=	${TEST_TARGETS}
-TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}
+TEST_ALL_TARGET=	base_unittests
+TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX} \
+			test_fonts${EXTRACT_SUFX}:fonts
 
 .include <bsd.port.options.mk>
 
@@ -222,6 +223,10 @@ pre-everything::
 	@${ECHO_MSG} "To build Chromium, you should have around 2GB of memory"
 	@${ECHO_MSG} "and ${WANTSPACE}."
 	@${ECHO_MSG}
+
+post-extract-TEST-on:
+	@${MKDIR} ${WRKSRC}/third_party/test_fonts/test_fonts
+	@${MV} ${WRKDIR}/test_fonts ${WRKSRC}/third_party/test_fonts/
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@@PACKAGE@@|chromium|' \
@@ -290,9 +295,13 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/chrome ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/chrome/tools/build/linux/chrome-wrapper \
 		${STAGEDIR}${DATADIR}
+
+	# ANGLE
 .for f in libEGL.so libGLESv2.so
 	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/${f} ${STAGEDIR}${DATADIR}
 .endfor
+
+	# SwiftShader
 	@${MKDIR} ${STAGEDIR}${DATADIR}/swiftshader
 .for g in libEGL.so libGLESv2.so
 	${INSTALL_LIB} ${WRKSRC}/out/${BUILDTYPE}/swiftshader/${g} \
