@@ -1,5 +1,5 @@
---- third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp.orig	2017-12-15 02:05:36.000000000 +0100
-+++ third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp	2017-12-30 05:11:53.917801000 +0100
+--- third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp.orig	2018-08-08 12:13:09.000000000 -0700
++++ third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp	2018-08-20 09:34:48.052352000 -0700
 @@ -8,6 +8,8 @@
  
  #include "gpu_info_util/SystemInfo_internal.h"
@@ -9,7 +9,7 @@
  #include <X11/Xlib.h>
  
  #include "common/debug.h"
-@@ -18,8 +20,40 @@
+@@ -18,8 +20,43 @@
  #error SystemInfo_x11.cpp compiled without GPU_INFO_USE_X11
  #endif
  
@@ -32,6 +32,9 @@
 +    PFNGLXQUERYRENDERERINTEGERMESAPROC queryInteger =
 +        (PFNGLXQUERYRENDERERINTEGERMESAPROC) glXGetProcAddressARB((const GLubyte *)
 +        "glXQueryRendererIntegerMESA");
++
++    if (!queryInteger)
++        return false;
 +
 +    bool vendor_ret =
 +        queryInteger(display, 0, 0, GLX_RENDERER_VENDOR_ID_MESA, vid);
