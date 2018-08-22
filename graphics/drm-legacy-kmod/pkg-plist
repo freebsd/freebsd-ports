@@ -1,0 +1,11 @@
+/%%KMODDIR%%/drm.ko
+/%%KMODDIR%%/drm2.ko
+/%%KMODDIR%%/i915kms.ko
+/%%KMODDIR%%/mach64.ko
+/%%KMODDIR%%/mga.ko
+/%%KMODDIR%%/r128.ko
+/%%KMODDIR%%/radeonkms.ko
+/%%KMODDIR%%/savage.ko
+/%%KMODDIR%%/sis.ko
+/%%KMODDIR%%/tdfx.ko
+/%%KMODDIR%%/via.ko
