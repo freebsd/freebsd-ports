@@ -1,17 +1,14 @@
---- sql/share/CMakeLists.txt.orig	2017-05-14 23:13:18 UTC
+--- sql/share/CMakeLists.txt.orig	2018-08-12 11:29:50 UTC
 +++ sql/share/CMakeLists.txt
-@@ -14,6 +14,8 @@
- # along with this program; if not, write to the Free Software
- # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
- 
-+IF(FALSE)
-+
- SET (dirs 
- danish
- german 
-@@ -53,3 +55,5 @@ INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE
+@@ -45,9 +45,11 @@ SET(files 
+  errmsg-utf8.txt
  )
  
- INSTALL(FILES ${files} DESTINATION ${INSTALL_MYSQLSHAREDIR} COMPONENT Server)
-+
++IF (NOT WITHOUT_CLIENT)
+ INSTALL(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/charsets DESTINATION ${INSTALL_MYSQLSHAREDIR}
+   COMPONENT Common PATTERN "languages.html" EXCLUDE
+ )
 +ENDIF()
+ 
+ IF (NOT WITHOUT_SERVER)
+   FOREACH (dir ${dirs})
