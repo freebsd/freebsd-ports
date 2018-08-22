@@ -6,5 +6,5 @@ RocksDB builds on LevelDB to be scalable to run on servers with many CPU cores,
 to efficiently use fast storage, to support IO-bound, in-memory and write-once
 workloads, and to be flexible to allow for innovation.
 
-WWW: http://rocksdb.org/
+WWW: https://rocksdb.org/
 WWW: https://github.com/facebook/rocksdb
