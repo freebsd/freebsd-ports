@@ -1,0 +1,5 @@
+moinmoincli is an interactive utility to edit existing MoinMoin wiki pages from
+a command line. This way the user may use their editor of choice and just
+submit a patch without interacting with MoinMoin's web interface.
+
+WWW: https://github.com/0mp/moinmoincli
