@@ -10,7 +10,7 @@ MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Command line management of Route53 domains
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC:H:H}/LICENSE
 
 USES=		go
 USE_GITHUB=	yes
