@@ -3,7 +3,11 @@
 PORTNAME=	gogs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.53
+PORTREVISION=	1
 CATEGORIES=	devel www
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	1f247cf8139cb483276cd8dd06385a800ce9d4b2.patch:-p1
 
 MAINTAINER=	dg@syrec.org
 COMMENT=	Painless self-hosted Git service
