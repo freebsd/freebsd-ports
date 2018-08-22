@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	timediff
-PORTVERSION=	0.1
-PORTREVISION=	2
+PORTVERSION=	0.8
 CATEGORIES=	misc
 
 MAINTAINER=	naito.yuichiro@gmail.com
