@@ -14,6 +14,9 @@ COMMENT=	GTK+ client for Napster and free alternatives
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unmaintained. Napster is dead
+EXPIRATION_DATE=	2018-08-30
+
 GNU_CONFIGURE=	yes
 USES=		gmake
 USE_GNOME=	gtk12
