@@ -492,6 +492,7 @@
     SUBDIR += mod_xsendfile
     SUBDIR += mohawk
     SUBDIR += moinmoin
+    SUBDIR += moinmoincli
     SUBDIR += monast
     SUBDIR += mongoose
     SUBDIR += mongrel2

@@ -1,0 +1,3 @@
+Now it is time to configure moinmoincli to make it easy to use.
+Copy "%%EXAMPLESDIR%%/moinmoincli.conf.sample"
+into your home directory as ".moinmoincli.conf" and edit it to suit your needs.
