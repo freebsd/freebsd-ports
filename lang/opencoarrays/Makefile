@@ -3,7 +3,7 @@
 
 PORTNAME=	opencoarrays
 DISTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang parallel
 
 MAINTAINER=	as@cmplx.uk
@@ -45,7 +45,9 @@ OPENMPI2_CONFIGURE_ENV=	MPI_HOME=${LOCALBASE}/mpi/openmpi2
 
 .include <bsd.port.options.mk>
 
-.if ${GCC_DEFAULT} >= 7
+.if ${GCC_DEFAULT} >= 8
+PLIST_SUB+=	SOVERSION=3
+.elif ${GCC_DEFAULT} == 7
 PLIST_SUB+=	SOVERSION=2
 .elif ${GCC_DEFAULT} == 6
 PLIST_SUB+=	SOVERSION=1
