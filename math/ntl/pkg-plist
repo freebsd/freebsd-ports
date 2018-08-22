@@ -2,6 +2,7 @@ include/NTL/ALL_FEATURES.h
 include/NTL/BasicThreadPool.h
 include/NTL/ConfigLog.h
 include/NTL/FFT.h
+include/NTL/FFT_impl.h
 include/NTL/FacVec.h
 include/NTL/GF2.h
 include/NTL/GF2E.h
@@ -13,6 +14,7 @@ include/NTL/GF2XVec.h
 include/NTL/HAVE_ALIGNED_ARRAY.h
 include/NTL/HAVE_AVX.h
 include/NTL/HAVE_AVX2.h
+include/NTL/HAVE_AVX512F.h
 include/NTL/HAVE_BUILTIN_CLZL.h
 include/NTL/HAVE_CHRONO_TIME.h
 include/NTL/HAVE_COPY_TRAITS1.h
@@ -21,6 +23,7 @@ include/NTL/HAVE_FMA.h
 include/NTL/HAVE_LL_TYPE.h
 include/NTL/HAVE_MACOS_TIME.h
 include/NTL/HAVE_PCLMUL.h
+include/NTL/PD.h
 include/NTL/HAVE_POSIX_TIME.h
 include/NTL/HAVE_SSSE3.h
 include/NTL/HNF.h
@@ -77,6 +80,7 @@ include/NTL/pair_ZZ_pEX_long.h
 include/NTL/pair_ZZ_pX_long.h
 include/NTL/pair_lzz_pEX_long.h
 include/NTL/pair_lzz_pX_long.h
+include/NTL/pd_FFT.h
 include/NTL/quad_float.h
 include/NTL/sp_arith.h
 include/NTL/thread.h
@@ -111,8 +115,8 @@ include/NTL/version.h
 include/NTL/xdouble.h
 lib/libntl.a
 lib/libntl.so
-lib/libntl.so.38
-lib/libntl.so.38.0.0
+lib/libntl.so.39
+lib/libntl.so.39.0.0
 %%NTLDOCS%%/BasicThreadPool.cpp.html
 %%NTLDOCS%%/BasicThreadPool.txt
 %%NTLDOCS%%/GF2.cpp.html

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ntl
-PORTVERSION=	11.2.1
+PORTVERSION=	11.3.0
 CATEGORIES=	math
 MASTER_SITES=	http://www.shoup.net/ntl/
 
