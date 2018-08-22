@@ -1,0 +1,6 @@
+kbfsd is a service daemon to launch the Keybase filesystem called KBFS.
+
+Its aim is to ease the process of using KBFS on FreeBSD. It takes care of
+the configuration the Keybase user would have to do manually otherwise.
+
+WWW: https://github.com/0mp/kbfsd
