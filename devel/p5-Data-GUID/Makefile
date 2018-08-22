@@ -12,6 +12,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Generate globally unique identifiers
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BUILD_DEPENDS=	p5-Sub-Install>=0.03:devel/p5-Sub-Install \
 		p5-Sub-Exporter>=0.90:devel/p5-Sub-Exporter \
 		p5-Data-UUID>=1.148:devel/p5-Data-UUID
@@ -20,5 +24,6 @@ TEST_DEPENDS=	p5-Test-Simple>=0.88:devel/p5-Test-Simple
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
