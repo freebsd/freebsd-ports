@@ -10,12 +10,12 @@ sysctl security.bsd.unprivileged_mlock=1
 
 !!! PLUGINS NOTICE !!!
 
-ElasticSearch plugins such as X-Pack should only be installed via the
-elasticsearch-plugin script included with this software. As we strive
-to provide a minimum semblance of security, the files installed by
-the package are owned by root:wheel. This is different than upstream
-which expects all of the files to be owned by the user and for you to
-execute the elasticsearch-plugin script as said user.
+ElasticSearch plugins should only be installed via the elasticsearch-plugin
+included with this software. As we strive to provide a minimum semblance
+of security, the files installed by the package are owned by root:wheel.
+This is different than upstream hich expects all of the files to be
+owned by the user and for you to execute the elasticsearch-plugin script
+as said user.
 
 You will encounter permissions errors with configuration files and
 directories created by plugins which you will have to manually correct.
@@ -24,11 +24,8 @@ a poorly designed security model.
 
 e.g., after installing X-Pack you will have to correct:
 
-%%ETCDIR%%/elasticsearch.keystore file to be owned by root:elasticsearch
-%%ETCDIR%%/x-pack directory/files to be owned by root:elasticsearch
-
-Also you need to add "xpack.ml.enabled: false" to your elasticsearch.yml
-configuration as this plugin does not support FreeBSD.
+%%ETCDIR%%/elasticsearch.keystore file to be owned by elasticsearch:elasticsearch
+%%ETCDIR%%/x-pack directory/files to be owned by elasticsearch:elasticsearch
 
 !!! PLUGINS NOTICE !!!
 

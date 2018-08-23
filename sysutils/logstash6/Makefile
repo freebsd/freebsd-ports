@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	logstash
-PORTVERSION=	6.2.4
+PORTVERSION=	6.3.2
 PORTREVISION=	0
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://artifacts.elastic.co/downloads/logstash/
@@ -73,7 +73,7 @@ post-install:
 	${ECHO} "@dir logstash/vendor/bundle/jruby/2.3.0/cache" >> ${TMPPLIST}
 	${ECHO} "@dir logstash/vendor/bundle/jruby/2.3.0/doc" >> ${TMPPLIST}
 	${ECHO} "@dir logstash/vendor/bundle/jruby/2.3.0/extensions" >> ${TMPPLIST}
-	${ECHO} "@dir logstash/vendor/bundle/jruby/2.3.0/gems/manticore-0.6.1-java/spec/ssl" >> ${TMPPLIST}
+	${ECHO} "@dir logstash/vendor/bundle/jruby/2.3.0/gems/manticore-0.6.4-java/spec/ssl" >> ${TMPPLIST}
 	${ECHO} "@dir logstash/vendor/bundle/jruby/2.3.0/gems/redis-3.3.5/test/db" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
