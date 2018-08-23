@@ -33,8 +33,6 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 PORTDOCS=	ChangeLog
 PORTEXAMPLES=	css21-conformance-uris.txt ruinview.c
 
-.include <bsd.port.options.mk>
-
 post-configure:
 	# Avoid compiling examples, which fails to compile
 	# As the examples needs the library to be already installed
