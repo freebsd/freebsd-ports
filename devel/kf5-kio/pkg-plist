@@ -3,6 +3,7 @@ bin/ktelnetservice5
 bin/ktrash5
 bin/protocoltojson
 etc/xdg/accept-languages.codes
+etc/xdg/kio.categories
 etc/xdg/kshorturifilterrc
 include/KF5/KIOCore/KACL
 include/KF5/KIOCore/KCoreDirLister
@@ -607,6 +608,8 @@ share/doc/HTML/pt_BR/kioslave5/telnet/index.cache.bz2
 share/doc/HTML/pt_BR/kioslave5/telnet/index.docbook
 share/doc/HTML/pt_BR/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/pt_BR/kioslave5/webdav/index.docbook
+share/doc/HTML/ru/kcontrol5/proxy/index.cache.bz2
+share/doc/HTML/ru/kcontrol5/proxy/index.docbook
 share/doc/HTML/ru/kioslave5/data/index.cache.bz2
 share/doc/HTML/ru/kioslave5/data/index.docbook
 share/doc/HTML/ru/kioslave5/file/index.cache.bz2
@@ -817,7 +820,7 @@ share/kservices5/searchproviders/freecode.desktop
 share/kservices5/searchproviders/freedb.desktop
 share/kservices5/searchproviders/fsd.desktop
 share/kservices5/searchproviders/github.desktop
-share/kservices5/searchproviders/gitorious.desktop
+share/kservices5/searchproviders/gitlab.desktop
 share/kservices5/searchproviders/google.desktop
 share/kservices5/searchproviders/google_advanced.desktop
 share/kservices5/searchproviders/google_code.desktop
@@ -843,7 +846,6 @@ share/kservices5/searchproviders/kde.desktop
 share/kservices5/searchproviders/kde_apps.desktop
 share/kservices5/searchproviders/kde_forums.desktop
 share/kservices5/searchproviders/kde_look.desktop
-share/kservices5/searchproviders/kde_projects.desktop
 share/kservices5/searchproviders/kde_techbase.desktop
 share/kservices5/searchproviders/kde_userbase.desktop
 share/kservices5/searchproviders/leo.desktop

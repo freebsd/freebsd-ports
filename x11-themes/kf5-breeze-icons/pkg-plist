@@ -5244,6 +5244,7 @@ share/icons/breeze-dark/devices/16/computer.svg
 share/icons/breeze-dark/devices/16/cups.svg
 share/icons/breeze-dark/devices/16/cupsprinter.svg
 share/icons/breeze-dark/devices/16/drive-harddisk.svg
+share/icons/breeze-dark/devices/16/drive-optical.svg
 share/icons/breeze-dark/devices/16/drive-removable-media-usb-pendrive.svg
 share/icons/breeze-dark/devices/16/drive-removable-media-usb.svg
 share/icons/breeze-dark/devices/16/drive-removable-media.svg
@@ -5285,6 +5286,7 @@ share/icons/breeze-dark/devices/22/computer.svg
 share/icons/breeze-dark/devices/22/cups.svg
 share/icons/breeze-dark/devices/22/cupsprinter.svg
 share/icons/breeze-dark/devices/22/drive-harddisk.svg
+share/icons/breeze-dark/devices/22/drive-optical.svg
 share/icons/breeze-dark/devices/22/drive-removable-media-usb-pendrive.svg
 share/icons/breeze-dark/devices/22/drive-removable-media-usb.svg
 share/icons/breeze-dark/devices/22/drive-removable-media.svg
@@ -5330,6 +5332,7 @@ share/icons/breeze-dark/devices/64/cpu.svg
 share/icons/breeze-dark/devices/64/cups.svg
 share/icons/breeze-dark/devices/64/cupsprinter.svg
 share/icons/breeze-dark/devices/64/drive-harddisk.svg
+share/icons/breeze-dark/devices/64/drive-optical.svg
 share/icons/breeze-dark/devices/64/drive-removable-media-usb-pendrive.svg
 share/icons/breeze-dark/devices/64/drive-removable-media-usb.svg
 share/icons/breeze-dark/devices/64/drive-removable-media.svg
@@ -13118,6 +13121,7 @@ share/icons/breeze/devices/16/computer.svg
 share/icons/breeze/devices/16/cups.svg
 share/icons/breeze/devices/16/cupsprinter.svg
 share/icons/breeze/devices/16/drive-harddisk.svg
+share/icons/breeze/devices/16/drive-optical.svg
 share/icons/breeze/devices/16/drive-removable-media-usb-pendrive.svg
 share/icons/breeze/devices/16/drive-removable-media-usb.svg
 share/icons/breeze/devices/16/drive-removable-media.svg
@@ -13159,6 +13163,7 @@ share/icons/breeze/devices/22/computer.svg
 share/icons/breeze/devices/22/cups.svg
 share/icons/breeze/devices/22/cupsprinter.svg
 share/icons/breeze/devices/22/drive-harddisk.svg
+share/icons/breeze/devices/22/drive-optical.svg
 share/icons/breeze/devices/22/drive-removable-media-usb-pendrive.svg
 share/icons/breeze/devices/22/drive-removable-media-usb.svg
 share/icons/breeze/devices/22/drive-removable-media.svg
@@ -13204,6 +13209,7 @@ share/icons/breeze/devices/64/cpu.svg
 share/icons/breeze/devices/64/cups.svg
 share/icons/breeze/devices/64/cupsprinter.svg
 share/icons/breeze/devices/64/drive-harddisk.svg
+share/icons/breeze/devices/64/drive-optical.svg
 share/icons/breeze/devices/64/drive-removable-media-usb-pendrive.svg
 share/icons/breeze/devices/64/drive-removable-media-usb.svg
 share/icons/breeze/devices/64/drive-removable-media.svg

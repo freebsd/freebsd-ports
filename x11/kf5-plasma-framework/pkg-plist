@@ -70,7 +70,6 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_PLUGINDIR%%/kpackage/packagestructure/plasmatheme_packagestructure.so
 %%QT_PLUGINDIR%%/kpackage/packagestructure/plasmoid_packagestructure.so
 %%QT_PLUGINDIR%%/plasma/scriptengines/plasma_appletscript_declarative.so
-%%QT_PLUGINDIR%%/plasma_engine_testengine.so
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/BusyIndicator.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/Button.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/CheckBox.qml
@@ -277,7 +276,6 @@ share/kdevappwizard/templates/plasma-wallpaper.tar.bz2
 share/kdevappwizard/templates/plasma-wallpaper-with-qml-extension.tar.bz2
 share/kdevappwizard/templates/qml-plasmoid.tar.bz2
 share/kdevappwizard/templates/qml-plasmoid-with-qml-extension.tar.bz2
-share/kservices5/plasma-dataengine-testengine.desktop
 share/kservices5/plasma-scriptengine-applet-declarative.desktop
 share/kservicetypes5/plasma-applet.desktop
 share/kservicetypes5/plasma-containment.desktop
