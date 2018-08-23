@@ -130,6 +130,7 @@
     SUBDIR += netcdf-cxx
     SUBDIR += netcdf-fortran
     SUBDIR += nifticlib
+    SUBDIR += nwchem
     SUBDIR += openbabel
     SUBDIR += openkim
     SUBDIR += openstructure
