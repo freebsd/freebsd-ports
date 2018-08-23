@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doh-proxy
-DISTVERSION=	0.1.7
+DISTVERSION=	0.1.9
 CATEGORIES=	dns
 
 MAINTAINER=	mat@FreeBSD.org
@@ -18,124 +18,72 @@ GH_PROJECT=	rust-doh
 
 PLIST_FILES=	bin/doh-proxy
 
-CARGO_CRATES=	aho-corasick-0.6.6 \
-		ansi_term-0.11.0 \
+CARGO_CRATES=	ansi_term-0.11.0 \
 		arrayvec-0.4.7 \
 		atty-0.2.11 \
-		backtrace-0.3.9 \
-		backtrace-sys-0.1.23 \
 		base64-0.9.2 \
-		bitflags-0.9.1 \
-		bitflags-1.0.3 \
+		bitflags-1.0.4 \
 		byteorder-1.2.4 \
 		bytes-0.4.9 \
-		cargo_metadata-0.5.8 \
-		cc-1.0.18 \
-		cfg-if-0.1.4 \
+		cfg-if-0.1.5 \
 		clap-2.32.0 \
-		clippy-0.0.205 \
-		clippy_lints-0.0.205 \
 		crossbeam-deque-0.3.1 \
 		crossbeam-epoch-0.4.3 \
 		crossbeam-utils-0.3.2 \
-		dtoa-0.4.3 \
-		either-1.5.0 \
-		error-chain-0.11.0 \
 		fnv-1.0.6 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		futures-0.1.23 \
 		futures-cpupool-0.1.8 \
-		getopts-0.2.18 \
-		h2-0.1.11 \
-		http-0.1.9 \
+		h2-0.1.12 \
+		http-0.1.10 \
 		httparse-1.3.2 \
-		hyper-0.11.27 \
-		idna-0.1.5 \
-		if_chain-0.1.3 \
+		hyper-0.12.8 \
 		indexmap-1.0.1 \
 		iovec-0.1.2 \
-		itertools-0.7.8 \
 		itoa-0.4.2 \
 		kernel32-sys-0.2.2 \
-		language-tags-0.2.2 \
 		lazy_static-1.1.0 \
 		lazycell-0.6.0 \
 		libc-0.2.43 \
-		log-0.3.9 \
-		log-0.4.3 \
-		matches-0.1.7 \
-		memchr-2.0.1 \
+		log-0.4.4 \
 		memoffset-0.2.1 \
-		mime-0.3.8 \
 		mio-0.6.15 \
 		miow-0.2.1 \
 		net2-0.2.33 \
 		nodrop-0.1.12 \
 		num_cpus-1.8.0 \
-		percent-encoding-1.0.1 \
-		proc-macro2-0.4.9 \
-		pulldown-cmark-0.1.2 \
-		quine-mc_cluskey-0.2.4 \
-		quote-0.6.5 \
-		rand-0.3.14 \
-		rand-0.4.2 \
+		rand-0.4.3 \
 		redox_syscall-0.1.40 \
 		redox_termios-0.1.1 \
-		regex-1.0.2 \
-		regex-syntax-0.6.2 \
-		relay-0.1.1 \
-		rustc-demangle-0.1.9 \
 		rustc_version-0.2.3 \
 		safemem-0.2.0 \
-		scoped-tls-0.1.2 \
 		scopeguard-0.3.3 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.71 \
-		serde_derive-1.0.71 \
-		serde_json-1.0.24 \
 		slab-0.3.0 \
 		slab-0.4.1 \
-		smallvec-0.2.1 \
 		string-0.1.1 \
 		strsim-0.7.0 \
-		syn-0.14.7 \
-		take-0.1.0 \
 		termion-1.5.1 \
 		textwrap-0.10.0 \
-		thread_local-0.3.5 \
 		time-0.1.40 \
 		tokio-0.1.7 \
 		tokio-codec-0.1.0 \
-		tokio-core-0.1.17 \
 		tokio-executor-0.1.3 \
 		tokio-fs-0.1.3 \
 		tokio-io-0.1.7 \
-		tokio-proto-0.1.1 \
 		tokio-reactor-0.1.3 \
-		tokio-service-0.1.0 \
 		tokio-tcp-0.1.1 \
 		tokio-threadpool-0.1.5 \
 		tokio-timer-0.1.2 \
 		tokio-timer-0.2.5 \
 		tokio-udp-0.1.1 \
-		toml-0.4.6 \
-		try-lock-0.1.0 \
 		try-lock-0.2.2 \
-		ucd-util-0.1.1 \
-		unicase-2.1.0 \
-		unicode-bidi-0.3.4 \
-		unicode-normalization-0.1.7 \
 		unicode-width-0.1.5 \
-		unicode-xid-0.1.0 \
-		unreachable-1.0.0 \
-		url-1.7.1 \
-		utf8-ranges-1.0.0 \
 		vec_map-0.8.1 \
 		version_check-0.1.4 \
-		void-1.0.2 \
-		want-0.0.4 \
+		want-0.0.6 \
 		winapi-0.2.8 \
 		winapi-0.3.5 \
 		winapi-build-0.1.1 \
