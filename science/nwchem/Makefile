@@ -2,6 +2,7 @@
 
 PORTNAME=	nwchem
 DISTVERSION=	6.8.1-release-94
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g1a262862b
 CATEGORIES=	science
 
@@ -33,17 +34,13 @@ SUB_FILES=	nwchemrc
 WRKSRC_SUBDIR=	src
 BINARY_ALIAS=	gcc=${CC}
 
-post-install:
+post-patch:
 	@${REINPLACE_CMD} 's|nwchrc="/etc/nwchemrc"|nwchrc="${PREFIX}/etc/nwchemrc"|' ${WRKSRC}/util/util_nwchemrc.F
 
 do-install:
 	${INSTALL_DATA} ${WRKDIR}/nwchemrc ${STAGEDIR}${PREFIX}/etc/nwchemrc
 	${INSTALL_PROGRAM} ${WRKSRC}/../bin/LINUX64/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}.shadow
 	@(echo "#!/bin/sh"; \
-	  echo ""; \
-	  echo "if ! [ -f ~/.nwchemrc ]; then"; \
-	  echo "  cp ${PREFIX}/etc/nwchemrc ~/.nwchemrc"; \
-	  echo "fi"; \
 	  echo ""; \
 	  echo "LD_PRELOAD=${PREFIX}/lib/gcc${GCC_DEFAULT}/libgcc_s.so ${PREFIX}/bin/${PORTNAME}.shadow \""$$"@\"" \
 	) > ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
