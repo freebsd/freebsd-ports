@@ -157,6 +157,7 @@ man/man1/mcview.1.gz
 %%NLS%%%%DATADIR%%/hints/mc.hint.az
 %%NLS%%%%DATADIR%%/hints/mc.hint.be
 %%NLS%%%%DATADIR%%/hints/mc.hint.bg
+%%NLS%%%%DATADIR%%/hints/mc.hint.br
 %%NLS%%%%DATADIR%%/hints/mc.hint.ca
 %%NLS%%%%DATADIR%%/hints/mc.hint.cs
 %%NLS%%%%DATADIR%%/hints/mc.hint.da
@@ -172,7 +173,9 @@ man/man1/mcview.1.gz
 %%NLS%%%%DATADIR%%/hints/mc.hint.fi
 %%NLS%%%%DATADIR%%/hints/mc.hint.fr
 %%NLS%%%%DATADIR%%/hints/mc.hint.fr_CA
+%%NLS%%%%DATADIR%%/hints/mc.hint.ga
 %%NLS%%%%DATADIR%%/hints/mc.hint.gl
+%%NLS%%%%DATADIR%%/hints/mc.hint.he
 %%NLS%%%%DATADIR%%/hints/mc.hint.hr
 %%NLS%%%%DATADIR%%/hints/mc.hint.hu
 %%NLS%%%%DATADIR%%/hints/mc.hint.ia
@@ -299,6 +302,7 @@ man/man1/mcview.1.gz
 %%EDITOR%%%%DATADIR%%/syntax/python.syntax
 %%EDITOR%%%%DATADIR%%/syntax/r.syntax
 %%EDITOR%%%%DATADIR%%/syntax/ruby.syntax
+%%EDITOR%%%%DATADIR%%/syntax/rust.syntax
 %%EDITOR%%%%DATADIR%%/syntax/sh.syntax
 %%EDITOR%%%%DATADIR%%/syntax/slang.syntax
 %%EDITOR%%%%DATADIR%%/syntax/smalltalk.syntax
