@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mc
-PORTVERSION=	4.8.20
-PORTREVISION=	2
+PORTVERSION=	4.8.21
 CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
 		http://ftp.osuosl.org/pub/midnightcommander/
@@ -94,7 +93,7 @@ post-install-X11-on:
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200030
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_diffviewer_ydiff.c
-RUN_DEPENDS=    gdiff:textproc/diffutils
+RUN_DEPENDS=	gdiff:textproc/diffutils
 .endif
 
 .include <bsd.port.post.mk>
