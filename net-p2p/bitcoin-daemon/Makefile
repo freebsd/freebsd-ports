@@ -32,6 +32,6 @@ PLIST_FILES=	bin/bitcoind \
 USE_RC_SUBR=	bitcoind
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/contrib/debian/examples/bitcoin.conf ${STAGEDIR}${PREFIX}/etc/bitcoin.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/contrib/init/bitcoind.conf ${STAGEDIR}${PREFIX}/etc/bitcoin.conf.sample
 
 .include "${MASTERDIR}/Makefile"
