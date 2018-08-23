@@ -6,7 +6,7 @@ DISTVERSIONSUFFIX=	-g1a262862b
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	High-performance computational chemistry sotware
+COMMENT=	High-performance computational chemistry software
 
 LICENSE=	ECL20
 LICENSE_NAME=	Educational Community License (ECL) 2.0
