@@ -10,6 +10,7 @@ share/ECM/find-modules/ECMFindModuleHelpersStub.cmake
 share/ECM/find-modules/FindEGL.cmake
 share/ECM/find-modules/FindGLIB2.cmake
 share/ECM/find-modules/FindGperf.cmake
+share/ECM/find-modules/FindIcoTool.cmake
 share/ECM/find-modules/FindInotify.cmake
 share/ECM/find-modules/FindKF5.cmake
 share/ECM/find-modules/FindLibGit2.cmake
@@ -82,6 +83,7 @@ share/ECM/toolchain/specifydependencies.cmake
 %%HELP%%%%DOCSDIR%%/ExtraCMakeModules.qch
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindEGL.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindGLIB2.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindIcoTool.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindKF5.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindLibGit2.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindOpenEXR.rst.txt
@@ -155,6 +157,7 @@ share/ECM/toolchain/specifydependencies.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/websupport.js
 %%PORTDOCS%%%%DOCSDIR%%/html/find-module/FindEGL.html
 %%PORTDOCS%%%%DOCSDIR%%/html/find-module/FindGLIB2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/find-module/FindIcoTool.html
 %%PORTDOCS%%%%DOCSDIR%%/html/find-module/FindKF5.html
 %%PORTDOCS%%%%DOCSDIR%%/html/find-module/FindLibGit2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/find-module/FindOpenEXR.html

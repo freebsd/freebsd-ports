@@ -2,7 +2,6 @@
 
 PORTNAME=	kdesu
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	security kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
