@@ -79,7 +79,7 @@ KDE_APPLICATIONS_SHLIB_VER?=	5.8.3
 KDE_APPLICATIONS_BRANCH?=	stable
 # Upstream moves old software to Attic/. Specify the newest applications release there.
 # Only the major version is used for the comparison.
-_KDE_APPLICATIONS_ATTIC_VERSION=	16.12.3
+_KDE_APPLICATIONS_ATTIC_VERSION=	17.08.3
 
 # Extended KDE universe applications.
 CALLIGRA_VERSION?=		2.9.11
