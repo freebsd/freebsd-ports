@@ -2,7 +2,7 @@
 
 PORTNAME=	vegeta
 DISTVERSIONPREFIX=	cli/v
-DISTVERSION=	8.1.1
+DISTVERSION=	11.0.0
 CATEGORIES=	benchmarks www
 
 MAINTAINER=	egypcio@googlemail.com
@@ -17,10 +17,18 @@ USES=		go
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	tsenart
-GH_TUPLE=	streadway:quantile:b0c5887:quantile/github.com/streadway/quantile \
-		golang:net:d0887ba:net/golang.org/x/net \
-		golang:text:v0.3.0:text/golang.org/x/text \
-		lucasb-eyer:go-colorful:v1.0:colorful/github.com/lucasb-eyer/go-colorful
+GH_TUPLE=	alecthomas:jsonschema:f2c9385:jsonschema/github.com/alecthomas/jsonschema \
+		bmizerany:perks:d9a9656:perks/github.com/bmizerany/perks \
+		dgryski:go-gk:201884a:gogk/github.com/dgryski/go-gk \
+		dgryski:go-lttb:318fcdf:golttb/github.com/dgryski/go-lttb \
+		google:go-cmp:3af367b:gocmp/github.com/google/go-cmp \
+		influxdata:tdigest:a7d76c6:tdigest/github.com/influxdata/tdigest \
+		shurcooL:httpfs:809bece:httpfs/github.com/shurcooL/httpfs \
+		shurcooL:vfsgen:62bca83:vfsgen/github.com/shurcooL/vfsgen \
+		streadway:quantile:b0c5887:quantile/github.com/streadway/quantile \
+		tsenart:go-tsz:cdeb9e1:gotsz/github.com/tsenart/go-tsz \
+		golang:net:c394268:net/golang.org/x/net \
+		golang:text:f21a4df:text/golang.org/x/text
 
 do-build:
 	@${MKDIR} ${WRKSRC}/github.com/${GH_ACCOUNT}
@@ -28,7 +36,9 @@ do-build:
 	@${RLN} ${WRKSRC} ${WRKSRC}/src
 	@cd ${WRKSRC} && \
 	  ${SETENV} ${MAKE_ENV} ${GO_ENV} CGO_ENABLED=0 GOPATH=${WRKSRC} \
-	  ${GO_CMD} build -ldflags "-X main.Version=${DISTVERSION}" -o bin/${PORTNAME}
+	  ${GO_CMD} build -v -a -tags=netgo -ldflags \
+	  '-s -w -extldflags "-static" -X main.Version=${DISTVERSION} -X main.Date=20180818' \
+	  -o bin/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}/${LOCALBASE}/bin
