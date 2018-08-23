@@ -1,3 +1,3 @@
-TIMESTAMP = 1525977011
-SHA256 (kibana-6.2.4-linux-x86_64.tar.gz) = 53fb5ddcb3055209f8e3dffcad62d24bdbdedbe8e2f66c1773bac4a1f8b629af
-SIZE (kibana-6.2.4-linux-x86_64.tar.gz) = 85348919
+TIMESTAMP = 1533489803
+SHA256 (kibana-6.3.2-linux-x86_64.tar.gz) = 605bf5e991d206b5b2799ef5210644c50192cad6a239662a8674d57fdf3b69ce
+SIZE (kibana-6.3.2-linux-x86_64.tar.gz) = 205331616

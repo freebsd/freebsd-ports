@@ -102,6 +102,10 @@ logstash_precmd()
     /usr/bin/install -d -o ${logstash_user} -g ${logstash_group} -m 755 ${logstash_log_dir}
     /usr/bin/install -d -o ${logstash_user} -g ${logstash_group} -m 755 /var/db/logstash
     /usr/bin/install -d -o ${logstash_user} -g ${logstash_group} -m 755 /var/run/logstash
+
+    if [ -d ${logstash_home}/data/queue ]; then
+        chown ${logstash_user}:${logstash_group} ${logstash_home}/data/queue
+    fi
 }
 
 configtest()

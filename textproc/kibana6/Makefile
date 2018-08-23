@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kibana
-PORTVERSION=	6.2.4
+PORTVERSION=	6.3.2
 DISTVERSIONSUFFIX=	-linux-x86_64
 PORTREVISION=	0
 CATEGORIES=	textproc www
@@ -15,7 +15,7 @@ COMMENT=	Browser based analytics and search interface to ElasticSearch
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	node6>=6.12.2:www/node6
+RUN_DEPENDS=	node8>=8.11.3:www/node8
 
 CONFLICTS=	kibana[3-5]*
 
