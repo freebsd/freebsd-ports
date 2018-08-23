@@ -1,0 +1,15 @@
+NWChem aims to provide its users with computational chemistry tools that are
+scalable both in their ability to treat large scientific computational chemistry
+problems efficiently, and in their use of available parallel computing resources
+from high-performance parallel supercomputers to conventional workstation
+clusters.
+
+NWChem software can handle:
+* Biomolecules, nanostructures, and solid-state
+* From quantum to classical, and all combinations
+* Ground and excited-states
+* Gaussian basis functions or plane-waves
+* Scaling from one to thousands of processors
+* Properties and relativistic effects 
+
+WWW: http://www.nwchem-sw.org/index.php/Main_Page
