@@ -1316,6 +1316,7 @@
     SUBDIR += py-jaxml
     SUBDIR += py-jtextfsm
     SUBDIR += py-junit-xml
+    SUBDIR += py-laserhammer
     SUBDIR += py-libtre
     SUBDIR += py-libxml2
     SUBDIR += py-libxslt
