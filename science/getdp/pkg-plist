@@ -7,7 +7,13 @@ man/man1/getdp.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/demos/magnet.msh
 %%PORTDOCS%%%%DOCSDIR%%/demos/magnet.pro
 %%PORTDOCS%%%%DOCSDIR%%/demos/magnet_data.pro
-%%PORTDOCS%%%%DOCSDIR%%/templates/Electrostatics.pro
-%%PORTDOCS%%%%DOCSDIR%%/templates/Magnetostatics.pro
-%%PORTDOCS%%%%DOCSDIR%%/templates/MaterialDatabase.pro
-%%PORTDOCS%%%%DOCSDIR%%/templates/MaterialMacros.pro
+%%PORTDOCS%%%%DOCSDIR%%/templates/Interactive.pro
+%%PORTDOCS%%%%DOCSDIR%%/templates/Interactive_Elasticity.pro
+%%PORTDOCS%%%%DOCSDIR%%/templates/Interactive_Electrostatics.pro
+%%PORTDOCS%%%%DOCSDIR%%/templates/Interactive_Magnetostatics.pro
+%%PORTDOCS%%%%DOCSDIR%%/templates/Lib_Elasticity_u.pro
+%%PORTDOCS%%%%DOCSDIR%%/templates/Lib_Electrostatics_v.pro
+%%PORTDOCS%%%%DOCSDIR%%/templates/Lib_Magnetodynamics2D_av_Cir.pro
+%%PORTDOCS%%%%DOCSDIR%%/templates/Lib_Magnetostatics_a_phi.pro
+%%PORTDOCS%%%%DOCSDIR%%/templates/Lib_Materials.pro
+%%PORTDOCS%%%%DOCSDIR%%/templates/README.txt
