@@ -37,7 +37,7 @@ load_rc_config $name
 : ${influxd_facility:="daemon"}
 : ${influxd_priority:="info"}
 : ${influxd_conf:="%%PREFIX%%/etc/${name}.conf"}
-: ${influxd_options:="${influxdb_flags} -config=${influxd_conf}"}
+: ${influxd_options:="${influxd_flags} -config=${influxd_conf}"}
 
 # daemon
 influxd_pidfile="%%INFLUXD_PIDDIR%%${name}.pid"
