@@ -2,4 +2,5 @@ The oslo.log (logging) configuration library provides standardized
 configuration for all openstack projects. It also provides custom formatters,
 handlers and support for context specific logging.
 
-WWW: https://pypi.org/project/oslo.log/
+WWW: https://docs.openstack.org/oslo.log/latest/
+WWW: https://github.com/openstack/oslo.log
