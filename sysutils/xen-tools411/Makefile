@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools411
 PORTVERSION=	4.11.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
@@ -48,6 +48,8 @@ EXTRA_PATCHES+=	${FILESDIR}/0001-docs-use-the-make-wildcard-function-instead-of-
 # XSA-273 and XSA-272
 EXTRA_PATCHES+=	${FILESDIR}/0031-tools-oxenstored-Make-evaluation-order-explicit.patch:-p1 \
 		${FILESDIR}/0041-xl.conf-Add-global-affinity-masks.patch:-p1
+# Fix hvmloader build with LLVM LD
+EXTRA_PATCHES+=	${FILESDIR}/0001-hvmloader-fix-build-with-LLVM-Linker.patch:-p1
 
 CONFIGURE_ARGS+= --with-system-seabios=${LOCALBASE}/share/seabios/bios.bin
 
