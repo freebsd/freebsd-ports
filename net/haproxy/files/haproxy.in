@@ -29,21 +29,29 @@
 name="haproxy"
 rcvar=haproxy_enable
 command="%%PREFIX%%/sbin/haproxy"
-extra_commands="reload configtest hardstop hardreload"
+extra_commands="reload configtest hardstop hardreload softreload"
 reload_cmd="haproxy_reload"
 hardreload_cmd="haproxy_reload"
 hardreload_precmd="def_hardreload_option"
+softreload_cmd="haproxy_reload"
+softreload_precmd="def_softreload_option"
 stop_cmd="haproxy_stop"
 hardstop_cmd="haproxy_stop"
 hardstop_precmd="def_hardstop_signal"
 
 : ${haproxy_enable:="NO"}
 : ${haproxy_config:="%%PREFIX%%/etc/${name}.conf"}
+: ${haproxy_socket:="/var/run/${name}/socket"}
 pidfile=${haproxy_pidfile:-"/var/run/haproxy.pid"}
 
 def_hardreload_option()
 {
     reload_opt="-st"
+}
+
+def_softreload_option()
+{
+    reload_opt="-x ${haproxy_socket} -sf"
 }
 
 def_hardstop_signal()
