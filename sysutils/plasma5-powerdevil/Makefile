@@ -2,11 +2,13 @@
 
 PORTNAME=	powerdevil
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 tool to manage the power consumption settings
+
+RUN_DEPENDS=	${LOCALBASE}/libexec/upowerd:sysutils/upower
 
 USES=		cmake:outsource compiler:c++11-lib cpe gettext kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	activities auth bookmarks codecs completion configwidgets \
