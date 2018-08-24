@@ -10,7 +10,7 @@ include/libdsk.h
 lib/libdsk.a
 lib/libdsk.so
 lib/libdsk.so.3
-lib/libdsk.so.3.2.3
+lib/libdsk.so.3.3.13
 man/man1/apriboot.1.gz
 man/man1/dskdump.1.gz
 man/man1/dskform.1.gz
