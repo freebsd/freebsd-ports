@@ -2,8 +2,7 @@
 
 PORTNAME=	kcov
 DISTVERSIONPREFIX=	v
-DISTVERSION=	35-57
-DISTVERSIONSUFFIX=	-g69dfa9c
+DISTVERSION=	36
 CATEGORIES=	devel
 
 MAINTAINER=	asomers@FreeBSD.org
@@ -30,7 +29,6 @@ CMAKE_ARGS=	-DKCOV_INSTALL_MANDIR=${PREFIX}/man -DPORTVERSION=${PORTVERSION}
 
 SHEBANG_GLOB=	*.py
 
-# Use a GitHub tag until version 36 gets released, whenever that might be
 USE_GITHUB=	yes
 GH_ACCOUNT=	SimonKagstrom
 
