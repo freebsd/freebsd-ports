@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mcollective
-PORTVERSION=	2.12.1
+PORTVERSION=	2.12.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://downloads.puppetlabs.com/${PORTNAME}/
+MASTER_SITES=	https://downloads.puppetlabs.com/${PORTNAME}/
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Modern scalable datacenter orchestration framework
@@ -14,9 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rubygem-stomp>=0:devel/rubygem-stomp
 
+USES=		shebangfix
 NO_BUILD=	yes
 USE_RUBY=	yes
-USES=		shebangfix
 USE_RC_SUBR=	mcollectived
 
 SHEBANG_FILES=	bin/mcollectived bin/mco
