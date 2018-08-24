@@ -6,4 +6,4 @@ ab-initio calculations and typical convergence studies. AbiPy is interfaced with
 Pymatgen allowing users to benefit from the different tools and python objects
 available in the pymatgen ecosystem.
 
-WWW: https://pythonhosted.org/abipy/
+WWW: https://abinit.github.io/abipy/
