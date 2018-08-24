@@ -1,15 +1,16 @@
-# Created by: Dave Cottlehuber <dch@skunkwerks.at>
+# Created by: Dave Cottlehuber <dch@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	riemann
-PORTVERSION=	0.2.14
+PORTVERSION=	0.3.1
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
 
-MAINTAINER=	dch@skunkwerks.at
+MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Monitors distributed systems
 
-LICENSE=	EPL
+LICENSE=	EPL APACHE20 CDDL MIT BSD3CLAUSE LGPL2+ BSD2CLAUSE GPLv2+
+LICENSE_COMB=	multi
 
 USES=		tar:bzip2
 NO_BUILD=	yes
@@ -33,7 +34,7 @@ do-install:
 		${STAGEDIR}/var/log/riemann
 	${INSTALL_DATA} ${WRKSRC}/lib/riemann.jar \
 		${STAGEDIR}${JAVAJARDIR}/riemann.jar
-	${SED} -i -e "s:riemann.log:/var/log/riemann.log:g" \
+	${SED} -i -e "s:riemann.log:/var/log/riemann/riemann.log:g" \
 		${WRKSRC}/etc/riemann.config
 	${INSTALL_DATA} ${WRKSRC}/etc/riemann.config \
 		${STAGEDIR}${ETCDIR}/riemann.config.sample
