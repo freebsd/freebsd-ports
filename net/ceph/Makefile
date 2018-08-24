@@ -4,7 +4,7 @@
 PORTNAME=	ceph
 DISTVERSIONPREFIX=	v
 DISTVERSION=	12.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	wjw@digiware.nl
@@ -15,12 +15,11 @@ LICENSE_COMB=	dual
 
 # even though i386 will build, it is not really advised.
 ONLY_FOR_ARCHS=	amd64
-IGNORE_FreeBSD_10=	Doesnt build for FreeBSD 10.x
+IGNORE_FreeBSD_10=	Does not build for FreeBSD 10.x
 
 BUILD_DEPENDS=	\
 	yasm:devel/yasm \
-	pkgconf:devel/pkgconf \
-	sphinx-build:textproc/py-sphinx \
+	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR} \
 	gperf:devel/gperf \
 	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
 LIB_DEPENDS=	\
@@ -28,7 +27,6 @@ LIB_DEPENDS=	\
 	libboost_thread.so:devel/boost-libs \
 	libleveldb.so:databases/leveldb \
 	libnss3.so:security/nss \
-	libcryptopp.so:security/cryptopp \
 	libsnappy.so:archivers/snappy \
 	libcurl.so:ftp/curl \
 	libxml2.so:textproc/libxml2 \
@@ -42,13 +40,14 @@ RUN_DEPENDS=	\
 	xml:textproc/xmlstarlet \
 	jq:textproc/jq \
 	flock:sysutils/flock \
-	virtualenv:devel/py-virtualenv \
+	${PYTHON_PKGNAMEPREFIX}virtualenv>=0:devel/py-virtualenv@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}prettytable>=0:devel/py-prettytable@${PY_FLAVOR}
 
 CONFLICTS_INSTALL=	ceph-devel
 PORTSCOUT=	limit:^v12\.
 
-USES=	gmake cmake:outsource,noninja python:2.7 fuse gettext-runtime shebangfix ssl
+USES=		cmake:outsource,noninja fuse gettext-runtime gmake \
+		pkgconfig python:2.7 shebangfix ssl
 USE_PYTHON=	cython
 USE_OPENLDAP=	yes
 USE_GITHUB=	yes
@@ -68,7 +67,6 @@ GH_TUPLE+=	ceph:rocksdb:e15382c:rocksdb/src/rocksdb
 GH_TUPLE+=	ceph:xxHash:1f40c65:xxHash/src/xxHash
 GH_TUPLE+=	facebook:zstd:f4340f4:zstd/src/zstd
 
-CMAKE_BUILD_TYPE=	Release
 CMAKE_ARGS=	\
 	-D WITH_SYSTEM_BOOST:BOOL=ON \
 	-D CEPH_MAN_DIR:STRING=man \
