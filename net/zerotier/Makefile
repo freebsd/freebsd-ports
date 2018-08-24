@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	zerotier
-DISTVERSION=	1.2.10
-PORTREVISION=	1
+DISTVERSION=	1.2.12
 CATEGORIES=	net
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Network virtualization everywhere
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 MIT PD BSD3CLAUSE APACHE20
+LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL-3
 
 BROKEN_armv6=		fails to link: Source object ext/arm32-neon-salsa2012-asm/salsa2012.o has EABI version 0, but target zerotier-one has EABI version 5
 BROKEN_armv7=		fails to link: Source object ext/arm32-neon-salsa2012-asm/salsa2012.o has EABI version 0, but target zerotier-one has EABI version 5
 BROKEN_powerpc64=	fails to compile: clang: not found
+BROKEN_FreeBSD_10_i386=	fails to compile: clang++: error: unable to execute command: Segmentation fault (core dumped)
 
 USES=		gmake compiler:c11
 USE_RC_SUBR=	zerotier
