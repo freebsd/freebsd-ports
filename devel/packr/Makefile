@@ -2,7 +2,7 @@
 
 PORTNAME=	packr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13.2
+DISTVERSION=	1.13.3
 CATEGORIES=	devel
 
 MAINTAINER=	dg@syrec.org
@@ -11,7 +11,7 @@ COMMENT=	Simple and easy way to embed static files into Go binaries
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=	go
+USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gobuffalo
