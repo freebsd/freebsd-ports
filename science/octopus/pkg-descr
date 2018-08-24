@@ -1,0 +1,12 @@
+Octopus is a scientific program aimed at the ab initio virtual experimentation
+on a hopefully ever-increasing range of system types. Electrons are described
+quantum-mechanically within density-functional theory (DFT), in its
+time-dependent form (TDDFT) when doing simulations in time. Nuclei are described
+classically as point particles. Electron-nucleus interaction is described within
+the pseudopotential approximation.
+
+For optimal execution performance Octopus is parallelized using MPI and OpenMP
+and can scale to tens of thousands of processors. It also has support for
+graphical processing units (GPUs) through OpenCL and CUDA.
+
+WWW: http://octopus-code.org/wiki/Main_Page
