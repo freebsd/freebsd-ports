@@ -23,7 +23,7 @@ USE_RUBY=	yes
 USES=		gem shebangfix
 
 PLIST_FILES=	bin/r10k \
-		%%GEM_LIB_DIR%%/test
+		${GEM_LIB_DIR}/test
 
 SHEBANG_FILES=	integration/*/*.sh
 
