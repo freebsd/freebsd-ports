@@ -9,6 +9,8 @@
     ..
     etc             type=dir
     ..
+    tmp             type=dir mode=01777
+    ..
 /set type=file uname=bind gname=bind mode=0755
     var             type=dir uname=root gname=wheel
         dump            type=dir
