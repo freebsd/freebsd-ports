@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unifi
-PORTVERSION=	5.9.16
+PORTVERSION=	5.9.24
 PORTREVISION=	0
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/${PORTVERSION}-${UNIFI_BUILD}/
@@ -24,7 +24,7 @@ EXTRACT_CMD=	/usr/bin/ar
 EXTRACT_BEFORE_ARGS=	-p
 EXTRACT_AFTER_ARGS=	data.tar.xz | ${TAR} -xf -
 
-UNIFI_BUILD=	23dd7b8e57
+UNIFI_BUILD=	64c9fed777
 
 USES=		cpe
 CPE_VENDOR=	ubnt
