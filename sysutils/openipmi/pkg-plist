@@ -2,7 +2,6 @@
 bin/ipmi_sim
 bin/ipmi_ui
 bin/ipmicmd
-bin/ipmilan
 bin/ipmish
 bin/openipmicmd
 bin/openipmish
@@ -11,6 +10,7 @@ bin/sdrcomp
 bin/solterm
 etc/ipmi/ipmisim1.emu
 etc/ipmi/lan.conf
+include/OpenIPMI/deprecator.h
 include/OpenIPMI/extcmd.h
 include/OpenIPMI/internal/ilist.h
 include/OpenIPMI/internal/ipmi_control.h
@@ -103,8 +103,8 @@ libdata/pkgconfig/OpenIPMIui.pc
 libdata/pkgconfig/OpenIPMIutils.pc
 man/man1/ipmi_sim.1.gz
 man/man1/ipmi_ui.1.gz
+man/man1/openipmi_eventd.1.gz
 man/man1/openipmicmd.1.gz
-man/man1/openipmigui.1.gz
 man/man1/openipmish.1.gz
 man/man1/rmcp_ping.1.gz
 man/man1/solterm.1.gz
@@ -112,28 +112,21 @@ man/man5/ipmi_lan.5.gz
 man/man5/ipmi_sim_cmd.5.gz
 man/man7/ipmi_cmdlang.7.gz
 man/man7/openipmi_conparms.7.gz
-man/man8/ipmilan.8.gz
-%%GLIB12%%@comment files list for GLIB12
-%%GLIB12%%lib/libOpenIPMIglib12.a
-%%GLIB12%%lib/libOpenIPMIglib12.so
-%%GLIB12%%lib/libOpenIPMIglib12.so.0
-%%GLIB12%%lib/libOpenIPMIglib12.so.0.0.1
-%%GLIB12%%libdata/pkgconfig/OpenIPMIglib12.pc
-%%GLIB20%%@comment files list for GLIB20
-%%GLIB20%%lib/libOpenIPMIglib.a
-%%GLIB20%%lib/libOpenIPMIglib.so
-%%GLIB20%%lib/libOpenIPMIglib.so.0
-%%GLIB20%%lib/libOpenIPMIglib.so.0.0.1
-%%GLIB20%%libdata/pkgconfig/OpenIPMIglib.pc
+%%GLIB%%@comment files list for GLIB12/GLIB20
+%%GLIB%%lib/libOpenIPMIglib.a
+%%GLIB%%lib/libOpenIPMIglib.so
+%%GLIB%%lib/libOpenIPMIglib.so.0
+%%GLIB%%lib/libOpenIPMIglib.so.0.0.1
+%%GLIB%%libdata/pkgconfig/OpenIPMIglib.pc
 %%TCL%%@comment files list for TCL
 %%TCL%%lib/libOpenIPMItcl.a
 %%TCL%%lib/libOpenIPMItcl.so
 %%TCL%%lib/libOpenIPMItcl.so.0
 %%TCL%%lib/libOpenIPMItcl.so.0.0.1
 %%TCL%%libdata/pkgconfig/OpenIPMItcl.pc
-%%PERL%%@comment files list for PERL
-%%PERL%%%%SITE_ARCH%%/OpenIPMI.pm
-%%PERL%%%%SITE_ARCH%%/auto/OpenIPMI/OpenIPMI.so
+%%OIPMIPERL%%@comment files list for PERL
+%%OIPMIPERL%%%%SITE_ARCH%%/OpenIPMI.pm
+%%OIPMIPERL%%%%SITE_ARCH%%/auto/OpenIPMI/OpenIPMI.so
 %%PYTHON%%@comment files list for PYTHON
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/OpenIPMI.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/OpenIPMI.pyc
@@ -229,3 +222,7 @@ man/man8/ipmilan.8.gz
 %%TKINTER%%%%PYTHON_SITELIBDIR%%/openipmigui/gui_treelist.py
 %%TKINTER%%%%PYTHON_SITELIBDIR%%/openipmigui/gui_treelist.pyc
 %%TKINTER%%%%PYTHON_SITELIBDIR%%/openipmigui/gui_treelist.pyo
+%%TKINTER%%%%PYTHON_SITELIBDIR%%/openipmigui/gui_winsys.py
+%%TKINTER%%%%PYTHON_SITELIBDIR%%/openipmigui/gui_winsys.pyc
+%%TKINTER%%%%PYTHON_SITELIBDIR%%/openipmigui/gui_winsys.pyo
+%%TKINTER%%man/man1/openipmigui.1.gz
