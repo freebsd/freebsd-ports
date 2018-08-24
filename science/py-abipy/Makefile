@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	abipy
-DISTVERSION=	0.5.0
+DISTVERSION=	0.6.0
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,9 +16,8 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netCDF4>0:science/py-netCDF4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}prettytable>0:devel/py-prettytable@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydispatcher>=2.0.5:devel/py-pydispatcher@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pymatgen>=2018.6.11:science/py-pymatgen@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pymatgen>=2018.8.7:science/py-pymatgen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}seaborn>0:math/py-seaborn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
@@ -32,5 +31,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	abinit
 SHEBANG_GLOB=	*.py
 USE_PYTHON=	distutils concurrent autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
