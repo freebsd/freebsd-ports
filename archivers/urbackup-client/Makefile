@@ -2,6 +2,7 @@
 
 PORTNAME=	urbackup-client
 DISTVERSION=	2.2.6
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://hndl.urbackup.org/Client/${DISTVERSION}/
 
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcryptopp.so:security/cryptopp
 
-USES=		gettext dos2unix localbase
+USES=		dos2unix gettext localbase pkgconfig
 USE_RC_SUBR=	urbackup_client
 
 USERS=		urbackup
@@ -21,6 +22,7 @@ GROUPS=		urbackup
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-clientupdate
+CXXFLAGS+=	`pkgconf --cflags-only-other libcryptopp`
 
 SUB_FILES=	pkg-message urbackupclient.conf.sample-daemon
 
@@ -47,6 +49,19 @@ XPMFILES=	backup-bad.xpm \
 		backup-indexing.xpm \
 		backup-no-server.xpm \
 		backup-progress-pause.xpm
+
+post-patch:
+	@(cd ${WRKSRC} && ${REINPLACE_CMD} -E -e 's|[[:<:]]byte[[:>:]]|CryptoPP::byte|g' \
+		cryptoplugin/AESDecryption.cpp \
+		cryptoplugin/AESEncryption.cpp \
+		cryptoplugin/AESGCMDecryption.cpp \
+		cryptoplugin/AESGCMEncryption.cpp \
+		cryptoplugin/CryptoFactory.cpp \
+		cryptoplugin/ECDHKeyExchange.cpp \
+		cryptoplugin/ZlibCompression.cpp \
+		cryptoplugin/ZlibDecompression.cpp \
+		md5.h \
+	)
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/urbackup/scripts

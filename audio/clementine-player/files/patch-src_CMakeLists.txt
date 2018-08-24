@@ -1,6 +1,14 @@
---- src/CMakeLists.txt.orig	2016-04-19 15:08:35 UTC
+--- src/CMakeLists.txt.orig	2018-05-23 13:23:53 UTC
 +++ src/CMakeLists.txt
-@@ -1388,6 +1388,7 @@ add_executable(clementine
+@@ -1295,6 +1295,7 @@ if(HAVE_BREAKPAD)
+ endif(HAVE_BREAKPAD)
+ 
+ if(HAVE_SPOTIFY_DOWNLOADER)
++  add_definitions(${CRYPTOPP_CFLAGS_OTHER})
+   target_link_libraries(clementine_lib
+     ${CRYPTOPP_LIBRARIES}
+   )
+@@ -1380,6 +1381,7 @@ add_executable(clementine
  
  if (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
    target_link_libraries(clementine execinfo)
