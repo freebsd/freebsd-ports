@@ -51,4 +51,12 @@ post-install-EXAMPLES-on:
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${EXAMPLESDIR} '! -name *Makefile*'
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD
+.if ( ${OSVERSION} >= 1101513 && ${OSVERSION} < 1200000 ) || ${OSVERSION} >= 1200060
+BROKEN=		fails to compile with clang6 or later
+.endif
+.endif
+
+.include <bsd.port.post.mk>
