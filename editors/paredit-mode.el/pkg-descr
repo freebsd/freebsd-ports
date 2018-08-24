@@ -5,4 +5,4 @@ Lisp, Scheme or Clojure source code.
 ParEdit helps keep parentheses balanced and adds many keys for
 moving S-expressions and moving around in S-expressions.
 
-WWW: http://www.emacswiki.org/emacs/ParEdit
+WWW: https://www.emacswiki.org/emacs/ParEdit
