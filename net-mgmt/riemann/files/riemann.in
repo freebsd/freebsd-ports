@@ -32,7 +32,7 @@ load_rc_config $name
 : ${riemann_enable="NO"}
 : ${riemann_user:="riemann"}
 : ${riemann_group:="riemann"}
-: ${riemann_config:="%%ETCDIR%%/riemann/riemann.config"}
+: ${riemann_config:="%%ETCDIR%%/riemann.config"}
 : ${riemann_jarfile:="%%JAVAJARDIR%%/riemann.jar"}
 : ${riemann_java_home:="%%JAVA_HOME%%"}
 : ${riemann_min_mem:="256m"}
@@ -45,7 +45,6 @@ load_rc_config $name
         -Xmx${riemann_max_mem} \
         -Xss256k \
         -Djava.awt.headless=true \
-        -Djava.net.preferIPv4Stack=true \
         -XX:+AggressiveOpts \
         -XX:+CMSClassUnloadingEnabled \
         -XX:+CMSParallelRemarkEnabled \
