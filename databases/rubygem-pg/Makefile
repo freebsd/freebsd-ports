@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pg
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
