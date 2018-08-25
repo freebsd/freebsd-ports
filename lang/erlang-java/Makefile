@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	19.3.6.9
+PORTVERSION=	19.3.6.10
 PORTEPOCH=	1
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
@@ -19,7 +19,8 @@ PATCHFILES=	patch-otp-19.3.1 patch-otp-19.3.2 patch-otp-19.3.3 \
 		patch-otp-19.3.4 patch-otp-19.3.5 patch-otp-19.3.6 \
 		patch-otp-19.3.6.1 patch-otp-19.3.6.2 patch-otp-19.3.6.3 \
 		patch-otp-19.3.6.4 patch-otp-19.3.6.5 patch-otp-19.3.6.6 \
-		patch-otp-19.3.6.7 patch-otp-19.3.6.8 patch-otp-19.3.6.9
+		patch-otp-19.3.6.7 patch-otp-19.3.6.8 patch-otp-19.3.6.9 \
+		patch-otp-19.3.6.10
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Erlang interface for Java
@@ -34,8 +35,6 @@ PLIST_SUB=	APP_VERSION=${APP_VERSION}
 
 MAKE_JOBS_UNSAFE=yes
 
-OPTIONS_DEFINE=	DOCS
-
 ERL_RELEASE=	19.3
 
 USES=		gmake ncurses perl5
@@ -48,16 +47,10 @@ APP_DIR=	${PREFIX}/lib/erlang/lib/jinterface-${APP_VERSION}
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-DISTFILES+=	${ERLANG_DOCS}:erlangorg
-.endif
-
 CONFIGURE_ARGS+=--enable-threads --without-odbc --with-javac
 CONFIGURE_ENV+=	ac_cv_prog_JAVAC="${JAVAC}"
 
 USE_JAVA=	yes
-
-ERLANG_DOCS=	otp_doc_html_${ERL_RELEASE}.tar.gz
 
 do-build:
 	@${MKDIR} ${WRKSRC}/lib/jinterface/ebin
@@ -70,11 +63,5 @@ do-install:
 	cd ${WRKSRC}/lib/jinterface && ${COPYTREE_SHARE} ebin ${STAGEDIR}${APP_DIR}
 	cd ${WRKSRC}/lib/jinterface && ${COPYTREE_SHARE} java_src ${STAGEDIR}${APP_DIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/jinterface/priv/OtpErlang.jar ${STAGEDIR}${APP_DIR}/priv
-
-do-install-DOCS-on:
-	cd ${WRKSRC}/lib/jinterface && ${COPYTREE_SHARE} doc ${STAGEDIR}${APP_DIR}
-	${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
-		-C ${STAGEDIR}${PREFIX}/lib/erlang lib/jinterface-${APP_VERSION}
-	@${FIND} ${STAGEDIR}${APP_DIR} -type d -empty -delete
 
 .include <bsd.port.mk>
