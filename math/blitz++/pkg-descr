@@ -3,4 +3,4 @@ performance on par with Fortran 77/90. It uses template techniques to
 achieve high performance. The current versions provide dense arrays and
 vectors, random number generators, and small vectors and matrices.
 
-WWW: http://www.oonumerics.org/blitz/
+WWW: https://github.com/blitzpp/blitz
