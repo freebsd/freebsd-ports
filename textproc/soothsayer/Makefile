@@ -14,7 +14,7 @@ LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	help2man:misc/help2man
 
-USES=		libtool localbase ncurses pkgconfig sqlite
+USES=		compiler libtool localbase ncurses pkgconfig sqlite
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_CPPUNIT_CONFIG=no \
 		ac_cv_path_PYTHON=no \
@@ -22,6 +22,8 @@ CONFIGURE_ENV=	ac_cv_path_CPPUNIT_CONFIG=no \
 		ac_cv_prog_HAVE_DOT=no \
 		ac_cv_prog_HAVE_DOXYGEN=no
 CONFIGURE_ARGS=	--disable-python-binding --localstatedir="${PREFIX}/var"
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
