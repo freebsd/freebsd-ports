@@ -1628,7 +1628,6 @@
     SUBDIR += py-django-voting
     SUBDIR += py-django-widget-tweaks
     SUBDIR += py-django111
-    SUBDIR += py-django18
     SUBDIR += py-django20
     SUBDIR += py-django21
     SUBDIR += py-django_compressor
