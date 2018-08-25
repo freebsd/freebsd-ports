@@ -16,8 +16,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ALL_TARGET=	all
 DOCS=		Changelog Changelog.DLR Changelog.jewel INSTALL LICENSE README
 PORTDOCS=	*
-USES+=		gmake
+USES=		compiler gmake
 USE_XORG=	x11 xext xpm
+MAKE_ARGS=	CFLAGS="${CXXFLAGS}"
+
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 OPTIONS_DEFINE=	DOCS
 
