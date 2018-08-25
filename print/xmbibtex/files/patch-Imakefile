@@ -1,5 +1,5 @@
---- Imakefile.orig	Sun Oct 19 02:50:16 1997
-+++ Imakefile	Sun Nov 12 20:17:11 2000
+--- Imakefile.orig	1997-10-18 17:50:16 UTC
++++ Imakefile
 @@ -1,11 +1,12 @@
  SYS_LIBRARIES = -lXm -lXt -lSM -lICE -lX11 -lXpm -lXext -lXmu
 -CC            = g++
