@@ -14,6 +14,7 @@ LIB_DEPENDS=	libid3.so:audio/id3lib \
 		libgdbm.so:databases/gdbm
 
 USES=		alias gettext gmake libtool ncurses pathfix perl5 pkgconfig
+USE_CXXSTD=	gnu++98
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ipv6 \
