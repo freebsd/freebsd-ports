@@ -12,12 +12,13 @@ COMMENT=	Read from a Reiser file system
 
 PLIST_FILES=	bin/rfstool
 USES=		dos2unix zip
+USE_CXXSTD=	c++98
 DOS2UNIX_FILES=	reiserfs.h
 WRKSRC=		${WRKDIR}/rfstool-0.14/RFSTOOL
 MAKEFILE=	makefile.gcc3x
 
 post-extract:
-	@${REINPLACE_CMD} -e "s,g++,\$${CXX},g" ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e "s,g++,\$${CXX} \$${CXXFLAGS},g" ${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rfstool ${STAGEDIR}${PREFIX}/bin
