@@ -2,6 +2,7 @@
 
 PORTNAME=	gabedit
 DISTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://prdownloads.sourceforge.net/${PORTNAME}/
 DISTNAME=	GabeditSrc${DISTVERSION:S/.//g}
@@ -14,16 +15,13 @@ LICENSE_FILE=	${WRKSRC}/License
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
-		libomp.so:devel/openmp
+		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 
 USES=		gettext-runtime gmake pkgconfig
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango pangox-compat
 USE_GL=		gl glu
 USE_XORG=	x11
 INSTALLS_ICONS=	yes
-
-WRKSRC=		${WRKDIR}/GabeditSrc250
 
 BINARY_ALIAS=	make=gmake
 
@@ -35,8 +33,16 @@ ICON_SIZES=	16 24 32 48
 PLIST_FILES+=	share/icons/hicolor/${SZ}x${SZ}/apps/gabedit.png
 .endfor
 
+OPTIONS_DEFINE=		OPENMP
+OPTIONS_DEFAULT=	OPENMP
+
+OPENMP_LIB_DEPENDS=	libomp.so:devel/openmp
+
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/|${PREFIX}/|; s| -O2| ${CFLAGS}|; s|gcc|${CC}|' ${WRKSRC}/CONFIG
+
+post-patch-OPENMP-off:
+	@${REINPLACE_CMD} 's|enable_omp = 1|enable_omp = 0|' ${WRKSRC}/CONFIG
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
