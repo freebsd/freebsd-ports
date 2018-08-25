@@ -1,0 +1,18 @@
+Gabedit is a Graphical User Interface for FireFly (PC-Gamess), Gamess-US,
+Gaussian, Molcas, Molpro, MPQC, NWChem, OpenMopac, Orca, PSI4 and Q-Chem
+computational chemistry packages.
+
+Features:
+* Gabedit makes using Computational Chemistry Packages (CCP) simple and
+  straightforward .
+* Sketch in molecules using its advanced 3D Structure Builder, or load in
+  molecules from standard files.
+* Set up and submit CCP jobs right from the interface, and monitor their
+  progress as they run.
+* Examine calculation results graphically via state-of-the-art visualization
+  features: display molecular orbitals and other surfaces, view spectra, animate
+  normal modes, geometry optimizations and reaction paths.
+* Molecular Dynamics using Amber 99 molecular mechanics or Semi-Empirical
+  potentials.
+
+WWW: https://sourceforge.net/projects/gabedit/

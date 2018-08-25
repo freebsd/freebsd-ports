@@ -66,6 +66,7 @@
     SUBDIR += fvcom
     SUBDIR += fvcom-mpi
     SUBDIR += fvm
+    SUBDIR += gabedit
     SUBDIR += gchemutils
     SUBDIR += gdma
     SUBDIR += getdp
