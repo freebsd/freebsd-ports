@@ -44,8 +44,6 @@ bin/istioctl
 %%DATADIR%%/kubernetes/helm/istio-remote/charts/security/templates/cleanup-secrets.yaml
 %%DATADIR%%/kubernetes/helm/istio-remote/charts/security/templates/clusterrole.yaml
 %%DATADIR%%/kubernetes/helm/istio-remote/charts/security/templates/clusterrolebinding.yaml
-%%DATADIR%%/kubernetes/helm/istio-remote/charts/security/templates/configmap.yaml
-%%DATADIR%%/kubernetes/helm/istio-remote/charts/security/templates/create-custom-resources-job.yaml
 %%DATADIR%%/kubernetes/helm/istio-remote/charts/security/templates/deployment.yaml
 %%DATADIR%%/kubernetes/helm/istio-remote/charts/security/templates/enable-mesh-mtls.yaml
 %%DATADIR%%/kubernetes/helm/istio-remote/charts/security/templates/service.yaml
@@ -67,7 +65,6 @@ bin/istioctl
 %%DATADIR%%/kubernetes/helm/istio-remote/templates/clusterrolebinding.yaml
 %%DATADIR%%/kubernetes/helm/istio-remote/templates/configmap.yaml
 %%DATADIR%%/kubernetes/helm/istio-remote/templates/endpoints.yaml
-%%DATADIR%%/kubernetes/helm/istio-remote/templates/install-custom-resources.sh.tpl
 %%DATADIR%%/kubernetes/helm/istio-remote/templates/service.yaml
 %%DATADIR%%/kubernetes/helm/istio-remote/templates/serviceaccount.yaml
 %%DATADIR%%/kubernetes/helm/istio-remote/templates/sidecar-injector-configmap.yaml
