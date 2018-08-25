@@ -2,41 +2,47 @@
 # $FreeBSD$
 
 PORTNAME=	blitz++
-PORTVERSION=	0.9
-PORTREVISION=	9
+PORTVERSION=	1.0.1
 CATEGORIES=	math
-MASTER_SITES=	SF/blitz/blitz/Blitz%2B%2B%20${PORTVERSION}
-DISTNAME=	blitz-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ class library for scientific computing
 
+LICENSE=	GPLv3 BSD3CLAUSE
+LICENSE_COMB=	multi
+
 BROKEN_FreeBSD_12=	fails to compile: ../blitz/blitz.h:58:12: 'iostream.h' file not found
 
-OPTIONS_DEFINE=	DOCS
-
-DOCS_USE=	TEX=dvipsk,formats
-DOCS_USES=	makeinfo
-DOCS_INFO=	blitz
-DOCS_BUILD_DEPENDS=	texi2dvi:print/texinfo \
-			texi2html:textproc/texi2html
-DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=yes
-
 GNU_CONFIGURE=	yes
-USES=	libtool pathfix gmake
-CONFIGURE_ARGS=	--with-cxx=gcc --disable-doxygen --enable-shared
-MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
-		AUTOHEADER="${TRUE}"
-MAKE_JOBS_UNSAFE=	yes
-INSTALL_TARGET=	install-strip
-
-DOCSDIR=	${PREFIX}/share/doc/blitz
-
+USES=		gmake libtool pathfix python
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--enable-shared CXX_OPTIMIZE_FLAGS="${CFLAGS}"
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	blitzpp
+GH_PROJECT=	blitz
+
+PORTDOCS=	AUTHORS ChangeLog* LEGAL README NEWS \
+		README.binutils TODO doc/*.txt
+
+OPTIONS_DEFINE=	DOCS
+OPTIONS_SUB=	yes
+DOCS_INFO=	blitz
+DOCS_SUB_PLIST=	""
+
+INSTALL_TARGET=	install-strip
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|g++|\$${CXX}|g ; \
 		 s|"-ftemplate-depth-30|"\$${CXXFLAGS} -ftemplate-depth-30|g ; \
-		 s|-O2||g' ${WRKSRC}/configure
+		 s|-O3|-O2|g ; s|-funroll-loops||g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's,python,${PYTHON_CMD},' ${WRKSRC}/blitz/generate/Makefile.in
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+
+post-install:
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc/blitz-0.10
 
 .include <bsd.port.mk>
