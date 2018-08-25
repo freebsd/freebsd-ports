@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	devise_pam_authenticatable2
-PORTVERSION=	9.1.0
+PORTVERSION=	9.1.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
