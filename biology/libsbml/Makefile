@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		cmake:outsource iconv:build
+USE_CXXSTD=	c++98
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
@@ -51,12 +52,4 @@ post-install-EXAMPLES-on:
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${EXAMPLESDIR} '! -name *Makefile*'
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD
-.if ( ${OSVERSION} >= 1101513 && ${OSVERSION} < 1200000 ) || ${OSVERSION} >= 1200060
-BROKEN=		fails to compile with clang6 or later
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
