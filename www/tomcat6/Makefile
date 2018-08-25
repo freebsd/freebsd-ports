@@ -3,7 +3,7 @@
 
 PORTNAME=	tomcat
 PORTVERSION=	6.0.53
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/tomcat/tomcat-6/v${PORTVERSION}/bin
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
@@ -37,12 +37,10 @@ AJP_1_3_PORT?=	8009
 STDOUT_LOG=	${LOG_DIR}/stdout.log
 STDERR_LOG=	${LOG_DIR}/stderr.log
 JAR_FILE=	bin/bootstrap.jar
-TOMCAT_CONF_FILES=	catalina.policy catalina.properties context.xml \
-			logging.properties server.xml tomcat-users.xml web.xml
-CONF_EXT=	sample
-PLIST_SUB=	T=${APP_HOME:S/^${PREFIX}\///} CONF_EXT=${CONF_EXT} \
+TOMCAT_SUBDIR?=	${DISTNAME:R}
+TOMCAT_HOME=	${PREFIX}/${TOMCAT_SUBDIR}
+PLIST_SUB=	T=${TOMCAT_SUBDIR} \
 		WWWOWN=${TOMCAT_USER} WWWGRP=${TOMCAT_GROUP}
-
 SUB_LIST=	AJP_1_3_PORT=${AJP_1_3_PORT} \
 		APP_HOME=${APP_HOME} \
 		APP_SHORTNAME=${APP_SHORTNAME} \
@@ -55,6 +53,16 @@ SUB_LIST=	AJP_1_3_PORT=${AJP_1_3_PORT} \
 		TOMCAT_HOME=${APP_HOME} \
 		TOMCAT_VERSION=${MAJOR_VER:S/.//} \
 		USER=${TOMCAT_USER}
+
+OPTIONS_DEFINE=		HOST_MANAGER MANAGER DOCS EXAMPLES ROOT
+OPTIONS_DEFAULT=	HOST_MANAGER MANAGER ROOT
+OPTIONS_SUB=		yes
+
+DOCS_DESC=		Install Documentation web application
+EXAMPLES_DESC=		Install Examples web application
+HOST_MANAGER_DESC=	Install Host Manager application
+MANAGER_DESC=		Install Manager web application
+ROOT_DESC=		Install default ROOT web application
 
 .include <bsd.port.pre.mk>
 
@@ -73,9 +81,6 @@ pre-patch:
 post-patch:
 	@${REINPLACE_CMD} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${WRKSRC}/conf/server.xml
 	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.bat' -or -name '*.dll' -or -name '*.exe' -or -name '*.orig' \) -delete
-.for f in ${TOMCAT_CONF_FILES}
-	@${MV} ${WRKSRC}/conf/${f} ${WRKSRC}/conf/${f}.${CONF_EXT}
-.endfor
 
 pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -94,5 +99,34 @@ do-install:
 	@${ECHO_MSG} -n ">> Fixing permissions..."
 	@${FIND} ${STAGEDIR}${APP_HOME} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@${ECHO_MSG} " [ DONE ]"
+
+post-install:
+	(cd ${STAGEDIR}${TOMCAT_HOME}/conf &&\
+		for f in $$(find . -type f); do ${MV} $$f $$f.sample; done)
+
+post-install-HOST_MANAGER-on:
+	(cd ${STAGEDIR}${TOMCAT_HOME}/webapps &&\
+		for f in host-manager/META-INF/context.xml host-manager/WEB-INF/web.xml; do \
+			${MV} $$f $$f.sample; done)
+
+post-install-HOST_MANAGER-off:
+	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/host-manager
+
+post-install-MANAGER-on:
+	(cd ${STAGEDIR}${TOMCAT_HOME}/webapps &&\
+		for f in manager/META-INF/context.xml manager/WEB-INF/web.xml; do \
+			${MV} $$f $$f.sample; done)
+
+post-install-MANAGER-off:
+	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/manager
+
+post-install-DOCS-off:
+	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/docs
+
+post-install-EXAMPLES-off:
+	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/examples
+
+post-install-ROOT-off:
+	@${RM} -R ${STAGEDIR}${TOMCAT_HOME}/webapps/ROOT
 
 .include <bsd.port.post.mk>

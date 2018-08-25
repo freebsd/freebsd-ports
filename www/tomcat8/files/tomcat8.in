@@ -121,15 +121,4 @@ command_args="-java-home '${_tomcat_java_home}' \
 	org.apache.catalina.startup.Bootstrap \
 	${_tomcat_pipe_cmd}"
 
-start_precmd="tomcat_prestart"
-
-tomcat_prestart()
-{
-	if [ -r "${_tomcat_catalina_base}/bin/setenv.sh" ]; then
-		. "${_tomcat_catalina_base}/bin/setenv.sh"
-	elif [ -r "%%TOMCAT_HOME%%/bin/setenv.sh" ]; then
-		. "%%TOMCAT_HOME%%/bin/setenv.sh"
-	fi
-}
-
 run_rc_command "$1"
