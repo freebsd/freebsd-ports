@@ -22,6 +22,9 @@ USES=		compiler:c++0x desktop-file-utils dos2unix localbase:ldflags pkgconfig sc
 USE_SDL=	sdl
 USE_XORG=	x11
 
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
+
 OPTIONS_DEFINE=		CREATE_AVI DEBUG DOCS FRAMESKIP LOGO LUA OPENGL
 OPTIONS_SINGLE=		GUI
 OPTIONS_SINGLE_GUI=	GTK2 GTK3
