@@ -21,6 +21,7 @@ BROKEN_sparc64=		missing atomics implementation
 BROKEN_powerpc64=	fails to compile: sibling call optimization does not allow automatic multiple TOCs
 
 USES=		cmake:outsource ncurses
+USE_CXXSTD=	gnu++98
 CMAKE_ARGS=	-DAPTO_UNIT_TESTS:BOOL=OFF \
 		-DAVD_UNIT_TESTS:BOOL=OFF \
 		-DNCURSES_INCLUDE_PATH:STRING="${NCURSESINC}"
