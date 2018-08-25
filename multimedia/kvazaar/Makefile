@@ -3,11 +3,14 @@
 PORTNAME=	kvazaar
 DISTVERSIONPREFIX=	v
 DISTVERSION?=	1.2.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	93e1c9f1c39c.patch:-p1 4f4bea749680.patch:-p1
+PATCHFILES+=	93e1c9f1c39c.patch:-p1 \
+		4f4bea749680.patch:-p1 \
+		4b24cd03a24e.patch:-p1 \
+		411276d6f2b2.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	H.265/HEVC encoder implemented in C
@@ -36,8 +39,7 @@ ASM_CONFIGURE_ENABLE=	asm
 
 CRYPTOPP_DESC=		Selective encryption via Crypto++ library
 CRYPTOPP_LIB_DEPENDS=	libcryptopp.so:security/cryptopp
-CRYPTOPP_USES=		localbase
-CRYPTOPP_CONFIGURE_ENV=	cryptopp_CFLAGS=" " cryptopp_LIBS="-lcryptopp"
+CRYPTOPP_USES=		pkgconfig
 CRYPTOPP_CONFIGURE_WITH=cryptopp
 
 post-patch:
