@@ -9,9 +9,12 @@ MASTER_SITES=	SF/unikey/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vietnamese input method for X
 
-USES=		tar:bzip2
+USES=		compiler tar:bzip2
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
+
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 PLIST_FILES=	bin/unikey bin/ukxim
 
