@@ -18,6 +18,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
 USES=		shebangfix
+USE_CXXSTD=	c++98
 SHEBANG_FILES=	examples/butane_4/procDihedralFile.awk \
 		examples/butane_4/cleanOutput.bash \
 		examples/butane_4/runButaneResults.sh \
