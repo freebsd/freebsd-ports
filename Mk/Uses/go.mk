@@ -24,6 +24,9 @@
 #	Addional LDFLAGS variables to be passed to the C compiler by the `go`
 #	command
 #
+# GO_BUILDFLAGS
+#	Additional build arguments to be passed to the `go install` command
+#
 # MAINTAINER: jlaffaye@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_GO_MK)
@@ -40,6 +43,7 @@ GOOBJ=	6
 # Settable variables
 GO_PKGNAME?=	${PORTNAME}
 GO_TARGET?=	${GO_PKGNAME}
+GO_BUILDFLAGS+=	-v
 CGO_CFLAGS+=	-I${LOCALBASE}/include
 CGO_LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -76,7 +80,8 @@ post-extract:
 
 .if !target(do-build)
 do-build:
-	@(cd ${GO_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} install -v ${GO_TARGET})
+	@(cd ${GO_WRKSRC}; \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} install ${GO_BUILDFLAGS} ${GO_TARGET})
 .endif
 
 .if !target(do-install)
