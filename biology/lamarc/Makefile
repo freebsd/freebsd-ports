@@ -14,6 +14,8 @@ COMMENT=	Package of programs for computing population parameters
 
 LICENSE=	APACHE20
 
+USE_CXXSTD=	c++98
+
 WRKSRC=		${WRKDIR}/${DISTNAME:S,${DISTVERSIONSUFFIX},,}
 
 GNU_CONFIGURE=	yes
