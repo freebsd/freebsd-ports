@@ -126,4 +126,5 @@ share/locale/zh_CN/LC_MESSAGES/kcmkwallet.mo
 share/locale/zh_CN/LC_MESSAGES/kwalletmanager.mo
 share/locale/zh_TW/LC_MESSAGES/kcmkwallet.mo
 share/locale/zh_TW/LC_MESSAGES/kwalletmanager.mo
+share/metainfo/org.kde.kwalletmanager5.appdata.xml
 share/polkit-1/actions/org.kde.kcontrol.kcmkwallet5.policy

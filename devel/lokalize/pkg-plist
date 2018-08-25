@@ -1,4 +1,5 @@
 bin/lokalize
+etc/xdg/lokalize.categories
 share/applications/org.kde.lokalize.desktop
 share/config.kcfg/lokalize.kcfg
 share/icons/hicolor/128x128/apps/lokalize.png

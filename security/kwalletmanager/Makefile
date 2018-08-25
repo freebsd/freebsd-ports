@@ -13,7 +13,7 @@ USE_KDE=	archive auth codecs config configwidgets coreaddons crash \
 		itemmodels itemviews kcmutils kdelibs4support kio \
 		jobwidgets notifications service wallet widgetsaddons \
 		windowsystem xmlgui
-USE_QT=		core dbus gui widgets xml \
+USE_QT=		core dbus gui network widgets xml \
 		buildtools_build qmake_build
 
 .include <bsd.port.mk>

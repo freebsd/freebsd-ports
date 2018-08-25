@@ -101,9 +101,6 @@ lib/libkopeteprivacy.so.1.0.0
 lib/libkopetestatusmenu.so
 lib/libkopetestatusmenu.so.1
 lib/libkopetestatusmenu.so.1.0.0
-lib/libkyahoo.so
-lib/libkyahoo.so.1
-lib/libkyahoo.so.1.0.0
 lib/liboscar.so
 lib/liboscar.so.1
 lib/liboscar.so.1.0.0
@@ -147,7 +144,6 @@ lib/libqgroupwise.so
 %%QT_PLUGINDIR%%/kopete_urlpicpreview.so
 %%QT_PLUGINDIR%%/kopete_webpresence.so
 %%QT_PLUGINDIR%%/kopete_wp.so
-%%QT_PLUGINDIR%%/kopete_yahoo.so
 share/applications/org.kde.kopete.desktop
 share/config.kcfg/historyconfig.kcfg
 share/config.kcfg/kopete_otr.kcfg
@@ -248,8 +244,6 @@ share/kconf_update/kopete-update_icq_server.pl
 share/kconf_update/kopete-update_icq_server.upd
 share/kconf_update/kopete-update_icq_ssl.pl
 share/kconf_update/kopete-update_icq_ssl.upd
-share/kconf_update/kopete-update_yahoo_server.pl
-share/kconf_update/kopete-update_yahoo_server.upd
 share/knotifications5/kopete.notifyrc
 %%DATADIR%%/CompactContactListLayouts.xml
 %%DATADIR%%/DefaultContactListLayouts.xml
@@ -378,20 +372,6 @@ share/knotifications5/kopete.notifyrc
 %%DATADIR%%/icons/hicolor/64x64/apps/qq_protocol.png
 %%DATADIR%%/icons/hicolor/64x64/apps/testbed_protocol.png
 %%DATADIR%%/icons/hicolor/64x64/apps/wp_protocol.png
-%%DATADIR%%/icons/oxygen/128x128/app/yahoo_protocol.png
-%%DATADIR%%/icons/oxygen/16x16/action/yahoo_away.png
-%%DATADIR%%/icons/oxygen/16x16/action/yahoo_busy.png
-%%DATADIR%%/icons/oxygen/16x16/action/yahoo_idle.png
-%%DATADIR%%/icons/oxygen/16x16/action/yahoo_invisible.png
-%%DATADIR%%/icons/oxygen/16x16/action/yahoo_mobile.png
-%%DATADIR%%/icons/oxygen/16x16/action/yahoo_stealthed.png
-%%DATADIR%%/icons/oxygen/16x16/action/yahoo_tea.png
-%%DATADIR%%/icons/oxygen/16x16/app/yahoo_protocol.png
-%%DATADIR%%/icons/oxygen/22x22/action/yahoo_stealthed.png
-%%DATADIR%%/icons/oxygen/32x32/action/yahoo_stealthed.png
-%%DATADIR%%/icons/oxygen/32x32/app/yahoo_protocol.png
-%%DATADIR%%/icons/oxygen/48x48/app/yahoo_protocol.png
-%%DATADIR%%/icons/oxygen/64x64/app/yahoo_protocol.png
 %%DATADIR%%/styles/Clean/Contents/Resources/Footer.html
 %%DATADIR%%/styles/Clean/Contents/Resources/Header.html
 %%DATADIR%%/styles/Clean/Contents/Resources/Incoming/Content.html
@@ -617,7 +597,6 @@ share/kservices5/kopete_texteffect.desktop
 share/kservices5/kopete_urlpicpreview.desktop
 share/kservices5/kopete_webpresence.desktop
 share/kservices5/kopete_wp.desktop
-share/kservices5/kopete_yahoo.desktop
 share/kservices5/xmpp.protocol
 share/kservicetypes5/kopeteplugin.desktop
 share/kservicetypes5/kopeteprotocol.desktop
@@ -736,6 +715,7 @@ share/locale/zh_CN/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/zh_CN/LC_MESSAGES/kopete.mo
 share/locale/zh_TW/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/zh_TW/LC_MESSAGES/kopete.mo
+share/metainfo/org.kde.kopete.appdata.xml
 share/sounds/Kopete_Event.ogg
 share/sounds/Kopete_Received.ogg
 share/sounds/Kopete_Sent.ogg

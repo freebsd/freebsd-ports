@@ -67,10 +67,6 @@ share/icons/hicolor/8x8/emblems/gpg-key-trust-level-2.svg
 share/icons/hicolor/8x8/emblems/gpg-key-trust-level-3.svg
 share/icons/hicolor/8x8/emblems/gpg-key-trust-level-4.svg
 share/icons/hicolor/scalable/apps/kmail.svgz
-share/icons/locolor/16x16/actions/ktnef_extract_all_to.png
-share/icons/locolor/16x16/actions/ktnef_extract_to.png
-share/icons/locolor/16x16/apps/ktnef.png
-share/icons/locolor/32x32/apps/ktnef.png
 share/kconf_update/kmail-15.08-kickoff.sh
 share/kconf_update/kmail.upd
 share/kconf_update/kmail2.sh

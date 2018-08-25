@@ -76,3 +76,4 @@ share/locale/ug/LC_MESSAGES/kdf.mo
 share/locale/uk/LC_MESSAGES/kdf.mo
 share/locale/zh_CN/LC_MESSAGES/kdf.mo
 share/locale/zh_TW/LC_MESSAGES/kdf.mo
+share/metainfo/org.kde.kdf.appdata.xml
