@@ -15,8 +15,6 @@ share/icons/hicolor/32x32/apps/ksirk.png
 share/icons/hicolor/48x48/apps/ksirk.png
 share/icons/hicolor/64x64/apps/ksirk.png
 share/icons/hicolor/scalable/apps/ksirk.svgz
-share/icons/locolor/16x16/apps/ksirk.png
-share/icons/locolor/32x32/apps/ksirk.png
 %%DATADIR%%/jabber.png
 %%DATADIR%%/skins/default/Data/world.desktop
 %%DATADIR%%/skins/default/Images/2DownArrow.png

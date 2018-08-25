@@ -26,9 +26,11 @@ include/KF5/Libkleo/KeyListModelInterface
 include/KF5/Libkleo/KeyListSortFilterProxyModel
 include/KF5/Libkleo/KeyRearrangeColumnsProxyModel
 include/KF5/Libkleo/KeyRequester
+include/KF5/Libkleo/KeyResolver
 include/KF5/Libkleo/KeySelectionCombo
 include/KF5/Libkleo/KeySelectionDialog
 include/KF5/Libkleo/MessageBox
+include/KF5/Libkleo/NewKeyApprovalDialog
 include/KF5/Libkleo/OidMap
 include/KF5/Libkleo/Predicates
 include/KF5/Libkleo/ProgressDialog
@@ -60,10 +62,12 @@ include/KF5/libkleo/keylistmodelinterface.h
 include/KF5/libkleo/keylistsortfilterproxymodel.h
 include/KF5/libkleo/keyrearrangecolumnsproxymodel.h
 include/KF5/libkleo/keyrequester.h
+include/KF5/libkleo/keyresolver.h
 include/KF5/libkleo/keyselectioncombo.h
 include/KF5/libkleo/keyselectiondialog.h
 include/KF5/libkleo/kleo_export.h
 include/KF5/libkleo/messagebox.h
+include/KF5/libkleo/newkeyapprovaldialog.h
 include/KF5/libkleo/oidmap.h
 include/KF5/libkleo/predicates.h
 include/KF5/libkleo/progressdialog.h

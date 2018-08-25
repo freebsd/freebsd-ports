@@ -4,6 +4,7 @@ etc/xdg/messageviewer_header_themes.knsrc
 include/KF5/MessageComposer/AbstractEncryptJob
 include/KF5/MessageComposer/AkonadiSender
 include/KF5/MessageComposer/AliasesExpandJob
+include/KF5/MessageComposer/AttachmentClipBoardJob
 include/KF5/MessageComposer/AttachmentControllerBase
 include/KF5/MessageComposer/AttachmentFromPublicKeyJob
 include/KF5/MessageComposer/AttachmentJob
@@ -13,7 +14,6 @@ include/KF5/MessageComposer/Composer
 include/KF5/MessageComposer/ComposerLineEdit
 include/KF5/MessageComposer/ComposerViewBase
 include/KF5/MessageComposer/ContentJobBase
-include/KF5/MessageComposer/DictionaryComboBox
 include/KF5/MessageComposer/DistributionListDialog
 include/KF5/MessageComposer/EncryptJob
 include/KF5/MessageComposer/FollowUpReminderSelectDateDialog
@@ -192,6 +192,7 @@ include/KF5/messagecomposer/akonadisender.h
 include/KF5/messagecomposer/aliasesexpandjob.h
 include/KF5/messagecomposer/attachmentcontrollerbase.h
 include/KF5/messagecomposer/attachmentfrompublickeyjob.h
+include/KF5/messagecomposer/attachmentclipboardjob.h
 include/KF5/messagecomposer/attachmentjob.h
 include/KF5/messagecomposer/attachmentmodel.h
 include/KF5/messagecomposer/attachmentvcardfromaddressbookjob.h
@@ -199,7 +200,6 @@ include/KF5/messagecomposer/composer.h
 include/KF5/messagecomposer/composerlineedit.h
 include/KF5/messagecomposer/composerviewbase.h
 include/KF5/messagecomposer/contentjobbase.h
-include/KF5/messagecomposer/dictionarycombobox.h
 include/KF5/messagecomposer/distributionlistdialog.h
 include/KF5/messagecomposer/encryptjob.h
 include/KF5/messagecomposer/followupremindercreatejob.h

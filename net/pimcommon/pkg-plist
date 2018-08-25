@@ -33,7 +33,6 @@ include/KF5/PimCommon/PluginUtil
 include/KF5/PimCommon/RenameFileDialog
 include/KF5/PimCommon/RichTexteditWithAutoCorrection
 include/KF5/PimCommon/ShareServiceUrlManager
-include/KF5/PimCommon/SieveSyntaxHighlighterUtil
 include/KF5/PimCommon/SimpleStringListEditor
 include/KF5/PimCommon/SpellCheckLineEdit
 include/KF5/PimCommon/TemplateListWidget
@@ -92,7 +91,6 @@ include/KF5/pimcommon/pluginutil.h
 include/KF5/pimcommon/renamefiledialog.h
 include/KF5/pimcommon/richtexteditwithautocorrection.h
 include/KF5/pimcommon/shareserviceurlmanager.h
-include/KF5/pimcommon/sievesyntaxhighlighterutil.h
 include/KF5/pimcommon/simplestringlisteditor.h
 include/KF5/pimcommon/spellchecklineedit.h
 include/KF5/pimcommon/templatelistwidget.h

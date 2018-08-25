@@ -13,7 +13,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-
 USES=		cmake:outsource gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth archive codecs completion config configwidgets coreaddons \
 		doctools ecm i18n jobwidgets kio newstuff service widgetsaddons
-USE_QT=		core gui network testlib widgets xml \
+USE_QT=		core dbus gui network testlib widgets xml \
 		buildtools_build qmake_build
 
 .include <bsd.port.mk>

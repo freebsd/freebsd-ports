@@ -41,9 +41,6 @@ lib/libmaildir.so.5
 lib/libmaildir.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/kf5/kio/akonadi.so
 %%QT_PLUGINDIR%%/kf5/kio/pop3.so
-lib/sasl2/libkdexoauth2.so
-lib/sasl2/libkdexoauth2.so.3
-lib/sasl2/libkdexoauth2.so.3.0.0
 share/akonadi/accountwizard/contacts/contactswizard.desktop
 share/akonadi/accountwizard/contacts/contactswizard.es
 share/akonadi/accountwizard/contacts/contactswizard.ui
@@ -1385,6 +1382,8 @@ share/locale/pt_BR/LC_MESSAGES/akonadi-filestore.mo
 share/locale/pt_BR/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/pt_BR/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/pt_BR/LC_MESSAGES/akonadi_davgroupware_resource.mo
+share/locale/pt_BR/LC_MESSAGES/akonadi_ews_resource.mo
+share/locale/pt_BR/LC_MESSAGES/akonadi_facebook_resource.mo
 share/locale/pt_BR/LC_MESSAGES/akonadi_gmail_resource.mo
 share/locale/pt_BR/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/pt_BR/LC_MESSAGES/akonadi_googlecontacts_resource.mo

@@ -2,6 +2,7 @@ etc/xdg/libkgapi.categories
 include/KPim/KGAPI/KGAPI/Account
 include/KPim/KGAPI/KGAPI/AccountInfo
 include/KPim/KGAPI/KGAPI/AccountInfoFetchJob
+include/KPim/KGAPI/KGAPI/AccountManager
 include/KPim/KGAPI/KGAPI/AuthJob
 include/KPim/KGAPI/KGAPI/AuthWidget
 include/KPim/KGAPI/KGAPI/Blogger/Blog
@@ -117,6 +118,7 @@ include/KPim/KGAPI/KGAPI/Utils
 include/KPim/KGAPI/kgapi/account.h
 include/KPim/KGAPI/kgapi/accountinfo.h
 include/KPim/KGAPI/kgapi/accountinfofetchjob.h
+include/KPim/KGAPI/kgapi/accountmanager.h
 include/KPim/KGAPI/kgapi/authjob.h
 include/KPim/KGAPI/kgapi/authwidget.h
 include/KPim/KGAPI/kgapi/blogger/blog.h
@@ -274,6 +276,9 @@ lib/libKPimGAPITasks.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_KGAPILatitude.pri
 %%QT_MKSPECDIR%%/modules/qt_KGAPIMaps.pri
 %%QT_MKSPECDIR%%/modules/qt_KGAPITasks.pri
+lib/sasl2/libkdexoauth2.so
+lib/sasl2/libkdexoauth2.so.3
+lib/sasl2/libkdexoauth2.so.3.0.0
 share/locale/ar/LC_MESSAGES/libkgapi_qt.qm
 share/locale/ast/LC_MESSAGES/libkgapi_qt.qm
 share/locale/bs/LC_MESSAGES/libkgapi_qt.qm

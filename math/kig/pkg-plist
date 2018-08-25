@@ -106,6 +106,7 @@ share/katepart5/syntax/python-kig.xml
 %%DATADIR%%/icons/hicolor/22x22/actions/rotation.png
 %%DATADIR%%/icons/hicolor/22x22/actions/scale.png
 %%DATADIR%%/icons/hicolor/22x22/actions/segment.png
+%%DATADIR%%/icons/hicolor/22x22/actions/segment_golden_point.png
 %%DATADIR%%/icons/hicolor/22x22/actions/segment_midpoint.png
 %%DATADIR%%/icons/hicolor/22x22/actions/segmentaxis.png
 %%DATADIR%%/icons/hicolor/22x22/actions/similitude.png
@@ -197,6 +198,7 @@ share/katepart5/syntax/python-kig.xml
 %%DATADIR%%/icons/hicolor/32x32/actions/rotation.png
 %%DATADIR%%/icons/hicolor/32x32/actions/scale.png
 %%DATADIR%%/icons/hicolor/32x32/actions/segment.png
+%%DATADIR%%/icons/hicolor/32x32/actions/segment_golden_point.png
 %%DATADIR%%/icons/hicolor/32x32/actions/segment_midpoint.png
 %%DATADIR%%/icons/hicolor/32x32/actions/segmentaxis.png
 %%DATADIR%%/icons/hicolor/32x32/actions/similitude.png
@@ -287,6 +289,7 @@ share/katepart5/syntax/python-kig.xml
 %%DATADIR%%/icons/hicolor/scalable/actions/rotation.svgz
 %%DATADIR%%/icons/hicolor/scalable/actions/scale.svgz
 %%DATADIR%%/icons/hicolor/scalable/actions/segment.svgz
+%%DATADIR%%/icons/hicolor/scalable/actions/segment_golden_point.svgz
 %%DATADIR%%/icons/hicolor/scalable/actions/segment_midpoint.svgz
 %%DATADIR%%/icons/hicolor/scalable/actions/segmentaxis.svgz
 %%DATADIR%%/icons/hicolor/scalable/actions/similitude.svgz

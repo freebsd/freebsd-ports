@@ -72,7 +72,6 @@ lib/libKF5Contacts.so
 lib/libKF5Contacts.so.5
 lib/libKF5Contacts.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_KContacts.pri
-share/kf5/kcontacts/countrytransl.map
 share/locale/ar/LC_MESSAGES/kcontacts5.mo
 share/locale/ast/LC_MESSAGES/kcontacts5.mo
 share/locale/bs/LC_MESSAGES/kcontacts5.mo

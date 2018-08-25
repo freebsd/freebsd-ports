@@ -5,10 +5,10 @@ include/KF5/KAlarmCal/KAlarmCal/CollectionAttribute
 include/KF5/KAlarmCal/KAlarmCal/CompatibilityAttribute
 include/KF5/KAlarmCal/KAlarmCal/DateTime
 include/KF5/KAlarmCal/KAlarmCal/EventAttribute
+include/KF5/KAlarmCal/KAlarmCal/KADateTime
 include/KF5/KAlarmCal/KAlarmCal/KAEvent
 include/KF5/KAlarmCal/KAlarmCal/KARecurrence
 include/KF5/KAlarmCal/KAlarmCal/Repetition
-include/KF5/KAlarmCal/KAlarmCal/Utils
 include/KF5/KAlarmCal/kalarmcal/alarmtext.h
 include/KF5/KAlarmCal/kalarmcal/collectionattribute.h
 include/KF5/KAlarmCal/kalarmcal/compatibilityattribute.h
@@ -16,11 +16,11 @@ include/KF5/KAlarmCal/kalarmcal/datetime.h
 include/KF5/KAlarmCal/kalarmcal/eventattribute.h
 include/KF5/KAlarmCal/kalarmcal/identities.h
 include/KF5/KAlarmCal/kalarmcal/kacalendar.h
+include/KF5/KAlarmCal/kalarmcal/kadatetime.h
 include/KF5/KAlarmCal/kalarmcal/kaevent.h
 include/KF5/KAlarmCal/kalarmcal/kalarmcal_export.h
 include/KF5/KAlarmCal/kalarmcal/karecurrence.h
 include/KF5/KAlarmCal/kalarmcal/repetition.h
-include/KF5/KAlarmCal/kalarmcal/utils.h
 include/KF5/KAlarmCal/kalarmcal/version.h
 include/KF5/kalarmcal_version.h
 lib/cmake/KF5AlarmCalendar/KF5AlarmCalendarConfig.cmake

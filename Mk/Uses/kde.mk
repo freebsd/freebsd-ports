@@ -74,8 +74,8 @@ KDE_FRAMEWORKS_VERSION?=	5.49.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
-KDE_APPLICATIONS_VERSION?=	18.04.3
-KDE_APPLICATIONS_SHLIB_VER?=	5.8.3
+KDE_APPLICATIONS_VERSION?=	18.08.0
+KDE_APPLICATIONS_SHLIB_VER?=	5.9.0
 KDE_APPLICATIONS_BRANCH?=	stable
 # Upstream moves old software to Attic/. Specify the newest applications release there.
 # Only the major version is used for the comparison.
@@ -296,7 +296,7 @@ _USE_KDEPIM5_ALL=	akonadicontacts akonadiimportwizard akonadimime akonadinotes \
 			contacts eventviews gapi grantleetheme \
 			gravatar identitymanagement imap \
 			incidenceeditor kdepim-addons kdepim-apps-libs \
-			kdepim-runtime5 kontactinterface kpimdav \
+			kdepim-runtime5 kitinerary kontactinterface kpimdav kpkpass \
 			ksmtp ldap libkdepim libkleo libksieve mailcommon \
 			mailimporter mailtransport mbox messagelib \
 			mime pimcommon pimtextedit syndication tnef \
@@ -802,13 +802,19 @@ kdepim-apps-libs_PORT=	deskutils/kdepim-apps-libs
 kdepim-apps-libs_LIB=	libKF5SendLater.so
 
 kdepim-runtime5_PORT=	deskutils/kdepim-runtime
-kdepim-runtime5_PATH=	${KDE_PREFIX}/lib/sasl2/libkdexoauth2.so
+kdepim-runtime5_PATH=	${KDE_PREFIX}/bin/gidmigrator
+
+kitinerary_PORT=	net/kitinerary
+kitinerary_LIB=		libKPimItinerary.so
 
 kontactinterface_PORT=	net/kontactinterface
 kontactinterface_LIB=	libKF5KontactInterface.so
 
 kpimdav_PORT=		net/kdav
 kpimdav_LIB=		libKPimKDAV.so
+
+kpkpass_PORT=		security/kpkpass
+kpkpass_LIB=		libKPimPkPass.so
 
 ksmtp_PORT=		net/ksmtp
 ksmtp_LIB=		libKPimSMTP.so
