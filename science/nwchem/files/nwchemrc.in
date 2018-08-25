@@ -1,0 +1,10 @@
+nwchem_basis_library %%PREFIX%%/share/nwchem/libraries/
+nwchem_nwpw_library %%PREFIX%%/share/nwchem/libraryps/
+ffield amber
+amber_1 %%PREFIX%%/share/nwchem/data/amber_s/
+amber_2 %%PREFIX%%/share/nwchem/data/amber_q/
+amber_3 %%PREFIX%%/share/nwchem/data/amber_x/
+amber_4 %%PREFIX%%/share/nwchem/data/amber_u/
+spce %%PREFIX%%/share/nwchem/data/solvents/spce.rst
+charmm_s %%PREFIX%%/share/nwchem/data/charmm_s/
+charmm_x %%PREFIX%%/share/nwchem/data/charmm_x/
