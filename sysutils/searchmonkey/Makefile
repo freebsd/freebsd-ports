@@ -14,6 +14,7 @@ COMMENT=	Search using regexes for file names and text
 LICENSE=	GPLv3+
 
 USES=		qmake dos2unix qt:4 zip
+USE_CXXSTD=	c++98
 DOS2UNIX_GLOB=	*.cpp *.h
 USE_QT=		corelib gui moc_build rcc_build uic_build
 
