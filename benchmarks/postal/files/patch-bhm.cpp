@@ -44,7 +44,7 @@
  
  int exitCount = 0;
  
-@@ -261,7 +259,7 @@ int readCommand(base_tcp &t, char *buf, 
+@@ -261,7 +259,7 @@ int readCommand(base_tcp &t, char *buf, int bufSize, b
  
  void do_work(thread_data *td)
  {
@@ -62,3 +62,12 @@
    Logit *debug = NULL;
  
    if(debugName)
+@@ -419,7 +417,7 @@ int main(int argc, char **argv)
+   in.sin_family = AF_INET;
+   in.sin_port = htons(port);
+   in.sin_addr.s_addr = INADDR_ANY;
+-  if(listen_fd == -1 || bind(listen_fd, (sockaddr *)&in, sizeof(in))
++  if(listen_fd == -1 || ::bind(listen_fd, (sockaddr *)&in, sizeof(in))
+    || listen(listen_fd, 10))
+   {
+     fprintf(stderr, "Can't bind to port.\n");
