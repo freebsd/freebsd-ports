@@ -21,6 +21,7 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libt1.so:devel/t1lib
 
 USES=		gmake perl5 tar:bzip2
+USE_CXXSTD=	c++98
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-root-dir=${STAGEDIR} \
