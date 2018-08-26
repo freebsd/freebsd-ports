@@ -22,6 +22,9 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libsndfile.so:audio/libsndfile \
 		libunwind.so:devel/libunwind
 
+# lib/libeio.so.1
+CONFLICTS_INSTALL=	libeio
+
 GNU_CONFIGURE=	yes
 USES=		autoreconf compiler:c++14-lang gettext-tools gmake iconv jpeg \
 		libtool pathfix pkgconfig python:2.7,run shared-mime-info \
