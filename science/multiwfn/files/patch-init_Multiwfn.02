@@ -1,0 +1,20 @@
+--- init/Multiwfn.02.orig	2018-08-26 18:32:27 UTC
++++ init/Multiwfn.02
+@@ -3,7 +3,7 @@ EOF
+     echo "Starting Multiwfn with OMP_NUM_THREADS enabled..."
+     if [ x$OMP_NUM_THREADS = 'x' ]
+     then
+-        nCPUs=`cat /proc/cpuinfo |grep processor|wc -l`
++        nCPUs=`sysctl -n hw.ncpu`
+         echo "Warning! OMP_NUM_THREADS not set. As many as $nCPUs threads might be used."
+     fi
+     echo ""
+@@ -20,7 +20,7 @@ else
+         echo "Starting Multiwfn with OMP_NUM_THREADS enabled..."
+         if [ x$OMP_NUM_THREADS = 'x' ]
+         then
+-            nCPUs=`cat /proc/cpuinfo |grep processor|wc -l`
++            nCPUs=`sysctl -n hw.ncpu`
+             echo "Warning! OMP_NUM_THREADS not set. As many as $nCPUs threads might be used."
+         fi
+     fi

@@ -1,0 +1,10 @@
+Multiwfn is an extremely powerful program for realizing electronic wavefunction
+analysis, which is a key ingredient of quantum chemistry. Multiwfn is free,
+open-source, high-efficient, very user-friendly and flexible, it supports almost
+all of the most important wavefunction analysis methods. 64 bit Windows, Linux
+and Mac OS platforms are supported.
+
+This port represents the GNU fortran-compatible fork of Multiwfn, which is
+normally using the Intel fortran (ifort).
+
+WWW: http://sobereva.com/multiwfn/index.html
