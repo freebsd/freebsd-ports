@@ -29,6 +29,8 @@ DAG_DESC=	Support for Endace DAG hardware
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 DAG_CONFIGURE_WITH=	dag
+DAG_CFLAGS=		-I${LOCALBASE}/include
 DAG_LDFLAGS=		-L${LOCALBASE}/lib
+DAG_EXTRA_PATCHES=	${FILESDIR}/dag-patch-pcap-dag.c
 
 .include <bsd.port.mk>
