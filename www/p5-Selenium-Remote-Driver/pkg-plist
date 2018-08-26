@@ -3,6 +3,7 @@
 %%PERL5_MAN3%%/Selenium::CanStartBinary::FindBinary.3.gz
 %%PERL5_MAN3%%/Selenium::CanStartBinary::ProbePort.3.gz
 %%PERL5_MAN3%%/Selenium::Chrome.3.gz
+%%PERL5_MAN3%%/Selenium::Edge.3.gz
 %%PERL5_MAN3%%/Selenium::Firefox.3.gz
 %%PERL5_MAN3%%/Selenium::Firefox::Binary.3.gz
 %%PERL5_MAN3%%/Selenium::Firefox::Profile.3.gz
@@ -22,6 +23,7 @@
 %%PERL5_MAN3%%/Selenium::Remote::WebElement.3.gz
 %%PERL5_MAN3%%/Selenium::Waiter.3.gz
 %%PERL5_MAN3%%/Test::Selenium::Chrome.3.gz
+%%PERL5_MAN3%%/Test::Selenium::Edge.3.gz
 %%PERL5_MAN3%%/Test::Selenium::Firefox.3.gz
 %%PERL5_MAN3%%/Test::Selenium::InternetExplorer.3.gz
 %%PERL5_MAN3%%/Test::Selenium::PhantomJS.3.gz
@@ -33,6 +35,7 @@
 %%SITE_PERL%%/Selenium/CanStartBinary/FindBinary.pm
 %%SITE_PERL%%/Selenium/CanStartBinary/ProbePort.pm
 %%SITE_PERL%%/Selenium/Chrome.pm
+%%SITE_PERL%%/Selenium/Edge.pm
 %%SITE_PERL%%/Selenium/Firefox.pm
 %%SITE_PERL%%/Selenium/Firefox/Binary.pm
 %%SITE_PERL%%/Selenium/Firefox/Profile.pm
@@ -59,6 +62,7 @@
 %%SITE_PERL%%/Selenium/Remote/driver-example.pl
 %%SITE_PERL%%/Selenium/Waiter.pm
 %%SITE_PERL%%/Test/Selenium/Chrome.pm
+%%SITE_PERL%%/Test/Selenium/Edge.pm
 %%SITE_PERL%%/Test/Selenium/Firefox.pm
 %%SITE_PERL%%/Test/Selenium/InternetExplorer.pm
 %%SITE_PERL%%/Test/Selenium/PhantomJS.pm
