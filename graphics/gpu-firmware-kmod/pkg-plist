@@ -238,9 +238,11 @@
 /%%KMODDIR%%/i915_cnl_dmc_ver1_06_bin.ko
 /%%KMODDIR%%/i915_glk_dmc_ver1_04_bin.ko
 /%%KMODDIR%%/i915_kbl_dmc_ver1_01_bin.ko
+/%%KMODDIR%%/i915_kbl_dmc_ver1_04_bin.ko
 /%%KMODDIR%%/i915_kbl_guc_ver9_14_bin.ko
 /%%KMODDIR%%/i915_kbl_huc_ver02_00_bin.ko
 /%%KMODDIR%%/i915_skl_dmc_ver1_26_bin.ko
+/%%KMODDIR%%/i915_skl_dmc_ver1_27_bin.ko
 /%%KMODDIR%%/i915_skl_guc_ver6_1_bin.ko
 /%%KMODDIR%%/i915_skl_huc_ver01_07_bin.ko
 /%%KMODDIR%%/radeon_ARUBA_me_bin.ko
