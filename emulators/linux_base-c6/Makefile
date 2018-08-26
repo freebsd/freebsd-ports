@@ -3,17 +3,16 @@
 
 PORTNAME=	c6
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	8
 CATEGORIES=	emulators linux
 PKGNAMEPREFIX=	linux_base-
 BIN_DISTNAMES=	bash-4.1.2-48.el6 \
 		bzip2-1.0.5-7.el6_0 \
-		centos-release-6-9.el6.12.3 \
-		coreutils-8.4-46.el6 \
-		e2fsprogs-1.41.12-23.el6 \
+		centos-release-6-10.el6.centos.12.3 \
+		coreutils-8.4-47.el6 \
+		e2fsprogs-1.41.12-24.el6 \
 		elfutils-0.164-2.el6 \
 		findutils-4.4.2-9.el6 \
-		glibc-common-2.12-1.209.el6_9.2 \
+		glibc-common-2.12-1.212.el6 \
 		grep-2.20-6.el6 \
 		info-4.13a-8.el6 \
 		keyutils-1.4-5.el6 \
@@ -28,25 +27,25 @@ LIB_DISTNAMES=	bzip2-libs-1.0.5-7.el6_0 \
 		compat-db43-4.3.29-17.el6 \
 		compat-libstdc++-33-3.2.3-69.el6 \
 		db4-4.7.25-22.el6 \
-		e2fsprogs-libs-1.41.12-23.el6 \
+		e2fsprogs-libs-1.41.12-24.el6 \
 		freetype-2.3.11-17.el6 \
 		gamin-0.1.10-9.el6 \
 		gdbm-1.8.0-39.el6 \
-		glib2-2.28.8-9.el6 \
-		glibc-2.12-1.209.el6_9.2 \
-		gmp-4.3.1-12.el6 \
+		glib2-2.28.8-10.el6 \
+		glibc-2.12-1.212.el6 \
+		gmp-4.3.1-13.el6 \
 		keyutils-libs-1.4-5.el6 \
 		krb5-libs-1.10.3-65.el6 \
 		libacl-2.2.49-7.el6_9.1 \
 		libattr-2.4.44-7.el6 \
 		libblkid-2.17.2-12.28.el6_9.2 \
 		libcap-2.16-5.5.el6 \
-		libcom_err-1.41.12-23.el6 \
-		libgcc-4.4.7-18.el6_9.2 \
+		libcom_err-1.41.12-24.el6 \
+		libgcc-4.4.7-23.el6 \
 		libidn-1.18-2.el6 \
 		libselinux-2.0.94-7.el6 \
 		libsepol-2.0.41-4.el6 \
-		libstdc++-4.4.7-18.el6_9.2 \
+		libstdc++-4.4.7-23.el6 \
 		libuuid-2.17.2-12.28.el6_9.2 \
 		ncurses-libs-5.7-4.20090207.el6 \
 		nss-softokn-freebl-3.14.3-23.3.el6_8 \
@@ -64,23 +63,23 @@ SRC_DISTFILES=	acl-2.2.49-7.el6_9.1${SRC_SUFX}:SOURCE \
 		basesystem-10.0-4.el6${SRC_SUFX}:SOURCE \
 		bash-4.1.2-48.el6${SRC_SUFX}:SOURCE \
 		bzip2-1.0.5-7.el6_0${SRC_SUFX}:SOURCE \
-		centos-release-6-9.el6.12.3${SRC_SUFX}:SOURCE \
+		centos-release-6-10.el6.centos.12.3${SRC_SUFX}:SOURCE \
 		compat-db-4.6.21-17.el6${SRC_SUFX}:SOURCE \
 		compat-gcc-296-2.96-144.el6${SRC_SUFX}:SOURCE \
 		compat-gcc-32-3.2.3-69.el6${SRC_SUFX}:SOURCE \
-		coreutils-8.4-46.el6${SRC_SUFX}:SOURCE \
+		coreutils-8.4-47.el6${SRC_SUFX}:SOURCE \
 		db4-4.7.25-22.el6${SRC_SUFX}:SOURCE \
-		e2fsprogs-1.41.12-23.el6${SRC_SUFX}:SOURCE \
+		e2fsprogs-1.41.12-24.el6${SRC_SUFX}:SOURCE \
 		elfutils-0.164-2.el6${SRC_SUFX}:SOURCE \
 		filesystem-2.4.30-3.el6${SRC_SUFX}:SOURCE \
 		findutils-4.4.2-9.el6${SRC_SUFX}:SOURCE \
 		freetype-2.3.11-17.el6${SRC_SUFX}:SOURCE \
 		gamin-0.1.10-9.el6${SRC_SUFX}:SOURCE \
-		gcc-4.4.7-18.el6_9.2${SRC_SUFX}:SOURCE \
+		gcc-4.4.7-23.el6${SRC_SUFX}:SOURCE \
 		gdbm-1.8.0-39.el6${SRC_SUFX}:SOURCE \
-		glib2-2.28.8-9.el6${SRC_SUFX}:SOURCE \
-		glibc-2.12-1.209.el6_9.2${SRC_SUFX}:SOURCE \
-		gmp-4.3.1-12.el6${SRC_SUFX}:SOURCE \
+		glib2-2.28.8-10.el6${SRC_SUFX}:SOURCE \
+		glibc-2.12-1.212.el6${SRC_SUFX}:SOURCE \
+		gmp-4.3.1-13.el6${SRC_SUFX}:SOURCE \
 		grep-2.20-6.el6${SRC_SUFX}:SOURCE \
 		keyutils-1.4-5.el6${SRC_SUFX}:SOURCE \
 		krb5-1.10.3-65.el6${SRC_SUFX}:SOURCE \
