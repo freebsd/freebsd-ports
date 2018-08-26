@@ -16,13 +16,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gmake iconv:wchar_t jpeg localbase pkgconfig tar:bzip2
+USES=		compiler gmake iconv:wchar_t jpeg localbase pkgconfig tar:bzip2
 USE_XORG=	xft xpm x11 sm ice xext
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shape --enable-xinerama --enable-xrandr \
 		--enable-xft --enable-image-xpm --enable-image-jpeg \
 		--enable-image-png --disable-debug \
 		--disable-pedantic
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 LDFLAGS+=	${ICONV_LIB}
 
 .include <bsd.port.mk>
