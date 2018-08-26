@@ -2,8 +2,7 @@
 
 PORTNAME=	openmvg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3-76
-DISTVERSIONSUFFIX=	-gd9563130
+DISTVERSION=	1.4
 CATEGORIES=	misc science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -54,9 +53,5 @@ K8_CMAKE_ON=			-DTARGET_ARCHITECTURE=k8
 CORE_CMAKE_ON=			-DTARGET_ARCHITECTURE=core
 MEROM_CMAKE_ON=			-DTARGET_ARCHITECTURE=merom
 NEHALEM_CMAKE_ON=		-DTARGET_ARCHITECTURE=nehalem
-
-post-install:
-	@${FIND} ${STAGEDIR}${PREFIX}/lib -name "*.a" -delete # delete wrongly installed dependency libs https://github.com/openMVG/openMVG/issues/1282
-	${INSTALL_LIB} ${BUILD_WRKSRC}/*/libdomset.so ${STAGEDIR}${PREFIX}/lib # https://github.com/openMVG/openMVG/issues/1286
 
 .include <bsd.port.mk>

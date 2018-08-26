@@ -1,6 +1,6 @@
-TIMESTAMP = 1523438342
-SHA256 (openMVG-openMVG-v1.3-76-gd9563130_GH0.tar.gz) = cb459c3f43e8dada6363930b5a72e981cf92d33e72d22339c236b0a2fee63fb7
-SIZE (openMVG-openMVG-v1.3-76-gd9563130_GH0.tar.gz) = 14619283
+TIMESTAMP = 1535309524
+SHA256 (openMVG-openMVG-v1.4_GH0.tar.gz) = edecf390acdac224f82050ee09d931049dcf61118c96cf4780808427eabbb0f2
+SIZE (openMVG-openMVG-v1.4_GH0.tar.gz) = 14637259
 SHA256 (openMVG-thirdparty-cereal-37fca60_GH0.tar.gz) = a035c996d1a9150dc0aa09982dee5114c46b9b40c320a307223e4a362279e9fd
 SIZE (openMVG-thirdparty-cereal-37fca60_GH0.tar.gz) = 328935
 SHA256 (openMVG-thirdparty-osi_clp-a25a980_GH0.tar.gz) = 749c742b7eb6d346d34ef02872c7a02bdbef6759bdd48b9542dffb91bf82d0d7

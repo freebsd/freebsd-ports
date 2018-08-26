@@ -1,0 +1,11 @@
+--- third_party/ceres-solver/internal/ceres/CMakeLists.txt.orig	2018-08-26 19:32:38 UTC
++++ third_party/ceres-solver/internal/ceres/CMakeLists.txt
+@@ -196,7 +196,7 @@ if (MINIGLOG)
+   list(APPEND CERES_LIBRARY_SOURCE miniglog/glog/logging.cc)
+ endif (MINIGLOG)
+ 
+-add_library(openMVG_ceres STATIC ${CERES_LIBRARY_SOURCE})
++add_library(openMVG_ceres SHARED ${CERES_LIBRARY_SOURCE})
+ set_target_properties(openMVG_ceres PROPERTIES
+   VERSION ${CERES_VERSION}
+   SOVERSION ${CERES_VERSION_MAJOR})
