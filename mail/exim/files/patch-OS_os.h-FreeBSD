@@ -1,0 +1,17 @@
+--- OS/os.h-FreeBSD.orig	2018-04-14 23:18:10 UTC
++++ OS/os.h-FreeBSD
+@@ -12,6 +12,14 @@
+ #define SIOCGIFCONF_GIVES_ADDR
+ #define HAVE_SRANDOMDEV
+ #define HAVE_ARC4RANDOM
++/* Applications should not call arc4random_stir() explicitly after
++   FreeBSD r227520 (approximately 1000002).
++   Set NOT_HAVE_ARC4RANDOM_STIR if the version released is past
++   that point. */
++#include <sys/param.h>
++#if __FreeBSD_version >= 1000002
++# define NOT_HAVE_ARC4RANDOM_STIR
++#endif
+ 
+ typedef struct flock flock_t;
+ 
