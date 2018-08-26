@@ -1,51 +1,34 @@
---- Makefile.orig	2008-03-22 21:48:25 UTC
+--- Makefile.orig	2018-08-24 18:40:37 UTC
 +++ Makefile
-@@ -17,18 +17,18 @@
+@@ -20,10 +20,10 @@
  
  # Modify as required.
  #
--PREFIX = /usr/local
 -SUFFIX := $(shell uname -m | sed -e 's/^unknown/$//' -e 's/^i.86/$//' -e 's/^x86_64/$/64/')
--LIBDIR = lib$(SUFFIX)
-+PREFIX ?= /usr/local
 +#SUFFIX := $(shell uname -m | sed -e 's/^unknown/$//' -e 's/^i.86/$//' -e 's/^x86_64/$/64/')
-+LIBDIR = lib
+ PREFIX ?= /usr/local
+ INCDIR ?= $(PREFIX)/include
+-LIBDIR ?= $(PREFIX)/lib$(SUFFIX)
++LIBDIR ?= $(PREFIX)/lib
  
  
  MAJVERS = 2
- MINVERS = 4.0
- VERSION = $(MAJVERS).$(MINVERS)
--DISTDIR = clthreads-$(VERSION)
-+DISTDIR ?= clthreads-$(VERSION)
- 
- 
--CPPFLAGS += -Wall -I. -fpic -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS -O2 
-+CXXFLAGS += -Wall -I. -fpic -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
- LDLFAGS += 
- LDLIBS +=
- 
-@@ -41,16 +41,16 @@ CLTHREADS_O = p_thread.o a_thread.o itc_
+@@ -45,17 +45,15 @@ CLTHREADS_DEP = -lpthread
+ CLTHREADS_O = p_thread.o a_thread.o itc_mesg.o itc_ip1q.o itc_ctrl.o textmsg.o
  CLTHREADS_H = clthreads.h
  
++all: $(CLTHREADS_MIN)
  
--$(CLTHREADS_MIN): $(CLTHREADS_O)
--	g++ -shared $(LDFLAGS) -Wl,-soname,$(CLTHREADS_MAJ) -o $(CLTHREADS_MIN) $(CLTHREADS_O) $(CLTHREADS_DEP)
-+all: $(CLTHREADS_O)
-+	$(CXX) -shared $(LDFLAGS) -Wl,-soname,$(CLTHREADS_MAJ) -o $(CLTHREADS_MIN) $(CLTHREADS_O) $(CLTHREADS_DEP)
- 
- 
--install:	$(CLTHREADS_MIN)
--	/usr/bin/install -d $(PREFIX)/$(LIBDIR)
--	/usr/bin/install -m 644 $(CLTHREADS_H) $(PREFIX)/include
--	/usr/bin/install -m 755 $(CLTHREADS_MIN) $(PREFIX)/$(LIBDIR)
--	/sbin/ldconfig -n $(PREFIX)/$(LIBDIR)
--	ln -sf $(CLTHREADS_MIN) $(PREFIX)/$(LIBDIR)/$(CLTHREADS_SO)
-+install:	all
-+	#/usr/bin/install -d $(PREFIX)/$(LIBDIR)
-+	/usr/bin/install -m 644 $(CLTHREADS_H) $(DESTDIR)$(PREFIX)/include
-+	/usr/bin/install -m 755 $(CLTHREADS_MIN) $(DESTDIR)$(PREFIX)/$(LIBDIR)
-+	#/sbin/ldconfig -n $(PREFIX)/$(LIBDIR)
-+	ln -sf $(CLTHREADS_MIN) $(DESTDIR)$(PREFIX)/$(LIBDIR)/$(CLTHREADS_SO)
+ $(CLTHREADS_MIN): $(CLTHREADS_O)
+ 	$(CXX) -shared $(LDFLAGS) -Wl,-soname,$(CLTHREADS_MAJ) -o $(CLTHREADS_MIN) $(CLTHREADS_O) $(CLTHREADS_DEP)
  
  
- clean:
+ install:	$(CLTHREADS_MIN)
+-	install -d $(DESTDIR)$(PREFIX)/$(INCDIR)
+-	install -d $(DESTDIR)$(PREFIX)/$(LIBDIR)
+ 	install -m 644 $(CLTHREADS_H) $(DESTDIR)$(INCDIR)
+ 	install -m 755 $(CLTHREADS_MIN) $(DESTDIR)$(LIBDIR)
+-	ldconfig
+ 	ln -sf $(CLTHREADS_MIN) $(DESTDIR)$(LIBDIR)/$(CLTHREADS_SO)
+ 
+ uninstall:
