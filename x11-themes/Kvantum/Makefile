@@ -1,24 +1,39 @@
 # $FreeBSD$
 
 PORTNAME=	Kvantum
-PORTVERSION=	0.10.5
-PORTREVISION=	1
 DISTVERSIONPREFIX=	V
+DISTVERSION=	0.10.7
 CATEGORIES=	x11-themes
-PKGNAMEPREFIX=	qt4-style-
 
 MAINTAINER=	rezny@FreeBSD.org
-COMMENT=	SVG-based theme engine for Qt4/5, KDE and LXQT
+COMMENT=	SVG-based theme engine for Qt, KDE and LXQt
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+FLAVORS=	qt4 qt5
+FLAVOR?=	${FLAVORS:[1]}
+
+qt4_PKGNAMESUFFIX=	-qt4
+qt5_PKGNAMESUFFIX=	-qt5
+
+qt4_PLIST=	pkg-plist.qt4
+qt5_PLIST=	pkg-plist.qt5
+
+USES=		compiler:c++11-lang qmake
+USE_XORG=	x11 xext
+USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	tsujan
 
-USES=		compiler:c++11-lang qmake qt:4
+.if ${FLAVOR} == qt4
+USES+=		qt:4
 USE_QT=		corelib gui svg rcc_build uic_build moc_build
-USE_XORG=	x11 xext
+.elif ${FLAVOR} == qt5
+USES+=		qt:5
+USE_QT=		core gui svg widgets x11extras buildtools_build \
+		linguisttools_build
+.endif
 
 WRKSRC_SUBDIR=	${PORTNAME}
 

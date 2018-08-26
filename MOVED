@@ -10494,3 +10494,5 @@ devel/libbobcat||2018-08-21|Has expired: Broken for more than 5 months
 net-p2p/dogecoin||2018-08-21|Has expired: Broken for more than 5 months
 misc/freebsd-doc-sr||2018-08-23|Removed
 www/py-django18|www/py-django111|2018-08-25|Has expired: End of Live since 01/04/2018
+x11-themes/qt4-style-Kvantum|x11-themes/Kvantum@qt4|2018-08-26|Moved to flavored version
+x11-themes/qt5-style-Kvantum|x11-themes/Kvantum@qt5|2018-08-26|Moved to flavored version

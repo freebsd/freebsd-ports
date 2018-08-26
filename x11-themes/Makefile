@@ -3,6 +3,7 @@
 
     COMMENT = X11 themes
 
+    SUBDIR += Kvantum
     SUBDIR += adapta-backgrounds
     SUBDIR += adapta-gtk-theme
     SUBDIR += adwaita-icon-theme
@@ -154,11 +155,9 @@
     SUBDIR += plasma5-kde-gtk-config
     SUBDIR += plasma5-oxygen
     SUBDIR += plasma5-plasma-workspace-wallpapers
-    SUBDIR += qt4-style-Kvantum
     SUBDIR += qt4-style-float
     SUBDIR += qt4-style-phase
     SUBDIR += qt4-style-quantumstyle
-    SUBDIR += qt5-style-Kvantum
     SUBDIR += qt5-style-plugins
     SUBDIR += qtcurve
     SUBDIR += qtcurve-gtk2
