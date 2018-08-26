@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2018-04-04 02:59:09 UTC
+--- CMakeLists.txt.orig	2018-08-25 14:45:11 UTC
 +++ CMakeLists.txt
-@@ -109,8 +109,8 @@ AutodetectHostArchitecture()
+@@ -104,8 +104,8 @@ AutodetectHostArchitecture()
  OptimizeForArchitecture()
  
  if (UNIX AND NOT OpenMVG_BUILD_COVERAGE)
@@ -11,9 +11,9 @@
  endif ()
  
  # ==============================================================================
-@@ -257,7 +257,7 @@ find_package(Eigen QUIET)
- # - internal by default (ceres-solver+cxsparse+miniglog),
- # - external if CERES_DIR_HINTS and find_package return a valid Ceres setup
+@@ -257,7 +257,7 @@ endif()
+ # - external by default if CERES_DIR_HINTS or find_package found a valid Ceres
+ # - internal if ceres not found (ceres-solver+cxsparse+miniglog)
  # ==============================================================================
 -find_package(Ceres QUIET HINTS ${CERES_DIR_HINTS})
 +#find_package(Ceres QUIET HINTS ${CERES_DIR_HINTS}) # external ceres can't work because it requires fortran

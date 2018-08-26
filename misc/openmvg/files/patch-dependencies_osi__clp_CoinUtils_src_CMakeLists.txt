@@ -1,0 +1,9 @@
+--- dependencies/osi_clp/CoinUtils/src/CMakeLists.txt.orig	2018-08-26 19:29:34 UTC
++++ dependencies/osi_clp/CoinUtils/src/CMakeLists.txt
+@@ -12,5 +12,5 @@ file(
+ )
+ 
+ 
+-ADD_LIBRARY(lib_CoinUtils ${COINUTILS_HEADER} ${COINUTILS_CPP})
++ADD_LIBRARY(lib_CoinUtils SHARED ${COINUTILS_HEADER} ${COINUTILS_CPP})
+ INSTALL(TARGETS lib_CoinUtils DESTINATION lib EXPORT openMVG-targets)
