@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--with-config-dir=${PREFIX}/etc/htdig \
 		--with-image-url-prefix=/icons/htdig \
 		--with-ssl
 USES=		alias libtool ssl
+USE_CXXSTD=	c++98
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${OPENSSLLIB}
