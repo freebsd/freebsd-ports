@@ -2,4 +2,4 @@ This plugin is intended to extend the filtering possibilities of Claws Mail.
 It provides a Perl interface to Claws Mail' filtering mechanism, allowing
 the use of full Perl power in email filters.
 
-WWW: http://www.claws-mail.org/plugins.php
+WWW: https://www.claws-mail.org/plugin.php?plugin=perl
