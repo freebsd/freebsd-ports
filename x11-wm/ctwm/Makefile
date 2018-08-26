@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ctwm
-PORTVERSION=	4.0.1
+DISTVERSION=	4.0.2
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://www.ctwm.org/dist/ \
