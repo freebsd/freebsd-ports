@@ -1,6 +1,6 @@
---- translations/CMakeLists.txt.orig	2018-03-11 14:00:07 UTC
+--- translations/CMakeLists.txt.orig	2018-08-11 08:14:55 UTC
 +++ translations/CMakeLists.txt
-@@ -220,24 +220,24 @@ else()
+@@ -223,24 +223,24 @@ else()
  		
  		set(pre_lupdate )
  		set(post_lupdate

@@ -1,4 +1,4 @@
---- src/gdal/CMakeLists.txt.orig	2018-03-11 14:00:07 UTC
+--- src/gdal/CMakeLists.txt.orig	2018-08-11 08:14:55 UTC
 +++ src/gdal/CMakeLists.txt
 @@ -34,8 +34,10 @@ set(MAPPER_GDAL_SOURCES
    ogr_template.cpp
