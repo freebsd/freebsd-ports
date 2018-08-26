@@ -13,6 +13,10 @@ COMMENT=	Rich-featured multi-windows console text editor
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+DEPRECATED=	Unmaintained upstream
+EXPIRATION_DATE=	2018-09-30
+
+BROKEN_FreeBSD_12=		fails to link: undefined reference to HTAnchor_physical
 BROKEN_aarch64=		fails to compile: cast from pointer to smaller type loses information
 BROKEN_armv6=		fails to link: undefined reference to HTAnchor_physical
 BROKEN_armv7=		fails to link: undefined reference to HTAnchor_physical
