@@ -3,7 +3,7 @@
 
 PORTNAME=	htmldoc
 PORTVERSION=	1.8.28
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/michaelrsweet/htmldoc/releases/download/release-${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source

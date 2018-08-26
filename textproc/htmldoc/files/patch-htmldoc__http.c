@@ -5,7 +5,7 @@
    * it is the best we can do (on others, this seed isn't even used...)
    */
 +#define CUPS_RAND() arc4random()
-+#define CUPS_SRAND(v) arc4random_stir()
++#define CUPS_SRAND(v)
  
    CUPS_SRAND(time(NULL));
  
