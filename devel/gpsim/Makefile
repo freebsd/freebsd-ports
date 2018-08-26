@@ -18,6 +18,7 @@ LIB_DEPENDS=	libpopt.so:devel/popt
 RUN_DEPENDS=	gpasm:devel/gputils
 
 USES=		gmake libtool localbase:ldflags pathfix pkgconfig readline
+USE_CXXSTD=	gnu++98
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
