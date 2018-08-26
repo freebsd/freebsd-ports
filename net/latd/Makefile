@@ -11,8 +11,11 @@ COMMENT=	Linux-DECnet project LAT protocol suite
 
 LICENSE=	GPLv2
 
-USES=		alias
+USES=		alias compiler
 GNU_CONFIGURE=	yes
+
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 PLIST_FILES=	bin/llogin etc/latd.conf.sample \
 		man/man1/llogin.1.gz man/man5/latd.conf.5.gz \
