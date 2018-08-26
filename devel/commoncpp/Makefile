@@ -14,6 +14,7 @@ COMMENT=	GNU project portable class framework for C++
 
 USE_LDCONFIG=	yes
 USES=		gmake libtool pathfix ssl
+USE_CXXSTD=	c++98
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_DOXYGEN=no
 INSTALL_TARGET=	install-strip
