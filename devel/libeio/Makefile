@@ -10,6 +10,9 @@ CATEGORIES=	devel
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Full-featured asynchronous I/O library for C
 
+# lib/libeio.so.1
+CONFLICTS_INSTALL=	efl
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	scunningham
 USES=		alias autoreconf libtool
