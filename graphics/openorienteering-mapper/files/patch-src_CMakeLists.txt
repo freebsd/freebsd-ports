@@ -1,4 +1,4 @@
---- src/CMakeLists.txt.orig	2018-03-11 14:00:07 UTC
+--- src/CMakeLists.txt.orig	2018-08-11 08:14:55 UTC
 +++ src/CMakeLists.txt
 @@ -286,8 +286,9 @@ target_compile_definitions(Mapper_Common
    # MAPPER_ENABLE_COMPATIBILITY
