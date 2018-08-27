@@ -2,8 +2,11 @@
 
 PORTNAME=	keeperrl
 PORTVERSION=	0.0.${ALPHA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	c0fc69cbee72.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ambitious dungeon builder with roguelike elements
@@ -13,12 +16,10 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.txt
 LICENSE_FILE_OFL11=	${WRKSRC}/data_contrib/SIL_Open_Font_License.txt
 
-BROKEN_FreeBSD_10=	needs c++14, does not build even with clang5
-
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libcurl.so:ftp/curl
 
-USES=		gmake localbase openal
+USES=		compiler:c++14-lang gmake localbase openal
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	miki151
@@ -32,6 +33,8 @@ LIBS+=		-lexecinfo
 LLD_UNSAFE=	yes
 MAKE_ARGS=	DATA_DIR="${DATADIR}" GCC="${CXX}" \
 		LDFLAGS="${LDFLAGS}" RELEASE=true
+# USE_GCC adds -Wl,-rpath=${_GCC_RUNTIME} which breaks -x c++-header
+MAKE_ARGS+=	PCH= PCHINC=
 
 DESKTOP_ENTRIES="KeeperRL" "" "" "keeper" \
 		"Game;Simulation;" false
@@ -42,8 +45,6 @@ post-patch:
 		-e 's|bash|sh|' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's|bash|sh|' ${WRKSRC}/check_serial.sh
-	@${REINPLACE_CMD} '/_GLIBCXX_END_NAMESPACE_VERSION/d' \
-		${WRKSRC}/extern/iomanip.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/keeper ${STAGEDIR}${PREFIX}/bin
