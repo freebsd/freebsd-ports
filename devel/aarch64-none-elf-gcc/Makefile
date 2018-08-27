@@ -9,7 +9,6 @@ PLIST=	${.CURDIR}/pkg-plist
 ALL_TARGET=	all-gcc all-target-libgcc
 INSTALL_TARGET=	install-gcc install-target-libgcc
 
-BROKEN_aarch64=		fails to package
 BROKEN_mips=		configure: error: cannot compute suffix of object files: cannot compile
 BROKEN_mips64=		configure: error: cannot compute suffix of object files: cannot compile
 BROKEN_powerpc64=	fails to compile: libgcc2.c:1846:9: internal compiler error: Segmentation fault
