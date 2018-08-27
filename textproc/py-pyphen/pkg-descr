@@ -1,4 +1,10 @@
 Pyphen is a pure Python module to hyphenate text using existing Hunspell
 hyphenation dictionaries.
 
-WWW: https://pypi.org/project/Pyphen/
+Features:
+* 100% pure Python with no dependencies
+* a lot of included dictionaries
+* caches dict files and hyphenated words
+* supports nonstandard hyphenation patterns
+
+WWW: https://pyphen.org/
