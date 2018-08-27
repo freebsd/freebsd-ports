@@ -1,0 +1,28 @@
+--- php/Makefile.orig	2018-04-20 15:02:08 UTC
++++ php/Makefile
+@@ -15,8 +15,8 @@ include $(top_srcdir)/config/Make.rules
+ #
+ # Load C++ dependencies
+ #
+-$(eval $(call load-translator-dependencies,$(top_srcdir)/cpp/src/slice2php))
+-$(eval $(call load-dependencies,$(addprefix $(top_srcdir)/cpp/src/,Ice IceSSL IceDiscovery IceLocatorDiscovery)))
++#$(eval $(call load-translator-dependencies,$(top_srcdir)/cpp/src/slice2php))
++#$(eval $(call load-dependencies,$(addprefix $(top_srcdir)/cpp/src/,Ice IceSSL IceDiscovery IceLocatorDiscovery)))
+ 
+ #
+ # Load php rules after loading C++ dependencies
+@@ -44,11 +44,11 @@ $(call make-projects,$(projects))
+ 
+ install:: | $(DESTDIR)$(install_phpdir)
+ 	$(E) "Installing generated code"
+-	$(Q)$(INSTALL) -m 644 lib/Glacier2.php  lib/IceBox.php  lib/IceGrid.php lib/IcePatch2.php lib/IceStorm.php $(DESTDIR)$(install_phpdir)
++	$(Q)%%INSTALL_DATA%% lib/Glacier2.php  lib/IceBox.php  lib/IceGrid.php lib/IcePatch2.php lib/IceStorm.php $(DESTDIR)$(install_phpdir)
+ ifeq ($(USE_NAMESPACES),no)
+-	$(Q)$(INSTALL) -m 644 lib/Ice_no_ns.php $(DESTDIR)$(install_phpdir)/Ice.php
++	$(Q)%%INSTALL_DATA%% lib/Ice_no_ns.php $(DESTDIR)$(install_phpdir)/Ice.php
+ else
+-	$(Q)$(INSTALL) -m 644 lib/Ice_ns.php $(DESTDIR)$(install_phpdir)/Ice.php
++	$(Q)%%INSTALL_DATA%% lib/Ice_ns.php $(DESTDIR)$(install_phpdir)/Ice.php
+ endif
+ 
+ $(eval $(call make-php-package,$(slicedir),lib,Ice))

@@ -1,0 +1,21 @@
+--- python/config/Make.rules.orig	2018-04-20 15:02:08 UTC
++++ python/config/Make.rules
+@@ -12,7 +12,8 @@
+ # version to be used for building the Ice extension, set PYTHON to the
+ # location of the python interpreter.
+ #
+-PYTHON              ?= python
++PYTHON              = %%PYTHON_CMD%%
++slice2py_path       = $(localbase)/bin/slice2py
+ 
+ # ----------------------------------------------------------------------
+ # Don't change anything below this line!
+@@ -46,7 +47,7 @@ python_cppflags         := $(filter-out 
+ #
+ # Python installation directory
+ #
+-install_pythondir       = $(if $(usr_dir_install),$(shell $(PYTHON) $(lang_srcdir)/config/install_dir),$(prefix)/python)
++install_pythondir	= %%PYTHON_SITELIBDIR%%
+ 
+ #
+ # Rules to build a python module. We just compute the name of the python module

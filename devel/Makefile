@@ -1216,6 +1216,7 @@
     SUBDIR += i386-gcc
     SUBDIR += i386-xtoolchain-gcc
     SUBDIR += ice
+    SUBDIR += ice37
     SUBDIR += icestorm
     SUBDIR += icmake
     SUBDIR += icontheme
