@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zita-convolver
-DISTVERSION=	4.0.2
+DISTVERSION=	4.0.3
 CATEGORIES=	audio
 MASTER_SITES=	http://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 

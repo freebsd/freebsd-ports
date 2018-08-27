@@ -1,4 +1,4 @@
---- Makefile.orig	2018-08-24 18:41:39 UTC
+--- Makefile.orig	2018-08-26 13:35:37 UTC
 +++ Makefile
 @@ -20,10 +20,10 @@
  
@@ -22,7 +22,7 @@
  LDLFAGS += 
  LDLIBS +=
  
-@@ -46,17 +46,18 @@ ZITA-CONVOLVER_DEP = -lfftw3f -lpthread
+@@ -46,6 +46,7 @@ ZITA-CONVOLVER_DEP = -lfftw3f -lpthread
  ZITA-CONVOLVER_O = zita-convolver.o
  ZITA-CONVOLVER_H = zita-convolver.h 
  
@@ -30,15 +30,12 @@
  
  $(ZITA-CONVOLVER_MIN):	$(ZITA-CONVOLVER_O)
  	$(CXX) -shared $(LDFLAGS) -Wl,-soname,$(ZITA-CONVOLVER_MAJ) -o $(ZITA-CONVOLVER_MIN) $(ZITA-CONVOLVER_O) $(ZITA-CONVOLVER_DEP)
- 
- 
- install:	$(ZITA-CONVOLVER_MIN)
--	install -d $(DESTDIR)$(INCDIR)/include
-+	#install -d $(DESTDIR)$(INCDIR)/include
+@@ -56,7 +57,8 @@ install:	$(ZITA-CONVOLVER_MIN)
  	install -d $(DESTDIR)$(LIBDIR)
  	install -m 644 $(ZITA-CONVOLVER_H) $(DESTDIR)$(INCDIR)
  	install -m 755 $(ZITA-CONVOLVER_MIN) $(DESTDIR)$(LIBDIR)
 -	ldconfig
++	#ldconfig
 +	ln -sf $(ZITA-CONVOLVER_MIN) $(DESTDIR)$(LIBDIR)/$(ZITA-CONVOLVER_MAJ)
  	ln -sf $(ZITA-CONVOLVER_MIN) $(DESTDIR)$(LIBDIR)/$(ZITA-CONVOLVER_SO)
  
