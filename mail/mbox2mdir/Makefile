@@ -1,4 +1,3 @@
-# Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
 # $FreeBSD$
 
 PORTNAME=	mbox2mdir
