@@ -1,3 +1,2 @@
 lib/remmina/plugins/remmina-plugin-exec.so
-share/icons/hicolor/22x22/emblems/remmina-tool.png
-share/icons/hicolor/16x16/emblems/remmina-tool.png
+share/icons/hicolor/scalable/emblems/remmina-tool-symbolic.svg
