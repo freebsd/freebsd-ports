@@ -4,6 +4,6 @@ include/fixbuf/public.h
 include/fixbuf/version.h
 lib/libfixbuf.a
 lib/libfixbuf.so
-lib/libfixbuf.so.3
-lib/libfixbuf.so.3.2.0
+lib/libfixbuf.so.6
+lib/libfixbuf.so.6.1.0
 libdata/pkgconfig/libfixbuf.pc
