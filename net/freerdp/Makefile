@@ -13,6 +13,8 @@ COMMENT=	Free implementation of Remote Desktop Protocol
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim
+
 USES=		alias cmake:outsource compiler:c++11-lib cpe gettext localbase pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
 CPE_VENDOR=	freerdp_project
@@ -73,8 +75,7 @@ SSE_CMAKE_BOOL=		WITH_SSE2
 
 WAYLAND_DESC=		Build FreeRDP Wayland client
 WAYLAND_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:multimedia/v4l_compat
-WAYLAND_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
-			libwayland-client.so:graphics/wayland \
+WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 			libwayland-cursor.so:graphics/wayland \
 			libxkbcommon.so:x11/libxkbcommon
 WAYLAND_CMAKE_BOOL=	WITH_WAYLAND
