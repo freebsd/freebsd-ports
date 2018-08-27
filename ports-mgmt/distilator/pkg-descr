@@ -1,1 +1,4 @@
-A command-line script to check the availability of a ports distfiles.
+A command-line script to check the availability of a FreeBSD ports
+distfiles in parallel.
+
+WWW: https://critical.ch/distilator/
