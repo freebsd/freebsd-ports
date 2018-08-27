@@ -64,7 +64,7 @@ _INCLUDE_USES_PHP_MK=	yes
 DEV_WARNING+=	"USES=php:build is included in USES=php:phpize, USES=php:ext, and USES=php:zend, so it is not needed"
 .  endif
 .  if ${php_ARGS:Mflavors} && ( ${php_ARGS:Mphpize} || ${php_ARGS:Mext} || ${php_ARGS:Mzend} || ${php_ARGS:Mpecl} )
-DEV_WARNINGS+=	"USES=php:flavors is included in phpize, ext, zend and pecl, so it is not needed."
+DEV_WARNING+=	"USES=php:flavors is included in phpize, ext, zend and pecl, so it is not needed."
 .  endif
 .  if ${php_ARGS:Mphpize} && ( ${php_ARGS:Mext} || ${php_ARGS:Mzend} )
 DEV_WARNING+=	"USES=php:phpize is included in USES=php:ext and USES=php:zend, so it is not needed"
