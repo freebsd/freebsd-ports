@@ -28,7 +28,7 @@
 +#include <pthread_np.h>
 +#elif defined(__NetBSD__)
 +#include <lwp.h>
-+#else
++#else // OpenBSD, Solaris
 +#include <stdint.h>
  #endif
  
@@ -39,11 +39,11 @@
    return GetCurrentThreadId();
 +#elif defined(__DragonFly__)
 +  return lwp_gettid();
-+#elif defined(__NetBSD__)
-+  return _lwp_self();
 +#elif defined(__FreeBSD__)
 +  return pthread_getthreadid_np();
-+#else
++#elif defined(__NetBSD__)
++  return _lwp_self();
++#else // OpenBSD, Solaris
 +  return (intptr_t) pthread_self();
  #endif
  }

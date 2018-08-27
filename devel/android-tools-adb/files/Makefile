@@ -77,13 +77,13 @@ SRCS+= android_pubkey.c
 TEST_SRCS+= android_pubkey_test.cpp
 
 .PATH: ${.CURDIR}/../libcutils
-SRCS+= socket_inaddr_any_server_unix.c
-SRCS+= socket_local_client_unix.c
-SRCS+= socket_local_server_unix.c
-SRCS+= socket_network_client_unix.c
+SRCS+= socket_inaddr_any_server_unix.cpp
+SRCS+= socket_local_client_unix.cpp
+SRCS+= socket_local_server_unix.cpp
+SRCS+= socket_network_client_unix.cpp
 SRCS+= ../libcutils/sockets.cpp
-SRCS+= load_file.c
-SRCS+= threads.c
+SRCS+= load_file.cpp
+SRCS+= threads.cpp
 # XXX Obsolete after 10.2 or r279980/r280329
 CPPFLAGS.sockets.cpp+= -o ${.TARGET}
 
@@ -102,11 +102,7 @@ SRCS+= stderr_write.c
 
 CPPFLAGS+= -DADB_VERSION="\"${VERSION}\""
 CPPFLAGS+= -DADB_HOST=1
-CPPFLAGS+= -DHAVE_FORKEXEC=1
-CPPFLAGS+= -DHAVE_SYMLINKS
-CPPFLAGS+= -DHAVE_TERMIO_H
-CPPFLAGS+= -DHAVE_SYS_SOCKET_H
-CPPFLAGS+= -D_FILE_OFFSET_BITS=64
+CPPFLAGS+= -Doff64_t=off_t
 CPPFLAGS+= -DFAKE_LOG_DEVICE=1
 CPPFLAGS+= -I${.CURDIR}
 CPPFLAGS+= -I${.CURDIR}/../include

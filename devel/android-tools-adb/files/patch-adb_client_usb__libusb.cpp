@@ -1,13 +1,6 @@
 --- adb/client/usb_libusb.cpp.orig	2017-06-20 10:50:27 UTC
 +++ adb/client/usb_libusb.cpp
-@@ -22,13 +22,14 @@
- 
- #include <atomic>
- #include <chrono>
-+#include <condition_variable>
- #include <memory>
- #include <mutex>
- #include <string>
+@@ -30,7 +30,7 @@
  #include <thread>
  #include <unordered_map>
  
@@ -16,11 +9,19 @@
  
  #include <android-base/file.h>
  #include <android-base/logging.h>
+@@ -39,6 +39,7 @@
+ 
+ #include "adb.h"
+ #include "adb_utils.h"
++#include "sysdeps/chrono.h"
+ #include "transport.h"
+ #include "usb.h"
+ 
 @@ -89,7 +89,11 @@ struct transfer_info {
  };
  
  namespace libusb {
-+#if defined(__linux__) || defined(__APPLE__)
++#if defined(__linux__) || defined(__APPLE__) || defined(_WIN32)
  struct usb_handle : public ::usb_handle {
 +#else
 +struct usb_handle {
