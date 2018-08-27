@@ -1,6 +1,6 @@
---- deps/openssl/config/archs/linux-elf/asm/openssl.gypi.orig	2018-05-11 12:05:18 UTC
+--- deps/openssl/config/archs/linux-elf/asm/openssl.gypi.orig	2018-08-15 13:53:23 UTC
 +++ deps/openssl/config/archs/linux-elf/asm/openssl.gypi
-@@ -681,10 +681,10 @@
+@@ -683,10 +683,10 @@
        'POLY1305_ASM',
      ],
      'openssl_cflags_linux-elf': [
