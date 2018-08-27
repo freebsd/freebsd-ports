@@ -22,9 +22,13 @@ BROKEN_armv7=		invalid output constraint =A in assembler
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake jpeg zip
+USES=		compiler gmake jpeg zip
 USE_GL=		gl
 USE_SDL=	image sdl
+
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
+
 MAKEFILE=	MakefileKyra
 MAKE_ENV=	MAKE_KYRA=RELEASE KYRA_OPENGL=YES
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}" LD="${CXX}" \
