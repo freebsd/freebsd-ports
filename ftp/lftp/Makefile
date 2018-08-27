@@ -56,6 +56,20 @@ post-install-DOCS-on:
 
 .include <bsd.port.pre.mk>
 
+# Only link to libthr if necessary
+.if ${PORT_OPTIONS:MGNUTLS}
+NEED_PTHREAD=	yes
+.else
+.if exists(${OPENSSLLIB}/libssl.so)
+NEED_PTHREAD!=	ldd ${OPENSSLLIB}/libssl.so | ${GREP} -w 'libthr\.so' || ${ECHO_CMD}
+.else
+NEED_PTHREAD=	# empty
+.endif
+.endif
+.if !empty(NEED_PTHREAD)
+LDFLAGS+=	-pthread
+.endif
+
 .if ${ARCH} == powerpc64
 USE_GCC=	yes
 .endif
