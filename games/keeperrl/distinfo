@@ -1,3 +1,5 @@
 TIMESTAMP = 1516986107
 SHA256 (miki151-keeperrl-0.0.23-alpha23_GH0.tar.gz) = 046cba3c8834f52f9e796d2deece8770b833d351eb222c216fdf65b0c1869979
 SIZE (miki151-keeperrl-0.0.23-alpha23_GH0.tar.gz) = 3252139
+SHA256 (c0fc69cbee72.patch) = ca2a3158182b1bcab2c9ec0d9e9525800d49c62f2d544c9a3b6c01fbee75750b
+SIZE (c0fc69cbee72.patch) = 533

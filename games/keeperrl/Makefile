@@ -2,8 +2,11 @@
 
 PORTNAME=	keeperrl
 PORTVERSION=	0.0.${ALPHA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	c0fc69cbee72.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ambitious dungeon builder with roguelike elements
@@ -42,8 +45,6 @@ post-patch:
 		-e 's|bash|sh|' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's|bash|sh|' ${WRKSRC}/check_serial.sh
-	@${REINPLACE_CMD} '/_GLIBCXX_END_NAMESPACE_VERSION/d' \
-		${WRKSRC}/extern/iomanip.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/keeper ${STAGEDIR}${PREFIX}/bin
