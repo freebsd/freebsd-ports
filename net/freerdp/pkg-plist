@@ -20,6 +20,7 @@ include/freerdp2/freerdp/channels/audin.h
 include/freerdp2/freerdp/channels/channels.h
 include/freerdp2/freerdp/channels/cliprdr.h
 include/freerdp2/freerdp/channels/encomsp.h
+include/freerdp2/freerdp/channels/geometry.h
 include/freerdp2/freerdp/channels/log.h
 include/freerdp2/freerdp/channels/rail.h
 include/freerdp2/freerdp/channels/rdpdr.h
@@ -28,6 +29,7 @@ include/freerdp2/freerdp/channels/rdpgfx.h
 include/freerdp2/freerdp/channels/rdpsnd.h
 include/freerdp2/freerdp/channels/remdesk.h
 include/freerdp2/freerdp/channels/tsmf.h
+include/freerdp2/freerdp/channels/video.h
 include/freerdp2/freerdp/channels/wtsvc.h
 include/freerdp2/freerdp/client.h
 include/freerdp2/freerdp/client/audin.h
@@ -38,6 +40,7 @@ include/freerdp2/freerdp/client/disp.h
 include/freerdp2/freerdp/client/drdynvc.h
 include/freerdp2/freerdp/client/encomsp.h
 include/freerdp2/freerdp/client/file.h
+include/freerdp2/freerdp/client/geometry.h
 include/freerdp2/freerdp/client/rail.h
 include/freerdp2/freerdp/client/rdpei.h
 include/freerdp2/freerdp/client/rdpgfx.h
@@ -45,6 +48,7 @@ include/freerdp2/freerdp/client/rdpsnd.h
 include/freerdp2/freerdp/client/remdesk.h
 include/freerdp2/freerdp/client/sshagent.h
 include/freerdp2/freerdp/client/tsmf.h
+include/freerdp2/freerdp/client/video.h
 include/freerdp2/freerdp/codec/audio.h
 include/freerdp2/freerdp/codec/bitmap.h
 include/freerdp2/freerdp/codec/bulk.h
@@ -62,6 +66,7 @@ include/freerdp2/freerdp/codec/progressive.h
 include/freerdp2/freerdp/codec/region.h
 include/freerdp2/freerdp/codec/rfx.h
 include/freerdp2/freerdp/codec/xcrush.h
+include/freerdp2/freerdp/codec/yuv.h
 include/freerdp2/freerdp/codec/zgfx.h
 include/freerdp2/freerdp/codecs.h
 include/freerdp2/freerdp/constants.h
@@ -84,6 +89,7 @@ include/freerdp2/freerdp/gdi/gfx.h
 include/freerdp2/freerdp/gdi/pen.h
 include/freerdp2/freerdp/gdi/region.h
 include/freerdp2/freerdp/gdi/shape.h
+include/freerdp2/freerdp/gdi/video.h
 include/freerdp2/freerdp/graphics.h
 include/freerdp2/freerdp/input.h
 include/freerdp2/freerdp/listener.h
@@ -178,6 +184,7 @@ include/winpr2/winpr/sspi.h
 include/winpr2/winpr/sspicli.h
 include/winpr2/winpr/stream.h
 include/winpr2/winpr/string.h
+include/winpr2/winpr/strlst.h
 include/winpr2/winpr/synch.h
 include/winpr2/winpr/sysinfo.h
 include/winpr2/winpr/tchar.h
@@ -214,6 +221,11 @@ libdata/pkgconfig/freerdp2.pc
 %%WAYLAND%%libdata/pkgconfig/uwac0.pc
 libdata/pkgconfig/winpr-tools2.pc
 libdata/pkgconfig/winpr2.pc
+%%MANPAGES%%man/man1/winpr-hash.1.gz
+%%MANPAGES%%man/man1/winpr-makecert.1.gz
+%%WAYLAND%%%%MANPAGES%%man/man1/wlfreerdp.1.gz
+%%X11%%%%MANPAGES%%man/man1/xfreerdp.1.gz
+%%MANPAGES%%man/man7/wlog.7.gz
 share/cmake/Modules/FreeRDP-Client2/FreeRDP-ClientConfig.cmake
 share/cmake/Modules/FreeRDP-Client2/FreeRDP-ClientConfigVersion.cmake
 share/cmake/Modules/FreeRDP-Client2/FreeRDP-ClientTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -222,16 +234,11 @@ share/cmake/Modules/FreeRDP2/FreeRDPConfig.cmake
 share/cmake/Modules/FreeRDP2/FreeRDPConfigVersion.cmake
 share/cmake/Modules/FreeRDP2/FreeRDPTargets-%%CMAKE_BUILD_TYPE%%.cmake
 share/cmake/Modules/FreeRDP2/FreeRDPTargets.cmake
-%%WAYLAND%%share/cmake/Modules/uwac0/uwac-%%CMAKE_BUILD_TYPE%%.cmake
-%%WAYLAND%%share/cmake/Modules/uwac0/uwac.cmake
-%%WAYLAND%%share/cmake/Modules/uwac0/uwacConfig.cmake
-%%WAYLAND%%share/cmake/Modules/uwac0/uwacConfigVersion.cmake
 share/cmake/Modules/WinPR2/WinPRConfig.cmake
 share/cmake/Modules/WinPR2/WinPRConfigVersion.cmake
 share/cmake/Modules/WinPR2/WinPRTargets-%%CMAKE_BUILD_TYPE%%.cmake
 share/cmake/Modules/WinPR2/WinPRTargets.cmake
-%%MANPAGES%%man/man1/winpr-hash.1.gz
-%%MANPAGES%%man/man1/winpr-makecert.1.gz
-%%WAYLAND%%%%MANPAGES%%man/man1/wlfreerdp.1.gz
-%%X11%%%%MANPAGES%%man/man1/xfreerdp.1.gz
-%%MANPAGES%%man/man7/wlog.7.gz
+%%WAYLAND%%share/cmake/Modules/uwac0/uwac-%%CMAKE_BUILD_TYPE%%.cmake
+%%WAYLAND%%share/cmake/Modules/uwac0/uwac.cmake
+%%WAYLAND%%share/cmake/Modules/uwac0/uwacConfig.cmake
+%%WAYLAND%%share/cmake/Modules/uwac0/uwacConfigVersion.cmake
