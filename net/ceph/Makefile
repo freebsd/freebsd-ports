@@ -100,6 +100,9 @@ USE_LDCONFIG=	yes
 USERS=		ceph
 GROUPS=		ceph
 
+post-patch:
+	${REINPLACE_CMD} 's|sphinx-build|sphinx-build-${PYTHON_VER}|g' ${WRKSRC}/CMakeLists.txt
+
 pre-configure:
 	${LN} -s ${CONFIGURE_WRKSRC} ${WRKSRC}/build
 	${CP} files/file-git_version ${WRKSRC}/src/.git_version
