@@ -12,6 +12,7 @@ COMMENT=		Modern alternative to object middleware such as CORBA/COM/DCOM/COM+
 LICENSE=		GPLv2
 
 SLAVE_PORT?=		no
+CONFLICTS=		Ice37 py*-Ice37 php*-Ice37
 
 MAKE_JOBS_UNSAFE=	yes
 
