@@ -16,12 +16,10 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.txt
 LICENSE_FILE_OFL11=	${WRKSRC}/data_contrib/SIL_Open_Font_License.txt
 
-BROKEN_FreeBSD_10=	needs c++14, does not build even with clang5
-
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libcurl.so:ftp/curl
 
-USES=		gmake localbase openal
+USES=		compiler:c++14-lang gmake localbase openal
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	miki151
