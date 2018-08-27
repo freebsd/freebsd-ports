@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	micro
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -42,8 +42,8 @@ GH_TUPLE=	\
 		go-yaml:yaml:cd8b52f:yaml/src/gopkg.in/yaml.v2 \
 		layeh:gopher-luar:1628157:luar/src/layeh.com/gopher-luar
 
-BUILD_HASH=	af520cf
-BUILD_DATE=	January 26, 2018
+BUILD_HASH=	1856891
+BUILD_DATE=	August 9, 2018
 
 PLIST_FILES=	bin/micro
 PORTDOCS=	README.md
