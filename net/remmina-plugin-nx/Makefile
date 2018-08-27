@@ -1,7 +1,6 @@
 # Created by: Koichiro IWAO <meta+ports@vmeta.jp>
 # $FreeBSD$
 
-PORTREVISION=	1
 PKGNAMESUFFIX=	-nx
 
 COMMENT=	Remmina plugin for NX
