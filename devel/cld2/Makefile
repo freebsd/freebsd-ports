@@ -12,7 +12,11 @@ COMMENT=	Compact language detector library
 
 LICENSE=	APACHE20
 
+USES=		compiler
 USE_LDCONFIG=	yes
+
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 post-patch:
 	${REINPLACE_CMD} -e "s#g++#${CXX}#" ${WRKSRC}/internal/compile_libs.sh
