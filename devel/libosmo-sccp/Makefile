@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libosmo-sccp
-PORTVERSION=	0.8.1
+PORTVERSION=	0.10.0
 CATEGORIES=	devel
 MASTER_SITES=	http://git.osmocom.org/libosmo-sccp/snapshot/ \
 		http://chaosophia.net/downloads/osmocom/${PORTNAME}/
