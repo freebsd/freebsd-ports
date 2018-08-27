@@ -15,7 +15,8 @@ COMMENT=	Free timetabling software
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		qmake tar:bzip2
+USES=		compiler:c++14-lang qmake tar:bzip2
+USE_CXXSTD=	c++14
 
 PORTEXAMPLES=	*
 
@@ -38,7 +39,6 @@ QT4_USES=	qt:4
 QT4_USE=	QT=corelib,moc_build,rcc_build,uic_build,xml
 QT5_USES=	qt:5
 QT5_USE=	QT=buildtools_build,core,printsupport,widgets,xml GL=gl
-USES+=		compiler:c++14-lang
 
 INSTALL_TARGET=	${WRKSRC}/fet-cl
 ONLYCL_VARS=	QMAKE_SOURCE_PATH=${WRKSRC}/src/src-cl.pro
