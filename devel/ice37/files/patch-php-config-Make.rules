@@ -1,0 +1,13 @@
+--- php/config/Make.rules.orig	2018-04-20 15:02:08 UTC
++++ php/config/Make.rules
+@@ -23,6 +23,10 @@ USE_NAMESPACES  ?= yes
+ # Don't change anything below this line!
+ # ----------------------------------------------------------------------
+ 
++slice2php_path		= $(localbase)/bin/slice2php
++install_phpdir          = $(prefix)/share/pear
++install_phplibdir       = $(prefix)/lib/php/$(PHP_EXT_DIR)
++
+ ifneq ($(USE_NAMESPACES),yes)
+ slice2php_flags         = --no-namespace
+ endif

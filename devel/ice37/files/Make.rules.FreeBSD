@@ -1,0 +1,75 @@
+# **********************************************************************
+#
+# Copyright (c) 2003-2018 ZeroC, Inc. All rights reserved.
+#
+# This copy of Ice is licensed to you under the terms described in the
+# ICE_LICENSE file included in this distribution.
+#
+# **********************************************************************
+
+supported-platforms = freebsd
+supported-configs = shared static cpp11-shared cpp11-static
+CONFIGS = %%CONFIGS%%
+DEFAULT_MUTEX_PROTOCOL = PrioInherit
+
+prefix              = %%PREFIX%%
+install_mandir      = %%MANPREFIX%%/man
+install_slicedir    = %%DATADIR%%
+install_configdir   = %%DATADIR%%/config
+install_docdir      = %%DOCSDIR%%
+localbase           = %%LOCALBASE%%
+
+opensslinc	= $(filter-out "-I","-I%%OPENSSLINC%%") 
+openssllib	= $(filter-out "-L","-L%%OPENSSLLIB%%") 
+
+cppflags        = -Wall -pthread \
+                  ${opensslinc} -isystem ${localbase}/include \
+                  $(if $(filter yes,$(OPTIMIZE)),-DNDEBUG,-g)
+ldflags         = -pthread -L${top_srcdir}/cpp/lib -L${localbase}/lib
+ifeq ($(MAXWARN),yes)
+    cppflags    += -Wextra -Wshadow -Wredundant-decls
+endif
+freebsd_ldflags         = $(ldflags)
+freebsd_targetdir       = $(if $(filter %/build,$5),/freebsd)
+iconv_ldflags		= %%ICONV_LIB%%
+
+embedded_runpath	= no
+rpath-link-ldflag       = -Wl,-rpath-link,$1
+make-rpath-link-ldflags = $(foreach d,$(filter-out $2,$(call get-all-deps,$1)),$(call rpath-link-ldflag,$($d_targetdir)))
+
+# If building objects for a shared library build, enable PIC or PIE:
+shared_cppflags         = $(if $(filter-out program,$($1_target)),-fPIC,-fPIE) -fvisibility=hidden
+static_targetdir        = $(if $(and $(filter-out %/build,$5),$(filter $($1_target),program)),,static)
+
+# If we are linking a program, add -rpath-link to locate secondary libraries that aren't linked with the executable.
+shared_ldflags      = $(if $(filter-out program,$($1_target)),\
+        $(if $(filter yes,$(allow-undefined-symbols)),,-Wl$(comma)--no-undefined),\
+        -pie $(if $(filter yes,$(new_dtags)),-Wl$(comma)--enable-new-dtags,-Wl$(comma)--disable-new-dtags) \
+        $$(call unique,$$(foreach d,$($4_dependencies),$$(call make-rpath-link-ldflags,$$d,$($4_dependencies)))))
+
+ifeq ($(embedded_runpath),yes)
+    #
+    # Our default for embedded runpath prefix on AIX is $(prefix)
+    #
+    ifeq ($(embedded_runpath_prefix),)
+        embedded_runpath_prefix = $(prefix)
+    endif
+endif
+
+# $(call mklib,$1=target,$2=objects,$3=libname,$4=version,$5=soversion,$6=ldflags,$7=platform)
+mklib           = $(or $($7_ar),$(AR)) cr $1 $2
+
+# $(call mkshlib,$1=target,$2=objects,$3=libname,$4=version,$5=soversion,$6=ldflags,$7=platform)
+#tmpsofile       = $(dir $1)lib$2.so$(if $3,.$3)
+mkshlib         = $(or $($7_cxx),$(CXX)) -shared $(if $5,-Wl$(comma)-h$(comma)$(call mksoname,$3,$4,$5)) -o $1 $2 $6
+
+#
+# $(call mkxxx,$1=libname,$2=version,$3=soversion)
+#
+mksoname        = lib$(1).so$(if $3,.$3)
+mkshlibfilename = lib$(1).so$(if $2,.$2)
+mkshlibname     = lib$(1).so
+
+Ice_system_libs         = ${openssllib} -lcrypto
+IceSSL_system_libs      = ${openssllib} -lssl -lcrypto
+Glacier2CryptPermissionsVerifier_system_libs = -lcrypt
