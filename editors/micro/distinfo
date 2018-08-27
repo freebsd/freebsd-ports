@@ -1,6 +1,6 @@
-TIMESTAMP = 1523072568
-SHA256 (zyedidia-micro-v1.4.0_GH0.tar.gz) = e8eb8fcab1d083819d841fed076b8cde8a2eb03bb8426ea48636bd249073afb9
-SIZE (zyedidia-micro-v1.4.0_GH0.tar.gz) = 694870
+TIMESTAMP = 1534863849
+SHA256 (zyedidia-micro-v1.4.1_GH0.tar.gz) = 839b30bb39df45f43ee72583db9fa3b59611228d1b6a65a9e77a999e85b94d01
+SIZE (zyedidia-micro-v1.4.1_GH0.tar.gz) = 520409
 SHA256 (blang-semver-4a1e882_GH0.tar.gz) = e392b8b07bcc674ac15c0174b48f08528651f21bfbe448b91349825b68bba930
 SIZE (blang-semver-4a1e882_GH0.tar.gz) = 14839
 SHA256 (dustin-go-humanize-259d2a1_GH0.tar.gz) = a081f6b32980ac4849a454999b685e47e44fd1923f16fac4d1cc94b1584706db
