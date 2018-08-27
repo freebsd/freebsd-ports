@@ -216,6 +216,7 @@
     SUBDIR += lxhotkey
     SUBDIR += lxmenu-data
     SUBDIR += lxpanel
+    SUBDIR += lxqt-about
     SUBDIR += lxqt-globalkeys
     SUBDIR += lxqt-globalkeys-l10n
     SUBDIR += lxqt-l10n
