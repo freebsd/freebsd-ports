@@ -31,6 +31,7 @@ MAKE_ENV=	OPT=${OPT}
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC?=	${WRKDIR}/${PORTNAME}
 DATADIR?=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
+LLD_UNSAFE=	yes
 
 OPTIONS_DEFINE=		GDB
 GDB_DESC=		Install a newest version  of gdb
