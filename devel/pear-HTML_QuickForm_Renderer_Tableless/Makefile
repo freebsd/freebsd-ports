@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML_QuickForm_Renderer_Tableless
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	chris@smartt.com
