@@ -1216,7 +1216,6 @@
     SUBDIR += i386-gcc
     SUBDIR += i386-xtoolchain-gcc
     SUBDIR += ice
-    SUBDIR += ice37
     SUBDIR += icestorm
     SUBDIR += icmake
     SUBDIR += icontheme
@@ -4106,7 +4105,6 @@
     SUBDIR += php-Psr_Log
     SUBDIR += php-composer
     SUBDIR += php-geshi
-    SUBDIR += php-ice37
     SUBDIR += php-jq
     SUBDIR += php-libawl
     SUBDIR += php-maxminddb
@@ -4615,7 +4613,6 @@
     SUBDIR += py-hypothesis
     SUBDIR += py-icalendar
     SUBDIR += py-ice
-    SUBDIR += py-ice37
     SUBDIR += py-imgkit
     SUBDIR += py-incremental
     SUBDIR += py-inflect
