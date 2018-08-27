@@ -4346,6 +4346,7 @@
     SUBDIR += py-argh
     SUBDIR += py-argparse
     SUBDIR += py-args
+    SUBDIR += py-arpeggio
     SUBDIR += py-arrow
     SUBDIR += py-asn1crypto
     SUBDIR += py-aspects
