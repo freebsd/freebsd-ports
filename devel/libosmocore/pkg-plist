@@ -158,8 +158,8 @@ lib/libosmosim.so
 lib/libosmosim.so.0
 lib/libosmosim.so.0.0.2
 lib/libosmovty.so
-lib/libosmovty.so.0
-lib/libosmovty.so.0.5.0
+lib/libosmovty.so.4
+lib/libosmovty.so.4.1.0
 libdata/pkgconfig/libosmocodec.pc
 libdata/pkgconfig/libosmocoding.pc
 libdata/pkgconfig/libosmocore.pc
