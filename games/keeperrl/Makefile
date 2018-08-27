@@ -33,6 +33,8 @@ LIBS+=		-lexecinfo
 LLD_UNSAFE=	yes
 MAKE_ARGS=	DATA_DIR="${DATADIR}" GCC="${CXX}" \
 		LDFLAGS="${LDFLAGS}" RELEASE=true
+# USE_GCC adds -Wl,-rpath=${_GCC_RUNTIME} which breaks -x c++-header
+MAKE_ARGS+=	PCH= PCHINC=
 
 DESKTOP_ENTRIES="KeeperRL" "" "" "keeper" \
 		"Game;Simulation;" false
