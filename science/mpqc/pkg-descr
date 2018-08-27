@@ -1,6 +1,6 @@
 MPQC is the Massively Parallel Quantum Chemistry Program. It computes
 properties of atoms and molecules from first principles using the time
-independent Schrödinger equation. It runs on a wide range of architectures
+independent Schrodinger equation. It runs on a wide range of architectures
 ranging from single many-core computers to massively parallel computers.
 Its design is object oriented, using the C++ programming language.
 
@@ -11,9 +11,9 @@ Capabilities
   functional theory energies and gradients.
 * Second order open shell perturbation theory (OPT2[2]) and Z-averaged
   perturbation theory (ZAPT2) energies.
-* Second order closed shell Møller-Plesset perturbation theory energies and
+* Second order closed shell Moller-Plesset perturbation theory energies and
   gradients.
-* Second order Møller-Plesset perturbation theory including an R12/F12
+* Second order Moller-Plesset perturbation theory including an R12/F12
   correlation factor. Energies of closed- and open-shell systems are
   supported.
 * Explicitly-correlated R12/F12 coupled-cluster methods via interface to
@@ -30,4 +30,4 @@ You can also validate your mpqc binaries when you employ other settings by:
 For details, please see file:///usr/local/share/doc/mpqc/hierarchy.html
 or http://www.mpqc.org/mpqc-html/mpqcval.html
 
-WWW: http://www.mpqc.org/
+WWW: https://www.mpqc.org/
