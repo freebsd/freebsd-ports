@@ -3,7 +3,7 @@
 
 PORTNAME=	uwsgi
 PORTVERSION=	2.0.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	http://projects.unbit.it/downloads/
 
@@ -13,12 +13,10 @@ COMMENT=	Developer-friendly WSGI server which uses uwsgi protocol
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		pkgconfig python ssl
+USES=		pkgconfig python
 USE_PYTHON=	distutils concurrent optsuffix
 USE_RC_SUBR=	uwsgi
 
-CFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	${OPENSSL_LDFLAGS}
 MAKE_ENV+=	CPUCOUNT=${MAKE_JOBS_NUMBER} UWSGI_EMBED_PLUGINS=cgi
 
 PYSETUP=			uwsgiconfig.py
@@ -33,13 +31,14 @@ PLIST_FILES=	bin/uwsgi \
 
 SUB_LIST=	PYTHON_VER=${PYTHON_VER}
 
-OPTIONS_DEFINE=	DEBUG JSON PCRE XML
+OPTIONS_DEFINE=		DEBUG JSON PCRE XML SSL
+OPTIONS_DEFAULT=	SSL
 
 OPTIONS_GROUP=		PLG
 OPTIONS_GROUP_PLG=	PSGI
 
-PLG_DESC=	Enable plugins
-PSGI_DESC=	PSGI embedded plugin
+PLG_DESC=		Enable plugins
+PSGI_DESC=		PSGI embedded plugin
 
 DEBUG_VARS=		PYDISTUTILS_BUILDARGS+=--debug
 
@@ -52,12 +51,13 @@ PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
 XML_VARS=		BUILDCONF_XML=libxml2
 XML_LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
-LIB_DEPENDS+=	libjansson.so:devel/jansson libpcre.so:devel/pcre libxml2.so:textproc/libxml2
-
-.include <bsd.port.options.mk>
+SSL_VARS=		BUILDCONF_SSL=true
+SSL_USES=		ssl
+SSL_CFLAGS=		-I${OPENSSLINC}
+SSL_LDFLAGS=		${OPENSSL_LDFLAGS}
 
 post-patch:
-.for var in JSON PCRE XML
+.for var in JSON PCRE XML SSL
 	@${REINPLACE_CMD} -e '/^${var:tl} =/ s|= .*|= ${BUILDCONF_${var}:Ufalse}|' ${WRKSRC}/buildconf/base.ini
 .endfor
 
