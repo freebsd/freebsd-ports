@@ -9,7 +9,7 @@ PORTREVISION=	0
 .else
 # XXX: correct version
 # dns/bind9xx here
-PORTREVISION=	1
+PORTREVISION=	0
 .endif
 CATEGORIES=	dns net ipv6
 # XXX: put the ISC master_site
@@ -40,13 +40,13 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2
 # XXX: remove tar:bz2
 USES=	cpe libedit ssl tar:bz2
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.13.1a0.2018.08.17
+ISCVERSION=	9.13.1a0.2018.08.24
 # XXX: Remove gitlab
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.isc.org
 GL_ACCOUNT=	isc-projects
 GL_PROJECT=	bind9
-GL_COMMIT=	bf98eb41bfc6a8580a5f430f11a2ded73ea9c234
+GL_COMMIT=	e79b42fec05b61082d7c3ee7a43dcbb7a1dca440
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -57,7 +57,6 @@ CPE_UPDATE=	${ISCVERSION:C/.*-//:tl}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--disable-symtable \
-		--with-randomdev=/dev/random \
 		--with-libxml2=${LOCALBASE} \
 		--with-readline="-L${LOCALBASE}/lib -ledit" \
 		--with-dlopen=yes \
@@ -82,13 +81,12 @@ MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	*
 
-OPTIONS_DEFAULT=	THREADS SIGCHASE IDN GSSAPI_NONE JSON PYTHON
+OPTIONS_DEFAULT=	SIGCHASE IDN GSSAPI_NONE JSON PYTHON
 OPTIONS_DEFINE=		IDN LARGE_FILE PYTHON JSON \
-			FIXED_RRSET SIGCHASE IPV6 THREADS
+			FIXED_RRSET SIGCHASE IPV6
 
-OPTIONS_RADIO=	CRYPTO GOSTDEF
+OPTIONS_RADIO=	CRYPTO
 OPTIONS_RADIO_CRYPTO=	NATIVE_PKCS11
-OPTIONS_RADIO_GOSTDEF=	GOST GOST_ASN1
 
 .if !defined(BIND_TOOLS_SLAVE)
 OPTIONS_DEFAULT+=	DLZ_FILESYSTEM LMDB RPZ_NSDNAME RPZ_NSIP TCP_FASTOPEN
@@ -115,9 +113,6 @@ DLZ_STUB_DESC=		DLZ stub driver
 DNSTAP_DESC=		Provides fast passive logging of DNS messages
 FIXED_RRSET_DESC=	Enable fixed rrset ordering
 GEOIP_DESC=		Allow geographically based ACL.
-GOSTDEF_DESC=		Enable GOST ciphers
-GOST_ASN1_DESC=		GOST using ASN.1
-GOST_DESC=		GOST raw keys (new default)
 GSSAPI_BASE_DESC=	Using Heimdal in base
 GSSAPI_HEIMDAL_DESC=	Using security/heimdal
 GSSAPI_MIT_DESC=	Using security/krb5
@@ -145,7 +140,6 @@ DLZ_LDAP_CONFIGURE_ON=	--with-dlz-ldap=yes
 DLZ_LDAP_USE=		openldap=yes
 
 DLZ_MYSQL_CONFIGURE_ON=	--with-dlz-mysql=yes
-DLZ_MYSQL_PREVENTS=	THREADS
 DLZ_MYSQL_USES=		mysql
 
 DLZ_POSTGRESQL_CONFIGURE_ON=	--with-dlz-postgres=yes
@@ -154,7 +148,6 @@ DLZ_POSTGRESQL_USES=		pgsql
 DLZ_STUB_CONFIGURE_ON=	--with-dlz-stub=yes
 
 DNSTAP_CONFIGURE_ENABLE=	dnstap
-DNSTAP_IMPLIES=		THREADS
 DNSTAP_LIB_DEPENDS=	libfstrm.so:devel/fstrm \
 			libprotobuf-c.so:devel/protobuf-c
 
@@ -162,10 +155,6 @@ FIXED_RRSET_CONFIGURE_ENABLE=	fixed-rrset
 
 GEOIP_CONFIGURE_WITH=	geoip
 GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
-
-GOST_ASN1_CONFIGURE_ON=	--with-gost=asn1
-
-GOST_CONFIGURE_ON=	--with-gost
 
 GSSAPI_BASE_CONFIGURE_ON=\
 	--with-gssapi=${GSSAPIBASEDIR} KRB5CONFIG="${KRB5CONFIG}"
@@ -199,7 +188,6 @@ LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 MINCACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
 
 NATIVE_PKCS11_CONFIGURE_ENABLE=	native-pkcs11
-NATIVE_PKCS11_IMPLIES=	THREADS
 
 PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=0:devel/py-ply@${PY_FLAVOR}
 PYTHON_CONFIGURE_WITH=	python=${PYTHON_CMD}
@@ -221,23 +209,10 @@ START_LATE_SUB_LIST_OFF=NAMED_REQUIRE="NETWORKING ldconfig syslogd" \
 
 TCP_FASTOPEN_CONFIGURE_ENABLE=	tcp-fastopen
 
-THREADS_CONFIGURE_ENABLE=	threads
-
-TUNING_LARGE_IMPLIES=	THREADS
 TUNING_LARGE_CONFIGURE_ON=	--with-tuning=large
 TUNING_LARGE_CONFIGURE_OFF=	--with-tuning=default
 
 .include <bsd.port.pre.mk>
-
-.if !${PORT_OPTIONS:MGOST} && !${PORT_OPTIONS:MGOST_ASN1}
-CONFIGURE_ARGS+=	--without-gost
-.endif
-
-.if ( ${PORT_OPTIONS:MGOST} || ${PORT_OPTIONS:MGOST_ASN1} ) && ${SSL_DEFAULT} == base
-BROKEN=	OpenSSL from the base system does not support GOST, add \
-	DEFAULT_VERSIONS+=ssl=openssl to your /etc/make.conf and rebuild everything \
-	that needs SSL.
-.endif
 
 # XXX: Remove
 post-extract:
