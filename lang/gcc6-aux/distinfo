@@ -13,3 +13,7 @@ SHA256 (ada-bootstrap.x86_64.freebsd.120.tar.bz2) = 4b490145520ffa9f8402a65cad81
 SIZE (ada-bootstrap.x86_64.freebsd.120.tar.bz2) = 52651957
 SHA256 (ada-bootstrap.aarch64.freebsd.120.tar.bz2) = 84d96268e864564bc4adddf54bac492ff74a0d7112c13283512542cde71663e7
 SIZE (ada-bootstrap.aarch64.freebsd.120.tar.bz2) = 53840614
+SHA256 (ada-bootstrap.aarch64.freebsd.111.tar.bz2) = b16284a3c2e9aea2e11ee52724ccafea08b00f3f0003130c71f8133163c9ef06
+SIZE (ada-bootstrap.aarch64.freebsd.111.tar.bz2) = 63714336
+SHA256 (ada-bootstrap.aarch64.freebsd.120.tar.bz2) = 22929f98dbed737dcb84098704d9d9e04fef16d27f17689be926284eddc7bbc3
+SIZE (ada-bootstrap.aarch64.freebsd.120.tar.bz2) = 64399030

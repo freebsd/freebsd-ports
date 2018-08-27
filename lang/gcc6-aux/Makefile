@@ -16,9 +16,6 @@ COMMENT=	Version of GCC ${GCC_BRANCH} with full Ada support
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-BROKEN_FreeBSD_12_aarch64=	fails to configure: cannot compute sizeof (long long)
-BROKEN_aarch64=			fails to configure: ./config.h:556:15: two or more data types in declaration specifiers
-
 .include "${.CURDIR}/Makefile.common"
 
 LANGS=			c c++ ada
@@ -55,8 +52,10 @@ BOOTSTRAP_DESC=		Create bootstrap compiler (overrides other options)
 .if ${OPSYS} == FreeBSD
 ONLY_FOR_ARCHS=		aarch64 amd64 i386
 MODERN_BINUTILS=	yes
-.  if ${ARCH} == aarch64
+.  if ${ARCH} == aarch64 && ${OSVERSION} > 1200075 #ino64
 BOOTSTRAP_COMPILER=	ada-bootstrap.aarch64.freebsd.120.tar.bz2
+.  elif ${ARCH} == aarch64
+BOOTSTRAP_COMPILER=	ada-bootstrap.aarch64.freebsd.111.tar.bz2
 .  elif ${ARCH} == amd64 && ${OSVERSION} > 1200030 #ino64
 BOOTSTRAP_COMPILER=	ada-bootstrap.${GARCH}.freebsd.120.tar.bz2
 .  elif ${ARCH} == i386  && ${OSVERSION} > 1200030 #ino64
