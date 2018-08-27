@@ -4106,6 +4106,7 @@
     SUBDIR += php-Psr_Log
     SUBDIR += php-composer
     SUBDIR += php-geshi
+    SUBDIR += php-ice37
     SUBDIR += php-jq
     SUBDIR += php-libawl
     SUBDIR += php-maxminddb
