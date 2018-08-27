@@ -32,13 +32,18 @@ post-patch:
 .	if ${PKGNAMESUFFIX} == "-video-glide64mk2"
 		@cd ${WRKSRC}/source/${PORTNAME}${PKGNAMESUFFIX}/src && \
 			${REINPLACE_CMD} -e 's|#include <thread>||g' \
-				GlideHQ/TxQuantize.cpp GlideHQ/TxFilter.cpp
+				GlideHQ/TxQuantize.cpp GlideHQ/TxFilter.cpp && \
+			${REINPLACE_CMD} -e 's|(FxU32)NULL|(uintptr_t)NULL|g' \
+				Glide64/Main.cpp
 .	endif
 .	if ${PKGNAMESUFFIX} == "-video-glide64"
 		@cd ${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX}/src && \
 			${REINPLACE_CMD} -e 's|__builtin_ia32_loadups|_mm_loadu_ps|g' -e \
 				's|__builtin_ia32_storeups|_mm_storeu_ps|g' \
-					3dmath.cpp
+					3dmath.cpp && \
+			${REINPLACE_CMD} -e 's|\"G64_VERSION|\" G64_VERSION|g' -e \
+				's|FxU32|uintptr_t|g' \
+					Main.cpp
 .	endif
 
 pre-install:
