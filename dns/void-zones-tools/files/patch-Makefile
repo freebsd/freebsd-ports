@@ -1,0 +1,19 @@
+--- Makefile.orig	2018-08-26 02:54:47 UTC
++++ Makefile
+@@ -25,15 +25,7 @@
+ 
+ CC     ?= clang
+ 
+-.if $(MACHINE) == "i386" || $(MACHINE) == "amd64" || $(MACHINE) == "x86_64"
+-CFLAGS = $(CDEFS) -march=native -mssse3 -ffast-math
+-.elif $(MACHINE) == "arm"
+-CFLAGS = $(CDEFS) -fsigned-char
+-.else
+-CFLAGS = $(CDEFS)
+-.endif
+-
+-CFLAGS += -std=c11 -g0 -Ofast -fstrict-aliasing -Wno-parentheses
++CFLAGS += -std=c11 -fstrict-aliasing -Wno-parentheses
+ PREFIX ?= /usr/local
+ 
+ HEADERS = binutils.h store.h
