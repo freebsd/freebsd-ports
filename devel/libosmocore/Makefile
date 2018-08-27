@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libosmocore
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.1
 CATEGORIES=	devel
 MASTER_SITES=	http://git.osmocom.org/libosmocore/snapshot/ \
 		http://chaosophia.net/downloads/osmocom/${PORTNAME}/
