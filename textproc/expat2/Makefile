@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	expat
-PORTVERSION=	2.2.5
+PORTVERSION=	2.2.6
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/libexpat/libexpat/releases/download/R_${PORTVERSION:S|.|_|g}/
 
