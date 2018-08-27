@@ -110,6 +110,7 @@
     SUBDIR += libsvm-python
     SUBDIR += libxc
     SUBDIR += linsmith
+    SUBDIR += madness
     SUBDIR += massxpert
     SUBDIR += mbdyn
     SUBDIR += mcstas
