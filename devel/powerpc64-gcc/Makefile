@@ -83,6 +83,12 @@ MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
 . endif
 .endif
 
+.if ${ARCH} == "aarch64"
+PLIST_SUB+=	PLUGINS="@comment plugin does not build"
+.else
+PLIST_SUB+=	PLUGINS=""
+.endif
+
 post-install:
 .for f in cpp gcov gcov-dump gcov-tool
 	@if [ -f ${STAGEDIR}${PREFIX}/bin/$f ] ; then \
@@ -110,9 +116,5 @@ post-install:
 	# Conflicts with sys/x86/include/float.h
 	${RM} ${STAGEDIR}${PREFIX}/lib/gcc/${GCC_TARGET}/${PORTVERSION}/include/float.h
 .endif
-
-# This port and all its slave ports fail on aarch64 -- but not all
-# the same way.  Provide this definition for the master.
-BROKEN_aarch64?=	fails to package
 
 .include <bsd.port.post.mk>
