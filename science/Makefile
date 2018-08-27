@@ -49,6 +49,7 @@
     SUBDIR += colt
     SUBDIR += coot
     SUBDIR += crf++
+    SUBDIR += datawarrior
     SUBDIR += dcl
     SUBDIR += devisor
     SUBDIR += dft_tools
