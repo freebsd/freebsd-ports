@@ -1,0 +1,3 @@
+parver allows parsing and manipulation of PEP 440 version numbers.
+
+WWW: https://github.com/RazerM/parver
