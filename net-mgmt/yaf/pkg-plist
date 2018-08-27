@@ -6,9 +6,6 @@ bin/yaf
 bin/yafMeta2Pcap
 bin/yafcollect
 bin/yafscii
-@sample etc/dhcp_fingerprints.conf.sample
-@sample etc/yafApplabelRules.conf.sample
-@sample etc/yafDPIRules.conf.sample
 include/airframe/airlock.h
 include/airframe/airopt.h
 include/airframe/airutil.h
@@ -27,7 +24,6 @@ include/airframe/mio_source_tcp.h
 include/airframe/mio_source_udp.h
 include/airframe/mio_stdio.h
 include/airframe/privconfig.h
-include/yaf/CERT_IE.h
 include/yaf/autoinc.h
 include/yaf/decode.h
 include/yaf/picq.h
@@ -168,6 +164,10 @@ lib/libyaf.so
 %%APPLABEL%%lib/yaf/netdgmplugin.so
 %%APPLABEL%%lib/yaf/netdgmplugin.so.1
 %%APPLABEL%%lib/yaf/netdgmplugin.so.1.0.1
+@sample %%ETCDIR%%/dhcp_fingerprints.conf.sample
+@sample %%ETCDIR%%/yafApplabelRules.conf.sample
+@sample %%ETCDIR%%/yafDPIRules.conf.sample
+@sample %%ETCDIR%%/yaf.conf.sample
 libdata/pkgconfig/libairframe.pc
 libdata/pkgconfig/libyaf.pc
 man/man1/airdaemon.1.gz

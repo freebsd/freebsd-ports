@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaf
-PORTVERSION=	2.9.3
+PORTVERSION=	2.10.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfixbuf.so:net/libfixbuf \
 		libltdl.so:devel/libltdl \
+		libpcap.so:net/libpcap \
 		libpcre.so:devel/pcre
 
 GNU_CONFIGURE=	yes
@@ -21,6 +22,7 @@ INSTALL_TARGET=	install-strip
 USES=		libtool pathfix perl5 pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--sysconfdir="${ETCDIR}"
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
@@ -69,14 +71,12 @@ P0FPRINT_LIB_DEPENDS=	libp0f.so:net/libp0f
 
 .if defined(WITH_DAG)
 CONFIGURE_ARGS+=	--with-dag=${LOCALBASE}
-LIB_DEPENDS+=	libpcap.so.1:net/libpcap
-.elif exists(${LOCALBASE}/lib/libpcap.so)
-LIB_DEPENDS+=	libpcap.so.1:net/libpcap
 .endif
 
 post-install:
-.for f in dhcp_fingerprints.conf yafApplabelRules.conf yafDPIRules.conf
-	${MV} ${STAGEDIR}${PREFIX}/etc/$f ${STAGEDIR}${PREFIX}/etc/$f.sample
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/yaf
+.for f in dhcp_fingerprints.conf yafApplabelRules.conf yafDPIRules.conf yaf.conf
+	${MV} ${STAGEDIR}${PREFIX}/etc/yaf/$f ${STAGEDIR}${PREFIX}/etc/yaf/$f.sample
 .endfor
 	${RM} ${STAGEDIR}${PREFIX}/etc/p0f.fp
 
