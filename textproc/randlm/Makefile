@@ -19,6 +19,7 @@ BROKEN_armv6=		fails to compile: invalid output constraint =a in assembler
 BROKEN_powerpc64=	fails to compile: 'itr' does not name a type
 
 GNU_CONFIGURE=	yes
+USE_CXXSTD=	gnu++98
 USE_PERL5=	run
 USE_LDCONFIG=	yes
 USES=		autoreconf libtool compiler:c++11-lang
