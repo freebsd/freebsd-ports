@@ -1,0 +1,11 @@
+--- config/Make.rules.orig	2018-04-20 15:02:08 UTC
++++ config/Make.rules
+@@ -150,7 +150,7 @@ slicedir                = $(if $(use-bin
+ sdkdir                  = $(if $(use-bin-dist),$(ice_home)/sdk,$(top_srcdir)/sdk)
+ srcdir                  = $(call mappingdir,$(or $1,$(currentdir)),src)
+ 
+-usr_dir_install         := $(or $(filter yes,$(USR_DIR_INSTALL)),$(filter /usr%,$(prefix)))
++#usr_dir_install         := $(or $(filter yes,$(USR_DIR_INSTALL)),$(filter /usr%,$(prefix)))
+ install_bindir          ?= $(prefix)/bin
+ install_libdir          ?= $(prefix)/lib
+ install_slicedir        ?= $(prefix)$(if $(usr_dir_install),/share/ice)/slice
