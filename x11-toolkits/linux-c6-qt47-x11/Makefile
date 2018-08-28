@@ -12,6 +12,8 @@ DIST_SUBDIR=	atrpms
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Cross-platform application and UI framework (Linux CentOS ${LINUX_DIST_VER})
 
+BROKEN=		uses non existing qt47
+
 DATADIR=	${PREFIX}/usr/share/qt47
 DESCR=		${.CURDIR}/../../devel/qt4/pkg-descr
 RPMVERSION=	1_18.el6
