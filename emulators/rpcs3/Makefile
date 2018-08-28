@@ -45,7 +45,6 @@ CMAKE_OFF=	USE_NATIVE_INSTRUCTIONS
 EXTRA_PATCHES+=	${EXTRA_PATCHES_${COMPILER_FEATURES:Mlib*}_${OPSYS}_${OSREL}}
 EXTRA_PATCHES_libc++_FreeBSD_10.4=	${PATCHDIR}/extra-patch-c++14
 EXTRA_PATCHES_libc++_FreeBSD_11.1=	${PATCHDIR}/extra-patch-c++14
-CXXFLAGS+=	-D_GLIBCXX_USE_C99 # XXX ports/193528
 CXXFLAGS+=	-Wno-macro-redefined # __STDC_*_MACROS sys/cdefs.h vs. llvm-config
 LDFLAGS+=	-Wl,--as-needed # GLU
 
