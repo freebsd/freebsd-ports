@@ -1,0 +1,6 @@
+lazygit is a CLI tool to handle git repository, written in Go wigh the gocui
+library.  You can add files easily, resolve merge conflicts, checkout recent
+branches easily, scroll through logs/diffs of branches/commits.stash,
+push/pull quickly, squash down and rename commits in CLI.
+
+WWW: https://github.com/jesseduffield/lazygit
