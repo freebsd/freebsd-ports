@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.5-774
-DISTVERSIONSUFFIX=	-g21e191111
+DISTVERSION=	0.0.5-794
+DISTVERSIONSUFFIX=	-g23f5cee65
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -24,18 +24,18 @@ ONLY_FOR_ARCHS_REASON=	requires int128 and SSE2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
-GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-25-gca39ce8:hidapi/3rdparty/hidapi \
+GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-26-g4c27501:hidapi/3rdparty/hidapi \
 		RPCS3:llvm:be9f7bfe2068:llvm/llvm \
 		akrzemi1:Optional:f27e790:Optional/3rdparty/Optional \
 		Cyan4973:xxHash:v0.6.5:xxHash/3rdparty/xxHash \
-		jbeder:yaml-cpp:yaml-cpp-0.6.2-4-g4fb1c4b:yamlcpp/3rdparty/yaml-cpp \
+		jbeder:yaml-cpp:yaml-cpp-0.6.2-8-gc90c08c:yamlcpp/3rdparty/yaml-cpp \
 		kobalicek:asmjit:673dcef:asmjit/asmjit \
 		KhronosGroup:glslang:5.1-184-gc99304c5:glslang/Vulkan/glslang \
-		Microsoft:GSL:fc5fce4:GSL/3rdparty/GSL \
+		Microsoft:GSL:v2.0.0:GSL/3rdparty/GSL \
 		USCiLab:cereal:v1.2.0:cereal/3rdparty/cereal \
 		zeux:pugixml:v1.9:pugixml/3rdparty/pugixml
 
-USES=		cmake:outsource compiler:c++14-lang iconv:wchar_t localbase:ldflags \
+USES=		cmake:outsource compiler:c++17-lang iconv:wchar_t localbase:ldflags \
 		openal:soft pkgconfig qt:5
 USE_GL=		gl glew
 USE_QT=		qmake_build buildtools_build core dbus gui network widgets qml
