@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	png
-PORTVERSION=	1.6.34
+PORTVERSION=	1.6.35
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/lib${PORTNAME}16/${PORTVERSION} \
 		ftp://ftp.simplesystems.org/pub/lib${PORTNAME}/${PORTNAME}/src/lib${PORTNAME}16/
