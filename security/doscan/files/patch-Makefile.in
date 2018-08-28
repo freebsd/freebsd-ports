@@ -1,0 +1,17 @@
+--- Makefile.in.orig	2014-10-22 17:14:35 UTC
++++ Makefile.in
+@@ -85,12 +85,12 @@ stamp-dir :
+ 	echo timestamp > stamp-dir
+ 
+ src/%.o : $(srcdir)/src/%.cc
+-	$(CXX) $(CFLAGS) $(PCRE_CFLAGS) $(INCLUDES) \
++	$(CXX) $(CXXFLAGS) $(PCRE_CFLAGS) $(INCLUDES) \
+ 		-MMD -MF $(patsubst %.o,%.d, $@) \
+ 		-c -o $@ $<
+ 
+ src/%.o : src/%.cc
+-	$(CXX) $(CFLAGS) $(PCRE_CFLAGS) $(INCLUDES) \
++	$(CXX) $(CXXFLAGS) $(PCRE_CFLAGS) $(INCLUDES) \
+ 		-MMD -MF $(patsubst %.o,%.d, $@) \
+ 		-c -o $@ $<
+ 
