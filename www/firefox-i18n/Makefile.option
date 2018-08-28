@@ -17,6 +17,7 @@ OPTIONS_DEFINE=	LANG_ACH \
 		LANG_BS \
 		LANG_CA \
 		LANG_CAK \
+		LANG_CAN \
 		LANG_CS \
 		LANG_CY \
 		LANG_DA \
@@ -110,6 +111,7 @@ LANG_AN_DESC?=	Aragonese language support
 LANG_AS_DESC?=	Assamese language support
 LANG_AZ_DESC?=	Azerbaijani language support
 LANG_CAK_DESC?=	Kaqchikel (Guatemala) language support
+LANG_CAN_DESC?=	English (Canada) language support
 LANG_CSB_DESC?=	Kashubian language support
 LANG_DSB_DESC?=	Lower Sorbian language support
 LANG_FF_DESC?=	Fulah language support

@@ -263,8 +263,7 @@ MOZ_OPTIONS+=	\
 		--enable-default-toolkit=${MOZ_TOOLKIT} \
 		--enable-update-channel=${MOZ_CHANNEL} \
 		--disable-updater \
-		--enable-pie \
-		--with-pthreads
+		--enable-pie
 # others
 MOZ_OPTIONS+=	--with-system-zlib		\
 		--with-system-bz2
