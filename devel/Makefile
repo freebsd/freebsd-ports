@@ -864,7 +864,6 @@
     SUBDIR += gperf
     SUBDIR += gpm
     SUBDIR += gprbuild
-    SUBDIR += gps
     SUBDIR += gpsim
     SUBDIR += gputils
     SUBDIR += gradle
