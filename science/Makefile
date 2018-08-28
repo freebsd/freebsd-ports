@@ -101,6 +101,7 @@
     SUBDIR += libgeodecomp
     SUBDIR += libghemical
     SUBDIR += libint
+    SUBDIR += libint2
     SUBDIR += libkml
     SUBDIR += liblinear
     SUBDIR += liboglappth
