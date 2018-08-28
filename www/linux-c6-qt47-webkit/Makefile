@@ -12,6 +12,8 @@ DIST_SUBDIR=	atrpms
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Qt WebKit implementation (Linux CentOS ${LINUX_DIST_VER})
 
+BROKEN=		uses non existing qt47 qt47-x11
+
 DESCR=		${.CURDIR}/../../devel/qt4/pkg-descr
 RPMVERSION=	1_18.el6
 USES=		linux:c6
