@@ -2,13 +2,14 @@
 
 PORTNAME=	pubs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
+DISTVERSION=	0.8.1
 CATEGORIES=	misc python
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Your bibliography on the command line
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/license
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bibtexparser>0:textproc/py-bibtexparser@${PY_FLAVOR} \
