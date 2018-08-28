@@ -161,7 +161,7 @@ index a85a143..8448510 100644
  package lowlevel
  
 diff --git a/usb/webusb.go b/usb/webusb.go
-index eb8cadd..ff42885 100644
+index eb8cadd..1366074 100644
 --- a/usb/webusb.go
 +++ b/usb/webusb.go
 @@ -3,6 +3,7 @@ package usb
@@ -172,60 +172,21 @@ index eb8cadd..ff42885 100644
  	"strings"
  	"sync"
  	"sync/atomic"
-@@ -216,7 +217,7 @@ func (b *WebUSB) match(dev lowlevel.Device) bool {
+@@ -214,9 +215,14 @@ func (b *WebUSB) match(dev lowlevel.Device) bool {
+ 		b.mw.Println("webusb - match - error getting config descriptor " + err.Error())
+ 		return false
  	}
- 	return (c.BNumInterfaces > webIfaceNum &&
- 		c.Interface[webIfaceNum].Num_altsetting > webAltSetting &&
+-	return (c.BNumInterfaces > webIfaceNum &&
+-		c.Interface[webIfaceNum].Num_altsetting > webAltSetting &&
 -		c.Interface[webIfaceNum].Altsetting[webAltSetting].BInterfaceClass == lowlevel.CLASS_VENDOR_SPEC)
-+		(c.Interface[webIfaceNum].Altsetting[webAltSetting].BInterfaceClass == lowlevel.CLASS_VENDOR_SPEC || runtime.GOOS == "freebsd"))
++	if runtime.GOOS != "freebsd" {
++		return (c.BNumInterfaces > webIfaceNum &&
++			c.Interface[webIfaceNum].Num_altsetting > webAltSetting &&
++			c.Interface[webIfaceNum].Altsetting[webAltSetting].BInterfaceClass == lowlevel.CLASS_VENDOR_SPEC)
++	} else {
++		return (c.BNumInterfaces > webIfaceNum &&
++			c.Interface[webIfaceNum].Num_altsetting > webAltSetting)
++	}
  }
  
  func (b *WebUSB) matchVidPid(vid uint16, pid uint16) bool {
-@@ -226,13 +227,19 @@ func (b *WebUSB) matchVidPid(vid uint16, pid uint16) bool {
- }
- 
- func (b *WebUSB) identify(dev lowlevel.Device) string {
--	var ports [8]byte
--	p, err := lowlevel.Get_Port_Numbers(dev, ports[:])
--	if err != nil {
--		b.mw.Println(fmt.Sprintf("webusb - identify - error getting port numbers %s", err.Error()))
--		return ""
-+	if runtime.GOOS != "freebsd" {
-+		var ports [8]byte
-+		p, err := lowlevel.Get_Port_Numbers(dev, ports[:])
-+		if err != nil {
-+			b.mw.Println(fmt.Sprintf("webusb - identify - error getting port numbers %s", err.Error()))
-+			return ""
-+		}
-+		return webusbPrefix + hex.EncodeToString(p)
-+	} else {
-+		bn := lowlevel.Get_Bus_Number(dev)
-+		da := lowlevel.Get_Device_Address(dev)
-+		return fmt.Sprintf("%s%02x%02x", webusbPrefix, bn, da)
- 	}
--	return webusbPrefix + hex.EncodeToString(p)
- }
- 
- type WUD struct {
-@@ -279,6 +286,12 @@ func (d *WUD) finishReadQueue() {
- }
- 
- func (d *WUD) readWrite(buf []byte, endpoint uint8) (int, error) {
-+	var timeout uint
-+	if runtime.GOOS != "freebsd" {
-+		timeout = usbTimeout
-+	} else {
-+		timeout = 0
-+	}
- 	d.mw.Println("webusb - rw - start")
- 	for {
- 		d.mw.Println("webusb - rw - checking closed")
-@@ -291,7 +304,7 @@ func (d *WUD) readWrite(buf []byte, endpoint uint8) (int, error) {
- 		d.mw.Println("webusb - rw - lock transfer mutex")
- 		d.transferMutex.Lock()
- 		d.mw.Println("webusb - rw - actual interrupt transport")
--		p, err := lowlevel.Interrupt_Transfer(d.dev, endpoint, buf, usbTimeout)
-+		p, err := lowlevel.Interrupt_Transfer(d.dev, endpoint, buf, timeout)
- 		d.transferMutex.Unlock()
- 		d.mw.Println("webusb - rw - single transfer done")
- 
