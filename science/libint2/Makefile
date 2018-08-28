@@ -1,11 +1,12 @@
 # Created by: NAKATA, Maho <maho@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	libint2
+PORTNAME=	libint
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.0-beta.2-20
 DISTVERSIONSUFFIX=	-gc2e0a72
 CATEGORIES=	science
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Evaluate the integrals in modern atomic and molecular theory
@@ -21,15 +22,12 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 USES=		autoreconf:build compiler:c++11-lang gmake libtool localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	evaleev
-GH_PROJECT=	${PORTNAME:S/2//}
 USE_LDCONFIG=	yes
 ALL_TARGET=	default
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static --with-cc-optflags="${CFLAGS}" \
 		--with-cxx-optflags="${CXXFLAGS}"
-
-DATADIR=	${PREFIX}/share/${PORTNAME:S/2//}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -rpath|${LDFLAGS} -rpath|g' \
