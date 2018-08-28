@@ -519,6 +519,7 @@
     SUBDIR += nettest
     SUBDIR += netwib
     SUBDIR += neubot
+    SUBDIR += nfs-ganesha-kmod
     SUBDIR += nfsshell
     SUBDIR += ng_mikrotik_eoip
     SUBDIR += ngrep
