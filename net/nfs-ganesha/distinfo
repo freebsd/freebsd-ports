@@ -1,0 +1,5 @@
+TIMESTAMP = 1534776761
+SHA256 (nfs-ganesha-nfs-ganesha-2.7.0-V2.7-rc1_GH0.tar.gz) = bcb7ae7f9a80e23c56164b8b69dd0be88dc9baa9945bbccb90895caa66d0f45f
+SIZE (nfs-ganesha-nfs-ganesha-2.7.0-V2.7-rc1_GH0.tar.gz) = 1690807
+SHA256 (nfs-ganesha-ntirpc-b69c2c1e353_GH0.tar.gz) = c035a974cdb49af610a451bc7527b5d3c7891cf54778cde0a76f5c135b422329
+SIZE (nfs-ganesha-ntirpc-b69c2c1e353_GH0.tar.gz) = 373146
