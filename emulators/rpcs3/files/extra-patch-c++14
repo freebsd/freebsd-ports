@@ -1,0 +1,104 @@
+Downgrade to C++14 as libc++ < 5 doesn't support std::byte
+
+--- Utilities/BEType.h.orig	2018-08-27 18:53:45 UTC
++++ Utilities/BEType.h
+@@ -334,10 +334,14 @@ inline v128 operator~(const v128& other)
+ template <typename T, std::size_t Align, std::size_t Size>
+ struct se_storage
+ {
++#if __cplusplus < 201703L
++	using type = std::aligned_storage_t<Size, Align>;
++#else
+ 	struct type
+ 	{
+ 		alignas(Align) std::byte data[Size];
+ 	};
++#endif
+ 
+ 	// Unoptimized generic byteswap for unaligned data
+ 	static void reverse(u8* dst, const u8* src)
+--- Utilities/types.h.orig	2018-08-27 18:53:45 UTC
++++ Utilities/types.h
+@@ -91,7 +91,11 @@ using steady_clock = std::conditional<
+ 
+ namespace gsl
+ {
++#if __cplusplus < 201703L
++	enum class byte : u8;
++#else
+ 	using std::byte;
++#endif
+ }
+ 
+ // Formatting helper, type-specific preprocessing for improving safety and functionality
+@@ -120,6 +124,8 @@ class atomic_t;
+ 
+ #if defined(__INTELLISENSE__) && !defined(_MSC_VER)
+ namespace std { template <typename...> using void_t = void; }
++#elif defined(_LIBCPP_VERSION) && __cplusplus < 201703L
++namespace std { template <class...> using void_t = void; }
+ #endif
+ 
+ // Extract T::simple_type if available, remove cv qualifiers
+@@ -770,7 +776,11 @@ struct value_hash
+ template <template <typename> class TT, std::size_t S, std::size_t A = S>
+ struct alignas(A) any_pod
+ {
++#if __cplusplus < 201703L
++	std::aligned_storage_t<S, A> data;
++#else
+ 	alignas(A) std::byte data[S];
++#endif
+ 
+ 	any_pod() = default;
+ 
+--- rpcs3/CMakeLists.txt.orig	2018-08-27 18:53:45 UTC
++++ rpcs3/CMakeLists.txt
+@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.1)
+ 
+ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
+ set(RES_FILES "")
+-set(CMAKE_CXX_STANDARD 17)
++set(CMAKE_CXX_STANDARD 14)
+ include(CheckCXXCompilerFlag)
+ 
+ # Qt section
+--- rpcs3/Emu/RSX/rsx_utils.h.orig	2018-08-27 18:53:45 UTC
++++ rpcs3/Emu/RSX/rsx_utils.h
+@@ -6,7 +6,19 @@
+ #include <atomic>
+ #include <memory>
+ #include <bitset>
++#if __cplusplus < 201703L
++#include <optional.hpp>
++#else
+ #include <optional>
++#endif
++
++#if __cplusplus < 201703L
++namespace std
++{
++	template<class T>
++	using optional = experimental::optional<T>;
++}
++#endif
+ 
+ extern "C"
+ {
+--- rpcs3/stdafx.h.orig	2018-08-27 18:53:45 UTC
++++ rpcs3/stdafx.h
+@@ -45,3 +45,14 @@ namespace std { inline namespace literals { inline nam
+ #include <algorithm>
+ 
+ using namespace std::literals;
++
++#if __cplusplus < 201703L
++namespace std
++{
++	template<typename T>
++	constexpr const T clamp(const T value, const T min, const T max)
++	{
++		return value < min ? min : value > max ? max : value;
++	}
++}
++#endif
