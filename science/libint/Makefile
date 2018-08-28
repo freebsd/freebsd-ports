@@ -4,6 +4,7 @@
 PORTNAME=	libint
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	1-2-1
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,8 +20,12 @@ USE_LDCONFIG=	yes
 ALL_TARGET=	default
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --disable-static --with-cc-optflags="${CFLAGS}" \
+CONFIGURE_ARGS=	--enable-shared --with-cc-optflags="${CFLAGS}" \
 		--with-cxx-optflags="${CXXFLAGS}"
+
+OPTIONS_DEFINE=			STATIC # osa@ requested to keep static libs on 2018/08/28
+OPTIONS_SUB=			yes
+STATIC_CONFIGURE_ENABLE=	static
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -rpath|${LDFLAGS} -rpath|g' \

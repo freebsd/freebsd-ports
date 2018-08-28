@@ -3,12 +3,15 @@ include/libint/hrr_header.h
 include/libint/libint.h
 include/libint/vrr_header.h
 include/libr12/libr12.h
+%%STATIC%%lib/libderiv.a
 lib/libderiv.so
 lib/libderiv.so.1
 lib/libderiv.so.1.0.0
+%%STATIC%%lib/libint.a
 lib/libint.so
 lib/libint.so.1
 lib/libint.so.1.0.0
+%%STATIC%%lib/libr12.a
 lib/libr12.so
 lib/libr12.so.1
 lib/libr12.so.1.0.0
