@@ -2,7 +2,7 @@
 
 PORTNAME=	mod_pagespeed
 PORTVERSION=	1.12.34.2
-PORTREVISION=	13
+PORTREVISION=	14
 PORTEPOCH=	1
 CATEGORIES=	www devel
 MASTER_SITES=	LOCAL/mmokhi:boringssl,chromium_base,chromium_build,googleurl,gflags_arch,gflags_src,libjpeg_turbo_src,yasm_patched,libwebp,modpb64 \
@@ -102,30 +102,30 @@ EXTRACT_ONLY:=	${EXTRACT_ONLY} ${DISTFILE_${_group}}:${_group}
 #grpc changed from objective-c-v1.0.0-pre1-254-g2a69139aa7 to v1.6.0
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	pagespeed
-GH_TUPLE=	pagespeed:mod_pagespeed:a5cfe15:maindist \
+GH_TUPLE=	apache:incubator-pagespeed-mod:a5cfe15:maindist \
 		google:googlemock:release-1.7.0:gmock/testing/gmock \
 		google:googletest:release-1.7.0:gtest/testing/gtest \
 		apache:apr:1.5.1:apr/third_party/apr/src \
 		apache:apr-util:1.5.4:aprutil/third_party/aprutil/src \
 		google:brotli:v0.4.0-89-g882f418:brotli/third_party/brotli/src \
 		google:closure-library:v20161024:closurelib/third_party/closure_library \
-		pagespeed:domain-registry-provider:e9b72ea:domain_registry_provider/third_party/domain_registry_provider \
+		apache:incubator-pagespeed-drp:e9b72ea:domain_registry_provider/third_party/domain_registry_provider \
 		pagespeed:giflib:99deb45:giflib/third_party/giflib \
 		google:sparsehash:sparsehash-1.7:sparsehash/third_party/google-sparsehash/src \
 		grpc:grpc:objective-c-v1.0.0-pre1-254-g2a69139aa7:grpc/third_party/grpc/src \
 		redis:hiredis:v0.13.3:hiredis/third_party/hiredis/src \
 		apache:httpd:2.2.29:httpd/third_party/httpd/src \
 		apache:httpd:2.4.10:httpd24/third_party/httpd24/src \
-		pagespeed:icu:1b32282:icu/third_party/icu \
+		apache:incubator-pagespeed-icu:1b32282:icu/third_party/icu \
 		open-source-parsers:jsoncpp:1.0.0:jsoncpp/third_party/jsoncpp/src \
 		glennrp:libpng:libpng-1.2.56-signed:libpng/third_party/libpng/src \
 		pagespeed:mod_fcgid:c63f176:mod__fcgid/third_party/mod_fcgid \
 		nghttp2:nghttp2:v1.16.0-24-gf4474d57:nghttp2/third_party/nghttp2 \
-		pagespeed:optipng:e9a5bd6:optipng/third_party/optipng \
+		apache:incubator-pagespeed-optipng:e9a5bd6:optipng/third_party/optipng \
 		google:protobuf:v3.0.0-beta-4-74-ge8ae137c:protobuf/third_party/protobuf/src \
 		google:re2:2016-09-01:re2/third_party/re2/src \
 		apache:serf:1.3.8:serf/third_party/serf/src \
-		pagespeed:zlib:1f93ffd:zlib/third_party/zlib \
+		apache:incubator-pagespeed-zlib:1f93ffd:zlib/third_party/zlib \
 		nanopb:nanopb:f8ac463:grpcnanopb/third_party/grpc/src/third_party/nanopb
 
 post-extract:
@@ -133,10 +133,10 @@ post-extract:
 	DGROUP=${_D:S/^${_D:C/:[^:]+$//}//:S/^://}
 	DFILE=${_D:C/:[^-:][^:]*$//}
 	${MKDIR} ${WRKSRC_${_D:S/^${_D:C/:[^:]+$//}//:S/^://}} && cd ${EXTRACT_WRKDIR} && \
-	    ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${_D:C/:[^-:][^:]*$//} \
+	    ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_SUBDIR}/${_D:C/:[^-:][^:]*$//} \
 	    ${EXTRACT_AFTER_ARGS} -C ${WRKSRC_${_D:S/^${_D:C/:[^:]+$//}//:S/^://}}
 .	endfor
-	${CP} ${DISTDIR}/compiler-${CLR_VERSION}.zip ${WRKSRC_closurezip}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/compiler-${CLR_VERSION}.zip ${WRKSRC_closurezip}
 
 post-patch:
 	( cd ${BUILD_WRKSRC}/third_party/google-sparsehash/gen/arch && \
