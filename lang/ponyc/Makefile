@@ -2,6 +2,7 @@
 
 PORTNAME=	ponyc
 DISTVERSION=	0.24.4
+PORTREVISION=	1
 CATEGORIES=	lang
 
 MAINTAINER=	greg@unrelenting.technology
@@ -31,6 +32,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ponylang
 
 PORTDOCS=	*.md
+
+.include <bsd.port.options.mk>
 
 MAKE_ENV=	prefix=${PREFIX} verbose=true arch=${PONYARCH}
 
