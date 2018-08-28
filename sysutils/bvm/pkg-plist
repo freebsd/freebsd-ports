@@ -4,3 +4,4 @@ bin/bvmb
 @sample %%ETCDIR%%/nat.conf.sample
 @sample %%ETCDIR%%/switch.conf.sample
 etc/rc.d/bvmd
+man/man8/bvm.8.gz
