@@ -423,10 +423,6 @@ PLIST_SUB+=	        PORTEXAMPLES="@comment "
 PLIST_SUB+=	        PORTEXAMPLES=""
 .endif
 
-.if ${PORT_OPTIONS:MDEBUG}
-WITH_DEBUG=	yes
-.endif
-
 .if defined(NO_OPTIONS_SORT)
 ALL_OPTIONS=	${OPTIONS_DEFINE}
 .endif
