@@ -4,7 +4,7 @@
 PORTNAME=	gzrecover
 PORTVERSION=	0.8
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.urbanophile.com/arenn/hacking/gzrt/ \
+MASTER_SITES=	https://www.urbanophile.com/arenn/hacking/gzrt/ \
 		LOCAL/ehaupt
 DISTNAME=	gzrt-${PORTVERSION}
 

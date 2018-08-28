@@ -13,4 +13,4 @@ bzip2 library as a backend (for handling the short-range compression), but it
 makes sense when you realise that rzip has usually reduced the data a fair bit
 before handing it to bzip2, so bzip2 has to do less work.
 
-WWW: http://rzip.samba.org/
+WWW: https://rzip.samba.org/
