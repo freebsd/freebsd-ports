@@ -22,6 +22,7 @@ NO_BUILD=	yes
 USES=		cpe linux tar:bzip2
 USE_LINUX=	alsalib alsa-plugins-oss dri expat fontconfig libasyncns \
 		libsigcpp20 xorglibs
+BROKEN=		uses non existing libsigcpp20
 RESTRICTED=	Redistribution prohibited.
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_static-${DISTVERSION}
