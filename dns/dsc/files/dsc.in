@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: dsc
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+# Add the following lines to
+# /etc/rc.conf.d/dsc /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# dsc_enable (bool):			Set to NO by default.
+#		Set it to YES to enable dsc.
+# dsc_config (path):			Set to %%PREFIX%%/etc/dsc/dsc.conf
+#		by default.
+# dsc_pidfile (path):			Set to /var/run/dsc.pid
+#		by default (must match pid_file setting in dsc.conf).
+# dsc_flags (additional arguments):	Set to -p (don't use promiscuous mode)
+#		by default.
+#
+
+. /etc/rc.subr
+
+name="dsc"
+rcvar=dsc_enable
+
+command=%%PREFIX%%/bin/${name}
+
+load_rc_config $name
+
+: ${dsc_enable="NO"}
+: ${dsc_config="%%PREFIX%%/etc/${name}/${name}.conf"}
+: ${dsc_pidfile="/var/run/${name}.pid"}
+: ${dsc_flags="-p"}
+
+required_files="${dsc_config}"
+pidfile="${dsc_pidfile}"
+command_args="${dsc_config}"
+
+run_rc_command "$1"

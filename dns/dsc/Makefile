@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsc
-PORTVERSION=	2.6.1
+PORTVERSION=	2.7.0
 CATEGORIES=	dns
 MASTER_SITES=	https://www.dns-oarc.net/files/dsc/ \
 		https://dns.company/files/dsc/
@@ -19,10 +19,12 @@ RUN_DEPENDS=	libpcap>=1.8.1:net/libpcap			\
 		p5-XML-Simple>=2.24:textproc/p5-XML-Simple	\
 		dsp>=2.0.0:dns/dsp
 
-
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+= --with-extra-cflags=-I${PREFIX}/include
 USES=		gmake perl5 shebangfix
 
 SUB_FILES=	pkg-message
+
+USE_RC_SUBR=    dsc
 
 .include <bsd.port.mk>
