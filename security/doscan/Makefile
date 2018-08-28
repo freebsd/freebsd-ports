@@ -17,6 +17,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 
 GNU_CONFIGURE=	yes
 USES=		gmake
+USE_CXXSTD=	gnu++98
 
 PORTDOCS=	README
 PLIST_FILES=	bin/doscan man/man1/doscan.1.gz
