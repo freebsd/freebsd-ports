@@ -29,6 +29,7 @@
 
 name=get_iplayer
 rcvar=get_iplayer_enable
+desc="Server for fetching programs from iplayer and PVR functionality"
 
 load_rc_config $name
 
