@@ -9,7 +9,6 @@ lib/rsyslog/impstats.so
 lib/rsyslog/imtcp.so
 lib/rsyslog/imudp.so
 lib/rsyslog/imuxsock.so
-%%GCRYPT%%lib/rsyslog/lmcry_gcry.so
 lib/rsyslog/lmnet.so
 lib/rsyslog/lmnetstrms.so
 lib/rsyslog/lmnsd_ptcp.so
