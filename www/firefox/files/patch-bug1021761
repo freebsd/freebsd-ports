@@ -615,14 +615,14 @@ diff --git build/moz.configure/old.configure build/moz.configure/old.configure
 index 17d0c5bf3420..3e6dbc16ca14 100644
 --- build/moz.configure/old.configure
 +++ build/moz.configure/old.configure
-@@ -262,6 +262,7 @@ def old_configure_options(*options):
+@@ -259,6 +259,7 @@ def old_configure_options(*options):
      '--with-nspr-prefix',
      '--with-nss-exec-prefix',
      '--with-nss-prefix',
 +    '--with-oss',
-     '--with-pthreads',
      '--with-qemu-exe',
      '--with-sixgill',
+     '--with-soft-float',
 diff --git dom/media/CubebUtils.cpp dom/media/CubebUtils.cpp
 index 88063ed3a4d6..8613f86dbd16 100644
 --- dom/media/CubebUtils.cpp
