@@ -2,4 +2,4 @@ Unzoo is a zoo archive extractor written by Martin Schoenert. If unzoo is
 called with no arguments, it will first print a summary of the commands and
 then prompt for command lines interactively.
 
-WWW: http://freecode.com/projects/unzoo/
+WWW: http://freshmeat.sourceforge.net/projects/unzoo/

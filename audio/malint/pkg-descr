@@ -4,4 +4,4 @@ prints information about the stream and format violations it finds.
 Many of the checks (and information outputs) can be enabled or disabled via
 command line switches.
 
-WWW: http://www.nih.at/malint/
+WWW: https://www.nih.at/malint/
