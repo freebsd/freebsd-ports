@@ -1,11 +1,31 @@
 Installing this port will allow host startup to update the CPU microcode on 
-a FreeBSD system automatically.  In order to enable this feature, add the
-following to the system's /etc/rc.conf:
+a FreeBSD system automatically.  There are two methods for updating CPU
+microcode: the first methods loads and applies the update before the kernel
+begins booting, and the second method loads and applies updates using an
+rc script.  The first method is preferred, but is currently only supported
+on Intel i386 and amd64 processors running FreeBSD 12.0.  It is safe to
+enable both methods.
+
+The first method ensures that any CPU features introduced by a microcode
+update are visible to the kernel.  In other words, the update is loaded
+before the kernel performs CPU feature detection.
+
+To enable updates using the first method, add the following lines to
+the system's /boot/loader.conf:
+
+cpu_microcode_load="YES"
+cpu_microcode_name="/boot/firmware/intel-ucode.bin"
+
+This method will not load the microcode update until the system is
+rebooted.
+
+To enable updates using the second method, add the following line to
+the system's /etc/rc.conf:
 
 microcode_update_enable="YES"
 
-To ensure the update is applied, reboot the system or start the microcode update
-service via:
+Then, to ensure the update is applied, reboot the system or start the
+microcode update service via:
 
 # service microcode_update start
 
