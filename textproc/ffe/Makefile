@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ffe
-DISTVERSION=	0.3.7-1
+DISTVERSION=	0.3.8
 CATEGORIES=	textproc
 MASTER_SITES=	SF/ff-extractor/ff-extractor/${DISTVERSION}
 
@@ -12,21 +12,17 @@ COMMENT=	Flat file extractor
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_mips=		fails to compile: unrecognized command line option "-Wmaybe-uninitialized"
-BROKEN_mips64=		fails to compile: unrecognized command line option "-Wmaybe-uninitialized"
 BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Wmaybe-uninitialized"
-
-LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
-		libgpg-error.so:security/libgpg-error
 
 USES=		makeinfo localbase
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_func_setmode=no # looks for wrong kind of setmode()
 
 INFO=		ffe
 PORTDOCS=	ffe.html
 PLIST_FILES=	bin/ffe man/man1/ffe.1.gz
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		DOCS GCRYPT
+GCRYPT_CONFIGURE_WITH=	libgcrypt-prefix="${LOCALBASE}"
+GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
 .include <bsd.port.mk>
