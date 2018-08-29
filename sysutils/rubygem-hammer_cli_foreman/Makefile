@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hammer_cli_foreman
-PORTVERSION=	0.13.2
+PORTVERSION=	0.14.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
