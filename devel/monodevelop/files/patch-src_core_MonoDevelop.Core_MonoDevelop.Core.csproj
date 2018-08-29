@@ -1,4 +1,4 @@
---- src/core/MonoDevelop.Core/MonoDevelop.Core.csproj.orig	2018-06-14 19:17:36 UTC
+--- src/core/MonoDevelop.Core/MonoDevelop.Core.csproj.orig	2018-08-20 11:35:04 UTC
 +++ src/core/MonoDevelop.Core/MonoDevelop.Core.csproj
 @@ -809,9 +809,6 @@
    </ItemGroup>
@@ -6,7 +6,7 @@
    <Target Name="BeforeBuild" Inputs="BuildVariables.cs.in; $(MSBuildProjectDirectory)\..\..\..\..\version.config" Outputs="BuildVariables.cs" Condition="Exists('$(MSBuildProjectDirectory)\..\..\..\..\version.config')">
 -    <MakeDir Directories="$(FullBuildInfo)" />
 -    <Csc Sources="$(ConfigureScript)" OutputAssembly="$(ConfigureScriptExe)" ToolExe="$(CscToolExe)" ToolPath="$(CscToolPath)" Condition="!Exists('$(ConfigureScriptExe)')" />
--    <Exec Command="$(MonoLauncher)$(ConfigureScriptExe) gen-buildinfo $(FullBuildInfo)" WorkingDirectory="$(MSBuildProjectDirectory)" />
+-    <Exec Command="$(MonoLauncher)&quot;$(ConfigureScriptExe)&quot; gen-buildinfo $(FullBuildInfo)" WorkingDirectory="$(MSBuildProjectDirectory)" />
      <Csc Sources="BuildVariables.gen.cs" OutputAssembly="BuildVariables.gen.exe" ToolExe="$(CscToolExe)" ToolPath="$(CscToolPath)" />
-     <Exec Command="$(MonoLauncher)$(MSBuildProjectDirectory)\BuildVariables.gen.exe ." WorkingDirectory="$(MSBuildProjectDirectory)" />
+     <Exec Command="$(MonoLauncher)&quot;$(MSBuildProjectDirectory)\BuildVariables.gen.exe&quot; ." WorkingDirectory="$(MSBuildProjectDirectory)" />
      <Delete Files="BuildVariables.gen.exe" />

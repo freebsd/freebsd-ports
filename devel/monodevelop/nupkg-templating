@@ -1,9 +1,6 @@
 Microsoft.DotNet.Common.ProjectTemplates.1.x=1.0.0-beta2-20170430-208
-Microsoft.DotNet.Common.ProjectTemplates.2.0=1.0.0-beta2-20170727-301
 Microsoft.DotNet.Test.ProjectTemplates.1.x=1.0.0-beta2-20170430-208
-Microsoft.DotNet.Test.ProjectTemplates.2.0=1.0.0-beta2-20170727-301
 Microsoft.DotNet.Web.ProjectTemplates.1.x=1.0.0-beta2-20170430-208
-Microsoft.DotNet.Web.ProjectTemplates.2.0=1.0.0-beta2-20170727-301
 Microsoft.TemplateEngine.Abstractions=1.0.0-beta3-20171117-314
 Microsoft.TemplateEngine.Core.Contracts=1.0.0-beta3-20171117-314
 Microsoft.TemplateEngine.Core=1.0.0-beta3-20171117-314
