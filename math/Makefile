@@ -180,6 +180,7 @@
     SUBDIR += eigen2
     SUBDIR += eigen3
     SUBDIR += eispack
+    SUBDIR += elpa
     SUBDIR += emc2
     SUBDIR += ent
     SUBDIR += entropy
