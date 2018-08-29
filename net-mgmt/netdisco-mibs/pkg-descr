@@ -1,1 +1,6 @@
-Mibs for use with netdisco and SNMP in general
+Netdisco - MIB Repository
+Originally by Max Baker, 2004
+
+This is a workable set of SNMP MIBs to use with Netdisco and other network
+managment tools. All glitches have been painstakingly fixed up to parse
+correctly under the latest release of net-snmp.
