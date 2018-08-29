@@ -14376,12 +14376,12 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/mars/grib.edmo.cl.def
 %%DATADIR%%/definitions/mars/grib.edmo.fc.def
 %%DATADIR%%/definitions/mars/grib.edmo.ssd.def
-%%DATADIR%%/definitions/mars/grib.efas.an.def
 %%DATADIR%%/definitions/mars/grib.efas.cf.def
 %%DATADIR%%/definitions/mars/grib.efas.fc.def
 %%DATADIR%%/definitions/mars/grib.efas.fu.def
 %%DATADIR%%/definitions/mars/grib.efas.go.def
 %%DATADIR%%/definitions/mars/grib.efas.pf.def
+%%DATADIR%%/definitions/mars/grib.efas.sfo.def
 %%DATADIR%%/definitions/mars/grib.efhc.cf.def
 %%DATADIR%%/definitions/mars/grib.efhc.icp.def
 %%DATADIR%%/definitions/mars/grib.efhc.pf.def
