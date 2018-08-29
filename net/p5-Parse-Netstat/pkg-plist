@@ -1,0 +1,12 @@
+%%PERL5_MAN3%%/Parse::Netstat::darwin.3.gz
+%%PERL5_MAN3%%/Parse::Netstat::freebsd.3.gz
+%%PERL5_MAN3%%/Parse::Netstat::linux.3.gz
+%%PERL5_MAN3%%/Parse::Netstat::solaris.3.gz
+%%PERL5_MAN3%%/Parse::Netstat::win32.3.gz
+%%PERL5_MAN3%%/Parse::Netstat.3.gz
+%%SITE_PERL%%/Parse/Netstat.pm
+%%SITE_PERL%%/Parse/Netstat/darwin.pm
+%%SITE_PERL%%/Parse/Netstat/freebsd.pm
+%%SITE_PERL%%/Parse/Netstat/linux.pm
+%%SITE_PERL%%/Parse/Netstat/solaris.pm
+%%SITE_PERL%%/Parse/Netstat/win32.pm
