@@ -1,13 +1,10 @@
-Mantis is a web-based bugtracking system. It is in active development
-and is no longer considered beta.
+MantisBT is a web based open source issue tracker that provides a
+delicate balance between simplicity and power.  Users are able to
+get started in minutes and start managing their projects while
+collaborating with their teammates and clients effectively.
 
-It is written in the PHP scripting language and requires the MySQL
-database and a webserver. Mantis has been installed on Windows,
-MacOS, OS/2, and a variety of Unix operating systems. Any web browser
-should be able to function as a client. It is released under the
-terms of the GNU General Public License (GPL).
-
-Mantis is free to use and modify. It is free to redistribute as
-long as you abide by the distribution terms of the GPL.
+It is written in the PHP scripting language and works with the MySQL
+(or one of its forks), and PostgreSQL databases and a web server.
+Almost any web browser should be able to function as a client.
 
 WWW: http://www.mantisbt.org/
