@@ -20,6 +20,6 @@ USE_RC_SUBR=	${KMODNAME}
 
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/${KMODNAME}.ko ${STAGEDIR}${KMODDIR}
-	${INSTALL_MAN} ${WRKSRC}/gpioshutdown.4 ${STAGEDIR}${LOCALBASE}/man/man4/
+	${INSTALL_MAN} ${WRKSRC}/gpioshutdown.4 ${STAGEDIR}${PREFIX}/man/man4/
 
 .include <bsd.port.mk>
