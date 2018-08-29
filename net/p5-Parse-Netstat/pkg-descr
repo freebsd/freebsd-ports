@@ -1,0 +1,3 @@
+Parses the output from netstat, returning a easy to use hash.
+
+WWW: https://metacpan.org/release/Parse-Netstat
