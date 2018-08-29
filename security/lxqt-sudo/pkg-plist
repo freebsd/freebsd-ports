@@ -1,0 +1,6 @@
+bin/lxqt-sudo
+bin/lxsu
+bin/lxsudo
+man/man1/lxqt-sudo.1.gz
+man/man1/lxsu.1.gz
+man/man1/lxsudo.1.gz
