@@ -1,6 +1,6 @@
---- deps/openssl/config/archs/linux-elf/no-asm/openssl.gypi.orig	2018-05-11 11:01:19 UTC
+--- deps/openssl/config/archs/linux-elf/no-asm/openssl.gypi.orig	2018-08-15 13:53:23 UTC
 +++ deps/openssl/config/archs/linux-elf/no-asm/openssl.gypi
-@@ -652,10 +652,10 @@
+@@ -654,10 +654,10 @@
        'OPENSSL_PIC',
      ],
      'openssl_cflags_linux-elf': [

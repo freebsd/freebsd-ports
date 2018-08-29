@@ -1,6 +1,6 @@
---- deps/v8/src/base/platform/platform-freebsd.cc.orig	2018-04-23 19:19:12 UTC
+--- deps/v8/src/base/platform/platform-freebsd.cc.orig	2018-08-15 13:53:24 UTC
 +++ deps/v8/src/base/platform/platform-freebsd.cc
-@@ -86,5 +86,47 @@ std::vector<OS::SharedLibraryAddress> OS::GetSharedLib
+@@ -86,5 +86,47 @@ std::vector<OS::SharedLibraryAddress> OS
  
  void OS::SignalCodeMovingGC() {}
  
