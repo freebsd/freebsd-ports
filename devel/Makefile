@@ -4845,6 +4845,7 @@
     SUBDIR += py-ply
     SUBDIR += py-podcastparser
     SUBDIR += py-polib
+    SUBDIR += py-pooch
     SUBDIR += py-positional
     SUBDIR += py-posix_ipc
     SUBDIR += py-pp
