@@ -1,0 +1,129 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE:  gpioshutdown
+# REQUIRE:  syslogd
+# BEFORE:   LOGIN
+# KEYWORD:  shutdown
+
+. /etc/rc.subr
+
+name="gpioshutdown"
+start_cmd=${name}_start
+unload_cmd=${name}_unload
+reload_cmd=${name}_reload
+stop_cmd=${name}_stop
+rcvar=${name}_enable
+extra_commands="unload reload"
+
+## Set defaults
+
+load_rc_config $name
+: ${gpioshutdown_enable:="NO"}
+: ${gpioshutdown_led_pin:="auto"}
+: ${gpioshutdown_led_pin_set:="1"}
+
+
+gpioshutdown_get_led_pin()
+{
+  if test "${gpioshutdown_led_pin}" == "auto" ; then
+    if test -e /dev/led/pwr -o -e /dev/led/PWR ; then
+      __led_pin=`ofwdump -P gpios /leds/pwr | grep -v "gpios:" | grep -v "Node" | \
+                 awk 'function hexdigit(x) { xx = index("0123456789ABCDEF",toupper(x)) - 1; return xx; }
+                      function hexval(x) { return hexdigit(substr(x,1,1)) * 16 + hexdigit(substr(x,2,1)); }
+                      { print hexval($5) * 65536 * 256 + hexval($6) * 65536 + hexval($7) * 256 + hexval($8); }'`
+      __led_pin_set="1"
+    elif test -e /dev/led/ok -o -e /dev/led/OK ; then
+      __led_pin=`ofwdump -P gpios /leds/ok | grep -v "gpios:" | grep -v "Node" | \
+                 awk 'function hexdigit(x) { xx = index("0123456789ABCDEF",toupper(x)) - 1; return xx; }
+                      function hexval(x) { return hexdigit(substr(x,1,1)) * 16 + hexdigit(substr(x,2,1)); }
+                      { print hexval($5) * 65536 * 256 + hexval($6) * 65536 + hexval($7) * 256 + hexval($8); }'`
+      __led_pin_set="0"
+    else
+      __led_pin=""
+      __led_pin_set=""
+    fi
+  else
+    if test -z "${gpioshutdown_led_pin}" ; then
+      __led_pin=""
+      __led_pin_set=""
+    else
+      __led_pin=`expr "${gpioshutdown_led_pin}" + 0`
+      __led_pin_set=`expr "${gpioshutdown_led_pin_set}" + 0`
+    fi
+  fi
+
+  if test -z "$__led_pin" ; then
+    echo ""
+  else
+    echo "$__led_pin $__led_pin_set"
+  fi
+}
+
+gpioshutdown_enable_led_pin()
+{
+  led_pin="$1"
+  led_pin_set="$2"
+
+  sysctl kern.gpioshutdown.led_gpio=${led_pin}
+  sysctl kern.gpioshutdown.led_gpio_set=${led_pin_set}
+
+  gpioctl -c ${led_pin} OUT
+  gpioctl ${led_pin} ${led_pin_set}
+}
+
+gpioshutdown_start()
+{
+  if ( kldstat -q -m gpioshutdown ) ; then
+    echo "gpioshutdown installed" ;
+  else
+    echo "installing gpioshutdown"
+    kldload gpioshutdown.ko
+  fi
+
+  led_pin=`gpioshutdown_get_led_pin`
+
+  if test -n "$led_pin" ; then
+    gpioshutdown_enable_led_pin ${led_pin}
+  fi
+}
+
+# 'stop' assumes system shutdown and does NOT
+gpioshutdown_stop()
+{
+  echo "gpioshutdown - system shutdown"
+  echo "(kernel module NOT unloading; use 'unload' if you want to unload it)"
+}
+
+gpioshutdown_unload()
+{
+  led_pin=`sysctl kern.gpioshutdown.led_gpio | awk '{ print $2; }'`
+
+  if test -n "$led_pin" ; then
+    # disable the pin [this is a 'safe mode' way of doing it]
+    sysctl kern.gpioshutdown.led_gpio=-1
+
+    # LED was enabled - turn it back into an input
+    if test -n "$led_pin" ; then
+      if test "$led_pin" -ge 0 ; then
+        gpioctl -c ${led_pin} IN
+      fi
+    fi
+  fi
+
+  if ( kldstat -q -m gpioshutdown ) ; then
+    echo "unloading gpioshutdown" ;
+    kldunload gpioshutdown
+  else
+    echo "gpioshutdown module not loaded"
+  fi
+}
+
+gpioshutdown_reload()
+{
+  gpioshutdown_unload
+  gpioshutdown_start
+}
+
+run_rc_command "$1"

@@ -1,0 +1,20 @@
+raspberrypi-gpioshutdown kernel module:
+
+This port installs a startup script in your ${LOCALBASE} etc/rc.d directory
+called 'gpioshutdown'.
+
+Once installed, either load the kernel module at boot time (using
+/boot/loader.conf) or by adding the following entry to the /etc/rc.conf file
+(recommended) by running this command:
+
+    sysrc gpioshutdown_enable="YES"
+
+Or, you can simply load the module using the 'rc' system, by adding this
+line to /etc/rc.conf instead:
+
+    kld_list=gpioshutdown
+
+If you have other modules in 'kld_list' just add 'gpioshutdown' to the end of
+that list.
+
+For more detailed information, type 'man 4 gpioshutdown'.
