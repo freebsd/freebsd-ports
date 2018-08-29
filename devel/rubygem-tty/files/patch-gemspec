@@ -1,6 +1,6 @@
---- tty.gemspec.orig	2018-08-06 18:33:23 UTC
+--- tty.gemspec.orig	2018-08-28 18:56:29 UTC
 +++ tty.gemspec
-@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
+@@ -27,15 +27,15 @@ Gem::Specification.new do |s|
        s.add_runtime_dependency(%q<tty-color>.freeze, ["~> 0.4.2"])
        s.add_runtime_dependency(%q<tty-command>.freeze, ["~> 0.8.0"])
        s.add_runtime_dependency(%q<tty-config>.freeze, ["~> 0.2.0"])
@@ -9,11 +9,12 @@
        s.add_runtime_dependency(%q<tty-editor>.freeze, ["~> 0.4.0"])
        s.add_runtime_dependency(%q<tty-file>.freeze, ["~> 0.6.0"])
        s.add_runtime_dependency(%q<tty-font>.freeze, ["~> 0.2.0"])
-@@ -35,7 +35,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<tty-markdown>.freeze, ["~> 0.4.0"])
        s.add_runtime_dependency(%q<tty-pager>.freeze, ["~> 0.11.0"])
        s.add_runtime_dependency(%q<tty-platform>.freeze, ["~> 0.1.0"])
-       s.add_runtime_dependency(%q<tty-progressbar>.freeze, ["~> 0.15.0"])
+-      s.add_runtime_dependency(%q<tty-progressbar>.freeze, ["~> 0.15.0"])
 -      s.add_runtime_dependency(%q<tty-prompt>.freeze, ["~> 0.16.1"])
++      s.add_runtime_dependency(%q<tty-progressbar>.freeze, ["~> 0.15"])
 +      s.add_runtime_dependency(%q<tty-prompt>.freeze, ["~> 0.16", ">= 0.16.1"])
        s.add_runtime_dependency(%q<tty-screen>.freeze, ["~> 0.6.4"])
        s.add_runtime_dependency(%q<tty-spinner>.freeze, ["~> 0.8.0"])
