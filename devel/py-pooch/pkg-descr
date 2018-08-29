@@ -1,0 +1,5 @@
+Pooch manages your Python library's sample data files: it automatically
+downloads and stores them in a local directory, with support for versioning and
+corruption checks.
+
+WWW: https://github.com/fatiando/pooch
