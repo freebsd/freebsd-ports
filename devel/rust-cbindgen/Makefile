@@ -2,7 +2,7 @@
 
 PORTNAME=	cbindgen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.2
+DISTVERSION=	0.6.3
 CATEGORIES=	devel
 PKGNAMEPREFIX=	rust-
 
@@ -23,17 +23,18 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		bitflags-1.0.3 \
 		cfg-if-0.1.3 \
 		clap-2.31.2 \
+		cloudabi-0.0.3 \
 		dtoa-0.4.2 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		itoa-0.4.1 \
 		libc-0.2.41 \
-		log-0.3.9 \
 		log-0.4.1 \
 		proc-macro2-0.4.4 \
 		quote-0.3.15 \
 		quote-0.6.3 \
-		rand-0.4.2 \
+		rand-0.5.5 \
+		rand_core-0.2.1 \
 		redox_syscall-0.1.40 \
 		redox_termios-0.1.1 \
 		remove_dir_all-0.5.1 \
@@ -45,7 +46,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		syn-0.11.11 \
 		syn-0.14.1 \
 		synom-0.11.3 \
-		tempdir-0.3.7 \
+		tempfile-3.0.3 \
 		termion-1.5.1 \
 		textwrap-0.9.0 \
 		toml-0.4.6 \
