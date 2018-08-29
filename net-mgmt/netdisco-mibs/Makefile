@@ -2,23 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	netdisco-mibs
-PORTVERSION=	1.5
+DISTVERSION=	4.010
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF/netdisco/netdisco-mibs/${PORTVERSION}
 
 MAINTAINER=	dgeo@centrale-marseille.fr
-COMMENT=	Mibs for use with ports-mgmt/netdisco (and snmp)
+COMMENT=	MIBs for use with ports-mgmt/netdisco (and SNMP)
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	netdisco
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 
-.include "bsd.port.netdisco.mk"
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local/netdisco/mibs|${LOCALBASE}/share/netdisko-mibs|g' ${WRKSRC}/EXTRAS/contrib/snmp.conf
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|' ${WRKSRC}/EXTRAS/scripts/*/*
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
-.	for mibdir in ${MIBDIRS}
-		(cd ${STAGEDIR}${DATADIR}/${mibdir} && ${GREP} 'DEFINITIONS ::= BEGIN' *.* | ${SED} 's/\(.*\..*\):[[:space:]]*\(.*\) DEFINITIONS.*$$/\2 \1/' > .index)
-.	endfor
-	(cd ${STAGEDIR}${DATADIR} && ${CHMOD} 644 mib_index.txt && ${SH} ./mkindex)
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
+	${RM} ${STAGEDIR}${DATADIR}/robots.txt
 
 .include <bsd.port.mk>
