@@ -1,0 +1,2 @@
+* You must be in the sudoers file in order to use lxqt-sudo 
+* You must be in the the wheel group in order to use lxsu

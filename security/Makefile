@@ -400,6 +400,7 @@
     SUBDIR += logcheck
     SUBDIR += luasec
     SUBDIR += luasec-51
+    SUBDIR += lxqt-sudo
     SUBDIR += lynis
     SUBDIR += mac-robber
     SUBDIR += maia
