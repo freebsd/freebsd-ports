@@ -8,6 +8,9 @@ CATEGORIES=	graphics kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	SANE library interface for KDE
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libsane.so:graphics/sane-backends
 
 USES=		cmake:outsource kde:4 qt:4 tar:xz

@@ -13,6 +13,9 @@ COMMENT=	MPlayer-based thumbnail generator for video files
 
 LICENSE=	LGPL21
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 USES=		cmake:outsource kde:4 qt:4 tar:xz

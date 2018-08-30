@@ -8,6 +8,9 @@ CATEGORIES=	graphics kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Image viewer and browser for KDE 4
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libpng.so:graphics/png
 

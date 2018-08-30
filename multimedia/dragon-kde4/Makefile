@@ -9,6 +9,9 @@ CATEGORIES=	multimedia kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE multimedia player with a focus on simplicity
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LICENSE=	GPLv2
 
 USES=		cmake:outsource kde:4 qt:4 tar:xz

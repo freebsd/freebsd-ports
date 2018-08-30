@@ -12,6 +12,9 @@ COMMENT=	Collection manager for KDE
 
 LICENSE=	GPLv2
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libexempi.so:textproc/exempi \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \

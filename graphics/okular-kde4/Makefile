@@ -8,6 +8,9 @@ CATEGORIES=	graphics kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE 4 universal document viewer
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre \
 		libkscreen.so:graphics/libkscreen \
 		libqca.so:devel/qca@qt4 \

@@ -9,6 +9,9 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Strigi analyzers for various graphics file formats
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libtiff.so:graphics/tiff
 
 USES=		cmake:outsource kde:4 qt:4 tar:xz
