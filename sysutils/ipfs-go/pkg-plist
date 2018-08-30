@@ -1,0 +1,5 @@
+bin/ipfs-go
+@owner %%IPFS_USER%%
+@group %%IPFS_GROUP%%
+@dir %%IPFS_HOME%%
+@dir %%IPFS_LOGDIR%%
