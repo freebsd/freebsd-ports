@@ -214,6 +214,7 @@
     SUBDIR += observium
     SUBDIR += ocsinventory-agent
     SUBDIR += ocsinventory-ng
+    SUBDIR += ocsinventory-ocsreports
     SUBDIR += omping
     SUBDIR += onionlauncher
     SUBDIR += openbmp

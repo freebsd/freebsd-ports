@@ -1,0 +1,6 @@
+To configure ocsreports, you have to:
+* edit %%WWWDIR%%/dbconfig.php
+  (and maybe backend/require/cas.config.php in the same dir)
+* edit %%ETCDIR%%/ocsreports.conf and include it in an apache
+  virtualhost config
+

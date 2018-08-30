@@ -1,0 +1,96 @@
+Alias /ocsreports %%WWWDIR%%
+
+<Directory %%WWWDIR%%>
+	# By default, users can use console from everywhere
+	<IfModule mod_authz_core.c>
+		# Apache 2.4
+		Require all granted
+	</IfModule>
+	<IfModule !mod_authz_core.c>
+		Order deny,allow
+		Allow from all
+	</IfModule>
+	Options Indexes FollowSymLinks
+	DirectoryIndex index.php
+	AllowOverride Options
+	
+	# Uncomment following to force use of HTTPS in Administration Server
+	#SSLRequireSSL
+
+	# PHP tuning (not working on all distribution, use php.ini instead)
+	<IfModule mod_php5.c>
+		AddType application/x-httpd-php .php
+		php_flag file_uploads           on
+		# Some PHP tuning for deployment feature up to 8 MB
+		# post_max_size must be greater than upload_max_filesize
+		# because of HTTP headers 
+		php_value post_max_size         101m
+		php_value upload_max_filesize   100m
+		# You may have to uncomment following on errors
+		#php_value max_execution_time -1
+		#php_value max_input_time -1
+		
+		# Uncomment following if you need to specify a mysql socket
+		#php_value mysql.default_socket "path/to/mysql/unix/socket"
+		
+		#!! Mandatory !! : set magic_quotes_gpc to off (to make ocsreports works correctly)
+		php_flag magic_quotes_gpc      off
+	</IfModule>
+	# Duplicate for php7 compatibility
+	<IfModule mod_php7.c>
+		AddType application/x-httpd-php .php
+		php_flag file_uploads           on
+		# Some PHP tuning for deployment feature up to 8 MB
+		# post_max_size must be greater than upload_max_filesize
+		# because of HTTP headers 
+		php_value post_max_size         101m
+		php_value upload_max_filesize   100m
+		# You may have to uncomment following on errors
+		#php_value max_execution_time -1
+		#php_value max_input_time -1
+		
+		# Uncomment following if you need to specify a mysql socket
+		#php_value mysql.default_socket "path/to/mysql/unix/socket"
+		#!! Mandatory !! : set magic_quotes_gpc to off (to make ocsreports works correctly)
+		php_flag magic_quotes_gpc      off
+	</IfModule>
+	# Uncomment following to allow HTTP body request up to 4 MB
+	# instead default 512 KB
+	#LimitRequestBody 4194304
+</Directory>
+
+################################################################################
+# Deployment packages download area
+# 
+# Alias to put Deployment package files outside Apache document root directory
+#
+<Directory %%SHAREDIR%%/packages>
+   <IfModule mod_authz_core.c>
+     # Apache 2.4
+     Require all granted
+   </IfModule>
+   <IfModule !mod_authz_core.c>
+     Order deny,allow
+     Allow from all
+   </IfModule>
+</Directory>
+Alias /ocs/packages %%SHAREDIR%%/packages
+
+
+################################################################################
+# Snmp communities area
+#
+# Alias to put Snmp custom Mibs files outside Apache document root directory
+#
+<Directory %%SHAREDIR%%/snmp>
+   <IfModule mod_authz_core.c>
+     # Apache 2.4
+     Require all granted
+   </IfModule>
+   <IfModule !mod_authz_core.c>
+     Order deny,allow
+     Allow from all
+   </IfModule>
+</Directory>
+Alias /ocs/snmp %%SHAREDIR%%/snmp
+
