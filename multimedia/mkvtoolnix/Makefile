@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	25.0.0
-PORTREVISION=	1
+PORTVERSION=	26.0.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/
@@ -14,6 +13,8 @@ COMMENT=	Tools to extract from/get info about/create Matroska media streams
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_sparc64=	does not install
+
 BUILD_DEPENDS=	rake:devel/rubygem-rake \
 		docbook-xsl>=0:textproc/docbook-xsl \
 		xsltproc:textproc/libxslt
@@ -23,8 +24,6 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libboost_regex.so:devel/boost-libs \
 		libpugixml.so:textproc/pugixml \
 		libmatroska.so:multimedia/libmatroska
-
-BROKEN_sparc64=	does not install
 
 USES=		compiler:c++14-lang iconv localbase pkgconfig tar:xz
 GNU_CONFIGURE=	yes
