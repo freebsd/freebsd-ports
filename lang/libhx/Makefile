@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libHX
-PORTVERSION=	3.22
+PORTVERSION=	3.23
 CATEGORIES=	lang
-MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	C/C++ library with common data structures and functions
