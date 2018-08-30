@@ -11,6 +11,9 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE4 library for browsing photos on a map
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi
 

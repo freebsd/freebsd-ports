@@ -8,6 +8,9 @@ CATEGORIES=	comms kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE frontend for your remote controls
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 RUN_DEPENDS=	lircd:comms/lirc
 
 USES=		cmake:outsource kde:4 qt:4 tar:xz

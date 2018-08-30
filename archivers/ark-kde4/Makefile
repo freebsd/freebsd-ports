@@ -9,6 +9,9 @@ CATEGORIES=	archivers kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Archiving tool for KDE
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libqjson.so:devel/qjson@qt4
 
 LICENSE=	GPLv2+

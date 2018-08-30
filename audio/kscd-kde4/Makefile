@@ -11,6 +11,9 @@ COMMENT=	CD Player for KDE
 
 LICENSE=	GPLv2
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libdiscid.so:audio/libdiscid \
 		libmusicbrainz5.so:audio/libmusicbrainz5
 
