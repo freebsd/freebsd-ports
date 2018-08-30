@@ -22,10 +22,9 @@ OPTIONS_DEFINE?=	\
 	DEBUG \
 	IPV6 \
 	UNIXSOCK
-OPTIONS_DEFAULT?=IPV6 UNIXSOCK
+OPTIONS_DEFAULT?=UNIXSOCK
 
 DEBUG_DESC=	Enable debug logging
-IPV6_DESC=	Enable IPv6
 UNIXSOCK_DESC=	Enable unix sockets
 
 .include <bsd.port.options.mk>
