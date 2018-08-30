@@ -18,6 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.0:devel/py-pytest@${PY_FLAVOR}
 
 NO_ARCH=	yes
+USE_LOCALE=	en_US.UTF-8
 USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
