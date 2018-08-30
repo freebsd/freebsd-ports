@@ -1,0 +1,15 @@
+GNU LibreDWG is a C library to handle DWG files.  It aims to be a free
+replacement for the OpenDWG libraries.  DWG is the native file format
+of AutoCAD.
+
+LibreDWG was based on LibDWG (http://libdwg.sourceforge.net), which is
+written with variable names, documentation, and comments in Esperanto.
+
+There are also command line tools and libraries to read and write DWG
+files, with converters for various formats (DXF, DXFB, SVG, PS, JSON,
+XML, etc.) and a SaveAs functionality, to convert between the various
+DWG versions.  It can read r13-r2018 DWG, write r13-r2000 DWG, write
+r11-r2018 DXF ASCII and binary.  Much more object types than any other
+free DWG library.
+
+WWW: https://www.gnu.org/software/libredwg/

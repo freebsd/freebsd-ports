@@ -57,6 +57,7 @@
     SUBDIR += leocad
     SUBDIR += libopencad
     SUBDIR += librecad
+    SUBDIR += libredwg
     SUBDIR += linux-eagle5
     SUBDIR += linuxcnc-devel
     SUBDIR += logisim
