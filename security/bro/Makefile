@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bro
-PORTVERSION=	2.5.4
+PORTVERSION=	2.5.5
 CATEGORIES=	security
 MASTER_SITES=	https://www.bro.org/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
