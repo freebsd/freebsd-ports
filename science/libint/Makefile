@@ -13,6 +13,8 @@ COMMENT=	Evaluate the integrals in modern atomic and molecular theory
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+PORTSCOUT=	limit:^1
+
 USES=		autoreconf:build gmake libtool
 USE_GITHUB=	yes
 GH_ACCOUNT=	evaleev
