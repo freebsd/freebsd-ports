@@ -1,2 +1,11 @@
-SHA256 (meek-0.21.tar.gz) = 9b08e53b86f49dfc56e971c39948bf953bf2391d5e9e36852935e8174df6bf32
-SIZE (meek-0.21.tar.gz) = 37413
+TIMESTAMP = 1532381797
+SHA256 (meek-0.31.tar.gz) = 4d5c9bf5d7e7b4f54d32cf5b41e90db3c3c6d981296da1066b8e9574ab82c048
+SIZE (meek-0.31.tar.gz) = 43279
+SHA256 (goptlib-0.7.tar.gz) = 71f29f7bb7a989e23533bab6544879c7ca9370b695aba891c1e9c91a10ae5c02
+SIZE (goptlib-0.7.tar.gz) = 25835
+SHA256 (golang-crypto-c126467_GH0.tar.gz) = af4ccc970d8ad62b042a0dcfa54d00c3b059840e61cd9023b059f848964b7b17
+SIZE (golang-crypto-c126467_GH0.tar.gz) = 1624160
+SHA256 (golang-net-a680a1e_GH0.tar.gz) = 719c3242af47fce2893f8d31fc9b53204bc00048f35990e56f1513d8db6fbf1b
+SIZE (golang-net-a680a1e_GH0.tar.gz) = 963677
+SHA256 (golang-text-0605a83_GH0.tar.gz) = 1c1d738849344300ad1321ff2d7f81226570249ed82517247136d62766277ac1
+SIZE (golang-text-0605a83_GH0.tar.gz) = 6567793
