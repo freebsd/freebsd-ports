@@ -574,6 +574,7 @@ man/man8/bro.8.gz
 %%DATADIR%%/policy/misc/scan.bro
 %%DATADIR%%/policy/misc/stats.bro
 %%DATADIR%%/policy/misc/trim-trace-file.bro
+%%DATADIR%%/policy/misc/weird-stats.bro
 %%DATADIR%%/policy/protocols/conn/known-hosts.bro
 %%DATADIR%%/policy/protocols/conn/known-services.bro
 %%DATADIR%%/policy/protocols/conn/mac-logging.bro
