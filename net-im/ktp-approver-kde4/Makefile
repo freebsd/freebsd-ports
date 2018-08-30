@@ -10,6 +10,9 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE instant messaging notifier
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libtelepathy-qt4.so:net-im/telepathy-qt4 \
 		libktpcommoninternalsprivate.so:net-im/ktp-common-internals-kde4
 RUN_DEPENDS=	${KDE_PREFIX}/bin/ktp-contactlist:net-im/ktp-contact-list-kde4

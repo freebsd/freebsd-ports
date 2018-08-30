@@ -13,6 +13,9 @@ COMMENT=	FFmpeg-based thumbnail generator for video files
 
 LICENSE=	GPLv2
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libswscale.so:multimedia/ffmpeg
 
 USES=		cmake:outsource kde:4 pkgconfig qt:4 tar:xz

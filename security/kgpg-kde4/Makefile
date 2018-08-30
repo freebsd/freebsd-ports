@@ -9,6 +9,9 @@ CATEGORIES=	security kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Encryption tool for KDE
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 RUN_DEPENDS=	gpg2:security/gnupg
 
 USES=		cmake:outsource kde:4 qt:4 tar:xz

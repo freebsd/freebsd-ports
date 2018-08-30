@@ -8,6 +8,9 @@ CATEGORIES=	math kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE 4 interactive geometry application
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	${PY_BOOST}
 
 USES=		cmake:outsource compiler:c++11-lib kde:4 python:2.7,run \

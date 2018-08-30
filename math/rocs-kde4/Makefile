@@ -8,6 +8,9 @@ CATEGORIES=	math kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Graph theory IDE
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		cmake:outsource grantlee:4 kde:4 qt:4 tar:xz

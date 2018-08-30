@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Movie player based on mplayer
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 USES=		cmake gettext kde:4 qt:4 tar:bzip2

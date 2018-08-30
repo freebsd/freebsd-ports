@@ -8,6 +8,9 @@ CATEGORIES=	math kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE 4 frontend to mathematical software
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libspectre.so:print/libspectre \
 		libqalculate.so:math/libqalculate \
 		libanalitza.so:math/analitza-kde4

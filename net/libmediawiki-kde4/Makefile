@@ -9,6 +9,9 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE4 library for accessing MediaWiki sites
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 PORTSCOUT=	limit:^4\.12\.
 
 USES=		pathfix

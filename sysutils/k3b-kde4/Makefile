@@ -12,6 +12,9 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE CD/DVD writing suite
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libcdda_paranoia.so:audio/cdparanoia \
 		libsamplerate.so:audio/libsamplerate
 RUN_DEPENDS=	cdrecord:sysutils/cdrtools

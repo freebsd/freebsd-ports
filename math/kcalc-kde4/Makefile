@@ -8,6 +8,9 @@ CATEGORIES=	math kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Scientific calculator for KDE
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
 

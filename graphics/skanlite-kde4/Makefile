@@ -11,6 +11,9 @@ DIST_SUBDIR=	KDE/extragear
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Simple image scanning application for KDE4
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/src/COPYING
 

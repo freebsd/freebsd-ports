@@ -9,6 +9,9 @@ CATEGORIES=	graphics kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	LibRaw interface for KDE
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	liblcms.so:graphics/lcms \
 		libxml2.so:textproc/libxml2 \
 		libraw.so:graphics/libraw

@@ -14,6 +14,9 @@ COMMENT=	KDE frontend to Phonon / KDE4
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 NOT_FOR_ARCHS=		aarch64
 NOT_FOR_ARCHS_REASON=	prcpucfg.h:764:2: error: "Unknown CPU architecture"
 

@@ -9,6 +9,9 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Strigi analyzers for network-related file formats
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		cmake:outsource kde:4 qt:4 tar:xz
