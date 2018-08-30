@@ -213,8 +213,8 @@
     SUBDIR += nstreams
     SUBDIR += observium
     SUBDIR += ocsinventory-agent
-    SUBDIR += ocsinventory-ng
     SUBDIR += ocsinventory-ocsreports
+    SUBDIR += ocsinventory-server
     SUBDIR += omping
     SUBDIR += onionlauncher
     SUBDIR += openbmp
