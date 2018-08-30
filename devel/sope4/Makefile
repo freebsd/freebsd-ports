@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		sope4
-PORTVERSION=		4.0.1
+PORTVERSION=		4.0.2
 CATEGORIES=		devel gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOPE-${PORTVERSION}
