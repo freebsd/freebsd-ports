@@ -14,6 +14,9 @@ COMMENT=	Twin panel file manager for KDE, like midnight or norton commander
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 CONFLICTS_INSTALL=	krusader2-2.*
 
 USES=		cmake:outsource gettext kde:4 qt:4 tar:bzip2

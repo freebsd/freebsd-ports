@@ -10,6 +10,9 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Base set of libraries needed by KDE programs
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libImath-2_2.so:graphics/ilmbase \
 		libjasper.so:graphics/jasper \
 		libpcre.so:devel/pcre \

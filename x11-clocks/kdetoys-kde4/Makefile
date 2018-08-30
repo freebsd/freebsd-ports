@@ -9,6 +9,9 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE miscellaneous applications (meta port)
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 USES=		kde:4 metaport
 
 OPTIONS_DEFINE=	AMOR KTEATIME KTUX

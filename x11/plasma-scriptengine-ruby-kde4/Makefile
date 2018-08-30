@@ -10,6 +10,9 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma scriptengine for Ruby
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 NO_ARCH=	yes
 USES=		cmake:outsource kde:4 qt:4 tar:xz
 USE_KDE=	kdelibs korundum automoc4

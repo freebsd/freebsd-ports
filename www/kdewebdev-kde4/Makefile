@@ -10,6 +10,9 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Comprehensive html/website development environment
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libtidy.so:www/tidy-lib \
 		libboost_thread.so:devel/boost-libs
 
