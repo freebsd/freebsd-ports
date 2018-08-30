@@ -3,6 +3,7 @@
 
 PORTNAME=	freecell-solver
 PORTVERSION=	4.20.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://fc-solve.shlomifish.org/downloads/fc-solve/
 
@@ -15,7 +16,10 @@ BUILD_DEPENDS=	p5-Path-Tiny>=0.076:devel/p5-Path-Tiny \
 		p5-Template-Toolkit>=2.26:www/p5-Template-Toolkit \
 		gperf:devel/gperf \
 		asciidoc:textproc/asciidoc \
-		${PYTHON_PKGNAMEPREFIX}random2>=1.0.1:math/py-random2@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}random2>=1.0.1:math/py-random2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=1.11.0:devel/py-six@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}random2>=1.0.1:math/py-random2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=1.11.0:devel/py-six@${PY_FLAVOR}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES TCMALLOC
 TCMALLOC_DESC=	Use Google's TCMalloc
