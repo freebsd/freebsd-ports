@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pidgin-skypeweb
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 PORTEPOCH=	1
 CATEGORIES=	net-im
 
@@ -17,26 +17,17 @@ RUN_DEPENDS=	pidgin:net-im/pidgin
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libpurple.so:net-im/libpurple
 
+USES=		cmake dos2unix gettext-runtime localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	EionRobb
 GH_PROJECT=	skype4pidgin
-
-USES=		cmake dos2unix gettext-runtime pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
 
-DOS2UNIX_FILES=	gpl3.txt \
-		libskypeweb.c \
-		skypeweb_connection.c \
-		skypeweb_contacts.c \
-		skypeweb_login.c \
-		skypeweb_messages.c \
-		skypeweb_util.c \
-		skypeweb_util.h \
-		theme
+DOS2UNIX_FILES=	gpl3.txt theme
 
 CONFLICTS_INSTALL=	pidgin-skype-*
+
 WRKSRC_SUBDIR=	skypeweb
 
 .include <bsd.port.mk>
