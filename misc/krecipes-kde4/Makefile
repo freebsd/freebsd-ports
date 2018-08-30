@@ -11,6 +11,9 @@ COMMENT=	KDE4 recipe database
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 USES=		cmake gettext kde:4 qt:4 shared-mime-info tar:xz
 USE_GNOME=	libxml2 libxslt
 USE_QT=		corelib dbus gui qt3support sql webkit xml \
