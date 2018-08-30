@@ -14,6 +14,9 @@ COMMENT=	KDE micro-blogging client
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libqjson.so:devel/qjson@qt4 \
 		libqoauth.so:net/qoauth \
 		libtelepathy-qt4.so:net-im/telepathy-qt4

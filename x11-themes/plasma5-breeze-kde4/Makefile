@@ -12,6 +12,9 @@ COMMENT=	Plasma5 Breeze visual style for KDE4
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 CMAKE_ON=	USE_KDE4
 
 USES=		cmake:outsource compiler:c++11-lang cpe gettext \
