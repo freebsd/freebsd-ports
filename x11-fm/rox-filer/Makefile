@@ -30,7 +30,6 @@ ALL_TARGET=
 LIBS+=			-lm
 
 OPTIONS_DEFINE=		NLS
-OPTIONS_DEFAULT=	NLS
 
 NLS_USES=		gettext-runtime:run
 

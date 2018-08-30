@@ -35,7 +35,7 @@ PORTEXAMPLES=	chrony.conf.example1 chrony.conf.example2 \
 # XXX: there are also other potentially useful options worth looking into:
 #  --disable-pps        Disable PPS API support
 OPTIONS_DEFINE=		DOCS EXAMPLES IPV6 NETTLE NSS
-OPTIONS_DEFAULT=	IPV6 NETTLE
+OPTIONS_DEFAULT=	NETTLE
 
 NETTLE_DESC=		Nettle crypto library support
 NSS_DESC=		Add support for more hashing algorithms

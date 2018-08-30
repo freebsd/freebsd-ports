@@ -21,7 +21,6 @@ USES=		gmake pathfix
 WRKSRC=		${WRKDIR}/vasm
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=	DOCS
 DOCS_USES=	makeinfo
 
 CPU_LIST=	6502 6800 arm c16x jagrisc m68k ppc qnice tr3200 vidcore x86 z80
