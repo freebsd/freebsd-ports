@@ -1,0 +1,5 @@
+i3-gaps is a fork of i3, a tiling window manager. It includes a few
+additional features such as gaps, smart borders and setting a background and
+border color for the individual blocks in i3bar.
+
+WWW: https://github.com/Airblader/i3
