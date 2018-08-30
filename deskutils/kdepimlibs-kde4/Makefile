@@ -12,6 +12,9 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE PIM Libraries
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 BUILD_DEPENDS=	xsltproc:textproc/libxslt
 LIB_DEPENDS=	libgpgme.so:security/gpgme \
 		libsasl2.so:security/cyrus-sasl2 \

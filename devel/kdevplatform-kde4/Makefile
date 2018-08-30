@@ -12,6 +12,9 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Set of libraries for KDE IDE-like programs
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
 		libboost_thread.so:devel/boost-libs \
 		libqjson.so:devel/qjson@qt4

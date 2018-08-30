@@ -10,6 +10,9 @@ DISTNAME=	pykde4-${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Enhanced version of pyuic4
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 USES=		cmake:outsource python:2.7 kde:4 qt:4 shebangfix tar:xz
 USE_KDE=	kdelibs automoc4 pykde4
 USE_QT=		moc_build qmake_build rcc_build uic_build

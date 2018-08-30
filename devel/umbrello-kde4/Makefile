@@ -8,6 +8,9 @@ CATEGORIES=	devel kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	UML modeller for KDE
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		cmake:outsource kde:4 qt:4 tar:xz

@@ -9,6 +9,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for KDE
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libqwt.so:x11-toolkits/qwt5
 
 USES=		cmake:outsource kde:4 python:2.7 pyqt:4 qt:4 tar:xz

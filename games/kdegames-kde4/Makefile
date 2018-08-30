@@ -9,6 +9,9 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Games for KDE 4 (meta port)
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 USES=		kde:4 metaport
 
 OPTIONS_DEFINE=	ALL ${KDE4_GAMES_ALL}

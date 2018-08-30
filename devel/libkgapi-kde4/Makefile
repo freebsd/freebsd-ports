@@ -13,6 +13,9 @@ COMMENT=	KDE-based library for accessing various Google services
 
 LICENSE=	GPLv2
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libqjson.so:devel/qjson@qt4
 
 USES=		cmake:outsource kde:4 qt:4 tar:bzip2

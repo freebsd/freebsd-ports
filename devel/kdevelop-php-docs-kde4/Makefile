@@ -11,6 +11,9 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	PHP documentation for KDevelop
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libkdevplatforminterfaces.so:devel/kdevplatform-kde4
 
 USES=		cmake:outsource compiler:c++11-lib kde:4 qt:4 tar:xz

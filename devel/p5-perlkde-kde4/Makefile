@@ -9,6 +9,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Perl bindings for KDE
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 USES=		cmake:outsource compiler:c++11-lib kde:4 perl5 qt:4 tar:xz
 USE_KDE=	perlqt smokekde automoc4
 USE_QT=		network opengl sql svg xml \

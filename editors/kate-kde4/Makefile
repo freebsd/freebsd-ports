@@ -9,6 +9,9 @@ CATEGORIES=	editors kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic editor framework for the KDE system
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libqjson.so:devel/qjson@qt4
 
 USES=		cmake:outsource gettext kde:4 perl5 qt:4 tar:xz
