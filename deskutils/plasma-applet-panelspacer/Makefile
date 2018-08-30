@@ -13,6 +13,9 @@ COMMENT=	Panel spacer plasma applet for KDE4
 
 LICENSE=	GPLv2
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 USES=		cmake kde:4 qt:4
 USE_KDE=	automoc4 workspace
 USE_QT=		gui dbus network opengl svg webkit xml \

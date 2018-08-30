@@ -13,6 +13,9 @@ COMMENT=	KDE4 server monitoring plasma applet
 
 LICENSE=	GPLv2
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 USES=		cmake gettext kde:4 qt:4 tar:bzip2
 USE_KDE=	automoc4 workspace
 USE_QT=		qmake_build moc_build rcc_build uic_build

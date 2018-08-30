@@ -11,6 +11,9 @@ DISTNAME=	geek-clock-plasmoid-${PORTVERSION}-src
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	KDE4 geeky analog clock plasma applet
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 USES=		cmake kde:4 qt:4
 USE_KDE=	automoc4 kdelibs workspace
 USE_QT=		gui dbus network opengl svg webkit xml \

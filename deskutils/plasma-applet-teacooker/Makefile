@@ -13,6 +13,9 @@ COMMENT=	KDE4 tea cooker plasma applet
 
 LICENSE=	GPLv3
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 USES=		cmake kde:4 qt:4
 USE_KDE=	automoc4 kdelibs
 USE_QT=		gui dbus network opengl svg webkit xml \
