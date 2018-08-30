@@ -4,10 +4,12 @@ libexec/ibus-engine-table
 libexec/ibus-setup-table
 man/man1/ibus-table-createdb.1.gz
 share/applications/ibus-setup-table.desktop
+share/glib-2.0/schemas/org.freedesktop.ibus.engine.table.gschema.xml
 %%DATADIR%%/data/pinyin_table.txt.bz2
 %%DATADIR%%/engine/chinese_variants.py
 %%DATADIR%%/engine/factory.py
 %%DATADIR%%/engine/ibus_table_location.py
+%%DATADIR%%/engine/it_util.py
 %%DATADIR%%/engine/main.py
 %%DATADIR%%/engine/tabcreatedb.py
 %%DATADIR%%/engine/table.py
