@@ -3,7 +3,7 @@
 
 PORTNAME=	linm
 DISTVERSION=	0.8.1-1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	misc shells
 MASTER_SITES=	http://kldp.net/frs/download.php/4508/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -14,16 +14,13 @@ COMMENT=	Clone of Mdir, mc-style terminal file manager
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext pkgconfig gmake libtool ncurses ssl
+USES=		gettext iconv:translit pkgconfig gmake localbase libtool ncurses ssl
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-cfgpath="${ETCDIR}"
+CONFIGURE_ARGS=	--enable-cfgpath="${ETCDIR}" ${ICONV_CONFIGURE_ARG}
 MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	SMB DOCS
 OPTIONS_SUB=	yes
@@ -31,7 +28,7 @@ OPTIONS_SUB=	yes
 SMB_CONFIGURE_ENV_OFF=	ac_cv_lib_smbclient_smbc_new_context=no
 SMB_CPPFLAGS=	-I${SAMBAINCLUDES}
 SMB_LIBS=	-L${SAMBALIBS}
-SMB_USES=	iconv samba:lib
+SMB_USES=	samba:lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|configpath|cfgpath|g' ${WRKSRC}/configure
