@@ -13,6 +13,9 @@ COMMENT=	KDE4 personal finance manager
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	KDE4 is EOL upstream. Use finance/kmymoney instead
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libboost_graph.so:devel/boost-libs \
 		libalkimia.so:finance/alkimia-qt4 \
 		libgpgme.so:security/gpgme \
