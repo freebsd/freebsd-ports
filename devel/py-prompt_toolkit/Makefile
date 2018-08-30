@@ -20,6 +20,4 @@ NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
-SLAVEDIRS=	devel/py-prompt_toolkit
-
 .include <bsd.port.mk>
