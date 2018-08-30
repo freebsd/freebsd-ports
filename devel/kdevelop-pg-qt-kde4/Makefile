@@ -12,6 +12,9 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Parser-generator from KDevplatform
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 
 USES=		bison cmake:outsource compiler:c++11-lib kde:4 qt:4 tar:bzip2

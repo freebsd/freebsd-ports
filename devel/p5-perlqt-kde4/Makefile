@@ -9,6 +9,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Perl bindings for Qt
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libqscintilla2_qt4.so:devel/qscintilla2 \
 		libqwt.so:x11-toolkits/qwt5
 

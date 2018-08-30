@@ -14,6 +14,9 @@ COMMENT=	KDE frontend for Subversion
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libsvn_client-1.so:devel/subversion \
 		libapr-1.so:devel/apr1 \
 		libgdbm.so:databases/gdbm \

@@ -8,6 +8,9 @@ CATEGORIES=	devel kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	SMOKE bindings for KDE
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 USES=		cmake:outsource kde:4 qt:4 tar:xz
 USE_KDE=	kate kdelibs okular pimlibs \
 		smokegen smokeqt akonadi automoc4 soprano

@@ -8,6 +8,9 @@ CATEGORIES=	games kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME}_DESC}
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR}
 
 NO_ARCH=	yes

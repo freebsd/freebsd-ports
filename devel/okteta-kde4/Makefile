@@ -8,6 +8,9 @@ CATEGORIES=	devel kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE hex editor
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libqca.so:devel/qca@qt4
 
 USES=		cmake:outsource kde:4 qt:4 shared-mime-info tar:xz
