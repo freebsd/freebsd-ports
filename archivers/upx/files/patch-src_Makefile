@@ -1,6 +1,6 @@
---- src/Makefile.orig	2013-09-30 15:51:00 UTC
+--- src/Makefile.orig	2017-05-12 11:01:20 UTC
 +++ src/Makefile
-@@ -55,7 +55,7 @@ upx_OBJECTS := $(notdir $(upx_SOURCES:.c
+@@ -48,7 +48,7 @@ endif
  # we need UCL and zlib - you can set envvar UPX_UCLDIR
  ifneq ($(wildcard $(UPX_UCLDIR)/include/ucl/ucl.h),)
  INCLUDES += -I$(UPX_UCLDIR)/include
@@ -8,4 +8,17 @@
 +LIBS += -L$(UPX_UCLDIR)/lib
  endif
  LIBS += -lucl -lz
- # you should set envvar UPX_LZMADIR to point to your unpacked LZMA SDK
+ # LZMA from https://github.com/upx/upx-lzma-sdk
+@@ -62,9 +62,9 @@ CXXFLAGS_OPTIMIZE ?= -O2
+ endif
+ CXXFLAGS += $(CXXFLAGS_OPTIMIZE)
+ # protect against security threats caused by misguided C++ compiler "optimizations"
+-ifeq ($(findstring clang,$(CXX)),)
+-CXXFLAGS += -fno-delete-null-pointer-checks
+-endif
++# ifeq ($(findstring clang,$(CXX)),)
++# CXXFLAGS += -fno-delete-null-pointer-checks
++# endif
+ CXXFLAGS += -fno-strict-aliasing -fwrapv
+ CXXFLAGS += -funsigned-char
+ CXXFLAGS += -Wall -W -Wcast-align -Wcast-qual -Wmissing-declarations -Wpointer-arith -Wshadow -Wvla -Wwrite-strings
