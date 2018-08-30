@@ -10497,3 +10497,4 @@ www/py-django18|www/py-django111|2018-08-25|Has expired: End of Live since 01/04
 x11-themes/qt4-style-Kvantum|x11-themes/Kvantum@qt4|2018-08-26|Moved to flavored version
 x11-themes/qt5-style-Kvantum|x11-themes/Kvantum@qt5|2018-08-26|Moved to flavored version
 devel/gps||2018-08-28|Has expired: Depends on obsolete LLVM 3.8.
+net-mgmt/ocsinventory-ng|net-mgmt/ocsinventory-server|2018-08-26|split port
