@@ -1,6 +1,7 @@
 %%GO_LIBDIR%%/%%GO_PKGNAME%%.a
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/GOVERNANCE.md
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/LICENSE
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/OWNERS
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/MAINTAINERS.md
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/README.md
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/TODO.md
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/bench/bench.go
@@ -40,6 +41,7 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/test/configs/tlsverify.conf
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/test/conn_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/test/context_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/test/drain_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/test/enc_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/test/gob_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/test/helper_test.go
