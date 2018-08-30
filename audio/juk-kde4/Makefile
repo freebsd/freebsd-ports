@@ -11,6 +11,9 @@ COMMENT=	Jukebox, tagger and music collection manager
 
 LICENSE=	GPLv2
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libtag.so:audio/taglib
 
 USES=		cmake:outsource kde:4 qt:4 tar:xz

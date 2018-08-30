@@ -9,6 +9,9 @@ CATEGORIES=	audio kde kde-kde4
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE CDDB library
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libmusicbrainz5.so:audio/libmusicbrainz5
 
 USES=		cmake:outsource kde:4 qt:4 tar:xz

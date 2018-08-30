@@ -11,6 +11,9 @@ COMMENT=	KDE IOSlave for accessing audio CDs
 
 LICENSE=	GPLv2
 
+DEPRECATED=	KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libcdda_paranoia.so:audio/cdparanoia \
 		libogg.so:audio/libogg \
