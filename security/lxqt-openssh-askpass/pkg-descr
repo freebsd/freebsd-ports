@@ -1,0 +1,4 @@
+lxqt-openssh-askpass is a GUI to query credentials on behalf of other programs.
+It is primarily targeted at ssh-agent.
+
+WWW: http://lxqt.org/
