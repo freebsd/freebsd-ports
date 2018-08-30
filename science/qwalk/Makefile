@@ -12,6 +12,8 @@ COMMENT=	Quantum Monte Carlo package for quantum chemistry computations
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
+PORTSCOUT=	limit:^.*[1-9]\. # prevent words like 'broken'
+
 USES=		fortran gmake perl5
 USE_GITHUB=	yes
 GH_ACCOUNT=	QWalk
