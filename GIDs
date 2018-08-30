@@ -823,7 +823,7 @@ _geodns:*:853:
 # free: 880
 # free: 881
 # free: 882
-# free: 883
+ipfs-go:*:883:
 telegraf:*:884:
 tcpdump:*:885:
 miniflux:*:886:
