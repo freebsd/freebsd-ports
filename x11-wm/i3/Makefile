@@ -36,6 +36,8 @@ USE_PERL5=	run
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 INSTALL_TARGET=	install-strip
 
+CONFLICTS_INSTALL=	i3-gaps
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/man/*.1 ${STAGEDIR}${MANPREFIX}/man/man1/
 
