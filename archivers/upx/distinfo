@@ -1,4 +1,5 @@
-SHA256 (upx-3.91-src.tar.bz2) = 527ce757429841f51675352b1f9f6fc8ad97b18002080d7bf8672c466d8c6a3c
-SIZE (upx-3.91-src.tar.bz2) = 904747
-SHA256 (7z465.tar.bz2) = cce25c2b7c98ccb598b1393c302ff56a5c51fe2a5aae9c3885bec007eb06fc70
-SIZE (7z465.tar.bz2) = 658088
+TIMESTAMP = 1532707968
+SHA256 (upx-upx-v3.94_GH0.tar.gz) = 2ddd9d409620b6946319bfdab6cf9d570c6057a89cd5b0b4707fc5e13cc95929
+SIZE (upx-upx-v3.94_GH0.tar.gz) = 1601225
+SHA256 (upx-upx-lzma-sdk-v3.94_GH0.tar.gz) = 9e9cea6112bd93fbc71c61d1ff068cc324b2d7bb7789043928b68c5d3cc0672d
+SIZE (upx-upx-lzma-sdk-v3.94_GH0.tar.gz) = 109693
