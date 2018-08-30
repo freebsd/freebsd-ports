@@ -1,3 +1,5 @@
-TIMESTAMP = 1528920460
-SHA256 (go-ipfs_v0.4.15_freebsd-amd64.tar.gz) = 13e2514a62b17a81e2e1ce2dbcb38d7924a932c62f6a775f090a7458ef9fcccd
-SIZE (go-ipfs_v0.4.15_freebsd-amd64.tar.gz) = 9888465
+TIMESTAMP = 1534183965
+SHA256 (ipfs-go-gx-0.4.17.tar.xz) = 7f9f233048b61416789ff8573ec4adddbccdc21557f135d998167f2c2b04144f
+SIZE (ipfs-go-gx-0.4.17.tar.xz) = 11255440
+SHA256 (ipfs-go-ipfs-v0.4.17_GH0.tar.gz) = 2562401bee0609d321bbf5e9c383de4124f634dcfd9394f1d23146a49f281718
+SIZE (ipfs-go-ipfs-v0.4.17_GH0.tar.gz) = 728972

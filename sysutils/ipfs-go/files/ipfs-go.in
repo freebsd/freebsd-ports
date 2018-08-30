@@ -4,35 +4,46 @@
 #
 
 # PROVIDE: ipfs_go
-# REQUIRE: NETWORKING
+# REQUIRE: DAEMON NETWORKING
 # BEFORE: LOGIN
 # KEYWORD: shutdown
 
-# Define these ipfs_go_* variables in /etc/rc.conf[.local]:
-#
+# Add the following lines to /etc/rc.conf to enable ipfs_go:
 # ipfs_go_enable="YES"
-# ipfs_go_path="/tank/ipfs"
+#
+# ipfs_go_enable (bool):    Set to YES to enable ipfs_go
+#                           Default: NO
+# ipfs_go_user (str):       ipfs_go daemon user
+#                           Default: %%IPFS_USER%%
+# ipfs_go_group (str):      ipfs_go daemon group
+#                           Default: %%IPFS_GROUP%%
 
 . /etc/rc.subr
 
-: ${ipfs_go_enable:="NO"}
-: ${ipfs_go_path:="/root/.ipfs"}
-
 name=ipfs_go
 rcvar=ipfs_go_enable
-command="%%PREFIX%%/bin/ipfs-go"
+load_rc_config $name
 
+: ${ipfs_go_enable:="NO"}
+: ${ipfs_go_user:="%%IPFS_USER%%"}
+: ${ipfs_go_group:="%%IPFS_GROUP%%"}
+
+logfile="%%IPFS_LOGDIR%%/${name}.log"
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/bin/ipfs-go"
 start_precmd="ipfs_go_prestart"
 start_cmd="ipfs_go_start"
 
 ipfs_go_prestart() {
-        [ -d ${ipfs_go_path}/datastore ] || env IPFS_PATH=${ipfs_go_path} ${command} init
+  install -d -o ${ipfs_go_user} -g ${ipfs_go_group} -m750 %%IPFS_LOGDIR%%
+  [ -d ~%%IPFS_USER%%/.ipfs ] || /usr/bin/su - ${ipfs_go_user} -c "${command} init"
 }
 
 ipfs_go_start() {
-	echo running ${command} daemon
-	env IPFS_PATH=${ipfs_go_path} daemon -f ${command} daemon
+  echo running ${command} daemon
+  export USER=${ipfs_go_user}
+  export HOME=$(echo ~%%IPFS_USER%%)
+  /usr/sbin/daemon -p ${pidfile} -u ${ipfs_go_user} ${command} daemon >> ${logfile} 2>&1
 }
 
-load_rc_config $name
 run_rc_command "$1"

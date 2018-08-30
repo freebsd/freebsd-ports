@@ -1,29 +1,61 @@
 # $FreeBSD$
 
 PORTNAME=	ipfs
-PORTVERSION=	0.4.15
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+DISTVERSION=	0.4.17
 CATEGORIES=	sysutils
-MASTER_SITES=	https://dist.ipfs.io/go-ipfs/${DISTVERSIONPREFIX}${DISTVERSION}/
+MASTER_SITES=	LOCAL/yuri:gx
 PKGNAMESUFFIX=	-go
-DISTNAME=	go-ipfs_${DISTVERSIONPREFIX}${DISTVERSION}_freebsd-${ARCH}
+DISTFILES=	${FULLNAME}-gx-${DISTVERSION}.tar.xz:gx
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	IPFS implementation in Go
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 i386
 
-PLIST_FILES=	bin/${PORTNAME}${PKGNAMESUFFIX}
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
-NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/go-ipfs
+USE_GITHUB=	yes
+GH_PROJECT=	go-ipfs
+GH_SUBDIR=	src/github.com/ipfs/go-ipfs
 
 USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
 
+SUB_FILES=	${FULLNAME}
+SUB_LIST=	IPFS_USER=${IPFS_USER} \
+		IPFS_GROUP=${IPFS_GROUP} \
+		IPFS_LOGDIR=${IPFS_LOGDIR}
+PLIST_SUB=	IPFS_USER=${IPFS_USER} \
+		IPFS_GROUP=${IPFS_GROUP} \
+		IPFS_HOME=${IPFS_HOME} \
+		IPFS_LOGDIR=${IPFS_LOGDIR}
+
+IPFS_USER=	${FULLNAME}
+IPFS_GROUP=	${FULLNAME}
+IPFS_HOME=	/var/db/${PORTNAME}${PKGNAMESUFFIX}
+IPFS_LOGDIR=	/var/log/${PORTNAME}${PKGNAMESUFFIX}
+
+USERS=		${IPFS_USER}
+GROUPS=		${IPFS_GROUP}
+
+FULLNAME=	${PORTNAME}${PKGNAMESUFFIX}
+
+post-patch:
+	@${RLN} ${WRKDIR}/gx ${WRKSRC}/src
+
+do-build:
+	# To update ipfs-go-gx-${DISTVERSION}.tar.xz deps bundle:
+	# comment out post-patch, run the command below, tar ${WRKSRC}/src/gx and re-upload .tar.xz
+	# cd ${WRKSRC}/${GH_SUBDIR} && ${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} gx install
+	@cd ${WRKSRC}/${GH_SUBDIR} && \
+		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build ./cmd/ipfs
+
 do-install:
+	@${MKDIR} ${STAGEDIR}${IPFS_HOME}
+	@${MKDIR} ${STAGEDIR}${IPFS_LOGDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/ipfs ${STAGEDIR}${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
 
 .include <bsd.port.mk>
