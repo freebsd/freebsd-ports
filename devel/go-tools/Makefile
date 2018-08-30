@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tools
-PORTVERSION=	20170328
-PORTREVISION=	1
+DISTVERSION=	20180726
 CATEGORIES=	devel
 PKGNAMEPREFIX=	go-
 
@@ -11,17 +10,19 @@ MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Go Tools
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	go:lang/go
 
 USE_GITHUB=	yes
-GH_TUPLE=	golang:tools:d63e2b2:DEFAULT/src/golang.org/x/tools \
+GH_TUPLE=	golang:tools:bfb5194:DEFAULT/src/golang.org/x/tools \
 		golang:crypto:3cb0727:crypto/src/golang.org/x/crypto \
 		golang:net:b6d7b13:net/src/golang.org/x/net
 
-TARGETS=	benchcmp bundle callgraph cover digraph eg fiximports godex \
-		godoc goimports gomvpkg gorename gotype guru html2article \
-		present ssadump stress stringer
+TARGETS=	benchcmp bundle callgraph compilebench cover digraph eg fiximports \
+		getgo go-contrib-init godex godoc goimports gomvpkg gorename gotype \
+		goyacc guru heapview html2article present ssadump stress stringer \
+		tip toolstash
 
 do-build:
 .for TARGET in ${TARGETS}
