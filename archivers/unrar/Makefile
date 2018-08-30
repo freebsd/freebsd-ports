@@ -32,7 +32,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/unrar
 
-SLAVEDIRS=	archivers/unrar-iconv chinese/unrar
+SLAVEDIRS=	archivers/unrar-iconv
 
 OPENSSL_AES_CPPFLAGS=	-DOPENSSL_AES -I${OPENSSLINC}
 OPENSSL_AES_LDFLAGS=	-L${OPENSSLLIB} -lcrypto
