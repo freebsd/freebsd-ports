@@ -11,7 +11,7 @@ COMMENT=	Public Suffix List by Mozilla
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-SLAVEDIRS=	dns/p5-Mozilla-PublicSuffix dns/rubygem-public_suffix dns/rubygem-public_suffix_service
+SLAVEDIRS=	dns/p5-Mozilla-PublicSuffix dns/py-publicsuffix dns/py-publicsuffixlist dns/rubygem-public_suffix dns/rubygem-public_suffix_service
 
 NO_ARCH=	yes
 NO_BUILD=	yes
