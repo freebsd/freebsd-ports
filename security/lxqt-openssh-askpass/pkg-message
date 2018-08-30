@@ -1,0 +1,10 @@
+*** Note ssh-add will NOT use GUI tools like lxqt-openssh-askpass 
+*** when it is attached to a terminal. 
+
+* To use lxqt-openssh-askpass start ssh-agent with -a <SOCKET_PATH> e.g in .xinitrc
+ssh-agent -a "/tmp/${USER}-ssh-agent"
+
+* Then set two variables e.g in ~/.config/lxqt/session.conf:
+SSH_ASKPASS=lxqt-openssh-askpass
+SSH_AUTH_SOCK=<SOCKET_PATH>
+then run ssh-add from lxqt-runner or a .desktop entry
