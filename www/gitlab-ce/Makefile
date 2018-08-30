@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	11.1.4
+PORTVERSION=	11.1.6
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -213,7 +213,7 @@ USE_RC_SUBR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-ce/tags
-GL_COMMIT=	63daf37ad326bb4c4e74ebee8b8e2be7878b298f
+GL_COMMIT=	014912084ddfbafa35da6d52f1b1b46b601bfc62
 
 USERS=	git
 GROUPS=	git
