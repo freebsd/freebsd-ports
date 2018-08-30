@@ -1,18 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	chrono
-DISTVERSION=	2.0.0-9063
-DISTVERSIONSUFFIX=	-gc44d7dac5
+DISTVERSION=	2.0.0-9070
+DISTVERSIONSUFFIX=	-g57a828dc0
 CATEGORIES=	science devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	c5db60cfb2a05bdea84ca202ab0e34c87c1c841d.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for multi-physics simulation
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+PORTSCOUT=	skipv:3.0.0 # their development continues under the branch 2.X. 3.0.0 should be ignored until they release a higher version
 
 BUILD_DEPENDS=	openmpi>0:net/openmpi
 
