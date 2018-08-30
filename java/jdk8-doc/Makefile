@@ -15,11 +15,12 @@ RESTRICTED=	This documentation is under license and export control.
 
 WRKSRC=		${WRKDIR}/docs
 JDK_VERSION=	8
-JDK_UPDATE_VER=	172
+JDK_UPDATE_VER=	181
 DOWNLOAD_URL=	http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
-NO_BUILD=	yes
 USES=		zip
+NO_BUILD=	yes
+NO_ARCH=	yes
 PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
