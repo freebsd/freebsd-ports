@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Pegex
-PORTVERSION=	0.64
+PORTVERSION=	0.65
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:INGY
@@ -22,8 +22,9 @@ RUN_DEPENDS=	p5-JSON-XS>=0:converters/p5-JSON-XS \
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
