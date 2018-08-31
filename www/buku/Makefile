@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	buku
-PORTVERSION=	3.8
+PORTVERSION=	3.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Powerful command-line bookmark manager

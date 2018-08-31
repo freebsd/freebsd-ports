@@ -55,6 +55,7 @@
     SUBDIR += bolt
     SUBDIR += bookmarkbridge
     SUBDIR += bozohttpd
+    SUBDIR += buku
     SUBDIR += butterfly
     SUBDIR += c-icap
     SUBDIR += c-icap-modules
@@ -1524,7 +1525,6 @@
     SUBDIR += py-bottle
     SUBDIR += py-bottle-cork
     SUBDIR += py-branca
-    SUBDIR += py-buku
     SUBDIR += py-cachecontrol
     SUBDIR += py-caldav
     SUBDIR += py-cheroot
