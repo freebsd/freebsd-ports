@@ -14,7 +14,7 @@ COMMENT=	Backport of Python 3 csv module
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports>0:devel/py-backports@${FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports>0:devel/py-backports@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils
