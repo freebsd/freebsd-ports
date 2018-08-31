@@ -1,0 +1,55 @@
+bugreport_test.cpp:77:20: error: no member named 'tr1' in namespace 'std'
+            ::std::tr1::get<0>(args)->OnStdout(output_.c_str(), output_.size());
+            ~~~~~~~^
+bugreport_test.cpp:77:37: error: member reference type 'const testing::ActionInterface<void (StandardStreamsCallbackInterface *)>::ArgumentTuple' (aka 'const tuple<StandardStreamsCallbackInterface *>') is not a pointer; did you mean to use '.'?
+            ::std::tr1::get<0>(args)->OnStdout(output_.c_str(), output_.size());
+                              ~~~~~~^~
+                                    .
+bugreport_test.cpp:77:39: error: no member named 'OnStdout' in 'std::__1::tuple<StandardStreamsCallbackInterface *>'
+            ::std::tr1::get<0>(args)->OnStdout(output_.c_str(), output_.size());
+                              ~~~~~~  ^
+bugreport_test.cpp:80:20: error: no member named 'tr1' in namespace 'std'
+            ::std::tr1::get<0>(args)->OnStderr(output_.c_str(), output_.size());
+            ~~~~~~~^
+bugreport_test.cpp:80:37: error: member reference type 'const testing::ActionInterface<void (StandardStreamsCallbackInterface *)>::ArgumentTuple' (aka 'const tuple<StandardStreamsCallbackInterface *>') is not a pointer; did you mean to use '.'?
+            ::std::tr1::get<0>(args)->OnStderr(output_.c_str(), output_.size());
+                              ~~~~~~^~
+                                    .
+bugreport_test.cpp:80:39: error: no member named 'OnStderr' in 'std::__1::tuple<StandardStreamsCallbackInterface *>'
+            ::std::tr1::get<0>(args)->OnStderr(output_.c_str(), output_.size());
+                              ~~~~~~  ^
+bugreport_test.cpp:108:29: error: no member named 'tr1' in namespace 'std'
+        int status = ::std::tr1::get<0>(args)->Done(status_);
+                     ~~~~~~~^
+bugreport_test.cpp:108:46: error: member reference type 'const testing::ActionInterface<int (StandardStreamsCallbackInterface *)>::ArgumentTuple' (aka 'const tuple<StandardStreamsCallbackInterface *>') is not a pointer; did you mean to use '.'?
+        int status = ::std::tr1::get<0>(args)->Done(status_);
+                                       ~~~~~~^~
+                                             .
+bugreport_test.cpp:108:48: error: no member named 'Done' in 'std::__1::tuple<StandardStreamsCallbackInterface *>'
+        int status = ::std::tr1::get<0>(args)->Done(status_);
+                                       ~~~~~~  ^
+
+--- adb/bugreport_test.cpp.orig	2016-09-28 18:07:09 UTC
++++ adb/bugreport_test.cpp
+@@ -74,10 +74,10 @@ class OnStandardStreamsCallbackAction : public ActionI
+     }
+     virtual Result Perform(const ArgumentTuple& args) {
+         if (type_ == kStreamStdout) {
+-            ::std::tr1::get<0>(args)->OnStdout(output_.c_str(), output_.size());
++            std::get<0>(args)->OnStdout(output_.c_str(), output_.size());
+         }
+         if (type_ == kStreamStderr) {
+-            ::std::tr1::get<0>(args)->OnStderr(output_.c_str(), output_.size());
++            std::get<0>(args)->OnStderr(output_.c_str(), output_.size());
+         }
+     }
+ 
+@@ -105,7 +105,7 @@ class CallbackDoneAction : public ActionInterface<Call
+     explicit CallbackDoneAction(int status) : status_(status) {
+     }
+     virtual Result Perform(const ArgumentTuple& args) {
+-        int status = ::std::tr1::get<0>(args)->Done(status_);
++        int status = std::get<0>(args)->Done(status_);
+         return status;
+     }
+ 
