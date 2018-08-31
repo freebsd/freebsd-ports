@@ -1,3 +1,5 @@
-TIMESTAMP = 1495867884
-SHA256 (golang-protobuf-20170527-9f174c9_GH0.tar.gz) = 150eb67cd2cf7d00e5cfc322c9d563843389716ab3713a61e8cc2c10289d50e2
-SIZE (golang-protobuf-20170527-9f174c9_GH0.tar.gz) = 252154
+TIMESTAMP = 1532443980
+SHA256 (golang-protobuf-v1.1.0_GH0.tar.gz) = c086490e7b116b73b7e3e6058eae997576d0523ad8f1b2ec2b698887e62b14a8
+SIZE (golang-protobuf-v1.1.0_GH0.tar.gz) = 324733
+SHA256 (google-go-genproto-02b4e95_GH0.tar.gz) = 71421ee0c9af39492dad0c63736e0e3771ecd41066034f77472bd922208fcdfd
+SIZE (google-go-genproto-02b4e95_GH0.tar.gz) = 2091400
