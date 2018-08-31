@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mediathekview
-PORTVERSION=	13.1.2
+PORTVERSION=	13.2.0
 CATEGORIES=	german java
 MASTER_SITES=	https://download.mediathekview.de/stabil/
 DISTNAME=	MediathekView-${PORTVERSION}
