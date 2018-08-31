@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	slim
-PORTVERSION=	3.1.0
+PORTVERSION=	4.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,9 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-temple>=0.7.6:devel/rubygem-temple \
 		rubygem-tilt>=2.0.6:devel/rubygem-tilt
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/slimrb
 
