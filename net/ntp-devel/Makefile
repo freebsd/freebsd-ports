@@ -3,7 +3,7 @@
 
 PORTNAME=	ntp
 PORTVERSION=	4.3.93
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
 		http://archive.ntp.org/ntp4/ntp-dev/
@@ -32,6 +32,8 @@ SHEBANG_FILES=	scripts/ntptrace/ntptrace.in \
 		scripts/ntp-wait/ntp-wait.in \
 		scripts/update-leap/update-leap.in
 perl_OLD_CMD=	@PATH_PERL@
+
+SUB_FILES=	pkg-message
 
 .include "Makefile.inc"
 
