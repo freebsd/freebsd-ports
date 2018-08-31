@@ -1,0 +1,17 @@
+Sent upstream: https://github.com/aarnt/octopkg/pull/7
+
+From b93ad1a5a1a05717d4e6e7d0d292f9e0a3679987 Mon Sep 17 00:00:00 2001
+From: "Jason E. Hale" <jhale@FreeBSD.org>
+Date: Thu, 30 Aug 2018 23:00:37 -0400
+Subject: [PATCH] Fix build with Qt 5.11
+
+--- src/transactiondialog.cpp.orig
++++ src/transactiondialog.cpp
+@@ -24,6 +24,7 @@
+ 
+ #include <QMessageBox>
+ #include <QPushButton>
++#include <QRegularExpression>
+ #include <QDialog>
+ #include <QCloseEvent>
+ 
