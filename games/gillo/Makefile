@@ -21,6 +21,7 @@ LIB_DEPENDS=	libode.so:devel/ode
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		tar:bzip2
+USE_CXXSTD=	c++98
 USE_GL=		glu
 USE_SDL=	yes
 
