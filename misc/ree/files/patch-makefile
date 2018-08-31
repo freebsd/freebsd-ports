@@ -1,0 +1,10 @@
+--- makefile.orig	2018-08-31 12:00:55 UTC
++++ makefile
+@@ -6,5 +6,5 @@ clean:
+ 	rm -f fontdump ree
+ 
+ install:
+-	cp fontdump $(DESTDIR)/usr/bin
+-	cp ree $(DESTDIR)/usr/sbin
++	cp fontdump $(DESTDIR)$(PREFIX)/bin
++	cp ree $(DESTDIR)$(PREFIX)/sbin/rom-ree

@@ -2,31 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	ree
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	misc
-MASTER_SITES=	http://gnu.ethz.ch/linuks.mine.nu/ree/ \
-		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Tool to dump your ROM extensions
 
-PLIST_FILES=	bin/rom-ree bin/fontdump
-PORTDOCS=	readme
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64 i386
+
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	alexmyczko
+
+PLIST_FILES=	sbin/rom-ree bin/fontdump
+PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
-do-build:
-.for f in ${PORTNAME} fontdump
-	${CC} ${CFLAGS} ${WRKSRC}/${f}.c -o ${WRKSRC}/${f}
-.endfor
+MAKEFILE=	makefile
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin/rom-${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/fontdump ${STAGEDIR}${PREFIX}/bin
+post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
