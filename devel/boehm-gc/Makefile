@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gc
-PORTVERSION=	7.6.6
+PORTVERSION=	7.6.8
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hboehm.info/gc/gc_source/ \
 		https://github.com/ivmai/bdwgc/releases/download/v${PORTVERSION}/
@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	boehm-
 PKGNAMESUFFIX=	-${GC_VARIANT}
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yasu@utahime.org
 COMMENT=	Garbage collection and memory leak detection for C and C++
 
 LICENSE=	BDWGC
@@ -36,46 +36,40 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C/[a-z]$//}
 OPTIONS_DEFINE=	DEBUG
 
 .ifdef GC_VARIANT
+INSTALL_TARGET=	install-exec install-pkgconfigDATA
 CORDLIBS=	cord
 GCLIBS=		gc
 GCCPPLIBS=	gccpp
 PLIST=		${NONEXISTENT}
 PLIST_FILES=	${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
 		${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
-		${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.3.0,} \
+		${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.3.1,} \
 		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
 		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
-		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.3.3,} \
+		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.3.4,} \
 		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
 		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
-		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.3.1,} \
+		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.3.2,} \
 		libdata/pkgconfig/bdw-gc-${GC_VARIANT}.pc
 RUN_DEPENDS+=	${LOCALBASE}/include/gc/gc.h:devel/boehm-gc
 . if ${GC_VARIANT} == "redirect"
-CONFIGURE_ARGS+=--disable-threads --enable-redirect-malloc
+CONFIGURE_ARGS+=	--disable-threads --enable-redirect-malloc
 . endif
 . if ${GC_VARIANT} == "threaded"
-CONFIGURE_ARGS+=--enable-threads=posix --disable-redirect-malloc
-OPTIONS_DEFINE+=PARALLEL_MARK
+CONFIGURE_ARGS+=	--enable-threads=posix --disable-redirect-malloc
+OPTIONS_DEFINE+=	PARALLEL_MARK
 PARALLEL_MARK_DESC=	Parallel-thread marking (faster for SMP)
 . endif
 .else
-CONFIGURE_ARGS+=--disable-threads --disable-redirect-malloc
-OPTIONS_DEFINE+=DOCS
+CONFIGURE_ARGS+=	--disable-threads --disable-redirect-malloc
+OPTIONS_DEFINE+=	DOCS
 PORTDOCS=	*
 .endif
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--enable-gc-debug
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}+fulldebug
-.endif
+DEBUG_CONFIGURE_WITH=	--enable-gc-debug
 
 .if defined(GC_VARIANT) && ${GC_VARIANT} == "threaded"
-. if ${PORT_OPTIONS:MPARALLEL_MARK}
-CONFIGURE_ARGS+=--enable-parallel-mark
-. endif
+PARALLEL_MARK_CONFIGURE_WITH=	--enable-parallel-mark
 .endif
 
 .ifdef GC_VARIANT
@@ -88,8 +82,6 @@ post-patch:
 		's,-lgc,-lgc-${GC_VARIANT},' ${WRKSRC}/bdw-gc.pc.in
 
 post-install:
-	${RM} -r ${STAGEDIR}${PREFIX}/include
-	${RM} -r ${STAGEDIR}${PREFIX}/share
 	${MV} ${STAGEDIR}${PREFIX}/libdata/pkgconfig/bdw-gc.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/bdw-gc-${GC_VARIANT}.pc
 
@@ -101,7 +93,6 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/gc.man ${STAGEDIR}${MAN3PREFIX}/man/man3/gc.3
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
