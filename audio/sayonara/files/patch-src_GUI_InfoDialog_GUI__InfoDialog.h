@@ -8,6 +8,6 @@ Fix build with Qt 5.11
  
 +#include <QTabBar>
 +
+ class GUI_TagEdit;
+ class GUI_Lyrics;
  class InfoDialogContainer;
- namespace Cover
- {
