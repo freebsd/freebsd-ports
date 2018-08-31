@@ -2,6 +2,6 @@ Qbox is a C++/MPI scalable parallel implementation of first-principles molecular
 dynamics (FPMD) based on the plane-wave, pseudopotential formalism. Qbox is
 designed for operation on large parallel computers.
 
-Qbox is developed in Gygi Research Group at UC Davis.
+Qbox is developed in the Gygi Research Group at UC Davis.
 
 WWW: http://qboxcode.org/
