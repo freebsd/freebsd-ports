@@ -14,6 +14,7 @@ bin/gnatsd
 %%PORTDOCS%%%%DOCSDIR%%/configs/malformed_cluster_address.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/malformed_listen_address.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/multiple_users.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/new_style_authorization.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/authorization_1.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/authorization_2.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/basic.conf
