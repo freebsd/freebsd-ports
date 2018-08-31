@@ -3,7 +3,6 @@
 
 PORTNAME=	nss
 PORTVERSION=	3.39
-#DISTVERSIONSUFFIX=	-with-ckbi-1.98
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 
@@ -13,13 +12,11 @@ COMMENT=	Libraries to support development of security-enabled applications
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	zip:archivers/zip \
-		nspr>=4.12:devel/nspr \
-		sqlite3>=3.7.15:databases/sqlite3
+BUILD_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libnspr4.so:devel/nspr \
 		libsqlite3.so:databases/sqlite3
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/nss
+WRKSRC_SUBDIR=	nss
 
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/nss
