@@ -223,6 +223,7 @@
     SUBDIR += pybrain
     SUBDIR += pycdf
     SUBDIR += pynn
+    SUBDIR += qbox
     SUBDIR += qcl
     SUBDIR += qmcpack
     SUBDIR += qtresistors
