@@ -272,6 +272,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svgz
 %%DATADIR%%/translations/keepassx_pt_PT.qm
 %%DATADIR%%/translations/keepassx_ro.qm
 %%DATADIR%%/translations/keepassx_ru.qm
+%%DATADIR%%/translations/keepassx_sk.qm
 %%DATADIR%%/translations/keepassx_sl_SI.qm
 %%DATADIR%%/translations/keepassx_sr.qm
 %%DATADIR%%/translations/keepassx_sv.qm
