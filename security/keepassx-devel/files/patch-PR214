@@ -1,0 +1,29 @@
+Obtained from: https://github.com/keepassx/keepassx/pull/214
+
+From 40220fd61c4094ae16d8a4d86df2b5d84c16e6e8 Mon Sep 17 00:00:00 2001
+From: Anuraag Sridhar <anuraag.sridhar@gmail.com>
+Date: Sun, 12 Aug 2018 14:23:33 +1000
+Subject: [PATCH] Fix build issues with Qt5.11 on OS X.
+
+Minor forward declaration issues.
+
+--- src/gui/entry/EditEntryWidget.h.orig
++++ src/gui/entry/EditEntryWidget.h
+@@ -18,6 +18,7 @@
+ #ifndef KEEPASSX_EDITENTRYWIDGET_H
+ #define KEEPASSX_EDITENTRYWIDGET_H
+ 
++#include <QButtonGroup>
+ #include <QModelIndex>
+ #include <QScopedPointer>
+ 
+--- src/gui/entry/EntryView.h.orig
++++ src/gui/entry/EntryView.h
+@@ -18,6 +18,7 @@
+ #ifndef KEEPASSX_ENTRYVIEW_H
+ #define KEEPASSX_ENTRYVIEW_H
+ 
++#include <QHeaderView>
+ #include <QTreeView>
+ 
+ #include "gui/entry/EntryModel.h"
