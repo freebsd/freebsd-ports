@@ -3,6 +3,7 @@
 
 PORTNAME=	fasttracker2
 DISTVERSION=	0.1-b91
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://16-bits.org/ \
 		LOCAL/ehaupt
@@ -22,7 +23,14 @@ USE_SDL=	sdl2
 
 WRKSRC=		${WRKDIR}/ft2-clone-code
 
-PLIST_FILES=	bin/fasttracker2
+DESKTOP_ENTRIES="FastTracker II" \
+		"${COMMENT}" \
+		"${PREFIX}/share/pixmaps/ft2-clone.ico" \
+		"fasttracker2" \
+		"" \
+		false
+
+PLIST_FILES=	bin/fasttracker2 share/pixmaps/ft2-clone.ico
 
 OPTIONS_DEFINE=	ALSA
 OPTIONS_DEFAULT=ALSA
@@ -39,6 +47,9 @@ do-build:
 		-o ${WRKSRC}/${PORTNAME}
 
 do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/src/gfxdata/icon/ft2-clone.ico \
+		${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>
