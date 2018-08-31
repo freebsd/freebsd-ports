@@ -1,12 +1,12 @@
 This program is used to find Mersenne Prime numbers as part of Great
 Internet Mersenne Prime Search initiative (GIMPS) since 1996.  See
-http://www.utm.edu/research/primes/mersenne.shtml for a description
+http://primes.utm.edu/mersenne/index.html for a description
 of Mersenne primes.
 
 Mersenne number can be proved composite (not prime) by either finding
 a factor or by running a Lucas-Lehmer primality test.
 
 To use this program you must agree to the terms and conditions, prize
-rules, etc. at http://mersenne.org/legal/.
+rules, etc. at https://www.mersenne.org/legal/.
 
-WWW: http://www.mersenne.org/
+WWW: https://www.mersenne.org/
