@@ -10,6 +10,7 @@ MASTER_SITES=	http://www.lcdf.org/~eddietwo/xbraitenberg/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Braitenberg vehicle simulator with pseudo-physics
 
+USE_CXXSTD=	c++98
 USE_XORG=	x11 ice sm xext
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_fpermissive=no
