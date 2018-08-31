@@ -1,0 +1,14 @@
+Ptpython is an advanced Python REPL.
+
+Features:
+- Syntax highlighting.
+- Multiline editing (the up arrow works).
+- Autocompletion.
+- Mouse support (disabled by default).
+- Support for color schemes.
+- Support for bracketed paste (if the terminal supports it).
+- Both Vi and Emacs key bindings.
+- Support for double width (Chinese) characters.
+- ... and many other stuff.
+
+WWW: https://github.com/jonathanslenders/ptpython
