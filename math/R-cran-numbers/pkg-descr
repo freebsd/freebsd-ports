@@ -1,0 +1,6 @@
+Provides number-theoretic functions for factorization, prime numbers,
+twin primes, primitive roots, modular logarithm and inverses, extended
+GCD, Farey series and continuous fractions. Includes Legendre and Jacobi
+symbols, some divisor functions, Euler's Phi function, etc.
+
+WWW: https://cran.r-project.org/web/packages/numbers/
