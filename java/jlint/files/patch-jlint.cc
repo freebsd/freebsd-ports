@@ -29,3 +29,12 @@
  
    monitor_stack::const_iterator it;
    for (it = this_class->usedLocks.begin();
+@@ -1041,7 +1041,7 @@ int main(int argc, char* argv[])
+         if (verbose) { 
+           fprintf(stderr, 
+                   "Jlint - program correctness verifier for Java, "
+-                  "version %s ("__DATE__").\n", VERSION);
++                  "version %s\n", VERSION);
+         }
+         continue;
+       }

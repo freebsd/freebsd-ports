@@ -1,22 +1,133 @@
 --- Makefile.orig	2011-01-11 02:35:54 UTC
 +++ Makefile
-@@ -3,8 +3,8 @@
+@@ -3,9 +3,6 @@
  # Makefile for Unix and GNU/Linux with gcc/g++ compiler
  # Edit here:
  
 -CC=gcc
 -CPP=g++
-+CC?=gcc
-+CPP=$(CXX)
- 
+-
  # Hints:
  # if you use egcs-2.90.* version of GCC please add option -fno-exceptions 
-@@ -20,7 +20,7 @@ CPP=g++
+ # to reduce code size and increase performance
+@@ -20,7 +17,8 @@ CPP=g++
  
  # Optimized version
  
 -CFLAGS = -c -Wall -O2 -g
-+CFLAGS+= -c -Wall -g
++CFLAGS+= -Wall
++CXXFLAGS+= -Wall
  # -DSLIST removed because it wouldn't compile under gcc 3.x
  # add -DHASH_TABLE for extra speed (may sometimes produce inconsistent results)
  
+@@ -28,7 +26,7 @@ CFLAGS = -c -Wall -O2 -g
+ #CFLAGS = -c -Wall -O2 -g -DSLIST -DNDEBUG
+ 
+ # link zlib the compression/decompression library. used for decompressing jar files
+-LFLAGS=-g -lz
++LIBS+= -lz
+ 
+ # Directory to place executables
+ INSTALL_DIR=/usr/local/bin
+@@ -49,10 +47,10 @@ TESTDISTFILES=`ls jlint-$(VERSION)/{antic.c,BUGS,Makef
+ all: antic jlint
+ 
+ antic.o: antic.c
+-	$(CC) $(CFLAGS) antic.c
++	$(CC) -c $(CFLAGS) antic.c
+ 
+ antic: antic.o
+-	$(CC) $(LFLAGS) -o antic antic.o
++	$(CC) $(LDFLAGS) -o antic antic.o $(LIBS)
+ 
+ clean: 
+ 	rm -f  *.o *.exe core *~ *.his *.class jlint antic manual.{html,pdf,aux,cp,fn,ky,log,pg,toc,tp,vr} jlint_3.0.{aux,dvi,log,toc}
+@@ -120,7 +118,7 @@ jlint: \
+ 	locks.o \
+ 	message_node.o \
+ 	method_desc.o
+-	$(CPP) $(LFLAGS) -o jlint access_desc.o callee_desc.o class_desc.o graph.o jlint.o local_context.o locks.o message_node.o method_desc.o
++	$(CXX) $(LDFLAGS) -o jlint access_desc.o callee_desc.o class_desc.o graph.o jlint.o local_context.o locks.o message_node.o method_desc.o $(LIBS)
+ 
+ access_desc.o: access_desc.cc \
+ 	access_desc.hh \
+@@ -143,7 +141,7 @@ access_desc.o: access_desc.cc \
+ 	callee_desc.hh \
+ 	local_context.hh \
+ 	string_pool.hh
+-	$(CPP) $(CFLAGS) access_desc.cc
++	$(CXX) -c $(CXXFLAGS) access_desc.cc
+ 
+ callee_desc.o: callee_desc.cc \
+ 	callee_desc.hh \
+@@ -166,7 +164,7 @@ callee_desc.o: callee_desc.cc \
+ 	local_context.hh \
+ 	access_desc.hh \
+ 	string_pool.hh
+-	$(CPP) $(CFLAGS) callee_desc.cc
++	$(CXX) -c $(CXXFLAGS) callee_desc.cc
+ 
+ class_desc.o: class_desc.cc \
+ 	class_desc.hh \
+@@ -189,7 +187,7 @@ class_desc.o: class_desc.cc \
+ 	local_context.hh \
+ 	access_desc.hh \
+ 	string_pool.hh
+-	$(CPP) $(CFLAGS) class_desc.cc
++	$(CXX) -c $(CXXFLAGS) class_desc.cc
+ 
+ graph.o: graph.cc \
+ 	graph.hh \
+@@ -212,7 +210,7 @@ graph.o: graph.cc \
+ 	utf_string.hh \
+ 	message_node.hh \
+ 	overridden_method.hh
+-	$(CPP) $(CFLAGS) graph.cc
++	$(CXX) -c $(CXXFLAGS) graph.cc
+ 
+ jlint.o: jlint.cc \
+ 	jlint.hh \
+@@ -236,7 +234,7 @@ jlint.o: jlint.cc \
+ 	functions.hh \
+ 	inlines.hh \
+ 	locks.hh
+-	$(CPP) $(CFLAGS) jlint.cc
++	$(CXX) -c $(CXXFLAGS) jlint.cc
+ 
+ local_context.o: local_context.cc \
+ 	local_context.hh \
+@@ -259,7 +257,7 @@ local_context.o: local_context.cc \
+ 	locks.hh \
+ 	graph.hh \
+ 	overridden_method.hh
+-	$(CPP) $(CFLAGS) local_context.cc
++	$(CXX) -c $(CXXFLAGS) local_context.cc
+ 
+ locks.o: locks.cc \
+ 	locks.hh \
+@@ -271,7 +269,7 @@ locks.o: locks.cc \
+ 	utf_string.hh \
+ 	functions.hh \
+ 	message_node.hh
+-	$(CPP) $(CFLAGS) locks.cc
++	$(CXX) -c $(CXXFLAGS) locks.cc
+ 
+ message_node.o: message_node.cc \
+ 	message_node.hh \
+@@ -279,7 +277,7 @@ message_node.o: message_node.cc \
+ 	types.hh \
+ 	jlint.d \
+ 	jlint.msg
+-	$(CPP) $(CFLAGS) message_node.cc
++	$(CXX) -c $(CXXFLAGS) message_node.cc
+ 
+ method_desc.o: method_desc.cc \
+ 	method_desc.hh \
+@@ -302,6 +300,6 @@ method_desc.o: method_desc.cc \
+ 	message_node.hh \
+ 	graph.hh \
+ 	overridden_method.hh
+-	$(CPP) $(CFLAGS) method_desc.cc
++	$(CXX) -c $(CXXFLAGS) method_desc.cc
+ 
+ # --> end of automatically generated dependencies; do not remove this line.
