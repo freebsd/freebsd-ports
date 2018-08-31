@@ -3,9 +3,9 @@
 
 PORTNAME=	sayonara
 DISTVERSIONPREFIX=	player-
-DISTVERSION=	1.0.0
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-git1-20171231
+DISTVERSION=	1.1.1
+PORTREVISION=	0
+DISTVERSIONSUFFIX=	-git1-20180828
 CATEGORIES=	audio
 MASTER_SITES=	http://www.sayonara-player.com/sw/
 
@@ -13,7 +13,7 @@ MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Small, clear, and fast Qt-based audio player
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/license.txt
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtag.so:audio/taglib \
 		libmtp.so:multimedia/libmtp
