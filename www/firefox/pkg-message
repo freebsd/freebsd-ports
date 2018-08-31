@@ -10,6 +10,7 @@ Some features available on other platforms are not implemented:
 - Gamepad API (requires libusbhid backend)
 - WebVR (requires open source runtime)
 - TCP fast open
+- about:networking (requires link state notification)
 
 ======================================================================
 
