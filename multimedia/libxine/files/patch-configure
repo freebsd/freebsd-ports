@@ -1,24 +1,24 @@
---- configure.orig
+--- configure.orig	2018-01-11 12:51:16 UTC
 +++ configure
-@@ -20349,7 +20349,7 @@ $as_echo "#define ARCH_SPARC /**/" >>con
+@@ -21288,7 +21288,7 @@ $as_echo "#define ARCH_X86_X32 /**/" >>confdefs.h
  
          ;;
  
 -    x86_64-*)
 +    x86_64-*|amd64-*)
-         arch_x86=64
+                         arch_x86=64
  
- $as_echo "#define ARCH_X86_64 /**/" >>confdefs.h
-@@ -20685,7 +20685,7 @@ fi
+ 
+@@ -21752,7 +21752,7 @@ fi
  
                  if test "$sarchopt" != "no"; then
                      case "$host_or_hostalias" in
 -                        i386-*)         archopt_val="i386" ;;
-+                        i386-*)         ;;
++                        i386-*) ;;
                          i486-*)         archopt_val="i486" ;;
                          i586-*)         archopt_val="pentium" ;;
                          pentium-mmx-*)  archopt_val="pentium-mmx" ;;
-@@ -26280,7 +26280,7 @@ fi
+@@ -28089,7 +28089,7 @@ fi
  
      if test x"$enable_dvb" != x"no"; then
          case "$host_os" in
