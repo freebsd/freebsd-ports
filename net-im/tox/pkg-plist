@@ -1,3 +1,4 @@
+%%DAEMON%%bin/DHT_bootstrap
 %%DAEMON%%bin/tox-bootstrapd
 %%DAEMON%%@sample etc/tox-bootstrapd.conf.sample
 include/tox/tox.h
