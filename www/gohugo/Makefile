@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.47.1
+DISTVERSION=	0.48
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -17,7 +17,7 @@ USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	gohugoio
 GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
-COMMIT_ID=	caf608d566fab4a7714b2934cc7b44bb22625e01
+COMMIT_ID=	456f5476cf9bf96c558448372058130fee1f9330
 GH_TUPLE=	BurntSushi:locker:a6e239e:locker/src/github.com/BurntSushi/locker \
 		BurntSushi:toml:a368813:toml/src/github.com/BurntSushi/toml \
 		PuerkitoBio:purell:0bcb03f:purell/src/github.com/PuerkitoBio/purell \
