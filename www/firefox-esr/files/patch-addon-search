@@ -31,12 +31,12 @@ diff --git toolkit/mozapps/extensions/internal/AddonRepository.jsm toolkit/mozap
 index f70fd8d7e3bd8..81e8cd7764fdf 100644
 --- toolkit/mozapps/extensions/internal/AddonRepository.jsm
 +++ toolkit/mozapps/extensions/internal/AddonRepository.jsm
-@@ -588,7 +588,7 @@ var AddonRepository = {
+@@ -602,7 +602,7 @@ var AddonRepository = {
        addon.version = String(aEntry.current_version.version);
        if (Array.isArray(aEntry.current_version.files)) {
          for (let file of aEntry.current_version.files) {
--          if (file.platform == "all" || file.platform == Services.appinfo.OS.toLowerCase()) {
-+          if (file.platform == "all" || file.platform == "linux" || file.platform == Services.appinfo.OS.toLowerCase()) {
+-          if (file.platform == "all" || file.platform == PLATFORM) {
++          if (file.platform == "all" || file.platform == "linux" || file.platform == PLATFORM) {
              if (file.url) {
                addon.sourceURI = NetUtil.newURI(file.url);
              }
