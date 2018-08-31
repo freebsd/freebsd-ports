@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gopass
-PORTVERSION=	1.8.2
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.8.2-2
+DISTVERSIONSUFFIX=	-g7e0fbf3
 CATEGORIES=	security
 
 MAINTAINER=	sascha@root-login.org
@@ -16,7 +17,6 @@ RUN_DEPENDS=	git:devel/git \
 		gpg2:security/gnupg
 
 USES=		go
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	gopasspw
 
