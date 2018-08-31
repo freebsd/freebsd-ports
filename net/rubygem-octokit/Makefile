@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octokit
-PORTVERSION=	4.10.0
+PORTVERSION=	4.11.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
