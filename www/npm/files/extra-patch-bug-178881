@@ -1,6 +1,6 @@
 --- lib/node_modules/npm/lib/config/defaults.js.orig	1985-10-26 08:15:00 UTC
 +++ lib/node_modules/npm/lib/config/defaults.js
-@@ -372,26 +372,7 @@ exports.types = {
+@@ -378,19 +378,7 @@ exports.types = {
  }
  
  function getLocalAddresses () {
@@ -14,16 +14,9 @@
 -    interfaces = {}
 -  }
 -
--  return Object.keys(interfaces).map(function (nic) {
--    return interfaces[nic].filter(function (addr) {
--      return addr.family === 'IPv4'
--    })
--      .map(function (addr) {
--        return addr.address
--      })
--  }).reduce(function (curr, next) {
--    return curr.concat(next)
--  }, []).concat(undefined)
+-  return Object.keys(interfaces).map(
+-    nic => interfaces[nic].map(({address}) => address)
+-  ).reduce((curr, next) => curr.concat(next), []).concat(undefined)
 +  return [ '127.0.0.1', undefined ]
  }
  
