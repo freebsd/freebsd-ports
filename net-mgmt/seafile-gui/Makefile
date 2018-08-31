@@ -3,8 +3,11 @@
 PORTNAME=	seafile-gui
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt devel
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	03c883561d40.patch:-p1
 
 MAINTAINER=	ultima@FreeBSD.org
 COMMENT=	Open Source Cloud Storage (Client)
@@ -20,7 +23,7 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libevent.so:devel/libevent \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		compiler:c++11-lang cmake pkgconfig qt:5 shebangfix ssl
+USES=		compiler:c++11-lang cmake gnome pkgconfig qt:5 shebangfix ssl
 SHEBANG_FILES=	extensions/*.sh scripts/*.sh fsplugin/*.sh \
 		scripts/*.py
 
@@ -29,7 +32,7 @@ GH_ACCOUNT=	haiwen
 GH_PROJECT=	seafile-client
 
 USE_GNOME=	glib20
-USE_QT=		core gui network widgets \
+USE_QT=		core dbus gui network widgets \
 		qmake_build buildtools_build linguisttools_build
 #INSTALLS_ICONS=	yes
 CMAKE_ARGS=	-DCMAKE_INCLUDE_PATH:PATH=include/glib-2.0 \
