@@ -6,6 +6,9 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	6
 CATEGORIES=	multimedia
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	f304b7403cc7.patch:-p1
+
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Free, open source, cross-platform video editor
 

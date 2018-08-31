@@ -1,3 +1,5 @@
-TIMESTAMP = 1488270629
+TIMESTAMP = 1535711386
 SHA256 (mltframework-shotcut-v17.02_GH0.tar.gz) = 19e2812c72c34d87317f56f0e1ad07de1e19b295865dfcc67078bbd4c37fde26
 SIZE (mltframework-shotcut-v17.02_GH0.tar.gz) = 3729420
+SHA256 (f304b7403cc7.patch) = b825b672fbcff49eefbf945f1bf30e8bff69b8e09da84a6d82f4f04c11b94a05
+SIZE (f304b7403cc7.patch) = 938
