@@ -6,7 +6,8 @@ PORTREVISION=	3
 CATEGORIES=	emulators
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	a7a51a11373f.patch:-p1
+PATCHFILES=	a7a51a11373f.patch:-p1 \
+		a2b8c4ae807a.patch:-p1
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Game Boy Advance (GBA) emulator/debugger
