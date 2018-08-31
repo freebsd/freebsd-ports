@@ -6,6 +6,9 @@ DISTVERSION=	164-61
 DISTVERSIONSUFFIX=	-gbcd5705d
 CATEGORIES=	audio graphics print
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	713a205a6e57.patch:-p1
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for graphic rendering of music scores
 
@@ -13,7 +16,7 @@ LICENSE=	MPL20
 
 BUILD_DEPENDS=	cmake:devel/cmake
 
-USES=		gmake pkgconfig qt:5
+USES=		gmake gnome pkgconfig qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
 USE_QT=		core gui widgets printsupport xml buildtools_build qmake_build
