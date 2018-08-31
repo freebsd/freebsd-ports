@@ -1,5 +1,5 @@
-Charm is a program for OS X, Linux and Windows that helps to keep track
-of time. It is built around two major ideas - tasks and events. Tasks
+Charm is a program for FreeBSD, OS X, Linux and Windows that helps to keep
+track of time. It is built around two major ideas - tasks and events. Tasks
 are the things time is spend on, repeatedly. For example, ironing
 laundry is a task. The laundry done for two hours on last Tuesday is an
 event in that task. When doing laundry multiple times, the events will
