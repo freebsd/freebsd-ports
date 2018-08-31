@@ -2,6 +2,7 @@
 
 PORTNAME=	dnscrypt-proxy
 PORTVERSION=	2.0.16
+PORTREVISION=	1
 CATEGORIES=	dns security ipv6
 PKGNAMESUFFIX=	2
 
@@ -18,7 +19,7 @@ USE_RC_SUBR=	${PORTNAME}
 USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	jedisct1
-
+GH_TAGNAME=	c53b28d
 USERS=		_dnscrypt-proxy
 GROUPS=		_dnscrypt-proxy
 
@@ -37,7 +38,7 @@ do-build:
 	${RLN} ${WRKSRC}/vendor ${WRKSRC}/src
 	cd ${WRKSRC}/${PORTNAME} && \
 	  ${SETENV} ${MAKE_ENV} ${GO_ENV} GOPATH=${WRKSRC} \
-	  ${GO_CMD} build -ldflags "-s -w" -o ${WRKDIR}/sbin/${PORTNAME}
+	  ${GO_CMD} build ${GO_BUILDFLAGS} -o ${WRKDIR}/sbin/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/sbin/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
