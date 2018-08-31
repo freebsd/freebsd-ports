@@ -13,6 +13,7 @@ man/es/man1/gxine_client.1.gz
 man/man1/gxine.1.gz
 man/man1/gxine_client.1.gz
 share/applications/gxine.desktop
+%%DATADIR%%/logo.jpg
 %%DATADIR%%/logo.mpv
 %%DATADIR%%/mediamarks
 %%DATADIR%%/pixmaps/gxine-icon.xpm

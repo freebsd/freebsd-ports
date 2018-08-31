@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xine
-PORTVERSION=	1.2.6
-PORTREVISION=	18
+PORTVERSION=	1.2.9
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${PORTVERSION}
 PKGNAMEPREFIX=	lib
@@ -33,106 +32,100 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libdca.so:multimedia/libdca \
 		libavcodec.so:multimedia/ffmpeg \
 		libfaad.so:audio/faad \
-		libvdpau.so:multimedia/libvdpau
-.if !defined(PACKAGE_BUILDING)
-# DVDCSS version hardcoded in src/input/input_dvd.c misc/cdda_server.c
-# and src/input/libdvdnav/dvd_input.c (dlopen'ed)
-LIB_DEPENDS+=	libdvdcss.so.2:multimedia/libdvdcss
-.endif
+		libvdpau.so:multimedia/libvdpau \
+		libvpx.so:multimedia/libvpx \
+		libiso9660.so:sysutils/libcdio \
+		libogg.so:audio/libogg \
+		libdvdnav.so:multimedia/libdvdnav
 
-USES=		compiler cpe gmake iconv libtool:keepla \
+USES=		compiler cpe gmake gnome iconv libtool:keepla jpeg \
 		localbase pathfix perl5 pkgconfig tar:xz
+LLD_UNSAFE=	yes
 CPE_PRODUCT=	xine-lib
 CPE_VENDOR=	xine
 GNU_CONFIGURE=	yes
-USE_XORG=	x11 xv xinerama xext sm ice
+USE_XORG=	x11 xcb xv xinerama xext sm ice
 USE_GL=		gl glu
 USE_PERL5=	build
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 \
-		--enable-ipv6 \
-		--with-external-libmad \
-		--with-external-libdts \
-		--with-libflac \
-		--with-external-ffmpeg \
-		--with-external-libfaad \
+CONFIGURE_ARGS=	--with-libflac \
 		--disable-real-codecs \
 		--disable-v4l \
 		--without-alsa \
-		--disable-musepack \
-		--enable-dvb
+		--disable-musepack
+
 MAKE_ENV=	V=1
-LLD_UNSAFE=	yes
+MAKE_ARGS=	pkgdatadir="${DATADIR}" \
+		datadir="${DATADIR}" \
+		libdir="${PREFIX}/lib"
+
+CFLAGS_i386=			-fomit-frame-pointer
 
 DOCSDIR=	${PREFIX}/share/doc/xine-lib
 # Please sync with XINE_PLUGINSDIR in multimedia/xine
 # and multimedia/vdr-plugin-xineliboutput
-PLUGINSDIR=	lib/xine/plugins/2.5
+PLUGINSDIR=	lib/xine/plugins/2.7
 PLIST_SUB=	PLUGINSDIR="${PLUGINSDIR}"
 
-BROKEN_aarch64=		Fails to configure: error: no acceptable as found in $PATH
+OPTIONS_DEFINE=		DOCS NLS CACA DVB DMX_IMAGE ESOUND IPV6 IMAGEMAGICK JACK \
+			GNOMEVFS2 PIXBUF PULSEAUDIO XVMC SMB SNDIO AALIB WAVPACK \
+			VAAPI LIBBLURAY
+OPTIONS_DEFAULT=	DVB IMAGEMAGICK VAAPI
+OPTIONS_DEFINE_i386=	W32DLL
+OPTIONS_DEFAULT_i386=	W32DLL
+OPTIONS_SUB=		yes
 
-OPTIONS_DEFINE=	NLS CACA ESOUND JACK GNOMEVFS2 PULSEAUDIO XVMC SMB AALIB \
-		IMAGEMAGICK PIXBUF WAVPACK VAAPI LIBBLURAY
-OPTIONS_DEFAULT=VAAPI
-OPTIONS_SUB=	yes
+DMX_IMAGE_DESC=		DMX image plugin
+DVB_DESC=		DVB plugin
+W32DLL_DESC=		Win32 codec support
 
-NLS_USES=		gettext
-NLS_CONFIGURE_ENABLE=	nls
-CACA_LIB_DEPENDS=	libcaca.so:graphics/libcaca
-CACA_CONFIGURE_OFF=	--without-caca --disable-cacatest
-ESOUND_USE=		GNOME=esound
-ESOUND_CONFIGURE_OFF=	--without-esound
-JACK_LIB_DEPENDS=	libjack.so:audio/jack
-JACK_CONFIGURE_OFF=	--without-jack
-GNOMEVFS2_USE=		GNOME=gnomevfs2
-GNOMEVFS2_CONFIGURE_OFF=--disable-gnomevfs
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
-PULSEAUDIO_CONFIGURE_OFF=--without-pulseaudio
-.if defined(WITH_NVIDIA304_GL) || exists(${LOCALBASE}/lib/libXvMCNVIDIA.so.1)
-XVMC_CONFIGURE_ON=	--with-xvmc-lib=XvMCNVIDIA
-XVMC_LIB_DEPENDS=	libXvMCNVIDIA.so:x11/nvidia-driver-304
-.else
-XVMC_CONFIGURE_ON=	--with-xvmc-lib=XvMCW
-XVMC_LIB_DEPENDS=	libXvMC.so:x11/libXvMC
-.endif
-XVMC_CONFIGURE_OFF=	--disable-xvmc
-SMB_USES=		samba:lib
-SMB_CONFIGURE_ENV=	LIBSMBCLIENT_LIBS="-L${SAMBALIBS} -lsmbclient" \
-			LIBSMBCLIENT_CFLAGS="-I${SAMBAINCLUDES}"
-SMB_CONFIGURE_ENABLE=	samba
-AALIB_LIB_DEPENDS=	libaa.so:graphics/aalib
-AALIB_CONFIGURE_OFF=	--disable-aalib --disable-aalibtest
+AALIB_LIB_DEPENDS=		libaa.so:graphics/aalib
+AALIB_CONFIGURE_ENABLE=		aalib
+CACA_LIB_DEPENDS=		libcaca.so:graphics/libcaca
+CACA_CONFIGURE_WITH=		caca
+DVB_CONFIGURE_ENABLE=		dvb
+ESOUND_USE=			GNOME=esound
+ESOUND_CONFIGURE_WITH=		esound
+GNOMEVFS2_USE=			GNOME=glib20,gconf2,gnomevfs2
+GNOMEVFS2_CONFIGURE_ENABLE=	gnomevfs
+IMAGEMAGICK_CONFIGURE_WITH=	imagemagick
 IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick
-IMAGEMAGICK_CONFIGURE_OFF=	--without-imagemagick
-PIXBUF_USE=		GNOME=gdkpixbuf2
-PIXBUF_CONFIGURE_OFF=	--disable-gdkpixbuf
-WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
-WAVPACK_CONFIGURE_WITH=	wavpack
-VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
-VAAPI_CONFIGURE_ON=	--enable-vaapi
-LIBBLURAY_LIB_DEPENDS=	libbluray.so:multimedia/libbluray
+IMAGEMAGICK_IMPLIES=		DMX_IMAGE
+IPV6_CONFIGURE_ENABLE=		ipv6
+JACK_LIB_DEPENDS=		libjack.so:audio/jack
+JACK_CONFIGURE_WITH=		jack
+LIBBLURAY_LIB_DEPENDS=		libbluray.so:multimedia/libbluray
 LIBBLURAY_CONFIGURE_ENABLE=	bluray
+NLS_USES=			gettext
+NLS_CONFIGURE_ENABLE=		nls
+PIXBUF_CONFIGURE_ENABLE=	gdkpixbuf
+PIXBUF_IMPLIES=			DMX_IMAGE
+PIXBUF_USE=			GNOME=gdkpixbuf2,glib20
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
+PULSEAUDIO_CONFIGURE_WITH=	pulseaudio
+SMB_USES=			samba:lib
+SMB_CONFIGURE_ENV=		LIBSMBCLIENT_LIBS="-L${SAMBALIBS} -lsmbclient" \
+				LIBSMBCLIENT_CFLAGS="-I${SAMBAINCLUDES}"
+SMB_CONFIGURE_ENABLE=		samba
+SNDIO_CONFIGURE_ENABLE=		sndio
+SNDIO_LIB_DEPENDS=		libsndio.so:audio/sndio
+VAAPI_LIB_DEPENDS=		libva.so:multimedia/libva
+VAAPI_CONFIGURE_ENABLE=		vaapi
+W32DLL_CONFIGURE_ENABLE=	w32dll
+W32DLL_PLIST_FILES=		${PLUGINSDIR}/xineplug_decode_qt.so \
+				${PLUGINSDIR}/xineplug_decode_w32dll.so
+WAVPACK_LIB_DEPENDS=		libwavpack.so:audio/wavpack
+WAVPACK_CONFIGURE_WITH=		wavpack
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == "i386"
-CFLAGS+=	-fomit-frame-pointer
-.endif
-
-.if ${CONFIGURE_ARGS:M*--without-imagemagick*} == "" || ${CONFIGURE_ARGS:M*-disable-gdkpixbuf*} == ""
-PLIST_SUB+=	WITH_DMX_IMAGE=""
+.if defined(WITH_NVIDIA304_GL) || exists(${LOCALBASE}/lib/libXvMCNVIDIA.so.1)
+XVMC_CONFIGURE_WITH=		xvmc-lib=XvMCNVIDIA
+XVMC_LIB_DEPENDS=		libXvMCNVIDIA.so:x11/nvidia-driver-304
 .else
-PLIST_SUB+=	WITH_DMX_IMAGE="@comment "
+XVMC_CONFIGURE_WITH=		xvmc-lib=XvMCW
+XVMC_LIB_DEPENDS=		libXvMC.so:x11/libXvMC
 .endif
-
-.if ${ARCH} == "i386"
-PLIST_SUB+=	WITH_VIDIX=""
-.else
-PLIST_SUB+=	WITH_VIDIX="@comment "
-CONFIGURE_ARGS+=	--disable-vidix
-.endif
+XVMC_CONFIGURE_ENABLE=		xvmc
 
 .include <bsd.port.pre.mk>
 
@@ -144,18 +137,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' \
 		${WRKSRC}/src/video_out/Makefile.in
 	@${REINPLACE_CMD} -e "s|#define _ATOM QT_ATOM('', '', '', '')||" \
-		${WRKSRC}/src/demuxers/demux_qt.c
-	@${REINPLACE_CMD} -e \
-		's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|' \
+		${WRKSRC}/src/demuxers/demux_qt.c \
 		${WRKSRC}/configure
-
-# XXX older nvidia-driver versions don't support opengl 2.0 so this
-# plugin might not get built:
 post-install:
-	@if ! [ -e "${STAGEDIR}${PREFIX}/${PLUGINSDIR}/xineplug_vo_out_opengl2.so" ]; then \
-		${REINPLACE_CMD} -e '/xineplug_vo_out_opengl2.so/d' \
-			${TMPPLIST}; \
-	fi
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${PLUGINSDIR}/*.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${PLUGINSDIR}/post/*.so
