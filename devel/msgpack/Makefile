@@ -16,6 +16,8 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_PROJECT=	msgpack-c
 
+TEST_TARGET=	test
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64"
@@ -23,7 +25,7 @@ GH_PROJECT=	msgpack-c
 USE_GCC=	yes
 .endif
 
-do-test:
-	cd ${WRKSRC} && ${CMAKE_BIN} . && ${MAKE_CMD} && ctest
+pre-test:
+	cd ${WRKSRC} && ${CMAKE_BIN} . && ${MAKE_CMD}
 
 .include <bsd.port.mk>
