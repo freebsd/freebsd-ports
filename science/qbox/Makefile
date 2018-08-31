@@ -8,12 +8,12 @@ CATEGORIES=	science
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	First-principles molecular dynamics code
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libblas.so:math/blas \
 		libcurl.so:ftp/curl \
 		libfftw3.so:math/fftw3 \
-		libgcc_s.so:lang/gcc7 \
+		libgcc_s.so:lang/gcc${GCC_DEFAULT} \
 		liblapack.so:math/lapack \
 		libmpich.so:net/mpich2 \
 		libscalapack.so:math/scalapack \
