@@ -1,6 +1,6 @@
-TIMESTAMP = 1534858217
-SHA256 (gohugo/gohugoio-hugo-v0.47.1_GH0.tar.gz) = 1c47fef843812c5e2621f28bde445117bc90413e3221f72800512ed82db94c5f
-SIZE (gohugo/gohugoio-hugo-v0.47.1_GH0.tar.gz) = 18878721
+TIMESTAMP = 1535572492
+SHA256 (gohugo/gohugoio-hugo-v0.48_GH0.tar.gz) = 0fa6bf285fc586fccacbf782017a5c0c9d164f6bf0670b12dd21526b32328cb2
+SIZE (gohugo/gohugoio-hugo-v0.48_GH0.tar.gz) = 18884670
 SHA256 (gohugo/BurntSushi-locker-a6e239e_GH0.tar.gz) = 6bdc1b865e2e27dd92921c0e4c3aa743156bb5d2cf227af1d0e80573568bcd4a
 SIZE (gohugo/BurntSushi-locker-a6e239e_GH0.tar.gz) = 2108
 SHA256 (gohugo/BurntSushi-toml-a368813_GH0.tar.gz) = 68dc067c4105cd20a642ddf1f4acaada7474c1b58e5b249d4bd9b0d7e8edebc2
