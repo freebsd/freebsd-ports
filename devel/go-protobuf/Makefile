@@ -2,7 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	protobuf
-PORTVERSION=	20160617
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.1.1
+PORTEPOCH=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	go-
 
@@ -10,139 +12,33 @@ MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Protocol Buffers for Go with Gadgets
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	go:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gogo
-GH_TAGNAME=	2752d97bbd91927dd1c43296dbf8700e50e2708c
-USES=		go
-GO_PKGNAME=	github.com/gogo/protobuf
-GO_TARGET=	${GO_PKGNAME}/codec		\
-		${GO_PKGNAME}/gogoproto \
-		${GO_PKGNAME}/io \
-		${GO_PKGNAME}/jsonpb \
-		${GO_PKGNAME}/jsonpb/jsonpb_test_proto \
-		${GO_PKGNAME}/plugin/compare \
-		${GO_PKGNAME}/plugin/defaultcheck \
-		${GO_PKGNAME}/plugin/description \
-		${GO_PKGNAME}/plugin/embedcheck \
-		${GO_PKGNAME}/plugin/enumstringer \
-		${GO_PKGNAME}/plugin/equal \
-		${GO_PKGNAME}/plugin/face \
-		${GO_PKGNAME}/plugin/gostring \
-		${GO_PKGNAME}/plugin/grpc \
-		${GO_PKGNAME}/plugin/marshalto \
-		${GO_PKGNAME}/plugin/oneofcheck \
-		${GO_PKGNAME}/plugin/populate \
-		${GO_PKGNAME}/plugin/size \
-		${GO_PKGNAME}/plugin/stringer \
-		${GO_PKGNAME}/plugin/testgen \
-		${GO_PKGNAME}/plugin/union \
-		${GO_PKGNAME}/plugin/unmarshal \
-		${GO_PKGNAME}/proto \
-		${GO_PKGNAME}/proto/proto3_proto \
-		${GO_PKGNAME}/proto/testdata \
-		${GO_PKGNAME}/protoc-gen-combo \
-		${GO_PKGNAME}/protoc-gen-gofast \
-		${GO_PKGNAME}/protoc-gen-gogo \
-		${GO_PKGNAME}/protoc-gen-gogo/descriptor \
-		${GO_PKGNAME}/protoc-gen-gogo/generator \
-		${GO_PKGNAME}/protoc-gen-gogo/plugin \
-		${GO_PKGNAME}/protoc-gen-gogofast \
-		${GO_PKGNAME}/protoc-gen-gogofaster \
-		${GO_PKGNAME}/sortkeys \
-		${GO_PKGNAME}/protoc-gen-gogoslick \
-		${GO_PKGNAME}/protoc-min-version \
-		${GO_PKGNAME}/test \
-		${GO_PKGNAME}/test/asymetric-issue125 \
-		${GO_PKGNAME}/test/casttype/combos/both \
-		${GO_PKGNAME}/test/casttype/combos/marshaler \
-		${GO_PKGNAME}/test/casttype/combos/neither \
-		${GO_PKGNAME}/test/casttype/combos/unmarshaler \
-		${GO_PKGNAME}/test/casttype/combos/unsafeboth \
-		${GO_PKGNAME}/test/casttype/combos/unsafemarshaler \
-		${GO_PKGNAME}/test/casttype/combos/unsafeunmarshaler \
-		${GO_PKGNAME}/test/castvalue/combos/both \
-		${GO_PKGNAME}/test/castvalue/combos/marshaler \
-		${GO_PKGNAME}/test/castvalue/combos/unmarshaler \
-		${GO_PKGNAME}/test/castvalue/combos/unsafeboth \
-		${GO_PKGNAME}/test/castvalue/combos/unsafemarshaler \
-		${GO_PKGNAME}/test/castvalue/combos/unsafeunmarshaler \
-		${GO_PKGNAME}/test/combos/both \
-		${GO_PKGNAME}/test/combos/marshaler \
-		${GO_PKGNAME}/test/combos/unmarshaler \
-		${GO_PKGNAME}/test/combos/unsafeboth \
-		${GO_PKGNAME}/test/combos/unsafemarshaler \
-		${GO_PKGNAME}/test/combos/unsafeunmarshaler \
-		${GO_PKGNAME}/test/custom-dash-type \
-		${GO_PKGNAME}/test/custom \
-		${GO_PKGNAME}/test/custombytesnonstruct \
-		${GO_PKGNAME}/test/dashfilename \
-		${GO_PKGNAME}/test/defaultconflict \
-		${GO_PKGNAME}/test/embedconflict \
-		${GO_PKGNAME}/test/empty-issue70 \
-		${GO_PKGNAME}/test/enumcustomname \
-		${GO_PKGNAME}/test/enumprefix \
-		${GO_PKGNAME}/test/enumstringer \
-		${GO_PKGNAME}/test/example \
-		${GO_PKGNAME}/test/filedotname \
-		${GO_PKGNAME}/test/fuzztests \
-		${GO_PKGNAME}/test/group \
-		${GO_PKGNAME}/test/importdedup \
-		${GO_PKGNAME}/test/importdedup/subpkg \
-		${GO_PKGNAME}/test/indeximport-issue72 \
-		${GO_PKGNAME}/test/indeximport-issue72/index \
-		${GO_PKGNAME}/test/issue34 \
-		${GO_PKGNAME}/test/issue42order \
-		${GO_PKGNAME}/test/issue8 \
-		${GO_PKGNAME}/test/mapsproto2 \
-		${GO_PKGNAME}/test/mapsproto2/combos/both \
-		${GO_PKGNAME}/test/mapsproto2/combos/marshaler \
-		${GO_PKGNAME}/test/mapsproto2/combos/neither \
-		${GO_PKGNAME}/test/mapsproto2/combos/unmarshaler \
-		${GO_PKGNAME}/test/mapsproto2/combos/unsafeboth \
-		${GO_PKGNAME}/test/mapsproto2/combos/unsafemarshaler \
-		${GO_PKGNAME}/test/mapsproto2/combos/unsafeunmarshaler \
-		${GO_PKGNAME}/test/mixbench \
-		${GO_PKGNAME}/test/moredefaults \
-		${GO_PKGNAME}/test/nopackage \
-		${GO_PKGNAME}/test/oneof \
-		${GO_PKGNAME}/test/oneof/combos/both \
-		${GO_PKGNAME}/test/oneof/combos/marshaler \
-		${GO_PKGNAME}/test/oneof/combos/neither \
-		${GO_PKGNAME}/test/oneof/combos/unmarshaler \
-		${GO_PKGNAME}/test/oneof/combos/unsafeboth \
-		${GO_PKGNAME}/test/oneof/combos/unsafemarshaler \
-		${GO_PKGNAME}/test/oneof/combos/unsafeunmarshaler \
-		${GO_PKGNAME}/test/oneof3 \
-		${GO_PKGNAME}/test/oneof3/combos/both \
-		${GO_PKGNAME}/test/oneof3/combos/marshaler \
-		${GO_PKGNAME}/test/oneof3/combos/neither \
-		${GO_PKGNAME}/test/oneof3/combos/unmarshaler \
-		${GO_PKGNAME}/test/oneof3/combos/unsafeboth \
-		${GO_PKGNAME}/test/oneof3/combos/unsafemarshaler \
-		${GO_PKGNAME}/test/oneof3/combos/unsafeunmarshaler \
-		${GO_PKGNAME}/test/oneofembed \
-		${GO_PKGNAME}/test/packed \
-		${GO_PKGNAME}/test/protosize \
-		${GO_PKGNAME}/test/required \
-		${GO_PKGNAME}/test/sizeunderscore \
-		${GO_PKGNAME}/test/tags \
-		${GO_PKGNAME}/test/theproto3 \
-		${GO_PKGNAME}/test/theproto3/combos/both \
-		${GO_PKGNAME}/test/theproto3/combos/marshaler \
-		${GO_PKGNAME}/test/theproto3/combos/neither \
-		${GO_PKGNAME}/test/theproto3/combos/unmarshaler \
-		${GO_PKGNAME}/test/theproto3/combos/unsafeboth \
-		${GO_PKGNAME}/test/theproto3/combos/unsafemarshaler \
-		${GO_PKGNAME}/test/theproto3/combos/unsafeunmarshaler \
-		${GO_PKGNAME}/test/unmarshalmerge \
-		${GO_PKGNAME}/test/unrecognized \
-		${GO_PKGNAME}/test/unrecognizedgroup \
-		${GO_PKGNAME}/vanity/command \
-		${GO_PKGNAME}/vanity/test \
-		${GO_PKGNAME}/vanity/test/fast \
-		${GO_PKGNAME}/vanity/test/faster \
-		${GO_PKGNAME}/vanity/test/slick \
-		${GO_PKGNAME}/version \
+GH_SUBDIR=	src/github.com/gogo/protobuf
+
+TARGETS=	protoc-gen-combo \
+		protoc-gen-gofast \
+		protoc-gen-gogo \
+		protoc-gen-gogofast \
+		protoc-gen-gogofaster \
+		protoc-gen-gogoslick \
+		protoc-gen-gogotypes \
+		protoc-gen-gostring \
+		protoc-min-version
+
+do-build:
+.for TARGET in ${TARGETS}
+	@cd ${WRKSRC}/${TARGET} && \
+		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build
+.endfor
+
+do-install:
+.for TARGET in ${TARGETS}
+	${INSTALL_PROGRAM} ${WRKSRC}/${TARGET}/${TARGET} ${STAGEDIR}${PREFIX}/bin
+.endfor
 
 .include <bsd.port.mk>
