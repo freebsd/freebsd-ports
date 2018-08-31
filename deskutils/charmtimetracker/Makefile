@@ -6,6 +6,9 @@ DISTVERSION=	1.11.4
 PORTREVISION=	2
 CATEGORIES=	deskutils
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	51a0a34e9673.patch:-p1
+
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Time tracker
 
