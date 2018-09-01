@@ -722,6 +722,7 @@
     SUBDIR += py-pysym
     SUBDIR += py-pyvtk
     SUBDIR += py-random2
+    SUBDIR += py-rapi
     SUBDIR += py-roman
     SUBDIR += py-rpy2
     SUBDIR += py-scientific
