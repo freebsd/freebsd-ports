@@ -14,6 +14,7 @@ COMMENT=	Network data storage and analysis library from CAIDA
 LICENSE=	LGPL21
 
 USES=		gmake libtool
+USE_CXXSTD=	c++98
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
