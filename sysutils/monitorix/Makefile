@@ -10,7 +10,8 @@ MASTER_SITES=	http://www.monitorix.org/ \
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Web based monitoring system
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	librrd.so:databases/rrdtool
 RUN_DEPENDS=	p5-ParallelUserAgent>=0:www/p5-ParallelUserAgent \
