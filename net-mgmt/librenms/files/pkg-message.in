@@ -1,5 +1,5 @@
 === Configuration details ===
-The following is recommended for /var/db/mysql/my.cnf
+The following is recommended for /usr/local/etc/mysql/my.cnf
 
 NOTE: these are global settings.  Please read this first:
 
@@ -25,4 +25,27 @@ PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
 */5 	*	*	*	*	www	%%PHP%% %%WWWDIR%%/poll-billing.php >> /dev/null 2>&1
 01	*	*	*	*	www	%%PHP%% %%WWWDIR%%/billing-calculate.php >> /dev/null 2>&1
 */5	*	*	*	*	www	%%PHP%% %%WWWDIR%%/check-services.php >> /dev/null 2>&1
+
+For a fresh install, you need to create an APP_KEY:
+
+cd %%WWWDIR%%
+cp -i .env.sample .env
+
+You might need to set your database details in that file
+Then run:
+
+php artisan key:generate
+
+The output should look something like this:
+
+**************************************
+*     Application In Production!     *
+**************************************
+
+ Do you really wish to run this command? (yes/no) [no]:
+ > y
+
+Application key [base64:P62La9V........qw=] set successfully.
+
+After that, follow the LibreNMS documentation for configuration.
 
