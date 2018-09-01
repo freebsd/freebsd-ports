@@ -1,11 +1,11 @@
---- man/Makefile.in.orig	2015-01-07 18:23:47 UTC
+--- man/Makefile.in.orig	2018-02-02 22:15:32 UTC
 +++ man/Makefile.in
-@@ -885,7 +885,7 @@ uninstall-man: uninstall-man3 uninstall-
+@@ -989,7 +989,7 @@ uninstall-man: uninstall-man3 uninstall-
  
  
  $(MANS_CPP): $(MANS_CPP:%=%.pre)
--	$(CPP) -nostdinc -w -C -P -I$(top_srcdir)/man $@.pre  $@
-+	$(CPP) -nostdinc -w -C -I$(top_srcdir)/man $@.pre | grep -v '^#' > $@
+-	$(CPP_FOR_BUILD) -nostdinc -w -C -P -I$(top_srcdir)/man $@.pre $@
++	$(CPP_FOR_BUILD) -nostdinc -w -C -I$(top_srcdir)/man $@.pre | grep -v '^#' > $@
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
