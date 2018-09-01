@@ -1,0 +1,4 @@
+polynom is a collection of functions to implement a class for univariate
+polynomial manipulations.
+
+WWW: https://cran.r-project.org/web/packages/polynom/
