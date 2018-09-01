@@ -5,9 +5,9 @@
          $output['local_date']   = $local_date;
          $output['local_branch'] = rtrim(`git rev-parse --abbrev-ref HEAD`);
 +    } else {
-+        $output['local_ver']  = '1.42.01';
-+        # obtained via git show --pretty='%H|%ct' -s 1.42.01
-+        $output['local_date'] = 1533413232;
++        $output['local_ver']  = '%%PORTVERSION%%';
++        # obtained via git show --pretty='%H|%ct' -s %%PORTVERSION%%
++        $output['local_date'] = %%RELEASE_TIMESTAMP%%;
      }
      $output['db_schema']   = dbIsConnected() ? get_db_schema() : '?';
      $output['php_ver']     = phpversion();
