@@ -186,6 +186,7 @@
     SUBDIR += py-ScientificPython
     SUBDIR += py-SimpleSpectral
     SUBDIR += py-abipy
+    SUBDIR += py-ase
     SUBDIR += py-cdo
     SUBDIR += py-coards
     SUBDIR += py-dlib
