@@ -1,0 +1,9 @@
+# $FreeBSD$
+TEST_TARGETS=	base_unittests \
+		chromedriver_unittests \
+		crypto_unittests \
+		gn_unittests \
+		headless_unittests \
+		printing_unittests \
+		url_unittests
+		
