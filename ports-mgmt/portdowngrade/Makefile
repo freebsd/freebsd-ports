@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	portdowngrade
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# empty
 DISTFILES=	# none
