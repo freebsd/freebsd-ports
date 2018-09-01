@@ -6,7 +6,6 @@ DISTNAME=	boost_${PORTVERSION:S/./_/g}
 CATEGORIES=	devel
 MAINTAINER=	office@FreeBSD.org
 
-CONFLICTS+=	boost-python-1* boost-1*
 MASTER_SITES=	https://dl.bintray.com/boostorg/release/${PORTVERSION}/source/ \
 		SF/boost/boost/${PORTVERSION}
 
