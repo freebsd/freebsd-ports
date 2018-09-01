@@ -1,0 +1,5 @@
+Additive partitions of integers. Enumerates the partitions, unequal partitions,
+and restricted partitions of an integer; the three corresponding partition
+functions are also given. Set partitions are now included.
+
+WWW: https://cran.r-project.org/web/packages/partitions/
