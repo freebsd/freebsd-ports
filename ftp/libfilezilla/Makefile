@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libfilezilla
-PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTVERSION=	0.13.0
 CATEGORIES=	ftp
 MASTER_SITES=	http://download.filezilla-project.org/${PORTNAME}/
 

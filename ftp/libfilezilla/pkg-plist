@@ -1,4 +1,6 @@
 include/libfilezilla/apply.hpp
+include/libfilezilla/buffer.hpp
+include/libfilezilla/encode.hpp
 include/libfilezilla/event.hpp
 include/libfilezilla/event_handler.hpp
 include/libfilezilla/event_loop.hpp
@@ -20,6 +22,7 @@ include/libfilezilla/string.hpp
 include/libfilezilla/thread.hpp
 include/libfilezilla/thread_pool.hpp
 include/libfilezilla/time.hpp
+include/libfilezilla/uri.hpp
 include/libfilezilla/util.hpp
 include/libfilezilla/version.hpp
 lib/libfilezilla.a
