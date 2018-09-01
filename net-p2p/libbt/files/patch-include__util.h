@@ -1,12 +1,21 @@
---- include/util.h	Fri Apr 16 08:41:48 2004
-+++ include/util.h.new	Sun May 30 14:17:54 2004
-@@ -28,9 +28,4 @@
+--- include/util.h.orig	2018-08-30 18:48:15 UTC
++++ include/util.h
+@@ -53,11 +53,15 @@
  	typedef void (*exitfn_ptr) (int,void*);
  	int on_exit( exitfn_ptr exitfn, void* data) ;
  #endif
 -#define malloc(s) use_btmalloc_instead
 -#define calloc(n,s) use_btcalloc_instead
 -#define realloc(p,s) use_btrealloc_instead
--#define free(p) use_btfree_instead
--
- #endif
++/*
++ #define malloc(s) use_btmalloc_instead
++ #define calloc(n,s) use_btcalloc_instead
++ #define realloc(p,s) use_btrealloc_instead
++/*
+ #undef free
++/*
+ #define free(p) use_btfree_instead
++*/
+ 
+ void hexdump( void *buf, int buflen);
+ 

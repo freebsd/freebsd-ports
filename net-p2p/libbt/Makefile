@@ -2,24 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	libbt
-PORTVERSION=	1.05
-PORTREVISION=	5
+DISTVERSION=	1.06
 CATEGORIES=	net-p2p devel
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	egypcio@googlemail.com
 COMMENT=	C library implementing the core BitTorrent protocol
 
-LIB_DEPENDS=	libcurl.so:ftp/curl
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
 
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libuuid.so:misc/e2fsprogs-libuuid
+
+USES=		gmake localbase ssl
 GNU_CONFIGURE=	yes
-USES=		gmake
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
-PORTDOCS=	protocol-ext.txt protocol.txt
+DOCS=		docs/protocol.txt docs/protocol-ext.txt \
+		CHANGELOG CREDITS README
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
+
+PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|depend||' ${WRKSRC}/Makefile.in
@@ -28,16 +32,12 @@ post-patch:
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/libbt.a ${STAGEDIR}${PREFIX}/lib
-	${MKDIR} ${STAGEDIR}${PREFIX}/include/libbt
-.for i in btcheck btget btlist
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${i} ${STAGEDIR}${PREFIX}/bin
-.endfor
-.for i in benc.h bitset.h bterror.h btmessage.h bts.h context.h peer.h random.h segmenter.h strbuf.h stream.h types.h util.h
-	${INSTALL_DATA} ${WRKSRC}/include/${i} ${STAGEDIR}${PREFIX}/include/libbt
-.endfor
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/libbt
+	cd ${WRKSRC}/src && ${INSTALL_PROGRAM} btcheck btget btlist ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC}/include && ${INSTALL_DATA} *.h ${STAGEDIR}${PREFIX}/include/libbt
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
