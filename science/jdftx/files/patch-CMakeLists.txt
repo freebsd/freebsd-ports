@@ -1,0 +1,37 @@
+--- CMakeLists.txt.orig	2018-08-24 15:03:02 UTC
++++ CMakeLists.txt
+@@ -97,7 +97,7 @@ if(EnableMPI)
+ 	add_definitions("-DMPI_ENABLED")
+ endif()
+ 
+-option(EnableLibXC "Use LibXC to provide additional exchange-correlation functionals")
++option(EnableLibXC "Use LibXC to provide additional exchange-correlation functionals" OFF)
+ if(EnableLibXC)
+ 	find_package(LIBXC REQUIRED)
+ 	include_directories(${LIBXC_INCLUDE_DIR})
+@@ -223,7 +223,7 @@ endif()
+ #Library with all the functionality:
+ FILE(GLOB jdftxlibSources core/*.cpp fluid/*.cpp electronic/*.cpp commands/*.cpp)
+ add_library(jdftxlib ${LINK_TYPE} ${jdftxlibSources})
+-target_link_libraries(jdftxlib ${EXTERNAL_LIBS})
++target_link_libraries(jdftxlib ${EXTERNAL_LIBS} -lexecinfo) # execinfo only for libxc?
+ set_target_properties(jdftxlib PROPERTIES OUTPUT_NAME "jdftx")
+ set_JDFTx_flags(jdftxlib OFF)
+ 
+@@ -232,6 +232,16 @@ set_JDFTx_flags(jdftxlib OFF)
+ option(EnableCUDA "Enable NVIDIA GPU support using CUDA" OFF)
+ option(EnableCuSolver "Whether to use cuSolver GPU LAPACK (Requires CUDA >= 9)" OFF)
+ 
++include(CheckFunctionExists)
++CHECK_FUNCTION_EXISTS(sincos HAVE_SINCOS_FUNCTION)
++
++if(NOT HAVE_SINCOS_FUNCTION)
++  MESSAGE("Do not have function sincos")
++  add_definitions("-DMISSING_SINCOS_FUNCTION")
++else()
++  MESSAGE("Found function sincos")
++endif()
++
+ if(EnableCUDA)
+ 	find_package(CUDA REQUIRED)
+ 	set(CUDA_ARCH "compute_35" CACHE STRING "CUDA virtual architecture to compile for")

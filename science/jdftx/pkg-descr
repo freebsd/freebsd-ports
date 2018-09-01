@@ -1,0 +1,14 @@
+JDFTx is a software package for quantum chemistry computations.
+
+JDFTx supports all the standard functionality present in any electronic DFT
+software. It supports several semilocal, meta-GGA and EXX-hybrid
+exchange-correlation functions, with additional options available by linking to
+LibXC [18]. DFT+U [5] is available for treating localized electrons. Pair
+potential dispersion corrections [10] are available for including van der Waals
+interactions. JDFTx supports several formats of norm-conserving and ultrasoft
+pseudopotentials and comes pre-installed with an opens-ource library for each.
+With truncated Coulomb interactions [27], JDFTx enables accurate calculations
+of systems of any dimensionality from 0 to 3: molecules, wires, slabs/2D
+materials and bulk.
+
+WWW: http://jdftx.org/
