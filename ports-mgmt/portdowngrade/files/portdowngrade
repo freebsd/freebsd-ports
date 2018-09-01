@@ -24,6 +24,9 @@ for the correct origins and a list is presented.
 When called with -r, make describe is called in the restored port and all
 of the ports that the restored port depended on are also checked out at the
 same date.
+
+This software requires that a ports tree has been fetched and is present
+in ${PORTSDIR:-/usr/ports}.
 EOF
 	exit 1
 }
@@ -62,7 +65,7 @@ svn=$(which svn 2>/dev/null || which svnlite 2>/dev/null) || err "Where is Subve
 
 PORTSDIR="$(make -f /usr/share/mk/bsd.port.mk -VPORTSDIR)"
 
-[ -d $PORTSDIR ] || err "Where is your ports tree??"
+[ -d $PORTSDIR ] || usage
 
 args=$(getopt c:r $*) || usage
 
