@@ -190,6 +190,7 @@
     SUBDIR += py-cdo
     SUBDIR += py-coards
     SUBDIR += py-dlib
+    SUBDIR += py-gpaw
     SUBDIR += py-gsd
     SUBDIR += py-h5py
     SUBDIR += py-hcluster

@@ -1,0 +1,6 @@
+GPAW is a density-functional theory (DFT) Python code based on the
+projector-augmented wave (PAW) method and the atomic simulation
+environment (ASE). It uses plane-waves, atom-centered basis-functions
+or real-space uniform grids combined with multigrid methods.
+
+WWW: https://wiki.fysik.dtu.dk/gpaw/
