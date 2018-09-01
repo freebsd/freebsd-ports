@@ -1494,6 +1494,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/avl-tree.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/backquote.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/backquote.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/backtrace.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/backtrace.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/benchmark.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/benchmark.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/bindat.el.gz
@@ -1651,6 +1653,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/testcover.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/text-property-search.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/text-property-search.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/thread.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/thread.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/thunk.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/thunk.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/timer-list.el.gz
@@ -3897,13 +3901,13 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/xwidget.elc
 %%DATADIR%%/%%EMACS_VER%%/site-lisp/subdirs.el
 %%DATADIR%%/site-lisp/subdirs.el
-%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/backtrace.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/backtrace.elc
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/site-lisp/site-start.el
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/alloc.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/atimer.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/atimer.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/bidi.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/bignum.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/bignum.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/blockinput.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/buffer.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/buffer.h
