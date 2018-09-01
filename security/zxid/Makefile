@@ -3,10 +3,11 @@
 
 PORTNAME=	zxid
 PORTVERSION=	1.42
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://zxid.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	admins@perceptyx.com
 COMMENT=	Open Source IdM for the Masses - SAML SSO
 
 LICENSE=	E2ETA
