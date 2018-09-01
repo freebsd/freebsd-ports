@@ -3,5 +3,4 @@ include/zita-resampler/resampler-table.h
 include/zita-resampler/resampler.h
 include/zita-resampler/vresampler.h
 lib/libzita-resampler.so
-lib/libzita-resampler.so.1
-lib/libzita-resampler.so.1.6.0
+lib/libzita-resampler.so.1.6.2
