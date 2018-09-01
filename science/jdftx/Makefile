@@ -2,8 +2,8 @@
 
 PORTNAME=	jdftx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.2-73
-DISTVERSIONSUFFIX=	-g73b17437
+DISTVERSION=	1.4.2-74
+DISTVERSIONSUFFIX=	-gba743849
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,10 +17,13 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libfftw3.so:math/fftw3 \
 		libgsl.so:math/gsl \
 		liblapack.so:math/lapack
+RUN_DEPENDS=	bash:shells/bash
 TEST_DEPENDS=	bash:shells/bash
 
 USES=		cmake:outsource fortran localbase:ldflags shebangfix
 SHEBANG_GLOB=	*.sh
+SHEBANG_FILES=	scripts/*
+SHEBANG_LANG=	octave
 USE_GITHUB=	yes
 GH_ACCOUNT=	shankar1729
 USE_LDCONFIG=	yes
@@ -31,7 +34,7 @@ WRKSRC_SUBDIR=	${PORTNAME}
 
 CMAKE_ARGS=	-DLAPACK_LIBRARIES:STRING="-llapack -lblas"
 
-OPTIONS_DEFINE=		MPI LIBXC HDF5 SCALAPACK
+OPTIONS_DEFINE=		MPI LIBXC HDF5 SCALAPACK OCTAVE
 OPTIONS_DEFAULT=	MPI LIBXC
 
 MPI_CMAKE_BOOL=		EnableMPI
@@ -49,14 +52,7 @@ SCALAPACK_DESC=		Enable ScaLAPACK support
 SCALAPACK_CMAKE_BOOL=	EnableScaLAPACK
 SCALAPACK_LIB_DEPENDS=	libscalapack.so:math/scalapack
 
-do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/phonon ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/wannier ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/libjdftx.so ${STAGEDIR}${PREFIX}/lib
-	@${MKDIR} ${STAGEDIR}${DATADIR}/pseudopotentials
-.for pp in GBRV-2017  GBRV SG15-pulay SG15
-	cd ${STAGEDIR}${DATADIR}/pseudopotentials && ${TAR} xzf ${WRKSRC}/pseudopotentials/${pp}.tgz
-.endfor
+OCTAVE_DESC=		With Octave support (only for one script: dryRunToPDB)
+OCTAVE_USES=		octave
 
 .include <bsd.port.mk>
