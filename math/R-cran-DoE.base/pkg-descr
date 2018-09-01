@@ -1,0 +1,6 @@
+Package DoE.base creates full factorial experimental designs and designs 
+based on orthogonal arrays for (industrial) experiments. Additionally, it 
+provides utility functions for the class design, which is also used by 
+other packages for designed experiments.
+
+WWW: https://CRAN.R-project.org/package=DoE.base
