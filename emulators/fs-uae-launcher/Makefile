@@ -2,23 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	fs-uae-launcher
-PORTVERSION=	2.4.1
+PORTVERSION=	2.8.4
 CATEGORIES=	emulators
 MASTER_SITES=	http://fs-uae.net/fs-uae/stable/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ndowens@yahoo.com
 COMMENT=	GUI launcher for the FS-UAE Amiga emulator
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext gmake pathfix python:2.7 shebangfix
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
+
+USES=		gettext gmake pathfix python:3.4+ pyqt:5
+
+USE_PYTHON=	distutils autoplist
+USE_PYQT=	core sip gui widgets opengl
 
 INSTALLS_ICONS=	yes
-MAKE_ARGS=	DESTDIR=${STAGEDIR} prefix=${PREFIX}
+MAKE_ARGS+=	DESTDIR=${STAGEDIR} prefix=${PREFIX} PYTHON=${PYTHON_CMD}
 
-do-build:
-	(cd ${WRKSRC} && ${PYTHON_CMD} setup.py build)
-	(cd ${WRKSRC} && ${PYTHON_CMD} \
-		setup.py install --root ${STAGEDIR} --prefix ${PREFIX})
+PYDISTUTILS_INSTALLARGS+=	--install-lib=${PYTHON_SITELIBDIR}
 
 .include <bsd.port.mk>
