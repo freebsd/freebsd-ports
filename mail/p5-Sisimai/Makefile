@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Sisimai
-PORTVERSION=	4.22.7
+PORTVERSION=	4.23.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
@@ -16,8 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	p5-Class-Accessor-Lite>0:devel/p5-Class-Accessor-Lite
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuildtiny
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
