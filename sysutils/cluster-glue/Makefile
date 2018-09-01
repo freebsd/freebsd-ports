@@ -16,6 +16,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LIB
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libnet.so:net/libnet
