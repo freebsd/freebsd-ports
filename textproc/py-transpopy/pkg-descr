@@ -1,0 +1,6 @@
+Transpopy uses the Google Translate API to convert/translate strings from a
+PO (gettext Portable Object) file, keeping your lines or fuzzy references.
+
+To use the Google Translate API it's needed an API key in json format.
+
+WWW: https://github.com/kanazux/transpopy
