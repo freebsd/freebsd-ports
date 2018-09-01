@@ -10498,3 +10498,4 @@ x11-themes/qt5-style-Kvantum|x11-themes/Kvantum@qt5|2018-08-26|Moved to flavored
 devel/gps||2018-08-28|Has expired: Depends on obsolete LLVM 3.8.
 net-mgmt/ocsinventory-ng|net-mgmt/ocsinventory-server|2018-08-26|split port
 www/py-buku|www/buku|2018-09-01|Moved to correct directory, port is not a python library
+math/rpy2|math/py-rpy2|2018-09-01|Moved to correct directory, this is a python library
