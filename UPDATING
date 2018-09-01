@@ -6,6 +6,58 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20180901:
+  AFFECTS: net-mgmt/librenms
+  AUTHOR: dvl@FreeBSD.org
+
+  As of version 1.42, to conform with man hier, logs and rrd files have 
+  relocated outside the WWW directory. When upgrading from < 1.42 to more
+  recent versions, the following steps are required.
+
+  You must update config.php and manually relocate the rrd and log files.
+  Before upgrading, please stop librenms,  update the configuration, and
+  relocate the files.
+
+  If you find graphs are not updating, fping >= 4.0 requires an IPv6
+  address. Adding an IPv6 address should fix graphing.
+
+  Please add these entries to config.php:
+
+  $config['installed_from_package'] = true;
+  $config['log_dir'] = '/var/log/librenms';
+  $config['rrd_dir'] = '/var/db/librenms/rrd';
+
+  To relocate the files:
+
+  mkdir /var/log/librenms /var/db/librenms
+  chown www:ww: /var/log/librenms /var/db/librenms
+  cd /usr/local/www/librenms
+  mv rrd /var/db/librenms/
+  mv logs/librenms.log /var/log/librenms/
+  rmdir logs
+
+  An application key is required. Please follow these steps to generate it:
+
+  cd /usr/local/www/librenms
+  cp -i .env.sample .env
+
+  You might need to set your database details in that file.
+  Then run:
+
+  php artisan key:generate
+
+  The output should look something like this:
+
+  **************************************
+  *     Application In Production!     *
+  **************************************
+
+   Do you really wish to run this command? (yes/no) [no]:
+   > y
+
+  Application key [base64:P62La9V........qw=] set successfully.
+ 
+
+20180901:
   AFFECTS: users of samba46
   AUTHOR: antoine@FreeBSD.org
 

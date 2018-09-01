@@ -2,50 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	1.35
-PORTREVISION=	0
+PORTVERSION=	1.42.01
+# RELEASE_TIMESTAMP is used for a patch inside the vendor code
+# it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
+# It sits here so you remember to update it with each release
+RELEASE_TIMESTAMP=	1533413232
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
+MASTER_SITES=	LOCAL/dvl:vendor
+DISTFILES=	${PORTNAME}-vendor-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX}:vendor
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Autodiscovering PHP/MySQL/SNMP based network monitoring
 
 LICENSE=	GPLv3
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	librenms
-
-USES=		python${PY_MYSQL} shebangfix
-SHEBANG_FILES=	scripts/auth_test.php scripts/deploy-docs.sh scripts/github-remove \
-		scripts/Migration/Standard_Conversion/convert_no_xml.sh \
-		scripts/Migration/Standard_Conversion/destwork_no_xml.sh \
-		scripts/Migration/Standard_Conversion/mkdir.sh \
-		scripts/Migration/XML_Conversion/convert.sh \
-		scripts/Migration/XML_Conversion/destwork.sh \
-		scripts/Migration/XML_Conversion/mkdir.sh \
-		scripts/removespikes.php scripts/agent-local/nfs-stats.sh \
-		scripts/removespikes.pl scripts/watchmaillog/watchmaillog.pl \
-		vendor/ezyang/htmlpurifier/maintenance/add-vimline.php \
-		vendor/ezyang/htmlpurifier/maintenance/config-scanner.php \
-		vendor/ezyang/htmlpurifier/maintenance/flush-definition-cache.php \
-		vendor/ezyang/htmlpurifier/maintenance/flush.php \
-		vendor/ezyang/htmlpurifier/maintenance/generate-entity-file.php \
-		vendor/ezyang/htmlpurifier/maintenance/generate-includes.php \
-		vendor/ezyang/htmlpurifier/maintenance/generate-schema-cache.php \
-		vendor/ezyang/htmlpurifier/maintenance/generate-standalone.php \
-		vendor/ezyang/htmlpurifier/maintenance/merge-library.php \
-		vendor/ezyang/htmlpurifier/maintenance/old-extract-schema.php \
-		vendor/ezyang/htmlpurifier/maintenance/old-remove-require-once.php \
-		vendor/ezyang/htmlpurifier/maintenance/old-remove-schema-def.php \
-		vendor/ezyang/htmlpurifier/maintenance/rename-config.php \
-		vendor/ezyang/htmlpurifier/maintenance/remove-trailing-whitespace.php \
-		vendor/ezyang/htmlpurifier/maintenance/update-config.php \
-		vendor/tecnickcom/tcpdf/tools/tcpdf_addfont.php \
-		poller.php poller-wrapper.py
-
-USE_PHP=	ctype curl filter gd hash json ldap mcrypt mysqli openssl posix session simplexml snmp tokenizer xml
-
-NO_BUILD=	yes
+# perhaps we also need python-memcache python-mysqldb
 
 RUN_DEPENDS+=	rrdtool:databases/rrdtool \
 		dot:graphics/graphviz \
@@ -54,6 +26,18 @@ RUN_DEPENDS+=	rrdtool:databases/rrdtool \
 		snmpget:net-mgmt/net-snmp \
 		bash:shells/bash \
 		sudo:security/sudo
+
+USES=		python${PY_MYSQL} shebangfix
+
+USE_PHP=	ctype curl filter gd hash json ldap mbstring mcrypt mysqli openssl pdo posix session simplexml snmp tokenizer xml zip
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	librenms
+
+USERS=		www
+WWW_USER=	www
+
+NO_BUILD=	yes
 
 OPTIONS_DEFINE=	APACHEMOD FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS NMAP PYPOLLER WMIC DOCS EXAMPLES X11
 OPTIONS_DEFAULT=	APACHEMOD FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP PYPOLLER WMIC
@@ -80,35 +64,78 @@ WMIC_RUN_DEPENDS=	wmic:net-mgmt/wmi-client
 MYSQLD_USES=		mysql:server
 MYSQLD_USES_OFF=	mysql:client
 
+SHEBANG_FILES=	scripts/auth_test.php scripts/deploy-docs.sh scripts/github-remove \
+		scripts/Migration/Standard_Conversion/convert_no_xml.sh \
+		scripts/Migration/Standard_Conversion/destwork_no_xml.sh \
+		scripts/Migration/Standard_Conversion/mkdir.sh \
+		scripts/Migration/XML_Conversion/convert.sh \
+		scripts/Migration/XML_Conversion/destwork.sh \
+		scripts/Migration/XML_Conversion/mkdir.sh \
+		scripts/removespikes.php scripts/agent-local/nfs-stats.sh \
+		scripts/removespikes.pl scripts/watchmaillog/watchmaillog.pl \
+		poller.php poller-wrapper.py \
+		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/generate-includes.php \
+		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/flush-definition-cache.php \
+		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/old-remove-require-once.php \
+		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/config-scanner.php \
+		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/flush.php \
+		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/add-vimline.php \
+		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/remove-trailing-whitespace.php \
+		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/merge-library.php \
+		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/old-extract-schema.php \
+		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/rename-config.php \
+		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/generate-standalone.php \
+		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/generate-schema-cache.php \
+		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/old-remove-schema-def.php \
+		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/generate-entity-file.php \
+		../${PORTNAME}-vendor-${PORTVERSION}/ezyang/htmlpurifier/maintenance/update-config.php \
+		../${PORTNAME}-vendor-${PORTVERSION}/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php \
+		../${PORTNAME}-vendor-${PORTVERSION}/tecnickcom/tcpdf/tools/tcpdf_addfont.php
+
 SUB_FILES+=	pkg-message
 SUB_LIST+=	PHP="${PHPBASE}/bin/php" PYTHON=${PYTHON_CMD}
 
-ROOT_FILES=	addhost.php adduser.php	alerts.php build-base.php build.sql \
-		billing-calculate.php check-services.php composer.json \
-		config.php.default config_to_json.php cronic daily.php daily.sh \
+ROOT_FILES=	.env.example addhost.php adduser.php alerts.php artisan billing-calculate.php \
+		build-base.php build.sql check-services.php composer.json \
+		composer.lock config.php.default config_to_json.php cronic daily.php daily.sh \
 		delhost.php discovery-wrapper.py discovery.php dist-pollers.php irc.php \
-		mkdocs.yml pbin.sh phpunit.xml poll-billing.php poller.php poller-service.py \
-		poller-wrapper.py readmegen.yml renamehost.php services-wrapper.py \
+		librenms-service.py mkdocs.yml pbin.sh phpunit.xml ping.php poll-billing.php poller.php poller-service.py \
+		poller-wrapper.py readmegen.yml renamehost.php services-wrapper.py snmp-scan.py \
 		snmptrap.php syslog.php validate.php
 
-ROOT_DIRS=	LibreNMS contrib doc html includes lib logs mibs misc rrd scripts sql-schema tests vendor
+ROOT_DIRS=	LibreNMS app bootstrap config contrib database doc html includes lib licenses logs mibs misc resources routes scripts sql-schema storage tests
 
-DOCS=		AUTHORS.md CHANGELOG CONTRIBUTING.md LICENSE.txt README.md
+# these are directories which require a generic @DIR entry in pkg-plist
+OTHER_DIRS=	storage/app/public \
+		storage/debugbar \
+		storage/framework/testing \
+		storage/logs \
+		vendor/amenadiel/jpgraph/tests/_output \
+		vendor/amenadiel/jpgraph/tests/_support/_generated \
+		vendor/laravel/laravel/bootstrap/cache \
+		vendor/laravel/laravel/storage/app/public \
+		vendor/laravel/laravel/storage/framework/cache \
+		vendor/laravel/laravel/storage/framework/sessions \
+		vendor/laravel/laravel/storage/framework/testing \
+		vendor/laravel/laravel/storage/framework/views \
+		vendor/laravel/laravel/storage/logs
+
+DOCS=		AUTHORS.md CHANGELOG.md CONTRIBUTING.md LICENSE.txt README.md
 PORTDOCS=	*
 PORTEXAMPLES=	snmp.conf.example snmpd.conf.example
 NO_ARCH=	yes
 
 APACHEMOD_USES=		php:mod
 APACHEMOD_USES_OFF=	php:web
-APACHEMOD_USE=		APACHE_RUN=22+
+APACHEMOD_USE=		USES=apache:run,22+
 
 post-patch:
-	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-	       ${WRKSRC}/poller-wrapper.py ${WRKSRC}/poller.php
-	${REINPLACE_CMD} 's|%%PORTVERSION%%|${PORTVERSION}|g' \
-	       ${WRKSRC}/includes/common.php
-	${REINPLACE_CMD} -e 's|/opt/librenms|${WWWDIR}|' \
-		${WRKSRC}/html/install.php
+	${REINPLACE_CMD}    's|%%PORTNAME%%|${PORTNAME}|g'                   ${WRKSRC}/config.php.default
+	${REINPLACE_CMD}    's|%%WWW_USER%%|${WWW_USER}|g'                   ${WRKSRC}/config.php.default
+	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                 ${WRKSRC}/poller-wrapper.py ${WRKSRC}/poller.php
+	${REINPLACE_CMD}    's|%%PORTVERSION%%|${PORTVERSION}|g'             ${WRKSRC}/includes/common.php
+	${REINPLACE_CMD}    's|%%RELEASE_TIMESTAMP%%|${RELEASE_TIMESTAMP}|g' ${WRKSRC}/includes/common.php
+	${REINPLACE_CMD} -e 's|/opt/librenms|${WWWDIR}|'                     ${WRKSRC}/html/install.php
 	${RM} ${WRKSRC}/LibreNMS/Validations/Updates.php
 
 do-install:
@@ -120,6 +147,8 @@ do-install:
 .for f in ${ROOT_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${WWWDIR}
 .endfor
+	${MKDIR} ${STAGEDIR}/${WWWDIR}/vendor
+	(cd ${WRKDIR}/${PORTNAME}-vendor-${PORTVERSION} && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}/vendor)
 # Make daily.sh executable
 	${CHMOD} 0755 ${STAGEDIR}/${WWWDIR}/daily.sh
 # Files in scripts dir should be executable
@@ -141,11 +170,24 @@ do-install-EXAMPLES-on:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}/${EXAMPLESDIR}
 .endfor
 
+# these values should be outside the www tree now
+	${MKDIR} ${STAGEDIR}/var/log/${PORTNAME}
+	${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}
+
 post-install:
-	@${FIND} -s ${STAGEDIR}${WWWDIR} -type f '(' -name '*.orig' -or -name '*.bak' ')' -delete
+	@${FIND} -s ${STAGEDIR}${WWWDIR} -type f '(' -name '*.orig' -or -name '*.bak' -or -name '.gitignore' ')' -delete
 	@${FIND} -s ${STAGEDIR}${WWWDIR} -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/logs" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/rrd" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/bootstrap/cache" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/storage" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/storage/framework/cache" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/storage/framework/sessions" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/storage/framework/views" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir(www,www,0775) /var/log/${PORTNAME}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir(www,www,0775) /var/db/${PORTNAME}" >> ${TMPPLIST}
+.for f in ${OTHER_DIRS}
+	@${ECHO_CMD} "@dir(root,www,0775) ${WWWDIR}/${f}" >> ${TMPPLIST}
+.endfor
 
 .include <bsd.port.mk>

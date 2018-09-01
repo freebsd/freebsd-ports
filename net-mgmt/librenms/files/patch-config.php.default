@@ -1,7 +1,20 @@
---- config.php.default.orig	2017-12-31 20:48:36 UTC
+--- config.php.default.orig	2018-08-04 20:07:12 UTC
 +++ config.php.default
-@@ -10,7 +10,7 @@ $config['db_name'] = 'librenms';
+@@ -2,15 +2,20 @@
  
+ ## Have a look in includes/defaults.inc.php for examples of settings you can set here. DO NOT EDIT defaults.inc.php!
+ 
++$config['installed_from_package'] = true;
++
+ ### Database config
+ $config['db_host'] = 'localhost';
+ $config['db_user'] = 'USERNAME';
+ $config['db_pass'] = 'PASSWORD';
+ $config['db_name'] = 'librenms';
+ 
++$config['log_dir']     = '/var/log/librenms';
++$config['rrd_dir']     = '/var/db/librenms/rrd';
++
  // This is the user LibreNMS will run as
  //Please ensure this user is created and has the correct permissions to your install
 -$config['user'] = 'librenms';
