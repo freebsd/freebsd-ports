@@ -31,6 +31,7 @@
     SUBDIR += cointop
     SUBDIR += electrum
     SUBDIR += expense
+    SUBDIR += fava
     SUBDIR += fixc
     SUBDIR += frontaccounting
     SUBDIR += gnucash
