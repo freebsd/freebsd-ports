@@ -1,0 +1,45 @@
+Munge (effectively) -L/usr/local/lib into the link lines.
+
+QtKeyChain's cmake config lists the libraries it depends on:
+ - a bunch of Qt5 libraries, which are imported targets, and hence
+   already have full paths for CMake
+ - other libraries, like libsecret-1, gio, gobject .. which are not
+   set up as imported targets; these are not found at link-time unless
+   the directory is added to -L. They do have a pkg-config file,
+   so we'll look for (only) libsecret-1 and just add the directory it
+   lives in -- hopefully the other libraries live there too.
+
+Error message otherwise:
+
+: && /usr/bin/c++  -O2 -pipe -fstack-protector -fno-strict-aliasing -std=c++0x -fno-exceptions -Wno-gnu-zero-variadic-macro-arguments -Wall -Wextra -Wcast-align -Wchar-subscripts -Wformat-security -Wno-long-long -Wpointer-arith -Wundef -Wnon-virtual-dtor -Woverloaded-virtual -Werror=return-type -Wvla -Wdate-time -fdiagnostics-color=always -pedantic -O2 -pipe -fstack-protector -fno-strict-aliasing  -Wl,--enable-new-dtags  -fstack-protector Charm/CMakeFiles/charmtimetracker.dir/Charm.cpp.o Charm/CMakeFiles/charmtimetracker.dir/qrc_CharmResources.cpp.o Charm/CMakeFiles/charmtimetracker.dir/charmtimetracker_autogen/mocs_compilation.cpp.o  -o Charm/charmtimetracker  -Wl,-rpath,/usr/local/lib:/usr/local/lib/qt5: Charm/libCharmApplication.a Core/libCharmCore.a /usr/local/lib/libxcb.so /usr/local/lib/libxcb-screensaver.so /usr/local/lib/qt5/libQt5Network.so.5.10.1 /usr/local/lib/qt5/libQt5PrintSupport.so.5.10.1 /usr/local/lib/libqt5keychain.so.0.9.0 -lsecret-1 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl /usr/local/lib/qt5/libQt5DBus.so.5.10.1 /usr/local/lib/qt5/libQt5Widgets.so.5.10.1 /usr/local/lib/qt5/libQt5Gui.so.5.10.1 /usr/local/lib/qt5/libQt5Xml.so.5.10.1 /usr/local/lib/qt5/libQt5Sql.so.5.10.1 /usr/local/lib/qt5/libQt5Core.so.5.10.1 -Wl,-rpath-link,/usr/local/lib && :
+/usr/bin/ld: cannot find -lsecret-1
+
+
+--- Charm/CMakeLists.txt.orig	2018-09-01 10:20:52 UTC
++++ Charm/CMakeLists.txt
+@@ -170,6 +170,25 @@ ADD_LIBRARY(
+     ${CharmApplication_SRCS} ${UiGenerated_SRCS}
+ )
+ 
++# Need to find support-libraries for qt5keychain
++set( CharmExtra_LIBS "" )
++include( FindPkgConfig )
++pkg_search_module( _lso libsecret-1 )
++if( _lso_FOUND )
++    find_library( _lso_lib NAMES ${_lso_LIBRARIES} HINTS ${_lso_LIBRARY_DIRS} )
++    if ( _lso_lib )
++        # The issue is that qtkeychain lists libraries with no
++        # imported targets.
++        #
++        # set( CharmExtra_LIBS ${_lso_lib} )
++        link_directories( ${_lso_LIBRARY_DIRS} )
++    else()
++        message( WARNING "Found libsecret-1, but not ${_lso_LIBRARIES}" )
++    endif()
++else()
++    message( WARNING "Could not find libsecret-1" )
++endif()
++
+ kde_target_enable_exceptions( CharmApplication PUBLIC )
+ TARGET_LINK_LIBRARIES(CharmApplication ${CharmApplication_LIBS}
+     Qt5::Core
