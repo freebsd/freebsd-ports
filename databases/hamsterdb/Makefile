@@ -17,6 +17,7 @@ BROKEN_powerpc64=	fails to configure: checking for the Boost system library... n
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
 USES=		alias gmake libtool
+USE_CXXSTD=	gnu++98
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-boost=${LOCALBASE}
@@ -31,6 +32,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's#-ldl##g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's#-ldl##g' ${WRKSRC}/unittests/Makefile.in
 	${REINPLACE_CMD} -e 's#-ldl##g' ${WRKSRC}/tools/ham_bench/Makefile.in
+	${REINPLACE_CMD} -e '/^CXXFLAGS=$${CFLAGS}$$/d' ${WRKSRC}/configure
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
