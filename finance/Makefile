@@ -24,6 +24,7 @@
     SUBDIR += alkimia-qt4
     SUBDIR += aqbanking
     SUBDIR += aqmoney
+    SUBDIR += beancount
     SUBDIR += beanie
     SUBDIR += bitcoin-armory
     SUBDIR += cbb
