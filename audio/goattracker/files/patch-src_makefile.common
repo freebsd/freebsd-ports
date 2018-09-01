@@ -1,11 +1,11 @@
---- src/makefile.common.orig	2017-04-29 15:05:37 UTC
+--- src/makefile.common.orig	2018-09-01 09:14:51 UTC
 +++ src/makefile.common
 @@ -1,9 +1,9 @@
  # common makefile directives for linux and win32 build
  
 -CC=gcc
 -CXX=g++
--CFLAGS+=-O3 -Wall -Ibme -Iasm
+-CFLAGS+=-O3 -Wall -Ibme -Iasm -fpermissive
 -CXXFLAGS=$(CFLAGS)
 +CC?=gcc
 +CXX?=g++
@@ -14,7 +14,7 @@
  
  EXE=	$(PREFIX)goattrk2$(SUFFIX) \
  	$(PREFIX)gt2reloc$(SUFFIX) \
-@@ -48,26 +48,26 @@ bme/bme_gfx.o bme/bme_snd.o bme/bme_win.
+@@ -43,26 +43,26 @@ bme/bme_gfx.o bme/bme_snd.o bme/bme_win.
  	strip $@
  	
  $(PREFIX)mod2sng$(SUFFIX): mod2sng.o bme/bme_end.o
