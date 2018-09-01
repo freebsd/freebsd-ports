@@ -76,6 +76,7 @@
     SUBDIR += R-cran-numDeriv
     SUBDIR += R-cran-numbers
     SUBDIR += R-cran-outliers
+    SUBDIR += R-cran-partitions
     SUBDIR += R-cran-pbkrtest
     SUBDIR += R-cran-pls
     SUBDIR += R-cran-polynom
