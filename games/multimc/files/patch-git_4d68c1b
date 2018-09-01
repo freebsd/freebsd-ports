@@ -1,0 +1,199 @@
+From 4d68c1b509cd289e9f02cbf258e69f2539349029 Mon Sep 17 00:00:00 2001
+From: Sergey Shatunov <me@prok.pw>
+Date: Fri, 1 Jun 2018 21:20:33 +0700
+Subject: [PATCH] GH-2291 Fix build with Qt 5.11+
+
+--- api/gui/CMakeLists.txt.orig	2018-04-08 21:43:03 UTC
++++ api/gui/CMakeLists.txt
+@@ -21,8 +21,7 @@ set_target_properties(MultiMC_gui PROPERTIES CXX_VISIB
+ generate_export_header(MultiMC_gui)
+ 
+ # Link
+-target_link_libraries(MultiMC_gui MultiMC_iconfix MultiMC_logic)
+-qt5_use_modules(MultiMC_gui Gui)
++target_link_libraries(MultiMC_gui MultiMC_iconfix MultiMC_logic Qt5::Gui)
+ 
+ # Mark and export headers
+ target_include_directories(MultiMC_gui PUBLIC "${CMAKE_CURRENT_BINARY_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}")
+--- api/logic/CMakeLists.txt.orig	2018-04-08 21:43:03 UTC
++++ api/logic/CMakeLists.txt
+@@ -476,7 +476,7 @@ generate_export_header(MultiMC_logic)
+ 
+ # Link
+ target_link_libraries(MultiMC_logic xz-embedded MultiMC_unpack200 systeminfo MultiMC_quazip MultiMC_classparser ${NBT_NAME} ${ZLIB_LIBRARIES})
+-qt5_use_modules(MultiMC_logic Core Xml Network Concurrent)
++target_link_libraries(MultiMC_logic Qt5::Core Qt5::Xml Qt5::Network Qt5::Concurrent)
+ 
+ # Mark and export headers
+ target_include_directories(MultiMC_logic PUBLIC "${CMAKE_CURRENT_BINARY_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}" PRIVATE "${ZLIB_INCLUDE_DIRS}")
+--- application/dialogs/NotificationDialog.cpp.orig	2018-04-08 21:43:03 UTC
++++ application/dialogs/NotificationDialog.cpp
+@@ -2,6 +2,7 @@
+ #include "ui_NotificationDialog.h"
+ 
+ #include <QTimerEvent>
++#include <QStyle>
+ 
+ NotificationDialog::NotificationDialog(const NotificationChecker::NotificationEntry &entry, QWidget *parent) :
+ 	QDialog(parent, Qt::MSWindowsFixedSizeDialogHint | Qt::WindowTitleHint | Qt::CustomizeWindowHint),
+--- application/pages/global/ExternalToolsPage.cpp.orig	2018-04-08 21:43:03 UTC
++++ application/pages/global/ExternalToolsPage.cpp
+@@ -19,6 +19,7 @@
+ #include <QMessageBox>
+ #include <QFileDialog>
+ #include <QStandardPaths>
++#include <QTabBar>
+ 
+ #include "settings/SettingsObject.h"
+ #include "tools/BaseProfiler.h"
+--- application/pages/global/JavaPage.cpp.orig	2018-04-08 21:43:03 UTC
++++ application/pages/global/JavaPage.cpp
+@@ -20,6 +20,7 @@
+ #include <QFileDialog>
+ #include <QMessageBox>
+ #include <QDir>
++#include <QTabBar>
+ 
+ #include "dialogs/VersionSelectDialog.h"
+ 
+--- application/pages/global/MinecraftPage.cpp.orig	2018-04-08 21:43:03 UTC
++++ application/pages/global/MinecraftPage.cpp
+@@ -18,6 +18,7 @@
+ 
+ #include <QMessageBox>
+ #include <QDir>
++#include <QTabBar>
+ 
+ #include "settings/SettingsObject.h"
+ #include "MultiMC.h"
+--- application/pages/global/PasteEEPage.cpp.orig	2018-04-08 21:43:03 UTC
++++ application/pages/global/PasteEEPage.cpp
+@@ -19,6 +19,7 @@
+ #include <QMessageBox>
+ #include <QFileDialog>
+ #include <QStandardPaths>
++#include <QTabBar>
+ 
+ #include "settings/SettingsObject.h"
+ #include "tools/BaseProfiler.h"
+--- application/pages/global/ProxyPage.cpp.orig	2018-04-08 21:43:03 UTC
++++ application/pages/global/ProxyPage.cpp
+@@ -16,6 +16,8 @@
+ #include "ProxyPage.h"
+ #include "ui_ProxyPage.h"
+ 
++#include <QTabBar>
++
+ #include "settings/SettingsObject.h"
+ #include "MultiMC.h"
+ 
+--- application/pages/instance/NotesPage.cpp.orig	2018-04-08 21:43:03 UTC
++++ application/pages/instance/NotesPage.cpp
+@@ -1,5 +1,6 @@
+ #include "NotesPage.h"
+ #include "ui_NotesPage.h"
++#include <QTabBar>
+ 
+ NotesPage::NotesPage(BaseInstance *inst, QWidget *parent)
+ 	: QWidget(parent), ui(new Ui::NotesPage), m_inst(inst)
+--- application/pages/modplatform/ImportPage.cpp.orig	2018-04-08 21:43:03 UTC
++++ application/pages/modplatform/ImportPage.cpp
+@@ -7,6 +7,7 @@
+ #include "dialogs/ProgressDialog.h"
+ #include "dialogs/NewInstanceDialog.h"
+ #include <QFileDialog>
++#include <QValidator>
+ #include <InstanceImportTask.h>
+ 
+ class UrlValidator : public QValidator
+--- application/pages/modplatform/VanillaPage.cpp.orig	2018-04-08 21:43:03 UTC
++++ application/pages/modplatform/VanillaPage.cpp
+@@ -12,6 +12,7 @@
+ #include <Filter.h>
+ #include <Env.h>
+ #include <InstanceCreationTask.h>
++#include <QTabBar>
+ 
+ VanillaPage::VanillaPage(NewInstanceDialog *dialog, QWidget *parent)
+ 	: QWidget(parent), dialog(dialog), ui(new Ui::VanillaPage)
+--- cmake/UnitTest.cmake.orig	2018-04-08 21:43:03 UTC
++++ cmake/UnitTest.cmake
+@@ -7,7 +7,7 @@ message(${TEST_RESOURCE_PATH})
+ function(add_unit_test name)
+ 	set(options "")
+ 	set(oneValueArgs DATA)
+-	set(multiValueArgs SOURCES LIBS QT)
++	set(multiValueArgs SOURCES LIBS)
+ 
+ 	cmake_parse_arguments(OPT "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN} )
+ 
+@@ -40,8 +40,7 @@ function(add_unit_test name)
+ 		endif()
+ 	endif()
+ 
+-	target_link_libraries(${name}_test ${OPT_LIBS})
+-	qt5_use_modules(${name}_test Test ${OPT_QT})
++	target_link_libraries(${name}_test Qt5::Test ${OPT_LIBS})
+ 
+ 	target_include_directories(${name}_test PRIVATE "${TEST_RESOURCE_PATH}/UnitTest/")
+ 
+--- libraries/LocalPeer/CMakeLists.txt.orig	2018-04-08 21:43:03 UTC
++++ libraries/LocalPeer/CMakeLists.txt
+@@ -26,4 +26,4 @@ endif()
+ add_library(LocalPeer STATIC ${SINGLE_SOURCES})
+ target_include_directories(LocalPeer PUBLIC include)
+ 
+-qt5_use_modules(LocalPeer Core Network)
++target_link_libraries(LocalPeer Qt5::Core Qt5::Network)
+--- libraries/classparser/CMakeLists.txt.orig	2018-04-08 21:43:03 UTC
++++ libraries/classparser/CMakeLists.txt
+@@ -38,5 +38,4 @@ add_definitions(-DCLASSPARSER_LIBRARY)
+ 
+ add_library(MultiMC_classparser STATIC ${CLASSPARSER_SOURCES} ${CLASSPARSER_HEADERS})
+ target_include_directories(MultiMC_classparser PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
+-target_link_libraries(MultiMC_classparser MultiMC_quazip)
+-qt5_use_modules(MultiMC_classparser Core)
++target_link_libraries(MultiMC_classparser MultiMC_quazip Qt5::Core)
+--- libraries/ganalytics/CMakeLists.txt.orig	2018-04-08 21:43:03 UTC
++++ libraries/ganalytics/CMakeLists.txt
+@@ -12,6 +12,6 @@ include/ganalytics.h
+ )
+ 
+ add_library(ganalytics STATIC ${ganalytics_SOURCES})
+-qt5_use_modules(ganalytics Core Gui Network)
++target_link_libraries(ganalytics Qt5::Core Qt5::Gui Qt5::Network)
+ target_include_directories(ganalytics PUBLIC include)
+ target_link_libraries(ganalytics systeminfo)
+--- libraries/iconfix/CMakeLists.txt.orig	2018-04-08 21:43:03 UTC
++++ libraries/iconfix/CMakeLists.txt
+@@ -15,7 +15,7 @@ internal/qiconloader_p.h
+ add_library(MultiMC_iconfix SHARED ${ICONFIX_SOURCES})
+ target_include_directories(MultiMC_iconfix PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} "${CMAKE_CURRENT_BINARY_DIR}" )
+ 
+-qt5_use_modules(MultiMC_iconfix Core Widgets)
++target_link_libraries(MultiMC_iconfix Qt5::Core Qt5::Widgets)
+ 
+ set_target_properties(MultiMC_iconfix PROPERTIES CXX_VISIBILITY_PRESET hidden VISIBILITY_INLINES_HIDDEN 1)
+ generate_export_header(MultiMC_iconfix)
+--- libraries/rainbow/CMakeLists.txt.orig	2018-04-08 21:43:03 UTC
++++ libraries/rainbow/CMakeLists.txt
+@@ -12,7 +12,7 @@ add_definitions(-DRAINBOW_LIBRARY)
+ add_library(MultiMC_rainbow SHARED ${RAINBOW_SOURCES})
+ target_include_directories(MultiMC_rainbow PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
+ 
+-qt5_use_modules(MultiMC_rainbow Core Gui)
++target_link_libraries(MultiMC_rainbow Qt5::Core Qt5::Gui)
+ 
+ # Install it
+ install(
+--- libraries/systeminfo/CMakeLists.txt.orig	2018-04-08 21:43:03 UTC
++++ libraries/systeminfo/CMakeLists.txt
+@@ -19,7 +19,7 @@ elseif (UNIX)
+ endif()
+ 
+ add_library(systeminfo STATIC ${systeminfo_SOURCES})
+-qt5_use_modules(systeminfo Core Gui Network)
++target_link_libraries(systeminfo Qt5::Core Qt5::Gui Qt5::Network)
+ target_include_directories(systeminfo PUBLIC include)
+ 
+ include (UnitTest)
