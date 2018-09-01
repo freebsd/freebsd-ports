@@ -3,7 +3,7 @@
 
 PORTNAME=	iridium
 PORTVERSION=	2018.5.67
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
@@ -61,8 +61,8 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		bison desktop-file-utils jpeg ninja perl5 pkgconfig \
-		python:2.7,build shebangfix tar:xz
+USES=		bison desktop-file-utils gnome jpeg localbase:ldflags ninja \
+		perl5 pkgconfig python:2.7,build shebangfix tar:xz
 USE_GL=		gl
 USE_LDCONFIG=	${DATADIR}
 USE_PERL5=	build
@@ -100,8 +100,8 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		use_system_freetype=true \
 		use_system_harfbuzz=true \
 		use_system_libjpeg=true \
-		extra_cxxflags="-I${LOCALBASE}/include" \
-		extra_ldflags="-L${LOCALBASE}/lib"
+		extra_cxxflags="${CXXFLAGS}" \
+		extra_ldflags="${LDFLAGS}"
 # TODO: investigate building with these options:
 # use_system_minigbm
 GN_BOOTSTRAP_FLAGS=	--no-clean --no-rebuild
