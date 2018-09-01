@@ -14,6 +14,9 @@ COMMENT=	3D downhill racing game... kind of like TuxRacer Improved
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unmaintained.  Play games/etracer instead
+EXPIRATION_DATE=	2018-09-08
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2
 
