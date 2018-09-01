@@ -1,0 +1,6 @@
+Python idiomatic client for Google Cloud Translation.
+
+With the Google Cloud Translation API, you can dynamically translate text
+between thousands of language pairs. You can also detect the language of a text.
+
+WWW: https://pypi.org/project/google-cloud-translate/
