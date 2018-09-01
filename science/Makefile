@@ -88,6 +88,7 @@
     SUBDIR += hypre
     SUBDIR += iboview
     SUBDIR += isaac-cfd
+    SUBDIR += jdftx
     SUBDIR += jstrack
     SUBDIR += kalzium
     SUBDIR += kalzium-kde4
