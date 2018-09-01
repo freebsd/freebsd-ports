@@ -1,13 +1,10 @@
 # $FreeBSD$
 
-PORTNAME=	Ocsinventory
-PORTVERSION=	2.1.1
-PORTREVISION=	4
+PORTNAME=	ocsinventory
+PORTVERSION=	2.4.2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://launchpad.net/ocsinventory-unix-agent/stable-${PORTVERSION:R}/${PORTVERSION}/+download/
-PKGNAMESUFFIX=	-Unix-Agent
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
+PKGNAMESUFFIX=	-agent
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keep track of the computers configuration and software
@@ -21,11 +18,15 @@ RUN_DEPENDS=	lspci:sysutils/pciutils \
 		p5-XML-Simple>=0:textproc/p5-XML-Simple \
 		p5-libwww>=0:www/p5-libwww
 
+GH_PROJECT=	UnixAgent
+GH_ACCOUNT=	OCSInventory-NG
+GH_TAGNAME=		v${PORTVERSION}
+
 USES=		perl5 shebangfix
 SHEBANG_FILES=	postinst.pl
+USE_GITHUB=	yes
 USE_PERL5=	configure
 CONFIGURE_ENV=	PERL_AUTOINSTALL=1
-WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 SUB_FILES=	pkg-message
 SUB_LIST=	SITE_PERL=${PREFIX}/${SITE_PERL_REL}
 NO_ARCH=	yes
