@@ -555,6 +555,8 @@ include/wine/windows/msident.idl
 include/wine/windows/msinkaut.h
 include/wine/windows/msinkaut.idl
 include/wine/windows/msiquery.h
+include/wine/windows/msopc.h
+include/wine/windows/msopc.idl
 include/wine/windows/mssip.h
 include/wine/windows/msstkppg.h
 include/wine/windows/mstask.h
@@ -630,6 +632,9 @@ include/wine/windows/oledberr.h
 include/wine/windows/oledlg.h
 include/wine/windows/oleidl.h
 include/wine/windows/oleidl.idl
+include/wine/windows/opcbase.idl
+include/wine/windows/opcobjectmodel.idl
+include/wine/windows/opcparturi.idl
 include/wine/windows/opnrst.idl
 include/wine/windows/optary.h
 include/wine/windows/optary.idl
@@ -695,6 +700,7 @@ include/wine/windows/rstinf.idl
 include/wine/windows/rstloc.idl
 include/wine/windows/rstnot.idl
 include/wine/windows/rtutils.h
+include/wine/windows/sal.h
 include/wine/windows/sapi.h
 include/wine/windows/sapi.idl
 include/wine/windows/sapiddk.h
@@ -2039,6 +2045,7 @@ lib/wine/fakedlls/olepro32.dll
 lib/wine/fakedlls/olesvr32.dll
 lib/wine/fakedlls/olethk32.dll
 lib/wine/fakedlls/oleview.exe
+lib/wine/fakedlls/opcservices.dll
 %%OPENAL%%lib/wine/fakedlls/openal32.dll
 lib/wine/fakedlls/opengl32.dll
 lib/wine/fakedlls/packager.dll
@@ -2418,8 +2425,7 @@ lib/wine/libdbghelp.def
 lib/wine/libdciman32.def
 lib/wine/libddraw.def
 lib/wine/libdinput.a
-%%STAGING%%lib/wine/libdinput8.a
-%%NO_STAGING%%lib/wine/libdinput8.def
+lib/wine/libdinput8.a
 lib/wine/libdmoguids.a
 lib/wine/libdnsapi.def
 lib/wine/libdplayx.def
@@ -2718,6 +2724,7 @@ lib/wine/olepro32.dll.so
 lib/wine/olesvr32.dll.so
 lib/wine/olethk32.dll.so
 lib/wine/oleview.exe.so
+lib/wine/opcservices.dll.so
 %%OPENAL%%lib/wine/openal32.dll.so
 lib/wine/opengl32.dll.so
 lib/wine/packager.dll.so
