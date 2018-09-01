@@ -66,6 +66,7 @@
 %%SITE_PERL%%/Sisimai/Mail.pm
 %%SITE_PERL%%/Sisimai/Mail/Maildir.pm
 %%SITE_PERL%%/Sisimai/Mail/Mbox.pm
+%%SITE_PERL%%/Sisimai/Mail/Memory.pm
 %%SITE_PERL%%/Sisimai/Mail/STDIN.pm
 %%SITE_PERL%%/Sisimai/Message.pm
 %%SITE_PERL%%/Sisimai/Message/Email.pm
@@ -187,6 +188,7 @@
 %%PERL5_MAN3%%/Sisimai::Mail.3.gz
 %%PERL5_MAN3%%/Sisimai::Mail::Maildir.3.gz
 %%PERL5_MAN3%%/Sisimai::Mail::Mbox.3.gz
+%%PERL5_MAN3%%/Sisimai::Mail::Memory.3.gz
 %%PERL5_MAN3%%/Sisimai::Mail::STDIN.3.gz
 %%PERL5_MAN3%%/Sisimai::Message.3.gz
 %%PERL5_MAN3%%/Sisimai::Message::Email.3.gz
