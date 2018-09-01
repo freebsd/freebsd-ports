@@ -6,12 +6,15 @@ include/libbt/bitset.h
 include/libbt/bterror.h
 include/libbt/btmessage.h
 include/libbt/bts.h
+include/libbt/config.h
 include/libbt/context.h
 include/libbt/peer.h
+include/libbt/peerexchange.h
 include/libbt/random.h
 include/libbt/segmenter.h
 include/libbt/strbuf.h
 include/libbt/stream.h
 include/libbt/types.h
+include/libbt/udpproto.h
 include/libbt/util.h
 lib/libbt.a
