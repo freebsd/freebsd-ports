@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeipmi
-PORTVERSION=	1.5.7
+PORTVERSION=	1.6.2
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU \
 		http://ftp.gluster.com/pub/${PORTNAME}/${PORTVERSION}/
@@ -24,9 +24,10 @@ BROKEN_powerpc64=	invokes x86 assembler
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libgcrypt.so:security/libgcrypt
 
-OPTIONS_DEFINE=	DEBUG DOCS IOPERM
+OPTIONS_DEFINE=	DEBUG DOCS IOPERM IPV6
 IOPERM_DESC=	Use i386_set_ioperm
 
+CFLAGS+=	-D_WANT_SEMUN
 CONFIGURE_ARGS=	--disable-init-scripts \
 		--sysconfdir=${ETCDIR} \
 		--with-ipmi-monitoring-sdr-cache-dir=${CACHE_DIR}/ipmimonitoringsdrcache \
@@ -36,7 +37,6 @@ CONFIGURE_ENV=	PTHREAD_LIBS=-lpthread ac_cv_path_CPP=${CPP}
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		gmake libtool localbase shebangfix
-CFLAGS+=	-D_WANT_SEMUN
 
 INFO=		freeipmi-faq
 PLIST_SUB=	CACHE_DIR=${CACHE_DIR}
@@ -53,6 +53,7 @@ DEBUG_CONFIGURE_ARGS=	--enable-debug --enable-trace
 DEBUG_INSTALL_TARGET=	install
 DEBUG_INSTALL_TARGET_OFF=	install-strip
 IOPERM_CPPFLAGS=	-DUSE_IOPERM
+IPV6_CPPFLAGS=		-DIPV6
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.man' -o -name '*.pre.in' | ${XARGS} -I % ${REINPLACE_CMD} -e '/^\.\\\"/ s|$$|"|' %
