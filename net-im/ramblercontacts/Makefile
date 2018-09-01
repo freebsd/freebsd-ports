@@ -14,7 +14,7 @@ COMMENT=	Free, multi-service communication client from Rambler
 LICENSE=	GPLv3
 
 USES=		qmake dos2unix qt:4
-DOS2UNIX_FILES=	src/config.inc
+DOS2UNIX_GLOB=	*
 USE_XORG=	xscrnsaver
 USE_QT=		moc_build rcc_build uic_build designer_build \
 		webkit
