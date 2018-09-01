@@ -24,8 +24,6 @@ share/urbackup/scripts/setup-postgresbackup
 @sample etc/urbackup/urbackupclient.conf.sample
 etc/newsyslog.conf.d/urbackupclient.conf
 share/urbackup/updates_h.dat
-%%GUI%%share/urbackup/info.txt
-%%GUI%%share/urbackup/logo1.png
 %%GUI%%share/urbackup/backup-bad.xpm
 %%GUI%%share/urbackup/backup-indexing.xpm
 %%GUI%%share/urbackup/backup-no-recent.xpm
@@ -33,6 +31,7 @@ share/urbackup/updates_h.dat
 %%GUI%%share/urbackup/backup-ok.xpm
 %%GUI%%share/urbackup/backup-progress-pause.xpm
 %%GUI%%share/urbackup/backup-progress.xpm
+%%GUI%%share/urbackup/info.txt
 %%GUI%%share/urbackup/lang/cs/urbackup.mo
 %%GUI%%share/urbackup/lang/da/urbackup.mo
 %%GUI%%share/urbackup/lang/de/urbackup.mo
@@ -48,6 +47,7 @@ share/urbackup/updates_h.dat
 %%GUI%%share/urbackup/lang/uk/urbackup.mo
 %%GUI%%share/urbackup/lang/zh_CN/urbackup.mo
 %%GUI%%share/urbackup/lang/zh_TW/urbackup.mo
+%%GUI%%share/urbackup/logo1.png
 @dir(,,0700) /var/urbackup/data
 @dir(urbackup,urbackup,0755) /var/urbackup
 @mode 555

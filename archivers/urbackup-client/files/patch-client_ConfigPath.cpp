@@ -1,10 +1,10 @@
 Build fails on FreeBSD due to a casting error from the wxString Class when using
-wx30-gtk2-3.0.4_1. This patch adds a cast (static_cast<const wchar_t*>) that 
+wx30-gtk2-3.0.4_1. This patch adds a cast (static_cast<const wchar_t*>) that
 resolves the error.
 
---- client/ConfigPath.cpp.orig	2018-08-09 00:18:20.807732000 +0000
-+++ client/ConfigPath.cpp	2018-08-09 00:19:21.531197000 +0000
-@@ -60,7 +60,7 @@
+--- client/ConfigPath.cpp.orig	2018-08-12 19:17:13 UTC
++++ client/ConfigPath.cpp
+@@ -60,7 +60,7 @@ ConfigPath::ConfigPath(wxWindow* parent)
  		listbox->Append(dirs[i].path);
  		if(dirs[i].name.IsEmpty())
  		{
@@ -13,7 +13,7 @@ resolves the error.
  		}
  	}
  
-@@ -93,7 +93,7 @@
+@@ -93,7 +93,7 @@ void ConfigPath::OnClickNew(wxCommandEve
  		listbox->Append(ed.GetPath() );
  		SBackupDir ad;
  		ad.path=ed.GetPath();
