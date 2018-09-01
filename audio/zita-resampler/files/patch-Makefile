@@ -1,65 +1,51 @@
---- Makefile.orig	2015-10-02 14:59:52 UTC
+--- Makefile.orig	2018-08-24 18:41:47 UTC
 +++ Makefile
 @@ -1,7 +1,7 @@
  # ----------------------------------------------------------------------------
  #
- #  Copyright (C) 2006-2012 Fons Adriaensen <fons@linuxaudio.org>
+ #  Copyright (C) 2006-2018 Fons Adriaensen <fons@linuxaudio.org>
 -#    
 +#
  #  This program is free software; you can redistribute it and/or modify
  #  it under the terms of the GNU General Public License as published by
  #  the Free Software Foundation; either version 3 of the License, or
-@@ -20,8 +20,8 @@
+@@ -20,10 +20,9 @@
  
  # Modify as required.
  #
--PREFIX = /usr/local
 -SUFFIX := $(shell uname -m | sed -e 's/^unknown/$//' -e 's/^i.86/$//' -e 's/^x86_64/$/64/')
-+PREFIX ?= /usr/local
-+SUFFIX =
- LIBDIR = lib$(SUFFIX)
+ PREFIX ?= /usr/local
+ INCDIR ?= $(PREFIX)/include
+-LIBDIR ?= $(PREFIX)/lib$(SUFFIX)
++LIBDIR ?= $(PREFIX)/lib
  
  MAJVERS = 1
-@@ -31,10 +31,7 @@ DISTDIR = zita-resampler-$(VERSION)
- 
- 
+ MINVERS = 6.2
+@@ -34,7 +33,7 @@ DISTDIR = zita-resampler-$(VERSION)
  CPPFLAGS += -I. -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
--CXXFLAGS += -Wall -fPIC -O2 -ffast-math
--CXXFLAGS += -march=native
+ CXXFLAGS += -Wall -fPIC -O2 -ffast-math
+ CXXFLAGS += -march=native
 -LDFLAGS += 
--LDLIBS +=
-+CXXFLAGS += -Wall -fPIC
++LDFLAGS +=
+ LDLIBS +=
  
  
- ZITA-RESAMPLER_SO = libzita-resampler.so
-@@ -46,8 +43,10 @@ ZITA-RESAMPLER_H = zita-resampler/resamp
+@@ -46,6 +45,7 @@ ZITA-RESAMPLER_O = resampler.o vresample
+ ZITA-RESAMPLER_H = zita-resampler/resampler.h zita-resampler/resampler-table.h \
  	zita-resampler/vresampler.h zita-resampler/cresampler.h
  
- 
 +all: $(ZITA-RESAMPLER_MIN)
-+
+ 
  $(ZITA-RESAMPLER_MIN): $(ZITA-RESAMPLER_O)
--	g++ -shared $(LDFLAGS) -Wl,-soname,$(ZITA-RESAMPLER_MAJ) -o $(ZITA-RESAMPLER_MIN) $(ZITA-RESAMPLER_O) $(ZITA-RESAMPLER_DEP)
-+	${CXX} -shared $(LDFLAGS) -Wl,-soname,$(ZITA-RESAMPLER_MAJ) -o $(ZITA-RESAMPLER_MIN) $(ZITA-RESAMPLER_O) $(ZITA-RESAMPLER_DEP)
- 
- $(ZITA-RESAMPLER_O):	$(ZITA-RESAMPLER_H)
- 
-@@ -55,10 +54,10 @@ $(ZITA-RESAMPLER_O):	$(ZITA-RESAMPLER_H)
+ 	$(CXX) -shared $(LDFLAGS) -Wl,-soname,$(ZITA-RESAMPLER_MAJ) -o $(ZITA-RESAMPLER_MIN) $(ZITA-RESAMPLER_O) $(ZITA-RESAMPLER_DEP)
+@@ -56,8 +56,8 @@ $(ZITA-RESAMPLER_O):	$(ZITA-RESAMPLER_H)
  install:	$(ZITA-RESAMPLER_MIN)
- 	install -d $(DESTDIR)$(PREFIX)/include/zita-resampler
- 	install -d $(DESTDIR)$(PREFIX)/$(LIBDIR)
--	install -m 644 $(ZITA-RESAMPLER_H) $(DESTDIR)$(PREFIX)/include/zita-resampler
--	install -m 644 $(ZITA-RESAMPLER_MIN) $(DESTDIR)$(PREFIX)/$(LIBDIR)
-+	${BSD_INSTALL_DATA} $(ZITA-RESAMPLER_H) $(DESTDIR)$(PREFIX)/include/zita-resampler
-+	${BSD_INSTALL_LIB} $(ZITA-RESAMPLER_MIN) $(DESTDIR)$(PREFIX)/$(LIBDIR)
- 	ln -sf $(ZITA-RESAMPLER_MIN) $(DESTDIR)$(PREFIX)/$(LIBDIR)/$(ZITA-RESAMPLER_SO)
--	ldconfig
-+	ln -sf $(ZITA-RESAMPLER_MIN) $(DESTDIR)$(PREFIX)/$(LIBDIR)/$(ZITA-RESAMPLER_MAJ)
+ 	install -d $(DESTDIR)$(INCDIR)/zita-resampler
+ 	install -d $(DESTDIR)$(LIBDIR)
+-	install -m 644 $(ZITA-RESAMPLER_H)   $(DESTDIR)$(INCDIR)/zita-resampler
+-	install -m 755 $(ZITA-RESAMPLER_MIN) $(DESTDIR)$(LIBDIR)
++	${BSD_INSTALL_DATA} -m 644 $(ZITA-RESAMPLER_H)   $(DESTDIR)$(INCDIR)/zita-resampler
++	${BSD_INSTALL_LIB} -m 755 $(ZITA-RESAMPLER_MIN) $(DESTDIR)$(LIBDIR)
+ 	ldconfig
+ 	ln -sf $(ZITA-RESAMPLER_MIN) $(DESTDIR)$(LIBDIR)/$(ZITA-RESAMPLER_SO)
  
- uninstall:
- 	/bin/rm -rf $(DESTDIR)$(PREFIX)/include/zita-resampler
-@@ -66,4 +65,3 @@ uninstall:
- 
- clean:
- 	/bin/rm -rf *~ *.o *.a *.d *.so.* zita-resampler/*~
--

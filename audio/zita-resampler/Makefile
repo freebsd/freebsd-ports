@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zita-resampler
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.2
 CATEGORIES=	audio
 MASTER_SITES=	http://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 
@@ -13,6 +13,6 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
 USES=		gmake tar:bzip2
-WRKSRC_SUBDIR=	libs
+WRKSRC_SUBDIR=	source
 
 .include <bsd.port.mk>
