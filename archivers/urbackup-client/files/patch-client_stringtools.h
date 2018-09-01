@@ -1,10 +1,10 @@
-Build fails on FreeBSD due to urbackup's local definitions of isnumber() 
-conflicting with a library function. This patch renames the port's definition to 
+Build fails on FreeBSD due to urbackup's local definitions of isnumber()
+conflicting with a library function. This patch renames the port's definition to
 resolve the conflict. Analogous changes are also made in client/stringtools.cpp
 
---- client/stringtools.h.orig	2018-08-09 00:27:09.254786000 +0000
-+++ client/stringtools.h	2018-08-09 00:27:23.137354000 +0000
-@@ -69,9 +69,9 @@
+--- client/stringtools.h.orig	2018-08-12 19:18:09 UTC
++++ client/stringtools.h
+@@ -69,9 +69,9 @@ std::wstring replaceonce(std::wstring to
  void Tokenize(std::string& str, std::vector<std::string> &tokens, std::string seps);
  void Tokenize(std::wstring& str, std::vector<std::wstring> &tokens, std::wstring seps);
  void TokenizeMail(std::string& str, std::vector<std::string> &tokens, std::string seps);

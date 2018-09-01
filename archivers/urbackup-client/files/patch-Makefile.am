@@ -1,0 +1,45 @@
+Makefile.am uses ${INSTALL_PROGAM} to install scripts and configuation files,
+leading to an error from strip(1). This patch instead uses ${INSTALL} (for scripts)
+and ${INSTALL_DATA} (for configuration files).
+
+--- Makefile.am.orig	2018-08-27 01:45:13 UTC
++++ Makefile.am
+@@ -119,22 +119,22 @@ endif
+ 	$(MKDIR_P) "$(DESTDIR)$(datadir)/urbackup/scripts"
+ 	$(MKDIR_P) "$(DESTDIR)$(sysconfdir)/urbackup"
+ 	
+-	$(INSTALL_PROGRAM) "$(srcdir)/urbackupclient/backup_scripts/list" "$(DESTDIR)$(datadir)/urbackup/scripts/list"
+-	test -e "$(DESTDIR)$(sysconfdir)/urbackup/mariadbdump.conf" || $(INSTALL_PROGRAM) "$(srcdir)/urbackupclient/backup_scripts/mariadbdump.conf" "$(DESTDIR)$(sysconfdir)/urbackup/mariadbdump.conf"
+-	$(INSTALL_PROGRAM) "$(srcdir)/urbackupclient/backup_scripts/mariadbdump" "$(DESTDIR)$(datadir)/urbackup/scripts/mariadbdump"
+-	test -e "$(DESTDIR)$(sysconfdir)/urbackup/postgresqldump.conf" || $(INSTALL_PROGRAM) "$(srcdir)/urbackupclient/backup_scripts/postgresqldump.conf" "$(DESTDIR)$(sysconfdir)/urbackup/postgresqldump.conf"
+-	$(INSTALL_PROGRAM) "$(srcdir)/urbackupclient/backup_scripts/postgresqldump" "$(DESTDIR)$(datadir)/urbackup/scripts/postgresqldump"
+-	test -e "$(DESTDIR)$(sysconfdir)/urbackup/postgresbase.conf" || $(INSTALL_PROGRAM) "$(srcdir)/urbackupclient/backup_scripts/postgresbase.conf" "$(DESTDIR)$(sysconfdir)/urbackup/postgresbase.conf"
+-	$(INSTALL_PROGRAM) "$(srcdir)/urbackupclient/backup_scripts/postgresbase" "$(DESTDIR)$(datadir)/urbackup/scripts/postgresbase"
+-	$(INSTALL_PROGRAM) "$(srcdir)/urbackupclient/backup_scripts/postgresqlprebackup" "$(DESTDIR)$(datadir)/urbackup/scripts/postgresqlprebackup"
+-	$(INSTALL_PROGRAM) "$(srcdir)/urbackupclient/backup_scripts/postgresqlpostbackup" "$(DESTDIR)$(datadir)/urbackup/scripts/postgresqlpostbackup"
+-	$(INSTALL_PROGRAM) "$(srcdir)/urbackupclient/backup_scripts/setup-postgresbackup" "$(DESTDIR)$(datadir)/urbackup/scripts/setup-postgresbackup"
+-	test -e "$(DESTDIR)$(sysconfdir)/urbackup/mariadbxtrabackup.conf" || $(INSTALL_PROGRAM) "$(srcdir)/urbackupclient/backup_scripts/mariadbxtrabackup.conf" "$(DESTDIR)$(sysconfdir)/urbackup/mariadbxtrabackup.conf"
+-	$(INSTALL_PROGRAM) "$(srcdir)/urbackupclient/backup_scripts/mariadbxtrabackup" "$(DESTDIR)$(datadir)/urbackup/scripts/mariadbxtrabackup"
+-	$(INSTALL_PROGRAM) "$(srcdir)/urbackupclient/backup_scripts/restore-mariadbbackup" "$(DESTDIR)$(datadir)/urbackup/scripts/restore-mariadbbackup"
+-	$(INSTALL_PROGRAM) "$(srcdir)/urbackupclient/backup_scripts/mariadbprebackup" "$(DESTDIR)$(datadir)/urbackup/scripts/mariadbprebackup"
+-	$(INSTALL_PROGRAM) "$(srcdir)/urbackupclient/backup_scripts/mariadbpostbackup" "$(DESTDIR)$(datadir)/urbackup/scripts/mariadbpostbackup"
+-	$(INSTALL_PROGRAM) "$(srcdir)/urbackupclient/backup_scripts/setup-mariadbbackup" "$(DESTDIR)$(datadir)/urbackup/scripts/setup-mariadbbackup"
++	$(INSTALL) "$(srcdir)/urbackupclient/backup_scripts/list" "$(DESTDIR)$(datadir)/urbackup/scripts/list"
++	test -e "$(DESTDIR)$(sysconfdir)/urbackup/mariadbdump.conf" || $(INSTALL_DATA) "$(srcdir)/urbackupclient/backup_scripts/mariadbdump.conf" "$(DESTDIR)$(sysconfdir)/urbackup/mariadbdump.conf"
++	$(INSTALL) "$(srcdir)/urbackupclient/backup_scripts/mariadbdump" "$(DESTDIR)$(datadir)/urbackup/scripts/mariadbdump"
++	test -e "$(DESTDIR)$(sysconfdir)/urbackup/postgresqldump.conf" || $(INSTALL_DATA) "$(srcdir)/urbackupclient/backup_scripts/postgresqldump.conf" "$(DESTDIR)$(sysconfdir)/urbackup/postgresqldump.conf"
++	$(INSTALL) "$(srcdir)/urbackupclient/backup_scripts/postgresqldump" "$(DESTDIR)$(datadir)/urbackup/scripts/postgresqldump"
++	test -e "$(DESTDIR)$(sysconfdir)/urbackup/postgresbase.conf" || $(INSTALL_DATA) "$(srcdir)/urbackupclient/backup_scripts/postgresbase.conf" "$(DESTDIR)$(sysconfdir)/urbackup/postgresbase.conf"
++	$(INSTALL) "$(srcdir)/urbackupclient/backup_scripts/postgresbase" "$(DESTDIR)$(datadir)/urbackup/scripts/postgresbase"
++	$(INSTALL) "$(srcdir)/urbackupclient/backup_scripts/postgresqlprebackup" "$(DESTDIR)$(datadir)/urbackup/scripts/postgresqlprebackup"
++	$(INSTALL) "$(srcdir)/urbackupclient/backup_scripts/postgresqlpostbackup" "$(DESTDIR)$(datadir)/urbackup/scripts/postgresqlpostbackup"
++	$(INSTALL) "$(srcdir)/urbackupclient/backup_scripts/setup-postgresbackup" "$(DESTDIR)$(datadir)/urbackup/scripts/setup-postgresbackup"
++	test -e "$(DESTDIR)$(sysconfdir)/urbackup/mariadbxtrabackup.conf" || $(INSTALL_DATA) "$(srcdir)/urbackupclient/backup_scripts/mariadbxtrabackup.conf" "$(DESTDIR)$(sysconfdir)/urbackup/mariadbxtrabackup.conf"
++	$(INSTALL) "$(srcdir)/urbackupclient/backup_scripts/mariadbxtrabackup" "$(DESTDIR)$(datadir)/urbackup/scripts/mariadbxtrabackup"
++	$(INSTALL) "$(srcdir)/urbackupclient/backup_scripts/restore-mariadbbackup" "$(DESTDIR)$(datadir)/urbackup/scripts/restore-mariadbbackup"
++	$(INSTALL) "$(srcdir)/urbackupclient/backup_scripts/mariadbprebackup" "$(DESTDIR)$(datadir)/urbackup/scripts/mariadbprebackup"
++	$(INSTALL) "$(srcdir)/urbackupclient/backup_scripts/mariadbpostbackup" "$(DESTDIR)$(datadir)/urbackup/scripts/mariadbpostbackup"
++	$(INSTALL) "$(srcdir)/urbackupclient/backup_scripts/setup-mariadbbackup" "$(DESTDIR)$(datadir)/urbackup/scripts/setup-mariadbbackup"
+ 	
+ 	for script in "$(DESTDIR)$(datadir)/urbackup/scripts/"*; do sed "s|SYSCONFDIR|$(sysconfdir)/urbackup|g" "$$script" > "$$script.r"; mv "$$script.r" "$$script"; done
+ 	chmod 700 "$(DESTDIR)$(datadir)/urbackup/scripts/"*
