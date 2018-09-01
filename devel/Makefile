@@ -484,6 +484,7 @@
     SUBDIR += dyncall
     SUBDIR += e00compr
     SUBDIR += e2fsprogs-libss
+    SUBDIR += eastl
     SUBDIR += easygit
     SUBDIR += easyloggingpp
     SUBDIR += eblob
