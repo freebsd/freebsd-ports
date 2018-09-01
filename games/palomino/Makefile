@@ -21,6 +21,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE_GNU_GPL_2.txt
 LIB_DEPENDS=	libosg.so:graphics/osg
 
 USES=		alias cmake:noninja lua:51 tar:xz
+USE_CXXSTD=	gnu++98
 USE_GL=		gl glu
 
 MISC_VER=	20091027
