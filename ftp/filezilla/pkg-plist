@@ -9,10 +9,6 @@ share/appdata/filezilla.appdata.xml
 share/applications/filezilla.desktop
 %%DATADIR%%/docs/fzdefaults.xml.example
 %%DATADIR%%/resources/16x16/filezilla.png
-%%DATADIR%%/resources/16x16/sort_down_dark.png
-%%DATADIR%%/resources/16x16/sort_down_light.png
-%%DATADIR%%/resources/16x16/sort_up_dark.png
-%%DATADIR%%/resources/16x16/sort_up_light.png
 %%DATADIR%%/resources/16x16/throbber.gif
 %%DATADIR%%/resources/16x16/unknown.png
 %%DATADIR%%/resources/20x20/unknown.png
@@ -23,6 +19,7 @@ share/applications/filezilla.desktop
 %%DATADIR%%/resources/blukis/16x16/ascii.png
 %%DATADIR%%/resources/blukis/16x16/auto.png
 %%DATADIR%%/resources/blukis/16x16/binary.png
+%%DATADIR%%/resources/blukis/16x16/bookmark.png
 %%DATADIR%%/resources/blukis/16x16/bookmarks.png
 %%DATADIR%%/resources/blukis/16x16/cancel.png
 %%DATADIR%%/resources/blukis/16x16/compare.png
@@ -54,6 +51,7 @@ share/applications/filezilla.desktop
 %%DATADIR%%/resources/blukis/32x32/ascii.png
 %%DATADIR%%/resources/blukis/32x32/auto.png
 %%DATADIR%%/resources/blukis/32x32/binary.png
+%%DATADIR%%/resources/blukis/32x32/bookmark.png
 %%DATADIR%%/resources/blukis/32x32/bookmarks.png
 %%DATADIR%%/resources/blukis/32x32/cancel.png
 %%DATADIR%%/resources/blukis/32x32/compare.png
@@ -85,6 +83,7 @@ share/applications/filezilla.desktop
 %%DATADIR%%/resources/blukis/48x48/ascii.png
 %%DATADIR%%/resources/blukis/48x48/auto.png
 %%DATADIR%%/resources/blukis/48x48/binary.png
+%%DATADIR%%/resources/blukis/48x48/bookmark.png
 %%DATADIR%%/resources/blukis/48x48/bookmarks.png
 %%DATADIR%%/resources/blukis/48x48/cancel.png
 %%DATADIR%%/resources/blukis/48x48/compare.png
@@ -156,6 +155,23 @@ share/applications/filezilla.desktop
 %%DATADIR%%/resources/cyril/16x16/file.png
 %%DATADIR%%/resources/cyril/16x16/folder.png
 %%DATADIR%%/resources/cyril/16x16/folderback.png
+%%DATADIR%%/resources/cyril/16x16/folderclosed.png
+%%DATADIR%%/resources/cyril/16x16/folderup.png
+%%DATADIR%%/resources/cyril/16x16/help.png
+%%DATADIR%%/resources/cyril/16x16/localtreeview.png
+%%DATADIR%%/resources/cyril/16x16/logview.png
+%%DATADIR%%/resources/cyril/16x16/processqueue.png
+%%DATADIR%%/resources/cyril/16x16/queueview.png
+%%DATADIR%%/resources/cyril/16x16/reconnect.png
+%%DATADIR%%/resources/cyril/16x16/refresh.png
+%%DATADIR%%/resources/cyril/16x16/remotetreeview.png
+%%DATADIR%%/resources/cyril/16x16/server.png
+%%DATADIR%%/resources/cyril/16x16/showhidden.png
+%%DATADIR%%/resources/cyril/16x16/sitemanager.png
+%%DATADIR%%/resources/cyril/16x16/speedlimits.png
+%%DATADIR%%/resources/cyril/16x16/synchronize.png
+%%DATADIR%%/resources/cyril/16x16/upload.png
+%%DATADIR%%/resources/cyril/16x16/uploadadd.png
 %%DATADIR%%/resources/cyril/theme.xml
 %%DATADIR%%/resources/default/480x480/ascii.png
 %%DATADIR%%/resources/default/480x480/auto.png
@@ -163,10 +179,12 @@ share/applications/filezilla.desktop
 %%DATADIR%%/resources/default/480x480/bookmark.png
 %%DATADIR%%/resources/default/480x480/bookmarks.png
 %%DATADIR%%/resources/default/480x480/cancel.png
+%%DATADIR%%/resources/default/480x480/close.png
 %%DATADIR%%/resources/default/480x480/compare.png
 %%DATADIR%%/resources/default/480x480/disconnect.png
 %%DATADIR%%/resources/default/480x480/download.png
 %%DATADIR%%/resources/default/480x480/downloadadd.png
+%%DATADIR%%/resources/default/480x480/dropdown.png
 %%DATADIR%%/resources/default/480x480/file.png
 %%DATADIR%%/resources/default/480x480/filter.png
 %%DATADIR%%/resources/default/480x480/find.png
@@ -175,6 +193,7 @@ share/applications/filezilla.desktop
 %%DATADIR%%/resources/default/480x480/folderclosed.png
 %%DATADIR%%/resources/default/480x480/folderup.png
 %%DATADIR%%/resources/default/480x480/help.png
+%%DATADIR%%/resources/default/480x480/leds.png
 %%DATADIR%%/resources/default/480x480/localtreeview.png
 %%DATADIR%%/resources/default/480x480/lock.png
 %%DATADIR%%/resources/default/480x480/logview.png
@@ -186,6 +205,10 @@ share/applications/filezilla.desktop
 %%DATADIR%%/resources/default/480x480/server.png
 %%DATADIR%%/resources/default/480x480/showhidden.png
 %%DATADIR%%/resources/default/480x480/sitemanager.png
+%%DATADIR%%/resources/default/480x480/sort_down_dark.png
+%%DATADIR%%/resources/default/480x480/sort_down_light.png
+%%DATADIR%%/resources/default/480x480/sort_up_dark.png
+%%DATADIR%%/resources/default/480x480/sort_up_light.png
 %%DATADIR%%/resources/default/480x480/speedlimits.png
 %%DATADIR%%/resources/default/480x480/symlink.png
 %%DATADIR%%/resources/default/480x480/synchronize.png
@@ -194,7 +217,6 @@ share/applications/filezilla.desktop
 %%DATADIR%%/resources/default/480x480/uploadadd.png
 %%DATADIR%%/resources/default/theme.xml
 %%DATADIR%%/resources/defaultfilters.xml
-%%DATADIR%%/resources/dropdown.png
 %%DATADIR%%/resources/finished.wav
 %%DATADIR%%/resources/flatzilla/16x16/ascii.png
 %%DATADIR%%/resources/flatzilla/16x16/auto.png
@@ -317,7 +339,6 @@ share/applications/filezilla.desktop
 %%DATADIR%%/resources/flatzilla/48x48/upload.png
 %%DATADIR%%/resources/flatzilla/48x48/uploadadd.png
 %%DATADIR%%/resources/flatzilla/theme.xml
-%%DATADIR%%/resources/leds.png
 %%DATADIR%%/resources/lone/16x16/ascii.png
 %%DATADIR%%/resources/lone/16x16/auto.png
 %%DATADIR%%/resources/lone/16x16/binary.png
@@ -662,10 +683,10 @@ share/applications/filezilla.desktop
 %%DATADIR%%/resources/xrc/certificate.xrc
 %%DATADIR%%/resources/xrc/dialogs.xrc
 %%DATADIR%%/resources/xrc/inputdialog.xrc
-%%DATADIR%%/resources/xrc/menus.xrc
 %%DATADIR%%/resources/xrc/netconfwizard.xrc
 %%DATADIR%%/resources/xrc/settings.xrc
 %%DATADIR%%/resources/xrc/sitemanager.xrc
+%%DATADIR%%/resources/xrc/storj.xrc
 %%DATADIR%%/resources/xrc/update.xrc
 share/icons/hicolor/16x16/apps/filezilla.png
 share/icons/hicolor/32x32/apps/filezilla.png
@@ -674,6 +695,7 @@ share/icons/hicolor/48x48/apps/filezilla.png
 share/icons/hicolor/scalable/apps/filezilla.svg
 %%NLS%%share/locale/an/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/az/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/bg_BG/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/filezilla.mo

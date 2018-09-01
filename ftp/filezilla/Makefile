@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	filezilla
-PORTVERSION=	3.24.0
-PORTREVISION=	2
+PORTVERSION=	3.36.0
 CATEGORIES=	ftp
-MASTER_SITES=	SF/${PORTNAME}/FileZilla_Client/${PORTVERSION}
+MASTER_SITES=	https://download.filezilla-project.org/client/
 DISTNAME=	FileZilla_${PORTVERSION}_src
 
 MAINTAINER=	rezny@FreeBSD.org
