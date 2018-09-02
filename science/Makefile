@@ -49,6 +49,7 @@
     SUBDIR += colt
     SUBDIR += coot
     SUBDIR += crf++
+    SUBDIR += dalton
     SUBDIR += datawarrior
     SUBDIR += dcl
     SUBDIR += devisor
