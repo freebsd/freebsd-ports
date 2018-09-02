@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dvbcut
-PORTVERSION=	0.7.2
-PORTREVISION=	2
+PORTVERSION=	0.7.3
 CATEGORIES=	multimedia
 
 MAINTAINER=	se@FreeBSD.org
@@ -22,7 +21,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USE_GITHUB=	yes
 GH_ACCOUNT=	bernhardu
 GH_PROJECT=	dvbcut-deb
-GH_TAGNAME=	7d0fc2b
+GH_TAGNAME=	v${PORTVERSION}
 
 USES=		qmake:outsource pkgconfig desktop-file-utils shared-mime-info
 
@@ -30,7 +29,7 @@ CXXFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/libavcodec \
 		-I${LOCALBASE}/include/libavformat \
 		-I${LOCALBASE}/include/libswscale \
-		-D DVBCUT_VERSION=$(PORTVERSION)
+		-D DVBCUT_VERSION=${PORTVERSION}
 
 QMAKE_SOURCE_PATH=${WRKSRC}/src
 QMAKE_ARGS=	LRELEASE="${LRELEASE}"
