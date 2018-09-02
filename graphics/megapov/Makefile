@@ -19,6 +19,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 INSTALL_WRKSRC=	${WRKSRC}/unix
 
 USES=		gmake jpeg localbase tar:bzip2
+USE_CXXSTD=	c++98
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	COMPILED_BY="ports@FreeBSD.org"
 
