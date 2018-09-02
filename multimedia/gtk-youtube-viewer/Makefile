@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk-youtube-viewer
-PORTVERSION=	3.3.4
+PORTVERSION=	3.4.1
 CATEGORIES=	multimedia perl5
 
 MAINTAINER=	ndowens@yahoo.com
@@ -30,7 +30,6 @@ NO_ARCH=	yes
 USES=		perl5 shebangfix
 SHEBANG_FILES=	bin/gtk-youtube-viewer bin/youtube-viewer
 USE_PERL5=	patch modbuild
-CONFIGURE_ARGS+=${DATADIR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	trizen
@@ -42,16 +41,17 @@ OPTIONS_MULTI_PLAYER=	MPLAYER MPV VLC
 OPTIONS_DEFAULT=	GTK2 MPLAYER
 OPTIONS_SUB=		yes
 
+MPLAYER_DESC=		Media player
+MPV_DESC=		MPV media player support
+VLC_DESC=		VLC media player support
+
 GTK2_BUILD_DEPENDS=	p5-File-ShareDir>0:devel/p5-File-ShareDir \
 			p5-Gtk2>0:x11-toolkits/p5-Gtk2
 GTK2_RUN_DEPENDS=	p5-File-ShareDir>0:devel/p5-File-ShareDir \
 			p5-Gtk2>0:x11-toolkits/p5-Gtk2
 GTK2_CONFIGURE_ON=	--gtk-youtube-viewer
 MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
-MPV_DESC=		MPV media player support
 MPV_RUN_DEPENDS=	mpv:multimedia/mpv
-PLAYER_DESC=		Media player
-VLC_DESC=		VLC media player support
 VLC_RUN_DEPENDS=	vlc:multimedia/vlc
 
 post-install-GTK2-on:
