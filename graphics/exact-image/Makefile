@@ -30,6 +30,7 @@ BROKEN_armv7=		fails to configure: C++ compiler is not installed or does not wor
 #broken headers on c++ in base system:
 CPPFLAGS+=	-fpermissive -I${LOCALBASE}/include
 USES=		gmake jpeg perl5 pkgconfig python:2.7 tar:bzip2
+USE_CXXSTD=	c++98
 USE_XORG=	x11
 HAS_CONFIGURE=	yes
 INSTALL_WRKSRC=	${WRKSRC}/objdir
