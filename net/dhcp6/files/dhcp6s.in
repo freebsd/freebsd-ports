@@ -35,7 +35,7 @@ load_rc_config $name
 : ${dhcp6s_config="%%PREFIX%%/etc/${name}.conf"}
 
 required_files=${dhcp6s_config}
-command_args="-c ${dhcp6s_config} ${dhcp6s_flags} ${dhcp6s_interface}"
+command_args="-c ${dhcp6s_config} ${dhcp6s_interface}"
 
 dhcp6s_precmd()
 {
