@@ -25,8 +25,8 @@ NOT_FOR_ARCHS_REASON=	SSP is currently broken on MIPS
 
 OPTIONS_DEFINE=	IPV6 MFD_REWRITES PERL PERL_EMBEDDED PYTHON DUMMY TKMIB \
 		MYSQL AX_SOCKONLY UNPRIVILEGED SMUX DOCS JAIL AX_DISABLE_TRAP \
-		TLS
-OPTIONS_DEFAULT=PERL PERL_EMBEDDED DUMMY SMUX
+		TLS NEWSYSLOG
+OPTIONS_DEFAULT=PERL PERL_EMBEDDED DUMMY SMUX NEWSYSLOG
 OPTIONS_SUB=	yes
 
 MFD_REWRITES_DESC=	Use new MFD rewrites of mib modules
@@ -38,6 +38,7 @@ AX_DISABLE_TRAP_DESC=	Disable agentx subagent code in snmptrapd
 UNPRIVILEGED_DESC=	Allow unprivileged users to execute net-snmp
 SMUX_DESC=		Build with SNMP multiplexing (SMUX) support
 JAIL_DESC=		Options for running snmpd within a jail(8)
+NEWSYSLOG_DESC=		Automatically rotate snmpd.log via newsyslog
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -123,7 +124,7 @@ PLIST_SUB+=	WITH_PERL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
+USES+=		mysql
 CONFIGURE_ARGS+=--with-mysql
 CONFIGURE_ENV+=	MYSQLCONFIG=${LOCALBASE}/bin/mysql_config
 .endif
@@ -282,13 +283,16 @@ post-build:
 .endif
 
 post-install: strip-files install-config-files install-doc-files
-	@${MKDIR} ${STAGEDIR}/var/agentx ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
+	@${MKDIR} ${STAGEDIR}/var/agentx
 	@(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libnetsnmp.so.${SHLIB_VERSION} libnetsnmp.so)
 	@(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libnetsnmpagent.so.${SHLIB_VERSION} libnetsnmpagent.so)
 	@(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libnetsnmphelpers.so.${SHLIB_VERSION} libnetsnmphelpers.so)
 	@(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libnetsnmpmibs.so.${SHLIB_VERSION} libnetsnmpmibs.so)
 	@(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libnetsnmptrapd.so.${SHLIB_VERSION} libnetsnmptrapd.so)
+.if ${PORT_OPTIONS:MNEWSYSLOG}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
 	${INSTALL_DATA} ${FILESDIR}/net-snmp.conf ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/
+.endif
 
 strip-files:
 	(cd ${STAGEDIR}${PREFIX}/bin; ${STRIP_CMD} ${BIN_FILES})
