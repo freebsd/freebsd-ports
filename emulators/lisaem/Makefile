@@ -41,5 +41,6 @@ do-install:
 	(cd ${WRKDIR} && ${INSTALL_DATA} lisaem.png ${STAGEDIR}${PREFIX}/share/pixmaps)
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/resources && ${INSTALL_DATA} * ${STAGEDIR}${DATADIR})
+	${LN} -sf lisaem ${STAGEDIR}${PREFIX}/share/LisaEm
 
 .include <bsd.port.mk>
