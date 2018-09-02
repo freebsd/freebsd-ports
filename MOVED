@@ -10499,3 +10499,9 @@ devel/gps||2018-08-28|Has expired: Depends on obsolete LLVM 3.8.
 net-mgmt/ocsinventory-ng|net-mgmt/ocsinventory-server|2018-08-26|split port
 www/py-buku|www/buku|2018-09-01|Moved to correct directory, port is not a python library
 math/rpy2|math/py-rpy2|2018-09-01|Moved to correct directory, this is a python library
+games/libdungeonmaker||2018-09-02|Has expired: Abandonware. Unused in the ports tree
+net-p2p/lopster||2018-09-02|Has expired: Unmaintained. Napster is dead
+audio/napster||2018-09-02|Has expired: Unmaintained. Napster and OpenNap are dead
+net-p2p/xnap||2018-09-02|Has expired: Unmaintained. Napster, OpenNap, and FastTrack are dead
+russian/napster||2018-09-02|Has expired: Unmaintained. Napster and OpenNap are dead
+devel/mico||2018-09-02|Has expired: unmaintained upstream and unused in the ports tree
