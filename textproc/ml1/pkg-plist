@@ -1,0 +1,6 @@
+bin/ml1
+man/man1/ml1.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/ml1sig.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ml1tut.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ml1user.pdf
