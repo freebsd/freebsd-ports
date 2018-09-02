@@ -4,7 +4,6 @@
 #
 
 # PROVIDE: dhcp6s
-# REQUIRE: DAEMON
 # BEFORE: NETWORKING
 # KEYWORD: shutdown
 
