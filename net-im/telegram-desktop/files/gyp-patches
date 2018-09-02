@@ -383,7 +383,7 @@
        '<(emoji_suggestions_loc)',
        '<(submodules_loc)/GSL/include',
        '<(submodules_loc)/variant/include',
-@@ -115,7 +105,7 @@
+@@ -116,7 +106,7 @@
        '<(res_loc)/export_html/images/back@2x.png',
      ],
      'sources!': [

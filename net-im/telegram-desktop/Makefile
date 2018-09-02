@@ -2,7 +2,7 @@
 
 PORTNAME=	telegram-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.12
+DISTVERSION=	1.3.14
 CATEGORIES=	net-im
 
 MAINTAINER=	henry.hu.sh@gmail.com
@@ -22,14 +22,14 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libopenal.so:audio/openal-soft \
 		libopus.so:audio/opus
 
-USES=		cmake:noninja,outsource desktop-file-utils gmake pkgconfig python:2.7,build qt:5 ssl
+USES=		compiler:c++17-lang cmake:noninja,outsource desktop-file-utils gmake pkgconfig python:2.7,build qt:5 ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	telegramdesktop
 GH_PROJECT=	tdesktop
 GH_TUPLE=	catchorg:Catch2:5ca44b68:catch/Telegram/ThirdParty/Catch \
 		mapbox:variant:550ac2f:variant/Telegram/ThirdParty/variant \
 		Microsoft:GSL:d846fe5:gsl/Telegram/ThirdParty/GSL \
-		telegramdesktop:libtgvoip:5380aab:libtgvoip/Telegram/ThirdParty/libtgvoip \
+		telegramdesktop:libtgvoip:bfa1e6a:libtgvoip/Telegram/ThirdParty/libtgvoip \
 		telegramdesktop:crl:527ad27:crl/Telegram/ThirdParty/crl
 USE_GNOME=	glib20
 USE_QT=		core gui imageformats network widgets buildtools_build qmake_build dbus
@@ -64,12 +64,11 @@ GYP_DEFINES:=	${GYP_DEFINES},TDESKTOP_DISABLE_GTK_INTEGRATION
 
 .include <bsd.port.pre.mk>
 
-# This port needs C++17 libs/compiler.
-# Currently, this is not supported by USES=compiler
-# Using clang does not work: libc++ in base does not support C++17.
-# Using gcc does not work: using both libc++ and libstdc++ causes crashes.
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-BROKEN=		Need C++17 support in compiler and runtime
+# Since 1.3.14, the clang compiler provided in 11.1 (4.0.0) gets a segmentation
+# fault.
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1102000
+CXXFLAGS+=	-DGSL_USE_STD_BYTE=0
+QMAKE_COMPILER=	clang
 .endif
 
 post-patch:
