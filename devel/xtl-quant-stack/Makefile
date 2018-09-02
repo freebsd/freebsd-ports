@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xtl
-DISTVERSION=	0.4.14
+DISTVERSION=	0.4.15
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-quant-stack
 
@@ -22,7 +22,7 @@ GH_ACCOUNT=	QuantStack
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-do-test:
+do-test: # tests fail to build: https://github.com/QuantStack/xtl/issues/106
 	@cd ${WRKSRC}/test && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -Dxtl_DIR:STRING=${STAGEDIR}${PREFIX}/lib/cmake/xtl && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} && \
