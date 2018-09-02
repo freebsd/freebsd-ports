@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20180901:
+  AFFECTS: net/samba48
+  AUTHOR: timur@FreeBSD.org
+
+  Samba ports from now on are not dependent from the databases/ldb* ports,
+  as the link between Samba and LDB is too tight and each next major Samba
+  release requires it's own major LDB release. Please, remove installed
+  version of databases/ldb13 from your system with:
+
+  # pkg delete -f databases/ldb13
+
+20180901:
   AFFECTS: net-mgmt/librenms
   AUTHOR: dvl@FreeBSD.org
 
