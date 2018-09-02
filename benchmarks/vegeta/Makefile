@@ -2,7 +2,7 @@
 
 PORTNAME=	vegeta
 DISTVERSIONPREFIX=	cli/v
-DISTVERSION=	11.0.0
+DISTVERSION=	11.3.0
 CATEGORIES=	benchmarks www
 
 MAINTAINER=	egypcio@googlemail.com
@@ -18,11 +18,13 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	tsenart
 GH_TUPLE=	alecthomas:jsonschema:f2c9385:jsonschema/github.com/alecthomas/jsonschema \
+		c2h5oh:datasize:4eba002:datasize/github.com/c2h5oh/datasize \
 		bmizerany:perks:d9a9656:perks/github.com/bmizerany/perks \
 		dgryski:go-gk:201884a:gogk/github.com/dgryski/go-gk \
 		dgryski:go-lttb:318fcdf:golttb/github.com/dgryski/go-lttb \
 		google:go-cmp:3af367b:gocmp/github.com/google/go-cmp \
 		influxdata:tdigest:a7d76c6:tdigest/github.com/influxdata/tdigest \
+		mailru:easyjson:60711f1:easyjson/github.com/mailru/easyjson \
 		shurcooL:httpfs:809bece:httpfs/github.com/shurcooL/httpfs \
 		shurcooL:vfsgen:62bca83:vfsgen/github.com/shurcooL/vfsgen \
 		streadway:quantile:b0c5887:quantile/github.com/streadway/quantile \
