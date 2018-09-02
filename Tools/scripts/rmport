@@ -49,6 +49,16 @@ SED="sed -i .orig -E"
 # use ~/.ssh/config to set up the desired username if different than $LOGNAME
 SVNREPO=${SVNREPO:-svn+ssh://repo.FreeBSD.org/ports}
 
+if [ -n "$(command -v svn 2>/dev/null)" ]; then
+        SVN=svn
+elif [ -n "$(command -v svnlite 2>/dev/null)" ]; then
+        SVN=svnlite
+else
+        echo "Neither svn(1) nor svnlite(1) found.  Please install devel/subversion."
+	exit 1
+fi
+
+
 if ! CDIFF=$(which cdiff) ; then
 	CDIFF=${PAGER}
 fi
@@ -134,8 +144,8 @@ mkcodir()
 co_common()
 {
 	log "getting ports/MOVED and ports/LEGAL from repository"
-	svn co --depth empty ${SVNREPO}/head ports
-	svn up ports/MOVED ports/LEGAL
+	${SVN} co --depth empty ${SVNREPO}/head ports
+	${SVN} up ports/MOVED ports/LEGAL
 }
 
 # check if some ports depend on the given port
@@ -276,8 +286,8 @@ co_port()
 	port=${2}
 
 	log "${cat}/${port}: getting ${cat}/Makefile and port's files from repository"
-	svn up --depth empty ports/${cat} ports/$cat/Makefile
-	svn up ports/${cat}/${port}
+	${SVN} up --depth empty ports/${cat} ports/$cat/Makefile
+	${SVN} up ports/${cat}/${port}
 }
 
 # check if anything about the port is mentioned in ports/LEGAL
@@ -342,7 +352,7 @@ rm_port()
 
 	log "${catport}: removing port's files"
 
-	svn rm ports/${catport}
+	${SVN} rm ports/${catport}
 }
 
 append_Template()
@@ -361,6 +371,8 @@ append_Template()
 		msg="${msg}: ${DEPRECATED}"
 	fi
 
+	echo "This is the commit message, please edit it." >> ./svnlog
+
 	log "${catport}: adding entry to commit message template"
 
 	echo "${msg}" >> ./svnlog
@@ -373,7 +385,7 @@ diff()
 
 	diffout=${codir}/diff
 
-	svn diff --no-diff-deleted ports > ${diffout} 2>&1 || :
+	${SVN} diff --no-diff-deleted ports > ${diffout} 2>&1 || :
 
 	read -p "hit <enter> to view svn diff output" dummy
 
@@ -386,14 +398,24 @@ diff()
 commit()
 {
 	log "running svn update"
-	svn up --quiet ports 2>&1 |${PAGER:-less}
-
+	${SVN} up --quiet ports 2>&1 |${PAGER:-less}
+	
+	echo >> svnlog
+	echo
 	$EDITOR svnlog
 
-	answer=`ask "do you want to commit?"`
+	log "Your commit message is:"
+	echo svnlog
+
+	answer=`ask "Do you want to edit again your commit message?"`
+	if [ "${answer}" = "y" ] ; then
+		$EDITOR svnlog
+	fi
+
+	answer=`ask "Do you want to commit now?"`
 
 	if [ "${answer}" = "y" ] ; then
-		svn ci --file svnlog ports
+		${SVN} ci --file svnlog ports
 	fi
 }
 
