@@ -3,6 +3,7 @@
 
 PORTNAME=	data
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/ufoai/UFO_AI%202.x/${PORTVERSION}
 PKGNAMEPREFIX=	ufoai-
@@ -17,6 +18,9 @@ COMMENT=	UFO alien invasion data files
 LICENSE=	GPLv2 CC-BY-SA-3.0
 LICENSE_COMB=	multi
 
+BROKEN_aarch64=		Fails to install: runaway process
+BROKEN_mips64=		Fails to install: runaway process
+
 EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
 
 NO_BUILD=	yes
@@ -25,9 +29,6 @@ NO_ARCH=	yes
 
 DATADIR=	share/${PKGNAMEPREFIX:S/-//}
 PLIST=		${WRKDIR}/pkg-plist
-
-BROKEN_aarch64=		Fails to install: runaway process
-BROKEN_mips64=		Fails to install: runaway process
 
 post-extract:
 	@cd ${WRKSRC}/base && \
