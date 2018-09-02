@@ -40,6 +40,8 @@ ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CFLAGS+=	-D__LINUX_ALSA__
 ALSA_LDFLAGS+=	-lasound
 
+CFLAGS_i386+=	-msse2
+
 do-build:
 	${CC} ${CFLAGS} ${LDFLAGS} \
 		${WRKSRC}/src/rtmidi/*.cpp ${WRKSRC}/src/gfxdata/*.c ${WRKSRC}/src/*.c \
