@@ -7,8 +7,7 @@ CATEGORIES=	science
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Powerful molecular electronic structure program for quantum chemistry
 
-LICENSE=	LGPL20
-xLICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	liblapack.so:math/lapack \
 		libopenblas.so:math/openblas
