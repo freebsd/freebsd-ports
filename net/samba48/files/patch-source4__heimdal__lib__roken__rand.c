@@ -1,5 +1,5 @@
---- source4/heimdal/lib/roken/rand.c.orig	2018-01-14 12:41:58.000000000 -0800
-+++ source4/heimdal/lib/roken/rand.c	2018-08-22 22:11:26.937151714 -0700
+--- source4/heimdal/lib/roken/rand.c.orig	2018-01-14 04:41:58 UTC
++++ source4/heimdal/lib/roken/rand.c
 @@ -37,7 +37,6 @@
  rk_random_init(void)
  {

@@ -178,7 +178,6 @@ lib/samba4/libtevent-util.so
 lib/samba4/libtevent-util.so.0
 lib/samba4/libwbclient.so
 lib/samba4/libwbclient.so.0
-lib/samba4/winbind_krb5_locator.so
 lib/nss_winbind.so.1
 lib/nss_wins.so.1
 lib/pam_winbind.so
@@ -298,6 +297,7 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%AD_DC%%lib/shared-modules/bind9/dlz_bind9_9.so
 %%AD_DC%%lib/shared-modules/bind9/dlz_bind9.so
 %%AD_DC%%lib/shared-modules/gensec/krb5.so
+%%AD_DC%%lib/shared-modules/krb5/winbind_krb5_locator.so
 %%AD_DC%%lib/shared-modules/ldb/acl.so
 %%AD_DC%%lib/shared-modules/ldb/aclread.so
 %%AD_DC%%lib/shared-modules/ldb/anr.so
@@ -1140,7 +1140,6 @@ man/man7/libsmbclient.7.gz
 man/man7/samba.7.gz
 man/man7/traffic_learner.7.gz
 man/man7/traffic_replay.7.gz
-man/man7/winbind_krb5_locator.7.gz
 man/man8/cifsdd.8.gz
 man/man8/eventlogadm.8.gz
 man/man8/idmap_ad.8.gz
@@ -1207,6 +1206,7 @@ man/man8/vfs_virusfilter.8.gz
 man/man8/vfs_worm.8.gz
 man/man8/vfs_xattr_tdb.8.gz
 man/man8/vfs_zfsacl.8.gz
+man/man8/winbind_krb5_locator.8.gz
 man/man8/winbindd.8.gz
 @dir %%SAMBA4_RUNDIR%%
 @dir %%SAMBA4_LOGDIR%%
