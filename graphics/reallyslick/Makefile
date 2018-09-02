@@ -11,16 +11,15 @@ DISTNAME=	rss-glx_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL screensaver collection
 
-BROKEN_armv6=		fails to compile: hyperspace.cpp:387:19: non-constant-expression cannot be narrowed from type 'double' to 'float' in initializer list
-BROKEN_armv7=		fails to compile: hyperspace.cpp:387:19: non-constant-expression cannot be narrowed from type 'double' to 'float' in initializer list
-
 LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick \
 		libGLC.so:graphics/quesoglc
 
-USES=		gmake pathfix pkgconfig tar:bzip2 libtool
+USES=		compiler gmake pathfix pkgconfig tar:bzip2 libtool
 USE_GL=		glut
 GNU_CONFIGURE=	yes
 
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lXext
 
@@ -29,6 +28,7 @@ OPTIONS_DEFINE=	FREEALUT GLEW
 FREEALUT_DESC=	Enable freealut support
 FREEALUT_CONFIGURE_ENABLE=	sound
 FREEALUT_USES=	openal:alut
+FREEALUT_VARS=	LLD_UNSAFE=yes # cf. PR 226980
 
 GLEW_DESC=	Enable GLEW support
 GLEW_USE=	GL=glew
