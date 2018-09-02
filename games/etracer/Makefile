@@ -3,24 +3,26 @@
 
 PORTNAME=	etracer
 PORTVERSION=	0.6.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/extremetuxracer/releases/${PORTVERSION}
 DISTNAME=	etr-${PORTVERSION}
 
-MAINTAINER=	peter_dunning@dsl.pipex.com
-COMMENT=	Latest and greatest fork of the classic Tux Racer
+MAINTAINER=	tobik@FreeBSD.org
+COMMENT=	Extreme Tux Racer
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2
 
+USES=		compiler gmake localbase pkgconfig tar:xz tcl
 USE_SDL=	mixer sdl image
-USE_GCC=	yes
 USE_GL=		gl glu
-USES=		gmake pkgconfig tar:xz tcl
-CPPFLAGS+=	-I${LOCALBASE}/include
+
 GNU_CONFIGURE=	yes
+
+CXXFLAGS+=      ${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang= -Wno-c++11-narrowing
 
 .include <bsd.port.mk>
