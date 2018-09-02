@@ -22,8 +22,8 @@
 -$config['dot']            = '/usr/bin/dot';
 -$config['sfdp']           = '/usr/bin/sfdp';
 +$config['ping']           = '/sbin/ping';
-+$config['mtr']            = '/usr/local/bin/mtr';
-+$config['nmap']           = '/usr/localbin/nmap';
++$config['mtr']            = '/usr/local/sbin/mtr';
++$config['nmap']           = '/usr/local/bin/nmap';
 +$config['nagios_plugins'] = '/usr/local/libexec/nagios';
 +$config['ipmitool']       = '/usr/local/bin/ipmitool';
 +$config['virsh']          = '/usr/local/bin/virsh';
