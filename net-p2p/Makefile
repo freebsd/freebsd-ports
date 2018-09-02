@@ -53,7 +53,6 @@
     SUBDIR += litecoin
     SUBDIR += litecoin-daemon
     SUBDIR += litecoin-utils
-    SUBDIR += lopster
     SUBDIR += microdc2
     SUBDIR += minder
     SUBDIR += mktorrent
@@ -109,7 +108,6 @@
     SUBDIR += verlihub-plugins-stats
     SUBDIR += vuze
     SUBDIR += xmrig
-    SUBDIR += xnap
     SUBDIR += zetacoin
     SUBDIR += zetacoin-nox11
 

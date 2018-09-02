@@ -20,7 +20,6 @@
     SUBDIR += libreoffice
     SUBDIR += mueller-dic
     SUBDIR += mythes
-    SUBDIR += napster
     SUBDIR += p5-Convert-Cyrillic
     SUBDIR += p5-Lingua-DetectCyrillic
     SUBDIR += p5-Lingua-RU-Charset

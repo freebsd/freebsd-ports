@@ -567,7 +567,6 @@
     SUBDIR += lexter
     SUBDIR += lgeneral
     SUBDIR += lianliankan
-    SUBDIR += libdungeonmaker
     SUBDIR += libggz
     SUBDIR += libgnome-games-support
     SUBDIR += libkdegames
