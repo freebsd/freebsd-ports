@@ -13,6 +13,8 @@ COMMENT=	Graph layout optimizer
 
 LICENSE=	GPLv2+
 
+USES=		gnome
+USE_CXXSTD=	c++98
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
