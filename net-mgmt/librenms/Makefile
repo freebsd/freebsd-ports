@@ -3,6 +3,7 @@
 
 PORTNAME=	librenms
 PORTVERSION=	1.43
+PORTREVISION=	1
 # RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
