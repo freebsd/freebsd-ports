@@ -11,6 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High level 3D graphics library compatible with Apple's QuickDraw(TM)
 
 USES=		libtool
+USE_CXXSTD=	gnu++98
 GNU_CONFIGURE=	yes
 USE_GL=		glut
 USE_XORG=	x11 ice xmu xi
