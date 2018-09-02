@@ -9,7 +9,4 @@ MAINTAINER=	office@FreeBSD.org
 MASTER_SITES=	https://dl.bintray.com/boostorg/release/${PORTVERSION}/source/ \
 		SF/boost/boost/${PORTVERSION}
 
-LICENSE=	BSL
-LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
-
 USES+=		tar:bzip2
