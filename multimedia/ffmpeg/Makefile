@@ -41,12 +41,6 @@ OPTIONS_DEFAULT=	FONTCONFIG FREETYPE FREI0R GMP GNUTLS ICONV \
 			OPENCV OPTIMIZED_CFLAGS OPUS RTCPU THEORA V4L VAAPI VDPAU \
 			VORBIS VPX X264 X265 XVID
 
-.if !exists(${.CURDIR:H:H}/multimedia/aom)
-# https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/c438899a7064
-# https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/43778a501f1b
-OPTIONS_EXCLUDE+=	AOM
-.endif
-
 .if !exists(${.CURDIR:H:H}/net/srt)
 # https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/a2fc8dbae853
 OPTIONS_EXCLUDE+=	SRT
