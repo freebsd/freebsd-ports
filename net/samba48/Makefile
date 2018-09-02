@@ -3,7 +3,7 @@
 
 PORTNAME=			${SAMBA4_BASENAME}48
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			1
+PORTREVISION=			0
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -21,17 +21,12 @@ CONFLICTS_INSTALL?=		samba4-4.0.* samba4[1-79]-4.* p5-Parse-Pidl-4.*
 EXTRA_PATCHES+=			${PATCHDIR}/0001-Zfs-provision-1.patch:-p1
 EXTRA_PATCHES+=			${PATCHDIR}/0001-Freenas-master-mdns-fixes-22.patch:-p1
 EXTRA_PATCHES+=			${PATCHDIR}/0001-audit.patch:-p1
-EXTRA_PATCHES+=			${PATCHDIR}/0001-ctdb.patch:-p1
 EXTRA_PATCHES+=			${PATCHDIR}/0001-bug-13175.patch:-p1
-EXTRA_PATCHES+=			${PATCHDIR}/0001-bug-13351.patch:-p1
-EXTRA_PATCHES+=			${PATCHDIR}/0001-bug-13441.patch:-p1
-EXTRA_PATCHES+=			${PATCHDIR}/0001-bug-13451.patch:-p1
-EXTRA_PATCHES+=			${PATCHDIR}/0001-bug-13537.patch:-p1
 EXTRA_PATCHES+=			${PATCHDIR}/0001-bug-228462.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.8.4
+SAMBA4_VERSION=			4.8.5
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
@@ -165,8 +160,8 @@ RUN_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
 #SAMBA4_BUNDLED_TALLOC?=	no
 #SAMBA4_BUNDLED_TEVENT?=	no
 #SAMBA4_BUNDLED_TDB?=		no
-SAMBA4_BUNDLED_LDB?=		yes
-SAMBA4_LDB=			13
+#SAMBA4_BUNDLED_LDB?=		yes
+#SAMBA4_LDB=			13
 # cmocka
 .if defined(SAMBA4_BUNDLED_CMOCKA)
 SAMBA4_BUNDLED_LIBS+=		cmocka
@@ -228,8 +223,8 @@ PLIST_SUB+=			SAMBA4_BUNDLED_LDB=""
 SUB_LIST+=			SAMBA4_BUNDLED_LDB=""
 .else
 .       if ${SAMBA4_LDB} == 13
-BUILD_DEPENDS+=			ldb13>=1.3.4:databases/ldb13
-RUN_DEPENDS+=			ldb13>=1.3.4:databases/ldb13
+BUILD_DEPENDS+=			ldb13>=1.3.6:databases/ldb13
+RUN_DEPENDS+=			ldb13>=1.3.6:databases/ldb13
 .       elif ${SAMBA4_LDB} == 12
 BUILD_DEPENDS+=			ldb12>=1.2.3:databases/ldb12
 RUN_DEPENDS+=			ldb12>=1.2.3:databases/ldb12
@@ -483,7 +478,8 @@ CONFIGURE_ARGS+=		--accel-aes=none
 .endif
 
 .if ${PORT_OPTIONS:MGSSAPI_MIT}
-PLIST_FILES+=			lib/samba4/winbind-krb5-localauth.so
+PLIST_FILES+=			lib/shared-modules/krb5/winbind_krb5_localauth.so \
+				man/man8/winbind_krb5_localauth.8.gz
 .       if ${PORT_OPTIONS:MAD_DC}
 PLIST_FILES+=			lib/samba4/krb5/plugins/kdb/samba.so
 .       endif

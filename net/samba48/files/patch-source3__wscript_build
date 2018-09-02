@@ -1,5 +1,13 @@
 --- source3/wscript_build.orig	2017-07-25 13:09:58 UTC
 +++ source3/wscript_build
+@@ -124,7 +124,6 @@ ldapsam_pdb_match = ['!priv2ld', '!smbldap_search_doma
+                      '!get_attr_list']
+ private_pdb_match.append('!pdb_nds_*')
+ private_pdb_match.append('!pdb_ldapsam_init*')
+-private_pdb_match.append('!pdb_*_init')
+ private_pdb_match = private_pdb_match + ldapsam_pdb_match
+ 
+ bld.SAMBA3_LIBRARY('samba-passdb',
 @@ -221,11 +221,9 @@ bld.SAMBA3_SUBSYSTEM('SMBREGISTRY',
                          talloc
                          replace
