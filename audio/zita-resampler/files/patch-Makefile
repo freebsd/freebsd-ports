@@ -38,14 +38,17 @@
  
  $(ZITA-RESAMPLER_MIN): $(ZITA-RESAMPLER_O)
  	$(CXX) -shared $(LDFLAGS) -Wl,-soname,$(ZITA-RESAMPLER_MAJ) -o $(ZITA-RESAMPLER_MIN) $(ZITA-RESAMPLER_O) $(ZITA-RESAMPLER_DEP)
-@@ -56,8 +56,8 @@ $(ZITA-RESAMPLER_O):	$(ZITA-RESAMPLER_H)
+@@ -56,9 +56,10 @@ $(ZITA-RESAMPLER_O):	$(ZITA-RESAMPLER_H)
  install:	$(ZITA-RESAMPLER_MIN)
  	install -d $(DESTDIR)$(INCDIR)/zita-resampler
  	install -d $(DESTDIR)$(LIBDIR)
 -	install -m 644 $(ZITA-RESAMPLER_H)   $(DESTDIR)$(INCDIR)/zita-resampler
 -	install -m 755 $(ZITA-RESAMPLER_MIN) $(DESTDIR)$(LIBDIR)
+-	ldconfig
 +	${BSD_INSTALL_DATA} -m 644 $(ZITA-RESAMPLER_H)   $(DESTDIR)$(INCDIR)/zita-resampler
 +	${BSD_INSTALL_LIB} -m 755 $(ZITA-RESAMPLER_MIN) $(DESTDIR)$(LIBDIR)
- 	ldconfig
++	# ldconfig
++	ln -sf $(ZITA-RESAMPLER_MIN) $(DESTDIR)$(LIBDIR)/$(ZITA-RESAMPLER_MAJ)
  	ln -sf $(ZITA-RESAMPLER_MIN) $(DESTDIR)$(LIBDIR)/$(ZITA-RESAMPLER_SO)
  
+ uninstall:
