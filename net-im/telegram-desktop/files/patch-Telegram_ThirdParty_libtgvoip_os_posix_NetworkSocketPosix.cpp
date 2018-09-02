@@ -1,6 +1,6 @@
 --- Telegram/ThirdParty/libtgvoip/os/posix/NetworkSocketPosix.cpp.orig	2018-07-17 16:48:21 UTC
 +++ Telegram/ThirdParty/libtgvoip/os/posix/NetworkSocketPosix.cpp
-@@ -53,6 +53,7 @@ void NetworkSocketPosix::SetMaxPriority(
+@@ -54,6 +54,7 @@ void NetworkSocketPosix::SetMaxPriority(
  	if(res<0){
  		LOGE("error setting darwin-specific net priority: %d / %s", errno, strerror(errno));
  	}

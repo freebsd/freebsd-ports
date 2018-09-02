@@ -9,16 +9,7 @@
  #ifndef WITHOUT_ALSA
  #include "../os/linux/AudioInputALSA.h"
  #endif
-@@ -63,7 +63,7 @@ AudioInput::AudioInput(std::string devic
- 		return new AudioInputWave(deviceID);
- #endif
- 	return new AudioInputWASAPI(deviceID);
--#elif defined(__linux__)
-+#elif defined(__linux__) || defined(__FreeBSD__)
- 	if(AudioInputPulse::IsAvailable()){
- 		AudioInputPulse* aip=new AudioInputPulse(deviceID);
- 		if(!aip->IsInitialized())
-@@ -96,7 +96,7 @@ void AudioInput::EnumerateDevices(std::v
+@@ -68,7 +68,7 @@ void AudioInput::EnumerateDevices(std::v
  	}
  #endif
  	AudioInputWASAPI::EnumerateDevices(devs);

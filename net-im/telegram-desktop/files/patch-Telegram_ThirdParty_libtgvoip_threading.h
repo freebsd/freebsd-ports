@@ -10,7 +10,7 @@
  
  namespace tgvoip{
  	class Mutex{
-@@ -112,7 +115,9 @@ namespace tgvoip{
+@@ -115,7 +118,9 @@ namespace tgvoip{
  		static void* ActualEntryPoint(void* arg){
  			Thread* self=reinterpret_cast<Thread*>(arg);
  			if(self->name){
