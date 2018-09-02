@@ -254,6 +254,7 @@
     SUBDIR += step-kde4
     SUBDIR += svmlight
     SUBDIR += szip
+    SUBDIR += teem
     SUBDIR += tfel
     SUBDIR += triqs
     SUBDIR += udunits

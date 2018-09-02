@@ -1,0 +1,6 @@
+Teem is a set of ANSI C libraries for manipulation, measurement, and
+visualization of structured scientific data. Includes N-dimensional image I/O
+and processing, volume rendering, diffusion tensor processing, ray tracing,
+PostScript rendering, and more.
+
+WWW: http://teem.sourceforge.net/
