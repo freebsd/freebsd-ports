@@ -1,0 +1,22 @@
+In order to mount locally a remote archive or an entire repository as a FUSE
+filesystem, it is required to load fuse module:
+
+# kldload fuse
+
+To load the module at boot time, add
+
+fuse_load="YES"
+
+to /boot/loader.conf by running:
+
+sysrc fuse_load="YES"
+
+Also, if you plan to mount borg repositories as non root user, you need to run
+
+# sysctl vfs.usermount=1
+
+and add the line
+
+vfs.usermount=1
+
+to /etc/sysctl.conf to ensure the setting is loaded at boot time.
