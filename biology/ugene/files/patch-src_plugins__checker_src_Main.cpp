@@ -1,4 +1,4 @@
---- src/plugins_checker/src/Main.cpp.orig	2016-03-31 12:22:09 UTC
+--- src/plugins_checker/src/Main.cpp.orig	2018-08-16 13:59:06 UTC
 +++ src/plugins_checker/src/Main.cpp
 @@ -39,7 +39,7 @@
  #include <ServiceRegistryImpl.h>
@@ -20,7 +20,7 @@
  
      const char* build = QT_VERSION_STR, *runtime = qVersion();
      if (strcmp(build, runtime) > 0){
-@@ -140,7 +142,7 @@ int main(int argc, char **argv)
+@@ -141,7 +143,7 @@ int main(int argc, char **argv)
      delete cmdLineRegistry;
      appContext->setCMDLineRegistry(NULL);
  
