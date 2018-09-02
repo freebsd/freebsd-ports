@@ -29,7 +29,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netifaces>=0.10.4:net/py-netifaces@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dogpile.cache>=0.6.2:devel/py-dogpile.cache@${PY_FLAVOR} \
-		${PY_FUTURES}
+		${PY_FUTURES} \
+		${PY_IPADDRESS}
 
 USES=		python shebangfix
 USE_PYTHON=	distutils autoplist
@@ -37,10 +38,4 @@ SHEBANG_FILES=	openstack/tests/functional/cloud/hooks/post_test_hook.sh
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3300
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ipaddress>=1.0.16:net/py-ipaddress@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
