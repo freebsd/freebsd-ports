@@ -10,12 +10,12 @@ MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Set the root window to the image of earth
 
 LICENSE=	Xearth
-LICENSE_FILE=	${WRKSRC}/README
 LICENSE_NAME=	Xearth license
+LICENSE_FILE=	${WRKSRC}/README
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
-USE_XORG=	x11 xext sm ice xt
 USES=		tar:xz
+USE_XORG=	x11 xext sm ice xt
 PLIST_FILES=	bin/xearth \
 		man/man1/xearth.1.gz \
 		lib/X11/xearth/freebsd.committers.markers \
