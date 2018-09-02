@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eksctl
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -19,20 +19,11 @@ USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	weaveworks
-GH_SUBDIR=	src/github.com/weaveworks/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
 
-do-build:
-	cd ${WRKSRC}/${GH_SUBDIR} && \
-		GOPATH=${WRKSRC} go build \
-		-ldflags="-X main.gitCommit=${PORTVERSION} \
-		-X main.builtAt=$$(date +'%s')" \
-		./cmd/${PORTNAME}
-
-do-install:
-	${INSTALL_PROGRAM} \
-		${WRKSRC}/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+GO_PKGNAME=	github.com/weaveworks/${PORTNAME}
+GO_TARGET=	${GO_PKGNAME}/cmd/${PORTNAME}
+GO_BUILDFLAGS=	-ldflags="-X main.gitCommit=${PORTVERSION}"
 
 .include <bsd.port.mk>
