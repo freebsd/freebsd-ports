@@ -10505,3 +10505,4 @@ audio/napster||2018-09-02|Has expired: Unmaintained. Napster and OpenNap are dea
 net-p2p/xnap||2018-09-02|Has expired: Unmaintained. Napster, OpenNap, and FastTrack are dead
 russian/napster||2018-09-02|Has expired: Unmaintained. Napster and OpenNap are dead
 devel/mico||2018-09-02|Has expired: unmaintained upstream and unused in the ports tree
+net/rubygem-gitlab_omniauth-ldap1|net/rubygem-gitlab_omniauth-ldap|2018-09-02|Has expired: Use net/rubygem-gitlab_omniauth-ldap instead
