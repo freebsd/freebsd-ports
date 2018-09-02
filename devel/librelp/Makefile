@@ -3,7 +3,7 @@
 
 PORTNAME=	librelp
 PORTVERSION=	1.2.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://download.rsyslog.com/librelp/
 
@@ -21,7 +21,7 @@ GNUTLS_CONFIGURE_ENABLE=	tls
 
 OPENSSL_USES=			ssl
 OPENSSL_CONFIGURE_ENABLE=	tls-openssl
-OPENSSL_CONFIGURE_ENV=		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto" \
+OPENSSL_CONFIGURE_ENV=		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
 				OPENSSL_CFLAGS="-I ${OPENSSLINC}"
 
 USES=		libtool pathfix pkgconfig
