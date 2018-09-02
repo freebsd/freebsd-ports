@@ -4,7 +4,6 @@ PORTNAME=	aom
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0
 CATEGORIES=	multimedia
-MASTER_SITES=	LOCAL/jbeich # GitHub mirror is still importing...
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	AV1 Codec Library
