@@ -3,6 +3,7 @@
 
 PORTNAME=	nqc
 PORTVERSION=	3.1.r6
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://bricxcc.sourceforge.net/nqc/release/ \
 		ftp://ftp2.za.freebsd.org/pub/nqc/
