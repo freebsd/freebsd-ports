@@ -1,4 +1,4 @@
---- misc/fts.c.orig	2016-11-30 07:03:00 UTC
+--- misc/fts.c.orig	2018-08-25 09:14:19 UTC
 +++ misc/fts.c
 @@ -32,12 +32,14 @@ static char sccsid[] = "@(#)fts.c	8.6 (B
  #endif /* LIBC_SCCS and not lint */
@@ -12,7 +12,7 @@
  #endif
  
 +#include "system.h"
-+#include "misc/fts.h"
++#include "misc/rpmfts.h"
  #if defined(_LIBC)
  #include <sys/param.h>
  #include <include/sys/stat.h>
@@ -33,7 +33,7 @@
  #include <stdlib.h>
  #include <string.h>
  #include <errno.h>
--#include "misc/fts.h"
+-#include "misc/rpmfts.h"
  #   define __set_errno(val) (*__errno_location ()) = (val)
  #   define __open	open
  #   define __close	close
