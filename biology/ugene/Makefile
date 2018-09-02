@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ugene
-DISTVERSION=	1.22.0
-PORTREVISION=	3
+DISTVERSION=	1.31.0
 CATEGORIES=	biology science
 MASTER_SITES=	http://ugene.unipro.ru/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} QueryDesigner_UserManual.pdf \
@@ -14,46 +13,42 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	h2+fbsdports@fsfe.org
 COMMENT=	Free, open-source, cross-platform bioinformatics toolkit
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	bash:shells/bash
 
 BROKEN_aarch64=	Fails to build: invokes x86 asm
 
-USES=		desktop-file-utils qmake qt:5
-USE_GL=		glu
-USE_QT=		buildtools_build linguisttools_build scripttools_build \
-		gui network printsupport script sql svg webkit widgets xml \
+USES=		desktop-file-utils qmake qt:5 shared-mime-info
+USE_GL=		gl glu
+USE_QT=		buildtools_build linguisttools_build \
+		core gui network opengl printsupport script scripttools \
+		sql svg testlib webkit widgets xml \
 		imageformats_run
+USE_XORG=	x11 xtst
 
 QMAKE_ARGS=	INSTALL_PREFIX="${PREFIX}" UGENE_INSTALL_DATA="${DATADIR}" \
 		INSTALL_MANDIR="${MAN1PREFIX}/man" LRELEASE="${LRELEASE}" \
 		LUPDATE="${LUPDATE}"
 ALL_TARGET=	release
 
-# Required for Google Test code
-CXXFLAGS+=	-std=c++11
-
 DOCSDIR=	${DATADIR}/manuals
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS OPENCL
 DOCS_DESC=	Install official UGENE documentation (PDF)
+
+OPENCL_QMAKE_ON=	UGENE_OPENCL_DETECTED=1
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
 # XXX: need to manually tell the build we are on x64
 QMAKE_ARGS+=	CONFIG+=x64
-PLIST_SUB+=	NOX64="@comment "
-.else
-PLIST_SUB+=	NOX64=""
 .endif
 
 .if ${MACHINE_CPU:Msse2}
 QMAKE_ARGS+=	UGENE_SSE2_DETECTED=1
-PLIST_SUB+=	SSE2=""
-.else
-PLIST_SUB+=	SSE2="@comment "
 .endif
 
 post-extract:
@@ -67,8 +62,6 @@ post-patch:
 		${WRKSRC}/installer/_common_data/ugene
 	@${REINPLACE_CMD} -e 's|-bit version|& for ${OPSYS}/${ARCH}|' \
 		${WRKSRC}/src/ugeneui/src/main_window/AboutDialogController.cpp
-	@${REINPLACE_CMD} -e '/unix_not_mac/,+11d' \
-		${WRKSRC}/src/corelibs/U2Core/U2Core.pri
 	@${REINPLACE_CMD} 's, -lbreakpad,,' \
 		${WRKSRC}/src/corelibs/U2Private/U2Private.pri \
 		${WRKSRC}/src/plugins_checker/plugins_checker.pri \

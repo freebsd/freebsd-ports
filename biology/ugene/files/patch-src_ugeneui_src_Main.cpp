@@ -1,6 +1,6 @@
---- src/ugeneui/src/Main.cpp.orig	2016-03-31 12:22:18 UTC
+--- src/ugeneui/src/Main.cpp.orig	2018-08-16 13:59:19 UTC
 +++ src/ugeneui/src/Main.cpp
-@@ -134,7 +134,7 @@
+@@ -136,7 +136,7 @@
  #include <ServiceRegistryImpl.h>
  #include <SettingsImpl.h>
  #include <TaskSchedulerImpl.h>
@@ -9,7 +9,7 @@
  
  #include "app_settings/AppSettingsGUIImpl.h"
  #include "app_settings/logview_settings/LogSettingsGUIController.h"
-@@ -343,9 +343,11 @@ void fixMacFonts() {
+@@ -353,6 +353,7 @@ void fixMacFonts() {
  
  int main(int argc, char **argv)
  {
@@ -17,11 +17,15 @@
      if (CrashHandler::isEnabled()) {
          CrashHandler::setupHandler();
      }
+@@ -360,6 +361,7 @@ int main(int argc, char **argv)
+     if (qgetenv(ENV_SEND_CRASH_REPORTS) == "0") {
+         CrashHandler::setSendCrashReports(false);
+     }
 +#endif
  
      QT_REQUIRE_VERSION( argc, argv, QT_VERSION_STR );
  
-@@ -966,7 +968,7 @@ int main(int argc, char **argv)
+@@ -973,7 +975,7 @@ int main(int argc, char **argv)
      }
  
      UgeneUpdater::onClose();

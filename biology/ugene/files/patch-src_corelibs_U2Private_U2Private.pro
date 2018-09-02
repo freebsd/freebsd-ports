@@ -1,4 +1,4 @@
---- src/corelibs/U2Private/U2Private.pro.orig	2016-03-31 12:22:14 UTC
+--- src/corelibs/U2Private/U2Private.pro.orig	2018-08-16 13:59:12 UTC
 +++ src/corelibs/U2Private/U2Private.pro
 @@ -12,12 +12,7 @@ HEADERS += src/AppContextImpl.h \
             src/PluginSupportImpl.h \
@@ -14,7 +14,7 @@
  
  SOURCES += src/AppContextImpl.cpp \
             src/AppSettingsImpl.cpp \
-@@ -30,29 +25,7 @@ SOURCES += src/AppContextImpl.cpp \
+@@ -30,23 +25,13 @@ SOURCES += src/AppContextImpl.cpp \
             src/PluginSupportImpl.cpp \
             src/ServiceRegistryImpl.cpp \
             src/SettingsImpl.cpp \
@@ -26,22 +26,16 @@
 -           src/crash_handler/StackWalker.cpp
 +           src/TaskSchedulerImpl.cpp
  
- TRANSLATIONS += transl/english.ts \
-                 transl/russian.ts
--
--win32 {
--    HEADERS += src/crash_handler/CrashHandlerPrivateWin.h
--    SOURCES += src/crash_handler/CrashHandlerPrivateWin.cpp
+ TRANSLATIONS += transl/russian.ts
+ 
+ win32 {
+     HEADERS += src/crash_handler/CrashHandlerPrivateWin.h
+     SOURCES += src/crash_handler/CrashHandlerPrivateWin.cpp
 -}
 -
 -unix_not_mac() {
 -    HEADERS += src/crash_handler/CrashHandlerPrivateUnixNotMac.h
 -    SOURCES += src/crash_handler/CrashHandlerPrivateUnixNotMac.cpp
--}
--
--mac {
--    HEADERS += src/crash_handler/CrashHandlerPrivateMac.h \
--               src/SleepPreventerMac.h
--    SOURCES += src/crash_handler/CrashHandlerPrivateMac.cpp \
--               src/SleepPreventerMac.cpp
--}
+ }
+ 
+ mac {
