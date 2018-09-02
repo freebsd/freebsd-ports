@@ -1,28 +1,24 @@
 # Created by: Peter Dunning
 # $FreeBSD$
 
-PORTNAME=	etracer
-PORTVERSION=	0.6.0
-PORTREVISION=	7
+PORTNAME=	etr
+PORTVERSION=	0.7.5
 CATEGORIES=	games
 MASTER_SITES=	SF/extremetuxracer/releases/${PORTVERSION}
-DISTNAME=	etr-${PORTVERSION}
+PKGNAMESUFFIX=	acer
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Extreme Tux Racer
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:graphics/png \
-		libfreetype.so:print/freetype2
+LIB_DEPENDS=	libsfml-system.so:devel/sfml
 
-USES=		compiler gmake localbase pkgconfig tar:xz tcl
-USE_SDL=	mixer sdl image
+USES=		compiler:c++11-lang pkgconfig tar:xz
 USE_GL=		gl glu
-
 GNU_CONFIGURE=	yes
 
-CXXFLAGS+=      ${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
-CXXFLAGS_clang= -Wno-c++11-narrowing
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
