@@ -42,7 +42,7 @@ load_rc_config $name
 
 required_files="${dhcp6c_config}"
 pidfile="${dhcp6c_pidfile}"
-command_args="-c ${dhcp6c_config} -p ${dhcp6c_pidfile} ${dhcp6c_flags} ${dhcp6c_interfaces}"
+command_args="-c ${dhcp6c_config} -p ${dhcp6c_pidfile} ${dhcp6c_interfaces}"
 
 dhcp6c_precmd()
 {
