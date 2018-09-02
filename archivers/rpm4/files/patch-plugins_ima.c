@@ -1,6 +1,9 @@
---- plugins/ima.c.orig	2017-03-29 21:11:01 UTC
+--- plugins/ima.c.orig	2018-06-21 09:08:06 UTC
 +++ plugins/ima.c
-@@ -1,5 +1,3 @@
+@@ -1,8 +1,6 @@
+ #include "system.h"
+ 
+ #include <errno.h>
 -#include <sys/xattr.h>
 -
  #include <rpm/rpmfi.h>

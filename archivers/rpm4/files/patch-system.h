@@ -1,6 +1,6 @@
---- system.h.orig	2017-02-16 09:40:09 UTC
+--- system.h.orig	2017-10-05 10:04:57 UTC
 +++ system.h
-@@ -41,6 +41,13 @@ char * stpncpy(char * dest, const char *
+@@ -43,6 +43,13 @@ char * stpncpy(char * dest, const char *
  #define	getenv(_s)	__secure_getenv(_s)
  #endif
  
@@ -14,12 +14,3 @@
  #ifdef HAVE_FCNTL_H
  #include <fcntl.h>
  #else
-@@ -87,7 +94,7 @@ char * stpncpy(char * dest, const char *
- #define _free(_ptr) rfree((_ptr))
- 
- /* Retrofit glibc __progname */
--#if defined __GLIBC__ && __GLIBC__ >= 2
-+#if defined __GLIBC__ && __GLIBC__ >= 2 || defined(__FreeBSD__)
- #if __GLIBC_MINOR__ >= 1
- #define	__progname	__assert_program_name
- #endif

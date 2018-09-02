@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rpm
-PORTVERSION=	4.13.1
-PORTREVISION=	1
+PORTVERSION=	4.14.2
 CATEGORIES=	archivers
 MASTER_SITES=	http://ftp.rpm.org/releases/rpm-${PORTVERSION:R}.x/
 PKGNAMESUFFIX=	4
@@ -21,7 +20,6 @@ USES=		alias bdb gmake libarchive libtool lua:51 pathfix pkgconfig \
 		shebangfix tar:bzip2
 INVALID_BDB_VER=51
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 SHEBANG_FILES=	scripts/brp-python-bytecompile scripts/check-prereqs \
 		scripts/check-rpaths-worker scripts/pythondeps.sh \
 		scripts/mono-find-requires scripts/mono-find-provides \
