@@ -3,6 +3,7 @@
 
 PORTNAME=	docsis
 PORTVERSION=	0.9.8
+DISTVERSIONPREFIX=	upstream/
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	plcmaechler@gmail.com
@@ -24,7 +25,6 @@ PLIST_SUB=	MIBS=share/snmp/mibs
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 GH_ACCOUNT=	rlaager
-GH_TAGNAME=	upstream/${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e \

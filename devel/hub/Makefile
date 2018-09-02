@@ -3,6 +3,7 @@
 
 PORTNAME=	hub
 PORTVERSION=	2.5.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel sysutils
 
 MAINTAINER=	egypcio@googlemail.com
@@ -18,7 +19,6 @@ USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	github
-GH_TAGNAME=	v${PORTVERSION}
 
 GO_PKGNAME=	github.com/github/hub
 

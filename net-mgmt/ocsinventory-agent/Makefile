@@ -2,6 +2,7 @@
 
 PORTNAME=	ocsinventory
 PORTVERSION=	2.4.2
+DISTVERSIONPREFIX=		v
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	-agent
@@ -20,7 +21,6 @@ RUN_DEPENDS=	lspci:sysutils/pciutils \
 
 GH_PROJECT=	UnixAgent
 GH_ACCOUNT=	OCSInventory-NG
-GH_TAGNAME=		v${PORTVERSION}
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	postinst.pl
