@@ -1,5 +1,3 @@
-TIMESTAMP = 1533933342
-SHA256 (QuantStack-xtensor-0.17.1_GH0.tar.gz) = 4c7df152ec712c581dac448c90918a6d1c659959cb59c079cb4ee2da1425ac01
-SIZE (QuantStack-xtensor-0.17.1_GH0.tar.gz) = 812740
-SHA256 (QuantStack-xtl-0.4.14_GH0.tar.gz) = f32390060315a7a941d9601ea1f0200c723e21313bd034f36dd5aae52b7a58c8
-SIZE (QuantStack-xtl-0.4.14_GH0.tar.gz) = 88878
+TIMESTAMP = 1535133606
+SHA256 (QuantStack-xtensor-0.17.3_GH0.tar.gz) = 6e337012c1cff2d61cba922cb5fc3119dcf4ccca1ad71b9b29ab0f55ce8947f4
+SIZE (QuantStack-xtensor-0.17.3_GH0.tar.gz) = 832191
