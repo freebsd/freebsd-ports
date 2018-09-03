@@ -62,6 +62,7 @@
     SUBDIR += monero-cli
     SUBDIR += namecoin
     SUBDIR += namecoin-daemon
+    SUBDIR += namecoin-utils
     SUBDIR += napshare
     SUBDIR += ncdc
     SUBDIR += opendchub
