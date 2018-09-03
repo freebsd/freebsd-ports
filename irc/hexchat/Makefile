@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	hexchat
-PORTVERSION=	2.14.1
+PORTVERSION=	2.14.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	irc gnome ipv6
 
 MAINTAINER=	pkubaj@anongoth.pl
@@ -20,8 +19,8 @@ LIB_DEPENDS=	libproxy.so:net/libproxy \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/share/xml/iso-codes/iso_639.xml:misc/iso-codes
 
-USES=		meson ninja desktop-file-utils libtool pkgconfig ssl shebangfix \
-		gettext-tools
+USES=		desktop-file-utils gettext-tools gnome libtool meson ninja \
+		pkgconfig shebangfix ssl
 USE_GNOME=	cairo gtk20 intltool libxml2
 USE_XORG=	x11
 USE_GITHUB=	yes
@@ -78,6 +77,9 @@ SYSINFO_MESON_TRUE=	with-sysinfo
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CA_BUNDLE%%|${CA_BUNDLE}|' \
 		${WRKSRC}/src/common/server.c
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		-e 's|%%PERL_VER%%|${PERL_VER}|g' \
+		${WRKSRC}/plugins/perl/meson.build
 
 post-install:
 	${LN} -sf ../share/icons/hicolor/48x48/apps/${PORTNAME}.png \

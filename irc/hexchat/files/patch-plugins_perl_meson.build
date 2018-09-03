@@ -1,0 +1,11 @@
+--- plugins/perl/meson.build.orig	2018-08-29 16:41:08 UTC
++++ plugins/perl/meson.build
+@@ -60,7 +60,7 @@ endforeach
+ perl_cflags += [
+   # Perl has its own 'config.h' that we must override
+   # TODO: Just rename ours to something more unique.
+-  '-include', meson.build_root() + '/config.h'
++  '-include', meson.build_root() + '/config.h', '-I%%PREFIX%%/lib/perl5/%%PERL_VER%%/mach/CORE', '-L%%PREFIX%%/lib/perl5/%%PERL_VER%%/mach/CORE', '-lperl'
+ ]
+ 
+ if not cc.links('''
