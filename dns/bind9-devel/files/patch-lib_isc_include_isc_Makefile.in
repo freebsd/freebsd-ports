@@ -1,0 +1,11 @@
+--- lib/isc/include/isc/Makefile.in.orig	2018-08-31 20:57:12 UTC
++++ lib/isc/include/isc/Makefile.in
+@@ -32,7 +32,7 @@ HEADERS =	aes.h app.h assertions.h atomi
+ 		radix.h random.h ratelimiter.h refcount.h regex.h \
+ 		region.h resource.h result.h resultclass.h rwlock.h \
+ 		safe.h serial.h sha1.h sha2.h sockaddr.h socket.h \
+-		stats.h stdio.h stdlib.h strerr.h string.h symtab.h \
++		stats.h stdio.h strerr.h string.h symtab.h \
+ 	        task.h taskpool.h timer.h tm.h types.h util.h version.h \
+ 		xml.h
+ 
