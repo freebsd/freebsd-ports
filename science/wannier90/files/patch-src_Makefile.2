@@ -1,0 +1,20 @@
+--- src/Makefile.2.orig	2017-01-11 22:15:31 UTC
++++ src/Makefile.2
+@@ -12,7 +12,7 @@ OBJS2  =  wannier_lib.o
+ OBJS_POST  = ws_distance.o parameters.o kmesh.o io.o comms.o utility.o get_oper.o constants.o \
+              postw90_common.o wan_ham.o spin.o dos.o berry.o kpath.o kslice.o boltzwann.o geninterp.o
+ 
+-LIBRARY = ../../libwannier.a
++LIBRARY = ../../libwannier.so
+ 
+ POSTDIR = ../postw90/
+ 
+@@ -74,7 +74,7 @@ endif 
+ libs:     $(LIBRARY)
+ 
+ $(LIBRARY): $(OBJS) $(OBJS2) 
+-	$(AR) $(ARFLAGS) $(LIBRARY) $(OBJS2) $(OBJS)
++	$(CC) $(LDFLAGS) -shared -o $(LIBRARY) -Wl,-soname,libwannier.so $(OBJS2) $(OBJS)
+ 
+ clean:
+ 	rm -f *.o *.mod *.MOD *.obj
