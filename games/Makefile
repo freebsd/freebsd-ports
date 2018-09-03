@@ -1093,6 +1093,7 @@
     SUBDIR += violetland
     SUBDIR += viruskiller
     SUBDIR += vitetris
+    SUBDIR += vkquake
     SUBDIR += vms-empire
     SUBDIR += vodovod
     SUBDIR += volleyball
