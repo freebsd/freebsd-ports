@@ -3,7 +3,7 @@
 
 PORTNAME=	xanalyser
 PORTVERSION=	1.32
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio hamradio
 MASTER_SITES=	http://arvin.schnell-web.net/xanalyser/ \
 		LOCAL/db
