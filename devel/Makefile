@@ -5299,6 +5299,7 @@
     SUBDIR += pydbus-common
     SUBDIR += pygobject3-common
     SUBDIR += pylint
+    SUBDIR += pylint1
     SUBDIR += pymacs
     SUBDIR += pyobfuscate
     SUBDIR += pypersrc
