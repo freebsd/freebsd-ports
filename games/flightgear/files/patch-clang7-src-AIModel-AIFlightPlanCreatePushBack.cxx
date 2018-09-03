@@ -9,7 +9,7 @@ src/AIModel/AIFlightPlanCreatePushBack.cxx:96:48: error: ordered comparison betw
      FGGroundNetwork* groundNet = dep->groundNetwork();
      FGParking *parking = gate.parking();
 -    if (parking && parking->getPushBackPoint() > 0) {
-+    if (parking && parking->getPushBackPoint() != NULL) {
++    if (parking && parking->getPushBackPoint() != nullptr) {
          FGTaxiRoute route = groundNet->findShortestRoute(parking, parking->getPushBackPoint(), false);
        
          int size = route.size();
