@@ -9,7 +9,7 @@
 # ARGS description:
 # ffi			makes the port depends on pure-ffi at runtime
 #
-# MAINTAINER= nemysis@FreeBSD.org
+# MAINTAINER= ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_PURE_MK)
 _INCLUDE_USES_PURE_MK=	yes
