@@ -1,0 +1,11 @@
+--- lib/isc/unix/include/isc/Makefile.in.orig	2018-08-31 20:57:12 UTC
++++ lib/isc/unix/include/isc/Makefile.in
+@@ -14,7 +14,7 @@ top_srcdir =	@top_srcdir@
+ VERSION=@BIND9_VERSION@
+ 
+ HEADERS =	dir.h net.h netdb.h offset.h stat.h \
+-		stdtime.h strerror.h syslog.h time.h
++		stdtime.h syslog.h time.h
+ 
+ SUBDIRS =
+ TARGETS =
