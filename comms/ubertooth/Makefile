@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 BUILD_DEPENDS=	python27:lang/python27 \
 		pyside-py27:devel/pyside \
-		${PYNUMPY}
+		${PYNUMPY} \
+		libbtbb:comms/libbtbb
 
 USES=		cmake:outsource
 
