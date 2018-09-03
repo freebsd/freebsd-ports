@@ -1,0 +1,15 @@
+Temporary, see:
+
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=231108
+
+--- GNUmakefile.orig	2018-09-02 22:04:19 UTC
++++ GNUmakefile
+@@ -5,7 +5,7 @@ ifndef OBS_LIB
+ OBS_LIB = /usr/lib
+ endif
+ 
+-CXXFLAGS = -std=c++11 -Wall -g -fPIC -I$(OBS_INCLUDE) -I./src $(shell pkg-config --cflags Qt5Widgets) $(shell pkg-config --cflags Qt5WebKit) $(shell pkg-config --cflags Qt5WebKitWidgets)
++CXXFLAGS = -std=c++11 -Wall -g -fPIC -I$(OBS_INCLUDE) -I./src $(shell pkg-config --cflags Qt5Widgets) $(shell pkg-config --cflags Qt5WebKit) -I%%LOCALBASE%%/include/qt5/QtWebKitWidgets
+ CXX      ?= c++
+ RM       = /bin/rm -rf
+ LDFLAGS  = -L$(OBS_LIB)
