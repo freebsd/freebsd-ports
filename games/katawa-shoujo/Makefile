@@ -19,7 +19,7 @@ COMMENT=	Bishoujo-style visual novel about disabled adolescents
 
 LICENSE=	CC-BY-NC-ND-3.0
 
-RUN_DEPENDS=	renpy6<6.99.11:devel/renpy6
+RUN_DEPENDS=	renpy6<6.99.11:games/renpy6
 
 USES=		tar:bz2
 NO_ARCH=	yes

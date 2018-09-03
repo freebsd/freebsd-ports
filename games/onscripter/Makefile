@@ -2,7 +2,7 @@
 
 PORTNAME=	onscripter
 PORTVERSION=	20180409
-CATEGORIES=	devel games
+CATEGORIES=	games
 MASTER_SITES=	http://onscripter.osdn.jp/
 
 MAINTAINER=	jbeich@FreeBSD.org

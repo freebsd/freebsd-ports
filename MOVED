@@ -10506,3 +10506,10 @@ net-p2p/xnap||2018-09-02|Has expired: Unmaintained. Napster, OpenNap, and FastTr
 russian/napster||2018-09-02|Has expired: Unmaintained. Napster and OpenNap are dead
 devel/mico||2018-09-02|Has expired: unmaintained upstream and unused in the ports tree
 net/rubygem-gitlab_omniauth-ldap1|net/rubygem-gitlab_omniauth-ldap|2018-09-02|Has expired: Use net/rubygem-gitlab_omniauth-ldap instead
+devel/onscripter|games/onscripter|2018-09-03|Moved to better category
+devel/onscripter-1byte|games/onscripter-1byte|2018-09-03|Moved to better category
+devel/ponscripter-sekai|games/ponscripter-sekai|2018-09-03|Moved to better category
+devel/renpy|games/renpy|2018-09-03|Moved to better category
+devel/renpy6|games/renpy6|2018-09-03|Moved to better category
+devel/rlvm|games/rlvm|2018-09-03|Moved to better category
+dns/openmdns|net/openmdns|2018-09-03|Moved to better category

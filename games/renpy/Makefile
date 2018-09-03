@@ -4,7 +4,7 @@ PORTNAME=	renpy
 PORTVERSION?=	7.0.0
 DISTVERSIONSUFFIX=-sdk
 PORTREVISION?=	0
-CATEGORIES=	devel games
+CATEGORIES=	games devel
 MASTER_SITES=	https://www.renpy.org/dl/${PORTVERSION}/
 
 MAINTAINER=	jbeich@FreeBSD.org

@@ -2,7 +2,7 @@
 
 PORTNAME=	openmdns
 DISTVERSION=	0.7
-CATEGORIES=	dns
+CATEGORIES=	net
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Multicast DNS and Service Discovery daemon

@@ -566,6 +566,7 @@
     SUBDIR += openldap24-client
     SUBDIR += openldap24-sasl-client
     SUBDIR += openldap24-server
+    SUBDIR += openmdns
     SUBDIR += openmpi
     SUBDIR += openmpi2
     SUBDIR += openmpi3
