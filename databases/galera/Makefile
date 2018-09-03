@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	galera
-PORTVERSION?=	25.3.23
+PORTVERSION?=	25.3.24
 DISTVERSIONPREFIX?=	release_
-PORTREVISION=	2
 CATEGORIES=	databases
 
 MAINTAINER=	devel@galeracluster.com
@@ -38,7 +37,8 @@ USES=		python:build scons ssl
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	codership
+GH_TUPLE?=	codership:galera:${DISTVERSIONPREFIX}${PORTVERSION}${DISTVERSIONSUFFIX} \
+		codership:wsrep-API:eab2d5d5a31672c0b7d116ef1629ff18392fd7d0:dummy/wsrep/src
 
 LDFLAGS+=	-lboost_program_options -lboost_system
 MAKE_ARGS+=	revno=${GH_TAGNAME} system_asio=0 tests=0
