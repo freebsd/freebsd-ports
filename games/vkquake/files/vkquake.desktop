@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=vkQuake
+GenericName=Quake engine modification (Vulkan)
+Comment=Quake 1 port using Vulkan
+Exec=vkquake
+Icon=vkquake
+Terminal=false
+Type=Application
+Categories=Game;
+MimeType=x-scheme-handler/steam;
+Keywords=quake;game;First-Person-Shooter;

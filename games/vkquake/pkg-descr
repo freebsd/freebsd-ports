@@ -1,0 +1,9 @@
+vkQuake is a Quake 1 port using Vulkan instead of OpenGL for rendering. It is
+based on the popular QuakeSpasm port and runs all mods compatible with it like
+Arcane Dimensions or In The Shadows.
+
+Compared to QuakeSpasm vkQuake also features a software Quake like underwater
+effect, has better color precision, generates mipmap for water surfaces at
+runtime and has native support for anti-aliasing and AF.
+
+WWW: https://github.com/Novum/vkQuake
