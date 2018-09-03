@@ -11,11 +11,11 @@ COMMENT=	Bluetooth Baseband Library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	python27:lang/python27 \
-		pyside-py27:devel/pyside \
+BIULD_DEPENDS=	pyside-py27:devel/pyside \
 		${PYNUMPY}
 
-USES=		cmake:outsource
+USES=		cmake:outsource \
+		python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	greatscottgadgets
