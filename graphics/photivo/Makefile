@@ -23,9 +23,9 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libfftw3.so:math/fftw3
 
 USES=		cmake compiler:c++11-lib desktop-file-utils dos2unix \
-		gettext-runtime jpeg pkgconfig zip
+		gettext-runtime gnome jpeg pkgconfig zip
 USE_GNOME=	glib20
-DOS2UNIX_FILES=	Sources/ptImage.cpp Sources/ptCheck.cpp
+DOS2UNIX_FILES=	Sources/ptImage.cpp Sources/ptCheck.cpp Sources/filemgmt/ptFileMgrWindow.h
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
