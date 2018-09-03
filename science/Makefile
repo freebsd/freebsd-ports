@@ -244,6 +244,7 @@
     SUBDIR += rubygem-rgeo-shapefile
     SUBDIR += rubygem-ruby-dcl
     SUBDIR += rubygem-ruby-netcdf
+    SUBDIR += siesta
     SUBDIR += sigrok-cli
     SUBDIR += sigrok-firmware
     SUBDIR += sigrok-firmware-fx2lafw
