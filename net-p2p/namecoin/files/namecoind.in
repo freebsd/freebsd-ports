@@ -1,0 +1,173 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: namecoind
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable :
+# namecoind_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable namecoind
+# namecoind_user (str)		Set to "namecoin" by default.
+# namecoind_group (str)		Set to "namecoin" by default.
+# namecoind_conf (str)		Set to "%%PREFIX%%/etc/namecoind.conf" by default.
+# namecoind_data (str)		Set to "/var/lib/namecoind" by default.
+# namecoindlimits_enable (bool)	Set to "NO" by default.
+#				Set it to "YES" to enable namecoindlimits
+# namecoindlimits_args		Set to "-e -U ${namecoind_user}" by default
+
+
+. /etc/rc.subr
+
+name="namecoind"
+rcvar=namecoind_enable
+
+start_precmd="namecoind_precmd"
+start_cmd="namecoind_start"
+restart_precmd="namecoind_checkconfig"
+reload_precmd="namecoind_checkconfig"
+configtest_cmd="namecoind_checkconfig"
+status_cmd="namecoind_status"
+stop_cmd="namecoind_stop"
+stop_postcmd="namecoind_wait"
+command="%%PREFIX%%/bin/namecoind"
+cli_command="%%PREFIX%%/bin/namecoin-cli"
+daemon_command="/usr/sbin/daemon"
+#pidfile="/var/run/${name}.pid"
+extra_commands="configtest"
+
+
+: ${namecoind_enable:="NO"}
+: ${namecoindlimits_enable:="NO"}
+
+load_rc_config ${name}
+
+: ${namecoind_user:="namecoin"}
+: ${namecoind_group:="namecoin"}
+: ${namecoind_data_dir:="/var/db/namecoind"}
+: ${namecoind_config_file:="%%PREFIX%%/etc/namecoin.conf"}
+: ${namecoindlimits_args:="-e -U ${namecoind_user}"}
+
+# set up dependant variables
+procname="${command}"
+pidfile="${namecoind_data_dir}/namecoind.pid"
+required_files="${namecoind_config_file}"
+
+
+namecoind_checkconfig()
+{
+  echo "Performing sanity check on namecoind configuration:"
+  if [ ! -d "${namecoind_data_dir}" ]
+  then
+    echo "Missing data directory: ${namecoind_data_dir}"
+    exit 1
+  fi
+  chown -R "${namecoind_user}:${namecoind_group}" "${namecoind_data_dir}"
+
+  if [ ! -f "${namecoind_config_file}" ]
+  then
+    echo "Missing configuration file: ${namecoind_config_file}"
+    exit 1
+  fi
+  if [ ! -x "${command}" ]
+  then
+    echo "Missing executable: ${command}"
+    exit 1
+  fi
+  return 0
+}
+
+namecoind_cleanup()
+{
+  rm -f "${pidfile}"
+}
+
+namecoind_precmd()
+{
+  namecoind_checkconfig
+
+  pid=$(check_pidfile "${pidfile}" "${procname}")
+  if [ -z "${pid}" ]
+  then
+    echo "Namecoind is not running"
+    rm -f "${pidfile}"
+  fi
+
+  if checkyesno namecoindlimits_enable
+  then
+    eval $(/usr/bin/limits ${namecoindlimits_args}) 2>/dev/null
+  else
+    return 0
+  fi
+}
+
+namecoind_status()
+{
+  local pid
+  pid=$(check_pidfile "${pidfile}" "${procname}")
+  if [ -z "${pid}" ]
+  then
+    echo "Namecoind is not running"
+    return 1
+  else
+    echo "Namecoind running, pid: ${pid}"
+  fi
+}
+
+namecoind_start()
+{
+  echo "Starting namecoind:"
+  cd "${namecoind_data_dir}" || return 1
+  ${daemon_command} -u "${namecoind_user}" -p "${pidfile}" \
+    ${command} \
+    -conf="${namecoind_config_file}" \
+    -datadir="${namecoind_data_dir}" 2> /tmp/namecoind.stderr > /tmp/namecoind.stdout
+}
+
+namecoind_stop()
+{
+  echo "Stopping namecoind:"
+  pid=$(check_pidfile "${pidfile}" "${procname}")
+  if [ -z "${pid}" ]
+  then
+    echo "Namecoind is not running"
+    return 1
+  else
+    ${cli_command} -conf="${namecoind_config_file}" -datadir="${namecoind_data_dir}" stop
+  fi
+}
+
+namecoind_wait()
+{
+  local n=60
+  echo "Waiting for namecoind shutdown:"
+  while :
+  do
+    printf '.'
+    pid=$(check_pidfile "${pidfile}" "${procname}")
+    if [ -z "${pid}" ]
+    then
+      printf '\n'
+      break
+    fi
+    sleep 1
+    n=$((${n} - 1))
+    if [ ${n} -eq 0 -a -f "${pidfile}" ]
+    then
+      printf "\nForce shutdown"
+      kill -9 $(cat "${pidfile}")
+      for n in 1 2 3
+      do
+        printf '.'
+        sleep 1
+      done
+      printf '\n'
+      break
+    fi
+  done
+  rm -f "${pidfile}"
+  echo "Shutdown complete"
+}
+
+run_rc_command "$1"
