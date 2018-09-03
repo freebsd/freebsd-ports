@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mysqlwsrep
-PORTVERSION?=	5.6.39
+PORTVERSION?=	5.6.41
 DISTVERSIONPREFIX?=	wsrep_
-DISTVERSIONSUFFIX?=	-25.22
-PORTREVISION?=	1
+DISTVERSIONSUFFIX?=	-25.23
 CATEGORIES=	databases ipv6
 PKGNAMESUFFIX=	56-server
 
@@ -43,8 +42,8 @@ USE_PERL5=	run
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	codership
-GH_PROJECT?=	mysql-wsrep
+GH_TUPLE?=	codership:mysql-wsrep:${DISTVERSIONPREFIX}${PORTVERSION}${DISTVERSIONSUFFIX} \
+		codership:wsrep-API:eab2d5d5a31672c0b7d116ef1629ff18392fd7d0:dummy/wsrep/src
 
 MY_DBDIR=	/var/db/mysql
 MY_SECDIR=	/var/db/mysql_secure
@@ -130,7 +129,6 @@ MMAN1=		my_print_defaults.1 \
 		mysqldumpslow.1 \
 		mysqlhotcopy.1 \
 		mysqlman.1 \
-		mysqltest.1 \
 		perror.1 \
 		replace.1 \
 		resolve_stack_dump.1 \
