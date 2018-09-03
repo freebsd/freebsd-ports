@@ -1,0 +1,6 @@
+Bresenham is one of the canonical line drawing algorithms for
+pixellated grids.  Given a start and an end-point, Bresenham
+calculates which points on the grid need to be filled to generate
+the line between them.
+
+WWW: https://metacpan.org/release/Algorithm-Line-Bresenham
