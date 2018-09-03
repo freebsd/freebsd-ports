@@ -1,6 +1,6 @@
---- meson_options.txt.orig	2018-03-14 02:26:31 UTC
+--- meson_options.txt.orig	2018-08-29 16:41:08 UTC
 +++ meson_options.txt
-@@ -39,7 +39,7 @@ option('with-exec', type: 'boolean',
+@@ -42,7 +42,7 @@ option('with-exec', type: 'boolean',
  option('with-fishlim', type: 'boolean',
    description: 'Fish encryption plugin, requires openssl'
  )
@@ -8,4 +8,4 @@
 +option('with-lua', type: 'string',
    description: 'Lua scripting plugin, value is pkg-config name to use or "false"'
  )
- option('with-perl', type: 'boolean',
+ option('with-perl', type: 'string', value: 'perl',
