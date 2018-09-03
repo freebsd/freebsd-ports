@@ -11,8 +11,9 @@ COMMENT=	Bluetooth Baseband Library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BIULD_DEPENDS=	pyside-py27:devel/pyside \
-		${PYNUMPY}
+LIB_DEPENDS=	libpyside-python2.7.so:devel/pyside
+
+BIULD_DEPENDS=	${PYNUMPY}
 
 USES=		cmake:outsource \
 		python
