@@ -10,7 +10,7 @@ MASTER_SITES=	http://dist.codelabs.ru/fbsd/ports/slim-themes/:new_themes \
 		SF/slim.berlios/:old_themes
 DISTFILES=
 
-MAINTAINER=	rea@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Theme pack for SLiM login app
 
 NO_BUILD=	yes

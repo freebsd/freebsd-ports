@@ -9,7 +9,7 @@ MASTER_SITES=	http://dist.codelabs.ru/fbsd/trac-${PORTNAME}/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	trac${PORTNAME}plugin-r${REL}
 
-MAINTAINER=	rea@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for making ticket templates
 
 RUN_DEPENDS=	trac>=0.11:www/trac

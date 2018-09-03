@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://dist.codelabs.ru/fbsd/
 DISTNAME=	AdamLantos-redmine_http_auth-${GITREV}
 
-MAINTAINER=	rea@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP authentication plugin for Redmine
 
 LICENSE=	MIT

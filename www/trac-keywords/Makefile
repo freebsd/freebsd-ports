@@ -9,7 +9,7 @@ MASTER_SITES=	http://dist.codelabs.ru/fbsd/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	trackeywordsplugin-r${REL}
 
-MAINTAINER=	rea@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for using pre-configured keywords
 
 LICENSE=	BSD3CLAUSE
