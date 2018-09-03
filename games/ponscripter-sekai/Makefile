@@ -4,7 +4,7 @@ PORTNAME=	ponscripter-sekai
 PORTVERSION=	0.0.6
 DISTVERSIONPREFIX=	v
 PORTREVISION=	5
-CATEGORIES=	devel games
+CATEGORIES=	games
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	NScripter-like novel-game interpreter with Unicode support
