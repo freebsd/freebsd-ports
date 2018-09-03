@@ -10513,3 +10513,4 @@ devel/renpy|games/renpy|2018-09-03|Moved to better category
 devel/renpy6|games/renpy6|2018-09-03|Moved to better category
 devel/rlvm|games/rlvm|2018-09-03|Moved to better category
 dns/openmdns|net/openmdns|2018-09-03|Moved to better category
+www/hs-activehs||2018-09-03|Has expired: Doesn't build with recent dependencies
