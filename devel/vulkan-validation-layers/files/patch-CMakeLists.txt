@@ -1,0 +1,23 @@
+--- CMakeLists.txt.orig	2018-07-30 17:53:08 UTC
++++ CMakeLists.txt
+@@ -63,9 +63,9 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+ # "Helper" targets that don't have interesting source code should set their FOLDER property to this
+ set(LAYERS_HELPER_FOLDER "Helper Targets")
+ 
+-if(CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "Darwin")
++if(UNIX)
+     set(
+-        FALLBACK_CONFIG_DIRS "/etc/xdg"
++        FALLBACK_CONFIG_DIRS "${CMAKE_INSTALL_PREFIX}/etc/xdg:/etc/xdg"
+         CACHE
+             STRING
+             "Search path to use when XDG_CONFIG_DIRS is unset or empty or the current process is SUID/SGID. Default is freedesktop compliant."
+@@ -78,7 +78,7 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_
+         )
+ endif()
+ 
+-if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
++if(UNIX AND NOT APPLE)
+     include(FindPkgConfig)
+     option(BUILD_WSI_XCB_SUPPORT "Build XCB WSI support" ON)
+     option(BUILD_WSI_XLIB_SUPPORT "Build Xlib WSI support" ON)

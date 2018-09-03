@@ -1,0 +1,33 @@
+--- cube/CMakeLists.txt.orig	2018-08-07 18:44:03 UTC
++++ cube/CMakeLists.txt
+@@ -48,7 +48,7 @@ else()
+     find_program(GLSLANG_VALIDATOR NAMES ${GLSLANG_VALIDATOR_NAME} HINTS "${PROJECT_SOURCE_DIR}/glslang/bin")
+ endif()
+ 
+-if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
++if(UNIX AND NOT APPLE)
+     include(FindPkgConfig)
+     option(BUILD_WSI_XCB_SUPPORT "Build XCB WSI support" ON)
+     option(BUILD_WSI_XLIB_SUPPORT "Build Xlib WSI support" ON)
+@@ -58,10 +58,12 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+ 
+     if(BUILD_WSI_XCB_SUPPORT)
+         find_package(XCB REQUIRED)
++        include_directories(SYSTEM ${XCB_INCLUDE_DIR})
+     endif()
+ 
+     if(BUILD_WSI_XLIB_SUPPORT)
+         find_package(X11 REQUIRED)
++        include_directories(SYSTEM ${X11_Xlib_INCLUDE_PATH})
+     endif()
+ 
+     if(BUILD_WSI_WAYLAND_SUPPORT)
+@@ -87,7 +89,7 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+     endif()
+ elseif(CMAKE_SYSTEM_NAME STREQUAL "Android")
+     add_definitions(-DVK_USE_PLATFORM_ANDROID_KHR)
+-elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
++elseif(UNIX AND NOT APPLE)
+     if(NOT CUBE_WSI_SELECTION)
+         set(CUBE_WSI_SELECTION "XCB")
+     endif()
