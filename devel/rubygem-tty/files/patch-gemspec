@@ -1,6 +1,6 @@
---- tty.gemspec.orig	2018-08-28 18:56:29 UTC
+--- tty.gemspec.orig	2018-09-03 15:28:01 UTC
 +++ tty.gemspec
-@@ -27,15 +27,15 @@ Gem::Specification.new do |s|
+@@ -27,19 +27,19 @@ Gem::Specification.new do |s|
        s.add_runtime_dependency(%q<tty-color>.freeze, ["~> 0.4.2"])
        s.add_runtime_dependency(%q<tty-command>.freeze, ["~> 0.8.0"])
        s.add_runtime_dependency(%q<tty-config>.freeze, ["~> 0.2.0"])
@@ -19,3 +19,8 @@
        s.add_runtime_dependency(%q<tty-screen>.freeze, ["~> 0.6.4"])
        s.add_runtime_dependency(%q<tty-spinner>.freeze, ["~> 0.8.0"])
        s.add_runtime_dependency(%q<tty-table>.freeze, ["~> 0.10.0"])
+-      s.add_runtime_dependency(%q<tty-tree>.freeze, ["~> 0.1.0"])
++      s.add_runtime_dependency(%q<tty-tree>.freeze, ["~> 0.1"])
+       s.add_runtime_dependency(%q<tty-which>.freeze, ["~> 0.3.0"])
+       s.add_runtime_dependency(%q<equatable>.freeze, ["~> 0.5.0"])
+       s.add_runtime_dependency(%q<pastel>.freeze, ["~> 0.7.2"])
