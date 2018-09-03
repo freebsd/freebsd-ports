@@ -149,6 +149,7 @@
 %%NLS%%share/locale/fi/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/is/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/id/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/it/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/rpm.mo
@@ -170,7 +171,6 @@
 %%NLS%%share/locale/vi/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/rpm.mo
-%%PLUGINS%%%%LUA_LIBDIR%%/rpm-plugins/ima.so
 %%PLUGINS%%%%LUA_LIBDIR%%/rpm-plugins/syslog.so
 %%PLUGINS%%%%LUA_LIBDIR%%/rpm-plugins/systemd_inhibit.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/__init__.py
@@ -255,4 +255,3 @@ man/pl/man8/rpmgraph.8.gz
 man/ru/man8/rpm.8.gz
 man/ru/man8/rpm2cpio.8.gz
 man/sk/man8/rpm.8.gz
-share/locale/id/LC_MESSAGES/rpm.mo
