@@ -16,13 +16,12 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	dsbmd>=0.3:sysutils/dsbmd
 
-USES=		tar:tgz pkgconfig desktop-file-utils
+USES=		desktop-file-utils pkgconfig tar:tgz
 USE_GNOME=	cairo gdkpixbuf2
 
 OPTIONS_DEFINE=	GTK3 NLS
 OPTIONS_DEFAULT=GTK3
 OPTIONS_SUB=	yes
-OPTIONS_DEFAULT=GTK3
 
 GTK3_MAKE_ARGS=	GTKVER=3.0
 GTK3_USE=	GNOME=gtk30
