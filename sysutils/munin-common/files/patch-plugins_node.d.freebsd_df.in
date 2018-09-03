@@ -4,8 +4,8 @@
  	exit 0
  fi
  
--EXCLUDEDFS="-t noprocfs,devfs,fdescfs,linprocfs,linsysfs,sysfs,nfs,nullfs"
-+EXCLUDEDFS="-t noprocfs,devfs,fdescfs,linprocfs,linsysfs,sysfs,nfs,nullfs,autofs"
+-EXCLUDEDFS="-t noprocfs,devfs,fdescfs,linprocfs,linsysfs,sysfs,nfs,nullfs,cd9660"
++EXCLUDEDFS="-t noprocfs,devfs,fdescfs,linprocfs,linsysfs,sysfs,nfs,nullfs,cd9660,autofs"
  
  if [ $(uname -s) = "GNU/kFreeBSD" ]; then
  	# Debian ships df from GNU coreutils
