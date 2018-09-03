@@ -290,6 +290,7 @@
     SUBDIR += naludump
     SUBDIR += nordlicht
     SUBDIR += nostt
+    SUBDIR += obs-qtwebkit
     SUBDIR += obs-studio
     SUBDIR += oggvideotools
     SUBDIR += ogmrip
