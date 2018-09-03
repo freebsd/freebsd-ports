@@ -2,6 +2,7 @@
 
 PORTNAME=	fleur
 DISTVERSION=	0.27-3 # Release 3 of Version 0.27
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.flapw.de/pm/uploads/FLEUR/
 DISTNAME=	fleurMaXR${DISTVERSION:C/.*-//}
@@ -17,7 +18,38 @@ LIB_DEPENDS=	libopenblas.so:math/openblas
 USES=		cmake:outsource,noninja fortran localbase:ldflags tar:tgz
 USE_GNOME=	libxml2
 
+FFLAGS=		-I${LOCALBASE}/include
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+OPTIONS_DEFINE=		HDF5 MPI SCALAPACK ELPA
+OPTIONS_DEFAULT=	MPI SCALAPACK ELPA
+
+HDF5_CONFIGURE_ENV=	FLEUR_USE_HDF5=1 HDF5_ROOT=${LOCALBASE}/lib
+HDF5_CONFIGURE_ENV_OFF=	FLEUR_USE_HDF5=0
+HDF5_CMAKE_ARGS=	-DHDF5_INCLUDE_DIRS=${LOCALBASE}/include
+HDF5_LDFLAGS=		-lhdf5
+HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5
+HDF5_BROKEN=		Missing hdf5.mod in hdf5
+
+MPI_CONFIGURE_ENV=	FLEUR_USE_MPI=1
+MPI_CONFIGURE_ENV_OFF=	FLEUR_USE_MPI=0
+MPI_LDFLAGS=		-lmpich
+MPI_LIB_DEPENDS=	libmpich.so:net/mpich2
+MPI_PLIST_FILES=	bin/fleur_MPI
+
+SCALAPACK_DESC=		Use the ScaLAPACK Scalable LAPACK library
+SCALAPACK_CMAKE_BOOL=	FREEBSD_USE_SCALAPACK
+SCALAPACK_LDFLAGS=	-lscalapack
+SCALAPACK_LIB_DEPENDS=	libscalapack.so:math/scalapack
+SCALAPACK_IMPLIES=	MPI
+
+ELPA_DESC=		Use libelpa, Eigenvalue SoLver for Petaflop Applications
+ELPA_CMAKE_BOOL=	FREEBSD_USE_ELPA
+ELPA_VARS=		FFLAGS+=-I${LOCALBASE}/include/elpa-2018.05.001/modules
+ELPA_LDFLAGS=		-lelpa
+ELPA_LIB_DEPENDS=	libelpa.so:math/elpa
+ELPA_IMPLIES=		MPI
 
 PLIST_FILES=	bin/fleur \
 		bin/inpgen
