@@ -8,6 +8,9 @@ CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${VERMAJORMINOR}/
 DISTNAME=	ParaView-v${PORTVERSION}
 
+PATCH_SITES=	https://gitlab.kitware.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES=	931c779dde84.patch:-p1
+
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Powerful scientific data visualization application
 
