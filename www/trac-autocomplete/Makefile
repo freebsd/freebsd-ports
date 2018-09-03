@@ -9,7 +9,7 @@ MASTER_SITES=	http://dist.codelabs.ru/fbsd/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	autocompleteusersplugin-r${REL}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Plugin for autocompletion of user names in ticket fields
 
 RUN_DEPENDS=	trac>=0.11:www/trac
