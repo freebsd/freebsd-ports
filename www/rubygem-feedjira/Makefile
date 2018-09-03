@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	feedjira
-PORTVERSION=	2.1.4
+PORTVERSION=	2.2.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -17,8 +17,9 @@ RUN_DEPENDS=	rubygem-faraday>=0.9:www/rubygem-faraday \
 		rubygem-loofah>=2.0:textproc/rubygem-loofah \
 		rubygem-sax-machine>=1.0:textproc/rubygem-sax-machine
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
