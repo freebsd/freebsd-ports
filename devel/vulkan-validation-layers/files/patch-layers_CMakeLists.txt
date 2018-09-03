@@ -1,0 +1,20 @@
+--- layers/CMakeLists.txt.orig	2018-07-30 17:53:08 UTC
++++ layers/CMakeLists.txt
+@@ -23,7 +23,7 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+     set(DisplayServer Win32)
+ elseif(CMAKE_SYSTEM_NAME STREQUAL "Android")
+     add_definitions(-DVK_USE_PLATFORM_ANDROID_KHR -DVK_USE_PLATFORM_ANDROID_KHX)
+-elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
++elseif(UNIX AND NOT APPLE)
+     if(BUILD_WSI_XCB_SUPPORT)
+         add_definitions(-DVK_USE_PLATFORM_XCB_KHR -DVK_USE_PLATFORM_XCB_KHX)
+     endif()
+@@ -131,7 +131,7 @@ if(WIN32)
+         add_custom_target(vk_validation_error_messages ALL COMMAND copy ${src_val_msgs} ${dst_val_msgs} VERBATIM)
+         set_target_properties(vk_validation_error_messages PROPERTIES FOLDER ${LAYERS_HELPER_FOLDER})
+     endif()
+-elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
++ elseif(UNIX AND NOT APPLE)
+     # extra setup for out-of-tree builds
+     if(NOT (CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_CURRENT_BINARY_DIR))
+         foreach(config_file ${LAYER_JSON_FILES})

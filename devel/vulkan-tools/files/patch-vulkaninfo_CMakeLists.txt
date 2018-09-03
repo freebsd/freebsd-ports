@@ -1,0 +1,24 @@
+--- vulkaninfo/CMakeLists.txt.orig	2018-08-07 18:45:41 UTC
++++ vulkaninfo/CMakeLists.txt
+@@ -28,7 +28,7 @@ else()
+     add_executable(vulkaninfo vulkaninfo.c)
+ endif()
+ 
+-if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
++if(UNIX AND NOT APPLE)
+     include(FindPkgConfig)
+     option(BUILD_WSI_XCB_SUPPORT "Build XCB WSI support" ON)
+     option(BUILD_WSI_XLIB_SUPPORT "Build Xlib WSI support" ON)
+@@ -36,10 +36,12 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+ 
+     if(BUILD_WSI_XCB_SUPPORT)
+         find_package(XCB REQUIRED)
++        include_directories(SYSTEM ${XCB_INCLUDE_DIR})
+     endif()
+ 
+     if(BUILD_WSI_XLIB_SUPPORT)
+         find_package(X11 REQUIRED)
++        include_directories(SYSTEM ${X11_Xlib_INCLUDE_PATH})
+     endif()
+ 
+     if(VULKANINFO_WSI_SELECTION STREQUAL "XCB")

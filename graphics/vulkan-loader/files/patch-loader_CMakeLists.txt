@@ -1,0 +1,20 @@
+--- loader/CMakeLists.txt.orig	2018-08-03 22:10:42 UTC
++++ loader/CMakeLists.txt
+@@ -40,7 +40,7 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+     endif()
+ elseif(CMAKE_SYSTEM_NAME STREQUAL "Android")
+     add_definitions(-DVK_USE_PLATFORM_ANDROID_KHR)
+-elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
++elseif(UNIX AND NOT APPLE)
+     if(BUILD_WSI_XCB_SUPPORT)
+         add_definitions(-DVK_USE_PLATFORM_XCB_KHR)
+     endif()
+@@ -223,7 +223,7 @@ else()
+     add_dependencies(vulkan generate_helper_files loader_gen_files loader_asm_gen_files)
+     target_compile_definitions(vulkan PUBLIC -DLOADER_DYNAMIC_LIB)
+     set_target_properties(vulkan PROPERTIES SOVERSION "1" VERSION "${VulkanHeaders_VERSION_MAJOR}.${VulkanHeaders_VERSION_MINOR}.${VulkanHeaders_VERSION_PATCH}")
+-    target_link_libraries(vulkan -ldl -lpthread -lm)
++    target_link_libraries(vulkan ${CMAKE_DL_LIBS} -lpthread -lm)
+ 
+     if(APPLE)
+         find_library(COREFOUNDATION_LIBRARY NAMES CoreFoundation)

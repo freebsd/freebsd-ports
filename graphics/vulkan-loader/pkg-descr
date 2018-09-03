@@ -1,0 +1,6 @@
+Vulkan is a low-level cross-platform 3D graphics and compute API.
+
+This port provides the Khronos official ICD (Installable Client Driver) loader,
+which is necessary for loading Vulkan drivers in a running application.
+
+WWW: https://github.com/KhronosGroup/Vulkan-Loader

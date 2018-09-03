@@ -1,0 +1,11 @@
+The SPIR-V Tools project provides an API and commands for processing SPIR-V
+modules.
+
+The project includes an assembler, binary module parser, disassembler,
+validator, and optimizer for SPIR-V.  Except for the optimizer, all are based
+on a common static library.  The library contains all of the implementation
+details, and is used in the standalone tools whilst also enabling integration
+into other code bases directly.  The optimizer implementation resides in its own
+library, which depends on the core library.
+
+WWW: https://github.com/KhronosGroup/SPIRV-Tools

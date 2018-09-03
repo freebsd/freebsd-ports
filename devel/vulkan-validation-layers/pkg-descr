@@ -1,0 +1,6 @@
+Vulkan is a low-level cross-platform 3D graphics and compute API.
+
+This port provides the official validation layers for Vulkan applications,
+which are useful for development and debugging.
+
+WWW: https://github.com/KhronosGroup/Vulkan-ValidationLayers
