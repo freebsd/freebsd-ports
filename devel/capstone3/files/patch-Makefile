@@ -1,0 +1,11 @@
+--- Makefile.orig	2018-07-18 16:17:10 UTC
++++ Makefile
+@@ -395,7 +395,7 @@ endif
+ 	mkdir -p $(PKGCFGDIR)
+ 	$(INSTALL_DATA) $(PKGCFGF) $(PKGCFGDIR)/
+ 	mkdir -p $(BINDIR)
+-	$(INSTALL_LIB) cstool/cstool $(BINDIR)
++	$(INSTALL_BIN) cstool/cstool $(BINDIR)
+ 
+ uninstall:
+ 	rm -rf $(INCDIR)/$(LIBNAME)

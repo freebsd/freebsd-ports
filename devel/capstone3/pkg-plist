@@ -1,3 +1,4 @@
+bin/cstool
 include/capstone/arm.h
 include/capstone/arm64.h
 include/capstone/capstone.h
