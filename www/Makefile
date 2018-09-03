@@ -254,7 +254,6 @@
     SUBDIR += hotcrp
     SUBDIR += hs-DAV
     SUBDIR += hs-HTTP
-    SUBDIR += hs-activehs
     SUBDIR += hs-authenticate
     SUBDIR += hs-cgi
     SUBDIR += hs-cookie
