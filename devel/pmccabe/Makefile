@@ -7,7 +7,7 @@ MASTER_SITES=	http://ftp.de.debian.org/debian/pool/main/p/pmccabe/ \
 		http://dist.codelabs.ru/fbsd/pmccabe/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	rea@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Code complexity estimator
 
 LICENSE=	GPLv2

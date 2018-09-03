@@ -9,7 +9,7 @@ MASTER_SITES=	http://dist.codelabs.ru/fbsd/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	datefieldplugin-r${REL}
 
-MAINTAINER=	rea@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for creating date fields
 
 RUN_DEPENDS=	trac>=0.11:www/trac

@@ -9,7 +9,7 @@ MASTER_SITES=	http://dist.codelabs.ru/fbsd/trac-${PORTNAME}/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-r${REL}
 
-MAINTAINER=	rea@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin that adds default CC value for tickets
 
 LICENSE=	GPLv2
