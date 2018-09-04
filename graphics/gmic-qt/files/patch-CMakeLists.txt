@@ -1,27 +1,39 @@
---- CMakeLists.txt.orig	2017-09-18 13:15:50 UTC
+--- CMakeLists.txt.orig	2018-08-27 14:56:34 UTC
 +++ CMakeLists.txt
-@@ -139,9 +139,10 @@ if (UNIX AND NOT APPLE)
-     add_definitions(-D_IS_LINUX_)
-     add_definitions(-Dcimg_use_vt100)
-     add_definitions(-D_IS_UNIX_)
-+    find_package(X11)
-     set(gmic_qt_LIBRARIES
-         ${gmic_qt_LIBRARIES}
--        X11 # XXX: Search for X11: Wayland is coming!
-+        ${X11_LIBRARIES} # XXX: Search for X11: Wayland is coming!
+@@ -232,6 +232,12 @@ if (WIN32)
      )
+ endif()
  
- endif()
-@@ -162,6 +163,12 @@ if (WIN32)
-         pthread psapi gdi32
-     )
- endif()
-+
 +find_package(Threads) 
 +set(gmic_qt_LIBRARIES
 +    ${gmic_qt_LIBRARIES}
 +    Threads::Threads
 +)
- 
++
  if (NOT CMAKE_BUILD_TYPE)
      set(CMAKE_BUILD_TYPE "Release")
+ endif()
+@@ -427,10 +433,10 @@ qt5_wrap_ui(gmic_qt_SRCS
+   ui/zoomlevelselector.ui
+ )
+ 
+-# qt5_create_translation(
+-#     qmic_qt_QM
+-#     ${CMAKE_SOURCE_DIR}/translations
+-#     ${gmic_qt_SRCS}
++qt5_create_translation(
++    qmic_qt_QM
++    ${CMAKE_SOURCE_DIR}/translations
++    ${gmic_qt_SRCS}
+ #     translations/cs.ts
+ #     translations/de.ts
+ #     translations/es.ts
+@@ -446,7 +452,7 @@ qt5_wrap_ui(gmic_qt_SRCS
+ #     translations/zh.ts
+ # )
+ 
+-qt5_add_translation(gmic_qt_QM
++# qt5_add_translation(gmic_qt_QM
+     translations/cs.ts
+     translations/de.ts
+     translations/es.ts
