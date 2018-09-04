@@ -14,7 +14,6 @@ COMMENT=	Video Disk Recorder - extended recordings menu
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_12=	does not build with newer clang
 USES=		tar:tgz
 PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/${PLUGIN}-${PORTVERSION}

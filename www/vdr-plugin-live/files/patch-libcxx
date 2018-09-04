@@ -219,7 +219,7 @@
  #include <vdr/channels.h>
  #include <vdr/i18n.h>
  #include <vdr/menu.h>
-@@ -14,8 +14,12 @@
+@@ -14,8 +15,12 @@
  namespace vdrlive {
  
  using namespace std;
@@ -232,6 +232,17 @@
  
  const char* NowReplaying()
  {
+@@ -253,8 +258,8 @@ void TaskManager::DoScheduledTasks()
+ 		current->Action();
+ 		m_taskQueue.pop_front();
+ 	}*/
+-	for_each( m_taskQueue.begin(), m_taskQueue.end(), bind( &Task::Action, _1 ) );
+-	for_each( m_stickyTasks.begin(), m_stickyTasks.end(), bind( &Task::Action, _1 ) );
++	for_each( m_taskQueue.begin(), m_taskQueue.end(), std::bind( &Task::Action, _1 ) );
++	for_each( m_stickyTasks.begin(), m_stickyTasks.end(), std::bind( &Task::Action, _1 ) );
+ 	m_taskQueue.clear();
+ 	m_scheduleWait.Broadcast();
+ }
 --- a/timerconflict.h
 +++ b/timerconflict.h
 @@ -65,7 +65,11 @@ namespace vdrlive {

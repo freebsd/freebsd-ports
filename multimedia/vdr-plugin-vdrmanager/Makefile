@@ -14,7 +14,6 @@ COMMENT=	Video Disk Recorder - VDR-Manager server plugin
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_12= does not build with newer clang6
 PATCH_STRIP=	-p1
 
 PORTDOCS=	README HISTORY
