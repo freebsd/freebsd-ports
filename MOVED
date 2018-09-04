@@ -10514,3 +10514,4 @@ devel/renpy6|games/renpy6|2018-09-03|Moved to better category
 devel/rlvm|games/rlvm|2018-09-03|Moved to better category
 dns/openmdns|net/openmdns|2018-09-03|Moved to better category
 www/hs-activehs||2018-09-03|Has expired: Doesn't build with recent dependencies
+science/mpqc-mpich|science/mpqc|2018-09-03|MPI option is enabled by default in mpqc, no need for mpqc-mpich

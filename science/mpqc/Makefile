@@ -3,7 +3,7 @@
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
-PORTREVISION=	37
+PORTREVISION=	38
 CATEGORIES=	science parallel
 MASTER_SITES=	SF
 
@@ -34,23 +34,22 @@ SHEBANG_FILES=	src/bin/mpqc/ccarunproc src/bin/mpqc/mpqcrunproc
 USE_LDCONFIG=	yes
 USE_CXXSTD=	c++98 # workaround https://github.com/ValeevGroup/mpqc/issues/57
 
-OPTIONS_DEFINE=		ATLAS DOXYGEN EXAMPLES ICC MPICH OPTIFLAGS
-OPTIONS_DEFAULT=	DOXYGEN
+OPTIONS_DEFINE=		ATLAS DOXYGEN EXAMPLES ICC MPI OPTIFLAGS
+OPTIONS_DEFAULT=	DOXYGEN MPI
 OPTIONS_SUB=		yes
 
 ICC_DESC=		Build with ICC compiler instead
 ATLAS_DESC=		Link with ATLAS instead of BLAS
-MPICH_DESC=		Parallel processing support via MPICH
 OPTIFLAGS_DESC=		Build with optimized flags
 
 ATLAS_USES=		blaslapack:atlas
 ATLAS_USES_OFF=		blaslapack:netlib
-DOXYGEN_CONFIGURE_ENABLE=doxygen-man
+DOXYGEN_CONFIGURE_ENABLE=	doxygen-man
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			dot:graphics/graphviz
 ICC_BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:lang/icc
-MPICH_CONFIGURE_ENABLE=	parallel
-MPICH_LIB_DEPENDS=	libmpich.so:net/mpich2
+MPI_CONFIGURE_ENABLE=	parallel
+MPI_LIB_DEPENDS=	libmpich.so:net/mpich2
 OPTIFLAGS_CFLAGS=	-ffast-math
 OPTIFLAGS_CXXFLAGS=	-ffast-math
 

@@ -131,7 +131,6 @@
     SUBDIR += mol2ps
     SUBDIR += mpb
     SUBDIR += mpqc
-    SUBDIR += mpqc-mpich
     SUBDIR += multiwfn
     SUBDIR += ncs
     SUBDIR += netcdf
