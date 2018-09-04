@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2017-07-18 14:11:40 UTC
+--- CMakeLists.txt.orig	2018-09-04 06:22:53 UTC
 +++ CMakeLists.txt
 @@ -14,6 +14,7 @@ mark_as_advanced(CLEAR
      CMAKE_INSTALL_BINDIR
@@ -8,19 +8,19 @@
  )
  
  #
-@@ -164,13 +165,24 @@ if(UNITTEST)
-     # Find speex library
-     #
-     message(STATUS "Looking for Speex DSP library.")
--    find_path(SPEEXDSP_INCLUDE_DIR speex/speex.h)
-+    find_path(SPEEXDSP_INCLUDE_DIR speex/speex_preprocess.h)
-     find_library(SPEEXDSP_LIBRARY speexdsp)
-     message(STATUS "  Speex DSP headers: ${SPEEXDSP_INCLUDE_DIR}")
-     message(STATUS "  Speex DSP library: ${SPEEXDSP_LIBRARY}")
-     if(NOT SPEEXDSP_INCLUDE_DIR AND NOT SPEEXDSP_LIBRARY)
-         message(FATAL_ERROR "Speex DSP library not found!")
+@@ -114,7 +115,7 @@ option(INSTALL_EXAMPLES "Install example
+ if(INSTALL_EXAMPLES)
+     install(DIRECTORY octave raw script wav
+         USE_SOURCE_PERMISSIONS
+-        DESTINATION ${CMAKE_INSTALL_DATADIR}/codec2)
++        DESTINATION share/examples/codec2)
+ endif()
+ 
+ 
+@@ -179,6 +180,18 @@ if(UNITTEST)
      endif()
-+    #
+ 
+     #
 +    # Find samplerate library
 +    #
 +    message(STATUS "Looking for samplerate library.")
@@ -31,6 +31,8 @@
 +    if(NOT SAMPLERATE_INCLUDE_DIR AND NOT SAMPLERATE_LIBRARY)
 +        message(FATAL_ERROR "samplerate library not found!")
 +    endif()
- 
-     #
++
++    #
      # Samplerate Library
+     #
+     message(STATUS "Looking for samplerate...")

@@ -1,15 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	codec2
-PORTVERSION=	0.7
+DISTVERSION=	0.8.1
 CATEGORIES=	audio hamradio
-MASTER_SITES=	https://freedv.com/wp-content/uploads/sites/8/2017/10/ \
-		LOCAL/db
+MASTER_SITES=	https://hobbes1069.fedorapeople.org/freetel/codec2/
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Low bit rate codec
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libspeexdsp.so:audio/speexdsp
 
@@ -34,12 +34,12 @@ TEST_UNITTESTFILES=	c2validate create_interleaver de extract fdmdv_mem\
 
 SHEBANG_FILES=	${WRKSRC}/octave/fsk_horus_stream.m\
 		${WRKSRC}/script/menu.sh
-
 SHEBANG_LANG=		octave
-octave_OLD_CMD=		/usr/bin/octave
-octave_CMD=		${LOCALBASE}/bin/octave
+
 TEST_RUN_DEPENDS=	octave:math/octave
 TEST_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
+
+PORTEXAMPLES=	*
 
 pre-patch-TEST-on:
 	${REINPLACE_CMD} 's|%ld|%u|' ${WRKSRC}/unittest/fdmdv_mem.c

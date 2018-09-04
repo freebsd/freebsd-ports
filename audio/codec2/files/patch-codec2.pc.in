@@ -1,9 +1,9 @@
---- codec2.pc.in.orig	2017-04-04 20:42:22 UTC
+--- codec2.pc.in.orig	2017-08-03 21:22:16 UTC
 +++ codec2.pc.in
 @@ -1,6 +1,6 @@
  prefix=@CMAKE_INSTALL_PREFIX@
 -libdir=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_LIBDIR@
--includedir=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_INCLUDEDIR@/
+-includedir=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_INCLUDEDIR@/codec2
 +libdir=${prefix}/lib
 +includedir=${prefix}/include/codec2
  
