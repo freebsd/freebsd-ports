@@ -103,6 +103,7 @@
     SUBDIR += libefp
     SUBDIR += libgeodecomp
     SUBDIR += libghemical
+    SUBDIR += libgridxc
     SUBDIR += libint
     SUBDIR += libint2
     SUBDIR += libkml

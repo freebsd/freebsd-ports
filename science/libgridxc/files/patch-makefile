@@ -1,0 +1,63 @@
+--- makefile.orig	2018-02-01 10:48:08 UTC
++++ makefile
+@@ -93,15 +93,20 @@ else
+   MPI_INTERFACE=
+ endif
+ 
++ifdef WITH_LIBXC
++LIBXC=$(FREEBSD_LOCALBASE)/lib/libxc.so
++endif
++
+ libmpi_f90.a: 
+ 	@(cd MPI_instr ; $(MAKE) \
+                         "VPATH=$(VPATH)/MPI_instr" )
+ 
+-libGridXC.a: $(MPI_INTERFACE) $(ALL_OBJS)
+-	$(AR) $(ARFLAGS_EXTRA) cru libGridXC.a $(ALL_OBJS) 
++libGridXC.so: $(MPI_INTERFACE) $(ALL_OBJS)
+ 	@if [ ! -z "$(MPI_INTERFACE)" ] ; then \
+-            $(AR) $(ARFLAGS_EXTRA) cru libGridXC.a MPI_instr/*.o ; fi
+-	-$(RANLIB) libGridXC.a
++	    $(CC) -shared -o libGridXC.so -Wl,-soname,libGridXC.so $(ALL_OBJS) MPI_instr/*.o $(FREEBSD_LOCALBASE)/lib/libmpich.so $(LIBXC); \
++        else \
++	    $(CC) -shared -o libGridXC.so -Wl,-soname,libGridXC.so $(ALL_OBJS) $(LIBXC); \
++        fi;
+ 
+ MODULES_TO_INSTALL=gridxc.mod gridxc_config.mod m_atomxc.mod \
+                    m_cellxc.mod xcmod.mod m_ldaxc.mod m_ggaxc.mod \
+@@ -126,23 +131,23 @@ setup_mk_file:
+  endif
+ endif
+ 
+-module: setup_mk_file libGridXC.a
++module: setup_mk_file libGridXC.so
+ 	@echo "Prefix: $(PREFIX)"
+ 	mkdir -p lib 
+ 	mkdir -p include
+ 	cp -p $(MODULES_TO_INSTALL) include/
+-	cp -p libGridXC.a lib/
++	cp -p libGridXC.so lib/
+ 	@if [ "$(PREFIX)" != "$(MAIN_OBJDIR)" ]; then \
+-          echo "mkdir -p $(GRIDXC_PREFIX)/lib" ; \
+-          mkdir -p $(GRIDXC_PREFIX)/lib ; \
+-          echo "mkdir -p $(GRIDXC_PREFIX)/include" ; \
+-          mkdir -p $(GRIDXC_PREFIX)/include ; \
+-          echo "cp -p $(MODULES_TO_INSTALL) $(GRIDXC_PREFIX)/include/" ; \
+-          cp -p $(MODULES_TO_INSTALL) $(GRIDXC_PREFIX)/include/ ; \
+-          echo "cp -p libGridXC.a $(GRIDXC_PREFIX)/lib" ; \
+-          cp -p libGridXC.a $(GRIDXC_PREFIX)/lib ; \
+-          echo "cp -p gridxc.mk libxc.mk $(GRIDXC_PREFIX)" ; \
+-          cp -p gridxc.mk libxc.mk $(GRIDXC_PREFIX) ; fi
++          echo "mkdir -p $(INSTALL_DIR)/lib" ; \
++          mkdir -p $(INSTALL_DIR)/lib ; \
++          echo "mkdir -p $(INSTALL_DIR)/include" ; \
++          mkdir -p $(INSTALL_DIR)/include ; \
++          echo "cp -p $(MODULES_TO_INSTALL) $(INSTALL_DIR)/include/" ; \
++          cp -p $(MODULES_TO_INSTALL) $(INSTALL_DIR)/include/ ; \
++          echo "cp -p libGridXC.so $(INSTALL_DIR)/lib" ; \
++          cp -p libGridXC.so $(INSTALL_DIR)/lib ; \
++          echo "cp -p gridxc.mk libxc.mk $(INSTALL_DIR)" ; \
++          cp -p gridxc.mk libxc.mk $(INSTALL_DIR) ; fi
+ 
+ clean:
+ 	rm -f *.o *.*d *.a gridxc.mk
