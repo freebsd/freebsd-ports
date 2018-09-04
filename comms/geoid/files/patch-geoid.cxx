@@ -13,3 +13,12 @@
    			exit(0);
   		}
  	}
+@@ -46,7 +44,7 @@ int main(int argc, char **argv) {
+ 
+ void About()
+ {
+-	fl_message("Geodetic computer\nVersion: "VERSION"\nDave Freese\nw1hkj@@w1hkj.com");
++	fl_message("Geodetic computer\nVersion: " VERSION "\nDave Freese\nw1hkj@@w1hkj.com");
+ }
+ 
+ void cbSaveQTH()
