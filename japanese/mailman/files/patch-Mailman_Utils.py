@@ -19,7 +19,38 @@
      basepath = Site.get_listpath(listname)
      for ext in ('.pck', '.pck.last', '.db', '.db.last'):
          dbfile = os.path.join(basepath, 'config' + ext)
-@@ -952,6 +958,7 @@ _badwords = [
+@@ -246,10 +252,28 @@ CRNLpat = re.compile(r'[^\x21-\x7e]')
+ def GetPathPieces(envar='PATH_INFO'):
+     path = os.environ.get(envar)
+     if path:
++        remote = os.environ.get('HTTP_FORWARDED_FOR',
++                 os.environ.get('HTTP_X_FORWARDED_FOR',
++                 os.environ.get('REMOTE_ADDR',
++                                'unidentified origin')))
+         if CRNLpat.search(path):
+             path = CRNLpat.split(path)[0]
+-            syslog('error', 'Warning: Possible malformed path attack.')
+-        return [p for p in path.split('/') if p]
++            syslog('error',
++                'Warning: Possible malformed path attack domain=%s remote=%s',
++                   get_domain(),
++                   remote)
++        # Check for listname injections that won't be websafed.
++        pieces = [p for p in path.split('/') if p]
++        # Get the longest listname or 20 if none.
++        if list_names():
++            longest = max([len(x) for x in list_names()])
++        else:
++            longest = 20
++        if pieces and len(pieces[0]) > longest:
++            syslog('mischief',
++               'Hostile listname: listname=%s: remote=%s', pieces[0], remote)
++            pieces[0] = pieces[0][:longest] + '...'
++        return pieces
+     return None
+ 
+ 
+@@ -952,6 +976,7 @@ _badwords = [
      '<meta',
      '<object',
      '<script',
@@ -27,7 +58,7 @@
      r'\bj(?:ava)?script\b',
      r'\bvbs(?:cript)?\b',
      r'\bdomactivate\b',
-@@ -968,12 +975,14 @@ _badwords = [
+@@ -968,12 +993,14 @@ _badwords = [
      r'\bon(?:de)?activate\b',
      r'\bon(?:after|before)print\b',
      r'\bon(?:after|before)update\b',
@@ -42,7 +73,7 @@
      r'\bon(?:cell)?change\b',
      r'\boncheckboxstatechange\b',
      r'\bon(?:dbl)?click\b',
-@@ -989,7 +998,9 @@ _badwords = [
+@@ -989,7 +1016,9 @@ _badwords = [
      r'\bondrag(?:drop|end|enter|exit|gesture|leave|over)?\b',
      r'\bondragstart\b',
      r'\bondrop\b',
@@ -53,7 +84,7 @@
      r'\bonerror(?:update)?\b',
      r'\bonfilterchange\b',
      r'\bonfinish\b',
-@@ -999,21 +1010,28 @@ _badwords = [
+@@ -999,21 +1028,28 @@ _badwords = [
      r'\bonkey(?:up|down|press)\b',
      r'\bonlayoutcomplete\b',
      r'\bon(?:un)?load\b',
@@ -82,7 +113,7 @@
      r'\bonreadystatechange\b',
      r'\bonrepeat\b',
      r'\bonreset\b',
-@@ -1023,19 +1041,30 @@ _badwords = [
+@@ -1023,19 +1059,30 @@ _badwords = [
      r'\bonrow(?:delete|enter|exit|inserted)\b',
      r'\bonrows(?:delete|enter|inserted)\b',
      r'\bonscroll\b',
