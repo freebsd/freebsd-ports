@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ghostscript
-PORTVERSION=	9.23
-PORTREVISION=	1
+PORTVERSION=	9.24
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${PORTVERSION:S/.//}/
 PKGNAMESUFFIX=	9-agpl-base
@@ -28,8 +27,10 @@ CONFLICTS_INSTALL= \
 		ghostscript9-agpl-[0-9]* \
 		ghostscript9-agpl-nox11-[0-9]*
 
-USES=		gmake iconv jpeg localbase pkgconfig tar:xz
+USES=		cpe gmake iconv jpeg localbase pkgconfig tar:xz
+USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
+CPE_VENDOR=	artifex
 DATADIR=	${PREFIX}/share/${PORTNAME}/${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}/${PORTVERSION}
 GNU_CONFIGURE=	yes
