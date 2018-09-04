@@ -1,11 +1,14 @@
-If you are upgrading, you need to update your current installation's
-database by browsing to [URL]/setup.php where [URL] is the
-postfixadmin webroot.
+If you are upgrading, you may need to update your current installation's
+database.  You can do so by browsing to [URL]/setup.php where [URL] is the
+postfixadmin root.
 
 To avoid checksum errors when removing or upgrading postfixadmin, do not
-edit config.inc.php. Instead put your configuration settings in
-config.local.php in the postfixadmin webroot. That file will be included
+edit config.inc.php.  Instead, put your configuration settings in
+config.local.php in the postfixadmin webroot.  That file will be included
 automatically by config.inc.php.
 
 For detailed information, please see the complete installation steps in
-%%DATADIR%%/INSTALL.TXT
+%%DATADIR%%/INSTALL.TXT.
+
+See %%DATADIR%%/CHANGELOG.TXT for any upgrade-related details, including
+configuration changes.
