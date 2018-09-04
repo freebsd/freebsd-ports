@@ -20,12 +20,12 @@ CONFLICTS_INSTALL?=		samba4-4.0.* samba4[1-689]-4.* p5-Parse-Pidl-4.*
 EXTRA_PATCHES+=			${PATCHDIR}/0001-Zfs-provision-1.patch:-p1
 EXTRA_PATCHES+=			${PATCHDIR}/0001-Freenas-master-mdns-fixes-22.patch:-p1
 EXTRA_PATCHES+=			${PATCHDIR}/0001-audit.patch:-p1
-EXTRA_PATCHES+=			${PATCHDIR}/0001-bug-13351.patch:-p1
+#EXTRA_PATCHES+=			${PATCHDIR}/0001-bug-13351.patch:-p1
 EXTRA_PATCHES+=			${PATCHDIR}/0001-bug-228462.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.7.9
+SAMBA4_VERSION=			4.7.10
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
 WRKSRC?=			${WRKDIR}/${DISTNAME}
