@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmpdclient
-PORTVERSION=	2.14
+PORTVERSION=	2.15
 CATEGORIES=	audio
 MASTER_SITES=	http://www.musicpd.org/download/libmpdclient/2/
 
