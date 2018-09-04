@@ -1,0 +1,35 @@
+Add missing bits from later libc++ versions. Remove after FreeBSD 11.1 EOL.
+
+--- Utilities/types.h.orig	2018-09-03 20:00:36 UTC
++++ Utilities/types.h
+@@ -83,6 +83,30 @@ using steady_clock = std::conditional<
+     std::chrono::high_resolution_clock::is_steady,
+     std::chrono::high_resolution_clock, std::chrono::steady_clock>::type;
+ 
++#ifdef _LIBCPP_VERSION
++namespace std
++{
++# if _LIBCPP_VERSION < 5000
++#define GSL_USE_STD_BYTE 1
++enum class byte : unsigned char {};
++
++template <class _Integer>
++  constexpr typename enable_if<is_integral_v<_Integer>, _Integer>::type
++  to_integer(byte __b) noexcept { return static_cast<_Integer>(__b); }
++# endif
++# if _LIBCPP_VERSION < 6000
++template <class _Fn, class... _Args>
++struct _LIBCPP_TEMPLATE_VIS invoke_result
++    : __invoke_of<_Fn, _Args...>
++{
++};
++
++template <class _Fn, class... _Args>
++using invoke_result_t = typename invoke_result<_Fn, _Args...>::type;
++# endif
++} // namespace std
++#endif
++
+ namespace gsl
+ {
+ 	using std::byte;
