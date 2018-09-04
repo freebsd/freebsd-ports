@@ -2,9 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	labplot
-PORTVERSION=	2.4.0
-PORTREVISION=	5
-DISTVERSIONSUFFIX=-kf5
+PORTVERSION=	2.5.0
 CATEGORIES=	math kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 
@@ -16,8 +14,26 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgsl.so:math/gsl
 
-OPTIONS_DEFINE=		FITS FFTW3 HDF5 NETCDF
+USES=		bison cmake:outsource desktop-file-utils kde:5 qt:5 shared-mime-info tar:xz
+USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
+		coreaddons crash ecm_build guiaddons i18n iconthemes itemviews \
+		jobwidgets kdelibs4support kio newstuff notifications parts \
+		service solid sonnet syntaxhighlighting textwidgets unitconversion \
+		widgetsaddons windowsystem xmlgui
+USE_QT=		concurrent core dbus gui network printsupport serialport \
+		sql svg widgets xml \
+		buildtools_build qmake_build
+
+CMAKE_OFF=	ENABLE_LIBCERF
+
+DATADIR=	${PREFIX}/share/labplot2
+
+OPTIONS_DEFINE=		CANTOR FITS FFTW3 HDF5 NETCDF
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+
+CANTOR_DESC=		Build with Cantor support
+CANTOR_CMAKE_BOOL=	ENABLE_CANTOR
+CANTOR_LIB_DEPENDS=	libcantorlibs.so:math/cantor
 FITS_DESC=		Flexible Image Transport System Data Format (FITS) Library
 FITS_CMAKE_BOOL=	ENABLE_FITS
 FITS_LIB_DEPENDS=	libcfitsio.so:astro/cfitsio
@@ -31,15 +47,7 @@ NETCDF_DESC=		Build with NetCDF support
 NETCDF_CMAKE_BOOL=	ENABLE_NETCDF
 NETCDF_LIB_DEPENDS=	libnetcdf.so:science/netcdf
 
-USES=		cmake:outsource desktop-file-utils kde:5 qt:5 shared-mime-info tar:xz
-USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
-		coreaddons crash ecm guiaddons i18n iconthemes itemviews \
-		jobwidgets kdelibs4support kio newstuff notifications parts \
-		service solid sonnet textwidgets unitconversion widgetsaddons \
-		windowsystem xmlgui
-USE_QT=		core dbus gui network printsupport svg widgets xml \
-		buildtools_build qmake_build
-
-DATADIR=	${PREFIX}/share/labplot2
+post-patch:
+	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
