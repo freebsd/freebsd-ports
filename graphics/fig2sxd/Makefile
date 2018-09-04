@@ -3,7 +3,7 @@
 
 PORTNAME=	fig2sxd
 PORTVERSION=	0.22.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics converters
 MASTER_SITES=	LOCAL/ehaupt SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -11,18 +11,16 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Convert .xfig files to the OpenOffice draw format
 
-USES=		gmake
+LICENSE=	GPLv2
+
+USES=		compiler gmake
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	bin/fig2sxd man/man1/fig2sxd.1.gz
 
-.include <bsd.port.pre.mk>
-
-# Does not compile with clang 6.0.0; PR 226178.
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200056
-USE_GCC=	yes
-.endif
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -33,4 +31,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
