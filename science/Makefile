@@ -26,6 +26,7 @@
     SUBDIR += afni
     SUBDIR += aircraft-datcom
     SUBDIR += antioch
+    SUBDIR += atom
     SUBDIR += atompaw
     SUBDIR += avogadro
     SUBDIR += bddsolve
