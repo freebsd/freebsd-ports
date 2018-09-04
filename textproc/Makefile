@@ -1833,6 +1833,7 @@
     SUBDIR += xmlcharent
     SUBDIR += xmldiff
     SUBDIR += xmlenc
+    SUBDIR += xmlf90
     SUBDIR += xmlformat
     SUBDIR += xmlgen
     SUBDIR += xmlindent
