@@ -3,34 +3,34 @@
 
 PORTNAME=	aalib
 DISTVERSION=	1.4rc5
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	SF/aa-project/aa-lib/1.4rc5
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASCII art library
 
-LICENSE=	GPLv2
+LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	X11
-
-USES=		libtool ncurses makeinfo
+USES=		libtool localbase makeinfo
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.4.0
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INFO=		aalib
-LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.options.mk>
+OPTIONS_MULTI=		DRIVERS
+OPTIONS_MULTI_DRIVERS=	X11 NCURSES SLANG
+OPTIONS_DEFAULT=	NCURSES
 
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11
-CONFIGURE_ARGS=	--x-includes="${LOCALBASE}/include" \
-		--x-libraries="${LOCALBASE}/lib"
-.else
-CONFIGURE_ARGS=	--with-x=no
-.endif
+DRIVERS_DESC=		Drives selection
+
+X11_USE=		XORG=x11
+X11_CONFIGURE_WITH=	x11-driver=yes
+NCURSES_USES=		ncurses
+NCURSES_CONFIGURE_WITH=	curses-driver=yes
+SLANG_LIB_DEPENDS=	libslang.so:devel/libslang2
+SLANG_CONFIGURE_WITH=	slang-driver=yes
 
 post-extract:
 	@${RM} ${WRKSRC}/doc/aalib.info*
@@ -47,6 +47,6 @@ post-patch:
 		| ${XARGS} ${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g'
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaa.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaa.so
 
 .include <bsd.port.mk>
