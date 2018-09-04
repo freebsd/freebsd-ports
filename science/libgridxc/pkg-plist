@@ -1,0 +1,13 @@
+include/debugxc.mod
+include/gridxc.mod
+include/gridxc_config.mod
+include/m_atomxc.mod
+include/m_cellxc.mod
+include/m_fft_gpfa.mod
+include/m_ggaxc.mod
+include/m_ldaxc.mod
+include/mesh3d.mod
+include/xcmod.mod
+lib/libGridXC.so
+share/mk/gridxc.mk
+share/mk/libxc.mk

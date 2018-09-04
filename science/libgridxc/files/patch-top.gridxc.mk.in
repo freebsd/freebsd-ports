@@ -1,0 +1,33 @@
+--- top.gridxc.mk.in.orig	2018-02-01 10:48:08 UTC
++++ top.gridxc.mk.in
+@@ -13,8 +13,8 @@ GRIDXC_USES_MPI=0
+ #
+ ifeq ($(GRIDXC_USES_MPI),1)
+   $(info GRIDXC includes MPI support)
+-  GRIDXC_MPI_INCFLAGS= -I $(GRIDXC_ROOT)/mpi/include $(LIBXC_INCFLAGS)
+-  GRIDXC_MPI_LIBS=$(GRIDXC_ROOT)/mpi/lib/libGridXC.a $(LIBXC_LIBS)
++  GRIDXC_MPI_INCFLAGS= -I $(GRIDXC_ROOT)/include $(LIBXC_INCFLAGS)
++  GRIDXC_MPI_LIBS=$(GRIDXC_ROOT)/lib/libGridXC.so $(LIBXC_LIBS)
+ endif
+ #
+ ifeq ($(GRIDXC_USES_LIBXC),1)
+@@ -24,7 +24,7 @@ ifeq ($(GRIDXC_USES_LIBXC),1)
+    $(error you need to define LIBXC_ROOT in your arch.make)
+  endif
+  #
+- include $(GRIDXC_ROOT)/libxc.mk
++ include $(GRIDXC_ROOT)/share/mk/libxc.mk
+  #
+ else
+  # 
+@@ -32,8 +32,8 @@ else
+  LIBXC_LIBS=
+ endif
+ #
+-GRIDXC_SERIAL_INCFLAGS= -I $(GRIDXC_ROOT)/serial/include $(LIBXC_INCFLAGS)
+-GRIDXC_SERIAL_LIBS=$(GRIDXC_ROOT)/serial/lib/libGridXC.a $(LIBXC_LIBS)
++GRIDXC_SERIAL_INCFLAGS= -I $(GRIDXC_ROOT)/include $(LIBXC_INCFLAGS)
++GRIDXC_SERIAL_LIBS=$(GRIDXC_ROOT)/lib/libGridXC.so $(LIBXC_LIBS)
+ #
+ ifdef WITH_MPI
+  ifneq ($(GRIDXC_USES_MPI),1)
