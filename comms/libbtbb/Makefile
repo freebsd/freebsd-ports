@@ -11,7 +11,7 @@ COMMENT=	Bluetooth Baseband Library
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BIULD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYNUMPY}
 
 USES=		cmake:outsource \
 		python:2.7,build
