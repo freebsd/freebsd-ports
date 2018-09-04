@@ -49,6 +49,7 @@
     SUBDIR += clipper
     SUBDIR += colt
     SUBDIR += coot
+    SUBDIR += cp2k
     SUBDIR += crf++
     SUBDIR += dalton
     SUBDIR += datawarrior
