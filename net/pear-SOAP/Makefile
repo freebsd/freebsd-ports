@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	SOAP
-PORTVERSION=	0.13.0
+PORTVERSION=	0.14.0
 CATEGORIES=	net www pear
 
 MAINTAINER=	joneum@FreeBSD.org
