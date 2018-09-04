@@ -13,6 +13,7 @@ COMMENT=	Utility used to retrieve large files over the Internet
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:ftp/wget
 
 USES=		gmake tar:bzip2
+USE_CXXSTD=	c++98
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 
