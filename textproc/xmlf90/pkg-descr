@@ -1,0 +1,18 @@
+xmlf90 is a suite of libraries to handle XML in Fortran. It has two
+major components:
+
+* A XML parsing library. The parser was designed to be a useful
+  tool in the extraction and analysis of data in the context of
+  scientific computing, and thus the priorities were efficiency and the
+  ability to deal with very large XML files while maintaining a small
+  memory footprint. The most complete programming interface is
+  based on the very successful SAX (Simple API for XML) model,
+  although a partial DOM interface and a very experimental XPATH interface
+  are also present.
+
+- A library (xmlf90-wxml) that facilitates the writing of well-formed
+  XML, including such features as automatic start-tag completion,
+  attribute pretty-printing, and element indentation. There are also
+  helper routines to handle the output of numerical arrays.
+
+WWW: https://launchpad.net/xmlf90
