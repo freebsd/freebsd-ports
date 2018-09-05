@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fugit
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Time tools for flor and the floraison project
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-et-orbi>=1.1.1:devel/rubygem-et-orbi \
+RUN_DEPENDS=	rubygem-et-orbi>=1.1.6:devel/rubygem-et-orbi \
 		rubygem-raabro>=1.1:textproc/rubygem-raabro
 
 NO_ARCH=	yes
