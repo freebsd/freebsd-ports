@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zsh
-DISTVERSION=	5.5.1
+DISTVERSION=	5.6
 CATEGORIES=	shells
 MASTER_SITES=	http://www.zsh.org/pub/ \
 		SF \
@@ -88,6 +88,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/LIBS/s|-lrt||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|/etc/|${LOCALBASE}/etc/|" \
 		${WRKSRC}/Functions/MIME/zsh-mime-setup
+	${RM} ${WRKSRC}/Doc/help.txt
 
 post-patch-STATIC-on:
 	@${REINPLACE_CMD} -e "s|link=dynamic|link=either|" \
