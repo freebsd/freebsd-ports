@@ -39,7 +39,6 @@ man/man6/yadex.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/nook2.png
 %%PORTDOCS%%%%DOCSDIR%%/packagers_guide.html
 %%PORTDOCS%%%%DOCSDIR%%/palette.html
-%%PORTDOCS%%%%3DRENDER%%%%DOCSDIR%%/preview.html
 %%PORTDOCS%%%%DOCSDIR%%/reporting.html
 %%PORTDOCS%%%%DOCSDIR%%/slice1.png
 %%PORTDOCS%%%%DOCSDIR%%/slice2.png
