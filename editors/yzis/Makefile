@@ -17,7 +17,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
 
-USES=		qt:4 tar:bzip2 cmake gettext perl5 lua:51
+USES=		qt:4 tar:bzip2 cmake gettext gnome perl5 lua:51
 USE_XORG=	x11 xext ice
 USE_QT=		corelib qtestlib qmake_build rcc_build uic_build moc_build gui xml
 CMAKE_ARGS+=	-DLOCALBASE:STRING="${LOCALBASE}" \

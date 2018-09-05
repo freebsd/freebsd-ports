@@ -17,7 +17,7 @@ LIB_DEPENDS=	libportaudio.so:audio/portaudio \
 		libsndfile.so:audio/libsndfile
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig desktop-file-utils
+USES=		desktop-file-utils gnome pkgconfig
 USE_CSTD=	gnu89
 USE_GNOME=	libglade2
 
