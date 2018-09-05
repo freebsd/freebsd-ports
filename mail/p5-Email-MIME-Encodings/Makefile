@@ -10,10 +10,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Unified interface to MIME encoding and decoding
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-MIME-Base64>3.05:converters/p5-MIME-Base64
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
