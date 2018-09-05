@@ -13,10 +13,6 @@ PLIST=		${.CURDIR}/pkg-plist
 LIB_DEPENDS=	#
 
 USES=		pathfix
-.if ${ARCH} == "i386" || ${ARCH} == "armv7"
-# PR230214 port has relocations against read-only segment (.text)
-LLD_UNSAFE=	yes
-.endif
 
 OPTIONS_DEFINE=		ASM OPENCL
 OPTIONS_DEFAULT=	ASM OPENCL
