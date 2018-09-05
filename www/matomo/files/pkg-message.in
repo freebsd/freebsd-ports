@@ -1,7 +1,7 @@
 
 POST-INSTALL CONFIGURATION FOR Matomo
 =======================================
-1) Create a user and a empty database for Piwik to store all
+1) Create a user and a empty database for Matomo to store all
    its tables in (or choose an existing database).
 
 2) Add the following to your Apache configuration, and
@@ -17,10 +17,10 @@ POST-INSTALL CONFIGURATION FOR Matomo
       Require all granted
    </Directory>
 
-3) Visit your Piwik site with a browser (i.e.,
+3) Visit your Matomo site with a browser (i.e.,
    http://your.server.com/matomo/), and you should
    be taken to the setup script, which will lead
-   you through setting up Piwik.
+   you through setting up Matomo.
 
 For more information, see the INSTALL DOCUMENTATION:
 
