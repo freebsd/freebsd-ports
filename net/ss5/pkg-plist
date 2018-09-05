@@ -1,6 +1,9 @@
-@sample etc/ss5/ss5.ha.sample
-@sample etc/ss5/ss5.conf.sample
-@sample etc/ss5/ss5.passwd.sample
+%%ETCDIR%%/ss5.conf
+%%ETCDIR%%/ss5.conf.sample
+%%ETCDIR%%/ss5.ha
+%%ETCDIR%%/ss5.ha.sample
+%%ETCDIR%%/ss5.passwd
+%%ETCDIR%%/ss5.passwd.sample
 lib/ss5/mod_authentication.so
 lib/ss5/mod_authorization.so
 lib/ss5/mod_balance.so
@@ -15,23 +18,23 @@ lib/ss5/mod_statistics.so
 man/man1/ss5.1.gz
 man/man1/ss5srv.1.gz
 man/man5/ss5.conf.5.gz
+man/man5/ss5.ha.5.gz
 man/man5/ss5.pam.5.gz
 man/man5/ss5.passwd.5.gz
-man/man5/ss5.ha.5.gz
 man/man5/ss5_gss.5.gz
 man/man5/ss5_supa.5.gz
 sbin/ss5
 sbin/ss5srv
+%%PORTDOCS%%%%DOCSDIR%%/License
+%%PORTDOCS%%%%DOCSDIR%%/README.balamgr
+%%PORTDOCS%%%%DOCSDIR%%/README.ldap
+%%PORTDOCS%%%%DOCSDIR%%/README.pam
+%%PORTDOCS%%%%DOCSDIR%%/README.statmgr
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/entries.ldif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slapd.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ss5.pam
 %%DATADIR%%/SS5Logo.jpg
 %%DATADIR%%/balamgr.cgi
 %%DATADIR%%/statmgr.cgi
-%%EXAMPLESDIR%%/entries.ldif
-%%EXAMPLESDIR%%/slapd.conf
-%%EXAMPLESDIR%%/ss5.pam
-%%DOCSDIR%%/License
-%%DOCSDIR%%/README.balamgr
-%%DOCSDIR%%/README.ldap
-%%DOCSDIR%%/README.pam
-%%DOCSDIR%%/README.statmgr
 @dir /var/log/ss5
 @dir /var/run/ss5
