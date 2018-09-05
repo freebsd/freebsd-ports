@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180905:
+  AFFECTS: users of lang/php56
+  AUTHOR: tz@FreeBSD.org
+
+  The default version of PHP has been switched from 5.6 to 7.1.
+
+  If you use binary packages you should make a list of php packages
+  before running 'pkg upgrade':
+
+  # pkg info php5\* > ~/installed-php-ports-list
+
+  After the upgrade, check with such list if all your php extensions
+  are still installed, and reinstall them if needed.
+
 20180901:
   AFFECTS: net/samba48
   AUTHOR: timur@FreeBSD.org
