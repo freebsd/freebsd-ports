@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libwapcaplet
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
