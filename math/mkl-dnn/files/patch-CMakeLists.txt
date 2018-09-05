@@ -1,0 +1,17 @@
+--- CMakeLists.txt.orig	2018-09-05 00:11:53 UTC
++++ CMakeLists.txt
+@@ -69,7 +69,10 @@ enable_testing()
+ include_directories(include)
+ 
+ add_subdirectory(src)
+-add_subdirectory(examples)
+-add_subdirectory(tests)
+-
+-install(FILES LICENSE DESTINATION share/doc/${LIB_NAME})
++if(BUILD_EXAMPLES)
++  add_subdirectory(examples)
++endif()
++if(BUILD_TESTS)
++  add_subdirectory(tests)
++endif()
++#install(FILES LICENSE DESTINATION share/doc/${LIB_NAME})
