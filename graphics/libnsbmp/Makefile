@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libnsbmp
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	netsurf-buildsystem>=1.5:devel/netsurf-buildsystem
 
-USES=	gmake
+USES=		gmake
 USE_LDCONFIG=	yes
 
 WRKSRC=	${WRKDIR}/${DISTNAME:S/-src//}
