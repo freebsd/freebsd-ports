@@ -77,7 +77,6 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_bsdconfig
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_bsdinstall
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_chflags
-%%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_cksum
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_csup
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_cu
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_cvsup
@@ -94,6 +93,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_jls
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_jot
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_kld
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_ldap
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_mixerctl
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_nbsd_architectures
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/BSD/_obsd_architectures
@@ -191,12 +191,14 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_caffeinate
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_defaults
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_fink
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_fs_usage
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_hdiutil
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_mac_applications
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_mac_files_for_application
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_mdfind
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_mdls
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_mdutil
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_networksetup
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_nvram
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_open
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_osascript
@@ -206,6 +208,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_qtplay
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_retrieve_mac_apps
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_say
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_sc_usage
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_scselect
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_scutil
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Darwin/_softwareupdate
@@ -237,6 +240,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Debian/_debfoster
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Debian/_deborphan
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Debian/_debsign
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Debian/_debuild
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Debian/_dlocate
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Debian/_dpatch-edit-patch
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Debian/_dpkg
@@ -278,6 +282,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_chrt
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_cpupower
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_cryptsetup
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_dkms
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_ethtool
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_fuse_arguments
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_fuse_values
@@ -300,6 +305,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_modutils
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_mondo
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_networkmanager
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_opkg
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_pidof
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_pkgtool
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_qdbus
@@ -339,7 +345,6 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_fmadm
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_inetadm
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_ipadm
-%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_netstat
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_pfexec
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_pkg5
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Solaris/_prstat
@@ -358,6 +363,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_a2ps
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_aap
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_absolute_command_paths
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ack
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_adb
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ansible
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ant
@@ -372,7 +378,9 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_attr
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_augeas
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_awk
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_base64
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_basename
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_bash
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_baudrates
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_baz
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_beep
@@ -397,7 +405,9 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_chkconfig
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_chmod
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_chown
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_chroot
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_chsh
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_cksum
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_clay
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_cmdambivalent
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_cmdstring
@@ -410,6 +420,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_cp
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_cpio
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_cplay
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_crontab
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_cscope
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_cssh
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ctags_tags
@@ -429,6 +440,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_dict
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_dict_words
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_diff
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_diff3
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_diff_options
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_diffstat
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_dig
@@ -442,9 +454,11 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_domains
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_drill
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_dsh
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_dtruss
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_du
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_dvi
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ecasound
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ed
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_elfdump
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_elinks
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_elm
@@ -483,6 +497,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_getfacl
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_getmail
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_getopt
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ghostscript
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_git
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_global
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_global_tags
@@ -499,7 +514,6 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_groff
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_groups
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_growisofs
-%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_gs
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_gsettings
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_guilt
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_gzip
@@ -507,6 +521,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_head
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_hexdump
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_hg
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_hostname
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_hosts
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_iconv
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_id
@@ -548,7 +563,10 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_lp
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ls
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_lsof
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_lua
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_luarocks
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_lynx
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_lz4
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_lzop
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_mail
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_mailboxes
@@ -577,7 +595,9 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ncftp
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_net_interfaces
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_netcat
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_netstat
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_newsgroups
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_nginx
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ngrep
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_nice
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_nkf
@@ -625,6 +645,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_prcs
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_printenv
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_printers
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_process_names
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_prove
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ps
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_pspdf
@@ -642,11 +663,13 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_rar
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_rcs
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_readelf
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_readlink
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_remote_files
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_renice
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ri
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_rlogin
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_rm
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_rmdir
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_route
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_rrdtool
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_rsync
@@ -656,6 +679,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_sablotron
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_samba
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_sccs
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_scons
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_screen
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_script
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_sed
@@ -664,7 +688,9 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_services
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_setfacl
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_sh
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_shasum
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_showmount
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_shuf
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_shutdown
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_signals
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_sisu
@@ -678,6 +704,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_sqsh
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ssh
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_ssh_hosts
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_stat
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_stdbuf
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_stgit
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_strings
@@ -691,12 +718,14 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_swift
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_sys_calls
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_sysctl
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_tac
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_tail
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_tar
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_tar_archive
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_tardy
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_tcpdump
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_tcptraceroute
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_tee
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_telnet
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_terminals
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_tex
@@ -730,6 +759,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_uniq
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_unison
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_units
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_uptime
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_urls
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_user_admin
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_user_at_host
@@ -740,7 +770,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_vim
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_vmstat
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_vorbis
-%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_vorbiscomment
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_vpnc
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_vux
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_w
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_w3m
@@ -774,7 +804,9 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_acroread
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_code
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_dcop
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_eog
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_evince
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_geany
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_gnome-gv
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_gqview
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_gv
@@ -783,6 +815,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_matlab
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_mozilla
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_mplayer
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_mupdf
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_nautilus
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_nedit
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_netscape
@@ -831,6 +864,8 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_xterm
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_xv
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_xwit
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_zathura
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/X/_zeal
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh.zwc
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh/_add-zle-hook-widget
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh/_add-zsh-hook
@@ -897,7 +932,6 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh/_set
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh/_setopt
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh/_source
-%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh/_stat
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh/_strftime
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh/_subscript
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Zsh/_suffix_alias_files
@@ -1065,7 +1099,6 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/VCS_Info/VCS_INFO_nvcsformats
 %%DATADIR%%/%%ZSH_VER%%/functions/VCS_Info/VCS_INFO_patch2subject
 %%DATADIR%%/%%ZSH_VER%%/functions/VCS_Info/VCS_INFO_quilt
-%%DATADIR%%/%%ZSH_VER%%/functions/VCS_Info/VCS_INFO_realpath
 %%DATADIR%%/%%ZSH_VER%%/functions/VCS_Info/VCS_INFO_reposub
 %%DATADIR%%/%%ZSH_VER%%/functions/VCS_Info/VCS_INFO_set
 %%DATADIR%%/%%ZSH_VER%%/functions/VCS_Info/VCS_INFO_set-patch-format
