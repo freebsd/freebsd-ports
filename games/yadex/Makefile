@@ -30,36 +30,30 @@ SEARCH_DESC=		Thing, linedef, or sector search by type
 EXTRA_TOOLS_DESC=	Add a few extra tools to Yadex' repertoire
 LAPTOP_KEYS_DESC=	Key bindings for easier editing on laptops
 
-.include <bsd.port.options.mk>
-
-PATCH_SITES=	http://glbsp.sourceforge.net/%SUBDIR%/
-PATCH_SITE_SUBDIR=	${PORTNAME}
+PATCH_SITES=	http://glbsp.sourceforge.net/yadex/
 PATCH_DIST_STRIP=	-p1
 PATCH_PREFIX=	Yadex_${PORTVERSION:S/.//g}
 PATCH_SUFFIX=	.diff
 PATCHFILES=	${PATCH_PREFIX}_Depend${PATCH_SUFFIX}
 
+3D_RENDER_PATCHFILES=	${PATCH_PREFIX}_Render3D${PATCH_SUFFIX}
+SEARCH_PATCHFILES=	${PATCH_PREFIX}_Find${PATCH_SUFFIX}
+EXTRA_TOOLS_PATCHFILES=	${PATCH_PREFIX}_Tools${PATCH_SUFFIX}
+LAPTOP_KEYS_PATCHFILES=	${PATCH_PREFIX}_Keys${PATCH_SUFFIX}
+
+.include <bsd.port.options.mk>
+
 .if ${PORT_OPTIONS:M3D_RENDER}
-PATCHFILES+=	${PATCH_PREFIX}_Render3D${PATCH_SUFFIX}
 PLIST_SUB+=	3DRENDER=""
 .else
 PLIST_SUB+=	3DRENDER="@comment "
 .endif
-.if ${PORT_OPTIONS:MSEARCH}
-PATCHFILES+=	${PATCH_PREFIX}_Find${PATCH_SUFFIX}
-.endif
-.if ${PORT_OPTIONS:MEXTRA_TOOLS}
-PATCHFILES+=	${PATCH_PREFIX}_Tools${PATCH_SUFFIX}
-.endif
-.if ${PORT_OPTIONS:MLAPTOP_KEYS}
-PATCHFILES+=	${PATCH_PREFIX}_Keys${PATCH_SUFFIX}
-.endif
 
-post-patch:
-.if ${PORT_OPTIONS:MWHITE_BG}
+post-patch-WHITE_BG-on:
 	@${REINPLACE_CMD} -E 's,^#(CXXFLAGS \+= -DWHITE_BACKGROUND)$$,\1,' \
 		${WRKSRC}/${MAKEFILE}
-.endif
+
+post-patch:
 # Fix the build against Clang 6.0.0
 	@${REINPLACE_CMD} -e 's,1000000ul,1000000l,' ${WRKSRC}/src/input.cc
 
