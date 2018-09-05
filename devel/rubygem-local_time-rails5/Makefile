@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	local_time
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5
