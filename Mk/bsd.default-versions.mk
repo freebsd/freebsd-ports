@@ -77,7 +77,7 @@ PERL5_DEFAULT:=		${_PERL5_FROM_BIN:R}
 # Possible values: 9.3, 9.4, 9.5, 9.6, 10
 PGSQL_DEFAULT?=		9.5
 # Possible values: 5.6, 7.0, 7.1, 7.2
-PHP_DEFAULT?=		5.6
+PHP_DEFAULT?=		7.1
 # Possible values: 2.7, 3.4, 3.5, 3.6, 3.7
 PYTHON_DEFAULT?=	2.7
 # Possible values: 2.7
