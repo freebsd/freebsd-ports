@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML_RPC2
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	net devel pear
 
 MAINTAINER=	joneum@FreeBSD.org
