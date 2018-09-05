@@ -1,3 +1,4 @@
+TIMESTAMP = 1072661760
 SHA256 (yadex/yadex-1.7.0.tar.gz) = 316aca295b647b45d6d0d359fd7bba0448e7e114d295347add7ac0e87aa0f446
 SIZE (yadex/yadex-1.7.0.tar.gz) = 551318
 SHA256 (yadex/Yadex_170_Depend.diff) = d2cf391fb1aaf1fb6ac60f3fb2bb50c549389ef3a0590b838922f0251240a9f3
@@ -10,3 +11,5 @@ SHA256 (yadex/Yadex_170_Tools.diff) = 2c1573de67aee31a4d734831c95e0421f1816598c4
 SIZE (yadex/Yadex_170_Tools.diff) = 17179
 SHA256 (yadex/Yadex_170_Keys.diff) = d93e63b1baaaff769442245243027cb6aadde166a3004726e187eb3697decd15
 SIZE (yadex/Yadex_170_Keys.diff) = 1496
+SHA256 (yadex/Yadex_170_Hexen.diff) = b7ac148c7bbbc4f122c350bf13eb81ce8daff56230be42101e5d7817b63f5c38
+SIZE (yadex/Yadex_170_Hexen.diff) = 44138
