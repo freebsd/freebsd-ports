@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ss5
-PORTVERSION=	3.8.9
-DISTVERSIONSUFFIX=	-8
+DISTVERSION=	3.8.9-8
 CATEGORIES=	net security
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}${DISTVERSIONSUFFIX}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	raffaele.delorenzo@libero.it
 COMMENT=	SOCKS v4/v5 application layer gateway with many features
@@ -13,7 +12,7 @@ COMMENT=	SOCKS v4/v5 application layer gateway with many features
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/License
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/-[0-9]+//}
 
 USES=		ssl
 USE_OPENLDAP=	yes

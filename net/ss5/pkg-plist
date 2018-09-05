@@ -1,9 +1,3 @@
-%%ETCDIR%%/ss5.conf
-%%ETCDIR%%/ss5.conf.sample
-%%ETCDIR%%/ss5.ha
-%%ETCDIR%%/ss5.ha.sample
-%%ETCDIR%%/ss5.passwd
-%%ETCDIR%%/ss5.passwd.sample
 lib/ss5/mod_authentication.so
 lib/ss5/mod_authorization.so
 lib/ss5/mod_balance.so
@@ -38,3 +32,6 @@ sbin/ss5srv
 %%DATADIR%%/statmgr.cgi
 @dir /var/log/ss5
 @dir /var/run/ss5
+@sample %%ETCDIR%%/ss5.conf.sample
+@sample %%ETCDIR%%/ss5.ha.sample
+@sample %%ETCDIR%%/ss5.passwd.sample
