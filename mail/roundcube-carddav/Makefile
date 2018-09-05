@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	carddav
-PORTVERSION=	2.0.4
-PORTREVISION=	2
+PORTVERSION=	3.0.2
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/blind-coder/rcmcarddav/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	roundcube-

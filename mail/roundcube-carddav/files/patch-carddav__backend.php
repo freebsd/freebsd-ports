@@ -1,6 +1,6 @@
---- carddav_backend.php.orig	2017-06-12 12:21:39 UTC
+--- carddav_backend.php.orig	2018-05-28 06:30:30 UTC
 +++ carddav_backend.php
-@@ -694,9 +694,7 @@ EOF
+@@ -716,9 +716,7 @@ EOF
  <C:addressbook-multiget xmlns:D="DAV:" xmlns:C="urn:ietf:params:xml:ns:carddav">
  <D:prop>
      <D:getetag/>
