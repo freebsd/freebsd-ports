@@ -1,0 +1,6 @@
+Optimist is a commandline option parser for Ruby that just gets out of your way.
+One line of code per option is all you need to write. For that, you get a nice
+automatically-generated help page, robust option parsing, and sensible defaults
+for everything you don't specify.
+
+WWW: https://manageiq.github.io/optimist/
