@@ -64,6 +64,15 @@ GYP_DEFINES:=	${GYP_DEFINES},TDESKTOP_DISABLE_GTK_INTEGRATION
 
 .include <bsd.port.pre.mk>
 
+
+# This port needs C++17 libs/compiler.
+# Currently, this is not supported by USES=compiler
+# Using clang does not work: libc++ in base does not support C++17.
+# Using gcc does not work: using both libc++ and libstdc++ causes crashes.
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
+BROKEN=		Need C++17 support in compiler and runtime
+.endif
+
 # Since 1.3.14, the clang compiler provided in 11.1 (4.0.0) gets a segmentation
 # fault.
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1102000
