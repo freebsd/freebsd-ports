@@ -2,6 +2,7 @@
 
 PORTNAME=	ttyd
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	neel@neelc.org

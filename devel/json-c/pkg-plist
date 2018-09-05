@@ -16,6 +16,6 @@ include/json-c/linkhash.h
 include/json-c/printbuf.h
 lib/libjson-c.a
 lib/libjson-c.so
-lib/libjson-c.so.3
-lib/libjson-c.so.3.0.1
+lib/libjson-c.so.4
+lib/libjson-c.so.4.0.0
 libdata/pkgconfig/json-c.pc
