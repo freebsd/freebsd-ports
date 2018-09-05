@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bison
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
@@ -36,6 +36,6 @@ NLS_USES=		gettext
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(docdir)\(/examples\)|$$(datarootdir)\1/bison|' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's/\(.*\) _Noreturn void/_Noreturn \1 void/' ${WRKSRC}/data/*.c ${WRKSRC}/lib/*.[ch]
+	@${REINPLACE_CMD} -e 's|\(.*\) _Noreturn void|_Noreturn \1 void|' ${WRKSRC}/data/*.c ${WRKSRC}/lib/*.[ch]
 
 .include <bsd.port.mk>

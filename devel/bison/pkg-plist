@@ -39,6 +39,8 @@ share/aclocal/bison-i18n.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mfcalc/mfcalc.y
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpcalc/rpcalc.y
 %%NLS%%share/locale/ast/LC_MESSAGES/bison-runtime.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/bison-runtime.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/da/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/da/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/de/LC_MESSAGES/bison-runtime.mo
