@@ -1,6 +1,7 @@
 %%WWWDIR%%/.gitignore
 %%WWWDIR%%/ChangeLog
 %%WWWDIR%%/INSTALL
+%%WWWDIR%%/INSTALLFROMGIT.md
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
 %%WWWDIR%%/carddav.php
@@ -29,6 +30,9 @@
 %%WWWDIR%%/dbmigrations/0004-fixtimestampdefaultvalue/mysql.sql
 %%WWWDIR%%/dbmigrations/0004-fixtimestampdefaultvalue/postgres.sql
 %%WWWDIR%%/dbmigrations/0004-fixtimestampdefaultvalue/sqlite3.sql
+%%WWWDIR%%/dbmigrations/0005-changemysqlut8toutf8mb4/mysql.sql
+%%WWWDIR%%/dbmigrations/0005-changemysqlut8toutf8mb4/postgres.sql
+%%WWWDIR%%/dbmigrations/0005-changemysqlut8toutf8mb4/sqlite3.sql
 %%WWWDIR%%/localization/cs_CZ.inc
 %%WWWDIR%%/localization/de_DE.inc
 %%WWWDIR%%/localization/en_US.inc
