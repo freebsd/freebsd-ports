@@ -3,6 +3,7 @@
 
 PORTNAME=	dnsperf
 PORTVERSION=	2.1.0.0
+PORTREVISION=	1
 CATEGORIES=	dns benchmarks net
 MASTER_SITES=	ftp://ftp.nominum.com/pub/nominum/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}-1

@@ -3,7 +3,7 @@
 
 PORTNAME=	scriptNugget
 PORTVERSION=	0.5.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	SF/razorbacktm/Nuggets
 PKGNAMEPREFIX=	razorback-

@@ -2,6 +2,7 @@
 
 PORTNAME=	slurm
 DISTVERSION=	17.02.11
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.schedmd.com/download/latest/ \
 		http://www.schedmd.com/download/archive/ \

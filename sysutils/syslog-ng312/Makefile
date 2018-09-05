@@ -3,7 +3,7 @@
 
 PORTNAME=	syslog-ng
 DISTVERSION=	3.12.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
