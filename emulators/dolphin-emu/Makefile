@@ -32,7 +32,7 @@ LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
 		libgtest.so:devel/googletest
 
 LLD_UNSAFE=	yes
-USES=		cmake compiler:c++11-lib iconv openal pkgconfig
+USES=		cmake compiler:c++11-lib gnome iconv openal pkgconfig
 
 USE_GITHUB=	yes
 GH_PROJECT=	dolphin

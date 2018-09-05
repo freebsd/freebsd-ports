@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libguile-2.0.so:lang/guile2 \
 		libgc.so:devel/boehm-gc
 
-USES=		cmake desktop-file-utils gettext-runtime pkgconfig
+USES=		cmake desktop-file-utils gettext-runtime gnome pkgconfig
 
 USE_GITHUB=	yes
 

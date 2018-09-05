@@ -14,7 +14,7 @@ COMMENT=	Popular 32-card trick-taking game played in France
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake pkgconfig
+USES=		gmake gnome pkgconfig
 USE_GNOME=	gtk20 intltool
 GNU_CONFIGURE=	yes
 

@@ -23,7 +23,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 
-USES=		autoreconf gmake iconv jpeg pkgconfig python:2.7,run shebangfix
+USES=		autoreconf gmake gnome iconv jpeg pkgconfig python:2.7,run shebangfix
 SHEBANG_FILES=	openalchemist-config
 
 USE_GNOME=	pygtk2

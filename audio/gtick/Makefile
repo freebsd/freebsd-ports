@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libpulse-simple.so:audio/pulseaudio
 
-USES=		pkgconfig desktop-file-utils
+USES=		desktop-file-utils gnome pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes

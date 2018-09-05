@@ -18,7 +18,7 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 
 WRKSRC_SUBDIR=	${PORTNAME}
 
-USES=		cmake desktop-file-utils dos2unix gettext iconv libarchive \
+USES=		cmake desktop-file-utils dos2unix gettext gnome iconv libarchive \
 		libtool pkgconfig tar:bzip2
 
 USE_GITHUB=	yes
