@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdom
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	www
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
