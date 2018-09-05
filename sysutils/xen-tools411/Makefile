@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools411
 PORTVERSION=	4.11.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
@@ -19,8 +19,6 @@ LIB_DEPENDS=	libyajl.so:devel/yajl \
 		liblzo2.so:archivers/lzo2 \
 		libpixman-1.so:x11/pixman \
 		libargp.so:devel/argp-standalone
-DOCS_BUILD_DEPENDS=markdown>0:textproc/markdown \
-		hs-pandoc>0:textproc/hs-pandoc
 BUILD_DEPENDS=	seabios>0:misc/seabios
 RUN_DEPENDS=	seabios>0:misc/seabios
 
