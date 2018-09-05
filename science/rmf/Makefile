@@ -2,6 +2,7 @@
 
 PORTNAME=	rmf
 DISTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	science graphics
 
 MAINTAINER=	yuri@FreeBSD.org
