@@ -1,0 +1,10 @@
+--- Resource/Init/gs_init.ps.orig	2018-09-03 08:50:27 UTC
++++ Resource/Init/gs_init.ps
+@@ -2041,6 +2041,7 @@ readonly def
+             % Default resources (OpenVMS, see comment above.) :
+           [ currentsystemparams /GenericResourceDir get] (*) .file_name_separator (*)
+             concatstrings concatstrings .generate_dir_list_templates
++          currentuserparams /ICCProfilesDir get copystring dup dup length 1 sub (*) putinterval
+         } if
+       ]
+       /PermitFileWriting [
