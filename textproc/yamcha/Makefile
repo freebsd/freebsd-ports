@@ -10,6 +10,8 @@ MASTER_SITES=	http://chasen.org/~taku/software/yamcha/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Multipurpose CHunk Annotator
 
+BROKEN_FreeBSD_12=	declaration of 'exit' has a different language linkage
+
 BUILD_DEPENDS=	svm_learn:science/svmlight
 
 GNU_CONFIGURE=	yes
