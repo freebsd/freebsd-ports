@@ -195,6 +195,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/VCard.pm
 %%SITE_PERL%%/Image/ExifTool/Validate.pm
 %%SITE_PERL%%/Image/ExifTool/Vorbis.pm
+%%SITE_PERL%%/Image/ExifTool/WTV.pm
 %%SITE_PERL%%/Image/ExifTool/WriteCanonRaw.pl
 %%SITE_PERL%%/Image/ExifTool/WriteExif.pl
 %%SITE_PERL%%/Image/ExifTool/WriteIPTC.pl
@@ -372,6 +373,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::VCard.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Validate.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Vorbis.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::WTV.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WriteCanonRaw.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WriteExif.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WriteIPTC.3.gz
