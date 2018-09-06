@@ -1,11 +1,11 @@
 bin/netcardmgr
 bin/networkmgr
 etc/xdg/autostart/networkmgr.desktop
-%%PYTHON_SITELIBDIR%%/networkmgr-1.10-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/networkmgr-1.10-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/networkmgr-1.10-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/networkmgr-1.10-py%%PYTHON_VER%%.egg-info/requires.txt
-%%PYTHON_SITELIBDIR%%/networkmgr-1.10-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/networkmgr-2.8-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/networkmgr-2.8-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/networkmgr-2.8-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/networkmgr-2.8-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/networkmgr-2.8-py%%PYTHON_VER%%.egg-info/top_level.txt
 share/icons/hicolor/128x128/apps/nm-adhoc.png
 share/icons/hicolor/128x128/apps/nm-device-wired-secure.png
 share/icons/hicolor/128x128/apps/nm-no-connection.png
