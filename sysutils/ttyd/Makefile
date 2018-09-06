@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ttyd
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	neel@neelc.org
@@ -15,11 +14,11 @@ BUILD_DEPENDS=	xxd:editors/vim-console
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libwebsockets.so:net/libwebsockets
 
+USES=		cmake pkgconfig ssl
+USE_CSTD=	c99
 USE_GITHUB=	yes
 GH_ACCOUNT=	tsl0922
 
-USES=		cmake pkgconfig ssl
-USE_CSTD=	c99
 PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
