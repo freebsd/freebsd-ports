@@ -5,7 +5,6 @@
 %%WWWDIR%%/appinfo/routes.php
 %%WWWDIR%%/appinfo/signature.json
 %%WWWDIR%%/css/style.scss
-%%WWWDIR%%/css/vendor/angularui/ui-select/select2.css
 %%WWWDIR%%/img/arrow-left.svg
 %%WWWDIR%%/img/arrow-right.svg
 %%WWWDIR%%/img/favicon-touch.png
@@ -29,7 +28,7 @@
 %%WWWDIR%%/js/vendor/ui-select/dist/select.min.css
 %%WWWDIR%%/js/vendor/ui-select/dist/select.min.js
 %%WWWDIR%%/js/vendor_legacy/jquery-timepicker/jquery.ui.timepicker.js
-%%WWWDIR%%/l10n/.tx/config
+%%WWWDIR%%/l10n/.gitkeep
 %%WWWDIR%%/l10n/af.js
 %%WWWDIR%%/l10n/af.json
 %%WWWDIR%%/l10n/ar.js
