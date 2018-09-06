@@ -2,4 +2,4 @@
 
 DATADIR="%%DATADIR%%"
 
-exec %%JAVA%% -jar "${DATADIR}/closure-compiler-v%%PORTVERSION%%.jar" $*
+exec %%JAVA%% -server -XX:+TieredCompilation -jar "${DATADIR}/closure-compiler-v%%PORTVERSION%%.jar" $*
