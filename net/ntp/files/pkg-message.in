@@ -1,0 +1,11 @@
+Please add
+
+	ntpd_program="%%PREFIX%%/sbin/ntpd"
+	ntpdate_program="%%PREFIX%%/sbin/ntpdate"
+
+to your /etc/rc.conf or run
+
+	sysrc ntpd_program="%%PREFIX%%/sbin/ntpd"
+	sysrc ntpdate_program="%%PREFIX%%/sbin/ntpdate"
+
+to enable ntp from ports/packages instead of base ntp.
