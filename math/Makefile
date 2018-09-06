@@ -669,6 +669,7 @@
     SUBDIR += py-bitvector
     SUBDIR += py-bottleneck
     SUBDIR += py-cdecimal
+    SUBDIR += py-chaospy
     SUBDIR += py-colormath
     SUBDIR += py-cryptominisat
     SUBDIR += py-cvxopt
