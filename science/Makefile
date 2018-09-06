@@ -97,6 +97,7 @@
     SUBDIR += kalzium
     SUBDIR += kalzium-kde4
     SUBDIR += kst2
+    SUBDIR += lammps
     SUBDIR += lamprop
     SUBDIR += libaec
     SUBDIR += libccp4
