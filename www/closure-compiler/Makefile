@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	closure-compiler
-PORTVERSION=	20160911
+PORTVERSION=	20180805
 CATEGORIES=	www java
 MASTER_SITES=	http://dl.google.com/closure-compiler/
 DISTNAME=	compiler-${PORTVERSION}
@@ -20,7 +20,7 @@ SUB_LIST=	JAVA="${JAVA}" PORTVERSION=${PORTVERSION}
 USE_JAVA=	yes
 
 PLIST_FILES=	bin/closure-compiler \
-		%%DATADIR%%/closure-compiler-v${PORTVERSION}.jar
+		${DATADIR}/closure-compiler-v${PORTVERSION}.jar
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
