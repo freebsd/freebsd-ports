@@ -1,0 +1,11 @@
+include/sleef.h
+include/sleefdft.h
+lib/libsleef.so
+lib/libsleef.so.3
+lib/libsleef.so.3.3
+lib/libsleefdft.so
+lib/libsleefdft.so.3
+lib/libsleefdft.so.3.3
+lib/libsleefgnuabi.so
+lib/libsleefgnuabi.so.3
+lib/libsleefgnuabi.so.3.3
