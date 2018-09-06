@@ -3,11 +3,11 @@
 
 PORTNAME=	libwapcaplet
 PORTVERSION=	0.4.1
+DISTVERSIONSUFFIX=	-src
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	neel@neelc.org
 COMMENT=	String internment library
 
 LICENSE=	MIT
@@ -18,14 +18,14 @@ BUILD_DEPENDS=	netsurf-buildsystem>=1.5:devel/netsurf-buildsystem \
 USES=	gmake
 USE_LDCONFIG=	yes
 
-WRKSRC=	${WRKDIR}/${DISTNAME:S/-src//}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAKE_ENV+=	COMPONENT_TYPE="lib-shared" \
+MAKE_ENV=	COMPONENT_TYPE="lib-shared" \
 		FLEX="${LOCALBASE}/bin/flex"
 
-PLIST_SUB+=	VERSION=${PORTVERSION}
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libwapcaplet.so*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libwapcaplet.so
 
 .include <bsd.port.mk>
