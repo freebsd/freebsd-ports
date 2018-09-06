@@ -238,6 +238,7 @@ man/man1/anyremote.1.gz
 %%DATADIR%%/cfg-data/Server-mode/amarok.cfg
 %%DATADIR%%/cfg-data/Server-mode/amixer.cfg
 %%DATADIR%%/cfg-data/Server-mode/aqualung.cfg
+%%DATADIR%%/cfg-data/Server-mode/atril.cfg
 %%DATADIR%%/cfg-data/Server-mode/audacious.cfg
 %%DATADIR%%/cfg-data/Server-mode/autoUpload.cfg
 %%DATADIR%%/cfg-data/Server-mode/autolock.cfg
@@ -246,12 +247,14 @@ man/man1/anyremote.1.gz
 %%DATADIR%%/cfg-data/Server-mode/clementine.cfg
 %%DATADIR%%/cfg-data/Server-mode/cmus.cfg
 %%DATADIR%%/cfg-data/Server-mode/comix.cfg
+%%DATADIR%%/cfg-data/Server-mode/coverViewer.cfg
 %%DATADIR%%/cfg-data/Server-mode/deadbeef.cfg
 %%DATADIR%%/cfg-data/Server-mode/decibel.cfg
 %%DATADIR%%/cfg-data/Server-mode/digikam.cfg
 %%DATADIR%%/cfg-data/Server-mode/djview.cfg
 %%DATADIR%%/cfg-data/Server-mode/dragon.cfg
 %%DATADIR%%/cfg-data/Server-mode/eog.cfg
+%%DATADIR%%/cfg-data/Server-mode/eom.cfg
 %%DATADIR%%/cfg-data/Server-mode/evince.cfg
 %%DATADIR%%/cfg-data/Server-mode/exaile.cfg
 %%DATADIR%%/cfg-data/Server-mode/exampleEditField.cfg
@@ -265,6 +268,7 @@ man/man1/anyremote.1.gz
 %%DATADIR%%/cfg-data/Server-mode/fileManager.cfg
 %%DATADIR%%/cfg-data/Server-mode/fileManager2.cfg
 %%DATADIR%%/cfg-data/Server-mode/fileManager3.cfg
+%%DATADIR%%/cfg-data/Server-mode/fileManager4.cfg
 %%DATADIR%%/cfg-data/Server-mode/foobnix.cfg
 %%DATADIR%%/cfg-data/Server-mode/freevo.cfg
 %%DATADIR%%/cfg-data/Server-mode/gmusicbrowser.cfg
@@ -296,10 +300,12 @@ man/man1/anyremote.1.gz
 %%DATADIR%%/cfg-data/Server-mode/mpd.cfg
 %%DATADIR%%/cfg-data/Server-mode/mplayer.cfg
 %%DATADIR%%/cfg-data/Server-mode/mpris.cfg
+%%DATADIR%%/cfg-data/Server-mode/mpv.cfg
 %%DATADIR%%/cfg-data/Server-mode/myth-tv.cfg
 %%DATADIR%%/cfg-data/Server-mode/noise.cfg
 %%DATADIR%%/cfg-data/Server-mode/nokia-e61.cfg
 %%DATADIR%%/cfg-data/Server-mode/nokia-e70.cfg
+%%DATADIR%%/cfg-data/Server-mode/nokia-e71.cfg
 %%DATADIR%%/cfg-data/Server-mode/nokia-e75.cfg
 %%DATADIR%%/cfg-data/Server-mode/okular.cfg
 %%DATADIR%%/cfg-data/Server-mode/parserTest.cfg
@@ -328,6 +334,7 @@ man/man1/anyremote.1.gz
 %%DATADIR%%/cfg-data/Utils/aliases-iviewer.cfg
 %%DATADIR%%/cfg-data/Utils/aliases-server-fbrowser-v3.cfg
 %%DATADIR%%/cfg-data/Utils/aliases-server-fbrowser-v3i.cfg
+%%DATADIR%%/cfg-data/Utils/aliases-server-fbrowser-v4i.cfg
 %%DATADIR%%/cfg-data/Utils/aliases-server-pix-viewer.cfg
 %%DATADIR%%/cfg-data/Utils/aliases-server-player.cfg
 %%DATADIR%%/cfg-data/Utils/aliases-server-presentation.cfg
@@ -337,6 +344,7 @@ man/man1/anyremote.1.gz
 %%DATADIR%%/cfg-data/Utils/anyremote.gui
 %%DATADIR%%/cfg-data/Utils/generate_cover.sh
 %%DATADIR%%/cfg-data/Utils/generate_poster.sh
+%%DATADIR%%/cfg-data/Utils/get-installed.sh
 %%DATADIR%%/cfg-data/Utils/getPlayList.sh
 %%DATADIR%%/cfg-data/Utils/iViewer/bg_portrait.png
 %%DATADIR%%/cfg-data/Utils/iViewer/btn_repeat_off.png
@@ -362,7 +370,6 @@ man/man1/anyremote.1.gz
 %%DATADIR%%/cfg-data/Utils/iViewer/prev.png
 %%DATADIR%%/cfg-data/Utils/iViewer/stop-active.png
 %%DATADIR%%/cfg-data/Utils/iViewer/stop.png
-%%DATADIR%%/cfg-data/Utils/imdb-mf.sh
 %%DATADIR%%/cfg-data/Utils/message.sh
 %%DATADIR%%/cfg-data/Utils/pulse-audio-ctl.sh
 %%DATADIR%%/cfg-data/Utils/registry.sh
@@ -558,6 +565,7 @@ man/man1/anyremote.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/phones.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/pre-setup.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/pre.html
+%%PORTDOCS%%%%DOCSDIR%%/doc-html/privacy.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/set-fm.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/set-icons.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-html/set-list.html
