@@ -1,7 +1,4 @@
 *******************************************************************************
-* Known issue on FreeBSD 11.1-RELEASE or later
-*   - If you run into segfault with `Pkg.update()`,
-*     please issue `# sysctl security.bsd.stack_guard_page=0` to disable
-*     stack guard.
-*     For more info, please see https://github.com/JuliaLang/julia/issues/23328
+If you're looking for the older version of Julia.
+Please checkout lang/julia07 or lang/julia06.
 *******************************************************************************
