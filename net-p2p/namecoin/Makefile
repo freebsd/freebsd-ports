@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	namecoin
-PORTVERSION=	0.13.2
+PORTVERSION=	0.16.2
+DISTVERSIONPREFIX=	nc
 PORTEPOCH=	1
 CATEGORIES=	net-p2p dns
 
@@ -17,21 +18,20 @@ LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 CONFLICTS_INSTALL=	namecoin-beta-[0-9]* namecoin-beta-daemon-[0-9]* namecoin-beta-utils-[0-9]* \
 		namecoin-stable-[0-9]* namecoin-stable-daemon-[0-9]* namecoin-stable-utils-[0-9]*
 
-USES=		autoreconf compiler:c++11-lib gmake libtool pkgconfig shebangfix ssl
-SHEBANG_FILES=	src/test/*.py
+USES=		autoreconf compiler:c++11-lib gmake libtool pkgconfig ssl
 GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	indolering:graphics
 GH_PROJECT=	namecoin-core namecoin-graphics:graphics
-GH_TAGNAME=	ab08f76 a13a73b:graphics
+GH_TAGNAME=	a13a73b:graphics
 
 SLAVE_PORT?=	no
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
 USES+=		desktop-file-utils qt:4
 USE_QT=		corelib gui moc_build linguisttools_build network qmake_build \
-		rcc_build uic_build
+		rcc_build uic_build xml
 
 BUILD_DEPENDS+=	protoc:devel/protobuf \
 		svg2png:graphics/svg2png
@@ -88,7 +88,8 @@ ZMQ_RUN_DEPENDS=	libzmq4>0:net/libzmq4
 CONFIGURE_ARGS?=	--without-libs \
 			--with-gui=qt4 \
 			--without-daemon \
-			--without-utils
+			--without-utils \
+			--disable-man
 
 CONFIGURE_ENV=	CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB} -lcrypto" \
 		SSL_CFLAGS="-I${OPENSSLINC}" SSL_LIBS="-L${OPENSSLLIB} -lssl" \

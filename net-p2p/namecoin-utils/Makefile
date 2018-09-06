@@ -21,7 +21,8 @@ CONFIGURE_ARGS=	--without-daemon \
 		--without-libs \
 		--without-qrencode \
 		--with-utils \
-		--disable-wallet
+		--disable-wallet \
+		--disable-man
 
 PLIST_FILES=	bin/namecoin-cli bin/namecoin-tx
 
