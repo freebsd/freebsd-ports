@@ -1,4 +1,4 @@
---- config/unicorn.rb.example.orig	2017-06-07 20:58:14 UTC
+--- config/unicorn.rb.example.orig	2018-08-22 22:40:32 UTC
 +++ config/unicorn.rb.example
 @@ -33,12 +33,12 @@ worker_processes 3
  
@@ -30,5 +30,5 @@
 +stderr_path "%%PREFIX%%/www/gitlab-ce/log/unicorn.stderr.log"
 +stdout_path "%%PREFIX%%/www/gitlab-ce/log/unicorn.stdout.log"
  
- # combine Ruby 2.0.0dev or REE with "preload_app true" for memory savings
- # http://rubyenterpriseedition.com/faq.html#adapt_apps_for_cow
+ # Save memory by sharing the application code among multiple Unicorn workers
+ # with "preload_app true". See:

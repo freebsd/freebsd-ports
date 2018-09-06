@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	11.1.6
+PORTVERSION=	11.2.3
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -24,9 +24,9 @@ BUILD_DEPENDS=	gem:devel/ruby-gems
 # only rubygem-pg and rubygem-mysql are defined later as RUN_DEPENDS
 # for the options
 RUN_DEPENDS=	git>=2.16.2:devel/git \
-	gitlab-shell>=7.1.4:devel/gitlab-shell \
-	gitlab-workhorse>=5.0.0:www/gitlab-workhorse \
-	gitaly>=0.111.2:devel/gitaly \
+	gitlab-shell>=8.1.1:devel/gitlab-shell \
+	gitlab-workhorse>=5.1.0:www/gitlab-workhorse \
+	gitaly>=0.117.2:devel/gitaly \
 	gitlab-pages>=1.0.0:www/gitlab-pages \
 	redis>=2.8.23:databases/redis \
 	npm>=4.3.0:www/npm \
@@ -80,7 +80,7 @@ RUN_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-graphiql-rails>=1.4.10:devel/rubygem-graphiql-rails \
 	rubygem-hashie-forbidden_attributes>=0:devel/rubygem-hashie-forbidden_attributes \
 	rubygem-kaminari-rails4>=1.0:www/rubygem-kaminari-rails4 \
-	rubygem-hamlit26>=2.6.1:www/rubygem-hamlit26 \
+	rubygem-hamlit>=2.8.8:www/rubygem-hamlit \
 	rubygem-carrierwave>=1.1:www/rubygem-carrierwave \
 	rubygem-mini_magick>=0:graphics/rubygem-mini_magick \
 	rubygem-dropzonejs-rails07>=0.7.1:www/rubygem-dropzonejs-rails07 \
@@ -136,10 +136,11 @@ RUN_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-gitlab-flowdock-git-hook>=1.0.1:www/rubygem-gitlab-flowdock-git-hook \
 	rubygem-gemnasium-gitlab-service>=0.2:devel/rubygem-gemnasium-gitlab-service \
 	rubygem-slack-notifier1>=1.5.1:devel/rubygem-slack-notifier1 \
+	rubygem-hangouts-chat>=0.0.5:net/rubygem-hangouts-chat \
 	rubygem-asana>=0.6.0:www/rubygem-asana \
 	rubygem-ruby-fogbugz021>=0.2.1:devel/rubygem-ruby-fogbugz021 \
 	rubygem-kubeclient>=3.1.0:www/rubygem-kubeclient \
-	rubygem-sanitize>=4.6.5:textproc/rubygem-sanitize \
+	rubygem-sanitize>=4.6:textproc/rubygem-sanitize \
 	rubygem-babosa>=1.0.2:textproc/rubygem-babosa \
 	rubygem-loofah>=2.2:textproc/rubygem-loofah \
 	rubygem-licensee8>=8.9:devel/rubygem-licensee8 \
@@ -176,12 +177,13 @@ RUN_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-peek-rblineprof>=0.2.0:devel/rubygem-peek-rblineprof \
 	rubygem-peek-redis>=1.2.0:devel/rubygem-peek-redis \
 	rubygem-peek-sidekiq>=1.0.3:devel/rubygem-peek-sidekiq \
-	rubygem-prometheus-client-mmap>=0.9.3:devel/rubygem-prometheus-client-mmap \
+	rubygem-prometheus-client-mmap>=0.9.4:devel/rubygem-prometheus-client-mmap \
 	rubygem-octokit>=4.9:net/rubygem-octokit \
 	rubygem-mail_room>=0.9.1:mail/rubygem-mail_room \
 	rubygem-email_reply_trimmer>=0.1:mail/rubygem-email_reply_trimmer \
 	rubygem-html2text>=0:textproc/rubygem-html2text \
 	rubygem-ruby-prof>=0.17.0:devel/rubygem-ruby-prof \
+	rubygem-rbtrace>=0.4:devel/rubygem-rbtrace \
 	rubygem-oauth2>=1.4.0:net/rubygem-oauth2 \
 	rubygem-health_check26>=2.6.0:devel/rubygem-health_check26 \
 	rubygem-vmstat>=2.3.0:sysutils/rubygem-vmstat \
@@ -190,7 +192,7 @@ RUN_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-sshkey>=1.9.0:security/rubygem-sshkey \
 	rubygem-ed25519>=1.2:security/rubygem-ed25519 \
 	rubygem-bcrypt_pbkdf>=1.0:security/rubygem-bcrypt_pbkdf \
-	rubygem-gitaly-proto>=0.105.0:net/rubygem-gitaly-proto \
+	rubygem-gitaly-proto>=0.113.0:net/rubygem-gitaly-proto \
 	rubygem-grpc>=1.11.0:net/rubygem-grpc \
 	rubygem-gitaly>=0.8.0:net/rubygem-gitaly \
 	rubygem-google-protobuf351>=3.5.1:devel/rubygem-google-protobuf351 \
@@ -213,7 +215,7 @@ USE_RC_SUBR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-ce/tags
-GL_COMMIT=	014912084ddfbafa35da6d52f1b1b46b601bfc62
+GL_COMMIT=	06cbee3bf9dd960380390c0a5df9b67a52a85ba9
 
 USERS=	git
 GROUPS=	git
