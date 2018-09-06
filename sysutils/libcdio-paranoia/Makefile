@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcdio-paranoia
-PORTVERSION=	10.2+0.94+1
-PORTREVISION=	1
+PORTVERSION=	10.2+0.94+2
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU/libcdio
 
@@ -14,15 +13,19 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcdio.so:sysutils/libcdio
 
-USES=		gmake libtool localbase pathfix perl5 pkgconfig tar:bzip2
+USES=		gmake libtool localbase pathfix perl5 pkgconfig
 USE_LDCONFIG=	yes
+USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-versioned-libs
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/jp/man1|/ja/man1|' \
 		${WRKSRC}/doc/ja/Makefile.in
+	${REINPLACE_CMD} -e 's|freebsd10\.\*|freebsd[1-9][0-9].*|' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
