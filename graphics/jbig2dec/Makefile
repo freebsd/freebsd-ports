@@ -19,7 +19,7 @@ CONFIGURE_ENV=	ac_cv_func_getopt_long=yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		autoreconf libtool
+USES=		autoreconf:build libtool
 
 GH_ACCOUNT=	ArtifexSoftware
 USE_GITHUB=	yes
