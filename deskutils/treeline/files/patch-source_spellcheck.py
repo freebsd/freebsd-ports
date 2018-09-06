@@ -11,7 +11,7 @@ on the engine selected in the port options.
 +        
 +        """Set the default engine and check it first
 +        """
-+        defaultEngine = 'hunspell'
++        defaultEngine = '%%SPELL_ENGINE%%'
 +        engineOptions.move_to_end(defaultEngine, last=False)
 +
          if spellPath:
