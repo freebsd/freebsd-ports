@@ -28,6 +28,7 @@ include/libtorrent/aux_/file_progress.hpp
 include/libtorrent/aux_/merkle.hpp
 include/libtorrent/aux_/openssl.hpp
 include/libtorrent/aux_/proxy_settings.hpp
+include/libtorrent/aux_/route.h
 include/libtorrent/aux_/session_call.hpp
 include/libtorrent/aux_/session_impl.hpp
 include/libtorrent/aux_/session_interface.hpp
