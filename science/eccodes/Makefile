@@ -5,7 +5,7 @@ PORTNAME=	eccodes
 PORTVERSION=	2.8.2
 DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	science
-MASTER_SITES=	https://software.ecmwf.int/wiki/download/attachments/45757960/ \
+MASTER_SITES=	https://confluence.ecmwf.int/download/attachments/45757960/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org

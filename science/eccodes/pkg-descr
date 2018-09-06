@@ -18,4 +18,4 @@ ecCodes with only minor interface and behaviour changes. Interfaces for C,
 Fortran 90 and Python are all maintained as in GRIB-API. However, the GRIB-API
 Fortran 77 interface is no longer available.
 
-WWW: https://software.ecmwf.int/wiki/display/ECC
+WWW: https://confluence.ecmwf.int/display/ECC
