@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2017-10-19 11:03:03 UTC
+--- CMakeLists.txt.orig	2018-09-03 06:03:48 UTC
 +++ CMakeLists.txt
-@@ -51,6 +51,19 @@ if( ${TARGET_OS} STREQUAL "Linux" )
+@@ -49,6 +49,19 @@ if( ${TARGET_OS} STREQUAL "Linux" )
      message("Unsupported architecture: ${TARGET_ARCHITECTURE}" )
      return()
    endif()
@@ -20,7 +20,7 @@
  else()
    message("Unsupported OS: ${TARGET_OS}" )
    return()
-@@ -59,7 +72,8 @@ endif()
+@@ -57,7 +70,8 @@ endif()
  # The cmake documentation states that these are set.  They are not so we 
  # set them here
  set(CMAKE_HOST_SYSTEM_NAME ${TARGET_OS})
@@ -30,7 +30,7 @@
  
  # If we are not building as a part of LLVM, build Flang as an
  # standalone project, using LLVM as an external library:
-@@ -296,7 +310,7 @@ endif()
+@@ -289,7 +303,7 @@ endif()
  # Add appropriate flags for GCC
  if (LLVM_COMPILER_IS_GCC_COMPATIBLE)
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fno-common -Woverloaded-virtual -Wcast-qual -fno-strict-aliasing -pedantic -Wno-long-long -Wall -W -Wno-unused-parameter -Wwrite-strings")

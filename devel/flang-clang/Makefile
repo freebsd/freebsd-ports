@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flang-clang
-DISTVERSION=	5.0-20180506
+DISTVERSION=	6.0-g20180904
 PORTREVISION=	1
 CATEGORIES=	devel lang
 
@@ -14,17 +14,15 @@ LICENSE_NAME=	LLVM Release License
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	llvm50>=0:devel/llvm50
-RUN_DEPENDS=	llvm50>=0:devel/llvm50
-
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON_amd64=	for now only builds and is supported on amd64
 
-USE_LDCONFIG=	${PREFIX}/flang/lib
+BUILD_DEPENDS=	llvm60>=0:devel/llvm60
+RUN_DEPENDS=	llvm60>=0:devel/llvm60
+
 USES=		cmake:outsource compiler:c++11-lib libedit tar:xz perl5 \
 		python shebangfix
-
-USE_GNOME+=	libxml2
+USE_LDCONFIG=	${PREFIX}/flang/lib
+USE_GNOME=	libxml2
 
 SHEBANG_FILES=	tools/scan-view/bin/scan-view \
 		tools/clang-format/git-clang-format \
@@ -32,10 +30,10 @@ SHEBANG_FILES=	tools/scan-view/bin/scan-view \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	flang-compiler
-GH_PROJECT=	clang
-GH_TAGNAME=	64043d5
+GH_PROJECT=	flang-driver
+GH_TAGNAME=	742de5f
 
-CMAKE_ARGS+=	-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config50
+CMAKE_ARGS+=	-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config60
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/flang
 
