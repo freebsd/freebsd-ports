@@ -3,6 +3,7 @@
 
 PORTNAME=	piwigo
 DISTVERSION=	2.9.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/
 
