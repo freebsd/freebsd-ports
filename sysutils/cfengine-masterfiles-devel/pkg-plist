@@ -4,6 +4,7 @@
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/core/limit_robot_agents.cf
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/core/log_rotation.cf
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/core/main.cf
+%%EXAMPLESDIR%%/masterfiles/cfe_internal/core/watchdog/templates/watchdog.mustache
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/core/watchdog/watchdog.cf
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/enterprise/CFE_hub_specific.cf
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/enterprise/CFE_knowledge.cf
