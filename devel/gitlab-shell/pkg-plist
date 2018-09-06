@@ -2,6 +2,7 @@
 %%DATADIR%%/.gitignore
 %%DATADIR%%/.gitlab-ci.yml
 %%DATADIR%%/.rubocop.yml
+%%DATADIR%%/.ruby-version
 %%DATADIR%%/CHANGELOG
 %%DATADIR%%/CONTRIBUTING.md
 %%DATADIR%%/Gemfile
@@ -20,6 +21,7 @@
 @(,,555) %%DATADIR%%/bin/gitlab-keys
 @(,,555) %%DATADIR%%/bin/gitlab-shell
 @(,,555) %%DATADIR%%/bin/gitlab-shell-authorized-keys-check
+@(,,555) %%DATADIR%%/bin/gitlab-shell-authorized-principals-check
 @(,,555) %%DATADIR%%/bin/install
 @(,,555) %%DATADIR%%/bin/test-logger
 @sample %%DATADIR%%/config.yml.sample
@@ -39,6 +41,7 @@
 %%DATADIR%%/lib/gitlab_post_receive.rb
 %%DATADIR%%/lib/gitlab_shell.rb
 %%DATADIR%%/lib/httpunix.rb
+%%DATADIR%%/lib/http_helper.rb
 %%DATADIR%%/lib/names_helper.rb
 %%DATADIR%%/lib/object_dirs_helper.rb
 %%DATADIR%%/spec/gitlab_access_spec.rb
@@ -51,12 +54,14 @@
 %%DATADIR%%/spec/gitlab_net_spec.rb
 %%DATADIR%%/spec/gitlab_post_receive_spec.rb
 %%DATADIR%%/spec/gitlab_shell_authorized_keys_check_spec.rb
+%%DATADIR%%/spec/gitlab_shell_gitlab_shell_spec.rb
 %%DATADIR%%/spec/gitlab_shell_spec.rb
 %%DATADIR%%/spec/httpunix_spec.rb
 %%DATADIR%%/spec/names_helper_spec.rb
 %%DATADIR%%/spec/object_dirs_helper_spec.rb
 %%DATADIR%%/spec/spec_helper.rb
 %%DATADIR%%/spec/support/gl_id_test_hook
+%%DATADIR%%/support/go-update-vendor
 %%DATADIR%%/spec/support/hook_fail
 %%DATADIR%%/spec/support/hook_ok
 %%DATADIR%%/spec/vcr_cassettes/allowed-pull.yml
