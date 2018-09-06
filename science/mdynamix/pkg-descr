@@ -1,0 +1,16 @@
+MDynaMix is a general purpose molecular dynamics code for simulations of
+mixtures of rigid or flexible molecules, interacting by standard
+molecular-mechanics force field including electrostatic and Lennard-Jones
+potentials for electrostatic interactions as well as terms describing covalent
+bonds, angles and dihedral angles. The program is well suited for simulations of
+flexible molecules based on the double time step algorithm. Alternatively, rigid
+bonds can be treated by the SHAKE algorithm. Algorithms for NVE, NVT, NPT and
+anisotropic NPT ensembles are implemented. The long-range electrostatic
+interactions are treated by the Ewald summation method, or alternatively by a
+reation field or simple cutoff. The program can be run both in sequential and
+parallel execution, in the latter case the MPI parallel environment is required.
+From v.5.1 possibility for taking into account quantum motion of nuclei using
+Path Integral approach is implemented. Expanded ensemble mode of simulations for
+calculation of solvation free energies is added in v.5.2. 
+
+WWW: http://www.fos.su.se/~sasha/mdynamix/
