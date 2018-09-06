@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	picard
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	audio python
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
@@ -30,7 +30,7 @@ OPTIONS_DEFAULT=	PLUGINS
 ACOUSTID_RUN_DEPENDS=	fpcalc:audio/chromaprint
 
 PLUGINS_DESC=		Install various plugins to extend functionality
-PLUGINS_RUN_DEPENDS=	picard-plugins>0:audio/picard-plugins
+PLUGINS_RUN_DEPENDS=	picard-plugins>=2.0:audio/picard-plugins
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|distutils\.command\.install |setuptools\.command\.install |' \
