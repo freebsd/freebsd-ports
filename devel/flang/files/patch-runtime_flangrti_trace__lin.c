@@ -1,15 +1,15 @@
---- runtime/flangrti/trace_lin.c.orig	2017-10-19 11:03:03 UTC
+--- runtime/flangrti/trace_lin.c.orig	2018-09-03 06:03:48 UTC
 +++ runtime/flangrti/trace_lin.c
-@@ -85,7 +85,7 @@ static struct sigs sigs[] = {
+@@ -87,7 +87,7 @@ static struct sigs sigs[] = {
      {0, CODNULL, NULL} /* end of list */
  };
  
 -static gregset_t *regs; /* pointer to regs at signal  */
 +static void *regs; /* pointer to regs at signal  */
  
- /* walk the stack back */
- 
-@@ -99,7 +99,7 @@ __abort_trace(int skip)
+ extern char **__io_get_argv();
+ static char ** saved_argv;
+@@ -143,7 +143,7 @@ __abort_trace(int skip)
    char **strings;
    size_t i;
  

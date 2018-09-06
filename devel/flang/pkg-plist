@@ -2,7 +2,9 @@ bin/flang
 flang/bin/flang1
 flang/bin/flang2
 flang/include/ieee_arithmetic.mod
+flang/include/ieee_arithmetic_la.mod
 flang/include/ieee_exceptions.mod
+flang/include/ieee_exceptions_la.mod
 flang/include/ieee_features.mod
 flang/include/iso_c_binding.mod
 flang/include/iso_fortran_env.mod
