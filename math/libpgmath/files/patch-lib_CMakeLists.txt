@@ -1,0 +1,48 @@
+--- lib/CMakeLists.txt.orig	2018-09-03 06:03:48 UTC
++++ lib/CMakeLists.txt
+@@ -16,19 +16,23 @@
+ 
+ # This value will be the same as CMAKE_SYSTEM_PROCESSOR
+ set(PROCESSOR ${CMAKE_SYSTEM_PROCESSOR})
+-if(${LIBPGMATH_WITH_GENERIC} OR (NOT ${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64|aarch64"))
++if(${LIBPGMATH_WITH_GENERIC} OR (NOT ${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64|amd64|aarch64"))
+   set(PROCESSOR "generic")
+ endif()
+ 
++if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD" AND ${PROCESSOR} MATCHES "amd64")
++  set(PROCESSOR "x86_64")
++endif()
++
+ set_property(GLOBAL APPEND PROPERTY "TARGET_OBJECTS")
+ 
+-if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64|AMD64" AND NOT ${LIBPGMATH_WITH_GENERIC})
+-  if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "x86_64|AMD64|amd64" AND NOT ${LIBPGMATH_WITH_GENERIC})
++  if(${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD")
+ 
+     set(DEFINITIONS_L1
+       HOST_LINUX LINUX LINUX86 LINUX8664 MAXCPUS=256 MAXCPUSL=8 MAXCPUSR=8
+       TARGET_LINUX TARGET_LINUX_X86 TARGET_LINUX_X8664 TARGET_X86 TARGET_X8664
+-      __gnu_linux__ PG_PIC)
++      __gnu_linux__ linux PG_PIC)
+     set(FLAGS_L1 "-m64 -O3 ")
+ 
+     set(DEFINITIONS_L2
+@@ -210,7 +214,7 @@ else()
+ endif()
+ 
+ include_directories(common)
+-if(${PROCESSOR} MATCHES "x86_64|AMD64" AND NOT ${LIBPGMATH_WITH_GENERIC})
++if(${PROCESSOR} MATCHES "x86_64|AMD64|amd64" AND NOT ${LIBPGMATH_WITH_GENERIC})
+   include_directories(x86_64)
+ # elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "ppc64le")
+ #   include_directories(ppc64le)
+@@ -223,7 +227,7 @@ endif()
+ 
+ # Add directories to build
+ add_subdirectory(common)
+-if(${PROCESSOR} MATCHES "x86_64|AMD64" AND NOT ${LIBPGMATH_WITH_GENERIC})
++if(${PROCESSOR} MATCHES "x86_64|AMD64|amd64" AND NOT ${LIBPGMATH_WITH_GENERIC})
+   add_subdirectory(x86_64)
+ # elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "ppc64le")
+ #   add_subdirectory(ppc64le)
