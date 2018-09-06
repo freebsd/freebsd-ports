@@ -673,8 +673,6 @@ lib/node_modules/npm/node_modules/asap/browser-asap.js
 lib/node_modules/npm/node_modules/asap/browser-raw.js
 lib/node_modules/npm/node_modules/asap/package.json
 lib/node_modules/npm/node_modules/asap/raw.js
-lib/node_modules/npm/node_modules/asn1/.npmignore
-lib/node_modules/npm/node_modules/asn1/.travis.yml
 lib/node_modules/npm/node_modules/asn1/LICENSE
 lib/node_modules/npm/node_modules/asn1/README.md
 lib/node_modules/npm/node_modules/asn1/lib/ber/errors.js
@@ -684,8 +682,6 @@ lib/node_modules/npm/node_modules/asn1/lib/ber/types.js
 lib/node_modules/npm/node_modules/asn1/lib/ber/writer.js
 lib/node_modules/npm/node_modules/asn1/lib/index.js
 lib/node_modules/npm/node_modules/asn1/package.json
-lib/node_modules/npm/node_modules/asn1/tst/ber/reader.test.js
-lib/node_modules/npm/node_modules/asn1/tst/ber/writer.test.js
 lib/node_modules/npm/node_modules/assert-plus/AUTHORS
 lib/node_modules/npm/node_modules/assert-plus/CHANGES.md
 lib/node_modules/npm/node_modules/assert-plus/README.md
@@ -875,6 +871,7 @@ lib/node_modules/npm/node_modules/chownr/LICENSE
 lib/node_modules/npm/node_modules/chownr/README.md
 lib/node_modules/npm/node_modules/chownr/chownr.js
 lib/node_modules/npm/node_modules/chownr/package.json
+lib/node_modules/npm/node_modules/ci-info/CHANGELOG.md
 lib/node_modules/npm/node_modules/ci-info/LICENSE
 lib/node_modules/npm/node_modules/ci-info/README.md
 lib/node_modules/npm/node_modules/ci-info/index.js
@@ -1066,11 +1063,6 @@ lib/node_modules/npm/node_modules/dashdash/LICENSE.txt
 lib/node_modules/npm/node_modules/dashdash/README.md
 lib/node_modules/npm/node_modules/dashdash/etc/dashdash.bash_completion.in
 lib/node_modules/npm/node_modules/dashdash/lib/dashdash.js
-lib/node_modules/npm/node_modules/dashdash/node_modules/assert-plus/AUTHORS
-lib/node_modules/npm/node_modules/dashdash/node_modules/assert-plus/CHANGES.md
-lib/node_modules/npm/node_modules/dashdash/node_modules/assert-plus/README.md
-lib/node_modules/npm/node_modules/dashdash/node_modules/assert-plus/assert.js
-lib/node_modules/npm/node_modules/dashdash/node_modules/assert-plus/package.json
 lib/node_modules/npm/node_modules/dashdash/package.json
 lib/node_modules/npm/node_modules/debug/.coveralls.yml
 lib/node_modules/npm/node_modules/debug/.npmignore
@@ -1164,7 +1156,6 @@ lib/node_modules/npm/node_modules/duplexify/example.js
 lib/node_modules/npm/node_modules/duplexify/index.js
 lib/node_modules/npm/node_modules/duplexify/package.json
 lib/node_modules/npm/node_modules/duplexify/test.js
-lib/node_modules/npm/node_modules/ecc-jsbn/.npmignore
 lib/node_modules/npm/node_modules/ecc-jsbn/LICENSE
 lib/node_modules/npm/node_modules/ecc-jsbn/README.md
 lib/node_modules/npm/node_modules/ecc-jsbn/index.js
@@ -1251,8 +1242,8 @@ lib/node_modules/npm/node_modules/execa/lib/stdio.js
 lib/node_modules/npm/node_modules/execa/license
 lib/node_modules/npm/node_modules/execa/package.json
 lib/node_modules/npm/node_modules/execa/readme.md
+lib/node_modules/npm/node_modules/extend/.editorconfig
 lib/node_modules/npm/node_modules/extend/.jscs.json
-lib/node_modules/npm/node_modules/extend/.npmignore
 lib/node_modules/npm/node_modules/extend/.travis.yml
 lib/node_modules/npm/node_modules/extend/CHANGELOG.md
 lib/node_modules/npm/node_modules/extend/LICENSE
@@ -1459,11 +1450,6 @@ lib/node_modules/npm/node_modules/getpass/.travis.yml
 lib/node_modules/npm/node_modules/getpass/LICENSE
 lib/node_modules/npm/node_modules/getpass/README.md
 lib/node_modules/npm/node_modules/getpass/lib/index.js
-lib/node_modules/npm/node_modules/getpass/node_modules/assert-plus/AUTHORS
-lib/node_modules/npm/node_modules/getpass/node_modules/assert-plus/CHANGES.md
-lib/node_modules/npm/node_modules/getpass/node_modules/assert-plus/README.md
-lib/node_modules/npm/node_modules/getpass/node_modules/assert-plus/assert.js
-lib/node_modules/npm/node_modules/getpass/node_modules/assert-plus/package.json
 lib/node_modules/npm/node_modules/getpass/package.json
 lib/node_modules/npm/node_modules/glob/LICENSE
 lib/node_modules/npm/node_modules/glob/README.md
@@ -1799,11 +1785,6 @@ lib/node_modules/npm/node_modules/jsprim/CONTRIBUTING.md
 lib/node_modules/npm/node_modules/jsprim/LICENSE
 lib/node_modules/npm/node_modules/jsprim/README.md
 lib/node_modules/npm/node_modules/jsprim/lib/jsprim.js
-lib/node_modules/npm/node_modules/jsprim/node_modules/assert-plus/AUTHORS
-lib/node_modules/npm/node_modules/jsprim/node_modules/assert-plus/CHANGES.md
-lib/node_modules/npm/node_modules/jsprim/node_modules/assert-plus/README.md
-lib/node_modules/npm/node_modules/jsprim/node_modules/assert-plus/assert.js
-lib/node_modules/npm/node_modules/jsprim/node_modules/assert-plus/package.json
 lib/node_modules/npm/node_modules/jsprim/package.json
 lib/node_modules/npm/node_modules/latest-version/index.js
 lib/node_modules/npm/node_modules/latest-version/license
@@ -2288,6 +2269,7 @@ lib/node_modules/npm/node_modules/npm-audit-report/reporters/install.js
 lib/node_modules/npm/node_modules/npm-audit-report/reporters/json.js
 lib/node_modules/npm/node_modules/npm-audit-report/reporters/parseable.js
 lib/node_modules/npm/node_modules/npm-audit-report/reporters/quiet.js
+lib/node_modules/npm/node_modules/npm-bundled/LICENSE
 lib/node_modules/npm/node_modules/npm-bundled/README.md
 lib/node_modules/npm/node_modules/npm-bundled/index.js
 lib/node_modules/npm/node_modules/npm-bundled/package.json
@@ -2517,7 +2499,8 @@ lib/node_modules/npm/node_modules/once/once.js
 lib/node_modules/npm/node_modules/once/package.json
 lib/node_modules/npm/node_modules/opener/LICENSE.txt
 lib/node_modules/npm/node_modules/opener/README.md
-lib/node_modules/npm/node_modules/opener/opener.js
+lib/node_modules/npm/node_modules/opener/bin/opener-bin.js
+lib/node_modules/npm/node_modules/opener/lib/opener.js
 lib/node_modules/npm/node_modules/opener/package.json
 lib/node_modules/npm/node_modules/os-homedir/index.js
 lib/node_modules/npm/node_modules/os-homedir/license
@@ -2712,6 +2695,16 @@ lib/node_modules/npm/node_modules/pseudomap/map.js
 lib/node_modules/npm/node_modules/pseudomap/package.json
 lib/node_modules/npm/node_modules/pseudomap/pseudomap.js
 lib/node_modules/npm/node_modules/pseudomap/test/basic.js
+lib/node_modules/npm/node_modules/psl/.eslintignore
+lib/node_modules/npm/node_modules/psl/.travis.yml
+lib/node_modules/npm/node_modules/psl/README.md
+lib/node_modules/npm/node_modules/psl/data/rules.json
+lib/node_modules/npm/node_modules/psl/dist/psl.js
+lib/node_modules/npm/node_modules/psl/dist/psl.min.js
+lib/node_modules/npm/node_modules/psl/index.js
+lib/node_modules/npm/node_modules/psl/karma.conf.js
+lib/node_modules/npm/node_modules/psl/package.json
+lib/node_modules/npm/node_modules/psl/yarn.lock
 lib/node_modules/npm/node_modules/pump/.travis.yml
 lib/node_modules/npm/node_modules/pump/LICENSE
 lib/node_modules/npm/node_modules/pump/README.md
@@ -3174,11 +3167,6 @@ lib/node_modules/npm/node_modules/sshpk/lib/utils.js
 lib/node_modules/npm/node_modules/sshpk/man/man1/sshpk-conv.1
 lib/node_modules/npm/node_modules/sshpk/man/man1/sshpk-sign.1
 lib/node_modules/npm/node_modules/sshpk/man/man1/sshpk-verify.1
-lib/node_modules/npm/node_modules/sshpk/node_modules/assert-plus/AUTHORS
-lib/node_modules/npm/node_modules/sshpk/node_modules/assert-plus/CHANGES.md
-lib/node_modules/npm/node_modules/sshpk/node_modules/assert-plus/README.md
-lib/node_modules/npm/node_modules/sshpk/node_modules/assert-plus/assert.js
-lib/node_modules/npm/node_modules/sshpk/node_modules/assert-plus/package.json
 lib/node_modules/npm/node_modules/sshpk/package.json
 lib/node_modules/npm/node_modules/ssri/CHANGELOG.md
 lib/node_modules/npm/node_modules/ssri/LICENSE.md
@@ -3344,7 +3332,7 @@ lib/node_modules/npm/node_modules/tough-cookie/lib/cookie.js
 lib/node_modules/npm/node_modules/tough-cookie/lib/memstore.js
 lib/node_modules/npm/node_modules/tough-cookie/lib/pathMatch.js
 lib/node_modules/npm/node_modules/tough-cookie/lib/permuteDomain.js
-lib/node_modules/npm/node_modules/tough-cookie/lib/pubsuffix.js
+lib/node_modules/npm/node_modules/tough-cookie/lib/pubsuffix-psl.js
 lib/node_modules/npm/node_modules/tough-cookie/lib/store.js
 lib/node_modules/npm/node_modules/tough-cookie/package.json
 lib/node_modules/npm/node_modules/tunnel-agent/LICENSE
@@ -3473,11 +3461,6 @@ lib/node_modules/npm/node_modules/verror/CONTRIBUTING.md
 lib/node_modules/npm/node_modules/verror/LICENSE
 lib/node_modules/npm/node_modules/verror/README.md
 lib/node_modules/npm/node_modules/verror/lib/verror.js
-lib/node_modules/npm/node_modules/verror/node_modules/assert-plus/AUTHORS
-lib/node_modules/npm/node_modules/verror/node_modules/assert-plus/CHANGES.md
-lib/node_modules/npm/node_modules/verror/node_modules/assert-plus/README.md
-lib/node_modules/npm/node_modules/verror/node_modules/assert-plus/assert.js
-lib/node_modules/npm/node_modules/verror/node_modules/assert-plus/package.json
 lib/node_modules/npm/node_modules/verror/package.json
 lib/node_modules/npm/node_modules/wcwidth/.npmignore
 lib/node_modules/npm/node_modules/wcwidth/LICENSE
