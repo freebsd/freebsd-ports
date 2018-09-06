@@ -1,4 +1,4 @@
---- build.sh.orig	2018-01-21 22:30:48 UTC
+--- build.sh.orig	2018-05-01 13:43:29 UTC
 +++ build.sh
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
@@ -17,7 +17,7 @@
  	echo Generating version file...
  	echo "module dub.version_;" > source/dub/version_.d
 @@ -56,7 +53,7 @@ fi
- MACOSX_DEPLOYMENT_TARGET=10.7
+ MACOSX_DEPLOYMENT_TARGET=10.8
  
  echo Running $DMD...
 -$DMD -ofbin/dub -g -O -w -version=DubUseCurl -Isource $* $LIBS @build-files.txt
