@@ -792,6 +792,7 @@
     SUBDIR += simd-viterbi
     SUBDIR += singular
     SUBDIR += slatec
+    SUBDIR += sleef
     SUBDIR += slepc
     SUBDIR += slgrace
     SUBDIR += snns
