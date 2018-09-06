@@ -20,7 +20,8 @@ CONFIGURE_ARGS=	--with-daemon \
 		--without-gui \
 		--without-libs \
 		--without-qrencode \
-		--without-utils
+		--without-utils \
+		--disable-man
 
 PLIST_FILES=	bin/namecoind
 
