@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dcraw
-PORTVERSION=	9.27
+PORTVERSION=	9.28
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -35,7 +35,7 @@ MS_DIFF=	${MS_WRKSRC}/${PORTNAME}.c.diff
 MS_VERSION=	`${CAT} ${MS_VERSIONFILE}`
 MS_VERSIONFILE=	${MS_WRKSRC}/.version
 MS_WRKSRC=	${WRKSRC}/tmp
-MS_MASTER_SITE=	http://www.cybercom.net/~dcoffin/${PORTNAME}/
+MS_MASTER_SITE=	https://www.cybercom.net/~dcoffin/dcraw/
 MS_DISTFILES=	${PORTNAME}.1 ${PORTNAME}.c
 
 maketar: do-clean extract
