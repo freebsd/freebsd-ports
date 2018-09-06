@@ -1,6 +1,5 @@
 etc/xdg/akonadi-contacts.categories
 etc/xdg/akonadi-contacts.renamecategories
-etc/xdg/contact-editor.categories
 include/KF5/Akonadi/Contact/AbstractContactFormatter
 include/KF5/Akonadi/Contact/AbstractContactGroupFormatter
 include/KF5/Akonadi/Contact/ContactDefaultActions

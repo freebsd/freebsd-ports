@@ -11,7 +11,6 @@ share/katepart/syntax/logohighlightstyle.en_GB.xml
 share/katepart/syntax/logohighlightstyle.nb.xml
 share/katepart/syntax/logohighlightstyle.nds.xml
 share/katepart/syntax/logohighlightstyle.nl.xml
-share/katepart/syntax/logohighlightstyle.ru.xml
 %%DATADIR%%/data/logokeywords.en_GB.xml
 %%DATADIR%%/data/logokeywords.nb.xml
 %%DATADIR%%/data/logokeywords.nl.xml
