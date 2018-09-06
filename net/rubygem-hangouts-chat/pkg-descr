@@ -1,0 +1,4 @@
+Send messages to G Suite Hangouts Chat rooms using
+incoming webhooks and Net::HTTP::Post.
+
+WWW: https://github.com/enzinia/hangouts-chat
