@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tarantool
-PORTVERSION=	1.9.1
-PORTREVISION=	2
+PORTVERSION=	1.9.2
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -21,14 +20,15 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libyaml.so:textproc/libyaml \
 		libzstd.so:archivers/zstd
 
+USES=		cmake:noninja compiler:c++11-lang gettext-runtime gmake iconv perl5 readline ssl
+USE_PERL5=	build
+
 CMAKE_ARGS=	-DCMAKE_INSTALL_FULL_SYSCONFDIR=${ETCDIR} \
 		-DCMAKE_INSTALL_LOCALSTATEDIR=/var \
 		-DCMAKE_INSTALL_MANDIR=${PREFIX}/man
 CMAKE_OFF=	ENABLE_BUNDLED_LIBYAML ENABLE_BUNDLED_MSGPUCK ENABLE_BUNDLED_ZSTD
 CMAKE_ON=	ENABLE_DIST
 MAKE_JOBS_UNSAFE=	yes
-USES=		cmake:noninja compiler:c++11-lang gettext-runtime gmake perl5 readline ssl
-USE_PERL5=	build
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 
