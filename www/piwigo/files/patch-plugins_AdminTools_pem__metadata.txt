@@ -1,0 +1,11 @@
+--- plugins/AdminTools/pem_metadata.txt.orig	2018-07-13 13:24:01 UTC
++++ plugins/AdminTools/pem_metadata.txt
+@@ -1,2 +1,4 @@
+-https://github.com/Piwigo/AdminTools.git
+-4161bc7f94819af01fea8631ad2b4258d00e5151 2017-12-11 18:11:36 +0100
+\ No newline at end of file
++File automatically created from SVN or Git repository.
++
++URL: https://github.com/Piwigo/AdminTools 
++Revision: d99a1378f9e05b087c9d590665e52ad5ccf2a41b (Mon Jul 16 17:38:42 2018 +0200)
+\ No newline at end of file
