@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly
-DISTVERSION=	0.111.2
-PORTREVISION=	2
+DISTVERSION=	0.117.2
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -14,11 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # define dependencies that are required for build and run under MY_DEPENDS
 MY_DEPENDS=	git>=2.17:devel/git \
 		rubygem-i18n>=0:devel/rubygem-i18n \
-		rubygem-rugged>=0.27.2:devel/rubygem-rugged \
+		rubygem-rugged>=0.27.4:devel/rubygem-rugged \
 		rubygem-github-linguist53>=5.3.3:textproc/rubygem-github-linguist53 \
 		rubygem-bundler>0:sysutils/rubygem-bundler \
-		rubygem-gitlab-markup>=1.6.2:textproc/rubygem-gitlab-markup \
-		rubygem-gitaly-proto>=0.105.0:net/rubygem-gitaly-proto \
+		rubygem-gitlab-markup>=1.6.4:textproc/rubygem-gitlab-markup \
+		rubygem-gitaly-proto>=0.107.0:net/rubygem-gitaly-proto \
 		rubygem-activesupport50>=5.0.2:devel/rubygem-activesupport50 \
 		rubygem-rdoc>=6.0:devel/rubygem-rdoc \
 		rubygem-gitlab-gollum-lib>=4.2:www/rubygem-gitlab-gollum-lib \
@@ -42,7 +41,7 @@ USE_RUBY=	yes
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/tags
-GL_COMMIT=	39b113e394a7773d3c5781180119f4dbcbec7bd5
+GL_COMMIT=	93cc4119d91af9644da2b748f2563fd67ee5b855
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config.toml.example
