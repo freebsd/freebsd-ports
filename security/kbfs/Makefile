@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kbfs
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -11,9 +11,10 @@ COMMENT=	Keybase Filesystem (KBFS)
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		go
+
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_TARGET=	-tags production ${GO_PKGNAME}/kbfsfuse ${GO_PKGNAME}/kbfsgit/git-remote-keybase ${GO_PKGNAME}/kbfstool
-USES=		go
 
 PLIST_FILES=	bin/git-remote-keybase bin/kbfsfuse bin/kbfstool
 
