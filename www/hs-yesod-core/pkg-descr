@@ -3,4 +3,4 @@ application that have strong compile-time guarantees of correctness.  It
 also affords space efficient code and portability to many deployment
 backends, from CGI to stand-alone serving.
 
-WWW: http://www.yesodweb.com/
+WWW: https://www.yesodweb.com/

@@ -9,6 +9,7 @@ MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Creation of type-safe, RESTful web applications
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_CABAL=	aeson>=0.5 auto-update blaze-builder>=0.2.1.4 blaze-html>=0.5 \
 		blaze-markup>=0.5.1 case-insensitive>=0.2 cereal>=0.3 \
