@@ -27,7 +27,6 @@ rcvar=munin_asyncd_enable
 load_rc_config $name
 
 command="%%DATADIR%%/munin-asyncd"
-command_interpreter="%%LOCALBASE%%/bin/perl"
 pidfile="/var/run/${name}.pid"
 start_cmd=start_cmd
 stop_cmd='pkill -${sig_stop:-TERM} -U %%USER%% -F ${pidfile}'
@@ -39,7 +38,7 @@ munin_asyncd_host=${munin_asyncd_host:-localhost:4949}
 start_cmd()
 {
         check_startmsgs && echo "Starting ${name}."
-        daemon -u %%USER%% -f -p ${pidfile} ${command_interpreter} ${command} --spool ${munin_asyncd_spool} --host ${munin_asyncd_host} ${munin_asyncd_args}
+        daemon -u %%USER%% -f -p ${pidfile} "%%LOCALBASE%%/bin/perl" ${command} --spool ${munin_asyncd_spool} --host ${munin_asyncd_host} ${munin_asyncd_args}
 }
 
 run_rc_command $1
