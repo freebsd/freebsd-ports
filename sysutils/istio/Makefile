@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	istio
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -15,21 +15,13 @@ RUN_DEPENDS=	kubectl:sysutils/kubectl
 USES=		go
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	istio
-GH_SUBDIR=	src/istio.io/istio
 
-do-build:
-	cd ${WRKSRC}/${GH_SUBDIR} && \
-		GOPATH=${WRKSRC} go build -o ${WRKSRC}/bin/istioctl \
-		-ldflags="-X istio.io/istio/pkg/version.buildVersion=${PORTVERSION} \
-		-X istio.io/istio/pkg/version.buildGitRevision=unknown \
-		-X istio.io/istio/pkg/version.buildDockerHub=docker.io/istio" \
-		./istioctl/cmd/istioctl/
+GO_PKGNAME=	istio.io/istio
+GO_TARGET=	${GO_PKGNAME}/istioctl/cmd/istioctl
+GO_BUILDFLAGS=	-ldflags="-X istio.io/istio/pkg/version.buildVersion=${PORTVERSION} \
+		-X istio.io/istio/pkg/version.buildDockerHub=docker.io/istio"
 
-do-install:
-	${INSTALL_PROGRAM} \
-		${WRKSRC}/bin/istioctl \
-		${STAGEDIR}${PREFIX}/bin/istioctl
+post-install:
 .for data in consul gcp kubernetes
 	(cd ${WRKSRC}/install \
 		&& ${COPYTREE_SHARE} ${data} ${STAGEDIR}${DATADIR})
