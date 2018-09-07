@@ -22,7 +22,7 @@
    struct nvme_pt_command pt;
    memset(&pt, 0, sizeof(pt));
  
-+#if __FreeBSD_version >= 1200058
++#if __FreeBSD_version >= 1200058 && __FreeBSD_version < 1200081
 +  pt.cmd.opc_fuse = NVME_CMD_SET_OPC(in.opcode);
 +#else
    pt.cmd.opc = in.opcode;
