@@ -1792,6 +1792,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/tracer.epub
 %%DATADIR%%/user-agent-data.json
 %%DATADIR%%/user-manual-translation-stats.json
+%%DATADIR%%/viewer.js
 %%DATADIR%%/viewer/blank.html
 %%DATADIR%%/viewer/bookmarks.js
 %%DATADIR%%/viewer/hyphenate/Hyphenator.js
