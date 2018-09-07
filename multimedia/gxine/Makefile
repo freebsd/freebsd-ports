@@ -3,7 +3,7 @@
 
 PORTNAME=	gxine
 PORTVERSION=	0.5.910
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/xine/${PORTNAME}/${PORTVERSION}
 
@@ -11,43 +11,37 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alternative GUI for the Xine media player
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libnspr4.so:devel/nspr \
 		libmozjs185.so:lang/spidermonkey185 \
 		libxine.so:multimedia/libxine
 
-USES=		desktop-file-utils gettext gmake libtool pathfix pkgconfig tar:xz
+USES=		desktop-file-utils gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	gtk30
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-hal --with-libintl-prefix=${LOCALBASE} --with-gtk3
-LLD_UNSAFE=	yes
+CONFIGURE_ARGS=	--without-hal --with-libintl-prefix=${LOCALBASE} \
+		--with-gtk3 --without-dbus --disable-integration-wizard 
 INSTALLS_ICONS=	yes
+LLD_UNSAFE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lm
+OPTIONS_DEFINE=	LIRC NLS WEBPLUGIN
+OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=		GNOME LIRC WEBPLUGIN
-OPTIONS_SUB=		yes
+WEBPLUGIN_DESC=	Build and/or install Web browser plugins
 
-GNOME_BUILD_DEPENDS=	gnome-screensaver:x11/gnome-screensaver
-GNOME_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
-GNOME_RUN_DEPENDS=	gnome-screensaver:x11/gnome-screensaver
-GNOME_CONFIGURE_ON=	--with-dbus
-GNOME_CONFIGURE_OFF=	--disable-integration-wizard --without-dbus
 LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
-LIRC_CONFIGURE_ON=	--enable-lirc
-LIRC_CONFIGURE_OFF=	--disable-lirc
-WEBPLUGIN_DESC=		Build and/or install Web browser plugins
-WEBPLUGIN_USE=		xorg=xaw
-WEBPLUGIN_USES=		webplugin:native
-WEBPLUGIN_CONFIGURE_OFF=	--without-browser-plugin
+LIRC_CONFIGURE_ENABLE=	lirc
+LIRC_USES=		localbase
 
-.include <bsd.port.options.mk>
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
 
-.if ${PORT_OPTIONS:MWEBPLUGIN}
-WEBPLUGIN_DIR=	${PREFIX}/lib/gxine
-WEBPLUGIN_FILES=gxineplugin.so
-.endif
+WEBPLUGIN_USE=			xorg=xaw
+WEBPLUGIN_USES=			webplugin:native
+WEBPLUGIN_CONFIGURE_WITH=	browser-plugin
+WEBPLUGIN_DIR=			${PREFIX}/lib/gxine
+WEBPLUGIN_FILES=		gxineplugin.so
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -58,10 +52,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|@MAKE_PNG_TRUE@|#|' ${WRKSRC}/pixmaps/Makefile.in
 
-post-install:
-	${CP} ${WRKSRC}/pixmaps/logo.mpv ${STAGEDIR}${PREFIX}/share/gxine
-.if ${PORT_OPTIONS:MWEBPLUGIN}
+post-install-WEBPLUGIN-on:
 	@${STRIP_CMD} ${STAGEDIR}${WEBPLUGIN_DIR}/${WEBPLUGIN_FILES}
-.endif
 
 .include <bsd.port.mk>
