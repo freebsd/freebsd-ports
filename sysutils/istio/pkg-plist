@@ -104,6 +104,7 @@ bin/istioctl
 %%DATADIR%%/kubernetes/helm/istio/charts/grafana/templates/create-custom-resources-job.yaml
 %%DATADIR%%/kubernetes/helm/istio/charts/grafana/templates/deployment.yaml
 %%DATADIR%%/kubernetes/helm/istio/charts/grafana/templates/grafana-ports-mtls.yaml
+%%DATADIR%%/kubernetes/helm/istio/charts/grafana/templates/pvc.yaml
 %%DATADIR%%/kubernetes/helm/istio/charts/grafana/templates/secret.yaml
 %%DATADIR%%/kubernetes/helm/istio/charts/grafana/templates/service.yaml
 %%DATADIR%%/kubernetes/helm/istio/charts/ingress/Chart.yaml
