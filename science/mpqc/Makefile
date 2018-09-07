@@ -3,7 +3,7 @@
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
-PORTREVISION=	38
+PORTREVISION=	39
 CATEGORIES=	science parallel
 MASTER_SITES=	SF
 
@@ -50,6 +50,7 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 ICC_BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:lang/icc
 MPI_CONFIGURE_ENABLE=	parallel
 MPI_LIB_DEPENDS=	libmpich.so:net/mpich2
+MPI_LDFLAGS=		-lmpich # build fails to supply libmpich.so to link
 OPTIFLAGS_CFLAGS=	-ffast-math
 OPTIFLAGS_CXXFLAGS=	-ffast-math
 
