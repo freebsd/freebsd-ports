@@ -12,6 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_FreeBSD_10=	invalid value 'internal' in '-fvisibility internal'
+BROKEN_i386=	error: shift count >= width of type (and other errors), see https://github.com/intel/mkl-dnn/issues/315
 
 TEST_DEPENDS=	bash:shells/bash
 
