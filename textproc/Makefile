@@ -762,6 +762,7 @@
     SUBDIR += p5-Regexp-Common-Email-Address
     SUBDIR += p5-Regexp-Common-net-CIDR
     SUBDIR += p5-Regexp-Common-profanity_us
+    SUBDIR += p5-Regexp-Common-time
     SUBDIR += p5-Regexp-Copy
     SUBDIR += p5-Regexp-Debugger
     SUBDIR += p5-Regexp-DefaultFlags

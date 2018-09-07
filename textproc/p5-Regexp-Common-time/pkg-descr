@@ -1,0 +1,5 @@
+This module creates regular expressions that can be used for parsing
+dates and times. See Regexp::Common for a general description of how
+to use this interface.
+
+WWW: https://metacpan.org/release/Regexp-Common-time
