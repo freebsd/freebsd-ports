@@ -1,0 +1,66 @@
+Fix build with Qt 5.11 (backported from upstream commits)
+
+--- plugins/itemencrypted/itemencrypted.cpp.orig	2018-09-07 13:52:55 UTC
++++ plugins/itemencrypted/itemencrypted.cpp
+@@ -30,9 +30,11 @@
+ #include "gui/iconwidget.h"
+ #include "item/serialize.h"
+ 
++#include <QAbstractItemModel>
+ #include <QDir>
+ #include <QFile>
+ #include <QLabel>
++#include <QModelIndex>
+ #include <QTextEdit>
+ #include <QtPlugin>
+ #include <QVBoxLayout>
+--- src/gui/commanddialog.cpp.orig	2018-09-07 13:54:06 UTC
++++ src/gui/commanddialog.cpp
+@@ -31,6 +31,7 @@
+ #include "gui/icons.h"
+ #include "platform/platformnativeinterface.h"
+ 
++#include <QAction>
+ #include <QFileDialog>
+ #include <QMenu>
+ #include <QMessageBox>
+--- src/gui/configtabappearance.cpp.orig	2018-09-07 14:05:13 UTC
++++ src/gui/configtabappearance.cpp
+@@ -32,6 +32,7 @@
+ #include "platform/platformnativeinterface.h"
+ 
+ #include <QAbstractScrollArea>
++#include <QAction>
+ #include <QColorDialog>
+ #include <QFileDialog>
+ #include <QFontDialog>
+--- src/gui/processmanagerdialog.cpp.orig	2018-09-07 13:56:41 UTC
++++ src/gui/processmanagerdialog.cpp
+@@ -26,6 +26,7 @@
+ #include "gui/icons.h"
+ #include "gui/windowgeometryguard.h"
+ 
++#include <QAction>
+ #include <QDateTime>
+ #include <QPushButton>
+ 
+--- src/gui/traymenu.cpp.orig	2018-09-07 13:55:30 UTC
++++ src/gui/traymenu.cpp
+@@ -25,6 +25,7 @@
+ #include "platform/platformnativeinterface.h"
+ #include "platform/platformwindow.h"
+ 
++#include <QAction>
+ #include <QApplication>
+ #include <QKeyEvent>
+ #include <QModelIndex>
+--- src/gui/traymenu.h.orig	2018-09-07 13:57:46 UTC
++++ src/gui/traymenu.h
+@@ -23,6 +23,7 @@
+ #include <QMenu>
+ #include <QPointer>
+ 
++class QAction;
+ class QModelIndex;
+ 
+ class TrayMenu : public QMenu
