@@ -1,7 +1,9 @@
 %%DATADIR%%/Autoloader.php
 %%DATADIR%%/Smarty.class.php
 %%DATADIR%%/SmartyBC.class.php
+%%DATADIR%%/bootstrap.php
 %%DATADIR%%/debug.tpl
+%%DATADIR%%/libs - Verknüpfung.lnk
 %%DATADIR%%/plugins/block.textformat.php
 %%DATADIR%%/plugins/function.counter.php
 %%DATADIR%%/plugins/function.cycle.php
@@ -19,6 +21,7 @@
 %%DATADIR%%/plugins/modifier.date_format.php
 %%DATADIR%%/plugins/modifier.debug_print_var.php
 %%DATADIR%%/plugins/modifier.escape.php
+%%DATADIR%%/plugins/modifier.mb_wordwrap.php
 %%DATADIR%%/plugins/modifier.regex_replace.php
 %%DATADIR%%/plugins/modifier.replace.php
 %%DATADIR%%/plugins/modifier.spacify.php
@@ -47,7 +50,6 @@
 %%DATADIR%%/plugins/shared.make_timestamp.php
 %%DATADIR%%/plugins/shared.mb_str_replace.php
 %%DATADIR%%/plugins/shared.mb_unicode.php
-%%DATADIR%%/plugins/shared.mb_wordwrap.php
 %%DATADIR%%/plugins/variablefilter.htmlspecialchars.php
 %%DATADIR%%/sysplugins/smarty_cacheresource.php
 %%DATADIR%%/sysplugins/smarty_cacheresource_custom.php
@@ -58,9 +60,12 @@
 %%DATADIR%%/sysplugins/smarty_internal_compile_append.php
 %%DATADIR%%/sysplugins/smarty_internal_compile_assign.php
 %%DATADIR%%/sysplugins/smarty_internal_compile_block.php
+%%DATADIR%%/sysplugins/smarty_internal_compile_block_child.php
+%%DATADIR%%/sysplugins/smarty_internal_compile_block_parent.php
 %%DATADIR%%/sysplugins/smarty_internal_compile_break.php
 %%DATADIR%%/sysplugins/smarty_internal_compile_call.php
 %%DATADIR%%/sysplugins/smarty_internal_compile_capture.php
+%%DATADIR%%/sysplugins/smarty_internal_compile_child.php
 %%DATADIR%%/sysplugins/smarty_internal_compile_config_load.php
 %%DATADIR%%/sysplugins/smarty_internal_compile_continue.php
 %%DATADIR%%/sysplugins/smarty_internal_compile_debug.php
@@ -76,6 +81,7 @@
 %%DATADIR%%/sysplugins/smarty_internal_compile_ldelim.php
 %%DATADIR%%/sysplugins/smarty_internal_compile_make_nocache.php
 %%DATADIR%%/sysplugins/smarty_internal_compile_nocache.php
+%%DATADIR%%/sysplugins/smarty_internal_compile_parent.php
 %%DATADIR%%/sysplugins/smarty_internal_compile_private_block_plugin.php
 %%DATADIR%%/sysplugins/smarty_internal_compile_private_foreachsection.php
 %%DATADIR%%/sysplugins/smarty_internal_compile_private_function_plugin.php
@@ -98,7 +104,7 @@
 %%DATADIR%%/sysplugins/smarty_internal_configfileparser.php
 %%DATADIR%%/sysplugins/smarty_internal_data.php
 %%DATADIR%%/sysplugins/smarty_internal_debug.php
-%%DATADIR%%/sysplugins/smarty_internal_extension_clear.php
+%%DATADIR%%/sysplugins/smarty_internal_errorhandler.php
 %%DATADIR%%/sysplugins/smarty_internal_extension_handler.php
 %%DATADIR%%/sysplugins/smarty_internal_method_addautoloadfilters.php
 %%DATADIR%%/sysplugins/smarty_internal_method_adddefaultmodifiers.php
@@ -117,6 +123,7 @@
 %%DATADIR%%/sysplugins/smarty_internal_method_configload.php
 %%DATADIR%%/sysplugins/smarty_internal_method_createdata.php
 %%DATADIR%%/sysplugins/smarty_internal_method_getautoloadfilters.php
+%%DATADIR%%/sysplugins/smarty_internal_method_getconfigvariable.php
 %%DATADIR%%/sysplugins/smarty_internal_method_getconfigvars.php
 %%DATADIR%%/sysplugins/smarty_internal_method_getdebugtemplate.php
 %%DATADIR%%/sysplugins/smarty_internal_method_getdefaultmodifiers.php
@@ -125,6 +132,7 @@
 %%DATADIR%%/sysplugins/smarty_internal_method_getstreamvariable.php
 %%DATADIR%%/sysplugins/smarty_internal_method_gettags.php
 %%DATADIR%%/sysplugins/smarty_internal_method_gettemplatevars.php
+%%DATADIR%%/sysplugins/smarty_internal_method_literals.php
 %%DATADIR%%/sysplugins/smarty_internal_method_loadfilter.php
 %%DATADIR%%/sysplugins/smarty_internal_method_loadplugin.php
 %%DATADIR%%/sysplugins/smarty_internal_method_mustcompile.php
@@ -162,6 +170,7 @@
 %%DATADIR%%/sysplugins/smarty_internal_resource_stream.php
 %%DATADIR%%/sysplugins/smarty_internal_resource_string.php
 %%DATADIR%%/sysplugins/smarty_internal_runtime_cachemodify.php
+%%DATADIR%%/sysplugins/smarty_internal_runtime_cacheresourcefile.php
 %%DATADIR%%/sysplugins/smarty_internal_runtime_capture.php
 %%DATADIR%%/sysplugins/smarty_internal_runtime_codeframe.php
 %%DATADIR%%/sysplugins/smarty_internal_runtime_filterhandler.php
@@ -195,3 +204,4 @@
 %%DATADIR%%/sysplugins/smarty_variable.php
 %%DATADIR%%/sysplugins/smartycompilerexception.php
 %%DATADIR%%/sysplugins/smartyexception.php
+
