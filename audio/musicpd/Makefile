@@ -10,7 +10,8 @@ DISTNAME=	mpd-${PORTVERSION}
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Remote-controllable music daemon
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libicudata.so:devel/icu
@@ -30,7 +31,7 @@ CONFIGURE_ARGS+=--disable-libwrap
 
 BROKEN_powerpc64=	Does not build on powerpc64
 
-PORTDOCS=	AUTHORS README.md COPYING NEWS
+PORTDOCS=	AUTHORS README.md NEWS
 
 SUB_FILES=	pkg-message
 
