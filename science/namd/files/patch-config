@@ -1,0 +1,11 @@
+--- config.orig	2018-09-07 20:23:43 UTC
++++ config
+@@ -582,7 +582,7 @@ function error_exists {
+   if [ -n "$CHARM_OPTS" ]; then
+     echo "CHARMOPTS = $CHARM_OPTS" >> Make.config
+   fi
+-  echo 'CHARM = $(CHARMBASE)/$(CHARMARCH)' >> Make.config
++  echo 'CHARM = $(CHARMBASE)' >> Make.config
+   ARCH_SUFFIX=""
+   [[ "$CHARM_ARCH" == *-scyld* ]] && ARCH_SUFFIX=${ARCH_SUFFIX}-Scyld
+   if [[ "$CHARM_ARCH" == *-clustermatic* ]]; then

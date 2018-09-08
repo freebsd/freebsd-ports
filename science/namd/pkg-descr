@@ -1,0 +1,8 @@
+NAMD is computer software for molecular dynamics simulation, written using the
+Charm++ parallel programming model. It is noted for its parallel efficiency and
+is often used to simulate large systems (millions of atoms). It has been
+developed by the collaboration of the Theoretical and Computational Biophysics
+Group (TCB) and the Parallel Programming Laboratory (PPL) at the University of
+Illinois at Urbana-Champaign.
+
+WWW: https://www.ks.uiuc.edu/Research/namd/

@@ -137,6 +137,7 @@
     SUBDIR += mpb
     SUBDIR += mpqc
     SUBDIR += multiwfn
+    SUBDIR += namd
     SUBDIR += ncs
     SUBDIR += netcdf
     SUBDIR += netcdf-cxx
