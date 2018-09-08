@@ -1,0 +1,6 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=XSession
+Exec=%%PREFIX%%/share/sddm/scripts/xinit-session
+TryExec=%%PREFIX%%/share/sddm/scripts/xinit-session
+Name=User Session
