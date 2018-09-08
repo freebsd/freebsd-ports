@@ -1,0 +1,19 @@
+--- services/sddm-greeter.pam.orig	2017-12-05 16:00:16 UTC
++++ services/sddm-greeter.pam
+@@ -1,8 +1,5 @@
+ #%PAM-1.0
+ 
+-# Load environment from /etc/environment and ~/.pam_environment
+-auth		required pam_env.so
+-
+ # Always let the greeter start without authentication
+ auth		required pam_permit.so
+ 
+@@ -13,6 +10,4 @@ account		required pam_permit.so
+ password	required pam_deny.so
+ 
+ # Setup session
+-session		required pam_unix.so
+--session		optional pam_systemd.so
+--session		optional pam_elogind.so
++session		required pam_permit.so
