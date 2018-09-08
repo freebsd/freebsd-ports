@@ -131,6 +131,7 @@
 %%T%%/jmods/jdk.internal.opt.jmod
 %%T%%/jmods/jdk.internal.vm.ci.jmod
 %%T%%/jmods/jdk.internal.vm.compiler.jmod
+%%T%%/jmods/jdk.internal.vm.compiler.management.jmod
 %%T%%/jmods/jdk.jartool.jmod
 %%T%%/jmods/jdk.javadoc.jmod
 %%T%%/jmods/jdk.javaws.jmod
@@ -321,7 +322,6 @@
 %%T%%/legal/jdk.internal.vm.ci/LICENSE
 %%T%%/legal/jdk.internal.vm.compiler/COPYRIGHT
 %%T%%/legal/jdk.internal.vm.compiler/LICENSE
-%%T%%/jmods/jdk.internal.vm.compiler.management.jmod
 %%T%%/legal/jdk.internal.vm.compiler.management/COPYRIGHT
 %%T%%/legal/jdk.internal.vm.compiler.management/LICENSE
 %%T%%/legal/jdk.jartool/COPYRIGHT
