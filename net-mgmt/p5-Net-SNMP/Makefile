@@ -13,6 +13,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object oriented interface to SNMP
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BUILD_DEPENDS=	p5-Crypt-DES>=0:security/p5-Crypt-DES \
 		p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
 		p5-Digest-HMAC>=0:security/p5-Digest-HMAC
@@ -21,5 +25,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 CONFLICTS=	p5-Net-SNMP3-[0-9]*
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
