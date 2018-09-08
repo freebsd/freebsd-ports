@@ -232,8 +232,6 @@
 %%DATADIR%%/tables/lv.tbl
 %%DATADIR%%/tables/malayalam.cti
 %%DATADIR%%/tables/mao-nz-g1.ctb
-%%DATADIR%%/tables/marburg.ctb
-%%DATADIR%%/tables/marburg_edit.ctb
 %%DATADIR%%/tables/marburg_single_cell_defs.cti
 %%DATADIR%%/tables/marburg_unicode_defs.cti
 %%DATADIR%%/tables/ml-in-g1.utb
@@ -252,9 +250,7 @@
 %%DATADIR%%/tables/mwr.ctb
 %%DATADIR%%/tables/mwr.tbl
 %%DATADIR%%/tables/ne.ctb
-%%DATADIR%%/tables/nemeth.ctb
 %%DATADIR%%/tables/nemethdefs.cti
-%%DATADIR%%/tables/nemeth_edit.ctb
 %%DATADIR%%/tables/ne.tbl
 %%DATADIR%%/tables/nl-BE.dis
 %%DATADIR%%/tables/nl-BE-g0.utb
@@ -341,8 +337,6 @@
 %%DATADIR%%/tables/tr.tbl
 %%DATADIR%%/tables/tsn-za-g1.ctb
 %%DATADIR%%/tables/ukchardefs.cti
-%%DATADIR%%/tables/ukmaths.ctb
-%%DATADIR%%/tables/ukmaths_edit.ctb
 %%DATADIR%%/tables/ukmaths_single_cell_defs.cti
 %%DATADIR%%/tables/ukmaths_unicode_defs.cti
 %%DATADIR%%/tables/uk.utb
@@ -357,14 +351,14 @@
 %%DATADIR%%/tables/vi-g1.ctb
 %%DATADIR%%/tables/vi.tbl
 %%DATADIR%%/tables/wiskunde-chardefs.cti
-%%DATADIR%%/tables/wiskunde.ctb
-%%DATADIR%%/tables/wiskunde-translation.cti
 %%DATADIR%%/tables/zh_CHN.tbl
 %%DATADIR%%/tables/zh_HK.tbl
 %%DATADIR%%/tables/zh_TW.tbl
 %%DATADIR%%/tables/zh-chn.ctb
 %%DATADIR%%/tables/zh-hk.ctb
 %%DATADIR%%/tables/zh-tw.ctb
+%%DATADIR%%/tables/zhcn-g1.ctb
+%%DATADIR%%/tables/zhcn-g2.ctb
 bin/lou_allround
 bin/lou_checkhyphens
 bin/lou_checktable
@@ -391,7 +385,7 @@ libdata/pkgconfig/liblouis.pc
 lib/liblouis.a
 lib/liblouis.so
 lib/liblouis.so.16
-lib/liblouis.so.16.0.0
+lib/liblouis.so.16.0.1
 man/man1/lou_allround.1.gz
 man/man1/lou_checkhyphens.1.gz
 man/man1/lou_checktable.1.gz
