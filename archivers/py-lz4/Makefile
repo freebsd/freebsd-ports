@@ -28,6 +28,9 @@ post-install:
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/block/_block.so \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/frame/_frame.so
 
+do-test:
+	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3000
