@@ -30,10 +30,18 @@ CONFIGURE_ARGS+=--with-libintl-prefix=${LOCALBASE} \
 
 PLIST_FILES=	bin/scim-bridge
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD
+.if ( ${OSVERSION} >= 1101513 && ${OSVERSION} < 1200000 ) || ${OSVERSION} >= 1200060
+BROKEN=	fails to compile with clang6 or later
+.endif
+.endif
+
 post-patch:
 	@${GREP} -lR "<malloc\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc\.h>|<stdlib.h>|g'
 	@${GREP} -lR "<alloca\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<alloca\.h>|<stdlib.h>|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
