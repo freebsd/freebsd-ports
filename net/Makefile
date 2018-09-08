@@ -76,6 +76,7 @@
     SUBDIR += ccxstream
     SUBDIR += ceph
     SUBDIR += cf
+    SUBDIR += charm
     SUBDIR += chrony
     SUBDIR += citrix_ica
     SUBDIR += cjdns

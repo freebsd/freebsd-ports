@@ -1,0 +1,9 @@
+Charm++ is a message-passing parallel language and runtime system.
+It is implemented as a set of libraries for C++, is efficient,
+and is portable to a wide variety of parallel machines.
+Source code is provided, and non-commercial use is free.
+
+Charm++ is developed in the University of Illinois, and is
+used primarily by the NAMD, the molecular simulation system.
+
+WWW: https://www.ks.uiuc.edu/Research/namd/
