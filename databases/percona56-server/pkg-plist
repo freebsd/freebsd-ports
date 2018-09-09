@@ -75,7 +75,6 @@ man/man1/mysqld_safe.1.gz
 man/man1/mysqldumpslow.1.gz
 man/man1/mysqlhotcopy.1.gz
 man/man1/mysqlman.1.gz
-man/man1/mysqltest.1.gz
 man/man1/perror.1.gz
 man/man1/replace.1.gz
 man/man1/resolve_stack_dump.1.gz
@@ -154,6 +153,10 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/tests/suite/query_response_time/bug1453277-master.opt
 %%DATADIR%%/tests/suite/query_response_time/bug1453277.result
 %%DATADIR%%/tests/suite/query_response_time/bug1453277.test
+%%DATADIR%%/tests/suite/query_response_time/install_query_response_time-master.opt
+%%DATADIR%%/tests/suite/query_response_time/install_query_response_time.result
+%%DATADIR%%/tests/suite/query_response_time/install_query_response_time.test
+%%DATADIR%%/tests/suite/query_response_time/session_toggle.result
 %%DATADIR%%/tests/suite/query_response_time/query_response_time-rw-begin.inc
 %%DATADIR%%/tests/suite/query_response_time/query_response_time-rw-end.inc
 %%DATADIR%%/tests/suite/query_response_time/query_response_time-rw.result
@@ -165,6 +168,7 @@ man/man8/mysqld.8.gz
 %%DATADIR%%/tests/suite/query_response_time/query_response_time.inc
 %%DATADIR%%/tests/suite/query_response_time/query_response_time.result
 %%DATADIR%%/tests/suite/query_response_time/query_response_time.test
+%%DATADIR%%/tests/suite/query_response_time/session_toggle.test
 %%DATADIR%%/tests/suite/query_response_time/suite.opt
 %%DATADIR%%/tests/suite/query_response_time/suite.pm
 %%DATADIR%%/ukrainian/errmsg.sys
