@@ -23,7 +23,7 @@ man/man1/ntpa.1.gz
 %%DOCSDIR%%/DATABASE
 %%DOCSDIR%%/INSTALL
 @dir etc/newsyslog.conf.d
-@sample %%ETCDIR%%/ntpa.newsyslog etc/newsyslog.conf.d/ntpa
+@sample %%ETCDIR%%/ntpa.newsyslog etc/newsyslog.conf.d/ntpa.conf
 @sample(,ntpa,640) %%ETCDIR%%/ntpa.conf.sample
 @owner www
 @group www
