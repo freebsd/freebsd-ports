@@ -20,12 +20,12 @@ ONLY_FOR_ARCHS_REASON=	Not clear if it can be built on other architectures
 FETCH_DEPENDS=	git:devel/git
 BUILD_DEPENDS=	bash:shells/bash
 
+RESTRICTED=	No commercial use: commercial use requires a commercial license
+
 USES=		fortran gmake localbase:ldflags shebangfix tar
 SHEBANG_GLOB=	*.sh
 SHEBANG_FILES=	src/scripts/*
 USE_LDCONFIG=	yes
-
-GIT_URL=	https://charm.cs.illinois.edu/gerrit/charm.git
 
 ARCH_STR=	linux${ARCH:S/amd64/64/:S/i386/32/}
 
@@ -49,20 +49,15 @@ MPI_VARS=		VERSION=mpi
 MPI_LDFLAGS=		-lmpich
 MPI_LIB_DEPENDS=	libmpich.so:net/mpich2
 
-local-makesum: # Workaround: the generic 'make makesum' is broken when custom do-fetch is defined: it calls ${SCRIPTSDIR}/do-fetch.sh.
-	@${MAKE} distclean fetch makesum
+.include <bsd.port.pre.mk>
 
+.if !exists(${DISTDIR}/NAMD_2.12_Source.tar.gz)
+IGNORE=	please download the release tarball of the version ${DISTVERSION} (${DISTFILES}) from https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=NAMD, put it into ${DISTDIR}, and run 'make' again
+.else
 do-fetch:
-	@if ! [ -f "${DISTDIR}/NAMD_2.12_Source.tar.gz" ]; then \
-	  ${ECHO} "(!!)"; \
-	  ${ECHO} "(!!) Please download the release tarball of the version 2.12 of NAMD (NAMD_2.12_Source.tar.gz)"; \
-	  ${ECHO} "(!!) from https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=NAMD,"; \
-	  ${ECHO} "(!!) put it into ${DISTDIR}, and run 'make' again."; \
-	  ${ECHO} "(!!)"; \
-	  ${FALSE}; \
-	fi
 	@${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
 	@cd ${DISTDIR}/${DIST_SUBDIR} && ${TAR} xf ${DISTDIR}/NAMD_2.12_Source.tar.gz --strip-components 1 NAMD_2.12_Source/charm-${DISTVERSION}.tar
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's|which gfortran |which gfortran${GCC_DEFAULT} |' ${WRKSRC}/src/arch/common/conv-mach-gfortran.sh
@@ -84,4 +79,4 @@ post-install:
 .endfor
 	@cd ${STAGEDIR} && ${MV} lib_so/* ./${PREFIX}/lib && ${RMDIR} lib_so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
