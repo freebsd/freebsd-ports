@@ -1,23 +1,27 @@
---- cmd/modutil/modutil.h	Sun Apr 25 11:02:47 2004
-+++ cmd/modutil/modutil.h	Fri Jul 22 17:35:20 2005
-@@ -53,6 +53,6 @@
+--- cmd/modutil/modutil.h.orig	2018-08-31 12:55:53 UTC
++++ cmd/modutil/modutil.h
+@@ -22,8 +22,8 @@
  #include "error.h"
  
+ Error LoadMechanismList(void);
 -Error FipsMode(char *arg);
 -Error ChkFipsMode(char *arg);
 +Error FipsMode(const char *arg);
 +Error ChkFipsMode(const char *arg);
  Error AddModule(char *moduleName, char *libFile, char *ciphers,
-       char *mechanisms, char* modparms);
---- cmd/modutil/pk11.c	Sun Apr 25 11:02:47 2004
-+++ cmd/modutil/pk11.c	Fri Jul 22 17:36:48 2005
-@@ -53,5 +53,5 @@
+                 char *mechanisms, char *modparms);
+ Error DeleteModule(char *moduleName);
+--- cmd/modutil/pk11.c.orig	2018-08-31 12:55:53 UTC
++++ cmd/modutil/pk11.c
+@@ -16,7 +16,7 @@
+  * disable FIPS mode on the internal module.
   */
  Error
 -FipsMode(char *arg)
 +FipsMode(const char *arg)
  {
      char *internal_name;
+ 
 @@ -25,16 +25,18 @@ FipsMode(char *arg)
              internal_name = PR_smprintf("%s",
                                          SECMOD_GetInternalModule()->commonName);
@@ -39,10 +43,12 @@
              PR_fprintf(PR_STDOUT, msgStrings[FIPS_ENABLED_MSG]);
          } else {
              PR_fprintf(PR_STDERR, errStrings[FIPS_ALREADY_ON_ERR]);
-@@ -112,5 +114,5 @@
+@@ -75,7 +77,7 @@ FipsMode(char *arg)
+  * If arg=="false", verify FIPS mode is disabled on the internal module.
   */
  Error
 -ChkFipsMode(char *arg)
 +ChkFipsMode(const char *arg)
  {
-     if(!PORT_Strcasecmp(arg, "true")) {
+     if (!PORT_Strcasecmp(arg, "true")) {
+         if (PK11_IsFIPS()) {

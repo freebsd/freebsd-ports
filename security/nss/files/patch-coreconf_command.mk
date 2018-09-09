@@ -1,5 +1,5 @@
---- coreconf/command.mk	Mon Oct 10 19:46:12 2005
-+++ coreconf/command.mk	Wed Jan 18 17:23:28 2006
+--- coreconf/command.mk.orig	2018-08-31 12:55:53 UTC
++++ coreconf/command.mk
 @@ -12,7 +12,7 @@ AS            = $(CC)
  ASFLAGS      += $(CFLAGS)
  CCF           = $(CC) $(CFLAGS)
