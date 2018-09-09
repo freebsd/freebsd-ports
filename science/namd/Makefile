@@ -11,7 +11,7 @@ COMMENT=	Computer software for molecular dynamics simulation
 LICENSE=	NAMD_MOLECULAR_DYNAMICS_LICENSE
 LICENSE_NAME=	NAMD Molecular Dynamics Software
 LICENSE_FILE=	${WRKSRC}/license.txt
-LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
+LICENSE_PERMS=	no-auto-accept no-dist-mirror no-pkg-mirror # No redistribution is allowed.
 
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Not clear if it can be built on other architectures
