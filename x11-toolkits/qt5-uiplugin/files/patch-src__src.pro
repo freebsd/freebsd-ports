@@ -1,8 +1,8 @@
 Only enter the directories we want to build, otherwise we might fail due to
 missing dependencies.
---- src/src.pro
+--- src/src.pro.orig	2018-06-21 20:34:21 UTC
 +++ src/src.pro
-@@ -1,52 +1,3 @@
+@@ -1,53 +1,3 @@
  TEMPLATE = subdirs
  
 -qtHaveModule(widgets) {
@@ -18,12 +18,13 @@ missing dependencies.
 -}
 -
 -SUBDIRS += linguist \
--    qdoc \
 -    qtattributionsscanner
 -
 -qtConfig(library) {
 -    !android|android_app: SUBDIRS += qtplugininfo
 -}
+-
+-config_clang: SUBDIRS += qdoc
 -
 -if(!android|android_app):!uikit: SUBDIRS += qtpaths
 -

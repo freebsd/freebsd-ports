@@ -1,6 +1,7 @@
 %%QT_BINDIR%%/qmlcachegen
 %%QT_INCDIR%%/QtPacketProtocol/%%FULLVER%%/QtPacketProtocol/private/qpacket_p.h
 %%QT_INCDIR%%/QtPacketProtocol/%%FULLVER%%/QtPacketProtocol/private/qpacketprotocol_p.h
+%%QT_INCDIR%%/QtPacketProtocol/%%FULLVER%%/QtPacketProtocol/private/qversionedpacket_p.h
 %%QT_INCDIR%%/QtPacketProtocol/QtPacketProtocol
 %%QT_INCDIR%%/QtPacketProtocol/QtPacketProtocolDepends
 %%QT_INCDIR%%/QtPacketProtocol/QtPacketProtocolVersion
@@ -8,11 +9,17 @@
 %%QT_INCDIR%%/QtQmlDebug/%%FULLVER%%/QtQmlDebug/private/qqmldebugclient_p.h
 %%QT_INCDIR%%/QtQmlDebug/%%FULLVER%%/QtQmlDebug/private/qqmldebugclient_p_p.h
 %%QT_INCDIR%%/QtQmlDebug/%%FULLVER%%/QtQmlDebug/private/qqmldebugconnection_p.h
+%%QT_INCDIR%%/QtQmlDebug/%%FULLVER%%/QtQmlDebug/private/qqmldebugmessageclient_p.h
 %%QT_INCDIR%%/QtQmlDebug/%%FULLVER%%/QtQmlDebug/private/qqmlenginecontrolclient_p.h
 %%QT_INCDIR%%/QtQmlDebug/%%FULLVER%%/QtQmlDebug/private/qqmlenginecontrolclient_p_p.h
-%%QT_INCDIR%%/QtQmlDebug/%%FULLVER%%/QtQmlDebug/private/qqmleventlocation_p.h
 %%QT_INCDIR%%/QtQmlDebug/%%FULLVER%%/QtQmlDebug/private/qqmlprofilerclient_p.h
 %%QT_INCDIR%%/QtQmlDebug/%%FULLVER%%/QtQmlDebug/private/qqmlprofilerclient_p_p.h
+%%QT_INCDIR%%/QtQmlDebug/%%FULLVER%%/QtQmlDebug/private/qqmlprofilerclientdefinitions_p.h
+%%QT_INCDIR%%/QtQmlDebug/%%FULLVER%%/QtQmlDebug/private/qqmlprofilerevent_p.h
+%%QT_INCDIR%%/QtQmlDebug/%%FULLVER%%/QtQmlDebug/private/qqmlprofilereventlocation_p.h
+%%QT_INCDIR%%/QtQmlDebug/%%FULLVER%%/QtQmlDebug/private/qqmlprofilereventreceiver_p.h
+%%QT_INCDIR%%/QtQmlDebug/%%FULLVER%%/QtQmlDebug/private/qqmlprofilereventtype_p.h
+%%QT_INCDIR%%/QtQmlDebug/%%FULLVER%%/QtQmlDebug/private/qqmlprofilertypedevent_p.h
 %%QT_INCDIR%%/QtQmlDebug/QtQmlDebug
 %%QT_INCDIR%%/QtQmlDebug/QtQmlDebugDepends
 %%QT_INCDIR%%/QtQmlDebug/QtQmlDebugVersion
@@ -172,6 +179,8 @@
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgbasicinternalimagenode_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgbasicinternalrectanglenode_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgbatchrenderer_p.h
+%%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgcompressedatlastexture_p.h
+%%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgcompressedtexture_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgcontext_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgcontextplugin_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgdefaultcontext_p.h
@@ -192,6 +201,8 @@
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgdistancefieldglyphnode_p_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgengine_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsggeometry_p.h
+%%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgktxhandler_p.h
+%%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgtexturefilehandler_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgmaterialshader_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgnode_p.h
 %%QT_INCDIR%%/QtQuick/%%FULLVER%%/QtQuick/private/qsgnodeupdater_p.h
@@ -366,6 +377,7 @@
 %%QT_CMAKEDIR%%/Qt5Qml/Qt5Qml_QTcpServerConnectionFactory.cmake
 %%QT_CMAKEDIR%%/Qt5Quick/Qt5QuickConfig.cmake
 %%QT_CMAKEDIR%%/Qt5Quick/Qt5QuickConfigVersion.cmake
+%%QT_CMAKEDIR%%/Qt5QuickCompiler/Qt5QuickCompilerConfig.cmake
 %%QT_CMAKEDIR%%/Qt5QuickTest/Qt5QuickTestConfig.cmake
 %%QT_CMAKEDIR%%/Qt5QuickTest/Qt5QuickTestConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5QuickWidgets/Qt5QuickWidgetsConfig.cmake
@@ -408,6 +420,7 @@
 %%QT_BINDIR%%/qmlscene
 %%QT_BINDIR%%/qmltestrunner
 %%QT_MKSPECDIR%%/features/qmlcache.prf
+%%QT_MKSPECDIR%%/features/qtquickcompiler.prf
 %%QT_MKSPECDIR%%/modules/qt_lib_packetprotocol_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_qmldebug_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_qmltest.pri
@@ -451,6 +464,7 @@
 %%QT_QMLDIR%%/Qt/labs/settings/qmldir
 %%QT_QMLDIR%%/Qt/labs/sharedimage/libsharedimageplugin.so
 %%DEBUG%%%%QT_QMLDIR%%/Qt/labs/sharedimage/libsharedimageplugin.so.debug
+%%QT_QMLDIR%%/Qt/labs/sharedimage/plugins.qmltypes
 %%QT_QMLDIR%%/Qt/labs/sharedimage/qmldir
 %%QT_QMLDIR%%/QtQml/Models.2/libmodelsplugin.so
 %%DEBUG%%%%QT_QMLDIR%%/QtQml/Models.2/libmodelsplugin.so.debug

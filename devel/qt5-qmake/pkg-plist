@@ -20,6 +20,7 @@
 %%QT_MKSPECDIR%%/common/g++-base.conf
 %%QT_MKSPECDIR%%/common/g++-macx.conf
 %%QT_MKSPECDIR%%/common/g++-unix.conf
+%%QT_MKSPECDIR%%/common/g++-win32.conf
 %%QT_MKSPECDIR%%/common/g++.conf
 %%QT_MKSPECDIR%%/common/gcc-base-mac.conf
 %%QT_MKSPECDIR%%/common/gcc-base-unix.conf
@@ -143,6 +144,8 @@
 %%QT_MKSPECDIR%%/devices/linux-rasp-pi3-vc4-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-rcar-h2-g++/qmake.conf
 %%QT_MKSPECDIR%%/devices/linux-rcar-h2-g++/qplatformdefs.h
+%%QT_MKSPECDIR%%/devices/linux-rcar-m3-g++/qmake.conf
+%%QT_MKSPECDIR%%/devices/linux-rcar-m3-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-sh4-stmicro-ST7108-g++/qmake.conf
 %%QT_MKSPECDIR%%/devices/linux-sh4-stmicro-ST7108-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/devices/linux-sh4-stmicro-ST7540-g++/qmake.conf
@@ -167,7 +170,6 @@
 %%QT_MKSPECDIR%%/features/ctest_testcase.prf
 %%QT_MKSPECDIR%%/features/ctest_testcase_common.prf
 %%QT_MKSPECDIR%%/features/ctest_testcase_installed.prf
-%%QT_MKSPECDIR%%/features/data/android/dx.bat
 %%QT_MKSPECDIR%%/features/data/cmake/ExtraSourceIncludes.cmake.in
 %%QT_MKSPECDIR%%/features/data/cmake/Qt5BasicConfig.cmake.in
 %%QT_MKSPECDIR%%/features/data/cmake/Qt5ConfigVersion.cmake.in
@@ -243,6 +245,7 @@
 %%QT_MKSPECDIR%%/features/qt_parts.prf
 %%QT_MKSPECDIR%%/features/qt_plugin.prf
 %%QT_MKSPECDIR%%/features/qt_targets.prf
+%%QT_MKSPECDIR%%/features/qt_tracepoints.prf
 %%QT_MKSPECDIR%%/features/qt_tool.prf
 %%QT_MKSPECDIR%%/features/resolve_config.prf
 %%QT_MKSPECDIR%%/features/resolve_target.prf
@@ -436,6 +439,8 @@
 %%QT_MKSPECDIR%%/unsupported/vxworks-simpentium-dcc/qplatformdefs.h
 %%QT_MKSPECDIR%%/unsupported/vxworks-simpentium-g++/qmake.conf
 %%QT_MKSPECDIR%%/unsupported/vxworks-simpentium-g++/qplatformdefs.h
+%%QT_MKSPECDIR%%/win32-clang-g++/qmake.conf
+%%QT_MKSPECDIR%%/win32-clang-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/win32-clang-msvc/qmake.conf
 %%QT_MKSPECDIR%%/win32-clang-msvc/qplatformdefs.h
 %%QT_MKSPECDIR%%/win32-g++/qmake.conf

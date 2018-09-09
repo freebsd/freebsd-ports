@@ -1,7 +1,7 @@
 Only enter the directories we want to build, otherwise we might fail due to
 missing dependencies.
 
---- src/designer/src/src.pro
+--- src/designer/src/src.pro.orig	2018-06-09 11:10:38 UTC
 +++ src/designer/src/src.pro
 @@ -3,26 +3,3 @@ TEMPLATE = subdirs
  SUBDIRS = \
