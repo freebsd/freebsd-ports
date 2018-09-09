@@ -3,6 +3,7 @@ include/laz-perf/common/types.hpp
 include/laz-perf/compressor.hpp
 include/laz-perf/decoder.hpp
 include/laz-perf/decompressor.hpp
+include/laz-perf/detail/field_extrabytes.hpp
 include/laz-perf/detail/field_gpstime.hpp
 include/laz-perf/detail/field_point10.hpp
 include/laz-perf/detail/field_rgb.hpp

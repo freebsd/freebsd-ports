@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lazperf
-DISTVERSION=	1.2.0
-PORTREVISION=	1
+DISTVERSION=	1.3.0
 CATEGORIES=	archivers databases geography
 
 MAINTAINER=	lbartoletti@tuxfamily.org
@@ -17,8 +16,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hobu
 GH_PROJECT=	laz-perf
 
-CMAKE_ARGS+=	-DWITH_TESTS:BOOL=FALSE
+CMAKE_OFF=	WITH_TESTS
+NO_ARCH=	yes
 
-post-build:
-	${RM} ${WRKSRC}/laz-perf/portable_endian.hpp.orig
+post-patch:
+	@${RM} ${WRKSRC}/laz-perf/portable_endian.hpp.orig
+
 .include <bsd.port.mk>
