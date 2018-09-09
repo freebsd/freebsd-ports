@@ -3,7 +3,7 @@
 
 PORTNAME=	ntpa
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://dist1.innolan.net/ \
 		http://dist2.innolan.net/
