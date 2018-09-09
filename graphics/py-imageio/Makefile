@@ -7,7 +7,7 @@ CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python library for reading and writing image, video formats
 
 LICENSE=	BSD2CLAUSE
@@ -20,6 +20,7 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 
 USES=		python
 USE_PYTHON=	distutils concurrent autoplist
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
