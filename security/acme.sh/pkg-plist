@@ -1,5 +1,5 @@
 sbin/acme.sh
-%%EXAMPLESDIR%%/acme.sh
+%%EXAMPLESDIR%%/acme.sh.conf
 %%EXAMPLESDIR%%/deploy/README.md
 %%EXAMPLESDIR%%/deploy/apache.sh
 %%EXAMPLESDIR%%/deploy/cpanel_uapi.sh
