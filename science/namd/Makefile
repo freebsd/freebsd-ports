@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	namd
-DISTVERSION=	2-12-211
-DISTVERSIONSUFFIX=	-gfdf7ea56
+DISTVERSION=	2.12
 CATEGORIES=	science
+DISTNAME=	${PORTNAME:tu}_${DISTVERSION}_Source
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Computer software for molecular dynamics simulation
@@ -17,7 +17,6 @@ ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Not clear if it can be built on other architectures
 BROKEN_i386=	need to fix the fft library handling
 
-FETCH_DEPENDS=	git:devel/git
 BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/include/fftw3.h:math/fftw3
 LIB_DEPENDS=	libck.so:net/charm \
@@ -49,15 +48,13 @@ local-makesum: # Workaround: the generic 'make makesum' is broken when custom do
 	@${MAKE} distclean fetch makesum
 
 do-fetch:
-	@if [ "${FORCE_FETCH_ALL}" = "true" ] || ! [ -f "${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}" ]; then \
-	  ${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
-	  cd ${DISTDIR}/${DIST_SUBDIR} && \
-	    git clone -q ${GIT_URL} ${PORTNAME}-${DISTVERSIONFULL} && \
-	    (cd ${PORTNAME}-${DISTVERSIONFULL} && git reset -q --hard ${DISTVERSIONFULL} && ${RM} -r .git) && \
-	    ${FIND} ${PORTNAME}-${DISTVERSIONFULL} -and -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; && \
-	    ${FIND} ${PORTNAME}-${DISTVERSIONFULL} -print0 | LC_ALL=C ${SORT} -z | \
-	        ${TAR} czf ${PORTNAME}-${DISTVERSIONFULL}${EXTRACT_SUFX} --format=bsdtar --uid 0 --gid 0 --options gzip:!timestamp --no-recursion --null -T - && \
-	    ${RM} -r ${PORTNAME}-${DISTVERSIONFULL}; \
+	@if ! [ -f "${DISTDIR}/${DISTFILES}" ]; then \
+	  ${ECHO} "(!!)"; \
+	  ${ECHO} "(!!) Please download the release tarball of the version ${DISTVERSION} (${DISTFILES})"; \
+	  ${ECHO} "(!!) from https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=NAMD,"; \
+	  ${ECHO} "(!!) put it into ${DISTDIR}, and run 'make' again."; \
+	  ${ECHO} "(!!)"; \
+	  ${FALSE}; \
 	fi
 
 do-configure:
