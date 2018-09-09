@@ -11,6 +11,8 @@ COMMENT=	Keybase Filesystem (KBFS)
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+PORTSCOUT=	skipv:initial-git-on-android
+
 USES=		go
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
