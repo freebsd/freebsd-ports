@@ -239,5 +239,6 @@ snes9x-*		emulators/snes9x-gtk	Commercial users must seek permission from copyri
 rainloop-1.*.zip	mail/rainloop		Redistribution in any form is prohibited
 lha-114i.tar.gz		archivers/lha		Binary only redistribution is prohibited. Non-network redistribution such as CDROM requires prior notification to author. Commercial use whose main purpose is to provide the functions of this program is prohibited.
 atom-*.tgz		science/atom		Redistribution in any form is prohibited
-charm-uiuc*		net/charm		No commercial use: commercial use requires a commercial license
-namd*			science/namd		No commercial use: commercial use requires a commercial license
+charm-uiuc-*		net/charm		No commercial use: commercial use requires a commercial license
+namd-*			science/namd		No commercial use: commercial use requires a commercial license
+vmd-*			science/vmd		No commercial use: commercial use requires a commercial license
