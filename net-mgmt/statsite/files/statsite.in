@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: statsite
+# REQUIRE: NETWORKING SYSLOG
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# statsite_enable (bool):	Set to NO by default.
+#				Set it to YES to enable statsite.
+# statsite_config (path):	Set to %%PREFIX%%/etc/statsite.conf
+#				by default.
+
+. /etc/rc.subr
+
+name=statsite
+rcvar=statsite_enable
+
+load_rc_config $name
+
+: ${statsite_enable:="NO"}
+: ${statsite_config="%%PREFIX%%/etc/statsite.conf"}
+
+pidfile=/var/run/${name}.pid
+command="/usr/sbin/daemon"
+command_args="-f -u statsd -P ${pidfile} %%PREFIX%%/bin/statsite -f ${statsite_config}"
+
+run_rc_command "$1"
