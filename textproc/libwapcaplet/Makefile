@@ -3,9 +3,9 @@
 
 PORTNAME=	libwapcaplet
 PORTVERSION=	0.4.1
-DISTVERSIONSUFFIX=	-src
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
+EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	neel@neelc.org
 COMMENT=	String internment library
@@ -13,12 +13,10 @@ COMMENT=	String internment library
 LICENSE=	MIT
 
 BUILD_DEPENDS=	netsurf-buildsystem>=1.5:devel/netsurf-buildsystem \
-	${LOCALBASE}/bin/flex:textproc/flex
+		${LOCALBASE}/bin/flex:textproc/flex
 
-USES=	gmake
+USES=		gmake
 USE_LDCONFIG=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAKE_ENV=	COMPONENT_TYPE="lib-shared" \
 		FLEX="${LOCALBASE}/bin/flex"

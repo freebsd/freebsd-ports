@@ -3,9 +3,9 @@
 
 PORTNAME=	libparserutils
 PORTVERSION=	0.2.4
-DISTVERSIONSUFFIX=	-src
 CATEGORIES=	devel
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
+EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	neel@neelc.org
 COMMENT=	Lexer/parser utility functions for NetSurf
@@ -20,8 +20,6 @@ USE_LDCONFIG=	yes
 
 MAKE_ENV=	COMPONENT_TYPE="lib-shared"
 LDFLAGS+=	${ICONV_LIB}
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
