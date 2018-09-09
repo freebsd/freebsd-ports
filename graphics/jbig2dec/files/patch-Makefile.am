@@ -1,6 +1,6 @@
---- Makefile.am.orig	2014-10-31 21:30:04.000000000 +0800
-+++ Makefile.am	2015-12-04 15:46:33.248995991 +0800
-@@ -26,10 +26,10 @@
+--- Makefile.am.orig	2018-09-03 16:39:20 UTC
++++ Makefile.am
+@@ -26,10 +26,10 @@ libjbig2dec_la_SOURCES = jbig2.c \
  bin_PROGRAMS = jbig2dec
  noinst_PROGRAMS = test_sha1 test_huffman test_arith
  
@@ -14,7 +14,7 @@
  
  dist_man_MANS = jbig2dec.1
  
-@@ -39,8 +39,9 @@
+@@ -39,8 +39,9 @@ MAINTAINERCLEANFILES = config_types.h.in
  
  TESTS = test_sha1 test_jbig2dec.py test_huffman test_arith
  

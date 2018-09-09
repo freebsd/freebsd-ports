@@ -1,6 +1,6 @@
---- jbig2dec.c.orig	2014-10-31 13:30:04 UTC
+--- jbig2dec.c.orig	2018-09-03 16:39:20 UTC
 +++ jbig2dec.c
-@@ -41,7 +41,10 @@
+@@ -40,7 +40,10 @@
  #endif
  
  #include "os_types.h"
