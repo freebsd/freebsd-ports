@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	greenlet
-PORTVERSION=	0.4.14
+PORTVERSION=	0.4.15
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,10 +16,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=		mips mips64 powerpc64
 NOT_FOR_ARCHS_REASON=	greenlet needs to be ported to this platform
 
-DO_MAKE_TEST=	${PYTHON_CMD}
-TEST_TARGET=	run-tests.py
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
+
+DO_MAKE_TEST=	${PYTHON_CMD}
+TEST_TARGET=	run-tests.py
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/greenlet.so
