@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-brightbox
-PORTVERSION=	0.16.0
+PORTVERSION=	0.16.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
