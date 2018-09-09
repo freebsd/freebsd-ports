@@ -1,0 +1,12 @@
+CharLS is a C++ implementation of the JPEG-LS standard for lossless and
+near-lossless image compression and decompression. JPEG-LS is a low-complexity
+image compression standard that matches JPEG 2000 compression ratios.
+
+Features:
+- C++14 library implementation with a binary C interface for maximum
+  interoperability.
+- Supports Windows, Linux and Solaris in 32 bit and 64 bit.
+- Includes an adapter assembly for .NET based languages.
+- Excellent compression and decompression performance.
+
+WWW: https://github.com/team-charls/charls
