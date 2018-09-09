@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tdfiglet
-PORTVERSION=	0.3
+PORTVERSION=	0.5
 CATEGORIES=	misc
 
 MAINTAINER=	zi@FreeBSD.org
