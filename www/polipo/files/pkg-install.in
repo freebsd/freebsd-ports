@@ -56,7 +56,7 @@ elif [ "$2" = "POST-INSTALL" ]; then
 	fi
 
 	if ! fgrep "${POLIPOLOG}" "%%DESTDIR%%/etc/newsyslog.conf" 2>/dev/null 1>&2; then
-	    echo "Add a line to /etc/newsyslog.conf (or /usr/local/etc/newsyslog.d/polipo if"
+	    echo "Add a line to /etc/newsyslog.conf (or /usr/local/etc/newsyslog.conf.d/polipo.conf if"
 	    echo "supported on your system) to enable automatic log file rotation:"
 	    echo
 	    echo "${POLIPOLOG} ${POLIPOUSER}: 640 3 100 * J ${POLIPOPID} 30"
