@@ -3,17 +3,19 @@
 
 PORTNAME=	gdb
 PORTVERSION=	7.3.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	avr-
-DISTNAME=	gdb-${PORTVERSION}
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	GNU GDB for the AVR target
+
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-USES=		gmake ncurses tar:bzip2
+USES=		gmake ncurses tar:bzip2 iconv
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=avr --program-prefix=avr --disable-nls \
