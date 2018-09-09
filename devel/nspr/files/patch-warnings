@@ -1,4 +1,4 @@
---- pr/include/prcountr.h.orig	2015-10-16 13:22:19 UTC
+--- pr/include/prcountr.h.orig	2018-08-28 12:42:28 UTC
 +++ pr/include/prcountr.h
 @@ -394,7 +394,7 @@ NSPR_API(void) 
  #define PR_GET_COUNTER(counter,handle)\
@@ -18,9 +18,9 @@
  #endif
  
  NSPR_API(PRCounterHandle) 
---- pr/src/misc/pralarm.c.orig	2015-10-16 13:22:19 UTC
+--- pr/src/misc/pralarm.c.orig	2018-08-28 12:42:28 UTC
 +++ pr/src/misc/pralarm.c
-@@ -101,7 +101,7 @@ static void PR_CALLBACK pr_alarmNotifier
+@@ -101,7 +101,7 @@ static void PR_CALLBACK pr_alarmNotifier(void *arg)
  
      while (why != abort)
      {
@@ -29,7 +29,7 @@
  
          PR_Lock(alarm->lock);
          while (why == scan)
---- pr/src/misc/prdtoa.c.orig	2015-10-16 13:22:19 UTC
+--- pr/src/misc/prdtoa.c.orig	2018-08-28 12:42:28 UTC
 +++ pr/src/misc/prdtoa.c
 @@ -2751,7 +2751,7 @@ dtoa
  		to hold the suppressed trailing zeros.
@@ -40,9 +40,9 @@
  		j, j1, k, k0, k_check, leftright, m2, m5, s2, s5,
  		spec_case, try_quick;
  	Long L;
---- pr/src/pthreads/ptio.c.orig	2015-10-16 13:22:19 UTC
+--- pr/src/pthreads/ptio.c.orig	2018-08-28 12:42:28 UTC
 +++ pr/src/pthreads/ptio.c
-@@ -4934,6 +4934,7 @@ PR_IMPLEMENT(PRInt32) PR_Select(
+@@ -5036,6 +5036,7 @@ PR_IMPLEMENT(PRInt32) PR_Select(
  
      if (timeout == PR_INTERVAL_NO_TIMEOUT) {
          tvp = NULL;
@@ -50,10 +50,10 @@
      } else {
          tv.tv_sec = (PRInt32)PR_IntervalToSeconds(timeout);
          tv.tv_usec = (PRInt32)PR_IntervalToMicroseconds(
---- pr/src/pthreads/ptsynch.c.orig	2015-10-16 13:22:19 UTC
+--- pr/src/pthreads/ptsynch.c.orig	2018-08-28 12:42:28 UTC
 +++ pr/src/pthreads/ptsynch.c
-@@ -30,7 +30,7 @@ static pthread_t pt_zero_tid;  /* a null
- #endif  /* defined(_PR_DCETHREADS) */
+@@ -25,7 +25,7 @@ static pthread_condattr_t _pt_cvar_attr;
+ extern PTDebug pt_debug;  /* this is shared between several modules */
  #endif  /* defined(DEBUG) */
  
 -#if defined(FREEBSD)

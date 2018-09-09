@@ -3,7 +3,7 @@ Better to just keep calling it pthread_t isntead of casting to anything.
 
 	-mi
 
---- pr/include/private/pprthred.h.orig	2015-10-16 13:22:19 UTC
+--- pr/include/private/pprthred.h.orig	2018-08-28 12:42:28 UTC
 +++ pr/include/private/pprthred.h
 @@ -11,6 +11,7 @@
  ** developers only.
@@ -22,9 +22,9 @@ Better to just keep calling it pthread_t isntead of casting to anything.
  
  /*
  ** Set the procedure that is called when a thread is dumped. The procedure
---- pr/src/pthreads/ptthread.c.orig	2018-01-18 12:37:14 UTC
+--- pr/src/pthreads/ptthread.c.orig	2018-08-28 12:42:28 UTC
 +++ pr/src/pthreads/ptthread.c
-@@ -1122,9 +1122,9 @@ PR_IMPLEMENT(void) PR_ProcessExit(PRIntn status)
+@@ -1138,9 +1138,9 @@ PR_IMPLEMENT(void) PR_ProcessExit(PRIntn status)
      _exit(status);
  }
  
