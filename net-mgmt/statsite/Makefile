@@ -3,7 +3,7 @@
 PORTNAME=	statsite
 PORTVERSION=	0.8.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	rbarabas@rbarabas.info
@@ -29,7 +29,7 @@ PORTDOCS=	README.md
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,python,${PYTHON_CMD},' \
-		-e 's,/usr/libexec,/usr/local/share,' \
+		-e 's,/usr/libexec/statsite,${DATADIR},' \
 		-e '/daemonize/d' \
 		-e '/pid_file/d' \
 		${WRKSRC}/rpm/statsite.conf.example
