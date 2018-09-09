@@ -3,14 +3,15 @@
 
 PORTNAME=	rudeconfig
 PORTVERSION=	5.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rudeserver.com/config/download/
 
 MAINTAINER=	lowmaster@web.de
 COMMENT=	Library for handling configuration files, written in C++
 
-USES=		libtool
+USES=		dos2unix libtool
+DOS2UNIX_GLOB=	*
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
