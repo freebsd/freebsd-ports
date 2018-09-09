@@ -26,6 +26,8 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libnetcdf.so:science/netcdf
 RUN_DEPENDS=	${PYNUMPY}
 
+RESTRICTED=	No commercial use: commercial use requires a commercial license
+
 LICENSE_FILE_VMD=	${WRKSRC}/LICENSE
 LICENSE_PERMS_VMD=	auto-accept
 LICENSE_NAME_VMD=	Visual Molecular Dynamics Software License Agreement
@@ -94,7 +96,7 @@ PLIST_SUB+=		VMD_ARCH=${VMD_ARCH}
 .if !exists(${DISTDIR}/${VMD_DIST})
 IGNORE=	license restrictions require manual fetching of the distribution\
 	source.  Please visit http://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD\
-	with a browser.  You will be required to register, log in,  and accept\
+	with a browser.  You will be required to register, log in, and accept\
 	the University of Illinois agreement before you can download the\
 	${VMD_DIST} source file.  Place this file in ${DISTDIR} and try again.
 .endif
