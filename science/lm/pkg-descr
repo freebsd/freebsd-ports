@@ -1,0 +1,9 @@
+Lattice Microbes is a software package for efficiently sampling trajectories
+from the chemical and reaction-diffusion master equations (CME/RDME) on high
+performance computing (HPC) infrastructure using both exact and approximate
+methods. pyLM is a problem solving environment written in Python that leverages
+the high-performance nature of the Lattice Microbes package while providing ease
+of use for common stochastic simulations and high customizability for complex
+biological applications.
+
+WWW: http://www.scs.illinois.edu/schulten/lm/
