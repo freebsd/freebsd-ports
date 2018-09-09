@@ -8,15 +8,16 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PSANNES
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl extension for handling of WMO BUFR files
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
 USES=		perl5 shebangfix
-SHEBANG_FILES=	*.pl
 USE_PERL5=	configure
+
+SHEBANG_FILES=	*.pl
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Geo/BUFR/BUFR.so
