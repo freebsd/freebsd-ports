@@ -22,10 +22,10 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libck.so:net/charm \
 		libfftw3f.so:math/fftw3-float
 
+RESTRICTED=	No commercial use: commercial use requires a commercial license
+
 USES=		fortran gmake localbase:ldflags python:build shebangfix tcl
 SHEBANG_FILES=	config
-
-GIT_URL=	https://charm.cs.illinois.edu/gerrit/namd.git
 
 ARCH_STR=	Linux-${ARCH:S/amd64/x86_64/:S/i386/x86/}-g++
 ARCH_STR_CHARM=	linux${ARCH:S/amd64/64/:S/i386/32/}
@@ -44,18 +44,11 @@ PLIST_FILES=	bin/flipbinpdb \
 		bin/psfgen \
 		bin/sortreplicas
 
-local-makesum: # Workaround: the generic 'make makesum' is broken when custom do-fetch is defined: it calls ${SCRIPTSDIR}/do-fetch.sh.
-	@${MAKE} distclean fetch makesum
+.include <bsd.port.pre.mk>
 
-do-fetch:
-	@if ! [ -f "${DISTDIR}/${DISTFILES}" ]; then \
-	  ${ECHO} "(!!)"; \
-	  ${ECHO} "(!!) Please download the release tarball of the version ${DISTVERSION} (${DISTFILES})"; \
-	  ${ECHO} "(!!) from https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=NAMD,"; \
-	  ${ECHO} "(!!) put it into ${DISTDIR}, and run 'make' again."; \
-	  ${ECHO} "(!!)"; \
-	  ${FALSE}; \
-	fi
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+IGNORE=	please download the release tarball of the version ${DISTVERSION} (${DISTFILES}) from https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=NAMD, put it into ${DISTDIR}, and run 'make' again
+.endif
 
 do-configure:
 	@cd ${WRKSRC} && ${ECHO} "CHARMBASE=${LOCALBASE}" > Make.config
@@ -75,4 +68,4 @@ do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${e} ${STAGEDIR}${PREFIX}/bin
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
