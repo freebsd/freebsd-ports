@@ -1,3 +1,69 @@
+--- cmd/platlibs.mk.orig	2018-08-31 12:55:53 UTC
++++ cmd/platlibs.mk
+@@ -29,7 +29,7 @@ endif # BUILD_SUN_PKG
+ ifdef NSS_DISABLE_DBM
+ DBMLIB = $(NULL)
+ else
+-DBMLIB = $(DIST)/lib/$(LIB_PREFIX)dbm.$(LIB_SUFFIX) 
++DBMLIB = $(NULL)
+ endif
+ 
+ ifeq ($(NSS_BUILD_UTIL_ONLY),1)
+--- lib/certdb/xauthkid.c.orig	2018-08-31 12:55:53 UTC
++++ lib/certdb/xauthkid.c
+@@ -7,7 +7,7 @@
+  *
+  */
+ 
+-#include "prtypes.h"
++#include <prtypes.h>
+ #include "seccomon.h"
+ #include "secdert.h"
+ #include "secoidt.h"
+--- lib/certdb/xbsconst.c.orig	2018-08-31 12:55:53 UTC
++++ lib/certdb/xbsconst.c
+@@ -6,7 +6,7 @@
+  * X.509 v3 Basic Constraints Extension
+  */
+ 
+-#include "prtypes.h"
++#include <prtypes.h>
+ #include <limits.h> /* for LONG_MAX */
+ #include "seccomon.h"
+ #include "secdert.h"
+--- lib/certdb/xconst.c.orig	2018-08-31 12:55:53 UTC
++++ lib/certdb/xconst.c
+@@ -6,7 +6,7 @@
+  * X.509 Extension Encoding
+  */
+ 
+-#include "prtypes.h"
++#include <prtypes.h>
+ #include "seccomon.h"
+ #include "secdert.h"
+ #include "secoidt.h"
+--- lib/ckfw/dbm/ckdbm.h.orig	2018-08-31 12:55:53 UTC
++++ lib/ckfw/dbm/ckdbm.h
+@@ -23,7 +23,7 @@
+ #include "ckt.h"
+ #endif /* CKT_H */
+ 
+-#include "mcom_db.h"
++#include <db.h>
+ 
+ NSS_EXTERN_DATA NSSCKMDInstance nss_dbm_mdInstance;
+ 
+--- lib/manifest.mn.orig	2018-08-31 12:55:53 UTC
++++ lib/manifest.mn
+@@ -20,7 +20,7 @@ ifndef NSS_BUILD_UTIL_ONLY
+ SOFTOKEN_SRCDIRS = \
+ 	$(FREEBL_SRCDIR) \
+ 	$(SQLITE_SRCDIR) \
+-	$(DBM_SRCDIR) \
++	$(NULL) \
+ 	$(SOFTOKEN_SRCDIR) \
+ 	$(NULL)
+ ifndef NSS_BUILD_SOFTOKEN_ONLY
 --- lib/softoken/legacydb/cdbhdl.h.orig	2018-08-31 12:55:53 UTC
 +++ lib/softoken/legacydb/cdbhdl.h
 @@ -9,7 +9,8 @@
@@ -10,6 +76,16 @@
  #include "pcertt.h"
  #include "prtypes.h"
  
+--- lib/softoken/legacydb/config.mk.orig	2018-08-31 12:55:53 UTC
++++ lib/softoken/legacydb/config.mk
+@@ -8,7 +8,6 @@ CRYPTOLIB=$(DIST)/lib/$(LIB_PREFIX)freebl.$(LIB_SUFFIX
+ 
+ EXTRA_LIBS += \
+ 	$(CRYPTOLIB) \
+-	$(DIST)/lib/$(LIB_PREFIX)dbm.$(LIB_SUFFIX) \
+ 	$(NULL)
+ 
+ # can't do this in manifest.mn because OS_TARGET isn't defined there.
 --- lib/softoken/legacydb/dbmshim.c.orig	2018-08-31 12:55:53 UTC
 +++ lib/softoken/legacydb/dbmshim.c
 @@ -5,7 +5,8 @@
@@ -67,79 +143,3 @@
  #include "secerr.h"
  #include "utilpars.h"
  
---- lib/ckfw/dbm/ckdbm.h.orig	2018-08-31 12:55:53 UTC
-+++ lib/ckfw/dbm/ckdbm.h
-@@ -23,7 +23,7 @@
- #include "ckt.h"
- #endif /* CKT_H */
- 
--#include "mcom_db.h"
-+#include <db.h>
- 
- NSS_EXTERN_DATA NSSCKMDInstance nss_dbm_mdInstance;
- 
---- lib/softoken/legacydb/config.mk.orig	2018-08-31 12:55:53 UTC
-+++ lib/softoken/legacydb/config.mk
-@@ -8,7 +8,6 @@ CRYPTOLIB=$(DIST)/lib/$(LIB_PREFIX)freebl.$(LIB_SUFFIX
- 
- EXTRA_LIBS += \
- 	$(CRYPTOLIB) \
--	$(DIST)/lib/$(LIB_PREFIX)dbm.$(LIB_SUFFIX) \
- 	$(NULL)
- 
- # can't do this in manifest.mn because OS_TARGET isn't defined there.
---- lib/certdb/xauthkid.c.orig	2018-08-31 12:55:53 UTC
-+++ lib/certdb/xauthkid.c
-@@ -7,7 +7,7 @@
-  *
-  */
- 
--#include "prtypes.h"
-+#include <prtypes.h>
- #include "seccomon.h"
- #include "secdert.h"
- #include "secoidt.h"
---- lib/certdb/xbsconst.c.orig	2018-08-31 12:55:53 UTC
-+++ lib/certdb/xbsconst.c
-@@ -6,7 +6,7 @@
-  * X.509 v3 Basic Constraints Extension
-  */
- 
--#include "prtypes.h"
-+#include <prtypes.h>
- #include <limits.h> /* for LONG_MAX */
- #include "seccomon.h"
- #include "secdert.h"
---- lib/certdb/xconst.c.orig	2018-08-31 12:55:53 UTC
-+++ lib/certdb/xconst.c
-@@ -6,7 +6,7 @@
-  * X.509 Extension Encoding
-  */
- 
--#include "prtypes.h"
-+#include <prtypes.h>
- #include "seccomon.h"
- #include "secdert.h"
- #include "secoidt.h"
---- lib/manifest.mn.orig	2018-08-31 12:55:53 UTC
-+++ lib/manifest.mn
-@@ -20,7 +20,7 @@ ifndef NSS_BUILD_UTIL_ONLY
- SOFTOKEN_SRCDIRS = \
- 	$(FREEBL_SRCDIR) \
- 	$(SQLITE_SRCDIR) \
--	$(DBM_SRCDIR) \
-+	$(NULL) \
- 	$(SOFTOKEN_SRCDIR) \
- 	$(NULL)
- ifndef NSS_BUILD_SOFTOKEN_ONLY
---- cmd/platlibs.mk.orig	2018-08-31 12:55:53 UTC
-+++ cmd/platlibs.mk
-@@ -29,7 +29,7 @@ endif # BUILD_SUN_PKG
- ifdef NSS_DISABLE_DBM
- DBMLIB = $(NULL)
- else
--DBMLIB = $(DIST)/lib/$(LIB_PREFIX)dbm.$(LIB_SUFFIX) 
-+DBMLIB = $(NULL)
- endif
- 
- ifeq ($(NSS_BUILD_UTIL_ONLY),1)
