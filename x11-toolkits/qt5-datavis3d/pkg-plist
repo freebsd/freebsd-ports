@@ -85,7 +85,9 @@
 %%QT_INCDIR%%/QtDataVisualization/QAbstract3DSeries
 %%QT_INCDIR%%/QtDataVisualization/QAbstractDataProxy
 %%QT_INCDIR%%/QtDataVisualization/QBar3DSeries
+%%QT_INCDIR%%/QtDataVisualization/QBarDataArray
 %%QT_INCDIR%%/QtDataVisualization/QBarDataItem
+%%QT_INCDIR%%/QtDataVisualization/QBarDataRow
 %%QT_INCDIR%%/QtDataVisualization/QBarDataProxy
 %%QT_INCDIR%%/QtDataVisualization/QCategory3DAxis
 %%QT_INCDIR%%/QtDataVisualization/QCustom3DItem
@@ -97,11 +99,14 @@
 %%QT_INCDIR%%/QtDataVisualization/QItemModelSurfaceDataProxy
 %%QT_INCDIR%%/QtDataVisualization/QLogValue3DAxisFormatter
 %%QT_INCDIR%%/QtDataVisualization/QScatter3DSeries
+%%QT_INCDIR%%/QtDataVisualization/QScatterDataArray
 %%QT_INCDIR%%/QtDataVisualization/QScatterDataItem
 %%QT_INCDIR%%/QtDataVisualization/QScatterDataProxy
 %%QT_INCDIR%%/QtDataVisualization/QSurface3DSeries
+%%QT_INCDIR%%/QtDataVisualization/QSurfaceDataArray
 %%QT_INCDIR%%/QtDataVisualization/QSurfaceDataItem
 %%QT_INCDIR%%/QtDataVisualization/QSurfaceDataProxy
+%%QT_INCDIR%%/QtDataVisualization/QSurfaceDataRow
 %%QT_INCDIR%%/QtDataVisualization/QTouch3DInputHandler
 %%QT_INCDIR%%/QtDataVisualization/QValue3DAxis
 %%QT_INCDIR%%/QtDataVisualization/QValue3DAxisFormatter

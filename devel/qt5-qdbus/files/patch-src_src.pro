@@ -1,11 +1,11 @@
 Only enter the directories we want to build, otherwise we might fail due to
 missing dependencies.
 
---- src/src.pro.orig	2016-07-23 14:50:14 UTC
+--- src/src.pro.orig	2018-06-09 11:10:38 UTC
 +++ src/src.pro
-@@ -1,52 +1,2 @@
+@@ -1,53 +1,4 @@
  TEMPLATE = subdirs
--
+ 
 -qtHaveModule(widgets) {
 -    no-png {
 -        message("Some graphics-related tools are unavailable without PNG support")
@@ -19,12 +19,13 @@ missing dependencies.
 -}
 -
 -SUBDIRS += linguist \
--    qdoc \
 -    qtattributionsscanner
 -
 -qtConfig(library) {
 -    !android|android_app: SUBDIRS += qtplugininfo
 -}
+-
+-config_clang: SUBDIRS += qdoc
 -
 -if(!android|android_app):!uikit: SUBDIRS += qtpaths
 -
@@ -36,8 +37,8 @@ missing dependencies.
 -    SUBDIRS += androiddeployqt
 -}
 -
--qtHaveModule(dbus): SUBDIRS += qdbus
--
+ qtHaveModule(dbus): SUBDIRS += qdbus
+ 
 -win32|winrt:SUBDIRS += windeployqt
 -winrt:SUBDIRS += winrtrunner
 -qtHaveModule(gui):!android:!uikit:!qnx:!winrt: SUBDIRS += qtdiag
@@ -56,4 +57,3 @@ missing dependencies.
 -    winrtrunner.depends += qtattributionsscanner
 -    linguist.depends += qtattributionsscanner
 -}
-+SUBDIRS = qdbus

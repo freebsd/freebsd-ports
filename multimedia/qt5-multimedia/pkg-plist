@@ -110,6 +110,7 @@
 %%QT_INCDIR%%/QtMultimedia/QCameraViewfinderSettingsControl
 %%QT_INCDIR%%/QtMultimedia/QCameraViewfinderSettingsControl2
 %%QT_INCDIR%%/QtMultimedia/QCameraZoomControl
+%%QT_INCDIR%%/QtMultimedia/QCustomAudioRoleControl
 %%QT_INCDIR%%/QtMultimedia/QImageEncoderControl
 %%QT_INCDIR%%/QtMultimedia/QImageEncoderSettings
 %%QT_INCDIR%%/QtMultimedia/QMediaAudioProbeControl
@@ -202,6 +203,7 @@
 %%QT_INCDIR%%/QtMultimedia/qcameraviewfindersettings.h
 %%QT_INCDIR%%/QtMultimedia/qcameraviewfindersettingscontrol.h
 %%QT_INCDIR%%/QtMultimedia/qcamerazoomcontrol.h
+%%QT_INCDIR%%/QtMultimedia/qcustomaudiorolecontrol.h
 %%QT_INCDIR%%/QtMultimedia/qimageencodercontrol.h
 %%QT_INCDIR%%/QtMultimedia/qmediaaudioprobecontrol.h
 %%QT_INCDIR%%/QtMultimedia/qmediaavailabilitycontrol.h

@@ -43,6 +43,7 @@
 %%QT_L10NDIR%%/linguist_es.qm
 %%QT_L10NDIR%%/linguist_fr.qm
 %%QT_L10NDIR%%/linguist_hu.qm
+%%QT_L10NDIR%%/linguist_it.qm
 %%QT_L10NDIR%%/linguist_ja.qm
 %%QT_L10NDIR%%/linguist_ko.qm
 %%QT_L10NDIR%%/linguist_pl.qm
@@ -79,6 +80,7 @@
 %%QT_L10NDIR%%/qt_fa.qm
 %%QT_L10NDIR%%/qt_fi.qm
 %%QT_L10NDIR%%/qt_fr.qm
+%%QT_L10NDIR%%/qt_gd.qm
 %%QT_L10NDIR%%/qt_gl.qm
 %%QT_L10NDIR%%/qt_he.qm
 %%QT_L10NDIR%%/qt_help_ar.qm
@@ -106,6 +108,7 @@
 %%QT_L10NDIR%%/qt_ja.qm
 %%QT_L10NDIR%%/qt_ko.qm
 %%QT_L10NDIR%%/qt_lt.qm
+%%QT_L10NDIR%%/qt_lv.qm
 %%QT_L10NDIR%%/qt_pl.qm
 %%QT_L10NDIR%%/qt_pt.qm
 %%QT_L10NDIR%%/qt_ru.qm
@@ -136,21 +139,12 @@
 %%QT_L10NDIR%%/qtbase_ru.qm
 %%QT_L10NDIR%%/qtbase_sk.qm
 %%QT_L10NDIR%%/qtbase_uk.qm
-%%QT_L10NDIR%%/qtconfig_hu.qm
-%%QT_L10NDIR%%/qtconfig_ja.qm
-%%QT_L10NDIR%%/qtconfig_ko.qm
-%%QT_L10NDIR%%/qtconfig_pl.qm
-%%QT_L10NDIR%%/qtconfig_ru.qm
-%%QT_L10NDIR%%/qtconfig_sk.qm
-%%QT_L10NDIR%%/qtconfig_sl.qm
-%%QT_L10NDIR%%/qtconfig_uk.qm
-%%QT_L10NDIR%%/qtconfig_zh_CN.qm
-%%QT_L10NDIR%%/qtconfig_zh_TW.qm
 %%QT_L10NDIR%%/qtconnectivity_bg.qm
 %%QT_L10NDIR%%/qtconnectivity_da.qm
 %%QT_L10NDIR%%/qtconnectivity_de.qm
 %%QT_L10NDIR%%/qtconnectivity_en.qm
 %%QT_L10NDIR%%/qtconnectivity_es.qm
+%%QT_L10NDIR%%/qtconnectivity_hu.qm
 %%QT_L10NDIR%%/qtconnectivity_ko.qm
 %%QT_L10NDIR%%/qtconnectivity_pl.qm
 %%QT_L10NDIR%%/qtconnectivity_ru.qm
@@ -162,6 +156,7 @@
 %%QT_L10NDIR%%/qtdeclarative_es.qm
 %%QT_L10NDIR%%/qtdeclarative_fi.qm
 %%QT_L10NDIR%%/qtdeclarative_fr.qm
+%%QT_L10NDIR%%/qtdeclarative_hu.qm
 %%QT_L10NDIR%%/qtdeclarative_ja.qm
 %%QT_L10NDIR%%/qtdeclarative_ko.qm
 %%QT_L10NDIR%%/qtdeclarative_lv.qm
@@ -175,6 +170,7 @@
 %%QT_L10NDIR%%/qtlocation_en.qm
 %%QT_L10NDIR%%/qtlocation_es.qm
 %%QT_L10NDIR%%/qtlocation_fr.qm
+%%QT_L10NDIR%%/qtlocation_hu.qm
 %%QT_L10NDIR%%/qtlocation_ko.qm
 %%QT_L10NDIR%%/qtlocation_pl.qm
 %%QT_L10NDIR%%/qtlocation_ru.qm
@@ -217,10 +213,13 @@
 %%QT_L10NDIR%%/qtquick1_uk.qm
 %%QT_L10NDIR%%/qtquickcontrols2_ar.qm
 %%QT_L10NDIR%%/qtquickcontrols2_bg.qm
+%%QT_L10NDIR%%/qtquickcontrols2_da.qm
 %%QT_L10NDIR%%/qtquickcontrols2_en.qm
+%%QT_L10NDIR%%/qtquickcontrols2_hu.qm
 %%QT_L10NDIR%%/qtquickcontrols2_ko.qm
 %%QT_L10NDIR%%/qtquickcontrols2_uk.qm
 %%QT_L10NDIR%%/qtquickcontrols_bg.qm
+%%QT_L10NDIR%%/qtquickcontrols_da.qm
 %%QT_L10NDIR%%/qtquickcontrols_de.qm
 %%QT_L10NDIR%%/qtquickcontrols_en.qm
 %%QT_L10NDIR%%/qtquickcontrols_fi.qm

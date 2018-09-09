@@ -60,6 +60,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfsfileengine_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfunctions_fake_env_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfunctions_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfutex_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfutureinterface_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qfuturewatcher_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qgb18030codec_p.h
@@ -86,6 +87,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qlocale_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qlocale_tools_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qlockfile_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qlogging_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qloggingregistry_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmachparser_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmetaobject_moc_p.h
@@ -151,6 +153,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtimezoneprivate_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtldurl_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtools_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtrace_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtranslator_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qtsciicodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qunicodetables_p.h
@@ -399,7 +402,6 @@
 %%QT_INCDIR%%/QtCore/QState
 %%QT_INCDIR%%/QtCore/QStateMachine
 %%QT_INCDIR%%/QtCore/QStaticArrayData
-%%QT_INCDIR%%/QtCore/QStaticAssertFailure
 %%QT_INCDIR%%/QtCore/QStaticByteArrayData
 %%QT_INCDIR%%/QtCore/QStaticByteArrayMatcherBase
 %%QT_INCDIR%%/QtCore/QStaticPlugin

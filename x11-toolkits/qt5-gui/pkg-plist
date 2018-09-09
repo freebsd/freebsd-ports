@@ -114,6 +114,7 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qinputdevicemanager_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qinputdevicemanager_p_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qinputmethod_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qinternalmimedata_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qkeymapper_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qkeysequence_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qlayoutpolicy_p.h
