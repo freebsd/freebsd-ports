@@ -1,0 +1,14 @@
+https://github.com/mptre/yank/pull/43
+
+--- Makefile.orig	2018-09-09 07:45:36 UTC
++++ Makefile
+@@ -23,6 +23,9 @@ DISTFILES=	CHANGELOG.md \
+ 
+ all: ${PROG}
+ 
++.c.o:
++	${CC} ${CPPFLAGS} ${CFLAGS} -c ${<}
++
+ ${PROG}: ${OBJS}
+ 	${CC} -o ${PROG} ${OBJS} ${LDFLAGS}
+ 

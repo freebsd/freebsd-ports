@@ -1468,6 +1468,7 @@
     SUBDIR += xsysstats
     SUBDIR += xvidcap
     SUBDIR += yadm
+    SUBDIR += yank
     SUBDIR += yum
     SUBDIR += zap
     SUBDIR += zbackup

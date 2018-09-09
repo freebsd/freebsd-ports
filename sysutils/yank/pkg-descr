@@ -1,0 +1,6 @@
+The yank utility reads input from stdin and display a selection
+interface that allows a field to be selected and copied to the
+clipboard.  Fields are either recognized by a regular expression
+or by splitting the input on a delimiter sequence.
+
+WWW: https://github.com/mptre/yank
