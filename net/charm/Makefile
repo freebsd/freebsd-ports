@@ -13,7 +13,7 @@ COMMENT=	Message-passing parallel language and runtime system
 LICENSE=	CHARMPP_CONVERSE_LICENSE
 LICENSE_NAME=	Charm++/Converse License
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
+LICENSE_PERMS=	no-auto-accept no-dist-mirror no-pkg-mirror # No redistribution is allowed.
 
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Not clear if it can be built on other architectures
