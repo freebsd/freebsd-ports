@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	msgpack
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 DISTVERSIONPREFIX=	cpp-
 CATEGORIES=	devel
 
@@ -10,6 +10,8 @@ COMMENT=	Efficient binary serialization, like JSON but smaller and faster
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
+
+TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake pathfix
 USE_LDCONFIG=	yes
