@@ -20,7 +20,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libprotobuf.so:devel/protobuf \
 		libsz.so:science/szip
 
-USES=		gettext-runtime gmake localbase python
+USES=		gettext-runtime gmake
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 CXXFLAGS+=	-DLINUX
@@ -35,6 +35,7 @@ MPI_VARS=		XUSE_MPI=1
 MPI_VARS_OFF=		XUSE_MPI=0
 MPI_LIB_DEPENDS=	libmpich.so:net/mpich2
 
+PYTHON_USES=		python
 PYTHON_VARS=		XUSE_PYTHON=1
 PYTHON_VARS_OFF=	XUSE_PYTHON=0
 PYTHON_CXXFLAGS=	-I${PYTHON_SITELIBDIR}/numpy/core/include
