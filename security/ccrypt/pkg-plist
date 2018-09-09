@@ -9,6 +9,7 @@ man/man1/ccat.1.gz
 man/man1/ccrypt.1.gz
 man/man1/ccguess.1.gz
 %%NLS%%share/locale/de/LC_MESSAGES/ccrypt.mo
+%%NLS%%share/locale/et/LC_MESSAGES/ccrypt.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/ccrypt.mo
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/ccrypt.html
