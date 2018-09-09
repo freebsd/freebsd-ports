@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	charm
-DISTVERSIONPREFIX=	v
-DISTVERSION=	6.8.2
+DISTVERSION=	6.7.1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-uiuc
 DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
@@ -21,7 +20,7 @@ ONLY_FOR_ARCHS_REASON=	Not clear if it can be built on other architectures
 FETCH_DEPENDS=	git:devel/git
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		fortran gmake localbase:ldflags shebangfix
+USES=		fortran gmake localbase:ldflags shebangfix tar
 SHEBANG_GLOB=	*.sh
 SHEBANG_FILES=	src/scripts/*
 USE_LDCONFIG=	yes
@@ -54,16 +53,16 @@ local-makesum: # Workaround: the generic 'make makesum' is broken when custom do
 	@${MAKE} distclean fetch makesum
 
 do-fetch:
-	@if [ "${FORCE_FETCH_ALL}" = "true" ] || ! [ -f "${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}" ]; then \
-	  ${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
-	  cd ${DISTDIR}/${DIST_SUBDIR} && \
-	    git clone -q ${GIT_URL} ${PORTNAME}-${DISTVERSIONFULL} && \
-	    (cd ${PORTNAME}-${DISTVERSIONFULL} && git reset -q --hard ${DISTVERSIONFULL} && ${RM} -r .git) && \
-	    ${FIND} ${PORTNAME}-${DISTVERSIONFULL} -and -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; && \
-	    ${FIND} ${PORTNAME}-${DISTVERSIONFULL} -print0 | LC_ALL=C ${SORT} -z | \
-	        ${TAR} czf ${PORTNAME}-${DISTVERSIONFULL}${EXTRACT_SUFX} --format=bsdtar --uid 0 --gid 0 --options gzip:!timestamp --no-recursion --null -T - && \
-	    ${RM} -r ${PORTNAME}-${DISTVERSIONFULL}; \
+	@if ! [ -f "${DISTDIR}/NAMD_2.12_Source.tar.gz" ]; then \
+	  ${ECHO} "(!!)"; \
+	  ${ECHO} "(!!) Please download the release tarball of the version 2.12 of NAMD (NAMD_2.12_Source.tar.gz)"; \
+	  ${ECHO} "(!!) from https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=NAMD,"; \
+	  ${ECHO} "(!!) put it into ${DISTDIR}, and run 'make' again."; \
+	  ${ECHO} "(!!)"; \
+	  ${FALSE}; \
 	fi
+	@${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
+	@cd ${DISTDIR}/${DIST_SUBDIR} && ${TAR} xf ${DISTDIR}/NAMD_2.12_Source.tar.gz --strip-components 1 NAMD_2.12_Source/charm-${DISTVERSION}.tar
 
 post-patch:
 	@${REINPLACE_CMD} 's|which gfortran |which gfortran${GCC_DEFAULT} |' ${WRKSRC}/src/arch/common/conv-mach-gfortran.sh
@@ -73,6 +72,7 @@ post-patch:
 	@${REINPLACE_CMD} -E 's|(CMK_CC)="(.*)"|\1="\2 ${CFLAGS} "|' ${WRKSRC}/src/arch/common/cc-clang.sh
 	@${REINPLACE_CMD} -E 's|(CMK_CXX)="(.*)"|\1="\2 ${CXXFLAGS} "|' ${WRKSRC}/src/arch/common/cc-clang.sh
 	@${REINPLACE_CMD} -E 's|(CMK_LD)="(.*)"|\1="\2 ${LDFLAGS} "|' ${WRKSRC}/src/arch/common/cc-clang.sh
+	@${REINPLACE_CMD} -E 's|/lib/cpp|/usr/bin/cpp|' ${WRKSRC}/src/arch/*/*.sh
 	@${REINPLACE_CMD} -E 's|-shared -o libqt\.so|-shared -o libqt.so -Wl,-soname,libqt.so|' ${WRKSRC}/src/QuickThreads/mkfiles/*
 
 do-build:
