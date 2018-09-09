@@ -18,7 +18,9 @@ BUILD_DEPENDS=	p5-POE-Test-Loops>=1.035:devel/p5-POE-Test-Loops \
 RUN_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
 		p5-POE>=1.289:devel/p5-POE
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
