@@ -1,6 +1,6 @@
---- coreconf/ruleset.mk~
+--- coreconf/ruleset.mk.orig	2018-08-31 12:55:53 UTC
 +++ coreconf/ruleset.mk
-@@ -85,7 +85,7 @@
+@@ -53,7 +53,7 @@
  #
  
  ifndef COMPILER_TAG

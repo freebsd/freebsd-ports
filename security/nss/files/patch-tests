@@ -1,10 +1,12 @@
---- tests/common/init.sh	Mon Apr 11 22:24:17 2005
-+++ tests/common/init.sh	Fri Jul 22 16:55:36 2005
-@@ -197,5 +197,6 @@
-     case $HOST in
-         *\.*)
+--- tests/common/init.sh.orig	2018-08-31 12:55:53 UTC
++++ tests/common/init.sh
+@@ -366,7 +366,8 @@ if [ -z "${INIT_SOURCED}" -o "${INIT_SOURCED}" != "TRU
+             if [ -z "${DOMSUF}" ]; then
+                 DOMSUF=`echo $HOST | sed -e "s/^[^.]*\.//"`
+             fi
 -            HOST=`echo $HOST | sed -e "s/\..*//"`
 +	    DOMSUF=${HOST#*.}	# remove Smallest Prefix matching ``*.''
 +	    HOST=${HOST%%.*}	# remove Largest Suffix ``.*''. See sh(1)
              ;;
          ?*)
+             ;;

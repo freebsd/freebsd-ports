@@ -1,4 +1,4 @@
---- lib/util/nssilckt.h~
+--- lib/util/nssilckt.h.orig	2018-08-31 12:55:53 UTC
 +++ lib/util/nssilckt.h
 @@ -163,7 +163,7 @@ typedef enum {
  ** Declare the trace record
