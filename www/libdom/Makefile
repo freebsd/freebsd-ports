@@ -3,9 +3,9 @@
 
 PORTNAME=	libdom
 PORTVERSION=	0.3.3
-DISTVERSIONSUFFIX=	-src
 CATEGORIES=	www
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
+EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	neel@neelc.org
 COMMENT=	Document Object Model library
@@ -21,8 +21,6 @@ LIB_DEPENDS=	libwapcaplet.so:textproc/libwapcaplet \
 
 USES=		gmake iconv localbase pkgconfig
 USE_LDCONFIG=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAKE_ENV=	COMPONENT_TYPE="lib-shared"
 

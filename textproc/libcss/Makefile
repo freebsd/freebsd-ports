@@ -3,9 +3,9 @@
 
 PORTNAME=	libcss
 PORTVERSION=	0.8.0
-DISTVERSIONSUFFIX=	-src
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
+EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	neel@neelc.org
 COMMENT=	Cascading Style Sheets library
@@ -19,7 +19,6 @@ LIB_DEPENDS=	libwapcaplet.so:textproc/libwapcaplet \
 
 USES=		gmake iconv:wchar_t localbase pkgconfig
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_ENV=	COMPONENT_TYPE="lib-shared"
 LDFLAGS+=	${ICONV_LIB}
 PLIST_SUB=	VERSION=${PORTVERSION}
