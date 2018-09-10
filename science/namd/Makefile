@@ -11,7 +11,7 @@ COMMENT=	Computer software for molecular dynamics simulation
 LICENSE=	NAMD_MOLECULAR_DYNAMICS_LICENSE
 LICENSE_NAME=	NAMD Molecular Dynamics Software
 LICENSE_FILE=	${WRKSRC}/license.txt
-LICENSE_PERMS=	no-auto-accept no-dist-mirror no-pkg-mirror # No redistribution is allowed.
+LICENSE_PERMS=	no-auto-accept no-dist-mirror no-pkg-mirror # No redistribution is allowed, commercial use requires a commercial license
 
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Not clear if it can be built on other architectures
@@ -21,8 +21,6 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/include/fftw3.h:math/fftw3
 LIB_DEPENDS=	libck.so:net/charm \
 		libfftw3f.so:math/fftw3-float
-
-RESTRICTED=	No commercial use: commercial use requires a commercial license
 
 USES=		fortran gmake localbase:ldflags python:build shebangfix tcl
 SHEBANG_FILES=	config
