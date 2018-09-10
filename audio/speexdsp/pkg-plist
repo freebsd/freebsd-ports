@@ -9,4 +9,3 @@ lib/libspeexdsp.so
 lib/libspeexdsp.so.1
 lib/libspeexdsp.so.1.5.0
 libdata/pkgconfig/speexdsp.pc
-@comment %%PORTDOCS%%%%DOCSDIR%%/manual.pdf
