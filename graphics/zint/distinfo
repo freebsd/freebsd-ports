@@ -1,2 +1,3 @@
-SHA256 (zint-2.4.3.tar.gz) = de2f4fd0d008530511f5dea2cff7f96f45df4c029b57431b2411b7e1f3a523e8
-SIZE (zint-2.4.3.tar.gz) = 403544
+TIMESTAMP = 1519159191
+SHA256 (zint-2.6.3_rc2.src.tar.gz) = db7e91ce917d85bc2f710e96a2adde9d942ad7aebc23a497222d32a6e8484c63
+SIZE (zint-2.6.3_rc2.src.tar.gz) = 769756

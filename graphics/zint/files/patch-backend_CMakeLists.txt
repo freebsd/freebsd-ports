@@ -1,5 +1,5 @@
---- backend/CMakeLists.txt.orig	2011-03-30 15:13:56.000000000 +0800
-+++ backend/CMakeLists.txt	2011-03-30 15:14:34.000000000 +0800
+--- backend/CMakeLists.txt.orig	2018-02-15 10:47:59 UTC
++++ backend/CMakeLists.txt
 @@ -2,7 +2,8 @@
  
  project(zint)
@@ -8,14 +8,5 @@
 +find_package(PNG REQUIRED)
 +include_directories(${PNG_INCLUDE_DIR})
  
- set(zint_COMMON_SRCS common.c library.c render.c ps.c large.c reedsol.c gs1.c svg.c png.c)
+ set(zint_COMMON_SRCS common.c library.c render.c large.c reedsol.c gs1.c eci.c)
  set(zint_ONEDIM_SRCS code.c code128.c 2of5.c upcean.c telepen.c medical.c plessey.c rss.c)
-@@ -21,7 +22,7 @@ add_library(zint SHARED ${zint_SRCS})
- set_target_properties(zint PROPERTIES 	SOVERSION "${ZINT_VERSION_MAJOR}.${ZINT_VERSION_MINOR}"
- 					VERSION ${ZINT_VERSION})
- 
--target_link_libraries(zint ${PNG_LIBRARIES} )
-+target_link_libraries(zint ${PNG_LIBRARY} )
- target_link_libraries(zint -lm)
- 
- install(TARGETS zint  ${INSTALL_TARGETS_DEFAULT_ARGS} )
