@@ -495,6 +495,7 @@
     SUBDIR += outguess
     SUBDIR += owasp-dependency-check
     SUBDIR += p11-kit
+    SUBDIR += p5-Alt-Crypt-RSA-BigInt
     SUBDIR += p5-Apache-Htpasswd
     SUBDIR += p5-App-Genpass
     SUBDIR += p5-App-TLSMe

@@ -1,0 +1,14 @@
+This is a rework of Crypt::RSA to remove Math::Pari and instead base all
+operations on Math::BigInt.
+
+This is intended to be a plug-in replacement for Crypt::RSA, with no
+user-visible changes to existing features.
+
+Math::Pari is completely removed. This includes the two modules:
+- Crypt::Primes => Math::Prime::Util
+- Crypt::Random => Math::Prime::Util
+
+All operations are now performed using Math::BigInt, and prefer the GMP and Pari
+backends.
+
+WWW: https://metacpan.org/release/Alt-Crypt-RSA-BigInt
