@@ -102,10 +102,6 @@ DEV_WARNING+=	"USE_GNOME=desktopfileutils is deprecated, please use USES=desktop
 DEV_ERROR+=	"All LIB_DEPENDS should use the new format and start out with lib.  \(libfoo.so vs foo.so\)"
 .endif
 
-.if defined(_PREMKINCLUDED)
-DEV_ERROR+=	"you cannot include bsd.port[.pre].mk twice"
-.endif
-
 .if defined(LICENSE)
 .if ${LICENSE:MBSD}
 DEV_WARNING+=	"LICENSE must not contain BSD, instead use BSD[234]CLAUSE"
