@@ -26,6 +26,7 @@ GNU_CONFIGURE=	yes
 USE_XORG=	xmu
 USE_GNOME=	gtk20
 USES=		gettext ncurses pkgconfig
+USE_CXXSTD=	gnu++98
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 WRKSRC=		${WRKDIR}/KCemu-${PORTVERSION}
