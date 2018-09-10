@@ -36,7 +36,7 @@ DEDICATED_DESC=		Build dedicated server
 GAMELIBS_DESC=		Force building game libraries
 SMP_CLIENT_DESC=	Build SMP (threaded) client
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
 BUILD_DEPENDS+=	nasm:devel/nasm
@@ -79,6 +79,8 @@ MAKE_ENV+=	OPTIMIZED_CFLAGS=YES
 MAKE_ENV+=	SMP=YES
 Q3BIN+=		quake3-smp
 .endif
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|botlib\.log|/dev/null|' \
