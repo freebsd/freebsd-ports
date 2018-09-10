@@ -15,6 +15,8 @@ GH_ACCOUNT=	garret-smith
 GH_PROJECT=	gen_leader_revival
 GH_TAGNAME=	a12a4e3
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}

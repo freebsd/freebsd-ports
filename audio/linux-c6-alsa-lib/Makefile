@@ -19,6 +19,8 @@ USES=		linux:c6
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${RM} -r ${WRKSRC}/etc/* ${WRKSRC}/usr/lib/alsa-lib/smixer/*.la \
 		${WRKSRC}/usr/lib64/alsa-lib/smixer/*.la

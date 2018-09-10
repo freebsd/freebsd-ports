@@ -30,4 +30,6 @@ PLIST_FILES=	bin/xcm bin/xcmedid bin/xcmevents bin/xcmhextobin \
 		man/man1/xcmevents.1.gz man/man1/xcmhextobin.1.gz
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

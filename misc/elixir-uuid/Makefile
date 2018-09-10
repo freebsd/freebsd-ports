@@ -16,4 +16,6 @@ GH_ACCOUNT=	zyro
 
 ELIXIR_APP_NAME=uuid
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

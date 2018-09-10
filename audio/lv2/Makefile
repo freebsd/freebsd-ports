@@ -24,13 +24,14 @@ CONFLICTS_INSTALL=	lv2core
 USES=		python shebangfix tar:bzip2 waf
 SHEBANG_FILES=	lv2specgen/lv2specgen.py
 
-OPTIONS_DEFINE=	DOXYGEN EXAMPLES
+OPTIONS_DEFINE=	DOCS DOXYGEN EXAMPLES
 OPTIONS_SUB=	yes
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			${PYTHON_PKGNAMEPREFIX}rdflib>0:textproc/py-rdflib@${PY_FLAVOR}
 DOXYGEN_CONFIGURE_ON=	--docs
 DOXYGEN_PORTDOCS=	*
+DOXYGEN_IMPLIES=	DOCS
 
 EXAMPLES_CONFIGURE_OFF=	--no-plugins
 EXAMPLES_LIB_DEPENDS=	libsndfile.so:audio/libsndfile

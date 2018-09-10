@@ -18,6 +18,8 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	UserGuide.txt mdcached.txt
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} 's|ADDCFLAGS = -Wall -g -O3 -march=native|ADDCFLAGS = ${CFLAGS}|' \
 		${WRKSRC}/Makefile

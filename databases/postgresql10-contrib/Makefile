@@ -23,6 +23,8 @@ COMPONENT=	-contrib
 CONFIGURE_ARGS+=--with-libxslt --with-libxml --with-openssl --disable-nls --with-uuid=bsd
 LDFLAGS+=	-lpthread -L${PREFIX}/lib
 
+OPTIONS_DEFINE=	DOCS
+
 post-configure: 
 		@cd ${WRKSRC}/src/backend && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} symlinks
 

@@ -34,6 +34,8 @@ USES=		compiler:c++11-lang gnome libtool pathfix pkgconfig ssl tar:xz
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/spdycli ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/shrpx.conf.sample ${STAGEDIR}${PREFIX}/etc/

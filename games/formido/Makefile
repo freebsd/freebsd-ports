@@ -23,6 +23,8 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 pre-build:
 	@${MKDIR} ${WRKSRC}/obj
 

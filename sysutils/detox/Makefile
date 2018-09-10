@@ -17,6 +17,8 @@ USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 GH_ACCOUNT=	dharple
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/detox
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/inline-detox

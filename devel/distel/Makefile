@@ -24,6 +24,8 @@ NO_ARCH=	yes
 DISTEL_DOCS=	AUTHORS ChangeLog INSTALL INSTALL.WIN32 NEWS README README.ie-session
 DISTEL_ROOT=	${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	@${MKDIR} ${WRKSRC}/ebin
 	@cd ${WRKSRC} && erlc -W0 -o ebin/ +debug_info src/*.erl

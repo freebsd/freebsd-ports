@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjansson.so:devel/jansson
 
-OPTIONS_DEFINE=	GCC
+OPTIONS_DEFINE=	GCC DOCS
 OPTIONS_DEFAULT=GCC
 
 USES=		autoreconf cpe

@@ -38,6 +38,8 @@ SUB_LIST+=	PERL="${PERL}"
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 post-patch:

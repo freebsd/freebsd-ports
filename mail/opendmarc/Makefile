@@ -30,7 +30,7 @@ USE_RC_SUBR=	opendmarc
 
 GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=		SPF
+OPTIONS_DEFINE=		SPF DOCS
 OPTIONS_DEFAULT=	SPF
 
 SPF_DESC=		Enable support for SPF record checking

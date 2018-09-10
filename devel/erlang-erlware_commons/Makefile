@@ -17,4 +17,6 @@ GH_ACCOUNT=	erlware
 ERL_BUILD_DEPS= devel/erlang-cf
 ERL_RUN_DEPS:=  ${ERL_BUILD_DEPS}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

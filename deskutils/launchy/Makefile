@@ -24,6 +24,8 @@ PORTDOCS=	*
 
 MAKE_JOBS_UNSAFE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} 's,/usr,${PREFIX},' \
 		${WRKSRC}/platforms/unix/unix.pro \

@@ -23,7 +23,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_path_tclsh="${TCLSH}"
 TEST_TARGET=	test
 TEST_ENV=	${MAKE_ENV} DISPLAY= TZ=utc
+
+.if ${OPTIONS_DEFINE:MDOCS}
 PORTDOCS=	*
+.endif
 
 INSTALL_ARGS=	-pkgs -pkg-path ${STAGEDIR}${PREFIX}/lib/tcllib \
 		-apps -app-path ${STAGEDIR}${PREFIX}/bin \

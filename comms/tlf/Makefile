@@ -33,4 +33,6 @@ HAMLIB_CONFIGURE_ENABLE=hamlib
 FLDIGI_LIB_DEPENDS=	libxmlrpc.so:net/xmlrpc-c
 FLDIGI_CONFIGURE_ENABLE=fldigi-xmlrpc
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

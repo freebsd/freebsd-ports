@@ -13,5 +13,7 @@ USE_KDE=	auth codecs config configwidgets coreaddons crash dbusaddons \
 USE_QT=		core dbus gui network widgets phonon4 qml quick xml \
 		buildtools_build qmake_build
 
+OPTIONS_DEFINE=	DOCS
+
 .include <${.CURDIR}/../kdegames/Makefile.common>
 .include <bsd.port.mk>

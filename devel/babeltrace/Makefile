@@ -32,6 +32,8 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	ChangeLog std-ext-lib.txt API.txt lttng-live.txt
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|LICENSE mit-license.txt gpl-2.0.txt||' \
 		${WRKSRC}/Makefile.am

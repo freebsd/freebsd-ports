@@ -34,6 +34,8 @@ PLIST_FILES=	sbin/${REALNAME}-cleanup \
 		sbin/${REALNAME} \
 		etc/${REALNAME}.conf.sample
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,policyd.pid,postfix-policyd-sf.pid,' \
 		${WRKSRC}/policyd.conf

@@ -15,4 +15,6 @@ USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	beatrichartz
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

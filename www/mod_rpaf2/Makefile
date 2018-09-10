@@ -31,6 +31,8 @@ SUB_FILES=	${APMOD_FILE}
 
 PORTDOCS=	README.md
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 post-install:

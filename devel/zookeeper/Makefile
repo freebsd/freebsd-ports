@@ -48,6 +48,8 @@ USE_RC_SUBR=	zookeeper
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${REINPLACE_CMD} "/dataDir/s|=.*|=${ZOOKEEPER_DBDIR}|" ${WRKDIR}/${DISTNAME}/conf/zoo_sample.cfg
 	@${MV} ${WRKDIR}/${DISTNAME}/conf/zoo_sample.cfg ${WRKDIR}/${DISTNAME}/conf/zoo.cfg

@@ -24,6 +24,8 @@ CONFIGURE_ARGS=	--with-htmldir=${STAGEDIR}${PREFIX}/share/doc/hypermail \
 CFLAGS+=	-L${LOCALBASE}/lib
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/hypermail \
 		${STAGEDIR}/${PREFIX}/bin/msg2archive \

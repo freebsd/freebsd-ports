@@ -35,6 +35,8 @@ GL_COMMIT=	8e3ac3057363162b87279bab1e9ba356eb0aea0f
 
 .include <bsd.port.options.mk>
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|find|find .|g' \
 		${WRKSRC}/icm_prepare

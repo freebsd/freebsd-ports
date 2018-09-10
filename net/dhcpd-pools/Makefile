@@ -25,6 +25,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 PORTDATA=	snmptest.pl
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e '/features.h/d' ${WRKSRC}/src/getdata.c
 

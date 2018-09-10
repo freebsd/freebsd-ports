@@ -28,6 +28,8 @@ PLIST_SUB=	SITE_PERL_REL=${SITE_PERL_REL} \
 
 PORTDOCS=	slapd-cyrus.conf.sample
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
 	${INSTALL_DATA} -m 0444 ${WRKSRC}/t/etc/slapd.conf.dist \

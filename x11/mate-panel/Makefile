@@ -44,4 +44,6 @@ GLIB_SCHEMAS=	org.mate.panel.applet.clock.gschema.xml \
 		org.mate.panel.object.gschema.xml \
 		org.mate.panel.toplevel.gschema.xml
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

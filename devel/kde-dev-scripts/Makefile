@@ -26,4 +26,6 @@ SHEBANG_FILES=	cxxmetric \
 		kde_generate_export_header \
 		zonetab2pot.py
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

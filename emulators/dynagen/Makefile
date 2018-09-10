@@ -28,6 +28,8 @@ USE_PYTHON=	distutils autoplist
 ALL_TARGET=	# empty
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 post-extract:

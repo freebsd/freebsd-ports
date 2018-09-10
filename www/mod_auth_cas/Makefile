@@ -35,6 +35,8 @@ SUB_FILES=	${APMOD_FILE}
 APMOD_FILE=	250_${PORTNAME}.conf.sample
 PLIST_SUB+=	APMOD_FILE=${APMOD_FILE}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 do-install:

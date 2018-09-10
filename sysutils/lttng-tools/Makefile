@@ -31,6 +31,8 @@ CONFIGURE_ARGS=	--with-lttng-ust-prefix=${LOCALBASE} \
 	    --disable-maintainer-mode
 INSTALL_TARGET=		install-strip
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${STAGEDIR}${MANPREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.3 ${STAGEDIR}${MANPREFIX}/man/man3/

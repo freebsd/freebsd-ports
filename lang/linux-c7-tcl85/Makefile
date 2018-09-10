@@ -20,4 +20,6 @@ USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
 USE_LINUX_RPM_BAD_PERMS=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

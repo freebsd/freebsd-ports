@@ -13,4 +13,6 @@ USE_KDE=	completion config coreaddons doctools ecm i18n jobwidgets kio \
 USE_QT=		core gui network widgets \
 		buildtools_build qmake_build
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

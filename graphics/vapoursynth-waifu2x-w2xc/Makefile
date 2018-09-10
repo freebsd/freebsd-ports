@@ -36,6 +36,8 @@ PLIST_FILES=	%%DATADIR%%/libwaifu2x-w2xc.so
 PORTDATA=	models
 PORTDOCS=	*.md
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/\*linux\*/*/' \
 		-e 's/-O3 //; /=.*-mfpmath/d; /-msse/d' \

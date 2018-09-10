@@ -26,4 +26,6 @@ USE_QT=		core dbus gui network printsupport testlib uitools webkit \
 USE_LDCONFIG=	yes
 
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

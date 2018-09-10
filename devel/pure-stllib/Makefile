@@ -27,6 +27,8 @@ DOC_FILES2=	*.pdf
 
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS =|CFLAGS ?=|' \
 		${WRKSRC}/Makefile ${WRKSRC}/pure-stlmap/Makefile ${WRKSRC}/pure-stlvec/Makefile

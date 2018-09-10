@@ -29,6 +29,8 @@ PORTDOCS=	tw_cli.8.html
 PLIST_FILES=	etc/periodic/daily/407.status-3ware-raid\
 		man/man8/tw_cli.8.gz sbin/tw_cli
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${ARCH:S,i386,x86,:S,amd64,x86_64,}/tw_cli\
 		${STAGEDIR}${PREFIX}/sbin/tw_cli

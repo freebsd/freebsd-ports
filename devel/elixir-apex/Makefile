@@ -18,4 +18,6 @@ GH_ACCOUNT=	BjRo
 MIX_REWRITE=	yes
 MIX_BUILD_NAME=	shared
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

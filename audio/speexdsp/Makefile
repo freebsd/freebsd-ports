@@ -17,6 +17,8 @@ INSTALL_TARGET=	install-strip
 USES=		libtool pathfix
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "aarch64"

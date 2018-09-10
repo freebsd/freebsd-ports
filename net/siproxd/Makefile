@@ -25,6 +25,8 @@ PORTDOCS2=	FAQ KNOWN_BUGS RFC3261_compliance.txt \
 		sample_cfg_budgetone.txt sample_cfg_x-lite.txt
 PORTDOCS=	${PORTDOCS1} ${PORTDOCS2}
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 .for docs in ${PORTDOCS2}
 	${CP} ${WRKSRC}/doc/${docs} ${WRKSRC}

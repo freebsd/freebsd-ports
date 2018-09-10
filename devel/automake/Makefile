@@ -25,4 +25,6 @@ MAKE_ENV+=	MAKEINFOFLAGS=--no-split
 INFO=		automake automake-history
 CPE_VENDOR=	gnu
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

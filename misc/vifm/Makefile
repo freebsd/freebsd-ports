@@ -18,4 +18,6 @@ CONFIGURE_ARGS=	--without-gtk
 
 USE_GITHUB=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

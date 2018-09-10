@@ -21,6 +21,8 @@ USE_PYTHON=	autoplist distutils
 PORTDOCS=	README.rst
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.rst ${STAGEDIR}${DOCSDIR}

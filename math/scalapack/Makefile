@@ -32,6 +32,8 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME:tu}
 SUB_FILES=	pkg-message
 PLIST_SUB=	SVERSION=${SVERSION} PORTVERSION=${PORTVERSION}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

@@ -17,4 +17,6 @@ GH_ACCOUNT=	artemeff
 MIX_BUILD_DEPS=	databases/erlang-eredis
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

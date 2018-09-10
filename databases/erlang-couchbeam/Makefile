@@ -18,4 +18,6 @@ ERL_BUILD_DEPS=	devel/erlang-jsx \
 		www/erlang-hackney
 ERL_RUN_DEPS:=  ${ERL_BUILD_DEPS}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

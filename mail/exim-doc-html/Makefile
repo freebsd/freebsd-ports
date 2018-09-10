@@ -24,6 +24,8 @@ AVAILABLE_FORMATS=	html \
 					postscript
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .if make(makesum) && !defined(FETCH_ALL)
 .error "You forgot to define FETCH_ALL to create the sane distinfo"
 .endif

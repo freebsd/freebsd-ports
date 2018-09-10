@@ -23,6 +23,8 @@ GH_ACCOUNT=	sur5r
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pdfstitch ${STAGEDIR}${PREFIX}/bin/pdfstitch
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

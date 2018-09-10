@@ -26,6 +26,8 @@ PLIST_FILES=	bin/commit-partial bin/commit-patch \
 		man/man1/commit-partial.1.gz man/man1/commit-patch.1.gz
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 		${REINPLACE_CMD} -e 's/share[/]man/man/' \
 			-e 's/PREFIX=/PREFIX?=/' \

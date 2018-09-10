@@ -16,6 +16,8 @@ USE_XORG=	xpm xmu
 PORTDOCS=	README
 PLIST_FILES=	bin/wmeyes
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|Target(|TargetNoMan(|g' ${WRKSRC}/Imakefile
 

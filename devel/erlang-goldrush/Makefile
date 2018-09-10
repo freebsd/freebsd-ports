@@ -14,6 +14,8 @@ USES=		erlang:rebar
 USE_GITHUB=	yes
 GH_ACCOUNT=	DeadZen
 
+OPTIONS_DEFINE=	DOCS
+
 post-build:
 	@${RM} -r ${WRKSRC}/priv
 

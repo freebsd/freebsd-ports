@@ -20,6 +20,8 @@ PORTDOCS=	COPYING README ChangeLog
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e "s|\(-lcrypto\)|${LDFLAGS} \1|g" \
 		${WRKSRC}/Makefile.in

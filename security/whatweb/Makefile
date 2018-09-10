@@ -21,6 +21,8 @@ NO_BUILD=		yes
 NO_ARCH=		yes
 PORTDOCS=		CHANGELOG INSTALL README whatweb.xsl
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e \
 	's!/usr/share/whatweb/!${RUBY_SITELIBDIR}/whatweb!' \

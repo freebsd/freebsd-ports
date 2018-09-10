@@ -44,6 +44,8 @@ PORTEXAMPLES=	${EXAMPLES:T}
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/doc/signing-party/caff/caffrc\.sample|${EXAMPLESDIR}/caffrc.sample|' \
 		${WRKSRC}/caff/caff

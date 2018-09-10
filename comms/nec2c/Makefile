@@ -14,7 +14,7 @@ COMMENT=	Used to calculate antenna patterns useful to ham radio
 
 LIB_DEPENDS=	libccm.so:math/ccmath
 
-OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nec2c ${STAGEDIR}${PREFIX}/bin

@@ -48,6 +48,8 @@ BUILD_DATE=	August 9, 2018
 PLIST_FILES=	bin/micro
 PORTDOCS=	README.md
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	@(cd ${WRKSRC} ; \
 		${SETENV} ${MAKE_ENV} CGO_ENABLED=0 GOPATH=${WRKSRC} go build -ldflags \

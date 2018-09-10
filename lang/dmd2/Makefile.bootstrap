@@ -23,6 +23,8 @@ PORTDOCS=	*.txt html/
 WRKSRC=		${WRKDIR}/dmd2/src/${PORTNAME}
 .undef		DEVELOPER
 
+OPTIONS_DEFINE=	DOCS
+
 BROKEN_sparc64=		Does not install: divide-by-zero error
 
 .include <bsd.port.pre.mk>

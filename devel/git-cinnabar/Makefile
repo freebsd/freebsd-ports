@@ -30,6 +30,8 @@ DATADIR=	${PREFIX}/libexec/git-core
 PORTDATA=	*
 PORTDOCS=	README.md
 
+OPTIONS_DEFINE=	DOCS
+
 post-configure:
 	@${TAR} cf - -C$$(${MAKE} -V WRKSRC -C ${PORTSDIR}/devel/git) . | \
 		${TAR} xof - -C${WRKSRC}/git-core

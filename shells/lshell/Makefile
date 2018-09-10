@@ -19,6 +19,8 @@ USES=		python:2.7
 USE_GITHUB=	yes
 USE_PYTHON=	distutils
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		"s|(.*lshell.conf.*),|| ; \

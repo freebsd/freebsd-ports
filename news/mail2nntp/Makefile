@@ -21,6 +21,8 @@ SHEBANG_FILES=	mail2nntp.pl
 PORTDOCS=	*
 PLIST_FILES=	bin/mail2nntp.pl
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mail2nntp.pl ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

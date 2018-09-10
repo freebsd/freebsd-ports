@@ -26,4 +26,6 @@ GH_TAGNAME=	4ae6a7f
 
 MAKE_JOBS_UNSAFE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

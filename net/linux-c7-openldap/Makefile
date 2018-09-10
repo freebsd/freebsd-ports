@@ -17,6 +17,8 @@ USE_LDCONFIG=	yes
 USE_LINUX=	cyrus-sasl2 nspr nss
 USE_LINUX_RPM=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 # do not install any openldap configuration directories/files
 post-patch:
 	@${RM} -r ${WRKSRC}/etc

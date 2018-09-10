@@ -13,7 +13,7 @@ COMMENT=	C library for dynamically generating PDF
 
 RESTRICTED=	Many odd restrictions on usage and distribution
 
-OPTIONS_DEFINE=	PERL JAVA
+OPTIONS_DEFINE=	PERL JAVA DOCS
 PERL_DESC=	Build perl bindings
 JAVA_DESC=	Build Java bindings
 

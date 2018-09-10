@@ -26,17 +26,17 @@ NO_WRKSRC=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	Binaries only available for i386 and amd64 from Broadcom
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-.if ${PORT_OPTIONS:MDOCS}
+	${INSTALL_PROGRAM} ${WRKSRC}/sas2ircu_freebsd_${ARCH}_rel/sas2ircu\
+		${STAGEDIR}${PREFIX}/sbin
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Readme_Release_Notes_SAS2IRCU_Phase_${PORTVERSION}.txt\
 		${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/SAS2IRCU_Phase20.0-${PORTVERSION}.pdf\
 		${STAGEDIR}${DOCSDIR}
-.endif
-	${INSTALL_PROGRAM} ${WRKSRC}/sas2ircu_freebsd_${ARCH}_rel/sas2ircu\
-		${STAGEDIR}${PREFIX}/sbin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

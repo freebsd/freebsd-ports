@@ -13,4 +13,6 @@ USE_QT=		core gui svg widgets \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

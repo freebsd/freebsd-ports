@@ -26,6 +26,8 @@ SCRIPTS=	phrapview
 PORTDATA=	BLOSUM50 BLOSUM62 PAM250 mat50 mat70 mb_matrix penalty2 vector.seq
 PORTDOCS=	general.doc phrap.doc swat.doc
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .for f in ${DISTFILES}

@@ -28,6 +28,8 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 DATADIR=	${PREFIX}/lib/vapoursynth
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^dist_doc_DATA/s,=,& \
 			doc/${PORTNAME}-vapoursynth.md,' \

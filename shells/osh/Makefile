@@ -18,6 +18,8 @@ PORTEXAMPLES=	*
 INSTALL_TARGET=	install install-doc install-exp
 PLIST_SUB+=	VER=${DISTVERSION}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|(DESTEXPDIR)=|\1?=|' \
 		${WRKSRC}/Makefile

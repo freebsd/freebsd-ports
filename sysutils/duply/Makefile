@@ -27,6 +27,8 @@ PERIODICFILE?=	300.duply
 PERIODICDIR?=	${PREFIX}/etc/periodic/backup
 SUB_FILES=	pkg-message periodic_duply
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e "s,/etc/duply,${ETCDIR},g" ${WRKSRC}/duply
 

@@ -19,6 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	kAworu
 GH_PROJECT=	lua-${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e "s/5.1/${LUA_VER}/g" ${WRKSRC}/Makefile
 

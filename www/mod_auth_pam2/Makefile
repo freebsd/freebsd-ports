@@ -24,6 +24,8 @@ AP_GENPLIST=	yes
 
 AP_EXTRAS+=	-lpam
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/httpd ${STAGEDIR}${EXAMPLESDIR}/pam-httpd.sample

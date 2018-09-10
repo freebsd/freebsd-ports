@@ -46,6 +46,8 @@ USE_GNOME+=	cairo
 INSTALLS_ICONS=yes
 .endif
 
+OPTIONS_DEFINE=	DOCS
+
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' ${BUILD_WRKSRC}/unit1.pas
 .for fp in unit1.pas unit4.pas scripts/check_presets.sh

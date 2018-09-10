@@ -20,6 +20,8 @@ PORTDOCS=	*
 GH_ACCOUNT=	troglobit
 USE_GITHUB=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 # Rename to libeditline.3 to avoid conflict with libedit
 post-patch:
 	@${REINPLACE_CMD} 's|editline.3|lib&|' ${WRKSRC}/man/Makefile.am

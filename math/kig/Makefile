@@ -19,4 +19,6 @@ USE_QT=		core dbus gui network printsupport svg widgets xml xmlpatterns \
 		buildtools_build qmake_build
 SHEBANG_FILES=	pykig/pykig.py
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

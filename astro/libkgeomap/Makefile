@@ -20,4 +20,6 @@ USE_QT=		concurrent core gui network webkit widgets xml \
 
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

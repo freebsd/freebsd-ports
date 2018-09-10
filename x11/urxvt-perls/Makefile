@@ -21,6 +21,8 @@ INSTDIR_REL=	lib/urxvt/perl
 SCRIPTS=	clipboard keyboard-select url-select
 PLIST_FILES+=	${SCRIPTS:C/^/${INSTDIR_REL}\//}
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${INSTDIR_REL}
 .for s in ${SCRIPTS}

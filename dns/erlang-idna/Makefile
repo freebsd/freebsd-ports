@@ -18,4 +18,6 @@ GH_PROJECT=	${PKGNAMEPREFIX}${PORTNAME}
 ERL_BUILD_DEPS=	devel/erlang-unicode_util_compat
 ERL_RUN_DEPS:=	${ERL_BUILD_DEPS}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

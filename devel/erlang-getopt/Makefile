@@ -15,4 +15,6 @@ USES=		erlang:rebar3
 USE_GITHUB=	yes
 GH_ACCOUNT=	jcomellas
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

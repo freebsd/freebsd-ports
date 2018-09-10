@@ -29,7 +29,9 @@ PORTDOCS=	*
 SHEBANG_FILES=	utils/conv_codes_gsm.py utils/conv_gen.py
 python_OLD_CMD=	/usr/bin/python2
 
-OPTIONS_DEFINE=	DOXYGEN
+OPTIONS_DEFINE=	DOXYGEN DOCS
+
+DOXYGEN_IMPLIES=	DOCS
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			dot:graphics/graphviz
 DOXYGEN_CONFIGURE_ENV_OFF=ac_cv_path_DOXYGEN=false

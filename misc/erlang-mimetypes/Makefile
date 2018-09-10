@@ -14,4 +14,6 @@ USES=		erlang:rebar3
 USE_GITHUB=	yes
 GH_ACCOUNT=	spawngrid
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

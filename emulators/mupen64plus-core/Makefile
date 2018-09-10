@@ -24,5 +24,7 @@ OPTFLAGS=	#
 
 MAKE_ENV+=	OPTFLAGS="${OPTFLAGS}"
 
+OPTIONS_DEFINE=	DOCS
+
 .include "${.CURDIR}/../mupen64plus-core/Makefile.common"
 .include <bsd.port.mk>

@@ -24,6 +24,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	help.ncd
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/notecase
 

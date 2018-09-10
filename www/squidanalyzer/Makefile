@@ -33,6 +33,8 @@ SUB_FILES=	pkg-message
 CONF_FILES=	excluded included network-aliases \
 		squidanalyzer.conf user-aliases
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 .for file in ${CONF_FILES}
 	@${MV} ${STAGEDIR}${ETCDIR}/${file} \

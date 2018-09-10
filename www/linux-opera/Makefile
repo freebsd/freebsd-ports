@@ -38,6 +38,8 @@ RENAME=		opera lib/opera \
 		share/doc/opera share/opera man/man1/opera.1 \
 		share/mime/packages/opera-extension.xml
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/share/man/man1/*.gz
 	@${MV} ${WRKSRC}/share/man ${WRKSRC}/man

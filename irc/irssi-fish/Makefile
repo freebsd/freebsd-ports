@@ -27,6 +27,8 @@ USE_LDCONFIG=	yes
 PLIST_FILES=	lib/irssi/modules/libfish.so
 PORTDOCS=	README.md FiSH-irssi.txt
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e "s,/usr/local,${LOCALBASE},g" \
 			 -e "s,share/doc/FiSH-irssi,${DOCSDIR_REL},g" ${WRKSRC}/CMakeLists.txt

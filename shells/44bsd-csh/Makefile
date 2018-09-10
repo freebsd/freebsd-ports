@@ -18,6 +18,8 @@ USES=		tar:bzip2
 NO_WRKSUBDIR=	yes
 PORTDOCS=	paper.ascii.gz
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	cd ${WRKSRC} ; co RCS/*,v; chmod u+w *
 	cd ${WRKSRC}/USD.doc ; co RCS/*,v

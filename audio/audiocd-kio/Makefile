@@ -27,7 +27,7 @@ USE_QT=		core dbus gui network phonon4 printsupport widgets xml \
 
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	LAME
+OPTIONS_DEFINE=	LAME DOCS
 LAME_DESC=	Install LAME MP3 audio encoder
 LAME_RUN_DEPENDS=	lame:audio/lame
 

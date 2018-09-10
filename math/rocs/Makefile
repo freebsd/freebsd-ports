@@ -25,4 +25,6 @@ USE_LDCONFIG=	yes
 #         _graphScene->views().at(0)->setRenderHints(QPainter::Antialiasing
 USE_CXXSTD=	gnu++98
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

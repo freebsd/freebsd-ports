@@ -19,7 +19,7 @@ SHEBANG_FILES=	join-duplicates.sh
 
 PORTDOCS=	README.SHA
 
-OPTIONS_DEFINE=	JOIN NLS
+OPTIONS_DEFINE=	DOCS JOIN NLS
 OPTIONS_SUB=	yes
 
 JOIN_DESC=		Add run-dependencies for join-duplicates.sh

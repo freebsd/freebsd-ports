@@ -29,6 +29,8 @@ LDFLAGS	+=	-L${LOCALBASE}/lib -ljpeg -lpng -lsixel
 
 PORTDOCS=	README.markdown
 
+OPTIONS_DEFINE=	DOCS
+
 post-build:
 	@cd ${WRKSRC}/yaimg-sixel && ${SETENV} ${MAKE_ENV} ${MAKE_CMD}
 

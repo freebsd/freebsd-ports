@@ -14,4 +14,6 @@ USES=		erlang:rebar
 USE_GITHUB=	yes
 GH_ACCOUNT=	puzza007
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

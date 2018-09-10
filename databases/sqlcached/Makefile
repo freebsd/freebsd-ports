@@ -23,6 +23,8 @@ PORTDOCS=	${PORTNAME}.html ${PORTNAME}.txt
 PLIST_FILES=	bin/${PORTNAME} etc/rc.d/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lcurses|-lncurses|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's|/usr/local|${PREFIX}|' \

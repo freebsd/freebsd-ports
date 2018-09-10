@@ -22,4 +22,6 @@ USE_LDCONFIG=	yes
 USE_LINUX=	avahi-libs openssl
 USE_LINUX_RPM=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

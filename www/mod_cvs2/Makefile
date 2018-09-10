@@ -22,6 +22,8 @@ AP_GENPLIST=	yes
 
 PORTDOCS=	reference.html guide.html README
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}

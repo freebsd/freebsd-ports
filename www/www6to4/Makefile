@@ -20,6 +20,8 @@ PORTDOCS=	README
 
 ALL_TARGET=	www6to4
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,${ETCDIR},' \
 		${WRKSRC}/www6to4.c ${WRKSRC}/www6to4.conf

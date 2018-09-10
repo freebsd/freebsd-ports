@@ -19,7 +19,7 @@ USE_QT=		core dbus gui network widgets x11extras xml \
 		buildtools_build qmake_build
 USE_XORG=	x11 xcb xdamage xext xtst
 
-OPTIONS_DEFINE=		TELEPATHY
+OPTIONS_DEFINE=		TELEPATHY DOCS
 OPTIONS_SUB=		yes
 TELEPATHY_DESC=		Support for Telepathy Tubes
 TELEPATHY_LIB_DEPENDS=	libtelepathy-qt5.so:net-im/telepathy-qt5

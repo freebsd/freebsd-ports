@@ -15,4 +15,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	deadtrickster
 GH_PROJECT=	ssl_verify_fun.erl
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

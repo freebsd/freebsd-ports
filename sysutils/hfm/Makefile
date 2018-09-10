@@ -33,6 +33,8 @@ MAKE_ARGS+=	ETCDIR=${ETCDIR} TAG=${DISTVERSIONPREFIX}${PORTVERSION}
 
 ALL_TARGET=	test build
 
+OPTIONS_DEFINE=	DOCS
+
 do-patch:
 	(cd ${WRKSRC}; ${PATCH} vendor/src/github.com/mitchellh/go-libucl/libucl.go < vendor/patches/github.com/mitchellh/go-libucl/libucl.go.patch )
 

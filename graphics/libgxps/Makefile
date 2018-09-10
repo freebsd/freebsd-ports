@@ -21,4 +21,6 @@ USE_GNOME=	cairo glib20 gnomeprefix introspection:build
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

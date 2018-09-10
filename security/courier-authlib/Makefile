@@ -75,6 +75,8 @@ CONFIGURE_ARGS+=--with-base --with-authpam --with-authpipe
 USERS=		${MAILOWN}
 GROUPS=		${MAILGRP}
 
+OPTIONS_DEFINE+=	DOCS
+
 DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README \
 		README.authdebug.html README_authlib.html
 
@@ -108,6 +110,8 @@ REMOVE_SUBDIRS+=makedat userdb
 
 .if ${AUTHMOD} == authldap
 RUN_DEPENDS+=	${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool
+OPTIONS_DEFINE+=	DOCS
+
 DOCS=		README.ldap
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-authldap
@@ -117,6 +121,8 @@ CONFIGURE_ARGS+=--without-authldap
 
 .if ${AUTHMOD} == authmysql
 RUN_DEPENDS+=	${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool
+OPTIONS_DEFINE+=	DOCS
+
 DOCS=		README.authmysql.html README.authmysql.myownquery
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-authmysql \
@@ -128,6 +134,8 @@ CONFIGURE_ARGS+=--without-authmysql
 
 .if ${AUTHMOD} == authpgsql
 RUN_DEPENDS+=	${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool
+OPTIONS_DEFINE+=	DOCS
+
 DOCS=		README.authpostgres.html
 USES+=		pgsql
 CONFIGURE_ARGS+=--with-authpgsql

@@ -18,6 +18,8 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell
 PLIST_FILES=	bin/ramspeed
 PORTDOCS=	HISTORY README
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${SH} build.sh
 

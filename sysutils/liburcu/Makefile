@@ -26,4 +26,6 @@ CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

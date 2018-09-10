@@ -39,4 +39,6 @@ GLIB_SCHEMAS=	org.mate.pluma.gschema.xml \
 		org.mate.pluma.plugins.spell.gschema.xml \
                 org.mate.pluma.plugins.time.gschema.xml
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

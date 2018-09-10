@@ -34,6 +34,8 @@ DESKTOP_ENTRIES="Pocket Volleyball" \
 		"Game;SportsGame;ArcadeGame;" \
 		false
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} '/libintl\.h/d' ${WRKSRC}/src/common.h
 	@${REINPLACE_CMD} -e '/setlocale/d' -e '/textdomain/d' \

@@ -21,7 +21,9 @@ USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
 
-post-install:
+OPTIONS_DEFINE=	DOCS
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS ChangeLog README THANKS \
 	    doc/libspectrum.txt ${STAGEDIR}${DOCSDIR}

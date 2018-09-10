@@ -18,4 +18,6 @@ USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	alfert
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

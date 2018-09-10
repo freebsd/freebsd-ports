@@ -17,6 +17,8 @@ GH_ACCOUNT=	ferd
 ERL_DOCS=	README.md doc/*
 REBAR_TARGETS=	compile doc
 
+OPTIONS_DEFINE=	DOCS
+
 post-build:
 	@${RM} ${WRKSRC}/doc/packages-frame.html
 

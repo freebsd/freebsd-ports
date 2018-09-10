@@ -17,4 +17,6 @@ USE_QT=		dbus  core gui network printsupport widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

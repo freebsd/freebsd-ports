@@ -30,6 +30,8 @@ USE_LDCONFIG=	yes
 USE_LINUX=	expat libelf libpciaccess xorglibs
 USE_LINUX_RPM=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/usr/lib/libEGL.so.1
 	@${RM} ${STAGEDIR}${PREFIX}/usr/lib/libGL.so.1

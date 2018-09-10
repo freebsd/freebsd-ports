@@ -22,6 +22,8 @@ ERL_RUN_DEPS:=	${ERL_BUILD_DEPS}
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -l expat
 
+OPTIONS_DEFINE=	DOCS
+
 pre-install:
 	${STRIP_CMD} ${WRKSRC}/priv/lib/*.so
 

@@ -20,6 +20,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 PORTDOCS=	ChangeLog README thrulay-protocol.txt thrulay-index.html
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e '922s,datarootdir,prefix,g' ${WRKSRC}/configure
 

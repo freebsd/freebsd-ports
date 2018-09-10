@@ -48,6 +48,8 @@ CFLAGS+=	-g -O0
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	(cd ${WRKSRC}/pki && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	${MKDIR} ${STAGEDIR}${TASKD_DBDIR}

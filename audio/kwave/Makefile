@@ -34,6 +34,8 @@ ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
 PULSEAUDIO_CMAKE_BOOL=		WITH_PULSEAUDIO
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .  if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000 && ${OSVERSION} < 1101505

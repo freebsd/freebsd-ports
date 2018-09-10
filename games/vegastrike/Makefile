@@ -43,7 +43,7 @@ BIN_FILES=	bin/vegastrike bin/vssetup bin/vegaserver
 PLIST_FILES=	${BIN_FILES}
 PORTDOCS=	README
 
-OPTIONS_DEFINE=	MESHER
+OPTIONS_DEFINE=	MESHER DOCS
 MESHER_DESC=	Enable mesher modelling tool
 
 MESHER_PLIST_FILES=	bin/mesher

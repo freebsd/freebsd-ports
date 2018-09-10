@@ -21,6 +21,8 @@ PLIST_FILES=	sbin/spreadlogd etc/spreadlogd.conf.sample
 
 PORTDOCS=	README
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' ${WRKSRC}/spreadlogd.c
 

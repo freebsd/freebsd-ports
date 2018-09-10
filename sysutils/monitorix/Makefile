@@ -53,6 +53,8 @@ WWW_FILES=	logo_top.png \
 PORTDOCS=	*
 PORTDATA=	*.pm
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 pre-everything::

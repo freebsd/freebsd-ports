@@ -28,6 +28,8 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 USE_LDCONFIG=	yes
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-configure:
 	@${REINPLACE_CMD} \
 		-e 's|$${prefix}/cyassl/include|$${prefix}/include/cyassl|' \

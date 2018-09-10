@@ -26,6 +26,8 @@ PORTDOCS=	*
 USERS=		syncthing
 GROUPS=		syncthing
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	@cd ${WRKSRC}/src/github.com/${PORTNAME}/${PORTNAME} ; \
 		${SETENV} ${MAKE_ENV} CGO_ENABLED=0 go run build.go -no-upgrade=true -version v${PORTVERSION}

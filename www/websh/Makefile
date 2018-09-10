@@ -29,6 +29,8 @@ PORTEXAMPLES=	*
 
 CONFIGURE_ARGS+=--with-httpdinclude=`apxs -q includedir`
 
+OPTIONS_DEFINE=	DOCS
+
 CPPFLAGS+=	-I ${LOCALBASE}/include/apr-1
 .if !defined(NO_WERROR) && ${CC} == "cc" || ${CC:T:Mgcc*} != ""
 CPPFLAGS+=	-Wall -Werror

@@ -14,6 +14,8 @@ NO_BUILD=	yes
 
 PORTDOCS=	*.pdf
 
+OPTIONS_DEFINE=	DOCS
+
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/${PORTNAME}-manual-main-reference.pdf ${WRKSRC}

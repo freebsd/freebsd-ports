@@ -31,6 +31,8 @@ INSTALL_ARGS=	--bindir=${STAGEDIR}${PREFIX}/bin\
 		--mandir=${STAGEDIR}${PREFIX}/man\
 		--docdir=${STAGEDIR}${DOCSDIR}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' ${WRKSRC}/cint/lib/dll_stl/setup
 	${REINPLACE_CMD} 's,make ,${GMAKE} ,' ${WRKSRC}/cint/lib/*/setup

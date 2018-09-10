@@ -28,4 +28,6 @@ INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--disable-python
 INSTALL_TARGET=	install-strip
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

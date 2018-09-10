@@ -18,4 +18,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	basho
 GH_PROJECT=	erlang_protobuffs
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

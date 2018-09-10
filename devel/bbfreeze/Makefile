@@ -22,6 +22,8 @@ USE_PYTHON=	autoplist distutils
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e '/altgraph/s,==,>=,' ${WRKSRC}/${PYSETUP}
 	@${REINPLACE_CMD} -e '/from altgraph\.compat import/d' \

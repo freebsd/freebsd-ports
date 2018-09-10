@@ -18,7 +18,7 @@ CONFIGURE_ARGS=	--disable-embfts
 PLIST_FILES=	bin/fpart man/man1/fpart.1.gz
 PORTDOCS=	Changelog README TODO
 
-OPTIONS_DEFINE=	FPSYNC
+OPTIONS_DEFINE=	FPSYNC DOCS
 OPTIONS_DEFAULT=	FPSYNC
 FPSYNC_DESC=	Install fpsync tool
 FPSYNC_RUN_DEPENDS=	rsync:net/rsync \

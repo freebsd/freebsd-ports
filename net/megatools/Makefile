@@ -23,6 +23,8 @@ USE_GNOME=	glib20
 
 INSTALL_TARGET=	install-strip
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 # Unsilence build
 	${REINPLACE_CMD} -e '/^export\ MAKEFLAGS/s|^|#|' ${WRKSRC}/Makefile.in

@@ -24,6 +24,8 @@ DESKTOP_ENTRIES="Trimines" \
 		"Game;LogicGame;" \
 		""
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' ${WRKSRC}/src/gfx.c
 

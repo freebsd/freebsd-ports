@@ -24,7 +24,7 @@ USE_QT=		core dbus gui network printsupport widgets xml xmlpatterns \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	LUAJIT MAXIMA OCTAVE R SAGE SCILAB
+OPTIONS_DEFINE=	LUAJIT MAXIMA OCTAVE R SAGE SCILAB DOCS
 OPTIONS_SUB=	yes # R LUAJIT
 
 LUAJIT_DESC=	Build LuaJIT backend and install LuaJIT

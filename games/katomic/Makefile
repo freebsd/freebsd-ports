@@ -14,5 +14,7 @@ USE_QT=		core dbus gui network qml quick widgets xml \
 		buildtools_build qmake_build
 SHEBANG_FILES=	katomic-levelset-upd.pl
 
+OPTIONS_DEFINE=	DOCS
+
 .include <${.CURDIR}/../kdegames/Makefile.common>
 .include <bsd.port.mk>

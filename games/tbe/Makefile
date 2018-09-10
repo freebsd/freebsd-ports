@@ -24,6 +24,8 @@ USE_QT=		corelib gui linguisttools_build moc_build qmake_build rcc_build \
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} 's/ make/ $$(MAKE)/' \
 		${WRKSRC}/Makefile

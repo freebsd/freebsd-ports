@@ -15,6 +15,8 @@ LIB_DEPENDS=	libxosd.so:misc/xosd
 PLIST_FILES=	bin/nbosd
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nbosd ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

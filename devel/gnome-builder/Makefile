@@ -42,4 +42,6 @@ GLIB_SCHEMAS=	org.gnome.builder.editor.gschema.xml \
 		org.gnome.builder.experimental.gschema.xml \
 		org.gnome.builder.project-tree.gschema.xml
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

@@ -22,4 +22,6 @@ USE_QT=		concurrent core dbus gui location network multimedia qml quick \
 		buildtools_build qmake_build
 USE_XORG=	x11 xrender
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

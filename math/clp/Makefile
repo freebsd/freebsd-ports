@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--with-lapack-lib="${LAPACKLIB} -L${LOCALBASE}/lib" \
 		--with-blas-lib="${BLASLIB} -L${LOCALBASE}/lib" \
 		--datadir=${DATADIR}
 
-OPTIONS_DEFINE=	DEBUG
+OPTIONS_DEFINE=	DEBUG DOCS
 PORTDOCS=	*
 
 DEBUG_CXXFLAGS=	-fomit-frame-pointer

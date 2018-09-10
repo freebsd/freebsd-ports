@@ -23,4 +23,6 @@ INSTALL_TARGET=	install-strip
 USE_GITHUB=	yes
 GH_ACCOUNT=	varnish
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

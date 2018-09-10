@@ -17,5 +17,7 @@ USE_QT=		core dbus gui network phonon4 qml quick svg widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <${.CURDIR}/../kdegames/Makefile.common>
 .include <bsd.port.mk>

@@ -21,6 +21,8 @@ USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 USE_XFCE=	libexo
 USE_XORG=	x11
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	(cd ${STAGEDIR}${PREFIX}/etc/lightdm && ${MV} lightdm-gtk-greeter.conf \
 		lightdm-gtk-greeter.conf.sample)

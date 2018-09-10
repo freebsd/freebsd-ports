@@ -13,4 +13,6 @@ USE_KDE=	dbusaddons doctools ecm iconthemes init itemviews kdesu \
 USE_QT=		core dbus gui widgets \
 		buildtools_build qmake_build
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

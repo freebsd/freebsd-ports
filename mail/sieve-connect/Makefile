@@ -30,6 +30,8 @@ PLIST_FILES=	bin/sieve-connect \
 
 PORTDOCS=	ChangeLog README.md TODO
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sieve-connect \
 		${STAGEDIR}${PREFIX}/bin/sieve-connect

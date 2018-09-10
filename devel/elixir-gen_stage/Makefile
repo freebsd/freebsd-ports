@@ -18,4 +18,6 @@ GH_ACCOUNT=	elixir-lang
 ELIXIR_APP_NAME=gen_stage
 MIX_REWRITE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

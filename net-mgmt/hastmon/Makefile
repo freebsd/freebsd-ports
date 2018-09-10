@@ -21,6 +21,8 @@ INSTALL_TARGET=	installdirs install
 
 PORTDOCS=	ChangeLog COPYRIGHT README
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} \
 		-e "s|\(-lcrypto\)|-L${OPENSSLLIB} \1|g" \

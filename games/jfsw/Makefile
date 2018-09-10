@@ -43,6 +43,8 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	readme.txt releasenotes.html
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} 's|/usr/X11R6|${LOCALBASE}|' \
 		${WRKSRC}/jfbuild/Makefile

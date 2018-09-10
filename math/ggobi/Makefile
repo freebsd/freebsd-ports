@@ -26,6 +26,8 @@ SUB_FILES=	pkg-message
 ALL_TARGET=	all ggobirc
 INSTALL_TARGET=	install-strip
 
+OPTIONS_DEFINE=	DOCS
+
 post-build:
 	@${REINPLACE_CMD} -e 's|plugin.la|plugin.so|g' ${WRKSRC}/ggobirc
 

@@ -36,7 +36,7 @@ USE_XORG+=	ice pixman x11 xext
 
 BROKEN_aarch64=		Fails to compile: use of undeclared identifier builtin_ia32_emms
 
-#OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS
 
 PLIST_SUB=	OPSYS=${OPSYS}	\
 		DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}

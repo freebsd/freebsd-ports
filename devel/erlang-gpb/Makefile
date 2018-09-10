@@ -18,6 +18,8 @@ USES=		erlang:rebar
 USE_GITHUB=	yes
 GH_ACCOUNT=	tomas-abrahamsson
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${ERL_APP_ROOT}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/protoc-erl ${STAGEDIR}${ERL_APP_ROOT}/bin

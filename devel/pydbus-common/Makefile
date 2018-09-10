@@ -31,8 +31,9 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	HTMLDOCS
+OPTIONS_DEFINE=	HTMLDOCS DOCS
 HTMLDOCS_DESC=	build html documentation
+HTMLDOCS_IMPLIES=	DOCS
 HTMLDOCS_CONFIGURE_OFF=	--disable-html-docs
 HTMLDOCS_BUILD_DEPENDS=	rst2html:textproc/py-docutils
 

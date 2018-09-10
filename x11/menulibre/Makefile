@@ -22,6 +22,8 @@ USE_GNOME=	intltool pygobject3
 USE_PYTHON=	distutils
 INSTALLS_ICONS=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 PYDISTUTILS_INSTALLARGS:=	${PYDISTUTILS_INSTALLARGS:N--single-version-externally-managed}

@@ -19,6 +19,8 @@ USES=		linux:c7
 USE_LDCONFIG=	yes
 USE_LINUX_RPM=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${RM} -r ${WRKSRC}/etc/* ${WRKSRC}/lib/modprobe.d \
 		${WRKSRC}/usr/share/doc/alsa-lib

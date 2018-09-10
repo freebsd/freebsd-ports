@@ -21,6 +21,8 @@ ALL_TARGET=	file2pcap
 PLIST_FILES=	bin/file2pcap
 PORTDOCS=	Changelog README.md TODO
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/file2pcap ${STAGEDIR}/${PREFIX}/bin
 		${MKDIR} ${STAGEDIR}/${DOCSDIR}

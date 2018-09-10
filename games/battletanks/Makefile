@@ -32,6 +32,8 @@ PORTDOCS=	LICENSE LICENSE.EXCEPTION README-en.txt README-linux.txt \
 
 DESKTOP_ENTRIES="Battle Tanks" "" "" "${PORTNAME}" "Game;ArcadeGame;" ""
 
+OPTIONS_DEFINE=	DOCS
+
 pre-build:
 # Regenerate `sl08.h' after we patch `sl08.py' (as patching the header itself
 # would have resulted in a larger diff and gratuitous difference with Debian)

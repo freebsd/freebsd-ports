@@ -17,4 +17,6 @@ GH_ACCOUNT=	checkiz
 
 ELIXIR_APP_NAME=bson
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

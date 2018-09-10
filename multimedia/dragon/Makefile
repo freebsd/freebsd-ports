@@ -18,4 +18,6 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 USE_QT=		core dbus gui network phonon4 widgets xml \
 		buildtools_build qmake_build
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

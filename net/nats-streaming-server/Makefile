@@ -18,6 +18,8 @@ GH_ACCOUNT=	nats-io
 
 USE_RC_SUBR=	nats_streaming.sh
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_SCRIPT} ${FILESDIR}/nats_streaming.conf ${STAGEDIR}${PREFIX}/etc/nats_streaming.conf.sample

@@ -22,6 +22,8 @@ NO_ARCH=	yes
 
 PORTDOCS=	FAQ README
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e '/tINCLUDE_TARGETS/ s|".*"|"${DATADIR}/include"|; \
 		/tPLUGIN_TARGETS/ s|".*"|"${DATADIR}/plugins"|; \

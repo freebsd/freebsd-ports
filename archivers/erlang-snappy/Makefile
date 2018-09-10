@@ -18,4 +18,6 @@ GH_ACCOUNT=	skunkwerks
 GH_PROJECT=	snappy-erlang-nif
 GH_TAGNAME=	0951a1b
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

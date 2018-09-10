@@ -17,6 +17,8 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
 PORTDOCS=	plan_calEUC.ps
 
+OPTIONS_DEFINE=	DOCS
+
 post-build:
 	${CAT} ${MASTERDIR}/pkg-plist >> ${WRKDIR}/PLIST
 

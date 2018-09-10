@@ -16,4 +16,6 @@ GH_ACCOUNT=	sasa1977
 
 MIX_REWRITE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

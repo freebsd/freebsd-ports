@@ -21,6 +21,8 @@ INSTALL_TARGET=	install_programs install_man
 
 PORTDOCS=	ChangeLog README TODO sloccount.html
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 .for file in lexcount1 c_count java_count php_count
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${file}

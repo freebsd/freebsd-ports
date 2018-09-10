@@ -17,4 +17,6 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons ecm \
 USE_QT=		core gui network printsupport widgets xml \
 		buildtools_build qmake_build
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

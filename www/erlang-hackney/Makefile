@@ -21,6 +21,8 @@ ERL_BUILD_DEPS=	dns/erlang-idna \
 		misc/erlang-mimerl
 ERL_RUN_DEPS:=	${ERL_BUILD_DEPS}
 
+OPTIONS_DEFINE=	DOCS
+
 pre-build:
 	@${MKDIR} ${WRKSRC}/_build/default/lib
 .for lib in idna certifi ssl_verify_fun metrics mimerl

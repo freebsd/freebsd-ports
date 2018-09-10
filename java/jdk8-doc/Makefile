@@ -23,6 +23,8 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

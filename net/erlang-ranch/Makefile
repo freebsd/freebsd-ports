@@ -15,6 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ninenines
 ERL_DOCS=	doc/src/guide/* doc/src/manual/*
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}

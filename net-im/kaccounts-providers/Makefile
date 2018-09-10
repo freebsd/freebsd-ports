@@ -18,6 +18,8 @@ USE_KDE=	config coreaddons i18n kdeclarative kio package service
 USE_QT=		core gui network qml xml \
 		buildtools_build qmake_build
 
+OPTIONS_DEFINE=	DOCS
+
 #install to ${LOCALBASE}:
 pre-configure:
 	${REINPLACE_CMD} -e 's,/etc,${PREFIX}/etc,' \

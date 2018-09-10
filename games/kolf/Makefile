@@ -19,5 +19,7 @@ USE_QT=		core dbus gui network phonon4 printsupport qml quick \
 
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <${.CURDIR}/../kdegames/Makefile.common>
 .include <bsd.port.mk>

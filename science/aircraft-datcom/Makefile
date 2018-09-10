@@ -16,10 +16,10 @@ GH_TAGNAME=	ed877bb
 
 USES=	fortran cmake
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

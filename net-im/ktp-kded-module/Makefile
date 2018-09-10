@@ -17,4 +17,6 @@ USE_KDE=	activities auth codecs completion config configwidgets coreaddons \
 USE_QT=		concurrent core dbus gui network sql widgets xml \
 		buildtools_build qmake_build
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

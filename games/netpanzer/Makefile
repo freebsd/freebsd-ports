@@ -28,6 +28,8 @@ PLIST_FILES=	bin/netpanzer \
 PORTDOCS=	*
 PORTDATA=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-configure:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/SConstruct
 

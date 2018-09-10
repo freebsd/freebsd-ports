@@ -18,7 +18,7 @@ USE_QT=		core dbus gui network widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	FREERDP
+OPTIONS_DEFINE=	FREERDP DOCS
 OPTIONS_SUB=	yes
 FREERDP_CMAKE_BOOL=	WITH_FREERDP
 FREERDP_DESC=	Remote Desktop support via FreeRDP

@@ -24,4 +24,6 @@ INSTALL_TARGET=	install-strip
 PLIST_FILES=	bin/govpn-server bin/govpn-client bin/govpn-verifier \
 		share/govpn/newclient.sh
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

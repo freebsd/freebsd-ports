@@ -34,4 +34,6 @@ USE_XORG=	x11 ice sm xext
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 INSTALLS_ICONS=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

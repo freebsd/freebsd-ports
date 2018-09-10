@@ -29,6 +29,8 @@ PLIST_FILES=	include/cctz/civil_time.h \
 
 PORTDOCS=	README.md
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}

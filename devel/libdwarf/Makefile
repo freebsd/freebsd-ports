@@ -27,6 +27,8 @@ DOS2UNIX_GLOB=	*.h
 
 PS_FILES=	libdwarf2.1.pdf libdwarf2p.1.pdf mips_extensions.pdf
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libdwarf.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/dwarf.h ${STAGEDIR}${PREFIX}/include

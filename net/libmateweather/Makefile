@@ -26,4 +26,6 @@ INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.weather.gschema.xml
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

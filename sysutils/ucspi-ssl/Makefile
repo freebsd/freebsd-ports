@@ -21,6 +21,8 @@ WRKSRC=		${WRKDIR}/host/superscript.com/net/${DISTNAME}
 
 SCRIPTS_TO_INSTALL=	https@ sslcat sslconnect
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 post-patch:

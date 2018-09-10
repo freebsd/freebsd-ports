@@ -18,4 +18,6 @@ ERL_BUILD_DEPS=	devel/erlang-lager \
 		devel/erlang-syslog
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

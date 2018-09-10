@@ -16,7 +16,7 @@ BROKEN_powerpc64=	fails to configure: libz library not found
 LIB_DEPENDS=	libxslt.so:textproc/libxslt \
 		libnetsnmp.so:net-mgmt/net-snmp
 
-#OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS
 
 BUILD=		3599
 

@@ -21,6 +21,8 @@ NO_ARCH=	yes
 SYSCOLORDIR=	share/color
 PLIST_SUB=	SYSCOLORDIR=${SYSCOLORDIR}
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKDIR}/Adobe\ ICC\ Profiles\ \(end-user\) && ${COPYTREE_SHARE} \*.pdf ${STAGEDIR}${DOCSDIR})

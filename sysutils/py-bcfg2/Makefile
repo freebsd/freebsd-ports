@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}daemon>=0:devel/py-daemon@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lockfile>=0:devel/py-lockfile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 
-OPTIONS_DEFINE=	CHEETAH GENSHI
+OPTIONS_DEFINE=	CHEETAH GENSHI DOCS
 CHEETAH_DESC=	Support Cheetah Templates
 GENSHI_DESC=	Support Genshi Templates
 

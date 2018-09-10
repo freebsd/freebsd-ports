@@ -22,7 +22,7 @@ LDFLAGS+=	${ICONV_LIB}
 PORTDOCS=	README.bbtools README.bsetbg
 MANPAGES=	bsetbg.1 bsetroot.1
 
-OPTIONS_DEFINE=	TOOLS_ONLY
+OPTIONS_DEFINE=	TOOLS_ONLY DOCS
 
 TOOLS_ONLY_DESC=	Do not install window manager, only tools
 

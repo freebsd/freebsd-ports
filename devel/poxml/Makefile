@@ -12,4 +12,6 @@ USE_KDE=	doctools ecm
 USE_QT=		core xml \
 		buildtools_build qmake_build
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

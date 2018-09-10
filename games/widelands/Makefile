@@ -39,6 +39,8 @@ DESKTOP_ENTRIES="Widelands" \
 		"Game;StrategyGame;" \
 		""
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/cmake/Modules/*.cmake

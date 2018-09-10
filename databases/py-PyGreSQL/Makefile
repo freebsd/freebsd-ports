@@ -19,6 +19,8 @@ USE_PYTHON=	autoplist distutils
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_pg.so
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

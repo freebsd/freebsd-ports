@@ -20,6 +20,8 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC=/ d; /^CFLAGS=/ d; /^PREFIX=/ d' \
 		${WRKSRC}/config.mk

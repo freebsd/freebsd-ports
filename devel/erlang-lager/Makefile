@@ -16,6 +16,8 @@ GH_ACCOUNT=	basho
 
 ERL_RUN_DEPS=	devel/erlang-goldrush
 
+OPTIONS_DEFINE=	DOCS
+
 post-build:
 	@${RM} -r ${WRKSRC}/priv
 

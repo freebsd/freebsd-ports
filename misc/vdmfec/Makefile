@@ -24,6 +24,8 @@ PLIST_FILES=	bin/vdm_decode \
 		bin/vdmfec \
 		man/man1/vdmfec.1.gz
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}

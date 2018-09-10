@@ -15,7 +15,7 @@ USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	phoenixframework
 
-OPTIONS_DEFINE=	COWBOY
+OPTIONS_DEFINE=	COWBOY DOCS
 COWBOY_DESC=	Use Cowboy library
 
 COWBOY_BUILD_DEPENDS=	erlang-cowboy>=0:www/erlang-cowboy

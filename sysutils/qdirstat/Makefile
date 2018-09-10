@@ -18,6 +18,8 @@ USE_GL=		gl
 USE_QT=		buildtools_build core gui widgets
 SHEBANG_FILES=	scripts/qdirstat-cache-writer
 
+OPTIONS_DEFINE=	DOCS
+
 pre-configure:
 	${REINPLACE_CMD} -e 's,/usr/,${PREFIX}/,g' \
 		${WRKSRC}/doc/doc.pro

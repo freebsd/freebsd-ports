@@ -22,6 +22,8 @@ NO_ARCH=	yes
 PLIST_FILES=	bin/cvschangelogbuilder
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100077

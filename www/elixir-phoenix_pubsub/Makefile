@@ -17,4 +17,6 @@ GH_ACCOUNT=	phoenixframework
 
 MIX_REWRITE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

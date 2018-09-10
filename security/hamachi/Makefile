@@ -21,6 +21,8 @@ PLIST_FILES=	bin/hamachi bin/hamachi-init sbin/hamachi-tuncfg
 PORTDOCS=	README CHANGES
 MAKE_ENV=	HAMACHI_DST=${STAGEDIR}${PREFIX}/bin TUNCFG_DST=${STAGEDIR}${PREFIX}/sbin
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${RM} ${WRKSRC}/tuncfg/tuncfg
 	${LOCALBASE}/bin/upx -d ${WRKSRC}/hamachi

@@ -31,6 +31,8 @@ PORTDOCS=	README.txt
 FONT_DEP=	AveriaSansGWF-Regular.ttf
 FONTDIR_DEP=	${LOCALBASE}/share/fonts/averiagwf
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/game.c
 

@@ -13,4 +13,6 @@ USE_KDE=	completion config configwidgets coreaddons dbusaddons \
 USE_QT=		core dbus gui testlib widgets \
 		buildtools_build qmake_build
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

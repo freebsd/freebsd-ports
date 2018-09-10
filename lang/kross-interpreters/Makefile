@@ -12,7 +12,7 @@ USE_KDE=	ecm kross
 USE_QT=		core gui script widgets xml \
 		buildtools_build qmake_build
 
-OPTIONS_DEFINE=		RUBY
+OPTIONS_DEFINE=		RUBY DOCS
 OPTIONS_SUB=		yes
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 

@@ -15,6 +15,8 @@ INFO=		hpt
 MASTERDIR=	${.CURDIR}/../husky
 COMPONENT_SUBDIR=       hpt
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e 's^/path/to/config^${PREFIX}/etc/fido/config^' \
 		${WRKSRC}/man/hptlink.1

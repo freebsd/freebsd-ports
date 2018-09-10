@@ -12,4 +12,6 @@ USE_KDE=	archive config coreaddons ecm i18n kio service
 USE_QT=		core gui xml \
 		buildtools_build qmake_build
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

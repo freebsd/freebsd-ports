@@ -17,4 +17,6 @@ GH_ACCOUNT=	certifi
 
 ERL_APP_NAME=	certifi
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

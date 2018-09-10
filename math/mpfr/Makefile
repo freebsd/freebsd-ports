@@ -35,4 +35,6 @@ INFO=		mpfr
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

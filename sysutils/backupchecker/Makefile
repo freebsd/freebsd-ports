@@ -19,6 +19,8 @@ USE_PYTHON=	autoplist distutils
 
 PORTDOCS=	README.md
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} "s|'share','man'|'${MANPREFIX}/man'|" ${WRKSRC}/setup.py
 

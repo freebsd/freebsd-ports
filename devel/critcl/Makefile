@@ -29,6 +29,8 @@ PORTDOCS=	*
 
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:

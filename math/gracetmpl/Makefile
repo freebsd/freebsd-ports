@@ -34,6 +34,8 @@ USE_GCC=	yes
 
 PLIST_SUB+=	PYTHON_VER=${PYTHON_VER}
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${ECHO_CMD} -n > ${WRKSRC}/Makefile.defs
 

@@ -20,6 +20,8 @@ CFLAGS+=	"-I${LOCALBASE}/include" "-L${LOCALBASE}/lib"
 PLIST_FILES=	bin/rss2html man/man1/rss2html.1.gz
 PORTDOCS=	rss2html.links usage.example rss2html.template
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e '16,20d' ${WRKSRC}/Makefile.acr
 

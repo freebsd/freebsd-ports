@@ -16,6 +16,8 @@ PLIST_FILES=	bin/mkbold bin/mkitalic bin/mkbolditalic
 PORTDOCS=	ALGORITHM ALGORITHM.eucJP LICENSE README README.eucJP
 USES=	tar:bzip2
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})

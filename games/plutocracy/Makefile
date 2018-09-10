@@ -28,6 +28,8 @@ SUB_FILES=	plutocracy_
 PORTDOCS=	AUTHORS README
 PORTDATA=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|span font|span font_desc|' \
 		${WRKSRC}/src/render/r_assets.c

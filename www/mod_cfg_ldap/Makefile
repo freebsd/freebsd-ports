@@ -26,7 +26,9 @@ AP_LIB+=	${LDAP_LIB}
 PORTDOCS=	AUTHORS cfg_ldap.conf ChangeLog COPYING INSTALL \
 		mod_cfg_ldap.schema README TODO
 
-post-install:
+OPTIONS_DEFINE=	DOCS
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

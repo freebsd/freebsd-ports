@@ -26,6 +26,8 @@ JARFILES=	xercesImpl.jar xml-apis.jar
 
 PLIST_FILES=	${JARFILES:S,^,%%JAVAJARDIR%%/,}
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR files in ${JAVAJARDIR}..."
 .for JARFILE in ${JARFILES}

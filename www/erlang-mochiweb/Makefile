@@ -18,6 +18,8 @@ CPE_VENDOR=	mochiweb_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	mochi
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}

@@ -24,6 +24,8 @@ PORTDOCS=	*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
+OPTIONS_DEFINE=	DOCS
+
 pre-configure:
 	@${CP} ${LOCALBASE}/share/gettext/config.rpath ${WRKSRC}
 

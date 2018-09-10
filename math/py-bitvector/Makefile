@@ -19,6 +19,8 @@ PYDISTUTILS_PKGNAME=	BitVector
 
 PORTDOCS=	README BitVector-${PORTVERSION}.html
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${RM} ${WRKSRC}/test.py
 

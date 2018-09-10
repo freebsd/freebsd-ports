@@ -19,6 +19,8 @@ MIX_BUILD_DEPS=	www/elixir-httpoison \
 		www/erlang-hackney
 MIX_REWRITE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${RM} ${WRKSRC}/priv/release_ets/.gitkeep
 

@@ -26,6 +26,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	akoshibe
 GH_TAGNAME=	b88c58c
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	@${CC} ${WRKSRC}/mnexec.c -o ${BUILD_WRKSRC}/mnexec
 	@help2man -N -n "create a Mininet network."  --no-discard-stderr \

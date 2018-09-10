@@ -18,6 +18,8 @@ USES=		compiler:nestedfct
 PORTDOCS=	README
 ETCDIR=		${PREFIX}/etc/l2tp
 
+OPTIONS_DEFINE=	DOCS
+
 do-configure:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/doc/l2tpd.8 \
 		${WRKSRC}/doc/l2tpd.conf.sample ${WRKSRC}/doc/l2tp-secrets.5 \

@@ -21,4 +21,6 @@ USE_LDCONFIG=	yes
 USE_LINUX=	libssh2 nspr nss openldap
 USE_LINUX_RPM=	nolib
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

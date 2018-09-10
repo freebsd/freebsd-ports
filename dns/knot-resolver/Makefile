@@ -33,7 +33,7 @@ USES=		gmake libedit libtool ncurses pkgconfig shebangfix tar:xz
 SHEBANG_FILES=	scripts/coverage_env.sh
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	COOKIES DNSTAP DOXYGEN GO TRUSTANCHOR
+OPTIONS_DEFINE=	DOCS COOKIES DNSTAP DOXYGEN GO TRUSTANCHOR
 
 COOKIES_DESC=			cookies
 COOKIES_LIB_DEPENDS=		libnettle.so:security/nettle
@@ -55,6 +55,7 @@ DNSTAP_MAKE_ARGS_ON=		HAS_libprotobuf-c=yes HAS_libfstrm=yes
 DNSTAP_MAKE_ARGS_OFF=		HAS_libprotobuf-c=no  HAS_libfstrm=no
 DNSTAP_PLIST_FILES=		lib/kdns_modules/dnstap.so
 
+DOXYGEN_IMPLIES=		DOCS
 DOXYGEN_BUILD_DEPENDS=		doxygen:devel/doxygen
 DOXYGEN_MAKE_ARGS_ON=		HAS_doxygen=yes
 DOXYGEN_MAKE_ARGS_OFF=		HAS_doxygen=no

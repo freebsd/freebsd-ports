@@ -20,4 +20,6 @@ GH_ACCOUNT=	Zatvobor
 MIX_BUILD_DEPS=	devel/elixir-exjsx
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

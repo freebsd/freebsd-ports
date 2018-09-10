@@ -37,6 +37,8 @@ WRKSRC_BZIP2_103=	${WRKDIR}/bzip2-${BZIP2_103}
 
 PORTDOCS=	ChangeLog README
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/CC/CXX/' -e 's,gcc,$${CXX},' \
 		-e "s|\(-lcrypto\)|-L${OPENSSLLIB} \1|g" ${WRKSRC}/Makefile

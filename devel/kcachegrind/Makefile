@@ -18,7 +18,7 @@ SHEBANG_FILES=	converters/hotshot2calltree.cmake \
 		converters/memprof2calltree \
 		converters/op2calltree converters/dprof2calltree
 
-OPTIONS_DEFINE=	DOT VALGRIND
+OPTIONS_DEFINE=	DOT VALGRIND DOCS
 
 DOT_DESC=		Use GraphViz/dot to render call graphs
 DOT_RUN_DEPENDS=	dot:graphics/graphviz

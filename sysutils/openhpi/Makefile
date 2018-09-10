@@ -29,6 +29,8 @@ USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_RC_SUBR=	openhpid
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} 's/-lstdc++//' \
 		${WRKSRC}/baselib/Makefile.in \

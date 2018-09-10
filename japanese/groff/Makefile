@@ -45,6 +45,8 @@ TMACFILES=	tmac.orig_me tmac.vgrind \
 		an-old.tmac doc.tmac e.tmac
 MDOCFILES=	ja.eucJP doc-common doc-syms
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -E -e 's|^@setfilename +groff|&.info|g;' \
 	    ${WRKSRC}/doc/groff.texinfo

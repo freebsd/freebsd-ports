@@ -27,6 +27,7 @@ DESKTOP_ENTRIES="DOSBox" "${COMMENT}" \
 		"${PREFIX}/share/pixmaps/dosbox.ico" "dosbox" \
 		"System;Emulator;" "true"
 
+OPTIONS_DEFINE=	DOCS
 OPTIONS_RADIO=	DEBUGGER
 OPTIONS_RADIO_DEBUGGER=DEBUGGER_ENABLE DEBUGGER_HEAVY
 DEBUGGER_ENABLE_DESC=Enable internal debugger

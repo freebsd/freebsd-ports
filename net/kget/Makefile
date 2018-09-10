@@ -35,4 +35,6 @@ SHEBANG_FILES=	conf/*.pl
 MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 CONFIGURE_ENV=	XDG_CONFIG_HOME=/dev/null
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

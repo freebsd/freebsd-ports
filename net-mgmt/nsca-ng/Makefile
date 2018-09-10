@@ -33,6 +33,8 @@ CONFIGURE_ARGS+=	--enable-server
 
 PORTDOCS=	NEWS COPYING README PROTOCOL TODO
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT:Mlibressl*}

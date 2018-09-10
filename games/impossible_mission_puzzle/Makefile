@@ -29,6 +29,8 @@ PORTDOCS=	README
 DESKTOP_ENTRIES="Impossible Mission puzzle" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	@cd ${WRKSRC} && ${CC} -o ${PORTNAME} ${CFLAGS} \
 	`${SDL_CONFIG} --cflags --libs` puzzle.c

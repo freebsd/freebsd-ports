@@ -11,7 +11,7 @@ DESCR=		${.CURDIR}/pkg-descr
 
 MASTERDIR=	${.CURDIR}/../py-Jinja2
 
-OPTIONS_DEFINE=
+OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFAULT=
 
 .include "${MASTERDIR}/Makefile"
