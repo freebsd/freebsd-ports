@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Net::IP::Resolver - Resolve IPs to a particular network
 
 BUILD_DEPENDS=	p5-Net-IP-Match-XS>=0.03:net-mgmt/p5-Net-IP-Match-XS \

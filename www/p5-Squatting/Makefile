@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BEPPU
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Camping-inspired Web Microframework for Perl
 
 COMMON_DEPENDS=	p5-Continuity>=0.991:www/p5-Continuity \

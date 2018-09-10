@@ -8,7 +8,7 @@ CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Render graphs as ASCII, HTML, SVG, or Graphviz
 
 BUILD_DEPENDS=	p5-Heap>0:devel/p5-Heap

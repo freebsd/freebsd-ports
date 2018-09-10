@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sweep up imported subs in your classes
 
 BUILD_DEPENDS=	p5-B-Hooks-EndOfScope>=0.09:devel/p5-B-Hooks-EndOfScope \

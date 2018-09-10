@@ -7,7 +7,7 @@ CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Encode and decode numbers as n-ary strings
 
 LICENSE=	ART10 GPLv1+

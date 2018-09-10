@@ -8,7 +8,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create a CGI application by subclassing
 
 COMMON_DEPENDS=	p5-Class-Prototyped>0:devel/p5-Class-Prototyped \

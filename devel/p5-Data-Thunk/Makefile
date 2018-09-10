@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FLORA
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lazy/deferred evaluation - a sneakier Scalar::Defer
 
 BUILD_DEPENDS=	p5-Check-ISA>=0:devel/p5-Check-ISA \

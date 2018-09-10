@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:NEELY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Data::Validate::Domain - domain validation methods
 
 BUILD_DEPENDS=	p5-Net-Domain-TLD>=0:dns/p5-Net-Domain-TLD

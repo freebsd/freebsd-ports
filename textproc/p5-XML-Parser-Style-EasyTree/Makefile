@@ -8,7 +8,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse XML to a simple tree
 
 BUILD_DEPENDS=	p5-XML-Parser>0:textproc/p5-XML-Parser \

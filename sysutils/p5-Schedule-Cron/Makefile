@@ -8,7 +8,7 @@ CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Schedule::Cron - cron-like scheduler for Perl subroutines
 
 BUILD_DEPENDS=	${RUN_DEPENDS}

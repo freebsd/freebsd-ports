@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TEODOR
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Return true every N cycles or S seconds
 
 BUILD_DEPENDS=	p5-Devel-Callsite>=0.04:devel/p5-Devel-Callsite

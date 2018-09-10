@@ -8,7 +8,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Get the titles of things on the web in a sensible way
 
 COMMON_DEPENDS=	p5-File-Type>=0.22:devel/p5-File-Type \

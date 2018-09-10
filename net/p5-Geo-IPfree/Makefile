@@ -7,7 +7,7 @@ CATEGORIES=	net perl5 geography
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Look up country from an IP Address
 
 LICENSE=	ART10 GPLv1+

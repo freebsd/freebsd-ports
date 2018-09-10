@@ -7,7 +7,7 @@ CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for computing the sunrise/sunset on a given day
 
 LICENSE=	ART10 GPLv1+

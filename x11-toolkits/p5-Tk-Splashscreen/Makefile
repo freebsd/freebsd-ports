@@ -8,7 +8,7 @@ CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tk::Splashscreen, display a Splashscreen during program initialization
 
 BUILD_DEPENDS=	p5-Tk>=0:x11-toolkits/p5-Tk

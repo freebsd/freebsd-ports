@@ -7,7 +7,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fast Perl client for memcached, a distributed memory cache daemon
 
 LICENSE=	ART10 GPLv2+

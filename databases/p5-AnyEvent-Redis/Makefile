@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DGL
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	AnyEvent::Redis - Non-blocking Redis client
 
 BUILD_DEPENDS=	p5-Try-Tiny>=0:lang/p5-Try-Tiny \

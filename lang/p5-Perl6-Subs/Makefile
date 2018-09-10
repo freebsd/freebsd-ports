@@ -8,7 +8,7 @@ CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl6::Subs - Define your subroutines in the Perl 6 style
 
 LICENSE=	LGPL21+

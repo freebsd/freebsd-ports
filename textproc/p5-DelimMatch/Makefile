@@ -8,7 +8,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	http://nwalsh.com/perl/delimmatch/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to find regexp delimited strings with proper nesting
 
 USES=		perl5

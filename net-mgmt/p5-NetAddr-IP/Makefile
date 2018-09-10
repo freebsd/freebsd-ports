@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Work with IPv4 and IPv6 addresses and subnets
 
 LICENSE=	ART10 GPLv2

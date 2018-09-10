@@ -8,7 +8,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for down translation of XML to strings
 
 BUILD_DEPENDS=	p5-XML-LibXML>=1.54:textproc/p5-XML-LibXML \

@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interprocess Publish/Subscribe channels
 
 BUILD_DEPENDS=	p5-DBM-Deep>=1:databases/p5-DBM-Deep \

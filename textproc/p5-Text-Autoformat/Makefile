@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:NEILB
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/0\.(000)$//}
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Automatic and manual text wrapping and reformating formatting
 
 LICENSE=	ART10 GPLv1+

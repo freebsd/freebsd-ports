@@ -8,7 +8,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Find RFC 822 email addresses in plain text
 
 LICENSE=	ART10 GPLv1+
