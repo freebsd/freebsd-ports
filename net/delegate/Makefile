@@ -43,13 +43,15 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/delegated ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${FILESDIR}/delegated.sh \
 		${STAGEDIR}${PREFIX}/etc/rc.d/delegated.sh-dist
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}
 # Re-sign the executable
 	@${MKDIR} ${WRKDIR}/tmp
 	@${CP} ${STAGEDIR}${PREFIX}/sbin/delegated ${WRKDIR}/tmp/dg
 	@${CHMOD} +w ${STAGEDIR}${PREFIX}/sbin/delegated
 	@${WRKDIR}/tmp/dg DGROOT=${WRKDIR}/tmp/ -Fesign -w ${STAGEDIR}${PREFIX}/sbin/delegated
 	@${CHMOD} -w ${STAGEDIR}${PREFIX}/sbin/delegated
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
