@@ -1,0 +1,6 @@
+Math::Prime::Util is a module for number theory in Perl. This includes prime
+sieving, primality tests, primality proofs, integer factoring, counts / bounds /
+approximations for primes, nth primes, and twin primes, random prime generation,
+and much more.
+
+WWW: https://metacpan.org/release/Math-Prime-Util
