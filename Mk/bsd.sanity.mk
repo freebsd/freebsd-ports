@@ -162,6 +162,12 @@ DEV_ERROR+=	"USE_TCL and USE_TK are no longer supported, please use USES=tcl or 
 DEV_ERROR+=	"USE_FPC=yes is no longer supported, please use USES=fpc"
 .endif
 
+.for _type in EXAMPLES DOCS
+.  if defined(PORT${_type}) && empty(_REALLY_ALL_POSSIBLE_OPTIONS:M${_type})
+DEV_ERROR+=	"PORT${_type} does not do anything unless the ${_type} option is present."
+.  endif
+.endfor
+
 SANITY_UNSUPPORTED=	USE_OPENAL USE_FAM USE_MAKESELF USE_ZIP USE_LHA USE_CMAKE \
 		USE_READLINE USE_ICONV PERL_CONFIGURE PERL_MODBUILD \
 		USE_PERL5_BUILD USE_PERL5_RUN USE_DISPLAY USE_FUSE \

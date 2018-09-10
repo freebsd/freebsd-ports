@@ -4538,6 +4538,7 @@ ${TMPPLIST}:
 	@cd ${.CURDIR} && ${MAKE} generate-plist
 
 .for _type in EXAMPLES DOCS
+.if !empty(_REALLY_ALL_POSSIBLE_OPTIONS:M${_type})
 .if !target(add-plist-${_type:tl})
 .if defined(PORT${_type}) && !empty(PORT_OPTIONS:M${_type})
 add-plist-${_type:tl}:
@@ -4549,6 +4550,7 @@ add-plist-${_type:tl}:
 .endfor
 	@${FIND} -P ${PORT${_type}:S/^/${STAGEDIR}${${_type}DIR}\//} ! -type d 2>/dev/null | \
 		${SED} -ne 's,^${STAGEDIR},,p' >> ${TMPPLIST}
+.endif
 .endif
 .endif
 .endfor
