@@ -546,6 +546,7 @@
     SUBDIR += p5-Math-Polygon-Tree
     SUBDIR += p5-Math-Polynomial-Solve
     SUBDIR += p5-Math-Prime-Util
+    SUBDIR += p5-Math-Prime-Util-GMP
     SUBDIR += p5-Math-Prime-XS
     SUBDIR += p5-Math-ProvablePrime
     SUBDIR += p5-Math-RPN

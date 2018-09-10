@@ -1,0 +1,9 @@
+Math::Prime::Util::GMP is a module for number theory in Perl using GMP. This
+includes primality tests, getting primes in a range, factoring, and more.
+
+These use GMP directly, so should be quite fast for bignums. This module is
+mainly intended to be used within Math::Prime::Util, but most functions can be
+easily used in independent C programs. Some, like factoring and primality
+proving, have explicit ways of compiling as standalone programs.
+
+WWW: https://metacpan.org/release/Math-Prime-Util-GMP
