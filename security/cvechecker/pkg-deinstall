@@ -1,12 +1,14 @@
 #!/bin/sh
 
+PORTNAME=${1%-*}
+
 [ "$2" = DEINSTALL ] && cat <<***EOM
 ------------------------------------------------------------------------------
 
-If you are no longer using the $1 port, then manually delete
-the following directory:
+If you are no longer using the $PORTNAME port, then manually delete
+the following directory and all its contents:
 
-	/var/db/cvechecker
+	/var/db/$PORTNAME
 
 ------------------------------------------------------------------------------
 ***EOM

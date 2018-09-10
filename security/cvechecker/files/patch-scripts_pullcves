@@ -1,4 +1,4 @@
---- scripts/pullcves.orig	2017-03-27 16:42:38 UTC
+--- scripts/pullcves.orig	2018-09-09 10:32:47 UTC
 +++ scripts/pullcves
 @@ -44,17 +44,11 @@ then
    exit 1;
@@ -19,7 +19,7 @@
  DLCVE=0;
  DLDAT=0;
  COMMAND=$1;
-@@ -68,7 +69,7 @@ do
+@@ -68,7 +62,7 @@ do
    if [ ! -f ${CVECACHE}/nvdcve-2.0-20${YEAR}.xml ];
    then
      printf "Downloading nvdcve-2.0-20${YEAR}.xml... ";
@@ -28,7 +28,7 @@
      gunzip -c ${CVECACHE}/nvdcve-2.0-20${YEAR}.xml.gz > ${CVECACHE}/nvdcve-2.0-20${YEAR}.xml && rm ${CVECACHE}/nvdcve-2.0-20${YEAR}.xml.gz;
      printf "ok\nConverting nvdcve-2.0-20${YEAR}.xml to CSV... ";
      xsltproc ${DATADIR}/nvdcve2simple.xsl ${CVECACHE}/nvdcve-2.0-20${YEAR}.xml > ${CVECACHE}/nvdcve-2.0-20${YEAR}.csv;
-@@ -85,7 +86,7 @@ else
+@@ -85,7 +79,7 @@ else
    CKSUM=$(cksum nvdcve-2.0-Modified.xml 2>/dev/null);
  fi
  printf "Downloading nvdcve-2.0-Modified.xml... ";
@@ -37,7 +37,7 @@
  gunzip -c nvdcve-2.0-Modified.xml.gz > nvdcve-2.0-Modified.xml && rm nvdcve-2.0-Modified.xml.gz;
  CKSUM2=$(cksum nvdcve-2.0-Modified.xml 2>/dev/null);
  if [ "${CKSUM2}" != "${CKSUM}" ] || [ -f nvdcve-2.0-Modified.xml.1 ];
-@@ -113,7 +114,7 @@ fi
+@@ -113,7 +107,7 @@ fi
  
  CKSUM=$(cksum versions.dat 2>/dev/null);
  printf "Downloading versions.dat... ";
