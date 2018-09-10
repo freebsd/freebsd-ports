@@ -1,6 +1,6 @@
---- lib/Text/Graphics.pm.orig	Sat Dec 30 20:01:06 2000
-+++ lib/Text/Graphics.pm	Sat Dec 30 20:02:21 2000
-@@ -49,8 +49,8 @@
+--- lib/Text/Graphics.pm.orig	1998-06-23 01:00:27 UTC
++++ lib/Text/Graphics.pm
+@@ -49,8 +49,8 @@ sub add {
    my $child = shift;
    my $offx = shift;
    my $offy = shift;
@@ -11,7 +11,7 @@
    $child->{parent} = $this;
    
    push @{ $this->{children} }, $child;
-@@ -78,7 +78,7 @@
+@@ -78,7 +78,7 @@ sub _drawBackground {
    my $this = shift;
    my $gc = shift;
    
@@ -20,7 +20,7 @@
      $gc->fillRect($this->{bg}, 0, 0, $this->{width}, $this->{height});
    }
  }
-@@ -413,7 +413,7 @@
+@@ -413,7 +413,7 @@ sub setSize {
    ## we need to re-wrap iff the width changes
    ##
    
@@ -28,3 +28,4 @@
 +  if ((defined $width) and ($this->{width} != $width)) {
      delete $this->{text_was_wrapped};
    }
+   
