@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	netpbm
-DISTVERSION=	10.83.01
+DISTVERSION=	10.83.02
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/t6/netpbm/releases/download/v${DISTVERSION}/ \
 		LOCAL/tobik
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Toolkit for conversion of images between different formats
@@ -58,8 +57,6 @@ OPTIONS_DEFAULT=	MANPAGES PERL
 OPTIONS_DEFINE=	MANPAGES PERL STATIC SVGTOPAM X11
 OPTIONS_SUB=	yes
 
-MANPAGES_DISTFILES=	netpbm-userguide-r3294${EXTRACT_SUFX}
-MANPAGES_USES=		python:build,2.7
 PERL_USE=		PERL5=run
 STATIC_BUILD_DEPENDS=	tiff>0:graphics/tiff \
 			png>0:graphics/png \
@@ -103,14 +100,6 @@ post-patch-X11-off:
 do-configure:
 	@${CAT} ${WRKSRC}/config.mk.in ${FILESDIR}/config.mk > ${WRKSRC}/config.mk
 
-post-build-MANPAGES-on:
-	@cd ${WRKDIR}/netpbm-userguide && ${WRKSRC}/buildtools/makeman *.html
-	@cd ${WRKDIR}/netpbm-userguide && ${MV} index.1 netpbm.1
-# Remove broken manpages
-	@cd ${WRKDIR}/netpbm-userguide && ${RM} directory.1 liberror.1 \
-		libnetpbm_dir.1 libsystem.3 libtmpfile.3 libtmpfilefd.3 \
-		ppmsvgalib.1 vidtoppm.1 extendedopacity.5
-
 post-install:
 	@cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libnetpbm.so.11 libnetpbm.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnetpbm.so
@@ -119,9 +108,9 @@ post-install:
 		${STAGEDIR}${PREFIX}/include/netpbm
 
 post-install-MANPAGES-on:
-	${INSTALL_MAN} ${WRKDIR}/netpbm-userguide/*.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKDIR}/netpbm-userguide/*.3 ${STAGEDIR}${PREFIX}/man/man3
-	${INSTALL_MAN} ${WRKDIR}/netpbm-userguide/*.5 ${STAGEDIR}${PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/man/*.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/*.3 ${STAGEDIR}${PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/man/*.5 ${STAGEDIR}${PREFIX}/man/man5
 
 .if defined(DEVELOPER)
 # A lot of this is stolen from the netpbm OpenBSD port
