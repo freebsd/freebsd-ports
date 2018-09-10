@@ -5,7 +5,6 @@
 %%WWWDIR%%/css/_animations.scss
 %%WWWDIR%%/css/_contactlist.scss
 %%WWWDIR%%/css/_details.scss
-%%WWWDIR%%/css/_navigation.scss
 %%WWWDIR%%/css/_settings.scss
 %%WWWDIR%%/css/style.css
 %%WWWDIR%%/css/style.scss
@@ -19,6 +18,7 @@
 %%WWWDIR%%/img/favicon.png
 %%WWWDIR%%/img/favicon.svg
 %%WWWDIR%%/img/group.svg
+%%WWWDIR%%/js/contacts-inject-14.js
 %%WWWDIR%%/js/dav/dav.js
 %%WWWDIR%%/js/public/script.js
 %%WWWDIR%%/js/vendor/angular-cache/angular-cache.js
