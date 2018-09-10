@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nextcloud
-DISTVERSION=	13.0.6
+DISTVERSION=	14.0.0
 CATEGORIES=	www
 MASTER_SITES=	https://download.nextcloud.com/server/releases/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -57,6 +57,5 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/data
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/apps
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${FILESDIR}/fix-apps_paths.json ${STAGEDIR}${DATADIR}/fix-apps_paths.json
 
 .include <bsd.port.mk>
