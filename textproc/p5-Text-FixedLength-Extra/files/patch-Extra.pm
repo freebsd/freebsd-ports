@@ -1,8 +1,8 @@
---- Extra.pm.orig	Sat Dec 30 18:10:06 2000
-+++ Extra.pm	Sat Dec 30 18:26:45 2000
-@@ -31,6 +31,9 @@
+--- Extra.pm.orig	2001-09-18 13:10:20 UTC
++++ Extra.pm
+@@ -31,6 +31,9 @@ our $VERSION = '1.1';
  
- our $debug = 1;
+ our $debug = 0;
  
 +# kill the previous Text::FixedLength::getFixed to avoid
 +# the warning of redefinition
