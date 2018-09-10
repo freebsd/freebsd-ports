@@ -26,8 +26,6 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libnetcdf.so:science/netcdf
 RUN_DEPENDS=	${PYNUMPY}
 
-RESTRICTED=	No commercial use: commercial use requires a commercial license
-
 LICENSE_FILE_VMD=	${WRKSRC}/LICENSE
 LICENSE_PERMS_VMD=	no-auto-accept
 LICENSE_NAME_VMD=	Visual Molecular Dynamics Software License Agreement
