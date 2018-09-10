@@ -14,6 +14,8 @@ GH_ACCOUNT=	uwiger
 
 ERL_DOCS=	doc/*
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}

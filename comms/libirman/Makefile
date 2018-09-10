@@ -19,4 +19,6 @@ INSTALL_TARGET=	install-strip
 
 PORTDOCS=	README TECHNICAL
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

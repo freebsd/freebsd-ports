@@ -31,6 +31,8 @@ DESKTOP_ENTRIES="Trigger" "" "trigger" \
 
 PORTDOCS=	README-stereo.txt README.txt DATA_AUTHORS.txt
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WORKINGSRC}/bin/trigger-rally ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DATADIR}

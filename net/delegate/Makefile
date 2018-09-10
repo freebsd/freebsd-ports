@@ -25,6 +25,8 @@ PLIST_FILES=	sbin/delegated etc/rc.d/delegated.sh-dist
 PORTDOCS=	CHANGES COPYRIGHT DG9note.html HowToDG.html IPv6NOTE.txt \
 		Manual.htm jpconv.htm tutor-en.htm tutor-jp.htm
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${LN} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/DG9note.html \
 		${WRKSRC}/IPv6NOTE.txt ${WRKSRC}/doc

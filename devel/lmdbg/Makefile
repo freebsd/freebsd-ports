@@ -28,6 +28,8 @@ MKCMAKE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib
 
 INSTALL_TARGET=	install install-doc
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	${SETENV} ${MKCMAKE_ENV} ${MKCMAKE} -C ${WRKSRC}
 

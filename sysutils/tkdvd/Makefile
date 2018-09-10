@@ -28,6 +28,8 @@ DESKTOP_ENTRIES="TkDVD" \
 		"AudioVideo;DiscBurning;" \
 		true
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:

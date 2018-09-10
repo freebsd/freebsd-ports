@@ -20,6 +20,8 @@ PORTDOCS=	fidoconfig.html
 DOCSDIR=	${PREFIX}/share/doc/husky
 INFO=		fidoconfig
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e 's^/path/to/config^${PREFIX}/etc/fido/config^' \
 		${WRKSRC}/man/linkedto.1

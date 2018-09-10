@@ -17,4 +17,6 @@ GH_ACCOUNT=     webmachine
 ERL_BUILD_DEPS=	www/erlang-mochiweb-basho
 ERL_RUN_DEPS:=	${ERL_BUILD_DEPS}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

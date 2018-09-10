@@ -22,6 +22,8 @@ PORTDOCS=	challenge.txt
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/ratbox-respond bin/makekeypair
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/makekeypair ${STAGEDIR}${PREFIX}/bin

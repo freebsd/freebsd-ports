@@ -25,4 +25,6 @@ NO_ARCH=	yes
 
 MAKE_ARGS=	prefix=${PREFIX} PYTHON=${PYTHON_CMD}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

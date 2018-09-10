@@ -11,4 +11,6 @@ COMMENT=	Shell command that wraps Taskwarrior commands
 
 USES=		cmake compiler:c++11-lang readline
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

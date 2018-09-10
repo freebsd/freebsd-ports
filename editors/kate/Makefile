@@ -21,4 +21,6 @@ USE_KDE=	activities attica auth bookmarks codecs completion config \
 USE_QT=		core dbus gui network script sql widgets xml \
 		buildtools_build qmake_build
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

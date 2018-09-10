@@ -21,6 +21,8 @@ PORTDOCS=	README
 PORTEXAMPLES=	README ipTopTalkers ipTrafficMatrix sflowRRDChart.cgi \
 		sflowRRDLoad sflowenable
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-install:

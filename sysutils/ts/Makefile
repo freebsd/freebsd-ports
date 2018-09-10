@@ -16,6 +16,8 @@ PLIST_FILES=	bin/ts \
 		man/man8/ts.8.gz
 PORTDOCS=	OBJECTIVES PROTOCOL README TRICKS
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e '/^GLIBCFLAGS/d;/^CFLAGS/d'\
 		${WRKSRC}/Makefile

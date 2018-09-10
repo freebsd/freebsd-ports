@@ -30,6 +30,8 @@ MAKE_ARGS=	PREFIX=${PREFIX} \
 		MANDIR=${MANPREFIX}/man \
 		LIBLUA=-llua-${LUA_VER}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} 's|-ldl ||' ${WRKSRC}/src/Makefile
 

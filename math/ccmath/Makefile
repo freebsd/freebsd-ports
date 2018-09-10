@@ -20,6 +20,8 @@ PORTDOCS=	*
 SRC_DIRS=	cfit complex fft geom intg matrix roots sfunc simu sort statf \
 		tseries util xarm
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

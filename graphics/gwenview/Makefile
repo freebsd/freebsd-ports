@@ -25,4 +25,6 @@ USE_QT=		concurrent core dbus gui network opengl phonon4 printsupport \
 		buildtools_build qmake_build
 USE_XORG=	x11
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

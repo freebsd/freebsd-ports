@@ -18,4 +18,6 @@ GH_PROJECT=	elixir_make
 
 ELIXIR_APP_NAME=elixir_make
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

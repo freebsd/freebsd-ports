@@ -21,4 +21,6 @@ USE_QT=		core concurrent dbus gui network printsupport qml quick \
 		buildtools_build qmake_build
 USE_XORG=	x11 xcb xext xfixes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

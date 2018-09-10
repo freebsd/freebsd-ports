@@ -20,6 +20,8 @@ USE_RC_SUBR=	iodined
 USERS=		_iodined
 GROUPS=		_iodined
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/iodine ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/iodined ${STAGEDIR}${PREFIX}/sbin

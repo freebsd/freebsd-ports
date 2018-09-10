@@ -17,4 +17,6 @@ GH_ACCOUNT=	seantanly
 ELIXIR_APP_NAME=paratize
 MIX_REWRITE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

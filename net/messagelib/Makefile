@@ -32,7 +32,7 @@ USE_QT=		core dbus gui location network printsupport qml quick testlib \
 USE_LDCONFIG=	yes
 
 
-OPTIONS_DEFINE=		INOTIFY
+OPTIONS_DEFINE=		INOTIFY DOCS
 OPTIONS_DEFAULT=	INOTIFY
 OPTIONS_SUB=		yes
 

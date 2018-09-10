@@ -16,6 +16,8 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/pkesh
 PORTDOCS=	README
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pkesh.sh ${STAGEDIR}${PREFIX}/bin/pkesh
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

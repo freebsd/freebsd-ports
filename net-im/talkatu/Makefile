@@ -22,4 +22,6 @@ USE_LDCONFIG=	yes
 MESON_ARGS=	-Dgobject-introspection=false
 WRKSRC=		${WRKDIR}/rw_grim-talkatu-${DISTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

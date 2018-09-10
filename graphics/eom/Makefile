@@ -35,7 +35,7 @@ INSTALL_TARGET=	install-strip
 GLIB_SCHEMAS=	org.mate.eom.gschema.xml \
 		org.mate.eom.enums.xml
 
-OPTIONS_DEFINE=	EXIF EXEMPI
+OPTIONS_DEFINE=	EXIF EXEMPI DOCS
 OPTIONS_DEFAULT=EXIF EXEMPI
 
 EXEMPI_DESC=		XMP support

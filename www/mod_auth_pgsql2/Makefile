@@ -19,6 +19,8 @@ AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 PORTDOCS=	mod_auth_pgsql.html
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}

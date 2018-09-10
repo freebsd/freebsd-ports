@@ -19,6 +19,8 @@ QMAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		DATADIR="${DATADIR}" \
 		DOCDIR="${DOCSDIR}"
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qbrew
 

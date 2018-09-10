@@ -18,4 +18,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jacklund
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

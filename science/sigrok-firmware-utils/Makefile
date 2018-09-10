@@ -32,6 +32,8 @@ PLIST_FILES=	${PY_FILES:S,^,bin/,} \
 		${EX_FILES:S,^,bin/,} \
 		${EX_FILES:S,^,man/man1/,:S,$,.1.gz,}
 
+OPTIONS_DEFINE=	DOCS
+
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${FILESDIR}/* ${WRKSRC}

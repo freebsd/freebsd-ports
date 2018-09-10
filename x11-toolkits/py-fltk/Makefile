@@ -30,6 +30,8 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 WRKSRC=		${WRKDIR}/pyFltk-${PORTVERSION}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/X11R6|${LOCALBASE}|g;s|package_data.*},||g;s|sunos5|dragonfly4', 'freebsd8', 'freebsd9', 'freebsd10', 'freebsd11', 'freebsd12|g" ${WRKSRC}/setup.py
 

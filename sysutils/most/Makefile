@@ -25,6 +25,8 @@ PORTDOCS=	README changes.txt lesskeys.rc most-fun.txt most.doc most.rc
 
 PORTSCOUT=	skipv:5.0.0a
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|' \
 		${WRKSRC}/src/jdmacros.h

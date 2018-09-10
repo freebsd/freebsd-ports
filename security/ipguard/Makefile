@@ -19,6 +19,8 @@ PORTDOCS=	COPYRIGHT NEWS README README.tcpdump README.log ethers.sample rfc826.t
 PLIST_FILES=	sbin/ipguard \
 		man/man8/${PORTNAME}.8.gz
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}

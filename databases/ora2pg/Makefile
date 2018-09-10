@@ -22,6 +22,8 @@ USE_PERL5=	configure
 USE_GITHUB=	yes
 GH_ACCOUNT=	darold
 
+OPTIONS_DEFINE=	DOCS
+
 do-patch:
 	${REINPLACE_CMD} -e '/install_all :/,/};/s=$$CONFDIR=${STAGEDIR}${ETCDIR}=g' \
 		-e '/install_all :/,/};/s=$$DOCDIR=${STAGEDIR}${DOCSDIR}=g' \

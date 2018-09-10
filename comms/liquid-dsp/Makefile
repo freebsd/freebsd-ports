@@ -29,6 +29,8 @@ PORTDOCS=	*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
+OPTIONS_DEFINE=	DOCS
+
 pre-configure:
 	@cd ${WRKSRC}; ${SH} bootstrap.sh
 

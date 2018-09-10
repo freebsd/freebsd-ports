@@ -15,4 +15,6 @@ USE_QT=		core gui network widgets \
 
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

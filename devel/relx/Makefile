@@ -39,6 +39,8 @@ REBAR_DEPS=	bbmustache-1.0.4 \
 DISTFILES+=	${_dep}.tar:hex
 .endfor
 
+OPTIONS_DEFINE=	DOCS
+
 # convenience target to rebuild the relx cache file
 build-cache:
 	cd ${WRKDIR} && ${TAR} -c -v -z -f relx-cache-${CACHE_VERSION}${EXTRACT_SUFX} .cache
@@ -68,8 +70,6 @@ post-build:
 	@${LN} -s ${WRKSRC}/_build/dev/lib/${PORTNAME}/ebin ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/ebin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}/include
@@ -82,5 +82,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/_build/default/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

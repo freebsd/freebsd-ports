@@ -20,6 +20,8 @@ ALL_TARGET=	xsnobol4
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} 's:[^=]*\.tmp$$:${WRKSRC}/&:' ${WRKSRC}/configure
 	@${REINPLACE_CMD} '/grep/s/$$/| egrep -v "built-in|command line"/' \

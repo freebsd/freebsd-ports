@@ -22,7 +22,7 @@ USE_QT=		core dbus gui widgets xml \
 # we want the KF5 version of kmix
 CMAKE_ARGS=	-DKMIX_KF5_BUILD:BOOL=TRUE
 
-OPTIONS_DEFINE=	PULSEAUDIO
+OPTIONS_DEFINE=	PULSEAUDIO DOCS
 # TODO: readd ALSA option
 #
 # ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib

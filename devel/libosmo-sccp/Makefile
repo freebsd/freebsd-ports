@@ -21,6 +21,8 @@ CONFLICTS_INSTALL=libmtp-[0-9]* # lib/libmtp.a
 USES=		autoreconf libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/.tarball-version
 

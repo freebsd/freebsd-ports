@@ -14,4 +14,6 @@ USE_QT=		core dbus gui widgets x11extras xml \
 		buildtools_build qmake_build
 USE_XORG=	x11 xcb
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

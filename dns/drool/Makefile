@@ -20,4 +20,6 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	$$(pkg-config libev --cflags-only-I)
 LDFLAGS+=	$$(pkg-config libev --libs-only-L)
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

@@ -20,4 +20,6 @@ USE_QT=		core dbus gui location network printsupport qml quick script \
 		buildtools_build qmake_build
 USE_XORG=	ice sm x11 xext
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

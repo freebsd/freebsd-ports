@@ -24,4 +24,6 @@ INSTALL_TARGET=	install-strip
 USE_GITHUB=	yes
 GH_ACCOUNT=	xcir
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

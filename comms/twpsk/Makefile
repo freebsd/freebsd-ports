@@ -21,4 +21,6 @@ CFLAGS+=	-L${LOCALBASE}/lib -I${PREFIX}/include
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

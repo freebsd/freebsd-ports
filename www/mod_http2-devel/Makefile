@@ -31,6 +31,8 @@ CFLAGS+=	-I${LOCALBASE}/include
 SUB_FILES=	200_mod_http2.conf 300_mod_proxy_http2.conf
 PORTDOCS=	README README.md
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
 	${INSTALL_DATA} ${WRKDIR}/200_mod_http2.conf \

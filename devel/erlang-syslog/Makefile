@@ -13,4 +13,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Vagabond
 GH_PROJECT=	${PKGNAMEPREFIX}${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

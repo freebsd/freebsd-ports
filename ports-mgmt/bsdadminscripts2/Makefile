@@ -19,6 +19,8 @@ NO_ARCH=	yes
 
 CONFLICTS_INSTALL=	bsdadminscripts
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	@cd ${WRKSRC} && ${SH} install.sh \
 		-destdir="${STAGEDIR}" -prefix="${PREFIX}" \

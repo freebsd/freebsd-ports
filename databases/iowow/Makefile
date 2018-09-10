@@ -18,4 +18,6 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	Changelog README
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

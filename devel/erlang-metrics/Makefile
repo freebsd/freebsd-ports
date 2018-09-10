@@ -16,4 +16,6 @@ GH_ACCOUNT=	benoitc
 
 ERL_APP_NAME=	metrics
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

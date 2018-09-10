@@ -22,6 +22,8 @@ PORTDOCS=	readme.txt
 
 WRKSRC=		${WRKDIR}/muCommander-${PORTVERSION:S/./_/g}
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/mucommander.jar ${STAGEDIR}${DATADIR}

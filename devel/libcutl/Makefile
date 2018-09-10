@@ -33,4 +33,6 @@ CONFIGURE_ARGS=	--disable-static \
 		--with-external-expat \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

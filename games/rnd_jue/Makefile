@@ -45,6 +45,8 @@ ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
 DESKTOP_ENTRIES="R'n'D jue" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract-script:
 	@(cd ${WRKDIR}/rocksndiamonds* && ${COPYTREE_SHARE} levels ${WRKSRC})
 .for l in ${LEVELS_BD_FANS:S/$/.zip/}

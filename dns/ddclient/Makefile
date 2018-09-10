@@ -23,7 +23,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message ddclient_force
 
-OPTIONS_DEFINE=	SSL
+OPTIONS_DEFINE=	SSL DOCS
 OPTIONS_DEFAULT=SSL
 
 SSL_RUN_DEPENDS=ca_root_nss>0:security/ca_root_nss \

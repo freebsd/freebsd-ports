@@ -18,6 +18,8 @@ GH_ACCOUNT=	nats-io
 
 USE_RC_SUBR=	gnatsd.sh
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${FILESDIR}/gnatsd.conf ${STAGEDIR}${PREFIX}/etc/gnatsd.conf.sample

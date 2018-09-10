@@ -29,7 +29,7 @@ DESKTOP_ENTRIES="Mirror Magic" \
 		"Game;LogicGame;" \
 		""
 
-OPTIONS_DEFINE=	SDL
+OPTIONS_DEFINE=	SDL DOCS
 OPTIONS_DEFAULT=SDL
 
 SDL_USE=		SDL=image,mixer,sdl

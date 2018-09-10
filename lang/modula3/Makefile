@@ -51,6 +51,8 @@ STRIPPKG=	m3staloneback/m3back \
 		hack/dummy \
 		test/test
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 M3BOOT_ENV=	${MAKE_ENV:C/^LDFLAGS=.*//:C/^CPPFLAGS=.*//} \

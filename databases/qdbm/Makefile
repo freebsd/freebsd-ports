@@ -29,6 +29,8 @@ MAKE_ARGS=	MYDATADIR="${DOCSDIR}" MYDOCS="${PORTDOCS}" \
 INSTALL_TARGET=	install-strip
 PORTDOCS=	ChangeLog NEWS
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 .if defined(WITH_DEBUG)
 	@${REINPLACE_CMD} 's/-DNDEBUG//' ${WRKSRC}/Makefile.in

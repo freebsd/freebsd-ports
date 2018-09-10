@@ -10,4 +10,6 @@ USE_LDCONFIG=	yes
 MASTERDIR=	${.CURDIR}/../husky
 COMPONENT_SUBDIR=	huskylib
 
+OPTIONS_DEFINE=	DOCS
+
 .include "${MASTERDIR}/Makefile"

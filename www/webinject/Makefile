@@ -32,6 +32,8 @@ PLIST_FILES=	bin/webinject.pl \
 
 PORTDOCS=	LICENSE README
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} *.xml ${STAGEDIR}${DATADIR}

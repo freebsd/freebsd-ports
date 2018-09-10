@@ -22,7 +22,7 @@ USES=		desktop-file-utils python:2.7 tar:bz2
 USE_PYTHON=	distutils
 USE_GNOME=	gtk30 intltool pygobject3
 
-OPTIONS_DEFINE=	ZEITGEIST
+OPTIONS_DEFINE=	DOCS ZEITGEIST
 OPTIONS_DEFAULT=ZEITGEIST
 
 ZEITGEIST_DESC=	Provide recent search suggestions

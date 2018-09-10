@@ -42,6 +42,8 @@ PLIST_SUB=	${SUB_LIST}
 
 PORTDOCS=	AUTHORS CHANGES INSTALL LICENSE README TODO
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"

@@ -24,6 +24,8 @@ SHEBANG_FILES=	scripts/*.pl bowtie bowtie-build \
 USE_GITHUB=	yes
 GH_ACCOUNT=	BenLangmead
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/scripts
 	${INSTALL_SCRIPT} \

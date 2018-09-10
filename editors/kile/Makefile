@@ -30,4 +30,6 @@ GH_ACCOUNT=	kde
 
 CONFLICTS_INSTALL=	kile-kde4
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

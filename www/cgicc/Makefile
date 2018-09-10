@@ -11,7 +11,7 @@ COMMENT=	C++ class library for writing CGI applications
 
 LICENSE=	LGPL3+
 
-OPTIONS_DEFINE=	DOXYGEN
+OPTIONS_DEFINE=	DOXYGEN DOCS
 
 USES=		gmake pathfix libtool
 GNU_CONFIGURE=	yes
@@ -24,6 +24,7 @@ CXXFLAGS+=	-Wno-unknown-pragmas
 
 PORTDOCS=	*
 
+DOXYGEN_IMPLIES=	DOCS
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_CONFIGURE_ENV_OFF=	ac_cv_prog_DOXYGEN="${ECHO_CMD}"
 

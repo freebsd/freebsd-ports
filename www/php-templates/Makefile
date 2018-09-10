@@ -26,6 +26,8 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
 	${INSTALL_LIB} ${WRKSRC}/modules/templates.so \

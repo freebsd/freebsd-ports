@@ -32,6 +32,8 @@ FW_FILES=	fx2lafw-braintechnology-usb-lps.fw \
 PORTDOCS=	README NEWS
 PLIST_FILES=	${FW_FILES:S,^,share/sigrok-firmware/,}
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docfile in README NEWS

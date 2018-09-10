@@ -19,6 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_TAGNAME= 38cbbfed71efcb28931b5e4a83e3c0d4661f1548
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${MKDIR} ${WRKSRC}/src/third_party/lss
 	@${CP} ${FILESDIR}/linux_syscall_support.h ${WRKSRC}/src/third_party/lss

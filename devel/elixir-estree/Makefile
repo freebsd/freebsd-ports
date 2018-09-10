@@ -16,4 +16,6 @@ GH_ACCOUNT=	bryanjos
 
 ELIXIR_APP_NAME=estree
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

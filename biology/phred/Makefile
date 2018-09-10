@@ -29,6 +29,8 @@ DATAFILES=	phredpar.dat
 
 PORTDOCS=	NEWS PHRED.DOC DAEV.DOC
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .for f in ${DISTFILES}

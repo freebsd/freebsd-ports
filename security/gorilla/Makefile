@@ -17,6 +17,8 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	itcl>=3.4:lang/itcl \
 		wish:x11-toolkits/tk-wrapper
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == i386

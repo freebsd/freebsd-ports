@@ -19,4 +19,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 PORTDOCS=	README.xboard BUGS
 PLIST_FILES=	bin/xshogi man/man6/xshogi.6.gz
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

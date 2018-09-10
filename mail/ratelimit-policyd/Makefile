@@ -36,6 +36,8 @@ PLIST_FILES=	bin/ratelimit-policyd.pl \
 PORTDATA=	mysql-schema.sql
 PORTDOCS=	README.md
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" ${WRKSRC}/rc.d/ratelimit-policyd
 	${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" ${WRKSRC}/ratelimit-policyd.pl

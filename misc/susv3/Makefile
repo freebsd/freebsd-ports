@@ -16,6 +16,8 @@ USES=		tar:bzip2
 NO_BUILD=	yes
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})

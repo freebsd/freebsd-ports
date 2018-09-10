@@ -22,6 +22,8 @@ LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${CHMOD} a+x ${WRKSRC}/install-sh
 

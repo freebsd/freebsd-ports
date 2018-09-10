@@ -35,6 +35,8 @@ MAKE_ENV+=	PYTHONUSERBASE=${STAGEDIR}${PYTHONBASE}
 #LDFLAGS+=	-shared
 VERSION=	4.00
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 pre-configure:
 	@${CP} ${FILESDIR}/wspr.sh.in ${WRKSRC}

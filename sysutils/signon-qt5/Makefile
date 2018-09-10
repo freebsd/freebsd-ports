@@ -22,6 +22,8 @@ GL_ACCOUNT=	accounts-sso
 GL_PROJECT=	signond
 GL_COMMIT=	aa1bcf3c9218addbdb376a40151b689409046125
 
+OPTIONS_DEFINE=	DOCS
+
 pre-configure:
 	#make it find qdbusxml2ccp (as ${QT_BINDIR} is not in PATH)
 	${REINPLACE_CMD} -e 's,qdbusxml2cpp,${QT_BINDIR}/qdbusxml2cpp,' \

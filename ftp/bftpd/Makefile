@@ -21,6 +21,8 @@ PLIST_FILES=	sbin/${PORTNAME} etc/${PORTNAME}.conf.sample \
 		man/man8/bftpd.8.gz
 PORTDOCS=	en pl sk
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/bftpd.conf,${PREFIX}/etc/bftpd.conf,' \
 		${WRKSRC}/mypaths.h

@@ -22,6 +22,8 @@ USE_PHP=	pcre:build xml:build zlib:build
 
 PEARDIR=	${PREFIX}/share/pear
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" \
 		-e "s|%%BUNDLEDIR%%|${WRKSRC}/go-pear-bundle|" \

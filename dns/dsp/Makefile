@@ -28,4 +28,6 @@ USES=		gmake perl5
 PERL5=		configure patch shebangfix
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

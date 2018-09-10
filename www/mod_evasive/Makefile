@@ -24,6 +24,8 @@ MODULENAME=	${PORTNAME}20
 
 PORTDOCS=	README test.pl
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 post-patch:

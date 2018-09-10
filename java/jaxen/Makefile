@@ -21,6 +21,8 @@ PLIST_FILES+=	${JARFILES:S,^lib/,,:S,^,%%JAVAJARDIR%%/,}
 DOCS=		default.css download.html faq.html index.html javadoc status.html style
 PORTDOCS=	LICENSE ${DOCS}
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR files in ${JAVAJARDIR}..."
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}

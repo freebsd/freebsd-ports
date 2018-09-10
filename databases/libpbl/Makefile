@@ -25,6 +25,8 @@ PLIST_FILES=	include/pbl.h \
 		lib/libpbl.a
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${REINPLACE_CMD} -e 's/=  -Wall -O3/+=  -Wall -Werror/' \
 		-e 's/^CC=/CC?=/' -e '/^.rm -f/d' ${WRKSRC}/makefile

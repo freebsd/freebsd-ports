@@ -16,6 +16,8 @@ GH_ACCOUNT=	rvirding
 ALL_TARGET=	compile
 PORTDOCS=	README.md
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	cd ${BUILD_WRKSRC} && \
 	    ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET}

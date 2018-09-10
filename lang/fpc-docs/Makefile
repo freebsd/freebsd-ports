@@ -21,6 +21,8 @@ PORTDOCS=	chart.pdf fcl.pdf fclres.pdf fpdoc.pdf prog.pdf ref.pdf \
 		rtl.pdf user.pdf
 SUB_FILES=	pkg-message
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}

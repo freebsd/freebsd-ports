@@ -16,4 +16,6 @@ USES=		cmake localbase
 PLIST_FILES=	bin/get-edid bin/parse-edid man/man1/get-edid.1.gz
 PORTDOCS=	AUTHORS ChangeLog LICENSE README
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

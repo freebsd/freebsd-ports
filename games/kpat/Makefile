@@ -17,5 +17,7 @@ USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 USE_QT=		core dbus gui network phonon4 qml quick svg widgets xml \
 		buildtools_build qmake_build
 
+OPTIONS_DEFINE=	DOCS
+
 .include <${.CURDIR}/../kdegames/Makefile.common>
 .include <bsd.port.mk>

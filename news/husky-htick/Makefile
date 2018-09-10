@@ -23,6 +23,8 @@ PORTDOCS=		htick.html
 DOCSDIR=		${PREFIX}/share/doc/husky
 INFO=			htick
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e 's^/fido/etc/config^${PREFIX}/etc/fido/config^' \
 		${WRKSRC}/man/htick.1

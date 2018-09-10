@@ -35,6 +35,8 @@ PLIST_SUB=	CGIDIR=${CGIDIR:S,${PREFIX}/,,} WWWROOT=${WWWROOT:S,${PREFIX}/,,} \
 
 PORTDOCS=	README CHANGES COPYING CHANGES.old README.old
 
+OPTIONS_DEFINE=	DOCS
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may set following options:"

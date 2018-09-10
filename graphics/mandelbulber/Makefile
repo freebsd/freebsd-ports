@@ -25,6 +25,8 @@ PLIST_FILES=	bin/${PORTNAME} share/applications/${PORTNAME}.desktop
 PORTDOCS=	README NEWS
 PORTDATA=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/mandelbulber|${DATADIR}|' \
 		${WRKSRC}/${PORTNAME}.desktop

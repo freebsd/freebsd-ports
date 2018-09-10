@@ -17,6 +17,8 @@ USES=		tar:tgz
 PLIST_FILES=	bin/nasawash
 PORTDOCS=	nasawash.txt nasawash.upd
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	${CC} ${CPPFLAGS} ${CFLAGS} -c -o ${WRKSRC}/nasawash.o ${WRKSRC}/nasawash.c
 	${CC} -o ${WRKSRC}/nasawash ${WRKSRC}/nasawash.o ${LIBS}

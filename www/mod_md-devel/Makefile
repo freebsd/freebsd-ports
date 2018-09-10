@@ -39,6 +39,8 @@ SUB_FILES=	999_mod_md.conf pkg-message
 DOCSDIR=	share/doc/mod_md
 PORTDOCS=	README README.md
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100085 && ${SSL_DEFAULT} == base

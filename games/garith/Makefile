@@ -18,6 +18,8 @@ LDFLAGS+=	`${GTK_CONFIG} --libs`
 PORTDOCS=	BUGS HISTORY README TODO
 PLIST_FILES=	bin/garith
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|gldouble|double|;/gnome/d;/all.*apps/d'\
 		${WRKSRC}/garith.c

@@ -30,6 +30,8 @@ SUB_LIST=	WISH=${WISH}
 
 PORTDOCS=	00-README_FIRST.txt HISTORY install.txt jstrackdoc-v2.pdf
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/paths.tcl
 

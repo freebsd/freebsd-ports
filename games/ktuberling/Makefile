@@ -18,5 +18,7 @@ USE_QT=		core dbus gui multimedia network phonon4 printsupport qml \
 		quick svg testlib widgets xml \
 		buildtools_build qmake_build
 
+OPTIONS_DEFINE=	DOCS
+
 .include <${.CURDIR}/../kdegames/Makefile.common>
 .include <bsd.port.mk>

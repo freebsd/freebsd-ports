@@ -19,6 +19,8 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc --includedir=${PREFIX}/include --libd
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/conf/* ${STAGEDIR}${DOCSDIR}

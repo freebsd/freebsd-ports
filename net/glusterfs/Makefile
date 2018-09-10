@@ -55,6 +55,8 @@ INSTALL_TARGET=	install-strip
 PLIST_SUB=	GLUSTERLIBDIR="lib/${PORTNAME}/${PORTVERSION}"
 KMODDIR?=	/boot/modules
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1101001

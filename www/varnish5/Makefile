@@ -43,6 +43,8 @@ BAD_TESTS+=	r00832
 EXTRA_PATCHES+=	${FILESDIR}/no-inet6.patch
 .endif
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 .if defined(BAD_TESTS)
 	${RM} ${BAD_TESTS:C|.+|${WRKSRC}/bin/varnishtest/tests/\0.vtc|}

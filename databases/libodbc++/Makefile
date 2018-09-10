@@ -11,8 +11,9 @@ COMMENT=	C++ class library and toolset for ODBC access to data sources
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	DOXYGEN
+OPTIONS_DEFINE=	DOXYGEN DOCS
 
+DOXYGEN_IMPLIES=	DOCS
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 USES=		gmake libtool ncurses pathfix pkgconfig readline tar:bzip2

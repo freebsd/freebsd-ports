@@ -31,4 +31,6 @@ USE_LDCONFIG=	yes
 DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr
 
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

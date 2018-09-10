@@ -18,6 +18,8 @@ USE_LDCONFIG=	yes
 USE_LINUX=	expat
 USE_LINUX_RPM=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${RM} -r ${WRKSRC}/etc ${WRKSRC}/usr/share/fonts \
 		${WRKSRC}/usr/share/fontconfig ${WRKSRC}/var

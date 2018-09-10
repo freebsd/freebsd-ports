@@ -28,6 +28,8 @@ USE_LDCONFIG=	yes
 
 MANUAL_PACKAGE_BUILD=	Optimizes for the local machine
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -E s/sed/gsed/g ${WRKSRC}/scripts/*.sh
 

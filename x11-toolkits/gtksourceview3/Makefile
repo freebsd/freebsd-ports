@@ -35,6 +35,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|tests testsuite||g' \
 		${WRKSRC}/Makefile.in

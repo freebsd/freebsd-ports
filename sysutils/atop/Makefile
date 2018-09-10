@@ -31,6 +31,8 @@ PORTDOCS=	AUTHOR \
 		README \
 		README.FreeBSD
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/atop ${STAGEDIR}${PREFIX}/bin
 		${LN} -sf atop ${STAGEDIR}${PREFIX}/bin/atopsar

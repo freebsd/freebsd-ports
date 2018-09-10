@@ -26,6 +26,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include/freetype2
 DOCSDIR=	${LOCALBASE}/share/doc/libXaw3dXft
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} '/^typedef.*Pixel;/d' ${WRKSRC}/src/Xaw3dXft.c
 

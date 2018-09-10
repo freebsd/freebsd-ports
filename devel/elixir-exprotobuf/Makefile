@@ -17,6 +17,8 @@ GH_ACCOUNT=	bitwalker
 MIX_BUILD_DEPS=	devel/erlang-gpb
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
 
+OPTIONS_DEFINE=	DOCS
+
 pre-build:
 	@${MKDIR} ${WRKSRC}/deps
 	${LN} -s -f ${LOCALBASE}/lib/erlang/lib/gpb-* ${WRKSRC}/deps/gpb

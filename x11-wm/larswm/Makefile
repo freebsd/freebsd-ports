@@ -19,6 +19,8 @@ PLIST_FILES=	bin/larsclock bin/larsmenu bin/larsremote bin/larswm \
 		man/man1/larsclock.1.gz man/man1/larsmenu.1.gz \
 		man/man1/larsremote.1.gz man/man1/larswm.1.gz
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}

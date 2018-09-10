@@ -48,6 +48,8 @@ SHEBANG_FILES=	suma_change_spec \
 		pkundu/meica.libs/mdp/test/run_tests.py
 USE_GNOME=	glib20
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 USE_GL=		gl glu glw

@@ -31,6 +31,8 @@ SHEBANG_FILES=	supervisor/scripts/*.py supervisor/tests/fixtures/*.py
 python_OLD_CMD=	"/usr/bin/env python"
 python_OLD_CMD+=	"<<PYTHON>>"
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's!%%PREFIX%%!${PREFIX}!' ${WRKSRC}/supervisor/options.py
 

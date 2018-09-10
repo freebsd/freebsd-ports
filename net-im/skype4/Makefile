@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LINUXBASE}/lib/skype_oss_wrapper/libpulse.so.0:audio/linux-skype_
 
 CONFLICTS=	skype-devel-[0-9]*
 
-OPTIONS_DEFINE=	VIDEO
+OPTIONS_DEFINE=	DOCS VIDEO
 OPTIONS_DEFAULT=VIDEO
 
 NO_BUILD=	yes

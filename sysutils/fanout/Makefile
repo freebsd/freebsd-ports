@@ -17,6 +17,8 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/fanout bin/fanterm bin/fanmux
 PORTDOCS=	README index.html
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 		${WRKSRC}/fanterm

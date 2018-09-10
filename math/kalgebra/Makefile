@@ -20,4 +20,6 @@ USE_QT=		core dbus gui location network opengl printsupport qml quick \
 		svg testlib webchannel webengine widgets xml \
 		buildtools_build qmake_build
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

@@ -24,4 +24,6 @@ PORTDOCS=	COPYING ChangeLog README README.ninix SAORI
 USES=		gettext tar:tgz
 USE_RUBY=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

@@ -17,4 +17,6 @@ GH_ACCOUNT=	yakaz
 
 ERL_DOCS=	README.md doc
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

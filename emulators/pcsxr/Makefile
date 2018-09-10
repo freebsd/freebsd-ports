@@ -51,7 +51,7 @@ DEFAULT_DVD_DEVICE?=	/dev/cd0
 
 # XXX Gettext support is mandatory and cannot really be disabled.
 # The following option only enables/disables building *additional* translations
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	NLS DOCS
 OPTIONS_SUB=	yes
 NLS_DESC=	Build additional NLS translations
 NLS_CMAKE_ON=	-DDISABLE_NLS_TRANSLATIONS:BOOL=OFF

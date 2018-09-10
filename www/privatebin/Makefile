@@ -19,6 +19,8 @@ USE_PHP=	gd hash json wddx zlib
 USE_GITHUB=	yes
 GH_PROJECT=	PrivateBin
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's:%%DATADBDIR%%:/var/db/${PORTNAME}:' \
 		${WRKSRC}/index.php

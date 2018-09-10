@@ -29,6 +29,8 @@ DOCFILES=	HISTORY doc/Makefile doc/README doc/binhex.fig \
 		doc/library.ltx doc/structure.fig doc/td-v1.c doc/td-v2.c \
 		doc/td-v3.c doc/test.txt
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${SED} -e 's,FUNKYTOKENHERE,${PREFIX}/,' \
 		< ${FILESDIR}/uulib.3 > ${WRKDIR}/uulib.3

@@ -19,4 +19,6 @@ GH_ACCOUNT=	uwiger
 
 ERL_DOCS=	doc/*
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

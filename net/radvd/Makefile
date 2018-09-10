@@ -23,6 +23,8 @@ USE_RC_SUBR=	radvd
 
 PORTDOCS=	CHANGES COPYRIGHT INTRO.html README TODO
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/radvd.conf.example ${STAGEDIR}${PREFIX}/etc/radvd.conf.sample
 	${INSTALL} -d ${STAGEDIR}${DOCSDIR}

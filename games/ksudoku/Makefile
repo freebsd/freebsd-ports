@@ -16,5 +16,7 @@ USE_QT=		core dbus gui network opengl printsupport qml quick \
 		svg widgets xml \
 		buildtools_build qmake_build
 
+OPTIONS_DEFINE=	DOCS
+
 .include <${.CURDIR}/../kdegames/Makefile.common>
 .include <bsd.port.mk>

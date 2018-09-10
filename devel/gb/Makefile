@@ -19,6 +19,8 @@ PLIST_FILES=	bin/gb bin/gb-vendor
 
 PORTDOCS=	README.md
 
+OPTIONS_DEFINE=	DOCS
+
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_TARGET=	./...
 

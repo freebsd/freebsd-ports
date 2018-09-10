@@ -18,4 +18,6 @@ USE_QT=		buildtools_build qmake_build
 CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5Core=TRUE \
 		-DQMAKE_EXECUTABLE:PATH=${QMAKE}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

@@ -45,4 +45,6 @@ SUB_FILES=	pkg-message
 DATADIR=	${PREFIX}/lib/piglit
 PORTDATA=	*
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

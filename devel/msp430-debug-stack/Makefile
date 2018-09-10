@@ -36,6 +36,8 @@ SUB_FILES+=	pkg-message
 
 REINPLACE_ARGS=	-i ""
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${FIND} ${WRKSRC}/DLL430_v3/src/TI/DLL430 \
 		\( -name '*.cpp' -o -name '*.h' \) -print0 | ${XARGS} -0 \

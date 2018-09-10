@@ -21,6 +21,8 @@ USES=		7z gmake ssl
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	ChangeLog.txt README.txt
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's,CC = g++,CXX ?= g++,' \

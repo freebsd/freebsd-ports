@@ -23,6 +23,9 @@ INFO=		lookup
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
 		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
+
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	AUTHORS ChangeLog NEWS README.md
 
  post-install:

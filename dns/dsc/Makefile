@@ -27,4 +27,6 @@ SUB_FILES=	pkg-message
 
 USE_RC_SUBR=    dsc
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

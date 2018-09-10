@@ -33,6 +33,8 @@ USE_SDL=	sdl gfx
 
 PORTDOCS=	AUTHORS ChangeLog README TODO
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|0.8|1.0|g' -e 's|^%|#|g' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -E -e 's|0.8|1.0|g' ${WRKSRC}/build/Makefile.am

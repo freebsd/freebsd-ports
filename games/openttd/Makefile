@@ -42,6 +42,8 @@ PORTDOCS=	HOWTO_compile_lang_files.txt admin_network.txt \
 DESKTOP_ENTRIES="OpenTTD" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" \
 		"Game;Simulation;StrategyGame;" false
 
+OPTIONS_DEFINE=	DOCS
+
 .if defined(WITH_MIDI_PLAYER)
 CONFIGURE_ARGS+=	--with-midi="${WITH_MIDI_PLAYER}"
 .endif

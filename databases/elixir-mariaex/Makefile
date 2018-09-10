@@ -21,4 +21,6 @@ MIX_BUILD_DEPS=	devel/elixir-connection \
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
 MIX_REWRITE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

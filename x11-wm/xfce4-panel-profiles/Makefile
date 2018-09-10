@@ -19,6 +19,8 @@ HAS_CONFIGURE=	yes
 SHEBANG_FILES=	xfce4-panel-profiles/xfce4-panel-profiles.py \
 		xfce4-panel-profiles/panelconfig.py
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${RLN} ${STAGEDIR}${PREFIX}/share/locale ${STAGEDIR}${PREFIX}/share/${PORTNAME}/locale
 

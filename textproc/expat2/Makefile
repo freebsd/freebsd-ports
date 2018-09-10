@@ -19,4 +19,6 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--without-docbook
 INSTALL_TARGET=	install-strip
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

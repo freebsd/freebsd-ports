@@ -21,4 +21,6 @@ GNU_CONFIGURE=	yes
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 INSTALL_TARGET=	install-strip
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

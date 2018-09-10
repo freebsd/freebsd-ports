@@ -21,6 +21,8 @@ INTERFACES:=	"compile-time-dependencies/slf4j-api-1.6.1.jar:\
 PORTDOCS=	*
 PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	(cd ${WRKSRC} && ${RM} -r classes/* && ${SETENV}         \
 		LANG=en_US.ISO8859-1 LC_ALL=en_US.ISO8859-1 ${JAVAC} \

@@ -14,6 +14,8 @@ NO_BUILD=	yes
 
 PORTDOCS=	*.pdf
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${FIND} ${WRKSRC}/manuals/en \

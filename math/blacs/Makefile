@@ -18,6 +18,8 @@ SUB_FILES=	pkg-message
 USES=		fortran gmake
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ! ${PORT_OPTIONS:MDOCS}

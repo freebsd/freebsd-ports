@@ -32,6 +32,8 @@ MAKE_ARGS=	SHARED=1 \
 		LFLAGS_NATIVE="${LDFLAGS} -lpthread -lm" \
 		CFLAGS_NATIVE="${CFLAGS} -Iinclude -IOpenCL -Ideps/lzma_sdk"
 
+OPTIONS_DEFINE=	DOCS
+
 pre-install:
 	${STRIP_CMD} ${WRKSRC}/libhashcat.so.${PORTVERSION}
 	${STRIP_CMD} ${WRKSRC}/hashcat

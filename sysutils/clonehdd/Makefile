@@ -18,6 +18,8 @@ PLIST_FILES=	sbin/clonehdd man/man8/${PORTNAME}.8.gz
 NO_BUILD=	yes
 PORTDOCS=	CHANGES README
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/clonehdd ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/clonehdd.8 ${STAGEDIR}${MAN8PREFIX}/man/man8

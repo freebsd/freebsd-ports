@@ -19,4 +19,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	scrogson
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

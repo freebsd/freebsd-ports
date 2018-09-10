@@ -14,4 +14,6 @@ USE_KDE=	ecm plasma-framework windowsystem
 USE_QT=		core dbus gui network qml widgets \
 		buildtools_build qmake_build
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

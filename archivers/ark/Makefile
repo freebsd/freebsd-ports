@@ -20,7 +20,7 @@ USE_QT=		concurrent core dbus gui network widgets xml \
 
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	7ZIP RAR ZIP
+OPTIONS_DEFINE=	7ZIP RAR ZIP DOCS
 OPTIONS_SUB=		YES
 
 7ZIP_DESC=	Support for 7-Zip archives

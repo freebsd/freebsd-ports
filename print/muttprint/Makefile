@@ -26,7 +26,7 @@ USE_TEX=	latex dvipsk
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
 
-OPTIONS_DEFINE=		CUPS X11
+OPTIONS_DEFINE=		CUPS X11 DOCS
 OPTIONS_DEFAULT=	X11
 X11_DESC=		graphics/ImageMagick[-nox11] dependency
 

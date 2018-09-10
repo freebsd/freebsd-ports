@@ -21,4 +21,6 @@ ERL_BUILD_DEPS=	devel/erlang-getopt \
 		devel/erlang-neotoma
 ERL_RUN_DEPS:=	${ERL_BUILD_DEPS}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

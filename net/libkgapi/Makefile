@@ -29,4 +29,6 @@ USE_QT=		core dbus gui location qml network printsupport quick webchannel \
 
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

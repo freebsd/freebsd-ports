@@ -15,4 +15,6 @@ USE_QT=		core dbus gui network qml quick svg widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

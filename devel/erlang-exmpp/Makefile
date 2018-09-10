@@ -36,6 +36,8 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 USES=		autoreconf cpe libtool pkgconfig ssl
 CPE_VENDOR=	process-one
 
+OPTIONS_DEFINE=	DOCS
+
 DOCS_CONFIGURE_ENABLE=	documentation
 
 MAKE_JOBS_UNSAFE=	yes

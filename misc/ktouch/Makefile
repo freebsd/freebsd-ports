@@ -17,4 +17,6 @@ USE_QT=		core dbus gui network qml quick script sql testlib widgets \
 		buildtools_build qmake_build
 USE_XORG=	ice sm x11 xcb xext xkbfile
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

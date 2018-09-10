@@ -16,6 +16,8 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/roxirc
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} 's|if \[ -x .*|${WISH} "$$0" "$$@"|' ${WRKSRC}/roxirc
 

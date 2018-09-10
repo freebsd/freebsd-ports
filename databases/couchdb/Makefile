@@ -46,6 +46,8 @@ STRIP=	#empty
 
 INFO=		CouchDB
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:

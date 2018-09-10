@@ -23,6 +23,8 @@ INSTALL_TARGET=	install install.man
 
 PORTDOCS=	bibtool.pdf ref_card.pdf c_lib.pdf
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} 's/bibtex$$/&8/' ${WRKSRC}/doc/Makefile
 

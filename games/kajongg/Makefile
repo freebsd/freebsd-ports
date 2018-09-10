@@ -18,5 +18,7 @@ USE_PYQT=	core gui svg widgets
 USE_QT=		core gui svg widgets \
 		buildtools_build qmake_build
 
+OPTIONS_DEFINE=	DOCS
+
 .include <${.CURDIR}/../kdegames/Makefile.common>
 .include <bsd.port.mk>

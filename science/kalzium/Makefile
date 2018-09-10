@@ -28,4 +28,6 @@ USE_QT=		core dbus gui network opengl printsupport qml quick script svg \
 
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

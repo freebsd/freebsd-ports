@@ -33,6 +33,8 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 PLIST_FILES=	%%DATADIR%%/libfmtconv.so
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/x86_64/&|amd64/' \
 		${WRKSRC}/configure.ac

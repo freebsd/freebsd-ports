@@ -22,6 +22,8 @@ INSTALL_TARGET=	install-strip
 # Disable gcov on FreeBSD
 # CONFIGURE_ARGS=	--enable-gcov
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^docdir =/s|-$$(VERSION)||' \
 		-e '/^pkgconfigdir =/s|$$(libdir)|$$(prefix)/libdata|' \

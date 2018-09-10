@@ -20,4 +20,6 @@ USE_LDCONFIG=	yes
 USE_LINUX=	jpeg png sdl12 tiff
 USE_LINUX_RPM=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

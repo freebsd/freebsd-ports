@@ -29,6 +29,8 @@ DESKTOP_ENTRIES="XorGramana" \
 		"Game;LogicGame;" \
 		false
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|GFX/|${DATADIR}/&|' ${WRKSRC}/icons.c
 

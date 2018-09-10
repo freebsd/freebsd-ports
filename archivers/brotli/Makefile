@@ -24,6 +24,8 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 PLIST_SUB=	SHLIBVER=${PORTVERSION}
 
+OPTIONS_DEFINE=	DOCS
+
 pre-configure:
 	(cd ${WRKSRC} && ./bootstrap)
 

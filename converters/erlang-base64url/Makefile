@@ -15,4 +15,6 @@ USES=		erlang:rebar
 USE_GITHUB=	yes
 GH_ACCOUNT=	dvv
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

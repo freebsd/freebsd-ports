@@ -29,4 +29,6 @@ DESKTOP_ENTRIES="Vacuum-IM" "Modular, crossplatform Jabber client" \
 		"${PREFIX}/share/pixmaps/vacuum.png" "${PORTNAME}" \
 		"Qt;Network;InstantMessaging;" false
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

@@ -16,4 +16,6 @@ GH_ACCOUNT=	nats-io
 MIX_REWRITE=	yes
 ELIXIR_APP_NAME=nats
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

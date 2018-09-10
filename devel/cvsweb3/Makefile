@@ -35,6 +35,8 @@ SHEBANG_FILES=	cvsweb.cgi
 NO_BUILD=	yes
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 # Specify where your repository belongs.

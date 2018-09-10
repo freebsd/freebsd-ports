@@ -18,6 +18,8 @@ USE_LDCONFIG=	yes
 USE_LINUX=	xorglibs
 USE_LINUX_RPM=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${RM} -r ${WRKSRC}/etc ${WRKSRC}/usr/bin ${WRKSRC}/usr/include \
 		${WRKSRC}/usr/share/X11 ${WRKSRC}/usr/share/man

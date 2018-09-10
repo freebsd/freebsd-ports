@@ -23,6 +23,9 @@ USE_QT=		core gui widgets \
 		buildtools_build qmake_build
 
 _CORETOOLS=	md5sum sha1sum sha256sum sha512sum
+
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 # use the binaries of coreutils
 .  for ct in ${_CORETOOLS}

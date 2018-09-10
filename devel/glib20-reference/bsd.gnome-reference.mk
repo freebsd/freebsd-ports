@@ -32,6 +32,8 @@ BOOKS?=		.
 
 PORTDOCS?=	*
 
+OPTIONS_DEFINE+=	DOCS
+
 .if !target(do-build)
 do-build:
 	@${DO_NADA}

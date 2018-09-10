@@ -25,6 +25,8 @@ MAKE_ARGS=	CXX="${CXX}" \
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|^PREFIX =|PREFIX ?=|' \

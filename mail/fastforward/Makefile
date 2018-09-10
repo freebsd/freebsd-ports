@@ -19,6 +19,8 @@ PORTDOCS=	ALIASES
 
 PLIST_FILES=	${FILES:S,^,bin/,} ${FILES:S,^,man/man1/,:S,$,.1.gz,} ${FILES:S,^,man/cat1/,:S,$,.0.gz,}
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 .for binfile in ${FILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/${binfile} ${STAGEDIR}${PREFIX}/bin/${binfile}

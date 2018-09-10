@@ -31,6 +31,8 @@ USERS=		arangodb
 GROUPS=		arangodb
 USE_RC_SUBR=	arangod
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200057

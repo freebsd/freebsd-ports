@@ -85,6 +85,8 @@ USE_LDCONFIG=	yes
 USE_LINUX=	fontconfig
 USE_LINUX_RPM=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${RM} -r ${WRKSRC}/usr/share/icons
 

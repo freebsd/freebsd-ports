@@ -45,6 +45,8 @@ PLIST_FILES=	lib/libvslsmashsource.so.${PORTVERSION:E} \
 		%%DATADIR%%/libvslsmashsource.so
 PORTDOCS=	README
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -Ee '/CROSS/!s/^(CC|LD|REV|HASH)=.*/: $${&}/' \
 		-e 's/pushd/cd/; s/popd/cd -/' \

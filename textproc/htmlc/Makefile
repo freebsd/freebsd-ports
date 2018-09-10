@@ -21,6 +21,8 @@ PORTDOCS=	LICENSE INSTALL README JoeCaml.gif rocq.gif copyright-eng.htm \
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${LOCALBASE}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${RM} ${WRKSRC}/doc/Makefile
 	${TOUCH} ${WRKSRC}/doc/Makefile

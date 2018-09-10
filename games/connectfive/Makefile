@@ -28,6 +28,8 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*
 PORTDATA=	*
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:

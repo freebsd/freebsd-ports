@@ -18,4 +18,6 @@ USE_KDE=	akonadi akonadicontacts archive auth bookmarks codecs \
 USE_QT=		core dbus gui network printsupport widgets xml \
 		buildtools_build qmake_build
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

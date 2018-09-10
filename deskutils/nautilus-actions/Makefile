@@ -32,6 +32,8 @@ PORTDOCS=	AUTHORS ChangeLog ChangeLog-2008 ChangeLog-2009 ChangeLog-2010 \
 		ChangeLog-2011 ChangeLog-2012 COPYING COPYING-DOCS INSTALL \
 		MAINTAINERS NEWS README README-GCONF TODO
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:

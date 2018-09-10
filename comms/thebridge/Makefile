@@ -25,6 +25,8 @@ SHEBANG_FILES=	addons/usermgmt.cgi
 
 INSTALL_TARGET=	install-strip
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} 's!tbdcmd=\/usr\/local!tbdcmd=${PREFIX}!'\
 		${WRKSRC}/addons/usermgmt.cgi

@@ -30,6 +30,8 @@ perl_OLD_CMD=	@perl_bindir@/perl
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/sgml/catalog|${PREFIX}/share/sgml/catalog|g' \
 		${WRKSRC}/doc/HTML/Makefile.in

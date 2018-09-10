@@ -27,13 +27,14 @@ PORTDOCS=	*
 
 # The DOXYGEN option is best effort.
 # If doxygen is installed, it will get used if the option is set to NO.
-OPTIONS_DEFINE=		DOXYGEN EXAMPLES MANPAGES
+OPTIONS_DEFINE=		DOXYGEN EXAMPLES MANPAGES DOCS
 OPTIONS_DEFAULT=	DOXYGEN MANPAGES
 OPTIONS_SUB=		yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include/yajl
 
 ALL_TARGET=	all
+DOXYGEN_IMPLIES=	DOCS
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_ALL_TARGET=	html-local
 DOCBOOK_XML=	${LOCALBASE}/share/xml/docbook/4.2

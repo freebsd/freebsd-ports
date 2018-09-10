@@ -23,4 +23,6 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS COPYING ChangeLog README TODO
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

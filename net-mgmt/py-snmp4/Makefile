@@ -28,6 +28,8 @@ DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/docs/source/docs && \

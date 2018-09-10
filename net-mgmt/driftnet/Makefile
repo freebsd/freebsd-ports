@@ -29,4 +29,6 @@ PORTDOCS=	*
 
 INSTALL_TARGET=	install-strip
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

@@ -24,6 +24,8 @@ SUB_FILES=	pkg-message
 PORTDOCS=	*
 PLIST_FILES=	bin/gtkpasman share/applications/gtkpasman.desktop
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:

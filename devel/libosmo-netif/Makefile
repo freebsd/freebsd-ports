@@ -22,11 +22,12 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 PORTDOCS=	*
 
-OPTIONS_DEFINE= DOXYGEN DAHDI
+OPTIONS_DEFINE= DOXYGEN DAHDI DOCS
 
 DOXYGEN_DESC=	Build documentation
 DAHDI_DESC=	Build DAHDI input driver
 
+DOXYGEN_IMPLIES=	DOCS
 DOXYGEN_BUILD_DEPENDS=  doxygen:devel/doxygen \
 			dot:graphics/graphviz
 DOXYGEN_CONFIGURE_ENV_OFF=ac_cv_path_DOXYGEN=false

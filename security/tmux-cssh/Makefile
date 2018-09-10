@@ -19,7 +19,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dennishafemann
 GH_TAGNAME=	2175073
 
-PLIST_FILES=	bin/tmux-cssh %%PORTDOCS%%%%DOCSDIR%%/README.md
+PLIST_FILES=	bin/tmux-cssh
+PORTDOCS=	README.md
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tmux-cssh ${STAGEDIR}${PREFIX}/bin

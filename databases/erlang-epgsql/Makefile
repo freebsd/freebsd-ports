@@ -13,4 +13,6 @@ LICENSE=	BSD3CLAUSE
 USES=		erlang:rebar3
 USE_GITHUB=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

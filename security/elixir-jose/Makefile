@@ -21,4 +21,6 @@ MIX_BUILD_DEPS=	converters/erlang-base64url \
 		security/erlang-jose
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

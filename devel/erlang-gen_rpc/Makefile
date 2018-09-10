@@ -18,4 +18,6 @@ ERL_BUILD_DEPS=	devel/erlang-hut \
 		devel/erlang-ssl_verify_fun
 ERL_RUN_DEPS:=  ${ERL_BUILD_DEPS}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

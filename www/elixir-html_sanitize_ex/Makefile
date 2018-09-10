@@ -19,4 +19,6 @@ MIX_BUILD_DEPS=	www/erlang-mochiweb
 MIX_RUN_DEPS:=	${MIX_BUILD_DEPS}
 MIX_REWRITE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

@@ -22,6 +22,8 @@ ALL_TARGET=	#empty
 
 PORTDOCS=	README
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${STAGEDIR}${PREFIX}|g' \
 		${WRKSRC}/Makefile

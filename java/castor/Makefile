@@ -28,6 +28,8 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}-anttasks.jar \
 PORTDOCS=	*.html *.txt *.css *.dtd *.xsd *.pdf \
 		ora-mar-2k images rss
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 .for f in ${PLIST_FILES:T:R}
 	${INSTALL_DATA} \

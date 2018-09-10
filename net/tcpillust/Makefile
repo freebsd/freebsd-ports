@@ -25,6 +25,8 @@ PLIST_FILES=	bin/tcpillust \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 .for file in binread.c button.c draw.c parser.c tcpillust.c tcpdump/print-tcp.c
 	${CC} ${CFLAGS} -DHAVE_BPF_DUMP -I/usr/include -I/usr/include/pcap -I${LOCALBASE}/include/ -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} \

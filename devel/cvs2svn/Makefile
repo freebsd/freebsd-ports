@@ -55,6 +55,8 @@ MANPAGES=	cvs2svn.1.gz \
 
 PLIST_FILES+=	${MANPAGES:S|^|man/man1/|}
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 # be consistent with PORTVERSION
 	@${REINPLACE_CMD} -e 's|2.5.0-dev|2.4.0|' \

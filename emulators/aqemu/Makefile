@@ -20,4 +20,6 @@ USE_QT=		buildtools_build linguisttools_build qmake_build \
 USE_GITHUB=	yes
 GH_ACCOUNT=	tobimensch
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

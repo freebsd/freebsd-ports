@@ -19,4 +19,6 @@ USE_QT=		core network \
 
 USE_LDCONFIG=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

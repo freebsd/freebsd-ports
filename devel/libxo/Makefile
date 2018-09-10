@@ -17,4 +17,6 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_PERL5=	run
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

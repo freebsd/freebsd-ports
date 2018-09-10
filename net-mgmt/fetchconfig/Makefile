@@ -31,6 +31,8 @@ MODULES=	model/3ComMSR.pm model/Abstract.pm model/Acme.pm \
 		model/TellabsMSR.pm model/Terayon.pm Constants.pm Logger.pm
 PORTDOCS=	CHANGES README device_table.example
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}

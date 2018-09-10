@@ -28,6 +28,8 @@ USE_GNOME+=	glib20
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
 BROKEN_FreeBSD_10=	Default toolchain lacks support for .cfi_sections
 
+OPTIONS_DEFINE=	DOCS
+
 .include "Makefile.snapshot"
 
 CONFIGURE_ARGS+= \

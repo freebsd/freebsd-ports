@@ -34,6 +34,8 @@ LDFLAGS+=	-Wl,--as-needed # ICE, SM, Xext
 
 BROKEN_aarch64=		Fails to compile: use of undeclared identifier rand
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' \
 		${WRKSRC}/src/mygdal/cpl_csv.cpp \

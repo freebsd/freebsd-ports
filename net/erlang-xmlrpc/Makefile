@@ -16,6 +16,8 @@ WRKSRC=		${WRKDIR}/xmlrpc-${PORTVERSION}
 
 ERL_DOCS=	doc/xmlrpc.pdf doc/xmlrpc.ps doc/xmlrpc.txt
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	cd ${WRKSRC}/src && ${GMAKE}
 

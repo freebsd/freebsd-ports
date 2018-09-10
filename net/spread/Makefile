@@ -32,6 +32,8 @@ PKGMESSAGE=	${WRKSRC}/license.txt
 PORTDOCS=	Readme.txt LICENSE
 HEADERFILES=	sp_func.h sp_func.h sp_events.h
 
+OPTIONS_DEFINE=	DOCS
+
 # The configure script fails to find nroff in LOCALBASE, but works fine if
 # 'groff' is used directly
 

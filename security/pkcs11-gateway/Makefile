@@ -20,6 +20,8 @@ PLIST_FILES=	bin/pkcs11-gateway lib/libpkcs11-gateway.so \
 
 PORTDOCS=	README
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pkcs11-gateway ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_LIB} ${WRKSRC}/libpkcs11-gateway.so.1 ${STAGEDIR}${PREFIX}/lib

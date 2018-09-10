@@ -15,4 +15,6 @@ USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	fishcakez
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

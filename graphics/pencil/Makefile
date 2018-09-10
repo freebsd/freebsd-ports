@@ -29,6 +29,8 @@ PLIST_FILES=	bin/pencil
 
 PORTDOCS=	README TODO
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${MKDIR} ${WRKSRC}/src/external/freebsd
 	@${CP} ${FILESDIR}/src-external-freebsd-freebsd.cpp \

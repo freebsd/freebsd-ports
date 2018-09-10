@@ -17,4 +17,6 @@ GH_ACCOUNT=	puzza007
 ERL_BUILD_DEPS=	devel/erlang-bear
 ERL_RUN_DEPS:=	${ERL_BUILD_DEPS}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

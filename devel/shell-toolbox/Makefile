@@ -16,4 +16,6 @@ GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	kusalananda
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

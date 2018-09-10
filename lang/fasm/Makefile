@@ -19,6 +19,8 @@ PLIST_FILES=	bin/fasm
 PORTDOCS=	*
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"

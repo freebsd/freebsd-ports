@@ -18,6 +18,8 @@ USE_RC_SUBR=	polipo
 
 INFO=		polipo
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 
 DOCSDIR=	${DATADIR}/www/doc

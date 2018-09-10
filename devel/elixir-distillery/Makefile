@@ -14,4 +14,6 @@ USES=		elixir
 USE_GITHUB=	yes
 GH_ACCOUNT=	bitwalker
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

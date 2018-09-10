@@ -28,4 +28,6 @@ PORTDOCS=	README \
 		alttab.ad \
 		wm-setup.md
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.mk>

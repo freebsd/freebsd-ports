@@ -38,6 +38,8 @@ USE_PYTHON=	distutils autoplist
 
 PYDISTUTILS_INSTALLARGS+=	--install-data=${PREFIX}/share
 
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' \
 		${WRKSRC}/libnamebench/util.py

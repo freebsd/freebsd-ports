@@ -20,6 +20,8 @@ MAKE_ARGS=	OPT="${CFLAGS}" DEBUG=''
 PORTDOCS=	README
 PLIST_FILES=	bin/memdump man/man1/memdump.1.gz
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/memdump ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/memdump.1 ${STAGEDIR}${MANPREFIX}/man/man1

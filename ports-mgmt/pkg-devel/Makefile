@@ -27,6 +27,8 @@ CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 # so that pkg-static is used from the wrkdir
 USE_SUBMAKE=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 .if !exists(/usr/include/jail.h)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
 .endif

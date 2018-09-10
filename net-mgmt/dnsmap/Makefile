@@ -19,6 +19,8 @@ PORTDOCS=	Changelog.txt README.txt CREDITS.txt use_cases.txt
 
 PLIST_FILES=	bin/dnsmap bin/dnsmap-bulk ${DATADIR}/wordlist_TLAs.txt
 
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	${CC} ${CFLAGS} ${WRKSRC}/dnsmap.c -o ${WRKSRC}/dnsmap
 

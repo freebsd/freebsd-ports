@@ -28,6 +28,8 @@ PLIST_FILES=	man/man8/pkg-compare.8.gz \
 		sbin/pkg-compare
 SUB_FILES=	pkg-message
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${BINARY} ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/pkg-compare.8 \

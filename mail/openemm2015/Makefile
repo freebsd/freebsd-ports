@@ -64,6 +64,8 @@ ANT_TARGETS=	build
 ANT_BUILD_PARAM=	-Dbuild=${WRKSRC}/target -Doe.home=${WRKSRC}/target -Dbin=${WRKSRC}/target/bin -Dcatalina.home=${TOMCATDIR} -Dsrc=${WRKSRC} -f openemm_build.xml
 JAVA_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 do-extract:
 	@cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTNAME}.tar.gz ${EXTRACT_AFTER_ARGS}
 
