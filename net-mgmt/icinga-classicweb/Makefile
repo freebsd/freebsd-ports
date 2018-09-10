@@ -7,6 +7,8 @@ DISTNAME=	icinga-${PORTVERSION}
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Classic web interface for Icinga 1 and 2
 
+OPTIONS_DEFINE=	EXAMPLES
+
 .include "${.CURDIR}/../icinga-core/Makefile.common"
 
 LIB_DEPENDS+=	libgd.so:graphics/gd

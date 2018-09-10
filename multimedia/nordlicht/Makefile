@@ -30,6 +30,8 @@ BROKEN_powerpc64=	Does not build
 
 SHEBANG_FILES=	utils/mpv-nordlicht
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|$${CMAKE_INSTALL_LIBDIR}/pkgconfig|libdata/pkgconfig|' \

@@ -18,9 +18,9 @@ ERL_BUILD_DEPS=	www/erlang-cowlib
 ERL_RUN_DEPS=	www/erlang-cowlib \
 		net/erlang-ranch
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-install:
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 

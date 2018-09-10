@@ -19,6 +19,8 @@ USES=		ncurses readline
 USE_XORG=	x11
 MAKEFILE=	Makefile.freebsd
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
 	${LN} -sf ${PREFIX}/lib/topaz/topaz.sh ${STAGEDIR}${PREFIX}/bin/topaz
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

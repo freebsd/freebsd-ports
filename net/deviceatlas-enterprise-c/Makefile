@@ -26,7 +26,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 REGISTRATION_URL=	https://deviceatlas.com/deviceatlas-haproxy-module
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
 

@@ -36,6 +36,8 @@ GTK3_MAKE_ENV=		GTK_VERSION="gtk3"
 SUB_FILES=	xombrero
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-patch:
 	@cd ${WRKSRC}; ${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		-e 's|# ssl_ca_file|ssl_ca_file|' \

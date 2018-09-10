@@ -32,7 +32,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}_lib
 PORTDOCS=	${PORTNAME}_manual_${PORTVERSION}.pdf
 PORTEXAMPLES=	*.1 *.jpg *.mp lop lop.html lop.pdf lop.tex
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${MPDIR}

@@ -27,6 +27,8 @@ SUB_FILES=	pkg-message
 
 WRKSRC=		${WRKDIR}/trac${PORTNAME}plugin/0.11
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
 	cd ${WRKSRC}/tractweakui/htdocs && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 

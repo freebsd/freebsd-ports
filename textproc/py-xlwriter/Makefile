@@ -16,6 +16,8 @@ USE_PYTHON=	distutils autoplist
 
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${FIND} ${WRKSRC}/examples -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR} \;

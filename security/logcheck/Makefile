@@ -27,7 +27,7 @@ BASEDIR?=	# None. portlint compliance
 DBDIR=		${BASEDIR}/var/db/${PORTNAME}
 RUNDIR=		${BASEDIR}/var/run/${PORTNAME}
 
-OPTIONS_DEFINE=	CRON DOCS
+OPTIONS_DEFINE=	CRON DOCS EXAMPLES
 CRON_DESC=	Install cron script automatically
 .if !defined(BATCH)
 OPTIONS_DEFAULT=CRON

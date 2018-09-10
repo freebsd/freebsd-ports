@@ -21,7 +21,9 @@ EXAMPLESDIR?=	${PREFIX}/share/examples/${PORTNAME}
 USES=		perl5
 USE_PERL5=	configure
 
-post-install:
+OPTIONS_DEFINE=	EXAMPLES
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/sample/* ${STAGEDIR}${EXAMPLESDIR}
 

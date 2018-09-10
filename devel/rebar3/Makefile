@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/erl:lang/erlang \
 		${LOCALBASE}/bin/git:devel/git
 RUN_DEPENDS=	${LOCALBASE}/bin/erl:lang/erlang
 
-OPTIONS_DEFINE=	BASH ZSH
+OPTIONS_DEFINE=	BASH ZSH EXAMPLES
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rebar

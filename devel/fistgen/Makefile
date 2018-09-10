@@ -20,7 +20,7 @@ PORTEXAMPLES=	*
 PLIST_FILES=	sbin/fistgen \
 		man/man8/fistgen.8.gz
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

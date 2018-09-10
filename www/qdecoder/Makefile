@@ -20,7 +20,7 @@ PORTEXAMPLES=	*
 PLIST_FILES=	include/qdecoder.h lib/libqdecoder.a \
 		lib/libqdecoder.so lib/libqdecoder.so.12
 
-OPTIONS_DEFINE=		DEBUG
+OPTIONS_DEFINE=		DEBUG EXAMPLES
 DEBUG_CONFIGURE_ENABLE=	debug
 
 post-patch:

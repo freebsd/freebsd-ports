@@ -26,6 +26,8 @@ LDFLAGS+=	$$(pkg-config --libs libxml-2.0) \
 PORTEXAMPLES=	minder.cfg
 PLIST_FILES=	bin/minder
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CFLAGS|#CFLAGS| ; \

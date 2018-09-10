@@ -45,6 +45,8 @@ DEMOS=		demo_csv_into_zip \
 		test_llhc \
 		test_lz77
 
+OPTIONS_DEFINE=	EXAMPLES
+
 do-build:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gnatmake -p -P zipada.gpr)
 

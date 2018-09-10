@@ -22,6 +22,8 @@ PORTEXAMPLES=	*
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for sample in *.alg *.pro *.cat

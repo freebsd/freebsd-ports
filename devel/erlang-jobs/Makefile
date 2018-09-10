@@ -16,9 +16,9 @@ ERL_BUILD_DEPS=	devel/erlang-parse_trans
 ERL_RUN_DEPS:=	${ERL_BUILD_DEPS}
 ERL_DOCS=	doc/*
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-install:
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 

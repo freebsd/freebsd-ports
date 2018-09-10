@@ -20,7 +20,7 @@ PORTDOCS=	pyweblib.forms.html pyweblib.helper.html \
 		pyweblib.session.html pyweblib.sslenv.html
 EXAMPLES=	*.py
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PORTEXAMPLES=	*
 

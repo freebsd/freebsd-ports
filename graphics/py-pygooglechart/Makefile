@@ -18,6 +18,8 @@ USE_PYTHON=	distutils autoplist
 PORTEXAMPLES=	*
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR} && \
 		cd ${WRKSRC}/examples && \

@@ -32,6 +32,8 @@ EXAMPLES=	examples/caution.xbm examples/clickable_image.cgi \
 		examples/popup.cgi examples/save_state.cgi \
 		examples/tryit.cgi examples/wilogo.gif
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -e '/require 5\.6/d; /INSTALLDIRS/d' ${WRKSRC}/Makefile.PL
 

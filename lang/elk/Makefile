@@ -24,6 +24,8 @@ MAKE_JOBS_UNSAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include/libelf -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+OPTIONS_DEFINE=	EXAMPLES
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

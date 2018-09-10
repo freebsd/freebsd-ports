@@ -26,7 +26,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	akoshibe
 GH_TAGNAME=	b88c58c
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-build:
 	@${CC} ${WRKSRC}/mnexec.c -o ${BUILD_WRKSRC}/mnexec
