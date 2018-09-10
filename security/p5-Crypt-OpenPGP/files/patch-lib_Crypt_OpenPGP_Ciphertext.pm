@@ -1,6 +1,10 @@
---- lib/Crypt/OpenPGP/Ciphertext.pm.orig	Tue Apr 10 15:51:46 2007
-+++ lib/Crypt/OpenPGP/Ciphertext.pm	Tue Apr 10 15:52:03 2007
-@@ -87,8 +87,8 @@ sub decrypt {
+Patch for CVE-2005-0366: plaintext recovery using checksum failure oracle.
+
+https://nvd.nist.gov/vuln/detail/CVE-2005-0366
+
+--- lib/Crypt/OpenPGP/Ciphertext.pm.orig	2009-12-11 00:05:35 UTC
++++ lib/Crypt/OpenPGP/Ciphertext.pm
+@@ -85,8 +85,8 @@ sub decrypt {
      my $padlen = $cipher->blocksize + 2;
      my $pt = $enc->{prefix} =
          $cipher->decrypt(substr $enc->{ciphertext}, 0, $padlen);
