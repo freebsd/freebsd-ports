@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	namesilo_ddns
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	dns net
 
@@ -10,8 +10,7 @@ COMMENT=	Updates DNS records with Namesilo for dynamic IP addresses
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	curl:ftp/curl			\
-		xmllint:textproc/libxml2
+RUN_DEPENDS=	xmllint:textproc/libxml2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	crees
