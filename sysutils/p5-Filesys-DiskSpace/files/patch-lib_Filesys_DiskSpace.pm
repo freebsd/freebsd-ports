@@ -1,6 +1,6 @@
---- lib/Filesys/DiskSpace.pm.old	Sun Sep  5 18:41:22 1999
-+++ lib/Filesys/DiskSpace.pm	Fri Jun 17 13:20:44 2005
-@@ -44,7 +44,7 @@
+--- lib/Filesys/DiskSpace.pm.orig	1999-09-05 22:41:22 UTC
++++ lib/Filesys/DiskSpace.pm
+@@ -44,7 +44,7 @@ my %fs_type = (
  sub df ($) {
    my $dir = shift;
  
@@ -9,7 +9,7 @@
  
    # struct fields for statfs or statvfs....
    my ($bsize, $frsize, $blocks, $bfree, $bavail, $files, $ffree, $favail);
-@@ -53,7 +53,8 @@
+@@ -53,7 +53,8 @@ sub df ($) {
    Carp::croak "Error: $dir is not a directory" unless -d $dir;
  
    # try with statvfs..
@@ -19,7 +19,7 @@
      {
        package main;
        require "sys/syscall.ph";
-@@ -78,7 +79,7 @@
+@@ -78,7 +79,7 @@ sub df ($) {
      $bsize = $frsize;
      # $blocks -= $bfree - $bavail;
      $res == 0 && defined $fs_type{$type};
@@ -28,7 +28,7 @@
    # try with statfs..
    || eval { # will work for SunOS 4, Linux 2.0.* and 2.2.*
      {
-@@ -90,11 +91,37 @@
+@@ -90,11 +91,37 @@ sub df ($) {
      # statfs...
  
      if ($^O eq 'freebsd') {
@@ -71,7 +71,7 @@
      }
      else {
        ($type, $bsize, $blocks, $bfree, $bavail, $files, $ffree) =
-@@ -108,7 +135,7 @@
+@@ -108,7 +135,7 @@ sub df ($) {
      # files:  total file nodes in file system
      # ffree:  free file nodes in fs
  
@@ -80,7 +80,7 @@
    }
    || eval {
      {
-@@ -170,7 +197,7 @@
+@@ -170,7 +197,7 @@ sub df ($) {
    }
  
    warn "Warning : type $fs_type{$type} untested.. results may be incorrect\n"
@@ -89,7 +89,7 @@
  
    if ($DEBUG) {
      warn "Fs type : [$type] $fs_type{$type}\n" .
-@@ -185,7 +212,8 @@
+@@ -185,7 +212,8 @@ sub df ($) {
      }
    }
  
