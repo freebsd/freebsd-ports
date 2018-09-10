@@ -13,15 +13,13 @@ COMMENT=	Message-passing parallel language and runtime system
 LICENSE=	CHARMPP_CONVERSE_LICENSE
 LICENSE_NAME=	Charm++/Converse License
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	no-auto-accept no-dist-mirror no-pkg-mirror # No redistribution is allowed.
+LICENSE_PERMS=	none # No redistribution is allowed, no commercial use: commercial use requires a commercial license
 
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Not clear if it can be built on other architectures
 
 FETCH_DEPENDS=	git:devel/git
 BUILD_DEPENDS=	bash:shells/bash
-
-RESTRICTED=	No commercial use: commercial use requires a commercial license
 
 USES=		fortran gmake localbase:ldflags shebangfix
 SHEBANG_GLOB=	*.sh
