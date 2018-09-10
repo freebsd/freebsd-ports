@@ -18,7 +18,6 @@ LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
 RUN_DEPENDS=	opencl>=0:devel/opencl
 
 ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON_amd64=	only builds and is supported on amd64
 
 USES=		cmake
 USE_LDCONFIG=	yes
