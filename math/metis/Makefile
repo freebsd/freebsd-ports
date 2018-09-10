@@ -12,6 +12,8 @@ COMMENT=	Package for unstructured graph partitioning
 
 LICENSE=	APACHE20
 
+BROKEN_powerpc64=	fails to build: cc: Internal error: Segmentation fault (program ld)
+
 CONFLICTS=	metis4-4* metis-edf-[0-9]*
 
 USES=		cmake:noninja

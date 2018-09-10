@@ -11,6 +11,8 @@ COMMENT=	Libraries and utilities to access smart cards
 
 LICENSE=	LGPL21
 
+BROKEN_powerpc64=	fails to compile: cc1: unrecognized command line option "-Wno-unused-but-set-variable"
+
 OPTIONS_SINGLE=	BACKEND
 OPTIONS_SINGLE_BACKEND=PCSC OPENCT CTAPI
 OPTIONS_DEFINE=	SM NOTIFY DOCS MANPAGES

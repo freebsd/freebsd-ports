@@ -16,6 +16,8 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/GPL2.txt
 LICENSE_FILE_GPLv3=	${WRKSRC}/GPL3.txt
 LICENSE_FILE_LGPL21=	${WRKSRC}/LGPL2.1.txt
 
+BROKEN_powerpc64=	fails to build: lib/libinkscape_base.so: undefined reference to Magick::Image::read(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:devel/boost-libs
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libgc.so:devel/boehm-gc \
