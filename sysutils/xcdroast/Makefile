@@ -34,9 +34,9 @@ CONFIGURE_ARGS=	--with-cdrtools-prefix=${LOCALBASE} \
 
 .if ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB=	NLS="@comment "
+PLIST_SUB+=	NLS="@comment "
 .else
-PLIST_SUB=	NLS=""
+PLIST_SUB+=	NLS=""
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}

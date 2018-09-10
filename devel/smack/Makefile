@@ -28,11 +28,11 @@ OPTIONS_DEFINE=	EXAMPLES
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}
-PLIST_SUB=	EXAMPLES=""
+PLIST_SUB+=	EXAMPLES=""
 CMAKE_ARGS=	-DENABLE_EXAMPLES=ON
 .else
 CMAKE_ARGS=	-DENABLE_EXAMPLES=OFF
-PLIST_SUB=	EXAMPLES="@comment "
+PLIST_SUB+=	EXAMPLES="@comment "
 .endif
 
 .include <bsd.port.mk>

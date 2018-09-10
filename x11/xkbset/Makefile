@@ -28,10 +28,10 @@ GUI_DESC=	Install Tk GUI
 
 .if ${PORT_OPTIONS:MGUI}
 RUN_DEPENDS+=	p5-Tk>=0:x11-toolkits/p5-Tk
-PLIST_SUB=	GUI=""
+PLIST_SUB+=	GUI=""
 MAKE_ARGS+=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 .else
-PLIST_SUB=	GUI="@comment "
+PLIST_SUB+=	GUI="@comment "
 MAKE_ARGS+=	INSTALL_SCRIPT=:
 .endif
 

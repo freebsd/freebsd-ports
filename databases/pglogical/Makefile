@@ -29,9 +29,9 @@ DOCS_PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if ${PGSQL_VER:M9.4}
-PLIST_SUB=	PGSQL94=""
+PLIST_SUB+=	PGSQL94=""
 .else
-PLIST_SUB=	PGSQL94="@comment "
+PLIST_SUB+=	PGSQL94="@comment "
 .endif
 
 # FFI

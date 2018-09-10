@@ -37,7 +37,7 @@ CONFIGURE_ARGS=	--without-oracle \
 .include <bsd.port.options.mk>
 
 VERSION=	5.0
-PLIST_SUB=	VERSION=${VERSION}
+PLIST_SUB+=	VERSION=${VERSION}
 
 .if ${LIBGDA5_SLAVE}!="no"
 USE_GNOME+=	libgda5

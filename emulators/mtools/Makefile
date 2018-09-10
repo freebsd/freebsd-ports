@@ -38,10 +38,10 @@ CONFIGURE_ENV+=	ac_cv_header_iconv_h=no
 
 .if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11 sm ice xau
-PLIST_SUB=	X11=""
+PLIST_SUB+=	X11=""
 .else
 CONFIGURE_ARGS+=	--without-x
-PLIST_SUB=	X11="@comment "
+PLIST_SUB+=	X11="@comment "
 MAKE_ENV+=	WITHOUT_X11=yes
 .endif
 

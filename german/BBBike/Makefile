@@ -59,7 +59,7 @@ MYDESTDIR=	${STAGEDIR}${PREFIX}/BBBike
 .if exists(${PERL5})
 LOCAL_PERL_ARCH!=	${PERL5} -MConfig -e '$$x = qq{$$Config{version}/$$Config{archname}}; $$x =~ s{/}{\\\\/}g; print $$x'
 .endif
-PLIST_SUB=		LOCAL_PERL_ARCH=${LOCAL_PERL_ARCH}
+PLIST_SUB+=		LOCAL_PERL_ARCH=${LOCAL_PERL_ARCH}
 BBBIKE_PERL_EXE=	bbbike cbbbike bbbikeclient cmdbbbike smsbbbike
 
 post-patch:

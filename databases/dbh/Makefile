@@ -28,10 +28,10 @@ GTKDOC_DESC=	Enable GTK html documentation
 
 .if ${PORT_OPTIONS:MGTKDOC}
 CONFIGURE_ARGS+=	--enable-gtk-doc-html
-PLIST_SUB=	GTKDOC=""
+PLIST_SUB+=	GTKDOC=""
 .else
 CONFIGURE_ARGS+=	--disable-gtk-doc-html
-PLIST_SUB=	GTKDOC="@comment "
+PLIST_SUB+=	GTKDOC="@comment "
 .endif
 
 post-patch:
