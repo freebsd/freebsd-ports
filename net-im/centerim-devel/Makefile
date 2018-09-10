@@ -18,6 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		iconv gmake ncurses perl5 pkgconfig python:2.7,run shebangfix ssl
+USE_CXXSTD=	gnu++98
 USE_PERL5=	run
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl --with-openssl
