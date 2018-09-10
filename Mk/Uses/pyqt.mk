@@ -217,7 +217,6 @@ DISTNAME=	${PYQT_DISTNAME}
 DISTINFO_FILE=	${PYQT_DISTINFO_FILE}
 LICENSE?=	${PYQT_LICENSE}
 HAS_CONFIGURE=	yes
-QT_NONSTANDARD=	yes  # Do not add unknown arguments to CONFIGURE_ARGS.
 
 .if ${_PYQT_VERSION} > 4
 # PyQt5's configure.py generates .pro files and calls qmake to generate the
