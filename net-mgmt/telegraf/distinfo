@@ -1,6 +1,6 @@
-TIMESTAMP = 1534004558
-SHA256 (influxdata-telegraf-1.7.3_GH0.tar.gz) = 499e6e923a5cd46138cab08cc60f252aa5c3024f91c24ce33bbd9f3733790ec4
-SIZE (influxdata-telegraf-1.7.3_GH0.tar.gz) = 1074055
+TIMESTAMP = 1536331775
+SHA256 (influxdata-telegraf-1.7.4_GH0.tar.gz) = d02432803c10a898449c468c6c1656c4e600e6291026385523f0983ad8b8a989
+SIZE (influxdata-telegraf-1.7.4_GH0.tar.gz) = 1074666
 SHA256 (collectd-go-collectd-2ce1445_GH0.tar.gz) = 5d27107b1f84ca89edf2f8a0e75b0b051d5f6a229da1fa90f1f53a6fa4ce7355
 SIZE (collectd-go-collectd-2ce1445_GH0.tar.gz) = 39622
 SHA256 (aerospike-aerospike-client-go-95e1ad7_GH0.tar.gz) = bbe30af22410d0bff33f28bdf24c7eab75d9756c310eaca8b9317e090ba4b936
