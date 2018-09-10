@@ -24,7 +24,7 @@ CFLAGS+=	-I${LOCALBASE}/include/ffmpeg0 -I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib/ffmpeg0 -L${LOCALBASE}/lib
 LDFLAGS+=	-lswscale0 -lgmodule-2.0
 
-OPTIONS_DEFINE=	GTKSPELL
+OPTIONS_DEFINE=	GTKSPELL NLS
 OPTIONS_DEFAULT=GTKSPELL
 
 GTKSPELL_LIB_DEPENDS=	libgtkspell.so:textproc/gtkspell
