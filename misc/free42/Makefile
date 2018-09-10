@@ -16,17 +16,19 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_aarch64=		fails to link: c++: error: no such file or directory: 'gcc111libbid.a'
 BROKEN_armv6=		fails to link: c++: error: no such file or directory: 'gcc111libbid.a'
 BROKEN_mips64=		fails to link: c++: error: no such file or directory: 'gcc111libbid.a'
-BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Wno-c++11-narrowing"
+BROKEN_powerpc64=	fails to link: c++: error: no such file or directory: 'gcc111libbid.a'
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		dos2unix gmake localbase pkgconfig tar:tgz
+USES=		compiler dos2unix gmake localbase pkgconfig tar:tgz
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
 USE_XORG=	x11 xmu
 DOS2UNIX_FILES=	gtk/IntelRDFPMathLib20U1/LIBRARY/float128/op_system.h gtk/IntelRDFPMathLib20U1/LIBRARY/float128/architecture.h
 
-CXXFLAGS+=	-Wno-c++11-narrowing -Wno-constant-conversion # to accommodate some code breaking with clang-50
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing -Wno-constant-conversion # to accommodate some code breaking with clang-50
+
 BUILD_WRKSRC=	${WRKSRC}/gtk
 
 VARIANTS=	bin dec
