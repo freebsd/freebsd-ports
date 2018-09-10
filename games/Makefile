@@ -824,7 +824,6 @@
     SUBDIR += powder-toy
     SUBDIR += powermanga
     SUBDIR += powwow
-    SUBDIR += ppracer
     SUBDIR += prboom
     SUBDIR += prboom-plus
     SUBDIR += primateplunge
