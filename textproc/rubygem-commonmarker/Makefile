@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	commonmarker
-PORTVERSION=	0.17.12
+PORTVERSION=	0.17.13
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-ruby-enum>=0.5:devel/rubygem-ruby-enum
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 PLIST_FILES=	bin/commonmarker
 
