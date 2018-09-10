@@ -1318,8 +1318,8 @@ WITH_DEBUG=	yes
 # Start of pre-makefile section.
 .if !defined(AFTERPORTMK) && !defined(INOPTIONSMK)
 
-.if defined(PORTNAME)
-.include "${PORTSDIR}/Mk/bsd.sanity.mk"
+.if defined(_PREMKINCLUDED)
+DEV_ERROR+=	"you cannot include bsd.port[.pre].mk twice"
 .endif
 
 _PREMKINCLUDED=	yes
@@ -2007,6 +2007,10 @@ ${_f}_ARGS:=	${f:C/^[^\:]*(\:|\$)//:S/,/ /g}
 .for f in ${_USES_POST}
 .include "${USESDIR}/${f:C/\:.*//}.mk"
 .endfor
+
+.if defined(PORTNAME)
+.include "${PORTSDIR}/Mk/bsd.sanity.mk"
+.endif
 
 .if defined(USE_LOCALE)
 CONFIGURE_ENV+=	LANG=${USE_LOCALE} LC_ALL=${USE_LOCALE}
