@@ -291,17 +291,6 @@ sbin/xentrace_setmask
 sbin/xentrace_setsize
 sbin/xenwatchdogd
 sbin/xl
-%%PORTDOCS%%%%DOCSDIR%%/html/SUPPORT.html
-%%PORTDOCS%%%%DOCSDIR%%/html/features/feature-levelling.html
-%%PORTDOCS%%%%DOCSDIR%%/html/features/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/features/intel_psr_cat_cdp.html
-%%PORTDOCS%%%%DOCSDIR%%/html/features/intel_psr_mba.html
-%%PORTDOCS%%%%DOCSDIR%%/html/features/livepatch.html
-%%PORTDOCS%%%%DOCSDIR%%/html/features/migration.html
-%%PORTDOCS%%%%DOCSDIR%%/html/features/sched_credit.html
-%%PORTDOCS%%%%DOCSDIR%%/html/features/sched_credit2.html
-%%PORTDOCS%%%%DOCSDIR%%/html/features/sched_rtds.html
-%%PORTDOCS%%%%DOCSDIR%%/html/features/template.html
 %%PORTDOCS%%%%DOCSDIR%%/html/hypercall/arm/.deps
 %%PORTDOCS%%%%DOCSDIR%%/html/hypercall/arm/include,public,arch-arm,hvm,save.h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/hypercall/arm/include,public,arch-arm,smccc.h.html
@@ -503,7 +492,6 @@ sbin/xl
 %%PORTDOCS%%%%DOCSDIR%%/html/man/xen-pci-device-reservations.7.html
 %%PORTDOCS%%%%DOCSDIR%%/html/man/xen-pv-channel.7.html
 %%PORTDOCS%%%%DOCSDIR%%/html/man/xen-tscmode.7.html
-%%PORTDOCS%%%%DOCSDIR%%/html/man/xen-vbd-interface.7.html
 %%PORTDOCS%%%%DOCSDIR%%/html/man/xen-vtpm.7.html
 %%PORTDOCS%%%%DOCSDIR%%/html/man/xen-vtpmmgr.7.html
 %%PORTDOCS%%%%DOCSDIR%%/html/man/xenstore-chmod.1.html
@@ -547,7 +535,6 @@ sbin/xl
 %%PORTDOCS%%%%DOCSDIR%%/html/misc/kexec_and_kdump.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/misc/libxl_memory.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/misc/livepatch.html
-%%PORTDOCS%%%%DOCSDIR%%/html/misc/netif-staging-grants.html
 %%PORTDOCS%%%%DOCSDIR%%/html/misc/printk-formats.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/misc/pv-drivers-lifecycle.html
 %%PORTDOCS%%%%DOCSDIR%%/html/misc/pvcalls.html
@@ -568,11 +555,6 @@ sbin/xl
 %%PORTDOCS%%%%DOCSDIR%%/html/misc/xenstore.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/misc/xl-psr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/misc/xsm-flask.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/process/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/process/xen-release-management.html
-%%PORTDOCS%%%%DOCSDIR%%/html/specs/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/specs/libxc-migration-stream.html
-%%PORTDOCS%%%%DOCSDIR%%/html/specs/libxl-migration-stream.html
 share/man/man1/xenstore-chmod.1
 share/man/man1/xenstore-ls.1
 share/man/man1/xenstore.1
@@ -587,7 +569,6 @@ share/man/man5/xlcpupool.cfg.5
 share/man/man7/xen-pci-device-reservations.7
 share/man/man7/xen-pv-channel.7
 share/man/man7/xen-tscmode.7
-share/man/man7/xen-vbd-interface.7
 share/man/man7/xen-vtpm.7
 share/man/man7/xen-vtpmmgr.7
 share/man/man7/xl-numa-placement.7
