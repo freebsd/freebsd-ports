@@ -32,9 +32,9 @@ USE_XORG=	x11 xext xt sm ice
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 IMAKEDEFINES+=	WITH_NLS
-PLIST_SUB=	NLS=""
+PLIST_SUB+=	NLS=""
 .else
-PLIST_SUB=	NLS="@comment "
+PLIST_SUB+=	NLS="@comment "
 .endif
 .if ${PORT_OPTIONS:MA4SIZE}
 IMAKEDEFINES+=	WITH_A4SIZE

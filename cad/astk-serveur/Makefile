@@ -62,7 +62,7 @@ WRKCONF=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/configuration
 .if !defined(CLIENT_SEUL)
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/ASTK_SERV
 PATCHDIR=	${MASTERDIR}/files
-PLIST_SUB=	ASTKDIR=${LINSTDIR}/ASTK_SERV SERV="" CLIENT="@comment "\
+PLIST_SUB+=	ASTKDIR=${LINSTDIR}/ASTK_SERV SERV="" CLIENT="@comment "\
 		vaster=${vaster}
 PATCH2RM=	bin/as_run bin/parallel_cp etc/asrun etc/profile.sh	\
 		asrun/config.py asrun/installation.py asrun/system.py	\
@@ -90,7 +90,7 @@ TKPNG_VER=	0.9
 TKPNG=		tkpng${TKPNG_VER}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/ASTK_CLIENT
 PATCHDIR=	${MASTERDIR}/files.client
-PLIST_SUB=	ASTKDIR=${LINSTDIR}/ASTK_CLIENT SERV="@comment " CLIENT="" vaster=""	\
+PLIST_SUB+=	ASTKDIR=${LINSTDIR}/ASTK_CLIENT SERV="@comment " CLIENT="" vaster=""	\
 		BWidget_DIR=${LINSTDIR}/ASTK_CLIENT/lib/BWidget-${BWidget_VER}
 PATCH2RM=	bin/astk bin/bsf etc/astkrc/outils lib/init.tcl lib/tkselecteur.tcl
 .endif

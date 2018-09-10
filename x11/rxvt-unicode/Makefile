@@ -73,10 +73,10 @@ PATCH_DEPENDS+=	p5-Encode-HanExtra>=0:chinese/p5-Encode-HanExtra \
 CONFIGURE_ARGS+=	--disable-perl
 USES+=			perl5
 USE_PERL5=		build
-PLIST_SUB=		PERL="@comment "
+PLIST_SUB+=		PERL="@comment "
 .else
 USES+=			perl5
-PLIST_SUB=		PERL=""
+PLIST_SUB+=		PERL=""
 .endif
 
 # disable XIM (X Input Method) protocol support

@@ -29,11 +29,11 @@ PERL_USES=	perl5
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPERL}
-PLIST_SUB=	PERL=""
+PLIST_SUB+=	PERL=""
 CONFIGURE_ARGS+=--with-perl=${PERL}
 .else
 CONFIGURE_ARGS+=--with-perl=no
-PLIST_SUB=	PERL="@comment "
+PLIST_SUB+=	PERL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MJAVA}
