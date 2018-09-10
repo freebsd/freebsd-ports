@@ -1,4 +1,4 @@
 EDID is binary data encoded in the monitor firmware. edid-decode renders this
 binary data into a human-readable text form.
 
-WWW: https://cgit.freedesktop.org/xorg/app/edid-decode/
+WWW: https://git.linuxtv.org/edid-decode.git
