@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	yate
-DISTVERSION=	6.0.0p1
-PORTREVISION=	1
+PORTVERSION=	6.1.0
 CATEGORIES=	net
 MASTER_SITES=	http://yate.null.ro/tarballs/yate6/
-DISTNAME=	${PORTNAME}-6.0.0-1
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	Yet Another Telephony Engine
@@ -34,6 +33,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-fdsize \
 		--without-libqt4 \
 		--with-zlib=/usr
+PLIST_SUB=	VERSION="${PORTVERSION}"
 
 MAKE_JOBS_UNSAFE=yes
 
@@ -41,6 +41,7 @@ SUB_FILES=	pkg-message
 USE_RC_SUBR=	yate
 USERS=		yate
 GROUPS=		yate
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	AMRNB DOCS DAHDI H323 ILBC MYSQL PGSQL SCTP SPANDSP SQLITE
 OPTIONS_DEFAULT=SCTP
@@ -90,7 +91,7 @@ post-extract:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/yate
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libyate*.so.6.0.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libyate*.so.${PORTVERSION}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/yate/*.yate
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/yate/radio/*.yate
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/yate/sig/*.yate
