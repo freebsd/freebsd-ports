@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBD-mysql
-PORTVERSION=	4.046
+PORTVERSION=	4.047
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CAPTTOFU
@@ -15,8 +15,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-DBI>=1.08:databases/p5-DBI \
-		p5-Devel-CheckLib>=0:devel/p5-Devel-CheckLib
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		p5-Devel-CheckLib>=1.09:devel/p5-Devel-CheckLib
 RUN_DEPENDS=	p5-DBI>=1.08:databases/p5-DBI
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
 
