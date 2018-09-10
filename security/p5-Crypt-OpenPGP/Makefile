@@ -30,7 +30,4 @@ RUN_DEPENDS= \
 USES=		perl5
 USE_PERL5=	configure
 
-post-patch:
-	@${RM} ${WRKSRC}/lib/Crypt/OpenPGP/Ciphertext.pm.orig
-
 .include <bsd.port.mk>
