@@ -1,5 +1,5 @@
---- Makefile.PL.orig	2015-06-11 13:24:35.000000000 +0200
-+++ Makefile.PL	2015-06-11 13:25:28.000000000 +0200
+--- Makefile.PL.orig	2013-07-08 06:14:42 UTC
++++ Makefile.PL
 @@ -12,6 +12,7 @@ use ExtUtils::MakeMaker 5.0;
  use lib "./lib";
  use Getopt::Long;
