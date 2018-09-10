@@ -410,18 +410,19 @@ PORT_OPTIONS+=	${OPTIONS_SLAVE}
 # Sort options and eliminate duplicates
 PORT_OPTIONS:=	${PORT_OPTIONS:O:u}
 
-## Now some compatibility
-.if empty(PORT_OPTIONS:MDOCS)
-PLIST_SUB+=		PORTDOCS="@comment "
-.else
-PLIST_SUB+=		PORTDOCS=""
-.endif
+_REALLY_ALL_POSSIBLE_OPTIONS:=	${COMPLETE_OPTIONS_LIST} ${_ALL_EXCLUDE}
+_REALLY_ALL_POSSIBLE_OPTIONS:=	${_REALLY_ALL_POSSIBLE_OPTIONS:O:u}
 
-.if empty(PORT_OPTIONS:MEXAMPLES)
-PLIST_SUB+=	        PORTEXAMPLES="@comment "
-.else
-PLIST_SUB+=	        PORTEXAMPLES=""
-.endif
+# Handle PORTDOCS and PORTEXAMPLES
+.for _type in DOCS EXAMPLES
+. if !empty(_REALLY_ALL_POSSIBLE_OPTIONS:M${_type})
+.  if empty(PORT_OPTIONS:M${_type})
+PLIST_SUB+=		PORT${_type}="@comment "
+.  else
+PLIST_SUB+=		PORT${_type}=""
+.  endif
+. endif
+.endfor
 
 .if defined(NO_OPTIONS_SORT)
 ALL_OPTIONS=	${OPTIONS_DEFINE}
@@ -431,7 +432,7 @@ ALL_OPTIONS=	${OPTIONS_DEFINE}
 _OPTIONS_${target}?=
 .endfor
 
-.for opt in ${COMPLETE_OPTIONS_LIST} ${_ALL_EXCLUDE:O:u}
+.for opt in ${_REALLY_ALL_POSSIBLE_OPTIONS}
 # PLIST_SUB
 PLIST_SUB?=
 SUB_LIST?=
