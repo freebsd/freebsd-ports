@@ -10,7 +10,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Objects for cycling through a list of values
-TAGS=		list cycle
 
 USES=		perl5
 USE_PERL5=	configure
