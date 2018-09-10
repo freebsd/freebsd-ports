@@ -15,4 +15,3 @@ libdata/pkgconfig/speex.pc
 man/man1/speexdec.1.gz
 man/man1/speexenc.1.gz
 share/aclocal/speex.m4
-@comment %%PORTDOCS%%%%DOCSDIR%%/manual.pdf

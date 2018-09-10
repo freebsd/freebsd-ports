@@ -21,6 +21,4 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS
-
 .include <bsd.port.mk>
