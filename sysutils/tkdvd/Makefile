@@ -30,8 +30,6 @@ DESKTOP_ENTRIES="TkDVD" \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|tclsh|${TCLSH}|' ${WRKSRC}/install.tcl \
 		${WRKSRC}/configure

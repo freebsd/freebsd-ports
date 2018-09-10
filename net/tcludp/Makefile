@@ -22,6 +22,6 @@ TEST_TARGET=	test
 
 PLIST_FILES=	lib/${TCL_PKG}/lib${TCL_PKG}.so \
 		lib/${TCL_PKG}/pkgIndex.tcl \
-		%%PORTDOCS%%man/mann/udp.n.gz
+		man/mann/udp.n.gz
 
 .include <bsd.port.mk>

@@ -37,8 +37,6 @@ PLIST_SUB+=	APMOD_FILE=${APMOD_FILE}
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR} ${STAGEDIR}${DOCSDIR}
 	${APXS} -S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR} \
@@ -48,4 +46,4 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/${APMOD_FILE} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
