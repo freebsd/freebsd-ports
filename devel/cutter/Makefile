@@ -28,7 +28,7 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=	GOFFICE SOUP LCOV
+OPTIONS_DEFINE=	GOFFICE SOUP LCOV NLS
 GOFFICE_DESC=	GOffice support
 SOUP_DESC=	libsoup support
 LCOV_DESC=	Force dependency on lcov

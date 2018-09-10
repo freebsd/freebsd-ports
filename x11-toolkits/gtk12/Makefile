@@ -27,6 +27,8 @@ INSTALL_TARGET=	install-strip
 
 INFO=		gdk gtk
 
+OPTIONS_DEFINE=	NLS
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
