@@ -45,7 +45,7 @@ DYNAMIC_UPSTREAM_VARS=		DSO_EXTMODS+=dynamic_upstream
 DYNAMIC_UPSTREAM_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_inet_slab.c
 
 DEVEL_KIT_GH_TUPLE=		simpl:ngx_devel_kit:v0.3.0:devel_kit
-DEVEL_KIT_VARS=			DSO_EXTMODS+=devel_kit
+DEVEL_KIT_VARS=			FIRST_DSO_EXTMODS+=devel_kit
 
 ENCRYPTSESSION_IMPLIES=		DEVEL_KIT
 ENCRYPTSESSION_GH_TUPLE=	openresty:encrypted-session-nginx-module:v0.07:encryptsession
