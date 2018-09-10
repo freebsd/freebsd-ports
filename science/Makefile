@@ -137,6 +137,7 @@
     SUBDIR += mol2ps
     SUBDIR += mpb
     SUBDIR += mpqc
+    SUBDIR += msms
     SUBDIR += multiwfn
     SUBDIR += namd
     SUBDIR += ncs

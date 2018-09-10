@@ -1,0 +1,8 @@
+MSMS computes, for a given probe radius, the reduced surface of a set of
+spheres. An analytical description of the solvent excluded surface is
+computed from the reduced surface. Special attention is paid to the proper
+handling of self-intersecting parts of the surface called singularities.
+This analytical model of the solvent excluded surface can be triangulated
+with a user specified vertex density.
+
+WWW: http://mgltools.scripps.edu/downloads#msms
