@@ -19,6 +19,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error
 
 USES=		iconv gmake ncurses pkgconfig python shebangfix ssl
+USE_CXXSTD=	gnu++98
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
