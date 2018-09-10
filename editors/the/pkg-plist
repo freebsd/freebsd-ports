@@ -2,7 +2,6 @@
 bin/the
 %%XCURSES%%bin/xthe
 man/man1/the.1.gz
-@dir %%DATADIR%%
 %%DATADIR%%/THE_Help.txt
 %%DATADIR%%/abf.tld
 %%DATADIR%%/append.the
@@ -48,7 +47,6 @@ man/man1/the.1.gz
 %%DATADIR%%/udiff.tld
 %%DATADIR%%/uncomm.the
 %%DATADIR%%/words.the
-@dir %%PORTDOCS%%%%DOCSDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/app1.html
 %%PORTDOCS%%%%DOCSDIR%%/app2.html
 %%PORTDOCS%%%%DOCSDIR%%/app3.html

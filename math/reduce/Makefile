@@ -46,8 +46,6 @@ REDUCE_BINS=	${WRKSRC}/cslbuild/${TARGET_SDIR}
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${REDUCE_BINS}/csl/reduce.img ${STAGEDIR}${DATADIR}
