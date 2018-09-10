@@ -1,0 +1,16 @@
+--- CMakeLists.txt.orig	2018-02-15 10:47:59 UTC
++++ CMakeLists.txt
+@@ -93,12 +93,7 @@ CONFIGURE_FILE(
+ ADD_CUSTOM_TARGET(uninstall
+   "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
+ 
+-# staniek: don't install 
+-if (DATA_INSTALL_DIR)
+-    set(CMAKE_MODULES_INSTALL_PATH ${DATA_INSTALL_DIR}/cmake/modules)
+-else (DATA_INSTALL_DIR)
+-    set(CMAKE_MODULES_INSTALL_PATH ${CMAKE_ROOT}/Modules)
+-endif(DATA_INSTALL_DIR)
++set(CMAKE_MODULES_INSTALL_PATH ${CMAKE_ROOT}/Modules)
+ 
+ install(FILES cmake/modules/FindZint.cmake DESTINATION ${CMAKE_MODULES_INSTALL_PATH} COMPONENT Devel)
+ 
