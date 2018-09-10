@@ -1,6 +1,10 @@
---- subversion/libsvn_client/conflicts.c	2018/08/30 11:27:03	1839661
-+++ subversion/libsvn_client/conflicts.c	2018/08/30 11:39:40	1839662
-@@ -1061,6 +1061,9 @@
+Upstream patch: fix automatic conflict resolution for files removed from
+the merge target when the merge source and merge target have no proper
+common ancestor.  See <https://svn.apache.org/r1839662>.
+
+--- subversion/libsvn_client/conflicts.c.orig	2018-07-12 04:00:15 UTC
++++ subversion/libsvn_client/conflicts.c
+@@ -1059,6 +1059,9 @@ find_deleted_rev(void *baton,
      {
        apr_array_header_t *moves;
  
@@ -10,7 +14,7 @@
        moves = apr_hash_get(b->moves_table, &log_entry->revision,
                             sizeof(svn_revnum_t));
        if (moves)
-@@ -2205,8 +2208,8 @@
+@@ -2223,8 +2226,8 @@ find_operative_moves(apr_array_header_t 
   * If the node was replaced rather than deleted, set *REPLACING_NODE_KIND to
   * the node kind of the replacing node. Else, set it to svn_node_unknown.
   * Only request the log for revisions up to END_REV from the server.
@@ -21,7 +25,7 @@
   */
  static svn_error_t *
  find_revision_for_suspected_deletion(svn_revnum_t *deleted_rev,
-@@ -2243,10 +2246,11 @@
+@@ -2261,10 +2264,11 @@ find_revision_for_suspected_deletion(svn
                                               scratch_pool));
    victim_abspath = svn_client_conflict_get_local_abspath(conflict);
  
@@ -37,7 +41,7 @@
  
    url = svn_path_url_add_component2(repos_root_url, parent_repos_relpath,
                                      scratch_pool);
-@@ -2271,7 +2275,8 @@
+@@ -2289,7 +2293,8 @@ find_revision_for_suspected_deletion(svn
    b.repos_root_url = repos_root_url;
    b.repos_uuid = repos_uuid;
    b.ctx = ctx;
@@ -47,7 +51,7 @@
    b.result_pool = result_pool;
    SVN_ERR(svn_ra__dup_session(&b.extra_ra_session, ra_session, NULL,
                                scratch_pool, scratch_pool));
-@@ -2301,7 +2306,7 @@
+@@ -2319,7 +2324,7 @@ find_revision_for_suspected_deletion(svn
      {
        struct repos_move_info *move = b.move;
  
@@ -56,7 +60,7 @@
          {
            *deleted_rev = move->rev;
            *deleted_rev_author = move->rev_author;
-@@ -2319,7 +2324,8 @@
+@@ -2337,7 +2342,8 @@ find_revision_for_suspected_deletion(svn
            *deleted_rev = SVN_INVALID_REVNUM;
            *deleted_rev_author = NULL;
            *replacing_node_kind = svn_node_unknown;
@@ -66,7 +70,7 @@
          }
        return SVN_NO_ERROR;
      }
-@@ -2328,10 +2334,11 @@
+@@ -2346,10 +2352,11 @@ find_revision_for_suspected_deletion(svn
        *deleted_rev = b.deleted_rev;
        *deleted_rev_author = b.deleted_rev_author;
        *replacing_node_kind = b.replacing_node_kind;
@@ -82,7 +86,7 @@
      }
  
    return SVN_NO_ERROR;
-@@ -2723,7 +2730,8 @@
+@@ -2693,7 +2700,8 @@ conflict_tree_get_details_local_missing(
      end_rev = 0; /* ### We might walk through all of history... */
  
    SVN_ERR(find_revision_for_suspected_deletion(
