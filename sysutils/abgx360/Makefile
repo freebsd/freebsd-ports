@@ -12,7 +12,9 @@ MASTER_SITES=	http://abgx360.xecuter.com/dl/ \
 MAINTAINER=	root@cooltrainer.org
 COMMENT=	Verify and repair Xbox 360 backup images
 
-BUILD_DEPENDS=	curl:ftp/curl
+LICENSE=	NONE
+
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 GNU_CONFIGURE=	yes
 
