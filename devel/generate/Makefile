@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.druid.net/darcy/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	darcy@druid.net
 COMMENT=	Simple text pre-processor
 
 USES=		gmake tar:tgz
