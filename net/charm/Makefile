@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	charm
-DISTVERSION=	6.7.1
+DISTVERSION=	6.8.2
 CATEGORIES=	net
+MASTER_SITES=	http://charm.cs.illinois.edu/distrib/
 PKGNAMESUFFIX=	-uiuc
 DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 
@@ -22,13 +23,14 @@ BUILD_DEPENDS=	bash:shells/bash
 
 RESTRICTED=	No commercial use: commercial use requires a commercial license
 
-USES=		fortran gmake localbase:ldflags shebangfix tar
+USES=		fortran gmake localbase:ldflags shebangfix
 SHEBANG_GLOB=	*.sh
 SHEBANG_FILES=	src/scripts/*
 USE_LDCONFIG=	yes
 
-ARCH_STR=	linux${ARCH:S/amd64/64/:S/i386/32/}
+#ARCH_STR=	linux${ARCH:S/amd64/64/:S/i386/32/}
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-v${DISTVERSION}
 INSTALL_WRKSRC=	${WRKSRC}/${VERSION}-${ARCH_STR}-gfortran-clang/tmp
 
 BINARY_ALIAS=	gfortran=gfortran${GCC_DEFAULT}
@@ -40,24 +42,14 @@ MULTIPROCESSING_DESC=	Multiprocessing
 OPTIONS_SUB=		yes
 
 MULTICORE_DESC=		Single-node multicore version
-MULTICORE_VARS=		VERSION=multicore
+MULTICORE_VARS=		VERSION=multicore ARCH_STR=linux${ARCH:S/amd64/64/:S/i386/32/}
 
 ETHERNET_DESC=		Ethernet version
-ETHERNET_VARS=		VERSION=netlrts
+ETHERNET_VARS=		VERSION=netlrts ARCH_STR=linux${ARCH:S/amd64/-x86_64/:S/i386//}
 
-MPI_VARS=		VERSION=mpi
+MPI_VARS=		VERSION=mpi ARCH_STR=linux${ARCH:S/amd64/-x86_64/:S/i386//}
 MPI_LDFLAGS=		-lmpich
 MPI_LIB_DEPENDS=	libmpich.so:net/mpich2
-
-.include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/NAMD_2.12_Source.tar.gz)
-IGNORE=	please download the release tarball of the version ${DISTVERSION} (${DISTFILES}) from https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=NAMD, put it into ${DISTDIR}, and run 'make' again
-.else
-do-fetch:
-	@${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
-	@cd ${DISTDIR}/${DIST_SUBDIR} && ${TAR} xf ${DISTDIR}/NAMD_2.12_Source.tar.gz --strip-components 1 NAMD_2.12_Source/charm-${DISTVERSION}.tar
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's|which gfortran |which gfortran${GCC_DEFAULT} |' ${WRKSRC}/src/arch/common/conv-mach-gfortran.sh
@@ -67,7 +59,6 @@ post-patch:
 	@${REINPLACE_CMD} -E 's|(CMK_CC)="(.*)"|\1="\2 ${CFLAGS} "|' ${WRKSRC}/src/arch/common/cc-clang.sh
 	@${REINPLACE_CMD} -E 's|(CMK_CXX)="(.*)"|\1="\2 ${CXXFLAGS} "|' ${WRKSRC}/src/arch/common/cc-clang.sh
 	@${REINPLACE_CMD} -E 's|(CMK_LD)="(.*)"|\1="\2 ${LDFLAGS} "|' ${WRKSRC}/src/arch/common/cc-clang.sh
-	@${REINPLACE_CMD} -E 's|/lib/cpp|/usr/bin/cpp|' ${WRKSRC}/src/arch/*/*.sh
 	@${REINPLACE_CMD} -E 's|-shared -o libqt\.so|-shared -o libqt.so -Wl,-soname,libqt.so|' ${WRKSRC}/src/QuickThreads/mkfiles/*
 
 do-build:
@@ -79,4 +70,4 @@ post-install:
 .endfor
 	@cd ${STAGEDIR} && ${MV} lib_so/* ./${PREFIX}/lib && ${RMDIR} lib_so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
