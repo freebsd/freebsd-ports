@@ -19,6 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-TAGS=		lang detect identify
-
 .include <bsd.port.mk>
