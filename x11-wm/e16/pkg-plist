@@ -3,6 +3,7 @@ bin/edox
 bin/eesh
 bin/epp
 bin/starte16
+lib/e16/libhack.so
 share/applications/e16.desktop
 share/gnome-session/sessions/e16-gnome.session
 share/xsessions/e16-session.desktop
