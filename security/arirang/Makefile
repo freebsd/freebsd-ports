@@ -13,9 +13,9 @@ COMMENT=	Powerful webserver security scanner for network
 
 LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	lib${RUBY_NAME}.so:${RUBY_PORT}
+BROKEN_powerpc64=	fails to compile: ruby.h:1381: error: wrong number of arguments specified for '__deprecated__' attribute
 
-BROKEN_powerpc64=	fails to compile: ruby.h: wrong number of arguments specified for 'deprecated' attribute
+LIB_DEPENDS=	lib${RUBY_NAME}.so:${RUBY_PORT}
 
 USES=		ssl
 USE_RUBY=	yes
