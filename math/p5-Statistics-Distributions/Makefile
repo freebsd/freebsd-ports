@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Perl module that calculates critical values of common statistical distributions
+COMMENT=	Calculate critical values of common statistical distributions
 
 USES=		perl5
 USE_PERL5=	configure
