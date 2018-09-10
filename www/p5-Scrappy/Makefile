@@ -31,6 +31,8 @@ BUILD_DEPENDS=	p5-File-ShareDir-Install>=0.03:devel/p5-File-ShareDir-Install \
 		p5-YAML-Syck>=0:textproc/p5-YAML-Syck
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+PORTSCOUT=	skipv:0.921111901
+
 USES=		perl5
 USE_PERL5=	configure
 
