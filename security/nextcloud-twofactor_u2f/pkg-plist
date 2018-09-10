@@ -1,3 +1,6 @@
+@comment %%WWWDIR%%/.github/ISSUE_TEMPLATE/bug.md
+@comment %%WWWDIR%%/.github/ISSUE_TEMPLATE/feature_request.md
+@comment %%WWWDIR%%/.github/ISSUE_TEMPLATE/question.md
 %%WWWDIR%%/CHANGELOG.md
 %%WWWDIR%%/README.md
 %%WWWDIR%%/appinfo/autoload.php
@@ -9,6 +12,7 @@
 %%WWWDIR%%/img/app.svg
 %%WWWDIR%%/js/build/challenge.js
 %%WWWDIR%%/js/build/settings.js
+%%WWWDIR%%/l10n/.gitkeep
 %%WWWDIR%%/l10n/ast.js
 %%WWWDIR%%/l10n/ast.json
 %%WWWDIR%%/l10n/ca.js
@@ -67,6 +71,8 @@
 %%WWWDIR%%/l10n/fr.json
 %%WWWDIR%%/l10n/gl.js
 %%WWWDIR%%/l10n/gl.json
+%%WWWDIR%%/l10n/he.js
+%%WWWDIR%%/l10n/he.json
 %%WWWDIR%%/l10n/hu.js
 %%WWWDIR%%/l10n/hu.json
 %%WWWDIR%%/l10n/is.js
@@ -111,9 +117,14 @@
 %%WWWDIR%%/l10n/zh_TW.json
 %%WWWDIR%%/lib/Activity/Provider.php
 %%WWWDIR%%/lib/Activity/Setting.php
+%%WWWDIR%%/lib/AppInfo/Application.php
 %%WWWDIR%%/lib/Controller/SettingsController.php
 %%WWWDIR%%/lib/Db/Registration.php
 %%WWWDIR%%/lib/Db/RegistrationMapper.php
+%%WWWDIR%%/lib/Event/StateChanged.php
+%%WWWDIR%%/lib/Listener/IListener.php
+%%WWWDIR%%/lib/Listener/StateChangeActivity.php
+%%WWWDIR%%/lib/Listener/StateChangeRegistryUpdater.php
 %%WWWDIR%%/lib/Provider/U2FProvider.php
 %%WWWDIR%%/lib/Service/U2FManager.php
 %%WWWDIR%%/lib/Settings/Personal.php
