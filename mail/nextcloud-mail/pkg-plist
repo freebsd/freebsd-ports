@@ -4,10 +4,10 @@
 %%WWWDIR%%/appinfo/app.php
 %%WWWDIR%%/appinfo/database.xml
 %%WWWDIR%%/appinfo/info.xml
-%%WWWDIR%%/appinfo/register_command.php
 %%WWWDIR%%/appinfo/routes.php
 %%WWWDIR%%/css/mail.scss
 %%WWWDIR%%/css/mobile.css
+%%WWWDIR%%/css/redirect.css
 %%WWWDIR%%/doc/admin.md
 %%WWWDIR%%/doc/developer.md
 %%WWWDIR%%/doc/user.md
@@ -54,7 +54,6 @@
 %%WWWDIR%%/js/routecontroller.js
 %%WWWDIR%%/js/router.js
 %%WWWDIR%%/js/search.js
-%%WWWDIR%%/js/searchproxy.js
 %%WWWDIR%%/js/state.js
 %%WWWDIR%%/krankerl.toml
 %%WWWDIR%%/l10n/.gitkeep
@@ -192,6 +191,7 @@
 %%WWWDIR%%/lib/Attachment.php
 %%WWWDIR%%/lib/Cache/Cache.php
 %%WWWDIR%%/lib/Command/CreateAccount.php
+%%WWWDIR%%/lib/Command/ExportAccount.php
 %%WWWDIR%%/lib/Contracts/IAttachmentService.php
 %%WWWDIR%%/lib/Contracts/IAvatarService.php
 %%WWWDIR%%/lib/Contracts/IMailManager.php
@@ -300,6 +300,7 @@
 %%WWWDIR%%/lib/Service/MailTransmission.php
 %%WWWDIR%%/lib/Service/SetupService.php
 %%WWWDIR%%/lib/Service/UserPreferenceSevice.php
+%%WWWDIR%%/lib/Support/HostNameFactory.php
 %%WWWDIR%%/package-lock.json
 %%WWWDIR%%/templates/error.php
 %%WWWDIR%%/templates/index.php
