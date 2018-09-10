@@ -52,10 +52,12 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/libpdf.so.6.0.5
 	${MKDIR} ${STAGEDIR}${DATADIR}/fonts
 	${INSTALL_DATA} ${WRKSRC}/fonts/* ${STAGEDIR}${DATADIR}/fonts
-.if ${PORT_OPTIONS:MJAVA}
-	${INSTALL_DATA} ${WRKSRC}/bind/pdflib/java/pdflib.jar ${STAGEDIR}${JAVAJARDIR}/pdflib.jar
-.endif
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/pdflib/* ${STAGEDIR}${DOCSDIR}
+
+post-install-JAVA-on:
+	${INSTALL_DATA} ${WRKSRC}/bind/pdflib/java/pdflib.jar ${STAGEDIR}${JAVAJARDIR}/pdflib.jar
 
 .include <bsd.port.post.mk>
