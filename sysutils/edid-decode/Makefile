@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	edid-decode
-PORTVERSION=	0.1.20170329
+PORTVERSION=	0.1.20180813
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/ehaupt
 
@@ -15,8 +15,11 @@ USES=		tar:xz
 
 PLIST_FILES=	bin/edid-decode man/man1/edid-decode.1.gz
 
+LDFLAGS+=	-lm
+
 do-build:
-	${CC} ${CFLAGS} ${WRKSRC}/${PORTNAME}.c -o ${WRKSRC}/${PORTNAME}
+	${CC} ${LDFLAGS} ${CFLAGS} ${WRKSRC}/${PORTNAME}.c \
+		-o ${WRKSRC}/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
