@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moinmoin
-PORTVERSION=	1.9.9
-PORTREVISION=	1
+PORTVERSION=	1.9.10
 CATEGORIES=	www python
 MASTER_SITES=	https://static.moinmo.in/files/
 DISTNAME=	moin-${PORTVERSION}
