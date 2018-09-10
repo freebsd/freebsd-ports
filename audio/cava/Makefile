@@ -10,6 +10,8 @@ COMMENT=	Console-based Audio Visualizer for MPD, PulseAudio, and sndio
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	fails to compile: cc1: unrecognized command line option -Wno-unused-result
+
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libiniparser.so:devel/iniparser
 

@@ -13,6 +13,8 @@ COMMENT=	Lightweight C++-IDE with support for C++11, C++14 and C++17
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_powerpc64=	fails to build: cc1plus: unrecognized command line option -Wno-cpp
+
 LIB_DEPENDS=	libaspell.so:textproc/aspell \
 		libboost_filesystem.so:devel/boost-libs \
 		libgit2.so:devel/libgit2 \

@@ -18,6 +18,8 @@ LICENSE_FILE_IBM=${WRKSRC}/licenses/IBM-LICENSE
 LICENSE_PERMS_CPL=dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_IBM=dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN_powerpc64=	fails to compile: cc1: unrecognized command line option -Wpedantic
+
 RUN_DEPENDS=	p5-DateTime-TimeZone>=0:devel/p5-DateTime-TimeZone \
 		exif:graphics/exif
 
