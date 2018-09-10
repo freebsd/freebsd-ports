@@ -12,12 +12,10 @@ COMMENT=	Program to efficiently compute molecular surfaces
 LICENSE=	MSMS_LICENSE
 LICENSE_NAME=	MSMS License
 LICENSE_FILE=	${WRKDIR}/license.txt
-LICENSE_PERMS=	no-auto-accept no-dist-mirror no-pkg-mirror # No redistribution is allowed.
+LICENSE_PERMS=	none # No redistribution is allowed, no commercial use, only for use by individuals
 
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	Binaries available only for ${ONLY_FOR_ARCHS}.
-
-RESTRICTED=	No commercial use, only for use by individuals
 
 NO_BUILD=	yes
 
