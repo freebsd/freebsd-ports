@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:DCANTRELL
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/0*$//}
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Data::Compare - compare perl data structures
 
 LICENSE=	ART10 GPLv1+

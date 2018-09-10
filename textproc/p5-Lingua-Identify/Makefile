@@ -8,7 +8,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lingua::Identify - Language identification
 
 BUILD_DEPENDS=	p5-Class-Factory-Util>=1.6:devel/p5-Class-Factory-Util \

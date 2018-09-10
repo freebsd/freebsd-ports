@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Data::ACL - Perl extension for simple ACL lists
 
 BUILD_DEPENDS=	p5-Set-NestedGroups>=0:devel/p5-Set-NestedGroups

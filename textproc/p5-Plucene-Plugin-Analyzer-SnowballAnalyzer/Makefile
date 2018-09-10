@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FABPOT
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Stemmed analyzer plugin for p5-Plucene search engine
 
 BUILD_DEPENDS=	p5-Lingua-StopWords>=0:textproc/p5-Lingua-StopWords \

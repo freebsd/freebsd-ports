@@ -8,7 +8,7 @@ CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Faster Set::IntSpan::Fast
 
 BUILD_DEPENDS=	p5-Data-Swap>=0.07:devel/p5-Data-Swap \

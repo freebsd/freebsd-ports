@@ -8,7 +8,7 @@ CATEGORIES=	security perl5 www
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Authen::Htpasswd - interface to read and modify Apache .htpasswd files
 TAGS=		apache authentication pass password md5 sha1 crypto
 

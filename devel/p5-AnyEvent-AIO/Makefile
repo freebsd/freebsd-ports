@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Asynchronous file and directory I/O with AnyEvent
 
 BUILD_DEPENDS=	p5-AnyEvent>=3.4:devel/p5-AnyEvent \

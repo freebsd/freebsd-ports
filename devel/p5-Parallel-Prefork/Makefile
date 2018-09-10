@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KAZUHO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple prefork server framework
 
 BUILD_DEPENDS=	p5-Proc-Wait3>=0.03:devel/p5-Proc-Wait3 \

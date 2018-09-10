@@ -8,7 +8,7 @@ CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Compatibility interfaces for Encode.pm on Perl < 5.7.1
 
 BUILD_DEPENDS=	p5-Text-Iconv>=0:converters/p5-Text-Iconv

@@ -8,7 +8,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Email::Send - Simply Sending Email
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0.19:devel/p5-Class-Accessor \

@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to transport objects from one system to another
 
 BUILD_DEPENDS=	p5-Devel-Symdump>=0:devel/p5-Devel-Symdump

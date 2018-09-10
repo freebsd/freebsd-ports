@@ -8,7 +8,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Various niceties for p5-Text-FixedLength lovers
 
 BUILD_DEPENDS=	p5-Text-FixedLength>=0:textproc/p5-Text-FixedLength

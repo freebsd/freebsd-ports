@@ -8,7 +8,7 @@ CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	API for hierarchical tag/value structures
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser

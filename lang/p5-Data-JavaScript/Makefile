@@ -8,7 +8,7 @@ CATEGORIES=	lang www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Data::JavaScript - Dump perl structures to JavaScript code
 
 USES=		perl5 tar:tgz
