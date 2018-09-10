@@ -22,6 +22,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	default
 INSTALL_TARGET=	setup
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -e '/"cat/d; s|,02755|,0755|' ${WRKSRC}/hier.c
 

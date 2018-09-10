@@ -32,6 +32,8 @@ PORTEXAMPLES=	pycard.conf.sample
 
 SUB_FILES=	pkg-message
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/pycard.conf.sample ${STAGEDIR}${EXAMPLESDIR}/pycard.conf.sample

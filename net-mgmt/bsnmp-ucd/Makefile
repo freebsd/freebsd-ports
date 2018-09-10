@@ -16,7 +16,9 @@ GH_ACCOUNT=	trociny
 USES=		uidfix
 MAKE_ENV+=	NO_OBJ=yes
 
-post-install:
+OPTIONS_DEFINE=	EXAMPLES
+
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/snmpd.config.sample ${STAGEDIR}${EXAMPLESDIR}
 

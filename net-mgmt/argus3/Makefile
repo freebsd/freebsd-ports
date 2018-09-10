@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 
 CONFLICTS=	argus-2* argus-sasl-2* argus-clients-2*
 
-OPTIONS_DEFINE=	SASL
+OPTIONS_DEFINE=	SASL EXAMPLES
 OPTIONS_DEFAULT=SASL
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_CONFIGURE_ON=	--with-sasl=${LOCALBASE}

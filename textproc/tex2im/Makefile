@@ -20,6 +20,8 @@ PORTEXAMPLES=	example1.png example1.tex example2.png example2.tex \
 		example3.png example3.tex example4.png example4.tex \
 		fig_1.eps
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,^#!/bin/bash,#!${LOCALBASE}/bin/bash,g" ${WRKSRC}/tex2im
 

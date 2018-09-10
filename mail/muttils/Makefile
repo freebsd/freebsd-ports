@@ -20,6 +20,8 @@ USE_PYTHON=	distutils autoplist
 
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=	EXAMPLES
+
 .include <bsd.port.options.mk>
 
 post-install:

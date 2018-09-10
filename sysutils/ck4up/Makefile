@@ -21,6 +21,8 @@ PORTEXAMPLES=	ck4up.conf
 PLIST_FILES=	bin/ck4up \
 		man/man1/ck4up.1.gz
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \
 		${WRKSRC}/Makefile

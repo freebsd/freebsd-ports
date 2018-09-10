@@ -20,6 +20,8 @@ NO_ARCH=	true
 
 PORTEXAMPLES=	dups
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -e '/EXE_FILES/d' ${WRKSRC}/Makefile.PL
 

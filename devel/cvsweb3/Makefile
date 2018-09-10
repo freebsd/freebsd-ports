@@ -35,7 +35,7 @@ SHEBANG_FILES=	cvsweb.cgi
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.pre.mk>
 

@@ -16,6 +16,6 @@ LICENSE=	MIT
 USES=		cmake:outsource jpeg tar:xz
 USE_XORG=	x11 xext xt ice sm xpm xmu
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.mk>

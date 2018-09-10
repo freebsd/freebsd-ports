@@ -25,6 +25,8 @@ SUB_FILES=	pagerduty-icinga2.conf pkg-message
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-patch:
 	${REINPLACE_CMD} 's|/usr/share/pdagent-integrations/bin|${PREFIX}/bin|g' ${WRKSRC}/pagerduty_nagios.cfg ${WRKSRC}/conf.d/sensu_pagerduty_handler.json
 

@@ -20,7 +20,7 @@ LIB_DEPENDS=	libGraphicsMagick++.so:graphics/GraphicsMagick \
 		libfftw3.so:math/fftw3 \
 		libgimp-2.0.so:graphics/gimp-app
 
-OPTIONS_DEFINE=	BASH
+OPTIONS_DEFINE=	BASH EXAMPLES
 OPTIONS_SUB=	yes
 BASH_RUN_DEPENDS=	bash:shells/bash
 

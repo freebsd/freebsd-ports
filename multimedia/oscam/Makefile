@@ -26,11 +26,15 @@ FETCH_DEPENDS+=	svn:devel/subversion
 SVN_REV=	11062
 SVN_SRC=	http://www.streamboard.tv/svn/oscam/trunk
 
+OPTIONS_DEFINE=	EXAMPLES
+
 do-install:
 	${RM} ${WRKSRC}/Distribution/*.debug
 	${INSTALL_PROGRAM} ${WRKSRC}/Distribution/${PORTNAME}-${PORTVERSION}-* ${STAGEDIR}${PREFIX}/bin/oscam
 	${INSTALL_MAN} ${WRKSRC}/Distribution/doc/man/*.1 ${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/Distribution/doc/man/*.5 ${STAGEDIR}${PREFIX}/man/man5/
+
+do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/Distribution/doc/example/* ${STAGEDIR}${EXAMPLESDIR}/
 

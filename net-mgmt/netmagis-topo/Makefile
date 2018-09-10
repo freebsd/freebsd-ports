@@ -24,6 +24,8 @@ PLIST=		${.CURDIR}/pkg-plist
 
 ALL_TARGET=build${PKGNAMESUFFIX?=}
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/netmagis/eqgen ${STAGEDIR}/var/netmagis/eqvirt
 

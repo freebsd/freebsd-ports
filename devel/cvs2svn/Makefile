@@ -55,7 +55,7 @@ MANPAGES=	cvs2svn.1.gz \
 
 PLIST_FILES+=	${MANPAGES:S|^|man/man1/|}
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 # be consistent with PORTVERSION

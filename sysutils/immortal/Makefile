@@ -21,6 +21,8 @@ GH_TUPLE=	immortal:logrotate:6f52ae7:logrotate/src/github.com/immortal/logrotate
 		go-yaml:yaml:5420a8b:yaml/src/github.com/go-yaml/yaml
 GH_SUBDIR=	src/github.com/${PORTNAME}/${PORTNAME}
 
+OPTIONS_DEFINE=	EXAMPLES
+
 do-build:
 	@cd ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${GH_PROJECT}; \
 	${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -ldflags \

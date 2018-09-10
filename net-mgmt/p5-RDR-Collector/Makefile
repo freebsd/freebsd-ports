@@ -17,6 +17,8 @@ USES=		perl5 shebangfix
 USE_PERL5=	configure
 SHEBANG_FILES=	examples/*.pl
 
+OPTIONS_DEFINE=	EXAMPLES
+
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
