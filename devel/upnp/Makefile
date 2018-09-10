@@ -14,6 +14,8 @@ COMMENT=	Universal Plug and Play Software Development Kit
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+PORTSCOUT=	skipv:1.8.3	# released on 2017-11-14; older than 1.6.25
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
