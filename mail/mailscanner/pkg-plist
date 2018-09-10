@@ -19,6 +19,7 @@
 @sample %%ETCDIR%%/spamassassin.conf.sample
 @sample %%ETCDIR%%/virus.scanners.conf.sample
 man/man8/MailScanner.8.gz
+sbin/MSMilter
 sbin/MailScanner
 sbin/mailscanner
 sbin/ms-check
@@ -32,9 +33,8 @@ sbin/ms-peek
 sbin/ms-perl-check
 sbin/ms-sa-cache
 sbin/ms-update-bad-emails
-sbin/ms-update-bad-sites
+sbin/ms-update-phishing
 sbin/ms-update-sa
-sbin/ms-update-safe-sites
 sbin/ms-update-vs
 sbin/ms-upgrade-conf
 %%DATADIR%%/perl/MailScanner.pm
@@ -52,6 +52,8 @@ sbin/ms-upgrade-conf
 %%DATADIR%%/perl/MailScanner/Log.pm
 %%DATADIR%%/perl/MailScanner/MCP.pm
 %%DATADIR%%/perl/MailScanner/MCPMessage.pm
+%%DATADIR%%/perl/MailScanner/MSDiskStore.pm
+%%DATADIR%%/perl/MailScanner/MSMail.pm
 %%DATADIR%%/perl/MailScanner/Mail.pm
 %%DATADIR%%/perl/MailScanner/Message.pm
 %%DATADIR%%/perl/MailScanner/MessageBatch.pm
@@ -502,6 +504,7 @@ sbin/ms-upgrade-conf
 @sample %%DATADIR%%/reports/sk/stored.size.message.txt.sample
 @sample %%DATADIR%%/reports/sk/stored.virus.message.txt.sample
 lib/MailScanner/init/ms-init
+lib/MailScanner/init/msmilter-init
 lib/MailScanner/wrapper/avast-wrapper
 lib/MailScanner/wrapper/avg-autoupdate
 lib/MailScanner/wrapper/avg-wrapper
@@ -514,6 +517,8 @@ lib/MailScanner/wrapper/f-secure-autoupdate
 lib/MailScanner/wrapper/f-secure-wrapper
 lib/MailScanner/wrapper/generic-autoupdate
 lib/MailScanner/wrapper/generic-wrapper
+lib/MailScanner/systemd/ms-milter
+lib/MailScanner/systemd/ms-systemd
 lib/MailScanner/wrapper/sophos-autoupdate
 lib/MailScanner/wrapper/sophos-wrapper
 

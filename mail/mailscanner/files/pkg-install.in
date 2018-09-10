@@ -18,7 +18,7 @@ upgrade_lang_conf()
 	do
 	    if [ -f ${LANG_DIR}/languages.conf ] ; then
 		${ECHO} -n Upgrading ${LANG_DIR}/languages.conf... Please wait..
-		${PERL} ${DATADIR}/upgrade_languages_conf \
+		ms-upgrade-conf \
 			${LANG_DIR}/languages.conf \
 			${LANG_DIR}/languages.conf.sample > \
 			${LANG_DIR}/languages.conf.new.${PKGVERSION} \
@@ -38,7 +38,7 @@ upgrade_lang_conf()
 
 upgrade_mailscanner_conf()
 {
-	${PERL} ${DATADIR}/upgrade_MailScanner_conf			\
+	ms-upgrade-conf			\
 		${PKG_PREFIX}/etc/MailScanner/MailScanner.conf		\
 		${PKG_PREFIX}/etc/MailScanner/MailScanner.conf.sample >	\
 	    ${PKG_PREFIX}/etc/MailScanner/MailScanner.conf.new.${PKGVERSION} \
@@ -110,7 +110,6 @@ POST-INSTALL)
 	upgrade_lang_conf
 	[ -f ${PKG_PREFIX}/etc/MailScanner/MailScanner.conf ] \
 		&& upgrade_mailscanner_conf
-	initial_config
 	exit 0
 	;;
 esac
