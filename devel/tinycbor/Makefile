@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinycbor
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -28,7 +28,6 @@ do-configure:
 	@cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} configure
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/src/tinycbor-version.h ${STAGEDIR}${PREFIX}/include/tinycbor/tinycbor-version.h
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtinycbor.so.${PORTVERSION}
 	${LN} -fs libtinycbor.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libtinycbor.so
 	${LN} -fs libtinycbor.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libtinycbor.so.${PORTVERSION:R:R}
