@@ -43,6 +43,7 @@ nslcd_prestart()
 	else
 		command_args="-f %%PREFIX%%/sbin/nslcd"
 	fi
+	install -d -o %%USERS%% -g %%GROUPS%% %%NSLCD_VARDIR%%
 }
 
 nslcd_start()
