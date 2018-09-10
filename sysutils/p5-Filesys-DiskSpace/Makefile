@@ -14,7 +14,4 @@ COMMENT=	Perl equivalent of statfs(2)
 USES=		perl5
 USE_PERL5=	configure
 
-post-patch:
-	@${FIND} ${WRKSRC} -name "*\.orig" -delete
-
 .include <bsd.port.mk>
