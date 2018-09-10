@@ -116,6 +116,12 @@ DEV_WARNING+=	"Please set LICENSE for this port"
 .  endif
 .endif
 
+.for _a in ${ONLY_FOR_ARCHS}
+.if defined(ONLY_FOR_ARCHS_REASON_${_a})
+DEV_WARNING+=	"ONLY_FOR_ARCHS_${_a} is defined and ${_a} is in ONLY_FOR_ARCHS, the message will never be used."
+.endif
+.endfor
+
 .if defined(USE_PYDISTUTILS) && ${USE_PYDISTUTILS} == "easy_install"
 DEV_ERROR+=	"USE_PYDISTUTILS=easy_install is no longer supported, please use USE_PYDISTUTILS=yes"
 .endif
