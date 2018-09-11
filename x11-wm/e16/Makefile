@@ -30,7 +30,7 @@ PANGO_CONFIGURE_ENABLE=	pango
 DOCS_CONFIGURE_ON=	--enable-docs=yes
 DOCS_CONFIGURE_OFF=	--enable-docs=no
 
-USES=		gmake iconv libtool gnome perl5 pkgconfig shebangfix
+USES=		autoreconf gmake iconv libtool gnome perl5 pkgconfig shebangfix
 
 USE_XORG=	ice sm xorgproto x11 xbitmaps \
 		xcomposite xdamage xext xfixes xft xinerama xrandr xrender \
@@ -45,6 +45,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 post-patch:
 	${REINPLACE_CMD} -e 's|$$(USER)|${SHAREOWN}:${SHAREGRP}|g' \
 	    ${WRKSRC}/themes/Makefile.am ${WRKSRC}/themes/Makefile.in
+	${REINPLACE_CMD} -e '/dl, dlopen/d' ${WRKSRC}/configure.ac
 
 post-patch-DOCS-off:
 	${REINPLACE_CMD} -e '/^SUBDIRS/s|docs ||' \
