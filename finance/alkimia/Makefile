@@ -54,7 +54,6 @@ MPIR_DESC=		MPIR (multiple precision arithmetic) support
 MPIR_LIB_DEPENDS=	libmpir.so:math/mpir
 
 .if ${SLAVE} == qt4
-TEST_USES=		qt:4 qt:5
 TEST_USE=		QT=qtestlib
 .else
 TEST_USE=		QT=testlib
