@@ -10,13 +10,13 @@ include/libopenmpt/libopenmpt_stream_callbacks_file.h
 include/libopenmpt/libopenmpt_version.h
 lib/libopenmpt.a
 lib/libopenmpt.so
-lib/libopenmpt.so.1
+lib/libopenmpt.so.0
+lib/libopenmpt.so.0.1.1
 libdata/pkgconfig/libopenmpt.pc
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+man/man1/openmpt123.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libopenmpt_example_c.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libopenmpt_example_c_mem.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/libopenmpt_example_c_pipe.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libopenmpt_example_c_probe.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libopenmpt_example_c_stdout.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libopenmpt_example_c_unsafe.c

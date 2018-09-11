@@ -3,7 +3,10 @@
 
 PORTNAME=	libopenmpt
 PORTVERSION=	0.3.11
+DISTVERSIONSUFFIX=	+release.autotools
+PORTREVISION=	1
 CATEGORIES=	audio
+MASTER_SITES=	https://lib.openmpt.org/files/libopenmpt/src/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Module music library based on OpenMPT
@@ -11,19 +14,33 @@ COMMENT=	Module music library based on OpenMPT
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake pkgconfig
+USES=		gmake libtool pkgconfig
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GITHUB=	yes
 
-GH_ACCOUNT=	OpenMPT
-GH_PROJECT=	openmpt
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
+CONFIGURE_ARGS+=	--without-portaudiocpp
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES FLAC MPG123 OGG PORTAUDIO SNDFILE VORBIS
+OPTIONS_DEFAULT=FLAC MPG123 OGG PORTAUDIO SNDFILE VORBIS
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|$$(PREFIX)/share/doc/libopenmpt/examples|${EXAMPLESDIR}|g' \
-			${WRKSRC}/Makefile
+FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
+MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
+OGG_LIB_DEPENDS=	libogg.so:audio/libogg
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
+SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
+
+FLAC_CONFIGURE_WITH=		flac
+MPG123_CONFIGURE_WITH=		mpg123
+OGG_CONFIGURE_WITH=		ogg
+PORTAUDIO_CONFIGURE_WITH=	portaudio
+SNDFILE_CONFIGURE_WITH=		sndfile
+VORBIS_CONFIGURE_WITH=		vorbis vorbisfile
+
+post-install-DOCS-on:
+	@${RM} ${STAGEDIR}${DOCSDIR}/LICENSE # do not install twice
+
+post-install-EXAMPLES-on:
+	@${MV} ${STAGEDIR}${DOCSDIR}/examples ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
