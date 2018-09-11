@@ -44,9 +44,7 @@ GLPK_CONFIGURE_OFF=	--disable-glpk-libcheck
 
 PARALLEL_CONFIGURE_ON=	--enable-cbc-parallel
 
-STRIP_FILES=	libCoinUtils libOsi libOsiClp libOsiCommonTests libClp libClpSolver \
-		libCgl libCbc libCbcSolver libOsiCbc libCoinMP
-
+INSTALL_TARGET=	install-strip
 TEST_TARGET=	unitTest
 TEST_WRKSRC=	${WRKSRC}/${PORTNAME}
 
@@ -56,13 +54,10 @@ post-patch::
 		-e 's|addlibs_DATA = examples/Makefile examples/example.c||g' \
 		-e 's|DocInstallDir = $$(datadir)/coin/doc/$$(PACKAGE_NAME)|DocInstallDir = $$(datadir)/doc/CoinMP/$$(PACKAGE_NAME)|' \
 		-e 's|	$$(MAKE) $$(AM_MAKEFLAGS) install-data-hook||'
+	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|void exit (int)|void reserved (int)|g'
 	${REINPLACE_CMD} -e 's|datacoin_DATA = $$(EXAMPLE_FILES)|datacoin_DATA = |' \
 		-e 's|datacoindir = $$(datadir)/coin/Data/Sample|datacoindir = |' ${WRKSRC}/Data/Sample/Makefile.in
 	${REINPLACE_CMD} -e 's|addlibsdir = $$(DESTDIR)$$(datadir)/coin/doc/CoinMP|addlibsdir = |' ${WRKSRC}/CoinMP/Makefile.in
-
-post-install:
-.for filename in ${STRIP_FILES}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${filename}.so.*
-.endfor
 
 .include <bsd.port.mk>
