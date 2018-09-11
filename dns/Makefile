@@ -5,6 +5,7 @@
 
     SUBDIR += adns
     SUBDIR += adsuck
+    SUBDIR += amass
     SUBDIR += ares
     SUBDIR += autotrust
     SUBDIR += axfr2acl
