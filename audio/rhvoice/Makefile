@@ -9,7 +9,6 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Speech synthesizer for English, Russian, Georgian, and other languages
 
 LICENSE=	GPLv3+
-xLICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libao.so:audio/libao \
 		libportaudio.so:audio/portaudio \
