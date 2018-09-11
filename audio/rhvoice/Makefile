@@ -11,8 +11,8 @@ COMMENT=	Speech synthesizer for English, Russian, Georgian, and other languages
 
 LICENSE=	LGPL21+ GPLv3+ # the main code is under LGPL21+, MAGE library is under GPLv3+, voices are licensed for use by individuals only, no commercial use
 LICENSE_COMB=	multi
-LICENSE_FILE_LGPL21=	${SRCDIR}/licenses/lgpl-2.1.txt
-LICENSE_FILE_GPLv3=	${SRCDIR}/licenses/gpl-3.0.txt
+LICENSE_FILE_LGPL21+ =	${WRKSRC}/licenses/lgpl-2.1.txt
+LICENSE_FILE_GPLv3+ =	${WRKSRC}/licenses/gpl-3.0.txt
 
 LIB_DEPENDS=	libao.so:audio/libao \
 		libportaudio.so:audio/portaudio \
