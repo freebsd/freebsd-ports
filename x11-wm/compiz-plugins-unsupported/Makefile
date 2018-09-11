@@ -3,7 +3,7 @@
 
 PORTNAME=	compiz-plugins-unsupported
 PORTVERSION=	0.8.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 

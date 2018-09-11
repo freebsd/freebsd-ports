@@ -3,7 +3,7 @@
 
 PORTNAME=	gpxsee
 PORTVERSION=	5.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 
 MAINTAINER=	sikmir@gmail.com

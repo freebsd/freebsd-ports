@@ -3,7 +3,7 @@
 
 PORTNAME=	fkiss
 PORTVERSION=	0.33a
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www2s.biglobe.ne.jp/~yav/soft/fkiss/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/a//}

@@ -1,7 +1,7 @@
 # Created by: Jean-Yves Lefort <jylefort@brutele.be>
 # $FreeBSD$
 
-PORTREVISION=	5
+PORTREVISION=	6
 PKGNAMESUFFIX=	-client
 
 COMMENT=	Enhanced version of XPilot (client program)

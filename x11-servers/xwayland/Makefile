@@ -2,6 +2,7 @@
 
 PORTNAME=	xwayland
 PORTVERSION=	1.19.1
+PORTREVISION=	1
 
 COMMENT=	X Clients under Wayland
 
