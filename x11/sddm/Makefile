@@ -3,10 +3,20 @@
 PORTNAME=	sddm
 PORTVERSION=	0.17.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	QML based login manager
+
+# The source code is GPLv2+, but the provided themes are:
+#  - CC-BY 3.0 (default greeter theme, maldives)
+#  - CC-BY 4.0 (maya)
+#  - Apache20 (font included with maya)
+LICENSE=	GPLv2+ CC-BY-3.0 CC-BY-4.0 APACHE20
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+=	${WRKSRC}/LICENSE
+LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/LICENSE.CC-BY-3.0
 
 RUN_DEPENDS=	dbus-run-session:devel/dbus
 
@@ -28,6 +38,10 @@ USERS=		sddm
 GROUPS=		sddm
 
 USE_GITHUB=	yes
+
+# There are multiple patches that apply to Display.cpp,
+# fixing CVE-2018-14345 and backported from 0.18.
+EXTRA_PATCHES=	${PATCHDIR}/git-patch-147cec38d ${PATCHDIR}/git-patch-b02b00559
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#/etc/X11#${LOCALBASE}/etc/X11#' \

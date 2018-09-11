@@ -1,0 +1,2 @@
+SDDM does not support login.conf(5), and no special restrictions
+or settings from login.conf are enforced or applied.

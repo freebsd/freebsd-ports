@@ -1,0 +1,28 @@
+diff --git a/src/daemon/Display.cpp b/src/daemon/Display.cpp
+index 5abfc9a..57d7ecb 100644
+--- src/daemon/Display.cpp
++++ src/daemon/Display.cpp
+@@ -339,7 +339,9 @@ namespace SDDM {
+         } else {
+             //we only want to unlock the session if we can lock in, so we want to go via PAM auth, but not start a new session
+             //by not setting the session and the helper will emit authentication and then quit
+-            connect(m_auth, &Auth::authentication, this, [=](){
++            connect(m_auth, &Auth::authentication, this, [=](const QString &, bool success){
++                if(!success)
++                    return;
+                 qDebug() << "activating existing seat";
+                 OrgFreedesktopLogin1ManagerInterface manager(Logind::serviceName(), Logind::managerPath(), QDBusConnection::systemBus());
+                 manager.UnlockSession(existingSessionId);
+diff --git a/src/helper/backend/PamBackend.cpp b/src/helper/backend/PamBackend.cpp
+index 69cbd2c..5467282 100644
+--- src/helper/backend/PamBackend.cpp
++++ src/helper/backend/PamBackend.cpp
+@@ -219,8 +219,6 @@ namespace SDDM {
+ 
+         if (user == QStringLiteral("sddm") && m_greeter)
+             service = QStringLiteral("sddm-greeter");
+-        else if (m_app->session()->path().isEmpty())
+-            service = QStringLiteral("sddm-check");
+         else if (m_autologin)
+             service = QStringLiteral("sddm-autologin");
+         result = m_pam->start(service, user);
