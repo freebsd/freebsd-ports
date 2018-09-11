@@ -1,6 +1,8 @@
-Partio is a library for reading/writing/processing particle files for a wide
-range of tools and file formats. It acts as an abstraction for the
-commonalities in particle models (i.e. accessing many attributes associated
-with an index or entity).
+Partio is an open source C++ library for reading, writing, and manipulating
+a variety of standard particle formats (GEO, BGEO, PTC, PDB, PDA).  It acts
+as an abstraction for the commonalities in particle models (i.e., accessing
+many attributes associated with an index or entity).
 
-WWW: http://www.partio.us
+Partio has a Python API and a collection of simple command-line tools.
+
+WWW: http://www.partio.us/
