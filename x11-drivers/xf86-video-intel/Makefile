@@ -3,7 +3,7 @@
 
 PORTNAME=	xf86-video-intel
 PORTVERSION=	2.99.917.20180512
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-drivers
 MASTER_SITES=	http://cgit.freedesktop.org/xorg/${XORG_CAT}/${PORTNAME}/snapshot/
 DISTNAME=	${PORTNAME}-${COMMIT_ID}

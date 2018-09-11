@@ -2,6 +2,7 @@
 
 PORTNAME=	nestopia
 DISTVERSION=	1.49
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	neel@neelc.org

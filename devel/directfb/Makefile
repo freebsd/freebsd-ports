@@ -3,7 +3,7 @@
 
 PORTNAME=	directfb
 PORTVERSION=	1.4.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://sources.buildroot.net/
 DISTNAME=	DirectFB-${PORTVERSION}

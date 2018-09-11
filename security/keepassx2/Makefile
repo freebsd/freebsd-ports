@@ -3,7 +3,7 @@
 
 PORTNAME=	keepassx
 PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	security
 MASTER_SITES=	https://www.keepassx.org/releases/${PORTVERSION}/

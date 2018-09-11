@@ -2,6 +2,7 @@
 
 PORTNAME=	valentina
 DISTVERSION=	0.6.0.0
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	a
 CATEGORIES=	misc
 MASTER_SITES=	http://cdn.bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/

@@ -3,6 +3,7 @@
 
 PORTNAME=	gogglesmm
 PORTVERSION=	1.2.1
+PORTREVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	jhale@FreeBSD.org

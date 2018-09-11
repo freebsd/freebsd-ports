@@ -2,7 +2,7 @@
 
 PORTNAME=	xptools
 DISTVERSION=	wed_161r1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 
 MAINTAINER=	mike.d.ft402@gmail.com

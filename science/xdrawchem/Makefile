@@ -2,6 +2,7 @@
 
 PORTNAME=	xdrawchem
 DISTVERSION=	1.10.2-1
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
