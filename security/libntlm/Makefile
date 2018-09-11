@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libntlm
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.nongnu.org/libntlm/releases/
 
