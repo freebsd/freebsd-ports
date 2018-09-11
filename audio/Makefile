@@ -437,6 +437,7 @@
     SUBDIR += libnoise
     SUBDIR += libogg
     SUBDIR += liboggz
+    SUBDIR += libopenmpt
     SUBDIR += libopenspc
     SUBDIR += libsamplerate
     SUBDIR += libshairport
