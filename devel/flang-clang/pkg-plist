@@ -1,3 +1,4 @@
+bin/flang
 flang/bin/c-index-test
 flang/bin/clang
 flang/bin/clang++

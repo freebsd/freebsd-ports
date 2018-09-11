@@ -1,4 +1,3 @@
-bin/flang
 flang/bin/flang1
 flang/bin/flang2
 flang/include/ieee_arithmetic.mod

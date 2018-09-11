@@ -3,7 +3,7 @@
 
 PORTNAME=	flang-clang
 DISTVERSION=	6.0-g20180904
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64
+IGNORE_FreeBSD_10=	base compiler too old
 
 BUILD_DEPENDS=	llvm60>=0:devel/llvm60
 RUN_DEPENDS=	llvm60>=0:devel/llvm60
@@ -37,6 +38,11 @@ CMAKE_ARGS+=	-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config60
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/flang
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/lib/Driver/ToolChains/FreeBSD.cpp
+
 post-install:
 	@${GZIP_CMD} ${STAGEDIR}/${PREFIX}/flang/man/man1/scan-build.1
+	${RLN} ${STAGEDIR}${PREFIX}/flang/bin/flang ${STAGEDIR}${PREFIX}/bin/flang
+
 .include <bsd.port.mk>

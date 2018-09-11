@@ -3,6 +3,7 @@
 
 PORTNAME=	flang
 DISTVERSION=	6.0-g20180904
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -49,11 +50,5 @@ MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${CP} -r  ${WRKSRC}/tools/flang2/flang2exe/x86_64-Linux ${WRKSRC}/tools/flang2/flang2exe/x86_64-FreeBSD
-
-post-install:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		< ${FILESDIR}/flang.in > \
-		${WRKDIR}/flang
-	${INSTALL_SCRIPT} ${WRKDIR}/flang ${STAGEDIR}/${PREFIX}/bin/flang
 
 .include <bsd.port.mk>
