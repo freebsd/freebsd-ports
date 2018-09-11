@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openal-soft
-PORTVERSION=	1.18.2
-PORTREVISION=	3
+PORTVERSION=	1.19.0
 CATEGORIES=	audio
 MASTER_SITES=	http://kcat.strangesoft.net/openal-releases/
 
@@ -27,7 +26,7 @@ CMAKE_ON=	ALSOFT_BACKEND_WAVE \
 		ALSOFT_UTILS
 LDFLAGS+=	-Wl,--as-needed # do not link with librt and libdl
 
-OPTIONS_DEFINE=		EXAMPLES CONFIG JACK OSS PORTAUDIO PULSEAUDIO SNDIO
+OPTIONS_DEFINE=		EXAMPLES CONFIG JACK OSS PORTAUDIO PULSEAUDIO SDL SNDIO
 OPTIONS_DEFAULT=	OSS
 OPTIONS_SUB=		yes
 
@@ -49,13 +48,17 @@ PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 PULSEAUDIO_CMAKE_BOOL=	ALSOFT_REQUIRE_PULSEAUDIO ALSOFT_BACKEND_PULSEAUDIO
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
+SDL_CMAKE_BOOL=		ALSOFT_REQUIRE_SDL2 ALSOFT_BACKEND_SDL2
+SDL_USES=		localbase
+SDL_USE=		SDL=sdl2
+
 SNDIO_CMAKE_BOOL=	ALSOFT_REQUIRE_SNDIO ALSOFT_BACKEND_SNDIO
 SNDIO_IMPLIES=		OSS # provide fallback for missing sndio capture support
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 
 post-patch:
 	@${REINPLACE_CMD} 's|/etc/openal|${ETCDIR}|' \
-		${WRKSRC}/Alc/alcConfig.c
+		${WRKSRC}/Alc/alconfig.c
 
 post-install-EXAMPLES-on:
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
