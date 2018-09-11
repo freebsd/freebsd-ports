@@ -6,8 +6,8 @@ Subject: [PATCH] Fix use case where A and MX records (for example) exist for
 
 diff --git a/README.md b/README.md
 index 8b3f27e..1c18fde 100644
---- a/README.md
-+++ b/README.md
+--- README.md
++++ README.md
 @@ -1,5 +1,5 @@
  -----------------------------------------------------------------
 -# namesilo_ddns version 2.0
@@ -17,8 +17,8 @@ index 8b3f27e..1c18fde 100644
  This is a shell script to update Namesilo's DNS record when IP changed. Set to run this script as cronjob in your system.
 diff --git a/namesilo_ddns.sh b/namesilo_ddns.sh
 index 741956e..ab1e0c3 100644
---- a/namesilo_ddns.sh
-+++ b/namesilo_ddns.sh
+--- namesilo_ddns.sh
++++ namesilo_ddns.sh
 @@ -1,6 +1,6 @@
  #!/bin/sh
  
