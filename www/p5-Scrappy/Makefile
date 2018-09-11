@@ -36,22 +36,4 @@ PORTSCOUT=	skipv:0.921111901
 USES=		perl5
 USE_PERL5=	configure
 
-post-patch:
-	${RM} ${WRKSRC}/perltidy.pl
-	${RM} ${WRKSRC}/lib/Scrappy.pm.bak
-	${RM} ${WRKSRC}/lib/Scrappy/Action.pm.bak
-	${RM} ${WRKSRC}/lib/Scrappy/Logger.pm.bak
-	${RM} ${WRKSRC}/lib/Scrappy/Scraper.pm.bak
-	${RM} ${WRKSRC}/lib/Scrappy/Queue.pm.bak
-	${RM} ${WRKSRC}/lib/Scrappy/Session.pm.bak
-	${RM} ${WRKSRC}/lib/Scrappy/Project.pm.bak
-	${RM} ${WRKSRC}/lib/Scrappy/Plugin.pm.bak
-	${RM} ${WRKSRC}/lib/Scrappy/Action/Help.pm.bak
-	${RM} ${WRKSRC}/lib/Scrappy/Action/Generate.pm.bak
-	${RM} ${WRKSRC}/lib/Scrappy/Plugin/RandomProxy.pm.bak
-	${RM} ${WRKSRC}/lib/Scrappy/Project/Document.pm.bak
-	${RM} ${WRKSRC}/lib/Scrappy/Scraper/Control.pm.bak
-	${RM} ${WRKSRC}/lib/Scrappy/Scraper/Parser.pm.bak
-	${RM} ${WRKSRC}/lib/Scrappy/Scraper/UserAgent.pm.bak
-
 .include <bsd.port.mk>
