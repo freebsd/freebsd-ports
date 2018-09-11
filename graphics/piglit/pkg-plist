@@ -1,6 +1,6 @@
 bin/piglit
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE
 @dir %%DATADIR%%/generated_tests/modules
 @dir %%DATADIR%%/generated_tests/templates/gen_builtin_packing_tests
@@ -23,28 +23,32 @@ bin/piglit
 @dir %%DATADIR%%/generated_tests/templates/gen_vp_tex
 @dir %%DATADIR%%/generated_tests/templates/gen_vs_in_fp64
 @dir %%DATADIR%%/generated_tests/templates/interpolation-qualifier-built-in-variable
-@dir %%DATADIR%%/tests/bugs
 @dir %%DATADIR%%/tests/cl/api
 @dir %%DATADIR%%/tests/cl/custom
 @dir %%DATADIR%%/tests/cl/interop
-@dir %%DATADIR%%/tests/egl/spec/egl-1.4
 @dir %%DATADIR%%/tests/egl/spec/egl_chromium_sync_control
 @dir %%DATADIR%%/tests/egl/spec/egl_ext_client_extensions
+@dir %%DATADIR%%/tests/egl/spec/egl_ext_device_drm
 @dir %%DATADIR%%/tests/egl/spec/egl_ext_device_enumeration
 @dir %%DATADIR%%/tests/egl/spec/egl_ext_device_query
+@dir %%DATADIR%%/tests/egl/spec/egl_ext_image_dma_buf_import_modifiers
+@dir %%DATADIR%%/tests/egl/spec/egl_ext_platform_device
 @dir %%DATADIR%%/tests/egl/spec/egl_khr_create_context
 @dir %%DATADIR%%/tests/egl/spec/egl_khr_fence_sync
 @dir %%DATADIR%%/tests/egl/spec/egl_khr_get_all_proc_addresses
 @dir %%DATADIR%%/tests/egl/spec/egl_khr_gl_image
 @dir %%DATADIR%%/tests/egl/spec/egl_khr_surfaceless_context
+@dir %%DATADIR%%/tests/egl/spec/egl_mesa_device_software
 @dir %%DATADIR%%/tests/egl/spec/egl_mesa_platform_surfaceless
+@dir %%DATADIR%%/tests/egl/spec/egl-1.4
 @dir %%DATADIR%%/tests/fbo
 @dir %%DATADIR%%/tests/general
-@dir %%DATADIR%%/tests/glean
 @dir %%DATADIR%%/tests/glx
 @dir %%DATADIR%%/tests/hiz
 @dir %%DATADIR%%/tests/perf
 @dir %%DATADIR%%/tests/security
+@dir %%DATADIR%%/tests/spec/amd_depth_clamp_separate
+@dir %%DATADIR%%/tests/spec/amd_framebuffer_multisample_advanced
 @dir %%DATADIR%%/tests/spec/amd_performance_monitor
 @dir %%DATADIR%%/tests/spec/amd_pinned_memory
 @dir %%DATADIR%%/tests/spec/amd_seamless_cubemap_per_texture
@@ -89,11 +93,13 @@ bin/piglit
 @dir %%DATADIR%%/tests/spec/arb_occlusion_query2
 @dir %%DATADIR%%/tests/spec/arb_pipeline_statistics_query
 @dir %%DATADIR%%/tests/spec/arb_point_parameters
+@dir %%DATADIR%%/tests/spec/arb_point_sprite
 @dir %%DATADIR%%/tests/spec/arb_post_depth_coverage
 @dir %%DATADIR%%/tests/spec/arb_program_interface_query
 @dir %%DATADIR%%/tests/spec/arb_provoking_vertex
 @dir %%DATADIR%%/tests/spec/arb_query_buffer_object
 @dir %%DATADIR%%/tests/spec/arb_robustness
+@dir %%DATADIR%%/tests/spec/arb_sample_locations
 @dir %%DATADIR%%/tests/spec/arb_sample_shading/execution
 @dir %%DATADIR%%/tests/spec/arb_sampler_objects
 @dir %%DATADIR%%/tests/spec/arb_seamless_cube_map
@@ -107,6 +113,7 @@ bin/piglit
 @dir %%DATADIR%%/tests/spec/arb_texture_buffer_object
 @dir %%DATADIR%%/tests/spec/arb_texture_buffer_range
 @dir %%DATADIR%%/tests/spec/arb_texture_compression
+@dir %%DATADIR%%/tests/spec/arb_texture_cube_map
 @dir %%DATADIR%%/tests/spec/arb_texture_float
 @dir %%DATADIR%%/tests/spec/arb_texture_multisample
 @dir %%DATADIR%%/tests/spec/arb_texture_stencil8
@@ -114,9 +121,9 @@ bin/piglit
 @dir %%DATADIR%%/tests/spec/arb_texture_storage_multisample
 @dir %%DATADIR%%/tests/spec/arb_texture_view
 @dir %%DATADIR%%/tests/spec/arb_timer_query
+@dir %%DATADIR%%/tests/spec/arb_transform_feedback_overflow_query
 @dir %%DATADIR%%/tests/spec/arb_transform_feedback2
 @dir %%DATADIR%%/tests/spec/arb_transform_feedback3
-@dir %%DATADIR%%/tests/spec/arb_transform_feedback_overflow_query
 @dir %%DATADIR%%/tests/spec/arb_vertex_array_bgra
 @dir %%DATADIR%%/tests/spec/arb_vertex_array_object
 @dir %%DATADIR%%/tests/spec/arb_vertex_buffer_object
@@ -125,19 +132,29 @@ bin/piglit
 @dir %%DATADIR%%/tests/spec/arb_viewport_array
 @dir %%DATADIR%%/tests/spec/ati_draw_buffers
 @dir %%DATADIR%%/tests/spec/ati_envmap_bumpmap
+@dir %%DATADIR%%/tests/spec/ati_fragment_shader
 @dir %%DATADIR%%/tests/spec/ext_depth_bounds_test
+@dir %%DATADIR%%/tests/spec/ext_disjoint_timer_query
 @dir %%DATADIR%%/tests/spec/ext_fog_coord
 @dir %%DATADIR%%/tests/spec/ext_frag_depth
 @dir %%DATADIR%%/tests/spec/ext_framebuffer_blit
 @dir %%DATADIR%%/tests/spec/ext_framebuffer_multisample
 @dir %%DATADIR%%/tests/spec/ext_framebuffer_multisample_blit_scaled
+@dir %%DATADIR%%/tests/spec/ext_framebuffer_object
 @dir %%DATADIR%%/tests/spec/ext_image_dma_buf_import
 @dir %%DATADIR%%/tests/spec/ext_memory_object
+@dir %%DATADIR%%/tests/spec/ext_memory_object_fd
+@dir %%DATADIR%%/tests/spec/ext_occlusion_query_boolean
 @dir %%DATADIR%%/tests/spec/ext_packed_depth_stencil
 @dir %%DATADIR%%/tests/spec/ext_packed_float
 @dir %%DATADIR%%/tests/spec/ext_polygon_offset_clamp
+@dir %%DATADIR%%/tests/spec/ext_render_snorm
+@dir %%DATADIR%%/tests/spec/ext_semaphore
+@dir %%DATADIR%%/tests/spec/ext_semaphore_fd
+@dir %%DATADIR%%/tests/spec/ext_texture_env_combine
 @dir %%DATADIR%%/tests/spec/ext_texture_format_bgra8888
 @dir %%DATADIR%%/tests/spec/ext_texture_integer
+@dir %%DATADIR%%/tests/spec/ext_texture_norm16
 @dir %%DATADIR%%/tests/spec/ext_texture_swizzle
 @dir %%DATADIR%%/tests/spec/ext_timer_query
 @dir %%DATADIR%%/tests/spec/ext_transform_feedback
@@ -154,6 +171,7 @@ bin/piglit
 @dir %%DATADIR%%/tests/spec/gl-3.0/api
 @dir %%DATADIR%%/tests/spec/gl-3.2/layered-rendering
 @dir %%DATADIR%%/tests/spec/gl-3.3
+@dir %%DATADIR%%/tests/spec/gl-4.3
 @dir %%DATADIR%%/tests/spec/gl-4.4
 @dir %%DATADIR%%/tests/spec/gl-4.5
 @dir %%DATADIR%%/tests/spec/gles-2.0
@@ -165,17 +183,21 @@ bin/piglit
 @dir %%DATADIR%%/tests/spec/glx_ext_import_context
 @dir %%DATADIR%%/tests/spec/glx_mesa_query_renderer
 @dir %%DATADIR%%/tests/spec/glx_oml_sync_control
+@dir %%DATADIR%%/tests/spec/intel_blackhole_render
 @dir %%DATADIR%%/tests/spec/intel_conservative_rasterization
 @dir %%DATADIR%%/tests/spec/khr_debug
 @dir %%DATADIR%%/tests/spec/mesa_pack_invert
 @dir %%DATADIR%%/tests/spec/nv_conditional_render
+@dir %%DATADIR%%/tests/spec/nv_fog_distance
 @dir %%DATADIR%%/tests/spec/nv_image_formats
 @dir %%DATADIR%%/tests/spec/nv_texture_barrier
+@dir %%DATADIR%%/tests/spec/nv_texture_env_combine4
 @dir %%DATADIR%%/tests/spec/oes_compressed_paletted_texture
 @dir %%DATADIR%%/tests/spec/oes_draw_elements_base_vertex
 @dir %%DATADIR%%/tests/spec/oes_draw_texture
 @dir %%DATADIR%%/tests/spec/oes_fixed_point
 @dir %%DATADIR%%/tests/spec/oes_matrix_get
+@dir %%DATADIR%%/tests/spec/oes_required_internalformat
 @dir %%DATADIR%%/tests/spec/oes_texture_float
 @dir %%DATADIR%%/tests/texturing/shaders
 @dir %%DATADIR%%/tests/wgl

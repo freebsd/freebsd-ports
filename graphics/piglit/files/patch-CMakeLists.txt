@@ -5,16 +5,7 @@
  ENDIF()
  
 -set(Python_ADDITIONAL_VERSIONS
--    3.6 3.5 3.4 3.3 2.7)
+-    3.7 3.6 3.5 3.4 2.7)
  find_package(PythonInterp REQUIRED)
  find_package(PythonSix 1.5.2 REQUIRED)
  find_package(PythonNumpy 1.7.0 REQUIRED)
-@@ -382,7 +380,7 @@ endif()
- 
- check_c_source_compiles(
- 	"
--	#define _POSIX_C_SOURCE 199309L
-+	#define _POSIX_C_SOURCE 200112L
- 	#include <time.h>
- 	int main() { return clock_gettime(CLOCK_MONOTONIC, NULL); }
- 	"
