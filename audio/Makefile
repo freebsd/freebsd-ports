@@ -723,6 +723,7 @@
     SUBDIR += resid
     SUBDIR += rexima
     SUBDIR += rezound
+    SUBDIR += rhvoice
     SUBDIR += rhythmbox
     SUBDIR += rio500
     SUBDIR += rioutil
