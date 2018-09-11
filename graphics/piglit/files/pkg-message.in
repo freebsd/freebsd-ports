@@ -4,7 +4,7 @@ default maxvnodes:
   sysctl kern.maxvnodes=$(($(sysctl -n kern.maxvnodes) * 2))
 
 Instructions to use Piglit are available in:
-  %%DOCSDIR%%/README
+  %%DOCSDIR%%/README.md
 
 The same documentation is also available online:
   http://cgit.freedesktop.org/piglit/tree/README
