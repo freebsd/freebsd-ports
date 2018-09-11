@@ -197,6 +197,12 @@ _addextmod=	add-module
 CONFIGURE_ARGS+=	--with-${mod}${_addbasemod}
 .endfor
 
+# Some modules depend on other being there before, for example, devel_kit needs
+# to be there before a few other.
+.for mod in ${FIRST_DSO_EXTMODS}
+CONFIGURE_ARGS+=	--${_addextmod}=${WRKSRC_${mod}}${${mod:tu}_SUBDIR}
+.endfor
+
 .for mod in ${DSO_EXTMODS}
 CONFIGURE_ARGS+=	--${_addextmod}=${WRKSRC_${mod}}${${mod:tu}_SUBDIR}
 .endfor
