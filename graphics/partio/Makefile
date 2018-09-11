@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	partio
-PORTVERSION=	1.1.0.20150221
-PORTREVISION=	3
+PORTVERSION=	1.5.5
+DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics math
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,16 +10,19 @@ COMMENT=	C++ library for manipulating animation particle formats
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cmake:outsource
-USE_XORG=	xmu
-USE_GL=		gl glut
+USES=		cmake:outsource gl shebangfix
+SHEBANG_FILES=	src/tools/partedit.py src/tools/partjson.py
+USE_GL=		gl glu glut
+USE_LDCONFIG=	yes
+USE_XORG=	xi
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wdas
-GH_TAGNAME=	1fd6747
 
-OPTIONS_DEFINE=		DOCS PYTHON
+OPTIONS_DEFINE=		DOCS PYTHON	# XXX: should probably use DOXYGEN
 OPTIONS_DEFAULT=	PYTHON
+
+PYTHON_BROKEN_OFF=	does not build without Python support
 
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 PYTHON_USES=		python
@@ -29,9 +32,9 @@ BINARY_ALIAS=	swig=swig3.0
 PORTDOCS=	*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|python -c|${PYTHON_CMD} -c|; \
-		s|lib64/python$${PYTHON_VERSION}/site-packages|${PYTHONPREFIX_SITELIBDIR:S/${PREFIX}\///}|' \
-		${WRKSRC}/src/py/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|python -c|${PYTHON_CMD} -c|' \
+		${WRKSRC}/src/py/CMakeLists.txt \
+		${WRKSRC}/src/tools/CMakeLists.txt
 	@${REINPLACE_CMD} -e '/install(TARGETS/d' \
 		${WRKSRC}/src/tests/CMakeLists.txt
 
@@ -44,6 +47,6 @@ post-patch-DOCS-off:
 		${WRKSRC}/CMakeLists.txt
 
 post-build-DOCS-on:
-	@(cd ${BUILD_WRKSRC}; ${MAKE_CMD} doc)
+	@${MAKE_CMD} -C ${BUILD_WRKSRC} doc
 
 .include <bsd.port.mk>
