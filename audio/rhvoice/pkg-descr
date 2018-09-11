@@ -1,0 +1,9 @@
+RHVoice is a free and open source speech synthesizer.
+
+It consists of the following components:
+* command line tool `rhvoice-client` (needs love)
+* speech module for NVDA
+* speech module for Windows (SAPI5)
+* Android App
+
+WWW: https://github.com/Olga-Yakovleva/RHVoice
