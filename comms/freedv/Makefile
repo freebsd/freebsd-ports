@@ -1,11 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	freedv
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+DISTVERSION=	1.3.1
 CATEGORIES=	comms hamradio
-MASTER_SITES=	https://freedv.com/wp-content/uploads/sites/8/2017/10/ \
-		LOCAL/db
+MASTER_SITES=	https://hobbes1069.fedorapeople.org/freetel/freedv/
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Narrow band digital voice
