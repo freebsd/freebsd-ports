@@ -283,6 +283,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_cpupower
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_cryptsetup
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_dkms
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_e2label
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_ethtool
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_fuse_arguments
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Linux/_fuse_values
