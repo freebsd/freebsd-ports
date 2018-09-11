@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	astroid
-PORTVERSION=	1.6.5
+PORTVERSION=	2.0.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,20 +12,24 @@ COMMENT=	Abstract syntax tree for Python with inference support
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-RUN_DEPENDS=	${PY_ENUM34} \
-		${PYTHON_PKGNAMEPREFIX}lazy-object-proxy>=0:devel/py-lazy-object-proxy@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lazy-object-proxy>=0:devel/py-lazy-object-proxy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wrapt>=0:devel/py-wrapt@${PY_FLAVOR}
 
+USES=		python:3.4+
+USE_PYTHON=	autoplist distutils
+
 NO_ARCH=	yes
-USE_PYTHON=	autoplist concurrent distutils
-USES=		python
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.functools_lru_cache>=0:devel/py-backports.functools_lru_cache@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}singledispatch>=0:devel/py-singledispatch@${PY_FLAVOR}
+.if ${PYTHON_REL} < 3500
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing>=0:devel/py-typing@${PY_FLAVOR}
+.endif
+
+.if ${PYTHON_REL} < 3700
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typed-ast>=0:devel/py-typed-ast@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
