@@ -1,0 +1,103 @@
+From 95281026d983bff8f72e431c7f620a0e8d07c2af Mon Sep 17 00:00:00 2001
+From: Ken Sharp <ken.sharp@artifex.com>
+Date: Sat, 8 Sep 2018 09:47:19 +0100
+Subject: [PATCH] Bug 699744 "ps2epsi fails with Error: /undefined in
+ --setpagedevice--"
+
+Recent changes required to harden SAFER mode mean that it is no longer
+possible to run this script in SAFER mode, because it relies upon
+unsafe Ghostscript non-standard extension operators.
+
+Removing SAFER and DELAYSAFER, and the code to reset SAFER, allow the
+program to run as well as it ever did (ie badly). This program should
+now be considered unsafe, you should not use it on untrusted PostScript
+programs.
+
+I think its likely we will deprecate and remove this program in future.
+---
+ lib/ps2epsi     | 4 ++--
+ lib/ps2epsi.bat | 6 +++---
+ lib/ps2epsi.cmd | 4 ++--
+ lib/ps2epsi.ps  | 1 -
+ 4 files changed, 7 insertions(+), 8 deletions(-)
+
+diff --git a/lib/ps2epsi b/lib/ps2epsi
+index 5e1c173..d992180 100755
+--- lib/ps2epsi
++++ lib/ps2epsi
+@@ -49,7 +49,7 @@ else
+ 	outfile=$2
+ fi
+ 
+-"$GS_EXECUTABLE" -q -dBATCH -dNOPAUSE -P- -dSAFER -dDELAYSAFER -sDEVICE=bbox -sOutputFile=/dev/null "${infile}" 2>${outfile}
++"$GS_EXECUTABLE" -q -dBATCH -dNOPAUSE -P- -sDEVICE=bbox -sOutputFile=/dev/null "${infile}" 2>${outfile}
+ 
+ ls -l "${infile}" |
+ awk 'F==1	{
+@@ -91,7 +91,7 @@ awk 'F==1	{
+ 		}
+ 	' F=1 - F=2 "${outfile}" >>"$tmpfile"
+ 
+-"$GS_EXECUTABLE" -q -dNOPAUSE -P- -dSAFER -dDELAYSAFER -r72 -sDEVICE=bit -sOutputFile=/dev/null "$tmpfile" ps2epsi.ps "$tmpfile" <"${infile}" 1>&2
++"$GS_EXECUTABLE" -q -dNOPAUSE -P- -r72 -sDEVICE=bit -sOutputFile=/dev/null "$tmpfile" ps2epsi.ps "$tmpfile" <"${infile}" 1>&2
+ rm -f "$tmpfile"
+ rm -rf "$tmpdir"
+ 
+diff --git a/lib/ps2epsi.bat b/lib/ps2epsi.bat
+index 3c40aef..f5e7b3e 100755
+--- lib/ps2epsi.bat
++++ lib/ps2epsi.bat
+@@ -9,10 +9,10 @@ set outfile=%~2
+ 
+ rem First we need to determine the bounding box. ps2epsi.ps below will pick
+ rem the result up from %outfile%
+-%GSC% -q -dNOPAUSE -dBATCH -P- -dSAFER -dDELAYSAFER -sDEVICE=bbox -sOutputFile=NUL %1 2> %2
++%GSC% -q -dNOPAUSE -dBATCH -P- -sDEVICE=bbox -sOutputFile=NUL %1 2> %2
+ 
+ rem Ghostscript uses %outfile% to define the output file
+-%GSC% -q -dNOPAUSE -P- -dSAFER -dDELAYSAFER -sDEVICE=bit -sOutputFile=NUL ps2epsi.ps < %1
++%GSC% -q -dNOPAUSE -P- -sDEVICE=bit -sOutputFile=NUL ps2epsi.ps < %1
+ 
+ rem We bracket the actual file with a few commands to help encapsulation
+ echo %%%%Page: 1 1 >> %2
+@@ -22,7 +22,7 @@ echo userdict /setpagedevice /pop load put >> %2
+ 
+ rem Append the original onto the preview header
+ rem cat.ps uses the %infile% and %outfile% environment variables for the filenames
+-%GSC% -q -dNOPAUSE -dBATCH -P- -dSAFER -dDELAYSAFER -sDEVICE=bit -sOutputFile=NUL cat.ps
++%GSC% -q -dNOPAUSE -dBATCH -P- -sDEVICE=bit -sOutputFile=NUL cat.ps
+ 
+ 
+ echo %%%%EndDocument >> %2
+diff --git a/lib/ps2epsi.cmd b/lib/ps2epsi.cmd
+index abbe8a8..9eafdbd 100755
+--- lib/ps2epsi.cmd
++++ lib/ps2epsi.cmd
+@@ -12,10 +12,10 @@ set outfile=%2
+ 
+ rem First we need to determine the bounding box. ps2epsi.ps below will pick
+ rem the result up from %outfile%
+-gsos2 -q -dNOPAUSE -dBATCH -P- -dSAFER -dDELAYSAFER -sDEVICE=bbox -sOutputFile=NUL %infile% 2> %outfile%
++gsos2 -q -dNOPAUSE -dBATCH -P- -sDEVICE=bbox -sOutputFile=NUL %infile% 2> %outfile%
+ 
+ rem Ghostscript uses %outfile% to define the output file
+-gsos2 -q -dNOPAUSE -P- -dSAFER -dDELAYSAFER -sDEVICE=bit -sOutputFile=NUL ps2epsi.ps < %infile%
++gsos2 -q -dNOPAUSE -P- -sDEVICE=bit -sOutputFile=NUL ps2epsi.ps < %infile%
+ 
+ rem We bracket the actual file with a few commands to help encapsulation
+ echo %%%%Page: 1 1 >> %outfile%
+diff --git a/lib/ps2epsi.ps b/lib/ps2epsi.ps
+index 3cd970a..4bc5217 100644
+--- lib/ps2epsi.ps
++++ lib/ps2epsi.ps
+@@ -84,7 +84,6 @@ ps2edict begin
+      userdict /showpage { ps2edict begin epsipage end } bind put
+      userdict /setfont { ps2edict begin epsisetfont end } bind put
+      userdict /setpagedevice /pop load put
+-     //systemdict /.setsafe known { .setsafe } if
+    } bind def
+ 
+  /epsifontdict 100 dict def
+-- 
+2.9.1
+

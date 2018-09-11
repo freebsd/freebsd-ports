@@ -1,6 +1,17 @@
---- configure.orig	2018-03-21 08:49:04 UTC
+--- configure.orig	2018-09-03 08:51:26 UTC
 +++ configure
-@@ -5100,7 +5100,7 @@ if test "${enable_threadsafe+set}" = set; then :
+@@ -4357,8 +4357,8 @@ else
+         ;;
+         *BSD)
+         if test $ac_cv_c_compiler_gnu = yes; then
+-            CC_OPT_FLAGS_TO_TRY="-O2"
+-            CC_DBG_FLAGS_TO_TRY="-gdwarf-2 -g3 -O0"
++            CC_OPT_FLAGS_TO_TRY=""
++            CC_DBG_FLAGS_TO_TRY=""
+         fi
+         ;;
+         Darwin*)
+@@ -5143,7 +5143,7 @@ if test "${enable_threadsafe+set}" = set; then :
  fi
  
  if test x$enable_threadsafe = xyes ; then
@@ -9,7 +20,7 @@
  fi
  
  
-@@ -5762,7 +5762,6 @@ if ${ac_cv_lib_dl_dlopen+:} false; then :
+@@ -5805,7 +5805,6 @@ if ${ac_cv_lib_dl_dlopen+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -17,7 +28,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -5795,7 +5794,7 @@ $as_echo "$ac_cv_lib_dl_dlopen" >&6; }
+@@ -5838,7 +5837,7 @@ $as_echo "$ac_cv_lib_dl_dlopen" >&6; }
  if test "x$ac_cv_lib_dl_dlopen" = xyes; then :
    ac_fn_c_check_header_mongrel "$LINENO" "dlfcn.h" "ac_cv_header_dlfcn_h" "$ac_includes_default"
  if test "x$ac_cv_header_dlfcn_h" = xyes; then :
@@ -26,7 +37,7 @@
  fi
  
  
-@@ -9950,42 +9949,42 @@ if test x$enable_threadsafe = xyes; then
+@@ -10041,42 +10040,42 @@ if test x$enable_threadsafe = xyes; then
  
    for ntsdev in $NTS_DEVS ; do
      NTS_EXCLUDES="$(echo \"$P_DEVS0{@:0}\" | grep -o $ntsdev) $NTS_EXCLUDES"
@@ -77,7 +88,7 @@
    done
  
    NTS_EXCLUDES=`echo "$NTS_EXCLUDES" | tr " " "\n" | sort | uniq | tr "\n" " "`
-@@ -10145,7 +10144,12 @@ if test "${enable_dynamic+set}" = set; then :
+@@ -10251,7 +10250,12 @@ if test "${enable_dynamic+set}" = set; then :
        DBG_CFLAGS="$DYNAMIC_CFLAGS $DBG_CFLAGS"
        ;;
        *BSD)
