@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rdf
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -17,6 +17,7 @@ RUN_DEPENDS=	rubygem-hamster>=3.0:devel/rubygem-hamster \
 
 USES=		gem
 USE_RUBY=	yes
+
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/rdf
