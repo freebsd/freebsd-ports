@@ -1,7 +1,7 @@
---- src/hb-atomic-private.hh.orig	2018-08-01 21:15:00 UTC
-+++ src/hb-atomic-private.hh
-@@ -114,7 +114,12 @@ typedef LONG hb_atomic_int_impl_t;
- typedef int hb_atomic_int_impl_t;
+--- src/hb-atomic.hh.orig	2018-09-10 09:05:27 UTC
++++ src/hb-atomic.hh
+@@ -118,7 +118,12 @@ static_assert ((sizeof (LONG) == sizeof (int)), "");
+ 
  #define hb_atomic_int_impl_add(AI, V)		__sync_fetch_and_add ((AI), (V))
  
 +#if defined(__FreeBSD__) && defined(__mips__)
