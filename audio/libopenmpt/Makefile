@@ -6,7 +6,8 @@ PORTVERSION=	0.3.11
 DISTVERSIONSUFFIX=	+release.autotools
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	https://lib.openmpt.org/files/libopenmpt/src/
+MASTER_SITES=	https://lib.openmpt.org/files/libopenmpt/src/ \
+		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Module music library based on OpenMPT
