@@ -1,3 +1,5 @@
 %%SITE_ARCH%%/Storable.pm
+%%SITE_ARCH%%/Storable/Limit.pm
 %%SITE_ARCH%%/auto/Storable/Storable.so
 %%PERL5_MAN3%%/Storable.3.gz
+%%PERL5_MAN3%%/Storable::Limit.3.gz
