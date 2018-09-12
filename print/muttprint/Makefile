@@ -3,7 +3,7 @@
 
 PORTNAME=	muttprint
 PORTVERSION=	0.73
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print mail
 MASTER_SITES=	SF/muttprint/muttprint/muttprint-${PORTVERSION}
 
@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	docbook2pdf:textproc/docbook-utils \
 		docbook-sgml>0:textproc/docbook-sgml
 RUN_DEPENDS=	psnup:print/psutils \
-		uncompface:mail/faces \
 		p5-TimeDate>=0:devel/p5-TimeDate \
 		p5-Text-Iconv>=0:converters/p5-Text-Iconv
 
@@ -26,11 +25,13 @@ USE_TEX=	latex dvipsk
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
 
-OPTIONS_DEFINE=		CUPS X11 DOCS
+OPTIONS_DEFINE=		CUPS X11 DOCS XFACE
 OPTIONS_DEFAULT=	X11
 X11_DESC=		graphics/ImageMagick[-nox11] dependency
+XFACE_DESC=		mail/faces dependency (requires gtk12)
 
 CUPS_RUN_DEPENDS=	lpr-cups:print/cups
+XFACE_RUN_DEPENDS=	uncompface:mail/faces
 
 .if !defined(PAPERSIZE)
 PAPERSIZE=	letter
