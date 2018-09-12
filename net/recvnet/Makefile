@@ -5,7 +5,7 @@ PORTNAME=	recvnet
 PORTVERSION=	0.0.1
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://www.vanheusden.com/Linux/ \
+MASTER_SITES=	https://www.vanheusden.com/Linux/ \
 		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
