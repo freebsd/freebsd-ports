@@ -149,6 +149,7 @@
     SUBDIR += octopus
     SUBDIR += openbabel
     SUBDIR += openkim
+    SUBDIR += openmx
     SUBDIR += openstructure
     SUBDIR += p5-Algorithm-SVMLight
     SUBDIR += p5-Chemistry-3DBuilder
