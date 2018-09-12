@@ -5,6 +5,3 @@ than shelling out to a system's diff(1) executable for small files, and
 generally slower on larger files.
 
 WWW: https://metacpan.org/release/Text-Diff
-
--Anton
-<tobez@FreeBSD.org>
