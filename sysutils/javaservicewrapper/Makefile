@@ -7,12 +7,12 @@ CATEGORIES=	sysutils java
 MASTER_SITES=	http://wrapper.tanukisoftware.com/download/${PORTVERSION}/
 DISTNAME=	wrapper_${PORTVERSION}_src
 
-MAINTAINER=	mike.jakubik@gmail.com
+MAINTAINER=	michael.osipov@siemens.com
 COMMENT=	Application to solve problems common to many Java applications
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_JAVA=	1.4+
+USE_JAVA=	1.8+
 USE_ANT=	yes
 USES=		gmake iconv
 
