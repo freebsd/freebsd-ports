@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openmpi
-PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTVERSION=	2.1.5
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 PKGNAMESUFFIX=	2
@@ -47,6 +46,8 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
 			--enable-heterogeneous \
 			--enable-mpi-thread-multiple \
 			--with-libevent=external \
+			--enable-mca-no-build=verbs,btl_openib,oob_ud \
+			--without-verbs \
 			--with-wrapper-ldflags=-Wl,-rpath=-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER} \
 			ompi_cv_fortran_ignore_tkr_data=0
 
