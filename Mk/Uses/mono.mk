@@ -102,7 +102,8 @@ _NUGET_PACKAGEDIR=	${WRKDIR}/.nuget/packages
 NUGET_PACKAGEDIR?=	${WRKSRC}/packages
 NUGET_LAYOUT?=		legacy
 NUGET_FEEDS?=		NUGET
-NUGET_URL?=		https://www.nuget.org/api/v2/
+NUGET_URL?=		https://api.nuget.org/v3-flatcontainer/
+NUGET_VERSION?=		v3
 
 PAKET_PACKAGEDIR?=
 PAKET_DEPENDS?=
@@ -112,19 +113,25 @@ NUGET_DEPENDS?=		${PAKET_DEPENDS}
 ${feed}_DEPENDS?=
 ${feed}_FILE?=		${PKGDIR}/nupkg-${feed:tl}
 ${feed}_URL?=		https://dotnet.myget.org/F/${feed:tl:S/_/-/g}/api/v2/
+${feed}_VERSION?=	v2
 .  if exists(${${feed}_FILE})
 ${feed}_EXTRA!=		${CAT} ${${feed}_FILE}
 .  else
 ${feed}_EXTRA=
 .  endif
+MAKENUPKG_ENV+=		${feed:tl}_URL="${${feed}_URL}" ${feed:tl}_VERSION="${${feed}_VERSION}"
 .  for depend in ${${feed}_DEPENDS} ${${feed}_EXTRA}
 .   if empty(_NUGET_DEPENDS:M${depend})
 id=		${depend:C/=.*$//}
 version=	${depend:C/^.*=//}
-group=		nuget_${depend:S/.//g:S/-//g:S/=//g}
+group=		nuget_${depend:C/[.+=-]//g}
 nupkg=		${id:tl}.${version}.nupkg
 DISTFILES_${group}:=	${nupkg}:${group}
+.    if ${${feed}_VERSION} == v2
 MASTER_SITES_${group}:=	${${feed}_URL}package/${id}/${version}?dummy=/:${group}
+.    else
+MASTER_SITES_${group}:=	${${feed}_URL}${id:tl}/${version}/:${group}
+.    endif
 NUGET_NUPKGS_${group}:=	${nupkg}:${depend}
 NUPKGS_${id}:=	${NUPKGS_${id}} ${version}
 
@@ -202,29 +209,26 @@ makenuget: patch
 			-e '$$!s|$$| \\|g'
 
 makenupkg:
-	@[ -f ${NUGET_EXE} ] || fetch -o ${NUGET_EXE} ${NUGET_LATEST_URL}
-.for feed in ${NUGET_FEEDS}
-	@[ -f ${WRKDIR}/.nupkg-${feed:tl} -o ${feed} = NUGET ] || mono ${NUGET_EXE} list -AllVersions -IncludeDelisted -PreRelease -Source ${${feed}_URL} | ${SED} 's/ /=/g' > ${WRKDIR}/.nupkg-${feed:tl}
-	@${RM} ${WRKDIR}/nupkg-${feed:tl}
-.endfor
+	@${RM} ${WRKDIR}/nupkg-*
 	@for nuspec in `${FIND} ${_NUGET_PACKAGEDIR} -name '*.nuspec'`; do \
 		name="`${SED} -nE 's|.*<id>(.*)</id>.*|\1|p' $$nuspec`"; \
 		version="`${SED} -nE 's|.*<version>(.*)</version>.*|\1|p' $$nuspec`"; \
-		${ECHO} $$name=$$version; \
-	done | ${SORT} -u > ${WRKDIR}/.nupkgs
-	@${CAT} ${WRKDIR}/.nupkgs | while read nupkg; do \
-		default=no; \
-		for feed in ${NUGET_FEEDS:tl}; do \
-			if [ $$feed = nuget ]; then \
-				default=yes; \
-			elif ${GREP} -q "^$$nupkg\$$" ${WRKDIR}/.nupkg-$$feed; then \
-				${ECHO} $$nupkg >> ${WRKDIR}/nupkg-$$feed; \
-				default=na; \
+		echo $$name=$$version ; \
+	done | ${SORT} -u | ${SETENV} ${MAKENUPKG_ENV} ${XARGS} -n1 sh -c ' \
+		for feed in ${NUGET_FEEDS:MNUGET:tl} ${NUGET_FEEDS:NNUGET:tl}; do \
+			if eval [ "\$${$${feed}_VERSION}" = v2 ]; then \
+				eval url="\$${$${feed}_URL}package/$${0%%=*}/$${0##*=}"; \
+			else \
+				eval url="\$${$${feed}_URL}$${0%%=*}/$${0##*=}/$${0%%=*}.$${0##*=}.nupkg"; \
+			fi; \
+			if curl --output /dev/null --silent --head --fail $$url; then\
+				${ECHO} $$0 >> ${WRKDIR}/nupkg-$$feed; \
+				found=yes; \
 				break; \
 			fi; \
 		done; \
-		if [ $$default = yes ]; then \
-			${ECHO} $$nupkg >> ${WRKDIR}/nupkg-nuget; \
-		fi; \
-	done
+		if [ -z "$$found" ]; then \
+			echo "$$0: no feed found"; \
+			exit 1; \
+		fi'
 .endif
