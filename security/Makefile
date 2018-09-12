@@ -465,6 +465,7 @@
     SUBDIR += openssh-portable
     SUBDIR += openssl
     SUBDIR += openssl111
+    SUBDIR += openssl-devel
     SUBDIR += openssl-unsafe
     SUBDIR += openssl_tpm_engine
     SUBDIR += openvas8
