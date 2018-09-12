@@ -16,7 +16,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS_INSTALL=	libressl-[0-9]* \
 			libressl-devel-[0-9]* \
-			openssl-[0-9]*
+			openssl-[0-9]* \
+			openssl111-[0-9]*
+
+DEPRECATED=		Upstream support ends 2019-09-11
+EXPIRATION_DATE=	2019-09-11
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
