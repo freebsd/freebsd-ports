@@ -4,7 +4,7 @@
 PORTNAME=	httping
 PORTVERSION=	2.5
 CATEGORIES=	net
-MASTER_SITES=	http://www.vanheusden.com/httping/ \
+MASTER_SITES=	https://www.vanheusden.com/httping/ \
 		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
