@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-local
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-fog-core1>=1.27:devel/rubygem-fog-core1
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
