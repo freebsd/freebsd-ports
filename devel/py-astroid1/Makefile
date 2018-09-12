@@ -20,9 +20,10 @@ RUN_DEPENDS=	${PY_ENUM34} \
 
 PORTSCOUT=	limit:^1\.
 
-NO_ARCH=	yes
-USE_PYTHON=	autoplist concurrent distutils
 USES=		python
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
