@@ -31,7 +31,7 @@ NUGET_DEPENDS=	FuzzyLogicLibrary=1.2.0 \
 		Open.NAT=2.1.0 \
 		SharpFont=4.0.1 \
 		SharpZipLib=0.86.0 \
-		StyleCop.MSBuild=4.7.49.0 \
+		StyleCop.MSBuild=4.7.49 \
 		StyleCopPlus.MSBuild=4.7.49.5 \
 		rix0rrr.BeaconLib=1.0.1
 
