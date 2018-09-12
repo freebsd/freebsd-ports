@@ -42,6 +42,7 @@
 %%WWWDIR%%/classes/labels.php
 %%WWWDIR%%/classes/logger.php
 %%WWWDIR%%/classes/logger/sql.php
+%%WWWDIR%%/classes/logger/stdout.php
 %%WWWDIR%%/classes/logger/syslog.php
 %%WWWDIR%%/classes/opml.php
 %%WWWDIR%%/classes/plugin.php
@@ -114,7 +115,6 @@
 %%WWWDIR%%/include/autoload.php
 %%WWWDIR%%/include/colors.php
 %%WWWDIR%%/include/controls.php
-%%WWWDIR%%/include/crypt.php
 %%WWWDIR%%/include/db-prefs.php
 %%WWWDIR%%/include/db.php
 %%WWWDIR%%/include/errorhandler.php
@@ -127,9 +127,12 @@
 %%WWWDIR%%/include/version.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install/index.php
+%%WWWDIR%%/js/FeedStoreModel.js
 %%WWWDIR%%/js/FeedTree.js
 %%WWWDIR%%/js/PluginHost.js
+%%WWWDIR%%/js/PrefFeedStore.js
 %%WWWDIR%%/js/PrefFeedTree.js
+%%WWWDIR%%/js/PrefFilterStore.js
 %%WWWDIR%%/js/PrefFilterTree.js
 %%WWWDIR%%/js/PrefLabelTree.js
 %%WWWDIR%%/js/feedlist.js
@@ -138,10 +141,12 @@
 %%WWWDIR%%/js/prefs.js
 %%WWWDIR%%/js/tt-rss.js
 %%WWWDIR%%/js/viewfeed.js
+%%WWWDIR%%/lib/CheckBoxStoreModel.js
 %%WWWDIR%%/lib/CheckBoxTree.js
 %%WWWDIR%%/lib/MiniTemplator.class.php
 %%WWWDIR%%/lib/Mobile_Detect.php
 %%WWWDIR%%/lib/accept-to-gettext.php
+%%WWWDIR%%/lib/_CheckBoxTreeNode.js
 %%WWWDIR%%/lib/dijit/BackgroundIframe.js
 %%WWWDIR%%/lib/dijit/CONTRIBUTING.md
 %%WWWDIR%%/lib/dijit/Calendar.js
@@ -2399,13 +2404,6 @@
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_whomp.php
 %%WWWDIR%%/plugins/af_comics/init.php
 %%WWWDIR%%/plugins/af_fsckportal/init.php
-%%WWWDIR%%/plugins/af_lang_detect/init.php
-%%WWWDIR%%/plugins/af_lang_detect/languagedetect/LanguageDetect.php
-%%WWWDIR%%/plugins/af_lang_detect/languagedetect/Text/LanguageDetect/Exception.php
-%%WWWDIR%%/plugins/af_lang_detect/languagedetect/Text/LanguageDetect/ISO639.php
-%%WWWDIR%%/plugins/af_lang_detect/languagedetect/Text/LanguageDetect/Parser.php
-%%WWWDIR%%/plugins/af_lang_detect/languagedetect/data/lang.dat
-%%WWWDIR%%/plugins/af_lang_detect/languagedetect/data/unicode_blocks.dat
 %%WWWDIR%%/plugins/af_psql_trgm/button.png
 %%WWWDIR%%/plugins/af_psql_trgm/init.js
 %%WWWDIR%%/plugins/af_psql_trgm/init.php
@@ -2853,11 +2851,6 @@
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_redditimgur
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_readability
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_psql_trgm
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_lang_detect/languagedetect/Text/LanguageDetect
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_lang_detect/languagedetect/Text
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_lang_detect/languagedetect/data
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_lang_detect/languagedetect
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_lang_detect
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_fsckportal
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_comics/filters.local
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/af_comics/filters

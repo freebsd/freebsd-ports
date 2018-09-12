@@ -28,6 +28,6 @@ in your config.php; remember to modify after that if needed. And your
 DB_USER must be granted to ALTER any tables of your DB_NAME. And don't
 forget to empty the cache of your browser!
 
-Please read <http://tt-rss.org/redmine/wiki/tt-rss/InstallationNotes> and
-<http://tt-rss.org/redmine/wiki/tt-rss/UpdatingFeeds> for important points.
+Please read <https://git.tt-rss.org/fox/tt-rss/wiki/InstallationNotes> and
+<https://git.tt-rss.org/fox/tt-rss/wiki/UpdatingFeeds> for important points.
 ===============================================================================
