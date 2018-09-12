@@ -56,6 +56,7 @@
     SUBDIR += dcl
     SUBDIR += devisor
     SUBDIR += dft_tools
+    SUBDIR += dftbplus
     SUBDIR += dkh
     SUBDIR += dlib-cpp
     SUBDIR += dlpoly-classic

@@ -1,0 +1,11 @@
+--- external/xmlf90/make.dpbuild.orig	2018-09-12 21:14:34 UTC
++++ external/xmlf90/make.dpbuild
+@@ -31,7 +31,7 @@ clean:
+ 	rm -f *.o _mod_* *.mod
+ 
+ %.o: %.f90
+-	$(FXX) $(FXXOPT) -o $@ -c $<
++	$(FXX) -c $(FXXOPT) -o $@ -c $<
+ 
+ _mod_%:
+ 	@[ -f $< ] && touch $@
