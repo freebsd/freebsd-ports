@@ -1,0 +1,9 @@
+DFTB+ is a fast and efficient versatile quantum mechanical simulation software
+package. Using DFTB+ you can carry out quantum mechanical simulations similar to
+density functional theory but in an approximate way, typically gaining around
+two orders of magnitude in speed.
+
+DFTB+ can be used either as a standalone application or embeded it into other
+academic or commercial simulation packages as a library.
+
+WWW: https://www.dftbplus.org/
