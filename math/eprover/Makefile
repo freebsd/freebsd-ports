@@ -3,6 +3,7 @@
 PORTNAME=	eprover
 DISTVERSIONPREFIX=	E-
 DISTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	greg@unrelenting.technology
@@ -39,10 +40,10 @@ post-install:
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
 # the default compiler hangs on 10
-BUILD_DEPENDS+=	clang40:devel/llvm40
-RUN_DEPENDS+=	clang40:devel/llvm40
-CC=		clang40
-CXX=		clang++40
+BUILD_DEPENDS+=	clang60:devel/llvm60
+RUN_DEPENDS+=	clang60:devel/llvm60
+CC=		clang60
+CXX=		clang++60
 .endif
 
 .include <bsd.port.post.mk>
