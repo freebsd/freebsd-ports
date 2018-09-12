@@ -18,6 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid>=2.0.0:devel/py-astroid@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}isort>=4.2.5:devel/py-isort@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mccabe>=0:devel/py-mccabe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:3.4+ shebangfix
 USE_PYTHON=	distutils py3kplist
