@@ -14,7 +14,7 @@ COMMENT=	Cartographic library with Matplotlib support for visualisation
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-BUILD_DEPENDS=	geos>-3.3.3:graphics/geos \
+BUILD_DEPENDS=	geos>=3.3.3:graphics/geos \
 		proj>=4.9.0:graphics/proj \
 		${PYNUMPY}
 LIB_DEPENDS=	libgeos.so:graphics/geos \
