@@ -2,4 +2,4 @@ Recoverjpeg tries to recover JFIF (JPEG) pictures from a peripheral. This may
 be useful if you mistakenly overwrite a partition or if a device such as a
 digital camera memory card is bogus.
 
-WWW: http://www.rfc1149.net/devel/recoverjpeg
+WWW: https://rfc1149.net/devel/recoverjpeg.html

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recoverjpeg
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.3
 CATEGORIES=	graphics
 MASTER_SITES=	https://rfc1149.net/download/${PORTNAME}/ \
 		LOCAL/ehaupt
