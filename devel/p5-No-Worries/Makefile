@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	No-Worries
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,10 +10,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	No::Worries - coding without worries
 
-BUILD_DEPENDS=	p5-HTTP-Date>=0:www/p5-HTTP-Date \
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-HTTP-Date>=0:www/p5-HTTP-Date \
 		p5-Params-Validate>=0:devel/p5-Params-Validate \
 		p5-URI>=0:net/p5-URI
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
