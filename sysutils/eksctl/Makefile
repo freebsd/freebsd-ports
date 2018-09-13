@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eksctl
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -24,6 +24,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 GO_PKGNAME=	github.com/weaveworks/${PORTNAME}
 GO_TARGET=	${GO_PKGNAME}/cmd/${PORTNAME}
-GO_BUILDFLAGS=	-ldflags="-X main.gitCommit=${PORTVERSION}"
+GO_BUILDFLAGS=	-ldflags="-X main.gitCommit=${PORTVERSION} \
+		-X main.builtAt=$$(date +'%s')"
 
 .include <bsd.port.mk>
