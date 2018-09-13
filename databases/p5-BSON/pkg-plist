@@ -3,6 +3,7 @@
 %%SITE_PERL%%/BSON/Bool.pm
 %%SITE_PERL%%/BSON/Bytes.pm
 %%SITE_PERL%%/BSON/Code.pm
+%%SITE_PERL%%/BSON/DBPointer.pm
 %%SITE_PERL%%/BSON/DBRef.pm
 %%SITE_PERL%%/BSON/Decimal128.pm
 %%SITE_PERL%%/BSON/Doc.pm
@@ -17,6 +18,7 @@
 %%SITE_PERL%%/BSON/Raw.pm
 %%SITE_PERL%%/BSON/Regex.pm
 %%SITE_PERL%%/BSON/String.pm
+%%SITE_PERL%%/BSON/Symbol.pm
 %%SITE_PERL%%/BSON/Time.pm
 %%SITE_PERL%%/BSON/Timestamp.pm
 %%SITE_PERL%%/BSON/Types.pm
@@ -25,6 +27,7 @@
 %%PERL5_MAN3%%/BSON::Bool.3.gz
 %%PERL5_MAN3%%/BSON::Bytes.3.gz
 %%PERL5_MAN3%%/BSON::Code.3.gz
+%%PERL5_MAN3%%/BSON::DBPointer.3.gz
 %%PERL5_MAN3%%/BSON::DBRef.3.gz
 %%PERL5_MAN3%%/BSON::Decimal128.3.gz
 %%PERL5_MAN3%%/BSON::Doc.3.gz
@@ -39,6 +42,7 @@
 %%PERL5_MAN3%%/BSON::Raw.3.gz
 %%PERL5_MAN3%%/BSON::Regex.3.gz
 %%PERL5_MAN3%%/BSON::String.3.gz
+%%PERL5_MAN3%%/BSON::Symbol.3.gz
 %%PERL5_MAN3%%/BSON::Time.3.gz
 %%PERL5_MAN3%%/BSON::Timestamp.3.gz
 %%PERL5_MAN3%%/BSON::Types.3.gz
