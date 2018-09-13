@@ -43,6 +43,7 @@ bin/llvm-strip%%LLVM_SUFFIX%%
 bin/llvm-symbolizer%%LLVM_SUFFIX%%
 bin/llvm-tblgen%%LLVM_SUFFIX%%
 bin/llvm-undname%%LLVM_SUFFIX%%
+bin/llvm-xray%%LLVM_SUFFIX%%
 bin/macho-dump%%LLVM_SUFFIX%%
 bin/opt%%LLVM_SUFFIX%%
 bin/sancov%%LLVM_SUFFIX%%
