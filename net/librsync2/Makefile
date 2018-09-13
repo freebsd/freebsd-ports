@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	librsync
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.2
 DISTVERSIONPREFIX=v
-PORTREVISION=	1
 CATEGORIES=	net devel
 PKGNAMESUFFIX=	2
 
@@ -20,12 +19,11 @@ CONFLICTS=	librsync-[0-9]* librsync1-[0-9]*
 
 USE_GITHUB=	yes
 
-USES=		cmake perl5
-USE_PERL5=	build
+USES=		cmake
 USE_LDCONFIG=	yes
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librsync.so.2.0.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librsync.so.${PORTVERSION}
 	${INSTALL_MAN} ${WRKSRC}/doc/librsync.3 ${STAGEDIR}${MANPREFIX}/man/man3
 	${INSTALL_MAN} ${WRKSRC}/doc/rdiff.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
