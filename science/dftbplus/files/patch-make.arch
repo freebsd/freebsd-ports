@@ -1,0 +1,57 @@
+--- make.arch.orig	2018-09-12 23:49:19 UTC
++++ make.arch
+@@ -13,17 +13,17 @@ FXX = mpif90
+ CC = gcc
+ 
+ # Compiler options
+-FXXOPT = -O2 -funroll-all-loops -fopenmp
+-CCOPT = -O2 -funroll-all-loops -fall-intrinsics
++FXXOPT = $(FFLAGS) -funroll-all-loops -fopenmp
++CCOPT = $(CFLAGS) -funroll-all-loops -fall-intrinsics
+ 
+ # Linker
+ LN = $(FXX)
+-LNOPT = -fopenmp
++LNOPT = $(LDFLAGS) -fopenmp
+ 
+ # How to link specific libraries
+ 
+ # ScaLAPACK
+-SCALAPACKDIR = /usr/lib
++SCALAPACKDIR = $(PREFIX)
+ LIB_SCALAPACK = -L$(SCALAPACKDIR) -lscalapack
+ 
+ # LAPACK/BLAS
+@@ -49,12 +49,12 @@ FXX = gfortran
+ CC = gcc
+ 
+ # Compiler options
+-FXXOPT = -O2 -funroll-all-loops -fopenmp
+-CCOPT = -O2 -funroll-all-loops -fall-intrinsics
++FXXOPT = $(FFLAGS) -funroll-all-loops -fopenmp
++CCOPT = $(CFLAGS) -funroll-all-loops -fall-intrinsics
+ 
+ # Linker
+ LN = $(FXX)
+-LNOPT = -fopenmp
++LNOPT = $(LDFLAGS) -fopenmp
+ 
+ # How to link specific libraries
+ 
+@@ -88,12 +88,12 @@ LIBOPT = 
+ # Override options for different DEBUG modes
+ ifeq ($(strip $(DEBUG)),1)
+     OTHERLIBS = 
+-    FXXOPT = -fopenmp -g -Wall -std=f2008 -pedantic
+-    CCOPT = -g -Wall -pedantic -fall-intrinsics
++    FXXOPT = $(FFLAGS) -fopenmp -g -Wall -std=f2008 -pedantic
++    CCOPT = $(CFLAGS) -g -Wall -pedantic -fall-intrinsics
+ endif
+ 
+ ifeq ($(strip $(DEBUG)),2)
+     OTHERLIBS = 
+-    FXXOPT = -fopenmp -g -Wall -std=f2008 -pedantic -fbounds-check
+-    CCOPT = -g -Wall -pedantic -fall-intrinsics -fbounds-check
++    FXXOPT = $(FFLAGS) -fopenmp -g -Wall -std=f2008 -pedantic -fbounds-check
++    CCOPT = $(CFLAGS) -g -Wall -pedantic -fall-intrinsics -fbounds-check
+ endif
