@@ -1,6 +1,17 @@
 --- makefile.orig	2018-08-17 17:13:08 UTC
 +++ makefile
-@@ -123,11 +123,11 @@ install_misc_skderivs install_misc_slako
+@@ -10,7 +10,9 @@ ROOT := $(PWD)
+ .PHONY: default misc all
+ default: dftb+ modes waveplot
+ misc: misc_skderivs misc_slakovalue
+-all: default misc
++all: print-WITH_DFTD3 print-WITH_MPI print-WITH_SOCKETS print-WITH_ARPACK default misc
++
++print-%  : ; @echo "Build variable: " $* = $($*)
+ 
+ .PHONY: install install_misc install_all
+ install: install_dftb+ install_modes install_waveplot install_dptools
+@@ -123,11 +125,11 @@ install_misc_skderivs install_misc_slako
  	    ROOT=$(ROOT) BUILDROOT=$(BUILDDIR) install
  
  
