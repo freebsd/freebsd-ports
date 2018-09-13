@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	BSON-XS
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
@@ -17,13 +17,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	p5-Config-AutoConf>=0.220:devel/p5-Config-AutoConf \
 		p5-Path-Tiny>=0.052:devel/p5-Path-Tiny \
 		${RUN_DEPENDS}
-RUN_DEPENDS=	p5-BSON>=1.6.6:databases/p5-BSON
+RUN_DEPENDS=	p5-BSON>=1.8.0:databases/p5-BSON
 TEST_DEPENDS=	p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
 		p5-Path-Tiny>=0.054:devel/p5-Path-Tiny \
 		p5-Test-Deep>=0:devel/p5-Test-Deep \
+		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Tie-IxHash>=0:devel/p5-Tie-IxHash
 
-USES=		perl5 gmake
+USES=		gmake perl5
 USE_PERL5=	configure
 
 CFLAGS+=	-DBSON_COMPILATION
