@@ -1,12 +1,16 @@
 %%SITE_PERL%%/Data/Remember.pm
+%%SITE_PERL%%/Data/Remember/Class.pm
 %%SITE_PERL%%/Data/Remember/DBM.pm
 %%SITE_PERL%%/Data/Remember/Hybrid.pm
 %%SITE_PERL%%/Data/Remember/Memory.pm
 %%SITE_PERL%%/Data/Remember/POE.pm
+%%SITE_PERL%%/Data/Remember/Util.pm
 %%SITE_PERL%%/Data/Remember/YAML.pm
 %%PERL5_MAN3%%/Data::Remember.3.gz
+%%PERL5_MAN3%%/Data::Remember::Class.3.gz
 %%PERL5_MAN3%%/Data::Remember::DBM.3.gz
 %%PERL5_MAN3%%/Data::Remember::Hybrid.3.gz
 %%PERL5_MAN3%%/Data::Remember::Memory.3.gz
 %%PERL5_MAN3%%/Data::Remember::POE.3.gz
+%%PERL5_MAN3%%/Data::Remember::Util.3.gz
 %%PERL5_MAN3%%/Data::Remember::YAML.3.gz
