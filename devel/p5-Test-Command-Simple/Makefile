@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Command-Simple
-PORTVERSION=	0.04
-PORTREVISION=	1
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:DMCBRIDE
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test external commands (nearly) as easily as loaded modules
 
-TEST_DEPENDS=	p5-Test-Simple>=0.96:devel/p5-Test-Simple
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
