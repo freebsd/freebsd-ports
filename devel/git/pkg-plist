@@ -133,12 +133,14 @@ libexec/git-core/git-prune-packed
 libexec/git-core/git-pull
 libexec/git-core/git-push
 libexec/git-core/git-quiltimport
+libexec/git-core/git-range-diff
 libexec/git-core/git-read-tree
 libexec/git-core/git-rebase
 libexec/git-core/git-rebase--am
 libexec/git-core/git-rebase--helper
 libexec/git-core/git-rebase--interactive
 libexec/git-core/git-rebase--merge
+libexec/git-core/git-rebase--preserve-merges
 libexec/git-core/git-receive-pack
 libexec/git-core/git-reflog
 libexec/git-core/git-remote
@@ -318,6 +320,7 @@ man/man1/git-prune.1.gz
 man/man1/git-pull.1.gz
 man/man1/git-push.1.gz
 man/man1/git-quiltimport.1.gz
+man/man1/git-range-diff.1.gz
 man/man1/git-read-tree.1.gz
 man/man1/git-rebase.1.gz
 man/man1/git-receive-pack.1.gz
@@ -1391,6 +1394,8 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/thunderbird-patch-inline/appp.sh
 %%CONTRIB%%share/git-core/contrib/update-unicode/README
 %%CONTRIB%%share/git-core/contrib/update-unicode/update_unicode.sh
+%%CONTRIB%%share/git-core/contrib/vscode/README.md
+%%CONTRIB%%share/git-core/contrib/vscode/init.sh
 %%CONTRIB%%share/git-core/contrib/workdir/git-new-workdir
 share/git-core/templates/description
 share/git-core/templates/hooks/applypatch-msg.sample
