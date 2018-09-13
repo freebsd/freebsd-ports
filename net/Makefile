@@ -1274,6 +1274,7 @@
     SUBDIR += rubygem-gitaly-proto094
     SUBDIR += rubygem-gitlab_omniauth-ldap
     SUBDIR += rubygem-gitlab_omniauth-ldap20
+    SUBDIR += rubygem-google-cloud-env
     SUBDIR += rubygem-grpc
     SUBDIR += rubygem-hangouts-chat
     SUBDIR += rubygem-http_parser.rb
