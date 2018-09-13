@@ -1,4 +1,3 @@
 %%SITE_ARCH%%/Algorithm/Permute.pm
 %%SITE_ARCH%%/auto/Algorithm/Permute/Permute.so
-%%SITE_ARCH%%/auto/Algorithm/Permute/autosplit.ix
 %%PERL5_MAN3%%/Algorithm::Permute.3.gz
