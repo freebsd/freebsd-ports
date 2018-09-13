@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dash
-PORTVERSION=	0.5.9.1
+PORTVERSION=	0.5.10.2
 CATEGORIES=	shells
 MASTER_SITES=	http://gondor.apana.org.au/~herbert/dash/files/
 
@@ -12,12 +12,14 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-# This work in 11-CURRENT r266677M amd64 but fails to work in 11.0-CURRENT r266677 i386
+# SIGRTMAX is larger than NSIG*2 which mksignames.c does not support.  Just
+# disable RT signal handling.
 CFLAGS+=	-DUNUSABLE_RT_SIGNALS
 
 USES=		gmake
 
-PLIST_FILES=	bin/dash man/man1/dash.1.gz
+PLIST_FILES=	bin/dash \
+		man/man1/dash.1.gz
 
 post-patch:
 	${REINPLACE_CMD} -e '/COMMON_CFLAGS =/ s|$$| ${CFLAGS}|' \
