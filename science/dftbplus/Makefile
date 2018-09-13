@@ -8,8 +8,7 @@ CATEGORIES=	science
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DFTB+: Package for performing fast atomistic simulations
 
-LICENSE=	LGPL3+ GPLv1 # main code is under LGPL3+, the bundled dftd3-lib is under GPLv1
-LICENSE_COMB=	multi
+LICENSE=	GPLv3 # main code is under LGPL3+, the bundled dftd3-lib is under GPLv1+, this makes the result GPLv3 (based on https://www.gnu.org/licenses/gpl-faq.html#AllCompatibility)
 
 LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack \
