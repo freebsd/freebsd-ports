@@ -255,6 +255,7 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/commands/suspend/command.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/commands/suspend/plugin.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/commands/up/command.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/commands/up/middleware/store_box_metadata.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/commands/up/plugin.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/commands/up/start_mixins.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/commands/validate/command.rb
@@ -817,6 +818,7 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/pushes/atlas/push.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/pushes/ftp/adapter.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/pushes/ftp/config.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/pushes/ftp/errors.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/pushes/ftp/locales/en.yml
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/pushes/ftp/plugin.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/pushes/ftp/push.rb
@@ -886,6 +888,7 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/nixos/network.erb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/openbsd/network_dhcp.erb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/openbsd/network_static.erb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/openbsd/network_static6.erb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/redhat/network_dhcp.erb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/redhat/network_static.erb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/guests/redhat/network_static6.erb
