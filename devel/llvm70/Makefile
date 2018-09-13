@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	7.0.0rc2
+DISTVERSION=	7.0.0rc3
 PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	http://${PRE_}releases.llvm.org/${LLVM_RELEASE}/${RCDIR}
@@ -154,6 +154,7 @@ COMMANDS=	bugpoint \
 		llvm-symbolizer \
 		llvm-tblgen \
 		llvm-undname \
+		llvm-xray \
 		macho-dump \
 		opt \
 		sancov
