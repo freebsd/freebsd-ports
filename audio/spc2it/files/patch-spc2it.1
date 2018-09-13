@@ -1,0 +1,30 @@
+--- spc2it.1.orig	2018-09-13 18:57:56 UTC
++++ spc2it.1
+@@ -0,0 +1,27 @@
++.TH spc2it "1" "September 10 2018" "User Commands"
++.SH NAME
++spc2it \- converts SPC700 sound files to the Impulse Tracker format
++.SH SYNOPSIS
++.B spc2it
++.RI [ options ] " filename"
++.TP
++Where <filename> is any .spc or .sp# file
++.SH DESCRIPTION
++This manual describes the
++.B spc2it
++command. It converts SPC files to IT (Impulse Tracker) files.
++.TP
++Options:
++.TP
++\fB\-t\fR x
++Specify a time limit in seconds        [60 default]
++.TP
++\fB\-d\fR xxxxxxxx Voices to disable (1\-8)           [none default]
++.TP
++\fB\-r\fR xxx
++Specify IT rows per pattern            [200 default]
++.IP
++.SH "SEE ALSO"
++.BR adplay (1),
++.BR schismtracker (1).
++.br
