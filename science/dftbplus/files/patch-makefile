@@ -11,12 +11,7 @@
  
  .PHONY: install install_misc install_all
  install: install_dftb+ install_modes install_waveplot install_dptools
-@@ -123,11 +125,11 @@ install_misc_skderivs install_misc_slako
- 	    ROOT=$(ROOT) BUILDROOT=$(BUILDDIR) install
- 
- 
--PYTHON := python
-+PYTHON ?= python
+@@ -127,7 +129,7 @@ PYTHON := python
  .PHONY: install_dptools
  install_dptools:
  	cd $(ROOT)/tools/dptools \
