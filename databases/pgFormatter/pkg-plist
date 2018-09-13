@@ -1,9 +1,9 @@
 bin/pg_format
-%%PERL5_MAN1%%/pg_format.1.gz
-%%PERL5_MAN3%%/pgFormatter::Beautify.3.gz
-%%PERL5_MAN3%%/pgFormatter::CGI.3.gz
-%%PERL5_MAN3%%/pgFormatter::CLI.3.gz
 %%SITE_PERL%%/pgFormatter/Beautify.pm
 %%SITE_PERL%%/pgFormatter/CGI.pm
 %%SITE_PERL%%/pgFormatter/CLI.pm
 %%SITE_PERL%%/regress_test.pl
+%%PERL5_MAN1%%/pg_format.1.gz
+%%PERL5_MAN3%%/pgFormatter::Beautify.3.gz
+%%PERL5_MAN3%%/pgFormatter::CGI.3.gz
+%%PERL5_MAN3%%/pgFormatter::CLI.3.gz
