@@ -1578,7 +1578,6 @@
     SUBDIR += py-django-jsonfield
     SUBDIR += py-django-jsonfield2
     SUBDIR += py-django-ldapdb
-    SUBDIR += py-django-livesettings
     SUBDIR += py-django-markdownx
     SUBDIR += py-django-markwhat
     SUBDIR += py-django-mezzanine
