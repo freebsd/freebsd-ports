@@ -1,3 +1,3 @@
-%%PERL5_MAN3%%/Getopt::Long.3.gz
-%%SITE_PERL%%/newgetopt.pl
 %%SITE_PERL%%/Getopt/Long.pm
+%%SITE_PERL%%/newgetopt.pl
+%%PERL5_MAN3%%/Getopt::Long.3.gz
