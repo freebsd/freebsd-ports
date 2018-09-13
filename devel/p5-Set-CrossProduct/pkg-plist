@@ -1,4 +1,4 @@
 bin/cross
+%%SITE_PERL%%/Set/CrossProduct.pm
 %%PERL5_MAN1%%/cross.1.gz
 %%PERL5_MAN3%%/Set::CrossProduct.3.gz
-%%SITE_PERL%%/Set/CrossProduct.pm
