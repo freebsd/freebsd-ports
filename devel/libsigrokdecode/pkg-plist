@@ -3,7 +3,7 @@ include/libsigrokdecode/version.h
 lib/libsigrokdecode.a
 lib/libsigrokdecode.so
 lib/libsigrokdecode.so.4
-lib/libsigrokdecode.so.4.1.0
+lib/libsigrokdecode.so.4.2.0
 libdata/pkgconfig/libsigrokdecode.pc
 %%DATADIR%%/decoders/ac97/__init__.py
 %%DATADIR%%/decoders/ac97/pd.py
@@ -22,6 +22,8 @@ libdata/pkgconfig/libsigrokdecode.pc
 %%DATADIR%%/decoders/arm_itm/pd.py
 %%DATADIR%%/decoders/arm_tpiu/__init__.py
 %%DATADIR%%/decoders/arm_tpiu/pd.py
+%%DATADIR%%/decoders/atsha204a/__init__.py
+%%DATADIR%%/decoders/atsha204a/pd.py
 %%DATADIR%%/decoders/aud/__init__.py
 %%DATADIR%%/decoders/aud/pd.py
 %%DATADIR%%/decoders/avr_isp/__init__.py
@@ -31,6 +33,11 @@ libdata/pkgconfig/libsigrokdecode.pc
 %%DATADIR%%/decoders/avr_pdi/pd.py
 %%DATADIR%%/decoders/can/__init__.py
 %%DATADIR%%/decoders/can/pd.py
+%%DATADIR%%/decoders/cec/__init__.py
+%%DATADIR%%/decoders/cec/pd.py
+%%DATADIR%%/decoders/cec/protocoldata.py
+%%DATADIR%%/decoders/cfp/__init__.py
+%%DATADIR%%/decoders/cfp/pd.py
 %%DATADIR%%/decoders/common/__init__.py
 %%DATADIR%%/decoders/common/plugtrx/__init__.py
 %%DATADIR%%/decoders/common/plugtrx/mod.py
@@ -92,6 +99,8 @@ libdata/pkgconfig/libsigrokdecode.pc
 %%DATADIR%%/decoders/jitter/pd.py
 %%DATADIR%%/decoders/jtag/__init__.py
 %%DATADIR%%/decoders/jtag/pd.py
+%%DATADIR%%/decoders/jtag_ejtag/__init__.py
+%%DATADIR%%/decoders/jtag_ejtag/pd.py
 %%DATADIR%%/decoders/jtag_stm32/__init__.py
 %%DATADIR%%/decoders/jtag_stm32/pd.py
 %%DATADIR%%/decoders/lm75/__init__.py
@@ -102,6 +111,8 @@ libdata/pkgconfig/libsigrokdecode.pc
 %%DATADIR%%/decoders/maple_bus/pd.py
 %%DATADIR%%/decoders/max7219/__init__.py
 %%DATADIR%%/decoders/max7219/pd.py
+%%DATADIR%%/decoders/mcs48/__init__.py
+%%DATADIR%%/decoders/mcs48/pd.py
 %%DATADIR%%/decoders/mdio/__init__.py
 %%DATADIR%%/decoders/mdio/pd.py
 %%DATADIR%%/decoders/microwire/__init__.py
@@ -109,6 +120,8 @@ libdata/pkgconfig/libsigrokdecode.pc
 %%DATADIR%%/decoders/midi/__init__.py
 %%DATADIR%%/decoders/midi/lists.py
 %%DATADIR%%/decoders/midi/pd.py
+%%DATADIR%%/decoders/miller/__init__.py
+%%DATADIR%%/decoders/miller/pd.py
 %%DATADIR%%/decoders/mlx90614/__init__.py
 %%DATADIR%%/decoders/mlx90614/pd.py
 %%DATADIR%%/decoders/modbus/__init__.py
@@ -128,6 +141,13 @@ libdata/pkgconfig/libsigrokdecode.pc
 %%DATADIR%%/decoders/onewire_link/pd.py
 %%DATADIR%%/decoders/onewire_network/__init__.py
 %%DATADIR%%/decoders/onewire_network/pd.py
+%%DATADIR%%/decoders/ook/__init__.py
+%%DATADIR%%/decoders/ook/pd.py
+%%DATADIR%%/decoders/ook_oregon/__init__.py
+%%DATADIR%%/decoders/ook_oregon/lists.py
+%%DATADIR%%/decoders/ook_oregon/pd.py
+%%DATADIR%%/decoders/ook_vis/__init__.py
+%%DATADIR%%/decoders/ook_vis/pd.py
 %%DATADIR%%/decoders/pan1321/__init__.py
 %%DATADIR%%/decoders/pan1321/pd.py
 %%DATADIR%%/decoders/parallel/__init__.py
@@ -163,10 +183,14 @@ libdata/pkgconfig/libsigrokdecode.pc
 %%DATADIR%%/decoders/spiflash/pd.py
 %%DATADIR%%/decoders/ssi32/__init__.py
 %%DATADIR%%/decoders/ssi32/pd.py
+%%DATADIR%%/decoders/st7735/__init__.py
+%%DATADIR%%/decoders/st7735/pd.py
 %%DATADIR%%/decoders/stepper_motor/__init__.py
 %%DATADIR%%/decoders/stepper_motor/pd.py
 %%DATADIR%%/decoders/swd/__init__.py
 %%DATADIR%%/decoders/swd/pd.py
+%%DATADIR%%/decoders/swim/__init__.py
+%%DATADIR%%/decoders/swim/pd.py
 %%DATADIR%%/decoders/t55xx/__init__.py
 %%DATADIR%%/decoders/t55xx/pd.py
 %%DATADIR%%/decoders/tca6408a/__init__.py
