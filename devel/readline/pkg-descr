@@ -4,4 +4,4 @@ editing modes are available. The Readline library includes additional functions
 to maintain a list of previously-entered command lines, to recall and perhaps
 reedit those lines, and perform csh-like history expansion on previous commands.
 
-WWW: https://cnswww.cns.cwru.edu/php/chet/readline/rltop.html
+WWW: https://tiswww.case.edu/php/chet/readline/rltop.html
