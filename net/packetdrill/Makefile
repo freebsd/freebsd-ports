@@ -9,6 +9,9 @@ COMMENT=	Network stack testing tool
 
 LICENSE=	GPLv2
 
+# Need SCTP_PR_SCTP_PRIO and pcap_set_immediate_mode
+IGNORE_FreeBSD_10=	not supported on 10.x or older
+
 USES=		bison uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd-net
