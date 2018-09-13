@@ -9257,6 +9257,11 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/plugins/android/lib/layoutlib/data/res/xml/storage_list.xml
 %%IDEA_HOME%%/plugins/android/lib/layoutlib/data/res/xml/time_zones_by_country.xml
 %%IDEA_HOME%%/plugins/android/lib/libwebp.jar
+%%IDEA_HOME%%/plugins/android/lib/libwebp/linux/libwebp_jni.so
+%%IDEA_HOME%%/plugins/android/lib/libwebp/linux/libwebp_jni64.so
+%%IDEA_HOME%%/plugins/android/lib/libwebp/mac/libwebp_jni64.dylib
+%%IDEA_HOME%%/plugins/android/lib/libwebp/win/webp_jni.dll
+%%IDEA_HOME%%/plugins/android/lib/libwebp/win/webp_jni64.dll
 %%IDEA_HOME%%/plugins/android/lib/lint-api-26.1.2.jar
 %%IDEA_HOME%%/plugins/android/lib/lint-checks-26.1.2.jar
 %%IDEA_HOME%%/plugins/android/lib/manifest-merger-26.1.2.jar
