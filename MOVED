@@ -10518,3 +10518,4 @@ science/mpqc-mpich|science/mpqc|2018-09-03|MPI option is enabled by default in m
 misc/timediff|misc/tzdiff|2018-09-04|Project was renamed
 www/rubygem-hamlit26|www/rubygem-hamlit|2018-09-06|Has expired: Obsolete by gitlab-ce 11.2.x update, please use www/rubygem-hamlit instead
 games/ppracer|games/etracer|2018-09-10|Has expired: Unmaintained.  Play games/etracer instead
+www/py-django-livesettings||2018-09-13|Has expired: Missing dependency on removed www/py-django-keyedcache
