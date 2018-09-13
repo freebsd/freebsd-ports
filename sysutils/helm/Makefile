@@ -3,6 +3,7 @@
 
 PORTNAME=	helm
 PORTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/danilo
 
@@ -30,6 +31,7 @@ do-build:
 	cd ${WRKDIR}/src/k8s.io/helm/cmd/${cmd} ; \
 		GOPATH=${WRKDIR} go build \
 		-ldflags="-X k8s.io/helm/pkg/version.Version=v${PORTVERSION} \
+		-X k8s.io/helm/pkg/version.GitCommit=9ad53aac42165a5fadc6c87be0dea6b115f93090 \
 		-X k8s.io/helm/pkg/version.BuildMetadata="
 .endfor
 
