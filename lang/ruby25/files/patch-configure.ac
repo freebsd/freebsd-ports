@@ -1,5 +1,23 @@
 --- configure.ac.orig	2018-01-04 02:12:16.000000000 +0800
 +++ configure.ac	2018-07-19 14:45:11.636321000 +0800
+@@ -2482,7 +2482,7 @@
+   AC_CACHE_CHECK(whether qsort_r is GNU version, rb_cv_gnu_qsort_r,
+     [AC_TRY_COMPILE([
+ @%:@include <stdlib.h>
+-void qsort_r(void *base, size_t nmemb, size_t size,
++void (qsort_r)(void *base, size_t nmemb, size_t size,
+ 	    int (*compar)(const void *, const void *, void *),
+ 	    void *arg);
+ ],[ ],
+@@ -2492,7 +2492,7 @@
+   AC_CACHE_CHECK(whether qsort_r is BSD version, rb_cv_bsd_qsort_r,
+     [AC_TRY_COMPILE([
+ @%:@include <stdlib.h>
+-void qsort_r(void *base, size_t nmemb, size_t size,
++void (qsort_r)(void *base, size_t nmemb, size_t size,
+ 	     void *arg, int (*compar)(void *, const void *, const void *));
+ ],[ ],
+       [rb_cv_bsd_qsort_r=yes],
 @@ -3245,7 +3245,6 @@
  			: ${LDSHARED='$(CC) -shared'}
  			AS_IF([test "$rb_cv_binary_elf" = yes], [
