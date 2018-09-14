@@ -601,6 +601,7 @@
 %%WWWDIR%%/install/resources/mysql_db_inserts.php
 %%WWWDIR%%/install/resources/mysql_db_tables.php
 %%WWWDIR%%/install/resources/output.php
+%%WWWDIR%%/install/resources/pgsql_db_inserts.php
 %%WWWDIR%%/install/resources/pgsql_db_tables.php
 %%WWWDIR%%/install/resources/settings.xml
 %%WWWDIR%%/install/resources/sqlite_db_tables.php
@@ -645,6 +646,7 @@
 %%WWWDIR%%/install/resources/upgrade43.php
 %%WWWDIR%%/install/resources/upgrade44.php
 %%WWWDIR%%/install/resources/upgrade45.php
+%%WWWDIR%%/install/resources/upgrade46.php
 %%WWWDIR%%/install/resources/upgrade5.php
 %%WWWDIR%%/install/resources/upgrade6.php
 %%WWWDIR%%/install/resources/upgrade7.php
