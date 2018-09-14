@@ -43,7 +43,6 @@ SERIAL_DESC=		Single core (no multiprocessing)
 SERIAL_VARS=		VERSION=sopt
 
 OPENMP_VARS=		VERSION=ssmp
-OPENMP_BROKEN=		undefined reference to `dfftw_plan_with_nthreads_': https://github.com/cp2k/cp2k/issues/12 (need OPENMP=on in math/fftw3 ?)
 
 MPI_VARS=		VERSION=popt
 MPI_LIB_DEPENDS=	libmpich.so:net/mpich2 \
@@ -52,9 +51,19 @@ MPI_LIB_DEPENDS=	libmpich.so:net/mpich2 \
 OPENMP_MPI_DESC=	Enable both OpenMP and MPI
 OPENMP_MPI_VARS=	VERSION=psmp
 OPENMP_MPI_LIB_DEPENDS=	${MPI_LIB_DEPENDS}
-OPENMP_MPI_BROKEN=	${OPENMP_BROKEN}
 
 PLIST_FILES=		bin/${PORTNAME}
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MOPENMP} || ${PORT_OPTIONS:MOPENMP_MPI}
+pre-configure:
+	@if [ ! -e ${LOCALBASE}/lib/libfftw3_omp.so ] ; then \
+	  ${ECHO_MSG} "The OPENMP and OPENMP_MPI options require math/fftw3" ; \
+	  ${ECHO_MSG} "to be built and installed with the OPENMP option ON" ; \
+	  exit 1; \
+	fi
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's|LIBS.*=.*|& ${LDFLAGS}|; s|^FCFLAGS.*=.*|& -I${LOCALBASE}/include|' ${WRKSRC}/arch/FreeBSD-*
