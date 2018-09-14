@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	signet
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -17,8 +17,9 @@ RUN_DEPENDS=	rubygem-addressable>=2.3:www/rubygem-addressable \
 		rubygem-jwt>=1.5:www/rubygem-jwt \
 		rubygem-multi_json>=1.10:devel/rubygem-multi_json
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
