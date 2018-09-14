@@ -6,4 +6,4 @@ use HarfBuzz without porting them to use the HarfBuzz API.
 The code is mostly a trimmed down version of icu/source/layout, with
 all shapers stripped out, and HarfBuzz integrated.
 
-WWW: http://www.freedesktop.org/wiki/Software/HarfBuzz/
+WWW: https://www.freedesktop.org/wiki/Software/HarfBuzz/
