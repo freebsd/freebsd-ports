@@ -12,6 +12,10 @@
 .if !defined(_INCLUDE_USES_DOS2UNIX_MK)
 _INCLUDE_USES_DOS2UNIX_MK=	yes
 
+.if !empty(dos2unix_ARGS)
+IGNORE=	USES=dos2unix takes no arguments
+.endif
+
 .if !defined(DOS2UNIX_FILES) && !defined(DOS2UNIX_REGEX) && !defined(DOS2UNIX_GLOB)
 _DOS2UNIX_ALL=	yes
 .endif
