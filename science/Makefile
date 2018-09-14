@@ -209,6 +209,7 @@
     SUBDIR += py-mdp
     SUBDIR += py-mlpy
     SUBDIR += py-mmtf-python
+    SUBDIR += py-molmod
     SUBDIR += py-netCDF4
     SUBDIR += py-obspy
     SUBDIR += py-openpiv
