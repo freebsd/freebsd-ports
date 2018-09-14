@@ -8,6 +8,8 @@ CATEGORIES=	x11
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	The XprintUtil library
 
+LICENSE=	MIT
+
 XORG_CAT=	lib
 USE_XORG=	xorgproto:both x11 xau xp xt
 
