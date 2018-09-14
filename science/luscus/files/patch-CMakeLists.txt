@@ -1,0 +1,67 @@
+--- CMakeLists.txt.orig	2018-03-06 12:11:32 UTC
++++ CMakeLists.txt
+@@ -7,8 +7,10 @@ set(luscus_VERSION_MAJOR 0)
+ set(luscus_VERSION_MINOR 8)
+ set(luscus_VERSION_REVISION 5)
+ 
+-check_function_exists(strcasestr HAVE_STRCASESTR)
+-check_function_exists(strcasecmp HAVE_STRCASECMP)
++#check_function_exists(strcasestr HAVE_STRCASESTR)
++#check_function_exists(strcasecmp HAVE_STRCASECMP)
++add_compile_definitions(HAVE_STRCASESTR)
++add_compile_definitions(HAVE_STRCASECMP)
+ 
+ configure_file("${PROJECT_SOURCE_DIR}/luscus.h.in" "${PROJECT_BINARY_DIR}/luscus.h")
+ 
+@@ -23,12 +25,12 @@ set(USE_GTK3 ON)
+ 
+ # CMAKE_INSTALL_PREFIX
+ 
+-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++if(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "^(FreeBSD|DragonFly)$")
+   add_definitions(-DLINUX)
+   pkg_check_modules(GTK2 QUIET gtk+-2.0 gl glu)
+ #  if (EXISTS ${CMAKE_PREFIX_PATH})
+-  if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT MATCHES 1)
+-    set(CONFIG_DIR "/etc/luscus")
++  if (TRUE OR CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT MATCHES 1)
++    set(CONFIG_DIR "${CMAKE_INSTALL_PREFIX}/share/luscus")
+ #    message(status " CMAKE_PREFIX_PATH NOT DEFINED!")    # DEBUG
+   else ()
+     set(CONFIG_DIR "$ENV{HOME}/.luscus")
+@@ -95,7 +97,7 @@ if(USE_GTK3)
+   endif(NOT GTK3_FOUND)
+ endif(USE_GTK3)
+ 
+-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
++if(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "^(FreeBSD|DragonFly)$")
+   add_definitions(-DLINUX)
+ elseif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+   add_definitions(-DWINDOWS)
+@@ -108,11 +110,11 @@ endif(${CMAKE_SYSTEM_NAME} MATCHES "Linu
+ #option(COMPILE_PLUGINS ON)
+ option(INSTALL_BABEL_PLUGINS ON)
+ 
+-if(HAVE_STRCASESTR)
++#if(HAVE_STRCASESTR)
+ add_executable(luscus main.c gtk_gui.c gv_menubar.c gv_system.c gv_notebook.c backup_file.c findsym.c gv_about.c gv_atoms.c gv_geom.c gv_fragments.c gv_gtk_atom_list.c gv_gtk_multiview.c gv_notebook.c luscus_gtk_util.c mystring.c screenshot.c gveps.c gvgrp.c findsym.c gv_gtk_help.c gv_gtk_xyz_editor.c pixeldata.c write_file.c read_file.c surface.c gv_gtk_make_graph.c luscus_gtk_handle.c mcube.c vstring.c)
+-else(HAVE_STRCASESTR)
+-add_executable(luscus main.c gtk_gui.c gv_menubar.c gv_system.c gv_notebook.c backup_file.c findsym.c gv_about.c gv_atoms.c gv_geom.c gv_fragments.c gv_gtk_atom_list.c gv_gtk_multiview.c gv_notebook.c luscus_gtk_util.c mystring.c screenshot.c gveps.c gvgrp.c findsym.c gv_gtk_help.c gv_gtk_xyz_editor.c pixeldata.c write_file.c read_file.c surface.c gv_gtk_make_graph.c luscus_gtk_handle.c mcube.c vstring.c stdext.c)
+-endif(HAVE_STRCASESTR)
++#else(HAVE_STRCASESTR)
++#add_executable(luscus main.c gtk_gui.c gv_menubar.c gv_system.c gv_notebook.c backup_file.c findsym.c gv_about.c gv_atoms.c gv_geom.c gv_fragments.c gv_gtk_atom_list.c gv_gtk_multiview.c gv_notebook.c luscus_gtk_util.c mystring.c screenshot.c gveps.c gvgrp.c findsym.c gv_gtk_help.c gv_gtk_xyz_editor.c pixeldata.c write_file.c read_file.c surface.c gv_gtk_make_graph.c luscus_gtk_handle.c mcube.c vstring.c stdext.c)
++#endif(HAVE_STRCASESTR)
+ 
+ 
+ if(USE_GTK3)
+@@ -167,8 +169,8 @@ add_subdirectory(plugins/xyz)
+ add_subdirectory(plugins/diffdens)
+ 
+ if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+-  find_program(HAS_BABEL NAME babel PATHS ${COMPILER_LOCATION})
+-  if(HAS_BABEL)
++  #find_program(HAS_BABEL NAME babel PATHS ${COMPILER_LOCATION})
++  if(TRUE OR HAS_BABEL)
+     message(status " found babel; installing babel plugins!")
+     add_subdirectory(plugins_babel/cif)
+     add_subdirectory(plugins_babel/g03)

@@ -120,6 +120,7 @@
     SUBDIR += libxc
     SUBDIR += linsmith
     SUBDIR += lm
+    SUBDIR += luscus
     SUBDIR += madness
     SUBDIR += massxpert
     SUBDIR += mbdyn
