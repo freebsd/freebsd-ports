@@ -1,0 +1,11 @@
+Luscus is the program for graphical display and editing of molecular systems.
+The program allows fast and easy building and/or editing different molecular
+structures, up to several thousands of atoms large. Luscus can also visualize
+dipole moments, normal modes, molecular orbitals, electron densities and
+electrostatic potentials. In addition, simple geometrical objects can be
+rendered in order to point out a geometrical feature or a physical quantity.
+The program is developed as a graphical interface for MOLCAS program package,
+however it's adaptive nature makes possible using luscus with other
+computational program packages and chemical formats.
+
+WWW: https://sourceforge.net/projects/luscus/
