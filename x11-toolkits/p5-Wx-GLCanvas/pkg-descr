@@ -1,0 +1,5 @@
+Wx::GLCanvas - interface to wxWidgets' OpenGL canvas
+
+The documentation for this module is included in the main wxPerl distribution (wxGLCanvas).
+
+WWW: https://metacpan.org/release/Wx-GLCanvas

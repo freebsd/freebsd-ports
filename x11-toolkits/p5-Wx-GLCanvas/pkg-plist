@@ -1,0 +1,5 @@
+%%SITE_ARCH%%/Wx/DemoModules/wxGLCanvas.pm
+%%SITE_ARCH%%/Wx/GLCanvas.pm
+%%SITE_ARCH%%/auto/Wx/GLCanvas/.packlist
+%%SITE_ARCH%%/auto/Wx/GLCanvas/GLCanvas.so
+%%PERL5_MAN3%%/Wx::GLCanvas.3.gz
