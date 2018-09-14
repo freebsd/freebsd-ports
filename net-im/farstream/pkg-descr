@@ -4,4 +4,4 @@ offers a generic API that makes it possible to write plugins for different
 streaming protocols, on the other side it offers an API for clients to use
 those plugins.
 
-WWW: http://www.freedesktop.org/wiki/Software/Farstream
+WWW: https://www.freedesktop.org/wiki/Software/Farstream/
