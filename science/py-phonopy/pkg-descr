@@ -1,0 +1,20 @@
+Phonopy is an open source package for phonon calculations at harmonic and
+quasi-harmonic levels.
+
+The following features of phonopy are highlighted:
+* Phonon band structure, phonon DOS and partial-DOS
+* Phonon thermal properties: Free energy, heat capacity (Cv), and entropy
+* Phonon group velocity
+* Thermal ellipsoids / Mean square displacements
+* Irreducible representations of normal modes
+* Dynamic structure factor for INS and IXS
+* Non-analytical-term correction: LO-TO splitting (Born effective charges and
+  dielectric constant are required.)
+* Mode Gruneisen parameters
+* Quasi-harmonic approximation: Thermal expansion, heat capacity at constant
+  pressure (Cp),
+* Interfaces to calculators: VASP, VASP DFPT, ABINIT, Quantu ESPRESSO, SIESTA,
+  Elk, FHI-aims, WIEN2k, CRYSTAL
+* Python APIs
+
+WWW: http://atztogo.github.io/phonopy/
