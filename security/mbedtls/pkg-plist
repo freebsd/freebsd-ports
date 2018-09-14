@@ -130,7 +130,7 @@ lib/libmbedcrypto.so
 lib/libmbedcrypto.so.3
 lib/libmbedtls.a
 lib/libmbedtls.so
-lib/libmbedtls.so.11
+lib/libmbedtls.so.12
 lib/libmbedx509.a
 lib/libmbedx509.so
 lib/libmbedx509.so.0
