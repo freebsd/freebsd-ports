@@ -2,4 +2,4 @@ Papyon is the library behind the msn connection manager : telepathy-butterfly.
 It is a fork of the unmaintained pymsn msn library. papyon uses the glib
 mainloop to process the network events in an asynchronous manner.
 
-WWW: http://www.freedesktop.org/wiki/Software/papyon
+WWW: https://www.freedesktop.org/wiki/Software/papyon/
