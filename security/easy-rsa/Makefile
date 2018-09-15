@@ -2,6 +2,7 @@
 
 PORTNAME=	easy-rsa
 DISTVERSION=	3.0.5
+PORTREVISION=	1
 CATEGORIES=	security net-mgmt
 MASTER_SITES=	https://github.com/OpenVPN/easy-rsa/releases/download/v${DISTVERSION}/
 DISTNAME=	EasyRSA-nix-${DISTVERSION}
@@ -14,8 +15,6 @@ COMMENT=	Small RSA key management package based on openssl
 LICENSE=	GPLv2
 
 CONFLICTS_INSTALL=easy-rsa2-*
-
-BROKEN=		regression for common configurations, patch in a few hours
 
 USES=		tar:tgz
 NO_BUILD=	yes
