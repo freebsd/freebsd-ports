@@ -15,6 +15,8 @@ LICENSE=	GPLv2
 
 CONFLICTS_INSTALL=easy-rsa2-*
 
+BROKEN=		regression for common configurations, patch in a few hours
+
 USES=		tar:tgz
 NO_BUILD=	yes
 
