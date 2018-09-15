@@ -15,6 +15,8 @@ COMMENT=	Nanoscale material simulations using density functional theories (DFT)
 
 LICENSE=	GPLv2
 
+BROKEN_i386=	undefined reference to `__atomic_load', see bug#229605 and https://reviews.llvm.org/D42154
+
 LIB_DEPENDS=	libblas.so:math/blas \
 		libfftw3.so:math/fftw3 \
 		liblapack.so:math/lapack \
