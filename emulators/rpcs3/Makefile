@@ -6,6 +6,9 @@ DISTVERSION=	0.0.5-877
 DISTVERSIONSUFFIX=	-ged7012c9d
 CATEGORIES=	emulators
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	c3780ab4b8a6.patch:-p1
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PS3 emulator/debugger
 

@@ -19,3 +19,5 @@ SHA256 (USCiLab-cereal-v1.2.0_GH0.tar.gz) = 1ccf3ed205a7a2f0d6a060415b123f1ae0d9
 SIZE (USCiLab-cereal-v1.2.0_GH0.tar.gz) = 299883
 SHA256 (zeux-pugixml-v1.9_GH0.tar.gz) = 7ac060048bf00da4b3902cf411f0ba9f048cdc5580eed1f5a27ff51be4a38243
 SIZE (zeux-pugixml-v1.9_GH0.tar.gz) = 555480
+SHA256 (c3780ab4b8a6.patch) = 01bc4e3a1609f4b7fc60e28c0bc97859e51b4735edab816c294f521af229b342
+SIZE (c3780ab4b8a6.patch) = 1234
