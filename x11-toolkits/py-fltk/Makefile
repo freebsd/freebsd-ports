@@ -14,7 +14,7 @@ COMMENT=	Python interface to FLTK window toolkit
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to compile: fltk_wrap.cpp:5355: #pragma GCC diagnostic not allowed inside functions
+BROKEN_powerpc64=	fails to compile: fltk_wrap.cpp:5355: \#pragma GCC diagnostic not allowed inside functions
 
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
