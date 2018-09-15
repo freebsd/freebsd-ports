@@ -4,3 +4,5 @@ decrypt is decrypt-encrypt-decrypt. This implementation uses Crypt::DES
 to do its dirty DES work, and simply provides a wrapper around that
 module: setting up the individual DES ciphers, initializing the keys,
 and performing the encryption/decryption steps
+
+WWW: https://metacpan.org/release/Crypt-DES_EDE3
