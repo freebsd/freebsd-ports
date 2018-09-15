@@ -1,6 +1,7 @@
 include/xlsxwriter.h
 include/xlsxwriter/app.h
 include/xlsxwriter/chart.h
+include/xlsxwriter/chartsheet.h
 include/xlsxwriter/common.h
 include/xlsxwriter/content_types.h
 include/xlsxwriter/core.h
