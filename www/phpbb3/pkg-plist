@@ -988,6 +988,7 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/.htaccess
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/cookie_notice_p2.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/email_force_sender.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/enable_accurate_pm_button.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/f_list_topics_permission_add.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/fix_user_styles.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/load_user_activity_limit.php
@@ -1004,6 +1005,9 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/v321rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/v322.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/v322rc1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/v323.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/v323rc1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/v323rc2.php
 %%PHPBBDIR%%/phpbb/db/migration/exception.php
 %%PHPBBDIR%%/phpbb/db/migration/helper.php
 %%PHPBBDIR%%/phpbb/db/migration/migration.php
@@ -1697,6 +1701,7 @@
 %%PHPBBDIR%%/vendor/guzzlehttp/guzzle/src/UriTemplate.php
 %%PHPBBDIR%%/vendor/guzzlehttp/guzzle/src/Url.php
 %%PHPBBDIR%%/vendor/guzzlehttp/guzzle/src/Utils.php
+%%PHPBBDIR%%/vendor/guzzlehttp/ringphp/.editorconfig
 %%PHPBBDIR%%/vendor/guzzlehttp/ringphp/LICENSE
 %%PHPBBDIR%%/vendor/guzzlehttp/ringphp/composer.json
 %%PHPBBDIR%%/vendor/guzzlehttp/ringphp/src/Client/ClientUtils.php
@@ -3099,6 +3104,7 @@
 %%PHPBBDIR%%/vendor/symfony/http-kernel/HttpCache/Ssi.php
 %%PHPBBDIR%%/vendor/symfony/http-kernel/HttpCache/Store.php
 %%PHPBBDIR%%/vendor/symfony/http-kernel/HttpCache/StoreInterface.php
+%%PHPBBDIR%%/vendor/symfony/http-kernel/HttpCache/SubRequestHandler.php
 %%PHPBBDIR%%/vendor/symfony/http-kernel/HttpCache/SurrogateInterface.php
 %%PHPBBDIR%%/vendor/symfony/http-kernel/HttpKernel.php
 %%PHPBBDIR%%/vendor/symfony/http-kernel/HttpKernelInterface.php
@@ -3124,10 +3130,16 @@
 %%PHPBBDIR%%/vendor/symfony/http-kernel/TerminableInterface.php
 %%PHPBBDIR%%/vendor/symfony/http-kernel/UriSigner.php
 %%PHPBBDIR%%/vendor/symfony/http-kernel/composer.json
+%%PHPBBDIR%%/vendor/symfony/polyfill-ctype/Ctype.php
+%%PHPBBDIR%%/vendor/symfony/polyfill-ctype/LICENSE
+%%PHPBBDIR%%/vendor/symfony/polyfill-ctype/README.md
+%%PHPBBDIR%%/vendor/symfony/polyfill-ctype/bootstrap.php
+%%PHPBBDIR%%/vendor/symfony/polyfill-ctype/composer.json
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/LICENSE
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/Mbstring.php
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/README.md
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php
+%%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/bootstrap.php
 %%PHPBBDIR%%/vendor/symfony/polyfill-mbstring/composer.json
