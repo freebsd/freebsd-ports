@@ -1,6 +1,6 @@
---- root.proj.orig	2010-09-26 04:42:30.000000000 -0700
-+++ root.proj	2010-10-24 01:48:34.000000000 -0700
-@@ -12,6 +12,7 @@
+--- root.proj.orig	2012-08-26 13:26:56 UTC
++++ root.proj
+@@ -12,6 +12,7 @@ WORKSPACE(CONFIG_MATROSKA2) matroska
    USE matroska2
    USE mkvtests
    USE mkclean
