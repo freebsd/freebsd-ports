@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	easy-rsa
-DISTVERSION=	3.0.4
+DISTVERSION=	3.0.5
 CATEGORIES=	security net-mgmt
 MASTER_SITES=	https://github.com/OpenVPN/easy-rsa/releases/download/v${DISTVERSION}/
-DISTNAME=	EasyRSA-${DISTVERSION}
+DISTNAME=	EasyRSA-nix-${DISTVERSION}
 
 # Eric F. Crist <ecrist@secure-computing.net> does not require my
 # approval for changes to this package. -- mandree@FreeBSD.org
@@ -17,6 +17,8 @@ CONFLICTS_INSTALL=easy-rsa2-*
 
 USES=		tar:tgz
 NO_BUILD=	yes
+
+WRKSRC=		${WRKDIR}/EasyRSA-${DISTVERSION}
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
 
