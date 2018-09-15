@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	soundkonverter
-PORTVERSION=	2.2.2
+PORTVERSION=	3.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	12
 CATEGORIES=	audio kde
 
 MAINTAINER=	dbn@FreeBSD.org
@@ -14,19 +13,24 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libtag.so:audio/taglib \
 		libcdda_paranoia.so:audio/cdparanoia \
-		libphonon.so:multimedia/phonon@qt4
+		libphonon4qt5.so:multimedia/phonon@qt5
 
 GH_ACCOUNT=	HessiJames
-USES=		cmake compiler:c++11-lang kde:4 qt:4
+USES=		cmake:outsource compiler:c++11-lang kde:5 qt:5
 USE_GITHUB=	yes
-USE_QT=		corelib dbus gui network moc_build qmake_build rcc_build svg uic_build xml
-USE_KDE=	automoc4 kdelibs libkcddb
+USE_QT=		dbus concurrent core buildtools_build gui network printsupport \
+		qmake_build widgets xml
+USE_KDE=	auth codecs config configwidgets completion coreaddons crash \
+		bookmarks guiaddons i18n iconthemes itemviews jobwidgets \
+		kdelibs4support kio libkcddb notifications parts textwidgets \
+		service solid sonnet unitconversion windowsystem widgetsaddons \
+		xmlgui
 WRKSRC_SUBDIR=	src
 
-OPTIONS_DEFAULT=	VORBIS FLAC NORMALIZE VORBISGAIN CDPARANOIA
+OPTIONS_DEFAULT=	VORBIS FLAC NORMALIZE VORBISGAIN
 OPTIONS_DEFINE=	NLS
 OPTIONS_GROUP=	RIPPER CODEC FILTER REPLAYGAIN MISC
-OPTIONS_GROUP_RIPPER=	CDRKIT CDPARANOIA
+OPTIONS_GROUP_RIPPER=	CDRKIT
 OPTIONS_GROUP_CODEC=	AFTEN FAAC FFMPEG FLAKE FLUIDSYNTH LAME MAC \
 			MPLAYER MUSEPACK OPUSTOOLS SHORTEN SPEEX  \
 			TIMIDITY TTA TWOLAME VORBIS WAVPACK LIBAV
@@ -47,8 +51,6 @@ AFTEN_RUN_DEPENDS=	aften:audio/aften
 
 AACGAIN_DESC=		AAC audio replaygain
 AACGAIN_RUN_DEPENDS=	aacgain:audio/aacgain
-
-CDPARANOIA_DESC=	CD ripping support (cdparanoia - implicit)
 
 CDRKIT_DESC=		CD ripping support (cdrkit)
 CDRKIT_RUN_DEPENDS=	icedax:sysutils/cdrkit
