@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	joomla
-DISTVERSION=	3-8-11
+DISTVERSION=	3-8-12
 CATEGORIES=	www
 MASTER_SITES=	https://downloads.joomla.org/cms/joomla3/${DISTVERSION}/
 PKGNAMESUFFIX=	3
