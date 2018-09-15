@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	waterfox
-DISTVERSION=	56.2.2
+DISTVERSION=	56.2.3
 CATEGORIES=	www ipv6
 
 MAINTAINER=	jbeich@FreeBSD.org
