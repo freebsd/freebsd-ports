@@ -29,9 +29,10 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	CAIRO DOCS FRIBIDI IBUS M17NLIB REGIS SCIM SIXEL UIM
+OPTIONS_DEFINE=	CAIRO DOCS FCITX FRIBIDI IBUS M17NLIB REGIS SCIM SIXEL UIM
 OPTIONS_SUB=	yes
 CAIRO_DESC=	Use Cairo for type engine (experimental)
+FCITX_DESC=	Fcitx support (experimental)
 FRIBIDI_DESC=	Use Fribidi for BiDi rendering
 IBUS_DESC=	IBUS support (experimental)
 M17NLIB_DESC=	m17n library support (experimental)
@@ -39,6 +40,9 @@ REGIS_DESC=	ReGIS graphics support
 SCIM_DESC=	SCIM support (experimental)
 SIXEL_DESC=	Sixel graphics support
 UIM_DESC=	uim support (experimental)
+
+FCITX_CONFIGURE_ENABLE=	fcitx
+FCITX_LIB_DEPENDS=	libfcitx-gclient.so:chinese/fcitx
 
 FRIBIDI_CONFIGURE_ENABLE=	fribidi
 FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
