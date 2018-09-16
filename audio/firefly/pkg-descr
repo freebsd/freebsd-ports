@@ -1,8 +1,0 @@
-iTunes-compatible DAAP Server
-
-Firefly Media Server (formerly mt-daapd) is an open-source audio media server
-(or daemon) for the Roku SoundBridge and iTunes. It serves media files using
-Roku Server Protocol (RSP) and Digital Audio Access Protocol (DAAP). It
-supports server-side transcoding and other advanced features.
-
-WWW: https://sourceforge.net/projects/fireflyserver-server/
