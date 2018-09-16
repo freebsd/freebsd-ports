@@ -33,7 +33,7 @@ include/hwloc/rename.h
 lib/libhwloc.a
 lib/libhwloc.so
 lib/libhwloc.so.5
-lib/libhwloc.so.5.7.4
+lib/libhwloc.so.5.7.8
 libdata/pkgconfig/hwloc.pc
 man/man1/hwloc-annotate.1.gz
 man/man1/hwloc-assembler-remote.1.gz
@@ -400,6 +400,7 @@ man/man3/hwlocality_helper_find_inside.3.gz
 man/man3/hwlocality_helper_find_misc.3.gz
 man/man3/hwlocality_helper_nodeset_convert.3.gz
 man/man3/hwlocality_helper_topology_sets.3.gz
+man/man3/hwlocality_info_attr.3.gz
 man/man3/hwlocality_intel_mic.3.gz
 man/man3/hwlocality_levels.3.gz
 man/man3/hwlocality_linux.3.gz
