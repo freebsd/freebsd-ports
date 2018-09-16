@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Color-Scheme
-PORTVERSION=	1.05
-PORTREVISION=	1
+PORTVERSION=	1.07
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,10 +9,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate pleasant color schemes
 
-BUILD_DEPENDS=	p5-Test-Differences>=0.47:devel/p5-Test-Differences
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
