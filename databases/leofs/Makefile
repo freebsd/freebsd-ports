@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	leofs
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	databases
 DIST_SUBDIR=	${PORTNAME}
 
@@ -86,23 +85,23 @@ LEOFS_DEPS=	\
 	leo-project/folsom=0.8.2-p1:folsom \
 	leo-project/lager=574d64a:lager \
 	leo-project/leo_backend_db=1.2.30:leo_backend_db \
-	leo-project/leo_cache=0.8.10:leo_cache \
+	leo-project/leo_cache=0.8.11:leo_cache \
 	leo-project/leo_commons=1.2.0:leo_commons \
-	leo-project/leo_dcerl=0.4.9:leo_dcerl \
+	leo-project/leo_dcerl=0.4.10:leo_dcerl \
 	leo-project/leo_logger=1.3.7:leo_logger \
-	leo-project/leo_mcerl=0.6.7:leo_mcerl \
-	leo-project/leo_mq=1.5.17:leo_mq \
-	leo-project/leo_object_storage=1.3.34:leo_object_storage \
+	leo-project/leo_mcerl=0.6.8:leo_mcerl \
+	leo-project/leo_mq=1.5.18:leo_mq \
+	leo-project/leo_object_storage=1.3.36:leo_object_storage \
 	leo-project/leo_ordning_reda=1.2.10:leo_ordning_reda \
 	leo-project/leo_pod=0.6.9:leo_pod \
-	leo-project/leo_redundant_manager=1.9.60:leo_redundant_manager \
+	leo-project/leo_redundant_manager=1.9.62:leo_redundant_manager \
 	leo-project/leo_rpc=0.10.17:leo_rpc \
 	leo-project/leo_s3_libs=1.2.19:leo_s3_libs \
 	leo-project/leo_statistics=1.1.22:leo_statistics \
 	leo-project/leo_tran=0.2.13:leo_tran \
 	leo-project/leo_watchdog=1.0.6:leo_watchdog \
 	leo-project/leveldb=a9327e8:leveldb \
-	leo-project/libcutil=0.4.5:libcutil \
+	leo-project/libcutil=0.5.1:libcutil \
 	leo-project/nfs_rpc_server=0.2.6:nfs_rpc_server \
 	leo-project/savanna_agent=0.4.25:savanna_agent \
 	leo-project/savanna_commons=0.10.11:savanna_commons \
