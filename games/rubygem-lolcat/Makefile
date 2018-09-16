@@ -2,6 +2,7 @@
 
 PORTNAME=	lolcat
 PORTVERSION=	99.9.19
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	RG
 
@@ -12,8 +13,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-manpages>=0.6.1:devel/rubygem-manpages \
-		rubygem-paint>=2.0.0:devel/rubygem-paint \
-		rubygem-trollop>=2.1.3:devel/rubygem-trollop
+		rubygem-optimist>=3.0.0:devel/rubygem-optimist \
+		rubygem-paint>=2.0.0:devel/rubygem-paint
 
 NO_ARCH=	yes
 USE_RUBY=	yes
