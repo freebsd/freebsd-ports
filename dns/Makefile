@@ -183,6 +183,7 @@
     SUBDIR += powerdns-recursor
     SUBDIR += powerdns-recursor40
     SUBDIR += public_suffix_list
+    SUBDIR += py-adns
     SUBDIR += py-aiodns
     SUBDIR += py-cloudflare
     SUBDIR += py-dns

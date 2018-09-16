@@ -1,10 +1,24 @@
-###################################################################
+##########################################################################
 
-Please do run "tremc --create-config" to create the configuration
-file with default values.
+Authentication and host/port can be set via command line with one of these
+patterns:
 
-NOTE: A config file won't be created unless you provide this
-option at least once. After that, it is rewritten whenever tremc
-exits.
+$ tremc -c homeserver
 
-###################################################################
+
+
+$ tremc -c homeserver:1234
+
+$ tremc -c johndoe:secretbirthday@homeserver
+
+$ tremc -c johndoe:secretbirthday@homeserver:1234
+
+You can write this (and other) stuff into a configuration file:
+
+$ tremc -c johndoe:secretbirthday@homeserver:1234 --create-config
+
+No configuration file is created automatically. You must create it.
+
+$ tremc --create-config
+
+##########################################################################

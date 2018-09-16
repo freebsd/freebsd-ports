@@ -1,0 +1,8 @@
+Python module to resolve IPs to host names.
+
+python3-adns is a Python 3 module that interfaces to the adns: an advanced easy
+to use, asynchronous-capable DNS client library and utilities. Adns is a
+resolver library for C (and C++) programs, and a collection of useful DNS
+resolver utilities.
+
+WWW: https://github.com/trolldbois/python3-adns/
