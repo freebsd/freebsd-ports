@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netsurf
-PORTVERSION=	3.7
+PORTVERSION=	3.8
 CATEGORIES=	www
 MASTER_SITES=	http://download.netsurf-browser.org/netsurf/releases/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
