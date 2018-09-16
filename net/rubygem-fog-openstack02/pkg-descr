@@ -1,0 +1,3 @@
+Fog::Openstack is a module for the 'fog' gem to support OpenStack clouds.
+
+WWW: https://github.com/fog/fog-openstack
