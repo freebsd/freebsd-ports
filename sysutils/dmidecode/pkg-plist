@@ -1,0 +1,12 @@
+etc/periodic/daily/dmidecode
+man/man8/biosdecode.8.gz
+man/man8/dmidecode.8.gz
+man/man8/ownership.8.gz
+man/man8/vpddecode.8.gz
+sbin/biosdecode
+sbin/dmidecode
+sbin/ownership
+sbin/vpddecode
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
