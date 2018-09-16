@@ -1056,7 +1056,6 @@
     SUBDIR += hs-haddock-library
     SUBDIR += hs-happy
     SUBDIR += hs-hashable
-    SUBDIR += hs-hashed-storage
     SUBDIR += hs-hashtables
     SUBDIR += hs-haskell-lexer
     SUBDIR += hs-haskell-src
@@ -6245,7 +6244,6 @@
     SUBDIR += tijmp
     SUBDIR += tinycbor
     SUBDIR += tinylaf
-    SUBDIR += tinyq
     SUBDIR += tkcon
     SUBDIR += tkcvs
     SUBDIR += tkmerge

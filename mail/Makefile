@@ -11,7 +11,6 @@
     SUBDIR += alpine
     SUBDIR += altermime
     SUBDIR += amavis-logwatch
-    SUBDIR += annoyance-filter
     SUBDIR += anomy-sanitizer
     SUBDIR += antivirus-milter
     SUBDIR += anubis
@@ -497,7 +496,6 @@
     SUBDIR += policyd2
     SUBDIR += pop3lite
     SUBDIR += pop3proxy
-    SUBDIR += pop3vscan
     SUBDIR += popa3d
     SUBDIR += popa3d-before-sendmail
     SUBDIR += popcheck
