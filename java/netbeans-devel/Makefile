@@ -25,6 +25,8 @@ PREFIXDIR=	${PREFIX}/netbeans-${PORTVERSION}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 IGNORE=		No development version available right now. Please use java/netbeans instead.
+DEPRECATED=	Use java/netbeans instead
+EXPIRATION_DATE=	2018-09-29
 
 post-patch:
 	@${REINPLACE_CMD} -e '57s|#||;57s|/path/to/jdk|${JAVA_HOME}|' \

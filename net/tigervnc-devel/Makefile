@@ -14,6 +14,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENCE.TXT
 
 IGNORE=		no development version available right now. Please use net/tigervnc instead
+DEPRECATED=	Use net/tigervnc instead
+EXPIRATION_DATE=	2018-09-29
 
 PATCH_DEPENDS=	${NONEXISTENT}:x11-servers/xorg-server:patch
 BUILD_DEPENDS=	${LOCALBASE}/include/GL/internal/dri_interface.h:graphics/mesa-dri \
