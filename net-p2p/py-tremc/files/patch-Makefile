@@ -1,0 +1,14 @@
+--- Makefile.orig	2018-08-13 15:08:26 UTC
++++ Makefile
+@@ -1,8 +1,8 @@
+ .PHONY: install
+ 
+ install:
+-	install -d "${DESTDIR}${PREFIX}/share/man/man1"
+-	install -m 644 tremc.1 "${DESTDIR}${PREFIX}/share/man/man1/tremc.1"
++	install -d "${DESTDIR}${MANPREFIX}/man/man1"
++	install -m 644 tremc.1 "${DESTDIR}${MANPREFIX}/man/man1"
+ 	install -d "${DESTDIR}${PREFIX}/bin"
+ 	install -m 755 tremc "${DESTDIR}${PREFIX}/bin/tremc"
+ 	install -d "${DESTDIR}${PREFIX}/share/bash-completion/completions"
+
