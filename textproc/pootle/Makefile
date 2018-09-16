@@ -44,7 +44,10 @@ SUB_LIST+=	PYTHON_CMD="${PYTHON_CMD}"
 
 PORTDOCS=	CREDITS INSTALL LICENSE
 
-OPTIONS_DEFINE=	DOCS LDAP MEMCACHED MYSQL PGSQL
+OPTIONS_DEFINE=	DOCS LDAP MEMCACHED
+OPTIONS_SINGLE=	DB
+DB_DESC=	Database backend
+OPTIONS_SINGLE_DB=MYSQL PGSQL
 OPTIONS_DEFAULT=MEMCACHED MYSQL
 
 MEMCACHED_DESC=	Use memcached to improve performance
@@ -54,16 +57,10 @@ LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap2>0:devel/py-ldap2@${PY_FLAVOR}
 MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 MEMCACHED_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-memcached>=1.45:databases/py-python-memcached@${PY_FLAVOR}
 
+MYSQL_USES=		mysql:client
 MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>0:databases/py-MySQLdb@${PY_FLAVOR}
 
 PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2@${PY_FLAVOR}
-
-SUBVERSION_RUN_DEPENDS=	svn:devel/subversion
-
-.include <bsd.port.pre.mk>
-.if ${PORT_OPTIONS:MMYSQL}
-USES+=	mysql:client
-.endif
 
 pre-configure:
 	@${REINPLACE_CMD} -e "s/,<0.11.2//g" \
@@ -78,4 +75,4 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}/${DOCSDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
