@@ -1,8 +1,8 @@
---- src/layer3.c.orig	2014-09-14 19:16:31 UTC
+--- src/layer3.c.orig	2018-09-15 19:08:05 UTC
 +++ src/layer3.c
-@@ -10,6 +10,13 @@
- #include <string.h>
- #include <assert.h>
+@@ -16,6 +16,13 @@
+ #include <sys/socket.h>
+ #endif
  
 +#ifdef __FreeBSD__
 +#include <sys/types.h>

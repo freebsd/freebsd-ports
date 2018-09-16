@@ -1,0 +1,11 @@
+--- configure.ac.orig	2018-09-15 19:08:05 UTC
++++ configure.ac
+@@ -22,7 +22,7 @@ build_linux=no
+ build_mac=no
+ 
+ case "${host_os}" in
+-    linux*)
++    linux*|freebsd*)
+         build_linux=yes
+         ;;
+     cygwin*|mingw*)
