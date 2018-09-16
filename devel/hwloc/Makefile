@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hwloc
-PORTVERSION=	1.11.7
-PORTREVISION=	2
+PORTVERSION=	1.11.11
 CATEGORIES=	devel
 MASTER_SITES=	http://www.open-mpi.org/software/hwloc/v${PORTVERSION:R}/downloads/ \
 		http://icl.cs.utk.edu/open-mpi/software/hwloc/v${PORTVERSION:R}/downloads/
@@ -13,7 +12,13 @@ COMMENT=	Portable Hardware Locality software package
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+ONLY_FOR_ARCHS=		amd64 aarch64 armv6 armv7 i386
+ONLY_FOR_ARCHS_REASON=	has not been ported to this architecture
+
 LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess
+
+USES=		iconv libtool gnome pathfix pkgconfig tar:bzip2
+USE_GNOME=	libxml2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static \
@@ -22,14 +27,9 @@ CONFIGURE_ARGS=	--enable-static \
 		--disable-nvml \
 		--disable-gl
 INSTALL_TARGET=	install-strip
-USES=		iconv libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
-USE_GNOME=	libxml2
 
 PORTDOCS=	*
-
-ONLY_FOR_ARCHS=		amd64 aarch64 armv6 armv7 i386
-ONLY_FOR_ARCHS_REASON=	has not been ported to this architecture
 
 OPTIONS_DEFINE=	CAIRO DOCS
 OPTIONS_SUB=	yes
