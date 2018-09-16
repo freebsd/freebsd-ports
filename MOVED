@@ -10526,3 +10526,4 @@ www/hs-hS3||2018-09-16|Has expired: Not being developed upstream
 converters/hs-dataenc||2018-09-16|Has expired: Not being developed upstream
 devel/tinyq||2018-09-16|Has expired: Unmaintained upstream and unused in the ports tree
 devel/hs-hashed-storage||2018-09-16|Has expired: Not being developed upstream
+www/py-searx|www/searx|2018-09-16|Move to a proper directory: this is a server, not a library
