@@ -14,6 +14,8 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
 FORBIDDEN=	It appears the development branch of NTP is dead.
+DEPRECATED=	Use net/ntp instead
+EXPIRATION_DATE=	2018-09-29
 
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libmd5.so:www/libwww

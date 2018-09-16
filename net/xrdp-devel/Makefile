@@ -16,6 +16,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 IGNORE=		no development version available right now, use net/xrdp instead
+DEPRECATED=	Use net/xrdp instead
+EXPIRATION_DATE=	2018-09-29
 
 # pulseaudio's configured source is required for audio redirection
 BUILD_DEPENDS=	${NONEXISTENT}:audio/pulseaudio:configure \

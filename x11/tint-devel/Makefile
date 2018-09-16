@@ -22,6 +22,8 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 CONFLICTS=	tint2-[0-9]*
 
 IGNORE=		-devel version is older than x11/tint
+DEPRECATED=	Use x11/tint instead
+EXPIRATION_DATE=	2018-09-29
 
 USES=		alias cmake pkgconfig tar:xz
 USE_GNOME=	glib20 gtk20 pango

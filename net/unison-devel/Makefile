@@ -16,6 +16,8 @@ COMMENT=	User-level file synchronization tool
 
 IGNORE=		No devel release available. \
 		Install net/unison which is the latest stable version.
+DEPRECATED=	Use net/unison instead
+EXPIRATION_DATE=	2018-09-29
 
 LICENSE=	GPLv3
 
