@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION?=	1.27.1
+PORTVERSION?=	1.29.0
 PORTREVISION?=
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
@@ -46,13 +46,13 @@ BROKEN_aarch64=		fails to build: bootstrap compiler crashes
 CONFLICTS_INSTALL?=	rust-nightly
 
 # See WRKSRC/src/stage0.txt for this date and version values.
-BOOTSTRAPS_DATE?=		2018-05-10
+BOOTSTRAPS_DATE?=		2018-08-02
 
-RUST_BOOTSTRAP_VERSION?=	1.26.0
+RUST_BOOTSTRAP_VERSION?=	1.28.0
 RUSTC_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
 RUST_STD_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
 
-CARGO_BOOTSTRAP_VERSION?=	0.27.0
+CARGO_BOOTSTRAP_VERSION?=	0.29.0
 CARGO_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
 
 RUST_CHANNEL=	${PKGNAMESUFFIX:Ustable:S/^-//}
@@ -80,6 +80,7 @@ LLNEXTGEN_BUILD_DEPENDS=	LLnextgen:devel/llnextgen
 #     - pre-install to cleanup the ${STAGEDIR}
 #     - post-install to populate the ${TMPPLIST}
 RUST_MANIFESTS=		lib/rustlib/manifest-cargo \
+			lib/rustlib/manifest-clippy-preview \
 			lib/rustlib/manifest-rls-preview \
 			lib/rustlib/manifest-rustc \
 			lib/rustlib/manifest-rustfmt-preview \
@@ -191,6 +192,13 @@ CCACHE_VALUE=	"${CCACHE_WRAPPER_PATH:C,/libexec/ccache$,,}/bin/ccache"
 CCACHE_VALUE=	false
 .endif
 
+pre-configure:
+	@for file in \
+		${WRKSRC}/src/vendor/backtrace-sys/src/libbacktrace/configure \
+		${WRKSRC}/src/vendor/backtrace-sys/src/libbacktrace/config/libtool.m4; do \
+		mv "$$file" "$$file.dont-fix"; \
+	done
+
 do-configure:
 	${SED} -E \
 		-e 's,%PREFIX%,${PREFIX},' \
@@ -218,6 +226,13 @@ do-configure:
 		if test "$$regex"; then \
 			${REINPLACE_CMD} -E $$regex .cargo-checksum.json; \
 		fi; \
+	done
+
+post-configure:
+	@for file in \
+		${WRKSRC}/src/vendor/backtrace-sys/src/libbacktrace/configure \
+		${WRKSRC}/src/vendor/backtrace-sys/src/libbacktrace/config/libtool.m4; do \
+		mv "$$file.dont-fix" "$$file"; \
 	done
 
 post-configure-DOCS-on:
@@ -305,7 +320,9 @@ post-install:
 # but they contain non-object files which make strip(1) unhappy.
 	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/bin/cargo \
+		${STAGEDIR}${PREFIX}/bin/cargo-clippy \
 		${STAGEDIR}${PREFIX}/bin/cargo-fmt \
+		${STAGEDIR}${PREFIX}/bin/clippy-driver \
 		${STAGEDIR}${PREFIX}/bin/rls \
 		${STAGEDIR}${PREFIX}/bin/rustc \
 		${STAGEDIR}${PREFIX}/bin/rustdoc \
