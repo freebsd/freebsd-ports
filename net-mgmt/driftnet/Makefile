@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	driftnet
-PORTVERSION=	1.1.5
-DISTVERSIONPREFIX=	upstream/
+PORTVERSION=	1.2.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -17,12 +17,15 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 BUILD_DEPENDS=	makedepend:devel/makedepend
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf gettext-runtime gmake jpeg localbase:ldflags pkgconfig
+USES=		autoreconf gettext-runtime gmake gnome jpeg localbase:ldflags \
+		pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	gtk20
 USE_XORG=	x11 xext xi
 
 GH_ACCOUNT=	deiv
+
+CONFIGURE_ARGS+=	--disable-http-display
 
 PLIST_FILES=	bin/driftnet man/man1/driftnet.1.gz
 PORTDOCS=	*
