@@ -12,9 +12,10 @@ COMMENT=	Detect man pages within gems and exposes them to the man command
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem shebangfix
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 SHEBANG_FILES=	rbenv/rbenv_hook_install.sh \
 		rbenv/remove_hook_folders.sh
