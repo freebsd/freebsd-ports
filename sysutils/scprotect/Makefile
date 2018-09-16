@@ -11,6 +11,8 @@ COMMENT=	Protect process from killing when the swap space is exhausted
 
 BROKEN_FreeBSD_11=	does not build on FreeBSD 11.x+
 BROKEN_FreeBSD_12=	does not build on FreeBSD 11.x+: scprotect.c: 'sysctl__' undeclared (first use in this function)
+DEPRECATED=	Does not build on FreeBSD 11+
+EXPIRATION_DATE=	2018-10-31
 
 USES=		kmod uidfix
 
