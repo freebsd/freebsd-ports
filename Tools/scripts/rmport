@@ -135,7 +135,7 @@ mkcodir()
 {
 	log "creating temporary directory"
 	d=`mktemp -d -t rmport`
-	touch ${d}/svnlog
+	echo "This is the commit message, please edit it." >> ${d}/svnlog
 	log "created ${d}"
 	echo "${d}"
 }
@@ -371,8 +371,6 @@ append_Template()
 		msg="${msg}: ${DEPRECATED}"
 	fi
 
-	echo "This is the commit message, please edit it." >> ./svnlog
-
 	log "${catport}: adding entry to commit message template"
 
 	echo "${msg}" >> ./svnlog
@@ -405,7 +403,7 @@ commit()
 	$EDITOR svnlog
 
 	log "Your commit message is:"
-	echo svnlog
+	cat svnlog
 
 	answer=`ask "Do you want to edit again your commit message?"`
 	if [ "${answer}" = "y" ] ; then
