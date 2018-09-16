@@ -3,6 +3,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	11.2.3
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -88,7 +89,7 @@ RUN_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-fog-core1>=1.44:devel/rubygem-fog-core1 \
 	rubygem-fog-google13>=1.3.3:net/rubygem-fog-google13 \
 	rubygem-fog-local>=0.3:net/rubygem-fog-local \
-	rubygem-fog-openstack>=0.1:net/rubygem-fog-openstack \
+	rubygem-fog-openstack02>=0.1:net/rubygem-fog-openstack02 \
 	rubygem-fog-rackspace>=0.1.1:net/rubygem-fog-rackspace \
 	rubygem-fog-aliyun02>=0.2.0:net/rubygem-fog-aliyun02 \
 	rubygem-google-api-client>=0.19.8:devel/rubygem-google-api-client \
