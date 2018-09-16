@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	radcli
-PORTVERSION=	1.2.10
+PORTVERSION=	1.2.11
 CATEGORIES=	net
 
 MAINTAINER=	neel@neelc.org

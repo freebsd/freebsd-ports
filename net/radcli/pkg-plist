@@ -1,9 +1,13 @@
+@sample %%ETCDIR%%/radiusclient-tls.conf.sample
+@sample %%ETCDIR%%/radiusclient.conf.sample
+@sample %%ETCDIR%%/servers-tls.sample
+@sample %%ETCDIR%%/servers.sample
 include/radcli/radcli.h
 include/radcli/version.h
 lib/libradcli.a
 lib/libradcli.so
 lib/libradcli.so.4
-lib/libradcli.so.4.2.0
+lib/libradcli.so.4.3.0
 libdata/pkgconfig/radcli.pc
 man/man3/radcli.h.3.gz
 man/man3/rc_aaa.3.gz
@@ -61,6 +65,7 @@ man/man3/rc_openlog.3.gz
 man/man3/rc_own_hostname.3.gz
 man/man3/rc_read_config.3.gz
 man/man3/rc_read_dictionary.3.gz
+man/man3/rc_read_dictionary_from_buffer.3.gz
 man/man3/rc_send_server.3.gz
 man/man3/rc_setdebug.3.gz
 man/man3/rc_test_config.3.gz
@@ -72,7 +77,3 @@ man/man3/rc_tls_fd.3.gz
 %%DATADIR%%/dictionary.microsoft
 %%DATADIR%%/dictionary.roaringpenguin
 %%DATADIR%%/dictionary.sip
-@sample %%ETCDIR%%/radiusclient-tls.conf.sample
-@sample %%ETCDIR%%/radiusclient.conf.sample
-@sample %%ETCDIR%%/servers.sample
-@sample %%ETCDIR%%/servers-tls.sample
