@@ -17,6 +17,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN=		fails to fetch: mastersite times out
 DEPRECATED=	fails to fetch: mastersite times out
+EXPIRATION_DATE=	2018-09-25
 
 CONFIGURE_ENV=	CXXCPP="${CXXCPP}"
 CXXCPP?=	${CXX} -E
