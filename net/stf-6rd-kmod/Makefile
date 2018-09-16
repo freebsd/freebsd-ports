@@ -10,6 +10,9 @@ DISTNAME=	freebsd-stf-${OSREL}-${PORTVERSION}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	6rd patched stf(4) kernel modules port for 8.4+
 
+DEPRECATED=	Does not build on FreeBSD 11+
+EXPIRATION_DATE=	2018-10-31
+
 ONLY_FOR_ARCHS=	amd64 i386
 
 WRKSRC=		${WRKDIR}

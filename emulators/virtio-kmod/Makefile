@@ -10,6 +10,9 @@ DISTFILES=	${FILE_8} ${FILE_9}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	virtio kernel modules port for 8.[234]/9.[01]
 
+DEPRECATED=	Does not build on FreeBSD 10+
+EXPIRATION_DATE=	2018-10-31
+
 ONLY_FOR_ARCHS=	amd64 i386
 
 WRKSRC=		${WRKDIR}

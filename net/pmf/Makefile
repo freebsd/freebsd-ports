@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Padrone's Mud Frontend
 
 BROKEN_powerpc64=	fails to link: ld: cannot find -lreadline
+DEPRECATED=	Does not build on FreeBSD 11+
+EXPIRATION_DATE=	2018-10-31
 
 WRKSRC=		${WRKDIR}/pmfdir
 BUILD_WRKSRC=	${WRKDIR}/pmfdir/src

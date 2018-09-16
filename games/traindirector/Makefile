@@ -12,6 +12,9 @@ COMMENT=	Train controller simulation
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Does not build on FreeBSD 11+
+EXPIRATION_DATE=	2018-10-31
+
 NO_WRKSUBDIR=	yes
 
 USES=		gmake zip
