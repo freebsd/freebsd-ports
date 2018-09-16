@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wxsvg
-PORTVERSION=	1.5.14
-PORTREVISION=	1
+PORTVERSION=	1.5.15
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -16,7 +15,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libexpat.so:textproc/expat2 \
 		libexif.so:graphics/libexif
 
-USES=		compiler:c++11-lib gettext-runtime gmake libtool pathfix pkgconfig tar:bzip2
+USES=		compiler:c++11-lib gettext-runtime gmake gnome libtool pathfix pkgconfig tar:bzip2
 USE_WX=		3.0
 WX_CONF_ARGS=	absolute
 USE_GNOME=	cairo glib20 pango
