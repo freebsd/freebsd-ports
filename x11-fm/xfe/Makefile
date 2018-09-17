@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfe
-PORTVERSION=	1.43
+PORTVERSION=	1.43.1
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libFOX-1.6.so:x11-toolkits/fox16 \
 		libpng.so:graphics/png \
 		libxcb-util.so:x11/xcb-util
 
-USES=		desktop-file-utils gmake localbase pathfix pkgconfig
+USES=		desktop-file-utils gmake localbase pathfix pkgconfig gnome
 USE_XORG=	x11 xcb xft xrandr xrender
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
