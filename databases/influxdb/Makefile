@@ -2,7 +2,7 @@
 
 PORTNAME=	influxdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.1
+DISTVERSION=	1.6.2
 CATEGORIES=	databases net-mgmt
 
 MAINTAINER=	cheffo@freebsd-bg.org
@@ -12,8 +12,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS_REASON=	depends on go which is not supported in this architecture
 
-BUILD_DEPENDS=	go>=1.8.1:lang/go
+BUILD_DEPENDS=	go>=1.10.3:lang/go
 
 USE_RC_SUBR=	influxd
 
@@ -34,7 +35,7 @@ GH_TUPLE=	BurntSushi:toml:a368813:toml/src/github.com/BurntSushi/toml \
 		golang:protobuf:9255415:golang_protobuf/src/github.com/golang/protobuf \
 		golang:snappy:d9eb7a3:snappy/src/github.com/golang/snappy \
 		google:go-cmp:v0.2.0:go_cmp/src/google/go-cmp \
-		influxdata:influxql:c661ab7:influxql/src/github.com/influxdata/influxql \
+		influxdata:influxql:a7267bf:influxql/src/github.com/influxdata/influxql \
 		influxdata:usage-client:6d38953:usage_client/src/github.com/influxdata/usage-client \
 		influxdata:yamux:1f58ded:yamux/src/github.com/influxdata/yamux \
 		influxdata:yarpc:f0da2db:yarpc/src/github.com/influxdata/yarpc \
@@ -69,25 +70,6 @@ GH_TUPLE=	BurntSushi:toml:a368813:toml/src/github.com/BurntSushi/toml \
 		golang:text:v0.3.0:text/src/golang.org/x/text \
 		golang:time:26559e0:time/src/golang.org/x/time
 
-SUB_FILES=	influxd
-SUB_LIST=	INFLUXD_USER=${INFLUXD_USER} \
-		INFLUXD_GROUP=${INFLUXD_GROUP} \
-		INFLUXD_DBDIR=${INFLUXD_DBDIR} \
-		INFLUXD_PIDDIR=${INFLUXD_PIDDIR} \
-		INFLUXD_LOGDIR=${INFLUXD_LOGDIR}
-
-PLIST_SUB=	INFLUXD_USER=${INFLUXD_USER} \
-		INFLUXD_GROUP=${INFLUXD_GROUP} \
-		INFLUXD_DBDIR=${INFLUXD_DBDIR} \
-		INFLUXD_PIDDIR=${INFLUXD_PIDDIR} \
-		INFLUXD_LOGDIR=${INFLUXD_LOGDIR}
-
-INFLUXD_USER=	influxd
-INFLUXD_GROUP=	influxd
-
-USERS=		${INFLUXD_USER}
-GROUPS=		${INFLUXD_GROUP}
-
 OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
 OPTIONS_SUB=	yes
@@ -100,6 +82,24 @@ MANPAGES_USES=	gmake
 INFLUXD_DBDIR=	/var/db/${PORTNAME}/
 INFLUXD_LOGDIR=	/var/log/${PORTNAME}/
 INFLUXD_PIDDIR=	/var/run/${PORTNAME}/
+
+INFLUXD_USER=	influxd
+INFLUXD_GROUP=	influxd
+
+USERS=		${INFLUXD_USER}
+GROUPS=		${INFLUXD_GROUP}
+
+SUB_LIST=	INFLUXD_USER=${INFLUXD_USER} \
+		INFLUXD_GROUP=${INFLUXD_GROUP} \
+		INFLUXD_DBDIR=${INFLUXD_DBDIR} \
+		INFLUXD_PIDDIR=${INFLUXD_PIDDIR} \
+		INFLUXD_LOGDIR=${INFLUXD_LOGDIR}
+
+PLIST_SUB=	INFLUXD_USER=${INFLUXD_USER} \
+		INFLUXD_GROUP=${INFLUXD_GROUP} \
+		INFLUXD_DBDIR=${INFLUXD_DBDIR} \
+		INFLUXD_PIDDIR=${INFLUXD_PIDDIR} \
+		INFLUXD_LOGDIR=${INFLUXD_LOGDIR}
 
 .include <bsd.port.pre.mk>
 
@@ -135,11 +135,6 @@ do-install:
 			${STAGEDIR}${PREFIX}/etc/influxd.conf.sample
 
 do-install-MANPAGES-on:
-.for i in influx.1 influx_inspect.1 influx_stress.1 influx_tsm.1 \
-	influxd-backup.1 influxd-config.1 influxd-restore.1 \
-	influxd-run.1 influxd-version.1 influxd.1 influx.1 influx_inspect.1 \
-	influx_stress.1 influx_tsm.1
-		${INSTALL_MAN} ${WRKSRC}/src/github.com/influxdata/influxdb/man/$i ${STAGEDIR}${MAN8PREFIX}/man/man1
-.endfor
+	${INSTALL_MAN} ${WRKSRC}/src/github.com/influxdata/influxdb/man/*.1  ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.post.mk>
