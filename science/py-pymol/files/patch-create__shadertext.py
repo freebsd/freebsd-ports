@@ -1,6 +1,6 @@
---- create_shadertext.py.orig	2017-03-09 18:16:07 UTC
+--- create_shadertext.py.orig	2018-07-24 16:14:37 UTC
 +++ create_shadertext.py
-@@ -93,19 +93,20 @@ def create_shadertext(shaderdir, shaderd
+@@ -122,19 +122,20 @@ def create_shadertext(shaderdir, shaderd
  
  def create_buildinfo(outputdir, pymoldir='.'):
  
