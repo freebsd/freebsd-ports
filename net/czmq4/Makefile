@@ -6,7 +6,7 @@ DISTVERSION=	4.1.1
 CATEGORIES=	net
 PKGNAMESUFFIX=	4
 
-MAINTAINER=	kenji@k2r.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-level C Binding for ZeroMQ (Version 4)
 
 LICENSE=	MPL20

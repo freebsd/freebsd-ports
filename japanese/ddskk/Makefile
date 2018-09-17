@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.ring.gr.jp/pub/elisp/skk/maintrunk/ \
 		http://openlab.ring.gr.jp/skk/maintrunk/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	kenji@k2r.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Kana to Kanji conversion program on Emacsen
 
 LICENSE=	GPLv2+
