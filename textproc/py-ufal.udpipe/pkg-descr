@@ -1,0 +1,6 @@
+UDPipe is a trainable pipeline for tokenization, tagging, lemmatization and
+dependency parsing of CoNLL-U files. UDPipe is language-agnostic and can be
+trained given annotated data in CoNLL-U format. Trained models are provided
+for nearly all UD treebanks.
+
+WWW: https://ufal.mff.cuni.cz/udpipe
