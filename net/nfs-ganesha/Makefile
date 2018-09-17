@@ -2,7 +2,7 @@
 
 PORTNAME=	nfs-ganesha
 DISTVERSION=	2.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	fatih@gandi.net
@@ -16,9 +16,9 @@ USE_RC_SUBR=	ganesha
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nfs-ganesha
-GH_TAGNAME=	V2.7-rc1
+GH_TAGNAME=	V2.7.0
 CFLAGS+=	-Wno-error
-GH_TUPLE=	nfs-ganesha:ntirpc:b69c2c1e353:ganesha/src/libntirpc
+GH_TUPLE=	nfs-ganesha:ntirpc:v1.7.0:ganesha/src/libntirpc
 
 CMAKE_ARGS=	-DLIB_INSTALL_DIR=${LOCALBASE}/lib -DUSE_GSS=OFF -DUSE_9P=OFF \
 		-DUSE_FSAL_PROXY=OFF -DUSE_FSAL_GPFS=OFF -DUSE_FSAL_CEPH=OFF \
