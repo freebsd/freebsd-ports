@@ -68,7 +68,7 @@ bin/get_clientids
 bin/grace_period
 bin/ganesha.nfsd
 lib/libntirpc.so.1.7
-lib/libntirpc.so.1.7.0_rc1
+lib/libntirpc.so.1.7.0
 lib/libntirpc.so
 lib/ganesha/libfsalmem.so.4
 lib/ganesha/libfsalnull.so
@@ -102,7 +102,7 @@ lib/python2.7/site-packages/Ganesha/client_mgr.pyc
 lib/python2.7/site-packages/Ganesha/log_mgr.pyc
 lib/python2.7/site-packages/Ganesha/export_mgr.pyc
 lib/python2.7/site-packages/Ganesha/client_mgr.py
-lib/python2.7/site-packages/ganeshactl-2.7_rc1-py2.7.egg-info
+lib/python2.7/site-packages/ganeshactl-2.7.0-py2.7.egg-info
 libdata/pkgconfig/libntirpc.pc
 share/doc/ganesha/config_samples/vfs.conf
 share/doc/ganesha/config_samples/config.txt

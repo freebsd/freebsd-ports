@@ -1,0 +1,21 @@
+commit cf799916131f30bf42d33ddd86b326bb2f90ffbc
+Author: Fatih Acar <fatih.acar@gandi.net>
+Date:   Fri May 18 12:30:19 2018 +0200
+
+    ganeshactl, cmakefile: python2.7 on freebsd
+
+diff --git a/src/scripts/ganeshactl/CMakeLists.txt b/src/scripts/ganeshactl/CMakeLists.txt
+index 2e950b676..0fac9af3d 100644
+--- src/scripts/ganeshactl/CMakeLists.txt
++++ src/scripts/ganeshactl/CMakeLists.txt
+@@ -1,6 +1,10 @@
+ # Building and packaging DBUS scripts for ganesha
+ 
++if (FREEBSD)
++find_program(PYTHON "python2.7")
++else (FREEBSD)
+ find_program(PYTHON "python")
++endif (FREEBSD)
+ 
+ # PyQT based class modules
+ set(GANESHA_BASE_SRCS
