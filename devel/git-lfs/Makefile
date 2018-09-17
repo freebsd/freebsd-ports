@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.1
 CATEGORIES=	devel
 
-MAINTAINER=	kenji@k2r.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Git extension for versioning large files
 
 LICENSE=	MIT
