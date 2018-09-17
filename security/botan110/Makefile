@@ -12,11 +12,12 @@ DISTNAME=	Botan-${PORTVERSION}
 MAINTAINER=	lapo@lapo.it
 COMMENT=	Portable, easy to use, and efficient C++ crypto library
 
-BROKEN_SSL=	openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	error: variable has incomplete type 'EVP_MD_CTX' (aka 'struct evp_md_ctx_st')
-
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
+
+BROKEN_aarch64=		Fails to configure: unknown or unidentifiable processor arm64
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=	error: variable has incomplete type 'EVP_MD_CTX' (aka 'struct evp_md_ctx_st')
 
 OPTIONS_DEFINE=		SSL GMP DOCS
 OPTIONS_DEFAULT=	SSL GMP
@@ -34,32 +35,22 @@ PLIST_FILES=	bin/botan-config-1.10 lib/libbotan-1.10.a lib/libbotan-1.10.so lib/
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*
 
-BROKEN_aarch64=		Fails to configure: unknown or unidentifiable processor arm64
+SSL_USES=		ssl
+SSL_CONFIGURE_WITH=	openssl
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSSL}
-USES+=		ssl
-CONFIGURE_ARGS+=--with-openssl
-.endif
-
-.if ${PORT_OPTIONS:MGMP}
-USES+=		localbase:ldflags
-LIB_DEPENDS+=	libgmp.so:math/gmp
-CONFIGURE_ARGS+=--with-gnump
-.endif
-
-.include <bsd.port.pre.mk>
+GMP_USES=		localbase:ldflags
+GMP_LIB_DEPENDS=	libgmp.so:math/gmp
+GMP_CONFIGURE_WITH=	gnump
 
 post-patch:
-	${REINPLACE_CMD} -e "s|#!/usr/bin/env python|#!${PYTHON_CMD}|" \
-			${WRKSRC}/configure.py
-.if ! ${PORT_OPTIONS:MDOCS}
-	${REINPLACE_CMD} -e '/DOCDIR/d' \
-			${WRKSRC}/src/build-data/makefile/unix_shr.in
-.endif
+	@${REINPLACE_CMD} -e "s|#!/usr/bin/env python|#!${PYTHON_CMD}|" \
+		${WRKSRC}/configure.py
+
+post-patch-DOCS-off:
+	@${REINPLACE_CMD} -e '/DOCDIR/d' \
+		${WRKSRC}/src/build-data/makefile/unix_shr.in
 
 post-install:
 	@(cd "${STAGEDIR}${PREFIX}"; ${FIND} -s include/botan-1.10 -not -type d) >> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
