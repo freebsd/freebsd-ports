@@ -95,8 +95,7 @@ prepare_env() {
 	export CCNET_CONF_DIR=${seafile_ccnet}
 	export SEAFILE_CONF_DIR=${seafile_datadir}
 	export SEAFILE_CENTRAL_CONF_DIR=${seafile_conf}
-	export PYTHONPATH=${seafile_path}/seafile/lib/python2.6/site-packages:${seafile_path}/seafile/lib64/python2.6/site-packages:${seafile_path}/seahub/thirdpart:$PYTHONPATH
-	export PYTHONPATH=${seafile_path}/seafile/lib/python2.7/site-packages:${seafile_path}/seafile/lib64/python2.7/site-packages:$PYTHONPATH
+	export PYTHONPATH=${seafile_path}/seafile/lib/python2.7/site-packages:${seafile_path}/seafile/lib64/python2.7/site-packages:${seafile_path}/seahub/thirdpart:$PYTHONPATH
 	export SEAHUB_LOG_DIR=${seafile_logdir}
 
 }
