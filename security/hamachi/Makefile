@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	linux-
 MAINTAINER=	lapo@lapo.it
 COMMENT=	Fast, secure, simple VPN software with NAT-traversal
 
+BROKEN=		fails to patch with upx 3.94
+
 PATCH_DEPENDS=	upx:archivers/upx
 
 ONLY_FOR_ARCHS=	i386 amd64
