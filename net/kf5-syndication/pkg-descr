@@ -1,0 +1,9 @@
+Syndication is a parser library for RSS and Atom feeds.i
+Syndication is a parser library for RSS and Atom feeds.
+
+RSS (0.9/1.0, 0.91..2.0) and Atom (0.3 and 1.0) feeds are supported.
+Syndication offers a unified, format-agnostic view on the parsed feed,
+so that the using application does not need to distinguish between 
+feed formats.
+
+WWW: https://api.kde.org/stable/kdepimlibs-apidocs/syndication/html/index.html

@@ -136,5 +136,5 @@ lib/cmake/KF5Syndication/KF5SyndicationTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5Syndication/KF5SyndicationTargets.cmake
 lib/libKF5Syndication.so
 lib/libKF5Syndication.so.5
-lib/libKF5Syndication.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKF5Syndication.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_Syndication.pri

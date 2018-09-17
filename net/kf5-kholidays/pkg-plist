@@ -2,15 +2,9 @@ include/KF5/KHolidays/KHolidays/AstroSeasons
 include/KF5/KHolidays/KHolidays/Holiday
 include/KF5/KHolidays/KHolidays/HolidayRegion
 include/KF5/KHolidays/KHolidays/LunarPhase
-include/KF5/KHolidays/KHolidays/Zodiac
-include/KF5/KHolidays/kholidays/AstroSeasons
-include/KF5/KHolidays/kholidays/Holiday
-include/KF5/KHolidays/kholidays/HolidayRegion
-include/KF5/KHolidays/kholidays/LunarPhase
 include/KF5/KHolidays/KHolidays/SunRiseSet
-include/KF5/KHolidays/kholidays/Zodiac
+include/KF5/KHolidays/KHolidays/Zodiac
 include/KF5/KHolidays/kholidays/astroseasons.h
-include/KF5/KHolidays/kholidays/SunRiseSet
 include/KF5/KHolidays/kholidays/holiday.h
 include/KF5/KHolidays/kholidays/holidayregion.h
 include/KF5/KHolidays/kholidays/kholidays_export.h
