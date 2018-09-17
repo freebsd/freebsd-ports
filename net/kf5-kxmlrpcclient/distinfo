@@ -1,3 +1,3 @@
-TIMESTAMP = 1533393095
-SHA256 (KDE/frameworks/5.49.0/kxmlrpcclient-5.49.0.tar.xz) = 06c0dc10623ecb1b844c47577a53229c7d5789f895902fda9ef21c7decb69250
-SIZE (KDE/frameworks/5.49.0/kxmlrpcclient-5.49.0.tar.xz) = 29524
+TIMESTAMP = 1536000751
+SHA256 (KDE/frameworks/5.50.0/kxmlrpcclient-5.50.0.tar.xz) = d90c38f0eb00f883b73e81f943e19c0920e23e45f8ddae410dfaaf89c0eab80f
+SIZE (KDE/frameworks/5.50.0/kxmlrpcclient-5.50.0.tar.xz) = 29512

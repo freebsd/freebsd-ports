@@ -70,7 +70,7 @@ KDE_PLASMA_VERSION?=		5.12.5
 KDE_PLASMA_BRANCH?=		stable
 
 # Current KDE frameworks.
-KDE_FRAMEWORKS_VERSION?=	5.49.0
+KDE_FRAMEWORKS_VERSION?=	5.50.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
@@ -252,7 +252,7 @@ _USE_FRAMEWORKS_TIER1=	apidox archive attica5 breeze-icons codecs config \
 
 _USE_FRAMEWORKS_TIER2=	auth completion crash doctools \
 			filemetadata kimageformats jobwidgets notifications \
-			package pty unitconversion
+			package pty syndication unitconversion
 
 _USE_FRAMEWORKS_TIER3=	activities activities-stats baloo5 bookmarks configwidgets \
 			designerplugin emoticons globalaccel guiaddons \
@@ -299,7 +299,7 @@ _USE_KDEPIM5_ALL=	akonadicontacts akonadiimportwizard akonadimime akonadinotes \
 			kdepim-runtime5 kitinerary kontactinterface kpimdav kpkpass \
 			ksmtp ldap libkdepim libkleo libksieve mailcommon \
 			mailimporter mailtransport mbox messagelib \
-			mime pimcommon pimtextedit syndication tnef \
+			mime pimcommon pimtextedit tnef \
 			kalarm kontact kmail account-wizard mbox-importer \
 			akonadiconsole akregator grantlee-editor kaddressbook \
 			kalarm kmail-account-wizard kmail knotes kontact \
@@ -593,6 +593,9 @@ solid_LIB=		libKF5Solid.so
 sonnet_PORT=		textproc/kf5-sonnet
 sonnet_LIB=		libKF5SonnetCore.so
 
+syndication_PORT=	net/kf5-syndication
+syndication_LIB=	libKF5Syndication.so
+
 syntaxhighlighting_PORT=	textproc/kf5-syntax-highlighting
 syntaxhighlighting_LIB=		libKF5SyntaxHighlighting.so
 
@@ -854,9 +857,6 @@ pimcommon_LIB=		libKF5PimCommon.so
 
 pimtextedit_PORT=	net/kpimtextedit
 pimtextedit_LIB=	libKF5PimTextEdit.so
-
-syndication_PORT=	net/syndication
-syndication_LIB=	libKF5Syndication.so
 
 tnef_PORT=		net/ktnef
 tnef_LIB=		libKF5Tnef.so

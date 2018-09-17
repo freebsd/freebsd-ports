@@ -12,6 +12,9 @@ include/KF5/KTextEditor/KTextEditor/Cursor
 include/KF5/KTextEditor/KTextEditor/Document
 include/KF5/KTextEditor/KTextEditor/DocumentCursor
 include/KF5/KTextEditor/KTextEditor/Editor
+include/KF5/KTextEditor/KTextEditor/InlineNote
+include/KF5/KTextEditor/KTextEditor/InlineNoteInterface
+include/KF5/KTextEditor/KTextEditor/InlineNoteProvider
 include/KF5/KTextEditor/KTextEditor/MainWindow
 include/KF5/KTextEditor/KTextEditor/MarkInterface
 include/KF5/KTextEditor/KTextEditor/Message
@@ -38,6 +41,9 @@ include/KF5/KTextEditor/ktexteditor/cursor.h
 include/KF5/KTextEditor/ktexteditor/document.h
 include/KF5/KTextEditor/ktexteditor/documentcursor.h
 include/KF5/KTextEditor/ktexteditor/editor.h
+include/KF5/KTextEditor/ktexteditor/inlinenote.h
+include/KF5/KTextEditor/ktexteditor/inlinenoteinterface.h
+include/KF5/KTextEditor/ktexteditor/inlinenoteprovider.h
 include/KF5/KTextEditor/ktexteditor/mainwindow.h
 include/KF5/KTextEditor/ktexteditor/markinterface.h
 include/KF5/KTextEditor/ktexteditor/message.h

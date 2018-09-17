@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	syndication
-DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-CATEGORIES=	net kde kde-applications
+DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTEPOCH=	1
+CATEGORIES=	net kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE RSS feed handling library
@@ -14,9 +15,6 @@ USE_KDE=	codecs config coreaddons ecm kio service
 USE_QT=		core gui xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
-
-DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr
-
 
 OPTIONS_DEFINE=	DOCS
 

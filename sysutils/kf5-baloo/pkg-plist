@@ -52,10 +52,13 @@ share/kservices5/timeline.protocol
 share/locale/ar/LC_MESSAGES/baloo_file5.mo
 share/locale/ar/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/ar/LC_MESSAGES/balooctl5.mo
+share/locale/ar/LC_MESSAGES/baloodb5.mo
+share/locale/ar/LC_MESSAGES/balooengine5.mo
 share/locale/ar/LC_MESSAGES/baloomonitorplugin.mo
 share/locale/ar/LC_MESSAGES/baloosearch5.mo
 share/locale/ar/LC_MESSAGES/balooshow5.mo
 share/locale/ar/LC_MESSAGES/kio5_baloosearch.mo
+share/locale/ar/LC_MESSAGES/kio5_tags.mo
 share/locale/ar/LC_MESSAGES/kio5_timeline.mo
 share/locale/ast/LC_MESSAGES/baloo_file5.mo
 share/locale/ast/LC_MESSAGES/baloo_file_extractor5.mo
@@ -279,6 +282,8 @@ share/locale/ja/LC_MESSAGES/kio5_tags.mo
 share/locale/ja/LC_MESSAGES/kio5_timeline.mo
 share/locale/ko/LC_MESSAGES/baloo_file5.mo
 share/locale/ko/LC_MESSAGES/balooctl5.mo
+share/locale/ko/LC_MESSAGES/baloodb5.mo
+share/locale/ko/LC_MESSAGES/balooengine5.mo
 share/locale/ko/LC_MESSAGES/baloomonitorplugin.mo
 share/locale/ko/LC_MESSAGES/baloosearch5.mo
 share/locale/ko/LC_MESSAGES/balooshow5.mo

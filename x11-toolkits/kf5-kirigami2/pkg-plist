@@ -89,7 +89,6 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/AbstractCard.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/AbstractListItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/ApplicationHeader.qml
-%%QT_QMLDIR%%/org/kde/kirigami.2/templates/FormLayout.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/InlineMessage.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/OverlayDrawer.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/OverlaySheet.qml
