@@ -12,6 +12,8 @@ COMMENT=	GUI for radare2 reverse engineering framework
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
+BROKEN=		fails to build with radare2 2.9
+
 LIB_DEPENDS=	libr_bin.so:devel/radare2
 
 USES=		pkgconfig python:3.4+ qmake:outsource qt:5
