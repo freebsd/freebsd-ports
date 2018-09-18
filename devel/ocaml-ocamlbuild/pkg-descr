@@ -1,0 +1,8 @@
+OCamlbuild is a generic build tool, that has built-in rules for building
+OCaml library and programs.
+
+OCamlbuild was distributed as part of the OCaml distribution for OCaml
+versions between 3.10.0 and 4.02.3.  Starting from OCaml 4.03, it is now
+released separately.
+
+WWW: https://github.com/ocaml/ocamlbuild
