@@ -3,6 +3,7 @@
 
 PORTNAME=	postfixadmin
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -36,7 +37,7 @@ OPTIONS_DEFAULT=	PGSQL
 
 USE_PERL5=	run
 
-USE_PHP=	mbstring pcre phar session spl xmlrpc
+USE_PHP=	mbstring openssl pcre phar session spl xmlrpc
 
 MYSQL_USE=	php=mysqli
 PGSQL_USE=	php=pgsql
@@ -50,13 +51,16 @@ do-install:
 	@cd ${WRKSRC}/${i} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/${i}
 .endfor
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.TXT ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/GPL-LICENSE.TXT ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/LICENSE.TXT ${STAGEDIR}${DATADIR}
 .for i in ADDITIONS VIRTUAL_VACATION
 	@cd ${WRKSRC}/${i} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${i}
 .endfor
 
 do-install-DOCS-on:
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/DOCUMENTS && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+.for i in CHANGELOG.TXT INSTALL.TXT README.md
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
