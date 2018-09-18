@@ -31,7 +31,6 @@ CFLAGS_sparc64=	-fPIC
 
 # Fix the build for i386 when WITH_LLD_IS_LD is set
 # https://bugs.freebsd.org/230210
-LDFLAGS+=	${LDFLAGS_${ARCH}}
 LDFLAGS_i386=	-Wl,-z,notext
 
 OPTIONS_DEFINE=	DOCS
