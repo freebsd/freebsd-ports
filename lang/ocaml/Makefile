@@ -33,6 +33,7 @@ ALL_TARGET=	world.opt
 STRIP=
 SSP_UNSAFE=	yes
 MAKE_JOBS_UNSAFE=	yes
+LDFLAGS_i386=	-Wl,-znotext
 
 CONFIGURE_ARGS=	-verbose -prefix "${PREFIX}" \
 		-cc "${CC}" \
