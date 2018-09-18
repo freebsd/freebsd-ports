@@ -10,11 +10,9 @@ DISTNAME=	gstreamer-editing-services-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer editing services
 
-BROKEN_powerpc64=	fails to compile: ges-extractable.h:24: error: redefinition of typedef 'GESExtractable'
-
 PORTSCOUT=	limitw:1,even
 
-USES=		gmake gnome libtool pathfix python:2.7 pkgconfig tar:xz
+USES=		compiler:c11 gmake gnome libtool pathfix python:2.7 pkgconfig tar:xz
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 introspection:build libxml2 pygobject3

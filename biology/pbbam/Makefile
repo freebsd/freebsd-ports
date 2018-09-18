@@ -15,7 +15,7 @@ BUILD_DEPENDS=	boost-libs>=1.60.0:devel/boost-libs
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so:devel/boost-libs
 
-USES=		cmake pkgconfig
+USES=		cmake compiler:c++14-lang pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
 GH_TAGNAME=	c6b8113adb5104948879e9ff69f739121f12a09f

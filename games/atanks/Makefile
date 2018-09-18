@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liballeg.so:devel/allegro
 
-USES=		gmake
+USES=		compiler:c++0x gmake
 
 PORTDOCS=	Changelog README README_ru.txt credits.txt
 

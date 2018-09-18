@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PORTNAME}-all-services>=0:www/${PORTNAME}-all-services
 USE_GITHUB=	yes
 GH_ACCOUNT=	tiliado
 
-USES=		gnome libarchive pkgconfig waf
+USES=		compiler:c11 gnome libarchive pkgconfig waf
 USE_GNOME=	glib20 gtk30
 USE_XORG=	x11
 # src/nuvolakit-runner/components/keybindings/XKeyGrabber.c:128:2: error: non-void function 'nuvola_xkey_grabber_construct' should return a value [-Wreturn-type]

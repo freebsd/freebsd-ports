@@ -15,14 +15,13 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BROKEN_aarch64=	does not build: error: Please implement AtomicPointer for this platform
-BROKEN_powerpc64=	does not build: error: unrecognized command line option -std=c++0x
 BROKEN_sparc64=	does not build: unrecognized command line options
 
 LIB_DEPENDS=	libleveldb.so:databases/leveldb
 
 MAKE_ARGS=	CC="${CXX}"
+USES=		compiler:c++0x gmake localbase perl5
 USE_PERL5=	configure
-USES=		compiler gmake localbase perl5
 
 .include <bsd.port.pre.mk>
 

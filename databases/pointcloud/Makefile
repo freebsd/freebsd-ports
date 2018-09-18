@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 BUILD_DEPENDS=	${LOCALBASE}/include/laz-perf/las.hpp:archivers/lazperf
 LIB_DEPENDS=	libght.so:devel/libght
 
-USES=		autoreconf gmake gnome pgsql
+USES=		autoreconf compiler:c++0x gmake gnome pgsql
 WANT_PGSQL=	server
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
