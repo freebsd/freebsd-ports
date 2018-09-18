@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	reggae
-PORTVERSION=	0.0.11
+PORTVERSION=	0.1.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	meka@tilda.center
