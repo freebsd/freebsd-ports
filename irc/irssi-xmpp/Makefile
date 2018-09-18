@@ -24,6 +24,7 @@ DATADIR=	${PREFIX}/share/irssi
 DOCSDIR=	${PREFIX}/share/doc/irssi
 CFLAGS_aarch64=	-fPIC
 CFLAGS_amd64=	-fPIC
+CFLAGS_i386=	-fPIC
 
 OPTIONS_DEFINE=	DOCS
 
