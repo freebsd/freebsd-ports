@@ -4,7 +4,7 @@ include/kgraphviewer/kgraphviewer_interface.h
 lib/cmake/KGraphViewerPart/KGraphViewerPartConfig.cmake
 lib/cmake/KGraphViewerPart/KGraphViewerPartConfigVersion.cmake
 lib/libkgraphviewer.so
-lib/libkgraphviewer.so.2.4.2
+lib/libkgraphviewer.so.2.4.3
 lib/libkgraphviewer.so.3
 %%QT_PLUGINDIR%%/kgraphviewerpart.so
 share/applications/org.kde.kgraphviewer.desktop
@@ -41,6 +41,8 @@ share/doc/HTML/en/kgraphviewer/kgraphviewer-but-zoomout.png
 share/doc/HTML/en/kgraphviewer/kgraphviewer-snap-ask1.png
 share/doc/HTML/en/kgraphviewer/kgraphviewer-snap-ask2.png
 share/doc/HTML/en/kgraphviewer/kgraphviewer-snap-ask3.png
+share/doc/HTML/en/kgraphviewer/kgraphviewer-snap-config-appearance.png
+share/doc/HTML/en/kgraphviewer/kgraphviewer-snap-config-parsing.png
 share/doc/HTML/en/kgraphviewer/kgraphviewer-snap-config1.png
 share/doc/HTML/en/kgraphviewer/kgraphviewer-snap-config2.png
 share/doc/HTML/en/kgraphviewer/kgraphviewer-snap-config3.png
