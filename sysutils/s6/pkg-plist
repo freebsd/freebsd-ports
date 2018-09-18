@@ -36,6 +36,7 @@ bin/s6-ipcserverd
 bin/s6-log
 bin/s6-mkfifodir
 bin/s6-notifyoncheck
+bin/s6-permafailon
 bin/s6-setlock
 bin/s6-setsid
 bin/s6-setuidgid
@@ -45,6 +46,8 @@ bin/s6-sudoc
 bin/s6-sudod
 bin/s6-supervise
 bin/s6-svc
+bin/s6-svdt
+bin/s6-svdt-clear
 bin/s6-svlisten
 bin/s6-svlisten1
 bin/s6-svok
@@ -70,8 +73,8 @@ include/s6/s6.h
 include/s6/s6lock.h
 lib/libs6.so
 lib/libs6.so.2.7
-lib/libs6.so.2.7.0
-lib/libs6.so.2.7.0.0
+lib/libs6.so.2.7.2
+lib/libs6.so.2.7.2.0
 lib/s6/libs6.a
 libexec/s6lockd-helper
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -120,6 +123,7 @@ libexec/s6lockd-helper
 %%PORTDOCS%%%%DOCSDIR%%/s6-log.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-mkfifodir.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-notifyoncheck.html
+%%PORTDOCS%%%%DOCSDIR%%/s6-permafailon.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-setlock.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-setsid.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-setuidgid.html
@@ -129,6 +133,8 @@ libexec/s6lockd-helper
 %%PORTDOCS%%%%DOCSDIR%%/s6-sudod.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-supervise.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-svc.html
+%%PORTDOCS%%%%DOCSDIR%%/s6-svdt-clear.html
+%%PORTDOCS%%%%DOCSDIR%%/s6-svdt.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-svlisten.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-svlisten1.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-svok.html
