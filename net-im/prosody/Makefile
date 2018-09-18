@@ -13,8 +13,6 @@ COMMENT=	Simple extensible XMPP server written in Lua
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to compile: table.c:14: 'for' loop initial declaration used outside C99 mode
-
 RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:net/luasocket-51 \
 		${LUA_MODLIBDIR}/ssl.so:security/luasec-51 \
 		${LUA_MODLIBDIR}/lxp.so:textproc/luaexpat-51 \
@@ -23,6 +21,7 @@ RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:net/luasocket-51 \
 LIB_DEPENDS=	libidn.so:dns/libidn
 
 USES=		cpe gmake lua:51 shebangfix ssl
+USE_CSTD=	c99
 SHEBANG_FILES=	prosody prosodyctl
 LUA_PREMK=	yes
 HAS_CONFIGURE=	yes

@@ -18,6 +18,7 @@ BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		cmake:outsource fortran
+USE_CSTD=	gnu99
 USE_GITHUB=	yes
 GH_ACCOUNT=	sourceryinstitute
 GH_PROJECT=	OpenCoarrays

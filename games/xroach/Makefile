@@ -23,6 +23,7 @@ BINMODE=	755
 
 USES=		imake
 USE_XORG=	x11 xext
+USE_CSTD=	gnu99
 PLIST_FILES=	bin/xroach man/man6/xroach.6.gz
 
 do-install:

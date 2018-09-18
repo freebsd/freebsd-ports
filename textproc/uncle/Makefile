@@ -12,8 +12,7 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libucl.so:textproc/libucl
 
-BROKEN_powerpc64=	fails to compile: uncle.c: 'for' loop initial declaration used outside C99 mode
-
+USE_CSTD=	c99
 USE_GITHUB=	yes
 GH_ACCOUNT=	MagikBSD
 

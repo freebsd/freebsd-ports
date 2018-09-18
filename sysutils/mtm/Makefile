@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/README.rst
 
 USES=		ncurses
 
+USE_CSTD=	gnu99
 USE_GITHUB=	yes
 GH_ACCOUNT=	deadpixi
 GH_TAGNAME=	b861104
