@@ -2,28 +2,39 @@
 
 PORTNAME=	emerald
 PORTVERSION=	0.8.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Emerald Window Decorator
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:x11-wm/compiz
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-USE_GL=		gl
-USES=		desktop-file-utils gettext gmake libtool pathfix \
+USES=		desktop-file-utils gmake libtool pathfix \
 		pkgconfig shared-mime-info tar:bzip2
-USE_GNOME=	gtk20 intltool libwnck pango
-USE_XORG=	xrender
+USE_GL=		gl
+USE_GNOME=	cairo gtk20 intltool libwnck pango
+USE_XORG=	x11 xrender
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
+
+OPTIONS_DEFINE=		NLS
+OPTIONS_DEFAULT=	NLS
+
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext-runtime gettext-tools
 
 # XXX - might want to change that
 post-patch:
