@@ -19,7 +19,7 @@ BROKEN_armv6=	Fails to configure: config-sanity: Error 1
 BROKEN_armv7=	Fails to configure: config-sanity: Error 1
 BROKEN_mips64=	Fails to build: cannot detect architecture
 
-USES=		compiler gmake zip
+USES=		compiler:c++11-lang gmake zip
 
 NO_WRKSUBDIR=	yes
 WRKSRC_SUBDIR=	src
