@@ -1,0 +1,46 @@
+Do the bare minimum to provide a toggle for sndio support
+
+--- configure.orig	2004-02-23 21:36:21 UTC
++++ configure
+@@ -27912,7 +27912,30 @@ echo "$as_me: error: cannot use both --with-$audio and
+ 
+ fi;
+ 
++want_sndio=yes
+ 
++# Check whether --with-esd or --without-esd was given.
++if test "${with_sndio+set}" = set; then
++  withval="$with_sndio"
++
++    case "$withval" in
++	yes)
++	    if test "$audio" = unknown
++	    then
++		audio="sndio"
++	    else
++		{ { echo "$as_me:$LINENO: error: cannot use both --with-$audio and --with-esd" >&5
++echo "$as_me: error: cannot use both --with-$audio and --with-esd" >&2;}
++   { (exit 1); exit 1; }; }
++	    fi
++	    ;;
++	no)
++	    want_sndio=no
++	    ;;
++    esac
++
++fi;
++
+ if test "$audio" = unknown
+ then
+     case "$host" in
+@@ -28252,6 +28275,10 @@ else
+     fi
+ fi
+ 
++if test "$audio" = sndio && test "$want_sndio" = yes
++then
++    ldadd_audio="$ldadd_audio -lsndio"
++fi
+ 
+ if test "$audio" = unknown
+ then
