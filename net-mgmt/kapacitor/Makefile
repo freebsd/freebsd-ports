@@ -2,15 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	kapacitor
-PORTVERSION=	1.4.1
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.5.1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	cheffo@freebsd-bg.org
 COMMENT=	Time-series data collection
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 armv6 armv7 i386
 
@@ -20,10 +20,8 @@ USE_RC_SUBR=	kapacitord
 
 USE_GITHUB=	yes
 
-GH_ACCOUNT=	influxdata:DEFAULT
-
-# This should work, but go gets confused with the symlinks.
-#GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
+GH_ACCOUNT=	influxdata
+GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
 
 SUB_FILES=	kapacitord
 SUB_LIST+=	KAPACITORD_USER=${KAPACITORD_USER} \
@@ -53,25 +51,6 @@ SUB_LIST+=	KAPACITORD_LOGCMD="logger"
 
 KAPACITORD_DBDIR=	/var/db/${PORTNAME}/
 KAPACITORD_LOGDIR=	/var/log/${PORTNAME}/
-
-post-patch:
-	@${MKDIR} ${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}
-	@cd ${WRKSRC} && ${MV} \
-	BLOB_STORE_DESIGN.md CHANGELOG.md CONTRIBUTING.md DESIGN.md Gopkg.lock \
-	Gopkg.toml LICENSE_OF_DEPENDENCIES.md README.md alert alert.go auth \
-	autoscale.go barrier.go batch.go bufpool build.py build.sh circle-test.sh \
-	circle.yml client clock cmd combine.go combine_test.go command default.go \
-	delete.go derivative.go doc.go edge edge.go etc eval.go examples expr.go \
-	expvar flatten.go gobuild.sh group_by.go http_out.go http_post.go influxdb \
-	influxdb_out.go influxql.gen.go influxql.gen.go.tmpl influxql.go integrations \
-	join.go kapacitor_loopback.go keyvalue list-deps listmap log.go metaclient.go \
-	models node.go noop.go output.go pipeline query.go query_test.go replay.go \
-	result.go sample.go scripts server services shift.go sideload.go \
-	state_tracking.go stats.go stream.go task.go task_master.go template.go \
-	test.sh tick tickdoc.conf timer tlsconfig tmpldata.json udf udf.go \
-	udf_test.go union.go update_tick_docs.sh usr uuid vendor waiter where.go \
-	window.go window_test.go \
-		${WRKSRC}/src/github.com/${GH_ACCOUNT}/${PORTNAME}
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/influxdata/${PORTNAME} \
