@@ -2,20 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	execline
-PORTVERSION=	2.3.0.4
+PORTVERSION=	2.5.0.1
 CATEGORIES=	lang shells
-MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
+MASTER_SITES=	https://www.skarnet.org/software/${PORTNAME}/
 
-MAINTAINER=	colin-ports@heliocat.net
+MAINTAINER=	crest@rlwinm.de
 COMMENT=	Lightweight non-interactive sh(1)-like scripting language
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	skalibs>=2.7.0.0:devel/skalibs
 LIB_DEPENDS=	libskarnet.so:devel/skalibs
-BUILD_DEPENDS=	skalibs>=2.6.2.0:devel/skalibs
-
-CONFLICTS_INSTALL=	ImageMagick-* # bin/import
 
 USES=		gmake
 USE_LDCONFIG=	yes
@@ -27,9 +25,9 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-include=${LOCALBASE}/include \
 		--enable-shared
 
-DOCS=		AUTHORS README doc/*.html
-
 OPTIONS_DEFINE=	DOCS
+
+DOCS=		AUTHORS README doc/*.html
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
