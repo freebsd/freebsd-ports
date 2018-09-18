@@ -5,7 +5,7 @@ include/dnstable.h
 lib/libdnstable.a
 lib/libdnstable.so
 lib/libdnstable.so.0
-lib/libdnstable.so.0.0.0
+lib/libdnstable.so.0.0.1
 libdata/pkgconfig/libdnstable.pc
 man/man1/dnstable_dump.1.gz
 man/man1/dnstable_lookup.1.gz

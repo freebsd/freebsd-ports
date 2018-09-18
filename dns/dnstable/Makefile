@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnstable
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	dns
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
