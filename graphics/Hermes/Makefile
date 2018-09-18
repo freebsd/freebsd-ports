@@ -15,6 +15,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		gmake libtool tar:bzip2
 USE_LDCONFIG=	yes
+LDFLAGS_i386=	-Wl,-znotext
 
 PORTDOCS=	*
 
