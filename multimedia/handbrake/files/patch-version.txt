@@ -2,11 +2,11 @@
 +++ version.txt
 @@ -0,0 +1,9 @@
 +URL=https://github.com/HandBrake/HandBrake.git
-+HASH=1bd13ba48bffa1652ad4bcf58d3a88c24bae25f8
-+SHORTHASH=1bd13ba48
-+TAG=1.1.1
-+TAG_HASH=1bd13ba48bffa1652ad4bcf58d3a88c24bae25f8
++HASH=df6c26fa261423237ee2bec0bf784c32cbfda3fa
++SHORTHASH=df6c26fa2
++TAG=1.1.2
++TAG_HASH=df6c26fa261423237ee2bec0bf784c32cbfda3fa
 +REV=0
 +BRANCH=
 +REMOTE=https://github.com/HandBrake/HandBrake.git
-+DATE=2018-06-18 15:07:09 +0100
++DATE=2018-09-04 15:35:01 -0400

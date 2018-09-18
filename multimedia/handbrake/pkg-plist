@@ -1,8 +1,9 @@
 bin/HandBrakeCLI
 %%X11%%bin/ghb
 %%X11%%bin/HandBrake
-%%X11%%share/applications/ghb.desktop
+%%X11%%share/applications/fr.handbrake.ghb.desktop
 %%X11%%share/icons/hicolor/scalable/apps/hb-icon.svg
+%%X11%%share/icons/hicolor/scalable/apps/fr.handbrake.ghb.svg
 %%X11%%share/locale/cs/LC_MESSAGES/ghb.mo
 %%X11%%share/locale/da/LC_MESSAGES/ghb.mo
 %%X11%%share/locale/de/LC_MESSAGES/ghb.mo
