@@ -5,6 +5,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/flags.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/libbiguint/index.html
+%%PORTDOCS%%%%DOCSDIR%%/libdatastruct/genqdyn.html
 %%PORTDOCS%%%%DOCSDIR%%/libdatastruct/index.html
 %%PORTDOCS%%%%DOCSDIR%%/librandom/index.html
 %%PORTDOCS%%%%DOCSDIR%%/libskarnet.html
@@ -97,7 +98,6 @@ include/skalibs/ip46.h
 include/skalibs/kolbak.h
 include/skalibs/lolstdio.h
 include/skalibs/md5.h
-include/skalibs/mininetstring.h
 include/skalibs/netstring.h
 include/skalibs/nonposix.h
 include/skalibs/nsig.h
@@ -138,9 +138,9 @@ include/skalibs/unixmessage.h
 include/skalibs/unixonacid.h
 include/skalibs/webipc.h
 lib/libskarnet.so
-lib/libskarnet.so.2.6
-lib/libskarnet.so.2.6.3
-lib/libskarnet.so.2.6.3.0
+lib/libskarnet.so.2.7
+lib/libskarnet.so.2.7.0
+lib/libskarnet.so.2.7.0.0
 lib/skalibs/libskarnet.a
 lib/skalibs/sysdeps/socket.lib
 lib/skalibs/sysdeps/spawn.lib
