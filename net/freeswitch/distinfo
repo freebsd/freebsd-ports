@@ -1,6 +1,6 @@
-TIMESTAMP = 1500379394
-SHA256 (freeswitch-1.6.19.tar.xz) = e8d271a0d876ba4cca551682af0a4f5047bfd79438fcebdcc17d00711c04a8ff
-SIZE (freeswitch-1.6.19.tar.xz) = 33497296
+TIMESTAMP = 1536503355
+SHA256 (freeswitch-1.8.1.tar.xz) = f606de858e2df09a752f890e8f0fc41dae8dd888e3fe952e17a90e9ff9ed270e
+SIZE (freeswitch-1.8.1.tar.xz) = 28449552
 SHA256 (freeswitch-sounds-music-8000-1.0.52.tar.gz) = 2491dcb92a69c629b03ea070d2483908a52e2c530dd77791f49a45a4d70aaa07
 SIZE (freeswitch-sounds-music-8000-1.0.52.tar.gz) = 14620675
 SHA256 (freeswitch-sounds-en-us-callie-8000-1.0.51.tar.gz) = e48a63bd69e6253d294ce43a941d603b02467feb5d92ee57a536ccc5f849a4a8

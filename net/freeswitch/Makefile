@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeswitch
-PORTVERSION=	1.6.19
-PORTREVISION=	2
+PORTVERSION=	1.8.1
 CATEGORIES=	net
 MASTER_SITES=	http://files.freeswitch.org/releases/freeswitch/ \
 		http://files.freeswitch.org/releases/sounds/:sounds
@@ -26,7 +25,8 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libsndfile.so:audio/libsndfile \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
-		libjbig.so:graphics/jbigkit
+		libjbig.so:graphics/jbigkit \
+		libtiff.so:graphics/tiff
 
 USES=		gmake iconv jpeg libedit libtool lua perl5 pkgconfig shebangfix ssl tar:xz
 USE_LDCONFIG=	yes
@@ -39,7 +39,9 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		--enable-zrtp
 CFLAGS+=	-Wno-c11-extensions -Wno-deprecated-declarations \
-		-Wno-zero-length-array -Wno-incompatible-pointer-types
+		-Wno-zero-length-array -Wno-incompatible-pointer-types \
+		-Wno-ignored-optimization-argument -Wno-unknown-warning-option \
+		-Wno-unused-function -Wno-enum-conversion -Wno-reserved-user-defined-literal
 
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
@@ -69,7 +71,7 @@ ALL_MODULES_BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
 ALL_MODULES_CONFLICTS_BUILD=	apr
 ALL_MODULES_EXTRA_PATCHES=	${FILESDIR}/extrapatch-modules.conf
 ALL_MODULES_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
-				libopencv_gpu.so:graphics/opencv \
+				libopencv_video.so:graphics/opencv \
 				libopencv_core.so:graphics/opencv-core \
 				libhiredis.so:databases/hiredis \
 				libmemcached.so:databases/libmemcached \
@@ -134,7 +136,8 @@ post-install:
 .endfor
 		${FIND} ${STAGEDIR}${DATADIR}/sounds -type f | ${SED} "s,^${STAGEDIR}${DATADIR},${DATADIR}," >> ${TMPPLIST}
 		${RM} -r ${STAGEDIR}${ETCDIR}
-		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/freeswitch/mod/mod_png.so
+		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/freeswitch/mod/mod_*.so \
+			${STAGEDIR}${PREFIX}/lib/libfreeswitch.so.1.0.0
 		(cd ${WRKSRC}/conf && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 

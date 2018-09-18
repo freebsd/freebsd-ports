@@ -12,6 +12,8 @@ include/freeswitch/switch.h
 include/freeswitch/switch_am_config.h
 include/freeswitch/switch_apr.h
 include/freeswitch/switch_buffer.h
+include/freeswitch/switch_cJSON.h
+include/freeswitch/switch_cJSON_Utils.h
 include/freeswitch/switch_caller.h
 include/freeswitch/switch_channel.h
 include/freeswitch/switch_config.h
@@ -37,6 +39,7 @@ include/freeswitch/switch_loadable_module.h
 include/freeswitch/switch_log.h
 include/freeswitch/switch_module_interfaces.h
 include/freeswitch/switch_mprintf.h
+include/freeswitch/switch_msrp.h
 include/freeswitch/switch_nat.h
 include/freeswitch/switch_odbc.h
 include/freeswitch/switch_pgsql.h
@@ -50,6 +53,7 @@ include/freeswitch/switch_stun.h
 include/freeswitch/switch_types.h
 include/freeswitch/switch_utf8.h
 include/freeswitch/switch_utils.h
+include/freeswitch/switch_vad.h
 include/freeswitch/switch_vpx.h
 include/freeswitch/switch_xml.h
 include/freeswitch/switch_xml_config.h
@@ -91,6 +95,7 @@ lib/freeswitch/mod/mod_esf.so
 %%ALL_MODULES%%lib/freeswitch/mod/mod_event_multicast.so
 lib/freeswitch/mod/mod_event_socket.so
 lib/freeswitch/mod/mod_expr.so
+%%ALL_MODULES%%lib/freeswitch/mod/mod_fail2ban.so
 lib/freeswitch/mod/mod_fifo.so
 %%ALL_MODULES%%lib/freeswitch/mod/mod_format_cdr.so
 %%ALL_MODULES%%lib/freeswitch/mod/mod_fsk.so
@@ -126,6 +131,7 @@ lib/freeswitch/mod/mod_png.so
 %%ALL_MODULES%%lib/freeswitch/mod/mod_portaudio_stream.so
 %%ALL_MODULES%%lib/freeswitch/mod/mod_posix_timer.so
 %%ALL_MODULES%%lib/freeswitch/mod/mod_prefix.so
+%%ALL_MODULES%%lib/freeswitch/mod/mod_raven.so
 %%ALL_MODULES%%lib/freeswitch/mod/mod_rayo.so
 %%ALL_MODULES%%lib/freeswitch/mod/mod_redis.so
 %%ALL_MODULES%%lib/freeswitch/mod/mod_rss.so
@@ -152,7 +158,6 @@ lib/freeswitch/mod/mod_say_en.so
 %%ALL_MODULES%%lib/freeswitch/mod/mod_shell_stream.so
 %%ALL_MODULES%%lib/freeswitch/mod/mod_shout.so
 lib/freeswitch/mod/mod_skinny.so
-%%ALL_MODULES%%lib/freeswitch/mod/mod_skypopen.so
 lib/freeswitch/mod/mod_sms.so
 %%ALL_MODULES%%lib/freeswitch/mod/mod_snapshot.so
 lib/freeswitch/mod/mod_sndfile.so
@@ -173,6 +178,7 @@ lib/freeswitch/mod/mod_tone_stream.so
 %%ALL_MODULES%%lib/freeswitch/mod/mod_unimrcp.so
 lib/freeswitch/mod/mod_valet_parking.so
 lib/freeswitch/mod/mod_verto.so
+%%ALL_MODULES%%lib/freeswitch/mod/mod_video_filter.so
 %%ALL_MODULES%%lib/freeswitch/mod/mod_vlc.so
 %%ALL_MODULES%%lib/freeswitch/mod/mod_vmd.so
 lib/freeswitch/mod/mod_voicemail.so
@@ -542,6 +548,7 @@ libdata/pkgconfig/freeswitch.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/softphone/freeswitch.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testing/autoload_configs/acl.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testing/autoload_configs/amd.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testing/autoload_configs/amr.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testing/autoload_configs/cdr_csv.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testing/autoload_configs/conference.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/testing/autoload_configs/conference_layouts.conf.xml
@@ -634,6 +641,8 @@ libdata/pkgconfig/freeswitch.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/acl.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/alsa.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/amqp.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/amr.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/amrwb.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/avmd.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/blacklist.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/callcenter.conf.xml
@@ -674,6 +683,7 @@ libdata/pkgconfig/freeswitch.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/memcache.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/modules.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/mongo.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/msrp.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/nibblebill.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/opal.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/opus.conf.xml
@@ -706,6 +716,7 @@ libdata/pkgconfig/freeswitch.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/verto.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/voicemail.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/voicemail_ivr.conf.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/vpx.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/xml_cdr.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/xml_curl.conf.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vanilla/autoload_configs/xml_rpc.conf.xml
