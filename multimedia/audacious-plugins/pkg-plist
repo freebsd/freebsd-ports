@@ -22,7 +22,6 @@ lib/audacious/General/albumart.so
 %%AOSD%%lib/audacious/General/aosd.so
 %%CDDA%%lib/audacious/General/cd-menu-items.so
 lib/audacious/General/delete-files.so
-lib/audacious/General/gnomeshortcuts.so
 lib/audacious/General/gtkui.so
 lib/audacious/General/hotkey.so
 %%LIRC%%lib/audacious/General/lirc.so
@@ -36,12 +35,11 @@ lib/audacious/General/skins.so
 lib/audacious/General/song_change.so
 lib/audacious/General/statusicon.so
 %%AAC%%lib/audacious/Input/aac-raw.so
-lib/audacious/Input/adplug.so
 %%AMIDI%%lib/audacious/Input/amidi-plug.so
 %%CDDA%%lib/audacious/Input/cdaudio-ng.so
 %%FFMPEG%%lib/audacious/Input/ffaudio.so
 %%FLAC%%lib/audacious/Input/flacng.so
-%%MP3%%lib/audacious/Input/madplug.so
+lib/audacious/Input/madplug.so
 lib/audacious/Input/metronom.so
 %%MODPLUG%%lib/audacious/Input/modplug.so
 lib/audacious/Input/psf2.so
@@ -53,7 +51,7 @@ lib/audacious/Input/vtx.so
 %%WAVPACK%%lib/audacious/Input/wavpack.so
 lib/audacious/Input/xsf.so
 %%ALSA%%lib/audacious/Output/alsa.so
-lib/audacious/Output/filewriter.so
+%%FILEWRITER%%lib/audacious/Output/filewriter.so
 %%JACK%%lib/audacious/Output/jack-ng.so
 %%OSS%%lib/audacious/Output/oss4.so
 %%PULSEAUDIO%%lib/audacious/Output/pulse_audio.so

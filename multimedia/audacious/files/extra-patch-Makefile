@@ -1,8 +1,0 @@
---- Makefile.orig	2015-11-08 04:44:35 UTC
-+++ Makefile
-@@ -1,4 +1,4 @@
--SUBDIRS = src man images po
-+SUBDIRS = src man images
- 
- DISTCLEAN = audacious.pc buildsys.mk config.h config.log config.status extra.mk
- 
