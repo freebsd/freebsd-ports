@@ -19,9 +19,10 @@ BROKEN_sparc64=	does not build: unrecognized command line options
 
 LIB_DEPENDS=	libleveldb.so:databases/leveldb
 
-MAKE_ARGS=	CC="${CXX}"
 USES=		compiler:c++0x gmake localbase perl5
 USE_PERL5=	configure
+
+MAKE_ARGS=	CC="${CXX}"
 
 .include <bsd.port.pre.mk>
 
