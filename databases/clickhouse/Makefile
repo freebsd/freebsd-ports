@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	clickhouse
-PORTVERSION=	18.1.0
+PORTVERSION=	18.12.17
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-stable
-PORTREVISION=	2
 CATEGORIES=	databases
 
 MAINTAINER=	proler@gmail.com
@@ -34,16 +33,14 @@ LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools \
 		libunwind.so:devel/libunwind \
 		librdkafka.so:net/librdkafka \
 		libgtest.so:devel/googletest
-#TODO:		libcpuid.so:sysutils/libcpuid \
+#TODO:		libcpuid.so:sysutils/libcpuid \ # /usr/local/include/libcpuid/libcpuid_types.h:61:29: error: typedef redefinition with different types ('long long' vs '__int64_t' (aka 'long'))
 
 USES=		compiler:c++14-lang cmake iconv mysql ssl readline shebangfix
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DUNBUNDLED=1 \
 		-DUSE_STATIC_LIBRARIES=0 \
 		-DNO_WERROR=1 \
-		-DENABLE_TESTS=0 \
-		-DCXX11_ABI= \
-		-DCOMPILER_FLAGS="-DLZ4_DISABLE_DEPRECATE_WARNINGS=1"
+		-DENABLE_TESTS=0
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yandex
