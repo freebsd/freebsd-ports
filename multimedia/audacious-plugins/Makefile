@@ -29,14 +29,14 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gtk20 glib20 libxml2 cairo gdkpixbuf2
 USE_XORG=	x11
 
-CONFIGURE_ARGS=	--disable-console --disable-sndio --disable-soxr \
+CONFIGURE_ARGS=	--disable-console --disable-soxr \
 		--enable-gnomeshortcuts \
 		--enable-gtk --enable-filewriter --enable-hotkey
 
 OPTIONS_DEFINE=	AAC ALSA AMIDI AOSD BS2B CDDA CUE FFMPEG \
 		FLAC JACK LAME LIRC MP3 MMS MODPLUG MPRIS NEON NLS NOTIFY \
 		OPENGL OSS PULSEAUDIO SAMPLERATE SCROBBLER SDL SID SNDFILE \
-		SPEEDPITCH VORBIS WAVPACK
+		SNDIO SPEEDPITCH VORBIS WAVPACK
 OPTIONS_DEFAULT=	AAC AOSD CDDA CUE FFMPEG FLAC MP3 \
 		MMS MPRIS NEON NLS NOTIFY OSS SCROBBLER VORBIS WAVPACK
 
@@ -100,6 +100,8 @@ SID_LIB_DEPENDS=	libsidplayfp.so:audio/libsidplayfp
 SID_CONFIGURE_OFF=	--disable-sid
 SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 SNDFILE_CONFIGURE_OFF=	--disable-sndfile
+SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+SNDIO_CONFIGURE_ENABLE=	sndio
 SPEEDPITCH_CONFIGURE_OFF=	--disable-speedpitch
 SPEEDPITCH_IMPLIES=	SAMPLERATE
 VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
