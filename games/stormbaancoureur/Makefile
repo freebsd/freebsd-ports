@@ -16,11 +16,13 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
 		${LOCALBASE}/lib/libode.a:devel/ode
 
+USES=		compiler
 USE_GL=		gl glu glut
 
 MAKE_ENV=	DATADIR="${DATADIR}"
 
-CXXFLAGS+=	-Wno-c++11-narrowing
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 BUILD_WRKSRC=	${WRKSRC}/src-stormbaancoureur
 INSTALL_WRKSRC=	${WRKSRC}/src-stormbaancoureur

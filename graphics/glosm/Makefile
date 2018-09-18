@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libexpat.so:textproc/expat2
 
-USES=		tar:bzip2 cmake
+USES=		cmake compiler tar:bzip2
 USE_GL=		gl
 USE_XORG=	x11
 USE_SDL=	sdl
@@ -24,7 +24,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	AMDmi3
 TEST_TARGET=	test
 
-CXXFLAGS+=	-Wno-c++11-narrowing
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 PORTDOCS=	README ChangeLog
 
