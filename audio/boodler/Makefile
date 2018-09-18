@@ -14,8 +14,6 @@ COMMENT=	Programmable soundscape tool
 LICENSE=	LGPL20 # Main program only, sounds have various copyrights
 LICENSE_FILE=	${WRKSRC}/LGPL
 
-BROKEN_aarch64=		fails to link: can't create dynamic relocation R_AARCH64_ADR_PREL_PG_HI21 against symbol: _Py_NoneStruct in readonly segment
-
 RESTRICTED=	Not for commercial use
 RESTRICTED_FILES=	boodler-snd-021902.tar.gz
 
@@ -47,9 +45,7 @@ OSS_CONFIGURE_ON=	--driver oss
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 CONFIGURE_ARGS+=	--PIC
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e "s|python|${PYTHON_CMD}|" \
