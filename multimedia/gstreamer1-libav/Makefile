@@ -26,6 +26,7 @@ USE_GSTREAMER1=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+CFLAGS_powerpc64=	-mminimal-toc
 
 OPTIONS_DEFINE=	FFMPEG
 
