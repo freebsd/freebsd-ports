@@ -16,9 +16,7 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
 CFLAGS+=	-fPIC -DPIC
-.endif
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
