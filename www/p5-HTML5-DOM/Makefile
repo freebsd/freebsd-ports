@@ -13,6 +13,7 @@ COMMENT=		Super fast html5 DOM library with css selectors
 LICENSE=		MIT
 
 USES=			perl5
+USE_CSTD=		gnu99
 USE_PERL5=		configure
 
 .include <bsd.port.mk>

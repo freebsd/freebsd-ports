@@ -15,6 +15,7 @@ LIB_DEPENDS=	libsodium.so:security/libsodium \
 		libtoxcore.so:net-im/tox
 
 USES=		gmake pkgconfig
+USE_CSTD=	gnu99
 USE_GITHUB=	yes
 GH_ACCOUNT=	TokTok
 GH_TAGNAME=	f76a7bd
