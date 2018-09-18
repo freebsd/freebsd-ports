@@ -3,6 +3,7 @@
 
 PORTNAME=	lockdown
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://lockdown.trunet.dk/ \
 		http://lockdown.loproc.dk/
