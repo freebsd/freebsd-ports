@@ -3,6 +3,7 @@
 
 PORTNAME=	libargon2
 PORTVERSION=	20171227
+PORTREVISION=	1
 CATEGORIES=	security devel
 
 MAINTAINER=	hsw@bitmark.com
@@ -20,7 +21,8 @@ GH_PROJECT=	phc-winner-argon2
 
 MAKE_JOBS_UNSAFE=	yes
 LIBARGON2=	libargon2.so.0
-MAKE_ARGS+=	SO_LDFLAGS="-shared -Wl,-soname=${LIBARGON2}"
+MAKE_ARGS+=	SO_LDFLAGS="-shared -Wl,-soname=${LIBARGON2}" \
+		OPTTARGET="generic"
 
 # remove multiarch as this is only for Linux
 SUBST=		s/@HOST_MULTIARCH@//g;
