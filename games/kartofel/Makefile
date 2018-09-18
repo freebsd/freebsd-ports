@@ -13,12 +13,13 @@ COMMENT=	Connect the dots in order without crossing over yourself
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		gmake
+USES=		compiler gmake
 USE_SDL=	sdl gfx mixer image ttf
 
 ALL_TARGET=	default
 
-CXXFLAGS+=	-Wno-c++11-narrowing
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 DATA_DIRS=	sounds fonts music images levels
 
