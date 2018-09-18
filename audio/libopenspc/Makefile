@@ -17,6 +17,7 @@ GNU_CONFIGURE=	yes
 USES=		gmake libtool
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386
+LDFLAGS_i386=	-Wl,-znotext
 
 PLIST_FILES=	include/openspc.h lib/libopenspc.a \
 		lib/libopenspc.so lib/libopenspc.so.0 lib/libopenspc.so.0.0.3
