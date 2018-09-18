@@ -39,8 +39,6 @@ GRAPHVIZ_RUN_DEPENDS=		dot:graphics/graphviz
 MKLIVESTATUS_RUN_DEPENDS=	mk-livestatus>=0:net-mgmt/mk-livestatus
 NDO2DB_USE=			PHP=mysql
 NDO2DB_RUN_DEPENDS=		ndo2b-3x:net-mgmt/ndoutils
-NLS_USES=			gettext
-NLS_CONFIGURE_WITH=		nls
 
 post-extract:
 	@${RM} ${WRKSRC}/.gitignore ${WRKSRC}/install.sh ${WRKSRC}/INSTALL
