@@ -3,7 +3,7 @@
 
 PORTNAME=	iconv
 PORTVERSION=	7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	converters
 MASTER_SITES=	GHC
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
@@ -15,8 +15,6 @@ COMMENT=	Iconv binding for Lua 5
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=		fails to link: can't create dynamic relocation R_AARCH64_ABS64 against local symbol in readonly segment
-
 USES=		pkgconfig iconv lua
 
 USE_GITHUB=	yes
@@ -27,7 +25,9 @@ PLIST_FILES=	${LUA_MODLIBDIR}/iconv.so
 CFLAGS+=	`pkgconf --cflags lua-${LUA_VER}` -I${LOCALBASE}/include
 MAKE_ARGS=	LUABIN=${LUA_CMD} CFLAGS="${CFLAGS}"
 LDFLAGS+=	-shared ${ICONV_LIB} -L${LOCALBASE}/lib
+CFLAGS_aarch64=	-fPIC
 CFLAGS_amd64=	-fPIC
+CFLAGS_i386=	-fPIC
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}
