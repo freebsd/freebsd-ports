@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	s6
-PORTVERSION=	2.7.0.0
+PORTVERSION=	2.7.2.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
+MASTER_SITES=	https://www.skarnet.org/software/${PORTNAME}/
 
-MAINTAINER=	colin-ports@heliocat.net
-COMMENT=	skarnet.org supervision suite
+MAINTAINER=	crest@rlwinm.de
+COMMENT=	skarnet.org supervision suite.
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	execline>=2.5.0.1:lang/execline
 LIB_DEPENDS=	libskarnet.so:devel/skalibs
-BUILD_DEPENDS=	execline>=2.2.0.0:lang/execline
 RUN_DEPENDS=	execlineb:lang/execline
 
 USES=		gmake
@@ -32,9 +32,9 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-lib=${LOCALBASE}/lib/execline \
 		--enable-shared
 
-DOCS=		AUTHORS README doc/*.html
-
 OPTIONS_DEFINE=	DOCS
+
+DOCS=		AUTHORS README doc/*.html
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
