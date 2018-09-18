@@ -4,8 +4,8 @@ include/unbound.h
 libdata/pkgconfig/libunbound.pc
 lib/libunbound.a
 lib/libunbound.so
-lib/libunbound.so.2
-lib/libunbound.so.2.5.11
+lib/libunbound.so.8
+lib/libunbound.so.8.0.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_unbound.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/unbound.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/unboundmodule.py
