@@ -3,7 +3,7 @@
 
 PORTNAME=	lfview
 PORTVERSION=	1.1a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://hoshina.denpa.org/
 
@@ -19,10 +19,8 @@ DOCSDIR=	${PREFIX}/share/doc/ja/lfview
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} != i386
 CFLAGS+=	-fPIC
 MAKE_ENV+=	SHLIBGLOBALSFLAGS=-fPIC
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lfview ${STAGEDIR}${PREFIX}/bin
