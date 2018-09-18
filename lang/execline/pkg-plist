@@ -28,7 +28,6 @@ bin/if
 bin/ifelse
 bin/ifte
 bin/ifthenelse
-bin/import
 bin/importas
 bin/loopwhilex
 bin/multidefine
@@ -48,9 +47,9 @@ include/execline/config.h
 include/execline/execline.h
 lib/execline/libexecline.a
 lib/libexecline.so
-lib/libexecline.so.2.3
-lib/libexecline.so.2.3.0
-lib/libexecline.so.2.3.0.4
+lib/libexecline.so.2.5
+lib/libexecline.so.2.5.0
+lib/libexecline.so.2.5.0.1
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/background.html
@@ -92,7 +91,6 @@ lib/libexecline.so.2.3.0.4
 %%PORTDOCS%%%%DOCSDIR%%/ifelse.html
 %%PORTDOCS%%%%DOCSDIR%%/ifte.html
 %%PORTDOCS%%%%DOCSDIR%%/ifthenelse.html
-%%PORTDOCS%%%%DOCSDIR%%/import.html
 %%PORTDOCS%%%%DOCSDIR%%/importas.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/loopwhilex.html
