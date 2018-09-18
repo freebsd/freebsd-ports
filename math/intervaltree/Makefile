@@ -9,6 +9,7 @@ COMMENT=	Minimal C++ interval tree implementation
 
 LICENSE=	MIT
 
+USES=		compiler:c++0x
 USE_GITHUB=	yes
 GH_ACCOUNT=	ekg
 GH_TAGNAME=	8fc4be91866237995e1105689d84bece619f4663
