@@ -3,10 +3,9 @@
 # TODO: once plasma5 ports are in, re-add dependency on workspace.
 
 PORTNAME=	ktorrent
-DISTVERSION=	5.1.0
-PORTREVISION=	2
+DISTVERSION=	5.1.1
 CATEGORIES=	net-p2p kde
-MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION:R}/
+MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
