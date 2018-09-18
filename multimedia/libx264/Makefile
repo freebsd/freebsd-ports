@@ -13,8 +13,6 @@ PLIST=		${.CURDIR}/pkg-plist
 LIB_DEPENDS=	#
 
 USES=		pathfix
-
-LDFLAGS+=	${LDFLAGS_${ARCH}}
 LDFLAGS_i386=	-Wl,-znotext
 
 OPTIONS_DEFINE=		ASM OPENCL
