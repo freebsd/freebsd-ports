@@ -12,8 +12,6 @@ COMMENT=	GD bindings for the Lua programming language
 
 LICENSE=	MIT
 
-BROKEN_aarch64=		fails to link: can't create dynamic relocation R_AARCH64_ABS64 against local symbol in readonly segment
-
 LIB_DEPENDS=	libgd.so:graphics/gd
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
@@ -25,7 +23,9 @@ GDFEATURES=	`gdlib-config --features |sed -e "s/GD_/-DGD_/g"`
 
 .include <bsd.port.options.mk>
 
+CFLAGS_aarch64+=-fPIC
 CFLAGS_amd64+=	-fPIC
+CFLAGS_i386+=	-fPIC
 
 do-build:
 	${CC} -o ${WRKSRC}/gd.so ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} ${GDFEATURES} ${WRKSRC}/luagd.c
