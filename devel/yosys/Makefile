@@ -12,6 +12,8 @@ COMMENT=	Yosys Open SYnthesis Suite
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc64=	fails to build: /bin/sh: clang: not found
+
 BUILD_DEPENDS=	abc:cad/abc \
 		bash:shells/bash \
 		gawk:lang/gawk
