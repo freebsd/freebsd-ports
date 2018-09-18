@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 
-USES=		cmake
+USES=		cmake compiler:c++14-lang
 # Although there are a couple releases, git describe --tags does not work
 # so we cannot use the usual USE_GITHUB tools here.
 USE_GITHUB=	yes

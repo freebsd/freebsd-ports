@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libnotify.so:devel/libnotify
 
-USES=		gnome mate meson ninja pkgconfig gettext
+USES=		compiler:c11 gnome mate meson ninja pkgconfig gettext
 MESON_ARGS=	--sysconfdir=${PREFIX}/etc
 
 USE_GITHUB=	yes
