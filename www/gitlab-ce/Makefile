@@ -3,7 +3,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	11.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -12,19 +12,11 @@ COMMENT=	Web GUI for managing git repositories
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS_SINGLE=	DATABASE
-OPTIONS_SINGLE_DATABASE=	PGSQL MYSQL
-OPTIONS_DEFAULT=	PGSQL
-PGSQL_DESC=	Default PostgreSQL support (preferred)
-MYSQL_DESC=	Optional MySQL support
-
-BUILD_DEPENDS=	gem:devel/ruby-gems
-
 # the rubygems of RUN_DEPENDS matches the order of the Gemfile
 # which makes maintaining this long list much easier!
 # only rubygem-pg and rubygem-mysql are defined later as RUN_DEPENDS
 # for the options
-RUN_DEPENDS=	git>=2.16.2:devel/git \
+MY_DEPENDS=	git>=2.16.2:devel/git \
 	gitlab-shell>=8.1.1:devel/gitlab-shell \
 	gitlab-workhorse>=5.1.0:www/gitlab-workhorse \
 	gitaly>=0.117.2:devel/gitaly \
@@ -205,6 +197,17 @@ RUN_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-grape_logging>=1.7:devel/rubygem-grape_logging \
 	rubygem-asset_sync>=2.4:net/rubygem-asset_sync
 
+BUILD_DEPENDS=	gem:devel/ruby-gems \
+	${MY_DEPENDS}
+
+RUN_DEPENDS=	${MY_DEPENDS}
+
+OPTIONS_SINGLE=	DATABASE
+OPTIONS_SINGLE_DATABASE=	PGSQL MYSQL
+OPTIONS_DEFAULT=	PGSQL
+PGSQL_DESC=	Default PostgreSQL support (preferred)
+MYSQL_DESC=	Optional MySQL support
+
 PGSQL_RUN_DEPENDS=	rubygem-pg018>=0.18.2:databases/rubygem-pg018 \
 	rubygem-peek-pg>=1.3.0:databases/rubygem-peek-pg
 MYSQL_RUN_DEPENDS=	rubygem-mysql2>=0.4.5:databases/rubygem-mysql2 \
@@ -244,10 +247,8 @@ post-patch-PGSQL-off:
 	${REINPLACE_CMD} -e "/gem 'pg'/d" ${WRKSRC}/Gemfile
 	${REINPLACE_CMD} -e "/gem 'peek-pg'/d" ${WRKSRC}/Gemfile
 
-pre-install:
-	(cd ${WRKSRC} && rm Gemfile.lock && bundle install --local)
-
 do-install:
+	(cd ${WRKSRC} && ${RM} Gemfile.lock && bundle install --local)
 	${FIND} ${WRKSRC} -name '*.orig' -delete
 	${FIND} ${WRKSRC} -name '*.bak' -delete
 	${FIND} ${WRKSRC} -name '*.gitkeep' -delete
