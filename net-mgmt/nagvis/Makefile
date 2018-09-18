@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nagvis
-PORTVERSION=	1.9.7
+PORTVERSION=	1.9.9
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.nagvis.org/share/
 
@@ -11,45 +11,36 @@ COMMENT=	Visualization addon for Nagios
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	GRAPHVIZ
-OPTIONS_SINGLE=	BROKER
-OPTIONS_SINGLE_BROKER=	MKLIVESTATUS NDO2DB
-OPTIONS_DEFAULT=	MKLIVESTATUS
-MKLIVESTATUS_DESC=	Depend on mk-livestatus broker (preferred)
-NDO2DB_DESC=	Depend on ndo2db broker
-GRAPHVIZ_DESC=	Graphviz is needed for automaps
-
 USES=		gettext php:web
-NLS_USES=	gettext
-NLS_CONFIGURE_OFF=	--disable-nls
-
-NO_BUILD=	yes
 USE_PHP=	gd gettext mbstring session json pdo pdo_sqlite
 
-.include <bsd.port.options.mk>
-
-WWW_OWNER?=	${WWWOWN}
-WWW_GROUP?=	${WWWGRP}
-DIRMODE?=	750
-FILEMODE?=	640
+NO_BUILD=	yes
+NO_ARCH=	yes
 
 SUB_LIST+=	WWW_OWNER=${WWW_OWNER} WWW_GROUP=${WWW_GROUP} \
 		DIRMODE=${DIRMODE} FILEMODE=${FILEMODE}
 SUB_FILES+=	pkg-install pkg-deinstall
 PLIST_SUB+=	WWWDIR="${WWWDIR}"
+WWW_OWNER?=	${WWWOWN}
+WWW_GROUP?=	${WWWGRP}
+DIRMODE?=	750
+FILEMODE?=	640
 
-.if ${PORT_OPTIONS:MNDO2DB}
-USE_PHP+=	mysql
-RUN_DEPENDS+=	ndo2db-3x:net-mgmt/ndoutils
-.endif
+OPTIONS_DEFINE=		GRAPHVIZ
+OPTIONS_SINGLE=		BROKER
+OPTIONS_SINGLE_BROKER=	MKLIVESTATUS NDO2DB
+OPTIONS_DEFAULT=	MKLIVESTATUS
 
-.if ${PORT_OPTIONS:MMKLIVESTATUS}
-RUN_DEPENDS+=	mk-livestatus>=0:net-mgmt/mk-livestatus
-.endif
+GRAPHVIZ_DESC=		Graphviz is needed for automaps
+MKLIVESTATUS_DESC=	Depend on mk-livestatus broker (preferred)
+NDO2DB_DESC=		Depend on ndo2db broker
 
-.if ${PORT_OPTIONS:MGRAPHVIZ}
-RUN_DEPENDS+=	dot:graphics/graphviz
-.endif
+GRAPHVIZ_RUN_DEPENDS=		dot:graphics/graphviz
+MKLIVESTATUS_RUN_DEPENDS=	mk-livestatus>=0:net-mgmt/mk-livestatus
+NDO2DB_USE=			PHP=mysql
+NDO2DB_RUN_DEPENDS=		ndo2b-3x:net-mgmt/ndoutils
+NLS_USES=			gettext
+NLS_CONFIGURE_WITH=		nls
 
 post-extract:
 	@${RM} ${WRKSRC}/.gitignore ${WRKSRC}/install.sh ${WRKSRC}/INSTALL
@@ -62,10 +53,10 @@ post-patch:
 		${WRKSRC}/etc/nagvis.ini.php-sample
 
 do-install:
-	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${WWWDIR}/
 	${MKDIR} ${STAGEDIR}${WWWDIR}/etc/automaps \
 		${STAGEDIR}${WWWDIR}/share/var \
 		${STAGEDIR}${WWWDIR}/var/tmpl/cache \
 		${STAGEDIR}${WWWDIR}/var/tmpl/compile
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${WWWDIR}/
 
 .include <bsd.port.mk>
