@@ -1,8 +1,0 @@
---- Makefile.orig	2015-11-07 23:04:08 UTC
-+++ Makefile
-@@ -1,4 +1,4 @@
--SUBDIRS = src po
-+SUBDIRS = src
- 
- DISTCLEAN = buildsys.mk config.h config.log config.status extra.mk
- 

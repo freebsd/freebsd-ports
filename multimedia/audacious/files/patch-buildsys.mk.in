@@ -1,27 +1,21 @@
---- buildsys.mk.in.orig	2016-08-24 14:50:57 UTC
+--- buildsys.mk.in.orig	2018-08-08 22:36:44 UTC
 +++ buildsys.mk.in
-@@ -166,7 +166,7 @@ depend: pre-depend ${SRCS}
+@@ -180,7 +180,8 @@ depend: pre-depend ${SRCS}
  	done; \
  	if test x"$$regen" = x"1" -a x"$$deps" != x""; then \
  		${DEPEND_STATUS}; \
--		if ${MAKE} ${MFLAGS} $$deps && cat $$deps >.deps; then \
-+		if ${MAKE} ${MFLAGS} $$deps && sed 's|/[^ ]*/include/audacious/dbus.h||g' $$deps >.deps; then \
+-		if ${MAKE} $$deps && cat $$deps >.deps; then \
++		if ${MAKE} $$deps && cat $$deps >.deps && sed 's|/[^ ]*/include/audacious/dbus.h||g' \
++		$$deps >.deps; then \
  			rm -f $$deps; \
  			${DEPEND_OK}; \
  		else \
-@@ -205,7 +205,7 @@ pre-depend:
- 
- ${PROG} ${PROG_NOINST}: ${EXT_DEPS} ${OBJS} ${OBJS_EXTRA}
- 	${LINK_STATUS}
--	if ${LD} -o $@ ${OBJS} ${OBJS_EXTRA} ${LDFLAGS} ${LIBS}; then \
-+	if ${LD} -o $@ ${OBJS} ${OBJS_EXTRA} ${LIBS} ${LDFLAGS}; then \
- 		${LINK_OK}; \
- 	else \
- 		${LINK_FAILED}; \
-@@ -604,6 +604,15 @@ install: install-extra
- 		fi \
- 	done
- 
+@@ -664,6 +665,15 @@ install: install-extra
+ 		${DIR_ENTER}; \
+ 		${MAKE} install || exit $$?; \
+ 		${DIR_LEAVE}; \
++	done
++
 +	for i in ${CONTRIB}; do \
 +		${INSTALL_STATUS}; \
 +		if ${MKDIR_P} ${DESTDIR}${datarootdir}/appdata && ${INSTALL} -m 644 $$i ${DESTDIR}${datarootdir}/appdata/$$(basename $$i); then \
@@ -29,8 +23,6 @@
 +		else \
 +			${INSTALL_FAILED}; \
 +		fi \
-+	done
-+
- 	for i in ${PROG}; do \
- 		${INSTALL_STATUS}; \
- 		if ${MKDIR_P} ${DESTDIR}${bindir} && ${INSTALL} -m 755 $$i ${DESTDIR}${bindir}/$$i; then \
+ 	done
+ 
+ 	for i in "" ${SHARED_LIB}; do \

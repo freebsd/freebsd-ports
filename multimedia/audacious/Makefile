@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	audacious
-PORTVERSION=	3.9
-PORTREVISION=	1
+PORTVERSION=	3.10
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -17,17 +16,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-CONFLICTS_INSTALL=	audacious-gtk3-3.*
-
-SUB_FILES=	pkg-message
-
 USES=		compiler:c++11-lib desktop-file-utils gettext-tools gmake \
-		localbase pkgconfig tar:bzip2
-GNU_CONFIGURE=	yes
+		gnome localbase pkgconfig tar:bzip2
 USE_XORG=	x11 sm
 USE_GNOME=	gtk20 glib20 cairo
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
+SUB_FILES=	pkg-message
+
+CONFLICTS_INSTALL=	audacious-gtk3-3.*
 
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		--enable-gtk \
@@ -35,16 +34,20 @@ CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 
 OPTIONS_DEFINE=	ICONV NLS EXECINFO
 OPTIONS_DEFAULT=ICONV EXECINFO
-ICONV_USES=	iconv
-NLS_USES=	gettext-runtime
-NLS_CONFIGURE_OFF=	--disable-nls
-NLS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Makefile
 OPTIONS_SUB=	yes
 EXECINFO_DESC=	Build with libexecinfo support
+
+ICONV_USES=	iconv
+
+NLS_USES=	gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| $${MFLAGS}||g' \
 		${WRKSRC}/buildsys.mk.in
+
+post-patch-NLS-off:
+	${REINPLACE_CMD} -e 's,po,,' ${WRKSRC}/Makefile
 
 post-patch-EXECINFO-on:
 	@${REINPLACE_CMD} 's|-lm |-lm -lexecinfo |' \
