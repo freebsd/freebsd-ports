@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/metaphysicl/metaphysicl_version.h:science/me
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		libOpenCL.so:devel/ocl-icd
 
-USES=		autoreconf eigen:3 gmake libtool localbase
+USES=		autoreconf compiler:c++11-lang eigen:3 gmake libtool localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	libantioch
 GNU_CONFIGURE=	yes

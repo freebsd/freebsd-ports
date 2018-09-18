@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake lua openal
+USES=		cmake compiler:c++11-lang lua openal
 USE_GITHUB=	yes
 USE_SDL=	sdl2
 LLD_UNSAFE=	yes

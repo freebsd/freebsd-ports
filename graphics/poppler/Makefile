@@ -22,7 +22,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libnspr4.so:devel/nspr
 RUN_DEPENDS=	poppler-data>0:graphics/poppler-data
 
-USES=		cpe gmake jpeg libtool localbase pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lang cpe gmake jpeg libtool localbase pathfix pkgconfig tar:xz
 CPE_VENDOR=	freedesktop
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes

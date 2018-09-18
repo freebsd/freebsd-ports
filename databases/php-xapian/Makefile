@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR} \
 CONFIGURE_ENV=	PHP_CONFIG=${LOCALBASE}/bin/php-config
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool php:build tar:xz
+USES=		compiler:c++11-lang libtool php:build tar:xz
 
 PLIST_SUB=	PHP_EXT_DIR=${PHP_EXT_DIR} PHP_MAJOR_VER=${PHP_VER:C|.$||}
 
