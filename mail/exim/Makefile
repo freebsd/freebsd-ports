@@ -18,7 +18,7 @@ COMMENT?=	High performance MTA for Unix systems on the Internet
 
 LICENSE=	GPLv2
 
-USES=		cpe tar:bzip2 perl5
+USES=		compiler cpe tar:bzip2 perl5
 USE_PERL5=	run
 
 # Exim build system is job unsafe atm
@@ -151,9 +151,6 @@ CONFIG_FILE_PATH?=	${PREFIX}/etc/exim/configure
 ALT_CONFIG_PREFIX?=	${PREFIX}/etc/exim/
 
 EXIM_DYNAMIC_LDFLAGS=	-fPIC -rdynamic -export-dynamic
-# Avoid too many warnings due to Exim code style
-EXIM_WARN_FLAGS?=	-Wno-logical-op-parentheses -Wno-macro-redefined -Wno-parentheses -Wno-dangling-else
-CFLAGS+=	${EXIM_WARN_FLAGS}
 
 SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
@@ -625,4 +622,12 @@ post-install:
 
 .endif # ! defined(EXIMON_ONLY)
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# If using clang, avoid too many warnings due to Exim code style
+.if ${CHOSEN_COMPILER_TYPE} == "clang"
+EXIM_WARN_FLAGS?=	-Wno-logical-op-parentheses -Wno-macro-redefined -Wno-parentheses -Wno-dangling-else
+.endif
+CFLAGS+=	${EXIM_WARN_FLAGS}
+
+.include <bsd.port.post.mk>
