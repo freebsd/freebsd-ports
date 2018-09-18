@@ -12,7 +12,8 @@ COMMENT=	Berkeley Open Infrastructure for Network Computing client
 
 LICENSE=	LGPL3
 
-USES=		autoreconf dos2unix gettext gmake libtool pkgconfig ssl tar:xz
+USES=		autoreconf dos2unix gettext gmake \
+		libtool pkgconfig ssl tar:xz
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
@@ -59,7 +60,7 @@ MANAGER_USES=		iconv
 MANAGER_LIB_DEPENDS=	libnotify.so:devel/libnotify \
 			libfontconfig.so:x11-fonts/fontconfig \
 			libsqlite3.so:databases/sqlite3 \
-			libxcb-util.so:x11/xcb-util 
+			libxcb-util.so:x11/xcb-util
 MANAGER_CONFIGURE_ON=	--with-sqlite3-prefix=${LOCALBASE}
 MANAGER_CONFIGURE_OFF=	--with-wx-config=false --without-x
 MANAGER_CONFIGURE_ENABLE=manager
