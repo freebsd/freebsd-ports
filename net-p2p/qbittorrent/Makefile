@@ -2,13 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	qbittorrent
-DISTVERSION=	4.1.2
-PORTREVISION=	1
+DISTVERSION=	4.1.3
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-
-PATCH_SITES=	https://github.com/qBittorrent/qBittorrent/commit/
-PATCHFILES=	acdf9061fe5539c75604d2b7919cc434b2cebb02.patch:-p1 # fix regression of the missing .desktop file
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Bittorrent client using Qt4/5 and libtorrent-rasterbar
