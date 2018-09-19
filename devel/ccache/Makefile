@@ -115,7 +115,7 @@ post-patch-MEMCACHED-off:
 
 post-build-TINDERBOX-on:
 	@${MKDIR} ${WRKDIR}/tb/opt
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${WRKDIR}/tb/opt
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${WRKDIR}/tb/opt
 .for l in ${CCACHE_COMPILERS}
 	@${LN} -sf ${PORTNAME} ${WRKDIR}/tb/opt/${l}
 .endfor
