@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	genact
-DISTVERSION=	0.5.0
+DISTVERSION=	0.6.0
 CATEGORIES=	games
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -31,6 +31,7 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		chrono-0.4.2 \
 		clang-sys-0.16.0 \
 		clap-2.31.2 \
+		cloudabi-0.0.3 \
 		ctrlc-3.1.0 \
 		discard-1.0.3 \
 		dtoa-0.4.2 \
@@ -45,8 +46,8 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		itoa-0.4.1 \
 		kernel32-sys-0.2.2 \
 		lazy_static-0.2.11 \
-		lazy_static-1.0.0 \
-		libc-0.2.40 \
+		lazy_static-1.0.1 \
+		libc-0.2.42 \
 		libloading-0.4.3 \
 		log-0.3.9 \
 		log-0.4.1 \
@@ -60,30 +61,32 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		pbr-1.0.1 \
 		percent-encoding-1.0.1 \
 		proc-macro2-0.2.3 \
-		proc-macro2-0.3.8 \
+		proc-macro2-0.4.5 \
 		quasi-0.32.0 \
 		quasi_codegen-0.32.0 \
-		quick-error-1.2.1 \
+		quick-error-1.2.2 \
 		quote-0.4.2 \
-		quote-0.5.2 \
+		quote-0.6.3 \
 		rand-0.3.22 \
 		rand-0.4.2 \
-		redox_syscall-0.1.37 \
+		rand-0.5.0 \
+		rand_core-0.2.0 \
+		redox_syscall-0.1.40 \
 		redox_termios-0.1.1 \
 		regex-0.2.11 \
 		regex-1.0.0 \
 		regex-syntax-0.5.6 \
 		regex-syntax-0.6.0 \
 		rustc-serialize-0.3.24 \
-		serde-1.0.58 \
-		serde_derive-1.0.58 \
-		serde_json-1.0.17 \
+		serde-1.0.66 \
+		serde_derive-1.0.66 \
+		serde_json-1.0.19 \
 		stdweb-0.4.6 \
 		stdweb-derive-0.4.0 \
 		stdweb-internal-macros-0.1.0 \
 		strsim-0.7.0 \
 		syn-0.12.15 \
-		syn-0.13.11 \
+		syn-0.14.2 \
 		syntex-0.58.1 \
 		syntex_errors-0.58.1 \
 		syntex_pos-0.58.1 \
