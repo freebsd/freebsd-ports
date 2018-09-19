@@ -7,7 +7,7 @@ physical/inorganic/analytical chemistry). Currently it includes:
   * Debye-Huckel expressions
   * Arrhenius & Eyring equation
   * Einstein-Smoluchowski equation
-* Properties (pure python implementations from the litterature)
+* Properties (pure python implementations from the literature)
   * water density as function of temperature
   * water permittivity as function of temperature and pressure
   * water diffusivity as function of temperature
