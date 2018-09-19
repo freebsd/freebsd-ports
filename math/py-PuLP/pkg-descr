@@ -1,0 +1,10 @@
+PuLP is an LP modeler written in python. PuLP can generate MPS or LP files and
+call
+* GLPK
+* COIN
+* CLP/CBC
+* CPLEX (commercial package)
+* GUROBI (commercial package)
+to solve linear problems
+
+WWW: https://github.com/coin-or/pulp
