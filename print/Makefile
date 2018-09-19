@@ -157,6 +157,7 @@
     SUBDIR += papersize-default-letter
     SUBDIR += paps
     SUBDIR += pcal
+    SUBDIR += pdf-redact-tools
     SUBDIR += pdf-renderer
     SUBDIR += pdf-tools
     SUBDIR += pdf4tcl
