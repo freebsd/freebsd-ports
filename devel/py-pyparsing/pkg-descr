@@ -4,4 +4,4 @@ with lex/yacc-type tools. Includes simple examples for parsing SQL, CORBA IDL,
 and 4-function math.
 
 WWW: https://pypi.org/project/pyparsing/
-WWW: http://pyparsing.wikispaces.com/
+WWW: https://github.com/pyparsing/pyparsing
