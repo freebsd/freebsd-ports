@@ -200,6 +200,7 @@
     SUBDIR += py-abipy
     SUBDIR += py-ase
     SUBDIR += py-cdo
+    SUBDIR += py-chempy
     SUBDIR += py-coards
     SUBDIR += py-dlib
     SUBDIR += py-gpaw
