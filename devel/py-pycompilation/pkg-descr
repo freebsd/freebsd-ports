@@ -1,0 +1,5 @@
+pycompilation bundles python convenience classes and functions for performing
+compilation and linking on the fly from python. Developed to simplify working
+with code-generation, compilation and import (meta-programming) from Python.
+
+WWW: https://github.com/bjodah/pycompilation
