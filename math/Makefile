@@ -659,6 +659,7 @@
     SUBDIR += pure-rational
     SUBDIR += py-Diofant
     SUBDIR += py-GridDataFormats
+    SUBDIR += py-PuLP
     SUBDIR += py-PyMetis
     SUBDIR += py-PySCIPOpt
     SUBDIR += py-PyWavelets
