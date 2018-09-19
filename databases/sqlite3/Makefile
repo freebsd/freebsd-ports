@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-DISTVERSION=	3.24.0
-PORTREVISION=	1
+DISTVERSION=	3.25.0
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/2018/ http://www2.sqlite.org/2018/ http://www3.sqlite.org/2018/
 DISTNAME=	sqlite-autoconf-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
@@ -116,10 +115,13 @@ UNICODE_DESC=		Unicode support
 UNICODE61_DESC=		Unicode Version 6.1 tokenizer
 
 # https://www.sqlite.org/rtree.html
-OPTIONS_GROUP_RTREEG=	RTREE RTREE_INT
+OPTIONS_GROUP_RTREEG=	RTREE RTREE_INT GEOPOLY
 RTREEG_DESC=		Index type for range queries
 RTREE_DESC=		Enable R*Tree module
 RTREE_INT_DESC=		Store 32-bit sig int (no float) coordinates
+# https://www.sqlite.org/geopoly.html
+GEOPOLY_DESC=		Uses the GeoJSON notation (RFC-7946)
+GEOPOLY_IMPLIES=	RTREE
 
 OPTIONS_GROUP_RL=	READLINES READLINEP EDITLINE
 RL_DESC=		Which command line editing library to use:
@@ -158,6 +160,7 @@ TS3_CPPFLAGS=	-DSQLITE_TEMP_STORE=3
 
 RTREE_CPPFLAGS=	-DSQLITE_ENABLE_RTREE=1
 RTREE_INT_CPPFLAGS=	-DSQLITE_RTREE_INT_ONLY=1
+GEOPOLY_CPPFLAGS=	-DSQLITE_ENABLE_GEOPOLY=1
 
 FTS4_CPPFLAGS=	-DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS=1 -DSQLITE_ENABLE_FTS4=1
 FTS5_CONFIGURE_ENABLE=	fts5
