@@ -1,0 +1,21 @@
+K40 Whisperer is an alternative to the Laser Draw (LaserDRW) program that comes
+with some Chinese laser cutters. It reads SVG and DXF files, interprets the
+data and sends commands to the K40 controller to move the laser head and
+control the laser accordingly. K40 Whisperer does not require a USB key
+(dongle) to function.
+
+Features:
+- Reads SVG files and DXF files.
+- Splits input design based on color formatting (red, blue).
+- In SVG files blue and red paths are interpreted as vectors for vector
+  engraving and cutting. Everything else is transferred as a raster image.
+- In DXF files blue paths are interpreted as vector engrave (blue).
+  Everything else is interpreted as vector cut (red).
+- Performs cuts on features inside of other features before cutting the outside
+  features. (If you cut the outside first the part might drop out of the stock
+  material.)
+- Converts gray scale images to halftone images to simulating varying levels of
+  gray (i.e. engraving pictures). The Halftone option needs to be selected
+  under "Raster"-"Settings" to enable halftoning.
+
+WWW: http://www.scorchworks.com/K40whisperer/k40whisperer.html
