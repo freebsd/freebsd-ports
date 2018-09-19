@@ -11,9 +11,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cycle through a list of values
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 PORTSCOUT=	limitw:1,even
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
