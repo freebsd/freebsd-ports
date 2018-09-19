@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/airspy-tools/LICENSE.md
 
 BROKEN_FreeBSD_10=	error: use of undeclared identifier '__m128'
 BROKEN_aarch64=		fails to compile: invalid conversion between vector type '__m64' and integer type 'int'
+BROKEN_powerpc64=	fails to build: iqconverter_float.c:45:23: error: immintrin.h: No such file or directory
 
 USES=		cmake:outsource pkgconfig
 USE_GITHUB=	yes
