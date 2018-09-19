@@ -687,6 +687,7 @@
     SUBDIR += py-gmpy2
     SUBDIR += py-gnuplot
     SUBDIR += py-graphillion
+    SUBDIR += py-pygslodeiv2
     SUBDIR += py-igakit
     SUBDIR += py-igraph
     SUBDIR += py-intspan

@@ -1,0 +1,6 @@
+pygslodeiv2 provides a Python binding to the Ordinary Differential Equation
+integration routines exposed by the odeiv2 interface of GSL - GNU Scientific
+Library. The odeiv2 interface allows a user to numerically integrate
+(systems of) differential equations.
+
+WWW: https://github.com/bjodah/pygslodeiv2
