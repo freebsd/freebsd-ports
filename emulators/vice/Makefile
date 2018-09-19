@@ -32,7 +32,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 
 RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
 
-USES=		pkgconfig makeinfo gmake iconv jpeg
+USES=		compiler:c++11-lang pkgconfig makeinfo gmake iconv jpeg
 USE_XORG=	xpm ice sm xext xv xt x11 xmu xxf86vm
 USE_XORG+=	xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes
 GNU_CONFIGURE=	yes
