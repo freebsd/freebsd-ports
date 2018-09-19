@@ -10,6 +10,7 @@ MASTER_SITES=	http://lockdown.trunet.dk/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hardening script for FreeBSD
+FORBIDDEN=	Renders system unbootable
 
 USE_LDCONFIG=	yes
 
