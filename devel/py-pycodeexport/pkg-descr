@@ -1,0 +1,6 @@
+pycodeexport is a Python package which bundles convenience classes and functions
+for code-generation. The package has been developed to aid on-the-fly
+compilation (meta-programming) of math related problems expressed as SymPy
+expressions. Note that this package has an alpha development status.
+
+WWW: https://github.com/bjodah/pycodeexport
