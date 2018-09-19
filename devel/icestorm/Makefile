@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libftdi1.so:devel/libftdi1
 
-USES=		gmake python:3.3+ shebangfix pkgconfig
+USES=		compiler:c++11-lang gmake pkgconfig python:3.3+ shebangfix
 SHEBANG_FILES=	${WRKSRC}/icebox/*.py \
 		${WRKSRC}/icebox/Makefile
 

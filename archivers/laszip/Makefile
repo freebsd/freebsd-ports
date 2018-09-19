@@ -11,7 +11,7 @@ COMMENT=	Library for lossless LAS compression
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake
+USES=		cmake compiler:c++0x
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

@@ -17,9 +17,7 @@ LICENSE_FILE=		${WRKSRC}/LICENSE_1_0.txt
 BUILD_DEPENDS=		boost-libs>0:devel/boost-libs \
 					asio>0:net/asio
 
-BROKEN_powerpc64=	fails to compile: cc1plus: error: unrecognized command line option "-std=c++11"
-
-USES=			cmake:outsource
+USES=			cmake:outsource compiler:c++11-lang
 USE_LDCONFIG=		yes
 CFLAGS+=	-fPIC
 CMAKE_ARGS+=		-DCPP-NETLIB_BUILD_EXAMPLES=OFF \
