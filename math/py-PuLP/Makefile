@@ -2,6 +2,7 @@
 
 PORTNAME=	PuLP
 DISTVERSION=	1.6.8
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.1:devel/py-pyparsing@${PY_FLA
 		glpsol:math/glpk
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils concurrent autoplist
 NO_ARCH=	yes
 
 post-patch:
