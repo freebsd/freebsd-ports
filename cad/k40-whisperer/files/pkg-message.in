@@ -1,0 +1,5 @@
+At the moment K40 Whisperer has to be run as root unless devd(8) is properly
+configured. Some notes on how it is handled on macOS and Linux can be
+found in %%DATADIR%%.
+
+K40 Whisperer can be launched with a `%%WHISPERER_COMMAND%%` command.
