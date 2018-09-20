@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	brotli
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	1.0.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +13,8 @@ COMMENT=	Generic-purpose lossless compression algorithm
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_PYTHON=	autoplist concurrent distutils
 USES=		compiler:c++0x python shebangfix
+USE_PYTHON=	autoplist concurrent distutils
 
 PLIST_FILES=	bin/brotli
 
