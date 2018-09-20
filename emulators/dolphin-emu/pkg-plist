@@ -1,20 +1,19 @@
 bin/dolphin-emu
 bin/dolphin-emu-nogui
+share/applications/dolphin-emu.desktop
 %%DATADIR%%/sys/GC/dsp_coef.bin
 %%DATADIR%%/sys/GC/dsp_rom.bin
 %%DATADIR%%/sys/GC/font-licenses.txt
-%%DATADIR%%/sys/GC/font_ansi.bin
-%%DATADIR%%/sys/GC/font_sjis.bin
-%%DATADIR%%/sys/GameSettings/010.ini
-%%DATADIR%%/sys/GameSettings/301.ini
+%%DATADIR%%/sys/GC/font_japanese.bin
+%%DATADIR%%/sys/GC/font_western.bin
+%%DATADIR%%/sys/GameSettings/0000000100000002.ini
+%%DATADIR%%/sys/GameSettings/0000000100000002r1.ini
 %%DATADIR%%/sys/GameSettings/C.ini
 %%DATADIR%%/sys/GameSettings/D43.ini
 %%DATADIR%%/sys/GameSettings/D43E01.ini
 %%DATADIR%%/sys/GameSettings/D43J01.ini
-%%DATADIR%%/sys/GameSettings/D85.ini
 %%DATADIR%%/sys/GameSettings/DD2.ini
 %%DATADIR%%/sys/GameSettings/DLS.ini
-%%DATADIR%%/sys/GameSettings/DTL.ini
 %%DATADIR%%/sys/GameSettings/E.ini
 %%DATADIR%%/sys/GameSettings/E52.ini
 %%DATADIR%%/sys/GameSettings/E53.ini
@@ -34,6 +33,8 @@ bin/dolphin-emu-nogui
 %%DATADIR%%/sys/GameSettings/E6X.ini
 %%DATADIR%%/sys/GameSettings/E73.ini
 %%DATADIR%%/sys/GameSettings/E79.ini
+%%DATADIR%%/sys/GameSettings/E7J.ini
+%%DATADIR%%/sys/GameSettings/E7V.ini
 %%DATADIR%%/sys/GameSettings/E7Z.ini
 %%DATADIR%%/sys/GameSettings/EA2.ini
 %%DATADIR%%/sys/GameSettings/EA3.ini
@@ -130,217 +131,112 @@ bin/dolphin-emu-nogui
 %%DATADIR%%/sys/GameSettings/FARE01.ini
 %%DATADIR%%/sys/GameSettings/FASE01.ini
 %%DATADIR%%/sys/GameSettings/G2B.ini
-%%DATADIR%%/sys/GameSettings/G2C.ini
-%%DATADIR%%/sys/GameSettings/G2F.ini
 %%DATADIR%%/sys/GameSettings/G2FE78.ini
-%%DATADIR%%/sys/GameSettings/G2G.ini
 %%DATADIR%%/sys/GameSettings/G2M.ini
 %%DATADIR%%/sys/GameSettings/G2ME01.ini
-%%DATADIR%%/sys/GameSettings/G2MEAB.ini
 %%DATADIR%%/sys/GameSettings/G2MP01.ini
 %%DATADIR%%/sys/GameSettings/G2O.ini
-%%DATADIR%%/sys/GameSettings/G2R.ini
-%%DATADIR%%/sys/GameSettings/G2T.ini
+%%DATADIR%%/sys/GameSettings/G2RE52.ini
 %%DATADIR%%/sys/GameSettings/G2V.ini
 %%DATADIR%%/sys/GameSettings/G2X.ini
 %%DATADIR%%/sys/GameSettings/G3A.ini
-%%DATADIR%%/sys/GameSettings/G3B.ini
-%%DATADIR%%/sys/GameSettings/G3D.ini
-%%DATADIR%%/sys/GameSettings/G3E.ini
 %%DATADIR%%/sys/GameSettings/G3F.ini
-%%DATADIR%%/sys/GameSettings/G3J.ini
 %%DATADIR%%/sys/GameSettings/G3L.ini
-%%DATADIR%%/sys/GameSettings/G3N.ini
 %%DATADIR%%/sys/GameSettings/G3Q.ini
 %%DATADIR%%/sys/GameSettings/G3R.ini
-%%DATADIR%%/sys/GameSettings/G3S.ini
-%%DATADIR%%/sys/GameSettings/G3V.ini
 %%DATADIR%%/sys/GameSettings/G3X.ini
-%%DATADIR%%/sys/GameSettings/G4A.ini
-%%DATADIR%%/sys/GameSettings/G4B.ini
 %%DATADIR%%/sys/GameSettings/G4C.ini
-%%DATADIR%%/sys/GameSettings/G4F.ini
-%%DATADIR%%/sys/GameSettings/G4G.ini
 %%DATADIR%%/sys/GameSettings/G4GEE9.ini
 %%DATADIR%%/sys/GameSettings/G4M.ini
-%%DATADIR%%/sys/GameSettings/G4N.ini
 %%DATADIR%%/sys/GameSettings/G4NJDA.ini
-%%DATADIR%%/sys/GameSettings/G4O.ini
-%%DATADIR%%/sys/GameSettings/G4Q.ini
 %%DATADIR%%/sys/GameSettings/G4QE01.ini
 %%DATADIR%%/sys/GameSettings/G4S.ini
 %%DATADIR%%/sys/GameSettings/G4SP01.ini
-%%DATADIR%%/sys/GameSettings/G4Z.ini
-%%DATADIR%%/sys/GameSettings/G5D.ini
 %%DATADIR%%/sys/GameSettings/G5N.ini
-%%DATADIR%%/sys/GameSettings/G5S.ini
 %%DATADIR%%/sys/GameSettings/G5T.ini
-%%DATADIR%%/sys/GameSettings/G63.ini
-%%DATADIR%%/sys/GameSettings/G6F.ini
-%%DATADIR%%/sys/GameSettings/G6M.ini
-%%DATADIR%%/sys/GameSettings/G6N.ini
 %%DATADIR%%/sys/GameSettings/G6Q.ini
 %%DATADIR%%/sys/GameSettings/G6T.ini
 %%DATADIR%%/sys/GameSettings/G6W.ini
-%%DATADIR%%/sys/GameSettings/G89.ini
-%%DATADIR%%/sys/GameSettings/G8F.ini
 %%DATADIR%%/sys/GameSettings/G8M.ini
 %%DATADIR%%/sys/GameSettings/G8ME01.ini
-%%DATADIR%%/sys/GameSettings/G8O.ini
-%%DATADIR%%/sys/GameSettings/G8S.ini
 %%DATADIR%%/sys/GameSettings/G8W.ini
 %%DATADIR%%/sys/GameSettings/G8WP01.ini
-%%DATADIR%%/sys/GameSettings/G9B.ini
 %%DATADIR%%/sys/GameSettings/G9R.ini
 %%DATADIR%%/sys/GameSettings/G9S.ini
 %%DATADIR%%/sys/GameSettings/G9T.ini
-%%DATADIR%%/sys/GameSettings/GA2.ini
-%%DATADIR%%/sys/GameSettings/GA3.ini
-%%DATADIR%%/sys/GameSettings/GA4.ini
-%%DATADIR%%/sys/GameSettings/GA7.ini
-%%DATADIR%%/sys/GameSettings/GAB.ini
-%%DATADIR%%/sys/GameSettings/GAC.ini
+%%DATADIR%%/sys/GameSettings/GAA.ini
 %%DATADIR%%/sys/GameSettings/GAF.ini
 %%DATADIR%%/sys/GameSettings/GAFE01.ini
-%%DATADIR%%/sys/GameSettings/GAG.ini
-%%DATADIR%%/sys/GameSettings/GAH.ini
 %%DATADIR%%/sys/GameSettings/GAK.ini
 %%DATADIR%%/sys/GameSettings/GAL.ini
 %%DATADIR%%/sys/GameSettings/GALE01r0.ini
 %%DATADIR%%/sys/GameSettings/GALE01r1.ini
 %%DATADIR%%/sys/GameSettings/GALE01r2.ini
 %%DATADIR%%/sys/GameSettings/GALP01.ini
-%%DATADIR%%/sys/GameSettings/GAM.ini
-%%DATADIR%%/sys/GameSettings/GAN.ini
 %%DATADIR%%/sys/GameSettings/GAP.ini
-%%DATADIR%%/sys/GameSettings/GAQ.ini
-%%DATADIR%%/sys/GameSettings/GAR.ini
-%%DATADIR%%/sys/GameSettings/GAT.ini
 %%DATADIR%%/sys/GameSettings/GAU.ini
 %%DATADIR%%/sys/GameSettings/GAUE08.ini
 %%DATADIR%%/sys/GameSettings/GAV.ini
-%%DATADIR%%/sys/GameSettings/GAX.ini
 %%DATADIR%%/sys/GameSettings/GAY.ini
-%%DATADIR%%/sys/GameSettings/GAZ.ini
 %%DATADIR%%/sys/GameSettings/GB3.ini
-%%DATADIR%%/sys/GameSettings/GB4.ini
 %%DATADIR%%/sys/GameSettings/GB4E51.ini
-%%DATADIR%%/sys/GameSettings/GBD.ini
-%%DATADIR%%/sys/GameSettings/GBF.ini
-%%DATADIR%%/sys/GameSettings/GBG.ini
 %%DATADIR%%/sys/GameSettings/GBH.ini
 %%DATADIR%%/sys/GameSettings/GBHEC8.ini
-%%DATADIR%%/sys/GameSettings/GBI.ini
-%%DATADIR%%/sys/GameSettings/GBK.ini
 %%DATADIR%%/sys/GameSettings/GBL.ini
-%%DATADIR%%/sys/GameSettings/GBLPGL.ini
 %%DATADIR%%/sys/GameSettings/GBM.ini
-%%DATADIR%%/sys/GameSettings/GBO.ini
 %%DATADIR%%/sys/GameSettings/GBOP51.ini
-%%DATADIR%%/sys/GameSettings/GBQ.ini
 %%DATADIR%%/sys/GameSettings/GBS.ini
-%%DATADIR%%/sys/GameSettings/GBT.ini
 %%DATADIR%%/sys/GameSettings/GBV.ini
 %%DATADIR%%/sys/GameSettings/GBW.ini
-%%DATADIR%%/sys/GameSettings/GBX.ini
-%%DATADIR%%/sys/GameSettings/GBY.ini
-%%DATADIR%%/sys/GameSettings/GBZ.ini
 %%DATADIR%%/sys/GameSettings/GBZP08.ini
 %%DATADIR%%/sys/GameSettings/GC2.ini
-%%DATADIR%%/sys/GameSettings/GC3.ini
-%%DATADIR%%/sys/GameSettings/GC4.ini
-%%DATADIR%%/sys/GameSettings/GC5.ini
 %%DATADIR%%/sys/GameSettings/GC6.ini
-%%DATADIR%%/sys/GameSettings/GC7.ini
 %%DATADIR%%/sys/GameSettings/GC9.ini
-%%DATADIR%%/sys/GameSettings/GCA.ini
-%%DATADIR%%/sys/GameSettings/GCB.ini
 %%DATADIR%%/sys/GameSettings/GCC.ini
 %%DATADIR%%/sys/GameSettings/GCCE01.ini
 %%DATADIR%%/sys/GameSettings/GCD.ini
 %%DATADIR%%/sys/GameSettings/GCE.ini
-%%DATADIR%%/sys/GameSettings/GCF.ini
-%%DATADIR%%/sys/GameSettings/GCG.ini
-%%DATADIR%%/sys/GameSettings/GCH.ini
 %%DATADIR%%/sys/GameSettings/GCI.ini
-%%DATADIR%%/sys/GameSettings/GCJ.ini
-%%DATADIR%%/sys/GameSettings/GCL.ini
 %%DATADIR%%/sys/GameSettings/GCN.ini
-%%DATADIR%%/sys/GameSettings/GCO.ini
-%%DATADIR%%/sys/GameSettings/GCOPDV.ini
 %%DATADIR%%/sys/GameSettings/GCP.ini
-%%DATADIR%%/sys/GameSettings/GCQ.ini
-%%DATADIR%%/sys/GameSettings/GCS.ini
-%%DATADIR%%/sys/GameSettings/GCT.ini
-%%DATADIR%%/sys/GameSettings/GCV.ini
 %%DATADIR%%/sys/GameSettings/GCVEEB.ini
 %%DATADIR%%/sys/GameSettings/GCZ.ini
-%%DATADIR%%/sys/GameSettings/GD4.ini
-%%DATADIR%%/sys/GameSettings/GD6.ini
-%%DATADIR%%/sys/GameSettings/GD7.ini
-%%DATADIR%%/sys/GameSettings/GD9.ini
 %%DATADIR%%/sys/GameSettings/GDD.ini
 %%DATADIR%%/sys/GameSettings/GDDE41.ini
 %%DATADIR%%/sys/GameSettings/GDE.ini
 %%DATADIR%%/sys/GameSettings/GDEE71.ini
-%%DATADIR%%/sys/GameSettings/GDF.ini
 %%DATADIR%%/sys/GameSettings/GDG.ini
-%%DATADIR%%/sys/GameSettings/GDI.ini
-%%DATADIR%%/sys/GameSettings/GDJ.ini
 %%DATADIR%%/sys/GameSettings/GDJEB2.ini
 %%DATADIR%%/sys/GameSettings/GDK.ini
-%%DATADIR%%/sys/GameSettings/GDL.ini
 %%DATADIR%%/sys/GameSettings/GDM.ini
 %%DATADIR%%/sys/GameSettings/GDQ.ini
-%%DATADIR%%/sys/GameSettings/GDR.ini
 %%DATADIR%%/sys/GameSettings/GDS.ini
 %%DATADIR%%/sys/GameSettings/GDT.ini
 %%DATADIR%%/sys/GameSettings/GDTE69.ini
 %%DATADIR%%/sys/GameSettings/GDV.ini
-%%DATADIR%%/sys/GameSettings/GDW.ini
 %%DATADIR%%/sys/GameSettings/GDX.ini
 %%DATADIR%%/sys/GameSettings/GE3.ini
 %%DATADIR%%/sys/GameSettings/GE4.ini
-%%DATADIR%%/sys/GameSettings/GE5.ini
 %%DATADIR%%/sys/GameSettings/GE5EA4.ini
 %%DATADIR%%/sys/GameSettings/GE9.ini
 %%DATADIR%%/sys/GameSettings/GEA.ini
-%%DATADIR%%/sys/GameSettings/GEB.ini
 %%DATADIR%%/sys/GameSettings/GED.ini
-%%DATADIR%%/sys/GameSettings/GEM.ini
 %%DATADIR%%/sys/GameSettings/GEN.ini
 %%DATADIR%%/sys/GameSettings/GEO.ini
-%%DATADIR%%/sys/GameSettings/GES.ini
-%%DATADIR%%/sys/GameSettings/GEW.ini
-%%DATADIR%%/sys/GameSettings/GEX.ini
-%%DATADIR%%/sys/GameSettings/GEY.ini
 %%DATADIR%%/sys/GameSettings/GEZ.ini
-%%DATADIR%%/sys/GameSettings/GF2.ini
 %%DATADIR%%/sys/GameSettings/GF4.ini
-%%DATADIR%%/sys/GameSettings/GF5.ini
-%%DATADIR%%/sys/GameSettings/GF6.ini
 %%DATADIR%%/sys/GameSettings/GF7.ini
 %%DATADIR%%/sys/GameSettings/GF7E01.ini
 %%DATADIR%%/sys/GameSettings/GF7P01.ini
-%%DATADIR%%/sys/GameSettings/GF8.ini
 %%DATADIR%%/sys/GameSettings/GF8E69.ini
-%%DATADIR%%/sys/GameSettings/GFA.ini
 %%DATADIR%%/sys/GameSettings/GFB.ini
-%%DATADIR%%/sys/GameSettings/GFC.ini
 %%DATADIR%%/sys/GameSettings/GFD.ini
-%%DATADIR%%/sys/GameSettings/GFE.ini
 %%DATADIR%%/sys/GameSettings/GFEE01.ini
 %%DATADIR%%/sys/GameSettings/GFEJ01.ini
 %%DATADIR%%/sys/GameSettings/GFF.ini
 %%DATADIR%%/sys/GameSettings/GFG.ini
 %%DATADIR%%/sys/GameSettings/GFH.ini
-%%DATADIR%%/sys/GameSettings/GFK.ini
-%%DATADIR%%/sys/GameSettings/GFO.ini
-%%DATADIR%%/sys/GameSettings/GFP.ini
-%%DATADIR%%/sys/GameSettings/GFQ.ini
-%%DATADIR%%/sys/GameSettings/GFT.ini
-%%DATADIR%%/sys/GameSettings/GFU.ini
-%%DATADIR%%/sys/GameSettings/GFX.ini
+%%DATADIR%%/sys/GameSettings/GFTE01.ini
 %%DATADIR%%/sys/GameSettings/GFY.ini
 %%DATADIR%%/sys/GameSettings/GFYE69.ini
 %%DATADIR%%/sys/GameSettings/GFZ.ini
@@ -348,130 +244,69 @@ bin/dolphin-emu-nogui
 %%DATADIR%%/sys/GameSettings/GFZJ01.ini
 %%DATADIR%%/sys/GameSettings/GFZJ8P.ini
 %%DATADIR%%/sys/GameSettings/GFZP01.ini
-%%DATADIR%%/sys/GameSettings/GG4.ini
-%%DATADIR%%/sys/GameSettings/GG4P08.ini
-%%DATADIR%%/sys/GameSettings/GG5.ini
-%%DATADIR%%/sys/GameSettings/GGA.ini
-%%DATADIR%%/sys/GameSettings/GGC.ini
-%%DATADIR%%/sys/GameSettings/GGCOSD.ini
 %%DATADIR%%/sys/GameSettings/GGE.ini
-%%DATADIR%%/sys/GameSettings/GGM.ini
 %%DATADIR%%/sys/GameSettings/GGN.ini
-%%DATADIR%%/sys/GameSettings/GGP.ini
-%%DATADIR%%/sys/GameSettings/GGPE01.ini
-%%DATADIR%%/sys/GameSettings/GGPE02.ini
 %%DATADIR%%/sys/GameSettings/GGR.ini
 %%DATADIR%%/sys/GameSettings/GGS.ini
 %%DATADIR%%/sys/GameSettings/GGSEA4.ini
 %%DATADIR%%/sys/GameSettings/GGSPA4.ini
-%%DATADIR%%/sys/GameSettings/GGT.ini
 %%DATADIR%%/sys/GameSettings/GGTE01.ini
 %%DATADIR%%/sys/GameSettings/GGV.ini
 %%DATADIR%%/sys/GameSettings/GGY.ini
 %%DATADIR%%/sys/GameSettings/GGZ.ini
 %%DATADIR%%/sys/GameSettings/GH2.ini
-%%DATADIR%%/sys/GameSettings/GH4.ini
-%%DATADIR%%/sys/GameSettings/GH5.ini
-%%DATADIR%%/sys/GameSettings/GH6.ini
 %%DATADIR%%/sys/GameSettings/GH7.ini
 %%DATADIR%%/sys/GameSettings/GH9.ini
-%%DATADIR%%/sys/GameSettings/GHA.ini
-%%DATADIR%%/sys/GameSettings/GHB.ini
-%%DATADIR%%/sys/GameSettings/GHC.ini
-%%DATADIR%%/sys/GameSettings/GHG.ini
 %%DATADIR%%/sys/GameSettings/GHK.ini
-%%DATADIR%%/sys/GameSettings/GHL.ini
-%%DATADIR%%/sys/GameSettings/GHM.ini
 %%DATADIR%%/sys/GameSettings/GHME4F.ini
 %%DATADIR%%/sys/GameSettings/GHN.ini
 %%DATADIR%%/sys/GameSettings/GHQ.ini
 %%DATADIR%%/sys/GameSettings/GHR.ini
 %%DATADIR%%/sys/GameSettings/GHRE78.ini
 %%DATADIR%%/sys/GameSettings/GHS.ini
-%%DATADIR%%/sys/GameSettings/GHU.ini
 %%DATADIR%%/sys/GameSettings/GHV.ini
-%%DATADIR%%/sys/GameSettings/GHW.ini
 %%DATADIR%%/sys/GameSettings/GHY.ini
-%%DATADIR%%/sys/GameSettings/GHZ.ini
 %%DATADIR%%/sys/GameSettings/GIA.ini
-%%DATADIR%%/sys/GameSettings/GIB.ini
 %%DATADIR%%/sys/GameSettings/GIC.ini
 %%DATADIR%%/sys/GameSettings/GICE78.ini
-%%DATADIR%%/sys/GameSettings/GIG.ini
 %%DATADIR%%/sys/GameSettings/GIGJ8P.ini
-%%DATADIR%%/sys/GameSettings/GIK.ini
 %%DATADIR%%/sys/GameSettings/GIL.ini
-%%DATADIR%%/sys/GameSettings/GIN.ini
 %%DATADIR%%/sys/GameSettings/GINE69.ini
-%%DATADIR%%/sys/GameSettings/GINX69.ini
-%%DATADIR%%/sys/GameSettings/GIP.ini
 %%DATADIR%%/sys/GameSettings/GIQ.ini
 %%DATADIR%%/sys/GameSettings/GIQE78.ini
 %%DATADIR%%/sys/GameSettings/GIS.ini
-%%DATADIR%%/sys/GameSettings/GIT.ini
-%%DATADIR%%/sys/GameSettings/GIV.ini
 %%DATADIR%%/sys/GameSettings/GIZ.ini
-%%DATADIR%%/sys/GameSettings/GJ3.ini
 %%DATADIR%%/sys/GameSettings/GJB.ini
-%%DATADIR%%/sys/GameSettings/GJC.ini
 %%DATADIR%%/sys/GameSettings/GJCE8P.ini
-%%DATADIR%%/sys/GameSettings/GJD.ini
 %%DATADIR%%/sys/GameSettings/GJK.ini
 %%DATADIR%%/sys/GameSettings/GJN.ini
-%%DATADIR%%/sys/GameSettings/GJS.ini
-%%DATADIR%%/sys/GameSettings/GJU.ini
 %%DATADIR%%/sys/GameSettings/GJUE78.ini
-%%DATADIR%%/sys/GameSettings/GJW.ini
 %%DATADIR%%/sys/GameSettings/GJWE78.ini
-%%DATADIR%%/sys/GameSettings/GJX.ini
-%%DATADIR%%/sys/GameSettings/GJZ.ini
 %%DATADIR%%/sys/GameSettings/GK2.ini
 %%DATADIR%%/sys/GameSettings/GK4.ini
 %%DATADIR%%/sys/GameSettings/GK4E01.ini
 %%DATADIR%%/sys/GameSettings/GK5.ini
-%%DATADIR%%/sys/GameSettings/GK6.ini
 %%DATADIR%%/sys/GameSettings/GK7.ini
-%%DATADIR%%/sys/GameSettings/GK9.ini
-%%DATADIR%%/sys/GameSettings/GKA.ini
 %%DATADIR%%/sys/GameSettings/GKB.ini
-%%DATADIR%%/sys/GameSettings/GKD.ini
-%%DATADIR%%/sys/GameSettings/GKF.ini
-%%DATADIR%%/sys/GameSettings/GKG.ini
 %%DATADIR%%/sys/GameSettings/GKH.ini
-%%DATADIR%%/sys/GameSettings/GKJ.ini
-%%DATADIR%%/sys/GameSettings/GKK.ini
 %%DATADIR%%/sys/GameSettings/GKL.ini
 %%DATADIR%%/sys/GameSettings/GKM.ini
-%%DATADIR%%/sys/GameSettings/GKN.ini
 %%DATADIR%%/sys/GameSettings/GKNEB2.ini
 %%DATADIR%%/sys/GameSettings/GKO.ini
-%%DATADIR%%/sys/GameSettings/GKQ.ini
 %%DATADIR%%/sys/GameSettings/GKS.ini
-%%DATADIR%%/sys/GameSettings/GKT.ini
 %%DATADIR%%/sys/GameSettings/GKU.ini
 %%DATADIR%%/sys/GameSettings/GKY.ini
 %%DATADIR%%/sys/GameSettings/GKZ.ini
 %%DATADIR%%/sys/GameSettings/GL5.ini
 %%DATADIR%%/sys/GameSettings/GL7.ini
-%%DATADIR%%/sys/GameSettings/GL8.ini
-%%DATADIR%%/sys/GameSettings/GLB.ini
 %%DATADIR%%/sys/GameSettings/GLC.ini
-%%DATADIR%%/sys/GameSettings/GLE.ini
 %%DATADIR%%/sys/GameSettings/GLG.ini
-%%DATADIR%%/sys/GameSettings/GLL.ini
 %%DATADIR%%/sys/GameSettings/GLM.ini
 %%DATADIR%%/sys/GameSettings/GLME01.ini
 %%DATADIR%%/sys/GameSettings/GLMP01.ini
-%%DATADIR%%/sys/GameSettings/GLN.ini
 %%DATADIR%%/sys/GameSettings/GLNE69.ini
-%%DATADIR%%/sys/GameSettings/GLO.ini
-%%DATADIR%%/sys/GameSettings/GLQ.ini
 %%DATADIR%%/sys/GameSettings/GLR.ini
 %%DATADIR%%/sys/GameSettings/GLS.ini
-%%DATADIR%%/sys/GameSettings/GLU.ini
-%%DATADIR%%/sys/GameSettings/GLW.ini
-%%DATADIR%%/sys/GameSettings/GLY.ini
-%%DATADIR%%/sys/GameSettings/GLZ.ini
 %%DATADIR%%/sys/GameSettings/GM2.ini
 %%DATADIR%%/sys/GameSettings/GM3.ini
 %%DATADIR%%/sys/GameSettings/GM4.ini
@@ -483,80 +318,50 @@ bin/dolphin-emu-nogui
 %%DATADIR%%/sys/GameSettings/GM8E01.ini
 %%DATADIR%%/sys/GameSettings/GMB.ini
 %%DATADIR%%/sys/GameSettings/GMD.ini
-%%DATADIR%%/sys/GameSettings/GMF.ini
 %%DATADIR%%/sys/GameSettings/GMH.ini
 %%DATADIR%%/sys/GameSettings/GMI.ini
-%%DATADIR%%/sys/GameSettings/GMK.ini
-%%DATADIR%%/sys/GameSettings/GML.ini
 %%DATADIR%%/sys/GameSettings/GMN.ini
-%%DATADIR%%/sys/GameSettings/GMP.ini
 %%DATADIR%%/sys/GameSettings/GMPE01.ini
 %%DATADIR%%/sys/GameSettings/GMS.ini
 %%DATADIR%%/sys/GameSettings/GMSE01.ini
 %%DATADIR%%/sys/GameSettings/GMSP01.ini
-%%DATADIR%%/sys/GameSettings/GMT.ini
-%%DATADIR%%/sys/GameSettings/GMU.ini
 %%DATADIR%%/sys/GameSettings/GMX.ini
 %%DATADIR%%/sys/GameSettings/GMXE70.ini
 %%DATADIR%%/sys/GameSettings/GN4.ini
-%%DATADIR%%/sys/GameSettings/GN5.ini
-%%DATADIR%%/sys/GameSettings/GN6.ini
 %%DATADIR%%/sys/GameSettings/GN7.ini
-%%DATADIR%%/sys/GameSettings/GN8.ini
 %%DATADIR%%/sys/GameSettings/GNC.ini
-%%DATADIR%%/sys/GameSettings/GND.ini
 %%DATADIR%%/sys/GameSettings/GNE.ini
-%%DATADIR%%/sys/GameSettings/GNH.ini
 %%DATADIR%%/sys/GameSettings/GNHE5d.ini
 %%DATADIR%%/sys/GameSettings/GNI.ini
 %%DATADIR%%/sys/GameSettings/GNJ.ini
-%%DATADIR%%/sys/GameSettings/GNL.ini
 %%DATADIR%%/sys/GameSettings/GNM.ini
 %%DATADIR%%/sys/GameSettings/GNN.ini
 %%DATADIR%%/sys/GameSettings/GNO.ini
-%%DATADIR%%/sys/GameSettings/GNQ.ini
-%%DATADIR%%/sys/GameSettings/GNR.ini
-%%DATADIR%%/sys/GameSettings/GNU.ini
-%%DATADIR%%/sys/GameSettings/GNW.ini
 %%DATADIR%%/sys/GameSettings/GNWE69.ini
-%%DATADIR%%/sys/GameSettings/GNZ.ini
 %%DATADIR%%/sys/GameSettings/GO2.ini
 %%DATADIR%%/sys/GameSettings/GO2E4F.ini
-%%DATADIR%%/sys/GameSettings/GO7.ini
 %%DATADIR%%/sys/GameSettings/GO7E69.ini
 %%DATADIR%%/sys/GameSettings/GO7F69.ini
 %%DATADIR%%/sys/GameSettings/GO7P69.ini
-%%DATADIR%%/sys/GameSettings/GOA.ini
-%%DATADIR%%/sys/GameSettings/GOB.ini
-%%DATADIR%%/sys/GameSettings/GOC.ini
-%%DATADIR%%/sys/GameSettings/GOG.ini
 %%DATADIR%%/sys/GameSettings/GOM.ini
 %%DATADIR%%/sys/GameSettings/GOME01.ini
-%%DATADIR%%/sys/GameSettings/GON.ini
-%%DATADIR%%/sys/GameSettings/GOO.ini
-%%DATADIR%%/sys/GameSettings/GOP.ini
 %%DATADIR%%/sys/GameSettings/GOQ.ini
 %%DATADIR%%/sys/GameSettings/GOS.ini
 %%DATADIR%%/sys/GameSettings/GOW.ini
 %%DATADIR%%/sys/GameSettings/GOY.ini
 %%DATADIR%%/sys/GameSettings/GOYE69.ini
 %%DATADIR%%/sys/GameSettings/GP2.ini
-%%DATADIR%%/sys/GameSettings/GP4.ini
+%%DATADIR%%/sys/GameSettings/GP3.ini
 %%DATADIR%%/sys/GameSettings/GP5.ini
 %%DATADIR%%/sys/GameSettings/GP5E01.ini
 %%DATADIR%%/sys/GameSettings/GP6.ini
-%%DATADIR%%/sys/GameSettings/GP7.ini
 %%DATADIR%%/sys/GameSettings/GP7E01.ini
-%%DATADIR%%/sys/GameSettings/GP8.ini
 %%DATADIR%%/sys/GameSettings/GPA.ini
-%%DATADIR%%/sys/GameSettings/GPD.ini
 %%DATADIR%%/sys/GameSettings/GPE.ini
 %%DATADIR%%/sys/GameSettings/GPH.ini
-%%DATADIR%%/sys/GameSettings/GPI.ini
 %%DATADIR%%/sys/GameSettings/GPIE01.ini
 %%DATADIR%%/sys/GameSettings/GPIP01.ini
 %%DATADIR%%/sys/GameSettings/GPK.ini
-%%DATADIR%%/sys/GameSettings/GPN.ini
 %%DATADIR%%/sys/GameSettings/GPNP08.ini
 %%DATADIR%%/sys/GameSettings/GPO.ini
 %%DATADIR%%/sys/GameSettings/GPOE8P.ini
@@ -564,167 +369,94 @@ bin/dolphin-emu-nogui
 %%DATADIR%%/sys/GameSettings/GPS.ini
 %%DATADIR%%/sys/GameSettings/GPSP8P.ini
 %%DATADIR%%/sys/GameSettings/GPT.ini
-%%DATADIR%%/sys/GameSettings/GPV.ini
 %%DATADIR%%/sys/GameSettings/GPVE01.ini
-%%DATADIR%%/sys/GameSettings/GPX.ini
-%%DATADIR%%/sys/GameSettings/GPZ.ini
-%%DATADIR%%/sys/GameSettings/GQ8.ini
 %%DATADIR%%/sys/GameSettings/GQC.ini
-%%DATADIR%%/sys/GameSettings/GQL.ini
-%%DATADIR%%/sys/GameSettings/GQN.ini
-%%DATADIR%%/sys/GameSettings/GQQ.ini
 %%DATADIR%%/sys/GameSettings/GQS.ini
 %%DATADIR%%/sys/GameSettings/GQSEAF.ini
-%%DATADIR%%/sys/GameSettings/GQT.ini
-%%DATADIR%%/sys/GameSettings/GQW.ini
 %%DATADIR%%/sys/GameSettings/GQX.ini
-%%DATADIR%%/sys/GameSettings/GR2.ini
-%%DATADIR%%/sys/GameSettings/GR6.ini
-%%DATADIR%%/sys/GameSettings/GR8.ini
-%%DATADIR%%/sys/GameSettings/GRA.ini
 %%DATADIR%%/sys/GameSettings/GRB.ini
-%%DATADIR%%/sys/GameSettings/GRE.ini
 %%DATADIR%%/sys/GameSettings/GREE08.ini
-%%DATADIR%%/sys/GameSettings/GRF.ini
 %%DATADIR%%/sys/GameSettings/GRH.ini
 %%DATADIR%%/sys/GameSettings/GRJ.ini
 %%DATADIR%%/sys/GameSettings/GRK.ini
-%%DATADIR%%/sys/GameSettings/GRL.ini
-%%DATADIR%%/sys/GameSettings/GRN.ini
 %%DATADIR%%/sys/GameSettings/GRNE52.ini
-%%DATADIR%%/sys/GameSettings/GRO.ini
 %%DATADIR%%/sys/GameSettings/GRQ.ini
 %%DATADIR%%/sys/GameSettings/GRS.ini
 %%DATADIR%%/sys/GameSettings/GRSPAF.ini
 %%DATADIR%%/sys/GameSettings/GRU.ini
 %%DATADIR%%/sys/GameSettings/GRUE78.ini
-%%DATADIR%%/sys/GameSettings/GRV.ini
 %%DATADIR%%/sys/GameSettings/GRY.ini
 %%DATADIR%%/sys/GameSettings/GS2.ini
 %%DATADIR%%/sys/GameSettings/GS2E78.ini
-%%DATADIR%%/sys/GameSettings/GS8.ini
-%%DATADIR%%/sys/GameSettings/GSA.ini
 %%DATADIR%%/sys/GameSettings/GSAP01.ini
-%%DATADIR%%/sys/GameSettings/GSB.ini
-%%DATADIR%%/sys/GameSettings/GSC.ini
-%%DATADIR%%/sys/GameSettings/GSE.ini
 %%DATADIR%%/sys/GameSettings/GSM.ini
 %%DATADIR%%/sys/GameSettings/GSN.ini
 %%DATADIR%%/sys/GameSettings/GSNE8P.ini
 %%DATADIR%%/sys/GameSettings/GSNP8P.ini
 %%DATADIR%%/sys/GameSettings/GSO.ini
-%%DATADIR%%/sys/GameSettings/GSP.ini
 %%DATADIR%%/sys/GameSettings/GSQ.ini
 %%DATADIR%%/sys/GameSettings/GSR.ini
 %%DATADIR%%/sys/GameSettings/GSS.ini
 %%DATADIR%%/sys/GameSettings/GSSE8P.ini
 %%DATADIR%%/sys/GameSettings/GST.ini
 %%DATADIR%%/sys/GameSettings/GSW.ini
+%%DATADIR%%/sys/GameSettings/GSX.ini
 %%DATADIR%%/sys/GameSettings/GSZ.ini
 %%DATADIR%%/sys/GameSettings/GT3.ini
-%%DATADIR%%/sys/GameSettings/GT4.ini
 %%DATADIR%%/sys/GameSettings/GT6.ini
 %%DATADIR%%/sys/GameSettings/GT6E70.ini
 %%DATADIR%%/sys/GameSettings/GT7.ini
-%%DATADIR%%/sys/GameSettings/GT8.ini
-%%DATADIR%%/sys/GameSettings/GTC.ini
-%%DATADIR%%/sys/GameSettings/GTE.ini
 %%DATADIR%%/sys/GameSettings/GTEE01.ini
 %%DATADIR%%/sys/GameSettings/GTEP01.ini
-%%DATADIR%%/sys/GameSettings/GTF.ini
 %%DATADIR%%/sys/GameSettings/GTK.ini
 %%DATADIR%%/sys/GameSettings/GTKE51.ini
-%%DATADIR%%/sys/GameSettings/GTL.ini
 %%DATADIR%%/sys/GameSettings/GTO.ini
 %%DATADIR%%/sys/GameSettings/GTR.ini
-%%DATADIR%%/sys/GameSettings/GTS.ini
 %%DATADIR%%/sys/GameSettings/GTSE4F.ini
-%%DATADIR%%/sys/GameSettings/GTU.ini
 %%DATADIR%%/sys/GameSettings/GTW.ini
-%%DATADIR%%/sys/GameSettings/GTY.ini
 %%DATADIR%%/sys/GameSettings/GTZ.ini
 %%DATADIR%%/sys/GameSettings/GUB.ini
-%%DATADIR%%/sys/GameSettings/GUC.ini
-%%DATADIR%%/sys/GameSettings/GUF.ini
-%%DATADIR%%/sys/GameSettings/GUG.ini
 %%DATADIR%%/sys/GameSettings/GUM.ini
 %%DATADIR%%/sys/GameSettings/GUN.ini
 %%DATADIR%%/sys/GameSettings/GUNE5D.ini
 %%DATADIR%%/sys/GameSettings/GUP.ini
 %%DATADIR%%/sys/GameSettings/GUT.ini
-%%DATADIR%%/sys/GameSettings/GUV.ini
 %%DATADIR%%/sys/GameSettings/GUZ.ini
-%%DATADIR%%/sys/GameSettings/GV3.ini
-%%DATADIR%%/sys/GameSettings/GV4.ini
 %%DATADIR%%/sys/GameSettings/GVC.ini
-%%DATADIR%%/sys/GameSettings/GVD.ini
-%%DATADIR%%/sys/GameSettings/GVH.ini
 %%DATADIR%%/sys/GameSettings/GVJ.ini
-%%DATADIR%%/sys/GameSettings/GVK.ini
 %%DATADIR%%/sys/GameSettings/GVL.ini
 %%DATADIR%%/sys/GameSettings/GVO.ini
-%%DATADIR%%/sys/GameSettings/GVR.ini
 %%DATADIR%%/sys/GameSettings/GVS.ini
 %%DATADIR%%/sys/GameSettings/GVS46E.ini
 %%DATADIR%%/sys/GameSettings/GVS46J.ini
 %%DATADIR%%/sys/GameSettings/GW2.ini
-%%DATADIR%%/sys/GameSettings/GW3.ini
-%%DATADIR%%/sys/GameSettings/GW5.ini
 %%DATADIR%%/sys/GameSettings/GW7.ini
-%%DATADIR%%/sys/GameSettings/GW8.ini
-%%DATADIR%%/sys/GameSettings/GW9.ini
-%%DATADIR%%/sys/GameSettings/GWA.ini
-%%DATADIR%%/sys/GameSettings/GWB.ini
-%%DATADIR%%/sys/GameSettings/GWE.ini
-%%DATADIR%%/sys/GameSettings/GWG.ini
 %%DATADIR%%/sys/GameSettings/GWJ.ini
-%%DATADIR%%/sys/GameSettings/GWK.ini
 %%DATADIR%%/sys/GameSettings/GWL.ini
-%%DATADIR%%/sys/GameSettings/GWM.ini
-%%DATADIR%%/sys/GameSettings/GWO.ini
+%%DATADIR%%/sys/GameSettings/GWLE6L.ini
+%%DATADIR%%/sys/GameSettings/GWLX6L.ini
 %%DATADIR%%/sys/GameSettings/GWP.ini
-%%DATADIR%%/sys/GameSettings/GWQ.ini
 %%DATADIR%%/sys/GameSettings/GWQE52.ini
-%%DATADIR%%/sys/GameSettings/GWR.ini
 %%DATADIR%%/sys/GameSettings/GWRE01.ini
 %%DATADIR%%/sys/GameSettings/GWRP01.ini
-%%DATADIR%%/sys/GameSettings/GWS.ini
 %%DATADIR%%/sys/GameSettings/GWT.ini
-%%DATADIR%%/sys/GameSettings/GWV.ini
-%%DATADIR%%/sys/GameSettings/GWW.ini
 %%DATADIR%%/sys/GameSettings/GWWP01.ini
 %%DATADIR%%/sys/GameSettings/GWY.ini
-%%DATADIR%%/sys/GameSettings/GWZ.ini
-%%DATADIR%%/sys/GameSettings/GX2.ini
 %%DATADIR%%/sys/GameSettings/GX3.ini
 %%DATADIR%%/sys/GameSettings/GXB.ini
-%%DATADIR%%/sys/GameSettings/GXC.ini
-%%DATADIR%%/sys/GameSettings/GXE.ini
-%%DATADIR%%/sys/GameSettings/GXF.ini
 %%DATADIR%%/sys/GameSettings/GXG.ini
-%%DATADIR%%/sys/GameSettings/GXL.ini
 %%DATADIR%%/sys/GameSettings/GXM.ini
 %%DATADIR%%/sys/GameSettings/GXN.ini
-%%DATADIR%%/sys/GameSettings/GXO.ini
-%%DATADIR%%/sys/GameSettings/GXR.ini
 %%DATADIR%%/sys/GameSettings/GXS.ini
 %%DATADIR%%/sys/GameSettings/GXSP8P.ini
 %%DATADIR%%/sys/GameSettings/GXU.ini
 %%DATADIR%%/sys/GameSettings/GXX.ini
-%%DATADIR%%/sys/GameSettings/GY2.ini
-%%DATADIR%%/sys/GameSettings/GYA.ini
-%%DATADIR%%/sys/GameSettings/GYB.ini
-%%DATADIR%%/sys/GameSettings/GYF.ini
-%%DATADIR%%/sys/GameSettings/GYK.ini
 %%DATADIR%%/sys/GameSettings/GYQ.ini
-%%DATADIR%%/sys/GameSettings/GYR.ini
 %%DATADIR%%/sys/GameSettings/GYT.ini
-%%DATADIR%%/sys/GameSettings/GYW.ini
 %%DATADIR%%/sys/GameSettings/GZ2.ini
 %%DATADIR%%/sys/GameSettings/GZ2E01.ini
 %%DATADIR%%/sys/GameSettings/GZ2J01.ini
 %%DATADIR%%/sys/GameSettings/GZ2P01.ini
-%%DATADIR%%/sys/GameSettings/GZ3.ini
 %%DATADIR%%/sys/GameSettings/GZ3E70.ini
 %%DATADIR%%/sys/GameSettings/GZD.ini
 %%DATADIR%%/sys/GameSettings/GZE.ini
@@ -732,22 +464,22 @@ bin/dolphin-emu-nogui
 %%DATADIR%%/sys/GameSettings/GZLE01.ini
 %%DATADIR%%/sys/GameSettings/GZLJ01.ini
 %%DATADIR%%/sys/GameSettings/GZLP01.ini
-%%DATADIR%%/sys/GameSettings/GZM.ini
 %%DATADIR%%/sys/GameSettings/GZP.ini
-%%DATADIR%%/sys/GameSettings/GZS.ini
 %%DATADIR%%/sys/GameSettings/GZW.ini
-%%DATADIR%%/sys/GameSettings/HAA.ini
+%%DATADIR%%/sys/GameSettings/HA8.ini
+%%DATADIR%%/sys/GameSettings/HA9.ini
 %%DATADIR%%/sys/GameSettings/HAB.ini
 %%DATADIR%%/sys/GameSettings/HAC.ini
-%%DATADIR%%/sys/GameSettings/HAD.ini
 %%DATADIR%%/sys/GameSettings/HAT.ini
-%%DATADIR%%/sys/GameSettings/HAW.ini
-%%DATADIR%%/sys/GameSettings/HAX.ini
-%%DATADIR%%/sys/GameSettings/HAY.ini
-%%DATADIR%%/sys/GameSettings/HCD.ini
-%%DATADIR%%/sys/GameSettings/HCF.ini
+%%DATADIR%%/sys/GameSettings/HBA.ini
+%%DATADIR%%/sys/GameSettings/HBB.ini
+%%DATADIR%%/sys/GameSettings/HBC.ini
+%%DATADIR%%/sys/GameSettings/HBD.ini
+%%DATADIR%%/sys/GameSettings/HBF.ini
+%%DATADIR%%/sys/GameSettings/HBG.ini
+%%DATADIR%%/sys/GameSettings/HBI.ini
+%%DATADIR%%/sys/GameSettings/HBK.ini
 %%DATADIR%%/sys/GameSettings/HCL.ini
-%%DATADIR%%/sys/GameSettings/HCQ.ini
 %%DATADIR%%/sys/GameSettings/HCS.ini
 %%DATADIR%%/sys/GameSettings/J.ini
 %%DATADIR%%/sys/GameSettings/JA7.ini
@@ -767,7 +499,6 @@ bin/dolphin-emu-nogui
 %%DATADIR%%/sys/GameSettings/JCY.ini
 %%DATADIR%%/sys/GameSettings/JDV.ini
 %%DATADIR%%/sys/GameSettings/JEC.ini
-%%DATADIR%%/sys/GameSettings/JOD.ini
 %%DATADIR%%/sys/GameSettings/L.ini
 %%DATADIR%%/sys/GameSettings/M.ini
 %%DATADIR%%/sys/GameSettings/MAK.ini
@@ -780,7 +511,6 @@ bin/dolphin-emu-nogui
 %%DATADIR%%/sys/GameSettings/MCY.ini
 %%DATADIR%%/sys/GameSettings/MCZ.ini
 %%DATADIR%%/sys/GameSettings/N.ini
-%%DATADIR%%/sys/GameSettings/NAA.ini
 %%DATADIR%%/sys/GameSettings/NAB.ini
 %%DATADIR%%/sys/GameSettings/NAC.ini
 %%DATADIR%%/sys/GameSettings/NAD.ini
@@ -789,58 +519,47 @@ bin/dolphin-emu-nogui
 %%DATADIR%%/sys/GameSettings/NAH.ini
 %%DATADIR%%/sys/GameSettings/NAK.ini
 %%DATADIR%%/sys/GameSettings/NAL.ini
-%%DATADIR%%/sys/GameSettings/NAN.ini
 %%DATADIR%%/sys/GameSettings/NAR.ini
 %%DATADIR%%/sys/GameSettings/P.ini
+%%DATADIR%%/sys/GameSettings/P2M.ini
+%%DATADIR%%/sys/GameSettings/P4B.ini
 %%DATADIR%%/sys/GameSettings/PC6.ini
-%%DATADIR%%/sys/GameSettings/PM4.ini
+%%DATADIR%%/sys/GameSettings/PCK.ini
+%%DATADIR%%/sys/GameSettings/PCS.ini
+%%DATADIR%%/sys/GameSettings/PGS.ini
+%%DATADIR%%/sys/GameSettings/PNJ.ini
 %%DATADIR%%/sys/GameSettings/PRJ.ini
 %%DATADIR%%/sys/GameSettings/PZL.ini
 %%DATADIR%%/sys/GameSettings/PZLE01.ini
 %%DATADIR%%/sys/GameSettings/Q.ini
 %%DATADIR%%/sys/GameSettings/R22.ini
 %%DATADIR%%/sys/GameSettings/R25.ini
-%%DATADIR%%/sys/GameSettings/R29.ini
-%%DATADIR%%/sys/GameSettings/R2D.ini
 %%DATADIR%%/sys/GameSettings/R2G.ini
-%%DATADIR%%/sys/GameSettings/R2J.ini
-%%DATADIR%%/sys/GameSettings/R2K.ini
-%%DATADIR%%/sys/GameSettings/R2T.ini
-%%DATADIR%%/sys/GameSettings/R2U.ini
-%%DATADIR%%/sys/GameSettings/R2V.ini
+%%DATADIR%%/sys/GameSettings/R38.ini
 %%DATADIR%%/sys/GameSettings/R3A.ini
 %%DATADIR%%/sys/GameSettings/R3B.ini
-%%DATADIR%%/sys/GameSettings/R3C.ini
 %%DATADIR%%/sys/GameSettings/R3D.ini
-%%DATADIR%%/sys/GameSettings/R3G.ini
 %%DATADIR%%/sys/GameSettings/R3M.ini
 %%DATADIR%%/sys/GameSettings/R3N.ini
 %%DATADIR%%/sys/GameSettings/R3O.ini
 %%DATADIR%%/sys/GameSettings/R3R.ini
-%%DATADIR%%/sys/GameSettings/R3S.ini
-%%DATADIR%%/sys/GameSettings/R3T.ini
 %%DATADIR%%/sys/GameSettings/R44.ini
-%%DATADIR%%/sys/GameSettings/R46.ini
-%%DATADIR%%/sys/GameSettings/R49.ini
-%%DATADIR%%/sys/GameSettings/R4B.ini
+%%DATADIR%%/sys/GameSettings/R4C.ini
 %%DATADIR%%/sys/GameSettings/R4E.ini
 %%DATADIR%%/sys/GameSettings/R4F.ini
-%%DATADIR%%/sys/GameSettings/R4Q.ini
-%%DATADIR%%/sys/GameSettings/R4R.ini
 %%DATADIR%%/sys/GameSettings/R4Z.ini
+%%DATADIR%%/sys/GameSettings/R55.ini
+%%DATADIR%%/sys/GameSettings/R59.ini
 %%DATADIR%%/sys/GameSettings/R5D.ini
 %%DATADIR%%/sys/GameSettings/R5I.ini
-%%DATADIR%%/sys/GameSettings/R5V.ini
+%%DATADIR%%/sys/GameSettings/R5T.ini
 %%DATADIR%%/sys/GameSettings/R5W.ini
 %%DATADIR%%/sys/GameSettings/R64.ini
-%%DATADIR%%/sys/GameSettings/R69.ini
 %%DATADIR%%/sys/GameSettings/R6B.ini
-%%DATADIR%%/sys/GameSettings/R6N.ini
 %%DATADIR%%/sys/GameSettings/R6Q.ini
 %%DATADIR%%/sys/GameSettings/R6T.ini
 %%DATADIR%%/sys/GameSettings/R6Y.ini
 %%DATADIR%%/sys/GameSettings/R7E.ini
-%%DATADIR%%/sys/GameSettings/R7F.ini
 %%DATADIR%%/sys/GameSettings/R7G.ini
 %%DATADIR%%/sys/GameSettings/R7P.ini
 %%DATADIR%%/sys/GameSettings/R7PE01.ini
@@ -848,117 +567,61 @@ bin/dolphin-emu-nogui
 %%DATADIR%%/sys/GameSettings/R7X.ini
 %%DATADIR%%/sys/GameSettings/R84.ini
 %%DATADIR%%/sys/GameSettings/R8A.ini
-%%DATADIR%%/sys/GameSettings/R8D.ini
 %%DATADIR%%/sys/GameSettings/R8J.ini
 %%DATADIR%%/sys/GameSettings/R8L.ini
 %%DATADIR%%/sys/GameSettings/R8P.ini
-%%DATADIR%%/sys/GameSettings/R8X.ini
 %%DATADIR%%/sys/GameSettings/R92.ini
-%%DATADIR%%/sys/GameSettings/R96.ini
 %%DATADIR%%/sys/GameSettings/R9D.ini
-%%DATADIR%%/sys/GameSettings/R9F.ini
 %%DATADIR%%/sys/GameSettings/R9I.ini
-%%DATADIR%%/sys/GameSettings/RB4.ini
 %%DATADIR%%/sys/GameSettings/RB7.ini
 %%DATADIR%%/sys/GameSettings/RBB.ini
 %%DATADIR%%/sys/GameSettings/RBH.ini
 %%DATADIR%%/sys/GameSettings/RBI.ini
 %%DATADIR%%/sys/GameSettings/RBK.ini
 %%DATADIR%%/sys/GameSettings/RBL.ini
-%%DATADIR%%/sys/GameSettings/RBM.ini
 %%DATADIR%%/sys/GameSettings/RBO.ini
-%%DATADIR%%/sys/GameSettings/RBQ.ini
 %%DATADIR%%/sys/GameSettings/RBR.ini
 %%DATADIR%%/sys/GameSettings/RBT.ini
-%%DATADIR%%/sys/GameSettings/RBU.ini
 %%DATADIR%%/sys/GameSettings/RBW.ini
-%%DATADIR%%/sys/GameSettings/RBX.ini
-%%DATADIR%%/sys/GameSettings/RBZ.ini
 %%DATADIR%%/sys/GameSettings/RCC.ini
 %%DATADIR%%/sys/GameSettings/RCJ.ini
-%%DATADIR%%/sys/GameSettings/RCJE8P.ini
-%%DATADIR%%/sys/GameSettings/RCK.ini
 %%DATADIR%%/sys/GameSettings/RCL.ini
 %%DATADIR%%/sys/GameSettings/RCP.ini
-%%DATADIR%%/sys/GameSettings/RD2.ini
 %%DATADIR%%/sys/GameSettings/RDB.ini
 %%DATADIR%%/sys/GameSettings/RDF.ini
-%%DATADIR%%/sys/GameSettings/RDG.ini
-%%DATADIR%%/sys/GameSettings/RDH.ini
-%%DATADIR%%/sys/GameSettings/RDI.ini
-%%DATADIR%%/sys/GameSettings/RDK.ini
-%%DATADIR%%/sys/GameSettings/RDQ.ini
 %%DATADIR%%/sys/GameSettings/RDS.ini
-%%DATADIR%%/sys/GameSettings/RDV.ini
-%%DATADIR%%/sys/GameSettings/RDX.ini
-%%DATADIR%%/sys/GameSettings/RDZ.ini
-%%DATADIR%%/sys/GameSettings/RE4.ini
 %%DATADIR%%/sys/GameSettings/RED.ini
 %%DATADIR%%/sys/GameSettings/RELJAB.ini
-%%DATADIR%%/sys/GameSettings/REN.ini
-%%DATADIR%%/sys/GameSettings/REX.ini
-%%DATADIR%%/sys/GameSettings/RF4.ini
-%%DATADIR%%/sys/GameSettings/RF7.ini
 %%DATADIR%%/sys/GameSettings/RFB.ini
 %%DATADIR%%/sys/GameSettings/RFC.ini
-%%DATADIR%%/sys/GameSettings/RFE.ini
 %%DATADIR%%/sys/GameSettings/RFF.ini
 %%DATADIR%%/sys/GameSettings/RFQ.ini
 %%DATADIR%%/sys/GameSettings/RFS.ini
 %%DATADIR%%/sys/GameSettings/RG2.ini
-%%DATADIR%%/sys/GameSettings/RG5.ini
+%%DATADIR%%/sys/GameSettings/RG4.ini
 %%DATADIR%%/sys/GameSettings/RG6.ini
-%%DATADIR%%/sys/GameSettings/RGA.ini
 %%DATADIR%%/sys/GameSettings/RGB.ini
-%%DATADIR%%/sys/GameSettings/RGH.ini
-%%DATADIR%%/sys/GameSettings/RGL.ini
 %%DATADIR%%/sys/GameSettings/RGM.ini
 %%DATADIR%%/sys/GameSettings/RGQ.ini
 %%DATADIR%%/sys/GameSettings/RGQE70.ini
 %%DATADIR%%/sys/GameSettings/RGS.ini
-%%DATADIR%%/sys/GameSettings/RGV.ini
 %%DATADIR%%/sys/GameSettings/RGW.ini
-%%DATADIR%%/sys/GameSettings/RH2.ini
 %%DATADIR%%/sys/GameSettings/RH8.ini
-%%DATADIR%%/sys/GameSettings/RHA.ini
-%%DATADIR%%/sys/GameSettings/RHD.ini
-%%DATADIR%%/sys/GameSettings/RHM.ini
 %%DATADIR%%/sys/GameSettings/RHO.ini
-%%DATADIR%%/sys/GameSettings/RHT.ini
-%%DATADIR%%/sys/GameSettings/RHU.ini
 %%DATADIR%%/sys/GameSettings/RI3.ini
-%%DATADIR%%/sys/GameSettings/RIB.ini
-%%DATADIR%%/sys/GameSettings/RIH.ini
-%%DATADIR%%/sys/GameSettings/RIJ.ini
-%%DATADIR%%/sys/GameSettings/RIN.ini
 %%DATADIR%%/sys/GameSettings/RIP.ini
 %%DATADIR%%/sys/GameSettings/RIU.ini
-%%DATADIR%%/sys/GameSettings/RIV.ini
 %%DATADIR%%/sys/GameSettings/RIZ.ini
 %%DATADIR%%/sys/GameSettings/RJ2.ini
-%%DATADIR%%/sys/GameSettings/RJ3.ini
-%%DATADIR%%/sys/GameSettings/RJA.ini
 %%DATADIR%%/sys/GameSettings/RJC.ini
-%%DATADIR%%/sys/GameSettings/RJS.ini
 %%DATADIR%%/sys/GameSettings/RK2.ini
-%%DATADIR%%/sys/GameSettings/RK5.ini
 %%DATADIR%%/sys/GameSettings/RKD.ini
-%%DATADIR%%/sys/GameSettings/RKI.ini
-%%DATADIR%%/sys/GameSettings/RKM.ini
-%%DATADIR%%/sys/GameSettings/RKS.ini
-%%DATADIR%%/sys/GameSettings/RLB.ini
-%%DATADIR%%/sys/GameSettings/RLE.ini
-%%DATADIR%%/sys/GameSettings/RLG.ini
 %%DATADIR%%/sys/GameSettings/RLJ.ini
 %%DATADIR%%/sys/GameSettings/RLS.ini
 %%DATADIR%%/sys/GameSettings/RLT.ini
-%%DATADIR%%/sys/GameSettings/RLX.ini
-%%DATADIR%%/sys/GameSettings/RM2.ini
 %%DATADIR%%/sys/GameSettings/RM3.ini
-%%DATADIR%%/sys/GameSettings/RM3P01.ini
-%%DATADIR%%/sys/GameSettings/RM6.ini
 %%DATADIR%%/sys/GameSettings/RM8.ini
-%%DATADIR%%/sys/GameSettings/RMA.ini
+%%DATADIR%%/sys/GameSettings/RM9.ini
 %%DATADIR%%/sys/GameSettings/RMC.ini
 %%DATADIR%%/sys/GameSettings/RMG.ini
 %%DATADIR%%/sys/GameSettings/RMH.ini
@@ -969,110 +632,55 @@ bin/dolphin-emu-nogui
 %%DATADIR%%/sys/GameSettings/RML.ini
 %%DATADIR%%/sys/GameSettings/RMO.ini
 %%DATADIR%%/sys/GameSettings/RMP.ini
-%%DATADIR%%/sys/GameSettings/RMS.ini
-%%DATADIR%%/sys/GameSettings/RNE.ini
-%%DATADIR%%/sys/GameSettings/RNH.ini
-%%DATADIR%%/sys/GameSettings/RNHE41.ini
-%%DATADIR%%/sys/GameSettings/RNJ.ini
-%%DATADIR%%/sys/GameSettings/RNM.ini
 %%DATADIR%%/sys/GameSettings/RNO.ini
 %%DATADIR%%/sys/GameSettings/RNX.ini
-%%DATADIR%%/sys/GameSettings/RO2.ini
 %%DATADIR%%/sys/GameSettings/RO2P7N.ini
 %%DATADIR%%/sys/GameSettings/RO3.ini
-%%DATADIR%%/sys/GameSettings/RO7.ini
-%%DATADIR%%/sys/GameSettings/RO8.ini
 %%DATADIR%%/sys/GameSettings/RO9.ini
 %%DATADIR%%/sys/GameSettings/ROA.ini
-%%DATADIR%%/sys/GameSettings/ROC.ini
 %%DATADIR%%/sys/GameSettings/ROD.ini
 %%DATADIR%%/sys/GameSettings/ROL.ini
 %%DATADIR%%/sys/GameSettings/RON.ini
 %%DATADIR%%/sys/GameSettings/ROU.ini
 %%DATADIR%%/sys/GameSettings/ROW.ini
-%%DATADIR%%/sys/GameSettings/RP7.ini
 %%DATADIR%%/sys/GameSettings/RPB.ini
-%%DATADIR%%/sys/GameSettings/RPD.ini
 %%DATADIR%%/sys/GameSettings/RPG.ini
 %%DATADIR%%/sys/GameSettings/RPJ.ini
 %%DATADIR%%/sys/GameSettings/RPO.ini
-%%DATADIR%%/sys/GameSettings/RPP.ini
-%%DATADIR%%/sys/GameSettings/RPW.ini
 %%DATADIR%%/sys/GameSettings/RPY.ini
 %%DATADIR%%/sys/GameSettings/RQ6.ini
-%%DATADIR%%/sys/GameSettings/RQB.ini
-%%DATADIR%%/sys/GameSettings/RQL.ini
-%%DATADIR%%/sys/GameSettings/RQO.ini
 %%DATADIR%%/sys/GameSettings/RQR.ini
 %%DATADIR%%/sys/GameSettings/RQW.ini
-%%DATADIR%%/sys/GameSettings/RR2.ini
-%%DATADIR%%/sys/GameSettings/RR5.ini
-%%DATADIR%%/sys/GameSettings/RRA.ini
 %%DATADIR%%/sys/GameSettings/RRB.ini
 %%DATADIR%%/sys/GameSettings/RRK.ini
-%%DATADIR%%/sys/GameSettings/RRM.ini
-%%DATADIR%%/sys/GameSettings/RRX.ini
-%%DATADIR%%/sys/GameSettings/RRY.ini
+%%DATADIR%%/sys/GameSettings/RRP.ini
 %%DATADIR%%/sys/GameSettings/RRZ.ini
 %%DATADIR%%/sys/GameSettings/RS5.ini
-%%DATADIR%%/sys/GameSettings/RS8.ini
-%%DATADIR%%/sys/GameSettings/RS9.ini
 %%DATADIR%%/sys/GameSettings/RSB.ini
 %%DATADIR%%/sys/GameSettings/RSBE01.ini
 %%DATADIR%%/sys/GameSettings/RSBP01.ini
-%%DATADIR%%/sys/GameSettings/RSF.ini
 %%DATADIR%%/sys/GameSettings/RSH.ini
 %%DATADIR%%/sys/GameSettings/RSI.ini
 %%DATADIR%%/sys/GameSettings/RSL.ini
 %%DATADIR%%/sys/GameSettings/RSM.ini
 %%DATADIR%%/sys/GameSettings/RSN.ini
 %%DATADIR%%/sys/GameSettings/RSP.ini
-%%DATADIR%%/sys/GameSettings/RSR.ini
-%%DATADIR%%/sys/GameSettings/RST.ini
-%%DATADIR%%/sys/GameSettings/RSU.ini
-%%DATADIR%%/sys/GameSettings/RSV.ini
-%%DATADIR%%/sys/GameSettings/RSW.ini
 %%DATADIR%%/sys/GameSettings/RSX.ini
-%%DATADIR%%/sys/GameSettings/RSZ.ini
 %%DATADIR%%/sys/GameSettings/RT3.ini
 %%DATADIR%%/sys/GameSettings/RT4.ini
-%%DATADIR%%/sys/GameSettings/RT5.ini
 %%DATADIR%%/sys/GameSettings/RT8.ini
-%%DATADIR%%/sys/GameSettings/RT9.ini
-%%DATADIR%%/sys/GameSettings/RTB.ini
-%%DATADIR%%/sys/GameSettings/RTC.ini
-%%DATADIR%%/sys/GameSettings/RTH.ini
 %%DATADIR%%/sys/GameSettings/RTM.ini
-%%DATADIR%%/sys/GameSettings/RTN.ini
 %%DATADIR%%/sys/GameSettings/RTR.ini
 %%DATADIR%%/sys/GameSettings/RTU.ini
 %%DATADIR%%/sys/GameSettings/RTZ.ini
-%%DATADIR%%/sys/GameSettings/RUC.ini
 %%DATADIR%%/sys/GameSettings/RUU.ini
-%%DATADIR%%/sys/GameSettings/RUY.ini
-%%DATADIR%%/sys/GameSettings/RVK.ini
-%%DATADIR%%/sys/GameSettings/RVO.ini
-%%DATADIR%%/sys/GameSettings/RVQ.ini
-%%DATADIR%%/sys/GameSettings/RVS.ini
-%%DATADIR%%/sys/GameSettings/RVU.ini
-%%DATADIR%%/sys/GameSettings/RVV.ini
-%%DATADIR%%/sys/GameSettings/RVZ.ini
-%%DATADIR%%/sys/GameSettings/RW9.ini
-%%DATADIR%%/sys/GameSettings/RWB.ini
-%%DATADIR%%/sys/GameSettings/RWE.ini
-%%DATADIR%%/sys/GameSettings/RWL.ini
 %%DATADIR%%/sys/GameSettings/RWO.ini
-%%DATADIR%%/sys/GameSettings/RWR.ini
 %%DATADIR%%/sys/GameSettings/RWS.ini
-%%DATADIR%%/sys/GameSettings/RWU.ini
 %%DATADIR%%/sys/GameSettings/RX3.ini
-%%DATADIR%%/sys/GameSettings/RX9.ini
+%%DATADIR%%/sys/GameSettings/RX4E4Z.ini
 %%DATADIR%%/sys/GameSettings/RXX.ini
 %%DATADIR%%/sys/GameSettings/RYB.ini
-%%DATADIR%%/sys/GameSettings/RYO.ini
-%%DATADIR%%/sys/GameSettings/RYQ.ini
-%%DATADIR%%/sys/GameSettings/RYX.ini
-%%DATADIR%%/sys/GameSettings/RZ9.ini
+%%DATADIR%%/sys/GameSettings/RYW.ini
 %%DATADIR%%/sys/GameSettings/RZD.ini
 %%DATADIR%%/sys/GameSettings/RZDE01r0.ini
 %%DATADIR%%/sys/GameSettings/RZDE01r2.ini
@@ -1082,56 +690,42 @@ bin/dolphin-emu-nogui
 %%DATADIR%%/sys/GameSettings/RZJ.ini
 %%DATADIR%%/sys/GameSettings/RZJP69.ini
 %%DATADIR%%/sys/GameSettings/RZO.ini
-%%DATADIR%%/sys/GameSettings/RZP.ini
 %%DATADIR%%/sys/GameSettings/RZT.ini
 %%DATADIR%%/sys/GameSettings/RZY.ini
-%%DATADIR%%/sys/GameSettings/RZZ.ini
+%%DATADIR%%/sys/GameSettings/S2C.ini
 %%DATADIR%%/sys/GameSettings/S2E.ini
-%%DATADIR%%/sys/GameSettings/S2I.ini
 %%DATADIR%%/sys/GameSettings/S2L.ini
-%%DATADIR%%/sys/GameSettings/S2T.ini
 %%DATADIR%%/sys/GameSettings/S2W.ini
 %%DATADIR%%/sys/GameSettings/S3B.ini
 %%DATADIR%%/sys/GameSettings/S59.ini
 %%DATADIR%%/sys/GameSettings/S72.ini
 %%DATADIR%%/sys/GameSettings/S75.ini
 %%DATADIR%%/sys/GameSettings/SAK.ini
-%%DATADIR%%/sys/GameSettings/SAW.ini
+%%DATADIR%%/sys/GameSettings/SAL.ini
 %%DATADIR%%/sys/GameSettings/SB3.ini
 %%DATADIR%%/sys/GameSettings/SB4.ini
 %%DATADIR%%/sys/GameSettings/SBD.ini
-%%DATADIR%%/sys/GameSettings/SBL.ini
-%%DATADIR%%/sys/GameSettings/SBN.ini
-%%DATADIR%%/sys/GameSettings/SBV.ini
 %%DATADIR%%/sys/GameSettings/SBX.ini
-%%DATADIR%%/sys/GameSettings/SC2.ini
 %%DATADIR%%/sys/GameSettings/SC2E8P.ini
-%%DATADIR%%/sys/GameSettings/SC4.ini
 %%DATADIR%%/sys/GameSettings/SC7.ini
-%%DATADIR%%/sys/GameSettings/SC8.ini
 %%DATADIR%%/sys/GameSettings/SCA.ini
 %%DATADIR%%/sys/GameSettings/SCY.ini
 %%DATADIR%%/sys/GameSettings/SD2.ini
 %%DATADIR%%/sys/GameSettings/SD2J01.ini
-%%DATADIR%%/sys/GameSettings/SDA.ini
 %%DATADIR%%/sys/GameSettings/SDB.ini
-%%DATADIR%%/sys/GameSettings/SDF.ini
 %%DATADIR%%/sys/GameSettings/SDM.ini
 %%DATADIR%%/sys/GameSettings/SDN.ini
 %%DATADIR%%/sys/GameSettings/SDW.ini
 %%DATADIR%%/sys/GameSettings/SE2.ini
-%%DATADIR%%/sys/GameSettings/SE3.ini
 %%DATADIR%%/sys/GameSettings/SEA.ini
 %%DATADIR%%/sys/GameSettings/SEM.ini
 %%DATADIR%%/sys/GameSettings/SER.ini
 %%DATADIR%%/sys/GameSettings/SF8.ini
 %%DATADIR%%/sys/GameSettings/SFI.ini
 %%DATADIR%%/sys/GameSettings/SFP.ini
-%%DATADIR%%/sys/GameSettings/SFW.ini
 %%DATADIR%%/sys/GameSettings/SG8.ini
-%%DATADIR%%/sys/GameSettings/SGA.ini
+%%DATADIR%%/sys/GameSettings/SGV.ini
 %%DATADIR%%/sys/GameSettings/SH6.ini
-%%DATADIR%%/sys/GameSettings/SHD.ini
 %%DATADIR%%/sys/GameSettings/SHL.ini
 %%DATADIR%%/sys/GameSettings/SHW.ini
 %%DATADIR%%/sys/GameSettings/SIL.ini
@@ -1139,12 +733,13 @@ bin/dolphin-emu-nogui
 %%DATADIR%%/sys/GameSettings/SJD.ini
 %%DATADIR%%/sys/GameSettings/SJDJ01.ini
 %%DATADIR%%/sys/GameSettings/SJE.ini
-%%DATADIR%%/sys/GameSettings/SJO.ini
 %%DATADIR%%/sys/GameSettings/SJX.ini
 %%DATADIR%%/sys/GameSettings/SK3.ini
-%%DATADIR%%/sys/GameSettings/SK4.ini
+%%DATADIR%%/sys/GameSettings/SKA.ini
 %%DATADIR%%/sys/GameSettings/SKC.ini
+%%DATADIR%%/sys/GameSettings/SKG.ini
 %%DATADIR%%/sys/GameSettings/SKJ.ini
+%%DATADIR%%/sys/GameSettings/SKO.ini
 %%DATADIR%%/sys/GameSettings/SKV.ini
 %%DATADIR%%/sys/GameSettings/SL2.ini
 %%DATADIR%%/sys/GameSettings/SLS.ini
@@ -1155,157 +750,107 @@ bin/dolphin-emu-nogui
 %%DATADIR%%/sys/GameSettings/SMNE01.ini
 %%DATADIR%%/sys/GameSettings/SMNP01.ini
 %%DATADIR%%/sys/GameSettings/SMO.ini
-%%DATADIR%%/sys/GameSettings/SN4.ini
 %%DATADIR%%/sys/GameSettings/SNC.ini
 %%DATADIR%%/sys/GameSettings/SND.ini
 %%DATADIR%%/sys/GameSettings/SNG.ini
 %%DATADIR%%/sys/GameSettings/SNJ.ini
 %%DATADIR%%/sys/GameSettings/SNJE69.ini
+%%DATADIR%%/sys/GameSettings/SNS.ini
+%%DATADIR%%/sys/GameSettings/SNT.ini
 %%DATADIR%%/sys/GameSettings/SNY.ini
-%%DATADIR%%/sys/GameSettings/SO3.ini
-%%DATADIR%%/sys/GameSettings/SOJ.ini
 %%DATADIR%%/sys/GameSettings/SOM.ini
 %%DATADIR%%/sys/GameSettings/SOS.ini
 %%DATADIR%%/sys/GameSettings/SOU.ini
 %%DATADIR%%/sys/GameSettings/SPD.ini
-%%DATADIR%%/sys/GameSettings/SPP.ini
 %%DATADIR%%/sys/GameSettings/SPR.ini
 %%DATADIR%%/sys/GameSettings/SPT.ini
 %%DATADIR%%/sys/GameSettings/SPV.ini
 %%DATADIR%%/sys/GameSettings/SQD.ini
-%%DATADIR%%/sys/GameSettings/SQM.ini
-%%DATADIR%%/sys/GameSettings/SR5.ini
-%%DATADIR%%/sys/GameSettings/SRO.ini
-%%DATADIR%%/sys/GameSettings/SRQ.ini
-%%DATADIR%%/sys/GameSettings/SS3.ini
+%%DATADIR%%/sys/GameSettings/SQI.ini
 %%DATADIR%%/sys/GameSettings/SSQ.ini
 %%DATADIR%%/sys/GameSettings/SSR.ini
 %%DATADIR%%/sys/GameSettings/SST.ini
 %%DATADIR%%/sys/GameSettings/SSZ.ini
-%%DATADIR%%/sys/GameSettings/STE.ini
-%%DATADIR%%/sys/GameSettings/STH.ini
-%%DATADIR%%/sys/GameSettings/STK.ini
 %%DATADIR%%/sys/GameSettings/STS.ini
 %%DATADIR%%/sys/GameSettings/SU7.ini
 %%DATADIR%%/sys/GameSettings/SUK.ini
+%%DATADIR%%/sys/GameSettings/SUKE01.ini
+%%DATADIR%%/sys/GameSettings/SUKJ01.ini
+%%DATADIR%%/sys/GameSettings/SUU.ini
+%%DATADIR%%/sys/GameSettings/SUW.ini
 %%DATADIR%%/sys/GameSettings/SVB.ini
 %%DATADIR%%/sys/GameSettings/SVM.ini
-%%DATADIR%%/sys/GameSettings/SVT.ini
 %%DATADIR%%/sys/GameSettings/SVV.ini
 %%DATADIR%%/sys/GameSettings/SVX.ini
 %%DATADIR%%/sys/GameSettings/SVZ.ini
-%%DATADIR%%/sys/GameSettings/SWA.ini
 %%DATADIR%%/sys/GameSettings/SX3.ini
 %%DATADIR%%/sys/GameSettings/SX4.ini
 %%DATADIR%%/sys/GameSettings/SX7.ini
 %%DATADIR%%/sys/GameSettings/SX8.ini
-%%DATADIR%%/sys/GameSettings/SXB.ini
 %%DATADIR%%/sys/GameSettings/SXC.ini
-%%DATADIR%%/sys/GameSettings/SXD.ini
-%%DATADIR%%/sys/GameSettings/SXE.ini
-%%DATADIR%%/sys/GameSettings/SXEE52.ini
-%%DATADIR%%/sys/GameSettings/SZA.ini
 %%DATADIR%%/sys/GameSettings/SZB.ini
-%%DATADIR%%/sys/GameSettings/UGP.ini
-%%DATADIR%%/sys/GameSettings/W24.ini
 %%DATADIR%%/sys/GameSettings/W2G.ini
-%%DATADIR%%/sys/GameSettings/W2M.ini
 %%DATADIR%%/sys/GameSettings/W3G.ini
 %%DATADIR%%/sys/GameSettings/W3M.ini
-%%DATADIR%%/sys/GameSettings/W8C.ini
 %%DATADIR%%/sys/GameSettings/WA2.ini
-%%DATADIR%%/sys/GameSettings/WA4.ini
-%%DATADIR%%/sys/GameSettings/WAI.ini
-%%DATADIR%%/sys/GameSettings/WAL.ini
-%%DATADIR%%/sys/GameSettings/WAY.ini
 %%DATADIR%%/sys/GameSettings/WB2.ini
 %%DATADIR%%/sys/GameSettings/WB3.ini
 %%DATADIR%%/sys/GameSettings/WB4.ini
 %%DATADIR%%/sys/GameSettings/WB6.ini
 %%DATADIR%%/sys/GameSettings/WB7.ini
-%%DATADIR%%/sys/GameSettings/WBL.ini
-%%DATADIR%%/sys/GameSettings/WBM.ini
-%%DATADIR%%/sys/GameSettings/WBQ.ini
+%%DATADIR%%/sys/GameSettings/WB8.ini
 %%DATADIR%%/sys/GameSettings/WBX.ini
 %%DATADIR%%/sys/GameSettings/WBY.ini
 %%DATADIR%%/sys/GameSettings/WBZ.ini
 %%DATADIR%%/sys/GameSettings/WC6.ini
 %%DATADIR%%/sys/GameSettings/WCH.ini
-%%DATADIR%%/sys/GameSettings/WCV.ini
-%%DATADIR%%/sys/GameSettings/WCZ.ini
 %%DATADIR%%/sys/GameSettings/WD9.ini
-%%DATADIR%%/sys/GameSettings/WDM.ini
 %%DATADIR%%/sys/GameSettings/WDO.ini
-%%DATADIR%%/sys/GameSettings/WER.ini
 %%DATADIR%%/sys/GameSettings/WF4.ini
 %%DATADIR%%/sys/GameSettings/WFH.ini
 %%DATADIR%%/sys/GameSettings/WFL.ini
 %%DATADIR%%/sys/GameSettings/WFU.ini
-%%DATADIR%%/sys/GameSettings/WGD.ini
 %%DATADIR%%/sys/GameSettings/WGG.ini
 %%DATADIR%%/sys/GameSettings/WGL.ini
-%%DATADIR%%/sys/GameSettings/WGO.ini
 %%DATADIR%%/sys/GameSettings/WGS.ini
-%%DATADIR%%/sys/GameSettings/WGY.ini
 %%DATADIR%%/sys/GameSettings/WHF.ini
 %%DATADIR%%/sys/GameSettings/WHP.ini
 %%DATADIR%%/sys/GameSettings/WHU.ini
 %%DATADIR%%/sys/GameSettings/WHW.ini
 %%DATADIR%%/sys/GameSettings/WIB.ini
-%%DATADIR%%/sys/GameSettings/WIC.ini
-%%DATADIR%%/sys/GameSettings/WID.ini
-%%DATADIR%%/sys/GameSettings/WIL.ini
-%%DATADIR%%/sys/GameSettings/WIY.ini
 %%DATADIR%%/sys/GameSettings/WJA.ini
-%%DATADIR%%/sys/GameSettings/WJE.ini
 %%DATADIR%%/sys/GameSettings/WKD.ini
-%%DATADIR%%/sys/GameSettings/WKT.ini
 %%DATADIR%%/sys/GameSettings/WLE.ini
 %%DATADIR%%/sys/GameSettings/WLN.ini
 %%DATADIR%%/sys/GameSettings/WLO.ini
-%%DATADIR%%/sys/GameSettings/WLW.ini
 %%DATADIR%%/sys/GameSettings/WLZ.ini
-%%DATADIR%%/sys/GameSettings/WM8.ini
 %%DATADIR%%/sys/GameSettings/WMA.ini
 %%DATADIR%%/sys/GameSettings/WMB.ini
 %%DATADIR%%/sys/GameSettings/WMG.ini
-%%DATADIR%%/sys/GameSettings/WMJ.ini
-%%DATADIR%%/sys/GameSettings/WMM.ini
-%%DATADIR%%/sys/GameSettings/WOT.ini
 %%DATADIR%%/sys/GameSettings/WOY.ini
 %%DATADIR%%/sys/GameSettings/WP4.ini
 %%DATADIR%%/sys/GameSettings/WPA.ini
-%%DATADIR%%/sys/GameSettings/WPC.ini
 %%DATADIR%%/sys/GameSettings/WPF.ini
 %%DATADIR%%/sys/GameSettings/WPH.ini
 %%DATADIR%%/sys/GameSettings/WPJ.ini
-%%DATADIR%%/sys/GameSettings/WPP.ini
 %%DATADIR%%/sys/GameSettings/WPS.ini
 %%DATADIR%%/sys/GameSettings/WPU.ini
-%%DATADIR%%/sys/GameSettings/WPY.ini
 %%DATADIR%%/sys/GameSettings/WR5.ini
 %%DATADIR%%/sys/GameSettings/WR9.ini
-%%DATADIR%%/sys/GameSettings/WRG.ini
 %%DATADIR%%/sys/GameSettings/WRI.ini
-%%DATADIR%%/sys/GameSettings/WRU.ini
 %%DATADIR%%/sys/GameSettings/WRX.ini
 %%DATADIR%%/sys/GameSettings/WSL.ini
-%%DATADIR%%/sys/GameSettings/WSN.ini
 %%DATADIR%%/sys/GameSettings/WSR.ini
 %%DATADIR%%/sys/GameSettings/WTE.ini
 %%DATADIR%%/sys/GameSettings/WTK.ini
-%%DATADIR%%/sys/GameSettings/WTR.ini
-%%DATADIR%%/sys/GameSettings/WTT.ini
 %%DATADIR%%/sys/GameSettings/WTU.ini
 %%DATADIR%%/sys/GameSettings/WTX.ini
 %%DATADIR%%/sys/GameSettings/WWA.ini
-%%DATADIR%%/sys/GameSettings/WWR.ini
 %%DATADIR%%/sys/GameSettings/WXB.ini
 %%DATADIR%%/sys/GameSettings/WXP.ini
 %%DATADIR%%/sys/GameSettings/WXR.ini
 %%DATADIR%%/sys/GameSettings/WYM.ini
 %%DATADIR%%/sys/GameSettings/WZI.ini
-%%DATADIR%%/sys/GameSettings/WZP.ini
 %%DATADIR%%/sys/Maps/GFZE01.map
 %%DATADIR%%/sys/Maps/GMBE8P.map
 %%DATADIR%%/sys/Resources/Dolphin.png
@@ -1370,21 +915,6 @@ bin/dolphin-emu-nogui
 %%DATADIR%%/sys/Resources/isoproperties_folder.png
 %%DATADIR%%/sys/Resources/nobanner.png
 %%DATADIR%%/sys/Resources/nobanner@2x.png
-%%DATADIR%%/sys/Resources/rating0.png
-%%DATADIR%%/sys/Resources/rating1.png
-%%DATADIR%%/sys/Resources/rating2.png
-%%DATADIR%%/sys/Resources/rating3.png
-%%DATADIR%%/sys/Resources/rating4.png
-%%DATADIR%%/sys/Resources/rating5.png
-%%DATADIR%%/sys/Resources/toolbar_add_breakpoint.png
-%%DATADIR%%/sys/Resources/toolbar_add_memorycheck.png
-%%DATADIR%%/sys/Resources/toolbar_debugger_delete.png
-%%DATADIR%%/sys/Resources/toolbar_debugger_goto_pc.png
-%%DATADIR%%/sys/Resources/toolbar_debugger_set_pc.png
-%%DATADIR%%/sys/Resources/toolbar_debugger_skip.png
-%%DATADIR%%/sys/Resources/toolbar_debugger_step.png
-%%DATADIR%%/sys/Resources/toolbar_debugger_step_out.png
-%%DATADIR%%/sys/Resources/toolbar_debugger_step_over.png
 %%DATADIR%%/sys/Shaders/16bit.glsl
 %%DATADIR%%/sys/Shaders/32bit.glsl
 %%DATADIR%%/sys/Shaders/Anaglyph/dubois-LCD-Amber-Blue.glsl
@@ -1414,6 +944,7 @@ bin/dolphin-emu-nogui
 %%DATADIR%%/sys/Shaders/invert.glsl
 %%DATADIR%%/sys/Shaders/invert_blue.glsl
 %%DATADIR%%/sys/Shaders/invertedoutline.glsl
+%%DATADIR%%/sys/Shaders/lens_distortion.glsl
 %%DATADIR%%/sys/Shaders/mad_world.glsl
 %%DATADIR%%/sys/Shaders/nightvision.glsl
 %%DATADIR%%/sys/Shaders/nightvision2.glsl
@@ -1432,128 +963,396 @@ bin/dolphin-emu-nogui
 %%DATADIR%%/sys/Shaders/swap_RGB_GRB.glsl
 %%DATADIR%%/sys/Shaders/swap_RGB_RBG.glsl
 %%DATADIR%%/sys/Shaders/toxic.glsl
-%%DATADIR%%/sys/Themes/Boomy/README.txt
-%%DATADIR%%/sys/Themes/Boomy/browse.png
-%%DATADIR%%/sys/Themes/Boomy/classic.png
-%%DATADIR%%/sys/Themes/Boomy/config.png
-%%DATADIR%%/sys/Themes/Boomy/fullscreen.png
-%%DATADIR%%/sys/Themes/Boomy/gcpad.png
-%%DATADIR%%/sys/Themes/Boomy/graphics.png
-%%DATADIR%%/sys/Themes/Boomy/help.png
-%%DATADIR%%/sys/Themes/Boomy/open.png
-%%DATADIR%%/sys/Themes/Boomy/pause.png
-%%DATADIR%%/sys/Themes/Boomy/play.png
-%%DATADIR%%/sys/Themes/Boomy/refresh.png
-%%DATADIR%%/sys/Themes/Boomy/screenshot.png
-%%DATADIR%%/sys/Themes/Boomy/stop.png
-%%DATADIR%%/sys/Themes/Boomy/wiimote.png
 %%DATADIR%%/sys/Themes/Clean Blue/browse.png
 %%DATADIR%%/sys/Themes/Clean Blue/browse@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/browse@4x.png
 %%DATADIR%%/sys/Themes/Clean Blue/classic.png
 %%DATADIR%%/sys/Themes/Clean Blue/classic@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/classic@4x.png
 %%DATADIR%%/sys/Themes/Clean Blue/config.png
 %%DATADIR%%/sys/Themes/Clean Blue/config@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/config@4x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_add_breakpoint.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_add_breakpoint@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_add_breakpoint@4x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_add_memorycheck.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_add_memorycheck@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_add_memorycheck@4x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_breakpoint.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_breakpoint@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_breakpoint@4x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_clear.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_clear@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_clear@4x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_delete.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_delete@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_delete@4x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_load.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_load@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_load@4x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_save.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_save@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_save@4x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_set_pc.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_set_pc@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_set_pc@4x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_show_pc.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_show_pc@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_show_pc@4x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_skip.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_skip@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_skip@4x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_step_in.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_step_in@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_step_in@4x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_step_out.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_step_out@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_step_out@4x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_step_over.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_step_over@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/debugger_step_over@4x.png
 %%DATADIR%%/sys/Themes/Clean Blue/fullscreen.png
 %%DATADIR%%/sys/Themes/Clean Blue/fullscreen@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/fullscreen@4x.png
 %%DATADIR%%/sys/Themes/Clean Blue/gcpad.png
 %%DATADIR%%/sys/Themes/Clean Blue/gcpad@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/gcpad@4x.png
 %%DATADIR%%/sys/Themes/Clean Blue/graphics.png
 %%DATADIR%%/sys/Themes/Clean Blue/graphics@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/graphics@4x.png
 %%DATADIR%%/sys/Themes/Clean Blue/open.png
 %%DATADIR%%/sys/Themes/Clean Blue/open@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/open@4x.png
 %%DATADIR%%/sys/Themes/Clean Blue/pause.png
 %%DATADIR%%/sys/Themes/Clean Blue/pause@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/pause@4x.png
 %%DATADIR%%/sys/Themes/Clean Blue/play.png
 %%DATADIR%%/sys/Themes/Clean Blue/play@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/play@4x.png
 %%DATADIR%%/sys/Themes/Clean Blue/refresh.png
 %%DATADIR%%/sys/Themes/Clean Blue/refresh@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/refresh@4x.png
 %%DATADIR%%/sys/Themes/Clean Blue/screenshot.png
 %%DATADIR%%/sys/Themes/Clean Blue/screenshot@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/screenshot@4x.png
 %%DATADIR%%/sys/Themes/Clean Blue/stop.png
 %%DATADIR%%/sys/Themes/Clean Blue/stop@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/stop@4x.png
 %%DATADIR%%/sys/Themes/Clean Blue/wiimote.png
 %%DATADIR%%/sys/Themes/Clean Blue/wiimote@2x.png
+%%DATADIR%%/sys/Themes/Clean Blue/wiimote@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/browse.png
+%%DATADIR%%/sys/Themes/Clean Emerald/browse@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/browse@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/classic.png
+%%DATADIR%%/sys/Themes/Clean Emerald/classic@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/classic@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/config.png
+%%DATADIR%%/sys/Themes/Clean Emerald/config@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/config@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_add_breakpoint.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_add_breakpoint@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_add_breakpoint@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_add_memorycheck.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_add_memorycheck@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_add_memorycheck@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_breakpoint.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_breakpoint@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_breakpoint@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_clear.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_clear@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_clear@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_delete.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_delete@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_delete@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_load.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_load@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_load@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_save.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_save@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_save@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_set_pc.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_set_pc@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_set_pc@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_show_pc.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_show_pc@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_show_pc@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_skip.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_skip@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_skip@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_step_in.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_step_in@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_step_in@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_step_out.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_step_out@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_step_out@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_step_over.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_step_over@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/debugger_step_over@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/fullscreen.png
+%%DATADIR%%/sys/Themes/Clean Emerald/fullscreen@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/fullscreen@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/gcpad.png
+%%DATADIR%%/sys/Themes/Clean Emerald/gcpad@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/gcpad@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/graphics.png
+%%DATADIR%%/sys/Themes/Clean Emerald/graphics@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/graphics@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/open.png
+%%DATADIR%%/sys/Themes/Clean Emerald/open@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/open@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/pause.png
+%%DATADIR%%/sys/Themes/Clean Emerald/pause@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/pause@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/play.png
+%%DATADIR%%/sys/Themes/Clean Emerald/play@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/play@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/refresh.png
+%%DATADIR%%/sys/Themes/Clean Emerald/refresh@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/refresh@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/screenshot.png
+%%DATADIR%%/sys/Themes/Clean Emerald/screenshot@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/screenshot@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/stop.png
+%%DATADIR%%/sys/Themes/Clean Emerald/stop@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/stop@4x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/wiimote.png
+%%DATADIR%%/sys/Themes/Clean Emerald/wiimote@2x.png
+%%DATADIR%%/sys/Themes/Clean Emerald/wiimote@4x.png
 %%DATADIR%%/sys/Themes/Clean Lite/browse.png
 %%DATADIR%%/sys/Themes/Clean Lite/browse@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/browse@4x.png
 %%DATADIR%%/sys/Themes/Clean Lite/classic.png
 %%DATADIR%%/sys/Themes/Clean Lite/classic@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/classic@4x.png
 %%DATADIR%%/sys/Themes/Clean Lite/config.png
 %%DATADIR%%/sys/Themes/Clean Lite/config@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/config@4x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_add_breakpoint.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_add_breakpoint@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_add_breakpoint@4x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_add_memorycheck.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_add_memorycheck@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_add_memorycheck@4x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_breakpoint.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_breakpoint@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_breakpoint@4x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_clear.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_clear@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_clear@4x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_delete.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_delete@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_delete@4x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_load.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_load@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_load@4x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_save.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_save@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_save@4x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_set_pc.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_set_pc@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_set_pc@4x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_show_pc.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_show_pc@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_show_pc@4x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_skip.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_skip@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_skip@4x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_step_in.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_step_in@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_step_in@4x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_step_out.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_step_out@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_step_out@4x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_step_over.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_step_over@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/debugger_step_over@4x.png
 %%DATADIR%%/sys/Themes/Clean Lite/fullscreen.png
 %%DATADIR%%/sys/Themes/Clean Lite/fullscreen@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/fullscreen@4x.png
 %%DATADIR%%/sys/Themes/Clean Lite/gcpad.png
 %%DATADIR%%/sys/Themes/Clean Lite/gcpad@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/gcpad@4x.png
 %%DATADIR%%/sys/Themes/Clean Lite/graphics.png
 %%DATADIR%%/sys/Themes/Clean Lite/graphics@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/graphics@4x.png
 %%DATADIR%%/sys/Themes/Clean Lite/open.png
 %%DATADIR%%/sys/Themes/Clean Lite/open@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/open@4x.png
 %%DATADIR%%/sys/Themes/Clean Lite/pause.png
 %%DATADIR%%/sys/Themes/Clean Lite/pause@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/pause@4x.png
 %%DATADIR%%/sys/Themes/Clean Lite/play.png
 %%DATADIR%%/sys/Themes/Clean Lite/play@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/play@4x.png
 %%DATADIR%%/sys/Themes/Clean Lite/refresh.png
 %%DATADIR%%/sys/Themes/Clean Lite/refresh@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/refresh@4x.png
 %%DATADIR%%/sys/Themes/Clean Lite/screenshot.png
 %%DATADIR%%/sys/Themes/Clean Lite/screenshot@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/screenshot@4x.png
 %%DATADIR%%/sys/Themes/Clean Lite/stop.png
 %%DATADIR%%/sys/Themes/Clean Lite/stop@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/stop@4x.png
 %%DATADIR%%/sys/Themes/Clean Lite/wiimote.png
 %%DATADIR%%/sys/Themes/Clean Lite/wiimote@2x.png
+%%DATADIR%%/sys/Themes/Clean Lite/wiimote@4x.png
 %%DATADIR%%/sys/Themes/Clean Pink/browse.png
 %%DATADIR%%/sys/Themes/Clean Pink/browse@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/browse@4x.png
 %%DATADIR%%/sys/Themes/Clean Pink/classic.png
 %%DATADIR%%/sys/Themes/Clean Pink/classic@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/classic@4x.png
 %%DATADIR%%/sys/Themes/Clean Pink/config.png
 %%DATADIR%%/sys/Themes/Clean Pink/config@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/config@4x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_add_breakpoint.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_add_breakpoint@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_add_breakpoint@4x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_add_memorycheck.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_add_memorycheck@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_add_memorycheck@4x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_breakpoint.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_breakpoint@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_breakpoint@4x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_clear.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_clear@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_clear@4x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_delete.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_delete@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_delete@4x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_load.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_load@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_load@4x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_save.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_save@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_save@4x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_set_pc.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_set_pc@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_set_pc@4x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_show_pc.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_show_pc@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_show_pc@4x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_skip.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_skip@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_skip@4x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_step_in.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_step_in@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_step_in@4x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_step_out.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_step_out@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_step_out@4x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_step_over.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_step_over@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/debugger_step_over@4x.png
 %%DATADIR%%/sys/Themes/Clean Pink/fullscreen.png
 %%DATADIR%%/sys/Themes/Clean Pink/fullscreen@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/fullscreen@4x.png
 %%DATADIR%%/sys/Themes/Clean Pink/gcpad.png
 %%DATADIR%%/sys/Themes/Clean Pink/gcpad@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/gcpad@4x.png
 %%DATADIR%%/sys/Themes/Clean Pink/graphics.png
 %%DATADIR%%/sys/Themes/Clean Pink/graphics@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/graphics@4x.png
 %%DATADIR%%/sys/Themes/Clean Pink/open.png
 %%DATADIR%%/sys/Themes/Clean Pink/open@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/open@4x.png
 %%DATADIR%%/sys/Themes/Clean Pink/pause.png
 %%DATADIR%%/sys/Themes/Clean Pink/pause@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/pause@4x.png
 %%DATADIR%%/sys/Themes/Clean Pink/play.png
 %%DATADIR%%/sys/Themes/Clean Pink/play@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/play@4x.png
 %%DATADIR%%/sys/Themes/Clean Pink/refresh.png
 %%DATADIR%%/sys/Themes/Clean Pink/refresh@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/refresh@4x.png
 %%DATADIR%%/sys/Themes/Clean Pink/screenshot.png
 %%DATADIR%%/sys/Themes/Clean Pink/screenshot@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/screenshot@4x.png
 %%DATADIR%%/sys/Themes/Clean Pink/stop.png
 %%DATADIR%%/sys/Themes/Clean Pink/stop@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/stop@4x.png
 %%DATADIR%%/sys/Themes/Clean Pink/wiimote.png
 %%DATADIR%%/sys/Themes/Clean Pink/wiimote@2x.png
+%%DATADIR%%/sys/Themes/Clean Pink/wiimote@4x.png
 %%DATADIR%%/sys/Themes/Clean/browse.png
 %%DATADIR%%/sys/Themes/Clean/browse@2x.png
+%%DATADIR%%/sys/Themes/Clean/browse@4x.png
 %%DATADIR%%/sys/Themes/Clean/classic.png
 %%DATADIR%%/sys/Themes/Clean/classic@2x.png
+%%DATADIR%%/sys/Themes/Clean/classic@4x.png
 %%DATADIR%%/sys/Themes/Clean/config.png
 %%DATADIR%%/sys/Themes/Clean/config@2x.png
+%%DATADIR%%/sys/Themes/Clean/config@4x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_add_breakpoint.png
+%%DATADIR%%/sys/Themes/Clean/debugger_add_breakpoint@2x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_add_breakpoint@4x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_add_memorycheck.png
+%%DATADIR%%/sys/Themes/Clean/debugger_add_memorycheck@2x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_add_memorycheck@4x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_breakpoint.png
+%%DATADIR%%/sys/Themes/Clean/debugger_breakpoint@2x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_breakpoint@4x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_clear.png
+%%DATADIR%%/sys/Themes/Clean/debugger_clear@2x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_clear@4x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_delete.png
+%%DATADIR%%/sys/Themes/Clean/debugger_delete@2x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_delete@4x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_load.png
+%%DATADIR%%/sys/Themes/Clean/debugger_load@2x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_load@4x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_save.png
+%%DATADIR%%/sys/Themes/Clean/debugger_save@2x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_save@4x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_set_pc.png
+%%DATADIR%%/sys/Themes/Clean/debugger_set_pc@2x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_set_pc@4x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_show_pc.png
+%%DATADIR%%/sys/Themes/Clean/debugger_show_pc@2x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_show_pc@4x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_skip.png
+%%DATADIR%%/sys/Themes/Clean/debugger_skip@2x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_skip@4x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_step_in.png
+%%DATADIR%%/sys/Themes/Clean/debugger_step_in@2x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_step_in@4x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_step_out.png
+%%DATADIR%%/sys/Themes/Clean/debugger_step_out@2x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_step_out@4x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_step_over.png
+%%DATADIR%%/sys/Themes/Clean/debugger_step_over@2x.png
+%%DATADIR%%/sys/Themes/Clean/debugger_step_over@4x.png
 %%DATADIR%%/sys/Themes/Clean/fullscreen.png
 %%DATADIR%%/sys/Themes/Clean/fullscreen@2x.png
+%%DATADIR%%/sys/Themes/Clean/fullscreen@4x.png
 %%DATADIR%%/sys/Themes/Clean/gcpad.png
 %%DATADIR%%/sys/Themes/Clean/gcpad@2x.png
+%%DATADIR%%/sys/Themes/Clean/gcpad@4x.png
 %%DATADIR%%/sys/Themes/Clean/graphics.png
 %%DATADIR%%/sys/Themes/Clean/graphics@2x.png
+%%DATADIR%%/sys/Themes/Clean/graphics@4x.png
 %%DATADIR%%/sys/Themes/Clean/open.png
 %%DATADIR%%/sys/Themes/Clean/open@2x.png
+%%DATADIR%%/sys/Themes/Clean/open@4x.png
 %%DATADIR%%/sys/Themes/Clean/pause.png
 %%DATADIR%%/sys/Themes/Clean/pause@2x.png
+%%DATADIR%%/sys/Themes/Clean/pause@4x.png
 %%DATADIR%%/sys/Themes/Clean/play.png
 %%DATADIR%%/sys/Themes/Clean/play@2x.png
+%%DATADIR%%/sys/Themes/Clean/play@4x.png
 %%DATADIR%%/sys/Themes/Clean/refresh.png
 %%DATADIR%%/sys/Themes/Clean/refresh@2x.png
+%%DATADIR%%/sys/Themes/Clean/refresh@4x.png
 %%DATADIR%%/sys/Themes/Clean/screenshot.png
 %%DATADIR%%/sys/Themes/Clean/screenshot@2x.png
+%%DATADIR%%/sys/Themes/Clean/screenshot@4x.png
 %%DATADIR%%/sys/Themes/Clean/stop.png
 %%DATADIR%%/sys/Themes/Clean/stop@2x.png
+%%DATADIR%%/sys/Themes/Clean/stop@4x.png
 %%DATADIR%%/sys/Themes/Clean/wiimote.png
 %%DATADIR%%/sys/Themes/Clean/wiimote@2x.png
-%%DATADIR%%/sys/Wii/shared2/ec/shopsetu.log
-%%DATADIR%%/sys/Wii/shared2/succession/shop.log
-%%DATADIR%%/sys/Wii/shared2/sys/SYSCONF
+%%DATADIR%%/sys/Themes/Clean/wiimote@4x.png
 %%DATADIR%%/sys/Wii/shared2/wc24/mbox/Readme.txt
 %%DATADIR%%/sys/Wii/shared2/wc24/mbox/wc24recv.ctl
 %%DATADIR%%/sys/Wii/shared2/wc24/mbox/wc24recv.mbx
@@ -1567,10 +1366,24 @@ bin/dolphin-emu-nogui
 %%DATADIR%%/sys/Wii/shared2/wc24/nwc24msg.cfg
 %%DATADIR%%/sys/codehandler.bin
 %%DATADIR%%/sys/totaldb.dsy
+%%DATADIR%%/sys/wiitdb-de.txt
+%%DATADIR%%/sys/wiitdb-en.txt
+%%DATADIR%%/sys/wiitdb-es.txt
+%%DATADIR%%/sys/wiitdb-fr.txt
+%%DATADIR%%/sys/wiitdb-it.txt
+%%DATADIR%%/sys/wiitdb-ja.txt
+%%DATADIR%%/sys/wiitdb-ko.txt
+%%DATADIR%%/sys/wiitdb-nl.txt
+%%DATADIR%%/sys/wiitdb-pt.txt
+%%DATADIR%%/sys/wiitdb-ru.txt
+%%DATADIR%%/sys/wiitdb-zh_CN.txt
+%%DATADIR%%/sys/wiitdb-zh_TW.txt
+share/icons/hicolor/256x256/apps/dolphin-emu.png
+share/icons/hicolor/scalable/apps/dolphin-emu.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/dolphin-emu.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/dolphin-emu.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/dolphin-emu.mo
-%%NLS%%share/locale/da_DK/LC_MESSAGES/dolphin-emu.mo
+%%NLS%%share/locale/da/LC_MESSAGES/dolphin-emu.mo
 %%NLS%%share/locale/de/LC_MESSAGES/dolphin-emu.mo
 %%NLS%%share/locale/el/LC_MESSAGES/dolphin-emu.mo
 %%NLS%%share/locale/en/LC_MESSAGES/dolphin-emu.mo
@@ -1582,16 +1395,18 @@ bin/dolphin-emu-nogui
 %%NLS%%share/locale/it/LC_MESSAGES/dolphin-emu.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/dolphin-emu.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/dolphin-emu.mo
-%%NLS%%share/locale/ms_MY/LC_MESSAGES/dolphin-emu.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/dolphin-emu.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/dolphin-emu.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/dolphin-emu.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/dolphin-emu.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/dolphin-emu.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/dolphin-emu.mo
-%%NLS%%share/locale/ro_RO/LC_MESSAGES/dolphin-emu.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/dolphin-emu.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/dolphin-emu.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/dolphin-emu.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/dolphin-emu.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/dolphin-emu.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/dolphin-emu.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/dolphin-emu.mo
+man/man6/dolphin-emu-nogui.6.gz
+man/man6/dolphin-emu.6.gz

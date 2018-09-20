@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-09-17 22:39:14.470717000 +0200
++++ CMakeLists.txt	2018-09-17 22:39:47.456106000 +0200
+@@ -92,7 +92,7 @@
+ 	set(mandir  ${CMAKE_INSTALL_PREFIX}/documentation/man CACHE PATH "mandir")
+ else()
+ 	set(datadir ${CMAKE_INSTALL_PREFIX}/share/dolphin-emu CACHE PATH "datadir")
+-	set(mandir  ${CMAKE_INSTALL_PREFIX}/share/man         CACHE PATH "mandir")
++	set(mandir  ${CMAKE_INSTALL_PREFIX}/man               CACHE PATH "mandir")
+ endif()
+ add_definitions(-DDATA_DIR="${datadir}/")
+ 
