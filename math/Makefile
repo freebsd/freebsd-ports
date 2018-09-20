@@ -724,6 +724,7 @@
     SUBDIR += py-pymc3
     SUBDIR += py-pyneqsys
     SUBDIR += py-pynleq2
+    SUBDIR += py-pyodeint
     SUBDIR += py-pyodesys
     SUBDIR += py-pysparse
     SUBDIR += py-pysym
