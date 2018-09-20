@@ -16,6 +16,7 @@ USE_XORG=	xorgproto
 CONFIGURE_ARGS+=	--disable-dri --disable-egl --disable-gbm \
 			--disable-gles2 --with-gallium-drivers=swrast
 MESA_BUILD_WRKSRC=	src/util src/compiler src/mapi src/mesa
+LDFLAGS_i386=		-Wl,-znotext
 
 .if "${MESA_LLVM_VER}" != ""
 CONFIGURE_ARGS+=	--enable-osmesa-gallium
