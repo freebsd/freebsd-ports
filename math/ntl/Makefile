@@ -12,7 +12,7 @@ COMMENT=	Victor Shoup's Number Theory Library
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/../doc/copying.txt
 
-USES=		perl5 libtool
+USES=		compiler:c11 libtool perl5
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 HAS_CONFIGURE=	yes
