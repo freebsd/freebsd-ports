@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll
-PORTVERSION=	3.8.3
+PORTVERSION=	3.8.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
