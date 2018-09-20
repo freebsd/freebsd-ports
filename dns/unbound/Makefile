@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libldns.so:dns/ldns
 
-USES=		autoreconf cpe libtool ssl
+USES=		autoreconf cpe libtool pkgconfig ssl
 CPE_VENDOR=	nlnetlabs
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} --with-libexpat=${LOCALBASE}
