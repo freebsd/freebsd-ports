@@ -3,5 +3,6 @@ bin/ssdiff
 bin/xls2csv
 bin/xlscat
 bin/xlsgrep
+%%PERL5_MAN1%%/xls2csv.1.gz
 %%PERL5_MAN3%%/Spreadsheet::Read.3.gz
 %%SITE_PERL%%/Spreadsheet/Read.pm
