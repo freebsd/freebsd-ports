@@ -1,0 +1,14 @@
+pyodeint provides a Python binding to odeint. Currently, the following steppers
+are exposed:
+* rosenbrock4: 4th order Rosenbrock (implicit multistep) stepper
+* dopri5: 5th order DOPRI5 (explicit runge-kutta)
+* bs: Bulirsch-Stoer stepper (modified midpoint rule).
+
+The Rosenbrock4 stepper requires that the user provides a routine for
+calculating the Jacobian.
+
+You may also want to know that you can use pyodeint from pyodesys which can e.g.
+derive the Jacobian analytically for you (pyodesys also provides plotting
+functions, C++ code-generation and more).
+
+WWW: https://github.com/bjodah/pyodeint
