@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	7.0.0rc3
+DISTVERSION=	7.0.0
 PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	http://${PRE_}releases.llvm.org/${LLVM_RELEASE}/${RCDIR}
@@ -12,10 +12,23 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}.src${EXTRACT_SUFX}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang
 
-LICENSE=	LLVM
-LICENSE_NAME=	LLVM Release License
-LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+# License are listed in the order they appear in LICENSE.TXT
+LICENSE=        LLVM GTEST REGEX MIT ARM PD
+LICENSE_COMB=   multi
+LICENSE_NAME_LLVM=      LLVM Release License
+LICENSE_NAME_GTEST=     Google test license
+LICENSE_NAME_REGEX=     OpenBSD Regex License
+# pyyaml tests are under the MIT license
+LICENSE_NAME_ARM=       ARM Limited license
+# md5 is in the public domain
+LICENSE_FILE_LLVM=      ${WRKSRC}/LICENSE.TXT
+LICENSE_FILE_GTEST=     ${WRKSRC}/utils/unittest/googletest/LICENSE.TXT
+LICENSE_FILE_REGEX=     ${WRKSRC}/lib/Support/COPYRIGHT.regex
+LICENSE_FILE_ARM=       ${WRKSRC}/lib/Target/ARM/LICENSE.TXT
+LICENSE_PERMS_LLVM=     dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_GTEST=    dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_REGEX=    dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_ARM=      dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LLVM_RELEASE=	${DISTVERSION:C/rc.*//}
 LLVM_MAJOR=	${LLVM_RELEASE:C/\.[0-9]\.[0-9]$//}
@@ -55,7 +68,6 @@ OPTIONS_DEFINE_i386=	COMPILER_RT OPENMP
 OPTIONS_DEFAULT=	CLANG EXTRAS LIT LLD LLDB
 OPTIONS_DEFAULT_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFAULT_i386=	COMPILER_RT OPENMP
-OPTIONS_EXCLUDE_FreeBSD_10=	LLDB OPENMP
 OPTIONS_SUB=	yes
 
 CLANG_DESC=	Build clang
@@ -528,12 +540,12 @@ build-plist:
 	    if ($$0 ~ /${COMPILER_RT_PATTERN}/) \
 		{printf "%%%%COMPILER_RT%%%%"} \
 	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
-	    if ($$0 ~ /libclangDoc.a/) {printf "%%%%DOCS%%%%"} \
-	    if ($$0 ~ /lld|wasm-ld/ && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} \
+	    if ($$0 ~ /(libclangDoc.a)/) {printf "%%%%DOCS%%%%"} \
+	    if ($$0 ~ /(lld|wasm-ld)/ && $$0 !~ /(lldb)/) {printf "%%%%LLD%%%%"} \
 	    if ($$0 ~ /(argdumper|lldb|six.py)/) {printf "%%%%LLDB%%%%"} \
-	    if ($$0 ~ /lib.*omp|omp.h|ompt.h/) {printf "%%%%OPENMP%%%%"} \
-	    if ($$0 ~ /LLVMgold/) {printf "%%%%GOLD%%%%"} \
-	    if ($$0 !~ /libclang_rt/) {print}}' ${PLIST}.tmp >> ${PLIST}
+	    if ($$0 ~ /(lib.*omp|omp.h|ompt.h)/) {printf "%%%%OPENMP%%%%"} \
+	    if ($$0 ~ /(LLVMgold)/) {printf "%%%%GOLD%%%%"} \
+	    if ($$0 !~ /(libclang_rt)/) {print}}' ${PLIST}.tmp >> ${PLIST}
 	${ECHO_CMD} '@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
 	${ECHO_CMD} '@postunexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}
 	${RM} ${PLIST}.tmp
