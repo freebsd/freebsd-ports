@@ -6,7 +6,7 @@ PORTVERSION=	4.1.3
 CATEGORIES=	games
 MASTER_SITES=	http://rephial.org/downloads/${PORTVERSION:R}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	andrew@merenbach.com
 COMMENT=	Rogue-like game with color, X11 support
 
 LICENSE=	GPLv2
