@@ -1,0 +1,8 @@
+A lightweight YAML Parser for Python
+
+Please note that Poyo supports only a chosen subset of the YAML
+format.
+
+It can only read but not write and is not compatible with JSON.
+
+WWW: https://pypi.org/project/poyo/

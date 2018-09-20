@@ -4851,6 +4851,7 @@
     SUBDIR += py-pooch
     SUBDIR += py-positional
     SUBDIR += py-posix_ipc
+    SUBDIR += py-poyo
     SUBDIR += py-pp
     SUBDIR += py-pqueue
     SUBDIR += py-pretend
