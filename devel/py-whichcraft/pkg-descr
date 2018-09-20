@@ -1,0 +1,10 @@
+This package provides cross-platform cross-python shutil.which
+functionality.
+
+This is a shim of the shutil.which function that's designed to work
+across multiple versions of Python and inside of windows. The code for
+Python 2.x is based on Python 3 code that I extracted from source. I
+originally did this for Cookiecutter but pulled it out in order to
+reduce line count for that project.
+
+WWW: https://pypi.org/project/whichcraft/
