@@ -1,0 +1,12 @@
+Remove unused libarchive dependency
+
+--- meson.build.orig	2018-09-20 10:32:05 UTC
++++ meson.build
+@@ -47,7 +47,6 @@ dependencies = [
+     dependency('granite'),
+     dependency('gtk+-3.0'),
+     dependency('libxml-2.0'),
+-    dependency('libarchive')
+ ]
+ 
+ e = executable('com.github.phase1geo.minder',
