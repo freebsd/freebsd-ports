@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Perl extension for calculating CRC checksums
 
+LICENSE=	PD
+
 USES=		perl5
 USE_PERL5=	configure
 
