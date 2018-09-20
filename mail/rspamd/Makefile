@@ -2,6 +2,7 @@
 
 PORTNAME=	rspamd
 PORTVERSION=	1.7.9
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -16,6 +17,12 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libicui18n.so:devel/icu
 BUILD_DEPENDS=	ragel:devel/ragel
 RUN_DEPENDS=	ca_root_nss>=3.*:security/ca_root_nss
+
+USES=		cmake:outsource pkgconfig perl5 \
+		compiler:c11 sqlite ssl
+USE_LDCONFIG=	yes
+USE_PERL5=	build run
+USE_GNOME=	glib20
 
 CONFLICTS_INSTALL=	rspamd-devel
 
@@ -48,13 +55,6 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DBUILD_PORT=yes \
 		-DLIBDIR=${PREFIX}/lib/rspamd \
 		-DNO_SHARED=ON
-
-USES=		cmake:outsource pkgconfig perl5 \
-		compiler:c11 sqlite ssl
-USE_LDCONFIG=	yes
-USE_PERL5=	build run
-
-USE_GNOME=	glib20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vstakhov
