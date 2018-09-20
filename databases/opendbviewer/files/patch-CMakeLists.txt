@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-09-19 13:46:09 UTC
++++ CMakeLists.txt
+@@ -58,7 +58,7 @@ elseif(APPLE)
+ else(WIN32)
+ 	set(INSTALL_PATH_BIN "bin/")
+ 	set(INSTALL_PATH_SHARE "share/${APPLICATION_PACKAGE_NAME}")
+-	set(INSTALL_PATH_DOC "share/${APPLICATION_PACKAGE_NAME}/doc")
++	set(INSTALL_PATH_DOC "share/doc/${APPLICATION_PACKAGE_NAME}")
+ 	set(INSTALL_PATH_APPLICATIONS "share/applications")
+ 	set(INSTALL_PATH_ICONS "share/icons/")
+ endif(WIN32)

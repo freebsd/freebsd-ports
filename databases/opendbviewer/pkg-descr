@@ -1,0 +1,11 @@
+OpenDBViewer is a simple database explorer for SQLite, MySQL, and
+PostgreSQL databases.  It contains:
+
+- SQL syntax highlightings
+- Multi database, table, and worksheet view
+- Big database loading
+- Open SQLite table directly with drag'n drop
+- History of last connection
+- Edit database directly from the table view
+
+WWW: https://github.com/Jet1oeil/opendbviewer
