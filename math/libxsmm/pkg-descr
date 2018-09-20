@@ -1,0 +1,18 @@
+LIBXSMM is a library for specialized dense and sparse matrix operations as well
+as for deep learning primitives such as small convolutions targeting Intel
+Architecture. Small matrix multiplication kernels (SMMs) are generated for Intel
+SSE, Intel AVX, Intel AVX2, IMCI (KNCni) for Intel Xeon Phi coprocessors (KNC),
+and Intel AVX-512 as found in the Intel Xeon Phi processor family (KNL, KNM) and
+Intel Xeon processors (SKX). Highly optimized code for small convolutions is
+targeting Intel AVX2 and Intel AVX-512, whereas other targets can automatically
+leverage specialized SMMs to perform convolutions.
+
+The library supports statically generated code at configuration time (SMMs),
+uses optimized code paths based on compiler-generated code as well as Intrinsic
+functions, but mainly utilizes Just-In-Time (JIT) code specialization for
+compiler-independent performance (matrix multiplications, matrix transpose/copy,
+sparse functionality, and small convolutions). LIBXSMM is suitable for "build
+once and deploy everywhere" i.e., no special target flags are needed to exploit
+the available performance.
+
+WWW: https://github.com/hfp/libxsmm

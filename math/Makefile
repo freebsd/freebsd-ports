@@ -321,6 +321,7 @@
     SUBDIR += libtsnnls
     SUBDIR += libxls
     SUBDIR += libxlsxwriter
+    SUBDIR += libxsmm
     SUBDIR += linpack
     SUBDIR += lll_spect
     SUBDIR += lp_solve
