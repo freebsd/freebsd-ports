@@ -6333,6 +6333,7 @@
     SUBDIR += xtoolchain-llvm40
     SUBDIR += xtoolchain-llvm50
     SUBDIR += xtoolchain-llvm60
+    SUBDIR += xtoolchain-llvm70
     SUBDIR += xwpe
     SUBDIR += xxgdb
     SUBDIR += xxhash
