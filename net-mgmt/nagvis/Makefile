@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nagvis
-PORTVERSION=	1.9.9
-PORTREVISION=	1
+PORTVERSION=	1.9.10
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.nagvis.org/share/
 
@@ -11,6 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visualization addon for Nagios
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gettext php:web
 USE_PHP=	gd gettext mbstring session json pdo pdo_sqlite
