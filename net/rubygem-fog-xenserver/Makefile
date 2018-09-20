@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-xenserver
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -14,10 +13,12 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-fog-core>=0:devel/rubygem-fog-core \
-		rubygem-fog-xml>=0:textproc/rubygem-fog-xml
+		rubygem-fog-xml>=0:textproc/rubygem-fog-xml \
+		rubygem-xmlrpc>=0:net/rubygem-xmlrpc
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
