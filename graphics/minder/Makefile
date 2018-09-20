@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minder
-PORTVERSION=	1.0.8
+PORTVERSION=	1.1.0
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-app # avoid PKGBASE collision with net-p2p/minder
 
