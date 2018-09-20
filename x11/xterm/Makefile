@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xterm
-PORTVERSION=	335
+PORTVERSION=	336
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.invisible-island.net/xterm/:src1 \
 		https://invisible-mirror.net/archives/xterm/:src1 \
@@ -15,14 +15,16 @@ COMMENT=	Terminal emulator for the X Window System
 
 LICENSE=	MIT
 
-CONFLICTS=	x11iraf-[0-9]*
-
 USES=		cpe ncurses tar:tgz
-CPE_VENDOR=	invisible-island
 USE_XORG=	xft xmu xt x11 xpm ice
+
 GNU_CONFIGURE=	yes
 
+CPE_VENDOR=	invisible-island
+
 CONFIGURE_ARGS+=	--with-utempter --enable-narrowproto
+
+CONFLICTS=	x11iraf-[0-9]*
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
