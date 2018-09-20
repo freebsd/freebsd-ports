@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hiera
-PORTVERSION=	3.4.4
+PORTVERSION=	3.4.5
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
