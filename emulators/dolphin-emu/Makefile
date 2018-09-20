@@ -2,55 +2,67 @@
 # $FreeBSD$
 
 PORTNAME=	dolphin-emu
-PORTVERSION=	5.0
-PORTREVISION=	26
+PORTVERSION=	5.0.8715
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Gamecube and Wii Emulator
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+BROKEN_FreeBSD_10=	conflicting types for '__hash_table<_Tp, _Hash, _Equal, _Alloc>'
+
 # Notes on dependencies:
-# - keep enet from Externals as Dolphin's version diverges
-# - xxhash and SOIL are not (yet?) in ports and built from Externals
-# - skip ALSA (emulated), ao (buggy) and bluez support
+# - alsa support disabled (not optimal)
+# - enet and soundtouch come from Externals/ as Dolphin's versions diverge
+#   (see comments in CMakeLists.txt)
+# Various problems that may be addressed in the future:
+# - xxhash comes from Externals/ as it cannot be properly detected yet
+# - gtest detection is missing (Externals/ version enforced by CMakeLists.txt)
+# - cubeb comes from Externals/ as it is not available from ports yet
+# - sdl2 support is buggy and leads to an infinite wait when Dolphin starts:
+#   ciface::SDL::PopulateDevices () at Source/Core/InputCommon/ControllerInterface/SDL/SDL.cpp:177
 LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
 		libavcodec.so:multimedia/ffmpeg \
+		libavdevice.so:multimedia/ffmpeg \
+		libavfilter.so:multimedia/ffmpeg \
 		libavformat.so:multimedia/ffmpeg \
-		libswscale.so:multimedia/ffmpeg \
 		libavutil.so:multimedia/ffmpeg \
-		libportaudio.so:audio/portaudio \
+		libswresample.so:multimedia/ffmpeg \
+		libswscale.so:multimedia/ffmpeg \
+		libpugixml.so:textproc/pugixml \
 		liblzo2.so:archivers/lzo2 \
 		libpng.so:graphics/png \
-		libSoundTouch.so:audio/soundtouch \
+		libjack.so:audio/jack \
+		libsndio.so:audio/sndio \
 		libsfml-system.so:devel/sfml \
 		libminiupnpc.so:net/miniupnpc \
 		libmbedtls.so:security/mbedtls \
 		libcurl.so:ftp/curl \
-		libgtest.so:devel/googletest
+		libhidapi.so:comms/hidapi
 
-LLD_UNSAFE=	yes
-USES=		cmake compiler:c++11-lib gnome iconv openal pkgconfig
+USES=		cmake compiler:c++11-lib desktop-file-utils iconv pkgconfig \
+		qmake qt:5
 
 USE_GITHUB=	yes
 GH_PROJECT=	dolphin
+GH_TAGNAME=	5f0d825
 
 USE_GL=		gl glew glu
-USE_GNOME=	atk cairo glib20 gdkpixbuf2 gtk20 pango
-USE_SDL=	sdl2
-USE_WX=		3.0+
 USE_XORG=	ice sm x11 xext xi xrandr
+USE_QT=		buildtools_build core gui widgets
 
 CMAKE_ARGS+=	-DTRY_X11:BOOL=ON \
 		-DUSE_UPNP:BOOL=ON \
-		-DDISABLE_WX:BOOL=OFF \
-		-DUSE_SHARED_GTEST:BOOL=ON \
-		-DENABLE_PCH:BOOL=OFF \
+		-DENABLE_QT:BOOL=ON \
+		-DENABLE_ALSA:BOOL=OFF \
+		-DENABLE_PULSEAUDIO:BOOL=ON \
+		-DUSE_DISCORD_PRESENCE:BOOL=OFF \
+		-DENABLE_SDL:BOOL=OFF \
 		-DCMAKE_REQUIRED_INCLUDES:PATH="${LOCALBASE}/include" \
-		-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
-		-DCMAKE_INSTALL_RPATH_USE_LINK_PATH:BOOL=ON
+		-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib"
+MAKE_ENV+=	DESTDIR="${STAGEDIR}"
 
 # XXX Bypass git check (and set a dummy -unused- revision)
 CMAKE_ARGS+=	-DDOLPHIN_WC_BRANCH:STRING="stable" \
@@ -64,20 +76,9 @@ NLS_CMAKE_OFF=	-DDISABLE_NLS:BOOL=ON
 
 .include <bsd.port.pre.mk>
 
-# JIT-enabled binaries are amd64 only
-.if ${ARCH} != "amd64"
+# JIT-enabled binaries are amd64 and aarch64 only
+.if ${ARCH} != "amd64" && ${ARCH} != "aarch64"
 CMAKE_ARGS+=	-DENABLE_GENERIC:BOOL=ON
-.endif
-
-# When building with GCC, needs GCC 4.9+
-.if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 49
-USE_GCC=	yes
-# Enable std::stoul()
-CXXFLAGS+=	-D_GLIBCXX_USE_C99
-# Enable log2f(), exp2f() and roundf()
-CXXFLAGS+=	-D_GLIBCXX_USE_C99_MATH_TR1
-# Turn on extra long double versions of math functions, needed for cmath
-CXXFLAGS+=	-D__ISO_C_VISIBLE=1999 -D_DECLARE_C99_LDBL_MATH
 .endif
 
 .include <bsd.port.post.mk>
