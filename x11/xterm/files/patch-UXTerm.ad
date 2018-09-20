@@ -1,0 +1,10 @@
+--- UXTerm.ad.orig	2010-03-04 01:17:07 UTC
++++ UXTerm.ad
+@@ -74,3 +74,7 @@
+ !*VT100.font4:	-efont-biwidth-medium-r-normal--14-140-75-75-p-70-iso10646-1
+ !*VT100.font5:	-efont-biwidth-medium-r-normal--16-160-75-75-p-80-iso10646-1
+ !*VT100.font6:	-efont-biwidth-medium-r-normal--24-240-75-75-p-120-iso10646-1
++
++! FreeBSD terminal drivers are not aware of UTF-8 (see PR: 229682). Change
++! default stty oflags to tab0.
++*ttyModes:	tabs
