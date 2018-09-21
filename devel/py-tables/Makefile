@@ -20,6 +20,8 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libucl.so:archivers/ucl
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+CONFLICTS_BUILD=	zstd # conflicting version of zstd is bundled
+
 USES=		fortran python
 USE_PYTHON=	autoplist concurrent distutils cython
 
