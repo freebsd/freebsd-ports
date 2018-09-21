@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	din
-PORTVERSION=	36
-PORTREVISION=	1
+PORTVERSION=	37a
 CATEGORIES=	multimedia
 MASTER_SITES=	https://archive.org/download/dinisnoise_source_code/
 
