@@ -25,8 +25,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bokeh>=0.11.1:www/py-bokeh@${PY_FLAVOR} \
 		${NUMPY}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 
