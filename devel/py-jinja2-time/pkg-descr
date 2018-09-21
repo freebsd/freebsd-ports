@@ -1,0 +1,13 @@
+Jinja2 Extension for Dates and Times
+
+The extension comes with a 'now' tag that provides convenient access to
+the arrow.now() API from your templates.  You can control the output
+by specifying a format that will be passed to Python's strftime().
+
+TimeExtension extends the environment with a 'datetime_format'
+attribute.  It is used as a fallback if you omit the format for 'now'.
+
+jinja2-time implements a convenient interface to modify 'now' by a
+relative time offset.
+
+WWW: https://pypi.org/project/jinja2-time/
