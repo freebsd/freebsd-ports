@@ -153,6 +153,12 @@ CARGO_ENV+=	LIBGIT2_SYS_USE_PKG_CONFIG=1
 LIB_DEPENDS+=	libgit2.so:devel/libgit2
 .endif
 
+.if ${CARGO_CRATES:Mlibssh2-sys-[0-9]*}
+# Use the system's libssh2 instead of building the bundled version
+CARGO_ENV+=	LIBSSH2_SYS_USE_PKG_CONFIG=1
+LIB_DEPENDS+=	libssh2.so:security/libssh2
+.endif
+
 .if ${CARGO_CRATES:Monig_sys-[0-9]*}
 # onig_sys always prefers the system library but will try to link
 # statically with it.  Since devel/oniguruma doesn't provide a static
