@@ -1,5 +1,3 @@
-TIMESTAMP = 1518271775
-SHA256 (evpo-EncryptPad-v0.4.0.2_GH0.tar.gz) = ac3f2787d9ed0b41fa88c49bc088ab8cef2d85ef86f39204738669911ed41379
-SIZE (evpo-EncryptPad-v0.4.0.2_GH0.tar.gz) = 11579309
-SHA256 (55fd37480d.patch) = 9e06f1e93df35ebf935bfabe1df2275747ab06161acd7165230757290253c43f
-SIZE (55fd37480d.patch) = 1095
+TIMESTAMP = 1537550649
+SHA256 (evpo-EncryptPad-v0.4.0.4_GH0.tar.gz) = aed3df412b33831fad8485df9f3e79d1a70418bbdc1d1fa84e56ace31753bdf3
+SIZE (evpo-EncryptPad-v0.4.0.4_GH0.tar.gz) = 12703932
