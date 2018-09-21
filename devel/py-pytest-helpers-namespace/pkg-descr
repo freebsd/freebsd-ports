@@ -1,0 +1,5 @@
+Provides a helpers pytest namespace which can be used to register
+helper functions without requiring you to import them on your actual
+tests to use them.
+
+WWW: https://pypi.org/project/pytest-helpers-namespace/
