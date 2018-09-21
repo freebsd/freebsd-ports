@@ -24,6 +24,8 @@ COMMENT=	Official AT&T release of KornShell 93
 
 LICENSE=	EPL
 
+CONFLICTS=	ksh93-devel-*
+
 OPTIONS_DEFINE=	EXAMPLES STATIC
 
 FETCH_ENV=	HTTP_AUTH=basic:*:I\ accept\ www.opensource.org/licenses/cpl:.
