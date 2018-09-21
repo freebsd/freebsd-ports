@@ -30,8 +30,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 BUILD_DEPENDS=		cmake:devel/cmake
-LIB_DEPENDS=		libgit2.so:devel/libgit2 \
-			libcurl.so:ftp/curl \
+LIB_DEPENDS=		libcurl.so:ftp/curl \
+			libgit2.so:devel/libgit2 \
 			libssh2.so:security/libssh2
 
 ONLY_FOR_ARCHS?=	aarch64 amd64 i386
