@@ -23,6 +23,7 @@
     SUBDIR += jailkit
     SUBDIR += klish
     SUBDIR += ksh93
+    SUBDIR += ksh93-devel
     SUBDIR += lshell
     SUBDIR += mksh
     SUBDIR += nologinmsg
