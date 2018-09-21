@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncclient
-DISTVERSION=	0.5.3
+DISTVERSION=	0.6.2
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=3.3.0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}paramiko>=1.15.0:security/py-paramiko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
+
+py27_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}selectors2>=2.0.1:devel/py-selectors2@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
