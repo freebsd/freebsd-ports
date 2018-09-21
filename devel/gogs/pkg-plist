@@ -1194,6 +1194,7 @@ libexec/gogs/public/less/_organization.less
 libexec/gogs/public/less/_repository.less
 libexec/gogs/public/less/_user.less
 libexec/gogs/public/less/gogs.less
+libexec/gogs/public/plugins/autosize-4.0.2/autosize.min.js
 libexec/gogs/public/plugins/codemirror-5.17.0/.gitattributes
 libexec/gogs/public/plugins/codemirror-5.17.0/.gitignore
 libexec/gogs/public/plugins/codemirror-5.17.0/.npmignore
