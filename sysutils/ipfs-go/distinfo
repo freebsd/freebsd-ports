@@ -1,5 +1,3 @@
-TIMESTAMP = 1534183965
-SHA256 (ipfs-go-gx-0.4.17.tar.xz) = 7f9f233048b61416789ff8573ec4adddbccdc21557f135d998167f2c2b04144f
-SIZE (ipfs-go-gx-0.4.17.tar.xz) = 11255440
-SHA256 (ipfs-go-ipfs-v0.4.17_GH0.tar.gz) = 2562401bee0609d321bbf5e9c383de4124f634dcfd9394f1d23146a49f281718
-SIZE (ipfs-go-ipfs-v0.4.17_GH0.tar.gz) = 728972
+TIMESTAMP = 1535920571
+SHA256 (go-ipfs-source.tar.gz) = 4dce8bb71cdf11ed72731fb30db58ba6fbfcb78e73377171567fd6da846f1e93
+SIZE (go-ipfs-source.tar.gz) = 18659916
