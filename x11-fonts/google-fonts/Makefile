@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-fonts
-DISTVERSION=	0.0.0.20180316
+DISTVERSION=	0.0.0.20180913
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	dg@syrec.org
@@ -22,12 +22,14 @@ RUN_DEPENDS=	anonymous-pro>0:x11-fonts/anonymous-pro \
 		vollkorn-ttf>0:x11-fonts/vollkorn-ttf
 
 USES=		fonts
+
 NO_ARCH=	yes
 NO_BUILD=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_PROJECT=	fonts
-GH_TAGNAME=	699ce8c
+GH_TAGNAME=	c9d3903
 
 SUB_FILES=	pkg-message
 
@@ -47,19 +49,20 @@ EXCLUSIONS=	ofl/anonymous-pro \
 		ofl/sourcesanspro \
 		ofl/sourceserifpro \
 		ufl/* \
-		ofl/vollkorn
+		ofl/vollkorn \
+		ofl/vollkornsc
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 	(cd ${WRKSRC} && ${RM} -r ${EXCLUSIONS})
 	${FIND} ${WRKSRC} -name \*.ttf -exec ${INSTALL_DATA} {} ${STAGEDIR}${FONTSDIR} \;
 
-do-install-DOCS-on:
+post-install-DOCS-on:
 	for dir in $$(${FIND} ${WRKSRC} -name \*.ttf -exec ${DIRNAME} {} \; | ${SORT} -u); do \
-		family=$$(basename $${dir}); \
-		${MKDIR} ${STAGEDIR}${DOCSDIR}/$${family}; \
+		family=$$(${BASENAME} $${dir}); \
 		${FIND} $${dir} \( -name \*.txt -o -name \*.html \) -exec \
-			${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/$${family} \; ; \
+			${SH} -c "${MKDIR} ${STAGEDIR}${DOCSDIR}/$${family} && \
+			${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/$${family}" \; ; \
 	done
 
 .include <bsd.port.mk>
