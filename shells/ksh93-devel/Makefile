@@ -22,8 +22,6 @@ COMMENT=	Development branch of AT&T KornShell 93
 
 LICENSE=	EPL
 
-OPTIONS_DEFINE=	EXAMPLES STATIC
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	att
 GH_PROJECT=	ast
