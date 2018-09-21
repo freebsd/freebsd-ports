@@ -1,0 +1,20 @@
+PyFR is an open-source Python based framework for solving advection-diffusion
+type problems on streaming architectures using the Flux Reconstruction approach
+of Huynh. The framework is designed to solve a range of governing systems on
+mixed unstructured grids containing various element types. It is also designed
+to target a range of hardware platforms via use of an in-built domain specific
+language derived from the Mako templating engine. The current release has the
+following capabilities:
+* Governing Equations - Euler, Navier Stokes
+* Dimensionality - 2D, 3D
+* Element Types - Triangles, Quadrilaterals, Hexahedra, Prisms, Tetrahedra,
+  Pyramids
+* Platforms - CPU Clusters, Nvidia GPU Clusters, AMD GPU Clusters, Intel Xeon
+  Phi Clusters
+* Spatial Discretisation - High-Order Flux Reconstruction
+* Temporal Discretisation - Explicit and Implicit (via Dual Time-Stepping)
+* Precision - Single, Double
+* Mesh Files Imported - Gmsh (.msh), CGNS (.cgns)
+* Solution Files Exported - Unstructured VTK (.vtu, .pvtu)
+
+WWW: http://www.pyfr.org/
