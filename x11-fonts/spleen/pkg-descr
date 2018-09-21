@@ -1,0 +1,7 @@
+Spleen is a monospaced bitmap font for consoles and terminals.
+It is available in 5 sizes: 5x8, 8x16, 12x24, 16x32, and 32x64.
+
+The font is provided in PCF format for use in Xorg and as vt(4)
+console fonts.
+
+WWW: https://github.com/fcambus/spleen
