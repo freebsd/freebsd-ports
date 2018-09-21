@@ -106,6 +106,8 @@ include/dpkg/version.h
 %%SITE_PERL%%/Dpkg/IPC.pm
 %%SITE_PERL%%/Dpkg/Index.pm
 %%SITE_PERL%%/Dpkg/Interface/Storable.pm
+%%SITE_PERL%%/Dpkg/Lock.pm
+%%SITE_PERL%%/Dpkg/OpenPGP.pm
 %%SITE_PERL%%/Dpkg/Package.pm
 %%SITE_PERL%%/Dpkg/Path.pm
 %%SITE_PERL%%/Dpkg/Shlibs.pm
@@ -126,7 +128,6 @@ include/dpkg/version.h
 %%SITE_PERL%%/Dpkg/Source/Patch.pm
 %%SITE_PERL%%/Dpkg/Source/Quilt.pm
 %%SITE_PERL%%/Dpkg/Substvars.pm
-%%SITE_PERL%%/Dpkg/Util.pm
 %%SITE_PERL%%/Dpkg/Vars.pm
 %%SITE_PERL%%/Dpkg/Vendor.pm
 %%SITE_PERL%%/Dpkg/Vendor/Debian.pm
@@ -142,11 +143,6 @@ libexec/dpkg/methods/disk/install
 libexec/dpkg/methods/disk/names
 libexec/dpkg/methods/disk/setup
 libexec/dpkg/methods/disk/update
-libexec/dpkg/methods/floppy/desc.floppy
-libexec/dpkg/methods/floppy/install
-libexec/dpkg/methods/floppy/names
-libexec/dpkg/methods/floppy/setup
-libexec/dpkg/methods/floppy/update
 libexec/dpkg/methods/ftp/desc.ftp
 libexec/dpkg/methods/ftp/install
 libexec/dpkg/methods/ftp/names
@@ -205,15 +201,16 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/de/man5/deb-split.5.gz
 %%NLS%%man/de/man5/deb-src-control.5.gz
 %%NLS%%man/de/man5/deb-src-files.5.gz
+%%NLS%%man/de/man5/deb-src-rules.5.gz
 %%NLS%%man/de/man5/deb-substvars.5.gz
 %%NLS%%man/de/man5/deb-symbols.5.gz
 %%NLS%%man/de/man5/deb-triggers.5.gz
-%%NLS%%man/de/man5/deb-version.5.gz
 %%NLS%%man/de/man5/deb.5.gz
 %%NLS%%man/de/man5/deb822.5.gz
 %%NLS%%man/de/man5/dpkg.cfg.5.gz
 %%NLS%%man/de/man5/dsc.5.gz
 %%NLS%%man/de/man5/dselect.cfg.5.gz
+%%NLS%%man/de/man7/deb-version.7.gz
 %%NLS%%man/de/man8/start-stop-daemon.8.gz
 %%NLS%%man/es/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/es/man1/dpkg-divert.1.gz
@@ -229,7 +226,6 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/es/man5/deb-override.5.gz
 %%NLS%%man/es/man5/deb-split.5.gz
 %%NLS%%man/es/man8/start-stop-daemon.8.gz
-%%NLS%%man/fr/man1/dpkg-architecture.1.gz
 %%NLS%%man/fr/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/fr/man1/dpkg-divert.1.gz
 %%NLS%%man/fr/man1/dpkg-gencontrol.1.gz
@@ -250,7 +246,6 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/fr/man5/deb-override.5.gz
 %%NLS%%man/fr/man5/deb-split.5.gz
 %%NLS%%man/fr/man8/start-stop-daemon.8.gz
-%%NLS%%man/it/man1/dpkg-architecture.1.gz
 %%NLS%%man/it/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/it/man1/dpkg-maintscript-helper.1.gz
 %%NLS%%man/it/man1/dpkg-name.1.gz
@@ -306,48 +301,48 @@ man/man1/dpkg-vendor.1.gz
 man/man1/dpkg.1.gz
 man/man1/dselect.1.gz
 man/man1/update-alternatives.1.gz
-man/man3/Dpkg.3.gz
-man/man3/Dpkg::Arch.3.gz
-man/man3/Dpkg::Build::Env.3.gz
-man/man3/Dpkg::Build::Info.3.gz
-man/man3/Dpkg::Build::Types.3.gz
-man/man3/Dpkg::BuildFlags.3.gz
-man/man3/Dpkg::BuildOptions.3.gz
-man/man3/Dpkg::BuildProfiles.3.gz
-man/man3/Dpkg::Changelog.3.gz
-man/man3/Dpkg::Changelog::Debian.3.gz
-man/man3/Dpkg::Changelog::Entry.3.gz
-man/man3/Dpkg::Changelog::Entry::Debian.3.gz
-man/man3/Dpkg::Changelog::Parse.3.gz
-man/man3/Dpkg::Checksums.3.gz
-man/man3/Dpkg::Compression.3.gz
-man/man3/Dpkg::Compression::FileHandle.3.gz
-man/man3/Dpkg::Compression::Process.3.gz
-man/man3/Dpkg::Conf.3.gz
-man/man3/Dpkg::Control.3.gz
-man/man3/Dpkg::Control::Changelog.3.gz
-man/man3/Dpkg::Control::Fields.3.gz
-man/man3/Dpkg::Control::FieldsCore.3.gz
-man/man3/Dpkg::Control::Hash.3.gz
-man/man3/Dpkg::Control::HashCore.3.gz
-man/man3/Dpkg::Control::Info.3.gz
-man/man3/Dpkg::Control::Tests.3.gz
-man/man3/Dpkg::Control::Tests::Entry.3.gz
-man/man3/Dpkg::Control::Types.3.gz
-man/man3/Dpkg::Deps.3.gz
-man/man3/Dpkg::Exit.3.gz
-man/man3/Dpkg::Gettext.3.gz
-man/man3/Dpkg::IPC.3.gz
-man/man3/Dpkg::Index.3.gz
-man/man3/Dpkg::Interface::Storable.3.gz
-man/man3/Dpkg::Path.3.gz
-man/man3/Dpkg::Source::Package.3.gz
-man/man3/Dpkg::Substvars.3.gz
-man/man3/Dpkg::Vendor.3.gz
-man/man3/Dpkg::Vendor::Debian.3.gz
-man/man3/Dpkg::Vendor::Default.3.gz
-man/man3/Dpkg::Vendor::Ubuntu.3.gz
-man/man3/Dpkg::Version.3.gz
+man/man3/Dpkg.3perl.gz
+man/man3/Dpkg::Arch.3perl.gz
+man/man3/Dpkg::Build::Env.3perl.gz
+man/man3/Dpkg::Build::Info.3perl.gz
+man/man3/Dpkg::Build::Types.3perl.gz
+man/man3/Dpkg::BuildFlags.3perl.gz
+man/man3/Dpkg::BuildOptions.3perl.gz
+man/man3/Dpkg::BuildProfiles.3perl.gz
+man/man3/Dpkg::Changelog.3perl.gz
+man/man3/Dpkg::Changelog::Debian.3perl.gz
+man/man3/Dpkg::Changelog::Entry.3perl.gz
+man/man3/Dpkg::Changelog::Entry::Debian.3perl.gz
+man/man3/Dpkg::Changelog::Parse.3perl.gz
+man/man3/Dpkg::Checksums.3perl.gz
+man/man3/Dpkg::Compression.3perl.gz
+man/man3/Dpkg::Compression::FileHandle.3perl.gz
+man/man3/Dpkg::Compression::Process.3perl.gz
+man/man3/Dpkg::Conf.3perl.gz
+man/man3/Dpkg::Control.3perl.gz
+man/man3/Dpkg::Control::Changelog.3perl.gz
+man/man3/Dpkg::Control::Fields.3perl.gz
+man/man3/Dpkg::Control::FieldsCore.3perl.gz
+man/man3/Dpkg::Control::Hash.3perl.gz
+man/man3/Dpkg::Control::HashCore.3perl.gz
+man/man3/Dpkg::Control::Info.3perl.gz
+man/man3/Dpkg::Control::Tests.3perl.gz
+man/man3/Dpkg::Control::Tests::Entry.3perl.gz
+man/man3/Dpkg::Control::Types.3perl.gz
+man/man3/Dpkg::Deps.3perl.gz
+man/man3/Dpkg::Exit.3perl.gz
+man/man3/Dpkg::Gettext.3perl.gz
+man/man3/Dpkg::IPC.3perl.gz
+man/man3/Dpkg::Index.3perl.gz
+man/man3/Dpkg::Interface::Storable.3perl.gz
+man/man3/Dpkg::Path.3perl.gz
+man/man3/Dpkg::Source::Package.3perl.gz
+man/man3/Dpkg::Substvars.3perl.gz
+man/man3/Dpkg::Vendor.3perl.gz
+man/man3/Dpkg::Vendor::Debian.3perl.gz
+man/man3/Dpkg::Vendor::Default.3perl.gz
+man/man3/Dpkg::Vendor::Ubuntu.3perl.gz
+man/man3/Dpkg::Version.3perl.gz
 man/man5/deb-buildinfo.5.gz
 man/man5/deb-changelog.5.gz
 man/man5/deb-changes.5.gz
@@ -365,15 +360,16 @@ man/man5/deb-shlibs.5.gz
 man/man5/deb-split.5.gz
 man/man5/deb-src-control.5.gz
 man/man5/deb-src-files.5.gz
+man/man5/deb-src-rules.5.gz
 man/man5/deb-substvars.5.gz
 man/man5/deb-symbols.5.gz
 man/man5/deb-triggers.5.gz
-man/man5/deb-version.5.gz
 man/man5/deb.5.gz
 man/man5/deb822.5.gz
 man/man5/dpkg.cfg.5.gz
 man/man5/dsc.5.gz
 man/man5/dselect.cfg.5.gz
+man/man7/deb-version.7.gz
 man/man8/start-stop-daemon.8.gz
 %%NLS%%man/nl/man1/dpkg-architecture.1.gz
 %%NLS%%man/nl/man1/dpkg-buildflags.1.gz
@@ -422,12 +418,12 @@ man/man8/start-stop-daemon.8.gz
 %%NLS%%man/nl/man5/deb-substvars.5.gz
 %%NLS%%man/nl/man5/deb-symbols.5.gz
 %%NLS%%man/nl/man5/deb-triggers.5.gz
-%%NLS%%man/nl/man5/deb-version.5.gz
 %%NLS%%man/nl/man5/deb.5.gz
 %%NLS%%man/nl/man5/deb822.5.gz
 %%NLS%%man/nl/man5/dpkg.cfg.5.gz
 %%NLS%%man/nl/man5/dsc.5.gz
 %%NLS%%man/nl/man5/dselect.cfg.5.gz
+%%NLS%%man/nl/man7/deb-version.7.gz
 %%NLS%%man/nl/man8/start-stop-daemon.8.gz
 %%NLS%%man/pl/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/pl/man1/dpkg-divert.1.gz
@@ -443,7 +439,6 @@ man/man8/start-stop-daemon.8.gz
 %%NLS%%man/pl/man5/deb-override.5.gz
 %%NLS%%man/pl/man5/deb-split.5.gz
 %%NLS%%man/pl/man8/start-stop-daemon.8.gz
-%%NLS%%man/sv/man1/dpkg-architecture.1.gz
 %%NLS%%man/sv/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/sv/man1/dpkg-divert.1.gz
 %%NLS%%man/sv/man1/dpkg-gencontrol.1.gz
@@ -468,6 +463,7 @@ sbin/start-stop-daemon
 %%DATADIR%%/abitable
 %%DATADIR%%/architecture.mk
 %%DATADIR%%/buildflags.mk
+%%DATADIR%%/buildtools.mk
 %%DATADIR%%/cputable
 %%DATADIR%%/default.mk
 %%DATADIR%%/no-pie-compile.specs
@@ -556,16 +552,21 @@ sbin/start-stop-daemon
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/dselect.mo
-@sample %%DPKGDIR%%/available.sample
-@sample %%DPKGDIR%%/diversions.sample
-@sample %%DPKGDIR%%/statoverride.sample
-@sample %%DPKGDIR%%/status.sample
-@dir etc/dpkg/dpkg.cfg.d
-@dir etc/dpkg/dselect.cfg.d
+share/polkit-1/actions/org.dpkg.pkexec.update-alternatives.policy
+%%DPKGDIR%%/available.sample
+%%DPKGDIR%%/diversions.sample
+%%DPKGDIR%%/statoverride.sample
+%%DPKGDIR%%/status.sample
+@dir %%ETCDIR%%/dpkg.cfg.d
+@dir %%ETCDIR%%/dselect.cfg.d
+%%NLS%%@dir man/es/man7
+%%NLS%%@dir man/fr/man7
+%%NLS%%@dir man/it/man7
+%%NLS%%@dir man/pl/man7
+%%NLS%%@dir man/sv/man7
 @dir %%DPKGDIR%%/alternatives
 @dir %%DPKGDIR%%/info
 @dir %%DPKGDIR%%/methods/disk
-@dir %%DPKGDIR%%/methods/floppy
 @dir %%DPKGDIR%%/methods/ftp
 @dir %%DPKGDIR%%/methods/mnt
 @dir %%DPKGDIR%%/methods/multicd
