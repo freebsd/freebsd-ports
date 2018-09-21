@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Entropy (randomness) management
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	p5-Crypt-Rijndael>=0:security/p5-Crypt-Rijndael \
 		p5-Data-Float>=0.008:math/p5-Data-Float \
 		p5-HTTP-Lite>=0.22:www/p5-HTTP-Lite \
@@ -18,5 +21,6 @@ RUN_DEPENDS=	p5-Crypt-Rijndael>=0:security/p5-Crypt-Rijndael \
 
 USES=		perl5
 USE_PERL5=	modbuild
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
