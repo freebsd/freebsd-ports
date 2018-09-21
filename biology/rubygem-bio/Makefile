@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bio
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	biology rubygems
 MASTER_SITES=	RG
 
@@ -14,9 +14,10 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
 LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/bioruby \
 		bin/br_biofetch.rb \
