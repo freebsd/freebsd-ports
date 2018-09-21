@@ -7,11 +7,11 @@ include/fa.h
 lib/libaugeas.a
 lib/libaugeas.so
 lib/libaugeas.so.0
-lib/libaugeas.so.0.24.0
+lib/libaugeas.so.0.24.1
 lib/libfa.a
 lib/libfa.so
 lib/libfa.so.1
-lib/libfa.so.1.5.1
+lib/libfa.so.1.5.2
 libdata/pkgconfig/augeas.pc
 man/man1/augmatch.1.gz
 man/man1/augparse.1.gz
@@ -206,6 +206,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/sshd.aug
 %%DATADIR%%/lenses/dist/sssd.aug
 %%DATADIR%%/lenses/dist/star.aug
+%%DATADIR%%/lenses/dist/strongswan.aug
 %%DATADIR%%/lenses/dist/stunnel.aug
 %%DATADIR%%/lenses/dist/subversion.aug
 %%DATADIR%%/lenses/dist/sudoers.aug
@@ -405,6 +406,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_sshd.aug
 %%DATADIR%%/lenses/dist/tests/test_sssd.aug
 %%DATADIR%%/lenses/dist/tests/test_star.aug
+%%DATADIR%%/lenses/dist/tests/test_strongswan.aug
 %%DATADIR%%/lenses/dist/tests/test_stunnel.aug
 %%DATADIR%%/lenses/dist/tests/test_subversion.aug
 %%DATADIR%%/lenses/dist/tests/test_sudoers.aug
