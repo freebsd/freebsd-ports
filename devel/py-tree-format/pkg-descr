@@ -1,0 +1,4 @@
+Python library to generate nicely formatted trees, like the UNIX `tree`
+command.
+
+WWW: https://pypi.org/project/tree-format/
