@@ -1,0 +1,89 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: couchdb2
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# couchdb2_enable (bool):       Set to NO by default.
+#                               Set it to YES to enable couchdb2.
+
+. /etc/rc.subr
+
+name="couchdb2"
+rcvar=couchdb2_enable
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+status_cmd="${name}_status"
+
+load_rc_config $name
+
+: ${couchdb2_enable:="NO"}
+: ${couchdb2_user="couchdb"}
+: ${couchdb2_erl_flags="-couch_ini %%APPDIR%%/etc/default.ini %%ETCDIR%%/local.ini"}
+
+command="%%ERL_PATH%%"
+pidfile="/var/run/${name}.pid"
+daemonpidfile="/var/run/${name}-daemon.pid"
+
+erl_sasl='-sasl releases_dir \"%%PORTNAME%%/releases\"'
+erl_boot='-boot %%RELDIR%%/couchdb -boot_var RELTOOL_EXT_LIB %%APPDIR%%/lib'
+erl_args='-args_file %%ETCDIR%%/vm.args'
+erl_flags="${erl_sasl} ${erl_boot} ${erl_args} ${couchdb2_erl_flags}"
+
+couchdb2_start()
+{
+    /usr/sbin/daemon -p ${pidfile} \
+        -P ${daemonpidfile} \
+        -t ${name} \
+        -c \
+        -u ${couchdb2_user} \
+        env ERL_FLAGS="${erl_flags}" \
+        ${command}
+}
+
+couchdb2_stop()
+{
+    echo -n "Stopping ${name}: "
+    retval=0
+    if ! status_quiet
+    then
+        echo "already stopped"
+        return 1
+    else
+        couchdb2_pids=$(/bin/pgrep -ifU ${couchdb2_user} ${name})
+        kill ${couchdb2_pids}
+        wait_for_pids ${couchdb2_pids}
+        retval=$?
+        echo "stopped"
+    fi
+    return $retval
+}
+
+couchdb2_status()
+{
+    /bin/pgrep -ifU ${couchdb2_user} ${name}  > /dev/null && status="$?" || status="$?"
+    if [ "${status}" = 0 ]; then
+        echo "${name} is running"
+        return 0
+    elif [ "${status}" = 4 ]; then
+        echo "could not access PID file for ${name}"
+        return ${status}
+    else
+        echo "${name} is not running"
+        return ${status}
+    fi
+}
+
+status_quiet()
+{
+    couchdb2_status >/dev/null 2>&1
+}
+
+run_rc_command $1
+
