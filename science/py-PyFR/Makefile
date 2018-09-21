@@ -2,6 +2,7 @@
 
 PORTNAME=	PyFR
 DISTVERSION=	1.7.6
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	http://www.pyfr.org/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +11,7 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Framework for solving advection-diffusion type problems
 
 LICENSE=	BSD3CLAUSE
-xLICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.0:devel/py-appdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gimmik>=2.0:math/py-gimmik@${PY_FLAVOR} \
@@ -26,13 +27,16 @@ SHEBANG_FILES=	setup.py pyfr/__main__.py
 USE_PYTHON=	distutils concurrent autoplist
 NO_ARCH=	yes
 
-OPTIONS_MULTI=		MP
-OPTIONS_MULTI_MP=	OPENCL OPENMP # CUDA isn't supported on FreeBSD
-OPTIONS_DEFAULT=	${OPTIONS_MULTI_MP}
-MP_DESC=		Parallelization backend to install
+OPTIONS_MULTI=		PARALLEL
+OPTIONS_MULTI_PARALLEL=	OPENCL OPENMP # CUDA isn't supported on FreeBSD
+OPTIONS_DEFAULT=	${OPTIONS_MULTI_PARALLEL}
+PARALLEL_DESC=		Parallelization backend to install
 
 OPENCL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyopencl>0:devel/py-pyopencl@${PY_FLAVOR}
 OPENMP_RUN_DEPENDS=	openmp>0:devel/openmp
+
+pre-build: # patch in pre-build to make the patch less error-prone (it has %%LOCALBASE%%)
+	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/pyfr/backends/openmp/compiler.py
 
 post-install: # workaround: https://groups.google.com/forum/#!topic/pyfrmailinglist/RNi_LcizGBo
 	@${RM} ${STAGEDIR}${PREFIX}/__main__.py
