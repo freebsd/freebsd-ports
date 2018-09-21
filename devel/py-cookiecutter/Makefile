@@ -31,7 +31,17 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+
+# pytest needs a UTF-8 environment, and it will try and write outside
+# ${WRKDIR} unless told not to.  Even so, these tests have failures:
+#
+# cookiecutter/utils.py            50      3    94%
+# cookiecutter/zipfile.py          61      2    97%
+
+TEST_ENV=	TMPDIR=${WRKDIR} HOME=${WRKDIR} LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+
 do-test:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/tox-${PYTHON_VER}
+	@cd ${WRKSRC} && \
+	env ${TEST_ENV} ${LOCALBASE}/bin/pytest-${PYTHON_VER} --cov=cookiecutter tests
 
 .include <bsd.port.mk>
