@@ -15,8 +15,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libgsl.so:math/gsl
 RUN_DEPENDS=	${PYNUMPY}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		localbase python
 USE_PYTHON=	distutils autoplist
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
 
 .include <bsd.port.mk>
