@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bundler
-PORTVERSION=	1.16.4
+PORTVERSION=	1.16.5
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -12,9 +12,10 @@ COMMENT=	Tool that manages gem dependencies for ruby applications
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/bundle bin/bundler
 
