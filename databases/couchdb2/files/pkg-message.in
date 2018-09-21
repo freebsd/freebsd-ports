@@ -1,0 +1,33 @@
+***********************************************************
+If this is the first time you are installing %%PORTNAME%%, you will need
+to add a default administrator, and initialise the database node.
+
+For a single node setup, append an inital administrator username and
+password to the [admins] section of your local.ini, and a [log] section:
+
+[admins]
+admin = passwd
+[log]
+# http://docs.couchdb.org/en/latest/config/logging.html
+level = err
+include_sasl = true
+writer = syslog
+syslog_host = localhost
+
+Amend %%ETCDIR%%/vm.args as required, at least altering the cookie.
+
+Then, start Apache CouchDB, and run the following commands once the
+database is started for the first time, amending admin:passwd to match
+your choice above to initialise the default databases:
+
+sudo service %%PORTNAME%% start
+
+curl -X PUT http://admin:passwd@127.0.0.1:5984/_users
+curl -X PUT http://admin:passwd@127.0.0.1:5984/_replicator
+curl -X PUT http://admin:passwd@127.0.0.1:5984/_global_changes
+
+Then use the admin interface at http://127.0.0.1:5984/_utils/# as usual.
+
+For more information see
+http://docs.couchdb.org/en/latest/install/setup.html
+***********************************************************
