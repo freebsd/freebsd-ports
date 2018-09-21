@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
