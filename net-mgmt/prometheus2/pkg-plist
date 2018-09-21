@@ -1,6 +1,6 @@
 bin/prometheus
 bin/promtool
-%%USE_SYSLOG%%@sample %%ETCDIR%%/newsyslog.conf.sample etc/newsyslog.conf.d/%%PORTNAME%%.conf
+%%USE_SYSLOG%%@sample %%ETCDIR%%/newsyslog.conf.sample /etc/newsyslog.conf.d/%%PORTNAME%%.conf
 %%USE_SYSLOG%%@sample %%ETCDIR%%/syslog.d.conf.sample /etc/syslog.d/%%PORTNAME%%.conf
 %%PROMETHEUS_CONSOLE_LIBRARIES_DIR%%/menu.lib
 %%PROMETHEUS_CONSOLE_LIBRARIES_DIR%%/prom.lib
