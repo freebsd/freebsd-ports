@@ -20,7 +20,9 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-do-test:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/tox-${PYTHON_VER}
+# pypi tarball does not contain any of the test code?
+
+#do-test:
+#	@cd ${WRKSRC} && ${LOCALBASE}/bin/pytest-${PYTHON_VER} tests
 
 .include <bsd.port.mk>
