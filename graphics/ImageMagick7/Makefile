@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	7.0.8-10
+DISTVERSION=	7.0.7-16
 PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
@@ -36,7 +36,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-CONFLICTS_INSTALL=	ImageMagick ImageMagick-nox11 # bin/Magick++-config
+CONFLICTS_INSTALL=	execline-[0-9]* # bin/import
+CONFLICTS_INSTALL+=	ImageMagick ImageMagick-nox11 # bin/Magick++-config
 
 # This port uses .la files, keep libtool:keepla! (magick/module.c)
 USES=		cpe gettext-runtime gmake gnome libtool:keepla \
@@ -60,7 +61,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 OPTIONS_DEFINE=	BZIP2 DOCS DJVU FFTW FONTCONFIG FPX FREETYPE \
 		GRAPHVIZ GSLIB JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES \
 		OPENEXR OPENMP PANGO PDF PERL PNG SVG TESTS TIFF WEBP WMF \
-		THREADS X11 16BIT_PIXEL HDRI HEIF
+		THREADS X11 16BIT_PIXEL HDRI
 OPTIONS_DEFAULT=	16BIT_PIXEL BZIP2 FFTW FONTCONFIG FREETYPE \
 		JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES PDF PERL PNG SVG \
 		TIFF WEBP WMF THREADS X11 HDRI
@@ -361,18 +362,6 @@ USES+=		ghostscript:x11
 . else
 USES+=		ghostscript
 . endif
-.endif
-
-## HEIF (High EfficiencImage Format) support
-HEIF_DESC=		High Efficiency Image File support (e.g. from iPhone)
-
-.if ${PORT_OPTIONS:MHEIF}
-LIB_DEPENDS+=		libheif.so:graphics/libheif
-CONFIGURE_ARGS+=	--with-heic
-PLIST_SUB+=             HEIF=""
-.else
-CONFIGURE_ARGS+=	--without-heic
-PLIST_SUB+=             HEIF="@comment "
 .endif
 
 .if ! ${PORT_OPTIONS:MX11}
