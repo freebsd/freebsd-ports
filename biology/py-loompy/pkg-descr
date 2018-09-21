@@ -1,0 +1,16 @@
+Loom is an efficient file format for large omics datasets. Loom files contain
+a main matrix, optional additional layers, a variable number of row and column
+annotations, and sparse graph objects. Under the hood, Loom files are HDF5 and
+can be opened from many programming languages, including Python, R, C, C++,
+Java, MATLAB, Mathematica, and Julia.
+
+Key features:
+* Single file that can be moved around
+* Metadata travels with the main data
+* Data, clustering, layout, annotation stored together
+* Efficient random access
+* Automatic, on-the-fly compression
+* Out-of-memory data processing
+* Open source, BSD license
+
+WWW: https://loompy.org/
