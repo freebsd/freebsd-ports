@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	chempy
-DISTVERSION=	0.7.2
+DISTVERSION=	0.7.3
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,8 +25,22 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bokeh>=0.11.1:www/py-bokeh@${PY_FLAVOR} \
 		${NUMPY}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=		EXTRAS
+OPTIONS_DEFAULT=	EXTRAS
+
+EXTRAS_DESC=		Install optional dependencies for additional functionality
+EXTRAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>0:devel/py-appdirs@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pycodeexport>=0.1.2:devel/py-pycodeexport@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pycompilation>=0.4.3:devel/py-pycompilation@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pygslodeiv2>=0.9.1:math/py-pygslodeiv2@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pyodeint>=0.10.1:math/py-pyodeint@${PY_FLAVOR}
+
+do-test:
+	@cd ${WRKSRC} && pytest -rs --pyargs chempy
 
 .include <bsd.port.mk>
