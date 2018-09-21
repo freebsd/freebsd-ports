@@ -3,6 +3,7 @@
 
 PORTNAME=	ml1
 PORTVERSION=	4.12
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.ml1.org.uk/distfiles/ \
 		http://www.ancientgeek.org.uk/distfiles/
