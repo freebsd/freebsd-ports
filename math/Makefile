@@ -680,6 +680,7 @@
     SUBDIR += py-cvxopt
     SUBDIR += py-cyipopt
     SUBDIR += py-fastcluster
+    SUBDIR += py-fastdtw
     SUBDIR += py-ffc
     SUBDIR += py-fiat
     SUBDIR += py-fpconst
