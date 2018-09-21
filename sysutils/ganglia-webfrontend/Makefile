@@ -2,11 +2,11 @@
 
 PORTNAME=	ganglia
 PORTVERSION=	3.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils net parallel www
 PKGNAMESUFFIX=	-webfrontend
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, web frontend
 
 LICENSE=	BSD3CLAUSE
