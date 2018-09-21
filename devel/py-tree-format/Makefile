@@ -20,6 +20,8 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 do-test:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/tox-${PYTHON_VER} -e py${PYTHON_SUFFIX}
+	cd ${WRKSRC} && \
+	${PYTHON_CMD} setup.py --version && \
+	${PYTHON_CMD} -m unittest discover tree_format.tests
 
 .include <bsd.port.mk>
