@@ -1,0 +1,5 @@
+This package provides Python bindings for the Message Passing Interface (MPI)
+standard. It is implemented on top of the MPI-1/MPI-2 specification and
+exposes an API which grounds on the standard MPI-2 C++ bindings
+
+WWW: https://bitbucket.org/mpi4py/mpi4py/
