@@ -42,6 +42,6 @@ TEST_ENV=	TMPDIR=${WRKDIR} HOME=${WRKDIR} LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 
 do-test:
 	@cd ${WRKSRC} && \
-	env ${TEST_ENV} ${LOCALBASE}/bin/pytest-${PYTHON_VER} --cov=cookiecutter tests
+	${SETENV} ${TEST_ENV} ${LOCALBASE}/bin/pytest-${PYTHON_VER} --cov=cookiecutter tests
 
 .include <bsd.port.mk>
