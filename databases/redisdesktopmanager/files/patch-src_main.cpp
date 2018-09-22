@@ -1,10 +1,10 @@
---- src/main.cpp.orig	2018-04-13 11:23:13 UTC
+--- src/main.cpp.orig	2018-09-22 00:04:41 UTC
 +++ src/main.cpp
 @@ -5,9 +5,7 @@
  #include "app/app.h"
  #include "modules/crashhandler/crashhandler.h"
  
--#ifdef Q_OS_LINUX
+-#ifdef LINUX_SIGNALS
  #include <sigwatch.h>
 -#endif
  
@@ -18,14 +18,14 @@
 -    QFileInfo appPath(QString::fromLocal8Bit(argv[0]));
 -    QString appDir(appPath.absoluteDir().path());
 -    QString crashReporterPath = QString("%1/crashreporter").arg(appDir.isEmpty() ? "." : appDir);
--    CrashHandler::instance()->Init(QDir::homePath(), appDir, crashReporterPath);
+-    CrashHandler::instance()->Init(QDir::homePath(), appPath.absoluteFilePath(), crashReporterPath);
 -    #endif
 -
      Application a(argc, argv);
      a.initModels();
      a.initQml();
  
--    #ifdef Q_OS_LINUX
+-    #ifdef LINUX_SIGNALS
      UnixSignalWatcher sigwatch;
      sigwatch.watchForSignal(SIGINT);
      sigwatch.watchForSignal(SIGTERM);
