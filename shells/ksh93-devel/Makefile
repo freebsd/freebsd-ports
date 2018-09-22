@@ -27,7 +27,8 @@ GH_ACCOUNT=	att
 GH_PROJECT=	ast
 GH_TAGNAME=	${HASH}
 
-CONFLICTS=	ksh93-*
+KSH93_CONFLICTS=	ksh93-*
+KSH_CONFLICTS=		pdksh-*
 
 USES=		meson ninja
 FETCH_ENV=	HTTP_AUTH=basic:*:I\ accept\ www.opensource.org/licenses/cpl:.
@@ -39,13 +40,27 @@ STATIC_MAKE_ENV=	LDFLAGS+=-static
 
 BROKEN_aarch64=		Fails to compile: needs sbrk
 
+OPTIONS_DEFAULT=	KSH93
+OPTIONS_SINGLE=		BIN_KSH
+OPTIONS_SINGLE_BIN_KSH=	KSH KSH93
+KSH_DESC=		Install to ${PREFIX}/bin/ksh
+KSH93_DESC=		Install to ${PREFIX}/bin/ksh93
+
+KSH93_EXTRA_PATCHES=	${FILESDIR}/extra-patch-install-as-ksh93
+KSH93_DESC=	Install to ${PREFIX}/bin/ksh93
+
+KSH_PLIST_SUB=		93=""
+KSH93_PLIST_SUB=	93="93"
+
 .include <bsd.port.pre.mk>
 
 post-patch:
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100093
 	@${REINPLACE_CMD} -e 's|SF_FLAGS|SFIO_FLAGS|g' ${WRKSRC}/src/lib/libast/include/sfio*.h ${WRKSRC}/src/lib/libast/sfio/*.c
 .endif
+.if ${PORT_OPTIONS:MKSH93}
 	@${MV} ${WRKSRC}/src/cmd/ksh93/ksh.1 ${WRKSRC}/src/cmd/ksh93/ksh93.1
+.endif
 
 do-test:
 	cd ${WRKSRC}/src/cmd/ksh93/tests/ && ${SETENV} SHELL=${WRKSRC}/bin/ksh ${WRKSRC}/bin/ksh shtests
