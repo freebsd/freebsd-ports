@@ -1,0 +1,11 @@
+--- configure.orig	2018-03-02 08:24:44 UTC
++++ configure
+@@ -20218,7 +20218,7 @@ fi
+ 
+ # Check whether --with-ucd-dir was given.
+ if test "${with_ucd_dir+set}" = set; then :
+-  withval=$with_ucd_dir; UCD_DIR=$with_emoji_annotation_dir
++  withval=$with_ucd_dir; UCD_DIR=$with_ucd_dir
+ else
+   UCD_DIR="/usr/share/unicode/ucd"
+ 

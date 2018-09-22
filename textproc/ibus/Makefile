@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ibus
-DISTVERSION=	1.5.17
-PORTREVISION=	4
+PORTVERSION=	1.5.18
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/:DEFAULT
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:DEFAULT
@@ -16,20 +15,23 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:devel/py-dbus@${PY_FLAVOR} \
+		${LOCALBASE}/share/unicode/ucd/NamesList.txt:textproc/UCD \
 		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:devel/py-dbus@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:devel/py-notify@${PY_FLAVOR} \
 		${LOCALBASE}/share/xml/iso-codes/iso_639.xml:misc/iso-codes \
 		setxkbmap:x11/setxkbmap
 
-USES=		compiler cpe gmake libtool localbase pathfix pkgconfig python:2.7
+USES=		compiler cpe gmake gnome libtool localbase pathfix pkgconfig python
 USE_GNOME=	glib20 intltool librsvg2 pygobject3
 USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 OPTIONS_SUB=	yes
 INSTALL_TARGET=	install-strip
-CONFIGURE_ARGS=	--disable-tests --with-html-dir=${PREFIX}/share/doc
+CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc	\
+		--with-ucd-dir=${LOCALBASE}/share/unicode/ucd
 
 OPTIONS_DEFINE=	NLS GTK2 GTK3 VALA GINTRO PYTHON_LIB DOCS XIM ENGINE EMOJI
 OPTIONS_RADIO=	CONFIG
@@ -112,5 +114,8 @@ PLIST_SUB+=	COMPDIR="@comment "
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/autostart
 	${INSTALL_DATA} ${PATCHDIR}/ibus.desktop ${STAGEDIR}${PREFIX}/etc/xdg/autostart
+
+do-test:
+	${MAKE} -C ${WRKSRC}/src/tests check
 
 .include <bsd.port.post.mk>
