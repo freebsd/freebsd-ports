@@ -15,7 +15,8 @@ COMMENT=	Pluggable RSS/Atom feed aggregator written in Perl
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-DateTime>=0:devel/p5-DateTime \
 		p5-DateTime-TimeZone>=0:devel/p5-DateTime-TimeZone \
 		p5-DateTime-Locale>=0:devel/p5-DateTime-Locale \
@@ -63,329 +64,266 @@ OPTIONS_DEFINE=	AUTHORNAME BABELFISH BETTERENCODING BETTERHTML BLOGLINES \
 		PUBLISHCSV PUBLISHEXCEL PUBLISHGMAIL PUBLISHIMAP PUBLISHMT \
 		PUBLISHPDF PUBLISHPLANET PUBLISHSWF PUBSERLZR ROMANIZE \
 		RULEFRESH SRCHGREP SUBSCOPML SUBSCRDBI SUBSCRFOAF SUMJPN \
-		SUMMARYENG SUMTEXTORG XPATH DOCS EXAMPLES
+		SUMMARYENG SUMTEXTORG XPATH \
+		DOCS EXAMPLES
 
-BETTERENCODING_DESC=	Better Encoding detection Support
-PODTESTINGPOD_DESC=	Testing Support
-COOKIESHARING_DESC=	Cookie sharing with Firefox Support
-LIBERALXML_DESC=	Liberal XML parsing Support
-XPATH_DESC=	XPath Support
-BETTERHTML_DESC=	Better html to text formatter
-PRSJPNDATE_DESC=	Parse Japanese datetime format
-PUBLISHEXCEL_DESC=	Publish::Excel Support
-FILTERPIPE_DESC=	Filter::Pipe Support
-PUBLISHPLANET_DESC=	Publish::Planet Support
-PUBLISHCSV_DESC=	Publish::CSV Support
-FILDEGYT_DESC=	Filter-DegradeYouTube
 AUTHORNAME_DESC=	Filter::ExtractAuthorName Support
-GUESSLANG_DESC=	Filter::GuessLanguage Support
-GUESSTZ_DESC=	Filter::GuessTimeZoneByDomain Support
-HTMLTIDY_DESC=	Filter::HTMLTidy Support
-PUBLISHMT_DESC=	Publish::MT Support
-PUBSERLZR_DESC=	Publish-Serializer Support
-PUBICAL_DESC=	Publish::iCal Support
-ROMANIZE_DESC=	Filter::Romanize Support
-JAVASCRIPT_DESC=	Publish::JavaScript Support
-EMOTICON_DESC=	Filter::Emoticon Support
-FILHATENA_DESC=	Filter::HatenaFormat Support
-FILHATKTAG_DESC=	Filter::HatenaKeywordTag
-RULEFRESH_DESC=	Rule::Fresh Support
-SUBSCOPML_DESC=	Subscription::OPML Support
-FLICKRSEARCH_DESC=	CustomFeed::FlickrSearch Support
-HATENABKMK_DESC=	Filter::HatenaBookmarkUsersCount Support
-PALMDOC_DESC=	Publish::PalmDoc Support
-PUBLISHSWF_DESC=	Publish::SWF Support
-SUBSCRDBI_DESC=	Subscription::DBI Support
-FILTERPPT_DESC=	Filter::TTP Support
-KINOSEARCH_DESC=	Search::KinoSearch Support
-PUBLISHGMAIL_DESC=	Publish::Gmail Support
-PUBDELICIOUS_DESC=	Publish::Delicious Support
-ESTRAIER_DESC=	Search::Estraier Support
-SRCHGREP_DESC=	Search::Grep
-PUBJSON_DESC=	Publish::JSON Support
-FILSPAMASSN_DESC=	Filter-SpamAssassin Support
-PROFANITY_DESC=	Filter::Profanity Support
-HATENARSS_DESC=	Subscription::HatenaRSS Support
-SUBSCRFOAF_DESC=	Subscription::FOAF Support
-NOTIFYIRC_DESC=	Notify::IRC Support
-HATENADIARY_DESC=	Filter::HatenaDiaryKeywordLink Support
-LIVEDOOR_DESC=	Subscription::LivedoorReader Support
-PINGSERVER_DESC=	Subscription::PingServer Support
-IMAGEINFO_DESC=	Filter::ImageInfo Support
-FILMRKDWN_DESC=	Filter::Markdown Support
-PUBLISHIMAP_DESC=	Publish::IMAP Support
-PUBLISHPDF_DESC=	Publish::PDF Support
-BLOGLINES_DESC=	Subscription::Bloglines Support
-BABELFISH_DESC=	Filter::Babelfish Support
+BABELFISH_DESC=		Filter::Babelfish Support
+BETTERENCODING_DESC=	Better Encoding detection Support
+BETTERHTML_DESC=	Better html to text formatter
+BLOGLINES_DESC=		Subscription::Bloglines Support
+COOKIESHARING_DESC=	Cookie sharing with Firefox Support
 CUSFEEDMIXI_DESC=	CustomFeed::Mixi Support
 CUSTOMSVNLOG_DESC=	CustomFeed::SVNLog Support
-NTFYNETSEND_DESC=	Notify::NetSend Support
+EMOTICON_DESC=		Filter::Emoticon Support
+ESTRAIER_DESC=		Search::Estraier Support
+FILDEGYT_DESC=		Filter-DegradeYouTube
+FILHATENA_DESC=		Filter::HatenaFormat Support
+FILHATKTAG_DESC=	Filter::HatenaKeywordTag
 FILHTMLSCRB_DESC=	Filter::HTMLScrubber Support
-PLANETINI_DESC=	Subscription::PlanetINI Support
+FILMRKDWN_DESC=		Filter::Markdown Support
+FILSPAMASSN_DESC=	Filter-SpamAssassin Support
+FILTERPIPE_DESC=	Filter::Pipe Support
+FILTERPPT_DESC=		Filter::TTP Support
+FLICKRSEARCH_DESC=	CustomFeed::FlickrSearch Support
+GUESSLANG_DESC=		Filter::GuessLanguage Support
+GUESSTZ_DESC=		Filter::GuessTimeZoneByDomain Support
+HATENABKMK_DESC=	Filter::HatenaBookmarkUsersCount Support
+HATENADIARY_DESC=	Filter::HatenaDiaryKeywordLink Support
+HATENARSS_DESC=		Subscription::HatenaRSS Support
+HTMLTIDY_DESC=		Filter::HTMLTidy Support
+IMAGEINFO_DESC=		Filter::ImageInfo Support
+JAVASCRIPT_DESC=	Publish::JavaScript Support
+KINOSEARCH_DESC=	Search::KinoSearch Support
+LIBERALXML_DESC=	Liberal XML parsing Support
+LIVEDOOR_DESC=		Subscription::LivedoorReader Support
+NOTIFYIRC_DESC=		Notify::IRC Support
+NTFYNETSEND_DESC=	Notify::NetSend Support
+PALMDOC_DESC=		Publish::PalmDoc Support
+PINGSERVER_DESC=	Subscription::PingServer Support
+PLANETINI_DESC=		Subscription::PlanetINI Support
+PODTESTINGPOD_DESC=	Testing Support
+PROFANITY_DESC=		Filter::Profanity Support
+PRSJPNDATE_DESC=	Parse Japanese datetime format
+PUBDELICIOUS_DESC=	Publish::Delicious Support
+PUBICAL_DESC=		Publish::iCal Support
+PUBJSON_DESC=		Publish::JSON Support
+PUBLISHCSV_DESC=	Publish::CSV Support
+PUBLISHEXCEL_DESC=	Publish::Excel Support
+PUBLISHGMAIL_DESC=	Publish::Gmail Support
+PUBLISHIMAP_DESC=	Publish::IMAP Support
+PUBLISHMT_DESC=		Publish::MT Support
+PUBLISHPDF_DESC=	Publish::PDF Support
+PUBLISHPLANET_DESC=	Publish::Planet Support
+PUBLISHSWF_DESC=	Publish::SWF Support
+PUBSERLZR_DESC=		Publish-Serializer Support
+ROMANIZE_DESC=		Filter::Romanize Support
+RULEFRESH_DESC=		Rule::Fresh Support
+SRCHGREP_DESC=		Search::Grep
+SUBSCOPML_DESC=		Subscription::OPML Support
+SUBSCRDBI_DESC=		Subscription::DBI Support
+SUBSCRFOAF_DESC=	Subscription::FOAF Support
+SUMJPN_DESC=		Summary::Japanes
 SUMMARYENG_DESC=	Summary-English Support
-SUMJPN_DESC=	Summary::Japanes
 SUMTEXTORG_DESC=	Summary-TextOriginal Support
+XPATH_DESC=		XPath Support
 
 OPTIONS_DEFAULT=	BETTERENCODING LIBERALXML XPATH BETTERHTML \
 			PUBLISHPLANET GUESSTZ EMOTICON RULEFRESH SUBSCOPML \
 			SUBSCRDBI PUBLISHGMAIL HATENARSS SUBSCRFOAF LIVEDOOR \
 			PINGSERVER BLOGLINES FILHTMLSCRB PLANETINI
 
-.include <bsd.port.options.mk>
+AUTHORNAME_RUN_DEPENDS= \
+		p5-Email-Address>=0:mail/p5-Email-Address
 
-.if ${PORT_OPTIONS:MBETTERENCODING}
-BUILD_DEPENDS+=	p5-Encode-Detect>=0:converters/p5-Encode-Detect
-.endif
+BABELFISH_RUN_DEPENDS= \
+		p5-WWW-Babelfish>=0:www/p5-WWW-Babelfish
 
-.if ${PORT_OPTIONS:MPODTESTING}
-BUILD_DEPENDS+=	p5-Test-Pod>=0:devel/p5-Test-Pod \
-		p5-Test-Pod-Coverage>=0:devel/p5-Test-Pod-Coverage
-.endif
+BETTERENCODING_RUN_DEPENDS= \
+		p5-Encode-Detect>=0:converters/p5-Encode-Detect
 
-.if ${PORT_OPTIONS:MCOOKIESHARING}
-BUILD_DEPENDS+=	p5-HTTP-Cookies-Mozilla>=0:www/p5-HTTP-Cookies-Mozilla
-.endif
+BETTERHTML_RUN_DEPENDS= \
+		p5-HTML-TreeBuilder-XPath>=0:www/p5-HTML-TreeBuilder-XPath
 
-.if ${PORT_OPTIONS:MLIBERALXML}
-BUILD_DEPENDS+=	p5-XML-Liberal>=0:textproc/p5-XML-Liberal  \
-		p5-XML-RSS-Liberal>=0:textproc/p5-XML-RSS-Liberal
-.endif
+BLOGLINES_RUN_DEPENDS= \
+		p5-WebService-Bloglines>=0:www/p5-WebService-Bloglines
 
-.if ${PORT_OPTIONS:MXPATH}
-BUILD_DEPENDS+=	p5-HTML-Tree>=0:www/p5-HTML-Tree \
-		p5-HTML-Format>=0:textproc/p5-HTML-Format
-.endif
+COOKIESHARING_RUN_DEPENDS= \
+		p5-HTTP-Cookies-Mozilla>=0:www/p5-HTTP-Cookies-Mozilla
 
-.if ${PORT_OPTIONS:MBETTERHTML}
-BUILD_DEPENDS+=	p5-HTML-TreeBuilder-XPath>=0:www/p5-HTML-TreeBuilder-XPath
-.endif
+CUSFEEDMIXI_RUN_DEPENDS= \
+		p5-WWW-Mixi>=0:www/p5-WWW-Mixi
 
-.if ${PORT_OPTIONS:MPRSJPNDATE}
-BUILD_DEPENDS+=	ja-p5-DateTime-Format-Japanese>=0:japanese/p5-DateTime-Format-Japanese
-.endif
+CUSTOMSVNLOG_RUN_DEPENDS= \
+		p5-subversion>=0:devel/p5-subversion
 
-.if ${PORT_OPTIONS:MPUBLISHEXCEL}
-BUILD_DEPENDS+=	p5-Spreadsheet-WriteExcel>=0:textproc/p5-Spreadsheet-WriteExcel
-.endif
+EMOTICON_RUN_DEPENDS= \
+		p5-Text-Emoticon>=0:textproc/p5-Text-Emoticon
 
-.if ${PORT_OPTIONS:MFILTERPIPE}
-BUILD_DEPENDS+=	p5-IPC-Run>=0:devel/p5-IPC-Run
-.endif
+ESTRAIER_RUN_DEPENDS= \
+		p5-Search-Estraier>=0:textproc/p5-Search-Estraier
 
-.if ${PORT_OPTIONS:MPUBLISHPLANET}
-BUILD_DEPENDS+=	p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
+FILDEGYT_RUN_DEPENDS= \
+		p5-WebService-YouTube>=0:www/p5-WebService-YouTube
+
+FILHATENA_RUN_DEPENDS= \
+		p5-Text-Hatena>=0:textproc/p5-Text-Hatena
+
+FILHATKTAG_RUN_DEPENDS= \
+		p5-Hatena-Keyword>=0:textproc/p5-Hatena-Keyword
+
+FILHTMLSCRB_RUN_DEPENDS= \
 		p5-HTML-Scrubber>=0:www/p5-HTML-Scrubber
-.endif
 
-.if ${PORT_OPTIONS:MPUBLISHCSV}
-BUILD_DEPENDS+=	p5-Text-CSV>=0:textproc/p5-Text-CSV
-.endif
+FILMRKDWN_RUN_DEPENDS= \
+		p5-Text-Markdown>=0:textproc/p5-Text-Markdown
 
-.if ${PORT_OPTIONS:MFILDEGYT}
-BUILD_DEPENDS+=	p5-WebService-YouTube>=0:www/p5-WebService-YouTube
-.endif
+FILSPAMASSN_RUN_DEPENDS= \
+		spamassassin>=0:mail/spamassassin
 
-.if ${PORT_OPTIONS:MAUTHORNAME}
-BUILD_DEPENDS+=	p5-Email-Address>=0:mail/p5-Email-Address
-.endif
+FILTERPIPE_RUN_DEPENDS= \
+		p5-IPC-Run>=0:devel/p5-IPC-Run
 
-.if ${PORT_OPTIONS:MGUESSLANG}
-BUILD_DEPENDS+=	p5-Lingua-ZH-HanDetect>=0:chinese/p5-Lingua-ZH-HanDetect \
-		p5-Text-Language-Guess>=0:textproc/p5-Text-Language-Guess
-.endif
+FILTERPPT_RUN_DEPENDS= \
+		p5-URI-Find>=0:textproc/p5-URI-Find
 
-.if ${PORT_OPTIONS:MGUESSTZ}
-BUILD_DEPENDS+=	p5-IP-Country>=0:net/p5-IP-Country
-.endif
-
-.if ${PORT_OPTIONS:MHTMLTIDY}
-BUILD_DEPENDS+=	p5-HTML-Tidy>=0:textproc/p5-HTML-Tidy
-.endif
-
-.if ${PORT_OPTIONS:MPUBLISHMT}
-BUILD_DEPENDS+=	p5-Net-MovableType>=0:net/p5-Net-MovableType
-.endif
-
-.if ${PORT_OPTIONS:MPUBSERLZR}
-BUILD_DEPENDS+=	p5-Data-Serializer>=0:devel/p5-Data-Serializer
-.endif
-
-.if ${PORT_OPTIONS:MPUBICAL}
-BUILD_DEPENDS+=	p5-Data-ICal>=0:deskutils/p5-Data-ICal \
-		p5-DateTime-Format-ICal>=0:devel/p5-DateTime-Format-ICal
-.endif
-
-.if ${PORT_OPTIONS:MROMANIZE}
-BUILD_DEPENDS+=	ja-p5-Text-Kakasi>=0:japanese/p5-Text-Kakasi
-.endif
-
-.if ${PORT_OPTIONS:MJAVASCRIPT}
-BUILD_DEPENDS+=	p5-Template-Plugin-JavaScript>=0:www/p5-Template-Plugin-JavaScript
-.endif
-
-.if ${PORT_OPTIONS:MEMOTICON}
-BUILD_DEPENDS+=	p5-Text-Emoticon>=0:textproc/p5-Text-Emoticon
-.endif
-
-.if ${PORT_OPTIONS:MFILHATENA}
-BUILD_DEPENDS+=	p5-Text-Hatena>=0:textproc/p5-Text-Hatena
-.endif
-
-.if ${PORT_OPTIONS:MFILHATKTAG}
-BUILD_DEPENDS+=	p5-Hatena-Keyword>=0:textproc/p5-Hatena-Keyword
-.endif
-
-.if ${PORT_OPTIONS:MRULEFRESH}
-BUILD_DEPENDS+=	p5-Time-Duration-Parse>=0:devel/p5-Time-Duration-Parse
-.endif
-
-.if ${PORT_OPTIONS:MSUBSCOPML}
-BUILD_DEPENDS+=	p5-XML-OPML>=0:textproc/p5-XML-OPML
-.endif
-
-.if ${PORT_OPTIONS:MFLICKRSEARCH}
-BUILD_DEPENDS+=	p5-Flickr-API>=0:www/p5-Flickr-API \
+FLICKRSEARCH_RUN_DEPENDS= \
+		p5-Flickr-API>=0:www/p5-Flickr-API \
 		p5-DateTime-Format-Epoch>=0:devel/p5-DateTime-Format-Epoch
-.endif
 
-.if ${PORT_OPTIONS:MHATENABKMK}
-BUILD_DEPENDS+=	p5-SOAP-Lite>=0:net/p5-SOAP-Lite
-.endif
+GUESSLANG_RUN_DEPENDS= \
+		p5-Lingua-ZH-HanDetect>=0:chinese/p5-Lingua-ZH-HanDetect \
+		p5-Text-Language-Guess>=0:textproc/p5-Text-Language-Guess
 
-.if ${PORT_OPTIONS:MPALMDOC}
-BUILD_DEPENDS+=	p5-Palm-PalmDoc>=0:palm/p5-Palm-PalmDoc
-.endif
+GUESSTZ_RUN_DEPENDS= \
+		p5-IP-Country>=0:net/p5-IP-Country
 
-.if ${PORT_OPTIONS:MPUBLISHSWF}
-BUILD_DEPENDS+=	p5-SWF-Builder>=0:graphics/p5-SWF-Builder \
-		p5-Text-WrapI18N>=0:textproc/p5-Text-WrapI18N
-.endif
+HATENABKMK_RUN_DEPENDS= \
+		p5-SOAP-Lite>=0:net/p5-SOAP-Lite
 
-.if ${PORT_OPTIONS:MSUBSCRDBI}
-BUILD_DEPENDS+=	p5-DBIx-Class>=0:databases/p5-DBIx-Class
-.endif
+HATENADIARY_RUN_DEPENDS= \
+		p5-SOAP-Lite>=0:net/p5-SOAP-Lite
 
-.if ${PORT_OPTIONS:MFILTERPPT}
-BUILD_DEPENDS+=	p5-URI-Find>=0:textproc/p5-URI-Find
-.endif
+HATENARSS_RUN_DEPENDS= \
+		p5-WWW-Mechanize>=0:www/p5-WWW-Mechanize
 
-.if ${PORT_OPTIONS:MKINOSEARCH}
-BUILD_DEPENDS+=	p5-KinoSearch1>=0:textproc/p5-KinoSearch1
-.endif
+HTMLTIDY_RUN_DEPENDS= \
+		p5-HTML-Tidy>=0:textproc/p5-HTML-Tidy
 
-.if ${PORT_OPTIONS:MPUBLISHGMAIL}
-BUILD_DEPENDS+=	p5-Net-SMTP-TLS>=0:mail/p5-Net-SMTP-TLS \
+IMAGEINFO_RUN_DEPENDS= \
+		p5-Image-Info>=0:graphics/p5-Image-Info
+
+JAVASCRIPT_RUN_DEPENDS= \
+		p5-Template-Plugin-JavaScript>=0:www/p5-Template-Plugin-JavaScript
+
+KINOSEARCH_RUN_DEPENDS= \
+		p5-KinoSearch1>=0:textproc/p5-KinoSearch1
+
+LIBERALXML_RUN_DEPENDS= \
+		p5-XML-Liberal>=0:textproc/p5-XML-Liberal  \
+		p5-XML-RSS-Liberal>=0:textproc/p5-XML-RSS-Liberal
+
+LIVEDOOR_RUN_DEPENDS= \
+		p5-WWW-Mechanize>=0:www/p5-WWW-Mechanize \
+		p5-YAML-Syck>=0:textproc/p5-YAML-Syck
+
+NOTIFYIRC_RUN_DEPENDS= \
+		p5-POE-Component-IRC>=0:irc/p5-POE-Component-IRC \
+		p5-POE-Component-IKC>=0:devel/p5-POE-Component-IKC
+
+NTFYNETSEND_RUN_DEPENDS= \
+		p5-Net-NetSend>=0:net-im/p5-Net-NetSend
+
+PALMDOC_RUN_DEPENDS= \
+		p5-Palm-PalmDoc>=0:palm/p5-Palm-PalmDoc
+
+PINGSERVER_RUN_DEPENDS= \
+		p5-HTML-RSSAutodiscovery>=0:www/p5-HTML-RSSAutodiscovery
+
+PLANETINI_RUN_DEPENDS= \
+		p5-Config-INI-Simple>=0:devel/p5-Config-INI-Simple
+
+PODTESTING_RUN_DEPENDS= \
+		p5-Test-Pod>=0:devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=0:devel/p5-Test-Pod-Coverage
+
+PROFANITY_RUN_DEPENDS= \
+		p5-Regexp-Common-profanity_us>=0:textproc/p5-Regexp-Common-profanity_us
+
+PRSJPNDATE_RUN_DEPENDS= \
+		ja-p5-DateTime-Format-Japanese>=0:japanese/p5-DateTime-Format-Japanese
+
+PUBDELICIOUS_RUN_DEPENDS= \
+		p5-Net-Delicious>=0:net/p5-Net-Delicious
+
+PUBICAL_RUN_DEPENDS= \
+		p5-Data-ICal>=0:deskutils/p5-Data-ICal \
+		p5-DateTime-Format-ICal>=0:devel/p5-DateTime-Format-ICal
+
+PUBJSON_RUN_DEPENDS= \
+		p5-YAML-Syck>=0:textproc/p5-YAML-Syck
+
+PUBLISHCSV_RUN_DEPENDS= \
+		p5-Text-CSV>=0:textproc/p5-Text-CSV
+
+PUBLISHEXCEL_RUN_DEPENDS= \
+		p5-Spreadsheet-WriteExcel>=0:textproc/p5-Spreadsheet-WriteExcel
+
+PUBLISHGMAIL_RUN_DEPENDS= \
+		p5-Net-SMTP-TLS>=0:mail/p5-Net-SMTP-TLS \
 		p5-MIME-Lite>=0:mail/p5-MIME-Lite \
 		p5-Mail-Tools>=0:mail/p5-Mail-Tools
-.endif
 
-.if ${PORT_OPTIONS:MPUBDELICIOUS}
-BUILD_DEPENDS+=	p5-Net-Delicious>=0:net/p5-Net-Delicious
-.endif
+PUBLISHIMAP_RUN_DEPENDS= \
+		p5-Mail-IMAPClient>=0:mail/p5-Mail-IMAPClient
 
-.if ${PORT_OPTIONS:MESTRAIER}
-BUILD_DEPENDS+=	p5-Search-Estraier>=0:textproc/p5-Search-Estraier
-.endif
+PUBLISHMT_RUN_DEPENDS= \
+		p5-Net-MovableType>=0:net/p5-Net-MovableType
 
-.if ${PORT_OPTIONS:MSRCHGREP}
-BUILD_DEPENDS+=	p5-File-Grep>=0:devel/p5-File-Grep
-.endif
+PUBLISHPDF_RUN_DEPENDS= \
+		p5-PDF-FromHTML>=0:textproc/p5-PDF-FromHTML
 
-.if ${PORT_OPTIONS:MPUBJSON}
-BUILD_DEPENDS+=	p5-YAML-Syck>=0:textproc/p5-YAML-Syck
-.endif
+PUBLISHPLANET_RUN_DEPENDS= \
+		p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
+		p5-HTML-Scrubber>=0:www/p5-HTML-Scrubber
 
-.if ${PORT_OPTIONS:MFILSPAMASSN}
-BUILD_DEPENDS+=	spamassassin>=0:mail/spamassassin
-.endif
+PUBLISHSWF_RUN_DEPENDS= \
+		p5-SWF-Builder>=0:graphics/p5-SWF-Builder \
+		p5-Text-WrapI18N>=0:textproc/p5-Text-WrapI18N
 
-.if ${PORT_OPTIONS:MPROFANITY}
-BUILD_DEPENDS+=	p5-Regexp-Common-profanity_us>=0:textproc/p5-Regexp-Common-profanity_us
-.endif
+PUBSERLZR_RUN_DEPENDS= \
+		p5-Data-Serializer>=0:devel/p5-Data-Serializer
 
-.if ${PORT_OPTIONS:MHATENARSS}
-BUILD_DEPENDS+=	p5-WWW-Mechanize>=0:www/p5-WWW-Mechanize
-.endif
+ROMANIZE_RUN_DEPENDS= \
+		ja-p5-Text-Kakasi>=0:japanese/p5-Text-Kakasi
 
-.if ${PORT_OPTIONS:MSUBSCRFOAF}
-BUILD_DEPENDS+=	p5-XML-FOAF>=0:textproc/p5-XML-FOAF
-.endif
+RULEFRESH_RUN_DEPENDS= \
+		p5-Time-Duration-Parse>=0:devel/p5-Time-Duration-Parse
 
-.if ${PORT_OPTIONS:MNOTIFYIRC}
-BUILD_DEPENDS+=	p5-POE-Component-IRC>=0:irc/p5-POE-Component-IRC \
-		p5-POE-Component-IKC>=0:devel/p5-POE-Component-IKC
-.endif
+SRCHGREP_RUN_DEPENDS= \
+		p5-File-Grep>=0:devel/p5-File-Grep
 
-.if ${PORT_OPTIONS:MHATENADIARY}
-BUILD_DEPENDS+=	p5-SOAP-Lite>=0:net/p5-SOAP-Lite
-.endif
+SUBSCOPML_RUN_DEPENDS= \
+		p5-XML-OPML>=0:textproc/p5-XML-OPML
 
-.if ${PORT_OPTIONS:MLIVEDOOR}
-BUILD_DEPENDS+=	p5-WWW-Mechanize>=0:www/p5-WWW-Mechanize \
-		p5-YAML-Syck>=0:textproc/p5-YAML-Syck
-.endif
+SUBSCRDBI_RUN_DEPENDS= \
+		p5-DBIx-Class>=0:databases/p5-DBIx-Class
 
-.if ${PORT_OPTIONS:MPINGSERVER}
-BUILD_DEPENDS+=	p5-HTML-RSSAutodiscovery>=0:www/p5-HTML-RSSAutodiscovery
-.endif
+SUBSCRFOAF_RUN_DEPENDS= \
+		p5-XML-FOAF>=0:textproc/p5-XML-FOAF
 
-.if ${PORT_OPTIONS:MIMAGEINFO}
-BUILD_DEPENDS+=	p5-Image-Info>=0:graphics/p5-Image-Info
-.endif
+SUMJPN_RUN_DEPENDS= \
+		ja-p5-Lingua-JA-Summarize-Extract>=0:japanese/p5-Lingua-JA-Summarize-Extract
 
-.if ${PORT_OPTIONS:MFILMRKDWN}
-BUILD_DEPENDS+=	p5-Text-Markdown>=0:textproc/p5-Text-Markdown
-.endif
+SUMMARYENG_RUN_DEPENDS= \
+		p5-Lingua-EN-Summarize>=0:textproc/p5-Lingua-EN-Summarize
 
-.if ${PORT_OPTIONS:MPUBLISHIMAP}
-BUILD_DEPENDS+=	p5-Mail-IMAPClient>=0:mail/p5-Mail-IMAPClient
-.endif
+SUMTEXTORG_RUN_DEPENDS= \
+		p5-Text-Original>=0:textproc/p5-Text-Original
 
-.if ${PORT_OPTIONS:MPUBLISHPDF}
-BUILD_DEPENDS+=	p5-PDF-FromHTML>=0:textproc/p5-PDF-FromHTML
-.endif
-
-.if ${PORT_OPTIONS:MBLOGLINES}
-BUILD_DEPENDS+=	p5-WebService-Bloglines>=0:www/p5-WebService-Bloglines
-.endif
-
-.if ${PORT_OPTIONS:MBABELFISH}
-BUILD_DEPENDS+=	p5-WWW-Babelfish>=0:www/p5-WWW-Babelfish
-.endif
-
-.if ${PORT_OPTIONS:MCUSFEEDMIXI}
-BUILD_DEPENDS+=	p5-WWW-Mixi>=0:www/p5-WWW-Mixi
-.endif
-
-.if ${PORT_OPTIONS:MCUSTOMSVNLOG}
-BUILD_DEPENDS+=	p5-subversion>=0:devel/p5-subversion
-.endif
-
-.if ${PORT_OPTIONS:MNTFYNETSEND}
-BUILD_DEPENDS+=	p5-Net-NetSend>=0:net-im/p5-Net-NetSend
-.endif
-
-.if ${PORT_OPTIONS:MFILHTMLSCRB}
-BUILD_DEPENDS+=	p5-HTML-Scrubber>=0:www/p5-HTML-Scrubber
-.endif
-
-.if ${PORT_OPTIONS:MPLANETINI}
-BUILD_DEPENDS+=	p5-Config-INI-Simple>=0:devel/p5-Config-INI-Simple
-.endif
-
-.if ${PORT_OPTIONS:MSUMMARYENG}
-BUILD_DEPENDS+=	p5-Lingua-EN-Summarize>=0:textproc/p5-Lingua-EN-Summarize
-.endif
-
-.if ${PORT_OPTIONS:MSUMJPN}
-BUILD_DEPENDS+=	ja-p5-Lingua-JA-Summarize-Extract>=0:japanese/p5-Lingua-JA-Summarize-Extract
-.endif
-
-.if ${PORT_OPTIONS:MSUMTEXTORG}
-BUILD_DEPENDS+=	p5-Text-Original>=0:textproc/p5-Text-Original
-.endif
-
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+XPATH_RUN_DEPENDS= \
+		p5-HTML-Tree>=0:www/p5-HTML-Tree \
+		p5-HTML-Format>=0:textproc/p5-HTML-Format
 
 post-patch:
 	@${REINPLACE_CMD} -i '' '/auto_install/d' ${WRKSRC}/Makefile.PL
