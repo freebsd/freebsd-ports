@@ -1,0 +1,6 @@
+pathspec is a utility library for pattern matching of file paths. So
+far this only includes Git's wildmatch pattern matching which itself
+is derived from Rsync's wildmatch. Git uses wildmatch for its
+gitignore files.
+
+WWW: https://pypi.org/project/pathspec/
