@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fancybox
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -11,9 +11,10 @@ COMMENT=	JavaScript library for image/html/multimedia content display
 
 LICENSE=	GPLv3
 
+USES=		cpe
+
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		cpe
 
 GH_ACCOUNT=	fancyapps
 USE_GITHUB=	yes
