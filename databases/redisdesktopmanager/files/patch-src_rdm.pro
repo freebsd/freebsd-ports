@@ -1,4 +1,4 @@
---- src/rdm.pro.orig	2018-04-13 11:23:13 UTC
+--- src/rdm.pro.orig	2018-08-31 12:53:12 UTC
 +++ src/rdm.pro
 @@ -26,8 +26,6 @@ SOURCES += \
      $$PWD/modules/connections-tree/items/*.cpp \
@@ -22,10 +22,10 @@
  
      QMAKE_CXXFLAGS += -Wno-sign-compare    
  
--    release: DESTDIR = ./../bin/linux/release
--    debug:   DESTDIR = ./../bin/linux/debug
-+    release: DESTDIR = ./../bin/freebsd/release
-+    debug:   DESTDIR = ./../bin/freebsd/debug
+-    release: DESTDIR = $$PWD/../bin/linux/release
+-    debug:   DESTDIR = $$PWD/../bin/linux/debug
++    release: DESTDIR = $$PWD/../bin/freebsd/release
++    debug:   DESTDIR = $$PWD/../bin/freebsd/debug
  
      #deployment
-     target.path = /usr/share/redis-desktop-manager/bin
+     LINUX_INSTALL_PATH = /opt/redis-desktop-manager
