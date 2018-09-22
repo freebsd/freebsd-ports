@@ -3,7 +3,7 @@
 PORTNAME=	ga
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack \
-		libmpich.so:net/mpich2
+		libmpich.so:net/mpich
 
 USES=		autoreconf fortran gmake libtool localbase
 USE_GITHUB=	yes

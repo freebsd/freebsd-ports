@@ -3,6 +3,7 @@
 PORTNAME=	jdftx
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.2-74
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-gba743849
 CATEGORIES=	science
 
@@ -12,6 +13,7 @@ COMMENT=	Software for joint density functional theory in chemistry
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libblas.so:math/blas \
 		libcblas.so:math/cblas \
 		libfftw3.so:math/fftw3 \
@@ -38,7 +40,7 @@ OPTIONS_DEFINE=		MPI LIBXC HDF5 SCALAPACK OCTAVE
 OPTIONS_DEFAULT=	MPI LIBXC
 
 MPI_CMAKE_BOOL=		EnableMPI
-MPI_LIB_DEPENDS=	libmpich.so:net/mpich2
+MPI_LIB_DEPENDS=	libmpich.so:net/mpich
 
 LIBXC_DESC=		Use LibXC for additional exchange-correlation functionals
 LIBXC_CMAKE_BOOL=	EnableLibXC

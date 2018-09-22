@@ -2,7 +2,7 @@
 
 PORTNAME=	fleur
 DISTVERSION=	0.27-3 # Release 3 of Version 0.27
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://www.flapw.de/pm/uploads/FLEUR/
 DISTNAME=	fleurMaXR${DISTVERSION:C/.*-//}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libopenblas.so:math/openblas
 
-USES=		cmake:outsource,noninja fortran localbase:ldflags tar:tgz
+USES=		cmake:outsource,noninja fortran gnome localbase:ldflags tar:tgz
 USE_GNOME=	libxml2
 
 FFLAGS=		-I${LOCALBASE}/include
@@ -34,8 +34,8 @@ HDF5_BROKEN=		Missing hdf5.mod in hdf5
 
 MPI_CONFIGURE_ENV=	FLEUR_USE_MPI=1
 MPI_CONFIGURE_ENV_OFF=	FLEUR_USE_MPI=0
-MPI_LDFLAGS=		-lmpich
-MPI_LIB_DEPENDS=	libmpich.so:net/mpich2
+MPI_LDFLAGS=		-lmpich -lmpifort
+MPI_LIB_DEPENDS=	libmpich.so:net/mpich
 MPI_PLIST_FILES=	bin/fleur_MPI
 
 SCALAPACK_DESC=		Use the ScaLAPACK Scalable LAPACK library

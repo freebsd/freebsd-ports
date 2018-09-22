@@ -2,6 +2,7 @@
 
 PORTNAME=	charm
 DISTVERSION=	6.8.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://charm.cs.illinois.edu/distrib/
 PKGNAMESUFFIX=	-uiuc
@@ -47,7 +48,7 @@ ETHERNET_VARS=		VERSION=netlrts ARCH_STR=linux${ARCH:S/amd64/-x86_64/:S/i386//}
 
 MPI_VARS=		VERSION=mpi ARCH_STR=linux${ARCH:S/amd64/-x86_64/:S/i386//}
 MPI_LDFLAGS=		-lmpich
-MPI_LIB_DEPENDS=	libmpich.so:net/mpich2
+MPI_LIB_DEPENDS=	libmpich.so:net/mpich
 
 post-patch:
 	@${REINPLACE_CMD} 's|which gfortran |which gfortran${GCC_DEFAULT} |' ${WRKSRC}/src/arch/common/conv-mach-gfortran.sh

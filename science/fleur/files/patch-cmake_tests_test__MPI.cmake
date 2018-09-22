@@ -4,7 +4,7 @@
  #Check if we can compile with MPI
  try_compile(FLEUR_USE_MPI ${CMAKE_BINARY_DIR} ${CMAKE_SOURCE_DIR}/cmake/tests/test_MPI.f90
 -LINK_LIBRARIES ${FLEUR_LIBRARIES}
-+LINK_LIBRARIES ${FLEUR_LIBRARIES} -lmpich
++LINK_LIBRARIES ${FLEUR_LIBRARIES} -lmpich -lmpifort
              )
  
  message("MPI Library found:${FLEUR_USE_MPI}")

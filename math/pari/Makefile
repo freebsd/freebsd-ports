@@ -3,6 +3,7 @@
 
 PORTNAME=	pari
 DISTVERSION=	2.11.0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	math
 MASTER_SITES=	http://pari.math.u-bordeaux.fr/pub/pari/unix/ \
@@ -43,8 +44,8 @@ OPTIMIZED_CFLAGS_CFLAGS=	-O3 -fno-strict-aliasing -fomit-frame-pointer
 X11_CONFIGURE_ON=	--graphic=X11
 X11_CONFIGURE_OFF=	--graphic=none
 X11_USE=		xorg=x11
-MPI_RUN_DEPENDS=	${LOCALBASE}/bin/mpirun:net/mpich2
-MPI_BUILD_DEPENDS=	${LOCALBASE}/bin/mpicc:net/mpich2
+MPI_RUN_DEPENDS=	${LOCALBASE}/bin/mpirun:net/mpich
+MPI_BUILD_DEPENDS=	${LOCALBASE}/bin/mpicc:net/mpich
 MPI_LIB_DEPENDS=	libgmp.so:math/gmp
 PTHREADS_LIB_DEPENDS=	libgmp.so:math/gmp
 PTHREADS_CONFIGURE_ON=	--mt=pthread --with-gmp=${LOCALBASE}

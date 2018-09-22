@@ -2,6 +2,7 @@
 
 PORTNAME=	openmx
 DISTVERSION=	3.8.5 # the 18June12 patch upgrades 3.8 -> 3.8.5
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.openmx-square.org/ \
 		http://www.openmx-square.org/bugfixed/18June12/:patch
@@ -20,7 +21,7 @@ BROKEN_i386=	undefined reference to `__atomic_load', see bug#229605 and https://
 LIB_DEPENDS=	libblas.so:math/blas \
 		libfftw3.so:math/fftw3 \
 		liblapack.so:math/lapack \
-		libmpich.so:net/mpich2 \
+		libmpich.so:net/mpich \
 		libomp.so:devel/openmp
 
 USES=		dos2unix fortran gmake localbase:ldflags
@@ -31,7 +32,7 @@ MAKEFILE=	makefile
 WRKSRC=		${WRKDIR}/${PORTNAME}${DISTVERSION:R}
 
 CFLAGS+=	-Dkcomp
-LDFLAGS+=	${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so
+LDFLAGS+=	${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so ${LOCALBASE}/lib/libmpifort.so
 
 WRKSRC_SUBDIR=	source
 

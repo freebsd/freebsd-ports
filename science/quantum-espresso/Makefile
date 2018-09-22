@@ -3,7 +3,7 @@
 PORTNAME=	quantum-espresso
 DISTVERSIONPREFIX=	qe-
 DISTVERSION=	6.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://www.quantum-espresso.org/wp-content/uploads/upf_files/:pp
 DIST_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/License
 
 BUILD_DEPENDS=	fox-xml>0:textproc/fox-xml \
 		bash:shells/bash
-LIB_DEPENDS=	libmpich.so:net/mpich2 \
+LIB_DEPENDS=	libmpich.so:net/mpich \
 		libblas.so:math/blas \
 		liblapack.so:math/lapack
 

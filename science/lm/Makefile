@@ -2,6 +2,7 @@
 
 PORTNAME=	lm
 DISTVERSION=	2.3.0
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	science
 MASTER_SITES=	http://scs.illinois.edu/schulten/${PORTNAME}/download/${PORTNAME}${DISTVERSION:R:S/.//}/
@@ -33,7 +34,7 @@ OPTIONS_SUB=		yes
 MPI_USES=		fortran
 MPI_VARS=		XUSE_MPI=1
 MPI_VARS_OFF=		XUSE_MPI=0
-MPI_LIB_DEPENDS=	libmpich.so:net/mpich2
+MPI_LIB_DEPENDS=	libmpich.so:net/mpich
 
 PYTHON_USES=		python
 PYTHON_VARS=		XUSE_PYTHON=1
