@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Feersum
-PORTVERSION=	1.405
+PORTVERSION=	1.406
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:AUDREYT
@@ -14,9 +14,10 @@ COMMENT=	PSGI engine for Perl based on EV/libev
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-EV>=4.0:devel/p5-EV \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-EV>=4.0:devel/p5-EV \
+		p5-HTTP-Entity-Parser>=0.20:www/p5-HTTP-Entity-Parser \
 		p5-Plack>=0.9950:www/p5-Plack
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-AnyEvent>=5.26.1:devel/p5-AnyEvent \
 		p5-Guard>=1.012:devel/p5-Guard \
 		p5-JSON-XS>=2:converters/p5-JSON-XS \
