@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	json-ld
-DISTVERSION=	3.0.1
+DISTVERSION=	3.0.2
 CATEGORIES=	converters rubygems
 MASTER_SITES=	RG
 
@@ -16,6 +16,7 @@ RUN_DEPENDS=	rubygem-multi_json>=1.12:devel/rubygem-multi_json \
 
 USES=		gem
 USE_RUBY=	yes
+
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/jsonld
