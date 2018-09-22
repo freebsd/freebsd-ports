@@ -2,6 +2,7 @@
 
 PORTNAME=	libgridxc
 DISTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/trunk/${DISTVERSION:R}/+download/
 
@@ -29,7 +30,7 @@ OPTIONS_DEFINE=		MPI LIBXC
 OPTIONS_DEFAULT=	MPI LIBXC
 
 MPI_MAKE_ENV=		WITH_MPI=1
-MPI_LIB_DEPENDS=	libmpich.so:net/mpich2
+MPI_LIB_DEPENDS=	libmpich.so:net/mpich
 
 LIBXC_DESC=		Use libxc for exchange-correlation functionals for DFT
 LIBXC_MAKE_ENV=		WITH_LIBXC=1

@@ -2,6 +2,7 @@
 
 PORTNAME=	mdynamix
 DISTVERSION=	5.2.8
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.fos.su.se/~sasha/${PORTNAME}/versions/
 DISTNAME=	md${DISTVERSION:S/.//g}
@@ -11,7 +12,7 @@ COMMENT=	General purpose molecular dynamics code
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libmpich.so:net/mpich2
+LIB_DEPENDS=	libmpich.so:net/mpich
 
 USES=		fortran gmake
 

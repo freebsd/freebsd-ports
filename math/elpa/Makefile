@@ -2,6 +2,7 @@
 
 PORTNAME=	elpa
 DISTVERSION=	2018.05.001
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://elpa.mpcdf.mpg.de/html/Releases/${DISTVERSION}/
 
@@ -31,7 +32,7 @@ OPTIONS_DEFAULT_amd64=		SSE
 SSE_CFLAGS=			-msse3
 OPENMP_CONFIGURE_ENABLE=	openmp
 MPI_CONFIGURE_WITH=		mpi
-MPI_LIB_DEPENDS=		libmpich.so:net/mpich2 \
+MPI_LIB_DEPENDS=		libmpich.so:net/mpich \
 				libscalapack.so:math/scalapack
 
 PORTDOCS=	*

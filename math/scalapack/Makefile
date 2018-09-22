@@ -3,7 +3,7 @@
 
 PORTNAME=	scalapack
 PORTVERSION=	2.0.2
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	math
 MASTER_SITES=	NL
 DISTFILES=	scalapack-${PORTVERSION}.tgz manpages.tgz
@@ -64,9 +64,8 @@ WITH_OPENMPI=	yes
 BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:net/openmpi
 RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
 .else
-#LIB_DEPENDS+=	libmpich.so:net/mpich2
-BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:net/mpich2
-RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:net/mpich2
+BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:net/mpich
+RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:net/mpich
 .endif
 
 .if ${ARCH} == "sparc64" || ${ARCH} == "amd64"
