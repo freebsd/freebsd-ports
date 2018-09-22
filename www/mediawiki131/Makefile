@@ -1,38 +1,38 @@
 # Created by: Gerrit Beine <tux@pinguru.net>
 # $FreeBSD$
 
-PORTNAME=		mediawiki
-PORTVERSION=	1.31.0
-CATEGORIES=		www
+PORTNAME=	mediawiki
+PORTVERSION=	1.31.1
+CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	131-${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=		wen@FreeBSD.org
-COMMENT=		Wiki engine used by Wikipedia
+MAINTAINER=	wen@FreeBSD.org
+COMMENT=	Wiki engine used by Wikipedia
 
-LICENSE=		GPLv2
+LICENSE=	GPLv2
 
-CONFLICTS=		mediawiki12[79]-[0-9]* mediawiki130-[0-9]*
+CONFLICTS=	mediawiki12[79]-[0-9]* mediawiki130-[0-9]*
 
 IGNORE_WITH_PHP=56
 
-USES=			php:flavors shebangfix
+USES=		php:flavors shebangfix
 SHEBANG_FILES=	maintenance/dev/*.sh \
-				maintenance/postgres/*.pl \
-				maintenance/storage/make-blobs \
-				includes/shell/limit.sh
+		maintenance/postgres/*.pl \
+		maintenance/storage/make-blobs \
+		includes/shell/limit.sh
 SHEBANG_LANG=	hhvm
 hhvm_OLD_CMD=	/usr/bin/hhvm
-hhvm_CMD=		${LOCALBASE}/bin/hhvm # not installed by anything yet
-USE_PHP=		ctype dom fileinfo hash iconv intl json mbstring openssl pcre \
-				readline session xml xmlreader zlib
+hhvm_CMD=	${LOCALBASE}/bin/hhvm # not installed by anything yet
+USE_PHP=	ctype dom fileinfo hash iconv intl json mbstring openssl pcre \
+		readline session xml xmlreader zlib
 MEDIAWIKIDIR?=	www/mediawiki
 
-NO_BUILD=		yes
-PLIST=			${WRKDIR}/plist
+NO_BUILD=	yes
+PLIST=		${WRKDIR}/plist
 
-SUB_FILES=		pkg-message
-SUB_LIST=		MEDIAWIKIDIR=${PREFIX}/${MEDIAWIKIDIR}
+SUB_FILES=	pkg-message
+SUB_LIST=	MEDIAWIKIDIR=${PREFIX}/${MEDIAWIKIDIR}
 
 OPTIONS_DEFINE=	LDAP MEMCACHED IMAGICK SOCKETS XCACHE
 OPTIONS_SINGLE=	DB
@@ -44,20 +44,19 @@ XCACHE_DESC=	Use xCache
 IMAGICK_DESC=	Use ImageMagick
 SOCKETS_DESC=	Use sockets
 
-MYSQL_USE=		mysql=client php=mysqli
-PGSQL_USE=		php=pgsql
-SQLITE_USE=		php=sqlite3
-LDAP_USE=		php=ldap
+MYSQL_USE=	mysql=client php=mysqli
+PGSQL_USE=	php=pgsql
+SQLITE_USE=	php=sqlite3
+LDAP_USE=	php=ldap
 SOCKETS_USE=	php=sockets
 
 MEMCACHED_RUN_DEPENDS=	memcached:databases/memcached
 IMAGICK_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick@${PHP_FLAVOR}
-XCACHE_RUN_DEPENDS=		${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:www/xcache
+XCACHE_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/xcache.so:www/xcache
 
 pre-install:
 	@${FIND} -s -d ${WRKSRC} -not -type d | ${SED} "s?${WRKSRC}?${MEDIAWIKIDIR}?g" >>${PLIST}
 	@${ECHO} "@dir %%WWWDIR%%/cache" >> ${PLIST}
-	@${ECHO} "@dir %%WWWDIR%%/tests/phan/issues" >> ${PLIST}
 	@${ECHO} "@mode 0777" >> ${PLIST}
 	@${ECHO} "@dir %%WWWDIR%%/images" >> ${PLIST}
 	@${ECHO} "@mode" >> ${PLIST}
