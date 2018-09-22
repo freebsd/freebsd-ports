@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	holidays
-PORTVERSION=	6.4.0
+PORTVERSION=	6.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,11 @@ COMMENT=	Collection of Ruby methods to deal with statutory and other holidays
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
+USES=		gem shebangfix
 USE_RUBY=	yes
-USES=		gem
+
+NO_ARCH=	yes
+
+SHEBANG_FILES=	bin/setup
 
 .include <bsd.port.mk>
