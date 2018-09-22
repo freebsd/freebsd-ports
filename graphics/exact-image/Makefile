@@ -3,7 +3,7 @@
 
 PORTNAME=	exact-image
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics perl5 python
 MASTER_SITES=	http://dl.exactcode.de/oss/${PORTNAME}/ LOCAL/bf
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libagg.so:graphics/agg \
 		libpng.so:graphics/png \
 		libgif.so:graphics/giflib \
 		libjasper.so:graphics/jasper \
-		libIlmImf.so:graphics/OpenEXR \
+		libIlmImf.so:graphics/openexr \
 		liblcms.so:graphics/lcms \
 		libfreetype.so:print/freetype2 \
 		libexpat.so:textproc/expat2

@@ -74,6 +74,7 @@ include/OpenEXR/ImfRgba.h
 include/OpenEXR/ImfRgbaFile.h
 include/OpenEXR/ImfRgbaYca.h
 include/OpenEXR/ImfStandardAttributes.h
+include/OpenEXR/ImfStdIO.h
 include/OpenEXR/ImfStringAttribute.h
 include/OpenEXR/ImfStringVectorAttribute.h
 include/OpenEXR/ImfTestFile.h

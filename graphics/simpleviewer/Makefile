@@ -3,7 +3,7 @@
 
 PORTNAME=	simpleviewer
 PORTVERSION=	2.92
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/andreyu/simple-viewer-gl/get/
 DISTNAME=	v${PORTVERSION}	# version tag, thus no embedded ${PORTNAME}
@@ -14,7 +14,7 @@ COMMENT=	Small and simple OpenGL image viewer with transparency support
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
+LIB_DEPENDS=	libIlmImf.so:graphics/openexr \
 		libImlib2.so:graphics/imlib2 \
 		libexif.so:graphics/libexif \
 		libfreetype.so:print/freetype2 \

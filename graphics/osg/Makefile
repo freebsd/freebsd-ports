@@ -4,7 +4,7 @@
 PORTNAME=	osg
 PORTVERSION=	3.4.1
 DISTVERSIONPREFIX=	OpenSceneGraph-
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -92,7 +92,7 @@ LUA_VARS_OFF=		FORCE_IGNORE+="Lua51 Lua52"
 NVTT_LIB_DEPENDS=	libnvtt.so:graphics/nvidia-texture-tools
 NVTT_VARS=		FORCE_REQUIRE+=NVTT
 NVTT_VARS_OFF=		FORCE_IGNORE+=NVTT
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr
 OPENEXR_VARS=		FORCE_REQUIRE+=OpenEXR
 OPENEXR_VARS_OFF=	FORCE_IGNORE+=OpenEXR
 PDF_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib

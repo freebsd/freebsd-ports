@@ -4,7 +4,7 @@
 PORTNAME=	yafaray
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0-5
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-g3a98966
 CATEGORIES=	graphics
 
@@ -26,7 +26,7 @@ ONLY_FOR_ARCHS_EASON=	assembly is only for amd64 and i386, but it breaks on i386
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
 		libHalf.so:graphics/ilmbase \
-		libIlmImf.so:graphics/OpenEXR \
+		libIlmImf.so:graphics/openexr \
 		libopencv_photo.so:graphics/opencv \
 		libopencv_core.so:graphics/opencv-core \
 		libpng16.so:graphics/png \

@@ -2,7 +2,7 @@
 
 PORTNAME=	openfx-io
 PORTVERSION=	2.3.14
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	Natron-
 CATEGORIES=	graphics
 
@@ -15,7 +15,7 @@ ONLY_FOR_ARCHS=	amd64
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libOpenColorIO.so:graphics/opencolorio \
-		libIlmImfUtil.so:graphics/OpenEXR \
+		libIlmImfUtil.so:graphics/openexr \
 		libOpenImageIO.so:graphics/openimageio \
 		libavformat.so:multimedia/ffmpeg \
 		libraw.so:graphics/libraw \

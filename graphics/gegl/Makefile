@@ -3,7 +3,7 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.2.0
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	graphics
 MASTER_SITES=	GIMP
 
@@ -127,7 +127,7 @@ CONFIGURE_ARGS+=--without-lua
 .endif
 
 .if ${PORT_OPTIONS:MOPENEXR}
-LIB_DEPENDS+=	libIlmImf.so:graphics/OpenEXR
+LIB_DEPENDS+=	libIlmImf.so:graphics/openexr
 PLIST_SUB+=	OPENEXR=""
 .else
 CONFIGURE_ARGS+=--without-openexr

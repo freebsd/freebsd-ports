@@ -3,7 +3,7 @@
 
 PORTNAME=	ampasCTL
 PORTVERSION=	1.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,17 +15,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libImath.so:graphics/ilmbase \
-		libIlmImf.so:graphics/OpenEXR \
+		libIlmImf.so:graphics/openexr \
 		libtiff.so:graphics/tiff \
 		libAcesContainer.so:graphics/ampasACES-container
 
+USES=		cmake:outsource pathfix pkgconfig
+USE_LDCONFIG=	yes
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	ampas
 GH_PROJECT=	CTL
 GH_TAGNAME=	57b48a2
-
-USES=		cmake pathfix pkgconfig
-USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
 

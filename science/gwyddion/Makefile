@@ -3,6 +3,7 @@
 
 PORTNAME=	gwyddion
 PORTVERSION=	2.51
+PORTREVISION=	1
 CATEGORIES=	science graphics
 MASTER_SITES=	SF
 
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libminizip.so:archivers/minizip \
 		libcfitsio.so:astro/cfitsio \
-		libIlmImf.so:graphics/OpenEXR \
+		libIlmImf.so:graphics/openexr \
 		libfftw3.so:math/fftw3 \
 		libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 

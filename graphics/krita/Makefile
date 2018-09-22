@@ -2,7 +2,7 @@
 
 PORTNAME=	krita
 DISTVERSION=	4.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -48,7 +48,7 @@ OPTIONS_SUB=		yes
 GMIC_DESC=		Depend on the G'Mic plugin #'
 GMIC_RUN_DEPENDS=	gmic_krita_qt:graphics/gmic-qt
 
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr
 OPENEXR_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenEXR
 
 CONFLICTS_INSTALL=	calligra-2*

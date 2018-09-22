@@ -3,7 +3,7 @@
 
 PORTNAME=	enblend
 PORTVERSION=	4.1.4
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	graphics
 MASTER_SITES=	SF/enblend/enblend-enfuse/enblend-enfuse-${PORTVERSION:R}
 DISTNAME=	enblend-enfuse-${PORTVERSION}
@@ -15,14 +15,14 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	help2man:misc/help2man \
-		OpenEXR>=1.0:graphics/OpenEXR
+		openexr>=1.0:graphics/openexr
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libtiff.so:graphics/tiff \
 		libboost_filesystem.so:devel/boost-libs \
 		libvigraimpex.so:graphics/vigra \
 		libgsl.so:math/gsl \
 		libpng.so:graphics/png
-RUN_DEPENDS=	OpenEXR>=1.0:graphics/OpenEXR
+RUN_DEPENDS=	openexr>=1.0:graphics/openexr
 
 BROKEN_powerpc64=	fails to configure: libvigraimpex is required to compile Enblend
 

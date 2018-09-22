@@ -3,7 +3,7 @@
 
 PORTNAME=	pfstools
 DISTVERSION=	2.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -52,8 +52,8 @@ TIFF_CMAKE_BOOL=	WITH_TIFF
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 
 OPENEXR_CMAKE_BOOL=	WITH_OpenEXR
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
-			libIex-2_2.so:graphics/ilmbase
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr \
+			libIex.so:graphics/ilmbase
 
 IMAGEMAGICK_CMAKE_BOOL=	WITH_ImageMagick
 IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick
