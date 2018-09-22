@@ -2,7 +2,7 @@
 
 PORTNAME=	triqs
 DISTVERSION=	2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,14 +21,14 @@ LIB_DEPENDS=	libcpp2py.so:devel/cpp2py \
 		libgmp.so:math/gmp \
 		libhdf5.so:science/hdf5 \
 		libmpi.so:net/openmpi \
-		libopa.so:net/mpich2 \
+		libopa.so:net/mpich \
 		libopenblas.so:math/openblas \
 		libsz.so:science/szip
 RUN_DEPENDS=	${PYNUMPY}
 
 PORTSCOUT=	limit:^[0-9]+\.[0-9].*$$
 
-USES=		cmake:outsource,noninja fortran gettext-runtime python:2.7- # python:2.7- matches that in devel/cpp2py
+USES=		cmake:outsource,noninja fortran gettext-runtime python:2.7 # python:2.7 matches that in devel/cpp2py
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}
 USE_LDCONFIG=	yes
