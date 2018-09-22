@@ -89,7 +89,7 @@ TOR_ZSTD_LIBS=		-lzstd
 .endif
 
 .if ${PORT_OPTIONS:MTCMALLOC}
-CONFIGURE_ARGS+=	--with-tcmalloc
+CONFIGURE_ARGS+=	--with-malloc=tcmalloc
 .if ${PORT_OPTIONS:MSTATIC_TOR}
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libtcmalloc.a:devel/google-perftools
 .else
