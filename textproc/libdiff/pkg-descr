@@ -1,0 +1,5 @@
+libdiff is a C library generating the shortest edit script, longest common
+subsequence, and edit distance between arbitrary sequences of bytes. It derives
+from Tatsuhiko Kubo's onp and dtl.
+
+WWW: https://github.com/kristapsdz/libdiff
