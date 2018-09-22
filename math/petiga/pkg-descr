@@ -10,4 +10,6 @@ capability and the integration of forms. The PetIGA framework is intended for
 researchers in the numeric solution of PDEs who have applications which require
 extensive computational resources.
 
+PetIGA extends PETSc: PetIGA = Pet(PETSc) + IGA(isogeometric analysis)
+
 WWW: https://bitbucket.org/dalcinl/petiga/
