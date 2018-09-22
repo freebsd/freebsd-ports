@@ -9,6 +9,6 @@ COMMENT=	Enhanced version of XPilot (client program)
 MASTERDIR=	${.CURDIR}/../xpilot-ng-server
 
 USE_XORG=	x11 xext xxf86misc
-USE_GL=		gl
+USES=		gl
 
 .include "${MASTERDIR}/Makefile"
