@@ -89,6 +89,9 @@ bin/validate-storage-schemas.py
 %%PYTHON_SITELIBDIR%%/carbon/relayrules.py
 %%PYTHON_SITELIBDIR%%/carbon/relayrules.pyc
 %%PYTHON_SITELIBDIR%%/carbon/relayrules.pyo
+%%PYTHON_SITELIBDIR%%/carbon/resolver.py
+%%PYTHON_SITELIBDIR%%/carbon/resolver.pyc
+%%PYTHON_SITELIBDIR%%/carbon/resolver.pyo
 %%PYTHON_SITELIBDIR%%/carbon/rewrite.py
 %%PYTHON_SITELIBDIR%%/carbon/rewrite.pyc
 %%PYTHON_SITELIBDIR%%/carbon/rewrite.pyo
