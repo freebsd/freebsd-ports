@@ -18,10 +18,6 @@ LICENSE_DISTFILES_GPLv2=	${DISTNAME}${EXTRACT_SUFX}
 
 PORTSCOUT=	ignore	# cannot handle the version in the directory
 
-.if !defined(MASTERDIR)
-BROKEN_powerpc64=	fails to build: Entry '..' in Signal (11) SIGSEGV si_code=SEGV_MAPERR fault addr=0x2434
-.endif
-
 USES=		cpe gmake makeinfo pkgconfig tar:xz
 CPE_VENDOR=	e2fsprogs_project
 USE_CSTD=	gnu99
@@ -84,6 +80,12 @@ PKGDEINSTALL=	${PKGINSTALL}
 MAKE_ARGS+=	V=1
 
 .include <bsd.port.options.mk>
+
+. if ${ARCH} == powerpc64
+# Fix powerpc64 SIGSEGV,
+# see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=231570
+USES+=		compiler:c11
+. endif
 
 .if ${PORT_OPTIONS:MFUSEFS}
 USES+=		fuse
