@@ -3,7 +3,7 @@
 
 PORTNAME=	ParMetis
 PORTVERSION=	4.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math parallel
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/
 DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
@@ -17,14 +17,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	auto-accept
 
 OPTIONS_DEFINE=	OPENMPI DOCS
-OPENMPI_DESC=	Use openmpi instead of mpich2
+OPENMPI_DESC=	Use openmpi instead of mpich
 
 OPENMPI_BUILD_DEPENDS=		${LOCALBASE}/mpi/openmpi/bin/mpicc:net/openmpi
 OPENMPI_RUN_DEPENDS=		${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
 OPENMPI_VARS=			MPICC=${LOCALBASE}/mpi/openmpi/bin/mpicc \
 				MPICXX=${LOCALBASE}/mpi/openmpi/bin/mpicxx
-OPENMPI_BUILD_DEPENDS_OFF=	${LOCALBASE}/bin/mpicc:net/mpich2
-OPENMPI_RUN_DEPENDS_OFF=	${LOCALBASE}/bin/mpirun:net/mpich2
+OPENMPI_BUILD_DEPENDS_OFF=	${LOCALBASE}/bin/mpicc:net/mpich
+OPENMPI_RUN_DEPENDS_OFF=	${LOCALBASE}/bin/mpirun:net/mpich
 OPENMPI_VARS_OFF=		MPICC=${LOCALBASE}/bin/mpicc \
 				MPICXX=${LOCALBASE}/bin/mpicxx
 
@@ -50,8 +50,6 @@ post-patch:
 		's|IDXTYPEWIDTH 32|IDXTYPEWIDTH 64|' \
 		${WRKSRC}/metis/include/metis.h
 .endif
-
-post-patch-OPENMPI-on:
 	@${REINPLACE_CMD} -e \
 		'/target_link_libraries(.* parmetis)/s/\(parmetis\)/& -lexecinfo/' \
 		${WRKSRC}/programs/CMakeLists.txt

@@ -3,7 +3,7 @@
 
 PORTNAME=	mdtest
 PORTVERSION=	1.9.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	benchmarks
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20latest/${PORTNAME}-${PORTVERSION}
 
@@ -27,8 +27,8 @@ OPENMPI_BUILD_DEPENDS=		${LOCALBASE}/mpi/openmpi/bin/mpicc:net/openmpi
 OPENMPI_RUN_DEPENDS=		${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
 OPENMPI_VARS=			MPICC=${LOCALBASE}/mpi/openmpi/bin/mpicc
 
-OPENMPI_BUILD_DEPENDS_OFF=	${LOCALBASE}/bin/mpicc:net/mpich2
-OPENMPI_RUN_DEPENDS_OFF=	${LOCALBASE}/bin/mpirun:net/mpich2
+OPENMPI_BUILD_DEPENDS_OFF=	${LOCALBASE}/bin/mpicc:net/mpich
+OPENMPI_RUN_DEPENDS_OFF=	${LOCALBASE}/bin/mpirun:net/mpich
 OPENMPI_VARS_OFF=		MPICC=${LOCALBASE}/bin/mpicc
 
 do-build:
