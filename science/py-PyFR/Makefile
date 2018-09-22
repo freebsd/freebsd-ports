@@ -2,7 +2,7 @@
 
 PORTNAME=	PyFR
 DISTVERSION=	1.7.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science python
 MASTER_SITES=	http://www.pyfr.org/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.0:devel/py-appdirs@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}mako>=1.0.0:textproc/py-mako@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mpi4py>=2.0:net/py-mpi4py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytools>=2016.2.1:devel/py-pytools@${PY_FLAVOR} \
-		clblas>0:math/clblas \
 		${NUMPY}
 
 USES=		python:3.3+ shebangfix zip
@@ -30,10 +29,12 @@ NO_ARCH=	yes
 OPTIONS_MULTI=		PARALLEL
 OPTIONS_MULTI_PARALLEL=	OPENCL OPENMP # CUDA isn't supported on FreeBSD
 OPTIONS_DEFAULT=	${OPTIONS_MULTI_PARALLEL}
-PARALLEL_DESC=		Parallelization backend to install
+PARALLEL_DESC=		Parallelization backends to install
 
-OPENCL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyopencl>0:devel/py-pyopencl@${PY_FLAVOR}
-OPENMP_RUN_DEPENDS=	openmp>0:devel/openmp
+OPENCL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyopencl>0:devel/py-pyopencl@${PY_FLAVOR} \
+			clblas>0:math/clblas
+OPENMP_RUN_DEPENDS=	openmp>0:devel/openmp \
+			libxsmm>0:math/libxsmm
 
 pre-build: # patch in pre-build to make the patch less error-prone (it has %%LOCALBASE%%)
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/pyfr/backends/openmp/compiler.py
