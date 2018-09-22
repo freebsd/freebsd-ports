@@ -1,5 +1,5 @@
---- supervisor/options.py.orig	2016-06-08 17:09:41.213297000 +0300
-+++ supervisor/options.py	2016-06-08 17:10:18.970354000 +0300
+--- supervisor/options.py.orig	2018-02-15 21:18:33 UTC
++++ supervisor/options.py
 @@ -96,13 +96,7 @@ class Options:
          self.add("configfile", None, "c:", "configuration=")
  
