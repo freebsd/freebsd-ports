@@ -18,8 +18,6 @@ LICENSE_FILE_IBM=${WRKSRC}/licenses/IBM-LICENSE
 LICENSE_PERMS_CPL=dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_IBM=dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_powerpc64=	fails to compile: cc1: unrecognized command line option -Wpedantic
-
 RUN_DEPENDS=	p5-DateTime-TimeZone>=0:devel/p5-DateTime-TimeZone \
 		exif:graphics/exif
 
@@ -28,7 +26,7 @@ CONFLICTS=	ja-ls-[0-9]* icat-[0-9]*
 CPPFLAGS+=	-D_WITH_GETLINE
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_libpq_fe_h=no
-USES=		libtool perl5 sqlite
+USES=		compiler:c++11-lang libtool perl5 sqlite
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 DATADIR=	${PREFIX}/share/tsk
