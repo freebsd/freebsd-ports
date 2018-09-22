@@ -20,6 +20,8 @@ USE_CABAL=	ConfigFile HStringTemplate HTTP SHA aeson base64-bytestring \
 EXECUTABLE=	expireGititCache gitit
 
 IGNORE=		Doesn't build with newest packages
+DEPRECATED=	Doesn't build with newest packages
+EXPIRATION_DATE=	2018-10-22
 
 FLAGS_DEFINE=	PLUGINS
 FLAGS_DEFAULT=	PLUGINS

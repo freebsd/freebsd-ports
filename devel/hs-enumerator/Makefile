@@ -11,6 +11,8 @@ COMMENT=	Reliable, high-performance processing with left-fold enumerators
 LICENSE=	MIT
 
 IGNORE=		Doesn't build with recent GHC version
+DEPRECATED=	Doesn't build with recent GHC version
+EXPIRATION_DATE=	2018-10-22
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
