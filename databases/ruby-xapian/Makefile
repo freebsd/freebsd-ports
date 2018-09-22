@@ -30,8 +30,8 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR} \
 		--without-php --without-python --without-python3 --without-tcl
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+USES=		compiler:c++11-lang libtool tar:xz
 USE_RUBY=	yes
-USES=		libtool tar:xz
 
 PORTDOCS=	*
 

@@ -29,8 +29,8 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR}
 CONFIGURE_ENV=	PCRE_CONFIG=${LOCALBASE}/bin/pcre-config \
 		XAPIAN_CONFIG=${LOCALBASE}/bin/xapian-config
 GNU_CONFIGURE=	yes
+USES=		compiler:c++11-lang libtool localbase perl5 shebangfix tar:xz
 USE_LDCONFIG=	yes
-USES=		libtool localbase perl5 shebangfix tar:xz
 
 SHEBANG_FILES=	dbi2omega htdig2omega mbox2omega
 

@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR} \
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 LDFLAGS+=	-L${LOCALBASE}/lib/perl5/${PERL_VER}/mach/CORE -lperl
-USES=		libtool perl5 tar:xz
+USES=		compiler:c++11-lang libtool perl5 tar:xz
 
 PORTDOCS=	*
 

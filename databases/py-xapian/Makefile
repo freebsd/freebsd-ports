@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR} \
 		--without-php --without-ruby --without-tcl
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool python tar:xz
+USES=		compiler:c++11-lang libtool python tar:xz
 USE_PYTHON=	flavors
 
 PORTDOCS=	*

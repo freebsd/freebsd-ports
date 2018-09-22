@@ -17,7 +17,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libClp.so:math/clp \
 		liblapack.so:math/lapack
 
-USES=		fortran gmake libtool pkgconfig
+USES=		compiler:c++11-lang fortran gmake libtool pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin-or
 GH_PROJECT=	Cbc
