@@ -10,13 +10,11 @@ MASTER_SITES=	http://code.100allora.it/releases/pdfcube/
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	OpenGL presentation viewer on a spinning cube
 
-BROKEN_powerpc64=	fails to configure: checking for exit in -lboost_program_options... no
-
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
 		libpoppler-glib.so:graphics/poppler-glib \
 		libboost_program_options.so:devel/boost-libs
 
-USES=		pkgconfig
+USES=		compiler:c++11-lang pkgconfig
 USE_GL=		glut
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${LOCALBASE}/lib --includedir=${LOCALBASE}/include

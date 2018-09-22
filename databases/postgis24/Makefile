@@ -19,7 +19,8 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 
 CONFLICTS_INSTALL=	postgis20  postgis21 postgis22 postgis23 postgis
 
-USES=		gettext gmake gnome iconv:wchar_t libtool:keepla perl5 pgsql pkgconfig shebangfix
+USES=		compiler:c++11-lang gettext gmake iconv:wchar_t libtool:keepla \
+		perl5 pgsql pkgconfig shebangfix
 LLD_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE}

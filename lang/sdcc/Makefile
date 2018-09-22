@@ -2,8 +2,8 @@
 
 PORTNAME=	sdcc
 PORTVERSION=	3.7.0
-PORTREVISION=	1
 DISTVERSIONPREFIX=	src-
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
@@ -12,11 +12,13 @@ COMMENT=	Small Device C Compiler
 
 LICENSE=	GPLv3
 
+BROKEN_aarch64=		Fails to configure: BFD does not support target aarch64-portbld-freebsd11.0
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/adjacency_list.hpp:devel/boost-libs
 
 CONFLICTS_INSTALL=	sdcc-[0-9]* sdcc-devel-[0-9]*
 GNU_CONFIGURE=	yes
-USES=		bison gmake readline:port python:2.7,run shebangfix tar:bzip2
+USES=		bison compiler:c++11-lang gmake readline:port python:2.7,run shebangfix tar:bzip2
 SHEBANG_FILES=	support/scripts/as2gbmap.py
 
 OPTIONS_DEFINE=		DEVLIB DOCS UCSIM
@@ -50,8 +52,6 @@ UCSIM_CONFIGURE_OFF=	--disable-ucsim
 Z80_CONFIGURE_OFF=	--disable-gbz80-port --disable-r2k-port		\
 			--disable-r3ka-port --disable-tlcs90-port	\
 			--disable-z180-port --disable-z80-port
-
-BROKEN_aarch64=		Fails to configure: BFD does not support target aarch64-portbld-freebsd11.0
 
 .include <bsd.port.options.mk>
 

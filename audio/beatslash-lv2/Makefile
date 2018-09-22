@@ -16,7 +16,7 @@ BUILD_DEPENDS=	lv2>0:audio/lv2 \
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		pkgconfig waf
+USES=		compiler:c++11-lang pkgconfig waf
 USE_GITHUB=	yes
 GH_ACCOUNT=	blablack
 GH_PROJECT=	${PORTNAME}-lv2

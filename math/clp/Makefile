@@ -13,9 +13,7 @@ COMMENT=	Linear Programming Solver
 
 LICENSE=	EPL
 
-BROKEN_powerpc64=	fails to compile: CoinSignal.hpp: ISO C++ forbids declaration of '__decltype' with no type
-
-USES=		blaslapack fortran libtool tar:tgz pathfix
+USES=		blaslapack compiler:c++11-lang fortran libtool pathfix tar:tgz
 CXXFLAGS+=	-ffast-math
 
 GNU_CONFIGURE=	yes

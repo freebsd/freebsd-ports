@@ -12,7 +12,7 @@ COMMENT=	Toolset for genome set arithmetic such as intersect, union
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake python
+USES=		compiler:c++11-lang gmake python
 USE_GITHUB=	yes
 GH_ACCOUNT=	arq5x
 GH_PROJECT=	bedtools2

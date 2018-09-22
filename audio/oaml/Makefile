@@ -19,7 +19,7 @@ LIB_DEPENDS=	libogg.so:audio/libogg \
 USE_GITHUB=	yes
 GH_ACCOUNT=	oamldev
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 CMAKE_ARGS=	-DENABLE_UNITYPLUGIN:BOOL=OFF
 
 PORTDOCS=	*

@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
 LIB_DEPENDS=	libqscintilla2_qt4.so:devel/qscintilla2
 
-USES=		dos2unix qmake python:run qt:4 shebangfix
+USES=		compiler:c++11-lang dos2unix qmake python:run qt:4 shebangfix
 SHEBANG_FILES=	indenters/*.py indenters/*.rb
 USE_QT=		corelib moc_build uic_build rcc_build \
 		linguist_build network script gui

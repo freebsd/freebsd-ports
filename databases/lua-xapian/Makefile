@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR} \
 CONFIGURE_ENV=	LUA="${LUA_CMD}" LUA_INC="${LUA_INCDIR}" LUA_LIB="${LUA_MODLIBDIR}" LUA_SO=.so
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool lua tar:xz
+USES=		compiler:c++11-lang libtool lua tar:xz
 
 PORTDOCS=	*
 
