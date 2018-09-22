@@ -1,9 +1,0 @@
---- CMakeLists.txt.orig	2017-11-17 23:00:23 UTC
-+++ CMakeLists.txt
-@@ -227,5 +227,5 @@ Cflags: -pthread -I\${OpenEXR_includedir
- INSTALL ( FILES
-   ${CMAKE_BINARY_DIR}/IlmBase.pc
-   DESTINATION
--  lib/pkgconfig
-+  libdata/pkgconfig
- )

@@ -3,7 +3,7 @@
 
 PORTNAME=	cinepaint
 DISTVERSION=	1.0-4
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/CinePaint/CinePaint-${DISTVERSION}
 
@@ -13,7 +13,7 @@ COMMENT=	Editing tool used for painting and retouching of movies
 LICENSE=	GPLv2 LGPL21 MIT
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
+LIB_DEPENDS=	libIlmImf.so:graphics/openexr \
 		libftgl.so:graphics/ftgl \
 		liblcms.so:graphics/lcms \
 		libpng.so:graphics/png \

@@ -3,7 +3,7 @@
 
 PORTNAME=	osg
 PORTVERSION=	3.5.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://trac.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -91,7 +91,7 @@ LUA_VARS_OFF=		FORCE_IGNORE+="Lua51 Lua52"
 NVTT_LIB_DEPENDS=	libnvtt.so:graphics/nvidia-texture-tools
 NVTT_VARS=		FORCE_REQUIRE+=NVTT
 NVTT_VARS_OFF=		FORCE_IGNORE+=NVTT
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr
 OPENEXR_VARS=		FORCE_REQUIRE+=OpenEXR
 OPENEXR_VARS_OFF=	FORCE_IGNORE+=OpenEXR
 PDF_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib

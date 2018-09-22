@@ -3,7 +3,7 @@
 
 PORTNAME=	vips
 PORTVERSION=	8.6.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/libvips/releases/download/v${PORTVERSION}/
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		liborc-0.4.so:devel/orc \
 		libGraphicsMagick.so:graphics/GraphicsMagick \
-		libIlmImf.so:graphics/OpenEXR \
+		libIlmImf.so:graphics/openexr \
 		liblcms2.so:graphics/lcms2 \
 		libexif.so:graphics/libexif	\
 		libpng.so:graphics/png \
@@ -30,7 +30,7 @@ LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		libfreetype.so:print/freetype2 \
 		libgif.so:graphics/giflib \
 		libpoppler-glib.so:graphics/poppler-glib \
-		libImath-2_2.so:graphics/ilmbase \
+		libImath.so:graphics/ilmbase \
 		libhdf5.so:science/hdf5 \
 		libexpat.so:textproc/expat2
 

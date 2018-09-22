@@ -3,7 +3,7 @@
 
 PORTNAME=	blender
 PORTVERSION=	2.79b
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -109,7 +109,7 @@ OPENCOLORIO_LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio \
 				libyaml-cpp03.so:devel/yaml-cpp03 \
 				libtinyxml.so:textproc/tinyxml
 OPENEXR_CMAKE_BOOL=		WITH_IMAGE_OPENEXR
-OPENEXR_LIB_DEPENDS=		libIlmImf.so:graphics/OpenEXR \
+OPENEXR_LIB_DEPENDS=		libIlmImf.so:graphics/openexr \
 				libHalf.so:graphics/ilmbase
 OPENIMAGEIO_IMPLIES=		OPENEXR TIFF
 OPENIMAGEIO_CMAKE_BOOL=		WITH_OPENIMAGEIO

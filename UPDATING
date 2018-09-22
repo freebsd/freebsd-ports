@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180922:
+  AFFECTS: users of graphics/ilmbase, graphics/OpenEXR
+  AUTHOR: mandree@FreeBSD.org
+
+  The IlmBase package has been updated to 2.3.0.
+  The OpenEXR package has been renamed to openexr and updated to 2.3.0.
+
+  The PORTREVISION of all ports requiring either has been bumped to
+  ease the reubuilds, and where there were versions in the file names,
+  these have been removed from the *_DEPENDS lines for easier maintenance.
+
+  A full ports or package upgrade should just work.
+
+  If you are doing partial updates, be sure to rebuild and reinstall
+  all packages that require either of OpenEXR or ilmbase.
+  Normally, these can be listed by running:
+
+  # pkg info -q -r OpenEXR ilmbase  | sort -u | xargs pkg info -q -o
+
 20180905:
   AFFECTS: users of lang/php56
   AUTHOR: tz@FreeBSD.org

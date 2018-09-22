@@ -3,7 +3,7 @@
 
 PORTNAME=	appleseed
 DISTVERSION=	1.7.1-beta
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpng.so:graphics/png \
-		libIlmImf.so:graphics/OpenEXR \
+		libIlmImf.so:graphics/openexr \
 		libxerces-c.so:textproc/xerces-c3 \
 		liboslexec.so:graphics/openshadinglanguage
 

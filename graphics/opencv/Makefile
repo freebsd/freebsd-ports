@@ -3,7 +3,7 @@
 
 PORTNAME=	opencv
 PORTVERSION=	3.4.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
@@ -210,7 +210,7 @@ GDCM_DESC=		Open source DICOM library
 GDCM_LIB_DEPENDS=	libgdcmMSFF.so:devel/gdcm
 GDCM_CMAKE_BOOL=	WITH_GDCM
 
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr
 OPENEXR_CMAKE_BOOL=	WITH_OPENEXR
 
 PNG_LIB_DEPENDS=	libpng.so:graphics/png

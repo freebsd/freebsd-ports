@@ -10528,3 +10528,4 @@ devel/hs-hashed-storage||2018-09-16|Has expired: Not being developed upstream
 www/py-searx|www/searx|2018-09-16|Move to a proper directory: this is a server, not a library
 net/syndication|net/kf5-syndication|2018-09-17|Has become a proper KDE framework
 x11-wm/swm||2018-09-21|Has expired: upstream no longer maintained, the screen turns black after starting swm
+graphics/OpenEXR|graphics/openexr|2018-09-22|Renamed to match upstream distribution's lower-case name

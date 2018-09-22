@@ -2,7 +2,7 @@
 
 PORTNAME=	ImageMagick
 DISTVERSION=	7.0.7-16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
 		http://www.imagemagick.org/download/legacy/ \
@@ -171,8 +171,8 @@ PLIST_SUB+=		MODULES='@comment '
 . if ${_IMAGEMAGICK_THREADS} == "no"
 IGNORE=OpenEXR requires threads. ${_IMAGEMAGICK_THREADS_IGNORE_MSG}
 . else
-LIB_DEPENDS+=		libIlmImf.so:graphics/OpenEXR \
-			libImath-2_2.so:graphics/ilmbase
+LIB_DEPENDS+=		libIlmImf.so:graphics/openexr \
+			libImath.so:graphics/ilmbase
 PLIST_SUB+=		OPENEXR=""
 . endif
 .else

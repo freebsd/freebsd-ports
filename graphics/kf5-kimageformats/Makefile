@@ -2,6 +2,7 @@
 
 PORTNAME=	kimageformats
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -17,7 +18,7 @@ OPTIONS_DEFINE=	OPENEXR
 OPTIONS_DEFAULT=	OPENEXR
 OPTIONS_SUB=	yes
 
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr
 OPENEXR_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenEXR
 
 .include <bsd.port.mk>

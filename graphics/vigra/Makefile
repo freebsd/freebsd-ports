@@ -3,7 +3,7 @@
 
 PORTNAME=	vigra
 DISTVERSION=	1.11.0
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -40,7 +40,7 @@ HDF5_CMAKE_BOOL=	WITH_HDF5
 HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5
 
 OPENEXR_CMAKE_BOOL=	WITH_OPENEXR
-OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr
 
 NUMPY_DESC=		NumPy mathematical computing (USE Fortran/GCC47+)
 NUMPY_CMAKE_BOOL=	WITH_VIGRANUMPY

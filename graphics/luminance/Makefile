@@ -3,7 +3,7 @@
 
 PORTNAME=	luminance-hdr
 DISTVERSION=	2.3.1
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	graphics
 MASTER_SITES=	SF/qtpfsgui/luminance/${DISTVERSION}
 
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
 		libexiv2.so:graphics/exiv2 \
-		libIlmImf.so:graphics/OpenEXR \
+		libIlmImf.so:graphics/openexr \
 		libtiff.so:graphics/tiff \
 		libgsl.so:math/gsl \
 		libraw_r.so:graphics/libraw \

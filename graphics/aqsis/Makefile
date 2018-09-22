@@ -3,7 +3,7 @@
 
 PORTNAME=	aqsis
 PORTVERSION=	1.8.2
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION}
 
@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	bison:devel/bison \
 		xsltproc:textproc/libxslt
-LIB_DEPENDS=	libIlmImf.so:graphics/OpenEXR \
+LIB_DEPENDS=	libIlmImf.so:graphics/openexr \
 		libboost_filesystem.so:devel/boost-libs \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS=	bash:shells/bash

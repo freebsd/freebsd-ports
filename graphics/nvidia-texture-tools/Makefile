@@ -3,7 +3,7 @@
 
 PORTNAME=	nvidia-texture-tools
 PORTVERSION=	2.0.8.1 # needed to not bump PORTEPOCH; remove on next update
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/NVIDIA_Texture_Tools_LICENSE.txt
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
-		libIlmImf.so:graphics/OpenEXR
+		libIlmImf.so:graphics/openexr
 
 BROKEN_powerpc=		does not build
 BROKEN_sparc64=		does not build
