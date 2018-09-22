@@ -1,6 +1,0 @@
-@sample etc/supervisord.conf.sample
-@exec mkdir -p %%PIDDIR%%
-@unexec echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-@unexec echo "If you are permanently removing py-supervisor, you should also:" | /usr/bin/fmt
-@unexec echo "'rm -rf %%PIDDIR%%'" | /usr/bin/fmt
-@unexec echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
