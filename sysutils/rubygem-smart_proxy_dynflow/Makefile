@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	smart_proxy_dynflow
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -13,9 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	foreman-proxy>=1.12.0:net/foreman-proxy
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	"@sample etc/foreman-proxy/settings.d/dynflow.yml.sample" \
 		share/foreman-proxy/bundler.d/dynflow.rb
