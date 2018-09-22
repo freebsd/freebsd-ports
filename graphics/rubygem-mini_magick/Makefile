@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mini_magick
-PORTVERSION=	4.8.0
+PORTVERSION=	4.9.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -13,13 +13,31 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 OPTIONS_DEFINE=	X11
-OPTIONS_DEFAULT=X11
+OPTIONS_SINGLE=	IMAGEMAGICK
+OPTIONS_SINGLE_IMAGEMAGICK=	IMAGEMAGICK6 IMAGEMAGICK7
+OPTIONS_DEFAULT=IMAGEMAGICK6 X11
+IMAGEMAGICK6_DESC=	Use ImageMagick 6.x (graphics/ImageMagick)
+IMAGEMAGICK7_DESC=	Use ImageMagick 7.x (graphics/ImageMagick7)
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
-X11_RUN_DEPENDS=	convert:graphics/ImageMagick
-X11_RUN_DEPENDS_OFF=	convert:graphics/ImageMagick-nox11
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
+.if ${PORT_OPTIONS:MIMAGEMAGICK6}
+RUN_DEPENDS+=	convert:graphics/ImageMagick
+.else
+RUN_DEPENDS+=	convert:graphics/ImageMagick7
+.endif
+.else
+.if ${PORT_OPTIONS:MIMAGEMAGICK6}
+RUN_DEPENDS+=	convert:graphics/ImageMagick-nox11
+.else
+RUN_DEPENDS+=	convert:graphics/ImageMagick7-nox11
+.endif
+.endif
 
 .include <bsd.port.mk>
