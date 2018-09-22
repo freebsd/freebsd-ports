@@ -1,0 +1,5 @@
+ViTables is a graphical tool for browsing and editing files in both PyTables
+and HDF5 format. With ViTables you can easily navigate through the data
+hierarchy, view and modify metadata, view actual data and more.
+
+WWW: https://github.com/uvemas/ViTables
