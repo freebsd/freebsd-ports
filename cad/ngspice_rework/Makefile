@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ngspice_rework
-PORTVERSION=	26
-PORTREVISION=	3
+PORTVERSION=	28
 CATEGORIES=	cad
 MASTER_SITES=	SF/ngspice/ng-spice-rework/${PORTVERSION}
 DISTNAME=	ngspice-${PORTVERSION}
@@ -17,26 +16,32 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=	Fails to link: missing sbrk
 
-USES=		gmake libtool readline
+LIB_DEPENDS=	libfftw3.so:math/fftw3
+
+FLAVORS=	x11 shlib
+shlib_PKGNAMESUFFIX=	-shlib
+shlib_CONFLICTS_INSTALL=	ngspice_rework-2*
+x11_CONFLICTS_INSTALL=		ngspice_rework-shlib-2*
+
+USES=		gmake libtool ncurses readline
+
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--enable-cider --enable-xspice --with-readline=yes
+CONFIGURE_ARGS=	--enable-cider --enable-shared --enable-xspice --with-readline=yes
 
-OPTIONS_DEFINE=			DEBUG
-OPTIONS_DEFAULT=		X11
-OPTIONS_SINGLE=			INTERFACE
-OPTIONS_SINGLE_INTERFACE=	SHLIB X11
-OPTIONS_SUB=			yes
+OPTIONS_DEFINE=	DEBUG
 
-SHLIB_DESC=		Build as a shared library
+.if ${FLAVOR:U} ==	shlib
+CONFIGURE_ARGS+=	--with-ngshared
+PLIST_SUB+=		SHLIB="" X11="@comment "
+.else
+USE_XORG=		ice sm x11 xaw xext xmu xt
+CONFIGURE_ARGS+=	--with-x
+PLIST_SUB+=		SHLIB="@comment " X11=""
+.endif
 
 DEBUG_CONFIGURE_ENABLE=	debug
-
-SHLIB_CONFIGURE_WITH=	ngshared
-
-X11_USE=		XORG=ice,sm,x11,xaw,xext,xmu,xt
-X11_CONFIGURE_WITH=	x
 
 INSTALL_TARGET=	install-strip
 
