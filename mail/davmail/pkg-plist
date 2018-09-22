@@ -1,6 +1,7 @@
 bin/davmail
 @sample etc/davmail.properties.sample
 share/applications/davmail.desktop
+%%DATADIR%%/%%PORTVERSION%%/releasenotes.txt
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Info.plist
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/activation-1.1.1.jar
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/commons-codec-1.3.jar
@@ -8,7 +9,7 @@ share/applications/davmail.desktop
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/commons-httpclient-3.1.jar
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/commons-logging-1.0.4.jar
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/davmail.jar
-%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/htmlcleaner-2.2.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/htmlcleaner-2.21.jar
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/jackrabbit-webdav-2.4.3.jar
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/jcharset-1.3.jar
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/jcifs-1.3.14.jar
@@ -17,8 +18,8 @@ share/applications/davmail.desktop
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/libgrowl.jnilib
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/log4j-1.2.16.jar
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/mail-1.4.3.jar
-%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/slf4j-api-1.3.1.jar
-%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/slf4j-log4j12-1.3.1.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/slf4j-api-1.7.25.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/slf4j-log4j12-1.7.25.jar
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/stax-api-1.0.1.jar
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/stax2-api-3.1.1.jar
 %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Java/woodstox-core-asl-4.1.2.jar
@@ -34,7 +35,7 @@ share/applications/davmail.desktop
 %%JAVASHAREDIR%%/davmail/lib/commons-collections-3.1.jar
 %%JAVASHAREDIR%%/davmail/lib/commons-httpclient-3.1.jar
 %%JAVASHAREDIR%%/davmail/lib/commons-logging-1.0.4.jar
-%%JAVASHAREDIR%%/davmail/lib/htmlcleaner-2.2.jar
+%%JAVASHAREDIR%%/davmail/lib/htmlcleaner-2.21.jar
 %%JAVASHAREDIR%%/davmail/lib/jackrabbit-webdav-2.4.3.jar
 %%JAVASHAREDIR%%/davmail/lib/jcharset-1.3.jar
 %%JAVASHAREDIR%%/davmail/lib/jcifs-1.3.14.jar
@@ -44,8 +45,8 @@ share/applications/davmail.desktop
 %%JAVASHAREDIR%%/davmail/lib/libgrowl.jnilib
 %%JAVASHAREDIR%%/davmail/lib/log4j-1.2.16.jar
 %%JAVASHAREDIR%%/davmail/lib/mail-1.4.3.jar
-%%JAVASHAREDIR%%/davmail/lib/slf4j-api-1.3.1.jar
-%%JAVASHAREDIR%%/davmail/lib/slf4j-log4j12-1.3.1.jar
+%%JAVASHAREDIR%%/davmail/lib/slf4j-api-1.7.25.jar
+%%JAVASHAREDIR%%/davmail/lib/slf4j-log4j12-1.7.25.jar
 %%JAVASHAREDIR%%/davmail/lib/stax-api-1.0.1.jar
 %%JAVASHAREDIR%%/davmail/lib/stax2-api-3.1.1.jar
 %%JAVASHAREDIR%%/davmail/lib/winrun4j-0.4.5.jar
@@ -59,7 +60,7 @@ share/applications/davmail.desktop
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/commons-httpclient-3.1.jar
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/commons-logging-1.0.4.jar
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/davmail.jar
-%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/htmlcleaner-2.2.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/htmlcleaner-2.21.jar
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/jackrabbit-webdav-2.4.3.jar
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/jcharset-1.3.jar
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/jcifs-1.3.14.jar
@@ -67,8 +68,8 @@ share/applications/davmail.desktop
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/junit-3.8.1.jar
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/log4j-1.2.16.jar
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/mail-1.4.3.jar
-%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/slf4j-api-1.3.1.jar
-%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/slf4j-log4j12-1.3.1.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/slf4j-api-1.7.25.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/slf4j-log4j12-1.7.25.jar
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/stax-api-1.0.1.jar
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/stax2-api-3.1.1.jar
 %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/woodstox-core-asl-4.1.2.jar
