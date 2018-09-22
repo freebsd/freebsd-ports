@@ -40,6 +40,7 @@ japanese/ibus-mozc		Mozc engine for IBus
 japanese/ibus-skk		SKK engine for IBus
 korean/ibus-hangul		Hangul engine for IBus
 textproc/ibus-kmfl		KMFL IMEngine for IBus framework
+textproc/ibus-m17n		m17n IM engine for IBus framework
 textproc/ibus-table		Table based IM framework for IBus
 textproc/ibus-typing-booster    Faster typing by context sensitive completion
 
