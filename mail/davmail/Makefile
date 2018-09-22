@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	davmail
-PORTVERSION=	4.8.0
-PORTREVISION=	1
+PORTVERSION=	4.8.6
 CATEGORIES=	mail java
 MASTER_SITES=	SF/davmail/davmail/${PORTVERSION}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}-${REVISION}
@@ -14,13 +13,14 @@ COMMENT=	POP/IMAP/SMTP/Caldav/Carddav/LDAP Exchange Gateway
 LICENSE=	GPLv2
 
 USES=		dos2unix tar:tgz
+
 DOS2UNIX_FILES=	build.xml
 NO_ARCH=	yes
 USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 ALL_TARGET=	release
-REVISION=	2479  # 4.8.0
+REVISION=	2600  # 4.8.6
 # port build number, same as on DISTNAME
 MAKE_ARGS=	-Drevision=${REVISION}
 MAKE_ENV+=	"ANT_OPTS=-Dfile.encoding=UTF-8"
@@ -32,6 +32,7 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 USE_RC_SUBR=	davmail
 SUB_FILES=	davmail.sh pkg-message
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#exec=\"davmail\"#exec=\"${PREFIX}/bin/davmail\"#' \
