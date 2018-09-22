@@ -17,6 +17,8 @@ WX_COMPS=	wx
 IGNORE_DOCS=	yes
 
 IGNORE=		Doesn't build with recent GHC version
+DEPRECATED=	Doesn't build with recent GHC version
+EXPIRATION_DATE=	2018-10-22
 
 post-patch::
 	@${REINPLACE_CMD} 's|"wx-config"|"wxgtk2u-3.0-config"| ; \

@@ -12,5 +12,8 @@ LICENSE=	MIT
 
 USE_CABAL=	attoparsec>=0.10 enumerator>=0.4
 
+DEPRECATED=	Doesn't build with recent GHC version
+EXPIRATION_DATE=	2018-10-22
+
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
