@@ -6305,6 +6305,7 @@
     SUBDIR += viewvc
     SUBDIR += violet
     SUBDIR += visualparadigm
+    SUBDIR += vitables
     SUBDIR += vstr
     SUBDIR += vulkan-headers
     SUBDIR += vulkan-tools
