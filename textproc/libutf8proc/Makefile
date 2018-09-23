@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://download.netsurf-browser.org/libs/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.3$//}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	neel@neelc.org
 COMMENT=	UTF8 Processing library
 
 LICENSE=	MIT
