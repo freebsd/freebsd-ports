@@ -5,7 +5,7 @@ PORTNAME=	xapian-bindings
 PORTVERSION=	1.2.25
 PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
+MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
 PKGNAMESUFFIX=	12
 
