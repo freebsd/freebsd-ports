@@ -1,24 +1,27 @@
 # Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	busybee
-PORTVERSION=	0.5.0
-PORTREVISION=	1
-CATEGORIES=	devel
-MASTER_SITES=	http://hyperdex.org/src/
+PORTNAME=		busybee
+PORTVERSION=		0.7.0
+DISTVERSIONPREFIX=	releases/
+CATEGORIES=		devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	egypcio@googlemail.com
 COMMENT=	High-performance messaging layer
 
 LICENSE=	BSD3CLAUSE
-
-LIB_DEPENDS=	libe.so:devel/libe
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libpo6.pc:devel/libpo6
-
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-USES=		gmake libtool pathfix pkgconfig
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
+
+LIB_DEPENDS=	libe.so:devel/libe \
+		libpo6.so:devel/libpo6
+
+GNU_CONFIGURE=	yes
+USES=		autoreconf gmake libtool pathfix pkgconfig
+USE_GITHUB=	yes
+USE_LDCONFIG=	yes
+
+GH_ACCOUNT=	rescrv
 
 .include <bsd.port.mk>
