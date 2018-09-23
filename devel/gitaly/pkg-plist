@@ -21,6 +21,7 @@
 %%DATADIR%%/ruby/lib/gitlab/config.rb
 %%DATADIR%%/ruby/lib/gitlab/git.rb
 %%DATADIR%%/ruby/lib/gitlab/git/blob.rb
+%%DATADIR%%/ruby/lib/gitlab/git/branch.rb
 %%DATADIR%%/ruby/lib/gitlab/git/commit.rb
 %%DATADIR%%/ruby/lib/gitlab/git/commit_stats.rb
 %%DATADIR%%/ruby/lib/gitlab/git/conflict/resolver.rb
@@ -30,11 +31,13 @@
 %%DATADIR%%/ruby/lib/gitlab/git/index.rb
 %%DATADIR%%/ruby/lib/gitlab/git/lfs_changes.rb
 %%DATADIR%%/ruby/lib/gitlab/git/pre_receive_error.rb
+%%DATADIR%%/ruby/lib/gitlab/git/raw_diff_change.rb
+%%DATADIR%%/ruby/lib/gitlab/git/ref.rb
 %%DATADIR%%/ruby/lib/gitlab/git/remote_mirror.rb
 %%DATADIR%%/ruby/lib/gitlab/git/repository.rb
 %%DATADIR%%/ruby/lib/gitlab/git/repository_mirroring.rb
 %%DATADIR%%/ruby/lib/gitlab/git/rev_list.rb
-%%DATADIR%%/ruby/lib/gitlab/git/support/format-git-cat-file-input
+%%DATADIR%%/ruby/lib/gitlab/git/tag.rb
 %%DATADIR%%/ruby/lib/gitlab/git/wiki.rb
 %%DATADIR%%/ruby/lib/gitlab/git/wiki_file.rb
 %%DATADIR%%/ruby/lib/gitlab/git/wiki_page.rb
@@ -54,6 +57,7 @@
 %%DATADIR%%/ruby/spec/lib/gitlab/config_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/diff_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/index_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git/repository_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/rev_list_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/wiki_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/version_info_spec.rb
@@ -64,9 +68,6 @@
 %%DATADIR%%/ruby/vendor/gitlab_git/REVISION
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/encoding_helper.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git.rb
-%%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/attributes_at_ref_parser.rb
-%%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/attributes_parser.rb
-%%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/branch.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/committer_with_hooks.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/conflict/file.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/conflict/parser.rb
@@ -78,16 +79,12 @@
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/path_helper.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/popen.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/pre_receive_error.rb
-%%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/raw_diff_change.rb
-%%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/ref.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/remote_mirror.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/remote_repository.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/repository.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/repository_mirroring.rb
-%%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/tag.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/user.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/util.rb
-%%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/git/version.rb
 %%DATADIR%%/ruby/vendor/gitlab_git/lib/gitlab/utils/strong_memoize.rb
 @(,,555) %%DATADIR%%/bin/gitaly
 @(,,555) %%DATADIR%%/bin/gitaly-ssh
