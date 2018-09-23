@@ -257,6 +257,7 @@
     SUBDIR += rubygem-gtksourceview3
     SUBDIR += rubygem-pango
     SUBDIR += rubygem-poppler
+    SUBDIR += rubygem-tk
     SUBDIR += rubygem-uh
     SUBDIR += rubygem-vte
     SUBDIR += rubygem-vte3
