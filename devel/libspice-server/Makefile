@@ -13,8 +13,6 @@ COMMENT=	Implements the server side of the SPICE protocol
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	fails to compile: red-channel-client.h:44: redefinition of typedef 'RedChannelClient'
-
 LIB_DEPENDS=	libopus.so:audio/opus
 BUILD_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol
 
@@ -35,8 +33,8 @@ SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 STATISTICS_CONFIGURE_ENABLE=	statistics
 
-USES=		autoreconf gmake jpeg libtool localbase:ldflag pkgconfig \
-		python ssl tar:bzip2
+USES=		autoreconf compiler:c++11-lang gmake jpeg libtool \
+		localbase:ldflag pkgconfig python ssl tar:bzip2
 
 USE_GNOME=	glib20
 USE_XORG=	pixman

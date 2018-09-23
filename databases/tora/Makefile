@@ -20,8 +20,9 @@ LIB_DEPENDS=	libqscintilla2_qt4.so:devel/qscintilla2 \
 OPTIONS_DEFINE=	PGSQL MYSQL DOCS
 OPTIONS_DEFAULT=	PGSQL MYSQL
 
+USES=		autoreconf compiler:c++11-lang gmake libtool localbase:ldflags \
+		makeinfo qmake:no_env qt:4
 USE_QT=		corelib gui sql xml network moc_build qmake_build rcc_build uic_build
-USES=		autoreconf gmake libtool localbase:ldflags makeinfo qmake:no_env qt:4
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pcre=${LOCALBASE} \
 		--with-qt-includes=${QT_INCDIR} \
