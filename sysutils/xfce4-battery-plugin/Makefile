@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-battery-plugin
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
