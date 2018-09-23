@@ -2,8 +2,7 @@
 
 PORTNAME=	prometheus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.2
-PORTREVISION=	1
+DISTVERSION=	2.4.2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dor.bsd@xm0.uk
@@ -57,17 +56,18 @@ PLIST_SUB+=	PORTNAME=${PORTNAME} \
 
 BUILD_USER?=	${USER}
 LD_FLAG_X_PREFIX=	-X ${GO_PKGNAME}/vendor/${GO_PKGNAME:H}/common/version
-LD_FLAG_STRING=	-s \
+LD_FLAG_STRING=		-s \
 		${LD_FLAG_X_PREFIX}.Version=${PORTVERSION} \
 		${LD_FLAG_X_PREFIX}.Revision=${PORTREVISION} \
 		${LD_FLAG_X_PREFIX}.Branch=release-${PORTVERSION:R} \
 		${LD_FLAG_X_PREFIX}.BuildUser=${BUILD_USER}
+GO_BUILDFLAGS=	-v -ldflags "${LD_FLAG_STRING}"
 
 do-build:
 .for bin in ${PROMETHEUS_BINARIES}
 	( cd ${GO_WRKSRC}/cmd/${bin} ; \
 		${SETENV} ${MAKE_ENV} ${GO_ENV} \
-		${GO_CMD} install -v -ldflags "${LD_FLAG_STRING}" )
+		${GO_CMD} install ${GO_BUILDFLAGS} )
 .endfor
 
 do-install:
