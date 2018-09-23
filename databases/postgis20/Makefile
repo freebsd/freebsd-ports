@@ -28,6 +28,10 @@ TOPOLOGY_DESC=	Topology support
 
 PORTSCOUT=	limit:^2.0.[0-9]*
 
+USES=		gmake gnome iconv:wchar_t libtool perl5 pgsql pkgconfig shebangfix
+USE_GNOME=	libxml2
+USE_PERL5=	build
+
 CONFIGURE_ARGS=	--with-geosconfig=${LOCALBASE}/bin/geos-config \
 		--with-jsondir=${LOCALBASE} \
 		--with-pgconfig=${LOCALBASE}/bin/pg_config \
@@ -35,11 +39,8 @@ CONFIGURE_ARGS=	--with-geosconfig=${LOCALBASE}/bin/geos-config \
 		--with-xml2config=${LOCALBASE}/bin/xml2-config \
 		${ICONV_CONFIGURE_ARG} ${ICONV_CONFIGURE_BASE}
 GNU_CONFIGURE=	yes
-USES=		gmake gnome iconv:wchar_t libtool perl5 pgsql pkgconfig shebangfix
 LLD_UNSAFE=	yes
-USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
-USE_PERL5=	build
 WANT_PGSQL=	lib server
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
