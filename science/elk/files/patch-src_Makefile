@@ -1,0 +1,11 @@
+--- src/Makefile.orig	2018-09-23 04:08:15 UTC
++++ src/Makefile
+@@ -175,7 +175,7 @@ EXE = elk
+ # Targets
+ #-------------------------------------------------------------------------------
+ elk:	$(OBJ)
+-	$(F90) $(F90_OPTS) -o $(EXE) $(OBJ) $(LIB_LPK) $(LIB_FFT) $(LIB_libxc) \
++	$(F90) $(F90_OPTS) -o $(EXE) $(LDFLAGS) $(OBJ) $(LIB_LPK) $(LIB_FFT) $(LIB_libxc) \
+          $(LIB_SYS)
+ 
+ blas:

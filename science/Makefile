@@ -62,6 +62,7 @@
     SUBDIR += dlpoly-classic
     SUBDIR += eccodes
     SUBDIR += ecs
+    SUBDIR += elk
     SUBDIR += epte
     SUBDIR += erd
     SUBDIR += fastcap
