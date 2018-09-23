@@ -3,6 +3,7 @@
 PORTNAME=	amass
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	go:lang/go
 USE_GITHUB=	nodefault # main code is in GH_TUPLE, otherwise build fails with circular dependency errors
 GH_ACCOUNT=	OWASP
 GH_PROJECT=	Amass
-GH_TUPLE=	OWASP:Amass:2.6.0-11-g1ef5a43:main/src/github.com/OWASP/Amass \
+GH_TUPLE=	OWASP:Amass:2.7.0:main/src/github.com/OWASP/Amass \
 		andybalholm:cascadia:v1.0.0:cascadia/src/github.com/andybalholm/cascadia \
 		asaskevich:EventBus:d46933a:EventBus/src/github.com/asaskevich/EventBus \
 		fatih:color:v1.7.0:color/src/github.com/fatih/color \
@@ -36,7 +37,7 @@ GH_TUPLE=	OWASP:Amass:2.6.0-11-g1ef5a43:main/src/github.com/OWASP/Amass \
 		golang:text:4ae1256:text/src/golang.org/x/text \
 		golang:tools:18207bb:tools/src/golang.org/x/tools
 
-PROGS=		${PORTNAME} ${PORTNAME}.db ${PORTNAME}.maltego ${PORTNAME}.netnames ${PORTNAME}.viz
+PROGS=		${PORTNAME} ${PORTNAME}.db ${PORTNAME}.maltego ${PORTNAME}.netdomains ${PORTNAME}.viz
 
 PLIST_FILES=	${PROGS:C/^/bin\//}
 
