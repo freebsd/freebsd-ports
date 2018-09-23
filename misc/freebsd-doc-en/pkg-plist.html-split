@@ -1020,6 +1020,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gettext-tools.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gettext.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-ghostscript.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gmake.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-gnome.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-go.html
