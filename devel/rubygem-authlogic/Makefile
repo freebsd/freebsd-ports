@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	authlogic
-PORTVERSION=	4.4.0
+PORTVERSION=	4.4.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -17,8 +17,9 @@ RUN_DEPENDS=	rubygem-activerecord4>=4.2:databases/rubygem-activerecord4 \
 		rubygem-request_store>=1.0:devel/rubygem-request_store \
 		rubygem-scrypt>=1.2:security/rubygem-scrypt
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
