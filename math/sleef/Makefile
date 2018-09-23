@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 IGNORE_FreeBSD_10=	base compiler too old
 
-USES=		cmake:outsource
+USES=		cmake:outsource compiler:c11
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
