@@ -106,6 +106,7 @@
     SUBDIR += beadm
     SUBDIR += beadm-devel
     SUBDIR += beats
+    SUBDIR += bfs
     SUBDIR += bhyve-firmware
     SUBDIR += bhyve-rc
     SUBDIR += biosfont

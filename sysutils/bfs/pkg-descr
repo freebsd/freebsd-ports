@@ -1,0 +1,8 @@
+bfs(1) is a breadth-first version of the UNIX find(1) command.
+
+It supports almost every feature from every major find(1)
+implementation, so your existing command lines should work as-is.
+It also adds some features of its own, such as a more forgiving
+command line parser and some additional options.
+
+WWW: https://github.com/tavianator/bfs
