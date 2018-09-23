@@ -23,5 +23,7 @@ RUST_BOOTSTRAP_VERSION=		beta
 CARGO_BOOTSTRAP_VERSION=	beta
 
 ONLY_FOR_ARCHS=			amd64 i386
+IGNORE=				is older than stable version. Get nightly via rustup or \
+				use lang/rust and pass RUSTC_BOOTSTRAP=1 via environ(7)
 
 .include "${MASTERDIR}/Makefile"
