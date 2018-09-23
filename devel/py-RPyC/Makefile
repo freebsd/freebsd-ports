@@ -8,7 +8,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	kozlov.sergey.404@gmail.com
+MAINTAINER=	skozlov@FreeBSD.org
 COMMENT=	Remote Python Call
 
 LICENSE=	MIT

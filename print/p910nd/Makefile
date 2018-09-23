@@ -5,7 +5,7 @@ PORTVERSION=	0.97
 CATEGORIES=	print net
 MASTER_SITES=	SF
 
-MAINTAINER=	kozlov.sergey.404@gmail.com
+MAINTAINER=	skozlov@FreeBSD.org
 COMMENT=	Port 9100+n printer daemon
 
 LICENSE=	GPLv2

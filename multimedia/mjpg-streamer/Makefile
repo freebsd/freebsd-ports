@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Sourcecode
 
-MAINTAINER=	kozlov.sergey.404@gmail.com
+MAINTAINER=	skozlov@FreeBSD.org
 COMMENT=	HTTP video streaming daemon
 
 LICENSE=	GPLv2

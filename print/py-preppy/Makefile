@@ -7,7 +7,7 @@ CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	kozlov.sergey.404@gmail.com
+MAINTAINER=	skozlov@FreeBSD.org
 COMMENT=	ReportLab's templating system
 
 LICENSE=	BSD3CLAUSE

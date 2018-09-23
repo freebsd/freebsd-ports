@@ -7,7 +7,7 @@ CATEGORIES=	devel net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/V${PORTVERSION}
 DISTNAME=	STAF${PORTVERSION:S/.//g}-src
 
-MAINTAINER=	kozlov.sergey.404@gmail.com
+MAINTAINER=	skozlov@FreeBSD.org
 COMMENT=	Software Testing Automation Framework
 
 LICENSE=	EPL
