@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-weather-plugin
-PORTVERSION=	0.8.10
+PORTVERSION=	0.9.0
 CATEGORIES=	misc xfce geography
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -14,12 +14,12 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
-	libfontconfig.so:x11-fonts/fontconfig \
-	libfreetype.so:print/freetype2
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
-USES=		gettext gmake libtool pkgconfig xfce tar:bzip2
+USES=		gettext gmake libtool pkgconfig xfce:gtk3 tar:bzip2
 GNU_CONFIGURE=	yes
-USE_GNOME=	glib20 gtk20 intltool intlhack libxml2 cairo
+USE_GNOME=	glib20 gtk30 intltool intlhack libxml2 cairo
 USE_XFCE=	panel
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
