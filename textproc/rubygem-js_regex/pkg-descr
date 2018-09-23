@@ -1,0 +1,6 @@
+JsRegex converts Ruby's native regular expressions
+for JavaScript, taking care of various
+incompatibilities and returning warnings for
+unsolvable differences.
+
+WWW: https://github.com/janosch-x/js_regex

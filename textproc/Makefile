@@ -1573,6 +1573,7 @@
     SUBDIR += rubygem-jekyll-sass-converter
     SUBDIR += rubygem-jekyll-sitemap
     SUBDIR += rubygem-jemoji
+    SUBDIR += rubygem-js_regex
     SUBDIR += rubygem-jsmin
     SUBDIR += rubygem-kramdown
     SUBDIR += rubygem-kwalify
@@ -1606,6 +1607,7 @@
     SUBDIR += rubygem-rdiscount
     SUBDIR += rubygem-rdtool
     SUBDIR += rubygem-redcarpet
+    SUBDIR += rubygem-regexp_parser
     SUBDIR += rubygem-representable
     SUBDIR += rubygem-reverse_markdown
     SUBDIR += rubygem-ri_cal
