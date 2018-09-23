@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	icestorm>=g0:devel/icestorm
 
-USES=		gmake
+USES=		compiler:c++11-lang gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cseed
