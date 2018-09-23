@@ -15,7 +15,7 @@ LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
 PORTSCOUT=	limit:^.*\.[0-9]+$$
 
-USES=		cmake localbase ssl
+USES=		cmake compiler:c++11-lang localbase ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	cern-it-sdc-id
 USE_GNOME=	libxml2

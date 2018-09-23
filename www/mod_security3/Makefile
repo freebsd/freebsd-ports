@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libyajl.so:devel/yajl \
 		libGeoIP.so:net/GeoIP
 
-USES=		gmake autoreconf libtool pkgconfig:build
+USES=		autoreconf compiler:c++11-lang gmake libtool pkgconfig:build
 USE_GNOME=	libxml2
 # GCC because of https://github.com/SpiderLabs/ModSecurity/issues/1411
 USE_GCC=	yes
