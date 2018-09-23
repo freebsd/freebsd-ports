@@ -1,0 +1,9 @@
+--- Makefile.orig	2018-09-23 03:56:50 UTC
++++ Makefile
+@@ -1,5 +1,5 @@
+ 
+-MAKE = make
++xMAKE = make
+ 
+ include make.inc
+ 

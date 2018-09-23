@@ -1,0 +1,14 @@
+
+MAKE = %%GMAKE%%
+F90 = %%FC%%
+F90_OPTS = -O3 -ffast-math -funroll-loops %%OPENMP_FLAGS%%
+F77 = %%FC%%
+F77_OPTS = -O3 -ffast-math -funroll-loops %%OPENMP_FLAGS%%
+AR = ar
+LIB_SYS = 
+LIB_LPK = lapack.a blas.a
+LIB_FFT = fftlib.a
+SRC_OMP = 
+SRC_MPI = mpi_stub.f90
+SRC_libxc = libxcifc_stub.f90
+SRC_FFT = zfftifc.f90
