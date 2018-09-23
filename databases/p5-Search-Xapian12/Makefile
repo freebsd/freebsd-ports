@@ -4,7 +4,7 @@
 PORTNAME=	Search-Xapian
 PORTVERSION=	1.2.25.2
 CATEGORIES=	databases perl5
-MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION:R}/ \
+MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION:R}/ \
 		LOCAL/sunpoet \
 		CPAN
 PKGNAMEPREFIX=	p5-
