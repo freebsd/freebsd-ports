@@ -21,14 +21,17 @@
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/moment/moment.js
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/popper/popper.js
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-brands-400.eot
+%%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-brands-400.svg
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-brands-400.ttf
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-brands-400.woff
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-brands-400.woff2
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-regular-400.eot
+%%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-regular-400.svg
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-regular-400.ttf
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-regular-400.woff
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-regular-400.woff2
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-solid-900.eot
+%%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-solid-900.svg
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-solid-900.ttf
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-solid-900.woff
 %%SITE_PERL%%/Mojolicious/Plugin/Minion/resources/public/minion/webfonts/fa-solid-900.woff2
