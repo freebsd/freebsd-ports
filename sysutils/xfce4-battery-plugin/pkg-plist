@@ -42,6 +42,7 @@ share/icons/hicolor/scalable/apps/xfce4-battery-ok.svg
 share/icons/hicolor/scalable/apps/xfce4-battery-plugin.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-battery-plugin.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-battery-plugin.mo
+%%NLS%%share/locale/be/LC_MESSAGES/xfce4-battery-plugin.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xfce4-battery-plugin.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfce4-battery-plugin.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xfce4-battery-plugin.mo
