@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pciids
-PORTVERSION=	20180812
+PORTVERSION=	20180921
 CATEGORIES=	misc
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -17,7 +17,7 @@ NO_BUILD=	yes
 PORTDATA=	pci.ids
 
 GH_ACCOUNT=	pciutils
-GH_TAGNAME=	f118d02
+GH_TAGNAME=	3def3dc
 USE_GITHUB=	yes
 
 do-install:
