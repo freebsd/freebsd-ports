@@ -1,4 +1,4 @@
---- ruby/Gemfile.orig	2018-08-17 16:15:58 UTC
+--- ruby/Gemfile.orig	2018-09-07 08:03:54 UTC
 +++ ruby/Gemfile
 @@ -1,16 +1,17 @@
  source 'https://rubygems.org'
@@ -7,8 +7,8 @@
 -gem 'github-linguist', '~> 6.1', require: 'linguist'
 +gem 'github-linguist', '~> 5.3', require: 'linguist'
  gem 'gitlab-markup', '~> 1.6.4'
--gem 'gitaly-proto', '~> 0.107.0', require: 'gitaly'
-+gem 'gitaly-proto', '~> 0.113.0', require: 'gitaly'
+-gem 'gitaly-proto', '~> 0.116.0', require: 'gitaly'
++gem 'gitaly-proto', '~> 0.117.0', require: 'gitaly'
  gem 'activesupport', '~> 5.0.2'
 -gem 'rdoc', '~> 4.2'
 +gem 'rdoc', '~> 6.0'
