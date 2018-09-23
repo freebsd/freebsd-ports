@@ -1,0 +1,11 @@
+--- configure.ac.orig	2018-09-01 20:42:04 UTC
++++ configure.ac
+@@ -13,7 +13,7 @@ AM_INIT_AUTOMAKE(foreign serial_tests su
+ m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
+ LT_PREREQ([2.2])
+ LT_INIT
+-AC_CONFIG_SRCDIR([e/buffer.h])
++AC_CONFIG_SRCDIR([e])
+ AC_CONFIG_HEADERS([config.h])
+ AC_CONFIG_MACRO_DIR([m4])
+ 

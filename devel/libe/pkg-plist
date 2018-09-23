@@ -1,4 +1,5 @@
 include/e/ao_hash_map.h
+include/e/arena.h
 include/e/array_ptr.h
 include/e/atomic.h
 include/e/bitsteal.h
@@ -8,6 +9,7 @@ include/e/convert.h
 include/e/endian.h
 include/e/envconfig.h
 include/e/error.h
+include/e/flagfd.h
 include/e/garbage_collector.h
 include/e/guard.h
 include/e/hazard_ptrs.h
@@ -15,6 +17,7 @@ include/e/intrusive_ptr.h
 include/e/lockfree_fifo.h
 include/e/lockfree_hash_map.h
 include/e/lockfree_hash_set.h
+include/e/lockfree_mpsc_fifo.h
 include/e/locking_fifo.h
 include/e/lookup3.h
 include/e/nonblocking_bounded_fifo.h
@@ -22,16 +25,17 @@ include/e/nwf_hash_map.h
 include/e/popt.h
 include/e/pow2.h
 include/e/safe_math.h
+include/e/seqno_collector.h
+include/e/serialization.h
 include/e/slice.h
 include/e/strescape.h
 include/e/striped_lock.h
 include/e/subcommand.h
 include/e/time.h
 include/e/tuple_compare.h
-include/e/unpacker.h
 include/e/varint.h
 lib/libe.a
 lib/libe.so
-lib/libe.so.1
-lib/libe.so.1.1.0
+lib/libe.so.5
+lib/libe.so.5.0.0
 libdata/pkgconfig/libe.pc
