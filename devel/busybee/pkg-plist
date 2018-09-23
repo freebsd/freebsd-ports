@@ -4,10 +4,9 @@ include/busybee_mta.h
 include/busybee_returncode.h
 include/busybee_single.h
 include/busybee_st.h
-include/busybee_sta.h
 include/busybee_utils.h
 lib/libbusybee.a
 lib/libbusybee.so
-lib/libbusybee.so.2
-lib/libbusybee.so.2.0.0
+lib/libbusybee.so.3
+lib/libbusybee.so.3.1.0
 libdata/pkgconfig/busybee.pc
