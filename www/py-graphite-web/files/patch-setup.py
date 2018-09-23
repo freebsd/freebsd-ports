@@ -1,4 +1,4 @@
---- setup.py.orig	2018-04-04 07:58:36 UTC
+--- setup.py.orig	2018-09-03 22:00:39 UTC
 +++ setup.py
 @@ -39,10 +39,6 @@ else:
          cf.add_section('install')
@@ -39,6 +39,6 @@
        scripts=glob('bin/*'),
 -      data_files=list(webapp_content.items()) + storage_dirs + conf_files + examples,
 +      data_files=list(conf_files),
-       install_requires=['Django>=1.8,<1.11.99', 'django-tagging==0.4.3', 'pytz', 'pyparsing', 'cairocffi', 'urllib3', 'scandir', 'six'],
+       install_requires=['Django>=1.8,<2.1', 'django-tagging==0.4.3', 'pytz', 'pyparsing', 'cairocffi', 'urllib3', 'scandir', 'six'],
        classifiers=[
            'Intended Audience :: Developers',
