@@ -3,11 +3,11 @@
 
 PORTNAME=	hypre
 DISTVERSION=	2.11.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	https://computation.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods/download/
 
-MAINTAINER=	pfg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scalable Linear Solvers and Multigrid Methods
 
 LICENSE=	LGPL21
@@ -28,12 +28,13 @@ CONFIGURE_ARGS=	--with-blas --with-blas-lib=${BLASLIB} \
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_SINGLE=		MPI
-OPTIONS_SINGLE_MPI=	MPICH2 OPENMPI
-OPTIONS_DEFAULT=	MPICH2
+OPTIONS_SINGLE_MPI=	MPICH OPENMPI
+OPTIONS_DEFAULT=	MPICH
 
-MPICH2_LIB_DEPENDS=	libmpich.so.8:net/mpich2
-MPICH2_CONFIGURE_ENV=	CC=${LOCALBASE}/bin/mpicc CXX=${LOCALBASE}/bin/mpicxx
-MPICH2_CONFIGURE_WITH=	MPI-include=${LOCALBASE}/include \
+MPICH_DESC=		Parallel processing support via MPICH
+MPICH_LIB_DEPENDS=	libmpich.so:net/mpich
+MPICH_CONFIGURE_ENV=	CC=${LOCALBASE}/bin/mpicc CXX=${LOCALBASE}/bin/mpicxx
+MPICH_CONFIGURE_WITH=	MPI-include=${LOCALBASE}/include \
 			MPI-lib-dirs=${LOCALBASE}/lib
 OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi
 OPENMPI_CONFIGURE_ENV=	CC=${LOCALBASE}/mpi/openmpi/bin/mpicc \
