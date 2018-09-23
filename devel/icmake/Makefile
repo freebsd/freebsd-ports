@@ -103,4 +103,4 @@ do-build:
 do-install:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./icm_install strip all ${STAGEDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
