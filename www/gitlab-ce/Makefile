@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	11.2.3
-PORTREVISION=	2
+PORTVERSION=	11.3.0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -17,10 +16,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # only rubygem-pg and rubygem-mysql are defined later as RUN_DEPENDS
 # for the options
 MY_DEPENDS=	git>=2.16.2:devel/git \
-	gitlab-shell>=8.1.1:devel/gitlab-shell \
-	gitlab-workhorse>=5.1.0:www/gitlab-workhorse \
-	gitaly>=0.117.2:devel/gitaly \
-	gitlab-pages>=1.0.0:www/gitlab-pages \
+	gitlab-shell>=8.3.3:devel/gitlab-shell \
+	gitlab-workhorse>=6.1.0:www/gitlab-workhorse \
+	gitaly>=0.120.0:devel/gitaly \
+	gitlab-pages>=1.1.0:www/gitlab-pages \
 	redis>=2.8.23:databases/redis \
 	npm>=4.3.0:www/npm \
 	yarn>=0.17.0:www/yarn \
@@ -59,7 +58,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-attr_encrypted>=3.1.0:security/rubygem-attr_encrypted \
 	rubygem-u2f0>=0.2.1:net/rubygem-u2f0 \
 	rubygem-validates_hostname>=1.0.6:dns/rubygem-validates_hostname \
-	rubygem-browser>=2.2:www/rubygem-browser \
+	rubygem-browser>=2.5:www/rubygem-browser \
 	rubygem-gpgme>=2.0.13:security/rubygem-gpgme \
 	rubygem-gitlab_omniauth-ldap20>=2.0.4:net/rubygem-gitlab_omniauth-ldap20 \
 	rubygem-net-ldap>=0.16.0:net/rubygem-net-ldap \
@@ -74,17 +73,17 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-hashie-forbidden_attributes>=0:devel/rubygem-hashie-forbidden_attributes \
 	rubygem-kaminari-rails4>=1.0:www/rubygem-kaminari-rails4 \
 	rubygem-hamlit>=2.8.8:www/rubygem-hamlit \
-	rubygem-carrierwave>=1.1:www/rubygem-carrierwave \
+	rubygem-carrierwave>=1.2.3:www/rubygem-carrierwave \
 	rubygem-mini_magick>=0:graphics/rubygem-mini_magick \
 	rubygem-dropzonejs-rails07>=0.7.1:www/rubygem-dropzonejs-rails07 \
 	rubygem-fog-aws2>=2.0.1:net/rubygem-fog-aws2 \
 	rubygem-fog-core1>=1.44:devel/rubygem-fog-core1 \
-	rubygem-fog-google13>=1.3.3:net/rubygem-fog-google13 \
+	rubygem-fog-google>=1.7.1:net/rubygem-fog-google \
 	rubygem-fog-local>=0.3:net/rubygem-fog-local \
 	rubygem-fog-openstack02>=0.1:net/rubygem-fog-openstack02 \
 	rubygem-fog-rackspace>=0.1.1:net/rubygem-fog-rackspace \
 	rubygem-fog-aliyun02>=0.2.0:net/rubygem-fog-aliyun02 \
-	rubygem-google-api-client>=0.19.8:devel/rubygem-google-api-client \
+	rubygem-google-api-client>=0.23:devel/rubygem-google-api-client \
 	rubygem-unf>=0.1.4:textproc/rubygem-unf \
 	rubygem-seed-fu>=2.3.7:databases/rubygem-seed-fu \
 	rubygem-html-pipeline>=2.8:textproc/rubygem-html-pipeline \
@@ -115,11 +114,12 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-sidekiq-limit_fetch>=3.4:devel/rubygem-sidekiq-limit_fetch \
 	rubygem-rufus-scheduler342>=3.4.0:devel/rubygem-rufus-scheduler342 \
 	rubygem-httparty>=0.13.3:www/rubygem-httparty \
-	rubygem-rainbow2>=2.2:devel/rubygem-rainbow2 \
+	rubygem-rainbow>=3.0:devel/rubygem-rainbow \
 	rubygem-ruby-progressbar>=0:devel/rubygem-ruby-progressbar \
 	rubygem-settingslogic>=2.0.9:devel/rubygem-settingslogic \
 	rubygem-re2>=1.1.1:devel/rubygem-re2 \
 	rubygem-version_sorter21>=2.1.0:textproc/rubygem-version_sorter21 \
+	rubygem-js_regex>=2.2.1:textproc/rubygem-js_regex \
 	rubygem-device_detector>=0:devel/rubygem-device_detector \
 	rubygem-redis-rails>=5.0.1:www/rubygem-redis-rails \
 	rubygem-redis3>=3.2:databases/rubygem-redis3 \
@@ -127,7 +127,6 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-hipchat15>=1.5.0:net-im/rubygem-hipchat15 \
 	rubygem-jira-ruby>=1.4:devel/rubygem-jira-ruby \
 	rubygem-gitlab-flowdock-git-hook>=1.0.1:www/rubygem-gitlab-flowdock-git-hook \
-	rubygem-gemnasium-gitlab-service>=0.2:devel/rubygem-gemnasium-gitlab-service \
 	rubygem-slack-notifier1>=1.5.1:devel/rubygem-slack-notifier1 \
 	rubygem-hangouts-chat>=0.0.5:net/rubygem-hangouts-chat \
 	rubygem-asana>=0.6.0:www/rubygem-asana \
@@ -185,7 +184,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-sshkey>=1.9.0:security/rubygem-sshkey \
 	rubygem-ed25519>=1.2:security/rubygem-ed25519 \
 	rubygem-bcrypt_pbkdf>=1.0:security/rubygem-bcrypt_pbkdf \
-	rubygem-gitaly-proto>=0.113.0:net/rubygem-gitaly-proto \
+	rubygem-gitaly-proto>=0.117.0:net/rubygem-gitaly-proto \
 	rubygem-grpc>=1.11.0:net/rubygem-grpc \
 	rubygem-gitaly>=0.8.0:net/rubygem-gitaly \
 	rubygem-google-protobuf351>=3.5.1:devel/rubygem-google-protobuf351 \
@@ -219,7 +218,7 @@ USE_RC_SUBR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-ce/tags
-GL_COMMIT=	06cbee3bf9dd960380390c0a5df9b67a52a85ba9
+GL_COMMIT=	17bd59adecf525e5e0a42101d241d05e29228338
 
 USERS=	git
 GROUPS=	git
