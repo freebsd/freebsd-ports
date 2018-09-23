@@ -5,7 +5,7 @@ PORTNAME=	xapian-core
 PORTVERSION=	1.0.23
 PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/
+MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/
 PKGNAMESUFFIX=	10
 
 MAINTAINER=	ports@FreeBSD.org
