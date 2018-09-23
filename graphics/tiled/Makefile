@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tiled
-PORTVERSION=	1.1.6
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics editors games
 
@@ -29,11 +28,15 @@ OPTIONS_DEFAULT=PYTHON
 OPTIONS_SUB=	yes
 
 PYTHON_DESC=	Enable python plugin
-PYTHON_USES=	pkgconfig python:2.7
+PYTHON_USES=	pkgconfig python:3.6+
 PYTHON_QMAKE_OFF=	DISABLE_PYTHON_PLUGIN=yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.pro" -exec ${REINPLACE_CMD} -e 's|share/man|man|' {} \;
+
+post-patch-PYTHON-on:
+	@${REINPLACE_CMD} -e 's|python3|python-${PYTHON_VER}|' \
+		${WRKSRC}/src/plugins/python/find_python.pri
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
