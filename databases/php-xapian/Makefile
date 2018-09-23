@@ -5,7 +5,7 @@ PORTNAME=	xapian
 PORTVERSION=	1.4.7
 DISTVERSIONPREFIX=	bindings-
 CATEGORIES=	databases
-MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
+MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
 PKGNAMEPREFIX=	php-
 
