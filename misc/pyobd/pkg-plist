@@ -1,0 +1,12 @@
+bin/pyobd
+share/applications/pyobd.desktop
+share/icons/hicolor/32x32/apps/pyobd.png
+%%DATADIR%%/debugEvent.py
+%%DATADIR%%/debugEvent.pyc
+%%DATADIR%%/obd2_codes.py
+%%DATADIR%%/obd2_codes.pyc
+%%DATADIR%%/obd_io.py
+%%DATADIR%%/obd_io.pyc
+%%DATADIR%%/obd_sensors.py
+%%DATADIR%%/obd_sensors.pyc
+%%DATADIR%%/pyobd

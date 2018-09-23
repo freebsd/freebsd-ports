@@ -1,0 +1,15 @@
+======================================================================
+You installed pyOBD: OBD-II compliant car diagnostic tool.
+
+pyOBD expects the device /dev/ttyU0 that should be created when you
+connect the OBD-II cable.
+
+You need these lines in /etc/devfs.rules to make the device readable
+and writable by you. If your user is in the group users:
+
+[localrules=5]
+add path 'ttyU*' mode 0660 group users
+
+You also need this line in /etc/rc.conf to allow localrules to take effect:
+devfs_system_ruleset="localrules"
+======================================================================
