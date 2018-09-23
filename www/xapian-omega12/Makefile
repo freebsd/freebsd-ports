@@ -4,7 +4,7 @@
 PORTNAME=	xapian-omega
 PORTVERSION=	1.2.25
 CATEGORIES=	www
-MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
+MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
 PKGNAMESUFFIX=	12
 
