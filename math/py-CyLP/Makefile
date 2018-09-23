@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=	cylp
+PORTNAME=	CyLP
 DISTVERSION=	0.7.2-30
 DISTVERSIONSUFFIX=	-g65a985b
 CATEGORIES=	math python
@@ -26,7 +26,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		python:2.7 # 3.X support is still in the pull request: https://github.com/coin-or/CyLP/pull/28
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin-or
-GH_PROJECT=	CyLP
 USE_PYTHON=	distutils cython autoplist
 
 MAKE_ENV=	COIN_INSTALL_DIR=${LOCALBASE}
