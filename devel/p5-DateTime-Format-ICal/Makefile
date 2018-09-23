@@ -11,14 +11,19 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse and format ICal datetime and duration strings
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
 		p5-DateTime-TimeZone>=0:devel/p5-DateTime-TimeZone \
 		p5-DateTime-Event-ICal>=0:devel/p5-DateTime-Event-ICal \
 		p5-DateTime-Set>=0:devel/p5-DateTime-Set \
 		p5-Params-Validate>=0:devel/p5-Params-Validate
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
