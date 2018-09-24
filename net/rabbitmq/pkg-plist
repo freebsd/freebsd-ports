@@ -24,6 +24,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/LICENSE-erlcloud
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/LICENSE-httpc_aws
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/LICENSE-rabbitmq_aws
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/background_gc.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/code_server_cache.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/dtree.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/gatherer.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/gm.beam
@@ -213,7 +214,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/rabbitmq_web_stomp_examples-%
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/ranch-1.5.0.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/ranch_proxy_protocol-1.5.0.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/recon-2.3.2.ez
-lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/syslog-3.4.2.ez
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/plugins/syslog-3.4.3.ez
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/priv/schema/rabbit.schema
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/sbin/cuttlefish
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-defaults
