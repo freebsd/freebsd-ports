@@ -14,6 +14,7 @@
     SUBDIR += R-cran-highr
     SUBDIR += R-cran-htmltools
     SUBDIR += R-cran-markdown
+    SUBDIR += R-cran-openxlsx
     SUBDIR += R-cran-pystr
     SUBDIR += R-cran-readr
     SUBDIR += R-cran-rmarkdown
