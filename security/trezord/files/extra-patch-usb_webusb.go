@@ -1,8 +1,6 @@
-diff --git a/usb/webusb.go b/usb/webusb.go
-index eb8cadd..1366074 100644
---- a/usb/webusb.go
-+++ b/usb/webusb.go
-@@ -226,13 +232,21 @@ func (b *WebUSB) matchVidPid(vid uint16, pid uint16) bool {
+--- usb/webusb.go.orig	2018-09-21 13:31:27 UTC
++++ usb/webusb.go
+@@ -274,13 +274,21 @@ func (b *WebUSB) matchVidPid(vid uint16,
  }
  
  func (b *WebUSB) identify(dev lowlevel.Device) string {
@@ -30,7 +28,7 @@ index eb8cadd..1366074 100644
  }
  
  type WUD struct {
-@@ -279,6 +293,12 @@ func (d *WUD) finishReadQueue() {
+@@ -331,6 +339,12 @@ func (d *WUD) finishReadQueue() {
  }
  
  func (d *WUD) readWrite(buf []byte, endpoint uint8) (int, error) {
@@ -43,7 +41,7 @@ index eb8cadd..1366074 100644
  	d.mw.Println("webusb - rw - start")
  	for {
  		d.mw.Println("webusb - rw - checking closed")
-@@ -291,7 +311,7 @@ func (d *WUD) readWrite(buf []byte, endpoint uint8) (int, error) {
+@@ -343,7 +357,7 @@ func (d *WUD) readWrite(buf []byte, endp
  		d.mw.Println("webusb - rw - lock transfer mutex")
  		d.transferMutex.Lock()
  		d.mw.Println("webusb - rw - actual interrupt transport")
