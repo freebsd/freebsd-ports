@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flare
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 PKGNAMESUFFIX=	-game
@@ -27,7 +27,7 @@ CMAKE_ARGS=	-DBINDIR="bin" -DDATADIR="share/flare"
 
 PORTDOCS=	*
 PORTDATA=	*
-PLIST_FILES=	share/appdata/org.flarerpg.Flare.appdata.xml
+PLIST_FILES=	share/metainfo/org.flarerpg.Flare.appdata.xml
 
 OPTIONS_DEFINE=	DOCS
 
