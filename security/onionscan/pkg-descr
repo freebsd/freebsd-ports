@@ -1,0 +1,9 @@
+OnionScan is a free and open source tool for investigating Onion Services 
+on the Tor network.
+
+It has two primary goals:
+
+	* Help to find and to fix operational privacy/security issues;
+	* Support researchers and investigators to monitor .onion sites.
+
+WWW: https://onionscan.org/

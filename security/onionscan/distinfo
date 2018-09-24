@@ -1,0 +1,13 @@
+TIMESTAMP = 1537440910
+SHA256 (s-rah-onionscan-OnionScan-0.2_GH0.tar.gz) = d1e5fe51d26121f3afee6f11c54c08d43ed0d5686cb8b542dc72dd5662dbe988
+SIZE (s-rah-onionscan-OnionScan-0.2_GH0.tar.gz) = 658286
+SHA256 (HouzuoGuo-tiedot-3.4_GH0.tar.gz) = 696464b84599a686066ea89996a5a0e878cf2e2f022ea33178338e90906dabfc
+SIZE (HouzuoGuo-tiedot-3.4_GH0.tar.gz) = 608687
+SHA256 (rwcarlsen-goexif-8d986c0_GH0.tar.gz) = 66c62f7c6db4592d4c1bbec7115204c1183cde7df4dc50814b04c78bc7260a57
+SIZE (rwcarlsen-goexif-8d986c0_GH0.tar.gz) = 938951
+SHA256 (golang-crypto-0e37d00_GH0.tar.gz) = 05e1f307f06b14787c1abe8d463a164521b70c831992ff82ae552541d2c421c6
+SIZE (golang-crypto-0e37d00_GH0.tar.gz) = 1638254
+SHA256 (golang-net-26e67e7_GH0.tar.gz) = 98513e53dac73819278595dfe277a01201978a937a24f4edd94c128bb443f7c5
+SIZE (golang-net-26e67e7_GH0.tar.gz) = 965343
+SHA256 (golang-sys-1561086_GH0.tar.gz) = 45fe1f41709a752e36bb73fded99081ad19ef840c2ea29cfe0bb9718eaa49929
+SIZE (golang-sys-1561086_GH0.tar.gz) = 1076893
