@@ -123,7 +123,6 @@ OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 TOKUDB_LIB_DEPENDS=	libsnappy.so:archivers/snappy
 TOKUDB_PORTDOCS=	PATENTS README.md
 TOKUDB_VARS=		LICENSE+=PerconaFT LICENSE_COMB=multi
-TOKUDB_IMPLIES=		DOCS
 
 post-install:
 	# Remove programs to avoid conflict with mariadb100-client
