@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	fossil
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 DISTVERSIONPREFIX=	src-
-PORTREVISION=	1
+PORTREVISION=	0
 PORTEPOCH=	2
 CATEGORIES=	devel www
 MASTER_SITES=	http://fossil-scm.org/index.html/uv/
