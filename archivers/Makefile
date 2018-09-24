@@ -4,6 +4,7 @@
     COMMENT = Archivers
 
     SUBDIR += 9e
+    SUBDIR += R-cran-zip
     SUBDIR += advancecomp
     SUBDIR += amigadepacker
     SUBDIR += arc
