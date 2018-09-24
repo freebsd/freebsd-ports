@@ -1,0 +1,12 @@
+Spreadsheet::GenerateXLSX provides a function generate_xlsx which takes an array
+of Perl data and generates a simple Excel spreadsheet in the XLSX format. The
+generated sheets have the first row frozen, and auto filters enabled for every
+column.
+
+Each sheet in the spreadsheet is generated from an array of rows, where each row
+is an arrayref. The first row is treated as a header row.
+
+The generated spreadsheet can have any numbers of sheets. If you just pass
+arrayrefs, the sheets will be named Sheet1, Sheet2, etc.
+
+WWW: https://metacpan.org/release/Spreadsheet-GenerateXLSX
