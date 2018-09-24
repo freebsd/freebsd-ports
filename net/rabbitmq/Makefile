@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rabbitmq
-PORTVERSION=	3.7.7
-PORTREVISION=	1
+PORTVERSION=	3.7.8
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/rabbitmq/rabbitmq-server/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
