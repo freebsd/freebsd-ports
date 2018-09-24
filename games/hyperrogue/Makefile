@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hyperrogue
-PORTVERSION=	10.4j
-DISTVERSIONPREFIX=	v
+PORTVERSION=	10.4t
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -38,6 +37,9 @@ DESKTOP_ENTRIES="HyperRogue" \
 		""
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|isnumber|is_number|' ${WRKSRC}/archimedean.cpp
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/hr-icon.ico ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.ico
