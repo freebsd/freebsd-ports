@@ -21,8 +21,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/MIT-LICENSE
 BUILD_DEPENDS=	swig3.0:devel/swig30
 LIB_DEPENDS=	libgeos_c.so:graphics/geos
 
-LDFLAGS+=	-L${PREFIX}/lib
-USES=		php:ext
+USES=		localbase:ldflags php:ext
 
 WRKSRC=		${WRKDIR}/php-${PORTNAME}
 
