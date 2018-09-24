@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpxsee
-PORTVERSION=	5.18
+PORTVERSION=	6.0
 CATEGORIES=	graphics geography
 
 MAINTAINER=	sikmir@gmail.com
@@ -12,7 +12,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/licence.txt
 
 USES=		qmake:outsource desktop-file-utils qt:5 shared-mime-info
-USE_QT=		buildtools_build core gui network opengl printsupport widgets
+USE_QT=		buildtools_build core gui network opengl printsupport \
+		sql sql-sqlite3_run widgets
 USE_GL=		gl
 
 USE_GITHUB=	yes
