@@ -11,6 +11,8 @@ COMMENT=	PC-BSD Qt5 Utilities
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_FreeBSD_12=	fails to compile: netif.cpp: error: use of undeclared identifier 'IFM_FDDI'
+
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
 		${PYTHON_PKGNAMEPREFIX}sphinx-intl>=0:textproc/py-sphinx-intl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinxcontrib-httpdomain>=0:textproc/py-sphinxcontrib-httpdomain@${PY_FLAVOR} \
