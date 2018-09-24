@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.22.0
+PORTVERSION=	0.22.1
 CATEGORIES=	games
 
 MAINTAINER=	lifanov@FreeBSD.org
@@ -55,6 +55,7 @@ LUA_DESC=	Bindings for LUA user scripts
 
 SDL_CONFLICTS=	${PORTNAME}-[0-9]*
 SDL_USE=	sdl=sdl2,image2,mixer2 gl=gl,glu
+SDL_USES=	gl
 SDL_USES_OFF=	ncurses
 SDL_MAKE_ARGS=	TILES=y SOUND=y
 SDL_BUILD_DEPENDS=	\
