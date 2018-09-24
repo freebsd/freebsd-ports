@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2018-08-31 18:59:58 UTC
++++ Makefile.am
+@@ -2,7 +2,7 @@ bin_PROGRAMS = hyperrogue
+ hyperroguedir = $(datadir)/hyperrogue
+ hyperrogue_SOURCES = hyper.cpp savepng.cpp
+ hyperrogue_CPPFLAGS = -DFONTDESTDIR=\"$(pkgdatadir)/DejaVuSans-Bold.ttf\" -DMUSICDESTDIR=\"$(pkgdatadir)/hyperrogue-music.txt\" -DSOUNDDESTDIR=\"$(pkgdatadir)/sounds/\"
+-hyperrogue_CXXFLAGS = -O2 -std=c++11 ${AM_CXXFLAGS}
++hyperrogue_CXXFLAGS = -std=c++11 ${AM_CXXFLAGS}
+ dist_hyperrogue_DATA = hyperrogue-music.txt DejaVuSans-Bold.ttf
+ 
+ # docdir
