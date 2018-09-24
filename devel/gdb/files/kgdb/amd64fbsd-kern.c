@@ -231,7 +231,7 @@ amd64fbsd_kernel_init_abi(struct gdbarch_info info, struct gdbarch *gdbarch)
 {
 
 	amd64_init_abi(info, gdbarch,
-		       amd64_target_description (X86_XSTATE_SSE_MASK));
+		       amd64_target_description (X86_XSTATE_SSE_MASK, true));
 
 	frame_unwind_prepend_unwinder(gdbarch, &amd64fbsd_trapframe_unwind);
 

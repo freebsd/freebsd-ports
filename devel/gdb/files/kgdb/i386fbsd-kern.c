@@ -186,7 +186,7 @@ i386fbsd_fetch_tss(void)
 	struct segment_descriptor sd;
 	CORE_ADDR addr, cpu0prvpage, tss;
 
-	kt = kgdb_thr_lookup_tid(ptid_get_tid(inferior_ptid));
+	kt = kgdb_thr_lookup_tid(inferior_ptid.tid());
 	if (kt == NULL || kt->cpu == NOCPU || kt->cpu < 0)
 		return (0);
 

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdb
-PORTVERSION=	8.1.1
+PORTVERSION=	8.2
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -23,7 +23,7 @@ TEST_TARGET=	check
 # C++14.  However, clang in 10.3 crashes while building this port.
 # Requiring C++14 forces 10.3 to use an external version of clang while
 # still using the base system clang on 11.0 and later.
-USES=		compiler:c++14-lang cpe gmake libtool tar:xz
+USES=		compiler:c++14-lang cpe gettext-runtime gmake libtool tar:xz
 USE_CSTD=	gnu89
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
@@ -40,16 +40,7 @@ CFLAGS+=	-DRL_NO_COMPAT -Wno-unused-function -Wno-unused-variable
 CFLAGS+=	-Wno-unknown-warning-option
 EXCLUDE=	dejagnu expect sim texinfo intl
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
-EXTRA_PATCHES=	${FILESDIR}/commit-d2176225dc \
-		${FILESDIR}/commit-b999e2038d \
-		${FILESDIR}/commit-262f62f57d \
-		${FILESDIR}/commit-92fce24de2 \
-		${FILESDIR}/commit-2d97a5d9d3 \
-		${FILESDIR}/commit-906b4aac4c \
-		${FILESDIR}/commit-f169cfdc08 \
-		${FILESDIR}/commit-12279366d7 \
-		${FILESDIR}/commit-386a867618 \
-		${FILESDIR}/commit-7efba073e2
+EXTRA_PATCHES=	${FILESDIR}/commit-8aa0243d54
 LIB_DEPENDS+=	libexpat.so:textproc/expat2
 
 VER=		${PORTVERSION:S/.//g}
