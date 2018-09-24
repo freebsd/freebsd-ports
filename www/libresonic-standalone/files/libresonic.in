@@ -23,17 +23,6 @@
 #
 # libresonic_port (int):
 #   Set to "4040" by default.
-#   Specify which port to listen on for HTTP(S).
-#
-# libresonic_ssl (bool):
-#   Set to "NO" by default.
-#   Set it to "YES" to enable SSL.
-#
-# libresonic_ssl_keystore (str):
-#   Optionally set path to custom SSL keystore.
-#
-# libresonic_ssl_password (str):
-#   Optionally set password for custom SSL keystore.
 #
 # libresonic_context_path (str):
 #   Set to "/" by default.
@@ -58,15 +47,13 @@ load_rc_config "${name}"
 : ${libresonic_home:="%%LIBRESONIC_HOME%%"}
 : ${libresonic_host:="0.0.0.0"}
 : ${libresonic_port:="4040"}
-: ${libresonic_ssl:="NO"}
 : ${libresonic_context_path:="/"}
 : ${libresonic_max_memory:="100"}
 
 if checkyesno libresonic_ssl; then
-	LIBRESONIC_SSL_FLAGS="-Dlibresonic.httpsPort=${libresonic_port}" && libresonic_port="0"
-	if [ ! -z ${libresonic_ssl_keystore} ]; then
-		LIBRESONIC_SSL_FLAGS=${LIBRESONIC_SSL_FLAGS}" -Dlibresonic.ssl.keystore=${libresonic_ssl_keystore} -Dlibresonic.ssl.password=${libresonic_ssl_password}"
-	fi
+        err 1 \
+"Libresonic SSL/HTTPS support has been removed.
+Please see entry 20180924 in UPDATING."
 fi
 
 start_precmd="export LC_CTYPE='en_US.UTF-8'"
@@ -74,10 +61,9 @@ libresonic_chdir="%%DATADIR%%"
 command="/usr/sbin/daemon"
 command_args="-f ${procname} \
 	-Dlibresonic.home=${libresonic_home} \
-	-Dlibresonic.host=${libresonic_host} \
-	-Dlibresonic.port=${libresonic_port} \
-	${LIBRESONIC_SSL_FLAGS} \
-	-Dlibresonic.contextPath=${libresonic_context_path} \
+	-Dserver.host=${libresonic_host} \
+	-Dserver.port=${libresonic_port} \
+	-Dserver.contextPath=${libresonic_context_path} \
 	-Dlibresonic.defaultMusicFolder=${libresonic_home}/music \
 	-Dlibresonic.defaultPodcastFolder=${libresonic_home}/Podcast \
 	-Dlibresonic.defaultPlaylistFolder=${libresonic_home}/playlists \
