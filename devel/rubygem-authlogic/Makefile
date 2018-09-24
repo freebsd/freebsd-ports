@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	authlogic
-PORTVERSION=	4.4.1
+PORTVERSION=	4.4.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
