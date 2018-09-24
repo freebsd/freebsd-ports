@@ -1,0 +1,197 @@
+commit 739ab2e92e1840c9285f3cfce1f1236c0fa68730
+Author: Simon Ser <contact@emersion.fr>
+Date:   Thu Sep 6 15:03:19 2018 -0700
+
+    Generate NT_PROCSTAT_{AUXV,VMMAP,PS_STRINGS} in FreeBSD coredumps
+    
+    gcore generates NT_AUXV and NT_FILE notes for Linux targets.  On
+    FreeBSD auxv is stored in a NT_PROCSTAT_AUXV section, virtual memory
+    mappings are stored in a NT_PROCSTAT_VMMAP, and both are prefixed with
+    the struct size.  In addition, store a NT_PROCSTAT_PS_STRINGS note
+    saving the initial location of the argv[] and environment[] arrays.
+    
+    gdb/ChangeLog:
+    
+            PR gdb/23105
+            * fbsd-nat.c (fbsd_nat_target::xfer_partial): Add support for
+            TARGET_OBJECT_FREEBSD_VMMAP and TARGET_OBJECT_FREEBSD_PS_STRINGS.
+            * fbsd-tdep.c (fbsd_make_note_desc): New.
+            (fbsd_make_corefile_notes): Write NT_PROCSTAT_AUXV,
+            NT_PROCSTAT_VMMAP and NT_PROCSTAT_PS_STRINGS notes.
+            * target.h (enum target_object) Add FreeBSD-specific
+            TARGET_OBJECT_FREEBSD_VMMAP and TARGET_OBJECT_FREEBSD_PS_STRINGS.
+
+diff --git gdb/ChangeLog gdb/ChangeLog
+index 410fbef920..e6f44a3ac2 100644
+--- gdb/ChangeLog
++++ gdb/ChangeLog
+@@ -1,3 +1,14 @@
++2018-09-06  Simon Ser  <contact@emersion.fr>
++
++	PR gdb/23105
++	* fbsd-nat.c (fbsd_nat_target::xfer_partial): Add support for
++	TARGET_OBJECT_FREEBSD_VMMAP and TARGET_OBJECT_FREEBSD_PS_STRINGS.
++	* fbsd-tdep.c (fbsd_make_note_desc): New.
++	(fbsd_make_corefile_notes): Write NT_PROCSTAT_AUXV,
++	NT_PROCSTAT_VMMAP and NT_PROCSTAT_PS_STRINGS notes.
++	* target.h (enum target_object) Add FreeBSD-specific
++	TARGET_OBJECT_FREEBSD_VMMAP and TARGET_OBJECT_FREEBSD_PS_STRINGS.
++
+ 2018-09-06  Simon Marchi  <simon.marchi@ericsson.com>
+ 
+ 	* compile/compile-c.h (generate_c_for_variable_locations):
+diff --git gdb/fbsd-nat.c gdb/fbsd-nat.c
+index 115deac070..a255318d14 100644
+--- gdb/fbsd-nat.c
++++ gdb/fbsd-nat.c
+@@ -751,6 +751,61 @@ fbsd_nat_target::xfer_partial (enum target_object object,
+ 	  }
+ 	return TARGET_XFER_E_IO;
+       }
++    case TARGET_OBJECT_FREEBSD_VMMAP:
++    case TARGET_OBJECT_FREEBSD_PS_STRINGS:
++      {
++	gdb::byte_vector buf_storage;
++	gdb_byte *buf;
++	size_t buflen;
++	int mib[4];
++
++	int proc_target;
++	uint32_t struct_size;
++	switch (object)
++	  {
++	  case TARGET_OBJECT_FREEBSD_VMMAP:
++	    proc_target = KERN_PROC_VMMAP;
++	    struct_size = sizeof (struct kinfo_vmentry);
++	    break;
++	  case TARGET_OBJECT_FREEBSD_PS_STRINGS:
++	    proc_target = KERN_PROC_PS_STRINGS;
++	    struct_size = sizeof (void *);
++	    break;
++	  }
++
++	if (writebuf != NULL)
++	  return TARGET_XFER_E_IO;
++
++	mib[0] = CTL_KERN;
++	mib[1] = KERN_PROC;
++	mib[2] = proc_target;
++	mib[3] = pid;
++
++	if (sysctl (mib, 4, NULL, &buflen, NULL, 0) != 0)
++	  return TARGET_XFER_E_IO;
++	buflen += sizeof (struct_size);
++
++	if (offset >= buflen)
++	  {
++	    *xfered_len = 0;
++	    return TARGET_XFER_EOF;
++	  }
++
++	buf_storage.resize (buflen);
++	buf = buf_storage.data ();
++
++	memcpy (buf, &struct_size, sizeof (struct_size));
++	buflen -= sizeof (struct_size);
++	if (sysctl (mib, 4, buf + sizeof (struct_size), &buflen, NULL, 0) != 0)
++	  return TARGET_XFER_E_IO;
++	buflen += sizeof (struct_size);
++
++	if (buflen - offset < len)
++	  len = buflen - offset;
++	memcpy (readbuf, buf + offset, len);
++	*xfered_len = len;
++	return TARGET_XFER_OK;
++      }
+     default:
+       return inf_ptrace_target::xfer_partial (object, annex,
+ 					      readbuf, writebuf, offset,
+diff --git gdb/fbsd-tdep.c gdb/fbsd-tdep.c
+index 78d0c3d830..ed43087169 100644
+--- gdb/fbsd-tdep.c
++++ gdb/fbsd-tdep.c
+@@ -512,6 +512,28 @@ fbsd_corefile_thread (struct thread_info *info,
+      args->note_size, args->stop_signal);
+ }
+ 
++/* Return a byte_vector containing the contents of a core dump note
++   for the target object of type OBJECT.  If STRUCTSIZE is non-zero,
++   the data is prefixed with a 32-bit integer size to match the format
++   used in FreeBSD NT_PROCSTAT_* notes.  */
++
++static gdb::optional<gdb::byte_vector>
++fbsd_make_note_desc (enum target_object object, uint32_t structsize)
++{
++  gdb::optional<gdb::byte_vector> buf =
++    target_read_alloc (current_top_target (), object, NULL);
++  if (!buf || buf->empty ())
++    return {};
++
++  if (structsize == 0)
++    return buf;
++
++  gdb::byte_vector desc (sizeof (structsize) + buf->size ());
++  memcpy (desc.data (), &structsize, sizeof (structsize));
++  memcpy (desc.data () + sizeof (structsize), buf->data (), buf->size ());
++  return desc;
++}
++
+ /* Create appropriate note sections for a corefile, returning them in
+    allocated memory.  */
+ 
+@@ -586,6 +608,40 @@ fbsd_make_corefile_notes (struct gdbarch *gdbarch, bfd *obfd, int *note_size)
+ 
+   note_data = thread_args.note_data;
+ 
++  /* Auxiliary vector.  */
++  uint32_t structsize = gdbarch_ptr_bit (gdbarch) / 4; /* Elf_Auxinfo  */
++  gdb::optional<gdb::byte_vector> note_desc =
++    fbsd_make_note_desc (TARGET_OBJECT_AUXV, structsize);
++  if (note_desc && !note_desc->empty ())
++    {
++      note_data = elfcore_write_note (obfd, note_data, note_size, "FreeBSD",
++				      NT_FREEBSD_PROCSTAT_AUXV,
++				      note_desc->data (), note_desc->size ());
++      if (!note_data)
++	return NULL;
++    }
++
++  /* Virtual memory mappings.  */
++  note_desc = fbsd_make_note_desc (TARGET_OBJECT_FREEBSD_VMMAP, 0);
++  if (note_desc && !note_desc->empty ())
++    {
++      note_data = elfcore_write_note (obfd, note_data, note_size, "FreeBSD",
++				      NT_FREEBSD_PROCSTAT_VMMAP,
++				      note_desc->data (), note_desc->size ());
++      if (!note_data)
++	return NULL;
++    }
++
++  note_desc = fbsd_make_note_desc (TARGET_OBJECT_FREEBSD_PS_STRINGS, 0);
++  if (note_desc && !note_desc->empty ())
++    {
++      note_data = elfcore_write_note (obfd, note_data, note_size, "FreeBSD",
++				      NT_FREEBSD_PROCSTAT_PSSTRINGS,
++				      note_desc->data (), note_desc->size ());
++      if (!note_data)
++	return NULL;
++    }
++
+   return note_data;
+ }
+ 
+diff --git gdb/target.h gdb/target.h
+index 229b5d0551..a3000c80c6 100644
+--- gdb/target.h
++++ gdb/target.h
+@@ -202,6 +202,10 @@ enum target_object
+      of the process ID of the process in question, in hexadecimal
+      format.  */
+   TARGET_OBJECT_EXEC_FILE,
++  /* FreeBSD virtual memory mappings.  */
++  TARGET_OBJECT_FREEBSD_VMMAP,
++  /* FreeBSD process strings.  */
++  TARGET_OBJECT_FREEBSD_PS_STRINGS,
+   /* Possible future objects: TARGET_OBJECT_FILE, ...  */
+ };
+ 

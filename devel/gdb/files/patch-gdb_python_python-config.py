@@ -3,7 +3,7 @@
 @@ -59,6 +59,8 @@ for opt in opt_flags:
  
      elif opt in ('--libs', '--ldflags'):
-         libs = []
+         libs = ['-lpython' + pyver + abiflags]
 +        if getvar('LDFLAGS') is not None:
 +            libs.extend(getvar('LDFLAGS').split())
          if getvar('LIBS') is not None:
