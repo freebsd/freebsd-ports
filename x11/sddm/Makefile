@@ -3,7 +3,7 @@
 PORTNAME=	sddm
 PORTVERSION=	0.17.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	kde@FreeBSD.org
@@ -21,10 +21,10 @@ LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/LICENSE.CC-BY-3.0
 RUN_DEPENDS=	dbus-run-session:devel/dbus
 
 USES=		cmake:outsource kde:5 qt:5
+USE_GITHUB=	yes
 USE_KDE=	ecm
-USE_QT=		concurrent core dbus gui linguisttools multimedia network \
-		printsupport qml quick script sql webkit widgets \
-		buildtools_build qmake_build
+USE_QT=		core dbus gui network qml quick \
+		buildtools_build linguisttools_build qmake_build
 USE_XORG=	xcb
 
 CMAKE_ARGS=	-DUID_MIN=1000 \
@@ -36,8 +36,6 @@ SUB_FILES=	xinitrc.desktop
 
 USERS=		sddm
 GROUPS=		sddm
-
-USE_GITHUB=	yes
 
 # There are multiple patches that apply to Display.cpp,
 # fixing CVE-2018-14345 and backported from 0.18.
