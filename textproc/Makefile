@@ -958,6 +958,7 @@
     SUBDIR += p5-Text-Table-Any
     SUBDIR += p5-Text-Table-Manifold
     SUBDIR += p5-Text-Table-Tiny
+    SUBDIR += p5-Text-Table-XLSX
     SUBDIR += p5-Text-Tabs+Wrap
     SUBDIR += p5-Text-TabularDisplay
     SUBDIR += p5-Text-Tags
