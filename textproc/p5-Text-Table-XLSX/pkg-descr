@@ -1,0 +1,5 @@
+Text::Table::XLSX provides a single function, table, which takes a
+two-dimensional array of data and generate an XLSX data stream from it. It's
+basically a very thin wrapper for Spreadsheet::GenerateXLSX.
+
+WWW: https://metacpan.org/release/Text-Table-XLSX
