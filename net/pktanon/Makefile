@@ -13,13 +13,13 @@ COMMENT=	Network trace anonymizer
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libxerces-c.so.3:textproc/xerces-c3
 
-USES=		compiler:c++0x dos2unix
+USES=		compiler:c++0x dos2unix localbase
+
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lboost_system
+LDFLAGS+=	-lboost_system
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/profiles
-	(cd ${WRKSRC}/profiles/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/profiles)
+	(cd ${WRKSRC}/profiles/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/profiles)
 
 .include <bsd.port.mk>
