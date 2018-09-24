@@ -38,6 +38,8 @@ you update your ports collection, before attempting any port upgrades.
   After the upgrade, check with such list if all your php extensions
   are still installed, and reinstall them if needed.
 
+  If you use mod_php56 you need to deinstall it and install mod_php71.
+
 20180901:
   AFFECTS: net/samba48
   AUTHOR: timur@FreeBSD.org
