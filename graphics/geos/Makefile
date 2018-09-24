@@ -5,7 +5,7 @@ PORTNAME=	geos
 PORTVERSION=	3.6.3
 PORTREVISION=	1
 CATEGORIES=	graphics geography
-MASTER_SITES=	http://download.osgeo.org/geos/ \
+MASTER_SITES=	https://download.osgeo.org/geos/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org

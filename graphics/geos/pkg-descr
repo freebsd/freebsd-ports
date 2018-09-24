@@ -4,4 +4,4 @@ functionality of JTS in C++. This includes all the OpenGIS "Simple
 Features for SQL" spatial predicate functions and spatial operators,
 as well as specific JTS topology functions such as IsValid().
 
-WWW: http://trac.osgeo.org/geos/
+WWW: https://trac.osgeo.org/geos/
