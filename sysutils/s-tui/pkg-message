@@ -1,6 +1,9 @@
 ======================================================================
-If you want to enable CPU stress testing you'll need to install additionally one
-of the following ports:
+You installed s-tui, stress test and monitoring tool.
+s-tui is experimental on FreeBSD. Please help testing it.
+
+If you want to enable CPU stress testing you'll need to install
+additionally one of the following ports:
 
 - benchmarks/stress-ng
 - sysutils/stress
