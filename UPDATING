@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180924:
+  AFFECTS: www/libresonic-standalone
+  AUTHOR: jlh@FreeBSD.org
+
+  HTTPS support has been removed from the port, as it will be removed upstream:
+    https://github.com/Libresonic/libresonic/issues/125#issuecomment-256227104
+
+  In order to avoid strange behavior for users who are using this feature, the
+  rc.d script will fail fast if libresonic_ssl="YES". You should remove the
+  following variables from rc.conf(5): libresonic_ssl libresonic_ssl_keystore
+  libresonic_ssl_password.
+
+  # sed -i '' /libresonic_ssl/d /etc/rc.conf
+
+  Users needing SSL are encouraged to use an HTTP reverse-proxy. Example
+  configurations can be found here:
+    https://github.com/Libresonic/libresonic/issues/119
+
 20180922:
   AFFECTS: users of graphics/ilmbase, graphics/OpenEXR
   AUTHOR: mandree@FreeBSD.org
