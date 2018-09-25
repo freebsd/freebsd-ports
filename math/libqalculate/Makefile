@@ -12,15 +12,13 @@ COMMENT=	Multi-purpose desktop calculator (backend library)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to compile: umachine.h:347: 'char16_t' does not name a type
-
 LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libcurl.so:ftp/curl \
 		libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
 
-USES=		gmake gettext iconv libtool localbase \
-		ncurses pathfix pkgconfig readline:port
+USES=		compiler:c++11-lang gettext gmake gnome iconv libtool \
+		localbase ncurses pathfix pkgconfig readline:port
 USE_GNOME=	intltool libxml2
 USE_LDCONFIG=	yes
 
