@@ -21,6 +21,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		compiler:c++11-lang pkgconfig waf
 USE_GNOME=	cairo cairomm gdkpixbuf2 gtk20 gtkmm24
 NO_WRKSUBDIR=	yes
+LDFLAGS_i386=	-Wl,-znotext
 
 post-install:
 		@${STRIP_CMD} \
