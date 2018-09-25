@@ -1,6 +1,6 @@
-TIMESTAMP = 1536042301
-SHA256 (mantisbt-2.17.0.tar.gz) = 8922138ba11f5646c6c4315654a71a370147aad07815d869604c1216624b4505
-SIZE (mantisbt-2.17.0.tar.gz) = 16693236
+TIMESTAMP = 1537882484
+SHA256 (mantisbt-2.17.1.tar.gz) = f4e4b8cfe09bd1126511ed126da59ec800e9673053e48a5709cbc15d0da9f118
+SIZE (mantisbt-2.17.1.tar.gz) = 16693064
 SHA256 (mantisbt-plugins-Activity-99cf873396ebc3fec431c6746dae1a604768f322_GH0.tar.gz) = 7c9a2d08d98854c40e53ec5ae90aa84ea3849843e5dec8fceefd4cbfba6d4c88
 SIZE (mantisbt-plugins-Activity-99cf873396ebc3fec431c6746dae1a604768f322_GH0.tar.gz) = 42861
 SHA256 (mantisbt-plugins-Announce-v2.3.0_GH0.tar.gz) = 08e22564618d4a867db87c35d2117781631ae6c58e805b74a1c61e065edb189d
@@ -27,12 +27,12 @@ SHA256 (mantisbt-plugins-piwik-a2dba46836bdc07a80b8040e889ba0606f97415e_GH0.tar.
 SIZE (mantisbt-plugins-piwik-a2dba46836bdc07a80b8040e889ba0606f97415e_GH0.tar.gz) = 2898
 SHA256 (mantisbt-plugins-SampleAuth-34856715f49a5c273f33e094c759c0e0b52b3912_GH0.tar.gz) = 0b469ad79ffb792e4fc9cbcc5d48266c686be20de3f0cd6986bf43893deca1c3
 SIZE (mantisbt-plugins-SampleAuth-34856715f49a5c273f33e094c759c0e0b52b3912_GH0.tar.gz) = 197029
+SHA256 (mantisbt-plugins-source-integration-v2.1.3_GH0.tar.gz) = 07b4e941f7d478f1b14b040efd3a47fe5623d32aea8bd2c195b2bc390463fefb
+SIZE (mantisbt-plugins-source-integration-v2.1.3_GH0.tar.gz) = 109541
 SHA256 (mantisbt-plugins-Slack-0e00367057a46171cb17b8eb8ff9bf6138b24525_GH0.tar.gz) = f0eaea1bb42bf0f02956c0995c0e74b3832c479632d226af1fd3996b30ecd806
 SIZE (mantisbt-plugins-Slack-0e00367057a46171cb17b8eb8ff9bf6138b24525_GH0.tar.gz) = 27139
 SHA256 (mantisbt-plugins-Snippets-v2.2.5_GH0.tar.gz) = 7efa4d1635789fde24d1aa5385f0fee100578c5c1f730c6fcf9228304b059aa0
 SIZE (mantisbt-plugins-Snippets-v2.2.5_GH0.tar.gz) = 35287
-SHA256 (mantisbt-plugins-source-integration-v2.1.3_GH0.tar.gz) = 07b4e941f7d478f1b14b040efd3a47fe5623d32aea8bd2c195b2bc390463fefb
-SIZE (mantisbt-plugins-source-integration-v2.1.3_GH0.tar.gz) = 109541
 SHA256 (mantisbt-plugins-Taskodrome-0491fa47062cdfa7bf03c01bd286986c75a18453_GH0.tar.gz) = b990e8a91ef8842e2a4a8a140f3f8d3505fb04797f7359cd7b27220d721d4a9b
 SIZE (mantisbt-plugins-Taskodrome-0491fa47062cdfa7bf03c01bd286986c75a18453_GH0.tar.gz) = 14528816
 SHA256 (mantisbt-plugins-timetracking-3a560673d85e17651fc1994f5e09e2ae9df62336_GH0.tar.gz) = 99f13d9d4cef6aa9875dcd2b122dcd48b33dbd1e51439d455ea850b59bf7f14a
