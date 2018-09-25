@@ -88,6 +88,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/graphics/gui/buttonpin_highlighted.xml
 %%DATADIR%%/data/graphics/gui/buttonpin_pressed.xml
 %%DATADIR%%/data/graphics/gui/buttonplay.png
+%%DATADIR%%/data/graphics/gui/buttonsicons.png
 %%DATADIR%%/data/graphics/gui/buy.xml
 %%DATADIR%%/data/graphics/gui/charcreate_playerbox.xml
 %%DATADIR%%/data/graphics/gui/checkbox.xml
@@ -106,6 +107,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/graphics/gui/dropdown_background.xml
 %%DATADIR%%/data/graphics/gui/dropdown_pressed.xml
 %%DATADIR%%/data/graphics/gui/emote_selection.xml
+%%DATADIR%%/data/graphics/gui/emotes.xml
 %%DATADIR%%/data/graphics/gui/emotetabs.xml
 %%DATADIR%%/data/graphics/gui/equipment.xml
 %%DATADIR%%/data/graphics/gui/equipment_background.xml
@@ -119,6 +121,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/graphics/gui/item_selection.xml
 %%DATADIR%%/data/graphics/gui/item_shortcut_background.xml
 %%DATADIR%%/data/graphics/gui/itemcontainer.xml
+%%DATADIR%%/data/graphics/gui/items.xml
 %%DATADIR%%/data/graphics/gui/keyboard_icon.xml
 %%DATADIR%%/data/graphics/gui/label.xml
 %%DATADIR%%/data/graphics/gui/listbox.xml
@@ -157,6 +160,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/graphics/gui/slider_highlighted.xml
 %%DATADIR%%/data/graphics/gui/speechbrowserbox.xml
 %%DATADIR%%/data/graphics/gui/speechbubble.xml
+%%DATADIR%%/data/graphics/gui/spells.xml
 %%DATADIR%%/data/graphics/gui/tab.xml
 %%DATADIR%%/data/graphics/gui/tab_highlighted.xml
 %%DATADIR%%/data/graphics/gui/tab_selected.xml
@@ -326,9 +330,11 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/enchilado/buy.xml
 %%DATADIR%%/data/themes/enchilado/colors.xml
 %%DATADIR%%/data/themes/enchilado/cutin.xml
+%%DATADIR%%/data/themes/enchilado/emotes.xml
 %%DATADIR%%/data/themes/enchilado/equipment.xml
 %%DATADIR%%/data/themes/enchilado/info.xml
 %%DATADIR%%/data/themes/enchilado/inventory.xml
+%%DATADIR%%/data/themes/enchilado/items.xml
 %%DATADIR%%/data/themes/enchilado/mailedit.xml
 %%DATADIR%%/data/themes/enchilado/npc.xml
 %%DATADIR%%/data/themes/enchilado/ok.xml
@@ -340,6 +346,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/enchilado/server.xml
 %%DATADIR%%/data/themes/enchilado/serverinfo.xml
 %%DATADIR%%/data/themes/enchilado/shop.xml
+%%DATADIR%%/data/themes/enchilado/spells.xml
 %%DATADIR%%/data/themes/enchilado/window.png
 %%DATADIR%%/data/themes/enchilado/window.xml
 %%DATADIR%%/data/themes/enchilado/world.xml
@@ -727,9 +734,11 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/pink/buy.xml
 %%DATADIR%%/data/themes/pink/colors.xml
 %%DATADIR%%/data/themes/pink/cutin.xml
+%%DATADIR%%/data/themes/pink/emotes.xml
 %%DATADIR%%/data/themes/pink/equipment.xml
 %%DATADIR%%/data/themes/pink/info.xml
 %%DATADIR%%/data/themes/pink/inventory.xml
+%%DATADIR%%/data/themes/pink/items.xml
 %%DATADIR%%/data/themes/pink/mailedit.xml
 %%DATADIR%%/data/themes/pink/npc.xml
 %%DATADIR%%/data/themes/pink/ok.xml
@@ -742,6 +751,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/pink/server.xml
 %%DATADIR%%/data/themes/pink/serverinfo.xml
 %%DATADIR%%/data/themes/pink/shop.xml
+%%DATADIR%%/data/themes/pink/spells.xml
 %%DATADIR%%/data/themes/pink/unknown-item.png
 %%DATADIR%%/data/themes/pink/window.png
 %%DATADIR%%/data/themes/pink/window.xml
@@ -750,9 +760,11 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/unity/char.xml
 %%DATADIR%%/data/themes/unity/colors.xml
 %%DATADIR%%/data/themes/unity/cutin.xml
+%%DATADIR%%/data/themes/unity/emotes.xml
 %%DATADIR%%/data/themes/unity/equipment.xml
 %%DATADIR%%/data/themes/unity/info.xml
 %%DATADIR%%/data/themes/unity/inventory.xml
+%%DATADIR%%/data/themes/unity/items.xml
 %%DATADIR%%/data/themes/unity/mailedit.xml
 %%DATADIR%%/data/themes/unity/npc.xml
 %%DATADIR%%/data/themes/unity/ok.xml
@@ -765,16 +777,19 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/unity/serverinfo.xml
 %%DATADIR%%/data/themes/unity/shop.xml
 %%DATADIR%%/data/themes/unity/social.xml
+%%DATADIR%%/data/themes/unity/spells.xml
 %%DATADIR%%/data/themes/unity/window.png
 %%DATADIR%%/data/themes/unity/window.xml
 %%DATADIR%%/data/themes/unity/world.xml
 %%DATADIR%%/data/themes/wood/buy.xml
 %%DATADIR%%/data/themes/wood/colors.xml
 %%DATADIR%%/data/themes/wood/cutin.xml
+%%DATADIR%%/data/themes/wood/emotes.xml
 %%DATADIR%%/data/themes/wood/equipment.xml
 %%DATADIR%%/data/themes/wood/info.xml
 %%DATADIR%%/data/themes/wood/inventory.xml
 %%DATADIR%%/data/themes/wood/item_shortcut_bgr.png
+%%DATADIR%%/data/themes/wood/items.xml
 %%DATADIR%%/data/themes/wood/mailedit.xml
 %%DATADIR%%/data/themes/wood/mouse.png
 %%DATADIR%%/data/themes/wood/npc.xml
@@ -787,6 +802,7 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/themes/wood/server.xml
 %%DATADIR%%/data/themes/wood/serverinfo.xml
 %%DATADIR%%/data/themes/wood/shop.xml
+%%DATADIR%%/data/themes/wood/spells.xml
 %%DATADIR%%/data/themes/wood/window.png
 %%DATADIR%%/data/themes/wood/window.xml
 %%DATADIR%%/data/themes/wood/world.xml
