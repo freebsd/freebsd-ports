@@ -2,8 +2,8 @@
 
 PORTNAME=	amass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.0
-PORTREVISION=	1
+DISTVERSION=	2.7.0-8
+DISTVERSIONSUFFIX=	-g5ac544c
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	go:lang/go
 USE_GITHUB=	nodefault # main code is in GH_TUPLE, otherwise build fails with circular dependency errors
 GH_ACCOUNT=	OWASP
 GH_PROJECT=	Amass
-GH_TUPLE=	OWASP:Amass:2.7.0:main/src/github.com/OWASP/Amass \
+GH_TUPLE=	OWASP:Amass:${DISTVERSIONFULL}:main/src/github.com/OWASP/Amass \
 		andybalholm:cascadia:v1.0.0:cascadia/src/github.com/andybalholm/cascadia \
 		asaskevich:EventBus:d46933a:EventBus/src/github.com/asaskevich/EventBus \
 		fatih:color:v1.7.0:color/src/github.com/fatih/color \
