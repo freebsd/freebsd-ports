@@ -18,11 +18,20 @@
  	     void *arg, int (*compar)(void *, const void *, const void *));
  ],[ ],
        [rb_cv_bsd_qsort_r=yes],
-@@ -3245,7 +3245,6 @@
+@@ -3245,7 +3245,7 @@
  			: ${LDSHARED='$(CC) -shared'}
  			AS_IF([test "$rb_cv_binary_elf" = yes], [
  			    LDFLAGS="$LDFLAGS -rdynamic"
 -			    DLDFLAGS="$DLDFLAGS "'-Wl,-soname,$@'
++			    DLDFLAGS="$DLDFLAGS "'-Wl,-E'
  			], [
  			  test "$GCC" = yes && test "$rb_cv_prog_gnu_ld" = yes || LDSHARED='$(LD) -Bshareable'
  			])
+@@ -3724,6 +3723,7 @@
+ 	SOLIBS='$(LIBS)'
+ 	LIBRUBY_SO='lib$(RUBY_SO_NAME).$(SOEXT).$(MAJOR)$(MINOR)'
+ 	LIBRUBY_SONAME='$(LIBRUBY_SO)'
++	RUBY_APPEND_OPTIONS(LIBRUBY_DLDFLAGS, ['-Wl,-soname,${LIBRUBY_SO}'])
+ 	AS_IF([test "$rb_cv_binary_elf" != "yes" ], [
+ 	    LIBRUBY_SO="$LIBRUBY_SO.\$(TEENY)"
+ 	    LIBRUBY_ALIASES=''
