@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx-cloudpinyin
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.6
 CATEGORIES=	chinese
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
