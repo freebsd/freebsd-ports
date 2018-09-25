@@ -17,7 +17,7 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 OPTIONS_DEFINE=	DOXYGEN EXAMPLES
 OPTIONS_SUB=	yes
 
-USES=		cmake pathfix pkgconfig
+USES=		cmake compiler:c++11-lang gnome pathfix pkgconfig
 PATHFIX_CMAKELISTSTXT=	pkg-config.cmake
 USE_GNOME=	pango
 
