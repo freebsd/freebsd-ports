@@ -61,9 +61,11 @@ lib/libpgcommon.a
 %%DATADIR%%/extension/plpgsql.control
 %%DATADIR%%/postgres.shdescription
 %%NLS%%share/locale/cs/LC_MESSAGES/initdb-9.5.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/pg_basebackup-9.5.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/pg_controldata-9.5.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/pg_ctl-9.5.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/pg_resetxlog-9.5.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/pg_rewind-9.5.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/plpgsql-9.5.mo
 %%NLS%%share/locale/de/LC_MESSAGES/initdb-9.5.mo
 %%NLS%%share/locale/de/LC_MESSAGES/pg_basebackup-9.5.mo

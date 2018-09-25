@@ -54,6 +54,7 @@ lib/libpgcommon.a
 %%DATADIR%%/extension/plpgsql--unpackaged--1.0.sql
 %%DATADIR%%/extension/plpgsql.control
 %%NLS%%share/locale/cs/LC_MESSAGES/initdb-9.4.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/pg_basebackup-9.4.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/pg_controldata-9.4.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/pg_ctl-9.4.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/pg_resetxlog-9.4.mo
