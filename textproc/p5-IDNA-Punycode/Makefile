@@ -15,6 +15,9 @@ COMMENT=	Perl module to encode Unicode string in Punycode
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+DEPRECATED=	Deprecated by upstream
+EXPIRATION_DATE=2018-09-30
+
 NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
