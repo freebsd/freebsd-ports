@@ -14,8 +14,6 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	fails to compile: src/chacha/poly1305.c: subscripted value is neither array nor pointer
-
 BUILD_DEPENDS=	p5-Crypt-Curve25519>=0.05:security/p5-Crypt-Curve25519 \
 		p5-Crypt-DES>0:security/p5-Crypt-DES \
 		p5-Crypt-DSA>=0.11:security/p5-Crypt-DSA \
@@ -29,7 +27,7 @@ BUILD_DEPENDS=	p5-Crypt-Curve25519>=0.05:security/p5-Crypt-Curve25519 \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFIGURE_ENV=	PERL_MM_USE_DEFAULT="1"
-USES=		perl5
+USES=		compiler:c11 perl5
 USE_PERL5=	configure
 
 OPTIONS_DEFINE=	GMP
