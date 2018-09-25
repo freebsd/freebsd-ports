@@ -207,6 +207,7 @@
 %%QT_MKSPECDIR%%/features/mac/mac.prf
 %%QT_MKSPECDIR%%/features/mac/objective_c.prf
 %%QT_MKSPECDIR%%/features/mac/rez.prf
+%%QT_MKSPECDIR%%/features/mac/sdk.mk
 %%QT_MKSPECDIR%%/features/mac/sdk.prf
 %%QT_MKSPECDIR%%/features/mac/toolchain.prf
 %%QT_MKSPECDIR%%/features/mac/unsupported/objc_namespace.prf
