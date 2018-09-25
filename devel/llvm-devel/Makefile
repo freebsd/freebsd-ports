@@ -118,6 +118,7 @@ LLD_GH_SUBDIR=		tools/lld:lld
 LLD_GH_TAGNAME=		${LLD_COMMIT}:lld
 LLDB_BUILD_DEPENDS=	swig3.0:devel/swig30
 LLDB_DESC=		Install lldb, the LLVM debugger
+LLDB_EXTRA_PATCHES=	${PATCHDIR}/lldb-patch-tools_lldb_source_Plugins_Process_FreeBSD_ProcessFreeBSD.cpp
 LLDB_GH_PROJECT=	lldb:lldb
 LLDB_GH_SUBDIR=		tools/lldb:lldb
 LLDB_GH_TAGNAME=	${LLDB_COMMIT}:lldb
@@ -150,6 +151,7 @@ COMMANDS=	bugpoint \
 		llvm-config \
 		llvm-cov \
 		llvm-cvtres \
+		llvm-cxxmap \
 		llvm-diff \
 		llvm-dis \
 		llvm-dlltool \
@@ -196,6 +198,7 @@ MAN1SRCS+=	bugpoint.1 \
 		llvm-build.1 \
 		llvm-config.1 \
 		llvm-cov.1 \
+		llvm-cxxmap.1 \
 		llvm-diff.1 \
 		llvm-dis.1 \
 		llvm-dwarfdump.1 \
