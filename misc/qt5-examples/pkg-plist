@@ -1785,6 +1785,8 @@
 %%QT_EXAMPLEDIR%%/opengl/hellogl2/mainwindow.h
 %%QT_EXAMPLEDIR%%/opengl/hellogl2/window.cpp
 %%QT_EXAMPLEDIR%%/opengl/hellogl2/window.h
+%%QT_EXAMPLEDIR%%/opengl/hellogles3/doc/images/hellogles3-example.png
+%%QT_EXAMPLEDIR%%/opengl/hellogles3/doc/src/hellogles3.qdoc
 %%QT_EXAMPLEDIR%%/opengl/hellogles3/glwindow.cpp
 %%QT_EXAMPLEDIR%%/opengl/hellogles3/glwindow.h
 %%QT_EXAMPLEDIR%%/opengl/hellogles3/hellogles3.pro
@@ -2030,6 +2032,7 @@
 %%QT_EXAMPLEDIR%%/qml/qml-i18n/doc/images/qml-i18n-example.png
 %%QT_EXAMPLEDIR%%/qml/qml-i18n/doc/src/i18n.qdoc
 %%QT_EXAMPLEDIR%%/qml/qml-i18n/i18n/base.ts
+%%QT_EXAMPLEDIR%%/qml/qml-i18n/i18n/qml_en.ts
 %%QT_EXAMPLEDIR%%/qml/qml-i18n/i18n/qml_en_AU.ts
 %%QT_EXAMPLEDIR%%/qml/qml-i18n/i18n/qml_fr.ts
 %%QT_EXAMPLEDIR%%/qml/qml-i18n/qml-i18n.qml
@@ -2308,9 +2311,11 @@
 %%QT_EXAMPLEDIR%%/qt3d/exampleresources/assets/gltf/2.0/RiggedSimple/RiggedSimple.gltf
 %%QT_EXAMPLEDIR%%/qt3d/exampleresources/assets/gltf/2.0/RiggedSimple/RiggedSimple0.bin
 %%QT_EXAMPLEDIR%%/qt3d/exampleresources/assets/gltf/LICENSE.md
+%%QT_EXAMPLEDIR%%/qt3d/exampleresources/assets/gltf/wine/LICENSE.md
 %%QT_EXAMPLEDIR%%/qt3d/exampleresources/assets/gltf/wine/Wood_Cherry_Original_.jpg
 %%QT_EXAMPLEDIR%%/qt3d/exampleresources/assets/gltf/wine/_2004_old_vine_zinfandel_btl_xlg.jpg
 %%QT_EXAMPLEDIR%%/qt3d/exampleresources/assets/gltf/wine/artezin_bottle.jpg
+%%QT_EXAMPLEDIR%%/qt3d/exampleresources/assets/gltf/wine/qt_attribution.json
 %%QT_EXAMPLEDIR%%/qt3d/exampleresources/assets/gltf/wine/wine.bin
 %%QT_EXAMPLEDIR%%/qt3d/exampleresources/assets/gltf/wine/wine.dae
 %%QT_EXAMPLEDIR%%/qt3d/exampleresources/assets/gltf/wine/wine.gltf
@@ -2991,6 +2996,8 @@
 %%QT_EXAMPLEDIR%%/quick/demos/photoviewer/doc/src/photoviewer.qdoc
 %%QT_EXAMPLEDIR%%/quick/demos/photoviewer/i18n/qml_de.qm
 %%QT_EXAMPLEDIR%%/quick/demos/photoviewer/i18n/qml_de.ts
+%%QT_EXAMPLEDIR%%/quick/demos/photoviewer/i18n/qml_en.qm
+%%QT_EXAMPLEDIR%%/quick/demos/photoviewer/i18n/qml_en.ts
 %%QT_EXAMPLEDIR%%/quick/demos/photoviewer/i18n/qml_fr.qm
 %%QT_EXAMPLEDIR%%/quick/demos/photoviewer/i18n/qml_fr.ts
 %%QT_EXAMPLEDIR%%/quick/demos/photoviewer/main.cpp

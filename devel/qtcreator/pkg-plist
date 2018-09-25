@@ -1630,7 +1630,7 @@ libexec/qtcreator/sdktool
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/stop_small.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/text.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/unifieddiff.png
-%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/used-in-examples/qt-logo.png
+%%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/used-in-examples/transitions/qt-logo.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/var.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/var_priv.png
 %%PORTDOCS%%%%DOCSDIR%%/qtcreator/images/var_prot.png
