@@ -1,12 +1,13 @@
 ======================================================================
 
-tuptime requires the following be added to /etc/crontab:
+tuptime requires execution at startup and shutdown on rc.d, please
+add to /etc/rc.conf:
+
+	tuptime_enable="YES"
+
+tuptime requires a scheduled execution on cron, please add to
+/etc/crontab:
 
 	*/5 * * * * root %%PREFIX%%/bin/tuptime -x > /dev/null
-
-If you are upgrading from an older version you need to run the following scripts:
-
-	%%EXAMPLESDIR%%/db-tuptime-migrate.sh
-	%%EXAMPLESDIR%%/db-tuptime-migrate-3.0-to-3.1.sh
 
 ======================================================================
