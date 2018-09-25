@@ -7,4 +7,4 @@ work (typically a parallel job) on a set of allocated nodes. Finally,
 it arbitrates contention for resources by managing a queue of
 pending work.
 
-WWW: http://slurm.schedmd.com/
+WWW: https://slurm.schedmd.com/
