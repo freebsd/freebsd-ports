@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tuptime
-DISTVERSION=	3.3.3
+DISTVERSION=	3.4.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	jeremy@smart-serv.net
@@ -13,22 +13,20 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		python:run shebangfix
+SHEBANG_FILES=	${WRKSRC}/src/tuptime
 USE_GITHUB=	yes
 GH_ACCOUNT=	rfrail3
+USE_RC_SUBR=	${PORTNAME}
+
 NO_BUILD=	yes
 NO_ARCH=	yes
-USE_RC_SUBR=	${PORTNAME}
-SHEBANG_FILES=	${WRKSRC}/src/tuptime ${WRKSRC}/scripts/*
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/tuptime \
-		${EXAMPLESDIR}/db-tuptime-migrate.sh \
-		${EXAMPLESDIR}/db-tuptime-migrate-3.0-to-3.1.sh
+		man/man1/tuptime.1.gz
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/src/tuptime ${STAGEDIR}${PREFIX}/bin/tuptime
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/db-tuptime-migrate.sh ${STAGEDIR}${EXAMPLESDIR}/db-tuptime-migrate.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/db-tuptime-migrate-3.0-to-3.1.sh ${STAGEDIR}${EXAMPLESDIR}/db-tuptime-migrate-3.0-to-3.1.sh
+	${INSTALL_MAN} ${WRKSRC}/src/man/tuptime.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
