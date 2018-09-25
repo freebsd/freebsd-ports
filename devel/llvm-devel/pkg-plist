@@ -12,6 +12,7 @@ bin/llvm-cfi-verify-devel
 bin/llvm-config-devel
 bin/llvm-cov-devel
 bin/llvm-cvtres-devel
+bin/llvm-cxxmap-devel
 bin/llvm-diff-devel
 bin/llvm-dis-devel
 bin/llvm-dlltool-devel
@@ -153,6 +154,7 @@ llvm-devel/bin/llvm-cov
 llvm-devel/bin/llvm-cvtres
 llvm-devel/bin/llvm-cxxdump
 llvm-devel/bin/llvm-cxxfilt
+llvm-devel/bin/llvm-cxxmap
 llvm-devel/bin/llvm-diff
 llvm-devel/bin/llvm-dis
 llvm-devel/bin/llvm-dlltool
@@ -330,7 +332,6 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Analysis/Analyses/LiveVariables.h
 %%CLANG%%llvm-devel/include/clang/Analysis/Analyses/OSLog.h
 %%CLANG%%llvm-devel/include/clang/Analysis/Analyses/PostOrderCFGView.h
-%%CLANG%%llvm-devel/include/clang/Analysis/Analyses/PseudoConstantAnalysis.h
 %%CLANG%%llvm-devel/include/clang/Analysis/Analyses/ReachableCode.h
 %%CLANG%%llvm-devel/include/clang/Analysis/Analyses/ThreadSafety.h
 %%CLANG%%llvm-devel/include/clang/Analysis/Analyses/ThreadSafetyCommon.h
@@ -856,6 +857,7 @@ llvm-devel/bin/yaml2obj
 %%LLDB%%llvm-devel/include/lldb/Breakpoint/BreakpointResolverFileLine.h
 %%LLDB%%llvm-devel/include/lldb/Breakpoint/BreakpointResolverFileRegex.h
 %%LLDB%%llvm-devel/include/lldb/Breakpoint/BreakpointResolverName.h
+%%LLDB%%llvm-devel/include/lldb/Breakpoint/BreakpointResolverScripted.h
 %%LLDB%%llvm-devel/include/lldb/Breakpoint/BreakpointSite.h
 %%LLDB%%llvm-devel/include/lldb/Breakpoint/BreakpointSiteList.h
 %%LLDB%%llvm-devel/include/lldb/Breakpoint/Stoppoint.h
@@ -1720,6 +1722,7 @@ llvm-devel/include/llvm/DebugInfo/CodeView/TypeHashing.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeIndex.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeIndexDiscovery.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeRecord.h
+llvm-devel/include/llvm/DebugInfo/CodeView/TypeRecordHelpers.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeRecordMapping.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeStreamMerger.h
 llvm-devel/include/llvm/DebugInfo/CodeView/TypeSymbolEmitter.h
@@ -1814,9 +1817,12 @@ llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeEnumTypes.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeExeSymbol.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeRawSymbol.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeSession.h
+llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeSymbolEnumerator.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeTypeBuiltin.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeTypeEnum.h
+llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeTypeFunctionSig.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeTypePointer.h
+llvm-devel/include/llvm/DebugInfo/PDB/Native/NativeTypeUDT.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/PDBFile.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/PDBFileBuilder.h
 llvm-devel/include/llvm/DebugInfo/PDB/Native/PDBStringTable.h
@@ -1981,6 +1987,7 @@ llvm-devel/include/llvm/IR/IntrinsicsHexagon.td
 llvm-devel/include/llvm/IR/IntrinsicsMips.td
 llvm-devel/include/llvm/IR/IntrinsicsNVVM.td
 llvm-devel/include/llvm/IR/IntrinsicsPowerPC.td
+llvm-devel/include/llvm/IR/IntrinsicsRISCV.td
 llvm-devel/include/llvm/IR/IntrinsicsSystemZ.td
 llvm-devel/include/llvm/IR/IntrinsicsWebAssembly.td
 llvm-devel/include/llvm/IR/IntrinsicsX%%LLVM_MAJOR%%6.td
@@ -2001,6 +2008,7 @@ llvm-devel/include/llvm/IR/NoFolder.h
 llvm-devel/include/llvm/IR/OperandTraits.h
 llvm-devel/include/llvm/IR/Operator.h
 llvm-devel/include/llvm/IR/OptBisect.h
+llvm-devel/include/llvm/IR/PassInstrumentation.h
 llvm-devel/include/llvm/IR/PassManager.h
 llvm-devel/include/llvm/IR/PassManagerInternal.h
 llvm-devel/include/llvm/IR/PassTimingInfo.h
@@ -2165,6 +2173,7 @@ llvm-devel/include/llvm/PassRegistry.h
 llvm-devel/include/llvm/PassSupport.h
 llvm-devel/include/llvm/Passes/PassBuilder.h
 llvm-devel/include/llvm/Passes/PassPlugin.h
+llvm-devel/include/llvm/Passes/StandardInstrumentations.h
 llvm-devel/include/llvm/ProfileData/Coverage/CoverageMapping.h
 llvm-devel/include/llvm/ProfileData/Coverage/CoverageMappingReader.h
 llvm-devel/include/llvm/ProfileData/Coverage/CoverageMappingWriter.h
@@ -2297,6 +2306,7 @@ llvm-devel/include/llvm/Support/SpecialCaseList.h
 llvm-devel/include/llvm/Support/StringPool.h
 llvm-devel/include/llvm/Support/StringSaver.h
 llvm-devel/include/llvm/Support/SwapByteOrder.h
+llvm-devel/include/llvm/Support/SymbolRemappingReader.h
 llvm-devel/include/llvm/Support/SystemUtils.h
 llvm-devel/include/llvm/Support/TarWriter.h
 llvm-devel/include/llvm/Support/TargetOpcodes.def
@@ -2729,7 +2739,6 @@ llvm-devel/lib/libLLVMBPFInfo.a
 llvm-devel/lib/libLLVMBinaryFormat.a
 llvm-devel/lib/libLLVMBitReader.a
 llvm-devel/lib/libLLVMBitWriter.a
-llvm-devel/lib/libLLVMCFIVerify.a
 llvm-devel/lib/libLLVMCodeGen.a
 llvm-devel/lib/libLLVMCore.a
 llvm-devel/lib/libLLVMCoroutines.a
@@ -2741,9 +2750,6 @@ llvm-devel/lib/libLLVMDebugInfoPDB.a
 llvm-devel/lib/libLLVMDemangle.a
 llvm-devel/lib/libLLVMDlltoolDriver.a
 llvm-devel/lib/libLLVMExecutionEngine.a
-llvm-devel/lib/libLLVMExegesis.a
-llvm-devel/lib/libLLVMExegesisAArch64.a
-llvm-devel/lib/libLLVMExegesisX%%LLVM_MAJOR%%6.a
 llvm-devel/lib/libLLVMFuzzMutate.a
 llvm-devel/lib/libLLVMGlobalISel.a
 llvm-devel/lib/libLLVMHexagonAsmParser.a
@@ -2766,7 +2772,6 @@ llvm-devel/lib/libLLVMLibDriver.a
 llvm-devel/lib/libLLVMLineEditor.a
 llvm-devel/lib/libLLVMLinker.a
 llvm-devel/lib/libLLVMMC.a
-llvm-devel/lib/libLLVMMCA.a
 llvm-devel/lib/libLLVMMCDisassembler.a
 llvm-devel/lib/libLLVMMCJIT.a
 llvm-devel/lib/libLLVMMCParser.a
@@ -2939,6 +2944,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%svn
 %%LLDB%%llvm-devel/lib/liblldbPluginABISysV_x%%LLVM_MAJOR%%6_64.a
 %%LLDB%%llvm-devel/lib/liblldbPluginAppleObjCRuntime.a
 %%LLDB%%llvm-devel/lib/liblldbPluginArchitectureArm.a
+%%LLDB%%llvm-devel/lib/liblldbPluginArchitectureMips.a
 %%LLDB%%llvm-devel/lib/liblldbPluginArchitecturePPC64.a
 %%LLDB%%llvm-devel/lib/liblldbPluginCPlusPlusLanguage.a
 %%LLDB%%llvm-devel/lib/liblldbPluginCXXItaniumABI.a
