@@ -11,8 +11,6 @@ COMMENT=	C++ web development framework
 
 LICENSE=	MIT
 
-BROKEN_powerpc64=	Does not build: error: 'localeconv_l' was not declared in this scope
-
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		cmake python:2.7 shebangfix ssl tar:bzip2

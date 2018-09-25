@@ -12,8 +12,6 @@ COMMENT=	Python version of 3D collision detection library Bullet
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_powerpc64=	fails to compile: FontData.h:265:1: narrowing conversion of '-96' from 'int' to 'char' inside { }
-
 USES=		compiler:c++11-lang localbase python
 USE_GITHUB=	yes
 GH_ACCOUNT=	bulletphysics

@@ -11,7 +11,6 @@ COMMENT=	Dungeon Crawl Stone Soup - a fun, free rogue-like game
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
-BROKEN_powerpc64=	fails to compile: tool/tile.h: 'nullptr' was not declared in this scope
 NOT_FOR_ARCHS=		armv6
 NOT_FOR_ARCHS_REASON=	missing platform \#define or unsupported compiler
 

@@ -18,13 +18,12 @@ COMMENT=	Free Toolkit For Developing Mapping Applications
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc=		fails to install: runs out of virtual memory
+
 LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libboost_system.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
-
-BROKEN_powerpc=		fails to install: runs out of virtual memory
-BROKEN_powerpc64=	fails to link: libmapnik.so: undefined reference to boost::match_results
 
 USES=		compiler:c++11-lib pkgconfig python scons tar:bzip2
 USE_GNOME=	libxml2
