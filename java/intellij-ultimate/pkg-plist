@@ -329,6 +329,9 @@ bin/idea
 %%IDEA_HOME%%/plugins/AngularJS/lib/AngularJS.jar
 %%IDEA_HOME%%/plugins/AngularJS/lib/resources_en.jar
 %%IDEA_HOME%%/plugins/AngularJS/ngCli/runner.js
+%%IDEA_HOME%%/plugins/AngularJS/ngCli/schematicsProvider.js
+%%IDEA_HOME%%/plugins/AngularJS/ngCli/schematicsProvider60.js
+%%IDEA_HOME%%/plugins/AngularJS/ngCli/schematicsProvider62.js
 %%IDEA_HOME%%/plugins/AngularJS/ngCli/schematicsInfoProvider.js
 %%IDEA_HOME%%/plugins/AngularJS/ngLanguageService/angular-plugin.js
 %%IDEA_HOME%%/plugins/AngularJS/ngLanguageService/angular-session-20.js
@@ -350,7 +353,7 @@ bin/idea
 %%IDEA_HOME%%/plugins/CSS/lib/resources_en.jar
 %%IDEA_HOME%%/plugins/DatabaseTools/lib/database-impl.jar
 %%IDEA_HOME%%/plugins/DatabaseTools/lib/database-openapi.jar
-%%IDEA_HOME%%/plugins/DatabaseTools/lib/dekaf-single-2.0.0.370.jar
+%%IDEA_HOME%%/plugins/DatabaseTools/lib/dekaf-single-2.0.0.372.jar
 %%IDEA_HOME%%/plugins/DatabaseTools/lib/jdbc-console.jar
 %%IDEA_HOME%%/plugins/DatabaseTools/lib/resources_en.jar
 %%IDEA_HOME%%/plugins/DatabaseTools/lib/unidecode-0.0.7.jar
@@ -9582,6 +9585,11 @@ bin/idea
 %%IDEA_HOME%%/plugins/android/lib/layoutlib/data/res/xml/storage_list.xml
 %%IDEA_HOME%%/plugins/android/lib/layoutlib/data/res/xml/time_zones_by_country.xml
 %%IDEA_HOME%%/plugins/android/lib/libwebp.jar
+%%IDEA_HOME%%/plugins/android/lib/libwebp/linux/libwebp_jni.so
+%%IDEA_HOME%%/plugins/android/lib/libwebp/linux/libwebp_jni64.so
+%%IDEA_HOME%%/plugins/android/lib/libwebp/mac/libwebp_jni64.dylib
+%%IDEA_HOME%%/plugins/android/lib/libwebp/win/webp_jni.dll
+%%IDEA_HOME%%/plugins/android/lib/libwebp/win/webp_jni64.dll
 %%IDEA_HOME%%/plugins/android/lib/lint-api-26.1.2.jar
 %%IDEA_HOME%%/plugins/android/lib/lint-checks-26.1.2.jar
 %%IDEA_HOME%%/plugins/android/lib/manifest-merger-26.1.2.jar
