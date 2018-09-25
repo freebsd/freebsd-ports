@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 BROKEN_aarch64=		fails to compile: Checking for compiler version... 5.0.0, bad; Please ensure you are using GCC 4.7 / Clang 3.4 or above
 BROKEN_armv6=		fails to compile: Checking for compiler version... 5.0.0, bad; Please ensure you are using GCC 4.7 / Clang 3.4 or above
 BROKEN_armv7=		fails to compile: Checking for compiler version... 5.0.0, bad; Please ensure you are using GCC 4.7 / Clang 3.4 or above
-BROKEN_powerpc64=	fails to compile: CartDebug.cxx: 'snprintf' is not a member of 'std'
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
