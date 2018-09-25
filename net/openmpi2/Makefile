@@ -2,6 +2,7 @@
 
 PORTNAME=	openmpi
 PORTVERSION=	2.1.5
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 PKGNAMESUFFIX=	2
@@ -22,11 +23,12 @@ LIB_DEPENDS=	libhwloc.so:devel/hwloc \
 		libevent.so:devel/libevent \
 		libmunge.so:security/munge
 
-HAS_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 # :keepla because port uses lt_dlopen
 USES=		fortran gmake libtool:keepla localbase perl5 \
 		pkgconfig tar:bzip2
+
+HAS_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_PERL5=	build
 
 MPIBASE?=	mpi
@@ -43,7 +45,6 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
 			--enable-mpi-fortran=usempi \
 			--enable-mpi-cxx \
 			--enable-cxx-exceptions \
-			--enable-heterogeneous \
 			--enable-mpi-thread-multiple \
 			--with-libevent=external \
 			--enable-mca-no-build=verbs,btl_openib,oob_ud \
