@@ -16,7 +16,7 @@ LIB_DEPENDS=	libserd-0.so:devel/serd libsord-0.so:devel/sord
 BUILD_DEPENDS=	lv2>=1.14.0:audio/lv2
 
 USES=		pkgconfig python:build tar:bzip2 waf
-
+USE_CSTD=	c99
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION}
