@@ -9,7 +9,7 @@ PORTREVISION=	0
 CATEGORIES=	games
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Moddable fighting game engine (aka Beats of Rage)
+COMMENT=	2D side scrolling engine for beat 'em ups, shooters, and more #'
 
 LICENSE=	BSD3CLAUSE GPLv2+
 .if ${PORTVERSION} >= 4134
