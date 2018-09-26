@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ski
-PORTVERSION=	6.11
+PORTVERSION=	6.12
 CATEGORIES=	games python
 MASTER_SITES=	http://catb.org/~esr/ski/
 
