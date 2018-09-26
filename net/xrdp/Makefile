@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	xrdp
-PORTVERSION=	0.9.7
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9.8
 PORTEPOCH=	1
 CATEGORIES=	net
 DIST_SUBDIR?=	${PORTNAME}
@@ -16,13 +15,15 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:devel/nasm
-RUN_DEPENDS=	${LOCALBASE}/lib/xorg/modules/libxorgxrdp.so:x11-drivers/xorgxrdp
+RUN_DEPENDS=	${LOCALBASE}/lib/xorg/modules/libxorgxrdp.so:x11-drivers/xorgxrdp \
+		${LOCALBASE}/lib/pulse-11.1/modules/module-xrdp-sink.so:audio/pulseaudio-module-xrdp
 
 USES=		autoreconf:build jpeg localbase libtool pkgconfig ssl
 USE_XORG=	ice pixman sm x11 xfixes xrandr
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/xrdp
 USE_GITHUB=	yes
+
+GNU_CONFIGURE=	yes
 GH_ACCOUNT=	neutrinolabs
 GH_PROJECT=	xrdp librfxcodec:librfxcodec libpainter:libpainter
 GH_TAGNAME=	v0.1.4:librfxcodec v0.1.1:libpainter
