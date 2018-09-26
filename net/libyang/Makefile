@@ -1,0 +1,23 @@
+# $FreeBSD$
+
+PORTNAME=	libyang
+PORTVERSION=	0.16
+DISTVERSIONPREFIX=	v
+DISTVERSIONSUFFIX=	-r1
+CATEGORIES=	net
+
+MAINTAINER=	olivier@FreeBSD.org
+COMMENT=	YANG data modeling language library
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libpcre.so:devel/pcre
+
+USES=	cmake
+USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	CESNET
+
+.include <bsd.port.mk>
