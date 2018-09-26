@@ -1700,6 +1700,7 @@ share/icons/hicolor/64x64/apps/wesnoth-icon.png
 %%NLS%%%%SERVER%%man/et/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/fi/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/fr/man6/wesnothd.6.gz
+%%NLS%%man/fr/man6/wesnoth.6.gz
 %%NLS%%man/gl/man6/wesnoth.6.gz
 %%NLS%%%%SERVER%%man/gl/man6/wesnothd.6.gz
 %%NLS%%%%SERVER%%man/hu/man6/wesnothd.6.gz
