@@ -1,0 +1,26 @@
+# $FreeBSD$
+
+PORTNAME=	libopusenc
+PORTVERSION=	0.2
+CATEGORIES=	audio
+MASTER_SITES=	MOZILLA/opus
+
+MAINTAINER=	naddy@FreeBSD.org
+COMMENT=	High-level API for encoding .opus files
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libopus.so:audio/opus
+
+USES=		gmake libtool pathfix
+USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-maintainer-mode	# avoid autotools cascade
+CONFIGURE_ARGS+=--disable-doc			# requires doxygen
+INSTALL_TARGET=	install-strip
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.mk>

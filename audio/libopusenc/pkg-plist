@@ -1,0 +1,9 @@
+include/opus/opusenc.h
+lib/libopusenc.a
+lib/libopusenc.so
+lib/libopusenc.so.0
+lib/libopusenc.so.0.4.2
+libdata/pkgconfig/libopusenc.pc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README.md
