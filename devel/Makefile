@@ -4952,6 +4952,7 @@
     SUBDIR += py-pytest-timeout
     SUBDIR += py-pytest-tornado
     SUBDIR += py-pytest-xdist
+    SUBDIR += py-pytest-xprocess
     SUBDIR += py-python-Levenshtein
     SUBDIR += py-python-bugzilla
     SUBDIR += py-python-distutils-extra

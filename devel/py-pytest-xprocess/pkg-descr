@@ -1,0 +1,3 @@
+Experimental py.test plugin for managing processes across test runs.
+
+WWW: https://github.com/pytest-dev/pytest-xprocess
