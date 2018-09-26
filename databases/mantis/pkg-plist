@@ -1136,6 +1136,7 @@
 %%GAUGE%%%%WWWDIR%%/plugins/GaugeSupport/pages/submit_support.php
 %%WWWDIR%%/plugins/Gravatar/Gravatar.php
 %%WWWDIR%%/plugins/Gravatar/README.md
+%%WWWDIR%%/plugins/Gravatar/lang/strings_arabic.txt
 %%WWWDIR%%/plugins/Gravatar/lang/strings_asturian.txt
 %%WWWDIR%%/plugins/Gravatar/lang/strings_belarusian_tarask.txt
 %%WWWDIR%%/plugins/Gravatar/lang/strings_breton.txt
@@ -1153,8 +1154,10 @@
 %%WWWDIR%%/plugins/Gravatar/lang/strings_hungarian.txt
 %%WWWDIR%%/plugins/Gravatar/lang/strings_icelandic.txt
 %%WWWDIR%%/plugins/Gravatar/lang/strings_italian.txt
+%%WWWDIR%%/plugins/Gravatar/lang/strings_japanese.txt
 %%WWWDIR%%/plugins/Gravatar/lang/strings_korean.txt
 %%WWWDIR%%/plugins/Gravatar/lang/strings_macedonian.txt
+%%WWWDIR%%/plugins/Gravatar/lang/strings_norwegian_bokmal.txt
 %%WWWDIR%%/plugins/Gravatar/lang/strings_portuguese_brazil.txt
 %%WWWDIR%%/plugins/Gravatar/lang/strings_portuguese_standard.txt
 %%WWWDIR%%/plugins/Gravatar/lang/strings_qqq.txt
