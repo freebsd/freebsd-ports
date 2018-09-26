@@ -12,7 +12,7 @@ COMMENT=	Common library for all Osmocom projects
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to compile: application.c:179: #pragma GCC diagnostic not allowed inside functions
+BROKEN_powerpc64=	fails to compile: application.c:179: \#pragma GCC diagnostic not allowed inside functions
 
 BUILD_DEPENDS=	python:lang/python
 

@@ -11,9 +11,9 @@ COMMENT=	Maintain local copies of remote IMAP folders w/synchronized flags
 
 LICENSE=	GPLv2
 
-BROKEN_mips=		fails to compile: util.c:523: #pragma GCC diagnostic not allowed inside functions
-BROKEN_mips64=		fails to compile: util.c:523: #pragma GCC diagnostic not allowed inside functions
-BROKEN_powerpc64=	fails to compile: util.c:523: #pragma GCC diagnostic not allowed inside functions
+BROKEN_mips=		fails to compile: util.c:523: \#pragma GCC diagnostic not allowed inside functions
+BROKEN_mips64=		fails to compile: util.c:523: \#pragma GCC diagnostic not allowed inside functions
+BROKEN_powerpc64=	fails to compile: util.c:523: \#pragma GCC diagnostic not allowed inside functions
 
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
