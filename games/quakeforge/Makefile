@@ -34,6 +34,7 @@ CONFIGURE_ARGS=	--disable-alsa \
 USE_CSTD=	gnu89
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+LDFLAGS_i386=	-Wl,-znotext
 
 SUB_FILES=	pkg-message
 

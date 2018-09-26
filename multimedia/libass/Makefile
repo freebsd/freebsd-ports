@@ -20,6 +20,7 @@ USES=		autoreconf iconv libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+LDFLAGS_i386=	-Wl,-znotext
 
 OPTIONS_DEFINE=	HARFBUZZ
 OPTIONS_DEFAULT=HARFBUZZ

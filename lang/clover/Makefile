@@ -22,6 +22,7 @@ CONFIGURE_ARGS+=	--enable-opencl --enable-opencl-icd --disable-dri \
 			--disable-egl --disable-gbm --disable-gles2 --disable-glx \
 			--disable-va --disable-vdpau --disable-xvmc \
 			--with-gallium-drivers=r600,radeonsi	# only supported GPUs
+LDFLAGS_i386=		-Wl,-znotext
 
 #MESA_BUILD_WRKSRC=	src/util src/compiler src/mesa src/gallium
 MESA_INSTALL_WRKSRC=	src/gallium/targets/opencl src/gallium/targets/pipe-loader
