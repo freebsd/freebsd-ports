@@ -43,7 +43,7 @@ restart_precmd="precmd"
 pidfile=${spamd_pidfile:-"/var/run/${name}/${name}.pid"}
 command=%%PREFIX%%/bin/${name}
 command_args="-d -r ${pidfile}"
-#command_interpreter="%%PREFIX%%/bin/perl"
+command_interpreter="%%PREFIX%%/bin/perl"
 required_dirs="%%PREFIX%%/share/spamassassin"
 
 precmd()
