@@ -1,0 +1,17 @@
+bin/yanglint
+bin/yangre
+include/libyang/dict.h
+include/libyang/extensions.h
+include/libyang/libyang.h
+include/libyang/tree_data.h
+include/libyang/tree_schema.h
+include/libyang/user_types.h
+include/libyang/xml.h
+lib/libyang.so
+lib/libyang.so.0.16
+lib/libyang.so.0.16.41
+lib/libyang/extensions/metadata.so
+lib/libyang/extensions/nacm.so
+lib/libyang/extensions/yangdata.so
+lib/libyang/user_types/user_date_and_time.so
+man/man1/yanglint.1.gz

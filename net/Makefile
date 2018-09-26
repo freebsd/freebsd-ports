@@ -429,6 +429,7 @@
     SUBDIR += libutp
     SUBDIR += libvncserver
     SUBDIR += libwebsockets
+    SUBDIR += libyang
     SUBDIR += libzapojit
     SUBDIR += libzmq2
     SUBDIR += libzmq3
