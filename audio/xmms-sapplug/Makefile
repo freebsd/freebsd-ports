@@ -3,7 +3,7 @@
 
 PORTNAME=	xmms-sapplug
 DISTVERSION=	0.3f
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	LOCAL/ehaupt
 DISTNAME=	sapplug-xmms-${DISTVERSION}
@@ -12,8 +12,6 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	XMMS input plugin for playing 8bit Atari(TM) .sap audio files
 
 LICENSE=	GPLv2
-
-BROKEN_aarch64=		fails to link: can't create dynamic relocation R_AARCH64_ADR_PREL_PG_HI21 against symbol: gtk_widget_destroyed in readonly segment
 
 BUILD_DEPENDS=	xmms:multimedia/xmms
 RUN_DEPENDS=	xmms:multimedia/xmms
@@ -29,7 +27,9 @@ PLIST_FILES=	lib/xmms/Input/libsap.so
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
+CFLAGS_aarch64=	-fpic -DPIC
 CFLAGS_amd64=	-fpic -DPIC
+CFLAGS_i386=	-fpic -DPIC
 
 .include <bsd.port.pre.mk>
 
