@@ -28,6 +28,7 @@ MEMCACHED_DESC=		Install memcached
 USES=			gmake iconv gnustep
 USE_GNUSTEP=		base build
 USE_LDCONFIG=		${GNUSTEP_LOCAL_LIBRARIES}
+LLD_UNSAFE=		yes # PR 230608
 
 CONFLICTS=		sope2-[0-9]* sope3-[0-9]*
 
