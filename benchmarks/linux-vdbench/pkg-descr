@@ -1,0 +1,5 @@
+Vdbench is a command line utility specifically created to help
+engineers and customers generate disk I/O workloads to be used
+for validating storage performance and storage data integrity.
+
+WWW: http://www.oracle.com/technetwork/server-storage/vdbench-downloads-1901681.html
