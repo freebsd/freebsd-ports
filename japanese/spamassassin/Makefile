@@ -1,14 +1,18 @@
 # Created by: TAOKA Fumiyoshi
 # $FreeBSD$
 
-PORTREVISION=	10
+PORTREVISION=	0
 CATEGORIES=	japanese mail perl5
 PKGNAMEPREFIX=	ja-
 
-MAINTAINER=	masaki@club.kyutech.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SpamAssassin with patches to handle multibyte character
 
 LICENSE=	APACHE20
+
+BROKEN=		patch does not apply
+DEPRECATED=	does not build
+EXPIRATION_DATE=2018-12-31
 
 MASTERDIR=	${.CURDIR}/../../mail/spamassassin
 
