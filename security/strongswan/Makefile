@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	strongswan
-PORTVERSION=	5.6.3
+PORTVERSION=	5.7.0
 CATEGORIES=	security
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
@@ -39,10 +39,10 @@ CONFIGURE_ARGS=	--enable-kernel-pfkey \
 		--with-group=wheel  \
 		--with-lib-prefix=${PREFIX}
 
-OPTIONS_DEFINE=	CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS EAPSIMFILE GCM IKEv1 \
+OPTIONS_DEFINE=	CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS EAPSIMFILE GCM IKEV1 \
 		IPSECKEY KERNELLIBIPSEC LOADTESTER LDAP MEDIATION MYSQL PKI SCEP SMP \
 		SQLITE SWANCTL TESTVECTOR TPM UNBOUND UNITY VICI XAUTH
-OPTIONS_DEFAULT=	BUILTIN CURL IKEv1 PKI SWANCTL VICI
+OPTIONS_DEFAULT=	BUILTIN CURL IKEV1 PKI SWANCTL VICI
 OPTIONS_SINGLE=	PRINTF_HOOKS
 OPTIONS_SINGLE_PRINTF_HOOKS=	BUILTIN LIBC VSTR
 OPTIONS_SUB=	yes
@@ -54,7 +54,7 @@ EAPDYNAMIC_DESC=	Enable EAP dynamic proxy module
 EAPRADIUS_DESC=		Enable EAP Radius proxy authentication
 EAPSIMFILE_DESC=	Enable EAP SIM with file backend
 GCM_DESC=		Enable GCM AEAD wrapper crypto plugin
-IKEv1_DESC=	Enable IKEv1 support
+IKEV1_DESC=	Enable IKEv1 support
 IPSECKEY_DESC=	Enable authentication with IPSECKEY resource records with DNSSEC
 KERNELLIBIPSEC_DESC=	Enable IPSec userland backend
 LOADTESTER_DESC=	Enable load testing plugin
@@ -82,7 +82,7 @@ EAPDYNAMIC_CONFIGURE_ON=--enable-eap-dynamic
 EAPRADIUS_CONFIGURE_ON=	--enable-eap-radius
 EAPSIMFILE_CONFIGURE_ON=--enable-eap-sim --enable-eap-sim-file
 GCM_CONFIGURE_ON=	--enable-gcm
-IKEv1_CONFIGURE_OFF=	--disable-ikev1
+IKEV1_CONFIGURE_OFF=	--disable-ikev1
 IPSECKEY_CONFIGURE_ON=	--enable-ipseckey
 KERNELLIBIPSEC_CONFIGURE_ON=	--enable-kernel-libipsec
 LOADTESTER_CONFIGURE_ON=--enable-load-tester
@@ -127,7 +127,7 @@ PLIST_SUB+=	SQL=""
 PLIST_SUB+=	SQL="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MIKEv1} || ${PORT_OPTIONS:MXAUTH}
+.if ${PORT_OPTIONS:MIKEV1} || ${PORT_OPTIONS:MXAUTH}
 PLIST_SUB+=	XAUTHGEN=""
 .else
 PLIST_SUB+=	XAUTHGEN="@comment "

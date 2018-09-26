@@ -208,8 +208,8 @@ man/man8/charon-cmd.8.gz
 %%GCM%%lib/ipsec/plugins/libstrongswan-gcm.la
 %%GCM%%lib/ipsec/plugins/libstrongswan-gcm.so
 %%GCM%%@sample %%ETCDIR%%.d/charon/gcm.conf.sample
-%%IKEv1%%lib/ipsec/plugins/libstrongswan-xauth-generic.la
-%%IKEv1%%lib/ipsec/plugins/libstrongswan-xauth-generic.so
+%%IKEV1%%lib/ipsec/plugins/libstrongswan-xauth-generic.la
+%%IKEV1%%lib/ipsec/plugins/libstrongswan-xauth-generic.so
 %%IPSECKEY%%lib/ipsec/plugins/libstrongswan-ipseckey.la
 %%IPSECKEY%%lib/ipsec/plugins/libstrongswan-ipseckey.so
 %%IPSECKEY%%%%DATADIR%%/templates/config/plugins/ipseckey.conf
