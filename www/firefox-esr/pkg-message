@@ -13,6 +13,13 @@ Some features available on other platforms are not implemented:
 
 ======================================================================
 
+On FreeBSD < 11.3 Web Content process may frequently crash due to bug 181741.
+If you cannot upgrade try applying the following workaround:
+
+$ sysctl net.local.stream.recvspace=16384
+
+======================================================================
+
 To select non-default audio backend open about:config page and create
 media.cubeb.backend preference. Supported values are: alsa, jack,
 pulse, pulse-rust, oss, sndio. Currently used backend can be inspected
