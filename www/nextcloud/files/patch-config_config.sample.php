@@ -6,7 +6,7 @@
  	),
 +	array(
 +		'path'=> '/var/www/nextcloud/apps-pkg',
-+		'url' => '/var/www/apps-pkg',
++		'url' => '/apps-pkg',
 +		'writable' => false,
 +	),
  ),
