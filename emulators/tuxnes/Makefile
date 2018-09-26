@@ -30,6 +30,10 @@ DESKTOP_ENTRIES="TuxNES" "" "${PREFIX}/share/pixmaps/tuxnes.xpm" \
 .if ${COMPILER_TYPE} == "clang"
 CPPFLAGS+=	-no-integrated-as
 .endif
+.if ${ARCH} == "i386"
+# Build tool "compdata" segfaults when linked with lld
+LLD_UNSAFE=	yes
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
