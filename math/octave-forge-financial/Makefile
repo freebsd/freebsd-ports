@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-financial
-PORTVERSION=	0.5.1
-PORTREVISION=	5
+PORTVERSION=	0.5.2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -17,6 +16,7 @@ LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
 OCTSRC=		${DISTNAME}
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/io.tar.gz:math/octave-forge-io
+RUN_DEPENDS+=	${TARBALLS_DIR}/statistics.tar.gz:math/octave-forge-statistics
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
