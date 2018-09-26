@@ -5,7 +5,7 @@ PORTNAME=	ucarp
 PORTVERSION=	1.5.2.20171201
 CATEGORIES=	net
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jcpierri@gmail.com
 COMMENT=	Userlevel Common Address Redundancy Protocol
 
 LICENSE=	ISC
