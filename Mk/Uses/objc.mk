@@ -10,7 +10,7 @@
 .if !defined(_INCLUDE_USES_OBJC_MK)
 _INCLUDE_USES_OBJC_MK=	yes
 
-OBJC_CLANG_VERSION=40
+OBJC_CLANG_VERSION=60
 
 objc_ARGS?=
 .if !empty(objc_ARGS) && ! ${objc_ARGS:Mcompiler}
