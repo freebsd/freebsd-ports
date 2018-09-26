@@ -1,13 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	citra
-PORTVERSION=	s20180924
+PORTVERSION=	s20180925
 PORTREVISION?=	0
 CATEGORIES=	emulators
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	fce7afb8dc86.patch:-p1
-PATCHFILES+=	15d44f04501d.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo 3DS emulator/debugger
@@ -27,7 +23,7 @@ BUILD_DEPENDS=	boost-libs>=1.66:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	citra-emu
-GH_TAGNAME=	d6a9b0162
+GH_TAGNAME=	a96f0f516
 GH_TUPLE=	citra-emu:ext-libressl-portable:7d01cb0:libressl/externals/libressl \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
 		MerryMage:dynarmic:r1-873-g68ca03e:dynarmic/externals/dynarmic \

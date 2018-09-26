@@ -1,6 +1,6 @@
-TIMESTAMP = 1537766432
-SHA256 (citra-emu-citra-s20180924-d6a9b0162_GH0.tar.gz) = 207dee98362d882032f2b48b262c689015a56a9a6cff3194fb2b7af7b482448a
-SIZE (citra-emu-citra-s20180924-d6a9b0162_GH0.tar.gz) = 4194730
+TIMESTAMP = 1537931380
+SHA256 (citra-emu-citra-s20180925-a96f0f516_GH0.tar.gz) = 4c8c42d658aa193f35fb6eaa11b68d3f929abb7235c689b00822d5bc24437c0f
+SIZE (citra-emu-citra-s20180925-a96f0f516_GH0.tar.gz) = 4194473
 SHA256 (citra-emu-ext-libressl-portable-7d01cb0_GH0.tar.gz) = f3fc8c9d4991b05ca1e1c8f5907ecd3ffd9724a8dccf328087b4784cda5c7db3
 SIZE (citra-emu-ext-libressl-portable-7d01cb0_GH0.tar.gz) = 1762942
 SHA256 (citra-emu-ext-soundtouch-060181e_GH0.tar.gz) = a593ab188e4feaeef8376c27b554cc413986efc777c195e44c6d3d223de9a63c
@@ -29,7 +29,3 @@ SHA256 (zeromq-cppzmq-v4.2.3_GH0.tar.gz) = 3e6b57bf49115f4ae893b1ff7848ead726701
 SIZE (zeromq-cppzmq-v4.2.3_GH0.tar.gz) = 10894
 SHA256 (zeromq-libzmq-v4.2.5_GH0.tar.gz) = f33807105ce47f684c26751ce4e27a708a83ce120cbabbc614c8df21252b238c
 SIZE (zeromq-libzmq-v4.2.5_GH0.tar.gz) = 714431
-SHA256 (fce7afb8dc86.patch) = d801177cdcf094461438f8c5da5a6a68bdea4bf978b77c8ca9a84595429430c8
-SIZE (fce7afb8dc86.patch) = 16017
-SHA256 (15d44f04501d.patch) = d1207995c2dc79960c5fe8c066ffee4c07baba5c7756666b4649163bc4e492ae
-SIZE (15d44f04501d.patch) = 994
