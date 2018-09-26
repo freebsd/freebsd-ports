@@ -19,6 +19,7 @@ USE_GL?=	yes
 USE_SDL?=	sdl2
 USE_LDCONFIG?=	yes
 ONLY_FOR_ARCHS=	i386 amd64
+LDFLAGS_i386=	-Wl,-znotext
 
 OPTFLAGS=	#
 

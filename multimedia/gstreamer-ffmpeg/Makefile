@@ -27,6 +27,7 @@ USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
+LDFLAGS_i386=	-Wl,-znotext
 
 OPTIONS_DEFINE=	FFMPEG
 FFMPEG_DESC?=	Use system ffmpeg instead of internal libav
