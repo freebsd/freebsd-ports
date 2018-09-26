@@ -18,27 +18,26 @@ BROKEN_sparc64=		build broken on big endian architectures
 
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 
-USES=		gmake iconv tar:bzip2
+USES=		gmake iconv localbase tar:bzip2
 HAS_CONFIGURE=	yes
 MAKE_ENV=	V=1
 MAKEFILE=	GNUmakefile
 
-CFLAGS+=	-I${ICONV_PREFIX}/include
-LIBS+=		-L${ICONV_PREFIX}/lib ${ICONV_LIB}
+LIBS+=		${ICONV_LIB}
 
 PLIST_FILES=	bin/mkvalidator bin/mkvtree
 
 MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e \
 		'/STRIP/s|strip|${STRIP_CMD:T}| ; \
 		 /CCFLAGS/s|-O3 .* -W|-W|' \
 		${WRKSRC}/corec/tools/coremake/gcc_linux*.build
-	${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e \
 		's|/usr/local|$$(DESTDIR)$$(PREFIX)|g' \
 		${WRKSRC}/corec/tools/coremake/gcc_mak.inc
-	${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e \
 		's|arm-none-linux-gnueabi-gcc|${CC}| ; \
 		 s|arm-none-linux-gnueabi-g++|${CXX}| ; \
 		 s|arm-none-linux-gnueabi-ar|${AR}| ; \
