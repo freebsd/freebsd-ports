@@ -19,7 +19,6 @@
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/enterprise/templates/runalerts.sh.mustache
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/recommendations.cf
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/update/cfe_internal_dc_workflow.cf
-%%EXAMPLESDIR%%/masterfiles/cfe_internal/update/cfe_internal_local_git_remote.cf
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/update/cfe_internal_update_from_repository.cf
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/update/lib.cf
 %%EXAMPLESDIR%%/masterfiles/cfe_internal/update/systemd_units.cf
@@ -78,7 +77,6 @@
 %%EXAMPLESDIR%%/masterfiles/promises.cf
 %%EXAMPLESDIR%%/masterfiles/services/autorun/hello.cf
 %%EXAMPLESDIR%%/masterfiles/services/main.cf
-%%EXAMPLESDIR%%/masterfiles/sketches/meta/api-runfile.cf
 %%EXAMPLESDIR%%/masterfiles/standalone_self_upgrade.cf
 %%EXAMPLESDIR%%/masterfiles/templates/cf-apache.service.mustache
 %%EXAMPLESDIR%%/masterfiles/templates/cf-execd.service.mustache
