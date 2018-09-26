@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nextcloud
-DISTVERSION=	14.0.0
+DISTVERSION=	14.0.1
 CATEGORIES=	www
 MASTER_SITES=	https://download.nextcloud.com/server/releases/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -11,7 +11,7 @@ COMMENT=	Personal cloud which runs on your own server
 
 LICENSE=	AGPLv3
 
-USES=		cpe gettext-runtime php:flavors,web tar:bzip2 ssl
+USES=		cpe gettext-runtime php:flavors,web tar:bzip2
 USE_PHP=	bz2 ctype curl dom fileinfo filter gd hash iconv json \
 		mbstring pdo posix session simplexml xml xmlreader xmlwriter \
 		xsl wddx zip zlib
@@ -26,25 +26,42 @@ SUB_FILES=	pkg-message
 PLIST_SUB=	NEXTCLOUD_USERNAME=${NEXTCLOUD_USERNAME} \
 		NEXTCLOUD_GROUPNAME=${NEXTCLOUD_GROUPNAME}
 
-OPTIONS_DEFINE=	EXIF LDAP OPCACHE SMB SSL
-OPTIONS_MULTI=	DB
+OPTIONS_DEFINE=		EXIF IMAGICK LDAP PCNTL SMB SSL
+OPTIONS_GROUP=		CACHING
+OPTIONS_GROUP_CACHING=	APCU MEMCACHED OPCACHE REDIS
+OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
-OPTIONS_DEFAULT=	EXIF LDAP MYSQL OPCACHE SSL
+OPTIONS_DEFAULT=	APCU EXIF LDAP MYSQL OPCACHE SSL
 
+APCU_DESC=	Local data caching using APCu (recommended)
+CACHING_DESC=	Caching
 DB_DESC=	Database backend(s)
 EXIF_DESC=	Image rotation support
-OPCACHE_DESC=	Enable (Nextcloud recommended) OpCache
+IMAGICK_DESC=	Thumbnail support (recommended)
+MEMCACHED_DESC=	Distributed data caching using Memcached
+OPCACHE_DESC=	Enable OPcode caching (recommended)
+PCNTL_DESC=	Long-running process control (recommended)
+REDIS_DESC=	Distributed data caching using Redis
 
 EXIF_USE=	PHP=exif
+IMAGICK_RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}imagick>=2.2.2:graphics/pecl-imagick@${PHP_FLAVOR}
 LDAP_USE=	PHP=ldap
-MYSQL_USES=	mysql
 MYSQL_USE=	PHP=pdo_mysql
 OPCACHE_USE=	PHP=opcache
-PGSQL_USES=	pgsql
+PCNTL_USE=	PHP=pcntl
 PGSQL_USE=	PHP=pdo_pgsql,pgsql
+REDIS_RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}redis>=2.2.6:databases/pecl-redis@${PHP_FLAVOR}
 SMB_RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}smbclient>=0.9.0:net/pecl-smbclient@${PHP_FLAVOR}
 SQLITE_USE=	PHP=pdo_sqlite,sqlite3
 SSL_USE=	PHP=openssl
+
+.include <bsd.port.pre.mk>
+
+.if ${PHP_VER} >= 70
+RUN_DEPENDS+=   ${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu@${PHP_FLAVOR}
+.else
+RUN_DEPENDS+=   ${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu4@${PHP_FLAVOR}
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/www/${PORTNAME}|${WWWDIR}|' ${WRKSRC}/config/config.sample.php
@@ -56,6 +73,5 @@ do-install:
 	@${RM} ${STAGEDIR}${WWWDIR}/updater/updater.phar
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/data
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/apps
-	@${MKDIR} ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

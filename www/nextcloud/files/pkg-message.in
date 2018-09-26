@@ -16,6 +16,9 @@ like this:
 
 And restart Apache.
 
+The caching options require additional Nextcloud configuration, see
+https://docs.nextcloud.com/server/12/admin_manual/configuration_server/caching_configuration.html
+
 ***********************************************************************
 *                       NEXTCLOUD VERSION UPGRADE                     *
 ***********************************************************************
