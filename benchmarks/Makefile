@@ -37,6 +37,7 @@
     SUBDIR += iperf
     SUBDIR += iperf3
     SUBDIR += libmicro
+    SUBDIR += linux-vdbench
     SUBDIR += lmbench
     SUBDIR += lzbench
     SUBDIR += mdtest
