@@ -16,19 +16,9 @@ USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	codesenberg
 
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
+GO_BUILDFLAGS=	-ldflags "-X main.version=${PORTVERSION}"
+
 PLIST_FILES=	bin/${PORTNAME}
-
-post-patch:
-	${MKDIR} ${WRKDIR}/src/github.com/${GH_ACCOUNT}
-	${LN} -s ${WRKSRC} ${WRKDIR}/src/github.com/${GH_ACCOUNT}/${PORTNAME}
-
-do-build:
-	cd ${WRKDIR}/src/github.com/${GH_ACCOUNT}/${PORTNAME} && \
-		GOPATH=${WRKDIR} go build -ldflags "-X main.version=${PORTVERSION}" .
-
-do-install:
-	${INSTALL_PROGRAM} \
-		${WRKDIR}/src/github.com/${GH_ACCOUNT}/${PORTNAME}/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
