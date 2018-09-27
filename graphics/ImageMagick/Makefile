@@ -41,7 +41,7 @@ PORTSCOUT?=	limit:^6\.9\.
 CONFLICTS_INSTALL=	ImageMagick7 ImageMagick7-nox11 # bin/Magick++-config
 
 # This port uses .la files, keep libtool:keepla! (magick/module.c)
-USES=		cpe gettext-runtime gmake gnome libtool:keepla \
+USES=		compiler:c++11-lang cpe gettext-runtime gmake gnome libtool:keepla \
 		localbase pathfix perl5 pkgconfig:both shebangfix tar:xz
 CPE_PRODUCT=	imagemagick
 CPE_VENDOR=	imagemagick
@@ -56,7 +56,7 @@ SAMPLE_FILES=	coder.xml colors.xml delegates.xml log.xml magic.xml mime.xml \
 		policy.xml quantization-table.xml thresholds.xml type-apple.xml \
 		type-dejavu.xml type-ghostscript.xml type-urw-base35.xml \
 		type-windows.xml type.xml
-	
+
 PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 
 OPTIONS_DEFINE=	BZIP2 DOCS DJVU FFTW FONTCONFIG FPX FREETYPE \
