@@ -9,23 +9,23 @@ USES=		go
 
 PLIST_FILES=	# reset to empty
 PLIST_DIRS=	# reset to empty
-PLIST=	${.CURDIR}/pkg-plist
+PLIST=		${.CURDIR}/pkg-plist
 
 USE_RC_SUBR?=	# reset to empty
 
 MASTERDIR=	${.CURDIR}/../unit
 
 CGO_CFLAGS+=	-I${WRKSRC}/src -I${WRKSRC}/build
+GO_PKGNAME=	nginx/unit
 
 post-extract:
-	${MKDIR} ${GO_WRKSRC:H}
-	${LN} -sf ${WRKSRC}/src/go/unit ${GO_WRKSRC}
+	@true # override master's
 
 post-configure:
-	cd ${WRKSRC} && env ${GO_ENV} ./configure go
+	cd ${WRKSRC} && ${SETENV} ${GO_ENV} ./configure go --go-path=${WRKDIR}
 
 pre-build:
-	cd ${WRKSRC} && make go
+	cd ${WRKSRC} && ${MAKE} go-install
 
 post-install:
 	@true # override master's
