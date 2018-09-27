@@ -218,6 +218,7 @@
     SUBDIR += nyan
     SUBDIR += ocaml
     SUBDIR += ocaml-autoconf
+    SUBDIR += ocaml-camlidl
     SUBDIR += ocaml-nox11
     SUBDIR += ohugs
     SUBDIR += onyx
