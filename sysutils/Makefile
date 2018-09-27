@@ -935,6 +935,7 @@
     SUBDIR += polkit-kde
     SUBDIR += polkit-qt
     SUBDIR += pot
+    SUBDIR += potnet
     SUBDIR += powerdxx
     SUBDIR += powerman
     SUBDIR += powermon
