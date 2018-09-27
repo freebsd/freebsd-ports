@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clipper
-DISTVERSION=	2.1.20180526
-PORTREVISION=	1
+DISTVERSION=	2.1.20180802
 CATEGORIES=	science
 MASTER_SITES=	https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/
 
