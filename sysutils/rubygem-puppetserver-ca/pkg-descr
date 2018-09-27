@@ -1,0 +1,4 @@
+This gem provides the functionality behind the Puppet Server CA interactions.
+The actual CLI executable lives within the Puppet Server project.
+
+WWW: https://github.com/puppetlabs/puppetserver-ca-cli/
