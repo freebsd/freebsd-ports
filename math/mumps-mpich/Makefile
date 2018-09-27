@@ -3,6 +3,7 @@
 
 MASTERDIR=		${.CURDIR}/../mumps
 
+BROKEN=		conflicting dependencies
 WITH_MPI=		yes
 
 .include "../mumps/Makefile"
