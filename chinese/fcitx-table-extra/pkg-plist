@@ -68,7 +68,12 @@ share/icons/hicolor/64x64/apps/fcitx-boshiamy.png
 share/icons/hicolor/64x64/apps/fcitx-easy-big.png
 share/icons/hicolor/64x64/apps/fcitx-t9.png
 share/icons/hicolor/64x64/apps/fcitx-zhengma.png
+share/locale/ca/LC_MESSAGES/fcitx-table-extra.mo
+share/locale/da/LC_MESSAGES/fcitx-table-extra.mo
 share/locale/de/LC_MESSAGES/fcitx-table-extra.mo
 share/locale/ja/LC_MESSAGES/fcitx-table-extra.mo
+share/locale/ko/LC_MESSAGES/fcitx-table-extra.mo
+share/locale/ru/LC_MESSAGES/fcitx-table-extra.mo
+share/locale/tr/LC_MESSAGES/fcitx-table-extra.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx-table-extra.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx-table-extra.mo

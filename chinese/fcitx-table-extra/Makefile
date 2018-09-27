@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx-table-extra
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.8
 CATEGORIES=	chinese
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
