@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: babeld dynamicrouting
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# babeld_enable (bool):   Set to NO by default.
+#               Set it to YES to enable babeld.
+# babeld_config (path):   Set to /usr/local/etc/babeld.conf
+#               by default.
+#
+
+. /etc/rc.subr
+
+name="babeld"
+rcvar=babeld_enable
+
+command=/usr/local/bin/${name}
+
+load_rc_config $name
+
+extra_commands="reload"
+
+: ${babeld_enable="NO"}
+: ${babeld_config="/usr/local/etc/babeld.conf"}
+
+command_args="-D -I /var/run/${name}.pid $babeld_config"
+
+run_rc_command "$1"
+
