@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	immortal
-PORTVERSION=	0.20.0
+PORTVERSION=	0.21.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	nbari@tequila.io
@@ -14,7 +14,7 @@ USES=		go
 USE_RC_SUBR=	immortaldir
 USE_GITHUB=	yes
 GH_TUPLE=	immortal:logrotate:6f52ae7:logrotate/src/github.com/immortal/logrotate \
-		immortal:multiwriter:2555774:multiwriter/src/github.com/immortal/multiwriter \
+		immortal:multiwriter:2e0dd11:multiwriter/src/github.com/immortal/multiwriter \
 		immortal:natcasesort:162328b:natcasesort/src/github.com/immortal/natcasesort \
 		immortal:xtime:fb1aca1:xtime/src/github.com/immortal/xtime \
 		nbari:violetear:5c7cdfe:nbari/src/github.com/nbari/violetear \
