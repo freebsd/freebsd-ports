@@ -1,0 +1,14 @@
+CamlIDL is a stub code generator and COM binding for Objective Caml.
+
+CamlIDL comprises two parts:
+
+	* A stub code generator that generates the C stub code required for the
+Caml/C interface, based on an MIDL specification. (MIDL stands for Microsoft's
+Interface Description Language; it looks like C header files with some extras
+annotations, plus a notion of object interfaces that look like C++ classess
+without inheritance.)
+
+	* A (currently small) library of functions and tools to import COM
+components in Caml applications, and export Caml code as COM components. 
+
+WWW: http://caml.inria.fr/pub/old_caml_site/camlidl/
