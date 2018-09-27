@@ -11,7 +11,6 @@ MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Gearman C Server and Library
 
 BROKEN_sparc64=		fails to build: cannot link with boost
-BROKEN_powerpc64=	fails to build: checking for the Boost program_options library... no
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR}
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
@@ -23,7 +22,8 @@ CONFLICTS=	p5-Gearman-Server-1.* gearmand-1.1.*
 USERS=		gearmand
 GROUPS=		gearmand
 
-USES=		pathfix gmake perl5 python:build libtool
+USES=		compiler:c++11-lang pathfix gmake perl5 python:build libtool
+USE_CXXSTD=	c++11
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -1,5 +1,17 @@
 --- ./configure.orig	2013-07-17 10:46:57.000000000 -0400
 +++ ./configure	2013-07-17 10:46:57.000000000 -0400
+@@ -16842,11 +16842,6 @@
+ $as_echo "$boost_cv_lib_version" >&6; }
+     # e.g. "134" for 1_34_1 or "135" for 1_35
+     boost_major_version=`echo "$boost_cv_lib_version" | sed 's/_//;s/_.*//'`
+-    case $boost_major_version in #(
+-      '' | *[!0-9]*)
+-        as_fn_error $? "invalid value: boost_major_version=$boost_major_version" "$LINENO" 5
+-        ;;
+-    esac
+ fi
+ CPPFLAGS=$boost_save_CPPFLAGS
+
 @@ -17972,7 +17972,7 @@
  
  else
