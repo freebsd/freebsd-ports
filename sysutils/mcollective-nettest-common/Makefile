@@ -9,6 +9,8 @@ COMMENT?=	MCollective common files to test ICMP and TCP connectivity
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Agents are better distributed through the Puppet forge
+
 RUN_DEPENDS?=	mcollective>=2:sysutils/mcollective
 
 USE_GITHUB=	yes
