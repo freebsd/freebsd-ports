@@ -80,6 +80,7 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/scores.d/statistics_group.conf
 %%ETCDIR%%/scores.d/subject_group.conf
 %%ETCDIR%%/scores.d/surbl_group.conf
+@sample %%ETCDIR%%/settings.conf.sample
 @sample %%ETCDIR%%/spf_dkim_whitelist.inc.sample
 @sample %%ETCDIR%%/statistic.conf.sample
 @sample %%ETCDIR%%/surbl-whitelist.inc.sample
@@ -109,7 +110,6 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/languages/cy.json
 %%DATADIR%%/languages/da.json
 %%DATADIR%%/languages/de.json
-%%DATADIR%%/languages/el.json
 %%DATADIR%%/languages/en.json
 %%DATADIR%%/languages/es.json
 %%DATADIR%%/languages/et.json
@@ -118,22 +118,14 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/languages/fi.json
 %%DATADIR%%/languages/fr.json
 %%DATADIR%%/languages/ga.json
-%%DATADIR%%/languages/gl.json
-%%DATADIR%%/languages/gu.json
-%%DATADIR%%/languages/he.json
 %%DATADIR%%/languages/hi.json
 %%DATADIR%%/languages/hr.json
 %%DATADIR%%/languages/hu.json
 %%DATADIR%%/languages/id.json
 %%DATADIR%%/languages/is.json
 %%DATADIR%%/languages/it.json
-%%DATADIR%%/languages/ja.json
-%%DATADIR%%/languages/km.json
-%%DATADIR%%/languages/kn.json
-%%DATADIR%%/languages/ko.json
 %%DATADIR%%/languages/lt.json
 %%DATADIR%%/languages/lv.json
-%%DATADIR%%/languages/ml.json
 %%DATADIR%%/languages/mr.json
 %%DATADIR%%/languages/ms.json
 %%DATADIR%%/languages/ne.json
@@ -148,30 +140,29 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/languages/so.json
 %%DATADIR%%/languages/sq.json
 %%DATADIR%%/languages/sr.json
+%%DATADIR%%/languages/stop_words
 %%DATADIR%%/languages/sv.json
 %%DATADIR%%/languages/sw.json
-%%DATADIR%%/languages/ta.json
-%%DATADIR%%/languages/te.json
-%%DATADIR%%/languages/th.json
 %%DATADIR%%/languages/tr.json
 %%DATADIR%%/languages/uk.json
 %%DATADIR%%/languages/ur.json
 %%DATADIR%%/languages/vi.json
-%%DATADIR%%/languages/yi.json
-%%DATADIR%%/languages/zh-CN.json
 %%DATADIR%%/lib/ansicolors.lua
 %%DATADIR%%/lib/argparse.lua
 %%DATADIR%%/lib/fun.lua
 %%DATADIR%%/lib/global_functions.lua
 %%DATADIR%%/lib/lua_auth_results.lua
 %%DATADIR%%/lib/lua_cfg_transform.lua
+%%DATADIR%%/lib/lua_clickhouse.lua
 %%DATADIR%%/lib/lua_dkim_tools.lua
 %%DATADIR%%/lib/lua_maps.lua
 %%DATADIR%%/lib/lua_meta.lua
 %%DATADIR%%/lib/lua_nn.lua
 %%DATADIR%%/lib/lua_redis.lua
+%%DATADIR%%/lib/lua_selectors.lua
 %%DATADIR%%/lib/lua_squeeze_rules.lua
 %%DATADIR%%/lib/lua_stat.lua
+%%DATADIR%%/lib/lua_tcp_sync.lua
 %%DATADIR%%/lib/lua_util.lua
 %%DATADIR%%/lib/plugins_stats.lua
 %%DATADIR%%/lib/rescore_utility.lua
@@ -185,6 +176,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lib/rspamadm/mime.lua
 %%DATADIR%%/lib/rspamadm/rescore.lua
 %%DATADIR%%/lib/rspamadm/stat_convert.lua
+%%DATADIR%%/lib/tableshape.lua
 %%TORCH%%%%DATADIR%%/lib/decisiontree/CartNode.lua
 %%TORCH%%%%DATADIR%%/lib/decisiontree/CartTrainer.lua
 %%TORCH%%%%DATADIR%%/lib/decisiontree/CartTree.lua
@@ -497,6 +489,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/www/css/bootstrap.min.css
 %%DATADIR%%/www/css/d3evolution.css
 %%DATADIR%%/www/css/footable.bootstrap.min.css
+%%DATADIR%%/www/css/nprogress.css
 %%DATADIR%%/www/css/rspamd.css
 %%DATADIR%%/www/favicon.ico
 %%DATADIR%%/www/fonts/glyphicons-halflings-regular.ttf
@@ -521,6 +514,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/www/js/lib/footable.min.js
 %%DATADIR%%/www/js/lib/humanize.min.js
 %%DATADIR%%/www/js/lib/jquery-3.3.1.min.js
+%%DATADIR%%/www/js/lib/nprogress.min.js
 %%DATADIR%%/www/js/lib/require.min.js
 %%DATADIR%%/www/js/lib/visibility.min.js
 %%DATADIR%%/www/js/main.js
