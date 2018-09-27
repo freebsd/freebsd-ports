@@ -356,7 +356,6 @@
     SUBDIR += mppp
     SUBDIR += mprime
     SUBDIR += msieve
-    SUBDIR += mtl
     SUBDIR += mtrxmath
     SUBDIR += multichoose
     SUBDIR += mumps

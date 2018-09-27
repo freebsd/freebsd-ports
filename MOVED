@@ -10529,3 +10529,5 @@ www/py-searx|www/searx|2018-09-16|Move to a proper directory: this is a server, 
 net/syndication|net/kf5-syndication|2018-09-17|Has become a proper KDE framework
 x11-wm/swm||2018-09-21|Has expired: upstream no longer maintained, the screen turns black after starting swm
 graphics/OpenEXR|graphics/openexr|2018-09-22|Renamed to match upstream distribution's lower-case name
+math/mtl||2018-09-27|Has expired: fails to fetch: mastersite times out
+dns/dnscrypt-proxy|dns/dnscrypt-proxy2|2018-09-27|Has expired: Deprecated by upstream, use dns/dnscrypt-proxy2 instead
