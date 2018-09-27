@@ -3,4 +3,7 @@ as possible, while fixing many outstanding problems with cvs(1).
 
 This port adds Gnome Keyring support to Subversion.
 
-WWW: http://subversion.apache.org/
+See https://wiki.freebsd.org/Ports/security/subversion-gnome-keyring for
+setup instructions.
+
+WWW: https://subversion.apache.org/
