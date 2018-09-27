@@ -1,0 +1,7 @@
+
+To enable the puppet agent, add the following to /etc/rc.conf:
+
+	puppet_enable="YES"
+
+The default PID directory is /var/run/puppet
+
