@@ -15,11 +15,10 @@ PKGNAMESUFFIX=	36
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
+BROKEN_sparc64=		fails to compile: gcc core dump
+
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
 		libpcre.so:devel/pcre
-
-BROKEN_powerpc64=	fails to link: cc: Internal error: Segmentation fault (program ld)
-BROKEN_sparc64=		fails to compile: gcc core dump
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 		syslog-ng[0-9][0-9]-[0-9]* \
@@ -38,7 +37,7 @@ JSON_DESC=		Build with JSON-C support
 GEOIP_DESC=		Build with GeoIP support
 REDIS_DESC=		Build with Redis support
 
-USES=		alias gmake libtool pathfix pkgconfig
+USES=		alias compiler:c11 gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	syslog-ng
 GNU_CONFIGURE=	yes
