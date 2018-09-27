@@ -16,7 +16,7 @@ LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick
 USE_GITHUB=	yes
 GH_ACCOUNT=	hzeller
 
-USES=		gmake
+USES=		compiler:c++11-lang gmake
 ALL_TARGET=	${PORTNAME}
 WRKSRC_SUBDIR=	src
 
