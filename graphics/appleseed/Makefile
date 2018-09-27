@@ -10,6 +10,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Modern, physically-based production renderer
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpng.so:graphics/png \
