@@ -6,8 +6,8 @@ PORTVERSION=	52.8.0
 PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	MOZILLA/firefox/releases/${PORTVERSION}esr/source
-DISTNAME=	firefox-${PORTVERSION}esr.source
 PKGNAMESUFFIX=	${SP_VER}
+DISTNAME=	firefox-${PORTVERSION}esr.source
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Standalone JavaScript based from Mozilla 52-esr
@@ -35,6 +35,7 @@ CONFIGURE_ARGS=	--with-pthreads \
 		--disable-gold \
 		--with-system-icu \
 		--with-system-nspr
+CONFIGURE_ENV= HOST_CC=${CC} HOST_CXX=${CXX}
 
 OPTIONS_DEFINE=	DEBUG GCZEAL JEMALLOC OPTIMIZE READLINE UTF8 DTRACE
 OPTIONS_DEFAULT=METHODJIT OPTIMIZE READLINE
