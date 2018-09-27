@@ -31,7 +31,7 @@ USES+=		qt:4
 USE_QT=		corelib moc_build qmake_build rcc_build
 .  else
 CMAKE_ARGS+=	-DQCA_SUFFIX=qt5
-USES+=		qt:5
+USES+=		compiler:c++11-lang qt:5
 USE_QT=	core buildtools_build qmake_build
 .  endif
 qt4_PLIST=	${.CURDIR}/pkg-plist.qt4
