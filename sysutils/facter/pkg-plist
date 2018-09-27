@@ -19,6 +19,7 @@ include/facter/util/string.hpp
 include/facter/version.h
 lib/libfacter.so
 lib/libfacter.so.%%PORTVERSION%%
+lib/ruby/gems/%%RUBY_VER%%/specifications/facter-%%PORTVERSION%%.gemspec
 lib/ruby/vendor_ruby/facter.rb
 man/man8/facter.8.gz
 %%FACTER_JAVA%%lib/ruby/vendor_ruby/facter.jar
