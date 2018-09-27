@@ -10,8 +10,6 @@ MASTER_SITES=	SF
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Open On-Chip Debugger
 
-BROKEN_powerpc64=	fails to configure: error: C compiler cannot create executables
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-werror
 
@@ -55,7 +53,7 @@ TIICDI_DESC=	Support for the TI ICDI JTAG Programmer
 USB_COMMS_DESC=	Enable verbose USB communication messages
 
 USES=		gmake libtool makeinfo pkgconfig tar:bzip2
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -Wno-error=unused-command-line-argument
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -Wno-error
 INFO=		openocd
 
 post-patch:
