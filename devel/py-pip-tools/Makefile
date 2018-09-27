@@ -13,9 +13,6 @@ COMMENT=	Keep your pinned dependencies fresh
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_mips64=		fails to compile: UnicodeDecodeError: 'ascii' codec can't decode byte 0xe2 in position 6865: ordinal not in range(128) #'
-BROKEN_powerpc64=	fails to compile: UnicodeDecodeError: 'ascii' codec can't decode byte 0xe2 in position 6865: ordinal not in range(128) #'
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
