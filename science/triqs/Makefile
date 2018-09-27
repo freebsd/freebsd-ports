@@ -11,6 +11,7 @@ COMMENT=	Toolbox for Research on Interacting Quantum Systems
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+BROKEN=		wrong LIB_DEPENDS
 BROKEN_FreeBSD_10=	fatal error: 'optional' file not found
 BROKEN_i386=		error: no matching function for call to 'max': https://github.com/TRIQS/triqs/issues/596
 
