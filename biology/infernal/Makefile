@@ -11,7 +11,7 @@ COMMENT=	Search sequence databases for structural RNA homologs
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64
 ONLY_FOR_ARCHS_REASON=	requires SSE2 or AltiVec instructions
 
 USES=		gmake
