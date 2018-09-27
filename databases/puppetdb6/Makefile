@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	puppetdb
-PORTVERSION=	5.2.4
+PORTVERSION=	6.0.0
 CATEGORIES=	databases java
 MASTER_SITES=	https://downloads.puppetlabs.com/puppetdb/
-PKGNAMESUFFIX=	5
+PKGNAMESUFFIX=	6
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	PuppetDB storeconfigs backend
@@ -12,7 +12,7 @@ COMMENT=	PuppetDB storeconfigs backend
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	bash:shells/bash \
-		puppet:sysutils/puppet5
+		puppet:sysutils/puppet6
 
 USE_RC_SUBR=	puppetdb
 
@@ -26,6 +26,7 @@ SHEBANG_FILES=	ext/bin/puppetdb \
 		ext/cli/start \
 		ext/cli/stop \
 		ext/cli/reload \
+		ext/cli/upgrade \
 		ext/ezbake-functions.sh
 USE_JAVA=	yes
 NO_ARCH=	yes
