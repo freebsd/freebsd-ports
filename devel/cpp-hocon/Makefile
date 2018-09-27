@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libleatherman_util.so:devel/leatherman
 
-USES=		cmake:noninja
+USES=		cmake:noninja compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	puppetlabs
 
