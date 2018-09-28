@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	data.table
-DISTVERSION=	1.11.4
+DISTVERSION=	1.11.6
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -14,8 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_FreeBSD_11_i386=	unable to load datatable.so
 BROKEN_FreeBSD_12_i386=	unable to load datatable.so
-
-LIB_DEPENDS=	libomp.so:devel/openmp
 
 USES=		cran:auto-plist,compiles
 
