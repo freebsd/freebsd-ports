@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gcalcli
-PORTVERSION=	3.2
+PORTVERSION=	3.4.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	deskutils python
 
 MAINTAINER=	ports@thelanman.net
@@ -16,7 +15,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gdata>=0:devel/py-gdata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-api-python-client>=0:www/py-google-api-python-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httplib2>=0:www/py-httplib2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-gflags>=0:devel/py-python-gflags@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}python-gflags>=0:devel/py-python-gflags@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}oauth2client>0:security/py-oauth2client@${PY_FLAVOR}
 
 USES=		python:-2.7 shebangfix
 USE_GITHUB=	yes
@@ -40,6 +40,10 @@ NO_ARCH=	yes
 
 PORTDOCS=	README.md gcalcli_?.png
 PLIST_FILES=	bin/gcalcli
+
+pre-install:
+	@${REINPLACE_CMD} -e '197s|run|run_flow|' \
+		-e '676s|run|run_flow|' ${WRKSRC}/gcalcli
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin
