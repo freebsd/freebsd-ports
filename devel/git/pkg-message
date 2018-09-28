@@ -7,4 +7,6 @@ Also, if git's color output is broken (eg. color codes visible instead of
 applied) please consult the core.pager option in the git-config(1) manual, and
 your preferred pager's manual for color output options.
 
+bash completion script was renamed to git-completion.bash to keep original name
+
 -------------------------------------------------------------------------------

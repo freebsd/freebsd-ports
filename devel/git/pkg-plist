@@ -6,7 +6,7 @@ bin/git-shell
 bin/git-upload-archive
 bin/git-upload-pack
 %%GUI%%bin/gitk
-etc/bash_completion.d/git.sh
+etc/bash_completion.d/git-completion.bash
 %%PERL%%%%SITE_PERL%%/FromCPAN/Error.pm
 %%PERL%%%%SITE_PERL%%/FromCPAN/Mail/Address.pm
 %%PERL%%%%SITE_PERL%%/Git.pm

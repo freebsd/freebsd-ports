@@ -3,6 +3,7 @@
 
 PORTNAME=	git
 DISTVERSION=	2.19.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -229,13 +230,13 @@ post-install-CONTRIB-on:
 	# will be useful
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	@${LN} -s ../../share/git-core/contrib/completion/git-completion.bash \
-		${STAGEDIR}${PREFIX}/etc/bash_completion.d/git.sh
+		${STAGEDIR}${PREFIX}/etc/bash_completion.d/
 
 post-install-CONTRIB-off:
 	# Install the contrib completions anyway
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/completion/git-completion.bash \
-		${STAGEDIR}${PREFIX}/etc/bash_completion.d/git.sh
+		${STAGEDIR}${PREFIX}/etc/bash_completion.d/
 
 post-install-P4-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/git-p4.py ${STAGEDIR}${PREFIX}/bin/
