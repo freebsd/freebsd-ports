@@ -1,6 +1,6 @@
-TIMESTAMP = 1537931380
-SHA256 (citra-emu-citra-s20180925-a96f0f516_GH0.tar.gz) = 4c8c42d658aa193f35fb6eaa11b68d3f929abb7235c689b00822d5bc24437c0f
-SIZE (citra-emu-citra-s20180925-a96f0f516_GH0.tar.gz) = 4194473
+TIMESTAMP = 1538057377
+SHA256 (citra-emu-citra-s20180927-7c97e8df6_GH0.tar.gz) = 95bac74454b21550f59a26b007568d7a99e1530126e05eb05d93dc3b5f908c6d
+SIZE (citra-emu-citra-s20180927-7c97e8df6_GH0.tar.gz) = 4484531
 SHA256 (citra-emu-ext-libressl-portable-7d01cb0_GH0.tar.gz) = f3fc8c9d4991b05ca1e1c8f5907ecd3ffd9724a8dccf328087b4784cda5c7db3
 SIZE (citra-emu-ext-libressl-portable-7d01cb0_GH0.tar.gz) = 1762942
 SHA256 (citra-emu-ext-soundtouch-060181e_GH0.tar.gz) = a593ab188e4feaeef8376c27b554cc413986efc777c195e44c6d3d223de9a63c
