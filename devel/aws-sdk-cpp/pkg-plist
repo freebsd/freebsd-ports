@@ -2121,12 +2121,16 @@ include/aws/codecommit/model/DeleteBranchRequest.h
 include/aws/codecommit/model/DeleteBranchResult.h
 include/aws/codecommit/model/DeleteCommentContentRequest.h
 include/aws/codecommit/model/DeleteCommentContentResult.h
+include/aws/codecommit/model/DeleteFileRequest.h
+include/aws/codecommit/model/DeleteFileResult.h
 include/aws/codecommit/model/DeleteRepositoryRequest.h
 include/aws/codecommit/model/DeleteRepositoryResult.h
 include/aws/codecommit/model/DescribePullRequestEventsRequest.h
 include/aws/codecommit/model/DescribePullRequestEventsResult.h
 include/aws/codecommit/model/Difference.h
+include/aws/codecommit/model/File.h
 include/aws/codecommit/model/FileModeTypeEnum.h
+include/aws/codecommit/model/Folder.h
 include/aws/codecommit/model/GetBlobRequest.h
 include/aws/codecommit/model/GetBlobResult.h
 include/aws/codecommit/model/GetBranchRequest.h
@@ -2141,6 +2145,10 @@ include/aws/codecommit/model/GetCommitRequest.h
 include/aws/codecommit/model/GetCommitResult.h
 include/aws/codecommit/model/GetDifferencesRequest.h
 include/aws/codecommit/model/GetDifferencesResult.h
+include/aws/codecommit/model/GetFileRequest.h
+include/aws/codecommit/model/GetFileResult.h
+include/aws/codecommit/model/GetFolderRequest.h
+include/aws/codecommit/model/GetFolderResult.h
 include/aws/codecommit/model/GetMergeConflictsRequest.h
 include/aws/codecommit/model/GetMergeConflictsResult.h
 include/aws/codecommit/model/GetPullRequestRequest.h
@@ -2187,6 +2195,8 @@ include/aws/codecommit/model/RepositoryTrigger.h
 include/aws/codecommit/model/RepositoryTriggerEventEnum.h
 include/aws/codecommit/model/RepositoryTriggerExecutionFailure.h
 include/aws/codecommit/model/SortByEnum.h
+include/aws/codecommit/model/SubModule.h
+include/aws/codecommit/model/SymbolicLink.h
 include/aws/codecommit/model/Target.h
 include/aws/codecommit/model/TestRepositoryTriggersRequest.h
 include/aws/codecommit/model/TestRepositoryTriggersResult.h
