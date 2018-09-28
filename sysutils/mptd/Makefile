@@ -10,6 +10,8 @@ MASTER_SITES=	https://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Monitoring daemon for mpt RAID controllers
 
+LICENSE=	BSD2CLAUSE
+
 USE_RC_SUBR=	mptd
 PLIST_FILES+=	sbin/mptd
 
