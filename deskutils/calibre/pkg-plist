@@ -1443,6 +1443,10 @@ lib/calibre/odf/text.py
 lib/calibre/odf/thumbnail.py
 lib/calibre/odf/userfield.py
 lib/calibre/odf/xforms.py
+lib/calibre/polyglot/__init__.py
+lib/calibre/polyglot/builtins.py
+lib/calibre/polyglot/http_server.py
+lib/calibre/polyglot/urllib.py
 lib/calibre/templite/__init__.py
 lib/calibre/tinycss/__init__.py
 lib/calibre/tinycss/color3.py
@@ -1498,7 +1502,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/dictionaries/es-ES/es-ES.aff
 %%DATADIR%%/dictionaries/es-ES/es-ES.dic
 %%DATADIR%%/dictionaries/es-ES/locales
-%%DATADIR%%/ebook-convert-complete.pickle
+%%DATADIR%%/ebook-convert-complete.calibre_msgpack
 %%DATADIR%%/editor-functions.json
 %%DATADIR%%/editor-help/css.json
 %%DATADIR%%/editor-help/html.json
@@ -1748,13 +1752,13 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/jacket/stylesheet.css
 %%DATADIR%%/jacket/template.xhtml
 %%DATADIR%%/jquery.simulate.js
-%%DATADIR%%/localization/iso3166.pickle
-%%DATADIR%%/localization/iso639.pickle
+%%DATADIR%%/localization/iso3166.calibre_msgpack
+%%DATADIR%%/localization/iso639.calibre_msgpack
 %%DATADIR%%/localization/locales.zip
-%%DATADIR%%/localization/pykakasi/itaijidict2.pickle
-%%DATADIR%%/localization/pykakasi/kanadict2.pickle
-%%DATADIR%%/localization/pykakasi/kanwadict2.pickle
-%%DATADIR%%/localization/stats.pickle
+%%DATADIR%%/localization/pykakasi/itaijidict2.calibre_msgpack
+%%DATADIR%%/localization/pykakasi/kanadict2.calibre_msgpack
+%%DATADIR%%/localization/pykakasi/kanwadict2.calibre_msgpack
+%%DATADIR%%/localization/stats.calibre_msgpack
 %%DATADIR%%/localization/website-languages.txt
 %%DATADIR%%/metadata_sqlite.sql
 %%DATADIR%%/mime.types
@@ -1776,7 +1780,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/rapydscript/lib/re.pyj
 %%DATADIR%%/rapydscript/lib/traceback.pyj
 %%DATADIR%%/rapydscript/lib/uuid.pyj
-%%DATADIR%%/scripts.pickle
+%%DATADIR%%/scripts.calibre_msgpack
 %%DATADIR%%/template-functions.json
 %%DATADIR%%/templates/book_details.css
 %%DATADIR%%/templates/fb2.xsl
@@ -1792,6 +1796,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/tracer.epub
 %%DATADIR%%/user-agent-data.json
 %%DATADIR%%/user-manual-translation-stats.json
+%%DATADIR%%/viewer.html
 %%DATADIR%%/viewer.js
 %%DATADIR%%/viewer/blank.html
 %%DATADIR%%/viewer/bookmarks.js
