@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	r10k
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -18,9 +18,10 @@ RUN_DEPENDS=	rubygem-colored>=1.2:textproc/rubygem-colored \
 		rubygem-multi_json>=1.10:devel/rubygem-multi_json \
 		rubygem-puppet_forge>=2.2.8:sysutils/rubygem-puppet_forge
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem shebangfix
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/r10k \
 		${GEM_LIB_DIR}/test
