@@ -87,8 +87,8 @@ include/io_lib/zfio.h
 include/io_lib/ztr.h
 lib/libstaden-read.a
 lib/libstaden-read.so
-lib/libstaden-read.so.11
-lib/libstaden-read.so.11.1.0
+lib/libstaden-read.so.13
+lib/libstaden-read.so.13.0.0
 man/man1/scramble.1.gz
 man/man1/srf2fasta.1.gz
 man/man1/srf2fastq.1.gz
