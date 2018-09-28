@@ -1,5 +1,5 @@
---- src/zlinux.c.orig	Tue Feb 15 20:15:29 2005
-+++ src/zlinux.c	Tue Feb 15 20:22:42 2005
+--- src/zlinux.c.orig	2004-05-21 20:59:29 UTC
++++ src/zlinux.c
 @@ -10,7 +10,6 @@
  
  #include <sys/types.h>		/* needed before sys/param.h is included */
@@ -8,7 +8,7 @@
  #include <signal.h>		/* to catch ^C and ^Z signals */
  #include <stdio.h>		/* define stdin */
  #include <string.h>		/* strncpy(), strlen(), etc. */
-@@ -50,8 +49,6 @@
+@@ -50,8 +49,6 @@ char 	*tgetstr();		/* get str value of a
  
  static int vernum();		/* see bottom of this file */
  
@@ -17,7 +17,7 @@
  static	int SupGotCtC = 0;
  
  static glob_t pglob;
-@@ -1057,9 +1054,9 @@
+@@ -1057,9 +1054,9 @@ char *argv[];
   * execute imbedded command line-parsing macro directly from clpars[]
   */
  

@@ -1,4 +1,5 @@
 bin/tecoc
+man/man1/teco.1.gz
 %%DATADIR%%/upcase.tec
 %%DATADIR%%/change.tes
 %%DATADIR%%/date.tes
