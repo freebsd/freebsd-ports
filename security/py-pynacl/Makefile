@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pynacl
-DISTVERSION=	1.2.1
-PORTREVISION=	1
+DISTVERSION=	1.3.0
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.4.1:devel/py-cffi@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.4.1:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.2.1:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}hypothesis>=1.11.4:devel/py-hypothesis@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}hypothesis>=3.27.0:devel/py-hypothesis@${PY_FLAVOR}
 
 USES=		python localbase
 USE_PYTHON=	autoplist distutils
