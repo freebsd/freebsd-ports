@@ -17,4 +17,10 @@ USES=		python
 USE_PYTHON=	distutils concurrent autoplist
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_VER} == 2.7
+CONFLICTS_INSTALL=	paraview
+.endif
+
+.include <bsd.port.post.mk>

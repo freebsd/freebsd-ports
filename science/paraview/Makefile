@@ -42,6 +42,8 @@ USE_XORG=	x11 xt xext ice xdmcp xau xcb xfixes xdamage xxf86vm xrender sm xorgpr
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
 
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pygments
+
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS="ON" \
 		-DVTK_USE_SYSTEM_PNG="ON" \
 		-DVTK_USE_SYSTEM_JPEG="ON" \
