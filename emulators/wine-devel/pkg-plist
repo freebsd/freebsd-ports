@@ -206,6 +206,8 @@ include/wine/windows/d3d11_3.h
 include/wine/windows/d3d11_3.idl
 include/wine/windows/d3d11_4.h
 include/wine/windows/d3d11_4.idl
+include/wine/windows/d3d11on12.h
+include/wine/windows/d3d11on12.idl
 include/wine/windows/d3d11sdklayers.h
 include/wine/windows/d3d11sdklayers.idl
 include/wine/windows/d3d11shader.h
