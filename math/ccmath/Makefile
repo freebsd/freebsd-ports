@@ -3,7 +3,7 @@
 
 PORTNAME=	ccmath
 PORTVERSION=	2.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	SUNSITE/libs
 
@@ -12,9 +12,8 @@ COMMENT=	Mathematics library with many different functions
 
 LICENSE=	LGPL20
 
-BROKEN_aarch64=		fails to link: can't create dynamic relocation R_AARCH64_ADR_PREL_PG_HI21 against symbol: bias in readonly segment; recompile object files with -fPIC
-
 USE_LDCONFIG=	yes
+PLIST_FILES=	include/ccmath.h lib/libccm.a lib/libccm.so lib/libccm.so.1
 
 PORTDOCS=	*
 SRC_DIRS=	cfit complex fft geom intg matrix roots sfunc simu sort statf \
@@ -24,9 +23,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
 COPT=		-fPIC
-.endif
 
 post-extract:
 	@${CP} ${WRKSRC}/matrix/supp/solv.c ${WRKSRC}/matrix
