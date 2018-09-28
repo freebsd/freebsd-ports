@@ -1,14 +1,15 @@
 GeoIP is a C library that enables the user to find the country that any
-IP address or hostname originates from.  It uses a file based database
-that is accurate as of March 2002.  This database simply contains IP blocks
-as keys, and countries as values.  This database should be more complete and
-accurate than using reverse DNS lookups.
+IP address or hostname originates from. This library supports the legacy
+GeoIP database. Although it is kept up-to-date, the non-legacy database
+(net/libmaxminddb) is preferable when supported.
 
 This module can be used to automatically select the geographically closest
 mirror, to analyze your web server logs to determine the countries of your
 visitors, for credit card fraud detection, and for software export controls.
 
 This port includes a helper script, geoipupdate.sh, to help you keep the
-library up-to-date.
+library up-to-date. The helper script will only update the legacy
+database. To update GeoIP2 databases, install the geoipupdate port from
+net/geoipupdate.
 
 WWW: http://dev.maxmind.com/geoip/legacy

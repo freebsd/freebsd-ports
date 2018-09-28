@@ -7,7 +7,7 @@ CATEGORIES=	net geography
 MASTER_SITES=	https://github.com/maxmind/geoipupdate/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	adamw@FreeBSD.org
-COMMENT=	Fetch the latest copies of the paid GeoIP database
+COMMENT=	Fetch the latest copies of the paid GeoIP2 databases
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
