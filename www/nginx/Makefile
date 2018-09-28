@@ -15,6 +15,9 @@ COMMENT?=	Robust and small WWW server
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_mips=	error ngx_spinlock() or ngx_atomic_cmp_set() are not defined
+BROKEN_mips64=	error ngx_spinlock() or ngx_atomic_cmp_set() are not defined
+
 CONFLICTS_INSTALL=	nginx-devel
 
 PORTSCOUT=	limit:^1\.14\.[0-9]*
