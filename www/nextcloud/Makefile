@@ -26,18 +26,19 @@ SUB_FILES=	pkg-message
 PLIST_SUB=	NEXTCLOUD_USERNAME=${NEXTCLOUD_USERNAME} \
 		NEXTCLOUD_GROUPNAME=${NEXTCLOUD_GROUPNAME}
 
-OPTIONS_DEFINE=		EXIF IMAGICK LDAP PCNTL SMB SSL
+OPTIONS_DEFINE=		EXIF IMAGICK INTL LDAP PCNTL SMB SSL
 OPTIONS_GROUP=		CACHING
 OPTIONS_GROUP_CACHING=	APCU MEMCACHED OPCACHE REDIS
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
-OPTIONS_DEFAULT=	APCU EXIF LDAP MYSQL OPCACHE SSL
+OPTIONS_DEFAULT=	APCU EXIF INTL LDAP MYSQL OPCACHE SSL
 
 APCU_DESC=	Local data caching using APCu (recommended)
 CACHING_DESC=	Caching
 DB_DESC=	Database backend(s)
 EXIF_DESC=	Image rotation support
 IMAGICK_DESC=	Thumbnail support (recommended)
+INTL_DESC=	International character support (recommended)
 MEMCACHED_DESC=	Distributed data caching using Memcached
 OPCACHE_DESC=	Enable OPcode caching (recommended)
 PCNTL_DESC=	Long-running process control (recommended)
@@ -45,6 +46,7 @@ REDIS_DESC=	Distributed data caching using Redis
 
 EXIF_USE=	PHP=exif
 IMAGICK_RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}imagick>=2.2.2:graphics/pecl-imagick@${PHP_FLAVOR}
+INTL_USE=	PHP=intl
 LDAP_USE=	PHP=ldap
 MYSQL_USE=	PHP=pdo_mysql
 OPCACHE_USE=	PHP=opcache
@@ -57,10 +59,12 @@ SSL_USE=	PHP=openssl
 
 .include <bsd.port.pre.mk>
 
-.if ${PHP_VER} >= 70
+.if ${PORT_OPTIONS:MAPCU}
+.	if ${PHP_VER} >= 70
 RUN_DEPENDS+=   ${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu@${PHP_FLAVOR}
-.else
+.	else
 RUN_DEPENDS+=   ${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu4@${PHP_FLAVOR}
+.	endif
 .endif
 
 post-patch:
