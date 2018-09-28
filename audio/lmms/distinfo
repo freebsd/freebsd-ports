@@ -1,3 +1,5 @@
-TIMESTAMP = 1500880879
-SHA256 (LMMS-lmms-v1.1.3_GH0.tar.gz) = 59338e7b90e02fe18db73114aefe479c0e6d1e0e366185d71ea5c1a1e0f9e6bc
-SIZE (LMMS-lmms-v1.1.3_GH0.tar.gz) = 16843533
+TIMESTAMP = 1537885096
+SHA256 (LMMS-lmms-v1.2.0-rc7_GH0.tar.gz) = 2efba2eda8ec3030ff6d446fd7bbe2245b38472f60c622b9e41053b1981fd592
+SIZE (LMMS-lmms-v1.2.0-rc7_GH0.tar.gz) = 16120037
+SHA256 (rampantpixels-rpmalloc-1.3.1_GH0.tar.gz) = 9bc0013a0bf8c01540821e84fef0cef067f1d857a01ceceac36f83bd6fedc106
+SIZE (rampantpixels-rpmalloc-1.3.1_GH0.tar.gz) = 63517
