@@ -2,5 +2,7 @@ bin/jalv.select
 man/man1/jalv.select.1.gz
 man/man1/jalv.select.fr.1.gz
 share/applications/jalv.select.desktop
+share/locale/de_DE/LC_MESSAGES/jalv.select.mo
+share/locale/fr_FR/LC_MESSAGES/jalv.select.mo
 share/pixmaps/lv2.png
 share/pixmaps/lv2_16.png
