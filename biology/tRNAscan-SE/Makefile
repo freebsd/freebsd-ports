@@ -14,8 +14,6 @@ COMMENT=	Searching for tRNA genes in genomic sequence
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		missing plist
-
 RUN_DEPENDS=	cmsearch:biology/infernal
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S,.0$,,}
