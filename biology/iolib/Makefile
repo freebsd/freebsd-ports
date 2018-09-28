@@ -3,7 +3,7 @@
 
 PORTNAME=	io_lib
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	1-14-9
+DISTVERSION=	1-14-10
 CATEGORIES=	biology
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -17,10 +17,11 @@ BROKEN_powerpc64=	fails to compile: bgzip.c: error: invalid operands to binary &
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
+USES=		autoreconf gmake libtool
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	jkbonfield
 
-USES=		autoreconf gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
