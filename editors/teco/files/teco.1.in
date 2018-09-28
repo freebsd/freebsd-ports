@@ -1,0 +1,506 @@
+.Dd September 05, 2018
+.Os
+.Dt TECO 1 CON
+.Sh NAME
+.Nm teco
+.Nd The grand old text editor
+.Sh SYNOPSIS
+.Cm tecoc
+.Cm make
+.Op Fl noini
+.Op Fl nomemory
+.Ar file
+.br
+.Cm tecoc
+.Cm teco
+.Op Fl inspect
+.Op Fl nocreate
+.Op Fl noini
+.Op Fl nomemory
+.Op Fl nopage
+.Op Fl norename
+.Op Sy +nnn
+.Ar file
+.br
+.Cm tecoc
+.Cm mung
+.Op Fl noini
+.Ar file
+.Sh DESCRIPTION
+This description section is sufficiently long that it has been split into a number of subsections.
+.Ss Command names
+.Nm
+is actually invoked by the command
+.Sy tecoc .
+It takes a first argument of
+.Cm make ,
+.Cm teco ,
+or
+.Cm mung
+to control its operating mode. In the
+.Fx
+version, the base name of the invoking command is tested to provide this
+first argument. For ease of use, it is recommended that aliases are set
+up. The recommended (and usual) mappings are:
+.Bl -tag -width inspect
+.It Sy Make
+to
+.Sy tecoc make
+(note the uppercase first letter to avoid confusion with
+.Xr make 1 )
+.It Sy teco
+to
+.Sy tecoc teco
+.It Sy mung
+to
+.Sy tecoc mung
+.It Sy inspect
+to
+.Sy tecoc teco -inspect
+.El
+.Pp
+These mappings are assumed in the
+.Sx Options
+and
+.Sx Command invocations
+sections below.
+.Ss Options
+Options may be abbreviated; for each option, the part shown in brackets can be omitted.
+The following options are available for the
+.Nm
+command:
+.Bl -tag -width nocreate
+.It Fl in[spect]
+read the file only, don't create an output file.
+.It Fl noc[reate]
+if the file doesn't exist, don't create it.
+.It Fl noi[ni]
+don't execute the initialisation file. This is valid for
+.Sy Make
+or
+.Sy mung
+as well.
+.It Fl nom[emory]
+don't remember the filename (see
+.Sx Filename memory
+below). This is valid for
+.Sy Make
+also.
+.It Fl nop[age]
+don't separate input into pages. Instead, treat form feeds as normal characters.
+.It Fl nor[ename]
+don't rename files, but copy them to keep references correct
+.It Sy +nnn
+where
+.Ar nnn
+is any number of digits. Go to line number
+.Ar nnn
+and set
+.Fl nopage .
+.El
+.Ss Command invocations
+.Pp
+There are a number of different ways of starting
+.Nm .
+.Bl -tag
+.It Sy Make Ar file
+starts
+.Nm
+to create
+.Ar file .
+.br
+This is equivalent to
+.Li EWfile$$
+.It Sy teco Ar file
+starts
+.Nm
+to edit
+.Ar file .
+.br
+This is equivalent to
+.Li EBfile$Y$$
+.It Sy teco Ar file2=file1
+starts
+.Nm
+to edit
+.Ar file1 ,
+writing to
+.Ar file2.
+.br
+This is equivalent to
+.Li ERfile1$EWfile2$Y$$
+.It Sy teco
+starts
+.Nm
+to edit the last edited file.
+By default, the name of that file is saved in a file named
+.Pa tecoN.tmp
+in the current directory, where
+.Em N
+is the process ID of the parent process to
+.Nm .
+This can be overridden, as described in
+.Sx Filename memory
+below.
+.It Sy mung Ar file args
+starts
+.Nm
+to execute
+.Ar file.
+.br
+This is equivalent to
+.Li I<args>$JEIfile$$ 
+.br
+Instead of
+.Sy mung ,
+the command
+.Sy teco Ar @file args
+can be used.
+.El
+.Pp
+.Ss Key Bindings
+The keys mentioned in the
+.Pa teco.doc
+file are somewhat confusing. This should help:
+.Bl -tag -width <DELETE>
+.It Li <DELIM>
+The
+.Li Esc
+echoes as
+.Li $ ,
+however the
+.Pa teco.doc
+file shows it as
+.Li ` .
+.It Li <BS>
+Type as
+.Li Control-H ;
+this isn't the
+.Li Backspace
+key.
+.It Li <DELETE>
+The
+.Li Backspace
+key; this isn't the
+.Li Delete
+key.
+.It Li <CR>
+The
+.Li Enter
+key.
+.It Li <LF>
+Type as
+.Li Control-J .
+.El
+.Pp
+Note that the assignments for
+.Li <BS>
+and
+.Li <DELETE>
+shown here are
+swapped.
+.Li <BS>
+can be
+.Li Backspace
+and
+.Li <DELETE>
+can be
+.Li Control-H
+by
+clearing
+.Li ET&2048 ,
+e.g.
+.Li 2048,0ET
+.Ss Initialisation file
+.Nm
+.Em mungs
+(executes as
+.Nm
+commands) the file
+.Pa TECO.INI
+(yes, in uppercase) in the
+current directory before processing the command line. Initialisation
+can be done instead by defining an environment variable named
+.Ev TEC_INIT .
+The value is either the list of
+.Nm
+commands to execute, or a
+.Li $
+followed by the pathname of the initialisation file. This allows a
+single, centrally located initialisation file. Remember that the
+.Li $
+must be escaped with a backslash character.
+.Pp
+The initialisation file can be used to make initial settings. It can
+return a value, but the value setting is somewhat obscure.
+.Pp
+For example, the following will both cause successful searches to
+auto-display in all
+.Nm
+sessions.
+.Pp
+.Bl -tag -compact -offset indent -width Examplex(bash)x
+.It Example (csh):
+.Li setenv
+.Ev TEC_INIT
+1es
+.It Example (bash):
+.Li TEC_INIT=1es
+.br
+.Li export TEC_INIT
+.El
+.Pp
+The following will each cause the file
+.Pa ~/.tecrc
+to be used as the initialisation file.
+.Bl -tag -compact -offset indent -width Examplex(bash)x
+.It Example (csh):
+.Li setenv TEC_INIT \e$~/.tecrc
+.It Example (bash):
+.Li TEC_INIT=\e$~/.tecrc
+.br
+.Li export TEC_INIT
+.El
+.Ss Filename memory
+.Nm
+tries to remember the last file that it edited,
+so that after a file has been edited once, it can be re-edited without
+the file name having to be repeated on the command line.
+.Nm
+implements this by writing and reading a file that contains
+the name of the last file edited. By default, the file name is
+.Pa tecoN.tmp
+in the current directory, where
+.Em N
+is the process ID of the parent process to
+.Nm .
+.Pp
+To change the location of the memory file,
+define the environment variable
+.Ev TEC_MEMORY
+to be
+.Li $
+followed by the
+pathname of the file to be designated as the memory file.
+Remember that the
+.Li $
+must be escaped with a backslash character.
+.Pp
+The following examples will cause the name of the last
+file edited to be stored in the file
+.Pa teco.mem
+in the home directory.
+.Pp
+.Bl -tag -compact -offset indent -width Examplex(bash)x
+.It Example (csh):
+.Li setenv TEC_MEMORY \e$~/teco.mem
+.It Example (bash):
+.Li TEC_MEMORY=\e$~/teco.mem
+.br
+.Li export TEC_MEMORY
+.El
+.Pp
+.Ss Library directory
+The environment variable
+.Ev TEC_LIBRARY
+can be set to be a directory path (including the final
+.Pa / Ns );
+the path must be preceded by a
+.Li $
+character. This allows the
+.Li EI
+command to fetch
+.Nm
+commands from this directory if the file is not found in the
+current directory. Remember that the
+.Li $
+must be escaped with a backslash character.
+.Pp
+.Bl -tag -compact -offset indent -width Examplex(bash)x
+.It Example (csh):
+.Li setenv TEC_LIBRARY \e$%%PREFIX%%/lib/
+.It Example (bash):
+.Li TEC_LIBRARY=\e$/usr/%%PREFIX%%/lib/
+.br
+.Li export TEC_LIBRARY
+.El
+.Pp
+This will cause the directory
+.Pa %%PREFIX%%/lib
+to be searched for
+.Nm teco
+command files.
+.Ss Implemented flags
+There are a number of flags that can be set inside
+.Nm ,
+using the
+.Li ED
+and
+.Li ET
+mode control commands. To add functionality,
+.Nm
+is also sensitive to bits in an extra mode control
+flag,
+.Li EZ .
+Bits in the
+.Li EZ
+mode control command are
+used in different ways by different operating systems; only those
+relevant to
+.Fx
+are described here.
+.Pp
+.Bl -tag -compact -offset indent -width ETx32768
+.It Li ED&1
+Allow the caret
+.Li ^
+character in string searches.
+.It Li ED&2
+Allow yank and _ unconditionally.
+.It Li ED&16
+Failed searches preserve dot.
+.It Li ED&64
+Move dot by one after each match in multiple occurrence searches.
+.El
+.Pp
+.Bl -tag -compact -offset indent -width ETx32768
+.It Li ET&1
+Type out in image mode.
+.It Li ET&2
+Use scope for delete and
+.Li Control-U
+(default=1)
+.It Li ET&4
+Accept lowercase input (default=1).
+.It Li ET&8
+.Li Control-T
+reads without echo.
+.It Li ET&32
+.Li Control-T
+reads with no wait.
+.It Li ET&128
+.Em mung
+mode (abort on error); cleared by
+.Li *
+prompt.
+.It Li ET&2048
+Swap backspace and delete.
+.It Li ET&4096
+We are using 8 bit characters (default=1).
+.It Li ET&32768
+Trap
+.Li Control-C .
+.El
+.Pp
+.Bl -tag -compact -offset indent -width ET&32768
+.It Li EZ&128
+If set, don't stop on form feeds when reading. If clear, a form
+feed in the input stream stops the read (the standard
+.Nm
+style).
+This bit is off by default.
+.It Li EZ&256
+If set, use UNIX-style newline terminators. This means when files
+are read in, carriage-returns are not added to the end of lines,
+and when the user types the RETURN key, only a newline is entered
+into the command line (usually a carriage-return/line-feed pair is
+entered). Old macros (and old
+.Nm
+users) may get confused if this
+bit is set.
+.It Li EZ&16384
+Normally, the backup file name is created by replacing the file extension
+with
+.Pa .bak
+-
+.Pa foo.c
+becomes
+.Pa foo.bak ;
+however, if this bit is set then the backup file name is created by simply
+adding
+.Pa .bak
+to the name -
+.Pa foo.c
+becomes
+.Pa foo.c.bak .
+This choice is overridden by
+.Li EZ&1 = 0 .
+.El
+.Sh ENVIRONMENT
+The following environment variables are used by
+.Nm :
+.Bl -tag -width TECO_LIBRARY
+.It Ev TECO_INIT
+The value of this variable can be either a
+.Nm
+command string, or the name of a file containing
+.Nm
+commands. The filename must be preceded by a
+.Li $
+character. Remember that the
+.Li $
+must be escaped with a backslash character.
+See also
+.Sx Initialisation file Ns No .
+.It Ev TECO_LIBRARY
+The value of this variable should be a path to the directory
+that contains files of
+.Nm
+commands, to be accessed using
+.Li XX .
+The pathname should include the trailing
+.Li / Ns No .
+Remember that the
+.Li $
+must be escaped with a backslash character.
+See also
+.Sx Library directory Ns No .
+.It Ev TECO_MEMORY
+The value of this variable should be the name of a file
+To be used for remembereing the name of the last file
+edited by
+.Nm .
+The filename must be preceded by a
+.Li $
+character. Remember that the
+.Li $
+must be escaped with a backslash character.
+See also
+.Sx Filename memory Ns No .
+.El
+.Sh FILES
+.Bl -tag
+.It Pa %%DATADIR%%/*
+Miscellaneous
+.Nm
+macros and commands.
+.It Pa %%DOCSDIR%%/teco.doc
+The
+.Nm
+manual (if installed).
+.It Pa %%DOCSDIR%%/wchart.txt
+Summary of
+.Nm
+keystrokes (if installed).
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh SEE ALSO
+A variety of documentation files may be installed in
+.Pa %%DOCSDIR%% .
+Apart from the ones mentioned in the
+.Sx FILES
+section, they are  of limited use, because they refer to
+slightly different versions of
+.Nm .
+.Pp
+There are also many online resources.
+.Sh AUTHORS
+.An "Pete Siemsen" Aq siemsen@usc.edu .
+.br
+.An "Tom Almy" Aq tomalmy@aracnet.com .
+.br
+FreeBSD port and manual page maintained by
+.An "Bob Eager" Aq bob@eager.cx .
+.Sh BUGS
+There is no video mode.

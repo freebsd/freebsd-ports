@@ -1,13 +1,37 @@
-=============================================================================
+Powerful and compact editor with nongraphical user interface
 
-	Teco takes a first argument of mung, teco or make to control its
-operating mode. Also the name of the executable is tested to provide this
-first argument. The mapping is:
-	teco	 - tecoc teco
-	Make	 - tecoc make
-	mung	 - tecoc mung
-	inspect  - tecoc teco -inspect
+The FreeBSD port implements pretty well all that the Linux version does.
 
-You can create symlinks for this to work.
+There is now a manual page; note carefully that the name of the
+executable file is 'tecoc', and that it takes a first argument
+specifying how it is to run. The manual page has many more details.
 
-=============================================================================
+Most users will want to set up aliases for using the program; this is
+not done by the port to avoid unnecessary namespace pollution. There is
+also the issue that the conventional command for creating a new file
+with teco is 'make' - it is suggested that a capitalised version,
+'Make', is used instead. However, users can choose any name they like.
+
+An example set of aliases for csh might be:
+
+        alias Make 'tecoc make'
+        alias teco 'tecoc teco'
+        alias mung 'tecoc mung'
+        alias inspect 'tecoc teco -inspect'
+
+For bash, they might be:
+
+        alias Make='tecoc make'
+        alias teco='tecoc teco'
+        alias mung='tecoc mung'
+        alias inspect='tecoc teco -inspect'
+
+
+If the port is built with the DOCS option set to ON, then documentation
+will be installed into %%DOCSDIR%%. This will include
+a large teco manual named 'teco.doc', and a quick reference 'wall chart'
+named 'wchart.txt'. Other documents located there are outdated and/or
+inconsistent, and thus of limited use.
+
+Before starting to use tecoc, see the sections "DESCRIPTION/Command
+names" and "SEE ALSO" in the manual page.
