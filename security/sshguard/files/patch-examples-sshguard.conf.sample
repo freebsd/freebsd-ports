@@ -1,4 +1,4 @@
---- examples/sshguard.conf.sample.orig	2017-12-06 22:18:20 UTC
+--- examples/sshguard.conf.sample.orig	2018-06-25 21:13:07 UTC
 +++ examples/sshguard.conf.sample
 @@ -6,10 +6,12 @@
  
@@ -15,7 +15,7 @@
  
  # Shell command that provides logs on standard output. (optional, no default)
  # Example 1: ssh and sendmail from systemd journal:
-@@ -40,12 +42,12 @@ DETECTION_TIME=1800
+@@ -40,12 +42,12 @@ IPV4_SUBNET=32
  # !! Warning: These features may not work correctly with sandboxing. !!
  
  # Full path to PID file (optional, no default)

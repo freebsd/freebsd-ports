@@ -1,8 +1,6 @@
-diff --git src/sshguard.in src/sshguard.in
-index 40c864b..249ddb5 100644
---- src/sshguard.in
+--- src/sshguard.in.orig	2018-07-08 18:07:01 UTC
 +++ src/sshguard.in
-@@ -85,4 +85,4 @@ elif [ -z "$tailcmd" ]; then
+@@ -96,4 +96,4 @@ elif [ -z "$tailcmd" ]; then
  fi
  
  eval $tailcmd | $libexec/sshg-parser | \
