@@ -10530,3 +10530,4 @@ x11-wm/swm||2018-09-21|Has expired: upstream no longer maintained, the screen tu
 graphics/OpenEXR|graphics/openexr|2018-09-22|Renamed to match upstream distribution's lower-case name
 math/mtl||2018-09-27|Has expired: fails to fetch: mastersite times out
 dns/dnscrypt-proxy|dns/dnscrypt-proxy2|2018-09-27|Has expired: Deprecated by upstream, use dns/dnscrypt-proxy2 instead
+www/waterfox||2018-09-29|Has expired: experiment ended: unsustainable
