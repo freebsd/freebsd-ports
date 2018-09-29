@@ -4,7 +4,7 @@
 PORTNAME=	mpop
 DISTVERSION=	1.2.6
 CATEGORIES=	mail
-MASTER_SITES=	SF
+MASTER_SITES=	https://marlam.de/mpop/releases/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Small and fast POP3 client
