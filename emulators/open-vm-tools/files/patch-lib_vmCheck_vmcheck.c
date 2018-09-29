@@ -1,6 +1,6 @@
---- lib/vmCheck/vmcheck.c.orig	2018-03-30 18:44:35 UTC
+--- lib/vmCheck/vmcheck.c.orig	2018-07-13 18:54:23 UTC
 +++ lib/vmCheck/vmcheck.c
-@@ -135,6 +135,7 @@ VmCheckSafe(SafeCheckFn checkFn)
+@@ -153,6 +153,7 @@ VmCheckSafe(SafeCheckFn checkFn)
  #else
     do {
        int signals[] = {

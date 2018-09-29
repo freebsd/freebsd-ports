@@ -4,7 +4,6 @@
 PORTNAME=		open-vm-tools
 PORTVERSION=		${RELEASE_VER}
 DISTVERSIONPREFIX=	stable-
-PORTREVISION=		4
 PORTEPOCH=		2
 CATEGORIES=		emulators
 
@@ -18,8 +17,8 @@ ONLY_FOR_ARCHS=		amd64 i386
 
 LIB_DEPENDS=		libmspack.so:archivers/libmspack
 
-RELEASE_VER=		10.2.5
-BUILD_VER=		8068406
+RELEASE_VER=		10.3.0
+BUILD_VER=		8931395
 
 OPTIONS_DEFINE=		DNET LIBNOTIFY OPENSSL X11
 OPTIONS_DEFAULT=	DNET LIBNOTIFY OPENSSL X11
@@ -42,7 +41,7 @@ OPENSSL_CONFIGURE_WITH=	ssl
 WRKSRC_SUBDIR=		open-vm-tools
 
 GNU_CONFIGURE=		yes
-USES=			autoreconf fuse gettext-runtime kmod libtool localbase pathfix pkgconfig
+USES=			autoreconf fuse gettext-runtime kmod libtool localbase pathfix pkgconfig gnome
 USE_GNOME=		glib20
 
 USE_GITHUB=		yes
@@ -64,6 +63,10 @@ USE_RC_SUBR=		vmware-guestd vmware-kmod
 INSTALL_TARGET=		install-strip
 
 .include <bsd.port.options.mk>
+
+.if ${OSVERSION} < 1100000
+CFLAGS+=		-Wno-unknown-warning-option
+.endif
 
 .if ${PORT_OPTIONS:MX11}
 CONFLICTS=		open-vm-tools-nox11-[0-9]*
