@@ -3,7 +3,7 @@
 
 PORTNAME=	gnustep-app
 PORTVERSION=	2.0.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11 gnustep
 
 MAINTAINER=	theraven@FreeBSD.org
@@ -39,8 +39,6 @@ RUN_DEPENDS=	aclock>0:x11-clocks/aclock \
 		gnumail>0:mail/gnumail \
 		gnustep-ftp>0:ftp/gnustep-ftp \
 		gnustep-ladder>0:games/gnustep-ladder \
-		gnustep-slideshowkit>0:graphics/gnustep-slideshowkit \
-		gnustep-slideshow>0:graphics/gnustep-slideshow \
 		gnustep-sudoku>0:games/gnustep-sudoku \
 		gnustep-wrapper>0:deskutils/gnustep-wrapper \
 		gorm>0:devel/gorm \
