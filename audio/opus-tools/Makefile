@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	opus-tools
-PORTVERSION=	0.1.10
+PORTVERSION=	0.2
 CATEGORIES=	audio
 MASTER_SITES=	MOZILLA/opus
 
@@ -14,9 +14,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libogg.so:audio/libogg \
-		libopus.so:audio/opus
+		libopusenc.so:audio/libopusenc \
+		libopus.so:audio/opus \
+		libopusfile.so:audio/opusfile
 
 USES=		pkgconfig
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-maintainer-mode
 
