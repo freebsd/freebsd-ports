@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	v4l_compat
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	Video4Linux IOCTL header files
 
