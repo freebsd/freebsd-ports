@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	vtwm
-PORTVERSION=	5.4.99.20130906
-PORTREVISION=	1
+PORTVERSION=	5.5.0
 CATEGORIES=	x11-wm
-MASTER_SITES=	https://aklv.github.io/distfiles/
+MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Twm with a virtual desktop and optional Motif-like features
@@ -14,12 +13,10 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=	pkgconfig tar:xz
+USES=	pkgconfig
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xext xft xinerama xpm xmu xrandr
-
-WRKSRC=	${WRKDIR}/vtwm-20130906
 
 PLIST_FILES=	bin/vtwm \
 		bin/nexpm \
