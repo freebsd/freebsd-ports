@@ -2,8 +2,3 @@ bin/tcpreen
 man/man1/tcpreen.1.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/tcpreen.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/tcpreen.mo
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%%%DOCSDIR%%/TODO
