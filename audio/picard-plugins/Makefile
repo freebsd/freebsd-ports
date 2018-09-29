@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	picard-plugins
-PORTVERSION=	2.0.20180816
+PORTVERSION=	2.0.20180917
 CATEGORIES=	audio python
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -15,7 +15,7 @@ USE_PYTHON=	noflavors
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	metabrainz
-GH_TAGNAME=	a0a367f
+GH_TAGNAME=	8968e91
 
 PORTSCOUT=	limit:^2\.
 
@@ -41,11 +41,6 @@ FLAC_RUN_DEPENDS=	metaflac:audio/flac
 MP3_RUN_DEPENDS=	mp3gain:audio/mp3gain
 VORBIS_RUN_DEPENDS=	vorbisgain:audio/vorbisgain
 WAVPACK_RUN_DEPENDS=	wvgain:audio/wavpack
-
-post-patch:
-# The plugins lastfm, lastfmplus, and no_release have not been ported
-# upstream to the 2.x version of Picard and do no load
-	@(cd ${WRKSRC}/plugins; ${RM} -r lastfm lastfmplus no_release)
 
 do-build:
 # Plugins that include a separate UI (those with an __init__.py) must
