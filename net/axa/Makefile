@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	axa
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	net dns
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
 
@@ -23,9 +22,10 @@ LIB_DEPENDS=	libcheck.so:devel/check \
 		libyajl.so:devel/yajl
 RUN_DEPENDS=	sie-nmsg>0:net/sie-nmsg
 
-GNU_CONFIGURE=	yes
 USES=		autoreconf gmake libedit libtool pathfix pkgconfig shebangfix \
 		ssl
+
+GNU_CONFIGURE=	yes
 CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	cert_tools/axa_link_certs.in
