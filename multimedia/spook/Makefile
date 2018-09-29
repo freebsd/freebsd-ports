@@ -3,7 +3,7 @@
 
 PORTNAME=	spook
 PORTVERSION=	20050207
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.litech.org/spook/dist/
 

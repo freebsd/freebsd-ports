@@ -2,6 +2,7 @@
 
 PORTNAME=	libinput
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://freedesktop.org/software/${PORTNAME}/
 

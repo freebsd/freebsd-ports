@@ -3,7 +3,7 @@
 
 PORTNAME=	pwcview
 PORTVERSION=	1.4.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	http://raaf.atspace.org/ \
 		http://www.selasky.org/hans_petter/video4bsd/releases/ \

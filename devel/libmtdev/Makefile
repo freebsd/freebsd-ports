@@ -2,6 +2,7 @@
 
 PORTNAME=	mtdev
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://bitmath.org/code/${PORTNAME}/
 PKGNAMEPREFIX=	lib

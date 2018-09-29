@@ -4,7 +4,7 @@
 
 PORTNAME?=	libv4l
 PORTVERSION=	1.6.3
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://linuxtv.org/downloads/v4l-utils/:master \
 		LOCAL/kwm:local
