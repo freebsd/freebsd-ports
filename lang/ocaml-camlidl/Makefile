@@ -50,8 +50,6 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${GZCAT} ${_DISTDIR}/${PORTNAME}-${PORTVERSION}.doc.html.tar.gz \
 		| ${TAR} -C ${STAGEDIR}${DOCSDIR} -xf -
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
-	${FIND} ${STAGEDIR}${DOCSDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 
 test:
 	@${ECHO_CMD} "Testing IDL library"
