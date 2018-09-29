@@ -8,6 +8,7 @@
     SUBDIR += aldo
     SUBDIR += amtterm
     SUBDIR += anyremote
+    SUBDIR += apitran
     SUBDIR += aprsd
     SUBDIR += atslog
     SUBDIR += bfhist
