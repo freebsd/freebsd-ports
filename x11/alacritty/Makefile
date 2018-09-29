@@ -22,7 +22,7 @@ GH_TUPLE=	jwilm:rust-fontconfig:be2b94de833ec69cf767186262a5fb8360fa5b45:servofo
 
 OPTIONS_DEFINE=	EXAMPLES
 
-PLIST_FILES=    bin/alacritty \
+PLIST_FILES=	bin/alacritty \
 		man/man1/alacritty.1.gz \
 		etc/bash_completion.d/alacritty-completions.bash \
 		share/fish/completions/alacritty-completions.fish \
