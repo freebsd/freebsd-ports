@@ -19,7 +19,7 @@ NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_VER} == 2.7
+.if ${PYTHON_VER} == ${PYTHON_DEFAULT}
 CONFLICTS_INSTALL=	paraview
 .endif
 
