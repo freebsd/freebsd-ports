@@ -1,0 +1,13 @@
+A Linux toolkit for handling signals over the automatric picture
+transmission (APT) protocol.
+
+## Intro to Automatic Picture Transmission
+Automatic picture transmission (APT) is an analog image transmission format
+developed for use on weather satellites in the 1960s. While only three
+modern satellites, NOAA 15, NOAA 18, and NOAA 19, transmit on the APT
+protocol, building a reception station is cheap and simple. The images can
+be quite high qualitythey natively have a resolution of 
+4 km/px. It is reasonable to expect at least one good-quality satellite
+pass (and, thereby, opportunity for image downlink) per day. 
+
+WWW: https://github.com/rsj56/apitran

@@ -1,0 +1,6 @@
+bin/apitran
+%%DOCSDIR%%/NOAA_APT_Frame_Format.gif
+%%DOCSDIR%%/README.md
+%%EXAMPLESDIR%%/ex_1ch_11025.png
+%%EXAMPLESDIR%%/ex_2ch_48000.png
+%%EXAMPLESDIR%%/ex_2ch_48000.wav
