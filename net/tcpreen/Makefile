@@ -10,29 +10,22 @@ MASTER_SITES=	http://www.remlab.net/files/tcpreen/
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Simple TCP session re-engineering tool
 
+LICENSE=	GPLv2+
+
 USES=		tar:bzip2
 GNU_CONFIGURE=	yes
 
-DOC_FILES=	AUTHORS NEWS README THANKS TODO
+OPTIONS_SUB=	yes
+
+PORTDOCS=	AUTHORS NEWS README THANKS TODO
 
 OPTIONS_DEFINE=	DOCS NLS
 
-.include <bsd.port.options.mk>
+NLS_USES=	gettext
+NLS_CONFIGURE_OFF=	--disable-nls
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
-.endfor
-.endif
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
