@@ -14,8 +14,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_powerpc64=	fails to compile: application.c:179: \#pragma GCC diagnostic not allowed inside functions
 
-BUILD_DEPENDS=	python:lang/python
-
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libpcsclite.so:devel/pcsc-lite \
 		libtalloc.so:devel/talloc
