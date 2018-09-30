@@ -10543,3 +10543,6 @@ devel/p5-Search-Binary||2018-09-30|Has expired: Deprecated by upstream, use List
 devel/p5-ExtUtils-Command|devel/ExtUtils-MakeMaker|2018-09-30|Has expired: ExtUtils::Command has been re-incorporated to ExtUtils-MakeMaker since 7.06, use devel/ExtUtils-MakeMaker instead
 editors/yui||2018-09-30|Has expired: Unmaintained upstream
 x11/tint-devel|x11/tint|2018-09-30|Has expired: Use x11/tint instead
+print/apsfilter||2018-09-30|Mostly unmaintained since 2015 and depends on expired ports
+print/hpijs||2018-09-30|Has expired: Unsupported since 2005, please migrate to print/hplip
+archivers/freeze||2018-09-30|Has expired: unknown license

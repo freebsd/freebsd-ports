@@ -1,7 +1,0 @@
-		FREEZE / MELT COMPRESSION PROGRAM
-
-This version is tested under SunOS 4.1.2, Xenix 2.3.2, MS-DOS.
-
-The format of frozen (2.X) file is incompatible with that of frozen (1.0),
-but if this package is compiled with -DCOMPAT switch, you will able to
-unpack frozen (1.0) files, if you have them.
