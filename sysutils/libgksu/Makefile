@@ -3,7 +3,7 @@
 
 PORTNAME=	libgksu
 PORTVERSION=	2.0.12
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.debian.org/~kov/gksu/
 
