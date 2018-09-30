@@ -15,16 +15,16 @@
 #			Default: %%GROUPS%%
 # kafka_config:		Configuration file to run Kafka
 #			Default: %%ETCDIR%%/server.properties
-# kafka_log4jprofile:	Profile for Kafka logging
+# kafka_log4j_profile:	Profile for Kafka logging
 #			Default: %%ETCDIR%%/log4j.properties
-# kafka_logdir:		Directory to store Kafka logs
+# kafka_log_dir:	Directory to store Kafka logs
 #			Default: %%KAFKA_LOGDIR%%
-# kafka_jvmopts:	Options passed to JVM to start Kafka
+# kafka_java_opts:	Options passed to JVM to start Kafka
 #			Default: None
-# kafka_pidfile:	Full path of the Kafka process PID file
+# kafka_pid_file:	Full path of the Kafka process PID file
 #			Default: %%KAFKA_RUNDIR%%/kafka.pid
-# kafka_outfile:	File to store Kafka's stdout and stderr
-#			Default: $kafka_logdir/kafkaServer.out
+# kafka_out_file:	Filename to store Kafka's stdout and stderr
+#			Default: kafkaServer.out
 
 . /etc/rc.subr
 
@@ -37,28 +37,30 @@ load_rc_config "${name}"
 : ${kafka_user:=%%USERS%%}
 : ${kafka_group:=%%GROUPS%%}
 : ${kafka_config:=%%ETCDIR%%/server.properties}
-: ${kafka_log4jpropfile:=%%ETCDIR%%/log4j.properties}
-: ${kafka_logdir:=%%KAFKA_LOGDIR%%}
-: ${kafka_jvmopts:=}
-: ${kafka_outfile:=$kafka_logdir/kafkaServer.out}
-: ${kafka_pidfile:=%%KAFKA_RUNDIR%%/kafka.pid}
+: ${kafka_log4j_profile:=%%ETCDIR%%/log4j.properties}
+: ${kafka_log_dir:=%%KAFKA_LOGDIR%%}
+: ${kafka_java_opts:=}
+: ${kafka_pid_file:=%%KAFKA_RUNDIR%%/kafka.pid}
+: ${kafka_out_file:=kafkaServer.out}
 
 JAVA=%%JAVA%%
 
 CLASSPATH=":%%DATADIR%%/libs/*"
 
-kafka_logopts="-Dkafka.logs.dir=${kafka_logdir} -Dlog4j.configuration=file:${kafka_log4jpropfile}"
-kafka_main="$kafka_jvmopts $kafka_logopts -cp $CLASSPATH"
-pidfile=${kafka_pidfile}
+kafka_log_opts="-Dkafka.logs.dir=${kafka_log_dir} -Dlog4j.configuration=file:${kafka_log4j_profile}"
+kafka_main="$kafka_java_opts $kafka_log_opts -cp $CLASSPATH"
+pidfile=${kafka_pid_file}
 procname=${JAVA}
-required_files="${kafka_config} ${kafka_log4jpropfile}"
+required_files="${kafka_config} ${kafka_log4j_profile}"
 
-daemon_head=""
-daemon_tail=" > $kafka_outfile 2>&1 < /dev/null"
+daemon_head="-f"
+daemon_tail=""
 
-if [ -z $kafka_outfile ]; then
-	daemon_head="-f"
-	daemon_tail=""
+if [ -n "$kafka_out_file" ]; then
+	daemon_head=""
+	daemon_tail=" > ${kafka_log_dir}/${kafka_out_file} 2>&1 < /dev/null"
+	[ -d "$kafka_log_dir" ] || mkdir -p "$kafka_log_dir"
+	[ -f "${kafka_log_dir}/${kafka_out_file}" ] || touch "${kafka_log_dir}/${kafka_out_file}"
 fi
 
 command="/usr/sbin/daemon"
@@ -68,7 +70,7 @@ start_precmd="kafka_init"
 
 kafka_init()
 {
-	chown ${kafka_user}:${kafka_group} ${pidfile%/*} ${kafka_logdir} ${kafka_outfile}
+	chown ${kafka_user}:${kafka_group} ${pidfile%/*} ${kafka_log_dir} ${kafka_log_dir}/${kafka_out_file} ${kafka_config} ${kafka_log4j_profile}
 }
 
 run_rc_command "$1"
