@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
 RUN_DEPENDS=	dosbox:emulators/dosbox
 
-USE_QT=		corelib gui network xml uic_build moc_build qmake_build rcc_build
 USES=		qmake qt:4 tar:bzip2
+USE_QT=		corelib gui network xml uic_build moc_build qmake_build rcc_build
 
 PLIST_FILES=	bin/dboxfe \
 		bin/dboxfetray \
