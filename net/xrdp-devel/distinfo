@@ -1,7 +1,0 @@
-TIMESTAMP = 1522053694
-SHA256 (xrdp/neutrinolabs-xrdp-v0.9.6_GH0.tar.gz) = 68361f4e75fd70a85e258af78af244754dc7190092abfdb9c709e20905de260d
-SIZE (xrdp/neutrinolabs-xrdp-v0.9.6_GH0.tar.gz) = 1878049
-SHA256 (xrdp/neutrinolabs-librfxcodec-v0.1.4_GH0.tar.gz) = 8e2d6060aca6d92ebd8b5cd295e9b85b8dd12ec00aacf7e3d351a8dacb56f4f3
-SIZE (xrdp/neutrinolabs-librfxcodec-v0.1.4_GH0.tar.gz) = 48379
-SHA256 (xrdp/neutrinolabs-libpainter-v0.1.1_GH0.tar.gz) = 6caee8444fbd72677ac5e125c7ac99490688474975451668e751a9d9187ee5e6
-SIZE (xrdp/neutrinolabs-libpainter-v0.1.1_GH0.tar.gz) = 13929

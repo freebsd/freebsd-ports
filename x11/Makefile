@@ -334,7 +334,6 @@
     SUBDIR += thingylaunch
     SUBDIR += tilda
     SUBDIR += tint
-    SUBDIR += tint-devel
     SUBDIR += trayer
     SUBDIR += tycoon
     SUBDIR += urxvt-font-size

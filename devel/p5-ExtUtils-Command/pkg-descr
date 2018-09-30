@@ -1,8 +1,0 @@
-ExtUtils::Command provides a number of utilities to replace common UNIX
-commands in Makefiles, etc.  At present the list includes cp, rm_f,
-rm_rf, mv, cat, eqtime, mkpath, touch, test_f, test_d, chmod, and
-dos2unix.  Also included is the companion module Shell::Command, which
-is a thin wrapper for ExtUtils::Command to provide cross-platform
-functions emulating common shell commands.
-
-WWW: https://metacpan.org/release/BINGOS/ExtUtils-Command-1.20

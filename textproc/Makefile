@@ -605,7 +605,6 @@
     SUBDIR += p5-Hailo
     SUBDIR += p5-Hash-Merge
     SUBDIR += p5-Hatena-Keyword
-    SUBDIR += p5-IDNA-Punycode
     SUBDIR += p5-IO-CSVHeaderFile
     SUBDIR += p5-JavaScript-Minifier
     SUBDIR += p5-JavaScript-Minifier-XS
