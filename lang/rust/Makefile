@@ -162,8 +162,7 @@ post-patch:
 # `.cargo-checksum.json` to reflect the new checksums verified by Cargo.
 	@for dir in "${WRKSRC}/src/vendor/libc" \
 	"${WRKSRC}/src/vendor/libgit2-sys" \
-	"${WRKSRC}/src/vendor/openssl" \
-	"${WRKSRC}/src/vendor/openssl-sys"; do \
+	"${WRKSRC}/src/vendor/openssl"; do \
 		if ! test -d "$$dir"; then \
 			continue; \
 		fi; \
