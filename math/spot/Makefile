@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	spot
-DISTVERSION=	2.6.1
-PORTREVISION=	1
+DISTVERSION=	2.6.2
 CATEGORIES=	math
 MASTER_SITES=	http://www.lrde.epita.fr/dload/${PORTNAME}/
 
