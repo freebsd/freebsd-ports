@@ -1,0 +1,13 @@
+amdgpu, i915, and radeon DRM modules for the linuxkpi-based KMS components on
+amd64, i915 and radeonkms DRM modules from the former base DRM component on
+other architectures.
+Metaport for different versions of Linux DRM based on the FreeBSD version
+in use. This port encompasses the recommendations of the FreeBSDDesktop team
+of DRM versions for FreeBSD versions based on the last update to the LinuxKPI
+in that code base. In general, the most recent supported stable DRM for a give
+FreeBSD version will be installed. CURRENT receives the most recent development
+DRM.
+This port does not however hinder the expert user to make other decisions and
+continue to install DRM ports directly.
+
+WWW: https://github.com/FreeBSDDesktop/kms-drm
