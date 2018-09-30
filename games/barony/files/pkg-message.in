@@ -1,9 +1,9 @@
 Barony requires the original game files from Barony: Blessed Edition
-(e.g. 3.1.x) to work properly.  These can come from the GOG.com
+(e.g. 3.2.x) to work properly.  These can come from the GOG.com
 or the Steam versions of the game.
 
 If using the GOG.com version, you should download the Linux version
-barony_cursed_edition_en_3_2_1_23267.sh and use the unzip command
+barony_cursed_edition_en_3_2_2_24038.sh and use the unzip command
 line to extract the data.
 
 The files will be in a directory named data/noarch/game.  You can
@@ -13,7 +13,7 @@ permissions on the files.
 
 The easiest way to do this is to follow these steps:
 
-$ unzip barony_cursed_edition_en_3_2_1_23267.sh
+$ unzip barony_cursed_edition_en_3_2_2_24038.sh
 $ sudo cp -R data/noarch/game/* %%DATADIR%%
 $ sudo find %%DATADIR%% -type d ! -perm 755 -exec chmod 755 {} \;
 
