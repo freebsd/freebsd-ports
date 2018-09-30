@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20180930:
+  AFFECTS: users of DRM components
+  AUTHOR: jmd@FreeBSD.org
+
+  A metaport, graphics/drm-kmod, was introduced for users of both the LinuxKPI-
+  based DRM components as well as the legacy ones. It is recommended to use the
+  metaport from now on, which will select a recommended DRM version based on
+  the FreeBSD version.
+
 20180924:
   AFFECTS: www/libresonic-standalone
   AUTHOR: jlh@FreeBSD.org
