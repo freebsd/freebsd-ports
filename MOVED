@@ -10492,8 +10492,8 @@ misc/freebsd-doc-sr||2018-08-23|Removed
 www/py-django18|www/py-django111|2018-08-25|Has expired: End of Live since 01/04/2018
 x11-themes/qt4-style-Kvantum|x11-themes/Kvantum@qt4|2018-08-26|Moved to flavored version
 x11-themes/qt5-style-Kvantum|x11-themes/Kvantum@qt5|2018-08-26|Moved to flavored version
-devel/gps||2018-08-28|Has expired: Depends on obsolete LLVM 3.8.
-net-mgmt/ocsinventory-ng|net-mgmt/ocsinventory-server|2018-08-26|split port
+devel/gps||2018-08-28|Has expired: Depends on obsolete LLVM 3.8
+net-mgmt/ocsinventory-ng|net-mgmt/ocsinventory-server|2018-08-30|split port
 www/py-buku|www/buku|2018-09-01|Moved to correct directory, port is not a python library
 math/rpy2|math/py-rpy2|2018-09-01|Moved to correct directory, this is a python library
 games/libdungeonmaker||2018-09-02|Has expired: Abandonware. Unused in the ports tree
@@ -10540,7 +10540,7 @@ graphics/gnustep-slideshowkit||2018-09-30|Has expired: unknown license
 graphics/gnustep-slideshow||2018-09-30|Has expired: depends on expiring graphics/gnustep-slideshowkit
 security/lockdown||2018-09-30|Has expired: Renders system unbootable
 devel/p5-Search-Binary||2018-09-30|Has expired: Deprecated by upstream, use List::BinarySearch instead
-devel/p5-ExtUtils-Command|devel/ExtUtils-MakeMaker|2018-09-30|Has expired: ExtUtils::Command has been re-incorporated to ExtUtils-MakeMaker since 7.06, use devel/ExtUtils-MakeMaker instead
+devel/p5-ExtUtils-Command|devel/p5-ExtUtils-MakeMaker|2018-09-30|Has expired: ExtUtils::Command has been re-incorporated to ExtUtils-MakeMaker since 7.06, use devel/p5-ExtUtils-MakeMaker instead
 editors/yui||2018-09-30|Has expired: Unmaintained upstream
 x11/tint-devel|x11/tint|2018-09-30|Has expired: Use x11/tint instead
 print/apsfilter||2018-09-30|Mostly unmaintained since 2015 and depends on expired ports
@@ -10551,4 +10551,4 @@ graphics/cairo-reference||2018-09-30|Removed stand-alone documentation port
 deskutils/gnome-shell-extension-overlay-icons|deskutils/gnome-shell-extension-windowoverlay-icons|2018-09-30|Renamed
 deskutils/gnome-tweak-tool|deskutils/gnome-tweaks|2018-09-30|Renamed
 x11-themes/gnome-themes-standard|x11-themes/gnome-themes-extra|2018-09-30|Renamed
-accessibility/mousetweaks/||2018-09-30|Remove, no longer maintained
+accessibility/mousetweaks||2018-09-30|Remove, no longer maintained
