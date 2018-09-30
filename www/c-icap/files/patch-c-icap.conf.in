@@ -1,19 +1,11 @@
---- c-icap.conf.in.orig	2016-03-29 09:27:15 UTC
+--- c-icap.conf.in.orig	2018-09-12 13:40:37 UTC
 +++ c-icap.conf.in
-@@ -123,6 +123,16 @@ MaxRequestsPerChild  0
+@@ -132,7 +132,7 @@ MaxRequestsPerChild  0
+ #	Port [::1]:1346
  # Default:
- #	InterProcessLockingScheme file
+ #	None
+-Port 1344
++Port 127.0.0.1:1344
  
-+# TAG: ListenAddress
-+# Format: ListenAddress address
-+# Description:
-+#	Network address that the c-icap server uses to listen to requests.
-+#	By default c-icap will bind to all available network addresses. Use
-+#	this directive to restrict it to specific network address.
-+# Default:
-+#	No value 
-+ListenAddress 127.0.0.1
-+
- # TAG: Port
- # Format: Port port
- # Description:
+ # TAG: TlsPort
+ # Format: TlsPort [address:]port [tls-method=method] [cert=path_to_pem_cert] [key=path_to_pem_key] [client_ca=path_to_pem_file] [ciphers=ciph1:ciph2...] [tls_options=[!]Opt1|[!]Opt2|...]
