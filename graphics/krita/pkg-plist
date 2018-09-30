@@ -339,6 +339,7 @@ share/icons/hicolor/scalable/apps/calligrakrita.svgz
 %%DATADIR%%/actions/SvgTextTool.action
 %%DATADIR%%/actions/krita.action
 %%DATADIR%%/actions/kritamenu.action
+%%DATADIR%%/actions/threshold.action
 %%DATADIR%%/brushes/triangle.svg
 %%DATADIR%%/bundles/Krita_3_Default_Resources.bundle
 %%DATADIR%%/bundles/Krita_4_Default_Resources.bundle
