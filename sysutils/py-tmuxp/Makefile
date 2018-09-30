@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tmuxp
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.7:devel/py-click@${PY_FLAVOR} \
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
