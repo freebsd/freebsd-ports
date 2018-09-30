@@ -2,11 +2,12 @@
 
 PORTNAME=	kdeconnect-kde
 PORTVERSION=	0.7.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils
 MASTER_SITES=	KDE/unstable/kdeconnect/${PORTVERSION}/src/
+PKGNAMESUFFIX=	-kde4
 
-MAINTAINER=	yurkis@gmail.com
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Support for KDE to interface between your phone and your computer
 
 USES=		cmake:noninja compiler:c++0x gettext kde:4 qt:4 tar:xz

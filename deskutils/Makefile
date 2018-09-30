@@ -133,7 +133,7 @@
     SUBDIR += kcharselect
     SUBDIR += kcharselect-kde4
     SUBDIR += kchmviewer
-    SUBDIR += kdeconnect
+    SUBDIR += kdeconnect-kde-kde4
     SUBDIR += kdepim
     SUBDIR += kdepim-addons
     SUBDIR += kdepim-apps-libs
