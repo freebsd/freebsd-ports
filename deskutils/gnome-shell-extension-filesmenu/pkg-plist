@@ -1,4 +1,6 @@
 share/gnome-shell/extensions/gnome-shell-files-menu/.gitignore
+share/gnome-shell/extensions/gnome-shell-files-menu/LICENSE
+share/gnome-shell/extensions/gnome-shell-files-menu/Makefile
 share/gnome-shell/extensions/gnome-shell-files-menu/README.md
 share/gnome-shell/extensions/gnome-shell-files-menu/directoryMenu.js
 share/gnome-shell/extensions/gnome-shell-files-menu/extension.js
