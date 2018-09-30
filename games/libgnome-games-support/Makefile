@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	libgnome-games-support
-PORTVERSION=	1.2.2
+PORTVERSION=	1.4.1
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Small library intended for internal use by GNOME Games

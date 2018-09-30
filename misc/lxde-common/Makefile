@@ -3,6 +3,7 @@
 
 PORTNAME=	lxde-common
 PORTVERSION=	0.99.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/lxde/${PORTNAME}%20%28default%20config%29/${PORTNAME}%20${PORTVERSION:R}/
 
@@ -13,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	lxde-icon-theme>=0:x11-themes/lxde-icon-theme \
-		gnome-themes-standard>=3.18:x11-themes/gnome-themes-standard \
+		gnome-themes-extra>=3.18:x11-themes/gnome-themes-extra \
 		xscreensaver:x11/xscreensaver
 
 USES=		gettext-tools gmake localbase tar:xz

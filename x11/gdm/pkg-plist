@@ -7,8 +7,8 @@ etc/dbus-1/system.d/gdm.conf
 @sample %%ETCDIR%%/PreSession/Default.sample
 %%ETCDIR%%/Xsession
 @sample %%ETCDIR%%/custom.conf.sample
-%%ETCDIR%%/home/.pulse/client.conf
-%%ETCDIR%%/locale.conf
+@sample %%ETCDIR%%/home/.pulse/client.conf.sample
+@sample %%ETCDIR%%/locale.conf.sample
 etc/pam.d/gdm-autologin
 etc/pam.d/gdm-launch-environment
 etc/pam.d/gdm-password
@@ -31,13 +31,12 @@ share/dconf/profile/gdm
 %%DATADIR%%/gdb-cmd
 %%DATADIR%%/gdm.schemas
 %%DATADIR%%/greeter-dconf-defaults
-%%DATADIR%%/greeter/applications/gnome-shell-wayland.desktop
-%%DATADIR%%/greeter/applications/gnome-shell.desktop
 %%DATADIR%%/greeter/applications/mime-dummy-handler.desktop
 %%DATADIR%%/greeter/applications/mimeapps.list
 %%DATADIR%%/greeter/autostart/orca-autostart.desktop
 %%DATADIR%%/locale.alias
 share/gir-1.0/Gdm-1.0.gir
+share/gnome-session/sessions/gnome-login.session
 share/help/C/gdm/index.docbook
 share/help/C/gdm/legal.xml
 share/help/ca/gdm/index.docbook
@@ -68,6 +67,8 @@ share/help/oc/gdm/index.docbook
 share/help/oc/gdm/legal.xml
 share/help/pt_BR/gdm/index.docbook
 share/help/pt_BR/gdm/legal.xml
+share/help/ro/gdm/index.docbook
+share/help/ro/gdm/legal.xml
 share/help/ru/gdm/index.docbook
 share/help/ru/gdm/legal.xml
 share/help/sl/gdm/index.docbook
@@ -76,6 +77,8 @@ share/help/sv/gdm/index.docbook
 share/help/sv/gdm/legal.xml
 share/help/te/gdm/index.docbook
 share/help/te/gdm/legal.xml
+share/help/tr/gdm/index.docbook
+share/help/tr/gdm/legal.xml
 share/help/uk/gdm/index.docbook
 share/help/uk/gdm/legal.xml
 share/help/zh_CN/gdm/index.docbook
@@ -134,6 +137,7 @@ share/locale/is/LC_MESSAGES/gdm.mo
 share/locale/it/LC_MESSAGES/gdm.mo
 share/locale/ja/LC_MESSAGES/gdm.mo
 share/locale/ka/LC_MESSAGES/gdm.mo
+share/locale/kab/LC_MESSAGES/gdm.mo
 share/locale/kk/LC_MESSAGES/gdm.mo
 share/locale/km/LC_MESSAGES/gdm.mo
 share/locale/kn/LC_MESSAGES/gdm.mo
@@ -195,13 +199,13 @@ share/pixmaps/gdm-xnest.png
 share/pixmaps/gdm.png
 share/pixmaps/nobody.png
 share/pixmaps/nohost.png
-@exec mkdir -p %D/share/xsessions
-@exec dconf update
-@unexec dconf update
+@postexec mkdir -p %D/share/xsessions
+@postexec dconf update
+@postunexec dconf update
 @mode 1775
 @dir etc/gdm/home
 @mode
-@unexec rm -rf %D/etc/gdm/home/.gconf*
+@postunexec rm -rf %D/etc/gdm/home/.gconf*
 @dir %%ETCDIR%%/Sessions
 @dir %%ETCDIR%%/home/.local/share/applications
 @dir etc/dm
@@ -211,4 +215,4 @@ share/pixmaps/nohost.png
 @dir /var/run/gdm/greeter
 @dir /var/run/gdm/
 @dir /var/log/gdm/
-@unexec rm -fr /var/gdm
+@postunexec rm -fr /var/gdm

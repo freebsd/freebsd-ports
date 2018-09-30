@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-calculator
-PORTVERSION=	3.26.0
-PORTREVISION=	1
+PORTVERSION=	3.28.2
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 calculator tool
@@ -14,20 +13,18 @@ COMMENT=	GNOME 3 calculator tool
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	itstool:textproc/itstool \
-		vala:lang/vala
+BUILD_DEPENDS=	vala:lang/vala \
+		itstool:textproc/itstool
 LIB_DEPENDS=	libmpfr.so:math/mpfr \
-		libgmp.so:math/gmp \
 		libmpc.so:math/mpc \
 		libsoup-2.4.so:devel/libsoup
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 gettext gmake gnome libtool \
-		localbase pkgconfig tar:xz
-USE_GNOME=	cairo gdkpixbuf2 gtk30 gtksourceview3 intltool
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
+USES=		compiler:c11 gettext gnome localbase:ldflags meson \
+		pkgconfig python:3.6+,build tar:xz
+USE_GNOME=	gtksourceview3 libxml2
+BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 GLIB_SCHEMAS=	org.gnome.calculator.gschema.xml
 

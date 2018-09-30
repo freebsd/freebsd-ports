@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seahorse
-PORTVERSION=	3.18.0
-PORTREVISION=	1
+PORTVERSION=	3.20.0
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -24,12 +23,11 @@ PORTSCOUT=	limitw:1,even
 
 USE_XORG=	sm
 USE_LDCONFIG=	yes
-USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
+USES=		gettext gmake gnome libtool localbase pathfix \
+		pkgconfig tar:xz
 USE_GNOME=	intlhack gnomeprefix gtk30
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.gnome.seahorse.gschema.xml \
 		org.gnome.seahorse.manager.gschema.xml \

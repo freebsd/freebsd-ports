@@ -1,2 +1,3 @@
-SHA256 (gnome3/nautilus-3.18.5.tar.xz) = 60a927c0522b4cced9d8f62baed2ee5e2fd4305be4523eb5bc44805971a6cc15
-SIZE (gnome3/nautilus-3.18.5.tar.xz) = 3349312
+TIMESTAMP = 1525501674
+SHA256 (gnome/nautilus-3.28.1.tar.xz) = 9ce878fc9d9f950475c504066ce5f8e98a8cfbf15051724469e865ea85bab0a5
+SIZE (gnome/nautilus-3.28.1.tar.xz) = 3262520

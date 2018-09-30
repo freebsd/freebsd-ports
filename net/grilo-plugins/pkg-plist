@@ -1,3 +1,4 @@
+lib/grilo-0.3/libgrlchromaprint.so
 %%DMAP%%lib/grilo-0.3/libgrldaap.so
 lib/grilo-0.3/libgrldleyna.so
 %%DMAP%%lib/grilo-0.3/libgrldpap.so
@@ -10,8 +11,7 @@ lib/grilo-0.3/libgrljamendo.so
 lib/grilo-0.3/libgrlmagnatune.so
 lib/grilo-0.3/libgrlmetadatastore.so
 lib/grilo-0.3/libgrlopensubtitles.so
-lib/grilo-0.3/libgrloptical-media.so
-lib/grilo-0.3/libgrlpodcasts.so
+lib/grilo-0.3/libgrlopticalmedia.so
 lib/grilo-0.3/libgrlraitv.so
 lib/grilo-0.3/libgrlshoutcast.so
 lib/grilo-0.3/libgrltmdb.so
@@ -47,6 +47,7 @@ share/locale/lt/LC_MESSAGES/grilo-plugins.mo
 share/locale/lv/LC_MESSAGES/grilo-plugins.mo
 share/locale/ml/LC_MESSAGES/grilo-plugins.mo
 share/locale/nb/LC_MESSAGES/grilo-plugins.mo
+share/locale/ne/LC_MESSAGES/grilo-plugins.mo
 share/locale/oc/LC_MESSAGES/grilo-plugins.mo
 share/locale/pl/LC_MESSAGES/grilo-plugins.mo
 share/locale/pt/LC_MESSAGES/grilo-plugins.mo

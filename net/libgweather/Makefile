@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libgweather
-PORTVERSION=	3.24.1
+PORTVERSION=	3.28.2
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to access online weather information
@@ -19,15 +19,15 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome libtool localbase pathfix pkgconfig tar:xz
-USE_GNOME=	cairo gtk30 intltool introspection:build libxml2
+USES=		gettext gnome localbase meson pkgconfig python:3.6+,build tar:xz
+USE_GNOME=	gtk30 introspection:build libxml2
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--disable-glade-catalog
-INSTALL_TARGET=	install-strip
+MESON_ARGS=	-Dglade_catalog=false
 
 GLIB_SCHEMAS=	org.gnome.GWeather.enums.xml \
 		org.gnome.GWeather.gschema.xml
+
+BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 .include <bsd.port.mk>

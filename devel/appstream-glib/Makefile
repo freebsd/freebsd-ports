@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	appstream-glib
-PORTVERSION=	0.5.7
+PORTVERSION=	0.7.8
 CATEGORIES=	devel
-#MASTER_SITES=	http://people.freedesktop.org/~hughsient/appstream-glib/releases/
-MASTER_SITES=	http://rainbow-runner.nl/freebsd/
-DIST_SUBDIR=	gnome3
+MASTER_SITES=	http://people.freedesktop.org/~hughsient/appstream-glib/releases/
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to help with AppStream metadata
@@ -14,42 +13,34 @@ COMMENT=	Library to help with AppStream metadata
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+CONFLICTS_BUILD=	appstream-glib-0.5.*
+
 BUILD_DEPENDS=	gtkdoc-check:textproc/gtk-doc \
 		gcab:archivers/gcab
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+		libjson-glib-1.0.so:devel/json-glib \
 		libyaml.so:textproc/libyaml \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	gcab:archivers/gcab
 
-USES=		gettext gperf gmake gnome libarchive libtool pathfix \
+USES=		gettext gperf gnome libarchive meson \
 		pkgconfig sqlite tar:xz
-USE_GNOME=	gdkpixbuf2 glib20 gtk30 intlhack introspection:build \
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 introspection:build \
 		libxml2:build pango
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-xml-catalog=${LOCALBASE}/share/xml/catalog \
-		--disable-rpm \
-		--disable-ostree
-INSTALL_TARGET=	install-strip
+MESON_ARGS=	-Drpm=false \
+		-Dalpm=false \
+		-Dstemmer=false
 
 OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
-MANPAGES_CONFIGURE_ENABLE=	man
-MANPAGES_BUILD_DEPENDS=	docbook-xml>=0:textproc/docbook-xml \
+
+MANPAGES_MESON_TRUE=	man
+MANPAGE_BUILD_DEPENDS=	docbook-xml>=0:textproc/docbook-xml \
 		docbook-xsl>=0:textproc/docbook-xsl
 MANPAGES_USE=	GNOME=libxslt:build
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc || ${ARCH} == powerpc64
-post-patch:
-	@${REINPLACE_CMD} -e 's|-Wtype-limits||g' \
-		${WRKSRC}/configure
-.endif
 
 .include <bsd.port.mk>

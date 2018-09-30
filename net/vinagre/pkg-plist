@@ -1,7 +1,6 @@
 bin/vinagre
 man/man1/vinagre.1.gz
 share/GConf/gsettings/org.gnome.Vinagre.convert
-share/appdata/vinagre.appdata.xml
 share/applications/vinagre-file.desktop
 share/applications/vinagre.desktop
 %%TELEPATHY%%share/dbus-1/services/org.freedesktop.Telepathy.Client.Vinagre.service
@@ -205,6 +204,19 @@ share/help/sl/vinagre/legal.xml
 share/help/sl/vinagre/scaling.page
 share/help/sl/vinagre/take-screenshot.page
 share/help/sl/vinagre/view-only.page
+share/help/sv/vinagre/connect-file.page
+share/help/sv/vinagre/connect-reverse.page
+share/help/sv/vinagre/connect.page
+share/help/sv/vinagre/figures/preferences-desktop-remote-desktop.png
+share/help/sv/vinagre/figures/vinagre-connected-3-16.png
+share/help/sv/vinagre/fullscreen.page
+share/help/sv/vinagre/index.page
+share/help/sv/vinagre/introduction.page
+share/help/sv/vinagre/keyboard-shortcuts.page
+share/help/sv/vinagre/legal.xml
+share/help/sv/vinagre/scaling.page
+share/help/sv/vinagre/take-screenshot.page
+share/help/sv/vinagre/view-only.page
 share/help/zh_CN/vinagre/connect-file.page
 share/help/zh_CN/vinagre/connect-reverse.page
 share/help/zh_CN/vinagre/connect.page
@@ -258,6 +270,7 @@ share/locale/eu/LC_MESSAGES/vinagre.mo
 share/locale/fa/LC_MESSAGES/vinagre.mo
 share/locale/fi/LC_MESSAGES/vinagre.mo
 share/locale/fr/LC_MESSAGES/vinagre.mo
+share/locale/fur/LC_MESSAGES/vinagre.mo
 share/locale/ga/LC_MESSAGES/vinagre.mo
 share/locale/gl/LC_MESSAGES/vinagre.mo
 share/locale/gu/LC_MESSAGES/vinagre.mo
@@ -309,6 +322,7 @@ share/locale/vi/LC_MESSAGES/vinagre.mo
 share/locale/zh_CN/LC_MESSAGES/vinagre.mo
 share/locale/zh_HK/LC_MESSAGES/vinagre.mo
 share/locale/zh_TW/LC_MESSAGES/vinagre.mo
+share/metainfo/vinagre.appdata.xml
 share/mime/packages/vinagre-mime.xml
 %%TELEPATHY%%share/telepathy/clients/Vinagre.client
 %%DATADIR%%/vinagre-ui.xml

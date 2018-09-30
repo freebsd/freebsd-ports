@@ -29,6 +29,7 @@ include/gcr-3/gcr/gcr-secret-exchange.h
 include/gcr-3/gcr/gcr-secure-memory.h
 include/gcr-3/gcr/gcr-simple-certificate.h
 include/gcr-3/gcr/gcr-simple-collection.h
+include/gcr-3/gcr/gcr-ssh-askpass.h
 include/gcr-3/gcr/gcr-system-prompt.h
 include/gcr-3/gcr/gcr-system-prompter.h
 include/gcr-3/gcr/gcr-trust.h
@@ -78,14 +79,13 @@ libdata/pkgconfig/gcr-3.pc
 libdata/pkgconfig/gcr-base-3.pc
 libdata/pkgconfig/gcr-ui-3.pc
 libexec/gcr-prompter
+libexec/gcr-ssh-askpass
 share/GConf/gsettings/org.gnome.crypto.pgp.convert
 share/GConf/gsettings/org.gnome.crypto.pgp_keyservers.convert
 share/applications/gcr-prompter.desktop
 share/applications/gcr-viewer.desktop
 share/dbus-1/services/org.gnome.keyring.PrivatePrompter.service
 share/dbus-1/services/org.gnome.keyring.SystemPrompter.service
-share/gcr-3/ui/gcr-pkcs11-import-dialog.ui
-share/gcr-3/ui/gcr-unlock-options-widget.ui
 share/gir-1.0/Gck-1.gir
 share/gir-1.0/Gcr-3.gir
 share/gir-1.0/GcrUi-3.gir
@@ -106,7 +106,6 @@ share/gtk-doc/html/gck/gck-PKCS11-URIs.html
 share/gtk-doc/html/gck/gck.devhelp2
 share/gtk-doc/html/gck/home.png
 share/gtk-doc/html/gck/index.html
-share/gtk-doc/html/gck/index.sgml
 share/gtk-doc/html/gck/left-insensitive.png
 share/gtk-doc/html/gck/left.png
 share/gtk-doc/html/gck/pkcs11-links.html
@@ -151,6 +150,7 @@ share/gtk-doc/html/gcr-3/gcr-3.devhelp2
 share/gtk-doc/html/gcr-3/gcr-GcrCertificateRequest.html
 share/gtk-doc/html/gcr-3/gcr-GcrColumn.html
 share/gtk-doc/html/gcr-3/gcr-GcrImportInteraction.html
+share/gtk-doc/html/gcr-3/gcr-GcrSshAskpass.html
 share/gtk-doc/html/gcr-3/gcr-Key-Fingerprints.html
 share/gtk-doc/html/gcr-3/gcr-Library-PKCS#11.html
 share/gtk-doc/html/gcr-3/gcr-Library-Utilities.html
@@ -159,7 +159,6 @@ share/gtk-doc/html/gcr-3/gcr-Trust-Storage-and-Lookups.html
 share/gtk-doc/html/gcr-3/home.png
 share/gtk-doc/html/gcr-3/import-button.png
 share/gtk-doc/html/gcr-3/index.html
-share/gtk-doc/html/gcr-3/index.sgml
 share/gtk-doc/html/gcr-3/key-widget.png
 share/gtk-doc/html/gcr-3/left-insensitive.png
 share/gtk-doc/html/gcr-3/left.png
@@ -232,6 +231,7 @@ share/locale/eu/LC_MESSAGES/gcr.mo
 share/locale/fa/LC_MESSAGES/gcr.mo
 share/locale/fi/LC_MESSAGES/gcr.mo
 share/locale/fr/LC_MESSAGES/gcr.mo
+share/locale/fur/LC_MESSAGES/gcr.mo
 share/locale/ga/LC_MESSAGES/gcr.mo
 share/locale/gl/LC_MESSAGES/gcr.mo
 share/locale/gu/LC_MESSAGES/gcr.mo
@@ -278,8 +278,8 @@ share/locale/sr@latin/LC_MESSAGES/gcr.mo
 share/locale/sv/LC_MESSAGES/gcr.mo
 share/locale/ta/LC_MESSAGES/gcr.mo
 share/locale/te/LC_MESSAGES/gcr.mo
-share/locale/th/LC_MESSAGES/gcr.mo
 share/locale/tg/LC_MESSAGES/gcr.mo
+share/locale/th/LC_MESSAGES/gcr.mo
 share/locale/tr/LC_MESSAGES/gcr.mo
 share/locale/ug/LC_MESSAGES/gcr.mo
 share/locale/uk/LC_MESSAGES/gcr.mo

@@ -11,8 +11,8 @@ include/gnome-desktop-3.0/libgnome-desktop/gnome-wall-clock.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-xkb-info.h
 lib/girepository-1.0/GnomeDesktop-3.0.typelib
 lib/libgnome-desktop-3.so
-lib/libgnome-desktop-3.so.12
-lib/libgnome-desktop-3.so.12.0.0
+lib/libgnome-desktop-3.so.17
+lib/libgnome-desktop-3.so.17.0.0
 libdata/pkgconfig/gnome-desktop-3.0.pc
 libexec/gnome-rr-debug
 share/gir-1.0/GnomeDesktop-3.0.gir
@@ -32,7 +32,6 @@ share/gtk-doc/html/gnome-desktop3/gnome-desktop3.devhelp2
 share/gtk-doc/html/gnome-desktop3/home.png
 share/gtk-doc/html/gnome-desktop3/idle-monitor.html
 share/gtk-doc/html/gnome-desktop3/index.html
-share/gtk-doc/html/gnome-desktop3/index.sgml
 share/gtk-doc/html/gnome-desktop3/intro.html
 share/gtk-doc/html/gnome-desktop3/languages.html
 share/gtk-doc/html/gnome-desktop3/left-insensitive.png
@@ -87,7 +86,6 @@ share/help/oc/gpl/index.docbook
 share/help/oc/lgpl/index.docbook
 share/help/pa/gpl/index.docbook
 share/help/pa/lgpl/index.docbook
-share/help/pl/fdl/index.docbook
 share/help/pt_BR/fdl/index.docbook
 share/help/pt_BR/gpl/index.docbook
 share/help/pt_BR/lgpl/index.docbook
@@ -108,7 +106,6 @@ share/help/vi/lgpl/index.docbook
 share/help/zh_CN/fdl/index.docbook
 share/help/zh_CN/gpl/index.docbook
 share/help/zh_CN/lgpl/index.docbook
-share/libgnome-desktop-3.0/pnp.ids
 share/locale/af/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/am/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/an/LC_MESSAGES/gnome-desktop-3.0.mo

@@ -1,0 +1,53 @@
+# Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
+# $FreeBSD$
+
+PORTNAME=	gnome-shell-extension-windowoverlay-icons
+PORTVERSION=	0.0.0.20171103
+CATEGORIES=	deskutils gnome
+DIST_SUBDIR=	gnome3
+
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Show application icons on the windows overview
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
+		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
+RUN_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
+		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
+
+USES=		gettext gmake gnome pkgconfig
+USE_GNOME=	glib20
+USE_GITHUB=	yes
+GLIB_SCHEMAS=	org.gnome.shell.extensions.windowoverlay-icons.gschema.xml
+
+GH_ACCOUNT=	sustmi
+GH_PROJECT=	gnome-shell-extension-windowoverlay-icons
+GH_TAGNAME=	ad7366d
+
+PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
+
+FILES=	README.md convenience.js \
+	extension.js metadata.json \
+	prefs.js prefs.xml \
+	stylesheet.css
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|"3.26"|"3.26","3.28"|g' \
+		${WRKSRC}/metadata.json
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/windowoverlay-icons@gnome-shell-extensions.sustmi.github.com
+	cd ${WRKSRC} && ${INSTALL_DATA} ${WRKSRC}/schemas/org.gnome.shell.extensions.windowoverlay-icons.gschema.xml \
+		${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/
+.for file in ${FILES}
+	${INSTALL_DATA} ${WRKSRC}/${file} \
+		${STAGEDIR}${PREFIX}/share/gnome-shell/extensions/windowoverlay-icons@gnome-shell-extensions.sustmi.github.com/
+.endfor
+	cd ${WRKSRC}/locale && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${PREFIX}/share/locale/
+	@${RM} ${STAGEDIR}${PREFIX}/share/locale/.gitkeep
+
+.include <bsd.port.mk>

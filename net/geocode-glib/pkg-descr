@@ -4,4 +4,4 @@ coordinates). It uses Nominatim service to achieve that. It also caches
 (reverse-)geocoding requests for faster results and to avoid unnecessary server
 load.
 
-WWW: https://github.com/GNOME/geocode-glib
+WWW: https://git.gnome.org/browse/geocode-glib

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	evince
-PORTVERSION=	3.26.0
+PORTVERSION=	3.28.2
 PORTREVISION=	1
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
@@ -14,29 +14,28 @@ COMMENT?=	GNOME 3 multi-format document viewer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme \
-		itstool:textproc/itstool \
+BUILD_DEPENDS=	itstool:textproc/itstool \
 		adwaita-icon-theme>=0:x11-themes/adwaita-icon-theme \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib \
 		libspectre.so:print/libspectre \
 		libtiff.so:graphics/tiff
-RUN_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme \
-		adwaita-icon-theme>=0:x11-themes/adwaita-icon-theme \
+RUN_DEPENDS=	adwaita-icon-theme>=0:x11-themes/adwaita-icon-theme \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 PORTSCOUT=	limitw:1,even
 SLAVEPORT?=	no
 
 USES=		compiler:c++11-lib desktop-file-utils gettext gmake \
-		gnome libtool localbase pathfix pkgconfig tar:xz
+		gnome libarchive libtool localbase pathfix pkgconfig tar:xz
 USE_GNOME=	cairo gtk30 intlhack
 USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_XORG=	ice
 INSTALLS_ICONS=	yes
-CFLAGS+=	-Wno-error=format-nonliteral
+CONFIGURE_ARGS=	--enable-compile-warnings=minimum \
+		--with-systemduserunitdir=no
 INSTALL_TARGET=	install-strip
 
 .if ${SLAVEPORT} == lite
@@ -47,8 +46,7 @@ CONFIGURE_ARGS+=--disable-introspection \
 USE_GNOME+=	libxml2
 .else
 USE_GNOME+=	introspection:build
-CONFIGURE_ARGS+=	--enable-introspection \
-			--with-systemduserunitdir=no
+CONFIGURE_ARGS+=	--enable-introspection
 .endif
 
 GLIB_SCHEMAS=	org.gnome.Evince.gschema.xml
@@ -59,36 +57,34 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	COMICS DBUS DJVU DVI KEYRING NAUTILUS T1LIB XPS
 OPTIONS_DEFAULT=COMICS DBUS DJVU KEYRING NAUTILUS XPS
 
-DVI_DESC=	DVI viewer support
-T1LIB_DESC=	T1LIB for TYPE1 fonts to DVI (Enables DVI)
-NAUTILUS_DESC=	Nautilus plugin
-KEYRING_DESC=	Keyring support
-COMICS_DESC=	Comic book archives support
-DJVU_DESC=	DJVU support
-XPS_DESC=	XPS support
-
-COMICS_USES=			libarchive
+COMICS_DESC=			Comic book archives support
 COMICS_CONFIGURE_ENABLE=	comics
 
+DJVU_DESC=		DJVU support
 DJVU_LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre
 DJVU_CONFIGURE_ENABLE=	djvu
 
-DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_ENABLE=	dbus
+DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
-DVI_USE=		tex=latex
+DVI_DESC=		DVI viewer support
+DVI_USE=		tex=latex,kpathsea
 DVI_CONFIGURE_ENABLE=	dvi
 
+KEYRING_DESC=			Keyring support
 KEYRING_LIB_DEPENDS=		libsecret-1.so:security/libsecret
-KEYRING_CONFIGURE_OFF=		--without-keyring
+KEYRING_CONFIGURE_ENABLE=	keyring
 
+NAUTILUS_DESC=			Nautilus plugin
 NAUTILUS_USE=			gnome=nautilus3
 NAUTILUS_CONFIGURE_ENABLE=	nautilus
 
+T1LIB_DESC=		Support TYPE1 fonts to DVI (Enables DVI)
 T1LIB_LIB_DEPENDS=	libt1.so:devel/t1lib
-T1LIB_IMPLIES=		DVI
 T1LIB_CONFIGURE_ENABLE=	t1lib
+T1LIB_IMPLIES=		DVI
 
+XPS_DESC=	XPS support
 XPS_LIB_DEPENDS=	libgxps.so:graphics/libgxps
 XPS_CONFIGURE_ENABLE=	xps
 

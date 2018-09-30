@@ -13,6 +13,8 @@ COMMENT=	Drop-down terminal emulator, written in Vala
 
 LICENSE=	GPLv3
 
+BROKEN=		Cannot convert from `unowned string' to `unowned char[]?'
+
 BUILD_DEPENDS=	git:devel/git \
 		valac:lang/vala
 

@@ -1,10 +1,9 @@
 # Created by: Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/gtkmm24/Makefile,v 1.77 2011/07/16 17:31:29 kwm Exp $
 
 PORTNAME=	gtkmm
-PORTVERSION=	2.24.4
-PORTREVISION?=	3
+PORTVERSION=	2.24.5
+PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	24
@@ -20,13 +19,15 @@ PORTSCOUT=	ignore:1
 .if !defined(REFERENCE_PORT)
 
 BUILD_DEPENDS=	gm4:devel/m4
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
 USES+=		gettext gmake libtool:keepla pathfix pkgconfig \
 		compiler:c++11-lang
 USE_CXXSTD=	gnu++11
 USE_LDCONFIG=	yes
-USE_GNOME=	atkmm gtk20 pangomm
+USE_GNOME=	atkmm gdkpixbuf2 gtk20 pangomm
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-documentation

@@ -13,6 +13,7 @@ share/help/C/zenity/figures/zenity-fileselection-screenshot.png
 share/help/C/zenity/figures/zenity-forms-screenshot.png
 share/help/C/zenity/figures/zenity-information-screenshot.png
 share/help/C/zenity/figures/zenity-list-screenshot.png
+share/help/C/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/C/zenity/figures/zenity-notification-screenshot.png
 share/help/C/zenity/figures/zenity-password-screenshot.png
 share/help/C/zenity/figures/zenity-progress-screenshot.png
@@ -48,6 +49,7 @@ share/help/bg/zenity/figures/zenity-fileselection-screenshot.png
 share/help/bg/zenity/figures/zenity-forms-screenshot.png
 share/help/bg/zenity/figures/zenity-information-screenshot.png
 share/help/bg/zenity/figures/zenity-list-screenshot.png
+share/help/bg/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/bg/zenity/figures/zenity-notification-screenshot.png
 share/help/bg/zenity/figures/zenity-password-screenshot.png
 share/help/bg/zenity/figures/zenity-progress-screenshot.png
@@ -83,6 +85,7 @@ share/help/ca/zenity/figures/zenity-fileselection-screenshot.png
 share/help/ca/zenity/figures/zenity-forms-screenshot.png
 share/help/ca/zenity/figures/zenity-information-screenshot.png
 share/help/ca/zenity/figures/zenity-list-screenshot.png
+share/help/ca/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/ca/zenity/figures/zenity-notification-screenshot.png
 share/help/ca/zenity/figures/zenity-password-screenshot.png
 share/help/ca/zenity/figures/zenity-progress-screenshot.png
@@ -118,6 +121,7 @@ share/help/cs/zenity/figures/zenity-fileselection-screenshot.png
 share/help/cs/zenity/figures/zenity-forms-screenshot.png
 share/help/cs/zenity/figures/zenity-information-screenshot.png
 share/help/cs/zenity/figures/zenity-list-screenshot.png
+share/help/cs/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/cs/zenity/figures/zenity-notification-screenshot.png
 share/help/cs/zenity/figures/zenity-password-screenshot.png
 share/help/cs/zenity/figures/zenity-progress-screenshot.png
@@ -153,6 +157,7 @@ share/help/da/zenity/figures/zenity-fileselection-screenshot.png
 share/help/da/zenity/figures/zenity-forms-screenshot.png
 share/help/da/zenity/figures/zenity-information-screenshot.png
 share/help/da/zenity/figures/zenity-list-screenshot.png
+share/help/da/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/da/zenity/figures/zenity-notification-screenshot.png
 share/help/da/zenity/figures/zenity-password-screenshot.png
 share/help/da/zenity/figures/zenity-progress-screenshot.png
@@ -188,6 +193,7 @@ share/help/de/zenity/figures/zenity-fileselection-screenshot.png
 share/help/de/zenity/figures/zenity-forms-screenshot.png
 share/help/de/zenity/figures/zenity-information-screenshot.png
 share/help/de/zenity/figures/zenity-list-screenshot.png
+share/help/de/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/de/zenity/figures/zenity-notification-screenshot.png
 share/help/de/zenity/figures/zenity-password-screenshot.png
 share/help/de/zenity/figures/zenity-progress-screenshot.png
@@ -223,6 +229,7 @@ share/help/el/zenity/figures/zenity-fileselection-screenshot.png
 share/help/el/zenity/figures/zenity-forms-screenshot.png
 share/help/el/zenity/figures/zenity-information-screenshot.png
 share/help/el/zenity/figures/zenity-list-screenshot.png
+share/help/el/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/el/zenity/figures/zenity-notification-screenshot.png
 share/help/el/zenity/figures/zenity-password-screenshot.png
 share/help/el/zenity/figures/zenity-progress-screenshot.png
@@ -258,6 +265,7 @@ share/help/en_GB/zenity/figures/zenity-fileselection-screenshot.png
 share/help/en_GB/zenity/figures/zenity-forms-screenshot.png
 share/help/en_GB/zenity/figures/zenity-information-screenshot.png
 share/help/en_GB/zenity/figures/zenity-list-screenshot.png
+share/help/en_GB/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/en_GB/zenity/figures/zenity-notification-screenshot.png
 share/help/en_GB/zenity/figures/zenity-password-screenshot.png
 share/help/en_GB/zenity/figures/zenity-progress-screenshot.png
@@ -293,6 +301,7 @@ share/help/es/zenity/figures/zenity-fileselection-screenshot.png
 share/help/es/zenity/figures/zenity-forms-screenshot.png
 share/help/es/zenity/figures/zenity-information-screenshot.png
 share/help/es/zenity/figures/zenity-list-screenshot.png
+share/help/es/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/es/zenity/figures/zenity-notification-screenshot.png
 share/help/es/zenity/figures/zenity-password-screenshot.png
 share/help/es/zenity/figures/zenity-progress-screenshot.png
@@ -328,6 +337,7 @@ share/help/eu/zenity/figures/zenity-fileselection-screenshot.png
 share/help/eu/zenity/figures/zenity-forms-screenshot.png
 share/help/eu/zenity/figures/zenity-information-screenshot.png
 share/help/eu/zenity/figures/zenity-list-screenshot.png
+share/help/eu/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/eu/zenity/figures/zenity-notification-screenshot.png
 share/help/eu/zenity/figures/zenity-password-screenshot.png
 share/help/eu/zenity/figures/zenity-progress-screenshot.png
@@ -363,6 +373,7 @@ share/help/fi/zenity/figures/zenity-fileselection-screenshot.png
 share/help/fi/zenity/figures/zenity-forms-screenshot.png
 share/help/fi/zenity/figures/zenity-information-screenshot.png
 share/help/fi/zenity/figures/zenity-list-screenshot.png
+share/help/fi/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/fi/zenity/figures/zenity-notification-screenshot.png
 share/help/fi/zenity/figures/zenity-password-screenshot.png
 share/help/fi/zenity/figures/zenity-progress-screenshot.png
@@ -398,6 +409,7 @@ share/help/fr/zenity/figures/zenity-fileselection-screenshot.png
 share/help/fr/zenity/figures/zenity-forms-screenshot.png
 share/help/fr/zenity/figures/zenity-information-screenshot.png
 share/help/fr/zenity/figures/zenity-list-screenshot.png
+share/help/fr/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/fr/zenity/figures/zenity-notification-screenshot.png
 share/help/fr/zenity/figures/zenity-password-screenshot.png
 share/help/fr/zenity/figures/zenity-progress-screenshot.png
@@ -433,6 +445,7 @@ share/help/gl/zenity/figures/zenity-fileselection-screenshot.png
 share/help/gl/zenity/figures/zenity-forms-screenshot.png
 share/help/gl/zenity/figures/zenity-information-screenshot.png
 share/help/gl/zenity/figures/zenity-list-screenshot.png
+share/help/gl/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/gl/zenity/figures/zenity-notification-screenshot.png
 share/help/gl/zenity/figures/zenity-password-screenshot.png
 share/help/gl/zenity/figures/zenity-progress-screenshot.png
@@ -468,6 +481,7 @@ share/help/hu/zenity/figures/zenity-fileselection-screenshot.png
 share/help/hu/zenity/figures/zenity-forms-screenshot.png
 share/help/hu/zenity/figures/zenity-information-screenshot.png
 share/help/hu/zenity/figures/zenity-list-screenshot.png
+share/help/hu/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/hu/zenity/figures/zenity-notification-screenshot.png
 share/help/hu/zenity/figures/zenity-password-screenshot.png
 share/help/hu/zenity/figures/zenity-progress-screenshot.png
@@ -503,6 +517,7 @@ share/help/ja/zenity/figures/zenity-fileselection-screenshot.png
 share/help/ja/zenity/figures/zenity-forms-screenshot.png
 share/help/ja/zenity/figures/zenity-information-screenshot.png
 share/help/ja/zenity/figures/zenity-list-screenshot.png
+share/help/ja/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/ja/zenity/figures/zenity-notification-screenshot.png
 share/help/ja/zenity/figures/zenity-password-screenshot.png
 share/help/ja/zenity/figures/zenity-progress-screenshot.png
@@ -538,6 +553,7 @@ share/help/oc/zenity/figures/zenity-fileselection-screenshot.png
 share/help/oc/zenity/figures/zenity-forms-screenshot.png
 share/help/oc/zenity/figures/zenity-information-screenshot.png
 share/help/oc/zenity/figures/zenity-list-screenshot.png
+share/help/oc/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/oc/zenity/figures/zenity-notification-screenshot.png
 share/help/oc/zenity/figures/zenity-password-screenshot.png
 share/help/oc/zenity/figures/zenity-progress-screenshot.png
@@ -561,6 +577,42 @@ share/help/oc/zenity/scale.page
 share/help/oc/zenity/text.page
 share/help/oc/zenity/usage.page
 share/help/oc/zenity/warning.page
+share/help/pl/zenity/calendar.page
+share/help/pl/zenity/color-selection.page
+share/help/pl/zenity/entry.page
+share/help/pl/zenity/error.page
+share/help/pl/zenity/figures/zenity-calendar-screenshot.png
+share/help/pl/zenity/figures/zenity-colorselection-screenshot.png
+share/help/pl/zenity/figures/zenity-entry-screenshot.png
+share/help/pl/zenity/figures/zenity-error-screenshot.png
+share/help/pl/zenity/figures/zenity-fileselection-screenshot.png
+share/help/pl/zenity/figures/zenity-forms-screenshot.png
+share/help/pl/zenity/figures/zenity-information-screenshot.png
+share/help/pl/zenity/figures/zenity-list-screenshot.png
+share/help/pl/zenity/figures/zenity-notification-listen-screenshot.png
+share/help/pl/zenity/figures/zenity-notification-screenshot.png
+share/help/pl/zenity/figures/zenity-password-screenshot.png
+share/help/pl/zenity/figures/zenity-progress-screenshot.png
+share/help/pl/zenity/figures/zenity-question-screenshot.png
+share/help/pl/zenity/figures/zenity-scale-screenshot.png
+share/help/pl/zenity/figures/zenity-text-screenshot.png
+share/help/pl/zenity/figures/zenity-warning-screenshot.png
+share/help/pl/zenity/file-selection.page
+share/help/pl/zenity/forms.page
+share/help/pl/zenity/index.page
+share/help/pl/zenity/info.page
+share/help/pl/zenity/intro.page
+share/help/pl/zenity/legal.xml
+share/help/pl/zenity/list.page
+share/help/pl/zenity/message.page
+share/help/pl/zenity/notification.page
+share/help/pl/zenity/password.page
+share/help/pl/zenity/progress.page
+share/help/pl/zenity/question.page
+share/help/pl/zenity/scale.page
+share/help/pl/zenity/text.page
+share/help/pl/zenity/usage.page
+share/help/pl/zenity/warning.page
 share/help/pt_BR/zenity/calendar.page
 share/help/pt_BR/zenity/color-selection.page
 share/help/pt_BR/zenity/entry.page
@@ -573,6 +625,7 @@ share/help/pt_BR/zenity/figures/zenity-fileselection-screenshot.png
 share/help/pt_BR/zenity/figures/zenity-forms-screenshot.png
 share/help/pt_BR/zenity/figures/zenity-information-screenshot.png
 share/help/pt_BR/zenity/figures/zenity-list-screenshot.png
+share/help/pt_BR/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/pt_BR/zenity/figures/zenity-notification-screenshot.png
 share/help/pt_BR/zenity/figures/zenity-password-screenshot.png
 share/help/pt_BR/zenity/figures/zenity-progress-screenshot.png
@@ -608,6 +661,7 @@ share/help/ru/zenity/figures/zenity-fileselection-screenshot.png
 share/help/ru/zenity/figures/zenity-forms-screenshot.png
 share/help/ru/zenity/figures/zenity-information-screenshot.png
 share/help/ru/zenity/figures/zenity-list-screenshot.png
+share/help/ru/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/ru/zenity/figures/zenity-notification-screenshot.png
 share/help/ru/zenity/figures/zenity-password-screenshot.png
 share/help/ru/zenity/figures/zenity-progress-screenshot.png
@@ -643,6 +697,7 @@ share/help/sl/zenity/figures/zenity-fileselection-screenshot.png
 share/help/sl/zenity/figures/zenity-forms-screenshot.png
 share/help/sl/zenity/figures/zenity-information-screenshot.png
 share/help/sl/zenity/figures/zenity-list-screenshot.png
+share/help/sl/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/sl/zenity/figures/zenity-notification-screenshot.png
 share/help/sl/zenity/figures/zenity-password-screenshot.png
 share/help/sl/zenity/figures/zenity-progress-screenshot.png
@@ -678,6 +733,7 @@ share/help/sv/zenity/figures/zenity-fileselection-screenshot.png
 share/help/sv/zenity/figures/zenity-forms-screenshot.png
 share/help/sv/zenity/figures/zenity-information-screenshot.png
 share/help/sv/zenity/figures/zenity-list-screenshot.png
+share/help/sv/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/sv/zenity/figures/zenity-notification-screenshot.png
 share/help/sv/zenity/figures/zenity-password-screenshot.png
 share/help/sv/zenity/figures/zenity-progress-screenshot.png
@@ -713,6 +769,7 @@ share/help/uk/zenity/figures/zenity-fileselection-screenshot.png
 share/help/uk/zenity/figures/zenity-forms-screenshot.png
 share/help/uk/zenity/figures/zenity-information-screenshot.png
 share/help/uk/zenity/figures/zenity-list-screenshot.png
+share/help/uk/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/uk/zenity/figures/zenity-notification-screenshot.png
 share/help/uk/zenity/figures/zenity-password-screenshot.png
 share/help/uk/zenity/figures/zenity-progress-screenshot.png
@@ -748,6 +805,7 @@ share/help/zh_CN/zenity/figures/zenity-fileselection-screenshot.png
 share/help/zh_CN/zenity/figures/zenity-forms-screenshot.png
 share/help/zh_CN/zenity/figures/zenity-information-screenshot.png
 share/help/zh_CN/zenity/figures/zenity-list-screenshot.png
+share/help/zh_CN/zenity/figures/zenity-notification-listen-screenshot.png
 share/help/zh_CN/zenity/figures/zenity-notification-screenshot.png
 share/help/zh_CN/zenity/figures/zenity-password-screenshot.png
 share/help/zh_CN/zenity/figures/zenity-progress-screenshot.png
@@ -801,6 +859,7 @@ share/locale/eu/LC_MESSAGES/zenity.mo
 share/locale/fa/LC_MESSAGES/zenity.mo
 share/locale/fi/LC_MESSAGES/zenity.mo
 share/locale/fr/LC_MESSAGES/zenity.mo
+share/locale/fur/LC_MESSAGES/zenity.mo
 share/locale/ga/LC_MESSAGES/zenity.mo
 share/locale/gl/LC_MESSAGES/zenity.mo
 share/locale/gu/LC_MESSAGES/zenity.mo

@@ -4,9 +4,11 @@ share/gnome-shell/extensions/lockkeys@vaina.lt/icons/capslock-disabled-symbolic.
 share/gnome-shell/extensions/lockkeys@vaina.lt/icons/capslock-enabled-symbolic.svg
 share/gnome-shell/extensions/lockkeys@vaina.lt/icons/numlock-disabled-symbolic.svg
 share/gnome-shell/extensions/lockkeys@vaina.lt/icons/numlock-enabled-symbolic.svg
+share/gnome-shell/extensions/lockkeys@vaina.lt/locale/cs/LC_MESSAGES/lockkeys.mo
 share/gnome-shell/extensions/lockkeys@vaina.lt/locale/de/LC_MESSAGES/lockkeys.mo
 share/gnome-shell/extensions/lockkeys@vaina.lt/locale/es/LC_MESSAGES/lockkeys.mo
 share/gnome-shell/extensions/lockkeys@vaina.lt/locale/fr/LC_MESSAGES/lockkeys.mo
+share/gnome-shell/extensions/lockkeys@vaina.lt/locale/gr/LC_MESSAGES/lockkeys.mo
 share/gnome-shell/extensions/lockkeys@vaina.lt/locale/lt/LC_MESSAGES/lockkeys.mo
 share/gnome-shell/extensions/lockkeys@vaina.lt/locale/pl/LC_MESSAGES/lockkeys.mo
 share/gnome-shell/extensions/lockkeys@vaina.lt/locale/sv/LC_MESSAGES/lockkeys.mo

@@ -6,7 +6,6 @@ lib/evolution-data-server/registry-modules/module-ews-backend.so
 lib/evolution-ews/libcamelews-priv.so
 lib/evolution-ews/libevolution-ews.so
 lib/evolution/modules/module-ews-configuration.so
-share/appdata/evolution-ews.metainfo.xml
 share/evolution-data-server/ews/windowsZones.xml
 share/evolution/errors/module-ews-configuration.error
 share/locale/as/LC_MESSAGES/evolution-ews.mo
@@ -46,3 +45,4 @@ share/locale/ta/LC_MESSAGES/evolution-ews.mo
 share/locale/te/LC_MESSAGES/evolution-ews.mo
 share/locale/tr/LC_MESSAGES/evolution-ews.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-ews.mo
+share/metainfo/org.gnome.Evolution-ews.metainfo.xml

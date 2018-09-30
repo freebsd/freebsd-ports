@@ -52,14 +52,6 @@ gdm_start()
 	sleep 1
 	iter=$(expr ${iter} + 1)
     done
-    iter=0
-    while ! %%LOCALBASE%%/bin/lshal >/dev/null 2>&1 ; do
-	if [ ${iter} -eq 60 ]; then
-	    break
-	fi
-	sleep 1
-	iter=$(expr ${iter} + 1)
-    done
     LANG=${gdm_lang} ${command} ${gdm_flags} ) &
 }
 

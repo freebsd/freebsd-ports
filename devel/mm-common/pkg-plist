@@ -1,6 +1,7 @@
 bin/mm-common-prepare
 libdata/pkgconfig/mm-common-util.pc
 man/man1/mm-common-prepare.1.gz
+share/aclocal/mm-ax_cxx_compile_stdcxx.m4
 share/aclocal/mm-ax_cxx_compile_stdcxx_11.m4
 share/aclocal/mm-common.m4
 share/aclocal/mm-dietlib.m4

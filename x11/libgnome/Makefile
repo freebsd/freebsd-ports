@@ -16,7 +16,8 @@ USES=	tar:bzip2
 .if !defined(REFERENCE_PORT)
 
 BUILD_DEPENDS=	rarian-sk-config:textproc/rarian
-LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra
+LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra \
+		libpopt.so:devel/popt
 RUN_DEPENDS=	rarian-sk-config:textproc/rarian
 
 INSTALL_TARGET=	install-strip

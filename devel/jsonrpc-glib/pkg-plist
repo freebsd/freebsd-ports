@@ -1,0 +1,17 @@
+include/jsonrpc-glib-1.0/jsonrpc-client.h
+include/jsonrpc-glib-1.0/jsonrpc-glib.h
+include/jsonrpc-glib-1.0/jsonrpc-input-stream-private.h
+include/jsonrpc-glib-1.0/jsonrpc-input-stream.h
+include/jsonrpc-glib-1.0/jsonrpc-message.h
+include/jsonrpc-glib-1.0/jsonrpc-output-stream.h
+include/jsonrpc-glib-1.0/jsonrpc-server.h
+include/jsonrpc-glib-1.0/jsonrpc-version-macros.h
+include/jsonrpc-glib-1.0/jsonrpc-version.h
+lib/girepository-1.0/Jsonrpc-1.0.typelib
+lib/libjsonrpc-glib-1.0.so
+lib/libjsonrpc-glib-1.0.so.1
+lib/libjsonrpc-glib-1.0.so.1.2800.1
+libdata/pkgconfig/jsonrpc-glib-1.0.pc
+share/gir-1.0/Jsonrpc-1.0.gir
+share/vala/vapi/jsonrpc-glib-1.0.deps
+share/vala/vapi/jsonrpc-glib-1.0.vapi

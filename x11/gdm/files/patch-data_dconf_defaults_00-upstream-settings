@@ -1,5 +1,5 @@
---- data/dconf/defaults/00-upstream-settings.orig	2015-06-18 15:47:40.000000000 +0200
-+++ data/dconf/defaults/00-upstream-settings	2015-07-03 09:32:09.925298000 +0200
+--- data/dconf/defaults/00-upstream-settings.orig	2015-05-29 13:27:05.000000000 +0200
++++ data/dconf/defaults/00-upstream-settings	2015-06-04 07:49:07.773567000 +0200
 @@ -13,7 +13,7 @@
  show-desktop-icons=false
  

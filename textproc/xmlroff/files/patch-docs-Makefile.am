@@ -9,16 +9,73 @@
  	$(PANGO_LIBS) \
  	$(GNOMEPRINT_LIBS) \
  	$(GDKPIXBUF_LIBS)	\
-@@ -228,7 +228,7 @@ dist-hook-local:
- DOCBOOK_XSL=http://docbook.sourceforge.net/release/xsl/current/fo/docbook.xsl
+@@ -203,7 +203,7 @@ if ENABLE_MAN
+ man_MANS = xmlroff.1 
+ 
+ .xml.1:
+-	@XSLTPROC@ -nonet http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl $<
++	@XSLTPROC@ -nonet file://%%LOCALBASE%%/share/xsl/docbook/manpages/docbook.xsl $<
+ 
+ BUILT_EXTRA_DIST = $(man_MANS)
+ endif
+@@ -225,10 +225,10 @@ dist-hook-local:
+ #	done
+ 
+ # Location of DocBook XSL stylesheet.
+-DOCBOOK_XSL=http://docbook.sourceforge.net/release/xsl/current/fo/docbook.xsl
++DOCBOOK_XSL=file://%%LOCALBASE%%/share/xsl/docbook/fo/docbook.xsl
  
  xmlroff.fo:	xmlroff.xml ../libfo-compat.xsl
 -	xsltproc $(DOCBOOK_XSL) xmlroff.xml > xmlroff.tmp
-+	env XML_CATALOG_FILES=file://${LOCALBASE}/share/xml/catalog xsltproc --nonet $(DOCBOOK_XSL) xmlroff.xml > xmlroff.tmp
++	env XML_CATALOG_FILES=file://%%LOCALBASE%%/share/xml/catalog xsltproc --nonet $(DOCBOOK_XSL) xmlroff.xml > xmlroff.tmp
  	xsltproc ../libfo-compat.xsl xmlroff.tmp > xmlroff.fo
  	rm -f xmlroff.tmp
  
-@@ -341,8 +341,6 @@ install-data-local:
+@@ -254,8 +254,8 @@ EXTRA_DIST = 				\
+ 	$(DOC_MODULE)-sections.txt	\
+ 	$(DOC_MODULE)-overrides.txt
+ 
+-DOC_STAMPS=scan-build.stamp tmpl-build.stamp sgml-build.stamp html-build.stamp \
+-	   $(srcdir)/tmpl.stamp $(srcdir)/sgml.stamp $(srcdir)/html.stamp
++DOC_STAMPS=scan-build.stamp sgml-build.stamp html-build.stamp \
++	   $(srcdir)/sgml.stamp $(srcdir)/html.stamp
+ 
+ SCANOBJ_FILES = 		 \
+ 	$(DOC_MODULE).args  	 \
+@@ -286,22 +286,9 @@ scan-build.stamp: $(HFILE_GLOB)
+ $(DOC_MODULE)-decl.txt $(SCANOBJ_FILES): scan-build.stamp
+ 	@true
+ 
+-#### templates ####
+-
+-tmpl-build.stamp: $(DOC_MODULE)-decl.txt $(SCANOBJ_FILES) $(DOC_MODULE)-sections.txt $(DOC_MODULE)-overrides.txt
+-	@echo '*** Rebuilding template files ***'
+-	cd $(srcdir) && gtkdoc-mktmpl --module=$(DOC_MODULE)
+-	touch tmpl-build.stamp
+-
+-tmpl.stamp: tmpl-build.stamp
+-	@true
+-
+-tmpl/*.sgml:
+-	@true
+-
+ #### sgml ####
+ 
+-sgml-build.stamp: tmpl.stamp $(CFILE_GLOB) $(srcdir)/tmpl/*.sgml
++sgml-build.stamp: scan-build.stamp $(CFILE_GLOB)
+ 	@echo '*** Building SGML ***'
+ 	cd $(srcdir) && \
+ 	gtkdoc-mkdb --module=$(DOC_MODULE) --source-dir=$(DOC_SOURCE_DIR) $(MKDB_OPTIONS)
+@@ -319,7 +306,7 @@ html-build.stamp: sgml.stamp $(DOC_MAIN_SGML_FILE) $(c
+ 	cd $(srcdir)/html && gtkdoc-mkhtml $(DOC_MODULE) ../$(DOC_MAIN_SGML_FILE)
+ 	test "x$(HTML_IMAGES)" = "x" || ( cd $(srcdir) && cp $(HTML_IMAGES) html )
+ 	@echo '-- Fixing Crossreferences' 
+-	cd $(srcdir) && gtkdoc-fixxref --module-dir=html --html-dir=$(HTML_DIR) $(FIXXREF_OPTIONS)
++	cd $(srcdir) && gtkdoc-fixxref --module=xmlroff --module-dir=html --html-dir=$(HTML_DIR) $(FIXXREF_OPTIONS)
+ 	touch html-build.stamp
+ endif
+ 
+@@ -341,8 +328,6 @@ install-data-local:
  	    echo '-- Installing '$$i ; \
  	    $(INSTALL_DATA) $$i $(DESTDIR)$(TARGET_DIR); \
  	  done; \
@@ -27,3 +84,14 @@
  	fi)
  
  #
+@@ -357,10 +342,8 @@ dist-check-gtkdoc:
+ endif
+ 
+ dist-hook: dist-check-gtkdoc dist-hook-local
+-	mkdir $(distdir)/tmpl
+ 	mkdir $(distdir)/xml
+ 	mkdir $(distdir)/html
+-	-cp $(srcdir)/tmpl/*.sgml $(distdir)/tmpl
+ 	-cp $(srcdir)/xml/*.xml $(distdir)/xml
+ 	-cp $(srcdir)/html/* $(distdir)/html
+ 

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	anjuta
-PORTVERSION=	3.18.2
-PORTREVISION=	6
+PORTVERSION=	3.28.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -14,6 +13,8 @@ COMMENT=	Integrated Development Environment for C and C++
 BUILD_DEPENDS=	autogen:devel/autogen \
 		itstool:textproc/itstool
 LIB_DEPENDS+=	libpcre.so:devel/pcre \
+		libexpat.so:textproc/expat2 \
+		libfribidi.so:converters/fribidi \
 		libgdl-3.so:x11-toolkits/gdl
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:misc/gnome-icon-theme \
 		autogen:devel/autogen \
@@ -38,7 +39,7 @@ gjs_CMD=	${LOCALBASE}/bin/gjs
 
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gtksourceview3 intlhack libgda5 libwnck3 vte3
+USE_GNOME=	cairo gtksourceview3 intlhack libgda5 libwnck3
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -72,7 +73,6 @@ GLIB_SCHEMAS=	org.gnome.anjuta.cvs.gschema.xml \
 		org.gnome.anjuta.snippets.gschema.xml \
 		org.gnome.anjuta.starter.gschema.xml \
 		org.gnome.anjuta.symbol-db.gschema.xml \
-		org.gnome.anjuta.terminal.gschema.xml \
 		org.gnome.anjuta.tools.gschema.xml
 
 OPTIONS_SUB=	yes
@@ -89,6 +89,9 @@ GLADE_CONFIGURE_ENABLE=	plugin-glade
 
 TERMINAL_USE=	GNOME=vte3
 TERMINAL_CONFIGURE_ENABLE=	plugin-terminal
+TERMINAL_LIB_DEPENDS=	libgnutls.so:security/gnutls \
+			libpcre2-8.so:devel/pcre2
+TERMINAL_VARS=		GLIB_SCHEMAS+=org.gnome.anjuta.terminal.gschema.xml
 
 SVN_BUILD_DEPENDS=	svn:devel/subversion
 SVN_LIB_DEPENDS=	libapr-1.so:devel/apr1 \
@@ -96,10 +99,12 @@ SVN_LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 SVN_RUN_DEPENDS=	svn:devel/subversion
 SVN_CONFIGURE_ENABLE=	plugin-subversion
 
-DEVHELP_LIB_DEPENDS=	libdevhelp-3.so:devel/devhelp
+DEVHELP_LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+			libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
+			libdevhelp-3.so:devel/devhelp
 DEVHELP_CONFIGURE_ENBABLE=	plugin-devhelp
 
-VALA_VER=		0.36
+VALA_VER=		0.40
 VALA_BUILD_DEPENDS=	vala>=${VALA_VER},1<${VALA_VER}.99,1:lang/vala
 VALA_RUN_DEPENDS=	vala>=${VALA_VER},1<${VALA_VER}.99,1:lang/vala
 VALA_CONFIGURE_ENABLE=	vala

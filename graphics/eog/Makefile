@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eog
-PORTVERSION=	3.24.1
+PORTVERSION=	3.28.2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -21,13 +21,12 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake gnome jpeg libtool localbase \
-		pathfix pkgconfig tar:xz
-USE_GNOME=	cairo intltool librsvg2 gtk30 gnomedesktop3 introspection
+USES=		desktop-file-utils gettext gnome jpeg localbase \
+		meson pkgconfig python:build,3.4+ shebangfix tar:xz
+USE_GNOME=	cairo librsvg2 gtk30 gnomedesktop3 introspection
 USE_XORG=	x11
 INSTALLS_ICONS=	yes
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
+SHEBANG_FILES=	${WRKSRC}/meson_post_install.py
 
 GLIB_SCHEMAS=	org.gnome.eog.enums.xml \
 		org.gnome.eog.gschema.xml
@@ -39,11 +38,11 @@ OPTIONS_DEFINE=	EXIF EXEMPI
 OPTIONS_DEFAULT=EXIF EXEMPI
 
 EXIF_DESC=	Digital camera file meta-data support
-EXIF_CONFIGURE_WITH=	libexif
+EXIF_MESON_TRUE=	libexif
 EXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
 
 EXEMPI_DESC=	XMP support
-EXEMPI_CONFIGURE_WITH=	xmp
+EXEMPI_MESON_TRUE=	xmp
 EXEMPI_LIB_DEPENDS=	libexempi.so:textproc/exempi
 
 .include <bsd.port.options.mk>

@@ -393,6 +393,7 @@ share/locale/eu/LC_MESSAGES/seahorse.mo
 share/locale/fi/LC_MESSAGES/seahorse.mo
 share/locale/fr/LC_MESSAGES/seahorse.mo
 share/locale/ga/LC_MESSAGES/seahorse.mo
+share/locale/gd/LC_MESSAGES/seahorse.mo
 share/locale/gl/LC_MESSAGES/seahorse.mo
 share/locale/gu/LC_MESSAGES/seahorse.mo
 share/locale/he/LC_MESSAGES/seahorse.mo
@@ -400,6 +401,7 @@ share/locale/hi/LC_MESSAGES/seahorse.mo
 share/locale/hr/LC_MESSAGES/seahorse.mo
 share/locale/hu/LC_MESSAGES/seahorse.mo
 share/locale/id/LC_MESSAGES/seahorse.mo
+share/locale/is/LC_MESSAGES/seahorse.mo
 share/locale/it/LC_MESSAGES/seahorse.mo
 share/locale/ja/LC_MESSAGES/seahorse.mo
 share/locale/kk/LC_MESSAGES/seahorse.mo

@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-contacts
-PORTVERSION=	3.18.0
-PORTREVISION=	6
+PORTVERSION=	3.28.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Contacts manager for gnome
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	vala>=0.14.0:lang/vala
 LIB_DEPENDS=	libchamplain-0.12.so:graphics/libchamplain \
@@ -31,22 +33,18 @@ LIB_DEPENDS=	libchamplain-0.12.so:graphics/libchamplain \
 
 PORTSCOUT=	limitw:1,even
 
-USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xi xrandr
-USE_GNOME=	cairo evolutiondataserver3 gdkpixbuf2 glib20 gnomedesktop3 \
-		gtk30 intlhack introspection:build
 USE_GL=		egl
-USES=		gettext gmake gnome pathfix perl5 pkgconfig sqlite tar:xz
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USE_GNOME=	cairo evolutiondataserver3 gdkpixbuf2 gnomedesktop3 gtk30 \
+		intlhack introspection:build
+USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr
+USES=		gettext gnome localbase meson perl5 pkgconfig \
+		python:3.4+,build shebangfix sqlite tar:xz
+SHEBANG_FILES=	meson_post_install.py
 
-MAKE_ENV=	XDG_CACHE_HOME=${WRKDIR}
-
-GLIB_SCHEMAS=	org.gnome.Contacts.enums.xml \
-		org.gnome.Contacts.gschema.xml
+GLIB_SCHEMAS=	org.gnome.Contacts.gschema.xml
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	MANPAGES NLS
+OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 
 OPTIONS_DEFINE_i386=	CHEESE
@@ -54,21 +52,13 @@ OPTIONS_DEFINE_amd64=	CHEESE
 OPTIONS_DEFAULT_i386=	CHEESE
 OPTIONS_DEFAULT_amd64=	CHEESE
 
-MANPAGES_CONFIGURE_ENABLE=	man-pages
+MANPAGES_MESON_TRUE=	with-manpage
 MANPAGES_USE=		GNOME=libxslt:build
 MANPAGES_BUILD_DEPENDS=	docbook-xml>=0:textproc/docbook-xml \
 			docbook-xsl>=0:textproc/docbook-xsl
 
-NLS_CONFIGURE_ENABLE=   nls
-NLS_USES=       gettext
-
 CHEESE_DESC=		Cheese webcam support
-CHEESE_CONFIGURE_WITH=	cheese
+CHEESE_MESON_YES=	with-cheese
 CHEESE_LIB_DEPENDS=	libcheese-gtk.so:multimedia/cheese
-
-post-patch:
-	# touch vala sources to force regen c sources to honor cheese setting
-	${TOUCH} ${WRKSRC}/src/main.vala \
-		${WRKSRC}/src/contacts-avatar-dialog.vala
 
 .include <bsd.port.mk>

@@ -27,15 +27,12 @@ lib/gtranslator/plugins/charmap/panel.pyo
 lib/gtranslator/plugins/gtr-alternate-language.plugin
 lib/gtranslator/plugins/gtr-charmap.plugin
 lib/gtranslator/plugins/gtr-codeview.plugin
-%%DICT%%lib/gtranslator/plugins/gtr-dict.plugin
 lib/gtranslator/plugins/gtr-fullscreen.plugin
 lib/gtranslator/plugins/gtr-insert-params.plugin
 lib/gtranslator/plugins/gtr-open-tran.plugin
 lib/gtranslator/plugins/gtr-translation-memory.plugin
 lib/gtranslator/plugins/libalternatelang.a
 lib/gtranslator/plugins/libalternatelang.so
-%%DICT%%lib/gtranslator/plugins/libdict.a
-%%DICT%%lib/gtranslator/plugins/libdict.so
 lib/gtranslator/plugins/libfullscreen.a
 lib/gtranslator/plugins/libfullscreen.so
 lib/gtranslator/plugins/libinsertparams.a
@@ -86,7 +83,6 @@ share/applications/gtranslator.desktop
 %%DATADIR%%/gir-1.0/Gtranslator-3.0.gir
 %%DATADIR%%/pixmaps/debian.png
 %%DATADIR%%/pixmaps/fedora.png
-%%DATADIR%%/pixmaps/gnome-dictionary.png
 %%DATADIR%%/pixmaps/gnome.png
 %%DATADIR%%/pixmaps/gtranslator-fuzzy-next.png
 %%DATADIR%%/pixmaps/gtranslator-fuzzy-prev.png

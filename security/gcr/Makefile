@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcr
-PORTVERSION=	3.18.0
+PORTVERSION=	3.28.0
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 
@@ -12,14 +12,14 @@ COMMENT=	Library for bits of crypto UI and parsing
 BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc \
 		vapigen:lang/vala
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
-		libtasn1.so:security/libtasn1 \
+		libgpg-error.so:security/libgpg-error \
 		libp11-kit.so:security/p11-kit \
 		libgcrypt.so:security/libgcrypt
 
 CONFLICTS=	gnome-keyring-2.[0-9]*
 PORTSCOUT=	limitw:1,even
 
-USE_GNOME=	gtk30 intlhack introspection:build
+USE_GNOME=	cairo gtk30 intlhack introspection:build
 USES=		desktop-file-utils gettext gmake gnome libtool pathfix \
 		pkgconfig shared-mime-info tar:xz
 GNU_CONFIGURE=	yes

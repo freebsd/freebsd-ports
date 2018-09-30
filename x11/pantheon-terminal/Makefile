@@ -12,6 +12,8 @@ COMMENT=	Lightweight, beautiful, and simple terminal from Elementary OS
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Doesn't build with vala 0.40+
+
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libgnutls.so:security/gnutls \
 		libgranite.so:x11-toolkits/granite \

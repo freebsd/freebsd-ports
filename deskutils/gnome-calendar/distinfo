@@ -1,2 +1,3 @@
-SHA256 (gnome3/gnome-calendar-3.18.2.1.tar.xz) = eedd9b10da837db6e7dc02794a942e9a98b3cdaa975b0d46226aa0cdaf88c0f6
-SIZE (gnome3/gnome-calendar-3.18.2.1.tar.xz) = 2290232
+TIMESTAMP = 1525503444
+SHA256 (gnome/gnome-calendar-3.28.2.tar.xz) = dcf72dd7850a8a29dd16ebd2594acd83ac9c35b83f9f6ee87a7c3ae49eeddc74
+SIZE (gnome/gnome-calendar-3.28.2.tar.xz) = 2440592

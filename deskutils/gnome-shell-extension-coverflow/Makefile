@@ -2,33 +2,38 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-shell-extension-coverflow
-PORTVERSION=	0.0.0.20151013
-PORTREVISION=	1
+PORTVERSION=	0.0.0.20180110
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lets you Alt-Tab windows in a cover-flow manner
 
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
 RUN_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
 
-USES=		gettext gmake gnome pkgconfig
+USES=		gettext gmake gnome localbase pkgconfig
 USE_GNOME=	glib20
 USE_GITHUB=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+
 GLIB_SCHEMAS=	org.gnome.shell.extensions.coverflowalttab.gschema.xml
 
 GH_ACCOUNT=	dmo60
-GH_TAGNAME=	86483f1
+GH_TAGNAME=	991e743
 GH_PROJECT=	CoverflowAltTab
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
 
 NO_BUILD=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|"3.26"|"3.26","3.28"|g' \
+		${WRKSRC}/CoverflowAltTab@dmo60.de/metadata.json
 
 do-install:
 		@${MKDIR} ${STAGEDIR}${PREFIX}/share/glib-2.0/schemas/

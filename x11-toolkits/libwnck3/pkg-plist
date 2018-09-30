@@ -13,7 +13,7 @@ include/libwnck-3.0/libwnck/wnck-enum-types.h
 include/libwnck-3.0/libwnck/workspace.h
 lib/libwnck-3.so
 lib/libwnck-3.so.0
-lib/libwnck-3.so.0.2.2
+lib/libwnck-3.so.0.3.0
 libdata/pkgconfig/libwnck-3.0.pc
 lib/girepository-1.0/Wnck-3.0.typelib
 share/gtk-doc/html/libwnck-3.0/WnckApplication.html
@@ -29,7 +29,6 @@ share/gtk-doc/html/libwnck-3.0/core.html
 share/gtk-doc/html/libwnck-3.0/getting-started.html
 share/gtk-doc/html/libwnck-3.0/home.png
 share/gtk-doc/html/libwnck-3.0/index.html
-share/gtk-doc/html/libwnck-3.0/index.sgml
 share/gtk-doc/html/libwnck-3.0/indexes.html
 share/gtk-doc/html/libwnck-3.0/ix01.html
 share/gtk-doc/html/libwnck-3.0/ix02.html

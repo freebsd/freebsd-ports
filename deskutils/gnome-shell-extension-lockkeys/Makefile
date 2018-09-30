@@ -2,28 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-shell-extension-lockkeys
-PORTVERSION=	0.0.0.20151017
-PORTREVISION=	1
+PORTVERSION=	0.0.0.20180511
 CATEGORIES=	deskutils gnome
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome-shell Numlock and Capslock indicator
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/lockkeys@vaina.lt/LICENSE
 
 BUILD_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
 RUN_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
 
-USES=		gettext gmake gnome pkgconfig
+USES=		gettext gmake gnome localbase pkgconfig
 USE_GNOME=	glib20
 USE_GITHUB=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+
 GLIB_SCHEMAS=	org.gnome.shell.extensions.lockkeys.gschema.xml
 
 GH_ACCOUNT=	kazysmaster
-GH_TAGNAME=	222289e
+GH_TAGNAME=	0bf0917
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
 

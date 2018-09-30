@@ -100,6 +100,10 @@ _USE_GNOME_ALL+=atkmm cairomm gconfmm26 glibmm gtkmm20 gtkmm24 \
 		libgtksourceviewmm libxml++26 libsigc++12 libsigc++20 \
 		pangomm
 
+# glib-mkenums often fails with C locale
+# https://gitlab.gnome.org/GNOME/glib/issues/1430
+USE_LOCALE?=	en_US.UTF-8
+
 GNOME_MAKEFILEIN?=	Makefile.in
 SCROLLKEEPER_DIR=	/var/db/rarian
 

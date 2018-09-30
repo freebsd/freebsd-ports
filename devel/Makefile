@@ -1270,6 +1270,7 @@
     SUBDIR += json-glib
     SUBDIR += jsoncpp
     SUBDIR += jsonnet
+    SUBDIR += jsonrpc-glib
     SUBDIR += judy
     SUBDIR += jwasm
     SUBDIR += k8048
@@ -1587,7 +1588,6 @@
     SUBDIR += libsmraw
     SUBDIR += libsoup
     SUBDIR += libsoup-gnome
-    SUBDIR += libsoup-reference
     SUBDIR += libspark2012
     SUBDIR += libspice-server
     SUBDIR += libstatgrab
@@ -6244,6 +6244,7 @@
     SUBDIR += tclvfs
     SUBDIR += tclxml
     SUBDIR += tdl
+    SUBDIR += template-glib
     SUBDIR += terminality
     SUBDIR += tevent
     SUBDIR += tex-kpathsea

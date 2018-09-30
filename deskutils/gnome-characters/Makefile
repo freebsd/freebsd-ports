@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-characters
-PORTVERSION=	3.18.1
+PORTVERSION=	3.28.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -10,19 +10,21 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	find and insert unusual characters for GNOME 3
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 PORTSCOUT=	limitw:1,even
 
-BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libgjs.so:lang/gjs \
-		libunistring.so:devel/libunistring
+		libunistring.so:devel/libunistring \
+		libdbus-1.so:devel/dbus
 
-USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
+USES=		gettext gnome iconv:wchar_t localbase:ldflags meson \
+		pkgconfig python:3.6+,build tar:xz
+USE_GNOME=	gtk30 introspection
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gtk30 intlhack introspection
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 GLIB_SCHEMAS=	org.gnome.Characters.gschema.xml
 

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnote
-PORTVERSION=	3.18.1
-PORTREVISION=	11
+PORTVERSION=	3.28.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 
@@ -14,30 +13,27 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
-LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libgtkspell3-3.so:textproc/gtkspell3 \
-		libboost_filesystem.so:devel/boost-libs \
+LIB_DEPENDS=	libgtkspell3-3.so:textproc/gtkspell3 \
+		libenchant.so:textproc/enchant \
 		libsecret-1.so:security/libsecret \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 PORTSCOUT=	limitw:1,even
 
-USE_GNOME=	gtk30 gtkmm30 intltool libxml2 libxslt
+USE_GNOME=	gtkmm30 intltool libxml2 libxslt
+USE_XORG=	x11
 USES=		desktop-file-utils compiler:c++11-lib gettext gmake \
-		gnome libtool pathfix pkgconfig tar:xz
+		gnome libtool localbase pathfix pkgconfig tar:xz
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-dbus-service-dir=${PREFIX}/share/dbus-1/services
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.gnote.gschema.xml
 
 DOCS=		AUTHORS ChangeLog NEWS README TODO
 
-PLIST_SUB+=	VERSION=${PORTVERSION}
+PLIST_SUB+=	VERSION=${PORTVERSION} SVER=${PORTVERSION:R}
 
 OPTIONS_DEFINE=	DOCS
 

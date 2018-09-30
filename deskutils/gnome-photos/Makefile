@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-photos
-PORTVERSION=	3.24.2
-PORTREVISION=	3
+PORTVERSION=	3.28.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -17,12 +16,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	geoclue>=0:net/geoclue \
 		itstool:textproc/itstool
 LIB_DEPENDS=	libexempi.so:textproc/exempi \
+		libfribidi.so:converters/fribidi \
 		libgfbgraph-0.2.so:net/gfbgraph \
 		libgegl-0.3.so:graphics/gegl3 \
 		libgrilo-0.3.so:net/grilo \
 		libexiv2.so:graphics/exiv2 \
 		libgexiv2.so:graphics/gexiv2 \
-		libtracker-control-1.0.so:sysutils/tracker \
+		libtracker-control-2.0.so:sysutils/tracker \
 		libgeocode-glib.so:net/geocode-glib \
 		libgjs.so:lang/gjs \
 		libbabl-0.1.so:x11/babl \
@@ -30,6 +30,7 @@ LIB_DEPENDS=	libexempi.so:textproc/exempi \
 		libsoup-2.4.so:devel/libsoup \
 		libjson-glib-1.0.so:devel/json-glib \
 		libgoa-1.0.so:net/gnome-online-accounts \
+		libdazzle-1.0.so:x11-toolkits/libdazzle \
 		libpng.so:graphics/png \
 		libgdata.so:devel/libgdata
 RUN_DEPENDS=	geoclue>=0:net/geoclue
@@ -38,7 +39,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 gettext gmake gnome jpeg libtool \
 		localbase pathfix pkgconfig tar:xz
-USE_GNOME=	cairo gnomedesktop3 gtk30 intlhack libxml2
+USE_GNOME=	cairo gnomedesktop3 gtk30 libxml2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

@@ -1,24 +1,24 @@
---- configure.orig	2011-04-06 10:16:19.000000000 +0200
-+++ configure	2011-04-06 10:34:06.000000000 +0200
-@@ -14541,7 +14541,7 @@
- $as_echo_n "checking for headers required to compile python extensions... " >&6; }
- py_prefix=`$PYTHON -c "import sys; print sys.prefix"`
- py_exec_prefix=`$PYTHON -c "import sys; print sys.exec_prefix"`
+--- configure.orig	2016-04-07 13:52:21.629199000 +0200
++++ configure	2016-04-07 13:53:25.241848000 +0200
+@@ -14929,7 +14929,7 @@
+ 
+ print(' '.join(incldirs))
+ "
 -if test "x$PYTHON_INCLUDES" == x; then
 +if test "x$PYTHON_INCLUDES" = x; then
-   PYTHON_INCLUDES="-I${py_prefix}/include/python${PYTHON_VERSION}"
-   if test "$py_prefix" != "$py_exec_prefix"; then
-     PYTHON_INCLUDES="$PYTHON_INCLUDES -I${py_exec_prefix}/include/python${PYTHON_VERSION}"
-@@ -14570,10 +14570,10 @@
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking for libraries required to embed python" >&5
- $as_echo_n "checking for libraries required to embed python... " >&6; }
- py_exec_prefix=`$PYTHON -c "import sys; print sys.exec_prefix"`
+   PYTHON_INCLUDES=`$PYTHON -c "$am_python_print_includes"`
+ fi
+ 
+@@ -14962,10 +14962,10 @@
+ am_python_print_lib_loc="\
+ from distutils import sysconfig as sc
+ print(sc.get_config_var('LIBDIR'))"
 -if test "x$PYTHON_LIBS" == x; then
 +if test "x$PYTHON_LIBS" = x; then
- 	PYTHON_LIBS="-L${py_prefix}/lib -lpython${PYTHON_VERSION}"
+ 	PYTHON_LIBS=`$PYTHON -c "$am_python_print_libs"`
  fi
 -if test "x$PYTHON_LIB_LOC" == x; then
 +if test "x$PYTHON_LIB_LOC" = x; then
- 	PYTHON_LIB_LOC="${py_prefix}/lib"
+ 	PYTHON_LIB_LOC=`$PYTHON -c "$am_python_print_lib_loc"`
  fi
  

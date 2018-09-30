@@ -1,0 +1,22 @@
+--- configure.orig	2016-12-30 22:32:44.767904000 +0100
++++ configure	2016-12-30 22:33:30.909853000 +0100
+@@ -4747,7 +4747,7 @@
+ 
+ 
+ # Whether to enable support for RDP.
+-RDP_DEPS="freerdp x11"
++RDP_DEPS="freerdp2 x11"
+ # Check whether --enable-rdp was given.
+ if test "${enable_rdp+set}" = set; then :
+   enableval=$enable_rdp;
+@@ -4763,8 +4763,8 @@
+   test $ac_status = 0; }; then
+   have_rdp=yes
+      if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"freerdp >= 1.1\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "freerdp >= 1.1") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"freerdp2 >= 1.1\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "freerdp2 >= 1.1") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then

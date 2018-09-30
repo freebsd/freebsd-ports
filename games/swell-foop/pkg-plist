@@ -1,5 +1,4 @@
 bin/swell-foop
-share/appdata/swell-foop.appdata.xml
 share/applications/swell-foop.desktop
 share/help/C/swell-foop/figures/play1.png
 share/help/C/swell-foop/figures/play2.png
@@ -85,6 +84,13 @@ share/help/oc/swell-foop/figures/play4.png
 share/help/oc/swell-foop/figures/start-up.png
 share/help/oc/swell-foop/index.docbook
 share/help/oc/swell-foop/legal.xml
+share/help/pl/swell-foop/figures/play1.png
+share/help/pl/swell-foop/figures/play2.png
+share/help/pl/swell-foop/figures/play3.png
+share/help/pl/swell-foop/figures/play4.png
+share/help/pl/swell-foop/figures/start-up.png
+share/help/pl/swell-foop/index.docbook
+share/help/pl/swell-foop/legal.xml
 share/help/pt_BR/swell-foop/figures/play1.png
 share/help/pt_BR/swell-foop/figures/play2.png
 share/help/pt_BR/swell-foop/figures/play3.png
@@ -232,6 +238,7 @@ share/locale/xh/LC_MESSAGES/swell-foop.mo
 share/locale/zh_CN/LC_MESSAGES/swell-foop.mo
 share/locale/zh_HK/LC_MESSAGES/swell-foop.mo
 share/locale/zh_TW/LC_MESSAGES/swell-foop.mo
+share/metainfo/swell-foop.appdata.xml
 %%DATADIR%%/preferences.ui
 %%DATADIR%%/swell-foop.css
 %%DATADIR%%/themes/colors/bkg.svg

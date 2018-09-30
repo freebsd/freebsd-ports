@@ -3,7 +3,7 @@
 
 PORTNAME=	wmdrawer
 PORTVERSION=	0.10.5
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://people.easter-eggs.org/~valos/wmdrawer/ \
 		http://www.sourcefiles.org/Utilities/Desktops/
@@ -15,6 +15,7 @@ LICENSE=	GPLv2+
 
 USES=		gmake pkgconfig
 USE_GNOME=	gdkpixbuf2
+USE_XORG=	x11 xext xi
 MAKE_ENV=	USE_GDKPIXBUF2=1
 
 SUB_FILES=	pkg-message

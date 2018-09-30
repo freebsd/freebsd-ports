@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	consolekit
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	https://github.com/ConsoleKit2/ConsoleKit2/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	2

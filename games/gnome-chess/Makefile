@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-chess
-PORTVERSION=	3.24.1
-PORTREVISION=	1
+PORTVERSION=	3.28.1
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -20,18 +19,18 @@ BUILD_DEPENDS=	vala:lang/vala \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake gnome \
-		localbase pkgconfig tar:xz
+USES=		desktop-file-utils gettext gnome localbase meson \
+		pkgconfig python:3.6+,build tar:xz
 USE_GNOME=	cairo gtk30 librsvg2 libxml2:build
 INSTALLS_ICONS=	yes
-USE_XORG=	x11
-USE_GL=		gl glu
-GNU_CONFIGURE=	yes
+USE_GL=		gl egl
+BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 GLIB_SCHEMAS=	org.gnome.chess.gschema.xml
 
 OPTIONS_DEFINE=	GNUCHESS
 OPTIONS_DEFAULT=GNUCHESS
+
 GNUCHESS_DESC=	Use gnuchess engine for computer player
 GNUCHESS_RUN_DEPENDS=	gnuchess:games/gnuchess
 

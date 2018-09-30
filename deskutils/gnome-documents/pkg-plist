@@ -6,8 +6,6 @@ lib/gnome-documents/libgd.so
 lib/gnome-documents/libgdprivate-1.0.so
 man/man1/gnome-books.1.gz
 man/man1/gnome-documents.1.gz
-share/appdata/org.gnome.Books.appdata.xml
-share/appdata/org.gnome.Documents.appdata.xml
 share/applications/org.gnome.Books.desktop
 share/applications/org.gnome.Documents.desktop
 share/dbus-1/services/org.gnome.Books.service
@@ -351,6 +349,21 @@ share/help/pa/gnome-documents/search.page
 share/help/pa/gnome-documents/view-add.page
 share/help/pa/gnome-documents/view.page
 share/help/pa/gnome-documents/viewgrid.page
+share/help/pl/gnome-documents/collections.page
+share/help/pl/gnome-documents/filter.page
+share/help/pl/gnome-documents/formats.page
+share/help/pl/gnome-documents/index.page
+share/help/pl/gnome-documents/info.page
+share/help/pl/gnome-documents/legal.xml
+share/help/pl/gnome-documents/media/go-down.png
+share/help/pl/gnome-documents/media/icon_gnome-documents.png
+share/help/pl/gnome-documents/print.page
+share/help/pl/gnome-documents/prob-no-show.page
+share/help/pl/gnome-documents/prob-previews.page
+share/help/pl/gnome-documents/search.page
+share/help/pl/gnome-documents/view-add.page
+share/help/pl/gnome-documents/view.page
+share/help/pl/gnome-documents/viewgrid.page
 share/help/pt_BR/gnome-documents/collections.page
 share/help/pt_BR/gnome-documents/filter.page
 share/help/pt_BR/gnome-documents/formats.page
@@ -587,3 +600,5 @@ share/locale/xh/LC_MESSAGES/gnome-documents.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-documents.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-documents.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-documents.mo
+share/metainfo/org.gnome.Books.appdata.xml
+share/metainfo/org.gnome.Documents.appdata.xml

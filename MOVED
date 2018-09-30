@@ -10546,3 +10546,9 @@ x11/tint-devel|x11/tint|2018-09-30|Has expired: Use x11/tint instead
 print/apsfilter||2018-09-30|Mostly unmaintained since 2015 and depends on expired ports
 print/hpijs||2018-09-30|Has expired: Unsupported since 2005, please migrate to print/hplip
 archivers/freeze||2018-09-30|Has expired: unknown license
+accessibility/atk-reference||2018-09-30|Removed stand alone documentation port
+graphics/cairo-reference||2018-09-30|Removed stand-alone documentation port
+deskutils/gnome-shell-extension-overlay-icons|deskutils/gnome-shell-extension-windowoverlay-icons|2018-09-30|Renamed
+deskutils/gnome-tweak-tool|deskutils/gnome-tweaks|2018-09-30|Renamed
+x11-themes/gnome-themes-standard|x11-themes/gnome-themes-extra|2018-09-30|Renamed
+accessibility/mousetweaks/||2018-09-30|Remove, no longer maintained

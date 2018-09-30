@@ -344,3 +344,4 @@ share/xml/libfo-0.6.2/xmlroff.xml
 %%PORTDOCS%%%%DOCSDIR%%/xmlroff.1.html
 %%PORTDOCS%%%%DOCSDIR%%/xmlroff.css
 %%PORTDOCS%%%%DOCSDIR%%/xmlroff.devhelp2
+man/man1/xmlroff.1.gz

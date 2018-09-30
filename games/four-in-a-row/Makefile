@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	four-in-a-row
-PORTVERSION=	3.22.1
+PORTVERSION=	3.28.0
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Make lines of the same color

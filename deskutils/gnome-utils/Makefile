@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-utils
-PORTVERSION=	3.18.0
+PORTVERSION=	3.26
 PORTEPOCH=	1
 CATEGORIES=	deskutils gnome
 
@@ -20,6 +20,7 @@ RUN_DEPENDS=	baobab>=3.0:deskutils/baobab \
 		gnome-system-log>=3.0:deskutils/gnome-system-log \
 		gnome-font-viewer>=3.0:deskutils/gnome-font-viewer \
 		gnome-system-monitor>=3.0:sysutils/gnome-system-monitor \
+		gnome-calendar>=3.0:deskutils/gnome-calendar \
 		gnome-photos>=3.0:deskutils/gnome-photos \
 		gnome-clocks>=3.0:deskutils/gnome-clocks \
 		gnome-maps>=3.0:deskutils/gnome-maps \

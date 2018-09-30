@@ -14,6 +14,8 @@ COMMENT=	Useful widget set complementary to GTK+ 2.0
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Does not build: libgtkextra-x11-2.0.so: undefined reference to `gtkextra_BOOLEAN__BOXED_BOXED'
+
 USES=		gmake libtool pathfix pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes

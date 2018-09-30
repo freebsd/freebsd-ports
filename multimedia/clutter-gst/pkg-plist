@@ -10,7 +10,7 @@ lib/girepository-1.0/ClutterGst-2.0.typelib
 lib/gstreamer-1.0/libgstclutter.so
 lib/libclutter-gst-2.0.so
 lib/libclutter-gst-2.0.so.0
-lib/libclutter-gst-2.0.so.0.16.0
+lib/libclutter-gst-2.0.so.0.18.0
 libdata/pkgconfig/clutter-gst-2.0.pc
 %%DOCSDIR%%/ClutterGstPlayer.html
 %%DOCSDIR%%/ClutterGstVideoSink.html

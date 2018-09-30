@@ -2,36 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	bijiben
-PORTVERSION=	3.18.2
-PORTREVISION=	9
+PORTVERSION=	3.28.3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Note editor designed to remain simple to use
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	itstool:textproc/itstool
-LIB_DEPENDS=	libtracker-control-1.0.so:sysutils/tracker \
+LIB_DEPENDS=	libtracker-control-2.0.so:sysutils/tracker \
+		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 		libgoa-1.0.so:net/gnome-online-accounts \
-		libwebkitgtk-3.0.so:www/webkit-gtk3 \
-		libclutter-gtk-1.0.so:graphics/clutter-gtk3
+		libical.so:devel/libical \
+		libzeitgeist-2.0.so:sysutils/zeitgeist \
+		libuuid.so:misc/e2fsprogs-libuuid
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake gnome libtool \
-		pathfix pkgconfig shared-mime-info tar:xz
+USES=		compiler:c++11-lib desktop-file-utils gettext gnome \
+		localbase meson pkgconfig python:build,3.4+ \
+		shared-mime-info shebangfix tar:xz
 USE_LDCONFIG=	yes
-USE_GNOME=	evolutiondataserver3 gnomedesktop3 gtk30 intlhack \
-		introspection:build
-GNU_CONFIGURE=	yes
+USE_GNOME=	cairo evolutiondataserver3 intltool
 INSTALLS_ICONS=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+MESON_ARGS=	-Dzeitgeist=true
+SHEBANG_FILES=	${WRKSRC}/build-aux/meson_post_install.py
 
-GLIB_SCHEMAS=	org.gnome.bijiben.gschema.xml
-
-# needed for webkit
-USES+=		compiler:c++11-lib
+GLIB_SCHEMAS=	org.gnome.bijiben.gschema.xml \
+		org.gnome.bijiben.enums.xml
 
 .include <bsd.port.mk>
