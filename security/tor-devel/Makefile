@@ -15,11 +15,9 @@ COMMENT=	Anonymizing overlay network for TCP
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_mips64=		does not build: error: Need a uint128_t implementation!
-BROKEN_powerpc64=	does not build: error: Need a uint128_t implementation!
-BROKEN_sparc64=		does not build: error: Need a uint128_t implementation!
+USES=		compiler:c11 cpe gmake pkgconfig # should be compiler:c99 or compiler:gnu99
+USE_CSTD=	gnu99 # until this bug report is closed: https://trac.torproject.org/projects/tor/ticket/27900
 
-USES=		cpe gmake pkgconfig
 CPE_VENDOR=	torproject
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl-dir="${OPENSSLBASE}"
