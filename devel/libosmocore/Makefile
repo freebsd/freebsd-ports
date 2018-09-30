@@ -38,7 +38,8 @@ post-patch:
 	${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/.tarball-version
 	@${REINPLACE_CMD} -e '/#pragma GCC diagnostic/d' \
 		${WRKSRC}/src/application.c
-	${REINPLACE_CMD} -e 's/python2/${PYTHON_VERSION}/' \
+	@${REINPLACE_CMD} -e 's/python2/${PYTHON_VERSION}/' \
+		-e 's,(AM_V_GEN)python ,(AM_V_GEN)${PYTHON_VERSION} ,' \
 		${WRKSRC}/include/Makefile.am \
 		${WRKSRC}/src/gsm/Makefile.am \
 		${WRKSRC}/tests/Makefile.am
