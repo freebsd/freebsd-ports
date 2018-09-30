@@ -1,12 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Name=Unison
-GenericName=File-synchronization tool
-Type=Application
-Terminal=false
-StartupNotify=true
-Categories=GTK;Utility;
-Exec=unison
-Icon=unison.png
-Comment=Synchronize files (directories) over different disks (hosts)
-Comment[ru]=Ð¡Ð¸Ð½ÑÑÐ¾Ð½Ð¸Ð·Ð°ÑÐ¸Ñ ÑÐ°Ð¹Ð»Ð¾Ð² (ÐºÐ°ÑÐ°Ð»Ð¾Ð³Ð¾Ð²) Ð½Ð° Ð½ÐµÑÐºÐ¾Ð»ÑÐºÐ¸Ñ Ð´Ð¸ÑÐºÐ°Ñ (ÐºÐ¾Ð¼Ð¿ÑÑÑÐµÑÐ°Ñ)
