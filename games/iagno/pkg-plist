@@ -1,6 +1,5 @@
 bin/iagno
 man/man6/iagno.6.gz
-share/appdata/iagno.appdata.xml
 share/applications/iagno.desktop
 share/help/C/iagno/2player.page
 share/help/C/iagno/ai-game.page
@@ -10,7 +9,6 @@ share/help/C/iagno/develop.page
 share/help/C/iagno/documentation.page
 share/help/C/iagno/figures/block.png
 share/help/C/iagno/figures/first.png
-share/help/C/iagno/figures/iagno-gameover.png
 share/help/C/iagno/figures/iagno-video.ogv
 share/help/C/iagno/figures/logo.png
 share/help/C/iagno/figures/logo32.png
@@ -32,7 +30,6 @@ share/help/ca/iagno/develop.page
 share/help/ca/iagno/documentation.page
 share/help/ca/iagno/figures/block.png
 share/help/ca/iagno/figures/first.png
-share/help/ca/iagno/figures/iagno-gameover.png
 share/help/ca/iagno/figures/iagno-video.ogv
 share/help/ca/iagno/figures/logo.png
 share/help/ca/iagno/figures/logo32.png
@@ -54,7 +51,6 @@ share/help/cs/iagno/develop.page
 share/help/cs/iagno/documentation.page
 share/help/cs/iagno/figures/block.png
 share/help/cs/iagno/figures/first.png
-share/help/cs/iagno/figures/iagno-gameover.png
 share/help/cs/iagno/figures/iagno-video.ogv
 share/help/cs/iagno/figures/logo.png
 share/help/cs/iagno/figures/logo32.png
@@ -76,7 +72,6 @@ share/help/de/iagno/develop.page
 share/help/de/iagno/documentation.page
 share/help/de/iagno/figures/block.png
 share/help/de/iagno/figures/first.png
-share/help/de/iagno/figures/iagno-gameover.png
 share/help/de/iagno/figures/iagno-video.ogv
 share/help/de/iagno/figures/logo.png
 share/help/de/iagno/figures/logo32.png
@@ -98,7 +93,6 @@ share/help/el/iagno/develop.page
 share/help/el/iagno/documentation.page
 share/help/el/iagno/figures/block.png
 share/help/el/iagno/figures/first.png
-share/help/el/iagno/figures/iagno-gameover.png
 share/help/el/iagno/figures/iagno-video.ogv
 share/help/el/iagno/figures/logo.png
 share/help/el/iagno/figures/logo32.png
@@ -120,7 +114,6 @@ share/help/en_GB/iagno/develop.page
 share/help/en_GB/iagno/documentation.page
 share/help/en_GB/iagno/figures/block.png
 share/help/en_GB/iagno/figures/first.png
-share/help/en_GB/iagno/figures/iagno-gameover.png
 share/help/en_GB/iagno/figures/iagno-video.ogv
 share/help/en_GB/iagno/figures/logo.png
 share/help/en_GB/iagno/figures/logo32.png
@@ -142,7 +135,6 @@ share/help/es/iagno/develop.page
 share/help/es/iagno/documentation.page
 share/help/es/iagno/figures/block.png
 share/help/es/iagno/figures/first.png
-share/help/es/iagno/figures/iagno-gameover.png
 share/help/es/iagno/figures/iagno-video.ogv
 share/help/es/iagno/figures/logo.png
 share/help/es/iagno/figures/logo32.png
@@ -164,7 +156,6 @@ share/help/eu/iagno/develop.page
 share/help/eu/iagno/documentation.page
 share/help/eu/iagno/figures/block.png
 share/help/eu/iagno/figures/first.png
-share/help/eu/iagno/figures/iagno-gameover.png
 share/help/eu/iagno/figures/iagno-video.ogv
 share/help/eu/iagno/figures/logo.png
 share/help/eu/iagno/figures/logo32.png
@@ -186,7 +177,6 @@ share/help/fr/iagno/develop.page
 share/help/fr/iagno/documentation.page
 share/help/fr/iagno/figures/block.png
 share/help/fr/iagno/figures/first.png
-share/help/fr/iagno/figures/iagno-gameover.png
 share/help/fr/iagno/figures/iagno-video.ogv
 share/help/fr/iagno/figures/logo.png
 share/help/fr/iagno/figures/logo32.png
@@ -208,7 +198,6 @@ share/help/gl/iagno/develop.page
 share/help/gl/iagno/documentation.page
 share/help/gl/iagno/figures/block.png
 share/help/gl/iagno/figures/first.png
-share/help/gl/iagno/figures/iagno-gameover.png
 share/help/gl/iagno/figures/iagno-video.ogv
 share/help/gl/iagno/figures/logo.png
 share/help/gl/iagno/figures/logo32.png
@@ -230,7 +219,6 @@ share/help/hu/iagno/develop.page
 share/help/hu/iagno/documentation.page
 share/help/hu/iagno/figures/block.png
 share/help/hu/iagno/figures/first.png
-share/help/hu/iagno/figures/iagno-gameover.png
 share/help/hu/iagno/figures/iagno-video.ogv
 share/help/hu/iagno/figures/logo.png
 share/help/hu/iagno/figures/logo32.png
@@ -252,7 +240,6 @@ share/help/it/iagno/develop.page
 share/help/it/iagno/documentation.page
 share/help/it/iagno/figures/block.png
 share/help/it/iagno/figures/first.png
-share/help/it/iagno/figures/iagno-gameover.png
 share/help/it/iagno/figures/iagno-video.ogv
 share/help/it/iagno/figures/logo.png
 share/help/it/iagno/figures/logo32.png
@@ -274,7 +261,6 @@ share/help/oc/iagno/develop.page
 share/help/oc/iagno/documentation.page
 share/help/oc/iagno/figures/block.png
 share/help/oc/iagno/figures/first.png
-share/help/oc/iagno/figures/iagno-gameover.png
 share/help/oc/iagno/figures/iagno-video.ogv
 share/help/oc/iagno/figures/logo.png
 share/help/oc/iagno/figures/logo32.png
@@ -288,6 +274,27 @@ share/help/oc/iagno/shortcuts.page
 share/help/oc/iagno/sound.page
 share/help/oc/iagno/strategy.page
 share/help/oc/iagno/translate.page
+share/help/pl/iagno/2player.page
+share/help/pl/iagno/ai-game.page
+share/help/pl/iagno/bug-filing.page
+share/help/pl/iagno/change-color.page
+share/help/pl/iagno/develop.page
+share/help/pl/iagno/documentation.page
+share/help/pl/iagno/figures/block.png
+share/help/pl/iagno/figures/first.png
+share/help/pl/iagno/figures/iagno-video.ogv
+share/help/pl/iagno/figures/logo.png
+share/help/pl/iagno/figures/logo32.png
+share/help/pl/iagno/figures/start.png
+share/help/pl/iagno/index.page
+share/help/pl/iagno/legal.xml
+share/help/pl/iagno/license.page
+share/help/pl/iagno/play.page
+share/help/pl/iagno/rules.page
+share/help/pl/iagno/shortcuts.page
+share/help/pl/iagno/sound.page
+share/help/pl/iagno/strategy.page
+share/help/pl/iagno/translate.page
 share/help/pt_BR/iagno/2player.page
 share/help/pt_BR/iagno/ai-game.page
 share/help/pt_BR/iagno/bug-filing.page
@@ -296,7 +303,6 @@ share/help/pt_BR/iagno/develop.page
 share/help/pt_BR/iagno/documentation.page
 share/help/pt_BR/iagno/figures/block.png
 share/help/pt_BR/iagno/figures/first.png
-share/help/pt_BR/iagno/figures/iagno-gameover.png
 share/help/pt_BR/iagno/figures/iagno-video.ogv
 share/help/pt_BR/iagno/figures/logo.png
 share/help/pt_BR/iagno/figures/logo32.png
@@ -318,7 +324,6 @@ share/help/sl/iagno/develop.page
 share/help/sl/iagno/documentation.page
 share/help/sl/iagno/figures/block.png
 share/help/sl/iagno/figures/first.png
-share/help/sl/iagno/figures/iagno-gameover.png
 share/help/sl/iagno/figures/iagno-video.ogv
 share/help/sl/iagno/figures/logo.png
 share/help/sl/iagno/figures/logo32.png
@@ -340,7 +345,6 @@ share/help/sr/iagno/develop.page
 share/help/sr/iagno/documentation.page
 share/help/sr/iagno/figures/block.png
 share/help/sr/iagno/figures/first.png
-share/help/sr/iagno/figures/iagno-gameover.png
 share/help/sr/iagno/figures/iagno-video.ogv
 share/help/sr/iagno/figures/logo.png
 share/help/sr/iagno/figures/logo32.png
@@ -362,7 +366,6 @@ share/help/sr@latin/iagno/develop.page
 share/help/sr@latin/iagno/documentation.page
 share/help/sr@latin/iagno/figures/block.png
 share/help/sr@latin/iagno/figures/first.png
-share/help/sr@latin/iagno/figures/iagno-gameover.png
 share/help/sr@latin/iagno/figures/iagno-video.ogv
 share/help/sr@latin/iagno/figures/logo.png
 share/help/sr@latin/iagno/figures/logo32.png
@@ -384,7 +387,6 @@ share/help/sv/iagno/develop.page
 share/help/sv/iagno/documentation.page
 share/help/sv/iagno/figures/block.png
 share/help/sv/iagno/figures/first.png
-share/help/sv/iagno/figures/iagno-gameover.png
 share/help/sv/iagno/figures/iagno-video.ogv
 share/help/sv/iagno/figures/logo.png
 share/help/sv/iagno/figures/logo32.png
@@ -406,7 +408,6 @@ share/help/zh_CN/iagno/develop.page
 share/help/zh_CN/iagno/documentation.page
 share/help/zh_CN/iagno/figures/block.png
 share/help/zh_CN/iagno/figures/first.png
-share/help/zh_CN/iagno/figures/iagno-gameover.png
 share/help/zh_CN/iagno/figures/iagno-video.ogv
 share/help/zh_CN/iagno/figures/logo.png
 share/help/zh_CN/iagno/figures/logo32.png
@@ -425,10 +426,10 @@ share/help/zh_CN/iagno/translate.page
 %%DATADIR%%/themes/key/adwaita.theme
 %%DATADIR%%/themes/key/classic.theme
 %%DATADIR%%/themes/key/high_contrast.theme
+%%DATADIR%%/themes/key/sun_and_star.theme
 %%DATADIR%%/themes/svg/black_and_white.svg
 %%DATADIR%%/themes/svg/high_contrast.svg
 %%DATADIR%%/themes/svg/sun_and_star.svg
-%%DATADIR%%/themes/key/sun_and_star.theme
 share/icons/hicolor/16x16/apps/iagno.png
 share/icons/hicolor/22x22/apps/iagno.png
 share/icons/hicolor/24x24/apps/iagno.png
@@ -527,3 +528,4 @@ share/locale/xh/LC_MESSAGES/iagno.mo
 share/locale/zh_CN/LC_MESSAGES/iagno.mo
 share/locale/zh_HK/LC_MESSAGES/iagno.mo
 share/locale/zh_TW/LC_MESSAGES/iagno.mo
+share/metainfo/iagno.appdata.xml

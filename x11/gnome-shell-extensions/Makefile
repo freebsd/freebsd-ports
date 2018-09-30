@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-shell-extensions
-PORTVERSION=	3.18.4
+PORTVERSION=	3.28.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -10,16 +10,21 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME desktop shell extensions
 
-LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop
-RUN_DEPENDS=	gnome-shell>=3.12.0:x11/gnome-shell
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	sassc:textproc/sassc
+LIB_DEPENDS=	libgjs.so:lang/gjs
+RUN_DEPENDS=	gnome-shell>=3.28.0:x11/gnome-shell
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome pathfix pkgconfig tar:xz
+NO_ARCH=	yes
+USES=		gettext gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 gnomedesktop3 intlhack
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-extensions=all
+MESON_ARGS=	-Dextension_set=all \
+		-Dclassic_mode=true
 
 GLIB_SCHEMAS=	org.gnome.shell.extensions.auto-move-windows.gschema.xml \
 		org.gnome.shell.extensions.classic-overrides.gschema.xml \

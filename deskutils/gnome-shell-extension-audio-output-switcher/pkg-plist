@@ -1,3 +1,7 @@
-share/gnome-shell/extensions/audio-output-switcher@anduchs/README
+share/gnome-shell/extensions/audio-output-switcher@anduchs/README.md
 share/gnome-shell/extensions/audio-output-switcher@anduchs/extension.js
 share/gnome-shell/extensions/audio-output-switcher@anduchs/metadata.json
+share/gnome-shell/extensions/audio-output-switcher@anduchs/metadata.json.bak
+share/gnome-shell/extensions/audio-output-switcher@anduchs/schemas/gschemas.compiled
+share/gnome-shell/extensions/audio-output-switcher@anduchs/schemas/org.gnome.shell.extensions.audio-output-switcher.gschema.xml
+share/gnome-shell/extensions/audio-output-switcher@anduchs/utils.js

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	grilo-plugins
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -27,6 +28,7 @@ LIB_DEPENDS=	libgrilo-0.3.so:net/grilo \
 USES=		gettext gmake gnome libtool pathfix pkgconfig sqlite tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 intlhack libxml2
+USE_GSTREAMER1=	chromaprint
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-lua-factory
 INSTALL_TARGET=	install-strip
@@ -37,7 +39,7 @@ OPTIONS_DEFAULT=		TRACKER
 
 TRACKER_DESC=			Tracker support for grilo (used by gnome-music and possibly others)
 TRACKER_CONFIGURE_ENABLE=	tracker
-TRACKER_LIB_DEPENDS=		libtracker-sparql-1.0.so:sysutils/tracker
+TRACKER_LIB_DEPENDS=		libtracker-sparql-2.0.so:sysutils/tracker
 
 DMAP_DESC=			DMAP (DAAP, DPAP & DACP) support with libdmapsharing
 DMAP_CONFIGURE_ENABLE=		dmap

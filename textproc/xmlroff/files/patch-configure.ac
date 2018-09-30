@@ -5,11 +5,11 @@
  
  #
 -# Checks for libxslt
--#
--# Variables for libxslt will also include values appropriate for
--# libxml2.
 +# Checks for libfo
  #
+-# Variables for libxslt will also include values appropriate for
+-# libxml2.
+-#
 -LIBXSLT_PACKAGES=libxslt
 -LIBXSLT_REQUIRED_VERSION=1.0.3
 +LIBFO_PACKAGES=libfo-0.6

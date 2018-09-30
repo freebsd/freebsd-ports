@@ -1,5 +1,4 @@
 bin/lightsoff
-share/appdata/lightsoff.appdata.xml
 share/applications/lightsoff.desktop
 share/help/C/lightsoff/basic.page
 share/help/C/lightsoff/bug-filing.page
@@ -155,6 +154,20 @@ share/help/ko/lightsoff/license.page
 share/help/ko/lightsoff/rules.page
 share/help/ko/lightsoff/strategy.page
 share/help/ko/lightsoff/translate.page
+share/help/pl/lightsoff/basic.page
+share/help/pl/lightsoff/bug-filing.page
+share/help/pl/lightsoff/develop.page
+share/help/pl/lightsoff/documentation.page
+share/help/pl/lightsoff/figures/lightsoff.jpg
+share/help/pl/lightsoff/figures/lightsoff.ogv
+share/help/pl/lightsoff/figures/lightsoff_logo.jpg
+share/help/pl/lightsoff/figures/lo1.jpg
+share/help/pl/lightsoff/index.page
+share/help/pl/lightsoff/legal.xml
+share/help/pl/lightsoff/license.page
+share/help/pl/lightsoff/rules.page
+share/help/pl/lightsoff/strategy.page
+share/help/pl/lightsoff/translate.page
 share/help/pt_BR/lightsoff/basic.page
 share/help/pt_BR/lightsoff/bug-filing.page
 share/help/pt_BR/lightsoff/develop.page
@@ -334,3 +347,4 @@ share/locale/xh/LC_MESSAGES/lightsoff.mo
 share/locale/zh_CN/LC_MESSAGES/lightsoff.mo
 share/locale/zh_HK/LC_MESSAGES/lightsoff.mo
 share/locale/zh_TW/LC_MESSAGES/lightsoff.mo
+share/metainfo/lightsoff.appdata.xml

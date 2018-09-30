@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-shell-extra-extensions
-PORTVERSION=	3.18.0
+PORTVERSION=	3.28
 CATEGORIES=	deskutils gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -15,7 +15,7 @@ RUN_DEPENDS=	gnome-shell-extension-weather>=0:deskutils/gnome-shell-extension-we
 		gnome-shell-extension-panel-osd>=0:deskutils/gnome-shell-extension-panel-osd \
 		gnome-shell-extension-mediaplayer>=0:deskutils/gnome-shell-extension-mediaplayer \
 		gnome-shell-extension-coverflow>=0:deskutils/gnome-shell-extension-coverflow \
-		gnome-shell-extension-overlay-icons>=0:deskutils/gnome-shell-extension-overlay-icons \
+		gnome-shell-extension-windowoverlay-icons>=0:deskutils/gnome-shell-extension-windowoverlay-icons \
 		gnome-shell-extension-hidetopbar>=0:deskutils/gnome-shell-extension-hidetopbar \
 		gnome-shell-extension-lockkeys>=0:deskutils/gnome-shell-extension-lockkeys \
 		gnome-shell-extension-trash>=0:deskutils/gnome-shell-extension-trash \

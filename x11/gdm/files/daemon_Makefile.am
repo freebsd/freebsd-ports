@@ -1,0 +1,33 @@
+--- daemon/Makefile.am.orig	2017-10-30 16:21:02.000000000 +0100
++++ daemon/Makefile.am	2018-01-14 12:30:11.501517000 +0100
+@@ -21,6 +21,7 @@ AM_CPPFLAGS = \
+ 	-DGDM_SCREENSHOT_DIR=\"$(GDM_SCREENSHOT_DIR)\"		\
+ 	-DGDM_CACHE_DIR=\""$(localstatedir)/cache/gdm"\"	\
+ 	-DGDM_SESSION_DEFAULT_PATH=\"$(GDM_SESSION_DEFAULT_PATH)\" \
++	-DCONSOLEKIT_DIR=\"$(CONSOLEKIT_DIR)\" \
+ 	$(DISABLE_DEPRECATED_CFLAGS)			\
+ 	$(DAEMON_CFLAGS)				\
+ 	$(XLIB_CFLAGS)					\
+@@ -267,6 +268,11 @@ EXTRA_gdm_SOURCES = 	\
+ 	$(XDMCP_SOURCES)	\
+ 	$(NULL)
+ 
++CONSOLE_KIT_SOURCES = 		\
++	$(NULL)
++
++EXTRA_gdm_SOURCES += $(CONSOLE_KIT_SOURCES)
++
+ gdm_LDADD = \
+ 	$(top_builddir)/common/libgdmcommon.la	\
+ 	$(XLIB_LIBS)				\
+@@ -277,6 +283,10 @@ gdm_LDADD = \
+ 	$(JOURNALD_LIBS)				\
+ 	$(EXTRA_DAEMON_LIBS)			\
+ 	$(NULL)
++
++if WITH_CONSOLE_KIT
++gdm_SOURCES += $(CONSOLE_KIT_SOURCES)
++endif
+ 
+ CLEANFILES =					\
+ 	gdm-display-glue.c			\

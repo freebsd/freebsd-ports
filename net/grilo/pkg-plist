@@ -29,7 +29,7 @@ lib/girepository-1.0/GrlPls-0.3.typelib
 lib/libgrilo-0.3.a
 lib/libgrilo-0.3.so
 lib/libgrilo-0.3.so.0
-lib/libgrilo-0.3.so.0.1.2
+lib/libgrilo-0.3.so.0.1.3
 lib/libgrlnet-0.3.a
 lib/libgrlnet-0.3.so
 lib/libgrlnet-0.3.so.0
@@ -74,6 +74,7 @@ share/locale/lv/LC_MESSAGES/grilo.mo
 share/locale/nl/LC_MESSAGES/grilo.mo
 share/locale/ml/LC_MESSAGES/grilo.mo
 share/locale/nb/LC_MESSAGES/grilo.mo
+share/locale/ne/LC_MESSAGES/grilo.mo
 share/locale/oc/LC_MESSAGES/grilo.mo
 share/locale/pa/LC_MESSAGES/grilo.mo
 share/locale/pl/LC_MESSAGES/grilo.mo

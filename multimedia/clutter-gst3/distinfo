@@ -1,2 +1,3 @@
-SHA256 (clutter-gst-3.0.14.tar.xz) = f7c8a7dc479759cad5ff7483cb5a1abbe3efd0b4f83ed0e443dc602430a82de2
-SIZE (clutter-gst-3.0.14.tar.xz) = 391596
+TIMESTAMP = 1526111723
+SHA256 (gnome/clutter-gst-3.0.26.tar.xz) = d8618a6d9accec0f2a8574c5e1220051f8505fb82b20336c26bdbd482aa6cb3a
+SIZE (gnome/clutter-gst-3.0.26.tar.xz) = 402976

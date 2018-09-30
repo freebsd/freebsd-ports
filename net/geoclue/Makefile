@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geoclue
-PORTVERSION=	2.4.3
+PORTVERSION=	2.4.7
 CATEGORIES=	net devel gnome
 MASTER_SITES=	http://www.freedesktop.org/software/geoclue/releases/${PORTVERSION:R}/
 

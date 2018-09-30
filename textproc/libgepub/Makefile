@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgepub
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
 
@@ -15,10 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 		libsoup-2.4.so:devel/libsoup
 
-GNU_CONFIGURE=	yes
-USES=		gettext-runtime gnome gmake libarchive libtool pathfix \
-		pkgconfig tar:xz
-USE_GNOME=	atk cairo glib20 gdkpixbuf2 gtk30 libxml2 pango
-INSTALL_TARGET=	install-strip
+USES=		gettext-runtime gnome libarchive meson pkgconfig tar:xz
+USE_GNOME=	gtk30 introspection:build libxml2
 
 .include <bsd.port.mk>

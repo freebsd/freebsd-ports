@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pango
-PORTVERSION=	1.42.0
+PORTVERSION=	1.42.4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -13,10 +13,7 @@ COMMENT=	Open-source framework for the layout and rendering of i18n text
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:xz
-
-.if !defined(REFERENCE_PORT)
-
+BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -26,24 +23,26 @@ RUN_DEPENDS=	xorg-fonts-truetype>0:x11-fonts/xorg-fonts-truetype \
 
 PORTSCOUT=	limitw:1,even
 
-USES+=		gettext gmake gnome libtool localbase pathfix pkgconfig
+USES=		gettext gnome localbase meson pkgconfig tar:xz
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-USE_GNOME=	cairo glib20 introspection:build referencehack
-INSTALL_TARGET=	install-strip
+USE_GNOME=	cairo glib20 introspection:build
 
 VERSION=	1.8.0
-LIBVERSION=	0.4200.0
+LIBVERSION=	0.4200.3
 PLIST_SUB+=     VERSION=${VERSION} LIBVERSION=${LIBVERSION}
 
 FONTSCALE=	${LOCALBASE}/share/fonts/TTF/luximb.ttf
 FONTENCOD=	${LOCALBASE}/share/fonts/encodings/encodings.dir
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	X11
+OPTIONS_DEFINE=	X11 GTKDOC
 OPTIONS_DEFAULT=X11
 
-X11_CONFIGURE_WITH=	xft
+GTKDOC_DESC=		Build and install gtk-doc generated documentation
+GTKDOC_MESON_TRUE=	enable_docs
+GTKDOC_BUILD_DEPENDS=	gtk-doc>=0:textproc/gtk-doc
+
+X11_MESON_TRUE=	xft
 X11_USE=	XORG=x11,xft,xrender
 
 pre-configure:
@@ -54,5 +53,3 @@ pre-configure:
 	fi
 
 .include <bsd.port.mk>
-
-.endif

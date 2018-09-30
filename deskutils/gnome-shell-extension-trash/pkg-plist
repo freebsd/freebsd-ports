@@ -1,4 +1,6 @@
-share/gnome-shell/extensions/gnome-shell-trash-extension/README
+share/gnome-shell/extensions/gnome-shell-trash-extension/LICENSE
+share/gnome-shell/extensions/gnome-shell-trash-extension/Makefile
+share/gnome-shell/extensions/gnome-shell-trash-extension/README.md
 share/gnome-shell/extensions/gnome-shell-trash-extension/extension.js
 share/gnome-shell/extensions/gnome-shell-trash-extension/locale/de/LC_MESSAGES/gnome-shell-trash-extension.mo
 share/gnome-shell/extensions/gnome-shell-trash-extension/locale/fr/LC_MESSAGES/gnome-shell-trash-extension.mo

@@ -1,2 +1,3 @@
-SHA256 (gnome3/gnome-color-manager-3.18.0.tar.xz) = 83d06f3b76b89b6c56bd6e4f792e15c67b561682fa9d59b60cbf716f6130a435
-SIZE (gnome3/gnome-color-manager-3.18.0.tar.xz) = 2647648
+TIMESTAMP = 1526110568
+SHA256 (gnome/gnome-color-manager-3.28.0.tar.xz) = ec333a9fa4688b29b0f4b6cabe941f7f40bfe9a1369ba75b7ffc185c8d7a3dd6
+SIZE (gnome/gnome-color-manager-3.28.0.tar.xz) = 2605620

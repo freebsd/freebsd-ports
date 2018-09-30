@@ -7,7 +7,6 @@
     SUBDIR += at-spi2-atk
     SUBDIR += at-spi2-core
     SUBDIR += atk
-    SUBDIR += atk-reference
     SUBDIR += atkmm
     SUBDIR += caribou
     SUBDIR += eflite
@@ -23,7 +22,6 @@
     SUBDIR += kmouth-kde4
     SUBDIR += linux-c6-atk
     SUBDIR += linux-c7-atk
-    SUBDIR += mousetweaks
     SUBDIR += orca
     SUBDIR += py-atspi
     SUBDIR += py-papi

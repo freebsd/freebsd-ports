@@ -1,2 +1,3 @@
-SHA256 (gnome2/libgtop-2.32.0.tar.xz) = 8443246332f22b33e389f565825b58cd9623fb7625bf874d404354b705ad178e
-SIZE (gnome2/libgtop-2.32.0.tar.xz) = 665224
+TIMESTAMP = 1505473610
+SHA256 (gnome2/libgtop-2.38.0.tar.xz) = 4f6c0e62bb438abfd16b4559cd2eca0251de19e291c888cdc4dc88e5ffebb612
+SIZE (gnome2/libgtop-2.38.0.tar.xz) = 729700

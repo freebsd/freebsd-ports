@@ -19,6 +19,12 @@ share/help/es/gnome-2048/media/gnome-204822.png
 share/help/hu/gnome-2048/index.page
 share/help/hu/gnome-2048/media/gnome-2048.png
 share/help/hu/gnome-2048/media/gnome-204822.png
+share/help/pl/gnome-2048/index.page
+share/help/pl/gnome-2048/media/gnome-2048.png
+share/help/pl/gnome-2048/media/gnome-204822.png
+share/help/pt_BR/gnome-2048/index.page
+share/help/pt_BR/gnome-2048/media/gnome-2048.png
+share/help/pt_BR/gnome-2048/media/gnome-204822.png
 share/help/sv/gnome-2048/index.page
 share/help/sv/gnome-2048/media/gnome-2048.png
 share/help/sv/gnome-2048/media/gnome-204822.png
@@ -38,9 +44,11 @@ share/locale/el/LC_MESSAGES/gnome-2048.mo
 share/locale/es/LC_MESSAGES/gnome-2048.mo
 share/locale/fi/LC_MESSAGES/gnome-2048.mo
 share/locale/fr/LC_MESSAGES/gnome-2048.mo
+share/locale/fur/LC_MESSAGES/gnome-2048.mo
 share/locale/he/LC_MESSAGES/gnome-2048.mo
 share/locale/hu/LC_MESSAGES/gnome-2048.mo
 share/locale/id/LC_MESSAGES/gnome-2048.mo
+share/locale/it/LC_MESSAGES/gnome-2048.mo
 share/locale/lt/LC_MESSAGES/gnome-2048.mo
 share/locale/pl/LC_MESSAGES/gnome-2048.mo
 share/locale/pt/LC_MESSAGES/gnome-2048.mo

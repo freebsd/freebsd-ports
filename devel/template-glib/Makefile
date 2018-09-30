@@ -1,0 +1,16 @@
+# $FreeBSD$
+
+PORTNAME=	template-glib
+PORTVERSION=	3.28.0
+CATEGORIES=	devel
+MASTER_SITES=	GNOME
+
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Templating library for GLib
+
+BUILD_DEPENDS=	valac:lang/vala
+
+USES=		bison gettext gnome meson pkgconfig tar:xz
+USE_GNOME=	glib20 introspection
+
+.include <bsd.port.mk>

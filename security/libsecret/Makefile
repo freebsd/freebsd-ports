@@ -3,6 +3,7 @@
 
 PORTNAME=	libsecret
 PORTVERSION=	0.18.6
+POIRTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 
@@ -13,7 +14,8 @@ LICENSE=	LGPL21
 
 BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
 		vala:lang/vala
-LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error
 
 USES=		gettext gmake gnome libtool localbase pkgconfig tar:xz
 USE_GNOME=	glib20 libxslt:build intltool \

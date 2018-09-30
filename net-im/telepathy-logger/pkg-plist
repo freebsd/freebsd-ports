@@ -25,9 +25,12 @@ share/gtk-doc/html/telepathy-logger/ch-public.html
 share/gtk-doc/html/telepathy-logger/home.png
 share/gtk-doc/html/telepathy-logger/index.html
 share/gtk-doc/html/telepathy-logger/index.sgml
+share/gtk-doc/html/telepathy-logger/left-insensitive.png
 share/gtk-doc/html/telepathy-logger/left.png
+share/gtk-doc/html/telepathy-logger/right-insensitive.png
 share/gtk-doc/html/telepathy-logger/right.png
 share/gtk-doc/html/telepathy-logger/style.css
 share/gtk-doc/html/telepathy-logger/telepathy-logger.devhelp2
+share/gtk-doc/html/telepathy-logger/up-insensitive.png
 share/gtk-doc/html/telepathy-logger/up.png
 share/telepathy/clients/Logger.client

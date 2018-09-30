@@ -1,0 +1,34 @@
+--- docs/meson.build.orig	2018-05-12 08:26:06.064672000 +0200
++++ docs/meson.build	2018-05-12 08:27:30.954842000 +0200
+@@ -1,16 +1,18 @@
+-gnome.gtkdoc(
+-  meson.project_name(),
+-  main_xml: meson.project_name() + '-docs.xml',
+-  src_dir: [
+-    common_inc,
+-    client_inc
+-  ],
+-  dependencies: libdconf_dep,
+-  scan_args: '--rebuild-types',
+-  gobject_typesfile: meson.project_name() + '.types',
+-  install: true,
+-  install_dir: join_paths(dconf_datadir, 'gtk-doc', 'html', meson.project_name())
+-)
++if get_option('enable-gtk-doc')
++  gnome.gtkdoc(
++    meson.project_name(),
++    main_xml: meson.project_name() + '-docs.xml',
++    src_dir: [
++      common_inc,
++      client_inc
++    ],
++    dependencies: libdconf_dep,
++    scan_args: '--rebuild-types',
++    gobject_typesfile: meson.project_name() + '.types',
++    install: true,
++    install_dir: join_paths(dconf_datadir, 'gtk-doc', 'html', meson.project_name())
++  )
++endif
+ 
+ if get_option('enable-man')
+   xsltproc = find_program('xsltproc', required: false)

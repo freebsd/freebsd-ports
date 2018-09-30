@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-shell-extension-weather
-PORTVERSION=	0.0.0.20151011
+PORTVERSION=	0.0.0.20180411
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 
@@ -16,11 +16,9 @@ USE_GNOME=	glib20 intlhack
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 GH_ACCOUNT=	Neroth
-GH_TAGNAME=	5c44f2f
+GH_TAGNAME=	ea2d56a
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
 

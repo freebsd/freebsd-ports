@@ -1,10 +1,10 @@
---- Makefile.in.orig	2016-11-21 22:27:07 UTC
-+++ Makefile.in
-@@ -92,7 +92,6 @@ host_triplet = @host@
- @HAVE_UNIX_TRUE@am__append_1 = \
- @HAVE_UNIX_TRUE@	man						\
- @HAVE_UNIX_TRUE@	policy						\
--@HAVE_UNIX_TRUE@	rules						\
- @HAVE_UNIX_TRUE@	src
+--- Makefile.in.orig	2016-12-26 19:58:23.811313000 +0100
++++ Makefile.in	2016-12-26 19:58:44.434394000 +0100
+@@ -92,7 +92,6 @@
+ @HAVE_DAEMON_TRUE@am__append_1 = \
+ @HAVE_DAEMON_TRUE@	man						\
+ @HAVE_DAEMON_TRUE@	policy						\
+-@HAVE_DAEMON_TRUE@	rules						\
+ @HAVE_DAEMON_TRUE@	src
  
  subdir = .

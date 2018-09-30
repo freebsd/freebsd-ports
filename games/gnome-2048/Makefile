@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-2048
-PORTVERSION=	3.22.0
+PORTVERSION=	3.26.1
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Move the tiles until you obtain the 2048 tile

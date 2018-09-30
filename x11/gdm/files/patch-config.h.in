@@ -1,12 +1,69 @@
---- config.h.in.orig	2007-11-02 20:48:28.000000000 -0400
-+++ config.h.in	2007-11-02 20:49:39.000000000 -0400
-@@ -23,6 +23,9 @@
- #undef HAVE_LC_MESSAGES
- #undef HAVE_LIBSM
+--- config.h.in.orig	2018-01-14 13:03:01.638908000 +0100
++++ config.h.in	2018-01-14 13:03:20.000000000 +0100
+@@ -113,6 +113,9 @@
+ /* Define to 1 if you have the <execinfo.h> header file. */
+ #undef HAVE_EXECINFO_H
+ 
++/* Define to 1 if you have the `getttyent' function. */
++#undef HAVE_GETTTYENT
++
+ /* Define to 1 if you have the `getutxent' function. */
+ #undef HAVE_GETUTXENT
+ 
+@@ -128,21 +131,12 @@
+ /* Define if we have libgen.h */
+ #undef HAVE_LIBGEN_H
+ 
+-/* Define to 1 if you have the <libutil.h> header file. */
+-#undef HAVE_LIBUTIL_H
+-
+ /* Define if have libxdmcp */
  #undef HAVE_LIBXDMCP
-+#undef HAVE_LOGIN
-+#undef HAVE_LOGOUT
-+#undef HAVE_LOGWTMP
+ 
+-/* Define if have login */
+-#undef HAVE_LOGIN
+-
+ /* Define if we have logincap */
  #undef HAVE_LOGINCAP
- #undef HAVE_LOGINDEVPERM
- #undef HAVE_LOGINRESTRICTIONS
+ 
+-/* Define if have logout */
+-#undef HAVE_LOGOUT
+-
+ /* Define if have logwtmp */
+ #undef HAVE_LOGWTMP
+ 
+@@ -167,9 +161,6 @@
+ /* Define to 1 if you have the <security/pam_ext.h> header file. */
+ #undef HAVE_SECURITY_PAM_EXT_H
+ 
+-/* Define to 1 if you have the <security/pam_modules.h> header file. */
+-#undef HAVE_SECURITY_PAM_MODULES_H
+-
+ /* Define to 1 if you have the <security/pam_modutil.h> header file. */
+ #undef HAVE_SECURITY_PAM_MODUTIL_H
+ 
+@@ -239,6 +230,9 @@
+ /* Define to 1 if you have the `updwtmpx' function. */
+ #undef HAVE_UPDWTMPX
+ 
++/* Define to 1 if you have the <util.h> header file. */
++#undef HAVE_UTIL_H
++
+ /* Define to 1 if you have the <utmpx.h> header file. */
+ #undef HAVE_UTMPX_H
+ 
+@@ -372,8 +366,14 @@
+ /* Version number of package */
+ #undef VERSION
+ 
++/* Define to enable ConsoleKit support */
++#undef WITH_CONSOLE_KIT
++
+ /* Define to enable plymouth support */
+ #undef WITH_PLYMOUTH
++
++/* Define to enable systemd support */
++#undef WITH_SYSTEMD
+ 
+ /* Define xevie option */
+ #undef XEVIE_OPTION

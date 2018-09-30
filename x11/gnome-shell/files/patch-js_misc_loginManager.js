@@ -1,6 +1,30 @@
---- js/misc/loginManager.js.orig	2014-10-13 22:57:05.000000000 +0200
-+++ js/misc/loginManager.js	2014-10-23 19:53:12.854065483 +0200
-@@ -46,6 +46,32 @@
+$OpenBSD: patch-js_misc_loginManager_js,v 1.4 2017/11/04 16:44:50 jasper Exp $
+
+REVERT:
+From ddea54a5398c123a4711243e55811c8ba26f8b85 Mon Sep 17 00:00:00 2001
+From: Victor Toso <victortoso@redhat.com>
+Date: Thu, 12 May 2016 09:25:49 +0200
+Subject: ScreenShield: set LockedHint property from systemd
+
+REVERT:
+From a244c1e987502e359c45c0a9bc0012b5bc635553 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Florian=20M=C3=BCllner?= <fmuellner@gnome.org>
+Date: Thu, 24 Apr 2014 17:55:56 +0200
+Subject: loginManager: Kill ConsoleKit support
+
+
+--- js/misc/loginManager.js.orig	2018-04-05 22:23:32.831383000 +0200
++++ js/misc/loginManager.js	2018-04-05 22:30:34.647201000 +0200
+@@ -40,15 +40,38 @@ const SystemdLoginSessionIface = '<node> \
+ <signal name="Lock" /> \
+ <signal name="Unlock" /> \
+ <property name="Active" type="b" access="read" /> \
+-<method name="SetLockedHint"> \
+-    <arg type="b" direction="in"/> \
+-</method> \
+ </interface> \
+ </node>';
+ 
  const SystemdLoginManager = Gio.DBusProxy.makeProxyWrapper(SystemdLoginManagerIface);
  const SystemdLoginSession = Gio.DBusProxy.makeProxyWrapper(SystemdLoginSessionIface);
  
@@ -33,7 +57,7 @@
  function haveSystemd() {
      return GLib.access("/run/systemd/seats", 0) >= 0;
  }
-@@ -75,7 +101,7 @@
+@@ -78,7 +101,7 @@ function canLock() {
                                                 -1, null);
  
          let version = result.deep_unpack()[0].deep_unpack();
@@ -42,7 +66,7 @@
      } catch(e) {
          return false;
      }
-@@ -93,7 +119,7 @@
+@@ -96,7 +119,7 @@ function getLoginManager() {
          if (haveSystemd())
              _loginManager = new LoginManagerSystemd();
          else
@@ -51,35 +75,35 @@
      }
  
      return _loginManager;
-@@ -110,6 +136,9 @@
-                                   Lang.bind(this, this._prepareForSleep));
+@@ -113,6 +136,9 @@ var LoginManagerSystemd = new Lang.Class({
+                                   this._prepareForSleep.bind(this));
      },
  
 +    // Having this function is a bit of a hack since the Systemd and ConsoleKit
 +    // session objects have different interfaces - but in both cases there are
 +    // Lock/Unlock signals, and that's all we count upon at the moment.
-     getCurrentSessionProxy: function(callback) {
+     getCurrentSessionProxy(callback) {
          if (this._currentSession) {
              callback (this._currentSession);
-@@ -177,13 +206,35 @@
+@@ -188,13 +214,35 @@ var LoginManagerSystemd = new Lang.Class({
  });
  Signals.addSignalMethods(LoginManagerSystemd.prototype);
  
--const LoginManagerDummy = new Lang.Class({
+-var LoginManagerDummy = new Lang.Class({
 -    Name: 'LoginManagerDummy',
 +const LoginManagerConsoleKit = new Lang.Class({
 +    Name: 'LoginManagerConsoleKit',
-+
+ 
 +    _init: function() {
 +        this._proxy = new ConsoleKitManager(Gio.DBus.system,
 +                                            'org.freedesktop.ConsoleKit',
 +                                            '/org/freedesktop/ConsoleKit/Manager');
 +    },
- 
++
 +    // Having this function is a bit of a hack since the Systemd and ConsoleKit
 +    // session objects have different interfaces - but in both cases there are
 +    // Lock/Unlock signals, and that's all we count upon at the moment.
-     getCurrentSessionProxy: function(callback) {
+     getCurrentSessionProxy(callback) {
 -        // we could return a DummySession object that fakes whatever callers
 -        // expect (at the time of writing: connect() and connectSignal()
 -        // methods), but just never calling the callback should be safer
@@ -101,8 +125,8 @@
 +            }));
      },
  
-     canSuspend: function(asyncCallback) {
-@@ -203,4 +254,4 @@
+     canSuspend(asyncCallback) {
+@@ -214,4 +262,4 @@ var LoginManagerDummy = new Lang.Class({
          callback(null);
      }
  });

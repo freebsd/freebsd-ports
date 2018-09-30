@@ -1,4 +1,3 @@
-etc/xdg/autostart/notification-daemon-autostart.desktop
 libexec/notification-daemon
 share/applications/notification-daemon.desktop
 share/locale/af/LC_MESSAGES/notification-daemon.mo

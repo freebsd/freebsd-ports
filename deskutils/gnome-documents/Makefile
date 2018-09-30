@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-documents
-PORTVERSION=	3.24.2
-PORTREVISION=	1
+PORTVERSION=	3.28.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -22,20 +21,20 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libgdata.so:devel/libgdata \
 		libgoa-1.0.so:net/gnome-online-accounts \
 		libgjs.so:lang/gjs \
-		libtracker-sparql-1.0.so:sysutils/tracker \
-		libgepub.so:textproc/libgepub \
+		libtracker-sparql-2.0.so:sysutils/tracker \
+		libgepub-0.6.so:textproc/libgepub \
 		libzapojit-0.0.so:net/libzapojit
-RUN_DEPENDS=	gnome-online-miners>=0:net/gnome-online-miners
+RUN_DEPENDS=	gnome-online-miners>=0:net/gnome-online-miners \
+		tracker-miners>=0:sysutils/tracker-miners
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c++11-lib gettext gmake gnome libtool localbase \
-		pathfix pkgconfig tar:xz
-USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3 intltool introspection librsvg2
-GNU_CONFIGURE=	yes
+USES=		compiler:c++11-lib desktop-file-utils gettext gnome localbase \
+		meson pkgconfig python:3.6+,build tar:xz
+USE_GNOME=	cairo gnomedesktop3 introspection libxslt:build
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
+BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 GLIB_SCHEMAS=	org.gnome.Documents.enums.xml \
 		org.gnome.books.gschema.xml \

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vinagre
-PORTVERSION=	3.18.2
-PORTREVISION=	7
+PORTVERSION=	3.22.0
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -19,20 +18,25 @@ BUILD_DEPENDS=	appstream-glib>=0:devel/appstream-glib \
 		gnome-autogen.sh:devel/gnome-common \
 		yelp-tools>=0:textproc/yelp-tools
 LIB_DEPENDS=	libgtk-vnc-2.0.so:net/gtk-vnc \
+		libfribidi.so:converters/fribidi \
 		libgdbm.so:databases/gdbm \
-		libsecret-1.so:security/libsecret
+		libsecret-1.so:security/libsecret \
+		libdbus-1.so:devel/dbus \
+		libpcre2-8.so:devel/pcre2 \
+		libgnutls.so:security/gnutls \
+		libavahi-common.so:net/avahi-app
 RUN_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme
 
 PORTSCOUT=	limitw:1,even
 
-USES=		autoreconf desktop-file-utils gettext gmake gnome pathfix \
-		pkgconfig shared-mime-info tar:xz
-USE_GNOME=	gtk30 intlhack libxml2 vte3
+USES=		autoreconf desktop-file-utils gettext gmake gnome localbase \
+		pathfix pkgconfig shared-mime-info tar:xz
+USE_GNOME=	cairo gtk30 intlhack libxml2 vte3
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-ssh
-CPPFLAGS+=	-I${LOCALBASE}/include -Wno-format-nonliteral
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-Wno-format-nonliteral
 
 GLIB_SCHEMAS=	org.gnome.Vinagre.gschema.xml
 

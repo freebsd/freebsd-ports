@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	json-glib
-PORTVERSION=	1.2.8
+PORTVERSION=	1.4.2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -10,22 +10,24 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	JSON (RFC 4627) interface for Glib
 
 LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		gettext localbase meson pkgconfig tar:xz
+USE_GNOME=	glib20
+USE_LDCONFIG=	yes
+
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	GIR DOCS
 OPTIONS_DEFAULT=GIR
 OPTIONS_SUB=	yes
+
 GIR_DESC=	Build introspection data
 GIR_USE=	gnome=introspection
-GIR_CONFIGURE_ENABLE=introspection
+GIR_MESON_TRUE=	introspection
 
-USES=		gmake libtool pathfix pkgconfig tar:xz
-USE_GNOME=	glib20 gnomeprefix
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-INSTALL_TARGET=	install-strip
-
-PORTDOCS=	*
+post-install:
+	@${RM} -r ${STAGEDIR}${PREFIX}/libexec/installed-tests
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/installed-tests
 
 .include <bsd.port.mk>

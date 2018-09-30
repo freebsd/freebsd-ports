@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-shell-extension-dashtodock
-PORTVERSION=	0.0.0.20151112
-PORTREVISION=	1
+PORTVERSION=	0.0.0.20180510
 CATEGORIES=	deskutils gnome
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Convert the dash into a dock
@@ -15,16 +14,15 @@ BUILD_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
 RUN_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
 
-USES=		gettext gmake gnome pkgconfig
+USES=		gettext gmake gnome localbase pkgconfig
 USE_GNOME=	glib20
 USE_GITHUB=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+
 GLIB_SCHEMAS=	org.gnome.shell.extensions.dash-to-dock.gschema.xml
 
 GH_ACCOUNT=	micheleg
 GH_PROJECT=	dash-to-dock
-GH_TAGNAME=	d058574
+GH_TAGNAME=	5e38a58
 
 PKGMESSAGE=	../gnome-shell-extra-extensions/pkg-message.slaves
 

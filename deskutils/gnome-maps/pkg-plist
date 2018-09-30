@@ -3,7 +3,6 @@ lib/gnome-maps/girepository-1.0/GnomeMaps-1.0.typelib
 lib/gnome-maps/libgnome-maps.so
 lib/gnome-maps/libgnome-maps.so.0
 lib/gnome-maps/libgnome-maps.so.0.0.0
-share/appdata/org.gnome.Maps.appdata.xml
 share/applications/org.gnome.Maps.desktop
 share/dbus-1/services/org.gnome.Maps.service
 share/gir-1.0/GnomeMaps-1.0.gir
@@ -82,6 +81,7 @@ share/locale/ga/LC_MESSAGES/gnome-maps.mo
 share/locale/gd/LC_MESSAGES/gnome-maps.mo
 share/locale/gl/LC_MESSAGES/gnome-maps.mo
 share/locale/he/LC_MESSAGES/gnome-maps.mo
+share/locale/hi/LC_MESSAGES/gnome-maps.mo
 share/locale/hr/LC_MESSAGES/gnome-maps.mo
 share/locale/hu/LC_MESSAGES/gnome-maps.mo
 share/locale/id/LC_MESSAGES/gnome-maps.mo
@@ -117,3 +117,4 @@ share/locale/vi/LC_MESSAGES/gnome-maps.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-maps.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-maps.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-maps.mo
+share/metainfo/org.gnome.Maps.appdata.xml

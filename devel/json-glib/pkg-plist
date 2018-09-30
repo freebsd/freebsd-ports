@@ -17,7 +17,7 @@ include/json-glib-1.0/json-glib/json-version.h
 %%GIR%%share/gir-1.0/Json-1.0.gir
 lib/libjson-glib-1.0.so
 lib/libjson-glib-1.0.so.0
-lib/libjson-glib-1.0.so.0.200.8
+lib/libjson-glib-1.0.so.0.400.2
 libdata/pkgconfig/json-glib-1.0.pc
 share/locale/as/LC_MESSAGES/json-glib-1.0.mo
 share/locale/bg/LC_MESSAGES/json-glib-1.0.mo
@@ -49,6 +49,7 @@ share/locale/lt/LC_MESSAGES/json-glib-1.0.mo
 share/locale/lv/LC_MESSAGES/json-glib-1.0.mo
 share/locale/ml/LC_MESSAGES/json-glib-1.0.mo
 share/locale/nb/LC_MESSAGES/json-glib-1.0.mo
+share/locale/ne/LC_MESSAGES/json-glib-1.0.mo
 share/locale/oc/LC_MESSAGES/json-glib-1.0.mo
 share/locale/or/LC_MESSAGES/json-glib-1.0.mo
 share/locale/pa/LC_MESSAGES/json-glib-1.0.mo

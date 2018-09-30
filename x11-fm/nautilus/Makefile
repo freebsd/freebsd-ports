@@ -2,40 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	nautilus
-PORTVERSION=	3.18.5
-PORTREVISION=	1
+PORTVERSION=	3.28.1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	File manager for the GNOME desktop
 
-BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
-LIB_DEPENDS=	libexif.so:graphics/libexif \
-		libnotify.so:devel/libnotify \
-		libexempi.so:textproc/exempi
-RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libgnome-autoar-0.so:archivers/gnome-autoar \
+		libgexiv2.so:graphics/gexiv2 \
+		libtracker-sparql-2.0.so:sysutils/tracker
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 desktop-file-utils gettext gmake gnome \
-		libtool pathfix pkgconfig tar:xz
-USE_GNOME=	intlhack gnomedesktop3 libxml2 gvfs introspection:build
+USES=		compiler:c11 desktop-file-utils gettext gnome \
+		localbase meson pkgconfig python:3.4+,build tar:xz
+#USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3 introspection:build
+USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--disable-packagekit
-INSTALL_TARGET=	install-strip
+USE_XORG=	x11
+MESON_ARGS=	-Denable-packagekit=false \
+		-Denable-selinux=false
+BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 GLIB_SCHEMAS=	org.gnome.nautilus.gschema.xml
-
-OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	TRACKER
-OPTIONS_DEFAULT=TRACKER
-TRACKER_DESC=	Tracker support
-TRACKER_LIB_DEPENDS=	libtracker-control-1.0.so:sysutils/tracker
-TRACKER_CONFIGURE_ENABLE=	tracker
 
 .include <bsd.port.mk>

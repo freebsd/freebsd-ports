@@ -1,12 +1,13 @@
 share/gnome-shell/extensions/openweather-extension@jenslody.de/OpenWeather.png
 share/gnome-shell/extensions/openweather-extension@jenslody.de/convenience.js
+share/gnome-shell/extensions/openweather-extension@jenslody.de/darksky_net.js
 share/gnome-shell/extensions/openweather-extension@jenslody.de/extension.js
-share/gnome-shell/extensions/openweather-extension@jenslody.de/forecast_io.js
 share/gnome-shell/extensions/openweather-extension@jenslody.de/metadata.json
 share/gnome-shell/extensions/openweather-extension@jenslody.de/openweathermap_org.js
 share/gnome-shell/extensions/openweather-extension@jenslody.de/prefs.js
 share/gnome-shell/extensions/openweather-extension@jenslody.de/stylesheet.css
 share/gnome-shell/extensions/openweather-extension@jenslody.de/weather-settings.ui
+share/locale/ar/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/bg/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/ca/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/cs/LC_MESSAGES/gnome-shell-extension-openweather.mo
@@ -14,6 +15,7 @@ share/locale/da/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/de/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/el/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/es/LC_MESSAGES/gnome-shell-extension-openweather.mo
+share/locale/eu/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/fi/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/fr/LC_MESSAGES/gnome-shell-extension-openweather.mo
 share/locale/he/LC_MESSAGES/gnome-shell-extension-openweather.mo

@@ -41,7 +41,6 @@
     SUBDIR += gtk20
     SUBDIR += gtk20-reference
     SUBDIR += gtk30
-    SUBDIR += gtk30-reference
     SUBDIR += gtkada
     SUBDIR += gtkada3
     SUBDIR += gtkdatabox
@@ -100,6 +99,7 @@
     SUBDIR += libXt
     SUBDIR += libbonoboui
     SUBDIR += libbonoboui-reference
+    SUBDIR += libdazzle
     SUBDIR += libgdiplus
     SUBDIR += libgnomeprintui
     SUBDIR += libgnomeprintuimm
@@ -191,7 +191,6 @@
     SUBDIR += p5-Wx-GLCanvas
     SUBDIR += p5-Wx-Perl-ProcessStream
     SUBDIR += pango
-    SUBDIR += pango-reference
     SUBDIR += pangomm
     SUBDIR += pangox-compat
     SUBDIR += pangoxsl

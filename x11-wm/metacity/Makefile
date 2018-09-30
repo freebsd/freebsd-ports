@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metacity
-PORTVERSION=	3.18.1
-PORTREVISION=	4
+PORTVERSION=	3.18.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -24,12 +23,10 @@ PORTSCOUT=	limitw:1,even
 
 USE_XORG=	x11 xcomposite xdamage xrender xcursor xinerama xext xrandr
 USES=		compiler:c11 gettext gmake gnome libtool \
-		pathfix pkgconfig tar:xz
+		localbase pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix gtk30 intlhack libxml2:build
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.metacity.gschema.xml

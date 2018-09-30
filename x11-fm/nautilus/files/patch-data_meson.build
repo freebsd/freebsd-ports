@@ -1,0 +1,28 @@
+From git master. Fixes the same 512x512 icon being installed as all sizes.
+--- data/meson.build.orig	2018-06-24 22:58:44 UTC
++++ data/meson.build
+@@ -8,17 +8,15 @@
+ # https://gitlab.gnome.org/GNOME/nautilus/merge_requests/144
+ ##########
+ foreach icon_size: ['16x16', '22x22', '24x24', '32x32', '48x48', '512x512']
+-  configure_file(
+-    command: [
+-      'cp', '@INPUT@', '@OUTPUT@'
+-    ],
+-    input: files(
+-      join_paths('icons', 'hicolor', icon_size, 'apps', 'org.gnome.Nautilus.png')
+-    ),
+-    install_dir: join_paths(datadir, 'icons', 'hicolor', icon_size, 'apps'),
+-    output: '@0@.png'.format(application_id)
++  icondir = join_paths('icons', 'hicolor', icon_size, 'apps')
++
++  install_data(
++    join_paths(icondir, 'org.gnome.Nautilus.png'),
++    install_dir: join_paths(datadir, icondir),
++    rename: '@0@.png'.format(application_id)
+   )
+ endforeach
++
+ 
+ configure_file(
+   command: [

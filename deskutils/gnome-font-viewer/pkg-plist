@@ -1,6 +1,5 @@
 bin/gnome-font-viewer
 bin/gnome-thumbnail-font
-share/appdata/org.gnome.font-viewer.appdata.xml
 share/applications/org.gnome.font-viewer.desktop
 share/dbus-1/services/org.gnome.font-viewer.service
 share/locale/af/LC_MESSAGES/gnome-font-viewer.mo
@@ -93,11 +92,12 @@ share/locale/th/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/tr/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/ug/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/uk/LC_MESSAGES/gnome-font-viewer.mo
+share/locale/uz@cyrillic/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/vi/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/wa/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/xh/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-font-viewer.mo
-share/locale/uz@cyrillic/LC_MESSAGES/gnome-font-viewer.mo
+share/metainfo/org.gnome.font-viewer.appdata.xml
 share/thumbnailers/gnome-font-viewer.thumbnailer

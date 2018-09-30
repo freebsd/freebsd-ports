@@ -1,2 +1,3 @@
-SHA256 (gnome3/gdm-3.16.4.tar.xz) = 281dd28d729eaab2f67e450b5b162299dec537b6f7e81fa1124e35c89d3942fd
-SIZE (gnome3/gdm-3.16.4.tar.xz) = 1535580
+TIMESTAMP = 1525503166
+SHA256 (gnome/gdm-3.28.1.tar.xz) = 77068fa775bc2c002e85883c250103f6a77361d32ba0cb8a60997b70b397b2fb
+SIZE (gnome/gdm-3.28.1.tar.xz) = 1122164

@@ -1,0 +1,12 @@
+--- panels/user-accounts/meson.build.orig	2018-04-28 22:01:31.903197000 +0200
++++ panels/user-accounts/meson.build	2018-04-29 08:50:01.767068000 +0200
+@@ -157,7 +157,8 @@
+ )
+ 
+ # Kerberos support
+-krb_dep = dependency('krb5', required: false)
++#krb_dep = dependency('krb5', required: false)
++krb_dep = cc.find_library('krb5')
+ assert(krb_dep.found(), 'kerberos libraries not found in your path')
+ 
+ deps = common_deps + [

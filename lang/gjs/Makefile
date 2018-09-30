@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gjs
-PORTVERSION=	1.44.0
-PORTREVISION=	3
+PORTVERSION=	1.52.3
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -11,20 +10,22 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME Javascript binding
 
-LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
-		libmozjs-24.so:lang/spidermonkey24
+LICENSE=	MPL11 LGPL20+ GPLv2+
+LICENSE_COMB=	multi
+LICENSE_FILE_MPL11=	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL20+=	${WRKSRC}/COPYING.LGPL
+
+LIB_DEPENDS=	libmozjs-52.so:lang/spidermonkey52 \
+		libffi.so:devel/libffi
 
 USES=		compiler:c++11-lib gettext gmake gnome libtool \
-		pathfix pkgconfig python:build tar:xz
-USE_GNOME=	cairo glib20 gnomeprefix introspection:build \
-		intlhack
+		localbase pathfix pkgconfig python:build readline tar:xz
+USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection
+USE_XORG=	x11 xext
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
+CONFIGURE_ARGS+=--disable-profiler
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-
-post-install:
-	@${RM} -r ${STAGEDIR}${PREFIX}/libexec/gjs
 
 .include <bsd.port.mk>

@@ -2,27 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	polari
-PORTVERSION=	3.18.1
+PORTVERSION=	3.28.0
 CATEGORIES=	irc gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Internet Relay Chat (IRC) client designed for GNOME 3
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
+		gjs-console:lang/gjs \
+		itstool:textproc/itstool
 LIB_DEPENDS=	libtelepathy-glib.so:net-im/telepathy-glib \
-		libgjs.so:lang/gjs
+		libsecret-1.so:security/libsecret \
+		libtelepathy-logger.so:net-im/telepathy-logger
+RUN_DEPENDS=	gjs-console:lang/gjs
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
-USE_GNOME=	gnomedesktop3 gtk30 intlhack introspection:build
+USES=		desktop-file-utils gettext gnome localbase \
+		meson pkgconfig tar:xz
+USE_GNOME=	cairo gtk30 introspection
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.Polari.gschema.xml
 

@@ -1,5 +1,7 @@
---- plugins/rdp/vinagre-rdp-tab.c.orig	2015-10-06 15:40:06 UTC
-+++ plugins/rdp/vinagre-rdp-tab.c
+https://bugzilla.gnome.org/show_bug.cgi?id=775616
+
+--- plugins/rdp/vinagre-rdp-tab.c.orig	2016-12-30 22:55:41.353490000 +0100
++++ plugins/rdp/vinagre-rdp-tab.c	2016-12-30 22:55:49.312382000 +0100
 @@ -476,16 +476,18 @@ frdp_drawing_area_draw (GtkWidget *area,
    return TRUE;
  }
@@ -45,15 +47,15 @@
      FREERDP_VERSION_MINOR >= 2))
 -                    CLRBUF_24BPP,
 +                    CLRBUF_24BPP, NULL
- #else
--                    CLRBUF_32BPP,
++#else
 +#ifdef CLRBUF_32BPP
 +                    CLRBUF_32BPP, NULL
-+#else
+ #else
+-                    CLRBUF_32BPP,
 +                    PIXEL_FORMAT_BGRA32
-+#endif
  #endif
 -                    NULL);
++#endif
 +                    );
    gdi = instance->context->gdi;
  
@@ -108,12 +110,3 @@
  {
    VinagreTab *tab = VINAGRE_TAB (((frdpContext *) instance->context)->rdp_tab);
    GtkBuilder *builder;
-@@ -1108,7 +1107,7 @@ open_freerdp (VinagreRdpTab *rdp_tab)
-   settings->encryption_level = ENCRYPTION_LEVEL_CLIENT_COMPATIBLE;
- #endif
- #include <freerdp/version.h>
--#if (FREERDP_VERSION_MAJOR == 1 && FREERDP_VERSION_MINOR >= 2 && FREERDP_VERSION_REVISION >= 1)
-+#if (FREERDP_VERSION_MAJOR == 1 && FREERDP_VERSION_MINOR >= 2 && FREERDP_VERSION_REVISION >= 1) || (FREERDP_VERSION_MAJOR == 2)
-   settings->UseRdpSecurityLayer = FALSE;
- #else
-   settings->DisableEncryption = FALSE;

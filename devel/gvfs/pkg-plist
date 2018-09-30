@@ -79,6 +79,7 @@ share/bash-completion/completions/gvfs-ls
 share/bash-completion/completions/gvfs-mkdir
 share/bash-completion/completions/gvfs-monitor-dir
 share/bash-completion/completions/gvfs-monitor-file
+share/bash-completion/completions/gvfs-mount
 share/bash-completion/completions/gvfs-move
 share/bash-completion/completions/gvfs-open
 share/bash-completion/completions/gvfs-rename
@@ -89,6 +90,8 @@ share/bash-completion/completions/gvfs-trash
 share/bash-completion/completions/gvfs-tree
 share/dbus-1/services/org.gtk.vfs.Daemon.service
 share/dbus-1/services/org.gtk.vfs.Metadata.service
+share/polkit-1/actions/org.gtk.vfs.file-operations.policy
+share/polkit-1/rules.d/org.gtk.vfs.file-operations.rules
 %%AFC%%share/dbus-1/services/org.gtk.vfs.AfcVolumeMonitor.service
 %%GPHOTO2%%share/dbus-1/services/org.gtk.vfs.GPhoto2VolumeMonitor.service
 %%HAL%%share/dbus-1/services/org.gtk.vfs.HalVolumeMonitor.service

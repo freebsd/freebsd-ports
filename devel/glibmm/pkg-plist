@@ -371,6 +371,7 @@ include/glibmm-%%VERSION%%/glibmm/value_custom.h
 include/glibmm-%%VERSION%%/glibmm/valuearray.h
 include/glibmm-%%VERSION%%/glibmm/variant.h
 include/glibmm-%%VERSION%%/glibmm/variant_basictypes.h
+include/glibmm-%%VERSION%%/glibmm/variantdbusstring.h
 include/glibmm-%%VERSION%%/glibmm/variantdict.h
 include/glibmm-%%VERSION%%/glibmm/variantiter.h
 include/glibmm-%%VERSION%%/glibmm/varianttype.h

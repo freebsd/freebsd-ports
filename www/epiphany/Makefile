@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	epiphany
-PORTVERSION=	3.24.2
-PORTREVISION=	7
+PORTVERSION=	3.28.3.1
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -20,6 +19,7 @@ BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
 LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 		libsoup-2.4.so:devel/libsoup \
 		libsoup-gnome-2.4.so:devel/libsoup-gnome \
+		libsoup-2.4.so:devel/libsoup \
 		libgcr-3.so:security/gcr \
 		libstartup-notification-1.so:x11/startup-notification \
 		libnss3.so:security/nss \
@@ -27,6 +27,8 @@ LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 		libicuuc.so:devel/icu \
 		libavahi-gobject.so:net/avahi-app \
 		libnotify.so:devel/libnotify \
+		libgmp.so:math/gmp \
+		libnettle.so:security/nettle \
 		libsecret-1.so:security/libsecret \
 		libp11-kit.so:security/p11-kit
 RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
@@ -36,26 +38,20 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c++11-lib cpe desktop-file-utils gettext gmake gnome \
-		libtool localbase pathfix pkgconfig python:3.3+ sqlite tar:xz
+USES=		compiler:c++11-lib cpe desktop-file-utils gettext gnome \
+		localbase:ldflags meson pkgconfig python:3.4+ shebangfix \
+		sqlite tar:xz
 CPE_VENDOR=	gnome
 USE_GNOME=	cairo gnomedesktop3 intlhack libwnck3 libxml2 libxslt
 USE_XORG=	x11
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=\
-		--with-distributor-name="FreeBSD GNOME Project"
-#		--with-ca-file=${LOCALBASE}/share/certs/ca-root-nss.crt
-INSTALL_TARGET=	install-strip
-
+MESON_ARGS=	-Ddistributor_name="GNOME Web by the FreeBSD GNOME Project" \
+		-Dunit_tests=false
 GLIB_SCHEMAS=	org.gnome.Epiphany.enums.xml \
 		org.gnome.epiphany.gschema.xml
+SHEBANG_FILES=	post_install.py
 
 PLIST_SUB+=	EPHY_VERSION=${PORTVERSION:R}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|execinfo.h|#|g ; s|-ldl"$$|"|g' \
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>

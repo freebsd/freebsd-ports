@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	totem
-PORTVERSION=	3.18.1
-PORTREVISION=	6
+PORTVERSION=	3.26.1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -11,74 +10,61 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gstreamer-based video player for the GNOME 3 Desktop
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
-		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:misc/gnome-icon-theme \
-		pylint:devel/pylint1 \
+		pylint:devel/pylint \
 		appstream-glib>=0:devel/appstream-glib \
 		itstool:textproc/itstool \
-		grilo-plugins2>=0:net/grilo-plugins2
+		grilo-plugins>=0:net/grilo-plugins
 LIB_DEPENDS=	libgdata.so:devel/libgdata \
-		libdbus-glib-1.so:devel/dbus-glib \
+		libcogl.so:graphics/cogl \
+		libclutter-1.0.so:graphics/clutter \
 		libclutter-gst-3.0.so:multimedia/clutter-gst3 \
 		libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
 		libpeas-1.0.so:devel/libpeas \
+		libjson-glib-1.0.so:devel/json-glib \
+		libgrilo-0.3.so:net/grilo \
+		libzeitgeist-2.0.so:sysutils/zeitgeist \
 		libtotem-plparser.so:multimedia/totem-pl-parser
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
-		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:misc/gnome-icon-theme \
 		${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py-libpeas@${PY_FLAVOR} \
 		gnome-settings-daemon>=2.91.0:sysutils/gnome-settings-daemon \
 		gnome-icon-theme-symbolic>=2.91.0:x11-themes/gnome-icon-theme-symbolic \
-		grilo-plugins2>=0:net/grilo-plugins2
+		grilo-plugins>=0:net/grilo-plugins
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake gnome libtool \
-		pathfix pkgconfig python:2.7 tar:xz
-USE_GNOME=	gtk30 intlhack introspection:build libxml2 nautilus3 \
+USES=		desktop-file-utils gettext gnome localbase meson \
+		pkgconfig python:3.4+ tar:xz
+USE_GNOME=	cairo gtk30 intlhack introspection libxml2 nautilus3 \
 		pygobject3
 USE_XORG=	x11 xorgproto xtst ice sm
 USE_GSTREAMER1=	core good bad soup ugly
 INSTALLS_ICONS=	yes
-GNU_CONFIGURE=	yes
+USE_GL=		egl
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
-CFLAGS+=	-I${LOCALBASE}/include -Wno-error=format-nonliteral
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	LIBS="-lXrandr"
-CONFIGURE_ARGS=	--with-plugins="${TOTEM_PLUGINS}"
-#CONFIGURE_ENV+=	APPDATA_VALIDATE="${LOCALBASE}/bin/appdata-validate --nonet"
-MAKE_ENV=	XDG_CACHE_HOME=${WRKDIR}
-INSTALL_TARGET=	install-strip
+
+BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 GLIB_SCHEMAS=	org.gnome.totem.enums.xml \
 		org.gnome.totem.gschema.xml \
-		org.gnome.totem.plugins.opensubtitles.gschema.xml
+		org.gnome.totem.plugins.opensubtitles.gschema.xml \
+		org.gnome.totem.plugins.pythonconsole.gschema.xml
 
-OPTIONS_DEFINE=	LIRC
-
-PLIST_SUB+=	PYVER=${PYTHON_VER:S/.//}
-
-OPTIONS_DEFAULT=
-
-# check configure script for allowed_plugins="..." for new plugins
-TOTEM_PLUGINS=	apple-trailers autoload-subtitles brasero-disc-recorder chapters \
-		dbusservice im-status grilo gromit iplayer media-player-keys \
-		nautilus ontop opensubtitles properties recent \
-		save-file screensaver screenshot sidebar-test skipto vimeo \
-		youtube
-
-# pythonconsole samplepython
-# vala sample-vala
-# iplayer zeitgeist-dp grilo
+# https://bugzilla.gnome.org/show_bug.cgi?id=786248
+# https://github.com/mesonbuild/meson/issues/1994
+MAKE_JOBS_UNSAFE=yes
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MLIRC}
-LIB_DEPENDS+=	liblirc_client.so:comms/lirc
-PLIST_SUB+=	LIRC=""
-TOTEM_PLUGINS:=	${TOTEM_PLUGINS} lirc
+.if ${ARCH} == i386 || ${OSVERSION} <= 1100000
+MESON_ARGS=	-Denable-vala=no
+PLIST_SUB+=	VALA="@comment "
 .else
-PLIST_SUB+=	LIRC="@comment "
+BUILD_DEPENDS+=	valac:lang/vala
+PLIST_SUB+=	VALA=""
 .endif
 
 .if defined(WITH_DVD_DEVICE)

@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-klotski
-PORTVERSION=	3.22.1
+PORTVERSION=	3.22.3
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome klotski

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	evolution-data-server
-PORTVERSION=	3.24.2
-PORTREVISION=	11
+PORTVERSION=	3.28.3
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -16,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
+		libfribidi.so:converters/fribidi \
 		libgcr-base-3.so:security/gcr \
 		libgoa-1.0.so:net/gnome-online-accounts \
 		libgdata.so:devel/libgdata \
@@ -31,7 +31,7 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 PORTSCOUT=	limitw:1,even
 
 USES=		bdb:5 cmake compiler:c++11-lib gettext gnome gperf \
-		iconv localbase pathfix pkgconfig python:3.3+,build\
+		iconv localbase pathfix pkgconfig python:3.6+,build\
 		sqlite tar:xz
 USE_CXXSTD=	gnu++11
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection:build libxml2
@@ -44,14 +44,14 @@ CMAKE_ARGS=	-DENABLE_VALA_BINDINGS=ON \
 CMAKE_ARGS+=	-DWITH_LIBDB_CFLAGS=-I${LOCALBASE}/include/db5 \
 		-DWITH_LIBDB_LIBS="-L${LOCALBASE}/lib -ldb-5"
 
-GLIB_SCHEMAS=	org.gnome.Evolution.DefaultSources.gschema.xml \
-		org.gnome.evolution.eds-shell.gschema.xml \
-		org.gnome.evolution-data-server.addressbook.gschema.xml \
+GLIB_SCHEMAS=	org.gnome.evolution-data-server.addressbook.gschema.xml \
 		org.gnome.evolution-data-server.calendar.gschema.xml \
 		org.gnome.evolution-data-server.gschema.xml \
+		org.gnome.Evolution.DefaultSources.gschema.xml \
+		org.gnome.evolution.eds-shell.gschema.xml \
 		org.gnome.evolution.shell.network-config.gschema.xml
 
-PLIST_SUB=	VERSION="3.24" EVO_VERSION="1.2"
+PLIST_SUB=	EVO_VERSION="1.2"
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	WEATHER KERBEROS LDAP
@@ -72,7 +72,7 @@ WEATHER_CMAKE_BOOL=	ENABLE_WEATHER
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's| python| ${PYTHON_VERSION}|g' \
+	@${REINPLACE_CMD} -e 's| python3| ${PYTHON_VERSION}|g' \
 		${WRKSRC}/CMakeLists.txt
 
 post-install:

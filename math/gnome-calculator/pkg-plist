@@ -1,11 +1,8 @@
 bin/gcalccmd
 bin/gnome-calculator
-lib/gnome-calculator/libcalculator.a
-lib/gnome-calculator/libcalculator.so
 libexec/gnome-calculator-search-provider
 man/man1/gcalccmd.1.gz
 man/man1/gnome-calculator.1.gz
-share/appdata/org.gnome.Calculator.appdata.xml
 share/applications/org.gnome.Calculator.desktop
 share/dbus-1/services/org.gnome.Calculator.SearchProvider.service
 share/gnome-shell/search-providers/org.gnome.Calculator-search-provider.ini
@@ -849,6 +846,14 @@ share/help/zh_TW/gnome-calculator/scientific.page
 share/help/zh_TW/gnome-calculator/superscript.page
 share/help/zh_TW/gnome-calculator/trigonometry.page
 share/help/zh_TW/gnome-calculator/variables.page
+share/icons/hicolor/16x16/apps/gnome-calculator.png
+share/icons/hicolor/22x22/apps/gnome-calculator.png
+share/icons/hicolor/24x24/apps/gnome-calculator.png
+share/icons/hicolor/256x256/apps/gnome-calculator.png
+share/icons/hicolor/32x32/apps/gnome-calculator.png
+share/icons/hicolor/48x48/apps/gnome-calculator.png
+share/icons/hicolor/512x512/apps/gnome-calculator.png
+share/icons/hicolor/scalable/apps/gnome-calculator-symbolic.svg
 share/locale/af/LC_MESSAGES/gnome-calculator.mo
 share/locale/am/LC_MESSAGES/gnome-calculator.mo
 share/locale/ar/LC_MESSAGES/gnome-calculator.mo
@@ -941,3 +946,4 @@ share/locale/xh/LC_MESSAGES/gnome-calculator.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-calculator.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-calculator.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-calculator.mo
+share/metainfo/org.gnome.Calculator.appdata.xml

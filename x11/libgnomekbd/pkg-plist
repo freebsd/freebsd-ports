@@ -33,6 +33,7 @@ share/locale/be@latin/LC_MESSAGES/libgnomekbd.mo
 share/locale/bg/LC_MESSAGES/libgnomekbd.mo
 share/locale/bn/LC_MESSAGES/libgnomekbd.mo
 share/locale/bn_IN/LC_MESSAGES/libgnomekbd.mo
+share/locale/bs/LC_MESSAGES/libgnomekbd.mo
 share/locale/ca/LC_MESSAGES/libgnomekbd.mo
 share/locale/ca@valencia/LC_MESSAGES/libgnomekbd.mo
 share/locale/cs/LC_MESSAGES/libgnomekbd.mo
@@ -49,6 +50,7 @@ share/locale/eu/LC_MESSAGES/libgnomekbd.mo
 share/locale/fa/LC_MESSAGES/libgnomekbd.mo
 share/locale/fi/LC_MESSAGES/libgnomekbd.mo
 share/locale/fr/LC_MESSAGES/libgnomekbd.mo
+share/locale/fur/LC_MESSAGES/libgnomekbd.mo
 share/locale/ga/LC_MESSAGES/libgnomekbd.mo
 share/locale/gl/LC_MESSAGES/libgnomekbd.mo
 share/locale/gu/LC_MESSAGES/libgnomekbd.mo
@@ -59,6 +61,8 @@ share/locale/id/LC_MESSAGES/libgnomekbd.mo
 share/locale/it/LC_MESSAGES/libgnomekbd.mo
 share/locale/ja/LC_MESSAGES/libgnomekbd.mo
 share/locale/ka/LC_MESSAGES/libgnomekbd.mo
+share/locale/kk/LC_MESSAGES/libgnomekbd.mo
+share/locale/km/LC_MESSAGES/libgnomekbd.mo
 share/locale/kn/LC_MESSAGES/libgnomekbd.mo
 share/locale/ko/LC_MESSAGES/libgnomekbd.mo
 share/locale/lt/LC_MESSAGES/libgnomekbd.mo
@@ -88,6 +92,7 @@ share/locale/sr@latin/LC_MESSAGES/libgnomekbd.mo
 share/locale/sv/LC_MESSAGES/libgnomekbd.mo
 share/locale/ta/LC_MESSAGES/libgnomekbd.mo
 share/locale/te/LC_MESSAGES/libgnomekbd.mo
+share/locale/tg/LC_MESSAGES/libgnomekbd.mo
 share/locale/th/LC_MESSAGES/libgnomekbd.mo
 share/locale/tr/LC_MESSAGES/libgnomekbd.mo
 share/locale/ug/LC_MESSAGES/libgnomekbd.mo

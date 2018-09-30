@@ -1,0 +1,35 @@
+--- meson.build.orig	2018-04-07 12:06:28.000000000 +0200
++++ meson.build	2018-05-08 15:01:59.098440000 +0200
+@@ -297,11 +297,13 @@
+   pango_deps += freetype_dep
+ endif
+ 
+-xft_dep = dependency('xft', version: xft_req_version, required: false)
+-if xft_dep.found()
+-  pango_conf.set('HAVE_XFT', 1)
+-  pango_deps += dependency('xrender', required: false)
+-  pango_deps += xft_dep
++if get_option('xft')
++  xft_dep = dependency('xft', version: xft_req_version, required: false)
++  if xft_dep.found()
++    pango_conf.set('HAVE_XFT', 1)
++    pango_deps += dependency('xrender', required: false)
++    pango_deps += xft_dep
++  endif
+ endif
+ 
+ if host_system == 'darwin'
+@@ -481,9 +483,12 @@
+   [ 'pango.pc' ],
+   [ 'pangowin32.pc', host_system == 'windows' ],
+   [ 'pangoft2.pc', build_pangoft2 ],
+-  [ 'pangoxft.pc', xft_dep.found() ],
+   [ 'pangocairo.pc', cairo_dep.found() ],
+ ]
++
++if get_option('xft')
++  pkgconf_files += [[ 'pangoxft.pc', xft_dep.found() ]]
++endif
+ 
+ foreach pkg: pkgconf_files
+   pkg_name = pkg[0]

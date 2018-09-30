@@ -1,9 +1,7 @@
 bin/file-roller
-%%NAUTILUS%%lib/nautilus/extensions-3.0/libnautilus-fileroller.a
 %%NAUTILUS%%lib/nautilus/extensions-3.0/libnautilus-fileroller.so
 libexec/file-roller/isoinfo.sh
 libexec/file-roller/rpm2cpio
-share/GConf/gsettings/file-roller.convert
 share/applications/org.gnome.FileRoller.desktop
 share/dbus-1/services/org.gnome.FileRoller.ArchiveManager1.service
 share/dbus-1/services/org.gnome.FileRoller.service

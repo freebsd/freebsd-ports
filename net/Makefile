@@ -210,8 +210,6 @@
     SUBDIR += grdesktop
     SUBDIR += grilo
     SUBDIR += grilo-plugins
-    SUBDIR += grilo-plugins2
-    SUBDIR += grilo2
     SUBDIR += grive2
     SUBDIR += grpcurl
     SUBDIR += grsync
@@ -376,6 +374,7 @@
     SUBDIR += libfixbuf
     SUBDIR += libgnetwork
     SUBDIR += libgravatar
+    SUBDIR += libgrss
     SUBDIR += libgweather
     SUBDIR += libilbc
     SUBDIR += libkfbapi

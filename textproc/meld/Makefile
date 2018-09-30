@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	meld
-PORTVERSION=	3.18.0
+PORTVERSION=	3.18.2
 CATEGORIES=	textproc devel python
 MASTER_SITES=	GNOME
 
@@ -24,6 +24,8 @@ GLIB_SCHEMAS=	org.gnome.meld.gschema.xml
 PYDISTUTILS_INSTALL_TARGET=	--no-update-icon-cache --no-compile-schemas install
 INSTALLS_ICONS=	yes
 NO_ARCH=	yes
+
+PLIST_SUB=	PORTVER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 

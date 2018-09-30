@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	gobject
-PORTVERSION=	3.18.2
+PORTVERSION=	3.28.3
 PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	GNOME/sources/pygobject/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMEPREFIX?=	py
 PKGNAMESUFFIX?=	3-common
 DISTNAME=	pygobject-${PORTVERSION}
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Common files for the Python bindings for GObject
@@ -50,8 +50,8 @@ do-install:
 .else
 PORTSCOUT=	ignore:1
 
-USES+=		gnome
-USE_GNOME+=	glib20 introspection
+USES+=		gettext-runtime gnome
+USE_GNOME+=	cairo glib20 introspection
 LIB_DEPENDS+=	libffi.so:devel/libffi
 RUN_DEPENDS+=	pygobject3-common>=0:devel/pygobject3-common
 

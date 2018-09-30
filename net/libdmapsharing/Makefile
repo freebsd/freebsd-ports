@@ -1,10 +1,8 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/net/libdmapsharing/Makefile 19962 2014-10-15 14:57:24Z gusi $
 
 PORTNAME=	libdmapsharing
-PORTVERSION=	2.9.24
-PORTREVISION=	2
+PORTVERSION=	2.9.39
 CATEGORIES=	net gnome
 MASTER_SITES=	https://www.flyn.org/projects/libdmapsharing/
 DIST_SUBDIR=	gnome3
@@ -12,12 +10,15 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME music playing application
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libgee-0.8.so:devel/libgee
-BUILD_DEPENDS=	vapigen:lang/vala
 
-USES=		gettext gmake libtool pathfix pkgconfig
-USE_GNOME=	gnomeprefix gtk20 introspection:build
+USES=		gettext gnome gmake libtool pathfix pkgconfig
+USE_GNOME=	cairo gdkpixbuf2 gnomeprefix gtk30 introspection:build
 USE_GSTREAMER1=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-introspection	\

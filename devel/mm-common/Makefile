@@ -1,14 +1,16 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/mm-common/Makefile 19953 2014-10-15 08:51:31Z gusi $
 
 PORTNAME=	mm-common
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.12
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Common build infrastructure for the GNOME C++ binding libraries
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 

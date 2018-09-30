@@ -148,6 +148,7 @@ share/locale/zh_CN/LC_MESSAGES/yelp.mo
 share/locale/zh_HK/LC_MESSAGES/yelp.mo
 share/locale/zh_TW/LC_MESSAGES/yelp.mo
 share/locale/zu/LC_MESSAGES/yelp.mo
+share/metainfo/yelp.appdata.xml
 %%DATADIR%%-xsl/xslt/common/domains/yelp.xml
 %%DATADIR%%/dtd/catalog
 %%DATADIR%%/dtd/docbookx.dtd

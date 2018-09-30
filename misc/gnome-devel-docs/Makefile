@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-devel-docs
-PORTVERSION=	3.18.1
+PORTVERSION=	3.28.0
 CATEGORIES=	misc gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Documents targeted for GNOME developers

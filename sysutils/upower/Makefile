@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	upower
-PORTVERSION=	0.99.4
+PORTVERSION=	0.99.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://upower.freedesktop.org/releases/
 

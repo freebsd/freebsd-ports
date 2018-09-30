@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome3
-PORTVERSION=	3.18.0
-PORTREVISION=	1
+PORTVERSION=	3.28
 CATEGORIES?=	x11 gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -11,7 +10,7 @@ COMMENT?=	"meta-port" for the GNOME 3 integrated X11 desktop
 
 RUN_DEPENDS?=	dconf-editor:devel/dconf-editor \
 		gnome-session>=3.0.0:x11/gnome-session \
-		gnome-themes-standard>=3.0.0:x11-themes/gnome-themes-standard \
+		gnome-themes-extra>=3.28:x11-themes/gnome-themes-extra \
 		gnome-icon-theme-extras>=3.0.0:misc/gnome-icon-theme-extras \
 		gnome-icon-theme-symbolic>=3.0.0:x11-themes/gnome-icon-theme-symbolic \
 		gnome-keyring>=3.0.0:security/gnome-keyring \
@@ -20,7 +19,7 @@ RUN_DEPENDS?=	dconf-editor:devel/dconf-editor \
 		gnome-mount:sysutils/gnome-mount \
 		gnome-shell>=3.0.0:x11/gnome-shell \
 		gnome-shell-extensions>=3.0.0:x11/gnome-shell-extensions \
-		gnome-tweak-tool:deskutils/gnome-tweak-tool \
+		gnome-tweaks:deskutils/gnome-tweaks \
 		sushi>=0:x11-fm/sushi \
 		nautilus>=3.0.0:x11-fm/nautilus \
 		${LOCALBASE}/share/fonts/bitstream-vera/Vera.ttf:x11-fonts/bitstream-vera \
@@ -41,14 +40,14 @@ USES=		metaport
 .if ${.CURDIR:T}!="gnome3-lite"
 OPTIONS_DEFINE+=DOCS
 
-DOCS_RUN_DEPENDS=	gnome-user-docs>=0:misc/gnome-user-docs
+DOCS_RUN_DEPENDS=	gnome-user-docs>=0:misc/gnome-user-docs \
+			gnome-getting-started-docs>=0:misc/gnome-getting-started-docs
 .endif
 
 .include <bsd.port.options.mk>
 
 .if ${.CURDIR:T}!="gnome3-lite"
-RUN_DEPENDS+=	empathy>=3.0.0:net-im/empathy \
-		epiphany>=3.0.0:www/epiphany \
+RUN_DEPENDS+=	epiphany>=3.0.0:www/epiphany \
 		gucharmap>=3.0.0:deskutils/gucharmap \
 		gnome-characters>=3.0.0:deskutils/gnome-characters \
 		gnome-calendar>=3.0:deskutils/gnome-calendar \
@@ -57,7 +56,6 @@ RUN_DEPENDS+=	empathy>=3.0.0:net-im/empathy \
 		gedit>=3.0.0:editors/gedit \
 		gedit-plugins>=3.0.0:editors/gedit-plugins \
 		gnome-terminal>=3.0.0:x11/gnome-terminal \
-		mousetweaks>=3.0.0:accessibility/mousetweaks \
 		brasero>=3.0.0:sysutils/brasero \
 		accerciser>=3.0.0:accessibility/accerciser \
 		gnome-calculator>=3.0.0:math/gnome-calculator \

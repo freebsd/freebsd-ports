@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	five-or-more
-PORTVERSION=	3.22.2
+PORTVERSION=	3.28.0
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Form a line of 5 or more colored balls

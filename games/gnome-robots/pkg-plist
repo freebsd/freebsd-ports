@@ -1,6 +1,5 @@
 bin/gnome-robots
 man/man6/gnome-robots.6.gz
-share/appdata/gnome-robots.appdata.xml
 share/applications/gnome-robots.desktop
 @unexec [ -s %D/share/games/gnobots2.classic_robots-safe.scores ] || rm -f %D/share/games/gnobots2.classic_robots-safe.scores
 @unexec [ -s %D/share/games/gnobots2.classic_robots-super-safe.scores ] || rm -f %D/share/games/gnobots2.classic_robots-super-safe.scores
@@ -457,6 +456,38 @@ share/help/oc/gnome-robots/index.page
 share/help/oc/gnome-robots/legal.xml
 share/help/oc/gnome-robots/moves.page
 share/help/oc/gnome-robots/scores.page
+share/help/pl/gnome-robots/appearance.page
+share/help/pl/gnome-robots/basics.page
+share/help/pl/gnome-robots/controls-change.page
+share/help/pl/gnome-robots/controls-default.page
+share/help/pl/gnome-robots/figures/anthills-high-risk.png
+share/help/pl/gnome-robots/figures/anthills-low-risk.png
+share/help/pl/gnome-robots/figures/boo-high-risk.png
+share/help/pl/gnome-robots/figures/boo-low-risk.png
+share/help/pl/gnome-robots/figures/cows-high-risk.png
+share/help/pl/gnome-robots/figures/cows-low-risk.png
+share/help/pl/gnome-robots/figures/eggs-high-risk.png
+share/help/pl/gnome-robots/figures/eggs-low-risk.png
+share/help/pl/gnome-robots/figures/gnome-robots.png
+share/help/pl/gnome-robots/figures/gnomes-high-risk.png
+share/help/pl/gnome-robots/figures/gnomes-low-risk.png
+share/help/pl/gnome-robots/figures/mice-high-risk.png
+share/help/pl/gnome-robots/figures/mice-low-risk.png
+share/help/pl/gnome-robots/figures/robots-high-risk.png
+share/help/pl/gnome-robots/figures/robots-low-risk.png
+share/help/pl/gnome-robots/figures/spills-high-risk.png
+share/help/pl/gnome-robots/figures/spills-low-risk.png
+share/help/pl/gnome-robots/figures/stormclouds-high-risk.png
+share/help/pl/gnome-robots/figures/stormclouds-low-risk.png
+share/help/pl/gnome-robots/figures/toasters-high-risk.png
+share/help/pl/gnome-robots/figures/toasters-low-risk.png
+share/help/pl/gnome-robots/figures/ufo-high-risk.png
+share/help/pl/gnome-robots/figures/ufo-low-risk.png
+share/help/pl/gnome-robots/game-types.page
+share/help/pl/gnome-robots/index.page
+share/help/pl/gnome-robots/legal.xml
+share/help/pl/gnome-robots/moves.page
+share/help/pl/gnome-robots/scores.page
 share/help/sl/gnome-robots/appearance.page
 share/help/sl/gnome-robots/basics.page
 share/help/sl/gnome-robots/controls-change.page
@@ -715,3 +746,4 @@ share/locale/xh/LC_MESSAGES/gnome-robots.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-robots.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-robots.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-robots.mo
+share/metainfo/gnome-robots.appdata.xml
