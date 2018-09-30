@@ -71,8 +71,8 @@ man/man1/nvidia-smi.1.gz
 %%LINUX%%%%LINUXBASE%%/usr/lib/vdpau/libvdpau_nvidia.so.1
 %%LINUX%%%%LINUXBASE%%/usr/lib/vdpau/libvdpau_trace.so.%%SHLIB_VERSION%%
 %%LINUX%%%%LINUXBASE%%/usr/lib/vdpau/libvdpau_trace.so.1
-%%LINUX%%@exec %%LINUXBASE%%/sbin/ldconfig -r %%LINUXBASE%%
-%%LINUX%%@unexec %%LINUXBASE%%/sbin/ldconfig -r %%LINUXBASE%%
+%%LINUX%%@postexec %%LINUXBASE%%/sbin/ldconfig -r %%LINUXBASE%%
+%%LINUX%%@postunexec %%LINUXBASE%%/sbin/ldconfig -r %%LINUXBASE%%
 %%LINUX%%@dir %%LINUXBASE%%/usr/lib/vdpau
 %%LINUX%%@dir %%LINUXBASE%%/usr/lib
 %%LINUX%%@dir %%LINUXBASE%%/usr
