@@ -2489,7 +2489,6 @@
 %%WWWDIR%%/templates/bulletproof/style.css
 %%WWWDIR%%/templates/clean-blog/LICENSE
 %%WWWDIR%%/templates/clean-blog/README.md
-%%WWWDIR%%/templates/clean-blog/UTF-8/lang_de.inc.php
 %%WWWDIR%%/templates/clean-blog/archive_categories.tpl
 %%WWWDIR%%/templates/clean-blog/archive_freetag.tpl
 %%WWWDIR%%/templates/clean-blog/backend_templates/default_staticpage_backend.tpl
@@ -2528,6 +2527,8 @@
 %%WWWDIR%%/templates/clean-blog/staticpage-entries-listing.tpl
 %%WWWDIR%%/templates/clean-blog/style.css
 %%WWWDIR%%/templates/clean-blog/trackbacks.tpl
+%%WWWDIR%%/templates/clean-blog/UTF-8/lang_de.inc.php
+%%WWWDIR%%/templates/clean-blog/UTF-8/lang_en.inc.php
 %%WWWDIR%%/templates/competition/admin/img/background.jpg
 %%WWWDIR%%/templates/competition/admin/img/banner_background.png
 %%WWWDIR%%/templates/competition/admin/img/button_background.png
@@ -2802,6 +2803,7 @@
 %%WWWDIR%%/templates/skeleton/style.css
 %%WWWDIR%%/templates/skeleton/trackbacks.tpl
 %%WWWDIR%%/templates/timeline/UTF-8/lang_de.inc.php
+%%WWWDIR%%/templates/timeline/UTF-8/lang_en.inc.php
 %%WWWDIR%%/templates/timeline/aqua_style.css
 %%WWWDIR%%/templates/timeline/archive_categories.tpl
 %%WWWDIR%%/templates/timeline/archive_freetag.tpl
