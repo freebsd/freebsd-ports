@@ -17,11 +17,12 @@ BROKEN_i386=	error: static_assert failed "size_t is assumed to be the same size 
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libcblas.so:math/cblas
 
-USES=		autoreconf fortran gmake libtool localbase python:build
+USES=		autoreconf compiler:c++11-lang fortran gmake libtool localbase python:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datarootdir=${DATADIR}
 USE_GITHUB=	yes
 GH_ACCOUNT=	nubakery
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=			MPI LIBXC SCALAPACK SMITH # SLATER (needs a separate lib)
