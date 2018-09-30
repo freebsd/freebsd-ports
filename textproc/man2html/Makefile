@@ -13,9 +13,13 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Convert nroff(1) man pages to HTML
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		perl5
 USE_PERL5=	run
 NO_BUILD=	yes
+NO_ARCH=	yes
 CGIDIR=		${PREFIX}/www/cgi-bin
 
 PLIST_FILES=	bin/man2html man/man1/man2html.1.gz www/cgi-bin/man.cgi
