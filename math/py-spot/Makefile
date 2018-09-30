@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	spot
-DISTVERSION=	2.6.1
+DISTVERSION=	2.6.2
 CATEGORIES=	math
 MASTER_SITES=	http://www.lrde.epita.fr/dload/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,6 @@ LIB_DEPENDS=	libspot.so:math/spot
 USES=		compiler:c++14-lang gmake libtool python:3.4+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --disable-static
-INSTALL_TARGET=	install-strip
 
 # otherwise shared libs aren't linked to spot libs for some reason
 LDFLAGS+=	-L${LOCALBASE}/lib
