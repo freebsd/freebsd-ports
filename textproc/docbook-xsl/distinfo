@@ -1,4 +1,5 @@
-SHA256 (docbook-xsl-1.76.1.tar.bz2) = d6bdfd76f672c810299c71443e5127431ffb87d2c79d818aee72c86eaccd312c
-SIZE (docbook-xsl-1.76.1.tar.bz2) = 3682531
-SHA256 (docbook-xsl-doc-1.76.1.tar.bz2) = 5fd695dc1d1244c76071a328150cda192c5c39955af5115eb6d21273d2b26e16
-SIZE (docbook-xsl-doc-1.76.1.tar.bz2) = 1443221
+TIMESTAMP = 1535782976
+SHA256 (docbook-xsl-1.79.1.tar.bz2) = 725f452e12b296956e8bfb876ccece71eeecdd14b94f667f3ed9091761a4a968
+SIZE (docbook-xsl-1.79.1.tar.bz2) = 21967928
+SHA256 (docbook-xsl-doc-1.79.1.tar.bz2) = aabaebeb35f6ca77a9c1fa23e2c4e704dcefc5b47af03f8b6ead7103cd5d1155
+SIZE (docbook-xsl-doc-1.79.1.tar.bz2) = 1028809
