@@ -1,0 +1,11 @@
+--- sudoexec/initenv.orig	2018-09-28 16:11:43 UTC
++++ sudoexec/initenv
+@@ -264,7 +264,7 @@ phase2()
+ 			echo "pkg-config must be present on the system to build CBSD from the source. Please install it first: pkg install pkgconf";
+ 			exit 1
+ 		fi
+-		${CC_CMD} ${distdir}/misc/src/sqlcli.c $( pkg-config sqlite3 --cflags --libs ) -lm -lc++ -o ${distdir}/misc/sqlcli
++		${CC_CMD} ${distdir}/misc/src/sqlcli.c $( pkg-config sqlite3 --cflags --libs ) -lm -o ${distdir}/misc/sqlcli
+ 	fi
+ 	installne "-s -o ${cbsduser} -g ${cbsduser} -m 500" ${distdir}/misc/sqlcli ${miscdir}/sqlcli
+ 	[ -f ${distdir}/misc/sqlcli ] && /bin/rm -f ${distdir}/misc/sqlcli

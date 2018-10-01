@@ -1,0 +1,11 @@
+--- Makefile.orig	2018-09-28 16:15:34 UTC
++++ Makefile
+@@ -76,7 +76,7 @@ cbsd: pkg-config-check
+ 	#${CC} misc/src/sqlcli.c -static -pthread -lsqlite3 -lm -L/usr/local/lib -I/usr/local/include -o misc/sqlcli && ${STRIP} misc/sqlcli
+ 	# ICU?
+ 	#${CC} misc/src/sqlcli.c -static -pthread -lsqlite3 -lpthread -licui18n -licuuc -licudata -lm -L/usr/local/lib -I/usr/local/include -o misc/sqlcli && ${STRIP} misc/sqlcli
+-	${CC} misc/src/sqlcli.c `pkg-config sqlite3 --cflags --libs` -lm -lc++ -o misc/sqlcli && ${STRIP} misc/sqlcli
++	${CC} misc/src/sqlcli.c `pkg-config sqlite3 --cflags --libs` -lm -o misc/sqlcli && ${STRIP} misc/sqlcli
+ 	${CC} misc/src/cbsdlogtail.c -o misc/cbsdlogtail && ${STRIP} misc/cbsdlogtail
+ 	${CC} misc/src/pwcrypt.c -lcrypt -o misc/pwcrypt && ${STRIP} misc/pwcrypt
+ 	${CC} misc/src/chk_arp_byip.c -o misc/chk_arp_byip && ${STRIP} misc/chk_arp_byip
