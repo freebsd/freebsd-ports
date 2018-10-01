@@ -12,13 +12,13 @@ COMMENT=	Generate Rust bindings from C (and some C++) code
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	llvm${MESA_LLVM_VER}>0:devel/llvm${MESA_LLVM_VER}
+RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	rust-lang-nursery
 PLIST_FILES=	bin/bindgen
-MESA_LLVM_VER?=	60
+LLVM_DEFAULT?=	60 # Keep in sync with Mk/bsd.gecko.mk
 
 CARGO_CRATES=	aho-corasick-0.6.4 \
 		ansi_term-0.9.0 \
@@ -70,7 +70,7 @@ CARGO_CRATES=	aho-corasick-0.6.4 \
 		wincolor-0.1.6
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,"llvm-config,&${MESA_LLVM_VER},' \
+	@${REINPLACE_CMD} -e 's,"llvm-config,&${LLVM_DEFAULT},' \
 		${WRKSRC}/cargo-crates/clang-sys-*/build.rs \
 		${WRKSRC}/cargo-crates/clang-sys-*/src/support.rs
 
