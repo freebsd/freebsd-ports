@@ -5,7 +5,7 @@ DISTVERSION=	1.1.0
 CATEGORIES=	comms
 MASTER_SITES=	http://www.libimobiledevice.org/downloads/
 
-MAINTAINER=	avilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon for multiplexing connections over USB to iPhone/iPod Touch
 
 LICENSE=	GPLv2 GPLv3

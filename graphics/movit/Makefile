@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://${PORTNAME}.sesse.net/
 
-MAINTAINER=	avilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance video filters for the GPU
 
 LICENSE=	GPLv2+

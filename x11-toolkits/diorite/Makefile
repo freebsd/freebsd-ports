@@ -5,7 +5,7 @@ PORTVERSION=	0.2.1
 PORTREVSION=	1
 CATEGORIES=	x11-toolkits devel
 
-MAINTAINER=	avilla@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Utility and widget library based on GLib and GTK+ 3
 
 LICENSE=	BSD2CLAUSE

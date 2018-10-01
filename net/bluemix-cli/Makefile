@@ -6,7 +6,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://public.dhe.ibm.com/cloud/${PORTNAME:C/-.*//}/cli/${PORTNAME}/
 DISTNAME=	Bluemix_CLI_${PORTVERSION}_386
 
-MAINTAINER=	avilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bluemix command line interface
 
 LICENSE=	BLUEMIX

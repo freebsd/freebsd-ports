@@ -4,7 +4,7 @@ PORTNAME=	vid.stab
 PORTVERSION=	0.98.2
 CATEGORIES=	multimedia
 
-MAINTAINER=	avilla@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Video stabilization library
 
 LICENSE=	GPLv2 GPLv3
