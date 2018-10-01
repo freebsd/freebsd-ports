@@ -1,12 +1,12 @@
-TIMESTAMP = 1538057377
-SHA256 (citra-emu-citra-s20180927-7c97e8df6_GH0.tar.gz) = 95bac74454b21550f59a26b007568d7a99e1530126e05eb05d93dc3b5f908c6d
-SIZE (citra-emu-citra-s20180927-7c97e8df6_GH0.tar.gz) = 4484531
+TIMESTAMP = 1538433163
+SHA256 (citra-emu-citra-s20181001-fceec3494_GH0.tar.gz) = e6c02be3d8772459b40dd44c464190f70d6592e9121b1e64cd13461da991c3c8
+SIZE (citra-emu-citra-s20181001-fceec3494_GH0.tar.gz) = 4486762
 SHA256 (citra-emu-ext-libressl-portable-7d01cb0_GH0.tar.gz) = f3fc8c9d4991b05ca1e1c8f5907ecd3ffd9724a8dccf328087b4784cda5c7db3
 SIZE (citra-emu-ext-libressl-portable-7d01cb0_GH0.tar.gz) = 1762942
 SHA256 (citra-emu-ext-soundtouch-060181e_GH0.tar.gz) = a593ab188e4feaeef8376c27b554cc413986efc777c195e44c6d3d223de9a63c
 SIZE (citra-emu-ext-soundtouch-060181e_GH0.tar.gz) = 59514
-SHA256 (MerryMage-dynarmic-r1-873-g68ca03e_GH0.tar.gz) = fba34129493232649aaca6930ebc5390690b848cf73cc7be4e1c59fe40b2093a
-SIZE (MerryMage-dynarmic-r1-873-g68ca03e_GH0.tar.gz) = 1427270
+SHA256 (MerryMage-dynarmic-r1-992-g4e6848d1_GH0.tar.gz) = 1dd65997fce183976de08904c1097f3a4d2dfbdf59e69a492b1b8c4271973511
+SIZE (MerryMage-dynarmic-r1-992-g4e6848d1_GH0.tar.gz) = 1446282
 SHA256 (arsenm-sanitizers-cmake-f09151b_GH0.tar.gz) = 40d826a6c98fdedf1097bdb96944b2905be507ed5d11e74480680d459fc22431
 SIZE (arsenm-sanitizers-cmake-f09151b_GH0.tar.gz) = 6856
 SHA256 (benhoyt-inih-r40_GH0.tar.gz) = 0a7d8600c523ccd2d01a5bec2ef3a6482ada49794e67cf694d2bec796cb2c340
