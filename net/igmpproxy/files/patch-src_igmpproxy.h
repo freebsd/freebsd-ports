@@ -20,3 +20,12 @@
  /*
   * Limit on length of route data
   */
+@@ -113,7 +113,7 @@ void my_log( int Serverity, int Errno, c
+ 
+ /* ifvc.c
+  */
+-#define MAX_IF         40     // max. number of interfaces recognized
++#define MAX_IF         100     // max. number of interfaces recognized
+ 
+ // Interface states
+ #define IF_STATE_DISABLED      0   // Interface should be ignored.
