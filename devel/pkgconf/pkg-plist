@@ -12,6 +12,7 @@ lib/libpkgconf.so.3.0.0
 libdata/pkgconfig/libpkgconf.pc
 man/man1/pkgconf.1.gz
 man/man5/pc.5.gz
+man/man5/pkgconf-personality.5.gz
 man/man7/pkg.m4.7.gz
 share/aclocal/pkg.m4
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
