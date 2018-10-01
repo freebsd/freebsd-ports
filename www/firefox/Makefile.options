@@ -19,6 +19,11 @@ JACK_IMPLIES=		ALSA
 OPTIONS_EXCLUDE+=	DTRACE
 .endif
 
+# dtrace -G crashes with clang++70 (conditional from Mk/bsd.gecko.mk)
+.if ${CC} == cc && ${CXX} == c++ && exists(/usr/lib/libc++.so)
+OPTIONS_EXCLUDE_FreeBSD_10=	DTRACE
+.endif
+
 # opensolaris/lib/libdtrace/common/dt_link.c:
 #   <arch> not implemented
 #   failed to allocate space for probe
