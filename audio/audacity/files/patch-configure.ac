@@ -1,6 +1,6 @@
---- configure.ac.orig   2016-01-08 22:05:48 UTC
+--- configure.ac.orig	2018-09-20 14:35:07 UTC
 +++ configure.ac
-@@ -235,20 +235,7 @@
+@@ -235,20 +235,7 @@ dnl check if alloca.h exists. If it does, we need to i
  dnl Solaris builds, by defining HAVE_ALLOCA_H
  AC_CHECK_HEADERS_ONCE(alloca.h)
  

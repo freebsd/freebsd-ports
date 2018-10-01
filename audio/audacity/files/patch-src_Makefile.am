@@ -1,6 +1,6 @@
 --- src/Makefile.am.orig	2016-07-26 13:34:06 UTC
 +++ src/Makefile.am
-@@ -75,8 +75,7 @@ audacity_CPPFLAGS = \
+@@ -79,8 +79,7 @@ audacity_CPPFLAGS = \
  #  /usr/local/include/wx-2.8/wx/buffer.h:289:9: note: in expansion of macro 'wxCHECK_RET'
  #           wxCHECK_RET( m_bufdata->m_data, wxT("invalid wxMemoryBuffer") );
  #           ^

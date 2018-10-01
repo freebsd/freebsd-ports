@@ -1,6 +1,6 @@
---- include/audacity/Types.h.orig       2017-03-13 21:02:21 UTC
+--- include/audacity/Types.h.orig	2018-10-01 14:07:33 UTC
 +++ include/audacity/Types.h
-@@ -72,7 +72,7 @@
+@@ -73,7 +73,7 @@ class sampleCount (public)
     sampleCount ( long v ) : value { v } {}
  
     // unsigned long is 64 bit on some platforms.  Let it narrow.

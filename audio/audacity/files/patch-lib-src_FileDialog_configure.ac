@@ -1,6 +1,6 @@
---- lib-src/FileDialog/configure.ac.orig	2016-01-08 22:05:48 UTC
+--- lib-src/FileDialog/configure.ac.orig	2018-09-20 14:35:07 UTC
 +++ lib-src/FileDialog/configure.ac
-@@ -124,7 +124,7 @@ AM_CONDITIONAL([WINDOWS], test "$IMPLEME
+@@ -124,7 +124,7 @@ AM_CONDITIONAL([WINDOWS], test "$IMPLEMENTATION" = "wi
  
  echo "Implementation to use: $IMPLEMENTATION"
  
