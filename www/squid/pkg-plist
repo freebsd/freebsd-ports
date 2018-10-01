@@ -62,6 +62,10 @@
 %%ETCDIR%%/errors/ar-sa
 %%ETCDIR%%/errors/ar-sy
 %%ETCDIR%%/errors/ar-tn
+%%ETCDIR%%/errors/ca-es
+%%ETCDIR%%/errors/en-cn
+%%ETCDIR%%/errors/es-xl
+%%ETCDIR%%/errors/pt-xl
 %%ETCDIR%%/errors/ar-ye
 %%ETCDIR%%/errors/ar/ERR_ACCESS_DENIED
 %%ETCDIR%%/errors/ar/ERR_ACL_TIME_QUOTA_EXCEEDED
