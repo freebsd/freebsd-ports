@@ -40,7 +40,7 @@ UGLY_DISTNAME=		gst-plugins-ugly-${UGLY_PORTVERSION}
 UGLY_DISTFILE=		${UGLY_DISTNAME}${EXTRACT_SUFX}
 DIST?=		base
 
-USES+=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
+USES+=		gettext gmake gnome libtool pathfix pkgconfig python tar:xz
 WANT_GSTREAMER=	yes
 USE_GNOME+=	glib20 introspection:build libxml2
 GNU_CONFIGURE=	yes
