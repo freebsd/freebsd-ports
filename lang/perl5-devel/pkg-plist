@@ -43,7 +43,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Attribute/Handlers.pm
 %%PRIV_LIB%%/AutoLoader.pm
 %%PRIV_LIB%%/AutoSplit.pm
-%%PRIV_LIB%%/B/Debug.pm
 %%PRIV_LIB%%/B/Deparse.pm
 %%PRIV_LIB%%/B/Op_private.pm
 %%PRIV_LIB%%/Benchmark.pm
@@ -840,7 +839,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%ARCH_LIB%%/Unicode/Collate.pm
 %%ARCH_LIB%%/Unicode/Collate/Locale.pm
 %%ARCH_LIB%%/Unicode/Normalize.pm
-%%ARCH_LIB%%/arybase.pm
 %%ARCH_LIB%%/attributes.pm
 %%ARCH_LIB%%/auto/B/B.so
 %%ARCH_LIB%%/auto/Compress/Raw/Bzip2/Bzip2.so
@@ -890,7 +888,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%ARCH_LIB%%/auto/Time/Piece/Piece.so
 %%ARCH_LIB%%/auto/Unicode/Collate/Collate.so
 %%ARCH_LIB%%/auto/Unicode/Normalize/Normalize.so
-%%ARCH_LIB%%/auto/arybase/arybase.so
 %%ARCH_LIB%%/auto/attributes/attributes.so
 %%ARCH_LIB%%/auto/mro/mro.so
 %%ARCH_LIB%%/auto/re/re.so
@@ -1152,7 +1149,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/AutoSplit.3.gz
 %%MAN3%%/B.3.gz
 %%MAN3%%/B::Concise.3.gz
-%%MAN3%%/B::Debug.3.gz
 %%MAN3%%/B::Deparse.3.gz
 %%MAN3%%/B::Op_private.3.gz
 %%MAN3%%/B::Showlex.3.gz
@@ -1656,7 +1652,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/User::grent.3.gz
 %%MAN3%%/User::pwent.3.gz
 %%MAN3%%/XSLoader.3.gz
-%%MAN3%%/arybase.3.gz
 %%MAN3%%/attributes.3.gz
 %%MAN3%%/autodie.3.gz
 %%MAN3%%/autodie::Scope::Guard.3.gz
