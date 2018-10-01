@@ -6,7 +6,7 @@ PORTREVISION=	4
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-qt5
 
-MAINTAINER=	avilla@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Video effects library based on HTML/QML
 
 LICENSE=	BSD3CLAUSE

@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:kde \
 		zeitgeist-${ZEITGEIST_VERSION}.tar.xz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	avilla@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 4 wrapper library around the Zeitgeist D-Bus API
 
 LICENSE=	LGPL21

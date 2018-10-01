@@ -6,7 +6,7 @@ PORTREVISION?=	0
 CATEGORIES?=	devel
 MASTER_SITES=	http://www.libimobiledevice.org/downloads/
 
-MAINTAINER?=	avilla@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Library to handle Apple Property List format
 
 LICENSE?=	LGPL21

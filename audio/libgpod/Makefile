@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	SF/gtkpod/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
-MAINTAINER?=	avilla@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Library for direct access to iPod contents
 
 LICENSE=	LGPL20

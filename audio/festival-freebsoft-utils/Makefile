@@ -6,7 +6,7 @@ PORTREVISION=	3
 CATEGORIES=	audio accessibility
 MASTER_SITES=	http://www.freebsoft.org/pub/projects/${PORTNAME}/
 
-MAINTAINER=	avilla@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Festival utilities focused on interaction with Speech Dispatcher
 
 RUN_DEPENDS=	festival:audio/festival \

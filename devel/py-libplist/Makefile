@@ -4,7 +4,7 @@ PORTREVISION=	0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	avilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for libplist
 
 LIB_DEPENDS=	libplist.so:${MASTER_PORT}

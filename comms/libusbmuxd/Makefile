@@ -5,7 +5,7 @@ PORTVERSION=	1.0.10
 CATEGORIES=	comms
 MASTER_SITES=	http://www.libimobiledevice.org/downloads/
 
-MAINTAINER=	avilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Communication interface library for usbmuxd
 
 LICENSE=	LGPL21 LGPL3
