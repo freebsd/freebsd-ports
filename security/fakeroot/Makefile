@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fakeroot
-PORTVERSION=	1.22
+PORTVERSION=	1.23
 CATEGORIES=	security
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -12,7 +12,8 @@ COMMENT=	Simulate the root user behaviour
 
 LICENSE=	GPLv3
 
-USES=	tar:bzip2 libtool
+USES=	tar:xz libtool
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--with-ipc=tcp
 INSTALL_TARGET=	install-strip
