@@ -1,6 +1,6 @@
---- lib-src/libnyquist/nyquist/cmt/cext.h.orig	2016-07-26 13:34:07 UTC
+--- lib-src/libnyquist/nyquist/cmt/cext.h.orig	2018-10-01 14:07:33 UTC
 +++ lib-src/libnyquist/nyquist/cmt/cext.h
-@@ -58,7 +58,7 @@ EXIT(n)  -- calls exit(n) after shutting
+@@ -58,7 +58,7 @@ EXIT(n)  -- calls exit(n) after shutting down/dealloca
  #include <malloc.h>
  #endif
  

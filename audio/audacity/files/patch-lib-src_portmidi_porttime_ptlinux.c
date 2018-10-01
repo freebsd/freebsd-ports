@@ -1,6 +1,6 @@
---- lib-src/portmidi/porttime/ptlinux.c.orig	2018-02-22 17:57:15.438232000 -0800
-+++ lib-src/portmidi/porttime/ptlinux.c	2018-02-22 19:12:15.820418000 -0800
-@@ -31,14 +31,13 @@
+--- lib-src/portmidi/porttime/ptlinux.c.orig	2018-10-01 14:07:33 UTC
++++ lib-src/portmidi/porttime/ptlinux.c
+@@ -31,14 +31,13 @@ CHANGE LOG
  #include "porttime.h"
  #include "sys/time.h"
  #include "sys/resource.h"
@@ -16,7 +16,7 @@
  static pthread_t pt_thread_pid;
  static int pt_thread_created = FALSE;
  
-@@ -79,7 +78,7 @@
+@@ -79,7 +78,7 @@ static void *Pt_CallbackProc(void *p)
  PtError Pt_Start(int resolution, PtCallback *callback, void *userData)
  {
      if (time_started_flag) return ptNoError;
@@ -25,7 +25,7 @@
      if (callback) {
          int res;
          pt_callback_parameters *parms = (pt_callback_parameters *) 
-@@ -121,10 +120,10 @@
+@@ -121,10 +120,10 @@ int Pt_Started()
  PtTimestamp Pt_Time()
  {
      long seconds, milliseconds;
