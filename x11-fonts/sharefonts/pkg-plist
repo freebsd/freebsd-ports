@@ -20,7 +20,7 @@
 %%FONTSDIR%%/davyding.shareware
 %%FONTSDIR%%/duncan.pfb
 %%FONTSDIR%%/duncan.shareware
-%%FONTSDIR%%/fonts.dir
+@comment %%FONTSDIR%%/fonts.dir
 %%FONTSDIR%%/grc_____.pfb
 %%FONTSDIR%%/grc_____.shareware
 %%FONTSDIR%%/lmccrary.pfb
