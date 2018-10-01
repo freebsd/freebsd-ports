@@ -18,7 +18,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	rust-lang-nursery
 PLIST_FILES=	bin/bindgen
-LLVM_DEFAULT?=	60 # Keep in sync with Mk/bsd.gecko.mk
+LLVM_DEFAULT?=	70 # Keep in sync with Mk/bsd.gecko.mk
 
 CARGO_CRATES=	aho-corasick-0.6.4 \
 		ansi_term-0.9.0 \
