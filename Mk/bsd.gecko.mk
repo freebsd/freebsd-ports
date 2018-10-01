@@ -105,6 +105,14 @@ USE_XORG+=	xcb
 LLVM_DEFAULT?=	70
 BUILD_DEPENDS+=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 MOZ_EXPORT+=	LLVM_CONFIG=llvm-config${LLVM_DEFAULT}
+# Require newer Clang than what's in base system unless user opted out
+. if ${CC} == cc && ${CXX} == c++ && exists(/usr/lib/libc++.so)
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+CPP=			${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
+CC=				${LOCALBASE}/bin/clang${LLVM_DEFAULT}
+CXX=			${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
+USES:=			${USES:Ncompiler\:*} # XXX avoid warnings
+. endif
 .endif
 
 .if ${MOZILLA_VER:R:R} >= 61
