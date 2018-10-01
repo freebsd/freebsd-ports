@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	newsboat
-PORTVERSION=	2.12
-PORTREVISION=	2
+PORTVERSION=	2.13
 DISTVERSIONPREFIX=	r
 CATEGORIES=	www
 
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libstfl.so:devel/stfl \
 		libcurl.so:ftp/curl \
 		libjson-c.so:devel/json-c
 
-USES=		compiler:c++11-lib gettext gmake iconv:translit ncurses \
+USES=		compiler:c++11-lib gettext gmake gnome iconv:translit ncurses \
 		pkgconfig sqlite shebangfix ssl
 USE_GITHUB=	yes
 USE_CXXSTD=	gnu++11
