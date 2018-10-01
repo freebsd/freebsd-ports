@@ -10347,6 +10347,7 @@
 %%WWWDIR%%/rubocop/cop/gitlab/httparty.rb
 %%WWWDIR%%/rubocop/cop/gitlab/module_with_instance_variables.rb
 %%WWWDIR%%/rubocop/cop/gitlab/predicate_memoization.rb
+%%WWWDIR%%/rubocop/cop/group_public_or_visible_to_user.rb
 %%WWWDIR%%/rubocop/cop/include_sidekiq_worker.rb
 %%WWWDIR%%/rubocop/cop/line_break_around_conditional_block.rb
 %%WWWDIR%%/rubocop/cop/migration/add_column.rb
@@ -11892,6 +11893,7 @@
 %%WWWDIR%%/spec/javascripts/issue_show/components/form_spec.js
 %%WWWDIR%%/spec/javascripts/issue_show/components/title_spec.js
 %%WWWDIR%%/spec/javascripts/issue_show/helpers.js
+%%WWWDIR%%/spec/javascripts/issue_show/index_spec.js
 %%WWWDIR%%/spec/javascripts/issue_show/mock_data.js
 %%WWWDIR%%/spec/javascripts/issue_spec.js
 %%WWWDIR%%/spec/javascripts/job_spec.js
@@ -13484,6 +13486,7 @@
 %%WWWDIR%%/spec/requests/api/projects_spec.rb
 %%WWWDIR%%/spec/requests/api/protected_branches_spec.rb
 %%WWWDIR%%/spec/requests/api/protected_tags_spec.rb
+%%WWWDIR%%/spec/requests/api/redacted_events_spec.rb
 %%WWWDIR%%/spec/requests/api/repositories_spec.rb
 %%WWWDIR%%/spec/requests/api/resource_label_events_spec.rb
 %%WWWDIR%%/spec/requests/api/runner_spec.rb
@@ -13528,6 +13531,7 @@
 %%WWWDIR%%/spec/rubocop/cop/gitlab/httparty_spec.rb
 %%WWWDIR%%/spec/rubocop/cop/gitlab/module_with_instance_variables_spec.rb
 %%WWWDIR%%/spec/rubocop/cop/gitlab/predicate_memoization_spec.rb
+%%WWWDIR%%/spec/rubocop/cop/group_public_or_visible_to_user_spec.rb
 %%WWWDIR%%/spec/rubocop/cop/include_sidekiq_worker_spec.rb
 %%WWWDIR%%/spec/rubocop/cop/line_break_around_conditional_block_spec.rb
 %%WWWDIR%%/spec/rubocop/cop/migration/add_concurrent_foreign_key_spec.rb
@@ -13571,6 +13575,7 @@
 %%WWWDIR%%/spec/serializers/deploy_key_entity_spec.rb
 %%WWWDIR%%/spec/serializers/deployment_entity_spec.rb
 %%WWWDIR%%/spec/serializers/diff_file_entity_spec.rb
+%%WWWDIR%%/spec/serializers/diff_line_entity_spec.rb
 %%WWWDIR%%/spec/serializers/diff_line_serializer_spec.rb
 %%WWWDIR%%/spec/serializers/diffs_entity_spec.rb
 %%WWWDIR%%/spec/serializers/discussion_entity_spec.rb
