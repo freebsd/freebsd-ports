@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fzy
-DISTVERSION=	0.9
+DISTVERSION=	1.0
 CATEGORIES=	textproc
 
 MAINTAINER=	gor@clogic.com.ua
