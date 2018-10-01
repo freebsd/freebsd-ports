@@ -12,8 +12,8 @@
 %%FONTSDIR%%/c059033l.ttf
 %%FONTSDIR%%/c059036l.ttf
 %%FONTSDIR%%/d050000l.ttf
-%%FONTSDIR%%/fonts.dir
-%%FONTSDIR%%/fonts.scale
+@comment %%FONTSDIR%%/fonts.dir
+@comment %%FONTSDIR%%/fonts.scale
 %%FONTSDIR%%/n019003l.ttf
 %%FONTSDIR%%/n019004l.ttf
 %%FONTSDIR%%/n019023l.ttf

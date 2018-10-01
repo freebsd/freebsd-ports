@@ -3,7 +3,7 @@
 
 PORTNAME=	urwfonts-ttf
 PORTVERSION=	1.0.7b18
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.izmiran.rssi.ru/pub/fonts/urw/
 DISTNAME=	urw-fonts-${PORTVERSION:S/b/pre/}-ttf
@@ -16,6 +16,7 @@ LICENSE=	LGPL20
 DISABLE_SIZE=	yes
 NO_WRKSUBDIR=	yes
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		fonts tar:bzip2
 
