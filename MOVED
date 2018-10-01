@@ -10555,3 +10555,4 @@ accessibility/mousetweaks||2018-09-30|Remove, no longer maintained
 deskutils/kdeconnect|deskutils/kdeconnect-kde-kde4|2018-09-30|Renamed to make place for KF5 based version
 devel/rubygem-rainbow2|devel/rubygem-rainbow|2018-10-01|Has expired: Obsolete by gitlab-ce 11.3.x update, please use devel/rubygem-rainbow instead
 net/rubygem-fog-google13|net/rubygem-fog-google|2018-10-01|Has expired: Obsolete by gitlab-ce 11.3.x update, please use net/rubygem-fog-google instead
+devel/rubygem-gemnasium-gitlab-service||2018-10-01|Has expired: Not required by gitlab-ce 11.3.x update anymore
