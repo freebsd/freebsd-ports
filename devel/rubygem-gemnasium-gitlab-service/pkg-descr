@@ -1,5 +1,0 @@
-Add Gemnasium support for Gitlab as a Project Service. It uploads dependency
-files automatically on https://gemnasium.com API to track your project
-dependencies.
-
-WWW: http://gemnasium.org
