@@ -47,8 +47,8 @@
 %%FONTSDIR%%/erasltra.pfb
 %%FONTSDIR%%/erasmed.pfb
 %%FONTSDIR%%/florence.pfb
-%%FONTSDIR%%/fonts.dir
-%%FONTSDIR%%/fonts.scale
+@comment %%FONTSDIR%%/fonts.dir
+@comment %%FONTSDIR%%/fonts.scale
 %%FONTSDIR%%/frquad.pfb
 %%FONTSDIR%%/frquadb.pfb
 %%FONTSDIR%%/ftpstrps.pfb

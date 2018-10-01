@@ -3,7 +3,7 @@
 
 PORTNAME=	freefonts
 PORTVERSION=	0.10
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://download.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/gnu/%SUBDIR%/   \
