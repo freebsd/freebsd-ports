@@ -3,9 +3,10 @@
 
 PORTNAME=	dosbox
 PORTVERSION=	0.74
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	emulators
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-2
+DISTNAME=	${PORTNAME}-${PORTVERSION}-2
 
 MAINTAINER=	knyght@gmail.com
 COMMENT=	Emulator of a PC with DOS
@@ -25,7 +26,7 @@ CONFIGURE_ARGS+=	--enable-core-inline
 
 DESKTOP_ENTRIES="DOSBox" "${COMMENT}" \
 		"${PREFIX}/share/pixmaps/dosbox.ico" "dosbox" \
-		"System;Emulator;" "true"
+		"System;Emulator;" true
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_RADIO=	DEBUGGER
