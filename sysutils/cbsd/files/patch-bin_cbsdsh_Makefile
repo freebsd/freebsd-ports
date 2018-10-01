@@ -1,0 +1,11 @@
+--- bin/cbsdsh/Makefile.orig	2018-09-28 16:10:13 UTC
++++ bin/cbsdsh/Makefile
+@@ -21,7 +21,7 @@ NOMAN=		yes
+ 
+ DPADD= ${LIBEDIT} ${LIBTERMCAP}
+ #LDADD= -ledit -ltermcap -lsqlite3 -lm -pthread -ljail
+-LDADD= -ledit -ltermcap -lm -pthread -ljail `pkg-config sqlite3 --libs` -lm -lc++
++LDADD= -ledit -ltermcap -lm -pthread -ljail `pkg-config sqlite3 --libs` -lm
+ 
+ #CFLAGS+=-DSHELL -I. -I${.CURDIR} -DCBSD -I/usr/local/include -L/usr/lib -L/usr/local/lib
+ CFLAGS+=-DSHELL -I. -I${.CURDIR} -DCBSD -I/usr/local/include -L/usr/local/lib
