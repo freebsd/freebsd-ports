@@ -351,7 +351,7 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%DATADIR%%/keymaps/us
 %%DATADIR%%/setup/emojilang.py
 %%DATADIR%%/setup/emojilang.pyc
-%%DATADIR%%/setup/emojilang.%%PYTHON_PYOEXTENSION%%
+%%DATADIR%%/setup/emojilang.pyo
 %%DATADIR%%/setup/engineabout.py
 %%DATADIR%%/setup/engineabout.pyc
 %%DATADIR%%/setup/engineabout.pyo
