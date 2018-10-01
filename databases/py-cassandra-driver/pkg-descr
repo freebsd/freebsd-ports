@@ -1,0 +1,5 @@
+A modern, feature-rich and highly-tunable Python client library for
+Apache Cassandra (2.1+) using exclusively Cassandra's binary protocol
+and Cassandra Query Language v3.
+
+WWW: https://github.com/datastax/python-driver
