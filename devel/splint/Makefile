@@ -10,6 +10,8 @@ EXTRACT_SUFX=	.src.tgz
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Tool for statically checking sourcecode for security vulnerabilities
 
+LICENSE=	GPLv2+
+
 USES=		gmake
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
