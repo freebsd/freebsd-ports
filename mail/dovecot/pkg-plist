@@ -136,6 +136,7 @@ include/dovecot/event-log.h
 include/dovecot/execv-const.h
 include/dovecot/fail-mail-storage.h
 include/dovecot/failures.h
+include/dovecot/failures-private.h
 include/dovecot/fd-util.h
 include/dovecot/fdatasync-path.h
 include/dovecot/fdpass.h
