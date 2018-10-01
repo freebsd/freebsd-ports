@@ -1,35 +1,51 @@
---- wscript.orig	2017-04-08 10:09:27 UTC
+Hunks 1 & 2: Enable manpages, doxygen, and sphinx documentation separately
+Hunks 3 & 4: Install docs in more standard locations
+
+--- wscript.orig	2018-09-23 08:16:59 UTC
 +++ wscript
-@@ -94,6 +94,9 @@ def options(ctx):
-             help_str = 'build documentation (auto)',
-             help_disable_str = 'do not build documentation')
+@@ -96,9 +96,15 @@ def options(ctx):
+             help_str = 'compile with source_wavwrite (default)',
+             help_disable_str = 'do not compile source_wavwrite')
  
-+    ctx.add_option('--disable-doxygen', action = 'store_true',
-+            dest = 'disable_doxygen',
-+            help = 'disable doxygen even if found')
-     ctx.add_option('--with-target-platform', type='string',
-             help='set target platform for cross-compilation', dest='target_platform')
+-    add_option_enable_disable(ctx, 'docs', default = None,
+-            help_str = 'build documentation (auto)',
+-            help_disable_str = 'do not build documentation')
++    add_option_enable_disable(ctx, 'manpages', default = None,
++            help_str = 'build manpages (auto)',
++            help_disable_str = 'do not build manpages')
++    add_option_enable_disable(ctx, 'doxygen', default = None,
++            help_str = 'build API documentation (auto)',
++            help_disable_str = 'do not build API documentation')
++    add_option_enable_disable(ctx, 'sphinx', default = None,
++            help_str = 'build general documentation (auto)',
++            help_disable_str = 'do not build general documentation')
  
-@@ -388,6 +391,9 @@ def configure(ctx):
+     add_option_enable_disable(ctx, 'tests', default = True,
+             help_str = 'build tests (true)',
+@@ -462,19 +468,21 @@ def configure(ctx):
+     if (ctx.options.enable_double == True):
+         ctx.define('HAVE_AUBIO_DOUBLE', 1)
+ 
+-    if (ctx.options.enable_docs != False):
++    if (ctx.options.enable_manpages != False):
+         # check if txt2man is installed, optional
+         try:
+           ctx.find_program('txt2man', var='TXT2MAN')
+         except ctx.errors.ConfigurationError:
+           ctx.to_log('txt2man was not found (ignoring)')
+ 
++    if (ctx.options.enable_doxygen != False):
          # check if doxygen is installed, optional
          try:
            ctx.find_program('doxygen', var='DOXYGEN')
-+          if ctx.options.disable_doxygen:
-+            from sys import stderr
-+            print >> stderr, 'doxygen found, but disabled with --disable-doxygen'
          except ctx.errors.ConfigurationError:
            ctx.to_log('doxygen was not found (ignoring)')
  
-@@ -440,7 +446,7 @@ def txt2man(bld):
- 
- def doxygen(bld):
-     # build documentation from source files using doxygen
--    if bld.env['DOXYGEN']:
-+    if bld.env['DOXYGEN'] and not bld.options.disable_doxygen:
-         bld.env.VERSION = VERSION
-         rule = '( cat ${SRC} && echo PROJECT_NUMBER=${VERSION}; )'
-         rule += ' | doxygen - > /dev/null'
-@@ -448,7 +454,7 @@ def doxygen(bld):
++    if (ctx.options.enable_sphinx != False):
+         # check if sphinx-build is installed, optional
+         try:
+           ctx.find_program('sphinx-build', var='SPHINX')
+@@ -536,7 +544,7 @@ def doxygen(bld):
                  source = 'doc/web.cfg',
                  target = '../doc/web/html/index.html',
                  cwd = 'doc')
@@ -37,4 +53,13 @@
 +        bld.install_files( '${DATAROOTDIR}' + '/doc/aubio',
                  bld.path.ant_glob('doc/web/html/**'),
                  cwd = bld.path.find_dir ('doc/web'),
+                 relative_trick = True)
+@@ -550,7 +558,7 @@ def sphinx(bld):
+                 rule = '${SPHINX} -b html -D release=${VERSION} -D version=${VERSION} -a -q `dirname ${SRC}` `dirname ${TGT}`',
+                 source = 'doc/conf.py',
+                 target = '../doc/_build/html/index.html')
+-        bld.install_files( '${DATAROOTDIR}' + '/doc/libaubio-doc/sphinx',
++        bld.install_files( '${DATAROOTDIR}' + '/doc/aubio/sphinx',
+                 bld.path.ant_glob('doc/_build/html/**'),
+                 cwd = bld.path.find_dir('doc/_build/html'),
                  relative_trick = True)
