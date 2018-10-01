@@ -10553,3 +10553,4 @@ deskutils/gnome-tweak-tool|deskutils/gnome-tweaks|2018-09-30|Renamed
 x11-themes/gnome-themes-standard|x11-themes/gnome-themes-extra|2018-09-30|Renamed
 accessibility/mousetweaks||2018-09-30|Remove, no longer maintained
 deskutils/kdeconnect|deskutils/kdeconnect-kde-kde4|2018-09-30|Renamed to make place for KF5 based version
+devel/rubygem-rainbow2|devel/rubygem-rainbow|2018-10-01|Has expired: Obsolete by gitlab-ce 11.3.x update, please use devel/rubygem-rainbow instead
