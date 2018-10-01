@@ -43,6 +43,7 @@ USES=		cmake:outsource compiler:c++17-lang iconv:wchar_t localbase:ldflags \
 USE_GL=		gl glew
 USE_QT=		qmake_build buildtools_build core dbus gui network widgets qml
 USE_XORG=	x11
+LLD_UNSAFE=	yes # XXX ports/219089
 CMAKE_ON=	CMAKE_SKIP_RPATH USE_SYSTEM_FFMPEG USE_SYSTEM_LIBPNG
 CMAKE_OFF=	USE_NATIVE_INSTRUCTIONS
 CXXFLAGS+=	-Wno-macro-redefined # __STDC_*_MACROS sys/cdefs.h vs. llvm-config
