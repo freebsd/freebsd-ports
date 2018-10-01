@@ -16,12 +16,11 @@ BROKEN_armv6=		fails to compile: 'tcg-target.h' file not found
 BROKEN_armv7=		fails to compile: 'tcg-target.h' file not found
 BROKEN_mips=		fails to compile: 'ICACHE' undeclared (first use in this function)
 BROKEN_mips64=		fails to compile: 'ICACHE' undeclared (first use in this function)
-BROKEN_powerpc64=	fails to compile: cc1: unrecognized command line option "-Wno-logical-op-parentheses"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	unicorn-engine
 
-USES=		gmake python:2.7,build
+USES=		compiler:c11 gmake python:2.7,build
 USE_LDCONFIG=	yes
 MAKE_ENV=	INSTALL_LIB="${INSTALL_LIB}" \
 		UNICORN_QEMU_FLAGS=--python=${PYTHON_CMD} \
