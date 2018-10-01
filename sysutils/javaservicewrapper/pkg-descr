@@ -1,12 +1,15 @@
-The Java Service Wrapper is an application which has evolved out of a desire
-to solve a number of problems common to many Java applications:
+The Java Service Wrapper enables a Java application to be run as a Unix daemon.
+It also monitors the health of your application and JVM.
 
-- Run as a Windows Service or Unix Daemon.
-- Application Reliability.
-- Standard, Out of the Box Scripting.
-- On Demand Restarts.
-- Flexible Configuration.
-- Ease Application Installations.
-- Logging.
+Benefits:
 
-WWW: http://wrapper.tanukisoftware.org/
+* There is no need for additional programming in your application to integrate
+  it with our product.
+* Automatic customizable response when something happens in your application
+  or JVM.
+* Notifications when there is a problem in need of attention.
+* Support better your customers thanks to our logging features.
+* You can schedule events in a standard way in various platforms.
+* Deploy and install your applications as a Unix daemon.
+
+WWW: https://wrapper.tanukisoftware.org/
