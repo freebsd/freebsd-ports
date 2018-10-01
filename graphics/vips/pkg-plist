@@ -84,7 +84,7 @@ lib/libvipsCC.so.42
 lib/libvipsCC.so.42.8.4
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gi/overrides/Vips.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gi/overrides/Vips.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/gi/overrides/Vips.%%PYTHON_PYOEXTENSION%%
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gi/overrides/Vips.pyo
 libdata/pkgconfig/vips-cpp.pc
 libdata/pkgconfig/vips.pc
 libdata/pkgconfig/vipsCC.pc
