@@ -7,7 +7,7 @@ CATEGORIES=	www
 PKGNAMEPREFIX=	redmine-
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LDAP user/group synchronization for Redmine
 
 LICENSE=	GPLv3+

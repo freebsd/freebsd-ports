@@ -8,7 +8,7 @@ PORTREVISION=	0
 CATEGORIES=	www
 PKGNAMEPREFIX=	redmine-
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Knowledgebase functionality for Redmine
 
 LICENSE=	MIT

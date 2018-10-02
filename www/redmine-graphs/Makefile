@@ -6,7 +6,7 @@ PORTVERSION=	0.0.20170403
 CATEGORIES=	www
 PKGNAMEPREFIX=	redmine-
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Additional Redmine graphs
 
 LICENSE=	GPLv2+

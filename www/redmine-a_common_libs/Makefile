@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	redmine-
 DISTNAME=	${BB_COMMIT}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common libraries for RedMine
 
 RUN_DEPENDS=	rubygem-activerecord-session_store>0:databases/rubygem-activerecord-session_store
