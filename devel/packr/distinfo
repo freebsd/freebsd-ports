@@ -1,8 +1,8 @@
-TIMESTAMP = 1536217008
-SHA256 (gobuffalo-packr-v1.13.5_GH0.tar.gz) = bbc377c6f57da71d3f207125f79ef1be6cb0a71db721af7659b513e7b0bb95d8
-SIZE (gobuffalo-packr-v1.13.5_GH0.tar.gz) = 21288
-SHA256 (golang-net-c394268_GH0.tar.gz) = b3592668b46bfd15cecea395c3efd2124abce92f08b857cec3a4012d5a33151a
-SIZE (golang-net-c394268_GH0.tar.gz) = 968640
+TIMESTAMP = 1537771798
+SHA256 (gobuffalo-packr-v1.13.7_GH0.tar.gz) = f6220bba357a7b21d313577611af56af0a9a13d33dda65fac4f7237500968a4f
+SIZE (gobuffalo-packr-v1.13.7_GH0.tar.gz) = 17224
+SHA256 (golang-net-2f5d238_GH0.tar.gz) = 39339c2127d1198fdf9af08ab138137fd5f62ffbbf415323e06d3cdce1302920
+SIZE (golang-net-2f5d238_GH0.tar.gz) = 965146
 SHA256 (golang-sync-1d60e46_GH0.tar.gz) = 526fab48f250f45ec22dbfd2700df629871ea8aeb8289a49c58f4fc606a7a5e5
 SIZE (golang-sync-1d60e46_GH0.tar.gz) = 16327
 SHA256 (pkg-errors-v0.8.0_GH0.tar.gz) = bacf6c58e490911398cee61742ddc6a90c560733e4c9dcb3d867b17a894c9dd5
