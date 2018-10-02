@@ -1,3 +1,3 @@
-TIMESTAMP = 1536731079
-SHA256 (petsc-3.9.4.tar.gz) = ecc647c9b1ef565a2c113936454c65632eedc1626e0fc99b5a36accb91195a63
-SIZE (petsc-3.9.4.tar.gz) = 29400362
+TIMESTAMP = 1538517416
+SHA256 (petsc-3.10.1.tar.gz) = b6e64ce062113ee0e2e2a6cfffb4d33c085ec91d5bc3afeb33781074aa5a22a5
+SIZE (petsc-3.10.1.tar.gz) = 30858694

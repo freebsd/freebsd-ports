@@ -72,10 +72,10 @@ include/slepcsysdef.mod
 include/slepcvec.h
 include/slepcversion.h
 lib/libslepc.so
-lib/libslepc.so.3.9
-lib/libslepc.so.3.9.2
+lib/libslepc.so.3.10
+lib/libslepc.so.3.10.0
 lib/slepc/conf/SLEPcBuildInternal.cmake
-lib/slepc/conf/modules/slepc/3.9.2-installed-arch-%%PYTHON_PLATFORM%%-c-debug
+lib/slepc/conf/modules/slepc/3.10.0-installed-arch-%%PYTHON_PLATFORM%%-c-debug
 lib/slepc/conf/reconfigure-installed-arch-%%PYTHON_PLATFORM%%-c-debug.py
 lib/slepc/conf/slepc_common
 lib/slepc/conf/slepc_rules
