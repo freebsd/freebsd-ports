@@ -1,8 +1,0 @@
-The driver is Copyright(C) 2005-2012 by Joseph H Taylor, Jr, K1JT.
-The decoding algorithm is used under licence from CodeVector
-Technologies, LLC, and is protected under US patent
-6,634,007.
-
-KVASD may be used freely by anyone for the purpose of
-facilitating communication by Amateur Radio.  Any other
-use is strictly prohibited.

@@ -1,8 +1,0 @@
-wsjt is now installed.
-When used for the first time, the wsjt wrapper will create a ~/.wsjt
-directory which will be your working directory and have various setup files.
-
-In particular, CALL3.TXT will most likely be out of date.
-Update from http://www.dl8ebw.de/DATABASE/database.html
-
-Now, go chase some EME or meteor shower.
