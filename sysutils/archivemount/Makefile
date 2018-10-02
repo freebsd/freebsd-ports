@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.cybernoia.de/software/archivemount/
 MAINTAINER=	jirnov@gmail.com
 COMMENT=	Mount archives with FUSE
 
-LICENSE=	GPLv2
+LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		fuse gmake iconv libarchive pkgconfig

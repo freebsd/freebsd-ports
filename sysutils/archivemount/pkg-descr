@@ -3,4 +3,4 @@ Archivemount is a piece of glue code between libarchive
 (http://fuse.sourceforge.net). It can be used to mount a (possibly compressed)
 archive (as in .tar.gz or .tar.bz2) and use it like an ordinary filesystem.
 
-WWW: http://www.cybernoia.de/software/archivemount/
+WWW: https://www.cybernoia.de/software/archivemount.html
