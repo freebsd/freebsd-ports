@@ -243,6 +243,7 @@ lib/gnucash/libgncmod-ledger-core.so
 lib/gnucash/libgncmod-locale-reports-us.so
 lib/gnucash/libgncmod-log-replay.so
 %%OFX%%lib/gnucash/libgncmod-ofx.so
+%%PYTHON%%lib/gnucash/libgncmod-python.so
 lib/gnucash/libgncmod-qif-import.so
 lib/gnucash/libgncmod-register-core.so
 lib/gnucash/libgncmod-register-gnome.so
@@ -287,11 +288,9 @@ lib/gnucash/scm/ccache/2.0/gnucash/report/aging.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/balsheet-eg.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/business-reports.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/customer-summary.go
-lib/gnucash/scm/ccache/2.0/gnucash/report/easy-invoice.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/eguile-gnc.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/eguile-html-utilities.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/eguile-utilities.go
-lib/gnucash/scm/ccache/2.0/gnucash/report/fancy-invoice.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/hello-world.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/invoice.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/job-report.go
@@ -308,7 +307,6 @@ lib/gnucash/scm/ccache/2.0/gnucash/report/report-system/report-collectors.go
 %%TEST%%lib/gnucash/scm/ccache/2.0/gnucash/report/report-system/test/test-collectors.go
 %%TEST%%lib/gnucash/scm/ccache/2.0/gnucash/report/report-system/test/test-extras.go
 %%TEST%%lib/gnucash/scm/ccache/2.0/gnucash/report/report-system/test/test-load-report-system-module.go
-%%TEST%%lib/gnucash/scm/ccache/2.0/gnucash/report/report-system/test/test-report-utilities.go
 %%TEST%%lib/gnucash/scm/ccache/2.0/gnucash/report/report-system/test/test-test-extras.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/standard-reports.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/standard-reports/account-piecharts.go
@@ -1060,11 +1058,9 @@ share/applications/gnucash.desktop
 %%DATADIR%%/scm/gnucash/report/balsheet-eg.scm
 %%DATADIR%%/scm/gnucash/report/business-reports.scm
 %%DATADIR%%/scm/gnucash/report/customer-summary.scm
-%%DATADIR%%/scm/gnucash/report/easy-invoice.scm
 %%DATADIR%%/scm/gnucash/report/eguile-gnc.scm
 %%DATADIR%%/scm/gnucash/report/eguile-html-utilities.scm
 %%DATADIR%%/scm/gnucash/report/eguile-utilities.scm
-%%DATADIR%%/scm/gnucash/report/fancy-invoice.scm
 %%DATADIR%%/scm/gnucash/report/hello-world.scm
 %%DATADIR%%/scm/gnucash/report/invoice.scm
 %%DATADIR%%/scm/gnucash/report/job-report.scm
@@ -1083,7 +1079,6 @@ share/applications/gnucash.desktop
 %%TEST%%%%DATADIR%%/scm/gnucash/report/report-system/test/test-collectors.scm
 %%TEST%%%%DATADIR%%/scm/gnucash/report/report-system/test/test-extras.scm
 %%TEST%%%%DATADIR%%/scm/gnucash/report/report-system/test/test-load-report-system-module.scm
-%%TEST%%%%DATADIR%%/scm/gnucash/report/report-system/test/test-report-utilities.scm
 %%TEST%%%%DATADIR%%/scm/gnucash/report/report-system/test/test-test-extras.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/account-piecharts.scm
