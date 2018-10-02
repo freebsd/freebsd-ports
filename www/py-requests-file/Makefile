@@ -6,7 +6,7 @@ PORTVERSION=	1.4.2
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transport adapter for use with the Requests Python library
 
 LICENSE=	APACHE20
