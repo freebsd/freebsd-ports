@@ -14,7 +14,7 @@ COMMENT=	Canvas widget for GTK+ 3
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pathfix pkgconfig tar:xz
+USES=		gmake libtool pathfix pkgconfig python tar:xz
 USE_GNOME=	gtk30 introspection:build
 USE_LDCONFIG=	yes
 
