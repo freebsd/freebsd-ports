@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	highwayhash
-PORTVERSION=	g20180626
+PORTVERSION=	g20181002
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,20 +19,10 @@ ONLY_FOR_ARCHS_REASON=	Assembly is implemented only for specific architectures i
 USES=		compiler:c++11-lib gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	9099074
+GH_TAGNAME=	c5ee50b
 USE_LDCONFIG=	yes
 
 # workaround for https://github.com/google/highwayhash/issues/69
-MAKE_ARGS=	INCDIR=${PREFIX}/include XLIBDIR=${PREFIX}/lib
-
-post-patch:
-	# Install flags upstream issue: https://github.com/google/highwayhash/issues/58
-	@${REINPLACE_CMD} -e '\
-		s|LIBDIR|XLIBDIR|; \
-		s| -O3||; \
-		s|install -m0755 high|${INSTALL_DATA} high|; \
-		s|install -m0755 lib|${INSTALL_LIB} lib|' \
-		${WRKSRC}/Makefile
 
 post-install:
 	# Symlink upstream issue: https://github.com/google/highwayhash/issues/57
