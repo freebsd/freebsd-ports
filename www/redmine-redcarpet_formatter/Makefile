@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=v
 CATEGORIES=	www
 PKGNAMEPREFIX=	redmine-
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redmine plugin to support Markdown
 
 LICENSE=	GPLv2

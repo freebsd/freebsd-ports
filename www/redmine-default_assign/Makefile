@@ -6,7 +6,7 @@ PORTVERSION=	0.6
 CATEGORIES=	www
 PKGNAMEPREFIX=	redmine-
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Assign Redmine tickets by default
 
 LICENSE=	GPLv2+

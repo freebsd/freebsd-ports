@@ -8,7 +8,7 @@ MASTER_SITES=	https://bitbucket.org/akiko_pusu/redmine_issue_templates/downloads
 PKGNAMEPREFIX=	redmine-
 DISTNAME=	redmine_${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redmine project issue templates plugin
 
 LICENSE=	GPLv2+

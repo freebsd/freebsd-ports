@@ -6,7 +6,7 @@ PORTVERSION=	0.0.20120612
 CATEGORIES=	www
 PKGNAMEPREFIX=	redmine-
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redmine QA Contact plugin
 
 NO_ARCH=	yes

@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	redmine-
 DISTNAME=	${BB_COMMIT}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SSO authentication method for Redmine
 
 RUN_DEPENDS=	redmine-a_common_libs>0:www/redmine-a_common_libs
