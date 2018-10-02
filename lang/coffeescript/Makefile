@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	coffeescript
-DISTVERSION=	2.3.1
+DISTVERSION=	2.3.2
 CATEGORIES=	lang
 
 MAINTAINER=	egypcio@googlemail.com
