@@ -2,7 +2,7 @@
 
 PORTNAME=	packr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13.5
+DISTVERSION=	1.13.7
 CATEGORIES=	devel
 
 MAINTAINER=	dg@syrec.org
@@ -16,7 +16,7 @@ USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	gobuffalo
 GH_SUBDIR=	src/github.com/gobuffalo/packr
-GH_TUPLE=	golang:net:c394268:net/src/golang.org/x/net \
+GH_TUPLE=	golang:net:2f5d238:net/src/golang.org/x/net \
 		golang:sync:1d60e46:sync/src/golang.org/x/sync \
 		pkg:errors:v0.8.0:errors/src/github.com/pkg/errors \
 		spf13:cobra:v0.0.3:cobra/src/github.com/spf13/cobra \
