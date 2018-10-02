@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	security
 PKGNAMESUFFIX=	3
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight network intrusion detection system
 
 LICENSE=	GPLv2

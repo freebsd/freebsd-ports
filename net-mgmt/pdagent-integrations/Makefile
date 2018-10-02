@@ -6,7 +6,7 @@ PORTVERSION=	1.4
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt python
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PagerDuty integrations for monitoring monitoring tools
 
 LICENSE=	BSD3CLAUSE

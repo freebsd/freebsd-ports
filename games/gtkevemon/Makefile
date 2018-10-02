@@ -5,7 +5,7 @@ PORTVERSION=	1.10.2016.02.17
 PORTREVISION=	2
 CATEGORIES=	games
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Skill monitoring standalone application for EVE Online
 
 LIB_DEPENDS=	libgtkmm-3.0.so:x11-toolkits/gtkmm30 \

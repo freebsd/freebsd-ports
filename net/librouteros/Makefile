@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://verplant.org/librouteros/files/
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for communicating with network devices by MikroTik
 
 LICENSE=	GPLv2

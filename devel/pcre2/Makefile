@@ -9,7 +9,7 @@ MASTER_SITES=	SF/pcre/${PORTNAME}/${PORTVERSION} \
 		ftp://ftp.fu-berlin.de/unix/misc/pcre/ \
 		ftp://ftp.tin.org/pub/libs/pcre/
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Compatible Regular Expressions library, version 2
 
 LICENSE=	BSD3CLAUSE

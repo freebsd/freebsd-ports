@@ -7,7 +7,7 @@ PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	https://bolt.cm/distribution/
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sophisticated, lightweight & simple CMS
 
 LICENSE=	MIT

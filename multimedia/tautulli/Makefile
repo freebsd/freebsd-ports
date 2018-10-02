@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=v
 PORTREVISION=	0
 CATEGORIES=	multimedia python
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitoring, analytics, and notifications for Plex Media Server
 
 LICENSE=	GPLv3

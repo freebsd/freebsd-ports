@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/feld
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple AMaViS statistics generator based on rrdtool
 
 RUN_DEPENDS=	rrdtool>=0:databases/rrdtool
