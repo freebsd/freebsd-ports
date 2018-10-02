@@ -8,7 +8,7 @@ CATEGORIES=	converters devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another bencode implementation
 
 LICENSE=	MIT
