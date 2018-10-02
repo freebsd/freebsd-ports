@@ -1,0 +1,11 @@
+--- test/bench/CMakeLists.txt.orig	2018-10-02 17:06:04 UTC
++++ test/bench/CMakeLists.txt
+@@ -7,7 +7,7 @@ LIST(APPEND src_davix_bench "davix_bench
+ #include_directories(/usr/include/davix)
+ 
+ add_executable(davix-bench ${src_davix_bench})
+-target_link_libraries(davix-bench libdavix ${CMAKE_THREAD_LIBS_INIT})
++target_link_libraries(davix-bench libdavix ${CMAKE_THREAD_LIBS_INIT} uuid)
+ 
+ function(test_read url opt input)
+     add_test(test_bench_read_${url} davix-bench ${opt} ${url} ${input})

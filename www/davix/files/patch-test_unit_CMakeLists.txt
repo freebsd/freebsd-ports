@@ -1,0 +1,11 @@
+--- test/unit/CMakeLists.txt.orig	2018-10-02 17:02:58 UTC
++++ test/unit/CMakeLists.txt
+@@ -33,7 +33,7 @@ add_executable(g_test_unit_davix_exe ${s
+                 ${src_httprequest} ${src_datetime} ${src_neon} ${src_parser} ${src_auth} ${src_utils} ${src_parser} ${SRC_BASE64}
+                 ${SRC_HMACSHA1} ${src_files} ${src_alibxx})
+ 
+-target_link_libraries(g_test_unit_davix_exe alibxx_core davix_tool_lib libdavix gtest gtest_main ${CMAKE_THREAD_LIBS_INIT} ${LIBSSL_PKG_LIBRARIES})
++target_link_libraries(g_test_unit_davix_exe alibxx_core davix_tool_lib libdavix gtest gtest_main ${CMAKE_THREAD_LIBS_INIT} ${LIBSSL_PKG_LIBRARIES} uuid)
+ add_dependencies(g_test_unit_davix_exe libdavix)
+ 
+ 
