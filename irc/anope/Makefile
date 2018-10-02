@@ -6,7 +6,7 @@ PORTVERSION=	2.0.5
 PORTREVISION=	0
 CATEGORIES=	irc
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of IRC services for IRC networks
 
 LICENSE=	GPLv2
