@@ -1,0 +1,6 @@
+DTrace module for FreeBSD dwatch(1) to produce JSON logs. JSON (JavaScript
+Object Notation) is easily consumed by log aggregators such as Kafka and
+Telegraf and visualizers like Vizceral. With these modules you can get
+data out of the kernel/userland for use in such aggregators/visualizers.
+
+WWW: https://fraubsd.org/dwatch-json/

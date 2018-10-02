@@ -296,6 +296,7 @@
     SUBDIR += dvtm
     SUBDIR += dwatch
     SUBDIR += dwatch-gource
+    SUBDIR += dwatch-json
     SUBDIR += dwatch-pwsnoop
     SUBDIR += e2fsprogs
     SUBDIR += ec2-scripts
