@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	roundcube-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	rcube_plg_veximaccountadmin
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Roundcube vexim account admin plugin
 
 LICENSE=	GPLv3
