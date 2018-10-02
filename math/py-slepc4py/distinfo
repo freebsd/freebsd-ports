@@ -1,7 +1,3 @@
-TIMESTAMP = 1529916157
-SHA256 (slepc4py-3.9.0.tar.gz) = 67ed4ffed36c076448d6a0148edfad65d6610b9838df97c79f6fc5d7ec06b90b
-SIZE (slepc4py-3.9.0.tar.gz) = 829386
-SHA256 (ab877906425e/raw) = ef07a5622ce5a55dc555455aff5c59a6395bdef74b11aa576d58642db7c4ccfc
-SIZE (ab877906425e/raw) = 2706
-SHA256 (ecf673e8b8da/raw) = a2e66c9ef4f502499236fe171fc5f7723a91f3c48122fa20de63070fbb6e704f
-SIZE (ecf673e8b8da/raw) = 923
+TIMESTAMP = 1538521030
+SHA256 (slepc4py-3.10.0.tar.gz) = 326cbab709836cd5fe8e4adb60eaabe4e24537715bededd2812f3bc47c4b0474
+SIZE (slepc4py-3.10.0.tar.gz) = 835166

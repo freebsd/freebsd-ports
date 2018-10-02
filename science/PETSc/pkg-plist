@@ -26,6 +26,7 @@ include/petsc/private/bagimpl.h
 include/petsc/private/characteristicimpl.h
 include/petsc/private/dmadaptorimpl.h
 include/petsc/private/dmdaimpl.h
+include/petsc/private/dmfieldimpl.h
 include/petsc/private/dmforestimpl.h
 include/petsc/private/dmimpl.h
 include/petsc/private/dmlabelimpl.h
@@ -40,11 +41,18 @@ include/petsc/private/f90impl.h
 include/petsc/private/fortranimpl.h
 include/petsc/private/glvisvecimpl.h
 include/petsc/private/glvisviewerimpl.h
-include/petsc/private/hash.h
+include/petsc/private/hashmap.h
+include/petsc/private/hashmapi.h
+include/petsc/private/hashmapij.h
+include/petsc/private/hashset.h
+include/petsc/private/hashseti.h
+include/petsc/private/hashsetij.h
+include/petsc/private/hashtable.h
 include/petsc/private/isimpl.h
 include/petsc/private/kernels/blockinvert.h
 include/petsc/private/kernels/blockmatmult.h
 include/petsc/private/kernels/blocktranspose.h
+include/petsc/private/kernels/khash.h
 include/petsc/private/kernels/petscaxpy.h
 include/petsc/private/kspimpl.h
 include/petsc/private/linesearchimpl.h
@@ -54,6 +62,7 @@ include/petsc/private/matorderimpl.h
 include/petsc/private/pcgamgimpl.h
 include/petsc/private/pcimpl.h
 include/petsc/private/pcmgimpl.h
+include/petsc/private/pcpatchimpl.h
 include/petsc/private/petscconvestimpl.h
 include/petsc/private/petscdsimpl.h
 include/petsc/private/petscfeimpl.h
@@ -66,6 +75,9 @@ include/petsc/private/taoimpl.h
 include/petsc/private/taolinesearchimpl.h
 include/petsc/private/tsimpl.h
 include/petsc/private/vecimpl.h
+include/petsc/private/vecscatterimpl.h
+include/petsc/private/vieweradios2impl.h
+include/petsc/private/vieweradiosimpl.h
 include/petsc/private/viewerimpl.h
 include/petscao.h
 include/petscao.mod
@@ -92,6 +104,7 @@ include/petscdmdadef.mod
 include/petscdmdatypes.h
 include/petscdmdef.mod
 include/petscdmdefdummy.mod
+include/petscdmfield.h
 include/petscdmforest.h
 include/petscdmforest.mod
 include/petscdmforestdef.mod
@@ -207,6 +220,7 @@ lib/petsc/conf/petscvariables
 lib/petsc/conf/reconfigure-arch-%%PYTHON_PLATFORM%%-c-debug.py
 lib/petsc/conf/rules
 lib/petsc/conf/test
+lib/petsc/conf/test.common
 lib/petsc/conf/variables
 libdata/pkgconfig/PETSc.pc
 %%DATADIR%%/datafiles/matrices/amesos2_test_mat0.mtx
@@ -240,6 +254,8 @@ libdata/pkgconfig/PETSc.pc
 %%DATADIR%%/datafiles/meshes/TwoQuads.exo
 %%DATADIR%%/datafiles/meshes/annulus-20.exo
 %%DATADIR%%/datafiles/meshes/blockcylinder-50.exo
+%%DATADIR%%/datafiles/meshes/blockcylinder-50.h5
+%%DATADIR%%/datafiles/meshes/blockcylinder-50.xmf
 %%DATADIR%%/datafiles/meshes/cow.msh
 %%DATADIR%%/datafiles/meshes/cube_5tets.cas
 %%DATADIR%%/datafiles/meshes/cube_5tets_ascii.cas
@@ -249,6 +265,8 @@ libdata/pkgconfig/PETSc.pc
 %%DATADIR%%/datafiles/meshes/doublet-tet.msh
 %%DATADIR%%/datafiles/meshes/grid_c.cgns
 %%DATADIR%%/datafiles/meshes/horse.ply.bz2
+%%DATADIR%%/datafiles/meshes/hybrid_tetwedge.msh
+%%DATADIR%%/datafiles/meshes/hybrid_triquad.msh
 %%DATADIR%%/datafiles/meshes/sevenside-quad-15.exo
 %%DATADIR%%/datafiles/meshes/sevenside-quad.exo
 %%DATADIR%%/datafiles/meshes/sevenside.exo
@@ -262,6 +280,7 @@ libdata/pkgconfig/PETSc.pc
 %%DATADIR%%/datafiles/meshes/square_periodic_bin.msh
 %%DATADIR%%/datafiles/meshes/square_quad.msh
 %%DATADIR%%/datafiles/meshes/squaremotor-30.exo
+%%DATADIR%%/datafiles/meshes/surfacesphere_bin.msh
 %%DATADIR%%/datafiles/meshes/texas.msh
 %%DATADIR%%/datafiles/meshes/tut21.cgns
 %%DATADIR%%/matlab/@PetscOpenFile/PetscOpenFile.m
