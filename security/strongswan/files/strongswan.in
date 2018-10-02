@@ -7,27 +7,31 @@
 # BEFORE: LOGIN
 # KEYWORD: shutdown
 
-command="%%PREFIX%%/sbin/ipsec"
 . /etc/rc.subr
 
-name="strongswan"
-rcvar=${name}_enable
+name=strongswan
+rcvar=strongswan_enable
+
 extra_commands="reload statusall"
 
 load_rc_config $name
 
-start_cmd="strongswan_command start"
-stop_cmd="strongswan_command stop"
-restart_cmd="strongswan_command restart"
-status_cmd="strongswan_command status"
-reload_cmd="strongswan_command reload"
-statusall_cmd="strongswan_command statusall"
+command="%%PREFIX%%/sbin/ipsec"
 
+start_precmd="strongswan_precmd"
+stop_cmd="strongswan_cmd"
+status_cmd="strongswan_cmd"
+reload_cmd="strongswan_cmd"
+statusall_cmd="strongswan_cmd"
 
-strongswan_command()
+strongswan_precmd()
 {
-	$command ${rc_arg}
+	command_args=${rc_arg}
+}
+
+strongswan_cmd()
+{
+	${command} ${rc_arg}
 }
 
 run_rc_command "$1"
-
