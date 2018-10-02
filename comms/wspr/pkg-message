@@ -1,4 +1,0 @@
-wspr is now installed.
-wspr now has some experimental code for controlling
-rigs using rigctl from hamlib. Check supported_rigs.txt in docs.
-Now, go chase some HF dx.
