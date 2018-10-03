@@ -12,9 +12,6 @@
 %%PYTHON_SITELIBDIR%%/dbus/_expat_introspect_parser.py
 %%PYTHON_SITELIBDIR%%/dbus/_expat_introspect_parser.pyc
 %%PYTHON_SITELIBDIR%%/dbus/_expat_introspect_parser.pyo
-%%PYTHON_SITELIBDIR%%/dbus/_version.py
-%%PYTHON_SITELIBDIR%%/dbus/_version.pyc
-%%PYTHON_SITELIBDIR%%/dbus/_version.pyo
 %%PYTHON_SITELIBDIR%%/dbus/bus.py
 %%PYTHON_SITELIBDIR%%/dbus/bus.pyc
 %%PYTHON_SITELIBDIR%%/dbus/bus.pyo
@@ -33,9 +30,9 @@
 %%PYTHON_SITELIBDIR%%/dbus/glib.py
 %%PYTHON_SITELIBDIR%%/dbus/glib.pyc
 %%PYTHON_SITELIBDIR%%/dbus/glib.pyo
-%%PYTHON_SITELIBDIR%%/dbus/gobject_service.py
-%%PYTHON_SITELIBDIR%%/dbus/gobject_service.pyc
-%%PYTHON_SITELIBDIR%%/dbus/gobject_service.pyo
+%%PYTHON2%%%%PYTHON_SITELIBDIR%%/dbus/gobject_service.py
+%%PYTHON2%%%%PYTHON_SITELIBDIR%%/dbus/gobject_service.pyc
+%%PYTHON2%%%%PYTHON_SITELIBDIR%%/dbus/gobject_service.pyo
 %%PYTHON_SITELIBDIR%%/dbus/lowlevel.py
 %%PYTHON_SITELIBDIR%%/dbus/lowlevel.pyc
 %%PYTHON_SITELIBDIR%%/dbus/lowlevel.pyo
