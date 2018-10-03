@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phplist
-PORTVERSION=	3.3.1
+PORTVERSION=	3.3.4
 CATEGORIES=	mail www
 MASTER_SITES=	SF
 
@@ -21,7 +21,7 @@ NO_ARCH=	yes
 
 PEARDIR?=	${LOCALBASE}/share/pear
 
-PORTDOCS=	CONTRIBUTING.md COPYING INSTALL PEOPLE README.md TODO UPGRADE VERSION
+PORTDOCS=	CONTRIBUTING.md COPYING INSTALL PEOPLE README.md TESTING.md TODO UPGRADE VERSION
 
 OPTIONS_DEFINE=	DOCS
 SUB_FILES=	phplist
@@ -35,6 +35,7 @@ post-extract:
 do-install:
 	@${FIND} ${WRKSRC}/public_html/ -type f -regex '.*[^!-~].*' -delete
 	@${FIND} ${WRKSRC}/public_html/ -type l -delete
+	@${FIND} ${WRKSRC}/public_html/ -type d -empty -delete
 	${MKDIR} ${STAGEDIR}${WWWDIR}/
 	(cd ${WRKSRC}/public_html/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 	${INSTALL_SCRIPT} ${WRKDIR}/phplist ${STAGEDIR}${PREFIX}/bin
