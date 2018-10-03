@@ -1237,6 +1237,7 @@
     SUBDIR += ssync
     SUBDIR += stalepid
     SUBDIR += stanchion
+    SUBDIR += stepsync
     SUBDIR += stmpclean
     SUBDIR += storcli
     SUBDIR += stow
