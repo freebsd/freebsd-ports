@@ -2,8 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	ccache
-PORTVERSION=	3.4.2
-PORTREVISION=	1
+.if defined(OPTIONS_SLAVE) && ${OPTIONS_SLAVE:MMEMCACHED}
+PORTVERSION=	3.5.dev.20180926
+.else
+PORTVERSION=	3.4.3
+.endif
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://www.samba.org/ftp/ccache/ \
 		LOCAL/bdrewery
@@ -68,11 +72,14 @@ STATIC_LDFLAGS=	-static
 
 .if ${PORT_OPTIONS:MMEMCACHED}
 USE_GITHUB=	yes
-GH_TAGNAME=	dd9123d3bc0763ef7133330e20ca3e3409a08904
+GH_TAGNAME=	f7712082106bef085515f86ae47e7dbbd2a48b57
 MASTER_SITES=
 DISTINFO_FILE=	${MASTERDIR}/distinfo.memcached
 BUILD_DEPENDS+=	${LOCALBASE}/bin/a2x:textproc/asciidoc
 ALL_TARGET=	all docs
+.else
+# Only needed pre-3.5
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure.ac
 .endif
 
 .include <bsd.port.pre.mk>
