@@ -1,0 +1,24 @@
+deal.II - a name that originally meant to indicate that it is the successor to
+the Differential Equations Analysis Library - is a C++ program library targeted
+at the computational solution of partial differential equations using adaptive
+finite elements. It uses state-of-the-art programming techniques to offer you a
+modern interface to the complex data structures and algorithms required.
+
+The main aim of deal.II is to enable rapid development of modern finite element
+codes, using among other aspects adaptive meshes and a wide array of tools
+classes often used in finite element program. Writing such programs is a
+non-trivial task, and successful programs tend to become very large and complex.
+We believe that this is best done using a program library that takes care of the
+details of grid handling and refinement, handling of degrees of freedom, input
+of meshes and output of results in graphics formats, and the like. Likewise,
+support for several space dimensions at once is included in a way such that
+programs can be written independent of the space dimension without unreasonable
+penalties on run-time and memory consumption.
+
+deal.II is widely used in many academic and commercial projects. For its
+creation, its principal authors have received the 2007 J. H. Wilkinson Prize for
+Numerical Software. It is also part of the industry standard SPEC CPU 2006 and
+SPEC CPU 2017 benchmark suites used to determine the speed of computers and
+compilers.
+
+WWW: https://www.dealii.org/
