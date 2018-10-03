@@ -1,0 +1,7 @@
+StepSync allows keeping two folders synchronized, it can be thus used as a
+back-up utility.  It manages two trees, starting from a folder as root and
+recursing in them, determines which files were added or removed or changed
+(based on the last modification date), and distinctly allows to insert new
+files, update, or delete.
+
+WWW: http://gap.nongnu.org/stepsync/
