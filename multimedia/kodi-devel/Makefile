@@ -2,8 +2,7 @@
 
 PORTNAME=	kodi
 CATEGORIES=	multimedia
-DISTVERSION=	18.0.g201809092101
-PORTREVISION=	2
+DISTVERSION=	18.0.g201810021630
 PKGNAMESUFFIX?=	-devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -55,7 +54,7 @@ USES=		autoreconf:build cmake:outsource,noninja compiler:c++11-lib \
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
 GH_PROJECT=	xbmc
-GH_TAGNAME=	18.0b2-Leia
+GH_TAGNAME=	18.0b3-Leia
 USE_GNOME=	libxslt libxml2
 USE_JAVA=	yes
 JAVA_BUILD=	yes
@@ -109,7 +108,10 @@ DBUS_CMAKE_BOOL=	ENABLE_DBUS
 GBM_BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat
 GBM_CMAKE_ON=		-DCORE_PLATFORM_NAME:STRING="gbm" \
 			-DGBM_RENDER_SYSTEM:STRING="gl"
-GBM_LIB_DEPENDS=	libinput.so:x11/libinput \
+GBM_CFLAGS=		-I${LOCALBASE}/include/libepoll-shim
+GBM_LDFLAGS=		-L${LOCALBASE}/lib -lepoll-shim
+GBM_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
+			libinput.so:x11/libinput \
 			libxkbcommon.so:x11/libxkbcommon
 
 LIBBLURAY_LIB_DEPENDS=	libbluray.so:multimedia/libbluray
@@ -131,6 +133,7 @@ RPI_CMAKE_ON=		-DCORE_PLATFORM_NAME:STRING="rbpi"
 RPI_LIB_DEPENDS=	libbrcmEGL.so:misc/raspberrypi-userland
 RPI_LIB_DEPENDS_OFF=	libdrm.so:graphics/libdrm
 RPI_PREVENTS=		VAAPI VDPAU
+RPI_USES_OFF=		gl
 RPI_USE_OFF=		GL=egl,gl,glu
 
 SMB_USES=		samba:lib
