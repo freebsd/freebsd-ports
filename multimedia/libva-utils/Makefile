@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libva-utils
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	01org
+GH_ACCOUNT=	intel
 
 OPTIONS_DEFINE=	DEBUG WAYLAND
 WAYLAND_DESC=	Support wayland protocol

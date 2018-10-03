@@ -1,5 +1,7 @@
 bin/avcenc
+bin/avcstreamoutdemo
 bin/h264encode
+bin/hevcencode
 bin/jpegenc
 bin/loadjpeg
 bin/mpeg2vaenc
@@ -8,4 +10,5 @@ bin/putsurface
 %%WAYLAND%%bin/putsurface_wayland
 bin/vainfo
 bin/vavpp
+bin/vp8enc
 bin/vp9enc
