@@ -8,7 +8,7 @@
 
 PORTNAME=	ipsec-tools
 PORTVERSION=	0.8.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -36,12 +36,12 @@ PLIST_SUB+=	STATEDIR=${STATEDIR}
 
 OPTIONS_DEFINE=	DEBUG IPV6 ADMINPORT STATS DPD NATT NATTF FRAG HYBRID PAM \
 		RADIUS LDAP GSSAPI SAUNSPEC RC5 IDEA DOCS EXAMPLES WCPSKEY
-OPTIONS_DEFAULT=	DEBUG DPD NATT FRAG HYBRID
+OPTIONS_DEFAULT=	ADMINPORT DEBUG DPD NATT FRAG HYBRID WCPSKEY
 
 ADMINPORT_DESC=	Enable Admin port
 STATS_DESC=	Statistics logging function
 DPD_DESC=	Dead Peer Detection
-NATT_DESC=	NAT-Traversal (kernel-patch required before 11.0-STABLE)
+NATT_DESC=	NAT-Traversal (kernel-patch required before 11.1)
 NATTF_DESC=	require NAT-Traversal (fail without kernel-patch)
 FRAG_DESC=	IKE fragmentation payload support
 HYBRID_DESC=	Hybrid, Xauth and Mode-cfg support
