@@ -14,4 +14,5 @@ lib/libyang/extensions/metadata.so
 lib/libyang/extensions/nacm.so
 lib/libyang/extensions/yangdata.so
 lib/libyang/user_types/user_date_and_time.so
+libdata/pkgconfig/libyang.pc
 man/man1/yanglint.1.gz
