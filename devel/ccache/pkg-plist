@@ -1,6 +1,6 @@
 bin/ccache
 bin/ccache-update-links
-man/man1/ccache.1.gz
+%%NO_MEMCACHED%%man/man1/ccache.1.gz
 %%CCLINKDIR%%/world/ccache
 %%TINDERBOX%%%%DATADIR%%/ccache.tar
 @postexec echo "Create compiler links..."

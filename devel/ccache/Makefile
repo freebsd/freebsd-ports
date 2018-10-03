@@ -75,8 +75,11 @@ USE_GITHUB=	yes
 GH_TAGNAME=	f7712082106bef085515f86ae47e7dbbd2a48b57
 MASTER_SITES=
 DISTINFO_FILE=	${MASTERDIR}/distinfo.memcached
+.if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	${LOCALBASE}/bin/a2x:textproc/asciidoc
 ALL_TARGET=	all docs
+PLIST_FILES+=	man/man1/ccache.1.gz
+.endif
 .else
 # Only needed pre-3.5
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure.ac
@@ -130,7 +133,11 @@ post-build-TINDERBOX-on:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ccache ${STAGEDIR}${PREFIX}/bin
+	# Memcached uses the 3.5 dev branch which requires asciidoc to generate
+	# ccache.1.
+.if !${PORT_OPTIONS:MMEMCACHED} || ${PORT_OPTIONS:MDOCS}
 	${INSTALL_MAN} ${WRKSRC}/doc/ccache.1 ${STAGEDIR}${PREFIX}/man/man1
+.endif
 	${MKDIR} ${STAGEDIR}${PREFIX}/${CCLINKDIR}/world
 	${INSTALL_SCRIPT} ${WRKDIR}/world-ccache \
 		${STAGEDIR}${PREFIX}/${CCLINKDIR}/world/ccache
