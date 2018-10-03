@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mosquitto
-PORTVERSION=	1.4.14
-PORTREVISION=	2
+PORTVERSION=	1.5.3
 CATEGORIES=	net
 MASTER_SITES=	http://mosquitto.org/files/source/
 
@@ -25,6 +24,8 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USERS=		nobody
 
 OPTIONS_DEFINE=	WS
+
+CMAKE_ARGS+=	-DCMAKE_LIBDATADIR="${PREFIX}/libdata"
 
 WS_DESC=	MQTT over Websockets support
 WS_LIB_DEPENDS=	libwebsockets.so:net/libwebsockets
