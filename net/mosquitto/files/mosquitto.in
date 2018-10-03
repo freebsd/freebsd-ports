@@ -27,7 +27,7 @@ mosquitto_config=${mosquitto_config:="%%PREFIX%%/etc/mosquitto/mosquitto.conf"}
 
 command=%%PREFIX%%/sbin/mosquitto
 command_args="-c ${mosquitto_config} -d"
-pidfile=$(grep pid_file ${mosquitto_config} | awk '{print($2)}')
+pidfile=$(grep pidfile ${mosquitto_config} | awk '{print($2)}')
 required_files=${mosquitto_config}
 
 extra_commands="reload"

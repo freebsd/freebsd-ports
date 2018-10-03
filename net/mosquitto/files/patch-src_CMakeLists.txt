@@ -1,14 +1,14 @@
---- src/CMakeLists.txt.orig	2017-07-10 22:46:01 UTC
+--- src/CMakeLists.txt.orig	2018-09-25 15:27:43 UTC
 +++ src/CMakeLists.txt
-@@ -77,6 +77,7 @@ if (WIN32 OR CYGWIN)
+@@ -114,6 +114,7 @@ if (WIN32 OR CYGWIN)
  endif (WIN32 OR CYGWIN)
  
  add_definitions (-DWITH_BROKER)
 +add_definitions (-DWITH_THREADING)
  
- add_executable(mosquitto ${MOSQ_SRCS})
+ set (MOSQ_LIBS ${MOSQ_LIBS} ${OPENSSL_LIBRARIES})
  
-@@ -96,7 +97,7 @@ if (UNIX)
+@@ -131,7 +132,7 @@ if (UNIX)
  	if (APPLE)
  		set (MOSQ_LIBS ${MOSQ_LIBS} dl m)
  	else (APPLE)
@@ -17,10 +17,11 @@
  		find_library(LIBRT rt)
  		if (LIBRT)
  			set (MOSQ_LIBS ${MOSQ_LIBS} rt)
-@@ -141,6 +142,5 @@ if (${WITH_TLS} STREQUAL ON)
+@@ -185,7 +186,6 @@ if (${WITH_TLS} STREQUAL ON)
  endif (${WITH_TLS} STREQUAL ON)
  
- if (UNIX)
+ if (UNIX AND NOT APPLE)
 -	install(CODE "EXEC_PROGRAM(/sbin/ldconfig)")
- endif (UNIX)
+ endif (UNIX AND NOT APPLE)
+ 
  
