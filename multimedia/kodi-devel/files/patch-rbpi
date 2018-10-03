@@ -1,56 +1,26 @@
---- xbmc/windowing/rpi/WinSystemRpi.cpp.orig	2018-05-22 11:44:17 UTC
+--- xbmc/windowing/rpi/WinSystemRpi.cpp.orig	2018-10-02 14:30:37 UTC
 +++ xbmc/windowing/rpi/WinSystemRpi.cpp
-@@ -32,8 +32,15 @@
- #include "settings/DisplaySettings.h"
- #include "guilib/DispResource.h"
- #include "utils/log.h"
-+#include "utils/StringUtils.h"
- #include "cores/AudioEngine/AESinkFactory.h"
- #include "cores/AudioEngine/Sinks/AESinkPi.h"
-+#ifdef HAS_PULSEAUDIO
-+#include "cores/AudioEngine/Sinks/AESinkPULSE.h"
-+#endif
-+#ifdef HAS_SNDIO
-+#include "cores/AudioEngine/Sinks/AESinkSNDIO.h"
-+#endif
- #include "platform/linux/powermanagement/LinuxPowerSyscall.h"
- 
- #include <EGL/egl.h>
-@@ -54,7 +61,36 @@ CWinSystemRpi::CWinSystemRpi() :
-   m_rpi = new CRPIUtils();
- 
-   AE::CAESinkFactory::ClearSinks();
--  CAESinkPi::Register();
-+
-+  std::string envSink;
-+  if (getenv("AE_SINK"))
-+    envSink = getenv("AE_SINK");
-+  if (StringUtils::EqualsNoCase(envSink, "PULSE"))
+@@ -52,9 +52,22 @@ CWinSystemRpi::CWinSystemRpi() :
+   {
+     OPTIONALS::PulseAudioRegister();
+   }
++  else if (StringUtils::EqualsNoCase(envSink, "OSS"))
 +  {
-+#ifdef HAS_PULSEAUDIO
-+    CAESinkPulseaudio::Register();
-+#endif
++    OPTIONALS::OSSRegister();
 +  }
 +  else if (StringUtils::EqualsNoCase(envSink, "SNDIO"))
 +  {
-+#ifdef HAS_SNDIO
-+    CAESinkSNDIO::Register();
-+#endif
++    OPTIONALS::SndioRegister();
 +  }
-+  else if (StringUtils::EqualsNoCase(envSink, "PI"))
-+  {
-+    CAESinkPi::Register();
-+  }
-+  else
-+  {
-+#if defined(HAS_PULSEAUDIO)
-+     CAESinkPulseaudio::Register();
-+#elif defined(HAS_SNDIO)
-+     CAESinkSNDIO::Register();
-+#else
-+     CAESinkPi::Register();
-+#endif
-+  }
+   else
+   {
+-    OPTIONALS::ALSARegister();
++    if (!OPTIONALS::SndioRegister())
++    {
++      if(!OPTIONALS::ALSARegister())
++      {
++        OPTIONALS::OSSRegister();
++      }
+   }
+ 
    CLinuxPowerSyscall::Register();
-   m_lirc.reset(OPTIONALS::LircRegister());
-   m_libinput->Start();
