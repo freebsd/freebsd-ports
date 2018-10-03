@@ -1,20 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	nfs-ganesha-kmod
+DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2
 CATEGORIES=	net
-DISTVERSIONPREFIX=	v
 
 MAINTAINER=	fatih@gandi.net
 COMMENT=	Modules to implement required syscalls for userspace fileservers
 
 LICENSE=	BSD3CLAUSE
 
-USES=		kmod uidfix
+USES=		kmod
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Gandi
-GH_PROJECT=	nfs-ganesha-kmod
 
 GANESHA_MODULE=	getfhat \
 		fhreadlink \
