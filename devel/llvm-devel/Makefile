@@ -374,6 +374,8 @@ _COMPILER_RT_LIBS+= \
 	libclang_rt.asan-preinit-i386.a \
 	libclang_rt.asan_cxx-i386.a \
 	libclang_rt.builtins-i386.a \
+	libclang_rt.cfi-i386.a \
+	libclang_rt.cfi_diag-i386.a \
 	libclang_rt.lsan-i386.a \
 	libclang_rt.profile-i386.a \
 	libclang_rt.safestack-i386.a \
