@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	dbus
-PORTVERSION=	1.2.0
-PORTREVISION?=	2
+PORTVERSION=	1.2.8
+PORTREVISION?=	0
 CATEGORIES=	devel gnome python
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-python/
 PKGNAMEPREFIX?=	py
@@ -34,21 +34,17 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	HTMLDOCS DOCS EXAMPLES
 HTMLDOCS_DESC=	build html documentation
 HTMLDOCS_IMPLIES=	DOCS
-HTMLDOCS_CONFIGURE_OFF=	--disable-html-docs
-HTMLDOCS_BUILD_DEPENDS=	rst2html:textproc/py-docutils
+HTMLDOCS_CONFIGURE_ENABLE=	documentation
+HTMLDOCS_BUILD_DEPENDS=		sphinx-build:textproc/py-sphinx
 
-.include <bsd.port.options.mk>
-
-post-patch:
-.if ! ${PORT_OPTIONS:MDOCS}
+post-patch-DOCS-on:
 	@${REINPLACE_CMD} -e 's|HEADERS install-dist_docDATA|HEADERS|g ; \
 		s|PYTHON install-nodist_docDATA|PYTHON|g' \
 			${WRKSRC}/Makefile.in
-.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/dbus-1.0/dbus/
-	${INSTALL_DATA} ${WRKSRC}/include/dbus-python.h \
+	${INSTALL_DATA} ${WRKSRC}/include/dbus/dbus-python.h \
 		${STAGEDIR}${PREFIX}/include/dbus-1.0/dbus/dbus-python.h
 	${INSTALL_DATA} ${WRKSRC}/dbus-python.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/dbus-python.pc
@@ -61,16 +57,15 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR} && \
 		${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
 
-.if ${PORT_OPTIONS:MHTMLDOCS}
-	${INSTALL_DATA} ${WRKSRC}/*.html ${STAGEDIR}${DOCSDIR} && \
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
-.endif
+do-install-HTMLDOCS-on:
+	${INSTALL_DATA} ${WRKSRC}/doc/_build/*.html ${STAGEDIR}${DOCSDIR}
+
 .else # slave is defined
 LIB_DEPENDS+=	libdbus-glib-1.so:devel/dbus-glib
 RUN_DEPENDS+=	pydbus-common>=0:devel/pydbus-common
 USE_LDCONFIG=	yes
 USES+=		python
-USE_PYTHON=	flavors
+USE_PYTHON=	flavors py3kplist
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/include/dbus-1.0 \
