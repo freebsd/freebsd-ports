@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		mapserver
-PORTVERSION=		7.0.7
-PORTREVISION=	1
+PORTVERSION=		7.2.1
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -18,7 +17,8 @@ LIB_DEPENDS=		libgd.so:graphics/gd \
 			libgif.so:graphics/giflib \
 			libharfbuzz.so:print/harfbuzz \
 			libsvg.so:graphics/libsvg \
-			libfreetype.so:print/freetype2
+			libfreetype.so:print/freetype2 \
+			libprotobuf-c.so:devel/protobuf-c
 
 USES=			cpe cmake:outsource jpeg
 CPE_VENDOR=		umn
