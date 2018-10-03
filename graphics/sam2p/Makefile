@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sam2p
-PORTVERSION=	0.49.3
+PORTVERSION=	0.49.4
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/v${PORTVERSION}/
@@ -22,8 +22,9 @@ GH_ACCOUNT=	pts
 USES=		ghostscript:run gmake jpeg:run perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_path_pts_bash="${SH}"
+CONFIGURE_ENV=	MAKE=gmake ac_cv_path_pts_bash="${SH}"
 CONFIGURE_ARGS=	--enable-gif
+MAKE_ENV=	MAKE=gmake
 ALL_TARGET=	${PORTNAME}
 
 PORTDOCS=	*
