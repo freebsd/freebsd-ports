@@ -1,5 +1,5 @@
---- ext/cli_defaults/cli-defaults.sh.orig	2017-08-06 01:24:37.981353156 -0700
-+++ ext/cli_defaults/cli-defaults.sh	2017-08-06 01:39:53.280636611 -0700
+--- ext/cli_defaults/cli-defaults.sh.orig	2018-10-01 20:36:08 UTC
++++ ext/cli_defaults/cli-defaults.sh
 @@ -1,4 +1,4 @@
 -INSTALL_DIR="/opt/puppetlabs/server/apps/puppetserver"
 +INSTALL_DIR="%%DATADIR%%"

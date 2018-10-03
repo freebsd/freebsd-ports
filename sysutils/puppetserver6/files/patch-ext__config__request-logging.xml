@@ -1,7 +1,7 @@
---- ext/config/request-logging.xml.orig	2016-12-03 22:32:37.248735656 -0800
-+++ ext/config/request-logging.xml	2016-12-03 22:37:39.489420010 -0800
+--- ext/config/request-logging.xml.orig	2018-09-18 17:16:33 UTC
++++ ext/config/request-logging.xml
 @@ -1,10 +1,10 @@
- <configuration debug="false" scan="true">
+ <configuration debug="false">
      <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
 -        <file>/var/log/puppetlabs/puppetserver/puppetserver-access.log</file>
 +        <file>/var/log/puppetserver/puppetserver-access.log</file>
