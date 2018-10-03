@@ -2399,6 +2399,7 @@ go/src/cmd/go/testdata/script/README
 go/src/cmd/go/testdata/script/binary_only.txt
 go/src/cmd/go/testdata/script/build_GOTMPDIR.txt
 go/src/cmd/go/testdata/script/build_cache_compile.txt
+go/src/cmd/go/testdata/script/build_cache_gomips.txt
 go/src/cmd/go/testdata/script/build_cache_link.txt
 go/src/cmd/go/testdata/script/build_cache_output.txt
 go/src/cmd/go/testdata/script/cover_atomic_pkgall.txt
@@ -8460,6 +8461,11 @@ go/test/fixedbugs/issue26416.go
 go/test/fixedbugs/issue26426.go
 go/test/fixedbugs/issue26438.go
 go/test/fixedbugs/issue26495.go
+go/test/fixedbugs/issue27143.go
+go/test/fixedbugs/issue27278.go
+go/test/fixedbugs/issue27289.go
+go/test/fixedbugs/issue27695.go
+go/test/fixedbugs/issue27695b.go
 go/test/fixedbugs/issue3552.dir/one.go
 go/test/fixedbugs/issue3552.dir/two.go
 go/test/fixedbugs/issue3552.go
