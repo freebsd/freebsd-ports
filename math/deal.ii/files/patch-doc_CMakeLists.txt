@@ -1,0 +1,21 @@
+--- doc/CMakeLists.txt.orig	2018-10-03 01:10:49 UTC
++++ doc/CMakeLists.txt
+@@ -55,12 +55,12 @@ ENDIF(DEAL_II_COMPONENT_DOCUMENTATION)
+ # Always install a minimalistic README and LICENSE file:
+ #
+ 
+-INSTALL(FILES
+-  ${CMAKE_SOURCE_DIR}/README.md
+-  ${CMAKE_SOURCE_DIR}/LICENSE
+-  DESTINATION ${DEAL_II_DOCREADME_RELDIR}
+-  COMPONENT library
+-  )
++#INSTALL(FILES
++#  ${CMAKE_SOURCE_DIR}/README.md
++#  ${CMAKE_SOURCE_DIR}/LICENSE
++#  DESTINATION ${DEAL_II_DOCREADME_RELDIR}
++#  COMPONENT library
++#  )
+ 
+ #
+ # Add a dummy target to make documentation files known to IDEs.
