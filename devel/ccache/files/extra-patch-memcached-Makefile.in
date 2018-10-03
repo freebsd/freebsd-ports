@@ -1,3 +1,6 @@
+libmemcached is a c++ library.  To link statically we need to use cxx rather
+than cc to ensure libc++ is linked in.
+
 --- Makefile.in.orig	2017-03-09 13:00:34.016595000 -0800
 +++ Makefile.in	2017-03-09 13:00:39.656086000 -0800
 @@ -74,7 +74,7 @@ files_to_distclean = Makefile config.h c
