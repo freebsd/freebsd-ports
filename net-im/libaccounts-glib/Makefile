@@ -20,9 +20,10 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--disable-tests --enable-gtk-doc
 INSTALL_TARGET=	install-strip
 
-USES=		autoreconf gmake libtool pathfix pkgconfig python sqlite:3
+USES=		autoreconf gmake gnome libtool pathfix pkgconfig python sqlite:3
 USE_GNOME=	pygobject3 introspection libxml2
 USE_PYTHON=	py3kplist
+CFLAGS_powerpc64=	-Wno-error
 
 # GitLab variables.
 USE_GITLAB=	yes
