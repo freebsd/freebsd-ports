@@ -2,8 +2,12 @@
 
 PORTNAME=	davix
 DISTVERSION=	0.6.9
-MASTER_SITES=	http://grid-deployment.web.cern.ch/grid-deployment/dms/lcgutil/tar/davix/${DISTVERSION}/
+PORTREVISION=	1
 CATEGORIES=	www
+MASTER_SITES=	http://grid-deployment.web.cern.ch/grid-deployment/dms/lcgutil/tar/davix/${DISTVERSION}/
+
+PATCH_SITES=	https://github.com/cern-fts/davix/commit/
+PATCHFILES=	8e6386f64187cf32a32627033105e3a641f6b3d2.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Make the task of managing files over HTTP-based protocols simple
