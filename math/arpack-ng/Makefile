@@ -6,7 +6,7 @@ DISTVERSION=	3.5.0
 PORTREVISION=	2
 CATEGORIES=	math
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT?=	Revised Argand library for solving large-scale eigenvalue problems
 
 LICENSE=	BSD3CLAUSE
