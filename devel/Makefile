@@ -6120,6 +6120,7 @@
     SUBDIR += sbt
     SUBDIR += scalatest
     SUBDIR += scandoc
+    SUBDIR += sccache
     SUBDIR += scons
     SUBDIR += sdl12
     SUBDIR += sdl20
