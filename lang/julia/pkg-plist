@@ -393,6 +393,7 @@ man/man1/julia.1.gz
 %%DATADIR%%/stdlib/v%%VERSION%%/LinearAlgebra/src/tridiag.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/LinearAlgebra/src/uniformscaling.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/LinearAlgebra/test/adjtrans.jl
+%%DATADIR%%/stdlib/v%%VERSION%%/LinearAlgebra/test/ambiguous_exec.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/LinearAlgebra/test/bidiag.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/LinearAlgebra/test/blas.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/LinearAlgebra/test/bunchkaufman.jl
@@ -487,7 +488,6 @@ man/man1/julia.1.gz
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/src/Resolve.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/src/Types.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/src/generate.jl
-%%DATADIR%%/stdlib/v%%VERSION%%/Pkg/src/precompile.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/src/resolve/FieldValues.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/src/resolve/MaxSum.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/src/resolve/VersionWeights.jl
