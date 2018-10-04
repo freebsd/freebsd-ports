@@ -1,0 +1,11 @@
+nanoflann is a C++11 header-only library for building KD-Trees of datasets with
+different topologies: R2, R3 (point clouds), SO(2) and SO(3) (2D and 3D rotation
+groups). No support for approximate NN is provided. nanoflann does not require
+compiling or installing. You just need to #include <nanoflann.hpp> in your code.
+
+This library is a fork of the flann library by Marius Muja and David G. Lowe,
+and born as a child project of MRPT. Following the original license terms,
+nanoflann is distributed under the BSD license. Please, for bugs use the issues
+button or fork and open a pull request.
+
+WWW: https://github.com/jlblancoc/nanoflann

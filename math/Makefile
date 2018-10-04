@@ -363,6 +363,7 @@
     SUBDIR += mumps-edf
     SUBDIR += mumps-mpich
     SUBDIR += muparser
+    SUBDIR += nanoflann
     SUBDIR += naturalmath
     SUBDIR += nauty
     SUBDIR += ndiff
