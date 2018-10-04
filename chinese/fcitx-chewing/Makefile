@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx-chewing
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	chinese
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
