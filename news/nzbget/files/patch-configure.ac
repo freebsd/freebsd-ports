@@ -1,0 +1,20 @@
+--- configure.ac.orig	2018-06-06 19:34:34 UTC
++++ configure.ac
+@@ -37,7 +37,7 @@ dnl Check for programs.
+ dnl
+ AC_PROG_CXX
+ AC_PATH_PROG(TAR, tar, $FALSE)
+-AC_PATH_PROG(MAKE, make, $FALSE)
++AC_PATH_PROG(MAKE, gmake, $FALSE)
+ AC_PROG_INSTALL
+ 
+ 
+@@ -553,7 +553,7 @@ dnl
+ AC_MSG_CHECKING(whether to use SIMD-optimized routines)
+ USE_SIMD=no
+ case $host_cpu in
+-	i?86|x86_64)
++	i?86|x86_64|amd64)
+ 		SSE2_CXXFLAGS="-msse2"
+ 		SSSE3_CXXFLAGS="-mssse3"
+ 		PCLMUL_CXXFLAGS="-msse4.1 -mpclmul"

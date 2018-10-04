@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	nzbget
-PORTVERSION=	19.1
-PORTREVISION=	2
+PORTVERSION=	20.0
+PORTREVISION=	0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	news
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
-USES=		compiler:c++14-lang ncurses pkgconfig shebangfix ssl
+USES=		autoreconf compiler:c++14-lang gmake localbase ncurses pkgconfig shebangfix ssl
 USE_RC_SUBR=	nzbget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libcurses-includes=${NCURSESINC} \
@@ -23,10 +23,6 @@ CONFIGURE_ARGS=	--with-libcurses-includes=${NCURSESINC} \
 		--with-openssl-includes=${OPENSSLINC} \
 		--with-openssl-libraries=${OPENSSLLIB}
 
-CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
-MAKE_JOBS_UNSAFE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lpthread
 BINMODE=	0755
 
 SHEBANG_FILES=	scripts/*.py
@@ -34,13 +30,16 @@ SUB_FILES=	pkg-message
 
 USE_GITHUB=	yes
 
-OPTIONS_DEFINE=	7Z PYTHON RAR DOCS
+OPTIONS_DEFINE=	7Z OPTIMIZED_FLAGS PYTHON RAR
 OPTIONS_DEFAULT=	PAR PYTHON RAR 7Z
 7Z_DESC=	Support extraction of 7z archives
+OPTIMIZED_FLAGS_DESC=	Enable optimized CPU instructions (SSE2/SSE3/NEON/etc)
 PYTHON_DESC=	Support for python post-processing scripts
 RAR_DESC=	Support extraction of rar archives
 
 7Z_RUN_DEPENDS=		7z:archivers/p7zip
+
+OPTIMIZED_FLAGS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-disable-optimized-flags.patch
 
 PYTHON_USES=		python:run
 
