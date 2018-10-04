@@ -4,7 +4,7 @@ include/arpack/stat.h
 lib/libarpack.so
 lib/libarpack.so.2
 lib/libarpack.so.2.0.0
-%%MPI%%lib/libparpack.so
-%%MPI%%lib/libparpack.so.2
-%%MPI%%lib/libparpack.so.2.0.0
+lib/libparpack.so
+lib/libparpack.so.2
+lib/libparpack.so.2.0.0
 libdata/pkgconfig/arpack.pc
