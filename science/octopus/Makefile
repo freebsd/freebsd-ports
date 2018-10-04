@@ -2,6 +2,7 @@
 
 PORTNAME=	octopus
 DISTVERSION=	8.2
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.tddft.org/programs/${PORTNAME}/download/${DISTVERSION}/
 
@@ -11,7 +12,7 @@ COMMENT=	Scientific program aimed at the ab initio virtual experimentation
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libarpack.so:math/arpack \
+LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libblas.so:math/blas \
 		libfftw3.so:math/fftw3 \
 		libfontconfig.so:x11-fonts/fontconfig \
