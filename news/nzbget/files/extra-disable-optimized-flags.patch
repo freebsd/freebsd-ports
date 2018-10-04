@@ -1,0 +1,16 @@
+--- configure.ac.orig	2018-06-06 19:34:34 UTC
++++ configure.ac
+@@ -569,12 +569,8 @@ case $host_cpu in
+ 		USE_SIMD=yes
+ 		;;
+ esac
++USE_SIMD=no
+ AC_MSG_RESULT($USE_SIMD)
+-AC_SUBST([SSE2_CXXFLAGS])
+-AC_SUBST([SSSE3_CXXFLAGS])
+-AC_SUBST([PCLMUL_CXXFLAGS])
+-AC_SUBST([NEON_CXXFLAGS])
+-AC_SUBST([ACLECRC_CXXFLAGS])
+ 
+ 
+ dnl 
