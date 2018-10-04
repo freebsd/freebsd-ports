@@ -1,0 +1,32 @@
+The PSF Tools are an attempt to do something similar to NetPBM, for
+simple fixed-width bitmap fonts.
+
+The current release can convert the following formats to PSF:
+
+- Raw (DOS-style) font
+- Windows font (FNT, FON)
+- Sinclair Spectrum +3
+- MDA character ROM dump
+- DOS/Linux codepages (CP, CPI)
+- Hercules WriteOn (WOF)
+- Wyse-60 soft font
+- BBC Micro soft font
+- Plain text
+
+and PSF to the following formats:
+
+- Raw font
+- Windows font (FNT, FON)
+- Hercules WriteOn (WOF)
+- DOS codepages (CPI)
+- Sinclair Spectrum +3
+- BDF
+- C include file
+- BSD 'wsfont' kernel header
+- XBM image containing all characters
+- Single PBM image for each character
+- Plain text
+- Wyse-60 soft font
+- BBC Micro soft font
+
+WWW: http://www.seasip.info/Unix/PSF/
