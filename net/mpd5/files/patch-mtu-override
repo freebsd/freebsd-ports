@@ -105,3 +105,17 @@ Index: src/iface.c
    snprintf(tcpmsscfg.inHook, sizeof(tcpmsscfg.inHook), "in");
    snprintf(tcpmsscfg.outHook, sizeof(tcpmsscfg.outHook), "out");
    if (NgSendMsg(gLinksCsock, path, NGM_TCPMSS_COOKIE, NGM_TCPMSS_CONFIG,
+Index: src/bund.c
+===================================================================
+--- src/bund.c	(revision 2253)
++++ src/bund.c	(revision 2254)
+@@ -328,7 +328,8 @@ BundJoin(Link l)
+ 
+     /* Configure this link */
+     b->pppConfig.links[l->bundleIndex].enableLink = 1;
+-    b->pppConfig.links[l->bundleIndex].mru = lcp->peer_mru;
++    b->pppConfig.links[l->bundleIndex].mru = b->iface.mtu_override ?
++	b->iface.mtu_override : lcp->peer_mru;
+     b->pppConfig.links[l->bundleIndex].enableACFComp = lcp->peer_acfcomp;
+     b->pppConfig.links[l->bundleIndex].enableProtoComp = lcp->peer_protocomp;
+     b->pppConfig.links[l->bundleIndex].bandwidth =
