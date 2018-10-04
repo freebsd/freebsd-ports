@@ -1,11 +1,10 @@
-lib/libarpack.a
+include/arpack.h
+include/arpack/debug.h
+include/arpack/stat.h
 lib/libarpack.so
 lib/libarpack.so.2
 lib/libarpack.so.2.0.0
+%%MPI%%lib/libparpack.so
+%%MPI%%lib/libparpack.so.2
+%%MPI%%lib/libparpack.so.2.0.0
 libdata/pkgconfig/arpack.pc
-%%DOCS%%%%DOCSDIR%%/README
-%%DOCS%%%%DOCSDIR%%/debug.doc
-%%DOCS%%%%DOCSDIR%%/ex-complex.doc
-%%DOCS%%%%DOCSDIR%%/ex-nonsym.doc
-%%DOCS%%%%DOCSDIR%%/ex-sym.doc
-%%DOCS%%%%DOCSDIR%%/stat.doc
