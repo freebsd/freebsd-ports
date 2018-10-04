@@ -1,5 +1,5 @@
---- build/FreeBSD.inc.orig	2018-06-19 16:04:20 UTC
-+++ build/FreeBSD.inc
+--- build/BSD.inc.orig	2018-06-19 16:04:20 UTC
++++ build/BSD.inc
 @@ -26,17 +26,23 @@ ifndef arch
          ifeq ($(shell uname -m),amd64)
                  export arch:=intel64
