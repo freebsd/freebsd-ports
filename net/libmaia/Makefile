@@ -10,7 +10,7 @@ CATEGORIES=	net
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	XML-RPC lib for Qt
 
-USES=		gmake qmake qt:5
+USES=		compiler:c++11-lang gmake qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	wiedi
 USE_QT=		buildtools_build network xml
