@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	arpack-ng
-DISTVERSION=	3.5.0
-PORTREVISION=	2
+DISTVERSION=	3.6.3
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT?=	Revised Argand library for solving large-scale eigenvalue problems
+COMMENT=	Revised Argand library for solving large-scale eigenvalue problems
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libmpich.so:net/mpich # MPI is incremental: it adds the libparpack.so lib, it is a candidate for a sub-package
 
 USES=		autoreconf:build fortran libtool
 USE_GITHUB=	yes
@@ -18,17 +19,16 @@ GH_ACCOUNT=	opencollab
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-blas="${BLAS}" \
 		--with-lapack="${LAPACK}" \
-		${MPICH_ARG}
-MPICH_ARG?=	--disable-mpi
+		--enable-mpi \
+		--disable-static
 LDFLAGS+=	-L${LOCALBASE}/lib
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
+PORTDOCS=	*
 PORTEXAMPLES=	*
 
-CONFLICTS=	arpack-[0-9]*
-CONFLICTS_INSTALL?=	arpack-ng-mpich-3.*
-SLAVEDIRS=	math/arpack-ng-mpich
+CONFLICTS_INSTALL=	arpack
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_SUB=	yes
@@ -66,6 +66,9 @@ pre-configure:
 
 post-build:
 	@cd ${WRKSRC}/SRC/.libs; ${STRIP_CMD} libarpack.so.*.*
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/arpack.h ${STAGEDIR}${PREFIX}/include
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

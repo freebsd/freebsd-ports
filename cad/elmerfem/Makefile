@@ -3,7 +3,7 @@
 
 PORTNAME=	elmerfem
 PORTVERSION=	8.3.20170524
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad science
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	ELMER FEM package
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libparpack.so:math/arpack-ng-mpich \
+LIB_DEPENDS=	libparpack.so:math/arpack-ng \
 		libmpich.so:net/mpich
 
 USE_GITHUB=	yes
