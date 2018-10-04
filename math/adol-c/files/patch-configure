@@ -1,0 +1,20 @@
+--- configure.orig	2018-10-04 07:11:41 UTC
++++ configure
+@@ -16507,7 +16507,7 @@ _ACEOF
+ 
+ 
+ if test "x$ac_cv_sizeof_void_p" = "x8" ; then
+-   _lib=lib64
++   _lib=lib
+ else
+    _lib=lib
+ fi
+@@ -17513,7 +17513,7 @@ $as_echo_n "checking for boostlib >= $bo
+                         libsubdirs="lib"
+     ax_arch=`uname -m`
+     case $ax_arch in
+-      x86_64)
++      amd64)
+         libsubdirs="lib64 libx32 lib lib64"
+         ;;
+       ppc64|s390x|sparc64|aarch64|ppc64le)
