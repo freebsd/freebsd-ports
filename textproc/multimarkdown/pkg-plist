@@ -14,6 +14,7 @@ share/texmf/tex/latex/mmd6/Vintage.png
 share/texmf/tex/latex/mmd6/beamerthemekeynote-gradient.sty
 share/texmf/tex/latex/mmd6/beamerthemekeynote-portfolio.sty
 share/texmf/tex/latex/mmd6/beamerthemekeynote-vintage.sty
+share/texmf/tex/latex/mmd6/manuscript.sty
 share/texmf/tex/latex/mmd6/mmd-envelope.sty
 share/texmf/tex/latex/mmd6/mmd-letterhead.sty
 share/texmf/tex/latex/mmd6/mmd6-article-begin.tex
@@ -27,6 +28,14 @@ share/texmf/tex/latex/mmd6/mmd6-default-metadata.tex
 share/texmf/tex/latex/mmd6/mmd6-letterhead-begin.tex
 share/texmf/tex/latex/mmd6/mmd6-letterhead-footer.tex
 share/texmf/tex/latex/mmd6/mmd6-letterhead-leader.tex
+share/texmf/tex/latex/mmd6/mmd6-manuscript-begin.tex
+share/texmf/tex/latex/mmd6/mmd6-manuscript-footer.tex
+share/texmf/tex/latex/mmd6/mmd6-manuscript-leader.tex
+share/texmf/tex/latex/mmd6/mmd6-manuscript-packages.tex
+share/texmf/tex/latex/mmd6/mmd6-memoir-book-begin.tex
+share/texmf/tex/latex/mmd6/mmd6-memoir-book-footer.tex
+share/texmf/tex/latex/mmd6/mmd6-memoir-book-leader.tex
+share/texmf/tex/latex/mmd6/mmd6-memoir-copyright.tex
 share/texmf/tex/latex/mmd6/mmd6-memoir-footer.tex
 share/texmf/tex/latex/mmd6/mmd6-memoir-layout-8.5x11.tex
 share/texmf/tex/latex/mmd6/mmd6-memoir-packages.tex
