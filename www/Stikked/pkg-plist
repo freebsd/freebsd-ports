@@ -15,7 +15,6 @@
 %%WWWDIR%%/application/config/geshi_languages.php
 %%WWWDIR%%/application/config/hooks.php
 %%WWWDIR%%/application/config/index.html
-%%WWWDIR%%/application/config/language.php
 %%WWWDIR%%/application/config/migration.php
 %%WWWDIR%%/application/config/mimes.php
 %%WWWDIR%%/application/config/profiler.php
@@ -46,7 +45,6 @@
 %%WWWDIR%%/application/helpers/language_helper.php
 %%WWWDIR%%/application/helpers/recaptcha_helper.php
 %%WWWDIR%%/application/hooks/index.html
-%%WWWDIR%%/application/hooks/pick_language.php
 %%WWWDIR%%/application/index.html
 %%WWWDIR%%/application/language/chinese-simplified/date_lang.php
 %%WWWDIR%%/application/language/chinese-simplified/form_validation_lang.php
