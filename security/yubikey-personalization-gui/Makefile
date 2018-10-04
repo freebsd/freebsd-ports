@@ -3,6 +3,7 @@
 PORTNAME=	yubikey-personalization-gui
 PORTVERSION=	3.1.25
 DISTVERSIONPREFIX=	${PORTNAME}-
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	romain@FreeBSD.org
@@ -14,11 +15,19 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libykpers-1.so:security/ykpers \
 		libyubikey.so:security/libyubikey
 
+USES=		pkgconfig qmake
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	Yubico
 
-USES=		pkgconfig qmake qt:4
-USE_QT=		corelib gui moc_build rcc_build testlib_build uic_build
+OPTIONS_DEFAULT=	QT5
+OPTIONS_SINGLE=		QT
+OPTIONS_SINGLE_QT=	QT4 QT5
+
+QT4_USES=	qt:4
+QT5_USES=	qt:5
+QT4_USE=	qt=corelib,gui,moc_build,rcc_build,testlib_build,uic_build
+QT5_USE=	qt=buildtools_build,core,gui,testlib_build,widgets
 
 PLIST_FILES=	bin/yubikey-personalization-gui \
 		man/man1/yubikey-personalization-gui.1.gz \
