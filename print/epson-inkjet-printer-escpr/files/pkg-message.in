@@ -1,18 +1,19 @@
 
 Examples to add printer for EP-803AW
+Start cupsd and then do the following:
 
 # The printer connected with USB cable (using ulpt0)
 
-lpadmin -p EPSON_EP-803AW -m "`lpinfo --make-and-model 'EPSON EP-803A' -m | cut -f 1 -d ' '`" -v 'usb:/dev/ulpt0' -D 'EPSON EP-803AW (ulpt0)' -E
+lpadmin -p EPSON_EP-803AW -m "`lpinfo --make-and-model 'EPSON EP-803A' -m | cut -f 1 -w | grep escpr | head -n 1`" -v 'usb:/dev/ulpt0' -D 'EPSON EP-803AW (ulpt0)' -E
 
 # The printer connected with USB cable (using unlpt0)
 
-lpadmin -p EPSON_EP-803AW -m "`lpinfo --make-and-model 'EPSON EP-803A' -m | cut -f 1 -d ' '`" -v 'usb:/dev/unlpt0' -D 'EPSON EP-803AW (unlpt0)' -E
+lpadmin -p EPSON_EP-803AW -m "`lpinfo --make-and-model 'EPSON EP-803A' -m | cut -f 1 -w | grep escpr | head -n 1`" -v 'usb:/dev/unlpt0' -D 'EPSON EP-803AW (unlpt0)' -E
 
 # The printer joined network (using LPD port)
 
-lpadmin -p EPSON_EP-803AW -m "`lpinfo --make-and-model 'EPSON EP-803A' -m | cut -f 1 -d ' '`" -v 'lpd://192.0.2.100:515/PASSTHRU' -D 'EPSON EP-803AW (LPR)' -E
+lpadmin -p EPSON_EP-803AW -m "`lpinfo --make-and-model 'EPSON EP-803A' -m | cut -f 1 -w | grep escpr | head -n 1`" -v 'lpd://192.0.2.100:515/PASSTHRU' -D 'EPSON EP-803AW (LPR)' -E
 
 # The printer joined network (using port 9100)
 
-lpadmin -p EPSON_EP-803AW -m "`lpinfo --make-and-model 'EPSON EP-803A' -m | cut -f 1 -d ' '`" -v 'socket://192.0.2.100:9100' -D 'EPSON EP-803AW (RAW)' -E
+lpadmin -p EPSON_EP-803AW -m "`lpinfo --make-and-model 'EPSON EP-803A' -m | cut -f 1 -w | grep escpr | head -n 1`" -v 'socket://192.0.2.100:9100' -D 'EPSON EP-803AW (RAW)' -E
