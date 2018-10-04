@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ucl
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,6 +12,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKDIR}/libucl-${PORTVERSION}/COPYING
 
 LIB_DEPENDS=	libucl.so:textproc/libucl
+
+CFLAGS+=	-I${PREFIX}/include
 
 USES=		python
 USE_GITHUB=	yes
