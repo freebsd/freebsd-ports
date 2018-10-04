@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	atf-allwinner
-PORTVERSION=	1.2.20180112
+PORTVERSION=	1.2.20180403
 CATEGORIES=	sysutils
 MASTER_SITES=	GH
 
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	aarch64-none-elf-gcc:devel/aarch64-none-elf-gcc
 USE_GITHUB=	yes
 GH_ACCOUNT=	apritzel
 GH_PROJECT=	arm-trusted-firmware
-GH_TAGNAME=	ae78724
+GH_TAGNAME=	c9f55c0
 
 SSP_UNSAFE=	yes
 USES=	gmake
