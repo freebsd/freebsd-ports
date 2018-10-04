@@ -1,0 +1,290 @@
+# $FreeBSD$
+
+PORTNAME=	sccache
+DISTVERSION=	2.8.0.alpha0
+CATEGORIES=	devel
+
+MAINTAINER=	pizzamig@FreeBSD.org
+COMMENT=	Like ccache with cloud storage support
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=	cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	mozilla
+GH_TAGNAME=	dda88a6
+
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=	DOCS
+
+PLIST_FILES=	bin/sccache
+PORTDOCS=	README.md
+
+CARGO_FEATURES=	all
+CARGO_CRATES=	adler32-1.0.3 \
+		aho-corasick-0.6.8 \
+		ansi_term-0.11.0 \
+		ar-0.6.0 \
+		arraydeque-0.4.3 \
+		arrayvec-0.4.7 \
+		ascii-0.7.1 \
+		ascii-0.8.7 \
+		assert_cmd-0.9.1 \
+		atty-0.2.11 \
+		backtrace-0.3.9 \
+		backtrace-sys-0.1.24 \
+		base64-0.9.2 \
+		bincode-0.8.0 \
+		bincode-1.0.1 \
+		bitflags-0.9.1 \
+		bitflags-1.0.4 \
+		buf_redux-0.6.3 \
+		bufstream-0.1.3 \
+		build_const-0.2.1 \
+		byteorder-1.2.6 \
+		bytes-0.4.9 \
+		case-0.1.0 \
+		cc-1.0.23 \
+		cfg-if-0.1.5 \
+		chrono-0.4.6 \
+		chunked_transfer-0.3.1 \
+		clap-2.32.0 \
+		cloudabi-0.0.3 \
+		combine-3.5.1 \
+		conhash-0.4.0 \
+		core-foundation-0.2.3 \
+		core-foundation-sys-0.2.3 \
+		crc-1.8.1 \
+		crossbeam-deque-0.6.1 \
+		crossbeam-epoch-0.5.2 \
+		crossbeam-utils-0.5.0 \
+		daemonize-0.3.0 \
+		derive-error-0.0.3 \
+		difference-2.0.0 \
+		directories-1.0.1 \
+		dtoa-0.4.3 \
+		either-1.5.0 \
+		encoding-0.2.33 \
+		encoding-index-japanese-1.20141219.5 \
+		encoding-index-korean-1.20141219.5 \
+		encoding-index-simpchinese-1.20141219.5 \
+		encoding-index-singlebyte-1.20141219.5 \
+		encoding-index-tradchinese-1.20141219.5 \
+		encoding_index_tests-0.1.4 \
+		encoding_rs-0.8.6 \
+		env_logger-0.5.13 \
+		error-chain-0.12.0 \
+		escargot-0.3.1 \
+		failure-0.1.2 \
+		failure_derive-0.1.2 \
+		filetime-0.1.15 \
+		filetime-0.2.1 \
+		flate2-1.0.2 \
+		float-cmp-0.4.0 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		fuchsia-zircon-0.3.3 \
+		fuchsia-zircon-sys-0.3.3 \
+		futures-0.1.23 \
+		futures-cpupool-0.1.8 \
+		gcc-0.3.54 \
+		getopts-0.2.18 \
+		httparse-1.3.2 \
+		humantime-1.1.1 \
+		hyper-0.11.27 \
+		hyper-tls-0.1.4 \
+		idna-0.1.5 \
+		iovec-0.1.2 \
+		itertools-0.7.8 \
+		itoa-0.4.2 \
+		jobserver-0.1.11 \
+		jsonwebtoken-5.0.0 \
+		kernel32-sys-0.2.2 \
+		language-tags-0.2.2 \
+		lazy_static-0.2.11 \
+		lazy_static-1.1.0 \
+		lazycell-0.6.0 \
+		libc-0.2.43 \
+		libflate-0.1.16 \
+		libmount-0.1.11 \
+		linked-hash-map-0.2.1 \
+		local-encoding-0.2.0 \
+		lock_api-0.1.3 \
+		log-0.3.9 \
+		log-0.4.4 \
+		matches-0.1.8 \
+		md5-0.3.8 \
+		memcached-rs-0.3.0 \
+		memchr-1.0.2 \
+		memchr-2.0.2 \
+		memoffset-0.2.1 \
+		mime-0.2.6 \
+		mime-0.3.9 \
+		mime_guess-1.8.6 \
+		mime_guess-2.0.0-alpha.6 \
+		miniz_oxide-0.1.3 \
+		miniz_oxide_c_api-0.1.3 \
+		mio-0.6.15 \
+		mio-named-pipes-0.1.6 \
+		mio-uds-0.6.6 \
+		miow-0.2.1 \
+		miow-0.3.3 \
+		msdos_time-0.1.6 \
+		multipart-0.13.6 \
+		native-tls-0.1.5 \
+		net2-0.2.33 \
+		nix-0.11.0 \
+		nodrop-0.1.12 \
+		normalize-line-endings-0.2.2 \
+		num-integer-0.1.39 \
+		num-traits-0.1.43 \
+		num-traits-0.2.5 \
+		num_cpus-1.8.0 \
+		number_prefix-0.2.8 \
+		openssl-0.10.11 \
+		openssl-0.9.24 \
+		openssl-sys-0.9.35 \
+		owning_ref-0.3.3 \
+		parking_lot-0.6.4 \
+		parking_lot_core-0.3.0 \
+		percent-encoding-1.0.1 \
+		phf-0.7.23 \
+		phf_codegen-0.7.23 \
+		phf_generator-0.7.23 \
+		phf_shared-0.7.23 \
+		pkg-config-0.3.14 \
+		podio-0.1.6 \
+		predicates-0.9.0 \
+		predicates-core-0.9.0 \
+		predicates-tree-0.9.0 \
+		proc-macro2-0.4.15 \
+		pulldown-cmark-0.0.3 \
+		quick-error-1.2.2 \
+		quote-0.3.15 \
+		quote-0.6.8 \
+		rand-0.3.22 \
+		rand-0.4.3 \
+		rand-0.5.5 \
+		rand_core-0.2.1 \
+		redis-0.9.0 \
+		redox_syscall-0.1.40 \
+		redox_termios-0.1.1 \
+		regex-1.0.4 \
+		regex-syntax-0.6.2 \
+		relay-0.1.1 \
+		remove_dir_all-0.5.1 \
+		reqwest-0.8.8 \
+		retry-0.4.0 \
+		ring-0.13.2 \
+		rouille-2.2.0 \
+		rust-crypto-0.2.36 \
+		rustc-demangle-0.1.9 \
+		rustc-serialize-0.3.24 \
+		ryu-0.2.6 \
+		safemem-0.2.0 \
+		same-file-0.1.3 \
+		schannel-0.1.13 \
+		scoped-tls-0.1.2 \
+		scopeguard-0.3.3 \
+		security-framework-0.1.16 \
+		security-framework-sys-0.1.16 \
+		semver-0.9.0 \
+		semver-parser-0.7.0 \
+		serde-1.0.75 \
+		serde_derive-1.0.75 \
+		serde_json-1.0.26 \
+		serde_urlencoded-0.5.3 \
+		sha1-0.6.0 \
+		siphasher-0.2.3 \
+		skeptic-0.4.0 \
+		slab-0.3.0 \
+		slab-0.4.1 \
+		smallvec-0.2.1 \
+		smallvec-0.6.5 \
+		socket2-0.3.8 \
+		stable_deref_trait-1.1.1 \
+		strip-ansi-escapes-0.1.0 \
+		strsim-0.7.0 \
+		syn-0.11.11 \
+		syn-0.14.9 \
+		synom-0.11.3 \
+		synstructure-0.9.0 \
+		take-0.1.0 \
+		tar-0.4.16 \
+		tempdir-0.3.7 \
+		tempfile-3.0.3 \
+		term-0.5.1 \
+		termcolor-1.0.2 \
+		termion-1.5.1 \
+		textwrap-0.10.0 \
+		thread_local-0.3.6 \
+		threadpool-1.7.1 \
+		time-0.1.40 \
+		tiny_http-0.6.0 \
+		tokio-0.1.8 \
+		tokio-codec-0.1.0 \
+		tokio-core-0.1.17 \
+		tokio-current-thread-0.1.1 \
+		tokio-executor-0.1.4 \
+		tokio-fs-0.1.3 \
+		tokio-io-0.1.8 \
+		tokio-process-0.2.2 \
+		tokio-proto-0.1.1 \
+		tokio-reactor-0.1.5 \
+		tokio-serde-0.1.0 \
+		tokio-serde-bincode-0.1.1 \
+		tokio-service-0.1.0 \
+		tokio-signal-0.2.4 \
+		tokio-tcp-0.1.1 \
+		tokio-threadpool-0.1.6 \
+		tokio-timer-0.2.6 \
+		tokio-tls-0.1.4 \
+		tokio-udp-0.1.2 \
+		tokio-uds-0.2.1 \
+		toml-0.4.6 \
+		treeline-0.1.0 \
+		try-lock-0.1.0 \
+		twoway-0.1.8 \
+		ucd-util-0.1.1 \
+		unicase-1.4.2 \
+		unicase-2.1.0 \
+		unicode-bidi-0.3.4 \
+		unicode-normalization-0.1.7 \
+		unicode-width-0.1.5 \
+		unicode-xid-0.0.4 \
+		unicode-xid-0.1.0 \
+		unix_socket-0.5.0 \
+		unreachable-1.0.0 \
+		untrusted-0.6.2 \
+		url-1.7.1 \
+		utf8-ranges-1.0.1 \
+		utf8parse-0.1.0 \
+		uuid-0.6.5 \
+		vcpkg-0.2.6 \
+		vec_map-0.8.1 \
+		version_check-0.1.4 \
+		void-1.0.2 \
+		vte-0.3.3 \
+		walkdir-1.0.7 \
+		want-0.0.4 \
+		which-2.0.0 \
+		winapi-0.2.8 \
+		winapi-0.3.5 \
+		winapi-build-0.1.1 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.1 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		wincolor-1.0.1 \
+		ws2_32-sys-0.2.1 \
+		xattr-0.2.2 \
+		zip-0.4.2
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sccache
+.include <bsd.port.mk>

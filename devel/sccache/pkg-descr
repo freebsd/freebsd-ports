@@ -1,0 +1,5 @@
+A ccache with cloud storage support, written in Rust
+
+It supports local disk, memcache, redis, S3 bucket and GCS bucket.
+
+WWW: https://github.com/mozilla/sccache
