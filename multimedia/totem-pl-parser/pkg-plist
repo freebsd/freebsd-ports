@@ -12,7 +12,7 @@ lib/libtotem-plparser.so.18
 lib/libtotem-plparser.so.18.1.2
 libdata/pkgconfig/totem-plparser-mini.pc
 libdata/pkgconfig/totem-plparser.pc
-libexec/totem-pl-parser/99-totem-pl-parser-videosite
+%%QUVI%%libexec/totem-pl-parser/99-totem-pl-parser-videosite
 share/gir-1.0/TotemPlParser-1.0.gir
 share/locale/af/LC_MESSAGES/totem-pl-parser.mo
 share/locale/am/LC_MESSAGES/totem-pl-parser.mo
