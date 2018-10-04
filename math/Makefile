@@ -112,6 +112,7 @@
     SUBDIR += acalc
     SUBDIR += add
     SUBDIR += adept
+    SUBDIR += adol-c
     SUBDIR += algae
     SUBDIR += alglib
     SUBDIR += algotutor
