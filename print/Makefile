@@ -234,6 +234,7 @@
     SUBDIR += rubygem-rbpdf-font
     SUBDIR += rubygem-ttfunk
     SUBDIR += scribus
+    SUBDIR += scribus-devel
     SUBDIR += sgf2tex
     SUBDIR += splix
     SUBDIR += system-config-printer
