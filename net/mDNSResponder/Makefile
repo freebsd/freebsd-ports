@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mDNSResponder
-PORTVERSION=	878.30.4
+PORTVERSION=	878.70.2
 CATEGORIES=	net dns
-MASTER_SITES=	http://opensource.apple.com/tarballs/${PORTNAME}/
+MASTER_SITES=	https://opensource.apple.com/tarballs/mDNSResponder/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bonjour (zero-configuration networking) by Apple
