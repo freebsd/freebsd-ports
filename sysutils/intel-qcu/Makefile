@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qcu
-PORTVERSION=	2.30.16.8
+PORTVERSION=	2.30.23.0
 CATEGORIES=	sysutils net
 MASTER_SITES=	https://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/ \
 		http://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/
@@ -23,6 +23,7 @@ ONLY_FOR_ARCHS_REASON=	not supported on anything other than amd64
 
 USES=		zip
 
+NO_WRKSUBDIR=		yes
 NO_BUILD=		yes
 NO_ARCH=		yes
 NO_ARCH_IGNORE=		qcu
