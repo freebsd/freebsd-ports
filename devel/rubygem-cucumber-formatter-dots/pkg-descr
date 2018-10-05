@@ -1,0 +1,5 @@
+Cucumber formatters are command line programs that read results from STDIN. They
+are designed to work with any Cucumber implementation that supports Cucumber
+Messages.
+
+WWW: https://github.com/cucumber/dots-formatter-ruby
