@@ -1,6 +1,6 @@
---- riscv/riscv.mk.in.orig	2017-07-11 13:58:22.000000000 +0100
-+++ riscv/riscv.mk.in	2017-08-08 20:08:06.247906000 +0100
-@@ -21,14 +21,14 @@
+--- riscv/riscv.mk.in.orig	2018-10-05 10:52:11 UTC
++++ riscv/riscv.mk.in
+@@ -23,7 +23,7 @@ riscv_hdrs = \
  	tracer.h \
  	extension.h \
  	rocc.h \
@@ -8,7 +8,8 @@
 +	insn_template.hpp \
  	mulhi.h \
  	debug_module.h \
- 	remote_bitbang.h \
+ 	debug_rom_defines.h \
+@@ -31,7 +31,7 @@ riscv_hdrs = \
  	jtag_dtm.h \
  
  riscv_precompiled_hdrs = \
