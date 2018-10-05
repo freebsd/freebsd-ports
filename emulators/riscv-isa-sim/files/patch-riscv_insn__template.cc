@@ -1,4 +1,4 @@
---- riscv/insn_template.cc.orig	2016-08-01 15:40:47 UTC
+--- riscv/insn_template.cc.orig	2018-10-05 10:52:33 UTC
 +++ riscv/insn_template.cc
 @@ -1,6 +1,6 @@
  // See LICENSE for license details.

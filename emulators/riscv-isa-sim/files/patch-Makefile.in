@@ -1,6 +1,6 @@
---- Makefile.in.orig	2017-08-08 20:00:25.889361000 +0100
-+++ Makefile.in	2017-08-08 20:06:41.633896000 +0100
-@@ -187,13 +187,13 @@
+--- Makefile.in.orig	2018-10-05 10:52:51 UTC
++++ Makefile.in
+@@ -187,13 +187,13 @@ _$(1).cc :
  
  # Build the object files for this subproject
  
