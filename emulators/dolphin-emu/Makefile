@@ -42,8 +42,8 @@ LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
 		libcurl.so:ftp/curl \
 		libhidapi.so:comms/hidapi
 
-USES=		cmake compiler:c++17-lang desktop-file-utils iconv pkgconfig \
-		qmake qt:5
+USES=		cmake compiler:c++17-lang desktop-file-utils gl iconv \
+		pkgconfig qmake qt:5
 
 USE_GITHUB=	yes
 GH_PROJECT=	dolphin

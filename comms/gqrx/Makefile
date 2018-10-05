@@ -26,7 +26,7 @@ LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 		libboost_program_options.so:devel/boost-libs \
 		liblog4cpp.so:devel/log4cpp
 
-USES=		pkgconfig qmake qt:5
+USES=		gl pkgconfig qmake qt:5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	csete
