@@ -130,7 +130,6 @@
     SUBDIR += arpack
     SUBDIR += arpack++
     SUBDIR += arpack-ng
-    SUBDIR += arpack-ng-mpich
     SUBDIR += aspcud
     SUBDIR += asymptote
     SUBDIR += atlas
