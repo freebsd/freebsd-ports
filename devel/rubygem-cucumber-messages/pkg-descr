@@ -1,0 +1,6 @@
+Cucumber Messages is a message protocol based on Protocol Buffers. It allows one
+process to construct message objects and send them to another process. Protobuf
+takes care of serialising those messages to a binary format, and deserialise
+them on the other end.
+
+WWW: https://github.com/cucumber/cucumber-messages-ruby
