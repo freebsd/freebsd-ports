@@ -1,0 +1,4 @@
+Coursier can fetch, launch, and create tiny bootstrap launchers
+from apps distributed via Maven / Ivy repositories.
+
+WWW: http://get-coursier.io
