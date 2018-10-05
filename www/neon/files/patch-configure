@@ -1,0 +1,30 @@
+--- configure.orig	2018-10-05 00:12:59 UTC
++++ configure
+@@ -6318,7 +6318,7 @@ $ne__code
+ }
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"; then :
+-  ne_cv_libsfor_SSL_library_init="-l$lib -ldl"; break
++  ne_cv_libsfor_SSL_library_init_ssl="-l$lib -ldl"; break
+ fi
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
+@@ -6329,14 +6329,14 @@ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
+ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ne_cv_libsfor_SSL_library_init" >&5
+-$as_echo "$ne_cv_libsfor_SSL_library_init" >&6; }
++$as_echo "$ne_cv_libsfor_SSL_library_init_ssl" >&6; }
+ 
+-if test "$ne_cv_libsfor_SSL_library_init" = "not found"; then
++if test "$ne_cv_libsfor_SSL_library_init_ssl" = "not found"; then
+    as_fn_error $? "could not find library containing SSL_library_init" "$LINENO" 5
+-elif test "$ne_cv_libsfor_SSL_library_init" = "none needed"; then
++elif test "$ne_cv_libsfor_SSL_library_init_ssl" = "none needed"; then
+    :
+ else
+-   NEON_LIBS="$ne_cv_libsfor_SSL_library_init $NEON_LIBS"
++   NEON_LIBS="$ne_cv_libsfor_SSL_library_init_ssl $NEON_LIBS"
+ 
+ fi
+ else
