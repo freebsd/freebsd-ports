@@ -348,6 +348,7 @@
     SUBDIR += containers
     SUBDIR += cook
     SUBDIR += courier-unicode
+    SUBDIR += coursier
     SUBDIR += covtool
     SUBDIR += cpan-upload
     SUBDIR += cpan-upload-http
