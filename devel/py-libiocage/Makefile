@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libiocage
-PORTVERSION=	0.3.0.20181001
+PORTVERSION=	0.3.1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,11 +24,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}GitPython>0:devel/py-gitpython@${PY_FLAVOR} 
 USE_GITHUB=	yes
 GH_ACCOUNT=	iocage
 GH_PROJECT=	libiocage
-GH_TAGNAME=	cee9351
 
 NO_ARCH=	yes
 USES=		python:3.6+
 USE_PYTHON=	distutils py3kplist
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rc.d/ioc ${STAGEDIR}${PREFIX}/etc/rc.d/ioc
