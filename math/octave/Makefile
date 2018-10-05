@@ -3,7 +3,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	${OCTAVE_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math java
 MASTER_SITES=	GNU
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	gnuplot:math/gnuplot \
 		gsed:textproc/gsed \
 		${LOCALBASE}/bin/makeinfo:print/texinfo
 LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
-		libarpack.so:math/arpack \
+		libarpack.so:math/arpack-ng \
 		libcurl.so:ftp/curl \
 		libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \

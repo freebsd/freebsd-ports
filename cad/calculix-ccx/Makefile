@@ -3,7 +3,7 @@
 
 PORTNAME=	ccx
 PORTVERSION=	2.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 PKGNAMEPREFIX=	CalculiX-
@@ -16,7 +16,7 @@ COMMENT=	Three-Dimensional Structural Finite Element Program
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libarpack.so:math/arpack	\
+LIB_DEPENDS=	libarpack.so:math/arpack-ng	\
 		libmetis.so:math/metis4 	\
 		libspooles.so:math/spooles	\
 		libtaucs.so:math/taucs
