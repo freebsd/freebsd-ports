@@ -3,6 +3,7 @@
 
 PORTNAME?=	ixl
 PORTVERSION?=	1.9.13
+PORTREVISION?=	1
 CATEGORIES=	net
 MASTER_SITES=	https://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/ \
 		http://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/
@@ -14,6 +15,8 @@ MAINTAINER?=	freebsd@intel.com
 COMMENT?=	40 gigabit FreeBSD Base Driver for Intel(R) Network Connections
 
 LICENSE=	BSD2CLAUSE
+
+USES=		kmod
 
 # Present version of net/intel-em-kmod has issues building with netmap(4)
 # support on 11+. Narrowing netmap(4) support to this port only
@@ -30,14 +33,18 @@ NETMAP_ON_CFLAGS=	-DDEV_NETMAP
 NETMAP_OFF_CFLAGS=	-UDEV_NETMAP
 .endif
 
-USES=		kmod
 WRKSRC_SUBDIR=	src
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
 MANPAGENAME?=	${PORTNAME}
+MANPAGELINKS?=	if_${PORTNAME}
 PLIST_FILES=	${KMODDIR}/if_${PORTNAME}_updated.ko \
 		man/man4/${MANPAGENAME}.4.gz
+
+.for link in ${MANPAGELINKS}
+PLIST_FILES+=	man/man4/${link}.4.gz
+.endfor
 
 .include <bsd.port.pre.mk>
 
@@ -53,6 +60,10 @@ CFLAGS+=	-DDEV_NETMAP
 
 do-install:
 	${INSTALL_KLD} ${WRKSRC}/if_${PORTNAME}.ko ${STAGEDIR}${KMODDIR}/if_${PORTNAME}_updated.ko
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.4 ${STAGEDIR}${MAN4PREFIX}/man/man4/
+	${INSTALL_MAN} ${WRKSRC}/${MANPAGENAME}.4 ${STAGEDIR}${MAN4PREFIX}/man/man4/
+
+.for link in ${MANPAGELINKS}
+	${LN} ${STAGEDIR}${MAN4PREFIX}/man/man4/${MANPAGENAME}.4 ${STAGEDIR}${MAN4PREFIX}/man/man4/${link}.4
+.endfor
 
 .include <bsd.port.post.mk>
