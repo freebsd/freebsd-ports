@@ -19,7 +19,7 @@ BROKEN_armv7=		fails to compile: no matching function for call to 'qMax'
 LIB_DEPENDS=	libming.so:graphics/ming \
 		libpng.so:graphics/png
 
-USES=		qmake qt:4 zip
+USES=		gl qmake qt:4 zip
 USE_QT=		gui opengl xml moc_build rcc_build
 USE_GL=		gl
 QMAKE_ARGS=	INCLUDEPATH+=${LOCALBASE}/include/ming

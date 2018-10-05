@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		tar:bzip2 gmake iconv desktop-file-utils
+USES=		tar:bzip2 gl gmake iconv desktop-file-utils
 USE_GL=		gl
 USE_SDL=	mixer sdl ttf
 USE_XORG=	x11

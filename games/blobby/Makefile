@@ -22,7 +22,8 @@ LIB_DEPENDS=	libphysfs.so:devel/physfs
 BUILD_DEPENDS=	zip:archivers/zip \
 		${LOCALBASE}/include/boost/crc.hpp:devel/boost-libs
 
-USES=		cmake compiler:c++11-lang dos2unix localbase:ldflags pkgconfig
+USES=		cmake compiler:c++11-lang dos2unix gl localbase:ldflags \
+		pkgconfig
 DOS2UNIX_REGEX=	.*\.(c|h|cpp)
 CMAKE_ARGS=	-DDATADIR:PATH="${DATADIR}"
 WRKSRC=		${WRKDIR}/blobby-${PORTVERSION}

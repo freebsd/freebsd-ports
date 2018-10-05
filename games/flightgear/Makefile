@@ -28,8 +28,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
 		${LOCALBASE}/share/flightgear/version:games/flightgear-data
 
 LLD_UNSAFE=	yes
-USES=		alias cmake compiler cpe dos2unix jpeg openal:al,alut sqlite \
-		tar:bzip2
+USES=		alias cmake compiler cpe dos2unix gl jpeg openal:al,alut \
+		sqlite tar:bzip2
 USE_XORG=	ice sm x11 xext xft xi xinerama xmu xt
 USE_GL=		gl glew glu glut
 
