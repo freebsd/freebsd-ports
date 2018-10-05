@@ -1,6 +1,6 @@
---- configure.ac~	2012-08-22 17:58:12.000000000 -0300
-+++ configure.ac	2012-08-22 17:58:36.000000000 -0300
-@@ -34,8 +34,8 @@
+--- configure.ac.orig	2017-01-09 16:58:58 UTC
++++ configure.ac
+@@ -31,8 +31,8 @@ dnl AC_FUNC_MALLOC
  AC_FUNC_VPRINTF
  AC_CHECK_FUNCS([getcwd strcasecmp strchr strdup strerror strncasecmp strrchr])
  
