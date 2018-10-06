@@ -145,11 +145,9 @@ include/ntk/FL/names.h
 include/ntk/FL/themes.H
 include/ntk/FL/win32.H
 include/ntk/FL/x.H
-lib/libntk.a
 lib/libntk.so
 lib/libntk.so.1
 lib/libntk.so.%%SHLIB_VER%%
-lib/libntk_images.a
 lib/libntk_images.so
 lib/libntk_images.so.1
 lib/libntk_images.so.%%SHLIB_VER%%
