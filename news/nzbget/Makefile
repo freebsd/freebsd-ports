@@ -12,6 +12,8 @@ COMMENT=	Binary newsreader supporting NZB files
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to package
+
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 USES=		autoreconf compiler:c++14-lang gmake localbase ncurses pkgconfig shebangfix ssl
