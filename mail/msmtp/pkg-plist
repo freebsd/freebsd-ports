@@ -1,5 +1,7 @@
 bin/msmtp
+%%MSMTPD%%bin/msmtpd
 man/man1/msmtp.1.gz
+%%MSMTPD%%man/man1/msmtpd.1.gz
 %%MSMTPQ%%bin/msmtp-queue
 %%MSMTPQ%%bin/msmtpq
 %%NLS%%share/locale/de/LC_MESSAGES/msmtp.mo
