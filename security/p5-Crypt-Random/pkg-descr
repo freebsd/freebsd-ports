@@ -13,3 +13,5 @@ that does not wait for the entropy-pool to recharge and returns as many bytes
 as requested. /dev/urandom is considerably faster at generation compared to
 /dev/random, which should be used only when very high quality randomness is
 desired.
+
+WWW: https://metacpan.org/release/Crypt-Random
