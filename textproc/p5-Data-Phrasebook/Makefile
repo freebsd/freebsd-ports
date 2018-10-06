@@ -13,8 +13,8 @@ COMMENT=	Accessing phrasebooks from various data sources
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-Module-Pluggable>=2.7:devel/p5-Module-Pluggable
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Module-Pluggable>=2.7:devel/p5-Module-Pluggable
 
 USES=		perl5
 USE_PERL5=	configure

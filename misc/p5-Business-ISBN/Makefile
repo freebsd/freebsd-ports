@@ -14,8 +14,8 @@ COMMENT=	Work with International Standard Book Numbers
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Business-ISBN-Data>=20140910.002:misc/p5-Business-ISBN-Data
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Business-ISBN-Data>=20140910.002:misc/p5-Business-ISBN-Data
 TEST_DEPENDS=	p5-GD-Barcode>=0:graphics/p5-GD-Barcode
 
 OPTIONS_DEFINE=	BARCODE XISBN

@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	yaizawa@2004.jukuin.keio.ac.jp
 COMMENT=	PDF layout system that uses the same data structures as HTML::Template
 
-BUILD_DEPENDS+=	pdflib-perl>=0:print/pdflib-perl \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	pdflib-perl>=0:print/pdflib-perl \
 		p5-XML-Parser>=0:textproc/p5-XML-Parser
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

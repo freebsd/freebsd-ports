@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	TT plugin to make URLs clickable in HTML
 
-BUILD_DEPENDS=	p5-URI-Find>=0.13:textproc/p5-URI-Find \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-URI-Find>=0.13:textproc/p5-URI-Find \
 		p5-Template-Toolkit>=2.07:www/p5-Template-Toolkit \
 		p5-UNIVERSAL-require>=0:devel/p5-UNIVERSAL-require
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

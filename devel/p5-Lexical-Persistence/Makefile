@@ -15,9 +15,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Devel-LexAlias>=0.04:devel/p5-Devel-LexAlias \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Devel-LexAlias>=0.04:devel/p5-Devel-LexAlias \
 		p5-PadWalker>=1.1:devel/p5-PadWalker
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

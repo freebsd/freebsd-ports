@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extends Try::Tiny to allow retries
 
-BUILD_DEPENDS=	p5-Try-Tiny>0:lang/p5-Try-Tiny
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Try-Tiny>0:lang/p5-Try-Tiny
 
 USES=		perl5
 USE_PERL5=	configure

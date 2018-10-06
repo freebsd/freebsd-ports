@@ -14,9 +14,9 @@ COMMENT=	Interface with the 'rar' command
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-IPC-Run>=0:devel/p5-IPC-Run \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-IPC-Run>=0:devel/p5-IPC-Run \
 		rar:archivers/rar
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

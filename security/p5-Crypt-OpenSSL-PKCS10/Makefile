@@ -11,8 +11,8 @@ COMMENT=	Perl extension for OpenSSL PKCS10 API
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	p5-Crypt-OpenSSL-RSA>=0:security/p5-Crypt-OpenSSL-RSA
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Crypt-OpenSSL-RSA>=0:security/p5-Crypt-OpenSSL-RSA
 
 USES=		perl5 ssl
 USE_PERL5=	configure

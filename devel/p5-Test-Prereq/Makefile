@@ -13,9 +13,9 @@ COMMENT=	Check if Makefile.PL has the right pre-requisites
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Module-Extract-Use>0:devel/p5-Module-Extract-Use \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Module-Extract-Use>0:devel/p5-Module-Extract-Use \
 		p5-Module-Build>=0.4220:devel/p5-Module-Build
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>0:devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>0:devel/p5-Test-Pod-Coverage
 

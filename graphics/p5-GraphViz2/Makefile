@@ -14,7 +14,8 @@ COMMENT=	Wrapper for AT&T Graphviz
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	dot:graphics/graphviz \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	dot:graphics/graphviz \
 		p5-Algorithm-Dependency>=1.110:devel/p5-Algorithm-Dependency \
 		p5-Capture-Tiny>=0.36:devel/p5-Capture-Tiny \
 		p5-Class-ISA>=0.36:devel/p5-Class-ISA \
@@ -41,7 +42,6 @@ BUILD_DEPENDS=	dot:graphics/graphviz \
 		p5-Type-Tiny>=1.000005:devel/p5-Type-Tiny \
 		p5-XML-Bare>=0:textproc/p5-XML-Bare \
 		p5-XML-Tiny>=2.06:textproc/p5-XML-Tiny
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1.48:devel/p5-Test-Pod
 
 OPTIONS_DEFINE=	EXAMPLES

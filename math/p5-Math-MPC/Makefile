@@ -14,11 +14,11 @@ COMMENT=	Perl interface to MPC Library
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Math-MPFR>=3.23:math/p5-Math-MPFR
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Math-MPFR>=3.23:math/p5-Math-MPFR
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure
 USES=		localbase perl5

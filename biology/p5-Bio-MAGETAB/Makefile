@@ -13,7 +13,8 @@ COMMENT=	Data model and utility API for the MAGE-TAB format
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Date-Manip>=5.44:devel/p5-Date-Manip \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Date-Manip>=5.44:devel/p5-Date-Manip \
 		p5-DateTime>=0.43.02:devel/p5-DateTime \
 		p5-DateTime-Format-DateManip>=0.04:devel/p5-DateTime-Format-DateManip \
 		p5-Email-Valid>=0.179:mail/p5-Email-Valid \
@@ -24,7 +25,6 @@ BUILD_DEPENDS=	p5-Date-Manip>=5.44:devel/p5-Date-Manip \
 		p5-Parse-RecDescent>=1.965.001:devel/p5-Parse-RecDescent \
 		p5-Text-CSV_XS>=0.32:textproc/p5-Text-CSV_XS \
 		p5-URI>=1.35:net/p5-URI
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0.26:devel/p5-Test-Exception
 
 USES=		perl5

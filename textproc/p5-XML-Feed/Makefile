@@ -13,7 +13,8 @@ COMMENT=	Perl5 modules for Syndication feed parser and auto-discovery
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-ErrorHandler>=0:devel/p5-Class-ErrorHandler \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-ErrorHandler>=0:devel/p5-Class-ErrorHandler \
 		p5-DateTime>=0:devel/p5-DateTime \
 		p5-DateTime-Format-Mail>=0:devel/p5-DateTime-Format-Mail \
 		p5-DateTime-Format-W3CDTF>=0:devel/p5-DateTime-Format-W3CDTF \
@@ -26,7 +27,6 @@ BUILD_DEPENDS=	p5-Class-ErrorHandler>=0:devel/p5-Class-ErrorHandler \
 		p5-XML-LibXML>=1.66:textproc/p5-XML-LibXML \
 		p5-XML-RSS>=1.47:textproc/p5-XML-RSS \
 		p5-libwww>=0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-XML-RSS-LibXML>=0.30.04:textproc/p5-XML-RSS-LibXML
 
 USES=		perl5

@@ -12,8 +12,8 @@ COMMENT=	Log::Agent::Logger - a logging interface for perl
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-Log-Agent>=0.208:devel/p5-Log-Agent
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Log-Agent>=0.208:devel/p5-Log-Agent
 
 NO_ARCH=	yes
 USES=		perl5

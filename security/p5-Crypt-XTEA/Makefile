@@ -13,8 +13,8 @@ COMMENT=	Implementation of the eXtended Tiny Encryption Algorithm
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Scalar-Util-Numeric>=0.40:devel/p5-Scalar-Util-Numeric
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Scalar-Util-Numeric>=0.40:devel/p5-Scalar-Util-Numeric
 TEST_DEPENDS=	p5-Crypt-CBC>=0:security/p5-Crypt-CBC
 
 USES=		perl5

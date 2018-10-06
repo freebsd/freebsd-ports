@@ -15,8 +15,8 @@ COMMENT=	Provides basic needs for a daemon
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Log-Report-Optional>=1.06:devel/p5-Log-Report-Optional
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Log-Report-Optional>=1.06:devel/p5-Log-Report-Optional
 
 USES=		perl5
 USE_PERL5=	configure

@@ -15,7 +15,8 @@ COMMENT=	Perl extension for the automatic generation of LaTeX tables
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-LaTeX-Driver>=0:textproc/p5-LaTeX-Driver \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-LaTeX-Driver>=0:textproc/p5-LaTeX-Driver \
 		p5-LaTeX-Encode>=0:textproc/p5-LaTeX-Encode \
 		p5-Module-Pluggable>=0:devel/p5-Module-Pluggable \
 		p5-Moose>=0.76:devel/p5-Moose \
@@ -24,7 +25,6 @@ BUILD_DEPENDS=	p5-LaTeX-Driver>=0:textproc/p5-LaTeX-Driver \
 		p5-Number-Format>=0:textproc/p5-Number-Format \
 		p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
 		p5-Text-CSV>=0:textproc/p5-Text-CSV
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-NoWarnings>=0.084:devel/p5-Test-NoWarnings
 
 NO_ARCH=	yes

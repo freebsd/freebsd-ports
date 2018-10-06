@@ -14,10 +14,10 @@ COMMENT=	Pastebin web application to upload snippets of text
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-IO-All>=0:devel/p5-IO-All \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-IO-All>=0:devel/p5-IO-All \
 		p5-Spiffy>=0:devel/p5-Spiffy \
 		p5-libwww>=0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	X11
 X11_DESC=	X11 Clipboard support

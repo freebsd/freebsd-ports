@@ -14,7 +14,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Clone>=0.31:devel/p5-Clone \
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		p5-File-ShareDir-Install>=0.03:devel/p5-File-ShareDir-Install
+RUN_DEPENDS=	p5-Clone>=0.31:devel/p5-Clone \
 		p5-Config-Any>=0.18:devel/p5-Config-Any \
 		p5-Data-Visitor>=0.26:devel/p5-Data-Visitor \
 		p5-DateTime>=0.54:devel/p5-DateTime \
@@ -39,8 +41,6 @@ BUILD_DEPENDS=	p5-Clone>=0.31:devel/p5-Clone \
 		p5-Regexp-Common>=0:textproc/p5-Regexp-Common \
 		p5-Task-Weaken>=0:devel/p5-Task-Weaken \
 		p5-YAML-LibYAML>=0.32:textproc/p5-YAML-LibYAML
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-BUILD_DEPENDS+=	p5-File-ShareDir-Install>=0.03:devel/p5-File-ShareDir-Install
 TEST_DEPENDS=	p5-CGI>=0:www/p5-CGI \
 		p5-Test-Aggregate>=0.371:devel/p5-Test-Aggregate \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \

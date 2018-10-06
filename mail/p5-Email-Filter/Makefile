@@ -14,11 +14,11 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Class-Trigger>=0:devel/p5-Class-Trigger \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Trigger>=0:devel/p5-Class-Trigger \
 		p5-Email-LocalDelivery>=0:mail/p5-Email-LocalDelivery \
 		p5-Email-Simple>=0:mail/p5-Email-Simple \
 		p5-IPC-Run>=0:devel/p5-IPC-Run
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

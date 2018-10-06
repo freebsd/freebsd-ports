@@ -15,9 +15,9 @@ COMMENT=	Keep a mirrored working copy of a repository path
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-SVN-Notify>=2.83:devel/p5-SVN-Notify \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-SVN-Notify>=2.83:devel/p5-SVN-Notify \
 		p5-YAML>=0.81:textproc/p5-YAML
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild

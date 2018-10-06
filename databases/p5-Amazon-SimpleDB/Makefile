@@ -14,11 +14,11 @@ COMMENT=	Low-level perlish interface for working with Amazon SimpleDB service
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	p5-Digest-HMAC>=0:security/p5-Digest-HMAC \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Digest-HMAC>=0:security/p5-Digest-HMAC \
 		p5-URI>=0:net/p5-URI \
 		p5-XML-Simple>=0:textproc/p5-XML-Simple \
 		p5-libwww>=0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USE_PERL5=	configure

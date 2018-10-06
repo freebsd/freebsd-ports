@@ -14,7 +14,8 @@ COMMENT=	Jifty -- Just Do It -- Yet another web framework
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Any-Moose>=0:devel/p5-Any-Moose \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Any-Moose>=0:devel/p5-Any-Moose \
 		p5-App-CLI>=0.03:devel/p5-App-CLI \
 		p5-CGI-Cookie-Splitter>=0:www/p5-CGI-Cookie-Splitter \
 		p5-CGI-Emulate-PSGI>=0.06:www/p5-CGI-Emulate-PSGI \
@@ -88,7 +89,6 @@ BUILD_DEPENDS=	p5-Any-Moose>=0:devel/p5-Any-Moose \
 		p5-YAML>=0.35:textproc/p5-YAML \
 		p5-YAML-Syck>=0.71:textproc/p5-YAML-Syck \
 		p5-libwww>0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Base>=0.44:devel/p5-Test-Base \
 		p5-Test-HTTP-Server-Simple>=0.02:www/p5-Test-HTTP-Server-Simple \
 		p5-Test-Log4perl>0:devel/p5-Test-Log4perl \

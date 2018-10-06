@@ -12,7 +12,8 @@ COMMENT=	Shorthand for common attribute options
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Moose>=1.14:devel/p5-Moose \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Moose>=1.14:devel/p5-Moose \
 		p5-MooseX-Meta-TypeConstraint-Mooish>=0:devel/p5-MooseX-Meta-TypeConstraint-Mooish \
 		p5-MooseX-Role-Parameterized>=0:devel/p5-MooseX-Role-Parameterized \
 		p5-MooseX-Types>=0:devel/p5-MooseX-Types \
@@ -20,7 +21,6 @@ BUILD_DEPENDS=	p5-Moose>=1.14:devel/p5-Moose \
 		p5-MooseX-Util>=0:devel/p5-MooseX-Util \
 		p5-aliased>=0:devel/p5-aliased \
 		p5-namespace-autoclean>=0.24:devel/p5-namespace-autoclean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-MooseX-Types-Path-Class>=0:devel/p5-MooseX-Types-Path-Class \
 		p5-Path-Class>=0:devel/p5-Path-Class \
 		p5-Test-CheckDeps>=0.010:devel/p5-Test-CheckDeps \

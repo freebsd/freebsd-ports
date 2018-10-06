@@ -13,10 +13,10 @@ COMMENT=	Auto handling of Devel::NYTProf in your Mojolicious app
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Devel-NYTProf>=5.07:devel/p5-Devel-NYTProf \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Devel-NYTProf>=5.07:devel/p5-Devel-NYTProf \
 		p5-File-Which>=1.09:sysutils/p5-File-Which \
 		p5-Mojolicious>=6.00:www/p5-Mojolicious
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Algorithm-Combinatorics>=0:math/p5-Algorithm-Combinatorics \
 		p5-Test-Exception>=0:devel/p5-Test-Exception
 

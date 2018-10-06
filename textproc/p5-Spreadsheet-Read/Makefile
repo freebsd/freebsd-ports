@@ -13,11 +13,11 @@ COMMENT=	Read the data from a spreadsheet
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Text-CSV_XS>=0.71:textproc/p5-Text-CSV_XS \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Text-CSV_XS>=0.71:textproc/p5-Text-CSV_XS \
 		p5-Text-CSV>=1.33:textproc/p5-Text-CSV \
 		p5-Spreadsheet-ReadSXC>=0.20:textproc/p5-Spreadsheet-ReadSXC \
 		p5-Spreadsheet-ParseExcel>=0.13:textproc/p5-Spreadsheet-ParseExcel
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-NoWarnings>0:devel/p5-Test-NoWarnings
 
 USES=		perl5 tar:tgz

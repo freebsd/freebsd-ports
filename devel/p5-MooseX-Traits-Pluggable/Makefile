@@ -14,12 +14,12 @@ COMMENT=	Trait loading and resolution for Moose
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	\
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	\
 	p5-Moose>=0:devel/p5-Moose \
 	p5-Class-Load>=0:devel/p5-Class-Load \
 	p5-namespace-autoclean>=0:devel/p5-namespace-autoclean \
 	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 USES=		perl5

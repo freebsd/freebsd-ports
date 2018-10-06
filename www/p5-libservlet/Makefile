@@ -14,8 +14,8 @@ COMMENT=	Servlet API for Perl
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Exception-Class>=0:devel/p5-Exception-Class
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Exception-Class>=0:devel/p5-Exception-Class
 
 USES=		perl5
 USE_PERL5=	configure

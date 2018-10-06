@@ -14,8 +14,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Math-FixedPrecision>=0:math/p5-Math-FixedPrecision
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Math-FixedPrecision>=0:math/p5-Math-FixedPrecision
 TEST_DEPENDS=	p5-Test-More-UTF8>=0:devel/p5-Test-More-UTF8
 
 NO_ARCH=	yes

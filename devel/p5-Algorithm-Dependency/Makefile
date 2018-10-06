@@ -14,8 +14,8 @@ COMMENT=	Base class for implementing various dependency trees
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Params-Util>=0.31:devel/p5-Params-Util
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Params-Util>=0.31:devel/p5-Params-Util
 TEST_DEPENDS=	p5-Test-ClassAPI>=0.6:devel/p5-Test-ClassAPI
 
 USES=		perl5

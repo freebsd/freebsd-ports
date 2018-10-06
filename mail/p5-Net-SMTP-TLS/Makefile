@@ -14,10 +14,10 @@ COMMENT=	SMTP client supporting TLS and AUTH
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Digest-HMAC>=0:security/p5-Digest-HMAC \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Digest-HMAC>=0:security/p5-Digest-HMAC \
 		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
 		p5-Net-SSLeay>=0:security/p5-Net-SSLeay
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USE_PERL5=	configure

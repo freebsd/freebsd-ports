@@ -15,7 +15,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Audio-MPD-Common>=0:audio/p5-Audio-MPD-Common \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Audio-MPD-Common>=0:audio/p5-Audio-MPD-Common \
 		p5-Getopt-Euclid>=0:devel/p5-Getopt-Euclid \
 		p5-List-AllUtils>=0:devel/p5-List-AllUtils \
 		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
@@ -24,7 +25,6 @@ BUILD_DEPENDS=	p5-Audio-MPD-Common>=0:audio/p5-Audio-MPD-Common \
 		p5-MooseX-SemiAffordanceAccessor>=0:devel/p5-MooseX-SemiAffordanceAccessor \
 		p5-MooseX-Types>=0:devel/p5-MooseX-Types \
 		p5-Proc-Daemon>=0:devel/p5-Proc-Daemon
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Corpus-Audio-MPD>=1.113282:audio/p5-Test-Corpus-Audio-MPD
 
 NO_ARCH=	yes

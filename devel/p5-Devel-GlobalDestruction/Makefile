@@ -12,8 +12,8 @@ COMMENT=	Expose PL_dirty, the flag which marks global destruction
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Sub-Exporter-Progressive>=0.001011:devel/p5-Sub-Exporter-Progressive
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Sub-Exporter-Progressive>=0.001011:devel/p5-Sub-Exporter-Progressive
 
 USES=		perl5
 USE_PERL5=	configure

@@ -13,9 +13,9 @@ COMMENT=	Generic classes for simplistic and perlish handling of XML data
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	p5-Task-Weaken>=1.02:devel/p5-Task-Weaken \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Task-Weaken>=1.02:devel/p5-Task-Weaken \
 		p5-XML-SAX>=0:textproc/p5-XML-SAX
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

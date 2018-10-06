@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PerlSAX2 XS extension to Expat parser
 
-BUILD_DEPENDS=	p5-XML-SAX>=0:textproc/p5-XML-SAX
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-XML-SAX>=0:textproc/p5-XML-SAX
 LIB_DEPENDS=	libexpat.so:textproc/expat2
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -15,9 +15,9 @@ COMMENT=	Smart, easy and powerful way to access/create XML files/data
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Object-MultiType>=0.03:devel/p5-Object-MultiType \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Object-MultiType>=0.03:devel/p5-Object-MultiType \
 		p5-XML-XPath>=0:textproc/p5-XML-XPath
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Data-Dump>=0:devel/p5-Data-Dump \
 		p5-Devel-Cycle>=0:devel/p5-Devel-Cycle
 

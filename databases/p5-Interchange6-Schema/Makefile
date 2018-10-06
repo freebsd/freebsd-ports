@@ -14,7 +14,8 @@ COMMENT=	Database Schema for Interchange 6
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DBIx-Class>=0:databases/p5-DBIx-Class\
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-DBIx-Class>=0:databases/p5-DBIx-Class\
 		p5-DBIx-Class-Schema-Config>=0:databases/p5-DBIx-Class-Schema-Config\
 		p5-DBIx-Class-PassphraseColumn>=0:databases/p5-DBIx-Class-PassphraseColumn\
 		p5-DBIx-Class-InflateColumn-Authen-Passphrase>=0:databases/p5-DBIx-Class-InflateColumn-Authen-Passphrase\
@@ -23,7 +24,6 @@ BUILD_DEPENDS=	p5-DBIx-Class>=0:databases/p5-DBIx-Class\
 		p5-Time-Duration-Parse>=0:devel/p5-Time-Duration-Parse\
 		p5-Locale-SubCountry>=0:misc/p5-Locale-SubCountry\
 		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite\
 		p5-DBIx-Class-TimeStamp>=0:databases/p5-DBIx-Class-TimeStamp\
 		p5-DBIx-Class-Helpers>=0:databases/p5-DBIx-Class-Helpers\

@@ -15,15 +15,12 @@ COMMENT=	SNMP support for FusionInventory Agent
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	No longer needed
-EXPIRATION_DATE=	2018-10-22
-
-BUILD_DEPENDS=	p5-FusionInventory-Agent>=0:net-mgmt/p5-FusionInventory-Agent \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-FusionInventory-Agent>=0:net-mgmt/p5-FusionInventory-Agent \
 		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
 		p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP \
 		p5-Parallel-ForkManager>=0:devel/p5-Parallel-ForkManager \
 		p5-XML-Simple>=0:textproc/p5-XML-Simple
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

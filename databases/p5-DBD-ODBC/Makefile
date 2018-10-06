@@ -13,8 +13,8 @@ COMMENT=	DBD module interfacing the ODBC databases
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DBI>=1.609:databases/p5-DBI
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-DBI>=1.609:databases/p5-DBI
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
 OPTIONS_DEFINE=	DOCS

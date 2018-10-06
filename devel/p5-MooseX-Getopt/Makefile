@@ -15,13 +15,13 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Getopt-Long-Descriptive>=0.081:devel/p5-Getopt-Long-Descriptive \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Getopt-Long-Descriptive>=0.081:devel/p5-Getopt-Long-Descriptive \
 		p5-Moose>=0.56:devel/p5-Moose \
 		p5-MooseX-ConfigFromFile>=0:devel/p5-MooseX-ConfigFromFile \
 		p5-MooseX-Role-Parameterized>=1.01:devel/p5-MooseX-Role-Parameterized \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-MooseX-SimpleConfig>=0.07:devel/p5-MooseX-SimpleConfig \
 		p5-Module-Runtime>=0:devel/p5-Module-Runtime \
 		p5-Path-Tiny>=0.009:devel/p5-Path-Tiny \

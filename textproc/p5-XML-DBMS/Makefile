@@ -12,11 +12,11 @@ DISTNAME=	perl-${PORTNAME:tl}-${PORTVERSION}
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Perl port of Java package XML-DBMS v1.0
 
-BUILD_DEPENDS=	p5-libxml>=0:textproc/p5-libxml \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-libxml>=0:textproc/p5-libxml \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
 		p5-TimeDate>=0:devel/p5-TimeDate \
 		p5-DBI>=0:databases/p5-DBI
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	EXAMPLES
 

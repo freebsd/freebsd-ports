@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module that produce UML sequence diagrams
 
-BUILD_DEPENDS=	p5-XML-DOM>=1.25:textproc/p5-XML-DOM \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-XML-DOM>=1.25:textproc/p5-XML-DOM \
 		p5-GD>=2.30:graphics/p5-GD \
 		p5-GD-TextUtil>=0.86:graphics/p5-GD-TextUtil
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

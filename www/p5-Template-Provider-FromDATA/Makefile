@@ -14,9 +14,9 @@ COMMENT=	Load templates from your __DATA__ section
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Template-Toolkit>=2.15:www/p5-Template-Toolkit \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Template-Toolkit>=2.15:www/p5-Template-Toolkit \
 		p5-Class-Accessor>0:devel/p5-Class-Accessor
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -14,8 +14,8 @@ COMMENT=	Write Perl Subroutines in assembler
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Inline-C>=0.42:devel/p5-Inline-C
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Inline-C>=0.42:devel/p5-Inline-C
 
 USES=		perl5
 USE_PERL5=	configure

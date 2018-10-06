@@ -11,11 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	noc-ports@biglist.com
 COMMENT=	Flexible SMTP daemon written in Perl and featuring a plugin API
 
-BUILD_DEPENDS=	spamd:mail/spamassassin \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	spamd:mail/spamassassin \
 		p5-Mail-Tools>=0:mail/p5-Mail-Tools \
 		p5-Net-DNS>=0.39:dns/p5-Net-DNS \
 		p5-Net-IP>=0:net-mgmt/p5-Net-IP
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	MODPERL DOCS EXAMPLES
 OPTIONS_DEFAULT=MODPERL

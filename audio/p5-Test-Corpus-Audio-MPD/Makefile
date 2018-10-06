@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Automate launching of fake mdp for testing purposes
 
-BUILD_DEPENDS=	p5-File-ShareDir-PathClass>0:devel/p5-File-ShareDir-PathClass \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-File-ShareDir-PathClass>0:devel/p5-File-ShareDir-PathClass \
 		p5-Path-Class>=0:devel/p5-Path-Class \
 		p5-Readonly>=0:devel/p5-Readonly
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild

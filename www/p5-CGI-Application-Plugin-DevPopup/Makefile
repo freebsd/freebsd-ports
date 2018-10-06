@@ -14,10 +14,10 @@ COMMENT=	Runtime cgiapp info in a popup window
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-CGI-Application>=4.01:www/p5-CGI-Application \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-CGI-Application>=4.01:www/p5-CGI-Application \
 		p5-HTML-Template>0:www/p5-HTML-Template \
 		p5-IO-stringy>0:devel/p5-IO-stringy
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

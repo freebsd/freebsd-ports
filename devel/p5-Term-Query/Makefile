@@ -14,8 +14,8 @@ COMMENT=	Interactive question-response user interface module
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Array-PrintCols>=0:misc/p5-Array-PrintCols
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Array-PrintCols>=0:misc/p5-Array-PrintCols
 
 USES=		perl5
 USE_PERL5=	configure

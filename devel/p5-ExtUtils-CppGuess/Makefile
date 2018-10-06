@@ -13,8 +13,8 @@ COMMENT=	Guess C++ compiler and flags
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny
 
 NO_ARCH=	yes
 USE_PERL5=	configure

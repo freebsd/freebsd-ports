@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	Shorten URL using 0rz.net
 
-BUILD_DEPENDS=	p5-WWW-Shorten>=0:www/p5-WWW-Shorten \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-WWW-Shorten>=0:www/p5-WWW-Shorten \
 		p5-WWW-Mechanize>=0:www/p5-WWW-Mechanize
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 USES=		perl5

@@ -13,8 +13,8 @@ COMMENT=	Write Perl Subroutines in Python
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Inline>=0.46:devel/p5-Inline
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Inline>=0.46:devel/p5-Inline
 TEST_DEPENDS=	p5-Proc-ProcessTable>=0.53:devel/p5-Proc-ProcessTable \
 		p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-Number-Delta>=0:devel/p5-Test-Number-Delta

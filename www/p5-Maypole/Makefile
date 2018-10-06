@@ -15,7 +15,8 @@ COMMENT=	MVC web application framework
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-CGI-Simple>=0:www/p5-CGI-Simple \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-CGI-Simple>=0:www/p5-CGI-Simple \
 		p5-CGI-Untaint>=1.26:www/p5-CGI-Untaint \
 		p5-CGI-Untaint-date>=0:www/p5-CGI-Untaint-date \
 		p5-CGI-Untaint-email>=0:www/p5-CGI-Untaint-email \
@@ -36,7 +37,6 @@ BUILD_DEPENDS=	p5-CGI-Simple>=0:www/p5-CGI-Simple \
 		p5-UNIVERSAL-require>=0:devel/p5-UNIVERSAL-require \
 		p5-URI>=0:net/p5-URI \
 		p5-libwww>=0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-MockModule>=0:devel/p5-Test-MockModule \
 		p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 

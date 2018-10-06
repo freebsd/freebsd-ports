@@ -14,10 +14,10 @@ COMMENT=	SVG image file output
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-Image-Base>=0:graphics/p5-Image-Base \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Image-Base>=0:graphics/p5-Image-Base \
 		p5-SVG>=2.38:textproc/p5-SVG \
 		p5-SVG-Parser>=0:textproc/p5-SVG-Parser
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USE_PERL5=	configure

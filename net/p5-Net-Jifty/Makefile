@@ -14,7 +14,8 @@ COMMENT=	Perl interface to online Jifty applications
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Any-Moose>=0.04:devel/p5-Any-Moose \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Any-Moose>=0.04:devel/p5-Any-Moose \
 		p5-DateTime>=0:devel/p5-DateTime \
 		p5-Email-Address>=0:mail/p5-Email-Address \
 		p5-Hash-Merge>=0:textproc/p5-Hash-Merge \
@@ -23,7 +24,6 @@ BUILD_DEPENDS=	p5-Any-Moose>=0.04:devel/p5-Any-Moose \
 		p5-URI>=0:net/p5-URI \
 		p5-YAML>=0:textproc/p5-YAML \
 		p5-libwww>=0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-MockObject>=0:devel/p5-Test-MockObject
 
 USES=		perl5

@@ -13,9 +13,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Crypt-CBC>=2.29:security/p5-Crypt-CBC \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Crypt-CBC>=2.29:security/p5-Crypt-CBC \
 		p5-Data-UUID>=0.149:devel/p5-Data-UUID
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuildtiny

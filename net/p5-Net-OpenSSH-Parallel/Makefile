@@ -13,8 +13,8 @@ COMMENT=	Run SSH jobs in parallel
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Net-OpenSSH>=0.39:net/p5-Net-OpenSSH
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Net-OpenSSH>=0.39:net/p5-Net-OpenSSH
 
 NO_ARCH=	yes
 USE_PERL5=	configure

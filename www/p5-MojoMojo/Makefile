@@ -15,7 +15,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 # Please keep order as in Makefile.PL
-BUILD_DEPENDS=	\
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	\
 	p5-Plack>=0.9974:www/p5-Plack \
 	p5-Algorithm-Diff>=1.1901:devel/p5-Algorithm-Diff \
 	p5-Algorithm-Merge>=0:devel/p5-Algorithm-Merge \
@@ -82,7 +83,6 @@ BUILD_DEPENDS=	\
 	p5-Term-Prompt>=0:devel/p5-Term-Prompt \
 	p5-Text-Emoticon-MSN>=0:textproc/p5-Text-Emoticon-MSN \
 	p5-File-Slurp>=0:devel/p5-File-Slurp
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-WWW-Mechanize-Catalyst>=0:devel/p5-Test-WWW-Mechanize-Catalyst
 
 NO_ARCH=	yes

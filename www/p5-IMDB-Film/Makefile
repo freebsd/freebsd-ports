@@ -12,13 +12,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OO Perl interface to the movies database IMDB
 
-BUILD_DEPENDS=	p5-Cache-Cache>=0:devel/p5-Cache-Cache \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Cache-Cache>=0:devel/p5-Cache-Cache \
 		p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
 		p5-Error>=0:lang/p5-Error \
 		p5-HTML-Parser>=2.28:www/p5-HTML-Parser \
 		p5-Text-Unidecode>=0:converters/p5-Text-Unidecode \
 		p5-libwww>=1.41:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -13,8 +13,8 @@ COMMENT=	OO Perl interface to the ADS abstract service
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	p5-libwww>=0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww
 
 NO_ARCH=	yes
 USES=		perl5

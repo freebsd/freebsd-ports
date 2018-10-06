@@ -14,8 +14,8 @@ COMMENT=	Utility functions for XS modules
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Module-Install>=0.91:devel/p5-Module-Install
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Module-Install>=0.91:devel/p5-Module-Install
 TEST_DEPENDS=	p5-B-Hooks-OP-Annotation>=0.43:devel/p5-B-Hooks-OP-Annotation
 
 NO_ARCH=	yes

@@ -14,14 +14,14 @@ COMMENT=	Net::DNSBL::MultiDaemon - multi DNSBL prioritization
 LICENSE=	ART10 GPLv1 GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-File-SafeDO>=0.12:devel/p5-File-SafeDO \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-File-SafeDO>=0.12:devel/p5-File-SafeDO \
 		p5-Geo-IP-PurePerl>=1.10:net/p5-Geo-IP-PurePerl \
 		p5-Net-DNS-Codes>=0.09:dns/p5-Net-DNS-Codes \
 		p5-Net-DNS-ToolKit>=0.47:dns/p5-Net-DNS-ToolKit \
 		p5-Net-NBsocket>=0.23:net/p5-Net-NBsocket \
 		p5-NetAddr-IP>=4.067:net-mgmt/p5-NetAddr-IP \
 		p5-Unix-Syslog>=0.97:sysutils/p5-Unix-Syslog
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	RHBL
 OPTIONS_DEFAULT=RHBL

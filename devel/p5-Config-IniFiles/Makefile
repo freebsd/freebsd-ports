@@ -13,8 +13,8 @@ COMMENT=	Read .ini-style configuration files
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-IO-stringy>0:devel/p5-IO-stringy
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-IO-stringy>0:devel/p5-IO-stringy
 
 NO_ARCH=	yes
 USES=		perl5

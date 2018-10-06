@@ -14,13 +14,13 @@ COMMENT=	Real-time log statistics server
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
 		p5-JSON-XS>=0:converters/p5-JSON-XS \
 		p5-Log-Dispatch>=2.26:devel/p5-Log-Dispatch \
 		p5-POE>=0:devel/p5-POE \
 		p5-Pid-File-Flock>=0:devel/p5-Pid-File-Flock \
 		p5-Tie-Hash-Indexed>=0:devel/p5-Tie-Hash-Indexed
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-TCP>=0:devel/p5-Test-TCP
 
 USES=		perl5

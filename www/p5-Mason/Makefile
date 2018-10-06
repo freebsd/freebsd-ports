@@ -14,7 +14,8 @@ COMMENT=	High-performance, dynamic web site authoring system
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-Class-Load>=0:devel/p5-Class-Load \
 		p5-Class-Unload>=0:devel/p5-Class-Unload \
 		p5-Devel-GlobalDestruction>=0:devel/p5-Devel-GlobalDestruction \
@@ -28,7 +29,6 @@ BUILD_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-MooseX-HasDefaults>=0.03:devel/p5-MooseX-HasDefaults \
 		p5-MooseX-StrictConstructor>=0.13:devel/p5-MooseX-StrictConstructor \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Class-Most>=0:devel/p5-Test-Class-Most \
 		p5-Test-LongString>=0:devel/p5-Test-LongString
 

@@ -14,9 +14,9 @@ COMMENT=	Collection of planar geometry functions
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	p5-Math-Geometry-Planar-GPC>=0:math/p5-Math-Geometry-Planar-GPC \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Math-Geometry-Planar-GPC>=0:math/p5-Math-Geometry-Planar-GPC \
 		p5-Math-Geometry-Planar-Offset>=0:math/p5-Math-Geometry-Planar-Offset
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

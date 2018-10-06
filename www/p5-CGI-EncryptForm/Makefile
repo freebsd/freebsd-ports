@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Implement trusted stateful CGI Form Data using cryptography
 
-BUILD_DEPENDS=	p5-Crypt-HCE_SHA>=0:security/p5-Crypt-HCE_SHA \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Crypt-HCE_SHA>=0:security/p5-Crypt-HCE_SHA \
 		p5-Digest-SHA1>=0:security/p5-Digest-SHA1
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

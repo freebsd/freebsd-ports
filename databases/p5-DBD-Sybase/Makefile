@@ -13,9 +13,9 @@ COMMENT=	Sybase DBI driver for Perl 5
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI
 LIB_DEPENDS=	libct.so:databases/freetds
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFIGURE_ENV=	SYBASE=${LOCALBASE}
 USES=		gettext perl5

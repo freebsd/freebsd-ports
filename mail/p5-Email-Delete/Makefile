@@ -14,11 +14,11 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Email-Folder>=0:mail/p5-Email-Folder \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Email-Folder>=0:mail/p5-Email-Folder \
 		p5-Email-FolderType>=0:mail/p5-Email-FolderType \
 		p5-Email-LocalDelivery>=0:mail/p5-Email-LocalDelivery \
 		p5-Email-Simple>=0:mail/p5-Email-Simple
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

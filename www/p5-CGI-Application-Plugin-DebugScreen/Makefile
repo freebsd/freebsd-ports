@@ -14,12 +14,12 @@ COMMENT=	This plug-in add DebugScreen support to CGI::Application
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-CGI-Application>=0:www/p5-CGI-Application \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-CGI-Application>=0:www/p5-CGI-Application \
 		p5-HTML-Template>=0:www/p5-HTML-Template \
 		p5-CGI-Application-Plugin-ViewCode>=0:www/p5-CGI-Application-Plugin-ViewCode \
 		p5-Devel-StackTrace>=0:devel/p5-Devel-StackTrace \
 		p5-UNIVERSAL-require>=0:devel/p5-UNIVERSAL-require
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

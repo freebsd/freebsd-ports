@@ -15,10 +15,10 @@ COMMENT=	Get information from Excel file
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Crypt-RC4>=0:security/p5-Crypt-RC4 \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Crypt-RC4>=0:security/p5-Crypt-RC4 \
 		p5-Digest-Perl-MD5>=0:security/p5-Digest-Perl-MD5 \
 		p5-OLE-Storage_Lite>=0.19:devel/p5-OLE-Storage_Lite
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	sample/parse.pl \

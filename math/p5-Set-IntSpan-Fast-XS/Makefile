@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Faster Set::IntSpan::Fast
 
-BUILD_DEPENDS=	p5-Data-Swap>=0.07:devel/p5-Data-Swap \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Data-Swap>=0.07:devel/p5-Data-Swap \
 		p5-Set-IntSpan-Fast>=1.13:math/p5-Set-IntSpan-Fast
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -15,7 +15,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/ARTISTIC
 
-BUILD_DEPENDS=	p5-Class-Loader>=2.00:devel/p5-Class-Loader \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Loader>=2.00:devel/p5-Class-Loader \
 		p5-Convert-ASCII-Armour>=0:converters/p5-Convert-ASCII-Armour \
 		p5-Crypt-Blowfish>=0:security/p5-Crypt-Blowfish \
 		p5-Crypt-CBC>=0:security/p5-Crypt-CBC \
@@ -27,7 +28,6 @@ BUILD_DEPENDS=	p5-Class-Loader>=2.00:devel/p5-Class-Loader \
 		p5-Math-Pari>=2.001804:math/p5-Math-Pari \
 		p5-Sort-Versions>=0:devel/p5-Sort-Versions \
 		p5-Tie-EncryptedHash>=0:security/p5-Tie-EncryptedHash
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

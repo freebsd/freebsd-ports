@@ -14,11 +14,11 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/README
 
-BUILD_DEPENDS=	p5-MRO-Compat>0:devel/p5-MRO-Compat \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-MRO-Compat>0:devel/p5-MRO-Compat \
 		p5-Params-Validate>0:devel/p5-Params-Validate \
 		p5-SQL-Abstract>=1.84:databases/p5-SQL-Abstract \
 		p5-namespace-clean>=0:devel/p5-namespace-clean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Pod>=0:devel/p5-Test-Pod

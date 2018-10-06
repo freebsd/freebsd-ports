@@ -13,10 +13,10 @@ COMMENT=	Modules/CLI to determine semantic relatedness using the WordNet
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
 		p5-Text-Similarity>=0.10:textproc/p5-Text-Similarity \
 		p5-WordNet-QueryData>=1.49:textproc/p5-WordNet-QueryData
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WNHOME?=	${LOCALBASE}/share/WordNet
 

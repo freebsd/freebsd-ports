@@ -12,9 +12,9 @@ COMMENT=	Parse nice HTML files without needing a compiler
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-Moo>=1.003001:devel/p5-Moo \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Moo>=1.003001:devel/p5-Moo \
 		p5-Tree-Simple>=1.22:devel/p5-Tree-Simple
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=0:devel/p5-Test-Pod
 
 NO_ARCH=	yes

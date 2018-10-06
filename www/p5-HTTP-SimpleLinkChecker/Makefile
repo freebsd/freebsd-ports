@@ -13,11 +13,11 @@ COMMENT=	Check the HTTP response code for a link
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-HTTP-Message>=1.28:www/p5-HTTP-Message \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-HTTP-Message>=1.28:www/p5-HTTP-Message \
 		p5-LWP-Protocol-https>=1:www/p5-LWP-Protocol-https \
 		p5-Mojolicious>=4.50:www/p5-Mojolicious \
 		p5-libwww>0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

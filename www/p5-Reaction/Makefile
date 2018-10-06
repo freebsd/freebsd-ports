@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extended MVC framework built upon Catalyst
 
-BUILD_DEPENDS=	p5-Catalyst-Component-ACCEPT_CONTEXT>=0.05:www/p5-Catalyst-Component-ACCEPT_CONTEXT \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Catalyst-Component-ACCEPT_CONTEXT>=0.05:www/p5-Catalyst-Component-ACCEPT_CONTEXT \
 		p5-Catalyst-Component-InstancePerContext>=0.001001:www/p5-Catalyst-Component-InstancePerContext \
 		p5-Catalyst-Model-DBIC-Schema>=0.23:www/p5-Catalyst-Model-DBIC-Schema \
 		p5-Catalyst-Plugin-ConfigLoader>=0.23:www/p5-Catalyst-Plugin-ConfigLoader \
@@ -47,7 +48,6 @@ BUILD_DEPENDS=	p5-Catalyst-Component-ACCEPT_CONTEXT>=0.05:www/p5-Catalyst-Compon
 		p5-aliased>=0.22:devel/p5-aliased \
 		p5-namespace-clean>=0.11:devel/p5-namespace-clean \
 		p5-signatures>=0.05:lang/p5-signatures
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-SQL-Translator>=0.11002:databases/p5-SQL-Translator \
 		p5-Test-Class>=0.31:devel/p5-Test-Class \
 		p5-Test-Memory-Cycle>=1.04:devel/p5-Test-Memory-Cycle \

@@ -14,10 +14,10 @@ COMMENT=	BSD driver for Sys::Info
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-BSD-Sysctl>=0.08:sysutils/p5-BSD-Sysctl \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-BSD-Sysctl>=0.08:sysutils/p5-BSD-Sysctl \
 		p5-Sys-Info-Base>=0.7801:devel/p5-Sys-Info-Base \
 		p5-Unix-Processors>=0:sysutils/p5-Unix-Processors
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=0:devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:devel/p5-Test-Pod-Coverage \
 		p5-Test-Sys-Info>=0.20:devel/p5-Test-Sys-Info

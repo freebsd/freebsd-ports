@@ -15,7 +15,8 @@ COMMENT=	Apache Kafka interface for Perl
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Compress-Snappy>=0:archivers/p5-Compress-Snappy \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Compress-Snappy>=0:archivers/p5-Compress-Snappy \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-Const-Fast>=0:devel/p5-Const-Fast \
 		p5-Data-Compare>=0:devel/p5-Data-Compare \
@@ -24,7 +25,6 @@ BUILD_DEPENDS=	p5-Compress-Snappy>=0:archivers/p5-Compress-Snappy \
 		p5-Sys-SigAction>=0:devel/p5-Sys-SigAction \
 		p5-Scalar-Util-Numeric>=0:devel/p5-Scalar-Util-Numeric \
 		p5-Data-HexDump-Range>=0:devel/p5-Data-HexDump-Range
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

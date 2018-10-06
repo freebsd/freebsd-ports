@@ -13,7 +13,8 @@ COMMENT=	Multipart HTML Email builder
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-Data-Serializer>=0:devel/p5-Data-Serializer \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Data-Serializer>=0:devel/p5-Data-Serializer \
 		p5-Email-MIME>=0:mail/p5-Email-MIME \
 		p5-File-Policy>=0:devel/p5-File-Policy \
 		p5-HTML-Tagset>=0:www/p5-HTML-Tagset \
@@ -22,7 +23,6 @@ BUILD_DEPENDS=	p5-Data-Serializer>=0:devel/p5-Data-Serializer \
 		p5-MIME-Types>=2.17:mail/p5-MIME-Types \
 		p5-URI>=0:net/p5-URI \
 		p5-libwww>=0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Email-Address>=0:mail/p5-Email-Address \
 		p5-Email-Send>=0:mail/p5-Email-Send \
 		p5-File-Slurp>=0:devel/p5-File-Slurp \

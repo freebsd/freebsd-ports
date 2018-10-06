@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	More OO interface to pdflib_pl.pm
 
-BUILD_DEPENDS=	pdflib-perl>=0:print/pdflib-perl
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	pdflib-perl>=0:print/pdflib-perl
 
 USES=		perl5
 USE_PERL5=	configure

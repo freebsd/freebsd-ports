@@ -15,13 +15,13 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Compress-Snappy>0:archivers/p5-Compress-Snappy \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Compress-Snappy>0:archivers/p5-Compress-Snappy \
 		p5-Devel-GlobalDestruction>=0:devel/p5-Devel-GlobalDestruction \
 		p5-Future>=0.17:devel/p5-Future \
 		p5-IO-Async>=0.59:devel/p5-IO-Async \
 		p5-Compress-LZ4>0:archivers/p5-Compress-LZ4 \
 		p5-Protocol-CassandraCQL>=0.11:databases/p5-Protocol-CassandraCQL
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Identity>0:devel/p5-Test-Identity \
 		p5-Test-Refcount>0:devel/p5-Test-Refcount
 

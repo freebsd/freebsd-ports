@@ -14,10 +14,10 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Math-Random>=0.69:math/p5-Math-Random \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Math-Random>=0.69:math/p5-Math-Random \
 		p5-POE>=0:devel/p5-POE \
 		p5-POE-Component-IRC>=0:irc/p5-POE-Component-IRC
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5 shebangfix

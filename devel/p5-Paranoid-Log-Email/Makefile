@@ -12,8 +12,8 @@ COMMENT=	SMTP support for Paranoid::Log
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Paranoid>=2:devel/p5-Paranoid
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Paranoid>=2:devel/p5-Paranoid
 
 NO_ARCH=	YES
 USES=		perl5

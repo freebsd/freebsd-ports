@@ -14,8 +14,8 @@ COMMENT=	Hashes (and objects based on hashes) with encrypting fields
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Crypt-CBC>=0:security/p5-Crypt-CBC
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Crypt-CBC>=0:security/p5-Crypt-CBC
 TEST_DEPENDS=	p5-Crypt-Blowfish>=0:security/p5-Crypt-Blowfish \
 		p5-Crypt-DES>=0:security/p5-Crypt-DES
 

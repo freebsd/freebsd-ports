@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	General-purpose iterator class
 
-BUILD_DEPENDS=	p5-Exception-Class>=0:devel/p5-Exception-Class
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Exception-Class>=0:devel/p5-Exception-Class
 
 USES=		perl5
 USE_PERL5=	configure

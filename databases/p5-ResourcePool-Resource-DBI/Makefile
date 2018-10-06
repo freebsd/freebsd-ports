@@ -13,9 +13,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	ResourcePool::Resource::DBI - A ResourcePool wrapper for DBI
 
-BUILD_DEPENDS=	p5-ResourcePool>=0:devel/p5-ResourcePool \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-ResourcePool>=0:devel/p5-ResourcePool \
 		p5-DBI>=0:databases/p5-DBI
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

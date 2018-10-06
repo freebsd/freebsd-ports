@@ -15,8 +15,8 @@ COMMENT=	Alternative Exporter with persistant defaults and auto-ISA
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-mem>=0.4.5:devel/p5-mem
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-mem>=0.4.5:devel/p5-mem
 
 NO_ARCH=	yes
 USE_PERL5=	configure

@@ -14,13 +14,13 @@ COMMENT=	Read-Eval-Print-Loop on die and/or warn
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Data-Dump-Streamer>=0:devel/p5-Data-Dump-Streamer \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Data-Dump-Streamer>=0:devel/p5-Data-Dump-Streamer \
 		p5-Devel-LexAlias>=0:devel/p5-Devel-LexAlias \
 		p5-Devel-REPL>=0:devel/p5-Devel-REPL \
 		p5-Devel-StackTrace-WithLexicals>=0:devel/p5-Devel-StackTrace-WithLexicals \
 		p5-Lexical-Persistence>=0:devel/p5-Lexical-Persistence \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Expect>=0:devel/p5-Test-Expect
 
 NO_ARCH=	yes

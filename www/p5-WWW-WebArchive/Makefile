@@ -14,10 +14,10 @@ COMMENT=	Retrieve old versions of public web pages from various web archives
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-App-Options>=0:devel/p5-App-Options \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-App-Options>=0:devel/p5-App-Options \
 		p5-App-Trace>=0:devel/p5-App-Trace \
 		p5-WWW-Mechanize>=0:www/p5-WWW-Mechanize
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USE_PERL5=	configure

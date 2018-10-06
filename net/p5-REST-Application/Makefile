@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Framework for building RESTful web-applications
 
-BUILD_DEPENDS=	p5-Tie-IxHash>=0:devel/p5-Tie-IxHash
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Tie-IxHash>=0:devel/p5-Tie-IxHash
 
 USES=		perl5
 USE_PERL5=	configure

@@ -26,8 +26,7 @@ USES=		mysql perl5
 USE_PERL5=	configure
 
 OPTIONS_DEFINE=	SSL
-SSL_BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay
-SSL_RUN_DEPENDS=	${SSL_BUILD_DEPENDS}
+SSL_RUN_DEPENDS=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay
 SSL_CONFIGURE_OFF=	--nossl
 SSL_CONFIGURE_ON=	--ssl
 SSL_USES=		ssl

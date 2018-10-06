@@ -14,12 +14,12 @@ COMMENT=	Drop-in replacement for Perl threads using fork()
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Acme-Damn>=0:devel/p5-Acme-Damn \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Acme-Damn>=0:devel/p5-Acme-Damn \
 		p5-Attribute-Handlers>=0:devel/p5-Attribute-Handlers \
 		p5-Devel-Symdump>=0:devel/p5-Devel-Symdump \
 		p5-List-MoreUtils>=:lang/p5-List-MoreUtils \
 		p5-Sys-SigAction>=0.11:devel/p5-Sys-SigAction
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

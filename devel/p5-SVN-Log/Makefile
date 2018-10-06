@@ -14,9 +14,9 @@ COMMENT=	SVN::Log - Extract change logs from a Subversion server
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-subversion>=0:devel/p5-subversion \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-subversion>=0:devel/p5-subversion \
 		p5-Test-Simple>=0:devel/p5-Test-Simple
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

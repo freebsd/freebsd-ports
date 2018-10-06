@@ -13,9 +13,9 @@ COMMENT=	Useful tools for Gnome2/Gtk2 Perl GUI design
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	p5-File-Type>=0:devel/p5-File-Type \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-File-Type>=0:devel/p5-File-Type \
 		p5-Gtk2-Ex-Utils>=0:x11-toolkits/p5-Gtk2-Ex-Utils
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

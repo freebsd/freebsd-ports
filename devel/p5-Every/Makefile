@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Return true every N cycles or S seconds
 
-BUILD_DEPENDS=	p5-Devel-Callsite>=0.04:devel/p5-Devel-Callsite
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Devel-Callsite>=0.04:devel/p5-Devel-Callsite
 
 USES=		perl5
 USE_PERL5=	configure

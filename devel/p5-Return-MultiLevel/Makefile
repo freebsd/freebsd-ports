@@ -14,9 +14,9 @@ COMMENT=	Return across multiple call levels
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Data-Munge>=0.07:devel/p5-Data-Munge \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Data-Munge>=0.07:devel/p5-Data-Munge \
 		p5-Scope-Upper>=0.29:devel/p5-Scope-Upper
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
 NO_ARCH=	yes

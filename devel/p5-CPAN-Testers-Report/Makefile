@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	CPAN Testers report object
 
-BUILD_DEPENDS=	p5-Metabase-Fact>0:devel/p5-Metabase-Fact
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Metabase-Fact>0:devel/p5-Metabase-Fact
 
 USES=		perl5
 USE_PERL5=	configure

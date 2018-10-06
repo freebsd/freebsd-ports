@@ -14,7 +14,8 @@ COMMENT=	Collection of Perl modules for bioinformatics
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Algorithm-Munkres>=0:math/p5-Algorithm-Munkres \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Algorithm-Munkres>=0:math/p5-Algorithm-Munkres \
 		p5-Array-Compare>=0:misc/p5-Array-Compare \
 		p5-CGI>=0:www/p5-CGI \
 		p5-Clone>=0:devel/p5-Clone \
@@ -51,7 +52,6 @@ BUILD_DEPENDS=	p5-Algorithm-Munkres>=0:math/p5-Algorithm-Munkres \
 		p5-YAML>=0:textproc/p5-YAML \
 		p5-libwww>=0:www/p5-libwww \
 		p5-libxml>=0:textproc/p5-libxml
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Most>=0:devel/p5-Test-Most \
 		p5-URI>=0:net/p5-URI
 

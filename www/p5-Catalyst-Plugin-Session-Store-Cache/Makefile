@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Store sessions using a Catalyst::Plugin::Cache
 
-BUILD_DEPENDS=	p5-Catalyst-Plugin-Session>=0.06:www/p5-Catalyst-Plugin-Session
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Catalyst-Plugin-Session>=0.06:www/p5-Catalyst-Plugin-Session
 
 USES=		perl5
 USE_PERL5=	configure

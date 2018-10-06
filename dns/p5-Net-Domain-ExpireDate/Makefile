@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module obtain expiration date of domain names
 
-BUILD_DEPENDS=	p5-Net-Whois-Raw>=0:net/p5-Net-Whois-Raw
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Net-Whois-Raw>=0:net/p5-Net-Whois-Raw
 
 NO_ARCH=	yes
 USES=		perl5

@@ -13,7 +13,8 @@ COMMENT=	Get stock and mutual fund quotes from various exchanges
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-CGI>=0:www/p5-CGI \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-CGI>=0:www/p5-CGI \
 		p5-DateTime>=0:devel/p5-DateTime \
 		p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-HTML-TableExtract>=0:www/p5-HTML-TableExtract \
@@ -25,7 +26,6 @@ BUILD_DEPENDS=	p5-CGI>=0:www/p5-CGI \
 		p5-Mozilla-CA>=0:www/p5-Mozilla-CA \
 		p5-URI>=0:net/p5-URI \
 		p5-libwww>=0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Kwalitee>=0:devel/p5-Test-Kwalitee \
 		p5-Test-Perl-Critic>=0:textproc/p5-Test-Perl-Critic
 

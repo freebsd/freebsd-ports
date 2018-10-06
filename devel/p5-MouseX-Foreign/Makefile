@@ -14,8 +14,8 @@ COMMENT=	Extends non-Mouse classes as well as Mouse classes
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Mouse>=0.77:devel/p5-Mouse
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Mouse>=0.77:devel/p5-Mouse
 TEST_DEPENDS=	p5-Any-Moose>=0.15:devel/p5-Any-Moose \
 		p5-Moose>=0:devel/p5-Moose \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \

@@ -14,8 +14,8 @@ COMMENT=	Object-oriented processing of keyword-based argument lists
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Hash-AutoHash>=1.17:devel/p5-Hash-AutoHash
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Hash-AutoHash>=1.17:devel/p5-Hash-AutoHash
 TEST_DEPENDS=	p5-Test-Deep>=0.110:devel/p5-Test-Deep \
 		p5-Test-Pod>=1.48:devel/p5-Test-Pod
 

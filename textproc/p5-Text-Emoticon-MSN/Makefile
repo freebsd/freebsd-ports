@@ -13,8 +13,8 @@ COMMENT=	Emoticon filter of MSN Messenger
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Text-Emoticon>=0.02:textproc/p5-Text-Emoticon
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Text-Emoticon>=0.02:textproc/p5-Text-Emoticon
 
 USE_PERL5=	configure
 USES=		perl5

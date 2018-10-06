@@ -14,11 +14,11 @@ COMMENT=	FastCGI server for CGI-like applications multiprocessing
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-CGI-Fast>=0:www/p5-CGI-Fast \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-CGI-Fast>=0:www/p5-CGI-Fast \
 		p5-Const-Fast>0:devel/p5-Const-Fast \
 		p5-FCGI>0:www/p5-FCGI \
 		p5-FCGI-ProcManager>0:www/p5-FCGI-ProcManager
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Most>0:devel/p5-Test-Most \
 		p5-Test-Strict>0:devel/p5-Test-Strict
 

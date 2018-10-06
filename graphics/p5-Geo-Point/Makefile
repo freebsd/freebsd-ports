@@ -13,10 +13,10 @@ COMMENT=	Perl Module Tries To Abstract Coordinate Systems
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Geo-Distance>=0.06:math/p5-Geo-Distance \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Geo-Distance>=0.06:math/p5-Geo-Distance \
 		p5-Geo-Proj4>=1.01:graphics/p5-Geo-Proj4 \
 		p5-Math-Polygon>=1.01:math/p5-Math-Polygon
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

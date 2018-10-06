@@ -13,13 +13,13 @@ COMMENT=	Process huge XML documents by chunks via a tree interface
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTML-Tree>=3.13:www/p5-HTML-Tree \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-HTML-Tree>=3.13:www/p5-HTML-Tree \
 		p5-Text-Iconv>=0:converters/p5-Text-Iconv \
 		p5-Tie-IxHash>=0:devel/p5-Tie-IxHash \
 		p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		p5-XML-XPath>=0:textproc/p5-XML-XPath \
 		p5-libwww>=0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-IO-CaptureOutput>=0:devel/p5-IO-CaptureOutput \
 		p5-XML-Handler-YAWriter>=0:textproc/p5-XML-Handler-YAWriter \
 		p5-XML-SAX-Writer>=0:textproc/p5-XML-SAX-Writer \

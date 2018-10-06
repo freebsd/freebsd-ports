@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for handling X509 Certificates
 
-BUILD_DEPENDS=	p5-X500-DN>=0:net/p5-X500-DN
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-X500-DN>=0:net/p5-X500-DN
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	prova.pl

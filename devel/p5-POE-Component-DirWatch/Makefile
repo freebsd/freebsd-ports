@@ -13,11 +13,11 @@ COMMENT=	POE directory watcher
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-POE>=0.12:devel/p5-POE \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-POE>=0.12:devel/p5-POE \
 		p5-Path-Class>0:devel/p5-Path-Class \
 		p5-MooseX-Types-Path-Class>0:devel/p5-MooseX-Types-Path-Class \
 		p5-File-Signature>0:sysutils/p5-File-Signature
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

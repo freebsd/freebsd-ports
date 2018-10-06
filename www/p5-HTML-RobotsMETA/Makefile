@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	markun@onohara.to
 COMMENT=	Parse HTML For Robots Exclusion META Markup
 
-BUILD_DEPENDS=	p5-HTML-Parser>=3:www/p5-HTML-Parser
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-HTML-Parser>=3:www/p5-HTML-Parser
 
 USES=		perl5
 USE_PERL5=	configure

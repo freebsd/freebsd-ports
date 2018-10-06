@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	TheSchwartz Worker Task to Send Email
 
-BUILD_DEPENDS=	p5-TheSchwartz>=1.10:devel/p5-TheSchwartz \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-TheSchwartz>=1.10:devel/p5-TheSchwartz \
 		p5-Net-DNS>=0.66_1:dns/p5-Net-DNS
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -13,11 +13,11 @@ COMMENT=	Extract links from JSON objects
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	p5-JSON>=2.0:converters/p5-JSON \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-JSON>=2.0:converters/p5-JSON \
 		p5-JSON-Path>=0:devel/p5-JSON-Path \
 		p5-URI>=1.30:net/p5-URI \
 		p5-libwww>=0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

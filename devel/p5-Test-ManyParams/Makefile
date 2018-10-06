@@ -14,10 +14,10 @@ COMMENT=	Perl module to test many params as one test
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Set-CrossProduct>0:devel/p5-Set-CrossProduct \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Set-CrossProduct>0:devel/p5-Set-CrossProduct \
 		p5-Test-Differences>0:devel/p5-Test-Differences \
 		p5-Test-Exception>0:devel/p5-Test-Exception
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -14,13 +14,13 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Convert-ASN1>=0.27:converters/p5-Convert-ASN1 \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Convert-ASN1>=0.27:converters/p5-Convert-ASN1 \
 		p5-Crypt-OpenSSL-DSA>0:security/p5-Crypt-OpenSSL-DSA \
 		p5-Crypt-OpenSSL-RSA>0:security/p5-Crypt-OpenSSL-RSA \
 		p5-CryptX>0:security/p5-CryptX \
 		p5-Digest-MD2>0:security/p5-Digest-MD2 \
 		p5-Digest-MD4>0:security/p5-Digest-MD4
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Module-Signature>0:security/p5-Module-Signature
 
 PORTSCOUT=	ignore:1.800201,1.8002

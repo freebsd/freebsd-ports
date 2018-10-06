@@ -13,7 +13,8 @@ COMMENT=	Validates user input (usually from an HTML form) based
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-CGI>=3.48:www/p5-CGI \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-CGI>=3.48:www/p5-CGI \
 		p5-Date-Calc>=5.0:devel/p5-Date-Calc \
 		p5-Email-Valid>=0:mail/p5-Email-Valid \
 		p5-File-MMagic>=1.17:devel/p5-File-MMagic \
@@ -21,7 +22,6 @@ BUILD_DEPENDS=	p5-CGI>=3.48:www/p5-CGI \
 		p5-MIME-Types>=1.005:mail/p5-MIME-Types \
 		p5-Perl6-Junction>=1.10:devel/p5-Perl6-Junction \
 		p5-Regexp-Common>=0:textproc/p5-Regexp-Common
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

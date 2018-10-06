@@ -13,9 +13,9 @@ COMMENT=	Extension for handling ESRI GIS Shapefiles
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Tree-R>0:devel/p5-Tree-R \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Tree-R>0:devel/p5-Tree-R \
 		p5-autovivification>0:devel/p5-autovivification
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		dos2unix perl5

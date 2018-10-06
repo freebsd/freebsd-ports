@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Page numbering and page sets
 
-BUILD_DEPENDS=	p5-Data-Page>=2:databases/p5-Data-Page
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Data-Page>=2:databases/p5-Data-Page
 
 USES=		perl5
 USE_PERL5=	configure

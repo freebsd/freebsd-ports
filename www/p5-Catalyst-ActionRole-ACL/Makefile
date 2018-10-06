@@ -15,11 +15,11 @@ COMMENT=	User role-based authorization action class
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Catalyst-Controller-ActionRole>=0:www/p5-Catalyst-Controller-ActionRole \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Catalyst-Controller-ActionRole>=0:www/p5-Catalyst-Controller-ActionRole \
 		p5-Catalyst-Runtime>=5.90013:www/p5-Catalyst-Runtime \
 		p5-Moose>=0:devel/p5-Moose \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -14,7 +14,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0.18:devel/p5-Class-Accessor \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Accessor>=0.18:devel/p5-Class-Accessor \
 		p5-Class-Factory>=1:devel/p5-Class-Factory \
 		p5-Class-Observable>=1.04:devel/p5-Class-Observable \
 		p5-DBI>=0:databases/p5-DBI \
@@ -27,7 +28,6 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0.18:devel/p5-Class-Accessor \
 		p5-Log-Log4perl>=0.34:devel/p5-Log-Log4perl \
 		p5-SPOPS>=0:devel/p5-SPOPS \
 		p5-XML-Simple>=2:textproc/p5-XML-Simple
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-DBD-Mock>=0.1:databases/p5-DBD-Mock \
 		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-Pod-Coverage-TrustPod>=0:devel/p5-Pod-Coverage-TrustPod \

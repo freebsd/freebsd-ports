@@ -14,10 +14,10 @@ COMMENT=	Base class for injecting distributions into CPAN sources
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-File-chmod>=0.30:devel/p5-File-chmod \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-File-chmod>=0.30:devel/p5-File-chmod \
 		p5-Params-Util>=0.21:devel/p5-Params-Util \
 		p5-CPAN-Checksums>=1.05:devel/p5-CPAN-Checksums
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Script-Run>=1.02:devel/p5-Test-Script-Run \
 		p5-File-Remove>=0.34:devel/p5-File-Remove \
 		p5-Compress-Bzip2>=0:archivers/p5-Compress-Bzip2 \

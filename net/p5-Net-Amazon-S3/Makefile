@@ -13,7 +13,8 @@ COMMENT=	Use the Amazon S3 - Simple Storage Service
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-Data-Stream-Bulk>=0.06:devel/p5-Data-Stream-Bulk \
 		p5-DateTime-Format-HTTP>=0:devel/p5-DateTime-Format-HTTP \
 		p5-DateTime-Format-ISO8601>=0:devel/p5-DateTime-Format-ISO8601 \
@@ -32,7 +33,6 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-VM-EC2-Security-CredentialCache>=0:net/p5-VM-EC2-Security-CredentialCache \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
 		p5-libwww>=6.03:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-LoadAllModules>=0:devel/p5-Test-LoadAllModules \
 		p5-Test-MockTime>=0:devel/p5-Test-MockTime \

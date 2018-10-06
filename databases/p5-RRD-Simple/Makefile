@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple interface to create and store data in RRD files
 
-BUILD_DEPENDS=	rrdtool:databases/rrdtool
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	rrdtool:databases/rrdtool
 
 USES=		perl5
 USE_PERL5=	modbuild

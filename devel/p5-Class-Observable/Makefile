@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hcoyote@ghostar.org
 COMMENT=	Allow other classes and objects to respond to events in yours
 
-BUILD_DEPENDS=	p5-Class-ISA>=0:devel/p5-Class-ISA
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-ISA>=0:devel/p5-Class-ISA
 
 USES=		perl5
 USE_PERL5=	configure

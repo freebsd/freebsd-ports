@@ -13,14 +13,14 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Dancer2>=0.200000:www/p5-Dancer2 \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Dancer2>=0.200000:www/p5-Dancer2 \
 		p5-Email-Date-Format>=0:mail/p5-Email-Date-Format \
 		p5-Email-Sender>=0:mail/p5-Email-Sender \
 		p5-File-Type>=0:devel/p5-File-Type \
 		p5-IO-Socket-SSL>=2.000:security/p5-IO-Socket-SSL \
 		p5-MIME-Tools>=0:mail/p5-MIME-Tools \
 		p5-Module-Runtime>=0:devel/p5-Module-Runtime
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-Plack>=1.0029:www/p5-Plack
 

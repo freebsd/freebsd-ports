@@ -13,9 +13,9 @@ COMMENT=	Iterate over a range of dates
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Date-Calc>=0:devel/p5-Date-Calc \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Date-Calc>=0:devel/p5-Date-Calc \
 		p5-Ref-Util>=0.202:devel/p5-Ref-Util
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

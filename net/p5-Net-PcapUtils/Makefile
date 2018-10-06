@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Utility routines for Net::Pcap module
 
-BUILD_DEPENDS=	p5-Net-Pcap>=0:net/p5-Net-Pcap
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Net-Pcap>=0:net/p5-Net-Pcap
 
 USES=		perl5
 USE_PERL5=	configure

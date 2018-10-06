@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test Runner for the Moose test suite
 
-BUILD_DEPENDS=	p5-Mouse>=0:devel/p5-Mouse \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Mouse>=0:devel/p5-Mouse \
 		p5-Path-Class>=0:devel/p5-Path-Class
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -13,8 +13,8 @@ COMMENT=	Print a usage message from embedded pod documentation
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-podlators>=4:textproc/p5-podlators
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-podlators>=4:textproc/p5-podlators
 
 NO_ARCH=	yes
 USE_PERL5=	configure

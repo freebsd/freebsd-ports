@@ -14,7 +14,8 @@ COMMENT=	Storage class for Catalyst Authentication using DBIx::Class
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Catalyst-Model-DBIC-Schema>=0.18:www/p5-Catalyst-Model-DBIC-Schema \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Catalyst-Model-DBIC-Schema>=0.18:www/p5-Catalyst-Model-DBIC-Schema \
 		p5-Catalyst-Plugin-Authentication>=0.10008:www/p5-Catalyst-Plugin-Authentication \
 		p5-Catalyst-Runtime>=5.8:www/p5-Catalyst-Runtime \
 		p5-DBIx-Class>=0.08:databases/p5-DBIx-Class \
@@ -22,7 +23,6 @@ BUILD_DEPENDS=	p5-Catalyst-Model-DBIC-Schema>=0.18:www/p5-Catalyst-Model-DBIC-Sc
 		p5-Moose>=0:devel/p5-Moose \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

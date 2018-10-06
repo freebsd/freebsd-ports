@@ -15,7 +15,8 @@ COMMENT=	Event Based High Performance Web Crawler Framework
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Best>=0:devel/p5-Best \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Best>=0:devel/p5-Best \
 		p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-Class-C3-Componentised>=0:devel/p5-Class-C3-Componentised \
 		p5-Class-C3-XS>=0.02:devel/p5-Class-C3-XS \
@@ -46,7 +47,6 @@ BUILD_DEPENDS=	p5-Best>=0:devel/p5-Best \
 		p5-Web-Scraper-Config>=0:www/p5-Web-Scraper-Config \
 		p5-YAML>=0:textproc/p5-YAML \
 		p5-libwww>=0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5 shebangfix

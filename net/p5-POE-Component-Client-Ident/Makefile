@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE component for non-blocking ident lookups
 
-BUILD_DEPENDS=	p5-POE>=0.9999:devel/p5-POE
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-POE>=0.9999:devel/p5-POE
 TEST_DEPENDS=	p5-Test-POE-Server-TCP>=0:devel/p5-Test-POE-Server-TCP
 
 USES=		perl5

@@ -13,14 +13,14 @@ COMMENT=	Create machine readable date/time with natural parsing logic
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-boolean>=0:devel/p5-boolean \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-boolean>=0:devel/p5-boolean \
 		p5-Clone>=0:devel/p5-Clone \
 		p5-Date-Calc>=0:devel/p5-Date-Calc \
 		p5-DateTime>=0:devel/p5-DateTime \
 		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-Params-Validate>=0:devel/p5-Params-Validate \
 		p5-Module-Util>=0:devel/p5-Module-Util
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-MockTime>=0:devel/p5-Test-MockTime
 
 USES=		perl5

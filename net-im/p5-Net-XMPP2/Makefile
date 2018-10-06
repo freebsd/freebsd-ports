@@ -15,7 +15,8 @@ COMMENT=	Implementation of the XMPP Protocol
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
 		p5-Authen-SASL>=0:security/p5-Authen-SASL \
 		p5-BS-Event>=0:devel/p5-BS-Event \
 		p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
@@ -25,7 +26,6 @@ BUILD_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
 		p5-Object-Event>=0:devel/p5-Object-Event \
 		p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		p5-XML-Writer>=0:textproc/p5-XML-Writer
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -13,8 +13,8 @@ COMMENT=	ManageSieve Protocol Client
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Authen-SASL>=0:security/p5-Authen-SASL
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Authen-SASL>=0:security/p5-Authen-SASL
 
 NO_ARCH=	yes
 USES=		perl5

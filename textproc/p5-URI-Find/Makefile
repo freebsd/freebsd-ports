@@ -14,8 +14,8 @@ COMMENT=	Perl module to find URIs in arbitrary text
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-URI>=1:net/p5-URI
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-URI>=1:net/p5-URI
 
 USES=		perl5
 USE_PERL5=	modbuild

@@ -14,8 +14,8 @@ COMMENT=	Parse Perl string literals and string-literal-like things
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-PPI>=1.117:textproc/p5-PPI
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-PPI>=1.117:textproc/p5-PPI
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 

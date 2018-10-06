@@ -14,10 +14,10 @@ COMMENT=	Module to check memcached via nagios
 USES=		perl5 shebangfix
 USE_PERL5=	configure
 
-BUILD_DEPENDS=	p5-Nagios-Plugin>=0:net-mgmt/p5-Nagios-Plugin \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Nagios-Plugin>=0:net-mgmt/p5-Nagios-Plugin \
 		p5-Cache-Memcached>=0:databases/p5-Cache-Memcached \
 		p5-Carp-Clan>=0:devel/p5-Carp-Clan
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTDOCS=	Changes README
 

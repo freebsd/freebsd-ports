@@ -14,7 +14,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-B-Keywords>=1.05:devel/p5-B-Keywords \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-B-Keywords>=1.05:devel/p5-B-Keywords \
 		p5-Config-Tiny>=2:devel/p5-Config-Tiny \
 		p5-Exception-Class>=1.23:devel/p5-Exception-Class \
 		p5-File-HomeDir>=0:devel/p5-File-HomeDir \
@@ -31,7 +32,6 @@ BUILD_DEPENDS=	p5-B-Keywords>=1.05:devel/p5-B-Keywords \
 		p5-String-Format>=1.13:textproc/p5-String-Format \
 		p5-Task-Weaken>=0:devel/p5-Task-Weaken \
 		perltidy:devel/p5-Perl-Tidy
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle
 

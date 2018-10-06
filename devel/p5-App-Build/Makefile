@@ -14,9 +14,9 @@ COMMENT=	Build and install Perl applications
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-App-Options>=0:devel/p5-App-Options \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-App-Options>=0:devel/p5-App-Options \
 		p5-Module-Build>=0.28:devel/p5-Module-Build
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Differences>=0.47:devel/p5-Test-Differences
 
 NO_ARCH=	yes

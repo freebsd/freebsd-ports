@@ -15,8 +15,8 @@ COMMENT=	Get public suffix of domain name via Mozilla Public Suffix List
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
 PATCH_DEPENDS=	public_suffix_list>=0:dns/public_suffix_list
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-URI>=0:net/p5-URI
 
 USES=		perl5

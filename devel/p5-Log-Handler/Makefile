@@ -13,8 +13,8 @@ COMMENT=	Object-oriented handler for logging, tracing, and debugging in Perl
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Params-Validate>=0:devel/p5-Params-Validate
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Params-Validate>=0:devel/p5-Params-Validate
 TEST_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-Email-Date>=0:mail/p5-Email-Date
 

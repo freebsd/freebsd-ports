@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Debugging And Tracing Ultimate Module
 
-BUILD_DEPENDS=	p5-Log-Agent>=0:devel/p5-Log-Agent \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Log-Agent>=0:devel/p5-Log-Agent \
 		p5-Getargs-Long>=0:devel/p5-Getargs-Long
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

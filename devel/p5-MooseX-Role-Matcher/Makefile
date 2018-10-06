@@ -14,9 +14,9 @@ COMMENT=	Generic object matching based on attributes and methods
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-MooseX-Role-Parameterized>=0.03:devel/p5-MooseX-Role-Parameterized
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
 
 USE_PERL5=	configure

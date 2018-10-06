@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Component Object Model for BBS systems
 
-BUILD_DEPENDS=	p5-Class-MethodMaker>=0:devel/p5-Class-MethodMaker \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-MethodMaker>=0:devel/p5-Class-MethodMaker \
 		p5-Crypt-Blowfish>=0:security/p5-Crypt-Blowfish \
 		p5-Crypt-DES>=0:security/p5-Crypt-DES \
 		p5-Crypt-GOST>=0:security/p5-Crypt-GOST \
@@ -36,7 +37,6 @@ BUILD_DEPENDS=	p5-Class-MethodMaker>=0:devel/p5-Class-MethodMaker \
 		p5-OurNet-BBSAgent>=0:net/p5-OurNet-BBSAgent \
 		p5-PlRPC>=0:net/p5-PlRPC \
 		p5-enum>=0:devel/p5-enum
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	skipv:1.67
 

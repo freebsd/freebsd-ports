@@ -15,14 +15,14 @@ COMMENT=	Client interface to LDAP (includes Net::LDAP)
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Authen-SASL>=2.00:security/p5-Authen-SASL \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Authen-SASL>=2.00:security/p5-Authen-SASL \
 		p5-Convert-ASN1>=0.20:converters/p5-Convert-ASN1 \
 		p5-IO-Socket-SSL>=1.26:security/p5-IO-Socket-SSL \
 		p5-Text-Soundex>=0:textproc/p5-Text-Soundex \
 		p5-URI>=1.10:net/p5-URI \
 		p5-XML-SAX-Base>0:textproc/p5-XML-SAX-Base \
 		p5-XML-SAX-Writer>0:textproc/p5-XML-SAX-Writer
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	LWP
 LWP_DESC=	LDAP support via LWP

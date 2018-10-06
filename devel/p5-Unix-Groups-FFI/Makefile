@@ -13,8 +13,8 @@ COMMENT=	Interface to Unix group syscalls
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-FFI-Platypus>=0.20:devel/p5-FFI-Platypus
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-FFI-Platypus>=0.20:devel/p5-FFI-Platypus
 
 NO_ARCH=	yes
 USE_PERL5=	configure

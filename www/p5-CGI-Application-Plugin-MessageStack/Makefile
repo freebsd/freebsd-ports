@@ -14,10 +14,10 @@ COMMENT=	Message stack for your CGI::Application
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-CGI-Application>=0:www/p5-CGI-Application \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-CGI-Application>=0:www/p5-CGI-Application \
 		p5-CGI-Application-Plugin-Session>=0:www/p5-CGI-Application-Plugin-Session \
 		p5-CGI-Application-Plugin-TT>=0:www/p5-CGI-Application-Plugin-TT
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild

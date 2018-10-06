@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Deliver mail into ezmlm archives
 
-BUILD_DEPENDS=	p5-Email-LocalDelivery>=0:mail/p5-Email-LocalDelivery \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Email-LocalDelivery>=0:mail/p5-Email-LocalDelivery \
 		p5-Email-FolderType>=0:mail/p5-Email-FolderType
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

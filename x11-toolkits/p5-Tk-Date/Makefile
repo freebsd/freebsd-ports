@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tk::Date - a date/time widget for perl/Tk
 
-BUILD_DEPENDS=	p5-Tk-GBARR>=0:x11-toolkits/p5-Tk-GBARR
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Tk-GBARR>=0:x11-toolkits/p5-Tk-GBARR
 
 USES=		perl5
 USE_PERL5=	configure

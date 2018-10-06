@@ -13,7 +13,8 @@ COMMENT=	Library for doing evolutionary computation in Perl
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Algorithm-Permute>=0.01:devel/p5-Algorithm-Permute \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Algorithm-Permute>=0.01:devel/p5-Algorithm-Permute \
 		p5-Bit-Vector>=0:math/p5-Bit-Vector \
 		p5-Clone>=0.31:devel/p5-Clone \
 		p5-GD>=2.17:graphics/p5-GD \
@@ -27,7 +28,6 @@ BUILD_DEPENDS=	p5-Algorithm-Permute>=0.01:devel/p5-Algorithm-Permute \
 		p5-XML-Parser>=2.40:textproc/p5-XML-Parser \
 		p5-XML-Parser-Style-EasyTree>=0:textproc/p5-XML-Parser-Style-EasyTree \
 		p5-YAML>=0:textproc/p5-YAML
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Pod-Escapes>=0:textproc/p5-Pod-Escapes \
 		p5-Test-Pod>=0:devel/p5-Test-Pod
 

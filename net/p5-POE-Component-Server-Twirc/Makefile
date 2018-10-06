@@ -13,7 +13,8 @@ COMMENT=	Twitter/IRC gateway
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
 		p5-AnyEvent-Twitter>=0:net/p5-AnyEvent-Twitter \
 		p5-AnyEvent-Twitter-Stream>=0:net/p5-AnyEvent-Twitter-Stream \
 		p5-Config-Any>=0:devel/p5-Config-Any \
@@ -34,7 +35,6 @@ BUILD_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
 		p5-Regexp-Common>=0:textproc/p5-Regexp-Common \
 		p5-String-Truncate>=0:textproc/p5-String-Truncate \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

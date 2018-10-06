@@ -14,7 +14,8 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # Do not add p5-Config-Model to TEST_DEPENDS to avoid cyclic dependency
-BUILD_DEPENDS=	p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
 		p5-Log-Log4perl>=1.11:devel/p5-Log-Log4perl \
 		p5-Path-Tiny>=0:devel/p5-Path-Tiny \
 		p5-Test-Differences>=0:devel/p5-Test-Differences \
@@ -23,7 +24,6 @@ BUILD_DEPENDS=	p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
 		p5-Test-Log-Log4perl>=0:devel/p5-Test-Log-Log4perl \
 		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle \
 		p5-Test-Warn>=0:devel/p5-Test-Warn
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USE_PERL5=	modbuild

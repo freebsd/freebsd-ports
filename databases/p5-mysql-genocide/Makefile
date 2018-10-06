@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parallel operation on MySQL processlist
 
-BUILD_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 
 USES=		perl5
 USE_PERL5=	configure

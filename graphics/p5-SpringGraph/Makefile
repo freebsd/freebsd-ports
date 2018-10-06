@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Directed graph alternative to GraphViz
 
-BUILD_DEPENDS=	p5-GD>=1:graphics/p5-GD
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-GD>=1:graphics/p5-GD
 
 USES=		perl5
 USE_PERL5=	configure

@@ -14,10 +14,10 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-POE>=0.38:devel/p5-POE \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-POE>=0.38:devel/p5-POE \
 		p5-POE-Component-Client-NNTP>=1.05:news/p5-POE-Component-Client-NNTP \
 		p5-POE-Component-Pluggable>=0.03:devel/p5-POE-Component-Pluggable
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

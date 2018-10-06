@@ -14,9 +14,9 @@ COMMENT=	Binarization of XML file
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-XML-DOM>=0:textproc/p5-XML-DOM \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-XML-DOM>=0:textproc/p5-XML-DOM \
 		p5-I18N-Charset>=0:misc/p5-I18N-Charset
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		dos2unix perl5
 USE_PERL5=	configure

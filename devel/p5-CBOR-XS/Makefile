@@ -17,9 +17,9 @@ LICENSE=	GPLv3
 USES=		perl5
 USE_PERL5=	configure
 
-BUILD_DEPENDS=	p5-Types-Serialiser>=0:devel/p5-Types-Serialiser \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Types-Serialiser>=0:devel/p5-Types-Serialiser \
 		p5-common-sense>=0:devel/p5-common-sense
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/CBOR/XS/XS.so

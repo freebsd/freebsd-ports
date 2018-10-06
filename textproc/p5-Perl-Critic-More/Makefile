@@ -12,8 +12,8 @@ COMMENT=	Supplemental policies for Perl::Critic
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Perl-Critic>=0:textproc/p5-Perl-Critic
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Perl-Critic>=0:textproc/p5-Perl-Critic
 
 USES=		perl5
 USE_PERL5=	modbuild

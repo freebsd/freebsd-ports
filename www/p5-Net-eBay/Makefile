@@ -14,7 +14,8 @@ COMMENT=	Perl Interface to XML based eBay API
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
 		p5-DateTime-Precise>=0:devel/p5-DateTime-Precise \
 		p5-HTML-Format>=0:textproc/p5-HTML-Format \
 		p5-HTML-PrettyPrinter>=0:www/p5-HTML-PrettyPrinter \
@@ -25,7 +26,6 @@ BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
 		p5-XML-Dumper>=0:textproc/p5-XML-Dumper \
 		p5-XML-Simple>=0:textproc/p5-XML-Simple \
 		p5-libwww>=0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	EXAMPLES
 

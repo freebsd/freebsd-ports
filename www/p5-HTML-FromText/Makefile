@@ -14,9 +14,9 @@ COMMENT=	Mark up text as HTML
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Email-Find>=0.09:mail/p5-Email-Find \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Email-Find>=0.09:mail/p5-Email-Find \
 		p5-HTML-Parser>=1.26:www/p5-HTML-Parser
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -15,7 +15,8 @@ COMMENT=	CMS meant to be used from the terminal and integrated into a VCS for re
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Config-Tiny>=2.14:devel/p5-Config-Tiny \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Config-Tiny>=2.14:devel/p5-Config-Tiny \
 		p5-Email-MIME>=1.911:mail/p5-Email-MIME \
 		p5-File-MimeInfo>=0.16:devel/p5-File-MimeInfo \
 		p5-Error-Helper>=1.0.0:devel/p5-Error-Helper \
@@ -29,7 +30,6 @@ BUILD_DEPENDS=	p5-Config-Tiny>=2.14:devel/p5-Config-Tiny \
 		p5-Text-Tags>=0.04:textproc/p5-Text-Tags \
 		p5-Pod-WikiDoc>=0.18:textproc/p5-Pod-WikiDoc \
 		p5-Script-isAperlScript>=1.0.0:devel/p5-Script-isAperlScript
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS
 

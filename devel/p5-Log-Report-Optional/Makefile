@@ -13,8 +13,8 @@ COMMENT=	Log::Report or ::Minimal
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-String-Print>=0.91:textproc/p5-String-Print
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-String-Print>=0.91:textproc/p5-String-Print
 
 NO_ARCH=	yes
 USE_PERL5=	configure

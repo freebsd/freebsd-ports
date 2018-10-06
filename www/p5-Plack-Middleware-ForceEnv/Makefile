@@ -14,8 +14,8 @@ COMMENT=	Force set environment variables for testing
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Plack>=0.9925:www/p5-Plack
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Plack>=0.9925:www/p5-Plack
 
 NO_ARCH=	yes
 USE_PERL5=	configure

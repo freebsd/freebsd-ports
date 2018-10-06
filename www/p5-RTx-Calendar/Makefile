@@ -13,10 +13,10 @@ COMMENT=	Calendar extension module for the RT ticketing system
 LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1+
 
-BUILD_DEPENDS=	p5-Date-ICal>0:devel/p5-Date-ICal      \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Date-ICal>0:devel/p5-Date-ICal      \
 		p5-Data-ICal>0:deskutils/p5-Data-ICal  \
 		p5-DateTime-Set>0:devel/p5-DateTime-Set
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 
@@ -38,7 +38,6 @@ RT_VER=		${opt:S/RT//}
 .endif
 .endfor
 
-BUILD_DEPENDS+=	${LOCALBASE}/bin/rt:www/rt${RT_VER}
 RUN_DEPENDS+=	${LOCALBASE}/bin/rt:www/rt${RT_VER}
 
 MAN3PREFIX=	${PREFIX}

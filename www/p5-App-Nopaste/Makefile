@@ -13,7 +13,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Browser-Open>=0:www/p5-Browser-Open \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Browser-Open>=0:www/p5-Browser-Open \
 		p5-Class-Load>=0:devel/p5-Class-Load \
 		p5-Getopt-Long-Descriptive>=0:devel/p5-Getopt-Long-Descriptive \
 		p5-JSON>=0:converters/p5-JSON \
@@ -21,7 +22,6 @@ BUILD_DEPENDS=	p5-Browser-Open>=0:www/p5-Browser-Open \
 		p5-URI>=0:net/p5-URI \
 		p5-WWW-Mechanize>=0:www/p5-WWW-Mechanize \
 		p5-namespace-clean>=0.19:devel/p5-namespace-clean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
 		p5-Module-Pluggable>=0:devel/p5-Module-Pluggable \
 		p5-Test-Deep>=0:devel/p5-Test-Deep \

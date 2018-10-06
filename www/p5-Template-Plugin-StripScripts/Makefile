@@ -13,9 +13,9 @@ COMMENT=	TT plugin to filter HTML against XSS
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	p5-HTML-StripScripts-Parser>=0.99:www/p5-HTML-StripScripts-Parser \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-HTML-StripScripts-Parser>=0.99:www/p5-HTML-StripScripts-Parser \
 		p5-Template-Toolkit>=0:www/p5-Template-Toolkit
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure
 USES=		perl5

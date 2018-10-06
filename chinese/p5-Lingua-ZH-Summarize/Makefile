@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Chinese Text Summarization
 
-BUILD_DEPENDS=	p5-Lingua-ZH-Toke>=0:chinese/p5-Lingua-ZH-Toke \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Lingua-ZH-Toke>=0:chinese/p5-Lingua-ZH-Toke \
 		p5-Lingua-ZH-Wrap>=0:chinese/p5-Lingua-ZH-Wrap
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

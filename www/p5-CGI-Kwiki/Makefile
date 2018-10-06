@@ -14,8 +14,8 @@ COMMENT=	Quickie Wiki Package that's not too Tricky #'
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-CGI>=0:www/p5-CGI
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-CGI>=0:www/p5-CGI
 
 NO_ARCH=	yes
 USES=		perl5

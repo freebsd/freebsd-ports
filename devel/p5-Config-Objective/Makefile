@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	Configuration data as perl objects
 
-BUILD_DEPENDS=	p5-Parse-Yapp>=0:devel/p5-Parse-Yapp \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Parse-Yapp>=0:devel/p5-Parse-Yapp \
 		p5-ParseLex>=0:devel/p5-ParseLex
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -18,7 +18,8 @@ TEST_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-Test-Dir>=0:misc/p5-Test-Dir \
 		p5-Test-File-Contents>=0:devel/p5-Test-File-Contents \
 		p5-Test-MockModule>=0:devel/p5-Test-MockModule
-BUILD_DEPENDS=	p5-Clone>=0:devel/p5-Clone \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Clone>=0:devel/p5-Clone \
 		p5-Config-GitLike>=1.11:devel/p5-Config-GitLike \
 		p5-DBI>=0:databases/p5-DBI \
 		p5-DateTime>=0:devel/p5-DateTime \
@@ -47,7 +48,6 @@ BUILD_DEPENDS=	p5-Clone>=0:devel/p5-Clone \
 		p5-URI-db>=0.15:net/p5-URI-db \
 		p5-namespace-autoclean>=0.16:devel/p5-namespace-autoclean
 
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gettext perl5
 USE_PERL5=	modbuild

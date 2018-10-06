@@ -15,11 +15,11 @@ COMMENT=	SVN::Statistics - perl module to create subversion statistics
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-subversion>=0:devel/p5-subversion \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-subversion>=0:devel/p5-subversion \
 		p5-RRDTool-OO>=0:devel/p5-RRDTool-OO \
 		p5-Data-Dumper-Simple>=0:devel/p5-Data-Dumper-Simple \
 		p5-IO-Toolkit>=0:devel/p5-IO-Toolkit
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

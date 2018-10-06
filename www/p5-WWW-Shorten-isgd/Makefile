@@ -14,8 +14,8 @@ COMMENT=	Abstract interface to is.gd, one of URL shortening sites
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-WWW-Shorten>=1.97:www/p5-WWW-Shorten
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-WWW-Shorten>=1.97:www/p5-WWW-Shorten
 
 USES=		perl5
 USE_PERL5=	configure

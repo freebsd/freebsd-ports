@@ -16,9 +16,9 @@ COMMENT=	Set of perl5 modules for MIME
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Convert-BinHex>=0:converters/p5-Convert-BinHex \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Convert-BinHex>=0:converters/p5-Convert-BinHex \
 		p5-Mail-Tools>=1.05:mail/p5-Mail-Tools
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
 
 NO_ARCH=	yes

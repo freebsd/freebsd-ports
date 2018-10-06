@@ -13,8 +13,8 @@ COMMENT=	Read and modify SSH authorized_keys files
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Log-Log4perl>=1:devel/p5-Log-Log4perl
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Log-Log4perl>=1:devel/p5-Log-Log4perl
 
 NO_ARCH=	yes
 USES=		perl5

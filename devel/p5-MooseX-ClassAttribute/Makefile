@@ -14,11 +14,11 @@ COMMENT=	Declare class attributes Moose-style
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Moose>=2:devel/p5-Moose \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Moose>=2:devel/p5-Moose \
 		p5-Scalar-List-Utils>=1.45:lang/p5-Scalar-List-Utils \
 		p5-namespace-autoclean>=0.11:devel/p5-namespace-autoclean \
 		p5-namespace-clean>=0.20:devel/p5-namespace-clean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-MooseX-Role-Parameterized>=0:devel/p5-MooseX-Role-Parameterized \
 		p5-MooseX-Role-Strict>=0:devel/p5-MooseX-Role-Strict \
 		p5-Test-Requires>=0.05:devel/p5-Test-Requires \

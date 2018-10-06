@@ -15,12 +15,12 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Net-MQTT>=0:net/p5-Net-MQTT \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Net-MQTT>=0:net/p5-Net-MQTT \
 		p5-AnyEvent>=0:devel/p5-AnyEvent \
 		p5-Module-Pluggable>=0:devel/p5-Module-Pluggable \
 		p5-Sub-Name>=0:devel/p5-Sub-Name
 
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Pod-Usage>=0:devel/p5-Pod-Usage
 
 USES=		perl5

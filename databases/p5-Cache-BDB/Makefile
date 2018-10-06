@@ -14,8 +14,8 @@ COMMENT=	Object caching wrapper around BerkeleyDB
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-BerkeleyDB>=0:databases/p5-BerkeleyDB
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-BerkeleyDB>=0:databases/p5-BerkeleyDB
 
 NO_ARCH=	yes
 USE_PERL5=	configure

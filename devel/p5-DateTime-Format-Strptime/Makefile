@@ -14,14 +14,14 @@ COMMENT=	Parse and format strp and strf time patterns
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-DateTime>=1:devel/p5-DateTime \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-DateTime>=1:devel/p5-DateTime \
 		p5-DateTime-Locale>=1.05:devel/p5-DateTime-Locale \
 		p5-DateTime-TimeZone>=2.09:devel/p5-DateTime-TimeZone \
 		p5-Package-DeprecationManager>=0.15:devel/p5-Package-DeprecationManager \
 		p5-Params-ValidationCompiler>=0:devel/p5-Params-ValidationCompiler \
 		p5-Specio>=0.33:devel/p5-Specio \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Warnings>=0:devel/p5-Test-Warnings
 

@@ -14,10 +14,10 @@ COMMENT=	Extension to the MARC-Record distribution for working with XML data
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-MARC-Record>=2:textproc/p5-MARC-Record \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-MARC-Record>=2:textproc/p5-MARC-Record \
 		p5-MARC-Charset>=0.98:textproc/p5-MARC-Charset \
 		p5-XML-SAX>=0.12:textproc/p5-XML-SAX
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

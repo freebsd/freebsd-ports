@@ -15,7 +15,8 @@ COMMENT=	Program for creating programs that aggregate web feeds
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-CHI>=0:devel/p5-CHI \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-CHI>=0:devel/p5-CHI \
 		p5-DateTime>=0:devel/p5-DateTime \
 		p5-HTML-Scrubber>=0:www/p5-HTML-Scrubber \
 		p5-HTML-Tidy>=0:textproc/p5-HTML-Tidy \
@@ -28,7 +29,6 @@ BUILD_DEPENDS=	p5-CHI>=0:devel/p5-CHI \
 		p5-XML-Feed>=0.22:textproc/p5-XML-Feed \
 		p5-YAML>=0:textproc/p5-YAML \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

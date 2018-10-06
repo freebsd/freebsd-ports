@@ -12,11 +12,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	Modules to streamline writing Nagios plugins
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-Params-Validate>=0:devel/p5-Params-Validate \
 		p5-Math-Calc-Units>=0:math/p5-Math-Calc-Units \
 		p5-Config-Tiny>=0:devel/p5-Config-Tiny
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

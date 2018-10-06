@@ -13,9 +13,9 @@ COMMENT=	Perl module for Gtk+ 3.x graphical user interface library
 LICENSE=	LGPL21+
 LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Cairo-GObject>=1:devel/p5-Cairo-GObject \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Cairo-GObject>=1:devel/p5-Cairo-GObject \
 		p5-Glib-Object-Introspection>=0.016:devel/p5-Glib-Object-Introspection
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

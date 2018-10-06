@@ -13,7 +13,8 @@ COMMENT=	Dancer2 Plugin for Interchange6 Open Source Shop Machine
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Interchange6-Schema>=0:databases/p5-Interchange6-Schema \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Interchange6-Schema>=0:databases/p5-Interchange6-Schema \
 		p5-Interchange6>=0:www/p5-Interchange6 \
 		p5-Module-Runtime>=0:devel/p5-Module-Runtime \
 		p5-Moo>=2.000000:devel/p5-Moo \
@@ -30,7 +31,6 @@ BUILD_DEPENDS=	p5-Interchange6-Schema>=0:databases/p5-Interchange6-Schema \
 		p5-Dancer2-Plugin-DBIC>=0.0013:databases/p5-Dancer2-Plugin-DBIC \
 		p5-Dancer2-Plugin-Auth-Extensible>=0.600:security/p5-Dancer2-Plugin-Auth-Extensible \
 		p5-Dancer2-Plugin-Auth-Extensible-Provider-DBIC>=0.600:security/p5-Dancer2-Plugin-Auth-Extensible-Provider-DBIC
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
 		p5-DBIx-Class-Helpers>=0:databases/p5-DBIx-Class-Helpers \
 		p5-Test-WWW-Mechanize-PSGI>=0:devel/p5-Test-WWW-Mechanize-PSGI

@@ -13,9 +13,9 @@ COMMENT=	Powerful feature-rich Perl source code profiler
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-File-Which>=0:sysutils/p5-File-Which \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-File-Which>=0:sysutils/p5-File-Which \
 		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Differences>=0.60:devel/p5-Test-Differences
 
 USES=		perl5

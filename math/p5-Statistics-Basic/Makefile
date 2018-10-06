@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Collection of basic statistics modules
 
-BUILD_DEPENDS=	p5-Number-Format>=1.61:textproc/p5-Number-Format
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Number-Format>=1.61:textproc/p5-Number-Format
 
 USES=		perl5
 USE_PERL5=	configure

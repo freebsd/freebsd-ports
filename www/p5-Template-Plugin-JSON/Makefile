@@ -10,10 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Adds a .json vmethod for all TT values
 
-BUILD_DEPENDS=	p5-JSON>=2.12:converters/p5-JSON \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-JSON>=2.12:converters/p5-JSON \
 		p5-Moose>0:devel/p5-Moose \
 		p5-Template-Toolkit>=2.20:www/p5-Template-Toolkit
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

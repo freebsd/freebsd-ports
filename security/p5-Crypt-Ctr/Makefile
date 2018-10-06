@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Perl extension for encrypting data in Counter Mode
 
-BUILD_DEPENDS=	p5-Crypt-CFB>=0:security/p5-Crypt-CFB
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Crypt-CFB>=0:security/p5-Crypt-CFB
 
 USES=		perl5
 USE_PERL5=	configure

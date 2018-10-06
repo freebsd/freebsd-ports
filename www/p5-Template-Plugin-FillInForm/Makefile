@@ -14,9 +14,9 @@ COMMENT=	Template::Plugin::FillInForm - TT plugin for HTML::FillInForm
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTML-FillInForm>=0:www/p5-HTML-FillInForm \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-HTML-FillInForm>=0:www/p5-HTML-FillInForm \
 		p5-Template-Toolkit>=0:www/p5-Template-Toolkit
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

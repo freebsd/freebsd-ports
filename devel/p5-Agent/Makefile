@@ -13,8 +13,8 @@ COMMENT=	Perl module that provides a foundation for software agent developers
 
 LICENSE=	ARTPERL10
 
-BUILD_DEPENDS=	p5-Class-Tom>=0:devel/p5-Class-Tom
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Tom>=0:devel/p5-Class-Tom
 
 USES=		perl5
 USE_PERL5=	configure

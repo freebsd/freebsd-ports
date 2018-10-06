@@ -14,9 +14,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-File-ReadBackwards>=0:devel/p5-File-ReadBackwards \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-File-ReadBackwards>=0:devel/p5-File-ReadBackwards \
 		p5-IO-String>=1.08:devel/p5-IO-String
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-MimeInfo>=0:devel/p5-File-MimeInfo \
 		p5-MLDBM>=0:databases/p5-MLDBM
 

@@ -13,8 +13,8 @@ COMMENT=	Useful base class for deriving other modules
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Clone>=0:devel/p5-Clone
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Clone>=0:devel/p5-Clone
 
 NO_ARCH=	yes
 USES=		perl5

@@ -16,9 +16,9 @@ COMMENT=	Pure Perl version of Marpa
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-BUILD_DEPENDS=	p5-PPI>=1.206:textproc/p5-PPI \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-PPI>=1.206:textproc/p5-PPI \
 		p5-Task-Weaken>=0:devel/p5-Task-Weaken
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Weaken>=3.004000:devel/p5-Test-Weaken
 
 NO_ARCH=	yes

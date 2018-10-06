@@ -13,9 +13,9 @@ COMMENT=	Cursor class with built-in caching support
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Carp-Clan>=6.0:devel/p5-Carp-Clan \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Carp-Clan>=6.0:devel/p5-Carp-Clan \
 		p5-DBIx-Class>=0.08124:databases/p5-DBIx-Class
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Cache-Cache>=0:devel/p5-Cache-Cache \
 		p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 

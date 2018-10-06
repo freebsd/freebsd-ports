@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Log::Dispatch plug-in using core Perl functions for logging
 
-BUILD_DEPENDS=	p5-Log-Dispatch>=0:devel/p5-Log-Dispatch
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Log-Dispatch>=0:devel/p5-Log-Dispatch
 
 USES=		perl5
 USE_PERL5=	configure

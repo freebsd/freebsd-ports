@@ -12,9 +12,9 @@ COMMENT=	Perl5 interface to Gd Graphics Library version2
 LICENSE=	ART20 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-ExtUtils-PkgConfig>=0:devel/p5-ExtUtils-PkgConfig
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-ExtUtils-PkgConfig>=0:devel/p5-ExtUtils-PkgConfig
 LIB_DEPENDS=	libgd.so:graphics/gd
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

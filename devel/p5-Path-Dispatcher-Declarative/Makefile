@@ -14,10 +14,10 @@ COMMENT=	Sugary dispatcher for perl
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Path-Dispatcher>=1.02:devel/p5-Path-Dispatcher \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Path-Dispatcher>=1.02:devel/p5-Path-Dispatcher \
 		p5-Any-Moose>=0:devel/p5-Any-Moose \
 		p5-Sub-Exporter>=0:devel/p5-Sub-Exporter
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

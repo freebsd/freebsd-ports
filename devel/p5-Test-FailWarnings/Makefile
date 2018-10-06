@@ -13,8 +13,8 @@ COMMENT=	Add test failures if warnings are caught
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	p5-Capture-Tiny>=0.21:devel/p5-Capture-Tiny
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Capture-Tiny>=0.21:devel/p5-Capture-Tiny
 
 USES=		perl5
 USE_PERL5=	configure

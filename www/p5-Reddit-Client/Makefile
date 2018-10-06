@@ -14,13 +14,13 @@ COMMENT=	Methods and object wrappers for objects exposed by the Reddit API
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-IO-Capture>=0:devel/p5-IO-Capture \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-IO-Capture>=0:devel/p5-IO-Capture \
 		p5-JSON>=2.53:converters/p5-JSON \
 		p5-URI-Encode>0:www/p5-URI-Encode \
 		p5-URI>0:net/p5-URI \
 		p5-libwww>0:www/p5-libwww \
 		p5-File-Path-Expand>=0:devel/p5-File-Path-Expand
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-MockModule>=0:devel/p5-Test-MockModule
 
 USES=		perl5

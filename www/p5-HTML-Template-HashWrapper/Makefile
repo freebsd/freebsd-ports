@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy way to use the associate option from HTML::Template
 
-BUILD_DEPENDS=	p5-HTML-Template>=0:www/p5-HTML-Template
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-HTML-Template>=0:www/p5-HTML-Template
 
 USES=		perl5
 USE_PERL5=	configure

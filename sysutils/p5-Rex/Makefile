@@ -12,7 +12,8 @@ COMMENT=	Perl framework for automation and systems administration
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	\
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	\
 	p5-Devel-Caller>=0:devel/p5-Devel-Caller \
 	p5-HTTP-Message>=0:www/p5-HTTP-Message \
 	p5-Hash-Merge>=0:textproc/p5-Hash-Merge \
@@ -35,7 +36,6 @@ BUILD_DEPENDS=	\
 	p5-Net-OpenSSH>=0:net/p5-Net-OpenSSH \
 	p5-Net-SFTP-Foreign>=0:net/p5-Net-SFTP-Foreign
 
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix
 USE_PERL5=	configure

@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for writing RPC servers and clients
 
-BUILD_DEPENDS=	p5-Net-Daemon>=0:net/p5-Net-Daemon
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Net-Daemon>=0:net/p5-Net-Daemon
 
 USES=		perl5
 USE_PERL5=	configure

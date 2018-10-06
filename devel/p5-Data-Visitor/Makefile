@@ -14,12 +14,12 @@ COMMENT=	Visitor style traversal of Perl data structures
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Load>=0.06:devel/p5-Class-Load \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Load>=0.06:devel/p5-Class-Load \
 		p5-Moose>=0.89:devel/p5-Moose \
 		p5-Task-Weaken>=0:devel/p5-Task-Weaken \
 		p5-Tie-ToObject>=0.01:devel/p5-Tie-ToObject \
 		p5-namespace-clean>=0.19:devel/p5-namespace-clean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Data-Alias>=0:devel/p5-Data-Alias \
 		p5-Test-Requires>=0:devel/p5-Test-Requires
 

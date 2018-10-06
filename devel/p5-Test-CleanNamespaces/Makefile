@@ -13,10 +13,10 @@ COMMENT=	Check for uncleaned imports
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Module-Runtime>0:devel/p5-Module-Runtime \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Module-Runtime>0:devel/p5-Module-Runtime \
 		p5-Package-Stash>=0.14:devel/p5-Package-Stash \
 		p5-Sub-Identify>0:devel/p5-Sub-Identify
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-pushd>0:devel/p5-File-pushd \
 		p5-Test-Deep>0:devel/p5-Test-Deep \
 		p5-Test-Needs>0:devel/p5-Test-Needs \

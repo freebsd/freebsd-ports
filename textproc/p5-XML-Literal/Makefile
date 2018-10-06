@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Syntax support for XML literals
 
-BUILD_DEPENDS=	p5-Sub-Override>=0:devel/p5-Sub-Override
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Sub-Override>=0:devel/p5-Sub-Override
 
 USES=		perl5
 USE_PERL5=	configure

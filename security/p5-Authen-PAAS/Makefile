@@ -13,9 +13,9 @@ COMMENT=	Perl Authentication & Authorization Service
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Config-Record>=1.1.0:devel/p5-Config-Record \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Config-Record>=1.1.0:devel/p5-Config-Record \
 		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

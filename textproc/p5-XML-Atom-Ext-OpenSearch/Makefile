@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	XML::Atom extension for OpenSearch data
 
-BUILD_DEPENDS=	p5-XML-Atom>=0:textproc/p5-XML-Atom
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-XML-Atom>=0:textproc/p5-XML-Atom
 
 USES=		perl5
 USE_PERL5=	configure

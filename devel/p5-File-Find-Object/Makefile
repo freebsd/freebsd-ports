@@ -14,8 +14,8 @@ COMMENT=	Object oriented File::Find replacement
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Class-XSAccessor>=0:devel/p5-Class-XSAccessor
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-XSAccessor>=0:devel/p5-Class-XSAccessor
 
 NO_ARCH=	yes
 USES=		perl5

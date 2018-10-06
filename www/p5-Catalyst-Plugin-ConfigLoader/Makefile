@@ -14,11 +14,11 @@ COMMENT=	Load config files of various types
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7008:www/p5-Catalyst-Runtime \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7008:www/p5-Catalyst-Runtime \
 		p5-Data-Visitor>=0.24:devel/p5-Data-Visitor \
 		p5-Config-Any>=0.20:devel/p5-Config-Any \
 		p5-MRO-Compat>=0.09:devel/p5-MRO-Compat
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -10,11 +10,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Parse iCalendar files into a data structure
 
-BUILD_DEPENDS=	p5-IO-String>=0:devel/p5-IO-String \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-IO-String>=0:devel/p5-IO-String \
 	p5-FreezeThaw>=0.4300:devel/p5-FreezeThaw \
 	p5-DateTime-Format-ICal>=0.08:devel/p5-DateTime-Format-ICal \
 	p5-Text-vFile-asData>=0.02:devel/p5-Text-vFile-asData
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=	perl5
 USE_PERL5=	configure

@@ -13,7 +13,8 @@ COMMENT=	Yet another Perl source code linter
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-B-Keywords>=0:devel/p5-B-Keywords \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-B-Keywords>=0:devel/p5-B-Keywords \
 		p5-Compiler-Lexer>=0.22:devel/p5-Compiler-Lexer \
 		p5-Email-Address>=0:mail/p5-Email-Address \
 		p5-List-Flatten>=0:devel/p5-List-Flatten \
@@ -23,7 +24,6 @@ BUILD_DEPENDS=	p5-B-Keywords>=0:devel/p5-B-Keywords \
 		p5-Regexp-Lexer>=0.05:devel/p5-Regexp-Lexer \
 		p5-String-CamelCase>=0:textproc/p5-String-CamelCase \
 		p5-Test-Deep>=0:devel/p5-Test-Deep
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Text-TestBase>=0:textproc/p5-Text-TestBase
 
 NO_ARCH=	yes

@@ -13,9 +13,9 @@ COMMENT=	Memory mapping made simple and safe
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-PerlIO-Layers>=0:devel/p5-PerlIO-Layers \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-PerlIO-Layers>=0:devel/p5-PerlIO-Layers \
 		p5-Sub-Exporter-Progressive>=0.001005:devel/p5-Sub-Exporter-Progressive
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Warnings>=0:devel/p5-Test-Warnings

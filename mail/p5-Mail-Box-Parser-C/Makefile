@@ -13,8 +13,8 @@ COMMENT=	Parsing folders for Mail::Box with C routines
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Mail-Box>=0:mail/p5-Mail-Box
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Mail-Box>=0:mail/p5-Mail-Box
 
 USES=		perl5
 USE_PERL5=	configure

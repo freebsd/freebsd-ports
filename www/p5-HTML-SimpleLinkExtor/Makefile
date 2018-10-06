@@ -13,10 +13,10 @@ COMMENT=	This is a simple HTML link extractor
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-HTML-Parser>=1.28:www/p5-HTML-Parser \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-HTML-Parser>=1.28:www/p5-HTML-Parser \
 		p5-URI>=1.09:net/p5-URI \
 		p5-libwww>=0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Output>=0:devel/p5-Test-Output
 
 NO_ARCH=	yes

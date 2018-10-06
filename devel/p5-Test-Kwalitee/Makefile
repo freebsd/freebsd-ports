@@ -13,8 +13,8 @@ COMMENT=	Test the Kwalitee of a distribution before you release it
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Module-CPANTS-Analyse>=0.92:devel/p5-Module-CPANTS-Analyse
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Module-CPANTS-Analyse>=0.92:devel/p5-Module-CPANTS-Analyse
 TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.011:devel/p5-CPAN-Meta-Check \
 		p5-Test-Deep>0:devel/p5-Test-Deep \
 		p5-Test-Warnings>=0.009:devel/p5-Test-Warnings

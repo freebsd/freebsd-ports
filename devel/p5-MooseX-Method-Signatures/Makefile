@@ -13,7 +13,8 @@ COMMENT=	Method declarations with type constraints and no source filter
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-B-Hooks-EndOfScope>=0.10:devel/p5-B-Hooks-EndOfScope \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-B-Hooks-EndOfScope>=0.10:devel/p5-B-Hooks-EndOfScope \
 		p5-Devel-Declare>=0.005011:devel/p5-Devel-Declare \
 		p5-Context-Preserve>=0:devel/p5-Context-Preserve \
 		p5-Module-Runtime>=0.012:devel/p5-Module-Runtime \
@@ -28,7 +29,6 @@ BUILD_DEPENDS=	p5-B-Hooks-EndOfScope>=0.10:devel/p5-B-Hooks-EndOfScope \
 		p5-aliased>=0:devel/p5-aliased \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean \
 		p5-namespace-clean>=0.19:devel/p5-namespace-clean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Eval-Closure>=0:devel/p5-Eval-Closure \
 		p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal

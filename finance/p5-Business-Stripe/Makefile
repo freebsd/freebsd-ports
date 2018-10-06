@@ -13,10 +13,10 @@ COMMENT=	Perl5 module interface for the Stripe.com payment system
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTTP-Message>=0.0:www/p5-HTTP-Message \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-HTTP-Message>=0.0:www/p5-HTTP-Message \
 		p5-JSON>=0.0:converters/p5-JSON \
 		p5-libwww>0.0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -14,9 +14,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Date-Manip>=0:devel/p5-Date-Manip \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Date-Manip>=0:devel/p5-Date-Manip \
 		p5-Log-Dispatch>=0:devel/p5-Log-Dispatch
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Path-Tiny>=0.018:devel/p5-Path-Tiny \
 		p5-Test-Warn>=0:devel/p5-Test-Warn
 

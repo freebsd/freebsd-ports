@@ -13,11 +13,11 @@ COMMENT=	Sphinx search engine management (start/stop)
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-Path-Class>=0:devel/p5-Path-Class \
 		p5-Proc-ProcessTable>=0:devel/p5-Proc-ProcessTable \
 		p5-Sphinx-Config>=0.09:textproc/p5-Sphinx-Config
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USE_PERL5=	configure

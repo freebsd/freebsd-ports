@@ -11,7 +11,8 @@ COMMENT=	Interface to the Let's Encrypt ACMEv2 API
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-Call-Context>=0.02:devel/p5-Call-Context \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Call-Context>=0.02:devel/p5-Call-Context \
 		p5-Crypt-Format>=0.06:security/p5-Crypt-Format \
 		p5-Crypt-Perl>=0.17:security/p5-Crypt-Perl \
 		p5-Crypt-OpenSSL-Bignum>=0.06:security/p5-Crypt-OpenSSL-Bignum \
@@ -27,7 +28,6 @@ BUILD_DEPENDS=	p5-Call-Context>=0.02:devel/p5-Call-Context \
 		p5-Test-Exception>=0.43:devel/p5-Test-Exception \
 		p5-Test-NoWarnings>=1.04:devel/p5-Test-NoWarnings \
 		p5-X-Tiny>=0.13:devel/p5-X-Tiny
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

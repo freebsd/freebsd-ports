@@ -13,8 +13,8 @@ COMMENT=	Generate QR Code with Imager using libqrencode
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Imager>=0.55:graphics/p5-Imager
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Imager>=0.55:graphics/p5-Imager
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		localbase perl5

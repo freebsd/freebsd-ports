@@ -13,10 +13,10 @@ COMMENT=	API wrapper around the 'tar' utility
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-File-Which>=0:sysutils/p5-File-Which \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-File-Which>=0:sysutils/p5-File-Which \
 		p5-IPC-Run>=0:devel/p5-IPC-Run \
 		p5-Log-Log4perl>=0:devel/p5-Log-Log4perl
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Dumbbench>=0.111:benchmarks/p5-Dumbbench
 
 NO_ARCH=	yes

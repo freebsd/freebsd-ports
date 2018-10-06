@@ -15,7 +15,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Data-Dumper-Concise>=0:devel/p5-Data-Dumper-Concise \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Data-Dumper-Concise>=0:devel/p5-Data-Dumper-Concise \
 		p5-Data-IEEE754>=0:devel/p5-Data-IEEE754 \
 		p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
 		p5-Math-Int128>=0.21:math/p5-Math-Int128 \
@@ -30,7 +31,6 @@ BUILD_DEPENDS=	p5-Data-Dumper-Concise>=0:devel/p5-Data-Dumper-Concise \
 		p5-Sereal-Encoder>=3.002:converters/p5-Sereal-Encoder \
 		p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Data-Printer>=0:devel/p5-Data-Printer \
 		p5-Devel-Refcount>=0:devel/p5-Devel-Refcount \
 		p5-List-AllUtils>=0:devel/p5-List-AllUtils \

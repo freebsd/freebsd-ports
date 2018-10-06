@@ -14,8 +14,8 @@ COMMENT=	Curses-based widgets and functions
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Curses>=0:devel/p5-Curses
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Curses>=0:devel/p5-Curses
 
 USES=		perl5
 USE_PERL5=	configure

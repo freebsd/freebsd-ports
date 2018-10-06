@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Module to allow everyone to access config files
 
-BUILD_DEPENDS=	p5-XML-LibXML>=2:textproc/p5-XML-LibXML \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-XML-LibXML>=2:textproc/p5-XML-LibXML \
 		p5-XML-XPath>=1:textproc/p5-XML-XPath \
 		p5-XML-Simple>=2:textproc/p5-XML-Simple
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure
 USES=		perl5

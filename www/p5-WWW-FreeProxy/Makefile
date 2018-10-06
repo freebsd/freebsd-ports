@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Fetch proxies from free proxy lists
 
-BUILD_DEPENDS=	p5-YAML>=0:textproc/p5-YAML
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-YAML>=0:textproc/p5-YAML
 
 USES=		perl5
 USE_PERL5=	configure

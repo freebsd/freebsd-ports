@@ -15,12 +15,12 @@ COMMENT=	Object-oriented implementation of Sender Policy Framework
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Error>=0:lang/p5-Error \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Error>=0:lang/p5-Error \
 		p5-Net-DNS>=0.62:dns/p5-Net-DNS \
 		p5-Net-DNS-Resolver-Programmable>=0.003:dns/p5-Net-DNS-Resolver-Programmable \
 		p5-NetAddr-IP>=4:net-mgmt/p5-NetAddr-IP \
 		p5-URI>=1.13:net/p5-URI
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Pod>=1:devel/p5-Test-Pod
 
 CONFIGURE_ARGS=	--install_path sbin=${PREFIX}/sbin

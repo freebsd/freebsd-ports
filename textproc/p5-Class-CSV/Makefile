@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Class based CSV parser/writer
 
-BUILD_DEPENDS=	p5-Text-CSV_XS>=0.23:textproc/p5-Text-CSV_XS \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Text-CSV_XS>=0.23:textproc/p5-Text-CSV_XS \
 		p5-Class-Accessor>=0.18:devel/p5-Class-Accessor
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

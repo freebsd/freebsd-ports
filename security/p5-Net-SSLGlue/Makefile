@@ -13,8 +13,8 @@ COMMENT=	Add/extend SSL support for common perl modules
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.190:security/p5-IO-Socket-SSL
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-IO-Socket-SSL>=1.190:security/p5-IO-Socket-SSL
 
 NO_ARCH=	yes
 USE_PERL5=	configure

@@ -15,11 +15,11 @@ COMMENT=	Data::FormValidator constraints for dates and times
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Data-FormValidator>=0:textproc/p5-Data-FormValidator \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Data-FormValidator>=0:textproc/p5-Data-FormValidator \
 		p5-DateTime>=0:devel/p5-DateTime \
 		p5-DateTime-Format-Strptime>=0:devel/p5-DateTime-Format-Strptime \
 		p5-DateTime-Format-Builder>=0:devel/p5-DateTime-Format-Builder
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

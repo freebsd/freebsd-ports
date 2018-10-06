@@ -15,12 +15,12 @@ COMMENT=	Stash your lexical goodness
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=0:www/p5-Catalyst-Runtime \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Catalyst-Runtime>=0:www/p5-Catalyst-Runtime \
 		p5-Array-RefElem>=0:misc/p5-Array-RefElem \
 		p5-Devel-Caller>=0:devel/p5-Devel-Caller \
 		p5-Devel-LexAlias>=0:devel/p5-Devel-LexAlias \
 		p5-PadWalker>=0:devel/p5-PadWalker
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

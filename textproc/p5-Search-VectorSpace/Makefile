@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Very basic vector-space search engine perl module
 
-BUILD_DEPENDS=	PDL>=0:math/PDL \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	PDL>=0:math/PDL \
 		p5-Lingua-Stem>=0:textproc/p5-Lingua-Stem
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

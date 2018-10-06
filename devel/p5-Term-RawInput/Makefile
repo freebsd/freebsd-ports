@@ -13,8 +13,8 @@ COMMENT=	Drop-in replacement for <STDIN> with handling of non-standard keys
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
 
 USES=		perl5
 USE_PERL5=	configure

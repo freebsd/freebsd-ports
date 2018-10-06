@@ -14,8 +14,8 @@ COMMENT=	Simple non-intrusive debug module
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Filter-Simple>=0:textproc/p5-Filter-Simple
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Filter-Simple>=0:textproc/p5-Filter-Simple
 
 USES=		perl5
 USE_PERL5=	configure
