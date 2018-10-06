@@ -1,4 +1,4 @@
-TIMESTAMP = 1538847452
+TIMESTAMP = 1538848050
 SHA256 (nginx-1.15.5.tar.gz) = 1a3a889a8f14998286de3b14cc1dd5b2747178e012d6d480a18aa413985dae6f
 SIZE (nginx-1.15.5.tar.gz) = 1024791
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -131,7 +131,7 @@ SHA256 (openresty-srcache-nginx-module-v0.31_GH0.tar.gz) = 3f9729e73a8340926fa9d
 SIZE (openresty-srcache-nginx-module-v0.31_GH0.tar.gz) = 48310
 SHA256 (kaltura-nginx-vod-module-1.23_GH0.tar.gz) = 800cf3de639567e27f4cb75527392f23842b349fb680abefd12d4db9a5be951f
 SIZE (kaltura-nginx-vod-module-1.23_GH0.tar.gz) = 442053
-SHA256 (vozlt-nginx-module-vts-v0.1.15_GH0.tar.gz) = 5112a054b1b1edb4c0042a9a840ef45f22abb3c05c68174e28ebf483164fb7e1
-SIZE (vozlt-nginx-module-vts-v0.1.15_GH0.tar.gz) = 371128
+SHA256 (vozlt-nginx-module-vts-v0.1.18_GH0.tar.gz) = 17ea41d4083f6d1ab1ab83dad9160eeca66867abe16c5a0421f85a39d7c84b65
+SIZE (vozlt-nginx-module-vts-v0.1.18_GH0.tar.gz) = 380327
 SHA256 (openresty-xss-nginx-module-v0.05_GH0.tar.gz) = 958bd8de773601d8d3138501cc4be0420f1c818a3987a70cc9c0023371e432cf
 SIZE (openresty-xss-nginx-module-v0.05_GH0.tar.gz) = 11477
