@@ -3,6 +3,7 @@
 PORTNAME=	ntk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.1000
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
 
-USES=		jpeg localbase:ldflags pkgconfig waf
+USES=		gnome jpeg localbase:ldflags pkgconfig waf
 USE_GITHUB=	yes
 GH_ACCOUNT=	original-male
 USE_GNOME=	cairo
@@ -39,7 +40,7 @@ post-install:
 		s| -D_LARGEFILE64_SOURCE||; \
 		s| -D_FILE_OFFSET_BITS=64||' \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/ntk*.pc
-	@${RM} ${STAGEDIR}${PREFIX}/lib/libntk*.a.*
+	@${RM} ${STAGEDIR}${PREFIX}/lib/libntk*.a* # https://github.com/original-male/ntk/issues/12
 	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/bin/ntk-chtheme \
 		${STAGEDIR}${PREFIX}/bin/ntk-fluid \
