@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scrypt
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.6
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rubygem-ffi-compiler>=1.0:devel/rubygem-ffi-compiler
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
