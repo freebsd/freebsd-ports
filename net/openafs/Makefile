@@ -21,7 +21,7 @@ LICENSE_NAME=	IBM Public License Version 1.0
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_FreeBSD_12=	does not build (use of undeclared identifier 'ROOTINO')
+BROKEN=		fails to build
 ONLY_FOR_ARCHS=	i386 amd64
 
 AFS_DISTVERSION=	1.6.22
