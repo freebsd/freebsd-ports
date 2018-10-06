@@ -5,7 +5,7 @@ PORTNAME=	scipy
 PORTVERSION=	1.1.0
 PORTREVISION=	1
 CATEGORIES=	science python
-MASTER_SITES=	http://docs.scipy.org/doc/scipy/:doc \
+MASTER_SITES=	https://docs.scipy.org/doc/scipy/:doc \
 		CHEESESHOP:source \
 		SF:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
