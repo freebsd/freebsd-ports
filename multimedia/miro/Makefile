@@ -3,7 +3,7 @@
 
 PORTNAME=	miro
 PORTVERSION=	6.0
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/ \
 		http://ftp.osuosl.org/pub/pculture.org/miro/src/
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:databases/py-bsddb@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/dbus/glib.py:devel/py-dbus@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:devel/py-notify@${PY_FLAVOR} \
-		${PYTHON_SITELIBDIR}/libtorrent.so:net-p2p/libtorrent-rasterbar-python \
+		${PYTHON_PKGNAMEPREFIX}libtorrent-rasterbar>0:net-p2p/py-libtorrent-rasterbar@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/webkit/webkit.so:www/py-webkitgtk@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gconf.so:x11-toolkits/py-gnome2@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/pycurl.so:ftp/py-pycurl@${PY_FLAVOR} \
