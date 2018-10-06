@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/../../COPYING
 LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
 		${PY_BOOST}
 
-USES=		localbase python:2.7
+USES=		localbase python
 USE_PYTHON=	distutils autoplist
 
 WRKSRC_SUBDIR=	bindings/python
