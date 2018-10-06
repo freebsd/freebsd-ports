@@ -1,15 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	turnserver
-PORTVERSION=	4.5.0.7
+PORTVERSION=	4.5.0.8
 CATEGORIES=	net
-MASTER_SITES=	http://turnserver.open-sys.org/downloads/v${PORTVERSION}/:prog \
-		http://turnserver.open-sys.org/downloads/extradocs/:xdocs \
-		http://coturn.net/turnserver/v${PORTVERSION}/:prog \
+MASTER_SITES=	http://turnserver.open-sys.org/downloads/extradocs/:xdocs \
 		http://coturn.net/turnserver/extradocs/:xdocs
 PKGNAMEPREFIX=
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:prog \
-		turn.extra.docs-2.0.0.1.tar.gz:xdocs
+DISTFILES=	turn.extra.docs-2.0.0.1.tar.gz:xdocs
 
 MAINTAINER=	bhughes@FreeBSD.org
 COMMENT=	STUN/TURN Server; IPv6, DTLS support; RFCs 5389, 5766, 6062, 6156
@@ -26,6 +23,10 @@ CONFIGURE_ENV+=	PTHREAD_LIBS=-pthread TURN_DISABLE_RPATH=1
 # MongoDB support is disabled until devel/mongo-c-driver is updated
 CONFIGURE_ENV+=	TURN_NO_MONGO=1
 TEST_TARGET=	test
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	coturn
+GH_PROJECT=	coturn
 
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	turnserver
