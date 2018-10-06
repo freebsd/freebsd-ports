@@ -27,7 +27,7 @@ dirs="${LIB_DIRS} $(cat ${LOCALBASE}/libdata/ldconfig/* 2>/dev/null || :)"
 for libdir in ${dirs} ; do
 	test -f ${libdir}/${lib} || continue
 	libfile=${libdir}/${lib}
-	[ "$(file -b -L --mime-type ${libfile})" = "application/x-sharedlib" ] || continue
+	[ "$(/usr/bin/file -b -L --mime-type ${libfile})" = "application/x-sharedlib" ] || continue
 	echo $libfile
 	break
 done
