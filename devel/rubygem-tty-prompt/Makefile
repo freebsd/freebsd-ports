@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tty-prompt
-PORTVERSION=	0.17.0
+PORTVERSION=	0.17.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -18,8 +18,9 @@ RUN_DEPENDS=	rubygem-necromancer>=0.4.0:devel/rubygem-necromancer \
 		rubygem-tty-cursor>=0.6.0:devel/rubygem-tty-cursor \
 		rubygem-tty-reader>=0.4.0:devel/rubygem-tty-reader
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
