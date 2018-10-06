@@ -3,6 +3,7 @@
 
 PORTNAME=	arpack-ng
 DISTVERSION=	3.6.3
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +21,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-blas="${BLAS}" \
 		--with-lapack="${LAPACK}" \
 		--enable-mpi \
-		--disable-static
+		--disable-static \
+		--enable-icb
 LDFLAGS+=	-L${LOCALBASE}/lib
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
@@ -52,8 +54,7 @@ IGNORE=		unknown value of WITH_BLAS: ${WITH_BLAS}
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -Ee 's|\(libdir\)(/pkgconfig)|(prefix)/libdata\1|' \
-	${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -Ee 's|\(libdir\)(/pkgconfig)|(prefix)/libdata\1|' ${WRKSRC}/Makefile.am
 
 pre-configure:
 	@cd ${WRKSRC}; ./bootstrap
@@ -63,11 +64,8 @@ pre-configure:
 	${WRKSRC}/arpack.pc.in \
 	${WRKSRC}/TESTS/Makefile.in
 
-post-build:
-	@cd ${WRKSRC}/SRC/.libs; ${STRIP_CMD} libarpack.so.*.*
-
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/arpack.h ${STAGEDIR}${PREFIX}/include
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*arpack.so.*.*
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

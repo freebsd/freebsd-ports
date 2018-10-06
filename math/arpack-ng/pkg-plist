@@ -1,6 +1,13 @@
-include/arpack.h
+include/arpack/arpack.h
+include/arpack/arpack.hpp
 include/arpack/debug.h
+include/arpack/debug_c.h
+include/arpack/debug_c.hpp
+include/arpack/parpack.h
+include/arpack/parpack.hpp
 include/arpack/stat.h
+include/arpack/stat_c.h
+include/arpack/stat_c.hpp
 lib/libarpack.so
 lib/libarpack.so.2
 lib/libarpack.so.2.0.0
