@@ -12,6 +12,8 @@ COMMENT=	Code_Saturne Kernel
 
 LICENSE=	GPLv2
 
+BROKEN=		conflicting dependencies
+
 BUILD_DEPENDS=	cs_preprocess:science/ecs
 LIB_DEPENDS=	libbft.so:science/bft \
 		libcgns.so:science/cgnslib \
