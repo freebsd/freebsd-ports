@@ -11288,6 +11288,7 @@
 %%WWWDIR%%/spec/fixtures/api/schemas/entities/merge_request_basic.json
 %%WWWDIR%%/spec/fixtures/api/schemas/entities/merge_request_metrics.json
 %%WWWDIR%%/spec/fixtures/api/schemas/entities/merge_request_widget.json
+%%WWWDIR%%/spec/fixtures/api/schemas/entities/note_user_entity.json
 %%WWWDIR%%/spec/fixtures/api/schemas/entities/test_case.json
 %%WWWDIR%%/spec/fixtures/api/schemas/entities/test_reports_comparer.json
 %%WWWDIR%%/spec/fixtures/api/schemas/entities/test_suite_comparer.json
