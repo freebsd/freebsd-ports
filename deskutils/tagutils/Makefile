@@ -10,6 +10,9 @@ MASTER_SITES=	http://releases.chipx86.com/leaftag/tagutils/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line tool for tagging files
 
+DEPRECATED=	Unmaintained upstream
+EXPIRATION_DATE=	2018-10-15
+
 LIB_DEPENDS=	libleaftag.so:devel/libleaftag
 
 GNU_CONFIGURE=	yes
