@@ -18,7 +18,7 @@ LIB_DEPENDS=	libjack.so:audio/jack \
 		libsndfile.so:audio/libsndfile \
 		liblo.so:audio/liblo
 
-USES=		gmake localbase:ldflags pkgconfig qt:5 shared-mime-info
+USES=		compiler:c++11-lang gl gmake localbase:ldflags pkgconfig qt:5 shared-mime-info
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa-midi
 USE_QT=		core gui widgets xml buildtools_build qmake_build
