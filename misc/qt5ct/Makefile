@@ -13,7 +13,7 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 	libfreetype.so:print/freetype2
 
-USES=		gettext-runtime qmake qt:5 tar:bz2
+USES=		compiler:c++11-lang gettext-runtime qmake qt:5 tar:bz2
 USE_QT=		core dbus gui svg widgets buildtools_build \
 	linguisttools_build
 USE_GL=	egl gl
