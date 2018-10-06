@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pycups
-PORTVERSION=	1.9.73
-PORTREVISION=	1
+PORTVERSION=	1.9.74
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,8 +15,8 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libcups.so:print/cups
 
-USE_PYTHON=	autoplist concurrent distutils
 USES=		iconv localbase python tar:bzip2
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.pre.mk>
 
