@@ -3,7 +3,7 @@
 
 PORTNAME=	leechcraft
 PORTVERSION=	0.6.70
-PORTREVISION=	34
+PORTREVISION=	35
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.leechcraft.org/LeechCraft/0.6.70/
 
@@ -78,6 +78,7 @@ BITTORRENT_DESC=	Full-featured BitTorrent client plugin
 BITTORRENT_CMAKE_ON=	-DENABLE_TORRENT:BOOL=true
 BITTORRENT_CMAKE_OFF=	-DENABLE_TORRENT:BOOL=false
 BITTORRENT_LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar
+BITTORRENT_BROKEN=	see https://dev.leechcraft.org/issues/2062
 
 BLASQ_DESC=		Cloud image storage services client (like Flickr or Picasa)
 BLASQ_CMAKE_ON=		-DENABLE_BLASQ:BOOL=true

@@ -1,12 +1,3 @@
-%%TEST%%bin/bt_get
-%%TEST%%bin/bt_get2
-%%TEST%%bin/client_test
-%%TEST%%bin/connection_tester
-%%TEST%%bin/dump_torrent
-%%TEST%%bin/make_torrent
-%%TEST%%bin/simple_client
-%%TEST%%bin/stats_counters
-%%TEST%%bin/upnp_test
 include/libtorrent/ConvertUTF.h
 include/libtorrent/add_torrent_params.hpp
 include/libtorrent/address.hpp
@@ -206,5 +197,4 @@ include/libtorrent/web_peer_connection.hpp
 include/libtorrent/xml_parse.hpp
 lib/libtorrent-rasterbar.so
 lib/libtorrent-rasterbar.so.%%SHLIB_VER%%
-lib/libtorrent-rasterbar.so.%%SHLIB_VER%%.0.0
 libdata/pkgconfig/libtorrent-rasterbar.pc
