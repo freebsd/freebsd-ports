@@ -1,11 +1,11 @@
---- ace/SSL/SSL_Context.cpp.orig	2015-09-17 06:55:18 UTC
+--- ace/SSL/SSL_Context.cpp.orig	2018-09-18 07:26:56 UTC
 +++ ace/SSL/SSL_Context.cpp
-@@ -683,7 +683,7 @@ ACE_SSL_Context::random_seed (const char
- int
- ACE_SSL_Context::egd_file (const char * socket_file)
- {
--#if OPENSSL_VERSION_NUMBER < 0x00905100L
+@@ -179,7 +179,7 @@ ACE_SSL_Context::ssl_library_init (void)
+ # endif  /* OPENSSL_VERSION_NUMBER < 0x10100000L */
+ #endif  /* WIN32 */
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x00905100L
 +#if OPENSSL_VERSION_NUMBER < 0x00905100L || defined(LIBRESSL_VERSION_NUMBER)
-   // OpenSSL < 0.9.5 doesn't have EGD support.
-   ACE_UNUSED_ARG (socket_file);
-   ACE_NOTSUP_RETURN (-1);
+       // OpenSSL < 0.9.5 doesn't have EGD support.
+ 
+       const char *egd_socket_file =
