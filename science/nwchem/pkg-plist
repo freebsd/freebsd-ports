@@ -1,5 +1,4 @@
 bin/nwchem
-bin/nwchem.shadow
 etc/nwchemrc
 %%DATADIR%%/data/amber_q/ABE.frg
 %%DATADIR%%/data/amber_q/BNZ.frg

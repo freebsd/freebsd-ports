@@ -2,8 +2,8 @@
 
 PORTNAME=	nwchem
 DISTVERSION=	6.8.1-release-94
-PORTREVISION=	4
 DISTVERSIONSUFFIX=	-g1a262862b
+PORTREVISION=	5
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -35,7 +35,12 @@ MAKE_ENV=	NWCHEM_TOP=${WRKSRC}/.. NWCHEM_MODULES=all NWCHEM_LONG_PATHS=Y NWCHEM_
 SUB_FILES=	nwchemrc
 
 WRKSRC_SUBDIR=	src
+
 BINARY_ALIAS=	gcc=${CC}
+MAKE_ARGS=	LDFLAGS_FREEBSD="${LDFLAGS}"
+
+post-extract:
+	@${RM} ${WRKSRC}/atomscf/src.orig
 
 post-patch:
 	@${REINPLACE_CMD} 's|nwchrc="/etc/nwchemrc"|nwchrc="${PREFIX}/etc/nwchemrc"|' ${WRKSRC}/util/util_nwchemrc.F
@@ -47,12 +52,7 @@ pre-build:
 
 do-install:
 	${INSTALL_DATA} ${WRKDIR}/nwchemrc ${STAGEDIR}${PREFIX}/etc/nwchemrc
-	${INSTALL_PROGRAM} ${WRKSRC}/../bin/LINUX64/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}.shadow
-	@(echo "#!/bin/sh"; \
-	  echo ""; \
-	  echo "LD_PRELOAD=${PREFIX}/lib/gcc${GCC_DEFAULT}/libgcc_s.so ${PREFIX}/bin/${PORTNAME}.shadow \""$$"@\"" \
-	) > ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	@${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/../bin/LINUX64/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	cd ${WRKSRC}/basis && ${COPYTREE_SHARE} libraries ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/libraryps
