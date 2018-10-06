@@ -13,10 +13,10 @@ COMMENT=	Integrate SSL into POE
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Net-SSLeay>=1.36:security/p5-Net-SSLeay \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Net-SSLeay>=1.36:security/p5-Net-SSLeay \
 		p5-POE>=1.267:devel/p5-POE \
 		p5-Task-Weaken>=1.03:devel/p5-Task-Weaken
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-FailWarnings>=0:devel/p5-Test-FailWarnings
 
 USES=		perl5

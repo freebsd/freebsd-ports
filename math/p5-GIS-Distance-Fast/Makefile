@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	C implementation of GIS::Distance formulas
 
-BUILD_DEPENDS=	p5-GIS-Distance>=0.07:math/p5-GIS-Distance
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-GIS-Distance>=0.07:math/p5-GIS-Distance
 
 USES=		perl5
 USE_PERL5=	configure

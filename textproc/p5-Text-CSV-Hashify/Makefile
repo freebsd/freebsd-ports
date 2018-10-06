@@ -14,8 +14,8 @@ COMMENT=	Composition and decomposition of comma-separated values into hashes
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Text-CSV>=0:textproc/p5-Text-CSV
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Text-CSV>=0:textproc/p5-Text-CSV
 
 USES=		perl5
 USE_PERL5=	configure

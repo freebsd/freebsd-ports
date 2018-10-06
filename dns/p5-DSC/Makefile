@@ -12,7 +12,8 @@ COMMENT=	DNS Statistics Presenter Perl Library
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	ploticus>=2.40:math/ploticus				\
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	ploticus>=2.40:math/ploticus				\
 		p5-CGI-Untaint>=1.26:www/p5-CGI-Untaint			\
 		p5-File-NFSLock>=1.21:devel/p5-File-NFSLock		\
 		p5-Hash-Merge>=0.299:textproc/p5-Hash-Merge		\
@@ -24,7 +25,6 @@ BUILD_DEPENDS=	ploticus>=2.40:math/ploticus				\
 		p5-URI>=1.73:net/p5-URI					\
 		p5-XML-Simple>=2.24:textproc/p5-XML-Simple
 
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

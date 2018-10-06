@@ -14,8 +14,8 @@ COMMENT=	Calculate digests while reading or writing
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-PerlIO-via-dynamic>=0:devel/p5-PerlIO-via-dynamic
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-PerlIO-via-dynamic>=0:devel/p5-PerlIO-via-dynamic
 
 USE_PERL5=	configure
 USES=		perl5

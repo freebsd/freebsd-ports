@@ -15,8 +15,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-NetAddr-IP>=4:net-mgmt/p5-NetAddr-IP
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-NetAddr-IP>=4:net-mgmt/p5-NetAddr-IP
 TEST_DEPENDS=	p5-Test-Requires>=0:devel/p5-Test-Requires \
 		p5-Test-Taint>=0:devel/p5-Test-Taint
 

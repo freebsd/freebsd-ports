@@ -14,8 +14,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Bytes-Random-Secure>=0:security/p5-Bytes-Random-Secure
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Bytes-Random-Secure>=0:security/p5-Bytes-Random-Secure
 TEST_DEPENDS=	p5-Sort-Versions>=0:devel/p5-Sort-Versions
 
 NO_ARCH=	yes

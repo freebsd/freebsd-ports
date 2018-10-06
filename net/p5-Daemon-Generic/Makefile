@@ -10,12 +10,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Framework to provide start/stop/reload for a daemon
 
-BUILD_DEPENDS=	p5-File-Flock>=0:devel/p5-File-Flock \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-File-Flock>=0:devel/p5-File-Flock \
 		p5-File-Slurp>=0:devel/p5-File-Slurp \
 		p5-AnyEvent>=0:devel/p5-AnyEvent \
 		p5-Event>=0:devel/p5-Event \
 		p5-Eval-LineNumbers>=0:devel/p5-Eval-LineNumbers
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

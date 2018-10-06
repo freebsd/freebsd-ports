@@ -13,8 +13,8 @@ COMMENT=	Cpanfile support for ExtUtils::MakeMaker
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Module-CPANfile>=0:devel/p5-Module-CPANfile
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Module-CPANfile>=0:devel/p5-Module-CPANfile
 
 NO_ARCH=	yes
 USE_PERL5=	configure

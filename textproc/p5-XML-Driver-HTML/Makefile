@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl SAX Driver for non wellformed HTML
 
-BUILD_DEPENDS=	p5-XML-TreeBuilder>=0:textproc/p5-XML-TreeBuilder \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-XML-TreeBuilder>=0:textproc/p5-XML-TreeBuilder \
 		p5-XML-Handler-YAWriter>=0:textproc/p5-XML-Handler-YAWriter
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Session Announcement Protocol (rfc2974) packet parser
 
-BUILD_DEPENDS=	p5-IO-Interface>=0:net/p5-IO-Interface \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-IO-Interface>=0:net/p5-IO-Interface \
 		p5-IO-Socket-Multicast6>=0:net/p5-IO-Socket-Multicast6 \
 		p5-Net-SDP>=0:net/p5-Net-SDP
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild

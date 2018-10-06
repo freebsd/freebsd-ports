@@ -14,12 +14,12 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp \
 		p5-HTML-Element-Library>=0:www/p5-HTML-Element-Library \
 		p5-HTML-Element-Replacer>=0:www/p5-HTML-Element-Replacer \
 		p5-HTML-Tree>=0:www/p5-HTML-Tree \
 		p5-Set-Array>=0:devel/p5-Set-Array
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Class-Prototyped>=0:devel/p5-Class-Prototyped
 
 NO_ARCH=	yes

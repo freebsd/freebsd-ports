@@ -13,9 +13,9 @@ COMMENT=	Input validator that just validates input
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-Class-Load>=0:devel/p5-Class-Load \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Load>=0:devel/p5-Class-Load \
 		p5-String-CamelCase>=0:textproc/p5-String-CamelCase
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -14,9 +14,9 @@ COMMENT=	Reference implementation of OpenID server
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Net-OpenID-Common>=1.11:security/p5-Net-OpenID-Common \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Net-OpenID-Common>=1.11:security/p5-Net-OpenID-Common \
 		p5-URI>=0:net/p5-URI
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 INSTALL_TARGET=	pure_install
 USES=		perl5

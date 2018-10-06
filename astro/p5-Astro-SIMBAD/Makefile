@@ -13,10 +13,10 @@ COMMENT=	OO Perl interface to the SIMBAD astronomical database
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	p5-HTML-Parser>=3.36:www/p5-HTML-Parser \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-HTML-Parser>=3.36:www/p5-HTML-Parser \
 		p5-HTML-Tree>=3.17:www/p5-HTML-Tree \
 		p5-libwww>=5.53:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

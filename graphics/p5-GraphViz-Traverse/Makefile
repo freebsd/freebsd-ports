@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Build a GraphViz object via callback traversal
 
-BUILD_DEPENDS=	p5-GraphViz>=0:graphics/p5-GraphViz
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-GraphViz>=0:graphics/p5-GraphViz
 
 USES=		perl5
 USE_PERL5=	configure

@@ -14,8 +14,8 @@ COMMENT=	User defined simplification routines
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Math-Symbolic>=0:math/p5-Math-Symbolic
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Math-Symbolic>=0:math/p5-Math-Symbolic
 
 USES=		perl5
 USE_PERL5=	configure

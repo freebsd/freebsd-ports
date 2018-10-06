@@ -14,8 +14,8 @@ COMMENT=	Miscellaneous iterator functions
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Iterator>=0:devel/p5-Iterator
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Iterator>=0:devel/p5-Iterator
 
 USES=		perl5
 USE_PERL5=	configure

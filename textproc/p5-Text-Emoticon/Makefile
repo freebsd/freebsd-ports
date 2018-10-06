@@ -14,8 +14,8 @@ COMMENT=	Factory class for Yahoo! and MSN emoticons
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-UNIVERSAL-require>=0:devel/p5-UNIVERSAL-require
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-UNIVERSAL-require>=0:devel/p5-UNIVERSAL-require
 
 USE_PERL5=	configure
 USES=		perl5

@@ -14,10 +14,10 @@ COMMENT=	Upload images to flickr.com
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Flickr-API>=0:www/p5-Flickr-API \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Flickr-API>=0:www/p5-Flickr-API \
 		p5-XML-Parser-Lite-Tree>=0:textproc/p5-XML-Parser-Lite-Tree \
 		p5-libwww>=0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

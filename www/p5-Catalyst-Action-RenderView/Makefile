@@ -14,10 +14,10 @@ COMMENT=	Sensible default end action for Catalyst
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.70:www/p5-Catalyst-Runtime \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Catalyst-Runtime>=5.70:www/p5-Catalyst-Runtime \
 		p5-Data-Visitor>=0.24:devel/p5-Data-Visitor \
 		p5-MRO-Compat>=0:devel/p5-MRO-Compat
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

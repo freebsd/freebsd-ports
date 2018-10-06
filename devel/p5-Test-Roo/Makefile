@@ -11,8 +11,8 @@ COMMENT=	Composable, reusable tests with roles and Moo
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	p5-Moo>=0:devel/p5-Moo
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Moo>=0:devel/p5-Moo
 
 NO_ARCH=	yes
 USES=		perl5

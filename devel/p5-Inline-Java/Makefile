@@ -13,9 +13,9 @@ COMMENT=	Write Perl subroutines and classes in Java
 
 LICENSE=	ARTPERL10
 
-BUILD_DEPENDS=	p5-Inline>=0.68:devel/p5-Inline \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Inline>=0.68:devel/p5-Inline \
 		p5-Inline-C>=0.62:devel/p5-Inline-C
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

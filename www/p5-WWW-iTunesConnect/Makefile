@@ -12,11 +12,11 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	bfoz@bfoz.net
 COMMENT=	Client interface for Apple's iTunes Connect service
 
-BUILD_DEPENDS=	p5-HTML-Tree>=0:www/p5-HTML-Tree \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-HTML-Tree>=0:www/p5-HTML-Tree \
 		p5-libwww>=5.829:www/p5-libwww \
 		p5-Net-SSLeay>=0:security/p5-Net-SSLeay \
 		p5-HTML-Form>=0:www/p5-HTML-Form
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

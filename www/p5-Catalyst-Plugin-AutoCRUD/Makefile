@@ -13,7 +13,8 @@ COMMENT=	Instant AJAX web front-end for DBIx::Class
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Catalyst-Action-RenderView>=0:www/p5-Catalyst-Action-RenderView \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Catalyst-Action-RenderView>=0:www/p5-Catalyst-Action-RenderView \
 		p5-Catalyst-Model-DBIC-Schema>=0:www/p5-Catalyst-Model-DBIC-Schema \
 		p5-Catalyst-Plugin-ConfigLoader>=0:www/p5-Catalyst-Plugin-ConfigLoader \
 		p5-Catalyst-Runtime>=5.70000:www/p5-Catalyst-Runtime \
@@ -27,7 +28,6 @@ BUILD_DEPENDS=	p5-Catalyst-Action-RenderView>=0:www/p5-Catalyst-Action-RenderVie
 		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-MRO-Compat>=0:devel/p5-MRO-Compat \
 		p5-SQL-Translator>=0:databases/p5-SQL-Translator
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
 		p5-JSON-XS>=0:converters/p5-JSON-XS \
 		p5-Test-WWW-Mechanize-Catalyst>=0:devel/p5-Test-WWW-Mechanize-Catalyst

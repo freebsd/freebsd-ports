@@ -12,7 +12,8 @@ COMMENT=	Perl5 module to process and/or create DKIM email
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Crypt-OpenSSL-RSA>=0:security/p5-Crypt-OpenSSL-RSA \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Crypt-OpenSSL-RSA>=0:security/p5-Crypt-OpenSSL-RSA \
 		p5-Regexp-Common>=0:textproc/p5-Regexp-Common \
 		p5-Config-Tiny>=0:devel/p5-Config-Tiny \
 		p5-File-ShareDir-Install>=0:devel/p5-File-ShareDir-Install \
@@ -38,7 +39,6 @@ BUILD_DEPENDS=	p5-Crypt-OpenSSL-RSA>=0:security/p5-Crypt-OpenSSL-RSA \
 		p5-Net-DNS>=0:dns/p5-Net-DNS \
 		p5-Net-IDN-Encode>=0:textproc/p5-Net-IDN-Encode
 
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix
 USE_PERL5=	configure

@@ -14,9 +14,9 @@ COMMENT=	Base Class for SAX Filters parsing WellBallanced Chunks
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-XML-LibXML>=1.4:textproc/p5-XML-LibXML \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-XML-LibXML>=1.4:textproc/p5-XML-LibXML \
 		p5-XML-SAX>=0:textproc/p5-XML-SAX
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -14,8 +14,8 @@ COMMENT=	Trap exit codes, exceptions, output, etc
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Data-Dump>=0:devel/p5-Data-Dump
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Data-Dump>=0:devel/p5-Data-Dump
 TEST_DEPENDS=	p5-Test-Refcount>=0:devel/p5-Test-Refcount
 
 NO_ARCH=	yes

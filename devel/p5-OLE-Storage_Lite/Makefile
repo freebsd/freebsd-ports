@@ -14,8 +14,8 @@ COMMENT=	Perl module for OLE document interface
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-IO-stringy>=0:devel/p5-IO-stringy
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-IO-stringy>=0:devel/p5-IO-stringy
 
 USES=		perl5
 USE_PERL5=	configure

@@ -14,14 +14,14 @@ COMMENT=	Flexible perl-based service manager
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-Config-Tiny>=0:devel/p5-Config-Tiny \
 		p5-HTTP-Server-Simple>=0:www/p5-HTTP-Server-Simple \
 		p5-JSON>=0:converters/p5-JSON \
 		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-Params-Validate>=0:devel/p5-Params-Validate \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Class>=0:devel/p5-Test-Class \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal
 

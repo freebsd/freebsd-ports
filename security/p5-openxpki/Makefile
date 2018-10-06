@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_SSL=	openssl-devel
 
-BUILD_DEPENDS=	bash:shells/bash \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	bash:shells/bash \
 		openca-tools-forked>=1.4.0:security/openca-tools-forked \
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-CGI-Fast>=2.10:www/p5-CGI-Fast \
@@ -76,7 +77,6 @@ BUILD_DEPENDS=	bash:shells/bash \
 		p5-XML-Validator-Schema>=0:textproc/p5-XML-Validator-Schema \
 		p5-openxpki-i18n>=2.0.3:security/p5-openxpki-i18n \
 		p5-perl-ldap>=0:net/p5-perl-ldap
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-openxpki-client-[0-9]* \
 		p5-openxpki-client-scep-[0-9]* \

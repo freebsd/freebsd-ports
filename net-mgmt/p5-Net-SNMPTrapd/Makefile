@@ -13,8 +13,8 @@ COMMENT=	SNMP Trap Listener in Perl
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Convert-ASN1>=0.22:converters/p5-Convert-ASN1
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Convert-ASN1>=0.22:converters/p5-Convert-ASN1
 
 USES=		perl5
 USE_PERL5=	configure

@@ -14,7 +14,8 @@ COMMENT=	Perl extension providing high level API access to Iodef-Pb
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0.34:devel/p5-Class-Accessor \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Accessor>=0.34:devel/p5-Class-Accessor \
 		p5-Compress-Snappy>=0.18:archivers/p5-Compress-Snappy \
 		p5-DateTime>=0.61:devel/p5-DateTime \
 		p5-DateTime-Format-DateParse>=0.05:devel/p5-DateTime-Format-DateParse \
@@ -29,7 +30,6 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0.34:devel/p5-Class-Accessor \
 		p5-Regexp-Common-net-CIDR>=0.02:textproc/p5-Regexp-Common-net-CIDR \
 		p5-Snort-Rule>=1.07:security/p5-Snort-Rule \
 		p5-Text-Table>=1.126:textproc/p5-Text-Table
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

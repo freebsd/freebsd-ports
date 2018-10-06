@@ -15,7 +15,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Class-Load>=0.06:devel/p5-Class-Load \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Load>=0.06:devel/p5-Class-Load \
 		p5-Config-Any>=0:devel/p5-Config-Any \
 		p5-Crypt-Blowfish>=0:security/p5-Crypt-Blowfish \
 		p5-Crypt-CBC>=0:security/p5-Crypt-CBC \
@@ -39,7 +40,6 @@ BUILD_DEPENDS=	p5-Class-Load>=0.06:devel/p5-Class-Load \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-aliased>=0:devel/p5-aliased \
 		p5-namespace-autoclean>=0.09:devel/p5-namespace-autoclean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Differences>=0:devel/p5-Test-Differences \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle \

@@ -10,10 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module for Simpler parsing of CSV files
 
-BUILD_DEPENDS=	p5-Text-CSV_XS>=0:textproc/p5-Text-CSV_XS \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Text-CSV_XS>=0:textproc/p5-Text-CSV_XS \
 		p5-File-Slurp>=0:devel/p5-File-Slurp \
 		p5-Class-Trigger>=0:devel/p5-Class-Trigger
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

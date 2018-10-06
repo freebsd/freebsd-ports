@@ -14,10 +14,10 @@ COMMENT=	Manage Multiple Data Sources with Failover and Load Balancing
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Accessor>=0.19:devel/p5-Class-Accessor \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Accessor>=0.19:devel/p5-Class-Accessor \
 		p5-DBI>=0:databases/p5-DBI \
 		p5-Sys-SigAction>=0.10:devel/p5-Sys-SigAction
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-DBD-SQLite>=1.09:databases/p5-DBD-SQLite \
 		p5-Pod-Simple>=0:textproc/p5-Pod-Simple \

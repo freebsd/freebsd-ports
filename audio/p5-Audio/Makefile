@@ -14,8 +14,8 @@ COMMENT=	Audio manipulation routines for perl
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Math-GSL>=0:math/p5-Math-GSL
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Math-GSL>=0:math/p5-Math-GSL
 
 USES=		perl5
 USE_PERL5=	configure

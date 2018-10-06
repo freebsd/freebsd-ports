@@ -14,8 +14,8 @@ COMMENT=	Module to simplify connecting up to a LDAP server
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-perl-ldap>=0.23:net/p5-perl-ldap
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-perl-ldap>=0.23:net/p5-perl-ldap
 
 USES=		perl5
 USE_PERL5=	configure

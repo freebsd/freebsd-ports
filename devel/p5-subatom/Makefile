@@ -14,8 +14,8 @@ COMMENT=	Produce an atom feed from subversion commits
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/README
 
-BUILD_DEPENDS=	p5-XML-Atom-SimpleFeed>=0.80:textproc/p5-XML-Atom-SimpleFeed
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-XML-Atom-SimpleFeed>=0.80:textproc/p5-XML-Atom-SimpleFeed
 
 NO_ARCH=	yes
 USE_PERL5=	modbuild

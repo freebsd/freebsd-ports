@@ -14,8 +14,8 @@ COMMENT=	Perl5 interface to the ACEDB genome database system
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Cache-Cache>=0:devel/p5-Cache-Cache
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Cache-Cache>=0:devel/p5-Cache-Cache
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		perl5

@@ -15,7 +15,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Any-Moose>=0:devel/p5-Any-Moose \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Any-Moose>=0:devel/p5-Any-Moose \
 		p5-Class-Load>=0:devel/p5-Class-Load \
 		p5-Dir-Self>=0:devel/p5-Dir-Self \
 		p5-File-ShareDir>=0:devel/p5-File-ShareDir \
@@ -23,7 +24,6 @@ BUILD_DEPENDS=	p5-Any-Moose>=0:devel/p5-Any-Moose \
 		p5-Moose>=0.82:devel/p5-Moose \
 		p5-MooseX-Getopt>=0:devel/p5-MooseX-Getopt \
 		p5-namespace-clean>=0:devel/p5-namespace-clean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

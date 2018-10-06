@@ -13,9 +13,9 @@ COMMENT=	RSS Abstraction Interface
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	p5-XML-RSS-Parser>=0:textproc/p5-XML-RSS-Parser \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-XML-RSS-Parser>=0:textproc/p5-XML-RSS-Parser \
 		p5-TimeDate>=0:devel/p5-TimeDate
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

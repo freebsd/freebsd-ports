@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Oryx model component for Catalyst
 
-BUILD_DEPENDS=	p5-Oryx>=0:databases/p5-Oryx \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Oryx>=0:databases/p5-Oryx \
 		p5-Catalyst-Runtime>=0:www/p5-Catalyst-Runtime \
 		p5-Catalyst-Devel>=1.00:www/p5-Catalyst-Devel
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

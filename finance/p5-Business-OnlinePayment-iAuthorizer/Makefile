@@ -14,8 +14,8 @@ COMMENT=	Business::OnlinePayment backend module for iAuthorizer
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Business-OnlinePayment>=0:finance/p5-Business-OnlinePayment
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Business-OnlinePayment>=0:finance/p5-Business-OnlinePayment
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

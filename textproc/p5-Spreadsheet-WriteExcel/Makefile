@@ -14,11 +14,11 @@ COMMENT=	Write to a cross-platform Excel binary file
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Date-Calc>=0:devel/p5-Date-Calc \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Date-Calc>=0:devel/p5-Date-Calc \
 		p5-Date-Manip>=0:devel/p5-Date-Manip \
 		p5-OLE-Storage_Lite>=0:devel/p5-OLE-Storage_Lite \
 		p5-Parse-RecDescent>=0:devel/p5-Parse-RecDescent
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Process CGI input parameters
 
-BUILD_DEPENDS=	p5-UNIVERSAL-require>=0.01:devel/p5-UNIVERSAL-require
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-UNIVERSAL-require>=0.01:devel/p5-UNIVERSAL-require
 
 USES=		perl5
 USE_PERL5=	configure

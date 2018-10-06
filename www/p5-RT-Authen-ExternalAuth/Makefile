@@ -12,10 +12,10 @@ COMMENT=	RT extension to authenticate users against an external source
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-perl-ldap>0:net/p5-perl-ldap \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-perl-ldap>0:net/p5-perl-ldap \
 		p5-DBI>0:databases/p5-DBI \
 		p5-Net-SSLeay>0:security/p5-Net-SSLeay
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 
@@ -40,7 +40,6 @@ RT_VER=         ${opt:S/RT//}
 ### Temporary for debugging
 #WRKDIR=         ${WRKDIRPREFIX}${.CURDIR}/work${RT_VER}
 
-BUILD_DEPENDS+=	${LOCALBASE}/bin/rt:www/rt${RT_VER}
 RUN_DEPENDS+=	${LOCALBASE}/bin/rt:www/rt${RT_VER}
 
 MAN3PREFIX=	${PREFIX}

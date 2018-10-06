@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Variation of Email::Valid which allows dot before at mark
 
-BUILD_DEPENDS=	p5-Email-Valid>=0:mail/p5-Email-Valid
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Email-Valid>=0:mail/p5-Email-Valid
 
 USES=		perl5
 USE_PERL5=	configure

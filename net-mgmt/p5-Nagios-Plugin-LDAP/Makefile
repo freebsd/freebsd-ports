@@ -18,10 +18,10 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-BUILD_DEPENDS=	p5-perl-ldap>=0:net/p5-perl-ldap \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-perl-ldap>=0:net/p5-perl-ldap \
 		p5-Nagios-Plugin>=0:net-mgmt/p5-Nagios-Plugin \
 		p5-DateTime>=0:devel/p5-DateTime
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete

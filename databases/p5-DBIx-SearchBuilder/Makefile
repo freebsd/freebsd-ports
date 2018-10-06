@@ -14,7 +14,8 @@ COMMENT=	Perl extension for easy SQL SELECT Statement generation
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-ReturnValue>=0:devel/p5-Class-ReturnValue \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-ReturnValue>=0:devel/p5-Class-ReturnValue \
 		p5-Cache-Simple-TimedExpiry>=0:devel/p5-Cache-Simple-TimedExpiry \
 		p5-Want>=0:devel/p5-Want \
 		p5-capitalization>=0:devel/p5-capitalization \
@@ -22,7 +23,6 @@ BUILD_DEPENDS=	p5-Class-ReturnValue>=0:devel/p5-Class-ReturnValue \
 		p5-DBIx-DBSchema>=0:databases/p5-DBIx-DBSchema \
 		p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-Clone>=0:devel/p5-Clone
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 
 NO_ARCH=	yes

@@ -12,7 +12,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	gunter@six-two.net
 COMMENT=	Base implementations for modules to negotiate with Google Data APIs
 
-BUILD_DEPENDS=	p5-Any-Moose>=0.04:devel/p5-Any-Moose \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Any-Moose>=0.04:devel/p5-Any-Moose \
 		p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
 		p5-Lingua-EN-Inflect-Number>=0:textproc/p5-Lingua-EN-Inflect-Number \
@@ -25,7 +26,6 @@ BUILD_DEPENDS=	p5-Any-Moose>=0.04:devel/p5-Any-Moose \
 		p5-XML-Atom>=0:textproc/p5-XML-Atom \
 		p5-libwww>=0:www/p5-libwww \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-MockModule>=0:devel/p5-Test-MockModule \
 		p5-Test-MockObject>=0:devel/p5-Test-MockObject \

@@ -11,11 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	File::Attributes - Manipulate file metadata
 
-BUILD_DEPENDS=	p5-YAML>=0:textproc/p5-YAML \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-YAML>=0:textproc/p5-YAML \
 		p5-Directory-Scratch>=0:devel/p5-Directory-Scratch \
 		p5-Best>=0:devel/p5-Best \
 		p5-YAML-Syck>0:textproc/p5-YAML-Syck
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -13,10 +13,10 @@ COMMENT=	Perl module to write a CHECKSUMS file for a directory as on CPAN
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Data-Compare>=0:devel/p5-Data-Compare \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Data-Compare>=0:devel/p5-Data-Compare \
 		p5-Compress-Bzip2>=0:archivers/p5-Compress-Bzip2 \
 		p5-Module-Signature>=0:security/p5-Module-Signature
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

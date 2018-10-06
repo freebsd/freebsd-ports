@@ -15,8 +15,8 @@ COMMENT=	Base class for hashes with key-casing requirements
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Log-Report>=0.26:devel/p5-Log-Report
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Log-Report>=0.26:devel/p5-Log-Report
 
 NO_ARCH=	yes
 USES=		perl5

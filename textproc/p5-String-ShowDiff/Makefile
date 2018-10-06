@@ -14,8 +14,8 @@ COMMENT=	Perl extension to help visualize differences between strings
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff
 
 NO_ARCH=	yes
 USES=		perl5

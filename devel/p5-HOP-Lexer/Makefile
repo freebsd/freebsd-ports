@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Higher Order Perl Lexer
 
-BUILD_DEPENDS=	p5-HOP-Stream>=0.01:devel/p5-HOP-Stream
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-HOP-Stream>=0.01:devel/p5-HOP-Stream
 
 USES=		perl5
 USE_PERL5=	modbuild

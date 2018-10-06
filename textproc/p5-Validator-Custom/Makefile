@@ -14,8 +14,8 @@ COMMENT=	Validator::Custom for simple data validation
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Object-Simple>=3.0621:devel/p5-Object-Simple
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Object-Simple>=3.0621:devel/p5-Object-Simple
 TEST_DEPENDS=	p5-JSON>=2:converters/p5-JSON \
 		p5-Test-Pod>=1.22:devel/p5-Test-Pod
 

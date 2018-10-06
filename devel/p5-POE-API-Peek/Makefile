@@ -16,9 +16,9 @@ COMMENT=	Peek into the internals of a running POE environment
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-POE>=1.311:devel/p5-POE \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-POE>=1.311:devel/p5-POE \
 		p5-Devel-Size>0:devel/p5-Devel-Size
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

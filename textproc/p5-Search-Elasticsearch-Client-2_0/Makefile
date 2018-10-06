@@ -13,12 +13,12 @@ COMMENT=	ElasticSearch API for 2.0 servers
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	p5-Search-Elasticsearch>=5.01:textproc/p5-Search-Elasticsearch \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Search-Elasticsearch>=5.01:textproc/p5-Search-Elasticsearch \
 		p5-Devel-GlobalDestruction>=0:devel/p5-Devel-GlobalDestruction \
 		p5-Moo>=1.003:devel/p5-Moo \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-namespace-clean>=0:devel/p5-namespace-clean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
 		p5-JSON-XS>=0:converters/p5-JSON-XS \
 		p5-Log-Any-Adapter-Callback>=0:devel/p5-Log-Any-Adapter-Callback \

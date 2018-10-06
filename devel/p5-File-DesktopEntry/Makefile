@@ -13,8 +13,8 @@ COMMENT=	Object to handle desktop files
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-File-BaseDir>=0.03:devel/p5-File-BaseDir
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-File-BaseDir>=0.03:devel/p5-File-BaseDir
 
 USES=		perl5
 USE_PERL5=	configure

@@ -13,8 +13,8 @@ COMMENT=	Simple diff to String
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff
 TEST_DEPENDS=	p5-Test-Base>=0:devel/p5-Test-Base \
 		p5-YAML>=0:textproc/p5-YAML
 

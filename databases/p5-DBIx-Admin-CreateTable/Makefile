@@ -13,9 +13,9 @@ COMMENT=	Create and drop tables, primary indexes, and sequences
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-Moo>=1.004002:devel/p5-Moo
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Version>=1.002003:devel/p5-Test-Version
 
 NO_ARCH=	yes

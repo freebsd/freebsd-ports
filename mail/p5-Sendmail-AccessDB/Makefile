@@ -10,8 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Perl5 interface to the Sendmail access.db list
 
-BUILD_DEPENDS=	p5-BerkeleyDB>=0:databases/p5-BerkeleyDB
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-BerkeleyDB>=0:databases/p5-BerkeleyDB
 
 USES=		perl5
 USE_PERL5=	configure

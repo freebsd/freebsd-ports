@@ -14,10 +14,10 @@ COMMENT=	Regex DispatchType
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.90060:www/p5-Catalyst-Runtime \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Catalyst-Runtime>=5.90060:www/p5-Catalyst-Runtime \
 		p5-Moose>=0:devel/p5-Moose \
 		p5-Text-SimpleTable>=0:textproc/p5-Text-SimpleTable
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-MRO-Compat>=0:devel/p5-MRO-Compat \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
 

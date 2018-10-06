@@ -14,7 +14,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Config-Any>=0.19:devel/p5-Config-Any \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Config-Any>=0.19:devel/p5-Config-Any \
 		p5-DBIx-Class>=0.08123:databases/p5-DBIx-Class \
 		p5-DBIx-Class-Schema-PopulateMore>=0.16:databases/p5-DBIx-Class-Schema-PopulateMore \
 		p5-DBIx-Class-TimeStamp>=0.13:databases/p5-DBIx-Class-TimeStamp \
@@ -31,7 +32,6 @@ BUILD_DEPENDS=	p5-Config-Any>=0.19:devel/p5-Config-Any \
 		p5-SQL-Translator>=0.11006:databases/p5-SQL-Translator \
 		p5-Sub-Exporter>=0.982:devel/p5-Sub-Exporter \
 		p5-Test-Deep>=0.106:devel/p5-Test-Deep
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-MooseX-Types-LoadableClass>=0:devel/p5-MooseX-Types-LoadableClass \
 		p5-Test-Differences>=0:devel/p5-Test-Differences \
 		p5-Test-mysqld>=0:databases/p5-Test-mysqld

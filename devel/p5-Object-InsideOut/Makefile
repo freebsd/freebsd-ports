@@ -14,9 +14,9 @@ COMMENT=	Comprehensive inside-out object support module
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Exception-Class>=1.32:devel/p5-Exception-Class \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Exception-Class>=1.32:devel/p5-Exception-Class \
 		p5-Want>=0.21:devel/p5-Want
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

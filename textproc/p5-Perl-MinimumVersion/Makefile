@@ -13,13 +13,13 @@ COMMENT=	Find a minimum required version of perl for Perl code
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-File-Find-Rule>=0:devel/p5-File-Find-Rule \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-File-Find-Rule>=0:devel/p5-File-Find-Rule \
 		p5-File-Find-Rule-Perl>=0:devel/p5-File-Find-Rule-Perl \
 		p5-PPI>=1.215:textproc/p5-PPI \
 		p5-PPIx-Regexp>=0.033:textproc/p5-PPIx-Regexp \
 		p5-Perl-Critic>=1.104:textproc/p5-Perl-Critic \
 		p5-Params-Util>=0.25:devel/p5-Params-Util
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Script>=0:devel/p5-Test-Script
 
 USES=		perl5

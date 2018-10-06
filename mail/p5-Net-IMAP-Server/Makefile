@@ -13,7 +13,8 @@ COMMENT=	Single-threaded multiplexing IMAP server implementation
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-AnyEvent>0:devel/p5-AnyEvent \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-AnyEvent>0:devel/p5-AnyEvent \
 		p5-Class-Accessor>0:devel/p5-Class-Accessor \
 		p5-Coro>0:devel/p5-Coro \
 		p5-DateTime>0:devel/p5-DateTime \
@@ -27,7 +28,6 @@ BUILD_DEPENDS=	p5-AnyEvent>0:devel/p5-AnyEvent \
 		p5-Net-Server-Coro>=0.6:net/p5-Net-Server-Coro \
 		p5-Regexp-Common>0:textproc/p5-Regexp-Common \
 		p5-UNIVERSAL-require>0:devel/p5-UNIVERSAL-require
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-IO-Socket-SSL>0:security/p5-IO-Socket-SSL
 
 NO_ARCH=	yes

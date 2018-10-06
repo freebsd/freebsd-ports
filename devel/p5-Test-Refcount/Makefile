@@ -14,8 +14,8 @@ COMMENT=	Assert reference counts on objects
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Devel-MAT>=0:devel/p5-Devel-MAT
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Devel-MAT>=0:devel/p5-Devel-MAT
 TEST_DEPENDS=	p5-Test-Pod>=1:devel/p5-Test-Pod
 
 USE_PERL5=	configure

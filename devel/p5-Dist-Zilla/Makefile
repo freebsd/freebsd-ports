@@ -13,7 +13,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-App-Cmd>=0.330:devel/p5-App-Cmd \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-App-Cmd>=0.330:devel/p5-App-Cmd \
 		p5-CPAN-Uploader>=0.103004:devel/p5-CPAN-Uploader \
 		p5-Class-Load>=0.17:devel/p5-Class-Load \
 		p5-Config-MVP>=2.200011:devel/p5-Config-MVP \
@@ -54,7 +55,6 @@ BUILD_DEPENDS=	p5-App-Cmd>=0.330:devel/p5-App-Cmd \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-YAML-Tiny>=0:textproc/p5-YAML-Tiny \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.011:devel/p5-CPAN-Meta-Check \
 		p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-FailWarnings>=0:devel/p5-Test-FailWarnings \
@@ -68,7 +68,8 @@ USE_PERL5=	configure
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 502501
-BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.45:lang/p5-Scalar-List-Utils
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.45:lang/p5-Scalar-List-Utils
 RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.45:lang/p5-Scalar-List-Utils
 .endif
 

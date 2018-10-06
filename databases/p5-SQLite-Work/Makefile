@@ -17,11 +17,11 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \
 		p5-DBI>=0:databases/p5-DBI \
 		p5-Getopt-ArgvFile>=0:devel/p5-Getopt-ArgvFile \
 		p5-Text-NeatTemplate>=0:textproc/p5-Text-NeatTemplate
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	skipv:0.0202,0.0501,0.1001,0.1002,0.1003
 

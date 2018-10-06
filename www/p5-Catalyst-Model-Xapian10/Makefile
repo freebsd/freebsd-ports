@@ -16,11 +16,11 @@ COMMENT=	Catalyst model for Search::Xapian
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.30:www/p5-Catalyst-Runtime \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Catalyst-Runtime>=5.30:www/p5-Catalyst-Runtime \
 		p5-Catalyst-Devel>=1.00:www/p5-Catalyst-Devel \
 		p5-Data-Page>=0:databases/p5-Data-Page \
 		p5-Search-Xapian10>=0.9.2.4:databases/p5-Search-Xapian10
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5 shebangfix

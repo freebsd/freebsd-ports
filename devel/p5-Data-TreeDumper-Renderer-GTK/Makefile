@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	GTK renderer for Data::TreeDumper
 
-BUILD_DEPENDS=	p5-Data-TreeDumper>=0:devel/p5-Data-TreeDumper \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Data-TreeDumper>=0:devel/p5-Data-TreeDumper \
 		p5-Gtk2>=0:x11-toolkits/p5-Gtk2
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5 shebangfix
 SHEBANG_FILES=	gtk_test.pl

@@ -13,8 +13,8 @@ COMMENT=	Merges hashes
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Clone-Choose>=0.008:devel/p5-Clone-Choose
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Clone-Choose>=0.008:devel/p5-Clone-Choose
 
 NO_ARCH=	yes
 USES=		perl5

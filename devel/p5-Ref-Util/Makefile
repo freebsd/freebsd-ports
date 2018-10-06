@@ -13,8 +13,8 @@ COMMENT=	Utility functions for checking references
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Ref-Util-XS>=0:devel/p5-Ref-Util-XS
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Ref-Util-XS>=0:devel/p5-Ref-Util-XS
 
 NO_ARCH=	yes
 USE_PERL5=	configure

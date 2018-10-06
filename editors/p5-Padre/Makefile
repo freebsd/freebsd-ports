@@ -17,7 +17,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-Algorithm-Diff>=1.19:devel/p5-Algorithm-Diff \
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		p5-Module-Build>=0.36:devel/p5-Module-Build
+RUN_DEPENDS=	p5-Algorithm-Diff>=1.19:devel/p5-Algorithm-Diff \
 		p5-App-cpanminus>=0.9923:devel/p5-App-cpanminus \
 		p5-CGI>=3.47:www/p5-CGI \
 		p5-Capture-Tiny>0:devel/p5-Capture-Tiny \
@@ -64,8 +66,6 @@ BUILD_DEPENDS=	p5-Algorithm-Diff>=1.19:devel/p5-Algorithm-Diff \
 		p5-Wx>=0.9700:x11-toolkits/p5-Wx \
 		p5-YAML-Tiny>=1.32:textproc/p5-YAML-Tiny \
 		p5-libwww>=5.815:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-BUILD_DEPENDS+=	p5-Module-Build>=0.36:devel/p5-Module-Build
 
 USES=		compiler:c++11-lib dos2unix gettext perl5
 USE_PERL5=	configure

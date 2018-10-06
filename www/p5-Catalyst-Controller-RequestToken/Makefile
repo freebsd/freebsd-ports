@@ -11,12 +11,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bill.brinzer@gmail.com
 COMMENT=	Generate and validate unique tokens across HTTP requests (anti-CSRF)
 
-BUILD_DEPENDS=	p5-Catalyst-Action-RenderView>=0:www/p5-Catalyst-Action-RenderView \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Catalyst-Action-RenderView>=0:www/p5-Catalyst-Action-RenderView \
 		p5-Catalyst-Plugin-Session-State-Cookie>=0:www/p5-Catalyst-Plugin-Session-State-Cookie \
 		p5-Catalyst-Plugin-Session>=0:www/p5-Catalyst-Plugin-Session \
 		p5-Catalyst-Runtime>=5.7000:www/p5-Catalyst-Runtime \
 		p5-MRO-Compat>=0:devel/p5-MRO-Compat
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

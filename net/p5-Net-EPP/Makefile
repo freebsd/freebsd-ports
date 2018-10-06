@@ -13,10 +13,10 @@ COMMENT=	Client library for the TCP transport for EPP
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	p5-Digest-SHA1>=2.12:security/p5-Digest-SHA1 \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Digest-SHA1>=2.12:security/p5-Digest-SHA1 \
 		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

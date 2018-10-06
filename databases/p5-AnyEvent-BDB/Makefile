@@ -14,9 +14,9 @@ COMMENT=	Truly asynchronous Berkeley DB access
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-AnyEvent>=3.81:devel/p5-AnyEvent \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-AnyEvent>=3.81:devel/p5-AnyEvent \
 		p5-BDB>=1.5:databases/p5-BDB
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USE_PERL5=	configure

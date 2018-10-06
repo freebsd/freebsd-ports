@@ -14,9 +14,9 @@ COMMENT=	Perl wrapper for the various dialog applications
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp \
 		p5-String-ShellQuote>=0:textproc/p5-String-ShellQuote
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 RUN_DEPENDS+=	cdialog:devel/cdialog
 
 OPTIONS_DEFINE=	KDE NEWT X11 ZENITY

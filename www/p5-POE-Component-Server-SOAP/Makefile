@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Publish POE event handlers via SOAP over HTTP
 
-BUILD_DEPENDS=	p5-SOAP-Lite>=0.55:net/p5-SOAP-Lite \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-SOAP-Lite>=0.55:net/p5-SOAP-Lite \
 		p5-POE-Component-Server-SimpleHTTP>=1.54:www/p5-POE-Component-Server-SimpleHTTP \
 		p5-POE>=0:devel/p5-POE
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

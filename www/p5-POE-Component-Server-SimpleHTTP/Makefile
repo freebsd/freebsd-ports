@@ -13,10 +13,10 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Moose>=0.9:devel/p5-Moose \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Moose>=0.9:devel/p5-Moose \
 		p5-MooseX-POE>=0.205:devel/p5-MooseX-POE \
 		p5-POE>=1:devel/p5-POE
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-POE-Component-Client-HTTP>=0.82:www/p5-POE-Component-Client-HTTP \
 		p5-POE-Filter-HTTP-Parser>=1.06:www/p5-POE-Filter-HTTP-Parser \
 		p5-Test-POE-Client-TCP>=0.1:devel/p5-Test-POE-Client-TCP

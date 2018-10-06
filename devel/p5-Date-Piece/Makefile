@@ -16,8 +16,8 @@ COMMENT=	Perl5 module containing date manipulation routines
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Date-Simple>=3.03:devel/p5-Date-Simple
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Date-Simple>=3.03:devel/p5-Date-Simple
 
 NO_ARCH=	yes
 USES=		perl5

@@ -15,8 +15,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Data-Sah-Normalize>=0:devel/p5-Data-Sah-Normalize
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Data-Sah-Normalize>=0:devel/p5-Data-Sah-Normalize
 TEST_DEPENDS=	p5-DefHash>=1.0.6:devel/p5-DefHash \
 		p5-Sah>=0.9.36:devel/p5-Sah
 

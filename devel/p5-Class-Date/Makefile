@@ -13,8 +13,8 @@ COMMENT=	Perl class for easy date and time manipulation
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-TimeDate>0:devel/p5-TimeDate
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-TimeDate>0:devel/p5-TimeDate
 TEST_DEPENDS=	p5-Test-Warnings>0:devel/p5-Test-Warnings
 
 NO_ARCH=	yes

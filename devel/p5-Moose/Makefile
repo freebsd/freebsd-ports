@@ -16,7 +16,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 # Do not add p5-Data-Visitor to TEST_DEPENDS to avoid cyclic dependency
-BUILD_DEPENDS=	p5-Class-Load>=0.09:devel/p5-Class-Load \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Load>=0.09:devel/p5-Class-Load \
 		p5-Class-Load-XS>=0.01:devel/p5-Class-Load-XS \
 		p5-Data-OptList>=0.107:devel/p5-Data-OptList \
 		p5-Devel-GlobalDestruction>=0:devel/p5-Devel-GlobalDestruction \
@@ -35,7 +36,6 @@ BUILD_DEPENDS=	p5-Class-Load>=0.09:devel/p5-Class-Load \
 		p5-Sub-Identify>=0:devel/p5-Sub-Identify \
 		p5-Sub-Name>=0.20,1:devel/p5-Sub-Name \
 		p5-Try-Tiny>=0.17:lang/p5-Try-Tiny
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.011:devel/p5-CPAN-Meta-Check \
 		p5-DBM-Deep>=0:databases/p5-DBM-Deep \
 		p5-DateTime-Calendar-Mayan>=0:devel/p5-DateTime-Calendar-Mayan \

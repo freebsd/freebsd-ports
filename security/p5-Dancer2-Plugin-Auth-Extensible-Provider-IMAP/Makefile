@@ -13,9 +13,9 @@ COMMENT=	Extensible authentication for D2 apps using Net::IMAP::Simple
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Dancer2-Plugin-Auth-Extensible>=0.620:security/p5-Dancer2-Plugin-Auth-Extensible \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Dancer2-Plugin-Auth-Extensible>=0.620:security/p5-Dancer2-Plugin-Auth-Extensible \
 		p5-Net-IMAP-Simple>=0:mail/p5-Net-IMAP-Simple
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

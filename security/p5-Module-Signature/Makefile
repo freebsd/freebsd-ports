@@ -29,10 +29,8 @@ OPTIONS_MULTI_GPG=	GPG1 GPG2
 GPG1_DESC=	Use GnuPG version 1
 GPG2_DESC=	Use GnuPG version 2
 
-GPG1_BUILD_DEPENDS=	gpgv:security/gnupg1
-GPG1_RUN_DEPENDS=	${GPG1_BUILD_DEPENDS}
+GPG1_RUN_DEPENDS=	gpgv:security/gnupg1
 
-GPG2_BUILD_DEPENDS=	gpgv2:security/gnupg
-GPG2_RUN_DEPENDS=	${GPG2_BUILD_DEPENDS}
+GPG2_RUN_DEPENDS=	gpgv2:security/gnupg
 
 .include <bsd.port.mk>

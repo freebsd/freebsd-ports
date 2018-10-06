@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	MogileFS (distributed filesystem) server
 
-BUILD_DEPENDS=	p5-Danga-Socket>=1.56:devel/p5-Danga-Socket \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Danga-Socket>=1.56:devel/p5-Danga-Socket \
 		p5-DBD-SQLite>=1.13:databases/p5-DBD-SQLite \
 		p5-DBD-mysql>=0:databases/p5-DBD-mysql \
 		p5-DBI>=0:databases/p5-DBI \
@@ -20,7 +21,6 @@ BUILD_DEPENDS=	p5-Danga-Socket>=1.56:devel/p5-Danga-Socket \
 		p5-Net-Netmask>=0:net-mgmt/p5-Net-Netmask \
 		p5-Perlbal>=1.79:www/perlbal \
 		p5-Sys-Syscall>=0.22:devel/p5-Sys-Syscall
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

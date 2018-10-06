@@ -11,12 +11,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pluggable component framework
 
-BUILD_DEPENDS=	p5-Carp-Clan>0:devel/p5-Carp-Clan \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Carp-Clan>0:devel/p5-Carp-Clan \
 		p5-Class-Accessor>0:devel/p5-Class-Accessor \
 		p5-Class-Data-Inheritable>0:devel/p5-Class-Data-Inheritable \
 		p5-Class-Inspector>0:devel/p5-Class-Inspector \
 		p5-UNIVERSAL-require>0:devel/p5-UNIVERSAL-require
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -14,11 +14,11 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Email-Address-XS>=0:mail/p5-Email-Address-XS \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Email-Address-XS>=0:mail/p5-Email-Address-XS \
 		p5-Net-DNS>=0:dns/p5-Net-DNS \
 		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
 		p5-Net-Whois-IP>=1.11:net/p5-Net-Whois-IP
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

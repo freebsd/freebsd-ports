@@ -15,7 +15,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \
 		p5-Bio-FeatureIO>=0:biology/p5-Bio-FeatureIO \
 		p5-BioPerl>=1.007000:biology/p5-BioPerl \
 		p5-Config-Any>=0:devel/p5-Config-Any \
@@ -23,7 +24,6 @@ BUILD_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \
 		p5-IO-String>=0:devel/p5-IO-String \
 		p5-IPC-Run>=0:devel/p5-IPC-Run \
 		p5-XML-Twig>=0:textproc/p5-XML-Twig
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 CONFLICTS=	p5-bioperl-run-1.[13579]*
 

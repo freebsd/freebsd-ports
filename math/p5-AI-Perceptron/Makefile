@@ -14,8 +14,8 @@ COMMENT=	Perl module for introducing to internal operations of neural networks
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-accessors>=0:devel/p5-accessors
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-accessors>=0:devel/p5-accessors
 
 USES=		perl5
 USE_PERL5=	modbuild

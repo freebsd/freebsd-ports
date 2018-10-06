@@ -13,7 +13,8 @@ COMMENT=	ACL support for Catalyst applications
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Catalyst-Plugin-Authentication>=0:www/p5-Catalyst-Plugin-Authentication \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Catalyst-Plugin-Authentication>=0:www/p5-Catalyst-Plugin-Authentication \
 		p5-Catalyst-Plugin-Authorization-Roles>=0:www/p5-Catalyst-Plugin-Authorization-Roles \
 		p5-Catalyst-Runtime>=0:www/p5-Catalyst-Runtime \
 		p5-Class-Throwable>=0:devel/p5-Class-Throwable \
@@ -22,7 +23,6 @@ BUILD_DEPENDS=	p5-Catalyst-Plugin-Authentication>=0:www/p5-Catalyst-Plugin-Authe
 		p5-Tree-Simple>=0:devel/p5-Tree-Simple \
 		p5-Tree-Simple-VisitorFactory>=0:devel/p5-Tree-Simple-VisitorFactory \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Catalyst-Plugin-Session>=0:www/p5-Catalyst-Plugin-Session \
 		p5-Catalyst-Plugin-Session-State-Cookie>=0:www/p5-Catalyst-Plugin-Session-State-Cookie \
 		p5-Test-WWW-Mechanize-Catalyst>=0:devel/p5-Test-WWW-Mechanize-Catalyst

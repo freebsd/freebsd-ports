@@ -13,9 +13,9 @@ COMMENT=	Math::BigInt::GMP - Use the GMP library for Math::BigInt routines
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Math-BigInt>=1.999812:math/p5-Math-BigInt
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Math-BigInt>=1.999812:math/p5-Math-BigInt
 LIB_DEPENDS=	libgmp.so:math/gmp
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure
 USES=		localbase perl5

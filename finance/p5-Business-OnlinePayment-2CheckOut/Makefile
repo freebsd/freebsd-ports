@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Business::OnlinePayment backend module for 2CheckOut authorization service
 
-BUILD_DEPENDS=	p5-Business-CreditCard>=0:finance/p5-Business-CreditCard \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Business-CreditCard>=0:finance/p5-Business-CreditCard \
 		p5-Business-OnlinePayment>=0:finance/p5-Business-OnlinePayment \
 		p5-Text-CSV_XS>=0:textproc/p5-Text-CSV_XS
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure patch

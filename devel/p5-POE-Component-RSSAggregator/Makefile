@@ -14,11 +14,11 @@ COMMENT=	Watch Muliple RSS Feeds for New Headlines
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-POE-Component-Client-DNS>=0.98:dns/p5-POE-Component-Client-DNS \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-POE-Component-Client-DNS>=0.98:dns/p5-POE-Component-Client-DNS \
 		p5-POE-Component-Client-HTTP>=0.51:www/p5-POE-Component-Client-HTTP \
 		p5-XML-RSS-Feed>=0:textproc/p5-XML-RSS-Feed \
 		p5-libwww>=0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

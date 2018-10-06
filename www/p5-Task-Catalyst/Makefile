@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	All you need to start with Catalyst
 
-BUILD_DEPENDS=	p5-Catalyst-ActionRole-ACL>=0:www/p5-Catalyst-ActionRole-ACL \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Catalyst-ActionRole-ACL>=0:www/p5-Catalyst-ActionRole-ACL \
 		p5-Catalyst-Action-REST>=0:www/p5-Catalyst-Action-REST \
 		p5-Catalyst-Authentication-Credential-HTTP>=0:www/p5-Catalyst-Authentication-Credential-HTTP \
 		p5-Catalyst-Authentication-Store-DBIx-Class>=0.106:www/p5-Catalyst-Authentication-Store-DBIx-Class \
@@ -39,7 +40,6 @@ BUILD_DEPENDS=	p5-Catalyst-ActionRole-ACL>=0:www/p5-Catalyst-ActionRole-ACL \
 		p5-FCGI-ProcManager>=0:www/p5-FCGI-ProcManager \
 		p5-Starman>=0:www/p5-Starman \
 		p5-local-lib>=0:devel/p5-local-lib
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

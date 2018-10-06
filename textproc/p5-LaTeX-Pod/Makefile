@@ -14,11 +14,11 @@ COMMENT=	Transform LaTeX source files to POD
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-LaTeX-TOM>=0.9:textproc/p5-LaTeX-TOM \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-LaTeX-TOM>=0.9:textproc/p5-LaTeX-TOM \
 		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-Params-Validate>=0.91:devel/p5-Params-Validate \
 		p5-boolean>=0.20:devel/p5-boolean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

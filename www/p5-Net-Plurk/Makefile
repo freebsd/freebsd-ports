@@ -14,7 +14,8 @@ COMMENT=	Perl interface to Plurk API
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-AnyEvent-HTTP>=0:www/p5-AnyEvent-HTTP \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-AnyEvent-HTTP>=0:www/p5-AnyEvent-HTTP \
 		p5-DateTime-Format-Strptime>=0:devel/p5-DateTime-Format-Strptime \
 		p5-Digest-HMAC>=0:security/p5-Digest-HMAC \
 		p5-HTTP-Lite>=0:www/p5-HTTP-Lite \
@@ -25,7 +26,6 @@ BUILD_DEPENDS=	p5-AnyEvent-HTTP>=0:www/p5-AnyEvent-HTTP \
 		p5-Net-SSLeay>=0:security/p5-Net-SSLeay \
 		p5-URI>=0:net/p5-URI \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USE_PERL5=	configure

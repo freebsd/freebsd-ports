@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Text-Query-SQL provides query builders for SQL databases
 
-BUILD_DEPENDS=	p5-Text-Query>=0:textproc/p5-Text-Query
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Text-Query>=0:textproc/p5-Text-Query
 TEST_DEPENDS=	p5-DBI>=0:databases/p5-DBI
 
 USES=		perl5

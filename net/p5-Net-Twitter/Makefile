@@ -14,7 +14,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Carp-Clan>=0:devel/p5-Carp-Clan \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Carp-Clan>=0:devel/p5-Carp-Clan \
 		p5-Class-Load>=0:devel/p5-Class-Load \
 		p5-Data-Visitor>=0:devel/p5-Data-Visitor \
 		p5-DateTime>=0.51:devel/p5-DateTime \
@@ -33,7 +34,6 @@ BUILD_DEPENDS=	p5-Carp-Clan>=0:devel/p5-Carp-Clan \
 		p5-URI>=1.40:net/p5-URI \
 		p5-libwww>=2.032:www/p5-libwww \
 		p5-namespace-autoclean>=0.09:devel/p5-namespace-autoclean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Warn>=0:devel/p5-Test-Warn
@@ -45,7 +45,8 @@ USE_PERL5=	configure
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 502502
-BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=7.11.01:devel/p5-ExtUtils-MakeMaker
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS+=	p5-ExtUtils-MakeMaker>=7.11.01:devel/p5-ExtUtils-MakeMaker
 .endif
 
 .include <bsd.port.post.mk>

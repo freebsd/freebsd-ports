@@ -13,9 +13,9 @@ COMMENT=	Interactively prompt for user input
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Term-ReadKey>0:devel/p5-Term-ReadKey \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Term-ReadKey>0:devel/p5-Term-ReadKey \
 		p5-Want>0:devel/p5-Want
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

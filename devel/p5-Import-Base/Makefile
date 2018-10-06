@@ -15,9 +15,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Import-Into>=1.002005:devel/p5-Import-Into \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Import-Into>=1.002005:devel/p5-Import-Into \
 		p5-Module-Runtime>=0:devel/p5-Module-Runtime
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Dancer2-Plugin-Ajax>=0:www/p5-Dancer2-Plugin-Ajax \
 		p5-Dancer2>=0:www/p5-Dancer2 \
 		p5-Moo>=0:devel/p5-Moo

@@ -10,10 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to process and/or create PGP email
 
-BUILD_DEPENDS=	p5-GnuPG-Interface>=0:security/p5-GnuPG-Interface \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-GnuPG-Interface>=0:security/p5-GnuPG-Interface \
 		p5-MIME-Tools>=0:mail/p5-MIME-Tools \
 		p5-Mail-Tools>=0:mail/p5-Mail-Tools
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

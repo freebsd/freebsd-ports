@@ -14,9 +14,9 @@ COMMENT=	Turns a Class-AlzaboWrapper-Cursor object into a TT2 iterator
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-AlzaboWrapper>=0:devel/p5-Class-AlzaboWrapper \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-AlzaboWrapper>=0:devel/p5-Class-AlzaboWrapper \
 		p5-Template-Toolkit>=2:www/p5-Template-Toolkit
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild

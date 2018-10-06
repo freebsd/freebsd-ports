@@ -15,7 +15,8 @@ COMMENT=	Catalyst::Plugin::ConfigLoader-style layer over Config::Any
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Carp-Clan-Share>=0:devel/p5-Carp-Clan-Share \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Carp-Clan-Share>=0:devel/p5-Carp-Clan-Share \
 		p5-Hash-Merge-Simple>=0:devel/p5-Hash-Merge-Simple \
 		p5-Config-Any>=0:devel/p5-Config-Any \
 		p5-Config-General>=0:devel/p5-Config-General \
@@ -25,7 +26,6 @@ BUILD_DEPENDS=	p5-Carp-Clan-Share>=0:devel/p5-Carp-Clan-Share \
 		p5-Path-Class>=0:devel/p5-Path-Class \
 		p5-Sub-Install>=0:devel/p5-Sub-Install \
 		p5-Data-Visitor>=0.24:devel/p5-Data-Visitor
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Most>=0:devel/p5-Test-Most
 
 USES=		perl5

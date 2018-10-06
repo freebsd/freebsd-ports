@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Set autoflush from the command line
 
-BUILD_DEPENDS=	p5-IO-CaptureOutput>0:devel/p5-IO-CaptureOutput
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-IO-CaptureOutput>0:devel/p5-IO-CaptureOutput
 
 USES=		perl5
 USE_PERL5=	configure

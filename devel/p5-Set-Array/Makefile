@@ -14,9 +14,9 @@ COMMENT=	Arrays as objects with set operations
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	p5-Try-Tiny>=0.11:lang/p5-Try-Tiny \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Try-Tiny>=0.11:lang/p5-Try-Tiny \
 		p5-Want>=0:devel/p5-Want
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-Pod>=0:devel/p5-Test-Pod
 

@@ -14,8 +14,8 @@ COMMENT=	Simple reading and writing from an INI file
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp
 
 NO_ARCH=	yes
 USE_PERL5=	configure

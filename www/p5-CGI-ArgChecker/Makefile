@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module implementing a cgi interface to String::Checker
 
-BUILD_DEPENDS=	p5-String-Checker>=0:devel/p5-String-Checker
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-String-Checker>=0:devel/p5-String-Checker
 
 USES=		perl5
 USE_PERL5=	configure

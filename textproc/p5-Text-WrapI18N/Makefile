@@ -14,8 +14,8 @@ COMMENT=	Line wrapping module
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Text-CharWidth>=0.02:textproc/p5-Text-CharWidth
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Text-CharWidth>=0.02:textproc/p5-Text-CharWidth
 
 USE_PERL5=	configure
 USES=		perl5

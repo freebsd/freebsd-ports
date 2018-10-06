@@ -14,7 +14,8 @@ COMMENT=	Flexible, OO, asynchronous process spawning and management
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-AnyEvent>=5.2:devel/p5-AnyEvent \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-AnyEvent>=5.2:devel/p5-AnyEvent \
 		p5-EV>=4.0:devel/p5-EV \
 		p5-Event-Join>=0.05:devel/p5-Event-Join \
 		p5-IO-Tty>=0:devel/p5-IO-Tty \
@@ -29,7 +30,6 @@ BUILD_DEPENDS=	p5-AnyEvent>=5.2:devel/p5-AnyEvent \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean \
 		p5-namespace-clean>0:devel/p5-namespace-clean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>0:devel/p5-Test-Exception
 
 NO_ARCH=	yes

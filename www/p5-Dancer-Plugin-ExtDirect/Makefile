@@ -14,9 +14,9 @@ COMMENT=	Dancer plugin for implementing ExtDirect APIs
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Dancer>=1.2001:www/p5-Dancer \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Dancer>=1.2001:www/p5-Dancer \
 		p5-JSON>=0:converters/p5-JSON
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

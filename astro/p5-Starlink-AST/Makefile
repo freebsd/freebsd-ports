@@ -14,9 +14,9 @@ COMMENT=	Interface to the Starlink AST library
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Astro-FITS-CFITSIO>=0:astro/p5-Astro-FITS-CFITSIO \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Astro-FITS-CFITSIO>=0:astro/p5-Astro-FITS-CFITSIO \
 		p5-Astro-FITS-Header>=0:astro/p5-Astro-FITS-Header
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Number-Delta>=0:devel/p5-Test-Number-Delta
 
 USES=		perl5

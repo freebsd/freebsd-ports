@@ -14,8 +14,8 @@ COMMENT=	Companion module for Readonly.pm, to speed up read-only scalar variable
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Readonly>=1.02:devel/p5-Readonly
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Readonly>=1.02:devel/p5-Readonly
 
 USE_PERL5=	configure
 USES=		perl5

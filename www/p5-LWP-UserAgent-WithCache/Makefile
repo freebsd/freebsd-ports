@@ -14,10 +14,10 @@ COMMENT=	LWP::UserAgent extension with local cache
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Cache-Cache>=0:devel/p5-Cache-Cache \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Cache-Cache>=0:devel/p5-Cache-Cache \
 		p5-File-HomeDir>=0:devel/p5-File-HomeDir \
 		p5-libwww>=0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USE_PERL5=	configure

@@ -14,8 +14,8 @@ COMMENT=	Parser for Tom's Obvious, Minimal Language (TOML) #'
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-TOML-Parser>=0.04:textproc/p5-TOML-Parser
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-TOML-Parser>=0.04:textproc/p5-TOML-Parser
 
 NO_ARCH=	yes
 USE_PERL5=	modbuildtiny

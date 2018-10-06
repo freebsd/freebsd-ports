@@ -13,9 +13,9 @@ COMMENT=	User configuration window for Tk with interface to Getopt::Long
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Tk>=804:x11-toolkits/p5-Tk \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Tk>=804:x11-toolkits/p5-Tk \
 		p5-Tk-FontDialog>=0:x11-toolkits/p5-Tk-FontDialog
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

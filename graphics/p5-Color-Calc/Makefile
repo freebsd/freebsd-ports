@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Simple calculations with RGB colors
 
-BUILD_DEPENDS=	p5-Graphics-ColorNames-WWW>=1.13:graphics/p5-Graphics-ColorNames-WWW
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Graphics-ColorNames-WWW>=1.13:graphics/p5-Graphics-ColorNames-WWW
 
 USES=		perl5
 USE_PERL5=	configure

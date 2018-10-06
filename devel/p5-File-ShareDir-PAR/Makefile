@@ -14,11 +14,11 @@ COMMENT=	Perl5 File::ShareDir module with PAR support
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Inspector>=0:devel/p5-Class-Inspector \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Inspector>=0:devel/p5-Class-Inspector \
 		p5-File-ShareDir>=0:devel/p5-File-ShareDir \
 		p5-PAR>=0:devel/p5-PAR \
 		p5-Params-Util>=0:devel/p5-Params-Util
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

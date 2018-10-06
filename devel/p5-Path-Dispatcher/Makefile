@@ -13,9 +13,9 @@ COMMENT=	Perl flexible and extensible dispatch
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Any-Moose>=0.12:devel/p5-Any-Moose \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Any-Moose>=0.12:devel/p5-Any-Moose \
 		p5-Try-Tiny>=0.02:lang/p5-Try-Tiny
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
 USES=		perl5

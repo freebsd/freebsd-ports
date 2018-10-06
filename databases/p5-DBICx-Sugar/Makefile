@@ -14,9 +14,9 @@ COMMENT=	Just some syntax sugar for DBIx::Class
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DBIx-Class>=0:databases/p5-DBIx-Class \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-DBIx-Class>=0:databases/p5-DBIx-Class \
 		p5-SQL-Translator>=0:databases/p5-SQL-Translator
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Modern>=0:devel/p5-Test-Modern \
 		p5-Test-Requires>=0:devel/p5-Test-Requires \
 		p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \

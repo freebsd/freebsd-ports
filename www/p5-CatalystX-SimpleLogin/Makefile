@@ -13,7 +13,8 @@ COMMENT=	Provide a simple Login controller which can be reused
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Catalyst-Action-REST>=0.74:www/p5-Catalyst-Action-REST \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Catalyst-Action-REST>=0.74:www/p5-Catalyst-Action-REST \
 		p5-Catalyst-Plugin-Authentication>=0:www/p5-Catalyst-Plugin-Authentication \
 		p5-Catalyst-Plugin-Session>=0.35:www/p5-Catalyst-Plugin-Session \
 		p5-Catalyst-Runtime>=5.80013:www/p5-Catalyst-Runtime \
@@ -28,7 +29,6 @@ BUILD_DEPENDS=	p5-Catalyst-Action-REST>=0.74:www/p5-Catalyst-Action-REST \
 		p5-MooseX-Types>=0:devel/p5-MooseX-Types \
 		p5-Try-Tiny>=0.24:lang/p5-Try-Tiny \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Catalyst-Action-RenderView>=0:www/p5-Catalyst-Action-RenderView \
 		p5-Catalyst-ActionRole-ACL>=0:www/p5-Catalyst-ActionRole-ACL \
 		p5-Catalyst-Plugin-Session-State-Cookie>=0:www/p5-Catalyst-Plugin-Session-State-Cookie \

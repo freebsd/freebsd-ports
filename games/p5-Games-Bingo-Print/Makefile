@@ -13,9 +13,9 @@ COMMENT=	Games::Bingo::Print - PDF Generation Class
 
 LICENSE=	ART10
 
-BUILD_DEPENDS=	p5-Games-Bingo>=0:games/p5-Games-Bingo \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Games-Bingo>=0:games/p5-Games-Bingo \
 		p5-PDFLib>=0:print/p5-PDFLib
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Perl-Critic>=0:textproc/p5-Test-Perl-Critic \
 		p5-Test-Pod>=0:devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=0:devel/p5-Test-Pod-Coverage

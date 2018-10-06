@@ -14,8 +14,8 @@ COMMENT=	Perl extension for code generation program formatting and execution
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-STL-Containers>=0:devel/p5-Class-STL-Containers
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-STL-Containers>=0:devel/p5-Class-STL-Containers
 
 USES=		perl5
 USE_PERL5=	configure

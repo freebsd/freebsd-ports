@@ -18,10 +18,10 @@ COMMENT=	Tiny replacement for Module::Build
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-ExtUtils-Config>=0.003:devel/p5-ExtUtils-Config \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-ExtUtils-Config>=0.003:devel/p5-ExtUtils-Config \
 		p5-ExtUtils-Helpers>=0.020:devel/p5-ExtUtils-Helpers \
 		p5-ExtUtils-InstallPaths>=0.002:devel/p5-ExtUtils-InstallPaths
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USE_PERL5=	modbuildtiny

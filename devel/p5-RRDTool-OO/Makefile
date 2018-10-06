@@ -14,9 +14,9 @@ COMMENT=	RRDTool::OO - Object-oriented interface to RRDTool
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	rrdtool>=0:databases/rrdtool \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	rrdtool>=0:databases/rrdtool \
 		p5-Log-Log4perl>=0.40:devel/p5-Log-Log4perl
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

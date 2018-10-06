@@ -16,8 +16,8 @@ COMMENT=	Automatic and manual text wrapping and reformating formatting
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Text-Reform>=1.11:textproc/p5-Text-Reform
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Text-Reform>=1.11:textproc/p5-Text-Reform
 
 USES=		perl5
 USE_PERL5=	configure

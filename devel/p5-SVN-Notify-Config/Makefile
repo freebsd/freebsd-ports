@@ -15,10 +15,10 @@ COMMENT=	Perl module for config-driven Subversion notification
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/svnlook:devel/subversion \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	${LOCALBASE}/bin/svnlook:devel/subversion \
 		p5-SVN-Notify>=2.70:devel/p5-SVN-Notify \
 		p5-YAML>=0.62:textproc/p5-YAML
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0.1:devel/p5-Test-Deep
 
 USES=		perl5

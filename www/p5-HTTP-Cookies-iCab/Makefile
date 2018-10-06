@@ -13,9 +13,9 @@ COMMENT=	Cookie storage and management for iCab
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-HTTP-Cookies>=1.25:www/p5-HTTP-Cookies \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-HTTP-Cookies>=1.25:www/p5-HTTP-Cookies \
 		p5-Text-Diff>=0:textproc/p5-Text-Diff
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

@@ -13,12 +13,12 @@ COMMENT=	Common class for CPAN::Testers clients
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-Config-Perl-V>=0:devel/p5-Config-Perl-V \
 		p5-Devel-Platform-Info>=0:devel/p5-Devel-Platform-Info \
 		p5-File-HomeDir>=0.58:devel/p5-File-HomeDir \
 		p5-Probe-Perl>=0:sysutils/p5-Probe-Perl
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

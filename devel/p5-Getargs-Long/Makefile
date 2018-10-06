@@ -13,9 +13,9 @@ COMMENT=	Parse routine arguments
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Log-Agent>=0.105:devel/p5-Log-Agent \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Log-Agent>=0.105:devel/p5-Log-Agent \
 		p5-URI>=0:net/p5-URI
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Compile>=0:devel/p5-Test-Compile
 
 USES=		perl5

@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XML::RSS With A Liberal Parser
 
-BUILD_DEPENDS=	p5-XML-Liberal>=0:textproc/p5-XML-Liberal	\
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-XML-Liberal>=0:textproc/p5-XML-Liberal	\
 		p5-XML-RSS-LibXML>=0:textproc/p5-XML-RSS-LibXML
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild

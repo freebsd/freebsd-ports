@@ -14,8 +14,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Sub-Exporter-Progressive>=0:devel/p5-Sub-Exporter-Progressive
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Sub-Exporter-Progressive>=0:devel/p5-Sub-Exporter-Progressive
 TEST_DEPENDS=	p5-MooseX-Types>=0.44:devel/p5-MooseX-Types \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-namespace-clean>=0:devel/p5-namespace-clean

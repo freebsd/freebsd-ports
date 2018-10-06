@@ -14,10 +14,10 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-XML-Filter-BufferText>=1.00:textproc/p5-XML-Filter-BufferText \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-XML-Filter-BufferText>=1.00:textproc/p5-XML-Filter-BufferText \
 		p5-XML-NamespaceSupport>=1.00:textproc/p5-XML-NamespaceSupport \
 		p5-XML-SAX-Base>=1.01:textproc/p5-XML-SAX-Base
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

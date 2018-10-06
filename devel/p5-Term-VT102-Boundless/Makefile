@@ -14,8 +14,8 @@ COMMENT=	Subclass to emulate boundless DEC VT102 terminal
 LICENSE=	ART10 GPLv1 MIT
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Term-VT102>=0:devel/p5-Term-VT102
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Term-VT102>=0:devel/p5-Term-VT102
 
 NO_ARCH=	yes
 USES=		perl5

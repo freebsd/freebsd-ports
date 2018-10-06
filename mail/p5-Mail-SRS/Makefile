@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Sender Rewriting Scheme
 
-BUILD_DEPENDS=	p5-Digest-HMAC>=0:security/p5-Digest-HMAC \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Digest-HMAC>=0:security/p5-Digest-HMAC \
 		p5-MLDBM>=0:databases/p5-MLDBM
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

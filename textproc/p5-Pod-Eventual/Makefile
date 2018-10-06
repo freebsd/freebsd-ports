@@ -14,8 +14,8 @@ COMMENT=	Read a POD document as a series of trivial events
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Mixin-Linewise>=0.102:devel/p5-Mixin-Linewise
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Mixin-Linewise>=0.102:devel/p5-Mixin-Linewise
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep
 
 USES=		perl5

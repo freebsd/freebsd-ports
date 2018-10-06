@@ -15,10 +15,10 @@ COMMENT=	String munging for loggers
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Params-Util>0:devel/p5-Params-Util \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Params-Util>0:devel/p5-Params-Util \
 		p5-Sub-Exporter>0:devel/p5-Sub-Exporter \
 		p5-JSON>0:converters/p5-JSON
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Simple>=0.82:devel/p5-Test-Simple
 
 USES=		perl5

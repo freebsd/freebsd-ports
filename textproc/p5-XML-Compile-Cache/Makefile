@@ -13,10 +13,10 @@ COMMENT=	Cache Compiled XML Translators
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Log-Report>=1.26:devel/p5-Log-Report \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Log-Report>=1.26:devel/p5-Log-Report \
 		p5-XML-Compile>=1.60:textproc/p5-XML-Compile \
 		p5-XML-LibXML-Simple>=0.95:textproc/p5-XML-LibXML-Simple
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-XML-Compile-Tester>=0.02:devel/p5-XML-Compile-Tester
 
 USES=		perl5

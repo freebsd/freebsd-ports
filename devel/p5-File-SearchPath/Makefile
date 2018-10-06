@@ -11,8 +11,8 @@ COMMENT=	Search for a file in an environment variable path
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-Env-Path>=0:devel/p5-Env-Path
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Env-Path>=0:devel/p5-Env-Path
 
 USES=		perl5
 USE_PERL5=	modbuild

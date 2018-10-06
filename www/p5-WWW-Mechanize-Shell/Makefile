@@ -14,7 +14,8 @@ COMMENT=	Interactive shell for www/p5-WWW-Mechanize
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTML-Display>=0:www/p5-HTML-Display \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-HTML-Display>=0:www/p5-HTML-Display \
 		p5-HTML-TokeParser-Simple>=2.0:www/p5-HTML-TokeParser-Simple \
 		p5-Hook-LexWrap>=0.20:devel/p5-Hook-LexWrap \
 		p5-Term-Shell>=0.02:devel/p5-Term-Shell \
@@ -22,7 +23,6 @@ BUILD_DEPENDS=	p5-HTML-Display>=0:www/p5-HTML-Display \
 		p5-WWW-Mechanize>=1.20:www/p5-WWW-Mechanize \
 		p5-WWW-Mechanize-FormFiller>=0.05:www/p5-WWW-Mechanize-FormFiller \
 		p5-libwww>=5.69:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-CGI>=0:www/p5-CGI
 
 OPTIONS_DEFINE=	EXAMPLES

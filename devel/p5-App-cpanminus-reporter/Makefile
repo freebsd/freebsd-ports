@@ -13,7 +13,8 @@ COMMENT=	Perl extension to send cpanm output to CPAN Testers database
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 	p5-Config-Tiny>=2.08:devel/p5-Config-Tiny \
 	p5-CPAN-Testers-Common-Client>=0.13:devel/p5-CPAN-Testers-Common-Client \
 	p5-File-HomeDir>=0.58:devel/p5-File-HomeDir \
@@ -24,7 +25,6 @@ BUILD_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 	p5-Test-Reporter-Transport-Metabase>=0:devel/p5-Test-Reporter-Transport-Metabase \
 	p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 	p5-URI>=0:net/p5-URI
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=	perl5
 USE_PERL5=	configure

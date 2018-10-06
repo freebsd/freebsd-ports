@@ -11,11 +11,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Perl objects to represent Nagios configuration
 
-BUILD_DEPENDS=	p5-Test-Exception>=0.31:devel/p5-Test-Exception \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Test-Exception>=0.31:devel/p5-Test-Exception \
 		p5-Module-Build>=0.3607:devel/p5-Module-Build \
 		p5-List-Compare>=0.37:misc/p5-List-Compare \
 		p5-Test-NoWarnings>=1.01:devel/p5-Test-NoWarnings
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

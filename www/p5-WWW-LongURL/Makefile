@@ -14,11 +14,11 @@ COMMENT=	Perl interface to the LongURL API
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-JSON-Any>0:converters/p5-JSON-Any \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-JSON-Any>0:converters/p5-JSON-Any \
 		p5-URI>0:net/p5-URI \
 		p5-Class-Accessor>0:devel/p5-Class-Accessor \
 		p5-libwww>0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	p5-LWP-Online>0:www/p5-LWP-Online
 

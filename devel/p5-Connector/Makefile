@@ -13,7 +13,8 @@ COMMENT=	Generic connection to a hierarchical-structured data set
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	bash:shells/bash \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	bash:shells/bash \
 		p5-AppConfig>=0:devel/p5-AppConfig \
 		p5-Config-GitLike>=0:devel/p5-Config-GitLike \
 		p5-Config-Merge>=0:devel/p5-Config-Merge \
@@ -29,7 +30,6 @@ BUILD_DEPENDS=	bash:shells/bash \
 		p5-YAML>=1.06:textproc/p5-YAML \
 		p5-libwww>=0:www/p5-libwww \
 		p5-perl-ldap>=0:net/p5-perl-ldap
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
 
 USES=		perl5

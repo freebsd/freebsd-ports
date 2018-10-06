@@ -12,9 +12,9 @@ COMMENT=	Get stock quotes from Yahoo! Finance
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	p5-HTML-Parser>=2.2:www/p5-HTML-Parser \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-HTML-Parser>=2.2:www/p5-HTML-Parser \
 		p5-libwww>=1.62:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

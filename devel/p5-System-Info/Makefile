@@ -13,9 +13,9 @@ COMMENT=	Extract system info for reporting
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Test-Simple>=0.88:devel/p5-Test-Simple \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Test-Simple>=0.88:devel/p5-Test-Simple \
 		p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5 tar:tgz

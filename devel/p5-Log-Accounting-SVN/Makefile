@@ -14,11 +14,11 @@ COMMENT=	Perl module for accounting SVN repository
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-subversion>=0:devel/p5-subversion \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-subversion>=0:devel/p5-subversion \
 		p5-SVN-Log>=0:devel/p5-SVN-Log \
 		p5-Algorithm-Accounting>=0:devel/p5-Algorithm-Accounting \
 		p5-Test-Simple>=0:devel/p5-Test-Simple
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -13,10 +13,10 @@ COMMENT=	Make README.mkdn from POD
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Accessor-Lite>=0:devel/p5-Class-Accessor-Lite \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Accessor-Lite>=0:devel/p5-Class-Accessor-Lite \
 		p5-Module-Build-Pluggable>=0.09:devel/p5-Module-Build-Pluggable \
 		p5-Pod-Markdown>=0:textproc/p5-Pod-Markdown
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	modbuild
 USES=		perl5

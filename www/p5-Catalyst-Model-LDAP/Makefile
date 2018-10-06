@@ -13,13 +13,13 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.62000:www/p5-Catalyst-Runtime \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Catalyst-Runtime>=5.62000:www/p5-Catalyst-Runtime \
 		p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-MRO-Compat>=0:devel/p5-MRO-Compat \
 		p5-Module-Runtime>=0.015:devel/p5-Module-Runtime \
 		p5-Data-Page>=0:databases/p5-Data-Page \
 		p5-perl-ldap>=0.65:net/p5-perl-ldap
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

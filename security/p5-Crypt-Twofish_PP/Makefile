@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kostjnspb@yandex.ru
 COMMENT=	The Twofish Algorithm in Pure Perl
 
-BUILD_DEPENDS=	p5-Locale-libintl>=0:devel/p5-Locale-libintl
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Locale-libintl>=0:devel/p5-Locale-libintl
 
 USES=		perl5
 USE_PERL5=	configure

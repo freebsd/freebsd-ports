@@ -13,8 +13,8 @@ COMMENT=	Force number of words to singular or plural
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Lingua-EN-Inflect>=0:textproc/p5-Lingua-EN-Inflect
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Lingua-EN-Inflect>=0:textproc/p5-Lingua-EN-Inflect
 
 USES=		perl5
 USE_PERL5=	configure

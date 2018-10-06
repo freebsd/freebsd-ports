@@ -17,7 +17,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	git>=0:devel/git \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	git>=0:devel/git \
 		tree>=0:sysutils/tree \
 		p5-App-cpanminus>=1.6902:devel/p5-App-cpanminus \
 		p5-CPAN-Uploader>=0:devel/p5-CPAN-Uploader \
@@ -36,7 +37,6 @@ BUILD_DEPENDS=	git>=0:devel/git \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-URI>=0:net/p5-URI \
 		p5-Version-Next>=0:textproc/p5-Version-Next
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
 		p5-JSON>=0:converters/p5-JSON \
 		p5-Test-Output>=0:devel/p5-Test-Output \

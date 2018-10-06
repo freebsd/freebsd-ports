@@ -13,9 +13,9 @@ COMMENT=	Perl5 module to provide simple Radius client facilities
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Data-HexDump>=0.02:devel/p5-Data-HexDump \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Data-HexDump>=0.02:devel/p5-Data-HexDump \
 		p5-Net-IP>=1.26:net-mgmt/p5-Net-IP
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings
 
 REINPLACE_ARGS=	-i ''

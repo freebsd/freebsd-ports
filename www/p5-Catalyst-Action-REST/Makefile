@@ -14,7 +14,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80030:www/p5-Catalyst-Runtime \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Catalyst-Runtime>=5.80030:www/p5-Catalyst-Runtime \
 		p5-Class-Inspector>=1.13:devel/p5-Class-Inspector \
 		p5-MRO-Compat>=0.10:devel/p5-MRO-Compat \
 		p5-Module-Pluggable>=0:devel/p5-Module-Pluggable \
@@ -23,7 +24,6 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80030:www/p5-Catalyst-Runtime \
 		p5-URI-Find>=0:textproc/p5-URI-Find \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean \
 		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-libwww>=5:www/p5-libwww \
 		p5-Test-Requires>=0:devel/p5-Test-Requires
 

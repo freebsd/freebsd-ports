@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Quick implementation of the minimal interface to Readline libraries
 
-BUILD_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
 
 USE_PERL5=	configure
 USES=		perl5

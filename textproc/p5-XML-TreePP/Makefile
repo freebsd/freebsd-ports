@@ -13,8 +13,8 @@ COMMENT=	Pure Perl implementation for parsing/writing xml files
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-libwww>=5.811:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-libwww>=5.811:www/p5-libwww
 TEST_DEPENDS=	p5-HTTP-Lite>=0:www/p5-HTTP-Lite \
 		p5-Tie-IxHash>=0:devel/p5-Tie-IxHash
 

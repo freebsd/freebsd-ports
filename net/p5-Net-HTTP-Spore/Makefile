@@ -14,7 +14,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Class-Load>=0:devel/p5-Class-Load \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Load>=0:devel/p5-Class-Load \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-IO-All>=0:devel/p5-IO-All \
 		p5-JSON>=0:converters/p5-JSON \
@@ -27,7 +28,6 @@ BUILD_DEPENDS=	p5-Class-Load>=0:devel/p5-Class-Load \
 		p5-XML-Simple>=0:textproc/p5-XML-Simple \
 		p5-YAML>=0:textproc/p5-YAML \
 		p5-libwww>=0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 NO_ARCH=	yes

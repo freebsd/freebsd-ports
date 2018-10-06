@@ -14,9 +14,9 @@ COMMENT=	Event system independent IRC protocol module
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
 		p5-Object-Event>=0.7:devel/p5-Object-Event
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

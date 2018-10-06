@@ -13,11 +13,11 @@ COMMENT=	Pure perl implementation of LZW
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Moo>=1.001000:devel/p5-Moo \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Moo>=1.001000:devel/p5-Moo \
 		p5-Type-Tiny>0:devel/p5-Type-Tiny \
 		p5-namespace-clean>0:devel/p5-namespace-clean \
 		p5-strictures>0:devel/p5-strictures
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

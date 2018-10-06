@@ -10,7 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension of Yet Another Path Router for HTTP
 
-BUILD_DEPENDS=	\
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	\
 	p5-Class-Accessor>0:devel/p5-Class-Accessor \
 	p5-Devel-Caller-Perl>0:devel/p5-Devel-Caller-Perl \
 	p5-Filter>0:devel/p5-Filter \
@@ -21,7 +22,6 @@ BUILD_DEPENDS=	\
 	p5-Text-SimpleTable>=0:textproc/p5-Text-SimpleTable \
 	p5-Text-SimpleTemplate>0:textproc/p5-Text-SimpleTemplate \
 	p5-URI-Template-Restrict>=0.05:net/p5-URI-Template-Restrict
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

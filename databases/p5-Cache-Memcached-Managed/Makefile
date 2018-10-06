@@ -14,8 +14,8 @@ COMMENT=	Provide API for managing cached information
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Cache-Memcached>=0:databases/p5-Cache-Memcached
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Cache-Memcached>=0:databases/p5-Cache-Memcached
 TEST_DEPENDS=	memcached:databases/memcached
 
 USES=		perl5

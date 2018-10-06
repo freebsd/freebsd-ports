@@ -12,8 +12,8 @@ COMMENT=	Incremental FreeBSD ports INDEX file generation
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	p5-BerkeleyDB>0:databases/p5-BerkeleyDB
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-BerkeleyDB>0:databases/p5-BerkeleyDB
 
 USES=		perl5 tar:xz
 USE_PERL5=	configure

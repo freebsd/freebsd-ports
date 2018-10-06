@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interprocess Publish/Subscribe channels
 
-BUILD_DEPENDS=	p5-DBM-Deep>=1:databases/p5-DBM-Deep \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-DBM-Deep>=1:databases/p5-DBM-Deep \
 		p5-Class-Accessor>0:devel/p5-Class-Accessor \
 		p5-Data-UUID>0:devel/p5-Data-UUID
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

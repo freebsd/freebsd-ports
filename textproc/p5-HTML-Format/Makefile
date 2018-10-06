@@ -15,9 +15,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Font-AFM>=0:x11-fonts/p5-Font-AFM \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Font-AFM>=0:x11-fonts/p5-Font-AFM \
 		p5-HTML-Tree>=3.15:www/p5-HTML-Tree
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-File-Slurper>=0:devel/p5-File-Slurper
 
 NO_ARCH=	yes

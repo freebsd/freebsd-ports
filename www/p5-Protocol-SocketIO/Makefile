@@ -13,8 +13,8 @@ COMMENT=	Socket.IO protocol implementation
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-JSON>=0:converters/p5-JSON
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-JSON>=0:converters/p5-JSON
 
 NO_ARCH=	yes
 USE_PERL5=	modbuildtiny

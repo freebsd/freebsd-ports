@@ -14,8 +14,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Exporter-Lite>=0.02:devel/p5-Exporter-Lite
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Exporter-Lite>=0.02:devel/p5-Exporter-Lite
 TEST_DEPENDS=	p5-Time-Duration>=1.0.6:devel/p5-Time-Duration
 
 NO_ARCH=	yes

@@ -13,8 +13,8 @@ COMMENT=	Time::Piece::Range - deal with a range of Time::Piece objects
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	p5-Date-Range>=0:devel/p5-Date-Range
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Date-Range>=0:devel/p5-Date-Range
 
 NO_ARCH=	yes
 USES=		perl5

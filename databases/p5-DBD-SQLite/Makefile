@@ -13,8 +13,8 @@ COMMENT=	Provides access to SQLite3 databases through the DBI
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-DBI>=1.57:databases/p5-DBI
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-DBI>=1.57:databases/p5-DBI
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 

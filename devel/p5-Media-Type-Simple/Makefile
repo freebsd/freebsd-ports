@@ -14,10 +14,10 @@ COMMENT=	MIME Media Types and their file extensions
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-Exporter-Lite>=0:devel/p5-Exporter-Lite \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Exporter-Lite>=0:devel/p5-Exporter-Lite \
 		p5-File-Share>=0:devel/p5-File-Share \
 		p5-File-ShareDir>=0:devel/p5-File-ShareDir
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USE_PERL5=	configure

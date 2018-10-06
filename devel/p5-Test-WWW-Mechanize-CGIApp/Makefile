@@ -14,10 +14,10 @@ COMMENT=	Test::WWW::Mechanize for CGIApp
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-CGI-Application>=0:www/p5-CGI-Application \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-CGI-Application>=0:www/p5-CGI-Application \
 		p5-HTTP-Request-AsCGI>=0:www/p5-HTTP-Request-AsCGI \
 		p5-Test-WWW-Mechanize>=1.14:devel/p5-Test-WWW-Mechanize
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

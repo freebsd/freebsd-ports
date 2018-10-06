@@ -14,9 +14,9 @@ COMMENT=	Interactive peeking into a running POE application
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-POE>=0:devel/p5-POE \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-POE>=0:devel/p5-POE \
 		p5-POE-API-Peek>=0:devel/p5-POE-API-Peek
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Distribution>=0:devel/p5-Test-Distribution
 
 USES=		perl5

@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert Pod data to DocBook SGML
 
-BUILD_DEPENDS=	p5-podlators>=0:textproc/p5-podlators \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-podlators>=0:textproc/p5-podlators \
 		p5-Text-Tabs+Wrap>=0:textproc/p5-Text-Tabs+Wrap
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

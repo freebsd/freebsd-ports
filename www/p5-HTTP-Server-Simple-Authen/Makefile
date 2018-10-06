@@ -14,9 +14,9 @@ COMMENT=	Authentication plugin for HTTP::Server::Simple
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Authen-Simple>=0.4:security/p5-Authen-Simple \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Authen-Simple>=0.4:security/p5-Authen-Simple \
 		p5-HTTP-Server-Simple>=0.16:www/p5-HTTP-Server-Simple
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USE_PERL5=	configure

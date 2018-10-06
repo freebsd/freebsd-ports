@@ -14,7 +14,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Class-Accessor-Grouped>=0.10012:devel/p5-Class-Accessor-Grouped \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Accessor-Grouped>=0.10012:devel/p5-Class-Accessor-Grouped \
 		p5-Class-C3-Componentised>=1.000900:devel/p5-Class-C3-Componentised \
 		p5-Class-Inspector>=1.24:devel/p5-Class-Inspector \
 		p5-Class-Method-Modifiers>=1.06:devel/p5-Class-Method-Modifiers \
@@ -36,7 +37,6 @@ BUILD_DEPENDS=	p5-Class-Accessor-Grouped>=0.10012:devel/p5-Class-Accessor-Groupe
 		p5-Try-Tiny>=0.07:lang/p5-Try-Tiny \
 		p5-namespace-clean>=0.20:devel/p5-namespace-clean \
 		p5-strictures>=1.003001:devel/p5-strictures
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Class-DBI-Plugin-DeepAbstractSearch>=0:databases/p5-Class-DBI-Plugin-DeepAbstractSearch \
 		p5-DBD-SQLite>=1.29:databases/p5-DBD-SQLite \
 		p5-DateTime>=0.55:devel/p5-DateTime \

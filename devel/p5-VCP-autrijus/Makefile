@@ -14,7 +14,8 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-snapshot-${PORTVERSION:C/\.([^.]*)$/-\1/}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tool for copying files between various SCM repositories
 
-BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		p5-XML-AutoWriter>=0:textproc/p5-XML-AutoWriter \
 		p5-Text-Diff>=0:textproc/p5-Text-Diff \
 		p5-IPC-Run3>=0:devel/p5-IPC-Run3 \
@@ -22,7 +23,6 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		p5-Regexp-Shellish>=0:devel/p5-Regexp-Shellish \
 		p5-BFD>=0:devel/p5-BFD \
 		p5-Text-Table>=0:textproc/p5-Text-Table
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -12,8 +12,8 @@ COMMENT=	Perl module to verify the human element in transactions
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	p5-GD>=0:graphics/p5-GD
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-GD>=0:graphics/p5-GD
 
 USES=		perl5
 USE_PERL5=	configure

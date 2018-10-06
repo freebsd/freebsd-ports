@@ -12,9 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Wrap all inserts into transaction
 
-BUILD_DEPENDS=	p5-DBIx-Class>=0:databases/p5-DBIx-Class \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-DBIx-Class>=0:databases/p5-DBIx-Class \
 		p5-DBD-Mock>=0:databases/p5-DBD-Mock
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Compile>=0.08:devel/p5-Test-Compile \
 		p5-Test-Pod>=1.22:devel/p5-Test-Pod
 

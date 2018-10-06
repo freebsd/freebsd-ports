@@ -14,10 +14,10 @@ COMMENT=	Perl Module to tail file to Scribe server
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-File-Tail-Dir>=0:devel/p5-File-Tail-Dir \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-File-Tail-Dir>=0:devel/p5-File-Tail-Dir \
 		p5-Log-Dispatch-Scribe>=0:devel/p5-Log-Dispatch-Scribe \
 		p5-Moose>=0:devel/p5-Moose
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-MockObject>=0:devel/p5-Test-MockObject
 
 USES=		perl5

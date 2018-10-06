@@ -14,8 +14,8 @@ COMMENT=	Type to represent valid UNIX or Perl signals
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-MooseX-Types>0:devel/p5-MooseX-Types
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-MooseX-Types>0:devel/p5-MooseX-Types
 
 TEST_DEPENDS=	p5-Test-Exception>0:devel/p5-Test-Exception \
 		p5-Moose>0:devel/p5-Moose

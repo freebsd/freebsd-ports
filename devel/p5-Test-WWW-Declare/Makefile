@@ -14,8 +14,8 @@ COMMENT=	Declarative testing for your web app
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Test-WWW-Mechanize>=0:devel/p5-Test-WWW-Mechanize
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Test-WWW-Mechanize>=0:devel/p5-Test-WWW-Mechanize
 
 NO_ARCH=	yes
 USES=		perl5

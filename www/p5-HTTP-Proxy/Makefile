@@ -13,10 +13,10 @@ COMMENT=	Pure Perl HTTP proxy
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTTP-Daemon>=1.25:www/p5-HTTP-Daemon \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-HTTP-Daemon>=1.25:www/p5-HTTP-Daemon \
 		p5-HTML-Parser>=3:www/p5-HTML-Parser \
 		p5-libwww>=6:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

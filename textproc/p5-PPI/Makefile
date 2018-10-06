@@ -15,14 +15,14 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Class-Inspector>=1.22:devel/p5-Class-Inspector \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Inspector>=1.22:devel/p5-Class-Inspector \
 		p5-Clone>=0.30:devel/p5-Clone \
 		p5-File-Remove>=1.42:devel/p5-File-Remove \
 		p5-IO-String>=1.07:devel/p5-IO-String \
 		p5-List-MoreUtils>=0.16:lang/p5-List-MoreUtils \
 		p5-Params-Util>=1.00:devel/p5-Params-Util \
 		p5-Task-Weaken>0:devel/p5-Task-Weaken
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-Object>=0.07:devel/p5-Test-Object \
 		p5-Test-SubCalls>=1.07:devel/p5-Test-SubCalls

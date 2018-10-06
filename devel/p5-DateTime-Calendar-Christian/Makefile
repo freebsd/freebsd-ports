@@ -15,8 +15,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/LICENSES/Artistic
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSES/Copying
 
-BUILD_DEPENDS=	p5-DateTime-Calendar-Julian>=0.04:devel/p5-DateTime-Calendar-Julian
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-DateTime-Calendar-Julian>=0.04:devel/p5-DateTime-Calendar-Julian
 
 NO_ARCH=	yes
 USES=		perl5

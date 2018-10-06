@@ -12,9 +12,9 @@ COMMENT=	Validation of the META.yml file in a distribution
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-Test-YAML-Valid>=0:devel/p5-Test-YAML-Valid \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Test-YAML-Valid>=0:devel/p5-Test-YAML-Valid \
 		p5-Test-CPAN-Meta-YAML>=0.17:devel/p5-Test-CPAN-Meta-YAML
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

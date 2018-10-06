@@ -12,8 +12,8 @@ COMMENT=	Validate a META.yml file within a CPAN distribution
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-Test-YAML-Valid>=0.03:devel/p5-Test-YAML-Valid
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Test-YAML-Valid>=0.03:devel/p5-Test-YAML-Valid
 
 USE_PERL5=	configure
 USES=		perl5

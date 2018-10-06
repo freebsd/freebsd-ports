@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to modify and read binary files
 
-BUILD_DEPENDS=	p5-IO-stringy>=0:devel/p5-IO-stringy
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-IO-stringy>=0:devel/p5-IO-stringy
 
 USES=		perl5
 USE_PERL5=	configure

@@ -14,9 +14,9 @@ COMMENT=	Convert hash to xml and xml to hash using LibXML
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-lib-abs>=0.90:devel/p5-lib-abs \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-lib-abs>=0.90:devel/p5-lib-abs \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

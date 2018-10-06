@@ -14,8 +14,8 @@ COMMENT=	Iterates over all IP addresses in a text similar to Email::Find
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-NetAddr-IP>0:net-mgmt/p5-NetAddr-IP
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-NetAddr-IP>0:net-mgmt/p5-NetAddr-IP
 
 USES=		perl5
 USE_PERL5=	configure

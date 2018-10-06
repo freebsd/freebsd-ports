@@ -13,8 +13,8 @@ COMMENT=	Perl interface to GNU Gnats daemon
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-strictures>=0:devel/p5-strictures
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-strictures>=0:devel/p5-strictures
 TEST_DEPENDS=	p5-Test-MockObject>=0:devel/p5-Test-MockObject
 
 NO_ARCH=	yes

@@ -14,7 +14,8 @@ COMMENT=	Web Scraping Zen
 
 LICENSE=	ARTPERL10
 
-BUILD_DEPENDS=	p5-Email-Find>=0:mail/p5-Email-Find \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Email-Find>=0:mail/p5-Email-Find \
 		p5-Exporter-Lite>=0:devel/p5-Exporter-Lite \
 		p5-File-MMagic>=0:devel/p5-File-MMagic \
 		p5-File-Slurp>=0:devel/p5-File-Slurp \
@@ -41,7 +42,6 @@ BUILD_DEPENDS=	p5-Email-Find>=0:mail/p5-Email-Find \
 		p5-XML-RSS-SimpleGen>=0:textproc/p5-XML-RSS-SimpleGen \
 		p5-XML-XPath>=0:textproc/p5-XML-XPath \
 		p5-YAML>=0:textproc/p5-YAML
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

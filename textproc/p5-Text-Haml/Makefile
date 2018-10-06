@@ -11,8 +11,8 @@ COMMENT=	Haml-parsing Perl extension
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-URI>0:net/p5-URI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-URI>0:net/p5-URI
 TEST_DEPENDS=	p5-Data-Section-Simple>=0:devel/p5-Data-Section-Simple
 
 USES=		perl5

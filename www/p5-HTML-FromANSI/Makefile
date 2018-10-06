@@ -14,9 +14,9 @@ COMMENT=	Mark up ANSI sequences as HTML
 LICENSE=	ART10 GPLv1 MIT
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-Term-VT102-Boundless>=0:devel/p5-Term-VT102-Boundless
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

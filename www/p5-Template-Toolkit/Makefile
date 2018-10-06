@@ -14,8 +14,8 @@ COMMENT=	Extensive Toolkit for template processing
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-AppConfig>=1.56:devel/p5-AppConfig
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-AppConfig>=1.56:devel/p5-AppConfig
 TEST_DEPENDS=	p5-Image-Size>=0:graphics/p5-Image-Size \
 		p5-Pod-POM>=0:textproc/p5-Pod-POM
 

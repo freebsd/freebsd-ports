@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Calculate values on demand
 
-BUILD_DEPENDS=	p5-Class-InsideOut>=0:devel/p5-Class-InsideOut \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-InsideOut>=0:devel/p5-Class-InsideOut \
 		p5-Exporter-Lite>=0:devel/p5-Exporter-Lite
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

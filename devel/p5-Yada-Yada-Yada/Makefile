@@ -12,8 +12,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Adds a Yada-Yada-Yada operator (...) to Perl 5
 
-BUILD_DEPENDS=	p5-Filter-Simple>=0:textproc/p5-Filter-Simple
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Filter-Simple>=0:textproc/p5-Filter-Simple
 
 USES=		perl5
 USE_PERL5=	configure

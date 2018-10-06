@@ -16,10 +16,10 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Class-Tiny>=0.010:devel/p5-Class-Tiny \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Tiny>=0.010:devel/p5-Class-Tiny \
 		p5-Path-IsDev>=0.2.2:devel/p5-Path-IsDev \
 		p5-Path-Tiny>=0.054:devel/p5-Path-Tiny
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

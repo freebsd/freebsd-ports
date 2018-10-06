@@ -14,11 +14,11 @@ COMMENT=	OpenID credential for Catalyst::Plugin::Authentication framework
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7:www/p5-Catalyst-Runtime \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7:www/p5-Catalyst-Runtime \
 		p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-Net-OpenID-Consumer>=1.03:net/p5-Net-OpenID-Consumer \
 		p5-libwww>=0:www/p5-libwww
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

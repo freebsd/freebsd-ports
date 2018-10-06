@@ -14,12 +14,12 @@ COMMENT=	XML Based Presentations
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-PDFLib>=0.14:print/p5-PDFLib \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-PDFLib>=0.14:print/p5-PDFLib \
 		p5-Text-Iconv>=0:converters/p5-Text-Iconv \
 		p5-XML-Filter-XSLT>=0:textproc/p5-XML-Filter-XSLT \
 		p5-XML-SAX>=0.09:textproc/p5-XML-SAX \
 		p5-XML-SAX-Writer>=0.39:textproc/p5-XML-SAX-Writer
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	skipv:1.21,1.30
 

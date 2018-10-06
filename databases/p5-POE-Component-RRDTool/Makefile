@@ -15,9 +15,9 @@ COMMENT=	POE interface to Round Robin Database Tools
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	rrdtool:databases/rrdtool \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	rrdtool:databases/rrdtool \
 		p5-POE>=0:devel/p5-POE
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -13,7 +13,8 @@ COMMENT=	Dynamic definition of a DBIx::Class::Schema
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Carp-Clan>=0:devel/p5-Carp-Clan \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Carp-Clan>=0:devel/p5-Carp-Clan \
 		p5-Class-Accessor-Grouped>=0.10008:devel/p5-Class-Accessor-Grouped \
 		p5-Class-C3-Componentised>=1.0008:devel/p5-Class-C3-Componentised \
 		p5-Class-Inspector>=1.27:devel/p5-Class-Inspector \
@@ -30,7 +31,6 @@ BUILD_DEPENDS=	p5-Carp-Clan>=0:devel/p5-Carp-Clan \
 		p5-Scope-Guard>=0:devel/p5-Scope-Guard \
 		p5-String-ToIdentifier-EN>=0.05:textproc/p5-String-ToIdentifier-EN \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-DBD-SQLite>=1.29:databases/p5-DBD-SQLite \
 		p5-Test-Exception>=0.31:devel/p5-Test-Exception \
 		p5-Test-Warn>=0.21:devel/p5-Test-Warn \

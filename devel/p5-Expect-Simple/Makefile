@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Wrapper around the Expect module
 
-BUILD_DEPENDS=	p5-Expect>=0:lang/p5-Expect
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Expect>=0:lang/p5-Expect
 
 USES=		perl5
 USE_PERL5=	configure

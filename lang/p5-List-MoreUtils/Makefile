@@ -13,9 +13,9 @@ COMMENT=	Provide the stuff missing in List::Util
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Exporter-Tiny>=0.038:devel/p5-Exporter-Tiny \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Exporter-Tiny>=0.038:devel/p5-Exporter-Tiny \
 		p5-List-MoreUtils-XS>=0.426:lang/p5-List-MoreUtils-XS
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-LeakTrace>=0:devel/p5-Test-LeakTrace
 
 NO_ARCH=	yes

@@ -11,10 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	File::ShareDir returning Path::Class objects
 
-BUILD_DEPENDS=	p5-File-ShareDir>=0:devel/p5-File-ShareDir \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-File-ShareDir>=0:devel/p5-File-ShareDir \
 		p5-Path-Class>=0:devel/p5-Path-Class \
 		p5-Sub-Exporter>=0:devel/p5-Sub-Exporter
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild

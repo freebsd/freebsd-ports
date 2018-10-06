@@ -12,9 +12,9 @@ COMMENT=	Make your MooseX object constructors blow up on unknown attributes
 
 LICENSE=	ART20
 
-BUILD_DEPENDS=	p5-Moose>=0.94:devel/p5-Moose \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Moose>=0.94:devel/p5-Moose \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
 USES=		perl5

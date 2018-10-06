@@ -13,8 +13,8 @@ COMMENT=	Plain and login auth methods for Net::Server::Mail::ESMTP
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Net-Server-Mail>=0:mail/p5-Net-Server-Mail
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Net-Server-Mail>=0:mail/p5-Net-Server-Mail
 
 NO_ARCH=	yes
 USES=		perl5

@@ -13,7 +13,8 @@ COMMENT=	Perl6 like method signature parser
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Load>=0.19:devel/p5-Class-Load \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Load>=0.19:devel/p5-Class-Load \
 		p5-List-MoreUtils>=0.20:lang/p5-List-MoreUtils \
 		p5-Moose>=0:devel/p5-Moose \
 		p5-MooseX-Traits>=0.06:devel/p5-MooseX-Traits \
@@ -21,7 +22,6 @@ BUILD_DEPENDS=	p5-Class-Load>=0.19:devel/p5-Class-Load \
 		p5-MooseX-Types-Structured>=0:devel/p5-MooseX-Types-Structured \
 		p5-PPI>=1.203:textproc/p5-PPI \
 		p5-namespace-clean>=0.10:devel/p5-namespace-clean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Differences>=0:devel/p5-Test-Differences \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-aliased>=0:devel/p5-aliased

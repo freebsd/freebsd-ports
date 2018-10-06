@@ -13,7 +13,8 @@ COMMENT=	Distributed database system
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	p5-Any-Moose>=0.04:devel/p5-Any-Moose \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Any-Moose>=0.04:devel/p5-Any-Moose \
 		p5-Config-GitLike>=1.02:devel/p5-Config-GitLike \
 		p5-DBD-SQLite>=1:databases/p5-DBD-SQLite \
 		p5-DBI>=1:databases/p5-DBI \
@@ -40,7 +41,6 @@ BUILD_DEPENDS=	p5-Any-Moose>=0.04:devel/p5-Any-Moose \
 		p5-UUID-Tiny>=1.02:devel/p5-UUID-Tiny \
 		p5-XML-Atom-SimpleFeed>=0:textproc/p5-XML-Atom-SimpleFeed \
 		p5-YAML-Syck>=0:textproc/p5-YAML-Syck
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0.26:devel/p5-Test-Exception
 
 USES=		perl5

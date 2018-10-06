@@ -13,8 +13,8 @@ COMMENT=	Perl5 interface to build chart graphics
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-GD>=2:graphics/p5-GD
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-GD>=2:graphics/p5-GD
 
 USES=		perl5
 USE_PERL5=	configure

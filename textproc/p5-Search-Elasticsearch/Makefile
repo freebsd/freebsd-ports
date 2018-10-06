@@ -13,7 +13,8 @@ COMMENT=	ElasticSearch API
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	p5-Any-URI-Escape>=0:www/p5-Any-URI-Escape \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Any-URI-Escape>=0:www/p5-Any-URI-Escape \
 		p5-Devel-GlobalDestruction>=0:devel/p5-Devel-GlobalDestruction \
 		p5-HTTP-Message>=0:www/p5-HTTP-Message \
 		p5-HTTP-Tiny>=0.043:www/p5-HTTP-Tiny \
@@ -29,7 +30,6 @@ BUILD_DEPENDS=	p5-Any-URI-Escape>=0:www/p5-Any-URI-Escape \
 		p5-URI>=0:net/p5-URI \
 		p5-libwww>=0:www/p5-libwww \
 		p5-namespace-clean>=0:devel/p5-namespace-clean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
 		p5-JSON-XS>=0:converters/p5-JSON-XS \
 		p5-Log-Any-Adapter-Callback>=0:devel/p5-Log-Any-Adapter-Callback \

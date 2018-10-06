@@ -13,7 +13,8 @@ COMMENT=	Easy OO access to the FreshBooks.com API
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-B-Hooks-EndOfScope>=0.09:devel/p5-B-Hooks-EndOfScope \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-B-Hooks-EndOfScope>=0.09:devel/p5-B-Hooks-EndOfScope \
 		p5-Clone>=0:devel/p5-Clone \
 		p5-Data-Dump>=0:devel/p5-Data-Dump \
 		p5-Lingua-EN-Inflect>=0:textproc/p5-Lingua-EN-Inflect \
@@ -28,7 +29,6 @@ BUILD_DEPENDS=	p5-B-Hooks-EndOfScope>=0.09:devel/p5-B-Hooks-EndOfScope \
 		p5-XML-Simple>=0:textproc/p5-XML-Simple \
 		p5-libwww>=0:www/p5-libwww \
 		p5-namespace-autoclean>=0.11:devel/p5-namespace-autoclean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
 		p5-File-Slurp>=0:devel/p5-File-Slurp \
 		p5-Sub-Override>=0:devel/p5-Sub-Override \

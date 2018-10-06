@@ -13,11 +13,11 @@ COMMENT=	PaymenTech backend for Business::OnlinePayment
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Business-OnlinePayment>=0:finance/p5-Business-OnlinePayment \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Business-OnlinePayment>=0:finance/p5-Business-OnlinePayment \
 		p5-Module-Install>=0:devel/p5-Module-Install \
 		p5-Net-HTTPS-Any>=0.10:net/p5-Net-HTTPS-Any \
 		p5-XML-Simple>=0:textproc/p5-XML-Simple
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USES=		perl5

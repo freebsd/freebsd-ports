@@ -11,7 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Web application framework for mod_perl, cgi, etc
 
-BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-Data-UUID>=0:devel/p5-Data-UUID \
 		p5-Date-Calc>=0:devel/p5-Date-Calc \
 		p5-CGI-Simple>=0:www/p5-CGI-Simple \
@@ -28,7 +29,6 @@ BUILD_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-JSON>0:converters/p5-JSON \
 		p5-Template-Toolkit>=2.0:www/p5-Template-Toolkit \
 		p5-Template-Plugin-HTML-SuperForm>0:textproc/p5-Template-Plugin-HTML-SuperForm
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
 
 USES=		perl5

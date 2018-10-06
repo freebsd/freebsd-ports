@@ -11,9 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Regex pattern for Email Addresses
 
-BUILD_DEPENDS=	p5-Email-Address>=0:mail/p5-Email-Address \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Email-Address>=0:mail/p5-Email-Address \
 		p5-Regexp-Common>=0:textproc/p5-Regexp-Common
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure

@@ -15,7 +15,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Any-Moose>=0.13:devel/p5-Any-Moose \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Any-Moose>=0.13:devel/p5-Any-Moose \
 		p5-Class-Load>=0.06:devel/p5-Class-Load \
 		p5-DBD-SQLite>=1.29:databases/p5-DBD-SQLite \
 		p5-Data-Dump>=1.17:devel/p5-Data-Dump \
@@ -34,7 +35,6 @@ BUILD_DEPENDS=	p5-Any-Moose>=0.13:devel/p5-Any-Moose \
 		p5-Regexp-Common>=2010010201:textproc/p5-Regexp-Common \
 		p5-Term-Sk>=0.06:devel/p5-Term-Sk \
 		p5-namespace-clean>=0.18:devel/p5-namespace-clean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Bot-Training>=0:misc/p5-Bot-Training \
 		p5-Bot-Training-MegaHAL>=0:misc/p5-Bot-Training-MegaHAL \
 		p5-Bot-Training-StarCraft>=0:misc/p5-Bot-Training-StarCraft \

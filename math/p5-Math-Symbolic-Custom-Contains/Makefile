@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Find subtrees in Math::Symbolic expressions
 
-BUILD_DEPENDS=	p5-Math-Symbolic>=0:math/p5-Math-Symbolic
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Math-Symbolic>=0:math/p5-Math-Symbolic
 
 USES=		perl5
 USE_PERL5=	modbuild

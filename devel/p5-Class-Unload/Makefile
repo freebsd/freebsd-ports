@@ -13,8 +13,8 @@ COMMENT=	Perl5 module for unloading classes
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Class-Inspector>=0:devel/p5-Class-Inspector
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Inspector>=0:devel/p5-Class-Inspector
 TEST_DEPENDS=	p5-Test-Requires>=0:devel/p5-Test-Requires
 
 NO_ARCH=	yes

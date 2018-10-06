@@ -13,9 +13,9 @@ COMMENT=	Generate cryptographically-secure random bytes
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Crypt-Random-Seed>=0:security/p5-Crypt-Random-Seed \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Crypt-Random-Seed>=0:security/p5-Crypt-Random-Seed \
 		p5-Math-Random-ISAAC>=0:math/p5-Math-Random-ISAAC
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_ARCH=	yes
 USE_PERL5=	configure

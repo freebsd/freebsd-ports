@@ -14,8 +14,8 @@ COMMENT=	mod_rewrite for Plack
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Plack>=0.9942:www/p5-Plack
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Plack>=0.9942:www/p5-Plack
 
 NO_ARCH=	yes
 USES=		perl5

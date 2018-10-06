@@ -14,10 +14,10 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-BUILD_DEPENDS=	p5-Class-Tiny>=0:devel/p5-Class-Tiny \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Tiny>=0:devel/p5-Class-Tiny \
 		p5-Sub-Exporter>=0:devel/p5-Sub-Exporter \
 		p5-namespace-clean>=0.20:devel/p5-namespace-clean
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Warnings>=0.009:devel/p5-Test-Warnings
 
 NO_ARCH=	yes

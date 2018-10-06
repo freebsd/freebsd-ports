@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object-oriented Perl API for the NEXUS file format
 
-BUILD_DEPENDS=	p5-Clone-PP>=1.02:devel/p5-Clone-PP
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Clone-PP>=1.02:devel/p5-Clone-PP
 
 TEST_DEPENDS=	p5-Test-Deep>=0.106:devel/p5-Test-Deep \
 		p5-Test-Pod>=0:devel/p5-Test-Pod \

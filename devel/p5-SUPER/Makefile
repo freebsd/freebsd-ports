@@ -11,8 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Perl module control superclass method dispatch
 
-BUILD_DEPENDS=	p5-Sub-Identify>=0.04:devel/p5-Sub-Identify
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Sub-Identify>=0.04:devel/p5-Sub-Identify
 
 USES=		perl5
 USE_PERL5=	modbuild
