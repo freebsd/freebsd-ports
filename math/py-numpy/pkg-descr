@@ -15,4 +15,4 @@ and can also be used to replace numarray.
 Note:	Development for Numeric has ceased, and users should transisition to
 	NumPy as quickly as possible.
 
-WWW: http://www.numpy.org/
+WWW: https://www.numpy.org/
