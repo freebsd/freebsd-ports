@@ -14,6 +14,7 @@ LICENSE=	MIT
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 
+USES=		compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	solusipse
 
