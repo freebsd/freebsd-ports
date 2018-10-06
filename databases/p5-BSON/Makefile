@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	BSON
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
@@ -30,4 +30,10 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502708
+TEST_DEPENDS+=	p5-JSON-PP>=2.97001:converters/p5-JSON-PP
+.endif
+
+.include <bsd.port.post.mk>
