@@ -1,9 +1,0 @@
-ARPACK software is capable of solving large symmetric, nonsymmetric, and
-generalized eigenproblems. The software is designed to compute a few (k)
-eigenvalues with user-specified features, such as those of largest real part
-or largest magnitude. Storage requirements are on the order of n*k locations,
-and no auxiliary storage is required. A set of numerically orthogonal Schur
-basis vectors for the desired k-dimensional eigen-space is computed.
-Numerically accurate eigenvectors are available on request.
-
-WWW: http://www.caam.rice.edu/software/ARPACK/
