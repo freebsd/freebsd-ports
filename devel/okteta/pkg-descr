@@ -1,1 +1,30 @@
-KDE hex editor.
+Okteta is a simple editor for the raw data of files.
+
+Features
+ *  Values and characters shown either in two columns (the traditional display
+    in hex editors) or in rows with the value on top of the character
+ *  Editing and navigating similar to a text editor
+ *  Customizable data views
+ *  Data view profiles
+ *  Tools dockable on all sides or floating
+ *  Numerical encodings: Hexadecimal, Decimal, Octal, Binary
+ *  Character encodings: All 8-bit encodings as supplied by Qt, EBCDIC
+ *  Fast data rendering on screen
+ *  Multiple open files
+ *  Support for remote files, by http, ftp, fish & other protocols supported by
+    KDE Platform
+ *  Export of data to text, both file and clipboard.
+ *  Checksum/Hashsum calculator: Modular sum (8/16/32/64 bit), Adler-32, CRC-32
+    and Hashsums by the QCA2 library, can be SHA-0/1/224/256/384/512, MD2/4/5,
+    RIPEMD-160, Whirlpool
+ *  Structures tool for analyzing and editing based on user-creatable structure
+    definitions
+ *  Statistic tool
+ *  String extraction tool
+ *  8-bit charset conversion tool
+ *  Decoding table listing common simple data types.
+ *  Bookmarks
+ *  Printing
+ *  Table with complete list of all byte values
+
+WWW: https://www.kde.org/applications/utilities/okteta/
