@@ -3,6 +3,7 @@
 
 PORTNAME=	raster3d
 DISTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	graphics biology
 MASTER_SITES=	http://skuld.bmsc.washington.edu/${PORTNAME}/
 DISTNAME=	Raster3D_${DISTVERSION:R}-${DISTVERSION:E}
@@ -19,7 +20,6 @@ USES=		fortran
 MAKE_ARGS=	INCDIRS="-I${LOCALBASE}/include" LIBDIRS="-L${LOCALBASE}/lib" \
 		CC="${CC}" CFLAGS="${CFLAGS}" FC="${FC}" FFLAGS="${FFLAGS}" \
 		RM="${RM}" OS="${OPSYS}"
-ALL_TARGET=	linux all
 MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-DLINUX -DNETWORKBYTEORDER -Dgfortran
@@ -33,6 +33,9 @@ OPTIONS_DEFAULT=IMAGEMAGICK
 OPTIONS_SUB=		yes
 
 IMAGEMAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick
+
+pre-build: # generation of Makefile.incl has to be separate from 'make all', otherwise the generated Makefile.incl isn't read by 'make all'
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} linux
 
 do-install:
 .for f in avs2ps balls normal3d rastep render ribbon rings3d rods
