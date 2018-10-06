@@ -48,7 +48,6 @@
     SUBDIR += libswift
     SUBDIR += libtorrent
     SUBDIR += libtorrent-rasterbar
-    SUBDIR += libtorrent-rasterbar-python
     SUBDIR += linuxdcpp
     SUBDIR += litecoin
     SUBDIR += litecoin-daemon
@@ -72,6 +71,7 @@
     SUBDIR += p5-Net-DirectConnect
     SUBDIR += p5-WWW-BitTorrent
     SUBDIR += phex
+    SUBDIR += py-libtorrent-rasterbar
     SUBDIR += py-py2play
     SUBDIR += py-transmissionrpc
     SUBDIR += py-tremc
