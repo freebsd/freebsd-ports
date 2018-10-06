@@ -3,6 +3,7 @@
 
 PORTNAME=	libtorrent-rasterbar
 DISTVERSION=	1.1.10
+PORTREVISION=	1
 CATEGORIES=	net-p2p ipv6 python
 MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/libtorrent-${PORTVERSION:S/./_/g}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,8 +17,11 @@ LICENSE_FILE=	${WRKSRC}/../../COPYING
 LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
 		${PY_BOOST}
 
-USES=		localbase python
+USES=		iconv localbase python
 USE_PYTHON=	distutils autoplist
+
+CFLAGS+=	-DTORRENT_DISABLE_LOGGING # undefined symbol: https://github.com/arvidn/libtorrent/issues/3331
+LDFLAGS+=	${LOCALBASE}/lib/libboost_python${PYTHON_SUFFIX}.so ${LOCALBASE}/lib/libiconv.so # fails to link libs: https://github.com/arvidn/libtorrent/issues/3330
 
 WRKSRC_SUBDIR=	bindings/python
 
