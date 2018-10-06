@@ -10565,4 +10565,4 @@ mail/mutt-lite|mail/mutt|2018-10-02|Has expired: For a lite version of mutt buil
 math/arpack-ng-mpich|math/arpack-ng|2018-10-04|math/arpack-ng-mpich slave port is merged into math/arpack-ng
 editors/latexila|editors/gnome-latex|2018-10-05|Project was renamed
 math/arpack|math/arpack-ng|2018-10-06|math/arpack is the old, unmaintained version, math/arpack-ng should be used instead
-net-p2p/libtorrent-rasterbar-python|net-p2p/py-libtorrent-rasterbar|Rename to the canonical name for a python port
+net-p2p/libtorrent-rasterbar-python|net-p2p/py-libtorrent-rasterbar|2018-10-06|Rename to the canonical name for a python port
