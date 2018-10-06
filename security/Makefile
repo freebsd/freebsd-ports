@@ -64,6 +64,7 @@
     SUBDIR += ca_root_nss
     SUBDIR += calife
     SUBDIR += cardpeek
+    SUBDIR += cargo-audit
     SUBDIR += ccrypt
     SUBDIR += ccsrch
     SUBDIR += certificate-transparency
