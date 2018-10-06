@@ -1,16 +1,53 @@
 --- saslauthd/lak.c.orig	2012-10-12 14:05:48 UTC
 +++ saslauthd/lak.c
-@@ -53,6 +53,9 @@
+@@ -53,6 +53,46 @@
  #endif
  #include <openssl/evp.h>
  #include <openssl/des.h>
 +
 +/* for legacy libcrypto support */
 +#include "crypto-compat.h"
++
++#if defined(HAVE_OPENSSL) && (OPENSSL_VERSION_NUMBER < 0x10100000L)
++
++#include <openssl/engine.h>
++
++static void *OPENSSL_zalloc(size_t num)
++{
++    void *ret = OPENSSL_malloc(num);
++
++    if (ret != NULL)
++        memset(ret, 0, num);
++    return ret;
++}
++
++EVP_MD_CTX *EVP_MD_CTX_new(void)
++{
++    return OPENSSL_zalloc(sizeof(EVP_MD_CTX));
++}
++
++void EVP_MD_CTX_free(EVP_MD_CTX *ctx)
++{
++    EVP_MD_CTX_cleanup(ctx);
++    OPENSSL_free(ctx);
++}
++
++EVP_ENCODE_CTX *EVP_ENCODE_CTX_new(void)
++{
++    return OPENSSL_zalloc(sizeof(EVP_ENCODE_CTX));
++}
++
++void EVP_ENCODE_CTX_free(EVP_ENCODE_CTX *ctx)
++{
++    OPENSSL_free(ctx);
++}
++
++#endif /* HAVE_OPENSSL && OPENSSL_VERSION_NUMBER */
++
  #endif
  
  #define LDAP_DEPRECATED 1
-@@ -1715,20 +1718,28 @@ static int lak_base64_decode(
+@@ -1715,20 +1755,28 @@ static int lak_base64_decode(
  
  	int rc, i, tlen = 0;
  	char *text;
@@ -44,7 +81,7 @@
  
  	*ret = text;
  	if (rlen != NULL)
-@@ -1744,7 +1755,7 @@ static int lak_check_hashed(
+@@ -1744,7 +1792,7 @@ static int lak_check_hashed(
  {
  	int rc, clen;
  	LAK_HASH_ROCK *hrock = (LAK_HASH_ROCK *) rock;
@@ -53,7 +90,7 @@
  	const EVP_MD *md;
  	unsigned char digest[EVP_MAX_MD_SIZE];
  	char *cred;
-@@ -1753,17 +1764,24 @@ static int lak_check_hashed(
+@@ -1753,17 +1801,24 @@ static int lak_check_hashed(
  	if (!md)
  		return LAK_FAIL;
  
