@@ -3,7 +3,7 @@
 PORTNAME=	tk
 PORTVERSION=	0.2.0
 CATEGORIES=	x11-toolkits rubygems
-MASTER_SITES=	https://rubygems.org/downloads/
+MASTER_SITES=	RG
 
 MAINTAINER=	nmingotti@gmail.com
 COMMENT=	Ruby interface to TclTk-8.6
@@ -11,8 +11,6 @@ COMMENT=	Ruby interface to TclTk-8.6
 LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libunwind.so:devel/libunwind
-RUN_DEPENDS=	tcl86>=${PORTVERSION}:lang/tcl86 \
-		tk86>=${PORTVERSION}:x11-toolkits/tk86
 
 CONFIGURE_ARGS=--with-tcltkversion=8.6,8.6 \
 		--with-tk-include=${LOCALBASE}/include/tk8.6 \
