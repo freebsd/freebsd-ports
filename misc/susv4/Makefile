@@ -1,26 +1,31 @@
-# Based on a port created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
 # $FreeBSD$
 
 PORTNAME=	susv4
-PORTVERSION=	20160930
+PORTVERSION=	20180131
 CATEGORIES=	misc
 MASTER_SITES=	#
-DISTNAME=	susv4tc2
+DISTNAME=	susv4-2018
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mandree@FreeBSD.org
-COMMENT=	Open Group Base Specifications Issue 7/IEEE Std 1003.1, 2016 Edition
+COMMENT=	Open Group Base Specifications Issue 7/IEEE Std 1003.1, 2018 Edition
 
 LICENSE=	NONE
 
+USES=		tar:bzip2
+
 RESTRICTED=	Redistribution of the documents is not permitted
 
-USES=		tar:bzip2
 NO_ARCH=	yes
 NO_BUILD=	yes
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
+# Fix fallout of https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=230864 and force the option on;
+# meaning is to force this option on. The previous change around Sept 2018 introduced a regression in
+# that PORTDOCS only works if there is a DOCS option.  It does not, however, make sense to install
+# empty documentation ports.
+OPTIONS_SLAVE=	DOCS
 
 .include <bsd.port.pre.mk>
 
@@ -30,6 +35,8 @@ IGNORE=		may not be redistributed because of licensing reasons. Please visit htt
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && \
+		${FIND} . -name '*~' -delete && \
+		${COPYTREE_SHARE} '*' ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

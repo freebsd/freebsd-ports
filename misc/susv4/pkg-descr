@@ -1,8 +1,19 @@
-The Single UNIX Specification Version 4, technically identical to IEEE
-Std 1003.1, 2016 Edition or The Open Group Base Specifications Issue 7
-is a technical standard. It includes IEEE Std 1003.1-2008/Cor 1-2013,
-the Technical Corrigenda No. 1 and No. 2 addressing problems discovered
-since the approval of the 2008 edition.
+The Single UNIX Specification Version 4, 2018 Edition, alias POSIX.1-2017,
+reference T101. Technically identical to IEEE Std 1003.1-2017 and ISO/IEC
+9945:2009 including ISO/IEC 9945:2009/Cor 1:2013(E) and ISO/IEC 9945:2009/Cor
+2:2017(E) with the addition of X/Open Curses.
+
+It is simultaneously The Open Group Base Specifications Issue 7.
+
+POSIX.1-2017 defines a standard operating system interface and environment,
+including a command interpreter (or “shell”), and common utility programs to
+support applications portability at the source code level. POSIX.1-2017 is
+intended to be used by both application developers and system implementors.
+
+This set consists of the Base Specifications, Issue 7 that make up the Single
+UNIX Specification, Version 4, together with X/Open Curses, Issue 7. The Base
+Specifications were developed by the Austin Group, a joint working group of the
+IEEE, The Open Group, and ISO/IEC JTC 1/SC22/WG15.
 
 This port permits to install and register the HTML personal copy
 that the user must download in .tar.bz2 format by himself.
