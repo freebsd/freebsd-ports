@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	raster3d
-PORTVERSION=	3.0.2
-PORTREVISION=	12
+DISTVERSION=	3.0.3
 CATEGORIES=	graphics biology
 MASTER_SITES=	http://skuld.bmsc.washington.edu/${PORTNAME}/
-DISTNAME=	Raster3D_${PORTVERSION:R}-${PORTVERSION:E}
+DISTNAME=	Raster3D_${DISTVERSION:R}-${DISTVERSION:E}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Set of tools for generating raster images of proteins and molecules
 
 LICENSE=	ART20
@@ -56,7 +55,7 @@ do-install-DOCS-on:
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
-	${RM} -r ${STAGEDIR}${EXAMPLESDIR}/msms/CVS
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	@${RM} -r ${STAGEDIR}${EXAMPLESDIR}/msms/CVS
 
 .include <bsd.port.mk>
