@@ -4,7 +4,7 @@ PORTNAME=	cointop
 PORTVERSION=	1.0.6
 CATEGORIES=	finance
 
-MAINTAINER=	ndowens.fbsd@yandex.com
+MAINTAINER=	ndowens@yahoo.com
 COMMENT=	Light cryptocurrency coin stats
 
 LICENSE=	APACHE20
