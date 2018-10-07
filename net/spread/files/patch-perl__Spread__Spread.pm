@@ -1,6 +1,6 @@
 # This patch updates the included perl module to the latest version.
 # Original Spread.pm plus included test script can be found here:
-# http://search.cpan.org/CPAN/authors/id/J/JE/JESUS/Spread-3.17.4.4.tar.gz
+# https://cpan.metacpan.org/authors/id/J/JE/JESUS/Spread-3.17.4.4.tar.gz
 ===========================================================================
 --- ./perl/Spread/Spread.pm.orig	2002-09-26 15:54:46.000000000 +0200
 +++ ./perl/Spread/Spread.pm	2012-08-25 20:16:53.000000000 +0200
