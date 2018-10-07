@@ -16,4 +16,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 INSTALL_TARGET=	install-strip
 
+PORTSCOUT=	ignore:1
+
 .include <bsd.port.mk>
