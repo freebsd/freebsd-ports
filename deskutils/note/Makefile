@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	deskutils perl5
 MASTER_SITES=	http://www.daemon.de/idisk/Apps/note/
 
-MAINTAINER=	lebarondemerde@privacychain.ch
+MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Console based tool to handle encrypted notes
 
 LICENSE=	GPLv1

@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-g5a9f33b
 PORTREVISION=	1
 CATEGORIES=	x11
 
-MAINTAINER=	lebarondemerde@privacychain.ch
+MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Merge concurrent outputs for a status bar
 
 LICENSE=	BSD2CLAUSE
