@@ -12,6 +12,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 ghostscript viewer
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomeprefix intlhack libgnomeui
 USES=		desktop-file-utils gettext ghostscript:x11 gmake libtool \

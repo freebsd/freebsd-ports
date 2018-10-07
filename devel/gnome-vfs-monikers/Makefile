@@ -11,6 +11,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome-vfs monikers module
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USES=		gettext-tools gmake libtool:keepla pkgconfig
 USE_GNOME=	gnomevfs2 intltool libbonobo
 INSTALL_TARGET=	install-strip

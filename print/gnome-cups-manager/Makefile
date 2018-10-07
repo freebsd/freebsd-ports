@@ -16,6 +16,9 @@ COMMENT=	Administration tool for cups
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 LIB_DEPENDS=	libgnomecups-1.0.so:print/libgnomecups
 RUN_DEPENDS=	gnomesu:security/libgnomesu
 

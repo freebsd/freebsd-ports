@@ -14,6 +14,9 @@ COMMENT=	GTK2 Puzzle Bobble clone with monkeys
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USES=		gmake libtool localbase pathfix pkgconfig
 USE_GNOME=	gnomedocutils gnomeprefix intlhack librsvg2 libgnomeui
 USE_GSTREAMER=	good vorbis

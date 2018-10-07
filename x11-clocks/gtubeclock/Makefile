@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.bonnyswan.com/gtubeclock/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nixie tube clock for GNOME
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USES=		pkgconfig pathfix
 USE_XORG=	x11
 GNU_CONFIGURE=	yes

@@ -13,6 +13,9 @@ COMMENT=	GUI frontend for efax program
 
 LICENSE=	GPLv2
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 LIB_DEPENDS=	libsigc-1.2.so:devel/libsigc++12 \
 		libcxx-gtk-utils-2-2.2.so:x11-toolkits/c++-gtk-utils
 RUN_DEPENDS=	ggv:print/ggv

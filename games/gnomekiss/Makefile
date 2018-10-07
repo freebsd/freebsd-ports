@@ -13,6 +13,9 @@ COMMENT=	GNOME version of Kisekae Set System
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 RUN_DEPENDS=	lha:archivers/lha
 
 USES=		gettext-tools pathfix pkgconfig

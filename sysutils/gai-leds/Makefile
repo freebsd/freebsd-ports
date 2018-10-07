@@ -12,6 +12,9 @@ COMMENT=	GAI applet that displays the keyboard status leds
 
 LICENSE=	GPLv2
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 LIB_DEPENDS=	libgai.so:x11-toolkits/gai
 
 GNU_CONFIGURE=	yes

@@ -11,6 +11,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Simple commandline wrapper around gpg for gnome-keyring
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 BUILD_DEPENDS=	gpgv:security/gnupg1
 LIB_DEPENDS=	libgnome-keyring.so:security/libgnome-keyring
 RUN_DEPENDS=	gpgv:security/gnupg1

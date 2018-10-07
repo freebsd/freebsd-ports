@@ -10,6 +10,9 @@ MASTER_SITES=	https://BSDforge.com/projects/source/deskutils/gruler/
 MAINTAINER=	ps.ports@smyrak.com
 COMMENT=	Simple customizable GTK screen ruler
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USES=		pkgconfig pathfix libtool
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix libgnomeui libglade2

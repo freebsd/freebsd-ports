@@ -12,6 +12,9 @@ COMMENT=	Audio player, for geeks, by geeks
 
 LICENSE=	GPLv2
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 LIB_DEPENDS=	libxine.so:multimedia/libxine
 
 USES=		pathfix gettext gmake pkgconfig

@@ -10,6 +10,9 @@ MASTER_SITES=	http://dentrassi.de/download/gregexp/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical regular expression explorer
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		pkgconfig

@@ -14,6 +14,9 @@ COMMENT=	Version of the popular TetriNET multiplayer Tetris clone
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USES=		pathfix gettext gmake pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intltool libgnomeui
 GNU_CONFIGURE=	yes

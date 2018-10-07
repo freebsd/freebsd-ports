@@ -10,6 +10,9 @@ MASTER_SITES=	LOCAL/marcus
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Tool to add reactivity to the edges and corners of the GNOME desktop
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USES=		gmake pathfix pkgconfig tar:bzip2
 USE_XORG=	x11
 GNU_CONFIGURE=	yes

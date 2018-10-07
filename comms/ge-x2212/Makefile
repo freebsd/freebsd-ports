@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-2-15sept2010
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	EEPROM programmer for GE Phoenix SX Radios
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USES=		pkgconfig
 USE_GNOME=	libgnomeui
 GNU_CONFIGURE=	yes

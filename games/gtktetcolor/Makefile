@@ -17,6 +17,9 @@ COMMENT=	Game for GNOME that resembles well-known Tetris and Columns
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
 USES=		gmake pathfix pkgconfig tar:bzip2

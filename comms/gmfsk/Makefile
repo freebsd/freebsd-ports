@@ -15,6 +15,9 @@ COMMENT=	The Gnome MFSK terminal program
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 LIB_DEPENDS=	libfftw.so:math/fftw
 
 GNU_CONFIGURE=	yes

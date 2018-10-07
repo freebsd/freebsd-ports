@@ -13,6 +13,9 @@ COMMENT=	Lightweight image viewer
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 LIB_DEPENDS=	libgnomevfsmm-2.6.so:devel/gnome-vfsmm
 
 USES=		compiler:c++11-lang desktop-file-utils gettext pkgconfig

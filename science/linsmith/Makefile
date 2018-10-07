@@ -12,6 +12,9 @@ COMMENT=	Smith charting program
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USES=		gettext pkgconfig
 USE_GNOME=	libgnomeui libxml2
 GNU_CONFIGURE=	yes

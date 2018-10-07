@@ -12,6 +12,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome Photo Printer is intended for printing photos in an easy way
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USE_GNOME=	gnomeprefix intltool libgnomeui libglade2 \
 		libgnomeprintui gnomevfs2
 USES=		gettext gmake pathfix pkgconfig

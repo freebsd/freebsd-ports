@@ -10,6 +10,9 @@ MASTER_SITES=	LOCAL/bland
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gribouy is a Type1 font editor
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib

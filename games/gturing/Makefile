@@ -13,6 +13,9 @@ COMMENT=	Simple Turing machine simulator for GNOME 2
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USE_GNOME=	gnomeprefix libgnomeui
 USES=		gettext gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes

@@ -13,6 +13,9 @@ COMMENT=	GNOME tool to find strings in a set of files
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USES=		pathfix pkgconfig gettext gmake
 USE_GNOME=	libgnomeui
 GNU_CONFIGURE=	yes

@@ -13,6 +13,9 @@ COMMENT=	GTK2 dice roller
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
 USE_GNOME=	gnomeprefix gtk20 libgnomeui

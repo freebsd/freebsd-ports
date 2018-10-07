@@ -13,6 +13,9 @@ COMMENT=	GRhino Othello/Reversi Program
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USES=		gettext pkgconfig perl5
 USE_GNOME=	gnomeprefix libgnomeui
 USE_PERL5=	build

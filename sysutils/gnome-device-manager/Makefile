@@ -11,6 +11,9 @@ MASTER_SITES=	http://hal.freedesktop.org/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	HAL device manager for the GNOME Desktop
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 LIB_DEPENDS=	libhal.so:sysutils/hal
 
 USES=		gmake libtool pathfix pkgconfig tar:bzip2

@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.krakoa.dk/progs/cog/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Program for editing advanced GNOME settings in an easy way
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USE_XORG=	x11
 USE_GNOME=	gnomeprefix libgnomeui
 USES=		gettext gmake pkgconfig

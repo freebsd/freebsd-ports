@@ -11,6 +11,9 @@ DISTNAME=	multisync-${PORTVERSION}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Synchronize calendars, addressbooks, and other PIM data
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USES=		autoreconf gmake libtool pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix libgnomeui
 GNU_CONFIGURE=	yes
