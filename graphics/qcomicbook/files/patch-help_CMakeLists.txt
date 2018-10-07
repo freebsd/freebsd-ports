@@ -1,0 +1,5 @@
+--- help/CMakeLists.txt.orig	2018-10-07 10:17:17 UTC
++++ help/CMakeLists.txt
+@@ -1 +1 @@
+-INSTALL(FILES qcomicbook.1 DESTINATION share/man/man1)
++INSTALL(FILES qcomicbook.1 DESTINATION man/man1)
