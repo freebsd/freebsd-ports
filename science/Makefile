@@ -276,6 +276,7 @@
     SUBDIR += szip
     SUBDIR += teem
     SUBDIR += tfel
+    SUBDIR += tinker
     SUBDIR += triqs
     SUBDIR += udunits
     SUBDIR += v_sim
