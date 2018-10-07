@@ -1,6 +1,6 @@
 This module converts Japanese text in UTF-8 (or romaji in ascii) to
 number, AND vice versa. Though this pod is in English and all examples are
-in romaji to make http://search.cpan.org/ happy, this module does accept
+in romaji to make https://metacpan.org/ happy, this module does accept
 Japanese in UTF-8. Try the code below to see it.
 
   perl -MLingua::JA::Numbers \
