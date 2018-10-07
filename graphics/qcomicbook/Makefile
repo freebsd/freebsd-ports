@@ -1,22 +1,22 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	qcomicbook
-PORTVERSION=	0.9.0
-PORTREVISION=	12
+PORTNAME=	QComicBook
+PORTVERSION=	0.9.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://qcomicbook.org/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt-based comic book archive viewer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpoppler-qt4.so:graphics/poppler-qt4
+LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 
-USES=		cmake:outsource compiler:c++11-lang pkgconfig qt:4
-USE_QT=		corelib gui linguisttools_build moc_build qmake_build rcc_build \
-		uic_build xml
+USES=		cmake compiler:c++11-lang pkgconfig qt:5
+USE_GITHUB=	yes
+GH_ACCOUNT=	stolowski
+USE_QT=		core gui printsupport widgets x11extras\
+		buildtools_build linguisttools_build qmake_build
 
 OPTIONS_DEFINE=	7ZIP ACE RAR
 
@@ -28,15 +28,5 @@ ACE_RUN_DEPENDS=	unace:archivers/unace
 
 RAR_DESC=	Rar (.cbr) comic book archives support
 RAR_RUN_DEPENDS=	unrar:archivers/unrar
-
-post-patch:
-# fix man install directory
-	@${REINPLACE_CMD} -E \
-		-e 's|share/man|man|' \
-		${WRKSRC}/help/CMakeLists.txt
-# fix pixmap location
-	@${REINPLACE_CMD} -E \
-		-e 's|(qcomicbook.png)|${PREFIX}/share/pixmaps/\1|' \
-		${WRKSRC}/data/qcomicbook.desktop
 
 .include <bsd.port.mk>
