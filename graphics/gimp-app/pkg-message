@@ -1,4 +1,4 @@
-On FreeBSD 10.3 gimp can cause the following error.
+On FreeBSD 10.4 gimp can cause the following error.
 
 (script-fu:3985): LibGimp-ERROR **: shmat() failed: Invalid argument
 Could not attach to gimp shared memory segment
