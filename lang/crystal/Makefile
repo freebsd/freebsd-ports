@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		crystal
-DISTVERSION=		0.25.1
-PORTREVISION=		1
+DISTVERSION=		0.26.1
 CATEGORIES=		lang
 MASTER_SITES=		https://unrelentingtech.s3.dualstack.eu-west-1.amazonaws.com/crystal/:bootstrap
 DISTFILES=		${BOOTSTRAP_PATH}:bootstrap
@@ -33,7 +32,8 @@ MAKE_ARGS=	SHELL=sh \
 		LLVM_CONFIG="${LOCALBASE}/bin/llvm-config${LLVM_VERSION}" \
 		FLAGS="--release --no-debug --progress" \
 		EXPORTS='CRYSTAL_CONFIG_PATH="lib:${PREFIX}/lib/${PORTNAME}"' \
-		CRYSTAL_CACHE_DIR="${WRKDIR}/cache"
+		CRYSTAL_CACHE_DIR="${WRKDIR}/cache" \
+		CRYSTAL_CONFIG_VERSION="${DISTVERSION}"
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
