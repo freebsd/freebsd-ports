@@ -18,7 +18,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libtelepathy-glib.so:net-im/telepathy-glib \
 		libtelepathy-logger.so:net-im/telepathy-logger \
-		libtelepathy-qt5.so:net-im/telepathy-qt5
+		libtelepathy-qt5.so:net-im/telepathy-qt@qt5
 
 USES=		bison:build cmake:outsource kde:5 pkgconfig python:2.7,build qt:5 tar:xz
 USE_GNOME=	glib20 libxml2

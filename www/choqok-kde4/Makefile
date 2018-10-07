@@ -19,7 +19,7 @@ EXPIRATION_DATE=	2018-12-31
 
 LIB_DEPENDS=	libqjson.so:devel/qjson@qt4 \
 		libqoauth.so:net/qoauth \
-		libtelepathy-qt4.so:net-im/telepathy-qt4
+		libtelepathy-qt4.so:net-im/telepathy-qt@qt4
 
 USES=		cmake gettext kde:4 qt:4 tar:xz
 USE_KDE=	attica automoc4 kdelibs

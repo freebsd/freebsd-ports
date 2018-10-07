@@ -9,7 +9,7 @@ COMMENT=	KDE Telepathy internal library
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libsignon-qt5.so:sysutils/signon-qt5 \
-		libtelepathy-qt5.so:net-im/telepathy-qt5 \
+		libtelepathy-qt5.so:net-im/telepathy-qt@qt5 \
 		libtelepathy-logger-qt.so:net-im/telepathy-logger-qt5 \
 		libotr.so:security/libotr \
 		libaccounts-qt5.so:net-im/libaccounts-qt5 \

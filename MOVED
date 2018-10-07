@@ -5199,7 +5199,6 @@ audio/rubygem-ogginfo|audio/rubygem-ruby-ogginfo|2013-11-30|Rename to match upst
 x11-fm/xnc||2013-12-01|Has expired: Latest release from 2005, upstream disappeared, does not build
 audio/liteamp||2013-12-01|Has expired: Dead upstream since 2004, does not build with clang
 net-im/tapioca-qt||2013-12-01|Has expired: Unmaintained upstream since 2007, not used by anything
-net-im/telepathy-qt|net-im/telepathy-qt4|2013-12-01|Has expired: Unmaintained upstream since 2007, use net-im/telepathy-qt4
 x11-toolkits/linux-f10-gtk||2013-12-01|Has expired: GTK1 is deprecated
 net-im/linux-ymessenger||2013-12-01|Has expired: Depends on deprecated Linux GTK1
 emulators/linux-pete-mesagpu||2013-12-01|Has expired: Depends on deprecated Linux GTK1
@@ -10567,3 +10566,5 @@ editors/latexila|editors/gnome-latex|2018-10-05|Project was renamed
 math/arpack|math/arpack-ng|2018-10-06|math/arpack is the old, unmaintained version, math/arpack-ng should be used instead
 net-p2p/libtorrent-rasterbar-python|net-p2p/py-libtorrent-rasterbar|2018-10-06|Rename to the canonical name for a python port
 biology/tinker|science/tinker|2018-10-06|Move to proper category
+net-im/telepathy-qt4|net-im/telepathy-qt@qt4|2018-10-07|Moved to flavored version
+net-im/telepathy-qt5|net-im/telepathy-qt@qt5|2018-10-07|Moved to flavored version
