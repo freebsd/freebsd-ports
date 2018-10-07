@@ -1,4 +1,4 @@
-TIMESTAMP = 1538848050
+TIMESTAMP = 1538918416
 SHA256 (nginx-1.15.5.tar.gz) = 1a3a889a8f14998286de3b14cc1dd5b2747178e012d6d480a18aa413985dae6f
 SIZE (nginx-1.15.5.tar.gz) = 1024791
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -73,8 +73,8 @@ SHA256 (nginx-modules-ngx_http_json_status_module-1d2f303_GH0.tar.gz) = fdc34e0e
 SIZE (nginx-modules-ngx_http_json_status_module-1d2f303_GH0.tar.gz) = 6736
 SHA256 (kr-nginx-notice-3c95966_GH0.tar.gz) = e829fc94178cc8c91fef15a1fc44ee7ac162c13eddc0bba4c9427aaa23386885
 SIZE (kr-nginx-notice-3c95966_GH0.tar.gz) = 3343
-SHA256 (slact-nchan-v1.1.14_GH0.tar.gz) = 70b38d9e54826b2a69a9a5f3de5fb0e25fb03177ec3ac0bc69b9fd2c087143b8
-SIZE (slact-nchan-v1.1.14_GH0.tar.gz) = 630564
+SHA256 (slact-nchan-v1.2.1_GH0.tar.gz) = 7bb3ae57a036afabee1da5e40085b69b3fd68026fcc1d8abc98a8ad9f5dccc44
+SIZE (slact-nchan-v1.2.1_GH0.tar.gz) = 645188
 SHA256 (wandenberg-nginx-push-stream-module-0.5.4_GH0.tar.gz) = 5253bb8a804ea679e514137a234637298f044c3ef63c053670bf3802ff3535b1
 SIZE (wandenberg-nginx-push-stream-module-0.5.4_GH0.tar.gz) = 183493
 SHA256 (yaoweibin-ngx_http_substitutions_filter_module-v0.6.4_GH0.tar.gz) = ed4ddbcf0c434f4a1e97b61251a63ace759792764bd5cb79ff20efe348db8db3
