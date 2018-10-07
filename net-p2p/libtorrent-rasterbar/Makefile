@@ -12,8 +12,6 @@ COMMENT=	C++ library implementing a BitTorrent client
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to build: client_test.cpp: undefined reference to std::__cxx11::basic_string
-
 LIB_DEPENDS=	libboost_chrono.so:devel/boost-libs \
 		libboost_random.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs
