@@ -1,0 +1,5 @@
+Deep difference of dictionaries, iterables, strings and other objects. It will
+recursively look for all the changes. Tested on Python 2.7, 3.3, 3.4, 3.5, 3.6,
+Pypy, Pypy3.
+
+WWW: https://github.com/seperman/deepdiff
