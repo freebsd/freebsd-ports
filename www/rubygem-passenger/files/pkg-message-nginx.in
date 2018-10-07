@@ -1,0 +1,16 @@
+#####################################################################
+
+Please edit your nginx configuration file, and add these lines:
+
+   server {
+       root %%PASSENGER_INSTALL_DIR%%;
+       passenger_enabled on;
+       passenger_ruby %%RUBY%%;
+       passenger_sticky_sessions on;
+   }
+   
+After you restart nginx, you are ready to deploy any number of Ruby on Rails
+applications on nginx, without any further Ruby on Rails-specific
+configuration!
+
+#####################################################################
