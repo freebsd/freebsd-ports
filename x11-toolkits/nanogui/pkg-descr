@@ -1,5 +1,6 @@
-NTK is a fork of FLTK 1.3.0 which adds graphics rendering via
-Cairo, support for transparent/overlapping widgets, streamlining
-of internals, and some new/improved widgets.
+NanoGUI is a minimalistic cross-platform widget library for OpenGL 3.x or
+higher. It supports automatic layout generation, stateful C++11 lambdas
+callbacks, a variety of useful widget types and Retina-capable rendering on
+Apple devices thanks to NanoVG by Mikko Mononen.
 
-WWW: https://github.com/original-male/ntk
+WWW: https://github.com/wjakob/nanogui
