@@ -5,7 +5,7 @@ PORTVERSION=	1.8.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/osnapfont/
 
-MAINTAINER=	lebarondemerde@privacychain.ch
+MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Monospaced font based on Artwiz Snap
 
 LICENSE=	GPLv2

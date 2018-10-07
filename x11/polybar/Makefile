@@ -4,7 +4,7 @@ PORTNAME=	polybar
 DISTVERSION=	3.2.1
 CATEGORIES=	x11
 
-MAINTAINER=	lebarondemerde@privacychain.ch
+MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Fast and easy-to-use status bar
 
 LICENSE=	MIT

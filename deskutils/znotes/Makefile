@@ -6,7 +6,7 @@ PORTVERSION=	0.4.5.20150825
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-${FLAVOR}
 
-MAINTAINER=	lebarondemerde@privacychain.ch
+MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Simple notes managment application based on Qt
 
 LICENSE=	GPLv3

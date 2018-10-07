@@ -6,7 +6,7 @@ DISTVERSIONSUFFIX=	-g54a873f
 CATEGORIES=	net-p2p python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lebarondemerde@privacychain.ch
+MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Console client for the BitTorrent client Transmission
 
 LICENSE=	GPLv3
