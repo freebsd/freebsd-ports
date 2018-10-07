@@ -17,7 +17,8 @@ BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 
 CONFLICTS=	mplex-[0-9]*
 
-USES=		gmake jpeg libtool pathfix pkgconfig localbase
+USES=		compiler:c++11-lang gmake gnome jpeg libtool localbase pathfix \
+		pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
