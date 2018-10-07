@@ -1,5 +1,0 @@
---- bench/bench5.run.orig	2014-12-16 05:17:53.000000000 +0200
-+++ bench/bench5.run	2014-12-28 18:58:45.000000000 +0200
-@@ -1 +1 @@
--time ../bin/dynamic bench5 1000 1.0 10.0 2 298.0
-+time dynamic bench5 1000 1.0 10.0 2 298.0

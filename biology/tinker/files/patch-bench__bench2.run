@@ -1,5 +1,0 @@
---- bench/bench2.run.orig	2015-05-08 20:57:45 UTC
-+++ bench/bench2.run
-@@ -1 +1 @@
--../bin/timer bench2 1000 y
-+timer bench2 1 y

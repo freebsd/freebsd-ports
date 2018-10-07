@@ -10566,3 +10566,4 @@ math/arpack-ng-mpich|math/arpack-ng|2018-10-04|math/arpack-ng-mpich slave port i
 editors/latexila|editors/gnome-latex|2018-10-05|Project was renamed
 math/arpack|math/arpack-ng|2018-10-06|math/arpack is the old, unmaintained version, math/arpack-ng should be used instead
 net-p2p/libtorrent-rasterbar-python|net-p2p/py-libtorrent-rasterbar|2018-10-06|Rename to the canonical name for a python port
+biology/tinker|science/tinker|2018-10-06|Move to proper category
