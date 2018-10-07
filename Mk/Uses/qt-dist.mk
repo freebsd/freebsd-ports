@@ -74,7 +74,7 @@ DESCR?=			${PORTSDIR}/devel/${_QT_RELNAME}/pkg-descr
 DESTDIRNAME=		INSTALL_ROOT
 
 .  if ${_QT_VER:M4}
-MASTER_SITE_SUBDIR?=	official_releases/qt/${_QT_VERSION:R}/${_QT_VERSION}/
+MASTER_SITE_SUBDIR?=	archive/qt/${_QT_VERSION:R}/${_QT_VERSION}/
 DISTNAME=		qt-everywhere-opensource-src-${_QT_VERSION}
 DIST_SUBDIR=		KDE
 .  else
