@@ -1,6 +1,7 @@
 %%WEBSERVER%%bin/lwsws
 %%WEBSERVER%%include/lejp.h
 include/libwebsockets.h
+include/lws-plugin-ssh.h
 include/lws_config.h
 lib/cmake/libwebsockets/LibwebsocketsConfig.cmake
 lib/cmake/libwebsockets/LibwebsocketsConfigVersion.cmake
@@ -8,8 +9,11 @@ lib/cmake/libwebsockets/LibwebsocketsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/libwebsockets/LibwebsocketsTargets.cmake
 lib/libwebsockets.a
 lib/libwebsockets.so
-lib/libwebsockets.so.10
+lib/libwebsockets.so.12
 libdata/pkgconfig/libwebsockets.pc
+libdata/pkgconfig/libwebsockets_static.pc
+%%DATADIR%%-test-server/lws-ssh-test-keys
+%%DATADIR%%-test-server/lws-ssh-test-keys.pub
 %%PLUGINS%%%%DATADIR%%-test-server/generic-sessions/failed-login.html
 %%PLUGINS%%%%DATADIR%%-test-server/generic-sessions/index.html
 %%PLUGINS%%%%DATADIR%%-test-server/generic-sessions/lwsgs-logo.png
