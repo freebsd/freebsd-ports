@@ -13,7 +13,7 @@ COMMENT=	Module for integration of instant messaging into KDE Workspaces
 DEPRECATED=	KDE4 is EOL upstream
 EXPIRATION_DATE=	2018-12-31
 
-LIB_DEPENDS=	libtelepathy-qt4.so:net-im/telepathy-qt4 \
+LIB_DEPENDS=	libtelepathy-qt4.so:net-im/telepathy-qt@qt4 \
 		libktpcommoninternalsprivate.so:net-im/ktp-common-internals-kde4
 
 USES=		cmake gettext kde:4 qt:4 tar:bzip2

@@ -11,7 +11,7 @@ COMMENT=	VNC server for KDE
 DEPRECATED=	KDE4 is EOL upstream
 EXPIRATION_DATE=	2018-12-31
 
-LIB_DEPENDS=	libtelepathy-qt4.so:net-im/telepathy-qt4
+LIB_DEPENDS=	libtelepathy-qt4.so:net-im/telepathy-qt@qt4
 
 USES=		alias cmake:outsource jpeg kde:4 qt:4 tar:xz
 USE_KDE=	kdelibs automoc4
