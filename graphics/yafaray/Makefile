@@ -3,14 +3,9 @@
 
 PORTNAME=	yafaray
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0-5
-PORTREVISION=	2
-DISTVERSIONSUFFIX=	-g3a98966
+DISTVERSION=	3.3.0-11
+DISTVERSIONSUFFIX=	-g1c0b43a
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	38ca47aeca670c9bd5d21c24c0444be1d8fd22b0.patch:-p1 \
-		135c2aad275382f3a95d905e08d4c9e883a0b461.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Montecarlo raytracing engine
@@ -32,7 +27,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libpng16.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		cmake:outsource jpeg
+USES=		cmake:outsource gnome jpeg
 USE_GITHUB=	yes
 GH_ACCOUNT=	YafaRay
 GH_PROJECT=	Core

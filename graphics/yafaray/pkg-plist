@@ -37,7 +37,10 @@ include/yafaray/core_api/vector3d.h
 include/yafaray/core_api/volume.h
 include/yafaray/core_api/yafsystem.h
 include/yafaray/gui/yafqtapi.h
+include/yafaray/integrators/bidirpath.h
+include/yafaray/integrators/directlight.h
 include/yafaray/integrators/integr_utils.h
+include/yafaray/integrators/pathtracer.h
 include/yafaray/integrators/photonintegr.h
 include/yafaray/integrators/sppm.h
 include/yafaray/interface/xmlinterface.h
@@ -140,7 +143,6 @@ include/yafaray/utilities/threadUtils.h
 include/yafaray/utilities/tiled_array.h
 include/yafaray/utilities/winunistd.h
 include/yafaray/utilities/y_alloc.h
-include/yafaray/utilities/y_alloc.h.orig
 include/yafaray/yaf_version.h
 include/yafaray/yafray_config.h
 include/yafaray/yafray_constants.h
