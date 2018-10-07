@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	libarchive
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.3
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://libarchive.org/downloads/
 
@@ -15,13 +14,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-OPTIONS_DEFINE=	LZ4 LZO OPENSSL NETTLE
+OPTIONS_DEFINE=	LZ4 LZO OPENSSL NETTLE ZSTD
 OPTIONS_DEFAULT=LZ4 LZO OPENSSL
 
 LZ4_DESC=	Support lz4 compression via liblz4
 LZO_DESC=	Support lzo compression via liblzo2
 OPENSSL_DESC=	Mtree and xar hashes support through openssl
 NETTLE_DESC=	Crypto support from Nettle
+ZSTD_DESC=      Support zstd compression
 
 USES=		cpe iconv libtool localbase:ldflags pathfix
 GNU_CONFIGURE=	yes
@@ -89,6 +89,8 @@ LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 LZO_CONFIGURE_WITH=	lzo2
 LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
 LZ4_CONFIGURE_WITH=	lz4
+ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
+ZSTD_CONFIGURE_WITH=	zstd
 
 NETTLE_LIB_DEPENDS=	libnettle.so:security/nettle
 NETTLE_CONFIGURE_WITH=	nettle
