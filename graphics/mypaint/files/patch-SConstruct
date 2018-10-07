@@ -1,4 +1,4 @@
---- SConstruct.orig	2016-01-15 19:42:54 UTC
+--- SConstruct.orig	2017-01-21 17:51:52 UTC
 +++ SConstruct
 @@ -95,14 +95,14 @@ if "$CCFLAGS" in env['CXXCOM']:
  
@@ -11,7 +11,8 @@
 +#env.Append(CCFLAGS='-Wall')
 +#env.Append(CFLAGS='-std=c99')
  
- env['GEGL_VERSION'] = 0.3
+-env['GEGL_VERSION'] = 0.3
++env['GEGL_VERSION'] = 0.4
  
  # Define strdup() in string.h under glibc >= 2.10 (POSIX.1-2008)
 -env.Append(CFLAGS='-D_POSIX_C_SOURCE=200809L')
