@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	rar
-PORTVERSION=	5.6.0
+PORTVERSION=	5.6.1
 PORTEPOCH=	3
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.rarlab.com/rar/
+MASTER_SITES=	https://www.rarlab.com/rar/
 DISTNAME=	rarbsd-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,11 +16,14 @@ LICENSE_NAME=	RAR license
 LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-IA32_BINARY_PORT=	yes
 RESTRICTED=	only unmodified original package can be distributed
+
+IA32_BINARY_PORT=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/rar
+
 PLIST_FILES=	bin/rar lib/default.sfx etc/rarfiles.lst man/cat1/rar.1.gz
+
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
@@ -33,7 +36,6 @@ do-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${WRKSRC}/order.htm \
-		${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${WRKSRC}/order.htm ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
