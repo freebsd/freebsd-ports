@@ -9,6 +9,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk2 Todo list manager
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USES=		pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomevfs2 intltool
 GNU_CONFIGURE=	yes

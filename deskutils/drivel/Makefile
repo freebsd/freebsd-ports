@@ -12,6 +12,9 @@ COMMENT=	Blog editor for GNOME
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 
 OPTIONS_DEFINE=	GTKSPELL

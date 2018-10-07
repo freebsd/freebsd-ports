@@ -15,6 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME version of the classic breakout game
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USES=		gettext-tools pathfix pkgconfig
 USE_GNOME=	gnomeprefix libgnomeui
 USE_XORG=	x11

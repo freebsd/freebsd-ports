@@ -15,6 +15,9 @@ COMMENT=	GNOME/Bonobo component for spell checking
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 LIB_DEPENDS=	libaspell.so:textproc/aspell
 
 USE_GNOME=	gnomeprefix intlhack libgnomeui

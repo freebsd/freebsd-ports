@@ -13,6 +13,9 @@ COMMENT=	Password manager for GNOME2
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 LIB_DEPENDS=	libmcrypt.so:security/libmcrypt \
 		libmhash.so:security/mhash
 

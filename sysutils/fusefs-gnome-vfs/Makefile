@@ -14,6 +14,9 @@ COMMENT=	Interface between FUSE and the Gnome VFS 2.0
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 RPORTNAME=	gnome-vfs-fuse
 WRKSRC=		${WRKDIR}/${RPORTNAME}
 USES=		fuse pkgconfig gmake

@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Uno card game
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USE_GNOME=	gtk20 libgnomeui intltool
 USES=		gettext gmake pkgconfig tar:bzip2
 INSTALLS_ICONS=	yes

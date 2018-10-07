@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	LADSPA effects rack for the JACK audio server
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 LIB_DEPENDS=	libjack.so:audio/jack \
 		liblrdf.so:textproc/liblrdf

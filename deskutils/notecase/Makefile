@@ -13,6 +13,9 @@ COMMENT=	Hierarchical text notes manager
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USES=		dos2unix gmake desktop-file-utils gettext gnome pkgconfig shared-mime-info
 USE_GNOME=	gtk20 gtksourceview2 gnomevfs2
 USE_XORG=	x11

@@ -11,6 +11,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME wget front-end
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 RUN_DEPENDS=	wget:ftp/wget
 

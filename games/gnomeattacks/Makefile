@@ -13,6 +13,9 @@ COMMENT=	GNOME 2 game featuring a bizarre flying GNOME logo
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 GNU_CONFIGURE=	yes
 USES=		pathfix gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomevfs2 libgnomeui

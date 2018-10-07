@@ -13,6 +13,9 @@ COMMENT=	Gnome program to check a page/website for broken links
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 LIB_DEPENDS=	libgnet-2.0.so:net/gnet2
 
 OPTIONS_DEFINE=	CROCO TIDY CLAMAV GNUTLS NLS

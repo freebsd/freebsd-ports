@@ -13,6 +13,9 @@ COMMENT=	Gnome-based scientific calculator
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 RUN_DEPENDS=	${LOCALBASE}/bin/gunits:math/units
 
 USES=		pkgconfig

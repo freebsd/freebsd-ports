@@ -12,6 +12,9 @@ COMMENT=	Turn-based strategy game for GNOME
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	wfx
 USES=		gettext-tools gmake iconv libtool pathfix pkgconfig

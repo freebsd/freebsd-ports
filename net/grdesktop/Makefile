@@ -10,6 +10,9 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME frontend for the remote desktop client (rdesktop)
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 RUN_DEPENDS=	rdesktop:net/rdesktop
 
 GNU_CONFIGURE=	yes

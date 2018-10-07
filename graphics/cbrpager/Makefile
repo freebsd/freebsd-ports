@@ -16,6 +16,9 @@ COMMENT=	Viewer for cbr (comic book archive) files
 
 LICENSE=	GPLv3
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USES=		pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	libgnomeui

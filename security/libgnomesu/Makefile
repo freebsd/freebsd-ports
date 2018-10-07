@@ -15,6 +15,9 @@ LICENSE=	LGPL20+ PD
 LICENSE_COMB=	multi
 LICENSE_FILE_LGPL20+ =	${WRKSRC}/COPYING
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USES=		gmake gettext-tools libtool localbase pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomeprefix libgnomeui

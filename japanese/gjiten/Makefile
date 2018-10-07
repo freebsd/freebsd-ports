@@ -10,6 +10,9 @@ MASTER_SITES=	http://gjiten.sourceforge.net/
 MAINTAINER=	stephane.lapie@darkbsd.org
 COMMENT=	Japanese dictionary program for GNOME
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 OPTIONS_DEFINE=	UTF8 KANJIPAD DOCS NLS
 UTF8_DESC=	Use UTF-8 edict dictionaries
 KANJIPAD_DESC=	Use Kanjipad

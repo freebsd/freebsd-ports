@@ -11,6 +11,9 @@ COMMENT=	Medical Imaging Data Examiner
 
 LICENSE=	GPLv2
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 BUILD_DEPENDS=	gm4:devel/m4
 
 GNU_CONFIGURE=	yes

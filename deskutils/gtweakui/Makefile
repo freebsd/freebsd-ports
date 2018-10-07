@@ -12,6 +12,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of simple dialogs as a front end to GConf
 
+DEPRECATED=	GNOME 2 application
+EXPIRATION_DATE=	2018-12-10
+
 USES=		gmake pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix libgnomeui gconf2 libglade2 intlhack
 GNU_CONFIGURE=	yes
