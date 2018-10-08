@@ -58,7 +58,7 @@ PHPDBG_DESC=	Interactive PHP debugger
 LINKTHR_DESC=	Link thread lib (for threaded extensions)
 ZTS_DESC=	Force Zend Thread Safety (ZTS) build
 
-CONFLICTS=	php56-* php70-* php71-*
+CONFLICTS=	php56-* php70-* php71-* php73-*
 
 DESTDIRNAME=	INSTALL_ROOT
 

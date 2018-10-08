@@ -1,0 +1,69 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: php-fpm
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable php-fpm:
+# php_fpm_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="php_fpm"
+rcvar=php_fpm_enable
+
+start_precmd="php_fpm_prestart"
+restart_precmd="php_fpm_checkconfig"
+reload_precmd="php_fpm_checkconfig"
+configtest_cmd="php_fpm_checkconfig"
+
+load_rc_config "$name"
+
+: ${php_fpm_enable="NO"}
+: ${php_fpm_umask=""}
+
+extra_commands="reload configtest logrotate"
+
+command="%%PREFIX%%/sbin/php-fpm"
+pidfile="/var/run/php-fpm.pid"
+sig_stop="QUIT"
+sig_reload="USR2"
+logrotate_cmd="php_fpm_logrotate"
+
+required_files="%%PREFIX%%/etc/php-fpm.conf"
+
+php_fpm_logrotate() {
+        if [ -z "$rc_pid" ]; then
+                _run_rc_notrunning
+                return 1
+        fi
+        echo "Rotating logs $name."
+        kill -USR1 $rc_pid
+}
+
+php_fpm_checkconfig()
+{
+        echo "Performing sanity check on php-fpm configuration:"
+        eval ${command} -t
+}
+
+php_fpm_prestart()
+{
+	php_fpm_checkconfig
+	checkconfig=$?
+	if [ $checkconfig -ne 0  ]; then
+		return $checkconfig
+	fi
+
+	if [ ! -z "$php_fpm_umask"  ]; then
+		echo "Setting umask to: ${php_fpm_umask}"
+		umask $php_fpm_umask
+	fi
+}
+
+run_rc_command "$1"
