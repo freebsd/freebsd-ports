@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unbound
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/unbound/ \
 		https://distfiles.crux.guru/
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libldns.so:dns/ldns
 
 USES=		autoreconf cpe libtool pkgconfig ssl
+
 CPE_VENDOR=	nlnetlabs
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} --with-libexpat=${LOCALBASE}
