@@ -41,6 +41,7 @@ SHEBANG_FILES=	tools/xml_insert.sh
 
 # Fix conflicts with graphics/gegl and sysutils/coreutils
 EXAMPLESDIR=	${PREFIX}/share/examples/gegl${PKGNAMESUFFIX}
+UNIQUE_SUFFIX=	-${GEGL_VER}
 UNIQUE_SUFFIX_FILES=	bin/gcut
 
 OPTIONS_SUB=	yes
