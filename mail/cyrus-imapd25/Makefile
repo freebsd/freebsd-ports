@@ -5,7 +5,7 @@ PORTVERSION=	2.5.12
 #PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	https://github.com/cyrusimap/cyrus-imapd/releases/download/${PORTNAME}-${PORTVERSION}/ \
-		http://cyrusimap.org/releases/ \
+		https://www.cyrusimap.org/releases/ \
 		ftp://ftp.cyrusimap.org/cyrus-imapd/
 PKGNAMESUFFIX=	25
 
