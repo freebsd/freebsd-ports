@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Model
-PORTVERSION=	2.126
+PORTVERSION=	2.127
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -38,8 +38,9 @@ TEST_DEPENDS=	p5-Config-Model-Tester>=3.006:devel/p5-Config-Model-Tester \
 		p5-YAML>=0:textproc/p5-YAML \
 		p5-YAML-Tiny>=0:textproc/p5-YAML-Tiny
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
