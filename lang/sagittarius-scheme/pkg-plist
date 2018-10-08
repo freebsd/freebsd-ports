@@ -564,6 +564,10 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a145/assumptions.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a151.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a151/bitwise.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a152.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a152/strings.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a156.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a156/infix-predicates.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a158.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a158/generators-and-accumulators.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/%3a17.scm
@@ -672,6 +676,8 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/144.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/145.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/151.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/152.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/156.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/158.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/17.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/srfi/2.scm
@@ -712,6 +718,10 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/convert.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/object-builder.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/parse.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/pointer.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/schema.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/schema/validators.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/json/validator.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/markdown.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/markdown/convert.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/markdown/parser.scm
@@ -745,6 +755,16 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/xml/dom/nodes.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/xml/dom/parser.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/text/xml/dom/writer.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/yaml.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/yaml/builder.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/yaml/conditions.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/yaml/nodes.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/yaml/parser.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/yaml/resolvers.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/yaml/scanner.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/yaml/tags.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/yaml/tokens.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/text/yaml/writer.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/time.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/tlv.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/trace.scm
@@ -754,6 +774,7 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/concurrent/actor.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/concurrent/executor.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/concurrent/future.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/util/concurrent/pipeline.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/concurrent/shared-queue.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/concurrent/thread-pool.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/deque.scm
@@ -767,6 +788,9 @@ libdata/pkgconfig/%%PORTNAME%%.pc
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/sparse.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/timer.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/util/treemap.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/util/uri.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/util/uri/http.scm
+%%DATADIR%%/%%PORTVERSION%%/sitelib/util/uri/https.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/www/cgi.scm
 %%DATADIR%%/%%PORTVERSION%%/sitelib/www/fastcgi.scm
 %%DATADIR%%/%%PORTVERSION%%/template.c
