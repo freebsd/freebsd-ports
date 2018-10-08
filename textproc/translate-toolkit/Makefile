@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	translate-toolkit
-PORTVERSION=	2.2.5
+PORTVERSION=	2.3.1
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 
@@ -20,7 +20,9 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
 		iso-codes>=1.3:misc/iso-codes \
 		bash:shells/bash \
-		${PYTHON_PKGNAMEPREFIX}utidylib>=0:www/py-utidylib@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}utidylib>=0:www/py-utidylib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}backports.csv>=1.0.0:devel/py-backports.csv@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}phply>=1.2.5:devel/py-phply@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 # Can use psyco (on i386)
 
