@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	shundhammer
 
-USES=		desktop-file-utils qmake qt:5 shebangfix
+USES=		compiler:c++11-lang desktop-file-utils qmake qt:5 shebangfix
 USE_GL=		gl
 USE_QT=		buildtools_build core gui widgets
 SHEBANG_FILES=	scripts/qdirstat-cache-writer
