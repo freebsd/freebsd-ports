@@ -395,7 +395,6 @@
     SUBDIR += mattermost-server
     SUBDIR += mattermost-webapp
     SUBDIR += mediawiki127
-    SUBDIR += mediawiki129
     SUBDIR += mediawiki130
     SUBDIR += mediawiki131
     SUBDIR += mergelog
