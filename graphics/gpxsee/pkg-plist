@@ -13,6 +13,7 @@ share/applications/gpxsee.desktop
 %%NLS%%%%DATADIR%%/translations/gpxsee_en.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_fi.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_fr.qm
+%%NLS%%%%DATADIR%%/translations/gpxsee_nb.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_pl.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_ru.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_sv.qm
