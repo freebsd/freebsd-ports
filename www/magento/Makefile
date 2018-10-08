@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.magentocommerce.com/downloads/assets/${PORTVERSION}/
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Feature-rich eCommerce platform
 
-IGNORE_WITH_PHP=	70 71 72
+IGNORE_WITH_PHP=	70 71 72 73
 
 USES=		cpe php
 CPE_VENDDOR=	magentocommerce

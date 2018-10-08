@@ -12,7 +12,7 @@ COMMENT=	Fast and lightweight PHP-powered discussion board
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-IGNORE_WITH_PHP=	70 71 72
+IGNORE_WITH_PHP=	70 71 72 73
 
 USES=		cpe php
 SUB_FILES=	pkg-message

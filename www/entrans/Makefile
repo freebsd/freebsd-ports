@@ -12,7 +12,7 @@ COMMENT=	Entrans is an online, collaborative translation tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-IGNORE_WITH_PHP=	70 71 72
+IGNORE_WITH_PHP=	70 71 72 73
 
 USES=		php:web
 USE_PHP=	mysql

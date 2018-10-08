@@ -11,7 +11,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Port build tinderbox system
 
-IGNORE_WITH_PHP=	70 71 72
+IGNORE_WITH_PHP=	70 71 72 73
 
 RUN_DEPENDS=	dialog4ports-static:ports-mgmt/dialog4ports-static
 

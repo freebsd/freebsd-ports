@@ -12,7 +12,7 @@ COMMENT=	Break the silence operator
 LICENSE=	PHP301
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	70 71 72
+IGNORE_WITH_PHP=	70 71 72 73
 
 test: build
 	@(cd ${WRKSRC} && ${MAKE} test)

@@ -18,7 +18,7 @@ COMMENT=	Template framework for PHP
 WRKSRC=		${WRKDIR}/templates
 USES=		dos2unix php:phpize
 
-IGNORE_WITH_PHP=	70 71 72
+IGNORE_WITH_PHP=	70 71 72 73
 
 CONFIGURE_ARGS=	--enable-templates=shared
 

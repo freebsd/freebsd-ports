@@ -10,7 +10,7 @@ MASTER_SITES=	SF/iptrack/${PORTNAME}/Release%204.92
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP address management and tracking
 
-IGNORE_WITH_PHP=	70 71 72
+IGNORE_WITH_PHP=	70 71 72 73
 
 RUN_DEPENDS=	nmap:security/nmap
 

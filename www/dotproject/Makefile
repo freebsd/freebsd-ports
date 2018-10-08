@@ -11,7 +11,7 @@ COMMENT=	Open Source Project Management tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-IGNORE_WITH_PHP=	70 71 72
+IGNORE_WITH_PHP=	70 71 72 73
 
 USES=		apache:run,2.2+ cpe shebangfix php:web
 SHEBANG_FILES=	misc/cvs2cl/cvs2cl.pl

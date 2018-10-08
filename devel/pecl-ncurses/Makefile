@@ -12,6 +12,6 @@ COMMENT=	PECL extension for ncurses
 LICENSE=	PHP301
 
 USES=		php:pecl,cli ncurses
-IGNORE_WITH_PHP=70 71 72
+IGNORE_WITH_PHP=70 71 72 73
 
 .include <bsd.port.mk>

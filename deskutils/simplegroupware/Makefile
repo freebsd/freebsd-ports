@@ -10,7 +10,7 @@ DISTNAME=	SimpleGroupware_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Groupware is an open source enterprise application
 
-IGNORE_WITH_PHP=	70 71 72
+IGNORE_WITH_PHP=	70 71 72 73
 
 NO_BUILD=	yes
 USES=		apache:run,2.2+

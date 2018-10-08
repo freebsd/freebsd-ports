@@ -11,7 +11,7 @@ COMMENT=	Sphinx search engine php client
 
 LICENSE=	PHP301
 
-IGNORE_WITH_PHP=	70 71 72
+IGNORE_WITH_PHP=	70 71 72 73
 
 LIB_DEPENDS=	libsphinxclient.so:textproc/libsphinxclient
 
