@@ -3,12 +3,14 @@
 %%SITE_PERL%%/Net/Server/Mail/ESMTP/Extension.pm
 %%SITE_PERL%%/Net/Server/Mail/ESMTP/PIPELINING.pm
 %%SITE_PERL%%/Net/Server/Mail/ESMTP/8BITMIME.pm
+%%SITE_PERL%%/Net/Server/Mail/ESMTP/STARTTLS.pm
 %%SITE_PERL%%/Net/Server/Mail/ESMTP/XFORWARD.pm
 %%SITE_PERL%%/Net/Server/Mail/LMTP.pm
 %%SITE_PERL%%/Net/Server/Mail/SMTP.pm
 %%PERL5_MAN3%%/Net::Server::Mail.3.gz
 %%PERL5_MAN3%%/Net::Server::Mail::ESMTP.3.gz
 %%PERL5_MAN3%%/Net::Server::Mail::ESMTP::Extension.3.gz
+%%PERL5_MAN3%%/Net::Server::Mail::ESMTP::STARTTLS.3.gz
 %%PERL5_MAN3%%/Net::Server::Mail::ESMTP::XFORWARD.3.gz
 %%PERL5_MAN3%%/Net::Server::Mail::LMTP.3.gz
 %%PERL5_MAN3%%/Net::Server::Mail::SMTP.3.gz
