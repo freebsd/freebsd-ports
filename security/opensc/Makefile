@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opensc
-PORTVERSION=	0.18.0
+PORTVERSION=	0.19.0
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/OpenSC/OpenSC/releases/download/${PORTVERSION}/
 
@@ -33,6 +33,7 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ENV=	\
 		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
+CONFIGURE_ARGS=	--with-completiondir=${PREFIX}/etc/bash_completion.d
 
 PORTDOCS=	*
 
@@ -48,6 +49,7 @@ CTAPI_CONFIGURE_ENABLE=		ctapi
 
 SM_CONFIGURE_ENABLE=		sm
 
+NOTIFY_USES=			gnome
 NOTIFY_USE=			GNOME=glib20
 NOTIFY_CONFIGURE_ENABLE=	notify
 
