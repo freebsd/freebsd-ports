@@ -22,12 +22,16 @@ bin/westcos-tool
 etc/bash_completion.d/cardos-tool
 etc/bash_completion.d/cryptoflex-tool
 etc/bash_completion.d/dnie-tool
+etc/bash_completion.d/egk-tool
 etc/bash_completion.d/eidenv
 etc/bash_completion.d/gids-tool
 etc/bash_completion.d/iasecc-tool
 etc/bash_completion.d/netkey-tool
+etc/bash_completion.d/npa-tool
+etc/bash_completion.d/opensc-asn1
 etc/bash_completion.d/openpgp-tool
 etc/bash_completion.d/opensc-explorer
+etc/bash_completion.d/opensc-notify
 etc/bash_completion.d/opensc-tool
 etc/bash_completion.d/piv-tool
 etc/bash_completion.d/pkcs11-tool
@@ -104,4 +108,5 @@ share/applications/org.opensc.notify.desktop
 %%MANPAGES%%man/man1/pkcs15-tool.1.gz
 %%MANPAGES%%man/man1/sc-hsm-tool.1.gz
 %%MANPAGES%%man/man1/westcos-tool.1.gz
+%%MANPAGES%%man/man5/opensc.conf.5.gz
 %%MANPAGES%%man/man5/pkcs15-profile.5.gz
