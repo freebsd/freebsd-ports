@@ -268,6 +268,7 @@
     SUBDIR += sigrok-firmware-fx2lafw
     SUBDIR += sigrok-firmware-utils
     SUBDIR += silo
+    SUBDIR += simint
     SUBDIR += simlib
     SUBDIR += simsmith
     SUBDIR += spglib
