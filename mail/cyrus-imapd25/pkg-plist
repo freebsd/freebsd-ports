@@ -16,6 +16,7 @@ cyrus/bin/ctl_deliver
 cyrus/bin/ctl_mboxlist
 %%HTTP%%cyrus/bin/ctl_zoneinfo
 cyrus/bin/cvt_cyrusdb
+cyrus/bin/cyr_buildinfo
 cyrus/bin/cyr_dbtool
 cyrus/bin/cyr_deny
 cyrus/bin/cyr_df
