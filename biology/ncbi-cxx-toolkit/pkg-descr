@@ -1,0 +1,24 @@
+NCBI C++ Toolkit provides free, portable, public domain libraries with no
+restrictions use. It has been written in the National Center for Biotechnology
+Information in Bethesda, MD.
+
+It is vaguely a successor, or a new generation of biology/ncbi-toolkit.
+
+It contains:
+* Networking and Interprocess Communication (IPC) library
+* MultiThreading Library
+* CGI and Fast-CGI Library, HTML Generation Library
+* SQL Database Access Library, C++ wrapper library for BerkeleyDB
+* C++ IOSTREAM Adaptor/Wrapper Library
+* GZIP and BZ2 C++ Wrapper Library with IOSTREAM adaptors
+* ASN.1 and XML Serialization Library with C++ Code Generator Tool (datatool)
+* Date and Time Library
+* File System Function Library
+* Command-Line Argument, Configuration and Environment Processing Library
+* Sequence Alignment Algorithms Library
+* BLAST Engine Library
+* Biological Sequences Retrieval and Processing Library
+* Portable FLTK and OpenGL based GUI and graphic libraries
+* XmlWrapp (XML parsing and handling, XSLT, XPath)
+
+WWW: https://www.ncbi.nlm.nih.gov/IEB/ToolBox/CPP_DOC/
