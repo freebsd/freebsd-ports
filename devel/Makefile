@@ -4158,6 +4158,16 @@
     SUBDIR += php72-sysvsem
     SUBDIR += php72-sysvshm
     SUBDIR += php72-tokenizer
+    SUBDIR += php73-gettext
+    SUBDIR += php73-intl
+    SUBDIR += php73-json
+    SUBDIR += php73-pcntl
+    SUBDIR += php73-readline
+    SUBDIR += php73-shmop
+    SUBDIR += php73-sysvmsg
+    SUBDIR += php73-sysvsem
+    SUBDIR += php73-sysvshm
+    SUBDIR += php73-tokenizer
     SUBDIR += phpbt
     SUBDIR += phpsh
     SUBDIR += phpunit6

@@ -1000,6 +1000,10 @@
     SUBDIR += php72-soap
     SUBDIR += php72-sockets
     SUBDIR += php72-xmlrpc
+    SUBDIR += php73-ldap
+    SUBDIR += php73-soap
+    SUBDIR += php73-sockets
+    SUBDIR += php73-xmlrpc
     SUBDIR += phpldapadmin
     SUBDIR += pim6-tools
     SUBDIR += pim6dd

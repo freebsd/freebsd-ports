@@ -645,6 +645,8 @@
     SUBDIR += php71-gmp
     SUBDIR += php72-bcmath
     SUBDIR += php72-gmp
+    SUBDIR += php73-bcmath
+    SUBDIR += php73-gmp
     SUBDIR += physcalc
     SUBDIR += picosat
     SUBDIR += piranha
