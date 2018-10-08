@@ -3,6 +3,7 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.4.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GIMP
 
@@ -39,8 +40,7 @@ EXAMPLES=	2geglbuffer \
 
 SHEBANG_FILES=	tools/xml_insert.sh
 
-# Fix conflicts with graphics/gegl and sysutils/coreutils
-EXAMPLESDIR=	${PREFIX}/share/examples/gegl${PKGNAMESUFFIX}
+# Fix conflicts with sysutils/coreutils
 UNIQUE_SUFFIX=	-${GEGL_VER}
 UNIQUE_SUFFIX_FILES=	bin/gcut
 
