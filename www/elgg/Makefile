@@ -12,7 +12,7 @@ COMMENT=	Blogging and social networking platform
 
 LICENSE=	GPLv2
 
-IGNORE_WITH_PHP=	70 71 72
+IGNORE_WITH_PHP=	70 71 72 73
 
 USE_PHP=	mysql gd json soap dom xml
 USES=		cpe gettext zip php

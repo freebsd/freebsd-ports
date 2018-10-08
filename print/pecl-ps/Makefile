@@ -11,7 +11,7 @@ COMMENT=	PHP extension for pslib to generate postscript
 
 LICENSE=	PHP202
 
-IGNORE_WITH_PHP=	70 71 72
+IGNORE_WITH_PHP=	70 71 72 73
 
 LIB_DEPENDS=	libps.so:print/pslib
 

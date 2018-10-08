@@ -14,6 +14,6 @@ COMMENT=	Twig C extension to improve performance of the Twig template language
 LICENSE=	BSD3CLAUSE
 
 USES=		php:ext tar:tgz
-IGNORE_WITH_PHP=	70 71 72
+IGNORE_WITH_PHP=	70 71 72 73
 
 .include <bsd.port.mk>

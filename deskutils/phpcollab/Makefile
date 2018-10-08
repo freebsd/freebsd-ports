@@ -10,7 +10,7 @@ MASTER_SITES=	SF/phpcollab/final/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHPcollab is project management and collaboration over the internet
 
-IGNORE_WITH_PHP=	70 71 72
+IGNORE_WITH_PHP=	70 71 72 73
 
 USES=		zip
 NO_BUILD=	yes

@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/raphf.so:devel/pecl-raphf@${PHP
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libevent.so:devel/libevent
 
-IGNORE_WITH_PHP=70 71 72
+IGNORE_WITH_PHP=70 71 72 73
 USES=		php:pecl
 CONFLICTS=	pecl-http1* pecl-http-*
 

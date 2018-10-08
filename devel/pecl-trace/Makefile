@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 WRKSRC_SUBDIR=	extension
 
 USES=		gmake php:pecl
-IGNORE_WITH_PHP=	71 72
+IGNORE_WITH_PHP=	71 72 73
 PLIST_FILES=	bin/phptrace
 
 pre-install:

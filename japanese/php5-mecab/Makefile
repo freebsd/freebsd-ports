@@ -14,7 +14,7 @@ COMMENT=	PHP5 extension for MeCab Morphological Analyzer
 LIB_DEPENDS=	libmecab.so:japanese/mecab
 
 USES=		php:ext
-IGNORE_WITH_PHP=	70 71 72
+IGNORE_WITH_PHP=	70 71 72 73
 CONFIGURE_ARGS=	--with-mecab=${LOCALBASE}/bin/mecab-config
 
 .include <bsd.port.pre.mk>

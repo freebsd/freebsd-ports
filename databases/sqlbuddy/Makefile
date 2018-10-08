@@ -12,7 +12,7 @@ COMMENT=	Web based MySQL administration with a set of PHP scripts
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_WITH_PHP=	70 71 72
+IGNORE_WITH_PHP=	70 71 72 73
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	deliciousbrains

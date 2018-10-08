@@ -10,7 +10,7 @@ DISTNAME=	SiteBar-${PORTVERSION}
 MAINTAINER=	gunter@six-two.net
 COMMENT=	The Bookmark Server for Personal and Team Use
 
-IGNORE_WITH_PHP=	70 71 72
+IGNORE_WITH_PHP=	70 71 72 73
 
 USES=		php:web tar:bzip2
 USE_PHP=	mysql pcre

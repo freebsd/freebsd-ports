@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 
 USES=		php:phpize tar:bzip2
 
-IGNORE_WITH_PHP=	70 71 72
+IGNORE_WITH_PHP=	70 71 72 73
 
 CONFIGURE_ARGS=	--enable-xcache=shared
 
