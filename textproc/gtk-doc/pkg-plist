@@ -103,4 +103,3 @@ share/help/te/gtk-doc-manual/fdl-appendix.xml
 share/help/te/gtk-doc-manual/index.docbook
 share/help/zh_CN/gtk-doc-manual/fdl-appendix.xml
 share/help/zh_CN/gtk-doc-manual/index.docbook
-@xmlcatmgr share/sgml/gtk-doc/gtk-doc.cat
