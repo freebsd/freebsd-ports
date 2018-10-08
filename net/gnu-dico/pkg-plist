@@ -47,8 +47,8 @@ lib/dico/word.a
 lib/dico/word.so
 lib/libdico.a
 lib/libdico.so
-lib/libdico.so.1
-lib/libdico.so.1.0.0
+lib/libdico.so.2
+lib/libdico.so.2.0.0
 libexec/idxgcide
 man/man1/dico.1.gz
 man/man5/dicod.conf.5.gz
@@ -57,6 +57,7 @@ sbin/dicod
 %%DATADIR%%/%%PORTVERSION%%/include/pp-setup
 %%NLS%%share/locale/da/LC_MESSAGES/dico.mo
 %%NLS%%share/locale/de/LC_MESSAGES/dico.mo
+%%NLS%%share/locale/es/LC_MESSAGES/dico.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/dico.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/dico.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/dico.mo
