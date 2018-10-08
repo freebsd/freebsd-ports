@@ -58,7 +58,7 @@ MAILHEAD_DESC=	Enable mail header patch
 LINKTHR_DESC=	Link thread lib (for threaded extensions)
 ZTS_DESC=	Force Zend Thread Safety (ZTS) build
 
-CONFLICTS=	php56-* php70-* php72-*
+CONFLICTS=	php56-* php70-* php72-* php73-*
 
 DESTDIRNAME=	INSTALL_ROOT
 
