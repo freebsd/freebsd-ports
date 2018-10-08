@@ -83,7 +83,6 @@
 %%DATADIR%%/dcim/filters.py
 %%DATADIR%%/dcim/fixtures/dcim.json
 %%DATADIR%%/dcim/fixtures/initial_data.json
-%%DATADIR%%/dcim/formfields.py
 %%DATADIR%%/dcim/forms.py
 %%DATADIR%%/dcim/migrations/0001_initial.py
 %%DATADIR%%/dcim/migrations/0002_auto_20160622_1821.py
@@ -150,6 +149,7 @@
 %%DATADIR%%/dcim/migrations/0060_change_logging.py
 %%DATADIR%%/dcim/migrations/0061_platform_napalm_args.py
 %%DATADIR%%/dcim/migrations/0062_interface_mtu.py
+%%DATADIR%%/dcim/migrations/0063_device_local_context_data.py
 %%DATADIR%%/dcim/migrations/__init__.py
 %%DATADIR%%/dcim/models.py
 %%DATADIR%%/dcim/querysets.py
@@ -608,6 +608,7 @@
 %%DATADIR%%/users/migrations/0001_api_tokens.py
 %%DATADIR%%/users/migrations/0001_api_tokens_squashed_0002_unicode_literals.py
 %%DATADIR%%/users/migrations/0002_unicode_literals.py
+%%DATADIR%%/users/migrations/0003_token_permissions.py
 %%DATADIR%%/users/migrations/__init__.py
 %%DATADIR%%/users/models.py
 %%DATADIR%%/users/urls.py
@@ -661,6 +662,7 @@
 %%DATADIR%%/virtualization/migrations/0005_django2.py
 %%DATADIR%%/virtualization/migrations/0006_tags.py
 %%DATADIR%%/virtualization/migrations/0007_change_logging.py
+%%DATADIR%%/virtualization/migrations/0008_virtualmachine_local_context_data.py
 %%DATADIR%%/virtualization/migrations/__init__.py
 %%DATADIR%%/virtualization/models.py
 %%DATADIR%%/virtualization/tables.py
