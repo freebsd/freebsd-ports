@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	https://computation.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Scalable Linear Solvers and Multigrid Methods
 
 LICENSE=	LGPL21
