@@ -10569,3 +10569,4 @@ biology/tinker|science/tinker|2018-10-06|Move to proper category
 net-im/telepathy-qt4|net-im/telepathy-qt@qt4|2018-10-07|Moved to flavored version
 net-im/telepathy-qt5|net-im/telepathy-qt@qt5|2018-10-07|Moved to flavored version
 graphics/gegl3|graphics/gegl|2018-10-07|Replaced old gegl version with the newer version
+www/mediawiki129|www/mediawiki131|2018-10-08|Has expired: Deprecated by upstream
