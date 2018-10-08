@@ -852,6 +852,10 @@
     SUBDIR += php72-hash
     SUBDIR += php72-openssl
     SUBDIR += php72-sodium
+    SUBDIR += php73-filter
+    SUBDIR += php73-hash
+    SUBDIR += php73-openssl
+    SUBDIR += php73-sodium
     SUBDIR += phpdeadlock
     SUBDIR += phpsecinfo
     SUBDIR += pidentd

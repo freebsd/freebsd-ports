@@ -467,6 +467,7 @@
     SUBDIR += mod_php70
     SUBDIR += mod_php71
     SUBDIR += mod_php72
+    SUBDIR += mod_php73
     SUBDIR += mod_proctitle
     SUBDIR += mod_proxy_xml
     SUBDIR += mod_python35
@@ -1463,6 +1464,9 @@
     SUBDIR += php72-opcache
     SUBDIR += php72-session
     SUBDIR += php72-tidy
+    SUBDIR += php73-opcache
+    SUBDIR += php73-session
+    SUBDIR += php73-tidy
     SUBDIR += phpbb
     SUBDIR += phpbb3
     SUBDIR += phpgroupware
