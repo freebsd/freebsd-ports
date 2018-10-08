@@ -22,6 +22,8 @@
 %%PLUGINDIR_REL%%/localization/ru_RU.inc
 %%PLUGINDIR_REL%%/localization/sk_SK.inc
 %%PLUGINDIR_REL%%/localization/uk_UA.inc
+%%PLUGINDIR_REL%%/node_modules/roundcube/index.js
+%%PLUGINDIR_REL%%/node_modules/roundcube/package.json
 %%PLUGINDIR_REL%%/skins/classic/tb_label.css
 %%PLUGINDIR_REL%%/skins/classic/thunderbird_32.png
 %%PLUGINDIR_REL%%/skins/default/tb_label.css
@@ -30,4 +32,5 @@
 %%PLUGINDIR_REL%%/skins/larry/thunderbird_24.png
 %%PLUGINDIR_REL%%/skins/larry/thunderbird_32.png
 %%PLUGINDIR_REL%%/tb_label.js
+%%PLUGINDIR_REL%%/tb_label_contextmenu.js
 %%PLUGINDIR_REL%%/thunderbird_labels.php
