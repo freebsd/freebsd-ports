@@ -1,6 +1,14 @@
---- source3/wscript_build.orig	2017-07-25 13:09:58 UTC
+--- source3/wscript_build.orig	2018-08-11 19:50:02 UTC
 +++ source3/wscript_build
-@@ -240,11 +240,9 @@ bld.SAMBA3_SUBSYSTEM('SMBREGISTRY',
+@@ -143,7 +143,6 @@ ldapsam_pdb_match = ['!priv2ld', '!smbldap_search_doma
+                      '!get_attr_list']
+ private_pdb_match.append('!pdb_nds_*')
+ private_pdb_match.append('!pdb_ldapsam_init*')
+-private_pdb_match.append('!pdb_*_init')
+ private_pdb_match = private_pdb_match + ldapsam_pdb_match
+ 
+ bld.SAMBA3_LIBRARY('samba-passdb',
+@@ -240,11 +239,9 @@ bld.SAMBA3_SUBSYSTEM('SMBREGISTRY',
                          talloc
                          replace
                          util_reg
@@ -13,7 +21,7 @@
                          ''')
  
  # Do not link against this use 'smbconf'
-@@ -509,7 +507,7 @@ bld.SAMBA3_LIBRARY('secrets3',
+@@ -510,7 +507,7 @@ bld.SAMBA3_LIBRARY('secrets3',
  
  bld.SAMBA3_LIBRARY('smbldap',
                      source='lib/smbldap.c',
@@ -22,7 +30,7 @@
                      enabled=bld.CONFIG_SET("HAVE_LDAP"),
                      private_library=False,
                      abi_directory='lib/ABI',
-@@ -733,6 +731,7 @@ bld.SAMBA3_LIBRARY('smbd_base',
+@@ -734,6 +731,7 @@ bld.SAMBA3_LIBRARY('smbd_base',
                          smbd_conn
                          param_service
                          AVAHI
@@ -30,7 +38,7 @@
                          PRINTBASE
                          PROFILE
                          LOCKING
-@@ -1121,6 +1120,7 @@ bld.SAMBA3_BINARY('client/smbclient',
+@@ -1122,6 +1120,7 @@ bld.SAMBA3_BINARY('client/smbclient',
                        msrpc3
                        RPC_NDR_SRVSVC
                        cli_smb_common

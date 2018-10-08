@@ -1,6 +1,14 @@
 --- source3/wscript_build.orig	2017-05-23 08:19:23 UTC
 +++ source3/wscript_build
-@@ -741,6 +741,7 @@ bld.SAMBA3_LIBRARY('smbd_base',
+@@ -151,7 +151,6 @@ ldapsam_pdb_match = ['!priv2ld', '!smbldap_search_doma
+                      '!get_attr_list']
+ private_pdb_match.append('!pdb_nds_*')
+ private_pdb_match.append('!pdb_ldapsam_init*')
+-private_pdb_match.append('!pdb_*_init')
+ private_pdb_match = private_pdb_match + ldapsam_pdb_match
+ 
+ bld.SAMBA3_LIBRARY('samba-passdb',
+@@ -741,6 +740,7 @@ bld.SAMBA3_LIBRARY('smbd_base',
                          smbd_conn
                          param_service
                          AVAHI
@@ -8,7 +16,7 @@
                          PRINTBASE
                          PROFILE
                          LOCKING
-@@ -1129,6 +1130,7 @@ bld.SAMBA3_BINARY('client/smbclient',
+@@ -1129,6 +1129,7 @@ bld.SAMBA3_BINARY('client/smbclient',
                        msrpc3
                        RPC_NDR_SRVSVC
                        cli_smb_common
