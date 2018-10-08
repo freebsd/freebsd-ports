@@ -1,11 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.5.11
-PORTREVISION=	3
+PORTVERSION=	2.5.12
+#PORTREVISION=	0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
-		http://cyrusimap.org/releases/
+MASTER_SITES=	https://github.com/cyrusimap/cyrus-imapd/releases/download/${PORTNAME}-${PORTVERSION}/ \
+		http://cyrusimap.org/releases/ \
+		ftp://ftp.cyrusimap.org/cyrus-imapd/
 PKGNAMESUFFIX=	25
 
 MAINTAINER=	ume@FreeBSD.org
@@ -44,10 +45,10 @@ MAKE_JOBS_UNSAFE=	yes
 CPE_VENDOR=	cmu
 CPE_PRODUCT=	cyrus_imap_server
 
-OPTIONS_DEFINE=		AUTOCREATE BDB HTTP IDLED LDAP MURDER MYSQL \
+OPTIONS_DEFINE=		AUTOCREATE BDB CLAMAV HTTP IDLED LDAP MURDER MYSQL \
 			NETSCAPEHACK NNTP PGSQL REPLICATION SNMP SQLITE DOCS \
 			EXAMPLES
-#OPTIONS_DEFINE+=	CLAMAV DRAC
+#OPTIONS_DEFINE+=	DRAC
 OPTIONS_DEFAULT=	BDB IDLED
 OPTIONS_SUB=		yes
 AUTOCREATE_DESC=	Enable autocreate support
@@ -152,9 +153,6 @@ INVALID_BDB_VER=2
 BDB_LIB_NAME=	no
 .endif
 
-.if ${PORT_OPTIONS:MCLAMAV}
-IGNORE=		CLAMAV is not available yet
-.endif
 PLIST_SUB+=	CLAMAV="@comment "
 
 .if ${PORT_OPTIONS:MDRAC}
