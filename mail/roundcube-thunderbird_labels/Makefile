@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird_labels
-PORTVERSION=	1.1.4
+PORTVERSION=	1.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 PKGNAMEPREFIX=	roundcube-
@@ -42,6 +42,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PLUGINDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PLUGINDIR}
 	cd ${STAGEDIR}${PLUGINDIR} && \
-		${MV} config.inc.php config.inc.php.sample
+		${MV} config.inc.php config.inc.php.sample && \
+		${RM} coffee2js.sh docs/_config.yml && \
+		${RM} -r coffeescripts
 
 .include <bsd.port.mk>
