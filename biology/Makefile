@@ -65,6 +65,7 @@
     SUBDIR += mummer
     SUBDIR += muscle
     SUBDIR += ncbi-blast+
+    SUBDIR += ncbi-cxx-toolkit
     SUBDIR += ncbi-toolkit
     SUBDIR += ngs-sdk
     SUBDIR += njplot
