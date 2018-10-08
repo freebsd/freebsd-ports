@@ -20,7 +20,6 @@ USES=		kmod
 
 # Present version of net/intel-em-kmod has issues building with netmap(4)
 # support on 11+. Narrowing netmap(4) support to this port only
-.if ${PORTNAME} == ixl
 OPTIONS_SINGLE=		NETMAP
 OPTIONS_SINGLE_NETMAP=	NETMAP_AUTO NETMAP_ON NETMAP_OFF
 OPTIONS_DEFAULT=	NETMAP_AUTO
@@ -31,7 +30,6 @@ NETMAP_OFF_DESC=	Disable netmap(4) support unconditionally
 
 NETMAP_ON_CFLAGS=	-DDEV_NETMAP
 NETMAP_OFF_CFLAGS=	-UDEV_NETMAP
-.endif
 
 WRKSRC_SUBDIR=	src
 
@@ -46,6 +44,8 @@ PLIST_FILES=	${KMODDIR}/if_${PORTNAME}_updated.ko \
 PLIST_FILES+=	man/man4/${link}.4.gz
 .endfor
 
+MAX_NETMAP_OSVERSION?=	9900000  # Maximum OSVERSION for which NETMAP support works
+
 .include <bsd.port.pre.mk>
 
 # Fixup for slave ports that use this as a master port. sbruno
@@ -54,7 +54,7 @@ ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	Not supported on other architectures, amd64 only.
 .endif
 
-.if ${PORT_OPTIONS:MNETMAP_AUTO} && ${OSVERSION} >= 1100000
+.if ${PORT_OPTIONS:MNETMAP_AUTO} && ${OSVERSION} >= 1100000  && ${OSVERSION} <= ${MAX_NETMAP_OSVERSION}
 CFLAGS+=	-DDEV_NETMAP
 .endif
 
