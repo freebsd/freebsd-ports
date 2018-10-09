@@ -5,7 +5,7 @@ PORTNAME=	gem5
 PORTVERSION=	0.0.${DATE}
 CATEGORIES=	emulators
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	gem5 Simulator System
 
 BUILD_DEPENDS=	swig3.0:devel/swig30 \
