@@ -3,7 +3,7 @@
 
 PORTNAME=	revelation
 PORTVERSION=	0.4.14
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security gnome
 MASTER_SITES=	https://bitbucket.org/erikg/revelation/downloads/
 
@@ -31,7 +31,7 @@ GCONF_SCHEMAS=	revelation.schemas
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-DICTPATH=	${LOCALBASE}/libdata/cracklib/pw_dict
+DICTPATH=	${LOCALBASE}/libdata/cracklib/cracklib-words
 
 post-patch:
 	@${REINPLACE_CMD} -e \
