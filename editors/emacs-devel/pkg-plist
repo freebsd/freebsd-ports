@@ -14,8 +14,8 @@ man/man1/ebrowse.1.gz
 man/man1/emacs.1.gz
 man/man1/emacsclient.1.gz
 man/man1/etags.1.gz
-share/appdata/emacs.appdata.xml
 share/applications/emacs.desktop
+share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/%%ETCDIR%%-buffer.gdb
 %%DATADIR%%/%%EMACS_VER%%/%%ETCDIR%%.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/%%ETCDIR%%.desktop
@@ -1653,8 +1653,6 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/testcover.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/text-property-search.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/text-property-search.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/thread.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/thread.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/thunk.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/thunk.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/timer-list.el.gz
@@ -2656,6 +2654,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/mpc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/msb.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/msb.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/multifile.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/multifile.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/mwheel.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/mwheel.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/ange-ftp.el.gz
@@ -3685,6 +3685,8 @@ share/applications/emacs.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/underline.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/thingatpt.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/thingatpt.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/thread.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/thread.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/thumbs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/thumbs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/time-stamp.el.gz
@@ -4055,6 +4057,7 @@ share/applications/emacs.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/textprop.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/thread.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/thread.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/timefns.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/tparam.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/tparam.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/undo.c
@@ -4115,6 +4118,7 @@ share/applications/emacs.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/xterm.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/xwidget.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/xwidget.h
+include/emacs-module.h
 share/icons/hicolor/128x128/apps/emacs.png
 share/icons/hicolor/16x16/apps/emacs.png
 share/icons/hicolor/24x24/apps/emacs.png
