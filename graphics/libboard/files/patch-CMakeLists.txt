@@ -1,7 +1,10 @@
 --- CMakeLists.txt.orig	2016-06-09 17:30:46 UTC
 +++ CMakeLists.txt
-@@ -149,8 +149,8 @@ install(DIRECTORY include/ DESTINATION i
+@@ -147,10 +147,11 @@ SET_TARGET_PROPERTIES(board-dynamic PROP
+ 
+ install(DIRECTORY include/ DESTINATION include FILES_MATCHING PATTERN "*.h")
  install(DIRECTORY include/board/ DESTINATION include/board FILES_MATCHING PATTERN "*.h")
++install(DIRECTORY include/board/ DESTINATION include/board FILES_MATCHING PATTERN "*.ih")
  install(TARGETS board DESTINATION lib)
  install(TARGETS board-dynamic DESTINATION lib)
 -install(DIRECTORY examples/ DESTINATION share/libboard/examples FILES_MATCHING PATTERN "*.cpp")
