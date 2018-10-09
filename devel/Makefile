@@ -4093,8 +4093,8 @@
     SUBDIR += pecl-vld
     SUBDIR += pecl-weakref
     SUBDIR += pecl-weakref2
+    SUBDIR += pecl-xdebug
     SUBDIR += pecl-xdebug25
-    SUBDIR += pecl-xdebug26
     SUBDIR += pecl-xhprof
     SUBDIR += pecl-yac
     SUBDIR += pecl-yaconf

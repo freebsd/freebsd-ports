@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	xdebug
-DISTVERSION=	2.6.0
+DISTVERSION=	2.6.1
 CATEGORIES=	devel pear
-PKGNAMESUFFIX=	26
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Xdebug extension for PHP
@@ -12,7 +11,7 @@ COMMENT=	Xdebug extension for PHP
 LICENSE=	PHP30
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_WITH_PHP=	56
+IGNORE_WITH_PHP=	56 73
 
 CONFIGURE_ARGS=	--enable-xdebug
 USES=		php:pecl,zend tar:tgz
