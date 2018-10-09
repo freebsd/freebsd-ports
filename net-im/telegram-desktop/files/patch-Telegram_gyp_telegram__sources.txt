@@ -1,6 +1,6 @@
---- Telegram/gyp/telegram_sources.txt.orig	2018-08-04 18:53:40 UTC
+--- Telegram/gyp/telegram_sources.txt.orig	2018-09-28 13:08:38 UTC
 +++ Telegram/gyp/telegram_sources.txt
-@@ -801,14 +801,7 @@
+@@ -755,14 +755,7 @@
  <(emoji_suggestions_loc)/emoji_suggestions.cpp
  <(emoji_suggestions_loc)/emoji_suggestions.h
  
@@ -14,5 +14,5 @@
 -<(minizip_loc)/unzip.h
 +<(src_loc)/qt_functions.cpp
  
- platforms: mac
- <(sp_media_key_tap_loc)/SPMediaKeyTap.m
+ platforms: win
+ <(res_loc)/winrc/Telegram.rc

@@ -1,5 +1,5 @@
---- Telegram/SourceFiles/settings/settings_notifications_widget.cpp.orig	2018-08-04 18:53:40 UTC
-+++ Telegram/SourceFiles/settings/settings_notifications_widget.cpp
+--- Telegram/SourceFiles/old_settings/settings_notifications_widget.cpp.orig	2018-09-28 13:08:38 UTC
++++ Telegram/SourceFiles/old_settings/settings_notifications_widget.cpp
 @@ -69,9 +69,9 @@ void NotificationsWidget::createNotifica
  	if (Platform::Notifications::Supported()) {
  #ifdef Q_OS_WIN

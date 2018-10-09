@@ -1,15 +1,15 @@
---- Telegram/SourceFiles/logs.cpp.orig	2018-08-04 18:53:40 UTC
+--- Telegram/SourceFiles/logs.cpp.orig	2018-09-28 13:08:38 UTC
 +++ Telegram/SourceFiles/logs.cpp
-@@ -333,7 +333,7 @@ void start(not_null<Core::Launcher*> lau
- 	if (cBetaVersion()) {
- 		SetDebugEnabled(true);
+@@ -332,7 +332,7 @@ void start(not_null<Core::Launcher*> lau
+ 
+ 	if (cAlphaVersion()) {
  		workingDirChosen = true;
 -#if defined Q_OS_MAC || defined Q_OS_LINUX
 +#if defined Q_OS_MAC || defined Q_OS_LINUX || defined Q_OS_FREEBSD
  	} else {
  #ifdef _DEBUG
  		cForceWorkingDir(cExeDir());
-@@ -347,15 +347,15 @@ void start(not_null<Core::Launcher*> lau
+@@ -346,15 +346,15 @@ void start(not_null<Core::Launcher*> lau
  #endif // !_DEBUG
  		workingDirChosen = true;
  
@@ -29,7 +29,7 @@
  #ifdef _DEBUG
  		cForceWorkingDir(cExeDir());
  #else // _DEBUG
-@@ -369,7 +369,7 @@ void start(not_null<Core::Launcher*> lau
+@@ -368,7 +368,7 @@ void start(not_null<Core::Launcher*> lau
  			cForceWorkingDir(cWorkingDir());
  			workingDirChosen = true;
  		}
