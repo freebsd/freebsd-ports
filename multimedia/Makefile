@@ -333,6 +333,7 @@
     SUBDIR += pwcbsd
     SUBDIR += pwcview
     SUBDIR += py-PySceneDetect
+    SUBDIR += py-av
     SUBDIR += py-cec
     SUBDIR += py-enzyme
     SUBDIR += py-flvlib
