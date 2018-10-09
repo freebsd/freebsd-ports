@@ -1,11 +1,15 @@
---- configure.orig	Wed Oct  1 19:19:53 2003
-+++ configure	Sun Jan 11 20:48:06 2004
-@@ -7502,7 +7502,7 @@
+--- configure.orig	2017-09-13 12:09:54 UTC
++++ configure
+@@ -7518,9 +7518,9 @@ fi
+ 
+ rm -f Makedep
  ac_n="${ac_n:-$ECHO_N}"
- echo $ac_n "running make Makedep""... $ac_c" 1>&6
- echo "configure:7504: running make Makedep" >&5
--if >&5 2>&5 make Makedep; then :
-+if >&5 2>&5 gmake Makedep; then :
+-echo $ac_n "running make Makedep.force""... $ac_c" 1>&6
+-echo "configure:7504: running make Makedep.force" >&5
+-if >&5 2>&5 make Makedep.force; then :
++echo $ac_n "running ${MAKE:-make} Makedep.force""... $ac_c" 1>&6
++echo "configure:7504: running ${MAKE:-make} Makedep.force" >&5
++if >&5 2>&5 ${MAKE:-make} Makedep.force; then :
    echo "$as_me:$LINENO: result: ok" >&5
  echo "${ECHO_T}ok" >&6
  

@@ -1,6 +1,6 @@
---- gensio.cpp.orig	Fri Feb  7 02:24:56 2003
-+++ gensio.cpp	Fri Feb  7 02:25:11 2003
-@@ -491,11 +491,7 @@
+--- gensio.cpp.orig	2014-01-19 19:50:35 UTC
++++ gensio.cpp
+@@ -731,11 +731,7 @@ slen_t Filter::FlatD::vi_read(char *to_b
  /* --- */
  
  
