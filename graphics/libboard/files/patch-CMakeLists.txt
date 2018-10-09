@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2016-06-09 17:30:46 UTC
++++ CMakeLists.txt
+@@ -149,8 +149,8 @@ install(DIRECTORY include/ DESTINATION i
+ install(DIRECTORY include/board/ DESTINATION include/board FILES_MATCHING PATTERN "*.h")
+ install(TARGETS board DESTINATION lib)
+ install(TARGETS board-dynamic DESTINATION lib)
+-install(DIRECTORY examples/ DESTINATION share/libboard/examples FILES_MATCHING PATTERN "*.cpp")
+-install(FILES README.md LICENSE AUTHORS DESTINATION share/libboard )
++install(DIRECTORY examples/ DESTINATION share/examples/libboard FILES_MATCHING PATTERN "*.cpp")
++install(FILES README.md LICENSE AUTHORS DESTINATION share/doc/libboard )
+ 
+ FOREACH( EXAMPLE logo example1 example2 example3 example4
+     arithmetic ellipse graph arrows  ruler koch clipping
