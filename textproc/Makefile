@@ -280,6 +280,7 @@
     SUBDIR += hs-pandoc
     SUBDIR += hs-pandoc-citeproc
     SUBDIR += hs-pandoc-types
+    SUBDIR += hs-parsec-numbers
     SUBDIR += hs-polyparse
     SUBDIR += hs-pretty-show
     SUBDIR += hs-regex-applicative
