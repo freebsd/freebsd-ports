@@ -15,11 +15,12 @@ $OpenBSD: patch-Makefile,v 1.12 2016/12/12 10:54:39 sthen Exp $
 @@ -344,7 +344,11 @@ THIRD_OBJ := \
  THREAD_OBJ := $(THREAD_OBJ)
  
- $(MUPDF_LIB) : $(MUPDF_OBJ)
-+	$(CC) $(LDFLAGS) -fPIC -shared -Wl,-soname=$@ -o $@ $^ $(LIBS)
+-$(MUPDF_LIB) : $(MUPDF_OBJ)
++$(MUPDF_LIB) : $(MUPDF_OBJ) $(THIRD_LIB)
++	$(CC) $(LDFLAGS) -fPIC -shared -Wl,-soname=$@ -Wl,--no-undefined -o $@ $^ $(LIBS)
 +
  $(THIRD_LIB) : $(THIRD_OBJ)
-+	$(CC) $(LDFLAGS) -fPIC -shared -Wl,-soname=$@ -o $@ $^ $(LIBS)
++	$(CC) $(LDFLAGS) -fPIC -shared -Wl,-soname=$@ -Wl,--no-undefined -o $@ $^ $(LIBS)
 +
  $(THREAD_LIB) : $(THREAD_OBJ)
  
