@@ -12,11 +12,7 @@ COMMENT=	Framework for scalable cross-language services development
 
 LICENSE=	APACHE20
 
-BROKEN_mips=		fails to compile: unrecognized command line option "-Wno-c++11-long-long"
-BROKEN_mips64=		fails to compile: unrecognized command line option "-Wno-c++11-long-long"
-BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Wno-c++11-long-long"
-
-USES=		autoreconf libtool pkgconfig
+USES=		autoreconf compiler:c++11-lang libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
