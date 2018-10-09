@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	nwchem
-DISTVERSION=	6.8.1-release-94
-DISTVERSIONSUFFIX=	-g1a262862b
-PORTREVISION=	5
+DISTVERSION=	6.8.1-release-144
+DISTVERSIONSUFFIX=	-gb1062ed2c
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -37,7 +36,6 @@ SUB_FILES=	nwchemrc
 WRKSRC_SUBDIR=	src
 
 BINARY_ALIAS=	gcc=${CC}
-MAKE_ARGS=	LDFLAGS_FREEBSD="${LDFLAGS}"
 
 post-extract:
 	@${RM} ${WRKSRC}/atomscf/src.orig

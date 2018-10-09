@@ -621,6 +621,7 @@ etc/nwchemrc
 %%DATADIR%%/libraries/aug-pc-2
 %%DATADIR%%/libraries/aug-pc-3
 %%DATADIR%%/libraries/aug-pc-4
+%%DATADIR%%/libraries/aug-pc-infinity
 %%DATADIR%%/libraries/aug-pcj-0
 %%DATADIR%%/libraries/aug-pcj-0_2006
 %%DATADIR%%/libraries/aug-pcj-1
