@@ -4094,6 +4094,7 @@
     SUBDIR += pecl-weakref
     SUBDIR += pecl-weakref2
     SUBDIR += pecl-xdebug
+    SUBDIR += pecl-xdebug-devel
     SUBDIR += pecl-xdebug25
     SUBDIR += pecl-xhprof
     SUBDIR += pecl-yac
