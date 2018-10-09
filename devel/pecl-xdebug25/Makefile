@@ -5,6 +5,7 @@ PORTNAME=	xdebug
 PORTVERSION=	2.5.5
 PORTREVISION=	1
 CATEGORIES=	devel pear
+PKGNAMESUFFIX=	25
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	Xdebug extension for PHP
@@ -12,7 +13,7 @@ COMMENT=	Xdebug extension for PHP
 LICENSE=	PHP30
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_WITH_PHP=	72
+IGNORE_WITH_PHP=	72 73
 
 CONFIGURE_ARGS=	--enable-xdebug
 USES=		php:pecl,zend
