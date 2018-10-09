@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinc
-PORTVERSION=	1.1pre16
+PORTVERSION=	1.1pre17
 CATEGORIES=	security
 MASTER_SITES=	https://www.tinc-vpn.org/packages/ \
 		http://www.tinc-vpn.org/packages/
