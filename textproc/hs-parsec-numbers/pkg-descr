@@ -1,0 +1,4 @@
+This package provides the number parsers without the need to use a large
+(and unportable) token parser.
+
+WWW: https://hackage.haskell.org/package/parsec-numbers
