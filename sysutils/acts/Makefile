@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	acts
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 PORTREVISION=	0
 CATEGORIES=	sysutils archivers
 
