@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20181009:
+  AFFECTS: users of devel/pecl-xdebug*
+  AUTHOR: pizzamig@FreeBSD.org
+
+  xdebug 2.6.1 (devel/pecl-xdebug) is the new default version and it supports
+  PHP from 7.0 to 7.2 included.
+  If you're using PHP 5.6, the previous compatible xdebug version is still
+  available in devel/pecl-xdebug25
+  If you're using PHP 7.3, the only compatible xdebug version is available
+  in devel/pecl-xdebug-devel
+
 20180930:
   AFFECTS: users of DRM components
   AUTHOR: jmd@FreeBSD.org
