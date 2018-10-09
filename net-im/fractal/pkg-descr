@@ -1,0 +1,5 @@
+Fractal is a Gtk+ Matrix messaging client written in Rust.
+Its interface is optimized for collaboration in large groups
+such as free software projects.
+
+WWW: https://wiki.gnome.org/Apps/Fractal
