@@ -1,0 +1,11 @@
+--- examples/Makefile.orig	2017-04-11 04:35:01 UTC
++++ examples/Makefile
+@@ -8,7 +8,7 @@ include ../Link_flags
+ 
+ override INCLUDE += -I../include
+ override FINCLUDE += -I../include
+-LIBDIRS += -L../lib
++LIBDIRS += ../lib/libprimme.so
+ 
+ EXAMPLES_C = ex_eigs_dseq ex_eigs_zseq ex_svds_dseq ex_svds_zseq
+ EXAMPLES_CXX = ex_eigs_zseqxx ex_svds_zseqxx

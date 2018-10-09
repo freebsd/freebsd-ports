@@ -1,0 +1,11 @@
+--- tests/Makefile.orig	2018-10-08 19:10:07 UTC
++++ tests/Makefile
+@@ -9,7 +9,7 @@ include ../Link_flags
+ SOBJS= COMMON/shared_utils.o COMMON/ioandtest.o
+ COMMON_INCLUDE = -I./COMMON -I../include
+ override INCLUDE += $(COMMON_INCLUDE)
+-LIBDIRS += -L../lib
++LIBDIRS += ../lib/libprimme.so
+ 
+ USE_NATIVE    ?= yes
+ USE_PETSC     ?= $(if $(findstring undefined,$(origin PETSC_DIR)),no,yes)

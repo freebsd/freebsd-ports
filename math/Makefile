@@ -656,6 +656,7 @@
     SUBDIR += plplot
     SUBDIR += plplot-ada
     SUBDIR += primegen
+    SUBDIR += primme
     SUBDIR += prng
     SUBDIR += proofgeneral
     SUBDIR += pspp

@@ -1,0 +1,11 @@
+--- src/Makefile.orig	2018-10-09 07:03:22 UTC
++++ src/Makefile
+@@ -89,7 +89,7 @@ auto_headers: $(AUTOMATED_HEADERS_LINALG
+ 	$(RANLIB) $@
+ 
+ ../lib/$(SOLIBRARY): ../lib/$(LIBRARY)
+-	$(CC) -shared -o ../lib/$(SOLIBRARY) -Wl,--whole-archive ../lib/$(LIBRARY) -Wl,--no-whole-archive
++	$(CC) -shared -o ../lib/$(SOLIBRARY) -Wl,--whole-archive ../lib/$(LIBRARY) -Wl,--no-whole-archive $(LDFLAGS)
+ 
+ #
+ # Generate CTAGS
