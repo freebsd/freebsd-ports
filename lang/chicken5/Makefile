@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	chicken
-DISTVERSION=	5.0.0rc2
+DISTVERSION=	5.0.0rc3
 CATEGORIES=	lang scheme
-MASTER_SITES=	https://code.call-cc.org/dev-snapshots/2018/09/09/
+MASTER_SITES=	https://code.call-cc.org/dev-snapshots/2018/10/08/
 PKGNAMESUFFIX=	5
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -38,13 +38,6 @@ OPTIONS_SUB=	yes
 FEATHERS_DESC=	Install the Feathers debugger (requires Tcl/Tk)
 
 FEATHERS_USES=	tk:wrapper,run
-
-post-patch-FEATHERS-off:
-	@${REINPLACE_CMD} \
-		-e 's/feathers.1//g' \
-		-e '/INSTALL_PROGRAM.*_DEBUGGER_/{N;d;}' \
-		-e '/INSTALL_PROGRAM.*feathers/d' \
-		${WRKSRC}/rules.make
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/c* \
