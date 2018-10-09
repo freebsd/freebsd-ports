@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	treesheets
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -13,7 +12,7 @@ COMMENT=	Free form data organizer
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/ZLIB_LICENSE.txt
 
-USES=		compiler:c++11-lib desktop-file-utils
+USES=		compiler:c++17-lang desktop-file-utils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aardappel
@@ -25,7 +24,7 @@ BUILD_WRKSRC=	${WRKSRC}/src
 PACKAGE_VERSION=	\"${PORTVERSION}\"
 MAKE_ENV=	PACKAGE_VERSION=${PACKAGE_VERSION:Q}
 
-PORTDATA=	images
+PORTDATA=	images scripts translations/*/*.mo
 PORTDOCS=	docs *.html
 PORTEXAMPLES=	*
 
@@ -35,6 +34,14 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/treesheets.png
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.pre.mk>
+
+.if (${OPSYS} == FreeBSD && ${OSVERSION} < 1100000) || make(makesum)
+MASTER_SITES+=	http://releases.llvm.org/6.0.1/:llvm
+DISTFILES+=	libcxx-6.0.1.src.tar.xz:llvm
+CXXFLAGS+=	-isystem ${WRKDIR}/libcxx-6.0.1.src/include
+.endif
 
 post-patch: .SILENT
 	${REINPLACE_CMD} -e 's|sys->frame->GetPath(L"|(L"${DOCSDIR}/|' \
@@ -64,4 +71,4 @@ do-install-EXAMPLES-on:
 	(cd ${WRKSRC}/TS/examples && ${COPYTREE_SHARE} "${PORTEXAMPLES}" \
 		${STAGEDIR}${EXAMPLESDIR})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
