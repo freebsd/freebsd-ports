@@ -137,6 +137,7 @@
     SUBDIR += linuxlibertine-g
     SUBDIR += lohit
     SUBDIR += manu-gothica
+    SUBDIR += materialdesign-ttf
     SUBDIR += meslo
     SUBDIR += mgopen
     SUBDIR += mkbold
