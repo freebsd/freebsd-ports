@@ -9,7 +9,9 @@ set_target_properties(Telegram PROPERTIES SKIP_BUILD_RPATH TRUE)
 # lines.
 include(../../Telegram/gyp/PrecompiledHeader.cmake)
 add_precompiled_header(Telegram ../../Telegram/SourceFiles/stdafx.h)
+add_precompiled_header(lib_base ../../Telegram/SourceFiles/base/base_pch.h)
 add_precompiled_header(lib_export ../../Telegram/SourceFiles/export/export_pch.h)
+add_precompiled_header(lib_storage ../../Telegram/SourceFiles/storage/storage_pch.h)
 
 # vim: ft=cmake
 # -------------- debian/CMakeLists.inj end --------------

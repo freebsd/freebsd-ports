@@ -1,6 +1,6 @@
---- Telegram/ThirdParty/libtgvoip/audio/AudioInput.cpp.orig	2018-07-17 16:48:21 UTC
+--- Telegram/ThirdParty/libtgvoip/audio/AudioInput.cpp.orig	2018-09-18 16:52:01 UTC
 +++ Telegram/ThirdParty/libtgvoip/audio/AudioInput.cpp
-@@ -24,7 +24,7 @@
+@@ -26,7 +26,7 @@
  #include "../os/windows/AudioInputWave.h"
  #endif
  #include "../os/windows/AudioInputWASAPI.h"
@@ -9,7 +9,7 @@
  #ifndef WITHOUT_ALSA
  #include "../os/linux/AudioInputALSA.h"
  #endif
-@@ -68,7 +68,7 @@ void AudioInput::EnumerateDevices(std::v
+@@ -72,7 +72,7 @@ void AudioInput::EnumerateDevices(std::v
  	}
  #endif
  	AudioInputWASAPI::EnumerateDevices(devs);
