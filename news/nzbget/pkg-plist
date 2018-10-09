@@ -1,9 +1,8 @@
 bin/nzbget
 @sample etc/nzbget.conf.sample
-@comment %%PORTDOCS%%%%DOCSDIR%%/COPYING
-@comment %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/README
 %%DATADIR%%/nzbget.conf
 %%DATADIR%%/scripts/EMail.py
 %%DATADIR%%/scripts/Logger.py
