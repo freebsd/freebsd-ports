@@ -130,6 +130,7 @@ man/man1/csi%%SUFFIX%%.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken tcp).html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken time posix).html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken time).html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Module (chicken type).html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Module r4rs.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Module r5rs.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/Module scheme.html
