@@ -1,8 +1,12 @@
 %%SITE_PERL%%/Statistics/Descriptive.pm
+%%SITE_PERL%%/Statistics/Descriptive/Full.pm
+%%SITE_PERL%%/Statistics/Descriptive/Sparse.pm
 %%SITE_PERL%%/Statistics/Descriptive/Smoother.pm
 %%SITE_PERL%%/Statistics/Descriptive/Smoother/Exponential.pm
 %%SITE_PERL%%/Statistics/Descriptive/Smoother/Weightedexponential.pm
 %%PERL5_MAN3%%/Statistics::Descriptive.3.gz
+%%PERL5_MAN3%%/Statistics::Descriptive::Full.3.gz
+%%PERL5_MAN3%%/Statistics::Descriptive::Sparse.3.gz
 %%PERL5_MAN3%%/Statistics::Descriptive::Smoother.3.gz
 %%PERL5_MAN3%%/Statistics::Descriptive::Smoother::Exponential.3.gz
 %%PERL5_MAN3%%/Statistics::Descriptive::Smoother::Weightedexponential.3.gz
