@@ -21,6 +21,7 @@
     SUBDIR += farstream
     SUBDIR += finch
     SUBDIR += folks
+    SUBDIR += fractal
     SUBDIR += freetalk
     SUBDIR += fugu
     SUBDIR += gajim
