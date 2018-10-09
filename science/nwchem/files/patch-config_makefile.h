@@ -12,9 +12,3 @@
          GNU_GE_4_6 = $(shell [ $(GNUMAJOR) -gt 4 -o \( $(GNUMAJOR) -eq 4 -a $(GNUMINOR) -ge 6 \) ] && echo true)
          GNU_GE_4_8 = $(shell [ $(GNUMAJOR) -gt 4 -o \( $(GNUMAJOR) -eq 4 -a $(GNUMINOR) -ge 8 \) ] && echo true)
          endif
-@@ -2985,4 +2985,4 @@ endif
- 
- endif
- 
--
-+LINK.f += $(LDFLAGS_FREEBSD) # ignores LDFLAGS: https://github.com/nwchemgit/nwchem/issues/64
