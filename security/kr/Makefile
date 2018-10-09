@@ -9,6 +9,7 @@ CATEGORIES=	security
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	SSH and Git commit/tag signing using a key stored in Krypton
 
+BROKEN=		fails to build
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	Uses 64bit types
 
