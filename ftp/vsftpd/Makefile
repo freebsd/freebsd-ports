@@ -3,6 +3,7 @@
 
 PORTNAME=	vsftpd
 PORTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	https://security.appspot.com/downloads/ \
 		GENTOO
