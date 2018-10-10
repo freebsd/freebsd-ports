@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nloptr
-PORTVERSION=	1.0.4
-PORTREVISION=	2
+PORTVERSION=	1.2.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -15,8 +14,5 @@ LICENSE=	LGPL3
 LIB_DEPENDS=	libnlopt.so:math/nlopt
 
 USES=		cran:auto-plist,compiles pkgconfig
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/<<</</' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
