@@ -2,7 +2,7 @@
 
 PORTNAME=	primme
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1
+DISTVERSION=	2.1.20181010 # git describe doesn't identify the tag properly
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,6 +17,7 @@ TEST_DEPENDS=	gfortran${GCC_DEFAULT}:lang/gcc${GCC_DEFAULT}
 
 USES=		gmake localbase:ldflags
 USE_GITHUB=	yes
+GH_TAGNAME=	d089bec
 MAKEFILE=	makefile
 ALL_TARGET=	solib
 USE_LDCONFIG=	yes
