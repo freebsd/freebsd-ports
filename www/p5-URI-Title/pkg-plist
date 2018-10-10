@@ -3,5 +3,8 @@
 %%SITE_PERL%%/URI/Title/Image.pm
 %%SITE_PERL%%/URI/Title/MP3.pm
 %%SITE_PERL%%/URI/Title/PDF.pm
-%%SITE_PERL%%/URI/title.pl
 %%PERL5_MAN3%%/URI::Title.3.gz
+%%PERL5_MAN3%%/URI::Title::HTML.3.gz
+%%PERL5_MAN3%%/URI::Title::Image.3.gz
+%%PERL5_MAN3%%/URI::Title::MP3.3.gz
+%%PERL5_MAN3%%/URI::Title::PDF.3.gz
