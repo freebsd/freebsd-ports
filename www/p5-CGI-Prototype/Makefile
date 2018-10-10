@@ -11,10 +11,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create a CGI application by subclassing
 
-COMMON_DEPENDS=	p5-Class-Prototyped>0:devel/p5-Class-Prototyped \
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Prototyped>0:devel/p5-Class-Prototyped \
 		p5-Template-Toolkit>0:www/p5-Template-Toolkit
-BUILD_DEPENDS=	${COMMON_DEPENDS}
-RUN_DEPENDS=	${COMMON_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
