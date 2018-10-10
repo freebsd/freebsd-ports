@@ -16,8 +16,7 @@
 # MAILDROP_MBOX_DIR=<dir>	Specify DEFAULT mailbox location
 
 PORTNAME=	maildrop
-PORTVERSION=	2.9.3
-PORTREVISION=	1
+PORTVERSION=	3.0.0
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
@@ -27,9 +26,11 @@ COMMENT=	Mail delivery agent (MDA) with filtering abilities
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libcourier-unicode.so:devel/courier-unicode
+		libcourier-unicode.so:devel/courier-unicode \
+		libidn.so:dns/libidn
 
-USES=		compiler:c++11-lang iconv localbase:ldflags perl5 tar:bzip2
+USES=		compiler:c++11-lang iconv localbase:ldflags perl5 pkgconfig \
+		tar:bzip2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-syslog=1 \
@@ -63,7 +64,7 @@ OPTIONS_MULTI=		AUTHLIB
 AUTHLIB_DESC=		Courier Auth Library support
 .endif
 
-OPTIONS_DEFINE+=	DOVECOTAUTH FAM GDBM IDN MAILWRAPPER DOCS
+OPTIONS_DEFINE+=	DOVECOTAUTH FAM GDBM MAILWRAPPER DOCS
 
 DOVECOTAUTH_DESC=	Dovecot Authentication support
 MAILWRAPPER_DESC=	Let configure guess which sendmail binary to use
@@ -72,8 +73,6 @@ OPTIONS_SUB=		yes
 GDBM_CONFIGURE_ON=	--with-db=gdbm
 GDBM_CONFIGURE_OFF=	--with-db=db
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
-IDN_CONFIGURE_WITH=	libidn
-IDN_LIB_DEPENDS=	libidn.so:dns/libidn
 MAILWRAPPER_CONFIGURE_OFF=	--enable-sendmail=/usr/sbin/sendmail
 DOVECOTAUTH_CONFIGURE_ENABLE=	dovecotauth
 

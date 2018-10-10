@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20181010:
+  AFFECTS: users of mail/courier-imap and other courier ports
+  AUTHOR: madpilot@FreeBSD.org
+
+  Courier-IMAP 5.0.0 added IMAP UTF8 support, and converted maildir
+  folders' names to Unicode.
+
+  Updating an existing system to Courier-IMAP 5.0, and later,
+  requires a manual one-time conversion of all existing maildirs
+  using the maildirmake command. See the maildirmake(1) manual page
+  for more information.
+
+  All other courier ports accessing maildirs also need to be updated
+  at the same time.
+
 20181009:
   AFFECTS: users of devel/pecl-xdebug*
   AUTHOR: pizzamig@FreeBSD.org

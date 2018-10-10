@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	courier-unicode
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	devel mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
@@ -13,13 +12,12 @@ LICENSE=	GPLv3
 
 CONFLICTS=	libunicode-[0-9]*
 
-USES=		compiler:c++11-lang iconv libtool perl5 tar:bzip2
+USES=		compiler:c++11-lang iconv libtool localbase:ldflags \
+		perl5 tar:bzip2
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/configure

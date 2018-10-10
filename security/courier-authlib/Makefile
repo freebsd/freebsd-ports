@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	courier-authlib
-PORTVERSION=	0.68.0
-PORTREVISION?=	1
+PORTVERSION=	0.69.0
+PORTREVISION?=	0
 CATEGORIES?=	security mail
 .if defined(PKGNAMESUFFIX)
 MASTER_SITES=	SF/courier/authlib/${PORTVERSION}

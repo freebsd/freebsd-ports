@@ -4,7 +4,7 @@ include/courier-unicode.h
 lib/libcourier-unicode.a
 lib/libcourier-unicode.so
 lib/libcourier-unicode.so.4
-lib/libcourier-unicode.so.4.0.0
+lib/libcourier-unicode.so.4.1.0
 man/man3/unicode::iconvert::convert.3.gz
 man/man3/unicode::iconvert::convert_tocase.3.gz
 man/man3/unicode::iconvert::fromu.3.gz
