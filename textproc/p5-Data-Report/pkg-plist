@@ -1,7 +1,7 @@
-%%PERL5_MAN3%%/Data::Report.3.gz
-%%PERL5_MAN3%%/Data::Report::Base.3.gz
 %%SITE_PERL%%/Data/Report.pm
 %%SITE_PERL%%/Data/Report/Base.pm
 %%SITE_PERL%%/Data/Report/Plugin/Csv.pm
 %%SITE_PERL%%/Data/Report/Plugin/Html.pm
 %%SITE_PERL%%/Data/Report/Plugin/Text.pm
+%%PERL5_MAN3%%/Data::Report.3.gz
+%%PERL5_MAN3%%/Data::Report::Base.3.gz
