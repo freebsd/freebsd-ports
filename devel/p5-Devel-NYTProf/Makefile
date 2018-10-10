@@ -14,7 +14,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-File-Which>=0:sysutils/p5-File-Which \
+RUN_DEPENDS=	p5-File-Which>=1.09:sysutils/p5-File-Which \
 		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS
 TEST_DEPENDS=	p5-Test-Differences>=0.60:devel/p5-Test-Differences
 
