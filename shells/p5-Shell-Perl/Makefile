@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	smatsui@karashi.org
 COMMENT=	Read-eval-print loop in Perl
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	p5-Class-Accessor>=0:devel/p5-Class-Accessor \
 		p5-YAML>=0:textproc/p5-YAML \
 		p5-Data-Dump>=0:devel/p5-Data-Dump \
@@ -24,5 +27,7 @@ BUILD_DEPENDS=	p5-Test-Script>=0:devel/p5-Test-Script \
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
