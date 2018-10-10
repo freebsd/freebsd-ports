@@ -1,0 +1,28 @@
+--- Makefile.in.orig	2018-10-03 20:13:01 UTC
++++ Makefile.in
+@@ -5770,13 +5770,13 @@ $(cups_notifier_sources): utils/org.cups.cupsd.Notifie
+ distclean-local:
+ 	rm -rf *.cache *~
+ 
+-install-exec-hook:
++install-data-hook:
+ 	$(INSTALL) -d -m 755 $(DESTDIR)$(bindir)
+ 	$(INSTALL) -d -m 755 $(DESTDIR)$(pkgfilterdir)
+ 	$(INSTALL) -d -m 755 $(DESTDIR)$(pkgbackenddir)
+-@ENABLE_FOOMATIC_TRUE@	$(LN_S) -r -f $(DESTDIR)$(pkgfilterdir)/foomatic-rip $(DESTDIR)$(bindir)
+-@ENABLE_DRIVERLESS_TRUE@	$(LN_S) -r -f $(DESTDIR)$(pkgppdgendir)/driverless $(DESTDIR)$(bindir)
+-@ENABLE_DRIVERLESS_TRUE@	$(LN_S) -r -f $(DESTDIR)$(pkgppdgendir)/driverless $(DESTDIR)$(pkgbackenddir)
++@ENABLE_FOOMATIC_TRUE@	$(INSTALL) -l rs $(DESTDIR)$(pkgfilterdir)/foomatic-rip $(DESTDIR)$(bindir)
++@ENABLE_DRIVERLESS_TRUE@	$(INSTALL) -l rs $(DESTDIR)$(pkgppdgendir)/driverless $(DESTDIR)$(bindir)
++@ENABLE_DRIVERLESS_TRUE@	$(INSTALL) -l rs $(DESTDIR)$(pkgppdgendir)/driverless $(DESTDIR)$(pkgbackenddir)
+ @ENABLE_BRAILLE_TRUE@	$(LN_S) -f imagetobrf $(DESTDIR)$(pkgfilterdir)/imagetoubrl
+ @ENABLE_BRAILLE_TRUE@	$(LN_S) -f vectortopdf $(DESTDIR)$(pkgfilterdir)/svgtopdf
+ @ENABLE_BRAILLE_TRUE@	$(LN_S) -f vectortopdf $(DESTDIR)$(pkgfilterdir)/xfigtopdf
+@@ -5787,7 +5787,6 @@ install-exec-hook:
+ @ENABLE_BRAILLE_TRUE@	$(LN_S) -f vectortobrf $(DESTDIR)$(pkgfilterdir)/vectortoubrl
+ @ENABLE_BRAILLE_TRUE@	$(LN_S) -f textbrftoindexv3 $(DESTDIR)$(pkgfilterdir)/textbrftoindexv4
+ 
+-install-data-hook:
+ @RCLINKS_TRUE@	for level in $(RCLEVELS); do \
+ @RCLINKS_TRUE@		$(INSTALL) -d -m 755 $(DESTDIR)$(INITDIR)/rc$${level}.d; \
+ @RCLINKS_TRUE@		$(LN_S) -f ../init.d/cups-browsed $(DESTDIR)$(INITDIR)/rc$${level}.d/S$(RCSTART)cups-browsed; \

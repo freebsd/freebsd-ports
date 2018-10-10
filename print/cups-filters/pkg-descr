@@ -1,5 +1,10 @@
-The CUPS Filters package contains backends, filters and other
-software that was once part of the core CUPS distribution but is
-no longer maintained by Apple Inc.
+The CUPS Filters package contains backends, filters and other software
+that was once part of the core CUPS distribution but is no longer
+maintained by Apple Inc.  In addition it contains additional filters and
+software developed independently of Apple, especially filters for the
+PDF-centric printing workflow introduced by OpenPrinting and a daemon to
+browse Bonjour broadcasts of remote CUPS printers to make these printers
+available locally and to provide backward compatibility to the old CUPS
+broadcasting and browsing of CUPS 1.5.x and older.
 
-WWW: http://www.linuxfoundation.org/collaborate/workgroups/openprinting/cups-filters
+WWW: https://wiki.linuxfoundation.org/openprinting/cups-filters
