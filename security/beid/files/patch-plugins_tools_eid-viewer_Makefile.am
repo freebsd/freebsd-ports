@@ -1,29 +1,11 @@
---- plugins_tools/eid-viewer/Makefile.am.orig	2018-07-20 12:53:45 UTC
+--- plugins_tools/eid-viewer/Makefile.am.orig	2018-10-02 14:14:29 UTC
 +++ plugins_tools/eid-viewer/Makefile.am
-@@ -51,6 +51,8 @@ libeidviewer_la_SOURCES = \
- 	cache/cache.cpp \
- 	conversions/bbannumconv.h \
- 	conversions/bbannumconv.cpp \
-+	conversions/booldecode.h \
-+	conversions/booldecode.cpp \
- 	conversions/genderconv.h \
- 	conversions/genderconv.cpp \
- 	conversions/hexnumconv.cpp \
-@@ -74,6 +76,8 @@ libeidviewer_la_SOURCES = \
- 	conversions/specconv.cpp \
- 	conversions/specorgconv.h \
- 	conversions/specorgconv.cpp \
-+	conversions/toxmlmemberoffamilyconv.h \
-+	conversions/toxmlmemberoffamilyconv.cpp \
- 	conversions/valdate.h \
- 	conversions/valdate.cpp \
- 	conversions/workpermitconv.h \
-@@ -193,7 +197,9 @@ dist_trust_DATA = \
+@@ -197,7 +197,9 @@ dist_trust_DATA = \
  	certs/belgiumrca4.pem
  
  install-data-hook:
 -	$(SSL_PREFIX)/bin/c_rehash $(DESTDIR)/$(trustdir)
-+	(cd $(DESTDIR)/$(trustdir) && for i in *.pem; do \
++	(cd $(DESTDIR)$(trustdir) && for i in *.pem; do \
 +	ln -sfh $$i $$($(SSL_PREFIX)/bin/openssl x509 -hash -noout -in $$i).0; \
 +	done)
  
