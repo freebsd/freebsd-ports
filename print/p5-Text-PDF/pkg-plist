@@ -18,7 +18,6 @@ bin/pdfstamp
 %%SITE_PERL%%/Text/PDF/TTFont.pm
 %%SITE_PERL%%/Text/PDF/TTFont0.pm
 %%SITE_PERL%%/Text/PDF/Utils.pm
-%%SITE_PERL%%/Text/PDF/changes
 %%SITE_PERL%%/Text/PDF/examples/CD.CFG
 %%SITE_PERL%%/Text/PDF/examples/boon_graph.pdf
 %%SITE_PERL%%/Text/PDF/examples/call_conf.txt
