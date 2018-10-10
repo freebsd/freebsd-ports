@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	courier-imap
-PORTVERSION=	4.18.2
-PORTREVISION=	1
+PORTVERSION=	5.0.0
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/courier/imap/${PORTVERSION}
@@ -11,18 +10,23 @@ MASTER_SITES=	SF/courier/imap/${PORTVERSION}
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	IMAP (and POP3) server that provides access to Maildir mailboxes
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base
 RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base \
 		${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool
-LIB_DEPENDS=	libcourier-unicode.so:devel/courier-unicode
+LIB_DEPENDS=	libcourier-unicode.so:devel/courier-unicode \
+		libidn.so:dns/libidn
 
-CONFLICTS=	courier-[0-9]* imap-uw-[0-9]* panda-imap-[0-9]*
-
-USES=		compiler:c++11-lang gmake localbase:ldflags perl5 ssl tar:bzip2
-GNU_CONFIGURE=	yes
+USES=		compiler:c++11-lang gmake localbase:ldflags perl5 pkgconfig ssl \
+		tar:bzip2
 USE_RC_SUBR=	courier-imap-imapd courier-imap-imapd-ssl \
 		courier-imap-pop3d courier-imap-pop3d-ssl
 
+CONFLICTS=	courier-[0-9]* imap-uw-[0-9]* panda-imap-[0-9]*
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	REHASH=${SCRIPTDIR}/c_rehash
 
 MAKE_ENV:=	${CONFIGURE_ENV}
@@ -61,6 +65,7 @@ CONFIGURE_ARGS=	--sysconfdir=${CONFDIR} \
 		--enable-unicode \
 		--disable-root-check \
 		--with-locking-method=fcntl \
+		--with-notice=unicode \
 		COURIERAUTHCONFIG=${PREFIX}/bin/courierauthconfig
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
