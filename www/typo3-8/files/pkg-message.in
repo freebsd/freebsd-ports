@@ -1,8 +1,10 @@
+*************************************
+
 POST-INSTALL CONFIGURATION FOR TYPO3
 =====================================
 
 1) Add the following to your Apache configuration file
-   httpd.conf, and restart the server:
+   httpd.conf and restart the web server:
 
    For Apache versions earlier than 2.4:
 
@@ -25,30 +27,12 @@ POST-INSTALL CONFIGURATION FOR TYPO3
       Require all granted
    </Directory>
 
-3) Visit your Moodle site with a browser (i.e.,
-   http://your.server.com/typo3/), and you should
-   be taken to the install.php script, which will lead
-   you through creating a config.php file and then
-   setting up Moodle, creating an admin account, etc.
+2) Visit your TYPO3 site with a browser (i.e.
+   http://your.server.com/typo3/) to continue the
+   installation / upgrade process.
 
 For more information, see the INSTALL DOCUMENTATION:
 
-  https://github.com/TYPO3/TYPO3.CMS/blob/TYPO3_7-6/INSTALL.md
-   For Apache version 2.4.x or above:
+  https://docs.typo3.org/typo3cms/GettingStartedTutorial/latest/Installation/Index.html
 
-   Alias /typo3 %%PREFIX%%/%%TYPO3WWW%%/%%TYPO3DIR%%/
-   AcceptPathInfo On
-   <Directory %%PREFIX%%/%%TYPO3WWW%%/%%TYPO3DIR%%/>
-      Options Indexes FollowSymLinks
-      AllowOverride None
-      Require all granted
-   </Directory>
-
-3) Visit your typo3 site with a browser (i.e.,
-   http://your.server.com/typo3/), and you should
-   be taken to the install.php script, which will lead
-   you through creating the typo3 site.
-
-For more information, see the INSTALL DOCUMENTATION:
-
-  https://github.com/TYPO3/TYPO3.CMS/blob/TYPO3_7-6/INSTALL.md
+*************************************
