@@ -399,11 +399,6 @@
     SUBDIR += xymon-client
     SUBDIR += xymon-server
     SUBDIR += yaf
-    SUBDIR += zabbix2-agent
-    SUBDIR += zabbix2-frontend
-    SUBDIR += zabbix2-java
-    SUBDIR += zabbix2-proxy
-    SUBDIR += zabbix2-server
     SUBDIR += zabbix22-agent
     SUBDIR += zabbix22-frontend
     SUBDIR += zabbix22-java
