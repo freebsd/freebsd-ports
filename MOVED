@@ -10571,3 +10571,8 @@ net-im/telepathy-qt5|net-im/telepathy-qt@qt5|2018-10-07|Moved to flavored versio
 graphics/gegl3|graphics/gegl|2018-10-07|Replaced old gegl version with the newer version
 www/mediawiki129|www/mediawiki131|2018-10-08|Has expired: Deprecated by upstream
 devel/pecl-xdebug26|devel/pecl-xdebug|2018-10-09|Renamed because 2.6 is the new default
+net-mgmt/zabbix2-server|net-mgmt/zabbix22-server|2018-10-10|Has expired: End of Life was August, 2017
+net-mgmt/zabbix2-agent|net-mgmt/zabbix22-agent|2018-10-10|Has expired: End of Life was August, 2017
+net-mgmt/zabbix2-frontend|net-mgmt/zabbix22-frontend|2018-10-10|Has expired: End of Life was August, 2017
+net-mgmt/zabbix2-java|net-mgmt/zabbix22-java|2018-10-10|Has expired: End of Life was August, 2017
+net-mgmt/zabbix2-proxy|net-mgmt/zabbix22-proxy|2018-10-10|Has expired: End of Life was August, 2017
