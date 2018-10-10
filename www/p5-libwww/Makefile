@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libwww
-PORTVERSION=	6.35
+PORTVERSION=	6.36
 DISTVERSIONPREFIX=	perl-
 CATEGORIES=	www devel perl5
 MASTER_SITES=	CPAN
@@ -35,9 +35,10 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
 		p5-Test-Needs>=0:devel/p5-Test-Needs \
 		p5-Test-RequiresInternet>=0:devel/p5-Test-RequiresInternet
 
+USES=		perl5
+USE_PERL5=	configure
+
 CONFIGURE_ARGS=	--aliases
 NO_ARCH=	yes
-USE_PERL5=	configure
-USES=		perl5
 
 .include <bsd.port.mk>
