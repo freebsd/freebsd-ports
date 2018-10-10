@@ -10,7 +10,7 @@ COMMENT=	KDE KWallet integration for Version control system
 USE_KDE=	kdelibs runtime
 USES+=		kde:4
 
-PORTREVISION_110=	6
+PORTREVISION_110=	0
 PORTREVISION_19=	0
 
 .include "${.CURDIR}/../../devel/subversion/Makefile.addons"
