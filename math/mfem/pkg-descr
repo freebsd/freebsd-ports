@@ -1,0 +1,8 @@
+Features:
+* Arbitrary high-order finite element meshes and spaces.
+* Wide variety of finite element discretization approaches.
+* Conforming and nonconforming adaptive mesh refinement.
+* Scalable to hundreds of thousands of cores.
+* etc.
+
+WWW: http://mfem.org/

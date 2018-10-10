@@ -342,6 +342,7 @@
     SUBDIR += metis
     SUBDIR += metis-edf
     SUBDIR += metis4
+    SUBDIR += mfem
     SUBDIR += mingw32-libgmp
     SUBDIR += minisat
     SUBDIR += miracl
