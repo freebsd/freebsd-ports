@@ -2,3 +2,5 @@
 %%SITE_PERL%%/Mail/Sender/CType/Ext.pm
 %%SITE_PERL%%/Mail/Sender/CType/Win32.pm
 %%PERL5_MAN3%%/Mail::Sender.3.gz
+%%PERL5_MAN3%%/Mail::Sender::CType::Ext.3.gz
+%%PERL5_MAN3%%/Mail::Sender::CType::Win32.3.gz
