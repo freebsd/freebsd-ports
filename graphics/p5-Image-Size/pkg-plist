@@ -1,4 +1,4 @@
 bin/imgsize
-%%PERL5_MAN3%%/Image::Size.3.gz
-%%PERL5_MAN1%%/imgsize.1.gz
 %%SITE_PERL%%/Image/Size.pm
+%%PERL5_MAN1%%/imgsize.1.gz
+%%PERL5_MAN3%%/Image::Size.3.gz
