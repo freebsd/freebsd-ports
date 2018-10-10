@@ -133,7 +133,7 @@
 +  svn_stringbuf_appendcstr(default_msg, "> MFH:                      Ports tree branch name.  Request approval for merge." APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "> Relnotes:                 Set to 'yes' for mention in release notes." APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "> Security:                 Vulnerability reference (one per line) or description." APR_EOL_STR);
-+  svn_stringbuf_appendcstr(default_msg, "> Sponsored by:             If the change was sponsored by an organization." APR_EOL_STR);
++  svn_stringbuf_appendcstr(default_msg, "> Sponsored by:             If the change was sponsored by an organization (each collaborator)." APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "> Differential Revision:    https://reviews.freebsd.org/D### (*full* phabric URL needed)." APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "> Empty fields above will be automatically removed." APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, APR_EOL_STR);

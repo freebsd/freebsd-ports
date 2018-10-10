@@ -9,7 +9,7 @@ COMMENT=	Perl bindings for Version control system
 USES=		perl5
 USE_PERL5=	build run
 
-PORTREVISION_110=	1
+PORTREVISION_110=	0
 PORTREVISION_19=	0
 
 SVN_BUILD_BINDINGS=	yes

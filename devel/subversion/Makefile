@@ -1,7 +1,7 @@
 # Created by: rooneg@electricjellyfish.net
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	0
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
@@ -27,8 +27,7 @@ OPTIONS_DEFINE=	\
 		TEST		\
 		TOOLS
 
-OPTIONS_DEFAULT=FREEBSD_TEMPLATE LZ4 \
-		SERF TOOLS
+OPTIONS_DEFAULT=FREEBSD_TEMPLATE SERF TOOLS
 
 FREEBSD_TEMPLATE_DESC=	FreeBSD Project log template
 GPG_AGENT_DESC=		Enable GPG agent password store
@@ -130,13 +129,10 @@ pre-configure:
 	fi
 .endif
 .if ${PORT_OPTIONS:MSTATIC}
-	@if ${GREP} -q ucol_close ${LOCALBASE}/lib/libsqlite3.a ; then \
-		${ECHO_MSG} "" ; \
-		${ECHO_MSG} "You cannot build static subversion if your SQLite3 is built with ICU enabled."; \
-		${ECHO_MSG} "Please, reinstall 'devel/sqlite3' port with disabled ICU support."; \
-		${ECHO_MSG} "" ; \
-		${FALSE} ; \
-	fi
+LIBS_SQLITE3!=	pkgconf --libs --static sqlite3
+LIBS+=		${LIBS_SQLITE3}
+# for work with ICU
+LIBS+=		-lc++ -lm
 .endif
 
 post-configure:
