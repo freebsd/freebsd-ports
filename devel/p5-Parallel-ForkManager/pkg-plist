@@ -1,2 +1,4 @@
 %%SITE_PERL%%/Parallel/ForkManager.pm
+%%SITE_PERL%%/Parallel/ForkManager/Child.pm
 %%PERL5_MAN3%%/Parallel::ForkManager.3.gz
+%%PERL5_MAN3%%/Parallel::ForkManager::Child.3.gz
