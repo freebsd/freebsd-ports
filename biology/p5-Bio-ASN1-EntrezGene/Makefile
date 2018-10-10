@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Bio-ASN1-EntrezGene
-PORTVERSION=	1.72
-PORTREVISION=	1
+PORTVERSION=	1.73
 PORTEPOCH=	1
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
@@ -19,8 +18,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-BioPerl>=0:biology/p5-BioPerl
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
+
+post-patch:
+# do not install Bio::SeqIO::entrezgene which is identical with the one from p5-BioPerl
+	@${RM} ${WRKSRC}/lib/Bio/SeqIO/entrezgene.pm
 
 .include <bsd.port.mk>
