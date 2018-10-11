@@ -13,7 +13,6 @@ INSTALL_TARGET=	install-gcc install-target-libgcc
 CONFIGURE_ARGS=	--disable-libstdcxx \
 		--disable-multilib
 
-BROKEN_aarch64=		fails to package
 BROKEN_mips=		configure: error: cannot compute suffix of object files: cannot compile
 BROKEN_mips64=		configure: error: cannot compute suffix of object files: cannot compile
 BROKEN_powerpc64=	fails to compile: include/longlong.h:286:52: internal compiler error: Segmentation fault
