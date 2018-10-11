@@ -3,7 +3,7 @@
 
 PORTNAME=	crack
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security www
 
@@ -22,11 +22,10 @@ CONFIGURE_ARGS=	--with-crack=${LOCALBASE}
 CFLAGS+=	-Wno-deprecated
 
 post-configure:
-	@${REINPLACE_CMD} -e 's|^\$$ini_overwrites.*|&'"'"'crack.default_dictionary=\"${LOCALBASE}/libdata/cracklib/pw_dict\"'"'"',|' \
+	@${REINPLACE_CMD} -e 's|^\$$ini_overwrites.*|&'"'"'crack.default_dictionary=\"${LOCALBASE}/libdata/cracklib/cracklib-words\"'"'"',|' \
 		${WRKSRC}/run-tests.php
 
 do-test:
-	# XXX: 3 of 4 test fail
 	${MAKE_CMD} -C ${WRKSRC} test < /dev/null
 
 .include <bsd.port.mk>
