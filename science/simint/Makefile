@@ -2,7 +2,7 @@
 
 PORTNAME=	simint
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7
+DISTVERSION=	0.8
 CATEGORIES=	science
 MASTER_SITES=	http://www.bennyp.org/research/simint/download/
 
@@ -45,5 +45,14 @@ ${opt}_VARS=    SIMINT_VECTOR=${opt}
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/simint/cpp_restrict.hpp ${STAGEDIR}${PREFIX}/include/simint
+
+do-test: # unfirtunately  it rebuilds
+	@cd ${BUILD_WRKSRC} && \
+		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DENABLE_TESTS=ON ${CMAKE_SOURCE_PATH} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET}
+.for tst in test_eri test_eri_deriv1 benchmark_eri screentest # from test/CMakeLists.txt
+	#@cd ${WRKSRC} && (${FIND} test/dat -name "*.mol" | ${XARGS} ${BUILD_WRKSRC}/test/${tst})
+	@cd ${WRKSRC} && (${FIND} test/dat -name "*.mol" | ${XARGS} printf "%s")
+.endfor
 
 .include <bsd.port.mk>
