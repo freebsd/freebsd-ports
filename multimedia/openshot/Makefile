@@ -10,7 +10,8 @@ MASTER_SITES=	http://launchpad.net/openshot/${PORTVERSION:C/\.[0-9]+$//}/${PORTV
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Non-linear video editor
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 		frei0r-plugins>=0:graphics/frei0r-plugins \
@@ -22,19 +23,20 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 		scrollkeeper-install:textproc/rarian \
 		sox:audio/sox
 
+USES=		desktop-file-utils gettext python:2.7 shared-mime-info
 USE_GNOME=	pygtk2
 USE_PYTHON=	distutils
-USES=		desktop-file-utils gettext python:2.7 shared-mime-info
 INSTALLS_OMF=	yes
+NO_ARCH=	yes
 
 post-patch:
 	@${FIND} ${WRKSRC}/docs/omf -name '*.omf' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/usr/share|${PREFIX}/share|g'
 
 pre-install:
-	(${MKDIR} ${STAGEDIR}${PREFIX}/share/omf/${PORTNAME} && \
-		cd ${WRKSRC}/docs/omf && ${COPYTREE_SHARE} \*.omf ${STAGEDIR}${PREFIX}/share/omf/${PORTNAME})
-	(${MKDIR} ${STAGEDIR}${PREFIX}/share/gnome/help/${PORTNAME} && \
-		cd ${WRKSRC}/docs/gnome && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/share/gnome/help/${PORTNAME})
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/omf/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/docs/omf/*.omf ${STAGEDIR}${PREFIX}/share/omf/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/gnome/help/${PORTNAME}
+	@cd ${WRKSRC}/docs/gnome && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/gnome/help/${PORTNAME}
 
 .include <bsd.port.mk>
