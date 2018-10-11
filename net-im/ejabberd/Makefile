@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ejabberd
-PORTVERSION=	18.06
+PORTVERSION=	18.09
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -42,9 +42,10 @@ GH_TUPLE=	erlang-lager:lager:${LAGER_VER}:lager/deps/lager \
 		potatosalad:erlang-jose:${JOSE_VER}:jose/deps/jose \
 		processone:eimp:${EIMP_VER}:eimp/deps/eimp \
 		DeadZen:goldrush:${GOLDRUSH_VER}:goldrush/deps/goldrush \
-		dvv:base64url:f2c64ed8:base64url/deps/base64url
+		dvv:base64url:f2c64ed8:base64url/deps/base64url \
+		processone:ezlib:${EZLIB_VER}:ezlib/deps/ezlib
 
-OPTIONS_DEFINE=	ODBC PAM DOCS MYSQL PGSQL ICONV RIAK ZLIB REDIS SIP SQLITE \
+OPTIONS_DEFINE=	ODBC PAM DOCS MYSQL PGSQL ICONV RIAK REDIS SIP SQLITE \
 		STUN TOOLS FULLXML
 OPTIONS_DEFAULT=	ICONV
 
@@ -68,13 +69,12 @@ SUBS= 		PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION}		\
 		HAMCREST_VER=${HAMCREST_VER} ICONV_VER=${ICONV_VER}	\
 		JIFFY_VER=${JIFFY_VER} JOSE_VER=${JOSE_VER}		\
 		LAGER_VER=${LAGER_VER} LUERL_VER=${LUERL_VER}		\
-		MECK_VER=${MECK_VER} MOKA_VER=${MOKA_VER}		\
+		MECK_VER=${MECK_VER}					\
 		P1_MYSQL_VER=${P1_MYSQL_VER}				\
 		P1_OAUTH2_VER=${P1_OAUTH2_VER}				\
 		P1_PGSQL_VER=${P1_PGSQL_VER}				\
 		P1_UTILS_VER=${P1_UTILS_VER}				\
 		RIAK_PB_VER=${RIAK_PB_VER} RIAKC_VER=${RIAKC_VER}	\
-		SAMERLIB_VER=${SAMERLIB_VER}				\
 		SQLITE3_VER=${SQLITE3_VER}				\
 		STRINGPREP_VER=${STRINGPREP_VER} STUN_VER=${STUN_VER}	\
 		XMPP_VER=${XMPP_VER}
@@ -88,35 +88,33 @@ SUB_LIST=	${SUBS} \
 SHEBANG_FILES=	${WRKSRC}/ejabberdctl.template
 
 BASE64URL_VER=	0.0.1
-CACHE_TAB_VER=	1.0.14
-EIMP_VER=	1.0.6
+CACHE_TAB_VER=	1.0.16
+EIMP_VER=	1.0.8
 EPAM_VER=	1.0.4
 EREDIS_VER=	1.0.8
-ESIP_VER=	1.0.24
+ESIP_VER=	1.0.26
 EZLIB_VER=	1.0.4
-FAST_TLS_VER=	1.0.23
-FAST_XML_VER=	1.1.31
-FAST_YAML_VER=	1.0.15
+FAST_TLS_VER=	1.0.25
+FAST_XML_VER=	1.1.34
+FAST_YAML_VER=	1.0.17
 GOLDRUSH_VER=	0.1.9
 HAMCREST_VER=	0.4.1
-ICONV_VER=	1.0.8
+ICONV_VER=	1.0.10
 JIFFY_VER=	0.14.8
 JOSE_VER=	1.8.4
-LAGER_VER=	3.4.2
+LAGER_VER=	3.6.5
 LUERL_VER=	0.3
 MECK_VER=	0.8.4
-MOKA_VER=	1.0.5d
-P1_MYSQL_VER=	1.0.6
+P1_MYSQL_VER=	1.0.7
 P1_OAUTH2_VER=	0.6.3
 P1_PGSQL_VER=	1.1.6
-P1_UTILS_VER=	1.0.12
+P1_UTILS_VER=	1.0.13
 RIAK_PB_VER=	2.3.2
 RIAKC_VER=	2.5.3
-SAMERLIB_VER=	0.8.0e
 SQLITE3_VER=	1.1.6
-STRINGPREP_VER=	1.0.12
-STUN_VER=	1.0.23
-XMPP_VER=	1.2.1
+STRINGPREP_VER=	1.0.14
+STUN_VER=	1.0.25
+XMPP_VER=	1.2.5
 
 OPTIONS_SUB=		yes
 RIAK_DESC=	Riak database support
@@ -148,12 +146,8 @@ SQLITE_CONFIGURE_ENABLE=sqlite
 SQLITE_GH_TUPLE=	processone:erlang-sqlite3:${SQLITE3_VER}:sqlite3/deps/sqlite3
 TOOLS_CONFIGURE_ENABLE=	tools
 TOOLS_GH_TUPLE=	rvirding:luerl:v${LUERL_VER}:luerl/deps/luerl \
-		eproxus:meck:${MECK_VER}:meck/deps/meck \
-		processone:moka:${MOKA_VER}:moka/deps/moka \
-		processone:samerlib:${SAMERLIB_VER}:samerlib/deps/samerlib
+		eproxus:meck:${MECK_VER}:meck/deps/meck
 FULLXML_CONFIGURE_ENABLE=	full-xml
-ZLIB_CONFIGURE_ENABLE=	zlib
-ZLIB_GH_TUPLE=	processone:ezlib:${EZLIB_VER}:ezlib/deps/ezlib
 SQLITE_USES=		sqlite
 ICONV_USES=		iconv:wchar_t
 ICONV_LDFLAGS=		${ICONV_LIB}
