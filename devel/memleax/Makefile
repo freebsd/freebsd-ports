@@ -5,7 +5,7 @@ PORTVERSION=	1.0.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	guy.tabrar@me.com
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Debug memory leaks of running processes
 
 LICENSE=	GPLv2
