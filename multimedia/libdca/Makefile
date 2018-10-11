@@ -3,6 +3,7 @@
 
 PORTNAME=	libdca
 PORTVERSION=	0.0.6
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${PORTVERSION}/
 
