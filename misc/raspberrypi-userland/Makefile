@@ -16,6 +16,8 @@ CONFLICTS_INSTALL=	libglesv2 libEGL
 
 USES=		cmake:outsource pkgconfig shebangfix
 
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	gonzoua
 GH_PROJECT=	userland
@@ -31,8 +33,6 @@ EXAMPLES_DESC=	Install test applications source code (hello_pi)
 EXAMPLES_LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 DEBUG_CFLAGS_OFF=	-DNDEBUG
-
-USE_LDCONFIG=	yes
 
 LLD_UNSAFE=	yes
 
