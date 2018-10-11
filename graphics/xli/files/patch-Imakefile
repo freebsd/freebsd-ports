@@ -29,8 +29,8 @@
 -	$(RM) $(BINDIR)/xview $(BINDIR)/xsetbg
 -	$(LN) $(BINDIR)/xli $(BINDIR)/xview
 -	$(LN) $(BINDIR)/xli $(BINDIR)/xsetbg
-+	$(LN) $(BINDIR)/xli $(DESTDIR)$(BINDIR)/xview
-+	$(LN) $(BINDIR)/xli $(DESTDIR)$(BINDIR)/xsetbg
++	$(LN) xli $(DESTDIR)$(BINDIR)/xview
++	$(LN) xli $(DESTDIR)$(BINDIR)/xsetbg
  
  $(SYSPATHFILE):
  	@echo "*** Creating default $(SYSPATHFILE) since you"
