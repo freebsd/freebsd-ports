@@ -4,8 +4,8 @@
 PORTNAME=	wemux
 PORTVERSION=	3.2.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.c-s.li/ports/
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Enhances tmux to make multi-user terminal multiplexing easier
@@ -16,14 +16,20 @@ RUN_DEPENDS=	tmux:sysutils/tmux \
 		bash:shells/bash
 
 NO_BUILD=	yes
+
 USE_GITHUB=	yes
-GH_ACCOUNT=	zolrath
+GH_ACCOUNT=	nbraud
+GH_TAGNAME=	5de95ad531476773c5c58be48b8bd8bf322eef7e
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/${PORTNAME}
+	@${REINPLACE_CMD} -e 's|$$(SYSCONFDIR)|${ETCDIR}|g' ${WRKSRC}/wemux.in
+	@${REINPLACE_CMD} -e 's|$$(SYSCONFDIR)|${ETCDIR}|g' ${WRKSRC}/man/wemux.1.in
+	@${REINPLACE_CMD} -e 's|$$(SYSCONFDIR)|${DOCDIR}|g' ${WRKSRC}/man/wemux.1.in
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/wemux ${STAGEDIR}${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/wemux.conf.example ${STAGEDIR}${PREFIX}/etc/wemux.conf.example
+	${INSTALL_SCRIPT} ${WRKSRC}/wemux.in ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/wemux.conf.example ${STAGEDIR}${ETCDIR}/wemux.conf.example
+	${INSTALL_MAN} ${WRKSRC}/man/wemux.1.in ${STAGEDIR}${MANPREFIX}/man/man1/wemux.1
 
 .include <bsd.port.mk>

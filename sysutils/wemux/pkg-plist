@@ -1,2 +1,3 @@
 bin/wemux
-@sample etc/wemux.conf.example etc/wemux.conf
+@sample %%ETCDIR%%/wemux.conf.example %%ETCDIR%%/wemux.conf
+man/man1/wemux.1.gz
