@@ -1,0 +1,7 @@
+pyznap is a ZFS snapshot management tool. It automatically takes and deletes
+snapshots and can send them to different remote and local backup locations.
+
+For example, it is possible to specify a policy for a given filesystem in the
+pyznap.conf file and then use cron to let it run once per quarter-hour.
+
+WWW: https://github.com/yboetz/pyznap
