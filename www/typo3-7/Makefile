@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 PORTSCOUT=	limit:^${PORT_V_MAJOR}\.${PORT_V_MINOR}\.
 
 DEPRECATED=	Support will end in October 2018, please update to either www/typo3-8 or www/typo3-9
-EXPIRDATION_DATE=	2018-10-31
+EXPIRATION_DATE=	2018-10-31
 
 USES=		cpe shebangfix php:web
 SHEBANG_GLOB=	*.sh *.php
