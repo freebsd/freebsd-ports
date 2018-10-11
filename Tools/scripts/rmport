@@ -405,10 +405,13 @@ commit()
 	log "Your commit message is:"
 	cat svnlog
 
-	answer=`ask "Do you want to edit again your commit message?"`
-	if [ "${answer}" = "y" ] ; then
-		$EDITOR svnlog
-	fi
+	answer=y
+	while [ "${answer}" = "y" ] ; do
+		answer=`ask "Do you want to edit your commit message again?"`
+		if [ "${answer}" = "y" ] ; then
+			$EDITOR svnlog
+		fi
+	done
 
 	answer=`ask "Do you want to commit now?"`
 
