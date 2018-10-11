@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2018-10-11 14:20:58 UTC
++++ src/Makefile.in
+@@ -776,7 +776,7 @@ install-data-hook:
+ 	for a in dcadec extract_dca; do \
+ 		oldname=`echo "$$a" | sed -e 's/ca/ts/' | sed '$(transform)'` ; \
+ 		name=`echo "$$a" | sed '$(transform)'` ; \
+-		ln -sf "$(man1dir)/$${name}.1" "$(DESTDIR)$(man1dir)/$${oldname}.1" ; \
++		install -l rs "$(DESTDIR)$(man1dir)/$${name}.1" "$(DESTDIR)$(man1dir)/$${oldname}.1" ; \
+ 	done
+ 
+ uninstall-hook:
