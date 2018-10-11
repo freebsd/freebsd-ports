@@ -67,5 +67,7 @@ share/locale/ug/LC_MESSAGES/klickety.mo
 share/locale/uk/LC_MESSAGES/klickety.mo
 share/locale/zh_CN/LC_MESSAGES/klickety.mo
 share/locale/zh_TW/LC_MESSAGES/klickety.mo
+share/metainfo/org.kde.klickety.appdata.xml
+share/metainfo/org.kde.ksame.appdata.xml
 share/sounds/klickety/game-finished.ogg
 share/sounds/klickety/remove.ogg
