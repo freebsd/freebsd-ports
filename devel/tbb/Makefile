@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tbb
-PORTVERSION=	2019
+PORTVERSION=	2019.1
 CATEGORIES=	devel
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -25,6 +25,9 @@ SUB_LIST=	prefix="${PREFIX}" \
 		description="${COMMENT}" \
 		version="${PORTVERSION}"
 
+OPTIONS_DEFINE=	DOCS
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
+
 USE_LDCONFIG=	yes
 ALL_TARGET=	default
 
@@ -44,6 +47,10 @@ post-patch:
 		-e '/^CPLUS =/s|^CPLUS =.*|CPLUS = ${CXX}|' \
 			${WRKSRC}/build/FreeBSD.${COMPILER_TYPE}.inc
 
+post-build-DOCS-on:
+	cd ${WRKSRC}; \
+		${MAKE_CMD} doxygen
+
 do-install:
 	cd ${WRKSRC}; \
 	${INSTALL_LIB} build/FreeBSD*release/libtbb.so \
@@ -61,5 +68,10 @@ do-install:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/tbb.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/html && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

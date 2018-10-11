@@ -2,7 +2,7 @@
 
 PORTNAME=	nomacs
 PORTVERSION=	3.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 MAINTAINER=	bsd@tuxproject.de
