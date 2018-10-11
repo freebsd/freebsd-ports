@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rgeo
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	science rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libgeos.so:graphics/geos
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>
