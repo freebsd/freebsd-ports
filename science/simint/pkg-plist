@@ -3,8 +3,9 @@ include/simint/boys/boys_long.h
 include/simint/boys/boys_longfac.h
 include/simint/boys/boys_shortgrid.h
 include/simint/boys/boys_taylor.h
-include/simint/cpp_restrict.hpp
 include/simint/constants.h
+include/simint/cpp_restrict.hpp
+include/simint/osoei/osoei.h
 include/simint/ostei/gen/hrr_generated.h
 include/simint/ostei/gen/ostei_deriv1_generated.h
 include/simint/ostei/gen/ostei_generated.h
@@ -14,12 +15,14 @@ include/simint/ostei/ostei_config.h
 include/simint/ostei/ostei_general.h
 include/simint/ostei/ostei_init.h
 include/simint/ostei/recur_lookup.h
+include/simint/recur_lookup.h
 include/simint/shell/shell.h
 include/simint/shell/shell_constants.h
 include/simint/shell/shell_screen.h
 include/simint/simint.h
 include/simint/simint_eri.h
 include/simint/simint_init.h
+include/simint/simint_oneelectron.h
 include/simint/vectorization/intrinsics_avx.h
 include/simint/vectorization/intrinsics_avx512.h
 include/simint/vectorization/intrinsics_scalar.h
