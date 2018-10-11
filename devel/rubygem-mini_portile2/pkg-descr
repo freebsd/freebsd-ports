@@ -1,0 +1,5 @@
+This project is a minimalistic implementation of a port/recipe system
+for developers. Because "Works on my machine" is unacceptable for a
+library maintainer.
+
+WWW: https://github.com/luislavena/mini_portile
