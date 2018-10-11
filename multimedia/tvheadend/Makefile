@@ -4,7 +4,7 @@
 PORTNAME=	tvheadend
 PORTVERSION=	4.2.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -23,11 +23,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		liburiparser.so:net/uriparser
 RUN_DEPENDS=	dtv-scan-tables>=0:multimedia/dtv-scan-tables
 
-BROKEN_mips=		fails to configure: No C compiler found
-BROKEN_mips64=		fails to configure: No C compiler found
-BROKEN_powerpc64=	fails to configure: No C compiler found
-
-USES=		gettext gmake pkgconfig python shebangfix ssl
+USES=		compiler:c++11-lang gettext gmake pkgconfig python shebangfix ssl
 USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
