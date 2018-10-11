@@ -24,7 +24,7 @@
 +
 +if test "$cracklib" = "yes"
 +then
-+	cracklib="/usr/local/libdata/cracklib/pw_dict"
++	cracklib="/usr/local/libdata/cracklib/cracklib-words"
 +fi
 +
 +case $cracklib in
