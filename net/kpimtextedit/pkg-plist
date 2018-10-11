@@ -2,7 +2,6 @@ etc/xdg/kpimtextedit.categories
 include/KF5/KPIMTextEdit/KPIMTextEdit/AbstractTextToSpeechInterface
 include/KF5/KPIMTextEdit/KPIMTextEdit/EditorUtil
 include/KF5/KPIMTextEdit/KPIMTextEdit/EmoticonTextEditAction
-include/KF5/KPIMTextEdit/KPIMTextEdit/InsertHtmlDialog
 include/KF5/KPIMTextEdit/KPIMTextEdit/InsertImageDialog
 include/KF5/KPIMTextEdit/KPIMTextEdit/InsertImageWidget
 include/KF5/KPIMTextEdit/KPIMTextEdit/InsertTableDialog
@@ -37,7 +36,6 @@ include/KF5/KPIMTextEdit/kpimtextedit/abstracttexttospeechinterface.h
 include/KF5/KPIMTextEdit/kpimtextedit/config-kpimtextedit.h
 include/KF5/KPIMTextEdit/kpimtextedit/editorutil.h
 include/KF5/KPIMTextEdit/kpimtextedit/emoticontexteditaction.h
-include/KF5/KPIMTextEdit/kpimtextedit/inserthtmldialog.h
 include/KF5/KPIMTextEdit/kpimtextedit/insertimagedialog.h
 include/KF5/KPIMTextEdit/kpimtextedit/insertimagewidget.h
 include/KF5/KPIMTextEdit/kpimtextedit/inserttabledialog.h
