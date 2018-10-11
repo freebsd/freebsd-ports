@@ -3,7 +3,7 @@
 
 PORTNAME=	Crypt-Cracklib
 PORTVERSION=	1.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libcrack.so:security/cracklib
 
 USES=		perl5
 USE_PERL5=	configure
-CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include" DEFINE="-DCRACKLIB_DICTPATH=\\\"${PREFIX}/libdata/cracklib/pw_dict\\\""
+CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include" DEFINE="-DCRACKLIB_DICTPATH=\\\"${PREFIX}/libdata/cracklib/cracklib-words\\\""
 
 post-patch:
 	@${REINPLACE_CMD} 's/-Werror//' ${WRKSRC}/Makefile.PL
