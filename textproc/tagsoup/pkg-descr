@@ -9,4 +9,4 @@ tools to be applied to even the worst HTML.  TagSoup also includes
 a command-line processor that reads HTML files and can generate either
 clean HTML or well-formed XML that is a close approximation to XHTML.
 
-WWW: http://home.ccil.org/~cowan/tagsoup
+WWW: http://vrici.lojban.org/~cowan/XML/tagsoup
