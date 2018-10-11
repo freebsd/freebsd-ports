@@ -4,4 +4,4 @@ far from complete, and may just be experiment.
 The goal is a Python CSL implementation that includes a good test foundation,
 and is easy to integrate into different contexts.
 
-WWW: https://github.com/bdarcus/citeproc-py
+WWW: https://github.com/brechtm/citeproc-py
