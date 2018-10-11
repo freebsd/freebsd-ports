@@ -16,7 +16,7 @@ passwd_check(krb5_context context, krb5_principal principal,
 				return "out of memory";
 		memcpy(p, password->data, password->length);
 		p[password->length] = '\0';
-		result = FascistCheck(p, LOCALBASE "/libdata/cracklib/pw_dict");
+		result = FascistCheck(p, LOCALBASE "/libdata/cracklib/cracklib-words");
 		free(p);
 		return result;
 }
