@@ -1,0 +1,10 @@
+Now it is time to set-up the main configuration file.
+
+First run "pyznap setup", a sample configuration will be copied
+to %%PREFIX%%/etc/pyznap/pysnap.conf.
+
+After configuring the file to your liking setup cron(8) with the
+following entries:
+
+*/15	*	*	*	*	root	%%BINDIR%%/pyznap snap >> /var/log/pyznap.log
+0	0	*	*	*	root	%%BINDIR%%/pyznap send >> /var/log/pyznap.log
