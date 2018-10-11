@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cassandra
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.2
 CATEGORIES=	databases
 
 MAINTAINER=	daniel@blodan.se
