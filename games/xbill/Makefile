@@ -11,6 +11,9 @@ MASTER_SITES=	http://www.xbill.org/download/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Save your computers from the evil clutches of Bill
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${SCORES_DIR}
 

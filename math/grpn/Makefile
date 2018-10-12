@@ -10,6 +10,9 @@ MASTER_SITES=	http://lashwhip.com/grpn/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+-based reverse polish notation (RPN) calculator
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 USE_GNOME=	gtk12
 
 ALL_TARGET=

@@ -3,7 +3,7 @@
 
 PORTNAME=	faces
 PORTVERSION=	1.7.7
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -13,12 +13,10 @@ COMMENT=	Visual mail, user, and print face server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	X11 DOCS NLS AUDIO
-OPTIONS_DEFAULT=	X11
+OPTIONS_DEFINE=	DOCS NLS AUDIO
 OPTIONS_SINGLE=		AUDIO
 OPTIONS_SINGLE_AUDIO=	NAS RPLAY SOX
 AUDIO_DESC=	Audio support
-X11_DESC=	X11/GTK support
 RPLAY_DESC=	rplay audio support
 SOX_DESC=	Sox audio support
 
@@ -26,14 +24,6 @@ NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 OPTIONS_SUB=	yes
-
-X11_USE=	GNOME=gtk12
-X11_CPPFLAGS=	-I../compface -I${LOCALBASE}/include
-X11_LDFLAGS=	-L../compface -L${LOCALBASE}/lib
-X11_CONFIGURE_ON=	--enable-imap --enable-pop \
-		--enable-name-unknown --with-spooldir=/var/mail \
-		--with-facedir=${DATADIR}
-X11_CONFIGURE_WITH=	x
 
 AUDIO_CONFIGURE_ENABLE=	audio
 

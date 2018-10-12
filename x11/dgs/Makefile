@@ -10,6 +10,9 @@ MASTER_SITES=	GNU/../old-gnu/dgs
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display ghostscript system
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 

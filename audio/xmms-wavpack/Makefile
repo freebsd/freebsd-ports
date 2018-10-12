@@ -9,6 +9,9 @@ MASTER_SITES=	http://www.wavpack.com/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS input plugin to play WavPack files
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

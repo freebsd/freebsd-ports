@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/Jags/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JAGS - Just Another GTK+ Samba Client
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 CONFLICTS=	jags-1.*
 
 USES=		gmake samba:run # smbclient

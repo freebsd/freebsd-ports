@@ -12,6 +12,9 @@ DISTNAME=	Steak.${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	English <-> German dictionary under the GPL
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 RUN_DEPENDS=	ispell:textproc/aspell-ispell
 
 USES=		tar:bzip2

@@ -11,6 +11,9 @@ MASTER_SITES=	TUCOWS/x11/entertain \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very popular card game for 1-4 players over a network
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2+
 
 OPTIONS_DEFINE=	GTK1 SLANG

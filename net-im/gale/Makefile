@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}ruit
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure instant messaging system
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LIB_DEPENDS=	libgc.so:devel/boehm-gc \
 		libwwwcore.so:www/libwww \
 		libadns.so:dns/adns

@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	xmms-
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Sega Genesis GYM plugin for XMMS
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LIB_DEPENDS=	libxmms.so:multimedia/xmms
 
 GNU_CONFIGURE=	yes

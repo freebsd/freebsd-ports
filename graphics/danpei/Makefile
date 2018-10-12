@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	Image Viewer for X Window System with thumbnail preview feature
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png

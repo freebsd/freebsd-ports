@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.mathstat.dal.ca/~selinger/lpr-wrapper/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User level printer frontend
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 RUN_DEPENDS=	bash:shells/bash \
 		ppdfilt:print/libppd \
 		psdim:print/psdim \

@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	svmohr@gmail.com
 COMMENT=	Graphical frontend for scmxx
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 RUN_DEPENDS=	p5-Image-Size>=0:graphics/p5-Image-Size \
 		p5-Gtk-Perl>=0:x11-toolkits/p5-Gtk-Perl
 BUILD_DEPENDS=	p5-Image-Size>=0:graphics/p5-Image-Size \

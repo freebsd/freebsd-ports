@@ -10,6 +10,9 @@ MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Digital clock dockapp with a similar look to wmcpuload
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 USE_XORG=	xpm
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

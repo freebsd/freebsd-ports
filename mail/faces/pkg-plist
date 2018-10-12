@@ -1,4 +1,3 @@
-%%X11%%bin/faces
 bin/compface
 bin/uncompface
 bin/ikon2xbm
@@ -9,7 +8,5 @@ include/compface.h
 lib/libcompface.a
 lib/libcompface.so
 lib/libcompface.so.1
-%%X11%%lib/X11/app-defaults/Faces
 man/man1/compface.1.gz
-%%X11%%man/man1/faces.1.gz
 man/man3/compface.3.gz

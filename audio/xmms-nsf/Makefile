@@ -11,6 +11,9 @@ MASTER_SITES=	http://optronic.sourceforge.net/files/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	XMMS input-plugin for playing Nintendo(TM) NSF audio files
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	xmms:multimedia/xmms

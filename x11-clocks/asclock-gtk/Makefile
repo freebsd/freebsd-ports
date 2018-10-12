@@ -10,6 +10,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}beta
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	New flavor of asclock (GTK version)
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	asclock
 INSTALL_TARGET=	install PREFIX=${STAGEDIR}${PREFIX}

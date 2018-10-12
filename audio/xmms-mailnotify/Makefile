@@ -10,6 +10,9 @@ MASTER_SITES=	LOCAL/arved
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	XMMS plugin, that plays a sound on incoming mail and opens the MUA
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LIB_DEPENDS=	libxmms.so:multimedia/xmms
 
 LICENSE=	GPLv2

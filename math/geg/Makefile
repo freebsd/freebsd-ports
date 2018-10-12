@@ -11,6 +11,9 @@ MASTER_SITES=	SUNSITE/science/visualization/plotting \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visualise multiple 2D-functions of one variable
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 USE_GNOME=	gtk12
 USES=		autoreconf
 GNU_CONFIGURE=	yes

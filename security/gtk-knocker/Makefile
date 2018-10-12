@@ -12,6 +12,9 @@ DISTNAME=	gtk-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and easy to use TCP only port scanner (GTK+ version)
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xpm
 USE_GNOME=	gtk12

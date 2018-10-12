@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.zyllius.com/vmallet/archives/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-player networked nibbles game
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2+
 
 OPTIONS_DEFINE=	GTK1

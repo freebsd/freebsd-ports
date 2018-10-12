@@ -10,6 +10,9 @@ MASTER_SITES=	http://gpasman.sourceforge.net/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Password manager that stores password information encrypted
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 PLIST_FILES=	bin/gpasman
 USES=		gmake
 USE_GNOME=	gtk12

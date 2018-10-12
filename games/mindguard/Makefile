@@ -10,6 +10,9 @@ MASTER_SITES=	http://zapatopi.net/mindguard/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helpful utility for detecting and jamming harmful mind-control rays
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	MGPL
 LICENSE_NAME=	MINDGUARD PUBLIC LICENSE
 LICENSE_FILE=	${WRKSRC}/COPYING

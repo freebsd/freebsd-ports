@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK-based color picker
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 PLIST_FILES=	bin/gcolor
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

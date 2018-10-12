@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.fiction.net/blong/programs/gbuffy/gbuffy-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ multiple mailbox "biff" program
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LIB_DEPENDS=	libPropList.so:devel/libPropList \
 		libcompface.so:mail/faces
 

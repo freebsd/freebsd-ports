@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-alpha
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible text management system
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 USES=		libtool
 USE_GNOME=	gtk12 libxml2
 GNU_CONFIGURE=	yes

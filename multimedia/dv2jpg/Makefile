@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Type-2 DV codec-encoded AVI streams to mjpeg-encoded AVI
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libdv.so:multimedia/libdv

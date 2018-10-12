@@ -12,6 +12,9 @@ DISTNAME=	NoCatSplash-nightly
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Open 802.11 Splash Screen
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2
 
 USE_GNOME=	glib12

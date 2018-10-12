@@ -13,6 +13,9 @@ DISTNAME=	${PORTNAME}-0.35${PKGNAMESUFFIX}-r4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SEGA Genesis emulator
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2
 
 USES=		gmake jpeg tar:bzip2

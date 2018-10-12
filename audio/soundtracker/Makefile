@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.soundtracker.org/dl/v${PORTVERSION:R}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mod player/tracking tool which supports XM and MOD formats
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile

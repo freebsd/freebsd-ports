@@ -10,6 +10,9 @@ MASTER_SITES=	LOCAL/bf
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	GUI to view, search, print, and convert PostScript and PDF documents
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	AFPL
 LICENSE_NAME=	Aladdin Free Public Licence
 LICENSE_FILE=	${WRKSRC}/LICENCE

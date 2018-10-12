@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.st.hirosaki-u.ac.jp/~rmiya/xmolwt/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Calculate atom weight and percent of each element for a given formula
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 OPTIONS_DEFINE=	DOCS GTK2
 
 USES=		gmake

@@ -11,6 +11,9 @@ MASTER_SITES=	http://www.wirelesscouch.net/software/gaddr/ \
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	GTK 1.x address book
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 PLIST_FILES=	bin/gaddr
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12

@@ -5,6 +5,9 @@ PKGNAMEPREFIX=	xmms-
 
 COMMENT=	XMMS plugin for playing .nsf and .hes audio files
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 MASTERDIR=	${.CURDIR}/../festalon
 
 BUILD_DEPENDS=	xmms:multimedia/xmms
