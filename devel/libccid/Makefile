@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	ccid
-PORTVERSION=	1.4.29
+PORTVERSION=	1.4.30
 CATEGORIES=	devel
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/latestfile/112/
+MASTER_SITES=	https://ccid.apdu.fr/files/
 
 MAINTAINER=	mmokhi@FreeBSD.org
-COMMENT=	Generic USB CCID (Chip/Smart Card Interface Devices) driver
+COMMENT=	Generic driver for USB CCID and ICCD
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -15,20 +15,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpcsclite.so:devel/pcsc-lite
 
 USES=		perl5 pkgconfig tar:bzip2
-GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 USE_PERL5=	build
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers \
 		--enable-ccidtwindir=${PREFIX}/lib/pcsc/drivers/serial
 
-PLIST_SUB=	VER=${PORTVERSION}
 INSTALL_TARGET=	install-strip
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,ndef __APPLE__, !(__APPLE__ || __FreeBSD__)," ${WRKSRC}/contrib/Kobil_mIDentity_switch/Kobil_mIDentity_switch.c
-	@${REINPLACE_CMD} -e "s,libusb-1.0/libusb.h,libusb.h," \
-		${WRKSRC}/configure ${WRKSRC}/src/ccid_usb.c \
-		${WRKSRC}/src/ccid_usb.h \
-		${WRKSRC}/contrib/Kobil_mIDentity_switch/Kobil_mIDentity_switch.c
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/contrib/RSA_SecurID/RSA_SecurID_getpasswd \
