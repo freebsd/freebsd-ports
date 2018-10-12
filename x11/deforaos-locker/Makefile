@@ -15,10 +15,10 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libDesktop.so:x11/deforaos-libdesktop \
-				libSystem.so:devel/deforaos-libsystem \
-				libfontconfig.so:x11-fonts/fontconfig \
-				libfreetype.so:print/freetype2 \
-				libXss.so:x11/libXScrnSaver
+		libSystem.so:devel/deforaos-libsystem \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libXss.so:x11/libXScrnSaver
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/Panel.pc:x11/deforaos-panel
 
@@ -33,7 +33,7 @@ OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 NLS_USES=		gettext
 DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
-	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
+			${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 
 post-patch:
 	${REINPLACE_CMD} 's|-Wl,-pie||g' \
