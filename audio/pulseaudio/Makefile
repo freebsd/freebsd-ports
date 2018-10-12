@@ -6,7 +6,7 @@
 
 PORTNAME=	pulseaudio
 PORTVERSION=	11.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 
@@ -58,7 +58,7 @@ GROUPS=		pulse pulse-access pulse-rt
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	AVAHI GCONF SIMD
-OPTIONS_DEFAULT=AVAHI SIMD SIMPLE SOXR SPEEX
+OPTIONS_DEFAULT=AVAHI SIMD SIMPLE SOXR SPEEX WEBRTC_AEC
 AVAHI_CONFIGURE_ENABLE=	avahi
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 GCONF_CONFIGURE_ENABLE=	gconf
@@ -67,7 +67,7 @@ SIMD_CONFIGURE_ENABLE=	orc
 SIMD_LIB_DEPENDS=	liborc-0.4.so:devel/orc
 
 OPTIONS_GROUP=	AUDIO COMPLETIONS
-OPTIONS_GROUP_AUDIO=	ALSA JACK SOXR SPEEX
+OPTIONS_GROUP_AUDIO=	ALSA JACK SOXR SPEEX WEBRTC_AEC
 OPTIONS_GROUP_COMPLETIONS=	BASH ZSH
 AUDIO_DESC=	Audio support
 COMPLETIONS_DESC=	Programmable completions
@@ -80,6 +80,9 @@ SOXR_LIB_DEPENDS=	libsoxr.so:audio/libsoxr
 SPEEX_DESC=	Speex resampler and AEC support
 SPEEX_CONFIGURE_WITH=	speex
 SPEEX_LIB_DEPENDS=	libspeexdsp.so:audio/speexdsp
+WEBRTC_AEC_DESC=	WebRTC-based echo canceller
+WEBRTC_AEC_LIB_DEPENDS=	libwebrtc_audio_processing.so:audio/webrtc-audio-processing
+WEBRTC_AEC_CONFIGURE_ENABLE=	webrtc-aec
 ZSH_CONFIGURE_OFF=	--without-zsh-completion-dir
 
 OPTIONS_SINGLE=	DATABASE
