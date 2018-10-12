@@ -7,8 +7,10 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	x11-wm
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, flexible, scriptable tiling window manager written in Python
+
+BROKEN=		does not run
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
