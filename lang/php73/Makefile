@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	php73
-DISTVERSION=	7.3.0RC2
-PORTREVISION?=	1
+DISTVERSION=	7.3.0RC3
+PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	https://downloads.php.net/~cmb/
 DISTNAME=	php-${DISTVERSION}
