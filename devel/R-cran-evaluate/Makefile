@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	evaluate
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,10 +10,6 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Parsing and Evaluation Tools
 
 LICENSE=	MIT
-
-CRAN_DEPENDS=	R-cran-stringr>=0.6.2:textproc/R-cran-stringr
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=	cran:auto-plist
 
