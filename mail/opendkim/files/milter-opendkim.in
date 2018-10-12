@@ -24,6 +24,9 @@
 # milteropendkim_${profile}_* :   Variables per profile.
 #                             Sockets must be different from each other.
 #
+# milteropendkim_socket_perms (str):
+#                                 Permissions for local|unix socket.
+#
 #  all parameters below now can be set in opendkim.conf(5).
 # milteropendkim_socket (str):    Path to the milter socket.
 # milteropendkim_domain (str):    Domainpart of From: in mails to sign.
@@ -43,7 +46,6 @@ start_postcmd="dkim_start_postcmd"
 stop_postcmd="dkim_postcmd"
 command="%%PREFIX%%/sbin/opendkim"
 _piddir="/var/run/milteropendkim"
-_piddir_perms="0755"
 pidfile="${_piddir}/pid"
 sig_reload="USR1"
 
@@ -56,6 +58,7 @@ load_rc_config $name
 : ${milteropendkim_uid="mailnull"}
 : ${milteropendkim_gid="mailnull"}
 : ${milteropendkim_cfgfile="%%PREFIX%%/etc/mail/opendkim.conf"}
+: ${milteropendkim_socket_perms="0755"}
 
 # Options other than above can be set with $milteropendkim_flags.
 # see dkim-milter documentation for detail.
@@ -66,6 +69,7 @@ if [ -n "$2" ]; then
 	pidfile="${_piddir}/${profile}.pid"
 	eval milteropendkim_enable="\${milteropendkim_${profile}_enable:-${milteropendkim_enable}}"
 	eval milteropendkim_socket="\${milteropendkim_${profile}_socket:-}"
+	eval milteropendkim_socket_perms="\${milteropendkim_${profile}_socket_perms:-}"
 	if [ "x${milteropendkim_socket}" = "x" ];then
 	    echo "You must define a socket (milteropendkim_${profile}_socket)"
 	    exit 1
@@ -169,28 +173,31 @@ dkim_prepcmd ()
     fi
     if [ -n "${milteropendkim_gid}" ] ; then
        chgrp ${milteropendkim_gid} ${_piddir}
-       _piddir_perms="0775"
     fi
-    chmod ${_piddir_perms} ${_piddir}
+    chmod ${milteropendkim_socket_perms} ${_piddir}
 }
 
 dkim_start_postcmd ()
 {
-    # postcmd is executed too fast and socket is not created before checking...
-    sleep 1
-    if [ -S ${milteropendkim_socket##local:} ] ; then
-        chmod ${_piddir_perms} ${milteropendkim_socket##local:}
-    elif [ -S ${milteropendkim_socket##unix:} ] ; then
-        chmod ${_piddir_perms} ${milteropendkim_socket##unix:}
+    if [ "x${milteropendkim_socket}" != "x" ] ; then
+	# postcmd is executed too fast and socket is not created before checking...
+	sleep 1
+	if [ -S ${milteropendkim_socket##local:} ] ; then
+	    chmod ${milteropendkim_socket_perms} ${milteropendkim_socket##local:}
+	elif [ -S ${milteropendkim_socket##unix:} ] ; then
+	    chmod ${milteropendkim_socket_perms} ${milteropendkim_socket##unix:}
+	fi
     fi
 }
 
 dkim_postcmd()
 {
-    if [ -S ${milteropendkim_socket##local:} ] ; then
-        rm -f ${milteropendkim_socket##local:}
-    elif [ -S ${milteropendkim_socket##unix:} ] ; then
-        rm -f ${milteropendkim_socket##unix:}
+    if [ "x${milteropendkim_socket}" != "x" ] ; then
+	if [ -S ${milteropendkim_socket##local:} ] ; then
+	    rm -f ${milteropendkim_socket##local:}
+	elif [ -S ${milteropendkim_socket##unix:} ] ; then
+	    rm -f ${milteropendkim_socket##unix:}
+	fi
     fi
     # just if the directory is empty
     rmdir ${_piddir} > /dev/null 2>&1
