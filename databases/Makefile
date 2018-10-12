@@ -460,6 +460,7 @@
     SUBDIR += p5-Metadata
     SUBDIR += p5-Mojo-Pg
     SUBDIR += p5-MongoDB
+    SUBDIR += p5-Mongoose
     SUBDIR += p5-MySQL-Diff
     SUBDIR += p5-Net-Async-CassandraCQL
     SUBDIR += p5-ORLite
