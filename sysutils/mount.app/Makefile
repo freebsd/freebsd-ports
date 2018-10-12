@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Windowmaker application, Resembles wmmount with extra functionality
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libWINGs.a:x11-wm/windowmaker
 
 USES=		gettext

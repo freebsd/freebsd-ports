@@ -12,6 +12,9 @@ MASTER_SITES=	http://user.it.uu.se/~adavid/utils/ \
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Small utility to control XMMS from the command line
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	xmms:multimedia/xmms

@@ -10,6 +10,9 @@ MASTER_SITES=	http://chaos2.org/xpuyopuyo/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Puzzle game, somewhat like Tetris
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

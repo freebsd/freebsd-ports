@@ -11,6 +11,9 @@ MASTER_SITES=	http://mirror.symnds.com/software/misc/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ frontend for mkisofs and cdrecord
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

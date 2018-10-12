@@ -11,6 +11,9 @@ PKGNAMESUFFIX=	1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line tool for switching GTK+ themes
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2
 
 USE_GNOME=	gtk12

@@ -10,6 +10,9 @@ MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/support/
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Compiles information about file transfers from logfiles
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 

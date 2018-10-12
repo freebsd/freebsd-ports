@@ -10,6 +10,9 @@ MASTER_SITES=	http://200ok.org/distfiles/ipsorc/ \
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	GTK GUI tool to create and send IP packets
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2
 
 USE_GNOME=	gtk12

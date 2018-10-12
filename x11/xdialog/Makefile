@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Drop in replacement for the "dialog" or "cdialog" programs
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

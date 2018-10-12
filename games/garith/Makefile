@@ -11,6 +11,9 @@ MASTER_SITES=	http://www.cnm-vra.com/micah/garith/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Arithmetic quiz program for X Window System
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 USE_GNOME=	gtk12
 WRKSRC=		${WRKDIR}/garith
 CFLAGS+=	`${GTK_CONFIG} --cflags`

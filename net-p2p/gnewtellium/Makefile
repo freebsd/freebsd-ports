@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Gnutella client
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 PORTSCOUT=	skipv:0.05	# older than current one
 
 USE_GNOME=	gtk12

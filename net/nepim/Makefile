@@ -10,6 +10,9 @@ MASTER_SITES=	SAVANNAH/nepim
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for measuring available bandwidth between hosts
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LIB_DEPENDS=	liboop.so:devel/liboop
 
 USES=		gmake

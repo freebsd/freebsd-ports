@@ -11,6 +11,9 @@ MASTER_SITES=	SF
 MAINTAINER?=	lyngbol@wheel.dk
 COMMENT?=	Another gtk-based MP3 frontend
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 OPTIONS_DEFINE=	MPG321
 MPG321_DESC=	use mpg321 instead of mpg123
 

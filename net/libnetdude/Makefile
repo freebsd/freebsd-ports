@@ -10,6 +10,9 @@ MASTER_SITES=	SF/netdude/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for manipulating libpcap/tcpdump trace files
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libpcapnav.so:net/libpcapnav
 

@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.etree.org/shnutils/xmms-shn/dist/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS plugin to allow playing shorten-compressed audio
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2+ SHORTEN
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING

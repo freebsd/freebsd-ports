@@ -10,6 +10,9 @@ MASTER_SITES=	GNU
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick & easy monitoring of logfiles and devices
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 USE_GNOME=	gtk12
 USES=		gmake makeinfo
 GNU_CONFIGURE=	yes

@@ -10,6 +10,9 @@ MASTER_SITES=	http://wolfsinger.com/~wolfpack/packages/
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	UNIX manual page editor and viewer
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 MAKEFILE=	Makefile.FreeBSD

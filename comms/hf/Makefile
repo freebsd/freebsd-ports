@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}term/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio soundcard fsk, pactor 1, amtor, gtor, mt63
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	whiptail:devel/newt
