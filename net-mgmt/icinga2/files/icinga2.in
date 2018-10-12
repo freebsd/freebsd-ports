@@ -19,7 +19,7 @@
 
 . /etc/rc.subr
 
-# Add /usr/local/bin to path, so that the notification scripts 
+# Add /usr/local/bin to path, so that the notification scripts
 # can work (#!/usr/bin/env bash)
 export PATH=$PATH:%%LOCALBASE%%/bin:%%PREFIX%%/sbin
 
@@ -86,7 +86,6 @@ reload_precmd() {
 start_precmd() {
   if checkyesno "icinga2_mkvar"; then
     # Create necessary directories / change ownership
-    # 
     # While this is also done through pkg-plist, /var might be on a ramdisk,
     # so make sure all needed files and directories are created before starting
     # Icinga.
@@ -96,16 +95,17 @@ start_precmd() {
              "${icinga2_rundir}" "${icinga2_cachedir}"; do
         if [ ! -d "${d}" ]; then
           install -d -o ${icinga2_user} -g ${icinga2_group} "${d}"
-        else
-          chown ${icinga2_user}:${icinga2_group} "${d}"
         fi
     done
 
-    install -d -o ${icinga2_user} -g %%WWWGRP%% "${icinga2_rundir}/cmd" 
+    install -d -o ${icinga2_user} -g www "${icinga2_rundir}/cmd"
 
-    chown -R ${icinga2_user}:${icinga2_user} "${icinga2_libdir}"
-    chown -R ${icinga2_user}:${icinga2_user} "${icinga2_spooldir}"
   fi
+
+  chown -R ${icinga2_user}:${icinga2_group} "${icinga2_libdir}"
+  chown -R ${icinga2_user}:${icinga2_group} "${icinga2_spooldir}"
+  chown -R ${icinga2_user}:${icinga2_group} "${icinga2_cachedir}"
+  chown -R ${icinga2_user}:www "${icinga2_rundir}/cmd"
 
   if ! icinga2_checkconfig; then
     return 1
