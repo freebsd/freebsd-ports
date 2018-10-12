@@ -83,6 +83,7 @@ lib/pulse-%%PULSE_VERSION%%/modules/libprotocol-native.so
 lib/pulse-%%PULSE_VERSION%%/modules/libprotocol-simple.so
 lib/pulse-%%PULSE_VERSION%%/modules/libraop.so
 lib/pulse-%%PULSE_VERSION%%/modules/librtp.so
+%%WEBRTC_AEC%%lib/pulse-%%PULSE_VERSION%%/modules/libwebrtc-util.so
 %%ALSA%%lib/pulse-%%PULSE_VERSION%%/modules/module-alsa-card.so
 %%ALSA%%lib/pulse-%%PULSE_VERSION%%/modules/module-alsa-sink.so
 %%ALSA%%lib/pulse-%%PULSE_VERSION%%/modules/module-alsa-source.so
