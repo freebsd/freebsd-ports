@@ -1,0 +1,5 @@
+The python binding for PRIMME, PReconditioned Iterative MultiMethod Eigensolver
+for solving symmetric/Hermitian eigenvalue problems and singular value
+problems.
+
+WWW: http://www.cs.wm.edu/~andreas/software/
