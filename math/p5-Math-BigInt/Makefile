@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Math-BigInt
-PORTVERSION=	1.999813
+PORTVERSION=	1.999814
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +15,7 @@ LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
