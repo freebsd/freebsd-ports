@@ -2,7 +2,7 @@
 
 PORTNAME=	primme
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.20181010 # git describe doesn't identify the tag properly
+DISTVERSION=	2.1.20181011 # git describe doesn't identify the tag properly
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,13 +11,11 @@ COMMENT=	Iterative eigensolver for symmetric and hermitian matrices
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-LIB_DEPENDS=	libblas.so:math/blas \
-		liblapack.so:math/lapack
 TEST_DEPENDS=	gfortran${GCC_DEFAULT}:lang/gcc${GCC_DEFAULT}
 
 USES=		gmake localbase:ldflags
 USE_GITHUB=	yes
-GH_TAGNAME=	d089bec
+GH_TAGNAME=	6a0fa27
 MAKEFILE=	makefile
 ALL_TARGET=	solib
 USE_LDCONFIG=	yes
@@ -25,7 +23,20 @@ USE_LDCONFIG=	yes
 BINARY_ALIAS=	make=${GMAKE}
 
 CFLAGS+=	-fPIC
-LDFLAGS+=	${LOCALBASE}/lib/liblapack.so ${LOCALBASE}/lib/libblas.so
+LDFLAGS+=	${LAPACKLIB} -lm
+
+OPTIONS_RADIO=	LINALG
+OPTIONS_RADIO_LINALG=	ATLAS GOTOBLAS NETLIB OPENBLAS
+OPTIONS_DEFAULT=	OPENBLAS
+
+LINALG_DESC=		Choose which linear algebra interface (LAPACK) implementation to use:
+
+GOTOBLAS_DESC=		Goto blas implementation
+ATLAS_USES=		blaslapack:atlas
+GOTOBLAS_USES=		blaslapack:gotoblas
+NETLIB_USES=		blaslapack:netlib
+NETLIB_LDFLAGS=		-lblas # XXX why this isn't covered by blaslapack:netlib?
+OPENBLAS_USES=		blaslapack:openblas
 
 TEST_ENV=	${MAKE_ENV} F77=gfortran${GCC_DEFAULT} FLDR=gfortran${GCC_DEFAULT} \
 		LDFLAGS="-lm -Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFAULT} ${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so" \
@@ -38,10 +49,8 @@ PLIST_FILES=	include/primme.h \
 		include/primme_f77.h \
 		include/primme_svds.h \
 		include/primme_svds_f77.h \
-		lib/libprimme.so
-
-do-install:
-	cd ${WRKSRC} && ${COPYTREE_SHARE} include ${STAGEDIR}${PREFIX}
-	${INSTALL_LIB} ${WRKSRC}/lib/lib${PORTNAME}.so ${STAGEDIR}${PREFIX}/lib
+		lib/libprimme.so \
+		lib/libprimme.so.2 \
+		lib/libprimme.so.2.1
 
 .include <bsd.port.mk>
