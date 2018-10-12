@@ -2,6 +2,7 @@
 
 PORTNAME=	sccache
 DISTVERSION=	2.8.0.alpha0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	pizzamig@FreeBSD.org
