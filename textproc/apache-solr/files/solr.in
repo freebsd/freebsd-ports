@@ -59,7 +59,7 @@ export PATH=$PATH:%%LOCALBASE%%/bin
 # let the start script read some custom settings
 export SOLR_INCLUDE=/usr/local/etc/solr.in.sh
 
-required_files="${solr_instance}/solr.xml /usr/local/etc/solr.in.sh ${solr_instance}/log4j.properties"
+required_files="${solr_instance}/solr.xml /usr/local/etc/solr.in.sh"
 command=%%PREFIX%%/solr/bin/solr
 start_cmd=solr_start
 stop_cmd=solr_stop
