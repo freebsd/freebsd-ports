@@ -17,7 +17,7 @@
 +{
 +	static int cacheline_size = 0;
 +	static int cachemib[] = { CTL_MACHDEP, CPU_CACHELINE };
-+	int clen;
++	size_t clen;
 +	
 +	if (cacheline_size > 0)
 +		return cacheline_size;
