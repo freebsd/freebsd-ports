@@ -3,8 +3,8 @@
 
 PORTNAME=	monero-cli
 # To build from an arbitrary git commit comment the following two lines
-PORTVERSION=	0.12.3.0
-PORTREVISION=	3
+PORTVERSION=	0.13.0.2
+PORTREVISION=	0
 DISTVERSIONPREFIX=	v
 # and uncomment the following two lines
 #PORTVERSION=	0
@@ -33,6 +33,7 @@ LIB_DEPENDS=	\
 		libminiupnpc.so:net/miniupnpc \
 		libnorm.so:net/norm \
 		libpgm.so:net/openpgm \
+		libsodium.so:security/libsodium \
 		libunbound.so:dns/unbound \
 		libunwind.so:devel/libunwind \
 		libzmq.so:net/libzmq4
@@ -75,7 +76,8 @@ LD_EMULATION=	elf32ppc
 LD_EMULATION=	elf64ppc
 .endif
 
-CMAKE_ARGS+=	-DLD_RAW_FLAGS:STRING=-m${LD_EMULATION}
+CMAKE_ARGS+=	-DLD_RAW_FLAGS:STRING=-m${LD_EMULATION} \
+		-DMANUAL_SUBMODULES:BOOL=ON
 .endif
 
 USE_RC_SUBR=	monerod
@@ -84,7 +86,9 @@ USERS=		monero
 GROUPS=		monero
 
 PLIST_FILES=	\
+		bin/monero-blockchain-ancestry \
 		bin/monero-blockchain-blackball \
+		bin/monero-blockchain-depth \
 		bin/monero-blockchain-export \
 		bin/monero-blockchain-import \
 		bin/monero-blockchain-usage \
