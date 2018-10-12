@@ -52,7 +52,7 @@ FREEIPMI_CONFIGURE_ENABLE=	intf-free
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_plugins_lanplus_lanplus__crypt__impl.c
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src_plugins_lanplus_lanplus__crypt__impl.c
 .endif
 
 post-install:
