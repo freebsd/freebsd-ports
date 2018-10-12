@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Template-Toolkit
-PORTVERSION=	2.27
+PORTVERSION=	2.28
 CATEGORIES=	www textproc perl5
 MASTER_SITES=	CPAN \
 		http://www.template-toolkit.org/download/
@@ -19,15 +19,16 @@ RUN_DEPENDS=	p5-AppConfig>=1.56:devel/p5-AppConfig
 TEST_DEPENDS=	p5-Image-Size>=0:graphics/p5-Image-Size \
 		p5-Pod-POM>=0:textproc/p5-Pod-POM
 
+USES=		perl5
+
+USE_PERL5=	configure
+CONFIGURE_ARGS=	TT_ACCEPT=y
+
 OPTIONS_DEFINE=	DATE_CALC IMAGE_INFO IMAGE_SIZE POD_POM
 DATE_CALC_DESC=	Include Date::Calc Plugin
 IMAGE_INFO_DESC=Include Image::Info Plugin
 IMAGE_SIZE_DESC=Include Image::Size Plugin
 POD_POM_DESC=	Include Pod::POM Plugin
-
-USES=		perl5
-USE_PERL5=	configure
-CONFIGURE_ARGS=	TT_ACCEPT=y
 
 DATE_CALC_BUILD_DEPENDS=	p5-Date-Calc>=0:devel/p5-Date-Calc
 DATE_CALC_RUN_DEPENDS=		p5-Date-Calc>=0:devel/p5-Date-Calc
