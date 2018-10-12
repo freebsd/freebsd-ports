@@ -12,6 +12,9 @@ DISTNAME=	sexypsf-${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	XMMS plugin for playing .psf files
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 BUILD_DEPENDS=	xmms:multimedia/xmms
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

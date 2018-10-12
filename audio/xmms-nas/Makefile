@@ -10,6 +10,9 @@ MASTER_SITES=	ftp://ftp.stack.nl/pub/users/willem/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network Audio System (NAS) output plugin for XMMS
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LIB_DEPENDS=	libxmms.so:multimedia/xmms \
 		libaudio.so:audio/nas
 

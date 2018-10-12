@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	xmms-
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	XMMS plugin for playing Nintendo Game Boy(TM) audio
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	xmms:multimedia/xmms

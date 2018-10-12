@@ -12,6 +12,9 @@ DISTNAME=	xmms_ladspa-${PORTVERSION}
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	XMMS Plugin that provides LADSPA Plugins to XMMS
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
