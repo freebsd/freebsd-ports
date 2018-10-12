@@ -1,0 +1,7 @@
+This release includes the 10 gigabit FreeBSD*-based driver for Intel(R) Network
+Connections.
+
+The ix driver supports all 10 gigabit network connections based on
+82599, 82598EB, X520, X540, and X550 series controllers.
+
+WWW: https://downloadcenter.intel.com
