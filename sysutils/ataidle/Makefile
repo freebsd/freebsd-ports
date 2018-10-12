@@ -11,6 +11,9 @@ COMMENT=	Utility to spin down ATA drives
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	obsoleted by camcontrol(8)
+EXPIRATION_DATE=	2018-12-31
+
 USE_RC_SUBR=	${PORTNAME}
 PORTDOCS=	Changelog README
 PLIST_FILES=	sbin/ataidle \
