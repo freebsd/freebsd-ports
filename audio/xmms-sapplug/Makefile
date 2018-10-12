@@ -11,6 +11,9 @@ DISTNAME=	sapplug-xmms-${DISTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	XMMS input plugin for playing 8bit Atari(TM) .sap audio files
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	xmms:multimedia/xmms
