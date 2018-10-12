@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME:tl}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple encoder using OpenQuicktime (TM)
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LIB_DEPENDS=	libopenquicktime.so:multimedia/openquicktime
 
 USES=		localbase:ldflags tar:tgz

@@ -10,6 +10,9 @@ MASTER_SITES=	OSDN/anthy/5467
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	XIM server for Anthy input method
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

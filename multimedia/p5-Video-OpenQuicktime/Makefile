@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Interface to the OpenQuicktime library
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Inline>=0:devel/p5-Inline \
 		p5-Inline-C>=0.01:devel/p5-Inline-C

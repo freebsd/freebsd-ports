@@ -11,6 +11,9 @@ PKGNAMESUFFIX=	12
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Some useful routines of C programming (previous stable version)
 
+DEPRECATED=	Obsolete
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
