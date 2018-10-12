@@ -16,6 +16,7 @@ ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386
 
 USES=		php:ext
 USE_PHP=	hash:build json:build pdo:build
+IGNORE_WITH_PHP=	73
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	phalcon
