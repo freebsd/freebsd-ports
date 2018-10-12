@@ -13,6 +13,9 @@ DISTNAME=	gtk+-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gimp Toolkit for X11 GUI (previous stable version)
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 USES=		libtool pathfix perl5
 USE_PERL5=	build
 USE_XORG=	x11 ice xext sm xorgproto xi

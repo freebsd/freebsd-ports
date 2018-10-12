@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME:tl}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, not functional, video OpenQuicktime (TM) player
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	LGPL20 # version not really specified
 
 LIB_DEPENDS=	libopenquicktime.so:multimedia/openquicktime

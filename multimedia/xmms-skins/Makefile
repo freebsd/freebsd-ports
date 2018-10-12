@@ -93,6 +93,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Skins for X Multimedia System (XMMS)
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 CONFLICTS_INSTALL=	xmms-skins-huge-*
 
 NO_BUILD=	yes

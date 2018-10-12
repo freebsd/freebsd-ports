@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable library for handling Apple's QuickTime(TM) files
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 

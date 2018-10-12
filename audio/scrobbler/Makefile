@@ -12,6 +12,9 @@ DISTNAME=	xmms-scrobbler-${PORTVERSION}
 MAINTAINER?=	novel@FreeBSD.org
 COMMENT?=	XMMS/BMP plugin for Audioscrobbler.com
 
+DEPRECATED=	Uses obsolete glib12
+EXPIRATION_DATE=	2018-12-20
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 CONFLICTS=	xmms-scrobbler-[0-9]*
