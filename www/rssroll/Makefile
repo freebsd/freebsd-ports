@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rssroll
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1
 CATEGORIES=	www
 
 MAINTAINER=	koue@chaosophia.net
