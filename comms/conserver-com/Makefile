@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	conserver
-DISTVERSIONPREFIX=      v
+DISTVERSIONPREFIX=	v
 DISTVERSION=	8.2.2
 CATEGORIES=	comms
 PKGNAMESUFFIX=	-com
@@ -10,9 +10,10 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Application that allows multiple users to watch serial consoles
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		ssl
-USE_GITHUB=     yes
+USE_GITHUB=	yes
 USE_RC_SUBR=	conserver
 
 GNU_CONFIGURE=	yes
