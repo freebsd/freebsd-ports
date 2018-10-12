@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Math-BigInt-GMP
-PORTVERSION=	1.6005
+PORTVERSION=	1.6006
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +14,11 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Math-BigInt>=1.999812:math/p5-Math-BigInt
 LIB_DEPENDS=	libgmp.so:math/gmp
+RUN_DEPENDS=	p5-Math-BigInt>=1.999812:math/p5-Math-BigInt
 
-USE_PERL5=	configure
 USES=		localbase perl5
+USE_PERL5=	configure
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/BigInt/GMP/GMP.so
