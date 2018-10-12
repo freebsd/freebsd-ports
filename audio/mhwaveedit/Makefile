@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.4.23
-PORTREVISION=	2
+PORTVERSION=	1.4.24
+DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
-MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Graphical program for editing sound files
@@ -13,10 +12,16 @@ COMMENT=	Graphical program for editing sound files
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		localbase pathfix pkgconfig tar:bzip2
+USE_GITHUB=	yes
+GH_ACCOUNT=	magnush
+
+USES=		autoreconf localbase pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-alsalib --without-arts
+CONFIGURE_ARGS=	--without-alsalib \
+		--without-arts \
+		--with-build-date="-" \
+		--with-build-time="-"
 
 BROKEN_powerpc64=	fails to compile on powerpc64: convert_inc.c: conflicting types for 'C_FLOAT_PCM32SBEPM'
 BROKEN_sparc64=		fails to compile on sparc64
