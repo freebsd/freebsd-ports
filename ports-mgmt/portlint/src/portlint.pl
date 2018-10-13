@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.473 2018/09/16 17:48:44 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.480 2018/10/13 15:34:05 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 18;
-my $micro = 4;
+my $micro = 5;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -218,6 +218,7 @@ open(MK, 'Makefile') || die "Makefile: $!";
 my $ulineno = -1;
 my $uulineno = -1;
 my @muses = ();
+my @omuses = ();
 while (my $mline = <MK>) {
 	if ($uulineno == -1 && $mline =~ /^USE_/) {
 		$uulineno = $.;
@@ -230,10 +231,22 @@ while (my $mline = <MK>) {
 		    push @muses, split(/\s+/, $1);
 		}
     }
+	if ($mline =~ /^[\w\d]+_USES[?+]?=\s*(.*)/) {
+		if ($1) {
+			push @omuses, split(/\s+/, $1);
+		}
+	}
 }
 if ($uulineno > -1 && $ulineno > -1 && $uulineno < $ulineno) {
 	&perror("WARN", 'Makefile', $uulineno, "USE_* seen before USES.  ".
 		"According to the porters-handbook, USES must appear first.");
+}
+my %hmuses = map { $_ => 1 } @muses;
+foreach my $omuse (@omuses) {
+	if ($hmuses{$omuse}) {
+		&perror("WARN", 'Makefile', -1, "$omuse is specified in both USES ".
+			"and a optional *_USES.  It only needs to be specified in one.");
+	}
 }
 foreach my $muse (@muses) {
 	$makevar{USES} .= " " . $muse;
@@ -1102,7 +1115,7 @@ sub check_depends_syntax {
 			}
 			my $ok = $k;
 			if ($k =~ /^\$\{(\w+)\}$/) {
-				$k = get_makevar($1);
+				$k = get_makevar_shallow($1);
 				push @ks, split(/\s+/, $k);
 				next;
 			}
@@ -1487,7 +1500,19 @@ sub checkmakefile {
 	# whole file: PLIST_FILES and PLIST_DIRS
 	#
 	print "OK: checking PLIST_FILES and PLIST_DIRS.\n" if ($verbose);
+	my $python_plist = 0;
+	if ($makevar{USE_PYTHON} =~ /\bautoplist\b/) {
+		$python_plist = 1;
+		if (-f 'pkg-plist') {
+			&perror("WARN", $file, -1, "If you are using python and using autoplist ".
+				"you may remove the pkg-plist file.");
+		}
+	}
 	if ($whole =~ /\nPLIST_FILES.?=/ || $whole =~ /\nPLIST_DIRS.?=/) {
+		if ($python_plist) {
+			&perror("WARN", $file, -1, "If you are using python and using autoplist you may ".
+				"remove the definition of PLIST_FILE.");
+		}
 		if (-f 'pkg-plist') {
 			my $lineno = &linenumber($`);
 			&perror("WARN", $file, $lineno, "You may remove pkg-plist ".
@@ -1755,6 +1780,30 @@ sub checkmakefile {
 		&perror("WARN", $file, $lineno, "is $1$2 a user-settable option? ".
 			"Consider using WITH_$2 instead.")
 		if ($1.$2 ne 'USE_GCC');
+	}
+
+	#
+	# whole file: check for use of *_CMAKE_ARGS
+	#
+	print "OK: checking for use of *_CMAKE_ARGS instead of *_CMAKE_ON|OFF.\n" if ($verbose);
+	if ($whole =~ /\n([\w\d]+)_CMAKE_ARGS/) {
+		my $lineno = &linenumber($`);
+		&perror("WARN", $file, $lineno, "Use $1_CMAKE_ON or $1_CMAKE_OFF instead ".
+			"of $1_CMAKE_ARGS.  The former macros will automatically update ".
+			"CMAKE_ARGS.");
+	}
+
+	#
+	# while file: check that CMAKE_BOOL just has words
+	#
+	print "OK: checking that *_CMAKE_BOOL only contains words.\n" if ($verbose);
+	if ($whole =~ /\n([\w\d]+)_CMAKE_BOOL[?+:]?=([^\n]+)\n/) {
+		my $lineno = &linenumber($`);
+		my $o = $1;
+		if ($2 =~ /-D/) {
+			&perror("FATAL", $file, $lineno, "Only bare words can be used for ".
+				"${o}_CMAKE_BOOL.  The -D flag will be added automatically.");
+		}
 	}
 
 	#
@@ -3174,16 +3223,13 @@ EXTRACT_DEPENDS LIB_DEPENDS PATCH_DEPENDS BUILD_DEPENDS RUN_DEPENDS
 TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 	);
 
-	if ($tmp =~ /^(PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|TEST_|FETCH_)DEPENDS/m) {
+	if ($tmp =~ /^([\w\d]+_)?(PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|TEST_|FETCH_)DEPENDS/m) {
 		&checkearlier($file, $tmp, @varnames);
 
 		check_depends_syntax($tmp, $file);
 
 		foreach my $i (@linestocheck) {
-			foreach my $flavor (split(/\s+/, $makevar{FLAVORS} // '')) {
-				$tmp =~ s/${flavor}_$i[?+:]?=[^\n]+\n//g;
-			}
-			$tmp =~ s/$i[?+:]?=[^\n]+\n//g;
+			$tmp =~ s/^([\w\d]+_)?$i[?+:]?=[^\n]+\n//g;
 		}
 
 		# Remove any other *_DEPENDS lines as people may
@@ -3220,6 +3266,7 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 	print "OK: check ninth section of $file (USES: optional).\n"
 		if ($verbose);
 	$tmp = $sections[$idx] // '';
+	my $use_github_set = 0;
 
 	if ($tmp =~ /(USES|USE_)/) {
 		&checkearlier($file, $tmp, @varnames);
@@ -3232,9 +3279,25 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 			}
 			if ($line =~ /USE([_\w\d]+)=[^\n]+\n/) {
 				print "OK: seen USE$1.\n" if ($verbose);
+				if ($tmp =~ /USE_GITHUB/) {
+					$use_github_set = 1;
+				}
+				print "OK: USE_GITHUB set\n" if($use_github_set && $verbose);
 				$tmp =~ s/USE([_\w\d]+)=[^\n]+\n//;
 				next;
 			}
+		}
+		print "OK: check if GH_ options are in use\n"
+                	if ($verbose);
+		foreach my $line (split(/(GH(?:S[?+]|[_\w\d]+)?=[^\n]+\n)/, $tmp)) {
+			if ($line =~ /GH([_\w\d]+)=[^\n]+\n/) {
+				print "OK: seen GH$1.\n" if ($verbose);
+				print "No USE_GITHUB seen but GH$1 used\n"
+					unless ($use_github_set);
+				$tmp =~ s/GH([_\w\d]+)=[^\n]+\n//;
+				next;
+			}
+
 		}
 
 		&checkextra($tmp, 'USES/USE_x', $file);
@@ -3700,6 +3763,21 @@ sub get_makevar {
 	$result =~ s/\n\n/\n\0\n/g;
 	if (${^CHILD_ERROR_NATIVE} != 0) {
         die "\nFATAL ERROR: make(1) died with status ${^CHILD_ERROR_NATIVE} and returned '$result'";
+	}
+
+	return $result;
+}
+
+sub get_makevar_shallow {
+	my($cmd, $result);
+
+	$cmd = join(' -dV -V ', "make $makeenv MASTER_SITE_BACKUP=''", map { "'$_'" } @_);
+	$result = `$cmd`;
+	chomp $result;
+
+	$result =~ s/\n\n/\n\0\n/g;
+	if (${^CHILD_ERROR_NATIVE} != 0) {
+		die "\nFATAL ERROR: make(1) died with status ${^CHILD_ERROR_NATIVE} and returned '$result'";
 	}
 
 	return $result;
