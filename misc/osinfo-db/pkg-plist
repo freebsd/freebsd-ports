@@ -10,6 +10,7 @@ share/osinfo/device/ibm.com/ps2-mouse.xml
 share/osinfo/device/pcisig.com/pci-1000-0012.d/class.xml
 share/osinfo/device/pcisig.com/pci-1013-00b8.d/class.xml
 share/osinfo/device/pcisig.com/pci-1022-2000.d/class.xml
+share/osinfo/device/pcisig.com/pci-1033-0194.d/class.xml
 share/osinfo/device/pcisig.com/pci-10ec-8029.d/class.xml
 share/osinfo/device/pcisig.com/pci-10ec-8139.d/class.xml
 share/osinfo/device/pcisig.com/pci-1234-1111.xml
@@ -31,11 +32,15 @@ share/osinfo/device/pcisig.com/pci-1af4-1048.d/class.xml
 share/osinfo/device/pcisig.com/pci-1af4-1049.d/class.xml
 share/osinfo/device/pcisig.com/pci-1af4-1050.d/class.xml
 share/osinfo/device/pcisig.com/pci-1af4-1052.d/class.xml
+share/osinfo/device/pcisig.com/pci-1b36-0004.d/class.xml
 share/osinfo/device/pcisig.com/pci-1b36-0100.d/class.xml
 share/osinfo/device/pcisig.com/pci-8086-100e.d/class.xml
+share/osinfo/device/pcisig.com/pci-8086-10d3.d/class.xml
 share/osinfo/device/pcisig.com/pci-8086-2415.d/class.xml
 share/osinfo/device/pcisig.com/pci-8086-25ab.d/class.xml
 share/osinfo/device/pcisig.com/pci-8086-2668.d/class.xml
+share/osinfo/device/pcisig.com/pci-8086-293e.d/class.xml
+share/osinfo/device/qemu.org/chipset-x86-q35.xml
 share/osinfo/device/usb.org/usb-80ee-0021.d/class.xml
 share/osinfo/device/xen.org/xen-console.xml
 share/osinfo/device/xen.org/xen-pci.xml
@@ -91,6 +96,7 @@ share/osinfo/os/asianux.com/asianux-7.2.xml
 share/osinfo/os/asianux.com/asianux-unknown.xml
 share/osinfo/os/centos.org/centos-6.0.xml
 share/osinfo/os/centos.org/centos-6.1.xml
+share/osinfo/os/centos.org/centos-6.10.xml
 share/osinfo/os/centos.org/centos-6.2.xml
 share/osinfo/os/centos.org/centos-6.3.xml
 share/osinfo/os/centos.org/centos-6.4.xml
@@ -205,6 +211,7 @@ share/osinfo/os/fedoraproject.org/fedora-25.xml
 share/osinfo/os/fedoraproject.org/fedora-26.xml
 share/osinfo/os/fedoraproject.org/fedora-27.xml
 share/osinfo/os/fedoraproject.org/fedora-28.xml
+share/osinfo/os/fedoraproject.org/fedora-29.xml
 share/osinfo/os/fedoraproject.org/fedora-3.xml
 share/osinfo/os/fedoraproject.org/fedora-4.xml
 share/osinfo/os/fedoraproject.org/fedora-5.xml
@@ -214,6 +221,7 @@ share/osinfo/os/fedoraproject.org/fedora-8.xml
 share/osinfo/os/fedoraproject.org/fedora-9.xml
 share/osinfo/os/fedoraproject.org/fedora-unknown.xml
 share/osinfo/os/fedoraproject.org/silverblue-28.xml
+share/osinfo/os/fedoraproject.org/silverblue-29.xml
 share/osinfo/os/freebsd.org/freebsd-1.0.xml
 share/osinfo/os/freebsd.org/freebsd-10.0.xml
 share/osinfo/os/freebsd.org/freebsd-10.1.xml
@@ -490,6 +498,9 @@ share/osinfo/os/redhat.com/rhl-9.xml
 share/osinfo/os/sun.com/opensolaris-2009.06.xml
 share/osinfo/os/sun.com/solaris-10.xml
 share/osinfo/os/sun.com/solaris-9.xml
+share/osinfo/os/suse.com/caasp-1.0.xml
+share/osinfo/os/suse.com/caasp-2.0.xml
+share/osinfo/os/suse.com/caasp-3.0.xml
 share/osinfo/os/suse.com/sle-15.xml
 share/osinfo/os/suse.com/sled-10.1.xml
 share/osinfo/os/suse.com/sled-10.2.xml
