@@ -3,8 +3,8 @@
 # $FreeBSD$
 #
 # PROVIDE: mpd5
-# REQUIRE: SERVERS
-# BEFORE: DAEMON
+# REQUIRE: netif
+# BEFORE: routing
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable mpd5:
