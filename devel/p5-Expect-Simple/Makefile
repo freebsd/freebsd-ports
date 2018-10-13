@@ -17,8 +17,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Expect>=0:lang/p5-Expect
 
-RUN_DEPENDS+=	test
-
 USES=		perl5
 USE_PERL5=	configure
 NO_ARCH=	yes
