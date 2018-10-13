@@ -18,6 +18,8 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libbson-1.0.so:devel/libbson
 
+DEPRECATED=		No longer officially supported by Balabit
+EXPIRATION_DATE=	2019-12-31
 BROKEN_powerpc64=	fails to link: Internal error: Segmentation fault (program ld)
 BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
 
