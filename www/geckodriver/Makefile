@@ -2,8 +2,7 @@
 
 PORTNAME=	geckodriver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.0
-PORTREVISION=	2
+DISTVERSION=	0.23.0
 CATEGORIES=	www
 
 MAINTAINER=	daniel@blodan.se
@@ -17,89 +16,139 @@ GH_ACCOUNT=	mozilla
 
 PLIST_FILES=	bin/geckodriver
 
-CARGO_CRATES=	adler32-1.0.2 \
-		aho-corasick-0.6.4 \
-		base64-0.6.0 \
-		bitflags-1.0.3 \
+CARGO_CRATES=	adler32-1.0.3 \
+		aho-corasick-0.6.8 \
+		arrayvec-0.4.7 \
+		base64-0.9.3 \
+		bitflags-1.0.4 \
 		build_const-0.2.1 \
-		byteorder-1.2.3 \
+		byteorder-1.2.6 \
+		bytes-0.4.10 \
 		bzip2-0.3.3 \
 		bzip2-sys-0.1.6 \
-		cc-1.0.17 \
-		cfg-if-0.1.3 \
-		chrono-0.2.25 \
-		clap-2.31.2 \
-		cookie-0.10.1 \
+		cc-1.0.25 \
+		cfg-if-0.1.5 \
+		chrono-0.4.6 \
+		clap-2.32.0 \
+		cloudabi-0.0.3 \
+		cookie-0.11.0 \
 		crc-1.8.1 \
-		flate2-1.0.1 \
+		crossbeam-deque-0.6.1 \
+		crossbeam-epoch-0.5.2 \
+		crossbeam-utils-0.5.0 \
+		flate2-1.0.2 \
+		fnv-1.0.6 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
-		httparse-1.2.4 \
-		hyper-0.10.13 \
-		idna-0.1.4 \
+		futures-0.1.24 \
+		futures-cpupool-0.1.8 \
+		h2-0.1.12 \
+		http-0.1.13 \
+		httparse-1.3.2 \
+		hyper-0.12.10 \
+		idna-0.1.5 \
+		indexmap-1.0.1 \
+		iovec-0.1.2 \
+		itoa-0.4.3 \
 		kernel32-sys-0.2.2 \
-		language-tags-0.2.2 \
-		lazy_static-1.0.1 \
-		libc-0.2.42 \
-		log-0.3.9 \
-		log-0.4.2 \
-		matches-0.1.6 \
-		memchr-2.0.1 \
-		mime-0.2.6 \
-		miniz_oxide-0.1.2 \
-		miniz_oxide_c_api-0.1.2 \
-		mozprofile-0.3.0 \
-		mozrunner-0.7.0 \
+		lazy_static-1.1.0 \
+		lazycell-1.1.0 \
+		libc-0.2.43 \
+		lock_api-0.1.3 \
+		log-0.4.5 \
+		matches-0.1.8 \
+		memchr-2.0.2 \
+		memoffset-0.2.1 \
+		miniz_oxide-0.1.3 \
+		miniz_oxide_c_api-0.1.3 \
+		mio-0.6.16 \
+		mio-uds-0.6.7 \
+		miow-0.2.1 \
+		mozprofile-0.4.0 \
+		mozrunner-0.8.0 \
 		mozversion-0.1.3 \
 		msdos_time-0.1.6 \
+		net2-0.2.33 \
+		nodrop-0.1.12 \
 		num-0.1.42 \
-		num-integer-0.1.38 \
+		num-integer-0.1.39 \
 		num-iter-0.1.37 \
-		num-traits-0.2.4 \
+		num-traits-0.2.6 \
 		num_cpus-1.8.0 \
+		owning_ref-0.3.3 \
+		parking_lot-0.6.4 \
+		parking_lot_core-0.3.1 \
 		percent-encoding-1.0.1 \
 		podio-0.1.6 \
+		proc-macro2-0.4.19 \
+		quote-0.6.8 \
 		rand-0.3.22 \
-		rand-0.4.2 \
+		rand-0.4.3 \
+		rand-0.5.5 \
+		rand_core-0.2.1 \
 		redox_syscall-0.1.40 \
 		regex-0.2.11 \
-		regex-1.0.0 \
+		regex-1.0.5 \
 		regex-syntax-0.5.6 \
-		regex-syntax-0.6.1 \
+		regex-syntax-0.6.2 \
 		remove_dir_all-0.5.1 \
 		rust-ini-0.10.3 \
-		rustc-serialize-0.3.24 \
-		safemem-0.2.0 \
+		rustc_version-0.2.3 \
+		ryu-0.2.6 \
+		safemem-0.3.0 \
+		scopeguard-0.3.3 \
 		semver-0.6.0 \
+		semver-0.9.0 \
 		semver-parser-0.7.0 \
+		serde-1.0.79 \
+		serde_derive-1.0.79 \
+		serde_json-1.0.27 \
+		slab-0.4.1 \
+		smallvec-0.6.5 \
+		stable_deref_trait-1.1.1 \
+		string-0.1.1 \
 		strsim-0.7.0 \
+		syn-0.15.4 \
 		tempdir-0.3.7 \
 		term_size-0.3.1 \
-		textwrap-0.9.0 \
-		thread_local-0.3.5 \
+		textwrap-0.10.0 \
+		thread_local-0.3.6 \
 		time-0.1.40 \
-		traitobject-0.1.0 \
-		typeable-0.1.2 \
+		tokio-0.1.8 \
+		tokio-codec-0.1.0 \
+		tokio-current-thread-0.1.1 \
+		tokio-executor-0.1.4 \
+		tokio-fs-0.1.3 \
+		tokio-io-0.1.8 \
+		tokio-reactor-0.1.5 \
+		tokio-tcp-0.1.1 \
+		tokio-threadpool-0.1.6 \
+		tokio-timer-0.2.6 \
+		tokio-udp-0.1.2 \
+		tokio-uds-0.2.1 \
+		try-lock-0.2.2 \
 		ucd-util-0.1.1 \
-		unicase-1.4.2 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.7 \
 		unicode-segmentation-1.2.1 \
 		unicode-width-0.1.5 \
+		unicode-xid-0.1.0 \
 		unreachable-1.0.0 \
-		url-1.7.0 \
-		utf8-ranges-1.0.0 \
-		uuid-0.1.18 \
-		version_check-0.1.3 \
+		url-1.7.1 \
+		utf8-ranges-1.0.1 \
+		uuid-0.5.1 \
+		version_check-0.1.5 \
 		void-1.0.2 \
-		webdriver-0.36.0 \
+		want-0.0.6 \
+		webdriver-0.38.0 \
 		winapi-0.2.8 \
 		winapi-0.3.5 \
 		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		winreg-0.5.1 \
-		zip-0.3.3
+		ws2_32-sys-0.2.1 \
+		zip-0.4.0
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/geckodriver
