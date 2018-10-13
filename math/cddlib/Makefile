@@ -2,6 +2,7 @@
 
 PORTNAME=	cddlib
 PORTVERSION=	0.94j
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	phascolarctos@protonmail.ch
@@ -33,7 +34,7 @@ pre-build-MANUAL-off:
 do-install:
 	${MKDIR} ${STAGEDIR}${HEADERSDIR}
 	cd ${WRKSRC}/src/.libs && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/bin
-	cd ${WRKSRC}/lib-src/.libs && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/lib '-name *\.so*'
+	cd ${WRKSRC}/lib-src/.libs && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib '-name *\.so*'
 	cd ${WRKSRC}/lib-src/.libs && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib '-name *\.a'
 	cd ${WRKSRC}/lib-src && ${COPYTREE_SHARE} . ${STAGEDIR}${HEADERSDIR} '-name *\.h'
 
