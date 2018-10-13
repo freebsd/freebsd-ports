@@ -2,14 +2,8 @@ LIBSVM is an integrated software for support vector classification, (C-SVC,
 nu-SVC), regression (epsilon-SVR, nu-SVR) and distribution estimation
 (one-class SVM). It supports multi-class classification.
 
-Since version 2.8, it implements an SMO-type algorithm proposed in this paper:
-R.-E. Fan, P.-H. Chen, and C.-J. Lin. Working set selection using second order
-information for training SVM. Journal of Machine Learning Research 6,
-1889-1918, 2005. You can also find a pseudo code there.
-
-Our goal is to help users from other fields to easily use SVM as a tool. LIBSVM
-provides a simple interface where users can easily link it with their own
-programs. Main features of LIBSVM include
+LIBSVM provides a simple interface where users can easily link it with their
+own programs. Main features of LIBSVM include
 
   * Different SVM formulations
   * Efficient multi-class classification
