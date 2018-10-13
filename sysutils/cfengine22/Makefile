@@ -15,7 +15,7 @@ COMMENT=	Systems administration tool for networks
 CPE_VENDOR=	gnu
 
 DEPRECATED=	No longeer supported by cfengine.com
-EXPIRATION_DATE=	2019-03-31
+EXPIRATION_DATE=	2018-12-31
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
