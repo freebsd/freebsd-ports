@@ -20,9 +20,13 @@ BROKEN_powerpc64=	fails to link: unrecognized option '-Wl,-rpath=/usr/local/lib/
 LIB_DEPENDS=	libuv.so:devel/libuv
 
 USES=		cmake:noninja compiler:c11 cpe perl5 shebangfix ssl pkgconfig
-CPE_VENDOR=	h2o_project
 USE_GITHUB=	yes
 USE_PERL5=	run
+USE_LDCONFIG=  yes
+
+CPE_VENDOR=	h2o_project
+
+CONFLICTS=	h2o-devel-*
 
 SHEBANG_FILES=	share/h2o/start_server
 
