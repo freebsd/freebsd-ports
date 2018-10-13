@@ -1,6 +1,6 @@
---- setup.py.orig	2018-05-28 18:32:09 UTC
+--- setup.py.orig	2018-10-13 20:39:26 UTC
 +++ setup.py
-@@ -294,18 +294,9 @@ package_data_exclude = {
+@@ -295,18 +295,9 @@ package_data_exclude = {
  }
  
  data_files = [
@@ -22,7 +22,7 @@
  ]
  # print(generate_data_files(data_files))
  
-@@ -374,13 +365,12 @@ setup(
+@@ -375,8 +366,7 @@ setup(
      },
      install_requires=[
          'psutil>=5.4.0',
@@ -32,9 +32,3 @@
          'requests>2.18',
          'PySocks>=1.6.7',
          'bottle>=0.12.13',
-         'stem>=1.5.4',
--        'tzlocal>=1.5',
-+        'tzlocal>=1.4',
-         'futures>=3.2; python_version<"3.0"',
-         'urllib3>=1.22'
-     ],

@@ -1,6 +1,6 @@
---- theonionbox/theonionbox.py.orig	2018-05-27 22:03:29 UTC
+--- theonionbox/theonionbox.py.orig	2018-10-12 18:06:09 UTC
 +++ theonionbox/theonionbox.py
-@@ -505,17 +505,17 @@ required_modules = {
+@@ -520,17 +520,17 @@ required_modules = {
      },
      'apscheduler2': {
          'module': 'apscheduler',
