@@ -1,0 +1,13 @@
+Cddlib is a C library that implements the Double Description Method
+of Motzkin et al. for generating all vertices (i.e. extreme points)
+and extreme rays of a general convex polyhedron given by a system of
+linear inequalities in any finite dimensional real coordinate space.
+
+The program can be used for the reverse operation (i.e. convex hull
+computation). This means that one can move back and forth between an
+inequality representation and a generator (i.e. vertex and ray) 
+representation of a polyhedron with cddlib. Also, cddlib can solve a
+linear programming problem, i.e. a problem of maximizing and
+minimizing a linear function over P.
+
+WWW: https://github.com/cddlib/cddlib
