@@ -3,13 +3,15 @@
 
 PORTNAME=	libsigrok
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://sigrok.org/download/source/libsigrok/
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Framework for hardware logic analyzers, core library
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	doxygen:devel/doxygen
 LIB_DEPENDS=	libftdi1.so:devel/libftdi1 \
