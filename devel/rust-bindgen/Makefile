@@ -2,8 +2,7 @@
 
 PORTNAME=	rust-bindgen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.40.0
-PORTREVISION=	2
+DISTVERSION=	0.42.2
 CATEGORIES=	devel
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -20,54 +19,51 @@ GH_ACCOUNT=	rust-lang-nursery
 PLIST_FILES=	bin/bindgen
 LLVM_DEFAULT?=	70 # Keep in sync with Mk/bsd.gecko.mk
 
-CARGO_CRATES=	aho-corasick-0.6.4 \
-		ansi_term-0.9.0 \
-		atty-0.2.2 \
-		bitflags-0.8.2 \
-		bitflags-1.0.3 \
-		cc-1.0.6 \
-		cexpr-0.2.0 \
-		cfg-if-0.1.2 \
-		clang-sys-0.23.0 \
-		clap-2.24.2 \
-		diff-0.1.10 \
-		env_logger-0.5.10 \
+CARGO_CRATES=	aho-corasick-0.6.8 \
+		ansi_term-0.11.0 \
+		atty-0.2.11 \
+		bitflags-1.0.4 \
+		cc-1.0.25 \
+		cexpr-0.3.0 \
+		cfg-if-0.1.5 \
+		clang-sys-0.26.0 \
+		clap-2.32.0 \
+		diff-0.1.11 \
+		env_logger-0.5.13 \
 		glob-0.2.11 \
 		humantime-1.1.1 \
-		kernel32-sys-0.2.2 \
-		lazy_static-1.0.0 \
-		libc-0.2.39 \
+		lazy_static-1.1.0 \
+		libc-0.2.43 \
 		libloading-0.5.0 \
-		log-0.4.1 \
-		memchr-2.0.1 \
-		nom-1.2.4 \
+		log-0.4.5 \
+		memchr-2.1.0 \
+		nom-4.0.0 \
 		peeking_take_while-0.1.2 \
-		proc-macro2-0.3.2 \
-		quick-error-1.2.1 \
-		quote-0.5.1 \
-		regex-1.0.0 \
-		regex-syntax-0.6.0 \
+		proc-macro2-0.3.5 \
+		quick-error-1.2.2 \
+		quote-0.5.2 \
+		redox_syscall-0.1.40 \
+		redox_termios-0.1.1 \
+		regex-1.0.5 \
+		regex-syntax-0.6.2 \
 		shlex-0.1.1 \
-		strsim-0.6.0 \
-		term_size-0.3.0 \
-		termcolor-0.3.4 \
-		thread-id-3.1.0 \
-		thread_local-0.3.3 \
+		strsim-0.7.0 \
+		termcolor-1.0.4 \
+		termion-1.5.1 \
+		textwrap-0.10.0 \
+		thread_local-0.3.6 \
 		ucd-util-0.1.1 \
-		unicode-segmentation-1.2.0 \
-		unicode-width-0.1.4 \
+		unicode-width-0.1.5 \
 		unicode-xid-0.1.0 \
-		unreachable-0.1.1 \
-		utf8-ranges-1.0.0 \
-		vec_map-0.8.0 \
-		void-1.0.2 \
-		which-1.0.2 \
-		winapi-0.2.8 \
-		winapi-0.3.4 \
-		winapi-build-0.1.1 \
+		utf8-ranges-1.0.1 \
+		vec_map-0.8.1 \
+		version_check-0.1.4 \
+		which-1.0.5 \
+		winapi-0.3.5 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.1 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		wincolor-0.1.6
+		wincolor-1.0.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,"llvm-config,&${LLVM_DEFAULT},' \
