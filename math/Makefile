@@ -150,6 +150,7 @@
     SUBDIR += cbc
     SUBDIR += cblas
     SUBDIR += ccmath
+    SUBDIR += cddlib
     SUBDIR += ceres-solver
     SUBDIR += cgal
     SUBDIR += cgl
