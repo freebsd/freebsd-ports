@@ -1,37 +1,43 @@
 # $FreeBSD$
 
 PORTNAME=	slim-freebsd-black-theme
-DISTVERSION=	1.0
+DISTVERSION=	1.2
 CATEGORIES=	x11-themes
+MASTER_SITES=	https://bitbucket.org/rigoletto-freebsd/slim-freebsd-black-theme/get/
 
-MAINTAINER=	lebarondemerde@privacychain.ch
+MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Simple FreeBSD SLiM theme inspired on the FreeBSD SLiM theme
 
-LICENSE=	CC-BY-SA-3.0
+LICENSE=	CC-BY-4.0
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	montserrat>=0:x11-fonts/montserrat
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	lebarondemerde
-
+NO_ARCH=	yes
 NO_BUILD=	yes
 
-THEMEDIR_REL=	share/slim/themes/slim-freebsd-black-theme
-THEMEDIR=	${PREFIX}/${THEMEDIR_REL}
-PLIST_SUB=	THEMEDIR=${THEMEDIR_REL}
-
+WRKSRC=		${WRKDIR}/rigoletto-freebsd-${PORTNAME}-d8bc075cbd32
+PORTDOCS=	AUTHORS TRADEMARKS
 SUB_FILES=	pkg-message
-PORTDOCS=	README.md AUTHORS COPYING TRADEMARKS
+
+PLIST_FILES=	share/slim/themes/slim-freebsd-black-theme/background.png \
+		share/slim/themes/slim-freebsd-black-theme/panel.png \
+		share/slim/themes/slim-freebsd-black-theme/preview.png \
+		share/slim/themes/slim-freebsd-black-theme/slim.theme
 
 OPTIONS_DEFINE=	DOCS
 
+THEMEDIR_REL=	share/slim/themes/slim-freebsd-black-theme
+THEMEDIR=	${PREFIX}/${THEMEDIR_REL}
+
 do-install:
 	${MKDIR} ${STAGEDIR}${THEMEDIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${THEMEDIR} \
-		"! ( -name README.md -o -name AUTHORS -o -name COPYING -o -name TRADEMARKS )")
+	(cd ${WRKSRC}/src && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${THEMEDIR})
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKDIR}/${PORTNAME}-${PORTVERSION} && \
+	(cd ${WRKSRC}/doc && \
 		${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
