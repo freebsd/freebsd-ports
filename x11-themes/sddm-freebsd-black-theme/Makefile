@@ -1,38 +1,39 @@
 # $FreeBSD$
 
 PORTNAME=	sddm-freebsd-black-theme
-DISTVERSION=	1.0
-PORTREVISION=	1
+DISTVERSION=	1.2
 CATEGORIES=	x11-themes
+MASTER_SITES=	https://bitbucket.org/rigoletto-freebsd/sddm-freebsd-black-theme/get/
 
-MAINTAINER=	lebarondemerde@privacychain.ch
+MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Simple SDDM theme inspired on the FBSD SLiM theme
 
-LICENSE=	CC-BY-SA-3.0
+LICENSE=	CC-BY-SA-4.0
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	montserrat>=0:x11-fonts/montserrat
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	lebarondemerde
-
+NO_ARCH=	yes
 NO_BUILD=	yes
 
-THEMEDIR_REL=	share/sddm/themes/sddm-freebsd-black-theme
-THEMEDIR=	${PREFIX}/${THEMEDIR_REL}
-PLIST_SUB=	THEMEDIR=${THEMEDIR_REL}
-
+WRKSRC=		${WRKDIR}/rigoletto-freebsd-${PORTNAME}-2232270b8a94
+PORTDOCS=	AUTHORS CHANGELOG TRADEMARKS
+PLIST_SUB=      THEMEDIR=${THEMEDIR_REL}
 SUB_FILES=	pkg-message
-PORTDOCS=	README.md AUTHORS COPYING TRADEMARKS
 
 OPTIONS_DEFINE=	DOCS
 
+THEMEDIR_REL=	share/sddm/themes/sddm-freebsd-black-theme
+THEMEDIR=	${PREFIX}/${THEMEDIR_REL}
+
 do-install:
 	${MKDIR} ${STAGEDIR}${THEMEDIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${THEMEDIR} \
-		"! ( -name README.md -o -name AUTHORS -o -name COPYING -o -name TRADEMARKS )")
+	(cd ${WRKSRC}/src && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${THEMEDIR})
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKDIR}/${PORTNAME}-${PORTVERSION} && \
+	(cd ${WRKSRC}/doc && \
 		${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
