@@ -15,6 +15,9 @@ PKGNAMESUFFIX=	310
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
+DEPRECATED=		No longer supported by Balabit
+EXPIRATION_DATE=	2019-12-31
+
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
 		libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid \
