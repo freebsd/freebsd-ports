@@ -1,11 +1,11 @@
---- setup.py.orig	2016-11-13 20:01:34 UTC
+--- setup.py.orig	2018-09-22 13:22:03 UTC
 +++ setup.py
-@@ -73,7 +73,7 @@ setup(name='meson',
-                'mesonintrospect.py',
-                'wraptool.py'],
-       cmdclass={'install_scripts': install_scripts},
--      data_files=[('share/man/man1', ['man/meson.1',
-+      data_files=[('man/man1'      , ['man/meson.1',
-                                       'man/mesonconf.1',
-                                       'man/mesonintrospect.1',
-                                       'man/wraptool.1'])],
+@@ -38,7 +38,7 @@ packages = ['mesonbuild',
+ data_files = []
+ if sys.platform != 'win32':
+     # Only useful on UNIX-like systems
+-    data_files = [('share/man/man1', ['man/meson.1']),
++    data_files = [('man/man1', ['man/meson.1']),
+                   ('share/polkit-1/actions', ['data/com.mesonbuild.install.policy'])]
+ 
+ if __name__ == '__main__':
