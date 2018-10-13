@@ -839,6 +839,7 @@ include/aws/athena/model/ResultSetMetadata.h
 include/aws/athena/model/Row.h
 include/aws/athena/model/StartQueryExecutionRequest.h
 include/aws/athena/model/StartQueryExecutionResult.h
+include/aws/athena/model/StatementType.h
 include/aws/athena/model/StopQueryExecutionRequest.h
 include/aws/athena/model/StopQueryExecutionResult.h
 include/aws/athena/model/ThrottleReason.h
@@ -2515,6 +2516,7 @@ include/aws/codestar/model/ListTeamMembersRequest.h
 include/aws/codestar/model/ListTeamMembersResult.h
 include/aws/codestar/model/ListUserProfilesRequest.h
 include/aws/codestar/model/ListUserProfilesResult.h
+include/aws/codestar/model/ProjectStatus.h
 include/aws/codestar/model/ProjectSummary.h
 include/aws/codestar/model/Resource.h
 include/aws/codestar/model/TagProjectRequest.h
@@ -3773,6 +3775,8 @@ include/aws/directconnect/model/UntagResourceRequest.h
 include/aws/directconnect/model/UntagResourceResult.h
 include/aws/directconnect/model/UpdateLagRequest.h
 include/aws/directconnect/model/UpdateLagResult.h
+include/aws/directconnect/model/UpdateVirtualInterfaceAttributesRequest.h
+include/aws/directconnect/model/UpdateVirtualInterfaceAttributesResult.h
 include/aws/directconnect/model/VirtualGateway.h
 include/aws/directconnect/model/VirtualInterface.h
 include/aws/directconnect/model/VirtualInterfaceState.h
@@ -4120,6 +4124,7 @@ include/aws/ds/model/RestoreFromSnapshotRequest.h
 include/aws/ds/model/RestoreFromSnapshotResult.h
 include/aws/ds/model/SchemaExtensionInfo.h
 include/aws/ds/model/SchemaExtensionStatus.h
+include/aws/ds/model/SelectiveAuth.h
 include/aws/ds/model/ShareDirectoryRequest.h
 include/aws/ds/model/ShareDirectoryResult.h
 include/aws/ds/model/ShareMethod.h
@@ -4148,6 +4153,8 @@ include/aws/ds/model/UpdateNumberOfDomainControllersRequest.h
 include/aws/ds/model/UpdateNumberOfDomainControllersResult.h
 include/aws/ds/model/UpdateRadiusRequest.h
 include/aws/ds/model/UpdateRadiusResult.h
+include/aws/ds/model/UpdateTrustRequest.h
+include/aws/ds/model/UpdateTrustResult.h
 include/aws/ds/model/VerifyTrustRequest.h
 include/aws/ds/model/VerifyTrustResult.h
 include/aws/dynamodb/DynamoDBClient.h
@@ -6434,6 +6441,8 @@ include/aws/es/model/AccessPoliciesStatus.h
 include/aws/es/model/AddTagsRequest.h
 include/aws/es/model/AdditionalLimit.h
 include/aws/es/model/AdvancedOptionsStatus.h
+include/aws/es/model/CancelElasticsearchServiceSoftwareUpdateRequest.h
+include/aws/es/model/CancelElasticsearchServiceSoftwareUpdateResult.h
 include/aws/es/model/CognitoOptions.h
 include/aws/es/model/CognitoOptionsStatus.h
 include/aws/es/model/CompatibleVersionsMap.h
@@ -6441,6 +6450,7 @@ include/aws/es/model/CreateElasticsearchDomainRequest.h
 include/aws/es/model/CreateElasticsearchDomainResult.h
 include/aws/es/model/DeleteElasticsearchDomainRequest.h
 include/aws/es/model/DeleteElasticsearchDomainResult.h
+include/aws/es/model/DeploymentStatus.h
 include/aws/es/model/DescribeElasticsearchDomainConfigRequest.h
 include/aws/es/model/DescribeElasticsearchDomainConfigResult.h
 include/aws/es/model/DescribeElasticsearchDomainRequest.h
@@ -6494,8 +6504,11 @@ include/aws/es/model/RemoveTagsRequest.h
 include/aws/es/model/ReservedElasticsearchInstance.h
 include/aws/es/model/ReservedElasticsearchInstanceOffering.h
 include/aws/es/model/ReservedElasticsearchInstancePaymentOption.h
+include/aws/es/model/ServiceSoftwareOptions.h
 include/aws/es/model/SnapshotOptions.h
 include/aws/es/model/SnapshotOptionsStatus.h
+include/aws/es/model/StartElasticsearchServiceSoftwareUpdateRequest.h
+include/aws/es/model/StartElasticsearchServiceSoftwareUpdateResult.h
 include/aws/es/model/StorageType.h
 include/aws/es/model/StorageTypeLimit.h
 include/aws/es/model/Tag.h
@@ -7499,6 +7512,7 @@ include/aws/guardduty/model/Feedback.h
 include/aws/guardduty/model/FilterAction.h
 include/aws/guardduty/model/Finding.h
 include/aws/guardduty/model/FindingCriteria.h
+include/aws/guardduty/model/FindingPublishingFrequency.h
 include/aws/guardduty/model/FindingStatisticType.h
 include/aws/guardduty/model/FindingStatistics.h
 include/aws/guardduty/model/GeoLocation.h
@@ -8427,6 +8441,7 @@ include/aws/iot/model/ThingIndexingMode.h
 include/aws/iot/model/ThingTypeDefinition.h
 include/aws/iot/model/ThingTypeMetadata.h
 include/aws/iot/model/ThingTypeProperties.h
+include/aws/iot/model/TimeoutConfig.h
 include/aws/iot/model/TopicRule.h
 include/aws/iot/model/TopicRuleListItem.h
 include/aws/iot/model/TopicRulePayload.h
@@ -13576,6 +13591,8 @@ include/aws/ssm/model/AutomationExecutionMetadata.h
 include/aws/ssm/model/AutomationExecutionStatus.h
 include/aws/ssm/model/CancelCommandRequest.h
 include/aws/ssm/model/CancelCommandResult.h
+include/aws/ssm/model/CancelMaintenanceWindowExecutionRequest.h
+include/aws/ssm/model/CancelMaintenanceWindowExecutionResult.h
 include/aws/ssm/model/CloudWatchOutputConfig.h
 include/aws/ssm/model/Command.h
 include/aws/ssm/model/CommandFilter.h
@@ -13678,10 +13695,14 @@ include/aws/ssm/model/DescribeMaintenanceWindowExecutionTasksRequest.h
 include/aws/ssm/model/DescribeMaintenanceWindowExecutionTasksResult.h
 include/aws/ssm/model/DescribeMaintenanceWindowExecutionsRequest.h
 include/aws/ssm/model/DescribeMaintenanceWindowExecutionsResult.h
+include/aws/ssm/model/DescribeMaintenanceWindowScheduleRequest.h
+include/aws/ssm/model/DescribeMaintenanceWindowScheduleResult.h
 include/aws/ssm/model/DescribeMaintenanceWindowTargetsRequest.h
 include/aws/ssm/model/DescribeMaintenanceWindowTargetsResult.h
 include/aws/ssm/model/DescribeMaintenanceWindowTasksRequest.h
 include/aws/ssm/model/DescribeMaintenanceWindowTasksResult.h
+include/aws/ssm/model/DescribeMaintenanceWindowsForTargetRequest.h
+include/aws/ssm/model/DescribeMaintenanceWindowsForTargetResult.h
 include/aws/ssm/model/DescribeMaintenanceWindowsRequest.h
 include/aws/ssm/model/DescribeMaintenanceWindowsResult.h
 include/aws/ssm/model/DescribeParametersRequest.h
@@ -13813,6 +13834,7 @@ include/aws/ssm/model/MaintenanceWindowExecutionTaskIdentity.h
 include/aws/ssm/model/MaintenanceWindowExecutionTaskInvocationIdentity.h
 include/aws/ssm/model/MaintenanceWindowFilter.h
 include/aws/ssm/model/MaintenanceWindowIdentity.h
+include/aws/ssm/model/MaintenanceWindowIdentityForTarget.h
 include/aws/ssm/model/MaintenanceWindowLambdaParameters.h
 include/aws/ssm/model/MaintenanceWindowResourceType.h
 include/aws/ssm/model/MaintenanceWindowRunCommandParameters.h
@@ -13838,6 +13860,7 @@ include/aws/ssm/model/ParameterType.h
 include/aws/ssm/model/ParametersFilter.h
 include/aws/ssm/model/ParametersFilterKey.h
 include/aws/ssm/model/Patch.h
+include/aws/ssm/model/PatchAction.h
 include/aws/ssm/model/PatchBaselineIdentity.h
 include/aws/ssm/model/PatchComplianceData.h
 include/aws/ssm/model/PatchComplianceDataState.h
@@ -13883,6 +13906,7 @@ include/aws/ssm/model/ResumeSessionRequest.h
 include/aws/ssm/model/ResumeSessionResult.h
 include/aws/ssm/model/S3OutputLocation.h
 include/aws/ssm/model/S3OutputUrl.h
+include/aws/ssm/model/ScheduledWindowExecution.h
 include/aws/ssm/model/SendAutomationSignalRequest.h
 include/aws/ssm/model/SendAutomationSignalResult.h
 include/aws/ssm/model/SendCommandRequest.h
@@ -14421,6 +14445,7 @@ include/aws/transcribe/TranscribeServiceRequest.h
 include/aws/transcribe/TranscribeService_EXPORTS.h
 include/aws/transcribe/model/CreateVocabularyRequest.h
 include/aws/transcribe/model/CreateVocabularyResult.h
+include/aws/transcribe/model/DeleteTranscriptionJobRequest.h
 include/aws/transcribe/model/DeleteVocabularyRequest.h
 include/aws/transcribe/model/GetTranscriptionJobRequest.h
 include/aws/transcribe/model/GetTranscriptionJobResult.h
