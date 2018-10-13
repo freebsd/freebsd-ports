@@ -2,17 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	smtube
-PORTVERSION=	18.3.0
+PORTVERSION=	18.9.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/smtube/SMTube/${PORTVERSION}/
 
-MAINTAINER=	multimedia@FreeBSD.org
+MAINTAINER=	kikadf.01@gmail.com
 COMMENT=	SMPlayer YouTube browser
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Copying.txt
 
 USES=		gmake tar:bzip2
+
 ALL_TARGET=	#empty
 MAKE_ARGS=	DATA_PATH="${DATADIR}" DOC_PATH="${DOCSDIR}" \
 		LRELEASE="${LRELEASE}" MAKE="${MAKE_CMD}" \
@@ -25,7 +26,7 @@ OPTIONS_SINGLE_TOOLKIT=	QT4 QT5
 OPTIONS_MULTI=		PLAYER
 OPTIONS_MULTI_PLAYER=	MPLAYER MPV SMPLAYER VLC
 OPTIONS_DEFINE=		DOCS
-OPTIONS_DEFAULT=	QT4 SMPLAYER
+OPTIONS_DEFAULT=	QT5 SMPLAYER
 
 TOOLKIT_DESC=	Qt toolkit version
 PLAYER_DESC=	Video player
@@ -38,7 +39,7 @@ QT4_USES=	qt:4
 QT4_USE=	qt=qmake_build,moc_build,rcc_build,uic_build
 QT4_USE+=	qt=corelib,network,script,gui,webkit,linguisttools_build
 
-QT5_USES=	qt:5
+QT5_USES=	gl qt:5
 QT5_USE=	qt=qmake_build,buildtools_build,linguisttools_build
 QT5_USE+=	qt=core,network,script,gui,webkit,widgets gl=gl
 
