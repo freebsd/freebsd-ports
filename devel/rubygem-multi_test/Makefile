@@ -6,15 +6,17 @@ PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Help control rogue test, unit, autorun requirments
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		gem shebangfix
+USE_RUBY=	yes
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
-USES=		gem shebangfix
 SHEBANG_FILES=	test/all test/run
 
 .include <bsd.port.mk>
