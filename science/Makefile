@@ -75,6 +75,7 @@
     SUBDIR += fvcom-mpi
     SUBDIR += fvm
     SUBDIR += gabedit
+    SUBDIR += gamess-us
     SUBDIR += gchemutils
     SUBDIR += gdma
     SUBDIR += getdp

@@ -1,0 +1,11 @@
+--- lked.orig	2018-10-13 06:11:50 UTC
++++ lked
+@@ -1556,7 +1556,7 @@ if (($TARGET == win32) || ($TARGET == wi
+ endif
+ chdir $GMS_BUILD_DIR/object
+ #
+-$LDR  $EXTRA_LINK_FLAGS:q -o $GMS_BUILD_DIR/$EXE.$VERNO.x $LDOPTS \
++$LDR  $EXTRA_LINK_FLAGS:q $LDFLAGS -o $GMS_BUILD_DIR/$EXE.$VERNO.x $LDOPTS \
+       -I$GMS_BUILD_DIR/object \
+       gamess.o unport.o $BLAS $LAPACK $VECTOR $QUICHE \
+       $STANDARD_GAMESS_OBJ1 \
