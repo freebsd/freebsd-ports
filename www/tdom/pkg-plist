@@ -9,6 +9,7 @@ man/mann/domDoc.n.gz
 man/mann/domNode.n.gz
 man/mann/expat.n.gz
 man/mann/expatapi.n.gz
+man/mann/pullparser.n.gz
 man/mann/tdomcmd.n.gz
 man/mann/tnc.n.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/category-index.html
@@ -19,6 +20,7 @@ man/mann/tnc.n.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/expatapi.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/keyword-index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/pullparser.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tdomcmd.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tnc.html
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tDOM
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	www
 MASTER_SITES=	http://tdom.org/downloads/
 DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
@@ -11,10 +11,11 @@ EXTRACT_SUFX=	-src.tgz
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	High performance processing of XML and HTML data with Tcl
 
-LICENSE=	MPL11
+LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		tcl:tea
+
 CONFIGURE_ARGS=	--enable-threads --disable-tdomalloc
 CONFIGURE_ARGS+=--with-expat=/usr
 EXTRACT_AFTER_ARGS=--exclude 'expat*/*.c' --exclude 'expat*/[a-mo-z]*.h' \
