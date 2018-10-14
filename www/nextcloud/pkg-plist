@@ -1,4 +1,4 @@
-@(root,%%NEXTCLOUD_GROUPNAME%%,644) %%WWWDIR%%/.htaccess
+@(,%%NEXTCLOUD_GROUPNAME%%,644) %%WWWDIR%%/.htaccess
 @(%%NEXTCLOUD_USERNAME%%,%%NEXTCLOUD_GROUPNAME%%,664) %%WWWDIR%%/.user.ini
 %%WWWDIR%%/3rdparty/.drone.yml
 %%WWWDIR%%/3rdparty/.gitignore
@@ -10630,12 +10630,9 @@
 %%WWWDIR%%/apps-pkg/workflowengine/lib/Manager.php
 %%WWWDIR%%/apps-pkg/workflowengine/lib/Settings/Section.php
 %%WWWDIR%%/apps-pkg/workflowengine/templates/admin.php
-@group %%NEXTCLOUD_GROUPNAME%%
-%%WWWDIR%%/config/.htaccess
-@owner %%NEXTCLOUD_USERNAME%%
-%%WWWDIR%%/config/config.sample.php
-@owner
-@group
+@(,%%NEXTCLOUD_GROUPNAME%%,644) %%WWWDIR%%/config/.htaccess
+@sample(%%NEXTCLOUD_USERNAME%%,%%NEXTCLOUD_GROUPNAME%%,640) %%WWWDIR%%/config/config.sample.php %%WWWDIR%%/config/config.php
+%%WWWDIR%%/config/config.documented.php
 %%WWWDIR%%/console.php
 %%WWWDIR%%/core/Application.php
 %%WWWDIR%%/core/BackgroundJobs/BackgroundCleanupUpdaterBackupsJob.php
@@ -13299,6 +13296,9 @@
 %%WWWDIR%%/version.php
 @dir %%WWWDIR%%/apps-pkg
 @dir %%WWWDIR%%/apps-pkg/gallery/documentation/wiki
-@dir(%%NEXTCLOUD_USERNAME%%,%%NEXTCLOUD_GROUPNAME%%,) %%WWWDIR%%/apps
-@dir(%%NEXTCLOUD_USERNAME%%,%%NEXTCLOUD_GROUPNAME%%,) %%WWWDIR%%/config
-@dir(%%NEXTCLOUD_USERNAME%%,%%NEXTCLOUD_GROUPNAME%%,) %%WWWDIR%%/data
+@owner %%NEXTCLOUD_USERNAME%%
+@group %%NEXTCLOUD_GROUPNAME%%
+@dir %%WWWDIR%%/apps
+@dir %%WWWDIR%%/config
+@dir %%WWWDIR%%/data
+@dir /var/log/nextcloud

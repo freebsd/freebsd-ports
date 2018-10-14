@@ -4,8 +4,8 @@
 
 Please note that everything has been installed in %%WWWDIR%%.
 
-You will probably want to add an alias to your httpd.conf file, something
-like this:
+You will probably want to add an alias to your httpd.conf file,
+something like this:
 
     	Alias /nextcloud %%WWWDIR%%
 	AcceptPathInfo On
@@ -18,6 +18,9 @@ And restart Apache.
 
 The caching options require additional Nextcloud configuration, see
 https://docs.nextcloud.com/server/12/admin_manual/configuration_server/caching_configuration.html
+
+/!\ The FreeBSD package REQUIRES the apps_paths configuration as    /!\
+/!\ seen in config/config.sample.php to function                    /!\
 
 ***********************************************************************
 *                       NEXTCLOUD VERSION UPGRADE                     *
