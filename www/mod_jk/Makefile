@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_jk
-PORTVERSION=	1.2.43
+PORTVERSION=	1.2.46
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	APACHE/tomcat/tomcat-connectors/jk/
