@@ -2,6 +2,7 @@
 
 PORTNAME=	nextcloud
 DISTVERSION=	14.0.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://download.nextcloud.com/server/releases/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -22,7 +23,7 @@ NEXTCLOUD_GROUPNAME?=	${WWWGRP}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes
-SUB_FILES=	pkg-message
+SUB_FILES=	config.sample.php pkg-message
 PLIST_SUB=	NEXTCLOUD_USERNAME=${NEXTCLOUD_USERNAME} \
 		NEXTCLOUD_GROUPNAME=${NEXTCLOUD_GROUPNAME}
 
@@ -67,15 +68,21 @@ RUN_DEPENDS+=   ${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu4@${PHP
 .	endif
 .endif
 
+post-extract:
+	@${MV} ${WRKSRC}/config/config.sample.php ${WRKSRC}/config/config.documented.php
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|/var/www/${PORTNAME}|${WWWDIR}|' ${WRKSRC}/config/config.sample.php
+	@${REINPLACE_CMD} -e 's|/var/www/${PORTNAME}|${WWWDIR}|;s|/var/log/|/var/log/${PORTNAME}/|' \
+		${WRKSRC}/config/config.documented.php
 	@${MV} ${WRKSRC}/apps ${WRKSRC}/apps-pkg
 
 do-install:
 	@${MKDIR} -m 0755 ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	@${INSTALL_SCRIPT} ${WRKDIR}/config.sample.php ${STAGEDIR}${WWWDIR}/config/config.sample.php
 	@${RM} ${STAGEDIR}${WWWDIR}/updater/updater.phar
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/data
 	@${MKDIR} ${STAGEDIR}${WWWDIR}/apps
+	@${MKDIR} ${STAGEDIR}/var/log/${PORTNAME}
 
 .include <bsd.port.post.mk>
