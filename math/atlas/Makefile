@@ -227,6 +227,7 @@ do-install:
 	(cd ${WRKSRC}/${opt}/ARCHS; \
 		${COPYTREE_SHARE} "*" ${STAGEDIR}${DATADIR}/${opt} \
 		"! -name Makefile -and ! -name *.tgz")
+	@${FIND} ${STAGEDIR}${DATADIR}/${opt} -type d -empty -delete
 .    endif
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
