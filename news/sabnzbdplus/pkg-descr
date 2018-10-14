@@ -3,4 +3,4 @@ from Usenet easy by automating the whole thing. You give it an NZB
 file or an RSS feed, it does the rest. Has a web-browser based UI
 and an API for 3rd-party apps. Ideal for servers too.
 
-WWW: http://sabnzbd.org/
+WWW: https://sabnzbd.org/
