@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rails-settings-cached
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,9 +12,9 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-rails4>=4.2.0:www/rubygem-rails4
 
-NO_ARCH=	yes
-
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
