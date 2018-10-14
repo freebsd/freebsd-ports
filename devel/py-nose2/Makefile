@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nose2
-PORTVERSION=	0.7.4
+PORTVERSION=	0.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +17,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=4.4.1:devel/py-coverage@${PY_FLAVO
 
 py27_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=2.0.0:devel/py-mock@${PY_FLAVOR}
 
-NO_ARCH=	yes
 USES=		python
+
+NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
