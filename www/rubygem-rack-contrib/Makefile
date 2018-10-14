@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rack-contrib
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rubygem-rack>=2.0:www/rubygem-rack
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
