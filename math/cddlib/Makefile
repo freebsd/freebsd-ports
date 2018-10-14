@@ -2,7 +2,7 @@
 
 PORTNAME=	cddlib
 PORTVERSION=	0.94j
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	phascolarctos@protonmail.ch
@@ -47,5 +47,8 @@ post-install-MANUAL-on:
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "examples*" ${STAGEDIR}${EXAMPLESDIR}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
 .include <bsd.port.mk>
