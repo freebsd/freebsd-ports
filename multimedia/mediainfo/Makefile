@@ -14,14 +14,14 @@ COMMENT=	Provides technical and tag information for video and audio files
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/../../../License.html
 
-BROKEN_powerpc64=	does not build: undefined reference to fmodl
-
 LIB_DEPENDS=	libmediainfo.so:multimedia/libmediainfo \
 		libzen.so:multimedia/libzen
 
+USES=		compiler:c++11-lang libtool pathfix pkgconfig tar:xz
+
 GNU_CONFIGURE=	yes
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
-USES=		libtool pathfix pkgconfig tar:xz
 
 PLIST_FILES=	bin/mediainfo
 WRKSRC=		${WRKDIR}/MediaInfo_CLI_GNU_FromSource/MediaInfo/Project/GNU/CLI
