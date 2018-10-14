@@ -1,0 +1,10 @@
+--- runall.orig	2018-10-13 23:46:23 UTC
++++ runall
+@@ -42,6 +42,7 @@ set Ntest=47
+ while ($i <= $Ntest)
+                set NUM=$i
+   if ($i <= 9) set NUM=0$i
++  echo "Running test: $NUM of $Ntest"
+   if (`hostname` == si.msg.chem.iastate.edu) then
+      xgms -v $VERNO -q $QUEUE -l exam$NUM.log exam$NUM
+      sleep 2
