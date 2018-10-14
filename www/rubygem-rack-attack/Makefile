@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rack-attack
-PORTVERSION=	5.4.0
+PORTVERSION=	5.4.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,8 +13,9 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-rack>=1.0:www/rubygem-rack
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
