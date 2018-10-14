@@ -13,6 +13,9 @@ COMMENT=	cfengine sample policies for installations and upgrades
 
 LICENSE=	GPLv3
 
+DEPRECATED=		cfengine311 will retire at FreeBSD 11 EOL
+EXPIRATION_DATE=	2021-09-31
+
 CPE_VENDOR=	gnu
 
 CONFLICTS=	cfengine-masterfiles3[0-9]-* cfengine-masterfiles31[02-9]-*

@@ -15,6 +15,10 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Systems administration tool for networks
 CPE_VENDOR=	gnu
 
+DEPRECATED=		OpenSSL 1.1.X is not supported.
+EXPIRATION_DATE=	2021-09-30
+BROKEN_FreeBSD_12=	openssl111 is not supported
+
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
 CONFLICTS=	cfengine-2* cfengine-3.[13-9]* cfengine-devel-* \
