@@ -19,8 +19,9 @@ RUN_DEPENDS=	rubygem-railties50>=5.0.0:www/rubygem-railties50 \
 		rubygem-sprockets-rails-rails50>=2.0:devel/rubygem-sprockets-rails-rails50 \
 		rubygem-tilt>=1.1:devel/rubygem-tilt
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
