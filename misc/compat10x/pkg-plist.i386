@@ -1,3 +1,4 @@
+lib/compat/libbsnmptools.so.0
 lib/compat/libcam.so.6
 lib/compat/libcrypto.so.7
 lib/compat/libdevinfo.so.5
