@@ -1,0 +1,10 @@
+wxMacMolPlt is an open-source, cross-platform (Mac OS X, Linux and Windows) gui
+for preparing, submitting and visualizing input and output for the GAMESS
+quantum chemistry package. Features include a graphical molecule builder, GAMESS
+input generation, animation of output and visualization of molecules, normal
+modes, orbitals and other properties.
+
+MacMolPlt is designed to be easy to use by the novice chemist yet has many
+powerful features that will be immediately indespensible to the advanced user.
+
+WWW: https://brettbode.github.io/wxmacmolplt/
