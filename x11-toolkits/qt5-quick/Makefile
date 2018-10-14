@@ -11,7 +11,8 @@ COMMENT=	Qt declarative framework for dynamic user interfaces
 USE_GL=		gl
 USE_QT=		core gui network qml sql testlib \
 		widgets xmlpatterns buildtools_build
-USES=		python:build qmake:norecursive qt-dist:5,declarative
+USES=		compiler:c++11-lang gl python:build qmake:norecursive \
+		qt-dist:5,declarative
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 CONFLICTS=	qt5-declarative-render2d-*

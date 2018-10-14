@@ -13,7 +13,7 @@ BROKEN_SSL_REASON_openssl-devel=	error: member access into incomplete type 'X509
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		qmake:no_env qt-dist:5,base ssl
+USES=		compiler:c++11-lang qmake:no_env qt-dist:5,base ssl
 USE_QT=		core buildtools_build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-no-gui -no-xcb

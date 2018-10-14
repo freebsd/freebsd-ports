@@ -9,7 +9,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt sensors module
 
 USE_QT=		core qml quick buildtools_build
-USES=		qmake:norecursive qt-dist:5,sensors
+USES=		compiler:c++11-lang qmake:norecursive qt-dist:5,sensors
 
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 

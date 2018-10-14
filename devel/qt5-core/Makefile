@@ -11,7 +11,7 @@ COMMENT=	Qt core non-graphical module
 LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libpcre2-posix.so:devel/pcre2
 
-USES=		qmake:no_env qt-dist:5,base
+USES=		compiler:c++11-lang gnome qmake:no_env qt-dist:5,base
 USE_GNOME=	glib20
 USE_QT=		qmake_build buildtools_build
 HAS_CONFIGURE=	yes

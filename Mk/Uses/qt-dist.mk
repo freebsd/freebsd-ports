@@ -196,6 +196,11 @@ _EXTRA_PATCHES_QT4+=	${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-aarch64
 _EXTRA_PATCHES_QT5=	${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_features_create__cmake.prf \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_features_qt__module.prf \
 			${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-mkspecs_common_bsd_bsd.conf
+.        if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+_EXTRA_PATCHES_QT5+=	${PORTSDIR}/devel/${_QT_RELNAME}/files/extra-patch-mkspecs_common_g++-base.conf \
+			${PORTSDIR}/devel/${_QT_RELNAME}/files/extra-patch-mkspecs_common_gcc-base.conf
+USE_GCC=		yes
+.        endif
 .    endif
 EXTRA_PATCHES?=		${PORTSDIR}/devel/${_QT_RELNAME}/files/extrapatch-configure \
 			${_EXTRA_PATCHES_QT4} ${_EXTRA_PATCHES_QT5}
@@ -267,6 +272,14 @@ _QT_TOOLS+=		${UIC}
 # The list of QtBase components that need to be linked into WRKSRC/lib for
 # other QtBase ports. See below.
 _QT5_BASE=		core dbus gui network sql widgets
+
+.if ${_QT_VER:M5}
+post-patch: gcc-post-patch
+gcc-post-patch:
+	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/mkspecs/common/gcc-base.conf
+	${REINPLACE_CMD} 's|%%GCC_DEFAULT%%|${GCC_DEFAULT}|' ${WRKSRC}/mkspecs/common/gcc-base.conf \
+		${WRKSRC}/mkspecs/common/g++-base.conf
+.endif
 
 pre-configure: qtbase-pre-configure
 qtbase-pre-configure:
