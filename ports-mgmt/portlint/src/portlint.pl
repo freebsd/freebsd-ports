@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.480 2018/10/13 15:34:05 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.482 2018/10/14 17:47:55 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 18;
-my $micro = 5;
+my $micro = 6;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -1501,7 +1501,7 @@ sub checkmakefile {
 	#
 	print "OK: checking PLIST_FILES and PLIST_DIRS.\n" if ($verbose);
 	my $python_plist = 0;
-	if ($makevar{USE_PYTHON} =~ /\bautoplist\b/) {
+	if ($makevar{USE_PYTHON} && $makevar{USE_PYTHON} =~ /\bautoplist\b/) {
 		$python_plist = 1;
 		if (-f 'pkg-plist') {
 			&perror("WARN", $file, -1, "If you are using python and using autoplist ".
