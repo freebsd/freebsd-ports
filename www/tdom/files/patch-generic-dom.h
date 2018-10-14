@@ -1,9 +1,9 @@
---- generic/dom.h.orig	2007-08-18 12:51:46 UTC
-+++ generic/dom.h
-@@ -40,7 +40,6 @@
+--- generic/dom.h.orig	2018-09-24 12:17:05.706742000 +0000
++++ generic/dom.h	2018-09-24 12:17:16.003866000 +0000
+@@ -41,7 +41,6 @@
+ #include <string.h>
  #include <ctype.h>
- #include <expat.h>
- #include <utf8conv.h>
+ #include <bsdxml.h>
 -#include <domalloc.h>
  
  /*

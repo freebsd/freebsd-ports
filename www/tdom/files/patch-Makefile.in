@@ -1,11 +1,23 @@
---- Makefile.in.orig	2007-03-02 23:43:53 UTC
-+++ Makefile.in
-@@ -109,7 +109,7 @@ CFLAGS_WARNING	= @CFLAGS_WARNING@
- CLEANFILES	= @CLEANFILES@
+--- Makefile.in	2018-07-23 18:03:51.409385897 -0400
++++ Makefile.in	2018-10-14 10:04:41.681243000 -0400
+@@ -114,5 +114,5 @@
  EXEEXT		= @EXEEXT@
  LDFLAGS_DEFAULT	= @LDFLAGS_DEFAULT@
 -MAKE_LIB	= @MAKE_LIB@
 +MAKE_LIB	= @MAKE_LIB@ ${LDFLAGS_DEFAULT}
  MAKE_SHARED_LIB	= @MAKE_SHARED_LIB@
  MAKE_STATIC_LIB	= @MAKE_STATIC_LIB@
- MAKE_STUB_LIB	= @MAKE_STUB_LIB@
+@@ -217,5 +217,5 @@
+ #========================================================================
+ 
+-binaries: versionhash.h $(BINARIES) pkgIndex.tcl-hand
++binaries: $(top_builddir)/versionhash.h $(BINARIES) pkgIndex.tcl-hand
+ 
+ libraries:
+@@ -342,5 +342,5 @@
+ # Create a include file that #define the current fossil hash
+ #========================================================================
+-versionhash.h: $(srcdir)/manifest.uuid
++$(top_builddir)/versionhash.h: $(srcdir)/manifest.uuid
+ 	@echo "#define FOSSIL_HASH \"" | tr -d '\n\r' > $(top_builddir)/versionhash.h
+ 	@cat $(srcdir)/manifest.uuid | tr -d '\n\r' >> $(top_builddir)/versionhash.h
