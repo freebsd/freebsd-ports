@@ -3,7 +3,7 @@
 
 PORTNAME=	syslog-ng
 DISTVERSION=	3.15.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
@@ -111,12 +111,12 @@ JSON_PLIST_FILES=		lib/syslog-ng/libjson-plugin.so \
 				share/syslog-ng/include/scl/cim/template.conf
 
 JAVA_CONFIGURE_ENABLE=		java
-JAVA_USE_JAVA=			yes
+JAVA_USE=			JAVA=yes
 JAVA_PLIST_FILES=		lib/syslog-ng/libmod-java.so \
 				lib/syslog-ng/java-modules/syslog-ng-core.jar
 
 JAVA_MOD_CONFIGURE_ENABLE=	java-modules
-JAVA_MOD_USE_JAVA=		yes
+JAVA_MOD_USE=			JAVA=yes
 JAVA_MOD_BUILD_DEPENDS=		gradle:devel/gradle \
 				bash:shells/bash
 JAVA_MOD_PLIST_DIRS=		lib/syslog-ng/java-modules/elastic-jest-client
