@@ -1,4 +1,4 @@
-# Created by: Marie Loise Nolden <nolden@kde.org>
+# Created by: Marie Loise Nolden <loise@kde.org>
 # $FreeBSD$
 
 PORTNAME=	examples
