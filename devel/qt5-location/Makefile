@@ -9,7 +9,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt location module
 
 USE_QT=		concurrent core dbus gui network qml quick buildtools_build
-USES=		qmake:norecursive qt-dist:5,location
+USES=		compiler:c++11-lang qmake:norecursive qt-dist:5,location
 
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 

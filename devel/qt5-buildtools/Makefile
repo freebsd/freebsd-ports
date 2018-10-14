@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt build tools
 
-USES=		perl5 qmake:no_env qt-dist:5,base
+USES=		compiler:c++11-lang libtool perl5 qmake:no_env qt-dist:5,base
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-no-gui -no-xcb
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
