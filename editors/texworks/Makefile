@@ -2,101 +2,52 @@
 # $FreeBSD$
 
 PORTNAME=	texworks
-PORTVERSION=	0.4.6
 DISTVERSIONPREFIX=	release-
-PORTREVISION=	7
+DISTVERSION=	0.6.2
 CATEGORIES=	editors
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Simple TeX front-end program
 
-LICENSE=	GPLv2
-
-BROKEN_armv6=		fails to install: PDFDocument.cpp:1836:39: cannot initialize a parameter of type 'qreal *' with an rvalue of type 'double *'
-BROKEN_armv7=		fails to install: PDFDocument.cpp:1836:39: cannot initialize a parameter of type 'qreal *' with an rvalue of type 'double *'
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	hunspell:textproc/hunspell
-LIB_DEPENDS=	libpoppler-qt4.so:graphics/poppler-qt4
+LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell \
+		libpoppler.so:graphics/poppler \
+		libpoppler-qt5.so:graphics/poppler-qt5
 
-USES=		compiler:c++11-lang pkgconfig qmake qt:4
+USES=		cmake:outsource desktop-file-utils pkgconfig qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	TeXworks
-USE_QT=		gui corelib rcc_build moc_build uic_build \
-		dbus xml scripttools designer_build
-QMAKE_ARGS=	INSTALL_PREFIX=${PREFIX} \
-		DATA_DIR=${DATADIR} \
-		DOCS_DIR=${DOCSDIR} \
-		ICON_DIR=${PREFIX}/share/pixmaps \
-		DESKTOP_DIR=${PREFIX}/share/applications \
-		MAN_DIR=${PREFIX}/man/man1 \
-		TW_DICPATH=${LOCALBASE}/share/hunspell \
-		TW_HELPPATH=${DOCSDIR} \
-		TW_PLUGINPATH=${PREFIX}/lib/texworks
-USE_TEX=	synctex
+USE_QT=		buildtools_build designer_build qmake_build \
+		core concurrent dbus gui linguisttools script \
+		scripttools uitools widgets xml
 
-DESKTOP_ENTRIES="TexWorks" \
-		"Lowering the entry barrier to the TeX world" \
-		"TeXworks" \
-		"${PORTNAME}" \
-		"Utility;Qt;" \
-		true
+USE_TEX=	synctex
+USE_LDCONFIG=	yes
+
+CMAKE_ARGS=	-DTeXworks_DIC_DIR:PATH=${LOCALBASE}/share/hunspell \
+		-DTeXworks_DOCS_DIR:PATH=${DOCSDIR_REL} \
+		-DTeXworks_HELP_DIR:PATH=${DOCSDIR_REL} \
+		-DTeXworks_MAN_DIR:PATH=man/man1
+
+OPTIONS_DEFINE=	DOCS LUA PYTHON
+
+LUA_USES=		lua
+LUA_CMAKE_BOOL=		WITH_LUA
+LUA_PLIST_FILES=	lib/texworks/libTWLuaPlugin.so
+
+PYTHON_USES=		python:3.4+
+PYTHON_CMAKE_BOOL=	WITH_PYTHON
+PYTHON_PLIST_FILES=	lib/texworks/libTWPythonPlugin.so
+
+PORTDOCS=	*
 
 PLIST_FILES=	bin/texworks \
 		man/man1/texworks.1.gz \
+		share/appdata/texworks.appdata.xml \
+		share/applications/texworks.desktop \
 		share/pixmaps/TeXworks.png
-PLIST_DIRS=	lib/texworks
-PORTDOCS=	*
-
-OPTIONS_DEFINE=	DOCS LUA PYTHON
-LUA_USES=	lua:51
-LUA_PLIST_FILES=lib/texworks/libTWLuaPlugin.so
-PYTHON_USES=	python:3.4+
-PYTHON_PLIST_FILES=lib/texworks/libTWPythonPlugin.so
-
-post-extract:
-	cd ${WRKSRC} && ${INSTALL_DATA} GitArchiveInfo.txt src/GitRev.h
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/share,${LOCALBASE}/share,' \
-	    ${WRKSRC}/src/TWUtils.cpp
-	@${REINPLACE_CMD} -e 's,lua5.1,lua-5.1,' \
-	    ${WRKSRC}/plugins-src/TWLuaPlugin/TWLuaPlugin.pro
-	@${REINPLACE_CMD} -e '53,54s,^,#,' \
-	    -e '57,59s,#,,' \
-	    -e 's,python3,python-${PYTHON_VER},' \
-	    ${WRKSRC}/plugins-src/TWPythonPlugin/TWPythonPlugin.pro
-
-post-patch-DOCS-off:
-	@${REINPLACE_CMD} -e '/INSTALLS/s,documentation manual ,,' \
-	    ${WRKSRC}/TeXworks.pro
-
-post-configure-LUA-on:
-	cd ${WRKSRC}/plugins-src/TWLuaPlugin && ${SETENV} ${CONFIGURE_ENV} \
-	    ${QMAKE} ${QMAKE_ARGS}
-
-post-configure-PYTHON-on:
-	cd ${WRKSRC}/plugins-src/TWPythonPlugin && ${SETENV} ${CONFIGURE_ENV} \
-	    ${QMAKE} ${QMAKE_ARGS}
-
-post-build-LUA-on:
-	cd ${WRKSRC}/plugins-src/TWLuaPlugin && ${MAKE}
-
-post-build-PYTHON-on:
-	cd ${WRKSRC}/plugins-src/TWPythonPlugin && ${MAKE}
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/texworks
-
-post-install-LUA-on:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/texworks
-	cd ${WRKSRC}/plugins-src/TWLuaPlugin && \
-	    ${INSTALL_DATA} libTWLuaPlugin.so \
-		${STAGEDIR}${PREFIX}/lib/texworks
-
-post-install-PYTHON-on:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/texworks
-	cd ${WRKSRC}/plugins-src/TWPythonPlugin && \
-	    ${INSTALL_DATA} libTWPythonPlugin.so \
-		${STAGEDIR}${PREFIX}/lib/texworks
 
 .include <bsd.port.mk>
