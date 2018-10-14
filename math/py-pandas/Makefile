@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pandas
-DISTVERSION=	0.23.3
+DISTVERSION=	0.23.4
 PORTREVISION=	0
 CATEGORIES=	math devel python
 MASTER_SITES=	CHEESESHOP
@@ -80,7 +80,7 @@ OPENPYXL_IMPLIES=	XLRD
 
 SUB_FILES=	pkg-message
 
-# Official support for 2.7, 3.5, and 3.6
+# Official support for 2.7, 3.5, 3.6, and 3.7
 USES=		python
 USE_PYTHON=	autoplist distutils
 
