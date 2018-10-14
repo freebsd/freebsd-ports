@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	construct
-PORTVERSION=	2.5.3
+PORTVERSION=	2.9.45
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -13,8 +13,6 @@ COMMENT=	Python module for parsing and building of data structures
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python
