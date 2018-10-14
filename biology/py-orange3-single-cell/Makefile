@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	orange3-single-cell
-DISTVERSION=	0.8.0
+DISTVERSION=	0.8.1
 CATEGORIES=	biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,9 +12,14 @@ LICENSE=	AGPLv3+
 
 RUN_DEPENDS=	orange3>0:misc/orange3 \
 		${PYTHON_PKGNAMEPREFIX}orange3-bioinformatics>0:biology/py-orange3-bioinformatics@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}joblib>0:devel/py-joblib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}astropy>0:astro/py-astropy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fastdtw>0:math/py-fastdtw@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}joblib>=0.11:devel/py-joblib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}loompy>=2.0.10:biology/py-loompy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>0:math/py-networkx@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pandas>=0.20:math/py-pandas@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pandas>=0.23:math/py-pandas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-learn>0:science/py-scikit-learn@${PY_FLAVOR} \
+		${PYNUMPY}
 
 USES=		python:3.4+
 USE_GITHUB=	yes
