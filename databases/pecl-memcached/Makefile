@@ -18,10 +18,11 @@ OPTIONS_DEFINE=	IGBINARY SASL
 OPTIONS_DEFAULT=SASL
 IGBINARY_DESC=	Binary serializer support
 
+USES=		php:pecl pkgconfig
+USE_PHP=	json:build session:build
+
 CONFIGURE_ARGS=	--with-libmemcached-dir=${LOCALBASE}
 IGNORE_WITH_PHP=56
-USE_PHP=	json:build session:build
-USES=		php:pecl pkgconfig
 
 IGBINARY_CONFIGURE_ENABLE=	memcached-igbinary
 IGBINARY_USE=		PHP=igbinary:build
