@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME:S/_/-/}
 MAINTAINER=	freebsd@hm2k.org
 COMMENT=	Finds fastest CVSup server
 
+DEPRECATED=	Obsolete, FreeBSD and OpenBSD switched from cvsup to svn and cvsync, NetBSD only have 2 servers left
+EXPIRATION_DATE=	2018-11-15
+
 LICENSE=	BSD
 
 USES=		perl5 shebangfix
