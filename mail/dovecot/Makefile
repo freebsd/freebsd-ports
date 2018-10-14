@@ -8,6 +8,7 @@
 
 PORTNAME=	dovecot
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	https://www.dovecot.org/releases/2.3/
 
@@ -26,6 +27,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-statedir=/var/db/dovecot \
 		--without-shadow \
+		--without-sodium \
 		--with-ssl=openssl \
 		--with-docs
 
@@ -37,7 +39,7 @@ GROUPS=		${USERS}
 
 CONFLICTS_INSTALL=	dovecot22
 
-OPTIONS_DEFINE=	LIBWRAP LUA LZ4 VPOPMAIL DOCS EXAMPLES
+OPTIONS_DEFINE=	LIBWRAP LUA LZ4 VPOPMAIL DOCS EXAMPLES 
 OPTIONS_DEFAULT=GSSAPI_NONE LIBWRAP
 OPTIONS_SUB=	yes
 
