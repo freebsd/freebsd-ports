@@ -1,6 +1,6 @@
---- plug-ins/pygimp/Makefile.in.orig	2018-07-15 19:04:00.269226000 +0200
-+++ plug-ins/pygimp/Makefile.in	2018-07-15 19:07:22.157457000 +0200
-@@ -146,7 +146,7 @@ am__installdirs = "$(DESTDIR)$(pygimpdir)" "$(DESTDIR)
+--- plug-ins/pygimp/Makefile.in.orig	2018-08-19 18:48:46.000000000 +0200
++++ plug-ins/pygimp/Makefile.in	2018-10-14 17:48:35.278550000 +0200
+@@ -140,7 +140,7 @@ am__installdirs = "$(DESTDIR)$(pygimpdir)" "$(DESTDIR)
  	"$(DESTDIR)$(pygimpdir)"
  LTLIBRARIES = $(pygimp_LTLIBRARIES)
  am__DEPENDENCIES_1 =
@@ -9,7 +9,7 @@
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1)
  am__gimpenums_la_OBJECTS = gimpenumsmodule.lo
-@@ -158,17 +158,16 @@ am__v_lt_1 = 
+@@ -152,17 +152,16 @@ am__v_lt_1 = 
  _gimpenums_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(_gimpenums_la_LDFLAGS) $(LDFLAGS) -o $@
@@ -31,7 +31,7 @@
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
  am_gimp_la_OBJECTS = gimpmodule.lo pygimp-item.lo pygimp-display.lo \
  	pygimp-drawable.lo pygimp-image.lo pygimp-parasite.lo \
-@@ -177,14 +176,14 @@ gimp_la_OBJECTS = $(am_gimp_la_OBJECTS)
+@@ -171,14 +170,14 @@ gimp_la_OBJECTS = $(am_gimp_la_OBJECTS)
  gimp_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(gimp_la_LDFLAGS) $(LDFLAGS) -o $@
@@ -48,7 +48,7 @@
  	$(am__DEPENDENCIES_1)
  am_gimpthumb_la_OBJECTS = gimpthumbmodule.lo gimpthumb.lo
  gimpthumb_la_OBJECTS = $(am_gimpthumb_la_OBJECTS)
-@@ -761,10 +760,7 @@ gimp_la_LDFLAGS = -module -avoid-version $(no_undefine
+@@ -766,10 +765,7 @@ gimp_la_LDFLAGS = -module -avoid-version $(no_undefine
  	-export-symbols-regex initgimp
  
  gimp_la_LIBADD = \
@@ -56,11 +56,11 @@
 -	$(libgimpcolor)		\
 -	$(libgimpbase)		\
 -	$(libgimpui)		\
-+	%%GIMP_LIBS%%		\
++	%%GIMP_UI_LIBS%%	\
  	$(GLIB_LIBS)		\
  	$(GEGL_LIBS)		\
  	$(PYLINK_LIBS)		\
-@@ -777,9 +773,7 @@ _gimpenums_la_LDFLAGS = -module -avoid-version $(no_un
+@@ -782,9 +778,7 @@ _gimpenums_la_LDFLAGS = -module -avoid-version $(no_un
  	-export-symbols-regex init_gimpenums
  
  _gimpenums_la_LIBADD = \
@@ -71,7 +71,7 @@
  	$(GLIB_LIBS)		\
  	$(PYLINK_LIBS)		\
  	$(RT_LIBS)
-@@ -794,7 +788,7 @@ gimpcolor_la_LDFLAGS = -module -avoid-version $(no_und
+@@ -799,7 +793,7 @@ gimpcolor_la_LDFLAGS = -module -avoid-version $(no_und
  	-export-symbols-regex initgimpcolor
  
  gimpcolor_la_LIBADD = \
@@ -80,7 +80,7 @@
  	$(GLIB_LIBS)		\
  	$(PYLINK_LIBS)
  
-@@ -806,13 +800,7 @@ _gimpui_la_LDFLAGS = -module -avoid-version $(no_undef
+@@ -811,13 +805,7 @@ _gimpui_la_LDFLAGS = -module -avoid-version $(no_undef
  	-export-symbols-regex init_gimpui
  
  _gimpui_la_LIBADD = \
@@ -95,7 +95,7 @@
  	$(GTK_LIBS)		\
  	$(PYLINK_LIBS)		\
  	$(RT_LIBS)		\
-@@ -826,7 +814,7 @@ gimpthumb_la_LDFLAGS = -module -avoid-version $(no_und
+@@ -831,7 +819,7 @@ gimpthumb_la_LDFLAGS = -module -avoid-version $(no_und
  	-export-symbols-regex initgimpthumb
  
  gimpthumb_la_LIBADD = \
