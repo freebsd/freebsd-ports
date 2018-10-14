@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyzmq
-PORTVERSION=	17.0.0
+PORTVERSION=	17.1.2
 CATEGORIES=	net devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +17,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
 PYDISTUTILS_CONFIGUREARGS=	--zmq=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
