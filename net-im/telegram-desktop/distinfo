@@ -1,6 +1,6 @@
-TIMESTAMP = 1538948703
-SHA256 (telegramdesktop-tdesktop-v1.4.0_GH0.tar.gz) = e3ee54461dae5552b41b6b56f12225a4d546118b2e2d4d864442e4462da97a9b
-SIZE (telegramdesktop-tdesktop-v1.4.0_GH0.tar.gz) = 17318129
+TIMESTAMP = 1539390512
+SHA256 (telegramdesktop-tdesktop-v1.4.2_GH0.tar.gz) = f8e90949e2b52c2df7dca35d33731880fa8f3d526431ad82f197ece7dce773aa
+SIZE (telegramdesktop-tdesktop-v1.4.2_GH0.tar.gz) = 17340759
 SHA256 (catchorg-Catch2-5ca44b68_GH0.tar.gz) = 8cdf2a345897bda1aaabffd4496dffe263768cef3e4254e74ae63545c8e12cc2
 SIZE (catchorg-Catch2-5ca44b68_GH0.tar.gz) = 375264
 SHA256 (mapbox-variant-550ac2f_GH0.tar.gz) = 7ab3aa7c9fa672027f13721584df5f7ec09c0ecca499d374c6ac76e147ef7354
