@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	activerecord-import
-PORTVERSION=	0.25.0
+PORTVERSION=	0.27.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-activerecord4>=3.2:databases/rubygem-activerecord4
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
