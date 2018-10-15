@@ -4,7 +4,12 @@ You installed GAMESS (US): General Atomic and Molecular Electronic
 
 In order to run the computation, run the command:
 $ rungms {case-name} %%GAMES_VERNO%% {num-cpu}
+or its simplified form:
+$ rungms {case-name}
 
 It expects the input file {case-name}.inp which specifies the
 computation to perform.
+
+You can use the wxmacmolplt command from science/wxmacmolplt to view
+the computation results.
 ======================================================================
