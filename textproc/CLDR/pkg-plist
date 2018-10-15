@@ -3,6 +3,7 @@
 %%DATADIR%%/common/annotations/af.xml
 %%DATADIR%%/common/annotations/am.xml
 %%DATADIR%%/common/annotations/ar.xml
+%%DATADIR%%/common/annotations/ar_SA.xml
 %%DATADIR%%/common/annotations/as.xml
 %%DATADIR%%/common/annotations/ast.xml
 %%DATADIR%%/common/annotations/az.xml
@@ -46,6 +47,7 @@
 %%DATADIR%%/common/annotations/hr.xml
 %%DATADIR%%/common/annotations/hu.xml
 %%DATADIR%%/common/annotations/hy.xml
+%%DATADIR%%/common/annotations/ia.xml
 %%DATADIR%%/common/annotations/id.xml
 %%DATADIR%%/common/annotations/is.xml
 %%DATADIR%%/common/annotations/it.xml
@@ -56,6 +58,7 @@
 %%DATADIR%%/common/annotations/km.xml
 %%DATADIR%%/common/annotations/kn.xml
 %%DATADIR%%/common/annotations/ko.xml
+%%DATADIR%%/common/annotations/ku.xml
 %%DATADIR%%/common/annotations/ky.xml
 %%DATADIR%%/common/annotations/lo.xml
 %%DATADIR%%/common/annotations/lt.xml
@@ -76,6 +79,7 @@
 %%DATADIR%%/common/annotations/ps.xml
 %%DATADIR%%/common/annotations/pt.xml
 %%DATADIR%%/common/annotations/pt_PT.xml
+%%DATADIR%%/common/annotations/qu.xml
 %%DATADIR%%/common/annotations/ro.xml
 %%DATADIR%%/common/annotations/root.xml
 %%DATADIR%%/common/annotations/ru.xml
@@ -88,6 +92,7 @@
 %%DATADIR%%/common/annotations/sr_Cyrl.xml
 %%DATADIR%%/common/annotations/sr_Cyrl_BA.xml
 %%DATADIR%%/common/annotations/sr_Latn.xml
+%%DATADIR%%/common/annotations/sr_Latn_BA.xml
 %%DATADIR%%/common/annotations/sv.xml
 %%DATADIR%%/common/annotations/sw.xml
 %%DATADIR%%/common/annotations/ta.xml
@@ -298,6 +303,7 @@
 %%DATADIR%%/common/casing/hsb.xml
 %%DATADIR%%/common/casing/hu.xml
 %%DATADIR%%/common/casing/hy.xml
+%%DATADIR%%/common/casing/ia.xml
 %%DATADIR%%/common/casing/id.xml
 %%DATADIR%%/common/casing/ig.xml
 %%DATADIR%%/common/casing/ii.xml
@@ -430,6 +436,7 @@
 %%DATADIR%%/common/casing/vo.xml
 %%DATADIR%%/common/casing/vun.xml
 %%DATADIR%%/common/casing/wae.xml
+%%DATADIR%%/common/casing/xh.xml
 %%DATADIR%%/common/casing/xog.xml
 %%DATADIR%%/common/casing/yav.xml
 %%DATADIR%%/common/casing/yo.xml
@@ -500,6 +507,7 @@
 %%DATADIR%%/common/collation/kn.xml
 %%DATADIR%%/common/collation/ko.xml
 %%DATADIR%%/common/collation/kok.xml
+%%DATADIR%%/common/collation/ku.xml
 %%DATADIR%%/common/collation/ky.xml
 %%DATADIR%%/common/collation/lb.xml
 %%DATADIR%%/common/collation/lkt.xml
@@ -551,6 +559,7 @@
 %%DATADIR%%/common/collation/vo.xml
 %%DATADIR%%/common/collation/wae.xml
 %%DATADIR%%/common/collation/wo.xml
+%%DATADIR%%/common/collation/xh.xml
 %%DATADIR%%/common/collation/yi.xml
 %%DATADIR%%/common/collation/yo.xml
 %%DATADIR%%/common/collation/zh.xml
@@ -841,10 +850,19 @@
 %%DATADIR%%/common/main/fa_AF.xml
 %%DATADIR%%/common/main/fa_IR.xml
 %%DATADIR%%/common/main/ff.xml
-%%DATADIR%%/common/main/ff_CM.xml
-%%DATADIR%%/common/main/ff_GN.xml
-%%DATADIR%%/common/main/ff_MR.xml
-%%DATADIR%%/common/main/ff_SN.xml
+%%DATADIR%%/common/main/ff_Latn.xml
+%%DATADIR%%/common/main/ff_Latn_BF.xml
+%%DATADIR%%/common/main/ff_Latn_CM.xml
+%%DATADIR%%/common/main/ff_Latn_GH.xml
+%%DATADIR%%/common/main/ff_Latn_GM.xml
+%%DATADIR%%/common/main/ff_Latn_GN.xml
+%%DATADIR%%/common/main/ff_Latn_GW.xml
+%%DATADIR%%/common/main/ff_Latn_LR.xml
+%%DATADIR%%/common/main/ff_Latn_MR.xml
+%%DATADIR%%/common/main/ff_Latn_NE.xml
+%%DATADIR%%/common/main/ff_Latn_NG.xml
+%%DATADIR%%/common/main/ff_Latn_SL.xml
+%%DATADIR%%/common/main/ff_Latn_SN.xml
 %%DATADIR%%/common/main/fi.xml
 %%DATADIR%%/common/main/fi_FI.xml
 %%DATADIR%%/common/main/fil.xml
@@ -938,6 +956,8 @@
 %%DATADIR%%/common/main/hu_HU.xml
 %%DATADIR%%/common/main/hy.xml
 %%DATADIR%%/common/main/hy_AM.xml
+%%DATADIR%%/common/main/ia.xml
+%%DATADIR%%/common/main/ia_001.xml
 %%DATADIR%%/common/main/id.xml
 %%DATADIR%%/common/main/id_ID.xml
 %%DATADIR%%/common/main/ig.xml
@@ -957,6 +977,8 @@
 %%DATADIR%%/common/main/jgo_CM.xml
 %%DATADIR%%/common/main/jmc.xml
 %%DATADIR%%/common/main/jmc_TZ.xml
+%%DATADIR%%/common/main/jv.xml
+%%DATADIR%%/common/main/jv_ID.xml
 %%DATADIR%%/common/main/ka.xml
 %%DATADIR%%/common/main/ka_GE.xml
 %%DATADIR%%/common/main/kab.xml
@@ -996,6 +1018,8 @@
 %%DATADIR%%/common/main/ksf_CM.xml
 %%DATADIR%%/common/main/ksh.xml
 %%DATADIR%%/common/main/ksh_DE.xml
+%%DATADIR%%/common/main/ku.xml
+%%DATADIR%%/common/main/ku_TR.xml
 %%DATADIR%%/common/main/kw.xml
 %%DATADIR%%/common/main/kw_GB.xml
 %%DATADIR%%/common/main/ky.xml
@@ -1041,6 +1065,8 @@
 %%DATADIR%%/common/main/mgh_MZ.xml
 %%DATADIR%%/common/main/mgo.xml
 %%DATADIR%%/common/main/mgo_CM.xml
+%%DATADIR%%/common/main/mi.xml
+%%DATADIR%%/common/main/mi_NZ.xml
 %%DATADIR%%/common/main/mk.xml
 %%DATADIR%%/common/main/mk_MK.xml
 %%DATADIR%%/common/main/ml.xml
@@ -1270,6 +1296,8 @@
 %%DATADIR%%/common/main/wae_CH.xml
 %%DATADIR%%/common/main/wo.xml
 %%DATADIR%%/common/main/wo_SN.xml
+%%DATADIR%%/common/main/xh.xml
+%%DATADIR%%/common/main/xh_ZA.xml
 %%DATADIR%%/common/main/xog.xml
 %%DATADIR%%/common/main/xog_UG.xml
 %%DATADIR%%/common/main/yav.xml
@@ -1392,7 +1420,6 @@
 %%DATADIR%%/common/segments/en_US.xml
 %%DATADIR%%/common/segments/en_US_POSIX.xml
 %%DATADIR%%/common/segments/es.xml
-%%DATADIR%%/common/segments/fi.xml
 %%DATADIR%%/common/segments/fr.xml
 %%DATADIR%%/common/segments/it.xml
 %%DATADIR%%/common/segments/ja.xml
@@ -1409,9 +1436,13 @@
 %%DATADIR%%/common/subdivisions/be.xml
 %%DATADIR%%/common/subdivisions/bg.xml
 %%DATADIR%%/common/subdivisions/bn.xml
+%%DATADIR%%/common/subdivisions/br.xml
+%%DATADIR%%/common/subdivisions/bs.xml
 %%DATADIR%%/common/subdivisions/ca.xml
 %%DATADIR%%/common/subdivisions/ccp.xml
+%%DATADIR%%/common/subdivisions/ckb.xml
 %%DATADIR%%/common/subdivisions/cs.xml
+%%DATADIR%%/common/subdivisions/cy.xml
 %%DATADIR%%/common/subdivisions/da.xml
 %%DATADIR%%/common/subdivisions/de.xml
 %%DATADIR%%/common/subdivisions/de_CH.xml
@@ -1424,6 +1455,8 @@
 %%DATADIR%%/common/subdivisions/fi.xml
 %%DATADIR%%/common/subdivisions/fil.xml
 %%DATADIR%%/common/subdivisions/fr.xml
+%%DATADIR%%/common/subdivisions/ga.xml
+%%DATADIR%%/common/subdivisions/gd.xml
 %%DATADIR%%/common/subdivisions/gl.xml
 %%DATADIR%%/common/subdivisions/gu.xml
 %%DATADIR%%/common/subdivisions/he.xml
@@ -1436,20 +1469,25 @@
 %%DATADIR%%/common/subdivisions/it.xml
 %%DATADIR%%/common/subdivisions/ja.xml
 %%DATADIR%%/common/subdivisions/ka.xml
+%%DATADIR%%/common/subdivisions/kk.xml
 %%DATADIR%%/common/subdivisions/km.xml
 %%DATADIR%%/common/subdivisions/kn.xml
 %%DATADIR%%/common/subdivisions/ko.xml
 %%DATADIR%%/common/subdivisions/lo.xml
 %%DATADIR%%/common/subdivisions/lt.xml
 %%DATADIR%%/common/subdivisions/lv.xml
+%%DATADIR%%/common/subdivisions/mk.xml
 %%DATADIR%%/common/subdivisions/ml.xml
 %%DATADIR%%/common/subdivisions/mn.xml
 %%DATADIR%%/common/subdivisions/mr.xml
 %%DATADIR%%/common/subdivisions/ms.xml
+%%DATADIR%%/common/subdivisions/mt.xml
+%%DATADIR%%/common/subdivisions/my.xml
 %%DATADIR%%/common/subdivisions/nb.xml
 %%DATADIR%%/common/subdivisions/ne.xml
 %%DATADIR%%/common/subdivisions/nl.xml
 %%DATADIR%%/common/subdivisions/or.xml
+%%DATADIR%%/common/subdivisions/pa.xml
 %%DATADIR%%/common/subdivisions/pl.xml
 %%DATADIR%%/common/subdivisions/ps.xml
 %%DATADIR%%/common/subdivisions/pt.xml
@@ -1460,6 +1498,7 @@
 %%DATADIR%%/common/subdivisions/si.xml
 %%DATADIR%%/common/subdivisions/sk.xml
 %%DATADIR%%/common/subdivisions/sl.xml
+%%DATADIR%%/common/subdivisions/sq.xml
 %%DATADIR%%/common/subdivisions/sr.xml
 %%DATADIR%%/common/subdivisions/sr_Latn.xml
 %%DATADIR%%/common/subdivisions/sv.xml
@@ -1471,7 +1510,10 @@
 %%DATADIR%%/common/subdivisions/tr.xml
 %%DATADIR%%/common/subdivisions/uk.xml
 %%DATADIR%%/common/subdivisions/ur.xml
+%%DATADIR%%/common/subdivisions/uz.xml
 %%DATADIR%%/common/subdivisions/vi.xml
+%%DATADIR%%/common/subdivisions/yue.xml
+%%DATADIR%%/common/subdivisions/yue_Hans.xml
 %%DATADIR%%/common/subdivisions/zh.xml
 %%DATADIR%%/common/subdivisions/zh_Hant.xml
 %%DATADIR%%/common/subdivisions/zu.xml
@@ -1492,7 +1534,6 @@
 %%DATADIR%%/common/supplemental/subdivisions.xml
 %%DATADIR%%/common/supplemental/supplementalData.xml
 %%DATADIR%%/common/supplemental/supplementalMetadata.xml
-%%DATADIR%%/common/supplemental/telephoneCodeData.xml
 %%DATADIR%%/common/supplemental/windowsZones.xml
 %%DATADIR%%/common/transforms/Amharic-Latin-BGN.xml
 %%DATADIR%%/common/transforms/Any-Accents.xml
@@ -1776,6 +1817,7 @@
 %%DATADIR%%/common/transforms/my-chr.xml
 %%DATADIR%%/common/transforms/my-fa.xml
 %%DATADIR%%/common/transforms/my-my_FONIPA.xml
+%%DATADIR%%/common/transforms/my-t-my-d0-zawgyi.xml
 %%DATADIR%%/common/transforms/my-t-my-s0-zawgyi.xml
 %%DATADIR%%/common/transforms/nl-Title.xml
 %%DATADIR%%/common/transforms/nv-nv_FONIPA.xml
@@ -1828,6 +1870,7 @@
 %%DATADIR%%/common/transforms/tr-Lower.xml
 %%DATADIR%%/common/transforms/tr-Title.xml
 %%DATADIR%%/common/transforms/tr-Upper.xml
+%%DATADIR%%/common/transforms/ug-ug_FONIPA.xml
 %%DATADIR%%/common/transforms/und_FONIPA-ar.xml
 %%DATADIR%%/common/transforms/und_FONIPA-chr.xml
 %%DATADIR%%/common/transforms/und_FONIPA-fa.xml
