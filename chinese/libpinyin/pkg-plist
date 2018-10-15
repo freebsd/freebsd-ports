@@ -6,8 +6,8 @@ include/libpinyin-%%VER%%/pinyin.h
 include/libpinyin-%%VER%%/pinyin_custom2.h
 lib/libpinyin.a
 lib/libpinyin.so
-lib/libpinyin.so.6
-lib/libpinyin.so.6.0.0
+lib/libpinyin.so.13
+lib/libpinyin.so.13.0.0
 libdata/pkgconfig/libpinyin.pc
 man/man1/libpinyin.1.gz
 %%DATADIR%%/data/addon_phrase_index.bin
@@ -23,6 +23,7 @@ man/man1/libpinyin.1.gz
 %%DATADIR%%/data/life.bin
 %%DATADIR%%/data/merged.bin
 %%DATADIR%%/data/nature.bin
+%%DATADIR%%/data/opengram.bin
 %%DATADIR%%/data/people.bin
 %%DATADIR%%/data/phrase_index.bin
 %%DATADIR%%/data/pinyin_index.bin
