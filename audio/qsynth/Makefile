@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 
-USES=		gmake pkgconfig qt:5
+USES=		compiler:c++11-lang gmake pkgconfig qt:5
 USE_CXXSTD=	c++11
 USE_QT=		core gui widgets x11extras buildtools_build linguisttools_build qmake_build
 USE_GL=		gl
