@@ -3,7 +3,7 @@
 
 PORTNAME=	pinot
 PORTVERSION=	1.09
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	deskutils
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -21,6 +21,7 @@ LIB_DEPENDS=	libxapian.so:databases/xapian-core		\
 		libdbus-1.so:devel/dbus				\
 		libxml++-2.6.so:textproc/libxml++26		\
 		libboost_thread.so:devel/boost-libs		\
+		libnotify.so:devel/libnotify			\
 		libexif.so:graphics/libexif			\
 		libexiv2.so:graphics/exiv2			\
 		libgmime-2.4.so:mail/gmime24			\
@@ -39,20 +40,20 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	FabriceColin
 GH_TAGNAME=	c14d6d5
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-http=curl --with-ssl=${OPENSSLBASE} --enable-libarchive	\
-		--enable-mempool=no
-CONFIGURE_ENV=	MKDIR_P="${MKDIR}" TEXTCAT_LIBS="-lexttextcat-2.0"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lboost_system
-
-USES=		compiler:c++11-lang autoreconf gettext libarchive \
+USES=		compiler:c++11-lang autoreconf gettext gnome libarchive \
 		libtool pkgconfig python shebangfix sqlite:3 ssl
 USE_CXXSTD=	c++11
 USE_XORG=	pixman
 USE_GNOME=	atkmm cairo cairomm glibmm gtk20 gtkmm24 libsigc++20 libxml2 pangomm
 USE_LDCONFIG=	${PREFIX}/lib/pinot/backends ${PREFIX}/lib/pinot/filters
 SHEBANG_FILES=	scripts/bash/*.sh
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-http=curl --with-ssl=${OPENSSLBASE} --enable-libarchive	\
+		--enable-mempool=no --enable-libnotify
+CONFIGURE_ENV=	MKDIR_P="${MKDIR}" TEXTCAT_LIBS="-lexttextcat-2.0"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib -lboost_system
 
 OPTIONS_DEFINE=	DEBUG CHMLIB DOCS
 OPTIONS_SUB=	yes
