@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oauth2
-PORTVERSION=	1.4.0
-PORTREVISION=	2
+PORTVERSION=	1.4.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +10,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby wrapper for the OAuth 2.0 protocol
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.md
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-faraday>=0.8:www/rubygem-faraday \
 		rubygem-jwt>=1.0:www/rubygem-jwt \
@@ -19,8 +18,9 @@ RUN_DEPENDS=	rubygem-faraday>=0.8:www/rubygem-faraday \
 		rubygem-multi_xml>=0.5:textproc/rubygem-multi_xml \
 		rubygem-rack>=1.2:www/rubygem-rack
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
