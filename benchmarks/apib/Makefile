@@ -26,6 +26,9 @@ PORTEXAMPLES=	env.sh pivot run.sh rungroup.sh tojson
 
 OPTIONS_DEFINE=	EXAMPLES
 
+post-patch:
+	@${REINPLACE_CMD} -e 's, LIBS="-lssl,& -lcrypto,' ${WRKSRC}/configure
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/apib ${WRKSRC}/apibmon \
 		${STAGEDIR}${PREFIX}/bin
