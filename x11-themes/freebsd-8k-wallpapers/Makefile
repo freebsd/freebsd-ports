@@ -2,6 +2,7 @@
 
 PORTNAME=	freebsd-8k-wallpapers
 DISTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	https://bitbucket.org/rigoletto-freebsd/freebsd-8k-wallpapers/get/
 

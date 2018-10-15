@@ -2,6 +2,7 @@
 
 PORTNAME=	slim-freebsd-black-theme
 DISTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	https://bitbucket.org/rigoletto-freebsd/slim-freebsd-black-theme/get/
 
