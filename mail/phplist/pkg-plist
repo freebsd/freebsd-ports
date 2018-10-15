@@ -29,6 +29,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/actions/markread.php
 %%WWWDIR%%/lists/admin/actions/mclicks.php
 %%WWWDIR%%/lists/admin/actions/mergeduplicatelists.php
+%%WWWDIR%%/lists/admin/actions/msgbounces.php
 %%WWWDIR%%/lists/admin/actions/msgsent.php
 %%WWWDIR%%/lists/admin/actions/msgstatus.php
 %%WWWDIR%%/lists/admin/actions/mviews.php
@@ -61,6 +62,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/catlists.php
 %%WWWDIR%%/lists/admin/checkbouncerules.php
 %%WWWDIR%%/lists/admin/checki18n.php
+%%WWWDIR%%/lists/admin/checkprerequisites.php
 %%WWWDIR%%/lists/admin/class.image.inc
 %%WWWDIR%%/lists/admin/class.phplistmailer.php
 %%WWWDIR%%/lists/admin/community.php
