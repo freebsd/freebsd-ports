@@ -10,6 +10,9 @@ COMMENT=	Ruby implementation of the BitWarden API
 
 LICENSE=	ISCL
 
+EXPIRATION_DATE=	2019-01-01
+DEPRECATED=	Expects very specific rubygem versions for new updates. Please follow instructions in git repo.
+
 RUN_DEPENDS=	rubygem-sinatra>=2.0:www/rubygem-sinatra \
 		rubygem-sinatra-contrib>=2.0:www/rubygem-sinatra-contrib \
 		rubygem-unicorn>0:www/rubygem-unicorn \
