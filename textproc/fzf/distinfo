@@ -1,6 +1,6 @@
-TIMESTAMP = 1528788536
-SHA256 (junegunn-fzf-0.17.4_GH0.tar.gz) = a4b009638266b116f422d159cd1e09df64112e6ae3490964db2cd46636981ff0
-SIZE (junegunn-fzf-0.17.4_GH0.tar.gz) = 140100
+TIMESTAMP = 1539009493
+SHA256 (junegunn-fzf-0.17.5_GH0.tar.gz) = de3b39758e01b19bbc04ee0d5107e14052d3a32ce8f40d4a63d0ed311394f7ee
+SIZE (junegunn-fzf-0.17.5_GH0.tar.gz) = 140353
 SHA256 (lucasb-eyer-go-colorful-c900de9_GH0.tar.gz) = 0188b3fbfdd0427142e0fae5d64bfaf66e3428eb2536ae30ec11dda184c5189e
 SIZE (lucasb-eyer-go-colorful-c900de9_GH0.tar.gz) = 57046
 SHA256 (mattn-go-runewidth-14207d2_GH0.tar.gz) = e665c10f4ccefe1d320fe8fe69403754c499fe79bc737f8f1d199d86ecfb7efb
