@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libopenmpt
-PORTVERSION=	0.3.11
+PORTVERSION=	0.3.12
 DISTVERSIONSUFFIX=	+release.autotools
-PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://lib.openmpt.org/files/libopenmpt/src/ \
 		LOCAL/ehaupt
@@ -16,8 +15,9 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake libtool pkgconfig
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--without-portaudiocpp
 
