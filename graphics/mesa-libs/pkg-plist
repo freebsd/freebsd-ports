@@ -36,11 +36,11 @@ lib/libgbm.so.1.0.0
 lib/libglapi.so
 lib/libglapi.so.0
 lib/libglapi.so.0.0.0
-%%WAYLAND%%lib/libwayland-egl.so
-%%WAYLAND%%lib/libwayland-egl.so.1
-%%WAYLAND%%lib/libwayland-egl.so.1.0.0
+@comment %%WAYLAND%%lib/libwayland-egl.so
+@comment %%WAYLAND%%lib/libwayland-egl.so.1
+@comment %%WAYLAND%%lib/libwayland-egl.so.1.0.0
 %%EGL%%libdata/pkgconfig/egl.pc
 libdata/pkgconfig/gbm.pc
 libdata/pkgconfig/gl.pc
 libdata/pkgconfig/glesv2.pc
-%%WAYLAND%%libdata/pkgconfig/wayland-egl.pc
+@comment %%WAYLAND%%libdata/pkgconfig/wayland-egl.pc

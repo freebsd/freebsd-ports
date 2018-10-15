@@ -1,4 +1,4 @@
---- src/wayland-shm.c.orig	2017-08-08 18:20:52 UTC
+--- src/wayland-shm.c.orig	2018-04-09 17:19:26 UTC
 +++ src/wayland-shm.c
 @@ -30,6 +30,8 @@
  
@@ -131,7 +131,7 @@
  shm_pool_resize(struct wl_client *client, struct wl_resource *resource,
  		int32_t size)
 @@ -284,7 +369,14 @@ shm_create_pool(struct wl_client *client, struct wl_re
- 				       "failed mmap fd %d", fd);
+ 				       "failed mmap fd %d: %m", fd);
  		goto err_free;
  	}
 +

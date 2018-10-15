@@ -3,7 +3,7 @@
 
 PORTNAME=	efl
 DISTVERSION=	1.20.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PORTNAME}/
 DIST_SUBDIR=	enlightenment
@@ -94,7 +94,7 @@ WAYLAND_CFLAGS=			-I${LOCALBASE}/include/libepoll-shim
 WAYLAND_LDFLAGS=		-lepoll-shim
 WAYLAND_CONFIGURE_ENABLE=	wayland
 
-WAYLAND_EGL_LIB_DEPENDS=	libwayland-egl.so:graphics/mesa-libs
+WAYLAND_EGL_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland
 WAYLAND_EGL_CONFIGURE_ENABLE=	egl
 WAYLANG_EGL_USE=		GL=egl
 WAYLAND_EGL_IMPLIES=		WAYLAND OPENGLES

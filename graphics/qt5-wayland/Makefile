@@ -2,6 +2,7 @@
 
 PORTNAME=	wayland
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	qt5-
 
@@ -10,7 +11,7 @@ COMMENT=	Qt5 wrapper for Wayland
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libwayland-client.so:graphics/wayland \
+		libwayland-egl.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		pkgconfig qmake:norecursive qt-dist:5,wayland
@@ -21,10 +22,5 @@ USE_QT=		core dbus gui qml quick \
 USE_XORG=       x11 xcomposite
 
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
-
-OPTIONS_DEFINE=	WAYLAND
-WAYLAND_DESC=		Requires graphics/mesa-libs with WAYLAND on
-WAYLAND_IGNORE_OFF=	Cannot be built without wayland support
-WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/mesa-libs
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 PORTNAME=	vulkan-loader
 DISTVERSIONPREFIX=sdk-
 DISTVERSION=	1.1.82.0
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 
 MAINTAINER=	greg@unrelenting.technology
@@ -36,7 +37,7 @@ XCB_CMAKE_BOOL=		BUILD_WSI_XCB_SUPPORT
 XCB_LIB_DEPENDS=	libX11-xcb.so:x11/libX11 \
 			libxcb.so:x11/libxcb
 WAYLAND_CMAKE_BOOL=	BUILD_WSI_WAYLAND_SUPPORT
-WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/mesa-libs
+WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland
 
 post-patch:
 # Non-x86 targets use C code, so don't abort without GNU as (e.g., on aarch64)

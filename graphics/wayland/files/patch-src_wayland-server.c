@@ -1,4 +1,4 @@
---- src/wayland-server.c.orig	2017-08-08 18:20:52 UTC
+--- src/wayland-server.c.orig	2018-04-09 17:19:26 UTC
 +++ src/wayland-server.c
 @@ -25,6 +25,8 @@
  
@@ -35,7 +35,21 @@
  	int error;
  	struct wl_priv_signal resource_created_signal;
  };
-@@ -501,10 +514,20 @@ wl_client_create(struct wl_display *display, int fd)
+@@ -303,7 +316,13 @@ wl_resource_post_error(struct wl_resource *resource,
+ static void
+ destroy_client_with_error(struct wl_client *client, const char *reason)
+ {
++#ifdef HAVE_SYS_UCRED_H
++	/* FreeBSD */
++	wl_log("%s\n", reason);
++#else
++	/* Linux */
+ 	wl_log("%s (pid %u)\n", reason, client->ucred.pid);
++#endif
+ 	wl_client_destroy(client);
+ }
+ 
+@@ -517,10 +536,20 @@ wl_client_create(struct wl_display *display, int fd)
  	if (!client->source)
  		goto err_client;
  
@@ -56,7 +70,7 @@
  
  	client->connection = wl_connection_create(fd);
  	if (client->connection == NULL)
-@@ -558,12 +581,23 @@ WL_EXPORT void
+@@ -574,12 +603,23 @@ WL_EXPORT void
  wl_client_get_credentials(struct wl_client *client,
  			  pid_t *pid, uid_t *uid, gid_t *gid)
  {
