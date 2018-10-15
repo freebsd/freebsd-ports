@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2018-05-21 17:40:12 UTC
++++ src/CMakeLists.txt
+@@ -108,7 +108,7 @@ endif()
+ 
+ target_link_libraries(obconf-qt
+   ${QTX_LIBRARIES}
+-  ${GLIB_LIBRARIES}
++  ${GLIB_LDFLAGS}
+   ${OPENBOX_LIBRARIES}
+ )
+ 

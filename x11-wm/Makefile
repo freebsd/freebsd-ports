@@ -85,6 +85,7 @@
     SUBDIR += nickleby
     SUBDIR += obapps
     SUBDIR += obconf
+    SUBDIR += obconf-qt
     SUBDIR += obkey
     SUBDIR += obmenu
     SUBDIR += obpager
