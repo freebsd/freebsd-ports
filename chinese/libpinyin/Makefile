@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpinyin
-PORTVERSION=	1.2.0
+PORTVERSION=	2.2.0
 CATEGORIES=	chinese textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -24,6 +24,6 @@ INSTALL_TARGET=install-strip
 PLIST_SUB+=	VER=${PORTVERSION}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpinyin.so.6.0.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpinyin.so.13.0.0
 
 .include <bsd.port.mk>
