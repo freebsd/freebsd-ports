@@ -1,17 +1,17 @@
 # $FreeBSD$
 
-PORTVERSION=	2.5.9
-PKGNAMESUFFIX=	25
+PORTVERSION=	2.6.5
+PKGNAMESUFFIX=	26
 
 CONFLICTS=	ansible-* \
 		ansible1-* \
 		ansible23-* \
 		ansible24-* \
-		ansible26-*
+		ansible25-*
 
 MASTERDIR=	${.CURDIR}/../ansible
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
-EXTRA_PATCHES=
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-sesu
 
 .include "${MASTERDIR}/Makefile"
