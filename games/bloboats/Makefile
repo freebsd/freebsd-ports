@@ -4,17 +4,21 @@
 PORTNAME=	bloboats
 PORTVERSION=	1.0.2
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://bloboats.dy.fi/mirror/ \
 		LOCAL/ehaupt
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Boat racing game in the spirit of Elasto Mania or X-Moto
+
+DEPRECATED=	Upstream gone
+EXPIRATION_DATE=	2018-11-15
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/copying.txt
 
+BROKEN_FreeBSD_11=	does not build on 11.X
 BROKEN_FreeBSD_12=	does not build on 12.X	# PR 226180
 
 USES=		dos2unix gmake
