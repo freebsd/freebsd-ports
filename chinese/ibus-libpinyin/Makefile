@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ibus-libpinyin
-PORTVERSION=	1.7.2
-PORTREVISION=	3
+PORTVERSION=	1.10.0
 CATEGORIES=	chinese
 MASTER_SITES=	SF/libpinyin/${PORTNAME}
 

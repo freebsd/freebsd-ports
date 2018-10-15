@@ -1,3 +1,4 @@
+%%NLS%%share/locale/ca/LC_MESSAGES/ibus-libpinyin.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/ibus-libpinyin.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/ibus-libpinyin.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus-libpinyin.mo
@@ -8,6 +9,7 @@ libexec/ibus-setup-libpinyin
 share/appdata/libpinyin.appdata.xml
 share/applications/ibus-setup-libbopomofo.desktop
 share/applications/ibus-setup-libpinyin.desktop
+share/glib-2.0/schemas/com.github.libpinyin.ibus-libpinyin.gschema.xml
 %%ENGLISH%%%%DATADIR%%/db/english.db
 %%STROKE%%%%DATADIR%%/db/strokes.db
 %%DATADIR%%/icons/chinese.svg
@@ -20,7 +22,6 @@ share/applications/ibus-setup-libpinyin.desktop
 %%DATADIR%%/icons/ibus-pinyin.svg
 %%DATADIR%%/icons/simp-chinese.svg
 %%DATADIR%%/icons/trad-chinese.svg
-%%DATADIR%%/phrases.txt
 %%DATADIR%%/setup/config.py
 %%DATADIR%%/setup/config.pyc
 %%DATADIR%%/setup/config.pyo
