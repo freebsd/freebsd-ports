@@ -2,8 +2,8 @@
 
 PORTNAME=	nxengine
 PORTVERSION=	2.6.3
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES+=	https://www.cavestory.org/downloads/:data \
 		SF/lifanov-ports-distfiles/games/${PORTNAME}/:icons
@@ -23,21 +23,19 @@ LICENSE_PERMS_FREEWARE=	dist-mirror pkg-mirror auto-accept
 LICENSE_DISTFILES_GPLv3=	${DISTFILES:[3]}
 LICENSE_DISTFILES_FREEWARE=	${DISTFILES:[2]:S/:data//}
 
-BROKEN_aarch64=		fails to compile: player.cpp:763:50: constant expression evaluates to -1 which cannot be narrowed to type 'char' [-Wc++11-narrowing]
-BROKEN_armv6=		fails to compile: player.cpp:763:50: constant expression evaluates to -1 which cannot be narrowed to type 'char' [-Wc++11-narrowing]
-BROKEN_armv7=		fails to compile: player.cpp:763:50: constant expression evaluates to -1 which cannot be narrowed to type 'char' [-Wc++11-narrowing]
-
 LIB_DEPENDS=	libpng.so:graphics/png
 
-DESKTOP_ENTRIES="NXEngine" "" "${PORTNAME}" \
-		"${PORTNAME}" "Game;AdventureGame;" ""
-
 USES=		cmake:outsource compiler:c++11-lang
+
 USE_SDL=	mixer2 sdl2
 SUB_FILES=	${PORTNAME}
+CXXFLAGS+=	-Wno-error-narrowing
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}-evo
+
+DESKTOP_ENTRIES="NXEngine" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;AdventureGame;" ""
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
