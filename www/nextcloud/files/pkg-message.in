@@ -1,3 +1,6 @@
+/!\ The FreeBSD package REQUIRES the apps_paths configuration as    /!\
+/!\ seen in config/config.sample.php to function                    /!\
+
 ***********************************************************************
 *                         POST INSTALL CONFIGURATION                  *
 ***********************************************************************
@@ -14,13 +17,19 @@ something like this:
 	    Require all granted
 	</Directory>
 
-And restart Apache.
+And restart Apache. Nextcloud will start the bundled installer on first
+access. Once the bundled installer finishes, further configuration can
+be done via 'Settings', 'Administration'. Additional configuration
+options are available in
 
-The caching options require additional Nextcloud configuration, see
-https://docs.nextcloud.com/server/12/admin_manual/configuration_server/caching_configuration.html
+	%%WWWDIR%%/config/config.php
 
-/!\ The FreeBSD package REQUIRES the apps_paths configuration as    /!\
-/!\ seen in config/config.sample.php to function                    /!\
+You can find annotated configuration options in config.documented.php
+in the same directory. Nextcloud's configuration documentation is at 
+
+	https://docs.nextcloud.com/server/14/admin_manual/configuration_server
+
+The caching options require additional Nextcloud configuration.
 
 ***********************************************************************
 *                       NEXTCLOUD VERSION UPGRADE                     *
