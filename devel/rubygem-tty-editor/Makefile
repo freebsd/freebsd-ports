@@ -3,6 +3,7 @@
 
 PORTNAME=	tty-editor
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,8 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-tty-prompt>=0.17.0:devel/rubygem-tty-prompt \
 		rubygem-tty-which>=0.3.0:devel/rubygem-tty-which
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
