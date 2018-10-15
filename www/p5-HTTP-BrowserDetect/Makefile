@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTTP-BrowserDetect
-PORTVERSION=	3.18
+PORTVERSION=	3.19
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	p5-Path-Tiny>=0:devel/p5-Path-Tiny \
+TEST_DEPENDS=	p5-Hash-Merge>=0:textproc/p5-Hash-Merge \
+		p5-Path-Tiny>=0:devel/p5-Path-Tiny \
 		p5-Test-FailWarnings>=0:devel/p5-Test-FailWarnings \
 		p5-Test-Most>=0:devel/p5-Test-Most \
 		p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings
