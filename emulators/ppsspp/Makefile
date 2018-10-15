@@ -3,7 +3,7 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
 DISTVERSION?=	1.6.3
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
 MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/5/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
@@ -73,7 +73,7 @@ SDL_BUILD_DEPENDS=	png>=1.6:graphics/png
 SDL_LIB_DEPENDS=	libpng.so:graphics/png
 SDL_VARS=	EXENAME=PPSSPPSDL
 VULKAN_DESC=		Vulkan renderer
-VULKAN_RUN_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
+VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/Linux/${OPSYS}/' \
