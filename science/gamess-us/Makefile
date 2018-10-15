@@ -2,7 +2,7 @@
 
 PORTNAME=	gamess
 DISTVERSION=	20181013
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 PKGNAMESUFFIX=	-us # "US" fork
 DISTNAME=	gamess-current
@@ -25,7 +25,7 @@ WRKSRC=		${WRKDIR}/gamess
 
 BINARY_ALIAS=	gcc=${CC} gfortran=gfortran${GCC_DEFAULT}
 
-GAMES_VERNO=	01
+GAMES_VERNO=	00
 GAMES_ENV=	GMS_PATH=${WRKSRC} GMS_BUILD_DIR=${WRKSRC} GMS_TARGET=${ARCH:S/amd64/linux64/:S/i386/linux32/} \
 		GMS_FORTRAN=gfortran GMS_GFORTRAN_VERNO=7.3 \
 		GMS_VERSION=${GAMES_VERNO} GMS_BUILD_PATH=${WRKSRC} \
@@ -68,7 +68,7 @@ do-configure:
 do-build:
 	@cd ${WRKSRC}/ddi && ${SETENV} ${MAKE_ENV} ./compddi && ${MV} ddikick.x ..
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./compall
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./lked gamess 01
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./lked gamess ${GAMES_VERNO}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rungms ${STAGEDIR}${PREFIX}/bin
