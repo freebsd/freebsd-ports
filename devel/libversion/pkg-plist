@@ -3,5 +3,5 @@ include/libversion/version.h
 lib/libversion.a
 lib/libversion.so
 lib/libversion.so.0
-lib/libversion.so.0.0.0
+lib/libversion.so.0.1.0
 libdata/pkgconfig/libversion.pc
