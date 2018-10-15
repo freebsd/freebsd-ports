@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipv6calc
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	ftp://ftp.bieringer.de/pub/linux/IPv6/ipv6calc/
 
@@ -18,6 +18,7 @@ BROKEN_powerpc64=	fails to build: libipv6addr.c: addr_test_method may be used un
 
 USES=		gmake perl5 shebangfix ssl
 GNU_CONFIGURE=	yes
+CFLAGS+=	-Wno-unknown-warning-option
 
 SHEBANG_FILES=	tools/*.pl tools/*.sh.in
 
