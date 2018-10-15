@@ -1,6 +1,6 @@
---- tests/sanity-test.c.orig	2016-02-17 01:13:16 UTC
+--- tests/sanity-test.c.orig	2018-04-09 17:19:26 UTC
 +++ tests/sanity-test.c
-@@ -92,7 +92,8 @@ FAIL_TEST(sanity_malloc_direct)
+@@ -97,7 +97,8 @@ FAIL_TEST(sanity_malloc_direct)
  TEST(disable_leak_checks)
  {
  	volatile void *mem;
@@ -10,7 +10,7 @@
  	/* normally this should be on the beginning of the test.
  	 * Here we need to be sure, that the leak checks are
  	 * turned on */
-@@ -171,7 +172,8 @@ sanity_fd_no_leak(void)
+@@ -183,7 +184,8 @@ sanity_fd_no_leak(void)
  {
  	int fd[2];
  
