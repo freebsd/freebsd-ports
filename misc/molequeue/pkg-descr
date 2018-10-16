@@ -1,0 +1,17 @@
+MoleQueue is an open-source, cross-platform, system-tray resident desktop
+application for abstracting, managing, and coordinating the execution of tasks
+both locally and on remote computational resources. It is built and tested on
+Linux, Mac OS X, and Windows, with nightly binaries currently available for Mac
+OS X and Windows. Users can set up local and remote queues that describe where
+the task will be executed. Each queue can have programs, with templates to
+facilitate the execution of the program. Input files can be staged, and output
+files collected using a standard interface.
+
+The MoleQueue application is written in C++ using the Qt framework. It can
+execute programs directly on the local machine, and uses SSH to communicate with
+remote batch scheduling systems with support for Open Grid Scheduler (formerly
+Sun Grid Engine) and PBS. The backend communication is abstracted, and support
+is currently being added for UIT (a SOAP protocol for communicating with
+military HPC resources using ezHPC).
+
+WWW: https://www.openchemistry.org/projects/molequeue
