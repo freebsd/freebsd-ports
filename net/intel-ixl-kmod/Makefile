@@ -39,6 +39,7 @@ MANPAGENAME?=	${PORTNAME}
 MANPAGELINKS?=	if_${PORTNAME}
 PLIST_FILES=	${KMODDIR}/if_${PORTNAME}_updated.ko \
 		man/man4/${MANPAGENAME}.4.gz
+MAKE_ENV+=	WERROR=""
 
 .for link in ${MANPAGELINKS}
 PLIST_FILES+=	man/man4/${link}.4.gz
