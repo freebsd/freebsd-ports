@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2018-02-14 23:08:02 UTC
++++ src/Makefile.in
+@@ -619,7 +619,7 @@ pkg_static_LDADD = @OS_LDFLAGS@ $(pkg_OBJECTS) \
+ 	$(top_builddir)/libpkg/libpkg_static.la \
+ 	$(top_builddir)/compat/libbsd_compat.la @LIBJAIL_LIB@ \
+ 	@LDNS_LIBS@ @OS_LIBS@ -larchive -lz -lutil -lbz2 -llzma -lssl \
+-	-lcrypto -lm $(am__append_2) $(am__append_3) $(am__append_4)
++	-lpthread -lcrypto -lm $(am__append_2) $(am__append_3) $(am__append_4)
+ DYNPROG = pkg
+ @BUILD_STATIC_TRUE@pkg_static_LDFLAGS = -all-static
+ dist_sysconf_DATA = pkg.conf.sample
