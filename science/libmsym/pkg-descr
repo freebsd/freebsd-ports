@@ -1,0 +1,13 @@
+libmsym is a C library dealing with point group symmetry in molecules.
+
+Features:
+* Determine, symmetrize and generate molecules of any point group as well
+  determine/select subgroups. Get symmetrically equivalent elements and
+  symmetrize translation of any any element in a molecule.
+* Generate character tables for any point group (complex characters form
+  reducible representations)
+* Generate SALCs of real spherical harmonics with any angular momentum for
+  point groups with real characters (Ci, Cs, Cnv, Dn, Dnh, Dnd, Td, O, Oh,
+  I and Ih), as well as symmetrize orbitals, determine partner functions etc.
+
+WWW: https://github.com/mcodev31/libmsym
