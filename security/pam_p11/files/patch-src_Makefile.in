@@ -1,0 +1,15 @@
+--- src/Makefile.in.orig	2018-10-16 10:16:04 UTC
++++ src/Makefile.in
+@@ -384,10 +384,10 @@ pam_p11_la_SOURCES = pam_p11.c base64.c 
+ 	pam_p11.exports
+ 
+ test_login_SOURCES = test.c login.c $(pam_p11_la_SOURCES)
+-test_login_LDADD = -lpam_misc
++test_login_LDADD =
+ test_login_CFLAGS = $(AM_CFLAGS) -DLIBDIR=\"$(libdir)\" -DTEST
+ test_passwd_SOURCES = test.c passwd.c $(pam_p11_la_SOURCES)
+-test_passwd_LDADD = -lpam_misc
++test_passwd_LDADD =
+ test_passwd_CFLAGS = $(AM_CFLAGS) -DLIBDIR=\"$(libdir)\" -DTEST
+ all: all-am
+ 
