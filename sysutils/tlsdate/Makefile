@@ -15,11 +15,12 @@ LIB_DEPENDS=	libevent.so:devel/libevent
 
 OPTIONS_DEFINE=	DOCS
 
-GNU_CONFIGURE=	yes
-TEST_TARGET=	test
 USES=		autoreconf libtool pkgconfig ssl
+
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
+GNU_CONFIGURE=	yes
+TEST_TARGET=	test
 
 PLIST_SUB=	PKGNAME=${PKGNAME}
 PORTDOCS=	*
