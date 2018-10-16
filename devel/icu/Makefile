@@ -2,11 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	icu
-DISTVERSIONPREFIX=	release-
-DISTVERSION=	62-1
+DISTVERSION=	62_1
 PORTREVISION?=	2 # keep for icu-lx
 PORTEPOCH?=	1
 CATEGORIES?=	devel
+MASTER_SITES=	http://download.icu-project.org/files/icu4c/${PORTVERSION}/ \
+		SF/${PORTNAME}/${PORTNAME:tu}4C/${PORTVERSION}
+DISTNAME=	icu4c-${DISTVERSION}-src
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT?=	International Components for Unicode (from IBM)
@@ -26,10 +28,8 @@ CPPFLAGS+=	-DICU_NO_USER_DATA_OVERRIDE
 MAKE_ARGS=	VERBOSE=1
 TEST_TARGET=	check
 USES+=		compiler:c++11-lib gmake pathfix tar:tgz
-USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-GH_ACCOUNT=	unicode-org
-WRKSRC_SUBDIR=	icu4c/source
+WRKSRC=		${WRKDIR}/icu/source
 
 ICUMAJOR=	${PORTVERSION:C/\..*//}
 PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUVER=${PORTVERSION}
