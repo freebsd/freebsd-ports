@@ -3,13 +3,14 @@
 
 PORTNAME=	mesa-dri
 PORTVERSION=	${MESAVERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
 
 USE_XORG=	xorgproto x11 xdamage xext xfixes xshmfence xv xvmc
 
-OPTIONS_DEFINE=	TEXTURE VAAPI VDPAU
+OPTIONS_DEFINE=	TEXTURE VAAPI VDPAU WAYLAND
 OPTIONS_DEFAULT=TEXTURE
 OPTIONS_SUB=	yes
 
@@ -22,6 +23,10 @@ VAAPI_USE=		XORG=xcb
 
 VDPAU_CONFIGURE_ENABLE=	vdpau
 VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
+
+WAYLAND_DESC=		Enable support for the Wayland platform in Vulkan drivers
+WAYLAND_BUILD_DEPENDS=	wayland-protocols>=1.8:graphics/wayland-protocols
+WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
@@ -71,6 +76,14 @@ LDFLAGS_i386=		-Wl,-znotext
 # --build-id isn't supported by old GNU ld.bfd in base
 USE_BINUTILS=		yes
 LDFLAGS+=		-B${LOCALBASE}/bin
+. endif
+.endif
+
+# enables VK_KHR_wayland_surface in Vulkan drivers
+.if ${PORT_OPTIONS:MWAYLAND}
+CONFIGURE_ARGS+=	--with-platforms=x11,surfaceless,drm,wayland
+. if empty(VULKAN_DRIVERS)
+IGNORE=	option WAYLAND is only valid on platforms with Vulkan
 . endif
 .endif
 
