@@ -12,6 +12,7 @@ include/mpd/idle.h
 include/mpd/list.h
 include/mpd/message.h
 include/mpd/mixer.h
+include/mpd/mount.h
 include/mpd/output.h
 include/mpd/pair.h
 include/mpd/parser.h
@@ -34,7 +35,7 @@ include/mpd/tag.h
 include/mpd/version.h
 lib/libmpdclient.so
 lib/libmpdclient.so.2
-lib/libmpdclient.so.2.15
+lib/libmpdclient.so.2.16
 libdata/pkgconfig/libmpdclient.pc
 share/vala/vapi/libmpdclient.vapi
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
