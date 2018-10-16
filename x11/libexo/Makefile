@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libexo
-PORTVERSION=	0.12.2
+PORTVERSION=	0.12.3
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/src/xfce/${PORTNAME:C/lib//}/${PORTVERSION:R}
 DISTNAME=	exo-${PORTVERSION}
@@ -21,17 +21,18 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 BUILD_DEPENDS=	p5-URI>=1.60:net/p5-URI
 RUN_DEPENDS=	p5-URI>=1.60:net/p5-URI
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
-GNU_CONFIGURE=	yes
-INSTALLS_ICONS=	yes
-INSTALL_TARGET=	install-strip
 USES=		desktop-file-utils gmake libtool pathfix perl5 \
 		pkgconfig gettext-tools xfce:gtk3 tar:bzip2
 USE_GNOME=	cairo glib20 gtk20 gtk30 intltool intlhack
 USE_LDCONFIG=	yes
 USE_XFCE=	libmenu
 USE_XORG=	ice sm x11
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
+
+GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=--without-html-dir --disable-silent-rules
 
