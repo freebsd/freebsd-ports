@@ -1,0 +1,6 @@
+Simply installing this module causes MaxMind::DB::Reader to use the XS
+implementation, which is much faster than the Perl implementation. The XS
+implementation links against the libmaxminddb library. See MaxMind::DB::Reader
+for API details.
+
+WWW: https://metacpan.org/release/MaxMind-DB-Reader-XS
