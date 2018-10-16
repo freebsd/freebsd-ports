@@ -20,10 +20,9 @@ GH_TAGNAME=	4e76bf2
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SINGLE= SERVER
-OPTIONS_SINGLE_SERVER= NOJABBER JABBER JABBERD EJABBERD
+OPTIONS_SINGLE_SERVER= NOJABBER JABBERD EJABBERD
 OPTIONS_DEFAULT=	NOJABBER
 NOJABBER_DESC=    Do not depend on a jabber server
-JABBER_DESC=    Use with jabberd14 (net-im/jabber)
 JABBERD_DESC=   Use with jabberd 2.x (net-im/jabberd)
 EJABBERD_DESC=  Use with ejabberd (net-im/ejabberd)
 
@@ -42,9 +41,6 @@ GROUPS=		${PROXY65_GROUP}
 
 .if ${PORT_OPTIONS:MNOJABBER}
 # No jabber depends
-.elif ${PORT_OPTIONS:MJABBER}
-JABBER_REQUIRE?=        jabber
-RUN_DEPENDS+=           jabberd14:net-im/jabber
 .elif ${PORT_OPTIONS:MJABBERD}
 JABBER_REQUIRE?=        jabberd
 RUN_DEPENDS+=           jabberd:net-im/jabberd
