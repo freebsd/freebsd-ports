@@ -180,6 +180,7 @@ CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
 		--with-libgd \
 		--with-fontconfigincludedir=${LOCALBASE}/include \
 		--with-fontconfiglibdir=${LOCALBASE}/lib \
+		--without-rsvg \
 		--disable-io --disable-ocaml --disable-java \
 		--disable-sharp
 
