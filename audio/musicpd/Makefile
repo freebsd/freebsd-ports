@@ -2,7 +2,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.20.21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -18,7 +18,7 @@ BROKEN_powerpc64=	Does not build on powerpc64
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libicudata.so:devel/icu
 
-USES=		compiler:c++14-lang gmake pkgconfig tar:xz
+USES=		compiler:c++14-lang gmake gnome pkgconfig tar:xz
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
