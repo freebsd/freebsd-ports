@@ -3,7 +3,7 @@
 
 PORTNAME=	mesa-libs
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL libraries that support GLX and EGL clients
@@ -27,9 +27,9 @@ CONFIGURE_ARGS+=	--with-dri-drivers="" --with-gallium-drivers=""
 # libEGL needs gallium enabled which depends on llvm
 .if "${MESA_LLVM_VER}" != ""
 .if ${PORT_OPTIONS:MWAYLAND}
-CONFIGURE_ARGS+=	--with-platforms=x11,drm,wayland
+CONFIGURE_ARGS+=	--with-platforms=x11,surfaceless,drm,wayland
 .else
-CONFIGURE_ARGS+=	--with-platforms=x11,drm
+CONFIGURE_ARGS+=	--with-platforms=x11,surfaceless,drm
 .endif
 PLIST_SUB+=		EGL=""
 .else
