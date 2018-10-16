@@ -2,12 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	osquery
-PORTVERSION=	3.2.6
-PORTREVISION=	3
+PORTVERSION=	3.3.1
 CATEGORIES=	sysutils
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	516061088514.patch:-p1
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	SQL powered OS instrumentation, monitoring, and analytics
@@ -24,6 +20,7 @@ BUILD_DEPENDS=	thrift>=0.11.0:devel/thrift \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR}
 LIB_DEPENDS=	libaugeas.so:textproc/augeas \
 		libboost_regex.so:devel/boost-libs \
+		libfuzzy.so:security/ssdeep \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
 		libicuuc.so:devel/icu \
@@ -36,7 +33,8 @@ USES=		cmake:outsource libtool python:build compiler:c++11-lib \
 		libarchive ssl
 USE_GNOME=	libxml2
 CONFIGURE_ENV+=	OSQUERY_BUILD_VERSION="${PORTVERSION}" HOME="${WRKDIR}" \
-		SKIP_TESTS="yes" CC="${CC}" CXX="${CXX}"
+		SKIP_TESTS="yes" CC="${CC}" CXX="${CXX}" \
+		SKIP_SMART=1
 CMAKE_ARGS+=	-DFREEBSD=awesome -DCMAKE_SYSTEM_NAME="FreeBSD"
 BLDDIR=		${WRKDIR}/.build/${PORTNAME}
 TPVERSION=	3.0.0
