@@ -1,0 +1,5 @@
+Toil is a scalable, efficient, cross-platform pipeline management system,
+written entirely in Python, and designed around the principles of functional
+programming.
+
+WWW: https://github.com/DataBiosphere/toil
