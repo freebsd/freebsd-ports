@@ -1,4 +1,4 @@
---- lib/perfdata/CMakeLists.txt.orig	2018-07-17 12:27:32 UTC
+--- lib/perfdata/CMakeLists.txt.orig	2018-10-11 12:01:05 UTC
 +++ lib/perfdata/CMakeLists.txt
 @@ -45,32 +45,32 @@ set_target_properties (
  )
@@ -6,36 +6,36 @@
  install_if_not_exists(
 -  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/gelf.conf
 +  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/gelf.conf.sample
-   ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/features-available
+   ${ICINGA2_CONFIGDIR}/features-available
  )
  
  install_if_not_exists(
 -  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/graphite.conf
 +  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/graphite.conf.sample
-   ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/features-available
+   ${ICINGA2_CONFIGDIR}/features-available
  )
  
  install_if_not_exists(
 -  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/influxdb.conf
 +  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/influxdb.conf.sample
-   ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/features-available
+   ${ICINGA2_CONFIGDIR}/features-available
  )
  
  install_if_not_exists(
 -  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/elasticsearch.conf
 +  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/elasticsearch.conf.sample
-   ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/features-available
+   ${ICINGA2_CONFIGDIR}/features-available
  )
  
  install_if_not_exists(
 -  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/opentsdb.conf
 +  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/opentsdb.conf.sample
-   ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/features-available
+   ${ICINGA2_CONFIGDIR}/features-available
  )
  
  install_if_not_exists(
 -  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/perfdata.conf
 +  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/perfdata.conf.sample
-   ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/features-available
+   ${ICINGA2_CONFIGDIR}/features-available
  )
  

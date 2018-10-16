@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2018-07-17 12:27:32 UTC
+--- CMakeLists.txt.orig	2018-10-11 12:01:05 UTC
 +++ CMakeLists.txt
 @@ -28,8 +28,8 @@ if(NOT CMAKE_BUILD_TYPE)
      FORCE)
@@ -11,7 +11,7 @@
  option(ICINGA2_WITH_CHECKER "Build the checker module" ON)
  option(ICINGA2_WITH_COMPAT "Build the compat module" ON)
  option(ICINGA2_WITH_LIVESTATUS "Build the Livestatus module" ON)
-@@ -217,6 +217,12 @@ if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
+@@ -241,6 +241,12 @@ if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
    endif()
  endif()
  

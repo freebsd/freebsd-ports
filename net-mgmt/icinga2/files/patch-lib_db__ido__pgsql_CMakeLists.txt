@@ -1,4 +1,4 @@
---- lib/db_ido_pgsql/CMakeLists.txt.orig	2018-07-17 12:27:32 UTC
+--- lib/db_ido_pgsql/CMakeLists.txt.orig	2018-10-11 12:01:05 UTC
 +++ lib/db_ido_pgsql/CMakeLists.txt
 @@ -37,7 +37,7 @@ set_target_properties (
  )
@@ -6,6 +6,6 @@
  install_if_not_exists(
 -  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/ido-pgsql.conf
 +  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/ido-pgsql.conf.sample
-   ${CMAKE_INSTALL_SYSCONFDIR}/icinga2/features-available
+   ${ICINGA2_CONFIGDIR}/features-available
  )
  
