@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Trap
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -18,8 +18,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Data-Dump>=0:devel/p5-Data-Dump
 TEST_DEPENDS=	p5-Test-Refcount>=0:devel/p5-Test-Refcount
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
