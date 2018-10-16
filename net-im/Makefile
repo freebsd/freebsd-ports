@@ -32,7 +32,6 @@
     SUBDIR += hs-haskell-xmpp
     SUBDIR += icmpchat
     SUBDIR += icqlib
-    SUBDIR += jabber
     SUBDIR += jabber.el
     SUBDIR += jabberd
     SUBDIR += jarl
