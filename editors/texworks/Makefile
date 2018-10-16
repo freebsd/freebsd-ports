@@ -32,6 +32,13 @@ CMAKE_ARGS=	-DTeXworks_DIC_DIR:PATH=${LOCALBASE}/share/hunspell \
 		-DTeXworks_HELP_DIR:PATH=${DOCSDIR_REL} \
 		-DTeXworks_MAN_DIR:PATH=man/man1
 
+PORTDOCS=	*
+PLIST_FILES=	bin/texworks \
+		man/man1/texworks.1.gz \
+		share/appdata/texworks.appdata.xml \
+		share/applications/texworks.desktop \
+		share/pixmaps/TeXworks.png
+
 OPTIONS_DEFINE=	DOCS LUA PYTHON
 
 LUA_USES=		lua
@@ -41,13 +48,5 @@ LUA_PLIST_FILES=	lib/texworks/libTWLuaPlugin.so
 PYTHON_USES=		python:3.4+
 PYTHON_CMAKE_BOOL=	WITH_PYTHON
 PYTHON_PLIST_FILES=	lib/texworks/libTWPythonPlugin.so
-
-PORTDOCS=	*
-
-PLIST_FILES=	bin/texworks \
-		man/man1/texworks.1.gz \
-		share/appdata/texworks.appdata.xml \
-		share/applications/texworks.desktop \
-		share/pixmaps/TeXworks.png
 
 .include <bsd.port.mk>
