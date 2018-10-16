@@ -10575,3 +10575,7 @@ net-mgmt/zabbix2-agent|net-mgmt/zabbix22-agent|2018-10-10|Has expired: End of Li
 net-mgmt/zabbix2-frontend|net-mgmt/zabbix22-frontend|2018-10-10|Has expired: End of Life was August, 2017
 net-mgmt/zabbix2-java|net-mgmt/zabbix22-java|2018-10-10|Has expired: End of Life was August, 2017
 net-mgmt/zabbix2-proxy|net-mgmt/zabbix22-proxy|2018-10-10|Has expired: End of Life was August, 2017
+www/swish++||2018-10-16|Has expired: Unmaintained upstream
+deskutils/tagutils||2018-10-16|Has expired: Unmaintained upstream
+devel/libleaftag||2018-10-16|Has expired: Unmaintained upstream
+net-im/jabber||2018-10-16|Has expired: Unmaintained upstream

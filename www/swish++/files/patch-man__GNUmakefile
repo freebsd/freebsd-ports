@@ -1,7 +1,0 @@
---- man/GNUmakefile.orig	2004-04-30 00:03:24.000000000 -0500
-+++ man/GNUmakefile	2011-03-26 13:59:57.000000000 -0500
-@@ -32,3 +32,3 @@
- 
--all %:
-+all install:
- 	@for dir in $(SUBDIRS); do $(MAKE) -C $$dir $@; done
