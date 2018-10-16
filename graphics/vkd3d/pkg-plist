@@ -1,0 +1,17 @@
+include/vkd3d/vkd3d.h
+include/vkd3d/vkd3d_d3d12.h
+include/vkd3d/vkd3d_d3dcommon.h
+include/vkd3d/vkd3d_dxgibase.h
+include/vkd3d/vkd3d_dxgiformat.h
+include/vkd3d/vkd3d_utils.h
+include/vkd3d/vkd3d_windows.h
+lib/libvkd3d-utils.a
+lib/libvkd3d-utils.so
+lib/libvkd3d-utils.so.1
+lib/libvkd3d-utils.so.1.0.1
+lib/libvkd3d.a
+lib/libvkd3d.so
+lib/libvkd3d.so.1
+lib/libvkd3d.so.1.1.0
+libdata/pkgconfig/libvkd3d-utils.pc
+libdata/pkgconfig/libvkd3d.pc
