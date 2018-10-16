@@ -74,6 +74,7 @@ SDL_LIB_DEPENDS=	libpng.so:graphics/png
 SDL_VARS=	EXENAME=PPSSPPSDL
 VULKAN_DESC=		Vulkan renderer
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
+VULKAN_CFLAGS=	-DSDL_VIDEO_DRIVER_WAYLAND # XXX bug 223018, bug 227509
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/Linux/${OPSYS}/' \
