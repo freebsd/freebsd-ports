@@ -14,11 +14,11 @@ COMMENT=	Fasttracker II clone
 LICENSE=	BSD3CLAUSE CC-BY-NC-SA-4.0
 LICENSE_COMB=	multi
 
-USES=		dos2unix localbase:ldflags zip iconv:wchar_t
-USE_SDL=	sdl2
-
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/src/LICENSE.txt
 LICENSE_FILE_CC-BY-NC-SA-4.0=	${WRKSRC}/src/gfxdata/bmp/LICENSE.txt
+
+USES=		dos2unix localbase:ldflags zip iconv:wchar_t
+USE_SDL=	sdl2
 
 WRKSRC=		${WRKDIR}/ft2-clone-code
 
