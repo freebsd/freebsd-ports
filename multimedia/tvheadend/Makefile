@@ -2,13 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	tvheadend
-PORTVERSION=	4.2.6
+PORTVERSION=	4.2.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
 CATEGORIES=	multimedia
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	3cb4f580565b.patch:-p1
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	TV streaming server supporting DVB, IPTV, SAT>IP and more

@@ -1,30 +1,24 @@
---- src/wrappers.c.orig	2017-05-16 11:15:24.000000000 +0000
-+++ src/wrappers.c	2017-06-21 18:00:42.352871000 +0000
-@@ -290,6 +290,19 @@
-   } while (r > 0);
- }
- 
-+#ifdef PLATFORM_FREEBSD
-+int64_t
-+tvh_usleep(int64_t us)
-+{
-+  return usleep(us);
-+}
-+
-+int64_t
-+tvh_usleep_abs(int64_t us)
-+{
-+  return usleep(us - getfastmonoclock());
-+}
-+#else
+Use the implementation from Darwin for tvh_usleep() and tvh_usleep_abs()
+in FreeBSD.
+
+Submitted by:	Bernhard Froehlich <decke@FreeBSD.org>
+--- src/wrappers.c.orig	2018-10-08 12:37:05.000000000 +0000
++++ src/wrappers.c	2018-10-16 14:27:38.788502000 +0000
+@@ -324,7 +324,7 @@
  int64_t
  tvh_usleep(int64_t us)
  {
-@@ -323,6 +336,7 @@
-     return val;
-   return r ? -r : 0;
- }
-+#endif
- 
- /*
-  * qsort
+-#if defined(PLATFORM_DARWIN)
++#if defined(PLATFORM_DARWIN) || defined(PLATFORM_FREEBSD)
+   return usleep(us);
+ #else
+   struct timespec ts;
+@@ -345,7 +345,7 @@
+ int64_t
+ tvh_usleep_abs(int64_t us)
+ {
+-#if defined(PLATFORM_DARWIN)
++#if defined(PLATFORM_DARWIN) || defined(PLATFORM_FREEBSD)
+   /* Convert to relative wait */
+   int64_t now = getmonoclock();
+   int64_t relative = us - now;
