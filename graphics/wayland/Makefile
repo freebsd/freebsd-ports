@@ -4,7 +4,7 @@
 PORTNAME=	wayland
 PORTVERSION=	1.16.0
 CATEGORIES=	graphics wayland
-MASTER_SITES=	http://wayland.freedesktop.org/releases/
+MASTER_SITES=	https://wayland.freedesktop.org/releases/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Wayland composite "server"
@@ -20,7 +20,7 @@ CFLAGS+=	"-I${LOCALBASE}/include/libepoll-shim"
 
 WITH_DEBUG=	1
 
-USES=		autoreconf gnome gmake libtool localbase pathfix pkgconfig tar:xz
+USES=		autoreconf gmake gnome libtool localbase pathfix pkgconfig tar:xz
 USE_GNOME=	libxslt:build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
