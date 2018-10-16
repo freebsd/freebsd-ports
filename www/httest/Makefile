@@ -18,6 +18,11 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libpcre.so:devel/pcre \
 		libapr-1.so:devel/apr1
 
+USES=		iconv lua libtool bdb ssl
+USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+
 OPTIONS_DEFINE=	EXAMPLES
 
 CONFIGURE_ARGS=	--enable-lua-module \
@@ -27,15 +32,21 @@ CONFIGURE_ARGS=	--enable-lua-module \
 		--with-pcre="${LOCALBASE}/bin" \
 		--with-ssl="${OPENSSLLIB}"
 CPPFLAGS+=	-I${LUA_INCDIR}
-GNU_CONFIGURE=	yes
-USES=		iconv lua libtool bdb ssl
-USE_LDCONFIG=	yes
 
 PORTEXAMPLES=	*
 
 INSTALL_TARGET=	install-strip
 
 MAKE_JOBS_UNSAFE=	yes
+
+.include <bsd.port.pre.mk>
+
+# Reported upstream:
+# https://sourceforge.net/p/htt/tickets/5/
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085
+BROKEN=		does not build with OpenSSL 1.1.1
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|`$$APR_CONFIG --cflags`||; s|-llua|-llua-${LUA_VER}|g' ${WRKSRC}/configure
@@ -47,4 +58,4 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.htt ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
