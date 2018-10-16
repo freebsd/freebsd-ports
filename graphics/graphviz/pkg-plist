@@ -209,10 +209,6 @@ lib/graphviz/liblab_gamut.so.1.0.0
 %%RUBY%%lib/graphviz/ruby/libgv_ruby.la
 %%RUBY%%lib/graphviz/ruby/libgv_ruby.so
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/gv.so
-%%LIBRSVG2%%lib/graphviz/libgvplugin_rsvg.la
-%%LIBRSVG2%%lib/graphviz/libgvplugin_rsvg.so
-%%LIBRSVG2%%lib/graphviz/libgvplugin_rsvg.so.6
-%%LIBRSVG2%%lib/graphviz/libgvplugin_rsvg.so.6.0.0
 %%DEVIL%%lib/graphviz/libgvplugin_devil.la
 %%DEVIL%%lib/graphviz/libgvplugin_devil.so
 %%DEVIL%%lib/graphviz/libgvplugin_devil.so.6
