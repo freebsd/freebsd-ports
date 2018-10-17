@@ -1,0 +1,22 @@
+Avogadro 2 is a chemical editor and visualization application, it is also a set
+of reusable software libraries written in C++ using principles of modularity for
+maximum reuse. The development of the first generation Avogadro application and
+library is documented in our paper, and this remains the preferred method of
+citation at present. The motivation for rewriting Avogadro, along with
+improvements and changes made in Avogadro 2 are summarized in our Source
+article. We provide a set of permissively licensed, open source, cross platform
+software components in the Avogadro 2 libraries, along with an end-user
+application with full source code, and binaries.
+
+The library features updated and improved rendering, where we built upon the
+abstraction provided by previous API, but implemented a simple scene graph. This
+makes use of features such as impostor sphere rendering, resulting in
+significant rendering speed improvements while improving the quality of the
+visualization. The core is built for scalability, looking to enable the analysis
+of larger chemical structures and simulations being produced by computational
+chemistry codes today. Emphasis has also been placed on making it even easier to
+extend, using simple Python scripts to add simulation input capabilities, and
+data input/output along with access to full-blown C++ plugin APIs where more
+control is required.
+
+WWW: https://www.openchemistry.org/projects/avogadro2/
