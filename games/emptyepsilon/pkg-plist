@@ -235,6 +235,8 @@ bin/emptyepsilon
 %%DATADIR%%/scripts/scenario_08_atlantis.lua
 %%DATADIR%%/scripts/scenario_10_empty.lua
 %%DATADIR%%/scripts/scenario_51_deliverAmbassador.lua
+%%DATADIR%%/scripts/scenario_57_shoreline.lua
+%%DATADIR%%/scripts/scenario_58_race.lua
 %%DATADIR%%/scripts/scenario_pvp.lua
 %%DATADIR%%/scripts/science_db.lua
 %%DATADIR%%/scripts/shipTemplates.lua
