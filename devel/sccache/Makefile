@@ -282,10 +282,16 @@ CARGO_CRATES=	adler32-1.0.3 \
 		xattr-0.2.2 \
 		zip-0.4.2
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1200084
+IGNORE=	openssl 1.1.1 is incompatible with the reqwest 0.8.8 dependencies
+.endif
+
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sccache
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
