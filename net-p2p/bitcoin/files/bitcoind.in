@@ -118,12 +118,10 @@ bitcoind_start()
 {
   echo "Starting bitcoind:"
   cd "${bitcoind_data_dir}" || return 1
-  ${daemon_command} -u "${bitcoind_user}" -p "${pidfile}" \
+  ${daemon_command} -u "${bitcoind_user}" -p "${pidfile}" -o "${bitcoind_data_dir}/bitcoind.log" \
     ${command} \
     -conf="${bitcoind_config_file}" \
-    -datadir="${bitcoind_data_dir}" \
-    2> "${bitcoind_data_dir}/bitcoind.stderr" \
-    > "${bitcoind_data_dir}/bitcoind.stdout"
+    -datadir="${bitcoind_data_dir}"
 }
 
 bitcoind_stop()
