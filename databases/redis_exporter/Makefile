@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis_exporter
-PORTVERSION=	0.20.2
+PORTVERSION=	0.21.2
 DISTVERSIONPREFIX=v
 CATEGORIES=	databases
 
@@ -12,8 +12,8 @@ COMMENT=	Prometheus exporter for redis stats
 LICENSE=	MIT
 
 USES=		go
-USE_GITHUB=	yes
 
+USE_GITHUB=	yes
 GH_ACCOUNT=	oliver006
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
