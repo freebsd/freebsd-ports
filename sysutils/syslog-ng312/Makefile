@@ -15,8 +15,7 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libuuid.so:misc/e2fsprogs-libuuid \
-		libbson-1.0.so:devel/libbson
+		libuuid.so:misc/e2fsprogs-libuuid
 
 DEPRECATED=		No longer officially supported by Balabit
 EXPIRATION_DATE=	2019-12-31
@@ -103,6 +102,7 @@ SQL_PLIST_FILES=		lib/syslog-ng/libafsql.so
 
 MONGO_CONFIGURE_ENABLE=		mongodb
 MONGO_LIB_DEPENDS=		libmongoc-1.0.so:devel/mongo-c-driver
+MONGO_LIB_DEPENDS+=		libbson-1.0.so:devel/libbson
 MONGO_PLIST_FILES=		lib/syslog-ng/libafmongodb.so
 
 JSON_CONFIGURE_ENABLE=		json
