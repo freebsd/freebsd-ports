@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	faker
-PORTVERSION=	1.8.7
+PORTVERSION=	1.9.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
