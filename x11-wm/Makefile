@@ -113,6 +113,7 @@
     SUBDIR += sawfish
     SUBDIR += selectwm
     SUBDIR += simple-ccsm
+    SUBDIR += skippy-xd
     SUBDIR += spectrwm
     SUBDIR += stumpwm
     SUBDIR += subtle

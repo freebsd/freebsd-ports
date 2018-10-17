@@ -3679,7 +3679,6 @@ games/rigsofrods||2012-10-16|Has expired: Broken for more than 6 months
 sysutils/bacula2-client||2012-10-20|No longer supported upstream and may contain vulnerabilities. Use sysutils/bacula-client instead
 sysutils/bacula2-server||2012-10-20|No longer supported upstream and may contain vulnerabilities. Use sysutils/bacula-server instead
 x11-wm/wmcp||2012-10-25|Has expired: No more public distfiles
-x11-wm/skippy-xd||2012-10-25|Has expired: Abandonware, upstream disappeared
 x11-wm/skippy||2012-10-25|Has expired: Abandonware, upstream disappeared
 x11-wm/matchbox||2012-10-25|Has expired: Abandonware, upstream disappeared
 x11-wm/blwm||2012-10-25|Has expired: Abandonware, upstream disappeared
