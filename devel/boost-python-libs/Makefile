@@ -13,7 +13,7 @@ USES=		python
 USE_PYTHON=	flavors
 
 # Ignore -Wregister warnings in Python.h
-CFLAGS+=	${${PY_FLAVOR}_CFLAGS}
+CFLAGS+=	${${FLAVOR}_CFLAGS}
 py27_CFLAGS=	-isystem ${PYTHON_INCLUDEDIR}
 
 OPTIONS_DEFINE=	DEBUG OPTIMIZED_CFLAGS
