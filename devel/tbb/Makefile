@@ -26,7 +26,8 @@ SUB_LIST=	prefix="${PREFIX}" \
 		version="${PORTVERSION}"
 
 OPTIONS_DEFINE=	DOCS
-DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \
+		dot:graphics/graphviz
 
 USE_LDCONFIG=	yes
 ALL_TARGET=	default
