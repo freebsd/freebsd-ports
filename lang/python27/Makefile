@@ -34,7 +34,6 @@ TEST_TARGET=		buildbottest
 TEST_ARGS=		TESTOPTS=-j${MAKE_JOBS_NUMBER}
 
 MAKE_ARGS+=		INSTALL_SHARED="${INSTALL_LIB}"				# Strip shared library
-MAKE_JOBS_UNSAFE=	yes							# Parser/pgen build bug. See Issue: 200622, 201974
 
 PLIST_SUB=		ABI=${ABIFLAGS} \
 			PORTVERSION=${PORTVERSION} \
