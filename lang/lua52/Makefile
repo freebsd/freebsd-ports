@@ -7,7 +7,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/
 PKGNAMESUFFIX=	52
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	john@essenz.com
 COMMENT=	Small, compilable scripting language providing easy access to C code
 
 LICENSE=	MIT
