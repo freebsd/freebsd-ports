@@ -1,0 +1,8 @@
+--- avogadro/qtplugins/plugindownloader/CMakeLists.txt.orig	2018-10-16 23:37:42 UTC
++++ avogadro/qtplugins/plugindownloader/CMakeLists.txt
+@@ -20,4 +20,4 @@ avogadro_plugin(PluginDownloader
+ )
+ 
+ target_link_libraries(PluginDownloader LINK_PRIVATE ${Qt5Network_LIBRARIES}
+-  ${LIBARCHIVE_LIBRARIES} jsoncpp)
++  ${LIBARCHIVE_LIBRARIES} ${CMAKE_INSTALL_PREFIX}/lib/libjsoncpp.so)
