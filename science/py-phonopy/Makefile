@@ -25,8 +25,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 USES=		python
 USE_PYTHON=	distutils cython autoplist
 
-do-test: # Tests fail: https://github.com/atztogo/phonopy/issues/80
+do-test: # One test fails: https://github.com/atztogo/phonopy/issues/79
 	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} nosetests-${PYTHON_VER}
+		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} test
 
 .include <bsd.port.mk>
