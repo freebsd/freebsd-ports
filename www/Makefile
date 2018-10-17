@@ -1690,6 +1690,7 @@
     SUBDIR += py-google-cloud-core
     SUBDIR += py-google-cloud-storage
     SUBDIR += py-google-cloud-translate
+    SUBDIR += py-google-cloud-vision
     SUBDIR += py-google-resumable-media
     SUBDIR += py-graphite-api
     SUBDIR += py-graphite-web
