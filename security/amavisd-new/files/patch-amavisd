@@ -1,6 +1,14 @@
 --- amavisd.orig	2016-12-10 16:31:50 UTC
 +++ amavisd
-@@ -34338,6 +34338,7 @@ sub collect_some_dkim_info($) {
+@@ -22814,6 +22814,7 @@ sub process_smtp_request($$$$) {
+         }
+         # load policy banks from the 'client_ipaddr_policy' lookup
+         Amavis::load_policy_bank($_,$msginfo) for @bank_names_cl;
++        $msginfo->originating(c('originating'));
+ 
+         $msginfo->client_addr($cl_ip);      # ADDR
+         $msginfo->client_port($cl_port);    # PORT
+@@ -34357,6 +34358,7 @@ sub collect_some_dkim_info($) {
      $sig_ind++;
    }
    Amavis::load_policy_bank($_,$msginfo) for @bank_names;
