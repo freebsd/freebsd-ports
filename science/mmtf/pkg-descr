@@ -1,0 +1,6 @@
+mmtf is a C++ headers-only decoder/encoder library for the MMTF format.
+
+The macromolecular transmission format (MMTF) is a binary encoding of chemical
+and biological structures.
+
+WWW: https://mmtf.rcsb.org/
