@@ -1,2 +1,3 @@
-SHA256 (joblib-0.9.4.tar.gz) = e5faacf0da7b3035dbca9d56210962b86564aafca71a25f4ea376a405455cd60
-SIZE (joblib-0.9.4.tar.gz) = 453488
+TIMESTAMP = 1537518820
+SHA256 (joblib-0.12.5.tar.gz) = 11cdfd38cdb71768149e1373f2509e9b4fc1ec6bc92f874cb515b25f2d69f8f4
+SIZE (joblib-0.12.5.tar.gz) = 298840
