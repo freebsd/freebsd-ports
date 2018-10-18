@@ -16,6 +16,7 @@
     SUBDIR += autocutsel
     SUBDIR += baobab
     SUBDIR += basket
+    SUBDIR += belcard
     SUBDIR += bigyear
     SUBDIR += bijiben
     SUBDIR += bitcollider

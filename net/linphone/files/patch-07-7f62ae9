@@ -1,0 +1,39 @@
+From 7f62ae905a92507c078ca6e43a2e5474b60baec8 Mon Sep 17 00:00:00 2001
+From: Ronan Abhamon <ronan.abhamon@belledonne-communications.com>
+Date: Thu, 21 Jun 2018 11:31:33 +0200
+Subject: [PATCH] fix(ComboBox): import named QtQuick.Controls, avoid
+ `QQmlComponent: Component is not Ready` with Qt 5.11.1
+
+---
+ ui/modules/Common/Form/ComboBox.qml | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/ui/modules/Common/Form/ComboBox.qml b/ui/modules/Common/Form/ComboBox.qml
+index 9d6a93bd..2e25d01b 100644
+--- ui/modules/Common/Form/ComboBox.qml
++++ ui/modules/Common/Form/ComboBox.qml
+@@ -1,5 +1,5 @@
+ import QtQuick 2.7
+-import QtQuick.Controls 2.1
++import QtQuick.Controls 2.1 as Controls
+ import QtQuick.Layouts 1.3
+ 
+ import Common 1.0
+@@ -10,7 +10,7 @@ import 'ComboBox.js' as Logic
+ 
+ // =============================================================================
+ 
+-ComboBox {
++Controls.ComboBox {
+   id: comboBox
+ 
+   // ---------------------------------------------------------------------------
+@@ -82,7 +82,7 @@ ComboBox {
+ 
+   // ---------------------------------------------------------------------------
+ 
+-  delegate: ItemDelegate {
++  delegate: Controls.ItemDelegate {
+     id: item
+ 
+     readonly property var flattenedModel: comboBox.textRole.length &&

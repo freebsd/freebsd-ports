@@ -1,0 +1,74 @@
+From 5dd0161a68db97dd1bb1c367630821e61eae3584 Mon Sep 17 00:00:00 2001
+From: Ronan Abhamon <ronan.abhamon@belledonne-communications.com>
+Date: Mon, 22 Jan 2018 11:04:26 +0100
+Subject: [PATCH] feat(app): try to support menu bar between qt 5.9 and qt 5.10
+
+---
+ resources.qrc                                |  2 +
+ src/app/App.cpp                              | 12 ++-
+ ui/views/App/Main/+5.9/MainWindowMenuBar.qml | 79 ++++++++++++++++++++
+ ui/views/App/Main/+mac/MainWindowMenuBar.qml | 79 ++++++++++++++++++++
+ ui/views/App/Main/MainWindowMenuBar.qml      | 37 ++++-----
+ 5 files changed, 184 insertions(+), 25 deletions(-)
+ create mode 100644 ui/views/App/Main/+5.9/MainWindowMenuBar.qml
+ create mode 100644 ui/views/App/Main/+mac/MainWindowMenuBar.qml
+
+diff --git a/ui/views/App/Main/MainWindowMenuBar.qml b/ui/views/App/Main/MainWindowMenuBar.qml
+index 48a0dde3..e32b8fe3 100644
+--- ui/views/App/Main/MainWindowMenuBar.qml
++++ ui/views/App/Main/MainWindowMenuBar.qml
+@@ -1,7 +1,5 @@
+ import QtQuick 2.7
+-
+-// Experimental.
+-import Qt.labs.platform 1.0
++import QtQuick.Controls 2.3
+ 
+ import Linphone 1.0
+ 
+@@ -48,32 +46,25 @@ Item {
+   // Menu.
+   // ---------------------------------------------------------------------------
+ 
+-  MenuBar {
+-    Menu {
+-      id: menu
++  Menu {
++    id: menu
+ 
+-      MenuItem {
+-        role: MenuItem.PreferencesRole
+-        shortcut: settingsShortcut.sequence
+-        text: qsTr('settings')
++    MenuItem {
++      text: qsTr('settings')
+ 
+-        onTriggered: settingsShortcut.onActivated()
+-      }
++      onTriggered: settingsShortcut.onActivated()
++    }
+ 
+-      MenuItem {
+-        role: MenuItem.AboutRole
+-        text: qsTr('about')
++    MenuItem {
++      text: qsTr('about')
+ 
+-        onTriggered: aboutShortcut.onActivated()
+-      }
++      onTriggered: aboutShortcut.onActivated()
++    }
+ 
+-      MenuItem {
+-        role: MenuItem.QuitRole
+-        shortcut: quitShortcut.sequence
+-        text: qsTr('quit')
++    MenuItem {
++      text: qsTr('quit')
+ 
+-        onTriggered: quitShortcut.onActivated()
+-      }
++      onTriggered: quitShortcut.onActivated()
+     }
+   }
+ }

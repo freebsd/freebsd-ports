@@ -1,13 +1,11 @@
-# Created by: Maxim Sobolev <sobomax@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	bctoolbox
-PORTVERSION=	0.2.0
-PORTREVISION=	6
+PORTVERSION=	0.6.0
 CATEGORIES=	net
-MASTER_SITES=	SAVANNAH/linphone/bctoolbox
+MASTER_SITES=	https://www.linphone.org/releases/sources/bctoolbox/
 
-MAINTAINER=	tijl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Belledonne Communications utility library
 
 LICENSE=	GPLv2+
@@ -16,14 +14,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	mbedtls>=2.3.0_2:security/mbedtls
 LIB_DEPENDS=	libmbedtls.so:security/mbedtls
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-strict
-CPPFLAGS+=	-DHAVE_ARC4RANDOM -DHAVE_DTLS_SRTP
-INSTALL_TARGET=	install-strip
-USES=		libtool pathfix pkgconfig
+USES=		cmake:outsource
 USE_LDCONFIG=	yes
 
-post-install:
-	${RM} ${STAGEDIR}${PREFIX}/libdata/pkgconfig/bctoolbox-tester.pc
+CFLAGS+=	-DHAVE_ARC4RANDOM
+CMAKE_ARGS=	-DENABLE_STATIC=NO -DENABLE_STRICT=NO \
+		-DENABLE_TESTS_COMPONENT=NO
+
+post-patch:
+	@${REINPLACE_CMD} '/clock_gettime/d' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

@@ -12,7 +12,11 @@ include/ortp/rtpsignaltable.h
 include/ortp/sessionset.h
 include/ortp/str_utils.h
 include/ortp/telephonyevents.h
+include/ortp/utils.h
 lib/libortp.so
-lib/libortp.so.11
-lib/libortp.so.11.0.0
+lib/libortp.so.13
 libdata/pkgconfig/ortp.pc
+share/oRTP/cmake/ORTPConfig.cmake
+share/oRTP/cmake/ORTPConfigVersion.cmake
+share/oRTP/cmake/ORTPTargets-%%CMAKE_BUILD_TYPE%%.cmake
+share/oRTP/cmake/ORTPTargets.cmake

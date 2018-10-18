@@ -1,0 +1,139 @@
+diff --git a/cmake/FindSRTP.cmake b/cmake/FindSRTP.cmake
+index 988b846a..f720ce7e 100644
+--- cmake/FindSRTP.cmake
++++ cmake/FindSRTP.cmake
+@@ -31,20 +31,36 @@ set(_SRTP_ROOT_PATHS
+ )
+ 
+ find_path(SRTP_INCLUDE_DIRS
+-	NAMES srtp/srtp.h
++	NAMES srtp2/srtp.h
+ 	HINTS _SRTP_ROOT_PATHS
+ 	PATH_SUFFIXES include
+ )
+ 
+ if(SRTP_INCLUDE_DIRS)
+ 	set(HAVE_SRTP_SRTP_H 1)
+-endif()
+-
+-find_library(SRTP_LIBRARIES
++	set(SRTP_VERSION 2)
++	find_library(SRTP_LIBRARIES
++		NAMES srtp2
++		HINTS ${_SRTP_ROOT_PATHS}
++		PATH_SUFFIXES bin lib
++	)
++else()
++	find_path(SRTP_INCLUDE_DIRS
++		NAMES srtp/srtp.h
++		HINTS _SRTP_ROOT_PATHS
++		PATH_SUFFIXES include
++	)
++	if(SRTP_INCLUDE_DIRS)
++		set(HAVE_SRTP_SRTP_H 1)
++		set(SRTP_VERSION 1)
++	endif()
++	find_library(SRTP_LIBRARIES
+ 	NAMES srtp
+ 	HINTS ${_SRTP_ROOT_PATHS}
+ 	PATH_SUFFIXES bin lib
+ )
++endif()
++
+ 
+ include(FindPackageHandleStandardArgs)
+ find_package_handle_standard_args(SRTP
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index da429764..c46faa62 100644
+--- src/CMakeLists.txt
++++ src/CMakeLists.txt
+@@ -183,6 +183,7 @@ set(VOIP_SOURCE_FILES_C
+ 	utils/pcap_sender.c
+ 	utils/pcap_sender.h
+ 	utils/stream_regulator.c
++	utils/srtp_prefix.h
+ 	voip/audioconference.c
+ 	voip/audiostream.c
+ 	voip/bandwidthcontroller.c
+diff --git a/src/crypto/ms_srtp.c b/src/crypto/ms_srtp.c
+index 5a510c99..67810316 100644
+--- src/crypto/ms_srtp.c
++++ src/crypto/ms_srtp.c
+@@ -25,6 +25,7 @@
+ #include "mediastreamer2/ms_srtp.h"
+ #include "mediastreamer2/mediastream.h"
+ 
++
+ #ifdef HAVE_SRTP
+ 
+ /*srtp defines all this stuff*/
+@@ -34,13 +35,7 @@
+ #undef PACKAGE_TARNAME
+ #undef PACKAGE_VERSION
+ 
+-#if defined(MS2_WINDOWS_PHONE)
+-// Windows phone doesn't use make install
+-#include <srtp.h>
+-#else
+-#include <srtp/srtp.h>
+-#endif
+-
++#include "srtp_prefix.h"
+ 
+ #include "ortp/b64.h"
+ 
+@@ -352,7 +347,6 @@ int ms_srtp_init(void)
+ 			srtp_init_done++;
+ 		}else{
+ 			ms_fatal("Couldn't initialize SRTP library: %d.", st);
+-			err_reporting_init("mediastreamer2");
+ 		}
+ 	}else srtp_init_done++;
+ 	return (int)st;
+diff --git a/src/utils/srtp_prefix.h b/src/utils/srtp_prefix.h
+new file mode 100644
+index 00000000..68bde496
+--- /dev/null
++++ src/utils/srtp_prefix.h
+@@ -0,0 +1,41 @@
++/*
++  mediastreamer2 library - modular sound and video processing and streaming
++  Copyright (C) 2006-2014 Belledonne Communications, Grenoble
++
++  This library is free software; you can redistribute it and/or
++  modify it under the terms of the GNU Lesser General Public
++  License as published by the Free Software Foundation; either
++  version 2.1 of the License, or (at your option) any later version.
++
++  This library is distributed in the hope that it will be useful,
++  but WITHOUT ANY WARRANTY; without even the implied warranty of
++  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++  Lesser General Public License for more details.
++
++  You should have received a copy of the GNU Lesser General Public
++  License along with this library; if not, write to the Free Software
++  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
++*/
++#ifndef __SRTP2_H__
++#define __SRTP2_H__
++
++#if defined(MS2_WINDOWS_PHONE)
++// Windows phone doesn't use make install
++#include <srtp.h>
++#elif SRTP_VERSION==1
++#include <srtp/srtp.h>
++#else
++#include <srtp2/srtp.h>
++#define err_status_t srtp_err_status_t
++#define err_status_ok srtp_err_status_ok
++#define crypto_policy_t srtp_crypto_policy_t
++#define crypto_policy_set_aes_cm_256_hmac_sha1_80 srtp_crypto_policy_set_aes_cm_256_hmac_sha1_80
++#define crypto_policy_set_aes_cm_128_hmac_sha1_32 srtp_crypto_policy_set_aes_cm_128_hmac_sha1_32
++#define crypto_policy_set_aes_cm_128_null_auth srtp_crypto_policy_set_aes_cm_128_null_auth
++#define crypto_policy_set_null_cipher_hmac_sha1_80 srtp_crypto_policy_set_null_cipher_hmac_sha1_80
++#define crypto_policy_set_aes_cm_128_hmac_sha1_80 srtp_crypto_policy_set_aes_cm_128_hmac_sha1_80
++#define crypto_policy_set_aes_cm_256_hmac_sha1_32 srtp_crypto_policy_set_aes_cm_256_hmac_sha1_32
++#define ssrc_t srtp_ssrc_t
++#endif
++
++#endif

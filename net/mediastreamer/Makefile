@@ -2,104 +2,92 @@
 # $FreeBSD$
 
 PORTNAME=	mediastreamer
-PORTVERSION=	2.14.0
-PORTREVISION=	10
+PORTVERSION=	2.16.1
 CATEGORIES=	net
-MASTER_SITES=	SAVANNAH/linphone/mediastreamer
+MASTER_SITES=	https://www.linphone.org/releases/sources/mediastreamer/
 
-MAINTAINER=	tijl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time audio and video streaming and processing
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox \
 		libortp.so:net/ortp \
-		libsrtp.so:net/libsrtp \
+		libspeexdsp.so:audio/speexdsp \
+		libsrtp2.so:net/libsrtp2 \
 		libbzrtp.so:security/bzrtp
 
-CONFLICTS_INSTALL=	linphone-base-[0-9]*
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-alsa --disable-documentation --disable-matroska \
-		--disable-pulseaudio --disable-strict \
-		--with-gsm=${LOCALBASE} --with-srtp=${LOCALBASE} \
-		xxd_found=yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
-INSTALL_TARGET=	install-strip
-USES=		gettext-tools gmake libtool pathfix pkgconfig
-USE_GNOME=	intlhack
+USES=		cmake:outsource python:build
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=		NLS UPNP VIDEO
+CMAKE_ARGS=	-DENABLE_ALSA=NO -DENABLE_BV16=NO -DENABLE_DOC=NO \
+		-DENABLE_JPEG=NO -DENABLE_OSS=YES -DENABLE_PULSEAUDIO=NO \
+		-DENABLE_STATIC=NO -DENABLE_STRICT=NO -DENABLE_TOOLS=NO \
+		-DENABLE_UNIT_TESTS=NO
+
+OPTIONS_DEFINE=		MATROSKA VIDEO
 OPTIONS_GROUP=		AUDIOOPT VIDEOOPT
-OPTIONS_GROUP_AUDIOOPT=	GSM OPUS SPANDSP SPEEX
+OPTIONS_GROUP_AUDIOOPT=	G726 G729 GSM OPUS SPEEX
 OPTIONS_GROUP_VIDEOOPT=	FFMPEG GLX THEORA V4L VPX XVIDEO
-OPTIONS_DEFAULT=	UPNP VIDEO \
-			GSM OPUS SPANDSP SPEEX \
+OPTIONS_DEFAULT=	MATROSKA VIDEO \
+			G729 GSM OPUS SPEEX \
 			FFMPEG GLX THEORA V4L VPX XVIDEO
 OPTIONS_SUB=		yes
 
 AUDIOOPT_DESC=		Audio options
 
-FFMPEG_CONFIGURE_ENABLE=ffmpeg
+FFMPEG_IMPLIES=		VIDEO
+FFMPEG_CMAKE_BOOL=	ENABLE_FFMPEG
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
-GLX_CONFIGURE_ENABLE=	glx
+G726_CMAKE_BOOL=	ENABLE_G726
+G726_DESC=		G.726 codec support
+G726_LIB_DEPENDS=	libspandsp.so:comms/spandsp
+
+G729_CMAKE_BOOL=	ENABLE_G729
+G729_DESC=		G.729 codec support
+G729_LIB_DEPENDS=	libbcg729.so:audio/bcg729
+
+GLX_IMPLIES=		VIDEO
+GLX_CMAKE_BOOL=		ENABLE_GL ENABLE_GLX
 GLX_USE=		GL=glew
 
-GSM_CONFIGURE_ENABLE=	gsm
+GSM_CMAKE_BOOL=		ENABLE_GSM
 GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
 
-NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=		gettext-runtime
+MATROSKA_CMAKE_BOOL=	ENABLE_MKV
+MATROSKA_LIB_DEPENDS=	libbcmatroska2.so:multimedia/bcmatroska2
 
-OPUS_CONFIGURE_ENABLE=	opus
+OPUS_CMAKE_BOOL=	ENABLE_OPUS
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
 
-SPANDSP_CONFIGURE_ENABLE=	spandsp
-SPANDSP_LIB_DEPENDS=	libspandsp.so:comms/spandsp
-
-SPEEX_CONFIGURE_ENABLE=	speex
+SPEEX_CMAKE_BOOL=	ENABLE_SPEEX_CODEC
 SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
 
-THEORA_CONFIGURE_ENABLE=theora
+THEORA_IMPLIES=		VIDEO
+THEORA_CMAKE_BOOL=	ENABLE_THEORA
 THEORA_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
 
-UPNP_CONFIGURE_ENABLE=	upnp
-UPNP_LIB_DEPENDS=	libupnp.so:devel/upnp
-
-V4L_CONFIGURE_ENABLE=	v4l
+V4L_IMPLIES=		VIDEO
+V4L_CMAKE_BOOL=		ENABLE_V4L
 V4L_BUILD_DEPENDS=	v4l_compat>=1.0.20120501:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
 VIDEOOPT_DESC=		Video options
 
-VIDEO_CONFIGURE_ENABLE=	video
+VIDEO_CMAKE_BOOL=	ENABLE_VIDEO
 
-VPX_CONFIGURE_ENABLE=	vp8
+VPX_IMPLIES=		VIDEO
+VPX_CMAKE_BOOL=		ENABLE_VPX
 VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 
-XVIDEO_CONFIGURE_ENABLE=x11 xv
+XVIDEO_IMPLIES=		VIDEO
+XVIDEO_CMAKE_BOOL=	ENABLE_X11 ENABLE_XV
 XVIDEO_USE=		XORG=xorgproto,x11,xv
-
-.if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=--enable-debug
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's,gsm/gsm\.h,gsm.h,' \
-		${WRKSRC}/configure ${WRKSRC}/src/audiofilters/gsm.c
-
-pre-build:
-# Transform file to C array (similar to xxd -i from editors/vim)
-.for i in yuv2rgb.fs yuv2rgb.vs
-	(cd ${WRKSRC}/src && { \
-		${ECHO_CMD} 'unsigned char ${i:S/./_/}[] = {' && \
-		/usr/bin/hexdump -v -e '" " 12/1 " 0x%02x," "\n" \
-		"  0x00 };\nunsigned int ${i:S/./_/}_len = %_Ad;"' ${i} | \
-		${SED} 's/ 0x  ,//g' ; } > ${i}.h)
-.endfor
+		${WRKSRC}/cmake/FindGSM.cmake ${WRKSRC}/src/audiofilters/gsm.c
 
 .include <bsd.port.mk>
