@@ -30,8 +30,8 @@ load_rc_config $name
 
 : ${hitch_enable="NO"}
 : ${hitch_config="%%PREFIX%%/etc/hitch.conf"}
-: ${hitch_huser:=nobody}
-: ${hitch_hgroup:=nobody}
+: ${hitch_huser:=hitch}
+: ${hitch_hgroup:=hitch}
 
 command="%%PREFIX%%/sbin/hitch"
 command_args="--daemon -u ${hitch_huser} -g ${hitch_hgroup} -s --config=${hitch_config}"

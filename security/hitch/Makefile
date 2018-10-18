@@ -3,7 +3,7 @@
 
 PORTNAME=		hitch
 PORTVERSION=		1.4.8
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		security
 MASTER_SITES=		http://hitch-tls.org/source/ \
 			ZI
@@ -16,8 +16,8 @@ LICENSE=		BSD2CLAUSE
 BUILD_DEPENDS=		rst2man:textproc/py-docutils
 LIB_DEPENDS=		libev.so:devel/libev
 
-USERS=			nobody
-GROUPS=			nobody
+USERS=			hitch
+GROUPS=			hitch
 
 USES=			pkgconfig ssl
 GNU_CONFIGURE=		yes
