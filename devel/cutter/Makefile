@@ -3,7 +3,7 @@
 
 PORTNAME=	cutter
 PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -15,14 +15,14 @@ LICENSE_FILE=	${WRKSRC}/license/lgpl-3.txt
 
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libpangocairo-1.0.so:x11-toolkits/pango \
-		libgstbase-1.0.so:multimedia/gstreamer1 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 CPPFLAGS+=	"-I${LOCALBASE}/include"
-CONFIGURE_ARGS=	--disable-gtk-doc-html --with-html-dir=${PREFIX}/share/doc
+CONFIGURE_ARGS=	--disable-gtk-doc-html --with-html-dir=${PREFIX}/share/doc \
+		--disable-gstreamer
 GNU_CONFIGURE=	yes
-USES=		gettext gmake libtool pathfix pkgconfig
+USES=		gettext gnome gmake libtool pathfix pkgconfig
 USE_GNOME=	intlhack gdkpixbuf2 glib20 gtk20
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
