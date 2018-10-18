@@ -35,7 +35,6 @@
     SUBDIR += gerbv
     SUBDIR += ghdl
     SUBDIR += gmsh
-    SUBDIR += gmsh-occ
     SUBDIR += gnucap
     SUBDIR += gplcver
     SUBDIR += gspiceui
