@@ -1,0 +1,15 @@
+A Mail::Message object is a container for MIME-encoded message information, as
+defined by RFC2822. Everything what is not specificaly related to storing the
+messages in mailboxes (folders) is implemented in this class. Methods which are
+related to folders is implemented in the Mail::Box::Message extension.
+
+The main methods are get(), to get information from a message header field, and
+decoded() to get the intended content of a message. But there are many more
+which can assist your program.
+
+Complex message handling, like construction of replies and forwards, are
+implemented in separate packages which are autoloaded into this class. This
+means you can simply use these methods as if they are part of this class. Those
+package add functionality to all kinds of message objects.
+
+WWW: https://metacpan.org/release/Mail-Message
