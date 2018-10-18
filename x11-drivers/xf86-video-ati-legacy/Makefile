@@ -18,6 +18,8 @@ LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess \
 
 CONFLICTS_INSTALL=	xf86-video-ati
 
+PORTSCOUT=	limit:^7\.9\.0
+
 USE_GL=		gl
 XORG_CAT=	driver
 USE_XORG=	pciaccess
