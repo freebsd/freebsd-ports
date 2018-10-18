@@ -1,0 +1,93 @@
+From ecaab0f73d0b74bbfbf150286305fa6e12970037 Mon Sep 17 00:00:00 2001
+From: Ronan Abhamon <ronan.abhamon@belledonne-communications.com>
+Date: Fri, 19 Jan 2018 14:42:01 +0100
+Subject: [PATCH] fix(SettingsWindow): rename icon property of TabButton to
+ iconName (issue with Qt 5.10 and new icon property)
+
+---
+ ui/modules/Common/Form/Tab/TabButton.qml |  8 ++++----
+ ui/views/App/Settings/SettingsWindow.qml | 14 +++++++-------
+ 2 files changed, 11 insertions(+), 11 deletions(-)
+
+diff --git a/ui/modules/Common/Form/Tab/TabButton.qml b/ui/modules/Common/Form/Tab/TabButton.qml
+index ad220ab2..a47bb20b 100644
+--- ui/modules/Common/Form/Tab/TabButton.qml
++++ ui/modules/Common/Form/Tab/TabButton.qml
+@@ -12,8 +12,8 @@ Controls.TabButton {
+ 
+   // ---------------------------------------------------------------------------
+ 
+-  property string icon
+   property int iconSize: TabButtonStyle.icon.size
++  property string iconName
+ 
+   readonly property bool _isSelected: parent.parent.currentItem === button
+ 
+@@ -66,9 +66,9 @@ Controls.TabButton {
+       Layout.leftMargin: TabButtonStyle.text.leftPadding
+ 
+       icon: {
+-        var icon = button.icon
+-        return icon.length
+-          ? (icon + '_' + (button._isSelected ? 'selected' : 'normal'))
++        var iconName = button.iconName
++        return iconName.length
++          ? (iconName + '_' + (button._isSelected ? 'selected' : 'normal'))
+           : ''
+       }
+       iconSize: button.iconSize
+diff --git a/ui/views/App/Settings/SettingsWindow.qml b/ui/views/App/Settings/SettingsWindow.qml
+index b8f5a80f..58909544 100644
+--- ui/views/App/Settings/SettingsWindow.qml
++++ ui/views/App/Settings/SettingsWindow.qml
+@@ -48,43 +48,43 @@ ApplicationWindow {
+         id: tabBar
+ 
+         TabButton {
+-          icon: 'settings_sip_accounts'
++          iconName: 'settings_sip_accounts'
+           text: qsTr('sipAccountsTab')
+           width: implicitWidth
+         }
+ 
+         TabButton {
+-          icon: 'settings_audio'
++          iconName: 'settings_audio'
+           text: qsTr('audioTab')
+           width: implicitWidth
+         }
+ 
+         TabButton {
+-          icon: 'settings_video'
++          iconName: 'settings_video'
+           text: qsTr('videoTab')
+           width: implicitWidth
+         }
+ 
+         TabButton {
+-          icon: 'settings_call'
++          iconName: 'settings_call'
+           text: qsTr('callsAndChatTab')
+           width: implicitWidth
+         }
+ 
+         TabButton {
+-          icon: 'settings_network'
++          iconName: 'settings_network'
+           text: qsTr('networkTab')
+           width: implicitWidth
+         }
+ 
+         TabButton {
+-          icon: 'settings_advanced'
++          iconName: 'settings_advanced'
+           text: qsTr('uiTab')
+           width: implicitWidth
+         }
+ 
+         TabButton {
+-          icon: 'settings_advanced'
++          iconName: 'settings_advanced'
+           text: qsTr('uiAdvanced')
+           width: implicitWidth
+         }

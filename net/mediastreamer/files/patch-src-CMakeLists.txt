@@ -1,0 +1,22 @@
+--- src/CMakeLists.txt.orig	2017-07-21 12:59:53 UTC
++++ src/CMakeLists.txt
+@@ -79,9 +79,6 @@ set(BASE_LIBS
+ if(WIN32 AND NOT CMAKE_SYSTEM_NAME STREQUAL "WindowsPhone" AND NOT CMAKE_SYSTEM_NAME STREQUAL "WindowsStore")
+ 	list(APPEND BASE_LIBS ${LIBGCC} ${LIBMINGWEX} ole32 oleaut32 uuid Winmm Ws2_32)
+ endif()
+-if(HAVE_DLOPEN)
+-	list(APPEND BASE_LIBS dl)
+-endif()
+ 
+ bc_apply_compile_flags(BASE_SOURCE_FILES_C STRICT_OPTIONS_CPP STRICT_OPTIONS_C)
+ 
+@@ -550,9 +547,6 @@ if(ANDROID_SUPPORT_LIBRARY)
+ endif()
+ if(ANDROID AND ENABLE_VIDEO)
+ 	list(APPEND VOIP_LIBS GLESv2)
+-endif()
+-if(HAVE_DLOPEN)
+-	list(APPEND VOIP_LIBS dl)
+ endif()
+ if(PCAP_FOUND)
+ 	list(APPEND VOIP_LIBS ${PCAP_LIBRARIES})

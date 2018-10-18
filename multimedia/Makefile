@@ -26,6 +26,7 @@
     SUBDIR += avidemux-qt4
     SUBDIR += avinfo
     SUBDIR += baka-mplayer
+    SUBDIR += bcmatroska2
     SUBDIR += bino
     SUBDIR += bitstream
     SUBDIR += blind
@@ -283,7 +284,7 @@
     SUBDIR += mpv
     SUBDIR += msdl
     SUBDIR += msopenh264
-    SUBDIR += msx264
+    SUBDIR += mswebrtc
     SUBDIR += mxflib
     SUBDIR += mythtv
     SUBDIR += mythtv-frontend

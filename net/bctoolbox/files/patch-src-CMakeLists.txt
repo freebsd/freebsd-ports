@@ -1,0 +1,10 @@
+--- src/CMakeLists.txt.orig	2017-07-17 12:16:03 UTC
++++ src/CMakeLists.txt
+@@ -119,6 +119,7 @@ if(ENABLE_SHARED)
+ 			)
+ 		endif()
+ 	endif()
++	target_link_libraries(bctoolbox PRIVATE execinfo)
+ 	if(HAVE_LIBRT)
+ 		target_link_libraries(bctoolbox PRIVATE rt)
+ 	endif()

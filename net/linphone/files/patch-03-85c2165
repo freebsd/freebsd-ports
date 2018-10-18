@@ -1,0 +1,23 @@
+From 85c2165dd2cfaa051f2b5079406cccf363cdc0c8 Mon Sep 17 00:00:00 2001
+From: Ronan Abhamon <ronan.abhamon@belledonne-communications.com>
+Date: Fri, 15 Jun 2018 14:26:54 +0200
+Subject: [PATCH] fix(TabContainer.qml): do not anchors rectangle in
+ StackLayout (Qt5.11)
+
+---
+ ui/modules/Common/Form/Tab/TabContainer.qml               | 1 -
+ ui/views/App/Settings/Dialogs/SettingsSipAccountsEdit.qml | 2 ++
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/ui/modules/Common/Form/Tab/TabContainer.qml b/ui/modules/Common/Form/Tab/TabContainer.qml
+index 1ddbcc18..1706849a 100644
+--- ui/modules/Common/Form/Tab/TabContainer.qml
++++ ui/modules/Common/Form/Tab/TabContainer.qml
+@@ -11,7 +11,6 @@ import Utils 1.0
+ Rectangle {
+   default property alias _content: content.data
+ 
+-  anchors.fill: parent
+   color: TabContainerStyle.color
+ 
+   ColumnLayout {

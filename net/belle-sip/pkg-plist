@@ -25,8 +25,11 @@ include/belle-sip/sipstack.h
 include/belle-sip/transaction.h
 include/belle-sip/types.h
 include/belle-sip/utils.h
-lib/libbellesip.a
+include/belle-sip/wakelock.h
 lib/libbellesip.so
 lib/libbellesip.so.0
-lib/libbellesip.so.0.0.0
 libdata/pkgconfig/belle-sip.pc
+share/BelleSIP/cmake/BelleSIPConfig.cmake
+share/BelleSIP/cmake/BelleSIPConfigVersion.cmake
+share/BelleSIP/cmake/BelleSIPTargets-%%CMAKE_BUILD_TYPE%%.cmake
+share/BelleSIP/cmake/BelleSIPTargets.cmake

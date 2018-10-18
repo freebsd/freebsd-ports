@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	belle-sip
-PORTVERSION=	1.5.0
-PORTREVISION=	4
+PORTVERSION=	1.6.3
 CATEGORIES=	net java
-MASTER_SITES=	SAVANNAH/linphone/${PORTNAME}/ \
+MASTER_SITES=	https://www.linphone.org/releases/sources/belle-sip/ \
 		http://www.antlr3.org/download/:source2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		antlr-3.4-complete.jar:source2
@@ -13,7 +12,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Belle-sip is a SIP (RFC3261) implementation written in C
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=		fails to build: Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
@@ -21,23 +20,20 @@ BROKEN_aarch64=		fails to build: Exception in thread "main" java.lang.OutOfMemor
 LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
 		libbctoolbox.so:net/bctoolbox
 
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--disable-strict --disable-tests \
-		--with-antlr=${LOCALBASE}
-INSTALL_TARGET=	install-strip
-USES=		compiler:c11 gmake libtool pathfix pkgconfig
+USES=		cmake
 USE_JAVA=	yes
-JAVA_BUILD=	jre
-JAVA_VERSION=	1.6+
 USE_LDCONFIG=	yes
 
+CMAKE_ARGS=	-DENABLE_STATIC=NO -DENABLE_STRICT=NO -DENABLE_TESTS=NO \
+		-DANTLR3_JAR_PATH:FILEPATH=${WRKDIR}/antlr3.jar
+JAVA_BUILD=	jre
+JAVA_VERSION=	1.6+
+WRKSRC=		${WRKDIR}/${DISTNAME}-0
+
 post-extract:
-	@${CP} ${DISTDIR}/antlr-3.4-complete.jar ${WRKDIR}/antlr-complete.jar
+	@${CP} ${DISTDIR}/antlr-3.4-complete.jar ${WRKDIR}/antlr3.jar
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%WRKDIR%%|${WRKDIR}|' -e 's|-lrt||' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} '/clock_gettime/d' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

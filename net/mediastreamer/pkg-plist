@@ -1,5 +1,3 @@
-bin/mediastream
-bin/msaudiocmp
 include/mediastreamer2/allfilters.h
 include/mediastreamer2/bitratecontrol.h
 include/mediastreamer2/bits_rw.h
@@ -12,6 +10,7 @@ include/mediastreamer2/formats.h
 include/mediastreamer2/ice.h
 include/mediastreamer2/mediastream.h
 include/mediastreamer2/ms_srtp.h
+include/mediastreamer2/msasync.h
 include/mediastreamer2/msaudiomixer.h
 include/mediastreamer2/mschanadapter.h
 include/mediastreamer2/mscodecutils.h
@@ -30,6 +29,9 @@ include/mediastreamer2/msitc.h
 include/mediastreamer2/msjava.h
 include/mediastreamer2/msjpegwriter.h
 include/mediastreamer2/msmediaplayer.h
+include/mediastreamer2/msogl.h
+include/mediastreamer2/msogl_functions.h
+include/mediastreamer2/mspcapfileplayer.h
 include/mediastreamer2/msqueue.h
 include/mediastreamer2/msrtp.h
 include/mediastreamer2/msrtt4103.h
@@ -37,6 +39,7 @@ include/mediastreamer2/mssndcard.h
 include/mediastreamer2/mstee.h
 include/mediastreamer2/msticker.h
 include/mediastreamer2/mstonedetector.h
+include/mediastreamer2/msudp.h
 include/mediastreamer2/msutils.h
 include/mediastreamer2/msv4l.h
 include/mediastreamer2/msvaddtx.h
@@ -52,24 +55,11 @@ include/mediastreamer2/upnp_igd.h
 include/mediastreamer2/x11_helper.h
 include/mediastreamer2/zrtp.h
 lib/libmediastreamer_base.so
-lib/libmediastreamer_base.so.7
-lib/libmediastreamer_base.so.7.0.0
+lib/libmediastreamer_base.so.10
 lib/libmediastreamer_voip.so
-lib/libmediastreamer_voip.so.7
-lib/libmediastreamer_voip.so.7.0.0
-libdata/pkgconfig/mediastreamer.pc
-share/images/nowebcamCIF.jpg
-%%NLS%%share/locale/cs/LC_MESSAGES/mediastreamer.mo
-%%NLS%%share/locale/de/LC_MESSAGES/mediastreamer.mo
-%%NLS%%share/locale/es/LC_MESSAGES/mediastreamer.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/mediastreamer.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/mediastreamer.mo
-%%NLS%%share/locale/it/LC_MESSAGES/mediastreamer.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/mediastreamer.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/mediastreamer.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/mediastreamer.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/mediastreamer.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/mediastreamer.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/mediastreamer.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/mediastreamer.mo
-@dir lib/mediastreamer/plugins
+lib/libmediastreamer_voip.so.10
+share/Mediastreamer2/cmake/Mediastreamer2Config.cmake
+share/Mediastreamer2/cmake/Mediastreamer2ConfigVersion.cmake
+share/Mediastreamer2/cmake/Mediastreamer2Targets-%%CMAKE_BUILD_TYPE%%.cmake
+share/Mediastreamer2/cmake/Mediastreamer2Targets.cmake
+%%VIDEO%%share/images/nowebcamCIF.jpg

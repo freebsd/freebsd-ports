@@ -1,5 +1,5 @@
-TIMESTAMP = 1476371157
-SHA256 (belle-sip-1.5.0.tar.gz) = 4bc44ee83f8455fb6248d3b3045c38ab6e71e6699cde3f0cc5d67493bb38a43a
-SIZE (belle-sip-1.5.0.tar.gz) = 756785
+TIMESTAMP = 1506002640
+SHA256 (belle-sip-1.6.3.tar.gz) = 3f3807078b177e50a5ed97aaf8d7f6e77532df3205153e1b2957f557df9ba568
+SIZE (belle-sip-1.6.3.tar.gz) = 610200
 SHA256 (antlr-3.4-complete.jar) = 9d3e866b610460664522520f73b81777b5626fb0a282a5952b9800b751550bf7
 SIZE (antlr-3.4-complete.jar) = 2388361

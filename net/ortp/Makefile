@@ -2,24 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	ortp
-PORTVERSION=	0.27.0
+PORTVERSION=	1.0.2
 CATEGORIES=	net
-MASTER_SITES=	SAVANNAH/linphone/ortp/sources
+MASTER_SITES=	https://www.linphone.org/releases/sources/ortp/
 
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	Real-time Transport Protocol (RTP) library
 
-LICENSE=	LGPL21
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox
 
-CONFLICTS_INSTALL=	linphone-base-[0-9]*
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-strict
-INSTALL_TARGET=	install-strip
-USES=		libtool pathfix pkgconfig
+USES=		cmake:outsource
 USE_LDCONFIG=	yes
+
+CMAKE_ARGS=	-DENABLE_DOC=NO -DENABLE_STATIC=NO -DENABLE_STRICT=NO
+WRKSRC= 	${WRKDIR}/${DISTNAME}-0
+
+post-install:
+	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/${DISTNAME}
 
 .include <bsd.port.mk>

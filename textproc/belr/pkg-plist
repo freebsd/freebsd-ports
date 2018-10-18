@@ -1,0 +1,11 @@
+bin/belr-parse
+include/belr/abnf.hh
+include/belr/belr.hh
+include/belr/grammarbuilder.hh
+include/belr/parser-impl.cc
+include/belr/parser.hh
+lib/libbelr.so
+lib/libbelr.so.1
+share/Belr/cmake/BelrConfig.cmake
+share/Belr/cmake/BelrTargets-%%CMAKE_BUILD_TYPE%%.cmake
+share/Belr/cmake/BelrTargets.cmake

@@ -1,0 +1,5 @@
+Belr is Belledonne Communications' language recognition library, written
+in C++11. It aims at parsing any input formatted according to a language
+defined by an ABNF grammar, such as the protocols standardized at IETF.
+
+WWW: https://www.linphone.org/

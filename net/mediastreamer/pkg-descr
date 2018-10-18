@@ -1,34 +1,4 @@
 Mediastreamer2 is a powerful and lightweight streaming engine specialized
 in voice/video telephony applications.
 
-It is the library that is responsible for all the receiving and sending of
-multimedia streams in linphone, including voice/video capture, encoding and
-decoding, and rendering.
-
-Features:
-
-* Capture and playback from various platform dependent sound architectures
-* Send and receive RTP streams
-* Encode and decode the following audio formats: OPUS, speex, G711, GSM, iLBC,
-  AMR, AMR-WB, G722, SILK, G729, and video formats H263, theora, MPEG4,
-  H264 and VP8
-* RTP/AVPF support: RTCP control messages for video error recovery: PLI, SLI,
-  RPSI, FIR
-* Audio conferencing
-* Supports SRTP and ZRTP (encryption of voice and video)
-* Supports any webcam, based on OS's camera API: quicktime, directshow,
-  video4linux, android.camera
-* Acoustic echo cancellation using the speex echo canceler or webrtc AECm
-* Read and write .wav files
-* Optimized rendering of YUV pictures, using OpenGL, DrawDib, X11/Xv
-* Dual tones generation
-* Custom tone detector
-* Audio parametric equalizer
-* Volume control, automatic gain control
-* ICE for optimized NAT traversal (RFC5246) to allow peer to peer audio and
-  video connections without media relay server
-* Adaptive bitrate control algorithm: for automatic adaption of encoder
-  bitrate based on received RTCP feedback
-* Can use plugins to add new codecs, new sound input/output backends,...
-
 WWW: https://www.linphone.org/technical-corner/mediastreamer2.html

@@ -10579,3 +10579,6 @@ deskutils/tagutils||2018-10-16|Has expired: Unmaintained upstream
 devel/libleaftag||2018-10-16|Has expired: Unmaintained upstream
 net-im/jabber||2018-10-16|Has expired: Unmaintained upstream
 cad/gmsh-occ||2018-10-17|To match upstream, cad/gmsh now builds with OCC
+audio/msbcg729||2018-10-18|Obsolete: net/mediastreamer has built-in G.729 codec
+audio/msilbc|multimedia/mswebrtc|2018-10-18|Deprecated upstream
+multimedia/msx264|multimedia/msopenh264|2018-10-18|Deprecated upstream

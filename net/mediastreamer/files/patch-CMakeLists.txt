@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2017-07-21 13:00:14 UTC
++++ CMakeLists.txt
+@@ -139,7 +139,7 @@ if(ENABLE_OSS)
+ 	endif()
+ endif()
+ 
+-check_library_exists("dl" "dlopen" "" HAVE_DLOPEN)
++set(HAVE_DLOPEN 1)
+ 
+ include(TestBigEndian)
+ test_big_endian(WORDS_BIGENDIAN)
