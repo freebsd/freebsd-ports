@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-DISTVERSION=	1.8.1
+DISTVERSION=	1.8.2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -21,8 +21,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	influxdata
 GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${GH_PROJECT_DEFAULT}
 GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go \
-		cloudfoundry:clock:02e53af3:clock/src/code.cloudfoundry.org/clock \
-		collectd:go-collectd:2ce1445:collectd_org/src/collectd.org \
+		cloudfoundry:clock:02e53af:clock/src/code.cloudfoundry.org/clock \
+		collectd:go-collectd:v0.3.0:collectd_org/src/collectd.org \
 		Azure:go-autorest:v10.12.0:go_autorest/src/github.com/Azure/go-autorest \
 		Microsoft:ApplicationInsights-Go:d2df5d4:application_insights/src/github.com/Microsoft/ApplicationInsights-Go \
 		Microsoft:go-winio:v0.4.9:go_winio/src/github.com/Microsoft/go-winio \
@@ -40,7 +40,7 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		couchbase:go-couchbase:16db1f1:go_couchbase/src/github.com/couchbase/go-couchbase \
 		couchbase:gomemcached:0da75df:gomemcached/src/github.com/couchbase/gomemcached \
 		couchbase:goutils:e865a14:goutils/src/github.com/couchbase/goutils \
-		davecgh:go-spew:346938d:go_spew/src/github.com/davecgh/go-spew \
+		davecgh:go-spew:v1.1.0:go_spew/src/github.com/davecgh/go-spew \
 		denisenkom:go-mssqldb:1eb28af:go_mssqldb/src/github.com/denisenkom/go-mssqldb \
 		dgrijalva:jwt-go:v3.2.0:jwt_go/src/github.com/dgrijalva/jwt-go \
 		dimchansky:utfbom:6c6132f:utfbom/src/github.com/dimchansky/utfbom \
@@ -50,10 +50,10 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		docker:go-units:v0.3.3:go_units/src/github.com/docker/go-units \
 		eapache:go-resiliency:v1.1.0:go_resiliency/src/github.com/eapache/go-resiliency \
 		eapache:go-xerial-snappy:040cc1a:go_xerial_snappy/src/github.com/eapache/go-xerial-snappy \
-		eapache:queue:44cc805:queue/src/github.com/eapache/queue \
+		eapache:queue:v1.1.0:queue/src/github.com/eapache/queue \
 		eclipse:paho.mqtt.golang:v1.1.1:paho_mqtt_golang/src/github.com/eclipse/paho.mqtt.golang \
 		go-ini:ini:v1.38.1:ini/src/github.com/go-ini/ini \
-		go-logfmt:logfmt:390ab79:go_logfmt/src/github.com/go-logfmt/logfmt \
+		go-logfmt:logfmt:v0.3.0:go_logfmt/src/github.com/go-logfmt/logfmt \
 		go-ole:go-ole:v1.2.1:go_ole/src/github.com/go-ole/go-ole \
 		go-redis:redis:v6.12.0:redis/src/github.com/go-redis/redis \
 		go-sql-driver:mysql:v1.4.0:mysql/src/github.com/go-sql-driver/mysql \
@@ -70,7 +70,7 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		hashicorp:go-cleanhttp:d5fe4b5:go_cleanhttp/src/github.com/hashicorp/go-cleanhttp \
 		hashicorp:go-rootcerts:6bb64b3:go_rootcerts/src/github.com/hashicorp/go-rootcerts \
 		hashicorp:serf:v0.8.1:serf/src/github.com/hashicorp/serf \
-		influxdata:go-syslog:eecd51d:syslog/src/github.com/influxdata/go-syslog \
+		influxdata:go-syslog:v1.0.1:go_syslog/src/github.com/influxdata/go-syslog \
 		influxdata:tail:c434825:tail/src/github.com/influxdata/tail \
 		influxdata:toml:2a2e301:toml/src/github.com/influxdata/toml \
 		influxdata:wlog:7c63b0a:wlog/src/github.com/influxdata/wlog \
@@ -81,24 +81,24 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		kballard:go-shellquote:95032a8:go_shellquote/src/github.com/kballard/go-shellquote \
 		kr:logfmt:b84e30a:logfmt/src/github.com/kr/logfmt \
 		mailru:easyjson:efc7eb8:easyjson/src/github.com/mailru/easyjson \
-		matttproud:golang_protobuf_extensions:c12348c:golang_protobuf_extensions/src/github.com/matttproud/golang_protobuf_extensions \
+		matttproud:golang_protobuf_extensions:v1.0.1:golang_protobuf_extensions/src/github.com/matttproud/golang_protobuf_extensions \
 		miekg:dns:v1.0.8:dns/src/github.com/miekg/dns \
 		mitchellh:go-homedir:3864e76:go_homedir/src/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:f15292f:mapstructure/src/github.com/mitchellh/mapstructure \
 		multiplay:go-ts3:v1.0.0:go_ts3/src/github.com/multiplay/go-ts3 \
-		naoina:go-stringutil:6b638e9:go_stringutil/src/github.com/naoina/go-stringutil \
+		naoina:go-stringutil:v0.1.0:go_stringutil/src/github.com/naoina/go-stringutil \
 		nats-io:gnatsd:v1.2.0:gnatsd/src/github.com/nats-io/gnatsd \
 		nats-io:go-nats:v1.5.0:nats/src/github.com/nats-io/go-nats \
-		nats-io:nuid:289cccf:nuid/src/github.com/nats-io/nuid \
-		nsqio:go-nsq:eee57a3:go_nsq/src/github.com/nsqio/go-nsq \
+		nats-io:nuid:v1.0.0:nuid/src/github.com/nats-io/nuid \
+		nsqio:go-nsq:v1.0.7:go_nsq/src/github.com/nsqio/go-nsq \
 		opencontainers:go-digest:v1.0.0-rc1:go_digest/src/github.com/opencontainers/go-digest \
 		opencontainers:image-spec:v1.0.1:image_spec/src/github.com/opencontainers/image-spec \
 		opentracing-contrib:go-observer:a52f234:go_observer/src/github.com/opentracing-contrib/go-observer \
 		opentracing:opentracing-go:v1.0.2:opentracing_go/src/github.com/opentracing/opentracing-go \
 		openzipkin:zipkin-go-opentracing:v0.3.4:zipkin_go_opentracing/src/github.com/openzipkin/zipkin-go-opentracing \
 		pierrec:lz4:v2.0.3:lz4/src/github.com/pierrec/lz4 \
-		pkg:errors:645ef00:errors/src/github.com/pkg/errors \
-		pmezard:go-difflib:792786c:go_difflib/src/github.com/pmezard/go-difflib \
+		pkg:errors:v0.8.0:errors/src/github.com/pkg/errors \
+		pmezard:go-difflib:v1.0.0:go_difflib/src/github.com/pmezard/go-difflib \
 		prometheus:client_golang:v0.8.0:client_golang/src/github.com/prometheus/client_golang \
 		prometheus:client_model:5c3871d:client_model/src/github.com/prometheus/client_model \
 		prometheus:common:7600349:common/src/github.com/prometheus/common \
@@ -133,11 +133,11 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		fatih:pool:v2.0.0:pool_v2/src/gopkg.in/fatih/pool.v2 \
 		fsnotify:fsnotify:v1.4.7:fsnotify_v1/src/gopkg.in/fsnotify.v1 \
 		rethinkdb:rethinkdb-go:v3.0.5:gorethink_v3/src/gopkg.in/gorethink/gorethink.v3 \
-		go-ldap:ldap:v2.5.1:ldap/src/gopkg.in/ldap.v2 \
-		go-mgo:mgo:9856a29:mgo/src/gopkg.in/mgo.v2 \
+		go-ldap:ldap:v2.5.1:ldap_v2/src/gopkg.in/ldap.v2 \
+		go-mgo:mgo:9856a29:mgo_v2/src/gopkg.in/mgo.v2 \
 		olivere:elastic:v5.0.70:elastic_v5/src/gopkg.in/olivere/elastic.v5 \
-		go-tomb:tomb:dd63297:tomb/src/gopkg.in/tomb.v1 \
-		go-yaml:yaml:v2.2.1:yaml/src/gopkg.in/yaml.v2
+		go-tomb:tomb:dd63297:tomb_v1/src/gopkg.in/tomb.v1 \
+		go-yaml:yaml:v2.2.1:yaml_v2/src/gopkg.in/yaml.v2
 
 SUB_FILES=	telegraf
 SUB_LIST=	TELEGRAF_USER=${TELEGRAF_USER} \
