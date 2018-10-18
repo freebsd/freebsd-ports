@@ -6,6 +6,5 @@ bin/ora2pg_scanner
 %%SITE_PERL%%/Ora2Pg/MySQL.pm
 %%SITE_PERL%%/Ora2Pg/PLSQL.pm
 %%PERL5_MAN3%%/ora2pg.3.gz
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/changelog
