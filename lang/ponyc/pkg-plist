@@ -6,15 +6,19 @@ lib/libponyrt.a
 lib/pony/%%VERSION%%/bin/ponyc
 lib/pony/%%VERSION%%/include/pony.h
 lib/pony/%%VERSION%%/include/pony/detail/atomics.h
+%%DTRACE%%lib/pony/%%VERSION%%/lib/%%PONYARCH%%/libdtrace_probes.a
 lib/pony/%%VERSION%%/lib/%%PONYARCH%%/libponyc.a
 lib/pony/%%VERSION%%/lib/%%PONYARCH%%/libponyrt.a
+%%BITCODE%%lib/pony/%%VERSION%%/lib/%%PONYARCH%%/libponyrt.bc
 lib/pony/%%VERSION%%/packages/assert/assert.pony
 lib/pony/%%VERSION%%/packages/backpressure/auth.pony
 lib/pony/%%VERSION%%/packages/backpressure/backpressure.pony
 lib/pony/%%VERSION%%/packages/buffered/_test.pony
+lib/pony/%%VERSION%%/packages/buffered/benchmarks/main.pony
 lib/pony/%%VERSION%%/packages/buffered/buffered.pony
 lib/pony/%%VERSION%%/packages/buffered/reader.pony
 lib/pony/%%VERSION%%/packages/buffered/writer.pony
+lib/pony/%%VERSION%%/packages/builtin/_partial_arithmetic.pony
 lib/pony/%%VERSION%%/packages/builtin/_to_string.pony
 lib/pony/%%VERSION%%/packages/builtin/ambient_auth.pony
 lib/pony/%%VERSION%%/packages/builtin/any.pony
@@ -90,6 +94,7 @@ lib/pony/%%VERSION%%/packages/files/directory.pony
 lib/pony/%%VERSION%%/packages/files/file.pony
 lib/pony/%%VERSION%%/packages/files/file_caps.pony
 lib/pony/%%VERSION%%/packages/files/file_info.pony
+lib/pony/%%VERSION%%/packages/files/file_lines.pony
 lib/pony/%%VERSION%%/packages/files/file_mode.pony
 lib/pony/%%VERSION%%/packages/files/file_path.pony
 lib/pony/%%VERSION%%/packages/files/file_stream.pony
