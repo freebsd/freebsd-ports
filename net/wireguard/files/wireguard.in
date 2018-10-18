@@ -29,9 +29,6 @@ wireguard_stop()
 			%%PREFIX%%/wg-quick down ${interface}
 		done
 	done
-
-	# race condition in wg-quick down
-	sleep 1
 }
 
 load_rc_config $name
