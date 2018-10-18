@@ -68,12 +68,12 @@ chroot = ""
 # Set uid after binding a socket
 #
 # type: string
-user = "nobody"
+user = "hitch"
 
 # Set gid after binding a socket
 #
 # type: string
-group = "nobody"
+group = "hitch"
 
 # Quiet execution, report only error messages
 #

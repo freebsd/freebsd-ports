@@ -759,7 +759,7 @@ clickhouse:*:800:800::0:0:ClickHouse Daemon:/var/db/clickhouse:/usr/sbin/nologin
 # free: 810
 # free: 811
 foreman_proxy:*:812:812::0:0:Foreman Smart Proxy:/usr/local/share/foreman-proxy:/usr/sbin/nologin
-# free: 813
+hitch:*:813:813::0:0:Hitch TLS Proxy:/nonexistent:/usr/sbin/nologin
 puppet:*:814:814::0:0:Puppet Daemon:/nonexistent:/usr/sbin/nologin
 uchiwa:*:815:815::0:0:Uchiwa Dashboard:/nonexistent:/usr/sbin/nologin
 # free: 816

@@ -753,7 +753,7 @@ clickhouse:*:800:
 # free: 810
 # free: 811
 foreman_proxy:*:812:
-# free: 813
+hitch:*:813:
 puppet:*:814:
 uchiwa:*:815:
 # free: 816
