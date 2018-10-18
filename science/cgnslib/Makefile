@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	cgnslib
-DISTVERSION=	3.2.1
-PORTREVISION=	13
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.3.1
 PORTEPOCH=	1
 CATEGORIES=	science
-MASTER_SITES=	SF/cgns/${PORTNAME}_${PORTVERSION:R}/
-DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	CFD General Notation System library code
@@ -18,57 +16,40 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		cmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	CGNS
+GH_PROJECT=	CGNS
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	HDF5 SZIP TESTS TOOLS
-HDF5_DESC=	Enable HDF5 interface
-TESTS_DESC=	Enable test programs
-TOOLS_DESC=	Build the CGNSTools package
-SZIP_DESC=	SZIP support in HDF5
+OPTIONS_DEFINE=		HDF5 TESTS TOOLS
+OPTIONS_DEFAULT=	HDF5 TESTS TOOLS
+OPTIONS_SUB=		yes
 
-OPTIONS_DEFAULT=HDF5 TESTS TOOLS
+HDF5_DESC=		Enable HDF5 interface
+TESTS_DESC=		Enable test programs
+TOOLS_DESC=		Build the CGNSTools package
+SZIP_DESC=		SZIP support in HDF5
 
-.include <bsd.port.options.mk>
+HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5 libsz.so:science/szip
+HDF5_CMAKE_BOOL=	CGNS_ENABLE_HDF5
+HDF5_CMAKE_ON=		-DHDF5_INCLUDE_PATH:PATH="${LOCALBASE}/include"
 
-.if ${PORT_OPTIONS:MHDF5}
-LIB_DEPENDS+=	libhdf5.so:science/hdf5
-CMAKE_ARGS+=	-DCGNS_ENABLE_HDF5:BOOL=TRUE -DHDF5_NEED_ZLIB:BOOL=TRUE	\
-		-DHDF5_INCLUDE_PATH:PATH="${LOCALBASE}/include"
-PLIST_SUB+=	HDF5=""
-. if ${PORT_OPTIONS:MSZIP}
-CMAKE_ARGS+=	-DHDF5_NEED_SZIP:BOOL=OFF
-. endif
-.else
-CMAKE_ARGS+=	-DCGNS_ENABLE_HDF5:BOOL=OFF
-PLIST_SUB+=	HDF5="@comment "
-.endif
+TESTS_USES=		fortran
+TESTS_CMAKE_BOOL=	ENABLE_TESTS CGNS_ENABLE_FORTRAN
 
-.if ${PORT_OPTIONS:MTESTS}
-USES+=		fortran
-CMAKE_ARGS+=	-DCGNS_ENABLE_TESTS:BOOL=TRUE -DCGNS_ENABLE_FORTRAN:BOOL=TRUE
-TESTSBIN=	cgwrite cgread test_partial
-.endif
-
-.if ${PORT_OPTIONS:MTOOLS}
-USES+=		tk
-USE_GL=		gl glu
-USE_XORG=	x11 xmu
-CMAKE_ARGS+=	-DCGNS_BUILD_CGNSTOOLS:BOOL=TRUE			\
-		-DTCL_INCLUDE_PATH:STRING="${TCL_INCLUDEDIR}"	\
-		-DTK_INCLUDE_PATH:STRING="${TK_INCLUDEDIR}"
-PLIST_SUB+=	TOOLS=""
-.else
-PLIST_SUB+=	TOOLS="@comment "
-.endif
-
-LIBVER=		${PORTVERSION:R}
+TOOLS_USES=		gl localbase tk
+TOOLS_USE=		GL=gl,glu XORG=x11,xmu
+TOOLS_CMAKE_BOOL=	CGNS_BUILD_CGNSTOOLS
+TOOLS_CMAKE_ON=		-DTCL_INCLUDE_PATH:STRING="${TCL_INCLUDEDIR}" \
+			-DTK_INCLUDE_PATH:STRING="${TK_INCLUDEDIR}"
 
 do-test-TESTS-on:
-.for pg in ${TESTSBIN}
+.for pg in cgwrite cgread test_partial
 	@(cd ${BUILD_WRKSRC}/src/tests; ./${pg})
 .endfor
 
 post-install:
-	${LN} -sf libcgns.so.${LIBVER} ${STAGEDIR}${PREFIX}/lib/libcgns.so.${LIBVER:R}
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libcgns.so.${DISTVERSION:R} \
+		${STAGEDIR}${PREFIX}/lib/libcgns.so.${DISTVERSION:R:R}
 
 .include <bsd.port.mk>
