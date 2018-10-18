@@ -10578,3 +10578,4 @@ www/swish++||2018-10-16|Has expired: Unmaintained upstream
 deskutils/tagutils||2018-10-16|Has expired: Unmaintained upstream
 devel/libleaftag||2018-10-16|Has expired: Unmaintained upstream
 net-im/jabber||2018-10-16|Has expired: Unmaintained upstream
+cad/gmsh-occ||2018-10-17|To match upstream, cad/gmsh now builds with OCC
