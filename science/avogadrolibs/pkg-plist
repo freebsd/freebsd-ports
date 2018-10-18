@@ -45,6 +45,7 @@ include/avogadro/io/gromacsformat.h
 %%HDF5%%include/avogadro/io/hdf5dataformat.h
 include/avogadro/io/lammpsformat.h
 include/avogadro/io/mdlformat.h
+include/avogadro/io/mmtfformat.h
 include/avogadro/io/pdbformat.h
 include/avogadro/io/trrformat.h
 include/avogadro/io/vaspformat.h
@@ -59,6 +60,7 @@ include/avogadro/io/xyzformat.h
 %%MOLEQUEUE%%include/avogadro/molequeue/molequeuequeuelistmodel.h
 %%MOLEQUEUE%%include/avogadro/molequeue/molequeuewidget.h
 %%QT5%%include/avogadro/qtgui/avogadroqtguiexport.h
+%%QT5%%include/avogadro/qtgui/backgroundfileformat.h
 %%QT5%%include/avogadro/qtgui/containerwidget.h
 %%QT5%%include/avogadro/qtgui/customelementdialog.h
 %%QT5%%include/avogadro/qtgui/elementtranslator.h
@@ -100,6 +102,7 @@ include/avogadro/quantumio/molden.h
 include/avogadro/quantumio/mopacaux.h
 include/avogadro/quantumio/nwchemjson.h
 include/avogadro/quantumio/nwchemlog.h
+%%OPENGL%%include/avogadro/rendering/arrowgeometry.h
 %%OPENGL%%include/avogadro/rendering/avogadrogl.h
 %%OPENGL%%include/avogadro/rendering/avogadrorendering.h
 %%OPENGL%%include/avogadro/rendering/avogadrorenderingexport.h
@@ -143,6 +146,7 @@ include/avogadro/quantumio/nwchemlog.h
 %%QT5%%lib/avogadro2/staticplugins/CrystalScene.a
 %%QT5%%lib/avogadro2/staticplugins/CustomElements.a
 %%QT5%%lib/avogadro2/staticplugins/Editor.a
+%%QT5%%lib/avogadro2/staticplugins/Force.a
 %%MOLEQUEUE%%lib/avogadro2/staticplugins/GamessInput.a
 %%QT5%%lib/avogadro2/staticplugins/Hydrogens.a
 %%QT5%%lib/avogadro2/staticplugins/ImportPQR.a
