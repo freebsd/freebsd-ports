@@ -5,6 +5,7 @@ bin/env_parallel.csh
 bin/env_parallel.dash
 bin/env_parallel.fish
 bin/env_parallel.ksh
+bin/env_parallel.mksh
 bin/env_parallel.pdksh
 bin/env_parallel.sh
 bin/env_parallel.tcsh
@@ -12,6 +13,7 @@ bin/env_parallel.zsh
 bin/niceload
 bin/parallel
 bin/parcat
+bin/parset
 bin/sem
 bin/sql
 man/man1/env_parallel.1.gz

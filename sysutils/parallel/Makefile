@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parallel
-PORTVERSION=	20171222
+PORTVERSION=	20180922
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -12,11 +12,12 @@ COMMENT=	Shell tool for executing jobs in parallel
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		perl5 shebangfix tar:bzip2
+
 OPTIONS_DEFINE=	DOCS
 
 CONFIGURE_ARGS=	--docdir="${DOCSDIR}"
 GNU_CONFIGURE=	yes
-USES=		perl5 shebangfix tar:bzip2
 
 NO_ARCH=	yes
 
