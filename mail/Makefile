@@ -417,6 +417,7 @@
     SUBDIR += p5-Mail-Sendmail
     SUBDIR += p5-Mail-Spool
     SUBDIR += p5-Mail-Tools
+    SUBDIR += p5-Mail-Transport
     SUBDIR += p5-Mail-Transport-Dbx
     SUBDIR += p5-Mail-Verify
     SUBDIR += p5-Mail-Verp
