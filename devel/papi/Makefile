@@ -3,7 +3,7 @@
 
 PORTNAME=	papi
 PORTVERSION=	5.4.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	http://icl.cs.utk.edu/projects/papi/downloads/
 
@@ -22,7 +22,7 @@ NO_PACKAGE=	Needs to be compiled for specific CPU
 
 STRIP=		# empty
 USE_LDCONFIG=	yes
-LIB_DEPENDS+=	libopa.so:net/mpich2
+LIB_DEPENDS+=	libopa.so:net/mpich
 USES=		fortran gmake pathfix pkgconfig
 PATHFIX_MAKEFILEIN=	Makefile.inc
 GNU_CONFIGURE=	yes
