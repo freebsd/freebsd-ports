@@ -8,7 +8,6 @@ bin/babel_mopac_in.sh
 bin/babel_mopac_out.sh
 bin/babel_pdb_in.sh
 bin/babel_pdb_out.sh
-bin/diffdens.exe
 bin/gamess2lus.exe
 bin/gv2xyz.exe
 bin/lus2gvorb.exe
