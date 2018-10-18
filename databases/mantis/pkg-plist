@@ -1056,6 +1056,8 @@
 %%ANNOUNCE%%%%WWWDIR%%/plugins/Announce/pages/create.php
 %%ANNOUNCE%%%%WWWDIR%%/plugins/Announce/pages/list.php
 %%ANNOUNCE%%%%WWWDIR%%/plugins/Announce/pages/list_action.php
+%%ANNOUNCE%%%%WWWDIR%%/plugins/Announce/pages/list_action_delete.php
+%%ANNOUNCE%%%%WWWDIR%%/plugins/Announce/pages/list_action_update.php
 %%CUSTOMREPORTER%%%%WWWDIR%%/plugins/CustomReporter/.gitignore
 %%CUSTOMREPORTER%%%%WWWDIR%%/plugins/CustomReporter/CHANGELOG.md
 %%CUSTOMREPORTER%%%%WWWDIR%%/plugins/CustomReporter/CustomReporter.php
@@ -1436,6 +1438,7 @@
 %%SI%%%%WWWDIR%%/plugins/SourceCgit/lang/strings_german.txt
 %%SI%%%%WWWDIR%%/plugins/SourceCgit/lang/strings_spanish.txt
 %%SI%%%%WWWDIR%%/plugins/SourceCgit/post-receive.tmpl
+%%SI%%%%WWWDIR%%/plugins/SourceCgit/strings_portuguese_brazil.txt
 %%SI%%%%WWWDIR%%/plugins/SourceGithub/LICENSE
 %%SI%%%%WWWDIR%%/plugins/SourceGithub/SourceGithub.php
 %%SI%%%%WWWDIR%%/plugins/SourceGithub/lang/strings_catalan.txt
@@ -1448,6 +1451,7 @@
 %%SI%%%%WWWDIR%%/plugins/SourceGitlab/SourceGitlab.php
 %%SI%%%%WWWDIR%%/plugins/SourceGitlab/lang/strings_english.txt
 %%SI%%%%WWWDIR%%/plugins/SourceGitlab/lang/strings_german.txt
+%%SI%%%%WWWDIR%%/plugins/SourceGitlab/lang/strings_russian.txt
 %%SI%%%%WWWDIR%%/plugins/SourceGitphp/LICENSE
 %%SI%%%%WWWDIR%%/plugins/SourceGitphp/SourceGitphp.php
 %%SI%%%%WWWDIR%%/plugins/SourceGitphp/lang/strings_catalan.txt
