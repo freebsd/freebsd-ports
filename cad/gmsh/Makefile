@@ -29,8 +29,6 @@ USES=		blaslapack cmake fortran gl jpeg tar:tgz
 USE_GL=		gl glu
 USE_XORG=	x11 xcursor xext xinerama xfixes xft xrender
 
-SLAVEDIRS=	cad/gmsh-occ
-
 MAKE_JOBS_UNSAFE=	yes
 
 CMAKE_ARGS=	-DCMAKE_SKIP_RPATH:BOOL=YES
