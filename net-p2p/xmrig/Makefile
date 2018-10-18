@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmrig
-PORTVERSION=	2.6.4
+PORTVERSION=	2.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p
 
@@ -14,6 +14,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_powerpc64=	fails to configure: Target "xmrig" requires the language dialect "CXX11", but CMake does not know the compile flags to use to enable it.
 
+USES=		cmake:outsource ssl
+USE_GITHUB=	yes
+USE_RC_SUBR=	${PORTNAME}
+
+SUB_FILES=	pkg-message
+SUB_LIST=	PORTNAME=${PORTNAME} USERS=${USERS}
+USERS=		xmrig
+
 OPTIONS_DEFINE=	STATIC MICROHTTPD
 MICROHTTPD_DESC=Build with libmicrohttpd support
 OPTIONS_DEFAULT=MICROHTTPD
@@ -21,22 +29,21 @@ OPTIONS_DEFAULT=MICROHTTPD
 STATIC_PREVENTS=MICROHTTPD
 STATIC_PREVENTS_MSG=	libmicrohttpd support cannot be built static
 
-USES=		cmake:outsource
-USE_GITHUB=	yes
-
-USE_RC_SUBR=	${PORTNAME}
-SUB_FILES=	pkg-message
-SUB_LIST=	PORTNAME=${PORTNAME} USERS=${USERS}
-USERS=		xmrig
-
 MICROHTTPD_LIB_DEPENDS+=	libmicrohttpd.so:www/libmicrohttpd \
 				libuv.so:devel/libuv
 
 STATIC_BUILD_DEPENDS+=	${LOCALBASE}/lib/libuv.a:devel/libuv
-STATIC_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-CMakeLists.txt
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|\(set.*EXTRA_LIBS.*\) dl|\1|' \
+		${WRKSRC}/CMakeLists.txt
 
 post-patch-MICROHTTPD-off:
 	@${REINPLACE_CMD} -e 's|\(.*WITH_HTTPD.*\)\(ON\)|\1OFF|' \
+		${WRKSRC}/CMakeLists.txt
+
+post-patch-STATIC-on:
+	@${REINPLACE_CMD} -e 's|\(.*BUILD_STATIC.*\)\(OFF\)|\1ON|' \
 		${WRKSRC}/CMakeLists.txt
 
 do-install:
