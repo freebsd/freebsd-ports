@@ -21,14 +21,12 @@ USE_PYTHON=	autoplist concurrent distutils
 
 SHEBANG_GLOB=	*.py
 NO_ARCH=	yes
-EXAMPLE_FILES=	*.py
+PORTEXAMPLES=	*.py
 
 OPTIONS_DEFINE=	EXAMPLES
 
-do-install-EXAMPLES-on:
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${EXAMPLE_FILES:S|^|${WRKSRC}/examples/|} ${STAGEDIR}${EXAMPLESDIR}
-	${FIND} -s ${STAGEDIR}${EXAMPLESDIR} -not -type d | ${SORT} | \
-		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
