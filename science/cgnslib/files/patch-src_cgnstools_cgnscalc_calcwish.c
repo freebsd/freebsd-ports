@@ -1,5 +1,5 @@
---- src/cgnstools/cgnscalc/calcwish.c.orig	2011-02-12 23:52:41.000000000 +0100
-+++ src/cgnstools/cgnscalc/calcwish.c	2012-03-13 22:15:02.000000000 +0100
+--- src/cgnstools/cgnscalc/calcwish.c.orig	2017-07-17 21:51:06 UTC
++++ src/cgnstools/cgnscalc/calcwish.c
 @@ -20,8 +20,10 @@
   * Sun shared libraries to be used for Tcl.
   */

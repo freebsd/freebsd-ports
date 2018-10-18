@@ -1,6 +1,6 @@
---- ./src/make.defs.in.orig	2011-03-12 00:38:33.000000000 +0100
-+++ ./src/make.defs.in	2012-03-13 21:31:59.000000000 +0100
-@@ -16,7 +16,7 @@
+--- src/make.defs.in.orig	2017-07-17 21:51:06 UTC
++++ src/make.defs.in
+@@ -16,7 +16,7 @@ CFLAGS  = @CFLAGS@ @SYSCFLAGS@
  COOUT   = @COOUT@
  CEOUT   = @CEOUT@
  LDFLAGS = @LDFLAGS@
@@ -9,7 +9,7 @@
  
  #------------------------------------------------------------------------
  # SPACE  - used to force a space in the compiler executable output flag
-@@ -64,7 +64,7 @@
+@@ -68,7 +68,7 @@ BUILDFORTRAN = @BUILDFORTRAN@
  F77    = @F77@
  FFLAGS = @FFLAGS@ @SYSFFLAGS@
  FEOUT  = @FEOUT@
