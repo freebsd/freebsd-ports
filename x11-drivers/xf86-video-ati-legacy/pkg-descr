@@ -1,0 +1,2 @@
+This package contains the X.Org xf86-video-ati driver. It is an old version
+intended to be used with the drm-legacy-kmod.
