@@ -1,13 +1,11 @@
---- Makefile.orig	2018-05-27 18:29:53 UTC
+--- Makefile.orig	2018-10-17 10:11:59 UTC
 +++ Makefile
-@@ -221,6 +221,10 @@ ifndef LLVM_CONFIG
-     LLVM_CONFIG = llvm-config-3.9
-   else ifneq (,$(shell which /usr/local/opt/llvm@3.9/bin/llvm-config 2> /dev/null))
-     LLVM_CONFIG = /usr/local/opt/llvm@3.9/bin/llvm-config
-+  else ifneq (,$(shell which llvm-config50 2> /dev/null))
-+    LLVM_CONFIG = llvm-config50
-+  else ifneq (,$(shell which llvm-config40 2> /dev/null))
-+    LLVM_CONFIG = llvm-config40
-   else ifneq (,$(shell which llvm-config39 2> /dev/null))
-     LLVM_CONFIG = llvm-config39
-   else ifneq (,$(shell which /usr/local/opt/llvm/bin/llvm-config 2> /dev/null))
+@@ -806,7 +806,7 @@ $($(1))/libponyrt.$(LIB_EXT): $(depends) $(ofiles)
+ 	$(SILENT)rm -f $(PONY_BUILD_DIR)/dtrace_probes.o
+ 	$(SILENT)$(DTRACE) -G -s $(PONY_SOURCE_DIR)/common/dtrace_probes.d -o $(PONY_BUILD_DIR)/dtrace_probes.o $(ofiles)
+ 	$(SILENT)$(AR) $(AR_FLAGS) $$@ $(ofiles) $(PONY_BUILD_DIR)/dtrace_probes.o
+-	$(SILENT)$(AR) $(AR_FLAGS) $(PONY_BUILD_DIR)/libdtrace_probes.a $(PONY_BUILD_DIR)/dtrace_probes.o
++	$(SILENT)$(AR) $(AR_FLAGS) $(lib)/libdtrace_probes.a $(PONY_BUILD_DIR)/dtrace_probes.o
+     else
+ 	$(SILENT)$(AR) $(AR_FLAGS) $$@ $(ofiles)
+     endif
