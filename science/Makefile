@@ -142,6 +142,7 @@
     SUBDIR += metaphysicl
     SUBDIR += minc2
     SUBDIR += mmdb2
+    SUBDIR += mmtf
     SUBDIR += mol2ps
     SUBDIR += molgif
     SUBDIR += mpb
