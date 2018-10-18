@@ -1,10 +1,11 @@
---- Makefile.orig	2015-12-29 14:53:09 UTC
+--- Makefile.orig	2018-10-06 02:29:08 UTC
 +++ Makefile
-@@ -1,6 +1,6 @@
- PREFIX ?= /usr/local
- BINPREFIX ?= "$(PREFIX)/bin"
--MANPREFIX ?= "$(PREFIX)/share/man/man1"
-+MANPREFIX = "$(PREFIX)/man/man1"
- SYSCONFDIR ?= $(PREFIX)/etc
- BINS = $(wildcard bin/git-*)
- MANS = $(wildcard man/git-*.md)
+@@ -3,7 +3,7 @@ BINPREFIX ?= "$(PREFIX)/bin"
+ 
+ OS = $(shell uname)
+ ifeq ($(OS), FreeBSD)
+-	MANPREFIX ?= "$(PREFIX)/man/man1"
++	MANPREFIX = "$(PREFIX)/man/man1"
+ else
+ 	MANPREFIX ?= "$(PREFIX)/share/man/man1"
+ endif
