@@ -22,12 +22,13 @@ USE_RC_SUBR=	${PORTNAME}
 
 SHEBANG_FILES=	Tautulli.py
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
+python_OLD_CMD=	/bin/sh
 GH_ACCOUNT=	Tautulli
 GH_PROJECT=	Tautulli
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-DOCS=		API.md CHANGELOG.md README.md
+PORTDOCS=	API.md CHANGELOG.md README.md
 
 USERS=		tautulli
 GROUPS=		tautulli
@@ -40,12 +41,12 @@ post-patch:
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/data ${STAGEDIR}${WWWDIR}/lib \
 		${STAGEDIR}${WWWDIR}/plexpy
-	(cd ${WRKSRC} ; ${COPYTREE_SHARE} data lib plexpy ${STAGEDIR}${WWWDIR})
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "data lib plexpy" ${STAGEDIR}${WWWDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/Tautulli.py ${STAGEDIR}${WWWDIR}
 
-do-install-DOCS-on:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 post-install:
 	${FIND} -s ${STAGEDIR}${WWWDIR} -type d -empty -delete
