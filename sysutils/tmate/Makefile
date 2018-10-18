@@ -10,7 +10,7 @@ COMMENT=	Instant terminal sharing
 
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libmsgpackc.so:devel/msgpack \
-		libssh_threads.so:security/libssh
+		libssh.so:security/libssh
 
 USES=		autoreconf ncurses pkgconfig
 USE_GITHUB=	yes
