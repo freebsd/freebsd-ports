@@ -97,6 +97,9 @@ post-patch:
 .if ${PORT_OPTIONS:MLUAJIT} || ${PORT_OPTIONS:MLUA}
 	@cd ${WRKSRC}/deps/lua/src && ${CP} fpconv.* lua_* strbuf.* ${WRKSRC}/src/
 .endif
+.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+	${REINPLACE_CMD} -e '/pragma/d' ${WRKSRC}/src/lzf_d.c
+.endif
 
 post-build:
 	${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
