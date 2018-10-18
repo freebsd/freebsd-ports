@@ -1,8 +1,0 @@
---- avogadro/qtplugins/importpqr/CMakeLists.txt.orig	2018-10-17 00:20:17 UTC
-+++ avogadro/qtplugins/importpqr/CMakeLists.txt
-@@ -17,4 +17,4 @@ avogadro_plugin(ImportPQR
-   ""
- )
- 
--target_link_libraries(ImportPQR LINK_PRIVATE ${Qt5Network_LIBRARIES} jsoncpp)
-+target_link_libraries(ImportPQR LINK_PUBLIC ${CMAKE_INSTALL_PREFIX}/lib/libjsoncpp.so LINK_PRIVATE ${Qt5Network_LIBRARIES})
