@@ -1,0 +1,13 @@
+%%SITE_PERL%%/Mail/Box/POP3.pm
+%%SITE_PERL%%/Mail/Box/POP3.pod
+%%SITE_PERL%%/Mail/Box/POP3/Message.pm
+%%SITE_PERL%%/Mail/Box/POP3/Message.pod
+%%SITE_PERL%%/Mail/Box/POP3/Test.pm
+%%SITE_PERL%%/Mail/Box/POP3s.pm
+%%SITE_PERL%%/Mail/Box/POP3s.pod
+%%SITE_PERL%%/Mail/Transport/POP3.pm
+%%SITE_PERL%%/Mail/Transport/POP3.pod
+%%PERL5_MAN3%%/Mail::Box::POP3.3.gz
+%%PERL5_MAN3%%/Mail::Box::POP3::Message.3.gz
+%%PERL5_MAN3%%/Mail::Box::POP3s.3.gz
+%%PERL5_MAN3%%/Mail::Transport::POP3.3.gz

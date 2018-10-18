@@ -381,6 +381,7 @@
     SUBDIR += p5-Mail-Box
     SUBDIR += p5-Mail-Box-IMAP4
     SUBDIR += p5-Mail-Box-IMAP4-SSL
+    SUBDIR += p5-Mail-Box-POP3
     SUBDIR += p5-Mail-Box-Parser-C
     SUBDIR += p5-Mail-Bulkmail
     SUBDIR += p5-Mail-CheckUser
