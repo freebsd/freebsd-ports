@@ -46,6 +46,14 @@
 %%FONTSDIR%%/IBMPlexSansCondensed-TextItalic.ttf
 %%FONTSDIR%%/IBMPlexSansCondensed-Thin.ttf
 %%FONTSDIR%%/IBMPlexSansCondensed-ThinItalic.ttf
+%%FONTSDIR%%/IBMPlexSansHebrew-Bold.ttf
+%%FONTSDIR%%/IBMPlexSansHebrew-ExtraLight.ttf
+%%FONTSDIR%%/IBMPlexSansHebrew-Light.ttf
+%%FONTSDIR%%/IBMPlexSansHebrew-Medium.ttf
+%%FONTSDIR%%/IBMPlexSansHebrew-Regular.ttf
+%%FONTSDIR%%/IBMPlexSansHebrew-SemiBold.ttf
+%%FONTSDIR%%/IBMPlexSansHebrew-Text.ttf
+%%FONTSDIR%%/IBMPlexSansHebrew-Thin.ttf
 %%FONTSDIR%%/IBMPlexSerif-Bold.ttf
 %%FONTSDIR%%/IBMPlexSerif-BoldItalic.ttf
 %%FONTSDIR%%/IBMPlexSerif-ExtraLight.ttf
@@ -62,3 +70,11 @@
 %%FONTSDIR%%/IBMPlexSerif-TextItalic.ttf
 %%FONTSDIR%%/IBMPlexSerif-Thin.ttf
 %%FONTSDIR%%/IBMPlexSerif-ThinItalic.ttf
+%%FONTSDIR%%/IBMPlexThai-Bold.ttf
+%%FONTSDIR%%/IBMPlexThai-ExtraLight.ttf
+%%FONTSDIR%%/IBMPlexThai-Light.ttf
+%%FONTSDIR%%/IBMPlexThai-Medium.ttf
+%%FONTSDIR%%/IBMPlexThai-Regular.ttf
+%%FONTSDIR%%/IBMPlexThai-SemiBold.ttf
+%%FONTSDIR%%/IBMPlexThai-Text.ttf
+%%FONTSDIR%%/IBMPlexThai-Thin.ttf
