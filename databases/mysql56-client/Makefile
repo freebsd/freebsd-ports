@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mysql
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	56-client
 
 COMMENT=	Multithreaded SQL database (client)
@@ -31,5 +31,6 @@ MMAN1=		comp_err.1 msql2mysql.1 mysql.1 mysql_config.1 mysql_config_editor.1 mys
 		mysqlcheck.1 mysqldump.1 mysqlimport.1 mysqlshow.1 mysqlslap.1
 
 CLIENT_ONLY=	yes
+EXTRA_PATCHES+=	${MASTERDIR}/files/patch-PR225888.diff
 
 .include "${MASTERDIR}/Makefile"
