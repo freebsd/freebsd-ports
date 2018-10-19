@@ -22,7 +22,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 GH_ACCOUNT=	ibus
 
 USE_QT=		gui dbus moc_build qmake_build moc_build uic_build rcc_build
-USES=		cmake compiler:c++11-lib pkgconfig qt:4
+USES=		cmake compiler:c++14-lang pkgconfig qt:4
 CMAKE_ARGS=	-DDOCDIR=${PREFIX}/share/doc/ibus-qt -DLIBDIR=lib
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include
