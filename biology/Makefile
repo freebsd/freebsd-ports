@@ -104,6 +104,7 @@
     SUBDIR += py-biopython
     SUBDIR += py-bx-python
     SUBDIR += py-cutadapt
+    SUBDIR += py-gtfparse
     SUBDIR += py-loompy
     SUBDIR += py-macs2
     SUBDIR += py-orange3-bioinformatics

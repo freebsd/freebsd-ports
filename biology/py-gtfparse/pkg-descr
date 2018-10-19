@@ -1,0 +1,6 @@
+Tools to parse files in GTF (gene transfer format).
+
+GTF is a common format to exchange large portions of, or entire genotype
+information.
+
+WWW: https://github.com/openvax/gtfparse
