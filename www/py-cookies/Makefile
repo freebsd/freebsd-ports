@@ -7,7 +7,7 @@ CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Friendlier RFC 6265-compliant cookie parser/renderer
 
 LICENSE=	MIT
