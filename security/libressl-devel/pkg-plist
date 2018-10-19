@@ -844,19 +844,13 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/ENGINE_get_id.3.gz
 %%MAN3%%man/man3/ENGINE_get_init_function.3.gz
 %%MAN3%%man/man3/ENGINE_get_last.3.gz
-%%MAN3%%man/man3/ENGINE_get_load_privkey_function.3.gz
-%%MAN3%%man/man3/ENGINE_get_load_pubkey_function.3.gz
 %%MAN3%%man/man3/ENGINE_get_name.3.gz
 %%MAN3%%man/man3/ENGINE_get_next.3.gz
 %%MAN3%%man/man3/ENGINE_get_prev.3.gz
 %%MAN3%%man/man3/ENGINE_get_table_flags.3.gz
 %%MAN3%%man/man3/ENGINE_init.3.gz
 %%MAN3%%man/man3/ENGINE_load_builtin_engines.3.gz
-%%MAN3%%man/man3/ENGINE_load_cryptodev.3.gz
 %%MAN3%%man/man3/ENGINE_load_dynamic.3.gz
-%%MAN3%%man/man3/ENGINE_load_openssl.3.gz
-%%MAN3%%man/man3/ENGINE_load_private_key.3.gz
-%%MAN3%%man/man3/ENGINE_load_public_key.3.gz
 %%MAN3%%man/man3/ENGINE_new.3.gz
 %%MAN3%%man/man3/ENGINE_register_DH.3.gz
 %%MAN3%%man/man3/ENGINE_register_DSA.3.gz
@@ -906,8 +900,6 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/ENGINE_set_flags.3.gz
 %%MAN3%%man/man3/ENGINE_set_id.3.gz
 %%MAN3%%man/man3/ENGINE_set_init_function.3.gz
-%%MAN3%%man/man3/ENGINE_set_load_privkey_function.3.gz
-%%MAN3%%man/man3/ENGINE_set_load_pubkey_function.3.gz
 %%MAN3%%man/man3/ENGINE_set_name.3.gz
 %%MAN3%%man/man3/ENGINE_set_table_flags.3.gz
 %%MAN3%%man/man3/ENGINE_unregister_DH.3.gz
@@ -979,6 +971,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_flags.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_free.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_get_app_data.3.gz
+%%MAN3%%man/man3/EVP_CIPHER_CTX_get_iv.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_init.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_iv_length.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_key_length.3.gz
@@ -988,6 +981,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_rand_key.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_reset.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_set_app_data.3.gz
+%%MAN3%%man/man3/EVP_CIPHER_CTX_set_iv.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_set_key_length.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_set_padding.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_type.3.gz
@@ -1584,7 +1578,9 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/RSA_get_method.3.gz
 %%MAN3%%man/man3/RSA_meth_dup.3.gz
 %%MAN3%%man/man3/RSA_meth_free.3.gz
+%%MAN3%%man/man3/RSA_meth_get_finish.3.gz
 %%MAN3%%man/man3/RSA_meth_new.3.gz
+%%MAN3%%man/man3/RSA_meth_set1_name.3.gz
 %%MAN3%%man/man3/RSA_meth_set_finish.3.gz
 %%MAN3%%man/man3/RSA_meth_set_priv_dec.3.gz
 %%MAN3%%man/man3/RSA_meth_set_priv_enc.3.gz
@@ -2416,6 +2412,8 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/d2i_DSA_PUBKEY_fp.3.gz
 %%MAN3%%man/man3/d2i_DSA_SIG.3.gz
 %%MAN3%%man/man3/d2i_DSAparams.3.gz
+%%MAN3%%man/man3/d2i_DSAparams_bio.3.gz
+%%MAN3%%man/man3/d2i_DSAparams_fp.3.gz
 %%MAN3%%man/man3/d2i_ECDSA_SIG.3.gz
 %%MAN3%%man/man3/d2i_ECPKParameters.3.gz
 %%MAN3%%man/man3/d2i_ECPKParameters_bio.3.gz
@@ -2594,6 +2592,8 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/i2d_DSA_PUBKEY_fp.3.gz
 %%MAN3%%man/man3/i2d_DSA_SIG.3.gz
 %%MAN3%%man/man3/i2d_DSAparams.3.gz
+%%MAN3%%man/man3/i2d_DSAparams_bio.3.gz
+%%MAN3%%man/man3/i2d_DSAparams_fp.3.gz
 %%MAN3%%man/man3/i2d_ECDSA_SIG.3.gz
 %%MAN3%%man/man3/i2d_ECPKParameters.3.gz
 %%MAN3%%man/man3/i2d_ECPKParameters_bio.3.gz
