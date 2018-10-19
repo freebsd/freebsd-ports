@@ -122,6 +122,7 @@
 %%DATADIR%%/repl.scm
 %%DATADIR%%/require.scm
 %%DATADIR%%/resenecolours.txt
+%%DATADIR%%/rmdsff.scm
 %%DATADIR%%/root.scm
 %%DATADIR%%/s7.init
 %%DATADIR%%/saturate.txt
@@ -185,7 +186,3 @@
 %%DATADIR%%/wttree.scm
 %%DATADIR%%/xml-parse.scm
 %%DATADIR%%/yasyn.scm
-%%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/README
