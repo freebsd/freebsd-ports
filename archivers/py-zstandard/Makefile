@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zstandard
-DISTVERSION=	0.9.1
-PORTREVISION=	2
+DISTVERSION=	0.10.1
 CATEGORIES=	archivers python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,11 +14,11 @@ LICENSE=	BSD2CLAUSE
 BROKEN_powerpc64=	fails to build: cffi.error.CDefError: parse error
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.8.0:devel/py-cffi@${PY_FLAVOR}
-#LIB_DEPENDS=	libzstd.so:archivers/zstd # system-zstd is broken, see comment below
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		localbase python
 USE_PYTHON=	distutils autoplist
-#PYDISTUTILS_BUILDARGS=	--system-zstd # broken: https://github.com/indygreg/python-zstandard/issues/52
+PYDISTUTILS_BUILDARGS=	--system-zstd
 
 post-install:
 	@cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} && ${STRIP_CMD} zstd.so _zstd_cffi.so
