@@ -44,6 +44,7 @@ CONFIGURE_ARGS=	--with-system-icu \
 CONFIGURE_ENV+=	PTHREAD_LIBS="-lpthread" \
 		ac_cv_header_atomic_ops_h="no" \
 		ac_cv_lib_atomic_ops_main="no"
+CPPFLAGS+=	-DU_NOEXCEPT= # For USE_CXXSTD=gnu++98
 
 LOCALSTATEDIR=	/var/db/firebird
 CONFDIR=	etc/firebird
