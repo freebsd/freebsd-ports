@@ -41,6 +41,7 @@ bin/mtvtoppm
 bin/neotoppm
 bin/palmtopnm
 bin/pamaddnoise
+bin/pamaltsat
 bin/pamarith
 bin/pambackground
 bin/pambayer
@@ -115,6 +116,7 @@ bin/pamtotiff
 bin/pamtouil
 bin/pamtowinicon
 bin/pamtoxvmini
+bin/pamtris
 bin/pamundice
 bin/pamunlookup
 bin/pamvalidate
@@ -373,6 +375,7 @@ include/netpbm/pamdraw.h
 include/netpbm/pammap.h
 include/netpbm/pbm.h
 include/netpbm/pbmfont.h
+include/netpbm/pbmfontdata.h
 include/netpbm/pgm.h
 include/netpbm/pm.h
 include/netpbm/pm_c_util.h
@@ -390,7 +393,7 @@ include/netpbm/shhopt.h
 lib/libnetpbm.a
 lib/libnetpbm.so
 lib/libnetpbm.so.11
-lib/libnetpbm.so.11.83
+lib/libnetpbm.so.11.84
 %%MANPAGES%%man/man1/411toppm.1.gz
 %%MANPAGES%%man/man1/anytopnm.1.gz
 %%MANPAGES%%man/man1/asciitopgm.1.gz
@@ -438,6 +441,7 @@ lib/libnetpbm.so.11.83
 %%MANPAGES%%man/man1/netpbm.1.gz
 %%MANPAGES%%man/man1/palmtopnm.1.gz
 %%MANPAGES%%man/man1/pamaddnoise.1.gz
+%%MANPAGES%%man/man1/pamaltsat.1.gz
 %%MANPAGES%%man/man1/pamarith.1.gz
 %%MANPAGES%%man/man1/pambackground.1.gz
 %%MANPAGES%%man/man1/pambayer.1.gz
@@ -491,6 +495,7 @@ lib/libnetpbm.so.11.83
 %%MANPAGES%%man/man1/pamtable.1.gz
 %%MANPAGES%%man/man1/pamthreshold.1.gz
 %%MANPAGES%%man/man1/pamtilt.1.gz
+%%MANPAGES%%man/man1/pamtris.1.gz
 %%MANPAGES%%man/man1/pamtoavs.1.gz
 %%MANPAGES%%man/man1/pamtodjvurle.1.gz
 %%MANPAGES%%man/man1/pamtofits.1.gz
