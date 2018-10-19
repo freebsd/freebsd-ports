@@ -17,7 +17,7 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
 
-USES=		compiler:c++11-lang gettext gmake gnome iconv libtool \
+USES=		compiler:c++14-lang gettext gmake gnome iconv libtool \
 		localbase ncurses pathfix pkgconfig readline:port
 USE_GNOME=	intltool libxml2
 USE_LDCONFIG=	yes
