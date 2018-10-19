@@ -80,6 +80,7 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/scores.d/statistics_group.conf
 %%ETCDIR%%/scores.d/subject_group.conf
 %%ETCDIR%%/scores.d/surbl_group.conf
+%%ETCDIR%%/scores.d/whitelist_group.conf
 @sample %%ETCDIR%%/settings.conf.sample
 @sample %%ETCDIR%%/spf_dkim_whitelist.inc.sample
 @sample %%ETCDIR%%/statistic.conf.sample
@@ -434,6 +435,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lua/asn.lua
 %%DATADIR%%/lua/bayes_expiry.lua
 %%DATADIR%%/lua/clickhouse.lua
+%%DATADIR%%/lua/clustering.lua
 %%DATADIR%%/lua/dcc.lua
 %%DATADIR%%/lua/dkim_signing.lua
 %%DATADIR%%/lua/dmarc.lua
