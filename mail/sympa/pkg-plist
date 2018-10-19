@@ -32,7 +32,6 @@ libexec/sympa/Sympa/DatabaseDriver/Oracle.pm
 libexec/sympa/Sympa/DatabaseDriver/Oracle/St.pm
 libexec/sympa/Sympa/DatabaseDriver/PostgreSQL.pm
 libexec/sympa/Sympa/DatabaseDriver/SQLite.pm
-libexec/sympa/Sympa/DatabaseDriver/Sybase.pm
 libexec/sympa/Sympa/DatabaseManager.pm
 libexec/sympa/Sympa/Datasource.pm
 libexec/sympa/Sympa/Family.pm
@@ -172,7 +171,6 @@ libexec/sympa/archived.pl
 libexec/sympa/bounced.pl
 @(sympa,sympa,4755) libexec/sympa/bouncequeue
 libexec/sympa/bulk.pl
-libexec/sympa/create_db.Sybase
 @(sympa,sympa,4755) libexec/sympa/familyqueue
 libexec/sympa/init_comment.pl
 libexec/sympa/ldap_alias_manager.pl
@@ -233,7 +231,6 @@ man/man3/Sympa::DatabaseDriver::Oracle.3Sympa.gz
 man/man3/Sympa::DatabaseDriver::Oracle::St.3Sympa.gz
 man/man3/Sympa::DatabaseDriver::PostgreSQL.3Sympa.gz
 man/man3/Sympa::DatabaseDriver::SQLite.3Sympa.gz
-man/man3/Sympa::DatabaseDriver::Sybase.3Sympa.gz
 man/man3/Sympa::DatabaseManager.3Sympa.gz
 man/man3/Sympa::HTMLDecorator.3Sympa.gz
 man/man3/Sympa::HTMLSanitizer.3Sympa.gz
@@ -834,6 +831,10 @@ share/locale/zh_TW/LC_MESSAGES/sympa.mo
 %%DATADIR%%/static/js/jqplot/jquery.jqplot.css
 %%DATADIR%%/static/js/jqplot/jquery.jqplot.min.js
 %%DATADIR%%/static/js/jquery-migrate.js
+%%DATADIR%%/static/js/jquery-minicolors/jquery.minicolors.css
+%%DATADIR%%/static/js/jquery-minicolors/jquery.minicolors.js
+%%DATADIR%%/static/js/jquery-minicolors/jquery.minicolors.min.js
+%%DATADIR%%/static/js/jquery-minicolors/jquery.minicolors.png
 %%DATADIR%%/static/js/jquery-ui/images/ui-bg_flat_0_aaaaaa_40x100.png
 %%DATADIR%%/static/js/jquery-ui/images/ui-bg_flat_75_ffffff_40x100.png
 %%DATADIR%%/static/js/jquery-ui/images/ui-bg_glass_55_fbf9ee_1x400.png
@@ -1148,12 +1149,8 @@ share/locale/zh_TW/LC_MESSAGES/sympa.mo
 %%DATADIR%%/static/fonts/foundation-icons/svgs/fi-yen.svg
 %%DATADIR%%/static/fonts/foundation-icons/svgs/fi-zoom-in.svg
 %%DATADIR%%/static/fonts/foundation-icons/svgs/fi-zoom-out.svg
-%%DATADIR%%/static/icons/crosshairs.png
 %%DATADIR%%/static/icons/favicon_sympa.png
-%%DATADIR%%/static/icons/h.png
 %%DATADIR%%/static/icons/logo_sympa.png
-%%DATADIR%%/static/icons/position.png
-%%DATADIR%%/static/icons/sv.png
 %%DATADIR%%/static/js/sympa.js
 @dir %%ETCDIR%%/create_list_templates
 @dir %%ETCDIR%%/custom_actions

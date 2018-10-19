@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sympa
-DISTVERSION=	6.2.34
+DISTVERSION=	6.2.36
 CATEGORIES=	mail
 
 MAINTAINER=	dgeo@centrale-marseille.fr
@@ -46,6 +46,9 @@ RUN_DEPENDS=	\
 	p5-CGI>=0:www/p5-CGI \
 	p5-Data-Password>=0:security/p5-Data-Password
 
+# Shebang is corrected by configure script
+USES=		autoreconf cpe fakeroot perl5 shebangfix gettext
+
 # Ignore alpha/beta versions
 PORTSCOUT=	limit:^[0-9]+(\.[0-9]+)*$$
 
@@ -53,11 +56,8 @@ PORTDOCS=	NEWS.md
 
 USERS=		sympa
 GROUPS=		sympa
-# Shebang is corrected by configure script
-USES=		autoreconf cpe fakeroot perl5 shebangfix gettext
-
 SHEBANG_FILES=	po/sympa/xgettext.pl \
-		po/sympa/add-lang.pl \
+		po/sympa/add-lang.pl
 
 GNU_CONFIGURE=	yes
 ICONSDIR?=	www/icons
@@ -102,10 +102,8 @@ CONFLICTS=	sympa-5*
 OPTIONS_DEFINE=	FASTCGI APACHE DOCS EXAMPLES
 OPTIONS_DEFAULT=APACHE
 OPTIONS_RADIO=	DATABASE
-OPTIONS_RADIO_DATABASE=	PGSQL SYBASE MYSQL
+OPTIONS_RADIO_DATABASE=	PGSQL MYSQL
 OPTIONS_SUB=	yes
-
-SYBASE_DESC=	Sybase database
 
 .ifdef DB_TYPE
 DB_TYPE:=	${DB_TYPE:tu}
@@ -126,8 +124,6 @@ PGSQL_SUB_LIST=	REQ_PGSQL=postgresql
 PGSQL_SUB_LIST_OFF=	REQ_PGSQL=""
 PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 PGSQL_VARS=	DB_TYPE=Pg
-SYBASE_RUN_DEPENDS=	p5-DBD-Sybase>=0:databases/p5-DBD-Sybase
-SYBASE_VARS=	DB_TYPE=sybase
 MYSQL_SUB_LIST=	REQ_MYSQL=mysql
 MYSQL_SUB_LIST_OFF=	REQ_MYSQL=""
 MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
