@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yt
-DISTVERSION=	3.4.1
-PORTREVISION=	2
+DISTVERSION=	3.5.0
 CATEGORIES=	math astro python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,13 +15,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pyembree>0:graphics/py-pyembree@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR} \
+LIB_DEPENDS=	libembree.so:graphics/embree \
+		libomp.so:devel/openmp
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sympy>=1.0:math/py-sympy@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pyembree>0:graphics/py-pyembree@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.5.3:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipython5>=1.0:devel/ipython5@${PY_FLAVOR}
-LIB_DEPENDS=	libembree.so:graphics/embree \
-		libomp.so:devel/openmp
 
 USES=		dos2unix localbase python
 USE_PYTHON=	distutils cython autoplist concurrent
