@@ -2,12 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	imapproxy
-PORTVERSION=	1.2.7
-PORTREVISION=	5
+DISTVERSION=	1.2.8-pre20171105
 CATEGORIES=	mail
-MASTER_SITES=	SF/squirrelmail/imap_proxy/${PORTVERSION}
 PKGNAMEPREFIX=	up-
-DISTNAME=	squirrelmail-imap_proxy-${PORTVERSION}
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Caching IMAP proxy server
@@ -16,6 +13,11 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf tar:bzip2 ncurses pathfix ssl
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	rlaager
+GH_PROJECT=	${PORTNAME}-pkg
+GH_TAGNAME=	upstream/1.2.8_svn20171105
 
 OPTIONS_DEFINE=	DOVECOT DOCS
 
@@ -31,6 +33,9 @@ SUB_FILES=	pkg-message
 
 DOCS=		ChangeLog README README.debian README.known_issues README.ssl
 SBIN=		in.imapproxyd pimpstat
+
+post-patch:
+	${MKDIR} ${WRKSRC}/bin
 
 do-install:
 .for i in ${SBIN}

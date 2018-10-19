@@ -1,2 +1,3 @@
-SHA256 (squirrelmail-imap_proxy-1.2.7.tar.bz2) = dd8ad40e3e457bd76fc9f19ef1c0d89911e3e3cc722415d1183f765dcac1ae48
-SIZE (squirrelmail-imap_proxy-1.2.7.tar.bz2) = 111651
+TIMESTAMP = 1539772291
+SHA256 (rlaager-imapproxy-pkg-1.2.8-pre20171105-upstream-1.2.8_svn20171105_GH0.tar.gz) = b4c9cbb7a370d1371dfc36f4670e0dfda8fea6dc8b19d4c7af74fa81a8000751
+SIZE (rlaager-imapproxy-pkg-1.2.8-pre20171105-upstream-1.2.8_svn20171105_GH0.tar.gz) = 146395
