@@ -16,6 +16,8 @@ LICENSE=	GPLv2
 
 CONFLICTS_INSTALL=dnsmasq-2*
 
+IGNORE=		use dns/dnsmasq, which is newer
+
 PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
 
 SUB_FILES=	pkg-message
