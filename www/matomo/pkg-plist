@@ -1,3 +1,4 @@
+%%WWWDIR%%/.lfsconfig
 %%WWWDIR%%/CHANGELOG.md
 %%WWWDIR%%/CONTRIBUTING.md
 %%WWWDIR%%/LEGALNOTICE
@@ -14,6 +15,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/config/global.ini.php
 @(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/config/global.php
 @(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/config/manifest.inc.php
+@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/piwik.js
 %%WWWDIR%%/console
 %%WWWDIR%%/core/API/ApiRenderer.php
 %%WWWDIR%%/core/API/CORSHandler.php
@@ -202,6 +204,7 @@
 %%WWWDIR%%/core/Development.php
 %%WWWDIR%%/core/DeviceDetectorCache.php
 %%WWWDIR%%/core/DeviceDetectorFactory.php
+%%WWWDIR%%/core/Email/ContentGenerator.php
 %%WWWDIR%%/core/ErrorHandler.php
 %%WWWDIR%%/core/EventDispatcher.php
 %%WWWDIR%%/core/Exception/AuthenticationFailedException.php
@@ -320,6 +323,7 @@
 %%WWWDIR%%/core/Scheduler/Schedule/Hourly.php
 %%WWWDIR%%/core/Scheduler/Schedule/Monthly.php
 %%WWWDIR%%/core/Scheduler/Schedule/Schedule.php
+%%WWWDIR%%/core/Scheduler/Schedule/SpecificTime.php
 %%WWWDIR%%/core/Scheduler/Schedule/Weekly.php
 %%WWWDIR%%/core/Scheduler/Scheduler.php
 %%WWWDIR%%/core/Scheduler/Task.php
@@ -558,6 +562,8 @@
 %%WWWDIR%%/core/Updates/3.6.0-b2.php
 %%WWWDIR%%/core/Updates/3.6.0-b3.php
 %%WWWDIR%%/core/Updates/3.6.0-b4.php
+%%WWWDIR%%/core/Updates/3.6.1-b2.php
+%%WWWDIR%%/core/Updates/3.6.1-b3.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/UrlHelper.php
 %%WWWDIR%%/core/Validators/BaseValidator.php
@@ -614,6 +620,7 @@
 %%WWWDIR%%/lang/dev.json
 %%WWWDIR%%/lang/el.json
 %%WWWDIR%%/lang/en.json
+%%WWWDIR%%/lang/es-ar.json
 %%WWWDIR%%/lang/es.json
 %%WWWDIR%%/lang/et.json
 %%WWWDIR%%/lang/eu.json
@@ -1427,7 +1434,6 @@
 %%WWWDIR%%/misc/others/widget_example_lastvisits.html
 %%WWWDIR%%/misc/proxy-hide-piwik-url/README.md
 %%WWWDIR%%/misc/user/index.html
-@(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/piwik.js
 %%WWWDIR%%/piwik.php
 %%WWWDIR%%/plugins/API/API.php
 %%WWWDIR%%/plugins/API/Controller.php
@@ -1460,6 +1466,7 @@
 %%WWWDIR%%/plugins/API/lang/de.json
 %%WWWDIR%%/plugins/API/lang/el.json
 %%WWWDIR%%/plugins/API/lang/en.json
+%%WWWDIR%%/plugins/API/lang/es-ar.json
 %%WWWDIR%%/plugins/API/lang/es.json
 %%WWWDIR%%/plugins/API/lang/et.json
 %%WWWDIR%%/plugins/API/lang/eu.json
@@ -1583,6 +1590,7 @@
 %%WWWDIR%%/plugins/Actions/lang/de.json
 %%WWWDIR%%/plugins/Actions/lang/el.json
 %%WWWDIR%%/plugins/Actions/lang/en.json
+%%WWWDIR%%/plugins/Actions/lang/es-ar.json
 %%WWWDIR%%/plugins/Actions/lang/es.json
 %%WWWDIR%%/plugins/Actions/lang/et.json
 %%WWWDIR%%/plugins/Actions/lang/eu.json
@@ -1639,6 +1647,7 @@
 %%WWWDIR%%/plugins/Annotations/lang/de.json
 %%WWWDIR%%/plugins/Annotations/lang/el.json
 %%WWWDIR%%/plugins/Annotations/lang/en.json
+%%WWWDIR%%/plugins/Annotations/lang/es-ar.json
 %%WWWDIR%%/plugins/Annotations/lang/es.json
 %%WWWDIR%%/plugins/Annotations/lang/et.json
 %%WWWDIR%%/plugins/Annotations/lang/fa.json
@@ -1711,6 +1720,7 @@
 %%WWWDIR%%/plugins/Contents/lang/de.json
 %%WWWDIR%%/plugins/Contents/lang/el.json
 %%WWWDIR%%/plugins/Contents/lang/en.json
+%%WWWDIR%%/plugins/Contents/lang/es-ar.json
 %%WWWDIR%%/plugins/Contents/lang/es.json
 %%WWWDIR%%/plugins/Contents/lang/et.json
 %%WWWDIR%%/plugins/Contents/lang/fi.json
@@ -1753,6 +1763,7 @@
 %%WWWDIR%%/plugins/CoreAdminHome/Controller.php
 %%WWWDIR%%/plugins/CoreAdminHome/CoreAdminHome.php
 %%WWWDIR%%/plugins/CoreAdminHome/CustomLogo.php
+%%WWWDIR%%/plugins/CoreAdminHome/Emails/JsTrackingCodeMissingEmail.php
 %%WWWDIR%%/plugins/CoreAdminHome/Menu.php
 %%WWWDIR%%/plugins/CoreAdminHome/Model/DuplicateActionRemover.php
 %%WWWDIR%%/plugins/CoreAdminHome/OptOutManager.php
@@ -1776,6 +1787,7 @@
 %%WWWDIR%%/plugins/CoreAdminHome/lang/de.json
 %%WWWDIR%%/plugins/CoreAdminHome/lang/el.json
 %%WWWDIR%%/plugins/CoreAdminHome/lang/en.json
+%%WWWDIR%%/plugins/CoreAdminHome/lang/es-ar.json
 %%WWWDIR%%/plugins/CoreAdminHome/lang/es.json
 %%WWWDIR%%/plugins/CoreAdminHome/lang/et.json
 %%WWWDIR%%/plugins/CoreAdminHome/lang/fa.json
@@ -1817,6 +1829,7 @@
 %%WWWDIR%%/plugins/CoreAdminHome/lang/zh-tw.json
 %%WWWDIR%%/plugins/CoreAdminHome/stylesheets/generalSettings.less
 %%WWWDIR%%/plugins/CoreAdminHome/stylesheets/jsTrackingGenerator.css
+%%WWWDIR%%/plugins/CoreAdminHome/templates/_jsTrackingCodeMissingEmail.twig
 %%WWWDIR%%/plugins/CoreAdminHome/templates/generalSettings.twig
 %%WWWDIR%%/plugins/CoreAdminHome/templates/home.twig
 %%WWWDIR%%/plugins/CoreAdminHome/templates/optOut.twig
@@ -2087,6 +2100,7 @@
 %%WWWDIR%%/plugins/CoreHome/lang/de.json
 %%WWWDIR%%/plugins/CoreHome/lang/el.json
 %%WWWDIR%%/plugins/CoreHome/lang/en.json
+%%WWWDIR%%/plugins/CoreHome/lang/es-ar.json
 %%WWWDIR%%/plugins/CoreHome/lang/es.json
 %%WWWDIR%%/plugins/CoreHome/lang/et.json
 %%WWWDIR%%/plugins/CoreHome/lang/eu.json
@@ -2162,6 +2176,8 @@
 %%WWWDIR%%/plugins/CoreHome/templates/_donate.twig
 %%WWWDIR%%/plugins/CoreHome/templates/_favicon.twig
 %%WWWDIR%%/plugins/CoreHome/templates/_headerMessage.twig
+%%WWWDIR%%/plugins/CoreHome/templates/_htmlEmailFooter.twig
+%%WWWDIR%%/plugins/CoreHome/templates/_htmlEmailHeader.twig
 %%WWWDIR%%/plugins/CoreHome/templates/_indexContent.twig
 %%WWWDIR%%/plugins/CoreHome/templates/_javaScriptDisabled.twig
 %%WWWDIR%%/plugins/CoreHome/templates/_logo.twig
@@ -2241,6 +2257,7 @@
 %%WWWDIR%%/plugins/CorePluginsAdmin/lang/de.json
 %%WWWDIR%%/plugins/CorePluginsAdmin/lang/el.json
 %%WWWDIR%%/plugins/CorePluginsAdmin/lang/en.json
+%%WWWDIR%%/plugins/CorePluginsAdmin/lang/es-ar.json
 %%WWWDIR%%/plugins/CorePluginsAdmin/lang/es.json
 %%WWWDIR%%/plugins/CorePluginsAdmin/lang/et.json
 %%WWWDIR%%/plugins/CorePluginsAdmin/lang/eu.json
@@ -2319,6 +2336,7 @@
 %%WWWDIR%%/plugins/CoreUpdater/lang/de.json
 %%WWWDIR%%/plugins/CoreUpdater/lang/el.json
 %%WWWDIR%%/plugins/CoreUpdater/lang/en.json
+%%WWWDIR%%/plugins/CoreUpdater/lang/es-ar.json
 %%WWWDIR%%/plugins/CoreUpdater/lang/es.json
 %%WWWDIR%%/plugins/CoreUpdater/lang/et.json
 %%WWWDIR%%/plugins/CoreUpdater/lang/eu.json
@@ -2480,6 +2498,7 @@
 %%WWWDIR%%/plugins/CustomVariables/lang/de.json
 %%WWWDIR%%/plugins/CustomVariables/lang/el.json
 %%WWWDIR%%/plugins/CustomVariables/lang/en.json
+%%WWWDIR%%/plugins/CustomVariables/lang/es-ar.json
 %%WWWDIR%%/plugins/CustomVariables/lang/es.json
 %%WWWDIR%%/plugins/CustomVariables/lang/et.json
 %%WWWDIR%%/plugins/CustomVariables/lang/fa.json
@@ -2546,6 +2565,7 @@
 %%WWWDIR%%/plugins/DBStats/lang/de.json
 %%WWWDIR%%/plugins/DBStats/lang/el.json
 %%WWWDIR%%/plugins/DBStats/lang/en.json
+%%WWWDIR%%/plugins/DBStats/lang/es-ar.json
 %%WWWDIR%%/plugins/DBStats/lang/es.json
 %%WWWDIR%%/plugins/DBStats/lang/et.json
 %%WWWDIR%%/plugins/DBStats/lang/eu.json
@@ -2615,6 +2635,7 @@
 %%WWWDIR%%/plugins/Dashboard/lang/de.json
 %%WWWDIR%%/plugins/Dashboard/lang/el.json
 %%WWWDIR%%/plugins/Dashboard/lang/en.json
+%%WWWDIR%%/plugins/Dashboard/lang/es-ar.json
 %%WWWDIR%%/plugins/Dashboard/lang/es.json
 %%WWWDIR%%/plugins/Dashboard/lang/et.json
 %%WWWDIR%%/plugins/Dashboard/lang/eu.json
@@ -2693,6 +2714,7 @@
 %%WWWDIR%%/plugins/DevicePlugins/lang/de.json
 %%WWWDIR%%/plugins/DevicePlugins/lang/el.json
 %%WWWDIR%%/plugins/DevicePlugins/lang/en.json
+%%WWWDIR%%/plugins/DevicePlugins/lang/es-ar.json
 %%WWWDIR%%/plugins/DevicePlugins/lang/es.json
 %%WWWDIR%%/plugins/DevicePlugins/lang/et.json
 %%WWWDIR%%/plugins/DevicePlugins/lang/eu.json
@@ -2767,6 +2789,7 @@
 %%WWWDIR%%/plugins/DevicesDetection/lang/de.json
 %%WWWDIR%%/plugins/DevicesDetection/lang/el.json
 %%WWWDIR%%/plugins/DevicesDetection/lang/en.json
+%%WWWDIR%%/plugins/DevicesDetection/lang/es-ar.json
 %%WWWDIR%%/plugins/DevicesDetection/lang/es.json
 %%WWWDIR%%/plugins/DevicesDetection/lang/et.json
 %%WWWDIR%%/plugins/DevicesDetection/lang/eu.json
@@ -2916,6 +2939,7 @@
 %%WWWDIR%%/plugins/Ecommerce/lang/de.json
 %%WWWDIR%%/plugins/Ecommerce/lang/el.json
 %%WWWDIR%%/plugins/Ecommerce/lang/en.json
+%%WWWDIR%%/plugins/Ecommerce/lang/es-ar.json
 %%WWWDIR%%/plugins/Ecommerce/lang/es.json
 %%WWWDIR%%/plugins/Ecommerce/lang/et.json
 %%WWWDIR%%/plugins/Ecommerce/lang/fi.json
@@ -2980,6 +3004,7 @@
 %%WWWDIR%%/plugins/Events/lang/de.json
 %%WWWDIR%%/plugins/Events/lang/el.json
 %%WWWDIR%%/plugins/Events/lang/en.json
+%%WWWDIR%%/plugins/Events/lang/es-ar.json
 %%WWWDIR%%/plugins/Events/lang/es.json
 %%WWWDIR%%/plugins/Events/lang/et.json
 %%WWWDIR%%/plugins/Events/lang/fa.json
@@ -3117,6 +3142,7 @@
 %%WWWDIR%%/plugins/Feedback/lang/de.json
 %%WWWDIR%%/plugins/Feedback/lang/el.json
 %%WWWDIR%%/plugins/Feedback/lang/en.json
+%%WWWDIR%%/plugins/Feedback/lang/es-ar.json
 %%WWWDIR%%/plugins/Feedback/lang/es.json
 %%WWWDIR%%/plugins/Feedback/lang/et.json
 %%WWWDIR%%/plugins/Feedback/lang/fa.json
@@ -3169,6 +3195,7 @@
 %%WWWDIR%%/plugins/GeoIp2/lang/de.json
 %%WWWDIR%%/plugins/GeoIp2/lang/el.json
 %%WWWDIR%%/plugins/GeoIp2/lang/en.json
+%%WWWDIR%%/plugins/GeoIp2/lang/es.json
 %%WWWDIR%%/plugins/GeoIp2/lang/fr.json
 %%WWWDIR%%/plugins/GeoIp2/lang/it.json
 %%WWWDIR%%/plugins/GeoIp2/lang/ja.json
@@ -3234,6 +3261,7 @@
 %%WWWDIR%%/plugins/Goals/lang/de.json
 %%WWWDIR%%/plugins/Goals/lang/el.json
 %%WWWDIR%%/plugins/Goals/lang/en.json
+%%WWWDIR%%/plugins/Goals/lang/es-ar.json
 %%WWWDIR%%/plugins/Goals/lang/es.json
 %%WWWDIR%%/plugins/Goals/lang/et.json
 %%WWWDIR%%/plugins/Goals/lang/eu.json
@@ -3306,6 +3334,7 @@
 %%WWWDIR%%/plugins/ImageGraph/lang/de.json
 %%WWWDIR%%/plugins/ImageGraph/lang/el.json
 %%WWWDIR%%/plugins/ImageGraph/lang/en.json
+%%WWWDIR%%/plugins/ImageGraph/lang/es-ar.json
 %%WWWDIR%%/plugins/ImageGraph/lang/es.json
 %%WWWDIR%%/plugins/ImageGraph/lang/fa.json
 %%WWWDIR%%/plugins/ImageGraph/lang/fi.json
@@ -3418,6 +3447,7 @@
 %%WWWDIR%%/plugins/Installation/lang/de.json
 %%WWWDIR%%/plugins/Installation/lang/el.json
 %%WWWDIR%%/plugins/Installation/lang/en.json
+%%WWWDIR%%/plugins/Installation/lang/es-ar.json
 %%WWWDIR%%/plugins/Installation/lang/es.json
 %%WWWDIR%%/plugins/Installation/lang/et.json
 %%WWWDIR%%/plugins/Installation/lang/eu.json
@@ -3495,6 +3525,7 @@
 %%WWWDIR%%/plugins/Intl/lang/dev.json
 %%WWWDIR%%/plugins/Intl/lang/el.json
 %%WWWDIR%%/plugins/Intl/lang/en.json
+%%WWWDIR%%/plugins/Intl/lang/es-ar.json
 %%WWWDIR%%/plugins/Intl/lang/es.json
 %%WWWDIR%%/plugins/Intl/lang/et.json
 %%WWWDIR%%/plugins/Intl/lang/eu.json
@@ -3536,6 +3567,19 @@
 %%WWWDIR%%/plugins/Intl/lang/vi.json
 %%WWWDIR%%/plugins/Intl/lang/zh-cn.json
 %%WWWDIR%%/plugins/Intl/lang/zh-tw.json
+%%WWWDIR%%/plugins/IntranetMeasurable/IntranetMeasurable.php
+%%WWWDIR%%/plugins/IntranetMeasurable/MeasurableSettings.php
+%%WWWDIR%%/plugins/IntranetMeasurable/Tracker/RequestProcessor.php
+%%WWWDIR%%/plugins/IntranetMeasurable/Type.php
+%%WWWDIR%%/plugins/IntranetMeasurable/lang/de.json
+%%WWWDIR%%/plugins/IntranetMeasurable/lang/el.json
+%%WWWDIR%%/plugins/IntranetMeasurable/lang/en.json
+%%WWWDIR%%/plugins/IntranetMeasurable/lang/fr.json
+%%WWWDIR%%/plugins/IntranetMeasurable/lang/it.json
+%%WWWDIR%%/plugins/IntranetMeasurable/lang/pt.json
+%%WWWDIR%%/plugins/IntranetMeasurable/lang/sq.json
+%%WWWDIR%%/plugins/IntranetMeasurable/lang/tr.json
+%%WWWDIR%%/plugins/IntranetMeasurable/plugin.json
 %%WWWDIR%%/plugins/LanguagesManager/API.php
 %%WWWDIR%%/plugins/LanguagesManager/Commands/CreatePull.php
 %%WWWDIR%%/plugins/LanguagesManager/Commands/FetchTranslations.php
@@ -3574,6 +3618,7 @@
 %%WWWDIR%%/plugins/LanguagesManager/lang/de.json
 %%WWWDIR%%/plugins/LanguagesManager/lang/el.json
 %%WWWDIR%%/plugins/LanguagesManager/lang/en.json
+%%WWWDIR%%/plugins/LanguagesManager/lang/es-ar.json
 %%WWWDIR%%/plugins/LanguagesManager/lang/es.json
 %%WWWDIR%%/plugins/LanguagesManager/lang/et.json
 %%WWWDIR%%/plugins/LanguagesManager/lang/fa.json
@@ -3651,8 +3696,6 @@
 %%WWWDIR%%/plugins/Live/images/returningVisitor.png
 %%WWWDIR%%/plugins/Live/images/unknown_avatar.png
 %%WWWDIR%%/plugins/Live/images/visitorProfileLaunch.png
-%%WWWDIR%%/plugins/Live/images/visitorlog-hover.png
-%%WWWDIR%%/plugins/Live/images/visitorlog.png
 %%WWWDIR%%/plugins/Live/javascripts/SegmentedVisitorLog.js
 %%WWWDIR%%/plugins/Live/javascripts/live.js
 %%WWWDIR%%/plugins/Live/javascripts/rowaction.js
@@ -3668,6 +3711,7 @@
 %%WWWDIR%%/plugins/Live/lang/de.json
 %%WWWDIR%%/plugins/Live/lang/el.json
 %%WWWDIR%%/plugins/Live/lang/en.json
+%%WWWDIR%%/plugins/Live/lang/es-ar.json
 %%WWWDIR%%/plugins/Live/lang/es.json
 %%WWWDIR%%/plugins/Live/lang/et.json
 %%WWWDIR%%/plugins/Live/lang/eu.json
@@ -3747,6 +3791,7 @@
 %%WWWDIR%%/plugins/Login/lang/de.json
 %%WWWDIR%%/plugins/Login/lang/el.json
 %%WWWDIR%%/plugins/Login/lang/en.json
+%%WWWDIR%%/plugins/Login/lang/es-ar.json
 %%WWWDIR%%/plugins/Login/lang/es.json
 %%WWWDIR%%/plugins/Login/lang/et.json
 %%WWWDIR%%/plugins/Login/lang/eu.json
@@ -3950,6 +3995,7 @@
 %%WWWDIR%%/plugins/MobileMessaging/lang/de.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/el.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/en.json
+%%WWWDIR%%/plugins/MobileMessaging/lang/es-ar.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/es.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/et.json
 %%WWWDIR%%/plugins/MobileMessaging/lang/fa.json
@@ -4023,6 +4069,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/4Good.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Acer.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Aiwa.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Akai.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Alcatel.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Amazon.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Apple.png
@@ -4040,11 +4087,13 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/BenQ.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Bitel.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Blaupunkt.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Bluboo.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Cat.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Celkon.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Cherry_Mobile.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/China Mobile.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/CnM.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Comio.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Compal.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Compaq.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/ConCorde.png
@@ -4070,6 +4119,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Essential.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Evertek.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Evolveo.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/FNB.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Fly.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Freetel.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Fujitsu.png
@@ -4167,6 +4217,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Spice.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/T-Mobile.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/TCL.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/TechPad.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/TechniSat.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/TechnoTrend.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Teclast.png
@@ -4181,8 +4232,10 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/TrekStor.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Tunisie_Telecom.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/UMIDIGI.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Uhappy.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Ulefone.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Unnecto.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Unonu.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Vernee.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Vertu.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/brand/Verykool.png
@@ -4269,6 +4322,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/FW.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/GA.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/GE.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/HC.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/HJ.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/I1.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/I2.png
@@ -4317,6 +4371,7 @@
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/OI.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/OM.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/ON.png
+%%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/OO.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/OP.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/OR.png
 %%WWWDIR%%/plugins/Morpheus/icons/dist/browsers/OT.png
@@ -5250,6 +5305,7 @@
 %%WWWDIR%%/plugins/MultiSites/lang/de.json
 %%WWWDIR%%/plugins/MultiSites/lang/el.json
 %%WWWDIR%%/plugins/MultiSites/lang/en.json
+%%WWWDIR%%/plugins/MultiSites/lang/es-ar.json
 %%WWWDIR%%/plugins/MultiSites/lang/es.json
 %%WWWDIR%%/plugins/MultiSites/lang/et.json
 %%WWWDIR%%/plugins/MultiSites/lang/fa.json
@@ -5314,6 +5370,7 @@
 %%WWWDIR%%/plugins/Overlay/lang/de.json
 %%WWWDIR%%/plugins/Overlay/lang/el.json
 %%WWWDIR%%/plugins/Overlay/lang/en.json
+%%WWWDIR%%/plugins/Overlay/lang/es-ar.json
 %%WWWDIR%%/plugins/Overlay/lang/es.json
 %%WWWDIR%%/plugins/Overlay/lang/et.json
 %%WWWDIR%%/plugins/Overlay/lang/fa.json
@@ -5405,6 +5462,7 @@
 %%WWWDIR%%/plugins/PrivacyManager/lang/de.json
 %%WWWDIR%%/plugins/PrivacyManager/lang/el.json
 %%WWWDIR%%/plugins/PrivacyManager/lang/en.json
+%%WWWDIR%%/plugins/PrivacyManager/lang/es-ar.json
 %%WWWDIR%%/plugins/PrivacyManager/lang/es.json
 %%WWWDIR%%/plugins/PrivacyManager/lang/et.json
 %%WWWDIR%%/plugins/PrivacyManager/lang/fa.json
@@ -5490,6 +5548,7 @@
 %%WWWDIR%%/plugins/Provider/lang/de.json
 %%WWWDIR%%/plugins/Provider/lang/el.json
 %%WWWDIR%%/plugins/Provider/lang/en.json
+%%WWWDIR%%/plugins/Provider/lang/es-ar.json
 %%WWWDIR%%/plugins/Provider/lang/es.json
 %%WWWDIR%%/plugins/Provider/lang/et.json
 %%WWWDIR%%/plugins/Provider/lang/eu.json
@@ -5591,6 +5650,7 @@
 %%WWWDIR%%/plugins/Referrers/lang/de.json
 %%WWWDIR%%/plugins/Referrers/lang/el.json
 %%WWWDIR%%/plugins/Referrers/lang/en.json
+%%WWWDIR%%/plugins/Referrers/lang/es-ar.json
 %%WWWDIR%%/plugins/Referrers/lang/es.json
 %%WWWDIR%%/plugins/Referrers/lang/et.json
 %%WWWDIR%%/plugins/Referrers/lang/eu.json
@@ -5653,6 +5713,7 @@
 %%WWWDIR%%/plugins/Resolution/lang/de.json
 %%WWWDIR%%/plugins/Resolution/lang/el.json
 %%WWWDIR%%/plugins/Resolution/lang/en.json
+%%WWWDIR%%/plugins/Resolution/lang/es-ar.json
 %%WWWDIR%%/plugins/Resolution/lang/es.json
 %%WWWDIR%%/plugins/Resolution/lang/et.json
 %%WWWDIR%%/plugins/Resolution/lang/eu.json
@@ -5720,6 +5781,7 @@
 %%WWWDIR%%/plugins/SEO/lang/de.json
 %%WWWDIR%%/plugins/SEO/lang/el.json
 %%WWWDIR%%/plugins/SEO/lang/en.json
+%%WWWDIR%%/plugins/SEO/lang/es-ar.json
 %%WWWDIR%%/plugins/SEO/lang/es.json
 %%WWWDIR%%/plugins/SEO/lang/et.json
 %%WWWDIR%%/plugins/SEO/lang/fa.json
@@ -5780,6 +5842,7 @@
 %%WWWDIR%%/plugins/ScheduledReports/lang/de.json
 %%WWWDIR%%/plugins/ScheduledReports/lang/el.json
 %%WWWDIR%%/plugins/ScheduledReports/lang/en.json
+%%WWWDIR%%/plugins/ScheduledReports/lang/es-ar.json
 %%WWWDIR%%/plugins/ScheduledReports/lang/es.json
 %%WWWDIR%%/plugins/ScheduledReports/lang/et.json
 %%WWWDIR%%/plugins/ScheduledReports/lang/fa.json
@@ -5858,6 +5921,7 @@
 %%WWWDIR%%/plugins/SegmentEditor/lang/de.json
 %%WWWDIR%%/plugins/SegmentEditor/lang/el.json
 %%WWWDIR%%/plugins/SegmentEditor/lang/en.json
+%%WWWDIR%%/plugins/SegmentEditor/lang/es-ar.json
 %%WWWDIR%%/plugins/SegmentEditor/lang/es.json
 %%WWWDIR%%/plugins/SegmentEditor/lang/et.json
 %%WWWDIR%%/plugins/SegmentEditor/lang/fa.json
@@ -5920,6 +5984,7 @@
 %%WWWDIR%%/plugins/SitesManager/lang/de.json
 %%WWWDIR%%/plugins/SitesManager/lang/el.json
 %%WWWDIR%%/plugins/SitesManager/lang/en.json
+%%WWWDIR%%/plugins/SitesManager/lang/es-ar.json
 %%WWWDIR%%/plugins/SitesManager/lang/es.json
 %%WWWDIR%%/plugins/SitesManager/lang/et.json
 %%WWWDIR%%/plugins/SitesManager/lang/eu.json
@@ -5995,6 +6060,7 @@
 %%WWWDIR%%/plugins/Transitions/lang/de.json
 %%WWWDIR%%/plugins/Transitions/lang/el.json
 %%WWWDIR%%/plugins/Transitions/lang/en.json
+%%WWWDIR%%/plugins/Transitions/lang/es-ar.json
 %%WWWDIR%%/plugins/Transitions/lang/es.json
 %%WWWDIR%%/plugins/Transitions/lang/et.json
 %%WWWDIR%%/plugins/Transitions/lang/fa.json
@@ -6076,6 +6142,7 @@
 %%WWWDIR%%/plugins/UserCountry/lang/de.json
 %%WWWDIR%%/plugins/UserCountry/lang/el.json
 %%WWWDIR%%/plugins/UserCountry/lang/en.json
+%%WWWDIR%%/plugins/UserCountry/lang/es-ar.json
 %%WWWDIR%%/plugins/UserCountry/lang/es.json
 %%WWWDIR%%/plugins/UserCountry/lang/et.json
 %%WWWDIR%%/plugins/UserCountry/lang/eu.json
@@ -6147,6 +6214,7 @@
 %%WWWDIR%%/plugins/UserCountryMap/lang/de.json
 %%WWWDIR%%/plugins/UserCountryMap/lang/el.json
 %%WWWDIR%%/plugins/UserCountryMap/lang/en.json
+%%WWWDIR%%/plugins/UserCountryMap/lang/es-ar.json
 %%WWWDIR%%/plugins/UserCountryMap/lang/es.json
 %%WWWDIR%%/plugins/UserCountryMap/lang/et.json
 %%WWWDIR%%/plugins/UserCountryMap/lang/fa.json
@@ -6374,8 +6442,6 @@
 %%WWWDIR%%/plugins/UserId/Reports/Base.php
 %%WWWDIR%%/plugins/UserId/Reports/GetUsers.php
 %%WWWDIR%%/plugins/UserId/UserId.php
-%%WWWDIR%%/plugins/UserId/images/visitordetails-hover.png
-%%WWWDIR%%/plugins/UserId/images/visitordetails.png
 %%WWWDIR%%/plugins/UserId/javascripts/rowaction.js
 %%WWWDIR%%/plugins/UserId/lang/am.json
 %%WWWDIR%%/plugins/UserId/lang/ar.json
@@ -6387,6 +6453,7 @@
 %%WWWDIR%%/plugins/UserId/lang/de.json
 %%WWWDIR%%/plugins/UserId/lang/el.json
 %%WWWDIR%%/plugins/UserId/lang/en.json
+%%WWWDIR%%/plugins/UserId/lang/es-ar.json
 %%WWWDIR%%/plugins/UserId/lang/es.json
 %%WWWDIR%%/plugins/UserId/lang/et.json
 %%WWWDIR%%/plugins/UserId/lang/eu.json
@@ -6447,6 +6514,7 @@
 %%WWWDIR%%/plugins/UserLanguage/lang/de.json
 %%WWWDIR%%/plugins/UserLanguage/lang/el.json
 %%WWWDIR%%/plugins/UserLanguage/lang/en.json
+%%WWWDIR%%/plugins/UserLanguage/lang/es-ar.json
 %%WWWDIR%%/plugins/UserLanguage/lang/es.json
 %%WWWDIR%%/plugins/UserLanguage/lang/et.json
 %%WWWDIR%%/plugins/UserLanguage/lang/eu.json
@@ -6528,6 +6596,7 @@
 %%WWWDIR%%/plugins/UsersManager/lang/de.json
 %%WWWDIR%%/plugins/UsersManager/lang/el.json
 %%WWWDIR%%/plugins/UsersManager/lang/en.json
+%%WWWDIR%%/plugins/UsersManager/lang/es-ar.json
 %%WWWDIR%%/plugins/UsersManager/lang/es.json
 %%WWWDIR%%/plugins/UsersManager/lang/et.json
 %%WWWDIR%%/plugins/UsersManager/lang/eu.json
@@ -6589,6 +6658,7 @@
 %%WWWDIR%%/plugins/VisitFrequency/lang/de.json
 %%WWWDIR%%/plugins/VisitFrequency/lang/el.json
 %%WWWDIR%%/plugins/VisitFrequency/lang/en.json
+%%WWWDIR%%/plugins/VisitFrequency/lang/es-ar.json
 %%WWWDIR%%/plugins/VisitFrequency/lang/es.json
 %%WWWDIR%%/plugins/VisitFrequency/lang/et.json
 %%WWWDIR%%/plugins/VisitFrequency/lang/eu.json
@@ -6655,6 +6725,7 @@
 %%WWWDIR%%/plugins/VisitTime/lang/de.json
 %%WWWDIR%%/plugins/VisitTime/lang/el.json
 %%WWWDIR%%/plugins/VisitTime/lang/en.json
+%%WWWDIR%%/plugins/VisitTime/lang/es-ar.json
 %%WWWDIR%%/plugins/VisitTime/lang/es.json
 %%WWWDIR%%/plugins/VisitTime/lang/et.json
 %%WWWDIR%%/plugins/VisitTime/lang/eu.json
@@ -6719,6 +6790,7 @@
 %%WWWDIR%%/plugins/VisitorInterest/lang/de.json
 %%WWWDIR%%/plugins/VisitorInterest/lang/el.json
 %%WWWDIR%%/plugins/VisitorInterest/lang/en.json
+%%WWWDIR%%/plugins/VisitorInterest/lang/es-ar.json
 %%WWWDIR%%/plugins/VisitorInterest/lang/es.json
 %%WWWDIR%%/plugins/VisitorInterest/lang/et.json
 %%WWWDIR%%/plugins/VisitorInterest/lang/eu.json
@@ -6773,6 +6845,7 @@
 %%WWWDIR%%/plugins/VisitsSummary/lang/de.json
 %%WWWDIR%%/plugins/VisitsSummary/lang/el.json
 %%WWWDIR%%/plugins/VisitsSummary/lang/en.json
+%%WWWDIR%%/plugins/VisitsSummary/lang/es-ar.json
 %%WWWDIR%%/plugins/VisitsSummary/lang/es.json
 %%WWWDIR%%/plugins/VisitsSummary/lang/et.json
 %%WWWDIR%%/plugins/VisitsSummary/lang/eu.json
@@ -6833,6 +6906,7 @@
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/de.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/el.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/en.json
+%%WWWDIR%%/plugins/WebsiteMeasurable/lang/es-ar.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/es.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/et.json
 %%WWWDIR%%/plugins/WebsiteMeasurable/lang/eu.json
@@ -6882,6 +6956,7 @@
 %%WWWDIR%%/plugins/Widgetize/lang/de.json
 %%WWWDIR%%/plugins/Widgetize/lang/el.json
 %%WWWDIR%%/plugins/Widgetize/lang/en.json
+%%WWWDIR%%/plugins/Widgetize/lang/es-ar.json
 %%WWWDIR%%/plugins/Widgetize/lang/es.json
 %%WWWDIR%%/plugins/Widgetize/lang/et.json
 %%WWWDIR%%/plugins/Widgetize/lang/fa.json
@@ -8012,7 +8087,7 @@
 @dir %%WWWDIR%%/vendor/geoip2/geoip2/maxmind-db
 @dir %%WWWDIR%%/vendor/symfony/console/Symfony/Component/Console/Resources
 @dir %%WWWDIR%%/vendor/szymach/c-pchart/app/cache
-@dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp/cache/tracker
 @dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp/cache
+@dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp/cache/tracker
 @dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/config
