@@ -3,6 +3,7 @@
 
 PORTNAME=	knot
 DISTVERSION=	2.7.3
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		https://dns.company/downloads/knot-dns/
@@ -12,12 +13,6 @@ MAINTAINER=	freebsd@dns.company
 COMMENT=	High performance authoritative-only DNS server
 
 LICENSE=	GPLv3
-
-.include <bsd.port.options.mk>
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1120000
-NOT_FOR_ARCHS= i386
-NOT_FOR_ARCHS_REASON_i386=Uses 64 bit atomics that clang cannot generate on i386 on FreeBSD >= 11.2
-.endif
 
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libidn2.so:dns/libidn2 \
@@ -64,6 +59,13 @@ FASTPARSER_CONFIGURE_ENABLE=	fastparser
 
 IDN_CONFIGURE_WITH=		libidn
 IDN_LIB_DEPENDS=		libidn.so:dns/libidn
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1120000
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON_i386=Uses 64 bit atomics that clang cannot generate on i386 on FreeBSD >= 11.2
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's|$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|#$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|' \
