@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slib
-PORTVERSION=	3b4
+PORTVERSION=	3b5
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
 		http://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
@@ -10,10 +10,15 @@ MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable scheme library
 
+LICENSE=	PD
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		gmake makeinfo
+
 ALL_TARGET=	slib.info
 INFO=		slib
 NO_ARCH=	yes
+PORTDOCS=	ANNOUNCE ChangeLog FAQ README
 
 OPTIONS_DEFINE=	DOCS
 
@@ -23,14 +28,12 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.scm ${WRKSRC}/*.init ${WRKSRC}/*.txt \
-		${WRKSRC}/*.xyz ${WRKSRC}/*.ps ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} ; ${INSTALL_DATA} *.scm *.init *.txt \
+		*.xyz *.ps ${STAGEDIR}${DATADIR})
 	${INSTALL_DATA} ${WRKSRC}/slib.info ${STAGEDIR}${PREFIX}/info
 
-do-install-DOCS-on:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ANNOUNCE ChangeLog FAQ README
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
