@@ -13,6 +13,9 @@ DISTNAME=	ko-man-doc-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Korean online manual pages
 
+DEPRECATED=	unmaintained and outdated
+EXPIRATION_DATE=	2018-12-31
+
 RUN_DEPENDS=	${LOCALBASE}/bin/groff:japanese/groff
 
 post-patch:
