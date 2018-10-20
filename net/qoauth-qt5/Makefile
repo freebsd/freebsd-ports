@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libqca-qt5.so:devel/qca@qt5
 
-USES=		qmake:outsource qt:5
+USES=		compiler:c++11-lang qmake:outsource qt:5
 USE_LDCONFIG=	yes
 USE_QT=		core network testlib buildtools_build qmake_build
 
