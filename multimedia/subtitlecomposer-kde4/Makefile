@@ -18,6 +18,7 @@ USES=		cmake:outsource gettext kde:4 qt:4 shared-mime-info
 USE_KDE=	kdelibs automoc4
 USE_QT=		qmake_build moc_build rcc_build uic_build phonon
 USE_CXXSTD=	gnu++98
+CXXFLAGS+=	-DU_NOEXCEPT= # For USE_CXXSTD=gnu++98
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxrd2
