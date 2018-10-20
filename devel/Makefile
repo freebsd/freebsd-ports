@@ -2993,6 +2993,7 @@
     SUBDIR += p5-MooX-Options
     SUBDIR += p5-MooX-StrictConstructor
     SUBDIR += p5-MooX-Thunking
+    SUBDIR += p5-MooX-Traits
     SUBDIR += p5-MooX-TypeTiny
     SUBDIR += p5-MooX-Types-MooseLike
     SUBDIR += p5-MooX-Types-MooseLike-Numeric
