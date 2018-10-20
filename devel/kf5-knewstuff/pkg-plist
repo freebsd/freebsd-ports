@@ -20,6 +20,7 @@ include/KF5/KNewStuff3/KNSCore/Question
 include/KF5/KNewStuff3/KNSCore/QuestionListener
 include/KF5/KNewStuff3/KNSCore/QuestionManager
 include/KF5/KNewStuff3/KNSCore/Security
+include/KF5/KNewStuff3/KNSCore/TagsFilterChecker
 include/KF5/KNewStuff3/KNSCore/XmlLoader
 include/KF5/KNewStuff3/kns3/button.h
 include/KF5/KNewStuff3/kns3/downloaddialog.h
@@ -45,6 +46,7 @@ include/KF5/KNewStuff3/knscore/question.h
 include/KF5/KNewStuff3/knscore/questionlistener.h
 include/KF5/KNewStuff3/knscore/questionmanager.h
 include/KF5/KNewStuff3/knscore/security.h
+include/KF5/KNewStuff3/knscore/tagsfilterchecker.h
 include/KF5/KNewStuff3/knscore/xmlloader.h
 include/KF5/knewstuff_version.h
 include/KF5/knewstuffcore_version.h

@@ -88,14 +88,16 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/Label.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/Menu.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/MenuItem.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/PageIndicator.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/Popup.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/ProgressBar.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/RadioButton.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/RadioDelegate.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/RadioIndicator.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/RangeSlider.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/RoundButton.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/ScrollBar.qml
-%%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/ScrollView.qml	
+%%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/ScrollView.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/Slider.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/SpinBox.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/Switch.qml
@@ -472,6 +474,7 @@ share/plasma/desktoptheme/default/icons/media.svgz
 share/plasma/desktoptheme/default/icons/nepomuk.svgz
 share/plasma/desktoptheme/default/icons/network.svgz
 share/plasma/desktoptheme/default/icons/notification.svgz
+share/plasma/desktoptheme/default/icons/osd.svgz
 share/plasma/desktoptheme/default/icons/phone.svgz
 share/plasma/desktoptheme/default/icons/plasmavault.svgz
 share/plasma/desktoptheme/default/icons/plasmavault_error.svgz

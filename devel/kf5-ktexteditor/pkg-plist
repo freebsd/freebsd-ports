@@ -1,4 +1,5 @@
 etc/dbus-1/system.d/org.kde.ktexteditor.katetextbuffer.conf
+etc/xdg/ktexteditor.categories
 include/KF5/KTextEditor/KTextEditor/AnnotationInterface
 include/KF5/KTextEditor/KTextEditor/Application
 include/KF5/KTextEditor/KTextEditor/Attribute

@@ -1,3 +1,3 @@
-TIMESTAMP = 1536000758
-SHA256 (KDE/frameworks/5.50.0/kconfigwidgets-5.50.0.tar.xz) = f2299a4c611d645ea6e6c6de1f90031254bfe0a60681fa4302db30f1caa04a80
-SIZE (KDE/frameworks/5.50.0/kconfigwidgets-5.50.0.tar.xz) = 375340
+TIMESTAMP = 1539410451
+SHA256 (KDE/frameworks/5.51.0/kconfigwidgets-5.51.0.tar.xz) = bcc3ccac9c766524652a6456e5bcd98c0c77a8195c02cafe9ce80442cbc6ef83
+SIZE (KDE/frameworks/5.51.0/kconfigwidgets-5.51.0.tar.xz) = 375216

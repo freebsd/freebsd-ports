@@ -1,3 +1,4 @@
+etc/xdg/syndication.categories
 include/KF5/Syndication/Syndication/AbstractParser
 include/KF5/Syndication/Syndication/Atom/Atom
 include/KF5/Syndication/Syndication/Atom/Category
