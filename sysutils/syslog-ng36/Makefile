@@ -15,6 +15,8 @@ PKGNAMESUFFIX=	36
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
+DEPRECATED=	No longer officially supported by Balabit, does not support openssl111
+EXPIRATION_DATE=	2018-12-31
 BROKEN_sparc64=		fails to compile: gcc core dump
 
 LIB_DEPENDS=	libevtlog.so:sysutils/eventlog \
@@ -53,6 +55,7 @@ CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}
+BROKEN_FreeBSD_12=	Fails to build with openssl111
 USES+=			ssl
 CONFIGURE_ARGS+=	--enable-ssl
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
