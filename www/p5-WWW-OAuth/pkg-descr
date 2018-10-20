@@ -5,4 +5,4 @@ prepares and signs requests, leaving the rest up to your application. It can
 authenticate requests for LWP::UserAgent, Mojo::UserAgent, HTTP::Tiny, and
 can be extended to operate on other types of requests.
 
-WWW: https://metacpan.org/pod/WWW::OAuth
+WWW: https://metacpan.org/release/WWW-OAuth
