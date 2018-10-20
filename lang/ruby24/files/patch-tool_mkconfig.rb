@@ -1,6 +1,6 @@
---- tool/mkconfig.rb.orig	2015-12-09 20:53:21 UTC
+--- tool/mkconfig.rb.orig	2016-11-17 07:19:49 UTC
 +++ tool/mkconfig.rb
-@@ -168,8 +168,9 @@ def vars.expand(val, config = self)
+@@ -159,8 +159,9 @@ def vars.expand(val, config = self)
    val.replace(newval) unless newval == val
    val
  end
@@ -11,4 +11,4 @@
 +rubyarchdir = "/lib/ruby/#{major}.#{minor}/#{arch}"
  relative_archdir = rubyarchdir.rindex(prefix, 0) ? rubyarchdir[prefix.size..-1] : rubyarchdir
  puts %[\
- # frozen-string-literal: false
+ # encoding: ascii-8bit

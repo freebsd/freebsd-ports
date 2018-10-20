@@ -1,6 +1,6 @@
---- ./lib/rdoc/generator/json_index.rb.orig	2017-11-12 19:37:25.144883000 -0500
-+++ ./lib/rdoc/generator/json_index.rb	2017-11-12 19:37:44.551836000 -0500
-@@ -175,7 +175,7 @@
+--- lib/rdoc/generator/json_index.rb.orig	2016-09-07 22:23:38 UTC
++++ lib/rdoc/generator/json_index.rb
+@@ -175,7 +175,7 @@ class RDoc::Generator::JsonIndex
      debug_msg "Writing gzipped search index to %s" % outfile
  
      Zlib::GzipWriter.open(outfile) do |gz|
@@ -9,7 +9,7 @@
        gz.orig_name = search_index_file.basename.to_s
        gz.write search_index
        gz.close
-@@ -193,7 +193,7 @@
+@@ -193,7 +193,7 @@ class RDoc::Generator::JsonIndex
          debug_msg "Writing gzipped file to %s" % outfile
  
          Zlib::GzipWriter.open(outfile) do |gz|
