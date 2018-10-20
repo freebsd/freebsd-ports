@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	googleauth
-PORTVERSION=	0.6.6
+PORTVERSION=	0.6.7
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -14,13 +14,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rubygem-faraday>=0.12:www/rubygem-faraday \
 		rubygem-jwt>=1.4:www/rubygem-jwt \
-		rubygem-memoist>=0.12:devel/rubygem-memoist \
+		rubygem-memoist>=0.16:devel/rubygem-memoist \
 		rubygem-multi_json>=1.11:devel/rubygem-multi_json \
 		rubygem-os>=0.9:devel/rubygem-os \
 		rubygem-signet>=0.7:security/rubygem-signet
 
-NO_ARCH=	yes
+USES=		gem shebangfix
 USE_RUBY=	yes
-USES=		gem
+
+NO_ARCH=	yes
+
+SHEBANG_FILES=	.kokoro/*.sh
 
 .include <bsd.port.mk>
