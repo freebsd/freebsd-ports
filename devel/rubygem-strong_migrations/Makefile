@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	strong_migrations
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
