@@ -7,7 +7,7 @@ CATEGORIES=	x11-toolkits
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	QML Box2D plugin
 
-USES=		qmake:outsource qt:5
+USES=		compiler:c++11-lang qmake:outsource qt:5
 USE_GITHUB=	yes
 GH_TAGNAME=	21e57f
 USE_GL=		gl
