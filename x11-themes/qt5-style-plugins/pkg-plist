@@ -1,7 +1,18 @@
-lib/cmake/Qt5Widgets/Qt5Widgets_.cmake
+lib/cmake/Qt5Gui/Qt5Gui_QGtk2ThemePlugin.cmake
+lib/cmake/Qt5Widgets/Qt5Widgets_QBB10StylePlugin.cmake
+lib/cmake/Qt5Widgets/Qt5Widgets_QCleanlooksStylePlugin.cmake
+lib/cmake/Qt5Widgets/Qt5Widgets_QGtk2StylePlugin.cmake
+lib/cmake/Qt5Widgets/Qt5Widgets_QMotifStylePlugin.cmake
+lib/cmake/Qt5Widgets/Qt5Widgets_QPlastiqueStylePlugin.cmake
+%%QT_PLUGINDIR%%/platformthemes/libqgtk2.so
+@comment %%QT_PLUGINDIR%%/platformthemes/libqgtk2.so.debug
+%%QT_PLUGINDIR%%/styles/libbb10styleplugin.so
+@comment %%QT_PLUGINDIR%%/styles/libbb10styleplugin.so.debug
 %%QT_PLUGINDIR%%/styles/libqcleanlooksstyle.so
-%%DEBUG%%%%QT_PLUGINDIR%%/styles/libqcleanlooksstyle.so.debug
+@comment %%QT_PLUGINDIR%%/styles/libqcleanlooksstyle.so.debug
+%%QT_PLUGINDIR%%/styles/libqgtk2style.so
+@comment %%QT_PLUGINDIR%%/styles/libqgtk2style.so.debug
 %%QT_PLUGINDIR%%/styles/libqmotifstyle.so
-%%DEBUG%%%%QT_PLUGINDIR%%/styles/libqmotifstyle.so.debug
+@comment %%QT_PLUGINDIR%%/styles/libqmotifstyle.so.debug
 %%QT_PLUGINDIR%%/styles/libqplastiquestyle.so
-%%DEBUG%%%%QT_PLUGINDIR%%/styles/libqplastiquestyle.so.debug
+@comment %%QT_PLUGINDIR%%/styles/libqplastiquestyle.so.debug

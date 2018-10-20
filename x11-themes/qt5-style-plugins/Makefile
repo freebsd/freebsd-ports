@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	qt5-style-plugins
-PORTVERSION=	5.0.0
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	5.0.0-23
+DISTVERSIONSUFFIX=	-g335dbe
 CATEGORIES=	x11-themes
-MASTER_SITES=	QT/community_releases/additional_qt_src_pkgs/
-DISTNAME=	qtstyleplugins-src-${PORTVERSION}
 DIST_SUBDIR=	KDE/Qt/addons
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,10 +13,16 @@ COMMENT=	Additional Styles for Qt 5 and KDE
 
 LICENSE=	LGPL21
 
-USES=		compiler:c++11-lang gl qmake qt:5
-USE_QT=		buildtools_build core gui widgets
-USE_GL+=	gl
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
-WRKSRC=		${WRKDIR}/qtstyleplugins-src-${PORTVERSION}
+USES=		compiler:c++11-lang gettext-runtime gl pkgconfig qmake qt:5
+USE_GITHUB=	yes
+GH_ACCOUNT=	qt
+GH_PROJECT=	qtstyleplugins
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
+USE_QT=		core dbus gui widgets buildtools_build
+USE_GL=		gl
+USE_XORG=	x11 xext
 
 .include <bsd.port.mk>
