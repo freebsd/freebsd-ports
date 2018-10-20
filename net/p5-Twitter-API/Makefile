@@ -3,6 +3,7 @@
 
 PORTNAME=	Twitter-API
 PORTVERSION=	1.0005
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +19,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Net-Twitter>0:net/p5-Net-Twitter \
     		p5-Devel-StackTrace>=1.21:devel/p5-Devel-StackTrace \
 		p5-Digest-HMAC>0:security/p5-Digest-HMAC \
+		p5-HTTP-Thin>0:www/p5-HTTP-Thin \
 		p5-IO-Socket-SSL>0:security/p5-IO-Socket-SSL \
 		p5-JSON-MaybeXS>0:converters/p5-JSON-MaybeXS \
 		p5-Moo>0:devel/p5-Moo \
