@@ -1,6 +1,6 @@
---- doc/suphp.conf-example.orig
+--- doc/suphp.conf-example.orig	2011-03-13 17:52:24 UTC
 +++ doc/suphp.conf-example
-@@ -6,10 +6,10 @@
+@@ -6,10 +6,10 @@ logfile=/var/log/suphp.log
  loglevel=info
  
  ;User Apache is running as
@@ -13,7 +13,7 @@
  
  ;Path to chroot() to before executing script
  ;chroot=/mychroot
-@@ -33,15 +33,15 @@
+@@ -33,15 +33,15 @@ env_path="/bin:/usr/bin"
  umask=0077
  
  ; Minimum UID
