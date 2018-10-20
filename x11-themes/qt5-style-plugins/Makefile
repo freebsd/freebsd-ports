@@ -14,7 +14,7 @@ COMMENT=	Additional Styles for Qt 5 and KDE
 
 LICENSE=	LGPL21
 
-USES=		qmake qt:5
+USES=		compiler:c++11-lang gl qmake qt:5
 USE_QT=		buildtools_build core gui widgets
 USE_GL+=	gl
 
