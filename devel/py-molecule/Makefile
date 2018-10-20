@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	molecule
-PORTVERSION=	2.18.1
+PORTVERSION=	2.19.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-lint>=3.4.23:sysutils/py-ansible-lin
 		${PYTHON_PKGNAMEPREFIX}sh>=1.12.14:devel/py-sh@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.11.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tabulate>=0.8.2:devel/py-tabulate@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}testinfra>=0.1.2:devel/py-testinfra@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}testinfra>=1.16.0:devel/py-testinfra@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tree-format>=0.1.2:devel/py-tree-format@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yamllint>=1.11.1:devel/py-yamllint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR}
