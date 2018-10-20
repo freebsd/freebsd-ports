@@ -18,13 +18,16 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
 LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
+BROKEN_SSL=	openssl-devel
+BROKEN_SSL_REASON_openssl-devel=does not detect and buid the openssl*.rb bits
+
 # Using LIB_DEPENDS finds the libffi from gcc which causes problems
 BUILD_DEPENDS=	libffi>=0:devel/libffi
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 RUN_DEPENDS=	libffi>=0:devel/libffi
 
-BROKEN_SSL=	openssl-devel
-BROKEN_SSL_REASON_openssl-devel=does not detect and buid the openssl*.rb bits	
+USES=		autoreconf cpe ssl tar:xz
+USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--disable-rpath \
@@ -38,8 +41,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 # Keep this, else ruby will fail to load libraries dependent of libpthread.
 LIBS+=		-lpthread -L${LOCALBASE}/lib
-USE_LDCONFIG=	yes
-USES=		autoreconf cpe ssl tar:xz
 WRKSRC=		${RUBY_WRKSRC}
 
 RUBY_VER=		2.3
@@ -116,14 +117,14 @@ MAKE_JOBS_UNSAFE=	yes
 .endif
 
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
-MLINKS=		${RUBY_NAME}.1 ruby.1
 PLIST_SUB+=	IF_DEFAULT=""
 .else
 PKGNAMESUFFIX=	${RUBY_VER:C/\.//}
 PLIST_SUB+=	IF_DEFAULT="@comment "
 .endif
 
-INSTALLED_SCRIPTS=	irb erb rdoc ri ruby
+INSTALLED_SCRIPTS=	erb irb rdoc ri ruby
+INSTALLED_MANUALS=	erb irb ri ruby
 
 EXTSAMPLES=	bigdecimal/sample/*.rb
 
@@ -197,12 +198,18 @@ pre-install-RDOC-on:
 	${MKDIR} ${STAGEDIR}${RUBY_SITERIDIR}
 
 post-install:
+.if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 #
 # Link just installed "ruby" to "ruby23", etc.
 #
-.if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 . for FILE in ${INSTALLED_SCRIPTS}
 	${LN} -fs ${FILE}${RUBY_SUFFIX} ${STAGEDIR}${PREFIX}/bin/${FILE}
+. endfor
+#
+# Link "ruby.1.gz" to "ruby23.1.gz", etc.
+#
+. for FILE in ${INSTALLED_MANUALS}
+	${LN} -fs ${FILE}${RUBY_SUFFIX}.1.gz ${STAGEDIR}${MANPREFIX}/man/man1/${FILE}.1.gz
 . endfor
 .endif
 
