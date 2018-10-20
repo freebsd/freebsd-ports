@@ -21,7 +21,11 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	DOCS EXAMPLES WAYLAND
+OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFAULT=X11
+PLATFORM_DESC=	Window creation platform
+OPTIONS_SINGLE=	PLATFORM
+OPTIONS_SINGLE_PLATFORM=	WAYLAND X11
 OPTIONS_EXCLUDE_FreeBSD_10=	WAYLAND # needs dev/evdev/input.h
 
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols
@@ -30,7 +34,8 @@ WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
 			libxkbcommon.so:x11/libxkbcommon
 WAYLAND_USES=		kde:5 pkgconfig
 WAYLAND_USE=		KDE=ecm
-WAYLAND_USE_OFF=	XORG=x11,xcursor,xinerama,xrandr,xxf86vm
+
+X11_USE=		XORG=x11,xcursor,xinerama,xrandr,xxf86vm
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/docs/html/search
