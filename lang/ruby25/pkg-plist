@@ -876,9 +876,13 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/yaml/dbm.rb
 %%RUBY_LIBDIR%%/yaml/store.rb
 libdata/pkgconfig/ruby-%%RUBY_VER%%.pc
+%%IF_DEFAULT%%man/man1/erb.1.gz
 man/man1/erb%%RUBY_SUFFIX%%.1.gz
+%%IF_DEFAULT%%man/man1/irb.1.gz
 man/man1/irb%%RUBY_SUFFIX%%.1.gz
+%%IF_DEFAULT%%man/man1/ri.1.gz
 man/man1/ri%%RUBY_SUFFIX%%.1.gz
+%%IF_DEFAULT%%man/man1/ruby.1.gz
 man/man1/%%RUBY_NAME%%.1.gz
 %%DOCS%%%%RUBY_DOCDIR%%/COPYING
 %%DOCS%%%%RUBY_DOCDIR%%/COPYING.ja
@@ -4013,6 +4017,7 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d38/symbol_8h__dep__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d38/symbol_8h__dep__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d38/symbol_8h__dep__incl.png
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d3c/structselect__set.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d40/structcls__struct__12byte.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d43/group__embed.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d43/group__embed.map

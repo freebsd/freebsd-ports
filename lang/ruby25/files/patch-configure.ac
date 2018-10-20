@@ -1,6 +1,6 @@
---- configure.ac.orig	2018-01-04 02:12:16.000000000 +0800
-+++ configure.ac	2018-07-19 14:45:11.636321000 +0800
-@@ -2482,7 +2482,7 @@
+--- configure.ac.orig	2018-01-03 18:12:16 UTC
++++ configure.ac
+@@ -2482,7 +2482,7 @@ AS_IF([test "$ac_cv_func_qsort_r" != no]
    AC_CACHE_CHECK(whether qsort_r is GNU version, rb_cv_gnu_qsort_r,
      [AC_TRY_COMPILE([
  @%:@include <stdlib.h>
@@ -9,7 +9,7 @@
  	    int (*compar)(const void *, const void *, void *),
  	    void *arg);
  ],[ ],
-@@ -2492,7 +2492,7 @@
+@@ -2492,7 +2492,7 @@ void qsort_r(void *base, size_t nmemb, s
    AC_CACHE_CHECK(whether qsort_r is BSD version, rb_cv_bsd_qsort_r,
      [AC_TRY_COMPILE([
  @%:@include <stdlib.h>
@@ -18,7 +18,7 @@
  	     void *arg, int (*compar)(void *, const void *, const void *));
  ],[ ],
        [rb_cv_bsd_qsort_r=yes],
-@@ -3245,7 +3245,7 @@
+@@ -3245,7 +3245,7 @@ AS_IF([test "$with_dln_a_out" != yes], [
  			: ${LDSHARED='$(CC) -shared'}
  			AS_IF([test "$rb_cv_binary_elf" = yes], [
  			    LDFLAGS="$LDFLAGS -rdynamic"
@@ -27,7 +27,7 @@
  			], [
  			  test "$GCC" = yes && test "$rb_cv_prog_gnu_ld" = yes || LDSHARED='$(LD) -Bshareable'
  			])
-@@ -3724,6 +3723,7 @@
+@@ -3724,6 +3724,7 @@ AS_CASE("$enable_shared", [yes], [
  	SOLIBS='$(LIBS)'
  	LIBRUBY_SO='lib$(RUBY_SO_NAME).$(SOEXT).$(MAJOR)$(MINOR)'
  	LIBRUBY_SONAME='$(LIBRUBY_SO)'
