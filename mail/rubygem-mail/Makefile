@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mail
-PORTVERSION=	2.7.0
+PORTVERSION=	2.7.1
 PORTEPOCH=	2
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
@@ -15,8 +15,9 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-mini_mime>=0.1.1:mail/rubygem-mini_mime
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
