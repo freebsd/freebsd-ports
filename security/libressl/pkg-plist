@@ -76,16 +76,16 @@ include/openssl/x509v3.h
 include/tls.h
 lib/libcrypto.a
 lib/libcrypto.so
-lib/libcrypto.so.43
-lib/libcrypto.so.43.0.1
+lib/libcrypto.so.44
+lib/libcrypto.so.44.0.1
 lib/libssl.a
 lib/libssl.so
-lib/libssl.so.45
-lib/libssl.so.45.0.1
+lib/libssl.so.46
+lib/libssl.so.46.0.1
 lib/libtls.a
 lib/libtls.so
-lib/libtls.so.17
-lib/libtls.so.17.0.1
+lib/libtls.so.18
+lib/libtls.so.18.0.1
 libdata/pkgconfig/libcrypto.pc
 libdata/pkgconfig/libssl.pc
 libdata/pkgconfig/libtls.pc
@@ -99,7 +99,10 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/ASN1_BMPSTRING_free.3.gz
 %%MAN3%%man/man3/ASN1_BMPSTRING_new.3.gz
 %%MAN3%%man/man3/ASN1_ENUMERATED_free.3.gz
+%%MAN3%%man/man3/ASN1_ENUMERATED_get.3.gz
 %%MAN3%%man/man3/ASN1_ENUMERATED_new.3.gz
+%%MAN3%%man/man3/ASN1_ENUMERATED_set.3.gz
+%%MAN3%%man/man3/ASN1_ENUMERATED_to_BN.3.gz
 %%MAN3%%man/man3/ASN1_GENERALIZEDTIME_adj.3.gz
 %%MAN3%%man/man3/ASN1_GENERALIZEDTIME_check.3.gz
 %%MAN3%%man/man3/ASN1_GENERALIZEDTIME_free.3.gz
@@ -112,7 +115,10 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/ASN1_IA5STRING_free.3.gz
 %%MAN3%%man/man3/ASN1_IA5STRING_new.3.gz
 %%MAN3%%man/man3/ASN1_INTEGER_free.3.gz
+%%MAN3%%man/man3/ASN1_INTEGER_get.3.gz
 %%MAN3%%man/man3/ASN1_INTEGER_new.3.gz
+%%MAN3%%man/man3/ASN1_INTEGER_set.3.gz
+%%MAN3%%man/man3/ASN1_INTEGER_to_BN.3.gz
 %%MAN3%%man/man3/ASN1_OBJECT_free.3.gz
 %%MAN3%%man/man3/ASN1_OBJECT_new.3.gz
 %%MAN3%%man/man3/ASN1_OCTET_STRING_free.3.gz
@@ -483,6 +489,8 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/BN_sub.3.gz
 %%MAN3%%man/man3/BN_sub_word.3.gz
 %%MAN3%%man/man3/BN_swap.3.gz
+%%MAN3%%man/man3/BN_to_ASN1_ENUMERATED.3.gz
+%%MAN3%%man/man3/BN_to_ASN1_INTEGER.3.gz
 %%MAN3%%man/man3/BN_to_montgomery.3.gz
 %%MAN3%%man/man3/BN_ucmp.3.gz
 %%MAN3%%man/man3/BN_value_one.3.gz
@@ -602,6 +610,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/DH_set_method.3.gz
 %%MAN3%%man/man3/DH_size.3.gz
 %%MAN3%%man/man3/DH_test_flags.3.gz
+%%MAN3%%man/man3/DH_up_ref.3.gz
 %%MAN3%%man/man3/DHparams_print.3.gz
 %%MAN3%%man/man3/DHparams_print_fp.3.gz
 %%MAN3%%man/man3/DIRECTORYSTRING_free.3.gz
@@ -650,6 +659,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/DSA_sign_setup.3.gz
 %%MAN3%%man/man3/DSA_size.3.gz
 %%MAN3%%man/man3/DSA_test_flags.3.gz
+%%MAN3%%man/man3/DSA_up_ref.3.gz
 %%MAN3%%man/man3/DSA_verify.3.gz
 %%MAN3%%man/man3/DSAparams_dup.3.gz
 %%MAN3%%man/man3/DSAparams_print.3.gz
@@ -790,6 +800,10 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/EC_get_builtin_curves.3.gz
 %%MAN3%%man/man3/EDIPARTYNAME_free.3.gz
 %%MAN3%%man/man3/EDIPARTYNAME_new.3.gz
+%%MAN3%%man/man3/ENGINE_CIPHERS_PTR.3.gz
+%%MAN3%%man/man3/ENGINE_CTRL_FUNC_PTR.3.gz
+%%MAN3%%man/man3/ENGINE_DIGESTS_PTR.3.gz
+%%MAN3%%man/man3/ENGINE_GEN_INT_FUNC_PTR.3.gz
 %%MAN3%%man/man3/ENGINE_add.3.gz
 %%MAN3%%man/man3/ENGINE_add_conf_module.3.gz
 %%MAN3%%man/man3/ENGINE_by_id.3.gz
@@ -830,19 +844,13 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/ENGINE_get_id.3.gz
 %%MAN3%%man/man3/ENGINE_get_init_function.3.gz
 %%MAN3%%man/man3/ENGINE_get_last.3.gz
-%%MAN3%%man/man3/ENGINE_get_load_privkey_function.3.gz
-%%MAN3%%man/man3/ENGINE_get_load_pubkey_function.3.gz
 %%MAN3%%man/man3/ENGINE_get_name.3.gz
 %%MAN3%%man/man3/ENGINE_get_next.3.gz
 %%MAN3%%man/man3/ENGINE_get_prev.3.gz
 %%MAN3%%man/man3/ENGINE_get_table_flags.3.gz
 %%MAN3%%man/man3/ENGINE_init.3.gz
 %%MAN3%%man/man3/ENGINE_load_builtin_engines.3.gz
-%%MAN3%%man/man3/ENGINE_load_cryptodev.3.gz
 %%MAN3%%man/man3/ENGINE_load_dynamic.3.gz
-%%MAN3%%man/man3/ENGINE_load_openssl.3.gz
-%%MAN3%%man/man3/ENGINE_load_private_key.3.gz
-%%MAN3%%man/man3/ENGINE_load_public_key.3.gz
 %%MAN3%%man/man3/ENGINE_new.3.gz
 %%MAN3%%man/man3/ENGINE_register_DH.3.gz
 %%MAN3%%man/man3/ENGINE_register_DSA.3.gz
@@ -892,8 +900,6 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/ENGINE_set_flags.3.gz
 %%MAN3%%man/man3/ENGINE_set_id.3.gz
 %%MAN3%%man/man3/ENGINE_set_init_function.3.gz
-%%MAN3%%man/man3/ENGINE_set_load_privkey_function.3.gz
-%%MAN3%%man/man3/ENGINE_set_load_pubkey_function.3.gz
 %%MAN3%%man/man3/ENGINE_set_name.3.gz
 %%MAN3%%man/man3/ENGINE_set_table_flags.3.gz
 %%MAN3%%man/man3/ENGINE_unregister_DH.3.gz
@@ -965,6 +971,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_flags.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_free.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_get_app_data.3.gz
+%%MAN3%%man/man3/EVP_CIPHER_CTX_get_iv.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_init.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_iv_length.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_key_length.3.gz
@@ -974,6 +981,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_rand_key.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_reset.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_set_app_data.3.gz
+%%MAN3%%man/man3/EVP_CIPHER_CTX_set_iv.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_set_key_length.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_set_padding.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_type.3.gz
@@ -1082,6 +1090,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/EVP_PKEY_assign_EC_KEY.3.gz
 %%MAN3%%man/man3/EVP_PKEY_assign_RSA.3.gz
 %%MAN3%%man/man3/EVP_PKEY_base_id.3.gz
+%%MAN3%%man/man3/EVP_PKEY_bits.3.gz
 %%MAN3%%man/man3/EVP_PKEY_cmp.3.gz
 %%MAN3%%man/man3/EVP_PKEY_cmp_parameters.3.gz
 %%MAN3%%man/man3/EVP_PKEY_copy_parameters.3.gz
@@ -1098,6 +1107,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/EVP_PKEY_get0_DSA.3.gz
 %%MAN3%%man/man3/EVP_PKEY_get0_EC_KEY.3.gz
 %%MAN3%%man/man3/EVP_PKEY_get0_RSA.3.gz
+%%MAN3%%man/man3/EVP_PKEY_get0_asn1.3.gz
 %%MAN3%%man/man3/EVP_PKEY_get1_DH.3.gz
 %%MAN3%%man/man3/EVP_PKEY_get1_DSA.3.gz
 %%MAN3%%man/man3/EVP_PKEY_get1_EC_KEY.3.gz
@@ -1333,7 +1343,6 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/OCSP_check_nonce.3.gz
 %%MAN3%%man/man3/OCSP_check_validity.3.gz
 %%MAN3%%man/man3/OCSP_copy_nonce.3.gz
-%%MAN3%%man/man3/OCSP_crlID_new.3.gz
 %%MAN3%%man/man3/OCSP_id_cmp.3.gz
 %%MAN3%%man/man3/OCSP_id_get0_info.3.gz
 %%MAN3%%man/man3/OCSP_id_issuer_cmp.3.gz
@@ -1564,19 +1573,19 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/RSA_get0_factors.3.gz
 %%MAN3%%man/man3/RSA_get0_key.3.gz
 %%MAN3%%man/man3/RSA_get_default_method.3.gz
-%%MAN3%%man/man3/RSA_get_default_openssl_method.3.gz
 %%MAN3%%man/man3/RSA_get_ex_data.3.gz
 %%MAN3%%man/man3/RSA_get_ex_new_index.3.gz
 %%MAN3%%man/man3/RSA_get_method.3.gz
 %%MAN3%%man/man3/RSA_meth_dup.3.gz
 %%MAN3%%man/man3/RSA_meth_free.3.gz
+%%MAN3%%man/man3/RSA_meth_get_finish.3.gz
 %%MAN3%%man/man3/RSA_meth_new.3.gz
+%%MAN3%%man/man3/RSA_meth_set1_name.3.gz
 %%MAN3%%man/man3/RSA_meth_set_finish.3.gz
 %%MAN3%%man/man3/RSA_meth_set_priv_dec.3.gz
 %%MAN3%%man/man3/RSA_meth_set_priv_enc.3.gz
 %%MAN3%%man/man3/RSA_new.3.gz
 %%MAN3%%man/man3/RSA_new_method.3.gz
-%%MAN3%%man/man3/RSA_null_method.3.gz
 %%MAN3%%man/man3/RSA_padding_add_PKCS1_OAEP.3.gz
 %%MAN3%%man/man3/RSA_padding_add_PKCS1_type_1.3.gz
 %%MAN3%%man/man3/RSA_padding_add_PKCS1_type_2.3.gz
@@ -1595,7 +1604,6 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/RSA_set0_factors.3.gz
 %%MAN3%%man/man3/RSA_set0_key.3.gz
 %%MAN3%%man/man3/RSA_set_default_method.3.gz
-%%MAN3%%man/man3/RSA_set_default_openssl_method.3.gz
 %%MAN3%%man/man3/RSA_set_ex_data.3.gz
 %%MAN3%%man/man3/RSA_set_flags.3.gz
 %%MAN3%%man/man3/RSA_set_method.3.gz
@@ -1603,6 +1611,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/RSA_sign_ASN1_OCTET_STRING.3.gz
 %%MAN3%%man/man3/RSA_size.3.gz
 %%MAN3%%man/man3/RSA_test_flags.3.gz
+%%MAN3%%man/man3/RSA_up_ref.3.gz
 %%MAN3%%man/man3/RSA_verify.3.gz
 %%MAN3%%man/man3/RSA_verify_ASN1_OCTET_STRING.3.gz
 %%MAN3%%man/man3/SHA1.3.gz
@@ -1655,6 +1664,8 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/SSL_CTX_get_ciphers.3.gz
 %%MAN3%%man/man3/SSL_CTX_get_client_CA_list.3.gz
 %%MAN3%%man/man3/SSL_CTX_get_client_cert_cb.3.gz
+%%MAN3%%man/man3/SSL_CTX_get_default_passwd_cb.3.gz
+%%MAN3%%man/man3/SSL_CTX_get_default_passwd_cb_userdata.3.gz
 %%MAN3%%man/man3/SSL_CTX_get_default_read_ahead.3.gz
 %%MAN3%%man/man3/SSL_CTX_get_ex_data.3.gz
 %%MAN3%%man/man3/SSL_CTX_get_ex_new_index.3.gz
@@ -1866,7 +1877,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/SSL_library_init.3.gz
 %%MAN3%%man/man3/SSL_load_client_CA_file.3.gz
 %%MAN3%%man/man3/SSL_load_error_strings.3.gz
-%%MAN3%%man/man3/SSL_need_tmp_rsa.3.gz
+%%MAN3%%man/man3/SSL_need_tmp_RSA.3.gz
 %%MAN3%%man/man3/SSL_new.3.gz
 %%MAN3%%man/man3/SSL_num_renegotiations.3.gz
 %%MAN3%%man/man3/SSL_peek.3.gz
@@ -2041,6 +2052,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/USERNOTICE_free.3.gz
 %%MAN3%%man/man3/USERNOTICE_new.3.gz
 %%MAN3%%man/man3/X25519.3.gz
+%%MAN3%%man/man3/X25519_keypair.3.gz
 %%MAN3%%man/man3/X509V3_EXT_d2i.3.gz
 %%MAN3%%man/man3/X509V3_EXT_i2d.3.gz
 %%MAN3%%man/man3/X509V3_add1_i2d.3.gz
@@ -2139,6 +2151,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/X509_OBJECT_free_contents.3.gz
 %%MAN3%%man/man3/X509_OBJECT_get0_X509.3.gz
 %%MAN3%%man/man3/X509_OBJECT_get0_X509_CRL.3.gz
+%%MAN3%%man/man3/X509_OBJECT_get_type.3.gz
 %%MAN3%%man/man3/X509_OBJECT_idx_by_subject.3.gz
 %%MAN3%%man/man3/X509_OBJECT_retrieve_by_subject.3.gz
 %%MAN3%%man/man3/X509_OBJECT_retrieve_match.3.gz
@@ -2216,6 +2229,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/X509_STORE_add_crl.3.gz
 %%MAN3%%man/man3/X509_STORE_free.3.gz
 %%MAN3%%man/man3/X509_STORE_get0_objects.3.gz
+%%MAN3%%man/man3/X509_STORE_get0_param.3.gz
 %%MAN3%%man/man3/X509_STORE_get_ex_data.3.gz
 %%MAN3%%man/man3/X509_STORE_get_ex_new_index.3.gz
 %%MAN3%%man/man3/X509_STORE_load_locations.3.gz
@@ -2343,7 +2357,6 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/bn_mul_part_recursive.3.gz
 %%MAN3%%man/man3/bn_mul_recursive.3.gz
 %%MAN3%%man/man3/bn_mul_words.3.gz
-%%MAN3%%man/man3/bn_print.3.gz
 %%MAN3%%man/man3/bn_set_high.3.gz
 %%MAN3%%man/man3/bn_set_low.3.gz
 %%MAN3%%man/man3/bn_set_max.3.gz
@@ -2399,6 +2412,8 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/d2i_DSA_PUBKEY_fp.3.gz
 %%MAN3%%man/man3/d2i_DSA_SIG.3.gz
 %%MAN3%%man/man3/d2i_DSAparams.3.gz
+%%MAN3%%man/man3/d2i_DSAparams_bio.3.gz
+%%MAN3%%man/man3/d2i_DSAparams_fp.3.gz
 %%MAN3%%man/man3/d2i_ECDSA_SIG.3.gz
 %%MAN3%%man/man3/d2i_ECPKParameters.3.gz
 %%MAN3%%man/man3/d2i_ECPKParameters_bio.3.gz
@@ -2526,7 +2541,6 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/d2i_X509_fp.3.gz
 %%MAN3%%man/man3/des_read_pw.3.gz
 %%MAN3%%man/man3/des_read_pw_string.3.gz
-%%MAN3%%man/man3/engine.3.gz
 %%MAN3%%man/man3/evp.3.gz
 %%MAN3%%man/man3/get_rfc2409_prime_1024.3.gz
 %%MAN3%%man/man3/get_rfc2409_prime_768.3.gz
@@ -2578,6 +2592,8 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/i2d_DSA_PUBKEY_fp.3.gz
 %%MAN3%%man/man3/i2d_DSA_SIG.3.gz
 %%MAN3%%man/man3/i2d_DSAparams.3.gz
+%%MAN3%%man/man3/i2d_DSAparams_bio.3.gz
+%%MAN3%%man/man3/i2d_DSAparams_fp.3.gz
 %%MAN3%%man/man3/i2d_ECDSA_SIG.3.gz
 %%MAN3%%man/man3/i2d_ECPKParameters.3.gz
 %%MAN3%%man/man3/i2d_ECPKParameters_bio.3.gz
@@ -2837,7 +2853,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/tls_peer_ocsp_crl_reason.3.gz
 %%MAN3%%man/man3/tls_peer_ocsp_next_update.3.gz
 %%MAN3%%man/man3/tls_peer_ocsp_response_status.3.gz
-%%MAN3%%man/man3/tls_peer_ocsp_result_msg.3.gz
+%%MAN3%%man/man3/tls_peer_ocsp_result.3.gz
 %%MAN3%%man/man3/tls_peer_ocsp_revocation_time.3.gz
 %%MAN3%%man/man3/tls_peer_ocsp_this_update.3.gz
 %%MAN3%%man/man3/tls_peer_ocsp_url.3.gz
