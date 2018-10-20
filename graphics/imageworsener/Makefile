@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	imageworsener
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	graphics
-MASTER_SITES=	http://entropymine.com/imageworsener/ \
+MASTER_SITES=	https://entropymine.com/imageworsener/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,12 +16,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 OPTIONS_DEFINE=	JPEG PNG WEBP
 OPTIONS_DEFAULT=JPEG PNG WEBP
 
+USES=		libtool
+
 CONFIGURE_ARGS=	--with-zlib-include-dir=${INCLUDEDIR} \
 		--with-zlib-lib-dir=${LIBDIR}
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		libtool
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
