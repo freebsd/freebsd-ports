@@ -2,10 +2,11 @@ include/opus/opus.h
 include/opus/opus_custom.h
 include/opus/opus_defines.h
 include/opus/opus_multistream.h
+include/opus/opus_projection.h
 include/opus/opus_types.h
 lib/libopus.a
 lib/libopus.so
 lib/libopus.so.0
-lib/libopus.so.0.6.1
+lib/libopus.so.0.7.0
 libdata/pkgconfig/opus.pc
 share/aclocal/opus.m4
