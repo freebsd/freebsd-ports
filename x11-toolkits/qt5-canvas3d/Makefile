@@ -9,7 +9,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt canvas3d module
 
 USE_QT=		core gui network qml quick buildtools_build
-USES=		qmake qt-dist:5,canvas3d
+USES=		compiler:c++11-lang qmake qt-dist:5,canvas3d
 
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
