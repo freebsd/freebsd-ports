@@ -24,7 +24,7 @@ USES+=		qt:4
 USE_QT=		corelib moc_build network_build qmake_build rcc_build uic_build
 CMAKE_ARGS=	-DBUILD_WITH_QT4:BOOL=TRUE
 .  else
-USES+=		qt:5
+USES+=		compiler:c++11-lang qt:5
 USE_QT=		core buildtools_build qmake_build
 CMAKE_ARGS=	-DBUILD_WITH_QT4:BOOL=FALSE
 QTVER_SUFFIX=	5
