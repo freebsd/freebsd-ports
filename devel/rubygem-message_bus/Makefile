@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	message_bus
-PORTVERSION=	2.1.5
+PORTVERSION=	2.1.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,9 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-rack>=1.1.3:www/rubygem-rack
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem shebangfix
+USE_RUBY=	yes
+
+NO_ARCH=	yes
+
 SHEBANG_FILES=	examples/chat/docker_container/update_chat
 
 .include <bsd.port.mk>
