@@ -1,6 +1,6 @@
---- Makefile.orig	2018-05-02 20:18:47 UTC
+--- Makefile.orig	2018-10-20 20:30:24 UTC
 +++ Makefile
-@@ -14,7 +14,7 @@ ifeq ($(shell $(PKG_CONFIG) ncursesw && 
+@@ -13,7 +13,7 @@
  	CFLAGS += $(shell $(PKG_CONFIG) --cflags ncursesw)
  	LDLIBS += $(shell $(PKG_CONFIG) --libs   ncursesw)
  else
