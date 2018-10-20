@@ -16,8 +16,8 @@ RUN_DEPENDS=	rubygem-activesupport4>=4.0:devel/rubygem-activesupport4 \
 		rubygem-multipart-post>=0:www/rubygem-multipart-post \
 		rubygem-oauth>=0.5.0:net/rubygem-oauth
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
