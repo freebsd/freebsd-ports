@@ -1,8 +1,8 @@
---- ./libavogadro/src/camera.cpp.orig	2011-04-25 05:22:18.000000000 +0000
-+++ ./libavogadro/src/camera.cpp	2012-05-01 21:59:52.241696067 +0000
-@@ -26,6 +26,8 @@
- #include "glwidget.h"
- #include <avogadro/molecule.h>
+--- libavogadro/src/camera.cpp.orig	2016-06-08 14:19:45 UTC
++++ libavogadro/src/camera.cpp
+@@ -36,6 +36,8 @@
+ # include <GL/glu.h>
+ #endif
  
 +#include <GL/glu.h>
 +

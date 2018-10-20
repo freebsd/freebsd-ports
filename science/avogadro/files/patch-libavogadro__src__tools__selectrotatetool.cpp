@@ -1,8 +1,8 @@
---- ./libavogadro/src/tools/selectrotatetool.cpp.orig	2011-04-25 05:22:18.000000000 +0000
-+++ ./libavogadro/src/tools/selectrotatetool.cpp	2012-05-01 22:05:46.053696029 +0000
-@@ -44,6 +44,8 @@
- #include <QComboBox>
- #include <QDebug>
+--- libavogadro/src/tools/selectrotatetool.cpp.orig	2016-06-08 14:19:45 UTC
++++ libavogadro/src/tools/selectrotatetool.cpp
+@@ -57,6 +57,8 @@
+ # include <GL/glu.h>
+ #endif
  
 +#include <GL/glu.h>
 +

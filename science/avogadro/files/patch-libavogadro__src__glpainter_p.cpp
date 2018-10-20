@@ -1,8 +1,8 @@
---- ./libavogadro/src/glpainter_p.cpp.orig	2011-04-25 05:22:18.000000000 +0000
-+++ ./libavogadro/src/glpainter_p.cpp	2012-05-01 21:59:50.998695297 +0000
-@@ -43,6 +43,8 @@
- #include <QVarLengthArray>
- #include <Eigen/Geometry>
+--- libavogadro/src/glpainter_p.cpp.orig	2016-06-08 14:19:45 UTC
++++ libavogadro/src/glpainter_p.cpp
+@@ -53,6 +53,8 @@
+ # include <GL/glu.h>
+ #endif
  
 +#include <GL/glu.h>
 +
