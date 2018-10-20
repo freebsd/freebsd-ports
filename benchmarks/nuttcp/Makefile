@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nuttcp
-PORTVERSION=	7.3.2
-PORTREVISION=	1
+PORTVERSION=	8.2.2
 CATEGORIES=	benchmarks net
 MASTER_SITES=	http://nuttcp.net/nuttcp/beta/ http://nuttcp.net/nuttcp/latest/:latest
 DISTFILES=	${PORTNAME}-${PORTVERSION}.c ${NUTTSCPDISTFILE} ${PORTNAME}.8:latest examples.txt:latest LICENSE:latest README:latest
@@ -19,7 +18,7 @@ NO_WRKSUBDIR=	yes
 USES=		shebangfix
 SHEBANG_FILES=	nuttscp
 
-NUTTSCPVERSION=	2.2
+NUTTSCPVERSION=	2.3
 NUTTSCPDISTFILE=nuttscp-${NUTTSCPVERSION}
 
 OPTIONS_DEFINE=	NUTTSCP
