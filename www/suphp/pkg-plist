@@ -1,8 +1,8 @@
 sbin/suphp
 etc/suphp.conf-example
 %%APACHEMODDIR%%/mod_suphp.so
-@exec %D/sbin/apxs -e -a -n suphp %D/%f
-@unexec %D/sbin/apxs -e -A -n suphp %D/%f
+@postexec %D/sbin/apxs -e -a -n suphp %D/%f
+@preunexec %D/sbin/apxs -e -A -n suphp %D/%f
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
