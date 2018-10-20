@@ -16,8 +16,6 @@ LICENSE_NAME=	W3C IPR SOFTWARE NOTICE
 LICENSE_FILE=	${WRKSRC}/LICENSE.html
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_SSL=		openssl-devel
-
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		gmake libtool localbase perl5 ssl tar:tgz
