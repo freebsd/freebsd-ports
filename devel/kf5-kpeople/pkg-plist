@@ -1,6 +1,8 @@
+etc/xdg/kpeople.categories
 include/KF5/KPeople/KPeople/Global
 include/KF5/KPeople/KPeople/PersonData
 include/KF5/KPeople/KPeople/PersonsModel
+include/KF5/KPeople/KPeople/PersonPluginManager
 include/KF5/KPeople/KPeople/Widgets/AbstractFieldWidgetFactory
 include/KF5/KPeople/KPeople/Widgets/Actions
 include/KF5/KPeople/KPeople/Widgets/MergeDialog
@@ -15,6 +17,7 @@ include/KF5/KPeople/kpeople/global.h
 include/KF5/KPeople/kpeople/kpeople_export.h
 include/KF5/KPeople/kpeople/persondata.h
 include/KF5/KPeople/kpeople/personsmodel.h
+include/KF5/KPeople/kpeople/personpluginmanager.h
 include/KF5/KPeople/kpeople/widgets/abstractfieldwidgetfactory.h
 include/KF5/KPeople/kpeople/widgets/actions.h
 include/KF5/KPeople/kpeople/widgets/kpeoplewidgets_export.h

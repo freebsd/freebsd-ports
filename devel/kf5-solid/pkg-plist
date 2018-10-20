@@ -1,4 +1,5 @@
 bin/solid-hardware5
+etc/xdg/solid.categories
 include/KF5/Solid/Solid/Battery
 include/KF5/Solid/Solid/Block
 include/KF5/Solid/Solid/Camera
