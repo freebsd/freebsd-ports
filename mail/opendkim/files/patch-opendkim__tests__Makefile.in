@@ -1,6 +1,6 @@
 --- opendkim/tests/Makefile.in.orig	2015-05-12 18:43:49 UTC
 +++ opendkim/tests/Makefile.in
-@@ -139,8 +139,10 @@ am__nobase_list = $(am__nobase_strip_set
+@@ -139,8 +139,10 @@ am__nobase_list = $(am__nobase_strip_setup); \
        { print $$2, files[$$2]; n[$$2] = 0; files[$$2] = "" } } \
      END { for (dir in files) print dir, files[dir] }'
  am__base_list = \
