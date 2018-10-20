@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt5 plugin metadata dumper
 
-USES=		qmake:outsource qt-dist:5,tools
+USES=		compiler:c++11-lang qmake:outsource qt-dist:5,tools
 USE_QT=		core
 
 PLIST_FILES=	${QT_BINDIR}/qtplugininfo
