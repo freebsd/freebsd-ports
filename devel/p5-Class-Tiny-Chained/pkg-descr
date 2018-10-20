@@ -1,0 +1,6 @@
+Class::Tiny::Chained is a wrapper around Class::Tiny which makes the
+generated attribute accessors chainable; that is, when setting an
+attribute value, the object is returned so that further methods can
+be called.
+
+WWW: https://metacpan.org/release/Class-Tiny-Chained
