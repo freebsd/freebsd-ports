@@ -12,7 +12,8 @@ COMMENT=	D-Bus service performing user authentication
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext pathfix pkgconfig python qmake qt:5 tar:bz2
+USES=		compiler:c++11-lang gettext pathfix pkgconfig python qmake \
+		qt:5 tar:bz2
 USE_QT=		core dbus gui network sql testlib xml \
 		buildtools_build qmake_build
 
