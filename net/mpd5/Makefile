@@ -14,9 +14,8 @@ COMMENT=	Multi-link PPP daemon based on netgraph(4)
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_SSL=	openssl-devel openssl111
+BROKEN_SSL=	openssl-devel
 BROKEN_SSL_REASON_openss-devel=	needs libfetch(3) linked with system libssl
-BROKEN_SSL_REASON_openssl111=	needs libfetch(3) linked with system libssl
 
 OPTIONS_DEFINE=	DOCS NG_IPACCT
 NG_IPACCT_DESC=	Use ng_ipacct kernel module from port
@@ -29,6 +28,11 @@ USES=		ssl
 .include <bsd.port.options.mk>
 
 MAKE_ARGS+=	OSVERSION=${OSVERSION}
+
+.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1200085
+BROKEN_SSL+=	openssl111
+BROKEN_SSL_REASON_openssl111=	needs libfetch(3) linked with system libssl
+.endif
 
 .if ${PORT_OPTIONS:MNG_IPACCT}
 BUILD_DEPENDS+=	${LOCALBASE}/include/netgraph/ng_ipacct.h:net-mgmt/ng_ipacct
