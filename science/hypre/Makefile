@@ -3,7 +3,7 @@
 
 PORTNAME=	hypre
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.15.0
+DISTVERSION=	2.15.1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/../COPYING.LESSER
 
 BROKEN_powerpc64=	fails to compile: ./DistributedMatrixPilutSolver.h:97:20: expected ')' before '->' token
 
-USES=		blaslapack fortran localbase
+USES=		blaslapack fortran gmake localbase # gmake is only for the 'test' target
 USE_GITHUB=	yes
 GH_ACCOUNT=	LLNL
 USE_LDCONFIG=	yes
