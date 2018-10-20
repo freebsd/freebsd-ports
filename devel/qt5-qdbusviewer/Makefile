@@ -9,7 +9,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 graphical interface to D-Bus
 
 USE_QT=		core dbus gui widgets xml buildtools_build
-USES=		qmake qt-dist:5,tools
+USES=		compiler:c++11-lang qmake qt-dist:5,tools
 
 DESKTOP_ENTRIES="Qt 5 D-Bus Viewer" "" \
 		"${PREFIX}/share/pixmaps/qdbusviewer-qt5.png" \
