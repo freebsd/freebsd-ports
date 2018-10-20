@@ -80,11 +80,8 @@ LDFLAGS+=		-B${LOCALBASE}/bin
 .endif
 
 # enables VK_KHR_wayland_surface in Vulkan drivers
-.if ${PORT_OPTIONS:MWAYLAND}
+.if ${PORT_OPTIONS:MWAYLAND} && !empty(VULKAN_DRIVERS)
 CONFIGURE_ARGS+=	--with-platforms=x11,surfaceless,drm,wayland
-. if empty(VULKAN_DRIVERS)
-IGNORE=	option WAYLAND is only valid on platforms with Vulkan
-. endif
 .endif
 
 CONFIGURE_ARGS+=	--with-dri-drivers="${DRI_DRIVERS:tl}" \
