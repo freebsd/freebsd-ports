@@ -19,7 +19,7 @@ RUN_DEPENDS=	signond:sysutils/signon-qt5
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--disable-tests --enable-gtk-doc
 
-USES=		autoreconf gmake libtool pathfix pkgconfig python tar:bz2
+USES=		autoreconf gmake gnome libtool pathfix pkgconfig python tar:bz2
 USE_GNOME=	introspection pygobject3
 USE_PYTHON=	py3kplist
 
@@ -29,6 +29,7 @@ PATHFIX_MAKEFILEIN=	Makefile.am
 USE_GITLAB=	yes
 GL_ACCOUNT=	accounts-sso
 GL_COMMIT=	4e85baaf483268d04bbf835bebeac4ae30c7c327
+CFLAGS+=	-Wno-error
 
 # Run gtdocize as done in autogen.sh
 pre-configure:
