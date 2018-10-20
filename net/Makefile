@@ -880,6 +880,7 @@
     SUBDIR += p5-Sort-Key-IPv4
     SUBDIR += p5-TFTP
     SUBDIR += p5-Test-URI
+    SUBDIR += p5-Twitter-API
     SUBDIR += p5-URI
     SUBDIR += p5-URI-FromHash
     SUBDIR += p5-URI-Match

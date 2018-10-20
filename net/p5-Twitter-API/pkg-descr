@@ -1,0 +1,22 @@
+Twitter::API provides an interface to the Twitter REST API for perl.
+
+Features:
+ * full support for all Twitter REST API endpoints
+ * not dependent on a new distribution for new endpoint support
+ * optionally specify access tokens per API call
+ * error handling via an exception object that captures the full
+   request/response context
+ * full support for OAuth handshake and Xauth authentication
+
+Additional features are available via optional traits:
+ * convenient methods for API endpoints with simplified argument
+   handling via ApiMethods
+ * normalized booleans (Twitter likes 'true' and 'false', except
+   when it doesn't) via NormalizeBooleans
+ * automatic decoding of HTML entities via DecodeHtmlEntities
+ * automatic retry on transient errors via RetryOnError
+ * "the whole enchilada" combines all the above traits via Enchilada
+ * app-only (OAuth2) support via AppAuth
+ * automatic rate limiting via RateLimiting
+
+WWW: https://metacpan.org/release/Twitter-API
