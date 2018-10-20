@@ -11,6 +11,9 @@ DISTNAME=	php_manual_${PHP_LANG}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	PHP documentation in HTML
 
+DEPRECATED=	unmaintained and documents obsolete PHP < 5.6
+EXPIRATION_DATE=	2018-12-20
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
