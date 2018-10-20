@@ -1,0 +1,7 @@
+Often you want to create components that can be added to a class arbitrarily.
+This module makes it easy for the end user to use these components. Instead
+of requiring the user to create a named class with the desired roles applied,
+or apply roles to the instance one-by-one, he can just create a new class
+from yours with with_traits, and then instantiate that.
+
+WWW: https://metacpan.org/release/MooX-Traits
