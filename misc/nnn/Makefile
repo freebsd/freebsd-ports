@@ -2,7 +2,7 @@
 
 PORTNAME=	nnn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9
+DISTVERSION=	2.0
 CATEGORIES=	misc shells
 
 MAINTAINER=	dg@syrec.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	bash:shells/bash \
 		xdg-open:devel/xdg-utils
 
-USES=		gmake localbase ncurses pkgconfig readline shebangfix
+USES=		gmake localbase ncurses pkgconfig shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	jarun
 SHEBANG_FILES=	nlay
