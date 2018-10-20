@@ -1,0 +1,12 @@
+%%SITE_PERL%%/WWW/OAuth.pm
+%%SITE_PERL%%/WWW/OAuth/Request.pm
+%%SITE_PERL%%/WWW/OAuth/Request/Basic.pm
+%%SITE_PERL%%/WWW/OAuth/Request/HTTP_Request.pm
+%%SITE_PERL%%/WWW/OAuth/Request/Mojo.pm
+%%SITE_PERL%%/WWW/OAuth/Util.pm
+%%PERL5_MAN3%%/WWW::OAuth.3.gz
+%%PERL5_MAN3%%/WWW::OAuth::Request.3.gz
+%%PERL5_MAN3%%/WWW::OAuth::Request::Basic.3.gz
+%%PERL5_MAN3%%/WWW::OAuth::Request::HTTP_Request.3.gz
+%%PERL5_MAN3%%/WWW::OAuth::Request::Mojo.3.gz
+%%PERL5_MAN3%%/WWW::OAuth::Util.3.gz
