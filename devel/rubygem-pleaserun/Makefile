@@ -17,9 +17,10 @@ RUN_DEPENDS=	rubygem-cabin>=0:devel/rubygem-cabin \
 		rubygem-mustache>=0.99.8:devel/rubygem-mustache \
 		rubygem-stud>=0:devel/rubygem-stud
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/please-manage-user bin/pleaserun
 
