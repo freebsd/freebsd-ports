@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ace
-PORTVERSION=	6.4.3
+PORTVERSION=	6.5.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://download.dre.vanderbilt.edu/previous_versions/ \
 		http://download.dre.vanderbilt.edu/previous_versions/
@@ -16,9 +16,12 @@ LICENSE_NAME=	ACE
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-WRKSRC=		${WRKDIR}/ACE_wrappers
+BROKEN_aarch64=		Fails to link: missing sbrk
+BROKEN_powerpc=		Does not compile on ${ARCH}
+BROKEN_powerpc64=	Does not build on ${ARCH}: undefined reference to fmodl
+BROKEN_sparc64=		Does not compile on ${ARCH}
 
-USES=		gmake perl5 pkgconfig shebangfix tar:bzip2
+USES=		gmake localbase:ldflags perl5 pkgconfig shebangfix tar:bzip2
 USE_PERL5=	build
 SHEBANG_FILES=	bin/*.pl MPC/*.pl
 MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/lib" ACE_ROOT="${WRKSRC}" \
@@ -26,18 +29,11 @@ MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/lib" ACE_ROOT="${WRKSRC}" \
 MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-CPPFLAGS+=	-D_WANT_SEMUN
-LDFLAGS+=	-L${LOCALBASE}/lib
+WRKSRC=		${WRKDIR}/ACE_wrappers
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 CONFLICTS=	ace+tao-5*
-
-BROKEN_aarch64=		Fails to link: missing sbrk
-BROKEN_powerpc=		Does not compile on ${ARCH}
-BROKEN_powerpc64=	Does not build on ${ARCH}: undefined reference to fmodl
-BROKEN_sparc64=		Does not compile on ${ARCH}
 
 OPTIONS_DEFINE=		FLTK QT4 SSL TK TRIO X11
 OPTIONS_DEFAULT=	SSL
@@ -60,6 +56,8 @@ TRIO_BUILD_DEPENDS=	trio>=0:devel/trio
 TRIO_MAKE_ENV=		trio=1
 X11_USE=		XORG=xt
 X11_MAKE_ENV=		xt=1
+
+CPPFLAGS+=	-D_WANT_SEMUN
 
 post-patch:
 	@${REINPLACE_CMD} -e \
