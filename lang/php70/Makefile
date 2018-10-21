@@ -11,6 +11,9 @@ DISTNAME=	php-${PORTVERSION}
 MAINTAINER=	tz@FreeBSD.org
 COMMENT=	PHP Scripting Language
 
+DEPRECATED=	Security Support ends on 3 Dec 2018
+EXPIRATION_DATE=	2018-12-04
+
 LICENSE=	PHP301
 
 USES+=		tar:xz cpe
