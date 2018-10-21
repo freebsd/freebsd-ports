@@ -16,10 +16,12 @@ BROKEN_powerpc64=	fails to compile: ed25519-donna-portable.h: warning: ALIGN red
 
 USES=		perl5 ssl tar:bzip2
 USE_PERL5=	build
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_func_strnvis=no PERL=/usr/bin/false
 CONFIGURE_ARGS=	--libexecdir=${LOCALBASE}/lib \
-		--with-ssl-dir=${OPENSSLBASE}
+		--with-ssl-dir=${OPENSSLBASE} \
+		--without-openssl-header-check
 
 PLIST_FILES=	lib/pam_ssh_agent_auth.so \
 		man/man8/pam_ssh_agent_auth.8.gz
