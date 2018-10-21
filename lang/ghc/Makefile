@@ -42,8 +42,6 @@ NO_CCACHE=	ccache: error: Failed to create directory /nonexistent/.ccache/tmp: P
 # This is better fixed in files/build.mk.in
 GNU_CONFIGURE=	yes
 
-# disable xelatex: PR 231438
-CONFIGURE_ENV+=		ac_cv_path_XELATEX=
 CONFIGURE_ARGS=		--with-gmp-includes=${LOCALBASE}/include \
 			--with-gmp-libraries=${LOCALBASE}/lib \
 			--with-iconv-includes=${LOCALBASE}/include \
@@ -78,17 +76,17 @@ DYNAMIC_CONFIGURE_ARGS=	--with-system-libffi \
 # The version number is needed as lang/gcc installs a different version
 DYNAMIC_LIB_DEPENDS=	libffi.so.6:devel/libffi
 
-# Append substitutions for build.mk -- the files uses '#' as comments
+# Append substitutions for build.mk
 BOOT_SUB_LIST=		HSC2HS=${LOCALBASE}/bin/hsc2hs
 BOOT_SUB_LIST_OFF=	HSC2HS=${BOOT_HSC2HS}
 
 DOCS_BUILD_DEPENDS+=	sphinx-build:textproc/py-sphinx
 
-DYNAMIC_SUB_LIST=	WITH_DYNAMIC=""
-DYNAMIC_SUB_LIST_OFF=	WITH_DYNAMIC="\#"
+DYNAMIC_SUB_LIST=	WITH_DYNAMIC="YES"
+DYNAMIC_SUB_LIST_OFF=	WITH_DYNAMIC="NO"
 
-PROFILE_SUB_LIST=	WITH_PROFILE=""
-PROFILE_SUB_LIST_OFF=	WITH_PROFILE="\#"
+PROFILE_SUB_LIST=	WITH_PROFILE="YES"
+PROFILE_SUB_LIST_OFF=	WITH_PROFILE="NO"
 
 DOCS_SUB_LIST=		WITH_DOCS="YES"
 DOCS_SUB_LIST_OFF=	WITH_DOCS="NO"
