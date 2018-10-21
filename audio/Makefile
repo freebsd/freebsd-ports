@@ -731,6 +731,7 @@
     SUBDIR += ripit
     SUBDIR += ripperx
     SUBDIR += rkr-lv2
+    SUBDIR += rnnoise-nu
     SUBDIR += rosegarden
     SUBDIR += rplay
     SUBDIR += rsynth
