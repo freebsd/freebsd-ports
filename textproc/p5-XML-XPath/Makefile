@@ -17,15 +17,14 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XML-Parser>=2.23:textproc/p5-XML-Parser
 TEST_DEPENDS=	p5-Path-Tiny>=0.076:devel/p5-Path-Tiny
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 502501
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.45:lang/p5-Scalar-List-Utils
 RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.45:lang/p5-Scalar-List-Utils
 .endif
 
