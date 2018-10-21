@@ -1,1 +1,0 @@
-@sample(,%%PLA_GRP%%,640) %%WWWDIR%%/config/config.php.example %%WWWDIR%%/config/config.php
