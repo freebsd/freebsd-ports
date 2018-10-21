@@ -1,0 +1,8 @@
+Python bindings for Avogadro2 libraries, libraries that are a foundation of the
+Avogadro 2 project.
+
+Avogadro 2 is a chemical editor and visualization application, it is also a set
+of reusable software libraries written in C++ using principles of modularity for
+maximum reuse.
+
+WWW: https://www.openchemistry.org/projects/avogadro2/
