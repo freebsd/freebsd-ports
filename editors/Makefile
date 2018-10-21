@@ -70,6 +70,7 @@
     SUBDIR += jove
     SUBDIR += jucipp
     SUBDIR += jupp
+    SUBDIR += kak-lsp
     SUBDIR += kakoune
     SUBDIR += kate
     SUBDIR += kate-kde4
