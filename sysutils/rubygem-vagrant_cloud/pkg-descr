@@ -1,0 +1,5 @@
+Ruby client for the Vagrant Cloud API.
+This client allows to create, modify and delete boxes, versions and
+providers. The main entry point is an object referencing your account.
+
+WWW: https://www.vagrantup.com/docs/cli/cloud.html
