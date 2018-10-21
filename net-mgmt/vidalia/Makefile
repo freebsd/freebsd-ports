@@ -9,6 +9,9 @@ MASTER_SITES=	TOR/vidalia
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Graphical Tor controller based on Qt 4.x
 
+DEPRECATED=	outdated and unmaintained
+EXPIRATION_DATE=	2018-11-15
+
 USES=		cmake qt:4
 INSTALLS_ICONS=	yes
 USE_QT=		gui moc_build qmake_build rcc_build uic_build network xml linguist_build
