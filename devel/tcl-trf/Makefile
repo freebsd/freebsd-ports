@@ -18,7 +18,6 @@ LICENSE_FILE=	${WRKSRC}/doc/license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 TEST_DEPENDS=	${LOCALBASE}/lib/Memchan2.3/libMemchan.so.1:devel/tcl-memchan
-ALL_TARGET=	all
 
 USES+=		tcl:tea tar:bzip2
 USE_LDCONFIG=	${PREFIX}/lib/Trf
@@ -43,7 +42,6 @@ do-install:
 
 do-test:
 	cd ${WRKSRC}/tests && ${SETENV} TCLLIBPATH="${WRKSRC}" ${TCLSH} all
-
 
 PLIST_SUB+=	TCL_DVER=${TCL_VER:C/\.//} VER=${PORTVERSION}
 
