@@ -1,0 +1,38 @@
+--- tgl/crypto/rsa_pem_openssl.c.orig	2018-10-21 14:25:36 UTC
++++ tgl/crypto/rsa_pem_openssl.c
+@@ -36,18 +36,28 @@ TGLC_WRAPPER_ASSOC(rsa,RSA)
+ // TODO: Refactor crucial struct-identity into its own header.
+ TGLC_WRAPPER_ASSOC(bn,BIGNUM)
+ 
++/*
++ * Note: Since OpenSSL version 1.1.0-pre5 the RSA struct (rsa_st) is opaque,
++ * see https://wiki.openssl.org/index.php/OpenSSL_1.1.0_Changes
++ */
+ TGLC_rsa *TGLC_rsa_new (unsigned long e, int n_bytes, const unsigned char *n) {
+   RSA *ret = RSA_new ();
+-  ret->e = unwrap_bn (TGLC_bn_new ());
+-  TGLC_bn_set_word (wrap_bn (ret->e), e);
+-  ret->n = unwrap_bn (TGLC_bn_bin2bn (n, n_bytes, NULL));
++  BIGNUM *ret_e = unwrap_bn (TGLC_bn_new ());
++  BIGNUM *ret_n = unwrap_bn (TGLC_bn_bin2bn (n, n_bytes, NULL));
++  RSA_set0_key (ret, ret_n, ret_e, NULL);
++  TGLC_bn_set_word (wrap_bn (ret_e), e);
+   return wrap_rsa (ret);
+ }
+ 
+-#define RSA_GETTER(M)                                                          \
+-  TGLC_bn *TGLC_rsa_ ## M (TGLC_rsa *key) {                                    \
+-    return wrap_bn (unwrap_rsa (key)->M);                                      \
+-  }                                                                            \
++#define RSA_GETTER(M)                       \
++TGLC_bn *TGLC_rsa_ ## M (TGLC_rsa *key) {   \
++    BIGNUM *rsa_n, *rsa_e, *rsa_d;          \
++    RSA_get0_key(unwrap_rsa (key),          \
++        (const BIGNUM **) &rsa_n,           \
++        (const BIGNUM **) &rsa_e,           \
++        (const BIGNUM **) &rsa_d);          \
++    return wrap_bn (rsa_ ## M);             \
++}
+ 
+ RSA_GETTER(n);
+ RSA_GETTER(e);
