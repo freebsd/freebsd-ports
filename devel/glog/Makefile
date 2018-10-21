@@ -16,12 +16,14 @@ LIB_DEPENDS=	libgflags.so:devel/gflags
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		compiler:c++11-lang libtool localbase pathfix
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 LDFLAGS+=	-lexecinfo
 TEST_TARGET=	check
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
-USES=		libtool localbase pathfix
 
 GH_ACCOUNT=	google
 USE_GITHUB=	yes
