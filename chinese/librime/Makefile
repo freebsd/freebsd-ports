@@ -20,8 +20,10 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libopencc.so:chinese/opencc \
 		libyaml-cpp.so:devel/yaml-cpp
 
-USES=		cmake compiler:c++11-lib pathfix pkgconfig gettext perl5
+USES=		cmake compiler:c++11-lib gettext pathfix perl5 pkgconfig
 USE_PERL5=	build patch
+
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 USE_XORG=	xorgproto
 LDFLAGS+=	-lintl
@@ -30,12 +32,8 @@ GH_ACCOUNT=	rime
 
 PLIST_SUB=	VER=${PORTVERSION}
 
-BROKEN_powerpc64=	Does not link: undefined reference to YAML::detail::node_data::empty_scalar[abi:cxx11]
-
-.include <bsd.port.options.mk>
-
-post-patch:     .SILENT
-	${FIND} ${WRKSRC} \( -name '*.cc' -or -name '*.h' \) \
+post-patch:
+	@${FIND} ${WRKSRC} \( -name '*.cc' -or -name '*.h' \) \
 		-exec ${PERL} -i -pe '$$. == 1 && s/^\xef\xbb\xbf//;' {} \;
 
 .include <bsd.port.mk>
