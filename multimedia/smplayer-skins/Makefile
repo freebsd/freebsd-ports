@@ -3,15 +3,17 @@
 
 PORTNAME=	smplayer-skins
 PORTVERSION=	15.2.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF/smplayer/SMPlayer-skins/${PORTVERSION}
 
-MAINTAINER=	multimedia@FreeBSD.org
+MAINTAINER=	kikadf.01@gmail.com
 COMMENT=	Skins for SMPlayer (Skinnable GUI)
 
-USES=		qt:4 tar:bzip2
-USE_QT=		rcc_build
+USES=		qt:5 tar:bzip2
+USE_QT=		buildtools_build
+
 NO_ARCH=	yes
 
 DATADIR=	${PREFIX}/share/smplayer
