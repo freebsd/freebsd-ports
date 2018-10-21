@@ -14,3 +14,15 @@
  cpu="generic"
  intrinsics="none"
  
+@@ -6234,8 +6229,10 @@ else
+ EOF
+ fi
+ 
+-enabled alsa && check_pkg_config alsa alsa "alsa/asoundlib.h" snd_pcm_htimestamp ||
++if enabled alsa; then
++    check_pkg_config alsa alsa "alsa/asoundlib.h" snd_pcm_htimestamp ||
+     check_lib alsa alsa/asoundlib.h snd_pcm_htimestamp -lasound
++fi
+ 
+ enabled libjack &&
+     require_pkg_config libjack jack jack/jack.h jack_port_get_latency_range
