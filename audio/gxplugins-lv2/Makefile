@@ -3,6 +3,7 @@
 PORTNAME=	gxplugins
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 DIST_SUBDIR=	${PORTNAME}
@@ -21,7 +22,7 @@ USES=		compiler:c++11-lang gettext-runtime gmake gnome localbase pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	brummer10
 GH_PROJECT=	GxPlugins.lv2
-USE_GNOME=	gtk20 glib20 gdkpixbuf2 atk cairo pango
+USE_GNOME=	glib20 atk cairo pango
 USE_XORG=	x11
 USE_BINUTILS=	yes # linking needs some GNU features, fails on 12 without this, see https://github.com/brummer10/GxPlugins.lv2/issues/9
 
