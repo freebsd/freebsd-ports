@@ -1,0 +1,10 @@
+ERKALE is a quantum chemistry program used to solve the electronic structure of
+atoms, molecules and molecular clusters. It was originally developed at the
+University of Helsinki for the computation of x-ray properties, such as
+ground-state electron momentum densities and Compton profiles, and core (x-ray
+absorption and x-ray Raman scattering) and valence electron excitation spectra
+of atoms and molecules. Subsequently, it has gained unique functionalities for
+basis set development as well as self-interaction corrected density-functional
+theory calculations.
+
+WWW: https://github.com/susilehtola/erkale
