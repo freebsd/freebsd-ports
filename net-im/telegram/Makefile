@@ -35,6 +35,12 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-openssl-1.1.0
+.endif
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/telegram-cli
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/telegram-cli ${STAGEDIR}${PREFIX}/bin
