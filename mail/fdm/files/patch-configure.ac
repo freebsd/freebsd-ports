@@ -1,0 +1,11 @@
+--- configure.ac.orig	2018-10-09 21:50:40 UTC
++++ configure.ac
+@@ -83,7 +83,7 @@ if test "x$found_libcrypto" = xno; then
+ 	AC_MSG_ERROR("libcrypto not found")
+ fi
+ AC_SEARCH_LIBS(
+-	SSL_library_init,
++	SSL_CTX_new,
+ 	[ssl],
+ 	found_libssl=yes,
+ 	found_libssl=no
