@@ -1,0 +1,5 @@
+Pythin bindings for MoleQueue, an open-source, cross-platform, system-tray
+resident desktop application for abstracting, managing, and coordinating the
+execution of tasks both locally and on remote computational resources.
+
+WWW: https://www.openchemistry.org/projects/molequeue
