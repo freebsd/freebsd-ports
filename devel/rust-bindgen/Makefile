@@ -2,7 +2,7 @@
 
 PORTNAME=	rust-bindgen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.42.2
+DISTVERSION=	0.42.3
 CATEGORIES=	devel
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -24,7 +24,7 @@ CARGO_CRATES=	aho-corasick-0.6.8 \
 		atty-0.2.11 \
 		bitflags-1.0.4 \
 		cc-1.0.25 \
-		cexpr-0.3.0 \
+		cexpr-0.3.3 \
 		cfg-if-0.1.5 \
 		clang-sys-0.26.0 \
 		clap-2.32.0 \
@@ -67,7 +67,7 @@ CARGO_CRATES=	aho-corasick-0.6.8 \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,"llvm-config,&${LLVM_DEFAULT},' \
-		${WRKSRC}/cargo-crates/clang-sys-*/build.rs \
+		${WRKSRC}/cargo-crates/clang-sys-*/build/common.rs \
 		${WRKSRC}/cargo-crates/clang-sys-*/src/support.rs
 
 .include <bsd.port.mk>
