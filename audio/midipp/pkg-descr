@@ -9,8 +9,10 @@ with your fingertips. List of supported features:
 - Loading and saving from and to standard v1.0 MIDI files.
 - Realtime MIDI processing.
 - Simple sequence looping.
+- Supports simple karaoke mode.
 - 30000 BPM MIDI recording and playback.
 - Undo/Redo support.
 - Printing music like PDF.
+- Supports quarter-, octo- and hexa- tones.
 
 WWW: http://www.selasky.org/hans_petter/midistudio/
