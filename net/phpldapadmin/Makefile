@@ -39,7 +39,7 @@ post-patch:
 	cd ${WRKSRC} ;							    \
 	${FIND} . ! -type d ! -name ${CFGFILE}.example ! -name .cvsignore   \
 	    ! -name .gitignore ! -name *.orig | ${SORT} |		    \
-	    ${SED} -e "s!^\.!${WWWDIR_REL}!"			>${PLIST} ; \
+	    ${SED} -e "s!^\.!${WWWDIR_REL}!"			>${PLIST} ;
 
 do-install:
 	cd ${WRKSRC} ;					 \
