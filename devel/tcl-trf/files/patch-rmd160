@@ -4,7 +4,7 @@
  
  #include "transformInt.h"
 -#include "ripemd/rmd160.h"
-+#include <openssl/ripemd.h>
++#include <ripemd.h>
  
  /*
 @@ -40,27 +40,4 @@

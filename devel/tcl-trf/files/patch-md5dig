@@ -7,7 +7,7 @@
 +#include "transformInt.h"
  
 +#include <sys/types.h>
-+#include <openssl/md5.h>
++#include <md5.h>
  /*
   * Generator description
 @@ -38,6 +40,4 @@
@@ -27,7 +27,7 @@
 -static void MDmd5_Final     _ANSI_ARGS_ ((VOID* context, VOID* digest));
 -static int  MDmd5_Check     _ANSI_ARGS_ ((Tcl_Interp* interp));
 +#ifdef OTP
-+static void MDmd5_OTP_Final     _ANSI_ARGS_ ((VOID* context, VOID* digest));
++static void MDmd5_OTP_Final     _ANSI_ARGS_ ((VOID* digest, VOID* context));
 +#endif
  
  /*
@@ -39,13 +39,13 @@
 -  MDmd5_UpdateBuf,
 -  MDmd5_Final,
 -  MDmd5_Check
-+  (Trf_MDStart *)MD5_Init,
++  (Trf_MDStart *)MD5Init,
 +  NULL,
-+  (Trf_MDUpdateBuf *)MD5_Update,
++  (Trf_MDUpdateBuf *)MD5Update,
 +#ifdef OTP
 +  MDmd5_OTP_Final,
 +#else
-+  (Trf_MDFinal *)MD5_Final,
++  (Trf_MDFinal *)MD5Final,
 +#endif
 +  NULL,
  };
@@ -189,7 +189,7 @@
  
 -    /*    MD5Final ((unsigned char*) result, (MD5_CTX*) context);*/
 -    md5f.final ((unsigned char*) result, MD5_CTXP context);
-+    MD5_Final (result, (MD5_CTX*) context);
++    MD5Final (result, (MD5_CTX*) context);
  
      for (i = 0; i < 8; i++)
 @@ -255,5 +142,4 @@
