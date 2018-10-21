@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2018-10-18 17:54:14 UTC
++++ CMakeLists.txt
+@@ -1,4 +1,8 @@
+-find_package(PythonInterp 3 REQUIRED)
++cmake_minimum_required(VERSION 3.12)
++
++link_directories(${CMAKE_INSTALL_PREFIX}/lib)
++
++find_package(Python3 REQUIRED)
+ find_package(PythonLibs 3 REQUIRED)
+ set(PYBIND11_PYTHON_VERSION "3" CACHE STRING "")
+ set(PYBIND11_CPP_STANDARD "-std=c++11" CACHE STRING "")
