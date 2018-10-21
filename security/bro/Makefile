@@ -63,6 +63,7 @@ BROKER_DESC=	Enable the Broker communication library
 IPSUMDUMP_DESC=	Enables traffic summaries
 LBL_CF_DESC=	Unix time to formated time/date filter support
 LBL_HF_DESC=	Address to hostname filter support
+NETMAP_DESC=	Native Netmap Packet IOSource for Bro 
 PERFTOOLS_DESC=	Use Perftools to improve memory & CPU usage
 
 BROCTL_IMPLIES=		BROCCOLI IPSUMDUMP
@@ -139,5 +140,19 @@ post-build-NETMAP-on:
 	(cd ${WRKSRC_bro_netmap} && ./configure --bro-dist=${WRKSRC} \
 	    --install-root=${STAGEDIR}${PREFIX}/lib/bro/plugins && \
 	    make && make install)
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000
+BUILD_DEPENDS+=		${NONEXISTENT}:security/openssl:stage
+CXXFLAGS+=		-I${WRKDIR}/openssl/include
+OPENSSL_LDFLAGS+=	-L${WRKDIR}/openssl/lib
+
+# Don't use COPYTREE_SHARE here as it hard links files, and the original files
+# are owned by root, which creates problems of its own.
+pre-configure:
+	@cd `${MAKE} -V STAGEDIR -C ${PORTSDIR}/security/openssl`${PREFIX} \
+	    && ${FIND} -E . ! -name *.so* | ${CPIO} -dump ${WRKDIR}/openssl >/dev/null 2>&1
+.endif
 
 .include <bsd.port.mk>
