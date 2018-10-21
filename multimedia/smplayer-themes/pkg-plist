@@ -2,6 +2,9 @@
 %%DATADIR%%/themes/Breeze-dark/README.txt
 %%DATADIR%%/themes/Breeze/Breeze.rcc
 %%DATADIR%%/themes/Breeze/README.txt
+%%DATADIR%%/themes/Dark/Dark.rcc
+%%DATADIR%%/themes/Dark/README.txt
+%%DATADIR%%/themes/Dark/style.qss
 %%DATADIR%%/themes/Faenza-Darkest/Faenza-Darkest.rcc
 %%DATADIR%%/themes/Faenza-Darkest/README.txt
 %%DATADIR%%/themes/Faenza-Silver/Faenza-Silver.rcc
@@ -12,9 +15,6 @@
 %%DATADIR%%/themes/Gartoon/README.txt
 %%DATADIR%%/themes/Gnome/Gnome.rcc
 %%DATADIR%%/themes/Gnome/README.txt
-%%DATADIR%%/themes/H2O/H2O.rcc
-%%DATADIR%%/themes/H2O/README.txt
-%%DATADIR%%/themes/H2O/style.qss
 %%DATADIR%%/themes/Masalla/Masalla.rcc
 %%DATADIR%%/themes/Masalla/README.txt
 %%DATADIR%%/themes/Masalla/style.qss
@@ -50,3 +50,5 @@
 %%DATADIR%%/themes/blackPanther-Real/blackPanther-Real.rcc
 %%DATADIR%%/themes/blackPanther-VistaLike/README.txt
 %%DATADIR%%/themes/blackPanther-VistaLike/blackPanther-VistaLike.rcc
+%%DATADIR%%/themes/ePapirus/README.txt
+%%DATADIR%%/themes/ePapirus/ePapirus.rcc
