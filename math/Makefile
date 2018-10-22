@@ -474,6 +474,7 @@
     SUBDIR += openblas
     SUBDIR += openfst
     SUBDIR += openlibm
+    SUBDIR += openmesh
     SUBDIR += opensolaris-libm
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
