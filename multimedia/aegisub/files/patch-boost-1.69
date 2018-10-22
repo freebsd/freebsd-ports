@@ -1,0 +1,62 @@
+https://github.com/Aegisub/Aegisub/issues/93
+
+--- src/colour_button.cpp.orig	2014-12-08 00:07:09 UTC
++++ src/colour_button.cpp
+@@ -18,7 +18,12 @@
+ 
+ #include "dialogs.h"
+ 
++#include <boost/version.hpp>
++#if BOOST_VERSION >= 106900
++#include <boost/gil.hpp>
++#else
+ #include <boost/gil/gil_all.hpp>
++#endif
+ 
+ wxDEFINE_EVENT(EVT_COLOR, wxThreadEvent);
+ 
+--- src/subtitles_provider_libass.cpp.orig	2014-12-08 00:07:09 UTC
++++ src/subtitles_provider_libass.cpp
+@@ -50,7 +50,12 @@
+ #include <libaegisub/util.h>
+ 
+ #include <atomic>
++#include <boost/version.hpp>
++#if BOOST_VERSION >= 106900
++#include <boost/gil.hpp>
++#else
+ #include <boost/gil/gil_all.hpp>
++#endif
+ #include <memory>
+ #include <mutex>
+ 
+--- src/video_frame.cpp.orig	2014-12-08 00:07:09 UTC
++++ src/video_frame.cpp
+@@ -16,7 +16,12 @@
+ 
+ #include "video_frame.h"
+ 
++#include <boost/version.hpp>
++#if BOOST_VERSION >= 106900
++#include <boost/gil.hpp>
++#else
+ #include <boost/gil/gil_all.hpp>
++#endif
+ #include <wx/image.h>
+ 
+ namespace {
+--- src/video_provider_dummy.cpp.orig	2014-12-08 00:07:09 UTC
++++ src/video_provider_dummy.cpp
+@@ -46,7 +46,12 @@
+ #include <boost/algorithm/string/split.hpp>
+ #include <boost/filesystem/path.hpp>
+ #include <libaegisub/format.h>
++#include <boost/version.hpp>
++#if BOOST_VERSION >= 106900
++#include <boost/gil.hpp>
++#else
+ #include <boost/gil/gil_all.hpp>
++#endif
+ 
+ DummyVideoProvider::DummyVideoProvider(double fps, int frames, int width, int height, agi::Color colour, bool pattern)
+ : framecount(frames)
