@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	frr
-PORTVERSION=	4.0
+PORTVERSION=	6.0
 DISTVERSIONPREFIX=	frr-
-PORTREVISION=	5
 CATEGORIES=	net ipv6
-PKGNAMESUFFIX=	4
+PKGNAMESUFFIX=	6
 
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	IP routing protocol suite including BGP, IS-IS, OSPF and RIP
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	gawk:lang/gawk
 LIB_DEPENDS=	libjson-c.so:devel/json-c
 
-CONFLICTS=	openbgpd openospfd zebra quagga frr3 frr5 frr6
+CONFLICTS=	openbgpd openospfd zebra quagga frr3 frr4 frr5
 
 USES=		autoreconf bison compiler:c++11-lang gmake pkgconfig libtool \
 		makeinfo python:2.7,build readline
@@ -29,14 +28,10 @@ GH_ACCOUNT=	FRRouting
 
 INFO=		frr
 
-OPTIONS_DEFINE=		FPM LDPD PAM SHELLACCESS TCPSOCKETS VTYSH MULTIPATH TCMALLOC RPKI
-OPTIONS_DEFAULT=	VTYSH RPKI
+OPTIONS_DEFINE=		FPM LDPD PAM SHELLACCESS TCPSOCKETS VTYSH MANPAGES \
+					MULTIPATH TCMALLOC RPKI SNMP
+OPTIONS_DEFAULT=	VTYSH RPKI FPM MANPAGES
 OPTIONS_SUB=	yes
-# SNMP option build failed
-# checksum.c:79:21: warning: implicit declaration of function 'typeof' is
-#   invalid in C99 [-Wimplicit-function-declaration]
-# IRDP option needs something freebsd does not seem to have:
-# configure: error: 'IRDP requires in_pktinfo at the moment!'
 
 FPM_DESC=		Enable Forwarding Plane Manager support
 LDPD_DESC=		Build ldpd
@@ -65,6 +60,8 @@ CONFIGURE_ARGS=	--enable-user=frr \
 		--disable-nhrpd \
 		--disable-pimd
 
+MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+MANPAGES_CONFIGURE_OFF=	--disable-doc
 SHELLACCESS_CONFIGURE_ENABLE=	shell-access
 FPM_CONFIGURE_ENABLE=		fpm
 PAM_CONFIGURE_WITH=		libpam
@@ -76,6 +73,7 @@ RPKI_LIB_DEPENDS=		librtr.so:net-mgmt/rtrlib \
 TCMALLOC_CONFIGURE_ENABLE=	tcmalloc
 TCMALLOC_LIB_DEPENDS=		libtcmalloc.so:devel/google-perftools
 SNMP_CONFIGURE_ENABLE=		snmp
+SNMP_CFLAGS=	"-std=gnu99"
 SNMP_LIB_DEPENDS=		libnetsnmp.so:net-mgmt/net-snmp
 TCPSOCKETS_CONFIGURE_ENABLE=	tcp-zebra
 VTYSH_CONFIGURE_ENABLE=		vtysh

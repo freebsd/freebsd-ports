@@ -1,0 +1,11 @@
+--- configure.ac.orig	2018-10-08 12:32:57 UTC
++++ configure.ac
+@@ -338,7 +338,7 @@ AC_ARG_WITH(pkg-git-version,
+ 	[ test "x$withval" != "xno" && with_pkg_git_version="yes" ])
+ AC_ARG_WITH(vtysh_pager,
+ 	AS_HELP_STRING([--with-vtysh-pager=PAGER], [control what pager is compiled in as default]),
+-	VTYSH_PAGER=$withval, VTYSH_PAGER="more")
++	VTYSH_PAGER=$withval, VTYSH_PAGER="cat")
+ AC_ARG_ENABLE(vtysh,
+   AS_HELP_STRING([--disable-vtysh], [do not build integrated vty shell for FRR]))
+ AC_ARG_ENABLE(doc,
