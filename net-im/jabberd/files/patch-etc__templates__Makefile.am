@@ -1,0 +1,22 @@
+--- etc/templates/Makefile.am.orig	2016-05-03 22:25:09 UTC
++++ etc/templates/Makefile.am
+@@ -2,8 +2,8 @@ templatesdir = $(sysconfdir)/templates
+ 
+ LIBTOOL += --quiet
+ 
+-templates_DATA = roster.xml.dist
+-EXTRA_DIST = roster.xml.dist.in
++templates_DATA = roster.xml.sample
++EXTRA_DIST = roster.xml.sample.in
+ 
+ edit = sed \
+ 	-e 's,@sysconfdir\@,$(sysconfdir),g' \
+@@ -18,7 +18,7 @@ $(templates_DATA):
+     
+ install-data-hook:
+ 	@list='$(templates_DATA)'; for p in $$list; do \
+-      dest=`echo $$p | sed -e s/.dist//`; \
++      dest=`echo $$p | sed -e s/.sample//`; \
+ 	  if test -f $(DESTDIR)$(templatesdir)/$$dest; then \
+         echo "$@ will not overwrite existing $(DESTDIR)$(templatesdir)/$$dest"; \
+       else \
