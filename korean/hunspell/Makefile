@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	0.5.6
-PORTREVISION=	3
+PORTVERSION=	0.7.1
 CATEGORIES=	korean textproc
 
 MAINTAINER=	jkim@FreeBSD.org
@@ -15,26 +14,28 @@ LICENSE_FILE_LGPL21+ =	${WRKSRC}/LICENSE.LGPL
 LICENSE_FILE_MPL11=	${WRKSRC}/LICENSE.MPL
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
-TEST_DEPENDS=	hunspell:textproc/hunspell
+TEST_DEPENDS=	hunspell:textproc/hunspell	\
+		gmake:devel/gmake
 
-GH_ACCOUNT=	changwoo
+GH_ACCOUNT=	spellcheck-ko
 GH_PROJECT=	${PORTNAME}-dict-ko
 USE_GITHUB=	yes
 
 NO_ARCH=	yes
-USES=		python:2.7,build,test
+USES=		python:3.3+,build,test shebangfix
+SHEBANG_FILES=	tests/runtest.py
 
 PLIST_FILES=	%%DATADIR%%/ko_KR.aff \
 		%%DATADIR%%/ko_KR.dic
 
-do-build:
-	@(cd ${WRKSRC} && ${PYTHON_CMD} make-aff-dic.py ko_KR.aff ko_KR.dic \
-	    dict-ko-builtins.xml dict-ko-galkwi.xml)
+TEST_TARGET=	test
+TEST_ENV+=	GMAKE=${GMAKE} LC_ALL=en_US.UTF-8
 
-do-test:
-	@(cd ${WRKSRC}/tests && for T in $$(ls -1 *.test); do \
-	    echo "Testing $$T..."; \
-	    ${PYTHON_CMD} runtest.py $$T || exit 1; done)
+pre-build:
+.for f in Makefile tests/Makefile
+	${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|' ${WRKSRC}/${f}
+.endfor
+
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/ko_KR.aff ${WRKSRC}/ko_KR.dic \
