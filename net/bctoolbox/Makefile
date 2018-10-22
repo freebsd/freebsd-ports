@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	mbedtls>=2.3.0_2:security/mbedtls
 LIB_DEPENDS=	libmbedtls.so:security/mbedtls
 
-USES=		cmake:outsource
+USES=		cmake:outsource compiler:c++11-lib
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-DHAVE_ARC4RANDOM

@@ -15,7 +15,7 @@ LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox \
 		libmediastreamer_base.so:net/mediastreamer \
 		libortp.so:net/ortp
 
-USES=		cmake:outsource
+USES=		cmake:outsource compiler:c++11-lib
 
 CMAKE_ARGS=	-DENABLE_STATIC=NO
 PLIST_FILES=	lib/mediastreamer/plugins/libmswebrtc.so
