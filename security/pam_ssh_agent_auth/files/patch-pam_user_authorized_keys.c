@@ -1,6 +1,6 @@
 --- pam_user_authorized_keys.c.orig	2016-11-13 03:24:32 UTC
 +++ pam_user_authorized_keys.c
-@@ -90,6 +90,10 @@ extern uint8_t allow_user_owned_authoriz
+@@ -90,6 +90,10 @@ extern uint8_t allow_user_owned_authorized_keys_file;
  
  uid_t authorized_keys_file_allowed_owner_uid;
  
