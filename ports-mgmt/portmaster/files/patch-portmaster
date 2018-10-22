@@ -693,7 +693,15 @@
  		if [ "$?" -eq 1 ]; then
  			echo ''
  			echo "===>>> The second argument to -o can be a package name,"
-@@ -3142,8 +3169,9 @@ iport_from_pkgname () {
+@@ -3133,6 +3160,7 @@ if [ -z "$PM_INDEX_ONLY" ] && ! pm_isdir_pd "$portdir"
+ 	pm_isdir_pd "$moved_npd" || no_valid_port
+ 
+ 	[ "$$" -eq "$PM_PARENT_PID" ] && parent_exit
++	[ -z "$upg_port" ] && upg_port="$portdir"
+ 	exec "$program" $ARGS -o $moved_npd $upg_port
+ 	# NOT REACHED
+ fi
+@@ -3142,8 +3170,8 @@ iport_from_pkgname () {
  
  	dir=$(dir_part $1)
  	flavor=$(flavor_part $1)
@@ -701,7 +709,6 @@
 -	pkg info -x "^${pkgname%-*}"'-[^-]*' 2>/dev/null
 +	pkgname=$(FLAVOR=$flavor pm_make -C "$pd/$dir" -V PKGNAME) &&
 +		$PKG_CMD query "%n-%v" "${pkgname%-*}"
-+#	$PKG_CMD info -xC "^${pkgname%-*}\$" 2>/dev/null
  }
  
  if [ -z "$upg_port" -a -z "$REPLACE_ORIGIN" ]; then
