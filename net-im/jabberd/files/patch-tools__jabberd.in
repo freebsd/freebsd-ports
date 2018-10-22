@@ -1,16 +1,17 @@
 --- tools/jabberd.in.orig	2016-02-09 09:45:54 UTC
 +++ tools/jabberd.in
-@@ -1,9 +1,4 @@
+@@ -1,10 +1,5 @@
 -#!/bin/sh
 -#-*-Perl-*-
--
++#!/usr/local/bin/perl
+ 
 -exec perl -w -x $0 "$@"
 -
 -#!perl
-+#!/usr/local/bin/perl
- 
+-
  ##############################################################################
  #
+ # jabberd - perl wrapper script to manage launching and controlling the various
 @@ -28,8 +23,7 @@ my $Bin = "@bindir@";
  my $LibExec = "@libexecdir@";
  my $VERSION = "@VERSION@";

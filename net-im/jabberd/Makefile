@@ -3,7 +3,7 @@
 
 PORTNAME=	jabberd
 PORTVERSION=	2.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/jabberd2/jabberd2/releases/download/${PORTNAME}-${DISTVERSION}/ \
 		LOCAL/matthew/${PORTNAME}
@@ -17,6 +17,9 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libgsasl.so:security/gsasl \
 		libidn.so:dns/libidn \
 		libudns.so:dns/udns
+BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
+
+USES=		autoreconf compiler:c11 iconv libtool perl5 ssl tar:xz
 
 OPTIONS_DEFINE=	MYSQL PGSQL LDAP BDB SQLITE PAM PIPE ANON FS DEBUG REQUIRES \
 		DOCS SUPERSEDED EXPERIMENTAL
@@ -25,7 +28,6 @@ OPTIONS_SUB=	yes
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		compiler:c11 iconv libtool perl5 ssl tar:xz
 USE_PERL5=	run
 USE_RC_SUBR=	jabberd
 USE_LDCONFIG=	${PREFIX}/lib/jabberd
@@ -133,10 +135,6 @@ post-patch:
 	router.xml s2s.xml sm.xml templates/roster.xml
 	@${MV} ${WRKSRC}/etc/${FILE}.dist.in ${WRKSRC}/etc/${FILE}.sample.in
 .endfor
-#.if ${PORT_OPTIONS:MCYRUS}
-#	@${REINPLACE_CMD} -e '/^#error /d' \
-#		${WRKSRC}/sx/sasl_cyrus.c
-#.endif
 
 post-install:
 .for DIR in db logs pid
