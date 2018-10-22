@@ -1,0 +1,18 @@
+After https://github.com/boostorg/system/commit/2fa0a00583a3a7 build fails:
+
+In file included from ../src/gx_head/engine/gx_pluginloader.cpp:22:
+In file included from ../src/headers/engine.h:73:
+../src/headers/gx_system.h:353:28: error: expected class name
+class BasicOptions: boost::noncopyable {
+                           ^
+
+--- src/headers/engine.h.orig	2018-07-22 04:24:50 UTC
++++ src/headers/engine.h
+@@ -38,6 +38,7 @@
+ #include <algorithm>
+ #include <sys/stat.h>
+ #include <boost/format.hpp>
++#include <boost/noncopyable.hpp>
+ #include <boost/thread/mutex.hpp>
+ #include <glibmm/i18n.h>     // NOLINT
+ #include <glibmm/optioncontext.h>   // NOLINT
