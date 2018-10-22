@@ -3,7 +3,7 @@
 
 PORTNAME=	giggle
 PORTVERSION=	0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -12,6 +12,9 @@ COMMENT=	GTK+ frontend for git version control system
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Development stalled. Please switch to devel/gitg.
+EXPIRATION_DATE=2018-11-22
 
 BUILD_DEPENDS=	git:devel/git \
 		p5-XML-Parser>=0:textproc/p5-XML-Parser \
@@ -22,8 +25,8 @@ OPTIONS_DEFINE=	NLS
 #VTE_DESC=	Terminal Widget
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	glib20 gtk30 intltool libglade2 gtksourceview3 gdkpixbuf2
 USES=		desktop-file-utils gmake libtool pkgconfig tar:xz
+USE_GNOME=	glib20 gtk30 intltool libglade2 gtksourceview3 gdkpixbuf2
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
