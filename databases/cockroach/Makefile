@@ -2,7 +2,7 @@
 
 PORTNAME=	cockroach
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.5
+DISTVERSION=	2.0.6
 CATEGORIES=	databases
 MASTER_SITES=	https://binaries.cockroachdb.com/
 EXTRACT_SUFX=	.src.tgz
