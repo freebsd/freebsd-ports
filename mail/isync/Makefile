@@ -12,10 +12,6 @@ COMMENT=	Maintain local copies of remote IMAP folders w/synchronized flags
 
 LICENSE=	GPLv2
 
-BROKEN_mips=		fails to compile: util.c:523: \#pragma GCC diagnostic not allowed inside functions
-BROKEN_mips64=		fails to compile: util.c:523: \#pragma GCC diagnostic not allowed inside functions
-BROKEN_powerpc64=	fails to compile: util.c:523: \#pragma GCC diagnostic not allowed inside functions
-
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 USES=		alias bdb cpe perl5 ssl
@@ -32,10 +28,15 @@ MAKE_ARGS+=	SSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
 LDFLAGS+=	-L${BDB_LIB_DIR}
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|\$$(docdir)/examples|\$$(sysconfdir)|g' \
 	    ${WRKSRC}/src/Makefile.in ${WRKSRC}/src/compat/Makefile.in
 	@${REINPLACE_CMD} -e 's|-ansi||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+	@${REINPLACE_CMD} -e '/pragma/d' ${WRKSRC}/src/util.c
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
