@@ -1,0 +1,17 @@
+After https://github.com/boostorg/logic/commit/23cd89d4c80f build fails:
+
+sfx2/source/appl/shutdownicon.cxx:170:12: error: no viable conversion from returned value of type 'boost::logic::tribool' to function return type 'bool'
+    return loaded;
+           ^~~~~~
+
+--- sfx2/source/appl/shutdownicon.cxx.orig	2018-06-19 22:27:30 UTC
++++ sfx2/source/appl/shutdownicon.cxx
+@@ -167,7 +167,7 @@ bool LoadModule()
+ #endif // ENABLE_QUICKSTART_APPLET
+     }
+     assert(!boost::logic::indeterminate(loaded));
+-    return loaded;
++    return bool{loaded};
+ }
+ 
+ }
