@@ -10,6 +10,7 @@ sbin/auto-append-line
 sbin/auto-ask
 sbin/auto-autofs-nfs-setup
 sbin/auto-backup-file
+sbin/auto-binary-pkgsrc-setup
 sbin/auto-change-group-gid
 sbin/auto-change-group-ownership
 sbin/auto-change-primary-group
@@ -23,6 +24,7 @@ sbin/auto-db-dir
 sbin/auto-denyhosts-remove-ip
 sbin/auto-denyhosts-setup
 sbin/auto-detect-intel-gpu
+sbin/auto-disable-host-key-prompt
 sbin/auto-disable-service
 sbin/auto-disable-tcp-timestamps
 sbin/auto-enable-autologout
@@ -37,11 +39,13 @@ sbin/auto-harden
 sbin/auto-insert-line
 sbin/auto-install-packages
 sbin/auto-ipfw-gateway-setup
+sbin/auto-ipmi-install
 sbin/auto-kdm3-toggle
 sbin/auto-krb-auth-setup
 sbin/auto-ldap-adduser
 sbin/auto-ldap-client-setup
 sbin/auto-mount-any
+sbin/auto-os-release
 sbin/auto-ostype
 sbin/auto-package-installed
 sbin/auto-passwd-user-expiration
@@ -57,6 +61,7 @@ sbin/auto-pxe-node-discover
 sbin/auto-replace-file
 sbin/auto-restore-pw
 sbin/auto-restore-user
+sbin/auto-secure-directory
 sbin/auto-service-enabled
 sbin/auto-set-hostname
 sbin/auto-set-lid-switch-mode
