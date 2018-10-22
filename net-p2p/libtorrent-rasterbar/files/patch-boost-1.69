@@ -1,0 +1,52 @@
+https://github.com/arvidn/libtorrent/issues/3378
+
+--- include/libtorrent/disk_io_job.hpp.orig	2018-10-05 09:19:18 UTC
++++ include/libtorrent/disk_io_job.hpp
+@@ -42,6 +42,7 @@ POSSIBILITY OF SUCH DAMAGE.
+ 
+ #include <string>
+ #include <boost/function/function1.hpp>
++#include <boost/noncopyable.hpp>
+ #include <boost/shared_ptr.hpp>
+ #include <boost/shared_ptr.hpp>
+ 
+--- include/libtorrent/kademlia/observer.hpp.orig	2018-10-05 09:19:18 UTC
++++ include/libtorrent/kademlia/observer.hpp
+@@ -38,6 +38,7 @@ POSSIBILITY OF SUCH DAMAGE.
+ 
+ #include "libtorrent/aux_/disable_warnings_push.hpp"
+ 
++#include <boost/noncopyable.hpp>
+ #include <boost/pool/pool.hpp>
+ #include <boost/detail/atomic_count.hpp>
+ #include <boost/intrusive_ptr.hpp>
+--- include/libtorrent/proxy_base.hpp.orig	2018-10-05 09:19:18 UTC
++++ include/libtorrent/proxy_base.hpp
+@@ -41,6 +41,7 @@ POSSIBILITY OF SUCH DAMAGE.
+ 
+ #include "libtorrent/aux_/disable_warnings_push.hpp"
+ #include <boost/function/function1.hpp>
++#include <boost/noncopyable.hpp>
+ #include <boost/shared_ptr.hpp>
+ #include "libtorrent/aux_/disable_warnings_pop.hpp"
+ 
+--- include/libtorrent/tracker_manager.hpp.orig	2018-10-05 09:19:21 UTC
++++ include/libtorrent/tracker_manager.hpp
+@@ -43,6 +43,7 @@ POSSIBILITY OF SUCH DAMAGE.
+ #include <utility>
+ #include <ctime>
+ 
++#include <boost/noncopyable.hpp>
+ #include <boost/shared_ptr.hpp>
+ #include <boost/enable_shared_from_this.hpp>
+ #include <boost/cstdint.hpp>
+--- src/kademlia/dht_storage.cpp.orig	2018-10-05 09:19:18 UTC
++++ src/kademlia/dht_storage.cpp
+@@ -37,6 +37,7 @@ POSSIBILITY OF SUCH DAMAGE.
+ #include <utility>
+ #include <boost/bind.hpp>
+ #include <boost/function/function1.hpp>
++#include <boost/noncopyable.hpp>
+ #include <boost/tuple/tuple.hpp>
+ 
+ #include "libtorrent/aux_/disable_warnings_pop.hpp"
