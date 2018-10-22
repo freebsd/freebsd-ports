@@ -14,7 +14,7 @@ LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox \
 		libbelcard.so:deskutils/belcard \
 		liblinphone++.so:net/liblinphone
 
-USES=		cmake:outsource pkgconfig qt:5
+USES=		cmake:outsource compiler:c++11-lib pkgconfig qt:5
 USE_QT= 	buildtools_build concurrent core gui linguisttools network \
 		qmake_build qml quick quickcontrols2 speech svg testlib widgets
 

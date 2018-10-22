@@ -23,7 +23,8 @@ LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox \
 		libortp.so:net/ortp \
 		libsqlite3.so:databases/sqlite3
 
-USES=		cmake:outsource gnome iconv pkgconfig python:build
+USES=		cmake:outsource compiler:c++11-lib gnome iconv pkgconfig \
+		python:build
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 

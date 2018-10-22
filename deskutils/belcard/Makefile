@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox \
 		libbelr.so:textproc/belr
 
-USES=		cmake:outsource
+USES=		cmake:outsource compiler:c++11-lib
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DENABLE_STATIC=NO -DENABLE_STRICT=NO -DENABLE_UNIT_TESTS=NO
