@@ -1,0 +1,13 @@
+https://github.com/PowerDNS/pdns/issues/7091
+
+--- dnsdist-lua.cc.orig	2018-07-10 12:43:20 UTC
++++ dnsdist-lua.cc
+@@ -73,7 +73,7 @@ void setLuaSideEffect()
+ 
+ bool getLuaNoSideEffect()
+ {
+-  return g_noLuaSideEffect==true;
++  return bool{g_noLuaSideEffect};
+ }
+ 
+ void resetLuaSideEffect()
