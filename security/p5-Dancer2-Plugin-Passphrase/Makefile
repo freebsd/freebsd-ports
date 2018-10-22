@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer2-Plugin-Passphrase
-PORTVERSION=	3.3.0
-PORTREVISION=	1
+PORTVERSION=	3.3.2
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,11 +15,12 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Dancer2>=0.200000:www/p5-Dancer2 \
-		p5-Data-Entropy>=0.005:security/p5-Data-Entropy \
+		p5-Data-Entropy>=0.007:security/p5-Data-Entropy \
 		p5-Digest-Bcrypt>=0:security/p5-Digest-Bcrypt
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
