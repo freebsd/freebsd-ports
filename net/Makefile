@@ -147,6 +147,7 @@
     SUBDIR += fiche
     SUBDIR += file2pcap
     SUBDIR += findmtu
+    SUBDIR += flent
     SUBDIR += flower
     SUBDIR += flowgrep
     SUBDIR += fonulator
