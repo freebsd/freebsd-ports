@@ -1,0 +1,12 @@
+https://github.com/adedov/libiqxmlrpc/issues/7
+
+--- libiqxmlrpc/ssl_lib.cc.orig	2016-01-20 07:08:19 UTC
++++ libiqxmlrpc/ssl_lib.cc
+@@ -12,6 +12,7 @@
+ #include <openssl/ssl.h>
+ #include <openssl/err.h>
+ 
++#include <boost/noncopyable.hpp>
+ #include <boost/thread/mutex.hpp>
+ #include <boost/thread/once.hpp>
+ 
