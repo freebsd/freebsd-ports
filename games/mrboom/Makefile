@@ -3,6 +3,7 @@
 
 PORTNAME=	mrboom
 PORTVERSION=	4.5
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libminizip.so:archivers/minizip \
 		libmodplug.so:audio/libmodplug
 
-USES=		gmake
+USES=		compiler:c++11-lang gmake
 USE_GITHUB=	yes
 USE_SDL=	sdl2 mixer2
 
