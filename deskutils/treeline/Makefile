@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	treeline
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://github.com/doug-101/TreeLine/releases/download/v${PORTVERSION}/ \
 		SF/${PORTNAME}/${PORTVERSION}
@@ -54,6 +54,7 @@ do-install:
 	(cd ${STAGEDIR}${PREFIX} && \
 		${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
 		-d ${DATADIR} -f ${DATADIR_REL})
+	(cd ${STAGEDIR}${DATADIR} && ${RM} *.bak *.orig *.pro *.spec)
 	(cd ${STAGEDIR}${DOCSDIR} && ${RM} INSTALL LICENSE)
 
 .include <bsd.port.mk>
