@@ -48,7 +48,6 @@
     SUBDIR += hs-zip-archive
     SUBDIR += hs-zlib
     SUBDIR += hs-zlib-bindings
-    SUBDIR += hs-zlib-enum
     SUBDIR += innoextract
     SUBDIR += javatar
     SUBDIR += jzlib

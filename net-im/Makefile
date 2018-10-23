@@ -29,7 +29,6 @@
     SUBDIR += gitterdone
     SUBDIR += gloox
     SUBDIR += hotot
-    SUBDIR += hs-haskell-xmpp
     SUBDIR += icmpchat
     SUBDIR += icqlib
     SUBDIR += jabber.el
