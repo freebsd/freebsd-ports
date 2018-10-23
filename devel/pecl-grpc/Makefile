@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grpc
-PORTVERSION=	1.15.0
+PORTVERSION=	1.16.0
 CATEGORIES=	devel net
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -20,8 +20,8 @@ USES=		php:pecl
 
 .include <bsd.port.pre.mk>
 
-.if ${FLAVOR} == php72 && ${ARCH} == i386
-BROKEN=		error: fastcall calling convention ignored on variadic function [-Werror,-Wignored-attributes]
-.endif
+#.if ${FLAVOR} == php72 && ${ARCH} == i386
+#BROKEN=		error: fastcall calling convention ignored on variadic function [-Werror,-Wignored-attributes]
+#.endif
 
 .include <bsd.port.post.mk>
