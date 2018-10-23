@@ -4,6 +4,7 @@
 PORTNAME=	zfsnap
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0-beta3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	2
 
@@ -16,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NO_BUILD=	yes
 USE_GITHUB=	yes
 
-OPTIONS_DEFINE=		BASH ZSH DOCS EXAMPLES
+OPTIONS_DEFINE=		BASH ZSH DOCS
 OPTIONS_DEFAULT=	BASH ZSH
 OPTIONS_SUB=	yes
 
@@ -27,11 +28,10 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sbin/zfsnap.sh ${STAGEDIR}${PREFIX}/sbin/zfsnap
-	cd ${WRKSRC}/share && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share
+	cd ${WRKSRC}/share && ${COPYTREE_SHARE} zfsnap ${STAGEDIR}${PREFIX}/share/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} completion ${STAGEDIR}${PREFIX}/share/zfsnap
+	cd ${WRKSRC} && ${COPYTREE_SHARE} periodic ${STAGEDIR}${PREFIX}/share/zfsnap
 	${INSTALL_MAN} ${WRKSRC}/man/man8/zfsnap.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/zfsnap.8
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} completion ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} periodic ${STAGEDIR}${EXAMPLESDIR}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}/${file}
@@ -39,12 +39,12 @@ do-install:
 
 post-install-BASH-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
-	${INSTALL_DATA} ${WRKSRC}/completion/zfsnap-completion.bash \
+	${LN} -s ../../share/zfsnap/completion/zfsnap-completion.bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/zfsnap.sh
 
 post-install-ZSH-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKSRC}/completion/zfsnap-completion.bash \
+	${LN} -s ../../share/zfsnap/completion/zfsnap-completion.zsh \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_zfsnap
 
 .include <bsd.port.mk>
