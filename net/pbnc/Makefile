@@ -10,12 +10,19 @@ DISTNAME=	pbnc
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Simple userspace TCP port bouncer
 
-LICENSE=	BSD
+LICENSE=	BSDunclear
+LICENSE_NAME=	Unclear BSD License
+LICENSE_TEXT=	License of this software is declared as 'BSD' in pbnc.readme. \
+		But it is not clear which versions of the BSD license (2, \
+		3 or 4 clause) it is. No further file in the source archive \
+		contains license information.
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 
 RUN_DEPENDS=	p5-Net-Netmask>=0:net-mgmt/p5-Net-Netmask
 
 USES=		perl5
 USE_PERL5=	run
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 PLIST_FILES=	etc/pbnc.cfg bin/pbnc.pl
