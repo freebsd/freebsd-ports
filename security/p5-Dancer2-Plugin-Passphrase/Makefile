@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer2-Plugin-Passphrase
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.3
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
