@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox
 
-USES=		cmake:outsource
+USES=		cmake:outsource compiler:c11
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DENABLE_DOC=NO -DENABLE_STATIC=NO -DENABLE_STRICT=NO
