@@ -3,12 +3,14 @@
 
 PORTNAME=	thinglaunch
 PORTVERSION=	1.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Very fast launcher program for X
+
+LICENSE=	MIT
 
 USE_XORG=	x11 xorgproto
 
