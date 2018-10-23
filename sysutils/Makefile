@@ -859,6 +859,7 @@
     SUBDIR += p5-arclog
     SUBDIR += p5-reslog
     SUBDIR += packer
+    SUBDIR += packet-python
     SUBDIR += pacman
     SUBDIR += paicc
     SUBDIR += paladin
