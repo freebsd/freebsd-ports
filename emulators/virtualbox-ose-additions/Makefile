@@ -4,7 +4,6 @@
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.2.18
 PORTREVISION=	1
-PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX?=	-additions
