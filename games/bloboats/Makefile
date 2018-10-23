@@ -20,6 +20,7 @@ LICENSE_FILE=	${WRKSRC}/copying.txt
 
 BROKEN_FreeBSD_11=	does not build on 11.X
 BROKEN_FreeBSD_12=	does not build on 12.X	# PR 226180
+BROKEN_FreeBSD_13=	does not build on 13.X	# PR 226180
 
 USES=		dos2unix gmake
 USE_SDL=	mixer image net sdl

@@ -13,6 +13,7 @@ COMMENT=	Fast and flexible web server
 LICENSE=	GPLv2
 
 BROKEN_FreeBSD_12=	fails to configure: Unable to detect data struct is used by crypt_r
+BROKEN_FreeBSD_13=	fails to configure: Unable to detect data struct is used by crypt_r
 
 USE_GITHUB=	yes
 GH_PROJECT=	webserver

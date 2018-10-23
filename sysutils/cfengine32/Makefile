@@ -18,6 +18,7 @@ CPE_VENDOR=	gnu
 DEPRECATED=		OpenSSL 1.1.X is not supported.
 EXPIRATION_DATE=	2021-09-30
 BROKEN_FreeBSD_12=	openssl111 is not supported
+BROKEN_FreeBSD_13=	openssl111 is not supported
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 

@@ -12,6 +12,7 @@ COMMENT=	Code_Aster finite element method solver
 LICENSE=	GPLv2
 
 BROKEN_FreeBSD_12=	does not build (sed: ${STAGEDIR}${inst_dir}/${VE}/aster.conf: No such file or directory)
+BROKEN_FreeBSD_13=	does not build (sed: ${STAGEDIR}${inst_dir}/${VE}/aster.conf: No such file or directory)
 
 #-----------------------------------------------------------------------
 # You may define these options:
