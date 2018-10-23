@@ -2,7 +2,7 @@
 
 PORTNAME=	kodi
 CATEGORIES=	multimedia
-DISTVERSION=	18.0.g201810021630
+DISTVERSION=	18.0.g201810231420
 PKGNAMESUFFIX?=	-devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -54,7 +54,7 @@ USES=		autoreconf:build cmake:outsource,noninja compiler:c++11-lib \
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
 GH_PROJECT=	xbmc
-GH_TAGNAME=	18.0b3-Leia
+GH_TAGNAME=	18.0b4-Leia
 USE_GNOME=	libxslt libxml2
 USE_JAVA=	yes
 JAVA_BUILD=	yes
