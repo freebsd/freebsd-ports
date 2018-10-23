@@ -23,4 +23,3 @@ lib/libubox.a
 lib/libubox.so
 %%LUA_MODLIBDIR%%/uloop.so
 %%DATADIR%%/jshn.sh
-
