@@ -20,8 +20,6 @@ USE_PERL5=	run
 SHEBANG_FILES=	scripts/compiler_test.pl scripts/launchn.pl
 USE_LDCONFIG=	yes
 
-ONLY_FOR_ARCHS=	i386 amd64
-
 OPTIONS_DEFINE=	DOCS
 
 PLIST_SUB=	PKGNAME="${PKGNAME}"
