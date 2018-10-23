@@ -1,5 +1,5 @@
---- thinglaunch.c.orig	2004-09-20 16:27:56.000000000 +0200
-+++ thinglaunch.c	2009-09-01 22:11:10.000000000 +0200
+--- thinglaunch.c.orig	2004-09-20 14:27:56 UTC
++++ thinglaunch.c
 @@ -19,10 +19,14 @@
   */
  #include <X11/Xlib.h>
@@ -15,7 +15,7 @@
  
  static void createWindow();
  static void setupGC();
-@@ -50,10 +54,13 @@
+@@ -50,10 +54,13 @@ unsigned long black, white;
  
  /* the actual commandline */
  char command[MAXCMD+1];
@@ -29,7 +29,7 @@
  	createWindow();
  
  	setupGC();
-@@ -209,15 +216,15 @@
+@@ -209,15 +216,15 @@ static void redraw() {
  
  	int font_height;
  	int textwidth;
@@ -49,7 +49,7 @@
  
  	XFlush(display);
  
-@@ -229,22 +236,36 @@
+@@ -229,22 +236,36 @@ static void keypress(XKeyEvent * keyeven
  #define KEYBUFLEN 20
  	char buffer[KEYBUFLEN+1];
  	KeySym key_symbol;
@@ -74,7 +74,8 @@
 +			if (cursor_pos)
 +			    for (tmp_pos = --cursor_pos; tmp_pos <= len; tmp_pos++)
 +				command[tmp_pos] = command[tmp_pos+1];
-+			break;
+ 			break;
+-		case 0xff0d: /* enter */
 +		case XK_Left:
 +			if (cursor_pos)
 +			    cursor_pos--;
@@ -88,13 +89,12 @@
 +			break;
 +		case XK_End:
 +			cursor_pos = len;
- 			break;
--		case 0xff0d: /* enter */
++			break;
 +		case XK_Return:
  			execcmd();
  			break;
  		default:
-@@ -253,10 +274,11 @@
+@@ -253,10 +274,11 @@ static void keypress(XKeyEvent * keyeven
  
  	/* normal printable chars */
  	if (key_symbol >= 0x20 && key_symbol <= 0x7e) {
