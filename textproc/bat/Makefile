@@ -2,8 +2,7 @@
 
 PORTNAME=	bat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1
-PORTREVISION=	2
+DISTVERSION=	0.8.0
 CATEGORIES=	textproc
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -20,82 +19,98 @@ PLIST_FILES=	bin/bat
 CARGO_CRATES=	aho-corasick-0.6.8 \
 		ansi_colours-1.0.1 \
 		ansi_term-0.11.0 \
+		assert_cmd-0.10.1 \
 		atty-0.2.11 \
-		base64-0.8.0 \
+		base64-0.9.3 \
 		bincode-1.0.1 \
 		bitflags-1.0.4 \
 		byteorder-1.2.6 \
 		cc-1.0.25 \
 		cfg-if-0.1.5 \
-		chrono-0.4.6 \
 		clap-2.32.0 \
 		clicolors-control-0.2.0 \
 		cloudabi-0.0.3 \
 		console-0.6.2 \
-		directories-1.0.1 \
+		content_inspector-0.2.3 \
+		difference-2.0.0 \
+		directories-1.0.2 \
+		encoding-0.2.33 \
+		encoding-index-japanese-1.20141219.5 \
+		encoding-index-korean-1.20141219.5 \
+		encoding-index-simpchinese-1.20141219.5 \
+		encoding-index-singlebyte-1.20141219.5 \
+		encoding-index-tradchinese-1.20141219.5 \
+		encoding_index_tests-0.1.4 \
 		error-chain-0.12.0 \
-		flate2-1.0.2 \
+		escargot-0.3.1 \
+		flate2-1.0.3 \
 		fnv-1.0.6 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		git2-0.7.5 \
+		glob-0.2.11 \
+		humantime-1.1.1 \
 		idna-0.1.5 \
 		itoa-0.4.3 \
 		kernel32-sys-0.2.2 \
 		lazy_static-0.2.11 \
 		lazy_static-1.1.0 \
+		lazycell-1.2.0 \
 		libc-0.2.43 \
-		libgit2-sys-0.7.9 \
-		libz-sys-1.0.22 \
+		libgit2-sys-0.7.10 \
+		libz-sys-1.0.23 \
 		linked-hash-map-0.5.1 \
-		lock_api-0.1.3 \
+		lock_api-0.1.4 \
 		log-0.4.5 \
 		matches-0.1.8 \
 		memchr-2.1.0 \
 		miniz-sys-0.1.10 \
-		num-integer-0.1.39 \
-		num-traits-0.2.6 \
-		onig-3.2.2 \
-		onig_sys-68.2.1 \
+		onig-4.2.0 \
+		onig_sys-69.0.0 \
 		owning_ref-0.3.3 \
 		parking_lot-0.6.4 \
 		parking_lot_core-0.3.1 \
 		percent-encoding-1.0.1 \
 		pkg-config-0.3.14 \
-		plist-0.2.4 \
-		proc-macro2-0.4.19 \
+		plist-0.3.0 \
+		predicates-1.0.0 \
+		predicates-core-1.0.0 \
+		predicates-tree-1.0.0 \
+		proc-macro2-0.4.20 \
+		quick-error-1.2.2 \
 		quote-0.6.8 \
 		rand-0.4.3 \
 		rand-0.5.5 \
-		rand_core-0.2.1 \
+		rand_core-0.2.2 \
+		rand_core-0.3.0 \
 		redox_syscall-0.1.40 \
 		redox_termios-0.1.1 \
 		regex-1.0.5 \
-		regex-syntax-0.4.2 \
 		regex-syntax-0.6.2 \
 		remove_dir_all-0.5.1 \
 		rustc_version-0.2.3 \
 		ryu-0.2.6 \
-		safemem-0.2.0 \
+		safemem-0.3.0 \
 		same-file-1.0.3 \
 		scopeguard-0.3.3 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
 		serde-1.0.79 \
 		serde_derive-1.0.79 \
-		serde_json-1.0.28 \
+		serde_json-1.0.32 \
+		shell-words-0.1.0 \
 		smallvec-0.6.5 \
 		stable_deref_trait-1.1.1 \
 		strsim-0.7.0 \
-		syn-0.15.5 \
-		syntect-2.1.0 \
+		syn-0.15.9 \
+		syntect-3.0.1 \
 		tempdir-0.3.7 \
 		term_size-0.3.1 \
 		termion-1.5.1 \
-		termios-0.3.0 \
+		termios-0.3.1 \
 		textwrap-0.10.0 \
 		thread_local-0.3.6 \
-		time-0.1.40 \
+		treeline-0.1.0 \
 		ucd-util-0.1.1 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.7 \
@@ -105,9 +120,11 @@ CARGO_CRATES=	aho-corasick-0.6.8 \
 		url-1.7.1 \
 		utf8-ranges-1.0.1 \
 		vcpkg-0.2.6 \
-		version_check-0.1.4 \
+		vec_map-0.8.1 \
+		version_check-0.1.5 \
 		void-1.0.2 \
 		walkdir-2.2.5 \
+		wild-2.0.1 \
 		winapi-0.2.8 \
 		winapi-0.3.6 \
 		winapi-build-0.1.1 \
