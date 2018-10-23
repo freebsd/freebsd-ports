@@ -9,8 +9,6 @@ COMMENT=	Replacement for ls, cp, mkdir, diff and rsync commands for filesystems
 
 LICENSE=	APACHE20
 
-BROKEN_amd64=	github.com/minio/mc/vendor/golang.org/x/crypto/blake2b.supportsAVX2: relocation target runtime.support_avx2 not defined
-
 BUILD_DEPENDS=	go>=1.9.4:lang/go \
 		bash:shells/bash
 
@@ -29,10 +27,10 @@ MC=	${PORTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	minio
 GH_PROJECT=	mc
-GH_TAGNAME=	RELEASE.2018-06-09T02-18-09Z
+GH_TAGNAME=	RELEASE.2018-10-18T00-40-05Z
 GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${GH_PROJECT}
 MAKE_ENV=	GOPATH=${WRKSRC} GOROOT=${LOCALBASE}/go
-COMMIT_ID=	8cf797da5fc629af4f7850858b611fc980478e2f
+COMMIT_ID=	0dd32c1b26f05e7f94f76f2ceb62b5229836b009
 
 PLIST_FILES=	bin/${MC}
 
