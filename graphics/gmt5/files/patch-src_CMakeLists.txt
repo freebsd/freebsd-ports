@@ -1,0 +1,22 @@
+--- src/CMakeLists.txt.orig	2018-03-10 21:01:02 UTC
++++ src/CMakeLists.txt
+@@ -40,6 +40,10 @@ message (STATUS "Searching dependent lib
+ find_package (NETCDF REQUIRED)
+ include_directories (${NETCDF_INCLUDE_DIR})
+ 
++#libexecinfo is required in *BSD
++find_package(Backtrace REQUIRED)
++list (APPEND GMT_OPTIONAL_LIBRARIES ${Backtrace_LIBRARIES})
++
+ # libcurl is required since 5.4
+ find_package (CURL REQUIRED)
+ include_directories (${CURL_INCLUDE_DIRS})
+@@ -560,7 +564,7 @@ endif (HAVE_M_LIBRARY)
+ # set the build version (VERSION) and the API version (SOVERSION)
+ set_target_properties (gmtlib
+ 	PROPERTIES
+-	OUTPUT_NAME gmt
++	OUTPUT_NAME gmt5
+ 	PREFIX "${LIB_PREFIX}"
+ 	IMPORT_PREFIX "${LIB_PREFIX}"
+ 	VERSION ${GMT_LIB_VERSION}
