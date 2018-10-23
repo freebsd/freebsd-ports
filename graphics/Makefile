@@ -290,6 +290,7 @@
     SUBDIR += gmic-qt
     SUBDIR += gmt
     SUBDIR += gmt5-dcw
+    SUBDIR += gmt5-gshhg
     SUBDIR += gnash
     SUBDIR += gnofract4d
     SUBDIR += gnome-color-manager
