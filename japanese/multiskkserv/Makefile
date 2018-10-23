@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	multiskkserv
-PORTVERSION=	0.20020201
-PORTREVISION=	1
+PORTVERSION=	0.20100128
 CATEGORIES=	japanese
 MASTER_SITES=	http://www3.big.or.jp/~sian/linux/products/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.//g}
@@ -14,10 +13,13 @@ COMMENT=	Multiple dictionary server for the SKK
 EXTRACT_DEPENDS=	${NONEXISTENT}:databases/cdb:build
 RUN_DEPENDS=	${LOCALBASE}/${SKKDIR}/SKK-JISYO.${SKKJISYO_TYPE}.cdb:japanese/skk-jisyo-cdb
 
-USES=		tar:bzip2
+USES=		tar:xz
 
 SKKDIR?=	share/skk
 SKKJISYO_TYPE?=	L
+
+SUB_FILES+=	multiskkserv
+SUB_LIST+=	SKKDIR=${SKKDIR} SKKJISYO_TYPE=${SKKJISYO_TYPE}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/0.//g}
 USE_RC_SUBR=	${PORTNAME}
