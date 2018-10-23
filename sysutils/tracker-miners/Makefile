@@ -3,6 +3,7 @@
 
 PORTNAME=	tracker-miners
 PORTVERSION=	2.0.5
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 
