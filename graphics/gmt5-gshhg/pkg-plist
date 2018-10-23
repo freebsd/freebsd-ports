@@ -1,0 +1,15 @@
+%%DATADIR%%/binned_GSHHS_c.nc
+%%DATADIR%%/binned_GSHHS_f.nc
+%%DATADIR%%/binned_GSHHS_h.nc
+%%DATADIR%%/binned_GSHHS_i.nc
+%%DATADIR%%/binned_GSHHS_l.nc
+%%DATADIR%%/binned_border_c.nc
+%%DATADIR%%/binned_border_f.nc
+%%DATADIR%%/binned_border_h.nc
+%%DATADIR%%/binned_border_i.nc
+%%DATADIR%%/binned_border_l.nc
+%%DATADIR%%/binned_river_c.nc
+%%DATADIR%%/binned_river_f.nc
+%%DATADIR%%/binned_river_h.nc
+%%DATADIR%%/binned_river_i.nc
+%%DATADIR%%/binned_river_l.nc
