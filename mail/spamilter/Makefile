@@ -49,6 +49,7 @@ IPFWMTAD_USES=	ssl
 
 .if ${PORT_OPTIONS:MIPFWMTAD}
 BROKEN_FreeBSD_12=	option IPFWMTAD needs old openssl
+BROKEN_FreeBSD_13=	option IPFWMTAD needs old openssl
 .endif
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"

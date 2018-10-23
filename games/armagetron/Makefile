@@ -18,6 +18,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_aarch64=			network/nNetObject.cpp:1533:46: error: ordered comparison between pointer and zero ('const nSocket *' and 'int')
 BROKEN_FreeBSD_12_armv6=	network/nNetObject.cpp:1533:46: error: ordered comparison between pointer and zero ('const nSocket *' and 'int')
 BROKEN_FreeBSD_12_armv7=	network/nNetObject.cpp:1533:46: error: ordered comparison between pointer and zero ('const nSocket *' and 'int')
+BROKEN_FreeBSD_13_armv6=	network/nNetObject.cpp:1533:46: error: ordered comparison between pointer and zero ('const nSocket *' and 'int')
+BROKEN_FreeBSD_13_armv7=	network/nNetObject.cpp:1533:46: error: ordered comparison between pointer and zero ('const nSocket *' and 'int')
 
 USES=		gmake jpeg
 GNU_CONFIGURE=	yes

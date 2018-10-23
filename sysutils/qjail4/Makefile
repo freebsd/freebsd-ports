@@ -27,6 +27,7 @@ NO_ARCH=	yes
 
 IGNORE_FreeBSD_11=	Only for FreeBSD 10.x
 IGNORE_FreeBSD_12=	Only for FreeBSD 10.x
+IGNORE_FreeBSD_13=	Only for FreeBSD 10.x
 
 do-install:
 .for i in qjail qjail.vnet.be qjail.vnet.ng

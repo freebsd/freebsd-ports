@@ -15,6 +15,7 @@ EXPIRATION_DATE=	2018-12-31
 
 BROKEN_FreeBSD_11=	does not build due to access to kernel-private structure (error: member access into incomplete type 'struct in6_ifaddr')
 BROKEN_FreeBSD_12=	does not build due to access to kernel-private structure (error: member access into incomplete type 'struct in6_ifaddr')
+BROKEN_FreeBSD_13=	does not build due to access to kernel-private structure (error: member access into incomplete type 'struct in6_ifaddr')
 
 USES=		cmake gettext kde:4 qt:4 shebangfix tar:xz
 SHEBANG_FILES=	src/kconf_update/*.pl

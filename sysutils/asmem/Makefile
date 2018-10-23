@@ -13,6 +13,7 @@ COMMENT=	AfterStep look-n-feel memory utilization monitor
 LICENSE=	GPLv2
 
 BROKEN_FreeBSD_12=	fails to compile: read_mem.c: invalid use of undefined type 'struct vmmeter'
+BROKEN_FreeBSD_13=	fails to compile: read_mem.c: invalid use of undefined type 'struct vmmeter'
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes

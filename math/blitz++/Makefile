@@ -12,6 +12,7 @@ LICENSE=	GPLv3 BSD3CLAUSE
 LICENSE_COMB=	multi
 
 BROKEN_FreeBSD_12=	fails to compile: ../blitz/blitz.h:58:12: 'iostream.h' file not found
+BROKEN_FreeBSD_13=	fails to compile: ../blitz/blitz.h:58:12: 'iostream.h' file not found
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool pathfix python
