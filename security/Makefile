@@ -227,7 +227,6 @@
     SUBDIR += hs-HsOpenSSL
     SUBDIR += hs-RSA
     SUBDIR += hs-SHA
-    SUBDIR += hs-certificate
     SUBDIR += hs-cipher-aes
     SUBDIR += hs-cipher-aes128
     SUBDIR += hs-cipher-blowfish

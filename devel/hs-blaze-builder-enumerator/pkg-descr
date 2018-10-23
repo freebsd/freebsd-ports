@@ -1,6 +1,0 @@
-This package integrates the builders from the blaze-builder package with
-the enumerator package. It provides infrastructure and enumeratees for
-incrementally executing builders and pass the filled chunks to a bytestring
-iteratee.
-
-WWW: https://github.com/meiersi/blaze-builder-enumerator
