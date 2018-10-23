@@ -2,7 +2,7 @@ bin/fswbuild
 bin/fswcmp
 bin/fswconf
 bin/fswshow
-etc/fswatch.conf.sample
+@sample etc/fswatch.conf.sample
 man/man1/fswbuild.1.gz
 man/man1/fswcmp.1.gz
 man/man1/fswconf.1.gz
