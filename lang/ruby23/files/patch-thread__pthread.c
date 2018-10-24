@@ -1,6 +1,6 @@
---- thread_pthread.c.orig	2016-04-15 16:07:07 UTC
+--- thread_pthread.c.orig	2018-03-18 15:27:34 UTC
 +++ thread_pthread.c
-@@ -1154,7 +1154,7 @@ native_sleep(rb_thread_t *th, struct tim
+@@ -1155,7 +1155,7 @@ native_sleep(rb_thread_t *th, struct tim
  }
  
  #ifdef USE_UBF_LIST
