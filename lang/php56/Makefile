@@ -13,6 +13,9 @@ COMMENT=	PHP Scripting Language
 
 LICENSE=	PHP301
 
+DEPRECATED=	Security Support ends on 31 Dec 2018
+EXPIRATION_DATE=2019-01-01
+
 USES+=		tar:xz cpe
 CPE_PRODUCT=	php
 NO_OPTIONS_SORT=yes
