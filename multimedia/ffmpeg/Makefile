@@ -458,8 +458,6 @@ INSTALL_TARGET=	install-progs install-doc install-data \
 		install-libs install-headers install-examples
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
-
-DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin V=1
