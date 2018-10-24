@@ -1,4 +1,5 @@
-SHA256 (fcitx/fcitx-libpinyin-0.3.2.tar.xz) = bdf0496e230cdf6c271b6eaf86212d9c5a2d51b60d8d9063b2f6a343de1e21fc
-SIZE (fcitx/fcitx-libpinyin-0.3.2.tar.xz) = 43028
-SHA256 (fcitx/model.text.20130308.tar.gz) = 4595b5832ec1f81e93a37ec5841a57898c68f6024ef0593b8de127d1e3571a69
-SIZE (fcitx/model.text.20130308.tar.gz) = 15100062
+TIMESTAMP = 1540296343
+SHA256 (fcitx/fcitx-libpinyin-0.5.3.tar.xz) = 46ca8cc970622665d4e46b69c99c9e37a729871d96cce9d4ee63c5c99210cca4
+SIZE (fcitx/fcitx-libpinyin-0.5.3.tar.xz) = 47504
+SHA256 (fcitx/model.text.20161206.tar.gz) = 5c7024e5735389c471f54b867eda0d98c5a40a5e5e75333a9febac107508f704
+SIZE (fcitx/model.text.20161206.tar.gz) = 15099931
