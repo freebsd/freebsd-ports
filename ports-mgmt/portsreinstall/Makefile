@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	portsreinstall
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1.0
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	OSDN/${PORTNAME}/69740/ \
+MASTER_SITES=	OSDN/${PORTNAME}/70073/ \
 		http://www.mwghennndo.com/software/${PORTNAME}/
 
 MAINTAINER=	sakaue.mamoru@mwghennndo.com
