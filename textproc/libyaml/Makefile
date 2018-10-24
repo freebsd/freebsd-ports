@@ -12,6 +12,7 @@ MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	YAML 1.1 parser and emitter written in C
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
