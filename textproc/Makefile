@@ -21,6 +21,7 @@
     SUBDIR += R-cran-readxl
     SUBDIR += R-cran-rematch
     SUBDIR += R-cran-rex
+    SUBDIR += R-cran-rio
     SUBDIR += R-cran-rmarkdown
     SUBDIR += R-cran-stringi
     SUBDIR += R-cran-stringr
