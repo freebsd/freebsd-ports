@@ -12,17 +12,20 @@ COMMENT=	Convert, change, and calculate with IPv6 addresses
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_mips=		fails to build: libipv6addr.c: addr_test_method may be used uninitialized in this function
-BROKEN_mips64=		fails to build: libipv6addr.c: addr_test_method may be used uninitialized in this function
-BROKEN_powerpc64=	fails to build: libipv6addr.c: addr_test_method may be used uninitialized in this function
-
 USES=		gmake perl5 shebangfix ssl
 GNU_CONFIGURE=	yes
-CFLAGS+=	-Wno-unknown-warning-option
 
 SHEBANG_FILES=	tools/*.pl tools/*.sh.in
+
+.include <bsd.port.pre.mk>
+
+.if !(${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64)
+CFLAGS+=	-Wno-unknown-warning-option
+.else
+CFLAGS+=	-Wno-uninitialized
+.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
