@@ -1,0 +1,10 @@
+--- buildvariables.orig	2018-10-24 03:59:40 UTC
++++ buildvariables
+@@ -2,6 +2,6 @@
+ "Executable destination dir";MSK_INSTALL_BINS;/bin;/bin
+ "Headers destination dir";MSK_INSTALL_INCLUDES;/include;/include
+ "Documentation destination dir";MSK_INSTALL_DOCS;/share/doc/molsketch;/doc
+-"Libraries (64bit) destination dir";MSK_INSTALL_LIBS64;/lib64/molsketch;/lib
++"Libraries (64bit) destination dir";MSK_INSTALL_LIBS64;/lib/molsketch;/lib
+ "Libraries (32bit) destination dir";MSK_INSTALL_LIBS;/lib/molsketch;/lib
+ "Build OpenBabel interface";MSK_OBABELIFACE;true;true
