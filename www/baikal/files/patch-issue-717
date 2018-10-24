@@ -1,0 +1,93 @@
+diff --git Core/Frameworks/Flake/Controller/Cli.php Core/Frameworks/Flake/Controller/Cli.php
+index 0fcd10c3..6430b1c3 100644
+--- Core/Frameworks/Flake/Controller/Cli.php
++++ Core/Frameworks/Flake/Controller/Cli.php
+@@ -39,9 +39,8 @@ function render() {
+     }
+ 
+     function execute() {
+-        reset($this->aSequence);
+-        while (list($sKey, ) = each($this->aSequence)) {
+-            $this->aSequence[$sKey]["block"]->execute();
++        foreach ($this->aSequence as $aStep) {
++            $aStep["block"]->execute();
+         }
+     }
+ 
+diff --git Core/Frameworks/Flake/Core/Render/Container.php Core/Frameworks/Flake/Core/Render/Container.php
+index 5f0662cf..ae668151 100644
+--- Core/Frameworks/Flake/Core/Render/Container.php
++++ Core/Frameworks/Flake/Core/Render/Container.php
+@@ -58,23 +58,20 @@ function render() {
+     }
+ 
+     function execute() {
+-        reset($this->aSequence);
+-        while (list($sKey, ) = each($this->aSequence)) {
+-            $this->aSequence[$sKey]["block"]->execute();
++        foreach ($this->aSequence as $aStep) {
++            $aStep["block"]->execute();
+         }
+     }
+ 
+     protected function renderBlocks() {
+         $aHtml = [];
+-        reset($this->aSequence);
+-        while (list($sKey, ) = each($this->aSequence)) {
++        foreach ($this->aSequence as $sKey => $aStep) {
+             $this->aSequence[$sKey]["rendu"] = $this->aSequence[$sKey]["block"]->render();
+         }
+ 
+         $aHtml = [];
+-        reset($this->aBlocks);
+-        while (list($sZone, ) = each($this->aBlocks)) {
+-            $aHtml[$sZone] = implode("", $this->aBlocks[$sZone]);
++        foreach ($this->aBlocks as $sZone => $aBlock) {
++            $aHtml[$sZone] = implode("", $aBlock);
+         }
+ 
+         reset($aHtml);
+diff --git Core/Frameworks/Flake/Framework.php Core/Frameworks/Flake/Framework.php
+index adc5c781..50b9c12e 100644
+--- Core/Frameworks/Flake/Framework.php
++++ Core/Frameworks/Flake/Framework.php
+@@ -122,7 +122,7 @@ static function bootstrap() {
+             if (isset($_COOKIE) && is_array($_COOKIE)) { $process[] = &$_COOKIE;}
+             if (isset($_REQUEST) && is_array($_REQUEST)) { $process[] = &$_REQUEST;}
+ 
+-            while (list($key, $val) = each($process)) {
++            foreach ($process as $key => $val) {
+                 foreach ($val as $k => $v) {
+                     unset($process[$key][$k]);
+                     if (is_array($v)) {
+diff --git Core/Frameworks/Flake/Util/Router.php Core/Frameworks/Flake/Util/Router.php
+index 15462cb3..02b109d7 100644
+--- Core/Frameworks/Flake/Util/Router.php
++++ Core/Frameworks/Flake/Util/Router.php
+@@ -59,10 +59,9 @@ static function getRouteForController($sController) {
+ 
+         $aRoutes = $GLOBALS["ROUTER"]::getRoutes();
+ 
+-        reset($aRoutes);
+-        while (list($sRoute, ) = each($aRoutes)) {
+-            if (str_replace("\\Route", "\\Controller", $aRoutes[$sRoute]) === $sController) {
+-                return $sRoute;
++        foreach ($aRoutes as $sKey => $sRoute) {
++            if (str_replace("\\Route", "\\Controller", $sRoute) === $sController) {
++                return $sKey;
+             }
+         }
+ 
+diff --git Core/Frameworks/Flake/Util/Tools.php Core/Frameworks/Flake/Util/Tools.php
+index 21bf8502..ca371cc3 100644
+--- Core/Frameworks/Flake/Util/Tools.php
++++ Core/Frameworks/Flake/Util/Tools.php
+@@ -75,7 +75,7 @@ static function view_array($array_in) {
+         if (is_array($array_in))    {
+             $result = '<table border="1" cellpadding="1" cellspacing="0" bgcolor="white">';
+             if (!count($array_in))    {$result .= '<tr><td><font face="Verdana,Arial" size="1"><b>' . htmlspecialchars("EMPTY!") . '</b></font></td></tr>';}
+-            while (list($key, $val) = each($array_in))    {
++            foreach ($array_in as $key => $val) {
+                 $result .= '<tr><td valign="top"><font face="Verdana,Arial" size="1">' . htmlspecialchars((string)$key) . '</font></td><td>';
+                 if (is_array($array_in[$key]))    {
+                     $result .= \Flake\Util\Tools::view_array($array_in[$key]);
