@@ -13,8 +13,8 @@ COMMENT=	Color emoji font using EmojiOne Unicode 9.0
 
 LICENSE=	CC-BY-4.0 MIT
 LICENSE_COMB=	multi
-LICENSE_FILE_CC-BY-4.0+=	${WRKSRC}/LICENSE-CC-BY.txt
-LICENSE_FILE_MIT+=		${WRKSRC}/LICENSE-MIT.txt
+LICENSE_FILE_CC-BY-4.0=		${WRKSRC}/LICENSE-CC-BY.txt
+LICENSE_FILE_MIT=		${WRKSRC}/LICENSE-MIT.txt
 
 DEPRECATED=	EOL upstream, please use x11-fonts/twemoji-color-font-ttf instead
 EXPIRATION_DATE=	2018-11-18
