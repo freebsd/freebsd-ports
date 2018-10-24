@@ -859,7 +859,6 @@
     SUBDIR += p5-arclog
     SUBDIR += p5-reslog
     SUBDIR += packer
-    SUBDIR += packet-python
     SUBDIR += pacman
     SUBDIR += paicc
     SUBDIR += paladin
@@ -1001,6 +1000,7 @@
     SUBDIR += py-mqttwarn
     SUBDIR += py-nagiosplugin
     SUBDIR += py-nomad
+    SUBDIR += py-packet-python
     SUBDIR += py-pkginfo
     SUBDIR += py-ploy
     SUBDIR += py-ploy_ansible
