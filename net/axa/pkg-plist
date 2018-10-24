@@ -1,6 +1,7 @@
 bin/axa_link_certs
 bin/axa_make_cert
 bin/axa_server_cert
+bin/axa_tsindextool
 bin/radtool
 bin/radtunnel
 bin/sratool
@@ -14,6 +15,7 @@ include/axa/client_config.h
 include/axa/dns_walk.h
 include/axa/fields.h
 include/axa/json.h
+include/axa/mdb.h
 include/axa/strbuf.h
 include/axa/open_nmsg_out.h
 include/axa/protocol.h
@@ -26,7 +28,7 @@ include/libmy/b64_encode.h
 lib/libaxa.a
 lib/libaxa.so
 lib/libaxa.so.1
-lib/libaxa.so.1.0.0
+lib/libaxa.so.1.1.0
 libdata/pkgconfig/libaxa.pc
 man/man1/radtool.1.gz
 man/man1/radtunnel.1.gz
@@ -35,3 +37,4 @@ man/man1/sratunnel.1.gz
 man/man8/axa_link_certs.8.gz
 man/man8/axa_make_cert.8.gz
 man/man8/axa_server_cert.8.gz
+man/man8/axa_tsindextool.8.gz
