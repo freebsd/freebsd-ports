@@ -4,6 +4,7 @@ bin/portsreinstall-chroot
 lib/portsreinstall/chroot-mount/libcommand.sh
 lib/portsreinstall/chroot-mount/libconf.sh
 lib/portsreinstall/chroot-mount/libdatabase_maintain.sh
+lib/portsreinstall/chroot-mount/libfs.sh
 lib/portsreinstall/chroot-mount/libmain.sh
 lib/portsreinstall/chroot-mount/libmessage.sh
 lib/portsreinstall/chroot-mount/liboptions.sh
@@ -30,6 +31,7 @@ lib/portsreinstall/libdatabase_query.sh
 lib/portsreinstall/libdatabase_record.sh
 lib/portsreinstall/libdeinstall.sh
 lib/portsreinstall/libfileedit.sh
+lib/portsreinstall/libfs.sh
 lib/portsreinstall/libmain.sh
 lib/portsreinstall/libmessage.sh
 lib/portsreinstall/libmisc.sh
@@ -41,6 +43,7 @@ lib/portsreinstall/libstr.sh
 lib/portsreinstall/libtemp.sh
 lib/portsreinstall/libusage.sh
 lib/portsreinstall/main/libcommand.sh
+lib/portsreinstall/main/libmain.sh
 lib/portsreinstall/main/liboptions.sh
 lib/portsreinstall/main/libtemp.sh
 lib/portsreinstall/main/libusage.sh
