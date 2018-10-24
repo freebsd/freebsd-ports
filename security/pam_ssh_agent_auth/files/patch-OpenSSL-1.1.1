@@ -4,7 +4,7 @@
  	case 1:
  		key = pamsshagentauth_key_new(KEY_RSA1);
  		bits = pamsshagentauth_buffer_get_int(&auth->identities);
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		pamsshagentauth_buffer_get_bignum(&auth->identities, key->rsa->e);
  		pamsshagentauth_buffer_get_bignum(&auth->identities, key->rsa->n);
  		*comment = pamsshagentauth_buffer_get_string(&auth->identities, NULL);
@@ -28,7 +28,7 @@
  	}
  	pamsshagentauth_buffer_init(&buffer);
  	pamsshagentauth_buffer_put_char(&buffer, SSH_AGENTC_RSA_CHALLENGE);
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  	pamsshagentauth_buffer_put_int(&buffer, BN_num_bits(key->rsa->n));
  	pamsshagentauth_buffer_put_bignum(&buffer, key->rsa->e);
  	pamsshagentauth_buffer_put_bignum(&buffer, key->rsa->n);
@@ -44,7 +44,7 @@
  static void
  ssh_encode_identity_rsa1(Buffer *b, RSA *key, const char *comment)
  {
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  	pamsshagentauth_buffer_put_int(b, BN_num_bits(key->n));
  	pamsshagentauth_buffer_put_bignum(b, key->n);
  	pamsshagentauth_buffer_put_bignum(b, key->e);
@@ -69,7 +69,7 @@
  	pamsshagentauth_buffer_put_cstring(b, key_ssh_name(key));
  	switch (key->type) {
  	case KEY_RSA:
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		pamsshagentauth_buffer_put_bignum2(b, key->rsa->n);
  		pamsshagentauth_buffer_put_bignum2(b, key->rsa->e);
  		pamsshagentauth_buffer_put_bignum2(b, key->rsa->d);
@@ -86,7 +86,7 @@
 +#endif
  		break;
  	case KEY_DSA:
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		pamsshagentauth_buffer_put_bignum2(b, key->dsa->p);
  		pamsshagentauth_buffer_put_bignum2(b, key->dsa->q);
  		pamsshagentauth_buffer_put_bignum2(b, key->dsa->g);
@@ -106,7 +106,7 @@
  
  	if (key->type == KEY_RSA1) {
  		pamsshagentauth_buffer_put_char(&msg, SSH_AGENTC_REMOVE_RSA_IDENTITY);
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		pamsshagentauth_buffer_put_int(&msg, BN_num_bits(key->rsa->n));
  		pamsshagentauth_buffer_put_bignum(&msg, key->rsa->e);
  		pamsshagentauth_buffer_put_bignum(&msg, key->rsa->n);
@@ -124,7 +124,7 @@
  		pamsshagentauth_buffer_put_int(buffer, 0);
  		return 0;
  	}
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  	if (value->neg) {
 +#else
 +	if (BN_is_negative(value)) {
@@ -218,7 +218,7 @@
  	case KEY_RSA:
  		if ((rsa = RSA_new()) == NULL)
  			pamsshagentauth_fatal("key_new: RSA_new failed");
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		if ((rsa->n = BN_new()) == NULL)
  			pamsshagentauth_fatal("key_new: BN_new failed");
  		if ((rsa->e = BN_new()) == NULL)
@@ -232,7 +232,7 @@
  	case KEY_DSA:
  		if ((dsa = DSA_new()) == NULL)
  			pamsshagentauth_fatal("key_new: DSA_new failed");
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		if ((dsa->p = BN_new()) == NULL)
  			pamsshagentauth_fatal("key_new: BN_new failed");
  		if ((dsa->q = BN_new()) == NULL)
@@ -253,7 +253,7 @@
  	switch (k->type) {
  	case KEY_RSA1:
  	case KEY_RSA:
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		if ((k->rsa->d = BN_new()) == NULL)
  			pamsshagentauth_fatal("key_new_private: BN_new failed");
  		if ((k->rsa->iqmp = BN_new()) == NULL)
@@ -271,7 +271,7 @@
 +#endif
  		break;
  	case KEY_DSA:
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		if ((k->dsa->priv_key = BN_new()) == NULL)
  			pamsshagentauth_fatal("key_new_private: BN_new failed");
 +#else
@@ -280,7 +280,7 @@
 +#endif
  		break;
  	case KEY_ECDSA:
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		if (EC_KEY_set_private_key(k->ecdsa, BN_new()) != 1)
  			pamsshagentauth_fatal("key_new_private: EC_KEY_set_private_key failed");
 +#else
@@ -292,7 +292,7 @@
  	case KEY_RSA1:
  	case KEY_RSA:
  		return a->rsa != NULL && b->rsa != NULL &&
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		    BN_cmp(a->rsa->e, b->rsa->e) == 0 &&
  		    BN_cmp(a->rsa->n, b->rsa->n) == 0;
 +#else
@@ -301,7 +301,7 @@
 +#endif
  	case KEY_DSA:
  		return a->dsa != NULL && b->dsa != NULL &&
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		    BN_cmp(a->dsa->p, b->dsa->p) == 0 &&
  		    BN_cmp(a->dsa->q, b->dsa->q) == 0 &&
  		    BN_cmp(a->dsa->g, b->dsa->g) == 0 &&
@@ -328,7 +328,7 @@
  	}
  	switch (k->type) {
  	case KEY_RSA1:
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		nlen = BN_num_bytes(k->rsa->n);
  		elen = BN_num_bytes(k->rsa->e);
  		len = nlen + elen;
@@ -368,7 +368,7 @@
  			return -1;
  		*cpp = cp;
  		/* Get public exponent, public modulus. */
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		if (!read_bignum(cpp, ret->rsa->e))
  			return -1;
  		if (!read_bignum(cpp, ret->rsa->n))
@@ -386,7 +386,7 @@
  
  	if (key->type == KEY_RSA1 && key->rsa != NULL) {
  		/* size of modulus 'n' */
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		bits = BN_num_bits(key->rsa->n);
  		fprintf(f, "%u", bits);
  		if (write_bignum(f, key->rsa->e) &&
@@ -404,7 +404,7 @@
  {
  	switch (k->type) {
  	case KEY_RSA1:
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  	case KEY_RSA:
  		return BN_num_bits(k->rsa->n);
  	case KEY_DSA:
@@ -422,7 +422,7 @@
  	switch (k->type) {
  	case KEY_DSA:
  		n = pamsshagentauth_key_new(k->type);
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		if ((BN_copy(n->dsa->p, k->dsa->p) == NULL) ||
  		    (BN_copy(n->dsa->q, k->dsa->q) == NULL) ||
  		    (BN_copy(n->dsa->g, k->dsa->g) == NULL) ||
@@ -438,7 +438,7 @@
  	case KEY_RSA:
  	case KEY_RSA1:
  		n = pamsshagentauth_key_new(k->type);
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		if ((BN_copy(n->rsa->n, k->rsa->n) == NULL) ||
  		    (BN_copy(n->rsa->e, k->rsa->e) == NULL))
 +#else
@@ -452,7 +452,7 @@
  	switch (type) {
  	case KEY_RSA:
  		key = pamsshagentauth_key_new(type);
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		if (pamsshagentauth_buffer_get_bignum2_ret(&b, key->rsa->e) == -1 ||
  		    pamsshagentauth_buffer_get_bignum2_ret(&b, key->rsa->n) == -1) {
 +#else
@@ -466,7 +466,7 @@
  		break;
  	case KEY_DSA:
  		key = pamsshagentauth_key_new(type);
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		if (pamsshagentauth_buffer_get_bignum2_ret(&b, key->dsa->p) == -1 ||
  		    pamsshagentauth_buffer_get_bignum2_ret(&b, key->dsa->q) == -1 ||
  		    pamsshagentauth_buffer_get_bignum2_ret(&b, key->dsa->g) == -1 ||
@@ -484,7 +484,7 @@
  	}
  	pamsshagentauth_buffer_init(&b);
  	switch (key->type) {
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  	case KEY_DSA:
  		pamsshagentauth_buffer_put_cstring(&b, key_ssh_name(key));
  		pamsshagentauth_buffer_put_bignum2(&b, key->dsa->p);
@@ -513,7 +513,7 @@
  	case KEY_RSA:
  		if ((pk->rsa = RSA_new()) == NULL)
  			pamsshagentauth_fatal("key_demote: RSA_new failed");
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		if ((pk->rsa->e = BN_dup(k->rsa->e)) == NULL)
  			pamsshagentauth_fatal("key_demote: BN_dup failed");
  		if ((pk->rsa->n = BN_dup(k->rsa->n)) == NULL)
@@ -526,7 +526,7 @@
  	case KEY_DSA:
  		if ((pk->dsa = DSA_new()) == NULL)
  			pamsshagentauth_fatal("key_demote: DSA_new failed");
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		if ((pk->dsa->p = BN_dup(k->dsa->p)) == NULL)
  			pamsshagentauth_fatal("key_demote: BN_dup failed");
  		if ((pk->dsa->q = BN_dup(k->dsa->q)) == NULL)
@@ -554,7 +554,7 @@
  	u_char digest[EVP_MAX_MD_SIZE], sigblob[SIGBLOB_LEN];
  	u_int rlen, slen, len, dlen;
  	Buffer b;
-+#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100005L
 +	const BIGNUM *r, *s;
 +#endif
  
@@ -579,7 +579,7 @@
  		return -1;
  	}
  
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  	rlen = BN_num_bytes(sig->r);
  	slen = BN_num_bytes(sig->s);
 +#else
@@ -593,7 +593,7 @@
  		return -1;
  	}
  	memset(sigblob, 0, SIGBLOB_LEN);
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  	BN_bn2bin(sig->r, sigblob+ SIGBLOB_LEN - INTBLOB_LEN - rlen);
  	BN_bn2bin(sig->s, sigblob+ SIGBLOB_LEN - slen);
 +#else
@@ -613,7 +613,7 @@
  	u_int len, dlen;
  	int rlen, ret;
  	Buffer b;
-+#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100005L
 +	BIGNUM *r, *s;
 +#endif
  
@@ -623,7 +623,7 @@
  	/* parse signature */
  	if ((sig = DSA_SIG_new()) == NULL)
  		pamsshagentauth_fatal("ssh_dss_verify: DSA_SIG_new failed");
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  	if ((sig->r = BN_new()) == NULL)
  		pamsshagentauth_fatal("ssh_dss_verify: BN_new failed");
  	if ((sig->s = BN_new()) == NULL)
@@ -675,7 +675,7 @@
      u_char digest[EVP_MAX_MD_SIZE];
      u_int len, dlen;
      Buffer b, bb;
-+#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100005L
 +	BIGNUM *r, *s;
 +#endif
  
@@ -702,7 +702,7 @@
      }
  
      pamsshagentauth_buffer_init(&bb);
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
      if (pamsshagentauth_buffer_get_bignum2_ret(&bb, sig->r) == -1 ||
          pamsshagentauth_buffer_get_bignum2_ret(&bb, sig->s) == -1) {
 +#else
@@ -723,7 +723,7 @@
      u_int len, dlen;
      int rlen, ret;
      Buffer b;
-+#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100005L
 +	BIGNUM *r, *s;
 +#endif
  
@@ -733,7 +733,7 @@
  
      pamsshagentauth_buffer_init(&b);
      pamsshagentauth_buffer_append(&b, sigblob, len);
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
      if ((pamsshagentauth_buffer_get_bignum2_ret(&b, sig->r) == -1) ||
          (pamsshagentauth_buffer_get_bignum2_ret(&b, sig->s) == -1))
 +#else
@@ -808,13 +808,13 @@
  		pamsshagentauth_logerror("ssh_rsa_verify: no RSA key");
  		return -1;
  	}
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  	if (BN_num_bits(key->rsa->n) < SSH_RSA_MINIMUM_MODULUS_SIZE) {
 +#else
 +	if (BN_num_bits(RSA_get0_n(key->rsa)) < SSH_RSA_MINIMUM_MODULUS_SIZE) {
 +#endif
  		pamsshagentauth_logerror("ssh_rsa_verify: RSA modulus too small: %d < minimum %d bits",
-+#if OPENSSL_VERSION_NUMBER < 0x10100000L
++#if OPENSSL_VERSION_NUMBER < 0x10100005L
  		    BN_num_bits(key->rsa->n), SSH_RSA_MINIMUM_MODULUS_SIZE);
 +#else
 +		    BN_num_bits(RSA_get0_n(key->rsa)), SSH_RSA_MINIMUM_MODULUS_SIZE);
