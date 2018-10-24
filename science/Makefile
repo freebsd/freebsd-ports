@@ -146,6 +146,7 @@
     SUBDIR += mmtf
     SUBDIR += mol2ps
     SUBDIR += molgif
+    SUBDIR += molsketch
     SUBDIR += mpb
     SUBDIR += mpqc
     SUBDIR += msms
