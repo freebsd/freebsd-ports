@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tmuxinator
-PORTVERSION=	0.12.0
+PORTVERSION=	0.13.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -17,6 +17,7 @@ RUN_DEPENDS=	rubygem-erubis>=2.6:www/rubygem-erubis \
 
 USES=		gem
 USE_RUBY=	yes
+
 NO_ARCH=	yes
 
 OPTIONS_DEFAULT=	TMUX
