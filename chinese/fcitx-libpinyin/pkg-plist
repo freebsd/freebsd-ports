@@ -1,5 +1,5 @@
 lib/fcitx/fcitx-libpinyin.so
-%%QT4%%lib/fcitx/qt/libfcitx-libpinyin-dictmanager.so
+%%QT5%%lib/fcitx/qt/libfcitx-libpinyin-dictmanager.so
 share/fcitx/addon/fcitx-libpinyin.conf
 share/fcitx/configdesc/fcitx-libpinyin.desc
 share/fcitx/imicon/bopomofo.png
@@ -30,7 +30,11 @@ share/fcitx/libpinyin/zhuyin_data/table.conf
 share/icons/hicolor/48x48/status/fcitx-bopomofo.png
 share/icons/hicolor/48x48/status/fcitx-pinyin-libpinyin.png
 share/icons/hicolor/48x48/status/fcitx-shuangpin-libpinyin.png
+share/locale/ca/LC_MESSAGES/fcitx-libpinyin.mo
+share/locale/da/LC_MESSAGES/fcitx-libpinyin.mo
 share/locale/de/LC_MESSAGES/fcitx-libpinyin.mo
 share/locale/ja/LC_MESSAGES/fcitx-libpinyin.mo
+share/locale/ko/LC_MESSAGES/fcitx-libpinyin.mo
+share/locale/ru/LC_MESSAGES/fcitx-libpinyin.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx-libpinyin.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx-libpinyin.mo
