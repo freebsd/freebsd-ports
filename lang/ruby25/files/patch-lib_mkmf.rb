@@ -1,6 +1,6 @@
---- lib/mkmf.rb.orig	2015-12-16 09:25:48 UTC
+--- lib/mkmf.rb.orig	2018-10-09 14:09:35 UTC
 +++ lib/mkmf.rb
-@@ -235,7 +235,7 @@ module MakeMakefile
+@@ -234,7 +234,7 @@ module MakeMakefile
    end
    $extmk ||= false
    if not $extmk and File.exist?(($hdrdir = RbConfig::CONFIG["rubyhdrdir"]) + "/ruby/ruby.h")
