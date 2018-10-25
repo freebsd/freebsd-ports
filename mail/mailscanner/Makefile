@@ -3,6 +3,7 @@
 
 PORTNAME=	MailScanner
 PORTVERSION=	5.1.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://s3.amazonaws.com/msv5/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${PATCHLEVEL}.nix
