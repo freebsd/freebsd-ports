@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2018-03-22 06:56:06 UTC
+--- CMakeLists.txt.orig	2018-10-22 02:29:34 UTC
 +++ CMakeLists.txt
-@@ -338,7 +338,7 @@ if(NOT RDK_INSTALL_INTREE)
+@@ -410,7 +410,7 @@ if(NOT RDK_INSTALL_INTREE)
        PATTERN ".svn" EXCLUDE
        )
    install(DIRECTORY Docs DESTINATION

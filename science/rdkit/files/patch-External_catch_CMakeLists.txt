@@ -1,0 +1,17 @@
+--- External/catch/CMakeLists.txt.orig	2018-10-22 02:29:34 UTC
++++ External/catch/CMakeLists.txt
+@@ -3,7 +3,7 @@ add_custom_target(catch ALL)
+ if(NOT DEFINED CATCH_DIR)
+   set(CATCH_DIR "${CMAKE_CURRENT_SOURCE_DIR}/catch")
+ endif()
+-if(NOT EXISTS "${CATCH_DIR}/single_include")
++if(NOT EXISTS "${CATCH_DIR}/include/catch2")
+     include(RDKitUtils)
+     set(RELEASE_NO "2.1.2")
+     downloadAndCheckMD5("https://github.com/catchorg/Catch2/archive/v${RELEASE_NO}.tar.gz"
+@@ -17,4 +17,4 @@ else()
+   message("-- Found Catch2 source in ${CATCH_DIR}")
+ endif()
+ 
+-set(CATCH_INCLUDE_DIR "${CATCH_DIR}/single_include" PARENT_SCOPE)
++set(CATCH_INCLUDE_DIR "${CATCH_DIR}/include/catch2" PARENT_SCOPE)
