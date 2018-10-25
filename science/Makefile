@@ -129,6 +129,7 @@
     SUBDIR += lm
     SUBDIR += luscus
     SUBDIR += madness
+    SUBDIR += maeparser
     SUBDIR += massxpert
     SUBDIR += mbdyn
     SUBDIR += mcstas
