@@ -458,7 +458,6 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/Basic/TypeTraits.h
 %%CLANG%%llvm-devel/include/clang/Basic/Version.h
 %%CLANG%%llvm-devel/include/clang/Basic/Version.inc
-%%CLANG%%llvm-devel/include/clang/Basic/VirtualFileSystem.h
 %%CLANG%%llvm-devel/include/clang/Basic/Visibility.h
 %%CLANG%%llvm-devel/include/clang/Basic/X%%LLVM_MAJOR%%6Target.def
 %%CLANG%%llvm-devel/include/clang/Basic/XRayInstr.h
@@ -1284,6 +1283,7 @@ llvm-devel/include/llvm-c/Initialization.h
 llvm-devel/include/llvm-c/LinkTimeOptimizer.h
 llvm-devel/include/llvm-c/Linker.h
 llvm-devel/include/llvm-c/Object.h
+llvm-devel/include/llvm-c/OptRemarks.h
 llvm-devel/include/llvm-c/OrcBindings.h
 llvm-devel/include/llvm-c/Support.h
 llvm-devel/include/llvm-c/Target.h
@@ -1399,6 +1399,7 @@ llvm-devel/include/llvm/Analysis/ConstantFolding.h
 llvm-devel/include/llvm/Analysis/DOTGraphTraitsPass.h
 llvm-devel/include/llvm/Analysis/DemandedBits.h
 llvm-devel/include/llvm/Analysis/DependenceAnalysis.h
+llvm-devel/include/llvm/Analysis/DivergenceAnalysis.h
 llvm-devel/include/llvm/Analysis/DomPrinter.h
 llvm-devel/include/llvm/Analysis/DominanceFrontier.h
 llvm-devel/include/llvm/Analysis/DominanceFrontierImpl.h
@@ -1461,6 +1462,7 @@ llvm-devel/include/llvm/Analysis/ScalarEvolutionExpressions.h
 llvm-devel/include/llvm/Analysis/ScalarEvolutionNormalization.h
 llvm-devel/include/llvm/Analysis/ScopedNoAliasAA.h
 llvm-devel/include/llvm/Analysis/SparsePropagation.h
+llvm-devel/include/llvm/Analysis/SyncDependenceAnalysis.h
 llvm-devel/include/llvm/Analysis/SyntheticCountsUtils.h
 llvm-devel/include/llvm/Analysis/TargetFolder.h
 llvm-devel/include/llvm/Analysis/TargetLibraryInfo.def
@@ -1769,6 +1771,7 @@ llvm-devel/include/llvm/DebugInfo/MSF/MappedBlockStream.h
 llvm-devel/include/llvm/DebugInfo/PDB/ConcreteSymbolEnumerator.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIADataStream.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAEnumDebugStreams.h
+llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAEnumFrameData.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAEnumInjectedSources.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAEnumLineNumbers.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAEnumSectionContribs.h
@@ -1776,6 +1779,7 @@ llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAEnumSourceFiles.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAEnumSymbols.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAEnumTables.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAError.h
+llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAFrameData.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAInjectedSource.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIALineNumber.h
 llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIARawSymbol.h
@@ -1788,6 +1792,7 @@ llvm-devel/include/llvm/DebugInfo/PDB/DIA/DIAUtils.h
 llvm-devel/include/llvm/DebugInfo/PDB/GenericError.h
 llvm-devel/include/llvm/DebugInfo/PDB/IPDBDataStream.h
 llvm-devel/include/llvm/DebugInfo/PDB/IPDBEnumChildren.h
+llvm-devel/include/llvm/DebugInfo/PDB/IPDBFrameData.h
 llvm-devel/include/llvm/DebugInfo/PDB/IPDBInjectedSource.h
 llvm-devel/include/llvm/DebugInfo/PDB/IPDBLineNumber.h
 llvm-devel/include/llvm/DebugInfo/PDB/IPDBRawSymbol.h
@@ -2336,6 +2341,7 @@ llvm-devel/include/llvm/Support/UniqueLock.h
 llvm-devel/include/llvm/Support/VCSRevision.h
 llvm-devel/include/llvm/Support/Valgrind.h
 llvm-devel/include/llvm/Support/VersionTuple.h
+llvm-devel/include/llvm/Support/VirtualFileSystem.h
 llvm-devel/include/llvm/Support/Watchdog.h
 llvm-devel/include/llvm/Support/Win64EH.h
 llvm-devel/include/llvm/Support/WindowsError.h
@@ -2394,6 +2400,7 @@ llvm-devel/include/llvm/Transforms/IPO/FunctionImport.h
 llvm-devel/include/llvm/Transforms/IPO/GlobalDCE.h
 llvm-devel/include/llvm/Transforms/IPO/GlobalOpt.h
 llvm-devel/include/llvm/Transforms/IPO/GlobalSplit.h
+llvm-devel/include/llvm/Transforms/IPO/HotColdSplitting.h
 llvm-devel/include/llvm/Transforms/IPO/InferFunctionAttrs.h
 llvm-devel/include/llvm/Transforms/IPO/Inliner.h
 llvm-devel/include/llvm/Transforms/IPO/Internalize.h
@@ -2409,6 +2416,7 @@ llvm-devel/include/llvm/Transforms/IPO/WholeProgramDevirt.h
 llvm-devel/include/llvm/Transforms/InstCombine/InstCombine.h
 llvm-devel/include/llvm/Transforms/InstCombine/InstCombineWorklist.h
 llvm-devel/include/llvm/Transforms/Instrumentation.h
+llvm-devel/include/llvm/Transforms/Instrumentation/AddressSanitizerPass.h
 llvm-devel/include/llvm/Transforms/Instrumentation/BoundsChecking.h
 llvm-devel/include/llvm/Transforms/Instrumentation/CGProfile.h
 llvm-devel/include/llvm/Transforms/Instrumentation/ControlHeightReduction.h
@@ -2801,6 +2809,7 @@ llvm-devel/lib/libLLVMNVPTXInfo.a
 llvm-devel/lib/libLLVMObjCARCOpts.a
 llvm-devel/lib/libLLVMObject.a
 llvm-devel/lib/libLLVMObjectYAML.a
+llvm-devel/lib/libLLVMOptRemarks.a
 llvm-devel/lib/libLLVMOption.a
 llvm-devel/lib/libLLVMOrcJIT.a
 llvm-devel/lib/libLLVMPasses.a
@@ -2832,6 +2841,12 @@ llvm-devel/lib/libLLVMTableGen.a
 llvm-devel/lib/libLLVMTarget.a
 llvm-devel/lib/libLLVMTransformUtils.a
 llvm-devel/lib/libLLVMVectorize.a
+llvm-devel/lib/libLLVMWebAssemblyAsmParser.a
+llvm-devel/lib/libLLVMWebAssemblyAsmPrinter.a
+llvm-devel/lib/libLLVMWebAssemblyCodeGen.a
+llvm-devel/lib/libLLVMWebAssemblyDesc.a
+llvm-devel/lib/libLLVMWebAssemblyDisassembler.a
+llvm-devel/lib/libLLVMWebAssemblyInfo.a
 llvm-devel/lib/libLLVMWindowsManifest.a
 llvm-devel/lib/libLLVMX%%LLVM_MAJOR%%6AsmParser.a
 llvm-devel/lib/libLLVMX%%LLVM_MAJOR%%6AsmPrinter.a
@@ -3014,6 +3029,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%svn
 %%LLDB%%llvm-devel/lib/liblldbPluginScriptInterpreterPython.a
 %%LLDB%%llvm-devel/lib/liblldbPluginStructuredDataDarwinLog.a
 %%LLDB%%llvm-devel/lib/liblldbPluginSymbolFileDWARF.a
+%%LLDB%%llvm-devel/lib/liblldbPluginSymbolFileNativePDB.a
 %%LLDB%%llvm-devel/lib/liblldbPluginSymbolFilePDB.a
 %%LLDB%%llvm-devel/lib/liblldbPluginSymbolFileSymtab.a
 %%LLDB%%llvm-devel/lib/liblldbPluginSymbolVendorELF.a
