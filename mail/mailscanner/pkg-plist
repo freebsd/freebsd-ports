@@ -251,6 +251,34 @@ sbin/ms-upgrade-conf
 @sample %%DATADIR%%/reports/en/stored.filename.message.txt.sample
 @sample %%DATADIR%%/reports/en/stored.size.message.txt.sample
 @sample %%DATADIR%%/reports/en/stored.virus.message.txt.sample
+@sample %%DATADIR%%/reports/en_uk/deleted.content.message.txt.sample
+@sample %%DATADIR%%/reports/en_uk/deleted.filename.message.txt.sample
+@sample %%DATADIR%%/reports/en_uk/deleted.size.message.txt.sample
+@sample %%DATADIR%%/reports/en_uk/deleted.virus.message.txt.sample
+@sample %%DATADIR%%/reports/en_uk/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/en_uk/inline.sig.html.sample
+@sample %%DATADIR%%/reports/en_uk/inline.sig.txt.sample
+@sample %%DATADIR%%/reports/en_uk/inline.spam.warning.txt.sample
+@sample %%DATADIR%%/reports/en_uk/inline.warning.html.sample
+@sample %%DATADIR%%/reports/en_uk/inline.warning.txt.sample
+@sample %%DATADIR%%/reports/en_uk/languages.conf.sample
+@sample %%DATADIR%%/reports/en_uk/languages.conf.strings.sample
+@sample %%DATADIR%%/reports/en_uk/recipient.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/en_uk/recipient.spam.report.txt.sample
+@sample %%DATADIR%%/reports/en_uk/rejection.report.txt.sample
+@sample %%DATADIR%%/reports/en_uk/sender.content.report.txt.sample
+@sample %%DATADIR%%/reports/en_uk/sender.error.report.txt.sample
+@sample %%DATADIR%%/reports/en_uk/sender.filename.report.txt.sample
+@sample %%DATADIR%%/reports/en_uk/sender.mcp.report.txt.sample
+@sample %%DATADIR%%/reports/en_uk/sender.size.report.txt.sample
+@sample %%DATADIR%%/reports/en_uk/sender.spam.rbl.report.txt.sample
+@sample %%DATADIR%%/reports/en_uk/sender.spam.report.txt.sample
+@sample %%DATADIR%%/reports/en_uk/sender.spam.sa.report.txt.sample
+@sample %%DATADIR%%/reports/en_uk/sender.virus.report.txt.sample
+@sample %%DATADIR%%/reports/en_uk/stored.content.message.txt.sample
+@sample %%DATADIR%%/reports/en_uk/stored.filename.message.txt.sample
+@sample %%DATADIR%%/reports/en_uk/stored.size.message.txt.sample
+@sample %%DATADIR%%/reports/en_uk/stored.virus.message.txt.sample
 @sample %%DATADIR%%/reports/es/deleted.content.message.txt.sample
 @sample %%DATADIR%%/reports/es/deleted.filename.message.txt.sample
 @sample %%DATADIR%%/reports/es/deleted.size.message.txt.sample
@@ -512,13 +540,14 @@ lib/MailScanner/wrapper/bitdefender-autoupdate
 lib/MailScanner/wrapper/bitdefender-wrapper
 lib/MailScanner/wrapper/clamav-autoupdate
 lib/MailScanner/wrapper/clamav-wrapper
+lib/MailScanner/wrapper/drweb-wrapper
 lib/MailScanner/wrapper/esets-wrapper
 lib/MailScanner/wrapper/f-secure-autoupdate
 lib/MailScanner/wrapper/f-secure-wrapper
 lib/MailScanner/wrapper/generic-autoupdate
 lib/MailScanner/wrapper/generic-wrapper
+lib/MailScanner/wrapper/kaspersky-wrapper
 lib/MailScanner/systemd/ms-milter
 lib/MailScanner/systemd/ms-systemd
 lib/MailScanner/wrapper/sophos-autoupdate
 lib/MailScanner/wrapper/sophos-wrapper
-

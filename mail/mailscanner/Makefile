@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MailScanner
-PORTVERSION=	5.1.1
+PORTVERSION=	5.1.2
 CATEGORIES=	mail
 MASTER_SITES=	https://s3.amazonaws.com/msv5/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${PATCHLEVEL}.nix
