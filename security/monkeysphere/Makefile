@@ -8,7 +8,7 @@ MASTER_SITES=	http://archive.monkeysphere.info/debian/pool/monkeysphere/m/monkey
 # hack for debian orig tarballs
 DISTFILES=	${PORTNAME}_${DISTVERSION}.orig${EXTRACT_SUFX}
 
-MAINTAINER=	anarcat@koumbit.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use the OpenPGP web of trust to verify ssh connections
 
 LICENSE=	GPLv3
