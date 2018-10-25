@@ -1,7 +1,7 @@
 %%SITE_ARCH%%/auto/YAML/Syck/Syck.so
 %%SITE_ARCH%%/JSON/Syck.pm
 %%SITE_ARCH%%/YAML/Syck.pm
-%%SITE_ARCH%%/YAML/Loader/Syck.pm
 %%SITE_ARCH%%/YAML/Dumper/Syck.pm
+%%SITE_ARCH%%/YAML/Loader/Syck.pm
 %%PERL5_MAN3%%/JSON::Syck.3.gz
 %%PERL5_MAN3%%/YAML::Syck.3.gz
