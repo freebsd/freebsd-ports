@@ -14,8 +14,8 @@ include/s6-rc/s6rc-utils.h
 include/s6-rc/s6rc.h
 lib/libs6rc.so
 lib/libs6rc.so.0.4
-lib/libs6rc.so.0.4.0
-lib/libs6rc.so.0.4.0.0
+lib/libs6rc.so.0.4.1
+lib/libs6rc.so.0.4.1.0
 lib/s6-rc/libs6rc.a
 libexec/s6-rc-fdholder-filler
 libexec/s6-rc-oneshot-run
