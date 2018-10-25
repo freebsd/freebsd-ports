@@ -1,0 +1,7 @@
+This is Schrodinger, Inc's 2D coordinate generation. The emphasis of these
+algorithms are on quality of 2D coordinates rather than speed of generation.
+The algorithm distinguishes itself from many others by doing well with both
+macrocycles and metal complexes. It also does extremely well on typical
+drug-like small molecules, and has been validated on millions of compounds.
+
+WWW: https://github.com/schrodinger/coordgenlibs

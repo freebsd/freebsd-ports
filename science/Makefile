@@ -51,6 +51,7 @@
     SUBDIR += clhep
     SUBDIR += clipper
     SUBDIR += colt
+    SUBDIR += coordgenlibs
     SUBDIR += coot
     SUBDIR += cp2k
     SUBDIR += crf++
