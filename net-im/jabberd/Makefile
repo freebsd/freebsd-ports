@@ -3,7 +3,7 @@
 
 PORTNAME=	jabberd
 PORTVERSION=	2.6.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/jabberd2/jabberd2/releases/download/${PORTNAME}-${DISTVERSION}/ \
 		LOCAL/matthew/${PORTNAME}
@@ -17,7 +17,8 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libgsasl.so:security/gsasl \
 		libidn.so:dns/libidn \
 		libudns.so:dns/udns
-USES=		autoreconf compiler:c11 iconv libtool perl5 ssl tar:xz
+USES=		autoreconf compiler:c11 iconv libtool perl5 pkgconfig \
+		ssl tar:xz
 
 OPTIONS_DEFINE=	MYSQL PGSQL LDAP BDB SQLITE PAM PIPE ANON FS DEBUG REQUIRES \
 		DOCS SUPERSEDED EXPERIMENTAL
