@@ -3,14 +3,20 @@
 
 PORTNAME=	ssid
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dl.suckless.org/tools/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Simple setsid replacement
+MAINTAINER=	tobik@FreeBSD.org
+COMMENT=	Run a command in a new session
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PLIST_FILES=	bin/ssid
+PLIST_FILES=	bin/setsid bin/ssid
+
+post-install:
+	${LN} ${STAGEDIR}${PREFIX}/bin/ssid \
+		${STAGEDIR}${PREFIX}/bin/setsid
 
 .include <bsd.port.mk>
