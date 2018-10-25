@@ -1,3 +1,3 @@
-TIMESTAMP = 1536610693
-SHA256 (MailScanner-5.1.1-1.nix.tar.gz) = d49ab24270fc047baabf6491110e61508feec9de56d4b372b35f318337180541
-SIZE (MailScanner-5.1.1-1.nix.tar.gz) = 658275
+TIMESTAMP = 1540495845
+SHA256 (MailScanner-5.1.2-1.nix.tar.gz) = 086406f8631d5293c533f904ef9ed3de1864df1f1ce6bbbc6f5572d2f6644c1a
+SIZE (MailScanner-5.1.2-1.nix.tar.gz) = 663063
