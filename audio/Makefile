@@ -640,6 +640,7 @@
     SUBDIR += paprefs
     SUBDIR += patchage
     SUBDIR += pavucontrol
+    SUBDIR += pavucontrol-qt
     SUBDIR += pavumeter
     SUBDIR += pc-mixer
     SUBDIR += pd
