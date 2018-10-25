@@ -1,7 +1,7 @@
 bin/openscad
 man/man1/openscad.1.gz
-share/appdata/openscad.appdata.xml
 share/applications/openscad.desktop
+share/metainfo/org.openscad.OpenSCAD.appdata.xml
 share/mime/packages/openscad.xml
 %%DATADIR%%/color-schemes/editor/dark-background.json
 %%DATADIR%%/color-schemes/editor/light-background.json
@@ -24,6 +24,7 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/color-schemes/render/tomorrow.json
 %%DATADIR%%/examples/Advanced/GEB.scad
 %%DATADIR%%/examples/Advanced/animation.scad
+%%DATADIR%%/examples/Advanced/assert.scad
 %%DATADIR%%/examples/Advanced/children.scad
 %%DATADIR%%/examples/Advanced/children_indexed.scad
 %%DATADIR%%/examples/Advanced/module_recursion.scad
@@ -41,6 +42,7 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/examples/Basics/rotate_extrude.scad
 %%DATADIR%%/examples/Basics/text_on_cube.scad
 %%DATADIR%%/examples/COPYING-CC0.txt
+%%DATADIR%%/examples/Functions/echo.scad
 %%DATADIR%%/examples/Functions/functions.scad
 %%DATADIR%%/examples/Functions/list_comprehensions.scad
 %%DATADIR%%/examples/Functions/polygon_areas.scad
