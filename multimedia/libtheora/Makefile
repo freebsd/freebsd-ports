@@ -17,13 +17,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis
 
+USES=		libtool localbase pathfix tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-sdltest \
 		--disable-examples
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix tar:bzip2
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>
