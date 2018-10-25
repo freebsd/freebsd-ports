@@ -1,11 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	valentina
-DISTVERSION=	0.6.0.0
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	a
+DISTVERSION=	0.6.1
 CATEGORIES=	misc
-MASTER_SITES=	http://cdn.bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
+MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Sewing pattern drafting tool aiming to remake the garment industry
@@ -20,7 +18,7 @@ USE_LDCONFIG=	yes
 
 BB_ACCOUNT=	dismine
 BB_PROJECT=	${PORTNAME}
-BB_COMMIT=	fccfd7b0aa17
+BB_COMMIT=	a2e2f6648b28
 
 QMAKE_ARGS=	CONFIG+="noTests" CONFIG+="noRunPath"
 .if !defined(WITH_CCACHE_BUILD) || defined(NO_CCACHE)
