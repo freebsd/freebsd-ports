@@ -1,6 +1,6 @@
 --- src/x11/fg_internal_x11.h.orig	2014-10-20 15:27:04 UTC
 +++ src/x11/fg_internal_x11.h
-@@ -136,8 +136,42 @@ struct tagSFG_PlatformWindowState
+@@ -136,11 +136,50 @@ struct tagSFG_PlatformWindowState
  #include <string.h>
  
  #    if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__NetBSD__)
@@ -35,15 +35,24 @@
 +#        endif
 +#        include <dev/usb/usb.h>
 +#        include <dev/usb/usbhid.h>
-+
+ 
 +/* Compatibility with older usb.h revisions */
 +#        if !defined(USB_MAX_DEVNAMES) && defined(MAXDEVNAMES)
 +#            define USB_MAX_DEVNAMES MAXDEVNAMES
 +#        endif
- 
++
  #        if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
- #            include <sys/joystick.h>
-@@ -189,6 +223,30 @@ struct tagSFG_PlatformWindowState
+-#            include <sys/joystick.h>
++struct joystick {
++	int x;
++	int y;
++	int b1;
++	int b2;
++};
+ #        else
+ /*
+  * XXX NetBSD/amd64 systems may find that they have to steal the
+@@ -189,6 +228,30 @@ struct tagSFG_PlatformWindowState
   */
  #    define _JS_MAX_AXES 16
  typedef struct tagSFG_PlatformJoystick SFG_PlatformJoystick;
