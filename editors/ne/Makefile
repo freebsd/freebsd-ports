@@ -23,7 +23,7 @@ MAKE_ARGS=	CC="${CC}" \
 		NE_GLOBAL_DIR="${DATADIR}"
 ALL_TARGET=	ne
 
-LDFLAGS=	-lgnuregex
+LDFLAGS+=	-lgnuregex
 
 BUILD_WRKSRC=	${WRKSRC}/src
 INFO=		ne
@@ -45,6 +45,9 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ne
+	${INSTALL_MAN} ${WRKSRC}/doc/ne.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/doc/ne.info.gz \
+		${STAGEDIR}${PREFIX}/${INFO_PATH}/
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
