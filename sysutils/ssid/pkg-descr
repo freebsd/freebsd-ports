@@ -1,4 +1,4 @@
-Simple setsid replacement, nothing special about it
-except it being really simple.
+Small wrapper for the setsid(2) syscall to run a command in a new
+session.
 
 WWW: http://tools.suckless.org/ssid/
