@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ibus-m17n
-DISTVERSION=	1.3.4-16
-DISTVERSIONSUFFIX=	-g791efdd
+DISTVERSION=	1.4.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +19,7 @@ RUN_DEPENDS=	ibus-daemon:textproc/ibus
 
 PORTSCOUT=	limit:^[0-9]+\.[0-9].*$$
 
-USES=		autoreconf gmake libtool pkgconfig
+USES=		autoreconf gmake gnome libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	ibus
