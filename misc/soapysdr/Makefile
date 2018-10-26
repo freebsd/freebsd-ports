@@ -2,8 +2,7 @@
 
 PORTNAME=	SoapySDR
 DISTVERSIONPREFIX=	soapy-sdr-
-DISTVERSION=	0.6.1-71
-DISTVERSIONSUFFIX=	-g69c16e9
+DISTVERSION=	0.7.0
 CATEGORIES=	misc hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,5 +15,7 @@ USES=		cmake:outsource compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	pothosware
 USE_LDCONFIG=	yes
+
+LDFLAGS+=	-pthread
 
 .include <bsd.port.mk>

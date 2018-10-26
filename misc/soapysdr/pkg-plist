@@ -2,7 +2,7 @@ bin/SoapySDRUtil
 include/SoapySDR/Config.h
 include/SoapySDR/Config.hpp
 include/SoapySDR/Constants.h
-include/SoapySDR/ConverterPrimatives.hpp
+include/SoapySDR/ConverterPrimitives.hpp
 include/SoapySDR/ConverterRegistry.hpp
 include/SoapySDR/Device.h
 include/SoapySDR/Device.hpp
