@@ -16,10 +16,10 @@ WRKDIR=`pwd`/work
 #fi
 
 if [ \! -d "${CURDIR}/kicad-repo" ]; then
- git clone https://git.launchpad.net/kicad -b master "${CURDIR}/kicad-repo";
+ git clone https://github.com/KiCad/kicad-source-mirror.git -b master "${CURDIR}/kicad-repo";
 else
   cd "${CURDIR}/kicad-repo"
-  git pull https://git.launchpad.net/kicad;
+  git pull https://github.com/KiCad/kicad-source-mirror.git;
 fi
 
 cd "${CURDIR}/kicad-repo"
