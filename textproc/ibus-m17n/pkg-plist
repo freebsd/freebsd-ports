@@ -5,4 +5,5 @@ share/ibus/component/m17n.xml
 %%DATADIR%%/icons/ibus-m17n.svg
 %%DATADIR%%/setup/ibus-m17n-preferences.ui
 share/applications/ibus-setup-m17n.desktop
+share/glib-2.0/schemas/org.freedesktop.ibus.engine.m17n.gschema.xml
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus-m17n.mo
