@@ -3,7 +3,7 @@
 
 PORTNAME=	monero-cli
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
-PORTVERSION=	0.13.0.2
+PORTVERSION=	0.13.0.4
 DISTVERSIONPREFIX=	v
 # and uncomment the following two lines
 #PORTVERSION=	0
@@ -88,10 +88,10 @@ GROUPS=		monero
 
 PLIST_FILES=	\
 		bin/monero-blockchain-ancestry \
-		bin/monero-blockchain-blackball \
 		bin/monero-blockchain-depth \
 		bin/monero-blockchain-export \
 		bin/monero-blockchain-import \
+		bin/monero-blockchain-mark-spent-outputs \
 		bin/monero-blockchain-usage \
 		bin/monero-gen-trusted-multisig \
 		bin/monero-wallet-cli \
