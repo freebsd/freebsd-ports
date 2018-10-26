@@ -1,5 +1,5 @@
---- ext/config/logback.xml.orig	2017-08-02 19:46:03.829675373 -0700
-+++ ext/config/logback.xml	2017-08-02 19:50:56.742766644 -0700
+--- ext/config/logback.xml.orig	2018-08-21 16:07:02 UTC
++++ ext/config/logback.xml
 @@ -6,12 +6,11 @@
      </appender>
  
