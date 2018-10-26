@@ -133,6 +133,7 @@ man/man1/xcircuit.1.gz
 %%DATADIR%%/standard_cells_3V.cir
 %%DATADIR%%/sue_xc.tcl
 %%DATADIR%%/symbol.tcl
+%%DATADIR%%/synopsys.tcl
 %%DATADIR%%/text.tcl
 %%DATADIR%%/tkcon.tcl
 %%DATADIR%%/wrapper.tcl
