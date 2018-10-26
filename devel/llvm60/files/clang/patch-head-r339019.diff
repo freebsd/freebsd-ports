@@ -1,0 +1,30 @@
+r339019 | emaste | 2018-09-29 22:01:23 +0200 (Sat, 29 Sep 2018) | 15 lines
+
+clang: allow ifunc resolvers to accept arguments
+
+Previously Clang required ifunc resolution functions to take no
+arguments, presumably because GCC documented ifunc resolvers as taking
+no arguments.  However, GCC accepts resolvers accepting arguments, and
+our rtld passes CPU ID information (cpuid, hwcap, etc.) to ifunc
+resolvers.  Just remove the check from the in-tree compiler for our in-
+tree compiler; a different (per-OS) approach may be required upstream.
+
+Reported by:	mjg
+Approved by:	re (rgrimes)
+MFC after:	1 week
+Relnotes:	Yes
+Sponsored by:	The FreeBSD Foundation
+
+Index: tools/clang/lib/CodeGen/CodeGenModule.cpp
+===================================================================
+--- tools/clang/lib/CodeGen/CodeGenModule.cpp	(revision 339018)
++++ tools/clang/lib/CodeGen/CodeGenModule.cpp	(revision 339019)
+@@ -321,8 +321,6 @@ void CodeGenModule::checkAliases() {
+       assert(FTy);
+       if (!FTy->getReturnType()->isPointerTy())
+         Diags.Report(Location, diag::err_ifunc_resolver_return);
+-      if (FTy->getNumParams())
+-        Diags.Report(Location, diag::err_ifunc_resolver_params);
+     }
+ 
+     llvm::Constant *Aliasee = Alias->getIndirectSymbol();
