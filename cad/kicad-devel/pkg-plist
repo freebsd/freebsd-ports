@@ -13,10 +13,12 @@ bin/idfcyl
 bin/idfrect
 bin/kicad
 bin/kicad-ogltest
+bin/kicad2step
 bin/pcb_calculator
 bin/pcbnew
 bin/pl_editor
 lib/kicad/plugins/3d/libs3d_plugin_idf.so
+lib/kicad/plugins/3d/libs3d_plugin_oce.so
 lib/kicad/plugins/3d/libs3d_plugin_vrml.so
 lib/libkicad_3dsg.so
 lib/libkicad_3dsg.so.2.0.0
@@ -300,10 +302,10 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/scripting/plugins/__init__.py
 %%DATADIR%%/scripting/plugins/bga_wizard.py
 %%DATADIR%%/scripting/plugins/circular_pad_array_wizard.py
+%%DATADIR%%/scripting/plugins/kicad_qrcode.py
 %%DATADIR%%/scripting/plugins/microMatch_connectors.py
 %%DATADIR%%/scripting/plugins/qfn_wizard.py
 %%DATADIR%%/scripting/plugins/qfp_wizard.py
-%%DATADIR%%/scripting/plugins/qrcode.py
 %%DATADIR%%/scripting/plugins/qrcode_footprint_wizard.py
 %%DATADIR%%/scripting/plugins/sdip_wizard.py
 %%DATADIR%%/scripting/plugins/touch_slider_wizard.py

@@ -16,6 +16,9 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		${LOCALBASE}/bin/swig3.0:devel/swig30
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libngspice.so:cad/ngspice_rework@shlib \
+		libTKernel.so:cad/opencascade \
+		libpixman-1.so:x11/pixman \
 		libpng.so:graphics/png \
 		libcurl.so:ftp/curl
 
@@ -26,7 +29,7 @@ GH_ACCOUNT=     KiCad
 GH_PROJECT=     kicad-source-mirror
 GH_TAGNAME=	${GIT_SRC_HASH}
 
-CXXFLAGS+=	--std=c++11 -I${WRKSRC}/include -I${LOCALBASE}/include -msse
+CXXFLAGS+=	--std=c++11 -I${WRKSRC} -I${WRKSRC}/include -I${LOCALBASE}/include -msse
 USE_GL=		gl glew glu glut
 USE_WX=		3.0
 WX_COMPS=	wx wx:build wx:run python:build python:run
@@ -43,7 +46,7 @@ PLIST_SUB=	OPSYS=${OPSYS}	\
 BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
-USES=		desktop-file-utils shared-mime-info compiler:c++11-lib tar:bzip2 cmake \
+USES=		desktop-file-utils shared-mime-info compiler:c++11-lib tar:bzip2 cmake:noninja \
 		gettext python:2.7 shebangfix ssl
 SHEBANG_FILES=	pcbnew/python/plugins/touch_slider_wizard.py
 
@@ -60,8 +63,10 @@ CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DKICAD_SCRIPTING_MODULES=ON \
 		-DKICAD_SCRIPTING_WXPYTHON=OFF \
 		-DKICAD_SKIP_BOOST=YES \
-		-DKICAD_SPICE=OFF \
-		-DKICAD_USE_OCE=OFF
+		-DKICAD_SPICE=ON \
+		-DKICAD_USE_OCE=OFF \
+		-DKICAD_USE_OCC=ON \
+		-DOCC_INCLUDE_DIR=${LOCALBASE}/include/OpenCASCADE
 
 .include "Makefile.git_rev"
 
