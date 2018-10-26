@@ -52,6 +52,7 @@ PLUGIN_LIST=	abot acro arcfour autocycle blowfish cavlink cdrom encrypt \
 
 post-patch:
 	${REINPLACE_CMD} -e 's|bzip2|true|g' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|SSLeay|ERR_get_error|' ${WRKSRC}/configure
 
 post-patch-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
