@@ -12,10 +12,6 @@ COMMENT=	Milter to perform a envelope-from sender verification on target MX
 
 LICENSE=	GPLv3
 
-BROKEN_mips=		fails to build: error: nested functions are disabled, use -fnested-functions to re-enable
-BROKEN_mips64=		fails to build: error: nested functions are disabled, use -fnested-functions to re-enable
-BROKEN_powerpc64=	fails to build: error: nested functions are disabled, use -fnested-functions to re-enable
-
 LIB_DEPENDS=	libspf2.so:mail/libspf2
 
 USES=		tar:xz
@@ -30,6 +26,12 @@ SRC_FILES=	cache.c commonprocs.c cpit.c dealwithmxes.c detectlamespf.c \
 
 CFLAGS+=	-DFREEBSD -DHAVE_NS_TYPE -DWITH_SPF -I${LOCALBASE}/include \
 		-I${WRKSRC} -std=gnu99
+CFLAGS_mips=	-fnested-functions
+CFLAGS_mips64=	-fnested-functions
+CFLAGS_powerpc=	-fnested-functions
+CFLAGS_powerpcspe=	-fnested-functions
+CFLAGS_powerpc64=	-fnested-functions
+CFLAGS_sparc64=	-fnested-functions
 LDFLAGS+=	-lmilter -lthr -L${LOCALBASE}/lib -lspf2
 
 do-build:
