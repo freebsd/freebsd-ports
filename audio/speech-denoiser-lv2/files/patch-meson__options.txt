@@ -1,0 +1,4 @@
+--- meson_options.txt.orig	2018-10-26 06:03:32 UTC
++++ meson_options.txt
+@@ -0,0 +1 @@
++option('use_sse', type: 'boolean', value: false, description: 'Use SSE optimization')
