@@ -57,7 +57,7 @@ eval ": \${${name}_uid:=\"buildbot\"}"
 eval ": \${${name}_gid:=\"buildbot\"}"
 eval ": \${${name}_basedir:=\"%%PREFIX%%/etc/${name}\"}"
 
-command="%%PREFIX%%/bin/twistd"
+command="%%PREFIX%%/bin/twistd-%%PYTHON_VER%%"
 command_interpreter="%%PYTHON_CMD%%"
 pidfile="${buildbot_worker_basedir}/twistd.pid"
 
