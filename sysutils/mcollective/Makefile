@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mcollective
-PORTVERSION=	2.12.3
+PORTVERSION=	2.12.4
 CATEGORIES=	sysutils
 MASTER_SITES=	https://downloads.puppetlabs.com/${PORTNAME}/
 
