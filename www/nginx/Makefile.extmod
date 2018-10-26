@@ -104,7 +104,7 @@ HTTP_FANCYINDEX_VARS=		DSO_EXTMODS+=fancyindex
 HTTP_FOOTER_GH_TUPLE=		alibaba:nginx-http-footer-filter:1.2.2:footer
 HTTP_FOOTER_CONFIGURE_ON=	--add-module=${WRKSRC_footer}
 
-HTTP_GEOIP2_GH_TUPLE=		leev:ngx_http_geoip2_module:2.0:geoip2
+HTTP_GEOIP2_GH_TUPLE=		leev:ngx_http_geoip2_module:3.2:geoip2
 HTTP_GEOIP2_CFLAGS=		-I${LOCALBASE}/include
 HTTP_GEOIP2_VARS=		DSO_EXTMODS+=geoip2
 HTTP_GEOIP2_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
@@ -210,7 +210,7 @@ MODSECURITY_LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 				libyajl.so:devel/yajl
 MODSECURITY_USE=		GNOME=libxml2
 MODSECURITY_USES=		apache:2.2+ pkgconfig shebangfix
-MODSECURITY_MASTER_SITES=	http://www.modsecurity.org/tarball/2.9.2S/RC/rc/:modsecurity
+MODSECURITY_MASTER_SITES=	http://www.modsecurity.org/tarball/2.9.2/:modsecurity
 MODSECURITY_DISTFILES=		modsecurity-2.9.2.tar.gz:modsecurity
 MODSECURITY_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure
 MODSECURITY_VARS=		WRKSRC_modsecurity=${WRKDIR}/modsecurity-2.9.2
@@ -223,7 +223,7 @@ NAXSI_NGINX_VER=	0.56
 NAXSI_GH_TUPLE=		nbs-system:naxsi:${NAXSI_NGINX_VER}:naxsi
 NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 
-NJS_GH_TUPLE=		nginx:njs:e6fed58:njs
+NJS_GH_TUPLE=		nginx:njs:992e93d:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 
 PASSENGER_NGINX_VER=	5.3.5
