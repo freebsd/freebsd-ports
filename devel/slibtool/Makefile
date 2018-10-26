@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	slibtool
-PORTVERSION=	0.5.25
+PORTVERSION=	0.5.26
 CATEGORIES=	devel
 MASTER_SITES=	http://dl.midipix.org/${PORTNAME}/
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING.SLIBTOOL
 
 HAS_CONFIGURE=	yes
 USES=		gmake tar:xz
-EXTRA_PATCHES=	${FILESDIR}/no-pc-file.patch:-p1
 
 post-patch:
 	${REINPLACE_CMD} -e "s/make/${MAKE_CMD}/g" ${WRKSRC}/configure
