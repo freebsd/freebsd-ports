@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test2-Harness
-PORTVERSION=	0.001069
+PORTVERSION=	0.001070
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST
@@ -24,8 +24,15 @@ RUN_DEPENDS=	p5-Data-UUID>=1.148:devel/p5-Data-UUID \
 		p5-Test2-Suite>=0.000105:devel/p5-Test2-Suite \
 		p5-goto-file>=0.005:devel/p5-goto-file
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.mk>
+NO_ARCH=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502501
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.44:lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>
