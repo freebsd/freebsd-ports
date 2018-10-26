@@ -1,0 +1,33 @@
+r308867 | dim | 2016-11-19 22:05:17 +0100 (Sat, 19 Nov 2016) | 15 lines
+
+Work around LLVM PR30879, which is about a bad interaction between X86
+Call Frame Optimization on i386 and libunwind, by disallowing the
+optimization for i386-freebsd12.
+
+This should fix some instances of broken exception handling when frame
+pointers are omitted, in particular some unittests run during the build
+of editors/libreoffice.
+
+This hack will be removed as soon as upstream has implemented a more
+permanent fix for this problem.
+
+Upstream PR:	https://llvm.org/bugs/show_bug.cgi?id=30879
+Reviewed by:	emaste
+PR:		212343
+
+Index: lib/Target/X86/X86CallFrameOptimization.cpp
+===================================================================
+--- lib/Target/X86/X86CallFrameOptimization.cpp	(revision 308866)
++++ lib/Target/X86/X86CallFrameOptimization.cpp	(revision 308867)
+@@ -125,6 +125,11 @@ bool X86CallFrameOptimization::isLegal(MachineFunc
+   if (NoX86CFOpt.getValue())
+     return false;
+ 
++  // Work around LLVM PR30879 (bad interaction between CFO and libunwind)
++  if (STI->isTargetFreeBSD() && STI->is32Bit() &&
++      STI->getTargetTriple().getOSMajorVersion() >= 12)
++    return false;
++
+   // We can't encode multiple DW_CFA_GNU_args_size or DW_CFA_def_cfa_offset
+   // in the compact unwind encoding that Darwin uses. So, bail if there
+   // is a danger of that being generated.
