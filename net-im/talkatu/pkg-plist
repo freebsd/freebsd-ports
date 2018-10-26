@@ -25,6 +25,7 @@ include/talkatu-1.0/talkatu/talkatuwholebuffer.h
 lib/libtalkatu.so
 lib/libtalkatu.so.0
 lib/libtalkatu.so.0.1.0
+lib/girepository-1.0/Talkatu-0.0.typelib
 libdata/pkgconfig/talkatu.pc
 man/man1/talkatu-demo.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -33,6 +34,7 @@ man/man1/talkatu-demo.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/logo.png
 share/glade/catalogs/talkatu.xml
+share/gir-1.0/Talkatu-0.0.gir
 share/gtk-doc/html/talkatu/API.html
 share/gtk-doc/html/talkatu/TalkatuActionGroup.html
 share/gtk-doc/html/talkatu/TalkatuBuffer.html
