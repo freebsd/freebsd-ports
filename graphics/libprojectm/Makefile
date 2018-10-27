@@ -1,42 +1,48 @@
 # $FreeBSD$
 
 PORTNAME=	libprojectM
-DISTVERSION=	2.1.0
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.1.0
 CATEGORIES=	graphics audio
-MASTER_SITES=	SF/${PORTNAME:tl:S/lib//}/${PORTVERSION}/
-DISTNAME=	${PORTNAME:S/lib//}-complete-${DISTVERSION}-Source
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Awesome music visualiser
 
 LICENSE=	LGPL21+
-LICENSE_FILE=	${WRKSRC}/COPYING.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
 LIB_DEPENDS=	libftgl.so:graphics/ftgl \
 		libfreetype.so:print/freetype2 \
 		libvisual-0.4.so:graphics/libvisual04
+RUN_DEPENDS=	${LOCALBASE}/include/glm/glm.hpp:math/glm
 
-USES=		cmake:outsource localbase:ldflags pkgconfig qt:4
-USE_QT=		corelib gui opengl xml moc_build qmake_build rcc_build uic_build
-USE_SDL=	sdl
+USES=		autoreconf:build gl gmake libtool localbase:ldflags pkgconfig qt:5
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	projectM-visualizer
+GH_PROJECT=	projectm
+USE_SDL=	sdl2
+USE_QT=		buildtools core gui opengl qmake_build widgets xml
 USE_GL=		gl glu glew
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-sdl --enable-qt --enable-gles
+INSTALL_TARGET=	install-strip
+
 USE_LDCONFIG=	yes
 
 USE_CXXSTD=	c++98
-
-CMAKE_ARGS=	-DUSE_OPENMP=OFF # openmp breaks build on 11.x
-CMAKE_OFF=	INCLUDE-PROJECTM-TEST
+CXXFLAGS+=	-DDATADIR_PATH='\"${LOCALBASE}/share/projectM\"'
 
 OPTIONS_DEFINE=		PULSEAUDIO JACK
 OPTIONS_DEFAULT=	PULSEAUDIO
 OPTIONS_SUB=		yes
 
-PULSEAUDIO_CMAKE_BOOL=	INCLUDE-PROJECTM-PULSEAUDIO
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
-
-JACK_CMAKE_BOOL=	INCLUDE-PROJECTM-JACK
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
+
+pre-configure:
+	@cd ${WRKSRC}/ && ${SH} autogen.sh
 
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/share/projectM/config.inp ${STAGEDIR}${PREFIX}/share/projectM/config.inp.sample
