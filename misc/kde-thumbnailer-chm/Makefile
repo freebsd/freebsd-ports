@@ -1,23 +1,26 @@
 # $FreeBSD$
 
 PORTNAME=	kde-thumbnailer-chm
-PORTVERSION=	0.2
-PORTREVISION=	5
+PORTVERSION=	0.2.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	misc kde
-MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
-DISTNAME=	153410-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	KDE thumbnail generator for CHM files
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libchm.so:misc/chmlib
 
-USES=		cmake kde:4 qt:4
-USE_KDE=	kdelibs automoc4
-USE_QT=		moc_build qmake_build rcc_build uic_build
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USES=		cmake:outsource kde:5 qt:5
+USE_KDE=	ecm_build kio
+USE_QT=		buildtools_build qmake_build gui
 
-PLIST_FILES=	lib/kde4/chmthumbnail.so \
-		share/kde4/services/chmthumbnail.desktop
+USE_GITHUB=	yes
+GH_ACCOUNT=	Caig
+
+PLIST_FILES=	${QT_PLUGINDIR_REL}/chmthumbnail.so \
+		share/kservices5/chmthumbnail.desktop
 
 .include <bsd.port.mk>
