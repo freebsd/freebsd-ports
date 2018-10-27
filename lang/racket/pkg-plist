@@ -20,7 +20,6 @@ bin/setup-plt
 bin/slatex
 bin/slideshow
 bin/swindle
-lib/libracket3m-7.0.so
 %%ETCDIR%%/config.rktd
 include/racket/escheme.h
 include/racket/ext.exp
@@ -39,6 +38,7 @@ include/racket/schvers.h
 include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
+lib/libracket3m-7.1.so
 lib/libracket3m.so
 lib/racket/buildinfo
 lib/racket/gracket
@@ -207,6 +207,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Eigenschaften.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Konstruktionsanleitungen_1_bis_10.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Parametrische_Record-Typ-Definitionen.html
+%%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Pattern-Matching.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Record-Typ-Definitionen.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Signaturen.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/Testf_lle.html
@@ -232,7 +233,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/image.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/in.sxref
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/index.html
-%%PORTDOCS%%%%DOCSDIR%%/deinprogramm/lambda.html
+%%PORTDOCS%%%%DOCSDIR%%/deinprogramm/lambda____.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/let__letrec_und_let_.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/line3d.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/or.html
@@ -242,6 +243,8 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/p2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/p3.jpg
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/p4.jpg
+%%PORTDOCS%%%%DOCSDIR%%/deinprogramm/pattern-matching-advanced.html
+%%PORTDOCS%%%%DOCSDIR%%/deinprogramm/pattern-matching-vanilla.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/provides.sxref
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/set_.html
 %%PORTDOCS%%%%DOCSDIR%%/deinprogramm/signatures-vanilla.html
@@ -582,6 +585,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/foreign/Defining_Bindings.html
 %%PORTDOCS%%%%DOCSDIR%%/foreign/Derived_Utilities.html
 %%PORTDOCS%%%%DOCSDIR%%/foreign/Enumerations_and_Masks.html
+%%PORTDOCS%%%%DOCSDIR%%/foreign/Garbage_Collection_Callbacks.html
 %%PORTDOCS%%%%DOCSDIR%%/foreign/Loading_Foreign_Libraries.html
 %%PORTDOCS%%%%DOCSDIR%%/foreign/Miscellaneous_Support.html
 %%PORTDOCS%%%%DOCSDIR%%/foreign/Numeric_Types.html
@@ -1941,6 +1945,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_206.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_207.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_208.png
+%%PORTDOCS%%%%DOCSDIR%%/pict/pict_209.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_21.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_22.png
 %%PORTDOCS%%%%DOCSDIR%%/pict/pict_23.png
@@ -2870,6 +2875,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/reference/serialization.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/set_.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/sets.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/sha.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/shared.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/single-unit.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/special-comments.html
@@ -3193,6 +3199,7 @@ share/applications/slideshow.desktop
 %%PORTDOCS%%%%DOCSDIR%%/slideshow/Text_Formatting_Helpers.html
 %%PORTDOCS%%%%DOCSDIR%%/slideshow/Typesetting_Racket_Code_in_Slideshow.html
 %%PORTDOCS%%%%DOCSDIR%%/slideshow/Viewer_Control.html
+%%PORTDOCS%%%%DOCSDIR%%/slideshow/aspect.html
 %%PORTDOCS%%%%DOCSDIR%%/slideshow/blueboxes.rktd
 %%PORTDOCS%%%%DOCSDIR%%/slideshow/doc-bibliography.html
 %%PORTDOCS%%%%DOCSDIR%%/slideshow/doc-index.html
@@ -4121,11 +4128,14 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/ffi/unsafe.rkt
 %%DATADIR%%/collects/ffi/unsafe/alloc.rkt
 %%DATADIR%%/collects/ffi/unsafe/atomic.rkt
+%%DATADIR%%/collects/ffi/unsafe/collect-callback.rkt
 %%DATADIR%%/collects/ffi/unsafe/com.rkt
 %%DATADIR%%/collects/ffi/unsafe/compiled/alloc_rkt.dep
 %%DATADIR%%/collects/ffi/unsafe/compiled/alloc_rkt.zo
 %%DATADIR%%/collects/ffi/unsafe/compiled/atomic_rkt.dep
 %%DATADIR%%/collects/ffi/unsafe/compiled/atomic_rkt.zo
+%%DATADIR%%/collects/ffi/unsafe/compiled/collect-callback_rkt.dep
+%%DATADIR%%/collects/ffi/unsafe/compiled/collect-callback_rkt.zo
 %%DATADIR%%/collects/ffi/unsafe/compiled/com_rkt.dep
 %%DATADIR%%/collects/ffi/unsafe/compiled/com_rkt.zo
 %%DATADIR%%/collects/ffi/unsafe/compiled/custodian_rkt.dep
@@ -4608,6 +4618,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/compiled/place_rkt.zo
 %%DATADIR%%/collects/racket/compiled/port_rkt.dep
 %%DATADIR%%/collects/racket/compiled/port_rkt.zo
+%%DATADIR%%/collects/racket/compiled/prefab_rkt.dep
+%%DATADIR%%/collects/racket/compiled/prefab_rkt.zo
 %%DATADIR%%/collects/racket/compiled/pretty_rkt.dep
 %%DATADIR%%/collects/racket/compiled/pretty_rkt.zo
 %%DATADIR%%/collects/racket/compiled/promise_rkt.dep
@@ -4934,6 +4946,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/place/private/prop.rkt
 %%DATADIR%%/collects/racket/place/private/th-place.rkt
 %%DATADIR%%/collects/racket/port.rkt
+%%DATADIR%%/collects/racket/prefab.rkt
 %%DATADIR%%/collects/racket/pretty.rkt
 %%DATADIR%%/collects/racket/private/arity.rkt
 %%DATADIR%%/collects/racket/private/base.rkt
@@ -5013,6 +5026,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/private/compiled/kw-file_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/kw-prop-key_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/kw-prop-key_rkt.zo
+%%DATADIR%%/collects/racket/private/compiled/kw-syntax-binding_rkt.dep
+%%DATADIR%%/collects/racket/private/compiled/kw-syntax-binding_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/kw_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/kw_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/letstx-scheme_rkt.dep
@@ -5053,6 +5068,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/private/compiled/path_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/performance-hint_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/performance-hint_rkt.zo
+%%DATADIR%%/collects/racket/private/compiled/place-local_rkt.dep
+%%DATADIR%%/collects/racket/private/compiled/place-local_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/port_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/port_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/portlines_rkt.dep
@@ -5071,6 +5088,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/private/compiled/qqstx_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/reading-param_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/reading-param_rkt.zo
+%%DATADIR%%/collects/racket/private/compiled/relative-path_rkt.dep
+%%DATADIR%%/collects/racket/private/compiled/relative-path_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/reqprov_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/reqprov_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/reverse_rkt.dep
@@ -5174,6 +5193,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/private/kernstruct.rkt
 %%DATADIR%%/collects/racket/private/kw-file.rkt
 %%DATADIR%%/collects/racket/private/kw-prop-key.rkt
+%%DATADIR%%/collects/racket/private/kw-syntax-binding.rkt
 %%DATADIR%%/collects/racket/private/kw.rkt
 %%DATADIR%%/collects/racket/private/letstx-scheme.rkt
 %%DATADIR%%/collects/racket/private/list-predicates.rkt
@@ -5194,6 +5214,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/private/path-list.rkt
 %%DATADIR%%/collects/racket/private/path.rkt
 %%DATADIR%%/collects/racket/private/performance-hint.rkt
+%%DATADIR%%/collects/racket/private/place-local.rkt
 %%DATADIR%%/collects/racket/private/port.rkt
 %%DATADIR%%/collects/racket/private/portlines.rkt
 %%DATADIR%%/collects/racket/private/pre-base.rkt
@@ -5203,6 +5224,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/racket/private/qq-and-or.rkt
 %%DATADIR%%/collects/racket/private/qqstx.rkt
 %%DATADIR%%/collects/racket/private/reading-param.rkt
+%%DATADIR%%/collects/racket/private/relative-path.rkt
 %%DATADIR%%/collects/racket/private/reqprov.rkt
 %%DATADIR%%/collects/racket/private/reverse.rkt
 %%DATADIR%%/collects/racket/private/runtime-path-table.rkt
@@ -5589,6 +5611,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/syntax/parse/private/3d-stx.rkt
 %%DATADIR%%/collects/syntax/parse/private/compiled/3d-stx_rkt.dep
 %%DATADIR%%/collects/syntax/parse/private/compiled/3d-stx_rkt.zo
+%%DATADIR%%/collects/syntax/parse/private/compiled/datum-to-expr_rkt.dep
+%%DATADIR%%/collects/syntax/parse/private/compiled/datum-to-expr_rkt.zo
 %%DATADIR%%/collects/syntax/parse/private/compiled/keywords_rkt.dep
 %%DATADIR%%/collects/syntax/parse/private/compiled/keywords_rkt.zo
 %%DATADIR%%/collects/syntax/parse/private/compiled/kws_rkt.dep
@@ -5629,6 +5653,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/collects/syntax/parse/private/compiled/sc_rkt.zo
 %%DATADIR%%/collects/syntax/parse/private/compiled/txlift_rkt.dep
 %%DATADIR%%/collects/syntax/parse/private/compiled/txlift_rkt.zo
+%%DATADIR%%/collects/syntax/parse/private/datum-to-expr.rkt
 %%DATADIR%%/collects/syntax/parse/private/keywords.rkt
 %%DATADIR%%/collects/syntax/parse/private/kws.rkt
 %%DATADIR%%/collects/syntax/parse/private/lib.rkt
@@ -6442,7 +6467,10 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/compiler-lib/compiler/option-unit.rkt
 %%DATADIR%%/pkgs/compiler-lib/compiler/private/compiled/deserialize_rkt.dep
 %%DATADIR%%/pkgs/compiler-lib/compiler/private/compiled/deserialize_rkt.zo
+%%DATADIR%%/pkgs/compiler-lib/compiler/private/compiled/language_rkt.dep
+%%DATADIR%%/pkgs/compiler-lib/compiler/private/compiled/language_rkt.zo
 %%DATADIR%%/pkgs/compiler-lib/compiler/private/deserialize.rkt
+%%DATADIR%%/pkgs/compiler-lib/compiler/private/language.rkt
 %%DATADIR%%/pkgs/compiler-lib/compiler/sig.rkt
 %%DATADIR%%/pkgs/compiler-lib/info.rkt
 %%DATADIR%%/pkgs/compiler-lib/launcher/compiled/launcher-sig_rkt.dep
@@ -16221,6 +16249,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/active-x.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/alloc.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/atomic.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/foreign/collect-callback.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/com-auto.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/com-common.rkt
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/com-intf.scrbl
@@ -16231,6 +16260,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/compiled/alloc_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/compiled/atomic_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/compiled/atomic_scrbl.zo
+%%DATADIR%%/pkgs/racket-doc/scribblings/foreign/compiled/collect-callback_scrbl.dep
+%%DATADIR%%/pkgs/racket-doc/scribblings/foreign/compiled/collect-callback_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/compiled/com-auto_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/compiled/com-auto_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/foreign/compiled/com-common_rkt.dep
@@ -17109,6 +17140,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/serialization_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/sets_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/sets_scrbl.zo
+%%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/sha_scrbl.dep
+%%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/sha_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/shared_scrbl.dep
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/shared_scrbl.zo
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/splicing_scrbl.dep
@@ -17287,6 +17320,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/sequences.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/serialization.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/sets.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/reference/sha.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/shared.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/splicing.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/startup.scrbl
@@ -17773,10 +17807,13 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/racklog/tests/pr/compiled/pr1_rkt.zo
 %%DATADIR%%/pkgs/racklog/tests/pr/compiled/pr4_rkt.dep
 %%DATADIR%%/pkgs/racklog/tests/pr/compiled/pr4_rkt.zo
+%%DATADIR%%/pkgs/racklog/tests/pr/compiled/pr5_rkt.dep
+%%DATADIR%%/pkgs/racklog/tests/pr/compiled/pr5_rkt.zo
 %%DATADIR%%/pkgs/racklog/tests/pr/pr-ed.rkt
 %%DATADIR%%/pkgs/racklog/tests/pr/pr1.rkt
 %%DATADIR%%/pkgs/racklog/tests/pr/pr12085.rkt
 %%DATADIR%%/pkgs/racklog/tests/pr/pr4.rkt
+%%DATADIR%%/pkgs/racklog/tests/pr/pr5.rkt
 %%DATADIR%%/pkgs/racklog/tests/puzzle.rkt
 %%DATADIR%%/pkgs/racklog/tests/require.rkt
 %%DATADIR%%/pkgs/racklog/tests/run-all.rkt
@@ -17897,6 +17934,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/rackunit-lib/rackunit/private/compiled/check-info_rkt.zo
 %%DATADIR%%/pkgs/rackunit-lib/rackunit/private/compiled/check_rkt.dep
 %%DATADIR%%/pkgs/rackunit-lib/rackunit/private/compiled/check_rkt.zo
+%%DATADIR%%/pkgs/rackunit-lib/rackunit/private/compiled/equal-within_rkt.dep
+%%DATADIR%%/pkgs/rackunit-lib/rackunit/private/compiled/equal-within_rkt.zo
 %%DATADIR%%/pkgs/rackunit-lib/rackunit/private/compiled/format_rkt.dep
 %%DATADIR%%/pkgs/rackunit-lib/rackunit/private/compiled/format_rkt.zo
 %%DATADIR%%/pkgs/rackunit-lib/rackunit/private/compiled/location_rkt.dep
@@ -17911,6 +17950,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/rackunit-lib/rackunit/private/compiled/test_rkt.zo
 %%DATADIR%%/pkgs/rackunit-lib/rackunit/private/compiled/util_rkt.dep
 %%DATADIR%%/pkgs/rackunit-lib/rackunit/private/compiled/util_rkt.zo
+%%DATADIR%%/pkgs/rackunit-lib/rackunit/private/equal-within.rkt
 %%DATADIR%%/pkgs/rackunit-lib/rackunit/private/format.rkt
 %%DATADIR%%/pkgs/rackunit-lib/rackunit/private/location.rkt
 %%DATADIR%%/pkgs/rackunit-lib/rackunit/private/result.rkt
@@ -18619,6 +18659,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/lazy_rkt.zo
 %%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/let-poly_rkt.dep
 %%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/let-poly_rkt.zo
+%%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/letrec-vs-racket_rkt.dep
+%%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/letrec-vs-racket_rkt.zo
 %%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/letrec_rkt.dep
 %%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/letrec_rkt.zo
 %%DATADIR%%/pkgs/redex-examples/redex/examples/compiled/omega_rkt.dep
@@ -18724,6 +18766,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/redex-examples/redex/examples/lazy-with-binding.rkt
 %%DATADIR%%/pkgs/redex-examples/redex/examples/lazy.rkt
 %%DATADIR%%/pkgs/redex-examples/redex/examples/let-poly.rkt
+%%DATADIR%%/pkgs/redex-examples/redex/examples/letrec-vs-racket.rkt
 %%DATADIR%%/pkgs/redex-examples/redex/examples/letrec.rkt
 %%DATADIR%%/pkgs/redex-examples/redex/examples/list-machine/README.txt
 %%DATADIR%%/pkgs/redex-examples/redex/examples/list-machine/compiled/list-machine-typing_rkt.dep
@@ -20036,9 +20079,17 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/slideshow-doc/scribblings/quick/keep.rkt
 %%DATADIR%%/pkgs/slideshow-doc/scribblings/quick/mreval.rkt
 %%DATADIR%%/pkgs/slideshow-doc/scribblings/quick/quick.scrbl
+%%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/adjust-aspect.rkt
+%%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/aspect.scrbl
 %%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/code.scrbl
+%%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/compiled/adjust-aspect_rkt.dep
+%%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/compiled/adjust-aspect_rkt.zo
+%%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/compiled/aspect_scrbl.dep
+%%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/compiled/aspect_scrbl.zo
 %%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/compiled/code_scrbl.dep
 %%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/compiled/code_scrbl.zo
+%%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/compiled/fullscreen_scrbl.dep
+%%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/compiled/fullscreen_scrbl.zo
 %%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/compiled/guide_scrbl.dep
 %%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/compiled/guide_scrbl.zo
 %%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/compiled/info_rkt.dep
@@ -20055,6 +20106,9 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/compiled/ss_rkt.zo
 %%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/compiled/text_scrbl.dep
 %%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/compiled/text_scrbl.zo
+%%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/compiled/widescreen_scrbl.dep
+%%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/compiled/widescreen_scrbl.zo
+%%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/fullscreen.scrbl
 %%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/guide.scrbl
 %%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/info.rkt
 %%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/legacy.scrbl
@@ -20063,6 +20117,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/slideshow.scrbl
 %%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/ss.rkt
 %%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/text.scrbl
+%%DATADIR%%/pkgs/slideshow-doc/scribblings/slideshow/widescreen.scrbl
 %%DATADIR%%/pkgs/slideshow-exe/LICENSE.txt
 %%DATADIR%%/pkgs/slideshow-exe/info.rkt
 %%DATADIR%%/pkgs/slideshow-exe/slideshow/compiled/info_rkt.dep
@@ -20108,6 +20163,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/compiled/face_rkt.zo
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/compiled/flash_rkt.dep
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/compiled/flash_rkt.zo
+%%DATADIR%%/pkgs/slideshow-lib/slideshow/compiled/fullscreen_rkt.dep
+%%DATADIR%%/pkgs/slideshow-lib/slideshow/compiled/fullscreen_rkt.zo
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/compiled/info_rkt.dep
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/compiled/info_rkt.zo
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/compiled/main_rkt.dep
@@ -20138,10 +20195,16 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/compiled/text_rkt.zo
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/compiled/viewer_rkt.dep
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/compiled/viewer_rkt.zo
+%%DATADIR%%/pkgs/slideshow-lib/slideshow/compiled/widescreen_rkt.dep
+%%DATADIR%%/pkgs/slideshow-lib/slideshow/compiled/widescreen_rkt.zo
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/core.rkt
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/doc.txt
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/face.rkt
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/flash.rkt
+%%DATADIR%%/pkgs/slideshow-lib/slideshow/fullscreen.rkt
+%%DATADIR%%/pkgs/slideshow-lib/slideshow/fullscreen/base.rkt
+%%DATADIR%%/pkgs/slideshow-lib/slideshow/fullscreen/compiled/base_rkt.dep
+%%DATADIR%%/pkgs/slideshow-lib/slideshow/fullscreen/compiled/base_rkt.zo
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/info.rkt
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/lang/compiled/reader_rkt.dep
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/lang/compiled/reader_rkt.zo
@@ -20153,6 +20216,9 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/pict-snipclass.rkt
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/pict.rkt
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/play.rkt
+%%DATADIR%%/pkgs/slideshow-lib/slideshow/private/aspect.rkt
+%%DATADIR%%/pkgs/slideshow-lib/slideshow/private/compiled/aspect_rkt.dep
+%%DATADIR%%/pkgs/slideshow-lib/slideshow/private/compiled/aspect_rkt.zo
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/private/compiled/image-snipr_rkt.dep
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/private/compiled/image-snipr_rkt.zo
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/private/compiled/pict-box-lib_rkt.dep
@@ -20173,6 +20239,10 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/step.rkt
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/text.rkt
 %%DATADIR%%/pkgs/slideshow-lib/slideshow/viewer.rkt
+%%DATADIR%%/pkgs/slideshow-lib/slideshow/widescreen.rkt
+%%DATADIR%%/pkgs/slideshow-lib/slideshow/widescreen/base.rkt
+%%DATADIR%%/pkgs/slideshow-lib/slideshow/widescreen/compiled/base_rkt.dep
+%%DATADIR%%/pkgs/slideshow-lib/slideshow/widescreen/compiled/base_rkt.zo
 %%DATADIR%%/pkgs/slideshow-lib/texpict/compiled/slideshow-run_rkt.dep
 %%DATADIR%%/pkgs/slideshow-lib/texpict/compiled/slideshow-run_rkt.zo
 %%DATADIR%%/pkgs/slideshow-lib/texpict/compiled/slideshow_rkt.dep
@@ -21993,6 +22063,8 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/compiled/unit-utils_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/compiled/utils_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/compiled/utils_rkt.zo
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/compiled/vector-contract_rkt.dep
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/compiled/vector-contract_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/disappeared-use.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/disarm.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/early-return.rkt
@@ -22021,6 +22093,7 @@ share/applications/slideshow.desktop
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/typed-method-property.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/unit-utils.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/utils.rkt
+%%DATADIR%%/pkgs/typed-racket-lib/typed-racket/utils/vector-contract.rkt
 %%DATADIR%%/pkgs/typed-racket-lib/typed/compiled/racket_rkt.dep
 %%DATADIR%%/pkgs/typed-racket-lib/typed/compiled/racket_rkt.zo
 %%DATADIR%%/pkgs/typed-racket-lib/typed/file/compiled/md5_rkt.dep
