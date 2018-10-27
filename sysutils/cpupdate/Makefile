@@ -34,10 +34,10 @@ GH_TAGNAME=	48e42d5
 
 PLIST_FILES=	sbin/${PORTNAME} man/man8/${PORTNAME}.8.gz
 
-# MCE DB r79
+# MCE DB r88
 CPM_ACCOUNT=	platomav
 CPM_PROJECT=	CPUMicrocodes
-CPM_TAGNAME=	34ee55e
+CPM_TAGNAME=	0d88b2e
 
 OPTIONS_DEFINE=		CPM INTEL
 CPM_DESC=		Download platomav/CPUMicrocodes collection
