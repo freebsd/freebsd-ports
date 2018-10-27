@@ -1,5 +1,5 @@
---- apr-1.6.3/configure.orig	2015-04-25 12:04:18 UTC
-+++ apr-1.6.3/configure
+--- apr-1.6.5/configure.orig	2015-04-25 12:04:18 UTC
++++ apr-1.6.5/configure
 @@ -6624,11 +6624,7 @@ if test "x$apr_preload_done" != "xyes" ;
      apr_lock_method="USE_FLOCK_SERIALIZE"
    fi
