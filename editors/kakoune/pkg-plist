@@ -26,6 +26,7 @@ man/man1/kak.1.gz
 %%DATADIR%%/doc/faq.asciidoc
 %%DATADIR%%/doc/highlighters.asciidoc
 %%DATADIR%%/doc/hooks.asciidoc
+%%DATADIR%%/doc/keymap.asciidoc
 %%DATADIR%%/doc/keys.asciidoc
 %%DATADIR%%/doc/mapping.asciidoc
 %%DATADIR%%/doc/modes.asciidoc
@@ -125,6 +126,7 @@ man/man1/kak.1.gz
 %%DATADIR%%/rc/extra/taskpaper.kak
 %%DATADIR%%/rc/extra/tmux-repl.kak
 %%DATADIR%%/rc/extra/toml.kak
+%%DATADIR%%/rc/extra/troff.kak
 %%DATADIR%%/rc/extra/tupfile.kak
 %%DATADIR%%/rc/extra/void-linux.kak
 %%DATADIR%%/rc/extra/x11-repl.kak
