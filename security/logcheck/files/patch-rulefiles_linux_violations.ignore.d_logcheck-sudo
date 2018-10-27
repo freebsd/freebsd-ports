@@ -1,0 +1,13 @@
+--- rulefiles/linux/violations.ignore.d/logcheck-sudo.orig	2018-05-30 21:59:13 UTC
++++ rulefiles/linux/violations.ignore.d/logcheck-sudo
+@@ -1,5 +1,5 @@
+-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sudo: pam_krb5\(sudo:auth\): user [[:alnum:]-]+ authenticated as [[:alnum:]-]+@[.A-Z]+$
+-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sudo:[[:space:]]+[_[:alnum:].-]+ : TTY=(unknown|console|(pts/|tty|vc/)[[:digit:]]+) ; PWD=[^;]+ ; USER=[._[:alnum:]-]+( ; GROUP=[._[:alnum:]-]+)? ; COMMAND=((/(usr|etc|bin|sbin)/|sudoedit ).*|list)$
+-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sudo:[[:space:]]+[_[:alnum:].-]+ : \(command continued\).*$
+-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sudo: pam_[[:alnum:]]+\(sudo:session\): session opened for user [[:alnum:]-]+ by ([[:alnum:]-]+)?\(uid=[0-9]+\)$
+-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sudo: pam_[[:alnum:]]+\(sudo:session\): session closed for user [[:alnum:]-]+$
++^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sudo(\[[[:digit:]]+\])?: pam_krb5\(sudo:auth\): user [[:alnum:]-]+ authenticated as [[:alnum:]-]+@[.A-Z]+$
++^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sudo(\[[[:digit:]]+\])?:[[:space:]]+[_[:alnum:].-]+ : TTY=(unknown|console|(pts/|tty|vc/)[[:digit:]]+) ; PWD=[^;]+ ; USER=[._[:alnum:]-]+( ; GROUP=[._[:alnum:]-]+)? ; COMMAND=((/(usr|etc|bin|sbin)/|sudoedit ).*|list)$
++^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sudo(\[[[:digit:]]+\])?:[[:space:]]+[_[:alnum:].-]+ : \(command continued\).*$
++^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sudo(\[[[:digit:]]+\])?: pam_[[:alnum:]]+\(sudo:session\): session opened for user [[:alnum:]-]+ by ([[:alnum:]-]+)?\(uid=[0-9]+\)$
++^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sudo(\[[[:digit:]]+\])?: pam_[[:alnum:]]+\(sudo:session\): session closed for user [[:alnum:]-]+$
