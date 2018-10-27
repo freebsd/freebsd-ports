@@ -183,6 +183,8 @@ include/wine/windows/d2d1.h
 include/wine/windows/d2d1.idl
 include/wine/windows/d2d1_1.h
 include/wine/windows/d2d1_1.idl
+include/wine/windows/d2d1_2.h
+include/wine/windows/d2d1_2.idl
 include/wine/windows/d2dbasetypes.h
 include/wine/windows/d2derr.h
 include/wine/windows/d3d.h
@@ -576,8 +578,8 @@ include/wine/windows/msxml6did.h
 include/wine/windows/msxmldid.h
 include/wine/windows/mtxdm.h
 include/wine/windows/multimon.h
-%%STAGING%%include/wine/windows/natupnp.h
-%%STAGING%%include/wine/windows/natupnp.idl
+include/wine/windows/natupnp.h
+include/wine/windows/natupnp.idl
 include/wine/windows/nb30.h
 include/wine/windows/ncrypt.h
 include/wine/windows/ndrtypes.h
@@ -763,6 +765,7 @@ include/wine/windows/strsafe.h
 include/wine/windows/structuredquerycondition.h
 include/wine/windows/structuredquerycondition.idl
 include/wine/windows/svrapi.h
+include/wine/windows/synchapi.h
 include/wine/windows/t2embapi.h
 include/wine/windows/tapi.h
 include/wine/windows/taskschd.h
