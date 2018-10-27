@@ -19,8 +19,8 @@ LIB_DEPENDS=	libproxy.so:net/libproxy \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/share/xml/iso-codes/iso_639.xml:misc/iso-codes
 
-USES=		desktop-file-utils gettext-tools gnome libtool meson ninja \
-		pkgconfig shebangfix ssl
+USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome \
+		libtool meson ninja pkgconfig shebangfix ssl
 USE_GNOME=	cairo gtk20 intltool libxml2
 USE_XORG=	x11
 USE_GITHUB=	yes
