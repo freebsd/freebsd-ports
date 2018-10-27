@@ -755,7 +755,12 @@
  		\<)	# Could happen if ports tree is out of date
  			use_package=up_old_tree
  			pm_v "===>>> Available package ($latest_pv)"
-@@ -3636,15 +3667,21 @@ pkg_flavor () {
+@@ -3632,19 +3663,27 @@ if [ -z "$use_package" ]; then
+ 
+ # Return flavor for named pkg (must be executed in port directory!)
+ pkg_flavor () {
+-	local pkg="$1" flavor
++	local pkg="$1" flavor starttime
  	pm_make pretty-flavors-package-names | sed -ne 's!^\([A-Za-z0-9_]*\): *'$pkg'$!\1!p';
  }
  	export_flavor=$(pkg_flavor $new_port)
@@ -767,8 +772,10 @@
 +		eval pm_make -DNO_DEPENDS $make_target $port_log_args || fail "make $make_target failed for $portdir"
 +		safe_exit
 +	fi
++	starttime=$(date "+%s")
  	eval pm_make build $port_log_args || fail "make build failed for $portdir"
 +	[ "$make_target" = "build" ] && safe_exit
++	echo "===>>> Building the port required $(( `date "+%s"` - $starttime )) seconds"
  
  	pm_sv Running make stage
  	# Defining NO_DEPENDS ensures that we will control the installation
@@ -778,7 +785,7 @@
  else
  	[ -z "$local_package" ] && {
  		fetch_package $latest_pv || fail "Fetch for ${latest_pv}.txz failed"; }
-@@ -3665,7 +3702,7 @@ if [ -n "$upg_port" -o -n "$ro_upg_port" ] && [ -z "$F
+@@ -3665,7 +3704,7 @@ if [ -n "$upg_port" -o -n "$ro_upg_port" ] && [ -z "$F
  		    grep -v ^$LOCALBASE_COMPAT > $pm_mktemp_file
  
  		unset temp
@@ -787,7 +794,7 @@
  		    sort - $pm_mktemp_file | uniq -d`; do
  			temp="${temp}$file "
  		done
-@@ -3688,7 +3725,7 @@ if [ -n "$upg_port" -o -n "$ro_upg_port" ] && [ -z "$F
+@@ -3688,7 +3727,7 @@ if [ -n "$upg_port" -o -n "$ro_upg_port" ] && [ -z "$F
  
  	if [ -n "$REPLACE_ORIGIN" -a -n "$ro_upg_port" ]; then # <se> not always true for port moved to flavored version with no version update???
  		# Delete any existing versions of the old port
@@ -796,7 +803,7 @@
  		pm_sv "Running pkg delete for $ro_upg_port"
  		pm_pkg_delete_s $ro_upg_port
  	fi
-@@ -3710,7 +3747,7 @@ if [ -n "$upg_port" -o -n "$ro_upg_port" ] && [ -z "$F
+@@ -3710,7 +3749,7 @@ if [ -n "$upg_port" -o -n "$ro_upg_port" ] && [ -z "$F
  
  		# If $ro_upg_port was non-automatic, keep its state
  		if [ "${np_orphan:-1}" -eq 1 ]; then
@@ -805,7 +812,7 @@
  		fi
  		pm_sv "Running pkg delete for $upg_port"
  		pm_pkg_delete_s $upg_port
-@@ -3776,7 +3813,7 @@ else
+@@ -3776,7 +3815,7 @@ else
  	[ -n "$local_package" ] && ppd=${LOCAL_PACKAGEDIR}/All
  
  	echo "===>>> Installing package from: ${ppd}/${latest_pv}.txz"
@@ -814,7 +821,7 @@
  		if [ -n "$PM_DELETE_PACKAGES" ]; then
  			pm_v "===>>> Deleting ${latest_pv}.txz"
  			pm_unlink_s ${ppd}/${latest_pv}.txz
-@@ -3801,14 +3838,14 @@ echo ''
+@@ -3801,14 +3840,14 @@ echo ''
  temp=`find $LOCALBASE_COMPAT -type d -empty 2>/dev/null`
  if [ -z "$temp" ] && pm_isdir "$LOCALBASE_COMPAT"; then
  	unset files
@@ -831,7 +838,7 @@
  		$PM_SU_CMD /etc/rc.d/ldconfig start > /dev/null
  	fi
  	unset temp file files
-@@ -3876,14 +3913,18 @@ if [ -n "$MAKE_PACKAGE" ]; then
+@@ -3876,14 +3915,18 @@ if [ -n "$MAKE_PACKAGE" ]; then
  fi
  
  if [ -z "$use_package" -a -z "$DONT_POST_CLEAN" ]; then
@@ -853,7 +860,7 @@
  fi
  
  
-@@ -3903,7 +3944,7 @@ if [ "$$" -ne "$PM_PARENT_PID" -o -n "$PM_URB" ]; then
+@@ -3903,7 +3946,7 @@ if [ "$$" -ne "$PM_PARENT_PID" -o -n "$PM_URB" ]; then
  fi
  
  INSTALLED_LIST="${INSTALLED_LIST}\t${ilist}\n"
