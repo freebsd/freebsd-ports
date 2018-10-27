@@ -309,18 +309,17 @@ share/applications/din.desktop
 %%DATADIR%%/factory/d_warper
 %%DATADIR%%/factory/d_waveform_display
 %%DATADIR%%/factory/daccel.crv
-%%DATADIR%%/factory/dam.crv
 %%DATADIR%%/factory/dash.crv
 %%DATADIR%%/factory/decay.crv
 %%DATADIR%%/factory/decay.ed
 %%DATADIR%%/factory/decay.lib
 %%DATADIR%%/factory/delay.ed
-%%DATADIR%%/factory/dfm.crv
 %%DATADIR%%/factory/din.hlp
 %%DATADIR%%/factory/din.osc
 %%DATADIR%%/factory/din_info
-%%DATADIR%%/factory/donate.tcl
 %%DATADIR%%/factory/dot.crv
+%%DATADIR%%/factory/drone-mod-am.crv
+%%DATADIR%%/factory/drone-mod-fm.crv
 %%DATADIR%%/factory/drone-modulation.ed
 %%DATADIR%%/factory/drone.crv
 %%DATADIR%%/factory/drone.ed
@@ -404,6 +403,9 @@ share/applications/din.desktop
 %%DATADIR%%/factory/p_Starrer
 %%DATADIR%%/factory/p_Superformula
 %%DATADIR%%/factory/pythagoras.tuning
+%%DATADIR%%/factory/range-mod-height.crv
+%%DATADIR%%/factory/range-mod-width.crv
+%%DATADIR%%/factory/range-modulation.ed
 %%DATADIR%%/factory/rose_milker.scr
 %%DATADIR%%/factory/rose_milker_cos.crv
 %%DATADIR%%/factory/rose_milker_cos.ed
@@ -449,7 +451,6 @@ share/applications/din.desktop
 %%DATADIR%%/factory/start-end.patch.tcl
 %%DATADIR%%/factory/swav.crv
 %%DATADIR%%/factory/swav.ed
-%%DATADIR%%/factory/tips.tcl
 %%DATADIR%%/factory/tuning.help.tcl
 %%DATADIR%%/factory/velocity.crv
 %%DATADIR%%/factory/velocity.ed
@@ -467,5 +468,6 @@ share/applications/din.desktop
 %%DATADIR%%/factory/window
 %%DATADIR%%/factory/word.crv
 %%DATADIR%%/factory/word_space.crv
+%%DATADIR%%/factory/write-svg.help.tcl
 share/icons/hicolor/scalable/apps/din.svg
 share/pixmaps/din.png
