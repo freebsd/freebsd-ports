@@ -6,12 +6,11 @@ bin/simplesearch
 bin/xapian-check
 bin/xapian-compact
 bin/xapian-config
-bin/xapian-copydatabase
 bin/xapian-delve
 bin/xapian-inspect
 bin/xapian-metadata
+bin/xapian-pos
 bin/xapian-progsrv
-bin/xapian-quest
 bin/xapian-replicate
 bin/xapian-replicate-server
 bin/xapian-tcpsrv
@@ -56,7 +55,7 @@ lib/cmake/xapian/xapian-config-version.cmake
 lib/cmake/xapian/xapian-config.cmake
 lib/libxapian.so
 lib/libxapian.so.30
-lib/libxapian.so.30.5.1
+lib/libxapian.so.30.6.0
 libdata/pkgconfig/xapian-core.pc
 man/man1/copydatabase.1.gz
 man/man1/quest.1.gz
@@ -65,6 +64,7 @@ man/man1/xapian-compact.1.gz
 man/man1/xapian-config.1.gz
 man/man1/xapian-delve.1.gz
 man/man1/xapian-metadata.1.gz
+man/man1/xapian-pos.1.gz
 man/man1/xapian-progsrv.1.gz
 man/man1/xapian-replicate-server.1.gz
 man/man1/xapian-replicate.1.gz
