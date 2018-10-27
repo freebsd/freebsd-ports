@@ -1,23 +1,24 @@
 # $FreeBSD$
 
 PORTNAME=	kde-thumbnailer-epub
-PORTVERSION=	1.0
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.1.9b
 CATEGORIES=	misc kde
-MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
-DISTNAME=	151210-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	KDE thumbnail generator for ePub files
 
-PORTSCOUT=	limit:^1\.0
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:outsource kde:4 qt:4
-USE_KDE=	kdelibs automoc4
-USE_QT=		moc_build qmake_build rcc_build uic_build
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USES=		cmake:outsource kde:5 qt:5
+USE_KDE=	archive ecm_build kio
+USE_QT=		buildtools_build qmake_build gui xmlpatterns
 
-PLIST_FILES=	lib/kde4/epubthumbnail.so \
-		share/kde4/services/epubthumbnail.desktop
+USE_GITHUB=	yes
+GH_ACCOUNT=	Caig
+
+PLIST_FILES=	${QT_PLUGINDIR_REL}/epubthumbnail.so \
+		share/kservices5/epubthumbnail.desktop
 
 .include <bsd.port.mk>
