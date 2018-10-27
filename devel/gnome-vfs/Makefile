@@ -3,7 +3,7 @@
 
 PORTNAME=	gnome-vfs
 PORTVERSION=	2.24.4
-PORTREVISION?=	9
+PORTREVISION?=	10
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,9 +16,6 @@ LICENSE_COMB=	multi
 LICENSE_FILE_LGPL20=	${WRKSRC}/COPYING.LIB
 LICENSE_FILE_LGPL20+ =	${WRKSRC}/COPYING.LIB
 
-BROKEN_SSL=	openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	incomplete definition of type 'struct ssl_st'
-
 USES=		tar:bzip2
 
 .if !defined(REFERENCE_PORT)
@@ -27,7 +24,7 @@ RUN_DEPENDS=	update-mime-database:misc/shared-mime-info
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libdbus-1.so:devel/dbus
 
-USES+=		gettext gmake libtool:keepla pathfix pkgconfig ssl
+USES+=		gettext gmake gnome libtool:keepla pathfix pkgconfig ssl
 USE_GNOME=	gconf2 gnomemimedata intlhack referencehack
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
