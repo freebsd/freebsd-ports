@@ -1,9 +1,9 @@
---- src/Makefile.am.orig	2018-05-14 07:19:48 UTC
+--- src/Makefile.am.orig	2018-10-22 17:17:28 UTC
 +++ src/Makefile.am
 @@ -1,5 +1,5 @@
--AM_CXXFLAGS = -I ../include -I /usr/include/tcl -Wall -DGPL2=1 -D_THREAD_SAFE -DHAVE_OPENGL -D__LICENSED__ -DPREFIX=\"@prefix@\"
--LIBS +=  -ltcl -lSDL -lGL -lpthread -lasound -ljack
-+AM_CXXFLAGS = -I ../include -Wall -DGPL2=1 -D_THREAD_SAFE -DHAVE_OPENGL -D__LICENSED__ -DPREFIX=\"@prefix@\"
+-AM_CXXFLAGS = -I ../include -I /usr/include/tcl8.6 -Wall -D __GPL20__ -D_THREAD_SAFE -DHAVE_OPENGL -D__LICENSED__ -D __SVG__ -DPREFIX=\"@prefix@\"
+-LIBS +=  -ltcl8.6 -lSDL -lGL -lpthread -lasound -ljack
++AM_CXXFLAGS = -I ../include -Wall -D __GPL20__ -D_THREAD_SAFE -DHAVE_OPENGL -D__LICENSED__ -D __SVG__ -DPREFIX=\"@prefix@\"
 +LIBS +=  -lSDL -lGL -lpthread -lasound -ljack
  
  AM_CFLAGS = -I ../include
