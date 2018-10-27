@@ -3,7 +3,7 @@
 
 PORTNAME=	fraqtive
 PORTVERSION=	0.4.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/fraqtive/Fraqtive/Fraqtive%20${PORTVERSION}/
 
@@ -13,8 +13,8 @@ COMMENT=	Draws Mandelbrot and Julia fractals
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		qmake qt:4 tar:bzip2
-USE_QT=		corelib gui opengl xml uic_build moc_build rcc_build
+USES=		qmake qt:5 tar:bzip2
+USE_QT=		core gui opengl widgets xml buildtools_build
 USE_GL=		gl glu
 
 OPTIONS_DEFINE=	SSE2
