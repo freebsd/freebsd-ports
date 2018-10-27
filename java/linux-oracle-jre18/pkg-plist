@@ -42,6 +42,7 @@
 %%T%%/lib/%%JAVA_ARCHLIBDIR%%/libfontmanager.so
 %%T%%/lib/%%JAVA_ARCHLIBDIR%%/libfxplugins.so
 %%T%%/lib/%%JAVA_ARCHLIBDIR%%/libglass.so
+%%T%%/lib/%%JAVA_ARCHLIBDIR%%/libglib-lite.so
 %%T%%/lib/%%JAVA_ARCHLIBDIR%%/libgstreamer-lite.so
 %%T%%/lib/%%JAVA_ARCHLIBDIR%%/libhprof.so
 %%T%%/lib/%%JAVA_ARCHLIBDIR%%/libinstrument.so
