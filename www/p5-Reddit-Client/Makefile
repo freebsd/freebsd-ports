@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Reddit-Client
-PORTVERSION=	1.281
+PORTVERSION=	1.2811
 PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -25,6 +25,7 @@ TEST_DEPENDS=	p5-Test-MockModule>=0:devel/p5-Test-MockModule
 
 USES=		perl5
 USE_PERL5=	configure
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
