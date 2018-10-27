@@ -1,0 +1,13 @@
+https://github.com/rime/librime/issues/225
+
+--- CMakeLists.txt.orig	2014-12-21 11:46:44 UTC
++++ CMakeLists.txt
+@@ -38,7 +38,7 @@ set(Boost_USE_MULTITHREADED ON)
+ if(MSVC)
+   set(Boost_USE_STATIC_RUNTIME ON)
+ endif(MSVC)
+-find_package(Boost 1.46.0 REQUIRED COMPONENTS filesystem regex signals system)
++find_package(Boost 1.46.0 REQUIRED COMPONENTS filesystem regex system)
+ if(Boost_FOUND)
+   include_directories(${Boost_INCLUDE_DIRS})
+   link_directories(${Boost_LIBRARY_DIRS})
