@@ -11,6 +11,3 @@ by Victor Shoup.  It provides objects and methods for
 Unless you define WITHOUT_GMP, NTL requires libgmp4.
 
 WWW: http://www.shoup.net/
-
-Matthias Bauer
-matthiasb@acm.org
