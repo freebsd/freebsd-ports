@@ -18,7 +18,7 @@ include/racket/schvers.h
 include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
-lib/libracket3m-7.0.so
+lib/libracket3m-7.1.so
 lib/libracket3m.so
 lib/racket/buildinfo
 lib/racket/gracket
@@ -195,11 +195,14 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/ffi/unsafe.rkt
 %%DATADIR%%/collects/ffi/unsafe/alloc.rkt
 %%DATADIR%%/collects/ffi/unsafe/atomic.rkt
+%%DATADIR%%/collects/ffi/unsafe/collect-callback.rkt
 %%DATADIR%%/collects/ffi/unsafe/com.rkt
 %%DATADIR%%/collects/ffi/unsafe/compiled/alloc_rkt.dep
 %%DATADIR%%/collects/ffi/unsafe/compiled/alloc_rkt.zo
 %%DATADIR%%/collects/ffi/unsafe/compiled/atomic_rkt.dep
 %%DATADIR%%/collects/ffi/unsafe/compiled/atomic_rkt.zo
+%%DATADIR%%/collects/ffi/unsafe/compiled/collect-callback_rkt.dep
+%%DATADIR%%/collects/ffi/unsafe/compiled/collect-callback_rkt.zo
 %%DATADIR%%/collects/ffi/unsafe/compiled/com_rkt.dep
 %%DATADIR%%/collects/ffi/unsafe/compiled/com_rkt.zo
 %%DATADIR%%/collects/ffi/unsafe/compiled/custodian_rkt.dep
@@ -682,6 +685,8 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/compiled/place_rkt.zo
 %%DATADIR%%/collects/racket/compiled/port_rkt.dep
 %%DATADIR%%/collects/racket/compiled/port_rkt.zo
+%%DATADIR%%/collects/racket/compiled/prefab_rkt.dep
+%%DATADIR%%/collects/racket/compiled/prefab_rkt.zo
 %%DATADIR%%/collects/racket/compiled/pretty_rkt.dep
 %%DATADIR%%/collects/racket/compiled/pretty_rkt.zo
 %%DATADIR%%/collects/racket/compiled/promise_rkt.dep
@@ -1008,6 +1013,7 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/place/private/prop.rkt
 %%DATADIR%%/collects/racket/place/private/th-place.rkt
 %%DATADIR%%/collects/racket/port.rkt
+%%DATADIR%%/collects/racket/prefab.rkt
 %%DATADIR%%/collects/racket/pretty.rkt
 %%DATADIR%%/collects/racket/private/arity.rkt
 %%DATADIR%%/collects/racket/private/base.rkt
@@ -1087,6 +1093,8 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/private/compiled/kw-file_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/kw-prop-key_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/kw-prop-key_rkt.zo
+%%DATADIR%%/collects/racket/private/compiled/kw-syntax-binding_rkt.dep
+%%DATADIR%%/collects/racket/private/compiled/kw-syntax-binding_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/kw_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/kw_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/letstx-scheme_rkt.dep
@@ -1127,6 +1135,8 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/private/compiled/path_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/performance-hint_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/performance-hint_rkt.zo
+%%DATADIR%%/collects/racket/private/compiled/place-local_rkt.dep
+%%DATADIR%%/collects/racket/private/compiled/place-local_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/port_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/port_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/portlines_rkt.dep
@@ -1145,6 +1155,8 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/private/compiled/qqstx_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/reading-param_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/reading-param_rkt.zo
+%%DATADIR%%/collects/racket/private/compiled/relative-path_rkt.dep
+%%DATADIR%%/collects/racket/private/compiled/relative-path_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/reqprov_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/reqprov_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/reverse_rkt.dep
@@ -1248,6 +1260,7 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/private/kernstruct.rkt
 %%DATADIR%%/collects/racket/private/kw-file.rkt
 %%DATADIR%%/collects/racket/private/kw-prop-key.rkt
+%%DATADIR%%/collects/racket/private/kw-syntax-binding.rkt
 %%DATADIR%%/collects/racket/private/kw.rkt
 %%DATADIR%%/collects/racket/private/letstx-scheme.rkt
 %%DATADIR%%/collects/racket/private/list-predicates.rkt
@@ -1268,6 +1281,7 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/private/path-list.rkt
 %%DATADIR%%/collects/racket/private/path.rkt
 %%DATADIR%%/collects/racket/private/performance-hint.rkt
+%%DATADIR%%/collects/racket/private/place-local.rkt
 %%DATADIR%%/collects/racket/private/port.rkt
 %%DATADIR%%/collects/racket/private/portlines.rkt
 %%DATADIR%%/collects/racket/private/pre-base.rkt
@@ -1277,6 +1291,7 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/private/qq-and-or.rkt
 %%DATADIR%%/collects/racket/private/qqstx.rkt
 %%DATADIR%%/collects/racket/private/reading-param.rkt
+%%DATADIR%%/collects/racket/private/relative-path.rkt
 %%DATADIR%%/collects/racket/private/reqprov.rkt
 %%DATADIR%%/collects/racket/private/reverse.rkt
 %%DATADIR%%/collects/racket/private/runtime-path-table.rkt
@@ -1663,6 +1678,8 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/syntax/parse/private/3d-stx.rkt
 %%DATADIR%%/collects/syntax/parse/private/compiled/3d-stx_rkt.dep
 %%DATADIR%%/collects/syntax/parse/private/compiled/3d-stx_rkt.zo
+%%DATADIR%%/collects/syntax/parse/private/compiled/datum-to-expr_rkt.dep
+%%DATADIR%%/collects/syntax/parse/private/compiled/datum-to-expr_rkt.zo
 %%DATADIR%%/collects/syntax/parse/private/compiled/keywords_rkt.dep
 %%DATADIR%%/collects/syntax/parse/private/compiled/keywords_rkt.zo
 %%DATADIR%%/collects/syntax/parse/private/compiled/kws_rkt.dep
@@ -1703,6 +1720,7 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/syntax/parse/private/compiled/sc_rkt.zo
 %%DATADIR%%/collects/syntax/parse/private/compiled/txlift_rkt.dep
 %%DATADIR%%/collects/syntax/parse/private/compiled/txlift_rkt.zo
+%%DATADIR%%/collects/syntax/parse/private/datum-to-expr.rkt
 %%DATADIR%%/collects/syntax/parse/private/keywords.rkt
 %%DATADIR%%/collects/syntax/parse/private/kws.rkt
 %%DATADIR%%/collects/syntax/parse/private/lib.rkt
