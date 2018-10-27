@@ -1,8 +1,8 @@
 Make build glue accept libpng 1.6.x and don't hardcode suffix
 
---- CMakeLists.txt.orig	2017-05-27 09:58:05 UTC
+--- CMakeLists.txt.orig	2018-10-27 18:56:20 UTC
 +++ CMakeLists.txt
-@@ -582,9 +582,10 @@ else()
+@@ -663,9 +663,10 @@ else()
  	set(LIBZIP_LIBRARY libzip)
  endif()
  
@@ -16,7 +16,18 @@ Make build glue accept libpng 1.6.x and don't hardcode suffix
  find_package(PackageHandleStandardArgs)
  find_package_handle_standard_args(PNG REQUIRED_VARS PNG_LIBRARY PNG_PNG_INCLUDE_DIR)
  if (PNG_FOUND)
---- Core/Screenshot.cpp.orig	2017-05-27 09:58:05 UTC
+--- Core/Debugger/WebSocket/GPUBufferSubscriber.cpp.orig	2018-10-27 09:29:42 UTC
++++ Core/Debugger/WebSocket/GPUBufferSubscriber.cpp
+@@ -17,7 +17,7 @@
+ 
+ #include <algorithm>
+ #ifndef USING_QT_UI
+-#include <libpng17/png.h>
++#include "png.h"
+ #include <zlib.h>
+ #endif
+ #include "data/base64.h"
+--- Core/Screenshot.cpp.orig	2018-10-27 09:29:42 UTC
 +++ Core/Screenshot.cpp
 @@ -21,7 +21,7 @@
  #ifdef USING_QT_UI
@@ -27,7 +38,18 @@ Make build glue accept libpng 1.6.x and don't hardcode suffix
  #include "ext/jpge/jpge.h"
  #endif
  
---- ext/native/image/png_load.cpp.orig	2017-05-27 09:58:05 UTC
+--- Core/TextureReplacer.cpp.orig	2018-10-27 09:29:42 UTC
++++ Core/TextureReplacer.cpp
+@@ -18,7 +18,7 @@
+ #ifdef USING_QT_UI
+ #include <QtGui/QImage>
+ #else
+-#include <libpng17/png.h>
++#include "png.h"
+ #endif
+ 
+ #include <algorithm>
+--- ext/native/image/png_load.cpp.orig	2018-10-27 09:29:42 UTC
 +++ ext/native/image/png_load.cpp
 @@ -5,7 +5,7 @@
  #ifdef USING_QT_UI
@@ -38,14 +60,3 @@ Make build glue accept libpng 1.6.x and don't hardcode suffix
  #endif
  
  #include "png_load.h"
---- Core/TextureReplacer.cpp.orig	2017-05-27 09:58:05 UTC
-+++ Core/TextureReplacer.cpp
-@@ -16,7 +16,7 @@
- // https://github.com/hrydgard/ppsspp and http://www.ppsspp.org/.
- 
- #ifndef USING_QT_UI
--#include <libpng17/png.h>
-+#include "png.h"
- #endif
- 
- #include <algorithm>
