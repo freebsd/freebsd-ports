@@ -1,0 +1,31 @@
+https://github.com/spring/spring/commit/a385d9d7715a
+
+CMake Error at /usr/local/share/cmake/Modules/FindBoost.cmake:2049 (message):
+  Unable to find the requested Boost libraries.
+
+  Boost version: 1.69.0
+
+  Boost include path: /usr/local/include
+
+  Could not find the following Boost libraries:
+
+          boost_signals
+
+  Some (but not all) of the required Boost libraries were found.  You may
+  need to install these additional Boost libraries.  Alternatively, set
+  BOOST_LIBRARYDIR to the directory containing Boost libraries or BOOST_ROOT
+  to the location of Boost.
+Call Stack (most recent call first):
+  CMakeLists.txt:245 (FIND_PACKAGE)
+
+--- CMakeLists.txt.orig	2014-10-07 20:09:51 UTC
++++ CMakeLists.txt
+@@ -242,7 +242,7 @@ if    (MINGW)
+ 	set(SDL2_INCLUDE_DIR "${MINGWLIBS}/include/SDL2")
+ endif (MINGW)
+ 
+-FIND_PACKAGE(Boost 1.47.0 COMPONENTS thread regex program_options system chrono signals filesystem REQUIRED)
++FIND_PACKAGE(Boost 1.47.0 COMPONENTS thread regex program_options system chrono filesystem REQUIRED)
+ FIND_PACKAGE(Boost 1.47.0 COMPONENTS timer)
+ INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIR})
+ 
