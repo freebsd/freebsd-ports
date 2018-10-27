@@ -60,6 +60,7 @@
     SUBDIR += cryptoballot
     SUBDIR += cs
     SUBDIR += cstream
+    SUBDIR += ctm
     SUBDIR += dahdi
     SUBDIR += dahdi-kmod
     SUBDIR += dahdi-kmod26
