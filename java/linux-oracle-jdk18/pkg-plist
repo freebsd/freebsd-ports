@@ -1405,6 +1405,7 @@
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libfontmanager.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libfxplugins.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libglass.so
+%%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libglib-lite.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libgstreamer-lite.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libhprof.so
 %%T%%/jre/lib/%%JAVA_ARCHLIBDIR%%/libinstrument.so
