@@ -1,11 +1,11 @@
---- ./setup.py.orig	2013-12-21 08:59:30.000000000 +1100
-+++ ./setup.py	2014-01-29 19:27:01.992938843 +1100
-@@ -24,7 +24,7 @@
+--- setup.py.orig	2018-10-27 04:42:31 UTC
++++ setup.py
+@@ -45,7 +45,7 @@ setup(
                                        'screenshots', 'screenshots.*']),
      package_data={
          '':       ['*.txt',  '*.md', '*.rst', '*.json', '*.conf', '*.html',
 -                   '*.css', '*.ico', '*.png', '../LICENSE'],
 +                   '*.css', '*.ico', '*.png'],
-         'halite': ['app/*.txt', 'app/*/*.txt',
-                    'app/*.ico', 'app/*/*.ico',
-                    'app/*.png', 'app/*/*.png', 
+         'halite': pkg_files},
+     install_requires = [''],
+     extras_require = {}, )
