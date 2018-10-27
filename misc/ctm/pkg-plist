@@ -1,0 +1,10 @@
+man/man5/ctm.5.gz
+man/man8/ctm.8.gz
+man/man8/ctm_dequeue.8.gz
+man/man8/ctm_rmail.8.gz
+man/man8/ctm_smail.8.gz
+sbin/ctm
+sbin/ctm_dequeue
+sbin/ctm_rmail
+sbin/ctm_smail
+%%PORTDOCS%%%%DOCSDIR%%/README
