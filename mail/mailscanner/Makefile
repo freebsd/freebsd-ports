@@ -3,6 +3,7 @@
 
 PORTNAME=	MailScanner
 PORTVERSION=	5.1.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://s3.amazonaws.com/msv5/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${PATCHLEVEL}.nix
@@ -160,6 +161,8 @@ do-build:
 
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/usr/lib/${PORTNAME}/wrapper/*
+	@${REINPLACE_CMD} -e 's,/usr$$,&/local,' \
+		${WRKSRC}/etc/${PORTNAME}/virus.scanners.conf
 	@${FIND} ${WRKSRC} \( -name "*.bak" -or -name "*.orig" \) -delete
 
 do-install:
