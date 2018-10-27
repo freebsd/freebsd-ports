@@ -1,20 +1,20 @@
---- ./configure.orig	2002-10-19 11:44:49.000000000 +0200
-+++ ./configure	2014-01-03 01:50:13.000000000 +0100
-@@ -127,16 +127,16 @@
+--- configure.orig	2002-10-09 16:29:26 UTC
++++ configure
+@@ -128,16 +128,16 @@ case "$UNAME_S" in
        CCDBG="-DNDEBUG"
        LDDBG=""
      fi
 -    CC=gcc
-+    CC=@@CC
++    CC=cc
      CFLAGS="$CCDBG -D_UNIX -D_BSD=$OSVER -Wall"
 -    CXX=g++
-+    CXX=@@CXX
++    CXX=c++
      CXXFLAGS=${CFLAGS}
      AR=ar
      ARFLAGS="-rc"
 -    LD=gcc
 -    LDFLAGS="$LDDBG"
-+    LD=@@CC
++    LD=cc
 +    LDFLAGS="${LDFLAGS}"
      SYSLIBS=""
 -    LIBDB_LIB=""
