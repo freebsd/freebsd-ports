@@ -3,6 +3,7 @@
 
 PORTNAME=	remmina
 DISTVERSION=	1.2.31.4
+PORTREVISION=	1
 CATEGORIES=	net gnome
 
 MAINTAINER=	woodsb02@FreeBSD.org
@@ -45,7 +46,7 @@ GCRYPT_CMAKE_BOOL=	WITH_GCRYPT
 
 NLS_CMAKE_BOOL=		WITH_TRANSLATIONS
 
-SSH_LIB_DEPENDS=	libssh_threads.so:security/libssh
+SSH_LIB_DEPENDS=	libssh.so:security/libssh
 SSH_LDFLAGS=		-fstack-protector
 SSH_CMAKE_BOOL=		WITH_LIBSSH
 
