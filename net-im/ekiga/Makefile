@@ -4,7 +4,7 @@
 
 PORTNAME=	ekiga
 PORTVERSION=	4.0.1
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,10 +15,10 @@ COMMENT=	VoIP and video conferencing application
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat \
+BUILD_DEPENDS=	boost-libs>=1.53:devel/boost-libs \
+		v4l_compat>=0:multimedia/v4l_compat \
 		gnome-icon-theme>=3.0.0:misc/gnome-icon-theme
-LIB_DEPENDS=	libboost_signals.so:devel/boost-libs \
-		libopal.so:net/opal \
+LIB_DEPENDS=	libopal.so:net/opal \
 		libv4l2.so:multimedia/libv4l
 RUN_DEPENDS=	gnome-icon-theme>=3.0.0:misc/gnome-icon-theme
 
