@@ -8,6 +8,15 @@
  .Op Fl -local-packagedir=<path>
  .Op Fl -packages-local
  .Op Fl -delete-packages
+@@ -380,7 +381,7 @@ do not update the xterm title bar
+ .It Fl -no-index-fetch
+ skip fetching the INDEX file
+ .It Fl -index
+-use INDEX-[7-9] exclusively to check if a port is up to date
++use INDEX file exclusively to check if a port is up to date
+ .It Fl -index-first
+ use the INDEX for status, but double-check with the port
+ .It Fl -index-only
 @@ -416,8 +417,14 @@ use package if newer than installed even if the packag
  the latest according to the ports tree
  .It Fl -always-fetch
