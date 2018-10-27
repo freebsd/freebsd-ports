@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapian-omega
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.8
 CATEGORIES=	www
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -25,11 +25,13 @@ ICONV_DESC=	Enable iconv character set conversion support
 
 PORTSCOUT=	limitw:1,even
 
+USES=		compiler:c++11-lang libtool localbase perl5 shebangfix tar:xz
+
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR}
 CONFIGURE_ENV=	PCRE_CONFIG=${LOCALBASE}/bin/pcre-config \
 		XAPIAN_CONFIG=${LOCALBASE}/bin/xapian-config
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lang libtool localbase perl5 shebangfix tar:xz
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	dbi2omega htdig2omega mbox2omega
