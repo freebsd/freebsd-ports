@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	responses
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	devel www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,9 +28,7 @@ NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} >= 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}biscuits>=0:www/py-biscuits@${PY_FLAVOR}
-.else
+.if ${PYTHON_REL} < 3400
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cookies>=0:www/py-cookies@${PY_FLAVOR}
 .endif
 
