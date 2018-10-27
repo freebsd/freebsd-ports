@@ -399,6 +399,7 @@
     SUBDIR += snappy
     SUBDIR += spigot
     SUBDIR += spook
+    SUBDIR += subtitlecomposer
     SUBDIR += subtitlecomposer-kde4
     SUBDIR += subtitleeditor
     SUBDIR += subtitleoffsetmodifier

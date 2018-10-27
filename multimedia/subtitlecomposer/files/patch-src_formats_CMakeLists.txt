@@ -1,0 +1,11 @@
+--- src/formats/CMakeLists.txt.orig	2018-10-25 20:45:54 UTC
++++ src/formats/CMakeLists.txt
+@@ -68,7 +68,7 @@ set(formats_UIS
+ 	CACHE INTERNAL EXPORTEDVARIABLE
+ )
+ 
+-find_package(ICU)
++find_package(ICU REQUIRED COMPONENTS i18n uc data)
+ if(ICU_FOUND)
+ 	message(STATUS "ICU Library will be used for charset detection.")
+ 
