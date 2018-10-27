@@ -2,55 +2,51 @@
 # $FreeBSD$
 
 PORTNAME=	gnucap
-DISTVERSION=	2009-12-07
-PORTREVISION=	1
+DISTVERSION=	2013-04-23
 CATEGORIES=	cad
 MASTER_SITES=	http://www.gnucap.org/devel/ \
 		http://www.gnucap.org/devel/archive/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The GNU Circuit Analysis Package
+COMMENT=	GNU Circuit Analysis Package
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	READLINE DOCS EXAMPLES
-OPTIONS_DEFAULT=READLINE
-READLINE_DESC=	Enable readline support
+BROKEN_mips=	defined in discarded section
+BROKEN_mips64=	defined in discarded section
 
 USES=		gmake
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	prefix=${STAGEDIR}${PREFIX}
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
+MAKE_ARGS=	CCFLAGS="${CXXFLAGS}" CCC=c++
+CXXFLAGS+=	-fPIC -I${PREFIX}/include -I${WRKSRC}/include
+ALL_TARGET=	gnucap
+
 PLIST_FILES=	bin/gnucap bin/gnucap-modelgen \
-		man/man1/gnucap-ibis.1.gz man/man1/gnucap.1.gz
+		lib/libgnucap-default-plugins.so \
+		lib/libgnucap.so
 
-READLINE_USES=		readline
-READLINE_CONFIGURE_OFF=	--with-readline=no
+PORTDOCS=	README
+EXAMPLES=	runl *c *.ckt *.doc
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^SUBDIRS/s|doc examples||' ${WRKSRC}/Makefile.in
-.for i in src/ap_match.cc modelgen/ap_match.cc
-	@${REINPLACE_CMD} -e \
-		"s:strchr(str2, '|'):const_cast<char*>(strchr(str2, '|')):" \
-		${WRKSRC}/${i}
-.endfor
+	${FIND} -s ${WRKSRC} -name 'configure'|${XARGS} \
+		${REINPLACE_CMD} -e 's|g++|${CXX}|g'
 
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${MANPREFIX}/man/man1
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/main/O/gnucap ${WRKSRC}/modelgen/O/gnucap-modelgen \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_LIB} ${WRKSRC}/lib/O/libgnucap.so ${WRKSRC}/apps/O/*.so \
+		${STAGEDIR}${PREFIX}/lib
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/acs-tutorial ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/history ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/relnotes.* ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/whatisit ${STAGEDIR}${DOCSDIR}
-post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/README ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/runall ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.c ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.ckt ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.doc ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
