@@ -7,7 +7,7 @@ CATEGORIES=	sysutils kde kde-plasma
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 crash handler
 
-USES=		cmake:outsource kde:5 pkgconfig qt:5 tar:xz
+USES=		cmake:outsource compiler:c++11-lang kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		 crash i18n idletime jobwidgets kio notifications \
 		service wallet widgetsaddons xmlrpcclient

@@ -9,7 +9,8 @@ COMMENT=	Libraries used by KDE games
 
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
-USES=		cmake:outsource gettext kde:5 openal qt:5 tar:xz
+USES=		cmake:outsource compiler:c++11-lang gettext kde:5 openal qt:5 \
+		tar:xz
 USE_KDE=	archive attica auth bookmarks codecs completion config \
 		configwidgets coreaddons crash dbusaddons dnssd ecm emoticons \
 		globalaccel guiaddons i18n iconthemes init itemmodels \

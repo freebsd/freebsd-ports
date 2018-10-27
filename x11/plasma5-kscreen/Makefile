@@ -7,7 +7,8 @@ CATEGORIES=	x11 kde kde-plasma
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 screen management library
 
-USES=		cmake:outsource cpe gettext kde:5 qt:5 tar:xz
+USES=		cmake:outsource compiler:c++11-lang cpe gettext kde:5 qt:5 \
+		tar:xz
 USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons ecm \
 		globalaccel i18n libkscreen widgetsaddons xmlgui
 USE_QT=		core dbus gui network qml quick testlib widgets xml \
