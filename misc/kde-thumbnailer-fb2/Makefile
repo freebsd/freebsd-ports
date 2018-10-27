@@ -1,21 +1,24 @@
 # $FreeBSD$
 
 PORTNAME=	kde-thumbnailer-fb2
-PORTVERSION=	0.2
-PORTREVISION=	2
+PORTVERSION=	0.3.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	misc kde
-MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
-DISTNAME=	160180-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	KDE thumbnail generator for fb2 files
 
-USES=		cmake:outsource kde:4 qt:4
-USE_KDE=	kdelibs automoc4
-USE_QT=		moc_build qmake_build rcc_build uic_build
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-PLIST_FILES=	lib/kde4/fb2thumbnail.so \
-		share/kde4/services/fb2thumbnail.desktop
+USES=		cmake:outsource kde:5 qt:5
+USE_KDE=	archive ecm_build kio
+USE_QT=		buildtools_build qmake_build gui
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Caig
+
+PLIST_FILES=	${QT_PLUGINDIR_REL}/fb2thumbnail.so \
+		share/kservices5/fb2thumbnail.desktop
 
 .include <bsd.port.mk>
