@@ -7,7 +7,8 @@ CATEGORIES=	sysutils kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE system log application
 
-USES=		cmake:outsource gettext kde:5 pkgconfig qt:5 tar:xz
+USES=		cmake:outsource compiler:c++11-lang gettext kde:5 pkgconfig \
+		qt:5 tar:xz
 USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		doctools ecm i18n iconthemes itemviews jobwidgets kio \
 		service sonnet textwidgets widgetsaddons xmlgui
