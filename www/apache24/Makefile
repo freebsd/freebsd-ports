@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache24
-PORTVERSION=	2.4.35
+PORTVERSION=	2.4.37
 CATEGORIES=	www ipv6
 MASTER_SITES=	APACHE_HTTPD
 DISTNAME=	httpd-${PORTVERSION}
@@ -136,7 +136,7 @@ IGNORE=	LDAP and AUTHNZ_LDAP requires APR-util to have LDAP support built in.\
 .  endif
 .  if ${PORT_OPTIONS:MSESSION_CRYPTO} && \
 	!(exists(${APU_CRYPTO_OPENSSL}) || exists(${APU_CRYPTO_NSS}))
-IGNORE=	SESSION_CRYPTO requires APR-util to have crypto openssl support build in.\
+IGNORE=	SESSION_CRYPTO requires APR-util to have crypto openssl support built in.\
 	Please rebuild APR with crypto openssl support
 .  endif
 .endif	# exists APU_CONFIG
