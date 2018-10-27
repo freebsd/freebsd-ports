@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bmf
-PORTVERSION=	0.9.4
-PORTREVISION=	3
+PORTVERSION=	0.84
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -14,8 +13,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 HAS_CONFIGURE=	yes
+ALL_TARGET=	apps
 
-OPTIONS_DEFINE=	BDB MYSQL DEBUG DOCS
+OPTIONS_DEFINE=	BDB DEBUG DOCS MYSQL
 OPTIONS_DEFAULT=BDB
 
 BDB_USES=		bdb
@@ -26,19 +26,22 @@ BDB_CONFIGURE_ENV=	DB_LIBNAME=-l${BDB_LIB_NAME}
 
 DEBUG_CONFIGURE_ON=	--debug=yes
 
-MYSQL_USE=		MYSQL=client
+MYSQL_BUILD_DEPENDS=	mysql80-client>0:databases/mysql80-client
 MYSQL_CONFIGURE_WITH=	mysql
+MYSQL_VARS=		MAKE_ARGS=CFLAGS+="-I${WRKSRC} -I${LOCALBASE}/include" \
+			LDFLAGS+=-L${LOCALBASE}/lib/mysql
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@@CC|${CC}|;s|@@CXX|${CXX}|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's/: checkroot/: /g' ${WRKSRC}/Makefile.in
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bmf
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bmfconv
+do-install:
+	(cd ${WRKSRC} ; ${INSTALL_PROGRAM} bmf bmfconv ${STAGEDIR}${PREFIX}/bin)
 
-post-install-DOCS-on:
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bmf ${STAGEDIR}${PREFIX}/bin/bmfconv
 
 .include <bsd.port.mk>
