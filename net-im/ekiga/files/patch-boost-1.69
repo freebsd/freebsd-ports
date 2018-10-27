@@ -1,0 +1,2879 @@
+https://gitlab.gnome.org/GNOME/ekiga/commit/12641b735a98
+https://gitlab.gnome.org/GNOME/ekiga/commit/44ef7c66d055
+
+--- Makefile.in.orig	2013-02-20 21:44:17 UTC
++++ Makefile.in
+@@ -64,7 +64,6 @@ DIST_COMMON = README $(am__configure_deps) $(srcdir)/D
+ 	depcomp install-sh ltmain.sh missing mkinstalldirs
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
+-	$(top_srcdir)/m4/ax_boost_signals.m4 \
+ 	$(top_srcdir)/m4/gnome-doc-utils.m4 \
+ 	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
+ 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+@@ -189,8 +188,6 @@ AVAHI_LIBS = @AVAHI_LIBS@
+ AWK = @AWK@
+ BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+ BOOST_LDFLAGS = @BOOST_LDFLAGS@
+-BOOST_LIBS = @BOOST_LIBS@
+-BOOST_SIGNALS_LIB = @BOOST_SIGNALS_LIB@
+ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ CC = @CC@
+--- aclocal.m4.orig	2013-02-20 21:44:14 UTC
++++ aclocal.m4
+@@ -1783,7 +1783,6 @@ fi[]dnl
+ ])# PKG_CHECK_MODULES
+ 
+ m4_include([m4/ax_boost_base.m4])
+-m4_include([m4/ax_boost_signals.m4])
+ m4_include([m4/gnome-doc-utils.m4])
+ m4_include([m4/intltool.m4])
+ m4_include([m4/libtool.m4])
+--- config.h.in.orig	2013-02-20 21:44:15 UTC
++++ config.h.in
+@@ -27,9 +27,6 @@
+ /* define if the Boost library is available */
+ #undef HAVE_BOOST
+ 
+-/* define if the Boost::Signals library is available */
+-#undef HAVE_BOOST_SIGNALS
+-
+ /* DBUS support */
+ #undef HAVE_DBUS
+ 
+--- configure.orig	2013-02-20 21:44:15 UTC
++++ configure
+@@ -745,8 +745,6 @@ GCONF_LIBS
+ GCONF_CFLAGS
+ XML_LIBS
+ XML_CFLAGS
+-BOOST_LIBS
+-BOOST_SIGNALS_LIB
+ BOOST_LDFLAGS
+ BOOST_CPPFLAGS
+ GLIB_LIBS
+@@ -938,7 +936,6 @@ enable_nls
+ enable_gtk_debug
+ with_boost
+ with_boost_libdir
+-with_boost_signals
+ enable_gconf
+ with_gconf_source
+ with_gconf_schema_file_dir
+@@ -1704,10 +1701,6 @@ Optional Packages:
+                           this parameter only if default library detection
+                           fails and you know exactly where your boost
+                           libraries are located.
+-  --with-boost-signals[=special-lib]
+-                          use the Signals library from boost - it is possible
+-                          to specify a certain library for the linker e.g.
+-                          --with-boost-signals=boost_signals-gcc-mt-d
+   --with-gconf-source=sourceaddress
+                           Config database for installing schema files.
+   --with-gconf-schema-file-dir=dir
+@@ -17785,7 +17778,7 @@ fi
+ 
+ 
+ if test "x$want_boost" = "xyes"; then
+-    boost_lib_version_req=1.34
++    boost_lib_version_req=1.53
+     boost_lib_version_req_shorten=`expr $boost_lib_version_req : '\([0-9]*\.[0-9]*\)'`
+     boost_lib_version_req_major=`expr $boost_lib_version_req : '\([0-9]*\)'`
+     boost_lib_version_req_minor=`expr $boost_lib_version_req : '[0-9]*\.\([0-9]*\)'`
+@@ -18013,241 +18006,21 @@ fi
+ 
+ 
+ 
+-# Check whether --with-boost-signals was given.
+-if test "${with_boost_signals+set}" = set; then :
+-  withval=$with_boost_signals;
+-        if test "$withval" = "no"; then
+-			want_boost="no"
+-        elif test "$withval" = "yes"; then
+-            want_boost="yes"
+-            ax_boost_user_signals_lib=""
+-        else
+-		    want_boost="yes"
+-		ax_boost_user_signals_lib="$withval"
+-		fi
+-
++CPPFLAGS_save="$CPPFLAGS"
++CPPFLAGS="$CPPFLAGS $BOOST_CPPFLAGS"
++ac_fn_cxx_check_header_mongrel "$LINENO" "boost/signals2.hpp" "ac_cv_header_boost_signals2_hpp" "$ac_includes_default"
++if test "x$ac_cv_header_boost_signals2_hpp" = xyes; then :
++ 
+ else
+-  want_boost="yes"
+-
++  found_signals2=no
+ fi
+ 
+ 
+-	if test "x$want_boost" = "xyes"; then
++CPPFLAGS="$CPPFLAGS_save"
+ 
+-		CPPFLAGS_SAVED="$CPPFLAGS"
+-		CPPFLAGS="$CPPFLAGS $BOOST_CPPFLAGS"
+-		export CPPFLAGS
+-
+-		LDFLAGS_SAVED="$LDFLAGS"
+-		LDFLAGS="$LDFLAGS $BOOST_LDFLAGS"
+-		export LDFLAGS
+-
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether the Boost::Signals library is available" >&5
+-$as_echo_n "checking whether the Boost::Signals library is available... " >&6; }
+-if ${ax_cv_boost_signals+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  ac_ext=cpp
+-ac_cpp='$CXXCPP $CPPFLAGS'
+-ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+-ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+-ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+-
+-		 cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-#include <boost/signal.hpp>
+-
+-int
+-main ()
+-{
+-boost::signal<void ()> sig;
+-                                    return 0;
+-
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_cxx_try_compile "$LINENO"; then :
+-  ax_cv_boost_signals=yes
+-else
+-  ax_cv_boost_signals=no
++if test "x$found_signals2" = "xno"; then
++   as_fn_error $? "Could not find BOOST signals2 headers" "$LINENO" 5
+ fi
+-rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+-         ac_ext=cpp
+-ac_cpp='$CXXCPP $CPPFLAGS'
+-ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+-ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+-ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+-
+-
+-fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ax_cv_boost_signals" >&5
+-$as_echo "$ax_cv_boost_signals" >&6; }
+-		if test "x$ax_cv_boost_signals" = "xyes"; then
+-
+-$as_echo "#define HAVE_BOOST_SIGNALS /**/" >>confdefs.h
+-
+-            BOOSTLIBDIR=`echo $BOOST_LDFLAGS | sed -e 's/[^\/]*//'`
+-            if test "x$ax_boost_user_signals_lib" = "x"; then
+-                for libextension in `ls $BOOSTLIBDIR/libboost_signals*.so* $BOOSTLIBDIR/libboost_signals*.dylib* $BOOSTLIBDIR/libboost_signals*.a* 2>/dev/null | sed 's,.*/,,' | sed -e 's;^lib\(boost_signals.*\)\.so.*$;\1;' -e 's;^lib\(boost_signals.*\)\.dylib.*$;\1;' -e 's;^lib\(boost_signals.*\)\.a.*$;\1;'` ; do
+-                     ax_lib=${libextension}
+-				    as_ac_Lib=`$as_echo "ac_cv_lib_$ax_lib''_exit" | $as_tr_sh`
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for exit in -l$ax_lib" >&5
+-$as_echo_n "checking for exit in -l$ax_lib... " >&6; }
+-if eval \${$as_ac_Lib+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  ac_check_lib_save_LIBS=$LIBS
+-LIBS="-l$ax_lib  $LIBS"
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-
+-/* Override any GCC internal prototype to avoid an error.
+-   Use char because int might match the return type of a GCC
+-   builtin and then its argument prototype would still apply.  */
+-#ifdef __cplusplus
+-extern "C"
+-#endif
+-char exit ();
+-int
+-main ()
+-{
+-return exit ();
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_cxx_try_link "$LINENO"; then :
+-  eval "$as_ac_Lib=yes"
+-else
+-  eval "$as_ac_Lib=no"
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
+-LIBS=$ac_check_lib_save_LIBS
+-fi
+-eval ac_res=\$$as_ac_Lib
+-	       { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_res" >&5
+-$as_echo "$ac_res" >&6; }
+-if eval test \"x\$"$as_ac_Lib"\" = x"yes"; then :
+-  BOOST_SIGNALS_LIB="-l$ax_lib";  link_signals="yes"; break
+-else
+-  link_signals="no"
+-fi
+-
+-				done
+-                if test "x$link_signals" != "xyes"; then
+-                for libextension in `ls $BOOSTLIBDIR/boost_signals*.dll* $BOOSTLIBDIR/boost_signals*.a* 2>/dev/null | sed 's,.*/,,' | sed -e 's;^\(boost_signals.*\)\.dll.*$;\1;' -e 's;^\(boost_signals.*\)\.a*$;\1;'` ; do
+-                     ax_lib=${libextension}
+-				    as_ac_Lib=`$as_echo "ac_cv_lib_$ax_lib''_exit" | $as_tr_sh`
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for exit in -l$ax_lib" >&5
+-$as_echo_n "checking for exit in -l$ax_lib... " >&6; }
+-if eval \${$as_ac_Lib+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  ac_check_lib_save_LIBS=$LIBS
+-LIBS="-l$ax_lib  $LIBS"
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-
+-/* Override any GCC internal prototype to avoid an error.
+-   Use char because int might match the return type of a GCC
+-   builtin and then its argument prototype would still apply.  */
+-#ifdef __cplusplus
+-extern "C"
+-#endif
+-char exit ();
+-int
+-main ()
+-{
+-return exit ();
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_cxx_try_link "$LINENO"; then :
+-  eval "$as_ac_Lib=yes"
+-else
+-  eval "$as_ac_Lib=no"
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
+-LIBS=$ac_check_lib_save_LIBS
+-fi
+-eval ac_res=\$$as_ac_Lib
+-	       { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_res" >&5
+-$as_echo "$ac_res" >&6; }
+-if eval test \"x\$"$as_ac_Lib"\" = x"yes"; then :
+-  BOOST_SIGNALS_LIB="-l$ax_lib";  link_signals="yes"; break
+-else
+-  link_signals="no"
+-fi
+-
+-				done
+-                fi
+-
+-            else
+-               for ax_lib in $ax_boost_user_signals_lib boost_signals-$ax_boost_user_signals_lib; do
+-				      as_ac_Lib=`$as_echo "ac_cv_lib_$ax_lib''_main" | $as_tr_sh`
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -l$ax_lib" >&5
+-$as_echo_n "checking for main in -l$ax_lib... " >&6; }
+-if eval \${$as_ac_Lib+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  ac_check_lib_save_LIBS=$LIBS
+-LIBS="-l$ax_lib  $LIBS"
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-
+-
+-int
+-main ()
+-{
+-return main ();
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_cxx_try_link "$LINENO"; then :
+-  eval "$as_ac_Lib=yes"
+-else
+-  eval "$as_ac_Lib=no"
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
+-LIBS=$ac_check_lib_save_LIBS
+-fi
+-eval ac_res=\$$as_ac_Lib
+-	       { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_res" >&5
+-$as_echo "$ac_res" >&6; }
+-if eval test \"x\$"$as_ac_Lib"\" = x"yes"; then :
+-  BOOST_SIGNALS_LIB="-l$ax_lib";  link_signals="yes"; break
+-else
+-  link_signals="no"
+-fi
+-
+-                  done
+-
+-            fi
+-            if test "x$ax_lib" = "x"; then
+-                as_fn_error $? "Could not find a version of the library!" "$LINENO" 5
+-            fi
+-			if test "x$link_signals" != "xyes"; then
+-				as_fn_error $? "Could not link against $ax_lib !" "$LINENO" 5
+-			fi
+-		fi
+-
+-		CPPFLAGS="$CPPFLAGS_SAVED"
+-	LDFLAGS="$LDFLAGS_SAVED"
+-	fi
+-
+-
+-if test "x${ax_cv_boost_signals}" == "xno"; then
+-   as_fn_error $? "You need the boost signals library to compile Ekiga" "$LINENO" 5
+-fi
+-
+-BOOST_LIBS="${BOOST_SIGNALS_LIB}"
+-
+ 
+ 
+ 
+--- help/Makefile.in.orig	2013-02-20 21:44:16 UTC
++++ help/Makefile.in
+@@ -80,7 +80,6 @@ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile
+ subdir = help
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
+-	$(top_srcdir)/m4/ax_boost_signals.m4 \
+ 	$(top_srcdir)/m4/gnome-doc-utils.m4 \
+ 	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
+ 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+@@ -119,8 +118,6 @@ AVAHI_LIBS = @AVAHI_LIBS@
+ AWK = @AWK@
+ BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+ BOOST_LDFLAGS = @BOOST_LDFLAGS@
+-BOOST_LIBS = @BOOST_LIBS@
+-BOOST_SIGNALS_LIB = @BOOST_SIGNALS_LIB@
+ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ CC = @CC@
+--- lib/Makefile.in.orig	2013-02-20 21:44:16 UTC
++++ lib/Makefile.in
+@@ -136,7 +136,6 @@ subdir = lib
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
+-	$(top_srcdir)/m4/ax_boost_signals.m4 \
+ 	$(top_srcdir)/m4/gnome-doc-utils.m4 \
+ 	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
+ 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+@@ -650,8 +649,6 @@ AVAHI_LIBS = @AVAHI_LIBS@
+ AWK = @AWK@
+ BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+ BOOST_LDFLAGS = @BOOST_LDFLAGS@
+-BOOST_LIBS = @BOOST_LIBS@
+-BOOST_SIGNALS_LIB = @BOOST_SIGNALS_LIB@
+ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ CC = @CC@
+@@ -1206,7 +1203,7 @@ libekiga_la_SOURCES = $(top_srcdir)/lib/toolbox.h \
+ 	$(components_dir)/common-videooutput/videooutput-manager-common.cpp \
+ 	$(components_dir)/common-videooutput/videooutput-manager-common.h \
+ 	$(am__append_23) $(am__append_24)
+-libekiga_la_LDFLAGS = $(STACKLIB_LDFLAGS) $(BOOST_LIBS) $(GLIB_LIBS) \
++libekiga_la_LDFLAGS = $(STACKLIB_LDFLAGS) $(GLIB_LIBS) \
+ 	$(XML_LIBS) $(GTK_LIBS) $(am__append_1) $(am__append_8) \
+ 	$(am__append_12) $(PTLIB_LIBS) $(OPAL_LIBS) $(am__append_18) \
+ 	$(am__append_22) $(am__append_25)
+@@ -1251,7 +1248,7 @@ AM_CPPFLAGS = \
+ 	$(DBUS_CFLAGS) $(PTLIB_CFLAGS) $(OPAL_CFLAGS)
+ 
+ AM_LIBS = \
+-	$(BOOST_LIBS) $(GLIB_LIBS) $(XML_LIBS) $(GTK_LIBS)
++	$(GLIB_LIBS) $(XML_LIBS) $(GTK_LIBS)
+ 
+ engine_dir = $(top_srcdir)/lib/engine
+ components_dir = $(top_srcdir)/lib/engine/components
+--- lib/engine/account/account-core.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/account/account-core.h
+@@ -106,26 +106,26 @@ namespace Ekiga
+ 
+     /** This signal is emitted when a bank has been added to the core
+      */
+-    boost::signal1<void, BankPtr> bank_added;
++    boost::signals2::signal<void(BankPtr)> bank_added;
+ 
+     /** This signal is emitted when a bank has been removed from the core
+      */
+-    boost::signal1<void, BankPtr> bank_removed;
++    boost::signals2::signal<void(BankPtr)> bank_removed;
+ 
+     /** This signal is emitted when a account has been added to one of
+      * the banks
+      */
+-    boost::signal2<void, BankPtr, AccountPtr> account_added;
++    boost::signals2::signal<void(BankPtr, AccountPtr)> account_added;
+ 
+     /** This signal is emitted when a account has been removed from one of
+      * the banks
+      */
+-    boost::signal2<void, BankPtr, AccountPtr> account_removed;
++    boost::signals2::signal<void(BankPtr, AccountPtr)> account_removed;
+ 
+     /** This signal is emitted when a account has been updated in one of
+      * the banks
+      */
+-    boost::signal2<void, BankPtr, AccountPtr> account_updated;
++    boost::signals2::signal<void(BankPtr, AccountPtr)> account_updated;
+ 
+   private:
+ 
+@@ -147,7 +147,7 @@ namespace Ekiga
+     /** This signal is emitted when the AccountCore Service has been
+      * updated.
+      */
+-    boost::signal0<void> updated;
++    boost::signals2::signal<void(void)> updated;
+ 
+ 
+     /** This chain allows the AccountCore to present forms to the user
+--- lib/engine/account/bank-impl.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/account/bank-impl.h
+@@ -74,7 +74,7 @@ namespace Ekiga
+   template<class AccountType = Account>
+   class BankImpl:
+     public Bank,
+-    public boost::signals::trackable,
++    public boost::signals2::trackable,
+     protected RefLister<AccountType>
+   {
+ 
+--- lib/engine/account/bank.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/account/bank.h
+@@ -74,15 +74,15 @@ namespace Ekiga
+ 
+     /** This signal is emitted when a account has been added.
+      */
+-    boost::signal1<void, AccountPtr> account_added;
++    boost::signals2::signal<void(AccountPtr)> account_added;
+ 
+     /** This signal is emitted when a account has been removed.
+      */
+-    boost::signal1<void, AccountPtr> account_removed;
++    boost::signals2::signal<void(AccountPtr)> account_removed;
+ 
+     /** This signal is emitted when a account has been updated.
+      */
+-    boost::signal1<void, AccountPtr> account_updated;
++    boost::signals2::signal<void(AccountPtr)> account_updated;
+ 
+     /** This chain allows the BankImpl to present forms to the user
+      */
+--- lib/engine/addressbook/book.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/addressbook/book.h
+@@ -92,17 +92,17 @@ namespace Ekiga {
+ 
+     /** This signal is emitted when a Contact has been added to the Book.
+      */
+-    boost::signal1<void, ContactPtr > contact_added;
++    boost::signals2::signal<void(ContactPtr)> contact_added;
+ 
+ 
+     /** This signal is emitted when a Contact has been removed from the Book.
+      */
+-    boost::signal1<void, ContactPtr > contact_removed;
++    boost::signals2::signal<void(ContactPtr)> contact_removed;
+ 
+ 
+     /** This signal is emitted when a Contact has been updated in the Book.
+      */
+-    boost::signal1<void, ContactPtr > contact_updated;
++    boost::signals2::signal<void(ContactPtr)> contact_updated;
+   };
+ 
+   typedef boost::shared_ptr<Book> BookPtr;
+--- lib/engine/addressbook/contact-core.cpp.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/addressbook/contact-core.cpp
+@@ -50,7 +50,7 @@ on_search ()
+ 
+ Ekiga::ContactCore::~ContactCore ()
+ {
+-  for (std::list<boost::signals::connection>::iterator iter = conns.begin (); iter != conns.end (); ++iter)
++  for (std::list<boost::signals2::connection>::iterator iter = conns.begin (); iter != conns.end (); ++iter)
+     iter->disconnect ();
+ }
+ 
+--- lib/engine/addressbook/contact-core.h.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/addressbook/contact-core.h
+@@ -118,37 +118,37 @@ namespace Ekiga
+     /** This signal is emitted when a Ekiga::Source has been
+      * added to the ContactCore Service.
+      */
+-    boost::signal1<void, SourcePtr > source_added;
++    boost::signals2::signal<void(SourcePtr)> source_added;
+ 
+     /** This signal is emitted when a book has been added to one of
+      * the sources
+      */
+-    boost::signal2<void, SourcePtr, BookPtr > book_added;
++    boost::signals2::signal<void(SourcePtr, BookPtr )> book_added;
+ 
+     /** This signal is emitted when a book has been removed from one of
+      * the sources
+      */
+-    boost::signal2<void, SourcePtr, BookPtr > book_removed;
++    boost::signals2::signal<void(SourcePtr, BookPtr )> book_removed;
+ 
+     /** This signal is emitted when a book has been updated in one of
+      * the sources
+      */
+-    boost::signal2<void, SourcePtr, BookPtr > book_updated;
++    boost::signals2::signal<void(SourcePtr, BookPtr )> book_updated;
+ 
+     /** This signal is emitted when a contact has been added to one of
+      * the book of one of the sources
+      */
+-    boost::signal3<void, SourcePtr, BookPtr, ContactPtr > contact_added;
++    boost::signals2::signal<void(SourcePtr, BookPtr, ContactPtr )> contact_added;
+ 
+     /** This signal is emitted when a contact has been removed from one of
+      * the book of one of the sources
+      */
+-    boost::signal3<void, SourcePtr, BookPtr, ContactPtr > contact_removed;
++    boost::signals2::signal<void(SourcePtr, BookPtr, ContactPtr )> contact_removed;
+ 
+     /** This signal is emitted when a contact has been updated in one of
+      * the book of one of the sources
+      */
+-    boost::signal3<void, SourcePtr, BookPtr, ContactPtr > contact_updated;
++    boost::signals2::signal<void(SourcePtr, BookPtr, ContactPtr )> contact_updated;
+ 
+   private:
+ 
+@@ -174,7 +174,7 @@ namespace Ekiga
+     std::list<boost::shared_ptr<ContactDecorator> > contact_decorators;
+ 
+     /*** Misc stuff ***/
+-    std::list<boost::signals::connection> conns;
++    std::list<boost::signals2::connection> conns;
+   };
+ 
+ /**
+--- lib/engine/addressbook/source.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/addressbook/source.h
+@@ -63,32 +63,32 @@ namespace Ekiga {
+ 
+     /** This signal is emitted when a Book has been added to the Source.
+      */
+-    boost::signal1<void, BookPtr > book_added;
++    boost::signals2::signal<void(BookPtr)> book_added;
+     
+     
+     /** This signal is emitted when a Book has been updated in the Source.
+      */
+-    boost::signal1<void, BookPtr > book_updated;
++    boost::signals2::signal<void(BookPtr)> book_updated;
+     
+     
+     /** This signal is emitted when a Book has been removed in the Source.
+      */
+-    boost::signal1<void, BookPtr > book_removed;
++    boost::signals2::signal<void(BookPtr)> book_removed;
+ 
+     /** This signal is emitted when a Contact has been added to a book in
+      *  this source.
+      */
+-    boost::signal2<void, BookPtr, ContactPtr > contact_added;
++    boost::signals2::signal<void(BookPtr, ContactPtr )> contact_added;
+ 
+     /** This signal is emitted when a Contact has been removed from a book in
+      *  this source.
+      */
+-    boost::signal2<void, BookPtr, ContactPtr > contact_removed;
++    boost::signals2::signal<void(BookPtr, ContactPtr )> contact_removed;
+ 
+     /** This signal is emitted when a Contact has been updated in a book in
+      *  this source
+      */
+-    boost::signal2<void, BookPtr, ContactPtr > contact_updated;
++    boost::signals2::signal<void(BookPtr, ContactPtr )> contact_updated;
+   };
+ 
+   typedef boost::shared_ptr<Source> SourcePtr;
+--- lib/engine/audioinput/audioinput-core.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/audioinput/audioinput-core.h
+@@ -136,7 +136,7 @@ namespace Ekiga
+       /** This signal is emitted when a Ekiga::AudioInputManager has been
+        * added to the AudioInputCore Service.
+        */
+-      boost::signal1<void, AudioInputManager &> manager_added;
++      boost::signals2::signal<void(AudioInputManager &)> manager_added;
+ 
+ 
+       /*** AudioInput Device Management ***/
+@@ -254,23 +254,23 @@ namespace Ekiga
+ 
+       /** See audioinput-manager.h for the API
+        */
+-      boost::signal3<void, AudioInputManager &, AudioInputDevice &, AudioInputSettings&> device_opened;
+-      boost::signal2<void, AudioInputManager &, AudioInputDevice &> device_closed;
+-      boost::signal3<void, AudioInputManager &, AudioInputDevice &, AudioInputErrorCodes> device_error;
++      boost::signals2::signal<void(AudioInputManager &, AudioInputDevice &, AudioInputSettings&)> device_opened;
++      boost::signals2::signal<void(AudioInputManager &, AudioInputDevice &)> device_closed;
++      boost::signals2::signal<void(AudioInputManager &, AudioInputDevice &, AudioInputErrorCodes)> device_error;
+ 
+       /** This signal is emitted when an audio device input has been added to the system.
+        * This signal will be emitted if add_device was called with a device name and
+        * a manager claimed support for this device.
+        * @param device the audio input device that was added.
+        */
+-      boost::signal2<void, AudioInputDevice, bool> device_added;
++      boost::signals2::signal<void(AudioInputDevice, bool)> device_added;
+ 
+       /** This signal is emitted when an audio input device has been removed from the system.
+        * This signal will be emitted if remove_device was called with a device name and
+        * a manager claimed support for this device.
+        * @param device the audio input device that was removed.
+        */
+-      boost::signal2<void, AudioInputDevice, bool> device_removed;
++      boost::signals2::signal<void(AudioInputDevice, bool)> device_removed;
+ 
+   private:
+       void on_set_device (const AudioInputDevice & device);
+--- lib/engine/audioinput/audioinput-manager.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/audioinput/audioinput-manager.h
+@@ -39,7 +39,7 @@
+ #define __AUDIOINPUT_MANAGER_H__
+ 
+ #include <vector>
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ 
+ #include "audioinput-info.h"
+@@ -148,18 +148,18 @@ namespace Ekiga
+        * @param device the audio input device that was opened.
+        * @param config the current audio input device configuration (current volume, etc.).
+        */
+-      boost::signal2<void, AudioInputDevice, AudioInputSettings> device_opened;
++      boost::signals2::signal<void(AudioInputDevice, AudioInputSettings)> device_opened;
+ 
+       /** This signal is emitted when an audio input device is closed.
+        * @param device the audio input device that was closed.
+        */
+-      boost::signal1<void, AudioInputDevice> device_closed;
++      boost::signals2::signal<void(AudioInputDevice)> device_closed;
+ 
+       /** This signal is emitted when an error occurs when opening a audio input device.
+        * @param device the audio input device that caused the error.
+        * @param error_code the audio input device error code.
+        */
+-      boost::signal2<void, AudioInputDevice, AudioInputErrorCodes> device_error;
++      boost::signals2::signal<void(AudioInputDevice, AudioInputErrorCodes)> device_error;
+ 
+ 
+   protected:  
+--- lib/engine/audiooutput/audiooutput-core.h.orig	2013-02-18 21:37:04 UTC
++++ lib/engine/audiooutput/audiooutput-core.h
+@@ -128,7 +128,7 @@ namespace Ekiga
+       /** This signal is emitted when a Ekiga::AudioOutputManager has been
+        * added to the AudioOutputCore Service.
+        */
+-      boost::signal1<void, AudioOutputManager &> manager_added;
++      boost::signals2::signal<void(AudioOutputManager &)> manager_added;
+ 
+ 
+       /** Get a list of all devices supported by all managers registered to the core.
+@@ -299,23 +299,23 @@ namespace Ekiga
+ 
+       /** See audiooutput-manager.h for the API
+        */
+-      boost::signal4<void, AudioOutputManager &, AudioOutputPS, AudioOutputDevice&, AudioOutputSettings&> device_opened;
+-      boost::signal3<void, AudioOutputManager &, AudioOutputPS, AudioOutputDevice&> device_closed;
+-      boost::signal4<void, AudioOutputManager &, AudioOutputPS, AudioOutputDevice&, AudioOutputErrorCodes> device_error;
++      boost::signals2::signal<void(AudioOutputManager &, AudioOutputPS, AudioOutputDevice&, AudioOutputSettings&)> device_opened;
++      boost::signals2::signal<void(AudioOutputManager &, AudioOutputPS, AudioOutputDevice&)> device_closed;
++      boost::signals2::signal<void(AudioOutputManager &, AudioOutputPS, AudioOutputDevice&, AudioOutputErrorCodes)> device_error;
+ 
+       /** This signal is emitted when an audio output device has been added to the system.
+        * This signal will be emitted if add_device was called with a device name and
+        * a manager claimed support for this device.
+        * @param device the audio output device that was added.
+        */
+-      boost::signal2<void, AudioOutputDevice, bool> device_added;
++      boost::signals2::signal<void(AudioOutputDevice, bool)> device_added;
+ 
+       /** This signal is emitted when an audio output device has been removed from the system.
+        * This signal will be emitted if remove_device was called with a device name and
+        * a manager claimed support for this device.
+        * @param device the audio output device that was removed.
+        */
+-      boost::signal2<void, AudioOutputDevice, bool> device_removed;
++      boost::signals2::signal<void(AudioOutputDevice, bool)> device_removed;
+ 
+   private:
+       void on_set_device (const AudioOutputDevice & device);
+--- lib/engine/audiooutput/audiooutput-manager.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/audiooutput/audiooutput-manager.h
+@@ -39,7 +39,7 @@
+ #define __AUDIOOUTPUT_MANAGER_H__
+ 
+ #include <vector>
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ 
+ #include "audiooutput-info.h"
+@@ -152,20 +152,20 @@ namespace Ekiga
+        * @param device the audio output device that was opened.
+        * @param config the current audio output device configuration (current volume, etc.).
+        */
+-      boost::signal3<void, AudioOutputPS, AudioOutputDevice, AudioOutputSettings> device_opened;
++      boost::signals2::signal<void(AudioOutputPS, AudioOutputDevice, AudioOutputSettings)> device_opened;
+ 
+       /** This signal is emitted when an audio output device is closed.
+        * @param prim whether the primary or secondary audio output device was closed.
+        * @param device the audio output device that was closed.
+        */
+-      boost::signal2<void, AudioOutputPS, AudioOutputDevice> device_closed;
++      boost::signals2::signal<void(AudioOutputPS, AudioOutputDevice)> device_closed;
+ 
+       /** This signal is emitted when an error occurs when opening an audio output device.
+        * @param prim whether the primary or secondary audio output device caused the error.
+        * @param device the audio output device that caused the error.
+        * @param error_code the audio output device error code.
+        */
+-      boost::signal3<void, AudioOutputPS, AudioOutputDevice, AudioOutputErrorCodes> device_error;
++      boost::signals2::signal<void(AudioOutputPS, AudioOutputDevice, AudioOutputErrorCodes)> device_error;
+ 
+   protected:  
+       typedef struct ManagerState {
+--- lib/engine/chat/chat-core.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/chat/chat-core.h
+@@ -100,7 +100,7 @@ namespace Ekiga
+     /** This signal is emitted when an Ekiga::Dialect has been added to
+      * the ChatCore service.
+      */
+-    boost::signal1<void, DialectPtr > dialect_added;
++    boost::signals2::signal<void(DialectPtr)> dialect_added;
+ 
+   private:
+ 
+@@ -116,7 +116,7 @@ namespace Ekiga
+ 
+     /** This signal is emitted when the ChatCore service has been updated.
+      */
+-    boost::signal0<void> updated;
++    boost::signals2::signal<void(void)> updated;
+ 
+     /** This chain allows the ChatCore to present forms to the user
+      */
+--- lib/engine/chat/chat.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/chat/chat.h
+@@ -37,7 +37,7 @@
+ #define __CHAT_H__
+ 
+ #include <string>
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ 
+ #include <boost/smart_ptr.hpp>
+@@ -113,15 +113,15 @@ namespace Ekiga
+ 
+     /** This signal is emitted when the Chat has been updated.
+      */
+-    boost::signal0<void> updated;
++    boost::signals2::signal<void(void)> updated;
+ 
+     /** This signal is emitted when the user requested to see this Chat
+      */
+-    boost::signal0<void> user_requested;
++    boost::signals2::signal<void(void)> user_requested;
+ 
+     /** This signal is emitted when the Chat has been removed.
+      */
+-    boost::signal0<void> removed;
++    boost::signals2::signal<void(void)> removed;
+ 
+     /** Feed possible actions on this Chat to the given MenuBuilder
+      * @param A MenuBuilder object to populate.
+--- lib/engine/chat/dialect-impl.h.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/chat/dialect-impl.h
+@@ -47,7 +47,7 @@ namespace Ekiga
+ 	   typename MultipleChatType = MultipleChat>
+   class DialectImpl:
+     public Dialect,
+-    public boost::signals::trackable
++    public boost::signals2::trackable
+   {
+   public:
+ 
+@@ -75,10 +75,10 @@ namespace Ekiga
+ 
+     /* More STL-like ways to access the chats within this Ekiga::DialectImpl
+      */
+-    typedef typename Ekiga::map_key_iterator<std::map<boost::shared_ptr<SimpleChatType>, std::list<boost::signals::connection> > > simple_iterator;
+-    typedef typename Ekiga::map_key_const_iterator<std::map<boost::shared_ptr<SimpleChatType>, std::list<boost::signals::connection> > > simple_const_iterator;
+-    typedef typename Ekiga::map_key_iterator<std::map<boost::shared_ptr<MultipleChatType>, std::list<boost::signals::connection> > > multiple_iterator;
+-    typedef typename Ekiga::map_key_const_iterator<std::map<boost::shared_ptr<MultipleChatType>, std::list<boost::signals::connection> > > multiple_const_iterator;
++    typedef typename Ekiga::map_key_iterator<std::map<boost::shared_ptr<SimpleChatType>, std::list<boost::signals2::connection> > > simple_iterator;
++    typedef typename Ekiga::map_key_const_iterator<std::map<boost::shared_ptr<SimpleChatType>, std::list<boost::signals2::connection> > > simple_const_iterator;
++    typedef typename Ekiga::map_key_iterator<std::map<boost::shared_ptr<MultipleChatType>, std::list<boost::signals2::connection> > > multiple_iterator;
++    typedef typename Ekiga::map_key_const_iterator<std::map<boost::shared_ptr<MultipleChatType>, std::list<boost::signals2::connection> > > multiple_const_iterator;
+ 
+     simple_iterator simple_begin ();
+     simple_iterator simple_end ();
+@@ -116,8 +116,8 @@ namespace Ekiga
+ 
+   private:
+ 
+-    std::map<boost::shared_ptr<SimpleChatType>, std::list<boost::signals::connection> > simple_chats;
+-    std::map<boost::shared_ptr<MultipleChatType>, std::list<boost::signals::connection> > multiple_chats;
++    std::map<boost::shared_ptr<SimpleChatType>, std::list<boost::signals2::connection> > simple_chats;
++    std::map<boost::shared_ptr<MultipleChatType>, std::list<boost::signals2::connection> > multiple_chats;
+ 
+     void on_simple_chat_removed (boost::shared_ptr<SimpleChatType> chat);
+ 
+@@ -133,22 +133,22 @@ Ekiga::DialectImpl<SimpleChatType, MultipleChatType>::
+ template<typename SimpleChatType, typename MultipleChatType>
+ Ekiga::DialectImpl<SimpleChatType, MultipleChatType>::~DialectImpl ()
+ {
+-  for (typename std::map<boost::shared_ptr<SimpleChatType>,std::list<boost::signals::connection> >::iterator iter = simple_chats.begin ();
++  for (typename std::map<boost::shared_ptr<SimpleChatType>,std::list<boost::signals2::connection> >::iterator iter = simple_chats.begin ();
+        iter != simple_chats.end ();
+        iter++) {
+ 
+-    for (std::list<boost::signals::connection>::iterator conn_iter = iter->second.begin ();
++    for (std::list<boost::signals2::connection>::iterator conn_iter = iter->second.begin ();
+ 	 conn_iter != iter->second.end ();
+ 	 ++conn_iter) {
+ 
+       conn_iter->disconnect ();
+     }
+   }
+-  for (typename std::map<boost::shared_ptr<MultipleChatType>,std::list<boost::signals::connection> >::iterator iter = multiple_chats.begin ();
++  for (typename std::map<boost::shared_ptr<MultipleChatType>,std::list<boost::signals2::connection> >::iterator iter = multiple_chats.begin ();
+        iter != multiple_chats.end ();
+        iter++) {
+ 
+-    for (std::list<boost::signals::connection>::iterator conn_iter = iter->second.begin ();
++    for (std::list<boost::signals2::connection>::iterator conn_iter = iter->second.begin ();
+ 	 conn_iter != iter->second.end ();
+ 	 ++conn_iter) {
+ 
+@@ -163,7 +163,7 @@ Ekiga::DialectImpl<SimpleChatType, MultipleChatType>::
+ {
+   bool go_on = true;
+ 
+-  for (typename std::map<boost::shared_ptr<SimpleChatType>,std::list<boost::signals::connection> >::const_iterator iter = simple_chats.begin ();
++  for (typename std::map<boost::shared_ptr<SimpleChatType>,std::list<boost::signals2::connection> >::const_iterator iter = simple_chats.begin ();
+        go_on && iter != simple_chats.end ();
+        iter++) {
+ 
+@@ -177,7 +177,7 @@ Ekiga::DialectImpl<SimpleChatType, MultipleChatType>::
+ {
+   bool go_on = true;
+ 
+-  for (typename std::map<boost::shared_ptr<MultipleChatType>,std::list<boost::signals::connection> >::const_iterator iter = multiple_chats.begin ();
++  for (typename std::map<boost::shared_ptr<MultipleChatType>,std::list<boost::signals2::connection> >::const_iterator iter = multiple_chats.begin ();
+        go_on && iter != multiple_chats.end ();
+        iter++) {
+ 
+@@ -275,7 +275,7 @@ template<typename SimpleChatType, typename MultipleCha
+ void
+ Ekiga::DialectImpl<SimpleChatType, MultipleChatType>::on_simple_chat_removed (boost::shared_ptr<SimpleChatType> chat)
+ {
+-  for (typename std::list<boost::signals::connection>::iterator iter = simple_chats[chat].begin ();
++  for (typename std::list<boost::signals2::connection>::iterator iter = simple_chats[chat].begin ();
+        iter != simple_chats[chat].end ();
+        ++iter) {
+ 
+@@ -288,7 +288,7 @@ template<typename SimpleChatType, typename MultipleCha
+ void
+ Ekiga::DialectImpl<SimpleChatType, MultipleChatType>::on_multiple_chat_removed (boost::shared_ptr<MultipleChatType> chat)
+ {
+-  for (typename std::list<boost::signals::connection>::iterator iter = multiple_chats[chat].begin ();
++  for (typename std::list<boost::signals2::connection>::iterator iter = multiple_chats[chat].begin ();
+        iter != multiple_chats[chat].end ();
+        ++iter) {
+ 
+--- lib/engine/chat/dialect.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/chat/dialect.h
+@@ -72,12 +72,12 @@ namespace Ekiga
+     /** This signal is emitted when an Ekiga::SimpleChat has been added to
+      * the dialect.
+      */
+-    boost::signal1<void, SimpleChatPtr> simple_chat_added;
++    boost::signals2::signal<void(SimpleChatPtr)> simple_chat_added;
+ 
+     /** This signal is emitted when an Ekiga::MultipleChat has been added to
+      * the dialect.
+      */
+-    boost::signal1<void, MultipleChatPtr> multiple_chat_added;
++    boost::signals2::signal<void(MultipleChatPtr)> multiple_chat_added;
+ 
+     /** This chain allows the Dialect to present forms to the user.
+      */
+--- lib/engine/components/call-history/history-book.h.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/components/call-history/history-book.h
+@@ -53,7 +53,7 @@ namespace History
+ 
+   class Book:
+     public Ekiga::Book,
+-    public boost::signals::trackable
++    public boost::signals2::trackable
+   {
+   public:
+ 
+@@ -86,7 +86,7 @@ namespace History
+ 
+     void clear ();
+ 
+-    boost::signal0<void> cleared;
++    boost::signals2::signal<void(void)> cleared;
+ 
+   private:
+ 
+--- lib/engine/components/call-history/history-contact.h.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/components/call-history/history-contact.h
+@@ -61,7 +61,7 @@ namespace History
+ 
+   class Contact:
+     public Ekiga::Contact,
+-    public boost::signals::trackable
++    public boost::signals2::trackable
+   {
+   public:
+ 
+--- lib/engine/components/local-roster/local-cluster.h.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/components/local-roster/local-cluster.h
+@@ -51,7 +51,7 @@ namespace Local
+   class Cluster :
+     public Ekiga::ClusterImpl<Heap>,
+     public Ekiga::Trigger,
+-    public boost::signals::trackable
++    public boost::signals2::trackable
+   {
+   public:
+ 
+--- lib/engine/components/local-roster/local-presentity.h.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/components/local-roster/local-presentity.h
+@@ -162,7 +162,7 @@ namespace Local
+      * This signal makes the Local::Heap know that the XML tree changed
+      * and hence should be saved
+      */
+-    boost::signal0<void> trigger_saving;
++    boost::signals2::signal<void(void)> trigger_saving;
+ 
+ 
+   private:
+--- lib/engine/components/opal/opal-account.h.orig	2013-02-18 21:37:04 UTC
++++ lib/engine/components/opal/opal-account.h
+@@ -153,7 +153,7 @@ namespace Opal (public)
+ 
+     const std::string as_string () const;
+ 
+-    boost::signal0<void> trigger_saving;
++    boost::signals2::signal<void(void)> trigger_saving;
+ 
+     /*
+      * This is because an opal account is an Ekiga::PresencePublisher
+--- lib/engine/components/opal/opal-call.h.orig	2013-02-18 21:37:04 UTC
++++ lib/engine/components/opal/opal-call.h
+@@ -55,7 +55,7 @@ namespace Opal {
+   class Call
+     : public OpalCall,
+       public Ekiga::Call,
+-      public boost::signals::trackable
++      public boost::signals2::trackable
+   {
+ 
+ public:
+--- lib/engine/components/opal/opal-gmconf-bridge.cpp.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/components/opal/opal-gmconf-bridge.cpp
+@@ -35,7 +35,7 @@
+  */
+ 
+ #include <iostream>
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ 
+ #include "config.h"
+--- lib/engine/framework/chain-of-responsibility.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/framework/chain-of-responsibility.h
+@@ -36,7 +36,7 @@
+ #ifndef __CHAIN_OF_RESPONSIBILITY_H__
+ #define __CHAIN_OF_RESPONSIBILITY_H__
+ 
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ 
+ /* This code uses boost signals to implement the "chain of responsibility"
+@@ -117,9 +117,8 @@ namespace Ekiga
+ 
+   template<typename T_request>
+   struct ChainOfResponsibility:
+-    public boost::signal1<bool,
+-			 T_request,
+-			 responsibility_accumulator>
++    public boost::signals2::signal<bool(T_request),
++			           responsibility_accumulator>
+   {
+   };
+ };
+--- lib/engine/framework/form-request-simple.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/framework/form-request-simple.h
+@@ -36,7 +36,7 @@
+ #ifndef __FORM_REQUEST_SIMPLE_H__
+ #define __FORM_REQUEST_SIMPLE_H__
+ 
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ 
+ #include "form-builder.h"
+--- lib/engine/framework/gmconf-bridge.h.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/framework/gmconf-bridge.h
+@@ -38,7 +38,7 @@
+ #define __GMCONF_BRIDGE_H__
+ 
+ #include <vector>
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ 
+ #include "gmconf.h"
+@@ -94,7 +94,7 @@ namespace Ekiga
+        * @param key is the GmConf key whose value changed
+        * @param entry is the new GmConf entry
+        */
+-      boost::signal2<void, std::string /*key*/, GmConfEntry * /*entry*/> property_changed;
++      boost::signals2::signal<void(std::string /*key*/, GmConfEntry * /*entry*/)> property_changed;
+ 
+   protected :
+       Ekiga::Service & service;
+--- lib/engine/framework/live-object.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/framework/live-object.h
+@@ -62,12 +62,12 @@ namespace Ekiga
+ 
+     /** This signal is emitted when the object has been updated.
+      */
+-    boost::signal0<void> updated;
++    boost::signals2::signal<void(void)> updated;
+ 
+ 
+     /** This signal is emitted when the object has been removed.
+      */
+-    boost::signal0<void> removed;
++    boost::signals2::signal<void(void)> removed;
+ 
+     /** This chain allows the object to present forms to the user
+      */
+--- lib/engine/framework/menu-builder.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/framework/menu-builder.h
+@@ -37,7 +37,7 @@
+ #define __MENU_BUILDER_H__
+ 
+ #include <string>
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ 
+ 
+--- lib/engine/framework/personal-details.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/framework/personal-details.h
+@@ -37,7 +37,7 @@
+ #define __PERSONAL_DETAILS_H__
+ 
+ #include <string>
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ 
+ #include "services.h"
+@@ -66,7 +66,7 @@ namespace Ekiga
+     virtual void set_presence_info (const std::string presence,
+                                     const std::string status) = 0;
+ 
+-    boost::signal0<void> updated;
++    boost::signals2::signal<void(void)> updated;
+   };
+ };
+ 
+--- lib/engine/framework/reflister.h.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/framework/reflister.h
+@@ -37,7 +37,7 @@
+ #ifndef __REFLISTER_H__
+ #define __REFLISTER_H__
+ 
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ #include <list>
+ 
+@@ -55,7 +55,7 @@ namespace Ekiga
+   {
+   protected:
+ 
+-    typedef std::map<boost::shared_ptr<ObjectType>,std::list<boost::signals::connection> > container_type;
++    typedef std::map<boost::shared_ptr<ObjectType>,std::list<boost::signals2::connection> > container_type;
+     typedef Ekiga::map_key_iterator<container_type> iterator;
+     typedef Ekiga::map_key_const_iterator<container_type> const_iterator;
+ 
+@@ -66,7 +66,7 @@ namespace Ekiga
+     void add_object (boost::shared_ptr<ObjectType> obj);
+ 
+     void add_connection (boost::shared_ptr<ObjectType> obj,
+-			 boost::signals::connection connection);
++			 boost::signals2::connection connection);
+ 
+     void remove_object (boost::shared_ptr<ObjectType> obj);
+ 
+@@ -78,9 +78,9 @@ namespace Ekiga
+     const_iterator begin () const;
+     const_iterator end () const;
+ 
+-    boost::signal1<void, boost::shared_ptr<ObjectType> > object_added;
+-    boost::signal1<void, boost::shared_ptr<ObjectType> > object_removed;
+-    boost::signal1<void, boost::shared_ptr<ObjectType> > object_updated;
++    boost::signals2::signal<void(boost::shared_ptr<ObjectType>)> object_added;
++    boost::signals2::signal<void(boost::shared_ptr<ObjectType>)> object_removed;
++    boost::signals2::signal<void(boost::shared_ptr<ObjectType>)> object_updated;
+ 
+   private:
+     container_type objects;
+@@ -95,7 +95,7 @@ Ekiga::RefLister<ObjectType>::~RefLister ()
+        iter != objects.end ();
+        ++iter) {
+ 
+-    for (std::list<boost::signals::connection>::iterator conn_iter = iter->second.begin ();
++    for (std::list<boost::signals2::connection>::iterator conn_iter = iter->second.begin ();
+ 	 conn_iter != iter->second.end ();
+ 	 ++conn_iter) {
+ 
+@@ -130,7 +130,7 @@ Ekiga::RefLister<ObjectType>::add_object (boost::share
+ template<typename ObjectType>
+ void
+ Ekiga::RefLister<ObjectType>::add_connection (boost::shared_ptr<ObjectType> obj,
+-					      boost::signals::connection connection)
++					      boost::signals2::connection connection)
+ {
+   objects[obj].push_back (connection);
+ }
+@@ -139,8 +139,8 @@ template<typename ObjectType>
+ void
+ Ekiga::RefLister<ObjectType>::remove_object (boost::shared_ptr<ObjectType> obj)
+ {
+-  std::list<boost::signals::connection> connections = objects[obj];
+-  for (std::list<boost::signals::connection>::iterator iter = connections.begin ();
++  std::list<boost::signals2::connection> connections = objects[obj];
++  for (std::list<boost::signals2::connection>::iterator iter = connections.begin ();
+        iter != connections.end ();
+        ++iter)
+     iter->disconnect ();
+--- lib/engine/framework/runtime.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/framework/runtime.h
+@@ -34,7 +34,7 @@
+  *
+  */
+ 
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ 
+ #ifndef __RUNTIME_H__
+--- lib/engine/framework/services.h.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/framework/services.h
+@@ -45,7 +45,7 @@
+ 
+ #include <list>
+ #include <string>
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ 
+ namespace Ekiga
+@@ -101,7 +101,7 @@ namespace Ekiga
+ 
+     void dump (std::ostream &stream) const;
+ 
+-    boost::signal1<void, ServicePtr> service_added;
++    boost::signals2::signal<void(ServicePtr)> service_added;
+ 
+   private:
+ 
+--- lib/engine/gui/gtk-core/codecsbox.cpp.orig	2013-02-18 21:37:04 UTC
++++ lib/engine/gui/gtk-core/codecsbox.cpp
+@@ -38,6 +38,8 @@
+ #include "config.h"
+ #include "codecsbox.h"
+ 
++#include <sstream>
++
+ #include "gmconf.h"
+ #include "codec-description.h"
+ 
+--- lib/engine/gui/gtk-frontend/accounts-window.cpp.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/gui/gtk-frontend/accounts-window.cpp
+@@ -62,7 +62,7 @@ struct _AccountsWindowPrivate
+   GtkAccelGroup *accel;
+ 
+   Ekiga::ServiceCore &core;
+-  std::vector<boost::signals::connection> connections;
++  std::vector<boost::signals2::connection> connections;
+ 
+   std::string presence;
+ 
+@@ -502,7 +502,7 @@ accounts_window_finalize (GObject *obj)
+ {
+   AccountsWindow *self = ACCOUNTS_WINDOW (obj);
+ 
+-  for (std::vector<boost::signals::connection>::iterator iter
++  for (std::vector<boost::signals2::connection>::iterator iter
+ 	 = self->priv->connections.begin ();
+        iter != self->priv->connections.end ();
+        iter++)
+@@ -535,7 +535,7 @@ accounts_window_new (Ekiga::ServiceCore &core)
+ {
+   AccountsWindow *self = NULL;
+ 
+-  boost::signals::connection conn;
++  boost::signals2::connection conn;
+ 
+   GtkWidget *vbox = NULL;
+   GtkWidget *menu_bar = NULL;
+--- lib/engine/gui/gtk-frontend/addressbook-window.cpp.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/gui/gtk-frontend/addressbook-window.cpp
+@@ -52,7 +52,7 @@ struct _AddressBookWindowPrivate
+   _AddressBookWindowPrivate (Ekiga::ContactCore & _core):core (_core) { }
+ 
+   Ekiga::ContactCore & core;
+-  std::vector<boost::signals::connection> connections;
++  std::vector<boost::signals2::connection> connections;
+   GtkWidget *tree_view;
+   GtkWidget *notebook;
+   GtkTreeSelection *selection;
+@@ -579,7 +579,7 @@ addressbook_window_finalize (GObject *obj)
+ {
+   AddressBookWindow *self = ADDRESSBOOK_WINDOW (obj);
+ 
+-  for (std::vector<boost::signals::connection>::iterator iter
++  for (std::vector<boost::signals2::connection>::iterator iter
+ 	 = self->priv->connections.begin ();
+        iter != self->priv->connections.end ();
+        iter++)
+@@ -613,7 +613,7 @@ addressbook_window_new (Ekiga::ContactCore &core)
+ {
+   AddressBookWindow *self = NULL;
+ 
+-  boost::signals::connection conn;
++  boost::signals2::connection conn;
+ 
+   GtkWidget *menu_bar = NULL;
+   GtkWidget *frame = NULL;
+--- lib/engine/gui/gtk-frontend/book-view-gtk.cpp.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/gui/gtk-frontend/book-view-gtk.cpp
+@@ -62,7 +62,7 @@ struct _BookViewGtkPrivate
+   GtkWidget *scrolled_window;
+ 
+   Ekiga::BookPtr book;
+-  std::list<boost::signals::connection> connections;
++  std::list<boost::signals2::connection> connections;
+ };
+ 
+ 
+@@ -447,7 +447,7 @@ book_view_gtk_dispose (GObject *obj)
+ 
+   view = BOOK_VIEW_GTK (obj);
+ 
+-  for (std::list<boost::signals::connection>::iterator iter
++  for (std::list<boost::signals2::connection>::iterator iter
+ 	 = view->priv->connections.begin ();
+        iter != view->priv->connections.end ();
+        ++iter)
+--- lib/engine/gui/gtk-frontend/call-history-view-gtk.cpp.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/gui/gtk-frontend/call-history-view-gtk.cpp
+@@ -56,7 +56,7 @@ struct _CallHistoryViewGtkPrivate
+   boost::shared_ptr<History::Book> book;
+   GtkListStore* store;
+   GtkTreeView* tree;
+-  std::vector<boost::signals::connection> connections;
++  std::vector<boost::signals2::connection> connections;
+ };
+ 
+ /* this is what we put in the view */
+@@ -229,7 +229,7 @@ call_history_view_gtk_dispose (GObject* obj)
+ 
+   view = CALL_HISTORY_VIEW_GTK (obj);
+ 
+-  for (std::vector<boost::signals::connection>::iterator iter
++  for (std::vector<boost::signals2::connection>::iterator iter
+ 	 = view->priv->connections.begin ();
+        iter != view->priv->connections.end ();
+        iter++)
+@@ -314,7 +314,7 @@ call_history_view_gtk_new (boost::shared_ptr<History::
+   GtkCellRenderer *renderer = NULL;
+   GtkTreeSelection *selection = NULL;
+ 
+-  boost::signals::connection conn;
++  boost::signals2::connection conn;
+ 
+   g_return_val_if_fail (book, (GtkWidget*)NULL);
+ 
+--- lib/engine/gui/gtk-frontend/call-window.cpp.orig	2013-02-18 21:37:04 UTC
++++ lib/engine/gui/gtk-frontend/call-window.cpp
+@@ -181,7 +181,7 @@ struct _EkigaCallWindowPrivate
+ 
+   GtkWidget *transfer_call_popup;
+ 
+-  std::vector<boost::signals::connection> connections;
++  std::vector<boost::signals2::connection> connections;
+ };
+ 
+ /* properties */
+@@ -2207,7 +2207,7 @@ ekiga_call_window_transfer_dialog_run (EkigaCallWindow
+ static void
+ ekiga_call_window_connect_engine_signals (EkigaCallWindow *cw)
+ {
+-  boost::signals::connection conn;
++  boost::signals2::connection conn;
+ 
+   g_return_if_fail (EKIGA_IS_CALL_WINDOW (cw));
+ 
+--- lib/engine/gui/gtk-frontend/chat-area.cpp.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/gui/gtk-frontend/chat-area.cpp
+@@ -58,7 +58,7 @@ class ChatAreaHelper;
+ struct _ChatAreaPrivate
+ {
+   Ekiga::Chat* chat;
+-  boost::signals::connection connection;
++  boost::signals2::connection connection;
+   boost::shared_ptr<ChatAreaHelper> helper;
+   GmTextBufferEnhancer* enhancer;
+   GtkWidget* smiley_menu;
+--- lib/engine/gui/gtk-frontend/chat-window.cpp.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/gui/gtk-frontend/chat-window.cpp
+@@ -54,7 +54,7 @@ struct _ChatWindowPrivate
+   {}
+ 
+   Ekiga::ServiceCore& core;
+-  std::list<boost::signals::connection> connections;
++  std::list<boost::signals2::connection> connections;
+ 
+   GtkWidget* notebook;
+ };
+@@ -405,7 +405,7 @@ chat_window_finalize (GObject* obj)
+ 
+   self = CHAT_WINDOW (obj);
+ 
+-  for (std::list<boost::signals::connection>::iterator iter
++  for (std::list<boost::signals2::connection>::iterator iter
+ 	 = self->priv->connections.begin ();
+        iter != self->priv->connections.end ();
+        ++iter)
+--- lib/engine/gui/gtk-frontend/heap-view.cpp.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/gui/gtk-frontend/heap-view.cpp
+@@ -47,7 +47,7 @@
+ struct _HeapViewPrivate
+ {
+   Ekiga::HeapPtr heap;
+-  std::vector<boost::signals::connection> connections;
++  std::vector<boost::signals2::connection> connections;
+ 
+   GtkTreeStore* store;
+   GtkTreeView* view;
+@@ -454,7 +454,7 @@ heap_view_set_heap (HeapView* self,
+ {
+   if (self->priv->heap) {
+ 
+-    for (std::vector<boost::signals::connection>::iterator iter
++    for (std::vector<boost::signals2::connection>::iterator iter
+ 	   = self->priv->connections.begin ();
+ 	 iter != self->priv->connections.end ();
+ 	 iter++)
+@@ -465,7 +465,7 @@ heap_view_set_heap (HeapView* self,
+ 
+   if (heap) {
+ 
+-    boost::signals::connection conn;
++    boost::signals2::connection conn;
+ 
+     conn = heap->removed.connect (boost::bind (&on_heap_removed, self));
+     self->priv->connections.push_back (conn);
+--- lib/engine/gui/gtk-frontend/preferences-window.cpp.orig	2013-02-18 21:37:04 UTC
++++ lib/engine/gui/gtk-frontend/preferences-window.cpp
+@@ -88,7 +88,7 @@ typedef struct _GmPreferencesWindow
+   GtkWidget *iface;
+   GtkWidget *fsbutton;
+   Ekiga::ServiceCore *core;
+-  std::vector<boost::signals::connection> connections;
++  std::vector<boost::signals2::connection> connections;
+ } GmPreferencesWindow;
+ 
+ #define GM_PREFERENCES_WINDOW(x) (GmPreferencesWindow *) (x)
+@@ -1357,7 +1357,7 @@ preferences_window_new (Ekiga::ServiceCore & core)
+ 
+   gm_window_hide_on_delete (window);
+ 
+-  boost::signals::connection conn;
++  boost::signals2::connection conn;
+   boost::shared_ptr<Ekiga::VideoInputCore> videoinput_core = core.get<Ekiga::VideoInputCore> ("videoinput-core");
+   boost::shared_ptr<Ekiga::AudioInputCore> audioinput_core = core.get<Ekiga::AudioInputCore> ("audioinput-core");
+   boost::shared_ptr<Ekiga::AudioOutputCore> audiooutput_core = core.get<Ekiga::AudioOutputCore> ("audiooutput-core");
+--- lib/engine/gui/gtk-frontend/presentity-view.cpp.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/gui/gtk-frontend/presentity-view.cpp
+@@ -40,8 +40,8 @@
+ struct _PresentityViewPrivate
+ {
+   Ekiga::Presentity* presentity;
+-  boost::signals::connection updated_conn;
+-  boost::signals::connection removed_conn;
++  boost::signals2::connection updated_conn;
++  boost::signals2::connection removed_conn;
+ 
+   /* we contain those, so no need to unref them */
+   GtkWidget* presence_image;
+--- lib/engine/gui/gtk-frontend/roster-view-gtk.cpp.orig	2013-02-18 21:37:04 UTC
++++ lib/engine/gui/gtk-frontend/roster-view-gtk.cpp
+@@ -60,7 +60,7 @@ struct _RosterViewGtkPrivate
+ {
+   boost::shared_ptr<Ekiga::PresenceCore> core;
+ 
+-  std::vector<boost::signals::connection> connections;
++  std::vector<boost::signals2::connection> connections;
+   GtkTreeStore *store;
+   GtkTreeView *tree_view;
+   GSList *folded_groups;
+@@ -1382,7 +1382,7 @@ roster_view_gtk_set_core (RosterViewGtk* self,
+ {
+   if (self->priv->core) {
+ 
+-    for (std::vector<boost::signals::connection>::iterator iter
++    for (std::vector<boost::signals2::connection>::iterator iter
+ 	   = self->priv->connections.begin ();
+ 	 iter != self->priv->connections.end ();
+ 	 iter++)
+@@ -1393,7 +1393,7 @@ roster_view_gtk_set_core (RosterViewGtk* self,
+ 
+   if (core) {
+ 
+-    boost::signals::connection conn;
++    boost::signals2::connection conn;
+ 
+     conn = core->cluster_added.connect (boost::bind (&on_cluster_added, self, _1));
+     self->priv->connections.push_back (conn);
+--- lib/engine/gui/gtk-frontend/statusicon.cpp.orig	2013-02-18 21:37:04 UTC
++++ lib/engine/gui/gtk-frontend/statusicon.cpp
+@@ -68,7 +68,7 @@ struct _StatusIconPrivate
+   GtkWidget *popup_menu;
+   gboolean has_message;
+ 
+-  std::vector<boost::signals::connection> connections;
++  std::vector<boost::signals2::connection> connections;
+ 
+   int blink_id;
+   std::string status;
+@@ -174,7 +174,7 @@ statusicon_finalize (GObject *obj)
+   if (self->priv->blink_image)
+     g_free (self->priv->blink_image);
+ 
+-  for (std::vector<boost::signals::connection>::iterator iter = self->priv->connections.begin () ;
++  for (std::vector<boost::signals2::connection>::iterator iter = self->priv->connections.begin () ;
+        iter != self->priv->connections.end ();
+        iter++)
+     iter->disconnect ();
+@@ -548,7 +548,7 @@ status_icon_new (Ekiga::ServiceCore & core)
+   if (!statusicon_should_run ())
+     return self;
+ 
+-  boost::signals::connection conn;
++  boost::signals2::connection conn;
+ 
+   self = STATUSICON (g_object_new (STATUSICON_TYPE, NULL));
+   self->priv = new StatusIconPrivate (core);
+--- lib/engine/gui/gtk-frontend/statusicon.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/gui/gtk-frontend/statusicon.h
+@@ -42,7 +42,7 @@
+ 
+ #include <gtk/gtk.h>
+ 
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ 
+ G_BEGIN_DECLS
+--- lib/engine/hal/hal-core.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/hal/hal-core.h
+@@ -40,7 +40,7 @@
+ 
+ #include "services.h"
+ 
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ 
+ #include <set>
+@@ -114,24 +114,24 @@ namespace Ekiga
+       /** This signal is emitted when an Ekiga::HalManager has been
+        * added to the HalCore Service.
+        */
+-       boost::signal1<void, HalManager &> manager_added;
++       boost::signals2::signal<void(HalManager &)> manager_added;
+ 
+ 
+       /*** API to act on HAL events ***/
+ 
+       /** See hal-manager.h for the API
+        */
+-      boost::signal4<void, const std::string &, const std::string &, unsigned, HalManager*> videoinput_device_added;
+-      boost::signal4<void, const std::string &, const std::string &, unsigned, HalManager*> videoinput_device_removed;
++      boost::signals2::signal<void(const std::string &, const std::string &, unsigned, HalManager*)> videoinput_device_added;
++      boost::signals2::signal<void(const std::string &, const std::string &, unsigned, HalManager*)> videoinput_device_removed;
+ 
+-      boost::signal3<void, const std::string &, const std::string &, HalManager*> audioinput_device_added;
+-      boost::signal3<void, const std::string &, const std::string &, HalManager*> audioinput_device_removed;
++      boost::signals2::signal<void(const std::string &, const std::string &, HalManager*)> audioinput_device_added;
++      boost::signals2::signal<void(const std::string &, const std::string &, HalManager*)> audioinput_device_removed;
+ 
+-      boost::signal3<void, const std::string &, const std::string &, HalManager*> audiooutput_device_added;
+-      boost::signal3<void, const std::string &, const std::string &, HalManager*> audiooutput_device_removed;
++      boost::signals2::signal<void(const std::string &, const std::string &, HalManager*)> audiooutput_device_added;
++      boost::signals2::signal<void(const std::string &, const std::string &, HalManager*)> audiooutput_device_removed;
+ 
+-      boost::signal3<void, const std::string &, const std::string &, HalManager*> network_interface_up;
+-      boost::signal3<void, const std::string &, const std::string &, HalManager*> network_interface_down;
++      boost::signals2::signal<void(const std::string &, const std::string &, HalManager*)> network_interface_up;
++      boost::signals2::signal<void(const std::string &, const std::string &, HalManager*)> network_interface_down;
+ 
+   private:
+ 
+--- lib/engine/hal/hal-manager.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/hal/hal-manager.h
+@@ -75,50 +75,50 @@ namespace Ekiga
+        * @param device the device name.
+        * @param capabilities source-dependent device capabilites (e.g. V4L1 or V4L2 for video4linux).
+        */
+-      boost::signal3<void, std::string, std::string, unsigned> videoinput_device_added;
++      boost::signals2::signal<void(std::string, std::string, unsigned)> videoinput_device_added;
+ 
+       /** This signal is emitted when a video input device is removed from the system.
+        * @param source the video input framework (e.g. video4linux, etc.).
+        * @param device the device name.
+        * @param capabilities source-dependent device capabilites (e.g. V4L1 or V4L2 for video4linux).
+        */
+-      boost::signal3<void, std::string, std::string, unsigned> videoinput_device_removed;
++      boost::signals2::signal<void(std::string, std::string, unsigned)> videoinput_device_removed;
+ 
+       /** This signal is emitted when an audio input device is added to the system.
+        * @param source the audio input framework (e.g. alsa, oss, etc.).
+        * @param device the device name.
+        */
+-      boost::signal2<void, std::string, std::string> audioinput_device_added;
++      boost::signals2::signal<void(std::string, std::string)> audioinput_device_added;
+ 
+       /** This signal is emitted when an audio input device is removed from the system.
+        * @param source the audio input framework (e.g. alsa, oss, etc.).
+        * @param device the device name.
+        */
+-      boost::signal2<void, std::string, std::string> audioinput_device_removed;
++      boost::signals2::signal<void(std::string, std::string)> audioinput_device_removed;
+ 
+       /** This signal is emitted when an audio output device is added to the system.
+        * @param source the audio output framework (e.g. alsa, oss, etc.).
+        * @param device the device name.
+        */
+-      boost::signal2<void, std::string, std::string> audiooutput_device_added;
++      boost::signals2::signal<void(std::string, std::string)> audiooutput_device_added;
+ 
+       /** This signal is emitted when an audio output device is removed from the system.
+        * @param source the audio output framework (e.g. alsa, oss, etc.).
+        * @param device the device name.
+        */
+-      boost::signal2<void, std::string, std::string> audiooutput_device_removed;
++      boost::signals2::signal<void(std::string, std::string)> audiooutput_device_removed;
+ 
+       /** This signal is emitted when a network device comes up.
+        * @param interface_name the interface name (e.g. eth0, etc.).
+        * @param ip4_address the IPv4 address (e.g. "192.168.0.1").
+        */
+-      boost::signal2<void, std::string, std::string> network_interface_up;
++      boost::signals2::signal<void(std::string, std::string)> network_interface_up;
+ 
+       /** This signal is emitted when a network device goes down.
+        * @param interface_name the interface name (e.g. eth0, etc.).
+        * @param ip4_address the IPv4 address (e.g. "192.168.0.1").
+        */
+-      boost::signal2<void, std::string, std::string> network_interface_down;
++      boost::signals2::signal<void(std::string, std::string)> network_interface_down;
+   };
+ 
+ /**
+--- lib/engine/notification/notification-core.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/notification/notification-core.h
+@@ -77,7 +77,7 @@ namespace Ekiga
+     void action_trigger ()
+     { if (action_callback) action_callback (); }
+ 
+-    boost::signal0<void> removed;
++    boost::signals2::signal<void(void)> removed;
+ 
+   private:
+ 
+@@ -109,7 +109,7 @@ namespace Ekiga
+     void push_notification (boost::shared_ptr<Notification> notification)
+     { notification_added (notification); }
+ 
+-    boost::signal1<void, boost::shared_ptr<Notification> > notification_added;
++    boost::signals2::signal<void(boost::shared_ptr<Notification>)> notification_added;
+   };
+ };
+ 
+--- lib/engine/presence/cluster.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/presence/cluster.h
+@@ -66,16 +66,16 @@ namespace Ekiga
+      * from the Cluster.
+      * @param The Heap in question.
+      */
+-    boost::signal1<void, HeapPtr > heap_added;
+-    boost::signal1<void, HeapPtr > heap_removed;
++    boost::signals2::signal<void(HeapPtr)> heap_added;
++    boost::signals2::signal<void(HeapPtr)> heap_removed;
+ 
+     /** Those signals are forwarded from the given Heap
+      * @param The Heap in question.
+      */
+-    boost::signal1<void, HeapPtr > heap_updated;
+-    boost::signal2<void, HeapPtr , PresentityPtr > presentity_added;
+-    boost::signal2<void, HeapPtr , PresentityPtr > presentity_updated;
+-    boost::signal2<void, HeapPtr , PresentityPtr > presentity_removed;
++    boost::signals2::signal<void(HeapPtr)> heap_updated;
++    boost::signals2::signal<void(HeapPtr , PresentityPtr )> presentity_added;
++    boost::signals2::signal<void(HeapPtr , PresentityPtr )> presentity_updated;
++    boost::signals2::signal<void(HeapPtr , PresentityPtr )> presentity_removed;
+   };
+ 
+   typedef boost::shared_ptr<Cluster> ClusterPtr;
+--- lib/engine/presence/heap.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/presence/heap.h
+@@ -83,15 +83,15 @@ namespace Ekiga
+ 
+     /** This signal is emitted  when a Presentity has been added to the Heap.
+      */
+-    boost::signal1<void, PresentityPtr > presentity_added;
++    boost::signals2::signal<void(PresentityPtr)> presentity_added;
+ 
+     /** This signal is emitted when a Presentity has been updated in the Heap.
+      */
+-    boost::signal1<void, PresentityPtr > presentity_updated;
++    boost::signals2::signal<void(PresentityPtr)> presentity_updated;
+ 
+     /** This signal is emitted when a Presentity has been removed from the Heap.
+      */
+-    boost::signal1<void, PresentityPtr > presentity_removed;
++    boost::signals2::signal<void(PresentityPtr)> presentity_removed;
+   };
+ 
+   typedef boost::shared_ptr<Heap> HeapPtr;
+--- lib/engine/presence/presence-core.cpp.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/presence/presence-core.cpp
+@@ -49,7 +49,7 @@ Ekiga::PresenceCore::PresenceCore (Ekiga::ServiceCore&
+ 
+ Ekiga::PresenceCore::~PresenceCore ()
+ {
+-  for (std::list<boost::signals::connection>::iterator iter = conns.begin (); iter != conns.end (); ++iter)
++  for (std::list<boost::signals2::connection>::iterator iter = conns.begin (); iter != conns.end (); ++iter)
+     iter->disconnect ();
+ }
+ 
+--- lib/engine/presence/presence-core.h.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/presence/presence-core.h
+@@ -97,8 +97,8 @@ namespace Ekiga
+      * presence information about an uri it was required to handle.
+      * The information is given as a pair of strings (uri, data).
+      */
+-    boost::signal2<void, std::string, std::string> presence_received;
+-    boost::signal2<void, std::string, std::string> status_received;
++    boost::signals2::signal<void(std::string, std::string)> presence_received;
++    boost::signals2::signal<void(std::string, std::string)> status_received;
+   };
+ 
+   class PresencePublisher
+@@ -180,22 +180,22 @@ namespace Ekiga
+     /** This signal is emitted when an Ekiga::Cluster has been added
+      * to the PresenceCore Service.
+      */
+-    boost::signal1<void, ClusterPtr > cluster_added;
++    boost::signals2::signal<void(ClusterPtr)> cluster_added;
+ 
+     /** Those signals are forwarding the heap_added, heap_updated
+      * and heap_removed from the given Cluster.
+      *
+      */
+-    boost::signal2<void, ClusterPtr , HeapPtr > heap_added;
+-    boost::signal2<void, ClusterPtr , HeapPtr > heap_updated;
+-    boost::signal2<void, ClusterPtr , HeapPtr > heap_removed;
++    boost::signals2::signal<void(ClusterPtr , HeapPtr )> heap_added;
++    boost::signals2::signal<void(ClusterPtr , HeapPtr )> heap_updated;
++    boost::signals2::signal<void(ClusterPtr , HeapPtr )> heap_removed;
+ 
+     /** Those signals are forwarding the presentity_added, presentity_updated
+      * and presentity_removed from the given Heap of the given Cluster.
+      */
+-    boost::signal3<void, ClusterPtr , HeapPtr , PresentityPtr > presentity_added;
+-    boost::signal3<void, ClusterPtr , HeapPtr , PresentityPtr > presentity_updated;
+-    boost::signal3<void, ClusterPtr , HeapPtr , PresentityPtr > presentity_removed;
++    boost::signals2::signal<void(ClusterPtr , HeapPtr , PresentityPtr )> presentity_added;
++    boost::signals2::signal<void(ClusterPtr , HeapPtr , PresentityPtr )> presentity_updated;
++    boost::signals2::signal<void(ClusterPtr , HeapPtr , PresentityPtr )> presentity_removed;
+ 
+   private:
+ 
+@@ -256,8 +256,8 @@ namespace Ekiga
+     /** Those signals are emitted whenever information has been received
+      * about an uri ; the information is a pair of strings (uri, information).
+      */
+-    boost::signal2<void, std::string, std::string> presence_received;
+-    boost::signal2<void, std::string, std::string> status_received;
++    boost::signals2::signal<void(std::string, std::string)> presence_received;
++    boost::signals2::signal<void(std::string, std::string)> status_received;
+ 
+   private:
+ 
+@@ -321,7 +321,7 @@ namespace Ekiga
+ 
+   private:
+ 
+-    std::list<boost::signals::connection> conns;
++    std::list<boost::signals2::connection> conns;
+   };
+ 
+ /**
+--- lib/engine/presence/uri-presentity.h.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/presence/uri-presentity.h
+@@ -60,7 +60,7 @@ namespace Ekiga
+    */
+   class URIPresentity:
+     public Ekiga::Presentity,
+-    public boost::signals::trackable
++    public boost::signals2::trackable
+   {
+   public:
+ 
+--- lib/engine/protocol/call-core.cpp.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/protocol/call-core.cpp
+@@ -48,7 +48,7 @@ using namespace Ekiga;
+ 
+ CallCore::~CallCore ()
+ {
+-  for (std::list<boost::signals::connection>::iterator iter = manager_connections.begin ();
++  for (std::list<boost::signals2::connection>::iterator iter = manager_connections.begin ();
+        iter != manager_connections.end ();
+        ++iter)
+     iter->disconnect ();
+@@ -103,7 +103,7 @@ bool CallCore::dial (const std::string uri)
+ 
+ void CallCore::add_call (boost::shared_ptr<Call> call, boost::shared_ptr<CallManager> manager)
+ {
+-  std::list<boost::signals::connection> conns;
++  std::list<boost::signals2::connection> conns;
+ 
+   conns.push_back (call->ringing.connect (boost::bind (&CallCore::on_ringing_call, this, call, manager)));
+   conns.push_back (call->setup.connect (boost::bind (&CallCore::on_setup_call, this, call, manager)));
+@@ -124,7 +124,7 @@ void CallCore::add_call (boost::shared_ptr<Call> call,
+ 
+ void CallCore::remove_call (boost::shared_ptr<Call> call)
+ {
+-  for (std::list<boost::signals::connection>::iterator iter2 = call_connections [call->get_id ()].begin ();
++  for (std::list<boost::signals2::connection>::iterator iter2 = call_connections [call->get_id ()].begin ();
+        iter2 != call_connections [call->get_id ()].end ();
+        ++iter2)
+     iter2->disconnect ();
+--- lib/engine/protocol/call-core.h.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/protocol/call-core.h
+@@ -45,7 +45,7 @@
+ #include "call-protocol-manager.h"
+ #include <boost/smart_ptr.hpp>
+ 
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ #include <set>
+ #include <map>
+@@ -126,7 +126,7 @@ namespace Ekiga
+       /** This signal is emitted when a Ekiga::CallManager has been
+        * added to the CallCore Service.
+        */
+-      boost::signal1<void, boost::shared_ptr<CallManager> > manager_added;
++      boost::signals2::signal<void(boost::shared_ptr<CallManager>)> manager_added;
+ 
+ 
+       /*** Call Management ***/                 
+@@ -141,21 +141,21 @@ namespace Ekiga
+       
+       /** See call.h for the API
+        */
+-      boost::signal2<void, boost::shared_ptr<CallManager> , boost::shared_ptr<Call> > ringing_call;
+-      boost::signal2<void, boost::shared_ptr<CallManager> , boost::shared_ptr<Call> > setup_call;
+-      boost::signal2<void, boost::shared_ptr<CallManager> , boost::shared_ptr<Call> > missed_call;
+-      boost::signal3<void, boost::shared_ptr<CallManager> , boost::shared_ptr<Call>, std::string> cleared_call;
+-      boost::signal2<void, boost::shared_ptr<CallManager> , boost::shared_ptr<Call> > established_call;
+-      boost::signal2<void, boost::shared_ptr<CallManager> , boost::shared_ptr<Call> > held_call;
+-      boost::signal2<void, boost::shared_ptr<CallManager> , boost::shared_ptr<Call> > retrieved_call;
+-      boost::signal5<void, boost::shared_ptr<CallManager> , boost::shared_ptr<Call>, std::string, Call::StreamType, bool> stream_opened;
+-      boost::signal5<void, boost::shared_ptr<CallManager> , boost::shared_ptr<Call>, std::string, Call::StreamType, bool> stream_closed;
+-      boost::signal4<void, boost::shared_ptr<CallManager> , boost::shared_ptr<Call>, std::string, Call::StreamType> stream_paused;
+-      boost::signal4<void, boost::shared_ptr<CallManager> , boost::shared_ptr<Call>, std::string, Call::StreamType> stream_resumed;
++      boost::signals2::signal<void(boost::shared_ptr<CallManager>, boost::shared_ptr<Call>)> ringing_call;
++      boost::signals2::signal<void(boost::shared_ptr<CallManager>, boost::shared_ptr<Call>)> setup_call;
++      boost::signals2::signal<void(boost::shared_ptr<CallManager>, boost::shared_ptr<Call>)> missed_call;
++      boost::signals2::signal<void(boost::shared_ptr<CallManager>, boost::shared_ptr<Call>, std::string)> cleared_call;
++      boost::signals2::signal<void(boost::shared_ptr<CallManager>, boost::shared_ptr<Call>)> established_call;
++      boost::signals2::signal<void(boost::shared_ptr<CallManager>, boost::shared_ptr<Call>)> held_call;
++      boost::signals2::signal<void(boost::shared_ptr<CallManager>, boost::shared_ptr<Call>)> retrieved_call;
++      boost::signals2::signal<void(boost::shared_ptr<CallManager>, boost::shared_ptr<Call>, std::string, Call::StreamType, bool)> stream_opened;
++      boost::signals2::signal<void(boost::shared_ptr<CallManager>, boost::shared_ptr<Call>, std::string, Call::StreamType, bool)> stream_closed;
++      boost::signals2::signal<void(boost::shared_ptr<CallManager>, boost::shared_ptr<Call>, std::string, Call::StreamType)> stream_paused;
++      boost::signals2::signal<void(boost::shared_ptr<CallManager>, boost::shared_ptr<Call>, std::string, Call::StreamType)> stream_resumed;
+ 
+       /*** Misc ***/
+-      boost::signal1<void, boost::shared_ptr<CallManager> > manager_ready;
+-      boost::signal0<void> ready;
++      boost::signals2::signal<void(boost::shared_ptr<CallManager>)> manager_ready;
++      boost::signals2::signal<void(void)> ready;
+ 
+       /** This chain allows the CallCore to report errors to the user
+        */
+@@ -186,8 +186,8 @@ namespace Ekiga
+ 
+       
+       std::set<boost::shared_ptr<CallManager> > managers;
+-      std::list<boost::signals::connection> manager_connections;
+-      std::map<std::string, std::list<boost::signals::connection> > call_connections;
++      std::list<boost::signals2::connection> manager_connections;
++      std::map<std::string, std::list<boost::signals2::connection> > call_connections;
+       unsigned nr_ready;
+     };
+ 
+--- lib/engine/protocol/call-manager.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/protocol/call-manager.h
+@@ -40,7 +40,7 @@
+ #define __CALL_MANAGER_H__
+ 
+ #include <set>
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ 
+ #include <boost/smart_ptr.hpp>
+@@ -99,7 +99,7 @@ namespace Ekiga
+     /** This signal is emitted when a Ekiga::CallProtocolManager has been
+      * added to the CallManager.
+      */
+-    boost::signal1<void, boost::shared_ptr<CallProtocolManager> > manager_added;
++    boost::signals2::signal<void(boost::shared_ptr<CallProtocolManager>)> manager_added;
+ 
+ 
+     /*                 
+@@ -213,7 +213,7 @@ namespace Ekiga
+     /*
+      * MISC
+      */
+-    boost::signal0<void> ready;
++    boost::signals2::signal<void(void)> ready;
+ 
+     private:
+     std::set<boost::shared_ptr<CallProtocolManager> > managers;
+--- lib/engine/protocol/call.h.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/protocol/call.h
+@@ -38,7 +38,7 @@
+ #ifndef __CALL_H__
+ #define __CALL_H__
+ 
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ #include <string>
+ 
+@@ -198,69 +198,69 @@ namespace Ekiga
+ 
+       /* Signal emitted when the call is established
+        */
+-      boost::signal0<void> established;
++      boost::signals2::signal<void(void)> established;
+ 
+       /* Signal emitted when an established call is cleared
+        * @param: a string describing why the call was cleared
+        */
+-      boost::signal1<void, std::string> cleared;
++      boost::signals2::signal<void(std::string)> cleared;
+ 
+       /* Signal emitted when the call is missed, ie cleared
+        * without having been established
+        */
+-      boost::signal0<void> missed;
++      boost::signals2::signal<void(void)> missed;
+ 
+       /* Signal emitted when the call is forwarded
+        */
+-      boost::signal0<void> forwarded;
++      boost::signals2::signal<void(void)> forwarded;
+ 
+       /* Signal emitted when the call is held
+        */
+-      boost::signal0<void> held;
++      boost::signals2::signal<void(void)> held;
+ 
+       /* Signal emitted when the call is retrieved
+        */
+-      boost::signal0<void> retrieved;
++      boost::signals2::signal<void(void)> retrieved;
+ 
+       /* Signal emitted when the call is being setup
+        */
+-      boost::signal0<void> setup;
++      boost::signals2::signal<void(void)> setup;
+ 
+       /* Signal emitted when the remote party is ringing
+        */
+-      boost::signal0<void> ringing;
++      boost::signals2::signal<void(void)> ringing;
+ 
+       /* Signal emitted when a stream is opened
+        * @param the stream name
+        * @param the stream type
+        * @param transmission or reception
+        */
+-      boost::signal3<void, std::string, StreamType, bool> stream_opened;
++      boost::signals2::signal<void(std::string, StreamType, bool)> stream_opened;
+ 
+       /* Signal emitted when a stream is closed
+        * @param the stream name
+        * @param the stream type
+        * @param transmission or reception
+        */
+-      boost::signal3<void, std::string, StreamType, bool> stream_closed;
++      boost::signals2::signal<void(std::string, StreamType, bool)> stream_closed;
+ 
+       /* Signal emitted when a transmitted stream is paused
+        * @param the stream name
+        * @param the stream type
+        * @param transmission or reception
+        */
+-      boost::signal2<void, std::string, StreamType> stream_paused;
++      boost::signals2::signal<void(std::string, StreamType)> stream_paused;
+ 
+       /* Signal emitted when a transmitted stream is resumed
+        * @param the stream name
+        * @param the stream type
+        * @param transmission or reception
+        */
+-      boost::signal2<void, std::string, StreamType> stream_resumed;
++      boost::signals2::signal<void(std::string, StreamType)> stream_resumed;
+ 
+       /** This signal is emitted when the Call is removed.
+        */
+-      boost::signal0<void> removed;
++      boost::signals2::signal<void(void)> removed;
+      
+     };
+ 
+--- lib/engine/videoinput/videoinput-core.h.orig	2013-02-19 06:11:02 UTC
++++ lib/engine/videoinput/videoinput-core.h
+@@ -45,7 +45,7 @@
+ #include "videoinput-manager.h"
+ #include "videoinput-gmconf-bridge.h"
+ 
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ #include <glib.h>
+ #include <set>
+@@ -146,7 +146,7 @@ namespace Ekiga
+       /** This signal is emitted when a Ekiga::VideoInputManager has been
+        * added to the VideoInputCore Service.
+        */
+-       boost::signal1<void, VideoInputManager &> manager_added;
++       boost::signals2::signal<void(VideoInputManager &)> manager_added;
+ 
+ 
+       /*** VideoInput Device Management ***/
+@@ -277,23 +277,23 @@ namespace Ekiga
+ 
+       /** See videoinput-manager.h for the API
+        */
+-      boost::signal3<void, VideoInputManager &, VideoInputDevice &, VideoInputSettings&> device_opened;
+-      boost::signal2<void, VideoInputManager &, VideoInputDevice &> device_closed;
+-      boost::signal3<void, VideoInputManager &, VideoInputDevice &, VideoInputErrorCodes> device_error;
++      boost::signals2::signal<void(VideoInputManager &, VideoInputDevice &, VideoInputSettings&)> device_opened;
++      boost::signals2::signal<void(VideoInputManager &, VideoInputDevice &)> device_closed;
++      boost::signals2::signal<void(VideoInputManager &, VideoInputDevice &, VideoInputErrorCodes)> device_error;
+ 
+       /** This signal is emitted when a video input has been added to the system.
+        * This signal will be emitted if add_device was called with a device name and
+        * a manager claimed support for this device.
+        * @param device the video input device that was added.
+        */
+-      boost::signal2<void, VideoInputDevice, bool> device_added;
++      boost::signals2::signal<void(VideoInputDevice, bool)> device_added;
+ 
+       /** This signal is emitted when a video input has been removed from the system.
+        * This signal will be emitted if remove_device was called with a device name and
+        * a manager claimed support for this device.
+        * @param device the video input device that was removed.
+        */
+-      boost::signal2<void, VideoInputDevice, bool> device_removed;
++      boost::signals2::signal<void(VideoInputDevice, bool)> device_removed;
+ 
+   private:
+       void on_set_device (const VideoInputDevice & device);
+--- lib/engine/videoinput/videoinput-manager.h.orig	2012-11-07 20:43:51 UTC
++++ lib/engine/videoinput/videoinput-manager.h
+@@ -39,7 +39,7 @@
+ #define __VIDEOINPUT_MANAGER_H__
+ 
+ #include <vector>
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ 
+ #include "videoinput-info.h"
+@@ -159,18 +159,18 @@ namespace Ekiga
+        * @param device the video input device that was opened.
+        * @param config the current video input device configuration (current brightness, colour, etc.).
+        */
+-      boost::signal2<void, VideoInputDevice, VideoInputSettings> device_opened;
++      boost::signals2::signal<void(VideoInputDevice, VideoInputSettings)> device_opened;
+ 
+       /** This signal is emitted when a video input device is closed.
+        * @param device the video input device that was closed.
+        */
+-      boost::signal1<void, VideoInputDevice> device_closed;
++      boost::signals2::signal<void(VideoInputDevice)> device_closed;
+ 
+       /** This signal is emitted when an error occurs when opening a video input device.
+        * @param device the video input device that caused the error.
+        * @param error_code the video input device error code.
+        */
+-      boost::signal2<void, VideoInputDevice, VideoInputErrorCodes> device_error;
++      boost::signals2::signal<void(VideoInputDevice, VideoInputErrorCodes)> device_error;
+ 
+   protected:  
+       typedef struct ManagerState {
+--- lib/engine/videooutput/videooutput-core.h.orig	2013-02-18 21:36:51 UTC
++++ lib/engine/videooutput/videooutput-core.h
+@@ -42,7 +42,7 @@
+ #include "videooutput-gmconf-bridge.h"
+ #include "videooutput-manager.h"
+ 
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ #include <set>
+ #include <map>
+@@ -116,7 +116,7 @@ namespace Ekiga
+       /** This signal is emitted when a Ekiga::VideoOutputManager has been
+        * added to the VideoOutputCore Service.
+        */
+-      boost::signal1<void, VideoOutputManager &> manager_added;
++      boost::signals2::signal<void(VideoOutputManager &)> manager_added;
+ 
+ 
+       /*** Videooutput Management ***/
+@@ -165,11 +165,11 @@ namespace Ekiga
+ 
+       /** See videooutput-manager.h for the API
+        */
+-      boost::signal6<void, VideoOutputManager &, VideoOutputAccel, VideoOutputMode, unsigned, bool, bool> device_opened;
+-      boost::signal1<void, VideoOutputManager &> device_closed;
+-      boost::signal2<void, VideoOutputManager &, VideoOutputErrorCodes> device_error;
+-      boost::signal2<void, VideoOutputManager &, VideoOutputFSToggle> fullscreen_mode_changed;
+-      boost::signal3<void, VideoOutputManager &, unsigned, unsigned> size_changed;
++      boost::signals2::signal<void(VideoOutputManager &, VideoOutputAccel, VideoOutputMode, unsigned, bool, bool)> device_opened;
++      boost::signals2::signal<void(VideoOutputManager &)> device_closed;
++      boost::signals2::signal<void(VideoOutputManager &, VideoOutputErrorCodes)> device_error;
++      boost::signals2::signal<void(VideoOutputManager &, VideoOutputFSToggle)> fullscreen_mode_changed;
++      boost::signals2::signal<void(VideoOutputManager &, unsigned, unsigned)> size_changed;
+ 
+ 
+   private:
+--- lib/engine/videooutput/videooutput-manager.h.orig	2013-02-19 06:11:02 UTC
++++ lib/engine/videooutput/videooutput-manager.h
+@@ -38,7 +38,7 @@
+ #ifndef __VIDEOOUTPUT_MANAGER_H__
+ #define __VIDEOOUTPUT_MANAGER_H__
+ 
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ #include <boost/bind.hpp>
+ 
+ #include "videooutput-info.h"
+@@ -108,16 +108,16 @@ namespace Ekiga
+        * @param both_streams if a frame from both local and remote stream has been received.
+        * @param ext_stream if a frame from an extended video stream has been received.
+        */
+-      boost::signal5<void, VideoOutputAccel, VideoOutputMode, unsigned, bool, bool> device_opened;
++      boost::signals2::signal<void(VideoOutputAccel, VideoOutputMode, unsigned, bool, bool)> device_opened;
+ 
+       /** This signal is emitted when a video output device is closed.
+        */
+-      boost::signal0<void> device_closed;
++      boost::signals2::signal<void(void)> device_closed;
+ 
+       /** This signal is emitted when an error occurs when opening a video output device.
+        * @param error_code the video output device error code.
+        */
+-      boost::signal1<void, VideoOutputErrorCodes> device_error;
++      boost::signals2::signal<void(VideoOutputErrorCodes)> device_error;
+ 
+       /** This signal is emitted when a manager switches autonomously into or out of fullscreen mode.
+        * Some managers like DX and XV  allow the user to switch between FS
+@@ -127,7 +127,7 @@ namespace Ekiga
+        * or when it is being zoomed in or out.
+        * @param toggle VO_FS_ON or VO_FS_OFF depending on whether FS was activated or deactivated.
+        */
+-      boost::signal1<void, VideoOutputFSToggle> fullscreen_mode_changed;
++      boost::signals2::signal<void(VideoOutputFSToggle)> fullscreen_mode_changed;
+ 
+       /** This signal is emitted the video output size has changed.
+        * This signal is called whenever the size of the widget carrying the video signal
+@@ -136,7 +136,7 @@ namespace Ekiga
+        * @param width the new width of the widget.
+        * @param height the new height of the widget.
+        */
+-      boost::signal2<void, unsigned, unsigned> size_changed;
++      boost::signals2::signal<void(unsigned, unsigned)> size_changed;
+ 
+   protected:  
+       virtual void get_display_info (DisplayInfo &) { };
+--- man/Makefile.in.orig	2013-02-20 21:44:16 UTC
++++ man/Makefile.in
+@@ -55,7 +55,6 @@ subdir = man
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
+-	$(top_srcdir)/m4/ax_boost_signals.m4 \
+ 	$(top_srcdir)/m4/gnome-doc-utils.m4 \
+ 	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
+ 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+@@ -125,8 +124,6 @@ AVAHI_LIBS = @AVAHI_LIBS@
+ AWK = @AWK@
+ BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+ BOOST_LDFLAGS = @BOOST_LDFLAGS@
+-BOOST_LIBS = @BOOST_LIBS@
+-BOOST_SIGNALS_LIB = @BOOST_SIGNALS_LIB@
+ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ CC = @CC@
+--- pixmaps/Makefile.in.orig	2013-02-20 21:44:16 UTC
++++ pixmaps/Makefile.in
+@@ -57,7 +57,6 @@ DIST_COMMON = $(nobase_dist_icon_DATA) $(srcdir)/Makef
+ 	$(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
+-	$(top_srcdir)/m4/ax_boost_signals.m4 \
+ 	$(top_srcdir)/m4/gnome-doc-utils.m4 \
+ 	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
+ 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+@@ -125,8 +124,6 @@ AVAHI_LIBS = @AVAHI_LIBS@
+ AWK = @AWK@
+ BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+ BOOST_LDFLAGS = @BOOST_LDFLAGS@
+-BOOST_LIBS = @BOOST_LIBS@
+-BOOST_SIGNALS_LIB = @BOOST_SIGNALS_LIB@
+ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ CC = @CC@
+--- plugins/Makefile.in.orig	2013-02-20 21:44:16 UTC
++++ plugins/Makefile.in
+@@ -55,7 +55,6 @@ subdir = plugins
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
+-	$(top_srcdir)/m4/ax_boost_signals.m4 \
+ 	$(top_srcdir)/m4/gnome-doc-utils.m4 \
+ 	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
+ 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+@@ -135,8 +134,6 @@ AVAHI_LIBS = @AVAHI_LIBS@
+ AWK = @AWK@
+ BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+ BOOST_LDFLAGS = @BOOST_LDFLAGS@
+-BOOST_LIBS = @BOOST_LIBS@
+-BOOST_SIGNALS_LIB = @BOOST_SIGNALS_LIB@
+ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ CC = @CC@
+--- plugins/avahi/Makefile.in.orig	2013-02-20 21:44:16 UTC
++++ plugins/avahi/Makefile.in
+@@ -56,7 +56,6 @@ subdir = plugins/avahi
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
+-	$(top_srcdir)/m4/ax_boost_signals.m4 \
+ 	$(top_srcdir)/m4/gnome-doc-utils.m4 \
+ 	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
+ 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+@@ -176,8 +175,6 @@ AVAHI_LIBS = @AVAHI_LIBS@
+ AWK = @AWK@
+ BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+ BOOST_LDFLAGS = @BOOST_LDFLAGS@
+-BOOST_LIBS = @BOOST_LIBS@
+-BOOST_SIGNALS_LIB = @BOOST_SIGNALS_LIB@
+ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ CC = @CC@
+@@ -398,7 +395,7 @@ libgmavahi_la_SOURCES = \
+ libgmavahi_la_LDFLAGS = $(PLUGINS_LIBTOOL_FLAGS)
+ libgmavahi_la_LIBADD = \
+ 	$(top_builddir)/lib/libekiga.la \
+-	$(BOOST_LDFLAGS) $(BOOST_LIBS) $(AVAHI_LIBS)
++	$(BOOST_LDFLAGS) $(AVAHI_LIBS)
+ 
+ all: all-am
+ 
+--- plugins/avahi/avahi-cluster.h.orig	2012-11-07 20:43:51 UTC
++++ plugins/avahi/avahi-cluster.h
+@@ -53,7 +53,7 @@ namespace Avahi
+   class Cluster:
+     public Ekiga::Service,
+     public Ekiga::ClusterImpl<Heap>,
+-    public boost::signals::trackable
++    public boost::signals2::trackable
+   {
+   public:
+ 
+--- plugins/avahi/avahi-heap.h.orig	2013-02-18 21:36:51 UTC
++++ plugins/avahi/avahi-heap.h
+@@ -60,7 +60,7 @@ namespace Avahi
+   class Heap:
+     public Ekiga::PresenceFetcher,
+     public Ekiga::HeapImpl<Ekiga::URIPresentity>,
+-    public boost::signals::trackable
++    public boost::signals2::trackable
+   {
+   public:
+ 
+--- plugins/evolution/Makefile.in.orig	2013-02-20 21:44:16 UTC
++++ plugins/evolution/Makefile.in
+@@ -56,7 +56,6 @@ subdir = plugins/evolution
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
+-	$(top_srcdir)/m4/ax_boost_signals.m4 \
+ 	$(top_srcdir)/m4/gnome-doc-utils.m4 \
+ 	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
+ 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+@@ -176,8 +175,6 @@ AVAHI_LIBS = @AVAHI_LIBS@
+ AWK = @AWK@
+ BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+ BOOST_LDFLAGS = @BOOST_LDFLAGS@
+-BOOST_LIBS = @BOOST_LIBS@
+-BOOST_SIGNALS_LIB = @BOOST_SIGNALS_LIB@
+ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ CC = @CC@
+@@ -397,7 +394,7 @@ libgmevolution_la_SOURCES = \
+ libgmevolution_la_LDFLAGS = $(PLUGINS_LIBTOOL_FLAGS)
+ libgmevolution_la_LIBADD = \
+ 	$(top_builddir)/lib/libekiga.la \
+-	$(BOOST_LDFLAGS) $(BOOST_LIBS) $(EDS_LIBS) $(GLIB_LIBS)
++	$(BOOST_LDFLAGS) $(EDS_LIBS) $(GLIB_LIBS)
+ 
+ all: all-am
+ 
+--- plugins/gstreamer/Makefile.in.orig	2013-02-20 21:44:17 UTC
++++ plugins/gstreamer/Makefile.in
+@@ -56,7 +56,6 @@ subdir = plugins/gstreamer
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
+-	$(top_srcdir)/m4/ax_boost_signals.m4 \
+ 	$(top_srcdir)/m4/gnome-doc-utils.m4 \
+ 	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
+ 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+@@ -176,8 +175,6 @@ AVAHI_LIBS = @AVAHI_LIBS@
+ AWK = @AWK@
+ BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+ BOOST_LDFLAGS = @BOOST_LDFLAGS@
+-BOOST_LIBS = @BOOST_LIBS@
+-BOOST_SIGNALS_LIB = @BOOST_SIGNALS_LIB@
+ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ CC = @CC@
+@@ -404,7 +401,7 @@ libgmgstreamer_la_SOURCES = \
+ 
+ libgmgstreamer_la_LDFLAGS = $(PLUGINS_LIBTOOL_FLAGS)
+ libgmgstreamer_la_LIBADD = \
+-	$(BOOST_LDFLAGS) $(BOOST_LIBS) $(GSTREAMER_LIBS) $(PTLIB_LIBS)
++	$(BOOST_LDFLAGS) $(GSTREAMER_LIBS) $(PTLIB_LIBS)
+ 
+ all: all-am
+ 
+--- plugins/kab/Makefile.in.orig	2013-02-20 21:44:17 UTC
++++ plugins/kab/Makefile.in
+@@ -56,7 +56,6 @@ subdir = plugins/kab
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
+-	$(top_srcdir)/m4/ax_boost_signals.m4 \
+ 	$(top_srcdir)/m4/gnome-doc-utils.m4 \
+ 	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
+ 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+@@ -173,8 +172,6 @@ AVAHI_LIBS = @AVAHI_LIBS@
+ AWK = @AWK@
+ BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+ BOOST_LDFLAGS = @BOOST_LDFLAGS@
+-BOOST_LIBS = @BOOST_LIBS@
+-BOOST_SIGNALS_LIB = @BOOST_SIGNALS_LIB@
+ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ CC = @CC@
+--- plugins/kde/Makefile.in.orig	2013-02-20 21:44:17 UTC
++++ plugins/kde/Makefile.in
+@@ -56,7 +56,6 @@ subdir = plugins/kde
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
+-	$(top_srcdir)/m4/ax_boost_signals.m4 \
+ 	$(top_srcdir)/m4/gnome-doc-utils.m4 \
+ 	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
+ 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+@@ -173,8 +172,6 @@ AVAHI_LIBS = @AVAHI_LIBS@
+ AWK = @AWK@
+ BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+ BOOST_LDFLAGS = @BOOST_LDFLAGS@
+-BOOST_LIBS = @BOOST_LIBS@
+-BOOST_SIGNALS_LIB = @BOOST_SIGNALS_LIB@
+ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ CC = @CC@
+@@ -386,7 +383,7 @@ libgmkde_la_SOURCES = \
+ 
+ libgmkde_la_LDFLAGS = $(PLUGINS_LIBTOOL_FLAGS)
+ libgmkde_la_LIBADD = \
+-	$(BOOST_LDFLAGS) $(BOOST_LIBS) $(KDE_LIBS)
++	$(BOOST_LDFLAGS) $(KDE_LIBS)
+ 
+ all: all-am
+ 
+--- plugins/ldap/Makefile.in.orig	2013-02-20 21:44:17 UTC
++++ plugins/ldap/Makefile.in
+@@ -56,7 +56,6 @@ subdir = plugins/ldap
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
+-	$(top_srcdir)/m4/ax_boost_signals.m4 \
+ 	$(top_srcdir)/m4/gnome-doc-utils.m4 \
+ 	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
+ 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+@@ -176,8 +175,6 @@ AVAHI_LIBS = @AVAHI_LIBS@
+ AWK = @AWK@
+ BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+ BOOST_LDFLAGS = @BOOST_LDFLAGS@
+-BOOST_LIBS = @BOOST_LIBS@
+-BOOST_SIGNALS_LIB = @BOOST_SIGNALS_LIB@
+ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ CC = @CC@
+@@ -398,7 +395,7 @@ libgmldap_la_SOURCES = \
+ libgmldap_la_LDFLAGS = $(PLUGINS_LIBTOOL_FLAGS)
+ libgmldap_la_LIBADD = \
+ 	$(top_builddir)/lib/libekiga.la \
+-	$(LDAP_LIBS) $(BOOST_LDFLAGS) $(BOOST_LIBS) $(GLIB_LIBS) $(XML_LIBS)
++	$(LDAP_LIBS) $(BOOST_LDFLAGS) $(GLIB_LIBS) $(XML_LIBS)
+ 
+ all: all-am
+ 
+--- plugins/ldap/ldap-book.h.orig	2012-11-07 20:43:51 UTC
++++ plugins/ldap/ldap-book.h
+@@ -124,7 +124,7 @@ namespace OPENLDAP
+ 
+     xmlNodePtr get_node ();
+ 
+-    boost::signal0<void> trigger_saving;
++    boost::signals2::signal<void(void)> trigger_saving;
+ 
+     bool is_ekiga_net_book () const;
+ 
+--- plugins/libnotify/Makefile.in.orig	2013-02-20 21:44:17 UTC
++++ plugins/libnotify/Makefile.in
+@@ -56,7 +56,6 @@ subdir = plugins/libnotify
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
+-	$(top_srcdir)/m4/ax_boost_signals.m4 \
+ 	$(top_srcdir)/m4/gnome-doc-utils.m4 \
+ 	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
+ 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+@@ -159,8 +158,6 @@ AVAHI_LIBS = @AVAHI_LIBS@
+ AWK = @AWK@
+ BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+ BOOST_LDFLAGS = @BOOST_LDFLAGS@
+-BOOST_LIBS = @BOOST_LIBS@
+-BOOST_SIGNALS_LIB = @BOOST_SIGNALS_LIB@
+ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ CC = @CC@
+@@ -374,7 +371,7 @@ libgmlibnotify_la_SOURCES = \
+ libgmlibnotify_la_LDFLAGS = $(PLUGINS_LIBTOOL_FLAGS)
+ libgmlibnotify_la_LIBADD = \
+ 	$(top_builddir)/lib/libekiga.la \
+-	$(BOOST_LDFLAGS) $(BOOST_LIBS) $(NOTIFY_LIBS)
++	$(BOOST_LDFLAGS) $(NOTIFY_LIBS)
+ 
+ all: all-am
+ 
+--- plugins/libnotify/libnotify-main.cpp.orig	2013-02-18 21:37:04 UTC
++++ plugins/libnotify/libnotify-main.cpp
+@@ -51,7 +51,7 @@
+ 
+ class LibNotify:
+   public Ekiga::Service,
+-  public boost::signals::trackable
++  public boost::signals2::trackable
+ {
+ public:
+ 
+@@ -77,7 +77,7 @@ class LibNotify: (private)
+                              boost::shared_ptr<Ekiga::Call>  call);
+   void on_call_notification_closed (gpointer self);
+ 
+-  typedef std::map<boost::shared_ptr<Ekiga::Notification>, std::pair<boost::signals::connection, boost::shared_ptr<NotifyNotification> > > container_type;
++  typedef std::map<boost::shared_ptr<Ekiga::Notification>, std::pair<boost::signals2::connection, boost::shared_ptr<NotifyNotification> > > container_type;
+   container_type live;
+ };
+ 
+@@ -234,10 +234,10 @@ LibNotify::on_notification_added (boost::shared_ptr<Ek
+                                     notify_action_cb, notification.get (), NULL);
+ 
+   g_signal_connect (notif, "closed", G_CALLBACK (on_notif_closed), notification.get ());
+-  boost::signals::connection conn = notification->removed.connect (boost::bind (&LibNotify::on_notification_removed,
++  boost::signals2::connection conn = notification->removed.connect (boost::bind (&LibNotify::on_notification_removed,
+                                                                                 this, notification));
+ 
+-  live[notification] = std::pair<boost::signals::connection, boost::shared_ptr<NotifyNotification> > (conn, boost::shared_ptr<NotifyNotification> (notif, g_object_unref));
++  live[notification] = std::pair<boost::signals2::connection, boost::shared_ptr<NotifyNotification> > (conn, boost::shared_ptr<NotifyNotification> (notif, g_object_unref));
+ 
+   notify_notification_show (notif, NULL);
+ }
+--- plugins/loudmouth/Makefile.in.orig	2013-02-20 21:44:17 UTC
++++ plugins/loudmouth/Makefile.in
+@@ -56,7 +56,6 @@ subdir = plugins/loudmouth
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
+-	$(top_srcdir)/m4/ax_boost_signals.m4 \
+ 	$(top_srcdir)/m4/gnome-doc-utils.m4 \
+ 	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
+ 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+@@ -179,8 +178,6 @@ AVAHI_LIBS = @AVAHI_LIBS@
+ AWK = @AWK@
+ BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+ BOOST_LDFLAGS = @BOOST_LDFLAGS@
+-BOOST_LIBS = @BOOST_LIBS@
+-BOOST_SIGNALS_LIB = @BOOST_SIGNALS_LIB@
+ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ CC = @CC@
+@@ -415,7 +412,7 @@ libgmloudmouth_la_SOURCES = \
+ libgmloudmouth_la_LDFLAGS = $(PLUGINS_LIBTOOL_FLAGS)
+ libgmloudmouth_la_LIBADD = \
+ 	$(top_builddir)/lib/libekiga.la \
+-	$(BOOST_LDFLAGS) $(BOOST_LIBS) $(XML_LIBS) $(LOUDMOUTH_LIBS)
++	$(BOOST_LDFLAGS) $(XML_LIBS) $(LOUDMOUTH_LIBS)
+ 
+ all: all-am
+ 
+--- plugins/loudmouth/loudmouth-account.h.orig	2012-11-07 20:43:51 UTC
++++ plugins/loudmouth/loudmouth-account.h
+@@ -70,7 +70,7 @@ namespace LM
+ 
+     xmlNodePtr get_node () const;
+ 
+-    boost::signal0<void> trigger_saving;
++    boost::signals2::signal<void(void)> trigger_saving;
+ 
+     const std::string get_name () const;
+ 
+--- plugins/loudmouth/loudmouth-heap-roster.h.orig	2012-11-07 20:43:51 UTC
++++ plugins/loudmouth/loudmouth-heap-roster.h
+@@ -46,7 +46,7 @@ namespace LM
+   class HeapRoster:
+     public Ekiga::HeapImpl<Presentity>,
+     public LM::Handler,
+-    public boost::signals::trackable
++    public boost::signals2::trackable
+   {
+   public:
+ 
+--- plugins/loudmouth/loudmouth-helpers.h.orig	2012-11-07 20:43:51 UTC
++++ plugins/loudmouth/loudmouth-helpers.h
+@@ -37,7 +37,7 @@
+ #define __LOUDMOUTH_HELPERS_H__
+ 
+ #include <boost/smart_ptr.hpp>
+-#include <boost/signals.hpp>
++#include <boost/signals2.hpp>
+ 
+ #include <loudmouth/loudmouth.h>
+ 
+--- plugins/loudmouth/loudmouth-presentity.h.orig	2012-11-07 20:43:51 UTC
++++ plugins/loudmouth/loudmouth-presentity.h
+@@ -78,7 +78,7 @@ namespace LM
+ 
+     bool has_chat;
+ 
+-    boost::signal0<void> chat_requested;
++    boost::signals2::signal<void(void)> chat_requested;
+ 
+   private:
+     LmConnection* connection;
+--- plugins/resource-list/Makefile.in.orig	2013-02-20 21:44:17 UTC
++++ plugins/resource-list/Makefile.in
+@@ -56,7 +56,6 @@ subdir = plugins/resource-list
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
+-	$(top_srcdir)/m4/ax_boost_signals.m4 \
+ 	$(top_srcdir)/m4/gnome-doc-utils.m4 \
+ 	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
+ 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+@@ -178,8 +177,6 @@ AVAHI_LIBS = @AVAHI_LIBS@
+ AWK = @AWK@
+ BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+ BOOST_LDFLAGS = @BOOST_LDFLAGS@
+-BOOST_LIBS = @BOOST_LIBS@
+-BOOST_SIGNALS_LIB = @BOOST_SIGNALS_LIB@
+ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ CC = @CC@
+@@ -412,7 +409,7 @@ libgmresource_list_la_LDFLAGS = \
+ libgmresource_list_la_LIBADD = \
+ 	$(top_builddir)/lib/libekiga.la \
+ 	$(top_builddir)/plugins/xcap/libgmxcap.la \
+-	$(BOOST_LDFLAGS) $(BOOST_LIBS) $(GLIB_LIBS) $(XML_LIBS)
++	$(BOOST_LDFLAGS) $(GLIB_LIBS) $(XML_LIBS)
+ 
+ all: all-am
+ 
+--- plugins/resource-list/rl-heap.cpp.orig	2012-11-07 20:43:51 UTC
++++ plugins/resource-list/rl-heap.cpp
+@@ -185,7 +185,7 @@ RL::Heap::visit_presentities (boost::function1<bool, E
+ {
+   bool go_on = true;
+ 
+-  for (std::map<PresentityPtr,std::list<boost::signals::connection> >::const_iterator
++  for (std::map<PresentityPtr,std::list<boost::signals2::connection> >::const_iterator
+ 	 iter = presentities.begin ();
+        go_on && iter != presentities.end ();
+        ++iter)
+@@ -254,7 +254,7 @@ RL::Heap::refresh ()
+   while ( !presentities.empty ()) {
+ 
+     presentities.begin()->first->removed ();
+-    for (std::list<boost::signals::connection>::const_iterator iter2
++    for (std::list<boost::signals2::connection>::const_iterator iter2
+ 	   = presentities.begin()->second.begin ();
+ 	 iter2 != presentities.begin()->second.end ();
+ 	 ++iter2)
+@@ -366,7 +366,7 @@ RL::Heap::parse_list (xmlNodePtr list)
+ 	&& xmlStrEqual (BAD_CAST ("entry"), child->name)) {
+ 
+       PresentityPtr presentity(new Presentity (services, path, doc, child, writable));
+-      std::list<boost::signals::connection> conns;
++      std::list<boost::signals2::connection> conns;
+       conns.push_back (presentity->updated.connect (boost::bind (boost::ref (presentity_updated), presentity)));
+       conns.push_back (presentity->removed.connect (boost::bind(boost::ref (presentity_removed),presentity)));
+       conns.push_back (presentity->trigger_reload.connect (boost::bind (&RL::Heap::refresh, this)));
+@@ -381,7 +381,7 @@ void
+ RL::Heap::push_presence (const std::string uri_,
+ 			 const std::string presence)
+ {
+-  for (std::map<PresentityPtr,std::list<boost::signals::connection> >::const_iterator
++  for (std::map<PresentityPtr,std::list<boost::signals2::connection> >::const_iterator
+ 	 iter = presentities.begin ();
+        iter != presentities.end ();
+        ++iter) {
+@@ -395,7 +395,7 @@ void
+ RL::Heap::push_status (const std::string uri_,
+ 		       const std::string status)
+ {
+-  for (std::map<PresentityPtr,std::list<boost::signals::connection> >::const_iterator
++  for (std::map<PresentityPtr,std::list<boost::signals2::connection> >::const_iterator
+ 	 iter = presentities.begin ();
+        iter != presentities.end ();
+        ++iter) {
+@@ -514,7 +514,7 @@ RL::Heap::new_entry ()
+ 			   "contact on a remote server"));
+ 
+   std::set<std::string> all_groups;
+-  for (std::map<PresentityPtr,std::list<boost::signals::connection> >::const_iterator
++  for (std::map<PresentityPtr,std::list<boost::signals2::connection> >::const_iterator
+ 	 iter = presentities.begin ();
+        iter != presentities.end ();
+        ++iter) {
+--- plugins/resource-list/rl-heap.h.orig	2012-11-07 20:43:51 UTC
++++ plugins/resource-list/rl-heap.h
+@@ -90,7 +90,7 @@ namespace RL {
+     void push_status (const std::string uri,
+ 		      const std::string status);
+ 
+-    boost::signal0<void> trigger_saving;
++    boost::signals2::signal<void(void)> trigger_saving;
+ 
+   private:
+ 
+@@ -106,7 +106,7 @@ namespace RL {
+     boost::shared_ptr<xmlDoc> doc;
+     xmlNodePtr list_node;
+ 
+-    std::map<PresentityPtr, std::list<boost::signals::connection> > presentities;
++    std::map<PresentityPtr, std::list<boost::signals2::connection> > presentities;
+ 
+     void refresh ();
+ 
+--- plugins/resource-list/rl-list.cpp.orig	2012-11-07 20:43:51 UTC
++++ plugins/resource-list/rl-list.cpp
+@@ -94,9 +94,9 @@ class RL::ListImpl (public)
+ 
+   void publish () const;
+ 
+-  boost::signal1<void, boost::shared_ptr<Entry> > entry_added;
+-  boost::signal1<void, boost::shared_ptr<Entry> > entry_updated;
+-  boost::signal1<void, boost::shared_ptr<Entry> > entry_removed;
++  boost::signals2::signal<void(boost::shared_ptr<Entry>)> entry_added;
++  boost::signals2::signal<void(boost::shared_ptr<Entry>)> entry_updated;
++  boost::signals2::signal<void(boost::shared_ptr<Entry>)> entry_removed;
+ 
+ 
+   /* data for its children */
+@@ -104,7 +104,7 @@ class RL::ListImpl (public)
+ 
+   std::list<ChildType> ordering;
+   std::list<boost::shared_ptr<List> > lists;
+-  std::list<std::pair<boost::shared_ptr<Entry>, std::list<boost::signals::connection> > > entries;
++  std::list<std::pair<boost::shared_ptr<Entry>, std::list<boost::signals2::connection> > > entries;
+ };
+ 
+ 
+@@ -235,12 +235,12 @@ RL::ListImpl::flush ()
+     (*iter)->flush ();
+   lists.clear ();
+ 
+-  for (std::list<std::pair<boost::shared_ptr<Entry>, std::list<boost::signals::connection> > >::iterator iter = entries.begin ();
++  for (std::list<std::pair<boost::shared_ptr<Entry>, std::list<boost::signals2::connection> > >::iterator iter = entries.begin ();
+        iter != entries.end ();
+        ++iter) {
+ 
+     iter->first->removed ();
+-    for (std::list<boost::signals::connection>::iterator conn_iter
++    for (std::list<boost::signals2::connection>::iterator conn_iter
+ 	   = iter->second.begin ();
+ 	 conn_iter != iter->second.end ();
+ 	 ++conn_iter)
+@@ -342,10 +342,10 @@ RL::ListImpl::parse ()
+ 							    entry_pos,
+ 							    display_name,
+ 							    doc, child));
+-      std::list<boost::signals::connection> conns;
++      std::list<boost::signals2::connection> conns;
+       conns.push_back (entry->updated.connect (boost::bind (boost::ref (entry_updated), entry)));
+       conns.push_back (entry->removed.connect (boost::bind (boost::ref (entry_removed), entry)));
+-      entries.push_back (std::pair<boost::shared_ptr<Entry>, std::list<boost::signals::connection> > (entry, conns));
++      entries.push_back (std::pair<boost::shared_ptr<Entry>, std::list<boost::signals2::connection> > (entry, conns));
+       ordering.push_back (ENTRY);
+       entry_pos++;
+       entry_added (entry);
+@@ -363,7 +363,7 @@ RL::ListImpl::push_presence (const std::string uri_,
+        ++iter)
+     (*iter)->push_presence (uri_, presence);
+ 
+-  for (std::list<std::pair<boost::shared_ptr<Entry>, std::list<boost::signals::connection> > >::const_iterator iter = entries.begin ();
++  for (std::list<std::pair<boost::shared_ptr<Entry>, std::list<boost::signals2::connection> > >::const_iterator iter = entries.begin ();
+        iter != entries.end ();
+        ++iter) {
+ 
+@@ -381,7 +381,7 @@ RL::ListImpl::push_status (const std::string uri_,
+        ++iter)
+     (*iter)->push_status (uri_, status);
+ 
+-  for (std::list<std::pair<boost::shared_ptr<Entry>, std::list<boost::signals::connection> > >::const_iterator iter = entries.begin ();
++  for (std::list<std::pair<boost::shared_ptr<Entry>, std::list<boost::signals2::connection> > >::const_iterator iter = entries.begin ();
+        iter != entries.end ();
+        ++iter) {
+ 
+@@ -400,7 +400,7 @@ RL::ListImpl::visit_presentities (boost::function1<boo
+        ++iter)
+     go_on = (*iter)->visit_presentities (visitor);
+ 
+-  for (std::list<std::pair<boost::shared_ptr<Entry>, std::list<boost::signals::connection> > >::const_iterator iter = entries.begin ();
++  for (std::list<std::pair<boost::shared_ptr<Entry>, std::list<boost::signals2::connection> > >::const_iterator iter = entries.begin ();
+        go_on && iter != entries.end ();
+        ++iter) {
+ 
+@@ -418,7 +418,7 @@ RL::ListImpl::publish () const
+        ++iter)
+     (*iter)->publish ();
+ 
+-  for (std::list<std::pair<boost::shared_ptr<Entry>, std::list<boost::signals::connection> > >::const_iterator iter = entries.begin ();
++  for (std::list<std::pair<boost::shared_ptr<Entry>, std::list<boost::signals2::connection> > >::const_iterator iter = entries.begin ();
+        iter != entries.end ();
+        ++iter) {
+ 
+--- plugins/resource-list/rl-list.h.orig	2012-11-07 20:43:51 UTC
++++ plugins/resource-list/rl-list.h
+@@ -74,9 +74,9 @@ namespace RL
+ 
+     void publish () const;
+ 
+-    boost::signal1<void, boost::shared_ptr<Entry> > entry_added;
+-    boost::signal1<void, boost::shared_ptr<Entry> > entry_updated;
+-    boost::signal1<void, boost::shared_ptr<Entry> > entry_removed;
++    boost::signals2::signal<void(boost::shared_ptr<Entry>)> entry_added;
++    boost::signals2::signal<void(boost::shared_ptr<Entry>)> entry_updated;
++    boost::signals2::signal<void(boost::shared_ptr<Entry>)> entry_removed;
+ 
+     /* this method orders the list to get rid of all its children */
+     void flush ();
+--- plugins/resource-list/rl-presentity.h.orig	2012-11-07 20:43:51 UTC
++++ plugins/resource-list/rl-presentity.h
+@@ -79,7 +79,7 @@ namespace RL
+ 
+     bool populate_menu (Ekiga::MenuBuilder &);
+ 
+-    boost::signal0<void> trigger_reload;
++    boost::signals2::signal<void(void)> trigger_reload;
+ 
+   private:
+ 
+--- plugins/xcap/Makefile.in.orig	2013-02-20 21:44:17 UTC
++++ plugins/xcap/Makefile.in
+@@ -56,7 +56,6 @@ subdir = plugins/xcap
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
+-	$(top_srcdir)/m4/ax_boost_signals.m4 \
+ 	$(top_srcdir)/m4/gnome-doc-utils.m4 \
+ 	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
+ 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+@@ -174,8 +173,6 @@ AVAHI_LIBS = @AVAHI_LIBS@
+ AWK = @AWK@
+ BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+ BOOST_LDFLAGS = @BOOST_LDFLAGS@
+-BOOST_LIBS = @BOOST_LIBS@
+-BOOST_SIGNALS_LIB = @BOOST_SIGNALS_LIB@
+ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ CC = @CC@
+@@ -392,7 +389,7 @@ libgmxcap_la_SOURCES = \
+ libgmxcap_la_LDFLAGS = $(PLUGINS_LIBTOOL_FLAGS)
+ libgmxcap_la_LIBADD = \
+ 	$(top_builddir)/lib/libekiga.la \
+-	$(BOOST_LDFLAGS) $(BOOST_LIBS) $(SOUP_LIBS)
++	$(BOOST_LDFLAGS) $(SOUP_LIBS)
+ 
+ all: all-am
+ 
+--- sounds/Makefile.in.orig	2013-02-20 21:44:17 UTC
++++ sounds/Makefile.in
+@@ -56,7 +56,6 @@ subdir = sounds
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
+-	$(top_srcdir)/m4/ax_boost_signals.m4 \
+ 	$(top_srcdir)/m4/gnome-doc-utils.m4 \
+ 	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
+ 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+@@ -124,8 +123,6 @@ AVAHI_LIBS = @AVAHI_LIBS@
+ AWK = @AWK@
+ BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+ BOOST_LDFLAGS = @BOOST_LDFLAGS@
+-BOOST_LIBS = @BOOST_LIBS@
+-BOOST_SIGNALS_LIB = @BOOST_SIGNALS_LIB@
+ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ CC = @CC@
+--- src/Makefile.in.orig	2013-02-20 21:44:17 UTC
++++ src/Makefile.in
+@@ -93,7 +93,6 @@ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile
+ 	$(srcdir)/ekiga-config-tool.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_boost_base.m4 \
+-	$(top_srcdir)/m4/ax_boost_signals.m4 \
+ 	$(top_srcdir)/m4/gnome-doc-utils.m4 \
+ 	$(top_srcdir)/m4/intltool.m4 $(top_srcdir)/m4/libtool.m4 \
+ 	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
+@@ -240,8 +239,6 @@ AVAHI_LIBS = @AVAHI_LIBS@
+ AWK = @AWK@
+ BOOST_CPPFLAGS = @BOOST_CPPFLAGS@
+ BOOST_LDFLAGS = @BOOST_LDFLAGS@
+-BOOST_LIBS = @BOOST_LIBS@
+-BOOST_SIGNALS_LIB = @BOOST_SIGNALS_LIB@
+ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ CC = @CC@
+@@ -490,7 +487,7 @@ nodist_ekiga_SOURCES = $(am__append_6)
+ GIT_REVISION = \"$$(cd ../.git; git describe )\"
+ CACHED_REVISION = $$(cat revision.h 2>/dev/null | cut -c24-)
+ AM_CXXFLAGS = $(GTK_CFLAGS) $(GLIB_CFLAGS) $(DBUS_CFLAGS) $(OPAL_CFLAGS) $(PTLIB_CFLAGS) $(BOOST_CPPFLAGS) $(XML_CFLAGS)
+-AM_LIBS = $(GTK_LIBS) $(GLIB_LIBS) $(DBUS_LIBS) $(OPAL_LIBS) $(PTLIB_LIBS) $(BOOST_LDFLAGS) $(BOOST_LIBS) $(XML_LIBS)
++AM_LIBS = $(GTK_LIBS) $(GLIB_LIBS) $(DBUS_LIBS) $(OPAL_LIBS) $(PTLIB_LIBS) $(BOOST_LDFLAGS) $(XML_LIBS)
+ ekiga_LDADD = \
+ 	$(top_builddir)/lib/libekiga.la $(AM_LIBS)
+ 
+--- src/gui/assistant.cpp.orig	2013-02-18 21:37:04 UTC
++++ src/gui/assistant.cpp
+@@ -95,7 +95,7 @@ struct _EkigaAssistantPrivate
+   gint last_active_page;
+ 
+   GtkListStore *summary_model;
+-  std::vector<boost::signals::connection> connections;
++  std::vector<boost::signals2::connection> connections;
+ };
+ 
+ /* presenting the network connection type to the user */
+@@ -1679,7 +1679,7 @@ ekiga_assistant_new (Ekiga::ServiceCore& service_core)
+   g_signal_connect (assistant, "key-press-event",
+                     G_CALLBACK (ekiga_assistant_key_press_cb), NULL);
+ 
+-  boost::signals::connection conn;
++  boost::signals2::connection conn;
+   assistant->priv->videoinput_core = service_core.get<Ekiga::VideoInputCore> ("videoinput-core");
+   assistant->priv->audioinput_core = service_core.get<Ekiga::AudioInputCore> ("audioinput-core");
+   assistant->priv->audiooutput_core = service_core.get<Ekiga::AudioOutputCore> ("audiooutput-core");
+--- src/gui/main_window.cpp.orig	2013-02-18 21:36:51 UTC
++++ src/gui/main_window.cpp
+@@ -129,7 +129,7 @@ struct _EkigaMainWindowPrivate
+   unsigned calling_state;
+ 
+   gulong roster_selection_connection_id;
+-  std::vector<boost::signals::connection> connections;
++  std::vector<boost::signals2::connection> connections;
+ };
+ 
+ /* properties */
+@@ -1706,7 +1706,7 @@ ekiga_main_window_class_init (EkigaMainWindowClass *kl
+ static void
+ ekiga_main_window_connect_engine_signals (EkigaMainWindow *mw)
+ {
+-  boost::signals::connection conn;
++  boost::signals2::connection conn;
+ 
+   g_return_if_fail (EKIGA_IS_MAIN_WINDOW (mw));
+ 
+--- src/gui/statusmenu.cpp.orig	2013-02-18 21:37:04 UTC
++++ src/gui/statusmenu.cpp
+@@ -51,7 +51,7 @@
+ struct _StatusMenuPrivate
+ {
+   boost::shared_ptr<Ekiga::PersonalDetails> personal_details;
+-  std::vector<boost::signals::connection> connections;
++  std::vector<boost::signals2::connection> connections;
+ 
+   GtkListStore *list_store; // List store storing the menu
+   GtkWindow    *parent;     // Parent window
+@@ -796,7 +796,7 @@ status_menu_new (Ekiga::ServiceCore & core)
+ {
+   StatusMenu *self = NULL;
+ 
+-  boost::signals::connection conn;
++  boost::signals2::connection conn;
+   GtkCellRenderer *renderer = NULL;
+   GSList *custom_status_array [NUM_STATUS_TYPES];
+ 
