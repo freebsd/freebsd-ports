@@ -12,13 +12,13 @@ PKGNAMESUFFIX?=		-stage1
 MAINTAINER=		tphilipp@potion-studios.com
 COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
-ONLY_FOR_ARCHS=		amd64 i386
-
-PSP_GCC_STAGE_PREFIX=	psp/stage1
+ONLY_FOR_ARCHS=		amd64 i386 powerpc64
 
 LIB_DEPENDS=		libgmp.so:math/gmp \
 			libmpfr.so:math/mpfr \
 			libmpc.so:math/mpc
+
+PSP_GCC_STAGE_PREFIX=	psp/stage1
 
 BUILD_DEPENDS+=		psp-addr2line:devel/psptoolchain-binutils \
 			psp-ar:devel/psptoolchain-binutils \
