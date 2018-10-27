@@ -1,0 +1,11 @@
+--- rulefiles/linux/ignore.d.server/sudo.orig	2018-05-30 21:59:13 UTC
++++ rulefiles/linux/ignore.d.server/sudo
+@@ -1,4 +1,4 @@
+-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sudo: pam_[[:alnum:]]+\(sudo:session\): session closed for user [[:alnum:]-]+$
+-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sudo: pam_[[:alnum:]]+\(sudo:session\): session opened for user [[:alnum:]-]+ by ([[:alnum:]-]+)?\(uid=[0-9]+\)$
+-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sudo:[[:space:]]+[_[:alnum:].-]+ : TTY=(unknown|(pts/|tty|vc/)[[:digit:]]+) ; PWD=[^;]+ ; USER=[._[:alnum:]-]+ ; COMMAND=(/(usr|etc|bin|sbin)/|sudoedit ).*$
+-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sudo:[[:space:]]+[_[:alnum:].-]+ : \(command continued\).*$
++^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sudo(\[[[:digit:]]+\])?: pam_[[:alnum:]]+\(sudo:session\): session closed for user [[:alnum:]-]+$
++^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sudo(\[[[:digit:]]+\])?: pam_[[:alnum:]]+\(sudo:session\): session opened for user [[:alnum:]-]+ by ([[:alnum:]-]+)?\(uid=[0-9]+\)$
++^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sudo(\[[[:digit:]]+\])?:[[:space:]]+[_[:alnum:].-]+ : TTY=(unknown|(pts/|tty|vc/)[[:digit:]]+) ; PWD=[^;]+ ; USER=[._[:alnum:]-]+ ; COMMAND=(/(usr|etc|bin|sbin)/|sudoedit ).*$
++^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sudo(\[[[:digit:]]+\])?:[[:space:]]+[_[:alnum:].-]+ : \(command continued\).*$

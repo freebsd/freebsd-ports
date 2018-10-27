@@ -1,0 +1,7 @@
+--- rulefiles/linux/violations.d/sudo.orig	2018-05-30 21:59:13 UTC
++++ rulefiles/linux/violations.d/sudo
+@@ -1,3 +1,3 @@
+ ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sudo\[[0-9]+\]: \(pam_[[:alnum:]]+\) .*$
+ ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sudo\[[0-9]+\]: pam_[[:alnum:]]+\(sudo:[[:alnum:]]+\): .*$
+-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sudo: .*$
++^\w{3} [ :0-9]{11} [._[:alnum:]-]+ sudo(\[[0-9]+\])?: .*$
