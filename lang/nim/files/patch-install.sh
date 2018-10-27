@@ -1,5 +1,5 @@
---- install.sh.orig	2018-03-14 15:03:07.246974000 +0000
-+++ install.sh	2018-03-14 15:08:43.631474000 +0000
+--- install.sh.orig	2018-10-08 18:45:36.608723000 +0200
++++ install.sh	2018-10-08 18:51:00.101929000 +0200
 @@ -15,48 +15,14 @@
      "--help"|"-h"|"help"|"h")
        echo "Nim installation script"
@@ -15,19 +15,19 @@
        ;;
 -    "/usr/bin")
 -      bindir=/usr/bin
--      configdir=/etc
+-      configdir=/etc/nim
 -      libdir=/usr/lib/nim
 -      docdir=/usr/share/nim/doc
 -      datadir=/usr/share/nim/data
--      nimbleDir="/opt/nimble/pkgs/compiler-0.18.0"
+-      nimbleDir="/opt/nimble/pkgs/compiler-0.19.0"
 -      ;;
 -    "/usr/local/bin")
 -      bindir=/usr/local/bin
--      configdir=/etc
+-      configdir=/etc/nim
 -      libdir=/usr/local/lib/nim
 -      docdir=/usr/local/share/nim/doc
 -      datadir=/usr/local/share/nim/data
--      nimbleDir="/opt/nimble/pkgs/compiler-0.18.0"
+-      nimbleDir="/opt/nimble/pkgs/compiler-0.19.0"
 -      ;;
 -    "/opt")
 -      bindir="/opt/nim/bin"
@@ -35,7 +35,7 @@
 -      libdir="/opt/nim/lib"
 -      docdir="/opt/nim/doc"
 -      datadir="/opt/nim/data"
--      nimbleDir="/opt/nimble/pkgs/compiler-0.18.0"
+-      nimbleDir="/opt/nimble/pkgs/compiler-0.19.0"
 -      mkdir -p /opt/nim
 -      mkdir -p $bindir
 -      mkdir -p $configdir
@@ -47,14 +47,14 @@
 -      docdir="$1/nim/doc"
 -      datadir="$1/nim/data"
 +      bindir="$1/bin"
-+      configdir="$1/etc"
++      configdir="$1/etc/nim"
 +      libdir="$1/lib"
 +      docdir="$1/share/doc/nim"
 +      datadir="$1/share/nim"
        nimbleDir="$1/nim"
        mkdir -p $1/nim
        mkdir -p $bindir
-@@ -866,13 +832,6 @@
+@@ -899,13 +865,6 @@
  else
    echo "Nim installation script"
    echo "Usage: [sudo] sh install.sh DIR"
