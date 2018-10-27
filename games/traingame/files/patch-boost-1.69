@@ -1,0 +1,29 @@
+CMake Error at /usr/local/share/cmake/Modules/FindBoost.cmake:2049 (message):
+  Unable to find the requested Boost libraries.
+
+  Boost version: 1.69.0
+
+  Boost include path: /usr/local/include
+
+  Could not find the following Boost libraries:
+
+          boost_signals
+
+  Some (but not all) of the required Boost libraries were found.  You may
+  need to install these additional Boost libraries.  Alternatively, set
+  BOOST_LIBRARYDIR to the directory containing Boost libraries or BOOST_ROOT
+  to the location of Boost.
+Call Stack (most recent call first):
+  CMakeLists.txt:40 (find_package)
+
+--- CMakeLists.txt.orig	2015-01-10 17:48:08 UTC
++++ CMakeLists.txt
+@@ -38,7 +38,7 @@ find_package (SDL_image REQUIRED)
+ find_package (OpenGL REQUIRED)
+ find_package (GLEW REQUIRED)
+ find_package (Boost 1.37 REQUIRED 
+-  COMPONENTS filesystem signals program_options system) 
++  COMPONENTS filesystem program_options system) 
+ find_package (Freetype REQUIRED)
+ 
+ if (NOT WIN32)
