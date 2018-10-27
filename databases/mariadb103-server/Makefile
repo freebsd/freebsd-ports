@@ -3,7 +3,7 @@
 
 PORTNAME?=	mariadb
 PORTVERSION=	10.3.10
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
 		http://mirror2.hs-esslingen.de/pub/Mirrors/${SITESDIR}/ \
@@ -175,7 +175,6 @@ SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/share/mysql/policy
 	${RM} -r ${STAGEDIR}${PREFIX}/include/mysql/server/private
-	${RM} -r ${STAGEDIR}${DATADIR}/charsets
 .endif # defined(CLIENT_ONLY)
 
 .if defined(WITH_OPENSSL_PORT)
