@@ -19,10 +19,10 @@ USE_GITHUB=	yes
 
 CONFLICTS=	gpsbabel14-[0-9]*
 
+USES=		compiler:c++11-lang localbase qt:5 qt:5
 USE_QT=		core qmake_build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-zlib=system
-USES=		localbase qt:5 qt:5
 
 OPTIONS_DEFINE=	GUI
 OPTIONS_SUB=	yes
