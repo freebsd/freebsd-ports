@@ -2,7 +2,6 @@
 
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	4
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -35,7 +34,7 @@ USE_KDE=	activities activitymanagerd attica auth baloo bookmarks \
 		texteditor textwidgets unitconversion wallet wayland \
 		widgetsaddons windowsystem xmlgui xmlrpcclient \
 		breeze_run breeze-icons_run oxygen-icons5_run \
-		kde-cli-tools_run kded_run milou_run
+		kded_run milou_run
 USE_QT=		concurrent core dbus graphicaleffects gui network phonon4 \
 		printsupport qdbus qml quick quickcontrols_run script sql \
 		testlib webkit widgets x11extras xml \

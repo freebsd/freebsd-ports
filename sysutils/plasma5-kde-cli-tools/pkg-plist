@@ -25,6 +25,7 @@ man/pt/man1/kdesu.1.gz
 man/pt_BR/man1/kdesu.1.gz
 man/sr/man1/kdesu.1.gz
 man/sr@latin/man1/kdesu.1.gz
+man/sv/man1/kdesu.1.gz
 man/uk/man1/kdesu.1.gz
 share/doc/HTML/ca/kcontrol5/filetypes/index.cache.bz2
 share/doc/HTML/ca/kcontrol5/filetypes/index.docbook
@@ -60,6 +61,8 @@ share/doc/HTML/pt_BR/kcontrol5/filetypes/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol5/filetypes/index.docbook
 share/doc/HTML/pt_BR/kdesu/index.cache.bz2
 share/doc/HTML/pt_BR/kdesu/index.docbook
+share/doc/HTML/ru/kcontrol5/filetypes/index.cache.bz2
+share/doc/HTML/ru/kcontrol5/filetypes/index.docbook
 share/doc/HTML/sr/kcontrol5/filetypes/index.cache.bz2
 share/doc/HTML/sr/kcontrol5/filetypes/index.docbook
 share/doc/HTML/sr/kdesu/index.cache.bz2
@@ -68,6 +71,10 @@ share/doc/HTML/sr@latin/kcontrol5/filetypes/index.cache.bz2
 share/doc/HTML/sr@latin/kcontrol5/filetypes/index.docbook
 share/doc/HTML/sr@latin/kdesu/index.cache.bz2
 share/doc/HTML/sr@latin/kdesu/index.docbook
+share/doc/HTML/sv/kcontrol5/filetypes/index.cache.bz2
+share/doc/HTML/sv/kcontrol5/filetypes/index.docbook
+share/doc/HTML/sv/kdesu/index.cache.bz2
+share/doc/HTML/sv/kdesu/index.docbook
 share/doc/HTML/uk/kcontrol5/filetypes/index.cache.bz2
 share/doc/HTML/uk/kcontrol5/filetypes/index.docbook
 share/doc/HTML/uk/kdesu/index.cache.bz2
@@ -331,6 +338,7 @@ share/locale/ia/LC_MESSAGES/kioclient5.mo
 share/locale/ia/LC_MESSAGES/kmimetypefinder5.mo
 share/locale/ia/LC_MESSAGES/kstart5.mo
 share/locale/ia/LC_MESSAGES/ktraderclient5.mo
+share/locale/id/LC_MESSAGES/kbroadcastnotification.mo
 share/locale/id/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/id/LC_MESSAGES/kcmshell5.mo
 share/locale/id/LC_MESSAGES/kdesu5.mo
