@@ -21,7 +21,7 @@ LIB_DEPENDS=	libsmf.so:audio/libsmf \
 		libexpat.so:textproc/expat2
 
 GNU_CONFIGURE=	yes
-USES=		gettext-runtime libtool
+USES=		compiler:c++11-lang gettext-runtime gnome libtool
 USE_GNOME=	glib20
 USE_XORG=	x11 xext
 
