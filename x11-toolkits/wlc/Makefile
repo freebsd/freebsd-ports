@@ -8,6 +8,9 @@ CATEGORIES=	x11-toolkits wayland
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Wayland compositor library
 
+DEPRECATED=	Deprecated upstream
+EXPIRATION_DATE=	2018-12-31
+
 LICENSE=	MIT
 LICENSE_FILES=	${WRKSRC}/LISENSE
 
