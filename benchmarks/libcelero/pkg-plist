@@ -25,6 +25,9 @@ include/celero/TestVector.h
 include/celero/ThreadLocal.h
 include/celero/ThreadTestFixture.h
 include/celero/Timer.h
+include/celero/UserDefinedMeasurement.h
+include/celero/UserDefinedMeasurementCollector.h
+include/celero/UserDefinedMeasurementTemplate.h
 include/celero/Utilities.h
 lib/libcelero.so
 share/celero-target-%%CMAKE_BUILD_TYPE%%.cmake
