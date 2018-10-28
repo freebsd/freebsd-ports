@@ -10,7 +10,7 @@ COMMENT=		Wrapper for the user, group and hosts NSS API
 
 LICENSE=		GPLv3
 
-USES=			cmake:outsource perl5 shebangfix
+USES=			cmake:outsource compiler:c++11-lang perl5 shebangfix
 USE_PERL5=		run
 USE_LDCONFIG=		yes
 
