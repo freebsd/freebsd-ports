@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gettext gmake jpeg libtool lua pkgconfig
+USES=		compiler:c++11-lang gettext gl gmake jpeg libtool lua pkgconfig
 USE_GL=		gl
 GNU_CONFIGURE=	yes
 EXTRA_PATCHES=	${FILESDIR}/celestia-1.6.1-lua-5.2.patch:-p1 \
@@ -48,6 +48,7 @@ USE_GL+=	glut
 LDFLAGS+=	-lGL
 .elif ${CELESTIA_UI} == "gtk"
 CONFIGURE_ARGS+=	--with-gtk
+USES+=		gnome
 USE_GNOME+=	gtk20
 PLIST_FILES=	share/applications/celestia.desktop
 .elif ${CELESTIA_UI} == "gnome"
