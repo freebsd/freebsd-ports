@@ -12,8 +12,8 @@ MASTER_SITES=	http://bloboats.dy.fi/mirror/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Boat racing game in the spirit of Elasto Mania or X-Moto
 
-DEPRECATED=	Upstream gone
-EXPIRATION_DATE=	2018-11-15
+DEPRECATED=	Upstream gone, FreeBSD 10 only
+EXPIRATION_DATE=	2018-10-31
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/copying.txt

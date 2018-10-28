@@ -10,8 +10,8 @@ DISTNAME=	12956-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE network monitor
 
-DEPRECATED=	KDE4 is EOL upstream
-EXPIRATION_DATE=	2018-12-31
+DEPRECATED=	KDE4 is EOL upstream, FreeBSD 10 only-port
+EXPIRATION_DATE=	2018-10-31
 
 BROKEN_FreeBSD_11=	does not build due to access to kernel-private structure (error: member access into incomplete type 'struct in6_ifaddr')
 BROKEN_FreeBSD_12=	does not build due to access to kernel-private structure (error: member access into incomplete type 'struct in6_ifaddr')
