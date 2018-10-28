@@ -18,7 +18,8 @@ LIB_DEPENDS=	libGraphicsMagick++.so:graphics/GraphicsMagick \
 		libMagick++-6.so:graphics/ImageMagick \
 		libavcodec.so:multimedia/ffmpeg \
 		libfftw3.so:math/fftw3 \
-		libgimp-2.0.so:graphics/gimp-app
+		libgimp-2.0.so:graphics/gimp-app \
+		libcurl.so:ftp/curl
 
 OPTIONS_DEFINE=	BASH EXAMPLES
 OPTIONS_SUB=	yes
