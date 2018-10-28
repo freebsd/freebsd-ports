@@ -2,8 +2,7 @@
 
 PORTNAME=	kak-lsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.8.0
-PORTREVISION=	1
+DISTVERSION=	5.9.0
 CATEGORIES=	editors
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -12,7 +11,7 @@ COMMENT=	Kakoune Language Server Protocol Client
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/UNLICENSE
 
-RUN_DEPENDS=	kakoune>=2018.09.04:editors/kakoune
+RUN_DEPENDS=	kakoune>=2018.10.27:editors/kakoune
 
 USES=		cargo
 USE_GITHUB=	yes
@@ -31,7 +30,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		build_const-0.2.1 \
 		byteorder-1.2.6 \
 		cc-1.0.25 \
-		cfg-if-0.1.5 \
+		cfg-if-0.1.6 \
 		chrono-0.4.6 \
 		clap-2.32.0 \
 		cloudabi-0.0.3 \
@@ -45,12 +44,12 @@ CARGO_CRATES=	adler32-1.0.3 \
 		dirs-1.0.4 \
 		either-1.5.0 \
 		enum_primitive-0.1.1 \
-		failure-0.1.2 \
-		failure_derive-0.1.2 \
+		failure-0.1.3 \
+		failure_derive-0.1.3 \
 		fnv-1.0.6 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
-		futures-0.1.24 \
+		futures-0.1.25 \
 		glob-0.2.11 \
 		handlebars-0.32.4 \
 		idna-0.1.5 \
@@ -70,7 +69,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		memchr-2.1.0 \
 		memoffset-0.2.1 \
 		nodrop-0.1.12 \
-		num-derive-0.2.2 \
+		num-derive-0.2.3 \
 		num-integer-0.1.39 \
 		num-traits-0.1.43 \
 		num-traits-0.2.6 \
@@ -80,13 +79,14 @@ CARGO_CRATES=	adler32-1.0.3 \
 		percent-encoding-1.0.1 \
 		pest-1.0.6 \
 		pest_derive-1.0.8 \
-		proc-macro2-0.4.19 \
+		proc-macro2-0.4.20 \
 		quick-error-1.2.2 \
 		quote-0.3.15 \
 		quote-0.6.8 \
 		rand-0.4.3 \
 		rand-0.5.5 \
-		rand_core-0.2.1 \
+		rand_core-0.2.2 \
+		rand_core-0.3.0 \
 		redox_syscall-0.1.40 \
 		redox_termios-0.1.1 \
 		redox_users-0.2.0 \
@@ -101,31 +101,30 @@ CARGO_CRATES=	adler32-1.0.3 \
 		scopeguard-0.3.3 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.79 \
-		serde_derive-1.0.79 \
-		serde_json-1.0.31 \
-		slog-2.3.3 \
+		serde-1.0.80 \
+		serde_derive-1.0.80 \
+		serde_json-1.0.32 \
+		slog-2.4.1 \
 		slog-async-2.3.0 \
-		slog-kvfilter-0.6.1 \
+		slog-kvfilter-0.7.0 \
 		slog-scope-4.0.1 \
 		slog-stdlog-3.0.2 \
 		slog-term-2.4.0 \
-		sloggers-0.2.9 \
+		sloggers-0.3.1 \
 		smallvec-0.6.5 \
 		stable_deref_trait-1.1.1 \
 		strsim-0.7.0 \
 		syn-0.11.11 \
-		syn-0.14.9 \
-		syn-0.15.6 \
+		syn-0.15.13 \
 		synom-0.11.3 \
-		synstructure-0.9.0 \
+		synstructure-0.10.0 \
 		take_mut-0.2.2 \
 		term-0.5.1 \
 		termion-1.5.1 \
 		textwrap-0.10.0 \
 		thread_local-0.3.6 \
 		time-0.1.40 \
-		toml-0.4.7 \
+		toml-0.4.8 \
 		trackable-0.2.20 \
 		trackable_derive-0.1.1 \
 		ucd-util-0.1.1 \
