@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libarpc.so:devel/arpc \
 		libjsoncpp.so:devel/jsoncpp
 
-USES=		cmake localbase:ldflags tar:xz
+USES=		cmake compiler:c++17-lang localbase:ldflags tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	NuxiNL
 
