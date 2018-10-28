@@ -26,7 +26,9 @@ USES=		dos2unix gmake zip
 USE_LDCONFIG=	yes
 DOS2UNIX_FILES=	Source/LibOpenJPEG/opj_malloc.h \
 		Source/LibRawLite/dcraw/dcraw.c \
-		Source/LibRawLite/internal/dcraw_common.cpp
+		Source/LibRawLite/internal/dcraw_common.cpp \
+		Source/FreeImage/PluginBMP.cpp \
+		Source/FreeImage/PluginDDS.cpp
 
 WRKSRC=		${WRKDIR}/FreeImage
 MAKE_ARGS=	CC="${CC}" CPP="${CPP}" CXX="${CXX}"
