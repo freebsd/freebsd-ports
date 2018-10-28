@@ -12,7 +12,7 @@ COMMENT=	Microbenchmark support library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource
+USES=		cmake:outsource compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 USE_LDCONFIG=	yes
