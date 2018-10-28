@@ -147,4 +147,5 @@ man/man1/bashdb.1.gz
 %%DATADIR%%/lib/stepping.sh
 %%DATADIR%%/lib/subcmd.sh
 %%DATADIR%%/lib/term-highlight.py
+%%DATADIR%%/lib/unescape.sh
 %%DATADIR%%/lib/validate.sh
