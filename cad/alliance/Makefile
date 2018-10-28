@@ -18,9 +18,6 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_aarch64=		fails to link: collect2: error: ld returned 1 exit status
-BROKEN_mips=		fails to build: cc1plus: error: unrecognized command line option "-std=gnu++03"
-BROKEN_mips64=		fails to build: cc1plus: error: unrecognized command line option "-std=gnu++03"
-BROKEN_powerpc64=	fails to build: cc1plus: error: unrecognized command line option "-std=gnu++03"
 
 CONFLICTS_INSTALL=	fspclient-*
 
@@ -38,7 +35,7 @@ CONFIGURE_ARGS+=--mandir=${MANPREFIX}/man \
 		--prefix=${ALLIANCE_TOP}
 
 # The port does not build with C++11 or later (bug 219275).
-USE_CXXSTD=	gnu++03
+USE_CXXSTD=	gnu++98
 
 MAKE_JOBS_UNSAFE=	yes
 

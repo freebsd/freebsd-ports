@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake
 USE_LDCONFIG=	yes
-MAKE_ENV=	prefix=${PREFIX} CFLAGS="-std=c++03"
+MAKE_ENV=	prefix=${PREFIX} CFLAGS="-std=gnu++98"
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
