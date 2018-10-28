@@ -13,7 +13,7 @@ COMMENT=	Qt Widgets for Technical Applications
 FLAVORS=	qt4 qt5
 FLAVOR?=	${FLAVORS:[1]}
 
-USES=		gmake qmake tar:bzip2
+USES=		gl gmake qmake tar:bzip2
 USE_GL=		gl
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
@@ -28,7 +28,7 @@ QMAKE_ARGS+=	PLUGINDIR=${PREFIX}/${QT_PLUGINDIR_REL}
 USES+=		qt:4
 USE_QT=		corelib designer gui opengl svg xml moc_build rcc_build script
 .else
-USES+=		qt:5
+USES+=		compiler:c++11-lang qt:5
 USE_QT=		buildtools_build widgets gui core designer gui opengl svg xml printsupport concurrent
 .endif
 
