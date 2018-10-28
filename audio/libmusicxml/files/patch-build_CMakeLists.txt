@@ -1,11 +1,11 @@
---- build/CMakeLists.txt.orig	2017-10-30 10:42:38 UTC
+--- build/CMakeLists.txt.orig	2018-10-28 01:27:09 UTC
 +++ build/CMakeLists.txt
-@@ -146,7 +146,7 @@ endif()
- if(NOT APPLE)
- install ( TARGETS ${target} ${TOOLS} 
- 	RUNTIME DESTINATION bin 
--    	LIBRARY DESTINATION /usr/lib 
-+    	LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib 
-     	ARCHIVE DESTINATION lib 
- #    	FRAMEWORK DESTINATION "/Library/Frameworks" CONFIGURATIONS Release
-     	PUBLIC_HEADER DESTINATION include/libmusicxml
+@@ -163,7 +163,7 @@ install ( TARGETS ${TOOLS} 
+ 
+ ####################################
+ # install misc files
+-set (DOCDIR  ${CMAKE_INSTALL_PREFIX}/shared/libmusicxml)
++set (DOCDIR  ${CMAKE_INSTALL_PREFIX}/share/libmusicxml)
+ install (
+     DIRECTORY ${DTDS} DESTINATION ${DOCDIR}/dtds
+     FILE_PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
