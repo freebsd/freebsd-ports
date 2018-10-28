@@ -11,7 +11,7 @@ COMMENT=	Lightweight C++ command line option parser
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource
+USES=		cmake:outsource compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	jarro2783
 NO_ARCH=	yes
