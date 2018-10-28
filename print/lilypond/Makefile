@@ -33,8 +33,8 @@ LIB_DEPENDS=	libguile.so:lang/guile \
 RUN_DEPENDS=	mftrace:print/mftrace \
 		${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejavu
 
-USES=		bison:build gettext ghostscript gmake pkgconfig perl5 \
-		python:2.7
+USES=		bison:build compiler:c++11-lang gettext ghostscript gmake \
+		gnome pkgconfig perl5 python:2.7
 USE_TEX=	latex
 USE_PERL5=	build
 USE_GNOME=	pango
