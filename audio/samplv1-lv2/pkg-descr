@@ -1,0 +1,8 @@
+Old-school all-digital polyphonic sampler synthesizer with stereo fx.
+
+Features:
+* A LV2 instrument plug-in
+* A pure stand-alone JACK client with JACK-session, NSM (Non Session management)
+  and both JACK MIDI and ALSA MIDI input support
+
+WWW: https://samplv1.sourceforge.io/

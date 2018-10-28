@@ -747,6 +747,7 @@
     SUBDIR += rubygem-ruby-ogginfo
     SUBDIR += rubygem-ruby-shout
     SUBDIR += s3mod
+    SUBDIR += samplv1-lv2
     SUBDIR += sayonara
     SUBDIR += sbagen
     SUBDIR += sc3-plugins
