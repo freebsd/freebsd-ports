@@ -2,7 +2,7 @@
 
 PORTNAME=	Carla
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.11
+DISTVERSION=	1.9.12
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyliblo>0:audio/py-pyliblo@${PY_FLAVOR}
 
 CONFLICTS_BUILD=	rtaudio-* rtmidi-*
 
-USES=		compiler:c++11-lib desktop-file-utils gmake localbase \
+USES=		compiler:c++11-lib desktop-file-utils gmake gnome localbase \
 		pkgconfig pyqt:5 python:3.4+ qt:5 shared-mime-info shebangfix tar:bz2
 USE_GITHUB=	yes
 GH_ACCOUNT=	falkTX
