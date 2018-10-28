@@ -1,6 +1,6 @@
---- setup.py.orig	2018-10-11 23:38:33 UTC
+--- setup.py.orig	2018-10-26 18:03:19 UTC
 +++ setup.py
-@@ -15,31 +16,33 @@ def get_numpy_options():
+@@ -16,31 +16,33 @@ def get_numpy_options():
     numpy_include = numpy.get_include()
  
     # Obtain BLAS/LAPACK linking options
@@ -56,5 +56,5 @@
 +   blaslapack_extra_link_args = []
 +   blaslapack_library_dirs = []
  
-    return dict(
+    r = dict(
                     include_dirs = [numpy_include, "primme/include", "primme/src/include"],
