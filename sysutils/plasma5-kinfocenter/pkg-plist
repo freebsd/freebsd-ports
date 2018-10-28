@@ -29,10 +29,14 @@ share/doc/HTML/pt/kinfocenter/index.docbook
 share/doc/HTML/pt_BR/kinfocenter/index.cache.bz2
 share/doc/HTML/pt_BR/kinfocenter/index.docbook
 share/doc/HTML/pt_BR/kinfocenter/kinfocenter.png
+share/doc/HTML/ru/kinfocenter/index.cache.bz2
+share/doc/HTML/ru/kinfocenter/index.docbook
 share/doc/HTML/sr/kinfocenter/index.cache.bz2
 share/doc/HTML/sr/kinfocenter/index.docbook
 share/doc/HTML/sr@latin/kinfocenter/index.cache.bz2
 share/doc/HTML/sr@latin/kinfocenter/index.docbook
+share/doc/HTML/sv/kinfocenter/index.cache.bz2
+share/doc/HTML/sv/kinfocenter/index.docbook
 share/doc/HTML/uk/kinfocenter/index.cache.bz2
 share/doc/HTML/uk/kinfocenter/index.docbook
 share/kcmusb/usb.ids
@@ -432,6 +436,9 @@ share/locale/ia/LC_MESSAGES/kcmsamba.mo
 share/locale/ia/LC_MESSAGES/kcmusb.mo
 share/locale/ia/LC_MESSAGES/kcmview1394.mo
 share/locale/ia/LC_MESSAGES/kinfocenter.mo
+share/locale/id/LC_MESSAGES/kcm-about-distro.mo
+share/locale/id/LC_MESSAGES/kcm_energyinfo.mo
+share/locale/id/LC_MESSAGES/kcm_fileindexermonitor.mo
 share/locale/id/LC_MESSAGES/kcm_memory.mo
 share/locale/id/LC_MESSAGES/kcm_pci.mo
 share/locale/id/LC_MESSAGES/kcmdevinfo.mo

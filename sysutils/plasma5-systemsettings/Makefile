@@ -2,7 +2,6 @@
 
 PORTNAME=	systemsettings
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,7 +11,7 @@ USES=		cmake:outsource compiler:c++11-lib cpe gettext kde:5 qt:5 tar:xz
 USE_KDE=	activities activities-stats auth codecs completion config \
 		configwidgets coreaddons crash dbusaddons doctools ecm i18n \
 		iconthemes itemviews jobwidgets js kcmutils kdeclarative khtml \
-		kio kirigami2 package parts service sonnet textwidgets \
+		kio kirigami2 package parts plasma-workspace service sonnet textwidgets \
 		widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus gui network qml quick widgets xml \
 		buildtools_build qmake_build
