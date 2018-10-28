@@ -1,11 +1,10 @@
 --- rapid/plugin/x/CMakeLists.txt.orig	2017-03-18 07:45:14 UTC
 +++ rapid/plugin/x/CMakeLists.txt
-@@ -92,14 +92,14 @@ ELSE()
+@@ -92,13 +92,14 @@ ELSE()
      ${CMAKE_SOURCE_DIR}/include #temporary
      ${CMAKE_CURRENT_SOURCE_DIR}/include/mysql
      ${CMAKE_CURRENT_BINARY_DIR}/generated
 -    ${SSL_INCLUDE_DIRS}
--    ${ZLIB_INCLUDE_DIR}
 +    ${BOOST_INCLUDE_DIR}
    )
  
