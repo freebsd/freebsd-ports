@@ -21,7 +21,11 @@ BROKEN_SSL_REASON_openssl-devel=	field has incomplete type 'EVP_CIPHER_CTX' (aka
 
 CONFLICTS=	poco-[0-9]*
 
-USES=		gmake tar:bzip2 ssl
+USES=		${USES_${ARCH}} gmake tar:bzip2 ssl
+USES_powerpc=	compiler:c++11-lang
+USES_powerpcspe=	compiler:c++11-lang
+USES_powerpc64=	compiler:c++11-lang
+USES_sparc64=	compiler:c++11-lang
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --config=FreeBSD
 USE_LDCONFIG=	yes
