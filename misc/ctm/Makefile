@@ -19,7 +19,7 @@ LICENSE_PERMS_Beerware=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		tar:txz
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	bsdimp
+GH_ACCOUNT=	freebsd
 GH_TAGNAME=	ef289f3
 
 OPTIONS_DEFINE=	DOCS
