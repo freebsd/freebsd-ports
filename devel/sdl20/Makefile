@@ -16,8 +16,7 @@ GNU_CONFIGURE=	yes
 USES=		gmake iconv libtool localbase:ldflags pathfix pkgconfig
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS+=	--disable-video-opengles \
-			--disable-altivec \
+CONFIGURE_ARGS+=	--disable-altivec \
 			--disable-arts \
 			--enable-diskaudio \
 			--enable-dummyaudio \
@@ -58,7 +57,8 @@ OPTIONS_DEFINE=		ALSA ASM DLOPEN ESOUND JACK NAS OSS SAMPLERATE	\
 			SDL_CPUINFO SDL_EVENTS SDL_FILE SDL_HAPTIC	\
 			SDL_JOYSTICK SDL_LOADSO SDL_POWER SDL_RENDER	\
 			SDL_THREADS SDL_TIMERS SDL_VIDEO VIDEO_KMSDRM	\
-			VIDEO_OPENGL VIDEO_X11
+			VIDEO_OPENGL VIDEO_OPENGLES2 VIDEO_WAYLAND	\
+			VIDEO_X11
 OPTIONS_DEFAULT=	ASM DLOPEN OSS PTHREADS SDL_ATOMIC SDL_AUDIO	\
 			SDL_CPUINFO SDL_EVENTS SDL_FILE SDL_HAPTIC	\
 			SDL_JOYSTICK SDL_LOADSO SDL_POWER SDL_RENDER	\
@@ -87,9 +87,11 @@ SDL_RENDER_DESC=	Enable the SDL Render subsystem
 SDL_THREADS_DESC=	Enable the SDL Threads subsystem
 SDL_TIMERS_DESC=	Enable the SDL Timers subsystem
 SDL_VIDEO_DESC=		Enable the SDL Video subsystem
-VIDEO_KMSDRM_DESC=	KMSDRM rendering support
+VIDEO_KMSDRM_DESC=	KMSDRM display support
 VIDEO_OPENGL_DESC=	OpenGL rendering support
-VIDEO_X11_DESC=		X11 rendering support
+VIDEO_OPENGLES2_DESC=	OpenGL ES 2.x rendering support
+VIDEO_WAYLAND_DESC=	Wayland display support
+VIDEO_X11_DESC=		X11 display support
 
 ASM_CONFIGURE_ENABLE=		assembly
 DLOPEN_CONFIGURE_ENABLE=	sdl-dlopen
@@ -225,6 +227,36 @@ CONFIGURE_ARGS+=	--disable-video-x11 \
 			--disable-video-x11-scrnsaver \
 			--disable-video-x11-xshape \
 			--disable-video-x11-vm
+.endif
+
+.if ${PORT_OPTIONS:MVIDEO_OPENGLES2}
+.if !${PORT_OPTIONS:MSDL_VIDEO}
+IGNORE=	option VIDEO_OPENGLES2 requires SDL_VIDEO
+.endif
+CONFIGURE_ARGS+=	--enable-video-opengles \
+			--enable-video-opengles2
+USE_GL+=		egl glesv2
+.else
+CONFIGURE_ARGS+=	--disable-video-opengles \
+			--disable-video-opengles2
+.endif
+
+.if ${PORT_OPTIONS:MVIDEO_WAYLAND}
+.if !${PORT_OPTIONS:MSDL_VIDEO}
+IGNORE=	option VIDEO_WAYLAND requires SDL_VIDEO
+.endif
+.if !${PORT_OPTIONS:MVIDEO_OPENGLES2}
+IGNORE=	option VIDEO_WAYLAND requires VIDEO_OPENGLES2
+.endif
+CONFIGURE_ARGS+=	--enable-video-wayland \
+			--enable-wayland-shared
+BUILD_DEPENDS+=		wayland-protocols>0:graphics/wayland-protocols \
+			${LOCALBASE}/include/linux/input.h:multimedia/v4l_compat
+LIB_DEPENDS+=		libwayland-egl.so:graphics/wayland \
+			libxkbcommon.so:x11/libxkbcommon
+.else
+CONFIGURE_ARGS+=	--disable-video-wayland \
+			--disable-wayland-shared
 .endif
 
 .include <bsd.port.pre.mk>

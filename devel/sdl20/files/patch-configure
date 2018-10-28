@@ -1,0 +1,41 @@
+--- configure.orig	2017-10-23 19:27:45 UTC
++++ configure
+@@ -24567,9 +24567,9 @@ if test x$video_wayland = xyes; then
+     WAYLAND_CORE_PROTOCOL_SOURCE='$(gen)/wayland-protocol.c'
+     WAYLAND_CORE_PROTOCOL_HEADER='$(gen)/wayland-client-protocol.h'
+     WAYLAND_PROTOCOLS_UNSTABLE_SOURCES=`echo $WAYLAND_PROTOCOLS_UNSTABLE |\
+-        sed 's,[^ ]\+,\\$(gen)/&-protocol.c,g'`
++        sed -E 's,[^ ]+,\\$(gen)/&-protocol.c,g'`
+     WAYLAND_PROTOCOLS_UNSTABLE_HEADERS=`echo $WAYLAND_PROTOCOLS_UNSTABLE |\
+-        sed 's,[^ ]\+,\\$(gen)/&-client-protocol.h,g'`
++        sed -E 's,[^ ]+,\\$(gen)/&-client-protocol.h,g'`
+     GEN_SOURCES="$GEN_SOURCES $WAYLAND_CORE_PROTOCOL_SOURCE $WAYLAND_PROTOCOLS_UNSTABLE_SOURCES"
+     GEN_HEADERS="$GEN_HEADERS $WAYLAND_CORE_PROTOCOL_HEADER $WAYLAND_PROTOCOLS_UNSTABLE_HEADERS"
+ 
+@@ -24588,20 +24588,20 @@ $WAYLAND_CORE_PROTOCOL_HEADER: $WAYLAND_CORE_PROTOCOL_
+ 	\$(RUN_CMD_CC)\$(LIBTOOL) --tag=CC --mode=compile \$(CC) \$(CFLAGS) \$(EXTRA_CFLAGS) $DEPENDENCY_TRACKING_OPTIONS -c \$< -o \$@"
+ 
+     WAYLAND_PROTOCOLS_CLIENT_HEADER_UNSTABLE_DEPENDS=`for p in $WAYLAND_PROTOCOLS_UNSTABLE;\
+-        do echo ; echo \$p | sed\
+-        "s,^\\([a-z\\-]\\+\\)-unstable-\\(v[0-9]\+\\)\$,\\$(gen)/&-client-protocol.h: $WAYLAND_PROTOCOLS_DIR/unstable/\1/&.xml\\\\
++        do echo ; echo \$p | sed -E\
++        "s,^([a-z\\-]+)-unstable-(v[0-9]+)\$,\\$(gen)/&-client-protocol.h: $WAYLAND_PROTOCOLS_DIR/unstable/\1/&.xml\\\\
+ 	\\$(SHELL) \\$(auxdir)/mkinstalldirs \\$(gen)\\\\
+ 	\\$(RUN_CMD_GEN)\\$(WAYLAND_SCANNER) client-header \\$< \\$@," ; done`
+ 
+     WAYLAND_PROTOCOLS_CODE_UNSTABLE_DEPENDS=`for p in $WAYLAND_PROTOCOLS_UNSTABLE;\
+-        do echo ; echo \$p | sed\
+-        "s,^\\([a-z\\-]\\+\\)-unstable-\\(v[0-9]\+\\)\$,\\$(gen)/&-protocol.c: $WAYLAND_PROTOCOLS_DIR/unstable/\1/&.xml\\\\
++        do echo ; echo \$p | sed -E\
++        "s,^([a-z\\-]+)-unstable-(v[0-9]+)\$,\\$(gen)/&-protocol.c: $WAYLAND_PROTOCOLS_DIR/unstable/\1/&.xml\\\\
+ 	\\$(SHELL) \\$(auxdir)/mkinstalldirs \\$(gen)\\\\
+ 	\\$(RUN_CMD_GEN)\\$(WAYLAND_SCANNER) code \\$< \\$@," ; done`
+ 
+     WAYLAND_PROTOCOLS_OBJECTS_UNSTABLE=`for p in $WAYLAND_PROTOCOLS_UNSTABLE;\
+-        do echo ; echo \$p | sed\
+-        "s,^\\([a-z\\-]\\+\\)-unstable-\\(v[0-9]\+\\)\$,\\\$(objects)/&-protocol.lo: \\$(gen)/&-protocol.c \\$(gen)/&-client-protocol.h\\\\
++        do echo ; echo \$p | sed -E\
++        "s,^([a-z\\-]+)-unstable-(v[0-9]+)\$,\\\$(objects)/&-protocol.lo: \\$(gen)/&-protocol.c \\$(gen)/&-client-protocol.h\\\\
+ 	\\$(RUN_CMD_CC)\\$(LIBTOOL) --tag=CC --mode=compile \\$(CC) \\$(CFLAGS) \\$(EXTRA_CFLAGS) $DEPENDENCY_TRACKING_OPTIONS -c \\$< -o \\$@," ; done`
+ 
+     WAYLAND_PROTOCOLS_DEPENDS="
