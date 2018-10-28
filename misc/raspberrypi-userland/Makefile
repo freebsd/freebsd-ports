@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 
 ONLY_FOR_ARCHS=	armv6 armv7
 
-CONFLICTS_INSTALL=	libglesv2 libEGL
+CONFLICTS_INSTALL=	mesa-libs
 
 USES=		cmake:outsource pkgconfig shebangfix
 
