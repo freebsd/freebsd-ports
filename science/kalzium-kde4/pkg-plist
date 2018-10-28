@@ -16,9 +16,6 @@ lib/kde4/nuclearCalculator.so
 lib/kde4/plasma_applet_didyouknow.so
 lib/kde4/plasma_applet_molmassCalculator.so
 lib/kde4/plasma_engine_kalzium.so
-lib/libcompoundviewer.so
-lib/libcompoundviewer.so.4
-lib/libcompoundviewer.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/libscience.so
 lib/libscience.so.4
 lib/libscience.so.%%KDE4_GENERIC_LIB_VERSION%%
