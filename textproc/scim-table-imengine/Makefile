@@ -15,7 +15,7 @@ BUILD_DEPENDS=	scim:textproc/scim
 RUN_DEPENDS=	scim:textproc/scim
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake libtool:keepla pkgconfig
+USES=		compiler:c++11-lang gettext gmake libtool:keepla pkgconfig
 
 CONFIGURE_ARGS=	--disable-skim-support
 CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__
