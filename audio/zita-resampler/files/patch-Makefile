@@ -21,16 +21,17 @@
  
  MAJVERS = 1
  MINVERS = 6.2
-@@ -34,7 +33,7 @@ DISTDIR = zita-resampler-$(VERSION)
+@@ -33,8 +32,7 @@ DISTDIR = zita-resampler-$(VERSION)
+ 
  CPPFLAGS += -I. -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
  CXXFLAGS += -Wall -fPIC -O2 -ffast-math
- CXXFLAGS += -march=native
+-CXXFLAGS += -march=native
 -LDFLAGS += 
 +LDFLAGS +=
  LDLIBS +=
  
  
-@@ -46,6 +45,7 @@ ZITA-RESAMPLER_O = resampler.o vresample
+@@ -46,6 +44,7 @@ ZITA-RESAMPLER_O = resampler.o vresampler.o resampler-
  ZITA-RESAMPLER_H = zita-resampler/resampler.h zita-resampler/resampler-table.h \
  	zita-resampler/vresampler.h zita-resampler/cresampler.h
  
@@ -38,7 +39,7 @@
  
  $(ZITA-RESAMPLER_MIN): $(ZITA-RESAMPLER_O)
  	$(CXX) -shared $(LDFLAGS) -Wl,-soname,$(ZITA-RESAMPLER_MAJ) -o $(ZITA-RESAMPLER_MIN) $(ZITA-RESAMPLER_O) $(ZITA-RESAMPLER_DEP)
-@@ -56,9 +56,10 @@ $(ZITA-RESAMPLER_O):	$(ZITA-RESAMPLER_H)
+@@ -56,9 +55,10 @@ $(ZITA-RESAMPLER_O):	$(ZITA-RESAMPLER_H)
  install:	$(ZITA-RESAMPLER_MIN)
  	install -d $(DESTDIR)$(INCDIR)/zita-resampler
  	install -d $(DESTDIR)$(LIBDIR)
