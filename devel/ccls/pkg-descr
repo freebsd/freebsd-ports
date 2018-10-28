@@ -1,0 +1,18 @@
+Ccls is a C/C++/Objective-C language server with the following
+features:
+
+- Code completion (with both signature help and snippets)
+- Definition/references, and other cross references
+- Cross reference extensions: $ccls/call $ccls/inheritance $ccls/member
+  $ccls/vars ...
+- Formatting
+- Hierarchies: call (caller/callee) hierarchy, inheritance
+  (base/derived) hierarchy, member hierarchy
+- Symbol rename
+- Document symbols and approximate search of workspace symbol
+- Hover information
+- Diagnostics and code actions (clang FixIts)
+- Semantic highlighting and preprocessor skipped regions
+- Semantic navigation: $ccls/navigate
+
+WWW: https://github.com/MaskRay/ccls
