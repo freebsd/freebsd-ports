@@ -1,5 +1,5 @@
---- src/osdep/unix/Makefile.orig	2013-06-21 23:29:17.000000000 +0200
-+++ src/osdep/unix/Makefile	2014-12-01 22:35:23.000000000 +0100
+--- src/osdep/unix/Makefile.orig	2013-06-21 21:29:17 UTC
++++ src/osdep/unix/Makefile
 @@ -30,9 +30,9 @@
  
  EXTRAAUTHENTICATORS=
@@ -13,7 +13,7 @@
  
  
  # The optimization level here for GCC ports is set here for a reason.  It's
-@@ -56,13 +56,13 @@
+@@ -56,13 +56,13 @@ GCC4CFLAGS= $(GCCCFLAGS) -Wno-pointer-si
  
  # Extended flags needed for SSL.  You may need to modify.
  
@@ -30,7 +30,7 @@
  
  # Older versions of MIT Kerberos also have a libcrypto.  If so, you may need
  # to use this instead
-@@ -89,7 +89,7 @@
+@@ -89,7 +89,7 @@ AFSLDFLAGS=-L$(AFSLIB)/afs -L$(AFSLIB) -
  # AFSLDFLAGS may also need -L/usr/ucblib -lucb
  DCECFLAGS= -DDCE_MINIMAL -DPASSWD_OVERRIDE=\"/opt/pop3/passwd/passwd\"
  DCELDFLAGS= -ldce
@@ -39,7 +39,7 @@
  
  
  # Build parameters normally set by the individual port
-@@ -132,7 +132,7 @@
+@@ -132,7 +132,7 @@ EMPTYPROTO=unixproto
  # Commands possibly overriden by the individual port
  
  ARRC=ar rc
@@ -48,7 +48,7 @@
  LN=ln -s
  RANLIB=ranlib
  
-@@ -156,7 +156,7 @@
+@@ -156,7 +156,7 @@ BINARIES=osdep.o mail.o misc.o newsrc.o 
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   unix.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o mix.o
@@ -57,7 +57,7 @@
  
  CAT=cat
  MAKE=make
-@@ -173,6 +173,10 @@
+@@ -173,6 +173,10 @@ BUILD=$(MAKE) build EXTRACFLAGS='$(EXTRA
   PASSWDTYPE=$(PASSWDTYPE) SSLTYPE=$(SSLTYPE) IP=$(IP)
  
  
@@ -68,7 +68,7 @@
  # Here if no make argument established
  
  missing: osdep.h
-@@ -261,13 +265,14 @@
+@@ -261,13 +265,14 @@ bsd:	# BSD UNIX
  	 BASECFLAGS="-g -Dconst="
  
  bsf:	# FreeBSD
@@ -85,7 +85,7 @@
  
  bsi:	# BSD/i386
  	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
-@@ -863,23 +868,31 @@
+@@ -863,23 +868,31 @@ vu2:	# VAX Ultrix 2.3, etc.
  
  # Build it!
  
@@ -120,7 +120,7 @@
  
  
  # Dependencies
-@@ -914,7 +927,7 @@
+@@ -914,7 +927,7 @@ utf8aux.o: mail.h misc.h osdep.h utf8.h
  
  # OS-dependent
  
@@ -129,7 +129,7 @@
  	osdep.h env_unix.h tcp_unix.h \
  	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c ip_unix.c\
  	auths.c crexcl.c flockcyg.c flocklnx.c flocksim.c fsync.c \
-@@ -928,12 +941,19 @@
+@@ -928,12 +941,19 @@ osdep.o:mail.h misc.h env.h fs.h ftl.h n
  	write.c sslstdio.c \
  	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
  	OSCFLAGS
