@@ -1,0 +1,9 @@
+synthv1 is an old-school all-digital 4-oscillator subtractive polyphonic
+synthesizer with stereo fx.
+
+Features:
+* a pure stand-alone JACK client with JACK-session, NSM (Non Session management)
+  and both JACK MIDI and ALSA MIDI input support;
+* a LV2 instrument plug-in.
+
+WWW: https://synthv1.sourceforge.io/
