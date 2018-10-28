@@ -17,7 +17,7 @@ PLUGIN_DESC=	Floodprotect
 
 # Bug 219281: the port fails to build in C++14 mode (the default in GCC 6),
 # switch back to the old default GCC used before.
-USE_CXXSTD=	gnu++03
+USE_CXXSTD=	gnu++98
 
 .include "../verlihub-plugins/Makefile.plugins"
 .include <bsd.port.mk>

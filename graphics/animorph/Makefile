@@ -12,16 +12,12 @@ COMMENT=	Morphing engine for MakeHuman
 
 LICENSE=	LGPL21
 
-BROKEN_mips=		fails to compile: unrecognized command line option "-std=gnu++03"
-BROKEN_mips64=		fails to compile: unrecognized command line option "-std=gnu++03"
-BROKEN_powerpc64=	fails to compile: unrecognized command line option "-std=gnu++03"
-
 GNU_CONFIGURE=	yes
 USES=		pkgconfig gmake libtool
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 USE_GCC=	any # otherwise graphics/makehuman won't link
-USE_CXXSTD=	gnu++03  # The port is not compatible with C++11 and later.
+USE_CXXSTD=	gnu++98  # The port is not compatible with C++11 and later.
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

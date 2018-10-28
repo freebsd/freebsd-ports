@@ -24,7 +24,7 @@ ALL_TARGET=
 
 # The port does not build with C++11/C++14, so explicitly use an older
 # standard.
-USE_CXXSTD=	gnu++03
+USE_CXXSTD=	gnu++98
 
 INSTALL_ARGS=	--bindir=${STAGEDIR}${PREFIX}/bin\
 		--libdir=${STAGEDIR}${PREFIX}/lib/cint\

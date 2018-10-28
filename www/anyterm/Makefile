@@ -31,7 +31,7 @@ PLIST_FILES=	man/man1/anytermd.1.gz \
 
 # Force the use of an older C++ standard; anyterm 1.1.29 is not compatible with
 # C++11.
-USE_CXXSTD=	gnu++03
+USE_CXXSTD=	gnu++98
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/private/etc/apache2|${FILESDIR}|' \
