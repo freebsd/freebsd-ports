@@ -16,7 +16,7 @@ CONFLICTS?=	${PORTNAME}-qt5-[0-9]*
 
 USES=		qmake pathfix pkgconfig libtool
 .if defined(QXMPP_SLAVE)
-USES+=		qt:5
+USES+=		compiler:c++11-lang qt:5
 USE_QT=		core gui network xml buildtools_build
 PLIST_SUB=	QDNS="@comment "
 .else
