@@ -15,10 +15,6 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE-GPL
 LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE-LGPL
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-X11
 
-BROKEN_mips=		fails to compile: usertable.cpp:440: \#pragma GCC diagnostic not allowed inside functions
-BROKEN_mips64=		fails to compile: usertable.cpp:440: \#pragma GCC diagnostic not allowed inside functions
-BROKEN_powerpc64=	fails to compile: usertable.cpp:440: \#pragma GCC diagnostic not allowed inside functions
-
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USE_GITHUB=	indeed
@@ -31,10 +27,16 @@ MAKE_ARGS=	PREFIX="${PREFIX}" USER=${UID}	\
 		MANPATH=${MANPREFIX}/man
 USE_RC_SUBR=	${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	${REINPLACE_CMD} -e 's,/etc/incron,${PREFIX}/etc/incron,'	\
 		${WRKSRC}/*conf* ${WRKSRC}/Makefile ${WRKSRC}/*.[158h]	\
 		${WRKSRC}/*.cpp
 	${REINPLACE_CMD} -e '/INITDIR/d' ${WRKSRC}/Makefile
+.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+	${REINPLACE_CMD} -e '/pragma/d' ${WRKSRC}/inotify-cxx.cpp \
+		${WRKSRC}/usertable.cpp
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
