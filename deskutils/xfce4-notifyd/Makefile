@@ -21,10 +21,11 @@ LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libdbus-1.so:devel/dbus
 
 USES=		gettext-tools gmake libtool pkgconfig tar:bzip2 xfce:gtk3
-GNU_CONFIGURE=	yes
 USE_GNOME=	gtk30 glib20 cairo intltool
 USE_XFCE=	libutil panel
 USE_XORG=	ice sm x11
+
+GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
@@ -32,5 +33,8 @@ OPTIONS_DEFINE=	NLS
 NLS_USES=	gettext-runtime
 NLS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure
 OPTIONS_SUB=	yes
+
+# requires libxfce4panel-2.0 >= 4.13.0 (development version)
+PORTSCOUT=	skipv:0.4.3
 
 .include <bsd.port.mk>
