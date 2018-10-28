@@ -13,8 +13,6 @@ COMMENT=	Plasma-effect screensaver kernel module
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_powerpc64=	fails to compile: pcpu.h: size of array '__assert_0' is negative
-
 PLIST_FILES=	${KMODDIR}/plasma_saver.ko
 
 USES=		kmod uidfix
