@@ -1,21 +1,18 @@
 --- configure.orig	2002-10-09 16:29:26 UTC
 +++ configure
-@@ -128,16 +128,16 @@ case "$UNAME_S" in
-       CCDBG="-DNDEBUG"
+@@ -129,15 +129,15 @@ case "$UNAME_S" in
        LDDBG=""
      fi
--    CC=gcc
-+    CC=cc
-     CFLAGS="$CCDBG -D_UNIX -D_BSD=$OSVER -Wall"
--    CXX=g++
-+    CXX=c++
+     CC=gcc
+-    CFLAGS="$CCDBG -D_UNIX -D_BSD=$OSVER -Wall"
++    CFLAGS="$CCDBG -D_UNIX -D_BSD=$OSVER -Wall $CFLAGS"
+     CXX=g++
      CXXFLAGS=${CFLAGS}
      AR=ar
      ARFLAGS="-rc"
--    LD=gcc
+     LD=gcc
 -    LDFLAGS="$LDDBG"
-+    LD=cc
-+    LDFLAGS="${LDFLAGS}"
++    LDFLAGS="$LDDBG $LDFLAGS"
      SYSLIBS=""
 -    LIBDB_LIB=""
 +    LIBDB_LIB="${DB_LIBNAME}"
