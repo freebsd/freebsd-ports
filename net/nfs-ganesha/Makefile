@@ -15,7 +15,7 @@ RUN_DEPENDS=	nfs-ganesha-kmod>0:net/nfs-ganesha-kmod \
 		${PYTHON_PKGNAMEPREFIX}gobject>0:devel/py-gobject@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR}
 
-USES=		cmake bison pkgconfig python:2.7
+USES=		cmake compiler:c11 bison pkgconfig python:2.7
 USE_RC_SUBR=	ganesha
 
 USE_GITHUB=	yes
