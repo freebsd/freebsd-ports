@@ -1,9 +1,9 @@
-TIMESTAMP = 1525651131
-SHA256 (davidjpeacock-kurly-v1.2.1_GH0.tar.gz) = c6e26782e06d99eb3c36f8f4461ce57cba2c451db23f408ad1745e58620a761d
-SIZE (davidjpeacock-kurly-v1.2.1_GH0.tar.gz) = 20600
+TIMESTAMP = 1538391731
 SHA256 (aki237-nscjar-e2df936_GH0.tar.gz) = 3933d7369d8cbaf040e4ec025295776b354821e6427c5a30b145186a72e9d929
 SIZE (aki237-nscjar-e2df936_GH0.tar.gz) = 3632
 SHA256 (alsm-ioprogress-063c372_GH0.tar.gz) = 6aab899894d5aa787bc5631423a1e3e3aa7de47f5968eadeaec3eb526123a340
 SIZE (alsm-ioprogress-063c372_GH0.tar.gz) = 4225
-SHA256 (davidjpeacock-cli-8ba6f23_GH0.tar.gz) = 7ce68d035a3304dcb5650b6b9566e6ba75a50e8eef2c719eb626341dba236dde
-SIZE (davidjpeacock-cli-8ba6f23_GH0.tar.gz) = 56146
+SHA256 (urfave-cli-8e01ec4_GH0.tar.gz) = d8654573173cef6b639f00884c146bdb7f9130817e0b2d3f44d86d701428a63d
+SIZE (urfave-cli-8e01ec4_GH0.tar.gz) = 64657
+SHA256 (kurly-kurly-369c1998dfbfca7043f8c995c8ef8714496530ea_GL0.tar.gz) = 6c7adc297812147145a0b5da8ae790c17ed7370df7180cc795e4543f6475b696
+SIZE (kurly-kurly-369c1998dfbfca7043f8c995c8ef8714496530ea_GL0.tar.gz) = 20686
