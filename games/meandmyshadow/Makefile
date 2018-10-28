@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	meandmyshadow
-PORTVERSION=	0.4.1
-PORTREVISION=	4
+PORTVERSION=	0.5
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -16,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		cmake libarchive ssl
-USE_SDL=	sdl ttf image mixer image gfx
-USE_GL=		gl glu
+USES=		cmake dos2unix libarchive lua:53
+DOS2UNIX_FILES=	CMakeLists.txt src/Functions.cpp
+USE_SDL=	sdl2 image2 ttf2 mixer2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
