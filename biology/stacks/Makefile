@@ -18,4 +18,10 @@ GNU_CONFIGURE=	yes
 
 LDFLAGS+=	-lpthread
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+USE_GCC=        yes
+.endif
+
+.include <bsd.port.post.mk>
