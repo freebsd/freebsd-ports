@@ -58,8 +58,6 @@ MED_CMAKE_BOOL=		ENABLE_MED
 MED_LIB_DEPENDS=	libmed.so:french/med
 OCC_CMAKE_BOOL=		ENABLE_OCC
 OCC_CMAKE_ON=		-DOCC_INC=${LOCALBASE}/include/OpenCASCADE
-OCC_CONFLICTS=		gmsh-[23].*
-OCC_CONFLICTS_OFF=	gmsh-occ-[23].*
 OCC_LIB_DEPENDS=	libopenblas.so:math/openblas libTKernel.so:cad/opencascade
 OCC_USES=		gnome
 OCC_USE=		gnome=cairo
