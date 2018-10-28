@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yices
-DISTVERSION=	2.6.0
+DISTVERSION=	2.6.1
 CATEGORIES=	math
 MASTER_SITES=	http://yices.csl.sri.com/releases/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
