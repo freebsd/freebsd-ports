@@ -3,8 +3,8 @@
 
 PORTNAME=	protobuf
 PORTVERSION=	3.5.2
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -28,8 +28,8 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_ARGS=	${MAKE_ARGS} ${_MAKE_JOBS}
 TEST_TARGET=	check
-USE_LDCONFIG=	yes
 USES=		autoreconf compiler:c++11-lang gmake libtool localbase pathfix pkgconfig
+USE_LDCONFIG=	yes
 
 GH_ACCOUNT=	google
 USE_GITHUB=	yes
