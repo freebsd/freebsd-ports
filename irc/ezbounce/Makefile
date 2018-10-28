@@ -28,7 +28,7 @@ USE_GCC=	any
 
 # ezbounce 1.99.15 isn't compatible with C++11 and later, which some compilers
 # such as GCC 6 default to.
-USE_CXXSTD=	gnu++03
+USE_CXXSTD=	gnu++98
 
 SUB_FILES=	pkg-message
 
