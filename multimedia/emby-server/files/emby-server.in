@@ -9,60 +9,66 @@
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# %%RC_NAME%%_enable:	Set to YES to enable the %%PORTNAME%% service.
-#			Default: NO
-# %%RC_NAME%%_user:	The user account used to run the %%PORTNAME%% daemon.
+# %%RC_NAME%%_enable: Set to yes to enable the %%PORTNAME%% service.
+#			Default: no
+# %%RC_NAME%%_user: The user account used to run the %%PORTNAME%% daemon.
 #			This is optional, however do not specifically set this to an
 #			empty string as this will cause the daemon to run as root.
-#			Default: %%USER%% (or mediabrowser with UID 989 if it exists)
-# %%RC_NAME%%_group:	The group account used to run the %%PORTNAME%% daemon.
+#			Default: %%USER%%
+# %%RC_NAME%%_group: The group account used to run the %%PORTNAME%% daemon.
 #			This is optional, however do not specifically set this to an
 #			empty string as this will cause the daemon to run with group wheel.
-#			Default: %%GROUP%% (or mediabrowser with GID 989 if it exists)
-# %%RC_NAME%%_data_dir:	Directory where %%PORTNAME%% configuration
+#			Default: %%GROUP%%
+# %%RC_NAME%%_data_dir: Directory where %%PORTNAME%% configuration
 #			data is stored.
-#			Default: /var/db/%%PORTNAME%% (or /var/db/mediabrowser if it exists)
+#			Default: /var/db/%%PORTNAME%%
+# %%RC_NAME%%_ffmpeg: Path of the ffmpeg binary.
+#			Default: %%PEFIX%%/lib/emby-server/bin/ffmpeg
+# %%RC_NAME%%_ffprobe: Path of the ffprobe binary.
+#			Default: %%PEFIX%%/lib/emby-server/bin/ffprobe
 
 . /etc/rc.subr
 name=%%RC_NAME%%
 rcvar=${name}_enable
-load_rc_config $name
+load_rc_config ${name}
 
-if [ "$(id -u mediabrowser 2>&1)" = "989" ] && ! [ -n "${emby_server_user}" ]; then
-	%%RC_NAME%%_user=mediabrowser;
-	%%RC_NAME%%_group=mediabrowser;
-fi
+[ -z "${emby_server_user}" ] && %%RC_NAME%%_user=%%USER%%
+[ -z "${emby_server_group}" ] && %%RC_NAME%%_group=%%GROUP%%
+[ -z "${emby_server_data_dir}" ] && %%RC_NAME%%_data_dir=/var/db/%%PORTNAME%%
+[ -z "${emby_server_ffmpeg}" ] && %%RC_NAME%%_ffmpeg=%%PREFIX%%/lib/emby-server/bin/ffmpeg
+[ -z "${emby_server_ffprobe}" ] && %%RC_NAME%%_ffprobe=%%PREFIX%%/lib/emby-server/bin/ffprobe
 
-if [ -d "/var/db/mediabrowser" ] && ! [ -n "${emby_server_data_dir}" ]; then
-	%%RC_NAME%%_data_dir="/var/db/mediabrowser";
-fi
-
-: ${%%RC_NAME%%_enable:="NO"}
+: ${%%RC_NAME%%_enable:="no"}
 : ${%%RC_NAME%%_user:="%%USER%%"}
 : ${%%RC_NAME%%_group:="%%GROUP%%"}
 : ${%%RC_NAME%%_data_dir:="/var/db/%%PORTNAME%%"}
+: ${%%RC_NAME%%_ffmpeg:="%%PREFIX%%/lib/emby-server/bin/ffmpeg"}
+: ${%%RC_NAME%%_ffprobe:="%%PREFIX%%/lib/emby-server/bin/ffprobe"}
+
+export LD_LIBRARY_PATH=%%PREFIX%%/lib/emby-server/lib
 
 pidfile="/var/run/%%PORTNAME%%.pid"
-command="/usr/sbin/daemon"
 procname="%%LOCALBASE%%/bin/mono"
-command_args="-f -p ${pidfile} ${procname} %%PREFIX%%/lib/emby-server/MediaBrowser.Server.Mono.exe -os freebsd -ffmpeg %%LOCALBASE%%/bin/ffmpeg -ffprobe %%LOCALBASE%%/bin/ffprobe -programdata ${%%RC_NAME%%_data_dir}"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} ${procname} %%PREFIX%%/lib/emby-server/system/EmbyServer.exe \
+	-os freebsd \
+	-ffmpeg ${%%RC_NAME%%_ffmpeg} \
+	-ffprobe ${%%RC_NAME%%_ffprobe} \
+	-programdata ${%%RC_NAME%%_data_dir} \
+	-updatepackage emby-server-freebsd_{version}_amd64.txz"
 
 start_precmd=%%RC_NAME%%_precmd
 %%RC_NAME%%_precmd()
 {
-	if [ ! -e "${pidfile}" ]; then
-		install -g ${%%RC_NAME%%_group} -o ${%%RC_NAME%%_user} -- /dev/null "${pidfile}";
-	fi
-
-	if [ ! -d "${%%RC_NAME%%_data_dir}" ]; then
-		install -d -g ${%%RC_NAME%%_group} -o ${%%RC_NAME%%_user} -- "${%%RC_NAME%%_data_dir}";
-	fi
+	[ -f ${pidfile} ] || install -g ${%%RC_NAME%%_group} -o ${%%RC_NAME%%_user} -- /dev/null ${pidfile}
+	[ -d ${%%RC_NAME%%_data_dir} ] || install -d -g ${%%RC_NAME%%_group} -o ${%%RC_NAME%%_user} -- ${%%RC_NAME%%_data_dir}
 }
 
 stop_postcmd=%%RC_NAME%%_postcmd
 %%RC_NAME%%_postcmd()
 {
-	rm -f -- "${pidfile}"
+	rm -f ${pidfile}
 }
 
 run_rc_command "$1"
+

@@ -1,3 +1,3 @@
-TIMESTAMP = 1533359743
-SHA256 (MediaBrowser-Emby-3.5.2.0_GH0.tar.gz) = c1e5c44d63fda7d1cc120e48ac200e88c1d3b9f349bb868409a69019c656cfa6
-SIZE (MediaBrowser-Emby-3.5.2.0_GH0.tar.gz) = 178761469
+TIMESTAMP = 1537705721
+SHA256 (emby-server-freebsd_3.5.3.0_amd64.tar.xz) = 522497d0539f1ad5176ab3a3406d6d9dfaa9e292bdee5ccf17286b55a487df5d
+SIZE (emby-server-freebsd_3.5.3.0_amd64.tar.xz) = 14279500
