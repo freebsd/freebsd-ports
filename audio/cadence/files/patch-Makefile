@@ -1,0 +1,42 @@
+--- Makefile.orig	2018-10-28 19:12:08 UTC
++++ Makefile
+@@ -12,11 +12,7 @@ PYUIC ?= pyuic5
+ PYRCC ?= pyrcc5
+ 
+ # Detect X11 rules dir
+-ifeq "$(wildcard /etc/X11/Xsession.d/ )" ""
+-	X11_RC_DIR = $(DESTDIR)/etc/X11/xinit/xinitrc.d/
+-else
+-	X11_RC_DIR = $(DESTDIR)/etc/X11/Xsession.d/
+-endif
++	X11_RC_DIR = $(DESTDIR)$(PREFIX)/etc/X11/xinit/xinitrc.d/
+ 
+ # -----------------------------------------------------------------------------------------------------------------------------------------
+ 
+@@ -85,7 +81,7 @@ debug:
+ 
+ install:
+ 	# Create directories
+-	install -d $(DESTDIR)/etc/xdg/autostart/
++	install -d $(DESTDIR)$(PREFIX)/etc/xdg/autostart/
+ 	install -d $(DESTDIR)$(PREFIX)/bin/
+ 	install -d $(DESTDIR)$(PREFIX)/share/applications/
+ 	install -d $(DESTDIR)$(PREFIX)/share/icons/hicolor/16x16/apps/
+@@ -120,7 +116,7 @@ install:
+ 		$(DESTDIR)$(PREFIX)/bin/
+ 
+ 	# Install desktop files
+-	install -m 644 data/autostart/*.desktop $(DESTDIR)/etc/xdg/autostart/
++	install -m 644 data/autostart/*.desktop $(DESTDIR)$(PREFIX)/etc/xdg/autostart/
+ 	install -m 644 data/*.desktop           $(DESTDIR)$(PREFIX)/share/applications/
+ 
+ 	# Install icons, 16x16
+@@ -171,7 +167,7 @@ install:
+ 	cp -r data/templates/* $(DESTDIR)$(PREFIX)/share/cadence/templates/
+ 
+ 	# Adjust PREFIX value in script files
+-	sed -i "s?X-PREFIX-X?$(PREFIX)?" \
++	sed -i "" "s?X-PREFIX-X?$(PREFIX)?" \
+ 		$(DESTDIR)$(PREFIX)/bin/cadence \
+ 		$(DESTDIR)$(PREFIX)/bin/cadence-aloop-daemon \
+ 		$(DESTDIR)$(PREFIX)/bin/cadence-jacksettings \

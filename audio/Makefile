@@ -64,6 +64,7 @@
     SUBDIR += boodler
     SUBDIR += bristol
     SUBDIR += bs2b-lv2
+    SUBDIR += cadence
     SUBDIR += calf-lv2
     SUBDIR += cam
     SUBDIR += cantata

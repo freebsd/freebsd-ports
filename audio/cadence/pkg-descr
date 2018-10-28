@@ -1,0 +1,17 @@
+Cadence is a set of tools useful for audio production.
+
+Cadence itself is also an application (the main one), which this page will
+document.
+There are other applications that are part of the Cadence suite, they are
+usually named as the "Cadence tools".
+
+They are:
+* Catarina
+* Catia
+* Claudia
+
+Some of these also have sub-tools, such as Cadence-JackMeter and
+Claudia-Launcher. Each of these sub-tools is properly documented in its
+respective page.
+
+WWW: https://kxstudio.linuxaudio.org/Applications:Cadence
