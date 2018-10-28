@@ -46,7 +46,11 @@ VULKAN_DRIVERS=		#
 .if ${ARCH} == amd64 || ${ARCH} == i386 \
  || ${ARCH} == powerpc || ${ARCH} == powerpc64
 DRI_DRIVERS+=		RADEON R200
-GALLIUM_DRIVERS+=	R300 R600
+GALLIUM_DRIVERS+=	R600
+. if "${MESA_LLVM_VER}" != "" && (${ARCH} == amd64 || ${ARCH} == i386)
+# https://cgit.freedesktop.org/mesa/mesa/commit/?id=58952675f6d4
+GALLIUM_DRIVERS+=	R300
+. endif
 . if "${MESA_LLVM_VER}" != ""	# until PPC gets LLVM in base
 GALLIUM_DRIVERS+=	RADEONSI
 VULKAN_DRIVERS+=	RADEON
