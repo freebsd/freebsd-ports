@@ -1,11 +1,20 @@
---- tests/Makefile.orig	2018-10-08 19:10:07 UTC
+--- tests/Makefile.orig	2018-10-28 03:25:47 UTC
 +++ tests/Makefile
 @@ -9,7 +9,7 @@ include ../Link_flags
  SOBJS= COMMON/shared_utils.o COMMON/ioandtest.o
  COMMON_INCLUDE = -I./COMMON -I../include
  override INCLUDE += $(COMMON_INCLUDE)
--LIBDIRS += -L../lib
-+LIBDIRS += ../lib/libprimme.so
+-LIBS := ../lib/libprimme.a $(LIBS)
++LIBS := ../lib/libprimme.so $(LIBS)
  
  USE_NATIVE    ?= yes
  USE_PETSC     ?= $(if $(findstring undefined,$(origin PETSC_DIR)),no,yes)
+@@ -89,7 +89,7 @@ all: drivers
+ 
+ drivers: primme_double primme_doublecomplex primmesvds_double primmesvds_doublecomplex
+ 
+-primme_double primme_doublecomplex primmesvds_double primmesvds_doublecomplex: ../lib/libprimme.a
++primme_double primme_doublecomplex primmesvds_double primmesvds_doublecomplex: ../lib/libprimme.so
+ 
+ ifeq ($(USE_MPI), yes)
+   MPIRUN ?= mpirun -np 4
