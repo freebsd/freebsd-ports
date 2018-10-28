@@ -28,6 +28,8 @@ USE_QT=		buildtools_build linguisttools_build qmake_build \
 CMAKE_ON=	USE_QT5
 .endif
 
+USES+=		compiler:c++11-lang
+
 MASTERDIR=	${.CURDIR}/../transmission-cli
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
