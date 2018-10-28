@@ -6,6 +6,7 @@ PORTVERSION=	0.6.3
 PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	SF/worldforge/${PORTNAME}-C%2B%2B%20%28protocol%20lib%29/${PORTVERSION}
+PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-C++-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	oliver@FreeBSD.org
@@ -13,12 +14,17 @@ COMMENT=	C++ reference implementation of the Atlas protocol
 
 OPTIONS_DEFINE=	DOCS
 
-PKGNAMESUFFIX=	-devel
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix compiler:c++11-lib tar:bzip2
 USE_LDCONFIG=	YES
 MAKE_ARGS=	docdir=${DOCSDIR}
 CONFIGURE_ARGS+=--program-transform-name=
+CXXFLAGS_powerpc64=	-Wno-error=deprecated
+CXXFLAGS_powerpc=	-Wno-error=deprecated
+CXXFLAGS_powerpcspe=	-Wno-error=deprecated
+CXXFLAGS_mips=	-Wno-error=deprecated
+CXXFLAGS_mips64=	-Wno-error=deprecated
+CXXFLAGS_sparc64=	-Wno-error=deprecated
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^static const bool debug_flag = false;$$||' \
