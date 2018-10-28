@@ -1,0 +1,11 @@
+--- libmdnsd/CMakeLists.txt.orig	2018-10-19 15:18:01 UTC
++++ libmdnsd/CMakeLists.txt
+@@ -10,7 +10,7 @@ mark_as_advanced(MDNSD_COMPILE_AS_CXX)
+ 
+ if(NOT MDNSD_COMPILE_AS_CXX AND (CMAKE_COMPILER_IS_GNUCC OR "x${CMAKE_C_COMPILER_ID}" STREQUAL "xClang"))
+   add_definitions(-std=c99 -pipe
+-                  -Wall -Wextra -Werror -Wpedantic
++                  -Wall -Wextra
+                   -Wno-unused-parameter # some methods may require unused arguments to cast to a method pointer
+                   -Wmissing-prototypes -Wstrict-prototypes -Wredundant-decls
+                   -Wformat -Wformat-security -Wformat-nonliteral
