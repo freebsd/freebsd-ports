@@ -40,4 +40,3 @@ post-patch:
 		${WRKSRC}/man/meson.build
 
 .include <bsd.port.mk>
-

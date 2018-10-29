@@ -30,4 +30,3 @@ USE_XORG=	ice sm x11 xext xtst
 USE_LDCONFIG=	${QT_QMLDIR}/org/kde/kdeconnect
 
 .include <bsd.port.mk>
-

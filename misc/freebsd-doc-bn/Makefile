@@ -17,4 +17,3 @@ DOCLANG=	bn_BD.UTF-8
 .if ${PORT_OPTIONS:MPDF} || ${PORT_OPTIONS:MPS}
 BUILD_DEPENDS+=	${LOCALBASE}/share/fonts/Lohit/Lohit-Bengali.ttf:x11-fonts/lohit
 .endif
-

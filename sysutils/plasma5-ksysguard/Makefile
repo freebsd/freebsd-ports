@@ -25,4 +25,3 @@ INOTIFY_DESC=		Filesystem alteration notifications using inotify
 INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 .include <bsd.port.mk>
-

@@ -34,4 +34,3 @@ post-install:
 	${REINPLACE_CMD} -i "" -e "s#%%DATADIR%%#${DATADIR}#"  ${STAGEDIR}/${PREFIX}/etc/xdg/kcm-about-distrorc
 
 .include <bsd.port.mk>
-

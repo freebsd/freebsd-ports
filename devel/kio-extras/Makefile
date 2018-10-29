@@ -62,4 +62,3 @@ WEBENGINE_USES=	qt:5
 WEBENGINE_USE=		QT=webengine
 
 .include <bsd.port.mk>
-

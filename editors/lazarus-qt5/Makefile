@@ -13,4 +13,3 @@ LCL_PLATFORM=	qt5
 MASTERDIR=	${.CURDIR}/../../editors/lazarus
 
 .include "${MASTERDIR}/Makefile"
-
