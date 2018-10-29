@@ -9,8 +9,8 @@ DISTNAME=	pcl-${DISTVERSION}
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Portable Coroutine Library for low level functionality for coroutines
 
-LICENSE=	MIT
-xLICENSE_FILE=	${WRKSRC}/COPYING.SLIBTOOL
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake libtool
 GNU_CONFIGURE=	yes
