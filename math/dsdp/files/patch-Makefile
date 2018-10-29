@@ -1,0 +1,14 @@
+--- Makefile.orig	2005-10-21 19:31:14 UTC
++++ Makefile
+@@ -53,8 +53,8 @@ oshared: 
+ 	-@${RM} tmp; \
+ 	mkdir tmp; \
+ 	cd tmp; \
+-	echo "building ${DSDPLIBSO}"; \
+-	${AR} x ${DSDPLIB} ;\
+-	${SH_LD} ${DSDPLIBSO} *.o -o ${DSDPLIBSO}; \
++	echo "building ${DSDPLIBSO}"
++	${AR} x ${DSDPLIB}
++	$(CC) -shared $(LDFLAGS) -llapack -lblas -lm *.o -o ${DSDPLIBSO}; \
+ 	cd ../ ; \
+ 	${RM} tmp
