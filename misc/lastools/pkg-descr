@@ -1,0 +1,8 @@
+LAStools is collection of highly efficient, batch-scriptable, multicore command
+line tools. We have tools to classify, tile, convert, filter, raster,
+triangulate, contour, clip, and polygonize LiDAR data (to name just a few
+functions). All of the tools can also be run via a native GUI and are available
+as a LiDAR processing toolboxes for ArcGIS versions 9.3 and up, for QGIS
+versions 1.8 and up, and for ERDAS IMAGINE versions 14.0 and up.
+
+WWW: https://rapidlasso.com/lastools/

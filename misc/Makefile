@@ -257,6 +257,7 @@
     SUBDIR += ktouch-kde4
     SUBDIR += kwordquiz
     SUBDIR += kwordquiz-kde4
+    SUBDIR += lastools
     SUBDIR += latex-mk
     SUBDIR += lazyread
     SUBDIR += lc
