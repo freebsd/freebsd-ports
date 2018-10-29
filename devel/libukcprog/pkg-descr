@@ -2,4 +2,4 @@ The ukcprog library contains generally useful low level routines.
 The ukcprog.h header file contains prototypes for the routines as
 well as defining some useful macros and types.
 
-WWW: http://www.i-scream.org/
+WWW: https://www.i-scream.org/
