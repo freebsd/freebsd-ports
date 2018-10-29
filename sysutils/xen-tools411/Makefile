@@ -92,4 +92,3 @@ post-install:
 	${MKDIR} ${STAGEDIR}/var/run/xen
 
 .include <bsd.port.mk>
-

@@ -21,4 +21,3 @@ USE_QT=		concurrent core dbus gui network qml quick svg testlib widgets xml \
 		buildtools_build qmake_build
 
 .include <bsd.port.mk>
-
