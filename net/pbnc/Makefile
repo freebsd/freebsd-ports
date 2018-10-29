@@ -16,7 +16,7 @@ LICENSE_TEXT=	License of this software is declared as 'BSD' in pbnc.readme. \
 		But it is not clear which versions of the BSD license (2, \
 		3 or 4 clause) it is. No further file in the source archive \
 		contains license information.
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	p5-Net-Netmask>=0:net-mgmt/p5-Net-Netmask
 
