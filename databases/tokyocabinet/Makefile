@@ -5,7 +5,7 @@ PORTNAME=	tokyocabinet
 PORTVERSION=	1.4.48
 CATEGORIES=	databases
 MASTER_SITES=	LOCAL/kuriyama \
-		http://fallabs.com/${PORTNAME}/
+		https://fallabs.com/${PORTNAME}/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Modern implementation of DBM
