@@ -6,7 +6,7 @@ PORTVERSION=	1.22
 DISTVERSIONPREFIX=	python-
 PORTREVISION=	1
 CATEGORIES=	databases python
-MASTER_SITES=	http://fallabs.com/${PORTNAME}/pythonpkg/ \
+MASTER_SITES=	https://fallabs.com/${PORTNAME}/pythonpkg/ \
 		LOCAL/sunpoet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
