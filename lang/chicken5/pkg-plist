@@ -56,6 +56,7 @@ lib/chicken%%SUFFIX%%/9/types.db
 lib/libchicken%%SUFFIX%%.a
 lib/libchicken%%SUFFIX%%.so
 lib/libchicken%%SUFFIX%%.so.9
+man/man1/chicken-do%%SUFFIX%%.1.gz
 man/man1/chicken-install%%SUFFIX%%.1.gz
 man/man1/chicken-profile%%SUFFIX%%.1.gz
 man/man1/chicken-status%%SUFFIX%%.1.gz
