@@ -1,0 +1,9 @@
+The Portable Coroutine Library (PCL) implements the low level functionality
+for coroutines. For a definition of the term coroutine see The Art of Computer
+Programming by Donald E. Knuth. Coroutines are a very simple cooperative
+multitasking environment where the switch from one task to another is done
+explicitly by a function call. Coroutines are a lot faster than processes or
+threads switch, since there is no OS kernel involvement for the operation. Also
+coroutines require much less OS resources than processes of threads.
+
+WWW: http://xmailserver.org/libpcl.html
