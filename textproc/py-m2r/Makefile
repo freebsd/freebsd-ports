@@ -1,8 +1,7 @@
-# Created by: John W. O'Brien <john@saltant.com>
 # $FreeBSD$
 
 PORTNAME=	m2r
-DISTVERSION=	0.1.14
+DISTVERSION=	0.2.1
 CATEGORIES=	textproc devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
 
-# Actually 2.7,3.4+
+# Officially 2.7, 3.4, 3.5, and 3.6
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
