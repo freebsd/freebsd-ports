@@ -35,7 +35,6 @@ CONFLICTS_INSTALL=	firefox-esr
 MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	-cairo -hunspell -soundtouch
 
-USE_GL=		gl
 USES=		tar:xz
 
 FIREFOX_ICON=		${MOZILLA}.png

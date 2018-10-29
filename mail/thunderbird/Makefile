@@ -33,7 +33,6 @@ SSP_UNSAFE=	yes
 USE_GECKO=	gecko
 USE_MOZILLA=	-cairo -soundtouch
 
-USE_GL=		gl
 USES=		tar:xz
 
 MOZ_OPTIONS=	--enable-application=comm/mail --enable-official-branding
