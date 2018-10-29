@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	debhelper
-PORTVERSION=	11.4.1
+PORTVERSION=	11.5
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -15,10 +15,11 @@ LICENSE_FILE=	${WRKSRC}/GPL
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
+USES=		gmake perl5 shebangfix tar:xz
+
 MAKE_ARGS=	PREFIX=${PREFIX} SITE_PERL=${PREFIX}/${SITE_PERL_REL}
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		gmake perl5 shebangfix tar:xz
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 SHEBANG_FILES=	dh*
