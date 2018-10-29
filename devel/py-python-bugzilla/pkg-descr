@@ -9,4 +9,4 @@ about.
 It also includes a `bugzilla` command-line client which can be used for quick,
 ad-hoc bugzilla jiggery-pokery.
 
-WWW: https://fedorahosted.org/python-bugzilla/
+WWW: https://github.com/python-bugzilla/python-bugzilla
