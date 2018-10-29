@@ -1,9 +1,11 @@
 libexec/ibus-engine-m17n
 libexec/ibus-setup-m17n
-share/ibus/component/m17n.xml
+share/applications/ibus-setup-m17n.desktop
+share/glib-2.0/schemas/org.freedesktop.ibus.engine.m17n.gschema.xml
 %%DATADIR%%/default.xml
 %%DATADIR%%/icons/ibus-m17n.svg
 %%DATADIR%%/setup/ibus-m17n-preferences.ui
-share/applications/ibus-setup-m17n.desktop
-share/glib-2.0/schemas/org.freedesktop.ibus.engine.m17n.gschema.xml
+share/ibus/component/m17n.xml
+%%NLS%%share/locale/de/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus-m17n.mo
+share/metainfo/m17n.appdata.xml
