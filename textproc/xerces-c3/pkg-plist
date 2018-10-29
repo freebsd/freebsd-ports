@@ -264,7 +264,7 @@ include/xercesc/util/KeyValuePair.hpp
 include/xercesc/util/LogicalPath.c
 include/xercesc/util/MsgLoaders/InMemory/InMemMsgLoader.hpp
 include/xercesc/util/MsgLoaders/InMemory/XercesMessages_en_US.hpp
-include/xercesc/util/MutexManagers/PosixMutexMgr.hpp
+include/xercesc/util/MutexManagers/StdMutexMgr.hpp
 include/xercesc/util/Mutexes.hpp
 include/xercesc/util/NameIdPool.c
 include/xercesc/util/NameIdPool.hpp
