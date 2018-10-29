@@ -38,6 +38,7 @@ bin/dh_installmodules
 bin/dh_installpam
 bin/dh_installppp
 bin/dh_installsystemd
+bin/dh_installsystemduser
 bin/dh_installudev
 bin/dh_installwm
 bin/dh_installxfonts
@@ -75,6 +76,8 @@ bin/postinst-systemd-enable
 bin/postinst-systemd-restart
 bin/postinst-systemd-restartnostart
 bin/postinst-systemd-start
+bin/postinst-systemd-user-dont-enable
+bin/postinst-systemd-user-enable
 bin/postinst-ucf
 bin/postinst-usrlocal
 bin/postinst-wm
@@ -90,6 +93,7 @@ bin/postrm-modules
 bin/postrm-sgmlcatalog
 bin/postrm-systemd
 bin/postrm-systemd-reload-only
+bin/postrm-systemd-user
 bin/postrm-ucf
 bin/postrm-xfonts
 bin/preinst-emacsen
