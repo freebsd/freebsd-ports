@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmlrpc-c
-PORTVERSION=	1.39.13
-PORTREVISION=	2
+PORTVERSION=	1.43.08
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Xmlrpc-c%20Super%20Stable/${PORTVERSION}
 
@@ -11,6 +10,8 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	XML-RPC library for C and C++
 
 LICENSE=	BSD3CLAUSE
+
+USES=		gmake pkgconfig tar:tgz
 
 OPTIONS_DEFINE=	DEBUG CURL LIBWWW CPLUSPLUS
 OPTIONS_DEFAULT=CURL LIBWWW CPLUSPLUS
@@ -20,7 +21,6 @@ CPLUSPLUS_DESC=	Build xmlrpc-c c++ libs and tools
 
 CONFLICTS=	xmlrpc-epi-0.*
 
-USES=		gmake tar:tgz
 OPTIONS_SUB=	yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
@@ -63,7 +63,5 @@ post-patch:
 		${WRKSRC}/src/xmlrpc_server_abyss.c
 	@${REINPLACE_CMD} -e 's,sys/unistd.h,unistd.h,' \
 		${WRKSRC}/test/cpp/server_abyss.cpp
-	@${REINPLACE_CMD} -e '/^INSTALL_/s/=/\?=/' \
-		${WRKSRC}/config.mk.in
 
 .include <bsd.port.post.mk>
