@@ -31,21 +31,19 @@ DATADIR=	${PREFIX}/share/bx
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	DOCS HEBREW IPV6 LATIN PLUGINS SSL TOGGLES
+OPTIONS_DEFINE=	DOCS LANG_HE IPV6 LATIN PLUGINS SSL TOGGLES
+OPTIONS_DEFAULT=	PLUGINS SSL
 
 LATIN_DESC=	Recommended for ISO-8859-1 display
 PLUGINS_DESC=	Build a handful of BitchX plugins
-HEBREW_DESC=	Add support for hebrew language
 TOGGLES_DESC=	Disable annoyance toggles
-OPTIONS_DEFAULT=	PLUGINS SSL
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
 SSL_CONFIGURE_WITH=	ssl
 SSL_USES=		ssl
-SSL_VARS=		BROKEN_SSL=openssl-devel
 
-PLUGINS_CONFIGURE_WITH=		plugins="${PLUGIN_LIST:C/\$$/,/g}"
+PLUGINS_CONFIGURE_WITH=	plugins="${PLUGIN_LIST:C/\$$/,/g}"
 
 PLUGIN_LIST=	abot acro arcfour autocycle blowfish cavlink cdrom encrypt \
 		europa fserv hint nap nicklist pkga possum qbx qmail wavplay
@@ -62,7 +60,7 @@ post-patch-LATIN-on:
 	${REINPLACE_CMD} -e 's|#undef LATIN1|#define LATIN1|' \
 		${WRKSRC}/include/config.h
 
-post-patch-HEBREW-on:
+post-patch-LANG_HE-on:
 	${REINPLACE_CMD} -e 's|#undef WANT_HEBREW|#define WANT_HEBREW|' \
 		${WRKSRC}/include/config.h
 
