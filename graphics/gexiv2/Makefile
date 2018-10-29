@@ -5,7 +5,6 @@ PORTNAME=	gexiv2
 PORTVERSION=	0.10.8
 PORTREVISION=	1
 CATEGORIES=	graphics
-# MASTER_SITES=	GNOME/sources/gexiv2/${PORTVERSION:R}
 MASTER_SITES=	GNOME
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -21,7 +20,8 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-introspection=yes \
 			--enable-vala=yes
-USES=		gmake libtool:build pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lang gmake gnome libtool:build pathfix \
+		pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 MAKE_ARGS=	REQUIRED_CFLAGS="" ENABLE_INTROSPECTION=1
