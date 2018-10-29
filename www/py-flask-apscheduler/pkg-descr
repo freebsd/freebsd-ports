@@ -1,4 +1,3 @@
-Flask-APScheduler is a Flask extension which adds support for the
-APScheduler.
+Flask-APScheduler is a Flask extension which adds support for the APScheduler.
 
 WWW: https://github.com/viniciuschiele/flask-apscheduler
