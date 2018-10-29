@@ -4,7 +4,7 @@
 PORTNAME=	epm
 PORTVERSION=	4.3
 CATEGORIES=	devel
-MASTER_SITES=	http://www.msweet.org/files/project2/
+MASTER_SITES=	https://github.com/michaelrsweet/epm/releases/download/release-${PORTVERSION}/
 EXTRACT_SUFX=	-source.tar.bz2
 
 MAINTAINER=	office@FreeBSD.org
