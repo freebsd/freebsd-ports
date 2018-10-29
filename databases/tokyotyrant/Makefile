@@ -5,7 +5,7 @@ PORTNAME=	tokyotyrant
 PORTVERSION=	1.1.41
 PORTREVISION=	2
 CATEGORIES=	databases
-MASTER_SITES=	http://fallabs.com/${PORTNAME}/
+MASTER_SITES=	https://fallabs.com/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network interface of Tokyo Cabinet
