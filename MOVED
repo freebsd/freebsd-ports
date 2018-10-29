@@ -10597,3 +10597,5 @@ devel/hs-PSQueue||2018-10-23|Has expired: Doesn't build with recent GHC version
 devel/hs-blaze-builder-enumerator||2018-10-23|Has expired: Doesn't build with recent GHC version
 www/hs-gitit||2018-10-23|Has expired: Doesn't build with newest packages
 cad/kicad-library||2018-10-25|Has expired: KiCad has been upgraded to 5.0.0
+devel/linux-kernel||2018-10-29|Has expired: no longer useful
+audio/py-musicbrainz2||2018-10-29|Has expired: Musicbrainz Web Service 1.0 support ended 2018-08-01
