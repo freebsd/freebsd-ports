@@ -1,11 +1,10 @@
-Under Python2, this package forks both Python 2.7's pickle and
-cPickle modules, adding support for the protocol 3 opcodes. It also
-provides a new subclass of bytes, zodbpickle.binary, which Python2
-applications can use to pickle binary values such that they will be
-unpickled as bytes under Py3k.
+zodbpickle presents a uniform pickling interface for ZODB:
+- Under Python2, this package forks both Python 2.7's pickle and cPickle
+  modules, adding support for the protocol 3 opcodes. It also provides a new
+  subclass of bytes, zodbpickle.binary, which Python2 applications can use to
+  pickle binary values such that they will be unpickled as bytes under Py3k.
+- Under Py3k, this package forks the pickle module (and the supporting C
+  extension) from both Python 3.2 and Python 3.3. The fork add support for the
+  noload operations used by ZODB.
 
-Under Py3k, this package forks the pickle module (and the supporting
-C extension) from both Python 3.2 and Python 3.3. The fork add support
-for the noload operations used by ZODB.
-
-WWW: https://pypi.org/project/zodbpickle/
+WWW: https://github.com/zopefoundation/zodbpickle
