@@ -1,6 +1,13 @@
---- common/Socket_unix.cpp
+--- common/Socket_unix.cpp.orig	2014-03-31 10:30:09 UTC
 +++ common/Socket_unix.cpp
-@@ -18,7 +18,7 @@
+@@ -12,13 +12,14 @@
+ #include <fcntl.h>
+ #include <math.h>
+ #include <string>
++#include <cstring>
+ 
+ #include "common/Socket.h"
+ #include "common/Mutex.h"
  #include "common/Strings.h"
  
  #define BUFSIZE 512
@@ -9,7 +16,7 @@
  	#define SOCK_CLOEXEC 0
  #endif
  
-@@ -128,8 +128,10 @@ std::wstring Socket::read(int timeout) {
+@@ -128,8 +129,10 @@ std::wstring Socket::read(int timeout) {
  
  void Socket::stopReadWait() {
  	TelldusCore::MutexLocker locker(&d->mutex);
