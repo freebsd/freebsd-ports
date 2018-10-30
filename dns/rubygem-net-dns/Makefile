@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	net-dns
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
@@ -13,9 +12,9 @@ COMMENT=	Pure Ruby DNS library
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
-NO_ARCH=	yes
-
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
