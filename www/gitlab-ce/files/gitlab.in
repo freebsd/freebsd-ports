@@ -91,10 +91,11 @@ if [ "$USER" != "$app_user" ]; then
   # Regenerate the Gemfile.lock for all related products
   echo "Regenerate Gitlab Gemfile.lock"
   rm -f "${app_root}"/Gemfile.lock
-  if ! su -l ${app_user} -c "cd ${app_root} && %%LOCALBASE%%/bin/bundle install --local --quiet"; then
+  if ! su -l root -c "cd ${app_root} && %%LOCALBASE%%/bin/bundle install --local --quiet"; then
     echo "Could not create Gemfile.lock for gitlab, please report this using FreeBSD Bugtracker, https://bugs.freebsd.org/"
     exit 1
   fi
+  chown git "${app_root}"/Gemfile.lock
   echo "Regenerate Gitaly Gemfile.lock"
   rm -f "${gitaly_dir}"/ruby/Gemfile.lock
   if ! su -l root -c "cd ${gitaly_dir}/ruby && %%LOCALBASE%%/bin/bundle install --local --quiet"; then
