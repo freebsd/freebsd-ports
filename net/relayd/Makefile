@@ -24,7 +24,13 @@ MAKE_ARGS+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
 USERS=		_relayd
 GROUPS=		_relayd
 
+BROKEN_FreeBSD_12=	does not build, OpenSSL 1.1 unsupported	
+
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1300000
+BROKEN=	does not build, OpenSSL 1.1 unsupported	
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
