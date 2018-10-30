@@ -26,6 +26,7 @@ include/openssl/dh.h
 include/openssl/digest.h
 include/openssl/dsa.h
 include/openssl/dtls1.h
+include/openssl/e_os2.h
 include/openssl/ec.h
 include/openssl/ec_key.h
 include/openssl/ecdh.h
@@ -38,7 +39,6 @@ include/openssl/hkdf.h
 include/openssl/hmac.h
 include/openssl/is_boringssl.h
 include/openssl/lhash.h
-include/openssl/lhash_macros.h
 include/openssl/md4.h
 include/openssl/md5.h
 include/openssl/mem.h
