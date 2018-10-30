@@ -86,6 +86,7 @@
     SUBDIR += ghemical
     SUBDIR += ghmm
     SUBDIR += gnudatalanguage
+    SUBDIR += gpaw-setups
     SUBDIR += gramps
     SUBDIR += grib_api
     SUBDIR += gromacs
