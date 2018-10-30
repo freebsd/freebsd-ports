@@ -15,9 +15,6 @@ COMMENT=	Native interface to serial ports in Java
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_armv6=		fails to link: librxtxParallel.so: No such file or directory
-BROKEN_armv7=		fails to link: librxtxParallel.so: No such file or directory
-BROKEN_powerpc64=	fails to link: librxtxParallel.so: No such file or directory
 NOT_FOR_ARCHS=		mips mips64
 NOT_FOR_ARCHS_REASON=	Java not available for this architecture
 
@@ -32,6 +29,14 @@ INSTALL_TARGET=	install-strip
 
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	ARCH=${ARCH} JAVA_HOME=${JAVA_HOME:S,^${PREFIX}/,,}
+PLIST_SUB=	JAVA_HOME=${JAVA_HOME:S,^${PREFIX}/,,}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "powerpc64"
+PLIST_SUB+=	ARCH=ppc64
+.else
+PLIST_SUB+=	ARCH=${ARCH}
+.endif
+
+.include <bsd.port.post.mk>
