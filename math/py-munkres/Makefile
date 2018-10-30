@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	munkres
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.11
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Python implementation of the munkres algorithm
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Munkres implementation for Python
 
-LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	APACHE20
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

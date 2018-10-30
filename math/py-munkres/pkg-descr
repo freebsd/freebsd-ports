@@ -1,3 +1,8 @@
-A python implementation of the munkres algorithm
+The Munkres module provides an implementation of the Munkres algorithm (also
+called the Hungarian algorithm or the Kuhn-Munkres algorithm). The algorithm
+models an assignment problem as an NxM cost matrix, where each element
+represents the cost of assigning the ith worker to the jth job, and it figures
+out the least-cost solution, choosing a single item from each row and column in
+the matrix, such that no row and no column are used more than once.
 
-WWW: http://software.clapper.org/munkres/
+WWW: https://software.clapper.org/munkres/
