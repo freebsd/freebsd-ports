@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rails-i18n
-PORTVERSION=	5.1.1
+PORTVERSION=	5.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails50
@@ -15,8 +15,9 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.txt
 RUN_DEPENDS=	rubygem-i18n>=0.7:devel/rubygem-i18n \
 		rubygem-railties50>=5.0:www/rubygem-railties50
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
