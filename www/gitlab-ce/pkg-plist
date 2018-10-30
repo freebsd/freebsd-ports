@@ -3812,6 +3812,7 @@
 %%WWWDIR%%/app/models/concerns/protected_tag_access.rb
 %%WWWDIR%%/app/models/concerns/reactive_caching.rb
 %%WWWDIR%%/app/models/concerns/reactive_service.rb
+%%WWWDIR%%/app/models/concerns/redactable.rb
 %%WWWDIR%%/app/models/concerns/redis_cacheable.rb
 %%WWWDIR%%/app/models/concerns/referable.rb
 %%WWWDIR%%/app/models/concerns/relative_positioning.rb
@@ -3831,6 +3832,9 @@
 %%WWWDIR%%/app/models/concerns/throttled_touch.rb
 %%WWWDIR%%/app/models/concerns/time_trackable.rb
 %%WWWDIR%%/app/models/concerns/token_authenticatable.rb
+%%WWWDIR%%/app/models/concerns/token_authenticatable_strategies/base.rb
+%%WWWDIR%%/app/models/concerns/token_authenticatable_strategies/digest.rb
+%%WWWDIR%%/app/models/concerns/token_authenticatable_strategies/insecure.rb
 %%WWWDIR%%/app/models/concerns/triggerable_hooks.rb
 %%WWWDIR%%/app/models/concerns/uniquify.rb
 %%WWWDIR%%/app/models/concerns/updated_at_filterable.rb
@@ -6067,6 +6071,7 @@
 %%WWWDIR%%/config/initializers/grpc.rb
 %%WWWDIR%%/config/initializers/hamlit.rb
 %%WWWDIR%%/config/initializers/health_check.rb
+%%WWWDIR%%/config/initializers/hipchat_client_patch.rb
 %%WWWDIR%%/config/initializers/kaminari_config.rb
 %%WWWDIR%%/config/initializers/kubeclient.rb
 %%WWWDIR%%/config/initializers/lograge.rb
@@ -7035,6 +7040,8 @@
 %%WWWDIR%%/db/migrate/20180901171833_add_project_config_source_status_index_to_pipeline.rb
 %%WWWDIR%%/db/migrate/20180901200537_add_resource_label_event_reference_fields.rb
 %%WWWDIR%%/db/migrate/20180906101639_add_user_ping_consent_to_application_settings.rb
+%%WWWDIR%%/db/migrate/20180910153412_add_token_digest_to_personal_access_tokens.rb
+%%WWWDIR%%/db/migrate/20180910153413_add_index_to_token_digest_on_personal_access_tokens.rb
 %%WWWDIR%%/db/migrate/gpg_keys_limits_to_mysql.rb
 %%WWWDIR%%/db/migrate/limits_ci_build_trace_chunks_raw_data_for_mysql.rb
 %%WWWDIR%%/db/migrate/limits_to_mysql.rb
@@ -7198,6 +7205,8 @@
 %%WWWDIR%%/db/post_migrate/20180816193530_rename_login_root_namespaces.rb
 %%WWWDIR%%/db/post_migrate/20180826111825_recalculate_site_statistics.rb
 %%WWWDIR%%/db/post_migrate/20180906051323_remove_orphaned_label_links.rb
+%%WWWDIR%%/db/post_migrate/20180913142237_schedule_digest_personal_access_tokens.rb
+%%WWWDIR%%/db/post_migrate/20181014121030_enqueue_redact_links.rb
 @(git,,) %%WWWDIR%%/db/schema.rb
 %%WWWDIR%%/db/seeds.rb
 %%WWWDIR%%/doc/README.md
@@ -8920,6 +8929,7 @@
 %%WWWDIR%%/lib/api/todos.rb
 %%WWWDIR%%/lib/api/triggers.rb
 %%WWWDIR%%/lib/api/users.rb
+%%WWWDIR%%/lib/api/validations/types/safe_file.rb
 %%WWWDIR%%/lib/api/variables.rb
 %%WWWDIR%%/lib/api/version.rb
 %%WWWDIR%%/lib/api/wikis.rb
@@ -9137,6 +9147,7 @@
 %%WWWDIR%%/lib/gitlab/background_migration/delete_conflicting_redirect_routes_range.rb
 %%WWWDIR%%/lib/gitlab/background_migration/delete_diff_files.rb
 %%WWWDIR%%/lib/gitlab/background_migration/deserialize_merge_request_diffs_and_commits.rb
+%%WWWDIR%%/lib/gitlab/background_migration/digest_column.rb
 %%WWWDIR%%/lib/gitlab/background_migration/fill_file_store_job_artifact.rb
 %%WWWDIR%%/lib/gitlab/background_migration/fill_file_store_lfs_object.rb
 %%WWWDIR%%/lib/gitlab/background_migration/fill_store_upload.rb
@@ -9157,6 +9168,7 @@
 %%WWWDIR%%/lib/gitlab/background_migration/populate_untracked_uploads.rb
 %%WWWDIR%%/lib/gitlab/background_migration/populate_untracked_uploads_dependencies.rb
 %%WWWDIR%%/lib/gitlab/background_migration/prepare_untracked_uploads.rb
+%%WWWDIR%%/lib/gitlab/background_migration/redact_links.rb
 %%WWWDIR%%/lib/gitlab/background_migration/remove_restricted_todos.rb
 %%WWWDIR%%/lib/gitlab/background_migration/rollback_import_state_data.rb
 %%WWWDIR%%/lib/gitlab/background_migration/schedule_diff_files_deletion.rb
@@ -9343,6 +9355,7 @@
 %%WWWDIR%%/lib/gitlab/cross_project_access/check_collection.rb
 %%WWWDIR%%/lib/gitlab/cross_project_access/check_info.rb
 %%WWWDIR%%/lib/gitlab/cross_project_access/class_methods.rb
+%%WWWDIR%%/lib/gitlab/crypto_helper.rb
 %%WWWDIR%%/lib/gitlab/current_settings.rb
 %%WWWDIR%%/lib/gitlab/cycle_analytics/base_event_fetcher.rb
 %%WWWDIR%%/lib/gitlab/cycle_analytics/base_query.rb
@@ -12352,6 +12365,7 @@
 %%WWWDIR%%/spec/lib/gitlab/background_migration/delete_conflicting_redirect_routes_range_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/delete_diff_files_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/deserialize_merge_request_diffs_and_commits_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/background_migration/digest_column_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/fix_cross_project_label_links_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/migrate_build_stage_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/migrate_events_to_push_event_payloads_spec.rb
@@ -12368,6 +12382,7 @@
 %%WWWDIR%%/spec/lib/gitlab/background_migration/populate_untracked_uploads_dependencies/untracked_file_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/populate_untracked_uploads_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/prepare_untracked_uploads_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/background_migration/redact_links_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/remove_restricted_todos_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/rollback_import_state_data_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/schedule_diff_files_deletion_spec.rb
@@ -13059,6 +13074,7 @@
 %%WWWDIR%%/spec/migrations/delete_inconsistent_internal_id_records_spec.rb
 %%WWWDIR%%/spec/migrations/drop_duplicate_protected_tags_spec.rb
 %%WWWDIR%%/spec/migrations/enqueue_delete_diff_files_workers_spec.rb
+%%WWWDIR%%/spec/migrations/enqueue_redact_links_spec.rb
 %%WWWDIR%%/spec/migrations/enqueue_verify_pages_domain_workers_spec.rb
 %%WWWDIR%%/spec/migrations/fill_file_store_spec.rb
 %%WWWDIR%%/spec/migrations/fix_wrongly_renamed_routes_spec.rb
@@ -13106,6 +13122,7 @@
 %%WWWDIR%%/spec/migrations/reschedule_builds_stages_migration_spec.rb
 %%WWWDIR%%/spec/migrations/reschedule_commits_count_for_merge_request_diff_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_create_gpg_key_subkeys_from_gpg_keys_spec.rb
+%%WWWDIR%%/spec/migrations/schedule_digest_personal_access_tokens_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_merge_request_diff_migrations_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_merge_request_diff_migrations_take_two_spec.rb
 %%WWWDIR%%/spec/migrations/schedule_merge_request_latest_merge_request_diff_id_migrations_spec.rb
@@ -13216,6 +13233,7 @@
 %%WWWDIR%%/spec/models/concerns/prometheus_adapter_spec.rb
 %%WWWDIR%%/spec/models/concerns/protected_ref_access_spec.rb
 %%WWWDIR%%/spec/models/concerns/reactive_caching_spec.rb
+%%WWWDIR%%/spec/models/concerns/redactable_spec.rb
 %%WWWDIR%%/spec/models/concerns/redis_cacheable_spec.rb
 %%WWWDIR%%/spec/models/concerns/relative_positioning_spec.rb
 %%WWWDIR%%/spec/models/concerns/resolvable_discussion_spec.rb
