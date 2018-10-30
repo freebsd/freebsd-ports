@@ -13,8 +13,7 @@ COMMENT=	MP3 bitrate plot tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to configure: C++ compiler cannot create executables
-
+USES=		compiler:c++11-lang
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USE_CXXSTD=	c++98
