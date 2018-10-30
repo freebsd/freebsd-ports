@@ -2,8 +2,8 @@
 
 PORTNAME=	chilitags
 DISTVERSION=	2.0.0-169
-PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g0d9854f
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/gpl.txt
 LIB_DEPENDS=	libopencv_imgproc.so:graphics/opencv-core \
 		libopencv_video.so:graphics/opencv
 
-USES=		cmake:outsource
+USES=		cmake:outsource compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	chili-epfl
 USE_LDCONFIG=	yes
