@@ -3,6 +3,7 @@
 
 PORTNAME=	mpfr
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.mpfr.org/mpfr-current/ \
 		GNU
@@ -20,8 +21,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 #PATCH_DEPENDS=	gpatch:devel/patch
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-#PATCHLEVEL=	2
-#PATCHFILES!=	/usr/bin/jot -s " " -w patch%02d ${PATCHLEVEL} 1 ${PATCHLEVEL}
+PATCHLEVEL=	13
+PATCHFILES!=	/usr/bin/jot -s " " -w patch%02d ${PATCHLEVEL} 1 ${PATCHLEVEL}
 #PATCH=		${LOCALBASE}/bin/gpatch
 
 USES=		libtool tar:xz
