@@ -28,6 +28,10 @@ CMAKE_ARGS=	-DWL_INSTALL_BASEDIR="${PREFIX}" \
 		-DWL_OPTIMIZE_FLAGS=""
 USE_GL=		gl glew
 USE_SDL=	sdl2 mixer2 image2 net2 ttf2
+CXXFLAGS_powerpc=	-Wno-maybe-uninitialized
+CXXFLAGS_powerpcspe=	-Wno-maybe-uninitialized
+CXXFLAGS_powerpc64=	-Wno-maybe-uninitialized
+CXXFLAGS_sparc64=	-Wno-maybe-uninitialized
 
 PORTDATA=	*
 PORTDOCS=	*
