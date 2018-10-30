@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.49.2
+DISTVERSION=	0.50
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -62,34 +62,35 @@ GH_TUPLE=	BurntSushi:locker:a6e239e:locker/src/github.com/BurntSushi/locker \
 		nicksnyder:go-i18n:v1.10.0:go_i18n/src/github.com/nicksnyder/go-i18n \
 		olekukonko:tablewriter:d4647c9:tablewriter/src/github.com/olekukonko/tablewriter \
 		pelletier:go-toml:v1.2.0:go_toml/src/github.com/pelletier/go-toml \
+		pkg:errors:v0.8.0:errors/src/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:go_difflib/src/github.com/pmezard/go-difflib \
 		russross:blackfriday:46c73eb:blackfriday/src/github.com/russross/blackfriday \
 		sanity-io:litter:v1.1.0:litter/src/github.com/sanity-io/litter \
 		sergi:go-diff:v1.0.0:go_diff/src/github.com/sergi/go-diff \
 		shurcooL:sanitized_anchor_name:86672fc:sanitized_anchor_name/src/github.com/shurcooL/sanitized_anchor_name \
 		spf13:afero:v1.1.2:afero/src/github.com/spf13/afero \
-		spf13:cast:v1.2.0:cast/src/github.com/spf13/cast \
+		spf13:cast:v1.3.0:cast/src/github.com/spf13/cast \
 		spf13:cobra:v0.0.3:cobra/src/github.com/spf13/cobra \
 		spf13:fsync:12a01e6:fsync/src/github.com/spf13/fsync \
-		spf13:jwalterweatherman:v1.0.0:jwalterweatherman/src/github.com/spf13/jwalterweatherman \
+		spf13:jwalterweatherman:94f6ae3:jwalterweatherman/src/github.com/spf13/jwalterweatherman \
 		spf13:nitro:24d7ef3:nitro/src/github.com/spf13/nitro \
 		spf13:pflag:v1.0.2:pflag/src/github.com/spf13/pflag \
 		spf13:viper:v1.2.0:viper/src/github.com/spf13/viper \
-		stretchr:testify:v1.2.2:testify/src/github.com/stretchr/testify \
-		tdewolff:minify:v2.3.5:minify/src/github.com/tdewolff/minify \
-		tdewolff:parse:v2.3.3:parse/src/github.com/tdewolff/parse \
-		tdewolff:test:2654270:test/src/github.com/tdewolff/test \
+		stretchr:testify:f2347ac:testify/src/github.com/stretchr/testify \
+		tdewolff:minify:v2.3.6:minify/src/github.com/tdewolff/minify \
+		tdewolff:parse:fced451:parse/src/github.com/tdewolff/parse \
+		tdewolff:test:v1.0.0:test/src/github.com/tdewolff/test \
 		wellington:go-libsass:615eaa4:go_libsass/src/github.com/wellington/go-libsass \
 		yosssi:ace:v0.0.5:ace/src/github.com/yosssi/ace \
 		golang:image:c73c2af:image/src/golang.org/x/image \
 		golang:net:161cd47:net/src/golang.org/x/net \
 		golang:sync:1d60e46:sync/src/golang.org/x/sync \
-		golang:sys:8cf3aee:sys/src/golang.org/x/sys \
+		golang:sys:d0be072:sys/src/golang.org/x/sys \
 		golang:text:v0.3.0:text/src/golang.org/x/text \
 		go-check:check:788fd78:check/src/gopkg.in/check.v1 \
 		go-yaml:yaml:v2.2.1:yaml/src/gopkg.in/yaml.v2
 
-COMMIT_ID=	42cde666638dcdddc9125ac3acf9a6817aa3ba5f
+COMMIT_ID=	f5be59920461366d4481cf7536b2d2bd42a2c75e
 
 OPTIONS_DEFINE=		MANPAGES EXTENDED
 
