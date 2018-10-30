@@ -25,7 +25,7 @@ MAKE_JOBS_UNSAFE=yes
 
 USE_QT=		core gui widgets network svg printsupport \
 		buildtools_build x11extras concurrent multimedia
-USES=		qmake qt:5
+USES=		compiler:c++11-lang qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	trueos
 GH_PROJECT=	lumina

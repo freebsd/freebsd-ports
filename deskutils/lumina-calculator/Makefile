@@ -27,7 +27,7 @@ I18N_DESC=	Install localization files
 
 MAKE_JOBS_UNSAFE=yes
 
-USES=		qmake qt:5
+USES=		compiler:c++11-lang gl qmake qt:5
 USE_GL=		gl
 USE_XORG=	x11 xdamage xcb
 USE_QT=		core gui widgets network svg \
