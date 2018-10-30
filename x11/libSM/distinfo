@@ -1,2 +1,3 @@
-SHA256 (xorg/lib/libSM-1.2.2.tar.bz2) = 0baca8c9f5d934450a70896c4ad38d06475521255ca63b717a6510fdb6e287bd
-SIZE (xorg/lib/libSM-1.2.2.tar.bz2) = 348908
+TIMESTAMP = 1540742700
+SHA256 (xorg/lib/libSM-1.2.3.tar.bz2) = 2d264499dcb05f56438dee12a1b4b71d76736ce7ba7aa6efbf15ebb113769cbb
+SIZE (xorg/lib/libSM-1.2.3.tar.bz2) = 362595
