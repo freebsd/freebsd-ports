@@ -60,7 +60,7 @@ for config in ${dovecot_config}; do
 	required_files="${config}"
 	command_args="-c ${config}"
 	if [ -s ${config} ]; then
-               ${command} ${command_args} -a 2>/dev/null
+               ${command} ${command_args} -a 2>&1 >/dev/null
                 if [ $? -ne 0 ]; then
                        echo "==Error=="
                        echo "Configuration file check failed."
