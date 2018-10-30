@@ -3,6 +3,7 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${RELEASE_VER}
+PORTREVISION=		1
 DISTVERSIONPREFIX=	stable-
 PORTEPOCH=		2
 CATEGORIES=		emulators
@@ -15,17 +16,17 @@ LICENSE_FILE=		${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=		amd64 i386
 
-LIB_DEPENDS=		libmspack.so:archivers/libmspack
+LIB_DEPENDS=		libmspack.so:archivers/libmspack \
+			libdnet.so:net/libdnet
 
 RELEASE_VER=		10.3.0
 BUILD_VER=		8931395
 
-OPTIONS_DEFINE=		DNET LIBNOTIFY OPENSSL X11
-OPTIONS_DEFAULT=	DNET LIBNOTIFY OPENSSL X11
+OPTIONS_DEFINE=		LIBNOTIFY OPENSSL X11
+OPTIONS_DEFAULT=	LIBNOTIFY OPENSSL X11
 
 OPTIONS_SUB=
 
-DNET_DESC=		libdnet support
 LIBNOTIFY_DESC=		Desktop notification support
 
 X11_CONFIGURE_WITH=	x gtk2 gtkmm
@@ -34,8 +35,6 @@ X11_USE=		xorg=ice,sm,x11,xext,xi,xinerama,xorgproto,xrandr,xrender,xtst \
 X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2
 LIBNOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
-DNET_CONFIGURE_WITH=	dnet
-DNET_LIB_DEPENDS=	libdnet.so:net/libdnet
 OPENSSL_CONFIGURE_WITH=	ssl
 
 WRKSRC_SUBDIR=		open-vm-tools
