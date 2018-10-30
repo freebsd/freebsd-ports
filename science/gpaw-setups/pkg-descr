@@ -1,0 +1,10 @@
+A setup is to the PAW method what a pseudo-potential is to the pseudo-potential
+method. There are setups for the LDA, PBE, revPBE, RPBE and GLLBSC functionals.
+The setups are stored as compressed XML specification for atomic PAW datasets
+files.
+
+This package installs the setups into the default location,
+$(PREFIX)/share/gpaw-setups. You can use the GPAW_SETUP_PATH environment
+variable with py-gpaw to override this default location.
+
+WWW: https://wiki.fysik.dtu.dk/gpaw/setups/setups.html
