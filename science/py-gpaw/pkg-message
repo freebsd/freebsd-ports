@@ -1,0 +1,8 @@
+======================================================================
+You installed GPAW, the system for DFT computations in quantum
+chemistry.
+
+In order to use this package you most likely need to also install
+science/gpaw-setups that contains data files for electronic
+configurations for many elements of the periodic table.
+======================================================================
