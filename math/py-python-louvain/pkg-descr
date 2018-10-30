@@ -1,0 +1,7 @@
+This module implements community detection.
+
+It uses the louvain method described in Fast unfolding of communities in large
+networks, Vincent D Blondel, Jean-Loup Guillaume, Renaud Lambiotte, Renaud
+Lefebvre, Journal of Statistical Mechanics: Theory and Experiment 2008(10).
+
+WWW: https://github.com/taynaud/python-louvain
