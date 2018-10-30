@@ -3,6 +3,7 @@
 
 PORTNAME=	ocserv
 PORTVERSION=	0.12.1
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/ \
 		LOCAL/cpm
@@ -23,7 +24,8 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libgnutls.so:security/gnutls \
 		libtasn1.so:security/libtasn1 \
 		libnettle.so:security/nettle \
-		liboath.so:security/oath-toolkit
+		liboath.so:security/oath-toolkit \
+		libpcl.so:devel/libpcl
 
 USES=		autoreconf cpe gperf libtool localbase ncurses \
 		pathfix pkgconfig readline tar:xz
@@ -31,8 +33,7 @@ CPE_VENDOR=	infradead
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--without-geoip \
-		--without-http-parser \
-		--without-pcl-lib
+		--without-http-parser
 
 USERS=		_ocserv
 GROUPS=		_ocserv
