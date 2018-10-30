@@ -1,15 +1,11 @@
---- Makefile.in.orig	2010-09-30 17:14:07 UTC
+--- Makefile.in.orig	2018-02-02 19:15:52 UTC
 +++ Makefile.in
-@@ -236,10 +236,10 @@ install-libraries: libraries $(SCRIPTS)
- 	    $(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(includedir) ; \
- 	done;
- # install standalone scripts and their man pages, if requested
--	@mkdir -p $(DESTDIR)$(prefix)/bin
-+	@mkdir -p $(DESTDIR)$(datadir)
+@@ -239,7 +239,7 @@ install-libraries: libraries $(SCRIPTS)
+ 	@mkdir -p $(DESTDIR)$(prefix)/bin
  	-for i in $(SCRIPT_LIST) ; do \
  	  if [ -f $$i ] ; then \
 -	    $(INSTALL_PROGRAM) $$i $(DESTDIR)$(prefix)/bin/$$i ; \
-+	    $(INSTALL_SCRIPT) $$i $(DESTDIR)$(datadir)/$$i ; \
++	    $(INSTALL_SCRIPT) $$i $(DESTDIR)$(prefix)/bin/expect_$$i ; \
  	    rm -f $$i ; \
  	  else true; fi ; \
  	done
@@ -18,7 +14,7 @@
  	-for i in $(SCRIPT_MANPAGE_LIST) ; do \
  	  if [ -f $(srcdir)/example/$$i.man ] ; then \
 -	    $(INSTALL_DATA) $(srcdir)/example/$$i.man $(DESTDIR)$(mandir)/man1/$$i.1 ; \
-+	    $(INSTALL_DATA) $(srcdir)/example/$$i.man $(DESTDIR)$(datadir)/$$i.1 ; \
++	    $(INSTALL_DATA) $(srcdir)/example/$$i.man $(DESTDIR)$(mandir)/man1/expect_$$i.1 ; \
  	  else true; fi ; \
  	done
  

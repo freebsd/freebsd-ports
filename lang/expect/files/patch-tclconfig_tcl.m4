@@ -902,8 +902,8 @@
 +    INSTALL='$(SHELL) $(srcdir)/tclconfig/install-sh -c'
 +    INSTALL_DATA_DIR='${INSTALL} -d -m 755'
 +    INSTALL_DATA='${INSTALL} -m 644'
-+    INSTALL_PROGRAM='${INSTALL}'
-+    INSTALL_SCRIPT='${INSTALL}'
++    INSTALL_PROGRAM='${INSTALL} -m 755 -s'
++    INSTALL_SCRIPT='${INSTALL} -m 755'
 +    INSTALL_LIBRARY='${INSTALL_DATA}'
 +
 +    AC_SUBST(INSTALL)
