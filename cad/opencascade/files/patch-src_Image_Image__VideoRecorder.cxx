@@ -5,9 +5,9 @@ src/Image/Image_VideoRecorder.cxx:452:38: error: use of undeclared identifier 'A
   if ((myAVContext->oformat->flags & AVFMT_RAWPICTURE) != 0
                                      ^
 
---- src/Image/Image_VideoRecorder.cxx.orig	2017-08-30 13:28:21 UTC
+--- src/Image/Image_VideoRecorder.cxx.orig	2018-05-25 19:13:49 UTC
 +++ src/Image/Image_VideoRecorder.cxx
-@@ -276,7 +276,7 @@ Standard_Boolean Image_VideoRecorder::addVideoStream (
+@@ -283,7 +283,7 @@ Standard_Boolean Image_VideoRecorder::ad
    // some formats want stream headers to be separate
    if (myAVContext->oformat->flags & AVFMT_GLOBALHEADER)
    {
@@ -16,7 +16,7 @@ src/Image/Image_VideoRecorder.cxx:452:38: error: use of undeclared identifier 'A
    }
    return Standard_True;
  #else
-@@ -449,6 +449,7 @@ Standard_Boolean Image_VideoRecorder::writeVideoFrame 
+@@ -456,6 +456,7 @@ Standard_Boolean Image_VideoRecorder::wr
    AVPacket aPacket;
    memset (&aPacket, 0, sizeof(aPacket));
    av_init_packet (&aPacket);
@@ -24,7 +24,7 @@ src/Image/Image_VideoRecorder.cxx:452:38: error: use of undeclared identifier 'A
    if ((myAVContext->oformat->flags & AVFMT_RAWPICTURE) != 0
     && !theToFlush)
    {
-@@ -461,6 +462,7 @@ Standard_Boolean Image_VideoRecorder::writeVideoFrame 
+@@ -468,6 +469,7 @@ Standard_Boolean Image_VideoRecorder::wr
      aResAv = av_interleaved_write_frame (myAVContext, &aPacket);
    }
    else
