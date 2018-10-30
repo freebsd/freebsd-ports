@@ -13,7 +13,7 @@ index 4bfba0eb2f52..cd4d80035d81 100644
 +version = "0.2.1"
 +source = "registry+https://github.com/rust-lang/crates.io-index"
 +dependencies = [
-+ "libc 0.2.33 (registry+https://github.com/rust-lang/crates.io-index)",
++ "libc 0.2.43 (registry+https://github.com/rust-lang/crates.io-index)",
 + "nom 3.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
 +]
 +
@@ -40,7 +40,7 @@ index 4bfba0eb2f52..cd4d80035d81 100644
   "boxfnonce 0.0.3 (registry+https://github.com/rust-lang/crates.io-index)",
   "core-foundation-sys 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
 + "devd-rs 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
-  "libc 0.2.33 (registry+https://github.com/rust-lang/crates.io-index)",
+  "libc 0.2.43 (registry+https://github.com/rust-lang/crates.io-index)",
   "libudev 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
   "log 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
 @@ -2220,6 +2238,7 @@ dependencies = [
