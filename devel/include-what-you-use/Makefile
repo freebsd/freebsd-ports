@@ -11,8 +11,6 @@ COMMENT=	Tool for use with clang to analyze #includes in C and C++ source files
 LICENSE=	NCSA
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-std=c++11"
-
 BUILD_DEPENDS=	clang60:devel/llvm60
 RUN_DEPENDS=	clang60:devel/llvm60
 
