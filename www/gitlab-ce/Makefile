@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	11.3.4
+PORTVERSION=	11.3.8
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -20,7 +20,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	gitlab-workhorse>=6.1.0:www/gitlab-workhorse \
 	gitaly>=0.120.1:devel/gitaly \
 	gitlab-pages>=1.1.0:www/gitlab-pages \
-	redis>=2.8.23:databases/redis \
+	redis>=3.2.12:databases/redis \
 	npm>=4.3.0:www/npm \
 	yarn>=0.17.0:www/yarn \
 	rubygem-rails4>=4.2.10:www/rubygem-rails4 \
@@ -218,7 +218,7 @@ USE_RC_SUBR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-ce/tags
-GL_COMMIT=	30f019dca78bb64bcb8b355a267be006884e6d8f
+GL_COMMIT=	0a6f6119fa3e6f708e745bba369ecba18c3d07cc
 
 USERS=	git
 GROUPS=	git
