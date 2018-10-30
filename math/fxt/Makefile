@@ -16,7 +16,7 @@ BROKEN_FreeBSD_10=	Fails to build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake compiler:c++11-lib
+USES=		gmake
 MAKE_ENV=	FXT_INSTALL="${INSTALL_DATA}"
 MAKEFILE=	makefile
 
