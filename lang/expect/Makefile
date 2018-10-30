@@ -3,6 +3,7 @@
 
 PORTNAME=	expect
 PORTVERSION=	5.45.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang tcl tk
 MASTER_SITES=	SF/expect/Expect/${PORTVERSION}
@@ -14,12 +15,13 @@ COMMENT=	Sophisticated scripter based on Tcl/Tk
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/license.terms
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
 USES=		tcl:tea autoreconf
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--datadir=${DATADIR}
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+SUB_FILES+=	pkg-message
+SUB_LIST+=	MANPREFIX=${MANPREFIX}
 TEST_TARGET=	test
 
 post-install:
