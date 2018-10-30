@@ -33,7 +33,6 @@ LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
 SSP_UNSAFE=	yes
 USE_GECKO=	gecko
-USE_GL=		gl
 USES=		tar:xz
 MOZ_PIS_SCRIPTS=	moz_pis_S50cleanhome
 

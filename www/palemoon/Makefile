@@ -31,8 +31,6 @@ USE_GECKO=	gecko
 MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	-soundtouch
 
-USE_GL=		gl
-
 PM_ICON=	${PORTNAME}.png
 PM_ICON_SRC=	${PREFIX}/lib/${PORTNAME}/browser/icons/mozicon128.png
 PM_DESKTOP=	${WRKSRC}/browser/branding/official/${PORTNAME}.desktop
