@@ -1,5 +1,5 @@
---- a2ps-j.orig	2013-10-22 21:19:43.000000000 +0900
-+++ a2ps-j	2013-10-22 21:20:30.000000000 +0900
+--- a2ps-j.orig	2017-09-23 14:04:32 UTC
++++ a2ps-j
 @@ -51,14 +51,23 @@
  @mon{@mon} = ($[ .. $#mon);
  @day{@day} = ($[ .. $#day);
@@ -25,7 +25,7 @@
  }
  &paper($default_paper);
  
-@@ -192,7 +201,8 @@
+@@ -192,7 +201,8 @@ if ($linesperpage <= 0 || $columnsperlin
  
  if ($debug == 2) {
      require('dumpvar.pl');
@@ -35,7 +35,7 @@
      &dumpvar('main',
  	     'width', 'height', 'lmargin', 'smargin', 'font_size',
  	     'sheet_height', 'sheet_width', 'char_width', 'skip_column',
-@@ -208,8 +218,14 @@
+@@ -208,8 +218,14 @@ while (@ARGV) {
      $file = shift;
      if ($file && !-r $file) { warn "$file: $!\n"; next; }
      if ($jisconvert) {
@@ -52,7 +52,7 @@
  	open(F, "-|") || &jis($file);
      } else {
  	$file = '-' if $file eq '';
-@@ -476,10 +492,13 @@
+@@ -476,10 +492,13 @@ sub _euc2jis {
  }
  
  sub print_header {
@@ -68,7 +68,7 @@
      local($orientation) = $portrait ? "Portrait" : "Landscape";
  
      print <<"---";
-@@ -525,7 +544,8 @@
+@@ -525,7 +544,8 @@ sub print_header {
      printf("/lines %d def\n", $linesperpage);
      printf("/columns %d def\n", $columnsperline);
      $sublabel = $default_sublabel unless defined $sublabel;
@@ -78,7 +78,7 @@
      if ($ascii_mag) {
  	printf("/doasciimag true def /asciimagsize %f def\n", $ascii_mag);
      } else {
-@@ -548,7 +568,8 @@
+@@ -548,7 +568,8 @@ sub print_header {
      print "%%EndProlog\n\n";
  }
  
