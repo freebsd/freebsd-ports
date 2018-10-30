@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opencascade
-PORTVERSION=	7.2.0
-PORTREVISION=	4
+PORTVERSION=	7.3.0
 CATEGORIES=	cad science
 MASTER_SITES=	LOCAL/thierry
 
@@ -23,9 +22,10 @@ RUN_DEPENDS=	bash:shells/bash
 # Check ${WRKSRC}/dox/overview/overview.md
 # and ${WRKSRC}/dox/dev_guides/building
 USES=		alias:10 cmake:outsource compiler:c++14-lang dos2unix \
-		shebangfix tk tar:tgz
+		gl shebangfix tk tar:tgz
 USE_XORG=	ice sm x11 xext xi xmu xt
 USE_GL=		gl glu
+
 DOS2UNIX_FILES=	adm/templates/*
 SHEBANG_FILES=	adm/templates/*.sh	\
 		adm/templates/*.sh.in	\
@@ -79,6 +79,7 @@ DOXYGEN_USE=	TEX=latex:build
 DOXYGEN_BUILD_DEPENDS=	bash:shells/bash		\
 			doxygen:devel/doxygen		\
 			dot:graphics/graphviz		\
+			pdftex:print/tex-basic-engines	\
 			inkscape:graphics/inkscape
 DOXYGEN_RUN_DEPENDS=	${LOCALBASE}/www/MathJax/MathJax.js:www/mathjax
 

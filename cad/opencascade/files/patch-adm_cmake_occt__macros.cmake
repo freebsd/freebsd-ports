@@ -1,4 +1,4 @@
---- adm/cmake/occt_macros.cmake.orig	2017-08-30 13:27:56 UTC
+--- adm/cmake/occt_macros.cmake.orig	2018-05-25 19:13:23 UTC
 +++ adm/cmake/occt_macros.cmake
 @@ -53,7 +53,7 @@ macro (OCCT_MAKE_OS_WITH_BITNESS)
    elseif(APPLE)
@@ -9,7 +9,7 @@
    endif()
  endmacro()
  
-@@ -335,7 +335,7 @@ macro (COLLECT_AND_INSTALL_OCCT_HEADER_F
+@@ -337,7 +337,7 @@ macro (COLLECT_AND_INSTALL_OCCT_HEADER_F
      configure_file ("${TEMPLATE_HEADER_PATH}" "${ROOT_TARGET_OCCT_DIR}/${OCCT_INSTALL_DIR_PREFIX}/${HEADER_FILE_NAME}" @ONLY)
    endforeach()
    
