@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Aseman-Land
 GH_PROJECT=	libqtelegram-aseman-edition
 
-USES=		qmake:outsource qt:5 ssl
+USES=		compiler:c++11-lang qmake:outsource qt:5 ssl
 USE_QT=		qmake_build buildtools_build core gui network multimedia
 USE_LDCONFIG=	yes
 
