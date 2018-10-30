@@ -1,0 +1,3 @@
+Redis reliable queue pattern implemented in Sidekiq.
+
+WWW: https://github.com/TEA-ebook/sidekiq-reliable-fetch
