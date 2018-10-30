@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	virtual_oss
-PORTVERSION=	1.1.6
+PORTVERSION=	1.2.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
-		http://home.selasky.org:8192/distfiles/
+		http://home.selasky.org/distfiles/
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Virtual OSS multi device mixer application
