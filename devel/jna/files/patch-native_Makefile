@@ -18,3 +18,16 @@
  LDFLAGS=-o $@ -shared
  CDEFINES+=-DHAVE_PROTECTION -DFFI_MMAP_EXEC_WRIT -DUSE_DEAFULT_LIBNAME_ENCODING
  endif
+@@ -338,10 +338,10 @@ endif
+ ifeq ($(CC),gcc)
+     GCC_MAJOR_VERSION = $(shell gcc -dumpversion | cut -f 1 -d '.')
+     ifneq ($(GCC_MAJOR_VERSION),4)
+-	LOC_CC_OPTS=-Wno-unknown-warning-option -Werror -Wno-clobbered -Wno-unused-variable
++	LOC_CC_OPTS=-Werror -Wno-unused-variable
+     endif
+ else
+-    LOC_CC_OPTS=-Wno-unknown-warning-option -Werror -Wno-clobbered -Wno-unused-variable
++    LOC_CC_OPTS=-Werror -Wno-unused-variable
+ endif
+ 
+ # Enable 64-bit builds if the arch demands it
