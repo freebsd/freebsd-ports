@@ -1,5 +1,0 @@
-# syslogd(8) configuration file for net-mgmt/prometheus2
-#
-# See syslog.conf(5) for details.
-!prometheus
-daemon.*	%%PROMETHEUS_LOG_FILE%%
