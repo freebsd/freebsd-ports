@@ -87,10 +87,10 @@
 %%PYTHON_SITELIBDIR%%/mqttwarn/lib/services/mysql.pyc
 %%PYTHON_SITELIBDIR%%/mqttwarn/lib/services/mysql_dynamic.py
 %%PYTHON_SITELIBDIR%%/mqttwarn/lib/services/mysql_dynamic.pyc
+%%PYTHON_SITELIBDIR%%/mqttwarn/lib/services/mysql_remap.py
+%%PYTHON_SITELIBDIR%%/mqttwarn/lib/services/mysql_remap.pyc
 %%PYTHON_SITELIBDIR%%/mqttwarn/lib/services/mythtv.py
 %%PYTHON_SITELIBDIR%%/mqttwarn/lib/services/mythtv.pyc
-%%PYTHON_SITELIBDIR%%/mqttwarn/lib/services/nma.py
-%%PYTHON_SITELIBDIR%%/mqttwarn/lib/services/nma.pyc
 %%PYTHON_SITELIBDIR%%/mqttwarn/lib/services/nntp.py
 %%PYTHON_SITELIBDIR%%/mqttwarn/lib/services/nntp.pyc
 %%PYTHON_SITELIBDIR%%/mqttwarn/lib/services/nsca.py
@@ -145,6 +145,8 @@
 %%PYTHON_SITELIBDIR%%/mqttwarn/lib/services/twilio.pyc
 %%PYTHON_SITELIBDIR%%/mqttwarn/lib/services/twitter.py
 %%PYTHON_SITELIBDIR%%/mqttwarn/lib/services/twitter.pyc
+%%PYTHON_SITELIBDIR%%/mqttwarn/lib/services/websocket.py
+%%PYTHON_SITELIBDIR%%/mqttwarn/lib/services/websocket.pyc
 %%PYTHON_SITELIBDIR%%/mqttwarn/lib/services/xbmc.py
 %%PYTHON_SITELIBDIR%%/mqttwarn/lib/services/xbmc.pyc
 %%PYTHON_SITELIBDIR%%/mqttwarn/lib/services/xively.py
