@@ -1,0 +1,24 @@
+r336970 | emaste | 2018-07-31 16:14:41 +0200 (Tue, 31 Jul 2018) | 9 lines
+
+llvm: [ARM] Complete enumeration values for Tag_ABI_VFP_args
+
+The LLD implementation of Tag_ABI_VFP_args needs to check the rarely
+seen values of 3 (toolchain specific) and 4 compatible with both Base
+and VFP.  Add the missing enumeration values so that LLD can refer to
+them without having to use the raw numbers.
+
+Obtained from:	llvm r338373 by Peter Smith
+
+Index: include/llvm/Support/ARMBuildAttributes.h
+===================================================================
+--- include/llvm/Support/ARMBuildAttributes.h	(revision 336969)
++++ include/llvm/Support/ARMBuildAttributes.h	(revision 336970)
+@@ -213,6 +213,8 @@ enum {
+   // Tag_ABI_VFP_args, (=28), uleb128
+   BaseAAPCS = 0,
+   HardFPAAPCS = 1,
++  ToolChainFPPCS = 2,
++  CompatibleFPAAPCS = 3,
+ 
+   // Tag_FP_HP_extension, (=36), uleb128
+   AllowHPFP = 1, // Allow use of Half Precision FP
