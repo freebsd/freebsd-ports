@@ -175,6 +175,7 @@
     SUBDIR += cryptominisat
     SUBDIR += cvc3
     SUBDIR += cvc4
+    SUBDIR += dbcsr
     SUBDIR += deal.ii
     SUBDIR += diehard
     SUBDIR += dieharder
