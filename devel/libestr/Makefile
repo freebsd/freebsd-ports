@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libestr
-PORTVERSION=	0.1.10
-PORTREVISION=	1
+PORTVERSION=	0.1.11
 CATEGORIES=	devel
 MASTER_SITES=	http://libestr.adiscon.com/files/download/
 
