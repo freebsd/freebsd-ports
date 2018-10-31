@@ -66,7 +66,7 @@ CONFIGURE_ARGS+=--with-qt4-includes=${QT_INCDIR} \
 		--with-qt4-moc=${MOC} \
 		--with-qt4-uic=${UIC}
 .  elif ${SLAVEPORT}=="qt5"
-USES+=		qmake:no_env qt:5
+USES+=		compiler:c++11-lang qmake:no_env qt:5
 USE_GL=		gl
 USE_QT=		core gui widgets \
 		buildtools_build qmake_build
