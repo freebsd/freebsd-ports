@@ -13,7 +13,6 @@ lib/rsyslog/lmnet.so
 lib/rsyslog/lmnetstrms.so
 lib/rsyslog/lmnsd_ptcp.so
 lib/rsyslog/lmregexp.so
-lib/rsyslog/lmstrmsrv.so
 lib/rsyslog/lmtcpclt.so
 lib/rsyslog/lmtcpsrv.so
 lib/rsyslog/lmzlibw.so
