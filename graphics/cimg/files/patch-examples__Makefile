@@ -1,4 +1,4 @@
---- examples/Makefile.orig	2018-04-11 12:39:15 UTC
+--- examples/Makefile.orig	2018-10-02 08:22:30 UTC
 +++ examples/Makefile
 @@ -84,7 +84,7 @@ EXTRA_FILES = use_tiff_stream use_jpeg_b
  # Set correct variables and paths
@@ -98,22 +98,24 @@
  all $(EXTRA_FILES)
  
  # Linux/BSD/Mac OSX targets, with X11 display.
-@@ -439,8 +443,10 @@ $(ZLIB_CFLAGS) \
+@@ -439,8 +443,11 @@ $(ZLIB_CFLAGS) \
  $(CURL_CFLAGS) \
  $(OPENCV_CFLAGS) \
  $(MAGICK_CFLAGS) \
 +$(LAPACK_CFLAGS) \
++$(BOARD_CFLAGS) \
  $(FFTW3_CFLAGS)" \
  "CONF_LIBS = \
 +$(FREEBSD_LDFLAGS) \
  $(X11_LIBS) \
  $(XSHM_LIBS) \
  $(XRANDR_LIBS) \
-@@ -452,6 +458,7 @@ $(ZLIB_LIBS) \
+@@ -452,6 +459,8 @@ $(ZLIB_LIBS) \
  $(CURL_LIBS) \
  $(OPENCV_LIBS) \
  $(MAGICK_LIBS) \
 +$(LAPACK_LIBS) \
++$(BOARD_LIBS) \
  $(FFTW3_LIBS)" \
  "STRIP_EXE=true" \
  all $(EXTRA_FILES)
