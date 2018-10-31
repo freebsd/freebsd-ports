@@ -1,0 +1,8 @@
+%%C_API%%include/dbcsr.h
+include/dbcsr_api.mod
+%%C_API%%lib/dbcsr/DBCSRCTargets-%%CMAKE_BUILD_TYPE%%.cmake
+%%C_API%%lib/dbcsr/DBCSRCTargets.cmake
+lib/dbcsr/DBCSRTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/dbcsr/DBCSRTargets.cmake
+lib/libdbcsr.so
+%%C_API%%lib/libdbcsr_c.so

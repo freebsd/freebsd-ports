@@ -1,0 +1,13 @@
+libDBCSR (or DBCSR for short) is a sparse matrix library designed to efficiently
+perform sparse matrix matrix multiplication, among other operations. It is MPI
+and OpenMP parallel, and can exploit accelerators. It is developed as part of
+CP2K , where it provides core functionality for linear scaling electronic
+structure theory. A general overview of the library has been published.
+A discussion of recent developments, in particular GPU work, has appeared as a
+chapter in 'Electronic Structure Calculations on Graphics Processing Units',
+John Wiley and Sons, ISBN 9781118661789, and is available as a preprint. The use
+of one-sided MPI and a 2.5D algorithm to reduce communication is shown to be
+effective for sparse matrix matrix multiplication in this manuscript. libDBCSR
+is made available for integration in other projects, see the github webpage.
+
+WWW: https://www.cp2k.org/dbcsr
