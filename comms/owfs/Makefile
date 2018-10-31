@@ -3,6 +3,7 @@
 
 PORTNAME=	owfs
 PORTVERSION=	3.2p3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	comms
 
 MAINTAINER=	johan@stromnet.se
@@ -17,7 +18,6 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
-GH_TAGNAME=	v${DISTVERSION}
 
 .include "Makefile.options"
 
