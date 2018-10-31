@@ -2,7 +2,7 @@
 
 PORTNAME=	xen
 PORTVERSION=	4.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 PKGNAMESUFFIX=	-kernel411
@@ -90,6 +90,8 @@ EXTRA_PATCHES+= ${FILESDIR}/0001-xen-Port-the-array_index_nospec-infrastructure-
 		${FILESDIR}/0039-x86-spec-ctrl-Introduce-an-option-to-control-L1D_FLU.patch:-p1 \
 		${FILESDIR}/0040-x86-Make-spec-ctrl-no-a-global-disable-of-all-mitiga.patch:-p1 \
 		${FILESDIR}/0042-x86-write-to-correct-variable-in-parse_pv_l1tf.patch:-p1
+# XSA-278: x86: Nested VT-x usable even when disabled
+EXTRA_PATCHES+=	${FILESDIR}/xsa278-4.11.patch:-p1
 
 .include <bsd.port.options.mk>
 
