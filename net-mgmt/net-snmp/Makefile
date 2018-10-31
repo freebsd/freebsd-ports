@@ -77,6 +77,10 @@ TLS_CONFIGURE_ON=	--with-security-modules=tsm --with-transports=TLSTCP,DTLSUDP
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} >= 1200085
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-openssl11
+.endif
+
 .if ${PORT_OPTIONS:MPYTHON}
 PYDISTUTILS_PKGNAME?=		netsnmp-python
 PYDISTUTILS_PKGVERSION?=	1.0a1
