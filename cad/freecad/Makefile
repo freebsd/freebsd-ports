@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	FreeCAD
-DISTVERSION=	0.17.13509
-PORTREVISION=	5
+DISTVERSION=	0.17-13541 # git rev-list --count
+DISTVERSIONSUFFIX=	-g9948ee4f1
 CATEGORIES=	cad
 
 MAINTAINER=	ports@FreeBSD.org
@@ -33,6 +33,7 @@ RUN_DEPENDS=	pivy>0:graphics/py-pivy@${PY_FLAVOR}
 
 USES=		dos2unix compiler:c++11-lib cmake:outsource eigen:3 fortran jpeg \
 		python:2.7 localbase qt:4
+USE_GITHUB=	yes
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
 USE_QT=		qmake_build corelib gui moc_build network opengl rcc_build \
@@ -52,9 +53,6 @@ CFLAGS+=	-I${LOCALBASE}/include/hdf5-18
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
 
-USE_GITHUB=	yes
-GH_TAGNAME=	0.17
-
 OPTIONS_DEFINE=	COLLADA
 
 COLLADA_DESC=		Install pycollada for Collada files import
@@ -64,8 +62,12 @@ DESKTOP_ENTRIES=${PORTNAME} "" "${PREFIX}/FreeCAD/data/freecad.svg" \
 		${PORTNAME} "Engineering;" false
 
 post-patch:
+	@${REINPLACE_CMD} -e '/sed/s,-i,& \\"\\",' \
+		${WRKSRC}/cMake/FindPySide*Tools.cmake
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' \
 		${WRKSRC}/src/Gui/CMakeLists.txt
+	@${REINPLACE_CMD} -e '/self\.rev/s/Unknown/${DISTVERSION:C/.*-//}/' \
+		${WRKSRC}/src/Tools/SubWCRev.py
 
 pre-configure:
 	# To be removed when french/med will be built against science/hdf5
