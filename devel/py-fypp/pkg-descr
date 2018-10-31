@@ -1,0 +1,9 @@
+Fypp is a Python powered preprocessor. It can be used for any programming
+languages but its primary aim is to offer a Fortran preprocessor, which helps
+to extend Fortran with condititional compiling and template metaprogramming
+capabilities. Instead of introducing its own expression syntax, it uses Python
+expressions in its preprocessor directives, offering the consistency and
+versatility of Python when formulating metaprogramming tasks. It puts strong
+emphasis on robustness and on neat integration into developing toolchains.
+
+WWW: https://github.com/aradi/fypp
