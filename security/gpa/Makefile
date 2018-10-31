@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	gpa
-PORTVERSION=	0.9.10
+PORTVERSION=	0.10.0
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/gpa
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	GTK2+ frontend for the GNU Privacy Guard
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libassuan.so:security/libassuan \
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 BUILD_DEPENDS=	gpgv2:security/gnupg
 RUN_DEPENDS=	gpgv2:security/gnupg
 
-USES=		gmake localbase pkgconfig tar:bzip2
+USES=		desktop-file-utils gmake gnome localbase pkgconfig tar:bzip2
 USE_GNOME=	gdkpixbuf2 gtk20
 
 GNU_CONFIGURE=	yes
@@ -30,11 +30,5 @@ OPTIONS_SUB=	yes
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
-
-pre-configure:
-	@(if [ ! -e ${LOCALBASE}/bin/gpgsm ] ; then \
-	${ECHO_MSG} "gpa requires gpgsm. (Re)Install security/gnupg with the GPGSM option ON" ; \
-	exit 1; \
-	fi)
 
 .include <bsd.port.mk>
