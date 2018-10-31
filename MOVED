@@ -3593,7 +3593,6 @@ misc/gpt||2012-08-20|Has expired: was a dependency for net/globus4, which was re
 www/xxxterm|www/xombrero|2012-08-20|Project renamed
 www/cakephp2|www/cakephp21|2012-08-21|Moved to match port version
 databases/libudbc||2012-08-21|Has expired: Does not fetch and no vendor support anymore
-net/asterisk16||2012-08-22|Unsupported upstream, please use net/asterisk instead
 net/asterisk16-addons||2012-08-22|Unsupported upstream, now part of net/asterisk
 databases/edb||2012-08-26|Has expired: Deprecated by enlightenment.org team
 databases/php5-rrdtool||2012-08-26|Has expired: deprecated via upstream please use databases/pecl-rrd
