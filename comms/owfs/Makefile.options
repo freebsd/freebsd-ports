@@ -1,6 +1,8 @@
 # $FreeBSD$
 
 OPTIONS_DEFINE = \
+        AVAHI \
+        FTDI \
 	OWDEBUG \
 	OWMUTEXDEBUG \
 	OWSHELL \
@@ -14,6 +16,7 @@ OPTIONS_DEFINE = \
 	OWTRAFFIC \
 	OWMON \
 	OWCAPI \
+	OWEXTERNAL \
 	OWPERL \
 	OWPHP \
 	OWPYTHON \
@@ -27,7 +30,8 @@ OPTIONS_DEFINE = \
 #	PARPORT	- linux/parport.h not available
 #	W1			- no support on FreeBSD
 
-
+AVAHI_DESC=		Enable zero-config autodiscovery
+FTDI_DESC=              Enable LinkUSB support via libftdi
 OWDEBUG_DESC=		Enable debug output
 OWMUTEXDEBUG_DESC=	Enable mutex debug
 OWSHELL_DESC=		Enable CLI utils
@@ -41,6 +45,7 @@ OWTRAFFIC_DESC=		Enable debug bus traffic reports
 OWTAP_DESC=		Enable owtap module (X11)
 OWMON_DESC=		Enable owmon module (X11)
 OWCAPI_DESC=		Enable C API
+OWEXTERNAL_DESC=	Enable owexternal
 OWPERL_DESC=		Enable Perl binding (BROKEN)
 OWPHP_DESC=		Enable PHP binding (BROKEN)
 OWPYTHON_DESC=		Enable Python binding 
@@ -62,6 +67,7 @@ OPTIONS_DEFAULT=OWDEBUG\
 	OWFTPD\
 	OWSERVER\
 	OWCAPI\
+	OWEXTERNAL \
 	OWFS\
 	USB
 
