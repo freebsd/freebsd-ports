@@ -17,3 +17,12 @@
  static void set_proxy()
  {
    const char *p;
+@@ -4685,7 +4695,7 @@ static void openssl_lock(int mode, opens
+ static int init_ssl()
+ {
+ #ifdef HAVE_OPENSSL
+-#ifndef HAVE_YASSL
++#if !defined(HAVE_YASSL) && defined(OPENSSL_FIPS)
+   int fips_mode= FIPS_mode();
+   if (fips_mode != 0)
+   {
