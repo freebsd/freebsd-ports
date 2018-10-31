@@ -1,0 +1,20 @@
+https://www.lyx.org/trac/ticket/11349
+
+--- src/support/FileName.cpp.orig	2018-02-25 00:11:18 UTC
++++ src/support/FileName.cpp
+@@ -67,15 +67,6 @@
+ using namespace std;
+ using namespace lyx::support;
+ 
+-// OK, this is ugly, but it is the only workaround I found to compile
+-// with gcc (any version) on a system which uses a non-GNU toolchain.
+-// The problem is that gcc uses a weak symbol for a particular
+-// instantiation and that the system linker usually does not
+-// understand those weak symbols (seen on HP-UX, tru64, AIX and
+-// others). Thus we force an explicit instanciation of this particular
+-// template (JMarc)
+-template struct boost::detail::crc_table_t<32, 0x04C11DB7, true>;
+-
+ namespace lyx {
+ namespace support {
+ 
