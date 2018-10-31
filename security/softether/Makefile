@@ -3,7 +3,7 @@
 PORTNAME=	softether
 PORTVERSION=	4.25.9656
 CATEGORIES=	security
-MASTER_SITES=	http://www.softether-download.com/files/softether/v4.25-9656-rtm-2018.01.15-tree/Source_Code/
+MASTER_SITES=	https://www.softether-download.com/files/softether/v4.25-9656-rtm-2018.01.15-tree/Source_Code/
 DISTNAME=	${PORTNAME}-src-v4.25-9656-rtm
 
 MAINTAINER=	meta@FreeBSD.org
