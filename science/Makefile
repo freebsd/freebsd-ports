@@ -108,6 +108,7 @@
     SUBDIR += kst2
     SUBDIR += lammps
     SUBDIR += lamprop
+    SUBDIR += latte
     SUBDIR += libaec
     SUBDIR += libccp4
     SUBDIR += libcint

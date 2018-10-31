@@ -1,0 +1,12 @@
+A molecular dynamics package based around self-consistent-charge density
+functional tight binding theory.
+
+Features:
+* Forces computed at the SCC-DFTB level.
+* Provides forces and the potential component of the total energy.
+* Integrates the electronic degrees of freedom (XL) (provides charges).
+* Solves the electronic structure of the system.
+* Several solvers such as SP2, Truncated SP2, Chebyshev polynomial
+  expansion, etc.
+
+WWW: https://github.com/lanl/LATTE
