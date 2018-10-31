@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libneon.so:www/neon
 
-USES=		cmake iconv:build pathfix
+USES=		cmake compiler:c++11-lang iconv:build pathfix
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
