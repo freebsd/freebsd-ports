@@ -5,7 +5,7 @@ PORTVERSION=	4.21.9613
 PORTREVISION=	2
 CATEGORIES=	security
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Cross-platform Multi-protocol VPN Software
 
 LICENSE=	GPLv2
