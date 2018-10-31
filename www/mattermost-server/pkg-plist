@@ -1,6 +1,7 @@
 bin/mattermostd
 etc/mattermost/config.json.sample
-%%WWWDIR%%/fonts/luximbi.ttf
+%%WWWDIR%%/fonts/OFL.txt
+%%WWWDIR%%/fonts/nunito-bold.ttf
 %%WWWDIR%%/i18n/de.json
 %%WWWDIR%%/i18n/en.json
 %%WWWDIR%%/i18n/es.json
@@ -11,10 +12,13 @@ etc/mattermost/config.json.sample
 %%WWWDIR%%/i18n/nl.json
 %%WWWDIR%%/i18n/pl.json
 %%WWWDIR%%/i18n/pt-BR.json
+%%WWWDIR%%/i18n/ro.json
 %%WWWDIR%%/i18n/ru.json
 %%WWWDIR%%/i18n/tr.json
 %%WWWDIR%%/i18n/zh-CN.json
 %%WWWDIR%%/i18n/zh-TW.json
+%%WWWDIR%%/templates/complete_saml_extension_body.html
+%%WWWDIR%%/templates/deactivate_body.html
 %%WWWDIR%%/templates/email_change_body.html
 %%WWWDIR%%/templates/email_change_verify_body.html
 %%WWWDIR%%/templates/email_footer.html
