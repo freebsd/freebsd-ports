@@ -49,4 +49,11 @@ post-patch:
 				  ${WRKSRC}/inputs/Makefile.in \
 				  ${WRKSRC}/contrib/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} != "openssl"
+BROKEN_FreeBSD_12=	fails to build with openssl111, install security/openssl
+BROKEN_FreeBSD_13=	fails to build with openssl111, install security/openssl
+.endif
+
+.include <bsd.port.post.mk>
