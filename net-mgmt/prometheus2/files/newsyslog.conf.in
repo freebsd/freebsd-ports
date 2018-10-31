@@ -1,6 +1,0 @@
-# newsyslog(8) file for net-mgmt/prometheus2
-# See newsyslog.conf(5) for details.
-#
-# Log file will be rotated daily, and we'll keep 15 days of logs matching the
-# default Prometheus TSDB retention time.
-%%PROMETHEUS_LOG_FILE%%	640	15	*	@T00	JC
