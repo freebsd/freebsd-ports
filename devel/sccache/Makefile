@@ -2,7 +2,7 @@
 
 PORTNAME=	sccache
 DISTVERSION=	2.8.0.alpha0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -39,7 +39,6 @@ CARGO_CRATES=	adler32-1.0.3 \
 		base64-0.9.2 \
 		bincode-0.8.0 \
 		bincode-1.0.1 \
-		bitflags-0.9.1 \
 		bitflags-1.0.4 \
 		buf_redux-0.6.3 \
 		bufstream-0.1.3 \
@@ -145,7 +144,6 @@ CARGO_CRATES=	adler32-1.0.3 \
 		num_cpus-1.8.0 \
 		number_prefix-0.2.8 \
 		openssl-0.10.11 \
-		openssl-0.9.24 \
 		openssl-sys-0.9.35 \
 		owning_ref-0.3.3 \
 		parking_lot-0.6.4 \
@@ -282,16 +280,10 @@ CARGO_CRATES=	adler32-1.0.3 \
 		xattr-0.2.2 \
 		zip-0.4.2
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1200084
-IGNORE=	openssl 1.1.1 is incompatible with the reqwest 0.8.8 dependencies
-.endif
-
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sccache
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
