@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		bazel
-DISTVERSION=		0.18.0
+DISTVERSION=		0.19.0
 CATEGORIES=		devel java
 MASTER_SITES=		https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
 DISTNAME=		bazel-${PORTVERSION}rc${FINALRC}-dist
