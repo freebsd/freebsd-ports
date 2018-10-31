@@ -16,6 +16,8 @@ LIB_DEPENDS=	libc.so.5:misc/compat5x
 
 NO_WRKSUBDIR=	yes
 ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	is an i386 binary
+
 USE_XORG=	x11 xext
 
 NO_BUILD=	yes
