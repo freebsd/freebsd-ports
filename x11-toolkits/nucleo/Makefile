@@ -18,7 +18,7 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libfreetype.so:print/freetype2 \
 		libexpat.so:textproc/expat2
 
-USES=		compiler:c++11-lang gl gmake jpeg libtool localbase:ldflags \
+USES=		gl gmake jpeg libtool localbase:ldflags \
 		pathfix pkgconfig python:run shebangfix tar:bzip2
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
@@ -26,8 +26,6 @@ CONFIGURE_ARGS=	--without-opencv
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	docs/MacOSX/nBundle.in
-
-CXXFLAGS+=	-Wno-c++11-narrowing
 
 OPTIONS_DEFINE=	FFMPEG GD GNUTLS QT4
 OPTIONS_RADIO=	DNSSD
