@@ -1,0 +1,11 @@
+--- canfield/cfscores/Makefile.orig	2018-06-15 14:40:00 UTC
++++ canfield/cfscores/Makefile
+@@ -3,7 +3,7 @@
+ 
+ PROG=	cfscores
+ CFLAGS+=-I${.CURDIR}/../canfield
+-NOMAN=	noman
++MK_MAN= no
+ 
+ .include "../../Makefile.inc"
+ .include <bsd.prog.mk>

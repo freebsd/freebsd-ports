@@ -1,0 +1,13 @@
+--- boggle/mkindex/Makefile.orig	2018-06-15 14:40:00 UTC
++++ boggle/mkindex/Makefile
+@@ -4,8 +4,9 @@
+ 
+ PROG=	mkindex
+ CFLAGS+=-I${.CURDIR}/../boggle
++MK_MAN= no
+ 
+ # this mkindex is used in place, it is not installed anywhere
+ install:
+ 
+-.include <bsd.hostprog.mk>
++.include <bsd.prog.mk>

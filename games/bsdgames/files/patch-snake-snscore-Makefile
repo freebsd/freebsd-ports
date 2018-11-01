@@ -1,0 +1,11 @@
+--- snake/snscore/Makefile.orig	2018-06-15 14:40:00 UTC
++++ snake/snscore/Makefile
+@@ -3,7 +3,7 @@
+ 
+ PROG=	snscore
+ CFLAGS+= -I${.CURDIR}/../snake
+-NOMAN=
++MK_MAN= no
+ 
+ .include "../../Makefile.inc"
+ .include <bsd.prog.mk>

@@ -1,26 +1,45 @@
---- Makefile.inc.orig	2009-09-24 10:46:30.000000000 +0200
-+++ Makefile.inc	2009-11-25 23:07:35.000000000 +0100
-@@ -2,14 +2,40 @@
- # $FreeBSD: /tmp/pcvs/ports/games/bsdgames/files/patch-Makefile.inc,v 1.2 2009-11-26 14:45:24 miwi Exp $
- # $DragonFly: src/games/Makefile.inc,v 1.3 2006/10/08 16:22:34 pavalos Exp $
- 
+--- Makefile.inc.orig	2018-06-15 14:40:00 UTC
++++ Makefile.inc
+@@ -1,19 +1,16 @@
+ #	@(#)Makefile.inc	8.1 (Berkeley) 5/31/93
+ # $FreeBSD: src/games/Makefile.inc,v 1.10.2.2 2002/02/18 16:02:39 ru Exp $
+-
 -BINDIR?=	/usr/games
-+PREFIX?=	/usr/local
-+BINDIR?=	${PREFIX}/bin
-+SHAREDIR=	${PREFIX}/share
-+MANDIR=		${PREFIX}/man/man
- FILESDIR?=	${SHAREDIR}/games
- WARNS?=		6
+-FILESDIR?=	${SHAREDIR}/games
+-WARNS?=		6
++# $DragonFly: src/games/Makefile.inc,v 1.3 2006/10/08 16:22:34 pavalos Exp $
  
--.if defined(HIDEGAME)
--ORIGBINDIR:=	${BINDIR}
--BINDIR:=	${BINDIR}/hide
--ORIGBINGRP:=	${BINGRP}
-+.if defined(SGIDGAME)
+ # These games write to /var/games/
+ .if defined(VARGAMES)
  BINGRP=		games
 -BINMODE=	550
 +BINMODE=	2555
  .endif
+ 
+ # Handle libcrypto dependency
+ .if defined(GAMESCRYPTO)
+-LDADD+=		-lprivate_crypto
++LDADD+=		-lcrypto
+ DPADD+=		${LIBCRYPTO}
+ CFLAGS+=	-I${_SHLIBDIRPREFIX}/usr/include/priv
+ LDFLAGS+=       ${PRIVATELIB_LDFLAGS}
+@@ -22,7 +19,40 @@ LDFLAGS+=       ${PRIVATELIB_LDFLAGS}
+ # Handle libncurses dependency
+ .if defined(GAMESCURSES)
+ DPADD+=		${LIBNCURSES}
+-LDADD+=		-lprivate_ncurses
+-CFLAGS+=	-I${_SHLIBDIRPREFIX}/usr/include/priv/ncurses
++LDADD+=		-lncurses
++CFLAGS+=	-I${_SHLIBDIRPREFIX}/usr/include/ncurses
+ LDFLAGS+=	${PRIVATELIB_LDFLAGS}
+ .endif
++
++PREFIX?=	/usr/local
++BINDIR?=	${PREFIX}/bin
++SHAREDIR=	${PREFIX}/share
++MANDIR=		${PREFIX}/man/man
++FILESDIR?=	${SHAREDIR}/games
++WARNS?=		6
 +
 +# cribbed from DragonflyBSD build system
 +
