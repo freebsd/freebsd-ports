@@ -1,78 +1,50 @@
-*** Makefile.orig	Wed May  9 00:50:45 2007
---- Makefile	Mon Jul 23 16:02:26 2007
-***************
-*** 294,300 ****
-  
-  # Make the IMAP Toolkit
-  
-! all:	c-client SPECIALS rebuild bundled
-  
-  c-client:
-  	@echo Not processed yet.  In a first-time build, you must specify
---- 294,300 ----
-  
-  # Make the IMAP Toolkit
-  
-! all:	c-client SPECIALS rebuild
-  
-  c-client:
-  	@echo Not processed yet.  In a first-time build, you must specify
-***************
-*** 559,567 ****
-  	@echo + In order to rectify this problem, you MUST build with:
-  	@echo ++ SSLTYPE=$(SSLTYPE).nopwd
-  	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-- 	@echo
-- 	@echo Do you want to continue this build anyway?  Type y or n please:
-- 	@$(SH) -c 'read x; case "$$x" in y) exit 0;; *) (make nounenc;exit 1);; esac'
-  
-  nounenc:
-  	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---- 559,564 ----
-***************
-*** 582,590 ****
-  	@echo ++ SSLTYPE=nopwd
-  	@echo + You must also have OpenSSL or equivalent installed.
-  	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-- 	@echo
-- 	@echo Do you want to continue this build anyway?  Type y or n please:
-- 	@$(SH) -c 'read x; case "$$x" in y) exit 0;; *) (make nonossl;exit 1);; esac'
-  
-  nonossl:
-  	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
---- 579,584 ----
-***************
-*** 659,665 ****
-  	$(TOOLS)/$@ "$(LN)" src/tmail tmail
-  	$(LN) $(TOOLS)/$@ .
-  
-! build:	OSTYPE rebuild rebuildclean bundled
-  
-  OSTYPE:
-  	@$(MAKE) ip$(IP)
---- 653,659 ----
-  	$(TOOLS)/$@ "$(LN)" src/tmail tmail
-  	$(LN) $(TOOLS)/$@ .
-  
-! build:	OSTYPE rebuild rebuildclean
-  
-  OSTYPE:
-  	@$(MAKE) ip$(IP)
-***************
-*** 679,686 ****
-  	@$(SH) -c '(test $(BUILDTYPE) = rebuild -o $(BUILDTYPE) = `$(CAT) OSTYPE`) || (echo Already built for `$(CAT) OSTYPE` -- you must do \"make clean\" first && exit 1)'
-  	@echo Rebuilding c-client for `$(CAT) OSTYPE`...
-  	@$(TOUCH) SPECIALS
-! 	$(CD) c-client;$(MAKE) all CC=`$(CAT) CCTYPE` \
-! 	 CFLAGS="`$(CAT) CFLAGS`" `$(CAT) SPECIALS`
-  
-  rebuildclean:
-  	$(SH) -c '$(RM) rebuild || true'
---- 673,679 ----
-  	@$(SH) -c '(test $(BUILDTYPE) = rebuild -o $(BUILDTYPE) = `$(CAT) OSTYPE`) || (echo Already built for `$(CAT) OSTYPE` -- you must do \"make clean\" first && exit 1)'
-  	@echo Rebuilding c-client for `$(CAT) OSTYPE`...
-  	@$(TOUCH) SPECIALS
-! 	$(CD) c-client;$(MAKE) all CFLAGS="`$(CAT) CFLAGS`" `$(CAT) SPECIALS`
-  
-  rebuildclean:
-  	$(SH) -c '$(RM) rebuild || true'
+--- Makefile.orig	2013-06-21 21:29:17 UTC
++++ Makefile
+@@ -295,7 +295,7 @@ BUILD=$(MAKE) build EXTRACFLAGS='$(EXTRA
+ 
+ # Make the IMAP Toolkit
+ 
+-all:	c-client SPECIALS rebuild bundled
++all:	c-client SPECIALS rebuild
+ 
+ c-client:
+ 	@echo Not processed yet.  In a first-time build, you must specify
+@@ -587,9 +587,6 @@ sslunix sslsco:
+ 	@echo + In order to rectify this problem, you MUST build with:
+ 	@echo ++ SSLTYPE=$(SSLTYPE).nopwd
+ 	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-	@echo
+-	@echo Do you want to continue this build anyway?  Type y or n please:
+-	@$(SH) -c 'read x; case "$$x" in y) exit 0;; *) (make nounenc;exit 1);; esac'
+ 
+ nounenc:
+ 	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@@ -610,9 +607,6 @@ sslnone:
+ 	@echo ++ SSLTYPE=nopwd
+ 	@echo + You must also have OpenSSL or equivalent installed.
+ 	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-	@echo
+-	@echo Do you want to continue this build anyway?  Type y or n please:
+-	@$(SH) -c 'read x; case "$$x" in y) exit 0;; *) (make nonossl;exit 1);; esac'
+ 
+ nonossl:
+ 	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@@ -687,7 +681,7 @@ an ua:
+ 	$(TOOLS)/$@ "$(LN)" src/tmail tmail
+ 	$(LN) $(TOOLS)/$@ .
+ 
+-build:	OSTYPE rebuild rebuildclean bundled
++build:	OSTYPE rebuild rebuildclean
+ 
+ OSTYPE:
+ 	@$(MAKE) ip$(IP)
+@@ -707,8 +701,7 @@ rebuild:
+ 	@$(SH) -c '(test $(BUILDTYPE) = rebuild -o $(BUILDTYPE) = `$(CAT) OSTYPE`) || (echo Already built for `$(CAT) OSTYPE` -- you must do \"make clean\" first && exit 1)'
+ 	@echo Rebuilding c-client for `$(CAT) OSTYPE`...
+ 	@$(TOUCH) SPECIALS
+-	$(CD) c-client;$(MAKE) all CC=`$(CAT) CCTYPE` \
+-	 CFLAGS="`$(CAT) CFLAGS`" `$(CAT) SPECIALS`
++	$(CD) c-client;$(MAKE) all CFLAGS="`$(CAT) CFLAGS`" `$(CAT) SPECIALS`
+ 
+ rebuildclean:
+ 	$(SH) -c '$(RM) rebuild || true'
