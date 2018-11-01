@@ -1,0 +1,25 @@
+--- configure.ac.orig	2017-07-01 15:27:52 UTC
++++ configure.ac
+@@ -74,10 +74,6 @@ if test "x-$want_mio_debug" = "x-yes" ; then
+     AC_DEFINE(MIO_DEBUG,1,[Define to 1 if you want to enable managed IO debug output.])
+ fi
+ 
+-# Colorized build output
+-AX_CHECK_COMPILE_FLAG([-fdiagnostics-color], [CFLAGS="${CFLAGS} -fdiagnostics-color"],
+-    [AX_CHECK_COMPILE_FLAG([-fcolor-diagnostics], [CFLAGS="${CFLAGS} -fcolor-diagnostics"])])
+-
+ # Two-step header checking.  First check for headers which don't
+ # require any other headers.
+ AC_HEADER_DIRENT
+@@ -406,9 +402,9 @@ if test "x-$want_ssl" != "x-no" ; then
+     fi
+     AC_CHECK_HEADERS(openssl/crypto.h)
+     if test "x-$ac_cv_header_openssl_crypto_h" = "x-yes" ; then
+-        AC_CHECK_LIB(crypto, CRYPTO_lock)
++        AC_CHECK_LIB(crypto, HMAC_Update)
+     fi
+-    if test "x-$ac_cv_lib_crypto_CRYPTO_lock" = "x-yes" ; then
++    if test "x-$ac_cv_lib_crypto_HMAC_Update" = "x-yes" ; then
+         AC_CHECK_HEADERS(openssl/ssl.h)
+     fi
+     if test "x-$ac_cv_header_openssl_ssl_h" = "x-yes" ; then
