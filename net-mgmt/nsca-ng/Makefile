@@ -3,6 +3,7 @@
 
 PORTNAME=	nsca-ng
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.nsca-ng.org/download/ http://www.nsca-ng.org/download/
 
