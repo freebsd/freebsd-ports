@@ -1,6 +1,6 @@
 --- util/crypt_blowfish.c.orig	2016-05-08 14:30:08 UTC
 +++ util/crypt_blowfish.c
-@@ -1106,7 +1106,7 @@ char *crypt_ra(const char *key, const ch
+@@ -1106,7 +1106,7 @@ char *crypt_ra(const char *key, const char *setting,
  	return _crypt_blowfish_rn(key, setting, (char *)*data, *size);
  }
  
