@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.0.36
-PORTREVISION?=	2
+PORTVERSION=	10.0.37
+PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -17,13 +17,18 @@ PKGNAMESUFFIX?=	100-server
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
+DEPRECATED=	Upstream End-of-Life March 2019 (https://mariadb.org/about/maintenance-policy/)
+EXPIRATION_DATE=	2019-04-01
+
 LICENSE=	GPLv2
 LICENSE_NAME_PerconaFT=	PerconaFT patents license
 LICENSE_FILE_PerconaFT=	${WRKSRC}/storage/tokudb/PerconaFT/PATENTS
 LICENSE_PERMS_PerconaFT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_SSL=		openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	incomplete definition of type 'struct dh_st'
+BROKEN_SSL=		openssl-devel openssl111
+BROKEN_SSL_REASON=	incomplete definition of type 'struct dh_st'
+BROKEN_FreeBSD_12=	Does not support OpenSSL 1.1, use the 10.2 or 10.3 port
+BROKEN_FreeBSD_13=	${BROKEN_FreeBSD_12}
 
 SUB_FILES=	pkg-message
 
