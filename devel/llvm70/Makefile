@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	7.0.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://${PRE_}releases.llvm.org/${LLVM_RELEASE}/${RCDIR}
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -12,23 +12,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}.src${EXTRACT_SUFX}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang
 
-# License are listed in the order they appear in LICENSE.TXT
-LICENSE=        LLVM GTEST REGEX MIT ARM PD
-LICENSE_COMB=   multi
-LICENSE_NAME_LLVM=      LLVM Release License
-LICENSE_NAME_GTEST=     Google test license
-LICENSE_NAME_REGEX=     OpenBSD Regex License
-# pyyaml tests are under the MIT license
-LICENSE_NAME_ARM=       ARM Limited license
-# md5 is in the public domain
-LICENSE_FILE_LLVM=      ${WRKSRC}/LICENSE.TXT
-LICENSE_FILE_GTEST=     ${WRKSRC}/utils/unittest/googletest/LICENSE.TXT
-LICENSE_FILE_REGEX=     ${WRKSRC}/lib/Support/COPYRIGHT.regex
-LICENSE_FILE_ARM=       ${WRKSRC}/lib/Target/ARM/LICENSE.TXT
-LICENSE_PERMS_LLVM=     dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_PERMS_GTEST=    dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_PERMS_REGEX=    dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_PERMS_ARM=      dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+.include "${.CURDIR}/../llvm-devel/Makefile.LICENSE"
 
 LLVM_RELEASE=	${DISTVERSION:C/rc.*//}
 LLVM_MAJOR=	${LLVM_RELEASE:C/\.[0-9]\.[0-9]$//}
@@ -97,10 +81,12 @@ LIT_DESC=		Install lit and FileCheck test tools
 LIT_VARS=		_USES_PYTHON=python:2.7
 LLD_DESC=		Install lld, the LLVM linker
 LLD_DISTFILES=		lld-${DISTVERSION}.src${EXTRACT_SUFX}
+LLD_EXTRA_PATCHES=	${PATCHDIR}/lld
 LLDB_BUILD_DEPENDS=	swig3.0:devel/swig30 \
 			${PY_ENUM34}
 LLDB_DESC=		Install lldb, the LLVM debugger
 LLDB_DISTFILES=		lldb-${DISTVERSION}.src${EXTRACT_SUFX}
+LLDB_EXTRA_PATCHES=	${PATCHDIR}/lldb
 LLDB_IMPLIES=		CLANG
 LLDB_VARS=		_USES_PYTHON=python:2.7
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
@@ -246,6 +232,7 @@ CLANG_PATTERN=	(c-index-test|clang|scan-|Reporter.py|ScanView.py|scanview.css|so
 SHEBANG_FILES+=	tools/clang/tools/scan-view/bin/scan-view \
 		tools/clang/tools/clang-format/git-clang-format \
 		tools/clang/tools/clang-format/clang-format-diff.py
+USES+=		gnome
 .endif
 
 .if ${PORT_OPTIONS:MCOMPILER_RT}
