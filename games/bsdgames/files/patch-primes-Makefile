@@ -1,0 +1,11 @@
+--- primes/Makefile.orig	2018-06-15 14:40:00 UTC
++++ primes/Makefile
+@@ -3,7 +3,7 @@
+ 
+ PROG=	primes
+ SRCS=	pattern.c pr_tbl.c primes.c
+-NOMAN=	noman
++MK_MAN= no
+ DPADD=	${LIBM}
+ LDADD=	-lm
+ 

@@ -3,6 +3,8 @@ bin/arithmetic
 @(,games,2555) bin/atc
 bin/backgammon
 @(,games,2555) bin/battlestar
+bin/bcd
+bin/boggle
 bin/bs-game
 @(,games,2555) bin/canfield
 bin/cfscores
@@ -14,18 +16,20 @@ bin/hals_end
 bin/hangman
 bin/hunt
 bin/huntd
-bin/larn
+@(,games,2555) bin/larn
 bin/mille
 @(,games,2555) bin/phantasia
 bin/pig
+bin/ppt
 bin/quiz
 bin/rain
 @(,games,2555) bin/robots
-bin/rogue
+@(,games,2555) bin/rogue
 @(,games,2555) bin/sail
 @(,games,2555) bin/snake
 bin/snscore
 bin/teachgammon
+bin/tetris
 bin/trek
 bin/wargames
 bin/worm
@@ -36,6 +40,8 @@ man/man6/arithmetic.6.gz
 man/man6/atc.6.gz
 man/man6/backgammon.6.gz
 man/man6/battlestar.6.gz
+man/man6/bcd.6.gz
+man/man6/boggle.6.gz
 man/man6/bs-game.6.gz
 man/man6/canfield.6.gz
 man/man6/cfscores.6.gz
@@ -51,6 +57,7 @@ man/man6/larn.6.gz
 man/man6/mille.6.gz
 man/man6/phantasia.6.gz
 man/man6/pig.6.gz
+man/man6/ppt.6.gz
 man/man6/quiz.6.gz
 man/man6/rain.6.gz
 man/man6/robots.6.gz
@@ -58,6 +65,7 @@ man/man6/rogue.6.gz
 man/man6/sail.6.gz
 man/man6/snake.6.gz
 man/man6/snscore.6.gz
+man/man6/tetris.6.gz
 man/man6/trek.6.gz
 man/man6/wargames.6.gz
 man/man6/worm.6.gz
@@ -69,9 +77,14 @@ share/games/atc/crossover
 share/games/atc/default
 share/games/atc/easy
 share/games/atc/game_2
+share/games/boggle/dictindex
+share/games/boggle/dictionary
+share/games/boggle/helpfile
+share/games/cribbage.instr
+share/games/fish.instr
+share/games/larn/larn.help
 share/games/larn/larnmaze
 share/games/larn/larnopts
-share/games/larn/larn.help
 share/games/quiz.db/africa
 share/games/quiz.db/america
 share/games/quiz.db/areas
@@ -105,37 +118,35 @@ share/games/quiz.db/spell
 share/games/quiz.db/state
 share/games/quiz.db/trek
 share/games/quiz.db/ucc
-share/games/cribbage.instr
-share/games/fish.instr
 share/games/wump.info
 @sample(,games,0664) /var/games/atc_score.sample
 @sample(,games,0664) /var/games/battlestar.log.sample
 @sample(,games,0664) /var/games/cfscores.sample
 @sample(,games,0664) /var/games/criblog.sample
+@sample(,games,0664) /var/games/hackdir/data.sample
 @sample(,games,0664) /var/games/hackdir/help.sample
 @sample(,games,0664) /var/games/hackdir/hh.sample
-@sample(,games,0664) /var/games/hackdir/data.sample
 @sample(,games,0664) /var/games/hackdir/perm.sample
 @sample(,games,0664) /var/games/hackdir/record.sample
 @sample(,games,0664) /var/games/hackdir/rumors.sample
-@sample(,games,0664) /var/games/larn/lscore12.0.sample
 @sample(,games,0664) /var/games/larn/llog12.0.sample
-@sample(,games,0664) /var/games/phantasia/monsters.sample
-@sample(,games,0664) /var/games/phantasia/void.sample
+@sample(,games,0664) /var/games/larn/lscore12.0.sample
 @sample(,games,0664) /var/games/phantasia/characs.sample
 @sample(,games,0664) /var/games/phantasia/gold.sample
 @sample(,games,0664) /var/games/phantasia/lastdead.sample
 @sample(,games,0664) /var/games/phantasia/mess.sample
+@sample(,games,0664) /var/games/phantasia/monsters.sample
 @sample(,games,0664) /var/games/phantasia/motd.sample
 @sample(,games,0664) /var/games/phantasia/scoreboard.sample
+@sample(,games,0664) /var/games/phantasia/void.sample
 @sample(,games,0664) /var/games/robots_roll.sample
 @sample(,games,0664) /var/games/rogue.scores.sample
 @sample(,games,0664) /var/games/saillog.sample
-@sample(,games,0664) /var/games/snakerawscores.sample
 @sample(,games,0664) /var/games/snake.log.sample
-@dir(,games,0775) /var/games/phantasia
-@dir(,games,0775) /var/games/larn
-@dir(,games,0770) /var/games/hackdir/save
-@dir(,games,0775) /var/games/hackdir
-@dir(,games,0775) /var/games/battlestar
-@dir(,games,0775) /var/games/atc
+@sample(,games,0664) /var/games/snakerawscores.sample
+@dir(,games,0775)  /var/games/atc
+@dir(,games,0775)  /var/games/battlestar
+@dir(,games,0775)  /var/games/hackdir/save
+@dir(,games,0775)  /var/games/hackdir
+@dir(,games,0775)  /var/games/larn
+@dir(,games,0775)  /var/games/phantasia

@@ -2,25 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	bsdgames
-PORTVERSION=	4.8.1
+PORTVERSION=	5.2.2
 PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	LOCAL/adamw
+MASTER_SITES=	LOCAL/swills
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jockl@pianojockl.org
 COMMENT=	Traditional BSD games taken from DragonFly BSD
 
 LICENSE=	BSD3CLAUSE
 
+USES=		ncurses tar:xz uidfix
+
 CONFLICTS=	hangman-[0-9]*
 
-USES=		ncurses tar:xz uidfix
 MAKE_ENV=	NO_WERROR=1
 MAKE_ARGS=	BINGRP=${BINGRP}
 
 # contain /usr/share/games
 SHAREPATH_FILES=atc/atc.6 \
 		atc/pathnames.h \
+		boggle/boggle/bog.h \
+		boggle/boggle/boggle.6 \
 		cribbage/cribbage.6 \
 		cribbage/pathnames.h \
 		fish/pathnames.h \
@@ -40,19 +43,9 @@ GAMESPATH_FILES=backgammon/backgammon/backgammon.6 \
 		phantasia/pathnames.h \
 		wargames/wargames.sh
 
-# These keep score in /var/games
-SGID_BINARIES=	atc battlestar canfield/canfield cribbage hack phantasia \
-		robots sail snake/snake
-
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/NOMAN/NO_MAN/" \
-		${WRKSRC}/backgammon/teachgammon/Makefile \
-		${WRKSRC}/canfield/cfscores/Makefile \
-		${WRKSRC}/snake/snscore/Makefile \
-		${WRKSRC}/fortune/unstr/Makefile \
-		${WRKSRC}/primes/Makefile
 	@for f in ${SHAREPATH_FILES}; do \
 		${REINPLACE_CMD} -e 's|/usr/share/games|${PREFIX}/share/games|g' \
 			${WRKSRC}/$${f}; \
@@ -61,15 +54,9 @@ post-patch:
 		${REINPLACE_CMD} -e 's|/usr/games|${PREFIX}/bin|g' \
 			${WRKSRC}/$${f}; \
 	done
-	@for f in ${SGID_BINARIES}; do \
-		${REINPLACE_CMD} -e 's/HIDEGAME/SGIDGAME/' \
-			${WRKSRC}/$${f}/Makefile; \
-	done
-	@${FIND} ${WRKSRC} -type f -name Makefile \
-		| ${XARGS} ${REINPLACE_CMD} -e 's/-lprivate_ncurses/-lncurses/'
 
 pre-install:
-.for d in atc larn quiz.db
+.for d in atc larn quiz.db boggle
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games/$d
 .endfor
 .for d in atc battlestar hackdir/save larn phantasia
@@ -87,13 +74,16 @@ post-install:
 	@${FIND} ${STAGEDIR}/var/games -type f -exec ${MV} {} {}.sample \;
 
 dist:
-	fetch -o- https://github.com/DragonFlyBSD/DragonFlyBSD/archive/v${PORTVERSION}.zip | \
-		unzip - DragonFlyBSD-${PORTVERSION}/games/\*
-	mv DragonFlyBSD-${PORTVERSION}/games bsdgames-${PORTVERSION}
-	tar -cvf bsdgames-${PORTVERSION}.tar bsdgames-${PORTVERSION}
-	xz -v bsdgames-${PORTVERSION}.tar
-	@echo
-	@echo 'UPLOAD THE DISTFILE BEFORE YOU FORGET'
-	@echo '====================================='
+	${FETCH_CMD} -o- https://github.com/DragonFlyBSD/DragonFlyBSD/archive/v${PORTVERSION}.zip | \
+		${TAR_CMD} xfv - DragonFlyBSD-${PORTVERSION}/games/\*
+	${MV} DragonFlyBSD-${PORTVERSION}/games bsdgames-${PORTVERSION}
+	${RMDIR} DragonFlyBSD-${PORTVERSION}
+	${TAR_CMD} -cvf bsdgames-${PORTVERSION}.tar bsdgames-${PORTVERSION}
+	${XZ_CMD} -v bsdgames-${PORTVERSION}.tar
+	@${ECHO_CMD}
+	@${ECHO_CMD} '======================================='
+	@${ECHO_CMD} ' UPLOAD THE DISTFILE BEFORE YOU FORGET '
+	@${ECHO_CMD} '======================================='
+	@${ECHO_CMD} 'bsdgames-${PORTVERSION} can be deleted!'
 
 .include <bsd.port.post.mk>

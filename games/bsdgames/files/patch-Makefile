@@ -1,16 +1,18 @@
---- Makefile.orig	2016-10-31 16:52:06 UTC
+--- Makefile.orig	2018-06-15 14:40:00 UTC
 +++ Makefile
-@@ -8,33 +8,21 @@ SUBDIR= adventure \
+@@ -5,35 +5,25 @@ SUBDIR= adventure \
+ 	arithmetic \
  	atc \
  	backgammon \
+-	banner \
  	battlestar \
--	bcd \
+ 	bcd \
  	bs \
+ 	boggle \
 -	caesar \
  	canfield \
  	cribbage \
  	colorbars \
--	dm \
 -	factor \
  	fish \
 -	fortune \
@@ -26,7 +28,7 @@
  	phantasia \
  	pig \
 -	pom \
--	ppt \
+ 	ppt \
 -	primes \
  	quiz \
  	rain \
