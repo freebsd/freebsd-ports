@@ -40,7 +40,25 @@
  }" HAVE_CRYPTOPP_BYTE_T)
  
  cmake_pop_check_state()
-@@ -206,7 +205,7 @@ if(MSVC)
+@@ -160,17 +159,11 @@ endif()
+ 
+ include(CheckCXXCompilerFlag)
+ string(TOUPPER "${CMAKE_BUILD_TYPE}" U_CMAKE_BUILD_TYPE)
+-OPTION(DISABLE_ARCH_NATIVE "disable -march=native flag" OFF)
+ 
+ target_compile_features(xeus PRIVATE cxx_std_11)
+ 
+ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Intel")
+     target_compile_options(xeus PUBLIC -Wunused-parameter -Wextra -Wreorder)
+-    if (DISABLE_ARCH_NATIVE)
+-        target_compile_options(xeus PUBLIC -mtune=generic)
+-    else()
+-        target_compile_options(xeus PUBLIC -march=native)
+-    endif()
+ 
+     # Enable link time optimization and set the default symbol
+     # visibility to hidden (very important to obtain small binaries)
+@@ -206,7 +199,7 @@ if(MSVC)
  elseif(APPLE)
      target_compile_definitions(xeus PUBLIC -DGUID_CFUUID)
  else()
