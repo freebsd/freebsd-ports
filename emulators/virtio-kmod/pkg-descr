@@ -1,5 +1,0 @@
-Port for package building of virtio kernel loadable modules.
-
-This port support only 8.[234] and 9.[01] releases.
-
-WWW: http://people.FreeBSD.org/~kuriyama/virtio/

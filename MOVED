@@ -10598,3 +10598,15 @@ www/hs-gitit||2018-10-23|Has expired: Doesn't build with newest packages
 cad/kicad-library||2018-10-25|Has expired: KiCad has been upgraded to 5.0.0
 devel/linux-kernel||2018-10-29|Has expired: no longer useful
 audio/py-musicbrainz2||2018-10-29|Has expired: Musicbrainz Web Service 1.0 support ended 2018-08-01
+games/bloboats||2018-11-01|Has expired: Upstream gone, FreeBSD 10 only
+net/stf-6rd-kmod||2018-11-01|Has expired: Does not build on FreeBSD 11+
+net/pmf||2018-11-01|Has expired: Does not build on FreeBSD 11+
+net/knemo-kde4||2018-11-01|Has expired: KDE4 is EOL upstream, FreeBSD 10 only-port
+net/userfw||2018-11-01|Has expired: Does not build on FreeBSD 11+
+sysutils/qjail4|sysutils/qjail|2018-11-01|Has expired: Only for FreeBSD 10.x , use sysutis/qjail instead
+sysutils/bsdmoted||2018-11-01|Has expired: does not build on FreeBSD 11+
+sysutils/scprotect||2018-11-01|Has expired: Does not build on FreeBSD 11+
+www/typo3-7|www/typo3-8|2018-11-01|Has expired: Support will end in October 2018, please update to either www/typo3-8 or www/typo3-9
+devel/memleax||2018-11-01|Has expired: does not actually detect leaks
+emulators/virtio-kmod||2018-11-01|Has expired: Does not build on FreeBSD 10+
+games/traindirector||2018-11-01|Has expired: Does not build on FreeBSD 11+
