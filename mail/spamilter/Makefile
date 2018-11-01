@@ -26,15 +26,15 @@ DOCSFILES=	Changelog INSTALL LICENSE docs/docs.html docs/docs.txt \
 		conf/db.rcpt conf/db.rdnsbl conf/db.sndr \
 		conf/policy.html conf/spamilter.rc
 
-PLIST_FILES+=	bin/dnsblchk bin/dnsblupd bin/ipfwmtad bin/mxlookup \
-		bin/spamilter \
+PLIST_FILES+=	bin/dnsblchk bin/dnsblupd bin/mxlookup bin/spamilter \
 		bin/spamilter-system-report bin/spamilter-user-report
 PORTDOCS=	Changelog INSTALL LICENSE docs.html docs.txt db.rcpt \
 		db.rdnsbl db.sndr policy.html spamilter.rc
 
-OPTIONS_DEFINE=	SMTP_AFTER_POP3 PAM LIBSPF DOCS
+OPTIONS_DEFINE=	SMTP_AFTER_POP3 PAM LIBSPF IPFWMTAD DOCS
 SMTP_AFTER_POP3_DESC=	SMTP after POP3
 LIBSPF_DESC=	build with libspf
+IPFWMTAD_DESC=	build ipfwmtad (requires openssl)
 
 SMTP_AFTER_POP3_CONFIGURE_ON=	--with-popauth
 PAM_CONFIGURE_ON=	--with-pam
@@ -42,8 +42,14 @@ LIBSPF_BUILD_DEPENDS=	${LOCALBASE}/lib/libspf.a:mail/libspf
 LIBSPF_CONFIGURE_ON=	--with-libspf ${LOCALBASE}
 LIBSPF_CFLAGS=		-I${LOCALBASE}/include
 LIBSPF_LDFLAGS=		-L${LOCALBASE}/lib
+IPFWMTAD_PLIST_FILES=	bin/ipfwmtad
+IPFWMTAD_USES=	ssl
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MIPFWMTAD}
+BROKEN_FreeBSD_12=	option IPFWMTAD needs old openssl
+.endif
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
@@ -60,6 +66,14 @@ pre-configure:
 	${REINPLACE_CMD} \
 		-e "s=/usr/local/=${PREFIX}/=" \
 		${WRKSRC}/Makefile.tmpl
+
+.if ! ${PORT_OPTIONS:MIPFWMTAD}
+post-configure:
+	${REINPLACE_CMD} \
+		-e 's| install-ipfwmtad $$| |' \
+		-e 's| ipfwmtad $$| |' \
+		${WRKSRC}/Makefile
+.endif
 
 post-install:
 .for i in ${BINFILES}
