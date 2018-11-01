@@ -1,0 +1,10 @@
+--- ../apps/Makefile.orig	2018-10-31 16:04:18.214221199 +0000
++++ ../apps/Makefile	2018-10-31 16:04:25.590905029 +0000
+@@ -25,7 +25,6 @@
+ VERSION = 1.6.0
+ CPPFLAGS += -MMD -MP -DVERSION=\"$(VERSION)\"
+ CXXFLAGS += -O2  -ffast-math -Wall
+-CXXFLAGS += -march=native
+ 
+ 
+ all:	zresample zretune zresample.1.gz zretune.1.gz
