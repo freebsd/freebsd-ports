@@ -1,5 +1,5 @@
---- src/ximpacket.cpp.orig	2014-06-28 22:17:36.000000000 +0900
-+++ src/ximpacket.cpp	2014-06-28 22:18:08.000000000 +0900
+--- src/ximpacket.cpp.orig	2003-02-10 15:01:26 UTC
++++ src/ximpacket.cpp
 @@ -3,6 +3,7 @@
  #endif
  
