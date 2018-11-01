@@ -8,7 +8,6 @@ bin/instmodsh%%BINSUFFIX%%
 bin/json_pp%%BINSUFFIX%%
 bin/libnetcfg%%BINSUFFIX%%
 %%DEFAULT%%bin/perl
-%%DEFAULT%%bin/perl5
 bin/perl%%PERL_VERSION%%
 bin/perlbug%%BINSUFFIX%%
 bin/perldoc%%BINSUFFIX%%
