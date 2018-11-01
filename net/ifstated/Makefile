@@ -8,7 +8,7 @@ PORTEPOCH=	3
 CATEGORIES=	net
 MASTER_SITES=	http://christianserving.org/ports/net/ifstated/
 
-MAINTAINER=	ports@christianserving.org
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Interface state daemon
 
 LIB_DEPENDS=	libevent.so:devel/libevent
