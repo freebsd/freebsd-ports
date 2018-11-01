@@ -3,4 +3,4 @@ lib/libsvnjavahl-1.so
 lib/libsvnjavahl-1.so.0
 lib/libsvnjavahl-1.so.0.0.0
 lib/svn-javahl/svn-javahl.jar
-@dir lib/svn-javahl/include
+

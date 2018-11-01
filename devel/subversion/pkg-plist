@@ -233,11 +233,6 @@ libdata/pkgconfig/libsvn_wc.pc
 %%DATADIR%%/buildbot/slaves/win32-xp-VS2005/svncheck.bat
 %%DATADIR%%/buildbot/slaves/win32-xp-VS2005/svnclean.bat
 %%DATADIR%%/buildbot/slaves/win32-xp-VS2005/svnlog.bat
-%%DATADIR%%/buildbot/slaves/xp-vc60-ia32/config.bat.tmpl
-%%DATADIR%%/buildbot/slaves/xp-vc60-ia32/svnbuild.bat
-%%DATADIR%%/buildbot/slaves/xp-vc60-ia32/svncheck.bat
-%%DATADIR%%/buildbot/slaves/xp-vc60-ia32/svnclean.bat
-%%DATADIR%%/buildbot/slaves/xp-vc60-ia32/svnlog.bat
 %%DATADIR%%/client-side/bash_completion
 %%DATADIR%%/client-side/bash_completion_test
 %%DATADIR%%/client-side/change-svn-wc-format.py
@@ -259,6 +254,7 @@ libdata/pkgconfig/libsvn_wc.pc
 %%DATADIR%%/client-side/svn-viewspec.py
 %%DATADIR%%/client-side/svnconflict/README
 %%DATADIR%%/client-side/svnconflict/svnconflict.c
+%%DATADIR%%/client-side/svnviewspec_test.py
 %%DATADIR%%/client-side/wcfind
 %%DATADIR%%/dev/analyze-svnlogs.py
 %%DATADIR%%/dev/aprerr.txt
@@ -358,6 +354,7 @@ libdata/pkgconfig/libsvn_wc.pc
 %%DATADIR%%/dist/backport_tests_data/backport_branch_with_original_revision.dump
 %%DATADIR%%/dist/backport_tests_data/backport_branches.dump
 %%DATADIR%%/dist/backport_tests_data/backport_indented_entry.dump
+%%DATADIR%%/dist/backport_tests_data/backport_logsummary_colon.dump
 %%DATADIR%%/dist/backport_tests_data/backport_multirevisions.dump
 %%DATADIR%%/dist/backport_tests_data/backport_two_approveds.dump
 %%DATADIR%%/dist/backport_tests_data/backport_unicode_entry.dump
@@ -366,8 +363,10 @@ libdata/pkgconfig/libsvn_wc.pc
 %%DATADIR%%/dist/backport.pl
 %%DATADIR%%/dist/backport_tests.py
 %%DATADIR%%/dist/checksums.py
+%%DATADIR%%/dist/create-minor-release-branch.py
 %%DATADIR%%/dist/detect-conflicting-backports.py
 %%DATADIR%%/dist/dist.sh
+%%DATADIR%%/dist/edit-N-log-messages
 %%DATADIR%%/dist/extract-for-examination.sh
 %%DATADIR%%/dist/merge-approved-backports.py
 %%DATADIR%%/dist/nightly.sh

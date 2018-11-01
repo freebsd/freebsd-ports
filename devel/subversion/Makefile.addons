@@ -5,17 +5,18 @@
 #FLAVORS=	svn110 svn19
 #FLAVOR?=	${FLAVORS:[1]}
 
-WITH_SUBVERSION_VER?=	110
+WITH_SUBVERSION_VER?=	111
 
 PKGDIR=			${.CURDIR}
 
 SVN_BUILD_ADDONS=	yes
 
-.if ${WITH_SUBVERSION_VER} == 110
+.if ${WITH_SUBVERSION_VER} == 111
 CONFLICTS_BUILD+=	${PORTNAME}-1.[0-9].[0-9]* \
-			${PORTNAME}-1.[^1][0-9].[0-9]*
-PORTREVISION=		${PORTREVISION_110}
-PLIST_SUB+=		SVN19="@comment " SVN110=""
+			${PORTNAME}-1.[^1][0-9].[0-9]* \
+			${PORTNAME}-1.10.[0-9]*
+PORTREVISION=		${PORTREVISION_111}
+PLIST_SUB+=		SVN19="@comment " SVN111=""
 LIB_DEPENDS+=		libsvn_client-1.so:devel/subversion
 OPTIONS_NAME=		devel_subversion
 MASTERDIR=		${.CURDIR}/../../devel/subversion
@@ -25,12 +26,12 @@ PKGNAMESUFFIX:=		${PKGNAMESUFFIX}19
 CONFLICTS_BUILD+=	${PORTNAME}-1.[^9].[0-9]* \
 			${PORTNAME}-1.[0-9][0-9].[0-9]*
 PORTREVISION=		${PORTREVISION_19}
-PLIST_SUB+=		SVN19="" SVN110="@comment "
+PLIST_SUB+=		SVN19="" SVN111="@comment "
 LIB_DEPENDS+=		libsvn_client-1.so:devel/subversion19
 OPTIONS_NAME=		devel_subversion19
 MASTERDIR=		${.CURDIR}/../../devel/subversion19
 .include		"${MASTERDIR}/Makefile.common"
 .else
-BROKEN=			Wrong WITH_SUBVERSION_VER=${WITH_SUBVERSION_VER}, only 110 (default) and 19 are supported
+BROKEN=			Wrong WITH_SUBVERSION_VER=${WITH_SUBVERSION_VER}, only 111 (default) and 19 are supported
 .endif
 

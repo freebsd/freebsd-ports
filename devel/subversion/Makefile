@@ -7,6 +7,7 @@ MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
 
 CONFLICTS_INSTALL=	subversion-1.[0-9].[0-9]* \
+			subversion-1.10.[0-9]* \
 			subversion1[0-9]-1.[0-9].[0-9]*
 
 USE_RC_SUBR=	svnserve
@@ -220,8 +221,7 @@ _mkrepos:	.USE
 .endif
 
 svn-build-outputs-hack:
-	(cd ${WRKSRC} && ${PATCH} ${PATCH_DIST_ARGS} -p0 < ${PATCHDIR}/extra-patch-build.conf)
-	(cd ${WRKSRC} && python2 gen-make.py --release --installed-libs libsvn_client,libsvn_delta,libsvn_diff,libsvn_fs,libsvn_fs_x,libsvn_ra,libsvn_repos,libsvn_subr,libsvn_wc)
+	(cd ${WRKSRC} && python2.7 gen-make.py --release --installed-libs libsvn_client,libsvn_delta,libsvn_diff,libsvn_fs,libsvn_fs_x,libsvn_ra,libsvn_repos,libsvn_subr,libsvn_wc)
 	${MV} ${WRKSRC}/build-outputs.mk ${FILESDIR}/build-outputs.mk.addons
 
 .include <bsd.port.post.mk>
