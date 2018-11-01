@@ -8,7 +8,7 @@ MASTER_SITES=	SF/modsetenvifplus
 EXTRACT_SUFX=	-src.tar.gz
 DIST_SUBDIR=	apache2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Allows setting environment variables based on request attributes
 
 LICENSE=	APACHE20
