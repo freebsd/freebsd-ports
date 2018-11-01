@@ -11,15 +11,13 @@ diff --git servo/components/style/cbindgen.toml servo/components/style/cbindgen.
 index 46162e43db5e..49872e88b7d9 100644
 --- servo/components/style/cbindgen.toml
 +++ servo/components/style/cbindgen.toml
-@@ -24,10 +24,10 @@ derive_helper_methods = true
- [export]
- prefix = "Style"
- include = [
--  "StyleAppearance",
--  "StyleDisplay",
--  "StyleDisplayMode",
--  "StyleFillRule",
+@@ -28,6 +28,12 @@ include = [
+   "StyleDisplay",
+   "StyleDisplayMode",
+   "StyleFillRule",
 -  "StylePathCommand"
++  "StylePathCommand",
++
 +  "Appearance",
 +  "Display",
 +  "DisplayMode",
