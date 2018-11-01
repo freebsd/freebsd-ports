@@ -1,6 +1,6 @@
---- src/main.cpp.orig	Sat May  3 18:46:15 2003
-+++ src/main.cpp	Sat Jul 12 03:40:03 2003
-@@ -27,7 +27,7 @@
+--- src/main.cpp.orig	2003-05-03 09:46:15 UTC
++++ src/main.cpp
+@@ -27,11 +27,11 @@ int host_byte_order;
  
  //Ê¸»úÎó
  #ifdef __FreeBSD__
@@ -9,3 +9,8 @@
  #else
  #define LANG "ja_JP"
  #endif
+-#define VERSION_NAME "jmode out of the way! Version "VERSION"\n"
++#define VERSION_NAME "jmode out of the way! Version " VERSION "\n"
+ char *version_name=VERSION_NAME;
+ char *usage=
+ "--help , --version :Show usage or version\n"

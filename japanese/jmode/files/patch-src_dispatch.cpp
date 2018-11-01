@@ -1,5 +1,5 @@
---- src/dispatch.cpp.orig	2014-06-28 22:10:26.000000000 +0900
-+++ src/dispatch.cpp	2014-06-28 22:10:45.000000000 +0900
+--- src/dispatch.cpp.orig	2003-08-11 14:38:20 UTC
++++ src/dispatch.cpp
 @@ -16,6 +16,7 @@
  #include <X11/Xatom.h>
  #include <unistd.h>
