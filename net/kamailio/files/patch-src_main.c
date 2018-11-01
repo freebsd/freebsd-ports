@@ -1,6 +1,6 @@
---- src/main.c.orig	2018-03-01 16:24:07 UTC
+--- src/main.c.orig	2018-08-22 09:38:44 UTC
 +++ src/main.c
-@@ -362,7 +362,7 @@ int received_dns = 0;
+@@ -361,7 +361,7 @@ int received_dns = 0;
  int sr_auto_aliases=1;
  char* working_dir = 0;
  char* chroot_dir = 0;

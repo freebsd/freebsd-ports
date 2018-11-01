@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kamailio
-PORTVERSION=	5.1.5
+PORTVERSION=	5.1.6
 
 CATEGORIES=	net
 MASTER_SITES=	http://www.kamailio.org/pub/kamailio/${PORTVERSION}/src/
