@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	11.4.3
+PORTVERSION=	11.4.4
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -86,7 +86,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-seed-fu>=2.3.7:databases/rubygem-seed-fu \
 	rubygem-html-pipeline>=2.8:textproc/rubygem-html-pipeline \
 	rubygem-deckar01-task_list>=2.0.0:www/rubygem-deckar01-task_list \
-	rubygem-gitlab-markup>=1.6.4:textproc/rubygem-gitlab-markup \
+	rubygem-gitlab-markup>=1.6.5:textproc/rubygem-gitlab-markup \
 	rubygem-github-markup17>=1.7.0:textproc/rubygem-github-markup17 \
 	rubygem-redcarpet>=3.4:textproc/rubygem-redcarpet \
 	rubygem-commonmarker>=0.17:textproc/rubygem-commonmarker \
@@ -216,7 +216,7 @@ USE_RC_SUBR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-ce/tags
-GL_COMMIT=	adea99b227a428dbda27e8fa2ed36c35672f5b07
+GL_COMMIT=	2e8fd64ba68c310e9aa387531d1dc65184a80135
 
 USERS=	git
 GROUPS=	git
