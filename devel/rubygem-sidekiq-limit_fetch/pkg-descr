@@ -1,4 +1,0 @@
-Sidekiq strategy to restrict number of workers which are able
-to run specified queues simultaneously.
-
-WWW: https://github.com/brainopia/sidekiq-limit_fetch
