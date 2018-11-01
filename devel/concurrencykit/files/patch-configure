@@ -1,0 +1,13 @@
+--- configure.orig	2018-07-15 19:01:39 UTC
++++ configure
+@@ -512,6 +512,10 @@ pathsearch()
+ 	what=$1
+ 	oldFS="$IFS"
+ 	IFS=":"
++	if test -x "$what" ; then
++		echo "$what";
++		return
++	fi
+ 	for d in $PATH ; do
+ 		if test -x "$d/$what" ; then
+ 			echo "$d/$what";
