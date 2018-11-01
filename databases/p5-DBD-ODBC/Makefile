@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBD-ODBC
-PORTVERSION=	1.59
+PORTVERSION=	1.60
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,9 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-DBI>=1.609:databases/p5-DBI
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
+RUN_DEPENDS=	p5-DBI>=1.609:databases/p5-DBI
+TEST_DEPENDS=	p5-Test-Output>=1.031:devel/p5-Test-Output
 
 OPTIONS_DEFINE=	DOCS
 
@@ -23,6 +24,7 @@ PORTSCOUT=	limit:^[0-9\.]*$$
 
 USES=		perl5
 USE_PERL5=	configure
+
 CONFIGURE_ARGS=	-o ${LOCALBASE}
 
 PORTDOCS=	Changes README README.adabas README.informix
