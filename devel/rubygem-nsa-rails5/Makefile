@@ -18,6 +18,8 @@ RUN_DEPENDS=	rubygem-activesupport5>=4.2:devel/rubygem-activesupport5 \
 USES=		gem shebangfix
 USE_RUBY=	yes
 
+NO_ARCH=	yes
+
 SHEBANG_FILES=	bin/setup
 
 .include <bsd.port.mk>
