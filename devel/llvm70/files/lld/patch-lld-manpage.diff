@@ -1,0 +1,57 @@
+head r329003: explain long options may use one or two dashes
+head r338251: document -z ifunc-noplt option
+head r338682: document -z interpose option
+
+--- tools/lld/docs/ld.lld.1
++++ tools/lld/docs/ld.lld.1
+@@ -3,7 +3,7 @@
+ .\"
+ .\" This man page documents only lld's ELF linking support, obtained originally
+ .\" from FreeBSD.
+-.Dd July 30, 2018
++.Dd September 14, 2018
+ .Dt LD.LLD 1
+ .Os
+ .Sh NAME
+@@ -25,6 +25,17 @@ is a drop-in replacement for the GNU BFD and gold link
+ It accepts most of the same command line arguments and linker scripts
+ as GNU linkers.
+ .Pp
++Many options have both a single-letter and long form.
++When using the long form options other than those beginning with the
++letter
++.Cm o
++may be specified using either one or two dashes preceding the option name.
++Long options beginning with
++.Cm o
++require two dashes to avoid confusion with the
++.Fl o Ar path
++option.
++.Pp
+ These options are available:
+ .Bl -tag -width indent
+ .It Fl -allow-multiple-definition
+@@ -440,10 +451,23 @@ Make the main stack executable.
+ Stack permissions are recorded in the
+ .Dv PT_GNU_STACK
+ segment.
++.It Cm ifunc-noplt
++Do not emit PLT entries for GNU ifuncs.
++Instead, preserve relocations for ifunc call sites so that they may
++be applied by a run-time loader.
++Note that this feature requires special loader support and will
++generally result in application crashes when used outside of freestanding
++environments.
+ .It Cm initfirst
+ Sets the
+ .Dv DF_1_INITFIRST
+ flag to indicate the module should be initialized first.
++.It Cm interpose
++Set the
++.Dv DF_1_INTERPOSE
++flag to indicate that the object is an interposer.
++Runtime linkers perform symbol resolution by first searching the application,
++followed by interposers, and then any other dependencies.
+ .It Cm muldefs
+ Do not error if a symbol is defined multiple times.
+ The first definition will be used.
