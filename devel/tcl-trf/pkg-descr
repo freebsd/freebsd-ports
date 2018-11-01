@@ -9,4 +9,4 @@ transparent encryption,  compression, charset recoding, etc.  Build upon
 this  framework (and  as proof  of  concept) a  collection of  tcl-level
 commands was implemented.
 
-WWW: http://www.oche.de/~akupries/soft/trf/
+WWW: https://wiki.tcl-lang.org/479

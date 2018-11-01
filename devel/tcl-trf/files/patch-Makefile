@@ -11,6 +11,6 @@
  
  CPPFLAGS	= @CPPFLAGS@
 -LIBS		= @PKG_LIBS@ @LIBS@
-+LIBS		= @PKG_LIBS@ @LIBS@ -lz -lbz2 -lcrypt ${SSLLIB} -lcrypto 
++LIBS		= @PKG_LIBS@ @LIBS@ -lz -lbz2 -lcrypt -lmd
  AR		= @AR@
  CFLAGS		= @CFLAGS@

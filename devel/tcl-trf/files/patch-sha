@@ -1,13 +1,11 @@
---- generic/sha.c.orig	2009-06-18 04:54:44 UTC
+--- generic/sha.c	2009-06-18 04:54:44 UTC
 +++ generic/sha.c
-@@ -27,15 +27,11 @@
+@@ -27,15 +27,9 @@
   * CVS: $Id: sha.c,v 1.4 2007/10/05 23:12:21 andreas_kupries Exp $
   */
  
 -#include "transformInt.h"
 -#include "sha/sha.h"
-+#include <openssl/opensslconf.h>
-+#ifndef OPENSSL_NO_SHA0
  
 -#ifdef WORDS_BIGENDIAN
 -#undef  LITTLE_ENDIAN
@@ -16,7 +14,7 @@
 -#define LITTLE_ENDIAN
 -#endif
 +#include "transformInt.h"
-+#include <openssl/sha.h>
++#include <sha.h>
  
  /*
   * Generator description
@@ -70,7 +68,7 @@
    NULL
  };
  
-@@ -110,182 +84,5 @@ Tcl_Interp* interp;
+@@ -110,182 +84,4 @@ Tcl_Interp* interp;
  {
    return Trf_RegisterMessageDigest (interp, &mdDescription);
  }
@@ -239,7 +237,7 @@
 -
 -#ifndef WORDS_BIGENDIAN
 -  Trf_FlipRegisterLong (s->s.digest, SHA_DIGESTSIZE);
- #endif
+-#endif
 -
 -  memcpy (digest, s->s.digest, SHA_DIGESTSIZE);
 -}

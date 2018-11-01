@@ -5,7 +5,7 @@
  
 -#include "loadman.h"
 +#include "transformInt.h"
-+#include <openssl/sha.h>
++#include <sha.h>
  
  /*
 @@ -39,5 +40,5 @@
@@ -24,7 +24,7 @@
 -static void MDsha1_Final     _ANSI_ARGS_ ((VOID* context, VOID* digest));
 -static int  MDsha1_Check     _ANSI_ARGS_ ((Tcl_Interp* interp));
 +#ifdef OTP
-+static void MDsha1_OTP_Final     _ANSI_ARGS_ ((VOID* context, VOID* digest));
++static void MDsha1_OTP_Final     _ANSI_ARGS_ ((VOID* digest, VOID *context));
 +#endif
  
  /*
