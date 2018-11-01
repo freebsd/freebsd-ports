@@ -10613,3 +10613,4 @@ games/traindirector||2018-11-01|Has expired: Does not build on FreeBSD 11+
 devel/rubygem-peek-sidekiq||2018-11-01|Obsolete by www/gitlab-ce 11.4.x upgrade
 devel/rubygem-sidekiq-limit_fetch||2018-11-01|Obsolete by www/gitlab-ce 11.4.x upgrade
 textproc/rubygem-github-markup16|textproc/rubygem-github-markup|2018-11-01|Obsolete by www/gitlab-ce 11.4.x upgrade, please use textproc/rubygem-github-markup
+www/rubygem-dropzonejs-rails07|www/rubygem-dropzonejs-rails|2018-11-01|Obsolete by www/gitlab-ce 11.4.x upgrade, please use www/rubygem-dropzonejs-rails
