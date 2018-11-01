@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vim
-PORTVERSION=	8.1.0443
+PORTVERSION=	8.1.0502
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -37,9 +37,10 @@ SHEBANG_FILES=	runtime/tools/demoserver.py runtime/tools/efm_perl.pl
 VIM_VER=	${PORTNAME}${PORTVERSION:R:S|.||g}
 
 # OPTIONS
-OPTIONS_DEFAULT=	CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS GTK2 PERL PYTHON2 RUBY
-OPTIONS_DEFINE=		CSCOPE DEFAULT_VIMRC EXUBERANT_CTAGS NLS XTERM_SAVE
-OPTIONS_SINGLE=		UI
+OPTIONS_DEFAULT=	CSCOPE DEFAULT_VIMRC CTAGS_EXUBERANT GTK2 PERL PYTHON2 RUBY
+OPTIONS_DEFINE=		CSCOPE DEFAULT_VIMRC NLS XTERM_SAVE
+OPTIONS_SINGLE=		CTAGS UI
+OPTIONS_SINGLE_CTAGS=	CTAGS_BASE CTAGS_EXUBERANT CTAGS_UNIVERSAL
 OPTIONS_SINGLE_UI=	ATHENA CONSOLE GNOME GTK2 GTK3 MOTIF X11
 OPTIONS_GROUP=		LANGBIND
 OPTIONS_GROUP_LANGBIND=	LUA PERL PYTHON2 PYTHON3 RUBY SCHEME TCL
@@ -60,8 +61,11 @@ OPTIONS_EXCLUDE:=	${OPTIONS_DEFINE} \
 .endif
 
 DEFAULT_VIMRC_DESC=	Install bundled vimrc as default setting
-EXUBERANT_CTAGS_DESC=	Use exctags instead of ctags
 XTERM_SAVE_DESC=	Restore xterm screen after exit
+
+CTAGS_BASE_DESC=	Use system ctags
+CTAGS_EXUBERANT_DESC=	Use exctags instead of ctags
+CTAGS_UNIVERSAL_DESC=	Use uctags instead of ctags
 
 UI_DESC=		User interface
 ATHENA_DESC=		Athena GUI toolkit
@@ -78,7 +82,8 @@ OPTIONS_EXCLUDE_powerpc64=	RUBY
 CSCOPE_CONFIGURE_ENABLE=cscope
 CSCOPE_RUN_DEPENDS=	cscope:devel/cscope
 
-EXUBERANT_CTAGS_RUN_DEPENDS=	exctags:devel/ctags
+CTAGS_EXUBERANT_RUN_DEPENDS=	exctags:devel/ctags
+CTAGS_UNIVERSAL_RUN_DEPENDS=	uctags:devel/universal-ctags
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
@@ -172,11 +177,14 @@ post-install:
 .endfor
 
 # OPTIONS
-post-patch-EXUBERANT_CTAGS-off:
+post-patch-CTAGS_BASE-on:
 	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -Ee 's!ctags -R ?\.!${FIND} . -type f \\| ${XARGS} ctags!g'
 
-post-patch-EXUBERANT_CTAGS-on:
+post-patch-CTAGS_EXUBERANT-on:
 	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|ctags -R|exctags -R|g'
+
+post-patch-CTAGS_UNIVERSAL-on:
+	@${FIND} ${WRKSRC}/runtime/ -name 'menu*.vim' -print0 | ${XARGS} -0 ${REINPLACE_CMD} -e 's|ctags -R|uctags -R|g'
 
 post-patch-LUA-on:
 	@${REINPLACE_CMD} -e 's|set dummy lua;|set dummy ${LUA_CMD};|g' ${WRKSRC}/src/auto/configure
