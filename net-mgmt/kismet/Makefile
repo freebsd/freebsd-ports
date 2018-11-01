@@ -3,7 +3,7 @@
 
 PORTNAME=	kismet
 DISTVERSION=	2016-07-R1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/
@@ -13,8 +13,9 @@ COMMENT=	802.11 layer2 wireless network detector, sniffer, and IDS
 
 LICENSE=	GPLv2
 
-GNU_CONFIGURE=	yes
 USES=		gmake tar:xz
+
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -63,6 +64,12 @@ PLIST_SUB+=	PLUGINS=""
 PLIST_SUB+=	PLUGINS="@comment "
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000
+EXTRA_PATCHES=${FILESDIR}/extra-patch-restricted-plugin-ptw_aircrack-crypto.cc
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "/gps=/s/true/false/" \
 		-e "/ouifile=/{/wireshark/d;s|/etc|${DOCSDIR}|;}" \
@@ -99,4 +106,4 @@ post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/kismet_drone.conf \
 		${STAGEDIR}${PREFIX}/etc/kismet_drone.conf.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
