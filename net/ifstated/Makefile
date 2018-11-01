@@ -6,7 +6,9 @@ PORTVERSION=	5.1
 PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	net
-MASTER_SITES=	http://christianserving.org/ports/net/ifstated/
+MASTER_SITES=	LOCAL/tobik \
+		http://pkg.tobik.me/distfiles/ \
+		http://christianserving.org/ports/net/ifstated/
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Interface state daemon
