@@ -3,7 +3,7 @@
 
 PORTNAME=	Trf
 PORTVERSION=	2.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel tcl
 MASTER_SITES=	SF/tcltrf/tcltrf/${PORTVERSION}
 PKGNAMEPREFIX=	tcl-
@@ -17,9 +17,7 @@ LICENSE_NAME=	Tcl Trf License
 LICENSE_FILE=	${WRKSRC}/doc/license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_SSL=	openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	use of undeclared identifier 'SHA_Init'
-
+TEST_DEPENDS=	${LOCALBASE}/lib/Memchan2.3/libMemchan.so.1:devel/tcl-memchan
 ALL_TARGET=	all
 
 USES+=		tcl:tea tar:bzip2
@@ -29,33 +27,9 @@ CFLAGS+=	-Wall -Werror
 
 MAKE_ENV+=	INSTALL_DATA="${INSTALL_DATA}"
 
-TEST_TARGET=	do-test
-
 REINPLACE_ARGS=	-i ""
 CONFIGURE_ARGS+=--enable-static-zlib --enable-static-bzlib \
 		--enable-static-md5
-
-.include <bsd.port.options.mk>
-post-patch:
-.if defined(TRF_USE_MD)
-	#
-	# Using FreeBSD's own -lmd instead of OpenSSL's -lcrypto
-	#
-	${REINPLACE_CMD} -E -e 's,openssl/,,'		\
-		-e 's,(MD[5])_([A-Z][a-z]),\1\2,g'	\
-		${WRKSRC}/generic/*.[ch]
-	${REINPLACE_CMD} 's,-lcrypto,-lmd,' ${WRKSRC}/Makefile.in
-.else
-	#
-	# Using OpenSSL's implementations of message digests (-lcrypto)
-	# To use FreeBSD's own -lmd, stop now and restart make with:
-	#
-	#	-DTRF_USE_MD
-	#
-USES+=			ssl
-CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
-CFLAGS+=		-I${OPENSSLINC}
-.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/Trf
@@ -68,19 +42,9 @@ do-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/Trf/libTrf${PORTVERSION}.so
 
 do-test:
-	@if ! ${PKG_BIN} info --quiet tcl-memchan; then	\
-		${PRINTF} "*****************\n%s\n*****************\n"	\
-		    "devel/tcl-memchan must be installed for the tests to work";	\
-		exit 1;	\
-	fi
 	cd ${WRKSRC}/tests && ${SETENV} TCLLIBPATH="${WRKSRC}" ${TCLSH} all
 
-.include <bsd.port.pre.mk>
 
 PLIST_SUB+=	TCL_DVER=${TCL_VER:C/\.//} VER=${PORTVERSION}
 
-.if defined(OPENSSLBASE) && ${OPENSSLBASE} != "/usr"
-MAKE_ENV+=	SSLINC=-I${OPENSSLINC} SSLLIB=-L${OPENSSLLIB}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
