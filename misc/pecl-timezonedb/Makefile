@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	timezonedb
-PORTVERSION=	2018.6
+PORTVERSION=	2018.7
 CATEGORIES=	misc
 
 MAINTAINER=	sunpoet@FreeBSD.org
