@@ -7,7 +7,7 @@ PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils net
 
-MAINTAINER=	ports@christianserving.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive real-time monitoring tool for the HAProxy unix socket
 
 LICENSE=	GPLv3+
