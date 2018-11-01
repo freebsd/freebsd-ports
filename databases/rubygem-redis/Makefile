@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-PORTVERSION=	4.0.2
+PORTVERSION=	4.0.3
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -12,9 +12,10 @@ COMMENT=	Ruby client library for Redis, the key value storage server
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/build
