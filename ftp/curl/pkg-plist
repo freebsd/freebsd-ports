@@ -8,6 +8,7 @@ include/curl/multi.h
 include/curl/stdcheaders.h
 include/curl/system.h
 include/curl/typecheck-gcc.h
+include/curl/urlapi.h
 lib/libcurl.a
 lib/libcurl.so
 lib/libcurl.so.4
@@ -136,6 +137,7 @@ man/man3/CURLOPT_DNS_LOCAL_IP6.3.gz
 man/man3/CURLOPT_DNS_SERVERS.3.gz
 man/man3/CURLOPT_DNS_SHUFFLE_ADDRESSES.3.gz
 man/man3/CURLOPT_DNS_USE_GLOBAL_CACHE.3.gz
+man/man3/CURLOPT_DOH_URL.3.gz
 man/man3/CURLOPT_EGDSOCKET.3.gz
 man/man3/CURLOPT_ERRORBUFFER.3.gz
 man/man3/CURLOPT_EXPECT_100_TIMEOUT_MS.3.gz
@@ -339,7 +341,9 @@ man/man3/CURLOPT_TRANSFERTEXT.3.gz
 man/man3/CURLOPT_TRANSFER_ENCODING.3.gz
 man/man3/CURLOPT_UNIX_SOCKET_PATH.3.gz
 man/man3/CURLOPT_UNRESTRICTED_AUTH.3.gz
+man/man3/CURLOPT_UPKEEP_INTERVAL_MS.3.gz
 man/man3/CURLOPT_UPLOAD.3.gz
+man/man3/CURLOPT_UPLOAD_BUFFERSIZE.3.gz
 man/man3/CURLOPT_URL.3.gz
 man/man3/CURLOPT_USERAGENT.3.gz
 man/man3/CURLOPT_USERNAME.3.gz
@@ -365,6 +369,7 @@ man/man3/curl_easy_send.3.gz
 man/man3/curl_easy_setopt.3.gz
 man/man3/curl_easy_strerror.3.gz
 man/man3/curl_easy_unescape.3.gz
+man/man3/curl_easy_upkeep.3.gz
 man/man3/curl_escape.3.gz
 man/man3/curl_formadd.3.gz
 man/man3/curl_formfree.3.gz
@@ -413,6 +418,11 @@ man/man3/curl_slist_free_all.3.gz
 man/man3/curl_strequal.3.gz
 man/man3/curl_strnequal.3.gz
 man/man3/curl_unescape.3.gz
+man/man3/curl_url.3.gz
+man/man3/curl_url_cleanup.3.gz
+man/man3/curl_url_dup.3.gz
+man/man3/curl_url_get.3.gz
+man/man3/curl_url_set.3.gz
 man/man3/curl_version.3.gz
 man/man3/curl_version_info.3.gz
 man/man3/libcurl-easy.3.gz
@@ -424,6 +434,7 @@ man/man3/libcurl-share.3.gz
 man/man3/libcurl-symbols.3.gz
 man/man3/libcurl-thread.3.gz
 man/man3/libcurl-tutorial.3.gz
+man/man3/libcurl-url.3.gz
 man/man3/libcurl.3.gz
 share/aclocal/libcurl.m4
 share/zsh/site-functions/_curl
