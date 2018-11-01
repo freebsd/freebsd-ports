@@ -42,7 +42,7 @@ TEST_DEPENDS=	p5-Bot-Training>=0:misc/p5-Bot-Training \
 		p5-File-Slurp>=9999.13:devel/p5-File-Slurp \
 		p5-Test-Exception>=0.29:devel/p5-Test-Exception \
 		p5-Test-Expect>=0.31:devel/p5-Test-Expect \
-		p5-Test-Output>=0.16:devel/p5-Test-Output \
+		p5-Test-Output>=0.160:devel/p5-Test-Output \
 		p5-Test-Script>=1.07:devel/p5-Test-Script \
 		p5-Test-Script-Run>=0.04:devel/p5-Test-Script-Run \
 		p5-Test-Synopsis>=0.06:devel/p5-Test-Synopsis
