@@ -10610,3 +10610,4 @@ www/typo3-7|www/typo3-8|2018-11-01|Has expired: Support will end in October 2018
 devel/memleax||2018-11-01|Has expired: does not actually detect leaks
 emulators/virtio-kmod||2018-11-01|Has expired: Does not build on FreeBSD 10+
 games/traindirector||2018-11-01|Has expired: Does not build on FreeBSD 11+
+devel/rubygem-peek-sidekiq||2018-11-01|Obsolete by www/gitlab-ce 11.4.x upgrade
