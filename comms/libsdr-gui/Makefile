@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hmatuschek
 
 USE_QT=		core buildtools_build qmake widgets
-USES=		cmake pkgconfig qt:5
+USES=		cmake compiler:c++11-lang pkgconfig qt:5
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
