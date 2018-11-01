@@ -13,13 +13,16 @@ COMMENT=	Perl extension for OpenSSL ECDSA
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BROKEN_FreeBSD_12=	unknown type name 'ECDSA_METHOD'; did you mean 'DSA_METHOD'?
+BROKEN_FreeBSD_13=	unknown type name 'ECDSA_METHOD'; did you mean 'DSA_METHOD'?
+BROKEN_SSL=	openssl-devel
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Crypt-OpenSSL-EC>=0.05:security/p5-Crypt-OpenSSL-EC
 
-BROKEN_SSL=	openssl-devel
-
 USES=		perl5 ssl
-USE_PERL5=	5.18+ configure
+USE_PERL5=	configure
+
 CFLAGS+=	-I${OPENSSLINC}
 
 post-install:
