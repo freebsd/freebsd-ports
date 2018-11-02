@@ -25,9 +25,9 @@ USES=		gmake
 ALL_TARGET=	mlton
 PLIST_FILES=	bin/${PORTNAME}-server
 PORTDATA=	emacs examples examples-clp examples-delphin tex vim README
-PORTDOCS=	dvi html info pdf ps
+PORTDOCS=	dvi html pdf ps
 WRKSRC=		${WRKDIR}/twelf
-INFO=		twelf
+DOCS_INFO=	twelf
 
 DOCS_USE=	TEX=dvipsk:build,tex:build
 DOCS_USES=	makeinfo
@@ -50,5 +50,6 @@ do-install:
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/info/twelf.info* ${STAGEDIR}${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.mk>
