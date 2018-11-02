@@ -15,7 +15,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		gmake localbase tar:tgz
+USES=		compiler:c++11-lang gl gmake localbase tar:tgz
 USE_GL=		gl
 USE_WX=		2.8
 
