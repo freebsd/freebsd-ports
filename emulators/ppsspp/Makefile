@@ -2,16 +2,13 @@
 
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.7
+DISTVERSION?=	1.7.1
 PORTREVISION?=	0
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
 MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/5/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
 DISTFILES=	${PORTNAME}.1:manpage
 EXTRACT_ONLY=	${DISTFILES:N*\:manpage:C/:.*//}
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	94c56ea09c04.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PSP emulator in C++ with dynarec JIT for x86, ARM, MIPS
@@ -26,7 +23,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrydgard
 GH_TUPLE?=	hrydgard:glslang:29619b23:glslang/ext/glslang \
-		hrydgard:${PORTNAME}-lang:cbad73f:lang/assets/lang \
+		hrydgard:${PORTNAME}-lang:f60be49:lang/assets/lang \
 		KhronosGroup:SPIRV-Cross:be7425e:SPIRV/ext/SPIRV-Cross \
 		Kingcom:armips:v0.10.0-22-g9efe336:armips/ext/armips \
 		Kingcom:tinyformat:Release-2.0.1-7-gb7f5a22:tinyformat/ext/armips/ext/tinyformat \
