@@ -30,7 +30,7 @@ DIST_VERSION=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.s([0-9]+)/\1-\2/}
 GCC_VERSION=	${PORTVERSION:C/(.+)\.s[0-9]{8}/\1/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
 
-USES=		bison gmake perl5 tar:bzip2 libtool
+USES=		bison gmake libtool makeinfo perl5 tar:bzip2
 USE_PERL5=	build
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
