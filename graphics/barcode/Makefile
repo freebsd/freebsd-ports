@@ -1,4 +1,4 @@
-# Created by: Emil J.V. Björsell (Jev)
+# Created by: Emil J.V. BjÃ¶rsell (Jev)
 # $FreeBSD$
 
 PORTNAME=	barcode
