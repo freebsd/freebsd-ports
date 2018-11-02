@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	davmail
-PORTVERSION=	4.8.6
+PORTVERSION=	4.9.0
 CATEGORIES=	mail java
 MASTER_SITES=	SF/davmail/davmail/${PORTVERSION}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}-${REVISION}
@@ -20,7 +20,7 @@ USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 ALL_TARGET=	release
-REVISION=	2600  # 4.8.6
+REVISION=	2652  # 4.9.0
 # port build number, same as on DISTNAME
 MAKE_ARGS=	-Drevision=${REVISION}
 MAKE_ENV+=	"ANT_OPTS=-Dfile.encoding=UTF-8"
@@ -35,8 +35,8 @@ SUB_FILES=	davmail.sh pkg-message
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#exec=\"davmail\"#exec=\"${PREFIX}/bin/davmail\"#' \
-		-e 's#icon=\"/usr/share/davmail/davmail.png\"#icon=\"${DATADIR}/davmail.png\"#' \
+	@${REINPLACE_CMD} -e 's#exec=\".*/davmail\"#exec=\"${PREFIX}/bin/davmail\"#' \
+		-e 's#icon=\".*/davmail.png\"#icon=\"${DATADIR}/davmail.png\"#' \
 		${WRKSRC}/build.xml
 
 do-install:
