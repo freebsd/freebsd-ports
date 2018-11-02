@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	11.3.8
+PORTVERSION=	11.4.4
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -17,8 +17,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # for the options
 MY_DEPENDS=	git>=2.16.2:devel/git \
 	gitlab-shell>=8.3.3:devel/gitlab-shell \
-	gitlab-workhorse>=6.1.0:www/gitlab-workhorse \
-	gitaly>=0.120.1:devel/gitaly \
+	gitlab-workhorse>=7.0.0:www/gitlab-workhorse \
+	gitaly>=0.125.1:devel/gitaly \
 	gitlab-pages>=1.1.0:www/gitlab-pages \
 	redis>=3.2.12:databases/redis \
 	npm>=4.3.0:www/npm \
@@ -63,9 +63,8 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-gitlab_omniauth-ldap20>=2.0.4:net/rubygem-gitlab_omniauth-ldap20 \
 	rubygem-net-ldap>=0.16.0:net/rubygem-net-ldap \
 	rubygem-gitlab-gollum-lib>=4.2.0:www/rubygem-gitlab-gollum-lib \
-	rubygem-gitlab-gollum-rugged_adapter>=0.4.4:www/rubygem-gitlab-gollum-rugged_adapter \
 	rubygem-github-linguist53>=5.3.3:textproc/rubygem-github-linguist53 \
-	rubygem-grape>=1.0:devel/rubygem-grape \
+	rubygem-grape>=1.1:devel/rubygem-grape \
 	rubygem-grape-entity>=0.7.1:devel/rubygem-grape-entity \
 	rubygem-rack-cors>=1.0.0:www/rubygem-rack-cors \
 	rubygem-graphql>=1.8.0:devel/rubygem-graphql \
@@ -75,7 +74,6 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-hamlit>=2.8.8:www/rubygem-hamlit \
 	rubygem-carrierwave>=1.2.3:www/rubygem-carrierwave \
 	rubygem-mini_magick>=0:graphics/rubygem-mini_magick \
-	rubygem-dropzonejs-rails07>=0.7.1:www/rubygem-dropzonejs-rails07 \
 	rubygem-fog-aws2>=2.0.1:net/rubygem-fog-aws2 \
 	rubygem-fog-core1>=1.44:devel/rubygem-fog-core1 \
 	rubygem-fog-google>=1.7.1:net/rubygem-fog-google \
@@ -88,7 +86,8 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-seed-fu>=2.3.7:databases/rubygem-seed-fu \
 	rubygem-html-pipeline>=2.8:textproc/rubygem-html-pipeline \
 	rubygem-deckar01-task_list>=2.0.0:www/rubygem-deckar01-task_list \
-	rubygem-gitlab-markup>=1.6.4:textproc/rubygem-gitlab-markup \
+	rubygem-gitlab-markup>=1.6.5:textproc/rubygem-gitlab-markup \
+	rubygem-github-markup17>=1.7.0:textproc/rubygem-github-markup17 \
 	rubygem-redcarpet>=3.4:textproc/rubygem-redcarpet \
 	rubygem-commonmarker>=0.17:textproc/rubygem-commonmarker \
 	rubygem-redcloth>=4.3.2:www/rubygem-redcloth \
@@ -108,10 +107,9 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-unicorn-worker-killer044>=0.4.4:www/rubygem-unicorn-worker-killer044 \
 	rubygem-state_machines-activerecord>=0.5.1:databases/rubygem-state_machines-activerecord \
 	rubygem-acts-as-taggable-on>=5.0:www/rubygem-acts-as-taggable-on \
-	rubygem-sidekiq>=5.1.0:devel/rubygem-sidekiq \
+	rubygem-sidekiq>=5.2.1:devel/rubygem-sidekiq \
 	rubygem-sidekiq-cron0>=0.6.0:devel/rubygem-sidekiq-cron0 \
 	rubygem-redis-namespace>=1.6.0:databases/rubygem-redis-namespace \
-	rubygem-sidekiq-limit_fetch>=3.4:devel/rubygem-sidekiq-limit_fetch \
 	rubygem-rufus-scheduler342>=3.4.0:devel/rubygem-rufus-scheduler342 \
 	rubygem-httparty>=0.13.3:www/rubygem-httparty \
 	rubygem-rainbow>=3.0:devel/rubygem-rainbow \
@@ -168,7 +166,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-peek-gc>=0.0.2:devel/rubygem-peek-gc \
 	rubygem-peek-rblineprof>=0.2.0:devel/rubygem-peek-rblineprof \
 	rubygem-peek-redis>=1.2.0:devel/rubygem-peek-redis \
-	rubygem-peek-sidekiq>=1.0.3:devel/rubygem-peek-sidekiq \
+	rubygem-gitlab-sidekiq-fetcher>0:devel/rubygem-gitlab-sidekiq-fetcher \
 	rubygem-prometheus-client-mmap>=0.9.4:devel/rubygem-prometheus-client-mmap \
 	rubygem-octokit>=4.9:net/rubygem-octokit \
 	rubygem-mail_room>=0.9.1:mail/rubygem-mail_room \
@@ -184,7 +182,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-sshkey>=1.9.0:security/rubygem-sshkey \
 	rubygem-ed25519>=1.2:security/rubygem-ed25519 \
 	rubygem-bcrypt_pbkdf>=1.0:security/rubygem-bcrypt_pbkdf \
-	rubygem-gitaly-proto>=0.117.0:net/rubygem-gitaly-proto \
+	rubygem-gitaly-proto>=0.118.1:net/rubygem-gitaly-proto \
 	rubygem-grpc>=1.11.0:net/rubygem-grpc \
 	rubygem-gitaly>=0.8.0:net/rubygem-gitaly \
 	rubygem-google-protobuf351>=3.5.1:devel/rubygem-google-protobuf351 \
@@ -218,7 +216,7 @@ USE_RC_SUBR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-ce/tags
-GL_COMMIT=	0a6f6119fa3e6f708e745bba369ecba18c3d07cc
+GL_COMMIT=	2e8fd64ba68c310e9aa387531d1dc65184a80135
 
 USERS=	git
 GROUPS=	git
