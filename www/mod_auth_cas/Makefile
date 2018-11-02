@@ -4,6 +4,7 @@
 PORTNAME=	mod_auth_cas
 PORTVERSION=	1.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
@@ -15,9 +16,10 @@ LICENSE=	APACHE20
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre.so:devel/pcre
 
+USES=		apache:2.4 ssl
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Jasig
-USES=		apache:2.2+ ssl
 
 HAS_CONFIGURE=	yes
 # configure requires LDFLAGS to find libpcre
