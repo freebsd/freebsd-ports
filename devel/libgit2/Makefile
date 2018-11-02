@@ -3,7 +3,7 @@
 # Also update devel/libgit2-glib, devel/rubygem-rugged, devel/py-pygit2
 
 PORTNAME=	libgit2
-PORTVERSION=	0.27.5
+PORTVERSION=	0.27.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
