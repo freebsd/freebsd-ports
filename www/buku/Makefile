@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	buku
-PORTVERSION=	3.9
+PORTVERSION=	4.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	www python
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -22,6 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.0:www/py-beautifulsoup@${PY
 USES=		python:3.4+
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
+
 NO_ARCH=	yes
 
 GH_ACCOUNT=	jarun
