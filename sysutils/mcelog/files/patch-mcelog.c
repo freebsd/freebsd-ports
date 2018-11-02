@@ -1,6 +1,6 @@
---- mcelog.c.orig	2017-10-12 20:42:20 UTC
+--- mcelog.c.orig	2018-08-09 21:49:49 UTC
 +++ mcelog.c
-@@ -20,9 +20,22 @@
+@@ -20,9 +20,23 @@
  #define _GNU_SOURCE 1
  #include <sys/fcntl.h>
  #include <sys/ioctl.h>
@@ -11,6 +11,7 @@
 +#endif
 +#ifdef __FreeBSD__
 +#include <sys/types.h>
++#include <sys/queue.h>
 +#include <sys/sysctl.h>
 +#include <machine/cpufunc.h>
 +#include <machine/cputypes.h>
@@ -23,7 +24,7 @@
  #include <stdlib.h>
  #include <stdio.h>
  #include <string.h>
-@@ -60,9 +73,25 @@
+@@ -60,9 +74,25 @@
  #include "bus.h"
  #include "unknown.h"
  
@@ -49,7 +50,7 @@
  
  int ignore_nodev;
  int filter_bogus = 1;
-@@ -73,7 +102,9 @@ int ascii_mode;
+@@ -73,7 +103,9 @@ int ascii_mode;
  int dump_raw_ascii;
  int daemon_mode;
  static char *inputfile;
@@ -59,7 +60,7 @@
  static int foreground;
  int filter_memory_errors;
  static struct config_cred runcred = { .uid = -1U, .gid = -1U };
-@@ -82,6 +113,10 @@ static char pidfile_default[] = PID_FILE;
+@@ -82,6 +114,10 @@ static char pidfile_default[] = PID_FILE
  static char logfile_default[] = LOG_FILE;
  static char *pidfile = pidfile_default;
  static char *logfile;
@@ -70,7 +71,7 @@
  static int debug_numerrors;
  int imc_log = -1;
  static int check_only = 0;
-@@ -196,6 +231,7 @@ static void parse_cpuid(u32 cpuid, u32 *family, u32 *m
+@@ -199,6 +235,7 @@ static void parse_cpuid(u32 cpuid, u32 *
  		*model += c.c.ext_model << 4;
  }
  
@@ -78,7 +79,7 @@
  static u32 unparse_cpuid(unsigned family, unsigned model)
  {
  	union { 
-@@ -213,6 +249,7 @@ static u32 unparse_cpuid(unsigned family, unsigned mod
+@@ -216,6 +253,7 @@ static u32 unparse_cpuid(unsigned family
  		c.c.ext_model = model >> 4;
  	return c.v;
  }
@@ -86,7 +87,7 @@
  
  static char *cputype_name[] = {
  	[CPU_GENERIC] = "generic CPU",
-@@ -329,6 +366,7 @@ static char *vendor[] = {
+@@ -332,6 +370,7 @@ static char *vendor[] = {
  	[8] = "NSC"
  };
  
@@ -94,7 +95,7 @@
  static unsigned cpuvendor_to_num(char *name)
  {
  	unsigned i;
-@@ -343,6 +381,7 @@ static unsigned cpuvendor_to_num(char *name)
+@@ -346,6 +385,7 @@ static unsigned cpuvendor_to_num(char *n
  			return i;
  	return 0;
  }
@@ -102,7 +103,7 @@
  
  static char *cpuvendor_name(u32 cpuvendor)
  {
-@@ -491,6 +530,7 @@ static void dump_mce_raw_ascii(struct mce *m, unsigned
+@@ -497,6 +537,7 @@ static void dump_mce_raw_ascii(struct mc
  	Wprintf("\n");
  }
  
@@ -110,12 +111,12 @@
  int is_cpu_supported(void)
  { 
  	enum { 
-@@ -561,14 +601,61 @@ int is_cpu_supported(void)
+@@ -567,14 +608,61 @@ int is_cpu_supported(void)
  
  	return 1;
  } 
 +#endif
- 
++
 +#ifdef __FreeBSD__
 +int is_cpu_supported(void)
 +{
@@ -158,7 +159,7 @@
 +	return 0;
 +}
 +#endif
-+
+ 
 +#ifdef __Linux__
  static char *skipspace(char *s)
  {
@@ -172,7 +173,7 @@
  static char *skip_syslog(char *s)
  {
  	char *p;
-@@ -579,7 +666,9 @@ static char *skip_syslog(char *s)
+@@ -585,7 +673,9 @@ static char *skip_syslog(char *s)
  		return p + sizeof("mcelog: ") - 1;
  	return s;
  }
@@ -182,7 +183,7 @@
  static char *skipgunk(char *s)
  {
  	s = skip_syslog(s);
-@@ -604,12 +693,16 @@ static char *skipgunk(char *s)
+@@ -610,12 +700,16 @@ static char *skipgunk(char *s)
  
  	return skipspace(s);
  }
@@ -199,7 +200,7 @@
  static int is_short(char *name)
  {
  	return strlen(name) == 3 && 
-@@ -617,7 +710,9 @@ static int is_short(char *name)
+@@ -623,7 +717,9 @@ static int is_short(char *name)
  		islower(name[1]) &&
  		islower(name[2]);
  }
@@ -209,7 +210,7 @@
  static unsigned skip_date(char *s)
  {
  	unsigned day, hour, min, year, sec; 
-@@ -634,6 +729,7 @@ static unsigned skip_date(char *s)
+@@ -640,6 +736,7 @@ static unsigned skip_date(char *s)
  		return 0;
  	return next;
  }
@@ -217,7 +218,7 @@
  
  static void dump_mce_final(struct mce *m, char *symbol, int missing, int recordlen, 
  			   int dseen)
-@@ -654,6 +750,7 @@ static void dump_mce_final(struct mce *m, char *symbol
+@@ -660,6 +757,7 @@ static void dump_mce_final(struct mce *m
  	flushlog();
  }
  
@@ -225,7 +226,7 @@
  static char *skip_patterns[] = {
  	"MCA:*",
  	"MCi_MISC register valid*",
-@@ -662,7 +759,9 @@ static char *skip_patterns[] = {
+@@ -668,7 +766,9 @@ static char *skip_patterns[] = {
  	"Kernel does not support page offline interface",
  	NULL
  };
@@ -235,7 +236,7 @@
  static int match_patterns(char *s, char **pat)
  {
  	for (; *pat; pat++) 
-@@ -670,12 +769,14 @@ static int match_patterns(char *s, char **pat)
+@@ -676,12 +776,14 @@ static int match_patterns(char *s, char 
  			return 0;
  	return 1;
  }
@@ -250,12 +251,12 @@
  static void decodefatal(FILE *inf)
  {
  	struct mce m;
-@@ -886,7 +987,228 @@ restart:
+@@ -892,6 +994,227 @@ restart:
  	if (data)
  		dump_mce_final(&m, symbol, missing, recordlen, disclaimer_seen);
  }
 +#endif
- 
++
 +#ifdef __FreeBSD__
 +/*
 + * Table used to map cpuid vendor strings and FreeBSD CPU vendor IDs
@@ -475,11 +476,10 @@
 +	}
 +}
 +#endif
-+
+ 
  static void remove_pidfile(void)
  {
- 	unlink(pidfile);
-@@ -951,6 +1273,10 @@ void usage(void)
+@@ -957,6 +1280,10 @@ void usage(void)
  "  mcelog [options] --ascii < log\n"
  "  mcelog [options] --ascii --file log\n"
  "Decode machine check ASCII output from kernel logs\n"
@@ -490,7 +490,7 @@
  "\n"
  "Options:\n"  
  "--version           Show the version of mcelog and exit\n"
-@@ -1168,6 +1494,14 @@ static int modifier(int opt)
+@@ -1174,6 +1501,14 @@ static int modifier(int opt)
  		usage();
  		exit(0);
  		break;
@@ -505,7 +505,7 @@
  	case 0:
  		break;
  	default:
-@@ -1218,10 +1552,12 @@ static int combined_modifier(int opt)
+@@ -1224,10 +1559,12 @@ static int combined_modifier(int opt)
  
  static void general_setup(void)
  {
@@ -518,7 +518,7 @@
  	config_cred("global", "run-credentials", &runcred);
  	if (config_bool("global", "filter-memory-errors") == 1)
  		filter_memory_errors = 1;
-@@ -1244,6 +1580,7 @@ static void drop_cred(void)
+@@ -1250,6 +1587,7 @@ static void drop_cred(void)
  	}
  }
  
@@ -526,12 +526,12 @@
  static void process(int fd, unsigned recordlen, unsigned loglen, char *buf)
  {	
  	int i; 
-@@ -1296,7 +1633,174 @@ static void process(int fd, unsigned recordlen, unsign
+@@ -1302,6 +1640,173 @@ static void process(int fd, unsigned rec
  	if (finish)
  		exit(0);
  }
 +#endif
- 
++
 +#ifdef __FreeBSD__
 +#ifdef LOCAL_HACK
 +struct mca_record_old {
@@ -697,11 +697,10 @@
 +		exit(0);
 +}
 +#endif
-+
+ 
  static void noargs(int ac, char **av)
  {
- 	if (getopt_long(ac, av, "", options, NULL) != -1) {
-@@ -1358,12 +1862,14 @@ struct mcefd_data {
+@@ -1364,12 +1869,14 @@ struct mcefd_data {
  	char *buf;
  };
  
@@ -716,7 +715,7 @@
  
  static void handle_sigusr1(int sig)
  {
-@@ -1372,13 +1878,18 @@ static void handle_sigusr1(int sig)
+@@ -1378,13 +1885,18 @@ static void handle_sigusr1(int sig)
  
  int main(int ac, char **av) 
  { 
@@ -737,7 +736,7 @@
  		if (opt == '?') {
  			usage(); 
  			exit(1);
-@@ -1399,11 +1910,13 @@ int main(int ac, char **av) 
+@@ -1405,11 +1917,13 @@ int main(int ac, char **av) 
  	} 
  
  	/* before doing anything else let's see if the CPUs are supported */
@@ -751,7 +750,7 @@
  	if (check_only)
  		exit(0);
  
-@@ -1422,15 +1935,23 @@ int main(int ac, char **av) 
+@@ -1428,15 +1942,23 @@ int main(int ac, char **av) 
  	}
  
  	modifier_finish();
@@ -775,7 +774,7 @@
  	fd = open(logfn, O_RDONLY); 
  	if (fd < 0) {
  		if (ignore_nodev) 
-@@ -1445,27 +1966,44 @@ int main(int ac, char **av) 
+@@ -1451,27 +1973,44 @@ int main(int ac, char **av) 
  		err("MCE_GET_LOG_LEN");
  
  	d.buf = xalloc(d.recordlen * d.loglen); 
