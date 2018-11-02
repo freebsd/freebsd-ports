@@ -1,2 +1,3 @@
-SHA256 (apache2/mod_auth_pubtkt-0.9.tar.gz) = 3980100634259c1edd400f046748ddb2b1badbf715512119bf75b1f9b6be5218
-SIZE (apache2/mod_auth_pubtkt-0.9.tar.gz) = 40169
+TIMESTAMP = 1541116834
+SHA256 (apache2/mod_auth_pubtkt-0.13.tar.gz) = b5992623b1e9a0f6f72f531a6642f85b553940c0a0dc50238de0a0da1d1ae09c
+SIZE (apache2/mod_auth_pubtkt-0.13.tar.gz) = 40762
