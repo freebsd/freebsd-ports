@@ -70,6 +70,11 @@ share/osinfo/os/alpinelinux.org/alpinelinux-3.5.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.6.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.7.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.8.xml
+share/osinfo/os/altlinux.org/alt-8.0.xml
+share/osinfo/os/altlinux.org/alt-8.1.xml
+share/osinfo/os/altlinux.org/alt-8.2.xml
+share/osinfo/os/altlinux.org/alt-p8.starterkits.xml
+share/osinfo/os/altlinux.org/alt-sisyphus.xml
 share/osinfo/os/altlinux.org/altlinux-1.0.xml
 share/osinfo/os/altlinux.org/altlinux-2.0.xml
 share/osinfo/os/altlinux.org/altlinux-2.2.xml
@@ -470,6 +475,7 @@ share/osinfo/os/redhat.com/rhel-7.2.xml
 share/osinfo/os/redhat.com/rhel-7.3.xml
 share/osinfo/os/redhat.com/rhel-7.4.xml
 share/osinfo/os/redhat.com/rhel-7.5.xml
+share/osinfo/os/redhat.com/rhel-7.6.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.1.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.2.xml
