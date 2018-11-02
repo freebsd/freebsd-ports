@@ -745,6 +745,9 @@ lib/monodevelop/bin/Microsoft.CodeAnalysis.Elfie.dll
 lib/monodevelop/bin/Microsoft.CodeAnalysis.Features.dll
 lib/monodevelop/bin/Microsoft.CodeAnalysis.Features.pdb
 lib/monodevelop/bin/Microsoft.CodeAnalysis.Features.xml
+lib/monodevelop/bin/Microsoft.CodeAnalysis.VisualBasic.EditorFeatures.dll
+lib/monodevelop/bin/Microsoft.CodeAnalysis.VisualBasic.EditorFeatures.pdb
+lib/monodevelop/bin/Microsoft.CodeAnalysis.VisualBasic.EditorFeatures.xml
 lib/monodevelop/bin/Microsoft.CodeAnalysis.VisualBasic.Features.dll
 lib/monodevelop/bin/Microsoft.CodeAnalysis.VisualBasic.Features.pdb
 lib/monodevelop/bin/Microsoft.CodeAnalysis.VisualBasic.Features.xml
@@ -871,7 +874,6 @@ lib/monodevelop/bin/Xwt.Gtk.pdb
 lib/monodevelop/bin/Xwt.dll
 lib/monodevelop/bin/Xwt.pdb
 lib/monodevelop/bin/YamlDotNet.dll
-lib/monodevelop/bin/YamlDotNet.pdb
 lib/monodevelop/bin/YamlDotNet.xml
 lib/monodevelop/bin/buildinfo
 lib/monodevelop/bin/cs/Microsoft.CodeAnalysis.CSharp.EditorFeatures.resources.dll
@@ -881,6 +883,7 @@ lib/monodevelop/bin/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
 lib/monodevelop/bin/cs/Microsoft.CodeAnalysis.EditorFeatures.Text.resources.dll
 lib/monodevelop/bin/cs/Microsoft.CodeAnalysis.EditorFeatures.resources.dll
 lib/monodevelop/bin/cs/Microsoft.CodeAnalysis.Features.resources.dll
+lib/monodevelop/bin/cs/Microsoft.CodeAnalysis.VisualBasic.EditorFeatures.resources.dll
 lib/monodevelop/bin/cs/Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 lib/monodevelop/bin/cs/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
 lib/monodevelop/bin/cs/Microsoft.CodeAnalysis.VisualBasic.resources.dll
@@ -897,6 +900,7 @@ lib/monodevelop/bin/de/Microsoft.CodeAnalysis.CSharp.resources.dll
 lib/monodevelop/bin/de/Microsoft.CodeAnalysis.EditorFeatures.Text.resources.dll
 lib/monodevelop/bin/de/Microsoft.CodeAnalysis.EditorFeatures.resources.dll
 lib/monodevelop/bin/de/Microsoft.CodeAnalysis.Features.resources.dll
+lib/monodevelop/bin/de/Microsoft.CodeAnalysis.VisualBasic.EditorFeatures.resources.dll
 lib/monodevelop/bin/de/Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 lib/monodevelop/bin/de/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
 lib/monodevelop/bin/de/Microsoft.CodeAnalysis.VisualBasic.resources.dll
@@ -913,6 +917,7 @@ lib/monodevelop/bin/es/Microsoft.CodeAnalysis.CSharp.resources.dll
 lib/monodevelop/bin/es/Microsoft.CodeAnalysis.EditorFeatures.Text.resources.dll
 lib/monodevelop/bin/es/Microsoft.CodeAnalysis.EditorFeatures.resources.dll
 lib/monodevelop/bin/es/Microsoft.CodeAnalysis.Features.resources.dll
+lib/monodevelop/bin/es/Microsoft.CodeAnalysis.VisualBasic.EditorFeatures.resources.dll
 lib/monodevelop/bin/es/Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 lib/monodevelop/bin/es/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
 lib/monodevelop/bin/es/Microsoft.CodeAnalysis.VisualBasic.resources.dll
@@ -929,6 +934,7 @@ lib/monodevelop/bin/fr/Microsoft.CodeAnalysis.CSharp.resources.dll
 lib/monodevelop/bin/fr/Microsoft.CodeAnalysis.EditorFeatures.Text.resources.dll
 lib/monodevelop/bin/fr/Microsoft.CodeAnalysis.EditorFeatures.resources.dll
 lib/monodevelop/bin/fr/Microsoft.CodeAnalysis.Features.resources.dll
+lib/monodevelop/bin/fr/Microsoft.CodeAnalysis.VisualBasic.EditorFeatures.resources.dll
 lib/monodevelop/bin/fr/Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 lib/monodevelop/bin/fr/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
 lib/monodevelop/bin/fr/Microsoft.CodeAnalysis.VisualBasic.resources.dll
@@ -950,6 +956,7 @@ lib/monodevelop/bin/it/Microsoft.CodeAnalysis.CSharp.resources.dll
 lib/monodevelop/bin/it/Microsoft.CodeAnalysis.EditorFeatures.Text.resources.dll
 lib/monodevelop/bin/it/Microsoft.CodeAnalysis.EditorFeatures.resources.dll
 lib/monodevelop/bin/it/Microsoft.CodeAnalysis.Features.resources.dll
+lib/monodevelop/bin/it/Microsoft.CodeAnalysis.VisualBasic.EditorFeatures.resources.dll
 lib/monodevelop/bin/it/Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 lib/monodevelop/bin/it/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
 lib/monodevelop/bin/it/Microsoft.CodeAnalysis.VisualBasic.resources.dll
@@ -966,6 +973,7 @@ lib/monodevelop/bin/ja/Microsoft.CodeAnalysis.CSharp.resources.dll
 lib/monodevelop/bin/ja/Microsoft.CodeAnalysis.EditorFeatures.Text.resources.dll
 lib/monodevelop/bin/ja/Microsoft.CodeAnalysis.EditorFeatures.resources.dll
 lib/monodevelop/bin/ja/Microsoft.CodeAnalysis.Features.resources.dll
+lib/monodevelop/bin/ja/Microsoft.CodeAnalysis.VisualBasic.EditorFeatures.resources.dll
 lib/monodevelop/bin/ja/Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 lib/monodevelop/bin/ja/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
 lib/monodevelop/bin/ja/Microsoft.CodeAnalysis.VisualBasic.resources.dll
@@ -982,6 +990,7 @@ lib/monodevelop/bin/ko/Microsoft.CodeAnalysis.CSharp.resources.dll
 lib/monodevelop/bin/ko/Microsoft.CodeAnalysis.EditorFeatures.Text.resources.dll
 lib/monodevelop/bin/ko/Microsoft.CodeAnalysis.EditorFeatures.resources.dll
 lib/monodevelop/bin/ko/Microsoft.CodeAnalysis.Features.resources.dll
+lib/monodevelop/bin/ko/Microsoft.CodeAnalysis.VisualBasic.EditorFeatures.resources.dll
 lib/monodevelop/bin/ko/Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 lib/monodevelop/bin/ko/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
 lib/monodevelop/bin/ko/Microsoft.CodeAnalysis.VisualBasic.resources.dll
@@ -1010,6 +1019,7 @@ lib/monodevelop/bin/pl/Microsoft.CodeAnalysis.CSharp.resources.dll
 lib/monodevelop/bin/pl/Microsoft.CodeAnalysis.EditorFeatures.Text.resources.dll
 lib/monodevelop/bin/pl/Microsoft.CodeAnalysis.EditorFeatures.resources.dll
 lib/monodevelop/bin/pl/Microsoft.CodeAnalysis.Features.resources.dll
+lib/monodevelop/bin/pl/Microsoft.CodeAnalysis.VisualBasic.EditorFeatures.resources.dll
 lib/monodevelop/bin/pl/Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 lib/monodevelop/bin/pl/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
 lib/monodevelop/bin/pl/Microsoft.CodeAnalysis.VisualBasic.resources.dll
@@ -1026,6 +1036,7 @@ lib/monodevelop/bin/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll
 lib/monodevelop/bin/pt-BR/Microsoft.CodeAnalysis.EditorFeatures.Text.resources.dll
 lib/monodevelop/bin/pt-BR/Microsoft.CodeAnalysis.EditorFeatures.resources.dll
 lib/monodevelop/bin/pt-BR/Microsoft.CodeAnalysis.Features.resources.dll
+lib/monodevelop/bin/pt-BR/Microsoft.CodeAnalysis.VisualBasic.EditorFeatures.resources.dll
 lib/monodevelop/bin/pt-BR/Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 lib/monodevelop/bin/pt-BR/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
 lib/monodevelop/bin/pt-BR/Microsoft.CodeAnalysis.VisualBasic.resources.dll
@@ -1042,6 +1053,7 @@ lib/monodevelop/bin/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
 lib/monodevelop/bin/ru/Microsoft.CodeAnalysis.EditorFeatures.Text.resources.dll
 lib/monodevelop/bin/ru/Microsoft.CodeAnalysis.EditorFeatures.resources.dll
 lib/monodevelop/bin/ru/Microsoft.CodeAnalysis.Features.resources.dll
+lib/monodevelop/bin/ru/Microsoft.CodeAnalysis.VisualBasic.EditorFeatures.resources.dll
 lib/monodevelop/bin/ru/Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 lib/monodevelop/bin/ru/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
 lib/monodevelop/bin/ru/Microsoft.CodeAnalysis.VisualBasic.resources.dll
@@ -1058,6 +1070,7 @@ lib/monodevelop/bin/tr/Microsoft.CodeAnalysis.CSharp.resources.dll
 lib/monodevelop/bin/tr/Microsoft.CodeAnalysis.EditorFeatures.Text.resources.dll
 lib/monodevelop/bin/tr/Microsoft.CodeAnalysis.EditorFeatures.resources.dll
 lib/monodevelop/bin/tr/Microsoft.CodeAnalysis.Features.resources.dll
+lib/monodevelop/bin/tr/Microsoft.CodeAnalysis.VisualBasic.EditorFeatures.resources.dll
 lib/monodevelop/bin/tr/Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 lib/monodevelop/bin/tr/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
 lib/monodevelop/bin/tr/Microsoft.CodeAnalysis.VisualBasic.resources.dll
@@ -1074,6 +1087,7 @@ lib/monodevelop/bin/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
 lib/monodevelop/bin/zh-Hans/Microsoft.CodeAnalysis.EditorFeatures.Text.resources.dll
 lib/monodevelop/bin/zh-Hans/Microsoft.CodeAnalysis.EditorFeatures.resources.dll
 lib/monodevelop/bin/zh-Hans/Microsoft.CodeAnalysis.Features.resources.dll
+lib/monodevelop/bin/zh-Hans/Microsoft.CodeAnalysis.VisualBasic.EditorFeatures.resources.dll
 lib/monodevelop/bin/zh-Hans/Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 lib/monodevelop/bin/zh-Hans/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
 lib/monodevelop/bin/zh-Hans/Microsoft.CodeAnalysis.VisualBasic.resources.dll
@@ -1090,6 +1104,7 @@ lib/monodevelop/bin/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
 lib/monodevelop/bin/zh-Hant/Microsoft.CodeAnalysis.EditorFeatures.Text.resources.dll
 lib/monodevelop/bin/zh-Hant/Microsoft.CodeAnalysis.EditorFeatures.resources.dll
 lib/monodevelop/bin/zh-Hant/Microsoft.CodeAnalysis.Features.resources.dll
+lib/monodevelop/bin/zh-Hant/Microsoft.CodeAnalysis.VisualBasic.EditorFeatures.resources.dll
 lib/monodevelop/bin/zh-Hant/Microsoft.CodeAnalysis.VisualBasic.Features.resources.dll
 lib/monodevelop/bin/zh-Hant/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll
 lib/monodevelop/bin/zh-Hant/Microsoft.CodeAnalysis.VisualBasic.resources.dll
