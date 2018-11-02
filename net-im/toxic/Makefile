@@ -27,7 +27,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:net-im/tox
 USE_GITHUB=	yes
 GH_ACCOUNT=	JFreegman
 
-USES=		desktop-file-utils gettext-runtime gmake ncurses openal:al,alut pkgconfig
+USES=		desktop-file-utils gettext-runtime gmake ncurses:port openal:al,alut pkgconfig
 
 OPTIONS_DEFINE=	X11 PYTHON
 OPTIONS_DEFAULT=X11
