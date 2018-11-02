@@ -37,6 +37,7 @@
 %%SITE_ARCH%%/Glib/Type.pod
 %%SITE_ARCH%%/Glib/Utils.pod
 %%SITE_ARCH%%/Glib/Variant.pod
+%%SITE_ARCH%%/Glib/VariantDict.pod
 %%SITE_ARCH%%/Glib/VariantType.pod
 %%SITE_ARCH%%/Glib/devel.pod
 %%SITE_ARCH%%/Glib/index.pod
@@ -77,6 +78,7 @@
 %%PERL5_MAN3%%/Glib::Type.3.gz
 %%PERL5_MAN3%%/Glib::Utils.3.gz
 %%PERL5_MAN3%%/Glib::Variant.3.gz
+%%PERL5_MAN3%%/Glib::VariantDict.3.gz
 %%PERL5_MAN3%%/Glib::VariantType.3.gz
 %%PERL5_MAN3%%/Glib::devel.3.gz
 %%PERL5_MAN3%%/Glib::index.3.gz
