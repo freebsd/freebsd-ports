@@ -26,9 +26,6 @@ GH_TAGNAME=	da173cc
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1101510
-IGNORE=		not supported on 11.1 or older, no kernel support
-.endif
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000 && ${OSVERSION} < 1200019
 IGNORE=		not supported on older CURRENT, no kernel support
 .endif

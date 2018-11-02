@@ -113,10 +113,6 @@ CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
 LIBS+=		-L${BDB_LIB_DIR}
 .endif
 
-.if ${OSVERSION} < 1100000
-CONFIGURE_ARGS+=--disable-asm
-.endif
-
 .if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
 
 post-install:

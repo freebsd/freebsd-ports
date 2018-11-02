@@ -116,12 +116,7 @@ MAKE_ARGS+=	ARCH=ppc64
 CONFIGURE_ARGS+=	--sparc_cpu=v9
 .endif
 
-# clang in freebsd 10 is unable to assemble linuxboot_dma.bin
-.if (${OSVERSION} < 1100000)
-PLIST_SUB+=	LINUXBOOT_DMA="@comment "
-.else
 PLIST_SUB+=	LINUXBOOT_DMA=""
-.endif
 
 # -lprocstat actually only _needs_ -lelf after r249666 or r250870 (MFC)
 # but it shouldn't matter much
@@ -144,15 +139,6 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e "1s|^(#! )/usr/bin/perl|\1${PERL}|" \
 		${WRKSRC}/scripts/texi2pod.pl
-# clang in freebsd 10 is unable to assemble linuxboot_dma.bin
-.if (${OSVERSION} < 1100000)
-	@${REINPLACE_CMD} -E \
-		-e 's|linuxboot_dma.bin||' \
-		${WRKSRC}/pc-bios/optionrom/Makefile
-	@${REINPLACE_CMD} -E \
-		-e 's|linuxboot_dma.bin||' \
-		${WRKSRC}/Makefile
-.endif
 
 post-patch-CDROM_DMA-off:
 	@${REINPLACE_CMD} -e '/USE_DMA_CDROM/d' ${WRKSRC}/include/hw/ide/internal.h

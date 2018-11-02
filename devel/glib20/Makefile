@@ -48,23 +48,10 @@ gio_MAN=	gdbus.1 gsettings.1 gio-querymodules.1 gio.1 \
 		glib-compile-resources.1 gresource.1 gdbus-codegen.1
 gobject_MAN=	glib-genmarshal.1 glib-mkenums.1 gobject-query.1
 
-OPTIONS_DEFINE=	COLLATION_FIX DEBUG NLS
+OPTIONS_DEFINE=	DEBUG NLS
 OPTIONS_SUB=	yes
-# libc collation was fixed by https://svnweb.freebsd.org/changeset/base/290494
-COLLATION_FIX_DESC=	Use ICU for UTF-8 string collation (if libc is broken)
-
-OPTIONS_EXCLUDE_FreeBSD_11=	COLLATION_FIX
-OPTIONS_EXCLUDE_FreeBSD_12=	COLLATION_FIX
-OPTIONS_EXCLUDE_FreeBSD_13=	COLLATION_FIX
 
 DEBUG_CONFIGURE_ON=	--enable-debug=yes
-
-COLLATION_FIX_LIB_DEPENDS+=	libicui18n.so:devel/icu
-COLLATION_FIX_EXTRA_PATCHES+=	${FILESDIR}/extra-patch-glib_Makefile.in \
-		${FILESDIR}/extra-patch-glib_gunicollate.c
-# Disable it until someone can figure why it causes net-im/pidgin crashed.
-# http://www.freebsd.org/cgi/query-pr.cgi?pr=175930 see comment by ed@
-#COLLATION_FIX_CONFIGURE_ENV+=	CFLAGS="-D__STDC_ISO_10646__"
 
 .include <bsd.port.pre.mk>
 

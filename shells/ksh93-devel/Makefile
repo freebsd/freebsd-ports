@@ -52,14 +52,12 @@ KSH93_DESC=	Install to ${PREFIX}/bin/ksh93
 KSH_PLIST_SUB=		93=""
 KSH93_PLIST_SUB=	93="93"
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-patch:
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100093
 	@${REINPLACE_CMD} -e 's|SF_FLAGS|SFIO_FLAGS|g' ${WRKSRC}/src/lib/libast/include/sfio*.h ${WRKSRC}/src/lib/libast/sfio/*.c
-.endif
 .if ${PORT_OPTIONS:MKSH93}
 	@${MV} ${WRKSRC}/src/cmd/ksh93/ksh.1 ${WRKSRC}/src/cmd/ksh93/ksh93.1
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -43,14 +43,8 @@ USE_QT=		concurrent core dbus gui multimedia network qml quick script \
 		quickcontrols2_run virtualkeyboard_run
 USE_XORG=	ice sm x11 xcb xext xi
 
-.include <bsd.port.pre.mk>
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-# Base compiler clang 3.5 does not understand -Winconsistent-missing-override
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-fbsd10
-.endif
-
 post-patch:
 	${REINPLACE_CMD} '/sysmacros.h/d' \
 		${PATCH_WRKSRC}/logind.cpp
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

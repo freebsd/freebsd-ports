@@ -22,14 +22,4 @@ USES=		perl5
 USE_PERL5=	configure
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100077
-# chmod -R bug
-post-extract:
-.for d in / /lib /lib/Unicode /t
-	@${CHMOD} 755 ${WRKSRC}${d}
-.endfor
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

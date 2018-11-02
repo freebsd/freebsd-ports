@@ -41,8 +41,6 @@ SOLARIZED_EXTRA_PATCHES=	${PATCHDIR}/extra-solarized-patch-config.def.h \
 		${PATCHDIR}/extra-solarized-patch-x.c \
 		${PATCHDIR}/extra-solarized-patch-st.h
 
-SUB_FILES=	pkg-message
-
 pre-everything::
 	@${ECHO_MSG} "You can build st with your own config.h using the ST_CONF knob:"
 	@${ECHO_MSG} "make ST_CONF=/path/to/st/config.h install clean"

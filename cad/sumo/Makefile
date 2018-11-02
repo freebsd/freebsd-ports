@@ -44,12 +44,4 @@ do-install-DOCS-on:
 	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 	@${FIND} ${STAGEDIR}${DOCSDIR} -d -empty -delete
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-BUILD_DEPENDS+=	clang60:devel/llvm60
-CC=		clang60
-CXX=		clang++60 # fails to build with the default compiler on 10
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

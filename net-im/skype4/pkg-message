@@ -1,21 +1,4 @@
-1. Minimum OS version.
-======================
-
-Skype is a Linux binary package that we run on FreeBSD via our Linux compat.
-
-In order for Skype to work at all, you need to be running FreeBSD 11.0-CURRENT with
-a Kernel and modules later than 2015-05-24.
-
-The port tries to check for this, and determines your kernel's osversion.
-Chances are, if your kernel isn't new enough, the installation will fail.
-
-So in case of any trouble please make
-sure you run kernel/modules built from sources after above dates.
-Tests were only done on HEAD with linux CentOS 6, and it's certainly broken
-with Fedora 10 (legacy).
-
-
-2. Sound
+1. Sound
 ========
 
 Since the OSS interface was removed, Skype now uses linux-pulseaudio compat packages.
@@ -30,15 +13,15 @@ Chances are, if you want to use Skype 4.3 *and* something that actually
 requires (Linux) PulseAudio, you'll be better off running Linux natively.
 
 
-3. Video
+2. Video
 ========
 
-3.1. Receiving video
+2.1. Receiving video
 --------------------
 Should work out of the box. Please make sure you have
 Options --> Video Devices --> Enable Skype Video  checked.
 
-3.2. Sending video
+2.2. Sending video
 ------------------
 Skype uses /dev/videoX (usually /dev/video0). This device node is created by
 the drivers for your webcam (eg. multimedia/webcamd). If you selected the VIDEO
@@ -56,28 +39,28 @@ To make it permanent you can:
 # echo 'linux_v4l2wrapper_load="YES"' >> /boot/loader.conf
 
 
-4. SMSes
+3. SMSes
 ========
 
 You can send SMSes with this version (provided you have Skype credit, of course).
 Check Options --> SMS for details.
 
 
-5. Screen sharing
+4. Screen sharing
 =================
 
 You should be able to receive and send once you have enabled Skype Video (check
-§3)
+§2)
 
 
-6. Skype Access
+5. Skype Access
 ===============
 
 Doesn't work and it is likely not very probable it  will ever work since it
 uses a lot of Linux-specific things.
 
 
-7. Troubleshooting
+6. Troubleshooting
 ==================
 
 If Skype coredumps after displaying a (grey) About screen, you need to mount
@@ -91,7 +74,7 @@ This should work:
 linprocfs	/compat/linux/proc	linprocfs	rw,late	0	0
 
 
-8. Problems and bug reports
+7. Problems and bug reports
 ===========================
 
 First of all, please understand that this is a closed, binary Linux application

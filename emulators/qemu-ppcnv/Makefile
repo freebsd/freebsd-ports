@@ -15,8 +15,6 @@ COMMENT=	Fork of QEMU with experimental PowerPCNV emulation support
 
 LICENSE=	GPLv2
 
-IGNORE_FreeBSD_10=	does not build
-
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libfdt.so:sysutils/dtc
 
 USE_GITHUB=	yes

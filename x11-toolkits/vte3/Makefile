@@ -34,10 +34,4 @@ INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	VERSION=2.91
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} <= 1100000
-EXTRA_PATCHES=	${FILESDIR}/extra-src_app_app.cc
-.endif
-
 .include <bsd.port.mk>

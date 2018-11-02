@@ -58,12 +58,6 @@ DOCS_INSTALL_TARGET=	install_docs
 
 PLIST_SUB=		SHLIB_VER="${PORTVERSION}"
 
-.include <bsd.port.pre.mk>
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-# The detection of is_trivially_destructible fails with clang-3.4 from 10.3.
-QMAKE_ARGS+=	DEFINES+=TR2_OPTIONAL_DISABLE_EMULATION_OF_TYPE_TRAITS
-.endif
-
 # Fix paths for gnuplot and ant.
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/bin/gnuplot|${LOCALBASE}/bin/gnuplot|' \
@@ -82,4 +76,4 @@ pre-configure:
 # See QTBUG-40825 and ports bugs 194088, 195105 and 198720.
 	${ECHO_CMD} 'QMAKE_LIBDIR_FLAGS = -L${WRKSRC}/lib' >> ${WRKSRC}/.qmake.cache
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

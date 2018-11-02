@@ -12,8 +12,6 @@ COMMENT=	Open Source CNC machine controller
 
 LICENSE=	GPLv2
 
-BROKEN_FreeBSD_10=	use of undeclared identifier '__builtin_ia32_rdtsc'
-
 LIB_DEPENDS=	libBLT25.so:x11-toolkits/blt \
 		${PY_BOOST} \
 		libfontconfig.so:x11-fonts/fontconfig \

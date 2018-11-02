@@ -87,20 +87,6 @@ QMAKE_CONFIGURE_ARGS=	-proprietary-codecs -system-ffmpeg
 # dependencies correctly in the generated Makefiles, use the right target here.
 ALL_TARGET=	first
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-10
-.endif  # ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-
-# 1101513 is 11-STABLE after merging clang, llvm, lld, lldb, compiler-rt and
-#            libc++ 6.0.0 release, and several follow-up fixes.
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1101513
-BUILD_DEPENDS+=	clang60:devel/llvm60
-CC=		clang60
-CXX=		clang++60
-.endif  # ${OPSYS} == FreeBSD && ${OSVERSION} < 1101513
-
 # We need ar(1) from ports because the Chromium code uses the @file syntax.
 # We then need to ensure ld(1) from ports is used because of the archives ar(1)
 # generated.
@@ -144,4 +130,4 @@ pre-configure:
 # Rerun syncqt.pl -- otherwise the resulting package misses some forwarding headers.
 	cd ${WRKSRC} && ${QT_BINDIR}/syncqt.pl -version ${QT5_VERSION}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -32,7 +32,7 @@ PORTDOCS=	README
 .include <bsd.port.pre.mk>
 
 # does not compile with clang 6.0.0
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1101513
+.if ${OPSYS} == FreeBSD
 USE_GCC=	yes
 .endif
 

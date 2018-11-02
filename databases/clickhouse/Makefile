@@ -13,7 +13,6 @@ COMMENT=	ClickHouse is a column-oriented database management system
 
 LICENSE=	APACHE20
 
-BROKEN_FreeBSD_10=	Builds but does not work
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"Only supported on amd64"
 
@@ -80,12 +79,6 @@ SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1101513
-BUILD_DEPENDS+=	clang50:devel/llvm50
-CC=		clang50
-CXX=		clang++50
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib/clickhouse|/var/db/clickhouse|;s|/var/log/clickhouse-server|/var/log/clickhouse|;s|/etc/clickhouse-server|${PREFIX}/etc/clickhouse-server|' ${WRKSRC}/dbms/programs/server/config.xml

@@ -43,7 +43,6 @@ USES=		autoreconf:build compiler:c++14-lang libtool localbase:ldflags iconv libe
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	amd64
-BROKEN_FreeBSD_10=	Builds but does not work
 CONFLICTS_BUILD=	googletest
 LDFLAGS+=	-lobjc
 

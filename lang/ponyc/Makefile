@@ -12,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	Undefined reference to __atomic_compare_exchange_8
-BROKEN_FreeBSD_10=	Undefined reference to __atomic_compare_exchange
 
 LIB_DEPENDS=	libunwind.so:devel/libunwind
 BUILD_DEPENDS=	llvm-link${LLVM_VERSION}:devel/llvm${LLVM_VERSION}

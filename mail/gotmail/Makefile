@@ -25,14 +25,6 @@ PLIST_FILES=	bin/gotmail man/man1/gotmail.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100077
-# chmod -R bug
-post-extract:
-	@${CHMOD} 755 ${WRKSRC}
-.endif
-
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.man \
 		${STAGEDIR}${MANPREFIX}/man/man1/${PORTNAME}.1
@@ -44,4 +36,4 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

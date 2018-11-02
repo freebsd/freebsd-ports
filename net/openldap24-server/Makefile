@@ -202,10 +202,6 @@ CONFIGURE_ARGS=		--with-threads=posix \
 			--disable-dependency-tracking \
 			--enable-dynamic
 
-.if ${OSVERSION} < 1101000
-CFLAGS+=		-DMDB_DSYNC=O_SYNC -Dfdatasync=fsync
-.endif
-
 .if ${PORT_OPTIONS:MSASL}
 LIB_DEPENDS+=		libsasl2.so:security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-cyrus-sasl

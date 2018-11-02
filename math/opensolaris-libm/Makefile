@@ -34,7 +34,6 @@ MAKE_ENV=	ARCH=${ARCH} USE_ASSEMBLY_VERSIONS=yes
 # proper functioning.
 
 OPTIONS_DEFINE=			GCC
-OPTIONS_EXCLUDE_FreeBSD_10=	GCC
 OPTIONS_EXCLUDE_DragonFly=	GCC
 
 GCC_USE=	GCC=yes
@@ -42,10 +41,6 @@ GCC_USE=	GCC=yes
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD
-. if ${OSREL:R} < 11
-USE_GCC=	yes
-. endif
-
 RUN_DEPENDS=	${LOCALBASE}/bin/addr2line:devel/binutils
 
 post-patch:

@@ -59,7 +59,7 @@ MAKE_JOBS_UNSAFE=yes
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == i386 || ${OSVERSION} <= 1100000
+.if ${ARCH} == i386
 MESON_ARGS=	-Denable-vala=no
 PLIST_SUB+=	VALA="@comment "
 .else

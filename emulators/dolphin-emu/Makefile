@@ -11,8 +11,6 @@ COMMENT=	Gamecube and Wii Emulator
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-BROKEN_FreeBSD_10=	conflicting types for '__hash_table<_Tp, _Hash, _Equal, _Alloc>'
-
 # Notes on dependencies:
 # - alsa support disabled (not optimal)
 # - enet and soundtouch come from Externals/ as Dolphin's versions diverge

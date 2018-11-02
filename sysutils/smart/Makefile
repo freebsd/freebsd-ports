@@ -9,8 +9,6 @@ COMMENT=	Output disk SMART values
 
 LICENSE=	ISCL
 
-IGNORE_FreeBSD_10=	Requires FreeBSD 11 or later
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	ctuffli
 

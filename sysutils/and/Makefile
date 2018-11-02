@@ -17,12 +17,8 @@ USES=		gmake
 ALL_TARGET=	default
 NOPRECIOUSMAKEVARS=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100095
 post-patch:
 	@${REINPLACE_CMD} "s,P_KTHREAD,P_KPROC,g" \
 		${WRKSRC}/Makefile ${WRKSRC}/and-OpenBSD.c
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

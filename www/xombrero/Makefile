@@ -14,8 +14,6 @@ LICENSE=	ISCL
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libsoup-2.4.so:devel/libsoup
 
-BROKEN_FreeBSD_10=	does not build
-
 USES=		desktop-file-utils groff pkgconfig perl5 tar:tgz
 USE_PERL5=	build
 INSTALLS_ICONS=	yes

@@ -114,23 +114,6 @@ DISABLED_EXTENSIONS+=	nis
 PLIST_SUB+=	NO_NIS=""
 .endif
 
-# python37 fails to build ssl module on FreeBSD10 with base SSL because X509_VERIFY_PARAM_set1_host check fails.
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000 && ${SSL_DEFAULT} == base
-PLIST_SUB+=	NO_SSL="@comment "
-WARNING+=	"No SSL support for FreeBSD ${OSREL} with base SSL! OpenSSL must be greater than/equal to 1.0.2"
-.else
-PLIST_SUB+=	NO_SSL=""
-.endif
-
-post-patch:
-# readline shared library is present on base before FreeBSD 11 - r268461
-# force setup.py ignore base and use readline from ports
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-	@${REINPLACE_CMD} -e \
-		"s|lib_dirs,\ \'readline\'|[\'${LOCALBASE}/lib\',\ \'.\'],\ \'readline\'|" \
-		${WRKSRC}/setup.py
-.endif
-
 post-install:
 .if ! ${PORT_OPTIONS:MDEBUG}
 	${RM} ${STAGEDIR}${PREFIX}/lib/libpython3.so						# Upstream Issue: https://bugs.python.org/issue17975

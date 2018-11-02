@@ -45,12 +45,4 @@ do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/config.py.example ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100077
-# chmod -R bug.
-post-extract:
-	@${CHMOD} 0755 ${WRKSRC}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

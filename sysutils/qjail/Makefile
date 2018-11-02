@@ -24,8 +24,6 @@ USES=		tar:bzip2
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-IGNORE_FreeBSD_10=	This version only for FreeBSD 11+
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/qjail                      \
 		${STAGEDIR}${PREFIX}/bin

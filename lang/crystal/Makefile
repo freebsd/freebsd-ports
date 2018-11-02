@@ -58,9 +58,6 @@ BOOTSTRAP_PATH=	crystal-0.25.0-freebsd11.2
 IGNORE=		prebuilt bootstrap for aarch64 only exists for 12-CURRENT
 . endif
 .endif
-.if ${OSVERSION} < 1100000
-IGNORE=		not supported on 10.x or older
-.endif
 .if ${OPSYS} != FreeBSD
 IGNORE=		not supported on anything but FreeBSD
 .endif

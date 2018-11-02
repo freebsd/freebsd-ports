@@ -11,8 +11,6 @@ COMMENT=	File editor/viewer/analyzer for executables
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_10=	misgenerated yacc code
-
 USES=		autoreconf compiler:c++14-lang makeinfo ncurses tar:bzip2
 USE_GITHUB=	yes
 GH_ACCOUNT=	sebastianbiallas

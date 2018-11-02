@@ -18,8 +18,6 @@ BUILD_DEPENDS=	checkmk:devel/check
 USES=		cmake
 USE_XORG=	x11
 
-BROKEN_FreeBSD_10=	requires reallocarray(3)
-
 PLIST_FILES=	bin/kickpass \
 		lib/libkickpass.so \
 		lib/libkickpass.so.0 \

@@ -13,8 +13,6 @@ COMMENT=	SPIR interpreter and virtual OpenCL device simulator
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_10=	oclgrind is only supported on FreeBSD 11.0 and newer, crashes LLVM 3.4
-
 BUILD_DEPENDS=	opencl>=0:devel/opencl \
 		llvm-config50:devel/llvm50
 LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd

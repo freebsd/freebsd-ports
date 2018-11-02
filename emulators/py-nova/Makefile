@@ -114,10 +114,6 @@ GROUPS=		nova
 IGNORE=		only supported on FreeBSD
 .endif
 
-.if ${OSVERSION} < 1100055
-IGNORE=		only supported on recent FreeBSD 11
-.endif
-
 post-extract:
 	@(cd ${WRKSRC}/etc/nova; ${MV} logging_sample.conf logging.conf.sample)
 	@(cd ${WRKSRC}/etc/nova; for f in *.conf; do ${MV} $${f} $${f}.sample; done)

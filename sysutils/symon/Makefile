@@ -62,7 +62,7 @@ post-extract:
 post-patch:
 # We need to teach symon about mbstat changes/removal in r253351 and r253361.
 	@${RM} ${WRKSRC}/platform/FreeBSD/sm_mbuf.c
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100070
+.if ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} 's|altq/|net/&|' ${WRKSRC}/platform/FreeBSD/sm_pfq.c
 .endif
 

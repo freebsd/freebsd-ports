@@ -53,12 +53,4 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100077
-# chmod -R bug
-post-extract:
-	${CHMOD} +x ${WRKSRC}/lib/unix ${WRKSRC}/lib/windows
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

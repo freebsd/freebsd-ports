@@ -12,7 +12,6 @@ COMMENT=	UDP server capable of handling netdump transfers
 
 LICENSE=	BSD2CLAUSE
 
-IGNORE_FreeBSD_10=	Depends on libcasper
 BROKEN_powerpc64=	fails to build: netdumpd.c:270: warning: declaration of 'index' shadows a global declaration
 
 MAKE_ARGS+=	BINDIR=${PREFIX}/sbin

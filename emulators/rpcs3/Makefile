@@ -18,8 +18,6 @@ LICENSE_FILE_BSD3CLAUSE=${WRKSRC_cereal}/LICENSE
 LICENSE_FILE_MIT=	${WRKSRC_GSL}/LICENSE
 LICENSE_FILE_ZLIB=	${WRKSRC_asmjit}/LICENSE.md
 
-BROKEN_FreeBSD_10=	libc++ does not support C++17 features
-
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libavcodec.so:multimedia/ffmpeg
 

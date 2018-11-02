@@ -67,11 +67,7 @@ DOCS_INSTALL_TARGET=	install_docs
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == aarch64
-. if ${OSVERSION} > 1100100
 CONFIGURE_ARGS+=	--with-mutex=POSIX/pthreads
-. else
-CONFIGURE_ARGS+=	--enable-posixmutexes
-. endif
 .endif
 
 post-patch:

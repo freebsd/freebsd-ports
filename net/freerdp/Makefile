@@ -89,8 +89,7 @@ X11_USE=		xorg=x11,xcursor,xext,xorgproto,xfixes,xi,xinerama,xkbfile,xrandr,xren
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == "FreeBSD" && ${ARCH} == "armv6"
-.if ${OSVERSION} < 1100500 || \
-	(${OSVERSION} >= 1100500 && ${OSVERSION} < 1100504) || \
+.if ${OSVERSION} < 1100504 || \
 	(${OSVERSION} >= 1200000 && ${OSVERSION} < 1200008)
 BROKEN=	Fails to build on ARMv6 (libm bug). See: r305380 (HEAD), r305971 (stable/11) [\#199422, \#211965] \
 	Please update to a later (fixed) version.

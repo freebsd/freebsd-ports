@@ -23,10 +23,8 @@ USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000
 .if ${COMPILER_TYPE:Mclang}
 CFLAGS+=	-Wno-shift-negative-value
-.endif
 .endif
 
 post-install:

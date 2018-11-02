@@ -35,11 +35,7 @@ CONFIGURE_ENV+=	have_xmlto=no
 .endif
 
 .if ${OPSYS} == FreeBSD
-.  if ${OSVERSION} >= 1100072
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-unbundle-reallocarray
-.  else
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-hide-reallocarray
-.  endif
 .elif ${OPSYS} == DragonFly
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-hide-reallocarray-dfly
 .endif

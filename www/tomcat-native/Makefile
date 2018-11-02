@@ -34,10 +34,4 @@ PLIST_FILES=	lib/libtcnative-1.a \
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtcnative-1.so.0.2.16
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-IGNORE_FreeBSD_10=	Requires OpenSSL 1.0.2 (set DEFAULT_VERSIONS+=ssl=openssl)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
