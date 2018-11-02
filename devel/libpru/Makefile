@@ -11,13 +11,15 @@ COMMENT=	Library to interface with PRUs
 LICENSE=	BSD2CLAUSE
 
 IGNORE_DragonFly=	only supported on FreeBSD
-BROKEN_mips=	Does not build: unrecognized command line option -Weverything
-BROKEN_mips64=	Does not build: unrecognized command line option -Weverything
-BROKEN_powerpc64=	Does not build: unrecognized command line option -Weverything
-BROKEN_sparc64=	Does not build: unrecognized command line option -Weverything
-
 USES=		cmake
 
 WRKSRC=		${WRKDIR}/rpaulo-libpru-5a74157b82b8
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+	${REINPLACE_CMD} -e 's/ -Weverything//'  ${WRKSRC}/CMakeLists.txt
+.endif
+
+.include <bsd.port.post.mk>
