@@ -10,7 +10,7 @@ stack_printer.cpp:329:18: error: assigning to 'char *' from incompatible type 'v
        stack_t ss = {};
        /* malloc is usually used here, I'm not 100% sure my static allocation
           is valid but it seems to work just fine. */
-+#if defined(__DragonFly__) || (defined(__FreeBSD__) && __FreeBSD__ < 11)
++#if defined(__DragonFly__)
 +      ss.ss_sp = (char*)alternate_stack;
 +#else
        ss.ss_sp = (void*)alternate_stack;
