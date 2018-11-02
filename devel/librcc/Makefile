@@ -19,8 +19,9 @@ LIB_DEPENDS=	librcd.so:devel/librcd \
 		libaspell.so:textproc/aspell
 
 GNU_CONFIGURE=	yes
+USES=		compiler:c++11-lang gmake iconv libtool pathfix pkgconfig \
+		tar:bzip2
 USE_GNOME=	libxml2
-USES=		gmake iconv libtool pathfix pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

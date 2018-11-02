@@ -13,7 +13,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OpenGL widget for the GTK+2 GUI toolkit
 
-USES=		libtool:keepla pathfix pkgconfig tar:bzip2
+USES=		compiler:c++11-lang libtool:keepla pathfix pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 USE_GL=		yes
 USE_LDCONFIG=	yes
