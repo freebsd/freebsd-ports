@@ -13,6 +13,9 @@ COMMENT=	Zlib extension library for the Tcl
 
 LICENSE=	LGPL21
 
+DEPRECATED=	Unfetchable, unmaintained, info page unbuildable with recent makeinfo
+EXPIRATION_DATE=	2018-12-03
+
 LIB_DEPENDS=	libtclmore0.so:devel/tclmore
 
 OPTIONS_DEFINE=	DOCS
