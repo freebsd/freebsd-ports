@@ -72,9 +72,8 @@ OPTIONS_DEFAULT=	SSL THREADS SIGCHASE IDN GSSAPI_NONE JSON PYTHON
 OPTIONS_DEFINE=		IDN LARGE_FILE PYTHON JSON \
 			FIXED_RRSET SIGCHASE IPV6 THREADS
 
-OPTIONS_RADIO=	CRYPTO GOSTDEF
+OPTIONS_RADIO=	CRYPTO
 OPTIONS_RADIO_CRYPTO=	SSL NATIVE_PKCS11
-OPTIONS_RADIO_GOSTDEF=	GOST GOST_ASN1
 
 .if !defined(BIND_TOOLS_SLAVE)
 OPTIONS_DEFAULT+=	DLZ_FILESYSTEM LMDB RPZ_NSDNAME RPZ_NSIP TCP_FASTOPEN
@@ -101,9 +100,6 @@ DLZ_STUB_DESC=		DLZ stub driver
 DNSTAP_DESC=		Provides fast passive logging of DNS messages
 FIXED_RRSET_DESC=	Enable fixed rrset ordering
 GEOIP_DESC=		Allow geographically based ACL.
-GOSTDEF_DESC=		Enable GOST ciphers, needs SSL
-GOST_ASN1_DESC=		GOST using ASN.1
-GOST_DESC=		GOST raw keys (new default)
 GSSAPI_BASE_DESC=	Using Heimdal in base
 GSSAPI_HEIMDAL_DESC=	Using security/heimdal
 GSSAPI_MIT_DESC=	Using security/krb5
@@ -149,10 +145,6 @@ FIXED_RRSET_CONFIGURE_ENABLE=	fixed-rrset
 
 GEOIP_CONFIGURE_WITH=	geoip
 GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
-
-GOST_ASN1_CONFIGURE_ON=	--with-gost=asn1
-
-GOST_CONFIGURE_ON=	--with-gost
 
 GSSAPI_BASE_CONFIGURE_ON=\
 	--with-gssapi=${GSSAPIBASEDIR} KRB5CONFIG="${KRB5CONFIG}"
@@ -219,16 +211,6 @@ TUNING_LARGE_CONFIGURE_ON=	--with-tuning=large
 TUNING_LARGE_CONFIGURE_OFF=	--with-tuning=default
 
 .include <bsd.port.pre.mk>
-
-.if !${PORT_OPTIONS:MGOST} && !${PORT_OPTIONS:MGOST_ASN1}
-CONFIGURE_ARGS+=	--without-gost
-.endif
-
-.if ( ${PORT_OPTIONS:MGOST} || ${PORT_OPTIONS:MGOST_ASN1} ) && ${SSL_DEFAULT} == base
-BROKEN=	OpenSSL from the base system does not support GOST, add \
-	DEFAULT_VERSIONS+=ssl=openssl to your /etc/make.conf and rebuild everything \
-	that needs SSL.
-.endif
 
 post-patch:
 .if defined(BIND_TOOLS_SLAVE)
