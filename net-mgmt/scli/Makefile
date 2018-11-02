@@ -1,4 +1,4 @@
-# Created by: Michael Lyngbøl <lyngbol@wheel.dk>
+# Created by: Michael LyngbÃ¸l <lyngbol@wheel.dk>
 # $FreeBSD$
 
 PORTNAME=	scli
