@@ -43,7 +43,7 @@ LOGDIR?=	/var/log/softether
 PLIST_SUB=	LOGDIR="${LOGDIR}"
 SUB_LIST=	LOGDIR="${LOGDIR}"
 
-CPPFLAGS+=	-I${LOCALBASE}/includec
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 # a pity the source directory has such a naming scheme, but well
