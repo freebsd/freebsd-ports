@@ -1,0 +1,15 @@
+--- Makefile.orig	2016-08-01 17:37:31 UTC
++++ Makefile
+@@ -14,10 +14,10 @@ java:
+ 	sbt test
+ 
+ objecthash_test: libobjecthash.so
+-	$(CC) -std=c99 -Wall -Werror -o objecthash_test objecthash_test.c -lobjecthash -L. -Wl,-rpath -Wl,.
++	$(CC) ${CFLAGS} -std=c99 -Wall -Werror -o objecthash_test objecthash_test.c -lobjecthash -L. -Wl,-rpath -Wl,.
+ 
+ libobjecthash.so: objecthash.c
+-	$(CC) -fPIC -shared -std=c99 -Wall -Werror -o libobjecthash.so objecthash.c -lcrypto `pkg-config --libs --cflags icu-uc json-c`
++	$(CC) ${CFLAGS} -fPIC -shared -std=c99 -Wall -Werror -o libobjecthash.so objecthash.c -lcrypto `pkg-config --libs --cflags icu-uc json-c`
+ 
+ get:
+ 	GOPATH=`pwd` go get golang.org/x/text/unicode/norm
