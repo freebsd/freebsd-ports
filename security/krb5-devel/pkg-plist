@@ -140,6 +140,7 @@ man/man5/.k5identity.5.gz
 man/man5/.k5login.5.gz
 man/man5/k5identity.5.gz
 man/man5/k5login.5.gz
+man/man7/kerberos.7.gz
 man/man8/krb5kdc.8.gz
 man/man8/kadmin.local.8.gz
 man/man8/kdb5_ldap_util.8.gz
