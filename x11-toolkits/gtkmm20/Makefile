@@ -13,7 +13,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for Gtk+, Pango, Atk, and Glib
 
-USES+=		tar:bzip2
+USES+=		compiler:c++11-lang tar:bzip2
 
 PORTSCOUT=	ignore:1
 

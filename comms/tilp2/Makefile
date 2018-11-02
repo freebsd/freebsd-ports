@@ -17,7 +17,8 @@ LIB_DEPENDS=	libticables2.so:comms/libticables2	\
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		autoreconf desktop-file-utils gettext gmake groff localbase \
+USES=		autoreconf compiler:c++11-lang desktop-file-utils gettext \
+		gmake groff localbase \
 		libtool pkgconfig shared-mime-info tar:bzip2
 USE_GNOME=	gtk20 intltool
 

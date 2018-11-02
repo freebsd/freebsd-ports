@@ -19,9 +19,9 @@ BROKEN_armv7=		fails to compile: no matching member function for call to 'Read'
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USES=		autoreconf compiler:c++11-lang gettext libtool
 USE_WX=		2.8+
 WX_CONF_ARGS=	relative
-USES=		autoreconf gettext libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	WXRC="${WXRC_CMD}"
 INSTALL_TARGET=	install-strip
