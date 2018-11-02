@@ -31,7 +31,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
-USES=	cpe libedit ssl
+USES=	compiler:c11 cpe libedit ssl
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
 ISCVERSION=	9.13.3
 
