@@ -79,8 +79,6 @@ BROKEN_FreeBSD_12=	fails to build with openssl111, install security/openssl
 BROKEN_FreeBSD_13=	fails to build with openssl111, install security/openssl
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1200085
 .if ${SSL_DEFAULT} != "openssl"
 BROKEN_FreeBSD_12=	fails to build with openssl111, install security/openssl
