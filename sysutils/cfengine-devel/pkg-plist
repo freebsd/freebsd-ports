@@ -1,4 +1,5 @@
 bin/cf-agent
+bin/cf-check
 bin/cf-execd
 bin/cf-key
 bin/cf-monitord
