@@ -12,9 +12,9 @@ COMMENT=	Open Source VISA shell for interfacing test and measurement equipment
 
 LIB_DEPENDS=	libvisa.so:devel/librevisa
 
+USES=		compiler:c++11-lang localbase:ldflags
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lvisa
+LDFLAGS+=	-lvisa
 
 .include <bsd.port.mk>
