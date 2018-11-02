@@ -38,7 +38,7 @@ BROKEN_powerpc64=	fails to link: /usr/bin/ld: cannot find -latomic
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 # XXX: remove tar:bz2
-USES=	cpe libedit ssl tar:bz2
+USES=	compiler:c11 cpe libedit ssl tar:bz2
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
 ISCVERSION=	9.13.1a0.2018.10.31
 # XXX: Remove gitlab
