@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-markup
-PORTVERSION=	1.6.4
+PORTVERSION=	1.6.5
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,7 @@ USE_RUBY=	yes
 
 NO_ARCH=	yes
 
-PLIST_FILES=	bin/github-markup
+PLIST_FILES=	bin/gitlab-markup
 
 SHEBANG_FILES=	lib/github/commands/rest2html \
 		script/bootstrap \
