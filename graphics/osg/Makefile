@@ -24,10 +24,16 @@ GH_PROJECT=	OpenSceneGraph
 
 CONFLICTS=	osg-devel-[0-9]*
 
-USES=		alias cmake:outsource jpeg pkgconfig
+USES=		alias cmake:outsource compiler:c++11-lang jpeg pkgconfig
 USE_GL=		gl glu
 USE_XORG=	x11
 USE_LDCONFIG=	yes
+CXXFLAGS_mips=	-Wno-narrowing
+CXXFLAGS_mips64=	-Wno-narrowing
+CXXFLAGS_powerpc64=	-Wno-narrowing
+CXXFLAGS_powerpc=	-Wno-narrowing
+CXXFLAGS_powerpcspe=	-Wno-narrowing
+CXXFLAGS_sparc64=	-Wno-narrowing
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
 		OSG_SHLIBVER=131 \
