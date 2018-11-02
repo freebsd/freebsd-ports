@@ -3,6 +3,7 @@
 
 PORTNAME=	mod_webauth
 PORTVERSION=	4.7.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://webauth.stanford.edu/dist/
 DISTNAME=	webauth-${PORTVERSION}
@@ -13,7 +14,7 @@ COMMENT=	Apache module for authenticating users with Kerberos v5
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libsasl2.so:security/cyrus-sasl2
 
-USES=		apache:2.2+ libtool pathfix pkgconfig ssl
+USES=		apache:2.4 libtool pathfix pkgconfig ssl
 USE_OPENLDAP=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
