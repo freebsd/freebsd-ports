@@ -2,17 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	avenger
-PORTVERSION=	0.8.4
-PORTREVISION=	1
+PORTVERSION=	0.8.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailavenger.org/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anti-spam SMTP server
 
-LICENSE=	GPLv2+ # though COPYING is GPLv3
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		bdb ssl
+
 GNU_CONFIGURE=	yes
 
 USERS=		${PORTNAME}
@@ -26,9 +27,9 @@ CONFIGURE_ARGS=	--enable-ssl=${OPENSSLBASE} \
 		--with-db=${LOCALBASE} \
 		--with-etcdir=${ETCDIR}
 
-OPTIONS_DEFINE=	SASL DOCS
+OPTIONS_DEFINE=	DOCS SASL
 
-SASL_CONFIGURE_ON=	--enable-sasl
+SASL_CONFIGURE_ENABLE=	sasl
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 post-patch:
@@ -45,9 +46,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/pf.os ${STAGEDIR}${PREFIX}/share
 
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/etc/smtp-filter.pf ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/etc/avsendmail.m4 ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/etc ; ${INSTALL_DATA} smtp-filter.pf avsendmail.m4 \
+		${STAGEDIR}${DATADIR})
 
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 

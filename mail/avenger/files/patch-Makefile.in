@@ -1,6 +1,6 @@
---- ./Makefile.in.orig	2013-03-08 21:13:45.000000000 +0100
-+++ ./Makefile.in	2013-03-08 21:16:55.000000000 +0100
-@@ -287,9 +287,9 @@
+--- Makefile.in.orig	2018-10-09 06:38:27 UTC
++++ Makefile.in
+@@ -386,9 +386,9 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  LYNX = lynx
