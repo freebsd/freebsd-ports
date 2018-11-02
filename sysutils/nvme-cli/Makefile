@@ -14,7 +14,6 @@ LICENSE=	GPLv2
 # And there's plenty in amd64 that compiles, but won't run (eg using /sys/, etc)
 ONLY_FOR_ARCHS=	amd64
 BROKEN_FreeBSD_11=	Uses newer API than in 11.x
-BROKEN_FreeBSD_10=	Uses newer API than in 10.x
 
 USES=		gmake
 

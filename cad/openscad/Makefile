@@ -43,7 +43,7 @@ post-patch:
 
 #.include <bsd.port.options.mk>
 #
-#.if ${ARCH} == i386 && ${OSVERSION} >= 1100000
+#.if ${ARCH} == i386
 #USE_GCC=        yes
 #.endif
 

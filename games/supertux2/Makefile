@@ -15,8 +15,6 @@ LIB_DEPENDS=	libphysfs.so:devel/physfs \
 		libcurl.so:ftp/curl \
 		libvorbis.so:audio/libvorbis
 
-BROKEN_FreeBSD_10=	does not build on 10.x
-
 LLD_UNSAFE=	yes
 USE_SDL=	sdl2 image2
 USE_GL=		glew

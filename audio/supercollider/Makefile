@@ -40,8 +40,6 @@ DESKTOP_ENTRIES="SuperCollider IDE" "" "${LOCALBASE}/share/pixmaps/sc_ide.svg" \
 
 OPTIONS_DEFINE=		HELP SUPERNOVA
 OPTIONS_DEFAULT=	HELP SUPERNOVA
-# SUPERNOVA option BROKEN_FreeBSD_10: No viable conversion from 'boost::lockfree::detail::tagged_ptr<nova::freelist::freelist_node>'
-OPTIONS_EXCLUDE_FreeBSD_10=	SUPERNOVA
 OPTIONS_SUB=	yes
 
 HELP_DESC=	Install on-line help text

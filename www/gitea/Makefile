@@ -40,7 +40,7 @@ SQLITE_VARS=	GO_TAGS+=sqlite
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100513
+.if ${OPSYS} == FreeBSD
 DAEMONARGS=	-S -l \$${gitea_facility} -s \$${gitea_priority} -T \$${name}
 .else
 DAEMONARGS=	-f

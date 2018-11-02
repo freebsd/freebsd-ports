@@ -12,8 +12,6 @@ COMMENT=	GRPC-like RPC library that supports file descriptor passing
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_FreeBSD_10=	requires various C++17 features
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyPEG2>=2.15.2:textproc/py-pyPEG2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toposort>=1.5:devel/py-toposort@${PY_FLAVOR}
 LIB_DEPENDS=	libargdata.so:devel/argdata

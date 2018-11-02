@@ -44,7 +44,6 @@ OPTIONS_EXCLUDE+=	DTRACE
 .endif
 
 OPTIONS_EXCLUDE_DragonFly=	HIPE SCTP
-OPTIONS_EXCLUDE_FreeBSD_10=	DTRACE
 
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -76,7 +75,7 @@ WX_VARS=		USE_WX=2.8+ WX_COMPS="wx contrib" USE_GL="gl glu"
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1100000
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-DMAP_NORESERVE=0
 .endif
 

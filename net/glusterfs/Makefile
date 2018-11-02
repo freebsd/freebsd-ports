@@ -57,10 +57,4 @@ KMODDIR?=	/boot/modules
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1101001
-USE_GCC=	yes
-.endif
-
 .include <bsd.port.mk>

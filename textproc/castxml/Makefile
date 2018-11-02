@@ -10,8 +10,6 @@ COMMENT=	C-family Abstract Syntax Tree XML Output
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_10=	plist mismatch: extra items are installed for some reason
-
 BUILD_DEPENDS=	clang${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 RUN_DEPENDS=	clang${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 

@@ -36,14 +36,4 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-# the default compiler hangs on 10
-BUILD_DEPENDS+=	clang60:devel/llvm60
-RUN_DEPENDS+=	clang60:devel/llvm60
-CC=		clang60
-CXX=		clang++60
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

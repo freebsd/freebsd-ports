@@ -40,11 +40,7 @@ MAKE_ENV+=	PEFS_AESNI=yes
 .endif
 
 .if ${OPSYS} == FreeBSD
-. if ${OSVERSION} >= 1100117
 PLIST_FILES+=	lib/pam_pefs.so.6
-. else
-PLIST_FILES+=	lib/pam_pefs.so.5
-. endif
 .endif
 
 .include <bsd.port.mk>

@@ -1,5 +1,0 @@
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!! mod_http2 on FreeBSD with OpenSSL from base results in a mostly !!
-!! functionally unusable module due to lack of "Upgrade"           !! 
-!! capability in OpenSSL 1.0.1.                                    !!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

@@ -244,24 +244,10 @@ CONFIGURE_ARGS+=	--sparc_cpu=v9
 
 CONFIGURE_ARGS+=	--python=${PYTHON_CMD}
 
-# clang in freebsd 10 is unable to assemble linuxboot_dma.bin
-.if (${OPSYS} == FreeBSD && ${OSVERSION} < 1100000)
-PLIST_SUB+=	LINUXBOOT_DMA="@comment "
-.else
 PLIST_SUB+=	LINUXBOOT_DMA=""
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/libs_qga=/s|glib_libs|glib_libs -lintl|' ${WRKSRC}/configure
-# clang in freebsd 10 is unable to assemble linuxboot_dma.bin
-.if (${OPSYS} == FreeBSD && ${OSVERSION} < 1100000)
-	@${REINPLACE_CMD} -E \
-		-e 's|linuxboot_dma.bin||' \
-		${WRKSRC}/pc-bios/optionrom/Makefile
-	@${REINPLACE_CMD} -E \
-		-e 's|linuxboot_dma.bin||' \
-		${WRKSRC}/Makefile
-.endif
 
 .if empty(PORT_OPTIONS:MCDROM_DMA)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/cdrom-dma-patch

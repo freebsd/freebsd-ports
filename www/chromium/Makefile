@@ -204,15 +204,8 @@ TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX} \
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1101513
-BUILD_DEPENDS+=	clang60:devel/llvm60
-CC=             clang60
-CXX=            clang++60
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-llvm-port
-.else
 BUILD_DEPENDS+=	${LOCALBASE}/bin/ar:devel/binutils
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-llvm-base
-.endif
 
 # TODO: -isystem, would be just as ugly as this approach, but more reliably
 # build would fail without C_INCLUDE_PATH/CPLUS_INCLUDE_PATH env var set.

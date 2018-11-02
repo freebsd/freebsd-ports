@@ -145,9 +145,6 @@ post-patch:
 	@${GREP} -rl '/etc/rsyslog.conf' ${WRKSRC}|${XARGS} ${REINPLACE_CMD} -e\
 		's|/etc/rsyslog.conf|${PREFIX}/etc/rsyslog.conf|'
 	@${REINPLACE_CMD} -e 's,/lib/rsyslog,${PREFIX}/lib/rsyslog,' ${WRKSRC}/tools/syslogd.c
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100504
-	@${REINPLACE_CMD} -e 's,recvmmsg ,,' ${WRKSRC}/configure.ac
-.endif
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 post-install-DOCS-on:

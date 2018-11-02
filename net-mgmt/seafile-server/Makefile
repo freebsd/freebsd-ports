@@ -61,13 +61,9 @@ FUSE_LIB_DEPENDS=	libfuse.so:sysutils/fusefs-libs
 
 NLS_USES=		gettext
 
-.include <bsd.port.options.mk>
-
 post-patch:
 # Fix P_KTHREAD r295435
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100097
 	${REINPLACE_CMD} 's/P_KTHREAD/P_KPROC/' ${WRKSRC}/lib/utils.c
-.endif
 	${REINPLACE_CMD} 's/python/${PYTHON_VERSION}/' \
 		${WRKSRC}/scripts/upgrade/regenerate_secret_key.sh
 	${REINPLACE_CMD} -e 's|^INSTALL.*|INSTALLPATH="${PREFIX}/${SEAFILE_SERVER}/seafile"|' \

@@ -12,8 +12,6 @@ COMMENT=	SIMD Library for Evaluating Elementary Functions, vectorized libm
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-IGNORE_FreeBSD_10=	base compiler too old
-
 USES=		cmake:outsource compiler:c11
 USE_LDCONFIG=	yes
 

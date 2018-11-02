@@ -101,10 +101,6 @@ EXTRA_PATCHES=	${FILESDIR}/0001-xen-logdirty-prevent-preemption-if-finished.patc
 IGNORE=		only supported on FreeBSD
 .endif
 
-.if ${OSVERSION} < 1100055
-IGNORE=		only supported on recent FreeBSD 11
-.endif
-
 pre-build:
 	${MAKE_CMD} -C ${WRKSRC}/xen defconfig ${MAKE_ARGS}
 	# Enable hypervisor hot-patching.

@@ -12,8 +12,6 @@ COMMENT=	Generic algorithms and utilities for condensed matter physics
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-BROKEN_FreeBSD_10=	error: no matching function for call to 'deserialize'
-
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libhdf5.so:science/hdf5 \
 		libsz.so:science/szip

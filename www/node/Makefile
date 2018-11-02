@@ -24,7 +24,6 @@ OPTIONS_SUB=		yes
 OPTIONS_EXCLUDE+=	DTRACE
 .endif
 
-OPTIONS_EXCLUDE_FreeBSD_10=	DTRACE
 OPTIONS_EXCLUDE_aarch64=	DTRACE
 # dt_modtext:/usr/src/cddl/contrib/opensolaris/lib/libdtrace/common/dt_link.c(820): arm not implemented
 OPTIONS_EXCLUDE_armv6=		DTRACE

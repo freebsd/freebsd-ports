@@ -11,8 +11,6 @@ COMMENT=	Small sysctl(3) interface for lua
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_FreeBSD_10=	does not build (error: use of undeclared identifier 'CTLTYPE_S8')
-
 USES=		pkgconfig lua
 
 USE_GITHUB=	yes

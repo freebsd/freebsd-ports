@@ -15,8 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
 ONLY_FOR_ARCHS_REASON=	CloudABI has not yet been ported to other architectures
 
-IGNORE_FreeBSD_10=	requires various C++17 features
-
 BUILD_DEPENDS=	${LOCALBASE}/include/cloudabi_types.h:devel/cloudabi \
 		${LOCALBASE}/include/flower/protocol/switchboard.ad.h:net/flower \
 		${LOCALBASE}/include/yaml2argdata/yaml_builder.h:devel/yaml2argdata

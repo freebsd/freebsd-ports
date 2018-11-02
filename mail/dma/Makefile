@@ -36,14 +36,8 @@ EXTRA_PATCHES=	${FILESDIR}/fix-security-hole.patch:-p1
 # Allow subports to extend.
 CONFFILES+=	dma.conf auth.conf
 
-.include <bsd.port.pre.mk>
-
 # 11.x has dma imported into base and /var/spool/dma added to mtree
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100009
-PLIST_SUB+=	VARDIR=""
-.else
 PLIST_SUB+=	VARDIR="@comment "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/dma,${PREFIX}/etc/dma,g' \
@@ -59,4 +53,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/dma.conf ${STAGEDIR}${ETCDIR}/dma.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/auth.conf ${STAGEDIR}${ETCDIR}/auth.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

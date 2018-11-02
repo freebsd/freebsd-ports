@@ -12,7 +12,6 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 ONLY_FOR_ARCHS=	amd64
-IGNORE_FreeBSD_10=	not supported on older than 12.0, no cpuid bit support
 IGNORE_FreeBSD_11=	not supported on older than 12.0, no cpuid bit support
 
 BUILD_DEPENDS=	llvm60>=0:devel/llvm60

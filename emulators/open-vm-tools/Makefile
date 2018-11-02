@@ -63,10 +63,6 @@ INSTALL_TARGET=		install-strip
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 1100000
-CFLAGS+=		-Wno-unknown-warning-option
-.endif
-
 .if ${PORT_OPTIONS:MX11}
 CONFLICTS=		open-vm-tools-nox11-[0-9]*
 .else

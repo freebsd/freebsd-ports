@@ -1,22 +1,9 @@
 *******************************************************************************
 In the current version, video doesn't work. The instructions below are left in
-for completness.
+for completeness.
 *******************************************************************************
 
-1. Minimum OS version.
-
-Skype is a Linux binary package that we run on FreeBSD via our Linux compat.
-In order for Skype to work OK, you need your kernel and modules to be:
-- post 2011-05-03 in on HEAD
-- post 2011-05-08 in on 7,8-STABLE
-The port tries to check for this, but there is a smaller or bigger interval for
-which this can't be done automatically. So in case of any trouble please make
-sure you run kernel/modules built from sources after above dates.
-Tests were only done on HEAD and 8-STALBE with linux-fc10, and I don't think it
-can work with fc4.
-
-
-2. Sound
+1. Sound
 
 Since the OSS interface was removed, Skype now uses linux-alsa compat packages.
 By default you get one device corresponding to your default OSS dsp device (so
@@ -46,13 +33,13 @@ ctl.oss1 {
 }
 
 
-3. Video
+2. Video
 
-3.1. Receiving video
+2.1. Receiving video
 Should work out of the box. Please make sure you have
 Options --> Video Devices --> Enable Skype Video checked.
 
-3.2. Sending video
+2.2. Sending video
 Skype uses /dev/videoX (usually /dev/video0). This device node is created by
 the drivers for your webcam (eg. multimedia/webcamd). If you selected the VIDEO
 option (default) multimedia/webcamd will be pulled in.
@@ -68,26 +55,26 @@ To make it permanent you can:
 # echo 'linux_v4l2wrapper_load="YES"' >> /boot/loader.conf
 
 
-4. SMSes
+3. SMSes
 
 You can send SMSes with this version (provided you have Skype credit, of course).
 Check Options --> SMS for details.
 
 
-5. Screen sharing
+4. Screen sharing
 
 You should be able to receive and send.
 Please make sure you have Options --> Video Devices --> Enable Skype Video
 checked to use this feature (yes, even if you don't use video).
 
 
-6. Skype Access
+5. Skype Access
 
 Doesn't work and it is likely not very probable it  will ever work since it
 uses a lot of Linux-specific things.
 
 
-7. Problems and bug reports
+6. Problems and bug reports
 
 First of all, please understand that this is a closed, binary Linux application
 that makes use for some more-or-less cutting edge Linux features/interfaces,

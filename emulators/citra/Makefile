@@ -17,8 +17,6 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/license.txt
 LICENSE_FILE_MIT=	${WRKSRC}/externals/enet/LICENSE
 LICENSE_FILE_LGPL21+ =	${_LICENSE_STORE}/LGPL21 # soundtouch
 
-BROKEN_FreeBSD_10=	libc++ does not support C++17 features
-
 BUILD_DEPENDS=	boost-libs>=1.66:devel/boost-libs
 
 USE_GITHUB=	yes

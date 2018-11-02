@@ -22,10 +22,4 @@ GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
 PLIST_FILES=	bin/${GH_PROJECT}
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1102000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-usb_libusb.go
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -8,10 +8,4 @@
     sysrc knot_config=%%ETCDIR%%/knot.conf
     service knot start
 
-  Traditional (pre-FreeBSD 9.2) method, for last three commands:
-
-    echo knot_enable=\"YES\" >> /etc/rc.conf
-    echo knot_config=\"%%PREFIX%%/etc/knot/knot.conf\" >> /etc/rc.conf
-    %%PREFIX%%/etc/rc.d/knot start
-
 ######################################################################

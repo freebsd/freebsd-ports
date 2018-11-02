@@ -25,14 +25,6 @@ MAKE_ARGS+=	FREEBSD_SRC_DIR=${SRC_BASE}
 WRKSRC_SUBDIR=	freebsd/cddl/usr.bin/mdb
 CFLAGS+=	-DMDB_PREFIX=\\\"${PREFIX}\\\" -g
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1100021
-# This port uses CWARNFLAGS.clang to silence warnings which only works
-# in 11.0 and later.
-MAKE_ARGS+=	NO_WERROR=yes
-.endif
-
 .if !exists(${SRC_BASE}/cddl/compat) || !exists(${SRC_BASE}/sys/cddl/compat)
 IGNORE=		requires full source tree with CDDL sources
 .endif
@@ -40,4 +32,4 @@ IGNORE=		requires full source tree with CDDL sources
 pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/mdb/kvm/${MACHINE_ARCH}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -15,7 +15,6 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_10=	fails to build with boost 1.66, see bug 224130
 BROKEN_powerpc64=	fails to link: schema_validator.cpp: undefined reference to boost::match_results
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \

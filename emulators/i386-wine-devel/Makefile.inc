@@ -48,7 +48,7 @@ MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.7.1.msi:emulators/wine-mono-devel
 # Included for OPSYS and OSVERSION
 .include <bsd.port.pre.mk>
 
-.for osrel in 10 11 12
+.for osrel in 11 12
 .if ${OSREL:C/\..*//} == ${osrel}
 PLIST_SUB+=	OSREL${osrel}=""
 .if ${PKGNAMESUFFIX} == -devel
@@ -65,7 +65,7 @@ PLIST_SUB+=	OSREL${osrel}-DEVEL="@comment "
 .endfor
 
 .if ${OPSYS} != FreeBSD || (!(${OSVERSION} < 1100000) && !(${OSVERSION} >= 1101000 && ${OSVERSION} < 1200000) && !(${OSVERSION} >= 1200060 && ${OSVERSION} < 1300000))
-IGNORE=		binaries compiled for FreeBSD 10.3+, 11.1+ and -current only
+IGNORE=		binaries compiled for FreeBSD 11.2+ only
 DISTFILES=
 .endif
 
@@ -83,7 +83,7 @@ ${PLIST}: fetch
 
 port-update:
 	${RM} ${SLAVEDIR}/distinfo ${SLAVEDIR}/distinfo~ ${SLAVEDIR}/pkg-plist.*
-.for osrel in 10 11 12
+.for osrel in 11 12
 	${MAKE} fetch OSREL=${osrel} OSVERSION=${osrel}99999 _OSRELEASE=${osrel}
 	${MAKE} makesum OSREL=${osrel} OSVERSION=${osrel}99999 _OSRELEASE=${osrel}
 	${CAT} ${SLAVEDIR}/distinfo >> ${SLAVEDIR}/distinfo~

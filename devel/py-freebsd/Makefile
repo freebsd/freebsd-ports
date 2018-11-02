@@ -19,14 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100002
-EXTRA_PATCHES+=	${FILESDIR}/freebsd11_patch-src__.const.def \
-		${FILESDIR}/freebsd11_patch-src__netstat.c
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/freebsd.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

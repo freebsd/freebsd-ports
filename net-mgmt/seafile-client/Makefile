@@ -46,13 +46,9 @@ OPTIONS_DEFINE=	NLS
 
 NLS_USES=	gettext
 
-.include <bsd.port.options.mk>
-
 post-patch:
 # Fix P_KTHREAD r295435
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100097
 	${REINPLACE_CMD} 's/P_KTHREAD/P_KPROC/' ${WRKSRC}/lib/utils.c
-.endif
 
 makesum-all:
 .for PORT in net-mgmt/ccnet-client net-mgmt/seafile-client net-mgmt/seafile-gui

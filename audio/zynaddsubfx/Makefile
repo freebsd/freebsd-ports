@@ -81,15 +81,7 @@ PORTEXAMPLES=	*
 CMAKE_ARGS+=	-DZYN_DATADIR:STRING=${DATADIR}
 CMAKE_ARGS+=	-DZYN_EXAMPLESDIR:STRING=${EXAMPLESDIR}
 
-.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-# Build fix for ZynAddSubFx
-BUILD_DEPENDS+=	clang60:devel/llvm60
-CC=		clang60
-CXX=		clang++60
-.endif
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 CFLAGS+=	-DASM_F2I_YES

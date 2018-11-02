@@ -175,11 +175,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-server_buildmark.c
 CONFIGURE_ARGS+=	--enable-exception-hook
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100085 &&\
-	${PORT_OPTIONS:MHTTP2} && ${OPENSSLBASE} == /usr
-SUB_FILES+=		pkg-message
-.endif
-
 pre-extract-SUEXEC-on:
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "suexec builds with user '${USERS}' and docroot '${PREFIX}/www' by default,"

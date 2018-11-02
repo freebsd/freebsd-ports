@@ -20,12 +20,6 @@ PLIST_FILES=	${FONTSDIR_REL}/local.conf-odo
 
 .include "${.CURDIR}/../ttfm/Makefile.ttf"
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100077
-# chmod -R bug
-post-extract:
-	@${CHMOD} 0755 ${WRKSRC}/license
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},; s,opendesktop,,g' \
 		${WRKSRC}/FAPIcidfmap.zh_CN ${WRKSRC}/FAPIcidfmap.zh_TW \

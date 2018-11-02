@@ -12,7 +12,6 @@ COMMENT=	Many-body ab initio Quantum Monte Carlo code for quantum chemstry
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_10=	error: use of undeclared identifier '__builtin_assume_aligned'
 BROKEN_i386=	undefined reference to `__atomic_load'
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \

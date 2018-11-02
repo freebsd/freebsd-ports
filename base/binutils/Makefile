@@ -41,12 +41,8 @@ BUREMOVE=	addr2line \
 
 .include "${MASTERDIR}/Makefile"
 
-.if ${OSVERSION} >= 1100100
 PLIST_SUB+=	OBJCOPY="@comment "
 BUREMOVE+=	objcopy
-.else
-PLIST_SUB+=	OBJCOPY=""
-.endif
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
 PLIST_SUB+=	I386=""

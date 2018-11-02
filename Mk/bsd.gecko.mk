@@ -163,8 +163,6 @@ RUSTFLAGS+=	${CFLAGS:M-mcpu=*:S/-mcpu=/-C target-cpu=/}
 MOZ_EXPORT+=	MOZ_JEMALLOC4=1
 .if ${MOZILLA_VER:R:R} >= 48
 MOZ_OPTIONS+=	--enable-jemalloc=4
-.elif ${OSVERSION} < 1100079
-MOZ_OPTIONS+=	--enable-jemalloc
 .endif # Mozilla >= 48
 .endif # Mozilla < 55
 
@@ -414,9 +412,6 @@ MOZ_OPTIONS+=	--enable-rust-simd
 .if ${PORT_OPTIONS:MDTRACE}
 MOZ_OPTIONS+=	--enable-dtrace \
 		--disable-gold
-. if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100061
-LIBS+=			-lelf
-. endif
 STRIP=
 .else
 MOZ_OPTIONS+=	--disable-dtrace

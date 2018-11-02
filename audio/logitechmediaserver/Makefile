@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
 ONLY_FOR_ARCHS=	amd64 i386
-BROKEN_FreeBSD_10_i386= libmediascan does not compile
 
 BUILD_DEPENDS=	nasm:devel/nasm \
 		bash:shells/bash \

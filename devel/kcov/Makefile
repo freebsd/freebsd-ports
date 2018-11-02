@@ -12,7 +12,6 @@ LICENSE=	GPLv2 MIT # MIT for bundled handlebars, jquery, tablesorter
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_10= PR228478 devel/elfutils: undefined symbols on 10.4-RELEASE
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	ptrace code is only implemented for amd64
 

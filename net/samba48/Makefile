@@ -471,7 +471,7 @@ SUB_LIST+=			SAMBA4_PYTHON3="@comment "
 
 .if !defined(SAMBA4_SUBPORT)
 # Require llvm 4.0 and AMD64
-.if ${PORT_OPTIONS:MAESNI} && ${ARCH} == "amd64" && ${OSVERSION} >= 1100511
+.if ${PORT_OPTIONS:MAESNI} && ${ARCH} == "amd64"
 CONFIGURE_ARGS+=		--accel-aes=intelaesni
 PLIST_FILES+=			lib/samba4/private/libaesni-intel-samba4.so
 .else

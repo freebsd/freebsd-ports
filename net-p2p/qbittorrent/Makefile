@@ -13,8 +13,6 @@ COMMENT=	Bittorrent client using Qt4/5 and libtorrent-rasterbar
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_10=	error: no matching constructor for initialization of 'const QString'
-
 LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
 		libboost_system.so:devel/boost-libs
 

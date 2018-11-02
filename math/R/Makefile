@@ -12,7 +12,6 @@ COMMENT=	Language for statistical computing and graphics
 
 LICENSE=	GPLv2
 
-BROKEN_FreeBSD_10_armv6=	Fails to build
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \

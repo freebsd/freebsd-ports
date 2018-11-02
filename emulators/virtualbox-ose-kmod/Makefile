@@ -76,11 +76,7 @@ KMK_ARCH=	freebsd.${ARCH}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSREL:R} >= 11
 SYMBOLSUFFIX=	debug
-.else
-SYMBOLSUFFIX=	symbols
-.endif
 PLIST_SUB+=	SYMBOLSUFFIX=${SYMBOLSUFFIX}
 
 post-patch:

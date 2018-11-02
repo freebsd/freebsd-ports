@@ -32,11 +32,6 @@ OPTIONS_DEFINE+=THREAD_SAFE_OBSERVER_PATTERN
 OPTIONS_DEFINE+=THREAD_SAFE_SINGLETON_INIT
 OPTIONS_DEFINE+=${OPTIONS_DEFAULT}
 
-.if ${CC} == "cc"
-# The base cc/c++ on FreeBSD-10 is too old for OpenMP.
-OPTIONS_EXCLUDE_FreeBSD_10=OPENMP
-.endif
-
 BENCHMARK_DESC=		Install benchmark (it is always built)
 EXTRA_SAFETY_CHECKS_DESC=Trade performance for run-time checks
 INDEXED_COUPONS_DESC=	Use indexed rather than par coupons

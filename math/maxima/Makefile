@@ -76,12 +76,6 @@ PLIST_SUB+=	LISPBINARY="@comment "
 MAXIMABINARY=	maxima_core
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-# The older makeinfo from the base fails in 10.3
-BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:print/texinfo
-CONFIGURE_ENV+=	MAKEINFO="${LOCALBASE}/bin/makeinfo"
-.endif
-
 post-patch:
 	@${GREP} -Fe '.core' -l -r ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		-e 's;\.core;_core;g'

@@ -2784,7 +2784,7 @@ lib/python%%XYDOT%%/lib-dynload/_sha256.so
 lib/python%%XYDOT%%/lib-dynload/_sha3.so
 lib/python%%XYDOT%%/lib-dynload/_sha512.so
 lib/python%%XYDOT%%/lib-dynload/_socket.so
-%%NO_SSL%%lib/python%%XYDOT%%/lib-dynload/_ssl.so
+lib/python%%XYDOT%%/lib-dynload/_ssl.so
 lib/python%%XYDOT%%/lib-dynload/_struct.so
 lib/python%%XYDOT%%/lib-dynload/_testbuffer.so
 lib/python%%XYDOT%%/lib-dynload/_testcapi.so

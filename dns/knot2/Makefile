@@ -14,6 +14,9 @@ COMMENT=	High performance authoritative-only DNS server
 
 LICENSE=	GPLv3
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON_i386=Uses 64 bit atomics that clang cannot generate on i386 on FreeBSD >= 11.2
+
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libidn2.so:dns/libidn2 \
 		liblmdb.so:databases/lmdb \
@@ -59,13 +62,6 @@ FASTPARSER_CONFIGURE_ENABLE=	fastparser
 
 IDN_CONFIGURE_WITH=		libidn
 IDN_LIB_DEPENDS=		libidn.so:dns/libidn
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1120000
-NOT_FOR_ARCHS=	i386
-NOT_FOR_ARCHS_REASON_i386=Uses 64 bit atomics that clang cannot generate on i386 on FreeBSD >= 11.2
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's|$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|#$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|' \

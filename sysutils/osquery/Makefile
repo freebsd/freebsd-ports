@@ -67,12 +67,6 @@ LLDPD_CONFIGURE_ENV_OFF=SKIP_LLDPD=1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1100000
-BUILD_DEPENDS+=	clang60:devel/llvm60
-CC=	clang60
-CXX=	clang++60
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's|/var/osquery/|/var/db/osquery/|g' \
 		${WRKSRC}/tools/deployment/osquery.example.conf

@@ -12,7 +12,6 @@ COMMENT=	POrtable Computing Language (POCL)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_10=	pocl is not supported on 10.x
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	only tested on x86
 

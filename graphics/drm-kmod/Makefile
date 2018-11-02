@@ -22,9 +22,7 @@ RUN_DEPENDS=	${KMODDIR}/drm.ko:graphics/drm-legacy-kmod
 IGNORE=		legacy kmod not required on less than 12.0
 .endif
 .else
-.if ${OSVERSION} < 1101510
-IGNORE=		not supported on 11.1 or older, no kernel support
-.elif ${OSVERSION} >= 1101510 && ${OSVERSION} < 1200000
+.if ${OSVERSION} >= 1101510 && ${OSVERSION} < 1200000
 RUN_DEPENDS=	${KMODDIR}/drm.ko:graphics/drm-stable-kmod
 .elif ${OSVERSION} >= 1200000 && ${OSVERSION} < 1200045
 IGNORE=		not supported on older 12, no kernel support

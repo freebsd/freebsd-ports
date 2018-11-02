@@ -25,12 +25,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
 		s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/src/fluxbg_conf.cc
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100077
-# chmod -R bug
-post-extract:
-	${CHMOD} +x ${WRKSRC}/autom4te.cache
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

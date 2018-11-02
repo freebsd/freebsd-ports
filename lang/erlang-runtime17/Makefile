@@ -58,7 +58,6 @@ OPTIONS_EXCLUDE+=	DTRACE
 .endif
 
 OPTIONS_EXCLUDE_DragonFly=	HIPE NATIVE SCTP
-OPTIONS_EXCLUDE_FreeBSD_10=	DTRACE
 # ld(1) fails to link probes: missing __dtrace_erlang___* symbols
 OPTIONS_EXCLUDE_aarch64=	DTRACE
 OPTIONS_EXCLUDE_armv6=		DTRACE
@@ -99,7 +98,7 @@ WX_VARS=		USE_WX=2.8+ WX_COMPS="wx contrib" USE_GL="gl glu"
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1100000
+.if ${OPSYS} == FreeBSD
 CFLAGS+=	-DMAP_NORESERVE=0
 .endif
 

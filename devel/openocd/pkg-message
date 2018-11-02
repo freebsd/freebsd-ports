@@ -12,15 +12,11 @@ FreeBSD USB NOTE:
  add him/her to the operator group  (pw groupmod operator -m username), then
  setup the devfs subsystem by adding these lines to the following files:
 
- ***/etc/devfs.rules (FreeBSD >= 8):
+ ***/etc/devfs.rules:
  [localrules=10]
         add path 'ugen*' mode 0660 group operator
         add path 'usb/*'  mode 0660 group operator
         add path 'usb' mode 0770 group operator
-
- ***/etc/devfs.rules (FreeBSD <= 7):
- [localrules=10]
-	add path 'ugen*' mode 0660 group operator
 
  ***/etc/rc.conf:
 	devfs_system_ruleset="localrules"

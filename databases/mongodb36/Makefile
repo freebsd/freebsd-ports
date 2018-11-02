@@ -20,7 +20,6 @@ LICENSE_COMB=	multi
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"Only supported on amd64 (i386 deprecated in v3)"
-BROKEN_FreeBSD_10=	libc++ is too old
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>=2.4.4:devel/py-cheetah@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing>=3.6.2:devel/py-typing@${PY_FLAVOR} \

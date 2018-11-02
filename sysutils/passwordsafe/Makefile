@@ -66,10 +66,4 @@ post-install-NLS-on:
 		${STAGEDIR}${PREFIX}/locale/$l/LC_MESSAGES
 .endfor
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
-BROKEN=	clang segfaults on 10.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

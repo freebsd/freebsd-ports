@@ -43,16 +43,10 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1100000 && ${MACHINE_ARCH} == "i386"
-STRIP=	# 10.4/i386 strip(1) is incapable of stripping the gzdoom binary
-.endif
-
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${CONFIGURE_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${CONFIGURE_WRKSRC}/${PORTNAME}.pk3 ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
