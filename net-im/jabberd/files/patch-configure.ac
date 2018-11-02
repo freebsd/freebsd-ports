@@ -1,4 +1,4 @@
---- configure.ac.orig	2017-07-01 15:27:52 UTC
+--- configure.ac.orig	2018-11-01 20:35:12 UTC
 +++ configure.ac
 @@ -74,10 +74,6 @@ if test "x-$want_mio_debug" = "x-yes" ; then
      AC_DEFINE(MIO_DEBUG,1,[Define to 1 if you want to enable managed IO debug output.])
@@ -11,15 +11,51 @@
  # Two-step header checking.  First check for headers which don't
  # require any other headers.
  AC_HEADER_DIRENT
-@@ -406,9 +402,9 @@ if test "x-$want_ssl" != "x-no" ; then
-     fi
-     AC_CHECK_HEADERS(openssl/crypto.h)
-     if test "x-$ac_cv_header_openssl_crypto_h" = "x-yes" ; then
--        AC_CHECK_LIB(crypto, CRYPTO_lock)
+@@ -396,15 +392,39 @@ fi
+ #
+ # optional libs
+ 
+-# OpenSSL >= 1.0.2
+-AC_ARG_ENABLE(ssl, AC_HELP_STRING([--enable-ssl], [enable SSL/TLS support (yes)]), want_ssl=$enableval, want_ssl=yes)
+-AS_IF([test "x$want_ssl" = "xyes"], [
+-	PKG_CHECK_MODULES(SSL, openssl >= 1.0.2,
+-		have_ssl="yes"
++# OpenSSL >= 1.0.1
++AC_ARG_ENABLE(ssl, AC_HELP_STRING([--enable-ssl[=DIR]], [enable SSL/TLS support (yes)]), want_ssl=$enableval, want_ssl=yes)
++if test "x-$want_ssl" != "x-no" ; then
++    if test "x-$want_ssl" != "x-yes" ; then
++        CFLAGS="$CFLAGS -I$enableval/include" 
++        CPPFLAGS="$CPPFLAGS -I$enableval/include" 
++        LDFLAGS="$LDFLAGS -L$enableval/lib"
++    fi
++    AC_CHECK_HEADERS(openssl/crypto.h)
++    if test "x-$ac_cv_header_openssl_crypto_h" = "x-yes" ; then
 +        AC_CHECK_LIB(crypto, HMAC_Update)
-     fi
--    if test "x-$ac_cv_lib_crypto_CRYPTO_lock" = "x-yes" ; then
++    fi
 +    if test "x-$ac_cv_lib_crypto_HMAC_Update" = "x-yes" ; then
-         AC_CHECK_HEADERS(openssl/ssl.h)
-     fi
-     if test "x-$ac_cv_header_openssl_ssl_h" = "x-yes" ; then
++        AC_CHECK_HEADERS(openssl/ssl.h)
++    fi
++    if test "x-$ac_cv_header_openssl_ssl_h" = "x-yes" ; then
++        AC_CHECK_LIB(ssl, SSL_connect)
++    fi
++    if test "x-$ac_cv_lib_ssl_SSL_connect" = "x-yes" ; then
++        AC_MSG_CHECKING(for OpenSSL version >= 1.0.1)
++        AC_RUN_IFELSE([AC_LANG_PROGRAM([[#include <openssl/crypto.h>]],
++                                       [[return !(SSLeay() >= 0x010001000L)]])],
++                      [AC_MSG_RESULT(yes)
++                       have_openssl=yes],
++                      AC_MSG_RESULT(no))
++    fi
++    if test "x-$have_openssl" != "x-yes" ; then
++        AC_MSG_ERROR([OpenSSL >= 1.0.1 not found])
++    fi
++
+     AC_DEFINE(HAVE_SSL,1,[Define to 1 if OpenSSL is available.])
+-	)
+-])
+-AM_CONDITIONAL(HAVE_SSL, [test "x$have_ssl" = "xyes"])
++fi
++AM_CONDITIONAL(HAVE_SSL, [test "x-$have_openssl" = "x-yes"])
+ 
+ dnl Check for & handle argument to --with-zlib.
+ _cppflags=$CPPFLAGS
