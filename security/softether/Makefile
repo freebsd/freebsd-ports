@@ -2,6 +2,7 @@
 
 PORTNAME=	softether
 PORTVERSION=	4.25.9656
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.softether-download.com/files/softether/v4.25-9656-rtm-2018.01.15-tree/Source_Code/
 DISTNAME=	${PORTNAME}-src-v4.25-9656-rtm
@@ -10,30 +11,18 @@ MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Softether VPN solution
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL=	softether-devel
+ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS_REASON=	Upstream only supports amd64 and i386: https://www.softether.org/3-spec
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		dos2unix gmake iconv:wchar_t localbase:ldflags ncurses \
+		readline ssl
+USE_RC_SUBR=	softether_bridge softether_client softether_server
 
-PORTDOCS=	AUTHORS.TXT ChangeLog LICENSE README THIRD_PARTY.TXT WARNING.TXT
-DOS2UNIX_FILES=	AUTHORS.TXT ChangeLog LICENSE README THIRD_PARTY.TXT \
-		WARNING.TXT \
-		src/Cedar/Cedar.h \
-		src/Cedar/Cedar.h \
-		src/Cedar/Client.h \
-		src/Cedar/Nat.h \
-		src/Cedar/Server.c \
-		src/Cedar/Server.h \
-		src/Cedar/Virtual.h \
-		src/Mayaqua/Cfg.c \
-		src/Mayaqua/Cfg.h \
-		src/Mayaqua/Kernel.c \
-		src/Mayaqua/Mayaqua.c \
-		src/Mayaqua/Network.c \
-		src/Mayaqua/Network.h \
-		src/Mayaqua/Table.h \
-		src/Mayaqua/Unix.c
+DOS2UNIX_FILES=	ChangeLog LICENSE README *.TXT \
+		src/Cedar/*.* src/Mayaqua/*.*
+SUB_FILES=	vpncmd
 
 OPTIONS_DEFINE=	DOCS UNLOCK
 
@@ -44,20 +33,18 @@ OPTIONS_DEFINE=	DOCS UNLOCK
 #  - Deep-inspect packet logging function
 #  - Source IP address control list function
 #  - syslog transfer function
-UNLOCK_DESC= Unlock regional lockout (JP and CN)
+UNLOCK_DESC=	Unlock regional lockout (JP and CN)
 UNLOCK_EXTRA_PATCHES=	${FILESDIR}/extra-patch-unrestrict-enterprise-functions
 
-ONLY_FOR_ARCHS=	i386 amd64
-
-USES=		dos2unix gmake iconv:wchar_t localbase:ldflags ncurses \
-		readline ssl
-USE_RC_SUBR=	softether_bridge softether_client softether_server
-SUB_FILES=	vpncmd
-MAKE_JOBS_UNSAFE=	yes
+CONFLICTS_INSTALL=	softether-devel
+PORTDOCS=	AUTHORS.TXT ChangeLog LICENSE README THIRD_PARTY.TXT WARNING.TXT
 
 LOGDIR?=	/var/log/softether
-PLIST_SUB+=	LOGDIR="${LOGDIR}"
+PLIST_SUB=	LOGDIR="${LOGDIR}"
 SUB_LIST=	LOGDIR="${LOGDIR}"
+
+CPPFLAGS+=	-I${LOCALBASE}/includec
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 # a pity the source directory has such a naming scheme, but well
 WRKSRC=		${WRKDIR}/v4.25-9656
@@ -66,15 +53,14 @@ ALL_TARGET=	build
 
 .include <bsd.port.options.mk>
 
-# skip configure at all and copy the corresponding Makefile in place
-post-extract:
+post-patch:
+	# skip configure at all and copy the corresponding Makefile in place
 .if ${ARCH} != "amd64"
 	@${CP} ${WRKSRC}/src/makefiles/freebsd_32bit.mak ${WRKSRC}/Makefile
 .else
 	@${CP} ${WRKSRC}/src/makefiles/freebsd_64bit.mak ${WRKSRC}/Makefile
 .endif
-
-# pull in user specific CFLAGS and LDFLAGS
+	# pull in user specific CFLAGS and LDFLAGS
 	@${REINPLACE_CMD} -e "s|OPTIONS_COMPILE_RELEASE=|OPTIONS_COMPILE_RELEASE=${CFLAGS} |g" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s|OPTIONS_LINK_RELEASE=|OPTIONS_LINK_RELEASE=${LDFLAGS} |g" ${WRKSRC}/Makefile
 
@@ -88,8 +74,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/vpnserver/vpnserver ${STAGEDIR}/${PREFIX}/libexec/${PORTNAME}/vpnserver
 	${INSTALL_DATA} ${WRKSRC}/bin/vpnserver/hamcore.se2 ${STAGEDIR}/${PREFIX}/libexec/${PORTNAME}/hamcore.se2
 	${INSTALL_SCRIPT} ${WRKDIR}/vpncmd ${STAGEDIR}/${PREFIX}/sbin/vpncmd
-
-post-install:
 .for i in vpnbridge vpnclient vpncmd vpnserver
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/${i}
 .endfor
