@@ -32,7 +32,8 @@ GNU_CONFIGURE=		yes
 USES=			autoreconf cpe gmake localbase perl5 libtool:build \
 			gssapi:bootstrap,mit pkgconfig:run ssl
 CONFIGURE_ARGS?=	--enable-shared --without-system-verto \
-			--disable-rpath --localstatedir="${PREFIX}/var"
+			--disable-rpath --localstatedir="${PREFIX}/var" \
+			--runstatedir="${PREFIX}/var/run"
 CONFIGURE_ENV=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}" YACC="${YACC}"
 MAKE_ARGS=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}"
 
