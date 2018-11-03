@@ -11,9 +11,9 @@
 # Add the following line to /etc/rc.conf to enable mysql:
 # mysql_enable (bool):	Set to "NO" by default.
 #			Set it to "YES" to enable MySQL.
-# mysql_limits (bool):	Set to "NO" by default.
-#			Set it to yes to run `limits -e -U mysql`
-#			just before mysql starts.
+%%LEGACY_LIMITS%%# mysql_limits (bool):	Set to "NO" by default.
+%%LEGACY_LIMITS%%#			Set it to yes to run `limits -e -U mysql`
+%%LEGACY_LIMITS%%#			just before mysql starts.
 # mysql_dbdir (str):	Default to "/var/db/mysql"
 #			Base database directory.
 # mysql_optfile (str):	Server-specific option file.
@@ -32,12 +32,12 @@ rcvar=mysql_enable
 load_rc_config $name
 
 : ${mysql_enable="NO"}
-: ${mysql_limits="NO"}
+%%LEGACY_LIMITS%%: ${mysql_limits="NO"}
 : ${mysql_dbdir="/var/db/mysql"}
 : ${mysql_optfile="${mysql_dbdir}/my.cnf"}
 
 mysql_user="mysql"
-mysql_limits_args="-e -U ${mysql_user}"
+%%LEGACY_LIMITS%%mysql_limits_args="-e -U ${mysql_user}"
 : ${hostname:=`/bin/hostname`}
 pidfile=${mysql_pidfile:-"${mysql_dbdir}/${hostname}.pid"}
 command="/usr/sbin/daemon"
@@ -59,11 +59,12 @@ mysql_prestart()
 	if [ ! -d "${mysql_dbdir}/mysql/." ]; then
 		mysql_create_auth_tables || return 1
 	fi
-	if checkyesno mysql_limits; then
-		eval `/usr/bin/limits ${mysql_limits_args}` 2>/dev/null
-	else
-		return 0
-	fi
+%%LEGACY_LIMITS%%	if checkyesno mysql_limits; then
+%%LEGACY_LIMITS%%		eval `/usr/bin/limits ${mysql_limits_args}` 2>/dev/null
+%%LEGACY_LIMITS%%	else
+%%LEGACY_LIMITS%%		return 0
+%%LEGACY_LIMITS%%	fi
+%%MODERN_LIMITS%%	return 0
 }
 
 mysql_poststart()
