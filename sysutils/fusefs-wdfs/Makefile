@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	fusefs-
 MAINTAINER=	silverless@gmx.com
 COMMENT=	Mount remote WebDAV directories with Fuse
 
+DEPRECATED=	Abandonware, functionally incomplete, has problems with caching
+EXPIRATION_DATE=	2019-02-03
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libneon.so:www/neon
