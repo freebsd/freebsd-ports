@@ -1,23 +1,84 @@
 https://github.com/rstudio/rstudio/commit/a60f97073561f638a9c986aef8d58f5cc4cdc6d6
+https://github.com/rstudio/rstudio/commit/48da00661644c5b17897ffebaf975f7b64c52164
+https://github.com/rstudio/rstudio/commit/667db539c925fa25176fe2b5cc0cab105a2eb071
 
 --- src/cpp/CMakeLists.txt.orig	2018-05-31 21:11:21 UTC
 +++ src/cpp/CMakeLists.txt
-@@ -180,7 +180,6 @@ list(APPEND BOOST_LIBS
-    program_options
-    random
-    regex
--   signals
-    system
-    thread
- )
-@@ -234,6 +233,18 @@ else()
-    message(STATUS "Using RStudio-provided Boost ${BOOST_VERSION}: ${BOOST_ROOT}")
+@@ -157,17 +157,14 @@ if(APPLE OR WIN32 OR RSTUDIO_PACKAGE_BUILD)
+ endif()
+ 
+ # default Boost versions
+-if (WIN32)
+-   set(BOOST_VERSION 1.65.1)
+-else()
+-   set(BOOST_VERSION 1.63.0)
++if(NOT RSTUDIO_BOOST_REQUESTED_VERSION)
++   if (WIN32)
++      set(RSTUDIO_BOOST_REQUESTED_VERSION 1.65.1)
++   else()
++      set(RSTUDIO_BOOST_REQUESTED_VERSION 1.63.0)
++   endif()
+ endif()
+ 
+-# override if necessary
+-if (RSTUDIO_BOOST_VERSION)
+-   set(BOOST_VERSION "${RSTUDIO_BOOST_VERSION}")
+-endif()
+-
+ # disable Boost Signals deprecation warning
+ add_definitions(-DBOOST_SIGNALS_NO_DEPRECATION_WARNING)
+ 
+@@ -195,21 +192,27 @@ if(UNIX)
+       # find headers
+       set(Boost_USE_STATIC_LIBS ON)
+       set(BOOST_INCLUDEDIR  ${RSTUDIO_TOOLS_BOOST}/include)
+-      find_package(Boost ${BOOST_VERSION} REQUIRED)
++      find_package(Boost ${RSTUDIO_BOOST_REQUESTED_VERSION} REQUIRED)
++      if(NOT Boost_VERSION LESS 106900)
++         list(REMOVE_ITEM BOOST_LIBS signals)
++      endif()
+ 
+       # define library list manually (find_package doesn't always pick them up)
+       set(BOOST_LIB_DIR ${RSTUDIO_TOOLS_BOOST}/lib)
+       foreach(BOOST_LIB ${BOOST_LIBS})
+          list(APPEND Boost_LIBRARIES ${BOOST_LIB_DIR}/libboost_${BOOST_LIB}.a)
+       endforeach()
+-      message(STATUS "Using RStudio-provided Boost ${BOOST_VERSION}")
++      message(STATUS "Using RStudio-provided Boost ${RSTUDIO_BOOST_REQUESTED_VERSION}")
+    else()
+       add_definitions(-DRSTUDIO_BOOST_NAMESPACE=boost)
+-      find_package(Boost ${BOOST_VERSION} REQUIRED COMPONENTS ${BOOST_LIBS})
+-      message(STATUS "Using system Boost ${BOOST_VERSION}")
++      find_package(Boost ${RSTUDIO_BOOST_REQUESTED_VERSION} REQUIRED)
++      if(NOT Boost_VERSION LESS 106900)
++         list(REMOVE_ITEM BOOST_LIBS signals)
++      endif()
++      find_package(Boost ${RSTUDIO_BOOST_REQUESTED_VERSION} REQUIRED COMPONENTS ${BOOST_LIBS})
+    endif()
+ 
+-   # WIN32 BOOST
++# WIN32 BOOST
+ else()
+    # hard-code to our own prebuilt boost libs
+    add_definitions(-DRSTUDIO_BOOST_NAMESPACE=rstudio_boost)
+@@ -226,14 +229,26 @@ else()
+       set(BOOST_ROOT "${RSTUDIO_WINDOWS_DEPENDENCIES_DIR}/boost-1.65.1-win-msvc14-debug-static/boost${BOOST_ARCH}")
+    endif()
+    set(BOOST_INCLUDEDIR "${BOOST_ROOT}/include/boost-1_65_1")
+-   find_package(Boost ${BOOST_VERSION} REQUIRED)
++   find_package(Boost ${RSTUDIO_BOOST_REQUESTED_VERSION} REQUIRED)
+    set(BOOST_LIBRARYDIR "${BOOST_ROOT}/lib")
+    foreach(BOOST_LIB ${BOOST_LIBS})
+       list(APPEND Boost_LIBRARIES "${BOOST_LIBRARYDIR}/librstudio_boost_${BOOST_LIB}-${BOOST_SUFFIX}")
+    endforeach()
+-   message(STATUS "Using RStudio-provided Boost ${BOOST_VERSION}: ${BOOST_ROOT}")
++   message(STATUS "Using RStudio-provided Boost ${RSTUDIO_BOOST_REQUESTED_VERSION}: ${BOOST_ROOT}")
  endif()
  
 +# allow opt-in to using Boost.Signals2
 +# TODO: remove this in RStudio v1.3 and port to signals2
 +if(NOT RSTUDIO_BOOST_SIGNALS_VERSION)
-+   if (Boost_VERSION VERSION_LESS 1.69.0)
++   if (Boost_VERSION LESS 106900)
 +      set(RSTUDIO_BOOST_SIGNALS_VERSION 1)
 +   else()
 +      set(RSTUDIO_BOOST_SIGNALS_VERSION 2)
@@ -79,10 +140,10 @@ https://github.com/rstudio/rstudio/commit/a60f97073561f638a9c986aef8d58f5cc4cdc6
     const boost::optional<std::string>& defaultValue() const { return defaultValue_; }
     boost::tribool hasDefault() const { return hasDefault_; }
 -   bool isUsed() const { return isUsed_; }
-+   bool isUsed() const { return bool{isUsed_}; }
++   bool isUsed() const { return bool(isUsed_); }
     void setIsUsed(bool value) { isUsed_ = value; }
 -   bool isMissingnessHandled() const { return isMissingnessHandled_; }
-+   bool isMissingnessHandled() const { return bool{isMissingnessHandled_}; }
++   bool isMissingnessHandled() const { return bool(isMissingnessHandled_); }
     void setMissingnessHandled(bool value) { isMissingnessHandled_ = value; }
     
  private:
@@ -91,7 +152,7 @@ https://github.com/rstudio/rstudio/commit/a60f97073561f638a9c986aef8d58f5cc4cdc6
     bool isPrimitive()
     {
 -      return isPrimitive_ == true;
-+      return bool{isPrimitive_};
++      return bool(isPrimitive_);
     }
     
     void setIsPrimitive(bool isPrimitive)
@@ -522,7 +583,7 @@ https://github.com/rstudio/rstudio/commit/a60f97073561f638a9c986aef8d58f5cc4cdc6
     {
        DEBUG("--- Found function in pkgInfo index: " << *fnInfo.binding());
 -      return fnInfo.performsNse();
-+      return bool{fnInfo.performsNse()};
++      return bool(fnInfo.performsNse());
     }
     
     // Handle some special cases first.
@@ -742,3 +803,90 @@ https://github.com/rstudio/rstudio/commit/a60f97073561f638a9c986aef8d58f5cc4cdc6
                           onCondition;
  };
  
+--- src/tools/clang-ubsan-build.orig	2018-05-31 21:11:21 UTC
++++ src/tools/clang-ubsan-build
+@@ -10,19 +10,19 @@
+ 
+ : ${RSTUDIO_USE_LIBCXX="Yes"}
+ : ${RSTUDIO_USE_SYSTEM_BOOST="Yes"}
+-: ${RSTUDIO_BOOST_VERSION="1.56.0"}
++: ${RSTUDIO_BOOST_REQUESTED_VERSION="1.56.0"}
+ 
+ mkdir -p "${BUILD_DIR}"
+ cd "${BUILD_DIR}"
+-cmake ../cpp                                                 \
+-    -DLIBR_HOME="${R_HOME}"                                  \
+-    -DCMAKE_C_COMPILER="${CC}"                               \
+-    -DCMAKE_C_FLAGS="${ASANFLAGS} ${LDFLAGS}"                \
+-    -DCMAKE_CXX_COMPILER="${CXX}"                            \
+-    -DCMAKE_CXX_FLAGS="${ASANFLAGS} ${LDFLAGS}"              \
+-    -DRSTUDIO_USE_LIBCXX="${RSTUDIO_USE_LIBCXX}"             \
+-    -DRSTUDIO_USE_SYSTEM_BOOST="${RSTUDIO_USE_SYSTEM_BOOST}" \
+-    -DRSTUDIO_BOOST_VERSION="${RSTUDIO_BOOST_VERSION}"       \
++cmake ../cpp                                                               \
++    -DLIBR_HOME="${R_HOME}"                                                \
++    -DCMAKE_C_COMPILER="${CC}"                                             \
++    -DCMAKE_C_FLAGS="${ASANFLAGS} ${LDFLAGS}"                              \
++    -DCMAKE_CXX_COMPILER="${CXX}"                                          \
++    -DCMAKE_CXX_FLAGS="${ASANFLAGS} ${LDFLAGS}"                            \
++    -DRSTUDIO_USE_LIBCXX="${RSTUDIO_USE_LIBCXX}"                           \
++    -DRSTUDIO_USE_SYSTEM_BOOST="${RSTUDIO_USE_SYSTEM_BOOST}"               \
++    -DRSTUDIO_BOOST_REQUESTED_VERSION="${RSTUDIO_BOOST_REQUESTED_VERSION}" \
+     "$@"
+ cd ..
+ 
+--- src/tools/gcc-ubsan-build.orig	2018-05-31 21:11:21 UTC
++++ src/tools/gcc-ubsan-build
+@@ -19,19 +19,19 @@ DEFAULT_ASANFLAGS="$(echo ${DEFAULT_ASANFLAGS} | tr '\
+ # NOTE: Boost 1.50.0 not compatible with gcc-6
+ : ${RSTUDIO_USE_LIBCXX="No"}
+ : ${RSTUDIO_USE_SYSTEM_BOOST="Yes"}
+-: ${RSTUDIO_BOOST_VERSION="1.54.0"}
++: ${RSTUDIO_BOOST_REQUESTED_VERSION="1.54.0"}
+ 
+ mkdir -p "${BUILD_DIR}"
+ cd "${BUILD_DIR}"
+-cmake ../cpp                                                 \
+-    -DLIBR_HOME="${R_HOME}"                                  \
+-    -DCMAKE_C_COMPILER="${CC}"                               \
+-    -DCMAKE_C_FLAGS="${ASANFLAGS} ${LDFLAGS}"                \
+-    -DCMAKE_CXX_COMPILER="${CXX}"                            \
+-    -DCMAKE_CXX_FLAGS="${ASANFLAGS} ${LDFLAGS}"              \
+-    -DRSTUDIO_USE_LIBCXX="${RSTUDIO_USE_LIBCXX}"             \
+-    -DRSTUDIO_USE_SYSTEM_BOOST="${RSTUDIO_USE_SYSTEM_BOOST}" \
+-    -DRSTUDIO_BOOST_VERSION="${RSTUDIO_BOOST_VERSION}"       \
++cmake ../cpp                                                               \
++    -DLIBR_HOME="${R_HOME}"                                                \
++    -DCMAKE_C_COMPILER="${CC}"                                             \
++    -DCMAKE_C_FLAGS="${ASANFLAGS} ${LDFLAGS}"                              \
++    -DCMAKE_CXX_COMPILER="${CXX}"                                          \
++    -DCMAKE_CXX_FLAGS="${ASANFLAGS} ${LDFLAGS}"                            \
++    -DRSTUDIO_USE_LIBCXX="${RSTUDIO_USE_LIBCXX}"                           \
++    -DRSTUDIO_USE_SYSTEM_BOOST="${RSTUDIO_USE_SYSTEM_BOOST}"               \
++    -DRSTUDIO_BOOST_REQUESTED_VERSION="${RSTUDIO_BOOST_REQUESTED_VERSION}" \
+     "$@"
+ cd ..
+ 
+--- src/tools/xcode-ubsan-build.orig	2018-05-31 21:11:21 UTC
++++ src/tools/xcode-ubsan-build
+@@ -15,13 +15,13 @@
+ # sanitizers released with newer versions of clang)
+ mkdir -p "${BUILD_DIR}"
+ cd "${BUILD_DIR}"
+-cmake ../cpp -GXcode                 \
+-    -DLIBR_HOME="${R_HOME}"          \
+-    -DLIBR_INCLUDE_DIRS="${R_INCL}"  \
+-    -DLIBR_DOC_DIR="${R_DOCS}"       \
+-    -DRSTUDIO_USE_LIBCXX="Yes"       \
+-    -DRSTUDIO_USE_SYSTEM_BOOST="Yes" \
+-    -DRSTUDIO_BOOST_VERSION="1.56.0" \
++cmake ../cpp -GXcode                           \
++    -DLIBR_HOME="${R_HOME}"                    \
++    -DLIBR_INCLUDE_DIRS="${R_INCL}"            \
++    -DLIBR_DOC_DIR="${R_DOCS}"                 \
++    -DRSTUDIO_USE_LIBCXX="Yes"                 \
++    -DRSTUDIO_USE_SYSTEM_BOOST="Yes"           \
++    -DRSTUDIO_BOOST_REQUESTED_VERSION="1.56.0" \
+     "$@"
+ cmake ../cpp -DLIBR_LIBRARIES="${R_LIBS}/libR.dylib"
+ cd ..
