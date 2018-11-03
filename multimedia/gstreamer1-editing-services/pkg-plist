@@ -30,6 +30,7 @@ include/gstreamer-%%VERSION%%/ges/ges-operation.h
 include/gstreamer-%%VERSION%%/ges/ges-overlay-clip.h
 include/gstreamer-%%VERSION%%/ges/ges-pipeline.h
 include/gstreamer-%%VERSION%%/ges/ges-pitivi-formatter.h
+include/gstreamer-%%VERSION%%/ges/ges-prelude.h
 include/gstreamer-%%VERSION%%/ges/ges-project.h
 include/gstreamer-%%VERSION%%/ges/ges-screenshot.h
 include/gstreamer-%%VERSION%%/ges/ges-smart-adder.h
@@ -59,15 +60,13 @@ include/gstreamer-%%VERSION%%/ges/ges-video-transition.h
 include/gstreamer-%%VERSION%%/ges/ges-video-uri-source.h
 include/gstreamer-%%VERSION%%/ges/ges-xml-formatter.h
 include/gstreamer-%%VERSION%%/ges/ges.h
-lib/girepository-%%VERSION%%/GES-%%VERSION%%.typelib
+lib/girepository-1.0/GES-%%VERSION%%.typelib
 lib/gstreamer-%%VERSION%%/libgstnle.so
 lib/libges-%%VERSION%%.so
 lib/libges-%%VERSION%%.so.0
 lib/libges-%%VERSION%%.so.%%SOVERSION%%
 %%PYTHON_SITELIBDIR%%/gstreamer-editing-services/GES.py
-%%PYTHON_SITELIBDIR%%/gstreamer-editing-services/GES.pyc
-%%PYTHON_SITELIBDIR%%/gstreamer-editing-services/GES.pyo
 libdata/pkgconfig/gst-editing-services-%%VERSION%%.pc
 man/man1/ges-launch-%%VERSION%%.1.gz
 share/bash-completion/completions/ges-launch-%%VERSION%%
-share/gir-%%VERSION%%/GES-%%VERSION%%.gir
+share/gir-1.0/GES-%%VERSION%%.gir

@@ -2,11 +2,10 @@
 
 PORTREVISION=	0
 CATEGORIES=	multimedia
-PKGNAMESUFFIX=	1-plugins-schroedinger
 
-COMMENT=	GStreamer Dirac high-speed codec plugin
+COMMENT=	GStreamer (libaom) plugin
 
-GST_PLUGIN=	schro
+GST_PLUGIN=	aom
 DIST=		bad
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins

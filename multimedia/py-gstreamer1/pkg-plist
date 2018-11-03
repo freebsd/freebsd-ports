@@ -1,4 +1,4 @@
-lib/gstreamer-1.0/libgstpythonplugin.so
+lib/gstreamer-1.0/libgstpython.so
 %%PYTHON_SITELIBDIR%%/gi/overrides/Gst.py
 %%PYTHON_SITELIBDIR%%/gi/overrides/Gst.pyc
 %%PYTHON_SITELIBDIR%%/gi/overrides/Gst.pyo

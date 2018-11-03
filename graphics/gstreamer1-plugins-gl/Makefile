@@ -6,9 +6,9 @@ CATEGORIES=	graphics
 COMMENT=	GStreamer GL graphics plugin
 
 GST_PLUGIN=	gl
-DIST=		bad
+DIST=		base
 
-GL_GST_DIRS=	gst-libs/gst/allocators
+GL_GST_DIRS=	gst-libs/gst/allocators gst-libs/gst/video
 PLIST=		${.CURDIR}/pkg-plist
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins

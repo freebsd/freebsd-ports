@@ -1,5 +1,5 @@
---- ext/opencv/gsttemplatematch.cpp.orig	2018-05-02 20:48:22.600036000 +0000
-+++ ext/opencv/gsttemplatematch.cpp	2018-05-02 20:50:39.989630000 +0000
+--- ext/opencv/gsttemplatematch.cpp.orig	2018-03-23 20:45:15 UTC
++++ ext/opencv/gsttemplatematch.cpp
 @@ -64,6 +64,8 @@
  #include "../../gst-libs/gst/gst-i18n-plugin.h"
  #include "gsttemplatematch.h"
