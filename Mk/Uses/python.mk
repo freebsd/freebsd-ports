@@ -613,7 +613,7 @@ add-plist-pymod:
 .if ${PYTHON_REL} >= 3200 && defined(_PYTHON_FEATURE_PY3KPLIST)
 # When Python version is 3.2+ we rewrite all the filenames
 # of TMPPLIST that end with .py[co], so that they conform
-# to PEP 3147 (see http://www.python.org/dev/peps/pep-3147/)
+# to PEP 3147 (see https://www.python.org/dev/peps/pep-3147/)
 PYMAGICTAG=		${PYTHON_CMD} -c 'import imp; print(imp.get_tag())'
 _USES_stage+=	935:add-plist-python
 add-plist-python:
