@@ -1,0 +1,11 @@
+--- ext/wayland/Makefile.in.orig	2018-09-16 17:59:59 UTC
++++ ext/wayland/Makefile.in
+@@ -1198,7 +1198,7 @@ $(shell echo $1 | sed 's/\([a-z\-]\+\)-[a-z]\+-v[0-9]\
+ endef
+
+ %-protocol.c : $(WAYLAND_PROTOCOLS_DATADIR)/$$(call protostability,$$*)/$$(call protoname,$$*)/$$*.xml
+-	$(AM_V_GEN)$(wayland_scanner) code < $< > $@
++	$(AM_V_GEN)$(wayland_scanner) private-code < $< > $@
+
+ %-client-protocol.h : $(WAYLAND_PROTOCOLS_DATADIR)/$$(call protostability,$$*)/$$(call protoname,$$*)/$$*.xml
+	$(AM_V_GEN)$(wayland_scanner) client-header < $< > $@

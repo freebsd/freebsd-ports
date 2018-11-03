@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gstreamer1-vaapi
-PORTVERSION=	1.12.3
-PORTREVISION=	4
+PORTVERSION=	1.14.4
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gstreamer-vaapi/
 DISTNAME=	gstreamer-vaapi-${PORTVERSION}
@@ -16,7 +15,6 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libva.so:multimedia/libva
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-wayland
 INSTALL_TARGET=	install-strip
 USES=		compiler:c11 gettext-runtime gmake gnome libtool \
 		pkgconfig tar:xz
@@ -26,7 +24,16 @@ USE_GSTREAMER1=	bad gl
 USE_GL=		gl
 USE_XORG=	x11 xrandr xrender xorgproto:build
 
-# drm backend needs libudev so disable it for now.
-CONFIGURE_ARGS+=--disable-drm
+OPTIONS_DEFINE=	DRM WAYLAND
+
+DRM_DESC=	Raw KMS/DRM backend
+
+DRM_CONFIGURE_ENABLE=	drm
+DRM_LIB_DEPENDS=	libudev.so:devel/libudev-devd \
+	libdrm.so:graphics/libdrm
+
+WAYLAND_CONFIGURE_ENABLE=	wayland
+WAYLAND_LIB_DEPENDS=	libva-wayland.so:multimedia/libva \
+	libwayland-client.so:graphics/wayland
 
 .include <bsd.port.mk>

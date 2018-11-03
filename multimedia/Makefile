@@ -127,6 +127,7 @@
     SUBDIR += gstreamer1-libav
     SUBDIR += gstreamer1-plugins
     SUBDIR += gstreamer1-plugins-all
+    SUBDIR += gstreamer1-plugins-aom
     SUBDIR += gstreamer1-plugins-assrender
     SUBDIR += gstreamer1-plugins-bad
     SUBDIR += gstreamer1-plugins-core
@@ -145,7 +146,6 @@
     SUBDIR += gstreamer1-plugins-openh264
     SUBDIR += gstreamer1-plugins-resindvd
     SUBDIR += gstreamer1-plugins-rtmp
-    SUBDIR += gstreamer1-plugins-schroedinger
     SUBDIR += gstreamer1-plugins-smoothstreaming
     SUBDIR += gstreamer1-plugins-theora
     SUBDIR += gstreamer1-plugins-ttml

@@ -6,9 +6,14 @@ include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-media-factory-uri.h
 include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-media-factory.h
 include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-media.h
 include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-mount-points.h
+include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-onvif-client.h
+include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-onvif-media-factory.h
+include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-onvif-media.h
+include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-onvif-server.h
 include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-params.h
 include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-permissions.h
 include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-sdp.h
+include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-server-prelude.h
 include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-server.h
 include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-session-media.h
 include/gstreamer-%%VERSION%%/gst/rtsp-server/rtsp-session-pool.h

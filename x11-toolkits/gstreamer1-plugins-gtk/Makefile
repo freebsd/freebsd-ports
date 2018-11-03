@@ -7,7 +7,7 @@ GST_PLUGIN_SUFFIX=	-gtk
 COMMENT=	GStreamer gtksink plugin
 
 GST_PLUGIN=	gtk3
-DIST=		bad
+DIST=		good
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
 

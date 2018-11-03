@@ -1,10 +1,13 @@
 bin/gst-device-monitor-%%VERSION%%
 bin/gst-discoverer-%%VERSION%%
 bin/gst-play-%%VERSION%%
+include/gstreamer-%%VERSION%%/gst/allocators/allocators-prelude.h
 include/gstreamer-%%VERSION%%/gst/allocators/allocators.h
 include/gstreamer-%%VERSION%%/gst/allocators/gstdmabuf.h
 include/gstreamer-%%VERSION%%/gst/allocators/gstfdmemory.h
+include/gstreamer-%%VERSION%%/gst/allocators/gstphysmemory.h
 include/gstreamer-%%VERSION%%/gst/app/app-enumtypes.h
+include/gstreamer-%%VERSION%%/gst/app/app-prelude.h
 include/gstreamer-%%VERSION%%/gst/app/app.h
 include/gstreamer-%%VERSION%%/gst/app/gstappsink.h
 include/gstreamer-%%VERSION%%/gst/app/gstappsrc.h
@@ -14,9 +17,11 @@ include/gstreamer-%%VERSION%%/gst/audio/audio-converter.h
 include/gstreamer-%%VERSION%%/gst/audio/audio-enumtypes.h
 include/gstreamer-%%VERSION%%/gst/audio/audio-format.h
 include/gstreamer-%%VERSION%%/gst/audio/audio-info.h
+include/gstreamer-%%VERSION%%/gst/audio/audio-prelude.h
 include/gstreamer-%%VERSION%%/gst/audio/audio-quantize.h
 include/gstreamer-%%VERSION%%/gst/audio/audio-resampler.h
 include/gstreamer-%%VERSION%%/gst/audio/audio.h
+include/gstreamer-%%VERSION%%/gst/audio/gstaudioaggregator.h
 include/gstreamer-%%VERSION%%/gst/audio/gstaudiobasesink.h
 include/gstreamer-%%VERSION%%/gst/audio/gstaudiobasesrc.h
 include/gstreamer-%%VERSION%%/gst/audio/gstaudiocdsrc.h
@@ -29,7 +34,9 @@ include/gstreamer-%%VERSION%%/gst/audio/gstaudiometa.h
 include/gstreamer-%%VERSION%%/gst/audio/gstaudioringbuffer.h
 include/gstreamer-%%VERSION%%/gst/audio/gstaudiosink.h
 include/gstreamer-%%VERSION%%/gst/audio/gstaudiosrc.h
+include/gstreamer-%%VERSION%%/gst/audio/gstaudiostreamalign.h
 include/gstreamer-%%VERSION%%/gst/audio/streamvolume.h
+include/gstreamer-%%VERSION%%/gst/fft/fft-prelude.h
 include/gstreamer-%%VERSION%%/gst/fft/fft.h
 include/gstreamer-%%VERSION%%/gst/fft/gstfft.h
 include/gstreamer-%%VERSION%%/gst/fft/gstfftf32.h
@@ -46,9 +53,11 @@ include/gstreamer-%%VERSION%%/gst/pbutils/gstpluginsbaseversion.h
 include/gstreamer-%%VERSION%%/gst/pbutils/install-plugins.h
 include/gstreamer-%%VERSION%%/gst/pbutils/missing-plugins.h
 include/gstreamer-%%VERSION%%/gst/pbutils/pbutils-enumtypes.h
+include/gstreamer-%%VERSION%%/gst/pbutils/pbutils-prelude.h
 include/gstreamer-%%VERSION%%/gst/pbutils/pbutils.h
 include/gstreamer-%%VERSION%%/gst/riff/riff-ids.h
 include/gstreamer-%%VERSION%%/gst/riff/riff-media.h
+include/gstreamer-%%VERSION%%/gst/riff/riff-prelude.h
 include/gstreamer-%%VERSION%%/gst/riff/riff-read.h
 include/gstreamer-%%VERSION%%/gst/riff/riff.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstrtcpbuffer.h
@@ -60,6 +69,7 @@ include/gstreamer-%%VERSION%%/gst/rtp/gstrtpbuffer.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstrtpdefs.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstrtphdrext.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstrtppayloads.h
+include/gstreamer-%%VERSION%%/gst/rtp/rtp-prelude.h
 include/gstreamer-%%VERSION%%/gst/rtp/rtp.h
 include/gstreamer-%%VERSION%%/gst/rtsp/gstrtsp-enumtypes.h
 include/gstreamer-%%VERSION%%/gst/rtsp/gstrtsp.h
@@ -70,14 +80,17 @@ include/gstreamer-%%VERSION%%/gst/rtsp/gstrtspmessage.h
 include/gstreamer-%%VERSION%%/gst/rtsp/gstrtsprange.h
 include/gstreamer-%%VERSION%%/gst/rtsp/gstrtsptransport.h
 include/gstreamer-%%VERSION%%/gst/rtsp/gstrtspurl.h
+include/gstreamer-%%VERSION%%/gst/rtsp/rtsp-prelude.h
 include/gstreamer-%%VERSION%%/gst/rtsp/rtsp.h
 include/gstreamer-%%VERSION%%/gst/sdp/gstmikey.h
 include/gstreamer-%%VERSION%%/gst/sdp/gstsdp.h
 include/gstreamer-%%VERSION%%/gst/sdp/gstsdpmessage.h
+include/gstreamer-%%VERSION%%/gst/sdp/sdp-prelude.h
 include/gstreamer-%%VERSION%%/gst/sdp/sdp.h
 include/gstreamer-%%VERSION%%/gst/tag/gsttagdemux.h
 include/gstreamer-%%VERSION%%/gst/tag/gsttagmux.h
 include/gstreamer-%%VERSION%%/gst/tag/tag-enumtypes.h
+include/gstreamer-%%VERSION%%/gst/tag/tag-prelude.h
 include/gstreamer-%%VERSION%%/gst/tag/tag.h
 include/gstreamer-%%VERSION%%/gst/tag/xmpwriter.h
 include/gstreamer-%%VERSION%%/gst/video/colorbalance.h
@@ -104,6 +117,7 @@ include/gstreamer-%%VERSION%%/gst/video/video-frame.h
 include/gstreamer-%%VERSION%%/gst/video/video-info.h
 include/gstreamer-%%VERSION%%/gst/video/video-multiview.h
 include/gstreamer-%%VERSION%%/gst/video/video-overlay-composition.h
+include/gstreamer-%%VERSION%%/gst/video/video-prelude.h
 include/gstreamer-%%VERSION%%/gst/video/video-resampler.h
 include/gstreamer-%%VERSION%%/gst/video/video-scaler.h
 include/gstreamer-%%VERSION%%/gst/video/video-tile.h
@@ -114,7 +128,6 @@ include/gstreamer-%%VERSION%%/gst/video/videooverlay.h
 lib/girepository-1.0/GstAllocators-%%VERSION%%.typelib
 lib/girepository-1.0/GstApp-%%VERSION%%.typelib
 lib/girepository-1.0/GstAudio-%%VERSION%%.typelib
-lib/girepository-1.0/GstFft-%%VERSION%%.typelib
 lib/girepository-1.0/GstPbutils-%%VERSION%%.typelib
 lib/girepository-1.0/GstRtp-%%VERSION%%.typelib
 lib/girepository-1.0/GstRtsp-%%VERSION%%.typelib
@@ -124,6 +137,7 @@ lib/girepository-1.0/GstVideo-%%VERSION%%.typelib
 lib/gstreamer-%%VERSION%%/libgstadder.so
 lib/gstreamer-%%VERSION%%/libgstapp.so
 lib/gstreamer-%%VERSION%%/libgstaudioconvert.so
+lib/gstreamer-%%VERSION%%/libgstaudiomixer.so
 lib/gstreamer-%%VERSION%%/libgstaudiorate.so
 lib/gstreamer-%%VERSION%%/libgstaudioresample.so
 lib/gstreamer-%%VERSION%%/libgstaudiotestsrc.so
@@ -191,7 +205,6 @@ man/man1/gst-play-%%VERSION%%.1.gz
 share/gir-1.0/GstAllocators-%%VERSION%%.gir
 share/gir-1.0/GstApp-%%VERSION%%.gir
 share/gir-1.0/GstAudio-%%VERSION%%.gir
-share/gir-1.0/GstFft-%%VERSION%%.gir
 share/gir-1.0/GstPbutils-%%VERSION%%.gir
 share/gir-1.0/GstRtp-%%VERSION%%.gir
 share/gir-1.0/GstRtsp-%%VERSION%%.gir

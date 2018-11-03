@@ -1,5 +1,5 @@
---- ext/opencv/gstfacedetect.h.orig	2018-05-02 20:45:00.402253000 +0000
-+++ ext/opencv/gstfacedetect.h	2018-05-02 20:45:40.025207000 +0000
+--- ext/opencv/gstfacedetect.h.orig	2018-03-23 20:45:15 UTC
++++ ext/opencv/gstfacedetect.h
 @@ -50,7 +50,7 @@
  
  #include <gst/gst.h>

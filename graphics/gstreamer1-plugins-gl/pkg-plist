@@ -2,6 +2,7 @@ include/gstreamer-%%VERSION%%/gst/gl/egl/gstegl.h
 include/gstreamer-%%VERSION%%/gst/gl/egl/gsteglimage.h
 include/gstreamer-%%VERSION%%/gst/gl/egl/gstgldisplay_egl.h
 include/gstreamer-%%VERSION%%/gst/gl/egl/gstglmemoryegl.h
+include/gstreamer-%%VERSION%%/gst/gl/gl-prelude.h
 include/gstreamer-%%VERSION%%/gst/gl/gl.h
 include/gstreamer-%%VERSION%%/gst/gl/glprototypes/all_functions.h
 include/gstreamer-%%VERSION%%/gst/gl/glprototypes/base.h
@@ -34,6 +35,7 @@ include/gstreamer-%%VERSION%%/gst/gl/gstglfeature.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglfilter.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglformat.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglframebuffer.h
+include/gstreamer-%%VERSION%%/gst/gl/gstglfuncs.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglmemory.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglmemorypbo.h
 include/gstreamer-%%VERSION%%/gst/gl/gstgloverlaycompositor.h
@@ -48,12 +50,13 @@ include/gstreamer-%%VERSION%%/gst/gl/gstglupload.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglutils.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglviewconvert.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglwindow.h
+include/gstreamer-%%VERSION%%/gst/gl/wayland/gstgldisplay_wayland.h
 include/gstreamer-%%VERSION%%/gst/gl/x11/gstgldisplay_x11.h
-lib/girepository-%%VERSION%%/GstGL-%%VERSION%%.typelib
+lib/girepository-1.0/GstGL-%%VERSION%%.typelib
 lib/gstreamer-%%VERSION%%/include/gst/gl/gstglconfig.h
 lib/gstreamer-%%VERSION%%/libgstopengl.so
 lib/libgstgl-%%VERSION%%.so
 lib/libgstgl-%%VERSION%%.so.0
 lib/libgstgl-%%VERSION%%.so.%%SOVERSION%%
 libdata/pkgconfig/gstreamer-gl-%%VERSION%%.pc
-share/gir-%%VERSION%%/GstGL-%%VERSION%%.gir
+share/gir-1.0/GstGL-%%VERSION%%.gir

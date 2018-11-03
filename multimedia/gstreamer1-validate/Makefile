@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gstreamer1-validate
-PORTVERSION=	1.12.3
-PORTREVISION=	1
+PORTVERSION=	1.14.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-validate/
 DISTNAME=	gst-validate-${PORTVERSION}
@@ -11,7 +10,8 @@ DISTNAME=	gst-validate-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Gstreamer element validation suite
 
-LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
+LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
+		libgstrtspserver-1.0.so:multimedia/gstreamer1-rtsp-server
 
 USES=		gettext-runtime gmake gnome libtool pathfix \
 		pkgconfig python:2.7 shebangfix tar:xz
@@ -22,6 +22,6 @@ USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
 USE_GSTREAMER1=	yes
 INSTALL_TARGET=	install-strip
 
-PLIST_SUB=	VERSION=1.0 SOVERSION=0.1203.0
+PLIST_SUB=	VERSION=1.0 SOVERSION=0.1404.0
 
 .include <bsd.port.mk>

@@ -2,8 +2,10 @@ bin/gst-inspect-%%VERSION%%
 bin/gst-launch-%%VERSION%%
 bin/gst-stats-%%VERSION%%
 bin/gst-typefind-%%VERSION%%
+include/gstreamer-%%VERSION%%/gst/base/base-prelude.h
 include/gstreamer-%%VERSION%%/gst/base/base.h
 include/gstreamer-%%VERSION%%/gst/base/gstadapter.h
+include/gstreamer-%%VERSION%%/gst/base/gstaggregator.h
 include/gstreamer-%%VERSION%%/gst/base/gstbaseparse.h
 include/gstreamer-%%VERSION%%/gst/base/gstbasesink.h
 include/gstreamer-%%VERSION%%/gst/base/gstbasesrc.h
@@ -17,6 +19,7 @@ include/gstreamer-%%VERSION%%/gst/base/gstflowcombiner.h
 include/gstreamer-%%VERSION%%/gst/base/gstpushsrc.h
 include/gstreamer-%%VERSION%%/gst/base/gstqueuearray.h
 include/gstreamer-%%VERSION%%/gst/base/gsttypefindhelper.h
+include/gstreamer-%%VERSION%%/gst/check/check-prelude.h
 include/gstreamer-%%VERSION%%/gst/check/check.h
 include/gstreamer-%%VERSION%%/gst/check/gstbufferstraw.h
 include/gstreamer-%%VERSION%%/gst/check/gstcheck.h
@@ -25,6 +28,7 @@ include/gstreamer-%%VERSION%%/gst/check/gstharness.h
 include/gstreamer-%%VERSION%%/gst/check/gsttestclock.h
 include/gstreamer-%%VERSION%%/gst/check/internal-check.h
 include/gstreamer-%%VERSION%%/gst/controller/controller-enumtypes.h
+include/gstreamer-%%VERSION%%/gst/controller/controller-prelude.h
 include/gstreamer-%%VERSION%%/gst/controller/controller.h
 include/gstreamer-%%VERSION%%/gst/controller/gstargbcontrolbinding.h
 include/gstreamer-%%VERSION%%/gst/controller/gstdirectcontrolbinding.h
@@ -83,6 +87,7 @@ include/gstreamer-%%VERSION%%/gst/gstplugin.h
 include/gstreamer-%%VERSION%%/gst/gstpluginfeature.h
 include/gstreamer-%%VERSION%%/gst/gstpoll.h
 include/gstreamer-%%VERSION%%/gst/gstpreset.h
+include/gstreamer-%%VERSION%%/gst/gstpromise.h
 include/gstreamer-%%VERSION%%/gst/gstprotection.h
 include/gstreamer-%%VERSION%%/gst/gstquery.h
 include/gstreamer-%%VERSION%%/gst/gstregistry.h
@@ -115,6 +120,7 @@ include/gstreamer-%%VERSION%%/gst/net/gstnetcontrolmessagemeta.h
 include/gstreamer-%%VERSION%%/gst/net/gstnettimepacket.h
 include/gstreamer-%%VERSION%%/gst/net/gstnettimeprovider.h
 include/gstreamer-%%VERSION%%/gst/net/gstptpclock.h
+include/gstreamer-%%VERSION%%/gst/net/net-prelude.h
 include/gstreamer-%%VERSION%%/gst/net/net.h
 lib/girepository-1.0/Gst-%%VERSION%%.typelib
 lib/girepository-1.0/GstBase-%%VERSION%%.typelib

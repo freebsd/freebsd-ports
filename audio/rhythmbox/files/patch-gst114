@@ -1,0 +1,12 @@
+Obtained from: https://gitlab.gnome.org/GNOME/rhythmbox/commit/b182c6b9e1d09e601bac0b703cc5f8b159ebbc3a
+--- plugins/fmradio/rb-fm-radio-gst-src.c.orig
++++ plugins/fmradio/rb-fm-radio-gst-src.c
+@@ -178,7 +178,7 @@ plugin_init (GstPlugin *plugin)
+
+ GST_PLUGIN_DEFINE (GST_VERSION_MAJOR,
+		   GST_VERSION_MINOR,
+-		   "rbsilencesrc",
++		   rbsilencesrc,
+		   "element to output silence",
+		   plugin_init,
+		   VERSION,

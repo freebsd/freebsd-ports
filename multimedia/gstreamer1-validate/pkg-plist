@@ -2,9 +2,11 @@ bin/gst-validate-%%VERSION%%
 bin/gst-validate-images-check-%%VERSION%%
 bin/gst-validate-launcher
 bin/gst-validate-media-check-%%VERSION%%
+bin/gst-validate-rtsp-server-%%VERSION%%
 bin/gst-validate-transcoding-%%VERSION%%
 include/gstreamer-%%VERSION%%/gst/validate/gst-validate-bin-monitor.h
 include/gstreamer-%%VERSION%%/gst/validate/gst-validate-element-monitor.h
+include/gstreamer-%%VERSION%%/gst/validate/gst-validate-enum-types.h
 include/gstreamer-%%VERSION%%/gst/validate/gst-validate-enums.h
 include/gstreamer-%%VERSION%%/gst/validate/gst-validate-media-info.h
 include/gstreamer-%%VERSION%%/gst/validate/gst-validate-monitor-factory.h
@@ -22,6 +24,7 @@ include/gstreamer-%%VERSION%%/gst/validate/gst-validate-utils.h
 include/gstreamer-%%VERSION%%/gst/validate/media-descriptor-parser.h
 include/gstreamer-%%VERSION%%/gst/validate/media-descriptor-writer.h
 include/gstreamer-%%VERSION%%/gst/validate/media-descriptor.h
+include/gstreamer-%%VERSION%%/gst/validate/validate-prelude.h
 include/gstreamer-%%VERSION%%/gst/validate/validate.h
 include/gstreamer-%%VERSION%%/lib/validate/video/gssim.h
 include/gstreamer-%%VERSION%%/lib/validate/video/gstvalidatessim.h
@@ -106,7 +109,6 @@ share/gstreamer-%%VERSION%%/validate/scenarios/seek_backward.scenario
 share/gstreamer-%%VERSION%%/validate/scenarios/seek_forward.scenario
 share/gstreamer-%%VERSION%%/validate/scenarios/seek_forward_backward.scenario
 share/gstreamer-%%VERSION%%/validate/scenarios/seek_with_stop.scenario
-share/gstreamer-%%VERSION%%/validate/scenarios/setup_sink_props_max_lateness.scenario
 share/gstreamer-%%VERSION%%/validate/scenarios/simple_seeks.scenario
 share/gstreamer-%%VERSION%%/validate/scenarios/switch_audio_track.scenario
 share/gstreamer-%%VERSION%%/validate/scenarios/switch_audio_track_while_paused.scenario

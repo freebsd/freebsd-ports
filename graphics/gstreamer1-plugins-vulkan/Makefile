@@ -3,13 +3,11 @@
 PORTREVISION=	0
 CATEGORIES=	graphics
 
-COMMENT=	GStreamer jpeg2000 decoder plugin
+COMMENT=	GStreamer Vulkan graphics plugin
 
-GST_PLUGIN=	openjpeg
+GST_PLUGIN=	vulkan
 DIST=		bad
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
-
-EXTRA_PATCHES=	${.CURDIR}/files/patch-inc
 
 .include "${MASTERDIR}/Makefile"

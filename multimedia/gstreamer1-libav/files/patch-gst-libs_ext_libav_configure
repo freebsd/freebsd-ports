@@ -1,0 +1,26 @@
+--- gst-libs/ext/libav/configure.orig	2018-09-16 15:30:22 UTC
++++ gst-libs/ext/libav/configure
+@@ -3372,12 +3372,7 @@ target_os_default=$(tolower $(uname -s))
+ host_os=$target_os_default
+ 
+ # machine
+-if test "$target_os_default" = aix; then
+-    arch_default=$(uname -p)
+-    strip_default="strip -X32_64"
+-else
+-    arch_default=$(uname -m)
+-fi
++arch_default=$(uname -p)
+ cpu="generic"
+ intrinsics="none"
+ 
+@@ -6492,6 +6487,9 @@ elif enabled llvm_gcc; then
+ elif enabled clang; then
+     check_cflags -mllvm -stack-alignment=16
+     check_cflags -mstack-alignment=16
++    if enabled x86_32; then
++      check_cflags -mstackrealign
++    fi
+     check_cflags -Qunused-arguments
+     check_cflags -Werror=implicit-function-declaration
+     check_cflags -Werror=missing-prototypes
