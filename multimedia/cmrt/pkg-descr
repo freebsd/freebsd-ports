@@ -1,0 +1,5 @@
+Media GPU kernel manager for Intel G45 & HD Graphics family. Allows to
+interface between Intel GPU's driver and a host program through a
+high-level language.
+
+WWW: https://01.org/linuxmedia

@@ -1,0 +1,6 @@
+Intel hybrid driver provides support for WebM project VPx codecs. GPU
+acceleration is provided via media kernels executed on Intel GEN GPUs.
+The hybrid driver provides the CPU bound entropy (e.g., CPBAC)
+decoding and manages the GEN GPU media kernel parameters and buffers.
+
+WWW: https://01.org/linuxmedia

@@ -41,6 +41,7 @@
     SUBDIR += clive
     SUBDIR += clutter-gst
     SUBDIR += clutter-gst3
+    SUBDIR += cmrt
     SUBDIR += cuse4bsd-kmod
     SUBDIR += cx88
     SUBDIR += deforaos-player
@@ -227,6 +228,7 @@
     SUBDIR += libv4l
     SUBDIR += libva
     SUBDIR += libva-intel-driver
+    SUBDIR += libva-intel-hybrid-driver
     SUBDIR += libva-utils
     SUBDIR += libva-vdpau-driver
     SUBDIR += libvdpau

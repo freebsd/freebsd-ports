@@ -1,0 +1,7 @@
+TIMESTAMP = 1473291388
+SHA256 (01org-intel-hybrid-driver-1.0.2_GH0.tar.gz) = 16cd66872e8043ce6c0e9a016a043c460e8a180fdc520f31c1f97ffef7828d7b
+SIZE (01org-intel-hybrid-driver-1.0.2_GH0.tar.gz) = 1331968
+SHA256 (dfa9c8eba295.patch) = 0c5a2501f6a467cc88c04367f5de89c944fbdb013f87f19ba684c6e2e6560f33
+SIZE (dfa9c8eba295.patch) = 1679
+SHA256 (b3b4d9a3a08d.patch) = acb0acf2a83632358ccb3b02a4b74184149312863fa15bab4686df41abb1fd9b
+SIZE (b3b4d9a3a08d.patch) = 1917
