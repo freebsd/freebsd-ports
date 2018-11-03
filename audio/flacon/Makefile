@@ -13,7 +13,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libuchardet.so:textproc/uchardet
 
-USES=		cmake desktop-file-utils pkgconfig qt:5
+USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig qt:5
 USE_GITHUB=	yes
 USE_QT=		buildtools_build concurrent_build qmake_build \
 		linguisttools_build core gui network widgets
