@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pulseview
-PORTVERSION=	0.4.0
-PORTREVISION=	3
+PORTVERSION=	0.4.1
 CATEGORIES=	science cad
 MASTER_SITES=	http://sigrok.org/download/source/pulseview/
 
@@ -17,9 +16,10 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libsigrok.so:devel/libsigrok \
 		libsigrokdecode.so:devel/libsigrokdecode
 
-USES=		cmake compiler:c++14-lang desktop-file-utils pkgconfig qt:5
+USES=		cmake compiler:c++14-lang desktop-file-utils gnome pkgconfig qt:5
 USE_GNOME=	glibmm glib20 libsigc++20
 USE_QT=		buildtools core gui qmake_build svg widgets
+
 CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH=${MANPREFIX}/man \
 		-DDISABLE_WERROR:BOOL=TRUE
 INSTALLS_ICONS=	yes
