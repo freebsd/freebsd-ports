@@ -5,7 +5,6 @@ bin/georss2foxtrotgps-poi
 bin/gpx2osm
 bin/osb2foxtrot
 bin/poi2osm
-info/foxtrotgps.info
 share/locale/bg/LC_MESSAGES/foxtrotgps.mo
 share/locale/cs/LC_MESSAGES/foxtrotgps.mo
 share/locale/de/LC_MESSAGES/foxtrotgps.mo

@@ -3,7 +3,7 @@
 
 PORTNAME=	foxtrotgps
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro geography
 MASTER_SITES=	http://www.foxtrotgps.org/releases/
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libsoup-2.4.so:devel/libsoup \
 		libgps.so:astro/gpsd
 
+INFO=		foxtrotgps
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	DATADIRNAME=share
 CONFIGURE_ARGS=	--disable-schemas-install
