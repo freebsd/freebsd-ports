@@ -46,6 +46,4 @@ post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/sample/*.c ${STAGEDIR}${EXAMPLESDIR}/
 
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-configure
-
 .include <bsd.port.mk>
