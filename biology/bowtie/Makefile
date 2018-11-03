@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=		bowtie
-PORTVERSION=		1.1.2
-PORTREVISION=	6
 DISTVERSIONPREFIX=	v
+DISTVERSION=		1.1.2
+PORTREVISION=		7
 CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -13,13 +13,14 @@ LICENSE=	ART10
 
 # May also work on other 64-bit platforms, but untested
 ONLY_FOR_ARCHS=	amd64
+
+USES=		gmake perl5 python:run shebangfix
 # FIXME: bowtie-align intermittently dumps core when compiled with clang
 # GCC 4.2 does not provide good performance
 USE_GCC=	yes
-USES=		gmake perl5 python:run shebangfix
 USE_PERL5=	run
-SHEBANG_FILES=	scripts/*.pl bowtie bowtie-build \
-		bowtie-inspect
+
+SHEBANG_FILES=	scripts/*.pl bowtie bowtie-build bowtie-inspect
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	BenLangmead
