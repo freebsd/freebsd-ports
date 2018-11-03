@@ -498,6 +498,7 @@
     SUBDIR += logitechmediaserver-trackstat
     SUBDIR += lollypop
     SUBDIR += lpac
+    SUBDIR += lsp-plugins
     SUBDIR += lua51-mpd
     SUBDIR += luppp
     SUBDIR += lv2
