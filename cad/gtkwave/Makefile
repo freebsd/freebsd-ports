@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtkwave
-PORTVERSION=	3.3.93
+PORTVERSION=	3.3.95
 CATEGORIES=	cad
 MASTER_SITES=	http://gtkwave.sourceforge.net/
 
@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		desktop-file-utils gettext gmake gperf pkgconfig shared-mime-info
+USES=		desktop-file-utils gettext gmake gnome gperf pkgconfig \
+		shared-mime-info
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-mime-update
 USE_GNOME=	cairo gtk20
