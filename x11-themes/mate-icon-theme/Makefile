@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-icon-theme
-PORTVERSION=	1.20.0
+PORTVERSION=	1.20.2
 CATEGORIES=	x11-themes mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
