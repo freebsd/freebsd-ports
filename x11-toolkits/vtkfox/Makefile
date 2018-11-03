@@ -9,6 +9,9 @@ MASTER_SITES=	http://www.gahr.ch/vtkfox/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FOX/VTK Widget and Interactor
 
+DEPRECATED=	Depends on expiring vtk5
+EXPIRATION_DATE=	2018-12-04
+
 LIB_DEPENDS=	libvtkCommon.so.5:math/vtk5
 
 OPTIONS_DEFINE=	EXAMPLES
