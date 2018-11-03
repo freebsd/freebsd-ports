@@ -3,6 +3,7 @@
 
 PORTNAME=	moreutils
 PORTVERSION=	0.62
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.joeyh.name/index.cgi/moreutils.git/snapshot/ \
 		LOCAL/sunpoet
@@ -19,9 +20,10 @@ OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
 
+USES=		gmake perl5 shebangfix
+
 ALL_TARGET=	errnos.h ${CANNED_MANPAGES:R}
 MAKE_JOBS_UNSAFE=	yes
-USES=		gmake perl5 shebangfix
 
 CANNED_MANPAGES=errno.1 \
 		ifdata.1 \
