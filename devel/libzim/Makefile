@@ -15,7 +15,6 @@ USES=		compiler:c++11-lang meson pkgconfig python:3.4+
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	openzim
-# Using gcc6 and libstdc++ leads to error because xapian-core is linked with libc++
 
 BINARY_ALIAS=	python3=python${PYTHON_VER} python3-config=python${PYTHON_VER}-config
 
