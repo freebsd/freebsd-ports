@@ -50,7 +50,7 @@ include/gstreamer-%%VERSION%%/gst/gl/gstglupload.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglutils.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglviewconvert.h
 include/gstreamer-%%VERSION%%/gst/gl/gstglwindow.h
-include/gstreamer-%%VERSION%%/gst/gl/wayland/gstgldisplay_wayland.h
+%%WAYLAND%%include/gstreamer-%%VERSION%%/gst/gl/wayland/gstgldisplay_wayland.h
 include/gstreamer-%%VERSION%%/gst/gl/x11/gstgldisplay_x11.h
 lib/girepository-1.0/GstGL-%%VERSION%%.typelib
 lib/gstreamer-%%VERSION%%/include/gst/gl/gstglconfig.h
