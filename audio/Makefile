@@ -336,8 +336,8 @@
     SUBDIR += hs-libmpd
     SUBDIR += hts_engine-API
     SUBDIR += hydrogen
+    SUBDIR += icecast
     SUBDIR += icecast-kh
-    SUBDIR += icecast2
     SUBDIR += icegenerator
     SUBDIR += ices
     SUBDIR += id3ed

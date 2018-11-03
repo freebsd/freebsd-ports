@@ -3,12 +3,12 @@
 # $FreeBSD$
 #
 
-# PROVIDE: icecast2
+# PROVIDE: icecast
 # REQUIRE: DAEMON
 # BEFORE:  LOGIN
 # KEYWORD: shutdown
 
-# Add the following line to /etc/rc.conf to enable `icecast2'.
+# Add the following line to /etc/rc.conf to enable `icecast'.
 #
 #icecast_enable="YES"
 #
