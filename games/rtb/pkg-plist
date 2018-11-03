@@ -1,6 +1,5 @@
 bin/realtimebattle
 include/RealTimeBattle/Messagetypes.h
-info/RealTimeBattle.info
 lib/RealTimeBattle/Arenas/Circle.arena
 lib/RealTimeBattle/Arenas/Circles.arena
 lib/RealTimeBattle/Arenas/Cross.arena
