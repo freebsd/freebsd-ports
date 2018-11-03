@@ -31,6 +31,12 @@ PLIST_FILES=	lib/dri/i915_drv_video.so lib/dri/i965_drv_video.so
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Driver for hardware present only on intel i386 and amd64 CPUs
 
+OPTIONS_DEFINE=	HYBRID
+
+HYBRID_DESC=	Hybrid codec support (e.g., VP9 decoding on Skylake)
+HYBRID_RUN_DEPENDS=	${LOCALBASE}/lib/dri/hybrid_drv_video.so:multimedia/libva-intel-hybrid-driver
+HYBRID_CONFIGURE_ENABLE=	hybrid-codec
+
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's/-ldl//' \
 		${WRKSRC}/src/Makefile.am

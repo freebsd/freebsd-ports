@@ -1,0 +1,40 @@
+memalign is Linux-specific, so use C11 aligned_alloc instead
+
+--- src/cm_rt_linux.h.orig	2016-09-07 23:51:38 UTC
++++ src/cm_rt_linux.h
+@@ -48,7 +48,6 @@ extern "C" {
+ #include <stdlib.h>
+ #include <stdint.h>
+ #include <math.h>
+-#include <malloc.h>
+ #include <string.h>
+ #include <sys/time.h>
+ #include <pthread.h>
+@@ -334,7 +333,7 @@ template <> inline const char *CM_TYPE_NAME_UNMANGLED 
+ 
+ inline void *CM_ALIGNED_MALLOC(size_t size, size_t alignment)
+ {
+-	return memalign(alignment, size);
++	return aligned_alloc(alignment, size);
+ }
+ 
+ inline void CM_ALIGNED_FREE(void *memory)
+--- src/os_utilities.c.orig	2016-09-07 23:51:38 UTC
++++ src/os_utilities.c
+@@ -40,7 +40,6 @@
+ #include <sys/types.h>
+ #include <sys/sem.h>
+ #include <signal.h>
+-#include <malloc.h>
+ #include "string.h"
+ #include <unistd.h>
+ 
+@@ -56,7 +55,7 @@ INT32 GenOsMemAllocCounter;
+    GENOS_OS_VERBOSEMESSAGE("GenOsMemAllocCounter = %d, Addr = 0x%x.", GenOsMemAllocCounter, ptr);   \
+    GENOS_OS_VERBOSEMESSAGE("<MemNinjaSysFreePtr memPtr = \"%d\" memType = \"Sys\"/>.", ptr);
+ 
+-#define _aligned_malloc(size, alignment)  memalign(alignment, size)
++#define _aligned_malloc(size, alignment)  aligned_alloc(alignment, size)
+ #define _aligned_free(ptr)                free(ptr)
+ 
+ PVOID GENOS_AlignedAllocMemory(SIZE_T size, SIZE_T alignment)
