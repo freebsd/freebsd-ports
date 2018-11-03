@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	active_model_serializers
-PORTVERSION=	0.10.7
+PORTVERSION=	0.10.8
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -16,8 +16,9 @@ RUN_DEPENDS=	rubygem-activemodel5>=4.1:databases/rubygem-activemodel5 \
 		rubygem-case_transform>=0.2:textproc/rubygem-case_transform \
 		rubygem-jsonapi-renderer>=0.1.1:devel/rubygem-jsonapi-renderer
 
-NO_ARCH=	yes
 USES=		gem
 USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
