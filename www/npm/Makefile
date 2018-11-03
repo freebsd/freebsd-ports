@@ -3,6 +3,7 @@
 
 PORTNAME=	npm
 PORTVERSION=	6.4.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -14,12 +15,13 @@ LICENSE_FILE=	${WRKSRC}/lib/node_modules/npm/LICENSE
 
 RUN_DEPENDS=	gmake:devel/gmake
 
-CONFLICTS_INSTALL?=	npm-node4 npm-node6 npm-node8 npm2 npm3 npm4
+CONFLICTS_INSTALL?=	npm-node10 npm-node6 npm-node8
 
 OPTIONS_SINGLE=	BACKEND
-OPTIONS_SINGLE_BACKEND=	NODE NODE6 NODE8
+OPTIONS_SINGLE_BACKEND=	NODE NODE10 NODE6 NODE8
 OPTIONS_DEFAULT=NODE
-NODE_DESC=	Use Node.js 9.x/10.x (www/node) as backend
+NODE_DESC=	Use Node.js 11.x (www/node) as backend
+NODE10_DESC=	Use Node.js 10.x (www/node10) as backend
 NODE6_DESC=	Use Node.js 6.x (www/node6) as backend
 NODE8_DESC=	Use Node.js 8.x (www/node8) as backend
 
@@ -35,6 +37,7 @@ SHEBANG_GLOB=	*.py
 SHEBANG_FILES=	lib/node_modules/npm/node_modules/node-gyp/gyp/samples/samples
 
 NODE_RUN_DEPENDS=	node>=0.8.0:www/node
+NODE10_RUN_DEPENDS=	node>=0.8.0:www/node10
 NODE6_RUN_DEPENDS=	node6>=0.8.0:www/node6
 NODE8_RUN_DEPENDS=	node8>=0.8.0:www/node8
 
