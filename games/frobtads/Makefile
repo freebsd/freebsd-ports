@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.tads.org/${PORTNAME}/ \
 MAINTAINER=	kaiwang27@gmail.com
 COMMENT=	TADS interpreter and the compilers for both TADS 2 and 3
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 CONFLICTS=	tads-2.*
