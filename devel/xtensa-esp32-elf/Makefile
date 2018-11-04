@@ -55,7 +55,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 
 NO_MTREE=	yes
 USES=		autoreconf:build bison gmake libtool python
-USE_GCC=	yes
+USE_GCC=	7
 USE_GITHUB=	yes
 USE_LDCONFIG=	${PREFIX}/${PORTNAME}/libexec/gcc/${PORTNAME}/5.2.0
 SUBDIR=		crosstool-NG
