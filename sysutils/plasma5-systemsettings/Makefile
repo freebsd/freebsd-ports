@@ -2,6 +2,7 @@
 
 PORTNAME=	systemsettings
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +14,7 @@ USE_KDE=	activities activities-stats auth codecs completion config \
 		iconthemes itemviews jobwidgets js kcmutils kdeclarative khtml \
 		kio kirigami2 package parts plasma-workspace service sonnet textwidgets \
 		widgetsaddons windowsystem xmlgui
-USE_QT=		concurrent core dbus gui network qml quick widgets xml \
+USE_QT=		concurrent core dbus declarative gui network widgets xml \
 		buildtools_build qmake_build
 
 .include <bsd.port.mk>

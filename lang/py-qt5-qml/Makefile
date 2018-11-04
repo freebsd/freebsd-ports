@@ -14,7 +14,7 @@ USES=		python pyqt:5 qt:5
 USE_GL=		gl
 USE_PYQT=	sip_build core_run network_run
 USE_PYTHON=	flavors
-USE_QT=		core gui network qml buildtools_build qmake_build
+USE_QT=		core declarative gui network buildtools_build qmake_build
 
 OPTIONS_DEFINE=	API DEBUG
 OPTIONS_DEFAULT=API

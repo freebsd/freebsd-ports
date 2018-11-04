@@ -3,6 +3,7 @@
 
 PORTNAME=	tea
 PORTVERSION=	46.3.0
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -31,7 +32,7 @@ GH_PROJECT=	${PORTNAME}-qt
 QT4_USES=	qt:4
 QT4_USE=	qt=corelib,gui,moc_build,network,rcc_build
 QT5_USES=	qt:5
-QT5_USE=	qt=buildtools_build,core,gui,network,widgets,printsupport,qml,quick
+QT5_USE=	qt=buildtools_build,core,declarative,gui,network,widgets,printsupport
 
 LDFLAGS+=	-lz
 PLIST_FILES=	bin/tea share/pixmaps/tea_icon_v2.png

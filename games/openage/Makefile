@@ -4,6 +4,7 @@ PORTNAME=	openage
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0-1262
 DISTVERSIONSUFFIX=	-ga554ab49
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	martinfilla@post.cz
@@ -36,7 +37,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	SFTtech
 USE_SDL=	image2 sdl2
 USE_GL=		gl glu
-USE_QT=		core gui network qml quick buildtools_build qmake_build
+USE_QT=		core declarative gui network buildtools_build qmake_build
 USE_PYTHON=	cython
 USE_LDCONFIG=	yes
 

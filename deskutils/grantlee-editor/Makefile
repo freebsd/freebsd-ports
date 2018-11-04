@@ -2,6 +2,7 @@
 
 PORTNAME=	grantlee-editor
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -24,7 +25,7 @@ USE_KDE=	archive attica auth codecs completion config configwidgets \
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadimime contacts grantleetheme \
 		kdepim-apps-libs libkleo messagelib mime pimcommon pimtextedit
-USE_QT=		core dbus gui location network qml quick webchannel webengine \
+USE_QT=		core dbus declarative gui location network webchannel webengine \
 		widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes

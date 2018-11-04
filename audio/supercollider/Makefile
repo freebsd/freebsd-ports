@@ -2,7 +2,7 @@
 
 PORTNAME=	supercollider
 DISTVERSION=	3.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/supercollider/supercollider/releases/download/Version-${PORTVERSION}/
 DISTNAME=	SuperCollider-${PORTVERSION}-Source-linux
@@ -22,8 +22,8 @@ LIB_DEPENDS=	libavahi-client.so:net/avahi-app \
 
 USES=		cmake:outsource compiler:c++11-lang iconv localbase pkgconfig \
 		qt:5 readline shared-mime-info tar:bzip2
-USE_QT=		buildtools_build concurrent core gui linguisttools location \
-		network opengl printsupport qmake_build qml quick sensors \
+USE_QT=		buildtools_build concurrent core declarative gui linguisttools location \
+		network opengl printsupport qmake_build sensors \
 		sql webkit widgets
 USE_XORG=	x11
 USE_LDCONFIG=	yes

@@ -2,6 +2,7 @@
 
 PORTNAME=	kdeconnect-kde
 DISTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	KDE/stable/kdeconnect/${DISTVERSION}/src/
 DIST_SUBDIR=	KDE
@@ -24,7 +25,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons dbusaddons doctools ecm i18n iconthemes \
 		itemviews jobwidgets kcmutils kio notifications service \
 		solid wayland widgetsaddons xmlgui
-USE_QT=		concurrent core dbus gui network qml quick testlib widgets x11extras xml \
+USE_QT=		concurrent core dbus declarative gui network testlib widgets x11extras xml \
 		buildtools_build qmake_build
 USE_XORG=	ice sm x11 xext xtst
 USE_LDCONFIG=	${QT_QMLDIR}/org/kde/kdeconnect

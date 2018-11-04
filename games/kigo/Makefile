@@ -2,6 +2,7 @@
 
 PORTNAME=	kigo
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,7 +13,7 @@ USE_KDE=	attica auth codecs completion config configwidgets \
 		coreaddons crash dbusaddons ecm i18n jobwidgets kio \
 		libkdegames newstuff notifyconfig service sonnet textwidgets \
 		widgetsaddons xmlgui
-USE_QT=		core dbus gui network qml quick svg widgets xml \
+USE_QT=		core dbus declarative gui network svg widgets xml \
 		buildtools_build qmake_build
 
 OPTIONS_DEFINE=	DOCS

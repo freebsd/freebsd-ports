@@ -3,7 +3,7 @@
 PORTNAME=		QtAV
 PORTVERSION=		1.12.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		multimedia
 DIST_SUBDIR=		KDE
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=		libass.so:multimedia/libass \
 
 USES=			qmake:outsource qt:5
 USE_GL=			gl
-USE_QT=			core gui network opengl qml quick sql widgets \
+USE_QT=			core declarative gui network opengl sql widgets \
 			buildtools_build qmake_build
 USE_XORG=		x11 xext xv
 

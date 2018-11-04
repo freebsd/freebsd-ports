@@ -2,6 +2,7 @@
 
 PORTNAME=	skrooge
 DISTVERSION=	2.15.0
+PORTREVISION=	1
 CATEGORIES=	finance kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -28,8 +29,8 @@ USE_KDE=	activities archive attica5 auth bookmarks codecs completion \
 		package parts plasma-framework runner service solid sonnet \
 		textwidgets unitconversion wallet widgetsaddons windowsystem \
 		xmlgui
-USE_QT=		concurrent core dbus designer gui network printsupport qml \
-		quick script sql svg webkit widgets xml \
+USE_QT=		concurrent core dbus declarative designer gui network printsupport \
+		script sql svg webkit widgets xml \
 		qmake_build buildtools_build
 SHEBANG_FILES=	plugins/import/skrooge_import_backend/skrooge-sabb.py \
 		skgbankmodeler/skrooge-coinmarketcap.py \

@@ -24,8 +24,8 @@ USES=			bison cmake:outsource compiler:c++11-lang gperf jpeg \
 			tar:xz
 USE_GNOME=		glib20 libxml2 libxslt
 USE_GSTREAMER1=		core
-USE_QT=			core gui location network opengl printsupport \
-			qml quick sensors testlib webchannel widgets \
+USE_QT=			core declarative gui location network opengl printsupport \
+			sensors testlib webchannel widgets \
 			buildtools_build qmake_build
 USE_RUBY=		yes
 USE_XORG=		x11 xcomposite xrender

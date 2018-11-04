@@ -3,7 +3,7 @@
 PORTNAME=	photoqt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	melanhit@gmail.com
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
 		localbase:ldflags qt:5
-USE_QT=		core graphicaleffects gui multimedia network qml quick \
+USE_QT=		core declarative graphicaleffects gui multimedia network \
 		quickcontrols sql svg widgets xml \
 		buildtools_build linguisttools_build qmake_build
 

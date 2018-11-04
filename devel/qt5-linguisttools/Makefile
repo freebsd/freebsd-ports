@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt localization tools
 
-USE_QT=		core xml buildtools_build qml_build
+USE_QT=		core xml buildtools_build declarative_build
 USES=		compiler:c++11-lang qmake qt-dist:5,tools
 
 BUILD_WRKSRC=	${WRKSRC}/src/linguist

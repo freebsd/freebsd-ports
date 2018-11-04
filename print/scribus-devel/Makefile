@@ -37,8 +37,8 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libicuuc.so:devel/icu
 
 USES=		cmake:outsource desktop-file-utils jpeg pkgconfig python qt:5 shared-mime-info ssl tar:xz
-USE_QT=		buildtools_build core gui linguisttools_build network opengl \
-		printsupport qmake_build qml quick widgets xml
+USE_QT=		buildtools_build core declarative gui linguisttools_build network opengl \
+		printsupport qmake_build widgets xml
 USE_GNOME=	libxml2
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes

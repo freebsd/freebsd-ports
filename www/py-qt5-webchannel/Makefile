@@ -12,7 +12,7 @@ COMMENT=	Python bindings for the Qt5 toolkit, QtWebChannel module
 USES=		python pyqt:5 qt:5
 USE_PYQT=	sip_build core_run gui_run network_run qml_run widgets_run
 USE_PYTHON=	flavors
-USE_QT=		core qmake_build gui network qml webchannel widgets
+USE_QT=		core declarative qmake_build gui network webchannel widgets
 
 CONFIGURE_ARGS=	--enable QtWebChannel \
 		--no-stubs

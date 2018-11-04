@@ -5,6 +5,7 @@ PORTNAME=	cutegram
 PORTVERSION=	2.7.1
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-stable
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	henry.hu.sh@gmail.com
@@ -23,7 +24,7 @@ GH_TAGNAME=	91bf14b:tools
 GH_SUBDIR=	Cutegram/asemantools:tools
 
 USES=		qmake:outsource desktop-file-utils qt:5 ssl
-USE_QT=		qmake_build buildtools_build core qml quick sql xml multimedia \
+USE_QT=		qmake_build buildtools_build core declarative sql xml multimedia \
 		widgets dbus webkit quickcontrols graphicaleffects sql-sqlite3
 QMAKE_ARGS=	LIBQTELEGRAM_INCLUDE_PATH="${LOCALBASE}/include/libqtelegram-ae" \
 		TELEGRAMQML_INCLUDE_PATH="${LOCALBASE}/include/telegramqml"

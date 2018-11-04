@@ -39,7 +39,7 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-26-g4c27501:hidapi/3rdparty/hidapi \
 USES=		cmake:outsource compiler:c++17-lang iconv:wchar_t localbase:ldflags \
 		openal:soft pkgconfig qt:5
 USE_GL=		gl glew
-USE_QT=		qmake_build buildtools_build core dbus gui network widgets qml
+USE_QT=		qmake_build buildtools_build core dbus declarative gui network widgets
 USE_XORG=	x11
 LLD_UNSAFE=	yes # XXX ports/219089
 CMAKE_ON=	CMAKE_SKIP_RPATH USE_SYSTEM_FFMPEG USE_SYSTEM_LIBPNG

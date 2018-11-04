@@ -2,6 +2,7 @@
 
 PORTNAME=	ktuberling
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,8 +15,8 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		kdelibs4support kio libkdegames newstuff notifications \
 		notifyconfig parts service solid sonnet textwidgets \
 		unitconversion widgetsaddons windowsystem xmlgui
-USE_QT=		core dbus gui multimedia network phonon4 printsupport qml \
-		quick svg testlib widgets xml \
+USE_QT=		core dbus declarative gui multimedia network phonon4 printsupport \
+		svg testlib widgets xml \
 		buildtools_build qmake_build
 
 OPTIONS_DEFINE=	DOCS

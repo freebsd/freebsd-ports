@@ -20,7 +20,7 @@
 
 PORTNAME=	webengine
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -73,7 +73,7 @@ SNDIO_VARS_OFF=		QMAKE_CONFIGURE_ARGS+=-no-sndio
 USES=		gperf jpeg python:2.7,build pkgconfig \
 		qmake:norecursive,outsource qt-dist:5,webengine shebangfix
 USE_GNOME=	glib20 libxml2 libxslt
-USE_QT=		core designer gui location network qml quick webchannel \
+USE_QT=		core declarative designer gui location network webchannel \
 		widgets buildtools_build qmake_build printsupport
 USE_XORG=	x11 xcb xcomposite xcursor xext xi xorgproto \
 		xrandr xrender xscrnsaver xtst

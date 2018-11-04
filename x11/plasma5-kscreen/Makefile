@@ -2,6 +2,7 @@
 
 PORTNAME=	kscreen
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,7 +13,7 @@ USES=		cmake:outsource compiler:c++11-lang cpe gettext kde:5 qt:5 \
 USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons ecm \
 		globalaccel i18n kdeclarative libkscreen plasma-framework \
 		widgetsaddons xmlgui
-USE_QT=		core dbus gui network qml quick testlib widgets xml \
+USE_QT=		core dbus declarative gui network testlib widgets xml \
 		buildtools_build qmake_build
 
 .include <bsd.port.mk>

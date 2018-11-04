@@ -2,6 +2,7 @@
 
 PORTNAME=	kolf
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +14,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		itemviews jobwidgets kdelibs4support kio libkdegames \
 		notifications parts service solid sonnet textwidgets \
 		unitconversion widgetsaddons windowsystem xmlgui
-USE_QT=		core dbus gui network phonon4 printsupport qml quick \
+USE_QT=		core dbus declarative gui network phonon4 printsupport \
 		widgets xml \
 		buildtools_build qmake_build
 

@@ -6,7 +6,7 @@
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.679
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-dictionaries/:dictionaries \
 		https://s3.amazonaws.com/rstudio-buildtools/:buildtools
@@ -30,7 +30,7 @@ LIB_DEPENDS=	libR.so:math/R \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 USES=		cmake:outsource desktop-file-utils fortran pkgconfig qt:5 shared-mime-info ssl
-USE_QT=		core dbus gui location network opengl printsupport qml quick sensors \
+USE_QT=		core dbus declarative gui location network opengl printsupport sensors \
 		sql svg webchannel webengine webkit widgets xml xmlpatterns buildtools_build qmake_build
 USE_JAVA=	yes
 JAVA_BUILD=	yes
