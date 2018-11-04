@@ -13,6 +13,8 @@ COMMENT=	Multi-Player FreeForm adventure Program
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/copyright.h
 
+BROKEN=		fails to build
+
 WRKSRC=		${WRKDIR}/mux2.10/src
 
 USES=		gmake
