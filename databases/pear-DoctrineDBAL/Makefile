@@ -9,10 +9,11 @@ MASTER_SITES=	http://pear.doctrine-project.org/get/
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Database abstraction layer used to power the ORM package
 
-LICENSE=	LGPL21
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PEARDIR}/Doctrine/Common/Version.php:databases/pear-DoctrineCommon@${PHP_FLAVOR} \
-	${PEARDIR}/Symfony/Component/Console/Application.php:devel/pear-Symfony_Component_Console@${PHP_FLAVOR}
+		${PEARDIR}/Symfony/Component/Console/Application.php:devel/pear-Symfony_Component_Console@${PHP_FLAVOR}
 
 OPTIONS_DEFINE=	DBLIB MYSQL ODBC PGSQL SQLITE
 OPTIONS_DEFAULT=MYSQL
@@ -27,6 +28,8 @@ USES=		pear php:cli
 PEAR_CHANNEL=	doctrine
 
 USE_PHP=	pdo
+
+NO_ARCH=	yes
 
 DBLIB_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_dblib.so:databases/php${PHP_VER}-pdo_dblib
 MYSQL_USE=	PHP=pdo_mysql
