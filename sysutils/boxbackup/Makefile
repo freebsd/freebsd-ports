@@ -15,6 +15,8 @@ LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE-DUAL.txt
 
+BROKEN=		fails to build
+
 USES=		autoreconf perl5 ssl tar:tgz
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${OPENSSLINC} -std=c++98
