@@ -2,8 +2,7 @@
 
 PORTNAME=		canu
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.7
-PORTREVISION=	2
+DISTVERSION=		1.8
 CATEGORIES=		biology java perl5
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -21,9 +20,10 @@ RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		compiler:openmp gmake perl5
 USE_JAVA=	yes
+USE_GITHUB=	yes
+
 JAVA_RUN=	yes
 JAVA_VERSION=	1.8+
-USE_GITHUB=	yes
 GH_ACCOUNT=	marbl
 
 WRKSRC_SUBDIR=	src
@@ -44,12 +44,12 @@ post-patch:
 
 # Upstream does not want to use lib/perl5/site_perl
 post-build:
-	${MKDIR} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/lib/perl5
+	@${MKDIR} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/lib/perl5
 	${MV} ${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/lib/site_perl \
 		${WRKSRC}${PREFIX}/FreeBSD-${ARCH}/lib/perl5
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}
+	@${MKDIR} ${STAGEDIR}${PREFIX}
 	(cd ${WRKSRC}${PREFIX}/FreeBSD-${ARCH} && \
 		${COPYTREE_BIN} bin ${STAGEDIR}${PREFIX})
 	# STRIP_CMD fails without this on 11.1 under poudriere
