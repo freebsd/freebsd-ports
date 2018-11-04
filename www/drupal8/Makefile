@@ -1,8 +1,7 @@
-# Created by: Alonso Cardenas <acmFreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	drupal8
-PORTVERSION=	8.5.6
+PORTVERSION=	8.6.2
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
