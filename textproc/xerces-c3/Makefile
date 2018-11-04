@@ -13,7 +13,7 @@ COMMENT=	Validating XML parser from the Apache XML Project
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe gmake iconv libtool pathfix
+USES=		cpe iconv libtool pathfix
 
 CONFIGURE_ARGS=	--enable-netaccessor-socket \
 		--enable-transcoder-iconv \
@@ -29,10 +29,18 @@ PLIST_SUB=	MAJOR_VER=${PORTVERSION:R}
 CPE_PRODUCT=	xerces-c++
 CPE_VENDOR=	apache
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Mpowerpc*}
+PLIST_SUB+=	MUTEXMGR="PosixMutexMgr"
+.else
+PLIST_SUB+=	MUTEXMGR="StdMutexMgr"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,@DEFS@,& -D__STDC_LIMIT_MACROS," ${WRKSRC}/src/Makefile.in
 
 post-install:
 	${LN} -s libxerces-c-${PORTVERSION:R}.so ${STAGEDIR}${PREFIX}/lib/libxerces-c.so.${PORTVERSION:R:R}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
