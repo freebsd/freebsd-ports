@@ -3,8 +3,8 @@
 
 PORTNAME=	heimdall
 PORTVERSION=	1.4.2
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake
 USE_GITHUB=	yes
+# does not compile with clang 6.0.0
+USE_GCC=	yes
 
 OPTIONS_DEFINE=	DOCS GUI
 OPTIONS_DEFAULT=GUI
@@ -29,13 +31,6 @@ GH_PROJECT=	Heimdall
 
 PORTDOCS=	README
 
-.include <bsd.port.pre.mk>
-
-# does not compile with clang 6.0.0
-.if ${OPSYS} == FreeBSD
-USE_GCC=	yes
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/heimdall ${STAGEDIR}${PREFIX}/bin
 
@@ -46,4 +41,4 @@ do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Linux/README ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
