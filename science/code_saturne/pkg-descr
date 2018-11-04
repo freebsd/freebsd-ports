@@ -1,0 +1,11 @@
+Code_Saturne is EDF's general purpose Computational Fluid Dynamics (CFD)
+software.
+
+The basic capabilities of Code_Saturne enable the handling of either
+incompressible or expandable flows with or without heat transfer and turbulence.
+Dedicated modules are available for specific physics such as radiative heat
+transfer, combustion (gas, coal, heavy fuel oil, ...), magneto-hydrodynamics,
+compressible flows, two-phase flows (Euler-Lagrange approach with two-way
+coupling), or atmospheric flows.
+
+WWW: http://www.code-saturne.org/
