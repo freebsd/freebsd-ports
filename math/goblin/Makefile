@@ -15,6 +15,7 @@ LICENSE=	LGPL21 GPLv2+ # GPLv2 for (optional) bundled glpk
 LICENSE_COMB=	multi
 LICENSE_FILE_LGPL21=	${WRKSRC}/tcl/LGPL
 
+BROKEN=		fails to build
 CONFLICTS=	glpk-[0-9]*
 
 USES=		gmake tk tar:tgz
