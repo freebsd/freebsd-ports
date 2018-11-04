@@ -15,6 +15,8 @@ DISTFILES=	${PORTNAME}-src-${PORTVERSION}.rar:source \
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	Community Unix port of Descent 2 Game
 
+BROKEN=		fails to build
+
 EXTRACT_DEPENDS=	unrar:archivers/unrar
 RUN_DEPENDS=	unrar:archivers/unrar
 
