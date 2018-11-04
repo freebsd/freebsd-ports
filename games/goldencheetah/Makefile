@@ -13,6 +13,8 @@ COMMENT=	Training software for cyclists
 LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libical.so:devel/libical \
 		libqwtplot3d-qt4.so:math/qwtplot3d-qt4 \
 		libkqoauth.so:security/kqoauth \
