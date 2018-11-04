@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bruteforceblocker
-PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTVERSION=	1.2.6
 CATEGORIES=	security
 
 MAINTAINER=	danger@FreeBSD.org
