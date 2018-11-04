@@ -13,6 +13,8 @@ COMMENT=	Free 2D jump and run game
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
+
 USES=		gmake
 USE_SDL=	sdl image mixer
 GNU_CONFIGURE=	yes
