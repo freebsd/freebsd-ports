@@ -5,7 +5,7 @@
  
  define protoname
 -$(shell echo $1 | sed 's/\([a-z\-]\+\)-[a-z]\+-v[0-9]\+/\1/')
-+$(shell echo $1 | gsed 's/\([a-z\-]\+\)-[a-z]\+-v[0-9]\+/\1/')
++$(shell echo $1 | sed -E 's/([a-z\-]+)-[a-z]+-v[0-9]+/\1/')
  endef
  
  #rules for generating protocol from wayland_protocols
