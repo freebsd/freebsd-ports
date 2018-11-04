@@ -14,6 +14,8 @@ LICENSE_NAME=	OpenHPI license
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		libnetsnmp.so:net-mgmt/net-snmp \
 		libgcrypt.so:security/libgcrypt
