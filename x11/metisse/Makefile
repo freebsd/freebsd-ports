@@ -13,6 +13,8 @@ COMMENT=	Innovative X-based window system
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libNucleo.so:x11-toolkits/nucleo \
 		libpng.so:graphics/png
 RUN_DEPENDS=	xorg-fonts>0:x11-fonts/xorg-fonts
