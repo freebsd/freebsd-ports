@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	method_source
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,9 @@ COMMENT=	Tool to retrieve the sourcecode for a method
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
