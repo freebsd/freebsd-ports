@@ -7,7 +7,7 @@ PORTNAME=	gems
 # - www/rubygem-gitlab-grack/files/patch-gemspec
 PORTVERSION=	2.7.7
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://production.cf.rubygems.org/rubygems/
+MASTER_SITES=	https://production.cf.rubygems.org/rubygems/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
