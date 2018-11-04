@@ -9,6 +9,7 @@ MASTER_SITES=	TOR/vidalia
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Graphical Tor controller based on Qt 4.x
 
+BROKEN=		fails to build
 DEPRECATED=	outdated and unmaintained
 EXPIRATION_DATE=	2018-11-15
 
