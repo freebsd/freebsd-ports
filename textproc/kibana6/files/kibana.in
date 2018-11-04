@@ -22,6 +22,9 @@ load_rc_config $name
 
 export BABEL_DISABLE_CACHE=1
 export NODE_ENV=production
+# ml and reporting modules not supported on FreeBSD
+export XPACK_ML_ENABLED=false
+export XPACK_REPORTING_ENABLED=false
 
 required_files="${kibana_config}"
 pidfile="/var/run/${name}/${name}.pid"
