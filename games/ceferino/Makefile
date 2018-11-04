@@ -12,6 +12,8 @@ COMMENT=	Game similar to Super Pang
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build
+
 USE_SDL=	sdl mixer image
 GNU_CONFIGURE=	yes
 USES=		gmake
