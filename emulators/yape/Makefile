@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}SDL-${PORTVERSION}
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Yet Another Commodore +4 Emulator
 
+BROKEN=		fails to build
+
 USE_SDL=	sdl
 USES=		compiler:features gmake
 NO_WRKSUBDIR=	yes
