@@ -15,6 +15,8 @@ COMMENT=	Persian poetry software
 
 LICENSE=	GPLv3
 
+BROKEN=		fails to build
+
 EXTRACT_DEPENDS=	${LOCALBASE}/bin/unzip:archivers/unzip
 
 OPTIONS_DEFINE=	DEBUG
