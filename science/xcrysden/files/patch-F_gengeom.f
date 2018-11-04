@@ -1,13 +1,17 @@
 Temporary fix for gcc8 breakage: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=232960
+Source: http://www.democritos.it/pipermail/xcrysden/2018-October/001929.html
 
---- F/gengeom.f.orig	2018-11-04 17:34:02 UTC
-+++ F/gengeom.f
-@@ -674,7 +674,7 @@ c      print *,'READFTN34_END'
+--- F/gengeom.f 2012-02-03 11:53:05.000000000 +0100
++++ F/gengeom.f 2018-10-30 08:58:33.624408287 +0100
+@@ -905,9 +905,9 @@
+
+       SUBROUTINE GETCCOOR(A33,B33,BROW,X,Y,Z,XC,YC,ZC,NA,NATR)
        include 'param.inc'
-       CHARACTER*80 FILE2
-       INTEGER NAT(NAC)
--      REAL*8 AC(3,2),BC(3,2),CC(3,2),FC(3,4),IC(3,2),RC(3,3),HC(3,3),
-+      REAL*8 AC(3,4),BC(3,4),CC(3,4),FC(3,4),IC(3,4),RC(3,4),HC(3,4),
-      $     CSTMC(3,4),
-      *     DVC(3,3),SOP(3,3,48),TRX(48),TRY(48),TRZ(48),
-      *     XC(NAC,4),YC(NAC,4),ZC(NAC,4),
+-      REAL*8 B33(3,4),A33(3,3),RA(3,3),COOR(3),X(NATR),Y(NATR),Z(NATR),
+-     *     XC(NAC,4),YC(NAC,4),ZC(NAC,4),RX(3)
+       INTEGER BROW
++      REAL*8 B33(3,BROW),A33(3,3),RA(3,3),COOR(3),X(NATR),Y(NATR),
++     *     Z(NATR),XC(NAC,4),YC(NAC,4),ZC(NAC,4),RX(3)
+
+ C     ********
+ C     ATTENTION: HERE WE HAVE MULT. OFF "SAME-LAYING" ELEMENTS,

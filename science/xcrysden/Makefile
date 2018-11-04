@@ -2,7 +2,7 @@
 
 PORTNAME=	xcrysden
 DISTVERSION=	1.5.60
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	http://www.xcrysden.org/download/
 
