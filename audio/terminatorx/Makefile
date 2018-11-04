@@ -15,6 +15,8 @@ COMMENT=	Realtime audio synthesizer that allows you to "scratch" on audio data
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
 		rarian-sk-config:textproc/rarian
 LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
