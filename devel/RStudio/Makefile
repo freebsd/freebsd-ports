@@ -6,7 +6,7 @@
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.679
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-dictionaries/:dictionaries \
 		https://s3.amazonaws.com/rstudio-buildtools/:buildtools
@@ -44,6 +44,7 @@ GH_TUPLE=	rstudio:r2d3:v0.2.0:r2d3/dependencies/common/r2d3 \
 CMAKE_ARGS=	-DRSTUDIO_TARGET=Desktop \
 		-DFREEBSD_RSTUDIO_VERSION:STRING=${PORTVERSION} \
 		-DFREEBSD_LIBDIR:STRING=${PREFIX}/lib
+CMAKE_ARGS+=	-DRSTUDIO_BOOST_SIGNALS_VERSION=2 # until Boost 1.69 or RStudio 1.3
 MAKE_ENV=	HOME=${WRKDIR} \
 		ANT_OPTS="-Duser.home=${WRKDIR}"
 
