@@ -10,6 +10,8 @@ CATEGORIES=	math
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Statistical machine translation system
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	bash:shells/bash \
 		bjam:devel/boost-jam
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
