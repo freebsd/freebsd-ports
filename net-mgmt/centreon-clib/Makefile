@@ -11,6 +11,8 @@ COMMENT=	Common library of all Centreon projects written in C or C++
 
 LICENSE=	AGPLv3
 
+BROKEN=		fails to build
+
 USES=		cmake
 CMAKE_SOURCE_PATH=	${WRKSRC}/build
 CMAKE_ARGS=	-DWITH_PREFIX=${PREFIX} \
