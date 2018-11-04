@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	term-ansicolor
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -14,10 +14,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	rubygem-tins>=1.0:devel/rubygem-tins
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
-PLIST_FILES=	bin/term_cdiff bin/term_colortab bin/term_decolor bin/term_display bin/term_mandel
+NO_ARCH=	yes
+
+PLIST_FILES=	bin/term_cdiff \
+		bin/term_colortab \
+		bin/term_decolor \
+		bin/term_display \
+		bin/term_mandel \
+		bin/term_snow
 
 .include <bsd.port.mk>
