@@ -12,6 +12,8 @@ COMMENT=	Qt client for the X2Go system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
+
 # Avoid clash with libssh from base
 BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:security/libssh
 LIB_DEPENDS=	libcups.so:print/cups \
