@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2018-11-04 08:11:29 UTC
+--- CMakeLists.txt.orig	2017-11-30 09:34:53 UTC
 +++ CMakeLists.txt
 @@ -47,9 +47,9 @@ ENDIF()
  ADD_LIBRARY(liggghts_obj OBJECT ${SOURCES})
@@ -61,7 +61,7 @@
    TARGET_LINK_LIBRARIES(liggghts_shared mpi_stubs)
    TARGET_LINK_LIBRARIES(liggghts_bin mpi_stubs)
  ENDIF(MPI_FOUND)
-@@ -128,7 +128,7 @@ ENDIF(MPI_FOUND)
+@@ -128,11 +128,11 @@ ENDIF(MPI_FOUND)
  #        RUNTIME DESTINATION bin
  #        LIBRARY DESTINATION lib)
  
@@ -70,3 +70,8 @@
          RUNTIME DESTINATION bin
          LIBRARY DESTINATION lib
          ARCHIVE DESTINATION lib
+-        PUBLIC_HEADER DESTINATION include)
++        PUBLIC_HEADER DESTINATION include/liggghts)
+ IF (WIN32)
+     install(DIRECTORY WINDOWS DESTINATION include)
+ ENDIF()
