@@ -13,6 +13,8 @@ COMMENT=	Amiga emulator
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libopenal.so:audio/openal-soft
 
