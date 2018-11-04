@@ -15,6 +15,8 @@ COMMENT=	Rhythm game simulator
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/Docs/Licenses.txt
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libpng.so:graphics/png
 
