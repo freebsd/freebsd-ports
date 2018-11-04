@@ -14,6 +14,8 @@ COMMENT=	Futuristic real-time strategy game
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtheora.so:multimedia/libtheora \
 		libvorbis.so:audio/libvorbis
