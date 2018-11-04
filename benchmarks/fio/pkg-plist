@@ -9,6 +9,7 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/butterfly.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cpp_null.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cpuio.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cross-stripe-verify.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dev-dax.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/disk-zone-profile.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/e4defrag.fio
