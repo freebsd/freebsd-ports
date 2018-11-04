@@ -13,6 +13,8 @@ COMMENT=	High-level audio API
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 
+BROKEN=		fails to build
+
 GNU_CONFIGURE=	yes
 USES=		autoreconf gmake libtool
 WANT_WX=	yes
