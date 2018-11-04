@@ -14,6 +14,8 @@ COMMENT=	Real kawari8 module for ninix-aya
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+BROKEN=		fails to build
+
 RUN_DEPENDS=	ninix:games/ninix-aya
 
 BUILD_WRKSRC=	${WRKSRC}/build/src
