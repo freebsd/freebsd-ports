@@ -12,6 +12,8 @@ COMMENT=	Castles of Dr. Creep
 
 LICENSE=	GPLv3
 
+BROKEN=		fails to build
+
 USE_SDL=	sdl
 
 WRKSRC=		${WRKDIR}/DrCreep
