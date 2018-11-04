@@ -10617,3 +10617,8 @@ security/openssl-devel|security/openssl111|2018-11-04|Use security/openssl111 in
 irc/netwalker-ircc||2018-11-04|Has expired: Upstream gone, very old code base, use modern irc client instead
 x11-toolkits/qt5-quick|x11-toolkits/qt5-declarative|2018-11-04|Remove unnecessary split
 lang/qt5-qml|x11-toolkits/qt5-declarative|2018-11-04|Remove unnecessary split
+science/ncs|science/code_saturne|2018-11-04|Code_Saturne merged bft, ecs, fvm, mei and ncs
+science/bft|science/code_saturne|2018-11-04|Code_Saturne merged bft, ecs, fvm, mei and ncs
+science/ecs|science/code_saturne|2018-11-04|Code_Saturne merged bft, ecs, fvm, mei and ncs
+science/fvm|science/code_saturne|2018-11-04|Code_Saturne merged bft, ecs, fvm, mei and ncs
+science/mei|science/code_saturne|2018-11-04|Code_Saturne merged bft, ecs, fvm, mei and ncs
