@@ -1,0 +1,21 @@
+LIGGGHTS stands for LAMMPS improved for general granular and granular heat
+transfer simulations.
+
+LAMMPS is a classical molecular dynamics simulator. It is widely used in the
+field of Molecular Dynamics. Thanks to physical and algorithmic analogies,
+LAMMPS is a very good platform for DEM simulations. LAMMPS offers a GRANULAR
+package to perform these kind of simulations. LIGGGHTS aims to improve those
+capability with the goal to apply it to industrial applications.
+
+The features added in LIGGGHTS with respect to the original LAMMPS distribution
+comprise:
+* Import and handling of complex wall geometries from CAD
+* A moving mesh feature to account for moving geometry
+* Re-write of contact force formulation, including optional cohesional and
+  rolling friction forces
+* Heat conduction between particles in contact
+* Improved particle insertion based on surface and volume meshes
+* A "template" mechanism to account for particle non-uniformity
+* More features added in the meantime and upcoming, see here.
+
+WWW: https://www.cfdem.com/liggghts-open-source-discrete-element-method-particle-simulation-code
