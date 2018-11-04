@@ -1,3 +1,0 @@
-Netwalker is a tiny curses-based IRC client. The current version is written in
-c/cpp. Future releases are planed to be written in plain cpp. Netwalker aims to
-be a slim IRC client.

@@ -67,7 +67,6 @@
     SUBDIR += minbif
     SUBDIR += muh
     SUBDIR += nethirc
-    SUBDIR += netwalker-ircc
     SUBDIR += ngircd
     SUBDIR += ninja
     SUBDIR += onis
