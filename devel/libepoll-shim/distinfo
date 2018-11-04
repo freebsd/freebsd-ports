@@ -1,3 +1,7 @@
 TIMESTAMP = 1482268996
 SHA256 (FreeBSDDesktop-epoll-shim-0.0.20161220-c04b26b_GH0.tar.gz) = ae644d6b21567e9bb5e3a145e6e8ce233de16dc6c93ca4a1facb24f1375f442a
 SIZE (FreeBSDDesktop-epoll-shim-0.0.20161220-c04b26b_GH0.tar.gz) = 7634
+SHA256 (dbd89815cc3a.patch) = acd75a9305d5465e8f7a6a5cc7cfa4fe41dac90a69120639ed1e25dd071fc0c3
+SIZE (dbd89815cc3a.patch) = 958
+SHA256 (dc10c10f11d6.patch) = 65e4c048236aafb1c1807a82cb85aa1ced225af5f13a31c54d1154888a75e0f5
+SIZE (dc10c10f11d6.patch) = 870

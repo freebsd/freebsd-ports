@@ -85,7 +85,7 @@ PHYSICS_CONFIGURE_ENABLE=	physics
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulseaudio
 
-WAYLAND_BROKEN=			WAYLAND option is broken: https://phab.enlightenment.org/T7116
+WAYLAND_BROKEN=			ERROR: epoll_create() is deprecated, use epoll_create1(EPOLL_CLOEXEC).
 WAYLAND_BUILD_DEPENDS=		wayland-protocols>=1.7:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=		libepoll-shim.so:devel/libepoll-shim \
 				libxkbcommon.so:x11/libxkbcommon \
