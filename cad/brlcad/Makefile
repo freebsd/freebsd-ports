@@ -13,6 +13,7 @@ COMMENT=	CSG modelling system from the US Ballistic Research Laboratory
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
 BROKEN_sparc64=	does not compile: invokes i386 assembler
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs \
