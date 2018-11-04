@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Encapsulate install info for GIMP
 
+BROKEN=		fails to configure
+
 BUILD_DEPENDS=	gimp-app>=0:graphics/gimp-app \
 		p5-ExtUtils-Depends>=0.402:devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=0:devel/p5-ExtUtils-PkgConfig \
