@@ -12,6 +12,8 @@ COMMENT=	SlimKit surface modeling tools
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to link
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libgfx.so:graphics/libgfx
