@@ -7,10 +7,13 @@ PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/JamVM%20${PORTVERSION}
 
-MAINTAINER=	java@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compact Java virtual machine
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2018-12-04
 
 RUN_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:java/classpath
 
