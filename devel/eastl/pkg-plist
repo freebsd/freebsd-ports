@@ -6,6 +6,7 @@ include/EABase/eahave.h
 include/EABase/earesult.h
 include/EABase/eastdarg.h
 include/EABase/eaunits.h
+include/EABase/int128.h
 include/EABase/nullptr.h
 include/EABase/version.h
 include/EASTL/algorithm.h
@@ -19,12 +20,14 @@ include/EASTL/bonus/adaptors.h
 include/EASTL/bonus/call_traits.h
 include/EASTL/bonus/compressed_pair.h
 include/EASTL/bonus/fixed_ring_buffer.h
+include/EASTL/bonus/fixed_tuple_vector.h
 include/EASTL/bonus/intrusive_sdlist.h
 include/EASTL/bonus/intrusive_slist.h
 include/EASTL/bonus/list_map.h
 include/EASTL/bonus/ring_buffer.h
 include/EASTL/bonus/sort_extra.h
 include/EASTL/bonus/sparse_matrix.h
+include/EASTL/bonus/tuple_vector.h
 include/EASTL/chrono.h
 include/EASTL/core_allocator.h
 include/EASTL/core_allocator_adapter.h
