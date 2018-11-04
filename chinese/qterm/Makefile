@@ -10,6 +10,8 @@ MASTER_SITES=	SF/qterm/qterm/${PORTVERSION}
 MAINTAINER=	kaiwang27@gmail.com
 COMMENT=	BBS client for BSD/Linux
 
+BROKEN=		fails to build
+
 USES=		qt:4 tar:bzip2 cmake perl5
 USE_PERL5=	build
 USE_QT=		codecs-cn_run codecs-tw_run gui help-tools_build \
