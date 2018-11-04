@@ -1,9 +1,0 @@
-bin/cs_preprocess-config
-bin/cs_preprocess
-bin/cs_partition
-bin/cs_io_dump
-man/man1/cs_io_dump.1.gz
-man/man1/cs_partition.1.gz
-man/man1/cs_preprocess-config.1.gz
-man/man1/cs_preprocess.1.gz
-%%NLS%%share/locale/fr/LC_MESSAGES/cs_preprocess.mo
