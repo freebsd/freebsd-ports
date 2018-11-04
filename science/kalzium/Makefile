@@ -2,6 +2,7 @@
 
 PORTNAME=	kalzium
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	science kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -22,7 +23,7 @@ USE_KDE=	auth archive bookmarks codecs completion config configwidgets \
 		xmlgui
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
-USE_QT=		core dbus gui network opengl printsupport qml quick script svg \
+USE_QT=		core dbus declarative gui network opengl printsupport script svg \
 		widgets xml \
 		buildtools_build qmake_build
 

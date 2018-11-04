@@ -3,7 +3,7 @@
 
 PORTNAME=	flightgear
 PORTVERSION=	2018.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
@@ -49,7 +49,7 @@ DBUS_CMAKE_OFF=	-DUSE_DBUS:BOOL=OFF
 QT5_CMAKE_ON=	-DENABLE_QT:BOOL=ON
 QT5_CMAKE_OFF=	-DENABLE_QT:BOOL=OFF
 QT5_USES=	qt:5
-QT5_USE=	QT=core,buildtools,gui,network,qmake,qml,quick,widgets
+QT5_USE=	QT=core,buildtools,gui,declarative,network,qmake,widgets
 
 .include <bsd.port.pre.mk>
 

@@ -2,6 +2,7 @@
 
 PORTNAME=	kwin
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-wm kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -37,7 +38,7 @@ USE_KDE=	activities activities attica auth breeze codecs \
 		newstuff notifications plasma-framework service sonnet \
 		textwidgets wayland widgetsaddons windowsystem xmlgui
 USE_LDCONFIG=	yes
-USE_QT=		concurrent core dbus gui multimedia network qml quick script \
+USE_QT=		concurrent core dbus declarative gui multimedia network script \
 		sensors testlib uiplugin uitools widgets x11extras xml \
 		buildtools_build qmake_build \
 		quickcontrols2_run virtualkeyboard_run

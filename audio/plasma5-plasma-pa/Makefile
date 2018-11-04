@@ -2,6 +2,7 @@
 
 PORTNAME=	plasma-pa
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	audio kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -15,7 +16,7 @@ USES=		cmake:outsource compiler:c++11-lib cpe gettext kde:5 \
 USE_GNOME=	gconf2
 USE_KDE=	config configwidgets coreaddons ecm globalaccel i18n \
 		kdeclarative package plasma-framework
-USE_QT=		core dbus gui network qml quick widgets \
+USE_QT=		core dbus declarative gui network widgets \
 		buildtools_build qmake_build
 
 SHEBANG_FILES=	data/plasmaVolumeDisableKMixAutostart.pl

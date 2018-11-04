@@ -3,7 +3,7 @@
 PORTNAME=	sddm
 PORTVERSION=	0.17.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 
 MAINTAINER=	kde@FreeBSD.org
@@ -23,7 +23,7 @@ RUN_DEPENDS=	dbus-run-session:devel/dbus
 USES=		cmake:outsource compiler:c++11-lang kde:5 qt:5
 USE_GITHUB=	yes
 USE_KDE=	ecm
-USE_QT=		core dbus gui network qml quick \
+USE_QT=		core declarative dbus gui network \
 		buildtools_build linguisttools_build qmake_build
 USE_XORG=	xcb
 

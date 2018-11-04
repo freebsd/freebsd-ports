@@ -3,6 +3,7 @@
 
 PORTNAME=	qmapshack
 PORTVERSION=	1.12.0
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	https://bitbucket.org/maproom/qmapshack/downloads/
 
@@ -19,8 +20,8 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 RUN_DEPENDS=	${LOCALBASE}/bin/bsdisks:sysutils/bsdisks
 
 USES=		cmake compiler:c++11-lib desktop-file-utils jpeg qt:5
-USE_QT=		buildtools core dbus gui linguisttools location network \
-		printsupport qmake qml quick sql sql-sqlite3 uitools \
+USE_QT=		buildtools core dbus declarative gui linguisttools location network \
+		printsupport qmake sql sql-sqlite3 uitools \
 		webchannel webengine widgets xml
 
 .include <bsd.port.mk>

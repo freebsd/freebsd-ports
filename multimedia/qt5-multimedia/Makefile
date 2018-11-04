@@ -2,7 +2,7 @@
 
 PORTNAME=	multimedia
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	qt5-
 
@@ -15,7 +15,7 @@ USES=		compiler:c++11-lang gl gnome pkgconfig qmake:norecursive \
 		qt-dist:5,multimedia
 USE_GL=		gl
 USE_GNOME=	glib20
-USE_QT=		core gui network opengl qml quick widgets \
+USE_QT=		core declarative gui network opengl widgets \
 		buildtools_build
 USE_XORG=	x11 xext xv
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}

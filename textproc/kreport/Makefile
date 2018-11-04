@@ -13,7 +13,7 @@ LIB_DEPENDS=		libKPropertyCore3.so:x11-toolkits/kproperty
 
 USES=			cmake:outsource gettext kde:5 python:2.7 qt:5 tar:xz
 USE_KDE=		config coreaddons ecm marble widgetsaddons
-USE_QT=			core gui network qml webkit widgets xml \
+USE_QT=			core declarative gui network webkit widgets xml \
 			buildtools_build printsupport qmake_build
 
 CONFLICTS_INSTALL=	calligra-2*

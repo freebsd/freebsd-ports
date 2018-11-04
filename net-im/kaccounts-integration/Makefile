@@ -18,7 +18,7 @@ USES=		cmake:outsource gettext pkgconfig kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons ecm \
 		i18n iconthemes kcmutils kio service wallet widgetsaddons \
 		akonadi
-USE_QT=		dbus core gui network qml widgets xml \
+USE_QT=		dbus core declarative gui network widgets xml \
 		buildtools_build qmake_build
 
 OPTIONS_DEFINE=	DOCS

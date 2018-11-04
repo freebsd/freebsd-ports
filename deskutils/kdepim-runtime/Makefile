@@ -2,6 +2,7 @@
 
 PORTNAME=	kdepim-runtime
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -28,7 +29,7 @@ USE_KDE+=	akonadi akonadicontacts akonadimime akonadinotes \
 		calendarutils contacts gapi identitymanagement imap \
 		kontactinterface kpimdav mailtransport mbox mime pimcommon \
 		pimtextedit syndication
-USE_QT=		core dbus gui location network printsupport qml quick speech \
+USE_QT=		core dbus declarative gui location network printsupport speech \
 		script webchannel webengine widgets xml xmlpatterns \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes

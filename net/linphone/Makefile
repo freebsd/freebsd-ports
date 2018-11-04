@@ -2,6 +2,7 @@
 
 PORTNAME=	linphone
 PORTVERSION=	4.1.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://www.linphone.org/releases/sources/linphoneqt/
@@ -15,8 +16,8 @@ LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox \
 		liblinphone++.so:net/liblinphone
 
 USES=		cmake:outsource compiler:c++11-lib pkgconfig qt:5
-USE_QT= 	buildtools_build concurrent core gui linguisttools network \
-		qmake_build qml quick quickcontrols2 speech svg testlib widgets
+USE_QT= 	buildtools_build concurrent core declarative gui linguisttools network \
+		qmake_build quickcontrols2 speech svg testlib widgets
 
 post-patch:
 	@${REINPLACE_CMD} 's/LINPHONE_QT_GIT_VERSION/"${PORTVERSION}"/' \

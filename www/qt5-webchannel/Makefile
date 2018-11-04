@@ -2,13 +2,14 @@
 
 PORTNAME=	webchannel
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 library for integration of C++/QML with HTML/js clients
 
-USE_QT=		buildtools_build core qml quick
+USE_QT=		buildtools_build core declarative
 USES=		compiler:c++11-lang qmake:norecursive qt-dist:5,webchannel
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 

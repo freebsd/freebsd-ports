@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	quickwidgets
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits devel python
 
 MAINTAINER=	kde@FreeBSD.org
@@ -11,7 +12,7 @@ USE_GL=		gl
 USE_PYQT=	sip_build core_run gui_run
 PYQT_DIST=	yes
 USE_PYTHON=	flavors
-USE_QT=		core gui network qml quick widgets \
+USE_QT=		core declarative gui network widgets \
 		qmake_build
 
 CONFIGURE_ARGS=	--enable QtQuickWidgets

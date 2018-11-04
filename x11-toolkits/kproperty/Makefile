@@ -12,8 +12,8 @@ COMMENT=		Property editing framwork
 USES=			cmake:outsource compiler:c++11-lang gettext kde:5 qt:5 \
 			tar:xz
 USE_KDE=		ecm config coreaddons guiaddons i18n widgetsaddons
-USE_QT=			core gui widgets xml \
-			buildtools_build qmake_build qml
+USE_QT=			core declarative gui widgets xml \
+			buildtools_build qmake_build
 
 CONFLICTS_INSTALL=	calligra-2*
 

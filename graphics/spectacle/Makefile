@@ -2,6 +2,7 @@
 
 PORTNAME=	spectacle
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,7 +17,7 @@ USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 		dbusaddons doctools ecm i18n jobwidgets kdeclarative kio \
 		libkipi newstuff notifications package service widgetsaddons \
 		windowsystem xmlgui
-USE_QT=		core concurrent dbus gui network printsupport qml quick \
+USE_QT=		core concurrent dbus declarative gui network printsupport \
 		quickcontrols widgets x11extras xml \
 		buildtools_build qmake_build
 USE_XORG=	x11 xcb xext xfixes

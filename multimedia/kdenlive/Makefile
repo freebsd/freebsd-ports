@@ -2,6 +2,7 @@
 
 PORTNAME=	kdenlive
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	multimedia kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -23,9 +24,9 @@ USE_KDE=	archive attica auth bookmarks codecs completion config \
 		notifications notifyconfig service solid sonnet textwidgets \
 		widgetsaddons xmlgui \
 		init_run
-USE_QT=		concurrent core dbus gui network xml \
+USE_QT=		concurrent core dbus declarative gui network xml \
 		buildtools_build qmake_build \
-		qml quick quickcontrols_run script svg webkit widgets
+		quickcontrols_run script svg webkit widgets
 USE_XORG=	x11
 CFLAGS+=	-I${LOCALBASE}/include # linux/input.h
 CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}"

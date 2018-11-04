@@ -2,6 +2,7 @@
 
 PORTNAME=	kblocks
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -11,7 +12,7 @@ USES=		cmake:outsource gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		dbusaddons i18n itemmodels kio libkdegames newstuff \
 		notifyconfig textwidgets widgetsaddons windowsystem xmlgui
-USE_QT=		core dbus gui network phonon4 qml quick svg testlib widgets xml \
+USE_QT=		core dbus declarative gui network phonon4 svg testlib widgets xml \
 		buildtools_build qmake_build
 
 OPTIONS_DEFINE=	DOCS

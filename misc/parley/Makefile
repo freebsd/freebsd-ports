@@ -2,6 +2,7 @@
 
 PORTNAME=	parley
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	misc kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -17,7 +18,7 @@ USE_KDE=	attica auth codecs completion configwidgets coreaddons config \
 		notifications kross khtml service sonnet textwidgets \
 		widgetsaddons xmlgui \
 		libkeduvocdocument
-USE_QT=		concurrent core dbus gui location network multimedia qml quick \
+USE_QT=		concurrent core dbus declarative gui location network multimedia \
 		script svg webchannel webengine widgets xml \
 		buildtools_build qmake_build
 USE_XORG=	x11 xrender

@@ -3,6 +3,7 @@
 PORTNAME=	2048-qt
 PORTVERSION=	0.1.6
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	swills@FreeBSD.org
@@ -16,7 +17,7 @@ GH_ACCOUNT=	xiaoyong
 GH_PROJECT=	2048-Qt
 
 USES=		gmake pkgconfig qmake qt:5
-USE_QT=		core gui network widgets qml quick buildtools_build quickcontrols
+USE_QT=		core declarative gui network widgets buildtools_build quickcontrols
 
 PLIST_FILES=	bin/2048-qt ${DESKTOPDIR}/${PORTNAME}.desktop \
 		share/pixmaps/${PORTNAME}.png
