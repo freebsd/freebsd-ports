@@ -2,9 +2,9 @@
 
 PORTNAME=	igv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.10
+DISTVERSION=	2.4.15
 CATEGORIES=	biology java
-MASTER_SITES=	http://www.broadinstitute.org/software/igv/sites/cancerinformatics.org.igv/files/images/:img
+MASTER_SITES=	http://software.broadinstitute.org/software/igv/sites/cancerinformatics.org.igv/files/images/:img
 DISTFILES=	tools.png:img
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -15,15 +15,17 @@ COMMENT=	Visualization tool for genomic datasets
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-BUILD_DEPENDS=	openjfx8-devel>0:java/openjfx8-devel
+BUILD_DEPENDS=	openjfx8-devel>0:java/openjfx8-devel \
+		gradle:devel/gradle
 RUN_DEPENDS=	openjfx8-devel>0:java/openjfx8-devel
 
 USES=		gettext-runtime
 USE_GITHUB=	yes
 GH_ACCOUNT=	igvteam
 USE_JAVA=	yes
-USE_ANT=	yes
 NO_ARCH=	yes
+
+MAKE_ENV+=	GRADLE_USER_HOME=${WRKDIR}
 
 SUB_FILES=	${PORTNAME}.sh
 
@@ -31,16 +33,21 @@ DESKTOP_ENTRIES="IGV" "Integrative Genomics Viewer" "${PREFIX}/share/pixmaps/igv
 		"Biology;Science;" true
 
 PLIST_FILES=	bin/${PORTNAME} \
-		${JAVAJARDIR}/batik-codec__V1.7.jar \
-		${JAVAJARDIR}/goby-io-igv__V1.0.jar \
+		${JAVAJARDIR}/batik-codec-1.10.jar \
+		${JAVAJARDIR}/goby-io-igv-1.1.jar \
+		${JAVAJARDIR}/log4j-core-2.11.0.jar \
 		${JAVAJARDIR}/${PORTNAME}.jar \
 		share/pixmaps/igv.png
 
+do-build:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle createDist
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${STAGEDIR}${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/batik-codec__V1.7.jar ${STAGEDIR}${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/goby-io-igv__V1.0.jar ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/build/IGV-dist/lib/${PORTNAME}.jar ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/build/IGV-dist/lib/batik-codec-1.10.jar ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/build/IGV-dist/lib/goby-io-igv-1.1.jar ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/build/IGV-dist/lib/log4j-core-2.11.0.jar ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/tools.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .include <bsd.port.mk>
