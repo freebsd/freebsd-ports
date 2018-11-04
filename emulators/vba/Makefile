@@ -13,6 +13,8 @@ COMMENT=	Open source Gameboy Advance emulator
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	nasm:devel/nasm
 LIB_DEPENDS=	libpng.so:graphics/png
 
