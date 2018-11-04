@@ -13,6 +13,8 @@ COMMENT=	Swift programing language
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/swift/LICENSE.txt
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	cmake:devel/cmake \
 		bash:shells/bash \
 		swig3.0:devel/swig30 \
