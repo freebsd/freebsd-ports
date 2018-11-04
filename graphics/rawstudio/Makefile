@@ -12,6 +12,8 @@ COMMENT=	Open-source program to read and manipulate RAW photo images
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		liblcms.so:graphics/lcms \
 		libexiv2.so:graphics/exiv2 \
