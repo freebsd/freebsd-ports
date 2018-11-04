@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}_2~svn764.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Go board and SGF editor written with the Qt library
 
+BROKEN=		fails to build
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		desktop-file-utils qmake qt:4 tar:bzip2
