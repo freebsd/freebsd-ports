@@ -12,6 +12,8 @@ COMMENT?=		Fun-Focused voxel world game
 
 LICENSE=		GPLv3+
 
+BROKEN=			fails to build
+
 LIB_DEPENDS=		libIrrlicht.so:x11-toolkits/irrlicht \
 			libfreetype.so:print/freetype2
 
