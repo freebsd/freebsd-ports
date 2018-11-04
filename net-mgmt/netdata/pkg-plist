@@ -1,142 +1,164 @@
-@sample(netdata,netdata,0640) %%ETCDIR%%/apps_groups.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/ap.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/apache.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/apcupsd.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/cpu_apps.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/cpufreq.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/example.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/exim.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/hddtemp.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/libreswan.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/load_average.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/mem_apps.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/mysql.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/nginx.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/nut.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/opensips.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/phpfpm.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/postfix.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/sensors.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/squid.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/charts.d/tomcat.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/fping.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/apache.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/backend.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/beanstalkd.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/bind_rndc.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/btrfs.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/ceph.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/couchdb.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/cpu.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/disks.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/elasticsearch.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/entropy.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/fping.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/fronius.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/haproxy.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/httpcheck.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/ipc.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/ipfs.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/ipmi.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/isc_dhcpd.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/lighttpd.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/mdstat.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/memcached.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/memory.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/mongodb.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/mysql.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/named.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/net.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/netfilter.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/nginx.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/nginx_plus.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/portcheck.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/postgres.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/qos.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/ram.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/redis.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/retroshare.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/softnet.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/squid.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/stiebeleltron.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/swap.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/tcp_conn.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/tcp_listen.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/tcp_mem.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/tcp_orphans.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/tcp_resets.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/udp_errors.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/varnish.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/web_log.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health.d/zfs.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health_alarm_notify.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/health_email_recipients.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/node.d.conf.sample
-@mode 0640
-@owner netdata
-@group netdata
-%%ETCDIR%%/node.d/README.md
-%%ETCDIR%%/node.d/fronius.conf.md
-%%ETCDIR%%/node.d/named.conf.md
-%%ETCDIR%%/node.d/sma_webbox.conf.md
-%%ETCDIR%%/node.d/snmp.conf.md
-%%ETCDIR%%/node.d/stiebeleltron.conf.md
-@mode
-@owner
-@group
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/apache.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/beanstalk.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/bind_rndc.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/ceph.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/chrony.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/couchdb.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/cpufreq.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/dovecot.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/dns_query_time.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/dnsdist.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/elasticsearch.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/example.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/exim.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/fail2ban.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/freeradius.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/go_expvar.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/haproxy.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/hddtemp.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/httpcheck.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/icecast.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/ipfs.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/isc_dhcpd.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/mdstat.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/memcached.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/mongodb.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/mysql.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/nginx.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/nginx_plus.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/nsd.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/ntpd.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/ovpn_status_log.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/phpfpm.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/portcheck.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/postfix.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/postgres.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/powerdns.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/rabbitmq.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/redis.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/retroshare.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/samba.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/sensors.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/smartd_log.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/springboot.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/squid.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/tomcat.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/traefik.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/varnish.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/python.d/web_log.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/statsd.d/example.conf.sample
-@sample(netdata,netdata,0640) %%ETCDIR%%/stream.conf.sample
-libexec/netdata/charts.d/README.md
+%%ETCDIR%%/charts.d/.keep
+%%ETCDIR%%/edit-config
+%%ETCDIR%%/health.d/.keep
+%%ETCDIR%%/node.d/.keep
+%%ETCDIR%%/python.d/.keep
+%%ETCDIR%%/statsd.d/.keep
+@sample(netdata,netdata,0640) lib/netdata/conf.d/apps_groups.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d.conf.sample
+lib/netdata/conf.d/charts.d/.keep
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/ap.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/apache.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/apcupsd.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/cpu_apps.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/cpufreq.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/example.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/exim.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/hddtemp.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/libreswan.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/load_average.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/mem_apps.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/mysql.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/nginx.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/nut.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/opensips.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/phpfpm.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/postfix.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/sensors.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/squid.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d/tomcat.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/fping.conf.sample
+lib/netdata/conf.d/health.d/.keep
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/adaptec_raid.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/apache.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/apcupsd.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/backend.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/bcache.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/beanstalkd.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/bind_rndc.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/boinc.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/btrfs.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ceph.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/couchdb.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/cpu.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/disks.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/dockerd.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/elasticsearch.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/entropy.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/fping.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/fronius.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/haproxy.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/httpcheck.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ipc.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ipfs.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ipmi.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/isc_dhcpd.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/lighttpd.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/linux_power_supply.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/load.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/mdstat.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/megacli.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/memcached.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/memory.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/mongodb.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/mysql.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/named.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/net.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/netfilter.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/nginx.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/nginx_plus.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/portcheck.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/postgres.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/qos.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ram.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/redis.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/retroshare.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/softnet.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/squid.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/stiebeleltron.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/swap.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/tcp_conn.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/tcp_listen.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/tcp_mem.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/tcp_orphans.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/tcp_resets.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/udp_errors.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/varnish.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/web_log.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/zfs.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health_alarm_notify.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health_email_recipients.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/node.d.conf.sample
+lib/netdata/conf.d/node.d/.keep
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d.conf.sample
+lib/netdata/conf.d/python.d/.keep
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/adaptec_raid.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/apache.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/beanstalk.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/bind_rndc.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/boinc.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/ceph.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/chrony.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/couchdb.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/cpufreq.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/cpuidle.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/dns_query_time.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/dnsdist.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/dockerd.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/dovecot.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/elasticsearch.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/example.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/exim.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/fail2ban.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/freeradius.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/go_expvar.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/haproxy.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/hddtemp.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/httpcheck.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/icecast.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/ipfs.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/isc_dhcpd.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/linux_power_supply.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/litespeed.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/logind.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/mdstat.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/megacli.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/memcached.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/mongodb.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/monit.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/mysql.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/nginx.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/nginx_plus.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/nsd.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/ntpd.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/ovpn_status_log.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/phpfpm.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/portcheck.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/postfix.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/postgres.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/powerdns.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/proxysql.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/puppet.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/rabbitmq.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/redis.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/rethinkdbs.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/retroshare.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/samba.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/sensors.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/smartd_log.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/spigotmc.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/springboot.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/squid.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/tomcat.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/traefik.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/unbound.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/uwsgi.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/varnish.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/w1sensor.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/web_log.conf.sample
+lib/netdata/conf.d/statsd.d/.keep
+@sample(netdata,netdata,0640) lib/netdata/conf.d/statsd.d/example.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/stream.conf.sample
 libexec/netdata/charts.d/ap.chart.sh
 libexec/netdata/charts.d/apache.chart.sh
 libexec/netdata/charts.d/apcupsd.chart.sh
@@ -157,7 +179,6 @@ libexec/netdata/charts.d/postfix.chart.sh
 libexec/netdata/charts.d/sensors.chart.sh
 libexec/netdata/charts.d/squid.chart.sh
 libexec/netdata/charts.d/tomcat.chart.sh
-libexec/netdata/node.d/README.md
 libexec/netdata/node.d/fronius.node.js
 libexec/netdata/node.d/named.node.js
 libexec/netdata/node.d/node_modules/asn1-ber.js
@@ -173,7 +194,6 @@ libexec/netdata/node.d/node_modules/pixl-xml.js
 libexec/netdata/node.d/sma_webbox.node.js
 libexec/netdata/node.d/snmp.node.js
 libexec/netdata/node.d/stiebeleltron.node.js
-libexec/netdata/plugins.d/README.md
 libexec/netdata/plugins.d/alarm-email.sh
 libexec/netdata/plugins.d/alarm-notify.sh
 libexec/netdata/plugins.d/alarm-test.sh
@@ -188,10 +208,11 @@ libexec/netdata/plugins.d/loopsleepms.sh.inc
 libexec/netdata/plugins.d/node.d.plugin
 libexec/netdata/plugins.d/python.d.plugin
 libexec/netdata/plugins.d/tc-qos-helper.sh
-libexec/netdata/python.d/README.md
+libexec/netdata/python.d/adaptec_raid.chart.py
 libexec/netdata/python.d/apache.chart.py
 libexec/netdata/python.d/beanstalk.chart.py
 libexec/netdata/python.d/bind_rndc.chart.py
+libexec/netdata/python.d/boinc.chart.py
 libexec/netdata/python.d/ceph.chart.py
 libexec/netdata/python.d/chrony.chart.py
 libexec/netdata/python.d/couchdb.chart.py
@@ -199,6 +220,7 @@ libexec/netdata/python.d/cpufreq.chart.py
 libexec/netdata/python.d/cpuidle.chart.py
 libexec/netdata/python.d/dns_query_time.chart.py
 libexec/netdata/python.d/dnsdist.chart.py
+libexec/netdata/python.d/dockerd.chart.py
 libexec/netdata/python.d/dovecot.chart.py
 libexec/netdata/python.d/elasticsearch.chart.py
 libexec/netdata/python.d/example.chart.py
@@ -212,9 +234,14 @@ libexec/netdata/python.d/httpcheck.chart.py
 libexec/netdata/python.d/icecast.chart.py
 libexec/netdata/python.d/ipfs.chart.py
 libexec/netdata/python.d/isc_dhcpd.chart.py
+libexec/netdata/python.d/linux_power_supply.chart.py
+libexec/netdata/python.d/litespeed.chart.py
+libexec/netdata/python.d/logind.chart.py
 libexec/netdata/python.d/mdstat.chart.py
+libexec/netdata/python.d/megacli.chart.py
 libexec/netdata/python.d/memcached.chart.py
 libexec/netdata/python.d/mongodb.chart.py
+libexec/netdata/python.d/monit.chart.py
 libexec/netdata/python.d/mysql.chart.py
 libexec/netdata/python.d/nginx.chart.py
 libexec/netdata/python.d/nginx_plus.chart.py
@@ -226,9 +253,9 @@ libexec/netdata/python.d/portcheck.chart.py
 libexec/netdata/python.d/postfix.chart.py
 libexec/netdata/python.d/postgres.chart.py
 libexec/netdata/python.d/powerdns.chart.py
-libexec/netdata/python.d/python-modules-installer.sh
+libexec/netdata/python.d/proxysql.chart.py
+libexec/netdata/python.d/puppet.chart.py
 libexec/netdata/python.d/python_modules/__init__.py
-libexec/netdata/python.d/python_modules/base.py
 libexec/netdata/python.d/python_modules/bases/FrameworkServices/ExecutableService.py
 libexec/netdata/python.d/python_modules/bases/FrameworkServices/LogService.py
 libexec/netdata/python.d/python_modules/bases/FrameworkServices/MySQLService.py
@@ -276,7 +303,10 @@ libexec/netdata/python.d/python_modules/pyyaml3/scanner.py
 libexec/netdata/python.d/python_modules/pyyaml3/serializer.py
 libexec/netdata/python.d/python_modules/pyyaml3/tokens.py
 libexec/netdata/python.d/python_modules/third_party/__init__.py
+libexec/netdata/python.d/python_modules/third_party/boinc_client.py
 libexec/netdata/python.d/python_modules/third_party/lm_sensors.py
+libexec/netdata/python.d/python_modules/third_party/mcrcon.py
+libexec/netdata/python.d/python_modules/third_party/monotonic.py
 libexec/netdata/python.d/python_modules/third_party/ordereddict.py
 libexec/netdata/python.d/python_modules/urllib3/__init__.py
 libexec/netdata/python.d/python_modules/urllib3/_collections.py
@@ -316,15 +346,20 @@ libexec/netdata/python.d/python_modules/urllib3/util/url.py
 libexec/netdata/python.d/python_modules/urllib3/util/wait.py
 libexec/netdata/python.d/rabbitmq.chart.py
 libexec/netdata/python.d/redis.chart.py
+libexec/netdata/python.d/rethinkdbs.chart.py
 libexec/netdata/python.d/retroshare.chart.py
 libexec/netdata/python.d/samba.chart.py
 libexec/netdata/python.d/sensors.chart.py
 libexec/netdata/python.d/smartd_log.chart.py
+libexec/netdata/python.d/spigotmc.chart.py
 libexec/netdata/python.d/springboot.chart.py
 libexec/netdata/python.d/squid.chart.py
 libexec/netdata/python.d/tomcat.chart.py
 libexec/netdata/python.d/traefik.chart.py
+libexec/netdata/python.d/unbound.chart.py
+libexec/netdata/python.d/uwsgi.chart.py
 libexec/netdata/python.d/varnish.chart.py
+libexec/netdata/python.d/w1sensor.chart.py
 libexec/netdata/python.d/web_log.chart.py
 sbin/netdata
 @mode 4640
@@ -362,6 +397,7 @@ sbin/netdata
 %%DATADIR%%/web/images/animated.gif
 %%DATADIR%%/web/images/check-mark-2-128-green.png
 %%DATADIR%%/web/images/check-mark-2-multi-size-green.ico
+%%DATADIR%%/web/images/netdata.svg
 %%DATADIR%%/web/images/post.png
 %%DATADIR%%/web/images/seo-performance-114.png
 %%DATADIR%%/web/images/seo-performance-128.png
@@ -402,11 +438,6 @@ sbin/netdata
 %%DATADIR%%/web/lib/tableExport-1.6.0.min.js
 %%DATADIR%%/web/netdata-swagger.json
 %%DATADIR%%/web/netdata-swagger.yaml
-%%DATADIR%%/web/old/datasource.html
-%%DATADIR%%/web/old/index.html
-%%DATADIR%%/web/old/index.js
-%%DATADIR%%/web/old/netdata.js
-%%DATADIR%%/web/old/theme.css
 %%DATADIR%%/web/refresh-badges.js
 %%DATADIR%%/web/registry.html
 %%DATADIR%%/web/robots.txt
