@@ -12,6 +12,8 @@ COMMENT=	The ultimate outdoor aficionado's tool
 
 LICENSE=	GPLv3
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libproj.so:graphics/proj \
 		libgps.so:astro/gpsd
