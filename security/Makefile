@@ -464,7 +464,6 @@
     SUBDIR += openssh-askpass
     SUBDIR += openssh-portable
     SUBDIR += openssl
-    SUBDIR += openssl-devel
     SUBDIR += openssl-unsafe
     SUBDIR += openssl111
     SUBDIR += openssl_tpm_engine
