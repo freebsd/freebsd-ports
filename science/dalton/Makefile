@@ -2,7 +2,11 @@
 
 PORTNAME=	dalton
 DISTVERSION=	2016.2
+PORTREVISION=	1
 CATEGORIES=	science
+
+PATCH_SITES=	https://gitlab.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES=	b838ac7be3bba7fe9bc0fdf81b20cde37a38f3c0.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Powerful molecular electronic structure program for quantum chemistry
