@@ -14,6 +14,8 @@ COMMENT=	Futuristic, fast-paced first person shooter
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/basewsw/data1_15.pk3:games/warsow-data
 
