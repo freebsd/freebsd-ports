@@ -11,7 +11,7 @@ COMMENT=	Bible interface utilizing the sword framework
 
 LICENSE=	GPLv2
 
-BROKEN_FreeBSD_12=	fails to compile: /usr/include/c++/v1/type_traits:1116:29: recursive template instantiation exceeded maximum depth of 25
+BROKEN=		fails to compile: /usr/include/c++/v1/type_traits:1116:29: recursive template instantiation exceeded maximum depth of 25
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		docbook2html:textproc/docbook-utils \
