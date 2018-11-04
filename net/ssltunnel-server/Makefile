@@ -11,6 +11,10 @@ PKGNAMESUFFIX=	-server
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	PPP over SSL virtual private networking (server part)
 
+BROKEN=		Does not build
+DEPRECATED=	Does not build, upstream disappeared
+EXPIRATION_DATE=	2019-01-04
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
