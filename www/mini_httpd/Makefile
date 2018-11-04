@@ -3,6 +3,7 @@
 
 PORTNAME=	mini_httpd
 PORTVERSION=	1.30
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	https://www.acme.com/software/mini_httpd/
 
@@ -12,6 +13,7 @@ COMMENT=	Small HTTP server with support for GET, HEAD, POST, CGI, SSL, IPv6
 LICENSE=	BSD2CLAUSE
 
 USES=		cpe ssl
+
 CPE_VENDOR=	acme
 
 post-patch:
@@ -22,6 +24,7 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/chroot/logs
 	${INSTALL_PROGRAM} ${WRKSRC}/mini_httpd ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/htpasswd \
 		${STAGEDIR}${PREFIX}/sbin/${PORTNAME}-htpasswd
