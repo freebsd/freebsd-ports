@@ -16,6 +16,8 @@ COMMENT=	Equinox Desktop Environment
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	doxygen:devel/doxygen \
 		jam:devel/jam
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
