@@ -12,6 +12,8 @@ COMMENT=	Nintendo DS emulator
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
 		libSoundTouch.so:audio/soundtouch
 
