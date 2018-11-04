@@ -12,6 +12,8 @@ COMMENT=	Secure, fast, and IPv6 capable Copy utility
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/src/COPYING.LESSER
 
+BROKEN=		fails to build
+
 USES=		tar:xz
 
 PLIST_FILES=	bin/bbcp
