@@ -353,6 +353,7 @@
     SUBDIR += miracl
     SUBDIR += mkl-dnn
     SUBDIR += mlpack
+    SUBDIR += moab
     SUBDIR += moo
     SUBDIR += mosesdecoder
     SUBDIR += mpc
