@@ -1,5 +1,19 @@
 --- CMakeLists.txt.orig	2013-04-14 03:37:53.000000000 +0400
 +++ CMakeLists.txt	2014-09-11 17:37:09.000000000 +0400
+@@ -139,11 +139,11 @@ if(CMAKE_COMPILER_IS_GNUCXX)
+	#
+	set(CMAKE_CXX_FLAGS "-Wall ${GCC_EXTRA_OPTIONS} -pedantic -Wno-long-long ${CMAKE_CXX_FLAGS}")
+	#
+-	add_custom_target(debuggable $(MAKE) clean
++	add_custom_target(debuggable make clean
+		COMMAND ${CMAKE_COMMAND} -DCMAKE_BUILD_TYPE=Debug ${CMAKE_SOURCE_DIR}
+		COMMENT "Adjusting settings for debug compilation"
+		VERBATIM)
+-	add_custom_target(releasable $(MAKE) clean
++	add_custom_target(releasable make clean
+		COMMAND ${CMAKE_COMMAND} -DCMAKE_BUILD_TYPE=Release ${CMAKE_SOURCE_DIR}
+		COMMENT "Adjusting settings for release compilation"
+		VERBATIM)
 @@ -240,7 +240,7 @@
  
  set_target_properties(yaml-cpp PROPERTIES
