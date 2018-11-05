@@ -151,6 +151,7 @@
 /%%KMODDIR%%/amdgpu_polaris12_vce_bin.ko
 /%%KMODDIR%%/amdgpu_raven_asd_bin.ko
 /%%KMODDIR%%/amdgpu_raven_ce_bin.ko
+/%%KMODDIR%%/amdgpu_raven_dmcu_bin.ko
 /%%KMODDIR%%/amdgpu_raven_gpu_info_bin.ko
 /%%KMODDIR%%/amdgpu_raven_me_bin.ko
 /%%KMODDIR%%/amdgpu_raven_mec2_bin.ko
