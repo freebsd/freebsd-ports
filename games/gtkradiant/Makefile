@@ -16,11 +16,13 @@ COMMENT=	Map editor for FPS games, by id Software and Loki Software
 
 LICENSE=	GPLv2
 
+BROKEN_aarch64=		Fails to link: error: ldd command returned with exit code 256
+
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
 		libmhash.so:security/mhash \
 		libpng.so:graphics/png
 
-USES=		pkgconfig python:2.7,build scons zip
+USES=		compiler:c++11-lang gnome pkgconfig python:2.7,build scons zip
 USE_GNOME=	gtk20 libxml2
 MAKE_ARGS=	${MAKE_ENV} BUILD=release
 SSP_UNSAFE=	yes
@@ -29,8 +31,6 @@ DATADIR=	${PREFIX}/lib/${PORTNAME}
 WRKSRC=		${WRKDIR}/GPL/GtkRadiant
 
 SUB_FILES=	${PORTNAME}
-
-BROKEN_aarch64=		Fails to link: error: ldd command returned with exit code 256
 
 post-patch:
 	@${GREP} -Rl 'defined[[:blank:]]*([[:blank:]]*__linux__[[:blank:]]*) || defined[[:blank:]]*([[:blank:]]*__APPLE__[[:blank:]]*)' ${WRKSRC} | \
