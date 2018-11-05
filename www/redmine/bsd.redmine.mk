@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 # We're assuming standard plugin installation sequence that is described
-# in the http://www.redmine.org/wiki/redmine/Plugins
+# in the https://www.redmine.org/projects/redmine/wiki/Plugins
 #
 # Basically, we need the following variables to be defined:
 # - REDMINE_PLUGIN_NAME: the name of the plugin;
