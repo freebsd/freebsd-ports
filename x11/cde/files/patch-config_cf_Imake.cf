@@ -1,0 +1,13 @@
+--- ./config/cf/Imake.cf.orig	2016-05-19 UTC
++++ ./config/cf/Imake.cf
+@@ -205,6 +205,10 @@ XCOMM $TOG: Imake.cf /main/30 1998/04/28
+ #  define AMD64Architecture
+ #  undef amd64
+ # endif
++# if defined(__arm__)
++# undef __arm__
++# define ARMArchitecture
++# endif
+ #endif /* __FreeBSD__ */
+ 
+ #ifdef AMOEBA

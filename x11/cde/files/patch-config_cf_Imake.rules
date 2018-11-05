@@ -1,0 +1,30 @@
+Work around a difference between "clang -traditional" and "gcc -traditional"
+
+CppScriptTarget is used to generate rules to create a shell script by running
+the input through cpp (cf config/cf/Imake.rules)
+
+For example, we have
+CppScriptTarget(configRun,configRun.src,...)
+
+in admin/IntegTools/post_install/freebsd/configRun.src, we have:
+#define STAR *
+for j in $DT_TOP/$APPCONFIG/$i/STAR
+
+gcc outputs this "for j in $DT_TOP/$APPCONFIG/$i/*"
+clang outputs this "for j in $DT_TOP/$APPCONFIG/$i/ *"
+
+This prevents some post install scripts to create the correct directories.
+
+Should we use devel/tradcpp instead?
+
+--- config/cf/Imake.rules.orig	2016-10-31 UTC
++++ config/cf/Imake.rules
+@@ -2398,7 +2398,7 @@ MakeMakeSubdirs(dirs,Makefiles)
+  * Also delete line numbers from the cpp output (-P is not portable, I guess).
+  */
+ #ifndef CppSedMagic
+-#define CppSedMagic $(SED) -e '/^#[line]* *[0-9][0-9]*  *.*$$/d' -e '/^XCOMM$$/s//#/' -e '/^XCOMM[^a-zA-Z0-9_]/s/^XCOMM/#/'
++#define CppSedMagic $(SED) -E 's;(/|#) \*;/*;g' | $(SED) -e '/^#[line]* *[0-9][0-9]*  *.*$$/d' -e '/^XCOMM$$/s//#/' -e '/^XCOMM[^a-zA-Z0-9_]/s/^XCOMM/#/'
+ #endif /* CppSedMagic */
+ 
+ #ifndef CppFileTarget

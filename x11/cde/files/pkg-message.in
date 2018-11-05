@@ -15,5 +15,5 @@ the calendar to work).
 # service rpcbind start && service dtspc start && service dtcms start
 
 To start the Common Desktop Environment,
-% ln -s /usr/dt/bin/Xsession ~/.Xsession
+% ln -s %%PREFIX%%/dt/bin/Xsession ~/.Xsession
 % env LANG=C startx

@@ -15,7 +15,6 @@
     SUBDIR += blackbox
     SUBDIR += bspwm
     SUBDIR += ccsm
-    SUBDIR += cde
     SUBDIR += clementine-wm
     SUBDIR += compiz
     SUBDIR += compiz-fusion
