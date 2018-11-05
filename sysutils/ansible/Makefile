@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansible
-PORTVERSION?=	2.7.0
+PORTVERSION?=	2.7.1
 PORTREVISION?=	0
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://releases.ansible.com/ansible/
@@ -60,7 +60,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
-		-e 's|/etc/ansible|${ETCDIR}|g' \
+		-e 's|/etc/ansible|${ETCDIR:S/${PY_FLAVOR}-//}|g' \
 		-e 's|/usr/share/ansible|${DATADIR}|g'
 
 post-install:
