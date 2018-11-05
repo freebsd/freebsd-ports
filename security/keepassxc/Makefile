@@ -24,7 +24,8 @@ LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
 
-USES=		cmake:outsource desktop-file-utils qt:5 shared-mime-info tar:xz
+USES=		cmake:outsource compiler:c++11-lang desktop-file-utils qt:5 \
+		shared-mime-info tar:xz
 USE_QT=		buildtools_build concurrent core dbus gui linguisttools network \
 		qmake_build testlib widgets
 USE_XORG=	x11
