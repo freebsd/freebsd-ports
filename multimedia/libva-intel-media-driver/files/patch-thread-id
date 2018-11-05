@@ -1,0 +1,37 @@
+Get thread ID on more platforms
+
+--- media_driver/linux/common/cm/cm_innerdef_os.h.orig	2018-10-01 21:39:52 UTC
++++ media_driver/linux/common/cm/cm_innerdef_os.h
+@@ -35,8 +35,16 @@
+ 
+ #include "mos_os.h"
+ #include "media_libva_common.h"
++#if defined(__linux__)
+ #include <sys/types.h>
+ #include <sys/syscall.h>
++#elif defined(__FreeBSD__)
++#include <pthread_np.h>
++#elif defined(__NetBSD__)
++#include <lwp.h>
++#else // OpenBSD, Solaris
++#include <stdint.h>
++#endif
+ #include <unistd.h>
+ 
+ //Require DRM VMAP patch,
+@@ -95,5 +103,15 @@ inline void GetLocalTime(PSYSTEMTIME psystime)
+ #endif
+ 
+ #define CmGetCurProcessId() getpid()
++#if defined(__linux__)
+ #define CmGetCurThreadId()  syscall(SYS_gettid)
++#elif defined(__DragonFly__)
++#define CmGetCurThreadId()  lwp_gettid()
++#elif defined(__FreeBSD__)
++#define CmGetCurThreadId()  pthread_getthreadid_np()
++#elif defined(__NetBSD__)
++#define CmGetCurThreadId()  _lwp_self()
++#else // OpenBSD, Solaris
++#define CmGetCurThreadId()  (uintptr_t)pthread_self()
++#endif
+ 

@@ -86,6 +86,7 @@
     SUBDIR += gmerlin
     SUBDIR += gmerlin-avdecoder
     SUBDIR += gmimms
+    SUBDIR += gmmlib
     SUBDIR += gmp-api
     SUBDIR += gmtk
     SUBDIR += gnome-mplayer
@@ -229,6 +230,7 @@
     SUBDIR += libva
     SUBDIR += libva-intel-driver
     SUBDIR += libva-intel-hybrid-driver
+    SUBDIR += libva-intel-media-driver
     SUBDIR += libva-utils
     SUBDIR += libva-vdpau-driver
     SUBDIR += libvdpau
