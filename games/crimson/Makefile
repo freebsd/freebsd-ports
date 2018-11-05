@@ -15,8 +15,6 @@ COMMENT=	Tactical war game in the tradition of Battle Isle
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build
-
 GNU_CONFIGURE=	yes
 USES=		gmake
 USE_SDL=	mixer sdl ttf
