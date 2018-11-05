@@ -39,6 +39,7 @@
     SUBDIR += emacs
     SUBDIR += emacs-devel
     SUBDIR += encryptpad
+    SUBDIR += featherpad 
     SUBDIR += fileobj
     SUBDIR += flim
     SUBDIR += focuswriter
