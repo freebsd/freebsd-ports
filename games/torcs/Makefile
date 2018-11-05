@@ -19,7 +19,8 @@ RUN_DEPENDS=	bash:shells/bash
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		compiler:c++11-lang cpe gmake openal:al,alut shebangfix tar:bzip2
+USES=		compiler:c++11-lang cpe gl gmake openal:al,alut shebangfix \
+		tar:bzip2
 CPE_VENDOR=	bernhard_wymann
 SHEBANG_FILES=	src/tools/accc/accc.in src/tools/nfsperf/nfsperf.in \
 		src/tools/texmapper/texmapper.in src/tools/nfs2ac/nfs2ac.in \
