@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sys-uname
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -13,8 +13,9 @@ LICENSE=	ART20
 
 RUN_DEPENDS=	rubygem-ffi>=1.0.0:devel/rubygem-ffi
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
