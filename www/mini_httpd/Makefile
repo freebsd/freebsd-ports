@@ -13,7 +13,6 @@ COMMENT=	Small HTTP server with support for GET, HEAD, POST, CGI, SSL, IPv6
 LICENSE=	BSD2CLAUSE
 
 USES=		cpe ssl
-
 CPE_VENDOR=	acme
 
 OPTIONS_DEFINE+=	EXAMPLES
