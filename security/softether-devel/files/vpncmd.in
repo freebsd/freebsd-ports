@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# wrapper script for vpncmd, the configuration binary for
+# SoftEther vpn
+#
+%%PREFIX%%/libexec/softether/vpncmd ${1+"$@"}
