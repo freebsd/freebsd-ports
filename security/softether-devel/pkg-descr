@@ -1,10 +1,7 @@
-SoftEther VPN ("SoftEther" means "Software Ethernet") is one of the
-world's most powerful and easy-to-use multi-protocol VPN software.
+SoftEther VPN ("SoftEther" means "Software Ethernet") is a powerful,
+multi-OS and easy-to-use multi-protocol VPN software. It supports
+SSL-VPN (HTTPS), as well as OpenVPN, IPsec, L2TP, MS-SSTP, L2TPv3
+and EtherIP tunneling protocols and has a clone function to support
+OpenVPN clients.
 
-SoftEther VPN runs on Windows, Linux, Mac, FreeBSD and Solaris.
-
-SoftEther VPN supports most of widely-used VPN protocols
-including SSL-VPN, OpenVPN, IPsec, L2TP, MS-SSTP, L2TPv3 and EtherIP
-by the single SoftEther VPN Server program.
-
-WWW: http://www.softether.org/
+WWW: https://www.softether.org

@@ -1,12 +1,8 @@
-sbin/vpnserver
-sbin/vpnbridge
-sbin/vpnclient
+libexec/softether/hamcore.se2
+libexec/softether/vpnbridge
+libexec/softether/vpnclient
+libexec/softether/vpncmd
+libexec/softether/vpnserver
 sbin/vpncmd
-softethervpn/vpnbridge/hamcore.se2
-softethervpn/vpnbridge/vpnbridge
-softethervpn/vpnclient/hamcore.se2
-softethervpn/vpnclient/vpnclient
-softethervpn/vpncmd/hamcore.se2
-softethervpn/vpncmd/vpncmd
-softethervpn/vpnserver/hamcore.se2
-softethervpn/vpnserver/vpnserver
+@dir libexec/softether
+@dir %%LOGDIR%%
