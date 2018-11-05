@@ -6,7 +6,8 @@ BINDIR=${PREFIX}/sbin
 MANDIR=${PREFIX}/man/man
 
 CFLAGS+=	-DCONFDIR='"${OPENSSLDIR}"' -DCERTF='"certs/sst.pem"' \
-		-I${OPENSSLINC}
+		-I${OPENSSLINC} -Wno-comment
+# -Wno-dangling-else not available in gcc-4.2, which is still around...
 .if exists(/usr/bin/nc)
 CFLAGS+=	-DNETCAT='"/usr/bin/nc"'
 .else
