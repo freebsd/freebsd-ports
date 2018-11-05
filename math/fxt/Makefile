@@ -12,8 +12,6 @@ COMMENT=	FFT code and related stuff
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-BROKEN_FreeBSD_10=	Fails to build
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		gmake
