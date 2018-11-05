@@ -1,0 +1,11 @@
+--- admin/IntegTools/dbTools/installCDE.src.orig	2016-05-26 15:44:34 UTC
++++ admin/IntegTools/dbTools/installCDE.src
+@@ -648,7 +648,7 @@ XCOMM 
+   TAR_DIR=""
+   LeaveLinks="no"
+   REMOVE_LINKS="no"
+-  CLEAN_DAEMONS="yes"
++  CLEAN_DAEMONS="no"
+   theLang=""
+   CONFIGURE_ONLY="no"
+ 

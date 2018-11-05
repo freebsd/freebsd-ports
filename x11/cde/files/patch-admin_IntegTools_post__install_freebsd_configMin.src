@@ -1,0 +1,41 @@
+--- admin/IntegTools/post_install/freebsd/configMin.src.orig    2016-06-21  UTC
++++ admin/IntegTools/post_install/freebsd/configMin.src
+@@ -197,13 +197,13 @@ RemoveMinFiles()
+ 
+ SetManPath()
+ {
+-    DTMANPATH=CDE_INSTALLATION_TOP/share/man
+-    echo "MANPATH $DTMANPATH" > ${PREFIX}/etc/man.d/cde.conf
++    DTMANPATH=/usr/local/dt/share/man
++    echo "MANPATH $DTMANPATH" > STAGEDIR/LOCALBASE/etc/man.d/cde.conf
+ }
+ 
+ UnSetManPath()
+ {
+-    rm -f ${PREFIX}/etc/man.d/cde.conf
++    rm -f STAGEDIR/LOCALBASE/etc/man.d/cde.conf
+ }
+ 
+ VerifyInstalledFiles()
+@@ -235,21 +235,8 @@ XCOMM ##################################
+   if [ "$OPERATION" = "configure" ]
+   then
+ 
+-    FixEtcServices
+-
+-    : FixEtcInetdDotConf
+-
+     SetManPath
+ 
+-    HASH
+-    HASH  create the /var/dt/tmp directory for the dtspcd
+-    HASH
+-
+-    if [ ! -d CDE_LOGFILES_TOP/tmp ]
+-    then
+-	mkdir -p CDE_LOGFILES_TOP/tmp
+-    fi
+-
+   elif [ "$OPERATION" = "deconfigure" ]
+   then
+ 
