@@ -31,10 +31,12 @@ share/backgrounds/cosmos/sombrero.jpg
 share/backgrounds/cosmos/whirlpool.jpg
 share/dbus-1/services/org.mate.ScreenSaver.service
 share/desktop-directories/mate-screensaver.directory
+share/locale/af/LC_MESSAGES/mate-screensaver.mo
 share/locale/am/LC_MESSAGES/mate-screensaver.mo
 share/locale/ar/LC_MESSAGES/mate-screensaver.mo
 share/locale/as/LC_MESSAGES/mate-screensaver.mo
 share/locale/ast/LC_MESSAGES/mate-screensaver.mo
+share/locale/az/LC_MESSAGES/mate-screensaver.mo
 share/locale/be/LC_MESSAGES/mate-screensaver.mo
 share/locale/bg/LC_MESSAGES/mate-screensaver.mo
 share/locale/bn/LC_MESSAGES/mate-screensaver.mo
@@ -54,9 +56,11 @@ share/locale/el/LC_MESSAGES/mate-screensaver.mo
 share/locale/en_AU/LC_MESSAGES/mate-screensaver.mo
 share/locale/en_CA/LC_MESSAGES/mate-screensaver.mo
 share/locale/en_GB/LC_MESSAGES/mate-screensaver.mo
+share/locale/eo/LC_MESSAGES/mate-screensaver.mo
 share/locale/es/LC_MESSAGES/mate-screensaver.mo
 share/locale/es_AR/LC_MESSAGES/mate-screensaver.mo
 share/locale/es_CO/LC_MESSAGES/mate-screensaver.mo
+share/locale/es_MX/LC_MESSAGES/mate-screensaver.mo
 share/locale/et/LC_MESSAGES/mate-screensaver.mo
 share/locale/eu/LC_MESSAGES/mate-screensaver.mo
 share/locale/fa/LC_MESSAGES/mate-screensaver.mo
@@ -64,6 +68,8 @@ share/locale/fi/LC_MESSAGES/mate-screensaver.mo
 share/locale/fr/LC_MESSAGES/mate-screensaver.mo
 share/locale/fr_CA/LC_MESSAGES/mate-screensaver.mo
 share/locale/frp/LC_MESSAGES/mate-screensaver.mo
+share/locale/fur/LC_MESSAGES/mate-screensaver.mo
+share/locale/fy/LC_MESSAGES/mate-screensaver.mo
 share/locale/ga/LC_MESSAGES/mate-screensaver.mo
 share/locale/gl/LC_MESSAGES/mate-screensaver.mo
 share/locale/gu/LC_MESSAGES/mate-screensaver.mo
@@ -72,6 +78,7 @@ share/locale/hi/LC_MESSAGES/mate-screensaver.mo
 share/locale/hr/LC_MESSAGES/mate-screensaver.mo
 share/locale/hu/LC_MESSAGES/mate-screensaver.mo
 share/locale/hy/LC_MESSAGES/mate-screensaver.mo
+share/locale/ia/LC_MESSAGES/mate-screensaver.mo
 share/locale/id/LC_MESSAGES/mate-screensaver.mo
 share/locale/is/LC_MESSAGES/mate-screensaver.mo
 share/locale/it/LC_MESSAGES/mate-screensaver.mo
@@ -106,6 +113,7 @@ share/locale/pt/LC_MESSAGES/mate-screensaver.mo
 share/locale/pt_BR/LC_MESSAGES/mate-screensaver.mo
 share/locale/ro/LC_MESSAGES/mate-screensaver.mo
 share/locale/ru/LC_MESSAGES/mate-screensaver.mo
+share/locale/rw/LC_MESSAGES/mate-screensaver.mo
 share/locale/si/LC_MESSAGES/mate-screensaver.mo
 share/locale/sk/LC_MESSAGES/mate-screensaver.mo
 share/locale/sl/LC_MESSAGES/mate-screensaver.mo
@@ -117,13 +125,17 @@ share/locale/ta/LC_MESSAGES/mate-screensaver.mo
 share/locale/te/LC_MESSAGES/mate-screensaver.mo
 share/locale/th/LC_MESSAGES/mate-screensaver.mo
 share/locale/tr/LC_MESSAGES/mate-screensaver.mo
+share/locale/ug/LC_MESSAGES/mate-screensaver.mo
 share/locale/uk/LC_MESSAGES/mate-screensaver.mo
 share/locale/ur/LC_MESSAGES/mate-screensaver.mo
 share/locale/uz/LC_MESSAGES/mate-screensaver.mo
 share/locale/vi/LC_MESSAGES/mate-screensaver.mo
+share/locale/wa/LC_MESSAGES/mate-screensaver.mo
+share/locale/xh/LC_MESSAGES/mate-screensaver.mo
 share/locale/zh_CN/LC_MESSAGES/mate-screensaver.mo
 share/locale/zh_HK/LC_MESSAGES/mate-screensaver.mo
 share/locale/zh_TW/LC_MESSAGES/mate-screensaver.mo
+share/locale/zu/LC_MESSAGES/mate-screensaver.mo
 share/mate-background-properties/cosmos.xml
 %%DATADIR%%/lock-dialog-default.ui
 %%DATADIR%%/mate-screensaver-preferences.ui
