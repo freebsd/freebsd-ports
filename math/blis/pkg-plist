@@ -4,3 +4,6 @@ lib/libblis.a
 lib/libblis.so
 lib/libblis.so.1
 lib/libblis.so.1.0.0
+%%DATADIR%%/common.mk
+%%DATADIR%%/config.mk
+%%DATADIR%%/config/%%ARCH%%/make_defs.mk
