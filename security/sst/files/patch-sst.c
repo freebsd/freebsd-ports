@@ -231,8 +231,8 @@
 +			return m->meth();
 +	}
 +
-+highest:
 +	SHOW_info1("method `%s' not known, trying best available", requested);
++highest:
 +	m = methods + sizeof(methods)/sizeof(methods[0]); /* Last entry */
 +	return m->meth();
 +}
