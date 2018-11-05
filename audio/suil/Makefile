@@ -16,7 +16,7 @@ BUILD_DEPENDS=	lv2>=1.14.0:audio/lv2
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		pkgconfig python:build tar:bzip2 waf
+USES=		gnome pkgconfig python:build tar:bzip2 waf
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 gtk30 pango
 USE_LDCONFIG=	yes
 
@@ -32,6 +32,7 @@ QT5_CONFIGURE_OFF=	--no-qt5
 QT5_LIB_DEPENDS=	libQt5Core.so:devel/qt5-core \
 			libQt5Gui.so:x11-toolkits/qt5-gui \
 			libQt5Widgets.so:x11-toolkits/qt5-widgets
+QT5_USES=	compiler:c++11-lang
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsuil-0.so.${PORTVERSION}
