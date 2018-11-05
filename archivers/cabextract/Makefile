@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cabextract
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.cabextract.org.uk/
 
@@ -13,30 +13,28 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/cabextract \
 		man/ja/man1/cabextract.1.gz \
 		man/man1/cabextract.1.gz
+PORTDOCS=	${DOCS} ${DOC_DOCS} ${SRC_DOCS}
+
 DOCS=		AUTHORS ChangeLog NEWS README TODO
 DOC_DOCS=	magic wince_cab_format.html
 SRC_DOCS=	wince_info wince_rename
-PORTDOCS=	${DOCS} ${DOC_DOCS} ${SRC_DOCS}
 
 OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/cabextract.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/ja/cabextract.1 ${STAGEDIR}${MAN1PREFIX}/man/ja/man1
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
-.for i in ${DOC_DOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
-.for i in ${SRC_DOCS}
-	${INSTALL_DATA} ${WRKSRC}/src/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${DOC_DOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/src && ${INSTALL_DATA} ${SRC_DOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
