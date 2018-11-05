@@ -4,4 +4,3 @@ lib/libdomainkeys.a
 lib/libdomainkeys.so
 lib/libdomainkeys.so.%%SHLIB_MAJOR%%
 %%DATADIR%%/dknewkey
-%%DATADIR%%/dktest
