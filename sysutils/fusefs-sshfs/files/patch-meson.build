@@ -1,13 +1,27 @@
---- meson.build.orig	2017-10-25 18:32:34 UTC
+--- meson.build.orig	2018-06-29 08:34:57 UTC
 +++ meson.build
-@@ -63,10 +63,5 @@ else
+@@ -19,12 +19,7 @@ int main(void) {
+     (void) get_4();
+     return 0;
+ }'''
+-if not cc.compiles(code, args: [ '-O0', '-Werror=unused-result' ])
+-     message('Compiler warns about unused result even when casting to void')
+-     add_global_arguments('-Wno-unused-result', language: 'c')
+-endif
+ 
+-
+ rst2man = find_program('rst2man', required: false)
+   
+ cfg = configuration_data()
+@@ -62,11 +57,6 @@ if rst2man.found()
+ else
      message('rst2man not found, not building manual page.')
  endif
- 
+-
 -meson.add_install_script('utils/install_helper.sh',
 -                         get_option('sbindir'),
 -                         get_option('bindir'))
 -
--
+ 
  subdir('test')
  
