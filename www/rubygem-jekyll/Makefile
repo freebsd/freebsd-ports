@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jekyll
-PORTVERSION=	3.8.4
+PORTVERSION=	3.8.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -29,6 +29,7 @@ CONFLICTS_INSTALL=	rubygem-jekyll2-*
 
 USES=		gem
 USE_RUBY=	yes
+
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/jekyll
