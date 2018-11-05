@@ -19,6 +19,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
 
+BROKEN_SSL=	openssl111
+BROKEN_SSL_REASON_openssl111=	Does not support OpenSSL 1.1, use Erlang 19+
+
 WRKSRC=		${WRKDIR}/otp_src_R15B03
 
 ERLANG_LIB=	${PORTNAME}${PORTVERSION:C/\..*//}
@@ -44,6 +47,8 @@ OPTIONS_EXCLUDE+=	DTRACE
 .endif
 
 OPTIONS_EXCLUDE_DragonFly=	HIPE SCTP
+
+OPENSSL_VARS=	BROKEN_SSL=openssl-devel openssl111
 
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -74,6 +79,14 @@ WX_CONFIGURE_WITH=	wx-config=${WX_CONFIG}
 WX_VARS=		USE_WX=2.8+ WX_COMPS="wx contrib" USE_GL="gl glu"
 
 .include <bsd.port.options.mk>
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD
+.  if ${OSVERSION} >= 1200085 && ${SSL_DEFAULT} == base
+BROKEN=	Does not support OpenSSL 1.1, use Erlang 19+
+.  endif
+.endif
 
 .if ${OPSYS} == FreeBSD
 CFLAGS+=	-DMAP_NORESERVE=0
