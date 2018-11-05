@@ -9,8 +9,6 @@ MASTER_SITES=	http://forja.rediris.es/frs/download.php/2054/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt 4 frontend for Octave
 
-BROKEN=		fails to build
-
 RUN_DEPENDS=	octave:math/octave
 
 USE_QT=		designer gui network script svg xml \
