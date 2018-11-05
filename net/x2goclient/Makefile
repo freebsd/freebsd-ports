@@ -12,8 +12,6 @@ COMMENT=	Qt client for the X2Go system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build
-
 # Avoid clash with libssh from base
 BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:security/libssh
 LIB_DEPENDS=	libcups.so:print/cups \
@@ -22,8 +20,8 @@ RUN_DEPENDS=	nxproxy:net/nxproxy \
 		x2goclient-cli:net/x2goclient-cli
 
 USES=		qmake qt:4
-USE_XORG=	xpm
-USE_QT=		gui network svg \
+USE_XORG=	x11 xpm
+USE_QT=		corelib gui network svg \
 		linguisttools_build moc_build rcc_build uic_build
 QMAKE_ARGS=	QMAKE_LRELEASE="${LRELEASE}"
 
