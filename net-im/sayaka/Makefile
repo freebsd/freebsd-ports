@@ -12,7 +12,7 @@ LICENSE=	BSD2CLAUSE
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		gettext-runtime pkgconfig
+USES=		gettext-runtime gnome pkgconfig
 USE_GNOME=	glib20 gdkpixbuf2
 
 USE_GITHUB=	yes
