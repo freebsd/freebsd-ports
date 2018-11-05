@@ -69,6 +69,7 @@
     SUBDIR += epte
     SUBDIR += erd
     SUBDIR += erkale
+    SUBDIR += esys-particle
     SUBDIR += fastcap
     SUBDIR += fasthenry
     SUBDIR += fisicalab
