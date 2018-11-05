@@ -1838,6 +1838,7 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/lang/no.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/lang/pl.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/lang/pt-br.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/lang/pt.js
+GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/lang/ro.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/lang/ru.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/lang/sk.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/lang/sl.js
@@ -1853,6 +1854,7 @@ GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/about/d
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/base64image/LICENSE.md
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/base64image/README.md
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/base64image/dialogs/base64image.js
+GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/clipboard/dialogs/paste.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/colordialog/dialogs/colordialog.css
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/colordialog/dialogs/colordialog.js
 GNUstep/Local/Library/SOGo/WebServerResources/js/vendor/ckeditor/plugins/dialog/dialogDefinition.js
