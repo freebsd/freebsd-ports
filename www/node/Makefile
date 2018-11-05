@@ -12,7 +12,6 @@ COMMENT=	V8 JavaScript for client and server
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_10=	upstream has dropped support for FreeBSD 10.x
 BROKEN_powerpc64=	fails to build: KeyError: 'action'
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64
 
