@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	Locale-libintl
-PORTVERSION=	1.29
+PORTVERSION=	1.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	libintl-perl-${PORTVERSION}
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Internationalization library for Perl
 
-LICENSE=	LGPL21
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gettext iconv:translit perl5
 USE_PERL5=	configure
