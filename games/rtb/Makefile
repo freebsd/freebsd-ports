@@ -16,16 +16,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gsed:textproc/gsed
 
-USES=		compiler gettext gmake perl5 pkgconfig python:2.7 tar:bzip2
+USES=		compiler:c++11-lang dos2unix gettext gmake gnome \
+		localbase:ldflags perl5 pkgconfig python:2.7 tar:bzip2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rtb-dir=${PREFIX}/lib/${PORTNAME}
+DOS2UNIX_FILES=	team-framework/bots/cobra/cobra_clientspecificrepository.h
 
 INFO=		RealTimeBattle
 CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
 CXXFLAGS_clang=	-Wno-c++11-narrowing
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 DESKTOP_ENTRIES="${PORTNAME}" "" "" "${PORTNAME:tl}" "" ""
 
