@@ -47,7 +47,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 # a pity the source directory has such a naming scheme, but well
-WRKSRC=		${WRKDIR}/v4.27-9668
+WRKSRC=		${WRKDIR}/v${DISTVERSION:S/-beta$//}
 
 ALL_TARGET=	build
 

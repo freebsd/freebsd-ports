@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	softether
-PORTVERSION=	4.25.9656
+DISTVERSION=	4.25-9656
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	https://www.softether-download.com/files/softether/v4.25-9656-rtm-2018.01.15-tree/Source_Code/
-DISTNAME=	${PORTNAME}-src-v4.25-9656-rtm
+MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-rtm-2018.01.15-tree/Source_Code/
+DISTNAME=	${PORTNAME}-src-v${DISTVERSION}-rtm
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Softether VPN solution
@@ -47,7 +47,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 # a pity the source directory has such a naming scheme, but well
-WRKSRC=		${WRKDIR}/v4.25-9656
+WRKSRC=		${WRKDIR}/v${DISTVERSION}
 
 ALL_TARGET=	build
 
