@@ -3,7 +3,7 @@
 
 PORTNAME=	lives
 PORTVERSION=	2.8.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	http://lives-video.com/releases/
 DISTNAME=	LiVES-${PORTVERSION}

@@ -3,7 +3,7 @@
 
 PORTNAME=	ffmpegthumbs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia kde kde-kde4
 PKGNAMEPREFIX=	kdemultimedia-
 PKGNAMESUFFIX=	-kde4

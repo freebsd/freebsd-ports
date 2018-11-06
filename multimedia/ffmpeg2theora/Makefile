@@ -3,7 +3,7 @@
 
 PORTNAME=	ffmpeg2theora
 PORTVERSION=	0.30
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://v2v.cc/~j/ffmpeg2theora/downloads/
 
