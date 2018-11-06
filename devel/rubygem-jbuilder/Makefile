@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jbuilder
-PORTVERSION=	2.7.0
+PORTVERSION=	2.8.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,8 +15,9 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS?=	rubygem-activesupport4>=4.2.0:devel/rubygem-activesupport4 \
 		rubygem-multi_json>=1.2:devel/rubygem-multi_json
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
