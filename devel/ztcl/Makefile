@@ -15,6 +15,7 @@ LICENSE=	LGPL21
 
 DEPRECATED=	Unfetchable, unmaintained, info page unbuildable with recent makeinfo
 EXPIRATION_DATE=	2018-12-03
+BROKEN=		Does not build with recent texinfo
 
 LIB_DEPENDS=	libtclmore0.so:devel/tclmore
 
