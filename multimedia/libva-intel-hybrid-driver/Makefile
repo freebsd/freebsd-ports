@@ -23,7 +23,6 @@ LIB_DEPENDS=	libdrm_intel.so:graphics/libdrm \
 
 USES=		autoreconf compiler:c11 gmake libtool pkgconfig
 USE_GITHUB=	yes
-USE_LDCONFIG=	yes
 GH_ACCOUNT=	01org
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

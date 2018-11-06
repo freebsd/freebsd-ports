@@ -20,7 +20,6 @@ GNU_CONFIGURE=	yes
 USES=		alias autoreconf compiler:c11 gmake libtool localbase \
 		pkgconfig tar:bzip2
 USE_GL=		gl
-USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	01org
