@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	flacon
-PORTVERSION=	4.1.0
+PORTVERSION=	5.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Graphical audio file extractor and encoder
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
 
 LIB_DEPENDS=	libuchardet.so:textproc/uchardet
 
