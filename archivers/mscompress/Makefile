@@ -6,7 +6,7 @@ PORTVERSION=	0.3
 CATEGORIES=	archivers
 MASTER_SITES=	SUNSITE/utils/compress
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft "compress.exe/expand.exe" compatible (de)compressor
 
 USES=		tar:bzip2

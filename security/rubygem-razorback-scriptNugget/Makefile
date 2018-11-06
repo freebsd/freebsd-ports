@@ -8,7 +8,7 @@ CATEGORIES=	security rubygems
 MASTER_SITES=	SF/razorbacktm/Bindings
 DISTNAME=	scriptNugget-ruby-${PORTVERSION}
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for an intelligence driven security - Script Nugget Ruby
 
 NO_ARCH=	yes

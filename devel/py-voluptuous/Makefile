@@ -5,7 +5,7 @@ PORTVERSION=	0.9.3
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python data validation library
 
 LICENSE=	BSD3CLAUSE

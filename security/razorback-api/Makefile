@@ -8,7 +8,7 @@ MASTER_SITES=	SF/razorbacktm/API
 PKGNAMEPREFIX=	razorback-
 DIST_SUBDIR=	razorback
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for an intelligence driven security solution - API
 
 LICENSE=	GPLv2

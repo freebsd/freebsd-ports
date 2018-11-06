@@ -6,7 +6,7 @@ PORTVERSION=	1.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.sigala.it/sandro/files/
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Miscellaneous C programmer's utilities
 
 USES=		makeinfo

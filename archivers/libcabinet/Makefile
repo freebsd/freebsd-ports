@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable library and utility to use Microsoft cabinet files (.cab)
 
 USE_LDCONFIG=	yes

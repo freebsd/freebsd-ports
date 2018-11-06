@@ -7,7 +7,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simplify the common case stuff for DBIx::Class
 
 LICENSE=	ART10 GPLv1+
