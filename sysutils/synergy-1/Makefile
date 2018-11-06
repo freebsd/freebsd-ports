@@ -1,10 +1,9 @@
 # $FreeBSD$
 
-PORTNAME=	synergy
+PORTNAME=	synergy-1
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
+DISTVERSION=	1.10.1
 DISTVERSIONSUFFIX=	-stable
-PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,9 +21,9 @@ GH_ACCOUNT=	symless
 GH_PROJECT=	synergy-core
 USE_XORG=	ice xtst x11 sm xext xinerama xrandr xi
 
-CONFLICTS=	synergy-1
+CONFLICTS=	synergy
 
-CMAKE_ARGS=	-DSYNERGY_REVISION:STRING=${PORTVERSION:S/.//g}00000 # it expects a 7-digit hash
+CMAKE_ARGS=	-DSYNERGY_REVISION:STRING=${DISTVERSION:S/.//g}0000 # it expects a 7-digit hash
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
@@ -42,7 +41,7 @@ post-patch:
 		${WRKSRC}/doc/synergys.man
 
 do-install:
-.for f in synergyc synergys synergy-core
+.for f in synergyc synergyd synergys
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for f in synergyc synergys
