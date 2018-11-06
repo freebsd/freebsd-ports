@@ -1,11 +1,10 @@
---- Makefile.orig	2016-08-11 13:49:47 UTC
-+++ Makefile
-@@ -3,7 +3,7 @@ EXTVERSION   = $(shell grep default_vers
+--- Makefile.orig	2018-10-21 23:10:07.000000000 +0200
++++ Makefile	2018-11-07 00:22:00.872017000 +0100
+@@ -3,6 +3,7 @@
  TESTS        = $(wildcard test/sql/*.sql)
  REGRESS      = $(patsubst test/sql/%.sql,%,$(TESTS))
  REGRESS_OPTS = --inputdir=test
--DOCS         = $(wildcard doc/*.md)
-+DOCS         = $(wildcard doc/*.md) $(wildcard *LICENSE)
++DOCS         = $(wildcard doc/*.md)
  MODULES      = $(patsubst %.c,%,$(wildcard *.c))
  PG_CONFIG    ?= pg_config
  
