@@ -6,7 +6,7 @@ PORTVERSION=	1.0.2
 PORTREVISION=	1
 CATEGORIES=	devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PECL extension for ncurses
 
 LICENSE=	PHP301
