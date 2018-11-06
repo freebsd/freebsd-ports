@@ -169,7 +169,7 @@ pre-su-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/spamc/libspamc.h ${STAGEDIR}${PREFIX}/include
 
-post-install:
+post-install::
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/spamc
 	@${MKDIR} ${STAGEDIR}/var/lib/spamassassin ${STAGEDIR}${DBDIR}/spamassassin ${STAGEDIR}/var/run/spamd
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
