@@ -3,6 +3,7 @@
 
 PORTNAME=	javaservicewrapper
 PORTVERSION=	3.5.29
+PORTREVISION=	1
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://wrapper.tanukisoftware.com/download/${PORTVERSION}/
 DISTNAME=	wrapper_${PORTVERSION}_src
@@ -30,6 +31,7 @@ OPTIONS_DEFINE=	DOCS
 MAKE_ARGS+=	-Dbits=64
 .else
 MAKE_ARGS+=	-Dbits=32
+CFLAGS+=	-fPIC
 .endif
 
 post-patch:
