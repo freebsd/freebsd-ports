@@ -6,8 +6,8 @@ PORTVERSION=	2.0.2
 PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	audio net
-MASTER_SITES=	http://downloads.xiph.org/releases/${PORTNAME}/ \
-		http://svn.xiph.org/releases/${PORTNAME}/
+MASTER_SITES=	https://downloads.xiph.org/releases/ices/ \
+		https://svn.xiph.org/releases/ices/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Vorbis streaming source client for icecast 2
@@ -23,10 +23,11 @@ LIB_DEPENDS=	libogg.so:audio/libogg \
 
 OPTIONS_DEFINE=	ALSA
 
+USES=		gmake gnome iconv pkgconfig tar:bzip2
+USE_GNOME=	libxml2
+
 CONFIGURE_ARGS=	--disable-roaraudio --disable-sun-audio
 GNU_CONFIGURE=	yes
-USE_GNOME=	libxml2
-USES=		gmake gnome iconv pkgconfig tar:bzip2
 
 ALSA_CONFIGURE_ENABLE=	alsa
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
