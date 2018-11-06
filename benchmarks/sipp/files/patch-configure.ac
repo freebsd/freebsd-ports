@@ -1,0 +1,29 @@
+--- configure.ac.orig	2018-10-08 21:17:06 UTC
++++ configure.ac
+@@ -137,14 +137,15 @@ AC_SEARCH_LIBS([shutdown], [socket])
+ 
+ # Conditional build with OpenSSL
+ if test "$openssl" = 'yes'; then
+-    AC_CHECK_HEADERS([openssl/md5.h],,[AC_MSG_ERROR([<openssl/md5.h> header missing])])
++# Conditional build with OpenSSL
++if test "$openssl" = 'yes'; then
+     AC_CHECK_HEADERS([openssl/bio.h],,[AC_MSG_ERROR([<openssl/bio.h> header missing])])
+     AC_CHECK_HEADERS([openssl/err.h],,[AC_MSG_ERROR([<openssl/err.h> header missing])])
+     AC_CHECK_HEADERS([openssl/rand.h],,[AC_MSG_ERROR([<openssl/rand.h> header missing])])
+     AC_CHECK_HEADERS([openssl/ssl.h],,[AC_MSG_ERROR([<openssl/ssl.h> header missing])])
+     AC_CHECK_HEADERS([openssl/x509v3.h],,[AC_MSG_ERROR([<openssl/x509v3.h> header missing])])
+-    AC_CHECK_LIB([ssl], [SSL_library_init],,[AC_MSG_ERROR([ssl library missing])])
+-    AC_CHECK_LIB([crypto], [CRYPTO_num_locks],,[AC_MSG_ERROR([crypto library missing])])
++    AC_CHECK_LIB([ssl], [SSL_CTX_new],,[AC_MSG_ERROR([ssl library missing])])
++    AC_CHECK_LIB([crypto], [CRYPTO_free],,[AC_MSG_ERROR([crypto library missing])])
+ fi
+ # For Makefile.am
+ AM_CONDITIONAL(HAVE_OPENSSL, test "$openssl" = "yes")
+@@ -156,6 +157,7 @@ if test "$sctp" = 'yes'; then
+     AC_SEARCH_LIBS([sctp_freepaddrs],[sctp sctpsp],,[AC_MSG_ERROR([SCTP library missing])])
+     AC_SEARCH_LIBS([sctp_bindx],[sctp sctpsp],,[AC_MSG_ERROR([SCTP library missing])])
+     AC_SEARCH_LIBS([sctp_recvmsg],[sctp sctpsp],,[AC_MSG_ERROR([SCTP library missing])])
++fi
+ fi
+ # For Makefile.am
+ AM_CONDITIONAL(HAVE_SCTP, test "$sctp" = "yes")
