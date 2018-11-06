@@ -64,6 +64,7 @@ include/postgresql/server/distributed/relay_utility.h
 include/postgresql/server/distributed/remote_commands.h
 include/postgresql/server/distributed/remote_transaction.h
 include/postgresql/server/distributed/resource_lock.h
+include/postgresql/server/distributed/run_from_same_connection.h
 include/postgresql/server/distributed/shard_pruning.h
 include/postgresql/server/distributed/shardinterval_utils.h
 include/postgresql/server/distributed/shared_library_init.h
@@ -78,6 +79,7 @@ include/postgresql/server/distributed/transmit.h
 include/postgresql/server/distributed/version_compat.h
 include/postgresql/server/distributed/worker_manager.h
 include/postgresql/server/distributed/worker_protocol.h
+include/postgresql/server/distributed/worker_shard_visibility.h
 include/postgresql/server/distributed/worker_transaction.h
 lib/postgresql/citus.so
 share/postgresql/extension/citus--5.0--5.0-1.sql
@@ -257,4 +259,20 @@ share/postgresql/extension/citus--7.5-5.sql
 share/postgresql/extension/citus--7.5-6--7.5-7.sql
 share/postgresql/extension/citus--7.5-6.sql
 share/postgresql/extension/citus--7.5-7.sql
+share/postgresql/extension/citus--7.5-7--8.0-1.sql
+share/postgresql/extension/citus--8.0-1--8.0-2.sql
+share/postgresql/extension/citus--8.0-1.sql
+share/postgresql/extension/citus--8.0-2--8.0-3.sql
+share/postgresql/extension/citus--8.0-2.sql
+share/postgresql/extension/citus--8.0-3--8.0-4.sql
+share/postgresql/extension/citus--8.0-3.sql
+share/postgresql/extension/citus--8.0-4--8.0-5.sql
+share/postgresql/extension/citus--8.0-4.sql
+share/postgresql/extension/citus--8.0-5--8.0-6.sql
+share/postgresql/extension/citus--8.0-5.sql
+share/postgresql/extension/citus--8.0-6--8.0-7.sql
+share/postgresql/extension/citus--8.0-6.sql
+share/postgresql/extension/citus--8.0-7--8.0-8.sql
+share/postgresql/extension/citus--8.0-7.sql
+share/postgresql/extension/citus--8.0-8.sql
 share/postgresql/extension/citus.control
