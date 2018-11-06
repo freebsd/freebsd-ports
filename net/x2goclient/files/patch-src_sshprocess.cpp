@@ -1,4 +1,4 @@
---- src/sshprocess.cpp.orig	2016-03-24 20:39:27 UTC
+--- src/sshprocess.cpp.orig	2018-11-04 13:15:51 UTC
 +++ src/sshprocess.cpp
 @@ -24,6 +24,9 @@
  
@@ -10,6 +10,15 @@
  #include <arpa/inet.h>
  #include <netinet/tcp.h>
  #endif
+@@ -140,7 +143,7 @@ void SshProcess::tunnelLoop()
+     address.sin_family=AF_INET;
+     address.sin_addr.s_addr=INADDR_ANY;
+     address.sin_port=htons(localPort);
+-    if (bind(serverSocket,(struct sockaddr*) &address,sizeof(address))!=0)
++    if (::bind(serverSocket,(struct sockaddr*) &address,sizeof(address))!=0)
+     {
+         QString err=tr("Error binding ")+localHost+":"+QString::number(localPort);
+         x2goDebug<<err<<endl;
 @@ -200,7 +203,7 @@ void SshProcess::startNormal(const QStri
  // #endif
      if(!masterCon->useKerberos())
