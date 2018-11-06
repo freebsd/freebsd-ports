@@ -26,7 +26,7 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 
 CONFLICTS=	gnash-devel-[0-9]*
 
-USES=		cpe tar:bzip2 compiler:features autoreconf pkgconfig gmake libtool jpeg desktop-file-utils
+USES=		autoreconf compiler:c++11-lang cpe desktop-file-utils gmake jpeg libtool pkgconfig tar:bzip2
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 WANT_GSTREAMER=	yes
