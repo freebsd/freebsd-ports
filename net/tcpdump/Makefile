@@ -3,7 +3,7 @@
 
 PORTNAME=	tcpdump
 PORTVERSION=	4.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcpdump.org/release/
 
@@ -11,12 +11,13 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Ubiquitous network traffic analysis tool
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpcap.so.1:net/libpcap
 
-GNU_CONFIGURE=	yes
 USES=		gmake
 
+GNU_CONFIGURE=	yes
 UNPRIV_USER?=	tcpdump
 CHROOTDIR?=	/var/run/tcpdump
 
@@ -44,7 +45,9 @@ CHROOT_CONFIGURE_ON=	--with-chroot=${CHROOTDIR}
 PLIST_FILES=	sbin/tcpdump \
 		man/man1/tcpdump.1.gz
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's,sys/capability.h,sys/capsicum.h,' \
+		${WRKSRC}/tcpdump.c
 
 post-configure:
 	@${REINPLACE_CMD} -e "s,\./\.\./${LIBPCAP_FORCE_VER}/libpcap\.a,${LOCALBASE}/lib/libpcap.so.1," \
@@ -54,4 +57,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpdump ${STAGEDIR}/${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/tcpdump.1 ${STAGEDIR}/${MAN1PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
