@@ -6,4 +6,4 @@ Hyperscan uses hybrid automata techniques to allow simultaneous matching of
 large numbers (up to tens of thousands) of regular expressions, as well as
 matching of regular expressions across streams of data.
 
-WWW: https://01.org/hyperscan
+WWW: https://www.hyperscan.io/
