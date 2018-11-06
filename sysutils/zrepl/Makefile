@@ -40,7 +40,7 @@ GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == "FreeBSD" && ((${OSVERSION} >= 1100513 && ${OSVERSION} < 1200000) || ${OSVERSION} >= 1200015)
+.if ${OPSYS} == "FreeBSD"
 SUB_LIST+=	DAEMON_LOGGING="-S -l \$${zrepl_facility} -s \$${zrepl_priority} -T \$${name}"
 .else
 SUB_LIST+=	DAEMON_LOGGING=""
