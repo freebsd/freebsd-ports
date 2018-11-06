@@ -18,7 +18,9 @@ share/icons/hicolor/scalable/apps/flacon.svg
 %%DATADIR%%/translations/flacon_et.qm
 %%DATADIR%%/translations/flacon_fr.qm
 %%DATADIR%%/translations/flacon_gl.qm
+%%DATADIR%%/translations/flacon_he.qm
 %%DATADIR%%/translations/flacon_hu.qm
+%%DATADIR%%/translations/flacon_id.qm
 %%DATADIR%%/translations/flacon_it.qm
 %%DATADIR%%/translations/flacon_ja_JP.qm
 %%DATADIR%%/translations/flacon_lt.qm
@@ -32,9 +34,11 @@ share/icons/hicolor/scalable/apps/flacon.svg
 %%DATADIR%%/translations/flacon_pt_PT.qm
 %%DATADIR%%/translations/flacon_ro_RO.qm
 %%DATADIR%%/translations/flacon_ru.qm
+%%DATADIR%%/translations/flacon_ru_new.qm
 %%DATADIR%%/translations/flacon_sr.qm
 %%DATADIR%%/translations/flacon_sr@latin.qm
 %%DATADIR%%/translations/flacon_tr.qm
 %%DATADIR%%/translations/flacon_uk.qm
+%%DATADIR%%/translations/flacon_uz@Latn.qm
 %%DATADIR%%/translations/flacon_zh_CN.qm
 %%DATADIR%%/translations/flacon_zh_TW.qm
