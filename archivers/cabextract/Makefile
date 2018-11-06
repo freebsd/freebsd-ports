@@ -3,6 +3,7 @@
 
 PORTNAME=	cabextract
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.cabextract.org.uk/
 
