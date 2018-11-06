@@ -4,7 +4,8 @@
 PORTNAME=	libshout
 PORTVERSION=	2.4.1
 CATEGORIES=	audio net
-MASTER_SITES=	http://downloads.xiph.org/releases/${PORTNAME}/ \
+MASTER_SITES=	https://downloads.xiph.org/releases/libshout/ \
+		https://svn.xiph.org/releases/libshout/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,10 +20,11 @@ LIB_DEPENDS=	libogg.so:audio/libogg \
 OPTIONS_DEFINE=	DOCS SPEEX THEORA
 OPTIONS_DEFAULT=SPEEX THEORA
 
+USES=		gmake libtool pathfix pkgconfig ssl
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		gmake libtool pathfix pkgconfig ssl
 
 PORTDOCS=	*
 
