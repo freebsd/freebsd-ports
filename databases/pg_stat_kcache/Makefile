@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pg_stat_kcache
-DISTVERSIONPREFIX=	REL
-DISTVERSION=	2_0_3
+PORTVERSION=	2.1.1
 CATEGORIES=	databases
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -16,7 +15,8 @@ LLD_UNSAFE=	yes
 WANT_PGSQL=	server contrib
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	dalibo
+GH_ACCOUNT=	powa-team
+GH_TAGNAME=	REL${PORTVERSION:S/./_/g}
 
 pre-patch:
 	@${MV} ${BUILD_WRKSRC}/README.rst ${BUILD_WRKSRC}/${PORTNAME}-README.rst
