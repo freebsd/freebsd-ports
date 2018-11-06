@@ -3,6 +3,7 @@
 
 PORTNAME=	ragel
 PORTVERSION=	6.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.colm.net/files/${PORTNAME}/
 
@@ -15,16 +16,24 @@ LICENSE_COMB=	dual
 USES=	gmake
 GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-DOCS_CONFIGURE_ENABLE=	manual
-DOCS_USE=		TEX=latex:build
-DOCS_BUILD_DEPENDS=	fig2dev:print/transfig
+OPTIONS_DEFINE=	TEXDOCS EXAMPLES
+OPTIONS_SUB=	yes
+TEXDOCS_CONFIGURE_ENABLE=	manual
+TEXDOCS_DESC=	Build pdf documentation (requires LaTeX)
+TEXDOCS_USE=		TEX=latex:build
+TEXDOCS_BUILD_DEPENDS=	fig2dev:print/transfig
+
+.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ragel/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+
+do-install-TEXDOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${WRKSRC}/test; ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
