@@ -3,7 +3,7 @@
 
 PORTNAME=	leechcraft
 PORTVERSION=	0.6.70
-PORTREVISION=	35
+PORTREVISION=	36
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.leechcraft.org/LeechCraft/0.6.70/
 

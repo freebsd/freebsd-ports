@@ -2,6 +2,7 @@
 
 PORTNAME=	youtube_dl
 PORTVERSION=	2018.09.10
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://yt-dl.org/downloads/${PORTVERSION}/
 DISTNAME=	youtube-dl-${PORTVERSION}

@@ -2,7 +2,7 @@
 
 PORTNAME=	siril
 DISTVERSION=	0.9.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro graphics
 MASTER_SITES=	https://free-astro.org/download/
 
