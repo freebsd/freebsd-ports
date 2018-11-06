@@ -6,7 +6,7 @@ PORTVERSION=	1.2.2
 CATEGORIES=	devel www pear
 MASTER_SITES=	http://phptal.org/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEAR PHPTAL is a XML/XHTML template library for PHP
 
 OPTIONS_DEFINE=	GETTEXT SIMPLEXML JSON
