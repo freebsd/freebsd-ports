@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xml-security-c
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	security
 MASTER_SITES=	APACHE/santuario/c-library
 PKGNAMEPREFIX=	apache-
