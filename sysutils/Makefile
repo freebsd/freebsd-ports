@@ -550,6 +550,7 @@
     SUBDIR += jkill
     SUBDIR += jobd
     SUBDIR += jps
+    SUBDIR += jstest-gtk
     SUBDIR += jtop
     SUBDIR += jtopen
     SUBDIR += jvmtop

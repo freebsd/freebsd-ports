@@ -1,0 +1,10 @@
+bin/jstest-gtk
+libexec/jstest-gtk
+man/man1/jstest-gtk.1.gz
+share/applications/jstest-gtk.desktop
+share/icons/hicolor/scalable/apps/jstest-gtk.svg
+%%DATADIR%%/PS3.png
+%%DATADIR%%/generic.png
+%%DATADIR%%/xbox360.png
+%%DATADIR%%/xbox360_small.png
+share/metainfo/jstest-gtk.appdata.xml

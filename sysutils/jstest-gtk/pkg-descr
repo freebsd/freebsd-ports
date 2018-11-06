@@ -1,0 +1,6 @@
+jstest-gtk is a simple joystick tester based on Gtk+. It provides you
+with a list of attached joysticks, a way to display which buttons and
+axis are pressed, a way to remap axis and buttons and a way to
+calibrate your joystick.
+
+WWW: https://jstest-gtk.gitlab.io/
