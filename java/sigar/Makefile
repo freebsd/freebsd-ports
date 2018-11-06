@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	java devel
 PKGNAMEPREFIX=	java-
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java bindings for the Sigar system information API
 
 LICENSE=	APACHE20

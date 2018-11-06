@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 CATEGORIES=	net-mgmt
 PKGNAMEPREFIX=	nagios-
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plugin that checks zpool state
 
 RUN_DEPENDS=	bash:shells/bash

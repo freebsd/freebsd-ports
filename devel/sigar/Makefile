@@ -6,7 +6,7 @@ PORTVERSION=	1.7.3
 PORTREVISION=	2
 CATEGORIES=	devel
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sigar system information API
 
 LICENSE=	APACHE20

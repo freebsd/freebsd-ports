@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	www devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	HTML dashboard framwork based on sinatra
 
 LICENSE=	MIT

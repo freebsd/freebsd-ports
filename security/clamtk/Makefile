@@ -6,7 +6,7 @@ PORTVERSION=	5.25
 DISTVERSIONPREFIX=v
 CATEGORIES=	security
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK front-end for Clam Antivirus
 
 LICENSE=	ART10 GPLv1+

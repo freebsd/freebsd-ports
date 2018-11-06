@@ -6,7 +6,7 @@ PORTVERSION=	1.4.9.1
 CATEGORIES=	benchmarks
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Model-based file system workload generator
 
 LICENSE=	CDDL

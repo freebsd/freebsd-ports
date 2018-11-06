@@ -8,7 +8,7 @@ CATEGORIES=	mail python
 MASTER_SITES=	GH
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	tj@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	GitHubs Email Reply Parser library for python
 
 USES=		python
