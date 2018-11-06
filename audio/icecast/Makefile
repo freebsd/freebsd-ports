@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	icecast
-PORTVERSION=	2.4.3
-PORTREVISION=	1
+PORTVERSION=	2.4.4
 PORTEPOCH=	1
 CATEGORIES=	audio net ipv6
-MASTER_SITES=	http://downloads.xiph.org/releases/icecast/:source \
-		http://svn.xiph.org/releases/icecast/:source \
+MASTER_SITES=	https://downloads.xiph.org/releases/icecast/:source \
+		https://svn.xiph.org/releases/icecast/:source \
 		LOCAL/sunpoet/icecast:icon,source \
-		http://www.icecast.org/:icon
+		https://github.com/xiph/Icecast-Server/raw/master/web/:icon
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source \
 		favicon.ico:icon
 DIST_SUBDIR=	icecast
@@ -22,17 +21,16 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libshout.so:audio/libshout \
+		libogg.so:audio/libogg \
 		libspeex.so:audio/speex \
 		libtheora.so:multimedia/libtheora \
-		libvorbis.so:audio/libvorbis \
-		libxslt.so:textproc/libxslt
+		libvorbis.so:audio/libvorbis
 
 OPTIONS_DEFINE=	DOCS
 
-USES=		cpe gmake localbase
+USES=		cpe gmake gnome localbase ssl
+USE_GNOME=	libxml2 libxslt
 
-CONFIGURE_ENV=	OGG_PREFIX=${LOCALBASE}
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
 
