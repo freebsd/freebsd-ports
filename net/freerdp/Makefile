@@ -86,16 +86,6 @@ X11_CMAKE_BOOL=		WITH_X11
 X11_CMAKE_OFF=		-DWITH_XKBFILE=OFF
 X11_USE=		xorg=x11,xcursor,xext,xorgproto,xfixes,xi,xinerama,xkbfile,xrandr,xrender,xv
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == "FreeBSD" && ${ARCH} == "armv6"
-.if ${OSVERSION} < 1100504 || \
-	(${OSVERSION} >= 1200000 && ${OSVERSION} < 1200008)
-BROKEN=	Fails to build on ARMv6 (libm bug). See: r305380 (HEAD), r305971 (stable/11) [\#199422, \#211965] \
-	Please update to a later (fixed) version.
-.endif
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/CMAKE_INSTALL_RPATH /d' \
 		${WRKSRC}/CMakeLists.txt
@@ -112,4 +102,4 @@ post-patch:
 		${WRKSRC}/server/shadow/CMakeLists.txt \
 		${WRKSRC}/libfreerdp/CMakeLists.txt
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
