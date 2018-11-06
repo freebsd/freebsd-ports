@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CSS-Packer
-PORTVERSION=	2.05
+PORTVERSION=	2.07
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,8 +18,9 @@ RUN_DEPENDS=	p5-Regexp-RegGrp>=1.001001:devel/p5-Regexp-RegGrp
 TEST_DEPENDS=	p5-Test-File-Contents>=0.21:devel/p5-Test-File-Contents \
 		p5-Test-Pod>=1.22:devel/p5-Test-Pod
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
