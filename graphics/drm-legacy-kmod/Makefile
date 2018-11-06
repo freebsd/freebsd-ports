@@ -3,6 +3,7 @@
 
 PORTNAME=	drm-legacy-kmod
 PORTVERSION=	g20181031
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	jmd@FreeBSD.org
