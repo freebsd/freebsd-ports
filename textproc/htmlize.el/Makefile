@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}.cgi
 EXTRACT_SUFX=
 DIST_SUBDIR=	repacked
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs major mode to create HTML files from Emacs buffers (in colour!)
 
 USES=		emacs
