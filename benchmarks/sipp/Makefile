@@ -3,7 +3,7 @@
 
 PORTNAME=	sipp
 PORTVERSION=	3.5.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	benchmarks net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
 
@@ -15,8 +15,6 @@ LICENSE=	GPLv2
 BROKEN_mips=		fails to compile: stat.hpp:307: error: ISO C++ does not support long long
 BROKEN_mips64=		fails to compile: stat.hpp:307: error: ISO C++ does not support long long
 BROKEN_powerpc64=	fails to compile: stat.hpp:307: error: ISO C++ does not support long long
-BROKEN_SSL=		openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	configure: error: ssl library missing
 
 BUILD_DEPENDS=	help2man:misc/help2man
 
