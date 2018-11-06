@@ -26,6 +26,7 @@ CPPFLAGS+=	-I../dumb/dumb-kode54/include -I../../plugins/libmp4ff \
 		-I../../plugins/gme/game-music-emu-0.6pre \
 		-I./sidplay-libs/libsidplay/include/sidplay \
 		-I${LOCALBASE}/include
+CFLAGS+=	-Wno-narrowing
 LIBS+=		-L${LOCALBASE}/lib -lexecinfo -lintl
 USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
