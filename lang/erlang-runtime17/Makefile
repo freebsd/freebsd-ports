@@ -28,9 +28,6 @@ PATCHFILES=	patch-otp-17.5.1 patch-otp-17.5.2 patch-otp-17.5.3 \
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
 
-BROKEN_SSL=	openssl111
-BROKEN_SSL_REASON_openssl111=	Does not support OpenSSL 1.1, use Erlang 19+
-
 WRKSRC=		${WRKDIR}/otp_src_${ERLANG_REL}
 
 ERLANG_LIB=	${PORTNAME}${PORTVERSION:C/\..*//}
