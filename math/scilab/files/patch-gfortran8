@@ -1,0 +1,57 @@
+From f49b185c678c07526ef59c1531d41575f9266bdc Mon Sep 17 00:00:00 2001
+From: =?utf8?q?Cl=C3=A9ment=20DAVID?= <clement.david@esi-group.com>
+Date: Mon, 26 Feb 2018 23:43:14 +0100
+Subject: [PATCH] Fortran: fix errors with gfortran 8
+
+Change-Id: Ib890c6ea2dcba2f70d3c22dc86bbe38e4f22b061
+--- modules/differential_equations/src/fortran/ddaskr.f
++++ modules/differential_equations/src/fortran/ddaskr.f
+@@ -1409,6 +1409,7 @@ C
+       DIMENSION RWORK(LRW),IWORK(LIW)
+       DIMENSION RTOL(*),ATOL(*)
+       DIMENSION RPAR(*),IPAR(*)
++      DIMENSION JROOT(NRT)
+       CHARACTER MSG*80
+       EXTERNAL  RES, JAC, PSOL, RT, DDASID, DDASIK, DNEDD, DNEDK
+ C
+@@ -2530,7 +2531,8 @@ C Pointers into RWORK:
+       DOUBLE PRECISION TN, TOUT, Y, YP, PHI, PSI, R0, R1, RX, UROUND,
+      *  RWORK, RPAR
+       DIMENSION Y(*), YP(*), PHI(NEQ,*), PSI(*),
+-     *          R0(*), R1(*), RX(*), JROOT(*), RWORK(*), IWORK(*)
++     *          R0(*), R1(*), RX(*), JROOT(NRT), RWORK(*), IWORK(*),
++     *          RPAR(*), IPAR(*)
+       INTEGER I, JFLAG
+       DOUBLE PRECISION H
+       DOUBLE PRECISION HMINR, T1, TEMP1, TEMP2, X, ZERO
+--- modules/differential_equations/src/fortran/ddasrt.f
++++ modules/differential_equations/src/fortran/ddasrt.f
+@@ -870,6 +870,7 @@ C
+       DIMENSION RWORK(*),IWORK(*)
+       DIMENSION RTOL(*),ATOL(*)
+       DIMENSION RPAR(*),IPAR(*)
++      DIMENSION JROOT(NG)
+       CHARACTER MSG*80
+ C
+ C     SET POINTERS INTO IWORK
+@@ -1594,7 +1595,8 @@ C
+       DOUBLE PRECISION TN, TOUT, Y, YP, PHI, PSI, G0, G1, GX, UROUND,
+      *  RWORK, RPAR
+       DIMENSION  Y(*), YP(*), PHI(NEQ,*), PSI(*),
+-     1  G0(*), G1(*), GX(*), JROOT(*), RWORK(*), IWORK(*)
++     1  G0(*), G1(*), GX(*), JROOT(NG), RWORK(*), IWORK(*), RPAR(*),
++     1  IPAR(*)
+       INTEGER I, JFLAG
+       DOUBLE PRECISION H
+       DOUBLE PRECISION HMING, T1, TEMP1, TEMP2, X
+--- modules/differential_equations/src/fortran/twodq.f
++++ modules/differential_equations/src/fortran/twodq.f
+@@ -900,7 +900,7 @@ C
+       END
+ 
+       subroutine tridv(node,node1,node2,coef,rank)
+-      double precision node(10),node1(10),node2(10),coef
++      double precision node(9),node1(9),node2(9),coef
+       integer rank
+       double precision s(3),coef1,temp
+       integer t(3)
