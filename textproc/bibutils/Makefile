@@ -6,7 +6,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
-MAINTAINER=	pgj@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program set interconverts between various bibliography formats
 
 LICENSE=	GPLv2
