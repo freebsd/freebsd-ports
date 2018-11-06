@@ -2,7 +2,7 @@ Get framebuffer resolution on more platforms
 
 --- media_driver/linux/common/codec/ddi/media_libva_decoder.cpp.orig	2018-10-01 21:39:52 UTC
 +++ media_driver/linux/common/codec/ddi/media_libva_decoder.cpp
-@@ -45,7 +45,38 @@
+@@ -45,7 +45,39 @@
  #include <X11/Xutil.h>
  #endif
  
@@ -32,6 +32,7 @@ Get framebuffer resolution on more platforms
 +#define xres width
 +#define yres height
 +#else
++#define DEFAULT_FBDEV "/dev/fb0"
 +#define FBIOGET_VSCREENINFO 0
 +struct fb_var_screeninfo {
 +    uint32_t xres;
@@ -41,7 +42,7 @@ Get framebuffer resolution on more platforms
  
  typedef MediaDdiFactory<DdiMediaDecode, DDI_DECODE_CONFIG_ATTR> DdiDecodeFactory;
  static int32_t DdiDecode_GetDisplayInfo(VADriverContextP ctx)
-@@ -56,7 +70,7 @@ static int32_t DdiDecode_GetDisplayInfo(VADriverContex
+@@ -56,7 +88,7 @@ static int32_t DdiDecode_GetDisplayInfo(VADriverContex
      vsinfo.xres                           = 0;
      vsinfo.yres                           = 0;
  
