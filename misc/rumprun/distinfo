@@ -1,7 +1,0 @@
-TIMESTAMP = 1515813186
-SHA256 (rumpkernel-rumprun-g20180105-8fe40c8_GH0.tar.gz) = 651337461da798cdc66c4591b804d3f61a7a5fa0bca06c71fdcc27facfc4ee0e
-SIZE (rumpkernel-rumprun-g20180105-8fe40c8_GH0.tar.gz) = 572990
-SHA256 (rumpkernel-buildrump.sh-9c9b022_GH0.tar.gz) = 3ba1cfbee4deee67285394c0bb6de8c83392116990cdcc93690415b1e07228e8
-SIZE (rumpkernel-buildrump.sh-9c9b022_GH0.tar.gz) = 57056
-SHA256 (rumpkernel-src-netbsd-b8b951e_GH0.tar.gz) = 5ea69fe33b8bf5bf361802fbab4838081bf4a7f3c473d725350e743870ba283a
-SIZE (rumpkernel-src-netbsd-b8b951e_GH0.tar.gz) = 56946706

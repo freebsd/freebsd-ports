@@ -10623,3 +10623,4 @@ science/ecs|science/code_saturne|2018-11-04|Code_Saturne merged bft, ecs, fvm, m
 science/fvm|science/code_saturne|2018-11-04|Code_Saturne merged bft, ecs, fvm, mei and ncs
 science/mei|science/code_saturne|2018-11-04|Code_Saturne merged bft, ecs, fvm, mei and ncs
 x11-wm/cde|x11/cde|2018-11-03|Recategorise
+misc/rumprun||2018-11-06|Has expired: "fails with current compilers"
