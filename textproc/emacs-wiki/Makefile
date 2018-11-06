@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.mwolson.org/static/dist/emacs-wiki/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create and use hyperlinks and simple formatting in plain text files
 
 RUN_DEPENDS=	xml-parse.el${EMACS_PKGNAMESUFFIX}>0:textproc/xml-parse.el@${EMACS_FLAVOR}
