@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	timers
-PORTVERSION=	4.1.2
+PORTVERSION=	4.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,12 +10,10 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Pure Ruby one-shot and periodic timers
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-hitimes>=0:devel/rubygem-hitimes
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
