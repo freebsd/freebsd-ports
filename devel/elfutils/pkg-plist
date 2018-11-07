@@ -44,6 +44,8 @@ lib/elfutils/libebl_ppc-%%VERSION%%.so
 lib/elfutils/libebl_ppc.so
 lib/elfutils/libebl_ppc64-%%VERSION%%.so
 lib/elfutils/libebl_ppc64.so
+lib/elfutils/libebl_riscv-%%VERSION%%.so
+lib/elfutils/libebl_riscv.so
 lib/elfutils/libebl_s390-%%VERSION%%.so
 lib/elfutils/libebl_s390.so
 lib/elfutils/libebl_sh-%%VERSION%%.so

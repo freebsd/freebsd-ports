@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elfutils
-PORTVERSION=	0.172
-PORTREVISION=	1
+PORTVERSION=	0.174
 CATEGORIES=	devel
 MASTER_SITES=	https://sourceware.org/elfutils/ftp/${PORTVERSION}/
 
