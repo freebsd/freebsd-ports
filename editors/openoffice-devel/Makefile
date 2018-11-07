@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
@@ -98,6 +98,21 @@ RUN_DEPENDS=								\
 		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:x11-fonts/crosextrafonts-carlito-ttf \
 		${LOCALBASE}/share/fonts/ChromeOS/Arimo-Bold.ttf:x11-fonts/croscorefonts-fonts-ttf
 
+USES=		autoreconf bison compiler:c++11-lib cpe \
+		desktop-file-utils \
+		gettext-runtime gmake iconv jpeg perl5 pkgconfig python:2.7 \
+		shared-mime-info ssl tar:${TARTYPE}
+USE_GL=		gl glu
+USE_GNOME=	gtk20 libxslt libidl glib20
+USE_JAVA=	yes
+JAVA_BUILD=	jdk
+JAVA_RUN=	jdk
+JAVA_VENDOR=	openjdk
+JAVA_VERSION=	1.6+
+USE_PERL5=	build
+USE_XORG=	ice sm x11 xau xaw xcomposite xcursor xdamage xext xfixes xi \
+		xinerama xrandr xrender xt
+
 CONFLICTS_INSTALL=	apache-openoffice-4*
 
 AOOVERSION1=	4
@@ -131,20 +146,6 @@ XDGDIR=			${OOPATH}/share/xdg
 XDGREL=			../../${INSTALLATION_BASEDIR}/openoffice${AOOVERSION1}/share/xdg
 EXECBASE?=		openoffice-${AOOSUFFIX}
 
-USES=		autoreconf bison compiler:c++11-lib cpe \
-		desktop-file-utils \
-		gettext-runtime gmake iconv jpeg perl5 pkgconfig python:2.7 \
-		shared-mime-info ssl tar:${TARTYPE}
-USE_GL=		gl glu
-USE_GNOME=	gtk20 libxslt libidl glib20
-USE_JAVA=	yes
-JAVA_BUILD=	jdk
-JAVA_RUN=	jdk
-JAVA_VENDOR=	openjdk
-JAVA_VERSION=	1.6+
-USE_PERL5=	build
-USE_XORG=	ice sm x11 xau xaw xcomposite xcursor xdamage xext xfixes xi \
-		xinerama xrandr xrender xt
 INSTALLS_ICONS=	yes
 WITHOUT_CPU_CFLAGS=	true
 CPE_PRODUCT=	${PORTNAME:S|apache-||}
