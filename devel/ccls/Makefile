@@ -9,8 +9,6 @@ COMMENT=	C/C++/ObjC language server
 
 LICENSE=	APACHE20
 
-IGNORE_FreeBSD_10=	needs newer libc++
-
 BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} \
 		rapidjson>=1.1.0_4:devel/rapidjson
 LIB_DEPENDS=	libLLVM-${LLVM_DEFAULT:C/[0-9]$//}.so:devel/llvm${LLVM_DEFAULT}
