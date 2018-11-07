@@ -82,6 +82,7 @@ include/fcitx/module/x11/fcitx-x11.h
 include/fcitx/module/x11/x11stuff.h
 include/fcitx/module/xkb/fcitx-xkb.h
 include/fcitx/module/xkb/xkb.h
+include/fcitx/module/xkbdbus/fcitx-xkbdbus.h
 include/fcitx/profile.h
 include/fcitx/ui.h
 lib/fcitx/fcitx-autoeng.so
@@ -93,6 +94,7 @@ lib/fcitx/fcitx-freedesktop-notify.so
 lib/fcitx/fcitx-fullwidth-char.so
 lib/fcitx/fcitx-imselector.so
 lib/fcitx/fcitx-ipc.so
+lib/fcitx/fcitx-ipcportal.so
 lib/fcitx/fcitx-keyboard.so
 lib/fcitx/fcitx-kimpanel-ui.so
 lib/fcitx/fcitx-notificationitem.so
@@ -114,7 +116,6 @@ lib/fcitx/libexec/comp-spell-dict
 lib/fcitx/libexec/fcitx-po-parser
 %%QT4%%lib/fcitx/libexec/fcitx-qt-gui-wrapper
 lib/fcitx/libexec/fcitx-scanner
-%%QT4%%lib/fcitx/qt/libfcitx-quickphrase-editor.so
 lib/girepository-1.0/Fcitx-1.0.typelib
 %%GTK2%%lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-fcitx.so
 %%GTK2%%@postexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
@@ -130,8 +131,8 @@ lib/libfcitx-core.so
 lib/libfcitx-core.so.0
 lib/libfcitx-core.so.0.3
 lib/libfcitx-gclient.so
-lib/libfcitx-gclient.so.0
-lib/libfcitx-gclient.so.0.1
+lib/libfcitx-gclient.so.1
+lib/libfcitx-gclient.so.0.2
 %%QT4%%lib/libfcitx-qt.so
 %%QT4%%lib/libfcitx-qt.so.0
 %%QT4%%lib/libfcitx-qt.so.0.1
@@ -184,6 +185,7 @@ share/dbus-1/services/org.fcitx.Fcitx.service
 %%DATADIR%%/addon/fcitx-fullwidth-char.conf
 %%DATADIR%%/addon/fcitx-imselector.conf
 %%DATADIR%%/addon/fcitx-ipc.conf
+%%DATADIR%%/addon/fcitx-ipcportal.conf
 %%DATADIR%%/addon/fcitx-keyboard.conf
 %%DATADIR%%/addon/fcitx-kimpanel-ui.conf
 %%DATADIR%%/addon/fcitx-notificationitem.conf
@@ -229,6 +231,7 @@ share/dbus-1/services/org.fcitx.Fcitx.service
 %%DATADIR%%/data/punc.mb.zh_HK
 %%DATADIR%%/data/punc.mb.zh_TW
 %%DATADIR%%/data/quickphrase.d/emoji.mb
+%%DATADIR%%/data/quickphrase.d/emoji-eac.mb
 %%DATADIR%%/data/quickphrase.d/latex.mb
 %%DATADIR%%/data/vk.conf
 %%DATADIR%%/dbus/daemon.conf
@@ -242,8 +245,10 @@ share/dbus-1/services/org.fcitx.Fcitx.service
 %%DATADIR%%/inputmethod/pinyin.conf
 %%DATADIR%%/inputmethod/qw.conf
 %%DATADIR%%/inputmethod/shuangpin.conf
+%%DATADIR%%/pinyin/pySym.mb
 %%DATADIR%%/pinyin/pybase.mb
 %%DATADIR%%/pinyin/pyphrase.mb
+%%DATADIR%%/pinyin/sp.dat
 %%DATADIR%%/py-enhance/py_stroke.mb
 %%DATADIR%%/py-enhance/py_table.mb
 %%DATADIR%%/skin/classic/active.png
@@ -432,10 +437,14 @@ share/icons/hicolor/scalable/apps/fcitx-vk-active.svg
 share/icons/hicolor/scalable/apps/fcitx-vk-inactive-symbolic.svg
 share/icons/hicolor/scalable/apps/fcitx-vk-inactive.svg
 share/icons/hicolor/scalable/apps/fcitx.svg
+share/locale/ca/LC_MESSAGES/fcitx.mo
+share/locale/da/LC_MESSAGES/fcitx.mo
 share/locale/de/LC_MESSAGES/fcitx.mo
 share/locale/es/LC_MESSAGES/fcitx.mo
+share/locale/fr/LC_MESSAGES/fcitx.mo
 share/locale/ja/LC_MESSAGES/fcitx.mo
 share/locale/ko/LC_MESSAGES/fcitx.mo
+share/locale/ru/LC_MESSAGES/fcitx.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx.mo
 share/mime/packages/x-fskin.xml
