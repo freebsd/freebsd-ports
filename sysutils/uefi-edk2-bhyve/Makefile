@@ -2,11 +2,11 @@
 
 PORTNAME=	uefi-edk2-bhyve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1
+DISTVERSION=	0.2
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	fabian.freyer@physik.tu-berlin.de
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT?=	UEFI-EDK2 firmware for bhyve
 
 LICENSE=	BSD2CLAUSE
