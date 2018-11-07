@@ -1,0 +1,23 @@
+ZNC Push is a module for ZNC that will send notifications to multiple push
+notification services, or SMS for any private message or channel highlight that
+matches a configurable set of conditions. ZNC Push current supports the
+following services:
+
+  Boxcar
+  Boxcar 2
+  Discord
+  Faast
+  Nexmo
+  Notify My Android (NMA)
+  Prowl
+  Pushalot
+  PushBullet
+  Pushjet
+  Pushover
+  Pushsafer
+  Slack
+  Supertoasty
+  Telegram
+  Custom URL GET requests
+
+WWW: https://github.com/jreese/znc-push
