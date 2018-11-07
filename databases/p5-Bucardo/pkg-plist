@@ -1,6 +1,10 @@
 bin/bucardo
-etc/rc.d/bucardo
-%%PERL5_MAN3%%/Bucardo.3.gz
 %%SITE_PERL%%/Bucardo.pm
 %%PERL5_MAN1%%/bucardo.1.gz
+%%PERL5_MAN3%%/Bucardo.3.gz
+%%DATADIR%%/README
+%%DATADIR%%/bucardo-report
+%%DATADIR%%/bucardo_rrd
+%%DATADIR%%/check_bucardo_sync
+%%DATADIR%%/slony_migrator.pl
 share/bucardo/bucardo.schema

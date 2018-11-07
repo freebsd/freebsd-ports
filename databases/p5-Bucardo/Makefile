@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Bucardo
-PORTVERSION=	5.4.1
+PORTVERSION=	5.5.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://bucardo.org/downloads/ LOCAL/mat/${PORTNAME}
 PKGNAMEPREFIX=	p5-
@@ -22,14 +22,16 @@ RUN_DEPENDS=	p5-DBI>=1.51:databases/p5-DBI \
 
 USES=	perl5
 USE_PERL5=	configure
+USE_RC_SUBR=	bucardo
 
 post-patch:
 	@${REINPLACE_CMD} 's/INSTALL_BASE/DESTDIR/;s/bucardo.1pm/bucardo.1/' \
 		${WRKSRC}/Makefile.PL
 	@${REINPLACE_CMD} 's=/usr/local=${PREFIX}=' ${WRKSRC}/Makefile.PL \
-		${WRKSRC}/bucardo ${WRKSRC}/dist/bucardo.rc
+		${WRKSRC}/bucardo
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/dist/bucardo.rc ${STAGEDIR}${PREFIX}/etc/rc.d/bucardo
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
