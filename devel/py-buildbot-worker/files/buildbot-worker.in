@@ -73,7 +73,7 @@ pidfile="${buildbot_worker_basedir}/twistd.pid"
 			eval buildbot_worker_basedir="\${buildbot_worker_${profile}_basedir:-${buildbot_worker_basedir}}"
 			eval pidfile="\${buildbot_worker_${profile}_basedir:-${buildbot_worker_basedir}}/twistd.pid"
 		else
-			echo "%%PREFIX%%/etc/rc.d/${name}: extra argument ignored"
+			echo "$0: extra argument ignored"
 		fi
 	# A specific profile is not in the command
 	else
@@ -102,7 +102,7 @@ pidfile="${buildbot_worker_basedir}/twistd.pid"
 					;;
 				esac
 				echo "===> ${name} profile: ${profile}"
-				if %%PREFIX%%/etc/rc.d/${name} $1 ${profile}; then
+				if $0 $1 ${profile}; then
 					success="${profile} ${success:-}"
 				else
 					failed="${profile} (${retcode}) ${failed:-}"
