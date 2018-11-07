@@ -21,7 +21,6 @@ USERS=		gearmand
 GROUPS=		gearmand
 
 USES=		compiler:c++11-lang pathfix gmake perl5 python:build libtool
-USE_CXXSTD=	c++11
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
