@@ -1,0 +1,9 @@
+--- Makefile.orig	2018-08-27 02:38:08 UTC
++++ Makefile
+@@ -1,5 +1,4 @@
+-version = $(shell git describe --dirty || echo dev)
+-curl=no
++curl?=no
+ 
+ ifneq ($(curl),no)
+ 	flags=-DUSE_CURL -lcurl

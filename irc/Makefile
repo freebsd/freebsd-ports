@@ -125,5 +125,6 @@
     SUBDIR += weechat-otr
     SUBDIR += xaric
     SUBDIR += znc
+    SUBDIR += znc-push
 
 .include <bsd.port.subdir.mk>
