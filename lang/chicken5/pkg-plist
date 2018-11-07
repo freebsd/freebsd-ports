@@ -67,6 +67,7 @@ man/man1/csi%%SUFFIX%%.1.gz
 %%FEATHERS%%man/man1/feathers%%SUFFIX%%.1.gz
 %%FEATHERS%%%%DATADIR%%/feathers.tcl
 %%DATADIR%%/setup.defaults
+%%PORTDOCS%%%%DOCSDIR%%/DEPRECATED
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
