@@ -1,0 +1,106 @@
+#!/bin/sh
+
+# PROVIDE: bucardo
+# REQUIRE: LOGIN postgresql
+# KEYWORD: shutdown
+#
+# bucardo_enable="YES"
+# bucardo_flags="--dbuser bucardo --dbname bucardo"
+#
+#
+
+. /etc/rc.subr
+
+name="bucardo"
+rcvar="bucardo_enable"
+command="%%PREFIX%%/bin/${name}"
+
+load_rc_config $name
+bucardo_enable=${bucardo_enable:-"NO"}
+bucardo_flags=${bucardo_flags:-"--dbuser bucardo --dbname bucardo"}
+
+rc_usage="start|stop|reload|restart|status|kick [sync_name]"
+extra_commands="reload kick"
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+reload_cmd="${name}_reload"
+restart_cmd="${name}_restart"
+kick_cmd="${name}_kick"
+status_cmd="${name}_status"
+
+
+bucardo_start()
+{
+    if [ -x ${command} ]; then
+        ${command} ${bucardo_flags} start "Started by rc script."
+    else
+        echo "${command} not found or not executable!"
+        exit 1
+    fi
+}
+
+bucardo_stop()
+{
+    if [ -x ${command} ]; then
+        ${command} ${bucardo_flags} stop "Stopped by rc script."
+    else
+        echo "${command} not found or not executable!"
+        exit 1
+    fi
+}
+
+bucardo_reload()
+{
+    if [ -x ${command} ]; then
+        ${command} ${bucardo_flags} reload_config
+    else
+        echo "${command} not found or not executable!"
+        exit 1
+    fi
+}
+
+bucardo_restart()
+{
+    if [ -x ${command} ]; then
+        ${command} ${bucardo_flags} stop "Restarting: Stopped by rc script"
+        ${command} ${bucardo_flags} start "Restarting: Started by rc script"
+    else
+        echo "${command} not found or not executable!"
+        exit 1
+    fi
+}
+
+bucardo_kick()
+{
+    if [ -x ${command} ]; then
+        if [ $# -gt 0 ]; then
+            ${command} ${bucardo_flags} kick $*
+        else
+            echo "Specifiy sync name to kick off"
+            exit 1
+        fi
+    else
+        echo "${command} not found or not executable!"
+        exit 1
+    fi
+}
+
+bucardo_status()
+{
+    if [ -x ${command} ]; then
+        if [ $# -gt 0 ]; then
+            ${command} ${bucardo_flags} status $*
+        else
+            ${command} ${bucardo_flags} status
+        fi
+    else
+        echo "${command} not found or not executable!"
+        exit 1
+    fi
+
+}
+
+load_rc_config $name
+run_rc_command "$@"
+
