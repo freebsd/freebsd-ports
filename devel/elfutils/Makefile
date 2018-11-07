@@ -3,6 +3,7 @@
 
 PORTNAME=	elfutils
 PORTVERSION=	0.174
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://sourceware.org/elfutils/ftp/${PORTVERSION}/
 
@@ -33,11 +34,13 @@ NLS_USES_OFF=	gettext  # used anyway
 NLS_CONFIGURE_ENABLE=	nls
 
 USES=		autoreconf gmake libtool tar:bzip2
-USE_GCC=	7
+USE_GCC=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-Wno-null-dereference -Wno-unused-value
+# For GCC8:
+CFLAGS+=	-Wno-cast-function-type
 # Give i386 a prayer of building, and we can fix the warnings later:
 CFLAGS_i386+=	-Wno-error
 
