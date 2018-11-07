@@ -1,5 +1,5 @@
---- cgilib-0.4/cgi.c.orig	2003-09-25 15:21:06 UTC
-+++ cgilib-0.4/cgi.c
+--- cgilib-0.4/cgi.c.orig	Thu Sep 25 08:21:06 2003
++++ cgilib-0.4/cgi.c	Sat May 14 01:28:33 2005
 @@ -33,9 +33,12 @@
  #ifdef HAVE_CTYPE_H
  # include <ctype.h>
