@@ -16,7 +16,6 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 GNU_CONFIGURE=	yes
 USES=		compiler:c++11-lib libtool localbase:ldflags pathfix pkgconfig tar:xz
-USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
