@@ -1,0 +1,110 @@
+--- etc/rtgtargmkr.pl.in.orig	2018-04-02 20:14:41 UTC
++++ etc/rtgtargmkr.pl.in
+@@ -10,10 +10,11 @@
+ # Local customization
+ 
+ $community   = "public";         # Default SNMP community
+-$defbits     = 32;               # Default OID bits: 32/64
++$defbits     = 64;               # Default OID bits: 32/64
+ $output      = "targets.cfg";    # Output target file name
+ $router_file = "routers";        # Input list of devices to poll
+ $conf_file   = "rtg.conf";       # RTGpoll and RTGplot configurations
++$update_desc = 0;		 # Update interface descriptions
+ $INFO        = 1;                # Print informational messages
+ $DEBUG       = 0;                # Print debug messages
+ $DBOFF       = 0;                # Turn database queries off (debug)
+@@ -77,7 +78,7 @@ $catalyst = [
+ );
+ 
+ # Default locations to find RTG configuration file
+-@configs = ("rtg.conf", "/usr/local/rtg/etc/rtg.conf", "/etc/rtg.conf");
++@configs = ("rtg.conf", "@RTG_HOME@/etc/rtg.conf", "/usr/local/rtg/etc/rtg.conf", "/etc/rtg.conf");
+ foreach $conf (@configs) {
+   if (open CONF, "<$conf") {
+     print "Reading [$conf].\n" if $DEBUG;
+@@ -93,7 +94,9 @@ foreach $conf (@configs) {
+         $db_db=$cVals[1];
+       } elsif ($cVals[0] =~ /Interval/) {
+         $interval=$cVals[1];
+-      }	
++      }	elsif ($cVals[0] =~ /Update_desc/) {
++        $update_desc=$cVals[1];
++      }
+     }
+     last;
+   }
+@@ -113,7 +116,7 @@ sub sql_insert {
+ # exist, create a new entry and corresponding tables.
+ sub find_router_id {
+     ($router) = @_;
+-    $sql = "SELECT DISTINCT rid FROM router WHERE name=\"$router\"";
++    $sql = "SELECT DISTINCT `rid` FROM `router` WHERE `name`=\"$router\"";
+     print "SQL: $sql\n" if $DEBUG;
+     my $sth = $dbh->prepare($sql)
+       or die "Can't prepare $sql: $dbh->errstr\n";
+@@ -121,12 +124,12 @@ sub find_router_id {
+       or die "can't execute the query: $sth->errstr\n";
+     if ( $sth->rows == 0 ) {
+         print "No router id found for $router...";
+-        $sql = "INSERT INTO router (name) VALUES(\"$router\")";
++        $sql = "INSERT INTO `router` (`name`) VALUES(\"$router\")";
+         print "adding.\n";
+         &sql_insert($sql);
+         $rid = &find_router_id($router);
+         foreach $mib ( keys %mibs_of_interest ) {
+-          $sql = "CREATE TABLE $mib"."_$rid (id INT NOT NULL, dtime DATETIME NOT NULL, counter BIGINT NOT NULL, KEY $mib"."_$rid". "_idx (dtime))";
++          $sql = "CREATE TABLE `$mib"."_$rid` (`id` INT NOT NULL, `dtime` DATETIME NOT NULL, `counter` BIGINT NOT NULL, KEY `$mib"."_$rid". "_idx` (`dtime`), KEY `id_dtime_idx` (`id`,`dtime`))";
+           &sql_insert($sql);
+         }
+     }
+@@ -143,7 +146,7 @@ sub find_router_id {
+ sub find_interface_id {
+     ( $rid, $int, $desc, $speed ) = @_;
+     $desc =~ s/ +$//g;    #remove trailing whitespace
+-    $sql = "SELECT id, description FROM interface WHERE rid=$rid AND name=\"$int\"";
++    $sql = "SELECT `id`, `description` FROM `interface` WHERE `rid`=$rid AND `name`=\"$int\"";
+     print "SQL: $sql\n" if $DEBUG;
+     my $sth = $dbh->prepare($sql)
+       or die "Can't prepare $sql: $dbh->errstr\n";
+@@ -152,7 +155,7 @@ sub find_interface_id {
+     if ( $sth->rows == 0 ) {
+         print "No id found for $int on device $rid...";
+         $desc =~ s/\"/\\\"/g;    # Fix " in desc
+-        $sql = "INSERT INTO interface (name, rid, speed, description) VALUES(\"$int\", $rid, $speed, \"$desc\")";
++        $sql = "INSERT INTO `interface` (`name`, `rid`, `speed`, `description`) VALUES(\"$int\", $rid, $speed, \"$desc\")";
+         print "adding.\n";
+         &sql_insert($sql);
+         $iid = &find_interface_id( $rid, $int, $desc, $speed );
+@@ -164,7 +167,13 @@ sub find_interface_id {
+             print "Interface description changed.\n";
+             print "Was: \"$row[1]\"\n";
+             print "Now: \"$desc\"\n";
+-            print "Suggest: UPDATE interface SET description='$desc' WHERE id=$iid\n";
++            if ( $update_desc == 1 ) {
++              $sql = "UPDATE `interface` SET `description`='$desc' WHERE `id`=$iid";
++              &sql_insert($sql);
++              print "Updated.\n";
++            } else {
++              print "Suggest: UPDATE `interface` SET `description`='$desc' WHERE `id`=$iid\n";
++            }
+         }
+     }
+     $sth->finish;
+@@ -289,7 +298,7 @@ sub main {
+       $year + 1900, $hour, $min;
+     print CFG "# Host\tOID\tBits\tCommunity\tTable\tID\tDescription\n";
+ 
+-    foreach $router (@routers) {
++    POKE: foreach $router (@routers) {
+         $bits = $counterBits{$router};
+         # Sanity check bits
+         $bits = $defbits if ( ( $bits != 32 ) && ( $bits != 64 ) );
+@@ -304,7 +313,7 @@ sub main {
+         $system = join ( ' ', @result );
+         print "System: $system\n" if $DEBUG;
+         $session = SNMP_Session->open( $router, $communities{$router}, 161 )
+-          || die "Error opening SNMP session to $router";
++          || ( print "Error opening SNMP session to $router" and next POKE );
+         if ( $system =~ /.*Cisco.*WS-.*/ ) {
+             $system = "Catalyst";
+             $session->map_table( $catalyst, \&process );

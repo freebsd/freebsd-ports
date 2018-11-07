@@ -1,5 +1,11 @@
 --- etc/common.php.in.orig	2003-09-26 15:52:29 UTC
 +++ etc/common.php.in
+@@ -1,4 +1,4 @@
+-<?
++<?php
+  /* Begin with reasonable defaults */
+  $VERSION = "@VERSION@";
+  $host="localhost";
 @@ -6,10 +6,13 @@
   $pass="rtgdefault";
   $db="rtg";
