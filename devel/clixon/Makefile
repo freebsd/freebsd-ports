@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clixon
-PORTVERSION=	3.7.0
+PORTVERSION=	3.8.0
 CATEGORIES=	devel
 
 MAINTAINER=	dcornejo@netgate.com
@@ -13,12 +13,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LIB_DEPENDS=	libcligen.so:devel/cligen \
 		libfcgi.so:www/fcgi
 
-USES=		bison gmake
+USES=		autoreconf bison gmake
 
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	clicon
-MAKE_ARGS=	wwwdir=${PREFIX}/sbin
+MAKE_ARGS=	wwwdir=${PREFIX}/sbin wwwuser=${WWWOWN}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cligen=${LOCALBASE} --sysconfdir=${ETCDIR}
