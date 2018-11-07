@@ -14,7 +14,6 @@ COMMENT=	Language with Ruby-like syntax and static type checking
 LICENSE=	APACHE20
 
 IGNORE_FreeBSD_11_aarch64=	prebuilt bootstrap for aarch64 only built for FreeBSD >=12
-IGNORE_FreeBSD_10=		prebuilt bootstrap only built for FreeBSD >=11
 ONLY_FOR_ARCHS=			aarch64 amd64
 ONLY_FOR_ARCHS_REASON=		requires prebuilt bootstrap compiler
 
