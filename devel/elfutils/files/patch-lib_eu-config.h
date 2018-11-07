@@ -1,12 +1,13 @@
 --- lib/eu-config.h.orig	2015-06-11 11:38:55 UTC
 +++ lib/eu-config.h
-@@ -187,4 +187,170 @@ asm (".section predict_data, \"aw\"; .pr
+@@ -187,4 +187,171 @@ asm (".section predict_data, \"aw\"; .pr
  #endif
  
  
 +/* FreeBSD ports of glibcisms */
 +#include <sys/cdefs.h>
 +#include <libgen.h>
++#include <limits.h>
 +#include <stdarg.h>
 +#include <stdint.h>
 +#include <stdlib.h>
@@ -40,7 +41,7 @@
 +rawmemchr(const void *s, int c)
 +{
 +
-+	return (memchr(s, c, SIZE_MAX));
++	return (memchr(s, c, SSIZE_MAX));
 +}
 +
 +static inline void
