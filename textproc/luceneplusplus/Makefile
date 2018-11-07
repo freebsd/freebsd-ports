@@ -18,7 +18,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	luceneplusplus
 GH_PROJECT=	LucenePlusPlus
 USES=		cmake:outsource compiler:c++11-lang
-USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
