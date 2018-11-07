@@ -21,7 +21,7 @@ RESTRICTED=	free for academic, non profit usage; do not re-distribute source and
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
-USES=		fortran gmake
+USES=		fortran gl gmake
 USE_XORG=	x11
 USE_GL=		gl glu
 MAKEFILE=	makefile
@@ -44,6 +44,7 @@ post-patch:
 		's|^CC |#CC | ; \
 		 s|^FC |#FC | ; \
 		 s|/usr/X11R6|${LOCALBASE}| ; \
+		 s|$$(LIBS)|$$(LIBS) $$(LDFLAGS)| ; \
 		 s|-lXmu|| ; \
 		 /depend/s|^|#|' ${WRKSRC}/makefile
 
