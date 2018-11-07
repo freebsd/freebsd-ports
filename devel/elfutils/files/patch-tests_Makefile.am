@@ -1,6 +1,6 @@
---- tests/Makefile.am.orig	2018-06-01 07:42:27.000000000 -0700
+--- tests/Makefile.am.orig	2018-09-14 04:12:13.000000000 -0700
 +++ tests/Makefile.am
-@@ -432,7 +432,7 @@
+@@ -457,7 +457,7 @@
  libebl = -lebl
  else !STANDALONE
  if BUILD_STATIC
@@ -9,7 +9,7 @@
  libelf = ../libelf/libelf.a -lz
  libasm = ../libasm/libasm.a
  else
-@@ -447,16 +447,16 @@
+@@ -472,16 +472,16 @@
  arextract_LDADD = $(libelf)
  arsymtest_LDADD = $(libelf)
  newfile_LDADD = $(libelf)
@@ -30,8 +30,8 @@
  update1_LDADD = $(libelf)
  update2_LDADD = $(libelf)
  update3_LDADD = $(libdw) $(libelf)
-@@ -468,34 +468,34 @@
- get_files_LDADD = $(libdw) $(libelf)
+@@ -495,34 +495,34 @@
+ next_files_LDADD = $(libdw) $(libelf)
  get_aranges_LDADD = $(libdw) $(libelf)
  allfcts_LDADD = $(libdw) $(libelf)
 -line2addr_LDADD = $(libdw) $(argp_LDADD)
@@ -85,10 +85,10 @@
  dwarf_getstring_LDADD = $(libdw)
 -addrcfi_LDADD = $(libdw) $(libebl) $(libelf) $(argp_LDADD) -ldl
 +addrcfi_LDADD = $(libdw) $(libebl) $(libelf) $(argp_LDADD)
+ dwarfcfi_LDADD = $(libdw) $(libelf)
  test_flag_nobits_LDADD = $(libelf)
  rerequest_tag_LDADD = $(libdw)
- alldts_LDADD = $(libdw) $(libelf)
-@@ -504,9 +504,9 @@
+@@ -532,9 +532,9 @@
  low_high_pc_LDADD = $(libdw) $(libelf) $(argp_LDADD)
  test_elf_cntl_gelf_getshdr_LDADD = $(libelf)
  dwflsyms_LDADD = $(libdw) $(libelf) $(argp_LDADD)
@@ -101,7 +101,7 @@
  backtrace_LDADD = $(libdw) $(libelf) $(argp_LDADD)
  # backtrace-child-biarch also uses those *_CFLAGS and *_LDLAGS variables:
  backtrace_child_CFLAGS = $(fpie_CFLAGS)
-@@ -515,23 +515,23 @@
+@@ -543,23 +543,23 @@
  backtrace_data_LDADD = $(libdw) $(libelf)
  backtrace_dwarf_CFLAGS = -Wno-unused-parameter
  backtrace_dwarf_LDADD = $(libdw) $(libelf)
