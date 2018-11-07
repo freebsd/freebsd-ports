@@ -3,7 +3,7 @@
 
 PORTNAME=	rtg
 PORTVERSION=	0.7.4
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	net
 MASTER_SITES=	SF \
 		ftp://ftpmirror.uk/freebsd-ports/rtg/
@@ -17,13 +17,9 @@ LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-DBD-mysql>=0:databases/p5-DBD-mysql
 
-FLAVORS=	web noweb
-noweb_PKGNAMESUFFIX=	poller
-web_PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
-
-USES=		shebangfix perl5 mysql:client ssl
 USE_RC_SUBR=	rtgpoll
-
+WANT_PERL=	yes
+USES=		shebangfix mysql:client ssl
 SHEBANG_FILES=	etc/95.pl etc/report.pl etc/rtgtargmkr.pl.in
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
@@ -34,21 +30,18 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/${PORTNAME} \
 USERS=		rtg
 GROUPS=		rtg
 
-.if ${FLAVOR:U} == web
-USES+=		php:web,flavors
-USE_PHP=	mysqli spl
-.endif
-
-OPTIONS_DEFINE=	MYSQL
+OPTIONS_DEFINE=	WEB MYSQL
+OPTIONS_DEFAULT=WEB
 MYSQL_DESC=	Pull MySQL server in as a dependancy for local setups
+WEB_DESC=	Include PHP-based web client interface pre-requisites
 
 MYSQL_USES=	mysql:server
 
+WEB_USES=	php
+USE_PHP=	mysqli spl
+
 CFLAGS+=	-fstack-protector
 LDFLAGS+=	-fstack-protector
-
-pre-configure:
-	${REINPLACE_CMD} -e 's/my_thread_init/mysql_thread_init/' ${WRKSRC}/configure
 
 post-patch:
 	@${MV} ${WRKSRC}/etc/rtg.conf ${WRKSRC}/etc/rtg.conf.sample
