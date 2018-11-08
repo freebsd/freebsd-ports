@@ -1,6 +1,13 @@
 --- rc.d/fscd.orig	2014-03-11 14:19:18.576173326 +0900
 +++ rc.d/fscd	2014-03-11 14:20:09.206171150 +0900
-@@ -13,8 +13,19 @@
+@@ -7,14 +7,25 @@
+ 
+ # PROVIDE: fscd
+ # REQUIRE: DAEMON syslogd
+-# BEFORE:  NETWORKING LOGIN
++# BEFORE:  LOGIN
+ # KEYWORD: shutdown
+ 
  . /etc/rc.subr
  
  name="fscd"
