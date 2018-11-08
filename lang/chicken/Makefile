@@ -10,6 +10,9 @@ MASTER_SITES=	http://code.call-cc.org/releases/${DISTVERSION}/
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Scheme-to-C compiler
 
+DEPRECATED=	Old release; please migrate to lang/chicken5
+EXPIRATION_DATE=	2019-12-20
+
 USES=		cpe gmake
 CPE_VENDOR=	call-cc
 MAKEFILE=	GNUmakefile
@@ -25,6 +28,8 @@ MAKE_ARGS=	PLATFORM=bsd \
 		C_COMPILER_OPTIMIZATION_OPTIONS="${CFLAGS}" \
 		LINKER_OPTIONS="${LDFLAGS}"
 TEST_TARGET=	check
+
+PORTSCOUT=	ignore:1
 
 OPTIONS_DEFINE=	DOCS FEATHERS
 OPTIONS_SUB=	yes
