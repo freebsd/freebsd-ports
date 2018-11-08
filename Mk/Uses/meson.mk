@@ -35,7 +35,8 @@ BUILD_DEPENDS+=		meson:devel/meson
 USE_LOCALE?=	en_US.UTF-8
 
 CONFIGURE_ARGS+=	--prefix ${PREFIX} \
-			--mandir man
+			--mandir man \
+			--infodir {INFO_PATH}
 
 # meson has it own strip mechanic
 INSTALL_TARGET=		install
