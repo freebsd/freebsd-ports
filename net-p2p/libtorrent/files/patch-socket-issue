@@ -1,0 +1,47 @@
+https://github.com/rakshasa/libtorrent/pull/181
+
+From 0f957c2576d0d0c4c227e4453d92f67884e608af Mon Sep 17 00:00:00 2001
+From: Vladyslav Movchan <vladislav.movchan@gmail.com>
+Date: Sat, 3 Nov 2018 19:52:56 +0200
+Subject: [PATCH] Prevent loss of 'm_ipv6_socket' attribute which led to
+ execution of setsockopt(..., IPPROTO_IP, IP_TOS, ...) on IPv6 socket
+
+---
+ src/net/socket_fd.cc | 4 ++--
+ src/net/socket_fd.h  | 1 +
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/src/net/socket_fd.cc b/src/net/socket_fd.cc
+index 54cb6ded..f04059f6 100644
+--- src/net/socket_fd.cc
++++ src/net/socket_fd.cc
+@@ -251,7 +251,7 @@ SocketFd::accept(rak::socket_address* sa) {
+   socklen_t len = sizeof(rak::socket_address);
+ 
+   if (sa == NULL) {
+-    return SocketFd(::accept(m_fd, NULL, &len));
++    return SocketFd(::accept(m_fd, NULL, &len), m_ipv6_socket);
+   }
+ 
+   int fd = ::accept(m_fd, sa->c_sockaddr(), &len);
+@@ -260,7 +260,7 @@ SocketFd::accept(rak::socket_address* sa) {
+     *sa = sa->sa_inet6()->normalize_address();
+   }
+ 
+-  return SocketFd(fd);
++  return SocketFd(fd, m_ipv6_socket);
+ }
+ 
+ // unsigned int
+diff --git a/src/net/socket_fd.h b/src/net/socket_fd.h
+index ca765e88..2329b4e9 100644
+--- src/net/socket_fd.h
++++ src/net/socket_fd.h
+@@ -51,6 +51,7 @@ class SocketFd {
+ 
+   SocketFd() : m_fd(-1) {}
+   explicit SocketFd(int fd) : m_fd(fd) {}
++  SocketFd(int fd, bool ipv6_socket) : m_fd(fd), m_ipv6_socket(ipv6_socket) {}
+ 
+   bool                is_valid() const                        { return m_fd >= 0; }
+   
