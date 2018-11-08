@@ -1,0 +1,23 @@
+--- Makefile.orig	2018-11-08 20:43:35 UTC
++++ Makefile
+@@ -5,6 +5,9 @@ CFLAGS += -W -Wall -Wextra -O2 -Wno-implicit-function-
+ CXXFLAGS += -W -Wall -Wextra -std=c++11 -O2 -Izopfli/src -I7zip -DNDEBUG=1 \
+ 	-Wno-unused-parameter -pthread
+ 
++CFLAGS += $(shell pkg-config --cflags libuv liblz4)
++CXXFLAGS += $(shell pkg-config --cflags libuv liblz4)
++
+ SRC_CXX_SRC = $(wildcard src/*.cpp)
+ SRC_CXX_OBJ = $(SRC_CXX_SRC:.cpp=.o)
+ CLI_CXX_SRC = $(wildcard cli/*.cpp)
+@@ -23,8 +26,8 @@ ZOPFLI_C_OBJ = $(ZOPFLI_C_SRC:.c=.o)
+ %.o: %.c
+ 	$(CC) -c $(CFLAGS) -o $@ $<
+ 
+-maxcso: $(SRC_CXX_OBJ) $(CLI_CXX_OBJ) $(ZOPFLI_C_OBJ) 7zip/7zip.a
+-	$(CXX) -o $@ $(CXXFLAGS) $^ -luv -llz4 -lz
++maxcso: $(SRC_CXX_OBJ) $(CLI_CXX_OBJ) 7zip/7zip.a
++	$(CXX) -o $@ $(CXXFLAGS) $^ $(shell pkg-config --libs libuv liblz4) -lzopfli -lz
+ 
+ 7zip/7zip.a:
+ 	$(MAKE) -C 7zip 7zip.a
