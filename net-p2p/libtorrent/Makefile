@@ -12,8 +12,6 @@ COMMENT=	BitTorrent Library written in C++
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_SSL=	openssl-devel
-
 USES=		autoreconf compiler:c++11-lang libtool pathfix pkgconfig ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
