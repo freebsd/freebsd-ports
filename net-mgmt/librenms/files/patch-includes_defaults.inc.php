@@ -1,6 +1,6 @@
---- includes/defaults.inc.php.orig	2018-08-04 20:07:12 UTC
+--- includes/defaults.inc.php.orig	2018-10-17 10:33:28 UTC
 +++ includes/defaults.inc.php
-@@ -47,19 +47,19 @@ $config['own_hostname'] = 'localhost';
+@@ -49,19 +49,19 @@ $config['own_hostname'] = 'localhost';
  $config['fping_options']['timeout'] = 500;
  $config['fping_options']['count']   = 3;
  $config['fping_options']['interval'] = 500;
