@@ -59,6 +59,13 @@ TERM?=		vt100	# Default value needed for tput in jail or tinderbox
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == "i386"
+# /wrkdirs/usr/ports/science/code_saturne/work/code_saturne-5.3.0/src/apps/.libs
+# /libsaturne.so:
+# undefined reference to `__atomic_compare_exchange'
+CONFIGURE_ARGS+=	--disable-openmp
+.endif
+
 .if ${PORT_OPTIONS:MDOCS}
 USE_TEX=	tex:build
 BUILD_DEPENDS+=	fig2dev:print/transfig		\
