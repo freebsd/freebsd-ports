@@ -3,6 +3,7 @@
 PORTNAME=	cquery
 PORTVERSION=	20180718
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	henry.hu.sh@gmail.com
@@ -12,8 +13,8 @@ LICENSE=	MIT
 
 BROKEN_powerpc64=	fails to build: Checking for 'clang++' (C++ compiler): not found
 
-BUILD_DEPENDS=	llvm-config60:devel/llvm60
-LIB_DEPENDS=	libclang.so:devel/llvm60
+BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+LIB_DEPENDS=	libclang.so.${LLVM_DEFAULT:C/[0-9]$//}:devel/llvm${LLVM_DEFAULT}
 
 USES=		compiler:c++14-lang waf
 
@@ -26,9 +27,11 @@ GH_TUPLE=	miloyip:rapidjson:daabb88:rapidjson/third_party/rapidjson \
 		emilk:loguru:6bf94c:loguru/third_party/loguru \
 		zeux:pugixml:24a7064:pugixml/third_party/pugixml
 
+LLVM_DEFAULT?=	60
+
 PLIST_FILES=	bin/cquery
 
-CONFIGURE_ARGS=	--variant=system --llvm-config=${LOCALBASE}/bin/llvm-config60
+CONFIGURE_ARGS=	--variant=system --llvm-config=${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT}
 MAKE_ARGS=	--variant=system
 
 post-install:
