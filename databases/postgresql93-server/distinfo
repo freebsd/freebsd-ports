@@ -1,5 +1,5 @@
-TIMESTAMP = 1533847538
-SHA256 (postgresql/postgresql-9.3.24.tar.bz2) = 8214a73a3b2135226bdc1394c9efdcb80f79e504ec700cf9b23d0b6bc2b60da9
-SIZE (postgresql/postgresql-9.3.24.tar.bz2) = 17042985
+TIMESTAMP = 1541718314
+SHA256 (postgresql/postgresql-9.3.25.tar.bz2) = e4953e80415d039ccd33d34be74526a090fd585cf93f296cd9c593972504b6db
+SIZE (postgresql/postgresql-9.3.25.tar.bz2) = 17067593
 SHA256 (postgresql/pg-9314-icu-2016-08-10.diff.gz) = 4be31ad9899d5caf9f57ad7ebfc0d14f0fcf58ad539c82fb353b016fb76c0c30
 SIZE (postgresql/pg-9314-icu-2016-08-10.diff.gz) = 5583
