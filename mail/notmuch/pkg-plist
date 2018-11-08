@@ -23,4 +23,5 @@ lib/libnotmuch.so
 lib/libnotmuch.so.5
 lib/libnotmuch.so.5.2.0
 share/bash-completion/completions/notmuch
+share/zsh/functions/Completion/Unix/_email-notmuch
 share/zsh/functions/Completion/Unix/_notmuch

@@ -40,9 +40,11 @@ do-configure:
 	@${ECHO_CMD} 'quiet=$$($$(word 1, $$(1)))' > ${WRKSRC}/Makefile.local
 	@${PRINTF} \
 		'%s\n' \
+		BASH_ABSOLUTE=/bin/sh \
 		desktop_dir=${PREFIX}/share/applications \
 		emacsetcdir=${PREFIX}/${EMACS_SITE_LISPDIR} \
 		emacslispdir=${PREFIX}/${EMACS_SITE_LISPDIR} \
+		HAVE_BASH=1 \
 		HAVE_EMACS=1 \
 		infodir=${PREFIX}/${INFO_PATH} \
 		mandir=${MANPREFIX}/man \
