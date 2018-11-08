@@ -1,0 +1,12 @@
+OpenFabrics Interfaces (OFI) is a framework focused on exporting fabric
+communication services to applications. OFI is best described as a collection
+of libraries and applications used to export fabric services. The key components
+of OFI are: application interfaces, provider libraries, kernel services,
+daemons, and test applications.
+
+Libfabric is a core component of OFI. It is the library that defines and exports
+the user-space API of OFI, and is typically the only software that applications
+deal with directly. It works in conjunction with provider libraries, which are
+often integrated directly into libfabric.
+
+WWW: https://ofiwg.github.io/libfabric/
