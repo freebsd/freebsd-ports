@@ -6,6 +6,9 @@ PKGNAMESUFFIX=	-bat
 
 COMMENT=	Network backup solution (GUI)
 
+DEPRECATED=	Unsupported. Please migrate to bacula9-bat
+EXPIRATION_DATE=	2019-03-01
+
 LIB_DEPENDS+=	libqwt.so:x11-toolkits/qwt5 \
 		libbac.so:sysutils/bacula-client
 

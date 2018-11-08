@@ -5,6 +5,9 @@ PKGNAMESUFFIX=	-client
 
 COMMENT=	Network backup solution (client)
 
+DEPRECATED=	Unsupported. Please migrate to bacula9-client
+EXPIRATION_DATE=	2019-03-01
+
 WITH_CLIENT_ONLY=yes
 USE_RC_SUBR=	bacula-fd
 
