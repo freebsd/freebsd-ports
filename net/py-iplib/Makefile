@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	iplib
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	egypcio@googlemail.com
 COMMENT=	Convert amongst many different IPv4 notations
 
+LICENSE=	BSD3CLAUSE
+
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils flavors
 
 .include <bsd.port.mk>
