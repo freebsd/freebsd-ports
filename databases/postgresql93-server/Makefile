@@ -14,6 +14,8 @@ INSTALL_DIRS?=	src/common src/timezone src/backend \
 		src/bin/pg_basebackup
 
 ICU_PATCHFILE=	pg-9314-icu-2016-08-10.diff.gz
+DEPRECATED=	PostgreSQL-9.3 has reached end-of-life
+EXPIRATION_DATE=2018-12-08
 
 PG_USER?=	pgsql
 PG_GROUP?=	pgsql
