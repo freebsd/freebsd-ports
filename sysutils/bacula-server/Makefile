@@ -3,7 +3,7 @@
 
 PORTNAME=	bacula
 PORTVERSION=	7.4.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -11,6 +11,9 @@ PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT?=	Network backup solution (server)
+
+DEPRECATED=	Unsupported. Please migrate to bacula9-server
+EXPIRATION_DATE=	2019-03-01
 
 USES+=		libtool readline shebangfix ssl
 SHEBANG_FILES=	scripts/dvd-handler.in src/cats/make_catalog_backup.pl.in

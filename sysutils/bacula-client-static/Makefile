@@ -5,6 +5,9 @@ PKGNAMESUFFIX=	-client-static
 
 COMMENT=	Network backup solution (static client)
 
+DEPRECATED=	Unsupported. Please migrate to bacula9-client-static
+EXPIRATION_DATE=	2019-03-01
+
 PLIST=		${.CURDIR}/pkg-plist
 MASTERDIR=	${.CURDIR}/../../sysutils/bacula-server
 

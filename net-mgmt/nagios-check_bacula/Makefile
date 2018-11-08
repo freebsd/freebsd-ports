@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	bacula
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 PKGNAMEPREFIX=	nagios-check_
 PKGNAMESUFFIX=	#
 
 MAINTAINER=	freebsd@troback.com
 COMMENT=	Nagios plugin for Bacula
+
+DEPRECATED=	Unsupported. Please migrate to nagios-check_bacula9
+EXPIRATION_DATE=	2019-03-01
 
 LIB_DEPENDS+=	libbac.so:sysutils/bacula-client
 
