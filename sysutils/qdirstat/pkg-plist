@@ -1,13 +1,13 @@
 bin/qdirstat
 bin/qdirstat-cache-writer
 share/applications/qdirstat.desktop
+share/icons/hicolor/scalable/apps/qdirstat.svg
 %%PORTDOCS%%%%DOCSDIR%%/Building.md
 %%PORTDOCS%%%%DOCSDIR%%/Contributing.md
 %%PORTDOCS%%%%DOCSDIR%%/Debugging-Tips.md
 %%PORTDOCS%%%%DOCSDIR%%/DevHistory.md
 %%PORTDOCS%%%%DOCSDIR%%/GitHub-Workflow.md
 %%PORTDOCS%%%%DOCSDIR%%/Installing.md
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/QDirStat-for-Servers.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/TODO.md
@@ -22,4 +22,3 @@ share/applications/qdirstat.desktop
 %%PORTDOCS%%%%DOCSDIR%%/stats/Percentiles-Table.md
 %%PORTDOCS%%%%DOCSDIR%%/stats/README.md
 %%PORTDOCS%%%%DOCSDIR%%/stats/Statistics.md
-share/icons/hicolor/32x32/apps/qdirstat.png
