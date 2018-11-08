@@ -1,0 +1,18 @@
+--- configure.orig	2018-10-16 07:56:32 UTC
++++ configure
+@@ -566,6 +566,7 @@ if command -v ${BASH} > /dev/null; then
+     printf "Yes (%s).\n" "$bash_absolute"
+ else
+     have_bash=0
++    bash_absolute=
+     printf "No. (%s not found)\n" "${BASH}"
+ fi
+ 
+@@ -576,6 +577,7 @@ if command -v ${PERL} > /dev/null; then
+     printf "Yes (%s).\n" "$perl_absolute"
+ else
+     have_perl=0
++    perl_absolute=
+     printf "No. (%s not found)\n" "${PERL}"
+ fi
+ 

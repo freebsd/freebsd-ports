@@ -14,6 +14,7 @@ RUN_DEPENDS=	mutt:mail/mutt \
 
 USES=		gmake perl5
 
+MAKE_ARGS+=	mandir=${MANPREFIX}/man prefix=${PREFIX}
 MASTERDIR=	${.CURDIR}/../notmuch
 NO_ARCH=	yes
 WRKSRC_SUBDIR=	contrib/notmuch-mutt
@@ -22,14 +23,15 @@ OPTIONS_DEFINE=	EXAMPLES MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
 OPTIONS_SUB=	yes
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/notmuch-mutt ${STAGEDIR}${PREFIX}/bin
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MV} ${STAGEDIR}${LOCALBASE}/etc/Muttrc.d/notmuch-mutt.rc ${STAGEDIR}${EXAMPLESDIR}/notmuch-mutt.rc
+	@${RMDIR} ${STAGEDIR}${LOCALBASE}/etc/Muttrc.d
 
-do-install-EXAMPLES-on:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/notmuch-mutt.rc ${STAGEDIR}${EXAMPLESDIR}/notmuch-mutt.rc
+post-install-EXAMPLES-off:
+	@${RM} -r ${STAGEDIR}${LOCALBASE}/etc/Muttrc.d
 
-do-install-MANPAGES-on:
-	${INSTALL_MAN} ${WRKSRC}/notmuch-mutt.1 ${STAGEDIR}${MANPREFIX}/man/man1
+post-install-MANPAGES-off:
+	@${RM} ${STAGEDIR}${MANPREFIX}/man/man1/notmuch-mutt.1
 
 .include "${MASTERDIR}/Makefile"

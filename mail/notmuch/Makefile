@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	notmuch
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES?=	mail
 MASTER_SITES=	https://notmuchmail.org/releases/
 
@@ -27,7 +27,7 @@ TEST_DEPENDS=	bash:shells/bash \
 		gwc:sysutils/coreutils \
 		${LOCALBASE}/bin/gdb:devel/gdb
 
-USES=		compiler:c++11-lang gmake pkgconfig python:build,test
+USES=		compiler:c++11-lang gmake gnome pkgconfig python:build,test
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
@@ -60,12 +60,16 @@ DOXYGEN_CONFIGURE_WITH=	api-docs
 MANPAGES_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 MANPAGES_CONFIGURE_WITH=	docs
 
-# install completions even in absence of shells/bash-completions
+# Install bash completions without incurring a dependcy on
+# shells/bash-completion.  Also avoid automatic installation of
+# info pages on FreeBSD 10.
 post-configure:
 	${REINPLACE_CMD} \
+		-e '/^BASH_ABSOLUTE[[:blank:]]*=/s|=.*|=${LOCALBASE}/bin/bash|' \
+		-e '/^HAVE_BASH[[:blank:]]*=/s/=.*/=1/' \
 		-e '/^HAVE_INSTALL_INFO[[:blank:]]*=/s/=.*/=0/' \
 		-e '/^HAVE_MAKEINFO[[:blank:]]*=/s/=.*/=0/' \
-		-e '/^WITH_BASH[[:blank:]]*=/s/=.*/= 1/' \
+		-e '/^WITH_BASH[[:blank:]]*=/s/=.*/=1/' \
 		${WRKSRC}/Makefile.config
 
 post-install:
