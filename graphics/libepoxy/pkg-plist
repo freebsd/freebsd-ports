@@ -1,6 +1,6 @@
 include/epoxy/common.h
-%%EGL%%include/epoxy/egl.h
-%%EGL%%include/epoxy/egl_generated.h
+include/epoxy/egl.h
+include/epoxy/egl_generated.h
 include/epoxy/gl.h
 include/epoxy/gl_generated.h
 include/epoxy/glx.h
