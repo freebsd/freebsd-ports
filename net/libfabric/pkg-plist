@@ -149,7 +149,6 @@ man/man3/fi_writev.3.gz
 man/man7/fabric.7.gz
 man/man7/fi_direct.7.gz
 man/man7/fi_provider.7.gz
-man/man7/fi_rxm.7.gz
-man/man7/fi_sockets.7.gz
-man/man7/fi_udp.7.gz
-%%VERBS%%man/man7/fi_verbs.7.gz
+%%RXM%%man/man7/fi_rxm.7.gz
+%%SOCKETS%%man/man7/fi_sockets.7.gz
+%%UDP%%man/man7/fi_udp.7.gz
