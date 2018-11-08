@@ -51,21 +51,4 @@ QT5_CMAKE_OFF=	-DENABLE_QT:BOOL=OFF
 QT5_USES=	qt:5
 QT5_USE=	QT=core,buildtools,gui,declarative,network,qmake,widgets
 
-.include <bsd.port.pre.mk>
-
-# Needs Clang 4.0+ to build, see:
-# https://sourceforge.net/p/flightgear/codetickets/2015/
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 40
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang40:devel/llvm40
-CPP=	${LOCALBASE}/bin/clang-cpp40
-CC=	${LOCALBASE}/bin/clang40
-CXX=	${LOCALBASE}/bin/clang++40
-.endif
-
-# Chase devel/simgear compiler version
-.if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 46
-USE_GCC=	yes
-CXXFLAGS+=	-D_GLIBCXX_USE_C99
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
