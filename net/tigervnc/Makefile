@@ -2,8 +2,8 @@
 
 PORTNAME=	tigervnc
 PORTVERSION=	1.9.0
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	net x11-servers
 
 MAINTAINER=	meta@FreeBSD.org
@@ -24,14 +24,14 @@ LIB_DEPENDS=	libunwind.so:devel/libunwind \
 RUN_DEPENDS=	${LOCALBASE}/share/X11/xkb/rules/base:x11/xkeyboard-config \
 		xkbcomp:x11/xkbcomp
 
-CONFLICTS=	tigervnc-devel-[0-9]* \
-		tightvnc-[0-9]*
-
-USES=		autoreconf:build cmake:noninja cpe iconv jpeg libtool \
+USES=		autoreconf:build cmake:noninja cpe gl iconv jpeg libtool \
 		pkgconfig python ssl
 USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
+
+CONFLICTS=	tightvnc-[0-9]*
+
 GH_ACCOUNT=	TigerVNC
 
 USE_XORG+=	ice pixman sm x11 xau xdamage xdmcp xext xfixes xfont xkbfile \
@@ -108,7 +108,7 @@ CONFIGURE_ARGS+=	\
 
 .include <bsd.port.pre.mk>
 
-TIGERVNC_XORG_PATCH_VER=	118
+TIGERVNC_XORG_PATCH_VER=	${MAKE} -C "${PORTSDIR}/x11-servers/xorg-server" -V PORTVERSION:R:S,\.,,g
 
 # import from x11-server/xorg-server/Makefile
 .if ${SSL_DEFAULT} == base
@@ -125,7 +125,7 @@ pre-patch:
 	@${CP} -R `${XORG_WRKDIR}`/ ${WRKSRC}/unix/xserver/
 
 post-patch:
-	@cd ${WRKSRC}/unix/xserver/ && ${PATCH} -p1 < ${WRKSRC}/unix/xserver${TIGERVNC_XORG_PATCH_VER}.patch
+	@cd ${WRKSRC}/unix/xserver/ && ${PATCH} -p1 < ${WRKSRC}/unix/xserver`${TIGERVNC_XORG_PATCH_VER}`.patch
 
 post-configure:
 	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${AUTORECONF} -fiv
