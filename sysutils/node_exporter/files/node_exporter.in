@@ -38,7 +38,8 @@ load_rc_config $name
 pidfile=/var/run/node_exporter.pid
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/node_exporter"
-command_args="-p ${pidfile} /usr/bin/env ${procname} \
+command_args="-p ${pidfile} -T ${name} \
+    /usr/bin/env ${procname} \
     --web.listen-address=${node_exporter_listen_address} \
     --collector.textfile.directory=${node_exporter_textfile_dir} \
     ${node_exporter_args}"
@@ -48,10 +49,18 @@ start_precmd=node_exporter_startprecmd
 node_exporter_startprecmd()
 {
     if [ ! -e ${pidfile} ]; then
-        install -o ${node_exporter_user} -g ${node_exporter_group} /dev/null ${pidfile};
+        install \
+            -o ${node_exporter_user} \
+            -g ${node_exporter_group} \
+            /dev/null ${pidfile};
     fi
     if [ ! -d ${node_exporter_textfile_dir} ]; then
-        install -d -o ${node_exporter_user} -g ${node_exporter_group} -m 1755 ${node_exporter_textfile_dir}
+        install \
+            -d \
+            -o ${node_exporter_user} \
+            -g ${node_exporter_group} \
+            -m 1755 \
+            ${node_exporter_textfile_dir}
     fi
 }
 
