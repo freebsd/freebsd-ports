@@ -3,12 +3,12 @@
 
 PORTNAME=	rss2email
 PORTVERSION=	2.71
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.allthingsrss.com/rss2email/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	srg@guglielmo.us
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emails posts from subscribed RSS/Atom newsfeeds
 
 LICENSE=	GPLv2 GPLv3
