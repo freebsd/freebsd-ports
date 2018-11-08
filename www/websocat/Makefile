@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	websocat
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -19,96 +18,118 @@ GH_ACCOUNT=	vi
 
 CARGO_FEATURES=	ssl seqpacket
 
-CARGO_CRATES=	atty-0.2.11 \
-		base64-0.5.2 \
-		base64-0.6.0 \
+CARGO_CRATES=	arrayvec-0.4.7 \
+		atty-0.2.11 \
+		base64-0.9.3 \
 		bitflags-0.9.1 \
 		bitflags-1.0.4 \
-		byteorder-1.2.6 \
-		bytes-0.4.9 \
-		cc-1.0.22 \
-		cfg-if-0.1.5 \
+		byteorder-1.2.7 \
+		bytes-0.4.10 \
+		cc-1.0.25 \
+		cfg-if-0.1.6 \
 		clap-2.32.0 \
-		core-foundation-0.2.3 \
-		core-foundation-sys-0.2.3 \
-		derivative-1.0.0 \
-		either-1.5.0 \
+		cloudabi-0.0.3 \
+		core-foundation-0.5.1 \
+		core-foundation-sys-0.5.1 \
+		crossbeam-deque-0.6.1 \
+		crossbeam-epoch-0.5.2 \
+		crossbeam-utils-0.5.0 \
+		derivative-1.0.1 \
 		env_logger-0.5.13 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
-		futures-0.1.17 \
-		httparse-1.3.2 \
+		futures-0.1.25 \
+		httparse-1.3.3 \
 		humantime-1.1.1 \
-		hyper-0.10.13 \
+		hyper-0.10.15 \
 		idna-0.1.5 \
 		iovec-0.1.2 \
-		itertools-0.5.10 \
 		kernel32-sys-0.2.2 \
 		language-tags-0.2.2 \
-		lazy_static-0.2.11 \
 		lazy_static-1.1.0 \
-		lazycell-0.6.0 \
+		lazycell-1.2.0 \
 		libc-0.2.43 \
+		lock_api-0.1.4 \
 		log-0.3.9 \
-		log-0.4.4 \
+		log-0.4.6 \
 		matches-0.1.8 \
+		memoffset-0.2.1 \
 		mime-0.2.6 \
-		mio-0.6.15 \
+		mio-0.6.16 \
 		mio-named-pipes-0.1.6 \
-		mio-uds-0.6.6 \
+		mio-uds-0.6.7 \
 		miow-0.2.1 \
 		miow-0.3.3 \
-		native-tls-0.1.5 \
+		native-tls-0.2.2 \
 		net2-0.2.33 \
+		nodrop-0.1.12 \
 		num_cpus-1.8.0 \
-		openssl-0.9.24 \
+		openssl-0.10.15 \
 		openssl-probe-0.1.2 \
-		openssl-sys-0.9.35 \
+		openssl-sys-0.9.39 \
+		owning_ref-0.3.3 \
+		parking_lot-0.6.4 \
+		parking_lot_core-0.3.1 \
 		percent-encoding-1.0.1 \
-		pkg-config-0.3.13 \
-		proc-macro2-0.4.13 \
+		pkg-config-0.3.14 \
+		proc-macro2-0.4.20 \
 		quick-error-1.2.2 \
 		quote-0.3.15 \
-		quote-0.6.8 \
-		rand-0.3.22 \
-		rand-0.4.3 \
+		quote-0.6.9 \
+		rand-0.5.5 \
+		rand_core-0.2.2 \
+		rand_core-0.3.0 \
 		readwrite-0.1.1 \
 		redox_syscall-0.1.40 \
 		redox_termios-0.1.1 \
 		remove_dir_all-0.5.1 \
-		safemem-0.2.0 \
-		schannel-0.1.13 \
+		rustc_version-0.2.3 \
+		safemem-0.3.0 \
+		schannel-0.1.14 \
 		scoped-tls-0.1.2 \
-		security-framework-0.1.16 \
-		security-framework-sys-0.1.16 \
-		sha1-0.2.0 \
-		slab-0.3.0 \
+		scopeguard-0.3.3 \
+		security-framework-0.2.1 \
+		security-framework-sys-0.2.1 \
+		semver-0.9.0 \
+		semver-parser-0.7.0 \
+		sha1-0.6.0 \
 		slab-0.4.1 \
 		slab_typesafe-0.1.2 \
+		smallvec-0.6.5 \
 		smart-default-0.2.0 \
-		socket2-0.3.7 \
-		structopt-0.2.10 \
-		structopt-derive-0.2.10 \
-		syn-0.10.8 \
+		socket2-0.3.8 \
+		stable_deref_trait-1.1.1 \
+		structopt-0.2.12 \
+		structopt-derive-0.2.12 \
 		syn-0.11.11 \
-		syn-0.14.9 \
+		syn-0.15.17 \
 		synom-0.11.3 \
-		tempdir-0.3.7 \
-		termcolor-1.0.2 \
+		tempfile-3.0.4 \
+		termcolor-1.0.4 \
 		termion-1.5.1 \
 		textwrap-0.10.0 \
 		time-0.1.40 \
-		tokio-core-0.1.12 \
+		tokio-0.1.11 \
+		tokio-codec-0.1.1 \
+		tokio-core-0.1.17 \
+		tokio-current-thread-0.1.3 \
+		tokio-executor-0.1.5 \
 		tokio-file-unix-0.4.2 \
-		tokio-io-0.1.5 \
+		tokio-fs-0.1.4 \
+		tokio-io-0.1.10 \
 		tokio-process-0.1.6 \
+		tokio-reactor-0.1.6 \
 		tokio-signal-0.1.5 \
-		tokio-stdin-stdout-0.1.4 \
-		tokio-timer-0.1.2 \
-		tokio-tls-0.1.4 \
+		tokio-stdin-stdout-0.1.5 \
+		tokio-tcp-0.1.2 \
+		tokio-threadpool-0.1.8 \
+		tokio-timer-0.2.7 \
+		tokio-tls-0.2.0 \
+		tokio-udp-0.1.2 \
 		tokio-uds-0.1.5 \
+		tokio-uds-0.2.3 \
 		traitobject-0.1.0 \
 		typeable-0.1.2 \
 		unicase-1.4.2 \
@@ -117,12 +138,14 @@ CARGO_CRATES=	atty-0.2.11 \
 		unicode-width-0.1.5 \
 		unicode-xid-0.0.4 \
 		unicode-xid-0.1.0 \
+		unreachable-1.0.0 \
 		url-1.7.1 \
 		vcpkg-0.2.6 \
-		version_check-0.1.4 \
-		websocket-0.20.3 \
+		version_check-0.1.5 \
+		void-1.0.2 \
+		websocket-0.21.1 \
 		winapi-0.2.8 \
-		winapi-0.3.5 \
+		winapi-0.3.6 \
 		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.1 \
