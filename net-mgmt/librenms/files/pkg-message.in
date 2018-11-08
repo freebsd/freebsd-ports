@@ -1,13 +1,16 @@
+=== UPGRADE details ===
+
+Depending on the version, you may have to run the upgrade script.
+
+cd %%WWWDIR%%
+./build-base.php
+
+re: https://docs.librenms.org/#General/Updating/
+
 === Configuration details ===
-The following is recommended for /usr/local/etc/mysql/my.cnf
 
-NOTE: these are global settings.  Please read this first:
-
-http://dev.mysql.com/doc/refman/5.7/en/sql-mode.html
-
-[mysqld]
-innodb_file_per_table=1
-sql-mode=""
+NOTE: setting sql-mode="" is no longer required. You can remove
+it from /usr/local/etc/mysql/my.cnf
 
 You can mostly follow the guide at:
 http://docs.librenms.org/

@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	1.43
-PORTREVISION=	1
+PORTVERSION=	1.45
 # RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-RELEASE_TIMESTAMP=	1535704658
+RELEASE_TIMESTAMP=	1539772408
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -30,7 +29,7 @@ RUN_DEPENDS+=	rrdtool:databases/rrdtool \
 
 USES=		python${PY_MYSQL} shebangfix
 
-USE_PHP=	ctype curl filter gd hash json ldap mbstring mcrypt mysqli openssl pdo posix session simplexml snmp tokenizer xml zip
+USE_PHP=	ctype curl filter gd hash json ldap mbstring mysqli openssl pdo pdo_mysql posix session simplexml snmp tokenizer xml zip
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	librenms
@@ -104,7 +103,7 @@ ROOT_FILES=	.env.example addhost.php adduser.php alerts.php artisan billing-calc
 		poller-wrapper.py readmegen.yml renamehost.php services-wrapper.py snmp-scan.py \
 		snmptrap.php syslog.php validate.php
 
-ROOT_DIRS=	LibreNMS app bootstrap config contrib database doc html includes lib licenses logs mibs misc resources routes scripts sql-schema storage tests
+ROOT_DIRS=	LibreNMS app bootstrap config contrib database doc html includes licenses logs mibs misc resources routes scripts sql-schema storage tests
 
 # these are directories which require a generic @DIR entry in pkg-plist
 OTHER_DIRS=	storage/app/public \
