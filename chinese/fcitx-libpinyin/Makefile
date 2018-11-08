@@ -3,6 +3,7 @@
 
 PORTNAME=	fcitx-libpinyin
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/:body \
 		http://download.fcitx-im.org/data/:data
@@ -34,7 +35,7 @@ QT5_DESC=	Enable Qtr for dictmanager
 
 .if ${PORT_OPTIONS:MQT5}
 USES+=		qt:5
-USE_QT=		qmake_build gui webengine webkit buildtools
+USE_QT=		qmake_build gui webengine buildtools_build
 USE_LDCONFIG=	${PREFIX}/lib/fcitx/qt
 PLIST_SUB+=	QT5=""
 .else
