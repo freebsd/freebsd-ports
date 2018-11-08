@@ -2,11 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	mod_http2
-PORTVERSION=	1.11.3
+PORTVERSION=	1.11.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-devel
+
+DEPRECATED =	Use the module that is shipped with Apache 2.4
+EXPIRATION_DATE=2019-01-01
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Early experience HTTP/2 modules for Apache httpd
