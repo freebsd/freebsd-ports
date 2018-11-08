@@ -3,6 +3,7 @@
 PORTNAME=	libfabric
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,19 +22,23 @@ CONFIGURE_ARGS=	--disable-static
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include/libepoll-shim
-LDFLAGS+=	${LOCALBASE}/lib/libepoll-shim.so -pthread
+LDFLAGS+=	${LOCALBASE}/lib/libepoll-shim.so
 
-OPTIONS_DEFINE=		VERBS
-OPTIONS_SUB=		yes
-
-VERBS_DESC=		Build 'verbs' provider
-VERBS_CONFIGURE_ENABLE=	verbs
+OPTIONS_MULTI=			PROVIDERS
+OPTIONS_MULTI_PROVIDERS=	RXD RXM SOCKETS TCP UDP
+OPTIONS_DEFAULT=		${OPTIONS_MULTI_PROVIDERS}
+OPTIONS_SUB=			yes
+PROVIDERS_DESC=			Providers to build:
 
 .if exists(/usr/include/infiniband/verbs.h) # some earlier FreeBSD 11 systems don't have it
-OPTIONS_DEFAULT+=	VERBS
-.else
-VERBS_BROKEN=		infiniband/verbs.h not available on your system
+OPTIONS_MULTI_PROVIDERS+=	VERBS
+VERBS_PLIST_FILES=		man/man7/fi_verbs.7.gz
 .endif
+
+.for p in ${OPTIONS_MULTI_PROVIDERS}
+${p}_DESC=			'${p:tl}' provider
+${p}_CONFIGURE_ENABLE=		${p:tl}
+.endfor
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.[ch]" -and -exec ${GREP} -q '<asm/types\.h>' {} \; -print | ${XARGS} ${REINPLACE_CMD} 's|<asm/types\.h>|<sys/types.h>|'
