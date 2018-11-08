@@ -88,6 +88,7 @@
     SUBDIR += lzop
     SUBDIR += makeself
     SUBDIR += mar
+    SUBDIR += maxcso
     SUBDIR += minizip
     SUBDIR += mscompress
     SUBDIR += mtf

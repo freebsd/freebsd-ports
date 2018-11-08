@@ -1,0 +1,5 @@
+A fast ISO to CSO compression program for use with PSP (PlayStation Portable)
+and PS2 (PlayStation 2) emulators, which uses multiple algorithms for best
+compression ratio.
+
+WWW: https://github.com/unknownbrackets/maxcso
