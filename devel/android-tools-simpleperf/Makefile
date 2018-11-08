@@ -11,7 +11,7 @@ COMMENT=	Android simpleperf tool
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
+BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	android:bionic,core jbeich
@@ -24,13 +24,13 @@ BUILD_WRKSRC=	${WRKSRC}/simpleperf
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 TEST_WRKSRC=	${BUILD_WRKSRC}
 MAKEFILE=	${FILESDIR}/Makefile
-MAKE_ENV=	BINDIR="${PREFIX}/bin" LLVM_CONFIG="llvm-config${LLVM_VER}"
+MAKE_ENV=	BINDIR="${PREFIX}/bin" LLVM_CONFIG="llvm-config${LLVM_DEFAULT}"
 ALL_TARGET=	all
 TEST_TARGET=	test
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (llvm deps)
 PLIST_FILES=	bin/simpleperf
 
-LLVM_VER?=	70 # XXX Move to DEFAULT_VERSIONS
+LLVM_DEFAULT?=	70
 
 OPTIONS_DEFINE=	TEST
 
