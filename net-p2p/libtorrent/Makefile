@@ -2,7 +2,7 @@
 
 PORTNAME=	libtorrent
 PORTVERSION=	0.13.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://rtorrent.net/downloads/
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_SSL=	openssl-devel
 
-USES=		autoreconf:build compiler:c++11-lang libtool pathfix pkgconfig ssl
+USES=		autoreconf compiler:c++11-lang libtool pathfix pkgconfig ssl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
 CONFIGURE_ENV=	OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto" OPENSSL_CFLAGS="-I\
@@ -39,18 +39,6 @@ KQUEUE_CONFIGURE_WITH=	kqueue
 # /usr/local/lib/libtorrent.so: undefined reference to `__sync_fetch_and_and_8'
 .if ${ARCH} == i386 && ${CHOSEN_COMPILER_TYPE} == gcc || ${ARCH} == powerpc
 CONFIGURE_ARGS+=--disable-instrumentation
-.endif
-
-post-patch:
-.if ${OPSYS} == FreeBSD
-	@${FIND} ${WRKSRC} \( -name '*.h' -o -name '*.cc' \) -type f \
-		-exec ${REINPLACE_CMD} -e 's/tr1::/std::/g' {} \; \
-		-exec ${REINPLACE_CMD} -e 's/std::std::/std::/g' {} \; \
-		-exec ${REINPLACE_CMD} -e '/namespace tr1/d' {} \; \
-		-exec ${REINPLACE_CMD} -e '/include/s,tr1/,,' {} \;
-	@${REINPLACE_CMD} -e 's/\.assign/.fill/' \
-		${WRKSRC}/src/torrent/utils/extents.h \
-		${WRKSRC}/src/torrent/utils/log.cc
 .endif
 
 post-install:
