@@ -9,6 +9,9 @@ man/man1/kdenlive.1.gz
 man/man1/kdenlive_render.1.gz
 share/applications/org.kde.kdenlive.desktop
 share/config.kcfg/kdenlivesettings.kcfg
+%%PORTDOCS%%%%DOCSDIR%%/Kdenlive/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/Kdenlive/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/Kdenlive/README
 share/icons/hicolor/128x128/actions/kdenlive-select-all.png
 share/icons/hicolor/128x128/apps/kdenlive.png
 share/icons/hicolor/128x128/mimetypes/application-x-kdenlivetitle.png
