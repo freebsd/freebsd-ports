@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	collectd
-PORTVERSION=	5.8.0
-PORTREVISION=	1
+PORTVERSION=	5.8.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://storage.googleapis.com/collectd-tarballs/
 PKGNAMESUFFIX=	5
