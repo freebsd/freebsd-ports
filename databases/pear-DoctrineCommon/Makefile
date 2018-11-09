@@ -9,9 +9,11 @@ MASTER_SITES=	http://pear.doctrine-project.org/get/
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Shared code for Doctrine PHP object relational mapper
 
-LICENSE=	LGPL21
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	pear
+USES=		pear
 PEAR_CHANNEL=	doctrine
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
