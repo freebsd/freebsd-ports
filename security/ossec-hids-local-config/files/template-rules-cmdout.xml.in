@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template_config>
+
+  <rules>
+    <include>freebsd_cmdout_rules.xml</include>
+  </rules>
+
+</template_config>

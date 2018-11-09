@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<group name="ossec,">
+
+  <rule id="56041" level="1">
+    <if_sid>530</if_sid>
+    <match>ossec: output: 'freebsd-last-logins'</match>
+    <check_diff />
+    <description>List of the last logged in users.</description> 
+  </rule>
+
+  <rule id="56042" level="1">
+    <if_sid>530</if_sid>
+    <match>ossec: output: 'freebsd-open-ports-tcp4-all'</match>
+    <check_diff />
+    <description>Listening IPv4 TCP port opened or closed.</description>
+  </rule>
+
+  <rule id="56043" level="7">
+    <if_sid>530</if_sid>
+    <match>ossec: output: 'freebsd-open-ports-tcp4'</match>
+    <check_diff />
+    <description>Listening IPv4 TCP port opened or closed.</description>
+  </rule>
+
+  <rule id="56044" level="1">
+    <if_sid>530</if_sid>
+    <match>ossec: output: 'freebsd-open-ports-tcp6-all'</match>
+    <check_diff />
+    <description>Listening IPv6 TCP port opened or closed.</description>
+  </rule>
+
+  <rule id="56045" level="7">
+    <if_sid>530</if_sid>
+    <match>ossec: output: 'freebsd-open-ports-tcp6'</match>
+    <check_diff />
+    <description>Listening IPv6 TCP port opened or closed.</description>
+  </rule>
+
+  <rule id="56046" level="1">
+    <if_sid>530</if_sid>
+    <match>ossec: output: 'freebsd-open-ports-udp4-all'</match>
+    <check_diff />
+    <description>Listening IPv4 UDP port opened or closed.</description>
+  </rule>
+
+  <rule id="56047" level="7">
+    <if_sid>530</if_sid>
+    <match>ossec: output: 'freebsd-open-ports-udp4'</match>
+    <check_diff />
+    <description>Listening IPv4 UDP port opened or closed.</description>
+  </rule>
+
+  <rule id="56048" level="1">
+    <if_sid>530</if_sid>
+    <match>ossec: output: 'freebsd-open-ports-udp6-all'</match>
+    <check_diff />
+    <description>Listening IPv6 UDP port opened or closed.</description>
+  </rule>
+
+  <rule id="56049" level="7">
+    <if_sid>530</if_sid>
+    <match>ossec: output: 'freebsd-open-ports-udp6'</match>
+    <check_diff />
+    <description>Listening IPv6 UDP port opened or closed.</description>
+  </rule>
+
+</group>

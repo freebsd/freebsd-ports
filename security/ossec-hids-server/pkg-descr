@@ -1,6 +1,0 @@
-OSSEC is an Open Source Host-based Intrusion Detection System.
-It performs log analysis, integrity checking, Windows registry
-monitoring, rootkit detection, time-based alerting and active
-response.
-
-WWW: http://www.ossec.net/

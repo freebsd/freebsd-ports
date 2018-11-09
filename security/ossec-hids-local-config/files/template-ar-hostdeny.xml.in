@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template_config>
+
+  <active-response>
+    <!-- Deny the IP in "/etc/hosts.allow" or "/etc/hosts.deny". -->
+    <command>host-deny</command>
+    <location>local</location>
+    <level>6</level>
+    <timeout>600</timeout>
+  </active-response>
+
+</template_config>

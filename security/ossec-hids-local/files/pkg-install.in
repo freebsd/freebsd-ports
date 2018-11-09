@@ -1,0 +1,23 @@
+#!/bin/sh
+
+ossec_home="%%OSSEC_HOME%%"
+client_keys="${ossec_home}/etc/client.keys"
+
+create_file() {
+    local path=$1
+    local owner=$2
+    local mode=$3
+
+    if [ ! -e "${path}" ]; then
+        touch "${path}" && chown ${owner} "${path}" && chmod ${mode} "${path}"
+    fi
+}
+
+if [ "$2" == "POST-INSTALL"  ]; then
+    pw usermod %%OSSEC_USER%% -d "${ossec_home}"
+    pw usermod ossecm -d "${ossec_home}"
+    pw usermod ossecr -d "${ossec_home}"
+    chown %%USER%%:%%OSSEC_GROUP%% "${ossec_home}"
+
+    create_file "${client_keys}" root:ossec 0640
+fi

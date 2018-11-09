@@ -1,0 +1,32 @@
+#!/bin/sh
+
+ossec_home="%%OSSEC_HOME%%"
+ar_bin_dir="${ossec_home}/active-response/bin"
+ossec_conf="${ossec_home}/etc/ossec.conf"
+ossec_conf_bak="${ossec_conf}.bak"
+agent_conf="${ossec_home}/etc/shared/agent.conf"
+agent_conf_bak="${ossec_home}/etc/agent.conf.bak"
+
+if [ "$2" == "POST-INSTALL"  ]; then
+    ln -f "${ar_bin_dir}/%%FW_DROP%%" "${ar_bin_dir}/firewall-drop.sh"
+
+    if [ -e "${ossec_conf}" ]; then
+        mv -f "${ossec_conf}" "${ossec_conf_bak}"
+        echo
+        echo "WARNING:"
+        echo "  Existing \"${ossec_conf}\" has been saved to \"${ossec_conf_bak}\"."
+        echo
+    fi
+
+    case "$1" in
+        ossec-hids-server*)
+            if [ -e "${agent_conf}" ]; then
+                mv -f "${agent_conf}" "${agent_conf_bak}"
+                echo
+                echo "WARNING:"
+                echo "  Existing \"${agent_conf}\" has been saved to \"${agent_conf_bak}\"."
+                echo
+            fi
+            ;;
+    esac
+fi

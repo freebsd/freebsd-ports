@@ -5,6 +5,38 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20181109
+  AFFECTS: users of security/ossec-hids-server
+  AUTHOR: dominik.lisiak@bemsoft.pl
+
+  The "ossechids_enable" rc variable has been renamed to "ossec_hids_enable".
+
+  If using database output, you need to recreate database using new schema
+  provided in /usr/local/share/doc/ossec-hids.
+
+20181109
+  AFFECTS: users of security/ossec-hids-local
+  AUTHOR: dominik.lisiak@bemsoft.pl
+
+  The "ossechids_enable" rc variable has been renamed to "ossec_hids_enable".
+
+  If using database output, you need to recreate database using new schema
+  provided in /usr/local/share/doc/ossec-hids.
+
+20181109
+  AFFECTS: users of security/ossec-hids-client
+  AUTHOR: dominik.lisiak@bemsoft.pl
+
+  The ossec-hids-client port has been renamed to ossec-hids-agent.
+  Portmaster users will need to run this command:
+
+  portmaster -o security/ossec-hids-agent security/ossec-hids-client
+
+  If the switch doesn't happen automatically for you, just delete the
+  ossec-hids-client package and install ossec-hids-agent.
+
+  The "ossechids_enable" rc variable has been renamed to "ossec_hids_enable".
+
 20181104:
   AFFECTS: users of sysutils/ansible*
   AUTHOR: lifanov@FreeBSD.org

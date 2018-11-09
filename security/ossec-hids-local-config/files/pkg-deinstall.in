@@ -1,0 +1,10 @@
+#!/bin/sh
+
+ossec_home="%%OSSEC_HOME%%"
+ossec_conf="${ossec_home}/etc/ossec.conf"
+agent_conf="${ossec_home}/etc/shared/agent.conf"
+
+if [ "$2" == "DEINSTALL"  ]; then
+    rm -f "${ossec_conf}"
+    rm -f "${agent_conf}"
+fi

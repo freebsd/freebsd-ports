@@ -1,0 +1,10 @@
+All the files related to OSSEC have been installed in:
+%%OSSEC_HOME%%
+
+You need to create main configuration file:
+%%OSSEC_HOME%%/etc/ossec.conf
+
+For information on proper configuration see:
+https://www.ossec.net/docs/syntax/ossec_config.html
+
+To enable the startup script add ossec_hids_enable="YES" to /etc/rc.conf.

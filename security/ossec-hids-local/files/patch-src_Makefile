@@ -1,0 +1,10 @@
+--- src/Makefile.orig	2018-10-11 22:25:16 UTC
++++ src/Makefile
+@@ -406,7 +406,6 @@ endif
+ 	install -d -m 0750 -o ${OSSEC_USER} -g ${OSSEC_GROUP} ${PREFIX}/queue/diff
+ 
+ 	install -d -m 0550 -o root -g ${OSSEC_GROUP} ${PREFIX}/etc
+-	install -m 0440 -o root -g ${OSSEC_GROUP} /etc/localtime ${PREFIX}/etc
+ 
+ 	install -d -m 1550 -o root -g ${OSSEC_GROUP} ${PREFIX}/tmp
+ 

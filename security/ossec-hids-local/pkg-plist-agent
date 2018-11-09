@@ -1,0 +1,79 @@
+@dir(,ossec,0550) %%OSSEC_HOME%%
+@dir(,ossec,0550) %%OSSEC_HOME%%/active-response
+@dir(,ossec,0550) %%OSSEC_HOME%%/active-response/bin
+@(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/disable-account.sh
+@(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/firewalld-drop.sh
+@(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/host-deny.sh
+@(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/ip-customblock.sh
+@(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/ipfilter.sh
+@(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/ipfw.sh
+@(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/ipfw_mac.sh
+@(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/npf.sh
+@(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/ossec-pagerduty.sh
+@(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/ossec-slack.sh
+@(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/ossec-tweeter.sh
+@(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/pf.sh
+@(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/restart-ossec.sh
+@(,ossec,0550) %%OSSEC_HOME%%/active-response/bin/route-null.sh
+@dir(,,0550) %%OSSEC_HOME%%/bin
+@(,,0550) %%OSSEC_HOME%%/bin/agent-auth
+@(,,0550) %%OSSEC_HOME%%/bin/manage_agents
+@(,,0550) %%OSSEC_HOME%%/bin/ossec-agentd
+@(,,0550) %%OSSEC_HOME%%/bin/ossec-control
+@(,,0550) %%OSSEC_HOME%%/bin/ossec-execd
+@(,,0550) %%OSSEC_HOME%%/bin/ossec-logcollector
+@(,,0550) %%OSSEC_HOME%%/bin/ossec-lua
+@(,,0550) %%OSSEC_HOME%%/bin/ossec-luac
+@(,,0550) %%OSSEC_HOME%%/bin/ossec-syscheckd
+@(,,0550) %%OSSEC_HOME%%/bin/util.sh
+@dir(,ossec,0550) %%OSSEC_HOME%%/etc
+@(,ossec,0640) %%OSSEC_HOME%%/etc/internal_options.conf
+@sample(,ossec,0640) %%OSSEC_HOME%%/etc/local_internal_options.conf.sample
+@dir(,ossec,0770) %%OSSEC_HOME%%/etc/shared
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/acsc_office2016_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_apache2224_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_debian_linux_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_debianlinux7-8_L1_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_debianlinux7-8_L2_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_mysql5-6_community_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_mysql5-6_enterprise_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_rhel5_linux_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_rhel6_linux_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_rhel7_linux_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_rhel_linux_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_sles11_linux_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_sles12_linux_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_win10_enterprise_L1_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_win10_enterprise_L2_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_win2012r2_domainL1_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_win2012r2_domainL2_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_win2012r2_memberL1_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_win2012r2_memberL2_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_win2016_domainL1_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_win2016_domainL2_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_win2016_memberL1_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/cis_win2016_memberL2_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/rootkit_files.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/rootkit_trojans.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/system_audit_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/system_audit_ssh.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/win_applications_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/win_audit_rcl.txt
+@(ossec,ossec,0644) %%OSSEC_HOME%%/etc/shared/win_malware_rcl.txt
+@dir(ossec,ossec,0750) %%OSSEC_HOME%%/logs
+@dir(,ossec,0550) %%OSSEC_HOME%%/queue
+@dir(ossec,ossec,0770) %%OSSEC_HOME%%/queue/alerts
+@dir(ossec,ossec,0750) %%OSSEC_HOME%%/queue/diff
+@dir(ossec,ossec,0750) %%OSSEC_HOME%%/queue/ossec
+@dir(ossec,ossec,0750) %%OSSEC_HOME%%/queue/rids
+@dir(ossec,ossec,0750) %%OSSEC_HOME%%/queue/syscheck
+@dir(,ossec,1550) %%OSSEC_HOME%%/tmp
+@dir(,ossec,0550) %%OSSEC_HOME%%/var
+@dir(,ossec,0770) %%OSSEC_HOME%%/var/run
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/SUPPORT.md
+%%PORTDOCS%%%%DOCSDIR%%/ossec.conf.sample

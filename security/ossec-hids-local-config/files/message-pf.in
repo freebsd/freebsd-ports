@@ -1,0 +1,4 @@
+Add the ossec_fwtable to /etc/pf.conf if using "firewall-drop" active response:
+  table <ossec_fwtable> persist
+  block in quick from <ossec_fwtable> to any
+  block out quick from any to <ossec_fwtable>

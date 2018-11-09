@@ -1,0 +1,18 @@
+#!/bin/sh
+
+ossec_home="%%OSSEC_HOME%%"
+ar_conf="${ossec_home}/etc/shared/ar.conf"
+merged_mg="${ossec_home}/etc/shared/merged.mg"
+client_keys="${ossec_home}/etc/client.keys"
+firewall_drop="${ossec_home}/active-response/bin/firewall-drop.sh"
+local_time="${ossec_home}/etc/localtime"
+
+if [ "$2" == "DEINSTALL"  ]; then
+    rm -f "${ar_conf}"
+    rm -f "${merged_mg}"
+    if [ ! -s "${client_keys}" ]; then
+        rm -f "${client_keys}"
+    fi
+    rm -f "${firewall_drop}"
+    rm -f "${local_time}"
+fi

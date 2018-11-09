@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-OSSEC_TYPE=	server
+OSSEC_TYPE=	agent
 
 MASTERDIR=	${.CURDIR}/../ossec-hids-local
 

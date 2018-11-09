@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template_config>
+
+  <remote>
+    <connection>secure</connection>
+    <!-- OSSEC server listens on all interfacees by default. -->
+    <!-- <local_ip>1.2.3.4</local_ip> -->
+  </remote>
+
+  <global>
+    <!-- Uncomment to enable email notifications. -->
+    <!--
+    <email_notification>yes</email_notification>
+    <email_to>example@example.com</email_to>
+    <smtp_server>smtp.example.com</smtp_server>
+    <email_from>ossecm@example.com</email_from>
+    -->
+
+    <!-- List of IP addresses that should never be blocked by the active response (one per element). -->
+    <white_list>127.0.0.1</white_list>
+  </global>
+
+</template_config>
