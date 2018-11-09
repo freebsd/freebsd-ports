@@ -3,15 +3,14 @@
 
 PORTNAME=	libmsocket
 PORTVERSION=	0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel net
 MASTER_SITES=	SF/kageki/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Socket abstraction library for C programmers
 
-BROKEN_SSL=	openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	invalid application of 'sizeof' to an incomplete type 'X509' (aka 'struct x509_st')
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 

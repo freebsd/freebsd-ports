@@ -1,6 +1,6 @@
---- file.c.orig
+--- file.c.orig	2008-10-12 23:30:58 UTC
 +++ file.c
-@@ -171,6 +171,7 @@
+@@ -171,6 +171,7 @@ short lms_file_icanrw(struct stat *fs)
  	gid_t l;
  	register unsigned int i;
  	int grpcnt;
@@ -8,7 +8,7 @@
  
  	if (!fs)
  	{
-@@ -212,13 +213,14 @@
+@@ -212,13 +213,14 @@ short lms_file_icanrw(struct stat *fs)
  			return(1);
  		}
  
@@ -25,7 +25,7 @@
  		{
  			free(glist);
  			return(-1);
-@@ -257,6 +259,7 @@
+@@ -257,6 +259,7 @@ short lms_file_icanr(struct stat *fs)
  	gid_t l;
  	register unsigned int i;
  	int grpcnt;
@@ -33,7 +33,7 @@
  
  	if (!fs)
  	{
-@@ -298,13 +301,14 @@
+@@ -298,13 +301,14 @@ short lms_file_icanr(struct stat *fs)
  			return(1);
  		}
  
