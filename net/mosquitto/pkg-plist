@@ -6,6 +6,7 @@ bin/mosquitto_sub
 @sample %%ETCDIR%%/pskfile.sample
 @sample %%ETCDIR%%/pwfile.sample
 include/mosquitto.h
+include/mosquitto_broker.h
 include/mosquitto_plugin.h
 include/mosquittopp.h
 lib/libmosquitto.so
@@ -14,6 +15,8 @@ lib/libmosquitto.so.%%PORTVERSION%%
 lib/libmosquittopp.so
 lib/libmosquittopp.so.1
 lib/libmosquittopp.so.%%PORTVERSION%%
+libdata/pkgconfig/libmosquitto.pc
+libdata/pkgconfig/libmosquittopp.pc
 man/man1/mosquitto_passwd.1.gz
 man/man1/mosquitto_pub.1.gz
 man/man1/mosquitto_sub.1.gz
