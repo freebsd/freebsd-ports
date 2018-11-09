@@ -2,8 +2,8 @@
 
 PORTNAME=	znc-push
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0-165
-DISTVERSIONSUFFIX=	-g0a36b1c
+DISTVERSION=	1.0.0-167
+DISTVERSIONSUFFIX=	-g5f95488
 CATEGORIES=	irc
 
 MAINTAINER=	dor.bsd@xm0.uk
@@ -20,6 +20,10 @@ USES=	gmake ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jreese
+
+# v2.0.0-{rc,dev} are ancient release candidates from 2014 for the seemingly
+# abandoned Python branch.
+PORTSCOUT=	skipv:v2.0.0-rc,v2.0.0-dev
 
 MAKE_ENV=	version=${PORTVERSION}
 
