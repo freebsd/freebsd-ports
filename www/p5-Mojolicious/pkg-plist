@@ -131,6 +131,7 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/noraptor.png
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/notfound.png
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/pinstripe-dark.png
+%%SITE_PERL%%/Mojolicious/resources/public/mojo/pinstripe-light.png
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/prettify/prettify-mojo-dark.css
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/prettify/run_prettify.js
 %%SITE_PERL%%/Mojolicious/resources/templates/mojo/debug.html.ep
