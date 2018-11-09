@@ -1,13 +1,11 @@
---- config.mk.orig	2017-07-10 22:46:01 UTC
+--- config.mk.orig	2018-09-25 15:27:43 UTC
 +++ config.mk
-@@ -249,7 +249,7 @@ ifeq ($(WITH_DOCS),yes)
+@@ -275,7 +275,7 @@ ifeq ($(WITH_WEBSOCKETS),static)
  endif
  
  INSTALL?=install
--prefix=/usr/local
--mandir=${prefix}/share/man
--localedir=${prefix}/share/locale
-+prefix=${PREFIX}
-+mandir=${PREFIX}/share/man
-+localedir=${PREFIX}/share/locale
- STRIP?=strip
+-prefix?=/usr/local
++prefix?=${PREFIX}
+ incdir?=${prefix}/include
+ libdir?=${prefix}/lib${LIB_SUFFIX}
+ localedir?=${prefix}/share/locale

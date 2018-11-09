@@ -1,21 +1,24 @@
---- CMakeLists.txt.orig	2017-07-10 22:46:01 UTC
+--- CMakeLists.txt.orig	2018-09-25 15:27:43 UTC
 +++ CMakeLists.txt
-@@ -13,6 +13,9 @@ cmake_minimum_required(VERSION 2.8)
+@@ -15,6 +15,9 @@ set (VERSION 1.5.3)
  
- set (VERSION 1.4.14)
+ add_definitions (-DCMAKE -DVERSION=\"${VERSION}\")
  
-+include_directories(%%PREFIX%%/include)
-+link_directories(%%PREFIX%%/lib)
++include_directories(/usr/local/include)
++link_directories(/usr/local/lib)
 +
  if (WIN32)
- 	execute_process(COMMAND cmd /c echo %DATE% %TIME% OUTPUT_VARIABLE TIMESTAMP
- 			OUTPUT_STRIP_TRAILING_WHITESPACE)
-@@ -47,7 +50,7 @@ else (WIN32)
+ 	set (BINDIR .)
+ 	set (SBINDIR .)
+@@ -40,9 +43,9 @@ else (WIN32)
  	set (CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${LIBDIR}")
  	set (INCLUDEDIR include)
  	set (DATAROOTDIR share)
 -	set (MANDIR "${DATAROOTDIR}/man")
 +	set (MANDIR "man")
  	set (SHAREDIR "${DATAROOTDIR}/mosquitto")
+-	set (PKGCONFIGDIR "${LIBDIR}/pkgconfig")
++	set (PKGCONFIGDIR "${CMAKE_LIBDATADIR}/pkgconfig")
  endif (WIN32)
  
+ option(WITH_TLS
