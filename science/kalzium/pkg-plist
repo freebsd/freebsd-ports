@@ -11,6 +11,9 @@ include/libkdeedu/parser.h
 include/libkdeedu/psetables.h
 include/libkdeedu/spectrum.h
 include/libkdeedu/spectrumparser.h
+lib/libcompoundviewer.so
+lib/libcompoundviewer.so.5
+lib/libcompoundviewer.so.5.0.0
 lib/libscience.so
 lib/libscience.so.5
 lib/libscience.so.5.0.0
