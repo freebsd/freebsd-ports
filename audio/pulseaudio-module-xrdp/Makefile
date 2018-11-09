@@ -3,6 +3,7 @@
 PORTNAME=	pulseaudio-module-xrdp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	meta@FreeBSD.org
