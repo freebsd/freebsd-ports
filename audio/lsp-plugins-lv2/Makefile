@@ -2,7 +2,7 @@
 
 PORTNAME=	lsp-plugins
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	1.1.4.0.20181107
+DISTVERSION=	1.1.4.0.20181109
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 USES=		gmake gnome iconv pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	sadko4u
-GH_TAGNAME=	e29c646
+GH_TAGNAME=	da2f9b1
 USE_GCC=	any # clang breaks: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=232911
 USE_GNOME=	cairo
 USE_XORG=	x11
