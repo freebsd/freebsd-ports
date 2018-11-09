@@ -1,14 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	dhcpd
-PORTVERSION=	6.0.20170207
-PORTREVISION=	2
+PORTVERSION=	6.4.20181105
 CATEGORIES=	net
 
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	OpenBSD dhcp daemon
 
 LICENSE=	BSD3CLAUSE
+
+USES=		ssl uidfix
 
 WRKSRC_SUBDIR=	src/usr.sbin/${PORTNAME}
 
@@ -17,7 +18,6 @@ GH_ACCOUNT=	koue
 
 CONFLICTS=	isc-dhcp4[1-3]-server*
 
-USES=		ssl uidfix
 USE_RC_SUBR=	dhcpd
 
 CFLAGS+=	-Wall
@@ -30,11 +30,7 @@ NOPF_DESC=	Disable PF support
 
 OPTIONS_SUB=	yes
 
-NOPF_CFLAGS=		-DNO_PF=1
-NOPF_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-dhcp.c \
-			${PATCHDIR}/extra-patch-dhcpd.c \
-			${PATCHDIR}/extra-patch-memory.c \
-			${PATCHDIR}/extra-patch-pfutils.c
+NOPF_CFLAGS=	-DNO_PF=1
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/dhcpd.conf|${PREFIX}/etc/dhcpd.conf|" \
