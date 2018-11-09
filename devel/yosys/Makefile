@@ -29,19 +29,12 @@ GH_TAGNAME=	bab39eacce5c17c42d50a3a60a67cc8a9ee52d98
 BINARY_ALIAS=	python3=${PYTHON_CMD} tclsh=${TCLSH}
 MAKE_ARGS=	ABCEXTERNAL=abc
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-Makefile
-.endif
-
 post-patch:
-.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
-	${REINPLACE_CMD} -e 's|%%GCC_DEFAULT%%|${GCC_DEFAULT}|' \
+	${REINPLACE_CMD} -e '/^CXX =/d; s/^LD = .*/LD = $$(CXX)/' \
+		-e '/^CONFIG/s/clang/${CHOSEN_COMPILER_TYPE}/' \
 		${WRKSRC}/Makefile
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/yosys
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
