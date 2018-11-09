@@ -31,6 +31,6 @@ load_rc_config $name
 required_dirs="%%STATEDIR%%"
 command="${nut_upslog_prefix}/bin/upslog"
 pidfile="%%STATEDIR%%/upslog.pid"
-nut_upslog_flags=${nut_upslog_flags-"-s ${nut_upslog_ups} -l ${nut_upslog_logfile} -i ${nut_upslog_interval}"}
+nut_upslog_flags=${nut_upslog_flags:-"-s ${nut_upslog_ups} -l ${nut_upslog_logfile} -i ${nut_upslog_interval}"}
 
 run_rc_command "$1"
