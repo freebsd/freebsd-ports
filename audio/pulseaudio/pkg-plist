@@ -69,7 +69,7 @@ lib/libpulse-simple.so.0
 lib/libpulse-simple.so.0.1.1
 lib/libpulse.so
 lib/libpulse.so.0
-lib/libpulse.so.0.20.2
+lib/libpulse.so.0.20.3
 %%AVAHI%%lib/pulse-%%PULSE_VERSION%%/modules/libavahi-wrap.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-allow-passthrough.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-device-manager.so
@@ -88,6 +88,7 @@ lib/pulse-%%PULSE_VERSION%%/modules/librtp.so
 %%ALSA%%lib/pulse-%%PULSE_VERSION%%/modules/module-alsa-sink.so
 %%ALSA%%lib/pulse-%%PULSE_VERSION%%/modules/module-alsa-source.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-always-sink.so
+lib/pulse-%%PULSE_VERSION%%/modules/module-always-source.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-augment-properties.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-card-restore.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-cli-protocol-tcp.so
@@ -110,6 +111,7 @@ lib/pulse-%%PULSE_VERSION%%/modules/module-esound-sink.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-filter-apply.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-filter-heuristics.so
 %%GCONF%%lib/pulse-%%PULSE_VERSION%%/modules/module-gconf.so
+%%GSETTINGS%%lib/pulse-%%PULSE_VERSION%%/modules/module-gsettings.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-http-protocol-tcp.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-http-protocol-unix.so
 lib/pulse-%%PULSE_VERSION%%/modules/module-intended-roles.so
@@ -167,6 +169,7 @@ libdata/pkgconfig/libpulse-mainloop-glib.pc
 libdata/pkgconfig/libpulse-simple.pc
 libdata/pkgconfig/libpulse.pc
 %%GCONF%%libexec/pulse/gconf-helper
+%%GSETTINGS%%libexec/pulse/gsettings-helper
 man/man1/esdcompat.1.gz
 man/man1/pacat.1.gz
 man/man1/pacmd.1.gz
@@ -184,6 +187,8 @@ man/man5/default.pa.5.gz
 man/man5/pulse-cli-syntax.5.gz
 man/man5/pulse-client.conf.5.gz
 man/man5/pulse-daemon.conf.5.gz
+%%GSETTINGS%%share/GConf/gsettings/pulseaudio.convert
+%%GSETTINGS%%share/glib-2.0/schemas/org.freedesktop.pulseaudio.gschema.xml
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-input-aux.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-input-dock-mic.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/analog-input-fm.conf
@@ -217,8 +222,13 @@ man/man5/pulse-daemon.conf.5.gz
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/hdmi-output-5.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/hdmi-output-6.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/hdmi-output-7.conf
+%%ALSA%%share/pulseaudio/alsa-mixer/paths/iec958-stereo-input.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/paths/iec958-stereo-output.conf
+%%ALSA%%share/pulseaudio/alsa-mixer/paths/steelseries-arctis-input.conf
+%%ALSA%%share/pulseaudio/alsa-mixer/paths/steelseries-arctis-output-mono.conf
+%%ALSA%%share/pulseaudio/alsa-mixer/paths/steelseries-arctis-output-stereo.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/default.conf
+%%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/dell-dock-tb16-usb-audio.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/force-speaker-and-int-mic.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/force-speaker.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/kinect-audio.conf
@@ -231,6 +241,7 @@ man/man5/pulse-daemon.conf.5.gz
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/native-instruments-traktor-audio6.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/native-instruments-traktorkontrol-s4.conf
 %%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/sb-omni-surround-5.1.conf
+%%ALSA%%share/pulseaudio/alsa-mixer/profile-sets/steelseries-arctis-usb-audio.conf
 %%ZSH%%share/zsh/site-functions/_pulseaudio
 share/locale/as/LC_MESSAGES/pulseaudio.mo
 share/locale/be/LC_MESSAGES/pulseaudio.mo

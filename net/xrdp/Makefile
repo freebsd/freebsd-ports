@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:devel/nasm
 RUN_DEPENDS=	${LOCALBASE}/lib/xorg/modules/libxorgxrdp.so:x11-drivers/xorgxrdp \
-		${LOCALBASE}/lib/pulse-11.1/modules/module-xrdp-sink.so:audio/pulseaudio-module-xrdp
+		${LOCALBASE}/lib/pulse-12.2/modules/module-xrdp-sink.so:audio/pulseaudio-module-xrdp
 
 USES=		autoreconf:build jpeg localbase libtool pkgconfig ssl
 USE_XORG=	ice pixman sm x11 xfixes xrandr

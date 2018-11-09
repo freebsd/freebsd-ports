@@ -5,8 +5,7 @@
 # PORTREVISION bumps of depending ports.
 
 PORTNAME=	pulseaudio
-PORTVERSION=	11.1
-PORTREVISION=	2
+PORTVERSION=	12.2
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 
@@ -23,11 +22,12 @@ LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libltdl.so:devel/libltdl \
 		libck-connector.so:sysutils/consolekit2
 
+USES=		compiler:c11 cpe gettext gmake gnome iconv libtool \
+		pathfix pkgconfig python:run shebangfix ssl tar:xz
+
 USE_GNOME=	glib20 intltool
 USE_XORG=	ice sm x11 xcb xtst
 USE_LDCONFIG=	yes
-USES=		compiler:c11 cpe gettext gmake gnome iconv libtool \
-		pathfix pkgconfig python:run shebangfix ssl tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread" \
 		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
@@ -57,12 +57,14 @@ USERS=		pulse
 GROUPS=		pulse pulse-access pulse-rt
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	AVAHI GCONF SIMD
+OPTIONS_DEFINE=	AVAHI GCONF GSETTINGS SIMD
 OPTIONS_DEFAULT=AVAHI SIMD SIMPLE SOXR SPEEX WEBRTC_AEC
 AVAHI_CONFIGURE_ENABLE=	avahi
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 GCONF_CONFIGURE_ENABLE=	gconf
 GCONF_USE=	GNOME=gconf2
+GSETTINGS_DESC=	GSettings configuration backend support
+GSETTINGS_CONFIGURE_ENABLE=	gsettings
 SIMD_CONFIGURE_ENABLE=	orc
 SIMD_LIB_DEPENDS=	liborc-0.4.so:devel/orc
 
@@ -112,6 +114,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/${ii} \
 		${STAGEDIR}${PREFIX}/etc/pulse/${ii}.sample
 .endfor
+# Delete ${STAGEDIR}${PREFIX}/libexec/pulse directory, if it's empty
+	@(cd ${STAGEDIR}${PREFIX}/libexec && \
+		${FIND} * -maxdepth 0 -type d -empty -name pulse -delete)
 
 post-install-BASH-off:
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/bash-completion
