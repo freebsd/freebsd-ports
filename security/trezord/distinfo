@@ -1,3 +1,3 @@
-TIMESTAMP = 1538563785
-SHA256 (trezor-trezord-go-v2.0.24-5-gf593bf3_GH0.tar.gz) = c246624c7456e313e9900fb304fc427608c43352f0c5622adb1be32f97912b81
-SIZE (trezor-trezord-go-v2.0.24-5-gf593bf3_GH0.tar.gz) = 955195
+TIMESTAMP = 1541773995
+SHA256 (trezor-trezord-go-v2.0.25_GH0.tar.gz) = 393675485f12fe290dc52ee83a92577af1498df52285d2fb52c99fee06391836
+SIZE (trezor-trezord-go-v2.0.25_GH0.tar.gz) = 5576138
