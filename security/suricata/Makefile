@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	suricata
-DISTVERSION=	4.0.5
+DISTVERSION=	4.0.6
 CATEGORIES=	security
-MASTER_SITES=	http://www.openinfosecfoundation.org/download/
+MASTER_SITES=	https://www.openinfosecfoundation.org/download/
 
 MAINTAINER=	franco@opnsense.org
 COMMENT=	High Performance Network IDS, IPS and Security Monitoring engine
