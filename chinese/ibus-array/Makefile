@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ibus-array
-PORTVERSION=	0.1.2
+PORTVERSION=	0.2.1
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	chinese
 
