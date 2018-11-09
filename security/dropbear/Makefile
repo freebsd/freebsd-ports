@@ -52,9 +52,9 @@ SMALL_CODE_DESC=	Make binary smaller in exchange for 50% performance hit
 TWOFISH128_DESC=	Enable Twofish128-based encryption
 TWOFISH256_DESC=	Enable Twofish256-based encryption
 
-CBC_BROKEN=		./session.h:77:3: error: unknown type name 'symmetric_CBC'
-
 3DES_IMPLIES=	CTR
+CBC_IMPLIES=	CTR
+
 STATIC_CONFIGURE_ENABLE=	static
 
 post-patch:
