@@ -408,6 +408,7 @@
     SUBDIR += maia
     SUBDIR += mailzu
     SUBDIR += makepasswd
+    SUBDIR += maltrail
     SUBDIR += manipulate_data
     SUBDIR += masscan
     SUBDIR += matrixssl
