@@ -1,9 +1,9 @@
-%%ETCDIR%%.d/config-util
-%%ETCDIR%%.d/fingerprint-auth
-%%ETCDIR%%.d/other
-%%ETCDIR%%.d/password-auth
-%%ETCDIR%%.d/smartcard-auth
-%%ETCDIR%%.d/system-auth
+etc/pam.d/config-util
+etc/pam.d/fingerprint-auth
+etc/pam.d/other
+etc/pam.d/password-auth
+etc/pam.d/smartcard-auth
+etc/pam.d/system-auth
 etc/security/access.conf
 etc/security/chroot.conf
 etc/security/console.handlers
