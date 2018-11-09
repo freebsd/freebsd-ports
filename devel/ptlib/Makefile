@@ -46,6 +46,12 @@ DEBUG_DESC=	Install debug library
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} > 1200085
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-src_ptclib_pssl.cxx-openssl111
+.else
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-src_ptclib_pssl.cxx
+.endif
+
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		PVERSION_MAJOR=${PVERSION_MAJOR} \
 		PVERSION_MINOR=${PVERSION_MINOR}
