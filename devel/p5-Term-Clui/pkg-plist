@@ -1,4 +1,4 @@
-%%SITE_PERL%%/Term/Clui/FileSelect.pm
 %%SITE_PERL%%/Term/Clui.pm
+%%SITE_PERL%%/Term/Clui/FileSelect.pm
 %%PERL5_MAN3%%/Term::Clui.3.gz
 %%PERL5_MAN3%%/Term::Clui::FileSelect.3.gz
