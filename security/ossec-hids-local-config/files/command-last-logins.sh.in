@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# This script is part of FreeBSD port - report any issues to the port MAINTAINER
+
+ossec_home="%%OSSEC_HOME%%"
+. "${ossec_home}/etc/command.conf"
+
+last -n ${last_logins}

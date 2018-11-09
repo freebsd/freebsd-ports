@@ -1,0 +1,6 @@
+#!/bin/sh
+
+last_logins=5
+
+privileged_tcp_ports=${privileged_ports},10050-10051
+privileged_udp_ports=${privileged_ports}

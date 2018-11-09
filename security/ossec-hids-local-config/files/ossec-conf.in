@@ -1,0 +1,60 @@
+#!/bin/sh
+
+ossec_type="%%OSSEC_TYPE%%"
+ossec_home="%%OSSEC_HOME%%"
+
+ossec_conf_dir="${ossec_home}/etc/ossec.conf.d"
+ossec_conf_files="${ossec_conf_dir}/*.conf"
+
+select_elements_content() {
+    local element="$1"
+    sed -n "/<${element}>/,/<\/${element}>/{ /<${element}>/d; /<\/${element}>/d; p; }"
+}
+
+remove_elements() {
+    local element="$1"
+    sed -e "/<${element}>/,/<\/${element}>/d"
+}
+
+remove_comments() {
+    # Comments must be on separate lines i.e. not next to uncommented code
+    awk '/<!--/ {off=1} /-->/ {off=2} /([\s\S]*)/ {if (off==0) print; if (off==2) off=0}'
+}
+
+remove_empty_lines() {
+    sed '/^\s*$/d'
+}
+
+ossec_conf() {
+    echo "<!-- OSSEC HIDS %%VERSION%% -->"
+    echo
+    echo "<!-- DO NOT EDIT - file generated automatically - edit \"ossec.conf.d/900.local.conf\" instead -->"
+    echo
+    echo "<ossec_config>"
+
+    if [ "${ossec_type}" != "agent"  ]; then
+        if cat $@ | remove_comments | grep -q "<rules>"; then
+            echo "  <rules>"
+            cat $@ | remove_comments | select_elements_content "rules" | remove_empty_lines
+            echo "  </rules>"
+        fi
+    fi
+
+    if cat $@ | remove_comments | grep -q "<rootcheck>"; then
+        echo "  <rootcheck>"
+        cat $@ | remove_comments | select_elements_content "rootcheck" | remove_empty_lines
+        echo "  </rootcheck>"
+    fi
+
+    if cat $@ | remove_comments | grep -q "<syscheck>"; then
+        echo "  <syscheck>"
+        cat $@ | remove_comments | select_elements_content "syscheck" | remove_empty_lines
+        echo "  </syscheck>"
+    fi
+
+    cat $@ | remove_comments | select_elements_content "ossec_config" | remove_elements "rules" | remove_elements "rootcheck" |  remove_elements "syscheck" | remove_empty_lines
+
+    echo "</ossec_config>"
+}
+
+ossec_conf "${ossec_conf_files}"

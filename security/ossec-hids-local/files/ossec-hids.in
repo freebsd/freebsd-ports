@@ -1,0 +1,537 @@
+#!/bin/sh
+#
+# PROVIDE: ossec_hids
+# REQUIRE: DAEMON
+# BEFORE:  LOGIN
+# KEYWORD: shutdown
+
+# ossec_hids_enable (bool):             Set it to YES to enable %%PORTNAME%%.
+#                                       Default: NO
+# ossec_hids_clear_log (bool):          Set it to YES to clear ossec.log before %%PORTNAME%% startup.
+#                                       Default: NO
+# ossec_hids_clear_ar_log (bool):       Set it to YES to clear active-responses.log before %%PORTNAME%% startup.
+#                                       Default: NO
+# ossec_hids_fetch_connect_time (int):  Time in seconds to wait for the download of the shared configuration to start.
+#                                       Used only by agent installation.
+#                                       Default: 30
+# ossec_hids_fetch_read_time (int):     Time in seconds to wait for subsequent download chunks of the shared configuration.
+#                                       Used only by agent installation.
+#                                       Default: 10
+
+. /etc/rc.subr
+
+name="ossec_hids"
+rcvar=ossec_hids_enable
+
+load_rc_config $name
+
+: ${ossec_hids_enable="NO"}
+: ${ossec_hids_clear_log="NO"}
+: ${ossec_hids_clear_ar_log="NO"}
+: ${ossec_hids_fetch_connect_time=30}
+: ${ossec_hids_fetch_read_time=10}
+
+ossec_type="%%OSSEC_TYPE%%"
+ossec_home="%%OSSEC_HOME%%"
+
+ossec_conf="${ossec_home}/etc/ossec.conf"
+ossec_conf_dir="${ossec_home}/etc/ossec.conf.d"
+ossec_conf_bin="${ossec_home}/bin/config/ossec-conf"
+
+agent_conf="${ossec_home}/etc/shared/agent.conf"
+agent_conf_dir="${ossec_home}/etc/agent.conf.d"
+agent_conf_bin="${ossec_home}/bin/config/agent-conf"
+
+ossec_client_keys="${ossec_home}/etc/client.keys"
+ossec_ar_tmp="${ossec_home}/active-response"
+ossec_log="${ossec_home}/logs/ossec.log"
+ossec_ar_log="${ossec_home}/logs/active-responses.log"
+ossec_merged="${ossec_home}/etc/shared/merged.mg"
+
+ossec_local_time="/etc/localtime"
+
+extra_commands="help status reload ossec_conf"
+case ${ossec_type} in
+    server)
+        extra_commands="${extra_commands} agent_conf manage_agent reset_counter"
+        ;;
+    agent)
+        extra_commands="${extra_commands} agent_conf manage_agent reset_counter config_profile fetch_config"
+        ;;
+esac
+if [ -x "${ossec_conf_bin}" ]; then
+    extra_commands="${extra_commands} merge_config"
+fi
+
+ossec_rc_command=$1
+shift 1
+
+help_cmd="ossec_hids_help $@"
+start_cmd="ossec_hids_command start $@"
+stop_cmd="ossec_hids_command stop $@"
+restart_cmd="ossec_hids_command restart $@"
+status_cmd="ossec_hids_command status $@"
+reload_cmd="ossec_hids_command reload $@"
+manage_agent_cmd="ossec_hids_manage_agent $@"
+reset_counter_cmd="ossec_hids_reset_counter $@"
+config_profile_cmd="ossec_hids_config_profile $@"
+fetch_config_cmd="ossec_hids_fetch_config $@"
+merge_config_cmd="ossec_hids_create_config force $@"
+ossec_conf_cmd="ossec_hids_ossec_conf $@"
+agent_conf_cmd="ossec_hids_agent_conf $@"
+
+start_precmd="ossec_hids_create_env && ossec_hids_create_config && ossec_hids_clean && ossec_hids_check"
+restart_precmd="${start_precmd}"
+reload_precmd="ossec_hids_create_env && ossec_hids_create_config"
+config_profile_precmd="ossec_hids_check"
+fetch_config_precmd="${start_precmd}"
+
+agent_ids_cmd="${ossec_home}/bin/manage_agents -l | sed -En -e 's|.*ID:[[:space:]]*([[:digit:]]+).*|\1|p'"
+agent_names_cmd="${ossec_home}/bin/manage_agents -l | sed -En -e 's|.*Name:[[:space:]]*([^,]+).*|\1|p'"
+
+ossec_hids_help() {
+    local indent="    "
+
+    echo "Additional commands:"
+    echo
+
+    for command in ${extra_commands}; do
+        case ${command} in
+            ossec_conf)
+                echo "${command}"
+                if [ -x "${ossec_conf_bin}" ]; then
+                    echo "${indent}Displays the \"ossec.conf\" as it would have been produced"
+                    echo "${indent}by merging files from \"ossec.conf.d\" directory."
+                    echo "${indent}Does not overwrite the actual \"ossec.conf\"."
+                else
+                    echo "${indent}Displays the current \"ossec.conf\"."
+                fi
+                echo
+            ;;
+            agent_conf)
+                echo "${command}"
+                if [ -x "${agent_conf_bin}" ]; then
+                    echo "${indent}Displays the \"agent.conf\" as it would have been produced"
+                    echo "${indent}by merging files from \"agent.conf.d\" directory."
+                    echo "${indent}Does not overwrite the actual \"agent.conf\"."
+                else
+                    echo "${indent}Displays the current \"agent.conf\"."
+                fi
+                echo
+            ;;
+            manage_agent)
+                echo "${command} [...]"
+                echo "${indent}Executes OSSEC Agent Manager."
+                echo "${indent}Any additional arguments will be passed along (-h for help)."
+                echo "${indent}Use this command to export and import agent keys."
+                echo
+            ;;
+            reset_counter)
+                case ${ossec_type} in
+                    server)
+                        echo "${command} <agent_name>"
+                        echo "${indent}Stops the OSSEC and resets (removes) the replay attack prevention counter(s)."
+                        echo "${indent}Only the counter for the given <agent_name> is reset."
+                        echo "${indent}If the <agent_name> is \"-\", then counters for all agents are reset."
+                    ;;
+                    agent)
+                        echo "${command}"
+                        echo "${indent}Stops the OSSEC and resets (removes) the replay attack prevention counter."
+                    ;;
+                esac
+                echo "${indent}Use this command on both the server and the agent to bring back connectivity."
+                echo "${indent}The typical scenario for desynchronization of counters is one of the OSSEC"
+                echo "${indent}instances has been restored from backup."
+                echo "${indent}Use the following procedure:"
+                echo "${indent}1. Reset counter on the agent."
+                echo "${indent}2. Reset counter on the server for that specific agent."
+                echo "${indent}3. Start the server."
+                echo "${indent}4. Start the agent."
+                echo
+            ;;
+            config_profile)
+                echo "${command}"
+                echo "${indent}Displays a list (i.e. union of sets) of applicable (to this agent) configuration"
+                echo "${indent}profiles sent by the server (current \"agent.conf\") merged with configuration"
+                echo "${indent}profiles enabled on this agent (current \"ossec.conf\"). Each entry on the list"
+                echo "${indent}is marked with one of the following markers:"
+                echo "${indent}(+) - The profile is sent by the server and is enabled on this agent."
+                echo "${indent}(-) - The profile is sent by the server and is applicable for this agent, but is"
+                echo "${indent}      not enabled in the \"ossec.conf\"."
+                echo "${indent}(?) - The profile is enabled on this agent, but is not sent by the server or is"
+                echo "${indent}      not applicable to this agent."
+                echo
+            ;;
+            fetch_config)
+                echo "${command}"
+                echo "${indent}(Re)starts the agent with a fresh copy of server shared configuration (including"
+                echo "${indent}\"agent.conf\"). Command can also be used to ensure server connectivity."
+                echo
+            ;;
+            merge_config)
+                echo "${command}"
+                echo "${indent}Creates \"ossec.conf\" by merging files from \"ossec.conf.d\" directory."
+                case ${ossec_type} in
+                    server)
+                        echo "${indent}Creates \"agent.conf\" by merging files from \"agent.conf.d\" directory."
+                    ;;
+                esac
+                echo "${indent}Usually you do not need to run this command, because configuration files will"
+                echo "${indent}be merged before OSSEC startup if any of them has been modified/created/deleted"
+                echo "${indent}since the last merging. This command, however, does merging unconditionally."
+                echo
+            ;;
+        esac
+    done
+
+    echo "To avoid problems with this script and the port in general, keep your XML-like"
+    echo "configuration pretty printed. Place element tags in single and separate lines."
+    echo "Comments can span on multiple but still separate lines."
+    echo "Do NOT use the following formatting:"
+    echo
+    echo "${indent}<elementA"
+    echo "${indent}${indent}attribute=\"value\"><!-- I am a long and"
+    echo "${indent}${indent}${indent}descriptive comment -->"
+    echo "${indent}${indent}<elementB>"
+    echo "${indent}${indent}${indent}Some content"
+    echo "${indent}${indent}</elementB><elementC>"
+    echo "${indent}${indent}${indent}Another content</elementC>"
+    echo "${indent}</elementA>"
+    echo
+    echo "Use instead:"
+    echo
+    echo "${indent}<elementA attribute=\"value\">"
+    echo "${indent}${indent}<!-- I am a long and"
+    echo "${indent}${indent}descriptive comment -->"
+    echo "${indent}${indent}<elementB>Some content</elementB>"
+    echo "${indent}${indent}<elementC>Another content</elementC>"
+    echo "${indent}</elementA>"
+    echo
+}
+
+ossec_hids_create_file() {
+    local path=$1
+    local owner=$2
+    local mode=$3
+
+    if [ ! -e "${path}" ]; then
+        touch "${path}" && chown ${owner} "${path}" && chmod ${mode} "${path}"
+    fi
+}
+
+ossec_hids_check() {
+    case ${ossec_type} in
+        server)
+            if [ ! -s "${ossec_client_keys}" ]; then
+                echo "WARNING: There are no client keys created - remote connections will be disabled."
+                echo
+            fi
+            ;;
+        agent)
+            if [ ! -s "${ossec_client_keys}" ]; then
+                echo "WARNING: There are is no client key imported - connection to server not possible."
+                echo
+            else
+                if [ $(eval ${agent_ids_cmd} | wc -l) -gt 1 ]; then
+                    echo "ERROR: There are multiple client keys imported - only one is allowed."
+                    echo
+                    return 1
+                fi
+            fi
+            ;;
+    esac
+
+    return 0
+}
+
+ossec_hids_inline_content() {
+    local element="$1"
+    sed -En "s|.*<${element}>(.*)</${element}>.*|\1|p"
+}
+
+ossec_hids_remove_comments() {
+    # Comments must be on separate lines i.e. not next to uncommented code
+    awk '/<!--/ {off=1} /-->/ {off=2} /([\s\S]*)/ {if (off==0) print; if (off==2) off=0}'
+}
+
+ossec_hids_config_profile() {
+    if [ ! -f "${ossec_conf}" ]; then
+        echo -n "ERROR: The \"${ossec_conf}\" is missing."
+        if [ -x "${ossec_conf_bin}" ]; then
+            echo " Run:"
+            echo "$(realpath $0) merge_config"
+        else
+            echo
+        fi
+        echo
+        return 1
+    fi
+    if [ ! -f "${agent_conf}" ]; then
+        echo "ERROR: The \"${agent_conf}\" is missing. Run:"
+        echo "$(realpath $0) fetch_config"
+        echo
+        return 1
+    fi
+
+    local os="FreeBSD"
+    local name=$(eval ${agent_names_cmd})
+
+    local server_profiles=`ossec_hids_remove_comments < "${agent_conf}" | sed -En \
+        -e "s|.*<agent_config[[:space:]]+profile=\"([^\"]+)\"[[:space:]]*>.*|\1|p" \
+        -e "s|.*<agent_config[[:space:]]+profile=\"([^\"]+)\"[[:space:]]+os=\"${os}\"[[:space:]]*>.*|\1|p" \
+        -e "s|.*<agent_config[[:space:]]+os=\"${os}\"[[:space:]]+profile=\"([^\"]+)\"[[:space:]]*>.*|\1|p" \
+        -e "s|.*<agent_config[[:space:]]+profile=\"([^\"]+)\"[[:space:]]+name=\"${name}\"[[:space:]]*>.*|\1|p" \
+        -e "s|.*<agent_config[[:space:]]+name=\"${name}\"[[:space:]]+profile=\"([^\"]+)\"[[:space:]]*>.*|\1|p" \
+        -e "s|.*<agent_config[[:space:]]+profile=\"([^\"]+)\"[[:space:]]+os=\"${os}\"[[:space:]]+name=\"${name}\"[[:space:]]*>.*|\1|p" \
+        -e "s|.*<agent_config[[:space:]]+profile=\"([^\"]+)\"[[:space:]]+name=\"${name}\"[[:space:]]+os=\"${os}\"[[:space:]]*>.*|\1|p" \
+        -e "s|.*<agent_config[[:space:]]+os=\"${os}\"[[:space:]]+profile=\"([^\"]+)\"[[:space:]]+name=\"${name}\"[[:space:]]*>.*|\1|p" \
+        -e "s|.*<agent_config[[:space:]]+os=\"${os}\"[[:space:]]+name=\"${name}\"[[:space:]]+profile=\"([^\"]+)\"[[:space:]]*>.*|\1|p" \
+        -e "s|.*<agent_config[[:space:]]+name=\"${name}\"[[:space:]]+profile=\"([^\"]+)\"[[:space:]]+os=\"${os}\"[[:space:]]*>.*|\1|p" \
+        -e "s|.*<agent_config[[:space:]]+name=\"${name}\"[[:space:]]+os=\"${os}\"[[:space:]]+profile=\"([^\"]+)\"[[:space:]]*>.*|\1|p" \
+        | sort -u`
+
+    local agent_profiles=$(ossec_hids_remove_comments < "${ossec_conf}" | ossec_hids_inline_content "config-profile" | sed -E 's|[[:space:]]*,[[:space:]]*| |g')
+
+    local output=""
+    for server_profile in ${server_profiles}; do
+        local matching_profile=""
+        for agent_profile in ${agent_profiles}; do
+            if [ "${agent_profile}" == "${server_profile}" ]; then
+                matching_profile="${agent_profile}"
+                break
+            fi
+        done
+        if [ -n "${matching_profile}" ]; then
+            output="${output}(+) ${server_profile}
+"
+        else
+            output="${output}(-) ${server_profile}
+"
+        fi
+    done
+    for agent_profile in ${agent_profiles}; do
+        local matching_profile=""
+        for server_profile in ${server_profiles}; do
+            if [ "${server_profile}" == "${agent_profile}" ]; then
+                matching_profile="${server_profile}"
+                break
+            fi
+        done
+        if [ -z "${matching_profile}" ]; then
+            output="${output}(?) ${agent_profile}
+"
+        fi
+    done
+
+    echo -n "${output}" | sort -k 2
+}
+
+ossec_hids_config_is_outdated() {
+    local dst_file="$1"
+    local src_dir="$2"
+
+    if [ ! -e "${dst_file}" ]; then
+        return 0
+    fi
+
+    if [ "${src_dir}" -nt "${dst_file}" ]; then
+        return 0
+    fi
+
+    for src_file in $(find "${src_dir}" -maxdepth 1 -type f -name "*.conf"); do
+        if [ "${src_file}" -nt "${dst_file}" ]; then
+            return 0
+        fi
+    done
+
+    return 1
+}
+
+ossec_hids_create_config() {
+    case ${ossec_type} in
+        server)
+            if [ -x "${agent_conf_bin}" ]; then
+                # Merge agent.conf.d files into agent.conf
+                if [ "$1" == "force" ] || ossec_hids_config_is_outdated "${agent_conf}" "${agent_conf_dir}"; then
+                    ossec_hids_create_file "${agent_conf}" %%USER%%:%%OSSEC_GROUP%% 0640
+                    "${agent_conf_bin}" > "${agent_conf}"
+                fi
+            fi
+            ;;
+    esac
+
+    if [ -x "${ossec_conf_bin}" ]; then
+        # Merge ossec.conf.d files into ossec.conf
+        if [ "$1" == "force" ] || ossec_hids_config_is_outdated "${ossec_conf}" "${ossec_conf_dir}"; then
+            ossec_hids_create_file "${ossec_conf}" %%USER%%:%%OSSEC_GROUP%% 0640
+            "${ossec_conf_bin}" > "${ossec_conf}"
+        fi
+    fi
+
+    return 0
+}
+
+ossec_hids_create_env() {
+    # Copy required files from outside of home directory
+    if [ ! -e "${ossec_local_time}" ]; then
+        echo "ERROR: Missing \"${ossec_local_time}\". Run command \"tzsetup\"."
+        echo
+        return 1
+    fi
+    install -o %%USER%% -g %%OSSEC_GROUP%% -m 0440 "${ossec_local_time}" "${ossec_home}${ossec_local_time}"
+
+    return 0
+}
+
+ossec_hids_clean() {
+    if [ "${ossec_type}" == "server" ]; then
+        rm -f "${ossec_merged}"
+    fi
+
+    if checkyesno ossec_hids_clear_log && [ -e "${ossec_log}" ]; then
+        echo -n > "${ossec_log}"
+    fi
+
+    if checkyesno ossec_hids_clear_ar_log && [ -e "${ossec_ar_log}" ]; then
+        echo -n > "${ossec_ar_log}"
+    fi
+
+    return 0
+}
+
+ossec_hids_reset_counter() {
+    local agent_name="$1"
+
+    ossec_hids_command stop
+    sleep 1
+    echo
+
+    case ${ossec_type} in
+        server)
+            if [ -z "${agent_name}" ]; then
+                echo "ERROR: Specify agent name to reset counter for this agent or \"-\" to reset counters for all agents."
+                echo
+                return 1
+            fi
+            local agent_counter=0
+            if [ "${agent_name}" == "-" ]; then
+                for agent_id in $(eval ${agent_ids_cmd}); do
+                    if [ -e "${ossec_home}/queue/rids/${agent_id}" ]; then
+                        rm "${ossec_home}/queue/rids/${agent_id}" && agent_counter=$((agent_counter + 1))
+                    fi
+                done
+            else
+                local agent_id=`${ossec_home}/bin/manage_agents -l | sed -En -e "s|.*ID:[[:space:]]*([[:digit:]]+),[[:space:]]*Name:[[:space:]]${agent_name},.*|\1|p"`
+                if [ -n "${agent_id}" ]; then
+                    if [ -e "${ossec_home}/queue/rids/${agent_id}" ]; then
+                        rm "${ossec_home}/queue/rids/${agent_id}" && agent_counter=$((agent_counter + 1))
+                    fi
+                fi
+            fi
+            echo "Removed ${agent_counter} counter(s)."
+            echo
+            ;;
+        agent)
+            local agent_counter=0
+            for agent_id in $(eval ${agent_ids_cmd}); do
+                # Should be executed only once
+                if [ -e "${ossec_home}/queue/rids/${agent_id}" ]; then
+                    rm "${ossec_home}/queue/rids/${agent_id}" && agent_counter=$((agent_counter + 1))
+                fi
+            done
+            echo "Removed ${agent_counter} counter(s)."
+            echo
+            ;;
+    esac
+
+    return 0
+}
+
+ossec_hids_fetch_config() {
+    ossec_hids_command stop
+    sleep 1
+    echo
+    rm -f "${ossec_merged}"
+    ossec_hids_command start || return 1
+    echo
+    echo "Waiting ${ossec_hids_fetch_connect_time} seconds for the shared configuration download to start."
+    sleep ${ossec_hids_fetch_connect_time}
+    if [ ! -s "${ossec_merged}" ]; then
+        echo "ERROR: Failed to download shared configuration from the OSSEC server."
+        echo
+        local ossec_log_tail=$(tail "${ossec_log}")
+        echo "Portion of the \"${ossec_log}\":"
+        echo "${ossec_log_tail}"
+        echo
+        if echo "${ossec_log_tail}" | grep -q "ERROR: Unable to send message to"; then
+            echo "Check if your configuration contains the correct server address in \"server-ip\" option."
+            echo
+        else
+            local ossec_rc_path="$(realpath $0)"
+            echo "Is the imported agent key correct? To import it run:"
+            echo "${ossec_rc_path} manage_agent"
+            echo
+            echo "If you are certain the imported agent key is correct, then run:"
+            echo "${ossec_rc_path} reset_counter"
+            echo "${ossec_rc_path} fetch_config"
+            echo
+            echo "If this does't help, you need to reset counter on the server."
+            echo "If the server runs FreeBSD port of OSSEC, run:"
+            echo "On the agent:"
+            echo "${ossec_rc_path} reset_counter"
+            echo "On the server:"
+            echo "${ossec_rc_path} reset_counter $(eval ${agent_names_cmd})"
+            echo "${ossec_rc_path} start"
+            echo "On the agent:"
+            echo "${ossec_rc_path} fetch_config"
+            echo
+        fi
+        ossec_hids_command stop
+        return 1
+    else
+        # The download has started
+        while true; do
+            local current_time=$(date +%s)
+            local modification_time=$(stat -f %m "${ossec_merged}")
+            if [ $((current_time - modification_time)) -gt ${ossec_hids_fetch_read_time} ]; then
+                echo "Download finished."
+                echo
+                ossec_hids_command restart || return 1
+                break;
+            else
+                echo "Download in progress..."
+                sleep ${ossec_hids_fetch_read_time}
+            fi
+        done
+    fi
+
+    return 0
+}
+
+ossec_hids_ossec_conf() {
+    if [ -x "${ossec_conf_bin}" ]; then
+        "${ossec_conf_bin}"
+    elif [ -f "${ossec_conf}" ]; then
+        cat "${ossec_conf}"
+    fi
+}
+
+ossec_hids_agent_conf() {
+    if [ -x "${agent_conf_bin}" ]; then
+        "${agent_conf_bin}"
+    elif [ -f "${agent_conf}" ]; then
+        cat "${agent_conf}"
+    fi
+}
+
+ossec_hids_manage_agent() {
+    "${ossec_home}/bin/manage_agents" $@
+    return $?
+}
+
+ossec_hids_command() {
+    "${ossec_home}/bin/ossec-control" $1
+    return $?
+}
+
+run_rc_command "${ossec_rc_command}"

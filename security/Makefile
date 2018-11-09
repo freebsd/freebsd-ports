@@ -490,9 +490,13 @@
     SUBDIR += ophcrack
     SUBDIR += orthrus
     SUBDIR += osiris
-    SUBDIR += ossec-hids-client
+    SUBDIR += ossec-hids
+    SUBDIR += ossec-hids-agent
+    SUBDIR += ossec-hids-agent-config
     SUBDIR += ossec-hids-local
+    SUBDIR += ossec-hids-local-config
     SUBDIR += ossec-hids-server
+    SUBDIR += ossec-hids-server-config
     SUBDIR += osslsigncode
     SUBDIR += otpw
     SUBDIR += outguess

@@ -1,5 +1,0 @@
---- src/LOCATION.orig	2015-10-12 21:21:06 UTC
-+++ src/LOCATION
-@@ -1 +1 @@
--DIR="/var/ossec"
-+DIR="/usr/ports/security/ossec-hids-server/work/stage/usr/local/ossec-hids"

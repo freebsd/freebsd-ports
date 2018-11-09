@@ -1,0 +1,12 @@
+If you intend to use "firewall-drop" active response on this OSSEC instance
+create the script:
+%%OSSEC_HOME%%/active-response/bin/firewall-drop.sh
+
+You can copy or hard link (symbolic link is not supported) one of the scripts
+already provided by OSSEC:
+%%OSSEC_HOME%%/active-response/bin/ipfilter.sh
+%%OSSEC_HOME%%/active-response/bin/ipfw.sh
+%%OSSEC_HOME%%/active-response/bin/pf.sh
+
+For further steps see the documentation:
+https://www.ossec.net/docs/syntax/head_ossec_config.active-response.html

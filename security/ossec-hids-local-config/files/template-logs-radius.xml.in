@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template_config os="FreeBSD" profile="%%LOGS_RADIUS_PROFILE%%">
+
+  <localfile>
+    <log_format>syslog</log_format>
+    <location>/var/log/radius.log</location>
+  </localfile>
+
+</template_config>
+
+<template_config os="Linux" profile="%%LOGS_RADIUS_PROFILE%%">
+
+  <localfile>
+    <log_format>syslog</log_format>
+    <location>/var/log/freeradius/radius.log</location>
+  </localfile>
+
+</template_config>

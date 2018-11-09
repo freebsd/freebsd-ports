@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template_config>
+
+  <localfile>
+    <log_format>full_command</log_format>
+    <command>%%OSSEC_HOME%%/bin/command/last-logins.sh</command>
+    <alias>freebsd-last-logins</alias>
+  </localfile>
+
+</template_config>

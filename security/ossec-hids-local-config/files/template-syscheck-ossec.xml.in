@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template_config os="FreeBSD" profile="%%SYSCHECK_OSSEC_PROFILE%%">
+
+  <syscheck>
+    <directories realtime="yes" check_all="yes">%%OSSEC_SYSCHECK_BIN_DIRS%%</directories>
+    <directories realtime="yes" check_all="yes">%%OSSEC_SYSCHECK_ETC_DIRS%%</directories>
+  </syscheck>
+
+</template_config>
+
+<template_config os="Linux" profile="%%SYSCHECK_OSSEC_PROFILE%%">
+
+  <syscheck>
+    <directories realtime="yes" check_all="yes">/var/ossec/bin,/var/ossec/active-response,/var/ossec/agentless</directories>
+    <directories realtime="yes" check_all="yes">/var/ossec/etc,/var/ossec/rules</directories>
+  </syscheck>
+
+</template_config>

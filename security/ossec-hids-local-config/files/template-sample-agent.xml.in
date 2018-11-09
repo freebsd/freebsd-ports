@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template_config>
+
+  <client>
+    <!-- Specify the IP address of the %%PORTNAME%% server. -->
+    <server-ip>1.2.3.4</server-ip>
+    <!-- Alternatively, specify the hostname of the %%PORTNAME%% server. -->
+    <!-- <server-hostname>example.com</server-hostname> -->
+
+    <!-- Specifies the agent.conf profiles to be used by the agent. Multiple profiles can be included, separated by a comma and a space. -->
+    <!-- <config-profile>%%CONFIG_PROFILES%%</config-profile> -->
+  </client>
+
+</template_config>

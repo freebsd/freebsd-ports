@@ -1,0 +1,5 @@
+Consider installing "%%CATEGORY%%/%%PORTNAME%%-%%OSSEC_TYPE%%-config" to ease
+OSSEC configuration.
+
+For additional help execute:
+# %%PREFIX%%/etc/rc.d/ossec-hids help
