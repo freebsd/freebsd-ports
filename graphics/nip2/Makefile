@@ -3,8 +3,9 @@
 
 PORTNAME=	nip2
 PORTVERSION=	8.7.0
-DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	graphics
+MASTER_SITES=	https://github.com/libvips/${PORTNAME}/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Graphical user interface for VIPS
@@ -17,22 +18,18 @@ LIB_DEPENDS=	libvips.so:graphics/vips \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		autoreconf:build bison desktop-file-utils dos2unix gettext gmake gnome pkgconfig \
+USES=		bison desktop-file-utils dos2unix gettext gmake gnome pkgconfig \
 		shared-mime-info
 
 DOS2UNIX_GLOB=	*.def
 USE_GNOME=	cairo gdkpixbuf2 gnomemimedata gtk20 libxml2
-HAS_CONFIGURE=	yes
-CONFIGURE_SCRIPT=	./autogen.sh
-CONFIGURE_ARGS=	--disable-update-desktop
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--disable-update-desktop
 LDFLAGS+=	-lm
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	libvips
 
 SUB_FILES=	run-nip2.sh
 
-OPTIONS_DEFINE=		FFTW GOFFICE GRAPHVIZ GSF GSL
+OPTIONS_DEFINE=		DOCS FFTW GOFFICE GRAPHVIZ GSF GSL
 OPTIONS_DEFAULT=	FFTW GOFFICE GRAPHVIZ GSF GSL
 
 FFTW_LIB_DEPENDS=	libfftw3.so:math/fftw3
