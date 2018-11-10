@@ -20,7 +20,7 @@ _valid_pear_ARGS=		env
 # Sanity check
 .  for arg in ${pear_ARGS}
 .    if empty(_valid_pear_ARGS:M${arg})
-IGNORE=	Incorrect 'USES+= pear:${cmake_ARGS}' usage: argument [${arg}] is not recognized
+IGNORE=	Incorrect 'USES+= pear:${pear_ARGS}' usage: argument [${arg}] is not recognized
 .    endif
 .  endfor
 
