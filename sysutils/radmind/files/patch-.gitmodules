@@ -1,6 +1,0 @@
---- ./.gitmodules.orig	2014-06-29 12:15:04.241543320 +0200
-+++ ./.gitmodules	2014-06-29 12:15:04.242543988 +0200
-@@ -0,0 +1,3 @@
-+[submodule "libsnet"]
-+	path = libsnet
-+	url = git://libsnet.git.sourceforge.net/gitroot/libsnet/libsnet
