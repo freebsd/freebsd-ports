@@ -1,3 +1,12 @@
-Lexically disable autovivification.
+When an undefined variable is dereferenced, it gets silently upgraded to an
+array or hash reference (depending of the type of the dereferencing). This
+behaviour is called autovivification and usually does what you mean (e.g. when
+you store a value) but it may be unnatural or surprising because your variables
+gets populated behind your back. This is especially true when several levels of
+dereferencing are involved, in which case all levels are vivified up to the
+last, or when it happens in intuitively read-only constructs like exists.
+
+This pragma lets you disable autovivification for some constructs and optionally
+throws a warning or an error when it would have happened.
 
 WWW: https://metacpan.org/release/autovivification
