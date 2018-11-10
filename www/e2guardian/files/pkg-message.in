@@ -1,0 +1,49 @@
+####################################################################################
+     o You can find the configuration files for this package in the
+       directory %%PREFIX%%/etc/e2guardian.
+
+       Note:
+       If you just updated your e2guardian installation from an earlier version,
+       make sure to check your e2guardian.conf and e2guardianf[1..9].conf 
+       configuration files against the respective e2giardian.conf.sample 
+       and e2guardianf1.conf.sample files.
+       Do not forget to check/configure log rotation and compression- read
+       newsyslog(8) man page for details.
+
+     o Running of e2guardian and squid on the same machine is common configuration.
+       In order to get reliable and fast-working configuration  on heavy loaded
+       systems with real-time content checking with antivirus you might want to set
+       the following tunables (see tuning(7) man page for details prior to tuning):
+
+       **** /boot/loader.conf ****
+         kern.ipc.msgmnb=8192
+         kern.ipc.msgssz=64
+         kern.ipc.msgtql=2048
+         net.inet.tcp.syncache.hashsize=1024
+         net.inet.tcp.syncache.bucketlimit=100
+
+       **** /etc/sysctl.conf ****
+         net.inet.ip.portrange.last=65535
+         net.inet.ip.portrange.first=1024
+         net.inet.tcp.delayed_ack=1
+         net.inet.tcp.nolocaltimewait=1
+         kern.ipc.soacceptqueue=8192
+         net.local.stream.recvspace=65535
+         net.local.stream.sendspace=65535
+         net.inet.ip.portrange.randomized=0
+         #Skip feeding /dev/random from network.
+         kern.random.harvest.mask=399
+          
+         Also do not forget to raise kern.threads.max_threads_per_proc to the value
+         higher then httpworkers in e2giardian.conf.
+
+     o As of v.4 e2guardian is a single process multithreaded application.
+       It might be reasonable to use sysutils/fsc or similar tools to control 
+       it's status.
+
+     o Useful links:
+         - e2guardian project web site http://e2guardian.org/
+         - GitHub repository https://github.com/e2guardian/e2guardian/
+         - support forum https://groups.google.com/forum/#!forum/e2guardian
+         - link for bug reports https://github.com/e2guardian/e2guardian/issues
+####################################################################################
