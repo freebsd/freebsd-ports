@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	vips
-PORTVERSION=	8.7.0
-DISTVERSIONPREFIX=	v
+PORTVERSION=	8.7.1
 CATEGORIES=	graphics
+MASTER_SITES=	https://github.com/libvips/libvips/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Free image processing system
@@ -12,7 +12,6 @@ COMMENT=	Free image processing system
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
 RUN_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		liborc-0.4.so:devel/orc \
@@ -35,17 +34,12 @@ LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		libexpat.so:textproc/expat2 \
 		libcurl.so:ftp/curl
 
-USES=		autoreconf:build compiler:c++11-lang cpe gettext gmake gnome jpeg libtool \
+USES=		compiler:c++11-lang cpe gettext gmake gnome jpeg libtool \
 		pathfix pkgconfig python:2.7 shebangfix
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	jcupitt
-GH_PROJECT=	libvips
 
 SHEBANG_FILES=	tools/vips-${PORTVERSION:R} tools/vipsprofile
 USE_GNOME=	cairo gdkpixbuf2 glib20 libgsf librsvg2 libxml2 pango
 GNU_CONFIGURE=	yes
-CONFIGURE_SCRIPT=	./autogen.sh
 CONFIGURE_ARGS+=	--without-x \
 			--without-openslide \
 			--with-magickpackage=GraphicsMagick
@@ -62,6 +56,7 @@ OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=		yes
 
 DOCS_CONFIGURE_ENABLE=	gtk-doc gtk-doc-html
+DOCS_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
 
 PYTHON_CONFIGURE_ENABLE=	pyvips8
 PYTHON_USE=			GNOME=pygobject3
