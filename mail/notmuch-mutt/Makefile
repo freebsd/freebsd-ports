@@ -25,11 +25,11 @@ OPTIONS_SUB=	yes
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@${MV} ${STAGEDIR}${LOCALBASE}/etc/Muttrc.d/notmuch-mutt.rc ${STAGEDIR}${EXAMPLESDIR}/notmuch-mutt.rc
-	@${RMDIR} ${STAGEDIR}${LOCALBASE}/etc/Muttrc.d
+	@${MV} ${STAGEDIR}${PREFIX}/etc/Muttrc.d/notmuch-mutt.rc ${STAGEDIR}${EXAMPLESDIR}/notmuch-mutt.rc
+	@${RMDIR} ${STAGEDIR}${PREFIX}/etc/Muttrc.d
 
 post-install-EXAMPLES-off:
-	@${RM} -r ${STAGEDIR}${LOCALBASE}/etc/Muttrc.d
+	@${RM} -r ${STAGEDIR}${PREFIX}/etc/Muttrc.d
 
 post-install-MANPAGES-off:
 	@${RM} ${STAGEDIR}${MANPREFIX}/man/man1/notmuch-mutt.1
