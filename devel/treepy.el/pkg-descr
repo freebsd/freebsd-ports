@@ -1,0 +1,4 @@
+A set of generic functions for traversing tree-like data structures
+recursively and/or iteratively,
+
+WWW: https://github.com/volrath/treepy.el
