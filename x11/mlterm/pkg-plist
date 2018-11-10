@@ -104,6 +104,7 @@ libexec/mlterm/mlterm-menu
 %%REGIS%%libexec/mlterm/registobmp
 libexec/w3mmlconfig/mlconfig-data.pl
 libexec/w3mmlconfig/mlconfig.cgi
+man/man1/mlcc.1.gz
 man/man1/mlclient.1.gz
 man/man1/mlterm.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
