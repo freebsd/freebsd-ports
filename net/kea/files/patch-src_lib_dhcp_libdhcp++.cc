@@ -25,18 +25,17 @@ distance(_InputIter __first, _InputIter __last)
         distance(SinglePassIterator first, SinglePassIterator last)
         ^
 
---- src/lib/dhcp/libdhcp++.cc.orig	2017-10-05 13:00:05 UTC
+--- src/lib/dhcp/libdhcp++.cc.orig	2018-08-15 13:54:01.170731000 -0500
 +++ src/lib/dhcp/libdhcp++.cc
-@@ -417,7 +417,7 @@ size_t LibDHCP::unpackOptions6(const OptionBuffer& buf
-         size_t num_defs = 0;
-         if (option_space == DHCP6_OPTION_SPACE) {
-             range = idx.equal_range(opt_type);
--            num_defs = distance(range.first, range.second);
-+            num_defs = std::distance(range.first, range.second);
-         }
+@@ -419,14 +419,14 @@
+         // We previously did the lookup only for dhcp6 option space, but with the
+         // addition of S46 options, we now do it for every space.
+         range = idx.equal_range(opt_type);
+-        num_defs = distance(range.first, range.second);
++        num_defs = std::distance(range.first, range.second);
  
          // Standard option definitions do not include the definition for
-@@ -425,7 +425,7 @@ size_t LibDHCP::unpackOptions6(const OptionBuffer& buf
+         // our option or we're searching for non-standard option. Try to
          // find the definition among runtime option definitions.
          if (num_defs == 0) {
              range = runtime_idx.equal_range(opt_type);
@@ -45,16 +44,15 @@ distance(_InputIter __first, _InputIter __last)
          }
  
          OptionPtr opt;
-@@ -534,7 +534,7 @@ size_t LibDHCP::unpackOptions4(const OptionBuffer& buf
-         size_t num_defs = 0;
-         if (option_space == DHCP4_OPTION_SPACE) {
-             range = idx.equal_range(opt_type);
--            num_defs = distance(range.first, range.second);
-+            num_defs = std::distance(range.first, range.second);
-         }
+@@ -538,14 +538,14 @@
+         // may be standard options in other spaces (e.g. radius). So we now do
+         // the lookup for every space.
+         range = idx.equal_range(opt_type);
+-        num_defs = distance(range.first, range.second);
++        num_defs = std::distance(range.first, range.second);
  
          // Standard option definitions do not include the definition for
-@@ -542,7 +542,7 @@ size_t LibDHCP::unpackOptions4(const OptionBuffer& buf
+         // our option or we're searching for non-standard option. Try to
          // find the definition among runtime option definitions.
          if (num_defs == 0) {
              range = runtime_idx.equal_range(opt_type);
@@ -63,7 +61,7 @@ distance(_InputIter __first, _InputIter __last)
          }
  
          // Check if option unpacking must be deferred
-@@ -634,7 +634,7 @@ size_t LibDHCP::unpackVendorOptions6(const uint32_t ve
+@@ -638,7 +638,7 @@
                  idx->equal_range(opt_type);
              // Get the number of returned option definitions for the
              // option code.
@@ -72,7 +70,7 @@ distance(_InputIter __first, _InputIter __last)
  
              if (num_defs > 1) {
                  // Multiple options of the same code are not supported
-@@ -740,7 +740,7 @@ size_t LibDHCP::unpackVendorOptions4(const uint32_t ve
+@@ -746,7 +746,7 @@
                      idx->equal_range(opt_type);
                  // Get the number of returned option definitions for
                  // the option code.
