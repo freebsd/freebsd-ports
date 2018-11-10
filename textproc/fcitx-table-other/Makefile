@@ -13,6 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx
+BUILD_DEPENDS=	bash:shells/bash
 
 USES=		cmake:outsource gettext tar:xz
 NO_ARCH=	yes
