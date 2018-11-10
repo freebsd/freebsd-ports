@@ -28,7 +28,8 @@ extra_commands="reload"
 
 : ${bird_enable="NO"}
 : ${bird_config="%%PREFIX%%/etc/bird.conf"}
+: ${bird_group="birdvty"}
 
-command_args="-P /var/run/${name}.pid -c $bird_config"
+command_args="-P /var/run/${name}.pid -c $bird_config -g $bird_group"
 
 run_rc_command "$1"

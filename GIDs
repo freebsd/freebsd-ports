@@ -442,7 +442,7 @@ alertmanager:*:479:
 # free: 499
 # free: 500
 # free: 501
-# free: 502
+birdvty:*:502:
 # free: 503
 # free: 504
 _bbstored:*:505:
