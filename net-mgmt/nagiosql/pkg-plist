@@ -107,22 +107,24 @@
 %%WWWDIR%%/doc/INSTALLATION_deDE.txt
 %%WWWDIR%%/doc/INSTALLATION_enGB.txt
 %%WWWDIR%%/doc/LICENSE
-%%WWWDIR%%/doc/LIZENZ
 %%WWWDIR%%/doc/README_SSH_KEY
 %%WWWDIR%%/favicon.ico
+%%WWWDIR%%/functions/Autoloader.php
+%%WWWDIR%%/functions/MysqliDbClass.php
+%%WWWDIR%%/functions/NagConfigClass.php
+%%WWWDIR%%/functions/NagContentClass.php
+%%WWWDIR%%/functions/NagDataClass.php
+%%WWWDIR%%/functions/NagImportClass.php
+%%WWWDIR%%/functions/NagVisualClass.php
 %%WWWDIR%%/functions/common.js
-%%WWWDIR%%/functions/config_class.php
-%%WWWDIR%%/functions/content_class.php
-%%WWWDIR%%/functions/data_class.php
-%%WWWDIR%%/functions/import_class.php
-%%WWWDIR%%/functions/mysql_class.php
-%%WWWDIR%%/functions/nag_class.php
 %%WWWDIR%%/functions/prepend_adm.php
 %%WWWDIR%%/functions/prepend_content.php
 %%WWWDIR%%/functions/prepend_scripting.php
 %%WWWDIR%%/functions/tinyMCE/jscripts/tiny_mce/langs/en.js
 %%WWWDIR%%/functions/tinyMCE/jscripts/tiny_mce/license.txt
 %%WWWDIR%%/functions/tinyMCE/jscripts/tiny_mce/plugins/contextmenu/editor_plugin.js
+%%WWWDIR%%/functions/tinyMCE/jscripts/tiny_mce/plugins/safari/blank.htm
+%%WWWDIR%%/functions/tinyMCE/jscripts/tiny_mce/plugins/safari/editor_plugin.js
 %%WWWDIR%%/functions/tinyMCE/jscripts/tiny_mce/plugins/searchreplace/css/searchreplace.css
 %%WWWDIR%%/functions/tinyMCE/jscripts/tiny_mce/plugins/searchreplace/editor_plugin.js
 %%WWWDIR%%/functions/tinyMCE/jscripts/tiny_mce/plugins/searchreplace/js/searchreplace.js
@@ -225,6 +227,7 @@
 %%WWWDIR%%/functions/yui/build/datatable/assets/skins/sam/dt-arrow-dn.png
 %%WWWDIR%%/functions/yui/build/datatable/assets/skins/sam/dt-arrow-up.png
 %%WWWDIR%%/functions/yui/build/datatable/datatable-min.js
+%%WWWDIR%%/functions/yui/build/element/element-beta-min.js
 %%WWWDIR%%/functions/yui/build/element/element-min.js
 %%WWWDIR%%/functions/yui/build/event-delegate/event-delegate-min.js
 %%WWWDIR%%/functions/yui/build/fonts/fonts-min.css
@@ -268,8 +271,8 @@
 %%WWWDIR%%/images/write.gif
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install/css/install.css
+%%WWWDIR%%/install/functions/NagInstallClass.php
 %%WWWDIR%%/install/functions/initial_settings.php
-%%WWWDIR%%/install/functions/install_class.php
 %%WWWDIR%%/install/functions/prepend_install.php
 %%WWWDIR%%/install/images/background.png
 %%WWWDIR%%/install/images/body_background.png
@@ -302,6 +305,7 @@
 %%WWWDIR%%/install/install.php
 %%WWWDIR%%/install/sql/import_nagios_sample.sql
 %%WWWDIR%%/install/sql/nagiosQL_v32_db_mysql.sql
+%%WWWDIR%%/install/sql/nagiosQL_v34_db_mysql.sql
 %%WWWDIR%%/install/sql/update_300_301.sql
 %%WWWDIR%%/install/sql/update_300_310.sql
 %%WWWDIR%%/install/sql/update_301_302.sql
@@ -311,14 +315,15 @@
 %%WWWDIR%%/install/sql/update_310_311.sql
 %%WWWDIR%%/install/sql/update_310_320.sql
 %%WWWDIR%%/install/sql/update_311_320.sql
+%%WWWDIR%%/install/sql/update_320_340.sql
 %%WWWDIR%%/install/step1.php
 %%WWWDIR%%/install/step2.php
 %%WWWDIR%%/install/step3.php
-%%WWWDIR%%/install/templates/index.tpl.htm
-%%WWWDIR%%/install/templates/install.tpl.htm
-%%WWWDIR%%/install/templates/step1.tpl.htm
-%%WWWDIR%%/install/templates/step2.tpl.htm
-%%WWWDIR%%/install/templates/step3.tpl.htm
+%%WWWDIR%%/install/templates/index.htm.tpl
+%%WWWDIR%%/install/templates/install.htm.tpl
+%%WWWDIR%%/install/templates/step1.htm.tpl
+%%WWWDIR%%/install/templates/step2.htm.tpl
+%%WWWDIR%%/install/templates/step3.htm.tpl
 %%WWWDIR%%/libraries/pear/HTML/Template/IT.php
 %%WWWDIR%%/libraries/pear/HTML/Template/ITX.php
 %%WWWDIR%%/libraries/pear/HTML/Template/IT_Error.php
@@ -328,38 +333,43 @@
 %%WWWDIR%%/libraries/pear/PEAR5.php
 %%WWWDIR%%/libraries/pear/index.html
 %%WWWDIR%%/scripts/do_config.php
-%%WWWDIR%%/templates/admin/admin_master.tpl.htm
-%%WWWDIR%%/templates/admin/checkcommands.tpl.htm
-%%WWWDIR%%/templates/admin/configtargets.tpl.htm
-%%WWWDIR%%/templates/admin/contactgroups.tpl.htm
-%%WWWDIR%%/templates/admin/contacts.tpl.htm
-%%WWWDIR%%/templates/admin/contacttemplates.tpl.htm
-%%WWWDIR%%/templates/admin/datadomain.tpl.htm
-%%WWWDIR%%/templates/admin/delbackup.tpl.htm
-%%WWWDIR%%/templates/admin/domain.tpl.htm
-%%WWWDIR%%/templates/admin/group.tpl.htm
-%%WWWDIR%%/templates/admin/helpedit.tpl.htm
-%%WWWDIR%%/templates/admin/hostdependencies.tpl.htm
-%%WWWDIR%%/templates/admin/hostescalations.tpl.htm
-%%WWWDIR%%/templates/admin/hostextinfo.tpl.htm
-%%WWWDIR%%/templates/admin/hostgroups.tpl.htm
-%%WWWDIR%%/templates/admin/hosts.tpl.htm
-%%WWWDIR%%/templates/admin/hosttemplates.tpl.htm
-%%WWWDIR%%/templates/admin/import.tpl.htm
-%%WWWDIR%%/templates/admin/mainpages.tpl.htm
-%%WWWDIR%%/templates/admin/mutdialog.tpl.htm
-%%WWWDIR%%/templates/admin/nagioscfg.tpl.htm
-%%WWWDIR%%/templates/admin/servicedependencies.tpl.htm
-%%WWWDIR%%/templates/admin/serviceescalations.tpl.htm
-%%WWWDIR%%/templates/admin/serviceextinfo.tpl.htm
-%%WWWDIR%%/templates/admin/servicegroups.tpl.htm
-%%WWWDIR%%/templates/admin/services.tpl.htm
-%%WWWDIR%%/templates/admin/servicetemplates.tpl.htm
-%%WWWDIR%%/templates/admin/settings.tpl.htm
-%%WWWDIR%%/templates/admin/support.tpl.htm
-%%WWWDIR%%/templates/admin/timeperiods.tpl.htm
-%%WWWDIR%%/templates/admin/user.tpl.htm
-%%WWWDIR%%/templates/admin/verify.tpl.htm
+%%WWWDIR%%/templates/admin/checkcommands.htm.tpl
+%%WWWDIR%%/templates/admin/configtargets.htm.tpl
+%%WWWDIR%%/templates/admin/contactgroups.htm.tpl
+%%WWWDIR%%/templates/admin/contacts.htm.tpl
+%%WWWDIR%%/templates/admin/contacttemplates.htm.tpl
+%%WWWDIR%%/templates/admin/datadomain.htm.tpl
+%%WWWDIR%%/templates/admin/datalist.htm.tpl
+%%WWWDIR%%/templates/admin/datalist_common.htm.tpl
+%%WWWDIR%%/templates/admin/datalist_hosts.htm.tpl
+%%WWWDIR%%/templates/admin/datalist_services.htm.tpl
+%%WWWDIR%%/templates/admin/delbackup.htm.tpl
+%%WWWDIR%%/templates/admin/group.htm.tpl
+%%WWWDIR%%/templates/admin/helpedit.htm.tpl
+%%WWWDIR%%/templates/admin/hostdependencies.htm.tpl
+%%WWWDIR%%/templates/admin/hostescalations.htm.tpl
+%%WWWDIR%%/templates/admin/hostextinfo.htm.tpl
+%%WWWDIR%%/templates/admin/hostgroups.htm.tpl
+%%WWWDIR%%/templates/admin/hosts.htm.tpl
+%%WWWDIR%%/templates/admin/hosttemplates.htm.tpl
+%%WWWDIR%%/templates/admin/import.htm.tpl
+%%WWWDIR%%/templates/admin/logbook.htm.tpl
+%%WWWDIR%%/templates/admin/mainpages.htm.tpl
+%%WWWDIR%%/templates/admin/menuaccess.htm.tpl
+%%WWWDIR%%/templates/admin/mutdialog.htm.tpl
+%%WWWDIR%%/templates/admin/nagioscfg.htm.tpl
+%%WWWDIR%%/templates/admin/password.htm.tpl
+%%WWWDIR%%/templates/admin/servicedependencies.htm.tpl
+%%WWWDIR%%/templates/admin/serviceescalations.htm.tpl
+%%WWWDIR%%/templates/admin/serviceextinfo.htm.tpl
+%%WWWDIR%%/templates/admin/servicegroups.htm.tpl
+%%WWWDIR%%/templates/admin/services.htm.tpl
+%%WWWDIR%%/templates/admin/servicetemplates.htm.tpl
+%%WWWDIR%%/templates/admin/settings.htm.tpl
+%%WWWDIR%%/templates/admin/support.htm.tpl
+%%WWWDIR%%/templates/admin/timeperiods.htm.tpl
+%%WWWDIR%%/templates/admin/user.htm.tpl
+%%WWWDIR%%/templates/admin/verify.htm.tpl
 %%WWWDIR%%/templates/files/commands.tpl.dat
 %%WWWDIR%%/templates/files/contactgroups.tpl.dat
 %%WWWDIR%%/templates/files/contacts.tpl.dat
@@ -377,20 +387,11 @@
 %%WWWDIR%%/templates/files/services.tpl.dat
 %%WWWDIR%%/templates/files/servicetemplates.tpl.dat
 %%WWWDIR%%/templates/files/timeperiods.tpl.dat
-%%WWWDIR%%/templates/index.tpl.htm
-%%WWWDIR%%/templates/main.tpl.htm
-@dir(%%WWWOWN%%,%%WWWGRP%%) %%WWWDIR%%/config
-@mode 750
-@owner %%WWWOWN%%
-@group %%NAGIOSUSER%%
-@dir %%ETCDIR%%/ssh
-@dir %%ETCDIR%%/services
-@dir %%ETCDIR%%/hosts
-@dir %%ETCDIR%%/backup/ssh
-@dir %%ETCDIR%%/backup/services
+%%WWWDIR%%/templates/index.htm.tpl
+%%WWWDIR%%/templates/main.htm.tpl
 @dir %%ETCDIR%%/backup/hosts
-@dir %%ETCDIR%%/backup
-@dir %%ETCDIR%%
-@mode
-@owner
-@group
+@dir %%ETCDIR%%/backup/services
+@dir %%ETCDIR%%/backup/ssh
+@dir %%ETCDIR%%/hosts
+@dir %%ETCDIR%%/services
+@dir %%ETCDIR%%/ssh
