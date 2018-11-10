@@ -11,7 +11,6 @@ INSTALL_TARGET=	install-gcc install-target-libgcc
 
 BROKEN_mips=		configure: error: cannot compute suffix of object files: cannot compile
 BROKEN_mips64=		configure: error: cannot compute suffix of object files: cannot compile
-BROKEN_powerpc64=	fails to compile: libgcc2.c:1846:9: internal compiler error: Segmentation fault
 
 MASTERDIR=	${.CURDIR}/../powerpc64-gcc
 
