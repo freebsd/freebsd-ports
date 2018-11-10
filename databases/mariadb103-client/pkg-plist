@@ -110,7 +110,7 @@ man/man1/mysqltest_embedded.1.gz
 man/man1/replace.1.gz
 @comment man/man1/resolve_stack_dump.1.gz
 @comment man/man1/resolveip.1.gz
-man/man1/tokuft_logprint.1.gz
+@comment man/man1/tokuft_logprint.1.gz
 @comment man/man1/tokuftdump.1.gz
 @comment man/man1/wsrep_sst_common.1.gz
 @comment man/man1/wsrep_sst_mariabackup.1.gz
