@@ -1,0 +1,11 @@
+--- configs/authplugins/Makefile.am.orig	2018-10-16 12:21:11 UTC
++++ configs/authplugins/Makefile.am
+@@ -4,7 +4,7 @@ DGDATADIR = $(DGCONFDIR)/authplugins
+ 
+ SUBDIRS = .
+ 
+-FLISTS = proxy-basic.conf ident.conf ip.conf proxy-digest.conf \
++FLISTS = proxy-basic.conf ident.conf ip.conf proxy-digest.conf proxy-header.conf\
+ 	 port.conf 
+ 
+ if ENABLE_NTLM

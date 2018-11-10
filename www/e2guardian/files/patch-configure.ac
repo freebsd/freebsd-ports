@@ -1,0 +1,10 @@
+--- configure.ac.orig	2018-08-21 08:17:02 UTC
++++ configure.ac
+@@ -617,7 +617,6 @@ else
+ 	AC_MSG_RESULT(yes)
+ 	dnsauth=true
+ 	DNSAUTHSUPPORT=""
+-	LIBS="${LIBS} -lresolv"
+ 	AC_DEFINE([PRT_DNSAUTH],[],[Define to enable DNS auth plugin])
+ fi],
+ [
