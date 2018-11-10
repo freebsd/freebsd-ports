@@ -68,7 +68,7 @@ check:
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
 CONFIGURE_ARGS+=--enable-imagemagick=${LOCALBASE}
-LIB_DEPENDS+=	libMagickWand-6.so:graphics/ImageMagick
+LIB_DEPENDS+=	libMagickWand-6.so:graphics/ImageMagick6
 PLIST_SUB+=	WITH_IMAGEMAGICK=""
 .else
 CONFIGURE_ARGS+=--disable-imagemagick

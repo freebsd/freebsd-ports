@@ -32,7 +32,7 @@ OPTIONS_DEFAULT=	ISPC
 OPTIONS_SUB=	yes
 
 IMAGEMAGICK_DESC=	BMP, GIF, PNG, TGA, TIFF image formats support
-IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick
+IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick6
 IMAGEMAGICK_CMAKE_ON=	-DEMBREE_TUTORIALS_IMAGE_MAGICK:BOOL=ON
 
 ISPC_DESC=		ISPC applications support

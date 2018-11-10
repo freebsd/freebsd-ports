@@ -3,7 +3,7 @@
 
 PORTNAME=	synfig
 PORTVERSION=	1.2.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel graphics multimedia
 MASTER_SITES=	SF/${PORTNAME}/releases/${PORTVERSION}/source
 
@@ -15,7 +15,7 @@ LICENSE=	GPLv2+
 BUILD_DEPENDS=	etl>=1.2.1:devel/etl
 LIB_DEPENDS=	libHalf.so:graphics/ilmbase \
 		libIlmImf.so:graphics/openexr \
-		libMagickWand-6.so:graphics/ImageMagick \
+		libMagickWand-6.so:graphics/ImageMagick6 \
 		libavcodec.so:multimedia/ffmpeg \
 		libboost_program_options.so:devel/boost-libs \
 		libdv.so:multimedia/libdv \

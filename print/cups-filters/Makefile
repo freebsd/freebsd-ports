@@ -54,7 +54,7 @@ BRAILLE_DESC=			Braille embosser support
 BRAILLE_BUILD_DEPENDS=		bash:shells/bash
 BRAILLE_LIB_DEPENDS=		liblouis.so:devel/liblouis \
 #				liblouisutdml.so:devel/liblouisutdml
-BRAILLE_RUN_DEPENDS=		convert:graphics/ImageMagick \
+BRAILLE_RUN_DEPENDS=		convert:graphics/ImageMagick6 \
 				pdftotext:graphics/poppler-utils \
 				bash:shells/bash
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	serendipity
 PORTVERSION=	2.1.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/php-blog/${PORTNAME}/${PORTVERSION}
 
@@ -27,7 +28,7 @@ OPTIONS_DEFAULT=	MYSQL MAGICK
 MYSQL_USE=	PHP=mysqli
 PGSQL_USE=	PHP=pgsql
 SQLITE_USE=	PHP=sqlite3
-MAGICK_RUN_DEPENDS+=	convert:graphics/ImageMagick
+MAGICK_RUN_DEPENDS+=	convert:graphics/ImageMagick6
 
 do-install:
 	@-${MKDIR} ${STAGEDIR}${PREFIX}/${SERENDIPITY}

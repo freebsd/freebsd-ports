@@ -3,7 +3,7 @@
 
 PORTNAME=	libdmtx
 PORTVERSION=	0.7.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -13,7 +13,7 @@ COMMENT=	Library for reading and writing Data Matrix barcodes
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick
+LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6
 
 USES=		tar:bzip2 libtool
 GNU_CONFIGURE=	yes

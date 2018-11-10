@@ -3,7 +3,7 @@
 
 PORTNAME=	piwigo
 DISTVERSION=	2.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/
 
@@ -44,9 +44,9 @@ PLIST_SUB+=	WWWOWN="${WWWOWN}" \
 
 .if ${PORT_OPTIONS:MIMAGICK}
 .if ${PORT_OPTIONS:MX11}
-RUN_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick
+RUN_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick6
 .else
-RUN_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick-nox11
+RUN_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick6-nox11
 .endif
 .endif
 

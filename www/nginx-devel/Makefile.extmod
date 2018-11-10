@@ -268,7 +268,7 @@ SLOWFS_CACHE_MASTER_SITES=	http://labs.frickle.com/files/:slowfs_cache
 SLOWFS_CACHE_DISTFILES=		ngx_slowfs_cache-1.10.tar.gz:slowfs_cache
 SLOWFS_CACHE_CONFIGURE_ON=	--add-module=${WRKDIR}/ngx_slowfs_cache-1.10
 
-SMALL_LIGHT_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick \
+SMALL_LIGHT_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6 \
 				libpcre.so:devel/pcre
 SMALL_LIGHT_GH_TUPLE=		cubicdaiya:ngx_small_light:v0.9.2:small_light
 SMALL_LIGHT_VARS=		DSO_EXTMODS+=small_light

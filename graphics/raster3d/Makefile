@@ -3,7 +3,7 @@
 
 PORTNAME=	raster3d
 DISTVERSION=	3.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics biology
 MASTER_SITES=	http://skuld.bmsc.washington.edu/${PORTNAME}/
 DISTNAME=	Raster3D_${DISTVERSION:R}-${DISTVERSION:E}
@@ -32,7 +32,7 @@ OPTIONS_DEFINE=	IMAGEMAGICK DOCS EXAMPLES
 OPTIONS_DEFAULT=IMAGEMAGICK
 OPTIONS_SUB=		yes
 
-IMAGEMAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick
+IMAGEMAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick6
 
 pre-build: # generation of Makefile.incl has to be separate from 'make all', otherwise the generated Makefile.incl isn't read by 'make all'
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} linux

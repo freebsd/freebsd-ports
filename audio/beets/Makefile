@@ -76,7 +76,7 @@ EMBYUPDATE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_
 FETCHART_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 FFMPEG_RUN_DEPENDS=	ffmpeg>=2:multimedia/ffmpeg
 GMUSIC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gmusicapi>=0:audio/py-gmusicapi@${PY_FLAVOR}
-IMAGEMAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick
+IMAGEMAGICK_RUN_DEPENDS=	convert:graphics/ImageMagick6
 IPFS_RUN_DEPENDS=	ipfs-go:sysutils/ipfs-go
 KODIUPDATE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 LASTFM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylast>=0:audio/py-pylast@${PY_FLAVOR}

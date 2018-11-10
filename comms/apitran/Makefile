@@ -2,6 +2,7 @@
 
 PORTNAME=	apitran
 PORTVERSION=	g20180926
+PORTREVISION=	1
 CATEGORIES=	comms astro hamradio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYNUMPY} \
 		sox:audio/sox \
-		display:graphics/ImageMagick
+		display:graphics/ImageMagick6
 
 USES=		python:run shebangfix
 USE_GITHUB=	yes

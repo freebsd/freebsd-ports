@@ -3,7 +3,7 @@
 
 PORTNAME=	epplets
 PORTVERSION=	0.14
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}
 
@@ -13,7 +13,7 @@ COMMENT=	Collection of Enlightenment dock applications
 BUILD_DEPENDS=	e16:x11-wm/e16
 LIB_DEPENDS=	libcdaudio.so:audio/libcdaudio
 RUN_DEPENDS=	e16:x11-wm/e16 \
-		import:graphics/ImageMagick
+		import:graphics/ImageMagick6
 
 USES=		gmake libtool pkgconfig
 USE_XORG=	xext

@@ -3,7 +3,7 @@
 
 PORTNAME=	august
 PORTVERSION=	0.63b
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www editors
 MASTER_SITES=	http://www.erjobe.info/mainwiki/pmwiki/uploads/Main/August/
 DISTNAME=	${PORTNAME}${PORTVERSION}.src
@@ -14,7 +14,7 @@ COMMENT=	HTML editor for the experienced Web author
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-RUN_DEPENDS=	identify:graphics/ImageMagick \
+RUN_DEPENDS=	identify:graphics/ImageMagick6 \
 		weblint:www/weblint
 
 USES=		tk

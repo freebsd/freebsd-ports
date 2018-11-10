@@ -4,7 +4,7 @@
 PORTNAME=	npretty
 DISTVERSIONPREFIX=	n
 DISTVERSION=	0.9.3-1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 MAINTAINER=	peter@pean.org
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-Image-ExifTool>=0:graphics/p5-Image-ExifTool \
 		p5-forks>=0:devel/p5-forks
-LIB_DEPENDS=	libMagickCore-6.so:graphics/ImageMagick
+LIB_DEPENDS=	libMagickCore-6.so:graphics/ImageMagick6
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gammy

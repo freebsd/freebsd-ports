@@ -91,7 +91,7 @@ ESOUND_CONFIGURE_WITH=		esound
 GNOMEVFS2_USE=			GNOME=glib20,gconf2,gnomevfs2
 GNOMEVFS2_CONFIGURE_ENABLE=	gnomevfs
 IMAGEMAGICK_CONFIGURE_WITH=	imagemagick
-IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick
+IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6
 IMAGEMAGICK_IMPLIES=		DMX_IMAGE
 IPV6_CONFIGURE_ENABLE=		ipv6
 JACK_LIB_DEPENDS=		libjack.so:audio/jack

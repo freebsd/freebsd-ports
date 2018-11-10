@@ -3,6 +3,7 @@
 
 PORTNAME=	gscan2pdf
 PORTVERSION=	2.1.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	p5-Config-General>=2.40:devel/p5-Config-General \
 		p5-Locale-gettext>=1.05:devel/p5-Locale-gettext \
 		p5-Log-Log4perl>0:devel/p5-Log-Log4perl \
 		p5-Readonly>0:devel/p5-Readonly \
-		ImageMagick>0:graphics/ImageMagick \
+		ImageMagick6>0:graphics/ImageMagick6 \
 		p5-Image-Sane>=0.14:graphics/p5-Image-Sane \
 		p5-Set-IntSpan>=1.10:math/p5-Set-IntSpan \
 		p5-List-MoreUtils>0:lang/p5-List-MoreUtils \
@@ -32,7 +33,7 @@ RUN_DEPENDS:=	p5-Proc-ProcessTable>0:devel/p5-Proc-ProcessTable \
 		scanimage:graphics/sane-backends \
 		scanadf:graphics/sane-frontends \
 		unpaper:graphics/unpaper \
-		ImageMagick>0:graphics/ImageMagick \
+		ImageMagick6>0:graphics/ImageMagick6 \
 		p5-HTML-Parser>0:www/p5-HTML-Parser \
 		p5-Filesys-Df>0.92:sysutils/p5-Filesys-Df \
 		p5-Data-UUID>=1.220:devel/p5-Data-UUID \

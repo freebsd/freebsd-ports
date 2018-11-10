@@ -3,7 +3,7 @@
 
 PORTNAME=	variety
 PORTVERSION=	0.5.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	https://launchpad.net/variety/trunk/${PORTVERSION}/+download/ \
 		http://nivit.altervista.org/FreeBSD/ports/distfiles/
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.3.2:www/py-beautifulsoup@${
 		${PYTHON_PKGNAMEPREFIX}pillow>=2.6.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=3.4.1_1:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.8.0:devel/py-six@${PY_FLAVOR} \
-		ImageMagick>=6.9.0.4,1:graphics/ImageMagick \
+		ImageMagick6>=6.9.0.4,1:graphics/ImageMagick6 \
 		bash>=4.3.33:shells/bash \
 		ca_root_nss>=3.17.4:security/ca_root_nss \
 		coreutils>=8.23:sysutils/coreutils \

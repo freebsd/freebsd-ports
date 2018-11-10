@@ -3,12 +3,13 @@
 
 PORTNAME=	MathModePlugin
 SVNREV=		15934
+PORTREVISION=	1
 MASTER_SITES=	http://protey.ru/freebsd/distfiles/ \
 		LOCAL/skv
 
 COMMENT=	Include LaTeX formatted math in your TWiki pages
 
-RUN_DEPENDS=	convert:graphics/ImageMagick
+RUN_DEPENDS=	convert:graphics/ImageMagick6
 
 USE_TEX=	base latex
 

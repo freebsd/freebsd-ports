@@ -3,7 +3,7 @@
 
 PORTNAME=	ecromedos
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc print www
 MASTER_SITES=	http://www.ecromedos.net/files/src/${PORTVERSION}/
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libxml2>=0:textproc/py-libxml2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libxslt>=0:textproc/py-libxslt@${PY_FLAVOR} \
-		convert:graphics/ImageMagick \
+		convert:graphics/ImageMagick6 \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR}
 
 NO_BUILD=	yes

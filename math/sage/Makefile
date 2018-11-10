@@ -19,7 +19,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 BUILD_DEPENDS=	bash:shells/bash \
-		convert:graphics/ImageMagick \
+		convert:graphics/ImageMagick6 \
 		ffmpeg:multimedia/ffmpeg \
 		automake:devel/automake \
 		autoconf:devel/autoconf

@@ -36,7 +36,7 @@ SOX_DESC=	Support for VoIP
 PYX_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyx/__init__.py:graphics/py-PyX12@${PY_FLAVOR}
 PYCRYPTO_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:security/py-pycrypto@${PY_FLAVOR}
 PYGNUPLOT_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Gnuplot/__init__.py:math/py-gnuplot@${PY_FLAVOR}
-GRAPH_RUN_DEPENDS=	${LOCALBASE}/bin/MagickCore-config:graphics/ImageMagick \
+GRAPH_RUN_DEPENDS=	${LOCALBASE}/bin/MagickCore-config:graphics/ImageMagick6 \
 			${LOCALBASE}/bin/dot:graphics/graphviz
 P0F_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/p0f.fp:net-mgmt/p0f
 QUESO_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/queso.conf.sample:net/queso

@@ -3,7 +3,7 @@
 
 PORTNAME=	fgallery
 PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www graphics
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool \
 		exiftran:graphics/exiftran \
 		p5-Cpanel-JSON-XS>=0:converters/p5-Cpanel-JSON-XS \
-		convert:graphics/ImageMagick
+		convert:graphics/ImageMagick6
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2
 
 USE_GITHUB=	yes
