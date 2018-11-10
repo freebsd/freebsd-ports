@@ -17,7 +17,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libga.so:devel/ga \
 		libmpich.so:net/mpich
 
-USES=		fortran gmake shebangfix
+USES=		fortran gmake ${ARCH_64BIT:S/^$/perl5/:S/64//} shebangfix
 SHEBANG_FILES=	../contrib/distro-tools/build_* ../contrib/add_*
 SHEBANG_GLOB=	*.sh
 USE_GITHUB=	yes
@@ -34,7 +34,7 @@ SUB_FILES=	nwchemrc
 
 WRKSRC_SUBDIR=	src
 
-BINARY_ALIAS=	gcc=${CC}
+BINARY_ALIAS=	gcc=${CC} gfortran=gfortran${GCC_DEFAULT}
 
 post-extract:
 	@${RM} ${WRKSRC}/atomscf/src.orig
@@ -49,7 +49,7 @@ pre-build:
 
 do-install:
 	${INSTALL_DATA} ${WRKDIR}/nwchemrc ${STAGEDIR}${PREFIX}/etc/nwchemrc
-	${INSTALL_PROGRAM} ${WRKSRC}/../bin/LINUX64/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/../bin/LINUX${ARCH_64BIT}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	cd ${WRKSRC}/basis && ${COPYTREE_SHARE} libraries ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/libraryps
