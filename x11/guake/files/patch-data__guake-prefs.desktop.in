@@ -1,8 +1,0 @@
---- data/guake-prefs.desktop.in.orig	2015-05-24 20:39:50 UTC
-+++ data/guake-prefs.desktop.in
-@@ -1,5 +1,4 @@
- [Desktop Entry]
--Encoding=UTF-8
- Name=Guake Preferences
- Name[pl]=Preferencje programu Guake
- Name[pt_BR]=Preferências do Guake
