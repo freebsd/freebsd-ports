@@ -17,6 +17,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
+
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	MATPLOTLIB
+MATPLOTLIB_DESC=Plot support via matplotlib
+MATPLOTLIB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=0:math/py-matplotlib@${PY_FLAVOR}
 
 .include <bsd.port.mk>
