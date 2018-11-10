@@ -1,7 +1,7 @@
-R18n is a i18n tool to translate your Ruby application. It has nice
-Ruby-style syntax, filters, flexible locales, custom loaders,
-translation support for any classes, time and number localization,
-several user language support, agnostic core package with out-of-box
-support for Rails, Sinatra and desktop applications.
+R18n is an i18n tool to translate your Ruby application. It has nice Ruby-style
+syntax, filters, flexible locales, custom loaders, translation support for any
+classes, time and number localization, several user language support, agnostic
+core package with out-of-box support for Rails, Sinatra and desktop
+applications.
 
-WWW: https://github.com/ai/r18n
+WWW: https://github.com/r18n/r18n/tree/master/r18n-core
