@@ -1,42 +1,9 @@
---- doc/meson.build.orig	2018-06-15 04:16:53 UTC
+--- doc/meson.build.orig	2018-10-24 08:31:33 UTC
 +++ doc/meson.build
-@@ -1,16 +1,19 @@
--sphinx = find_program('sphinx-build', required:false)
--
--if sphinx.found()
--  custom_target(
--    'HTML documentation',
--    output: 'html',
--    input: ['index.rst', 'conf.py'],
--    command: [sphinx, '-q', '-b', 'html', '-d', '@OUTDIR@/doctrees', meson.current_source_dir(), '@OUTPUT@'],
--    build_by_default: true,
--    install: true,
--    install_dir: join_paths(get_option('datadir'), 'doc', meson.project_name()),
--  )
-+use_sphinx = get_option('use_sphinx')
- 
-+if use_sphinx == 'false'
-+  use_sphinx = false
-+elif use_sphinx == 'true'
-+  sphinx = find_program('sphinx-build', required:false)
-+  if not sphinx.found()
-+    error('can\'t find sphinx')
-+  endif
-+  use_sphinx = true
-+else
-+  sphinx = find_program('sphinx-build', required:false)
-+  use_sphinx = sphinx.found()
-+endif
-+ 
-+if use_sphinx
-   custom_target(
-     'Manpage documentation',
-     output: 'man',
-@@ -18,6 +21,6 @@ if sphinx.found()
-     command: [sphinx, '-q', '-b', 'man', '-d', '@OUTDIR@/doctrees', meson.current_source_dir(), '@OUTPUT@/man1'],
-     build_by_default: true,
-     install: true,
--    install_dir: get_option('datadir'),
-+    install_dir: get_option('mandir'),
-   )
- endif
+@@ -15,5 +15,5 @@ custom_target(
+   command: [sphinx, '-q', '-b', 'man', '-d', '@OUTDIR@/doctrees', meson.current_source_dir(), '@OUTPUT@/man1'],
+   build_by_default: true,
+   install: true,
+-  install_dir: get_option('datadir'),
++  install_dir: get_option('mandir'),
+ )

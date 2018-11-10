@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	musicpc
-DISTVERSION=	0.30
+DISTVERSION=	0.31
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.musicpd.org/download/mpc/0/
 DISTNAME=	mpc-${PORTVERSION}
@@ -18,21 +18,19 @@ LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient
 USES=		meson pkgconfig tar:xz
 MESON_ARGS=	--mandir=${MANPREFIX}
 
-PLIST_FILES=	bin/mpc
+OPTIONS_DEFINE=	DOCS ICONV
+OPTIONS_DEFAULT=	DOCS ICONV
 
-OPTIONS_DEFINE=	DOCS EXAMPLES MANPAGES ICONV
-OPTIONS_DEFAULT=	MANPAGES ICONV
-
-MANPAGES_USES=	python:env
-MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
-MANPAGES_MESON_TRUE=	use_sphinx
-MANPAGES_PLIST_FILES=	man/man1/mpc.1.gz
+DOCS_USES=	python:env
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
+DOCS_MESON_ON=	-Ddocumentation=enabled
+DOCS_MESON_OFF=	-Ddocumentation=disabled
 
 ICONV_USES=	iconv
 ICONV_LDFLAGS=	-L${ICONV_PREFIX}/lib ${ICONV_LIB}
-ICONV_MESON_TRUE=	iconv
+ICONV_MESON_ON=	-Diconv=enabled
+ICONV_MESON_OFF=	-Diconv=disabled
 
 PORTDOCS=	AUTHORS README.rst NEWS
-PORTEXAMPLES=	*
 
 .include <bsd.port.mk>
