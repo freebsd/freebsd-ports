@@ -119,7 +119,7 @@ sbin/icinga2
 %%PORTDOCS%%%%DOCSDIR%%/markdown/images/getting-started/nano-syntax.png
 %%PORTDOCS%%%%DOCSDIR%%/markdown/images/getting-started/postgr-import-ido.png
 %%PORTDOCS%%%%DOCSDIR%%/markdown/images/getting-started/vim-syntax.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsyslog/icinga2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsyslog/icinga2.conf
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/mysql.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.0.2.sql
 %%MYSQL%%%%DATADIR%%-ido-mysql/schema/upgrade/2.1.0.sql
