@@ -1,0 +1,29 @@
+From 313aa682738fc877ee8ba78b1d4060e08739cc24 Mon Sep 17 00:00:00 2001
+From: Ronan Abhamon <ronan.abhamon@belledonne-communications.com>
+Date: Fri, 19 Jan 2018 15:16:03 +0100
+Subject: [PATCH] feat(AppController): force default theme style
+
+---
+ src/app/AppController.cpp | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/src/app/AppController.cpp b/src/app/AppController.cpp
+index 2d353884..711e1a9b 100644
+--- src/app/AppController.cpp
++++ src/app/AppController.cpp
+@@ -23,6 +23,7 @@
+ #include <QDirIterator>
+ #include <QFontDatabase>
+ #include <QMessageBox>
++#include <QQuickStyle>
+ 
+ #include "gitversion.h"
+ 
+@@ -85,6 +86,7 @@ AppController::AppController (int &argc, char *argv[]) {
+   QCoreApplication::setApplicationVersion(APPLICATION_VERSION);
+ 
+   mApp = new App(argc, argv);
++  QQuickStyle::setStyle("Default");
+   if (mApp->isSecondary()) {
+     #ifdef Q_OS_MACOS
+       mApp->processEvents();
