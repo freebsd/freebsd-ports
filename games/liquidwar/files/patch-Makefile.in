@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu Feb 12 07:43:58 2004
-+++ Makefile.in	Sun Oct  9 16:32:39 2005
-@@ -16,13 +16,12 @@
+--- Makefile.in.orig	2007-10-17 22:00:47.000000000 +0200
++++ Makefile.in	2018-11-02 12:39:01.122951000 +0100
+@@ -16,7 +16,7 @@ DESKTOPDIR =           $(datadir)/applications
  # directory since the FHS (File Hierarchy Standard recommends
  # to place man pages in $(datadir)/man (ie /usr/share/man).
  # MANDIR =          $(mandir)/man6
@@ -9,11 +9,3 @@
  # We don't use the autoconf default infodir=$(prefix)/info info
  # directory since the FHS (File Hierarchy Standard recommends
  # to place info pages in $(datadir)/info (ie /usr/share/info).
--# INFODDIR =        $(infodir)
--INFODIR =         $(datadir)/info
--INFODIRDIR =      $(infodir)
-+# YES WE DO!
-+INFODIR =        $(prefix)/info
- 
- ifeq (@TARGET_OPT@,yes)
- 	TARGET =          @target@

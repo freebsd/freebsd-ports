@@ -2,7 +2,7 @@
 
 PORTNAME=	cim
 PORTVERSION=	3.37
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://simula67.at.ifi.uio.no/Cim/
 

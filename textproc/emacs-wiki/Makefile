@@ -3,7 +3,7 @@
 
 PORTNAME=	emacs-wiki
 PORTVERSION=	2.72
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://www.mwolson.org/static/dist/emacs-wiki/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
@@ -32,7 +32,7 @@ do-install:
 .for i in *.el
 	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${LISPDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/emacs-wiki.info ${STAGEDIR}${PREFIX}/info
+	${INSTALL_DATA} ${WRKSRC}/emacs-wiki.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
 
 do-install-CONTRIB-on:
 	${MKDIR} ${STAGEDIR}${LISPDIR}/contrib

@@ -543,8 +543,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  the path relative to ${INFO_PATH}.
 # INFO_PATH		- Path, where all .info files will be installed by your
 #				  port, relative to ${PREFIX}
-#				  Default: "share/info" if ${PREFIX} is equal to /usr
-#				  and "info" otherwise.
 #
 # Set the following to specify all documentation your port installs into
 # ${DOCSDIR}
@@ -2672,12 +2670,7 @@ MAN${sect}PREFIX?=	${MANPREFIX}
 .endfor
 MANLPREFIX?=	${MANPREFIX}
 MANNPREFIX?=	${MANPREFIX}
-
-.if ${PREFIX} == /usr
 INFO_PATH?=	share/info
-.else
-INFO_PATH?=	info
-.endif
 
 .if defined(INFO)
 RUN_DEPENDS+=	indexinfo:print/indexinfo

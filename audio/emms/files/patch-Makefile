@@ -1,10 +1,12 @@
---- Makefile.orig	2018-01-06 17:26:53 UTC
+--- Makefile.orig	2018-05-01 18:43:15 UTC
 +++ Makefile
-@@ -10,13 +10,13 @@ ALLCOMPILED=$(wildcard $(LISPDIR)/*.elc)
+@@ -9,14 +9,14 @@ ALLCOMPILED=$(wildcard $(LISPDIR)/*.elc)
+ 
  DESTDIR=
  PREFIX=$(DESTDIR)/usr/local
- INFODIR=$(PREFIX)/info
+-INFODIR=$(PREFIX)/info
 -MAN1DIR=$(PREFIX)/share/man/man1
++INFODIR=$(PREFIX)/share/info
 +MAN1DIR=$(PREFIX)/man/man1
  BINDIR=$(PREFIX)/bin
  SITELISP=$(PREFIX)/share/emacs/site-lisp/emms

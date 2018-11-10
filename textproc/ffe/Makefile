@@ -3,6 +3,7 @@
 
 PORTNAME=	ffe
 DISTVERSION=	0.3.8
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/ff-extractor/ff-extractor/${DISTVERSION}
 

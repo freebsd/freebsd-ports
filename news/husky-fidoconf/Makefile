@@ -19,6 +19,7 @@ USES+=		makeinfo
 PORTDOCS=	fidoconfig.html
 DOCSDIR=	${PREFIX}/share/doc/husky
 INFO=		fidoconfig
+MAKE_ARGS=	INFODIR=${PREFIX}/${INFO_PATH}
 
 OPTIONS_DEFINE=	DOCS
 

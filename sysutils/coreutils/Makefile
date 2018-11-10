@@ -2,6 +2,7 @@
 
 PORTNAME=	coreutils
 PORTVERSION=	8.30
+PORTREVISION=	1
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	GNU
 

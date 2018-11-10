@@ -3,7 +3,7 @@
 
 PORTNAME=	pinfo
 PORTVERSION=	0.6.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	GENTOO \
 		http://alioth.debian.org/frs/download.php/file/3351/

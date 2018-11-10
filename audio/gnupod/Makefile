@@ -3,7 +3,7 @@
 
 PORTNAME=	gnupod
 PORTVERSION=	0.99.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio perl5
 MASTER_SITES=	SAVANNAH \
 		http://www.blinkenlights.ch/gnupod-dist/stable/

@@ -2,7 +2,7 @@
 
 PORTNAME=	kpathsea
 PORTVERSION=	6.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMEPREFIX=	tex-

@@ -3,6 +3,7 @@
 
 PORTNAME=	maxima
 PORTVERSION=	5.41.0
+PORTREVISION=	1
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -25,7 +26,9 @@ CONFIGURE_ARGS=	--with-posix-shell=/bin/sh \
 		${LISPSELECT}
 TEST_TARGET=	check
 
-INFO=		maxima imaxima xmaxima
+INFO=		maxima imaxima xmaxima \
+		abs_integrate drawutils \
+		kovacicODE logic
 
 PLIST_SUB=	BINDIR=${BINDIRECTORY}
 PLIST_SUB+=	LISPBIN=${LISPBINARY}

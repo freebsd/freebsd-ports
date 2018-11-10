@@ -10,7 +10,7 @@
 -../binutils/configure --target=zpu-elf --prefix=`pwd`/../install
 -make
 -make install
-+../binutils/configure --target=zpu-elf --prefix=%%PREFIX%%/zpu --infodir=%%PREFIX%%/info/zpu
++../binutils/configure --target=zpu-elf --prefix=%%PREFIX%%/zpu --infodir=%%PREFIX%%/share/info/zpu
 +%%GMAKE%%
 +#gmake install
  cd ..

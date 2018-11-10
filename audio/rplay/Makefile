@@ -22,6 +22,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
 INFO=		RPLAY RPTP librplay rplayd
+MAKE_ARGS=	infodir=${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.pre.mk>
 

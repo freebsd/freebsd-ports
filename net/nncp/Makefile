@@ -2,6 +2,7 @@
 
 PORTNAME=	nncp
 DISTVERSION=	3.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.nncpgo.org/download/
 
@@ -24,6 +25,7 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	AUTHORS NEWS NEWS.RU README README.RU THANKS
 INFO=		nncp
+MAKE_ARGS=	INFODIR=${STAGEDIR}${PREFIX}/${INFO_PATH}
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/nncp.newsyslog.conf.sample ${STAGEDIR}${PREFIX}/etc/nncp.conf.sample

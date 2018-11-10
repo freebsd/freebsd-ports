@@ -4,7 +4,7 @@
 PORTNAME=	ghdl
 PORTVERSION=	0.33
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	cad
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -144,7 +144,7 @@ do-install:
 	${MV} ${STAGEDIR}${PREFIX}/ghdl/share/man/man1/ghdl.1 \
 		${STAGEDIR}${PREFIX}/man/man1
 	${MV} ${STAGEDIR}${PREFIX}/ghdl/share/info/ghdl.info \
-		${STAGEDIR}${PREFIX}/info
+		${STAGEDIR}${PREFIX}/${INFO_PATH}
 	${RM} -r ${STAGEDIR}${PREFIX}/ghdl/share
 
 .endif	# TAIL: GCC

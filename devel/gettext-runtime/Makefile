@@ -5,7 +5,7 @@
 # discretion.
 
 PORTNAME=	gettext-runtime
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	GNU gettext runtime libraries and programs
 

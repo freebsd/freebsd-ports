@@ -3,6 +3,7 @@
 
 PORTNAME=	emacs-lisp-intro
 PORTVERSION=	2.04
+PORTREVISION=	1
 CATEGORIES=	lang elisp
 MASTER_SITES=	GNU/emacs
 

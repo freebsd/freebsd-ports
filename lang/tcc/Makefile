@@ -3,7 +3,7 @@
 PORTNAME=	tcc
 DISTVERSIONPREFIX=	release_
 DISTVERSION=	0_9_26
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang
 
 MAINTAINER=	ports@FreeBSD.org
@@ -57,8 +57,7 @@ CFLAGS+=	-fheinous-gnu-extensions
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/tcc
-	${INSTALL_DATA} ${WRKSRC}/tcc-doc.info ${STAGEDIR}${PREFIX}/info
-	${RM} -r ${STAGEDIR}${PREFIX}/share/info
+	${INSTALL_DATA} ${WRKSRC}/tcc-doc.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
 	${INSTALL_MAN} ${WRKSRC}/tcc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${RM} -r ${STAGEDIR}${PREFIX}/share/man
 .for f in ${FILES}

@@ -1,5 +1,5 @@
 include/microhttpd.h
-info/libmicrohttpd_performance_data.png
+share/info/libmicrohttpd_performance_data.png
 lib/libmicrohttpd.a
 lib/libmicrohttpd.so
 lib/libmicrohttpd.so.12

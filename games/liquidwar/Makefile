@@ -3,7 +3,7 @@
 
 PORTNAME=	liquidwar
 PORTVERSION=	5.6.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://liquidwar.sunsite.dk/archive/ \
 		SAVANNAH \

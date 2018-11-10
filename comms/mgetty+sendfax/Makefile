@@ -3,7 +3,7 @@
 
 PORTNAME=	mgetty
 PORTVERSION=	1.1.37
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	ftp://mgetty.greenie.net/pub/mgetty/source/1.1/
 DISTNAME=	${PORTNAME}${PORTVERSION}-Jun05
@@ -20,6 +20,7 @@ SHEBANG_FILES=	samples/fax samples/new_fax.all/new_fax samples/new_fax.mime1 \
 
 SUB_FILES=	pkg-message mgettycfg
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+MAKE_ARGS=	INFODIR=${PREFIX}/${INFO_PATH}
 MAKE_FLAGS=	CFLAGS="${CFLAGS}" prefix=${PREFIX} LOCALBASE=${LOCALBASE}\
 		STAGEDIR=${STAGEDIR} -f
 ALL_TARGET=	noident all

@@ -3,7 +3,7 @@
 
 PORTNAME=	jed
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese editors
 MASTER_SITES=	LOCAL/knu \
 		http://www.kondara.org/~g/slang/
@@ -77,10 +77,10 @@ do-install:
 	${INSTALL_DATA} ${_LIBDIR}/tm/* ${STAGEDIR}${JED_ROOT}/lib/tm
 	(cd ${_DOCDIR} && ${INSTALL_MAN} jed.1 rgrep.1 \
 		${STAGEDIR}${PREFIX}/man/man1)
-	${INSTALL_DATA} ${_INFODIR}/jed.info ${STAGEDIR}${PREFIX}/info
-	${INSTALL_DATA} ${_INFODIR}/jed.1in ${STAGEDIR}${PREFIX}/info/jed.info-1
-	${INSTALL_DATA} ${_INFODIR}/jed.2in ${STAGEDIR}${PREFIX}/info/jed.info-2
-	${INSTALL_DATA} ${_INFODIR}/jed.3in ${STAGEDIR}${PREFIX}/info/jed.info-3
+	${INSTALL_DATA} ${_INFODIR}/jed.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
+	${INSTALL_DATA} ${_INFODIR}/jed.1in ${STAGEDIR}${PREFIX}/${INFO_PATH}/jed.info-1
+	${INSTALL_DATA} ${_INFODIR}/jed.2in ${STAGEDIR}${PREFIX}/${INFO_PATH}/jed.info-2
+	${INSTALL_DATA} ${_INFODIR}/jed.3in ${STAGEDIR}${PREFIX}/${INFO_PATH}/jed.info-3
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${_DOCDIR} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	mpir
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://mpir.org/
 

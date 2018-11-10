@@ -3,7 +3,7 @@
 
 PORTNAME=	unuran
 PORTVERSION=	1.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://statmath.wu-wien.ac.at/unuran/ \
 		LOCAL/bf

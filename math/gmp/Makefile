@@ -3,6 +3,7 @@
 
 PORTNAME=	gmp
 PORTVERSION=	6.1.2
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	GNU
 
@@ -18,7 +19,7 @@ USES=		libtool makeinfo tar:xz
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--infodir=${PREFIX}/info \
+		--infodir=${PREFIX}/${INFO_PATH} \
 		--mandir=${PREFIX}/man \
 		--enable-cxx
 MAKE_JOBS_UNSAFE=yes

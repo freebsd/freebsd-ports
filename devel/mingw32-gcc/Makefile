@@ -3,7 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GCC
@@ -76,7 +76,7 @@ CONFIGURE_ARGS=	--disable-nls --target=${GCC_TARG} \
 		--disable-bootstrap
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 PLIST_SUB+=	GCC_TARG=${GCC_TARG} GCC_REV=${GCCVERSION}
-INFO_PATH=	${GCC_TARG}/info
+INFO_PATH=	${GCC_TARG}/share/info
 INFO=		cpp cppinternals gcc gccinstall gccint gfortran
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 INFO+=		libquadmath

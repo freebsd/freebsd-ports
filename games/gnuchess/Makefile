@@ -3,6 +3,7 @@
 
 PORTNAME=	gnuchess
 PORTVERSION=	6.2.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	GNU/chess
 # The DISTFILES here is explicitly needed because it can be extended later.

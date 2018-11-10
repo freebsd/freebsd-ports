@@ -3,6 +3,7 @@
 
 PORTNAME=	ipgrab
 PORTVERSION=	0.9.10
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	SF
 
@@ -26,7 +27,7 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/ipgrab.8 ${STAGEDIR}${MANPREFIX}/man/man8/
-	${INSTALL_DATA} ${WRKSRC}/doc/ipgrab.info ${STAGEDIR}${PREFIX}/info/
+	${INSTALL_DATA} ${WRKSRC}/doc/ipgrab.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ipgrab ${STAGEDIR}${PREFIX}/bin/
 
 do-install-DOCS-on:
