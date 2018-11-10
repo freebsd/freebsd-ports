@@ -3,6 +3,7 @@
 
 PORTNAME=	paperclip
 DISTVERSION=	6.1.0
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5
@@ -32,7 +33,7 @@ IMAGEMAGICK_DESC=	ImageMagick image processing support
 IMNOX11_DESC=		Depend on ImageMagick without X11 support
 IMX11_DESC=		Depend on ImageMagick with X11 support
 
-IMNOX11_RUN_DEPENDS=	ImageMagick-nox11>0:graphics/ImageMagick-nox11
-IMX11_RUN_DEPENDS=	ImageMagick>0:graphics/ImageMagick
+IMNOX11_RUN_DEPENDS=	ImageMagick6-nox11>0:graphics/ImageMagick6-nox11
+IMX11_RUN_DEPENDS=	ImageMagick6>0:graphics/ImageMagick6
 
 .include <bsd.port.mk>

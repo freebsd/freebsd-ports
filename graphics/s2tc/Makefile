@@ -3,6 +3,7 @@
 
 PORTNAME=	s2tc
 PORTVERSION=	1.0+20151228
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	dbn@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	mesa-libs>=0:graphics/mesa-libs
-TEST_DEPENDS=	convert:graphics/ImageMagick \
+TEST_DEPENDS=	convert:graphics/ImageMagick6 \
 		nvcompress:graphics/nvidia-texture-tools \
 		wget:ftp/wget
 

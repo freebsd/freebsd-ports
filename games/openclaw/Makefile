@@ -28,7 +28,7 @@ OPTIONS_DEFAULT=	LAUNCHER
 
 LAUNCHER_DESC=	Install launcher to manage game settings
 LAUNCHER_USES=	mono
-LAUNCHER_BUILD_DEPENDS=	convert:graphics/ImageMagick
+LAUNCHER_BUILD_DEPENDS=	convert:graphics/ImageMagick6
 LAUNCHER_PLIST_FILES=	bin/ClawLauncher.exe bin/clawlauncher
 LAUNCHER_DESKTOP_ENTRIES=	\
 		"${GH_PROJECT}" \

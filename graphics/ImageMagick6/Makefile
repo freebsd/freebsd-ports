@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.9.9-28
-PORTREVISION=	2
+DISTVERSION=	6.9.10-14
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
@@ -27,6 +26,7 @@ MASTER_SITES=	http://www.imagemagick.org/download/ \
 		ftp://ftp.sunet.se/pub/multimedia/graphics/ImageMagick/ \
 		ftp://ftp.is.co.za/pub/imagemagick/ \
 		ftp://ftp.fifi.org/pub/ImageMagick/
+PKGNAMESUFFIX=	6
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Image processing tools (legacy version)
@@ -48,7 +48,10 @@ CPE_VENDOR=	imagemagick
 SHEBANG_FILES=	www/source/examples.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKE=${MAKE_CMD}
-CONFIGURE_ARGS=	--without-dps
+CONFIGURE_ARGS=	--without-dps \
+		--without-flif \
+		--without-raqm \
+		--without-zstd
 USE_LDCONFIG=	yes
 USE_GNOME=	libxml2
 
@@ -59,41 +62,119 @@ SAMPLE_FILES=	coder.xml colors.xml delegates.xml log.xml magic.xml mime.xml \
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	BZIP2 DOCS DJVU FFTW FONTCONFIG FPX FREETYPE \
-		GRAPHVIZ GSLIB JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES \
+		GRAPHVIZ GSLIB HEIF JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES \
 		OPENEXR OPENMP PANGO PDF PERL PNG SVG TESTS TIFF WEBP WMF \
 		THREADS X11 16BIT_PIXEL HDRI RAW
 OPTIONS_DEFAULT=	16BIT_PIXEL BZIP2 FFTW FONTCONFIG FREETYPE \
 		JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES PDF PERL PNG SVG \
 		TIFF WEBP WMF THREADS X11 RAW
 
-16BIT_PIXEL_DESC=	16bit pixel support
-JPEG2000_DESC=		OpenJPEG 2000 support via openjpeg
 DJVU_DESC=		DJVU format support (needs THREADS)
 GSLIB_DESC=		libgs (Postscript SHLIB) support
-HDRI_DESC=		High dynamic range images support
-MODULES_DESC=		Modules support
-SVG_DESC=		SVG vector image format support (via librsvg)
 TESTS_DESC=		Run bundled self-tests after build
 #SIMD_CONFIGURE_WITH=	gcc-arch
 CONFIGURE_ARGS+=	--without-gcc-arch
 
+16BIT_PIXEL_DESC=	16bit pixel support
+16BIT_PIXEL_CONFIGURE_OFF=--with-quantum-depth=8
+16BIT_PIXEL_VARS=	_QBIT=Q16
+16BIT_PIXEL_VARS_OFF=	_QBIT=Q8
+PLIST_SUB+=		QBIT=${_QBIT}
+
+# Produce BZip compressed MIFF images
+BZIP2_DESC=		bzip2 compressed MIFF images
+BZIP2_CONFIGURE_WITH=	bzlib
+
+FFTW_CONFIGURE_WITH=	fftw
+FFTW_LIB_DEPENDS=	libfftw3.so:math/fftw3
+
+FONTCONFIG_CONFIGURE_WITH=	fontconfig
+FONTCONFIG_LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig
+
+FREETYPE_CONFIGURE_WITH=	freetype
+FREETYPE_LIB_DEPENDS=		libfreetype.so:print/freetype2
+
+# FPX (FlashPIX) images
+FPX_CONFIGURE_WITH=	fpx
+FPX_LIB_DEPENDS=	libfpx.so:graphics/libfpx
+
+GRAPHVIZ_CONFIGURE_WITH=	gvc
+GRAPHVIZ_LIB_DEPENDS=	libgvc.so:graphics/graphviz
+GRAPHVIZ_CFLAGS=	-I${LOCALBASE}/include/graphviz
+GRAPHVIZ_LDFLAGS=	-L${LOCALBASE}/lib/graphviz
+
+HEIF_DESC=		ISO/IEC 23008-12:2017 HEIF file format support
+HEIF_CONFIGURE_WITH=	heic
+HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
+
+HDRI_DESC=		High dynamic range images support
+HDRI_CONFIGURE_ENABLE=	hdri
+HDRI_VARS=		_HDRI=HDRI
+HDRI_VARS_OFF=		_HDRI=""
+PLIST_SUB+=		HDRI=${_HDRI}
+
+# JBIG images (lossless compression for bi-level images)
+JBIG_CONFIGURE_WITH=	jbig
+JBIG_LIB_DEPENDS=	libjbig.so:graphics/jbigkit
+
+JPEG_CONFIGURE_WITH=	jpeg
+JPEG_USES=		jpeg
+
+# JPEG2000 images (wavelet-based lossy compression)
+JPEG2000_DESC=		OpenJPEG 2000 support via openjpeg
+JPEG2000_CONFIGURE_WITH=openjp2
+JPEG2000_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
+
+LCMS2_CONFIGURE_WITH=	lcms
+LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
+
+LQR_CONFIGURE_WITH=	lqr
+LQR_LIB_DEPENDS=	liblqr-1.so:graphics/liblqr-1
+LQR_USE=		gnome=glib20
+
+LZMA_CONFIGURE_WITH=	lzma
+
+# Loadable coders, smaller executable, but PerlMagick not really works
+# ('make test' there works)
+MODULES_DESC=		Modules support
+MODULES_CONFIGURE_WITH=	modules
+
+PANGO_CONFIGURE_WITH=	pango
+PANGO_USE=		gnome=pango
+PANGO_IMPLIES=		X11
+
+PNG_CONFIGURE_WITH=	png
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
+
 # libraw is by default liked to lcms2, whichs also ends up in IM regardless
 # of the IM LCMS option.
+RAW_DESC=		RAW format support (implies the lcms2 option)
 RAW_CONFIGURE_WITH=	raw
-RAW_LIB_DEPENDS=	libraw_r.so:graphics/libraw \
-			liblcms2.so:graphics/lcms2
+RAW_LIB_DEPENDS=	libraw_r.so:graphics/libraw
+RAW_IMPLIES=		LCMS2
+
+SVG_DESC=		SVG vector image format support (via librsvg, implies the x11 option)
+SVG_CONFIGURE_WITH=	rsvg
+SVG_LIB_DEPENDS=	librsvg-2.so:graphics/librsvg2
+SVG_USE=		gnome=cairo,gdkpixbuf2
+SVG_IMPLIES=		X11
+
+TIFF_CONFIGURE_WITH=	tiff
+TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
+
+WEBP_CONFIGURE_WITH=	webp
+WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
+
+X11_CONFIGURE_WITH=	x
+X11_USE=		xorg=ice,sm,x11,xext,xt
+X11_VARS=		CONFLICTS_INSTALL+="ImageMagick-nox11-6* ImageMagick6-nox11-6*" \
+			CONFLICTS+=display-[0-9]*
+X11_VARS_OFF=		CONFLICTS_INSTALL+="ImageMagick-6* ImageMagick6-6*" \
+			PKGNAMESUFFIX=6-nox11
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MHDRI}
-CONFIGURE_ARGS+=	--enable-hdri
-_HDRI=HDRI
-.else
-CONFIGURE_ARGS+=	--disable-hdri
-_HDRI=""
-.endif
-PLIST_SUB+=	HDRI=${_HDRI}
 
 .if ${PORT_OPTIONS:MTHREADS}
 _IMAGEMAGICK_THREADS=yes
@@ -152,27 +233,8 @@ USES+=		compiler:openmp
 CONFIGURE_ARGS+=	--disable-openmp
 .endif
 
-.if ${PORT_OPTIONS:M16BIT_PIXEL}
-_QBIT=Q16
-.else
-# Faster, but poor quality
-CONFIGURE_ARGS+=	--with-quantum-depth=8
-_QBIT=Q8
-.endif
-PLIST_SUB+=		QBIT=${_QBIT}
-
 .if defined(WITH_WINDOWS_FONT_DIR)
 CONFIGURE_ARGS+=	--with-windows-font-dir=${WITH_WINDOWS_FONT_DIR}
-.endif
-
-# Loadable coders, smaller executable, but PerlMagick not really works
-# ('make test' there works)
-.if ${PORT_OPTIONS:MMODULES}
-CONFIGURE_ARGS+=	--with-modules
-PLIST_SUB+=		MODULES=''
-.else
-CONFIGURE_ARGS+=	--without-modules
-PLIST_SUB+=		MODULES='@comment '
 .endif
 
 .if ${PORT_OPTIONS:MOPENEXR}
@@ -199,30 +261,6 @@ CONFIGURE_ARGS+=	--without-djvu
 PLIST_SUB+=		DJVU="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MJPEG}
-USES+=			jpeg
-PLIST_SUB+=		JPEG=""
-.else
-CONFIGURE_ARGS+=	--without-jpeg
-PLIST_SUB+=		JPEG="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=		libpng.so:graphics/png
-PLIST_SUB+=		PNG=""
-.else
-CONFIGURE_ARGS+=	--without-png
-PLIST_SUB+=		PNG="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=		libtiff.so:graphics/tiff
-PLIST_SUB+=		TIFF=""
-.else
-CONFIGURE_ARGS+=	--without-tiff
-PLIST_SUB+=		TIFF="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MGSLIB}
 CONFIGURE_ARGS+=	--with-gslib
 . if ${PORT_OPTIONS:MX11}
@@ -232,102 +270,6 @@ USES+=		ghostscript
 . endif
 .else
 CONFIGURE_ARGS+=	--without-gslib
-.endif
-
-.if ${PORT_OPTIONS:MLQR}
-CONFIGURE_ARGS+=	--with-lqr
-LIB_DEPENDS+=		liblqr-1.so:graphics/liblqr-1
-USE_GNOME+=		glib20
-.else
-CONFIGURE_ARGS+=	--without-lqr
-.endif
-
-.if ${PORT_OPTIONS:MFFTW}
-CONFIGURE_ARGS+=	--with-fftw
-LIB_DEPENDS+=		libfftw3.so:math/fftw3
-.else
-CONFIGURE_ARGS+=	--without-fftw
-.endif
-
-# Produce BZip compressed MIFF images
-.if empty(PORT_OPTIONS:MBZIP2)
-CONFIGURE_ARGS+=	--without-bzlib
-.endif
-
-# FPX (FlashPIX) images
-.if ${PORT_OPTIONS:MFPX}
-LIB_DEPENDS+=		libfpx.so:graphics/libfpx
-CONFIGURE_ARGS+=	--with-fpx
-PLIST_SUB+=		FPX=""
-.else
-CONFIGURE_ARGS+=	--without-fpx
-PLIST_SUB+=		FPX="@comment "
-.endif
-
-# JBIG images (lossless compression for bi-level images)
-.if ${PORT_OPTIONS:MJBIG}
-LIB_DEPENDS+=		libjbig.so:graphics/jbigkit
-PLIST_SUB+=		JBIG=""
-.else
-CONFIGURE_ARGS+=	--without-jbig
-PLIST_SUB+=		JBIG="@comment "
-.endif
-
-# JPEG2000 images (wavelet-based lossy compression)
-.if ${PORT_OPTIONS:MJPEG2000}
-LIB_DEPENDS+=		libopenjp2.so:graphics/openjpeg
-PLIST_SUB+=		JPEG2000=""
-.else
-CONFIGURE_ARGS+=	--without-openjp2
-PLIST_SUB+=		JPEG2000="@comment "
-.endif
-
-# GraphViz dot graphs
-.if ${PORT_OPTIONS:MGRAPHVIZ}
-LIB_DEPENDS+=		libgvc.so:graphics/graphviz
-CFLAGS+=		-I${LOCALBASE}/include/graphviz
-LDFLAGS+=		-L${LOCALBASE}/lib/graphviz
-.else
-CONFIGURE_ARGS+=	--without-gvc
-.endif
-
-# LZMA support
-# needs manula override for base system...
-.if ! ${PORT_OPTIONS:MLZMA}
-CONFIGURE_ARGS+=	--without-lzma
-.endif
-
-# LCMS (Little CMS) color management version 2 and 1 (mutually exclusive)
-.if ${PORT_OPTIONS:MLCMS2}
-LIB_DEPENDS+=		liblcms2.so:graphics/lcms2
-.else
-CONFIGURE_ARGS+=	--without-lcms
-.endif
-
-# Freetype (TrueType Font) support
-.if ${PORT_OPTIONS:MFREETYPE}
-LIB_DEPENDS+=		libfreetype.so:print/freetype2
-CONFIGURE_ARGS+=	--with-freetype
-.else
-CONFIGURE_ARGS+=	--without-freetype
-.endif
-
-# Webp support
-.if ${PORT_OPTIONS:MWEBP}
-LIB_DEPENDS+=		libwebp.so:graphics/webp
-CONFIGURE_ARGS+=	--with-webp
-PLIST_SUB+=		WEBP=""
-.else
-CONFIGURE_ARGS+=	--without-webp
-PLIST_SUB+=		WEBP="@comment "
-.endif
-
-# Fontconfig support
-.if ${PORT_OPTIONS:MFONTCONFIG}
-LIB_DEPENDS+=		libfontconfig.so:x11-fonts/fontconfig
-CONFIGURE_ARGS+=	--with-fontconfig
-.else
-CONFIGURE_ARGS+=	--without-fontconfig
 .endif
 
 # WMF (Windows Meta File) images
@@ -344,24 +286,6 @@ CONFIGURE_ARGS+=	--without-wmf
 PLIST_SUB+=		WMF="@comment "
 .endif
 
-# SVG (Scalable Vector Graphics) requires both libxml2 and X11
-.if ${PORT_OPTIONS:MSVG} && ${PORT_OPTIONS:MX11}
-LIB_DEPENDS+=		librsvg-2.so:graphics/librsvg2
-USE_GNOME+=		cairo gdkpixbuf2
-CONFIGURE_ARGS+=	--with-rsvg
-.else
-CONFIGURE_ARGS+=	--without-rsvg
-.endif
-
-# Pango support
-.if ${PORT_OPTIONS:MPANGO} && ${PORT_OPTIONS:MX11}
-USE_GNOME+=		pango
-PLIST_SUB+=		PANGO=""
-.else
-CONFIGURE_ARGS+=	--without-pango
-PLIST_SUB+=		PANGO="@comment "
-.endif
-
 # PDF (Adobe Portable Document Format) support
 .if ${PORT_OPTIONS:MPDF}
 . if ${PORT_OPTIONS:MX11}
@@ -369,19 +293,6 @@ USES+=			ghostscript:x11
 . else
 USES+=			ghostscript
 . endif
-.endif
-
-.if ! ${PORT_OPTIONS:MX11}
-CONFIGURE_ARGS+=	--without-x
-CONFLICTS_INSTALL+=	ImageMagick-6*
-PLIST_SUB+=		X11='@comment '
-PKGNAMESUFFIX=		-nox11
-.else
-CONFLICTS_INSTALL+=	ImageMagick-nox11-6*
-CONFLICTS+=		display-[0-9]*
-CONFIGURE_ARGS+=	--with-x
-USE_XORG=		sm ice x11 xext xt
-PLIST_SUB+=		X11=''
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}

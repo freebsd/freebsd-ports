@@ -3,7 +3,7 @@
 
 PORTNAME=	muttprint
 PORTVERSION=	0.73
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print mail
 MASTER_SITES=	SF/muttprint/muttprint/muttprint-${PORTVERSION}
 
@@ -46,9 +46,9 @@ PRINT_COMMAND=lpr -P$$PRINTER
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-RUN_DEPENDS+=	convert:graphics/ImageMagick
+RUN_DEPENDS+=	convert:graphics/ImageMagick6
 .else
-RUN_DEPENDS+=	convert:graphics/ImageMagick-nox11
+RUN_DEPENDS+=	convert:graphics/ImageMagick6-nox11
 .endif
 
 pre-everything::

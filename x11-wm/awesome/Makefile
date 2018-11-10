@@ -14,7 +14,7 @@ COMMENT=	Highly configurable, next generation framework window manager
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	convert:graphics/ImageMagick \
+BUILD_DEPENDS=	convert:graphics/ImageMagick6 \
 		${LUA_MODLIBDIR}/lgi/corelgilua${LUA_VER_STR}.so:devel/lua-lgi
 RUN_DEPENDS=	${LUA_MODLIBDIR}/lgi/corelgilua${LUA_VER_STR}.so:devel/lua-lgi \
 		bash:shells/bash

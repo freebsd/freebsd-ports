@@ -3,7 +3,7 @@
 
 PORTNAME=	dcraw-m
 PORTVERSION=	9.22
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 MAINTAINER=	waitman@waitman.net
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjasper.so:graphics/jasper \
 		liblcms2.so:graphics/lcms2 \
-		libMagickWand-6.so:graphics/ImageMagick
+		libMagickWand-6.so:graphics/ImageMagick6
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	waitman

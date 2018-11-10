@@ -3,7 +3,7 @@
 
 PORTNAME=	asymptote
 PORTVERSION=	2.44
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -17,7 +17,7 @@ LICENSE_COMB=	dual
 ONLY_FOR_ARCHS=	amd64 i386
 
 LIB_DEPENDS=	libsigsegv.so:devel/libsigsegv
-RUN_DEPENDS=	animate:graphics/ImageMagick \
+RUN_DEPENDS=	animate:graphics/ImageMagick6 \
 		gv:print/gv \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR}

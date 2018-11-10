@@ -3,7 +3,7 @@
 
 PORTNAME=	dmtx-utils
 PORTVERSION=	0.7.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/libdmtx/libdmtx/${PORTVERSION}
 
@@ -13,8 +13,8 @@ COMMENT=	Software for reading and writing Data Matrix barcodes
 LICENSE=	LGPL21+
 
 LIB_DEPENDS=	libdmtx.so:graphics/libdmtx \
-		libMagickWand-6.so:graphics/ImageMagick \
-		libMagickCore-6.so:graphics/ImageMagick
+		libMagickWand-6.so:graphics/ImageMagick6 \
+		libMagickCore-6.so:graphics/ImageMagick6
 
 USES=		localbase tar:bzip2 pkgconfig
 GNU_CONFIGURE=	yes

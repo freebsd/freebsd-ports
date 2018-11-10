@@ -78,7 +78,7 @@ CMAKE_ARGS+=	-DBUILD_VIEWER=1
 LIB_DEPENDS+=	libpng.so:graphics/png \
 		libfltk.so:x11-toolkits/fltk
 # ImageMagick is required to generate icons during build process
-BUILD_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick
+BUILD_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick6
 USE_XORG+=	xcursor xfixes xft xinerama
 PLIST_SUB+=	VIEWER=""
 INSTALLS_ICONS=	yes

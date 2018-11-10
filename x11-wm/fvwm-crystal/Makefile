@@ -3,7 +3,7 @@
 
 PORTNAME=	fvwm-crystal
 PORTVERSION=	3.0.6
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.gna.org/fvwm-crystal/${PORTVERSION}/
 
@@ -32,7 +32,7 @@ SUDO_DESC=		Run text-based applications as superuser
 HSETROOT_DESC=		Allow to set desktop wallpaper
 CMUS_DESC=		Play music via audio/cmus player
 MROX_RUN_DEPENDS=	rox:x11-fm/rox-filer
-IMAGEMAGICK_RUN_DEPENDS=	display:graphics/ImageMagick
+IMAGEMAGICK_RUN_DEPENDS=	display:graphics/ImageMagick6
 XSCREENSAVER_RUN_DEPENDS=	xscreensaver:x11/xscreensaver
 TRAYER_RUN_DEPENDS=	trayer:x11/trayer
 SUDO_RUN_DEPENDS=	sudo:security/sudo

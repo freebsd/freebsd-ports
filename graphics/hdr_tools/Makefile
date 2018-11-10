@@ -3,7 +3,7 @@
 
 PORTNAME=	hdr_tools
 PORTVERSION=	0.0.2010.11.23	# unspecified by the author, so use the date
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://ttic.uchicago.edu/~cotter/projects/hdr_tools/archives/ \
 		http://freebsd.nsu.ru/distfiles/
@@ -17,7 +17,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libtiff.so:graphics/tiff \
 		libIlmImf.so:graphics/openexr \
-		libMagick++-6.so:graphics/ImageMagick
+		libMagick++-6.so:graphics/ImageMagick6
 
 USES=		compiler:features gmake pkgconfig tar:tgz
 NO_WRKSUBDIR=	yes

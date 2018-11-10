@@ -3,7 +3,7 @@
 
 PORTNAME=	reallyslick
 PORTVERSION=	0.9.1
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	graphics
 MASTER_SITES=	SF/rss-glx/rss-glx/${PORTVERSION}
 DISTNAME=	rss-glx_${PORTVERSION}
@@ -11,7 +11,7 @@ DISTNAME=	rss-glx_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL screensaver collection
 
-LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick \
+LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6 \
 		libGLC.so:graphics/quesoglc
 
 USES=		compiler gmake pathfix pkgconfig tar:bzip2 libtool

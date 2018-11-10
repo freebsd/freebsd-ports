@@ -3,7 +3,7 @@
 
 PORTNAME=	bigbluebutton
 PORTVERSION=	0.71
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www java
 MASTER_SITES=	http://bigbluebutton.org/downloads/${PORTVERSION}/ \
 		http://bigbluebutton.org/downloads/0.70/:2 \
@@ -18,7 +18,7 @@ MAINTAINER=	alex.deiter@gmail.com
 COMMENT=	Web conferencing system for distance education
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/pdf2swf:graphics/swftools \
-		${LOCALBASE}/bin/convert:graphics/ImageMagick \
+		${LOCALBASE}/bin/convert:graphics/ImageMagick6 \
 		${LOCALBASE}/etc/rc.d/activemq:net/activemq \
 		${LOCALBASE}/sbin/nginx:www/nginx \
 		${LOCALBASE}/etc/rc.d/tomcat6:www/tomcat6 \

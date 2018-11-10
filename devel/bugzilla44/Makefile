@@ -70,7 +70,7 @@ MAIL_QUEUEING_RUN_DEPENDS=	p5-TheSchwartz>=1.10:devel/p5-TheSchwartz \
 				p5-File-Slurp>=9999.13:devel/p5-File-Slurp
 MOVE_BUGZ_RUN_DEPENDS=	p5-MIME-Tools>=5.406:mail/p5-MIME-Tools \
 			p5-XML-Twig>=0:textproc/p5-XML-Twig
-BMP2PNG_RUN_DEPENDS=	convert:graphics/ImageMagick
+BMP2PNG_RUN_DEPENDS=	convert:graphics/ImageMagick6
 # Note: XML-RPC and JSON-RPC are deprecated in favor of REST
 # and will likely be removed in the Bugzilla 7.0 release.
 # XXX SOAP::Lite can be removed if upstream officially depends on

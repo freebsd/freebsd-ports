@@ -3,7 +3,7 @@
 
 PORTNAME=	zbar
 PORTVERSION=	0.10
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -28,7 +28,7 @@ X11_USE=	XORG=ice,sm,x11,xau,xcb,xdmcp,xext,xv
 X11_CONFIGURE_ON=	--with-x=yes
 X11_CONFIGURE_OFF=	--with-x=no --without-xshm --without-xv
 
-IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick
+IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick6
 IMAGEMAGICK_CONFIGURE_ON=	--with-imagemagick=yes
 IMAGEMAGICK_CONFIGURE_OFF=	--with-imagemagick=no
 

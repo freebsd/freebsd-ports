@@ -3,7 +3,7 @@
 
 PORTNAME=	curator
 PORTVERSION=	2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics www python
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ USE_PYTHON=	distutils autoplist concurrent optsuffix
 
 PLIST_FILES=	man/man1/curator.1.gz
 
-RUN_DEPENDS=	convert:graphics/ImageMagick
+RUN_DEPENDS=	convert:graphics/ImageMagick6
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/curator.1 ${STAGEDIR}${PREFIX}/man/man1/curator.1

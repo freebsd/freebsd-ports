@@ -14,7 +14,7 @@ COMMENT=	KDE Crystal style X cursor theme
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	convert:graphics/ImageMagick \
+BUILD_DEPENDS=	convert:graphics/ImageMagick6 \
 		xcursorgen:x11/xcursorgen
 
 USES=		gmake tar:bzip2

@@ -3,6 +3,7 @@
 
 PORTNAME=	llgal
 PORTVERSION=	0.13.18
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.gna.org/llgal/
 
@@ -20,7 +21,7 @@ RUN_DEPENDS=	p5-Image-Size>=0:graphics/p5-Image-Size \
 		p5-URI>=0:net/p5-URI \
 		p5-Locale-gettext>=0:devel/p5-Locale-gettext \
 		p5-Image-ExifTool>=0:graphics/p5-Image-ExifTool \
-		convert:graphics/ImageMagick
+		convert:graphics/ImageMagick6
 
 USES=		gettext perl5 gmake tar:bzip2 shebangfix
 SHEBANG_FILES=	llgal.in

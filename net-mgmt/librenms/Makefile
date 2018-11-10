@@ -3,6 +3,7 @@
 
 PORTNAME=	librenms
 PORTVERSION=	1.45
+PORTREVISION=	1
 # RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
@@ -55,9 +56,9 @@ NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios
 NMAP_RUN_DEPENDS=	nmap:security/nmap
 PYPOLLER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.3:databases/py-MySQLdb@${PY_FLAVOR}
 PYPOLLER_VARS=	PY_MYSQL=:2.7
-X11_RUN_DEPENDS=	Magick-config:graphics/ImageMagick \
+X11_RUN_DEPENDS=	Magick-config:graphics/ImageMagick6 \
 			mtr:net/mtr
-X11_RUN_DEPENDS_OFF=	Magick-config:graphics/ImageMagick-nox11 \
+X11_RUN_DEPENDS_OFF=	Magick-config:graphics/ImageMagick6-nox11 \
 			mtr:net/mtr-nox11
 
 WMIC_RUN_DEPENDS=	wmic:net-mgmt/wmi-client

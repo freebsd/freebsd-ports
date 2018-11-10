@@ -3,6 +3,7 @@
 
 PORTNAME=	imgsizer
 PORTVERSION=	2.9
+PORTREVISION=	1
 CATEGORIES=	www textproc
 MASTER_SITES=	http://www.catb.org/~esr/imgsizer/
 
@@ -11,7 +12,7 @@ COMMENT=	Tool to autogenerate WIDTH and HEIGHT for IMG HTML tags
 
 LICENSE=	BSD4CLAUSE
 
-RUN_DEPENDS=	identify:graphics/ImageMagick
+RUN_DEPENDS=	identify:graphics/ImageMagick6
 
 USES=		jpeg:run python
 NO_BUILD=	yes

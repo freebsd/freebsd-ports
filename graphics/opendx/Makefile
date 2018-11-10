@@ -3,7 +3,7 @@
 
 PORTNAME=	opendx
 PORTVERSION=	4.4.4
-PORTREVISION=	26
+PORTREVISION=	27
 CATEGORIES=	graphics math java
 MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/
 DISTNAME=	dx-${PORTVERSION}
@@ -16,7 +16,7 @@ LICENSE_NAME=	IBM PUBLIC LICENSE - Open Visualization Data Explorer VERSION 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick	\
+LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6	\
 		libtiff.so:graphics/tiff		\
 		libcdf.so:science/cdf			\
 		libXp.so:x11/libXp

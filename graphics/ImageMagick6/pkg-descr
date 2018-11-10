@@ -11,4 +11,10 @@ extremely useful for image manipulation.
 The optional "display" utility conflicts with the utility of the
 same name from the misc/display port/package.
 
+While ImageMagick 6 is labeled by upstream as "legacy", this means that
+it will only receive bug fixes. New features will only be added in
+ImageMagick 7.
+
+There is currently no plan of stopping support for ImageMagick 6 upstream.
+
 WWW: http://www.ImageMagick.org/

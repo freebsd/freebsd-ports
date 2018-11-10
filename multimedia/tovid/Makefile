@@ -4,7 +4,7 @@
 PORTNAME=	tovid
 PORTVERSION=	0.35.2
 DISTVERSIONPREFIX=	tovid-
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia python
 
 MAINTAINER=	grepper@gmail.com
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libTix8.4.3.so:x11-toolkits/tix
 RUN_DEPENDS=	mplayer:multimedia/mplayer \
 		mplex:multimedia/mjpegtools \
 		ffmpeg:multimedia/ffmpeg \
-		composite:graphics/ImageMagick \
+		composite:graphics/ImageMagick6 \
 		dvdauthor:multimedia/dvdauthor \
 		growisofs:sysutils/dvd+rw-tools \
 		sox:audio/sox \

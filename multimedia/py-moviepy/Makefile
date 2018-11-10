@@ -27,7 +27,7 @@ OPTIONS_SINGLE_IMAGEMAGICK=	IMAGEMAGICK6 IMAGEMAGICK7
 OPTIONS_DEFAULT=IMAGEMAGICK7
 IMAGEMAGICK6_DESC=	Use ImageMagick 6.x as backend
 IMAGEMAGICK7_DESC=	Use ImageMagick 7.x as backend
-IMAGEMAGICK6_RUN_DEPENDS=	convert:graphics/ImageMagick
+IMAGEMAGICK6_RUN_DEPENDS=	convert:graphics/ImageMagick6
 IMAGEMAGICK7_RUN_DEPENDS=	convert:graphics/ImageMagick7
 
 .include <bsd.port.mk>

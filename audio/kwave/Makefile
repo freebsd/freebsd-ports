@@ -7,7 +7,7 @@ CATEGORIES=	audio kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Sound editor for KDE
 
-BUILD_DEPENDS=	convert:graphics/ImageMagick
+BUILD_DEPENDS=	convert:graphics/ImageMagick6
 LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 		libFLAC.so:audio/flac \
 		libfftw3.so:math/fftw3 \

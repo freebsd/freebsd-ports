@@ -37,7 +37,7 @@ VIDEO-FORMAT_DESC=	Use default video format
 NTSC_DESC=	Default video format NTSC
 PAL_DESC=	Default video format PAL
 
-IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick
+IMAGEMAGICK_LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick6
 
 NTSC_CONFIGURE_ON=	--enable-default-video-format=NTSC
 PAL_CONFIGURE_ON=	--enable-default-video-format=PAL

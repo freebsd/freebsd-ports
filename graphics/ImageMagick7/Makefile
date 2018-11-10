@@ -36,7 +36,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-CONFLICTS_INSTALL=	ImageMagick ImageMagick-nox11 # bin/Magick++-config
+# bin/Magick++-config
+CONFLICTS_INSTALL=	ImageMagick ImageMagick-nox11 ImageMagick6 ImageMagick6-nox11
 
 # This port uses .la files, keep libtool:keepla! (magick/module.c)
 USES=		cpe gettext-runtime gmake gnome libtool:keepla \

@@ -3,7 +3,7 @@
 PORTNAME=	timg
 PORTVERSION=	0.9.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 MAINTAINER=	uzsolt@uzsolt.hu
@@ -11,7 +11,7 @@ COMMENT=	Terminal Image Viewer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick
+LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick6
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hzeller

@@ -3,6 +3,7 @@
 
 PORTNAME=	docbook2odf
 PORTVERSION=	0.244
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://open.comsultia.com/docbook2odf/dwn/
 
@@ -13,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libsablot.so:textproc/sablotron \
 		libxslt.so:textproc/libxslt
-RUN_DEPENDS=	convert:graphics/ImageMagick \
+RUN_DEPENDS=	convert:graphics/ImageMagick6 \
 		zip:archivers/zip \
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip
 

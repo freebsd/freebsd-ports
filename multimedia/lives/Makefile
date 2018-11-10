@@ -3,7 +3,7 @@
 
 PORTNAME=	lives
 PORTVERSION=	2.8.7
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia
 MASTER_SITES=	http://lives-video.com/releases/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -37,7 +37,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/analyseplugin:audio/ladspa \
 		mpg123:audio/mpg123 \
 		sox:audio/sox \
 		ogg123:audio/vorbis-tools \
-		convert:graphics/ImageMagick \
+		convert:graphics/ImageMagick6 \
 		sswf:graphics/sswf \
 		mencoder:multimedia/mencoder \
 		mplayer:multimedia/mplayer \

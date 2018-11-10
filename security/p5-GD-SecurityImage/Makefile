@@ -30,11 +30,11 @@ USE_PERL5=	configure
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
 .if ${PORT_OPTIONS:MX11}
-IMAGEMAGICK_BUILD_DEPENDS= ${LOCALBASE}/bin/convert:graphics/ImageMagick
-IMAGEMAGICK_RUN_DEPENDS=   ${LOCALBASE}/bin/convert:graphics/ImageMagick
+IMAGEMAGICK_BUILD_DEPENDS= ${LOCALBASE}/bin/convert:graphics/ImageMagick6
+IMAGEMAGICK_RUN_DEPENDS=   ${LOCALBASE}/bin/convert:graphics/ImageMagick6
 .else
-IMAGEMAGICK_BUILD_DEPENDS= ${LOCALBASE}/bin/convert:graphics/ImageMagick-nox11
-IMAGEMAGICK_RUN_DEPENDS=   ${LOCALBASE}/bin/convert:graphics/ImageMagick-nox11
+IMAGEMAGICK_BUILD_DEPENDS= ${LOCALBASE}/bin/convert:graphics/ImageMagick6-nox11
+IMAGEMAGICK_RUN_DEPENDS=   ${LOCALBASE}/bin/convert:graphics/ImageMagick6-nox11
 .endif
 .endif
 

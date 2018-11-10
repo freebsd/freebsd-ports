@@ -3,7 +3,7 @@
 
 PORTNAME=	mypaedia-fpw-package
 PORTVERSION=	1.0.7
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/mypaedia/
 
@@ -13,7 +13,7 @@ COMMENT=	Supplement file to use "mypaedia" on lookup
 RUN_DEPENDS=	sox:audio/sox \
 		timidity:audio/timidity++ \
 		xanim:multimedia/xanim \
-		display:graphics/ImageMagick
+		display:graphics/ImageMagick6
 
 NO_BUILD=	yes
 PLIST_SUB=	PKGNAME=${PKGNAME}

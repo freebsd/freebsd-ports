@@ -3,7 +3,7 @@
 
 PORTNAME=	cuttlefish
 PORTVERSION=	1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://www.caida.org/tools/visualization/cuttlefish/code/
 
@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plots diurnal and geographical patterns of supplied data
 
 RUN_DEPENDS+=	p5-GD>=0:graphics/p5-GD \
-		convert:graphics/ImageMagick \
+		convert:graphics/ImageMagick6 \
 		gifsicle:graphics/gifsicle
 
 USES=		perl5 shebangfix

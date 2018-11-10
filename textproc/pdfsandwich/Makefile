@@ -2,6 +2,7 @@
 
 PORTNAME=	pdfsandwich
 DISTVERSION=	0.1.7
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/pdfsandwich%20${DISTVERSION}/
 
@@ -12,7 +13,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	gawk:lang/gawk \
 		ocamlopt:lang/ocaml
-RUN_DEPENDS=	convert:graphics/ImageMagick \
+RUN_DEPENDS=	convert:graphics/ImageMagick6 \
 		tesseract:graphics/tesseract \
 		unpaper:graphics/unpaper
 

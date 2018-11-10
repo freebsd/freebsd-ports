@@ -3,7 +3,7 @@
 
 PORTNAME=	gkrellshoot
 PORTVERSION=	0.4.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	misc
 MASTER_SITES=	SF/${PORTNAME}/GkrellM2.0%20Port/${PORTVERSION}
 PKGNAMESUFFIX=	2
@@ -13,7 +13,7 @@ COMMENT=	Screen locking and screen capture plugin for GKrellM 2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:sysutils/gkrellm2 \
-		import:graphics/ImageMagick
+		import:graphics/ImageMagick6
 
 USES=		pkgconfig
 

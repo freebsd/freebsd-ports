@@ -3,6 +3,7 @@
 
 PORTNAME=	ocre
 PORTVERSION=	0.043
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://lem.eui.upm.es/pub/ocre/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/}
@@ -13,7 +14,7 @@ COMMENT=	Simple optical character recognition solution
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libaspell.so:textproc/aspell
-RUN_DEPENDS=	display:graphics/ImageMagick \
+RUN_DEPENDS=	display:graphics/ImageMagick6 \
 		gnuplot:math/gnuplot \
 		ispell:textproc/aspell-ispell
 

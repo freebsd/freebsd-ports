@@ -3,7 +3,7 @@
 
 PORTNAME=	xd3d
 PORTVERSION=	8.3.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.cmap.polytechnique.fr/~jouve/xd3d/
 
@@ -29,7 +29,7 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .if !defined(WITHOUT_IMAGEMAGICK)
-RUN_DEPENDS+=	convert:graphics/ImageMagick
+RUN_DEPENDS+=	convert:graphics/ImageMagick6
 .endif
 .if !defined(WITHOUT_GIFSICLE)
 RUN_DEPENDS+=	gifsicle:graphics/gifsicle
