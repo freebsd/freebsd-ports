@@ -2,5 +2,5 @@ If you do a major upgrade of Icinga 2 and use a database, please see
 http://docs.icinga.org/icinga2/latest/doc/module/icinga2/chapter/upgrading-icinga-2
 how to upgrade the database.
 
-To rotate Icinga 2's logfiles, you can copy %%EXAMPLESDIR%%/newsyslog/icinga2
+To rotate Icinga 2's logfiles, you can copy %%EXAMPLESDIR%%/newsyslog/icinga2.conf
 to %%LOCALBASE%%/etc/newsyslog.conf.d/
