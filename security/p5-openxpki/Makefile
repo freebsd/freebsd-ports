@@ -13,7 +13,7 @@ COMMENT=	Perl based trustcenter for PKI: universal server building block
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_SSL=	openssl-devel
+BROKEN_SSL=	openssl111
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	bash:shells/bash \

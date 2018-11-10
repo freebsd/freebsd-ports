@@ -12,8 +12,8 @@ COMMENT=	Grassroots DICOM library
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_SSL=	openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	variable has incomplete type 'X509_STORE_CTX' (aka 'x509_store_ctx_st')
+BROKEN_SSL=	openssl111
+BROKEN_SSL_REASON_openssl111=	variable has incomplete type 'X509_STORE_CTX' (aka 'x509_store_ctx_st')
 
 LIB_DEPENDS=	libopenjpeg.so:graphics/openjpeg15 \
 		libexpat.so:textproc/expat2

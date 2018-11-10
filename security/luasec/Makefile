@@ -12,7 +12,7 @@ COMMENT=	Lua binding for the OpenSSL library to provide TLS/SSL communication
 
 LICENSE=	MIT
 
-BROKEN_SSL=	openssl-devel
+BROKEN_SSL=	openssl111
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	brunoos

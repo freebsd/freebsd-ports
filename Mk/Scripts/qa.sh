@@ -611,7 +611,7 @@ proxydeps_suggest_uses() {
 	elif [ ${pkg} = "devel/readline" ]; then
 		warn "you need USES+=readline"
 	# ssl
-	elif [ ${pkg} = "security/openssl" -o ${pkg} = "security/openssl-devel" \
+	elif [ ${pkg} = "security/openssl" -o ${pkg} = "security/openssl111" \
 	  -o ${pkg} = "security/libressl" -o ${pkg} = "security/libressl-devel" \
 	  ]; then
 		warn "you need USES=ssl"

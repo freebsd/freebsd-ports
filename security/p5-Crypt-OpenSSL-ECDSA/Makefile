@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 BROKEN_FreeBSD_12=	unknown type name 'ECDSA_METHOD'; did you mean 'DSA_METHOD'?
 BROKEN_FreeBSD_13=	unknown type name 'ECDSA_METHOD'; did you mean 'DSA_METHOD'?
-BROKEN_SSL=	openssl-devel
+BROKEN_SSL=	openssl111
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Crypt-OpenSSL-EC>=0.05:security/p5-Crypt-OpenSSL-EC

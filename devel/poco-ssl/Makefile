@@ -16,8 +16,8 @@ COMMENT=	C++ libraries with a network/internet focus (full version)
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_SSL=	openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	field has incomplete type 'EVP_CIPHER_CTX' (aka 'evp_cipher_ctx_st')
+BROKEN_SSL=	openssl111
+BROKEN_SSL_REASON_openssl111=	field has incomplete type 'EVP_CIPHER_CTX' (aka 'evp_cipher_ctx_st')
 
 CONFLICTS=	poco-[0-9]*
 

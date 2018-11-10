@@ -15,7 +15,7 @@ COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
-BROKEN_SSL=	openssl-devel
+BROKEN_SSL=	openssl111
 
 USES=		cpe ncurses pathfix pkgconfig readline:port shebangfix ssl tar:xz
 PATHFIX_MAKEFILEIN=	Makefile.pre.in

@@ -15,7 +15,7 @@ COMMENT=	Featureful Unix password cracker
 
 LICENSE=	GPLv2
 
-BROKEN_SSL=	openssl-devel
+BROKEN_SSL=	openssl111
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 

@@ -13,8 +13,8 @@ COMMENT=	Benchmarking tool for Web proxies
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_SSL=	openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	configure: error: OpenSSL libraries and/or directories were not found in /usr/local
+BROKEN_SSL=	openssl111
+BROKEN_SSL_REASON_openssl111=	configure: error: OpenSSL libraries and/or directories were not found in /usr/local
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

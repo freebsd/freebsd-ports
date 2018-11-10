@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=		fails to compile: error: regparm is not valid on this platform
-BROKEN_SSL=	openssl-devel libressl libressl-devel
+BROKEN_SSL=	openssl111 libressl libressl-devel
 
 USES=		perl5 shebangfix ssl
 SHEBANG_FILES=	samples/URLblocked.cgi

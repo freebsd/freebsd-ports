@@ -11,8 +11,8 @@ COMMENT=	Tools for MongoDB
 
 LICENSE=	APACHE20
 
-BROKEN_SSL=	openssl-devel libressl libressl-devel
-BROKEN_SSL_REASON_openssl-devel=	variable has incomplete type 'BIO_METHOD' (aka 'struct bio_method_st')
+BROKEN_SSL=	openssl111 libressl libressl-devel
+BROKEN_SSL_REASON_openssl111=	variable has incomplete type 'BIO_METHOD' (aka 'struct bio_method_st')
 BROKEN_SSL_REASON_libressl=	could not determine kind of name for C.EVP_sha
 BROKEN_SSL_REASON_libressl-devel=	${BROKEN_SSL_REASON_libressl}
 
