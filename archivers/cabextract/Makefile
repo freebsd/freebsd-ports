@@ -3,7 +3,7 @@
 
 PORTNAME=	cabextract
 PORTVERSION=	1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.cabextract.org.uk/
 
@@ -13,7 +13,7 @@ COMMENT=	Program to extract Microsoft cabinet (.CAB) files
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe
+USES=		cpe iconv
 
 GNU_CONFIGURE=	yes
 
