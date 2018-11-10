@@ -11,6 +11,7 @@ include/nanomsg/survey.h
 include/nanomsg/tcp.h
 include/nanomsg/ws.h
 lib/libnanomsg.so
+lib/libnanomsg.so.5
 lib/libnanomsg.so.5.1.0
 libdata/pkgconfig/nanomsg.pc
 %%PORTDOCS%%man/man1/nanocat.1.gz
