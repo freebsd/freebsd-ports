@@ -24,7 +24,7 @@ man/man1/twhich.1.gz
 man/man5/applefile.5.gz
 man/man8/radmind.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/SPEC
 @sample(,,700) /%%RADMIND_BASE_DIR%%/config.sample
 @owner %%RADMINUSER%%
