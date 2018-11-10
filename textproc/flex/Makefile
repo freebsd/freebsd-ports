@@ -2,6 +2,7 @@
 
 PORTNAME=	flex
 PORTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/westes/flex/releases/download/v${PORTVERSION}/
 

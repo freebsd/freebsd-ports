@@ -22,6 +22,7 @@ INSTALL_TARGET+=	install-doc
 PORTDOCS=		htick.html
 DOCSDIR=		${PREFIX}/share/doc/husky
 INFO=			htick
+MAKE_ARGS=		INFODIR=${PREFIX}/${INFO_PATH}
 
 OPTIONS_DEFINE=	DOCS
 

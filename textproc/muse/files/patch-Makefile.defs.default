@@ -1,14 +1,11 @@
---- Makefile.defs.default.orig	2010-02-01 03:13:20.000000000 +0800
-+++ Makefile.defs.default	2011-05-26 09:32:22.000000000 +0800
-@@ -15,9 +15,9 @@
+--- Makefile.defs.default.orig	2010-01-31 19:13:20 UTC
++++ Makefile.defs.default
+@@ -15,7 +15,7 @@ SITEFLAG = --no-site-file
  # Installation options
  # PREFIX is only used here.
  DESTDIR  =
 -PREFIX   = /usr/local
 +PREFIX   = $(LOCALBASE)
  ELISPDIR = $(DESTDIR)$(PREFIX)/share/emacs/site-lisp/muse
--INFODIR  = $(DESTDIR)$(PREFIX)/share/info
-+INFODIR  = $(DESTDIR)$(PREFIX)/info
+ INFODIR  = $(DESTDIR)$(PREFIX)/share/info
  
- # Command to use to install the Info dir entry
- install_info = install-info --info-dir=$(INFODIR) $(1) || :

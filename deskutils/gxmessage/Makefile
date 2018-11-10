@@ -3,6 +3,7 @@
 
 PORTNAME=	gxmessage
 PORTVERSION=	3.4.3
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	GNU \
 		LOCAL/martymac

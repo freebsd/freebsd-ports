@@ -10,6 +10,11 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20181110:
+AUTHOR: bapt@FreeBSD.org
+
+  texinfo files are now installed in ${PREFIX}/share/info
+
 20180630:
 AUTHOR: kde@FreeBSD.org
 

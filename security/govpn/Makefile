@@ -3,6 +3,7 @@
 
 PORTNAME=	govpn
 DISTVERSION=	7.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.govpn.info/download/
 

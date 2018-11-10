@@ -3,7 +3,7 @@
 
 PORTNAME=	ne
 PORTVERSION=	3.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://ne.di.unimi.it/
 

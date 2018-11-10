@@ -96,7 +96,7 @@
  # install them in the directory you have defined.
  
 -# INFO_DIRECTORY=/usr/share/info
-+INFO_DIRECTORY=XX_PREFIX_XX/info
++INFO_DIRECTORY=XX_PREFIX_XX/share/info
  
  
  #------------------------------------------------------------------------------

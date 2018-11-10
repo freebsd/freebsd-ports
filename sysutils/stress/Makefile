@@ -3,6 +3,7 @@
 
 PORTNAME=	stress
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://people.seas.harvard.edu/~apw/stress/
 

@@ -12,7 +12,7 @@ bin/xpet
 bin/xplus4
 bin/xscpu64
 bin/xvic
-%%PORTDOCS%%info/vice.txt
+%%PORTDOCS%%share/info/vice.txt
 %%NLS%%share/locale/da/LC_MESSAGES/vice.mo
 %%NLS%%share/locale/de/LC_MESSAGES/vice.mo
 %%NLS%%share/locale/es/LC_MESSAGES/vice.mo

@@ -2,7 +2,7 @@
 
 PORTNAME=	festival-freebsoft-utils
 PORTVERSION=	0.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio accessibility
 MASTER_SITES=	http://www.freebsoft.org/pub/projects/${PORTNAME}/
 

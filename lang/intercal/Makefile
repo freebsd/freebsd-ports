@@ -3,6 +3,7 @@
 
 PORTNAME=	intercal
 PORTVERSION=	0.30
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.catb.org/~esr/intercal/
 

@@ -27,8 +27,6 @@
         X11
         ..
     ..
-    info
-    ..
     lib
         debug
         ..
@@ -285,6 +283,8 @@
             ..
         ..
         examples
+        ..
+        info
         ..
         java
             classes

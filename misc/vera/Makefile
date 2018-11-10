@@ -3,6 +3,7 @@
 
 PORTNAME=	vera
 PORTVERSION=	1.22
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	GNU
 
@@ -19,6 +20,6 @@ do-build:
 	(cd ${WRKSRC} && makeinfo --force --no-split vera.texi)
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/vera.info ${STAGEDIR}${PREFIX}/info
+	${INSTALL_DATA} ${WRKSRC}/vera.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.mk>

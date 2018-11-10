@@ -3,6 +3,7 @@
 
 PORTNAME=	prng
 DISTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://statistik.wu-wien.ac.at/software/prng/
 

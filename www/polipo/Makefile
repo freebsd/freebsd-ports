@@ -3,7 +3,7 @@
 
 PORTNAME=	polipo
 PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.pps.univ-paris-diderot.fr/~jch/software/files/polipo/
 

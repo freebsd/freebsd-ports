@@ -1,6 +1,6 @@
---- Makefile.in.orig
+--- Makefile.in.orig	2003-12-06 21:39:23 UTC
 +++ Makefile.in
-@@ -78,12 +78,12 @@
+@@ -78,7 +78,7 @@ datadir = $(prefix)/share
  libdir = $(prefix)/lib
  
  # Directory in which to install the man page.
@@ -9,13 +9,7 @@
  # The manpage extension
  manext = 1
  
- # Directory in which to install the Info files.
--infodir = $(datadir)/info
-+infodir = $(prefix)/info
- 
- # Directory in which to install the algae tools.
- tooldir = $(datadir)/algae/$(VERSION_NUMBER)/tools
-@@ -150,19 +150,19 @@
+@@ -150,19 +150,19 @@ configure: configure.in
  # Compile the source code.
  
  source: @BLAS@ @LAPACK@
@@ -40,7 +34,7 @@
  .PHONY: xlapack
  
  check: source
-@@ -180,13 +180,13 @@
+@@ -180,13 +180,13 @@ algae.A: rc0
  # Run test cases.
  
  check:
@@ -56,7 +50,7 @@
  .PHONY: times
  
  # <<<< This section is deleted in the "binary" distribution.
-@@ -194,11 +194,11 @@
+@@ -194,11 +194,11 @@ times:
  # Make documentation.
  
  info:
@@ -70,7 +64,7 @@
  .PHONY: dvi
  
  # ========================== Distribution =========================
-@@ -211,9 +211,7 @@
+@@ -211,9 +211,7 @@ dist:	distdir
  	  ln $$file $(distdir) > /dev/null 2>&1 || cp $$file $(distdir); \
  	done
  	for dir in $(SUBDIRS); do \
@@ -81,7 +75,7 @@
  	done
  	mv $(distdir) algae-$(VERSION_NUMBER)
  	tar chf algae-$(VERSION_NUMBER).tar algae-$(VERSION_NUMBER)
-@@ -230,9 +228,7 @@
+@@ -230,9 +228,7 @@ binaries: bindistdir
  	done
  	awk '/<<[<]</,/>>[>]>/ {next} {print}' Makefile > $(distdir)/Makefile
  	for dir in $(BINSUBDIRS); do \
@@ -92,7 +86,7 @@
  	done
  	mv $(distdir) algae-$(VERSION_NUMBER)
  	tar chf algae-$(VERSION_NUMBER)-@host@.tar algae-$(VERSION_NUMBER)
-@@ -249,8 +245,8 @@
+@@ -249,8 +245,8 @@ web:
  	for file in $(WEBDISTFILES); do \
  	  ln $$file $(distdir) > /dev/null 2>&1 || cp $$file $(distdir); \
  	done
@@ -103,7 +97,7 @@
  	rm -rf $(distdir)
  	gzip algae-web-$(VERSION_NUMBER).tar
  .PHONY: web
-@@ -278,7 +274,7 @@
+@@ -278,7 +274,7 @@ maintainer-clean::
  	@echo "it deletes files that may require special tools to rebuild."
  
  clean mostlyclean distclean maintainer-clean::
@@ -112,7 +106,7 @@
  
  clean mostlyclean distclean maintainer-clean::
  	rm -f a.out core conft* algae-*.tar algae-*.tar.gz
-@@ -294,15 +290,12 @@
+@@ -294,15 +290,12 @@ install: all
  # >>>> End of deleted section.
  
  install: algae.A installdirs
@@ -134,7 +128,7 @@
  	  manext=$(manext) infodir=$(infodir) htmldir=$(htmldir) install
  .PHONY:	install
  
-@@ -310,17 +303,17 @@
+@@ -310,17 +303,17 @@ install: algae.A installdirs
  # if necessary.
  
  installdirs: mkinstalldirs

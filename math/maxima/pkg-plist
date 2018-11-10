@@ -1,11 +1,7 @@
 bin/maxima
 bin/rmaxima
 bin/xmaxima
-info/abs_integrate.info
-info/drawutils.info
-info/kovacicODE.info
-info/logic.info
-info/maxima-index.lisp
+share/info/maxima-index.lisp
 lib/maxima/%%PORTVERSION%%/%%BINDIR%%/%%MAXIMABIN%%
 libexec/maxima/%%PORTVERSION%%/mgnuplot
 man/man1/maxima.1.gz

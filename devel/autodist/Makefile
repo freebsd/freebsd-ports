@@ -3,6 +3,7 @@
 
 PORTNAME=	autodist
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://silcnet.org/download/autodist/sources/ \
 		http://public.planetmirror.com/pub/silcnet/autodist/sources/ \

@@ -3,7 +3,7 @@
 
 PORTNAME=	bogosort
 PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lysator.liu.se/~qha/bogosort/ \
 		ftp://l82.ryd.student.liu.se/pub/unix/bogosort/

@@ -3,7 +3,7 @@
 
 PORTNAME=	sawfish
 PORTVERSION=	1.12.0
-PORTEPOCH=	3
+PORTEPOCH=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.tuxfamily.org/sawfish/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

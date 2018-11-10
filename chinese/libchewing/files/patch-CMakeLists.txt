@@ -4,7 +4,7 @@
  set(includedir "\${prefix}/include")
  set(datarootdir "\${prefix}/share")
  set(datadir "\${datarootdir}")
-+set(infodir "\${prefix}/info")
++set(infodir "\${prefix}/share/info")
  set(sysconfdir "\${prefix}/etc")
  configure_file(
      ${PROJECT_SOURCE_DIR}/chewing.pc.in

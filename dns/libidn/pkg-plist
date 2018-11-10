@@ -6,7 +6,7 @@ include/pr29.h
 include/punycode.h
 include/stringprep.h
 include/tld.h
-info/libidn-components.png
+share/info/libidn-components.png
 lib/libidn.a
 lib/libidn.so
 lib/libidn.so.11

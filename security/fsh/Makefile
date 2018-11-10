@@ -3,7 +3,7 @@
 
 PORTNAME=	fsh
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://www.lysator.liu.se/fsh/ \
 		http://mirror2.unixfreunde.de/ \

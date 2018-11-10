@@ -3,6 +3,7 @@
 
 PORTNAME=	slisp
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	http://www.sigala.it/sandro/files/
 

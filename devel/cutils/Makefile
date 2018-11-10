@@ -3,6 +3,7 @@
 
 PORTNAME=	cutils
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.sigala.it/sandro/files/
 

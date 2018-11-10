@@ -3,7 +3,7 @@
 
 PORTNAME=	am-utils
 PORTVERSION=	6.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	ftp://ftp.am-utils.org/pub/am-utils/ \

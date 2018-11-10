@@ -2,6 +2,7 @@
 
 PORTNAME=	nano
 PORTVERSION=	2.5.3
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/v${PORTVERSION:R}/ \
 		GNU

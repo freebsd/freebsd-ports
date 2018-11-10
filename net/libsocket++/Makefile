@@ -3,7 +3,7 @@
 
 PORTNAME=	libsocket++
 PORTVERSION=	1.12.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://src.linuxhacker.at/socket++/
 DISTNAME=	socket++-${PORTVERSION}

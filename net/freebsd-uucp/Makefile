@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freebsd-uucp
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	r
 DISTVERSION=	1_07_4
 CATEGORIES=	net comms ipv6
@@ -83,8 +83,8 @@ pre-install:
 		${STAGEDIR}${PREFIX}/etc/mtree/uucp-local.mtree
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/info
-	${INSTALL_DATA} ${WRKSRC}/uucp/doc/uucp.info ${STAGEDIR}${PREFIX}/info/
+	${MKDIR} ${STAGEDIR}${PREFIX}/${INFO_PATH}
+	${INSTALL_DATA} ${WRKSRC}/uucp/doc/uucp.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
 .if ${PORT_OPTIONS:MVAR_LOG}
 	${MKDIR} ${STAGEDIR}/var/log/uucp
 .endif

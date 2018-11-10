@@ -4,6 +4,7 @@
 PORTNAME=	libconfig
 PORTVERSION=	1.7.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	ntarmos@ceid.upatras.gr

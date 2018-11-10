@@ -3,6 +3,7 @@
 
 PORTNAME=	cgdb
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://cgdb.me/files/
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	fftw
 PORTVERSION=	2.1.5
-PORTREVISION?=	17
+PORTREVISION?=	18
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/		\
 		ftp://ftp.fftw.org/pub/fftw/old/	\

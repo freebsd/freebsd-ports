@@ -3,7 +3,7 @@
 
 PORTNAME=	newscache
 PORTVERSION=	1.2.r.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	news
 MASTER_SITES=	http://src.linuxhacker.at/NewsCache/
 DISTNAME=	NewsCache-${PORTVERSION:S/.r./rc/}
