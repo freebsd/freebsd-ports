@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tty-solitaire
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -10,6 +10,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Play solitaire in your terminal
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpereira
@@ -26,6 +27,6 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/CHANGELOG ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
