@@ -288,6 +288,8 @@ share/gtk-doc/html/libvirt/up.png
 %%DATADIR%%/cpu_map/x86_Haswell-noTSX-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Haswell-noTSX.xml
 %%DATADIR%%/cpu_map/x86_Haswell.xml
+%%DATADIR%%/cpu_map/x86_Icelake-Client.xml
+%%DATADIR%%/cpu_map/x86_Icelake-Server.xml
 %%DATADIR%%/cpu_map/x86_IvyBridge-IBRS.xml
 %%DATADIR%%/cpu_map/x86_IvyBridge.xml
 %%DATADIR%%/cpu_map/x86_Nehalem-IBRS.xml
