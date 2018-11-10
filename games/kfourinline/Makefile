@@ -8,7 +8,7 @@ CATEGORIES=	games kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME}_DESC}
 
-USES=		cmake:outsource gettext kde:5 qt:5 tar:xz
+USES=		cmake:outsource compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		dbusaddons dnssd ecm i18n iconthemes itemmodels itemviews \
 		kdeclarative kdelibs4support kio libkdegames notifyconfig \
