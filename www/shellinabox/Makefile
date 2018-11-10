@@ -4,6 +4,7 @@
 PORTNAME=	shellinabox
 PORTVERSION=	2.20
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -11,15 +12,15 @@ COMMENT=	Publish command line shell through AJAX interface
 
 LICENSE=	GPLv2
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	shellinabox
+USES=	autoreconf libtool
 
 OPTIONS_DEFINE=	CORES NOLOGIN
 CORES_DESC=	Patch shellinaboxd to enable core dumps
 NOLOGIN_DESC=	Login through ssh (not through login)
 
-USES=	autoreconf libtool
 GNU_CONFIGURE=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	shellinabox
 
 USE_RC_SUBR=	shellinaboxd
 USERS?=		shellinabox
