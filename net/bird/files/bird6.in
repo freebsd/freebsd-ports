@@ -28,7 +28,8 @@ extra_commands="reload"
 
 : ${bird6_enable="NO"}
 : ${bird6_config="%%PREFIX%%/etc/bird6.conf"}
+: ${bird6_group="birdvty"}
 
-command_args="-P /var/run/${name}.pid -c $bird6_config"
+command_args="-P /var/run/${name}.pid -c $bird6_config -g $bird6_group"
 
 run_rc_command "$1"
