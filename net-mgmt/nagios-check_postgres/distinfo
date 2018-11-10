@@ -1,3 +1,3 @@
-TIMESTAMP = 1509649207
-SHA256 (check_postgres-2.23.0.tar.gz) = 93cdbe92bb451525219b131a6810d9da0525000f6795160f70751b105c858615
-SIZE (check_postgres-2.23.0.tar.gz) = 200985
+TIMESTAMP = 1541851362
+SHA256 (check_postgres-2.24.0.tar.gz) = 79d4efb2d82a91dd8e7c077c323d1a25d64435bcaecfc3bba0cf0bb5e3ea1e17
+SIZE (check_postgres-2.24.0.tar.gz) = 205868
