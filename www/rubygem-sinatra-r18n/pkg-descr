@@ -1,8 +1,8 @@
-A Sinatra extension that provides i18n support to translate your
-web application. It is just a wrapper for R18n core library. It has
-nice Ruby-style syntax, filters, flexible locales, custom loaders,
-translation support for any classes, time and number localization,
-several user language support, agnostic core package with out-of-box
-support for Rails, Sinatra and desktop applications.
+Sinatra-r18n is a Sinatra extension that provides i18n support to translate your
+web application. It is just a wrapper for R18n core library. It has nice
+Ruby-style syntax, filters, flexible locales, custom loaders, translation
+support for any classes, time and number localization, several user language
+support, agnostic core package with out-of-box support for Rails, Sinatra and
+desktop applications.
 
-WWW: https://github.com/ai/r18n/tree/master/sinatra-r18n
+WWW: https://github.com/r18n/r18n/tree/master/sinatra-r18n
