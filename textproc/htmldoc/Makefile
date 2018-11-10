@@ -13,7 +13,7 @@ COMMENT=	Converts HTML to PDF and/or PostScript
 
 LICENSE=	GPLv2
 
-BROKEN_SSL=	openssl-devel
+BROKEN_SSL=	openssl111
 
 LIB_DEPENDS=	libpng.so:graphics/png
 

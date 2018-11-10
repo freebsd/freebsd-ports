@@ -16,7 +16,7 @@ USES=		ssl
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 
-BROKEN_SSL=	openssl-devel
+BROKEN_SSL=	openssl111
 
 PLIST=		${.CURDIR}/pkg-plist
 

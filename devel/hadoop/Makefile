@@ -15,8 +15,8 @@ COMMENT=	Apache Map/Reduce framework
 
 LICENSE=	APACHE20
 
-BROKEN_SSL=	openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	variable has incomplete type 'HMAC_CTX' (aka 'hmac_ctx_st')
+BROKEN_SSL=	openssl111
+BROKEN_SSL_REASON_openssl111=	variable has incomplete type 'HMAC_CTX' (aka 'hmac_ctx_st')
 
 BUILD_DEPENDS=	gmake:devel/gmake \
 		gsed:textproc/gsed

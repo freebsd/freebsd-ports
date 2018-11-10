@@ -12,7 +12,7 @@ COMMENT=	Simple IRC proxy with SSL support
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_SSL=	openssl-devel
+BROKEN_SSL=	openssl111
 
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}

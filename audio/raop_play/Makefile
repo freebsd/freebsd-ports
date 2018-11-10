@@ -13,8 +13,8 @@ COMMENT=	Music file player for Apple Airport Express
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_SSL=	openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	bin/raop_play:No such file or directory
+BROKEN_SSL=	openssl111
+BROKEN_SSL_REASON_openssl111=	bin/raop_play:No such file or directory
 
 LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
 		libfltk.so:x11-toolkits/fltk \

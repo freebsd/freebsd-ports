@@ -13,8 +13,8 @@ COMMENT=	Connection pool server for PostgreSQL
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_SSL=	openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	library 'ssl' is required for OpenSSL
+BROKEN_SSL=	openssl111
+BROKEN_SSL_REASON_openssl111=	library 'ssl' is required for OpenSSL
 
 PORTSCOUT=	limit:^3.5.[0-9]*
 

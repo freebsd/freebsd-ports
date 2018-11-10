@@ -14,7 +14,7 @@ MASTERDIR=	${.CURDIR}/../xmms2
 
 USES=		perl5 ssl
 
-BROKEN_SSL=	openssl-devel
+BROKEN_SSL=	openssl111
 
 PLIST=		${.CURDIR}/pkg-plist
 

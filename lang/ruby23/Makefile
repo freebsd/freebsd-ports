@@ -18,8 +18,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
 LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
-BROKEN_SSL=	openssl-devel
-BROKEN_SSL_REASON_openssl-devel=does not detect and buid the openssl*.rb bits
+BROKEN_SSL=	openssl111
+BROKEN_SSL_REASON_openssl111=does not detect and buid the openssl*.rb bits
 
 # Using LIB_DEPENDS finds the libffi from gcc which causes problems
 BUILD_DEPENDS=	libffi>=0:devel/libffi

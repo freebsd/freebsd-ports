@@ -527,8 +527,8 @@ USES+=	mysql
 
 .include <bsd.port.pre.mk>
 
-.if ${PHP_MODNAME} == "openssl" && ${SSL_DEFAULT:Mopenssl-devel}
-BROKEN=		Does not build with openssl-devel
+.if ${PHP_MODNAME} == "openssl" && ${SSL_DEFAULT:Mopenssl111}
+BROKEN=		Does not build with openssl111
 .endif
 
 .if ${PHP_MODNAME} == "gd"

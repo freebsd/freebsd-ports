@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=		fails to compile: fatal error: byteswap.h file not found
 BROKEN_armv6=		fails to compile: fatal error: byteswap.h file not found
-BROKEN_SSL=		openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	configure: error: could not find libcrypto
+BROKEN_SSL=		openssl111
+BROKEN_SSL_REASON_openssl111=	configure: error: could not find libcrypto
 
 LIB_DEPENDS=	libconfig.so:devel/libconfig \
 		libprotobuf-c.so:devel/protobuf-c

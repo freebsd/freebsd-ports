@@ -16,7 +16,7 @@ COMMENT=	Extendable SNMP implementation
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_SSL=	openssl-devel
+BROKEN_SSL=	openssl111
 
 LIB_DEPENDS=	libpkg.so:ports-mgmt/pkg
 

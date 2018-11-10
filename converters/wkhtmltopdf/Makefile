@@ -17,8 +17,8 @@ BROKEN_aarch64=		fails to build: error: cast from pointer to smaller type loses 
 BROKEN_armv6=		fails to build: error: Not supported ARM architecture
 BROKEN_armv7=		fails to build: error: invalid operand for instruction
 BROKEN_mips64=		fails to link: undefined reference to __sync_add_and_fetch_4
-BROKEN_SSL=		openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	member access into incomplete type 'SSL_CIPHER' (aka 'ssl_cipher_st')
+BROKEN_SSL=		openssl111
+BROKEN_SSL_REASON_openssl111=	member access into incomplete type 'SSL_CIPHER' (aka 'ssl_cipher_st')
 
 RUN_DEPENDS=	webfonts>=0:x11-fonts/webfonts
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \

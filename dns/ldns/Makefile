@@ -101,7 +101,7 @@ INSTALL_TARGET=	install-lib install-h install-config
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MDANETAUSAGE} && ${SSL_DEFAULT} != openssl-devel
+.if ${PORT_OPTIONS:MDANETAUSAGE} && ${SSL_DEFAULT} != openssl111
 BROKEN=		this option requires openssl >= 1.1.0
 .endif
 

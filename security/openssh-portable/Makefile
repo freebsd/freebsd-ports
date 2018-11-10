@@ -26,8 +26,8 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} --with-md5-passwords \
 
 ETCOLD=			${PREFIX}/etc
 
-BROKEN_SSL=	openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	error: OpenSSL >= 1.1.0 is not yet supported
+BROKEN_SSL=	openssl111
+BROKEN_SSL_REASON_openssl111=	error: OpenSSL >= 1.1.0 is not yet supported
 
 FLAVORS=			default hpn
 default_CONFLICTS_INSTALL=	openssl-portable-hpn
