@@ -1,4 +1,4 @@
 This library contains shared types, such as error classes, for the Google Cloud
 Client Library for Ruby.
 
-WWW: https://github.com/GoogleCloudPlatform/google-cloud-ruby/tree/master/google-cloud-core
+WWW: https://github.com/googleapis/google-cloud-ruby/tree/master/google-cloud-core
