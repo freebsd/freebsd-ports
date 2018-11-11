@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-ga554ab49
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	martinfilla@post.cz
+MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Free engine clone of the Genie Engine
 
 LICENSE=	GPLv3
