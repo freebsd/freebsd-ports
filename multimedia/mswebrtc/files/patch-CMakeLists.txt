@@ -1,0 +1,16 @@
+i386 target on BSDs doesn't include SSE2 by default
+
+--- CMakeLists.txt.orig	2017-07-20 13:56:58 UTC
++++ CMakeLists.txt
+@@ -204,6 +204,11 @@ if(ENABLE_AEC)
+ 			${AEC_SRC_DIR}/aec_core_sse2.c
+ 			${AEC_SRC_DIR}/aec_rdft_sse2.c
+ 		)
++		set_source_files_properties(
++			${AEC_SRC_DIR}/aec_core_sse2.c
++			${AEC_SRC_DIR}/aec_rdft_sse2.c
++			PROPERTIES COMPILE_FLAGS "-msse2"
++		)
+ 	endif()
+ 	include_directories(
+ 		${AEC_SRC_DIR}/include
