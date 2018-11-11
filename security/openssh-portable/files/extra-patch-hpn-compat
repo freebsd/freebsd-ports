@@ -31,12 +31,12 @@ r294563 was incomplete; re-add the client-side options as well.
  
  	{ NULL, oBadOption }
  };
---- servconf.c.orig	2017-10-02 12:34:26.000000000 -0700
-+++ servconf.c	2017-10-12 12:20:19.089884000 -0700
-@@ -618,6 +618,10 @@ static struct {
- 	{ "disableforwarding", sDisableForwarding, SSHCFG_ALL },
+--- servconf.c.orig	2018-10-16 17:01:20.000000000 -0700
++++ servconf.c	2018-11-10 11:32:09.835817000 -0800
+@@ -645,6 +645,10 @@ static struct {
  	{ "exposeauthinfo", sExposeAuthInfo, SSHCFG_ALL },
  	{ "rdomain", sRDomain, SSHCFG_ALL },
+ 	{ "casignaturealgorithms", sCASignatureAlgorithms, SSHCFG_ALL },
 +	{ "noneenabled", sUnsupported, SSHCFG_ALL },
 +	{ "hpndisabled", sDeprecated, SSHCFG_ALL },
 +	{ "hpnbuffersize", sDeprecated, SSHCFG_ALL },
