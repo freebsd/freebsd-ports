@@ -11,6 +11,7 @@ share/fcitx/anthy/nicola-a.sty
 share/fcitx/anthy/nicola-f.sty
 share/fcitx/anthy/nicola-j.sty
 share/fcitx/anthy/oasys100j.sty
+share/fcitx/anthy/qkana.sty
 share/fcitx/anthy/tron-dvorak.sty
 share/fcitx/anthy/tron-qwerty-jp.sty
 share/fcitx/anthy/tsuki-2-203-101.sty
@@ -25,7 +26,11 @@ share/icons/hicolor/scalable/status/fcitx-anthy-period-latin.svg
 share/icons/hicolor/scalable/status/fcitx-anthy-period-wide-japanese.svg
 share/icons/hicolor/scalable/status/fcitx-anthy-period-wide-latin.svg
 share/icons/hicolor/scalable/status/fcitx-anthy-symbol.svg
+share/locale/ca/LC_MESSAGES/fcitx-anthy.mo
+share/locale/da/LC_MESSAGES/fcitx-anthy.mo
 share/locale/de/LC_MESSAGES/fcitx-anthy.mo
+share/locale/ko/LC_MESSAGES/fcitx-anthy.mo
 share/locale/ja/LC_MESSAGES/fcitx-anthy.mo
+share/locale/ru/LC_MESSAGES/fcitx-anthy.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx-anthy.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx-anthy.mo
