@@ -196,9 +196,10 @@ share/gtk-doc/html/libevdocument/EvLayer.html
 share/gtk-doc/html/libevdocument/EvPage.html
 share/gtk-doc/html/libevdocument/EvRenderContext.html
 share/gtk-doc/html/libevdocument/EvSelection.html
-share/gtk-doc/html/libevdocument/annotation-glossary.html
 share/gtk-doc/html/libevdocument/api-index-3-10.html
 share/gtk-doc/html/libevdocument/api-index-3-12.html
+share/gtk-doc/html/libevdocument/api-index-3-14.html
+share/gtk-doc/html/libevdocument/api-index-3-18.html
 share/gtk-doc/html/libevdocument/api-index-3-4.html
 share/gtk-doc/html/libevdocument/api-index-3-6.html
 share/gtk-doc/html/libevdocument/api-index-3-8.html
@@ -231,8 +232,10 @@ share/gtk-doc/html/libevdocument/style.css
 share/gtk-doc/html/libevdocument/up-insensitive.png
 share/gtk-doc/html/libevdocument/up.png
 share/gtk-doc/html/libevview/EvJob.html
-share/gtk-doc/html/libevview/annotation-glossary.html
 share/gtk-doc/html/libevview/api-index-3-10.html
+share/gtk-doc/html/libevview/api-index-3-12.html
+share/gtk-doc/html/libevview/api-index-3-14.html
+share/gtk-doc/html/libevview/api-index-3-30.html
 share/gtk-doc/html/libevview/api-index-3-6.html
 share/gtk-doc/html/libevview/api-index-3-8.html
 share/gtk-doc/html/libevview/api-index-deprecated.html

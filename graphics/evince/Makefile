@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	evince
-PORTVERSION=	3.28.2
-PORTREVISION=	1
+PORTVERSION=	3.28.5
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -18,6 +17,7 @@ BUILD_DEPENDS=	itstool:textproc/itstool \
 		adwaita-icon-theme>=0:x11-themes/adwaita-icon-theme \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib \
+		libfribidi.so:converters/fribidi \
 		libspectre.so:print/libspectre \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS=	adwaita-icon-theme>=0:x11-themes/adwaita-icon-theme \
@@ -35,6 +35,7 @@ GNU_CONFIGURE=	yes
 USE_XORG=	ice
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-compile-warnings=minimum \
+		--enable-ps \
 		--with-systemduserunitdir=no
 INSTALL_TARGET=	install-strip
 
@@ -73,7 +74,7 @@ DVI_CONFIGURE_ENABLE=	dvi
 
 KEYRING_DESC=			Keyring support
 KEYRING_LIB_DEPENDS=		libsecret-1.so:security/libsecret
-KEYRING_CONFIGURE_ENABLE=	keyring
+KEYRING_CONFIGURE_WITH=		keyring
 
 NAUTILUS_DESC=			Nautilus plugin
 NAUTILUS_USE=			gnome=nautilus3
