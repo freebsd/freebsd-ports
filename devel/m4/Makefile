@@ -28,7 +28,6 @@ USES=		makeinfo tar:xz
 
 EXAMPLESDIR=	${PREFIX}/share/examples/gm4
 INFO=		m4
-PORTEXAMPLES=	*
 
 LIBSIGSEGV_CONFIGURE_OFF=	--without-libsigsegv-prefix
 LIBSIGSEGV_CONFIGURE_ON=	--with-libsigsegv-prefix=${LOCALBASE}
