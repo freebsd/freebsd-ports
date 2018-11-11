@@ -5,7 +5,7 @@ PORTVERSION=	g20180708
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-lang
 
-MAINTAINER=	martinfilla@post.cz
+MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Data description language designed for openage
 
 LICENSE=	LGPL3
