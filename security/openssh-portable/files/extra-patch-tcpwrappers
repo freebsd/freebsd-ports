@@ -85,11 +85,11 @@ index 0ade557..045f149 100644
  	laddr = get_local_ipaddr(sock_in);
 diff --git configure.ac configure.ac
 index f48ba4a..66fbe82 100644
---- configure.ac
-+++ configure.ac
-@@ -1380,6 +1380,62 @@ AC_ARG_WITH([skey],
- 	]
- )
+--- configure.ac.orig	2018-10-16 17:01:20.000000000 -0700
++++ configure.ac	2018-11-10 11:29:32.626326000 -0800
+@@ -1493,6 +1493,62 @@ else
+ 	AC_MSG_RESULT([no])
+ fi
  
 +# Check whether user wants TCP wrappers support
 +TCPW_MSG="no"
@@ -150,11 +150,11 @@ index f48ba4a..66fbe82 100644
  # Check whether user wants to use ldns
  LDNS_MSG="no"
  AC_ARG_WITH(ldns,
-@@ -4803,6 +4859,7 @@ echo "                 KerberosV support: $KRB5_MSG"
+@@ -5305,6 +5361,7 @@ echo "                       PAM support: $PAM_MSG"
+ echo "                   OSF SIA support: $SIA_MSG"
+ echo "                 KerberosV support: $KRB5_MSG"
  echo "                   SELinux support: $SELINUX_MSG"
- echo "                 Smartcard support: $SCARD_MSG"
- echo "                     S/KEY support: $SKEY_MSG"
 +echo "              TCP Wrappers support: $TCPW_MSG"
  echo "              MD5 password support: $MD5_MSG"
  echo "                   libedit support: $LIBEDIT_MSG"
- echo "  Solaris process contract support: $SPC_MSG"
+ echo "                   libldns support: $LDNS_MSG"

@@ -9,21 +9,21 @@ Submitted upstream, no reaction.
 Submitted by:   delphij@
 [rewritten for 7.4 by bdrewery@]
 
---- misc.c.orig	2017-01-12 11:54:41.058558000 -0800
-+++ misc.c	2017-01-12 11:55:16.531356000 -0800
-@@ -56,6 +56,8 @@
- #include <net/if.h>
- #endif
+--- serverloop.c.orig	2018-11-10 11:38:16.728617000 -0800
++++ serverloop.c	2018-11-10 11:38:19.497300000 -0800
+@@ -55,6 +55,8 @@
+ #include <unistd.h>
+ #include <stdarg.h>
  
 +#include <sys/sysctl.h>
 +
+ #include "openbsd-compat/sys-queue.h"
  #include "xmalloc.h"
- #include "misc.h"
- #include "log.h"
-@@ -1253,7 +1255,19 @@ forward_equals(const struct Forward *a, 
- int
- bind_permitted(int port, uid_t uid)
+ #include "packet.h"
+@@ -109,7 +111,19 @@ bind_permitted(int port, uid_t uid)
  {
+ 	if (use_privsep)
+ 		return 1; /* allow system to decide */
 -	if (port < IPPORT_RESERVED && uid != 0)
 +	int ipport_reserved;
 +#ifdef __FreeBSD__
