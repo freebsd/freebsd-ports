@@ -1,4 +1,4 @@
-TIMESTAMP = 1541184997
+TIMESTAMP = 1541961950
 SHA256 (extcore.0.8.46.nupkg) = 6220962d632c99bcc79f565ada972b948ac9e8db6e47a7cc7b08bf4357b1479e
 SIZE (extcore.0.8.46.nupkg) = 5905090
 SHA256 (fake.4.61.1.nupkg) = d3bacc8cb694b64c58c20fcf04f9cc86988de3dc5fd40b205640b0ee354bb201
@@ -291,8 +291,8 @@ SHA256 (system.xml.xpath.4.3.0.nupkg) = 7de248226a50ee23fc03c043c1d6a410ac8d654b
 SIZE (system.xml.xpath.4.3.0.nupkg) = 240595
 SHA256 (system.xml.xmldocument.4.3.0.nupkg) = ad115d7166466c97e93ea8a205a84af2db32df88a7411f58429b11a2730bd852
 SIZE (system.xml.xmldocument.4.3.0.nupkg) = 275625
-SHA256 (yamldotnet.signed.4.0.1-pre291.nupkg) = 2321850ef1776ec66aceffbd76e877a023bcfd989a25b4c3d835e8361b157477
-SIZE (yamldotnet.signed.4.0.1-pre291.nupkg) = 681836
+SHA256 (yamldotnet.signed.5.2.1.nupkg) = e2dc662ea4cb7e7aeab67d44082132189439b435981b57c74df393e710e5b931
+SIZE (yamldotnet.signed.5.2.1.nupkg) = 423880
 SHA256 (runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg) = c4d86833a9cd3f5ab1745a1b863c3ef0b6d3828992ca7bacc643c00027964381
 SIZE (runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg) = 34803
 SHA256 (runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg) = 2375aad9741019bcf2886d2b82f63dfd8898d821bfe384ad8d592358b447a3d5
