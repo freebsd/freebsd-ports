@@ -107,7 +107,7 @@ post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/man/man1/$f.1
 	@${RM} ${STAGEDIR}${PREFIX}/man/man1/$f.1.gz
 .endfor
-	@${RM} ${STAGEDIR}${PREFIX}/info/*
+	@${RM} ${STAGEDIR}${PREFIX}/share/info/*
 	@${RM} ${STAGEDIR}${PREFIX}/man/man7/*
 .if empty(PKGNAMEPREFIX:M*-*-)
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/gcc/${GCC_TARGET}/${PORTVERSION}/include-fixed
