@@ -45,6 +45,7 @@ include/wcslib-%%VERSION%%/wcstrig.h
 include/wcslib-%%VERSION%%/wcsunits.h
 include/wcslib-%%VERSION%%/wcsunits.inc
 include/wcslib-%%VERSION%%/wcsutil.h
+include/wcslib-%%VERSION%%/wtbarr.h
 %%PGPLOT%%lib/libpgsbox-%%VERSION%%.a
 %%PGPLOT%%lib/libpgsbox.a
 %%PGPLOT%%lib/libpgsbox.so
@@ -53,8 +54,8 @@ include/wcslib-%%VERSION%%/wcsutil.h
 lib/libwcs-%%VERSION%%.a
 lib/libwcs.a
 lib/libwcs.so
-lib/libwcs.so.5
-lib/libwcs.so.5.19.1
+lib/libwcs.so.6
+lib/libwcs.so.6.2
 libdata/pkgconfig/wcslib.pc
 %%CFITSIO%%man/man1/HPXcvt.1.gz
 man/man1/fitshdr.1.gz
@@ -233,6 +234,7 @@ man/man1/fitshdr.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_func_h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_func_l.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_func_m.html
+%%PORTDOCS%%%%DOCSDIR%%/html/globals_func_o.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_func_p.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_func_q.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_func_s.html
@@ -248,6 +250,7 @@ man/man1/fitshdr.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_l.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_m.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_n.html
+%%PORTDOCS%%%%DOCSDIR%%/html/globals_o.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_p.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_q.html
 %%PORTDOCS%%%%DOCSDIR%%/html/globals_r.html
@@ -336,4 +339,6 @@ man/man1/fitshdr.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/wcsunits_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/wcsutil_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/wcsutil_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/html/wtbarr_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/html/wtbarr_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/wcslib.pdf
