@@ -14,11 +14,9 @@ bin/magick-script
 bin/mogrify
 bin/montage
 bin/stream
-@sample etc/ImageMagick-7/coder.xml.sample
 @sample etc/ImageMagick-7/colors.xml.sample
 @sample etc/ImageMagick-7/delegates.xml.sample
 @sample etc/ImageMagick-7/log.xml.sample
-@sample etc/ImageMagick-7/magic.xml.sample
 @sample etc/ImageMagick-7/mime.xml.sample
 @sample etc/ImageMagick-7/policy.xml.sample
 @sample etc/ImageMagick-7/quantization-table.xml.sample
@@ -43,6 +41,7 @@ include/ImageMagick-7/Magick++/Montage.h
 include/ImageMagick-7/Magick++/Pixels.h
 include/ImageMagick-7/Magick++/ResourceLimits.h
 include/ImageMagick-7/Magick++/STL.h
+include/ImageMagick-7/Magick++/SecurityPolicy.h
 include/ImageMagick-7/Magick++/Statistic.h
 include/ImageMagick-7/Magick++/TypeMetric.h
 include/ImageMagick-7/MagickCore/MagickCore.h
@@ -125,6 +124,7 @@ include/ImageMagick-7/MagickCore/semaphore.h
 include/ImageMagick-7/MagickCore/shear.h
 include/ImageMagick-7/MagickCore/signature.h
 include/ImageMagick-7/MagickCore/splay-tree.h
+include/ImageMagick-7/MagickCore/static.h
 include/ImageMagick-7/MagickCore/statistic.h
 include/ImageMagick-7/MagickCore/stream.h
 include/ImageMagick-7/MagickCore/string_.h
@@ -208,8 +208,6 @@ lib/ImageMagick-%%PORTVERSION%%/config-%%QBIT%%%%HDRI%%/configure.xml
 %%TIFF%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/ept.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/fax.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/fax.so
-%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/fd.la
-%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/fd.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/fits.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/fits.so
 %%FPX%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/fpx.la
@@ -224,6 +222,8 @@ lib/ImageMagick-%%PORTVERSION%%/config-%%QBIT%%%%HDRI%%/configure.xml
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/hald.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/hdr.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/hdr.so
+%%HEIF%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/heic.la
+%%HEIF%%%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/heic.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/histogram.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/histogram.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%%%HDRI%%/coders/hrz.la
@@ -420,13 +420,13 @@ lib/libMagick++-7.so.4.0.0
 lib/libMagickCore-7.a
 lib/libMagickCore-7.la
 lib/libMagickCore-7.so
-lib/libMagickCore-7.so.5
-lib/libMagickCore-7.so.5.0.0
+lib/libMagickCore-7.so.6
+lib/libMagickCore-7.so.6.0.0
 lib/libMagickWand-7.a
 lib/libMagickWand-7.la
 lib/libMagickWand-7.so
-lib/libMagickWand-7.so.5
-lib/libMagickWand-7.so.5.0.0
+lib/libMagickWand-7.so.6
+lib/libMagickWand-7.so.6.0.0
 %%WITH_PERL%%%%SITE_ARCH%%/Image/Magick.pm
 %%WITH_PERL%%%%SITE_ARCH%%/Image/Magick/%%QBIT%%%%HDRI%%.pm
 %%WITH_PERL%%%%SITE_ARCH%%/auto/Image/Magick/%%QBIT%%%%HDRI%%/%%QBIT%%%%HDRI%%.so
@@ -1339,9 +1339,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/blob.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/blob.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/cache-view.html
-%%PORTDOCS%%%%DOCSDIR%%-7/www/api/cache-view.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/cache.html
-%%PORTDOCS%%%%DOCSDIR%%-7/www/api/cache.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/channel.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/channel.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/cipher.html
@@ -1355,7 +1353,6 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/compare.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/compare.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/composite.html
-%%PORTDOCS%%%%DOCSDIR%%-7/www/api/composite.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/constitute.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/constitute.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/decorate.html
@@ -1385,7 +1382,6 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/histogram.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/histogram.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/image-view.html
-%%PORTDOCS%%%%DOCSDIR%%-7/www/api/image-view.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/image.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/image.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/layer.html
@@ -1408,7 +1404,6 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/mime.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/mime.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/module.html
-%%PORTDOCS%%%%DOCSDIR%%-7/www/api/module.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/mogrify.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/mogrify.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/monitor.html
@@ -1424,9 +1419,7 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/pixel-wand.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/pixel-wand.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/profile.html
-%%PORTDOCS%%%%DOCSDIR%%-7/www/api/profile.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/property.html
-%%PORTDOCS%%%%DOCSDIR%%-7/www/api/property.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/quantize.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/quantize.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/registry.html
@@ -1434,7 +1427,6 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/resize.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/resize.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/resource.html
-%%PORTDOCS%%%%DOCSDIR%%-7/www/api/resource.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/segment.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/segment.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/shear.html
@@ -1444,13 +1436,11 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/statistic.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/statistic.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/stream.html
-%%PORTDOCS%%%%DOCSDIR%%-7/www/api/stream.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/transform.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/transform.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/version.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/version.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/api/wand-view.html
-%%PORTDOCS%%%%DOCSDIR%%-7/www/api/wand-view.php
 %%PORTDOCS%%%%DOCSDIR%%-7/www/architecture.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/assets/magick.css
 %%PORTDOCS%%%%DOCSDIR%%-7/www/assets/magick.js
@@ -1539,7 +1529,6 @@ man/man1/stream.1.gz
 %%PORTDOCS%%%%DOCSDIR%%-7/www/source/type.xml
 %%PORTDOCS%%%%DOCSDIR%%-7/www/source/wand.c
 %%PORTDOCS%%%%DOCSDIR%%-7/www/stream.html
-%%PORTDOCS%%%%DOCSDIR%%-7/www/subversion.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/support.html
 %%PORTDOCS%%%%DOCSDIR%%-7/www/wand.png
 %%PORTDOCS%%%%DOCSDIR%%-7/www/webp.html
