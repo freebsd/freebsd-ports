@@ -1,7 +1,7 @@
-KLatexFormula is a Qt 4 program to easily get an image from a LaTeX
+KLatexFormula is a Qt program to easily get an image from a LaTeX
 formula. Just enter a formula, click "Evaluate", then you can
 drag & drop or copy the resulting image to another location (an
 OpenOffice document, for example) or save it as an image (many
 formats are available).
 
-WWW: http://klatexformula.sourceforge.net
+WWW: https://klatexformula.sourceforge.io
