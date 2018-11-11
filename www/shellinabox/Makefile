@@ -20,7 +20,6 @@ NOLOGIN_DESC=	Login through ssh (not through login)
 
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
-GH_ACCOUNT=	shellinabox
 
 USE_RC_SUBR=	shellinaboxd
 USERS?=		shellinabox
