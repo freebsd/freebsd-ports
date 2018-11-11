@@ -3,7 +3,7 @@
 
 PORTNAME=	s-news
 PORTVERSION=	0.1.11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	news
 MASTER_SITES=	http://www.lost.org.uk/
 

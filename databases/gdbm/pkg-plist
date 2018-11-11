@@ -7,8 +7,8 @@ include/gdbm.h
 lib/libgdbm.a
 lib/libgdbm.la
 lib/libgdbm.so
-lib/libgdbm.so.4
-lib/libgdbm.so.4.0.0
+lib/libgdbm.so.6
+lib/libgdbm.so.6.0.0
 %%COMPAT%%lib/libgdbm_compat.a
 %%COMPAT%%lib/libgdbm_compat.la
 %%COMPAT%%lib/libgdbm_compat.so
@@ -21,11 +21,13 @@ man/man3/gdbm.3.gz
 %%NLS%%share/locale/da/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/gdbm.mo
+%%NLS%%share/locale/es/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/gdbm.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/gdbm.mo
