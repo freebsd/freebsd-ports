@@ -3,7 +3,7 @@
 
 PORTNAME=	gstreamer1-libav
 PORTVERSION=	1.14.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-libav/
 DISTNAME=	gst-libav-${PORTVERSION}
@@ -29,9 +29,9 @@ INSTALL_TARGET=	install-strip
 CFLAGS_powerpc64=	-mminimal-toc
 
 OPTIONS_DEFINE=	FFMPEG
+OPTIONS_DEFAULT=FFMPEG
 
 FFMPEG_DESC?=	Use system ffmpeg instead of internal libav
-FFMPEG_BROKEN=	fails to build with ffmpeg 4.0, see bug 227748
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_WITH=	system-libav
 FFMPEG_BUILD_DEPENDS_OFF=as:devel/binutils nasm:devel/nasm

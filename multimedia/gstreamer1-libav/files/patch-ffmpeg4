@@ -1,0 +1,4664 @@
+https://bugzilla.gnome.org/show_bug.cgi?id=792900
+
+--- configure.orig	2018-10-02 22:09:31 UTC
++++ configure
+@@ -18125,12 +18125,12 @@ if test -n "$PKG_CONFIG"; then
+         pkg_cv_LIBAV_CFLAGS="$LIBAV_CFLAGS"
+     else
+         if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libavfilter libavformat libavcodec >= 57 libavutil\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "libavfilter libavformat libavcodec >= 57 libavutil") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libavfilter libavformat libavcodec >= 58 libavutil\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "libavfilter libavformat libavcodec >= 58 libavutil") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LIBAV_CFLAGS=`$PKG_CONFIG --cflags "libavfilter libavformat libavcodec >= 57 libavutil" 2>/dev/null`
++  pkg_cv_LIBAV_CFLAGS=`$PKG_CONFIG --cflags "libavfilter libavformat libavcodec >= 58 libavutil" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -18143,12 +18143,12 @@ if test -n "$PKG_CONFIG"; then
+         pkg_cv_LIBAV_LIBS="$LIBAV_LIBS"
+     else
+         if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libavfilter libavformat libavcodec >= 57 libavutil\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "libavfilter libavformat libavcodec >= 57 libavutil") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libavfilter libavformat libavcodec >= 58 libavutil\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "libavfilter libavformat libavcodec >= 58 libavutil") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_LIBAV_LIBS=`$PKG_CONFIG --libs "libavfilter libavformat libavcodec >= 57 libavutil" 2>/dev/null`
++  pkg_cv_LIBAV_LIBS=`$PKG_CONFIG --libs "libavfilter libavformat libavcodec >= 58 libavutil" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -18167,14 +18167,14 @@ else
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        LIBAV_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "libavfilter libavformat libavcodec >= 57 libavutil"`
++	        LIBAV_PKG_ERRORS=`$PKG_CONFIG --short-errors --errors-to-stdout --print-errors "libavfilter libavformat libavcodec >= 58 libavutil"`
+         else
+-	        LIBAV_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "libavfilter libavformat libavcodec >= 57 libavutil"`
++	        LIBAV_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "libavfilter libavformat libavcodec >= 58 libavutil"`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$LIBAV_PKG_ERRORS" >&5
+ 
+-	as_fn_error $? "Package requirements (libavfilter libavformat libavcodec >= 57 libavutil) were not met:
++	as_fn_error $? "Package requirements (libavfilter libavformat libavcodec >= 58 libavutil) were not met:
+ 
+ $LIBAV_PKG_ERRORS
+ 
+@@ -18471,10 +18471,10 @@ fi
+   emblibav_configure_args="$emblibav_configure_args \
+         --enable-static --enable-pic \
+         --disable-avdevice --disable-postproc \
+-        --disable-programs --disable-ffserver --disable-ffplay --disable-ffprobe --disable-ffmpeg \
++        --disable-programs --disable-ffplay --disable-ffprobe --disable-ffmpeg \
+         --disable-encoder=flac --disable-protocols --disable-devices \
+         --disable-network --disable-hwaccels --disable-dxva2 --disable-vdpau \
+-        --disable-filters --enable-filter=yadif --disable-doc --disable-vda --disable-d3d11va --disable-dxva2 \
++        --disable-filters --enable-filter=yadif --disable-doc --disable-d3d11va --disable-dxva2 \
+         --disable-audiotoolbox --disable-videotoolbox --disable-vaapi --disable-crystalhd \
+         --disable-mediacodec --disable-nvenc --disable-mmal --disable-omx \
+         --disable-omx-rpi --disable-cuda --disable-cuvid --disable-libmfx \
+--- ext/libav/gstav.c.orig	2018-07-19 11:27:13 UTC
++++ ext/libav/gstav.c
+@@ -28,12 +28,9 @@
+ #include <string.h>
+ #include <gst/gst.h>
+ 
+-#include <libavcodec/avcodec.h>
+-#include <libavformat/avformat.h>
+-#include <libavfilter/avfiltergraph.h>
+-
+ #include "gstav.h"
+ #include "gstavutils.h"
++#include "gstavcfg.h"
+ 
+ #ifdef GST_LIBAV_ENABLE_GPL
+ #define LICENSE "GPL"
+@@ -155,8 +152,8 @@ plugin_init (GstPlugin * plugin)
+ 
+   gst_ffmpeg_init_pix_fmt_info ();
+ 
+-  av_register_all ();
+-  avfilter_register_all ();
++  /* build global ffmpeg param/property info */
++  gst_ffmpeg_cfg_init ();
+ 
+   gst_ffmpegaudenc_register (plugin);
+   gst_ffmpegvidenc_register (plugin);
+--- ext/libav/gstavauddec.c.orig	2018-07-19 11:29:22 UTC
++++ ext/libav/gstavauddec.c
+@@ -153,7 +153,7 @@ gst_ffmpegauddec_init (GstFFMpegAudDec * ffmpegdec)
+ 
+   ffmpegdec->frame = av_frame_alloc ();
+ 
+-  GST_PAD_SET_ACCEPT_TEMPLATE (GST_VIDEO_DECODER_SINK_PAD (ffmpegdec));
++  GST_PAD_SET_ACCEPT_TEMPLATE (GST_AUDIO_DECODER_SINK_PAD (ffmpegdec));
+   gst_audio_decoder_set_use_default_pad_acceptcaps (GST_AUDIO_DECODER_CAST
+       (ffmpegdec), TRUE);
+ 
+@@ -287,7 +287,7 @@ gst_ffmpegauddec_propose_allocation (GstAudioDecoder *
+   gst_allocation_params_init (&params);
+   params.flags = GST_MEMORY_FLAG_ZERO_PADDED;
+   params.align = 15;
+-  params.padding = FF_INPUT_BUFFER_PADDING_SIZE;
++  params.padding = AV_INPUT_BUFFER_PADDING_SIZE;
+   /* we would like to have some padding so that we don't have to
+    * memcpy. We don't suggest an allocator. */
+   gst_query_add_allocation_param (query, NULL, &params);
+@@ -360,15 +360,14 @@ static gboolean
+ settings_changed (GstFFMpegAudDec * ffmpegdec, AVFrame * frame)
+ {
+   GstAudioFormat format;
+-  gint channels =
+-      av_get_channel_layout_nb_channels (av_frame_get_channel_layout (frame));
++  gint channels = av_get_channel_layout_nb_channels (frame->channel_layout);
+ 
+   format = gst_ffmpeg_smpfmt_to_audioformat (frame->format);
+   if (format == GST_AUDIO_FORMAT_UNKNOWN)
+     return TRUE;
+ 
+   return !(ffmpegdec->info.rate ==
+-      av_frame_get_sample_rate (frame) &&
++      frame->sample_rate &&
+       ffmpegdec->info.channels == channels &&
+       ffmpegdec->info.finfo->format == format);
+ }
+@@ -387,10 +386,9 @@ gst_ffmpegauddec_negotiate (GstFFMpegAudDec * ffmpegde
+   format = gst_ffmpeg_smpfmt_to_audioformat (frame->format);
+   if (format == GST_AUDIO_FORMAT_UNKNOWN)
+     goto no_caps;
+-  channels =
+-      av_get_channel_layout_nb_channels (av_frame_get_channel_layout (frame));
++  channels = av_get_channel_layout_nb_channels (frame->channel_layout);
+   if (channels == 0)
+-    channels = av_frame_get_channels (frame);
++    channels = frame->channels;
+   if (channels == 0)
+     goto no_caps;
+ 
+@@ -400,11 +398,9 @@ gst_ffmpegauddec_negotiate (GstFFMpegAudDec * ffmpegde
+   GST_DEBUG_OBJECT (ffmpegdec,
+       "Renegotiating audio from %dHz@%dchannels (%d) to %dHz@%dchannels (%d)",
+       ffmpegdec->info.rate, ffmpegdec->info.channels,
+-      ffmpegdec->info.finfo->format, av_frame_get_sample_rate (frame), channels,
+-      format);
++      ffmpegdec->info.finfo->format, frame->sample_rate, channels, format);
+ 
+-  gst_ffmpeg_channel_layout_to_gst (av_frame_get_channel_layout (frame),
+-      channels, pos);
++  gst_ffmpeg_channel_layout_to_gst (frame->channel_layout, channels, pos);
+   memcpy (ffmpegdec->ffmpeg_layout, pos,
+       sizeof (GstAudioChannelPosition) * channels);
+ 
+@@ -413,7 +409,7 @@ gst_ffmpegauddec_negotiate (GstFFMpegAudDec * ffmpegde
+   ffmpegdec->needs_reorder =
+       memcmp (pos, ffmpegdec->ffmpeg_layout, sizeof (pos[0]) * channels) != 0;
+   gst_audio_info_set_format (&ffmpegdec->info, format,
+-      av_frame_get_sample_rate (frame), channels, pos);
++      frame->sample_rate, channels, pos);
+ 
+   if (!gst_audio_decoder_set_output_format (GST_AUDIO_DECODER (ffmpegdec),
+           &ffmpegdec->info))
+@@ -461,25 +457,19 @@ gst_avpacket_init (AVPacket * packet, guint8 * data, g
+   packet->size = size;
+ }
+ 
+-static gint
++/*
++ * Returns: whether a frame was decoded
++ */
++static gboolean
+ gst_ffmpegauddec_audio_frame (GstFFMpegAudDec * ffmpegdec,
+-    AVCodec * in_plugin, guint8 * data, guint size, gint * have_data,
+-    GstBuffer ** outbuf, GstFlowReturn * ret)
++    AVCodec * in_plugin, GstBuffer ** outbuf, GstFlowReturn * ret)
+ {
+-  gint len = -1;
+-  AVPacket packet;
++  gboolean got_frame = FALSE;
++  gint res;
+ 
+-  GST_DEBUG_OBJECT (ffmpegdec, "size: %d", size);
++  res = avcodec_receive_frame (ffmpegdec->context, ffmpegdec->frame);
+ 
+-  gst_avpacket_init (&packet, data, size);
+-  len =
+-      avcodec_decode_audio4 (ffmpegdec->context, ffmpegdec->frame, have_data,
+-      &packet);
+-
+-  GST_DEBUG_OBJECT (ffmpegdec,
+-      "Decode audio: len=%d, have_data=%d", len, *have_data);
+-
+-  if (len >= 0 && *have_data) {
++  if (res >= 0) {
+     gint nsamples, channels, byte_per_sample;
+     gsize output_size;
+ 
+@@ -487,10 +477,11 @@ gst_ffmpegauddec_audio_frame (GstFFMpegAudDec * ffmpeg
+             ffmpegdec->frame, FALSE)) {
+       *outbuf = NULL;
+       *ret = GST_FLOW_NOT_NEGOTIATED;
+-      len = -1;
+       goto beach;
+     }
+ 
++    got_frame = TRUE;
++
+     channels = ffmpegdec->info.channels;
+     nsamples = ffmpegdec->frame->nb_samples;
+     byte_per_sample = ffmpegdec->info.finfo->width / 8;
+@@ -586,60 +577,46 @@ gst_ffmpegauddec_audio_frame (GstFFMpegAudDec * ffmpeg
+     /* Mark corrupted frames as corrupted */
+     if (ffmpegdec->frame->flags & AV_FRAME_FLAG_CORRUPT)
+       GST_BUFFER_FLAG_SET (*outbuf, GST_BUFFER_FLAG_CORRUPTED);
+-  } else {
++  } else if (res == AVERROR (EAGAIN)) {
+     *outbuf = NULL;
++  } else if (res == AVERROR_EOF) {      /* Should not happen */
++    *ret = GST_FLOW_EOS;
++    GST_WARNING_OBJECT (ffmpegdec,
++        "Tried to receive frame on a flushed context");
++  } else if (res < 0) {
++    *ret = GST_FLOW_ERROR;
++    GST_ELEMENT_ERROR (ffmpegdec, STREAM, DECODE, ("Decoding problem"),
++        ("Legitimate decoding error"));
+   }
+ 
+ beach:
+   av_frame_unref (ffmpegdec->frame);
+-  GST_DEBUG_OBJECT (ffmpegdec, "return flow %d, out %p, len %d",
+-      *ret, *outbuf, len);
+-  return len;
++  GST_DEBUG_OBJECT (ffmpegdec, "return flow %d, out %p, got_frame %d",
++      *ret, *outbuf, got_frame);
++  return got_frame;
+ }
+ 
+-/* gst_ffmpegauddec_frame:
+- * ffmpegdec:
+- * data: pointer to the data to decode
+- * size: size of data in bytes
+- * got_data: 0 if no data was decoded, != 0 otherwise.
+- * in_time: timestamp of data
+- * in_duration: duration of data
+- * ret: GstFlowReturn to return in the chain function
+- *
+- * Decode the given frame and pushes it downstream.
+- *
+- * Returns: Number of bytes used in decoding, -1 on error/failure.
++/*
++ * Returns: whether a frame was decoded
+  */
+-
+-static gint
+-gst_ffmpegauddec_frame (GstFFMpegAudDec * ffmpegdec,
+-    guint8 * data, guint size, gint * have_data, GstFlowReturn * ret)
++static gboolean
++gst_ffmpegauddec_frame (GstFFMpegAudDec * ffmpegdec, GstFlowReturn * ret)
+ {
+   GstFFMpegAudDecClass *oclass;
+   GstBuffer *outbuf = NULL;
+-  gint len = 0;
++  gboolean got_frame = FALSE;
+ 
+   if (G_UNLIKELY (ffmpegdec->context->codec == NULL))
+     goto no_codec;
+ 
+-  GST_LOG_OBJECT (ffmpegdec, "data:%p, size:%d", data, size);
+-
+   *ret = GST_FLOW_OK;
+   ffmpegdec->context->frame_number++;
+ 
+   oclass = (GstFFMpegAudDecClass *) (G_OBJECT_GET_CLASS (ffmpegdec));
+ 
+-  len =
+-      gst_ffmpegauddec_audio_frame (ffmpegdec, oclass->in_plugin, data, size,
+-      have_data, &outbuf, ret);
++  got_frame =
++      gst_ffmpegauddec_audio_frame (ffmpegdec, oclass->in_plugin, &outbuf, ret);
+ 
+-  if (len < 0) {
+-    GST_WARNING_OBJECT (ffmpegdec,
+-        "avdec_%s: decoding error (len: %d, have_data: %d)",
+-        oclass->in_plugin->name, len, *have_data);
+-    goto beach;
+-  }
+-
+   if (outbuf) {
+     GST_LOG_OBJECT (ffmpegdec, "Decoded data, now storing buffer %p", outbuf);
+ 
+@@ -652,13 +629,13 @@ gst_ffmpegauddec_frame (GstFFMpegAudDec * ffmpegdec,
+   }
+ 
+ beach:
+-  return len;
++  return got_frame;
+ 
+   /* ERRORS */
+ no_codec:
+   {
+     GST_ERROR_OBJECT (ffmpegdec, "no codec context");
+-    return -1;
++    goto beach;
+   }
+ }
+ 
+@@ -669,8 +646,8 @@ gst_ffmpegauddec_drain (GstFFMpegAudDec * ffmpegdec)
+ 
+   oclass = (GstFFMpegAudDecClass *) (G_OBJECT_GET_CLASS (ffmpegdec));
+ 
+-  if (oclass->in_plugin->capabilities & CODEC_CAP_DELAY) {
+-    gint have_data, len;
++  if (oclass->in_plugin->capabilities & AV_CODEC_CAP_DELAY) {
++    gboolean got_frame;
+ 
+     GST_LOG_OBJECT (ffmpegdec,
+         "codec has delay capabilities, calling until libav has drained everything");
+@@ -678,9 +655,8 @@ gst_ffmpegauddec_drain (GstFFMpegAudDec * ffmpegdec)
+     do {
+       GstFlowReturn ret;
+ 
+-      len = gst_ffmpegauddec_frame (ffmpegdec, NULL, 0, &have_data, &ret);
+-
+-    } while (len >= 0 && have_data == 1);
++      got_frame = gst_ffmpegauddec_frame (ffmpegdec, &ret);
++    } while (got_frame);
+     avcodec_flush_buffers (ffmpegdec->context);
+   }
+ 
+@@ -705,11 +681,13 @@ gst_ffmpegauddec_handle_frame (GstAudioDecoder * decod
+ {
+   GstFFMpegAudDec *ffmpegdec;
+   GstFFMpegAudDecClass *oclass;
+-  guint8 *data, *bdata;
++  guint8 *data;
+   GstMapInfo map;
+-  gint size, bsize, len, have_data;
++  gint size;
++  gboolean got_frame;
+   GstFlowReturn ret = GST_FLOW_OK;
+-  gboolean do_padding, is_header;
++  gboolean is_header;
++  AVPacket packet;
+ 
+   ffmpegdec = (GstFFMpegAudDec *) decoder;
+ 
+@@ -744,82 +722,47 @@ gst_ffmpegauddec_handle_frame (GstAudioDecoder * decod
+ 
+   gst_buffer_map (inbuf, &map, GST_MAP_READ);
+ 
+-  bdata = map.data;
+-  bsize = map.size;
++  data = map.data;
++  size = map.size;
+ 
+-  if (bsize > 0 && (!GST_MEMORY_IS_ZERO_PADDED (map.memory)
+-          || (map.maxsize - map.size) < FF_INPUT_BUFFER_PADDING_SIZE)) {
++  if (size > 0 && (!GST_MEMORY_IS_ZERO_PADDED (map.memory)
++          || (map.maxsize - map.size) < AV_INPUT_BUFFER_PADDING_SIZE)) {
+     /* add padding */
+-    if (ffmpegdec->padded_size < bsize + FF_INPUT_BUFFER_PADDING_SIZE) {
+-      ffmpegdec->padded_size = bsize + FF_INPUT_BUFFER_PADDING_SIZE;
++    if (ffmpegdec->padded_size < size + AV_INPUT_BUFFER_PADDING_SIZE) {
++      ffmpegdec->padded_size = size + AV_INPUT_BUFFER_PADDING_SIZE;
+       ffmpegdec->padded = g_realloc (ffmpegdec->padded, ffmpegdec->padded_size);
+       GST_LOG_OBJECT (ffmpegdec, "resized padding buffer to %d",
+           ffmpegdec->padded_size);
+     }
+     GST_CAT_TRACE_OBJECT (GST_CAT_PERFORMANCE, ffmpegdec,
+         "Copy input to add padding");
+-    memcpy (ffmpegdec->padded, bdata, bsize);
+-    memset (ffmpegdec->padded + bsize, 0, FF_INPUT_BUFFER_PADDING_SIZE);
++    memcpy (ffmpegdec->padded, data, size);
++    memset (ffmpegdec->padded + size, 0, AV_INPUT_BUFFER_PADDING_SIZE);
+ 
+-    bdata = ffmpegdec->padded;
+-    do_padding = TRUE;
+-  } else {
+-    do_padding = FALSE;
++    data = ffmpegdec->padded;
+   }
+ 
+-  do {
+-    guint8 tmp_padding[FF_INPUT_BUFFER_PADDING_SIZE];
++  gst_avpacket_init (&packet, data, size);
+ 
+-    data = bdata;
+-    size = bsize;
++  if (!packet.size)
++    goto done;
+ 
+-    if (do_padding) {
+-      /* add temporary padding */
+-      GST_CAT_TRACE_OBJECT (GST_CAT_PERFORMANCE, ffmpegdec,
+-          "Add temporary input padding");
+-      memcpy (tmp_padding, data + size, FF_INPUT_BUFFER_PADDING_SIZE);
+-      memset (data + size, 0, FF_INPUT_BUFFER_PADDING_SIZE);
+-    }
++  if (avcodec_send_packet (ffmpegdec->context, &packet) < 0) {
++    goto send_packet_failed;
++  }
+ 
++  do {
+     /* decode a frame of audio now */
+-    len = gst_ffmpegauddec_frame (ffmpegdec, data, size, &have_data, &ret);
++    got_frame = gst_ffmpegauddec_frame (ffmpegdec, &ret);
+ 
+-    if (do_padding) {
+-      memcpy (data + size, tmp_padding, FF_INPUT_BUFFER_PADDING_SIZE);
+-    }
+-
+     if (ret != GST_FLOW_OK) {
+       GST_LOG_OBJECT (ffmpegdec, "breaking because of flow ret %s",
+           gst_flow_get_name (ret));
+       /* bad flow return, make sure we discard all data and exit */
+-      bsize = 0;
+       break;
+     }
++  } while (got_frame);
+ 
+-    if (len == 0 && have_data == 0) {
+-      /* nothing was decoded, this could be because no data was available or
+-       * because we were skipping frames.
+-       * If we have no context we must exit and wait for more data, we keep the
+-       * data we tried. */
+-      GST_LOG_OBJECT (ffmpegdec, "Decoding didn't return any data, breaking");
+-      break;
+-    } else if (len < 0) {
+-      /* a decoding error happened, we must break and try again with next data. */
+-      GST_LOG_OBJECT (ffmpegdec, "Decoding error, breaking");
+-      bsize = 0;
+-      break;
+-    }
+-    /* prepare for the next round, for codecs with a context we did this
+-     * already when using the parser. */
+-    bsize -= len;
+-    bdata += len;
+-
+-    do_padding = TRUE;
+-
+-    GST_LOG_OBJECT (ffmpegdec, "Before (while bsize>0).  bsize:%d , bdata:%p",
+-        bsize, bdata);
+-  } while (bsize > 0);
+-
+   gst_buffer_unmap (inbuf, &map);
+   gst_buffer_unref (inbuf);
+ 
+@@ -827,15 +770,12 @@ gst_ffmpegauddec_handle_frame (GstAudioDecoder * decod
+     ret =
+         gst_audio_decoder_finish_frame (GST_AUDIO_DECODER (ffmpegdec),
+         ffmpegdec->outbuf, 1);
+-  else if (len < 0 || is_header)
++  else if (is_header)
+     ret =
+         gst_audio_decoder_finish_frame (GST_AUDIO_DECODER (ffmpegdec), NULL, 1);
+   ffmpegdec->outbuf = NULL;
+ 
+-  if (bsize > 0) {
+-    GST_DEBUG_OBJECT (ffmpegdec, "Dropping %d bytes of data", bsize);
+-  }
+-
++done:
+   return ret;
+ 
+   /* ERRORS */
+@@ -845,8 +785,15 @@ not_negotiated:
+     GST_ELEMENT_ERROR (ffmpegdec, CORE, NEGOTIATION, (NULL),
+         ("avdec_%s: input format was not set before data start",
+             oclass->in_plugin->name));
+-    return GST_FLOW_NOT_NEGOTIATED;
++    ret = GST_FLOW_NOT_NEGOTIATED;
++    goto done;
+   }
++
++send_packet_failed:
++  {
++    GST_WARNING_OBJECT (ffmpegdec, "decoding error");
++    goto done;
++  }
+ }
+ 
+ gboolean
+@@ -865,19 +812,18 @@ gst_ffmpegauddec_register (GstPlugin * plugin)
+   };
+   GType type;
+   AVCodec *in_plugin;
++  void *i = 0;
+   gint rank;
+ 
+-  in_plugin = av_codec_next (NULL);
+-
+   GST_LOG ("Registering decoders");
+ 
+-  while (in_plugin) {
++  while ((in_plugin = (AVCodec *) av_codec_iterate (&i))) {
+     gchar *type_name;
+ 
+     /* only decoders */
+     if (!av_codec_is_decoder (in_plugin)
+         || in_plugin->type != AVMEDIA_TYPE_AUDIO) {
+-      goto next;
++      continue;
+     }
+ 
+     /* no quasi codecs, please */
+@@ -885,15 +831,8 @@ gst_ffmpegauddec_register (GstPlugin * plugin)
+         (in_plugin->id >= AV_CODEC_ID_PCM_S16LE &&
+             in_plugin->id <= AV_CODEC_ID_PCM_BLURAY) ||
+         (in_plugin->id >= AV_CODEC_ID_PCM_S8_PLANAR &&
+-#if AV_VERSION_INT (LIBAVCODEC_VERSION_MAJOR, LIBAVCODEC_VERSION_MINOR, LIBAVCODEC_VERSION_MICRO) >= AV_VERSION_INT (57,69,0)
+-            in_plugin->id <= AV_CODEC_ID_PCM_F24LE)) {
+-#elif AV_VERSION_INT (LIBAVCODEC_VERSION_MAJOR, LIBAVCODEC_VERSION_MINOR, LIBAVCODEC_VERSION_MICRO) >= AV_VERSION_INT (57,54,0)
+-            in_plugin->id <= AV_CODEC_ID_PCM_S64BE)) {
+-#else
+-            in_plugin->id <= AV_CODEC_ID_PCM_S16BE_PLANAR)) {
+-#endif
+-      goto next;
+-    }
++            in_plugin->id <= AV_CODEC_ID_PCM_F24LE))
++      continue;
+ 
+     /* No decoders depending on external libraries (we don't build them, but
+      * people who build against an external ffmpeg might have them.
+@@ -902,7 +841,7 @@ gst_ffmpegauddec_register (GstPlugin * plugin)
+       GST_DEBUG
+           ("Not using external library decoder %s. Use the gstreamer-native ones instead.",
+           in_plugin->name);
+-      goto next;
++      continue;
+     }
+ 
+     GST_DEBUG ("Trying plugin %s [%s]", in_plugin->name, in_plugin->long_name);
+@@ -923,7 +862,7 @@ gst_ffmpegauddec_register (GstPlugin * plugin)
+         !strcmp (in_plugin->name, "dvdsub") ||
+         !strcmp (in_plugin->name, "dvbsub")) {
+       GST_LOG ("Ignoring decoder %s", in_plugin->name);
+-      goto next;
++      continue;
+     }
+ 
+     /* construct the type */
+@@ -967,9 +906,6 @@ gst_ffmpegauddec_register (GstPlugin * plugin)
+     }
+ 
+     g_free (type_name);
+-
+-  next:
+-    in_plugin = av_codec_next (in_plugin);
+   }
+ 
+   GST_LOG ("Finished Registering decoders");
+--- ext/libav/gstavauddec.h.orig	2018-03-23 20:45:20 UTC
++++ ext/libav/gstavauddec.h
+@@ -19,6 +19,8 @@
+ #ifndef __GST_FFMPEGAUDDEC_H__
+ #define __GST_FFMPEGAUDDEC_H__
+ 
++#include <glib.h>
++
+ G_BEGIN_DECLS
+ 
+ #include <gst/gst.h>
+@@ -38,7 +40,7 @@ struct _GstFFMpegAudDec
+   AVFrame *frame;
+ 
+   guint8 *padded;
+-  guint padded_size;
++  gint padded_size;
+ 
+   /* prevent reopening the decoder on GST_EVENT_CAPS when caps are same as last time. */
+   GstCaps *last_caps;
+--- ext/libav/gstavaudenc.c.orig	2018-03-23 20:45:20 UTC
++++ ext/libav/gstavaudenc.c
+@@ -31,31 +31,22 @@
+ #include <errno.h>
+ 
+ #include <libavcodec/avcodec.h>
++#include <libavutil/opt.h>
+ 
+ #include <gst/gst.h>
+ 
+ #include "gstav.h"
++#include "gstavcfg.h"
+ #include "gstavcodecmap.h"
+ #include "gstavutils.h"
+ #include "gstavaudenc.h"
+ 
+-#define DEFAULT_AUDIO_BITRATE 128000
+-
+ enum
+ {
+-  /* FILL ME */
+-  LAST_SIGNAL
+-};
+-
+-enum
+-{
+   PROP_0,
+-  PROP_BIT_RATE,
+-  PROP_RTP_PAYLOAD_SIZE,
+-  PROP_COMPLIANCE,
++  PROP_CFG_BASE,
+ };
+ 
+-/* A number of function prototypes are given so we can refer to them later. */
+ static void gst_ffmpegaudenc_class_init (GstFFMpegAudEncClass * klass);
+ static void gst_ffmpegaudenc_base_init (GstFFMpegAudEncClass * klass);
+ static void gst_ffmpegaudenc_init (GstFFMpegAudEnc * ffmpegaudenc);
+@@ -78,8 +69,6 @@ static void gst_ffmpegaudenc_get_property (GObject * o
+ 
+ static GstElementClass *parent_class = NULL;
+ 
+-/*static guint gst_ffmpegaudenc_signals[LAST_SIGNAL] = { 0 }; */
+-
+ static void
+ gst_ffmpegaudenc_base_init (GstFFMpegAudEncClass * klass)
+ {
+@@ -148,16 +137,8 @@ gst_ffmpegaudenc_class_init (GstFFMpegAudEncClass * kl
+   gobject_class->set_property = gst_ffmpegaudenc_set_property;
+   gobject_class->get_property = gst_ffmpegaudenc_get_property;
+ 
+-  /* FIXME: could use -1 for a sensible per-codec defaults */
+-  g_object_class_install_property (G_OBJECT_CLASS (klass), PROP_BIT_RATE,
+-      g_param_spec_int ("bitrate", "Bit Rate",
+-          "Target Audio Bitrate", 0, G_MAXINT, DEFAULT_AUDIO_BITRATE,
+-          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+-  g_object_class_install_property (G_OBJECT_CLASS (klass), PROP_COMPLIANCE,
+-      g_param_spec_enum ("compliance", "Compliance",
+-          "Adherence of the encoder to the specifications",
+-          GST_TYPE_FFMPEG_COMPLIANCE, FFMPEG_DEFAULT_COMPLIANCE,
+-          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
++  gst_ffmpeg_cfg_install_properties (gobject_class, klass->in_plugin,
++      PROP_CFG_BASE, AV_OPT_FLAG_ENCODING_PARAM | AV_OPT_FLAG_AUDIO_PARAM);
+ 
+   gobject_class->finalize = gst_ffmpegaudenc_finalize;
+ 
+@@ -180,11 +161,10 @@ gst_ffmpegaudenc_init (GstFFMpegAudEnc * ffmpegaudenc)
+ 
+   /* ffmpeg objects */
+   ffmpegaudenc->context = avcodec_alloc_context3 (klass->in_plugin);
++  ffmpegaudenc->refcontext = avcodec_alloc_context3 (klass->in_plugin);
+   ffmpegaudenc->opened = FALSE;
+   ffmpegaudenc->frame = av_frame_alloc ();
+ 
+-  ffmpegaudenc->compliance = FFMPEG_DEFAULT_COMPLIANCE;
+-
+   gst_audio_encoder_set_drainable (GST_AUDIO_ENCODER (ffmpegaudenc), TRUE);
+ }
+ 
+@@ -197,6 +177,7 @@ gst_ffmpegaudenc_finalize (GObject * object)
+   av_frame_free (&ffmpegaudenc->frame);
+   gst_ffmpeg_avcodec_close (ffmpegaudenc->context);
+   av_free (ffmpegaudenc->context);
++  av_free (ffmpegaudenc->refcontext);
+ 
+   G_OBJECT_CLASS (parent_class)->finalize (object);
+ }
+@@ -262,33 +243,8 @@ gst_ffmpegaudenc_set_format (GstAudioEncoder * encoder
+     }
+   }
+ 
+-  /* if we set it in _getcaps we should set it also in _link */
+-  ffmpegaudenc->context->strict_std_compliance = ffmpegaudenc->compliance;
++  gst_ffmpeg_cfg_fill_context (G_OBJECT (ffmpegaudenc), ffmpegaudenc->context);
+ 
+-  /* user defined properties */
+-  if (ffmpegaudenc->bitrate > 0) {
+-    GST_INFO_OBJECT (ffmpegaudenc, "Setting avcontext to bitrate %d",
+-        ffmpegaudenc->bitrate);
+-    ffmpegaudenc->context->bit_rate = ffmpegaudenc->bitrate;
+-    ffmpegaudenc->context->bit_rate_tolerance = ffmpegaudenc->bitrate;
+-  } else {
+-    GST_INFO_OBJECT (ffmpegaudenc,
+-        "Using avcontext default bitrate %" G_GINT64_FORMAT,
+-        (gint64) ffmpegaudenc->context->bit_rate);
+-  }
+-
+-  /* RTP payload used for GOB production (for Asterisk) */
+-  if (ffmpegaudenc->rtp_payload_size) {
+-    ffmpegaudenc->context->rtp_payload_size = ffmpegaudenc->rtp_payload_size;
+-  }
+-
+-  /* some other defaults */
+-  ffmpegaudenc->context->rc_strategy = 2;
+-  ffmpegaudenc->context->b_frame_strategy = 0;
+-  ffmpegaudenc->context->coder_type = 0;
+-  ffmpegaudenc->context->context_model = 0;
+-  ffmpegaudenc->context->scenechange_threshold = 0;
+-
+   /* fetch pix_fmt and so on */
+   gst_ffmpeg_audioinfo_to_context (info, ffmpegaudenc->context);
+   if (!ffmpegaudenc->context->time_base.den) {
+@@ -330,8 +286,9 @@ gst_ffmpegaudenc_set_format (GstAudioEncoder * encoder
+             oclass->in_plugin) < 0)
+       GST_DEBUG_OBJECT (ffmpegaudenc, "Failed to set context defaults");
+ 
+-    if ((oclass->in_plugin->capabilities & CODEC_CAP_EXPERIMENTAL) &&
+-        ffmpegaudenc->compliance != GST_FFMPEG_EXPERIMENTAL) {
++    if ((oclass->in_plugin->capabilities & AV_CODEC_CAP_EXPERIMENTAL) &&
++        ffmpegaudenc->context->strict_std_compliance !=
++        GST_FFMPEG_EXPERIMENTAL) {
+       GST_ELEMENT_ERROR (ffmpegaudenc, LIBRARY, SETTINGS,
+           ("Codec is experimental, but settings don't allow encoders to "
+               "produce output of experimental quality"),
+@@ -445,15 +402,13 @@ buffer_info_free (void *opaque, guint8 * data)
+ }
+ 
+ static GstFlowReturn
+-gst_ffmpegaudenc_encode_audio (GstFFMpegAudEnc * ffmpegaudenc,
+-    GstBuffer * buffer, gint * have_data)
++gst_ffmpegaudenc_send_frame (GstFFMpegAudEnc * ffmpegaudenc, GstBuffer * buffer)
+ {
+   GstAudioEncoder *enc;
+   AVCodecContext *ctx;
+-  gint res;
+   GstFlowReturn ret;
++  gint res;
+   GstAudioInfo *info;
+-  AVPacket *pkt;
+   AVFrame *frame = ffmpegaudenc->frame;
+   gboolean planar;
+   gint nsamples = -1;
+@@ -462,8 +417,6 @@ gst_ffmpegaudenc_encode_audio (GstFFMpegAudEnc * ffmpe
+ 
+   ctx = ffmpegaudenc->context;
+ 
+-  pkt = g_slice_new0 (AVPacket);
+-
+   if (buffer != NULL) {
+     BufferInfo *buffer_info = g_slice_new0 (BufferInfo);
+     guint8 *audio_in;
+@@ -572,28 +525,47 @@ gst_ffmpegaudenc_encode_audio (GstFFMpegAudEnc * ffmpe
+     }
+ 
+     /* we have a frame to feed the encoder */
+-    res = avcodec_encode_audio2 (ctx, pkt, frame, have_data);
++    res = avcodec_send_frame (ctx, frame);
+ 
+     av_frame_unref (frame);
+   } else {
+     GST_LOG_OBJECT (ffmpegaudenc, "draining");
+     /* flushing the encoder */
+-    res = avcodec_encode_audio2 (ctx, pkt, NULL, have_data);
++    res = avcodec_send_frame (ctx, NULL);
+   }
+ 
+-  if (res < 0) {
+-    char error_str[128] = { 0, };
+-
+-    g_slice_free (AVPacket, pkt);
+-    av_strerror (res, error_str, sizeof (error_str));
+-    GST_ERROR_OBJECT (enc, "Failed to encode buffer: %d - %s", res, error_str);
+-    return GST_FLOW_OK;
++  if (res == 0) {
++    ret = GST_FLOW_OK;
++  } else if (res == AVERROR_EOF) {
++    ret = GST_FLOW_EOS;
++  } else {                      /* Any other return value is an error in our context */
++    ret = GST_FLOW_OK;
++    GST_WARNING_OBJECT (ffmpegaudenc, "Failed to encode buffer");
+   }
+-  GST_LOG_OBJECT (ffmpegaudenc, "got output size %d", res);
+ 
+-  if (*have_data) {
++  return ret;
++}
++
++static GstFlowReturn
++gst_ffmpegaudenc_receive_packet (GstFFMpegAudEnc * ffmpegaudenc,
++    gboolean * got_packet)
++{
++  GstAudioEncoder *enc;
++  AVCodecContext *ctx;
++  gint res;
++  GstFlowReturn ret;
++  AVPacket *pkt;
++
++  enc = GST_AUDIO_ENCODER (ffmpegaudenc);
++
++  ctx = ffmpegaudenc->context;
++
++  pkt = g_slice_new0 (AVPacket);
++
++  res = avcodec_receive_packet (ctx, pkt);
++
++  if (res == 0) {
+     GstBuffer *outbuf;
+-    const AVCodec *codec;
+ 
+     GST_LOG_OBJECT (ffmpegaudenc, "pushing size %d", pkt->size);
+ 
+@@ -601,45 +573,39 @@ gst_ffmpegaudenc_encode_audio (GstFFMpegAudEnc * ffmpe
+         gst_buffer_new_wrapped_full (GST_MEMORY_FLAG_READONLY, pkt->data,
+         pkt->size, 0, pkt->size, pkt, gst_ffmpegaudenc_free_avpacket);
+ 
+-    codec = ffmpegaudenc->context->codec;
+-    if ((codec->capabilities & CODEC_CAP_VARIABLE_FRAME_SIZE) || !buffer) {
+-      /* FIXME: Not really correct, as -1 means "all the samples we got
+-         given so far", which may not be true depending on the codec,
+-         but we have no way to know AFAICT */
+-      ret = gst_audio_encoder_finish_frame (enc, outbuf, -1);
+-    } else {
+-      ret = gst_audio_encoder_finish_frame (enc, outbuf, nsamples);
+-    }
++    ret =
++        gst_audio_encoder_finish_frame (enc, outbuf,
++        pkt->duration > 0 ? pkt->duration : -1);
++    *got_packet = TRUE;
+   } else {
+     GST_LOG_OBJECT (ffmpegaudenc, "no output produced");
+     g_slice_free (AVPacket, pkt);
+     ret = GST_FLOW_OK;
++    *got_packet = FALSE;
+   }
+ 
+   return ret;
+ }
+ 
+-static void
++static GstFlowReturn
+ gst_ffmpegaudenc_drain (GstFFMpegAudEnc * ffmpegaudenc)
+ {
+-  GstFFMpegAudEncClass *oclass;
++  GstFlowReturn ret = GST_FLOW_OK;
++  gboolean got_packet;
+ 
+-  oclass = (GstFFMpegAudEncClass *) (G_OBJECT_GET_CLASS (ffmpegaudenc));
++  ret = gst_ffmpegaudenc_send_frame (ffmpegaudenc, NULL);
+ 
+-  if (oclass->in_plugin->capabilities & CODEC_CAP_DELAY) {
+-    gint have_data, try = 0;
+-
+-    GST_LOG_OBJECT (ffmpegaudenc,
+-        "codec has delay capabilities, calling until libav has drained everything");
+-
++  if (ret == GST_FLOW_OK) {
+     do {
+-      GstFlowReturn ret;
+-
+-      ret = gst_ffmpegaudenc_encode_audio (ffmpegaudenc, NULL, &have_data);
+-      if (ret != GST_FLOW_OK || have_data == 0)
++      ret = gst_ffmpegaudenc_receive_packet (ffmpegaudenc, &got_packet);
++      if (ret != GST_FLOW_OK)
+         break;
+-    } while (try++ < 10);
++    } while (got_packet);
+   }
++
++  avcodec_flush_buffers (ffmpegaudenc->context);
++
++  return ret;
+ }
+ 
+ static GstFlowReturn
+@@ -647,17 +613,15 @@ gst_ffmpegaudenc_handle_frame (GstAudioEncoder * encod
+ {
+   GstFFMpegAudEnc *ffmpegaudenc;
+   GstFlowReturn ret;
+-  gint have_data;
++  gboolean got_packet;
+ 
+   ffmpegaudenc = (GstFFMpegAudEnc *) encoder;
+ 
+   if (G_UNLIKELY (!ffmpegaudenc->opened))
+     goto not_negotiated;
+ 
+-  if (!inbuf) {
+-    gst_ffmpegaudenc_drain (ffmpegaudenc);
+-    return GST_FLOW_OK;
+-  }
++  if (!inbuf)
++    return gst_ffmpegaudenc_drain (ffmpegaudenc);
+ 
+   inbuf = gst_buffer_ref (inbuf);
+ 
+@@ -675,11 +639,15 @@ gst_ffmpegaudenc_handle_frame (GstAudioEncoder * encod
+         info->channels, info->position, ffmpegaudenc->ffmpeg_layout);
+   }
+ 
+-  ret = gst_ffmpegaudenc_encode_audio (ffmpegaudenc, inbuf, &have_data);
++  ret = gst_ffmpegaudenc_send_frame (ffmpegaudenc, inbuf);
+ 
+   if (ret != GST_FLOW_OK)
+-    goto push_failed;
++    goto send_frame_failed;
+ 
++  do {
++    ret = gst_ffmpegaudenc_receive_packet (ffmpegaudenc, &got_packet);
++  } while (got_packet);
++
+   return GST_FLOW_OK;
+ 
+   /* ERRORS */
+@@ -690,9 +658,9 @@ not_negotiated:
+     gst_buffer_unref (inbuf);
+     return GST_FLOW_NOT_NEGOTIATED;
+   }
+-push_failed:
++send_frame_failed:
+   {
+-    GST_DEBUG_OBJECT (ffmpegaudenc, "Failed to push buffer %d (%s)", ret,
++    GST_DEBUG_OBJECT (ffmpegaudenc, "Failed to send frame %d (%s)", ret,
+         gst_flow_get_name (ret));
+     return ret;
+   }
+@@ -704,55 +672,34 @@ gst_ffmpegaudenc_set_property (GObject * object,
+ {
+   GstFFMpegAudEnc *ffmpegaudenc;
+ 
+-  /* Get a pointer of the right type. */
+   ffmpegaudenc = (GstFFMpegAudEnc *) (object);
+ 
+   if (ffmpegaudenc->opened) {
+     GST_WARNING_OBJECT (ffmpegaudenc,
+-        "Can't change properties once decoder is setup !");
++        "Can't change properties once encoder is setup !");
+     return;
+   }
+ 
+-  /* Check the argument id to see which argument we're setting. */
+   switch (prop_id) {
+-    case PROP_BIT_RATE:
+-      ffmpegaudenc->bitrate = g_value_get_int (value);
+-      break;
+-    case PROP_RTP_PAYLOAD_SIZE:
+-      ffmpegaudenc->rtp_payload_size = g_value_get_int (value);
+-      break;
+-    case PROP_COMPLIANCE:
+-      ffmpegaudenc->compliance = g_value_get_enum (value);
+-      break;
+     default:
+-      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
++      if (!gst_ffmpeg_cfg_set_property (ffmpegaudenc->refcontext, value, pspec))
++        G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+       break;
+   }
+ }
+ 
+-/* The set function is simply the inverse of the get fuction. */
+ static void
+ gst_ffmpegaudenc_get_property (GObject * object,
+     guint prop_id, GValue * value, GParamSpec * pspec)
+ {
+   GstFFMpegAudEnc *ffmpegaudenc;
+ 
+-  /* It's not null if we got it, but it might not be ours */
+   ffmpegaudenc = (GstFFMpegAudEnc *) (object);
+ 
+   switch (prop_id) {
+-    case PROP_BIT_RATE:
+-      g_value_set_int (value, ffmpegaudenc->bitrate);
+-      break;
+-      break;
+-    case PROP_RTP_PAYLOAD_SIZE:
+-      g_value_set_int (value, ffmpegaudenc->rtp_payload_size);
+-      break;
+-    case PROP_COMPLIANCE:
+-      g_value_set_enum (value, ffmpegaudenc->compliance);
+-      break;
+     default:
+-      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
++      if (!gst_ffmpeg_cfg_get_property (ffmpegaudenc->refcontext, value, pspec))
++        G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+       break;
+   }
+ }
+@@ -773,32 +720,26 @@ gst_ffmpegaudenc_register (GstPlugin * plugin)
+   };
+   GType type;
+   AVCodec *in_plugin;
++  void *i = 0;
+ 
+ 
+   GST_LOG ("Registering encoders");
+ 
+-  in_plugin = av_codec_next (NULL);
+-  while (in_plugin) {
++  while ((in_plugin = (AVCodec *) av_codec_iterate (&i))) {
+     gchar *type_name;
+     guint rank;
+ 
+     /* Skip non-AV codecs */
+     if (in_plugin->type != AVMEDIA_TYPE_AUDIO)
+-      goto next;
++      continue;
+ 
+     /* no quasi codecs, please */
+     if (in_plugin->id == AV_CODEC_ID_PCM_S16LE_PLANAR ||
+         (in_plugin->id >= AV_CODEC_ID_PCM_S16LE &&
+             in_plugin->id <= AV_CODEC_ID_PCM_BLURAY) ||
+         (in_plugin->id >= AV_CODEC_ID_PCM_S8_PLANAR &&
+-#if AV_VERSION_INT (LIBAVCODEC_VERSION_MAJOR, LIBAVCODEC_VERSION_MINOR, LIBAVCODEC_VERSION_MICRO) >= AV_VERSION_INT (57,69,0)
+             in_plugin->id <= AV_CODEC_ID_PCM_F24LE)) {
+-#elif AV_VERSION_INT (LIBAVCODEC_VERSION_MAJOR, LIBAVCODEC_VERSION_MINOR, LIBAVCODEC_VERSION_MICRO) >= AV_VERSION_INT (57,54,0)
+-            in_plugin->id <= AV_CODEC_ID_PCM_S64BE)) {
+-#else
+-            in_plugin->id <= AV_CODEC_ID_PCM_S16BE_PLANAR)) {
+-#endif
+-      goto next;
++      continue;
+     }
+ 
+     /* No encoders depending on external libraries (we don't build them, but
+@@ -808,12 +749,12 @@ gst_ffmpegaudenc_register (GstPlugin * plugin)
+       GST_DEBUG
+           ("Not using external library encoder %s. Use the gstreamer-native ones instead.",
+           in_plugin->name);
+-      goto next;
++      continue;
+     }
+ 
+     /* only encoders */
+     if (!av_codec_is_encoder (in_plugin)) {
+-      goto next;
++      continue;
+     }
+ 
+     /* FIXME : We should have a method to know cheaply whether we have a mapping
+@@ -825,7 +766,7 @@ gst_ffmpegaudenc_register (GstPlugin * plugin)
+     if (!strcmp (in_plugin->name, "vorbis")
+         || !strcmp (in_plugin->name, "flac")) {
+       GST_LOG ("Ignoring encoder %s", in_plugin->name);
+-      goto next;
++      continue;
+     }
+ 
+     /* construct the type */
+@@ -867,9 +808,6 @@ gst_ffmpegaudenc_register (GstPlugin * plugin)
+     }
+ 
+     g_free (type_name);
+-
+-  next:
+-    in_plugin = av_codec_next (in_plugin);
+   }
+ 
+   GST_LOG ("Finished registering encoders");
+--- ext/libav/gstavaudenc.h.orig	2018-03-23 20:45:20 UTC
++++ ext/libav/gstavaudenc.h
+@@ -37,16 +37,8 @@ struct _GstFFMpegAudEnc
+   GstAudioEncoder parent;
+ 
+   AVCodecContext *context;
++  AVCodecContext *refcontext;
+   gboolean opened;
+-
+-  /* cache */
+-  gint bitrate;
+-  gint rtp_payload_size;
+-  gint compliance;
+-
+-  /* other settings are copied over straight,
+-   * include a context here, rather than copy-and-past it from avcodec.h */
+-  AVCodecContext config;
+ 
+   AVFrame *frame;
+ 
+--- ext/libav/gstavcfg.c.orig	2018-03-23 20:45:20 UTC
++++ ext/libav/gstavcfg.c
+@@ -30,1047 +30,558 @@
+ #include "gstavcfg.h"
+ 
+ #include <string.h>
++#include <libavutil/opt.h>
+ 
+-/* some enums used in property declarations */
++static GQuark avoption_quark;
++static GHashTable *generic_overrides = NULL;
+ 
+-#define GST_TYPE_FFMPEG_PASS (gst_ffmpeg_pass_get_type ())
+-static GType
+-gst_ffmpeg_pass_get_type (void)
++static void
++make_generic_overrides (void)
+ {
+-  static GType ffmpeg_pass_type = 0;
++  g_assert (!generic_overrides);
++  generic_overrides = g_hash_table_new_full (g_str_hash, g_str_equal,
++      g_free, (GDestroyNotify) gst_structure_free);
+ 
+-  if (!ffmpeg_pass_type) {
+-    static const GEnumValue ffmpeg_passes[] = {
+-      {0, "Constant Bitrate Encoding", "cbr"},
+-      {CODEC_FLAG_QSCALE, "Constant Quantizer", "quant"},
+-      {CODEC_FLAG_PASS1, "VBR Encoding - Pass 1", "pass1"},
+-      {CODEC_FLAG_PASS2, "VBR Encoding - Pass 2", "pass2"},
+-      {0, NULL, NULL},
+-    };
++  g_hash_table_insert (generic_overrides, g_strdup ("b"),
++      gst_structure_new_empty ("bitrate"));
++  g_hash_table_insert (generic_overrides, g_strdup ("ab"),
++      gst_structure_new_empty ("bitrate"));
++  g_hash_table_insert (generic_overrides, g_strdup ("g"),
++      gst_structure_new_empty ("gop-size"));
++  g_hash_table_insert (generic_overrides, g_strdup ("bt"),
++      gst_structure_new_empty ("bitrate-tolerance"));
++  g_hash_table_insert (generic_overrides, g_strdup ("bf"),
++      gst_structure_new_empty ("max-bframes"));
+ 
+-    ffmpeg_pass_type =
+-        g_enum_register_static ("GstLibAVEncPass", ffmpeg_passes);
+-  }
+-
+-  return ffmpeg_pass_type;
++  /* Those are exposed through caps */
++  g_hash_table_insert (generic_overrides, g_strdup ("profile"),
++      gst_structure_new ("profile", "skip", G_TYPE_BOOLEAN, TRUE, NULL));
++  g_hash_table_insert (generic_overrides, g_strdup ("level"),
++      gst_structure_new ("level", "skip", G_TYPE_BOOLEAN, TRUE, NULL));
++  g_hash_table_insert (generic_overrides, g_strdup ("color_primaries"),
++      gst_structure_new ("color_primaries", "skip", G_TYPE_BOOLEAN, TRUE,
++          NULL));
++  g_hash_table_insert (generic_overrides, g_strdup ("color_trc"),
++      gst_structure_new ("color_trc", "skip", G_TYPE_BOOLEAN, TRUE, NULL));
++  g_hash_table_insert (generic_overrides, g_strdup ("colorspace"),
++      gst_structure_new ("colorspace", "skip", G_TYPE_BOOLEAN, TRUE, NULL));
++  g_hash_table_insert (generic_overrides, g_strdup ("color_range"),
++      gst_structure_new ("color_range", "skip", G_TYPE_BOOLEAN, TRUE, NULL));
+ }
+ 
+-#if 0
+-/* some do not support 2-pass */
+-#define GST_TYPE_FFMPEG_LIM_PASS (gst_ffmpeg_lim_pass_get_type ())
+-static GType
+-gst_ffmpeg_lim_pass_get_type (void)
++void
++gst_ffmpeg_cfg_init (void)
+ {
+-  static GType ffmpeg_lim_pass_type = 0;
+-
+-  if (!ffmpeg_lim_pass_type) {
+-    static const GEnumValue ffmpeg_lim_passes[] = {
+-      {0, "Constant Bitrate Encoding", "cbr"},
+-      {CODEC_FLAG_QSCALE, "Constant Quantizer", "quant"},
+-      {0, NULL, NULL},
+-    };
+-
+-    ffmpeg_lim_pass_type =
+-        g_enum_register_static ("GstLibAVEncLimPass", ffmpeg_lim_passes);
+-  }
+-
+-  return ffmpeg_lim_pass_type;
++  avoption_quark = g_quark_from_static_string ("ffmpeg-cfg-param-spec-data");
++  make_generic_overrides ();
+ }
+-#endif
+ 
+-#define GST_TYPE_FFMPEG_MB_DECISION (gst_ffmpeg_mb_decision_get_type ())
+-static GType
+-gst_ffmpeg_mb_decision_get_type (void)
++static gint
++cmp_enum_value (GEnumValue * val1, GEnumValue * val2)
+ {
+-  static GType ffmpeg_mb_decision_type = 0;
+-
+-  if (!ffmpeg_mb_decision_type) {
+-    static const GEnumValue ffmpeg_mb_decisions[] = {
+-      {FF_MB_DECISION_SIMPLE, "Use method set by mb-cmp", "simple"},
+-      {FF_MB_DECISION_BITS,
+-          "Chooses the one which needs the fewest bits aka vhq mode", "bits"},
+-      {FF_MB_DECISION_RD, "Rate Distortion", "rd"},
+-      {0, NULL, NULL},
+-    };
+-
+-    ffmpeg_mb_decision_type =
+-        g_enum_register_static ("GstLibAVEncMBDecision", ffmpeg_mb_decisions);
+-  }
+-
+-  return ffmpeg_mb_decision_type;
++  return val1->value - val2->value;
+ }
+ 
+-#define GST_TYPE_FFMPEG_CMP_FUNCTION (gst_ffmpeg_mb_cmp_get_type ())
+ static GType
+-gst_ffmpeg_mb_cmp_get_type (void)
++register_enum (const AVClass ** obj, const AVOption * top_opt)
+ {
+-  static GType ffmpeg_mb_cmp_type = 0;
++  const AVOption *opt = NULL;
++  GType res = 0;
++  GArray *values = g_array_new (TRUE, TRUE, sizeof (GEnumValue));
++  gchar *lower_obj_name = g_ascii_strdown ((*obj)->class_name, -1);
++  gchar *enum_name = g_strdup_printf ("%s-%s", lower_obj_name, top_opt->unit);
++  gboolean none_default = TRUE;
+ 
+-  /* TODO fill out remaining values */
+-  if (!ffmpeg_mb_cmp_type) {
+-    static const GEnumValue ffmpeg_mb_cmps[] = {
+-      {FF_CMP_SAD, "Sum of Absolute Differences", "sad"},
+-      {FF_CMP_SSE, "Sum of Squared Errors", "sse"},
+-      {FF_CMP_SATD, "Sum of Absolute Hadamard Transformed Differences", "satd"},
+-      {FF_CMP_DCT, "Sum of Absolute DCT Transformed Differences", "dct"},
+-      {FF_CMP_PSNR, "Sum of the Squared Quantization Errors", "psnr"},
+-      {FF_CMP_BIT, "Sum of the Bits needed for the block", "bit"},
+-      {FF_CMP_RD, "Rate Distortion optimal", "rd"},
+-      {FF_CMP_ZERO, "ZERO", "zero"},
+-      {FF_CMP_VSAD, "VSAD", "vsad"},
+-      {FF_CMP_VSSE, "VSSE", "vsse"},
+-#if 0
+-/* economize a bit for now */
+-      {FF_CMP_NSSE, "NSSE", "nsse"},
+-      {FF_CMP_W53, "W53", "w53"},
+-      {FF_CMP_W97, "W97", "w97"},
+-#endif
+-      {0, NULL, NULL},
+-    };
++  g_strcanon (enum_name, G_CSET_a_2_z G_CSET_DIGITS, '-');
+ 
+-    ffmpeg_mb_cmp_type =
+-        g_enum_register_static ("GstLibAVCMPFunction", ffmpeg_mb_cmps);
+-  }
++  if ((res = g_type_from_name (enum_name)))
++    goto done;
+ 
+-  return ffmpeg_mb_cmp_type;
+-}
++  while ((opt = av_opt_next (obj, opt))) {
++    if (opt->type == AV_OPT_TYPE_CONST && !g_strcmp0 (top_opt->unit, opt->unit)) {
++      GEnumValue val;
+ 
+-#define GST_TYPE_FFMPEG_DCT_ALGO (gst_ffmpeg_dct_algo_get_type ())
+-static GType
+-gst_ffmpeg_dct_algo_get_type (void)
+-{
+-  static GType ffmpeg_dct_algo_type = 0;
++      val.value = opt->default_val.i64;
++      val.value_name = g_strdup (opt->help ? opt->help : opt->name);
++      val.value_nick = g_strdup (opt->name);
+ 
+-  if (!ffmpeg_dct_algo_type) {
+-    static const GEnumValue ffmpeg_dct_algos[] = {
+-      {FF_DCT_AUTO, "Automatically select a good one", "auto"},
+-      {FF_DCT_FASTINT, "Fast Integer", "fastint"},
+-      {FF_DCT_INT, "Accurate Integer", "int"},
+-      {FF_DCT_MMX, "MMX", "mmx"},
+-      {FF_DCT_ALTIVEC, "ALTIVEC", "altivec"},
+-      {FF_DCT_FAAN, "FAAN", "faan"},
+-      {0, NULL, NULL},
+-    };
++      if (opt->default_val.i64 == top_opt->default_val.i64)
++        none_default = FALSE;
+ 
+-    ffmpeg_dct_algo_type =
+-        g_enum_register_static ("GstLibAVDCTAlgo", ffmpeg_dct_algos);
++      g_array_append_val (values, val);
++    }
+   }
+ 
+-  return ffmpeg_dct_algo_type;
+-}
++  if (values->len) {
++    guint i = 0;
++    gint cur_val;
++    gboolean cur_val_set = FALSE;
+ 
+-#define GST_TYPE_FFMPEG_IDCT_ALGO (gst_ffmpeg_idct_algo_get_type ())
+-static GType
+-gst_ffmpeg_idct_algo_get_type (void)
+-{
+-  static GType ffmpeg_idct_algo_type = 0;
++    /* Sometimes ffmpeg sets a default value but no named constants with
++     * this value, we assume this means "unspecified" and add our own
++     */
++    if (none_default) {
++      GEnumValue val;
+ 
+-  if (!ffmpeg_idct_algo_type) {
+-    static const GEnumValue ffmpeg_idct_algos[] = {
+-      {FF_IDCT_AUTO, "Automatically select a good one", "auto"},
+-      {FF_IDCT_INT, "JPEG reference Integer", "int"},
+-      {FF_IDCT_SIMPLE, "Simple", "simple"},
+-      {FF_IDCT_SIMPLEMMX, "Simple MMX", "simplemmx"},
+-      {FF_IDCT_ARM, "ARM", "arm"},
+-      {FF_IDCT_ALTIVEC, "Altivec", "altivec"},
+-      {FF_IDCT_SIMPLEARM, "Simple ARM", "simplearm"},
+-      {FF_IDCT_XVID, "XVID", "xvid"},
+-      {FF_IDCT_SIMPLEARMV5TE, "Simple ARMV5TE", "simplearmv5te"},
+-      {FF_IDCT_SIMPLEARMV6, "Simple ARMV6", "simplearmv6"},
+-      {FF_IDCT_FAAN, "FAAN", "faan"},
+-      {FF_IDCT_SIMPLENEON, "Simple NEON", "simpleneon"},
+-      {0, NULL, NULL},
+-    };
++      val.value = top_opt->default_val.i64;
++      val.value_name = g_strdup ("Unspecified");
++      val.value_nick = g_strdup ("unknown");
++      g_array_append_val (values, val);
++    }
+ 
+-    ffmpeg_idct_algo_type =
+-        g_enum_register_static ("GstLibAVIDCTAlgo", ffmpeg_idct_algos);
++    g_array_sort (values, (GCompareFunc) cmp_enum_value);
++
++    /* Dedup, easy once sorted
++     * We do this because ffmpeg can expose multiple names for the
++     * same constant, the way we expose enums makes this too confusing.
++     */
++    while (i < values->len) {
++      if (cur_val_set) {
++        if (g_array_index (values, GEnumValue, i).value == cur_val) {
++          g_array_remove_index (values, i);
++        } else {
++          cur_val = g_array_index (values, GEnumValue, i).value;
++          i++;
++        }
++      } else {
++        cur_val = g_array_index (values, GEnumValue, i).value;
++        cur_val_set = TRUE;
++        i++;
++      }
++    }
++
++    res =
++        g_enum_register_static (enum_name, &g_array_index (values, GEnumValue,
++            0));
+   }
+ 
+-  return ffmpeg_idct_algo_type;
++done:
++  g_free (lower_obj_name);
++  g_free (enum_name);
++  return res;
+ }
+ 
+-#define GST_TYPE_FFMPEG_QUANT_TYPE (gst_ffmpeg_quant_type_get_type ())
+-static GType
+-gst_ffmpeg_quant_type_get_type (void)
++static gint
++cmp_flags_value (GEnumValue * val1, GEnumValue * val2)
+ {
+-  static GType ffmpeg_quant_type_type = 0;
+-
+-  if (!ffmpeg_quant_type_type) {
+-    static const GEnumValue ffmpeg_quant_types[] = {
+-      {0, "H263 quantization", "h263"},
+-      {1, "MPEG quantization", "mpeg"},
+-      {0, NULL, NULL},
+-    };
+-
+-    ffmpeg_quant_type_type =
+-        g_enum_register_static ("GstLibAVEncQuantTypes", ffmpeg_quant_types);
+-  }
+-
+-  return ffmpeg_quant_type_type;
++  return val1->value - val2->value;
+ }
+ 
+-#define GST_TYPE_FFMPEG_PRE_ME (gst_ffmpeg_pre_me_get_type ())
+ static GType
+-gst_ffmpeg_pre_me_get_type (void)
++register_flags (const AVClass ** obj, const AVOption * top_opt)
+ {
+-  static GType ffmpeg_pre_me_type = 0;
++  const AVOption *opt = NULL;
++  GType res = 0;
++  GArray *values = g_array_new (TRUE, TRUE, sizeof (GEnumValue));
++  gchar *lower_obj_name = g_ascii_strdown ((*obj)->class_name, -1);
++  gchar *flags_name = g_strdup_printf ("%s-%s", lower_obj_name, top_opt->unit);
+ 
+-  if (!ffmpeg_pre_me_type) {
+-    static const GEnumValue ffmpeg_pre_mes[] = {
+-      {0, "Disabled", "off"},
+-      {1, "Only after I-frames", "key"},
+-      {2, "Always", "all"},
+-      {0, NULL, NULL}
+-    };
++  g_strcanon (flags_name, G_CSET_a_2_z G_CSET_DIGITS, '-');
+ 
+-    ffmpeg_pre_me_type =
+-        g_enum_register_static ("GstLibAVEncPreME", ffmpeg_pre_mes);
+-  }
++  if ((res = g_type_from_name (flags_name)))
++    goto done;
+ 
+-  return ffmpeg_pre_me_type;
+-}
++  while ((opt = av_opt_next (obj, opt))) {
++    if (opt->type == AV_OPT_TYPE_CONST && !g_strcmp0 (top_opt->unit, opt->unit)) {
++      GFlagsValue val;
+ 
+-#define GST_TYPE_FFMPEG_PRED_METHOD (gst_ffmpeg_pred_method_get_type ())
+-static GType
+-gst_ffmpeg_pred_method_get_type (void)
+-{
+-  static GType ffmpeg_pred_method = 0;
++      /* We expose pass manually, hardcoding this isn't very nice, but
++       * I don't expect we want to do that sort of things often enough
++       * to warrant a general mechanism
++       */
++      if (!g_strcmp0 (top_opt->name, "flags")) {
++        if (opt->default_val.i64 == AV_CODEC_FLAG_QSCALE ||
++            opt->default_val.i64 == AV_CODEC_FLAG_PASS1 ||
++            opt->default_val.i64 == AV_CODEC_FLAG_PASS2) {
++          continue;
++        }
++      }
+ 
+-  if (!ffmpeg_pred_method) {
+-    static const GEnumValue ffmpeg_pred_methods[] = {
+-      {FF_PRED_LEFT, "Left", "left"},
+-      {FF_PRED_PLANE, "Plane", "plane"},
+-      {FF_PRED_MEDIAN, "Median", "median"},
+-      {0, NULL, NULL}
+-    };
++      val.value = opt->default_val.i64;
++      val.value_name = g_strdup (opt->help ? opt->help : opt->name);
++      val.value_nick = g_strdup (opt->name);
+ 
+-    ffmpeg_pred_method =
+-        g_enum_register_static ("GstLibAVEncPredMethod", ffmpeg_pred_methods);
++      g_array_append_val (values, val);
++    }
+   }
+ 
+-  return ffmpeg_pred_method;
+-}
++  if (values->len) {
++    g_array_sort (values, (GCompareFunc) cmp_flags_value);
+ 
+-#define GST_TYPE_FFMPEG_FLAGS (gst_ffmpeg_flags_get_type())
+-static GType
+-gst_ffmpeg_flags_get_type (void)
+-{
+-  static GType ffmpeg_flags_type = 0;
+-
+-  /* FIXME: This needs some serious resyncing with avcodec.h */
+-  if (!ffmpeg_flags_type) {
+-    static const GFlagsValue ffmpeg_flags[] = {
+-      {CODEC_FLAG_QSCALE, "Use fixed qscale", "qscale"},
+-      {CODEC_FLAG_4MV, "Allow 4 MV per MB", "4mv"},
+-      {CODEC_FLAG_QPEL, "Quartel Pel Motion Compensation", "qpel"},
+-      {CODEC_FLAG_GMC, "GMC", "gmc"},
+-      {CODEC_FLAG_MV0, "Always try a MB with MV (0,0)", "mv0"},
+-      {CODEC_FLAG_LOOP_FILTER, "Loop filter", "loop-filter"},
+-      {CODEC_FLAG_GRAY, "Only decode/encode grayscale", "gray"},
+-      {CODEC_FLAG_NORMALIZE_AQP,
+-          "Normalize Adaptive Quantization (masking, etc)", "aqp"},
+-      {CODEC_FLAG_GLOBAL_HEADER,
+-            "Global headers in extradata instead of every keyframe",
+-          "global-headers"},
+-      {CODEC_FLAG_AC_PRED, "H263 Advanced Intra Coding / MPEG4 AC prediction",
+-          "aic"},
+-      {CODEC_FLAG_CLOSED_GOP, "Closed GOP", "closedgop"},
+-      {0, NULL, NULL},
+-    };
+-
+-    ffmpeg_flags_type = g_flags_register_static ("GstLibAVFlags", ffmpeg_flags);
++    res =
++        g_flags_register_static (flags_name, &g_array_index (values,
++            GFlagsValue, 0));
+   }
+ 
+-  return ffmpeg_flags_type;
++done:
++  g_free (lower_obj_name);
++  g_free (flags_name);
++  return res;
+ }
+ 
+-/* provides additional info to attach to a property */
+-
+-typedef struct _GParamSpecData GParamSpecData;
+-
+-struct _GParamSpecData
++static guint
++install_opts (GObjectClass * gobject_class, const AVClass ** obj, guint prop_id,
++    gint flags, const gchar * extra_help, GHashTable * overrides)
+ {
+-  /* offset of member in the element struct that stores the property */
+-  guint offset;
++  const AVOption *opt = NULL;
+ 
+-  /* size of the above member */
+-  guint size;
++  while ((opt = av_opt_next (obj, opt))) {
++    GParamSpec *pspec = NULL;
++    AVOptionRanges *r;
++    gdouble min = G_MINDOUBLE;
++    gdouble max = G_MAXDOUBLE;
++    gchar *help;
++    const gchar *name;
+ 
+-  /* if TRUE, try to get the default from lavc and ignore the paramspec default */
+-  gboolean lavc_default;
++    if (overrides && g_hash_table_contains (overrides, opt->name)) {
++      gboolean skip;
++      const GstStructure *s =
++          (GstStructure *) g_hash_table_lookup (overrides, opt->name);
+ 
+-  /* these lists are arrays terminated by AV_CODEC_ID_NONE entry:
+-   * property applies to a codec if it's not in the exclude_list
+-   * and in exclude_list (or the latter is NULL) */
+-  gint *include_list;
+-  gint *exclude_list;
+-};
++      name = gst_structure_get_name (s);
++      if (gst_structure_get_boolean (s, "skip", &skip) && skip) {
++        continue;
++      }
++    } else {
++      name = opt->name;
++    }
+ 
+-/* properties whose member offset is higher than the config base
+- * can be copied directly at context configuration time;
+- * and can also retrieve a default value from lavc */
+-#define CONTEXT_CONFIG_OFFSET   G_STRUCT_OFFSET (GstFFMpegVidEnc, config)
++    if ((opt->flags & flags) != flags)
++      continue;
+ 
+-/* additional info is named pointer specified by the quark */
+-static GQuark quark;
++    if (g_object_class_find_property (gobject_class, name))
++      continue;
+ 
+-/* central configuration store:
+- * list of GParamSpec's with GParamSpecData attached as named pointer */
+-static GList *property_list;
++    if (av_opt_query_ranges (&r, obj, opt->name, AV_OPT_SEARCH_FAKE_OBJ) >= 0
++        && r->nb_ranges == 1) {
++      min = r->range[0]->value_min;
++      max = r->range[0]->value_max;
++    }
+ 
+-/* add the GParamSpec pspec to store with GParamSpecData
+- * constructed from struct_type, member, default and include and exclude */
+-#define gst_ffmpeg_add_pspec_full(pspec, store, struct_type, member,    \
+-    default, include, exclude)                                          \
+-G_STMT_START {                                                          \
+-  GParamSpecData *_qdata = g_new0 (GParamSpecData, 1);                  \
+-  GstFFMpegVidEnc _enc;                                                    \
+-  _qdata->offset = G_STRUCT_OFFSET (struct_type, member);               \
+-  _qdata->size = sizeof (_enc.member);                                  \
+-  _qdata->lavc_default = default;                                       \
+-  _qdata->include_list = include;                                       \
+-  _qdata->exclude_list = exclude;                                       \
+-  g_param_spec_set_qdata_full (pspec, quark, _qdata, g_free);           \
+-  store = g_list_append (store, pspec);                                 \
+-} G_STMT_END
++    help = g_strdup_printf ("%s%s", opt->help, extra_help);
+ 
+-#define gst_ffmpeg_add_pspec(pspec, member, default, include, exclude)       \
+-  gst_ffmpeg_add_pspec_full (pspec, property_list, GstFFMpegVidEnc, member,     \
+-      default, include, exclude)
++    switch (opt->type) {
++      case AV_OPT_TYPE_INT:
++        if (opt->unit) {
++          GType enum_gtype;
++          enum_gtype = register_enum (obj, opt);
+ 
+-/* ==== BEGIN CONFIGURATION SECTION ==== */
++          if (enum_gtype) {
++            pspec = g_param_spec_enum (name, name, help,
++                enum_gtype, opt->default_val.i64, G_PARAM_READWRITE);
++            g_object_class_install_property (gobject_class, prop_id++, pspec);
++          } else {              /* Some options have a unit but no named constants associated */
++            pspec = g_param_spec_int (name, name, help,
++                (gint) min, (gint) max, opt->default_val.i64,
++                G_PARAM_READWRITE);
++            g_object_class_install_property (gobject_class, prop_id++, pspec);
++          }
++        } else {
++          pspec = g_param_spec_int (name, name, help,
++              (gint) min, (gint) max, opt->default_val.i64, G_PARAM_READWRITE);
++          g_object_class_install_property (gobject_class, prop_id++, pspec);
++        }
++        break;
++      case AV_OPT_TYPE_FLAGS:
++        if (opt->unit) {
++          GType flags_gtype;
++          flags_gtype = register_flags (obj, opt);
+ 
+-/* some typical include and exclude lists; modify and/or add where needed */
++          if (flags_gtype) {
++            pspec = g_param_spec_flags (name, name, help,
++                flags_gtype, opt->default_val.i64, G_PARAM_READWRITE);
++            g_object_class_install_property (gobject_class, prop_id++, pspec);
++          }
++        }
++        break;
++      case AV_OPT_TYPE_DURATION:       /* Fall through */
++      case AV_OPT_TYPE_INT64:
++        /* ffmpeg expresses all ranges with doubles, this is sad */
++        pspec = g_param_spec_int64 (name, name, help,
++            (gint64) (min == (gdouble) INT64_MIN ? INT64_MIN : min),
++            (gint64) (max == (gdouble) INT64_MAX ? INT64_MAX : max),
++            opt->default_val.i64, G_PARAM_READWRITE);
++        g_object_class_install_property (gobject_class, prop_id++, pspec);
++        break;
++      case AV_OPT_TYPE_DOUBLE:
++        pspec = g_param_spec_double (name, name, help,
++            min, max, opt->default_val.dbl, G_PARAM_READWRITE);
++        g_object_class_install_property (gobject_class, prop_id++, pspec);
++        break;
++      case AV_OPT_TYPE_FLOAT:
++        pspec = g_param_spec_float (name, name, help,
++            (gfloat) min, (gfloat) max, (gfloat) opt->default_val.dbl,
++            G_PARAM_READWRITE);
++        g_object_class_install_property (gobject_class, prop_id++, pspec);
++        break;
++      case AV_OPT_TYPE_STRING:
++        pspec = g_param_spec_string (name, name, help,
++            opt->default_val.str, G_PARAM_READWRITE);
++        g_object_class_install_property (gobject_class, prop_id++, pspec);
++        break;
++      case AV_OPT_TYPE_UINT64:
++        /* ffmpeg expresses all ranges with doubles, this is appalling */
++        pspec = g_param_spec_uint64 (name, name, help,
++            (gint64) (min == (gdouble) 0 ? 0 : min),
++            (gint64) (max == (gdouble) UINT64_MAX ? UINT64_MAX : min),
++            opt->default_val.i64, G_PARAM_READWRITE);
++        g_object_class_install_property (gobject_class, prop_id++, pspec);
++        break;
++      case AV_OPT_TYPE_BOOL:
++        pspec = g_param_spec_boolean (name, name, help,
++            opt->default_val.i64 ? TRUE : FALSE, G_PARAM_READWRITE);
++        g_object_class_install_property (gobject_class, prop_id++, pspec);
++        break;
++        /* TODO: didn't find options for the video encoders with
++         * the following type, add support if needed */
++      case AV_OPT_TYPE_CHANNEL_LAYOUT:
++      case AV_OPT_TYPE_COLOR:
++      case AV_OPT_TYPE_VIDEO_RATE:
++      case AV_OPT_TYPE_SAMPLE_FMT:
++      case AV_OPT_TYPE_PIXEL_FMT:
++      case AV_OPT_TYPE_IMAGE_SIZE:
++      case AV_OPT_TYPE_DICT:
++      case AV_OPT_TYPE_BINARY:
++      case AV_OPT_TYPE_RATIONAL:
++      default:
++        break;
++    }
+ 
+-static gint mpeg[] = {
+-  AV_CODEC_ID_MPEG4,
+-  AV_CODEC_ID_MSMPEG4V1,
+-  AV_CODEC_ID_MSMPEG4V2,
+-  AV_CODEC_ID_MSMPEG4V3,
+-  AV_CODEC_ID_MPEG1VIDEO,
+-  AV_CODEC_ID_MPEG2VIDEO,
+-  AV_CODEC_ID_H263P,
+-  AV_CODEC_ID_FLV1,
+-  AV_CODEC_ID_H263,
+-  AV_CODEC_ID_NONE
+-};
++    g_free (help);
+ 
+-static gint huffyuv[] = {
+-  AV_CODEC_ID_HUFFYUV,
+-  AV_CODEC_ID_FFVHUFF,
+-  AV_CODEC_ID_NONE
+-};
+-
+-/* Properties should be added here for registration into the config store.
+- * Note that some may occur more than once, with different include/exclude lists,
+- * as some may require different defaults for different codecs,
+- * or some may have slightly varying enum-types with more or less options.
+- * The enum-types themselves should be declared above. */
+-void
+-gst_ffmpeg_cfg_init (void)
+-{
+-  GParamSpec *pspec;
+-
+-  /* initialize global config vars */
+-  quark = g_quark_from_static_string ("ffmpeg-cfg-param-spec-data");
+-  property_list = NULL;
+-
+-  /* list properties here */
+-  pspec = g_param_spec_enum ("pass", "Encoding pass/type",
+-      "Encoding pass/type", GST_TYPE_FFMPEG_PASS, 0,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, pass, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_float ("quantizer", "Constant Quantizer",
+-      "Constant Quantizer", 0, 30, 0.01f,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, quantizer, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_string ("multipass-cache-file", "Multipass Cache File",
+-      "Filename for multipass cache file", "stats.log",
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, filename, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_int ("bitrate-tolerance", "Bitrate Tolerance",
+-      "Number of bits the bitstream is allowed to diverge from the reference",
+-      0, 100000000, 8000000, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.bit_rate_tolerance, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_enum ("mb-decision", "Macroblock Decision",
+-      "Macroblok Decision Mode",
+-      GST_TYPE_FFMPEG_MB_DECISION, FF_CMP_SAD,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.mb_decision, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_enum ("mb-cmp", "Macroblock Compare Function",
+-      "Macroblok Compare Function",
+-      GST_TYPE_FFMPEG_CMP_FUNCTION, FF_CMP_SAD,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.mb_cmp, FALSE, mpeg, NULL);
+-
+-  pspec =
+-      g_param_spec_enum ("me-pre-cmp",
+-      "Motion Estimation Pre Pass Compare Function",
+-      "Motion Estimation Pre Pass Compare Function",
+-      GST_TYPE_FFMPEG_CMP_FUNCTION, FF_CMP_SAD,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.me_pre_cmp, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_enum ("me-cmp", "Motion Estimation Compare Function",
+-      "Motion Estimation Compare Function",
+-      GST_TYPE_FFMPEG_CMP_FUNCTION, FF_CMP_SAD,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.me_cmp, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_enum ("me-sub-cmp",
+-      "Subpixel Motion Estimation Compare Function",
+-      "Subpixel Motion Estimation Compare Function",
+-      GST_TYPE_FFMPEG_CMP_FUNCTION, FF_CMP_SAD,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.me_sub_cmp, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_enum ("ildct-cmp", "Interlaced DCT Compare Function",
+-      "Interlaced DCT Compare Function",
+-      GST_TYPE_FFMPEG_CMP_FUNCTION, FF_CMP_VSAD,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.ildct_cmp, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_enum ("dct-algo", "DCT Algorithm",
+-      "DCT Algorithm",
+-      GST_TYPE_FFMPEG_DCT_ALGO, FF_DCT_AUTO,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.dct_algo, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_enum ("idct-algo", "IDCT Algorithm",
+-      "IDCT Algorithm",
+-      GST_TYPE_FFMPEG_IDCT_ALGO, FF_IDCT_AUTO,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.idct_algo, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_enum ("quant-type", "Quantizer Type",
+-      "Quantizer Type", GST_TYPE_FFMPEG_QUANT_TYPE, 0,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.mpeg_quant, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_int ("qmin", "Minimum Quantizer",
+-      "Minimum Quantizer", 1, 31, 2,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.qmin, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_int ("qmax", "Maximum Quantizer",
+-      "Maximum Quantizer", 1, 31, 31,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.qmax, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_int ("max-qdiff", "Maximum Quantizer Difference",
+-      "Maximum Quantizer Difference between frames",
+-      1, 31, 3, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.max_qdiff, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_int ("lmin", "Minimum Lagrange Multiplier",
+-      "Minimum Lagrange Multiplier", 1, 31, 2,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, lmin, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_int ("lmax", "Maximum Lagrange Multiplier",
+-      "Maximum Lagrange Multiplier", 1, 31, 31,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, lmax, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_float ("qcompress", "Quantizer Change",
+-      "Quantizer Change between easy and hard scenes",
+-      0, 1.0f, 0.5f, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.qcompress, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_float ("qblur", "Quantizer Smoothing",
+-      "Quantizer Smoothing over time", 0, 1.0f, 0.5f,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.qblur, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_float ("rc-qsquish", "Ratecontrol Limiting Method",
+-      "0 means limit by clipping, otherwise use nice continuous function",
+-      0, 99.0f, 1.0f, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.rc_qsquish, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_float ("rc-qmod-amp", "Ratecontrol Mod",
+-      "Ratecontrol Mod", 0, 99.0f, 0,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.rc_qmod_amp, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_int ("rc-qmod-freq", "Ratecontrol Freq",
+-      "Ratecontrol Freq", 0, 0, 0, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.rc_qmod_freq, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_int ("rc-buffer-size", "Ratecontrol Buffer Size",
+-      "Decoder bitstream buffer size", 0, G_MAXINT, 0,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.rc_buffer_size, FALSE, mpeg, NULL);
+-
+-  pspec =
+-      g_param_spec_float ("rc-buffer-aggressivity",
+-      "Ratecontrol Buffer Aggressivity", "Ratecontrol Buffer Aggressivity", 0,
+-      99.0f, 1.0f, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.rc_buffer_aggressivity, FALSE, mpeg,
+-      NULL);
+-
+-#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT (57, 3, 0)
+-  pspec = g_param_spec_int ("rc-max-rate", "Ratecontrol Maximum Bitrate",
+-      "Ratecontrol Maximum Bitrate", 0, G_MAXINT, 0,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-#else
+-  pspec = g_param_spec_int64 ("rc-max-rate", "Ratecontrol Maximum Bitrate",
+-      "Ratecontrol Maximum Bitrate", 0, G_MAXINT64, 0,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-#endif
+-  gst_ffmpeg_add_pspec (pspec, config.rc_max_rate, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_int64 ("rc-min-rate", "Ratecontrol Minimum Bitrate",
+-      "Ratecontrol Minimum Bitrate", 0, G_MAXINT64, 0,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.rc_min_rate, FALSE, mpeg, NULL);
+-
+-  pspec =
+-      g_param_spec_float ("rc-initial-cplx",
+-      "Initial Complexity for Pass 1 Ratecontrol",
+-      "Initial Complexity for Pass 1 Ratecontrol", 0, 9999999.0f, 0,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.rc_initial_cplx, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_string ("rc-eq", "Ratecontrol Equation",
+-      "Ratecontrol Equation", "tex^qComp",
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.rc_eq, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_float ("b-quant-factor", "B-Quantizer Factor",
+-      "Factor in B-Frame Quantizer Computation",
+-      -31.0f, 31.0f, 1.25f, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.b_quant_factor, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_float ("b-quant-offset", "B-Quantizer Offset",
+-      "Offset in B-Frame Quantizer Computation",
+-      0.0f, 31.0f, 1.25f, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.b_quant_offset, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_float ("i-quant-factor", "I-Quantizer Factor",
+-      "Factor in P-Frame Quantizer Computation",
+-      -31.0f, 31.0f, 0.8f, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.i_quant_factor, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_float ("i-quant-offset", "I-Quantizer Offset",
+-      "Offset in P-Frame Quantizer Computation",
+-      0.0f, 31.0f, 0, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.i_quant_offset, FALSE, mpeg, NULL);
+-
+-  /* note overlap with gop-size; 0 means do not override */
+-  pspec = g_param_spec_int ("max-key-interval", "Maximum Key Interval",
+-      "Maximum number of frames between two keyframes (< 0 is in sec)",
+-      -100, G_MAXINT, 0, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, max_key_interval, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_float ("lumi-masking", "Luminance Masking",
+-      "Luminance Masking", -1.0f, 1.0f, 0.0f,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.lumi_masking, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_float ("dark-masking", "Darkness Masking",
+-      "Darkness Masking", -1.0f, 1.0f, 0.0f,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.dark_masking, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_float ("temporal-cplx-masking",
+-      "Temporal Complexity Masking",
+-      "Temporal Complexity Masking", -1.0f, 1.0f, 0.0f,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.temporal_cplx_masking, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_float ("spatial-cplx-masking",
+-      "Spatial Complexity Masking",
+-      "Spatial Complexity Masking", -1.0f, 1.0f, 0.0f,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.spatial_cplx_masking, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_float ("p-masking", "P Block Masking",
+-      "P Block  Masking", -1.0f, 1.0f, 0.0f,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.p_masking, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_int ("dia-size",
+-      "Motion Estimation Diamond Size/Shape",
+-      "Motion Estimation Diamond Size/Shape",
+-      -2000, 2000, 0, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.dia_size, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_int ("pre-dia-size",
+-      "Motion Estimation Pre Pass Diamond Size/Shape",
+-      "Motion Estimation Diamond Size/Shape",
+-      -2000, 2000, 0, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.pre_dia_size, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_int ("last-predictor-count",
+-      "Last Predictor Count",
+-      "Amount of previous Motion Vector predictors",
+-      0, 2000, 0, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.last_predictor_count, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_enum ("pre-me",
+-      "Pre Pass for Motion Estimation",
+-      "Pre Pass for Motion Estimation",
+-      GST_TYPE_FFMPEG_PRE_ME, 1, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.pre_me, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_int ("me-subpel-quality",
+-      "Motion Estimation Subpixel Quality",
+-      "Motion Estimation Subpixel Refinement Quality",
+-      0, 8, 8, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.me_subpel_quality, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_int ("me-range",
+-      "Motion Estimation Range",
+-      "Motion Estimation search range in subpel units",
+-      0, 16000, 0, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.me_range, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_int ("intra-quant-bias",
+-      "Intra Quantizer Bias",
+-      "Intra Quantizer Bias",
+-      -1000000, 1000000, FF_DEFAULT_QUANT_BIAS,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.intra_quant_bias, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_int ("inter-quant-bias",
+-      "Inter Quantizer Bias",
+-      "Inter Quantizer Bias",
+-      -1000000, 1000000, FF_DEFAULT_QUANT_BIAS,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.inter_quant_bias, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_int ("noise-reduction",
+-      "Noise Reduction",
+-      "Noise Reduction Strength", 0, 1000000, 0,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.noise_reduction, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_int ("intra-dc-precision",
+-      "Intra DC precision",
+-      "Precision of the Intra DC coefficient - 8", 0, 16, 0,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.intra_dc_precision, FALSE, mpeg, NULL);
+-
+-  /* TODO skipped coder_type, context_model, inter_threshold, scenechange_threshold */
+-
+-  pspec = g_param_spec_flags ("flags", "Flags",
+-      "Flags", GST_TYPE_FFMPEG_FLAGS, 0,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.flags, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_boolean ("interlaced", "Interlaced Material",
+-      "Interlaced Material", FALSE, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, interlaced, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_int ("max-bframes", "Max B-Frames",
+-      "Maximum B-frames in a row", 0, INT_MAX, 0,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.max_b_frames, FALSE, mpeg, NULL);
+-
+-  pspec = g_param_spec_enum ("prediction-method", "Prediction Method",
+-      "Prediction Method",
+-      GST_TYPE_FFMPEG_PRED_METHOD, FF_PRED_LEFT,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.prediction_method, FALSE, huffyuv, NULL);
+-  pspec = g_param_spec_int ("trellis", "Trellis Quantization",
+-      "Trellis RD quantization", 0, 1, 1,
+-      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+-  gst_ffmpeg_add_pspec (pspec, config.trellis, FALSE, mpeg, NULL);
+-}
+-
+-/* ==== END CONFIGURATION SECTION ==== */
+-
+-
+-/* return TRUE if property described by pspec applies to the codec with codec_id */
+-static gboolean
+-gst_ffmpeg_cfg_codec_has_pspec (enum AVCodecID codec_id, GParamSpec * pspec)
+-{
+-  GParamSpecData *qdata;
+-  gint *codec;
+-  gboolean ret = FALSE;
+-
+-  qdata = g_param_spec_get_qdata (pspec, quark);
+-
+-  /* check if excluded first */
+-  if ((codec = qdata->exclude_list)) {
+-    for (; *codec != AV_CODEC_ID_NONE; ++codec) {
+-      if (*codec == codec_id)
+-        return FALSE;
++    if (pspec) {
++      g_param_spec_set_qdata (pspec, avoption_quark, (gpointer) opt);
+     }
+   }
+ 
+-  /* no include list means it is accepted */
+-  if ((codec = qdata->include_list)) {
+-    for (; *codec != AV_CODEC_ID_NONE; ++codec) {
+-      if (*codec == codec_id)
+-        ret = TRUE;
+-    }
+-  } else {
+-    ret = TRUE;
+-  }
+-
+-  return ret;
++  return prop_id;
+ }
+ 
+-/* install all properties for klass that have been registered in property_list */
+ void
+-gst_ffmpeg_cfg_install_property (GstFFMpegVidEncClass * klass, guint base)
++gst_ffmpeg_cfg_install_properties (GObjectClass * klass, AVCodec * in_plugin,
++    guint base, gint flags)
+ {
+-  GParamSpec *pspec;
+-  GList *list;
+   gint prop_id;
+   AVCodecContext *ctx;
+ 
+   prop_id = base;
+   g_return_if_fail (base > 0);
+ 
+-  ctx = avcodec_alloc_context3 (klass->in_plugin);
++  ctx = avcodec_alloc_context3 (in_plugin);
+   if (!ctx)
+     g_warning ("could not get context");
+ 
+-  for (list = property_list; list; list = list->next) {
+-    pspec = G_PARAM_SPEC (list->data);
+-    if (gst_ffmpeg_cfg_codec_has_pspec (klass->in_plugin->id, pspec)) {
+-      /* 'clone' the paramspec for the various codecs,
+-       * since a single paramspec cannot be owned by distinct types */
++  prop_id =
++      install_opts ((GObjectClass *) klass, &in_plugin->priv_class, prop_id, 0,
++      " (Private codec option)", NULL);
++  prop_id =
++      install_opts ((GObjectClass *) klass, &ctx->av_class, prop_id, flags,
++      " (Generic codec option, might have no effect)", generic_overrides);
+ 
+-      const gchar *name = g_param_spec_get_name (pspec);
+-      const gchar *nick = g_param_spec_get_nick (pspec);
+-      const gchar *blurb = g_param_spec_get_blurb (pspec);
+-      GParamSpecData *qdata = g_param_spec_get_qdata (pspec, quark);
+-      gint ctx_offset = 0;
+-      gboolean lavc_default;
+-
+-      /* cannot obtain lavc default if no context */
+-      if (!ctx)
+-        lavc_default = FALSE;
+-      else {
+-        ctx_offset = qdata->offset - CONTEXT_CONFIG_OFFSET;
+-        /* safety check; is it really member of the avcodec context */
+-        if (ctx_offset < 0)
+-          lavc_default = FALSE;
+-        else
+-          lavc_default = qdata->lavc_default;
+-      }
+-
+-      switch (G_PARAM_SPEC_VALUE_TYPE (pspec)) {
+-        case G_TYPE_STRING:{
+-          GParamSpecString *pstring = G_PARAM_SPEC_STRING (pspec);
+-
+-          pspec = g_param_spec_string (name, nick, blurb,
+-              lavc_default ? G_STRUCT_MEMBER (gchar *, ctx, ctx_offset)
+-              : pstring->default_value, pspec->flags);
+-          break;
+-        }
+-        case G_TYPE_INT:{
+-          GParamSpecInt *pint = G_PARAM_SPEC_INT (pspec);
+-
+-          pspec = g_param_spec_int (name, nick, blurb,
+-              pint->minimum, pint->maximum,
+-              lavc_default ? G_STRUCT_MEMBER (gint, ctx, ctx_offset)
+-              : pint->default_value, pspec->flags);
+-          break;
+-        }
+-        case G_TYPE_INT64:{
+-          GParamSpecInt64 *pint = G_PARAM_SPEC_INT64 (pspec);
+-
+-          pspec = g_param_spec_int64 (name, nick, blurb,
+-              pint->minimum, pint->maximum,
+-              lavc_default ? G_STRUCT_MEMBER (gint64, ctx, ctx_offset)
+-              : pint->default_value, pspec->flags);
+-          break;
+-        }
+-        case G_TYPE_UINT:{
+-          GParamSpecUInt *puint = G_PARAM_SPEC_UINT (pspec);
+-
+-          pspec = g_param_spec_uint (name, nick, blurb,
+-              puint->minimum, puint->maximum,
+-              lavc_default ? G_STRUCT_MEMBER (guint, ctx, ctx_offset)
+-              : puint->default_value, pspec->flags);
+-          break;
+-        }
+-        case G_TYPE_FLOAT:{
+-          GParamSpecFloat *pfloat = G_PARAM_SPEC_FLOAT (pspec);
+-
+-          pspec = g_param_spec_float (name, nick, blurb,
+-              pfloat->minimum, pfloat->maximum,
+-              lavc_default ? G_STRUCT_MEMBER (gfloat, ctx, ctx_offset)
+-              : pfloat->default_value, pspec->flags);
+-          break;
+-        }
+-        case G_TYPE_BOOLEAN:{
+-          GParamSpecBoolean *pboolean = G_PARAM_SPEC_BOOLEAN (pspec);
+-
+-          pspec = g_param_spec_boolean (name, nick, blurb,
+-              lavc_default ? G_STRUCT_MEMBER (gboolean, ctx, ctx_offset)
+-              : pboolean->default_value, pspec->flags);
+-          break;
+-        }
+-        default:
+-          if (G_IS_PARAM_SPEC_ENUM (pspec)) {
+-            GParamSpecEnum *penum = G_PARAM_SPEC_ENUM (pspec);
+-
+-            pspec = g_param_spec_enum (name, nick, blurb,
+-                pspec->value_type,
+-                lavc_default ? G_STRUCT_MEMBER (gint, ctx, ctx_offset)
+-                : penum->default_value, pspec->flags);
+-          } else if (G_IS_PARAM_SPEC_FLAGS (pspec)) {
+-            GParamSpecFlags *pflags = G_PARAM_SPEC_FLAGS (pspec);
+-
+-            pspec = g_param_spec_flags (name, nick, blurb,
+-                pspec->value_type,
+-                lavc_default ? G_STRUCT_MEMBER (guint, ctx, ctx_offset)
+-                : pflags->default_value, pspec->flags);
+-          } else {
+-            g_critical ("%s does not yet support type %s", GST_FUNCTION,
+-                g_type_name (G_PARAM_SPEC_VALUE_TYPE (pspec)));
+-            continue;
+-          }
+-          break;
+-      }
+-      g_param_spec_set_qdata (pspec, quark, qdata);
+-      g_object_class_install_property (G_OBJECT_CLASS (klass), prop_id, pspec);
+-      ++prop_id;
+-    }
+-  }
+-
+   if (ctx) {
+     gst_ffmpeg_avcodec_close (ctx);
+     av_free (ctx);
+   }
+ }
+ 
+-/* returns TRUE if it is a known property for this config system,
+- * FALSE otherwise */
+-gboolean
+-gst_ffmpeg_cfg_set_property (GObject * object,
+-    const GValue * value, GParamSpec * pspec)
++static gint
++set_option_value (AVCodecContext * ctx, GParamSpec * pspec,
++    const GValue * value, const AVOption * opt)
+ {
+-  GstFFMpegVidEnc *ffmpegenc = (GstFFMpegVidEnc *) (object);
+-  GParamSpecData *qdata;
++  int res = -1;
+ 
+-  qdata = g_param_spec_get_qdata (pspec, quark);
+-
+-  /* our param specs should have such qdata */
+-  if (!qdata)
+-    return FALSE;
+-
+-  /* set the member using the offset, also mild type check based on size */
+   switch (G_PARAM_SPEC_VALUE_TYPE (pspec)) {
+-    case G_TYPE_BOOLEAN:
+-      g_return_val_if_fail (qdata->size == sizeof (gboolean), TRUE);
+-      G_STRUCT_MEMBER (gboolean, ffmpegenc, qdata->offset) =
+-          g_value_get_boolean (value);
+-      break;
+-    case G_TYPE_UINT:
+-      g_return_val_if_fail (qdata->size == sizeof (guint), TRUE);
+-      G_STRUCT_MEMBER (guint, ffmpegenc, qdata->offset) =
+-          g_value_get_uint (value);
+-      break;
+     case G_TYPE_INT:
+-      g_return_val_if_fail (qdata->size == sizeof (gint), TRUE);
+-      G_STRUCT_MEMBER (gint, ffmpegenc, qdata->offset) =
+-          g_value_get_int (value);
++      res = av_opt_set_int (ctx, opt->name,
++          g_value_get_int (value), AV_OPT_SEARCH_CHILDREN);
+       break;
+     case G_TYPE_INT64:
+-      g_return_val_if_fail (qdata->size == sizeof (gint64), TRUE);
+-      G_STRUCT_MEMBER (gint64, ffmpegenc, qdata->offset) =
+-          g_value_get_int64 (value);
++      res = av_opt_set_int (ctx, opt->name,
++          g_value_get_int64 (value), AV_OPT_SEARCH_CHILDREN);
+       break;
++    case G_TYPE_UINT64:
++      res = av_opt_set_int (ctx, opt->name,
++          g_value_get_uint64 (value), AV_OPT_SEARCH_CHILDREN);
++      break;
++    case G_TYPE_DOUBLE:
++      res = av_opt_set_double (ctx, opt->name,
++          g_value_get_double (value), AV_OPT_SEARCH_CHILDREN);
++      break;
+     case G_TYPE_FLOAT:
+-      g_return_val_if_fail (qdata->size == sizeof (gfloat), TRUE);
+-      G_STRUCT_MEMBER (gfloat, ffmpegenc, qdata->offset) =
+-          g_value_get_float (value);
++      res = av_opt_set_double (ctx, opt->name,
++          g_value_get_float (value), AV_OPT_SEARCH_CHILDREN);
+       break;
+     case G_TYPE_STRING:
+-      g_return_val_if_fail (qdata->size == sizeof (gchar *), TRUE);
+-      g_free (G_STRUCT_MEMBER (gchar *, ffmpegenc, qdata->offset));
+-      G_STRUCT_MEMBER (gchar *, ffmpegenc, qdata->offset) =
+-          g_value_dup_string (value);
++      res = av_opt_set (ctx, opt->name,
++          g_value_get_string (value), AV_OPT_SEARCH_CHILDREN);
++      /* Some code in FFmpeg returns ENOMEM if the string is NULL:
++       * *dst = av_strdup(val);
++       * return *dst ? 0 : AVERROR(ENOMEM);
++       * That makes little sense, let's ignore that
++       */
++      if (!g_value_get_string (value))
++        res = 0;
+       break;
+-    default:                   /* must be enum, given the check above */
++    case G_TYPE_BOOLEAN:
++      res = av_opt_set_int (ctx, opt->name,
++          g_value_get_boolean (value), AV_OPT_SEARCH_CHILDREN);
++      break;
++    default:
+       if (G_IS_PARAM_SPEC_ENUM (pspec)) {
+-        g_return_val_if_fail (qdata->size == sizeof (gint), TRUE);
+-        G_STRUCT_MEMBER (gint, ffmpegenc, qdata->offset) =
+-            g_value_get_enum (value);
++        res = av_opt_set_int (ctx, opt->name,
++            g_value_get_enum (value), AV_OPT_SEARCH_CHILDREN);
+       } else if (G_IS_PARAM_SPEC_FLAGS (pspec)) {
+-        g_return_val_if_fail (qdata->size == sizeof (guint), TRUE);
+-        G_STRUCT_MEMBER (guint, ffmpegenc, qdata->offset) =
+-            g_value_get_flags (value);
++        res = av_opt_set_int (ctx, opt->name,
++            g_value_get_flags (value), AV_OPT_SEARCH_CHILDREN);
+       } else {                  /* oops, bit lazy we don't cover this case yet */
+         g_critical ("%s does not yet support type %s", GST_FUNCTION,
+             g_type_name (G_PARAM_SPEC_VALUE_TYPE (pspec)));
+       }
+-
+-      break;
+   }
+ 
+-  return TRUE;
++  return res;
+ }
+ 
+-/* returns TRUE if it is a known property for this config system,
+- * FALSE otherwise */
+ gboolean
+-gst_ffmpeg_cfg_get_property (GObject * object,
+-    GValue * value, GParamSpec * pspec)
++gst_ffmpeg_cfg_set_property (AVCodecContext * refcontext, const GValue * value,
++    GParamSpec * pspec)
+ {
+-  GstFFMpegVidEnc *ffmpegenc = (GstFFMpegVidEnc *) (object);
+-  GParamSpecData *qdata;
++  const AVOption *opt;
+ 
+-  qdata = g_param_spec_get_qdata (pspec, quark);
++  opt = g_param_spec_get_qdata (pspec, avoption_quark);
+ 
+-  /* our param specs should have such qdata */
+-  if (!qdata)
++  if (!opt)
+     return FALSE;
+ 
+-  /* get the member using the offset, also mild type check based on size */
+-  switch (G_PARAM_SPEC_VALUE_TYPE (pspec)) {
+-    case G_TYPE_BOOLEAN:
+-      g_return_val_if_fail (qdata->size == sizeof (gboolean), TRUE);
+-      g_value_set_boolean (value,
+-          G_STRUCT_MEMBER (gboolean, ffmpegenc, qdata->offset));
+-      break;
+-    case G_TYPE_UINT:
+-      g_return_val_if_fail (qdata->size == sizeof (guint), TRUE);
+-      g_value_set_uint (value,
+-          G_STRUCT_MEMBER (guint, ffmpegenc, qdata->offset));
+-      break;
+-    case G_TYPE_INT:
+-      g_return_val_if_fail (qdata->size == sizeof (gint), TRUE);
+-      g_value_set_int (value, G_STRUCT_MEMBER (gint, ffmpegenc, qdata->offset));
+-      break;
+-    case G_TYPE_INT64:
+-      g_return_val_if_fail (qdata->size == sizeof (gint64), TRUE);
+-      g_value_set_int64 (value, G_STRUCT_MEMBER (gint64, ffmpegenc,
+-              qdata->offset));
+-      break;
+-    case G_TYPE_FLOAT:
+-      g_return_val_if_fail (qdata->size == sizeof (gfloat), TRUE);
+-      g_value_set_float (value,
+-          G_STRUCT_MEMBER (gfloat, ffmpegenc, qdata->offset));
+-      break;
+-    case G_TYPE_STRING:
+-      g_return_val_if_fail (qdata->size == sizeof (gchar *), TRUE);
+-      g_value_take_string (value,
+-          g_strdup (G_STRUCT_MEMBER (gchar *, ffmpegenc, qdata->offset)));
+-      break;
+-    default:                   /* must be enum, given the check above */
+-      if (G_IS_PARAM_SPEC_ENUM (pspec)) {
+-        g_return_val_if_fail (qdata->size == sizeof (gint), TRUE);
+-        g_value_set_enum (value,
+-            G_STRUCT_MEMBER (gint, ffmpegenc, qdata->offset));
+-      } else if (G_IS_PARAM_SPEC_FLAGS (pspec)) {
+-        g_return_val_if_fail (qdata->size == sizeof (guint), TRUE);
+-        g_value_set_flags (value,
+-            G_STRUCT_MEMBER (guint, ffmpegenc, qdata->offset));
+-      } else {                  /* oops, bit lazy we don't cover this case yet */
+-        g_critical ("%s does not yet support type %s", GST_FUNCTION,
+-            g_type_name (G_PARAM_SPEC_VALUE_TYPE (pspec)));
+-      }
+-      break;
+-  }
+-
+-  return TRUE;
++  return set_option_value (refcontext, pspec, value, opt) >= 0;
+ }
+ 
+-void
+-gst_ffmpeg_cfg_set_defaults (GstFFMpegVidEnc * ffmpegenc)
++gboolean
++gst_ffmpeg_cfg_get_property (AVCodecContext * refcontext, GValue * value,
++    GParamSpec * pspec)
+ {
+-  GParamSpec **pspecs;
+-  guint num_props, i;
++  const AVOption *opt;
+ 
+-  pspecs = g_object_class_list_properties (G_OBJECT_GET_CLASS (ffmpegenc),
+-      &num_props);
++  opt = g_param_spec_get_qdata (pspec, avoption_quark);
+ 
+-  for (i = 0; i < num_props; ++i) {
+-    GValue val = { 0, };
+-    GParamSpec *pspec = pspecs[i];
+-
+-    /* only touch those that are really ours; i.e. should have some qdata */
+-    if (!g_param_spec_get_qdata (pspec, quark))
+-      continue;
+-    g_value_init (&val, G_PARAM_SPEC_VALUE_TYPE (pspec));
+-    g_param_value_set_default (pspec, &val);
+-    g_object_set_property (G_OBJECT (ffmpegenc),
+-        g_param_spec_get_name (pspec), &val);
+-    g_value_unset (&val);
++  if (!opt) {
++    return FALSE;
+   }
+ 
+-  g_free (pspecs);
++  if (opt) {
++    int res = -1;
+ 
+-}
++    switch (G_PARAM_SPEC_VALUE_TYPE (pspec)) {
++      case G_TYPE_INT:
++      {
++        int64_t val;
++        if ((res = av_opt_get_int (refcontext, opt->name,
++                    AV_OPT_SEARCH_CHILDREN, &val) >= 0))
++          g_value_set_int (value, val);
++        break;
++      }
++      case G_TYPE_INT64:
++      {
++        int64_t val;
++        if ((res = av_opt_get_int (refcontext, opt->name,
++                    AV_OPT_SEARCH_CHILDREN, &val) >= 0))
++          g_value_set_int64 (value, val);
++        break;
++      }
++      case G_TYPE_UINT64:
++      {
++        int64_t val;
++        if ((res = av_opt_get_int (refcontext, opt->name,
++                    AV_OPT_SEARCH_CHILDREN, &val) >= 0))
++          g_value_set_uint64 (value, val);
++        break;
++      }
++      case G_TYPE_DOUBLE:
++      {
++        gdouble val;
++        if ((res = av_opt_get_double (refcontext, opt->name,
++                    AV_OPT_SEARCH_CHILDREN, &val) >= 0))
++          g_value_set_double (value, val);
++        break;
++      }
++      case G_TYPE_FLOAT:
++      {
++        gdouble val;
++        if ((res = av_opt_get_double (refcontext, opt->name,
++                    AV_OPT_SEARCH_CHILDREN, &val) >= 0))
++          g_value_set_float (value, (gfloat) val);
++        break;
++      }
++      case G_TYPE_STRING:
++      {
++        uint8_t *val;
++        if ((res = av_opt_get (refcontext, opt->name,
++                    AV_OPT_SEARCH_CHILDREN | AV_OPT_ALLOW_NULL, &val) >= 0)) {
++          g_value_set_string (value, (gchar *) val);
++        }
++        break;
++      }
++      case G_TYPE_BOOLEAN:
++      {
++        int64_t val;
++        if ((res = av_opt_get_int (refcontext, opt->name,
++                    AV_OPT_SEARCH_CHILDREN, &val) >= 0))
++          g_value_set_boolean (value, val ? TRUE : FALSE);
++        break;
++      }
++      default:
++        if (G_IS_PARAM_SPEC_ENUM (pspec)) {
++          int64_t val;
+ 
++          if ((res = av_opt_get_int (refcontext, opt->name,
++                      AV_OPT_SEARCH_CHILDREN, &val) >= 0))
++            g_value_set_enum (value, val);
++        } else if (G_IS_PARAM_SPEC_FLAGS (pspec)) {
++          int64_t val;
+ 
+-void
+-gst_ffmpeg_cfg_fill_context (GstFFMpegVidEnc * ffmpegenc,
+-    AVCodecContext * context)
+-{
+-  GstFFMpegVidEncClass *klass
+-      = (GstFFMpegVidEncClass *) G_OBJECT_GET_CLASS (ffmpegenc);
+-  GParamSpec *pspec;
+-  GParamSpecData *qdata;
+-  GList *list;
+-
+-  list = property_list;
+-
+-  while (list) {
+-    gint context_offset;
+-
+-    pspec = G_PARAM_SPEC (list->data);
+-    qdata = g_param_spec_get_qdata (pspec, quark);
+-    context_offset = qdata->offset - CONTEXT_CONFIG_OFFSET;
+-    if (gst_ffmpeg_cfg_codec_has_pspec (klass->in_plugin->id, pspec)
+-        && context_offset >= 0) {
+-      if (G_PARAM_SPEC_VALUE_TYPE (pspec) == G_TYPE_STRING) {
+-        /* make a copy for ffmpeg, it will likely free only some,
+-         * but in any case safer than a potential double free */
+-        G_STRUCT_MEMBER (gchar *, context, context_offset) =
+-            av_strdup (G_STRUCT_MEMBER (gchar *, ffmpegenc, qdata->offset));
+-      } else {
+-        /* memcpy a bit heavy for a small copy,
+-         * but hardly part of 'inner loop' */
+-        memcpy (G_STRUCT_MEMBER_P (context, context_offset),
+-            G_STRUCT_MEMBER_P (ffmpegenc, qdata->offset), qdata->size);
+-      }
++          if ((res = av_opt_get_int (refcontext, opt->name,
++                      AV_OPT_SEARCH_CHILDREN, &val) >= 0))
++            g_value_set_flags (value, val);
++        } else {                /* oops, bit lazy we don't cover this case yet */
++          g_critical ("%s does not yet support type %s", GST_FUNCTION,
++              g_type_name (G_PARAM_SPEC_VALUE_TYPE (pspec)));
++        }
+     }
+-    list = list->next;
++    return res >= 0;
+   }
++
++  return TRUE;
+ }
+ 
+ void
+-gst_ffmpeg_cfg_finalize (GstFFMpegVidEnc * ffmpegenc)
++gst_ffmpeg_cfg_fill_context (GObject * object, AVCodecContext * context)
+ {
+   GParamSpec **pspecs;
+   guint num_props, i;
+ 
+-  pspecs = g_object_class_list_properties (G_OBJECT_GET_CLASS (ffmpegenc),
++  pspecs = g_object_class_list_properties (G_OBJECT_GET_CLASS (object),
+       &num_props);
+ 
+   for (i = 0; i < num_props; ++i) {
+     GParamSpec *pspec = pspecs[i];
+-    GParamSpecData *qdata;
++    const AVOption *opt;
++    GValue value;
+ 
+-    qdata = g_param_spec_get_qdata (pspec, quark);
++    opt = g_param_spec_get_qdata (pspec, avoption_quark);
+ 
+-    /* our param specs should have such qdata */
+-    if (!qdata)
++    if (!opt)
+       continue;
+ 
+-    switch (G_PARAM_SPEC_VALUE_TYPE (pspec)) {
+-      case G_TYPE_STRING:
+-        if (qdata->size == sizeof (gchar *)) {
+-          g_free (G_STRUCT_MEMBER (gchar *, ffmpegenc, qdata->offset));
+-          G_STRUCT_MEMBER (gchar *, ffmpegenc, qdata->offset) = NULL;
+-        }
+-        break;
+-      default:
+-        break;
+-    }
++    g_object_getv (object, 1, &pspec->name, &value);
++    set_option_value (context, pspec, &value, opt);
+   }
+   g_free (pspecs);
++}
++
++void
++gst_ffmpeg_cfg_finalize (void)
++{
++  GST_ERROR ("Finalizing");
++  g_assert (generic_overrides);
++  g_hash_table_unref (generic_overrides);
+ }
+--- ext/libav/gstavcfg.h.orig	2018-03-23 20:45:20 UTC
++++ ext/libav/gstavcfg.h
+@@ -21,21 +21,23 @@
+ #ifndef __GST_FFMPEGCFG_H__
+ #define __GST_FFMPEGCFG_H__
+ 
++#include <glib-object.h>
++#include <libavcodec/avcodec.h>
++
+ G_BEGIN_DECLS
+ 
+ void gst_ffmpeg_cfg_init (void);
+ 
+-void gst_ffmpeg_cfg_install_property (GstFFMpegVidEncClass * klass, guint base);
++void gst_ffmpeg_cfg_install_properties (GObjectClass * klass, AVCodec *in_plugin, guint base, gint flags);
+ 
+-gboolean gst_ffmpeg_cfg_set_property (GObject * object,
++gboolean gst_ffmpeg_cfg_set_property (AVCodecContext *refcontext,
+     const GValue * value, GParamSpec * pspec);
+ 
+-gboolean gst_ffmpeg_cfg_get_property (GObject * object,
++gboolean gst_ffmpeg_cfg_get_property (AVCodecContext *refcontext,
+     GValue * value, GParamSpec * pspec);
+ 
+-void gst_ffmpeg_cfg_fill_context (GstFFMpegVidEnc * ffmpegenc, AVCodecContext * context);
+-void gst_ffmpeg_cfg_set_defaults (GstFFMpegVidEnc * ffmpegenc);
+-void gst_ffmpeg_cfg_finalize (GstFFMpegVidEnc * ffmpegenc);
++void gst_ffmpeg_cfg_fill_context (GObject *object, AVCodecContext * context);
++void gst_ffmpeg_cfg_finalize (void);
+ 
+ G_END_DECLS
+ 
+--- ext/libav/gstavcodecmap.c.orig	2018-03-23 20:45:20 UTC
++++ ext/libav/gstavcodecmap.c
+@@ -825,10 +825,11 @@ gst_ffmpeg_codecid_to_caps (enum AVCodecID codec_id,
+       if (encode && context) {
+ 
+         gst_caps_set_simple (caps,
+-            "annex-f", G_TYPE_BOOLEAN, context->flags & CODEC_FLAG_4MV,
+-            "annex-j", G_TYPE_BOOLEAN, context->flags & CODEC_FLAG_LOOP_FILTER,
+-            "annex-i", G_TYPE_BOOLEAN, context->flags & CODEC_FLAG_AC_PRED,
+-            "annex-t", G_TYPE_BOOLEAN, context->flags & CODEC_FLAG_AC_PRED,
++            "annex-f", G_TYPE_BOOLEAN, context->flags & AV_CODEC_FLAG_4MV,
++            "annex-j", G_TYPE_BOOLEAN,
++            context->flags & AV_CODEC_FLAG_LOOP_FILTER,
++            "annex-i", G_TYPE_BOOLEAN, context->flags & AV_CODEC_FLAG_AC_PRED,
++            "annex-t", G_TYPE_BOOLEAN, context->flags & AV_CODEC_FLAG_AC_PRED,
+             NULL);
+       }
+       break;
+@@ -3181,7 +3182,7 @@ gst_ffmpeg_caps_with_codecid (enum AVCodecID codec_id,
+        * as is, as that is what most players do. */
+       context->extradata =
+           av_mallocz (GST_ROUND_UP_16 (size * 2 +
+-              FF_INPUT_BUFFER_PADDING_SIZE));
++              AV_INPUT_BUFFER_PADDING_SIZE));
+       copy_config (context->extradata, data, size, &extrasize);
+       GST_DEBUG ("escaped size: %d", extrasize);
+       context->extradata_size = extrasize;
+@@ -3192,7 +3193,7 @@ gst_ffmpeg_caps_with_codecid (enum AVCodecID codec_id,
+       GST_DEBUG ("copy codec_data");
+       context->extradata =
+           av_mallocz (GST_ROUND_UP_16 (map.size +
+-              FF_INPUT_BUFFER_PADDING_SIZE));
++              AV_INPUT_BUFFER_PADDING_SIZE));
+       memcpy (context->extradata, map.data, map.size);
+       context->extradata_size = map.size;
+     }
+@@ -3216,7 +3217,7 @@ gst_ffmpeg_caps_with_codecid (enum AVCodecID codec_id,
+     {
+       const gchar *mime = gst_structure_get_name (str);
+ 
+-      context->flags |= CODEC_FLAG_4MV;
++      context->flags |= AV_CODEC_FLAG_4MV;
+ 
+       if (!strcmp (mime, "video/x-divx"))
+         context->codec_tag = GST_MAKE_FOURCC ('D', 'I', 'V', 'X');
+@@ -3228,7 +3229,7 @@ gst_ffmpeg_caps_with_codecid (enum AVCodecID codec_id,
+         profile = gst_structure_get_string (str, "profile");
+         if (profile) {
+           if (g_strcmp0 (profile, "advanced-simple") == 0)
+-            context->flags |= CODEC_FLAG_GMC | CODEC_FLAG_QPEL;
++            context->flags |= AV_CODEC_FLAG_QPEL;
+         }
+       }
+       break;
+@@ -3334,18 +3335,18 @@ gst_ffmpeg_caps_with_codecid (enum AVCodecID codec_id,
+       gboolean val;
+ 
+       if (!gst_structure_get_boolean (str, "annex-f", &val) || val)
+-        context->flags |= CODEC_FLAG_4MV;
++        context->flags |= AV_CODEC_FLAG_4MV;
+       else
+-        context->flags &= ~CODEC_FLAG_4MV;
++        context->flags &= ~AV_CODEC_FLAG_4MV;
+       if ((!gst_structure_get_boolean (str, "annex-i", &val) || val) &&
+           (!gst_structure_get_boolean (str, "annex-t", &val) || val))
+-        context->flags |= CODEC_FLAG_AC_PRED;
++        context->flags |= AV_CODEC_FLAG_AC_PRED;
+       else
+-        context->flags &= ~CODEC_FLAG_AC_PRED;
++        context->flags &= ~AV_CODEC_FLAG_AC_PRED;
+       if (!gst_structure_get_boolean (str, "annex-j", &val) || val)
+-        context->flags |= CODEC_FLAG_LOOP_FILTER;
++        context->flags |= AV_CODEC_FLAG_LOOP_FILTER;
+       else
+-        context->flags &= ~CODEC_FLAG_LOOP_FILTER;
++        context->flags &= ~AV_CODEC_FLAG_LOOP_FILTER;
+       break;
+     }
+     case AV_CODEC_ID_ADPCM_G726:
+--- ext/libav/gstavcodecmap.h.orig	2018-03-23 20:45:20 UTC
++++ ext/libav/gstavcodecmap.h
+@@ -155,7 +155,7 @@ gst_ffmpeg_formatid_to_caps (const gchar *format_name)
+ 
+ /*
+  * _formatid_get_codecids () can be used to get the codecIDs
+- * (CODEC_ID_NONE-terminated list) that fit that specific
++ * (AV_CODEC_ID_NONE-terminated list) that fit that specific
+  * output format.
+  */
+ 
+--- ext/libav/gstavdeinterlace.c.orig	2018-03-23 20:45:20 UTC
++++ ext/libav/gstavdeinterlace.c
+@@ -96,7 +96,7 @@ typedef struct _GstFFMpegDeinterlace
+   GstFFMpegDeinterlaceMode new_mode;
+ 
+   enum AVPixelFormat pixfmt;
+-  AVPicture from_frame, to_frame;
++  AVFrame from_frame, to_frame;
+ 
+   AVFilterContext *buffersink_ctx;
+   AVFilterContext *buffersrc_ctx;
+@@ -355,8 +355,8 @@ init_filter_graph (GstFFMpegDeinterlace * deinterlace,
+ }
+ 
+ static int
+-process_filter_graph (GstFFMpegDeinterlace * deinterlace, AVPicture * dst,
+-    const AVPicture * src, enum AVPixelFormat pixfmt, int width, int height)
++process_filter_graph (GstFFMpegDeinterlace * deinterlace, AVFrame * dst,
++    const AVFrame * src, enum AVPixelFormat pixfmt, int width, int height)
+ {
+   int res;
+ 
+@@ -384,8 +384,9 @@ process_filter_graph (GstFFMpegDeinterlace * deinterla
+       deinterlace->filter_frame);
+   if (res < 0)
+     return res;
+-  av_picture_copy (dst, (const AVPicture *) deinterlace->filter_frame, pixfmt,
+-      width, height);
++  av_image_copy (dst->data, dst->linesize,
++      (const uint8_t **) deinterlace->filter_frame->data,
++      deinterlace->filter_frame->linesize, pixfmt, width, height);
+   av_frame_unref (deinterlace->filter_frame);
+ 
+   return 0;
+--- ext/libav/gstavdemux.c.orig	2018-07-18 16:35:27 UTC
++++ ext/libav/gstavdemux.c
+@@ -26,6 +26,7 @@
+ #include <string.h>
+ 
+ #include <libavformat/avformat.h>
++#include <libavutil/imgutils.h>
+ /* #include <ffmpeg/avi.h> */
+ #include <gst/gst.h>
+ #include <gst/base/gstflowcombiner.h>
+@@ -922,18 +923,19 @@ gst_ffmpegdemux_get_stream (GstFFMpegDemux * demux, AV
+   gint num;
+   gchar *padname;
+   const gchar *codec;
+-  AVCodecContext *ctx;
++  AVCodecContext *ctx = NULL;
+   GstFFStream *stream;
+   GstEvent *event;
+   gchar *stream_id;
+ 
+-  ctx = avstream->codec;
+-
+   oclass = (GstFFMpegDemuxClass *) G_OBJECT_GET_CLASS (demux);
+ 
+   if (demux->streams[avstream->index] != NULL)
+     goto exists;
+ 
++  ctx = avcodec_alloc_context3 (NULL);
++  avcodec_parameters_to_context (ctx, avstream->codecpar);
++
+   /* create new stream */
+   stream = g_new0 (GstFFStream, 1);
+   demux->streams[avstream->index] = stream;
+@@ -1042,23 +1044,27 @@ gst_ffmpegdemux_get_stream (GstFFMpegDemux * demux, AV
+         GST_TAG_VIDEO_CODEC : GST_TAG_AUDIO_CODEC, codec, NULL);
+   }
+ 
++done:
++  if (ctx)
++    avcodec_free_context (&ctx);
+   return stream;
+ 
+   /* ERRORS */
+ exists:
+   {
+     GST_DEBUG_OBJECT (demux, "Pad existed (stream %d)", avstream->index);
+-    return demux->streams[avstream->index];
++    stream = demux->streams[avstream->index];
++    goto done;
+   }
+ unknown_type:
+   {
+     GST_WARNING_OBJECT (demux, "Unknown pad type %d", ctx->codec_type);
+-    return stream;
++    goto done;
+   }
+ unknown_caps:
+   {
+     GST_WARNING_OBJECT (demux, "Unknown caps for codec %d", ctx->codec_id);
+-    return stream;
++    goto done;
+   }
+ }
+ 
+@@ -1477,12 +1483,12 @@ gst_ffmpegdemux_loop (GstFFMpegDemux * demux)
+   /* prepare to push packet to peer */
+   srcpad = stream->pad;
+ 
+-  rawvideo = (avstream->codec->codec_type == AVMEDIA_TYPE_VIDEO &&
+-      avstream->codec->codec_id == AV_CODEC_ID_RAWVIDEO);
++  rawvideo = (avstream->codecpar->codec_type == AVMEDIA_TYPE_VIDEO &&
++      avstream->codecpar->codec_id == AV_CODEC_ID_RAWVIDEO);
+ 
+   if (rawvideo)
+-    outsize = gst_ffmpeg_avpicture_get_size (avstream->codec->pix_fmt,
+-        avstream->codec->width, avstream->codec->height);
++    outsize = gst_ffmpeg_avpicture_get_size (avstream->codecpar->format,
++        avstream->codecpar->width, avstream->codecpar->height);
+   else
+     outsize = pkt.size;
+ 
+@@ -1491,23 +1497,24 @@ gst_ffmpegdemux_loop (GstFFMpegDemux * demux)
+   /* copy the data from packet into the target buffer
+    * and do conversions for raw video packets */
+   if (rawvideo) {
+-    AVPicture src, dst;
++    AVFrame src, dst;
+     const gchar *plugin_name =
+         ((GstFFMpegDemuxClass *) (G_OBJECT_GET_CLASS (demux)))->in_plugin->name;
+     GstMapInfo map;
+ 
+     GST_WARNING ("Unknown demuxer %s, no idea what to do", plugin_name);
+     gst_ffmpeg_avpicture_fill (&src, pkt.data,
+-        avstream->codec->pix_fmt, avstream->codec->width,
+-        avstream->codec->height);
++        avstream->codecpar->format, avstream->codecpar->width,
++        avstream->codecpar->height);
+ 
+     gst_buffer_map (outbuf, &map, GST_MAP_WRITE);
+     gst_ffmpeg_avpicture_fill (&dst, map.data,
+-        avstream->codec->pix_fmt, avstream->codec->width,
+-        avstream->codec->height);
++        avstream->codecpar->format, avstream->codecpar->width,
++        avstream->codecpar->height);
+ 
+-    av_picture_copy (&dst, &src, avstream->codec->pix_fmt,
+-        avstream->codec->width, avstream->codec->height);
++    av_image_copy (dst.data, dst.linesize, (const uint8_t **) src.data,
++        src.linesize, avstream->codecpar->format, avstream->codecpar->width,
++        avstream->codecpar->height);
+     gst_buffer_unmap (outbuf, &map);
+   } else {
+     gst_buffer_fill (outbuf, 0, pkt.data, outsize);
+@@ -1954,7 +1961,7 @@ gboolean
+ gst_ffmpegdemux_register (GstPlugin * plugin)
+ {
+   GType type;
+-  AVInputFormat *in_plugin;
++  const AVInputFormat *in_plugin;
+   gchar *extensions;
+   GTypeInfo typeinfo = {
+     sizeof (GstFFMpegDemuxClass),
+@@ -1968,11 +1975,11 @@ gst_ffmpegdemux_register (GstPlugin * plugin)
+     (GInstanceInitFunc) gst_ffmpegdemux_init,
+   };
+ 
+-  in_plugin = av_iformat_next (NULL);
++  void *i = 0;
+ 
+   GST_LOG ("Registering demuxers");
+ 
+-  while (in_plugin) {
++  while ((in_plugin = av_demuxer_iterate (&i))) {
+     gchar *type_name, *typefind_name;
+     gint rank;
+     gboolean register_typefind_func = TRUE;
+@@ -2000,14 +2007,14 @@ gst_ffmpegdemux_register (GstPlugin * plugin)
+         !strncmp (in_plugin->name, "f64", 3) ||
+         !strcmp (in_plugin->name, "mulaw") || !strcmp (in_plugin->name, "alaw")
+         )
+-      goto next;
++      continue;
+ 
+     /* no network demuxers */
+     if (!strcmp (in_plugin->name, "sdp") ||
+         !strcmp (in_plugin->name, "rtsp") ||
+         !strcmp (in_plugin->name, "applehttp")
+         )
+-      goto next;
++      continue;
+ 
+     /* these don't do what one would expect or
+      * are only partially functional/useful */
+@@ -2015,7 +2022,7 @@ gst_ffmpegdemux_register (GstPlugin * plugin)
+         !strcmp (in_plugin->name, "wv") ||
+         !strcmp (in_plugin->name, "ass") ||
+         !strcmp (in_plugin->name, "ffmetadata"))
+-      goto next;
++      continue;
+ 
+     /* Don't use the typefind functions of formats for which we already have
+      * better typefind functions */
+@@ -2095,7 +2102,7 @@ gst_ffmpegdemux_register (GstPlugin * plugin)
+     else {
+       GST_DEBUG ("ignoring %s", in_plugin->name);
+       rank = GST_RANK_NONE;
+-      goto next;
++      continue;
+     }
+ 
+     /* construct the type */
+@@ -2105,7 +2112,7 @@ gst_ffmpegdemux_register (GstPlugin * plugin)
+     /* if it's already registered, drop it */
+     if (g_type_from_name (type_name)) {
+       g_free (type_name);
+-      goto next;
++      continue;
+     }
+ 
+     typefind_name = g_strdup_printf ("avtype_%s", in_plugin->name);
+@@ -2123,8 +2130,8 @@ gst_ffmpegdemux_register (GstPlugin * plugin)
+     if (!gst_element_register (plugin, type_name, rank, type) ||
+         (register_typefind_func == TRUE &&
+             !gst_type_find_register (plugin, typefind_name, rank,
+-                gst_ffmpegdemux_type_find, extensions, NULL, in_plugin,
+-                NULL))) {
++                gst_ffmpegdemux_type_find, extensions, NULL,
++                (gpointer) in_plugin, NULL))) {
+       g_warning ("Registration of type %s failed", type_name);
+       g_free (type_name);
+       g_free (typefind_name);
+@@ -2135,9 +2142,6 @@ gst_ffmpegdemux_register (GstPlugin * plugin)
+     g_free (type_name);
+     g_free (typefind_name);
+     g_free (extensions);
+-
+-  next:
+-    in_plugin = av_iformat_next (in_plugin);
+   }
+ 
+   GST_LOG ("Finished registering demuxers");
+--- ext/libav/gstavmux.c.orig	2018-03-23 20:45:20 UTC
++++ ext/libav/gstavmux.c
+@@ -160,7 +160,7 @@ gst_ffmpegmux_get_replacement (const char *name)
+     {"mp3", "id3v2mux"},
+     {"mp2", "id3v2mux"}
+   };
+-  int i;
++  guint i;
+ 
+   for (i = 0; i < sizeof (blacklist) / sizeof (blacklist[0]); i++) {
+     if (strcmp (blacklist[i].name, name) == 0) {
+@@ -446,10 +446,10 @@ gst_ffmpegmux_request_new_pad (GstElement * element,
+   /* AVStream needs to be created */
+   st = avformat_new_stream (ffmpegmux->context, NULL);
+   st->id = collect_pad->padnum;
+-  st->codec->codec_type = type;
+-  st->codec->codec_id = AV_CODEC_ID_NONE;       /* this is a check afterwards */
+-  st->codec->bit_rate = bitrate;
+-  st->codec->frame_size = framesize;
++  st->codecpar->codec_type = type;
++  st->codecpar->codec_id = AV_CODEC_ID_NONE;    /* this is a check afterwards */
++  st->codecpar->bit_rate = bitrate;
++  st->codecpar->frame_size = framesize;
+   /* we fill in codec during capsnego */
+ 
+   /* we love debug output (c) (tm) (r) */
+@@ -475,6 +475,7 @@ gst_ffmpegmux_setcaps (GstPad * pad, GstCaps * caps)
+   GstFFMpegMux *ffmpegmux = (GstFFMpegMux *) (gst_pad_get_parent (pad));
+   GstFFMpegMuxPad *collect_pad;
+   AVStream *st;
++  AVCodecContext tmp;
+ 
+   collect_pad = (GstFFMpegMuxPad *) gst_pad_get_element_private (pad);
+ 
+@@ -484,12 +485,14 @@ gst_ffmpegmux_setcaps (GstPad * pad, GstCaps * caps)
+ 
+   /* for the format-specific guesses, we'll go to
+    * our famous codec mapper */
+-  if (gst_ffmpeg_caps_to_codecid (caps, st->codec) == AV_CODEC_ID_NONE)
++  if (gst_ffmpeg_caps_to_codecid (caps, &tmp) == AV_CODEC_ID_NONE)
+     goto not_accepted;
+ 
++  avcodec_parameters_from_context (st->codecpar, &tmp);
++
+   /* copy over the aspect ratios, ffmpeg expects the stream aspect to match the
+    * codec aspect. */
+-  st->sample_aspect_ratio = st->codec->sample_aspect_ratio;
++  st->sample_aspect_ratio = st->codecpar->sample_aspect_ratio;
+ 
+   GST_LOG_OBJECT (pad, "accepted caps %" GST_PTR_FORMAT, caps);
+   return TRUE;
+@@ -563,23 +566,23 @@ gst_ffmpegmux_collected (GstCollectPads * pads, gpoint
+       AVStream *st = ffmpegmux->context->streams[collect_pad->padnum];
+ 
+       /* check whether the pad has successfully completed capsnego */
+-      if (st->codec->codec_id == AV_CODEC_ID_NONE) {
++      if (st->codecpar->codec_id == AV_CODEC_ID_NONE) {
+         GST_ELEMENT_ERROR (ffmpegmux, CORE, NEGOTIATION, (NULL),
+             ("no caps set on stream %d (%s)", collect_pad->padnum,
+-                (st->codec->codec_type == AVMEDIA_TYPE_VIDEO) ?
++                (st->codecpar->codec_type == AVMEDIA_TYPE_VIDEO) ?
+                 "video" : "audio"));
+         return GST_FLOW_ERROR;
+       }
+       /* set framerate for audio */
+-      if (st->codec->codec_type == AVMEDIA_TYPE_AUDIO) {
+-        switch (st->codec->codec_id) {
++      if (st->codecpar->codec_type == AVMEDIA_TYPE_AUDIO) {
++        switch (st->codecpar->codec_id) {
+           case AV_CODEC_ID_PCM_S16LE:
+           case AV_CODEC_ID_PCM_S16BE:
+           case AV_CODEC_ID_PCM_U16LE:
+           case AV_CODEC_ID_PCM_U16BE:
+           case AV_CODEC_ID_PCM_S8:
+           case AV_CODEC_ID_PCM_U8:
+-            st->codec->frame_size = 1;
++            st->codecpar->frame_size = 1;
+             break;
+           default:
+           {
+@@ -590,8 +593,8 @@ gst_ffmpegmux_collected (GstCollectPads * pads, gpoint
+             buffer = gst_collect_pads_peek (ffmpegmux->collect,
+                 (GstCollectData *) collect_pad);
+             if (buffer) {
+-              st->codec->frame_size =
+-                  st->codec->sample_rate *
++              st->codecpar->frame_size =
++                  st->codecpar->sample_rate *
+                   GST_BUFFER_DURATION (buffer) / GST_SECOND;
+               gst_buffer_unref (buffer);
+             }
+@@ -733,8 +736,6 @@ gst_ffmpegmux_collected (GstCollectPads * pads, gpoint
+     buf =
+         gst_collect_pads_pop (ffmpegmux->collect, (GstCollectData *) best_pad);
+ 
+-    ffmpegmux->context->streams[best_pad->padnum]->codec->frame_number++;
+-
+     /* set time */
+     pkt.pts = gst_ffmpeg_time_gst_to_ff (GST_BUFFER_TIMESTAMP (buf),
+         ffmpegmux->context->streams[best_pad->padnum]->time_base);
+@@ -844,7 +845,7 @@ gst_ffmpeg_mux_simple_caps_set_int_list (GstCaps * cap
+ {
+   GValue list = { 0, };
+   GValue val = { 0, };
+-  gint i;
++  guint i;
+ 
+   g_return_if_fail (GST_CAPS_IS_SIMPLE (caps));
+ 
+@@ -880,13 +881,12 @@ gst_ffmpegmux_register (GstPlugin * plugin)
+     NULL, NULL, NULL
+   };
+   GType type;
+-  AVOutputFormat *in_plugin;
++  const AVOutputFormat *in_plugin;
++  void *i = 0;
+ 
+-  in_plugin = av_oformat_next (NULL);
+-
+   GST_LOG ("Registering muxers");
+ 
+-  while (in_plugin) {
++  while ((in_plugin = av_muxer_iterate (&i))) {
+     gchar *type_name;
+     GstRank rank = GST_RANK_MARGINAL;
+ 
+@@ -925,12 +925,12 @@ gst_ffmpegmux_register (GstPlugin * plugin)
+         !strncmp (in_plugin->name, "webm", 4)
+         ) {
+       GST_LOG ("Ignoring muxer %s", in_plugin->name);
+-      goto next;
++      continue;
+     }
+ 
+     if ((!strncmp (in_plugin->long_name, "raw ", 4))) {
+       GST_LOG ("Ignoring raw muxer %s", in_plugin->name);
+-      goto next;
++      continue;
+     }
+ 
+     if (gst_ffmpegmux_get_replacement (in_plugin->name))
+@@ -958,9 +958,6 @@ gst_ffmpegmux_register (GstPlugin * plugin)
+     }
+ 
+     g_free (type_name);
+-
+-  next:
+-    in_plugin = av_oformat_next (in_plugin);
+   }
+ 
+   GST_LOG ("Finished registering muxers");
+--- ext/libav/gstavutils.c.orig	2018-03-23 20:45:20 UTC
++++ ext/libav/gstavutils.c
+@@ -77,7 +77,7 @@ av_smp_format_depth (enum AVSampleFormat smp_fmt)
+ 
+ 
+ /*
+- * Fill in pointers to memory in a AVPicture, where
++ * Fill in pointers to memory in a AVFrame, where
+  * everything is aligned by 4 (as required by X).
+  * This is mostly a copy from imgconvert.c with some
+  * small changes.
+@@ -88,7 +88,7 @@ av_smp_format_depth (enum AVSampleFormat smp_fmt)
+ #define FF_COLOR_YUV      2     /* YUV color space. 16 <= Y <= 235, 16 <= U, V <= 240 */
+ #define FF_COLOR_YUV_JPEG 3     /* YUV color space. 0 <= Y <= 255, 0 <= U, V <= 255 */
+ 
+-#define FF_PIXEL_PLANAR   0     /* each channel has one component in AVPicture */
++#define FF_PIXEL_PLANAR   0     /* each channel has one component in AVFrame */
+ #define FF_PIXEL_PACKED   1     /* only one components containing all the channels */
+ #define FF_PIXEL_PALETTE  2     /* one components containing indexes for a palette */
+ 
+@@ -267,7 +267,7 @@ gst_ffmpeg_init_pix_fmt_info (void)
+ int
+ gst_ffmpeg_avpicture_get_size (int pix_fmt, int width, int height)
+ {
+-  AVPicture dummy_pict;
++  AVFrame dummy_pict;
+ 
+   return gst_ffmpeg_avpicture_fill (&dummy_pict, NULL, pix_fmt, width, height);
+ }
+@@ -280,7 +280,7 @@ gst_ffmpeg_avpicture_get_size (int pix_fmt, int width,
+ #define DIV_ROUND_UP_X(v,x) (((v) + GEN_MASK(x)) >> (x))
+ 
+ int
+-gst_ffmpeg_avpicture_fill (AVPicture * picture,
++gst_ffmpeg_avpicture_fill (AVFrame * picture,
+     uint8_t * ptr, enum AVPixelFormat pix_fmt, int width, int height)
+ {
+   int size, w2, h2, size2;
+--- ext/libav/gstavutils.h.orig	2018-03-23 20:45:20 UTC
++++ ext/libav/gstavutils.h
+@@ -36,11 +36,11 @@ int
+ gst_ffmpeg_avpicture_get_size (int pix_fmt, int width, int height);
+ 
+ /*
+- * Fill in pointers in an AVPicture, aligned by 4 (required by X).
++ * Fill in pointers in an AVFrame, aligned by 4 (required by X).
+  */
+ 
+ int
+-gst_ffmpeg_avpicture_fill (AVPicture * picture,
++gst_ffmpeg_avpicture_fill (AVFrame * picture,
+                            uint8_t *   ptr,
+                            enum AVPixelFormat pix_fmt,
+                            int         width,
+--- ext/libav/gstavviddec.c.orig	2018-07-19 11:29:37 UTC
++++ ext/libav/gstavviddec.c
+@@ -239,7 +239,7 @@ gst_ffmpegviddec_class_init (GstFFMpegVidDecClass * kl
+           DEFAULT_OUTPUT_CORRUPT, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+ 
+   caps = klass->in_plugin->capabilities;
+-  if (caps & (CODEC_CAP_FRAME_THREADS | CODEC_CAP_SLICE_THREADS)) {
++  if (caps & (AV_CODEC_CAP_FRAME_THREADS | AV_CODEC_CAP_SLICE_THREADS)) {
+     g_object_class_install_property (G_OBJECT_CLASS (klass), PROP_MAX_THREADS,
+         g_param_spec_int ("max-threads", "Maximum decode threads",
+             "Maximum number of worker threads to spawn. (0 = auto)",
+@@ -317,7 +317,7 @@ static gboolean
+ gst_ffmpegviddec_close (GstFFMpegVidDec * ffmpegdec, gboolean reset)
+ {
+   GstFFMpegVidDecClass *oclass;
+-  gint i;
++  guint i;
+ 
+   oclass = (GstFFMpegVidDecClass *) (G_OBJECT_GET_CLASS (ffmpegdec));
+ 
+@@ -353,7 +353,7 @@ static gboolean
+ gst_ffmpegviddec_open (GstFFMpegVidDec * ffmpegdec)
+ {
+   GstFFMpegVidDecClass *oclass;
+-  gint i;
++  guint i;
+ 
+   oclass = (GstFFMpegVidDecClass *) (G_OBJECT_GET_CLASS (ffmpegdec));
+ 
+@@ -369,7 +369,7 @@ gst_ffmpegviddec_open (GstFFMpegVidDec * ffmpegdec)
+       oclass->in_plugin->name, oclass->in_plugin->id);
+ 
+   gst_ffmpegviddec_context_set_flags (ffmpegdec->context,
+-      CODEC_FLAG_OUTPUT_CORRUPT, ffmpegdec->output_corrupt);
++      AV_CODEC_FLAG_OUTPUT_CORRUPT, ffmpegdec->output_corrupt);
+ 
+   return TRUE;
+ 
+@@ -499,7 +499,7 @@ gst_ffmpegviddec_set_format (GstVideoDecoder * decoder
+     gboolean is_live;
+ 
+     if (ffmpegdec->max_threads == 0) {
+-      if (!(oclass->in_plugin->capabilities & CODEC_CAP_AUTO_THREADS))
++      if (!(oclass->in_plugin->capabilities & AV_CODEC_CAP_AUTO_THREADS))
+         ffmpegdec->context->thread_count = gst_ffmpeg_auto_max_threads ();
+       else
+         ffmpegdec->context->thread_count = 0;
+@@ -618,7 +618,6 @@ gst_ffmpegvideodec_prepare_dr_pool (GstFFMpegVidDec * 
+   gint width, height;
+   gint linesize_align[4];
+   gint i;
+-  guint edge;
+   gsize max_align;
+ 
+   width = GST_VIDEO_INFO_WIDTH (info);
+@@ -628,20 +627,11 @@ gst_ffmpegvideodec_prepare_dr_pool (GstFFMpegVidDec * 
+   avcodec_align_dimensions2 (ffmpegdec->context, &width, &height,
+       linesize_align);
+ 
+-  if (ffmpegdec->context->flags & CODEC_FLAG_EMU_EDGE)
+-    edge = 0;
+-  else
+-    edge = avcodec_get_edge_width ();
++  align.padding_top = 0;
++  align.padding_left = 0;
++  align.padding_right = width - GST_VIDEO_INFO_WIDTH (info);
++  align.padding_bottom = height - GST_VIDEO_INFO_HEIGHT (info);
+ 
+-  /* increase the size for the padding */
+-  width += edge << 1;
+-  height += edge << 1;
+-
+-  align.padding_top = edge;
+-  align.padding_left = edge;
+-  align.padding_right = width - GST_VIDEO_INFO_WIDTH (info) - edge;
+-  align.padding_bottom = height - GST_VIDEO_INFO_HEIGHT (info) - edge;
+-
+   /* add extra padding to match libav buffer allocation sizes */
+   align.padding_bottom++;
+ 
+@@ -684,7 +674,7 @@ gst_ffmpegviddec_ensure_internal_pool (GstFFMpegVidDec
+   GstVideoFormat format;
+   GstCaps *caps;
+   GstStructure *config;
+-  gint i;
++  guint i;
+ 
+   if (ffmpegdec->internal_pool != NULL &&
+       ffmpegdec->pool_width == picture->width &&
+@@ -698,6 +688,12 @@ gst_ffmpegviddec_ensure_internal_pool (GstFFMpegVidDec
+   format = gst_ffmpeg_pixfmt_to_videoformat (picture->format);
+   gst_video_info_set_format (&info, format, picture->width, picture->height);
+ 
++  /* If we have not yet been negotiated, a NONE format here would
++   * result in invalid initial dimension alignments, and potential
++   * out of bounds writes.
++   */
++  ffmpegdec->context->pix_fmt = picture->format;
++
+   for (i = 0; i < G_N_ELEMENTS (ffmpegdec->stride); i++)
+     ffmpegdec->stride[i] = -1;
+ 
+@@ -736,7 +732,8 @@ gst_ffmpegviddec_can_direct_render (GstFFMpegVidDec * 
+     return FALSE;
+ 
+   oclass = (GstFFMpegVidDecClass *) (G_OBJECT_GET_CLASS (ffmpegdec));
+-  return ((oclass->in_plugin->capabilities & CODEC_CAP_DR1) == CODEC_CAP_DR1);
++  return ((oclass->in_plugin->capabilities & AV_CODEC_CAP_DR1) ==
++      AV_CODEC_CAP_DR1);
+ }
+ 
+ /* called when ffmpeg wants us to allocate a buffer to write the decoded frame
+@@ -748,7 +745,7 @@ gst_ffmpegviddec_get_buffer2 (AVCodecContext * context
+   GstVideoCodecFrame *frame;
+   GstFFMpegVidDecVideoFrame *dframe;
+   GstFFMpegVidDec *ffmpegdec;
+-  gint c;
++  guint c;
+   GstFlowReturn ret;
+ 
+   ffmpegdec = (GstFFMpegVidDec *) context->opaque;
+@@ -1388,7 +1385,7 @@ get_output_buffer (GstFFMpegVidDec * ffmpegdec, GstVid
+   AVFrame pic, *outpic;
+   GstVideoFrame vframe;
+   GstVideoInfo *info;
+-  gint c;
++  guint c;
+ 
+   GST_LOG_OBJECT (ffmpegdec, "get output buffer");
+ 
+@@ -1469,28 +1466,18 @@ gst_avpacket_init (AVPacket * packet, guint8 * data, g
+   packet->size = size;
+ }
+ 
+-/* gst_ffmpegviddec_[video|audio]_frame:
+- * ffmpegdec:
+- * data: pointer to the data to decode
+- * size: size of data in bytes
+- * in_timestamp: incoming timestamp.
+- * in_duration: incoming duration.
+- * in_offset: incoming offset (frame number).
+- * ret: Return flow.
+- *
+- * Returns: number of bytes used in decoding. The check for successful decode is
+- *   outbuf being non-NULL.
++/*
++ * Returns: whether a frame was decoded
+  */
+-static gint
++static gboolean
+ gst_ffmpegviddec_video_frame (GstFFMpegVidDec * ffmpegdec,
+-    guint8 * data, guint size, gint * have_data, GstVideoCodecFrame * frame,
+-    GstFlowReturn * ret)
++    GstVideoCodecFrame * frame, GstFlowReturn * ret)
+ {
+-  gint len = -1;
++  gint res;
++  gboolean got_frame = FALSE;
+   gboolean mode_switch;
+   GstVideoCodecFrame *out_frame;
+   GstFFMpegVidDecVideoFrame *out_dframe;
+-  AVPacket packet;
+   GstBufferPool *pool;
+ 
+   *ret = GST_FLOW_OK;
+@@ -1502,49 +1489,25 @@ gst_ffmpegviddec_video_frame (GstFFMpegVidDec * ffmpeg
+    * else we might skip a reference frame */
+   gst_ffmpegviddec_do_qos (ffmpegdec, frame, &mode_switch);
+ 
+-  if (frame) {
+-    /* save reference to the timing info */
+-    ffmpegdec->context->reordered_opaque = (gint64) frame->system_frame_number;
+-    ffmpegdec->picture->reordered_opaque = (gint64) frame->system_frame_number;
++  res = avcodec_receive_frame (ffmpegdec->context, ffmpegdec->picture);
+ 
+-    GST_DEBUG_OBJECT (ffmpegdec, "stored opaque values idx %d",
+-        frame->system_frame_number);
++  /* No frames available at this time */
++  if (res == AVERROR (EAGAIN))
++    goto beach;
++  else if (res == AVERROR_EOF) {        /* Should not happen */
++    *ret = GST_FLOW_EOS;
++    GST_WARNING_OBJECT (ffmpegdec,
++        "Tried to receive frame on a flushed context");
++    goto beach;
++  } else if (res < 0) {
++    *ret = GST_FLOW_ERROR;
++    GST_ELEMENT_ERROR (ffmpegdec, STREAM, DECODE, ("Decoding problem"),
++        ("Legitimate decoding error"));
++    goto beach;
+   }
+ 
+-  /* now decode the frame */
+-  gst_avpacket_init (&packet, data, size);
++  got_frame = TRUE;
+ 
+-  if (ffmpegdec->palette) {
+-    guint8 *pal;
+-
+-    pal = av_packet_new_side_data (&packet, AV_PKT_DATA_PALETTE,
+-        AVPALETTE_SIZE);
+-    gst_buffer_extract (ffmpegdec->palette, 0, pal, AVPALETTE_SIZE);
+-    GST_DEBUG_OBJECT (ffmpegdec, "copy pal %p %p", &packet, pal);
+-  }
+-
+-  /* This might call into get_buffer() from another thread,
+-   * which would cause a deadlock. Release the lock here
+-   * and taking it again later seems safe
+-   * See https://bugzilla.gnome.org/show_bug.cgi?id=726020
+-   */
+-  GST_VIDEO_DECODER_STREAM_UNLOCK (ffmpegdec);
+-  len = avcodec_decode_video2 (ffmpegdec->context,
+-      ffmpegdec->picture, have_data, &packet);
+-  GST_VIDEO_DECODER_STREAM_LOCK (ffmpegdec);
+-
+-  GST_DEBUG_OBJECT (ffmpegdec, "after decode: len %d, have_data %d",
+-      len, *have_data);
+-
+-  /* when we are in skip_frame mode, don't complain when ffmpeg returned
+-   * no data because we told it to skip stuff. */
+-  if (len < 0 && (mode_switch || ffmpegdec->context->skip_frame))
+-    len = 0;
+-
+-  /* no data, we're done */
+-  if (len < 0 || *have_data == 0)
+-    goto beach;
+-
+   /* get the output picture timing info again */
+   out_dframe = ffmpegdec->picture->opaque;
+   out_frame = gst_video_codec_frame_ref (out_dframe->frame);
+@@ -1614,8 +1577,8 @@ gst_ffmpegviddec_video_frame (GstFFMpegVidDec * ffmpeg
+     GstVideoMeta *vmeta = gst_buffer_get_video_meta (out_frame->output_buffer);
+     if (vmeta) {
+       GstVideoInfo *info = &ffmpegdec->output_state->info;
+-      g_assert (vmeta->width == GST_VIDEO_INFO_WIDTH (info));
+-      g_assert (vmeta->height == GST_VIDEO_INFO_HEIGHT (info));
++      g_assert ((gint) vmeta->width == GST_VIDEO_INFO_WIDTH (info));
++      g_assert ((gint) vmeta->height == GST_VIDEO_INFO_HEIGHT (info));
+     }
+   }
+ #endif
+@@ -1683,16 +1646,15 @@ gst_ffmpegviddec_video_frame (GstFFMpegVidDec * ffmpeg
+       gst_video_decoder_finish_frame (GST_VIDEO_DECODER (ffmpegdec), out_frame);
+ 
+ beach:
+-  GST_DEBUG_OBJECT (ffmpegdec, "return flow %s, len %d",
+-      gst_flow_get_name (*ret), len);
+-  return len;
++  GST_DEBUG_OBJECT (ffmpegdec, "return flow %s, got frame: %d",
++      gst_flow_get_name (*ret), got_frame);
++  return got_frame;
+ 
+   /* special cases */
+ no_output:
+   {
+     GST_DEBUG_OBJECT (ffmpegdec, "no output buffer");
+     gst_video_decoder_drop_frame (GST_VIDEO_DECODER (ffmpegdec), out_frame);
+-    len = -1;
+     goto beach;
+   }
+ 
+@@ -1709,50 +1671,23 @@ negotiation_error:
+ }
+ 
+ 
+-/* gst_ffmpegviddec_frame:
+- * ffmpegdec:
+- * data: pointer to the data to decode
+- * size: size of data in bytes
+- * got_data: 0 if no data was decoded, != 0 otherwise.
+- * in_time: timestamp of data
+- * in_duration: duration of data
+- * ret: GstFlowReturn to return in the chain function
+- *
+- * Decode the given frame and pushes it downstream.
+- *
+- * Returns: Number of bytes used in decoding, -1 on error/failure.
+- */
+-
+-static gint
+-gst_ffmpegviddec_frame (GstFFMpegVidDec * ffmpegdec,
+-    guint8 * data, guint size, gint * have_data, GstVideoCodecFrame * frame,
++ /* Returns: Whether a frame was decoded */
++static gboolean
++gst_ffmpegviddec_frame (GstFFMpegVidDec * ffmpegdec, GstVideoCodecFrame * frame,
+     GstFlowReturn * ret)
+ {
+-  GstFFMpegVidDecClass *oclass;
+-  gint len = 0;
++  gboolean got_frame = FALSE;
+ 
+   if (G_UNLIKELY (ffmpegdec->context->codec == NULL))
+     goto no_codec;
+ 
+-  GST_LOG_OBJECT (ffmpegdec, "data:%p, size:%d", data, size);
+-
+   *ret = GST_FLOW_OK;
+   ffmpegdec->context->frame_number++;
+ 
+-  oclass = (GstFFMpegVidDecClass *) (G_OBJECT_GET_CLASS (ffmpegdec));
++  got_frame = gst_ffmpegviddec_video_frame (ffmpegdec, frame, ret);
+ 
+-  len =
+-      gst_ffmpegviddec_video_frame (ffmpegdec, data, size, have_data, frame,
+-      ret);
++  return got_frame;
+ 
+-  if (len < 0) {
+-    GST_WARNING_OBJECT (ffmpegdec,
+-        "avdec_%s: decoding error (len: %d, have_data: %d)",
+-        oclass->in_plugin->name, len, *have_data);
+-  }
+-
+-  return len;
+-
+   /* ERRORS */
+ no_codec:
+   {
+@@ -1773,16 +1708,16 @@ gst_ffmpegviddec_drain (GstVideoDecoder * decoder)
+ 
+   oclass = (GstFFMpegVidDecClass *) (G_OBJECT_GET_CLASS (ffmpegdec));
+ 
+-  if (oclass->in_plugin->capabilities & CODEC_CAP_DELAY) {
+-    gint have_data, len;
++  if (oclass->in_plugin->capabilities & AV_CODEC_CAP_DELAY) {
+     GstFlowReturn ret;
++    gboolean got_frame = FALSE;
+ 
+     GST_LOG_OBJECT (ffmpegdec,
+         "codec has delay capabilities, calling until ffmpeg has drained everything");
+ 
+     do {
+-      len = gst_ffmpegviddec_frame (ffmpegdec, NULL, 0, &have_data, NULL, &ret);
+-    } while (len >= 0 && have_data == 1 && ret == GST_FLOW_OK);
++      got_frame = gst_ffmpegviddec_frame (ffmpegdec, NULL, &ret);
++    } while (got_frame && ret == GST_FLOW_OK);
+   }
+ 
+   return GST_FLOW_OK;
+@@ -1793,11 +1728,12 @@ gst_ffmpegviddec_handle_frame (GstVideoDecoder * decod
+     GstVideoCodecFrame * frame)
+ {
+   GstFFMpegVidDec *ffmpegdec = (GstFFMpegVidDec *) decoder;
+-  guint8 *data, *bdata;
+-  gint size, len, have_data, bsize;
++  guint8 *data;
++  gint size;
++  gboolean got_frame;
+   GstMapInfo minfo;
+   GstFlowReturn ret = GST_FLOW_OK;
+-  gboolean do_padding;
++  AVPacket packet;
+ 
+   GST_LOG_OBJECT (ffmpegdec,
+       "Received new data of size %" G_GSIZE_FORMAT ", dts %" GST_TIME_FORMAT
+@@ -1815,94 +1751,84 @@ gst_ffmpegviddec_handle_frame (GstVideoDecoder * decod
+   GST_VIDEO_CODEC_FRAME_FLAG_SET (frame,
+       GST_VIDEO_CODEC_FRAME_FLAG_DECODE_ONLY);
+ 
+-  bdata = minfo.data;
+-  bsize = minfo.size;
++  data = minfo.data;
++  size = minfo.size;
+ 
+-  if (bsize > 0 && (!GST_MEMORY_IS_ZERO_PADDED (minfo.memory)
+-          || (minfo.maxsize - minfo.size) < FF_INPUT_BUFFER_PADDING_SIZE)) {
++  if (size > 0 && (!GST_MEMORY_IS_ZERO_PADDED (minfo.memory)
++          || (minfo.maxsize - minfo.size) < AV_INPUT_BUFFER_PADDING_SIZE)) {
+     /* add padding */
+-    if (ffmpegdec->padded_size < bsize + FF_INPUT_BUFFER_PADDING_SIZE) {
+-      ffmpegdec->padded_size = bsize + FF_INPUT_BUFFER_PADDING_SIZE;
++    if (ffmpegdec->padded_size < size + AV_INPUT_BUFFER_PADDING_SIZE) {
++      ffmpegdec->padded_size = size + AV_INPUT_BUFFER_PADDING_SIZE;
+       ffmpegdec->padded = g_realloc (ffmpegdec->padded, ffmpegdec->padded_size);
+       GST_LOG_OBJECT (ffmpegdec, "resized padding buffer to %d",
+           ffmpegdec->padded_size);
+     }
+     GST_CAT_TRACE_OBJECT (GST_CAT_PERFORMANCE, ffmpegdec,
+         "Copy input to add padding");
+-    memcpy (ffmpegdec->padded, bdata, bsize);
+-    memset (ffmpegdec->padded + bsize, 0, FF_INPUT_BUFFER_PADDING_SIZE);
++    memcpy (ffmpegdec->padded, data, size);
++    memset (ffmpegdec->padded + size, 0, AV_INPUT_BUFFER_PADDING_SIZE);
+ 
+-    bdata = ffmpegdec->padded;
+-    do_padding = TRUE;
+-  } else {
+-    do_padding = FALSE;
++    data = ffmpegdec->padded;
+   }
+ 
+-  do {
+-    guint8 tmp_padding[FF_INPUT_BUFFER_PADDING_SIZE];
++  /* now decode the frame */
++  gst_avpacket_init (&packet, data, size);
+ 
+-    /* parse, if at all possible */
+-    data = bdata;
+-    size = bsize;
++  if (ffmpegdec->palette) {
++    guint8 *pal;
+ 
+-    if (do_padding) {
+-      /* add temporary padding */
+-      GST_CAT_TRACE_OBJECT (GST_CAT_PERFORMANCE, ffmpegdec,
+-          "Add temporary input padding");
+-      memcpy (tmp_padding, data + size, FF_INPUT_BUFFER_PADDING_SIZE);
+-      memset (data + size, 0, FF_INPUT_BUFFER_PADDING_SIZE);
+-    }
++    pal = av_packet_new_side_data (&packet, AV_PKT_DATA_PALETTE,
++        AVPALETTE_SIZE);
++    gst_buffer_extract (ffmpegdec->palette, 0, pal, AVPALETTE_SIZE);
++    GST_DEBUG_OBJECT (ffmpegdec, "copy pal %p %p", &packet, pal);
++  }
+ 
++  if (!packet.size)
++    goto done;
++
++  if (frame) {
++    /* save reference to the timing info */
++    ffmpegdec->context->reordered_opaque = (gint64) frame->system_frame_number;
++    ffmpegdec->picture->reordered_opaque = (gint64) frame->system_frame_number;
++
++    GST_DEBUG_OBJECT (ffmpegdec, "stored opaque values idx %d",
++        frame->system_frame_number);
++  }
++
++  /* This might call into get_buffer() from another thread,
++   * which would cause a deadlock. Release the lock here
++   * and taking it again later seems safe
++   * See https://bugzilla.gnome.org/show_bug.cgi?id=726020
++   */
++  GST_VIDEO_DECODER_STREAM_UNLOCK (ffmpegdec);
++  if (avcodec_send_packet (ffmpegdec->context, &packet) < 0) {
++    GST_VIDEO_DECODER_STREAM_LOCK (ffmpegdec);
++    goto send_packet_failed;
++  }
++  GST_VIDEO_DECODER_STREAM_LOCK (ffmpegdec);
++
++  do {
+     /* decode a frame of audio/video now */
+-    len =
+-        gst_ffmpegviddec_frame (ffmpegdec, data, size, &have_data, frame, &ret);
++    got_frame = gst_ffmpegviddec_frame (ffmpegdec, frame, &ret);
+ 
+     if (ret != GST_FLOW_OK) {
+       GST_LOG_OBJECT (ffmpegdec, "breaking because of flow ret %s",
+           gst_flow_get_name (ret));
+-      /* bad flow return, make sure we discard all data and exit */
+-      bsize = 0;
+       break;
+     }
++  } while (got_frame);
+ 
+-    if (do_padding) {
+-      memcpy (data + size, tmp_padding, FF_INPUT_BUFFER_PADDING_SIZE);
+-    }
+-
+-    if (len == 0 && have_data == 0) {
+-      /* nothing was decoded, this could be because no data was available or
+-       * because we were skipping frames.
+-       * If we have no context we must exit and wait for more data, we keep the
+-       * data we tried. */
+-      GST_LOG_OBJECT (ffmpegdec, "Decoding didn't return any data, breaking");
+-      break;
+-    }
+-
+-    if (len < 0) {
+-      /* a decoding error happened, we must break and try again with next data. */
+-      GST_LOG_OBJECT (ffmpegdec, "Decoding error, breaking");
+-      bsize = 0;
+-      break;
+-    }
+-
+-    /* prepare for the next round, for codecs with a context we did this
+-     * already when using the parser. */
+-    bsize -= len;
+-    bdata += len;
+-
+-    do_padding = TRUE;
+-
+-    GST_LOG_OBJECT (ffmpegdec, "Before (while bsize>0).  bsize:%d , bdata:%p",
+-        bsize, bdata);
+-  } while (bsize > 0);
+-
+-  if (bsize > 0)
+-    GST_DEBUG_OBJECT (ffmpegdec, "Dropping %d bytes of data", bsize);
+-
++done:
+   gst_buffer_unmap (frame->input_buffer, &minfo);
+   gst_video_codec_frame_unref (frame);
+ 
+   return ret;
++
++send_packet_failed:
++  {
++    GST_WARNING_OBJECT (ffmpegdec, "Failed to send data for decoding");
++    goto done;
++  }
+ }
+ 
+ static gboolean
+@@ -2069,7 +1995,7 @@ gst_ffmpegviddec_decide_allocation (GstVideoDecoder * 
+       if (ret == GST_FLOW_OK) {
+         GstVideoMeta *vmeta = gst_buffer_get_video_meta (tmp);
+         gboolean same_stride = TRUE;
+-        gint i;
++        guint i;
+ 
+         for (i = 0; i < vmeta->n_planes; i++) {
+           if (vmeta->stride[i] != ffmpegdec->stride[i]) {
+@@ -2147,7 +2073,7 @@ gst_ffmpegviddec_propose_allocation (GstVideoDecoder *
+   gst_allocation_params_init (&params);
+   params.flags = GST_MEMORY_FLAG_ZERO_PADDED;
+   params.align = DEFAULT_STRIDE_ALIGN;
+-  params.padding = FF_INPUT_BUFFER_PADDING_SIZE;
++  params.padding = AV_INPUT_BUFFER_PADDING_SIZE;
+   /* we would like to have some padding so that we don't have to
+    * memcpy. We don't suggest an allocator. */
+   gst_query_add_allocation_param (query, NULL, &params);
+@@ -2237,19 +2163,18 @@ gst_ffmpegviddec_register (GstPlugin * plugin)
+   GType type;
+   AVCodec *in_plugin;
+   gint rank;
++  void *i = 0;
+ 
+-  in_plugin = av_codec_next (NULL);
+-
+   GST_LOG ("Registering decoders");
+ 
+-  while (in_plugin) {
++  while ((in_plugin = (AVCodec *) av_codec_iterate (&i))) {
+     gchar *type_name;
+     gchar *plugin_name;
+ 
+     /* only video decoders */
+     if (!av_codec_is_decoder (in_plugin)
+         || in_plugin->type != AVMEDIA_TYPE_VIDEO)
+-      goto next;
++      continue;
+ 
+     /* no quasi codecs, please */
+     if (in_plugin->id == AV_CODEC_ID_RAWVIDEO ||
+@@ -2268,7 +2193,7 @@ gst_ffmpegviddec_register (GstPlugin * plugin)
+         || in_plugin->id == AV_CODEC_ID_WRAPPED_AVFRAME
+ #endif
+         || in_plugin->id == AV_CODEC_ID_ZLIB) {
+-      goto next;
++      continue;
+     }
+ 
+     /* No decoders depending on external libraries (we don't build them, but
+@@ -2278,7 +2203,7 @@ gst_ffmpegviddec_register (GstPlugin * plugin)
+       GST_DEBUG
+           ("Not using external library decoder %s. Use the gstreamer-native ones instead.",
+           in_plugin->name);
+-      goto next;
++      continue;
+     }
+ 
+     /* No vdpau plugins until we can figure out how to properly use them
+@@ -2287,42 +2212,42 @@ gst_ffmpegviddec_register (GstPlugin * plugin)
+       GST_DEBUG
+           ("Ignoring VDPAU decoder %s. We can't handle this outside of ffmpeg",
+           in_plugin->name);
+-      goto next;
++      continue;
+     }
+ 
+     if (g_str_has_suffix (in_plugin->name, "_xvmc")) {
+       GST_DEBUG
+           ("Ignoring XVMC decoder %s. We can't handle this outside of ffmpeg",
+           in_plugin->name);
+-      goto next;
++      continue;
+     }
+ 
+     if (strstr (in_plugin->name, "vaapi")) {
+       GST_DEBUG
+           ("Ignoring VAAPI decoder %s. We can't handle this outside of ffmpeg",
+           in_plugin->name);
+-      goto next;
++      continue;
+     }
+ 
+     if (g_str_has_suffix (in_plugin->name, "_qsv")) {
+       GST_DEBUG
+           ("Ignoring qsv decoder %s. We can't handle this outside of ffmpeg",
+           in_plugin->name);
+-      goto next;
++      continue;
+     }
+ 
+     if (g_str_has_suffix (in_plugin->name, "_cuvid")) {
+       GST_DEBUG
+           ("Ignoring CUVID decoder %s. We can't handle this outside of ffmpeg",
+           in_plugin->name);
+-      goto next;
++      continue;
+     }
+ 
+     if (g_str_has_suffix (in_plugin->name, "_v4l2m2m")) {
+       GST_DEBUG
+           ("Ignoring V4L2 mem-to-mem decoder %s. We can't handle this outside of ffmpeg",
+           in_plugin->name);
+-      goto next;
++      continue;
+     }
+ 
+     GST_DEBUG ("Trying plugin %s [%s]", in_plugin->name, in_plugin->long_name);
+@@ -2341,7 +2266,7 @@ gst_ffmpegviddec_register (GstPlugin * plugin)
+         !strcmp (in_plugin->name, "dvdsub") ||
+         !strcmp (in_plugin->name, "dvbsub")) {
+       GST_LOG ("Ignoring decoder %s", in_plugin->name);
+-      goto next;
++      continue;
+     }
+ 
+     /* construct the type */
+@@ -2399,9 +2324,6 @@ gst_ffmpegviddec_register (GstPlugin * plugin)
+     }
+ 
+     g_free (type_name);
+-
+-  next:
+-    in_plugin = av_codec_next (in_plugin);
+   }
+ 
+   GST_LOG ("Finished Registering decoders");
+--- ext/libav/gstavviddec.h.orig	2018-03-23 20:45:20 UTC
++++ ext/libav/gstavviddec.h
+@@ -61,7 +61,7 @@ struct _GstFFMpegVidDec
+   GstBuffer *palette;
+ 
+   guint8 *padded;
+-  guint padded_size;
++  gint padded_size;
+ 
+   /* some properties */
+   enum AVDiscard skip_frame;
+--- ext/libav/gstavvidenc.c.orig	2018-03-23 20:45:20 UTC
++++ ext/libav/gstavvidenc.c
+@@ -30,6 +30,7 @@
+ 
+ #include <libavcodec/avcodec.h>
+ #include <libavutil/stereo3d.h>
++#include <libavutil/opt.h>
+ 
+ #include <gst/gst.h>
+ #include <gst/video/gstvideometa.h>
+@@ -40,56 +41,16 @@
+ #include "gstavvidenc.h"
+ #include "gstavcfg.h"
+ 
+-#define DEFAULT_VIDEO_BITRATE 300000    /* in bps */
+-#define DEFAULT_VIDEO_GOP_SIZE 15
+ 
+-#define DEFAULT_WIDTH 352
+-#define DEFAULT_HEIGHT 288
+-
+-
+-#define VIDEO_BUFFER_SIZE (1024*1024)
+-
+ enum
+ {
+-  /* FILL ME */
+-  LAST_SIGNAL
+-};
+-
+-enum
+-{
+   PROP_0,
+-  PROP_BIT_RATE,
+-  PROP_GOP_SIZE,
+-  PROP_ME_METHOD,
+-  PROP_BUFSIZE,
+-  PROP_RTP_PAYLOAD_SIZE,
+-  PROP_MAX_THREADS,
+-  PROP_COMPLIANCE,
++  PROP_QUANTIZER,
++  PROP_PASS,
++  PROP_FILENAME,
+   PROP_CFG_BASE,
+ };
+ 
+-#define GST_TYPE_ME_METHOD (gst_ffmpegvidenc_me_method_get_type())
+-static GType
+-gst_ffmpegvidenc_me_method_get_type (void)
+-{
+-  static GType ffmpegenc_me_method_type = 0;
+-  static GEnumValue ffmpegenc_me_methods[] = {
+-    {ME_ZERO, "None (Very low quality)", "zero"},
+-    {ME_FULL, "Full (Slow, unmaintained)", "full"},
+-    {ME_LOG, "Logarithmic (Low quality, unmaintained)", "logarithmic"},
+-    {ME_PHODS, "phods (Low quality, unmaintained)", "phods"},
+-    {ME_EPZS, "EPZS (Best quality, Fast)", "epzs"},
+-    {ME_X1, "X1 (Experimental)", "x1"},
+-    {0, NULL, NULL},
+-  };
+-  if (!ffmpegenc_me_method_type) {
+-    ffmpegenc_me_method_type =
+-        g_enum_register_static ("GstLibAVVidEncMeMethod", ffmpegenc_me_methods);
+-  }
+-  return ffmpegenc_me_method_type;
+-}
+-
+-/* A number of function prototypes are given so we can refer to them later. */
+ static void gst_ffmpegvidenc_class_init (GstFFMpegVidEncClass * klass);
+ static void gst_ffmpegvidenc_base_init (GstFFMpegVidEncClass * klass);
+ static void gst_ffmpegvidenc_init (GstFFMpegVidEnc * ffmpegenc);
+@@ -116,8 +77,28 @@ static void gst_ffmpegvidenc_get_property (GObject * o
+ 
+ static GstElementClass *parent_class = NULL;
+ 
+-/*static guint gst_ffmpegvidenc_signals[LAST_SIGNAL] = { 0 }; */
++#define GST_TYPE_FFMPEG_PASS (gst_ffmpeg_pass_get_type ())
++static GType
++gst_ffmpeg_pass_get_type (void)
++{
++  static GType ffmpeg_pass_type = 0;
+ 
++  if (!ffmpeg_pass_type) {
++    static const GEnumValue ffmpeg_passes[] = {
++      {0, "Constant Bitrate Encoding", "cbr"},
++      {AV_CODEC_FLAG_QSCALE, "Constant Quantizer", "quant"},
++      {AV_CODEC_FLAG_PASS1, "VBR Encoding - Pass 1", "pass1"},
++      {AV_CODEC_FLAG_PASS2, "VBR Encoding - Pass 2", "pass2"},
++      {0, NULL, NULL},
++    };
++
++    ffmpeg_pass_type =
++        g_enum_register_static ("GstLibAVEncPass", ffmpeg_passes);
++  }
++
++  return ffmpeg_pass_type;
++}
++
+ static void
+ gst_ffmpegvidenc_base_init (GstFFMpegVidEncClass * klass)
+ {
+@@ -181,7 +162,6 @@ gst_ffmpegvidenc_class_init (GstFFMpegVidEncClass * kl
+ {
+   GObjectClass *gobject_class;
+   GstVideoEncoderClass *venc_class;
+-  int caps;
+ 
+   gobject_class = (GObjectClass *) klass;
+   venc_class = (GstVideoEncoderClass *) klass;
+@@ -191,46 +171,24 @@ gst_ffmpegvidenc_class_init (GstFFMpegVidEncClass * kl
+   gobject_class->set_property = gst_ffmpegvidenc_set_property;
+   gobject_class->get_property = gst_ffmpegvidenc_get_property;
+ 
+-  /* FIXME: could use -1 for a sensible per-codec default based on
+-   * e.g. input resolution and framerate */
+-  g_object_class_install_property (G_OBJECT_CLASS (klass), PROP_BIT_RATE,
+-      g_param_spec_int ("bitrate", "Bit Rate",
+-          "Target Video Bitrate", 0, G_MAXINT, DEFAULT_VIDEO_BITRATE,
+-          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+-  g_object_class_install_property (G_OBJECT_CLASS (klass), PROP_GOP_SIZE,
+-      g_param_spec_int ("gop-size", "GOP Size",
+-          "Number of frames within one GOP", 0, G_MAXINT,
+-          DEFAULT_VIDEO_GOP_SIZE, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+-  g_object_class_install_property (G_OBJECT_CLASS (klass), PROP_ME_METHOD,
+-      g_param_spec_enum ("me-method", "ME Method", "Motion Estimation Method",
+-          GST_TYPE_ME_METHOD, ME_EPZS,
+-          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
++  g_object_class_install_property (gobject_class, PROP_QUANTIZER,
++      g_param_spec_float ("quantizer", "Constant Quantizer",
++          "Constant Quantizer", 0, 30, 0.01f,
++          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT));
+ 
+-  g_object_class_install_property (G_OBJECT_CLASS (klass), PROP_BUFSIZE,
+-      g_param_spec_int ("buffer-size", "Buffer Size",
+-          "Size of the video buffers", 0, G_MAXINT, 0,
+-          G_PARAM_READABLE | G_PARAM_STATIC_STRINGS));
+-  g_object_class_install_property (G_OBJECT_CLASS (klass),
+-      PROP_RTP_PAYLOAD_SIZE, g_param_spec_int ("rtp-payload-size",
+-          "RTP Payload Size", "Target GOB length", 0, G_MAXINT, 0,
+-          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
++  g_object_class_install_property (gobject_class, PROP_PASS,
++      g_param_spec_enum ("pass", "Encoding pass/type",
++          "Encoding pass/type", GST_TYPE_FFMPEG_PASS, 0,
++          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT));
+ 
+-  caps = klass->in_plugin->capabilities;
+-  if (caps & (CODEC_CAP_FRAME_THREADS | CODEC_CAP_SLICE_THREADS)) {
+-    g_object_class_install_property (G_OBJECT_CLASS (klass), PROP_MAX_THREADS,
+-        g_param_spec_int ("max-threads", "Maximum encode threads",
+-            "Maximum number of worker threads to spawn. (0 = auto)",
+-            0, G_MAXINT, 0, G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+-  }
++  g_object_class_install_property (gobject_class, PROP_FILENAME,
++      g_param_spec_string ("multipass-cache-file", "Multipass Cache File",
++          "Filename for multipass cache file", "stats.log",
++          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT));
+ 
+-  g_object_class_install_property (G_OBJECT_CLASS (klass), PROP_COMPLIANCE,
+-      g_param_spec_enum ("compliance", "Compliance",
+-          "Adherence of the encoder to the specifications",
+-          GST_TYPE_FFMPEG_COMPLIANCE, FFMPEG_DEFAULT_COMPLIANCE,
+-          G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+-
+   /* register additional properties, possibly dependent on the exact CODEC */
+-  gst_ffmpeg_cfg_install_property (klass, PROP_CFG_BASE);
++  gst_ffmpeg_cfg_install_properties (gobject_class, klass->in_plugin,
++      PROP_CFG_BASE, AV_OPT_FLAG_ENCODING_PARAM | AV_OPT_FLAG_VIDEO_PARAM);
+ 
+   venc_class->start = gst_ffmpegvidenc_start;
+   venc_class->stop = gst_ffmpegvidenc_stop;
+@@ -251,26 +209,11 @@ gst_ffmpegvidenc_init (GstFFMpegVidEnc * ffmpegenc)
+ 
+   GST_PAD_SET_ACCEPT_TEMPLATE (GST_VIDEO_ENCODER_SINK_PAD (ffmpegenc));
+ 
+-  /* ffmpeg objects */
+   ffmpegenc->context = avcodec_alloc_context3 (klass->in_plugin);
++  ffmpegenc->refcontext = avcodec_alloc_context3 (klass->in_plugin);
+   ffmpegenc->picture = av_frame_alloc ();
+   ffmpegenc->opened = FALSE;
+-
+   ffmpegenc->file = NULL;
+-
+-  ffmpegenc->bitrate = DEFAULT_VIDEO_BITRATE;
+-  ffmpegenc->me_method = ME_EPZS;
+-  ffmpegenc->buffer_size = 512 * 1024;
+-  ffmpegenc->gop_size = DEFAULT_VIDEO_GOP_SIZE;
+-  ffmpegenc->rtp_payload_size = 0;
+-  ffmpegenc->compliance = FFMPEG_DEFAULT_COMPLIANCE;
+-  ffmpegenc->max_threads = 0;
+-
+-  ffmpegenc->lmin = 2;
+-  ffmpegenc->lmax = 31;
+-  ffmpegenc->max_key_interval = 0;
+-
+-  gst_ffmpeg_cfg_set_defaults (ffmpegenc);
+ }
+ 
+ static void
+@@ -278,15 +221,12 @@ gst_ffmpegvidenc_finalize (GObject * object)
+ {
+   GstFFMpegVidEnc *ffmpegenc = (GstFFMpegVidEnc *) object;
+ 
+-  gst_ffmpeg_cfg_finalize (ffmpegenc);
+-
+   /* clean up remaining allocated data */
+   av_frame_free (&ffmpegenc->picture);
+   gst_ffmpeg_avcodec_close (ffmpegenc->context);
+   av_free (ffmpegenc->context);
++  av_free (ffmpegenc->refcontext);
+ 
+-  g_free (ffmpegenc->filename);
+-
+   G_OBJECT_CLASS (parent_class)->finalize (object);
+ }
+ 
+@@ -314,66 +254,25 @@ gst_ffmpegvidenc_set_format (GstVideoEncoder * encoder
+     }
+   }
+ 
+-  /* if we set it in _getcaps we should set it also in _link */
+-  ffmpegenc->context->strict_std_compliance = ffmpegenc->compliance;
+-
+-  /* user defined properties */
+-  ffmpegenc->context->bit_rate = ffmpegenc->bitrate;
+-  ffmpegenc->context->bit_rate_tolerance = ffmpegenc->bitrate;
+-  ffmpegenc->context->gop_size = ffmpegenc->gop_size;
+-  ffmpegenc->context->me_method = ffmpegenc->me_method;
+-  GST_DEBUG_OBJECT (ffmpegenc, "Setting avcontext to bitrate %d, gop_size %d",
+-      ffmpegenc->bitrate, ffmpegenc->gop_size);
+-
+-  if (ffmpegenc->max_threads == 0) {
+-    if (!(oclass->in_plugin->capabilities & CODEC_CAP_AUTO_THREADS))
+-      ffmpegenc->context->thread_count = gst_ffmpeg_auto_max_threads ();
+-    else
+-      ffmpegenc->context->thread_count = 0;
+-  } else
+-    ffmpegenc->context->thread_count = ffmpegenc->max_threads;
+-
+-  /* RTP payload used for GOB production (for Asterisk) */
+-  if (ffmpegenc->rtp_payload_size) {
+-    ffmpegenc->context->rtp_payload_size = ffmpegenc->rtp_payload_size;
+-  }
+-
+   /* additional avcodec settings */
+-  /* first fill in the majority by copying over */
+-  gst_ffmpeg_cfg_fill_context (ffmpegenc, ffmpegenc->context);
++  gst_ffmpeg_cfg_fill_context (G_OBJECT (ffmpegenc), ffmpegenc->context);
+ 
+-  /* then handle some special cases */
+-  ffmpegenc->context->lmin = (ffmpegenc->lmin * FF_QP2LAMBDA + 0.5);
+-  ffmpegenc->context->lmax = (ffmpegenc->lmax * FF_QP2LAMBDA + 0.5);
+-
+-  if (ffmpegenc->interlaced) {
+-    ffmpegenc->context->flags |=
+-        CODEC_FLAG_INTERLACED_DCT | CODEC_FLAG_INTERLACED_ME;
+-  }
+-
+-  /* some other defaults */
+-  ffmpegenc->context->rc_strategy = 2;
+-  ffmpegenc->context->b_frame_strategy = 0;
+-  ffmpegenc->context->coder_type = 0;
+-  ffmpegenc->context->context_model = 0;
+-  ffmpegenc->context->scenechange_threshold = 0;
+-
+   /* and last but not least the pass; CBR, 2-pass, etc */
+   ffmpegenc->context->flags |= ffmpegenc->pass;
+   switch (ffmpegenc->pass) {
+       /* some additional action depends on type of pass */
+-    case CODEC_FLAG_QSCALE:
++    case AV_CODEC_FLAG_QSCALE:
+       ffmpegenc->context->global_quality
+           = ffmpegenc->picture->quality = FF_QP2LAMBDA * ffmpegenc->quantizer;
+       break;
+-    case CODEC_FLAG_PASS1:     /* need to prepare a stats file */
++    case AV_CODEC_FLAG_PASS1:  /* need to prepare a stats file */
+       /* we don't close when changing caps, fingers crossed */
+       if (!ffmpegenc->file)
+         ffmpegenc->file = g_fopen (ffmpegenc->filename, "w");
+       if (!ffmpegenc->file)
+         goto open_file_err;
+       break;
+-    case CODEC_FLAG_PASS2:
++    case AV_CODEC_FLAG_PASS2:
+     {                           /* need to read the whole stats file ! */
+       gsize size;
+ 
+@@ -412,18 +311,6 @@ gst_ffmpegvidenc_set_format (GstVideoEncoder * encoder
+ 
+   pix_fmt = ffmpegenc->context->pix_fmt;
+ 
+-  /* max-key-interval may need the framerate set above */
+-  if (ffmpegenc->max_key_interval) {
+-    AVCodecContext *ctx;
+-
+-    /* override gop-size */
+-    ctx = ffmpegenc->context;
+-    ctx->gop_size = (ffmpegenc->max_key_interval < 0) ?
+-        (-ffmpegenc->max_key_interval
+-        * (ctx->time_base.den * ctx->ticks_per_frame / ctx->time_base.num))
+-        : ffmpegenc->max_key_interval;
+-  }
+-
+   /* some codecs support more than one format, first auto-choose one */
+   GST_DEBUG_OBJECT (ffmpegenc, "picking an output format ...");
+   allowed_caps = gst_pad_get_allowed_caps (GST_VIDEO_ENCODER_SRC_PAD (encoder));
+@@ -634,26 +521,31 @@ stereo_gst_to_av (GstVideoMultiviewMode mview_mode)
+ }
+ 
+ static GstFlowReturn
+-gst_ffmpegvidenc_handle_frame (GstVideoEncoder * encoder,
++gst_ffmpegvidenc_send_frame (GstFFMpegVidEnc * ffmpegenc,
+     GstVideoCodecFrame * frame)
+ {
+-  GstFFMpegVidEnc *ffmpegenc = (GstFFMpegVidEnc *) encoder;
+-  GstBuffer *outbuf;
+-  gint ret = 0, c;
+   GstVideoInfo *info = &ffmpegenc->input_state->info;
+-  AVPacket *pkt;
+-  int have_data = 0;
+   BufferInfo *buffer_info;
++  guint c;
++  gint res;
++  GstFlowReturn ret = GST_FLOW_ERROR;
++  AVFrame *picture = NULL;
+ 
+-  if (ffmpegenc->interlaced) {
+-    ffmpegenc->picture->interlaced_frame = TRUE;
++  if (!frame)
++    goto send_frame;
++
++  picture = ffmpegenc->picture;
++
++  if (ffmpegenc->context->flags & (AV_CODEC_FLAG_INTERLACED_DCT |
++          AV_CODEC_FLAG_INTERLACED_ME)) {
++    picture->interlaced_frame = TRUE;
+     /* if this is not the case, a filter element should be used to swap fields */
+-    ffmpegenc->picture->top_field_first =
++    picture->top_field_first =
+         GST_BUFFER_FLAG_IS_SET (frame->input_buffer, GST_VIDEO_BUFFER_FLAG_TFF);
+   }
+ 
+   if (GST_VIDEO_INFO_MULTIVIEW_MODE (info) != GST_VIDEO_MULTIVIEW_MODE_NONE) {
+-    AVStereo3D *stereo = av_stereo3d_create_side_data (ffmpegenc->picture);
++    AVStereo3D *stereo = av_stereo3d_create_side_data (picture);
+     stereo->type = stereo_gst_to_av (GST_VIDEO_INFO_MULTIVIEW_MODE (info));
+ 
+     if (GST_VIDEO_INFO_MULTIVIEW_FLAGS (info) &
+@@ -663,64 +555,86 @@ gst_ffmpegvidenc_handle_frame (GstVideoEncoder * encod
+   }
+ 
+   if (GST_VIDEO_CODEC_FRAME_IS_FORCE_KEYFRAME (frame))
+-    ffmpegenc->picture->pict_type = AV_PICTURE_TYPE_I;
++    picture->pict_type = AV_PICTURE_TYPE_I;
+ 
+   buffer_info = g_slice_new0 (BufferInfo);
+   buffer_info->buffer = gst_buffer_ref (frame->input_buffer);
+ 
+   if (!gst_video_frame_map (&buffer_info->vframe, info, frame->input_buffer,
+           GST_MAP_READ)) {
+-    GST_ERROR_OBJECT (encoder, "Failed to map input buffer");
++    GST_ERROR_OBJECT (ffmpegenc, "Failed to map input buffer");
+     gst_buffer_unref (buffer_info->buffer);
+     g_slice_free (BufferInfo, buffer_info);
+     gst_video_codec_frame_unref (frame);
+-    return GST_FLOW_ERROR;
++    goto done;
+   }
+ 
+   /* Fill avpicture */
+-  ffmpegenc->picture->buf[0] =
++  picture->buf[0] =
+       av_buffer_create (NULL, 0, buffer_info_free, buffer_info, 0);
+   for (c = 0; c < AV_NUM_DATA_POINTERS; c++) {
+     if (c < GST_VIDEO_INFO_N_COMPONENTS (info)) {
+-      ffmpegenc->picture->data[c] =
+-          GST_VIDEO_FRAME_PLANE_DATA (&buffer_info->vframe, c);
+-      ffmpegenc->picture->linesize[c] =
++      picture->data[c] = GST_VIDEO_FRAME_PLANE_DATA (&buffer_info->vframe, c);
++      picture->linesize[c] =
+           GST_VIDEO_FRAME_COMP_STRIDE (&buffer_info->vframe, c);
+     } else {
+-      ffmpegenc->picture->data[c] = NULL;
+-      ffmpegenc->picture->linesize[c] = 0;
++      picture->data[c] = NULL;
++      picture->linesize[c] = 0;
+     }
+   }
+ 
+-  ffmpegenc->picture->format = ffmpegenc->context->pix_fmt;
+-  ffmpegenc->picture->width = GST_VIDEO_FRAME_WIDTH (&buffer_info->vframe);
+-  ffmpegenc->picture->height = GST_VIDEO_FRAME_HEIGHT (&buffer_info->vframe);
++  picture->format = ffmpegenc->context->pix_fmt;
++  picture->width = GST_VIDEO_FRAME_WIDTH (&buffer_info->vframe);
++  picture->height = GST_VIDEO_FRAME_HEIGHT (&buffer_info->vframe);
+ 
+-  ffmpegenc->picture->pts =
++  picture->pts =
+       gst_ffmpeg_time_gst_to_ff (frame->pts /
+       ffmpegenc->context->ticks_per_frame, ffmpegenc->context->time_base);
+ 
+-  have_data = 0;
+-  pkt = g_slice_new0 (AVPacket);
++send_frame:
++  res = avcodec_send_frame (ffmpegenc->context, picture);
+ 
+-  ret =
+-      avcodec_encode_video2 (ffmpegenc->context, pkt, ffmpegenc->picture,
+-      &have_data);
++  if (picture)
++    av_frame_unref (picture);
+ 
+-  av_frame_unref (ffmpegenc->picture);
++  if (res == 0)
++    ret = GST_FLOW_OK;
++  else if (res == AVERROR_EOF)
++    ret = GST_FLOW_EOS;
+ 
+-  if (ret < 0 || !have_data)
+-    g_slice_free (AVPacket, pkt);
++done:
++  return ret;
++}
+ 
+-  if (ret < 0)
+-    goto encode_fail;
++static GstFlowReturn
++gst_ffmpegvidenc_receive_packet (GstFFMpegVidEnc * ffmpegenc,
++    gboolean * got_packet, gboolean send)
++{
++  AVPacket *pkt;
++  GstBuffer *outbuf;
++  GstVideoCodecFrame *frame;
++  gint res;
++  GstFlowReturn ret = GST_FLOW_OK;
+ 
+-  /* Encoder needs more data */
+-  if (!have_data) {
+-    gst_video_codec_frame_unref (frame);
+-    return GST_FLOW_OK;
++  *got_packet = FALSE;
++
++  pkt = g_slice_new0 (AVPacket);
++
++  res = avcodec_receive_packet (ffmpegenc->context, pkt);
++
++  if (res == AVERROR (EAGAIN)) {
++    g_slice_free (AVPacket, pkt);
++    goto done;
++  } else if (res == AVERROR_EOF) {
++    ret = GST_FLOW_EOS;
++    goto done;
++  } else if (res < 0) {
++    res = GST_FLOW_ERROR;
++    goto done;
+   }
+ 
++  *got_packet = TRUE;
++
+   /* save stats info if there is some as well as a stats file */
+   if (ffmpegenc->file && ffmpegenc->context->stats_out)
+     if (fprintf (ffmpegenc->file, "%s", ffmpegenc->context->stats_out) < 0)
+@@ -728,24 +642,52 @@ gst_ffmpegvidenc_handle_frame (GstVideoEncoder * encod
+           (("Could not write to file \"%s\"."), ffmpegenc->filename),
+           GST_ERROR_SYSTEM);
+ 
+-  gst_video_codec_frame_unref (frame);
+-
+   /* Get oldest frame */
+-  frame = gst_video_encoder_get_oldest_frame (encoder);
++  frame = gst_video_encoder_get_oldest_frame (GST_VIDEO_ENCODER (ffmpegenc));
+ 
+-  outbuf =
+-      gst_buffer_new_wrapped_full (GST_MEMORY_FLAG_READONLY, pkt->data,
+-      pkt->size, 0, pkt->size, pkt, gst_ffmpegvidenc_free_avpacket);
+-  frame->output_buffer = outbuf;
++  if (send) {
++    outbuf =
++        gst_buffer_new_wrapped_full (GST_MEMORY_FLAG_READONLY, pkt->data,
++        pkt->size, 0, pkt->size, pkt, gst_ffmpegvidenc_free_avpacket);
++    frame->output_buffer = outbuf;
+ 
+-  if (pkt->flags & AV_PKT_FLAG_KEY)
+-    GST_VIDEO_CODEC_FRAME_SET_SYNC_POINT (frame);
+-  else
+-    GST_VIDEO_CODEC_FRAME_UNSET_SYNC_POINT (frame);
++    if (pkt->flags & AV_PKT_FLAG_KEY)
++      GST_VIDEO_CODEC_FRAME_SET_SYNC_POINT (frame);
++    else
++      GST_VIDEO_CODEC_FRAME_UNSET_SYNC_POINT (frame);
++  }
+ 
+-  return gst_video_encoder_finish_frame (encoder, frame);
++  ret = gst_video_encoder_finish_frame (GST_VIDEO_ENCODER (ffmpegenc), frame);
+ 
+-  /* ERRORS */
++done:
++  return ret;
++}
++
++static GstFlowReturn
++gst_ffmpegvidenc_handle_frame (GstVideoEncoder * encoder,
++    GstVideoCodecFrame * frame)
++{
++  GstFFMpegVidEnc *ffmpegenc = (GstFFMpegVidEnc *) encoder;
++  GstFlowReturn ret;
++  gboolean got_packet;
++
++  ret = gst_ffmpegvidenc_send_frame (ffmpegenc, frame);
++
++  if (ret != GST_FLOW_OK)
++    goto encode_fail;
++
++  gst_video_codec_frame_unref (frame);
++
++  do {
++    ret = gst_ffmpegvidenc_receive_packet (ffmpegenc, &got_packet, TRUE);
++    if (ret != GST_FLOW_OK)
++      break;
++  } while (got_packet);
++
++done:
++  return ret;
++
++  /* We choose to be error-resilient */
+ encode_fail:
+   {
+ #ifndef GST_DISABLE_GST_DEBUG
+@@ -755,19 +697,16 @@ encode_fail:
+         "avenc_%s: failed to encode buffer", oclass->in_plugin->name);
+ #endif /* GST_DISABLE_GST_DEBUG */
+     /* avoid frame (and ts etc) piling up */
+-    return gst_video_encoder_finish_frame (encoder, frame);
++    ret = gst_video_encoder_finish_frame (encoder, frame);
++    goto done;
+   }
+ }
+ 
+ static GstFlowReturn
+ gst_ffmpegvidenc_flush_buffers (GstFFMpegVidEnc * ffmpegenc, gboolean send)
+ {
+-  GstVideoCodecFrame *frame;
+-  GstFlowReturn flow_ret = GST_FLOW_OK;
+-  GstBuffer *outbuf;
+-  gint ret;
+-  AVPacket *pkt;
+-  int have_data = 0;
++  GstFlowReturn ret = GST_FLOW_OK;
++  gboolean got_packet;
+ 
+   GST_DEBUG_OBJECT (ffmpegenc, "flushing buffers with sending %d", send);
+ 
+@@ -775,64 +714,27 @@ gst_ffmpegvidenc_flush_buffers (GstFFMpegVidEnc * ffmp
+   if (!ffmpegenc->opened)
+     goto done;
+ 
+-  while ((frame =
+-          gst_video_encoder_get_oldest_frame (GST_VIDEO_ENCODER (ffmpegenc)))) {
+-    pkt = g_slice_new0 (AVPacket);
+-    have_data = 0;
++  ret = gst_ffmpegvidenc_send_frame (ffmpegenc, NULL);
+ 
+-    ret = avcodec_encode_video2 (ffmpegenc->context, pkt, NULL, &have_data);
++  if (ret != GST_FLOW_OK)
++    goto done;
+ 
+-    if (ret < 0) {              /* there should be something, notify and give up */
+-#ifndef GST_DISABLE_GST_DEBUG
+-      GstFFMpegVidEncClass *oclass =
+-          (GstFFMpegVidEncClass *) (G_OBJECT_GET_CLASS (ffmpegenc));
+-      GST_WARNING_OBJECT (ffmpegenc,
+-          "avenc_%s: failed to flush buffer", oclass->in_plugin->name);
+-#endif /* GST_DISABLE_GST_DEBUG */
+-      g_slice_free (AVPacket, pkt);
+-      gst_video_codec_frame_unref (frame);
++  do {
++    ret = gst_ffmpegvidenc_receive_packet (ffmpegenc, &got_packet, send);
++    if (ret != GST_FLOW_OK)
+       break;
+-    }
++  } while (got_packet);
+ 
+-    /* save stats info if there is some as well as a stats file */
+-    if (ffmpegenc->file && ffmpegenc->context->stats_out)
+-      if (fprintf (ffmpegenc->file, "%s", ffmpegenc->context->stats_out) < 0)
+-        GST_ELEMENT_ERROR (ffmpegenc, RESOURCE, WRITE,
+-            (("Could not write to file \"%s\"."), ffmpegenc->filename),
+-            GST_ERROR_SYSTEM);
+-
+-    if (send && have_data) {
+-      outbuf =
+-          gst_buffer_new_wrapped_full (GST_MEMORY_FLAG_READONLY, pkt->data,
+-          pkt->size, 0, pkt->size, pkt, gst_ffmpegvidenc_free_avpacket);
+-      frame->output_buffer = outbuf;
+-
+-      if (pkt->flags & AV_PKT_FLAG_KEY)
+-        GST_VIDEO_CODEC_FRAME_SET_SYNC_POINT (frame);
+-      else
+-        GST_VIDEO_CODEC_FRAME_UNSET_SYNC_POINT (frame);
+-
+-      flow_ret =
+-          gst_video_encoder_finish_frame (GST_VIDEO_ENCODER (ffmpegenc), frame);
+-    } else {
+-      /* no frame attached, so will be skipped and removed from frame list */
+-      gst_video_encoder_finish_frame (GST_VIDEO_ENCODER (ffmpegenc), frame);
+-    }
+-  }
+-
+ done:
+-
+-  return flow_ret;
++  return ret;
+ }
+ 
+-
+ static void
+ gst_ffmpegvidenc_set_property (GObject * object,
+     guint prop_id, const GValue * value, GParamSpec * pspec)
+ {
+   GstFFMpegVidEnc *ffmpegenc;
+ 
+-  /* Get a pointer of the right type. */
+   ffmpegenc = (GstFFMpegVidEnc *) (object);
+ 
+   if (ffmpegenc->opened) {
+@@ -841,69 +743,44 @@ gst_ffmpegvidenc_set_property (GObject * object,
+     return;
+   }
+ 
+-  /* Check the argument id to see which argument we're setting. */
+   switch (prop_id) {
+-    case PROP_BIT_RATE:
+-      ffmpegenc->bitrate = g_value_get_int (value);
++    case PROP_QUANTIZER:
++      ffmpegenc->quantizer = g_value_get_float (value);
+       break;
+-    case PROP_GOP_SIZE:
+-      ffmpegenc->gop_size = g_value_get_int (value);
++    case PROP_PASS:
++      ffmpegenc->pass = g_value_get_enum (value);
+       break;
+-    case PROP_ME_METHOD:
+-      ffmpegenc->me_method = g_value_get_enum (value);
++    case PROP_FILENAME:
++      g_free (ffmpegenc->filename);
++      ffmpegenc->filename = g_value_dup_string (value);
+       break;
+-    case PROP_BUFSIZE:
+-      break;
+-    case PROP_RTP_PAYLOAD_SIZE:
+-      ffmpegenc->rtp_payload_size = g_value_get_int (value);
+-      break;
+-    case PROP_COMPLIANCE:
+-      ffmpegenc->compliance = g_value_get_enum (value);
+-      break;
+-    case PROP_MAX_THREADS:
+-      ffmpegenc->max_threads = g_value_get_int (value);
+-      break;
+     default:
+-      if (!gst_ffmpeg_cfg_set_property (object, value, pspec))
++      if (!gst_ffmpeg_cfg_set_property (ffmpegenc->refcontext, value, pspec))
+         G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+       break;
+   }
+ }
+ 
+-/* The set function is simply the inverse of the get fuction. */
+ static void
+ gst_ffmpegvidenc_get_property (GObject * object,
+     guint prop_id, GValue * value, GParamSpec * pspec)
+ {
+   GstFFMpegVidEnc *ffmpegenc;
+ 
+-  /* It's not null if we got it, but it might not be ours */
+   ffmpegenc = (GstFFMpegVidEnc *) (object);
+ 
+   switch (prop_id) {
+-    case PROP_BIT_RATE:
+-      g_value_set_int (value, ffmpegenc->bitrate);
++    case PROP_QUANTIZER:
++      g_value_set_float (value, ffmpegenc->quantizer);
+       break;
+-    case PROP_GOP_SIZE:
+-      g_value_set_int (value, ffmpegenc->gop_size);
++    case PROP_PASS:
++      g_value_set_enum (value, ffmpegenc->pass);
+       break;
+-    case PROP_ME_METHOD:
+-      g_value_set_enum (value, ffmpegenc->me_method);
++    case PROP_FILENAME:
++      g_value_take_string (value, g_strdup (ffmpegenc->filename));
+       break;
+-    case PROP_BUFSIZE:
+-      g_value_set_int (value, ffmpegenc->buffer_size);
+-      break;
+-    case PROP_RTP_PAYLOAD_SIZE:
+-      g_value_set_int (value, ffmpegenc->rtp_payload_size);
+-      break;
+-    case PROP_COMPLIANCE:
+-      g_value_set_enum (value, ffmpegenc->compliance);
+-      break;
+-    case PROP_MAX_THREADS:
+-      g_value_set_int (value, ffmpegenc->max_threads);
+-      break;
+     default:
+-      if (!gst_ffmpeg_cfg_get_property (object, value, pspec))
++      if (!gst_ffmpeg_cfg_get_property (ffmpegenc->refcontext, value, pspec))
+         G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+       break;
+   }
+@@ -946,10 +823,6 @@ gst_ffmpegvidenc_stop (GstVideoEncoder * encoder)
+   gst_ffmpeg_avcodec_close (ffmpegenc->context);
+   ffmpegenc->opened = FALSE;
+ 
+-  if (ffmpegenc->file) {
+-    fclose (ffmpegenc->file);
+-    ffmpegenc->file = NULL;
+-  }
+   if (ffmpegenc->input_state) {
+     gst_video_codec_state_unref (ffmpegenc->input_state);
+     ffmpegenc->input_state = NULL;
+@@ -982,20 +855,16 @@ gst_ffmpegvidenc_register (GstPlugin * plugin)
+   };
+   GType type;
+   AVCodec *in_plugin;
++  void *i = 0;
+ 
+-
+   GST_LOG ("Registering encoders");
+ 
+-  /* build global ffmpeg param/property info */
+-  gst_ffmpeg_cfg_init ();
+-
+-  in_plugin = av_codec_next (NULL);
+-  while (in_plugin) {
++  while ((in_plugin = (AVCodec *) av_codec_iterate (&i))) {
+     gchar *type_name;
+ 
+     /* Skip non-AV codecs */
+     if (in_plugin->type != AVMEDIA_TYPE_VIDEO)
+-      goto next;
++      continue;
+ 
+     /* no quasi codecs, please */
+     if (in_plugin->id == AV_CODEC_ID_RAWVIDEO ||
+@@ -1014,7 +883,7 @@ gst_ffmpegvidenc_register (GstPlugin * plugin)
+         || in_plugin->id == AV_CODEC_ID_WRAPPED_AVFRAME
+ #endif
+         || in_plugin->id == AV_CODEC_ID_ZLIB) {
+-      goto next;
++      continue;
+     }
+ 
+     /* No encoders depending on external libraries (we don't build them, but
+@@ -1024,41 +893,41 @@ gst_ffmpegvidenc_register (GstPlugin * plugin)
+       GST_DEBUG
+           ("Not using external library encoder %s. Use the gstreamer-native ones instead.",
+           in_plugin->name);
+-      goto next;
++      continue;
+     }
+ 
+     if (strstr (in_plugin->name, "vaapi")) {
+       GST_DEBUG
+           ("Ignoring VAAPI encoder %s. We can't handle this outside of ffmpeg",
+           in_plugin->name);
+-      goto next;
++      continue;
+     }
+ 
+     if (strstr (in_plugin->name, "nvenc")) {
+       GST_DEBUG
+           ("Ignoring nvenc encoder %s. We can't handle this outside of ffmpeg",
+           in_plugin->name);
+-      goto next;
++      continue;
+     }
+ 
+     if (g_str_has_suffix (in_plugin->name, "_qsv")) {
+       GST_DEBUG
+           ("Ignoring qsv encoder %s. We can't handle this outside of ffmpeg",
+           in_plugin->name);
+-      goto next;
++      continue;
+     }
+ 
+     if (g_str_has_suffix (in_plugin->name, "_v4l2m2m")) {
+       GST_DEBUG
+           ("Ignoring V4L2 mem-to-mem encoder %s. We can't handle this outside of ffmpeg",
+           in_plugin->name);
+-      goto next;
++      continue;
+     }
+ 
+     /* only video encoders */
+     if (!av_codec_is_encoder (in_plugin)
+         || in_plugin->type != AVMEDIA_TYPE_VIDEO)
+-      goto next;
++      continue;
+ 
+     /* FIXME : We should have a method to know cheaply whether we have a mapping
+      * for the given plugin or not */
+@@ -1068,7 +937,7 @@ gst_ffmpegvidenc_register (GstPlugin * plugin)
+     /* no codecs for which we're GUARANTEED to have better alternatives */
+     if (!strcmp (in_plugin->name, "gif")) {
+       GST_LOG ("Ignoring encoder %s", in_plugin->name);
+-      goto next;
++      continue;
+     }
+ 
+     /* construct the type */
+@@ -1100,9 +969,6 @@ gst_ffmpegvidenc_register (GstPlugin * plugin)
+     }
+ 
+     g_free (type_name);
+-
+-  next:
+-    in_plugin = av_codec_next (in_plugin);
+   }
+ 
+   GST_LOG ("Finished registering encoders");
+--- ext/libav/gstavvidenc.h.orig	2018-03-23 20:45:20 UTC
++++ ext/libav/gstavvidenc.h
+@@ -24,12 +24,12 @@
+ #ifndef __GST_FFMPEGVIDENC_H__
+ #define __GST_FFMPEGVIDENC_H__
+ 
+-G_BEGIN_DECLS
+-
+ #include <gst/gst.h>
+ #include <gst/video/gstvideoencoder.h>
+ #include <libavcodec/avcodec.h>
+ 
++G_BEGIN_DECLS
++
+ typedef struct _GstFFMpegVidEnc GstFFMpegVidEnc;
+ 
+ struct _GstFFMpegVidEnc
+@@ -42,34 +42,18 @@ struct _GstFFMpegVidEnc
+   AVFrame *picture;
+   gboolean opened;
+   gboolean discont;
+-
+-  /* cache */
+-  gint bitrate;
+-  gint me_method;
+-  gint gop_size;
+-  gint buffer_size;
+-  gint rtp_payload_size;
+-  gint compliance;
+-  gint max_threads;
+-
+-  guint8 *working_buf;
+-  gsize working_buf_size;
+-
+-  /* settings with some special handling */
+   guint pass;
+   gfloat quantizer;
+-  gchar *filename;
+-  guint lmin;
+-  guint lmax;
+-  gint max_key_interval;
+-  gboolean interlaced;
+ 
+   /* statistics file */
++  gchar *filename;
+   FILE *file;
+ 
+-  /* other settings are copied over straight,
+-   * include a context here, rather than copy-and-past it from avcodec.h */
+-  AVCodecContext config;
++  /* cache */
++  guint8 *working_buf;
++  gsize working_buf_size;
++
++  AVCodecContext *refcontext;
+ };
+ 
+ typedef struct _GstFFMpegVidEncClass GstFFMpegVidEncClass;
+--- meson.build.orig	2018-10-02 22:09:23 UTC
++++ meson.build
+@@ -15,10 +15,14 @@ else
+   gst_version_nano = 0
+ endif
+ 
+-libavfilter_dep = dependency('libavfilter', version: '>= 6.47.100')
+-libavformat_dep = dependency('libavformat', version: '>= 57.41.100')
+-libavcodec_dep = dependency('libavcodec', version: '>= 57.48.101')
+-libavutil_dep = dependency('libavutil', version: '>= 55.28.100')
++libavfilter_dep = dependency('libavfilter', version: '>= 7.16.100',
++  fallback: ['FFmpeg', 'libavfilter_dep'])
++libavformat_dep = dependency('libavformat', version: '>= 58.12.100',
++  fallback: ['FFmpeg', 'libavformat_dep'])
++libavcodec_dep = dependency('libavcodec', version: '>= 58.18.100',
++  fallback: ['FFmpeg', 'libavcodec_dep'])
++libavutil_dep = dependency('libavutil', version: '>= 56.14.100',
++  fallback: ['FFmpeg', 'libavutil_dep'])
+ 
+ libav_deps = [libavfilter_dep, libavformat_dep, libavcodec_dep, libavutil_dep]
+ 
+@@ -31,8 +35,24 @@ check_ffmpeg_src = '''#include <libavcodec/avcodec.h>
+ #error libav provider should be FFmpeg
+ #endif'''
+ 
+-if not cc.compiles(check_ffmpeg_src, dependencies : libav_deps, name : 'libav is provided by FFmpeg')
++libav_deps_type_name = ''
++
++foreach dep: libav_deps
++  message('type name: @0@'.format(dep.type_name()))
++endforeach
++
++foreach dep: libav_deps
++  message('[@0@] / [@1@]'.format(libav_deps_type_name, dep.type_name()))
++  if libav_deps_type_name != '' and dep.type_name() != libav_deps_type_name
++    error('Libav deps must be either all internal or all external')
++  endif
++  libav_deps_type_name = dep.type_name()
++endforeach
++
++if dep.type_name() != 'internal'
++  if not cc.compiles(check_ffmpeg_src, dependencies : libav_deps, name : 'libav is provided by FFmpeg')
+     error('Uncompatible libavcodec found')
++  endif
+ endif
+ 
+ cdata = configuration_data()
+@@ -80,9 +100,7 @@ libm = cc.find_library('m', required : false)
+ configure_file(output : 'config.h', configuration : cdata)
+ 
+ gst_libav_args = ['-DHAVE_CONFIG_H']
+-if cc.get_id() != 'msvc'
+-  gst_libav_args += ['-Wno-deprecated-declarations']
+-else
++if cc.get_id() == 'msvc'
+   # Ignore several spurious warnings for things gstreamer does very commonly
+   # If a warning is completely useless and spammy, use '/wdXXXX' to suppress it
+   # If a warning is harmless but hard to fix, use '/woXXXX' so it's shown once
