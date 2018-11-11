@@ -1,6 +1,6 @@
---- Source/JavaScriptCore/offlineasm/arm64.rb.orig	2018-06-01 22:16:58 UTC
+--- Source/JavaScriptCore/offlineasm/arm64.rb.orig	2018-10-27 21:20:55 UTC
 +++ Source/JavaScriptCore/offlineasm/arm64.rb
-@@ -945,7 +945,7 @@ class Instruction
+@@ -938,7 +938,7 @@ class Instruction
              $asm.puts "ldr #{operands[1].arm64Operand(:ptr)}, [#{operands[1].arm64Operand(:ptr)}, #{operands[0].asmLabel}@GOTPAGEOFF]"
  
              # On Linux, use ELF GOT relocation specifiers.
