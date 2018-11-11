@@ -3,6 +3,7 @@
 
 PORTNAME=	fcitx-hangul
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	korean
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
@@ -12,6 +13,7 @@ COMMENT=	Hangul support for Fcitx
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
 		libhangul.so:korean/libhangul
 

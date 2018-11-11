@@ -3,6 +3,7 @@
 
 PORTNAME=	fcitx-cloudpinyin
 PORTVERSION=	0.3.6
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
@@ -12,6 +13,7 @@ COMMENT=	Cloud-based Pinyin module for Fcitx
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
 		libcurl.so:ftp/curl
 
