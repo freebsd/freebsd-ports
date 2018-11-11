@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	logster
-PORTVERSION=	1.2.9
+PORTVERSION=	1.2.11
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,9 @@ COMMENT=	UI for viewing logs in Rack
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
