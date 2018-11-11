@@ -16,7 +16,7 @@ USE_QT=		core gui network sql testlib \
 		widgets xmlpatterns buildtools_build
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
-CONFLICTS=	qt5-declarative-render2d-*
+CONFLICTS=	qt5-declarative-render2d-* qt5-qml qt5-quick
 
 QT_DEFINES=	ACCESSIBILITY
 QT_CONFIG=	accessibility accessibility-atspi-bridge
