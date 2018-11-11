@@ -2,25 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	PHPTAL
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.0
 CATEGORIES=	devel www pear
-MASTER_SITES=	http://phptal.org/files/
+MASTER_SITES=	https://phptal.org/files/
+EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	PEAR PHPTAL is a XML/XHTML template library for PHP
+COMMENT=	XML/XHTML template library for PHP
 
-OPTIONS_DEFINE=	GETTEXT SIMPLEXML JSON
-GETTEXT_DESC=	Enable GetText Support
-SIMPLEXML_DESC=	Enable SimpleXML Support
-JSON_DESC=	Enable JSON Support
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-EXTRACT_SUFX=	.tar.gz
-USES=	pear
-
+USES=		pear php
 USE_PHP=	ctype hash
 
+NO_ARCH=	yes
+
+OPTIONS_DEFINE=	GETTEXT JSON SIMPLEXML
+GETTEXT_DESC=	Enable GetText support
+JSON_DESC=	Enable JSON support
+SIMPLEXML_DESC=	Enable SimpleXML support
+
 GETTEXT_USE=	PHP=gettext
-SIMPLEXML_USE=	PHP=simplexml
 JSON_USE=	PHP=json
+SIMPLEXML_USE=	PHP=simplexml
 
 .include <bsd.port.mk>
