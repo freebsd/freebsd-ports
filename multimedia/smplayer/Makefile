@@ -12,7 +12,8 @@ COMMENT=	Complete front-end based on Qt for mplayer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Copying.txt
 
-USES=		cpe desktop-file-utils dos2unix gmake qmake tar:bzip2
+USES=		cpe compiler:c++11-lang desktop-file-utils dos2unix gmake \
+		qmake tar:bzip2
 USE_XORG=	x11
 
 CPE_VENDOR=	ricardo_villalba
