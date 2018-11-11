@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vtk
-DISTVERSION=	8.1.1
-PORTREVISION=	2
+DISTVERSION=	8.1.2
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	8
