@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libgda
-PORTVERSION?=	5.2.4
-PORTREVISION?=	2
+PORTVERSION?=	5.2.5
+PORTREVISION?=	0
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX?=	5
@@ -19,12 +19,11 @@ SHEBANG_FILES=	libgda-report/RML/*/*.py
 .if !defined(REFERENCE_PORT)
 
 BUILD_DEPENDS=	itstool:textproc/itstool
-LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+LIB_DEPENDS=	libsecret-1.so:security/libsecret \
 		libsoup-2.4.so:devel/libsoup \
-		libjson-glib-1.0.so:devel/json-glib
 
-USES+=		gettext gmake libtool localbase pathfix pkgconfig
-USE_GNOME=	glib20 libxslt intlhack referencehack
+USES+=		gettext gmake gnome libtool localbase pathfix pkgconfig
+USE_GNOME=	glib20 libxslt intlhack introspection:build referencehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -44,8 +43,10 @@ USE_GNOME+=	libgda5
 .endif
 
 .if ${LIBGDA5_SLAVE}==ui
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error
 CONFIGURE_ARGS+=--with-ui
-USE_GNOME+=	gtk30 gnomedocutils
+USE_GNOME+=	cairo gtk30
 INSTALLS_ICONS=	yes
 .else
 CONFIGURE_ARGS+=--without-ui
