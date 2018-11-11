@@ -1,0 +1,5 @@
+The IRI module provides an object representation for Internationalized Resource
+Identifiers (IRIs) as defined by RFC 3987 and supports their parsing,
+serializing, and base resolution.
+
+WWW: https://metacpan.org/release/IRI
