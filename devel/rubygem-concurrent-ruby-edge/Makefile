@@ -2,20 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	concurrent-ruby-edge
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bleeding edge features for concurrent-ruby
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0.5:devel/rubygem-concurrent-ruby
+RUN_DEPENDS=	rubygem-concurrent-ruby>=1.1.1:devel/rubygem-concurrent-ruby
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
