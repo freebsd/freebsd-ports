@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-UPnP
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	multimedia devel
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/README
 
 PORTSCOUT=	skipv:1.41
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
