@@ -22,11 +22,11 @@ GH_ACCOUNT=	Cairo-Dock
 GH_PROJECT=	${PORTNAME}-core
 
 GNU_CONFIGURE=	yes
+USES=		cmake compiler:c++11-lang gettext gnome localbase:ldflags \
+		pkgconfig
 USE_GNOME=	glib20 gtk30 librsvg2 libxml2
 USE_LDCONFIG=	yes
 USE_XORG=	xrender xtst
-USES=		cmake gettext pkgconfig
-LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS=	-Dinstall-pc-path:STRING="${LOCALBASE}/libdata/pkgconfig" \
 		-DROOT_PREFIX:PATH=${STAGEDIR} \
 		-DCMAKE_INSTALL_MANDIR:PATH=man \
