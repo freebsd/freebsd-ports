@@ -93,7 +93,7 @@
 %%MPIDIR%%/lib/libmpi.la
 %%MPIDIR%%/lib/libmpi.so
 %%MPIDIR%%/lib/libmpi.so.40
-%%MPIDIR%%/lib/libmpi.so.40.10.2
+%%MPIDIR%%/lib/libmpi.so.40.10.3
 %%MPIDIR%%/lib/libmpi_cxx.la
 %%MPIDIR%%/lib/libmpi_cxx.so
 %%MPIDIR%%/lib/libmpi_cxx.so.40
@@ -113,11 +113,11 @@
 %%MPIDIR%%/lib/libopen-pal.la
 %%MPIDIR%%/lib/libopen-pal.so
 %%MPIDIR%%/lib/libopen-pal.so.40
-%%MPIDIR%%/lib/libopen-pal.so.40.10.2
+%%MPIDIR%%/lib/libopen-pal.so.40.10.3
 %%MPIDIR%%/lib/libopen-rte.la
 %%MPIDIR%%/lib/libopen-rte.so
 %%MPIDIR%%/lib/libopen-rte.so.40
-%%MPIDIR%%/lib/libopen-rte.so.40.10.2
+%%MPIDIR%%/lib/libopen-rte.so.40.10.3
 %%MPIDIR%%/lib/mpi.mod
 %%MPIDIR%%/lib/ompi_monitoring_prof.la
 %%MPIDIR%%/lib/ompi_monitoring_prof.so
@@ -873,6 +873,7 @@
 %%MPIDIR%%/%%DATADIR%%/mpif90-wrapper-data.txt
 %%MPIDIR%%/%%DATADIR%%/mpifort-wrapper-data.txt
 %%MPIDIR%%/%%DATADIR%%/openmpi-valgrind.supp
+%%MPIDIR%%/%%DATADIR%%/help-state-base.txt
 %%MPIDIR%%/%%DATADIR%%/ortecc-wrapper-data.txt
 %%MPIDIR%%/share/pmix/help-mca-base.txt
 %%MPIDIR%%/share/pmix/help-mca-var.txt
