@@ -2,9 +2,8 @@
 
 PORTNAME=	pdf-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.80-125
-DISTVERSIONSUFFIX=	-g213d685
-PORTREVISION=	1
+DISTVERSION=	0.80-133
+DISTVERSIONSUFFIX=	-gb6c0e4f
 CATEGORIES=	print elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -20,11 +19,11 @@ BUILD_DEPENDS=	cask${EMACS_PKGNAMESUFFIX}>0:devel/cask@${EMACS_FLAVOR} \
 		tablist${EMACS_PKGNAMESUFFIX}>=0.70.4:devel/tablist@${EMACS_FLAVOR}
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libpoppler.so:graphics/poppler \
-		libpoppler-glib.so:graphics/poppler-glib
-RUN_DEPENDS=	ImageMagick6>=6.9.9.28,1:graphics/ImageMagick6 \
-		tablist${EMACS_PKGNAMESUFFIX}>=0.70:devel/tablist@${EMACS_FLAVOR}
+		libpoppler-glib.so:graphics/poppler-glib \
+		libMagickCore-6.so:graphics/ImageMagick6
+RUN_DEPENDS=	tablist${EMACS_PKGNAMESUFFIX}>=0.70:devel/tablist@${EMACS_FLAVOR}
 
-USES=		autoreconf:build emacs gettext-runtime gmake
+USES=		autoreconf:build emacs gettext-runtime gmake gnome
 EMACS_FLAVORS_EXCLUDE=	nox devel_nox
 USE_GITHUB=	yes
 GH_ACCOUNT=	politza
