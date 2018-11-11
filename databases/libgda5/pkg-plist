@@ -130,7 +130,6 @@ share/gtk-doc/html/libgda-%%VERSION%%/GdaConnectionEvent.html
 share/gtk-doc/html/libgda-%%VERSION%%/GdaDataAccessWrapper.html
 share/gtk-doc/html/libgda-%%VERSION%%/GdaDataModel.html
 share/gtk-doc/html/libgda-%%VERSION%%/GdaDataModelArray.html
-share/gtk-doc/html/libgda-%%VERSION%%/GdaDataModelBdb.html
 share/gtk-doc/html/libgda-%%VERSION%%/GdaDataModelDir.html
 share/gtk-doc/html/libgda-%%VERSION%%/GdaDataModelImport.html
 share/gtk-doc/html/libgda-%%VERSION%%/GdaDataModelIter.html
@@ -317,7 +316,6 @@ share/gtk-doc/html/libgda-%%VERSION%%/index-5-0.html
 share/gtk-doc/html/libgda-%%VERSION%%/index-5-2-0.html
 share/gtk-doc/html/libgda-%%VERSION%%/index-deprecated.html
 share/gtk-doc/html/libgda-%%VERSION%%/index.html
-share/gtk-doc/html/libgda-%%VERSION%%/index.sgml
 share/gtk-doc/html/libgda-%%VERSION%%/index_main.html
 share/gtk-doc/html/libgda-%%VERSION%%/information_schema.html
 share/gtk-doc/html/libgda-%%VERSION%%/information_schema.png
@@ -333,6 +331,7 @@ share/gtk-doc/html/libgda-%%VERSION%%/libgda-%%VERSION%%-Configuration.html
 share/gtk-doc/html/libgda-%%VERSION%%/libgda-%%VERSION%%-Default-Data-handlers.html
 share/gtk-doc/html/libgda-%%VERSION%%/libgda-%%VERSION%%-Gda-Value.html
 share/gtk-doc/html/libgda-%%VERSION%%/libgda-%%VERSION%%-GdaDataComparator.html
+share/gtk-doc/html/libgda-%%VERSION%%/libgda-%%VERSION%%-GdaDataModelBdb.html
 share/gtk-doc/html/libgda-%%VERSION%%/libgda-%%VERSION%%-GdaDataPivot.html
 share/gtk-doc/html/libgda-%%VERSION%%/libgda-%%VERSION%%-GdaMutex.html
 share/gtk-doc/html/libgda-%%VERSION%%/libgda-%%VERSION%%-GdaRepetitiveStatement.html
@@ -526,7 +525,6 @@ share/locale/sk/LC_MESSAGES/libgda-%%VERSION%%.mo
 share/locale/sl/LC_MESSAGES/libgda-%%VERSION%%.mo
 share/locale/sq/LC_MESSAGES/libgda-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/libgda-%%VERSION%%.mo
-share/locale/sr@Latn/LC_MESSAGES/libgda-%%VERSION%%.mo
 share/locale/sr@latin/LC_MESSAGES/libgda-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/libgda-%%VERSION%%.mo
 share/locale/tg/LC_MESSAGES/libgda-%%VERSION%%.mo
