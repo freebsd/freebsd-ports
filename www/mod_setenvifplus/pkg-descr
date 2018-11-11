@@ -6,4 +6,4 @@ e.g. by using mod_qos or to propagate supplemental information to the
 appliaction via HTTP header data. mod_setenvifplus is derived from the
 standard Apache modules mod_setenvif and mod_headers.
 
-WWW: http://opensource.adnovum.ch/mod_setenvifplus/
+WWW: http://modsetenvifplus.sourceforge.net/
