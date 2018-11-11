@@ -1,0 +1,53 @@
+https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/f33f72847043
+
+--- gst-libs/ext/libav/libswscale/arm/rgb2yuv_neon_16.S.orig	2018-10-02 22:10:05 UTC
++++ gst-libs/ext/libav/libswscale/arm/rgb2yuv_neon_16.S
+@@ -18,6 +18,8 @@
+  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+  */
+ 
++#include "config.h"
++#if HAVE_AS_DN_DIRECTIVE
+ #include "rgb2yuv_neon_common.S"
+ 
+ /* downsampled R16G16B16 x8 */
+@@ -78,3 +80,4 @@ alias_qw    c8x8x2, q10
+ .endm
+ 
+     loop_420sp  rgbx, nv12, init, kernel_420_16x2, 16
++#endif
+--- gst-libs/ext/libav/libswscale/arm/rgb2yuv_neon_32.S.orig	2018-10-02 22:10:05 UTC
++++ gst-libs/ext/libav/libswscale/arm/rgb2yuv_neon_32.S
+@@ -18,6 +18,8 @@
+  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+  */
+ 
++#include "config.h"
++#if HAVE_AS_DN_DIRECTIVE
+ #include "rgb2yuv_neon_common.S"
+ 
+ /* downsampled R16G16B16 x8 */
+@@ -117,3 +119,4 @@ alias_qw    c8x8x2, q10
+ 
+ 
+     loop_420sp  rgbx, nv12, init, kernel_420_16x2, 32
++#endif
+--- gst-libs/ext/libav/libswscale/arm/swscale_unscaled.c.orig	2018-10-02 22:10:05 UTC
++++ gst-libs/ext/libav/libswscale/arm/swscale_unscaled.c
+@@ -23,6 +23,7 @@
+ #include "libswscale/swscale_internal.h"
+ #include "libavutil/arm/cpu.h"
+ 
++#if HAVE_AS_DN_DIRECTIVE
+ extern void rgbx_to_nv12_neon_32(const uint8_t *src, uint8_t *y, uint8_t *chroma,
+                 int width, int height,
+                 int y_stride, int c_stride, int src_stride,
+@@ -178,3 +179,8 @@ void ff_get_unscaled_swscale_arm(SwsContext *c)
+     if (have_neon(cpu_flags))
+         get_unscaled_swscale_neon(c);
+ }
++#else
++void ff_get_unscaled_swscale_arm(SwsContext *c)
++{
++}
++#endif
