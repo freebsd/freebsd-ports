@@ -3,7 +3,7 @@
 
 PORTNAME=	waffle
 PORTVERSION=	1.5.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.waffle-gl.org/files/release/waffle-${PORTVERSION}/
 
@@ -25,6 +25,9 @@ CMAKE_ARGS+=	-Dwaffle_has_glx=ON \
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS WAYLAND
+
+WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland
+WAYLAND_CMAKE_BOOL=	waffle_has_wayland
 
 .include <bsd.port.mk>
