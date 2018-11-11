@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis-rack
-DISTVERSION=	2.0.4
+DISTVERSION=	2.0.5
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -20,7 +20,6 @@ USE_RUBY=	yes
 NO_ARCH=	yes
 
 post-install:
-	@${RM} ${STAGEDIR}${PREFIX}/bin/appraisal \
-		${STAGEDIR}${PREFIX}/bin/rake
+	${RM} ${STAGEDIR}${PREFIX}/bin/appraisal ${STAGEDIR}${PREFIX}/bin/rake
 
 .include <bsd.port.mk>
