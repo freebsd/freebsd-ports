@@ -16,8 +16,6 @@ COMMENT=	Lightweight PDF viewer and toolkit
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to compile: cmsmd5.c:36:51: 'ContextID' undeclared
-
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
