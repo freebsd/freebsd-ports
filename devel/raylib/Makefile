@@ -5,7 +5,7 @@ DISTVERSION=	2.0.0
 DISTVERSIONSUFFIX=	-dev
 CATEGORIES=	devel
 
-MAINTAINER=	martinfilla@post.cz
+MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Library to learn videogames programming
 
 LICENSE=	ZLIB
