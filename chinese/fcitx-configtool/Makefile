@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx-configtool
-PORTVERSION=	0.4.8
+PORTVERSION=	0.4.9
 CATEGORIES=	chinese x11
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
