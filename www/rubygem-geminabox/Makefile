@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geminabox
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -19,8 +19,9 @@ RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
 		rubygem-reentrant_flock>=0:devel/rubygem-reentrant_flock \
 		rubygem-sinatra>=1.2.7:www/rubygem-sinatra
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
