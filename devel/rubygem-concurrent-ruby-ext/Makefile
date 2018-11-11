@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	concurrent-ruby-ext
-PORTVERSION=	1.0.5
+PORTVERSION=	1.1.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,11 +10,11 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C extensions to optimize the concurrent-ruby
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-concurrent-ruby>=${PORTVERSION}:devel/rubygem-concurrent-ruby
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>
