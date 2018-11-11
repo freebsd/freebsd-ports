@@ -119,7 +119,6 @@ share/emacs/site-lisp/pspp-mode.el
 %%GUI%%%%DATADIR%%/output-window.ui
 %%GUI%%%%DATADIR%%/paired-samples.ui
 %%GUI%%%%DATADIR%%/pspp.lang
-%%GUI%%%%DATADIR%%/psppire.gtkrc
 %%GUI%%%%DATADIR%%/rank.ui
 %%GUI%%%%DATADIR%%/recode.ui
 %%GUI%%%%DATADIR%%/regression.ui

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pspp
-PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTVERSION=	1.2.0
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	texinfo>0:print/texinfo
 LIB_DEPENDS=	libgslcblas.so:math/gsl
 
-USES=		cpe charsetfix gettext-tools gmake iconv localbase libtool \
+USES=		cpe charsetfix gettext-tools gmake gnome iconv localbase libtool \
 		perl5 pkgconfig readline
 CPE_VENDOR=	gnu
 USE_GNOME=	libxml2
@@ -29,14 +28,15 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-PORTDOCS=	AUTHORS ChangeLog NEWS ONEWS README THANKS TODO
+PORTDOCS=	AUTHORS ChangeLog NEWS ONEWS README THANKS
 PORTEXAMPLES=	*
 INFO=		pspp pspp-dev
 
 OPTIONS_DEFINE=		DOCS EXAMPLES GUI NLS PGSQL
 OPTIONS_SUB=		yes
 
-GUI_LIB_DEPENDS=	libgladeui-2.so:devel/glade
+GUI_LIB_DEPENDS=	libgladeui-2.so:devel/glade \
+			libspread-sheet-widget.so:devel/spread-sheet-widget
 GUI_RUN_DEPENDS=	yelp:x11/yelp
 GUI_USES=		desktop-file-utils
 GUI_USE=		gnome=gtk30,gtksourceview3
