@@ -44,6 +44,13 @@ SUB_FILES=	pkg-message
 DATADIR=	${PREFIX}/lib/piglit
 PORTDATA=	*
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS WAYLAND
+
+WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
+			libxkbcommon.so:x11/libxkbcommon
+
+post-patch-WAYLAND-off:
+	@${REINPLACE_CMD} -e '/pkg_check_modules.*wayland/d' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
