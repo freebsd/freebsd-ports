@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cairo
-PORTVERSION=	1.15.14
+PORTVERSION=	1.16.2
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,8 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	rubygem-native-package-installer>=1.0.3:devel/rubygem-native-package-installer \
 		rubygem-pkg-config>=1.2.2:devel/rubygem-pkg-config
 
+USES=		gem gnome pkgconfig
 USE_GNOME=	cairo
 USE_RUBY=	yes
-USES=		gem gnome pkgconfig
 
 .include <bsd.port.mk>
