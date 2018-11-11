@@ -5,7 +5,7 @@
 # discretion.
 
 PORTNAME=	gettext-tools
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	GNU gettext development and translation tools
 
