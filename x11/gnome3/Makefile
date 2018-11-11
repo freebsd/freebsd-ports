@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome3
 PORTVERSION=	3.28
+PORTREVISION=1
 CATEGORIES?=	x11 gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -30,8 +31,7 @@ RUN_DEPENDS?=	dconf-editor:devel/dconf-editor \
 		gnome-control-center>=3.0.0:sysutils/gnome-control-center \
 		${LOCALBASE}/share/gnome-background-properties/gnome-backgrounds.xml:x11-themes/gnome-backgrounds \
 		caribou>=0:accessibility/caribou \
-		${LOCALBASE}/share/sounds/freedesktop/index.theme:audio/freedesktop-sound-theme \
-		ekiga:net-im/ekiga
+		${LOCALBASE}/share/sounds/freedesktop/index.theme:audio/freedesktop-sound-theme
 
 CONFLICTS?=	gnome3-lite-[0-9]*
 
@@ -70,7 +70,8 @@ RUN_DEPENDS+=	epiphany>=3.0.0:www/epiphany \
 		gdm>=3.0.0:x11/gdm \
 		gnome-color-manager>=0:graphics/gnome-color-manager \
 		evolution>=3.0.0:mail/evolution \
-		cheese>=3.0.0:multimedia/cheese
+		cheese>=3.0.0:multimedia/cheese \
+		ekiga:net-im/ekiga
 
 .endif # !gnome3-lite section
 
