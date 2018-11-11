@@ -3,6 +3,7 @@
 
 PORTNAME=	piglit
 PORTVERSION=	20180910
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -45,6 +46,7 @@ DATADIR=	${PREFIX}/lib/piglit
 PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS WAYLAND
+OPTIONS_DEFAULT=WAYLAND
 
 WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
 			libxkbcommon.so:x11/libxkbcommon

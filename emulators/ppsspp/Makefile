@@ -69,8 +69,7 @@ SDL_BUILD_DEPENDS=	png>=1.6:graphics/png
 SDL_LIB_DEPENDS=	libpng.so:graphics/png
 SDL_VARS=	EXENAME=PPSSPPSDL
 VULKAN_DESC=		Vulkan renderer
-VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
-VULKAN_CFLAGS=	-DSDL_VIDEO_DRIVER_WAYLAND # XXX bug 223018, bug 227509
+VULKAN_RUN_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/Linux/${OPSYS}/' \

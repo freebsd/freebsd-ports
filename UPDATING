@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20181111
+  AFFECTS: users of graphics/mesa-libs
+  AUTHOR: jbeich@FreeBSD.org
+
+  Wayland support has been enabled in ports where it doesn't exclude
+  X11 support in order to make the binary packages usable with Wayland
+  compositors. If you get strange build failures re-run "make config"
+  to pick up the new defaults. If the extra dependencies are not
+  desired add the following to make.conf:
+
+    OPTIONS_UNSET += WAYLAND
+
 20181109
   AFFECTS: users of security/ossec-hids-server
   AUTHOR: dominik.lisiak@bemsoft.pl
