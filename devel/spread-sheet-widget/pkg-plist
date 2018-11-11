@@ -1,0 +1,8 @@
+include/ssw-axis-model.h
+include/ssw-sheet-axis.h
+include/ssw-sheet.h
+lib/libspread-sheet-widget.a
+lib/libspread-sheet-widget.so
+lib/libspread-sheet-widget.so.0
+lib/libspread-sheet-widget.so.0.0.0
+libdata/pkgconfig/spread-sheet-widget.pc
