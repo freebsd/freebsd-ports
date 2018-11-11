@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	GStreamer GL graphics plugin
@@ -14,6 +14,7 @@ PLIST=		${.CURDIR}/pkg-plist
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
 
 OPTIONS_DEFINE=	WAYLAND
+OPTIONS_DEFAULT=WAYLAND
 OPTIONS_SUB=	yes
 
 WAYLAND_CONFIGURE_ENABLE=	wayland
