@@ -1,6 +1,6 @@
---- Source/WTF/wtf/Optional.h.orig	2018-02-19 07:45:30 UTC
+--- Source/WTF/wtf/Optional.h.orig	2018-09-21 19:59:47 UTC
 +++ Source/WTF/wtf/Optional.h
-@@ -291,12 +291,14 @@ struct nullopt_t
+@@ -277,12 +277,14 @@ struct nullopt_t
  constexpr nullopt_t nullopt{nullopt_t::init()};
  
  

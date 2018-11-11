@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webkit
-PORTVERSION=	2.20.5
-PORTREVISION=	2
+PORTVERSION=	2.22.3
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk3
@@ -34,7 +33,7 @@ LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		bison cmake:outsource compiler:c++14-lang gettext gnome gperf \
+USES=		bison cmake:outsource compiler:c++14-lang gettext gl gnome gperf \
 		jpeg localbase:ldflags perl5 pkgconfig python:2.7,build \
 		sqlite tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build libxml2 libxslt

@@ -1,6 +1,6 @@
---- Source/WebCore/PAL/pal/PlatformGTK.cmake.orig	2018-02-19 07:45:31 UTC
+--- Source/WebCore/PAL/pal/PlatformGTK.cmake.orig	2018-07-25 11:56:30 UTC
 +++ Source/WebCore/PAL/pal/PlatformGTK.cmake
-@@ -12,6 +12,13 @@ list(APPEND PAL_SOURCES
+@@ -20,6 +20,13 @@ list(APPEND PAL_SOURCES
      unix/LoggingUnix.cpp
  )
  
@@ -12,5 +12,5 @@
 +)
 +
  if (ENABLE_SUBTLE_CRYPTO)
-     list(APPEND PAL_SOURCES
-         crypto/tasn1/Utilities.cpp
+     list(APPEND PAL_PUBLIC_HEADERS
+         crypto/tasn1/Utilities.h
