@@ -3,6 +3,7 @@
 
 PORTNAME=	dbtool
 PORTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.daemon.de/idisk/Apps/dbtool/
 

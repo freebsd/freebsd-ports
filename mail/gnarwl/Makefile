@@ -3,7 +3,7 @@
 
 PORTNAME=	gnarwl
 PORTVERSION=	3.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.onyxbits.de/sites/default/files/download/15/
 

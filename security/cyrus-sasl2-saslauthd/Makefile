@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PKGNAMESUFFIX=	-saslauthd
-PORTREVISION=	3
+PORTREVISION=	4
 
 COMMENT=	SASL authentication server for cyrus-sasl2
 
