@@ -1,2 +1,3 @@
-SHA256 (rubygem/hiredis-0.6.1.gem) = d4f2007a600b1e4b2a3ac7154e630e1981791133b7822ac3f657838d81afdaa5
-SIZE (rubygem/hiredis-0.6.1.gem) = 54784
+TIMESTAMP = 1541942095
+SHA256 (rubygem/hiredis-0.6.3.gem) = 7f052e320f7d24b5c2a9fdf67c6ff6facdf6e256394a703511bce34ecf445212
+SIZE (rubygem/hiredis-0.6.3.gem) = 59904
