@@ -1,2 +1,3 @@
-SHA256 (apache2/mod_setenvifplus-0.22-src.tar.gz) = 79da29546c2f6b71674907a133a28f94820468326b8d494ca17d81855c3a3392
-SIZE (apache2/mod_setenvifplus-0.22-src.tar.gz) = 24700
+TIMESTAMP = 1541936740
+SHA256 (apache2/mod_setenvifplus-0.37-src.tar.gz) = 022f39c838c0f247887f8641e6b5055fce275673bcc00a50b37ab944a2686304
+SIZE (apache2/mod_setenvifplus-0.37-src.tar.gz) = 198568
