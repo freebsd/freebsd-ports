@@ -328,6 +328,8 @@ include/armadillo_bits/op_chol_bones.hpp
 include/armadillo_bits/op_chol_meat.hpp
 include/armadillo_bits/op_clamp_bones.hpp
 include/armadillo_bits/op_clamp_meat.hpp
+include/armadillo_bits/op_cond_bones.hpp
+include/armadillo_bits/op_cond_meat.hpp
 include/armadillo_bits/op_cor_bones.hpp
 include/armadillo_bits/op_cor_meat.hpp
 include/armadillo_bits/op_cov_bones.hpp
@@ -466,6 +468,8 @@ include/armadillo_bits/sp_auxlib_meat.hpp
 include/armadillo_bits/span.hpp
 include/armadillo_bits/spdiagview_bones.hpp
 include/armadillo_bits/spdiagview_meat.hpp
+include/armadillo_bits/spglue_elem_helper_bones.hpp
+include/armadillo_bits/spglue_elem_helper_meat.hpp
 include/armadillo_bits/spglue_join_bones.hpp
 include/armadillo_bits/spglue_join_meat.hpp
 include/armadillo_bits/spglue_kron_bones.hpp
@@ -474,6 +478,8 @@ include/armadillo_bits/spglue_minus_bones.hpp
 include/armadillo_bits/spglue_minus_meat.hpp
 include/armadillo_bits/spglue_plus_bones.hpp
 include/armadillo_bits/spglue_plus_meat.hpp
+include/armadillo_bits/spglue_schur_bones.hpp
+include/armadillo_bits/spglue_schur_meat.hpp
 include/armadillo_bits/spglue_times_bones.hpp
 include/armadillo_bits/spglue_times_meat.hpp
 include/armadillo_bits/spop_diagmat_bones.hpp
@@ -544,7 +550,7 @@ include/armadillo_bits/xvec_htrans_bones.hpp
 include/armadillo_bits/xvec_htrans_meat.hpp
 lib/libarmadillo.so
 lib/libarmadillo.so.9
-lib/libarmadillo.so.9.100.5
+lib/libarmadillo.so.9.200.4
 libdata/pkgconfig/armadillo.pc
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
