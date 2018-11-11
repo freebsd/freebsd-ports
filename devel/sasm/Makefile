@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	3.10.0
 CATEGORIES=	devel
 
-MAINTAINER=	martinfilla@post.cz
+MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Simple IDE for NASM, MASM, GAS and FASM assembly languages
 
 LICENSE=	GPLv3
