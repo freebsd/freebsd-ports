@@ -1,9 +1,12 @@
---- config/policy.xml.orig	2017-09-23 12:22:07 UTC
+Upstream doesn't disable these by default.
+
+--- config/policy.xml.orig	2018-08-17 19:14:07 UTC
 +++ config/policy.xml
-@@ -64,6 +64,11 @@
+@@ -65,6 +65,11 @@
    <!-- <policy domain="resource" name="map" value="4GiB"/> -->
    <!-- <policy domain="resource" name="width" value="10KP"/> -->
    <!-- <policy domain="resource" name="height" value="10KP"/> -->
+   <!-- <policy domain="resource" name="list-length" value="128"/> -->
 +  <policy domain="coder" rights="none" pattern="EPHEMERAL" />
 +  <policy domain="coder" rights="none" pattern="URL" />
 +  <policy domain="coder" rights="none" pattern="HTTPS" />
