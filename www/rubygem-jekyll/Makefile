@@ -25,8 +25,6 @@ RUN_DEPENDS=	rubygem-addressable>=2.4:www/rubygem-addressable \
 		rubygem-rouge>=1.7:textproc/rubygem-rouge \
 		rubygem-safe_yaml>=1.0:devel/rubygem-safe_yaml
 
-CONFLICTS_INSTALL=	rubygem-jekyll2-*
-
 USES=		gem
 USE_RUBY=	yes
 
