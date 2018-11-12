@@ -281,6 +281,7 @@
     SUBDIR += simint
     SUBDIR += simlib
     SUBDIR += simsmith
+    SUBDIR += sparta
     SUBDIR += spglib
     SUBDIR += step
     SUBDIR += step-kde4
