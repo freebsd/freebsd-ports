@@ -11,6 +11,7 @@ COMMENT=	Classical molecular dynamics code with a focus on materials modeling
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	undefined reference to `__atomic_load'
 CONFLICTS_BUILD=	ga # conflicts with include/error.h, already fixed in the head
 
 USES=		blaslapack:openblas cmake:outsource,noninja eigen:3 fortran shebangfix
@@ -49,7 +50,7 @@ FFMPEG_CMAKE_BOOL=	WITH_FFMPEG
 
 VORONOI_DESC=		Use voro++, Voronoi tessellation package
 VORONOI_CMAKE_BOOL=	PKG_VORONOI
-LIB_DEPENDS=		libvoro++.so:science/voro++
+VORONOI_LIB_DEPENDS=	libvoro++.so:science/voro++
 
 LATTE_DESC=		Use LATTE package
 LATTE_CMAKE_BOOL=	PKG_LATTE
@@ -61,8 +62,6 @@ BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
 CPP=		clang-cpp${LLVM_VER}
 CC=		clang${LLVM_VER}
 CXX=		clang++${LLVM_VER}
-
-MAKE_ARGS= VERBOSE=1
 
 post-patch:
 	@${REINPLACE_CMD} 's|SHELL = /bin/bash|SHELL = ${LOCALBASE}/bin/bash|' ${WRKSRC}/src/Makefile
