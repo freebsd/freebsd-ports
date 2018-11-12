@@ -1,6 +1,6 @@
---- src/Makefile.in	2001/09/03 14:43:41	1.1
-+++ src/Makefile.in	2001/09/03 14:43:55
-@@ -99,7 +99,7 @@
+--- src/Makefile.in.orig	2001-08-13 19:46:21 UTC
++++ src/Makefile.in
+@@ -99,7 +99,7 @@ HDRS = sdlmm_global.h sdlmm.h sdlmm_spoi
  
  libSDLmm_la_SOURCES = sdlmm_global.cpp sdlmm_basesurface.cpp sdlmm_surface.cpp sdlmm_display.cpp sdlmm_pixelformat.cpp 	sdlmm_srect.cpp sdlmm_event.cpp sdlmm_audio.cpp sdlmm_timer.cpp 	sdlmm_joystick.cpp sdlmm_cd.cpp sdlmm_videoinfo.cpp
  
