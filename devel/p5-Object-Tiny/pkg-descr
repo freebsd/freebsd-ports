@@ -1,20 +1,16 @@
-There's a whole bunch of class builders out there. In fact, creating a
-class builder seems to be something of a rite of passage (this is my
-fifth, at least).
+There's a whole bunch of class builders out there. In fact, creating a class
+builder seems to be something of a rite of passage (this is my fifth, at least).
 
-Unfortunately, most of the time I want a class builder I'm in a hurry
-and sketching out lots of fairly simple data classes with fairly
-simple structure, mostly just read-only accessors, and that's about it.
+Unfortunately, most of the time I want a class builder I'm in a hurry and
+sketching out lots of fairly simple data classes with fairly simple structure,
+mostly just read-only accessors, and that's about it.
 
-Often this is for code that won't end up on CPAN, so adding a small
-dependency doesn't matter much. I just want to be able to define these
-classes FAST.
+Often this is for code that won't end up on CPAN, so adding a small dependency
+doesn't matter much. I just want to be able to define these classes FAST.
 
-By which I mean LESS typing than writing them by hand, not more. And I
-don't need all those weird complex features that bloat out the code
-and take over the whole way I build modules.
+By which I mean LESS typing than writing them by hand, not more. And I don't
+need all those weird complex features that bloat out the code and take over the
+whole way I build modules.
 
 And so, I present yet another member of the Tiny family of modules,
 Object::Tiny.
-
-WWW: https://metacpan.org/release/Object-Tiny
