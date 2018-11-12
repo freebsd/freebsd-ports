@@ -3,5 +3,5 @@ SHA256 (openssh-7.9p1.tar.gz) = 6b4b3ba2253d84ed3771c8050728d597c91cfce898713beb
 SIZE (openssh-7.9p1.tar.gz) = 1565384
 SHA256 (openssh-7.9p1+x509-11.5.diff.gz) = 1d15099ce54614f158f10f55b6b4992d915353f92a05e179a64b0655650c00bb
 SIZE (openssh-7.9p1+x509-11.5.diff.gz) = 594995
-SHA256 (openssh-7.7p1-gsskex-all-20141021-debian-rh-20171004.patch.gz) = c58f10ed5d9550e6e4ac09898a1aa131321e69c4d65a742ab95d357b35576ef4
-SIZE (openssh-7.7p1-gsskex-all-20141021-debian-rh-20171004.patch.gz) = 27251
+SHA256 (openssh-7.9p1-gsskex-all-20141021-debian-rh-20181020.patch.gz) = a9fe46bc97ebb6f32dad44c6e62e712b224392463b2084300835736fe848eabc
+SIZE (openssh-7.9p1-gsskex-all-20141021-debian-rh-20181020.patch.gz) = 27612

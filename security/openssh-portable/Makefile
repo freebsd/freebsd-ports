@@ -94,7 +94,7 @@ EXTRA_PATCHES:=		${EXTRA_PATCHES:N${TCP_WRAPPERS_EXTRA_PATCHES}}
 
 # Must add this patch before HPN due to conflicts
 .if ${PORT_OPTIONS:MKERB_GSSAPI}
-BROKEN=	KERB_GSSAPI No patch for ${DISTVERSION} yet.
+#BROKEN=	KERB_GSSAPI No patch for ${DISTVERSION} yet.
 # Patch from:
 # https://sources.debian.org/data/main/o/openssh/1:7.7p1-2/debian/patches/gssapi.patch
 # which was originally based on 5.7 patch from
