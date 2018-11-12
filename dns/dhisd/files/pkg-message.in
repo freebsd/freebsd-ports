@@ -1,9 +1,0 @@
---------------------------------------------------------------------------
-Before dhisd can run, you will need configure BIND.
-
-For more information, see the following site:
-http://www.dhis.org/dhis/r5/
-__DOCS__
-__DOCS__or the documents in %%DOCSDIR%%
-__DOCS__Read INSTALL and INSTALL.bsd at least for the setup information of dhisd.
---------------------------------------------------------------------------

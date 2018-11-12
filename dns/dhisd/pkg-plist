@@ -1,6 +1,9 @@
+@dir(%%USER%%,%%GROUP%%,750) /var/log/dhis
+@dir(%%USER%%,%%GROUP%%,750) /var/run/dhis
+@sample etc/dhisd.conf.sample
+@sample etc/dhisd.db.sample
 sbin/dhisd
-sbin/genkeys
-@(,,600) etc/dhis/dhis.db.sample
-@(,,600) etc/dhis/services.db.sample
-etc/rc.d/dhisd.sh
-@dir(,,700) etc/dhis
+sbin/dhisgenkeys
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
