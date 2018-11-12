@@ -1,0 +1,15 @@
+SPARTA is a parallel DSMC code for performing simulations of low-density gases
+in 2D or 3D. Particles advect through a hierarchical Cartesian grid that
+overlays the simulation box. The grid is used to group particles by grid cell
+for purposes of performing collisions and chemistry. Physical objects with
+triangulated surfaces can be embedded in the grid, creating cut and split grid
+cells. The grid is also used to efficiently find particle/surface collisions.
+
+SPARTA runs on single processors or in parallel using message-passing techniques
+and a spatial-decomposition of the simulation domain. The code is designed to be
+easy to modify or extend with new functionality.
+
+SPARTA was developed at Sandia National Laboratories, a US Department of Energy
+(DOE) laboratory.
+
+WWW: https://sparta.sandia.gov/
