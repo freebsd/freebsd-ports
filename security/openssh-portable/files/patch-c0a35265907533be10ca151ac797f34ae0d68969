@@ -1,0 +1,19 @@
+commit c0a35265907533be10ca151ac797f34ae0d68969
+Author: Damien Miller <djm@mindrot.org>
+Date:   Mon Oct 22 11:22:50 2018 +1100
+
+    fix compile for openssl 1.0.x w/ --with-ssl-engine
+
+    bz#2921, patch from cotequeiroz
+
+--- openbsd-compat/openssl-compat.c.orig	2018-11-12 12:52:26 UTC
++++ openbsd-compat/openssl-compat.c
+@@ -76,7 +76,7 @@ ssh_OpenSSL_add_all_algorithms(void)
+ 	ENGINE_load_builtin_engines();
+ 	ENGINE_register_all_complete();
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10001000L
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ 	OPENSSL_config(NULL);
+ #else
+ 	OPENSSL_init_crypto(OPENSSL_INIT_ADD_ALL_CIPHERS |
