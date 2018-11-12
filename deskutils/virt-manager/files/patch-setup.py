@@ -1,6 +1,6 @@
---- setup.py.orig	2015-11-30 20:47:47 UTC
+--- setup.py.orig	2018-10-13 18:26:55 UTC
 +++ setup.py
-@@ -612,8 +612,8 @@ class VMMDistribution(distutils.dist.Dis
+@@ -618,8 +618,8 @@ class VMMDistribution(distutils.dist.Distribution):
      ]
  
      def __init__(self, *args, **kwargs):
@@ -11,14 +11,12 @@
          distutils.dist.Distribution.__init__(self, *args, **kwargs)
  
  
-@@ -641,13 +641,11 @@ distutils.core.setup(
+@@ -647,11 +647,9 @@ distutils.core.setup(
              "virt-convert",
              "virt-xml",
          ]),
 -        ("share/glib-2.0/schemas",
 -         ["data/org.virt-manager.virt-manager.gschema.xml"]),
-         ("share/GConf/gsettings",
-          ["data/org.virt-manager.virt-manager.convert"]),
          ("share/virt-manager/ui", glob.glob("ui/*.ui")),
  
 -        ("share/man/man1", [
@@ -26,7 +24,7 @@
              "man/virt-manager.1",
              "man/virt-install.1",
              "man/virt-clone.1",
-@@ -670,7 +668,6 @@ distutils.core.setup(
+@@ -676,7 +674,6 @@ distutils.core.setup(
          'sdist': my_sdist,
          'install': my_install,
          'install_data': my_install_data,
