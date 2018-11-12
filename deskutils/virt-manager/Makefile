@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	virt-manager
-PORTVERSION=	1.5.1
+PORTVERSION=	2.0.0
 CATEGORIES=	deskutils net-mgmt
 MASTER_SITES=	http://virt-manager.org/download/sources/${PORTNAME}/ \
 		LOCAL/jgh/deskutils/${PORTNAME}/
@@ -16,7 +16,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:devel/py-dbus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libxml2>=2.7.8:textproc/py-libxml2@${PY_FLAVOR} \
 		vte3>=0:x11-toolkits/vte3 \
 		${PYTHON_PKGNAMEPREFIX}ipaddr>=0:devel/py-ipaddr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}urlgrabber>=0:www/py-urlgrabber@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libvirt>=0:devel/py-libvirt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		gtk-vnc>=0.4.4:net/gtk-vnc \
@@ -29,7 +28,7 @@ PYDISTUTILS_INSTALLNOSINGLE=	yes
 PYDISTUTILS_CONFIGURE_TARGET=	configure
 PYDISTUTILS_CONFIGUREARGS=	--prefix=${PREFIX}
 INSTALLS_ICONS=	yes
-USES=		python:2.7 gettext shebangfix
+USES=		python:3.3+ gettext shebangfix
 USE_PYTHON=	noegginfo autoplist distutils
 
 NO_ARCH=	yes
@@ -38,7 +37,6 @@ USE_GNOME=	introspection:run intltool librsvg2 pygobject3
 
 INSTALLS_ICONS=	yes
 
-python_OLD_CMD=	"/usr/bin/python2 -tt"
 SHEBANG_FILES=	virt-manager \
 		virt-install \
 		virt-clone \
