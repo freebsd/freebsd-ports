@@ -1,33 +1,80 @@
---- Makefile.orig	Sun Nov  4 20:48:12 2001
-+++ Makefile	Sun Nov  4 20:49:08 2001
-@@ -25,12 +25,12 @@
+--- Makefile.orig	2008-05-22 14:14:08 UTC
++++ Makefile
+@@ -24,31 +24,31 @@
+ # SUCH DAMAGE.
  #
- #      DHIS(c)  Dynamic Host Information System Release 5.1
  
 -CC=gcc
--CFLAGS=-Wall -Wformat -I/usr/local/include # -DDONT_FORK
--LFLAGS=-L/usr/local/lib 
-+CC?=gcc
-+#CFLAGS=-Wall -Wformat -I/usr/local/include # -DDONT_FORK
-+#LDFLAGS=-L/usr/local/lib 
++CC ?= ${CC}
+ 
+-MYSQL_INCLUDE=	-I/usr/local/include/mysql -I/usr/local/mysql/include \
+-		-I/usr/local/mysql/include/mysql
++MYSQL_INCLUDE=	-I${PREFIX}/include/mysql -I${PREFIX}/mysql/include \
++		-I${PREFIX}/mysql/include/mysql
+ 
+-MYSQL_LIBDIR=	-L/usr/local/lib/mysql -L/usr/local/mysql/lib \
+-		-L/usr/local/mysql/lib/mysql
++MYSQL_LIBDIR=	-L${PREFIX}/lib/mysql -L${PREFIX}/mysql/lib \
++		-L${PREFIX}/mysql/lib/mysql
+ 
+-WFLAGS=-Wall -Wstrict-prototypes -Wpointer-arith \
+-        -Wno-sign-compare -Wno-traditional -Wreturn-type -Wswitch -Wshadow \
++WFLAGS += -Wall -Wstrict-prototypes -Wpointer-arith \
++        -Wno-sign-compare -Wreturn-type -Wswitch -Wshadow \
+         -Wwrite-strings -Wextra -funsigned-char 
+ 
+ # Possible CFLAGS: -g -O3 -DDONT_FORK
+ #
+ 
+-CFLAGS= -O3 $(WFLAGS) -I. -I/usr/local/include # $(MYSQL_INCLUDE) -DWITH_MYSQL=1
+-LFLAGS= -L/usr/local/lib # $(MYSQL_LIBDIR)
++CFLAGS= $(WFLAGS) -I. -I${PREFIX}/include
++LDFLAGS= -L${PREFIX}/lib
+ 
+ # For System V (Solaris) add -lnsl and -lsocket
+ # For MySQL support add -lmysqlclient
+ LIBS=-lgmp # -lmysqlclient #-lnsl -lsocket 
+ 
+-INSTALLBIN=/usr/local/sbin
+-INSTALLCONF=/usr/local/etc
+-INSTALLRC=/usr/local/etc/rc.d
++INSTALLBIN=${PREFIX}/sbin
++INSTALLCONF=${PREFIX}/etc
++INSTALLRC=${PREFIX}/etc/rc.d
+ LOGDIR=/var/log/dhis
+ PIDDIR=/var/run/dhis
  CP=cp
+@@ -66,10 +66,10 @@ RM=rm -f
+ all: dhisd dhisgenkeys
  
--INSTALLDIR=/etc/dhis/bin
-+INSTALLDIR=__PREFIX__/sbin
- MODE=700
- OWNER=root
- MKDIR=mkdir -p
-@@ -46,11 +46,11 @@
- all: dhisd genkeys
+ dhisd:	$(OBJS) main.o
+-	$(CC) $(LFLAGS) -o dhisd $(OBJS) $(LIBS) main.o
++	$(CC) $(LDFLAGS) -o dhisd $(OBJS) $(LIBS) main.o
  
- dhisd:	$(OBJS)
--	$(CC) $(LFLAGS) -o dhisd $(OBJS) $(LIBS)
-+	$(CC) $(LDFLAGS) -o dhisd $(OBJS) $(LIBS)
- 	strip dhisd
+ dhisgenkeys: qrc.o genkeys.o
+-	$(CC) $(LFLAGS) -o dhisgenkeys qrc.o $(LIBS) genkeys.o
++	$(CC) $(LDFLAGS) -o dhisgenkeys qrc.o $(LIBS) genkeys.o
  
- genkeys:
--	$(CC) $(CFLAGS) $(LFLAGS) genkeys.c -DQRC=1 -o genkeys -lgmp
-+	$(CC) $(CFLAGS) $(LDFLAGS) genkeys.c -DQRC=1 -o genkeys -lgmp
+ main.o: main.c
+ 	$(CC) $(CFLAGS) -c main.c
+@@ -84,18 +84,12 @@ install: dhisd  dhisgenkeys
+ 	$(MKDIR) $(PIDDIR)
+ 	$(CP) dhisd $(INSTALLBIN)
+ 	$(CP) dhisgenkeys $(INSTALLBIN)
+-	$(CHOWN) dhis $(INSTALLBIN)/dhisd $(INSTALLBIN)/dhisgenkeys $(LOGDIR) $(PIDDIR)
+-	$(CHGRP) dhis $(INSTALLBIN)/dhisd $(INSTALLBIN)/dhisgenkeys $(LOGDIR) $(PIDDIR)
+-	$(CHMOD) 770 $(INSTALLBIN)/dhisd $(INSTALLBIN)/dhisgenkeys $(LOGDIR) $(PIDDIR)
++	$(CHMOD) 750 $(INSTALLBIN)/dhisd $(INSTALLBIN)/dhisgenkeys $(LOGDIR) $(PIDDIR)
+ 	$(CHMOD) u+s $(INSTALLBIN)/dhisd
+ 	$(CP) dhis.db.sample dhisd.conf.sample $(INSTALLCONF)
+-	$(CHOWN) dhis $(INSTALLCONF)/dhis.db.sample $(INSTALLCONF)/dhisd.conf.sample
+-	$(CHGRP) dhis $(INSTALLCONF)/dhis.db.sample $(INSTALLCONF)/dhisd.conf.sample
+ 	$(CHMOD) 640 $(INSTALLCONF)/dhis.db.sample $(INSTALLCONF)/dhisd.conf.sample
+ 	$(CP) dhisd.rc $(INSTALLRC)/dhisd
+-	$(CHOWN) dhis $(INSTALLRC)/dhisd
+-	$(CHGRP) dhis $(INSTALLRC)/dhisd
+-	$(CHMOD) 755 $(INSTALLRC)/dhisd
++	$(CHMOD) 555 $(INSTALLRC)/dhisd
  
- install: dhisd genkeys
- 	$(MKDIR) $(INSTALLDIR)
+ clean:
+ 	$(RM) dhisgenkeys *.core core dhisd *.o *~

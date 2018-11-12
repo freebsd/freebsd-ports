@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: dhisd
+# REQUIRE: SERVERS
+
+. /etc/rc.subr
+
+: ${dhisd_enable="NO"}
+: ${dhisd_flags=""}
+: ${dhisd_user="%%USER%%"}
+: ${dhisd_group="%%GROUP%%"}
+
+name="dhisd"
+rcvar="${name}_enable"
+command="%%PREFIX%%/sbin/dhisd"
+command_args=""
+
+pidfile="/var/run/dhis/${name}.pid"
+
+load_rc_config $name
+run_rc_command "$1"
