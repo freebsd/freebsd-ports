@@ -4,8 +4,7 @@
 PORTNAME=	spread-sheet-widget
 PORTVERSION=	0.3
 CATEGORIES=	devel
-MASTER_SITES=	GNU_ALPHA
-MASTER_SITE_SUBDIR=	ssw
+MASTER_SITES=	GNU_ALPHA/ssw
 
 MAINTAINER=	cpm@FreeBSD.org
 COMMENT=	Library for Gtk+ which provides a widget for tabular data
