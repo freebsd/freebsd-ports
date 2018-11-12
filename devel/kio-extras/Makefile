@@ -2,7 +2,7 @@
 
 PORTNAME=	kio-extras
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel kde kde-applications # kde kde-applications-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -24,8 +24,11 @@ USE_QT=		core dbus declarative gui location network phonon4 printsupport \
 		buildtools_build qmake_build
 SHEBANG_FILES=	info/kde-info2html
 
-OPTIONS_DEFINE=	SAMBA MTP EXR EXIV SLP SSH WEBENGINE TAGLIB DOCS
-OPTIONS_DEFAULT=SAMBA MTP EXR EXIV SLP SSH WEBENGINE TAGLIB
+# CVE-2018-19120
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngineWidget
+
+OPTIONS_DEFINE=	SAMBA MTP EXR EXIV SLP SSH TAGLIB DOCS
+OPTIONS_DEFAULT=SAMBA MTP EXR EXIV SLP SSH TAGLIB
 OPTIONS_SUB=	yes
 
 SAMBA_DESC=		Needed to build the SMB kioslave
@@ -56,10 +59,5 @@ SSH_LIB_DEPENDS=	libssh.so:security/libssh
 TAGLIB_DESC=		Needed to build the audio thumbnail kioslave
 TAGLIB_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Taglib
 TAGLIB_LIB_DEPENDS=	libtag.so:audio/taglib
-
-WEBENGINE_DESC=		Needed to build the html thumbnailer
-WEBENGINE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngineWidget
-WEBENGINE_USES=	qt:5
-WEBENGINE_USE=		QT=webengine
 
 .include <bsd.port.mk>
