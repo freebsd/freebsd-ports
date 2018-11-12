@@ -10,9 +10,9 @@ Reviewed by:    ache
 Sponsored by:   DARPA, NAI Labs
 
 
---- session.c.orig	2018-04-01 22:38:28.000000000 -0700
-+++ session.c	2018-04-03 13:56:49.599400000 -0700
-@@ -982,6 +982,9 @@ do_setup_env(struct ssh *ssh, Session *s, const char *
+--- session.c.orig	2018-10-16 17:01:20.000000000 -0700
++++ session.c	2018-11-10 11:45:14.645263000 -0800
+@@ -1020,6 +1020,9 @@ do_setup_env(struct ssh *ssh, Session *s, const char *
  	struct passwd *pw = s->pw;
  #if !defined (HAVE_LOGIN_CAP) && !defined (HAVE_CYGWIN)
  	char *path = NULL;
@@ -22,7 +22,7 @@ Sponsored by:   DARPA, NAI Labs
  #endif
  
  	/* Initialize the environment. */
-@@ -1003,6 +1006,9 @@ do_setup_env(struct ssh *ssh, Session *s, const char *
+@@ -1041,6 +1044,9 @@ do_setup_env(struct ssh *ssh, Session *s, const char *
  	}
  #endif
  
@@ -32,7 +32,7 @@ Sponsored by:   DARPA, NAI Labs
  #ifdef GSSAPI
  	/* Allow any GSSAPI methods that we've used to alter
  	 * the childs environment as they see fit
-@@ -1020,11 +1026,21 @@ do_setup_env(struct ssh *ssh, Session *s, const char *
+@@ -1058,11 +1064,21 @@ do_setup_env(struct ssh *ssh, Session *s, const char *
  	child_set_env(&env, &envsize, "LOGIN", pw->pw_name);
  #endif
  	child_set_env(&env, &envsize, "HOME", pw->pw_dir);
@@ -58,7 +58,7 @@ Sponsored by:   DARPA, NAI Labs
  #else /* HAVE_LOGIN_CAP */
  # ifndef HAVE_CYGWIN
  	/*
-@@ -1044,15 +1060,9 @@ do_setup_env(struct ssh *ssh, Session *s, const char *
+@@ -1082,14 +1098,9 @@ do_setup_env(struct ssh *ssh, Session *s, const char *
  # endif /* HAVE_CYGWIN */
  #endif /* HAVE_LOGIN_CAP */
  
@@ -70,11 +70,10 @@ Sponsored by:   DARPA, NAI Labs
  
 -	if (getenv("TZ"))
 -		child_set_env(&env, &envsize, "TZ", getenv("TZ"));
--
- 	/* Set custom environment options from pubkey authentication. */
- 	if (options.permit_user_env) {
- 		for (n = 0 ; n < auth_opts->nenv; n++) {
-@@ -1331,7 +1341,7 @@ do_setusercontext(struct passwd *pw)
+ 	if (s->term)
+ 		child_set_env(&env, &envsize, "TERM", s->term);
+ 	if (s->display)
+@@ -1389,7 +1400,7 @@ do_setusercontext(struct passwd *pw)
  	if (platform_privileged_uidswap()) {
  #ifdef HAVE_LOGIN_CAP
  		if (setusercontext(lc, pw, pw->pw_uid,

@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openssh
-DISTVERSION=	7.7p1
-PORTREVISION=	6
+DISTVERSION=	7.9p1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	OPENBSD/OpenSSH/portable
@@ -26,20 +26,16 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} --with-md5-passwords \
 
 ETCOLD=			${PREFIX}/etc
 
-BROKEN_SSL=	openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	error: OpenSSL >= 1.1.0 is not yet supported
-
 FLAVORS=			default hpn
 default_CONFLICTS_INSTALL=	openssl-portable-hpn
 hpn_CONFLICTS_INSTALL=		openssh-portable
 hpn_PKGNAMESUFFIX=		-portable-hpn
 
-OPTIONS_DEFINE=		PAM TCP_WRAPPERS LIBEDIT BSM \
+OPTIONS_DEFINE=		DOCS PAM TCP_WRAPPERS LIBEDIT BSM \
 			HPN X509 KERB_GSSAPI \
 			LDNS NONECIPHER XMSS
 OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS LDNS
 .if ${FLAVOR:U} == hpn
-OPTIONS_DEFINE+=	DOCS
 OPTIONS_DEFAULT+=	HPN NONECIPHER
 .endif
 OPTIONS_RADIO=		KERBEROS
@@ -70,10 +66,10 @@ HPN_CONFIGURE_WITH=		hpn
 NONECIPHER_CONFIGURE_WITH=	nonecipher
 
 # See http://www.roumenpetrov.info/openssh/
-X509_VERSION=		11.3.2
+X509_VERSION=		11.5
 X509_PATCH_SITES=	http://www.roumenpetrov.info/openssh/x509-${X509_VERSION}/:x509
 X509_EXTRA_PATCHES+=	${FILESDIR}/extra-patch-x509-glue
-X509_PATCHFILES=	${PORTNAME}-7.7p1+x509-${X509_VERSION}.diff.gz:-p1:x509
+X509_PATCHFILES=	${PORTNAME}-7.9p1+x509-${X509_VERSION}.diff.gz:-p1:x509
 
 MIT_LIB_DEPENDS=		libkrb5.so.3:security/krb5
 HEIMDAL_LIB_DEPENDS=		libkrb5.so.26:security/heimdal
@@ -113,7 +109,7 @@ PATCHFILES+=	openssh-7.7p1-gsskex-all-20141021-debian-rh-20171004.patch.gz:-p1:g
 
 # https://www.psc.edu/hpn-ssh https://github.com/rapier1/openssh-portable/tree/hpn-openssl1.1-7_7_P1
 .if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
-#BROKEN=			HPN: Not yet updated for ${DISTVERSION} and disabled in base
+#BROKEN=			HPN: Not yet updated for ${DISTVERSION} yet.
 PORTDOCS+=		HPN-README
 HPN_VERSION=		14v15
 HPN_DISTVERSION=	7.7p1
