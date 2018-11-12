@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httparty
-PORTVERSION=	0.16.2
+PORTVERSION=	0.16.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,11 +12,13 @@ COMMENT=	Ruby Library that Makes HTTP Fun Again
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-multi_xml>=0.5.2:textproc/rubygem-multi_xml
+RUN_DEPENDS=	rubygem-mime-types>=3.0:misc/rubygem-mime-types \
+		rubygem-multi_xml>=0.5.2:textproc/rubygem-multi_xml
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 PLIST_FILES=	bin/httparty
 
