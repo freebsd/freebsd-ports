@@ -131,10 +131,11 @@ CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON" \
 		-DWITHOUT_EXAMPLE_STORAGE_ENGINE=1 \
 		-DWITHOUT_CLIENT=1
 
-.for ENGINE in ${OPTIONS_GROUP_ENGINES}
+.for ENGINE in ${OPTIONS_GROUP_ENGINES:NINNOBASE}
 ${ENGINE}_CMAKE_OFF=	-DPLUGIN_${ENGINE}=NO
 ${ENGINE}_CMAKE_ON=	-DPLUGIN_${ENGINE}=DYNAMIC
 .endfor
+INNOBASE_CMAKE_OFF=	-DPLUGIN_INNOBASE=NO
 
 CONNECT_EXTRA_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 CONNECT_EXTRA_USE=		gnome=libxml2
@@ -197,13 +198,5 @@ post-patch:
 	${CP} ${WRKSRC}/cmake/os/FreeBSD.cmake \
 		${WRKSRC}/cmake/os/DragonFly.cmake
 .endif
-
-# Fix build failure in mbstream, see https://jira.mariadb.org/browse/MDEV-14072
-post-configure-INNOBASE-on:
-	${REINPLACE_CMD} -e 's| ${PREFIX}/lib/liblz4.so\(.* ${PREFIX}/lib/liblz4.so.*\)|\1|' \
-		-e 's| ${PREFIX}/lib/liblzo2.so\(.* ${PREFIX}/lib/liblzo2.so.*\)|\1|' \
-		-e 's| ${PREFIX}/lib/libsnappy.so\(.* ${PREFIX}/lib/libsnappy.so\)|\1|' \
-		-e 's| -llzma\(.* -llzma\)|\1|;s| -lbz2\(.* -lbz2\)|\1|;' \
-		${WRKSRC}/extra/mariabackup/CMakeFiles/mbstream.dir/link.txt
 
 .include <bsd.port.post.mk>
