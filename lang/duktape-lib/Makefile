@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USES=		gmake tar:xz
 USE_LDCONFIG=	yes
 
+MAKE_ARGS+=	CC=${CC}
 MAKEFILE=	Makefile.sharedlibrary
 
 do-install:
