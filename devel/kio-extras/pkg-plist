@@ -12,7 +12,6 @@ lib/libmolletnetwork5.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/comicbookthumbnail.so
 %%QT_PLUGINDIR%%/djvuthumbnail.so
 %%EXR%%%%QT_PLUGINDIR%%/exrthumbnail.so
-%%WEBENGINE%%%%QT_PLUGINDIR%%/htmlthumbnail.so
 %%QT_PLUGINDIR%%/imagethumbnail.so
 %%QT_PLUGINDIR%%/jpegthumbnail.so
 %%QT_PLUGINDIR%%/kactivitymanagerd_fileitem_linking_plugin.so
@@ -66,7 +65,6 @@ share/kservices5/djvuthumbnail.desktop
 share/kservices5/filenamesearch.protocol
 share/kservices5/fish.protocol
 share/kservices5/gzip.protocol
-%%WEBENGINE%%share/kservices5/htmlthumbnail.desktop
 share/kservices5/imagethumbnail.desktop
 share/kservices5/info.protocol
 share/kservices5/jpegthumbnail.desktop
