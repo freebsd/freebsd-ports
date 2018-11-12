@@ -1,6 +1,6 @@
---- configure	2001/09/03 14:45:25	1.1
-+++ configure	2001/09/03 14:47:10
-@@ -5888,7 +5888,7 @@
+--- configure.orig	2001-08-13 19:39:00 UTC
++++ configure
+@@ -5888,7 +5888,7 @@ echo "configure:5886: checking -O3" >&5
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    
@@ -9,7 +9,7 @@
      if test "$cross_compiling" = yes; then
    sdlmm_cv_option_O3=no
  else
-@@ -5919,7 +5919,7 @@
+@@ -5919,7 +5919,7 @@ fi
    CXXFLAGS="$OLD_CXXFLAGS"
    
    if test x"$sdlmm_cv_option_O3" = "xyes" ; then
@@ -18,7 +18,7 @@
      echo "$ac_t""yes" 1>&6
    else
      echo "$ac_t""no" 1>&6
-@@ -5934,7 +5934,7 @@
+@@ -5934,7 +5934,7 @@ echo "configure:5932: checking -O2" >&5
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    
@@ -27,7 +27,7 @@
      if test "$cross_compiling" = yes; then
    sdlmm_cv_option_O2=yes
  else
-@@ -5965,7 +5965,7 @@
+@@ -5965,7 +5965,7 @@ fi
    CXXFLAGS="$OLD_CXXFLAGS"
    
    if test x"$sdlmm_cv_option_O2" = "xyes" ; then
@@ -36,7 +36,7 @@
      echo "$ac_t""yes" 1>&6
    else
      echo "$ac_t""no" 1>&6
-@@ -7813,7 +7813,7 @@
+@@ -7813,7 +7813,7 @@ echo "configure:7811: checking -O3" >&5
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    
@@ -45,7 +45,7 @@
      if test "$cross_compiling" = yes; then
    sdlmm_cv_option_O3=no
  else
-@@ -7844,7 +7844,7 @@
+@@ -7844,7 +7844,7 @@ fi
    CXXFLAGS="$OLD_CXXFLAGS"
    
    if test x"$sdlmm_cv_option_O3" = "xyes" ; then
@@ -54,7 +54,7 @@
      echo "$ac_t""yes" 1>&6
    else
      echo "$ac_t""no" 1>&6
-@@ -7859,7 +7859,7 @@
+@@ -7859,7 +7859,7 @@ echo "configure:7857: checking -O2" >&5
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    
@@ -63,7 +63,7 @@
      if test "$cross_compiling" = yes; then
    sdlmm_cv_option_O2=yes
  else
-@@ -7890,7 +7890,7 @@
+@@ -7890,7 +7890,7 @@ fi
    CXXFLAGS="$OLD_CXXFLAGS"
    
    if test x"$sdlmm_cv_option_O2" = "xyes" ; then
