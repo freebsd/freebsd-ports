@@ -10,7 +10,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game loosely based on the original Spacewar!
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL.txt
 
 RUN_DEPENDS=	${PYGAME}
@@ -21,14 +21,16 @@ GH_TAGNAME=	f872564
 
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 PORTDOCS=	*.rst
-OPTIONS_DEFINE=	DOCS
 
 INSTALLS_ICONS=	yes
 
 DESKTOP_ENTRIES="PySpaceWar" "" ${PORTNAME} \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
+
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 .for i in 16 22 32 48
@@ -40,6 +42,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${PORTNAME}${i}.svg
 .endfor
 
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
