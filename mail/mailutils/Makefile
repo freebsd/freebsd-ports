@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mailutils
-PORTVERSION=	3.4
-PORTREVISION=	3
+PORTVERSION=	3.5
 CATEGORIES=	mail
 MASTER_SITES=	GNU GNU_ALPHA
 
@@ -32,7 +31,6 @@ OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	BDB GDBM KYOTOCABINET LDAP MYSQL PGSQL TOKYOCABINET
 OPTIONS_SUB=		yes
 
-BDB_DESC=		Berkeley DB v4.8 support (last working one)
 DB_DESC=		Database configuration
 EMACS_DESC=		Emacs interface to MH (implies MH)
 KYOTOCABINET_DESC=	Kyoto Cabinet database support
@@ -50,8 +48,10 @@ GNUTLS_CONFIGURE_WITH=	gnutls
 GSSAPI_RUN_DEPENDS=	cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi
 GSSAPI_CONFIGURE_WITH=	gssapi
 
-GUILE_LIB_DEPENDS=	libguile.so:lang/guile libgmp.so:math/gmp
+GUILE_LIB_DEPENDS=	libguile-2.0.so:lang/guile2 libgmp.so:math/gmp
+GUILE_USES=		pkgconfig
 GUILE_CONFIGURE_WITH=	guile
+GUILE_BROKEN=		requires Guile >= 2.2.0 (see PR 229613)
 
 MH_CONFIGURE_ENABLE=	mh
 
@@ -66,11 +66,10 @@ PYTHON_BINARY_ALIAS=	python-config=python${PYTHON_VER}-config
 PYTHON_USES=		python:2.7
 PYTHON_CONFIGURE_ENABLE=python
 
-BDB_USES=		bdb:48
+BDB_USES=		bdb
 BDB_CONFIGURE_WITH=	berkeley-db
 BDB_CPPFLAGS=		-I${BDB_INCLUDE_DIR}
 BDB_LDFLAGS=		-L${BDB_LIB_DIR}
-INVALID_BDB_VER=	5+
 
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_WITH=	gdbm
