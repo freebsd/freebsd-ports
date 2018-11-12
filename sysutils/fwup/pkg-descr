@@ -1,0 +1,10 @@
+fwup is a configurable image-based software update utility for embedded
+Linux-based systems. It primarily supports software upgrade strategies
+that update entire root filesystem images at once. This includes
+strategies like swapping back and forth between A and B partitions,
+recovery partitions, and various trial update/failback scenarios. All
+software update information is combined into a ZIP archive that may
+optionally be cryptographically signed. fwup has minimal dependencies
+and runtime requirements.
+
+WWW: https://github.com/fhunleth/fwup
