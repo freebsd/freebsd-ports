@@ -26,10 +26,18 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} --with-md5-passwords \
 
 ETCOLD=			${PREFIX}/etc
 
-FLAVORS=			default hpn
-default_CONFLICTS_INSTALL=	openssl-portable-hpn
-hpn_CONFLICTS_INSTALL=		openssh-portable
+FLAVORS=			default hpn gssapi x509
+default_CONFLICTS_INSTALL=	openssh-portable-hpn openssh-portable-gssapi \
+				openssh-portable-x509
+hpn_CONFLICTS_INSTALL=		openssh-portable openssh-portable-gssapi \
+				openssh-portable-x509
 hpn_PKGNAMESUFFIX=		-portable-hpn
+gssapi_CONFLICTS_INSTALL=	openssh-portable openssh-portable-hpn \
+				openssh-portable-x509
+gssapi_PKGNAMESUFFIX=		-portable-gssapi
+x509_CONFLICTS_INSTALL=		openssh-portable openssh-portable-hpn \
+				openssh-portable-gssapi
+x509_PKGNAMESUFFIX=		-portable-x509
 
 OPTIONS_DEFINE=		DOCS PAM TCP_WRAPPERS LIBEDIT BSM \
 			HPN X509 KERB_GSSAPI \
@@ -37,6 +45,12 @@ OPTIONS_DEFINE=		DOCS PAM TCP_WRAPPERS LIBEDIT BSM \
 OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS LDNS
 .if ${FLAVOR:U} == hpn
 OPTIONS_DEFAULT+=	HPN NONECIPHER
+.endif
+.if ${FLAVOR:U} == gssapi
+OPTIONS_DEFAULT+=	KERB_GSSAPI MIT
+.endif
+.if ${FLAVOR:U} == x509
+OPTIONS_DEFAULT+=	X509
 .endif
 OPTIONS_RADIO=		KERBEROS
 OPTIONS_RADIO_KERBEROS=	MIT HEIMDAL HEIMDAL_BASE
@@ -87,9 +101,13 @@ ETCDIR?=		${PREFIX}/etc/ssh
 
 PATCH_SITES+=		http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,x509,hpn,gsskex
 
+# Upstream OpenSSL fix but does not apply for x509 patch.
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-c0a35265907533be10ca151ac797f34ae0d68969
+
 # X509 patch includes TCP Wrapper support already
 .if ${PORT_OPTIONS:MX509}
 EXTRA_PATCHES:=		${EXTRA_PATCHES:N${TCP_WRAPPERS_EXTRA_PATCHES}}
+EXTRA_PATCHES:=		${EXTRA_PATCHES:N${FILESDIR}/extra-patch-c0a35265907533be10ca151ac797f34ae0d68969}
 .endif
 
 # Must add this patch before HPN due to conflicts
@@ -104,7 +122,7 @@ EXTRA_PATCHES:=		${EXTRA_PATCHES:N${TCP_WRAPPERS_EXTRA_PATCHES}}
 # Needed glue for applying HPN patch without conflict
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-hpn-gss-glue
 .  endif
-PATCHFILES+=	openssh-7.7p1-gsskex-all-20141021-debian-rh-20171004.patch.gz:-p1:gsskex
+PATCHFILES+=	openssh-7.9p1-gsskex-all-20141021-debian-rh-20181020.patch.gz:-p1:gsskex
 .endif
 
 # https://www.psc.edu/hpn-ssh https://github.com/rapier1/openssh-portable/tree/hpn-openssl1.1-7_7_P1

@@ -50,7 +50,7 @@ Sponsored by:   DARPA, NAI Labs
 +	*environ = NULL;
 +	(void) setusercontext(lc, pw, pw->pw_uid,
 +	    LOGIN_SETENV|LOGIN_SETPATH);
-+	copy_environment(environ, &env, &envsize);
++	copy_environment_blacklist(environ, &env, &envsize, NULL);
 +	for (var = environ; *var != NULL; ++var)
 +		free(*var);
 +	free(environ);
@@ -58,7 +58,7 @@ Sponsored by:   DARPA, NAI Labs
  #else /* HAVE_LOGIN_CAP */
  # ifndef HAVE_CYGWIN
  	/*
-@@ -1082,14 +1098,9 @@ do_setup_env(struct ssh *ssh, Session *s, const char *
+@@ -1082,11 +1098,6 @@ do_setup_env(struct ssh *ssh, Session *s, const char *
  # endif /* HAVE_CYGWIN */
  #endif /* HAVE_LOGIN_CAP */
  
@@ -70,9 +70,6 @@ Sponsored by:   DARPA, NAI Labs
  
 -	if (getenv("TZ"))
 -		child_set_env(&env, &envsize, "TZ", getenv("TZ"));
- 	if (s->term)
- 		child_set_env(&env, &envsize, "TERM", s->term);
- 	if (s->display)
 @@ -1389,7 +1400,7 @@ do_setusercontext(struct passwd *pw)
  	if (platform_privileged_uidswap()) {
  #ifdef HAVE_LOGIN_CAP
