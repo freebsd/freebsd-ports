@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	psycopg2
-PORTVERSION=	2.7.6
+PORTVERSION=	2.7.6.1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP \
-		http://initd.org/psycopg/tarballs/PSYCOPG-${PORTVERSION:R:S|.|-|}/
+		http://initd.org/psycopg/tarballs/PSYCOPG-${PORTVERSION:R:R:S|.|-|}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,8 +16,8 @@ LICENSE_FILE=	${WRKSRC}/doc/COPYING.LESSER
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USE_PYTHON=	autoplist concurrent distutils
 USES=		pgsql python
+USE_PYTHON=	autoplist concurrent distutils
 
 PORTDOCS=	AUTHORS INSTALL NEWS PKG-INFO README.rst
 PORTEXAMPLES=	*
