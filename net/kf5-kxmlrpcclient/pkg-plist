@@ -13,7 +13,6 @@ lib/libKF5XmlRpcClient.so.5
 lib/libKF5XmlRpcClient.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KXmlRpcClient.pri
 share/locale/ar/LC_MESSAGES/libkxmlrpcclient5.mo
-share/locale/ast/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/be/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/bg/LC_MESSAGES/libkxmlrpcclient5.mo
 share/locale/bs/LC_MESSAGES/libkxmlrpcclient5.mo

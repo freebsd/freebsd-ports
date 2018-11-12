@@ -1,4 +1,5 @@
 bin/kded5
+etc/xdg/kded.categories
 lib/cmake/KDED/KDEDConfig.cmake
 lib/cmake/KDED/KDEDConfigVersion.cmake
 lib/cmake/KDED/KDEDTargets-%%CMAKE_BUILD_TYPE%%.cmake

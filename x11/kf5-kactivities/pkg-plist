@@ -1,4 +1,5 @@
 bin/kactivities-cli
+etc/xdg/kactivities.categories
 include/KF5/KActivities/KActivities/ActivitiesModel
 include/KF5/KActivities/KActivities/Consumer
 include/KF5/KActivities/KActivities/Controller

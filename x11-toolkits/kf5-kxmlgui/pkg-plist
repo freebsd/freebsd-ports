@@ -1,3 +1,4 @@
+etc/xdg/kxmlgui.categories
 etc/xdg/ui/ui_standards.rc
 include/KF5/KXmlGui/KAboutApplicationDialog
 include/KF5/KXmlGui/KActionCategory
@@ -51,7 +52,6 @@ lib/libexec/kf5/ksendbugmail
 share/locale/af/LC_MESSAGES/kxmlgui5.mo
 share/locale/ar/LC_MESSAGES/kxmlgui5.mo
 share/locale/as/LC_MESSAGES/kxmlgui5.mo
-share/locale/ast/LC_MESSAGES/kxmlgui5.mo
 share/locale/be/LC_MESSAGES/kxmlgui5.mo
 share/locale/be@latin/LC_MESSAGES/kxmlgui5.mo
 share/locale/bg/LC_MESSAGES/kxmlgui5.mo
