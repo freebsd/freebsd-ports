@@ -3,6 +3,7 @@ bin/kdeinit5_shutdown
 bin/kdeinit5_wrapper
 bin/kshell5
 bin/kwrapper5
+etc/xdg/kinit.categories
 lib/cmake/KF5Init/KF5InitConfig.cmake
 lib/cmake/KF5Init/KF5InitConfigVersion.cmake
 lib/cmake/KF5Init/KF5InitMacros.cmake
@@ -25,7 +26,6 @@ share/dbus-1/interfaces/kf5_org.kde.KLauncher.xml
 share/locale/af/LC_MESSAGES/kinit5.mo
 share/locale/ar/LC_MESSAGES/kinit5.mo
 share/locale/as/LC_MESSAGES/kinit5.mo
-share/locale/ast/LC_MESSAGES/kinit5.mo
 share/locale/be/LC_MESSAGES/kinit5.mo
 share/locale/be@latin/LC_MESSAGES/kinit5.mo
 share/locale/bg/LC_MESSAGES/kinit5.mo

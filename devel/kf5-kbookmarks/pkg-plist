@@ -38,7 +38,6 @@ lib/libKF5Bookmarks.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KBookmarks.pri
 share/locale/af/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/ar/LC_MESSAGES/kbookmarks5_qt.qm
-share/locale/ast/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/be/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kbookmarks5_qt.qm
 share/locale/bg/LC_MESSAGES/kbookmarks5_qt.qm

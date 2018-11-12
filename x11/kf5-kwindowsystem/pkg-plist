@@ -1,3 +1,4 @@
+etc/xdg/kwindowsystem.categories
 include/KF5/KWindowSystem/KKeyServer
 include/KF5/KWindowSystem/KSelectionOwner
 include/KF5/KWindowSystem/KSelectionWatcher
@@ -42,7 +43,6 @@ lib/libKF5WindowSystem.so.%%KDE_FRAMEWORKS_VERSION%%
 share/locale/af/LC_MESSAGES/kwindowsystem5_qt.qm
 share/locale/ar/LC_MESSAGES/kwindowsystem5_qt.qm
 share/locale/as/LC_MESSAGES/kwindowsystem5_qt.qm
-share/locale/ast/LC_MESSAGES/kwindowsystem5_qt.qm
 share/locale/be/LC_MESSAGES/kwindowsystem5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kwindowsystem5_qt.qm
 share/locale/bg/LC_MESSAGES/kwindowsystem5_qt.qm

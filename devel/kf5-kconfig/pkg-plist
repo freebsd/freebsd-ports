@@ -5,6 +5,7 @@ include/KF5/KConfigCore/KAuthorized
 include/KF5/KConfigCore/KConfig
 include/KF5/KConfigCore/KConfigBase
 include/KF5/KConfigCore/KConfigGroup
+include/KF5/KConfigCore/KConfigWatcher
 include/KF5/KConfigCore/KCoreConfigSkeleton
 include/KF5/KConfigCore/KDesktopFile
 include/KF5/KConfigCore/KEMailSettings
@@ -15,6 +16,7 @@ include/KF5/KConfigCore/kconfig.h
 include/KF5/KConfigCore/kconfigbase.h
 include/KF5/KConfigCore/kconfigcore_export.h
 include/KF5/KConfigCore/kconfiggroup.h
+include/KF5/KConfigCore/kconfigwatcher.h
 include/KF5/KConfigCore/kcoreconfigskeleton.h
 include/KF5/KConfigCore/kdesktopfile.h
 include/KF5/KConfigCore/kemailsettings.h
@@ -50,7 +52,6 @@ lib/libexec/kf5/kconfig_compiler_kf5
 %%QT_MKSPECDIR%%/modules/qt_KConfigGui.pri
 share/locale/af/LC_MESSAGES/kconfig5_qt.qm
 share/locale/ar/LC_MESSAGES/kconfig5_qt.qm
-share/locale/ast/LC_MESSAGES/kconfig5_qt.qm
 share/locale/be/LC_MESSAGES/kconfig5_qt.qm
 share/locale/be@latin/LC_MESSAGES/kconfig5_qt.qm
 share/locale/bg/LC_MESSAGES/kconfig5_qt.qm

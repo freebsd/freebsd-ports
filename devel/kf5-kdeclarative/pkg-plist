@@ -71,7 +71,6 @@ lib/libKF5QuickAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 share/locale/af/LC_MESSAGES/kdeclarative5.mo
 share/locale/ar/LC_MESSAGES/kdeclarative5.mo
 share/locale/as/LC_MESSAGES/kdeclarative5.mo
-share/locale/ast/LC_MESSAGES/kdeclarative5.mo
 share/locale/be/LC_MESSAGES/kdeclarative5.mo
 share/locale/be@latin/LC_MESSAGES/kdeclarative5.mo
 share/locale/bg/LC_MESSAGES/kdeclarative5.mo

@@ -22,6 +22,7 @@ include/KF5/KWayland/Client/outputconfiguration.h
 include/KF5/KWayland/Client/outputdevice.h
 include/KF5/KWayland/Client/outputmanagement.h
 include/KF5/KWayland/Client/plasmashell.h
+include/KF5/KWayland/Client/plasmavirtualdesktop.h
 include/KF5/KWayland/Client/plasmawindowmanagement.h
 include/KF5/KWayland/Client/plasmawindowmodel.h
 include/KF5/KWayland/Client/pointer.h
@@ -44,9 +45,7 @@ include/KF5/KWayland/Client/surface.h
 include/KF5/KWayland/Client/textinput.h
 include/KF5/KWayland/Client/touch.h
 include/KF5/KWayland/Client/xdgforeign_v2.h
-include/KF5/KWayland/Server/xdgforeign_interface.h
 include/KF5/KWayland/Client/xdgoutput.h
-include/KF5/KWayland/Server/xdgoutput_interface.h
 include/KF5/KWayland/Client/xdgshell.h
 include/KF5/KWayland/Server/appmenu_interface.h
 include/KF5/KWayland/Server/blur_interface.h
@@ -73,6 +72,7 @@ include/KF5/KWayland/Server/outputconfiguration_interface.h
 include/KF5/KWayland/Server/outputdevice_interface.h
 include/KF5/KWayland/Server/outputmanagement_interface.h
 include/KF5/KWayland/Server/plasmashell_interface.h
+include/KF5/KWayland/Server/plasmavirtualdesktop_interface.h
 include/KF5/KWayland/Server/plasmawindowmanagement_interface.h
 include/KF5/KWayland/Server/pointer_interface.h
 include/KF5/KWayland/Server/pointerconstraints_interface.h
@@ -92,6 +92,8 @@ include/KF5/KWayland/Server/subcompositor_interface.h
 include/KF5/KWayland/Server/surface_interface.h
 include/KF5/KWayland/Server/textinput_interface.h
 include/KF5/KWayland/Server/touch_interface.h
+include/KF5/KWayland/Server/xdgforeign_interface.h
+include/KF5/KWayland/Server/xdgoutput_interface.h
 include/KF5/KWayland/Server/xdgshell_interface.h
 include/KF5/kwayland_version.h
 lib/cmake/KF5Wayland/KF5WaylandConfig.cmake

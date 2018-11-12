@@ -68,8 +68,10 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/RefreshableScrollView.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/SwipeItemEventFilter.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/globaltoolbar/AbstractPageHeader.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/private/globaltoolbar/BreadcrumbControl.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/globaltoolbar/PageRowGlobalToolBarStyleGroup.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/globaltoolbar/PageRowGlobalToolBarUI.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/private/globaltoolbar/TabBarControl.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/globaltoolbar/TitlesPageHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/globaltoolbar/ToolBarPageHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/qmldir
@@ -101,7 +103,6 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/private/ScrollView.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/templates/qmldir
 share/locale/ar/LC_MESSAGES/libkirigami2plugin_qt.qm
-share/locale/ast/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ca/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/ca@valencia/LC_MESSAGES/libkirigami2plugin_qt.qm
 share/locale/cs/LC_MESSAGES/libkirigami2plugin_qt.qm
