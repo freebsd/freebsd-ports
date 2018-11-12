@@ -3,7 +3,7 @@
 
 PORTNAME=	bird
 DISTVERSION=	2.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
 PKGNAMESUFFIX=	2
@@ -13,12 +13,11 @@ COMMENT=	Dynamic IP routing daemon
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libssh.so:security/libssh
+USES=		bison gmake ncurses readline
 
 CONFLICTS=	bird-[0-9]*
 CONFLICTS+=	bird6-[0-9]*
 
-USES=		bison gmake ncurses readline
 USE_CSTD=	gnu99
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
@@ -53,6 +52,7 @@ RPKI_VARS=	rt_prot+=rpki
 STATIC_VARS=	rt_prot+=static
 
 CONFIGURE_ARGS+=--with-protocols="${RT_PROT}"
+RPKI_LIB_DEPENDS=	libssh.so:security/libssh
 
 post-patch:
 	${REINPLACE_CMD} -e 's|\.example|\.sample|g' ${WRKSRC}/Makefile.in
