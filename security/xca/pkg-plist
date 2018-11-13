@@ -1,7 +1,5 @@
 bin/xca
-bin/xca_db_stat
 man/man1/xca.1.gz
-man/man1/xca_db_stat.1.gz
 share/applications/xca.desktop
 %%PORTDOCS%%%%DOCSDIR%%/xca-1.html
 %%PORTDOCS%%%%DOCSDIR%%/xca-10.html
@@ -24,14 +22,15 @@ share/pixmaps/xca-32x32.xpm
 %%DATADIR%%/CA.xca
 %%DATADIR%%/HTTPS_client.xca
 %%DATADIR%%/HTTPS_server.xca
-%%DATADIR%%/aia.txt
 %%DATADIR%%/dn.txt
 %%DATADIR%%/eku.txt
 %%DATADIR%%/oids.txt
-%%DATADIR%%/release.txt
 %%DATADIR%%/xca_de.qm
 %%DATADIR%%/xca_es.qm
 %%DATADIR%%/xca_fr.qm
 %%DATADIR%%/xca_hr.qm
+%%DATADIR%%/xca_pl.qm
+%%DATADIR%%/xca_pt_BR.qm
 %%DATADIR%%/xca_ru.qm
+%%DATADIR%%/xca_sk.qm
 %%DATADIR%%/xca_tr.qm
