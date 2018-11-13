@@ -31,7 +31,7 @@ post-patch-NLS-off:
 	@${REINPLACE_CMD} -e 's, install-dist_trdataDATA$$,,' \
 		${WRKSRC}/data/Makefile.in
 
-_pre-build-NLS-on:
+pre-build-NLS-on:
 	cd ${WRKSRC}/translation && ${CC} ${CFLAGS} -o mtrconv mtrconv.c
 .for lang in be ru zh_CN
 	cd ${WRKSRC}/translation && ./mtrconv ${lang} ../data/tr/${lang}.mtr
