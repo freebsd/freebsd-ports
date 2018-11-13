@@ -15,8 +15,6 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
 
-BROKEN_powerpc64=	fails to build: mListDef.h: redefinition of typedef 'mList'
-
 USES=		desktop-file-utils jpeg localbase shared-mime-info tar:xz
 USE_XORG=	x11 xext xi
 GNU_CONFIGURE=	yes
@@ -26,6 +24,12 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README README_ja manual
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+USE_GCC=	yes
+.endif
 
 post-patch-NLS-off:
 	@${REINPLACE_CMD} -e 's, install-dist_trdataDATA$$,,' \
@@ -41,4 +45,4 @@ post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} -a ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
