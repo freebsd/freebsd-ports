@@ -42,3 +42,41 @@
  	    INN_VERSION="$VERSION"
  	    VERSION="$VERSION_save"
  	    INN_NEWSUMASK=`umask`
+@@ -6568,14 +6573,14 @@ fi
+ 
+ 
+     LIBS_save="$LIBS"
+-                    LIBS="$LIBS -linn -lstorage"
++                    LIBS="$LIBS -linn -lstorage -linnhist"
+     echo "$as_me:$LINENO: checking for IsToken in -lstorage" >&5
+ echo $ECHO_N "checking for IsToken in -lstorage... $ECHO_C" >&6
+ if test "${ac_cv_lib_storage_IsToken+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lstorage  $LIBS"
++LIBS="-lstorage -linnhist $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -7074,7 +7079,7 @@ if test x$HAVE_GETOPT != x1; then
+     MORELIBS2="$MORELIBS2 ../lib/libgetopt.a"
+ fi
+ if test x$HAVE_LIBINN = x1; then
+-        MORELIBS1="$MORELIBS1 -L$NEWSLIB"
++        MORELIBS1="$MORELIBS1 -L$NEWSLIB -Wl,-rpath -Wl,$NEWSLIB"
+     MORELIBS2="$MORELIBS2 -linn"
+ 
+ cat >>confdefs.h <<_ACEOF
+@@ -7086,9 +7091,9 @@ else
+ fi
+ if test x$HAVE_LIBSTORAGE = x1; then
+         if test x$HAVE_LIBINN != x1; then
+-	MORELIBS1="$MORELIBS1 -L$NEWSLIB"
++	MORELIBS1="$MORELIBS1 -L$NEWSLIB -Wl,-rpath -Wl,$NEWSLIB"
+     fi
+-                        MORELIBS2="-lstorage $MORELIBS2 -lstorage"
++                        MORELIBS2="-lstorage $MORELIBS2 -lstorage  -linnhist"
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define HAVE_LIBSTORAGE 1
