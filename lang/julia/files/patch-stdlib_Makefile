@@ -1,0 +1,15 @@
+--- stdlib/Makefile.orig	2018-11-08 20:15:38 UTC
++++ stdlib/Makefile
+@@ -21,6 +21,12 @@ $(eval $(call git-external,Pkg,PKG,,,$(BUILDDIR)))
+ extract-pkg: $(BUILDDIR)/$(PKG_SRC_DIR)/source-extracted
+ Pkg: $(BUILDDIR)/$(PKG_SRC_DIR)/source-extracted
+ 	rm -rf $@
++	rm $(BUILDDIR)/$(PKG_SRC_DIR)/.codecov.yml
++	rm $(BUILDDIR)/$(PKG_SRC_DIR)/.travis.yml
++	rm $(BUILDDIR)/$(PKG_SRC_DIR)/appveyor.yml
++	rm $(BUILDDIR)/$(PKG_SRC_DIR)/ext/TOML/.travis.yml
++	rm $(BUILDDIR)/$(PKG_SRC_DIR)/ext/TOML/appveyor.yml
++	rm $(BUILDDIR)/$(PKG_SRC_DIR)/source-extracted
+ 	cp -r $(BUILDDIR)/$(PKG_SRC_DIR) $@
+ get-pkg: Pkg
+ clean-pkg:
