@@ -21,6 +21,7 @@ lib/libgdm.so
 lib/libgdm.so.1
 lib/libgdm.so.1.0.0
 libdata/pkgconfig/gdm.pc
+libexec/gdm-disable-wayland
 libexec/gdm-host-chooser
 libexec/gdm-session-worker
 libexec/gdm-simple-chooser
