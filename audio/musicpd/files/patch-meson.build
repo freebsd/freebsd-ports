@@ -1,0 +1,27 @@
+--- meson.build.orig	2018-10-31 18:39:53 UTC
++++ meson.build
+@@ -62,10 +62,14 @@ test_cxxflags = test_common_flags + [
+   '-Wno-noexcept-type',
+ ]
+ 
++test_ldflags = [
++]
++
+ if compiler.get_id() == 'clang'
+   # Workaround for clang bug
+   # https://bugs.llvm.org/show_bug.cgi?id=32611
+   test_cxxflags += '-funwind-tables'
++  test_ldflags += '-fuse-ld=%%MPD_CLANG_LD%%'
+ endif
+ 
+ test_cflags = test_common_flags + [
+@@ -78,9 +82,6 @@ test_cflags = test_common_flags + [
+   '-pedantic',
+ ]
+ 
+-test_ldflags = [
+-]
+-
+ if get_option('buildtype') != 'debug'
+   test_cflags += [
+     '-ffunction-sections',
