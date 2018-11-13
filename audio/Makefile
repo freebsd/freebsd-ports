@@ -131,6 +131,7 @@
     SUBDIR += eawpats
     SUBDIR += eawplus
     SUBDIR += ecasound
+    SUBDIR += elisa
     SUBDIR += emms
     SUBDIR += enscribe
     SUBDIR += epos-devel
