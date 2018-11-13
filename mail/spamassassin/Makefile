@@ -3,7 +3,7 @@
 
 PORTNAME=	spamassassin
 PORTVERSION=	3.4.2
-PORTREVISION?=	1	# also bump japanese/spamassassin
+PORTREVISION?=	2	# also bump japanese/spamassassin
 CATEGORIES?=	mail perl5
 MASTER_SITES=	APACHE/spamassassin/source CPAN/Mail
 DISTNAME=	Mail-SpamAssassin-${PORTVERSION}
@@ -24,8 +24,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		p5-URI>=0:net/p5-URI \
 		re2c>=.12.0:devel/re2c
 
-USES=		cpe perl5
-
 .for dep in DCC DKIM MYSQL PGSQL PYZOR RAZOR RELAY_COUNTRY RLIMIT SPF_QUERY SSL
 TEST_DEPENDS+=	${${dep}_RUN_DEPENDS}
 .endfor
@@ -34,6 +32,7 @@ CONFLICTS?=	ja-spamassassin-[0-9]*
 
 CPE_VENDOR=	apache
 
+USES=		cpe perl5
 USE_PERL5=	configure
 USE_LDCONFIG=	yes
 
@@ -56,7 +55,7 @@ OPTIONS_GROUP_DATABASE=	MYSQL PGSQL
 OPTIONS_GROUP_PLUGINS=	DCC DKIM PYZOR RAZOR RELAY_COUNTRY RLIMIT SPF_QUERY
 OPTIONS_SINGLE=		GPG
 OPTIONS_SINGLE_GPG=	GNUPG_NONE GNUPG GNUPG2
-OPTIONS_DEFAULT=	AS_ROOT DKIM GNUPG2 SSL SPF_QUERY
+OPTIONS_DEFAULT=	AS_ROOT DKIM GNUPG SSL SPF_QUERY
 
 AS_ROOT_DESC=		Run spamd as root (recommended)
 
@@ -175,9 +174,5 @@ post-install::
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "sql ldap" ${STAGEDIR}${DOCSDIR})
-
-post-install-GNUPG2-on:
-	${MKDIR} ${STAGEDIR}/${ETCDIR}/sa-update-keys
-	${ECHO} "no-secmem-warning" >${STAGEDIR}/${ETCDIR}/sa-update-keys/gpg.conf
 
 .include <bsd.port.post.mk>
