@@ -1,6 +1,6 @@
---- gio/kqueue/Makefile.in.orig	2018-04-09 23:09:21.018712000 +0200
-+++ gio/kqueue/Makefile.in	2018-04-09 23:09:38.517739000 +0200
-@@ -183,9 +183,7 @@ LTLIBRARIES = $(installed_test_LTLIBRARIES) $(noinst_L
+--- gio/kqueue/Makefile.in.orig	2018-10-01 19:39:31.421019000 +0200
++++ gio/kqueue/Makefile.in	2018-10-01 19:43:01.841725000 +0200
+@@ -187,9 +187,7 @@ LTLIBRARIES = $(installed_test_LTLIBRARIES) $(noinst_L
  libkqueue_la_LIBADD =
  am__objects_1 =
  am_libkqueue_la_OBJECTS = libkqueue_la-gkqueuefilemonitor.lo \
@@ -11,7 +11,7 @@
  	libkqueue_la-dep-list.lo $(am__objects_1)
  libkqueue_la_OBJECTS = $(am_libkqueue_la_OBJECTS)
  AM_V_lt = $(am__v_lt_@AM_V@)
-@@ -777,19 +775,9 @@ all_test_ltlibs = $(test_ltlibraries) $(uninstalled_te
+@@ -785,19 +783,9 @@ all_test_ltlibs = $(test_ltlibraries) $(uninstalled_te
  @ENABLE_INSTALLED_TESTS_TRUE@installed_test_meta_DATA = $(installed_testcases:=.test)
  libkqueue_la_SOURCES = \
         gkqueuefilemonitor.c \
@@ -31,20 +31,20 @@
         dep-list.c \
         dep-list.h \
         $(NULL)
-@@ -1009,12 +997,8 @@ distclean-compile:
+@@ -1017,12 +1005,8 @@ distclean-compile:
  
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libkqueue_la-dep-list.Plo@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libkqueue_la-gkqueuefilemonitor.Plo@am__quote@
--@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libkqueue_la-kqueue-exclusions.Plo@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libkqueue_la-kqueue-helper.Plo@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libkqueue_la-kqueue-missing.Plo@am__quote@
--@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libkqueue_la-kqueue-sub.Plo@am__quote@
--@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libkqueue_la-kqueue-thread.Plo@am__quote@
--@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libkqueue_la-kqueue-utils.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libkqueue_la-dep-list.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libkqueue_la-gkqueuefilemonitor.Plo@am__quote@ # am--include-marker
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libkqueue_la-kqueue-exclusions.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libkqueue_la-kqueue-helper.Plo@am__quote@ # am--include-marker
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libkqueue_la-kqueue-missing.Plo@am__quote@ # am--include-marker
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libkqueue_la-kqueue-sub.Plo@am__quote@ # am--include-marker
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libkqueue_la-kqueue-thread.Plo@am__quote@ # am--include-marker
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libkqueue_la-kqueue-utils.Plo@am__quote@ # am--include-marker
  
- .c.o:
- @am__fastdepCC_TRUE@	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
-@@ -1054,40 +1038,12 @@ libkqueue_la-kqueue-helper.lo: kqueue-helper.c
+ $(am__depfiles_remade):
+ 	@$(MKDIR_P) $(@D)
+@@ -1068,40 +1052,12 @@ libkqueue_la-kqueue-helper.lo: kqueue-helper.c
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
  @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libkqueue_la_CFLAGS) $(CFLAGS) -c -o libkqueue_la-kqueue-helper.lo `test -f 'kqueue-helper.c' || echo '$(srcdir)/'`kqueue-helper.c
  
