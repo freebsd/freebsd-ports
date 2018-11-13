@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	xca
-PORTVERSION=	1.3.2
+PORTVERSION=	2.1.2
+DISTVERSIONPREFIX=	RELEASE.
 CATEGORIES=	security
-MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Graphical certification authority
 
 LICENSE=	BSD3CLAUSE
@@ -14,36 +14,29 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=		desktop-file-utils gmake localbase pkgconfig \
-		shared-mime-info ssl
+USES=		autoreconf compiler:c++11-lang desktop-file-utils gmake \
+		localbase pkgconfig qt:5 shared-mime-info shebangfix ssl
+USE_QT=		buildtools_build core gui linguist_build sql widgets
+USE_CXXSTD=	c++11
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLDIR} \
-		--with-qt=${PREFIX}
+		--with-qt=${PREFIX} \
+		--with-qt-version=5
 MAKE_ARGS=	DOCTOOL="${TRUE}"
 DESTDIRNAME=	destdir
+SHEBANG_FILES=	doc/code2html
 
-OPTIONS_DEFINE=		DOCS
-OPTIONS_SINGLE=		TOOLKIT
-OPTIONS_SINGLE_TOOLKIT=	QT4 QT5
-OPTIONS_DEFAULT=	QT4
+USE_GITHUB=	yes
+GH_ACCOUNT=	chris2511
 
-QT4_USES=		qt:4
-QT4_USE=		qt=gui,linguist_build,moc_build,qmake_build \
-			qt=rcc_build,uic_build
-QT5_USES=		qt:5
-QT5_USE=		qt=widgets,buildtools_build,linguist_build \
-			CXXSTD=c++11
-TOOLKIT_DESC=		Qt toolkit
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^CFLAGS/s|-O2||' ${WRKSRC}/Local.mak.in
 	@${REINPLACE_CMD} -e \
 		'/install/s|-D|-c|' ${WRKSRC}/img/Makefile
-
-post-patch-QT5-off:
-	@${REINPLACE_CMD} -e \
-		's|Qt5|Qt0|g' ${WRKSRC}/configure
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xca*
