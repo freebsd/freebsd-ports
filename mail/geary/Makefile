@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geary
-PORTVERSION=	0.12.2
+PORTVERSION=	0.12.4
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -27,7 +27,7 @@ LIB_DEPENDS=	libgmime-2.6.so:mail/gmime26 \
 		libsoup-2.4.so:devel/libsoup \
 		libenchant.so:textproc/enchant
 
-USES=		cmake:outsource compiler:c11 desktop-file-utils gettext libtool \
+USES=		cmake:outsource compiler:c11 desktop-file-utils gettext gnome libtool \
 		localbase:ldflags pkgconfig shebangfix sqlite tar:xz
 USE_GNOME=	cairo gnomedocutils gnomeprefix gtk30 intlhack introspection
 SHEBANG_FILES=	desktop/geary-attach
