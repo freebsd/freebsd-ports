@@ -16,7 +16,6 @@ bin/spamd
 @sample %%ETCDIR%%/v340.pre.sample
 @sample %%ETCDIR%%/v341.pre.sample
 @sample %%ETCDIR%%/v342.pre.sample
-%%GNUPG2%%%%ETCDIR%%/sa-update-keys/gpg.conf
 include/libspamc.h
 lib/libspamc.so
 lib/libspamc.so.0
