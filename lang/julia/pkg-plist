@@ -42,8 +42,8 @@ lib/julia/libdSFMT.so
 lib/julia/sys.so
 %%DEBUG%%lib/julia/sys-debug.so
 %%DEBUG%%lib/libjulia-debug.so
+%%DEBUG%%lib/libjulia-debug.so.1
 %%DEBUG%%lib/libjulia-debug.so.%%VERSION%%
-%%DEBUG%%lib/libjulia-debug.so.%%SOVERSION%%
 %%GPL_LIBS%%lib/julia/libamd.so
 %%GPL_LIBS%%lib/julia/libcamd.so
 %%GPL_LIBS%%lib/julia/libccolamd.so
@@ -453,6 +453,8 @@ man/man1/julia.1.gz
 %%DATADIR%%/stdlib/v%%VERSION%%/Mmap/docs/src/index.md
 %%DATADIR%%/stdlib/v%%VERSION%%/Mmap/src/Mmap.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Mmap/test/runtests.jl
+%%DATADIR%%/stdlib/v%%VERSION%%/Pkg/bors.toml
+%%DATADIR%%/stdlib/v%%VERSION%%/Pkg/CHANGELOG.md
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/Compat.toml
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/LICENSE.md
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/Project.toml
@@ -465,6 +467,7 @@ man/man1/julia.1.gz
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/bin/stdlib.toml
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/bin/update.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/bin/utils.jl
+%%DATADIR%%/stdlib/v%%VERSION%%/Pkg/docs/Project.toml
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/docs/make.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/docs/src/index.md
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/ext/TOML/LICENSE.md
