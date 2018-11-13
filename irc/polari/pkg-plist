@@ -128,8 +128,10 @@ share/icons/hicolor/32x32/apps/org.gnome.Polari.png
 share/icons/hicolor/48x48/apps/org.gnome.Polari.png
 share/icons/hicolor/512x512/apps/org.gnome.Polari.png
 share/icons/hicolor/symbolic/apps/org.gnome.Polari-symbolic.svg
+share/locale/af/LC_MESSAGES/polari.mo
 share/locale/ar/LC_MESSAGES/polari.mo
 share/locale/as/LC_MESSAGES/polari.mo
+share/locale/be/LC_MESSAGES/polari.mo
 share/locale/bs/LC_MESSAGES/polari.mo
 share/locale/ca/LC_MESSAGES/polari.mo
 share/locale/ca@valencia/LC_MESSAGES/polari.mo
@@ -140,6 +142,7 @@ share/locale/el/LC_MESSAGES/polari.mo
 share/locale/en_GB/LC_MESSAGES/polari.mo
 share/locale/eo/LC_MESSAGES/polari.mo
 share/locale/es/LC_MESSAGES/polari.mo
+share/locale/et/LC_MESSAGES/polari.mo
 share/locale/eu/LC_MESSAGES/polari.mo
 share/locale/fa/LC_MESSAGES/polari.mo
 share/locale/fi/LC_MESSAGES/polari.mo
@@ -147,6 +150,7 @@ share/locale/fr/LC_MESSAGES/polari.mo
 share/locale/fur/LC_MESSAGES/polari.mo
 share/locale/gl/LC_MESSAGES/polari.mo
 share/locale/he/LC_MESSAGES/polari.mo
+share/locale/hr/LC_MESSAGES/polari.mo
 share/locale/hu/LC_MESSAGES/polari.mo
 share/locale/id/LC_MESSAGES/polari.mo
 share/locale/it/LC_MESSAGES/polari.mo
