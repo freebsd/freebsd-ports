@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mutter
-PORTVERSION=	3.28.2
+PORTVERSION=	3.28.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	zenity>=3.0.0:x11/zenity \
 		xkeyboard-config>=0:x11/xkeyboard-config \
 		gsettings-desktop-schemas>=3.4.0:devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
+		libfribidi.so:converters/fribidi \
 		libxkbcommon.so:x11/libxkbcommon \
 		libcanberra.so:audio/libcanberra \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
@@ -32,7 +33,7 @@ RUN_DEPENDS=	zenity>=3.0.0:x11/zenity \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c++0x gettext gmake gmake libtool localbase pathfix \
+USES=		compiler:c++0x gettext gl gmake gnome libtool localbase pathfix \
 		pkgconfig tar:xz
 USE_GL=		egl
 USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3 introspection
