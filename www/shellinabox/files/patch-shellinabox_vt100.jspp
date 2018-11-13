@@ -1,24 +1,22 @@
---- shellinabox/vt100.jspp.orig	2016-11-09 19:40:33 UTC
+--- shellinabox/vt100.jspp.orig	2018-11-13 14:31:22 UTC
 +++ shellinabox/vt100.jspp
-@@ -3937,13 +3937,21 @@ VT100.prototype.csim = function() {
-       break;
-     default:
-       if (this.par[i] >= 30 && this.par[i] <= 37) {
-+          // set foreground color, colors 0-7 (ansi)
-           var fg        = this.par[i] - 30;
-           this.attr     = ((this.attr & ~0x0F) | fg) & ~(ATTR_DEF_FG);
-           this.attrFg   = false;
-       } else if (this.par[i] >= 40 && this.par[i] <= 47) {
-+          // set background color, colors 0-7 (ansi)
-           var bg        = this.par[i] - 40;
-           this.attr     = ((this.attr & ~0xF0) | (bg << 4)) & ~(ATTR_DEF_BG);
-           this.attrBg   = false;
-+      } else if (this.par[i] >= 90 && this.par[i] <= 97) {
-+          // set foreground color, colors 8-15 (aixterm high-intensity)
-+          this.attrFg = this.par[i] - 82;
-+      } else if (this.par[i] >= 100 && this.par[i] <= 107) {
-+          // set background color, colors 8-15 (aixterm high-intensity)
-+          this.attrBg = this.par[i] - 92;
-       }
-       break;
-     }
+@@ -118,7 +118,8 @@ function VT100(container) {
+     '(?::[1-9][0-9]*)?' +
+ 
+     // Path.
+-    '(?:/(?:(?![/ \u00A0]|[,.)}"\u0027!]+[ \u00A0]|[,.)}"\u0027!]+$).)*)*|' +
++    '(?:/(?:(?![/ \u00A0]|[,.)}"\u0027!]+[ \u00A0]|[,.)}"\u0027!]+$)' +
++    '[-a-zA-Z0-9@:%_\+.~#?&//=])*)*|' +
+ 
+     (linkifyURLs <= 1 ? '' :
+     // Also support URLs without a protocol (assume "http").
+@@ -149,7 +150,8 @@ function VT100(container) {
+     '(?::[1-9][0-9]{0,4})?' +
+ 
+     // Path.
+-    '(?:/(?:(?![/ \u00A0]|[,.)}"\u0027!]+[ \u00A0]|[,.)}"\u0027!]+$).)*)*|') +
++    '(?:/(?:(?![/ \u00A0]|[,.)}"\u0027!]+[ \u00A0]|[,.)}"\u0027!]+$)' +
++    '[-a-zA-Z0-9@:%_\+.~#?&//=])*)*|') +
+ 
+     // In addition, support e-mail address. Optionally, recognize "mailto:"
+     '(?:mailto:)' + (linkifyURLs <= 1 ? '' : '?') +
