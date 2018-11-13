@@ -6,7 +6,7 @@ MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	QEMU userland utilities
 
 HAS_CONFIGURE=	yes
-USES=		cpe gmake pkgconfig perl5 python:2.7,build tar:bzip2
+USES=		cpe gmake pkgconfig perl5 python:2.7,build tar:xz
 USES+=		gettext-runtime
 USE_GNOME+=	glib20
 MAKE_ENV+=	BSD_MAKE="${MAKE}" PREFIX=${PREFIX}
