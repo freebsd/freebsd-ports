@@ -41,7 +41,6 @@ CONFIGURE_ARGS=	--target=${GCC_TARGET} \
 		--with-as=${LOCALBASE}/bin/${PKGNAMEPREFIX}unknown-${OPSYS:tl}${OSREL}-as \
 		--with-ld=${LOCALBASE}/bin/${PKGNAMEPREFIX}unknown-${OPSYS:tl}${OSREL}-ld \
 		--disable-werror \
-		--disable-shared \
 		--enable-threads \
 		--enable-tls \
 		--enable-languages=c,c++ \
