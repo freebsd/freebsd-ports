@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	azpainter
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	graphics
-MASTER_SITES=	OSDN/${PORTNAME}/69408
+MASTER_SITES=	OSDN/${PORTNAME}/70132
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	16-bit RGB full color painting application
@@ -27,18 +27,13 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README README_ja manual
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-post-patch-NLS-on:
-	@${REINPLACE_CMD} -e 's,tr/en\.mtr,tr/be.mtr &,' \
-		${WRKSRC}/data/Makefile.in
-
 post-patch-NLS-off:
 	@${REINPLACE_CMD} -e 's, install-dist_trdataDATA$$,,' \
 		${WRKSRC}/data/Makefile.in
 
-pre-build-NLS-on:
-	${CP} -p ${FILESDIR}/be ${WRKSRC}/translation
+_pre-build-NLS-on:
 	cd ${WRKSRC}/translation && ${CC} ${CFLAGS} -o mtrconv mtrconv.c
-.for lang in be en ru uk
+.for lang in be ru zh_CN
 	cd ${WRKSRC}/translation && ./mtrconv ${lang} ../data/tr/${lang}.mtr
 .endfor
 
