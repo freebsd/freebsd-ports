@@ -1,9 +1,9 @@
---- libmariadb/CMakeLists.txt.orig	2017-05-28 18:41:39 UTC
+--- libmariadb/CMakeLists.txt.orig	2018-11-12 16:32:38 UTC
 +++ libmariadb/CMakeLists.txt
-@@ -360,7 +360,7 @@ ENDIF()
+@@ -381,7 +381,7 @@ ENDIF()
+ INCLUDE(${CC_SOURCE_DIR}/plugins/CMakeLists.txt)
  ADD_SUBDIRECTORY(include)
  ADD_SUBDIRECTORY(libmariadb)
- ADD_SUBDIRECTORY(plugins)
 -IF(NOT WIN32)
 +IF(NOT WIN32 AND NOT WITHOUT_CLIENT)
    ADD_SUBDIRECTORY(mariadb_config)
