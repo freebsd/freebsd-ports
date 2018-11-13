@@ -96,6 +96,7 @@ share/devhelp/books/vala-%%VERSION%%/vala-%%VERSION%%.devhelp2
 %%DATADIR%%-%%VERSION%%/vapi/fuse.deps
 %%DATADIR%%-%%VERSION%%/vapi/fuse.vapi
 %%DATADIR%%-%%VERSION%%/vapi/gconf-2.0.vapi
+%%DATADIR%%-%%VERSION%%/vapi/gdesktopenums-3.0.vapi
 %%DATADIR%%-%%VERSION%%/vapi/gdk-2.0.deps
 %%DATADIR%%-%%VERSION%%/vapi/gdk-2.0.vapi
 %%DATADIR%%-%%VERSION%%/vapi/gdk-3.0.deps
@@ -129,6 +130,8 @@ share/devhelp/books/vala-%%VERSION%%/vala-%%VERSION%%.devhelp2
 %%DATADIR%%-%%VERSION%%/vapi/gnet-2.0.vapi
 %%DATADIR%%-%%VERSION%%/vapi/gnome-desktop-2.0.deps
 %%DATADIR%%-%%VERSION%%/vapi/gnome-desktop-2.0.vapi
+%%DATADIR%%-%%VERSION%%/vapi/gnome-desktop-3.0.deps
+%%DATADIR%%-%%VERSION%%/vapi/gnome-desktop-3.0.vapi
 %%DATADIR%%-%%VERSION%%/vapi/gnome-vfs-2.0.vapi
 %%DATADIR%%-%%VERSION%%/vapi/gnutls.vapi
 %%DATADIR%%-%%VERSION%%/vapi/gobject-2.0.vapi
