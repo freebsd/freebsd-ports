@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	musicpd
-PORTVERSION=	0.20.23
-PORTREVISION=	1
+PORTVERSION=	0.21.2
 CATEGORIES=	audio ipv6
-MASTER_SITES=	http://www.musicpd.org/download/mpd/${PORTVERSION:R}/
+MASTER_SITES=	https://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -16,26 +15,28 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libicudata.so:devel/icu
 
-USES=		compiler:c++14-lang gmake gnome pkgconfig tar:xz
+USES=		compiler:c++14-lang gnome meson pkgconfig tar:xz
 
-GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 
 USE_RC_SUBR=	${PORTNAME}
-CONFIGURE_ARGS+=--disable-alsa --disable-systemd-daemon --disable-roar
+MESON_ARGS=	-Dauto_features=disabled \
+		-Dbzip2=enabled \
+		-Dhttpd=true \
+		-Dicu=enabled \
+		-Doss=enabled \
+		-Dpipe=true \
+		-Dzlib=enabled
 CFLAGS+=	-I${PREFIX}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/sidplay/builders
-
-#Workaround (transient?) link error with libwrap
-CONFIGURE_ARGS+=--disable-libwrap
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS README.md NEWS
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	ID3TAG IPV6 ARCHIVE SQLITE3 \
-		LAME VORBISENC DOCS
+OPTIONS_DEFINE=	DOCS ID3TAG IPV6 ISO9660 SQLITE3 \
+		LAME VORBISENC ZZIP
 
 OPTIONS_RADIO=	RESAMPLER ZEROCONF
 
@@ -44,112 +45,152 @@ OPTIONS_RADIO_ZEROCONF=	AVAHI MDNSRESPONDER
 OPTIONS_RADIO_RESAMPLER=	SAMPLERATE SOXR
 
 OPTIONS_MULTI=	FILE_FORMAT
-OPTIONS_MULTI_FILE_FORMAT=	AAC ADPLUG FFMPEG FLAC FLUIDSYNTH \
-	   GME MAD MIKMOD MODPLUG MPG123 MUSEPACK \
-	   OPUS SIDPLAY2 SNDFILE TREMOR TWOLAME \
-	   VORBIS WAV WAVPACK WILDMIDI
+OPTIONS_MULTI_FILE_FORMAT= \
+			ADPLUG AUDIOFILE FAAD FFMPEG FLAC FLUIDSYNTH \
+			GME MAD MIKMOD MODPLUG MPG123 MUSEPACK \
+			OPUS SIDPLAY2 SNDFILE TWOLAME \
+			VORBIS WAVPACK WILDMIDI
 
 OPTIONS_GROUP=	ACCESS PLAYBACK
 
-OPTIONS_GROUP_ACCESS=	CDPARANOIA CURL MMS SMB YAJL
+OPTIONS_GROUP_ACCESS=	CDPARANOIA CURL MMS QOBUZ SMB SOUNDCLOUD TIDAL YAJL
 
-OPTIONS_GROUP_PLAYBACK=	AO HTTPD JACK OPENAL OSS PIPE PULSEAUDIO \
+OPTIONS_GROUP_PLAYBACK=	AO JACK OPENAL PULSEAUDIO \
 			SHOUTCAST SNDIO
 
 ADPLUG_DESC=	AdPlug support
+FAAD_DESC=	AAC/MP4 decoding via libfaad
 GME_DESC=	GME support (video game music files)
+ISO9660_DESC=	Direct support for ISO 9660 images
 LAME_DESC=	Support for MP3 Icecast Streams
-PIPE_DESC=	Support for writing PCM audio to a pipe
+QOBUZ_DESC=	Streaming service support: Qobuz
 SIDPLAY2_DESC=	Sidplay support (C64 mono and stereo files)
-TREMOR_DESC=	Tremor decoder (not with SHOUTCAST; use VORBIS)
+SOUNDCLOUD_DESC=Streaming service support: SoundCloud
+TIDAL_DESC=	Streaming service support: TIDAL
 TWOLAME_DESC=	TwoLAME support (mp2)
 VORBISENC_DESC=	Ogg Vorbis encoder
 WILDMIDI_DESC=	WildMIDI support (MIDI files)
-YAJL_DESC=	SoundCloud support via libyajl
+YAJL_DESC=	JSON support via libyajl
+ZZIP_DESC=	Support for zzip archives
 
-OPTIONS_DEFAULT=HTTPD ID3TAG MAD OSS FLAC VORBIS WAV FFMPEG SNDFILE \
-		CURL VORBISENC
+OPTIONS_DEFAULT=AUDIOFILE CURL FFMPEG FLAC ID3TAG MAD SNDFILE \
+		VORBIS VORBISENC
 
-AAC_CONFIGURE_ENABLE=aac
-AAC_LIB_DEPENDS=libfaad.so:audio/faad
-ADPLUG_CONFIGURE_ENABLE=adplug
-ADPLUG_LIB_DEPENDS=libadplug.so:audio/libadplug
-AO_CONFIGURE_ENABLE=ao
-AO_LIB_DEPENDS=libao.so:audio/libao
-CDPARANOIA_CONFIGURE_ENABLE=cdio-paranoia
-CDPARANOIA_LIB_DEPENDS=libcdda_paranoia.so:audio/cdparanoia
-CURL_CONFIGURE_ENABLE=curl
-CURL_LIB_DEPENDS=libcurl.so:ftp/curl
-FFMPEG_CONFIGURE_ENABLE=ffmpeg
+# Decoder plugins
+ADPLUG_MESON_ON=	-Dadplug=enabled
+ADPLUG_LIB_DEPENDS=	libadplug.so:audio/libadplug
+AUDIOFILE_MESON_ON=	-Daudiofile=enabled
+AUDIOFILE_LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile
+FAAD_MESON_ON=		-Dfaad=enabled
+FAAD_LIB_DEPENDS=	libfaad.so:audio/faad
+FFMPEG_MESON_ON=	-Dffmpeg=enabled
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 			libavformat.so:multimedia/ffmpeg \
 			libavutil.so:multimedia/ffmpeg
-FLAC_CONFIGURE_ENABLE=flac
-FLAC_LIB_DEPENDS=libFLAC.so:audio/flac
-FLUIDSYNTH_CONFIGURE_ENABLE=fluidsynth
-FLUIDSYNTH_LIB_DEPENDS=libfluidsynth.so:audio/fluidsynth
-GME_CONFIGURE_ENABLE=gme
-GME_LIB_DEPENDS=libgme.so:audio/libgme
-HTTPD_CONFIGURE_ENABLE=httpd-output
-ID3TAG_CONFIGURE_ENABLE=id3
-ID3TAG_LIB_DEPENDS=libid3tag.so:audio/libid3tag
-IPV6_CONFIGURE_ENABLE=ipv6
-JACK_CONFIGURE_ENABLE=jack
-JACK_LIB_DEPENDS=libjack.so:audio/jack
-LAME_CONFIGURE_ENABLE=lame-encoder
-LAME_LIB_DEPENDS=libmp3lame.so:audio/lame
-MAD_CONFIGURE_ENABLE=mad
-MAD_LIB_DEPENDS=libmad.so:audio/libmad
-MIKMOD_CONFIGURE_ENABLE=mikmod
-MIKMOD_LIB_DEPENDS=libmikmod.so:audio/libmikmod
-MMS_CONFIGURE_ENABLE=mms
-MMS_LIB_DEPENDS=libmms.so:net/libmms
-MODPLUG_CONFIGURE_ENABLE=modplug
-MODPLUG_LIB_DEPENDS=libmodplug.so:audio/libmodplug
-MPG123_CONFIGURE_ENABLE=mpg123
-MPG123_LIB_DEPENDS=libmpg123.so:audio/mpg123
-MUSEPACK_CONFIGURE_ENABLE=mpc
-MUSEPACK_LIB_DEPENDS=libmpcdec.so:audio/musepack
-OPENAL_CONFIGURE_ENABLE=openal
-OPENAL_USES=	openal
-OPENAL_VARS=	LLD_UNSAFE=yes # cf. PR 226980
-OPUS_CONFIGURE_ENABLE=opus
+FLAC_MESON_ON=		-Dflac=enabled
+FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
+FLUIDSYNTH_MESON_ON=	-Dfluidsynth=enabled
+FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
+GME_MESON_ON=		-Dgme=enabled
+GME_LIB_DEPENDS=	libgme.so:audio/libgme
+MAD_MESON_ON=		-Dmad=enabled
+MAD_LIB_DEPENDS=	libmad.so:audio/libmad
+MIKMOD_MESON_ON=	-Dmikmod=enabled
+MIKMOD_LIB_DEPENDS=	libmikmod.so:audio/libmikmod
+MODPLUG_MESON_ON=	-Dmodplug=enabled
+MODPLUG_LIB_DEPENDS=	libmodplug.so:audio/libmodplug
+MPG123_MESON_ON=	-Dmpg123=enabled
+MPG123_LIB_DEPENDS=	libmpg123.so:audio/mpg123
+MUSEPACK_MESON_ON=	-Dmpcdec=enabled
+MUSEPACK_LIB_DEPENDS=	libmpcdec.so:audio/musepack
+OPUS_MESON_ON=		-Dopus=enabled
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus \
 			libogg.so:audio/libogg
-OSS_CONFIGURE_ENABLE=oss
-PIPE_CONFIGURE_ENABLE=pipe-output
-PULSEAUDIO_CONFIGURE_ENABLE=pulse
-PULSEAUDIO_LIB_DEPENDS=libpulse.so:audio/pulseaudio
-SAMPLERATE_CONFIGURE_ENABLE=lsr
-SAMPLERATE_LIB_DEPENDS=libsamplerate.so:audio/libsamplerate
-SIDPLAY2_CONFIGURE_ENABLE=sidplay
-SIDPLAY2_LIB_DEPENDS=libsidplay2.so:audio/libsidplay2
-SMB_CONFIGURE_enable=smbclient
-SMB_USES=	samba:lib
-SNDFILE_CONFIGURE_ENABLE=sndfile
-SNDFILE_LIB_DEPENDS=libsndfile.so:audio/libsndfile
-SNDIO_CONFIGURE_ENABLE=sndio
-SNDIO_LIB_DEPENDS=libsndio.so:audio/sndio
-SOXR_CONFIGURE_ENABLE=soxr
-SOXR_LIB_DEPENDS=libsoxr.so:audio/libsoxr
-SQLITE3_CONFIGURE_ENABLE=sqlite
-SQLITE3_LIB_DEPENDS=libsqlite3.so:databases/sqlite3
-TREMOR_CONFIGURE_WITH=tremor
-TREMOR_LIB_DEPENDS=libvorbisidec.so:audio/libtremor
-TWOLAME_CONFIGURE_ENABLE=twolame-encoder
-TWOLAME_LIB_DEPENDS=libtwolame.so:audio/twolame
-VORBISENC_CONFIGURE_ENABLE=vorbis-encoder
-VORBISENC_LIB_DEPENDS=libvorbisenc.so:audio/libvorbis
-VORBIS_CONFIGURE_ENABLE=vorbis
-VORBIS_LIB_DEPENDS=libvorbis.so:audio/libvorbis
-WAV_CONFIGURE_ENABLE=audiofile
-WAV_LIB_DEPENDS=libaudiofile.so:audio/libaudiofile
-WAVPACK_CONFIGURE_ENABLE=wavpack
-WAVPACK_LIB_DEPENDS=libwavpack.so:audio/wavpack
-WILDMIDI_CONFIGURE_ENABLE=wildmidi
-WILDMIDI_LIB_DEPENDS=libWildMidi.so:audio/wildmidi
-YAJL_CONFIGURE_ENABLE=yajl
-YAJL_LIB_DEPENDS=libyajl.so:devel/yajl
+SIDPLAY2_MESON_ON=	-Dsidplay=enabled
+SIDPLAY2_LIB_DEPENDS=	libsidplay2.so:audio/libsidplay2
+SIDPLAY2_LDFLAGS=	-L${LOCALBASE}/lib/sidplay/builders
+SNDFILE_MESON_ON=	-Dsndfile=enabled
+SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
+VORBIS_MESON_ON=	-Dvorbis=enabled
+VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
+WAVPACK_MESON_ON=	-Dwavpack=enabled
+WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
+WILDMIDI_MESON_ON=	-Dwildmidi=enabled
+WILDMIDI_LIB_DEPENDS=	libWildMidi.so:audio/wildmidi
+
+# Encoder plugins
+VORBISENC_MESON_ON=	-Dvorbisenc=enabled
+VORBISENC_LIB_DEPENDS=	libvorbisenc.so:audio/libvorbis
+LAME_MESON_ON=		-Dlame=enabled
+LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
+TWOLAME_MESON_ON=	-Dtwolame=enabled
+TWOLAME_LIB_DEPENDS=	libtwolame.so:audio/twolame
+
+# Filter plugins
+SAMPLERATE_MESON_ON=	-Dlibsamplerate=enabled
+SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
+SOXR_MESON_ON=		-Dsoxr=enabled
+SOXR_LIB_DEPENDS=	libsoxr.so:audio/libsoxr
+
+# Output plugins
+AO_MESON_ON=		-Dao=enabled
+AO_LIB_DEPENDS=		libao.so:audio/libao
+JACK_MESON_ON=		-Djack=enabled
+JACK_LIB_DEPENDS=	libjack.so:audio/jack
+OPENAL_MESON_ON=	-Dopenal=enabled
+OPENAL_USES=		openal
+OPENAL_VARS=		LLD_UNSAFE=yes # cf. PR 226980
+PULSEAUDIO_MESON_ON=	-Dpulse=enabled
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+SHOUTCAST_MESON_ON=	-Dshout=enabled
+SHOUTCAST_LIB_DEPENDS=	libshout.so:audio/libshout
+SHOUTCAST_IMPLIES=	VORBIS
+SNDIO_MESON_ON=		-Dsndio=enabled
+SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
+
+# Input plugins
+CDPARANOIA_MESON_ON=	-Dcdio_paranoia=enabled
+CDPARANOIA_LIB_DEPENDS=	libcdda_paranoia.so:audio/cdparanoia
+CURL_MESON_ON=		-Dcurl=enabled
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
+MMS_MESON_ON=		-Dmms=enabled
+MMS_LIB_DEPENDS=	libmms.so:net/libmms
+SMB_MESON_ON=		-Dsmbclient=enabled
+SMB_USES=		samba:lib
+
+# Archive plugins
+ZZIP_MESON_ON=		-Dzzip=enabled
+ZZIP_LIB_DEPENDS=	libzzip.so:devel/zziplib
+ISO9660_MESON_ON=	-Diso9660=enabled
+ISO9660_LIB_DEPENDS=	libcdio_paranoia.so:sysutils/libcdio-paranoia
+
+# Database plugins
+SQLITE3_MESON_ON=	-Dsqlite=enabled
+SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
+
+# Tag plugins
+ID3TAG_MESON_ON=	-Did3tag=enabled
+ID3TAG_LIB_DEPENDS=	libid3tag.so:audio/libid3tag
+
+# Network support
+IPV6_MESON_ON=		-Dipv6=enabled
+
+# Commercial service support
+QOBUZ_MESON_ON=		-Dqobuz=enabled
+QOBUZ_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
+QOBUZ_IMPLIES=		CURL YAJL
+SOUNDCLOUD_MESON_ON=	-Dsoundcloud=enabled
+SOUNDCLOUD_IMPLIES=	CURL YAJL
+TIDAL_MESON_ON=		-Dtidal=enabled
+TIDAL_IMPLIES=		CURL YAJL
+
+# Misc library suppore
+AVAHI_MESON_ON=		-Dzeroconf=avahi
+AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
+MDNSRESPONDER_MESON_ON=		-Dzeroconf=bonjour
+MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
+YAJL_MESON_ON=		-Dyajl=enabled
+YAJL_LIB_DEPENDS=	libyajl.so:devel/yajl
 
 MPDUSER?=	mpd
 MPDGROUP?=	mpd
@@ -157,66 +198,30 @@ MPDGROUP?=	mpd
 USERS=	${MPDUSER}
 GROUPS=	${MPDGROUP}
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.ifdef MPDCONF
-IGNORE=Please remove the MPDCONF line from make.conf, then rename ${PREFIX}/etc/${MPDCONF} to musicpd.conf, if it exists
-.endif
-
-.if exists(${PREFIX}/etc/mpd.conf)
-MSG=does not expect ${PREFIX}/etc/mpd.conf to exist.
-.if !exists(${PREFIX}/etc/musicpd.conf)
-IGNORE=${MSG}  Move it to ${PREFIX}/etc/musicpd.conf.
+# Note that since the build system switch to meson, mpd fails to link with
+# GNU ld 2.17 in base. Also, meson does not allow to set the linker via
+# environment variables yet.
+# For gcc-based platforms, gcc and ld from ports are used due to the c++14
+# requirement. For clang, we set the linker explicitly in meson.build.
+.if ${ARCH} == armv6
+#lld may use movt/movw, doesn't work on armv6
+BUILD_DEPENDS+=	${LOCALBASE}/bin/ld:devel/binutils
+MPD_CLANG_LD=	${LOCALBASE}/bin/ld
 .else
-IGNORE=${MSG}  You also have musicpd.conf-- check carefully to see which one you want, and remove mpd.conf.
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MARCHIVE}
-CONFIGURE_ARGS+=--enable-bzip2 \
-		--enable-zzip \
-		--enable-iso9660
-LIB_DEPENDS+=	libzzip.so:devel/zziplib \
-		libcdio_paranoia.so:sysutils/libcdio-paranoia
-.else
-CONFIGURE_ARGS+=--disable-bzip2 \
-		--disable-zzip \
-		--disable-iso9660
-.endif
-
-.if ${PORT_OPTIONS:MAVAHI}
-CONFIGURE_ARGS+=--with-zeroconf=avahi
-LIB_DEPENDS+=	libavahi-client.so:net/avahi-app
-.else
-CONFIGURE_ARGS+=--with-zeroconf=no
-.endif
-
-.if ${PORT_OPTIONS:MMDNSRESPONDER}
-CONFIGURE_ARGS+=--with-zeroconf=bonjour
-LIB_DEPENDS+=	libdns_sd.so:net/mDNSResponder
-.else
-CONFIGURE_ARGS+=--with-zeroconf=no
-.endif
-
-# libshout streaming support will be disabled by configure script when built
-# also with tremor since the latter does not support vorbis encoding
-.if ${PORT_OPTIONS:MSHOUTCAST}
-.  if ${PORT_OPTIONS:MTREMOR}
-IGNORE=		shoutcast and tremor do not coexist; use vorbis instead
-.  endif
-LIB_DEPENDS+=	libshout.so:audio/libshout
-CONFIGURE_ARGS+=--enable-vorbis-encoder \
-		--enable-shout
-.else
-CONFIGURE_ARGS+=--disable-shout
+MPD_CLANG_LD=	lld
 .endif
 
 post-patch:
+# Insert selected linker for clang
+	@${REINPLACE_CMD} -e 's|%%MPD_CLANG_LD%%|${MPD_CLANG_LD}|' \
+		${WRKSRC}/meson.build
 # Replace ~/ with /var/mpd/ and make musicpd run as mpd by default
 	@${REINPLACE_CMD} -e 's,^#\([^"]*"\)~/,\1/var/mpd/,g' \
 		-e 's,^#\(user[^"]*"\)nobody,\1${MPDUSER},g' \
 		${WRKSRC}/doc/mpdconf.example
-# Uncomment OSS audio output part from MPDCONF; dragons!
+# Uncomment OSS audio output part from mpd.conf; dragons!
 	start=$$(expr $$(${SED} -n '/^#	type	*"oss"/=' \
 		${WRKSRC}/doc/mpdconf.example) - 1); \
 	 finish=$$(for n in $$(${JOT} 10 $$start); do \
@@ -232,15 +237,15 @@ post-patch:
 		${WRKSRC}/doc/mpd.1 ${WRKSRC}/doc/mpd.conf.5
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/mpd \
+	${INSTALL_PROGRAM} ${WRKSRC}/_build/mpd \
 		${STAGEDIR}/${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/doc/mpd.1 \
 		${STAGEDIR}/${PREFIX}/man/man1/${PORTNAME}.1
 	${INSTALL_MAN} ${WRKSRC}/doc/mpd.conf.5 \
 		${STAGEDIR}/${PREFIX}/man/man5/${PORTNAME}.conf.5
-	${MKDIR} ${STAGEDIR}/${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}/${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/mpdconf.example \
 		${STAGEDIR}/${PREFIX}/etc/${PORTNAME}.conf.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
