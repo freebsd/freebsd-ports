@@ -52,6 +52,7 @@ include/rocksdb/table.h
 include/rocksdb/table_properties.h
 include/rocksdb/thread_status.h
 include/rocksdb/threadpool.h
+include/rocksdb/trace_reader_writer.h
 include/rocksdb/transaction_log.h
 include/rocksdb/types.h
 include/rocksdb/universal_compaction.h
