@@ -2,6 +2,8 @@
 %%BBDB_LISPDIR%%/bbdb-anniv.elc
 %%BBDB_LISPDIR%%/bbdb-com.el
 %%BBDB_LISPDIR%%/bbdb-com.elc
+%%BBDB_LISPDIR%%/bbdb-gnus-aux.el
+%%BBDB_LISPDIR%%/bbdb-gnus-aux.elc
 %%BBDB_LISPDIR%%/bbdb-gnus.el
 %%BBDB_LISPDIR%%/bbdb-gnus.elc
 %%BBDB_LISPDIR%%/bbdb-ispell.el
@@ -13,13 +15,12 @@
 %%BBDB_LISPDIR%%/bbdb-mhe.elc
 %%BBDB_LISPDIR%%/bbdb-migrate.el
 %%BBDB_LISPDIR%%/bbdb-migrate.elc
+%%BBDB_LISPDIR%%/bbdb-mu4e.el
 %%BBDB_LISPDIR%%/bbdb-mua.el
 %%BBDB_LISPDIR%%/bbdb-mua.elc
 %%BBDB_LISPDIR%%/bbdb-pgp.el
 %%BBDB_LISPDIR%%/bbdb-pgp.elc
 %%BBDB_LISPDIR%%/bbdb-pkg.el
-%%BBDB_LISPDIR%%/bbdb-print.el
-%%BBDB_LISPDIR%%/bbdb-print.elc
 %%BBDB_LISPDIR%%/bbdb-rmail.el
 %%BBDB_LISPDIR%%/bbdb-rmail.elc
 %%BBDB_LISPDIR%%/bbdb-sc.el
@@ -28,6 +29,10 @@
 %%BBDB_LISPDIR%%/bbdb-site.elc
 %%BBDB_LISPDIR%%/bbdb-snarf.el
 %%BBDB_LISPDIR%%/bbdb-snarf.elc
+%%BBDB_LISPDIR%%/bbdb-tex.el
+%%BBDB_LISPDIR%%/bbdb-tex.elc
+%%BBDB_LISPDIR%%/bbdb-vm-aux.el
 %%BBDB_LISPDIR%%/bbdb-vm.el
+%%BBDB_LISPDIR%%/bbdb-wl.el
 %%BBDB_LISPDIR%%/bbdb.el
 %%BBDB_LISPDIR%%/bbdb.elc
