@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://rtorrent.net/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	BitTorrent Library written in C++
 
 LICENSE=	GPLv2+
