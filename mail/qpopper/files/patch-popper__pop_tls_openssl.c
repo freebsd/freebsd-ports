@@ -32,3 +32,13 @@
  
          case QPOP_TLSv1:       /* TLS version 1 only */
              DEBUG_LOG0 ( pPOP, "...setting method to TLSv1_server_method" );
+@@ -547,7 +547,8 @@ openssl_handshake ( pop_tls *pTLS )
+                           "%s session-id; cipher: %s (%s), %d bits",
+                           VERSION, SSL_CIPHER_get_version(ciph),
+                           pTLS->m_pPOP->client, pTLS->m_pPOP->ipaddr,
+-                          ( pTLS->m_OpenSSLconn->hit ? "reused" : "new" ),
++                          ( SSL_session_reused(pTLS->m_OpenSSLconn) ?
++                            "reused" : "new" ),
+                           ( ciph_name != NULL ? ciph_name : "(none)" ),
+                           get_cipher_description ( ciph, buf, sizeof(buf) ),
+                           SSL_CIPHER_get_bits    ( ciph, &al_bits ) );
