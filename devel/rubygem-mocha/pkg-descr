@@ -2,4 +2,4 @@ Mocha is a library for mocking and stubbing using a syntax like that
 of JMock, and SchMock. One of its main advantages is that it allows
 you to mock and stub methods on real (non-mock) classes and instances.
 
-WWW: http://gofreerange.com/mocha/docs/
+WWW: https://gofreerange.com/mocha/docs/
