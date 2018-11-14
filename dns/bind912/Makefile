@@ -29,8 +29,6 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-BROKEN_powerpc64=	fails to link: /usr/bin/ld: cannot find -latomic
-
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 USES=	compiler:c11 cpe libedit
