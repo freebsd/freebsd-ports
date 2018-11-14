@@ -1,9 +1,9 @@
---- src/controllers/controllermanager.cpp.orig	2015-12-29 16:10:41 UTC
-+++ src/controllers/controllermanager.cpp
-@@ -83,7 +83,9 @@ ControllerManager::ControllerManager(Con
-     m_pMainThreadPresetEnumerator = new PresetInfoEnumerator(presetSearchPaths);
+--- src/controllers/controllermanager.cpp	2018-04-15 13:30:27.000000000 -0500
++++ src/controllers/controllermanager.cpp	2018-04-21 22:34:32.638474000 -0500
+@@ -127,7 +127,9 @@
  
-     // Instantiate all enumerators
+     // Instantiate all enumerators. Enumerators can take a long time to
+     // construct since they interact with host MIDI APIs.
 +#ifdef __PORTMIDI__
      m_enumerators.append(new PortMidiEnumerator());
 +#endif
