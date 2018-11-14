@@ -1,9 +1,5 @@
-${SDL_INCLUDE_DIR} can contain more than one directory,
-so using it here as if it is a single directory can confuse
-check_include_files. Instead, iterate over it.
-
---- CMakeLists.txt.orig	2018-03-20 22:30:14.014771000 +0000
-+++ CMakeLists.txt	2018-03-20 22:31:23.332802000 +0000
+--- CMakeLists.txt.orig	2018-03-20 22:30:14 UTC
++++ CMakeLists.txt
 @@ -187,7 +187,12 @@
  check_include_files(termios.h HAVE_TERMIOS_H)
  check_include_files(strings.h HAVE_STRINGS_H)
