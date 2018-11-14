@@ -5,7 +5,7 @@
            <desc>Special font for rendering of emojis</desc>
          </info>
 -        <value>EmojiOne Color</value>
-+        <value>Twitter Color Emoji Color</value>
++        <value>Twitter Color Emoji</value>
        </prop>
        <prop oor:name="PluginsEnabled" oor:type="xs:boolean" oor:nillable="false">
          <!-- OldPath: ? -->
