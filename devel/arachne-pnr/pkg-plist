@@ -3,3 +3,4 @@ bin/arachne-pnr
 %%DATADIR%%/chipdb-384.bin
 %%DATADIR%%/chipdb-5k.bin
 %%DATADIR%%/chipdb-8k.bin
+%%DATADIR%%/chipdb-lm4k.bin
