@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	yosys
-DISTVERSION=	0.7-783
-DISTVERSIONSUFFIX=	-gbab39eac
+DISTVERSIONPREFIX=	yosys-
+DISTVERSION=	0.8
 CATEGORIES=	devel
 
 MAINTAINER=	jsorocil@gmail.com
@@ -24,7 +24,6 @@ SHEBANG_FILES=	backends/smt2/smtbmc.py \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	YosysHQ
-GH_TAGNAME=	bab39eacce5c17c42d50a3a60a67cc8a9ee52d98
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} tclsh=${TCLSH}
 MAKE_ARGS=	ABCEXTERNAL=abc
