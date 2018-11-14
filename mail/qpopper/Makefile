@@ -15,7 +15,7 @@ COMMENT=	Berkeley POP 3 server (now maintained by Qualcomm)
 
 # BSD-style license
 LICENSE=	QUALCOMM
-LICENSE_NAME=	Qualcomm BSD-style lisense
+LICENSE_NAME=	Qualcomm BSD-style license
 LICENSE_FILE=	${WRKSRC}/License.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
