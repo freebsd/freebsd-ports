@@ -2,7 +2,7 @@
 
 PORTNAME=	sonic-visualiser
 PORTVERSION=	2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://code.soundsoftware.ac.uk/attachments/download/1675/
 
