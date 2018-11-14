@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	vamp-plugin-sdk
-PORTVERSION=	2.6
+PORTVERSION=	2.7.1
 CATEGORIES=	audio
-MASTER_SITES=	https://code.soundsoftware.ac.uk/attachments/download/1520/
+MASTER_SITES=	https://code.soundsoftware.ac.uk/attachments/download/2206/
 
 MAINTAINER=	uddka@student.kit.edu
 COMMENT=	Vamp audio analysis plugin SDK
