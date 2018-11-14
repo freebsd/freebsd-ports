@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl crypto extension to OpenSSL
 
+BROKEN_SSL=    openssl111
+BROKEN_SSL_REASON_openssl111=  incomplete definition of type 'struct x509_st'
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Locale-libintl>=0:devel/p5-Locale-libintl \
 		p5-MIME-Tools>=0:mail/p5-MIME-Tools \
