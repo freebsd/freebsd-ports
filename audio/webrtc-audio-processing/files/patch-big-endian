@@ -1,0 +1,113 @@
+https://bugs.freedesktop.org/show_bug.cgi?id=95738
+
+--- webrtc/common_audio/wav_file.cc.orig	2018-07-23 14:02:57 UTC
++++ webrtc/common_audio/wav_file.cc
+@@ -64,9 +64,6 @@ WavReader::~WavReader() {
+ }
+ 
+ size_t WavReader::ReadSamples(size_t num_samples, int16_t* samples) {
+-#ifndef WEBRTC_ARCH_LITTLE_ENDIAN
+-#error "Need to convert samples to big-endian when reading from WAV file"
+-#endif
+   // There could be metadata after the audio; ensure we don't read it.
+   num_samples = std::min(rtc::checked_cast<uint32_t>(num_samples),
+                          num_samples_remaining_);
+@@ -76,6 +73,12 @@ size_t WavReader::ReadSamples(size_t num_samples, int1
+   RTC_CHECK(read == num_samples || feof(file_handle_));
+   RTC_CHECK_LE(read, num_samples_remaining_);
+   num_samples_remaining_ -= rtc::checked_cast<uint32_t>(read);
++#ifndef WEBRTC_ARCH_LITTLE_ENDIAN
++  //convert to big-endian
++  for(size_t idx = 0; idx < num_samples; idx++) {
++    samples[idx] = (samples[idx]<<8) | (samples[idx]>>8);
++  }
++#endif
+   return read;
+ }
+ 
+@@ -120,10 +123,17 @@ WavWriter::~WavWriter() {
+ 
+ void WavWriter::WriteSamples(const int16_t* samples, size_t num_samples) {
+ #ifndef WEBRTC_ARCH_LITTLE_ENDIAN
+-#error "Need to convert samples to little-endian when writing to WAV file"
+-#endif
++  int16_t * le_samples = new int16_t[num_samples];
++  for(size_t idx = 0; idx < num_samples; idx++) {
++    le_samples[idx] = (samples[idx]<<8) | (samples[idx]>>8);
++  }
+   const size_t written =
++      fwrite(le_samples, sizeof(*le_samples), num_samples, file_handle_);
++  delete []le_samples;
++#else
++  const size_t written =
+       fwrite(samples, sizeof(*samples), num_samples, file_handle_);
++#endif
+   RTC_CHECK_EQ(num_samples, written);
+   num_samples_ += static_cast<uint32_t>(written);
+   RTC_CHECK(written <= std::numeric_limits<uint32_t>::max() ||
+--- webrtc/common_audio/wav_header.cc.orig	2018-07-23 14:02:57 UTC
++++ webrtc/common_audio/wav_header.cc
+@@ -129,7 +129,39 @@ static inline std::string ReadFourCC(uint32_t x) {
+   return std::string(reinterpret_cast<char*>(&x), 4);
+ }
+ #else
+-#error "Write be-to-le conversion functions"
++static inline void WriteLE16(uint16_t* f, uint16_t x) {
++  *f = ((x << 8) & 0xff00)  | ( ( x >> 8) & 0x00ff);
++}
++
++static inline void WriteLE32(uint32_t* f, uint32_t x) {
++    *f = ( (x & 0x000000ff) << 24 )
++      | ((x & 0x0000ff00) << 8)
++      | ((x & 0x00ff0000) >> 8)
++      | ((x & 0xff000000) >> 24 );
++}
++
++static inline void WriteFourCC(uint32_t* f, char a, char b, char c, char d) {
++    *f = (static_cast<uint32_t>(a) << 24 )
++      |  (static_cast<uint32_t>(b) << 16)
++      |  (static_cast<uint32_t>(c) << 8)
++      |  (static_cast<uint32_t>(d) );
++}
++
++static inline uint16_t ReadLE16(uint16_t x) {
++  return  (( x & 0x00ff) << 8 )| ((x & 0xff00)>>8);
++}
++
++static inline uint32_t ReadLE32(uint32_t x) {
++  return   ( (x & 0x000000ff) << 24 )
++         | ( (x & 0x0000ff00) << 8 )
++         | ( (x & 0x00ff0000) >> 8)
++         | ( (x & 0xff000000) >> 24 );
++}
++
++static inline std::string ReadFourCC(uint32_t x) {
++  x = ReadLE32(x);
++  return std::string(reinterpret_cast<char*>(&x), 4);
++}
+ #endif
+ 
+ static inline uint32_t RiffChunkSize(uint32_t bytes_in_payload) {
+--- webrtc/typedefs.h.orig	2018-07-23 14:02:57 UTC
++++ webrtc/typedefs.h
+@@ -48,7 +48,19 @@
+ #define WEBRTC_ARCH_32_BITS
+ #define WEBRTC_ARCH_LITTLE_ENDIAN
+ #else
+-#error Please add support for your architecture in typedefs.h
++/* instead of failing, use typical unix defines... */
++#if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
++#define WEBRTC_ARCH_LITTLE_ENDIAN
++#elif __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__
++#define WEBRTC_ARCH_BIG_ENDIAN
++#else
++#error __BYTE_ORDER__ is not defined
++#endif
++#if defined(__LP64__)
++#define WEBRTC_ARCH_64_BITS
++#else
++#define WEBRTC_ARCH_32_BITS
++#endif
+ #endif
+ 
+ #if !(defined(WEBRTC_ARCH_LITTLE_ENDIAN) ^ defined(WEBRTC_ARCH_BIG_ENDIAN))
