@@ -1,2 +1,3 @@
-SHA256 (gnu-efi-3.0.3.tar.bz2) = c530f21a15fd9c214dd92d29a6caa20fac989289267512020b6da1f5e6f5b4cb
-SIZE (gnu-efi-3.0.3.tar.bz2) = 142229
+TIMESTAMP = 1541586539
+SHA256 (gnu-efi-3.0.9.tar.bz2) = 6715ea7eae1c7e4fc5041034bd3f107ec2911962ed284a081e491646b12277f0
+SIZE (gnu-efi-3.0.9.tar.bz2) = 154445

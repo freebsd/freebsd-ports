@@ -2,6 +2,7 @@ include/efi/efi.h
 include/efi/efi_nii.h
 include/efi/efi_pxe.h
 include/efi/efiapi.h
+include/efi/eficompiler.h
 include/efi/eficon.h
 include/efi/efidebug.h
 include/efi/efidef.h
