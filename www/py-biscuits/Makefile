@@ -12,16 +12,12 @@ COMMENT=	Fast and tasty cookies handling
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	${PY_PATHLIB}
+
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
-
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3400
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pathlib>=0:devel/py-pathlib@${PY_FLAVOR}
-.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/biscuits.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
