@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mixxx
-PORTVERSION=	2.0.0
-DISTVERSIONSUFFIX=	-src
-PORTREVISION=	9
+DISTVERSION=	2.1.5
+DISTVERSIONPREFIX=	release-
 CATEGORIES=	audio
-MASTER_SITES=	http://downloads.mixxx.org/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	DJ mixing application
@@ -16,30 +14,40 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=		fails to compile: Exception("invalid machine type")
 BROKEN_powerpc64=	fails to configure: unmet dependencies: Could not find libprotobuf, libchromaprint, libmp4, and libwavpack
-IGNORE=		it will be updated to mixxx 2.1.0. FLAVOR needs portmgr approval
 
 LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 		libFLAC.so:audio/flac \
+		libfftw3.so:math/fftw3 \
 		libid3tag.so:audio/libid3tag \
 		libmad.so:audio/libmad \
+		libmodplug.so:audio/libmodplug \
 		libportaudio.so:audio/portaudio \
+		libSoundTouch.so:audio/soundtouch \
+		libebur128.so:audio/libebur128 \
 		librubberband.so:audio/rubberband \
 		libsndfile.so:audio/libsndfile \
 		libvamp-sdk.so:audio/vamp-plugin-sdk \
+		libogg.so:audio/libogg \
 		libvorbisfile.so:audio/libvorbis \
 		libtag.so:audio/taglib \
 		libprotobuf.so:devel/protobuf
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-USES=		qt:4 scons iconv pkgconfig
-USE_QT=		corelib gui network opengl script scripttools sql sql-sqlite3 \
-		svg testlib xml xmlpatterns linguisttools_build moc_build \
-		qmake_build rcc_build uic_build
+USES=		compiler:c++11-lang iconv qt:5 pkgconfig scons
+USE_XORG=	x11
 USE_GL=		gl glu
+USE_GITHUB=	yes
+GH_ACCOUNT=	mixxxdj
+USE_QT=		buildtools concurrent core dbus gui network opengl script scripttools \
+		sql sql-sqlite3 svg testlib xml xmlpatterns linguisttools_build \
+		qmake_build widgets
+
+CONFLICTS=	mixxx20*
+
 MAKE_ARGS=	qtdir="${PREFIX}" install_root="${PREFIX}" \
-		build=release optimize=native
+		build=release optimize=native ${GUI} battery=0 vamp=1 modplug=1
 LATE_INSTALL_ARGS=	--install-sandbox=${STAGEDIR}
+
+GUI=		qt5=1
 
 PORTDATA=	*
 PORTDOCS=	*
@@ -81,7 +89,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|^Exec=.*|Exec=mixxx| ; \
 		 s|^Icon=.*|Icon=${PREFIX}/share/pixmaps/mixxx-icon.png|" \
 		${WRKSRC}/res/linux/mixxx.desktop
-.for i in midi/midimessage.h qtscript-bytearray/bytearrayclass.h
+	@${REINPLACE_CMD} -e "s,(Q_OS_LINUX),(Q_OS_LINUX) || defined(Q_OS_FREEBSD),g" \
+		${WRKSRC}/src/util/screensaver.h
+.for i in midi/midimessage.h
 	@${ECHO_CMD} >> ${WRKSRC}/src/controllers/${i}
 .endfor
 
@@ -94,10 +104,8 @@ post-install:
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
 		${STAGEDIR}${DOCSDIR})
 .endfor
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/doc/HID
-.for i in *.odt *.pdf
-	(cd ${WRKSRC}/doc/HID && ${INSTALL_DATA} ${i} \
-		${STAGEDIR}${DOCSDIR}/doc/HID)
-.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} Mixxx-Manual.pdf \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
