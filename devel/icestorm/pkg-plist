@@ -1,3 +1,4 @@
+bin/icebox.py
 bin/icebox_asc2hlc
 bin/icebox_chipdb
 bin/icebox_colbuf
@@ -8,7 +9,6 @@ bin/icebox_html
 bin/icebox_maps
 bin/icebox_stat
 bin/icebox_vlog
-bin/icebox.py
 bin/iceboxdb.py
 bin/icebram
 bin/icemulti
@@ -21,3 +21,10 @@ share/icebox/chipdb-1k.txt
 share/icebox/chipdb-384.txt
 share/icebox/chipdb-5k.txt
 share/icebox/chipdb-8k.txt
+share/icebox/chipdb-lm4k.txt
+share/icebox/timings_hx1k.txt
+share/icebox/timings_hx8k.txt
+share/icebox/timings_lp1k.txt
+share/icebox/timings_lp384.txt
+share/icebox/timings_lp8k.txt
+share/icebox/timings_up5k.txt
