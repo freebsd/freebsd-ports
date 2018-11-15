@@ -11,14 +11,13 @@ COMMENT=	AcoustID audio fingerprint submission tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+BROKEN_armv6=		fails to link: fingerprintcalculator.cpp: undefined reference to 'chromaprint_new'
+
 LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 		libtag.so:audio/taglib \
 		libavcodec.so:multimedia/ffmpeg
 
-BROKEN_armv6=		fails to link: fingerprintcalculator.cpp: undefined reference to 'chromaprint_new'
-BROKEN_powerpc64=	fails to compile: libchromaprint.so: undefined reference to std::__cxx11::basic_string
-
-USES=		cmake desktop-file-utils qt:4
+USES=		cmake compiler:c++11-lang desktop-file-utils qt:4
 USE_QT=		corelib gui network \
 		qmake_build moc_build rcc_build uic_build
 USE_GITHUB=	yes
