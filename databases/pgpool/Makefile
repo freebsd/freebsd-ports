@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgpool
-PORTVERSION=	3.4.19
+PORTVERSION=	3.4.20
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 DISTNAME=	${PORTNAME}-II-${PORTVERSION}
