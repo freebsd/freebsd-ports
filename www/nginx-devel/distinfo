@@ -1,4 +1,4 @@
-TIMESTAMP = 1541524865
+TIMESTAMP = 1542241152
 SHA256 (nginx-1.15.6.tar.gz) = a3d8c67c2035808c7c0d475fffe263db8c353b11521aa7ade468b780ed826cc6
 SIZE (nginx-1.15.6.tar.gz) = 1025761
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -87,8 +87,8 @@ SHA256 (masterzen-nginx-upload-progress-module-afb2d31_GH0.tar.gz) = 6318851cc3a
 SIZE (masterzen-nginx-upload-progress-module-afb2d31_GH0.tar.gz) = 17269
 SHA256 (yaoweibin-nginx_upstream_check_module-9aecf15_GH0.tar.gz) = 4404c64e845e19feeb07a37976347987892a8e8680a961f793ff0d3ef96c07f4
 SIZE (yaoweibin-nginx_upstream_check_module-9aecf15_GH0.tar.gz) = 130039
-SHA256 (cryptofuture-nginx-upstream-fair-b5be36f_GH0.tar.gz) = e765afcaab6cd1601e914039a8d00ab18eb6fe01180c58e0e4e098bc5b4d8233
-SIZE (cryptofuture-nginx-upstream-fair-b5be36f_GH0.tar.gz) = 10174
+SHA256 (jaygooby-nginx-upstream-fair-10ecdcf_GH0.tar.gz) = 93f71b7cf0db9c6dbf97e3ee11cf8efbc149946c0949d7abd19c74c7620eea50
+SIZE (jaygooby-nginx-upstream-fair-10ecdcf_GH0.tar.gz) = 10433
 SHA256 (thomsonreuters-nginx-sticky-module-ng-0d58565_GH0.tar.gz) = 85c178046de8036ce6339d69c1c12f470c1d9aa797b45d3151118dbe9b8fe2a5
 SIZE (thomsonreuters-nginx-sticky-module-ng-0d58565_GH0.tar.gz) = 120608
 SHA256 (wandenberg-nginx-video-thumbextractor-module-0.9.0_GH0.tar.gz) = 6ad7d12b3f7b65ec8e7f3e0f471463929967cb76ff1a81b35a5a34b33604f3cb
