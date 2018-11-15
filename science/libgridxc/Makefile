@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgridxc
-DISTVERSION=	0.8.0
-PORTREVISION=	2
+DISTVERSION=	0.8.3
 CATEGORIES=	science
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/trunk/${DISTVERSION:R}/+download/
 
@@ -22,7 +21,7 @@ WRKSRC_SUBDIR=	src
 
 BUILD_WRKSRC=	${WRKSRC}/../build
 TMP_STAGEDIR=	${WRKDIR}/tmp_stage
-MAKE_ENV=	INSTALL_DIR=${TMP_STAGEDIR}${PREFIX} FREEBSD_LOCALBASE=${LOCALBASE}
+MAKE_ENV=	INSTALL_DIR=${TMP_STAGEDIR}${PREFIX} FREEBSD_LOCALBASE=${LOCALBASE} LIBXC_ROOT=${LOCALBASE}
 
 BINARY_ALIAS=	make=${GMAKE}
 
@@ -41,7 +40,6 @@ post-patch:
 	@${CAT} ${WRKSRC}/../extra/fortran.mk \
 		| ${SED} '\
 			s|FC_SERIAL=gfortran|&${GCC_DEFAULT}|; \
-			s|LIBXC_ROOT=/usr/local|LIBXC_ROOT=${LOCALBASE}|; \
 			s|FFLAGS= -O2|& -fPIC|' \
 		> ${BUILD_WRKSRC}/fortran.mk
 
