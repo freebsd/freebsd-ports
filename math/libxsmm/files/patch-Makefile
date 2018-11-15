@@ -1,24 +1,6 @@
---- Makefile.orig	2018-03-15 13:08:45 UTC
+--- Makefile.orig	2018-11-15 03:24:29 UTC
 +++ Makefile
-@@ -398,7 +398,7 @@ endif
- lib: headers drytest lib_hst lib_mic
- 
- .PHONY: all
--all: libxsmm samples
-+all: libxsmm
- 
- .PHONY: headers
- headers: cheader cheader_only fheader
-@@ -1502,7 +1502,7 @@ realclean-all: realclean
- 
- # Dummy prefix
- ifneq (,$(strip $(PREFIX)))
--INSTALL_ROOT = $(PREFIX)
-+INSTALL_ROOT = $(DESTDIR)$(PREFIX)
- else
- INSTALL_ROOT = .
- endif
-@@ -1581,7 +1581,7 @@ ifneq ($(abspath $(INSTALL_ROOT)),$(absp
+@@ -1683,7 +1683,7 @@ endif
  endif
  
  .PHONY: install-all
