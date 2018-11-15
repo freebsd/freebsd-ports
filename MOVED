@@ -10627,3 +10627,4 @@ security/ossec-hids-client|security/ossec-hids-agent|2018-10-29|Agent is the nam
 graphics/ImageMagick|graphics/ImageMagick6|2018-11-10|Port renamed
 graphics/ImageMagick-nox11|graphics/ImageMagick6-nox11|2018-11-10|Port renamed
 lang/gcc6-devel|lang/gcc6|2018-11-11|The GCC 6 branch has been closed, use the final release instead (or a later major version)
+mail/py-email-reply-parser|mail/py-email_reply_parser|2018-11-15|Rename to match upstream naming
