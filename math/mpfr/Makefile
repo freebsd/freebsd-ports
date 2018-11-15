@@ -5,7 +5,7 @@ PORTNAME=	mpfr
 PORTVERSION=	4.0.1
 PORTREVISION=	2
 CATEGORIES=	math devel
-MASTER_SITES=	http://www.mpfr.org/mpfr-current/ \
+MASTER_SITES=	https://www.mpfr.org/mpfr-current/ \
 		GNU
 DIST_SUBDIR=	${DISTNAME}
 
