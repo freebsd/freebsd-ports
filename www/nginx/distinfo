@@ -1,4 +1,4 @@
-TIMESTAMP = 1541523020
+TIMESTAMP = 1542300703
 SHA256 (nginx-1.14.1.tar.gz) = bf09974130c0d41c0a811decc17a96ec2f58cdc8bbacb771de8d38c9ba14a4a4
 SIZE (nginx-1.14.1.tar.gz) = 1014040
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -39,8 +39,8 @@ SHA256 (cubicdaiya-ngx_dynamic_upstream-v0.1.3_GH0.tar.gz) = bf60cf196c86193376d
 SIZE (cubicdaiya-ngx_dynamic_upstream-v0.1.3_GH0.tar.gz) = 10921
 SHA256 (openresty-echo-nginx-module-c65f5c6_GH0.tar.gz) = aea1d10d9175a6471b34d436df937b5c97e7ba1ac4b4b2582a2cb6716d7fba4b
 SIZE (openresty-echo-nginx-module-c65f5c6_GH0.tar.gz) = 53121
-SHA256 (openresty-encrypted-session-nginx-module-v0.07_GH0.tar.gz) = ab7b20be9f32da846f5c380677f7bc1dff0b93ce02c06bf584cd45709896ad66
-SIZE (openresty-encrypted-session-nginx-module-v0.07_GH0.tar.gz) = 11139
+SHA256 (openresty-encrypted-session-nginx-module-v0.08_GH0.tar.gz) = 6e526ea097c6805ec2cf1d0d3d79ed24326bc2d0babe158c29edd07d8c0d106a
+SIZE (openresty-encrypted-session-nginx-module-v0.08_GH0.tar.gz) = 11802
 SHA256 (happyfish100-fastdfs-nginx-module-8796a7d_GH0.tar.gz) = 083fe7ecd484b9adce41c938f0f95b81ebe8336765896107e5864243c9789ef5
 SIZE (happyfish100-fastdfs-nginx-module-8796a7d_GH0.tar.gz) = 19872
 SHA256 (calio-form-input-nginx-module-v0.12_GH0.tar.gz) = 5c1869d55897075adb3fdf840b21060dc54669a1f840a36d1539acc7e59dd106
