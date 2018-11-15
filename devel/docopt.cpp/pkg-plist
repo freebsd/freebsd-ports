@@ -1,0 +1,9 @@
+include/docopt/docopt.h
+include/docopt/docopt_private.h
+include/docopt/docopt_util.h
+include/docopt/docopt_value.h
+lib/cmake/docopt/docopt-config-version.cmake
+lib/cmake/docopt/docopt-config.cmake
+lib/cmake/docopt/docopt-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/docopt/docopt-targets.cmake
+lib/libdocopt.so
