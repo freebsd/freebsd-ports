@@ -90,7 +90,6 @@ share/icons/hicolor/scalable/apps/liferea.svg
 %%DATADIR%%/enclosure_handler.ui
 %%DATADIR%%/gir-1.0/Liferea-3.0.gir
 %%DATADIR%%/google_source.ui
-%%DATADIR%%/inoreader_source.ui
 %%DATADIR%%/liferea.css
 %%DATADIR%%/liferea_menu.ui
 %%DATADIR%%/liferea_toolbar.ui
