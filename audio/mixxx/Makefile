@@ -18,6 +18,7 @@ BROKEN_powerpc64=	fails to configure: unmet dependencies: Could not find libprot
 LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 		libFLAC.so:audio/flac \
 		libfftw3.so:math/fftw3 \
+		libhidapi.so:comms/hidapi \
 		libid3tag.so:audio/libid3tag \
 		libmad.so:audio/libmad \
 		libmodplug.so:audio/libmodplug \
