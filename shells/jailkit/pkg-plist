@@ -16,6 +16,7 @@ man/man8/jk_init.8.gz
 man/man8/jk_jailuser.8.gz
 man/man8/jk_list.8.gz
 man/man8/jk_lsh.8.gz
+%%PROCMAIL%%man/man8/jk_procmailwrapper.8.gz
 man/man8/jk_socketd.8.gz
 man/man8/jk_uchroot.8.gz
 man/man8/jk_update.8.gz
@@ -28,6 +29,7 @@ sbin/jk_init
 sbin/jk_jailuser
 sbin/jk_list
 sbin/jk_lsh
+%%PROCMAIL%%sbin/jk_procmailwrapper
 sbin/jk_socketd
 sbin/jk_update
 %%DATADIR%%/jk_lib.py
