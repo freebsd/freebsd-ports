@@ -239,6 +239,7 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%EMOJI%%%%DATADIR%%/dicts/emoji-af.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-am.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ar.dict
+%%EMOJI%%%%DATADIR%%/dicts/emoji-ar_SA.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-as.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ast.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-az.dict
@@ -282,6 +283,7 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%EMOJI%%%%DATADIR%%/dicts/emoji-hr.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-hu.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-hy.dict
+%%EMOJI%%%%DATADIR%%/dicts/emoji-ia.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-id.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-is.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-it.dict
@@ -292,6 +294,7 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%EMOJI%%%%DATADIR%%/dicts/emoji-km.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-kn.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ko.dict
+%%EMOJI%%%%DATADIR%%/dicts/emoji-ku.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ky.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-lo.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-lt.dict
@@ -312,6 +315,7 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ps.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-pt.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-pt_PT.dict
+%%EMOJI%%%%DATADIR%%/dicts/emoji-qu.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ro.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-root.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ru.dict
@@ -323,6 +327,7 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sr.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sr_Cyrl_BA.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sr_Latn.dict
+%%EMOJI%%%%DATADIR%%/dicts/emoji-sr_Latn_BA.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sv.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-sw.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-ta.dict
@@ -341,8 +346,8 @@ share/dbus-1/services/org.freedesktop.portal.IBus.service
 %%EMOJI%%%%DATADIR%%/dicts/emoji-zh_Hant.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-zh_Hant_HK.dict
 %%EMOJI%%%%DATADIR%%/dicts/emoji-zu.dict
-%%DATADIR%%/dicts/unicode-blocks.dict
-%%DATADIR%%/dicts/unicode-names.dict
+%%EMOJI%%%%DATADIR%%/dicts/unicode-blocks.dict
+%%EMOJI%%%%DATADIR%%/dicts/unicode-names.dict
 %%DATADIR%%/keymaps/common
 %%DATADIR%%/keymaps/in
 %%DATADIR%%/keymaps/jp
