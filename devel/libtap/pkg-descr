@@ -1,3 +1,5 @@
 Library implementing the Test Anything Protocol.  Will be / is used by
 src/tools/regression, and anything else that wants an easy-to-implement
 test suite.
+
+WWW: https://www.shlomifish.org/open-source/projects/libtap/

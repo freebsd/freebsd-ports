@@ -2,35 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	libtap
-PORTVERSION=	1.01
-PORTREVISION=	2
+PORTVERSION=	1.12.0
 CATEGORIES=	devel
-MASTER_SITES=	LOCAL/nik
-DISTNAME=	tap-${PORTVERSION}
+MASTER_SITES=	https://web-cpan.shlomifish.org/downloads/
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library implementing the Test Anything Protocol
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool
-GNU_CONFIGURE=	yes
+USES=		cmake:outsource perl5 tar:bz2
 USE_LDCONFIG=	yes
+USE_PERL5=	build
 
-post-build:
-	@${ECHO_MSG} "If you have Perl and Test::Harness installed you can run the test suite"
-	@${ECHO_MSG} "for libtap by running"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "    make check"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "or"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "    prove -r"
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtap.so
-
-check:
-	(cd ${WRKSRC}; ${MAKE} check)
+TEST_TARGET=	check
 
 .include <bsd.port.mk>
