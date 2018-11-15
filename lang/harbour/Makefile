@@ -12,7 +12,8 @@ COMMENT=	Open source Clipper-compatible compiler
 
 BROKEN_mips=		does not build: clang: Command not found
 BROKEN_mips64=		does not build: clang: Command not found
-BROKEN_powerpc64=	does not build: clang: Command not found
+# XXX MCL 20181112
+#BROKEN_powerpc64=	does not build: clang: Command not found
 BROKEN_sparc64=		does not compile: assertion failed
 
 LIB_DEPENDS=	libslang.so:devel/libslang2\
@@ -108,4 +109,11 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's|utmp.h|utmpx.h|g' ${WRKSRC}/src/rtl/gtcrs/gtcrs.h
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# override default for gcc-based archs
+.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+HB_COMPILER=	gcc
+.endif
+
+.include <bsd.port.post.mk>
