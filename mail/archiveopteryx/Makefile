@@ -12,10 +12,6 @@ COMMENT=	Advanced PostgreSQL-based IMAP/POP server
 
 LICENSE=	MIT
 
-BROKEN_mips=		fails to build: /bin/sh: clang: not found
-BROKEN_mips64=		fails to build: /bin/sh: clang: not found
-BROKEN_powerpc64=	fails to build: /bin/sh: clang: not found
-
 BUILD_DEPENDS=	jam:devel/jam
 
 USES=		perl5 ssl tar:bzip2
@@ -40,9 +36,11 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-# force Clang when on FreeBSD
+# force Clang when on FreeBSD with clang in base
 .if ${OPSYS} == FreeBSD
+.if ! ${ARCH:Mmips*} && ! ${ARCH:Mpowerpc*} && ! ${ARCH} == sparc64
 JAMARG+=	"-sCLANG=1"
+.endif
 .endif
 
 post-patch:
