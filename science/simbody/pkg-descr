@@ -1,0 +1,6 @@
+Simbody is useful for internal coordinate and coarse grained molecule modeling,
+large scale mechanical models like skeletons, and anything else that can be
+modeled as bodies interconnected by joints, acted upon by forces, and restricted
+by constraints.
+
+WWW: https://simtk.org/projects/simbody
