@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tiled
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics editors games
 
