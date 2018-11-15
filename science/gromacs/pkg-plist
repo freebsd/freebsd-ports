@@ -144,7 +144,7 @@ include/gromacs/utility/stringutil.h
 include/gromacs/version.h
 lib/libgromacs%%SUFFIX_MPI%%%%SUFFIX_D%%.so
 lib/libgromacs%%SUFFIX_MPI%%%%SUFFIX_D%%.so.3
-lib/libgromacs%%SUFFIX_MPI%%%%SUFFIX_D%%.so.3.3.0
+lib/libgromacs%%SUFFIX_MPI%%%%SUFFIX_D%%.so.3.4.0
 libdata/pkgconfig/libgromacs%%SUFFIX_MPI%%%%SUFFIX_D%%.pc
 man/man1/gmx-anadock.1.gz
 man/man1/gmx-anaeig.1.gz
