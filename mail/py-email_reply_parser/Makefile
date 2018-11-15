@@ -1,19 +1,20 @@
 # Created by: Tom Judge <tj@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	email-reply-parser
-PORTVERSION=	0.1.5
-DISTVERSIONPREFIX=	v
+PORTNAME=	email_reply_parser
+PORTVERSION=	0.5.9
 CATEGORIES=	mail python
-MASTER_SITES=	GH
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	GitHubs Email Reply Parser library for python
 
+LICENSE=	MIT
+
 USES=		python
-USE_PYTHON=	distutils autoplist
-USE_GITHUB=	yes
-GH_ACCOUNT=	zapier
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
