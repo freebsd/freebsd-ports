@@ -16,8 +16,6 @@ BROKEN_aarch64=		fails to compile: file liblas/detail/endian.hpp needs to be set
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libgeotiff.so:graphics/libgeotiff
 
-CONFLICTS=	liblas12-1.2*
-
 PORTSCOUT=	skipv:progress-20071229
 
 USES=		cmake compiler:c++11-lang libtool
