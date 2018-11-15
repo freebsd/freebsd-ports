@@ -5211,6 +5211,7 @@
     SUBDIR += py-virtualenv
     SUBDIR += py-virtualenv-clone
     SUBDIR += py-virtualenvwrapper
+    SUBDIR += py-visitor
     SUBDIR += py-voluptuous
     SUBDIR += py-warlock
     SUBDIR += py-watchdog

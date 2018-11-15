@@ -1,0 +1,5 @@
+visitor is a tiny library to facilitate visitor implementation in Python (which
+are slightly peculiar due to dynamic typing). In fact, it is so small, you may
+just be better off copy & pasting the source straight into your project.
+
+WWW: https://github.com/mbr/visitor
