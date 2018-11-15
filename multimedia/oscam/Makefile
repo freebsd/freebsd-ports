@@ -12,13 +12,8 @@ COMMENT=	Softcam software to decrypt digital tv channels
 
 LICENSE=	GPLv3
 
-BROKEN_mips=		does not build: gmake: clang: Command not found
-BROKEN_mips64=		does not build: gmake: clang: Command not found
-BROKEN_powerpc64=	does not build: gmake: clang: Command not found
-
 USES=		gmake ssl tar:bzip2
 USE_RC_SUBR=	oscam
-MAKE_ARGS+=	HOSTCC=clang CC=clang
 
 .if target(gen-dist)
 FETCH_DEPENDS+=	svn:devel/subversion
@@ -27,6 +22,12 @@ SVN_REV=	11062
 SVN_SRC=	http://www.streamboard.tv/svn/oscam/trunk
 
 OPTIONS_DEFINE=	EXAMPLES
+
+.include <bsd.port.pre.mk>
+
+.if ! ${ARCH:Mmips*} && ! ${ARCH:Mpowerpc*} && ! ${ARCH} == sparc64
+MAKE_ARGS+=	HOSTCC=clang CC=clang
+.endif
 
 do-install:
 	${RM} ${WRKSRC}/Distribution/*.debug
@@ -43,4 +44,4 @@ gen-dist:
 	svn export --force -r ${SVN_REV} ${SVN_SRC} ${WRKSRC}
 	${TAR} -cvy -C ${WRKDIR} -f ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
