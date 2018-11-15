@@ -1,4 +1,4 @@
---- setup.py.orig	2018-09-16 19:57:43 UTC
+--- setup.py.orig	2018-11-13 19:39:18 UTC
 +++ setup.py
 @@ -37,7 +37,7 @@ def _maybe_clang(flags):
          compiler.linker_so[0] = os.environ['CXX']
@@ -9,21 +9,12 @@
  
  
  def _maybe_macos(flags):
-@@ -59,7 +59,7 @@ if system_sass:
-     _maybe_macos(flags)
- 
-     if platform.system() == 'FreeBSD':
--        link_flags = ['-fPIC', '-lc++']
-+        link_flags = ['-fPIC']
-     else:
-         link_flags = ['-fPIC', '-lstdc++']
-     libraries = ['sass']
-@@ -173,7 +173,7 @@ else:
-                         f.write(cencode_body)
- 
-         if platform.system() == 'FreeBSD':
--            link_flags = ['-fPIC', '-lc++']
-+            link_flags = ['-fPIC']
-         else:
-             link_flags = ['-fPIC', '-lstdc++']
+@@ -54,7 +54,7 @@ def _maybe_macos(flags):
+ if sys.platform == 'win32':
+     extra_link_args = []
+ elif platform.system() in {'Darwin', 'FreeBSD'}:
+-    extra_link_args = ['-fPIC', '-lc++']
++    extra_link_args = ['-fPIC', '-lstdc++']
+ else:
+     extra_link_args = ['-fPIC', '-lstdc++']
  
