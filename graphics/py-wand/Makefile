@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Wand
-PORTVERSION=	0.4.4
-PORTREVISION=	4
+PORTVERSION=	0.4.5
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,11 +10,13 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	MagickWand Python binding
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6
 
-USES=	python
-USE_PYTHON=	distutils autoplist
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
+
 NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
