@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	tins
-PORTVERSION=	1.19.0
+PORTVERSION=	1.20.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Useful tools library in Ruby
 
 LICENSE=	MIT
