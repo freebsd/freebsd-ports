@@ -1,0 +1,5 @@
+docopt.cpp generates an option parser based on help messages in man-like style.
+It eliminates the need to write the repeatable parser code, and instead works
+off of help messages.
+
+WWW: https://github.com/docopt/docopt.cpp
