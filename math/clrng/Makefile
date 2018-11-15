@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0-beta
 CATEGORIES=	math
 
-MAINTAINER=	dieterich@ogolem.org
+MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Library for uniform random number generation in OpenCL
 
 LICENSE=	BSD2CLAUSE
