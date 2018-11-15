@@ -2,32 +2,36 @@
 
 PORTNAME=		git-lfs
 DISTVERSIONPREFIX=	v
-DISTVERSION=		2.5.2
+DISTVERSION=		2.6.0
 CATEGORIES=		devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	egypcio@googlemail.com
 COMMENT=	Git extension for versioning large files
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	git:devel/git
 
-USES=		go gmake
+USES=		go
 USE_GITHUB=	yes
-PLIST_FILES=	bin/git-lfs
+
+GH_TUPLE=	davecgh:go-spew:d8f796a:davecgh_spew/vendor/github.com/davecgh/go-spew \
+		pmezard:go-difflib:792786c:pmezard_difflib/vendor/github.com/pmezard/go-difflib
 
 GO_PKGNAME=	github.com/${PORTNAME}/${PORTNAME}
 
-do-build:
-	@cd ${GO_WRKSRC} && ${MKDIR} ${WRKSRC}/.tmp && \
-	${SETENV} ${MAKE_ENV} ${GO_ENV} \
-	TMPDIR=${WRKSRC}/.tmp GOARCH=${GOARCH} GOOS="freebsd" \
-	VERSION="" GIT_LFS_SHA="" GO=${GO_CMD} \
-	${SH} -c "${GO_CMD} generate ${GO_PKGNAME}/commands && \
-		${MAKE_CMD} bin/git-lfs"
+OPTIONS_DEFINE=		MANPAGES
+OPTIONS_DEFAULT=	MANPAGES
+OPTIONS_SUB=		yes
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/git-lfs ${STAGEDIR}${PREFIX}/bin/git-lfs
+MANPAGES_BUILD_DEPENDS=	ronn:textproc/rubygem-ronn
+
+post-build-MANPAGES-on:
+	cd ${GO_WRKSRC}/docs/man && ${LOCALBASE}/bin/ronn -r *.ronn
+
+post-install-MANPAGES-on:
+	${INSTALL_MAN} ${GO_WRKSRC}/docs/man/*.1 ${STAGEDIR}${LOCALBASE}/man/man1
+	${INSTALL_MAN} ${GO_WRKSRC}/docs/man/*.5 ${STAGEDIR}${LOCALBASE}/man/man5
 
 .include <bsd.port.mk>
