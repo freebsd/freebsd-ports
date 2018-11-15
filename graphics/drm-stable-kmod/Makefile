@@ -3,6 +3,7 @@
 
 PORTNAME=	drm-stable-kmod
 PORTVERSION=	g20180822
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	jmd@FreeBSD.org

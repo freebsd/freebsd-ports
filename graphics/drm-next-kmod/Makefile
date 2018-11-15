@@ -3,6 +3,7 @@
 
 PORTNAME=	drm-next-kmod
 PORTVERSION=	4.11.g20181027
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	jmd@FreeBSD.org
