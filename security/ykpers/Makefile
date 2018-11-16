@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ykpers
-PORTVERSION=	1.18.0
-PORTREVISION=	2
+PORTVERSION=	1.19.0
 CATEGORIES=	security
 MASTER_SITES=	http://opensource.yubico.com/yubikey-personalization/releases/
 
