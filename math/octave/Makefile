@@ -41,16 +41,18 @@ LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
 		libsundials_arkode.so:math/sundials
 
 USES=		charsetfix fortran gmake libtool perl5 pkgconfig qt:5 readline \
-		tar:xz compiler:c++14-lang
+		tar:xz compiler:c++14-lang \
+		desktop-file-utils gl iconv
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}/${PORTVERSION}
 USE_PERL5=	build
-USE_TEX=	dvipsk:build formats:build
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
 USE_QT=		core gui help network opengl \
-		qmake_build buildtools_build linguist_build
-USE_XORG=	x11 xext xfixes xft
+		qmake_build buildtools_build linguist_build \
+		printsupport sql widgets
+USE_XORG=	x11 xext xfixes xft \
+		xcursor xinerama xrender
 USE_GL=		gl glu
 
 OCTAVE_VERSION=	${PORTVERSION}
@@ -73,20 +75,22 @@ CONFIGURE_ARGS=	--host=${GNU_HOST} \
 		--disable-jit \
 		--disable-openmp \
 		--with-qt=5 \
-		--with-OSMesa-includedir=${LOCALBASE}/include/GL \
-		--with-OSMesa-libdir=${LOCALBASE}/lib
+		--with-osmesa
+
+INFO=		octave liboctave
 
 OPTIONS_DEFINE=	DOCS
+
+DOCS_CONFIGURE_ENABLE=	docs
 
 OPTIONS_RADIO=		BLAS
 OPTIONS_RADIO_BLAS=	OPENBLAS NETLIB ATLAS
 OPTIONS_DEFAULT=	OPENBLAS
 
+DOCS_USE=	TEX=dvipsk:build,formats:build
 OPENBLAS_USES=	blaslapack:openblas
 NETLIB_USES=	blaslapack:netlib
 ATLAS_USES=		blaslapack:atlas
-
-INFO=		octave liboctave
 
 post-patch:
 	${REINPLACE_CMD} 's+"makeinfo"+"${LOCALBASE}/bin/makeinfo"+' ${WRKSRC}/libinterp/corefcn/help.cc
@@ -97,6 +101,7 @@ post-patch:
 
 post-install:
 	(cd ${STAGEDIR}${DATADIR} && ${LN} -s ${PORTVERSION}/imagelib  .)
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/octave/${PORTVERSION}/liboctave.so.6.0.0
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
