@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DT
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,9 +12,10 @@ COMMENT=	Wrapper of the JavaScript Library 'DataTables'
 LICENSE=	GPLv3
 
 CRAN_DEPENDS=	R-cran-htmltools>=0.3.6:textproc/R-cran-htmltools \
-		R-cran-htmlwidgets>=1.0:www/R-cran-htmlwidgets \
+		R-cran-htmlwidgets>=1.3:www/R-cran-htmlwidgets \
 		R-cran-magrittr>0:devel/R-cran-magrittr \
-		R-cran-crosstalk>0:www/R-cran-crosstalk
+		R-cran-crosstalk>0:www/R-cran-crosstalk \
+		R-cran-promises>0:devel/R-cran-promises
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
