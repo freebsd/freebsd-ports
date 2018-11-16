@@ -1,0 +1,6 @@
+OpenSim is software that lets users develop models of musculoskeletal structures
+and create dynamic simulations of movement.
+
+It contains SimTK OpenSim C++ libraries and command-line applications.
+
+WWW: http://opensim.stanford.edu/
