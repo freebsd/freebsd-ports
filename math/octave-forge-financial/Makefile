@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-financial
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
