@@ -1,11 +1,10 @@
 ########################################################################
-Add these lines to your Emacs initialization.
+Add this line to your Emacs initialization.
 
 (require 'bbdb-loaddefs)
-(require 'bbdb)
 
 Depending on which mail user agent and other miscellaneous packages you
-use, you may also want to add something like these lines.
+use, you may also want to add something similar to these lines.
 
 (bbdb-initialize 'gnus 'message)
 (bbdb-mua-auto-update-init 'gnus 'message)
