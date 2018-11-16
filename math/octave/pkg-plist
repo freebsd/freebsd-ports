@@ -2029,7 +2029,7 @@ include/octave-%%OCTAVE_VERSION%%/octave/ov-struct.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-typeinfo.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-uint16.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-uint32.h
-include/octave-%%OCTAVE_VERSION%%/octave/ov-uint64h
+include/octave-%%OCTAVE_VERSION%%/octave/ov-uint64.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-uint8.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-usr-fcn.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov.h
@@ -2151,7 +2151,7 @@ include/octave-%%OCTAVE_VERSION%%/octave/vx-fs-fcrv.h
 include/octave-%%OCTAVE_VERSION%%/octave/vx-ops.h
 include/octave-%%OCTAVE_VERSION%%/octave/vx-rv-crv.h
 include/octave-%%OCTAVE_VERSION%%/octave/vx-rv-cs.h
-include/octave-%%OCTAVE_VERSION%%/oave/vx-s-ccv.h
+include/octave-%%OCTAVE_VERSION%%/octave/vx-s-ccv.h
 include/octave-%%OCTAVE_VERSION%%/octave/vx-s-crv.h
 include/octave-%%OCTAVE_VERSION%%/octave/xdiv.h
 include/octave-%%OCTAVE_VERSION%%/octave/xnorm.h
@@ -2175,7 +2175,7 @@ lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__init_fltk__.oct
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__init_gnuplot__.oct
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__ode15__.oct
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__osmesa_print__.oct
-ib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__voronoi__.oct
+lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__voronoi__.oct
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/amd.oct
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/audiodevinfo.oct
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/audioread.oct
