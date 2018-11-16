@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 
 %%SBCL%% --eval "(in-package :cl-user)" \
          --eval "(require :stumpwm)" \
