@@ -763,6 +763,7 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_theme/template.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_theme/templates/node--1.tpl.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_theme/test_theme.info
+%%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_theme/theme-settings.php
 %%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_theme_nyan_cat/templates/theme_test_template_test.nyan-cat.html
 %%DRUPAL_BASE%%/modules/simpletest/tests/themes/test_theme_nyan_cat/test_theme_nyan_cat.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/unicode.test
