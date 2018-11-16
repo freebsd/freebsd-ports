@@ -321,7 +321,6 @@
     SUBDIR += facter
     SUBDIR += fanout
     SUBDIR += farbot
-    SUBDIR += fastest_cvsup
     SUBDIR += fatback
     SUBDIR += fcode-utils
     SUBDIR += fconfig

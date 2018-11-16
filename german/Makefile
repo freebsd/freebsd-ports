@@ -24,7 +24,6 @@
     SUBDIR += phone
     SUBDIR += php_doc
     SUBDIR += schwobifyer
-    SUBDIR += selfhtml
     SUBDIR += steak
     SUBDIR += tipp10
     SUBDIR += trytond28_account_de_skr03

@@ -389,7 +389,6 @@
     SUBDIR += unifi-lts
     SUBDIR += unifi5
     SUBDIR += victorops-nagios
-    SUBDIR += vidalia
     SUBDIR += virt-viewer
     SUBDIR += wdiag
     SUBDIR += weplab
