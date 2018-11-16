@@ -1,2 +1,3 @@
-SHA256 (pam_yubico-2.16.tar.gz) = b6dfbbba8bb9ad8d4b66c72396e7762d0cd91b2d5bd8ac433c79286c166722f6
-SIZE (pam_yubico-2.16.tar.gz) = 388153
+TIMESTAMP = 1542244102
+SHA256 (pam_yubico-2.26.tar.gz) = 2de96495963fefd72b98243952ca5d5ec513e702c596e54bc667ef6b5e252966
+SIZE (pam_yubico-2.26.tar.gz) = 423451
