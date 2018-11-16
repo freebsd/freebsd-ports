@@ -1,0 +1,23 @@
+--- CMakeLists.txt.orig	2018-11-12 23:49:48 UTC
++++ CMakeLists.txt
+@@ -766,8 +766,10 @@ endif(WIN32)
+ 
+ 
+ ## The following are required to uses Dart and the Cdash dashboard per Jesse
+-enable_testing()
+-include(CTest)
++if (DO_TESTING)
++    enable_testing()
++    include(CTest)
++endif()
+ 
+ # Sets the number of concurrent jobs that testing can use.
+ if(MSVC OR XCODE)
+@@ -834,4 +836,6 @@ endif()
+ add_subdirectory(Bindings)
+ 
+ add_subdirectory(cmake)
+-add_subdirectory(doc)
++if (INSTALL_DOCS)
++    add_subdirectory(doc)
++endif()
