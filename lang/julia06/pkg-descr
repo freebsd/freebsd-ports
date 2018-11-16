@@ -6,4 +6,4 @@ library. The library, largely written in Julia itself, also integrates mature,
 best-of-breed C and Fortran libraries for linear algebra, random number
 generation, signal processing, and string processing.
 
-WWW: http://julialang.org/
+WWW: https://julialang.org/
