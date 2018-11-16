@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pam_yubico
-PORTVERSION=	2.16
-PORTREVISION=	2
+PORTVERSION=	2.26
 CATEGORIES=	security
 MASTER_SITES=	http://opensource.yubico.com/yubico-pam/releases/
 
