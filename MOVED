@@ -10628,3 +10628,6 @@ graphics/ImageMagick|graphics/ImageMagick6|2018-11-10|Port renamed
 graphics/ImageMagick-nox11|graphics/ImageMagick6-nox11|2018-11-10|Port renamed
 lang/gcc6-devel|lang/gcc6|2018-11-11|The GCC 6 branch has been closed, use the final release instead (or a later major version)
 mail/py-email-reply-parser|mail/py-email_reply_parser|2018-11-15|Rename to match upstream naming
+net-mgmt/vidalia||2018-11-16|Has expired: outdated and unmaintained
+german/selfhtml||2018-11-16|Has expired: Project migrated to a Wiki
+sysutils/fastest_cvsup||2018-11-16|Has expired: Obsolete, FreeBSD and OpenBSD switched from cvsup to svn and cvsync, NetBSD only have 2 servers left
