@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ykclient
-PORTVERSION=	2.12
-PORTREVISION=	2
+PORTVERSION=	2.15
 CATEGORIES=	security
 MASTER_SITES=	http://opensource.yubico.com/yubico-c-client/releases/
 
@@ -28,7 +27,7 @@ PLIST_FILES=	bin/ykclient \
 		include/ykclient_version.h \
 		lib/libykclient.so \
 		lib/libykclient.so.3 \
-		lib/libykclient.so.3.5.2 \
+		lib/libykclient.so.3.6.0 \
 		man/man1/ykclient.1.gz
 
 OPTIONS_DEFINE=	STATIC
