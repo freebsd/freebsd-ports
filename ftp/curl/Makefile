@@ -139,6 +139,7 @@ TELNET_CONFIGURE_ENABLE=telnet
 TFTP_CONFIGURE_ENABLE=	tftp
 THREADED_RESOLVER_CONFIGURE_ENABLE=	pthreads threaded-resolver
 TLS_SRP_CONFIGURE_ENABLE=	tls-srp
+WOLFSSL_CONFIGURE_ENV=	ac_cv_header_cyassl_options_h=no
 WOLFSSL_CONFIGURE_WITH=	cyassl
 WOLFSSL_LIB_DEPENDS=	libwolfssl.so:security/wolfssl
 
