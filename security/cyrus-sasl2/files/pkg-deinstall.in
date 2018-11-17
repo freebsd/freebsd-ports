@@ -18,6 +18,9 @@ delete_sasldb() {
 	if [ -f ${SASLDB_NAME} ] ; then
 		if [ `${PKG_PREFIX}/sbin/sasldblistusers2 | wc -l` -eq 0 ]; then
 			rm ${SASLDB_NAME}
+			if [ -f ${SASLDB_NAME}-lock ] ; then
+				rm ${SASLDB_NAME}-lock
+			fi
 		else
 			echo "WARNING: Users SASL passwords are in ${SASLDB_NAME}, keeping this file"
 		fi

@@ -1,16 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus-sasl
-PORTVERSION=	2.1.26
+PORTVERSION=	2.1.27
 CATEGORIES=	security ipv6
-MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/ \
-		http://cyrusimap.org/releases/
+MASTER_SITES=	https://www.cyrusimap.org/releases/ \
+		ftp://ftp.cyrusimap.org/cyrus-sasl/
 
 MAINTAINER=	ume@FreeBSD.org
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES+=		gmake
 USE_LDCONFIG=	yes
 USES+=		ssl
 GNU_CONFIGURE=	yes
@@ -83,6 +84,8 @@ CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 CPPFLAGS+=	-fPIC
 .endif
 
+PORTDOCS=	*
+
 .if ${CYRUS_BUILD_TARGET} == "cyrus-sasl"
 
 .if ${PORT_OPTIONS:MBDB1}
@@ -90,7 +93,7 @@ SASLDB_NAME=	sasldb2.db
 .elif ${PORT_OPTIONS:MBDB}
 INVALID_BDB_VER=2
 SASLDB_NAME=	sasldb2
-.elif ${PORT_OPTIONS:MGDBM}
+.elif ${PORT_OPTIONS:MGDBM} || ${PORT_OPTIONS:MLMDB}
 SASLDB_NAME=	sasldb2
 .else
 SASLDB=	"@comment "
@@ -101,32 +104,19 @@ SUB_LIST=	CYRUS_USER=${CYRUS_USER} CYRUS_GROUP=${CYRUS_GROUP} \
 		SASLDB_NAME=${SASLDB_NAME}
 
 PLIST_SUB+=	PREFIX=${PREFIX} \
-		SASLDB=${SASLDB} \
-		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///}
-
-post-patch:
-# Try to unbreak parallel (-jX) builds, part 1: make build commands atomic
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${PERL} -w0pi.bak \
-		-e 's/(^\@am__fastdepCC_TRUE\@.*?) \
-		\n\@am__fastdepCC_TRUE\@\s+(.*?)$$/$$1 && $$2/mgx'
-# Part 2: prevent intermediate *.Tpo output files clash (use unique names)
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${PERL} -wpi.bak \
-		-e 's/\$$\*\.Tpo/$$&.$$./g'
+		SASLDB=${SASLDB}
 
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
+		"! ( -path */html/_sources* -o -name .buildinfo \
+		-o -name Makefile -o -name Makefile.in \
+		-o -name Makefile.in.bak -o -name Makefile.am \
+		-o -name NTMakefile -o -name .cvsignore )"
 .for f in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.for f in ${DOC2}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
-.endfor
-.for f in ${HTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${f}.html \
-		${STAGEDIR}${DOCSDIR}/html
-.endfor
-	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README \
-		${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README ${STAGEDIR}${DOCSDIR}
 
 .elif ${CYRUS_BUILD_TARGET} == "saslauthd"
 
@@ -145,19 +135,19 @@ RUNPATH=	"@comment "
 .endif
 
 PLIST_SUB+=	PREFIX=${PREFIX} \
-		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///} \
 		RUNPATH=${RUNPATH}
 
 SUB_LIST+=	SASLAUTHD_RUNPATH=${SASLAUTHD_RUNPATH}
 
 do-build:
-	cd ${WRKSRC}/include && ${MAKE}
-.if ${PORT_OPTIONS:MBDB1} || ${PORT_OPTIONS:MBDB} || ${PORT_OPTIONS:MGDBM}
-	cd ${WRKSRC}/sasldb && ${MAKE}
-.endif
-	cd ${WRKSRC}/saslauthd && ${MAKE}
-	cd ${WRKSRC}/saslauthd && ${MAKE} saslcache
-	cd ${WRKSRC}/saslauthd && ${MAKE} testsaslauthd
+	cd ${WRKSRC}/include && gmake
+	cd ${WRKSRC}/common && gmake
+#.if ${PORT_OPTIONS:MBDB1} || ${PORT_OPTIONS:MBDB} || ${PORT_OPTIONS:MGDBM}
+	cd ${WRKSRC}/sasldb && gmake
+#.endif
+	cd ${WRKSRC}/saslauthd && gmake
+	cd ${WRKSRC}/saslauthd && gmake saslcache
+	cd ${WRKSRC}/saslauthd && gmake testsaslauthd
 
 post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/saslauthd/saslcache \
@@ -190,8 +180,10 @@ post-patch:
 		${WRKSRC}/configure
 
 do-build:
-	cd ${WRKSRC}/include && ${MAKE}
-	cd ${WRKSRC}/plugins && ${MAKE}
+	cd ${WRKSRC}/include && gmake
+	cd ${WRKSRC}/common && gmake
+	cd ${WRKSRC}/lib && gmake libobj.la
+	cd ${WRKSRC}/plugins && gmake
 
 .endif
 
