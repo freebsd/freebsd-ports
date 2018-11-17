@@ -12,14 +12,14 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python web framework to use qpy and durus together
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}durus>=0:devel/py-durus@${PY_FLAVOR} \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}durus>=0:devel/py-durus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qpy>=1.7:www/py-qpy@${PY_FLAVOR}
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-USE_PYTHON=	distutils
 USES=		python:2.7
+USE_PYTHON=	distutils
 
 SUB_FILES=	pkg-message
 
