@@ -3,7 +3,7 @@
 PORTNAME=	wolfssl
 PORTVERSION=	3.13.0
 CATEGORIES=	security devel
-MASTER_SITES=	http://www.wolfssl.com/
+MASTER_SITES=	https://www.wolfssl.com/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Embedded SSL C-Library
