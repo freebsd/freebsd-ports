@@ -4,21 +4,9 @@ POST-INSTALL CONFIGURATION FOR OrangeHRM
 1) Add the following to your Apache configuration, and
    restart the server:
 
-   For Apache versions earlier than 2.4:
-
    Alias /orangehrm %%PREFIX%%/www/orangehrm/
    AcceptPathInfo On
-   <Directory %%PREFIX%%/www/orangehrm>
-      AllowOverride All
-      Order Allow,Deny
-      Allow from all
-   </Directory>
-
-   For Apache version 2.4.x or above:
-
-   Alias /orangehrm %%PREFIX%%/www/orangehrm/
-   AcceptPathInfo On
-   <Directory %%PREFIX%%/www/oranghrm/>
+   <Directory %%PREFIX%%/www/orangehrm/>
       AllowOverride All
       Require all granted
    </Directory>
