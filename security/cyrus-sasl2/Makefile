@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	14
+#PORTREVISION=	0
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
@@ -11,13 +11,13 @@ CYRUS_CONFIGURE_ARGS=	--with-saslauthd=${SASLAUTHD_RUNPATH}
 
 NO_OPTIONS_SORT=	yes
 OPTIONS_DEFINE=		ALWAYSTRUE AUTHDAEMOND DOCS KEEP_DB_OPEN \
-			OBSOLETE_CRAM_ATTR
+			OBSOLETE_CRAM_ATTR OBSOLETE_DIGEST_ATTR
 OPTIONS_RADIO=		SASLDB
-OPTIONS_RADIO_SASLDB=	BDB1 BDB GDBM
+OPTIONS_RADIO_SASLDB=	BDB1 BDB GDBM LMDB
 OPTIONS_GROUP=		PLUGIN
 OPTIONS_GROUP_PLUGIN=	ANONYMOUS CRAM DIGEST LOGIN NTLM OTP PLAIN SCRAM
 OPTIONS_DEFAULT=	ANONYMOUS AUTHDAEMOND BDB1 OBSOLETE_CRAM_ATTR CRAM \
-			DIGEST LOGIN NTLM OTP PLAIN SCRAM
+			OBSOLETE_DIGEST_ATTR DIGEST LOGIN NTLM OTP PLAIN SCRAM
 OPTIONS_SUB=		yes
 ALWAYSTRUE_DESC=	Alwaystrue password verifier (discouraged)
 ALWAYSTRUE_CONFIGURE_ENABLE=alwaystrue
@@ -28,6 +28,8 @@ KEEP_DB_OPEN_DESC=	Keep handle to Berkeley DB open
 KEEP_DB_OPEN_CONFIGURE_ENABLE=keep-db-open
 OBSOLETE_CRAM_ATTR_DESC=cmusaslsecretCRAM-MD5 auxprop property
 OBSOLETE_CRAM_ATTR_CONFIGURE_OFF=--enable-obsolete_cram_attr=no
+OBSOLETE_DIGEST_ATTR_DESC=cmusaslsecretDIGEST-MD5 auxprop property
+OBSOLETE_DIGEST_ATTR_CONFIGURE_OFF=--enable-obsolete_digest_attr=no
 SASLDB_DESC=		SASLdb auxprop plugin
 BDB_USES=		bdb
 BDB_CONFIGURE_ON=	--with-dblib=berkeley \
@@ -38,6 +40,11 @@ BDB1_CONFIGURE_ON=	--with-dblib=ndbm
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_ON=	--with-dblib=gdbm \
 			--with-gdbm=${LOCALBASE}
+LMDB_DESC=		OpenLDAP Lightning Memory-Mapped Database support
+LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
+LMDB_CONFIGURE_ON=	--with-dblib=lmdb
+LMDB_CFLAGS=		-I${LOCALBASE}/include
+LMDB_LDFLAGS=		-L${LOCALBASE}/lib
 ANONYMOUS_DESC=			ANONYMOUS authentication
 ANONYMOUS_CONFIGURE_ENABLE=	anon
 CRAM_DESC=		CRAM-MD5 authentication
@@ -55,20 +62,6 @@ PLAIN_CONFIGURE_ENABLE=	plain
 SCRAM_DESC=		SCRAM authentication
 SCRAM_CONFIGURE_ENABLE=	scram
 
-DOCS=	AUTHORS COPYING ChangeLog INSTALL INSTALL.TXT NEWS README
-
-DOC2=	ONEWS TODO draft-burdis-cat-srp-sasl-xx.txt \
-	draft-ietf-sasl-anon-xx.txt draft-ietf-sasl-crammd5-xx.txt \
-	draft-ietf-sasl-gssapi-xx.txt draft-ietf-sasl-plain-xx.txt \
-	draft-ietf-sasl-rfc2222bis-xx.txt draft-ietf-sasl-rfc2831bis-xx.txt \
-	draft-ietf-sasl-saslprep-xx.txt draft-murchison-sasl-login-xx.txt \
-	draft-newman-sasl-c-api-xx.txt rfc1321.txt rfc1939.txt rfc2104.txt \
-	rfc2195.txt rfc2222.txt rfc2243.txt rfc2245.txt rfc2289.txt \
-	rfc2444.txt rfc2595.txt rfc2831.txt rfc2945.txt rfc3174.txt \
-	server-plugin-flow.fig testing.txt
-
-HTDOCS=	advanced appconvert components gssapi index install macosx \
-	mechanisms options plugprog programming readme sysadmin upgrading \
-	windows
+DOCS=	AUTHORS COPYING ChangeLog INSTALL INSTALL.TXT README
 
 .include "${.CURDIR}/../../security/cyrus-sasl2/Makefile.common"

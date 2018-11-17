@@ -2,11 +2,4 @@ man/man8/saslauthd.8.gz
 sbin/saslauthd
 sbin/saslcache
 sbin/testsaslauthd
-%%PORTDOCS%%%%DOCSDIR%%/saslauthd/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/saslauthd/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/saslauthd/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/saslauthd/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/saslauthd/LDAP_SASLAUTHD
-%%PORTDOCS%%%%DOCSDIR%%/saslauthd/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/saslauthd/README
 %%RUNPATH%%@dir(cyrus,mail,750) /var/run/saslauthd

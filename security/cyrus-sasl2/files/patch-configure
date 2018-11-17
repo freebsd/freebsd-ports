@@ -1,41 +1,15 @@
-Index: configure
-diff -u configure.orig configure
---- configure.orig	2012-11-07 04:21:37.000000000 +0900
-+++ configure	2014-03-25 18:24:59.021374856 +0900
-@@ -2365,6 +2365,7 @@
- fi
- { $as_echo "$as_me:$LINENO: result: yes" >&5
- $as_echo "yes" >&6; }
-+program_prefix=NONE
- test "$program_prefix" != NONE &&
-   program_transform_name="s&^&$program_prefix&;$program_transform_name"
- # Use a double $ so make ignores it.
-@@ -6329,6 +6330,7 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
-+#include <stdio.h>
- #include <db.h>
- _ACEOF
- if { (ac_try="$ac_cpp conftest.$ac_ext"
-@@ -7156,6 +7158,7 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
-+#include <stdio.h>
- #include <db.h>
- _ACEOF
- if { (ac_try="$ac_cpp conftest.$ac_ext"
-@@ -8700,6 +8703,8 @@
+--- configure.orig	2017-11-30 21:15:59 UTC
++++ configure
+@@ -15415,6 +15415,8 @@ else
    SASLAUTHD_TRUE='#'
    SASLAUTHD_FALSE=
  fi
 +SASLAUTHD_TRUE='#'
 +SASLAUTHD_FALSE=
  
- { $as_echo "$as_me:$LINENO: checking if I should include saslauthd" >&5
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking if I should include saslauthd" >&5
  $as_echo_n "checking if I should include saslauthd... " >&6; }
-@@ -12552,6 +12557,7 @@
+@@ -17029,6 +17031,7 @@ fi
       gssapi_dir="${gssapi}/lib"
       GSSAPIBASE_LIBS="-L$gssapi_dir"
       GSSAPIBASE_STATIC_LIBS="-L$gssapi_dir"
@@ -43,54 +17,21 @@ diff -u configure.orig configure
    else
       # FIXME: This is only used for building cyrus, and then only as
       # a real hack.  it needs to be fixed.
-@@ -12571,7 +12577,7 @@
+@@ -17048,7 +17051,7 @@ if ${ac_cv_lib_gssapi_gss_unwrap+:} fals
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lgssapi ${GSSAPIBASE_LIBS} -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
 +LIBS="${GSSAPIBASE_LIBS} `${gssapi_bindir}krb5-config --libs gssapi` $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -13047,7 +13053,7 @@
-     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a ${K5SUPSTATIC}"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -17308,7 +17311,7 @@ fi
+     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
    elif test "$gss_impl" = "heimdal"; then
-     CPPFLAGS="$CPPFLAGS -DKRB5_HEIMDAL"
+     CPPFLAGS="$CPPFLAGS"
 -    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err"
 +    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS `${gssapi_bindir}krb5-config --libs gssapi`"
      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
    elif test "$gss_impl" = "cybersafe03"; then
  # Version of CyberSafe with two libraries
-@@ -14479,7 +14485,7 @@
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lpq  $LIBS"
-+LIBS="-lpq $GSSAPIBASE_LIBS $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -14591,9 +14597,9 @@
- $as_echo "$as_me: WARNING: SQLite Library not found" >&2;}; true;;
-     *)
-      if test -d ${with_sqlite}/lib; then
--         LIB_SQLITE="-L${with_sqlite}/lib -R${with_sqlite}/lib"
-+         LIB_SQLITE="-L${with_sqlite}/lib $andrew_cv_runpath_switch${with_sqlite}/lib"
-      else
--         LIB_SQLITE="-L${with_sqlite} -R${with_sqlite}"
-+         LIB_SQLITE="-L${with_sqlite} $andrew_cv_runpath_switch${with_sqlite}"
-      fi
- 
-      LIB_SQLITE_DIR=$LIB_SQLITE
-@@ -14721,9 +14727,9 @@
- $as_echo "$as_me: WARNING: SQLite3 Library not found" >&2;}; true;;
-     *)
-      if test -d ${with_sqlite3}/lib; then
--         LIB_SQLITE3="-L${with_sqlite3}/lib -R${with_sqlite3}/lib"
-+         LIB_SQLITE3="-L${with_sqlite3}/lib $andrew_cv_runpath_switch${with_sqlite3}/lib"
-      else
--         LIB_SQLITE3="-L${with_sqlite3} -R${with_sqlite3}"
-+         LIB_SQLITE3="-L${with_sqlite3} $andrew_cv_runpath_switch${with_sqlite3}"
-      fi
- 
-      LIB_SQLITE3_DIR=$LIB_SQLITE3

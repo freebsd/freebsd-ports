@@ -78,6 +78,10 @@ create_sasldb() {
 			${PKG_PREFIX}/sbin/saslpasswd2 -d ${CYRUS_USER}
 			chown ${CYRUS_USER}:mail ${SASLDB_NAME}
 			chmod 640 ${SASLDB_NAME}
+			if [ -f ${SASLDB_NAME}-lock ]; then
+				chown ${CYRUS_USER}:mail ${SASLDB_NAME}-lock
+				chmod 640 ${SASLDB_NAME}-lock
+			fi
 		fi
 	fi
 }
