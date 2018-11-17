@@ -6006,7 +6006,7 @@
     SUBDIR += rubygem-shoulda-context
     SUBDIR += rubygem-shoulda-matchers
     SUBDIR += rubygem-sidekiq
-    SUBDIR += rubygem-sidekiq-bulk-rails5
+    SUBDIR += rubygem-sidekiq-bulk
     SUBDIR += rubygem-sidekiq-cron
     SUBDIR += rubygem-sidekiq-cron0
     SUBDIR += rubygem-sidekiq-scheduler
