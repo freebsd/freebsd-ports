@@ -1,6 +1,6 @@
---- Makefile.orig	2015-02-20 03:44:33.000000000 +0900
-+++ Makefile	2015-03-12 23:44:40.000000000 +0900
-@@ -6,7 +6,7 @@
+--- Makefile.orig	2018-09-13 18:19:05 UTC
++++ Makefile
+@@ -6,7 +6,7 @@ dshell: rc initpy pydoc
  
  rc:
  	# Generating .dshellrc and dshell files 
@@ -9,7 +9,7 @@
  	chmod 755 $(PWD)/dshell
  	chmod 755 $(PWD)/dshell-decode
  	chmod 755 $(PWD)/bin/decode.py
-@@ -15,7 +15,7 @@
+@@ -15,7 +15,7 @@ rc:
  initpy:
  	find $(PWD)/decoders -type d -not -path \*.svn\* -print -exec touch {}/__init__.py \;
  
