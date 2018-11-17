@@ -1,0 +1,11 @@
+--- Opcodes/stk/CMakeLists.txt.orig	2018-11-17 19:16:54 UTC
++++ Opcodes/stk/CMakeLists.txt
+@@ -4,7 +4,7 @@ if(WIN32)
+     cmake_policy(SET CMP0060 NEW)
+ endif()
+ 
+-if(NOT STK_LOCAL)
++if(BUILD_STK_OPCODES AND NOT STK_LOCAL)
+     find_package(STK)
+ endif()
+ 
