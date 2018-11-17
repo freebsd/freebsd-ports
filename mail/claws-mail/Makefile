@@ -2,10 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	claws-mail
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	mail news ipv6
 
 COMMENT=	Lightweight and featureful GTK+ based e-mail and news client
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libetpan.so:mail/libetpan \
@@ -14,7 +17,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgnutls.so:security/gnutls \
 		libgcrypt.so:security/libgcrypt \
 		libexpat.so:textproc/expat2 \
-		libfontconfig.so:x11-fonts/fontconfig
+		libfontconfig.so:x11-fonts/fontconfig \
+		libnettle.so:security/nettle
 RUN_DEPENDS=	mime-support>0:misc/mime-support
 
 USES=		compiler:c++11-lang cpe desktop-file-utils gnome pathfix \
@@ -25,8 +29,8 @@ SHEBANG_FILES=	tools/*.pl tools/*.py tools/tb2claws-mail
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	COMPFACE DEBUG DOCS ENCHANT IPV6 JPILOT LDAP \
-		MANUAL NLS STARTUP THEMES
-OPTIONS_DEFAULT=COMPFACE ENCHANT MANUAL STARTUP THEMES
+		NLS STARTUP THEMES
+OPTIONS_DEFAULT=COMPFACE ENCHANT STARTUP THEMES
 OPTIONS_SUB=	yes
 
 COMPFACE_DESC=		X-Face support
@@ -48,11 +52,6 @@ JPILOT_RUN_DEPENDS=	jpilot:palm/jpilot
 
 LDAP_CONFIGURE_ENABLE=	ldap
 LDAP_USE=		openldap=yes
-
-MANUAL_DESC=		User manual (many dependencies, including texlive)
-MANUAL_CONFIGURE_ON=	--enable-manual --with-manualdir=${DOCSDIR}/manual
-MANUAL_CONFIGURE_OFF=	--disable-manual
-MANUAL_BUILD_DEPENDS=	docbook-utils>0:textproc/docbook-utils
 
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_USES=		gettext-tools
