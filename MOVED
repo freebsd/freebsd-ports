@@ -9562,7 +9562,6 @@ databases/cassandra2||2017-11-12|Has expired: Broken for more than 6 months
 graphics/geos35|graphics/geos|2017-11-12|Has expired: legacy version, no longer needed
 astro/gmapcatcher||2017-11-12|Has expired: Unfetchable for more than six months (google code has gone away)
 audio/smasher||2017-11-12|Has expired: Does not build with modern csound
-audio/csound|audio/csound6|2017-11-12|Has expired: Not supported upstream anymore, use csound6
 french/eficas||2017-11-14|Removed with Code_Aster 13.4.0, should be replaced by aster-study in cad/salome
 databases/grass6|databases/grass7|2017-11-18|Removed in favor of grass 7
 news/brag||2017-11-21|Has expired: Tcl/Tk 8.4 is no longer maintained, please use 8.5+
@@ -10621,9 +10620,9 @@ science/bft|science/code_saturne|2018-11-04|Code_Saturne merged bft, ecs, fvm, m
 science/ecs|science/code_saturne|2018-11-04|Code_Saturne merged bft, ecs, fvm, mei and ncs
 science/fvm|science/code_saturne|2018-11-04|Code_Saturne merged bft, ecs, fvm, mei and ncs
 science/mei|science/code_saturne|2018-11-04|Code_Saturne merged bft, ecs, fvm, mei and ncs
-x11-wm/cde|x11/cde|2018-11-03|Recategorise
+x11-wm/cde|x11/cde|2018-11-05|Recategorise
 misc/rumprun||2018-11-06|Has expired: "fails with current compilers"
-security/ossec-hids-client|security/ossec-hids-agent|2018-10-29|Agent is the name used in documentation
+security/ossec-hids-client|security/ossec-hids-agent|2018-11-09|Agent is the name used in documentation
 graphics/ImageMagick|graphics/ImageMagick6|2018-11-10|Port renamed
 graphics/ImageMagick-nox11|graphics/ImageMagick6-nox11|2018-11-10|Port renamed
 lang/gcc6-devel|lang/gcc6|2018-11-11|The GCC 6 branch has been closed, use the final release instead (or a later major version)
