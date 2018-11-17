@@ -2,15 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	csound
-PORTVERSION=	6.06
+PORTVERSION=	6.06.0
 PORTREVISION=	19
 CATEGORIES=	audio lang
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}6/${PORTNAME:S/c/C/}${PORTVERSION}
 PKGNAMESUFFIX=	6
-DISTNAME=	${PORTNAME:S/c/C/}${PORTVERSION}
 DIST_SUBDIR=	csound
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Sound synthesizer
 
 LICENSE=	LGPL21+
@@ -26,6 +24,7 @@ LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
 
 USES=		alias bison cmake:outsource,noninja eigen:3 localbase python:2.7
 # math/gmm++ requires c++11
+USE_GITHUB=	yes
 USE_CXXSTD=	c++11
 CMAKE_ARGS=	-DBUILD_CSOUNDVST:BOOL=OFF \
 		-DBUILD_JAVA_INTERFACE:BOOL=OFF \
