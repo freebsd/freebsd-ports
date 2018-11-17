@@ -23,9 +23,7 @@ GH_PROJECT=	MaxMind-DB-Reader-python
 
 USE_PYTHON=	autoplist distutils
 
-.include <bsd.port.pre.mk>
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/maxminddb/extension.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
