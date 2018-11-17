@@ -13,7 +13,7 @@ COMMENT=	Set of extensions for Caja
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgupnp-1.0.so:net/gupnp \
+LIB_DEPENDS=	libgupnp-1.2.so:net/gupnp \
 		libstartup-notification-1.so:x11/startup-notification \
 		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib
@@ -30,5 +30,8 @@ INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.mate.Caja.Sendto.gschema.xml \
 		org.mate.caja-open-terminal.gschema.xml
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|gupnp-1.0|gupnp-1.2|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
