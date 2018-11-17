@@ -60,5 +60,5 @@ share/gtk-doc/html/gupnp-av/up.png
 %%DATADIR%%/simpledc20021212.xsd
 %%DATADIR%%/upnp.xsd
 %%DATADIR%%/xml.xsd
-%%VALA%%share/vala/vapi/gupnp-av-1.0.deps
-%%VALA%%share/vala/vapi/gupnp-av-1.0.vapi
+%%VAPI%%share/vala/vapi/gupnp-av-1.0.deps
+%%VAPI%%share/vala/vapi/gupnp-av-1.0.vapi
