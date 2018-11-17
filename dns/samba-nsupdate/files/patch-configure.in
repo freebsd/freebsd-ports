@@ -1,21 +1,90 @@
---- configure.in.orig	2013-09-05 05:19:53.000000000 +0000
-+++ configure.in	2013-10-18 14:30:21.711727438 +0000
-@@ -1013,7 +1013,8 @@
- 		    "-lgssapi" \
- 		    "-lgssapi -lkrb5 -ldes -lcrypt -lasn1 -lroken -lcom_err" \
- 		    "-lgssapi -lkrb5 -lcrypto -lcrypt -lasn1 -lroken -lcom_err" \
+--- configure.in.orig	2018-09-06 04:15:26 UTC
++++ configure.in
+@@ -1126,7 +1126,7 @@ case "$use_gssapi" in
+ 	    saved_libs="$LIBS"
+ 	    LIBS=$gssapi_libs
+ 	    AC_MSG_CHECKING([krb5-config linking as $LIBS])
+-	    AC_TRY_LINK( , [gss_acquire_cred();krb5_init_context()],
++	    AC_TRY_LINK( , [gss_acquire_cred();krb5_init_context();gsskrb5_register_acceptor_identity("krb5");],
+ 		gssapi_linked=yes, gssapi_linked=no)
+ 	    case $gssapi_linked in
+ 		yes) AC_MSG_RESULT([krb5-config: linked]);;
+@@ -1255,27 +1255,9 @@ case "$use_gssapi" in
+ 		# problems start to show up.
+ 		saved_libs="$LIBS"
+ 		for TRY_LIBS in \
+-		    "-lgssapi_krb5" \
+-		    "-lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err" \
+-		    "-lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err -lresolv" \
+-		    "-lgssapi" \
+-		    "-lgssapi -lkrb5 -ldes -lcrypt -lasn1 -lroken -lcom_err" \
+-		    "-lgssapi -lkrb5 -lcrypt -lasn1 -lroken -lcom_err" \
+-		    "-lgssapi -lkrb5 -lgssapi_krb5 -lcrypt -lasn1 -lroken -lcom_err" \
+-		    "-lgssapi -lkrb5 -lhx509 -lcrypt -lasn1 -lroken -lcom_err" \
 -		    "-lgss -lkrb5"
-+		    "-lgss -lkrb5" \
-+		    "-lgssapi_krb5 -lgssapi -lheimntlm -lkrb5 -lhx509 -lcom_err -lcrypto -lasn1 -lroken -lcrypt"
++		    "$($KRB5CONFIG gssapi --libs)"; \
  		do
- 		    # Note that this does not include $saved_libs, because
- 		    # on FreeBSD machines this configure script has added
-@@ -1027,7 +1028,7 @@
- 			    LIBS="-L$use_gssapi/lib $TRY_LIBS"
- 		    fi
+-		    # Note that this does not include $saved_libs, because
+-		    # on FreeBSD machines this configure script has added
+-		    # -L/usr/local/lib to LIBS, which can make the
+-		    # -lgssapi_krb5 test succeed with shared libraries even
+-		    # when you are trying to build with KTH in /usr/lib.
+-		    if test "/usr" = "$use_gssapi"
+-		    then
+-			    LIBS="$TRY_LIBS $ISC_OPENSSL_LIBS"
+-		    else
+-			    LIBS="-L$use_gssapi/lib $TRY_LIBS $ISC_OPENSSL_LIBS"
+-		    fi
++		    LIBS="$TRY_LIBS"
  		    AC_MSG_CHECKING(linking as $TRY_LIBS)
--		    AC_TRY_LINK( , [gss_acquire_cred();krb5_init_context()],
-+		    AC_TRY_LINK( , [gss_acquire_cred();krb5_init_context();gsskrb5_register_acceptor_identity("krb5");],
- 				gssapi_linked=yes, gssapi_linked=no)
- 		    case $gssapi_linked in
- 		    yes) AC_MSG_RESULT(yes); break ;;
+ 		    AC_TRY_LINK([
+ #include <sys/types.h>
+@@ -1299,47 +1281,7 @@ gsskrb5_register_acceptor_identity(NULL)
+ 		no) AC_MSG_ERROR(could not determine proper GSSAPI linkage) ;;
+ 		esac
+ 
+-		#
+-		# XXXDCL Major kludge.  Tries to cope with KTH in /usr/lib
+-		# but MIT in /usr/local/lib and trying to build with KTH.
+-		# /usr/local/lib can end up earlier on the link lines.
+-		# Like most kludges, this one is not only inelegant it
+-		# is also likely to be the wrong thing to do at least as
+-		# many times as it is the right thing.  Something better
+-		# needs to be done.
+-		#
+-		if test "/usr" = "$use_gssapi" -a \
+-			-f /usr/local/lib/libkrb5.a; then
+-		    FIX_KTH_VS_MIT=yes
+-		fi
+-
+-		case "$FIX_KTH_VS_MIT" in
+-		yes)
+-		    case "$enable_static_linking" in
+-		    yes) gssapi_lib_suffix=".a"  ;;
+-		    *)   gssapi_lib_suffix=".so" ;;
+-		    esac
+-
+-		    for lib in $LIBS; do
+-			case $lib in
+-			-L*)
+-			    ;;
+-			-l*)
+-			    new_lib=`echo $lib |
+-				     sed -e s%^-l%$use_gssapi/lib/lib% \
+-					 -e s%$%$gssapi_lib_suffix%`
+-			    NEW_LIBS="$NEW_LIBS $new_lib"
+-			    ;;
+-			*)
+-			   AC_MSG_ERROR([KTH vs MIT Kerberos confusion!])
+-			    ;;
+-			esac
+-		    done
+-		    LIBS="$NEW_LIBS"
+-		    ;;
+-		esac
+-
+-		DST_GSSAPI_INC="-I$use_gssapi/include"
++		DST_GSSAPI_INC="$($KRB5CONFIG gssapi --cflags)"
+ 		DNS_GSSAPI_LIBS="$LIBS"
+ 
+ 		AC_MSG_RESULT(using GSSAPI from $use_gssapi/lib and $use_gssapi/include)
