@@ -3,6 +3,7 @@
 
 PORTNAME=	gupnp-dlna
 PORTVERSION=	0.10.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:lang/vala \
 		gupnp>=0.19.0:net/gupnp
-LIB_DEPENDS=	libgupnp-1.0.so:net/gupnp
+LIB_DEPENDS=	libgupnp-1.2.so:net/gupnp
 RUN_DEPENDS=	gupnp>=0.19.0:net/gupnp
 
 CONFIGURE_ARGS=	--enable-introspection \
