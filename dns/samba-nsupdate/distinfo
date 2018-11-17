@@ -1,2 +1,3 @@
-SHA256 (bind-9.8.6.tar.gz) = 01cc3a0105b47833b99e61b69acd824be4eeefd6557fffa26eced8e03f1249cd
-SIZE (bind-9.8.6.tar.gz) = 7275769
+TIMESTAMP = 1542404362
+SHA256 (bind-9.13.3.tar.gz) = 76674cf2a3e61766aed5c7fd1ee6ed3da133a9e331b35b24f40efdf1bbac5b44
+SIZE (bind-9.13.3.tar.gz) = 7805551

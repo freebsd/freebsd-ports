@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		nsupdate
-PORTVERSION=		9.8.6
-PORTREVISION=		2
+PORTVERSION=		9.13.3
 CATEGORIES=		dns net ipv6
 MASTER_SITES=		ISC/bind9/${ISCVERSION}
 PKGNAMEPREFIX=		samba-
@@ -11,75 +10,90 @@ DISTNAME=		bind-${ISCVERSION}
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		nsupdate utility with GSS-TSIG support
 
-LICENSE=		ISCL
+LICENSE=		MPL20
+LICENSE_FILE=		${WRKSRC}/COPYRIGHT
 
+USES=			compiler:c11 cpe libedit autoreconf libtool pkgconfig ssl
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=		9.8.6
+ISCVERSION=		9.13.3
 
-MAKE_JOBS_UNSAFE=	yes
+CPE_VENDOR=		isc
+CPE_VERSION=		${ISCVERSION:C/-.*//}
+.if ${ISCVERSION:M*-*}
+CPE_UPDATE=		${ISCVERSION:C/.*-//:tl}
+.endif
 
-USES=			autoreconf libtool ssl
 GNU_CONFIGURE=		yes
 
 CONFIGURE_ARGS+=	\
 			--prefix=${PREFIX} \
-			--sysconfdir="/etc/namedb" \
+			--sysconfdir="${PREFIX}/etc/namedb" \
 			--localstatedir=/var \
 			--enable-largefile \
 			--enable-threads \
 			--disable-linux-caps \
 			--disable-symtable \
+			--with-dlopen=yes \
+			--with-readline="-L${LOCALBASE}/lib -ledit" \
+			--with-openssl=${OPENSSLBASE} \
 			--disable-shared \
 			--without-libxml2 \
 			--without-iconv \
-			--without-idn \
-			--with-randomdev=/dev/random
+			--without-idn
 
-OPTIONS_DEFINE=	IPV6
+CONFIGURE_ENV+=		STD_CDEFINES="-DDIG_SIGCHASE=1" ACLOCAL_AMFLAGS="-I m4"
 
-SIGCHASE_CONFIGURE_ARGS+=	STD_CDEFINES="-DDIG_SIGCHASE=1"
-IPV6_CONFIGURE_ON=	--enable-ipv6
+MAKE_JOBS_UNSAFE=	yes
+
+OPTIONS_DEFAULT=	GSSAPI_BASE
+
+OPTIONS_DEFINE=		IPV6
+OPTIONS_SINGLE=		GSSAPI
+OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
+
+OPTIONS_SUB=		yes
+
+GSSAPI_BASE_DESC=	Using Heimdal in base
+GSSAPI_HEIMDAL_DESC=	Using security/heimdal
+GSSAPI_MIT_DESC=	Using security/krb5
+
+GSSAPI_BASE_CONFIGURE_ON=\
+			--with-gssapi=${GSSAPIBASEDIR} KRB5CONFIG="${KRB5CONFIG}"
+GSSAPI_BASE_USES=	gssapi
+
+GSSAPI_HEIMDAL_CONFIGURE_ON=\
+			--with-gssapi=${GSSAPIBASEDIR} KRB5CONFIG="${KRB5CONFIG}"
+GSSAPI_HEIMDAL_USES=	gssapi:heimdal
+
+GSSAPI_MIT_CONFIGURE_ON=\
+			--with-gssapi=${GSSAPIBASEDIR} KRB5CONFIG="${KRB5CONFIG}"
+GSSAPI_MIT_USES=	gssapi:mit
+
+IPV6_CONFIGURE_ENABLE=	ipv6
 
 PLIST_FILES=		bin/${PKGBASE} \
 			man/man1/${PKGBASE}.1.gz
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == "amd64")
-ARCH=		x86_64
-.endif
-
-# Enable OpenSSL API
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
-# Try to find appropriate GSSAPI libs
-.if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.so)
-CONFIGURE_ARGS+=	--with-gssapi="${KRB5_HOME}"
-.elif defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.so)
-CONFIGURE_ARGS+=	--with-gssapi="${HEIMDAL_HOME}"
-.elif exists(/usr/lib/libkrb5.so) && exists(/usr/bin/krb5-config)
-CONFIGURE_ARGS+=	--with-gssapi="/usr"
-.else
-LIB_DEPENDS+=		libkrb5.so:security/heimdal
-CONFIGURE_ARGS+=	--with-gssapi="${LOCALBASE}"
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|^SUBDIRS.*|SUBDIRS = lib bin|' \
-		-e 's|isc-config.sh installdirs|installdirs|' \
-		-e 's|.*INSTALL.*isc-config.*||' \
-		-e 's|.*INSTALL.*bind.keys.*||' \
-	${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} \
-		-e 's|^SUBDIRS.*|SUBDIRS = ${PORTNAME}|' \
-		-e 's|^.*check confgen ||' \
-	${WRKSRC}/bin/Makefile.in
-	@${REINPLACE_CMD} \
-		-e 's|${PORTNAME}|${PKGBASE}|g' \
-	${WRKSRC}/bin/nsupdate/${PORTNAME}.1
+		@${REINPLACE_CMD} \
+			-e 's|^SUBDIRS.*|SUBDIRS = lib bin|' \
+			-e 's|isc-config.sh installdirs|installdirs|' \
+			-e 's|.*INSTALL.*isc-config.*||' \
+			-e 's|.*INSTALL.*bind.keys.*||' \
+		${PATCH_WRKSRC}/Makefile.in
+		@${REINPLACE_CMD} \
+			-e 's|^SUBDIRS.*|SUBDIRS = ${PORTNAME} \\|' \
+			-e 's|^.*check confgen ||' \
+			-e '/tests$$/d' \
+		${PATCH_WRKSRC}/bin/Makefile.in
+		@${REINPLACE_CMD} \
+			-e 's|${PORTNAME}|${PKGBASE}|g' \
+		${PATCH_WRKSRC}/bin/nsupdate/${PORTNAME}.1
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/bin/nsupdate/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1/${PKGBASE}.1
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/nsupdate/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PKGBASE}
+		${INSTALL_MAN} ${INSTALL_WRKSRC}/bin/nsupdate/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1/${PKGBASE}.1
+		${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bin/nsupdate/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PKGBASE}
 
 .include <bsd.port.post.mk>
