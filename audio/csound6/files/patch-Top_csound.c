@@ -1,21 +1,31 @@
---- Top/csound.c.orig	2015-09-29 11:13:27 UTC
+--- Top/csound.c.orig	2018-11-07 14:05:23 UTC
 +++ Top/csound.c
-@@ -60,10 +60,13 @@
- #include "cs_par_dispatch.h"
- #include "csound_orc_semantics.h"
+@@ -60,10 +60,14 @@
+ //#include "cs_par_dispatch.h"
+ #include "find_opcode.h"
  
--#if defined(linux) || defined(__HAIKU__) || defined(__EMSCRIPTEN__)
-+#if defined(linux) || defined(__HAIKU__) || defined(__FreeBSD__) || defined(__EMSCRIPTEN__)
+-#if defined(linux)||defined(__HAIKU__)|| defined(__EMSCRIPTEN__)||defined(__CYGWIN__)
++#if defined(linux) || defined(__FreeBSD__) || defined(__HAIKU__)|| defined(__EMSCRIPTEN__)||defined(__CYGWIN__)
  #define PTHREAD_SPINLOCK_INITIALIZER 0
  #endif
  
 +#if defined(__FreeBSD__)
 +#include <sys/sysctl.h>
 +#endif
- #if defined(USE_OPENMP)
- #include <omp.h>
- #endif /* USE_OPENMP */
-@@ -3510,7 +3513,7 @@ void csoundNotifyFileOpened(CSOUND* csou
++
+ #include "csound_standard_types.h"
+ 
+ #include "csdebug.h"
+@@ -405,7 +409,7 @@ static const CSOUND cenviron_ = {
+     rewriteheader,
+     csoundLoadSoundFile,
+     fdrecord,
+-    fdclose,
++    fd__close,
+     csoundCreateFileHandle,
+     csoundGetFileName,
+     csoundFileClose,
+@@ -3755,7 +3759,7 @@ void csoundNotifyFileOpened(CSOUND* csou
  /* ------------------------------------ */
  
  #if defined(HAVE_RDTSC)
@@ -24,7 +34,7 @@
  #undef HAVE_RDTSC
  #endif
  #endif
-@@ -3523,6 +3526,13 @@ static double timeResolutionSeconds = -1
+@@ -3768,6 +3772,13 @@ static double timeResolutionSeconds = -1
  static int getTimeResolution(void)
  {
  #if defined(HAVE_RDTSC)
@@ -38,7 +48,7 @@
      FILE    *f;
      char    buf[256];
  
-@@ -3558,9 +3568,14 @@ static int getTimeResolution(void)
+@@ -3803,9 +3814,14 @@ static int getTimeResolution(void)
        }
      }
      fclose(f);
