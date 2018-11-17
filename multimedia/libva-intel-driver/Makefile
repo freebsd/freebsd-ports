@@ -31,7 +31,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Driver for hardware present only on intel i386 and amd64 CPUs
 
 OPTIONS_DEFINE=	HYBRID
-OPTIONS_DEFAULT=HYBRID
+#OPTIONS_DEFAULT=HYBRID
 
 HYBRID_DESC=	Hybrid codec support (e.g., VP9 decoding on Skylake)
 HYBRID_RUN_DEPENDS=	${LOCALBASE}/lib/dri/hybrid_drv_video.so:multimedia/libva-intel-hybrid-driver
