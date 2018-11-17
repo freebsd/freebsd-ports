@@ -1,6 +1,6 @@
---- libgupnp/gupnp-control-point.c.orig	2015-03-30 17:49:16 UTC
+--- libgupnp/gupnp-control-point.c.orig	2018-11-12 22:04:49 UTC
 +++ libgupnp/gupnp-control-point.c
-@@ -692,7 +692,7 @@ parse_usn (const char *usn,
+@@ -795,7 +795,7 @@ parse_usn (const char *usn,
          /* Count elements */
          count = g_strv_length (bits);
  
