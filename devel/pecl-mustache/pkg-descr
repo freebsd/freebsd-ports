@@ -1,0 +1,4 @@
+Mustache is a framework-agnostic way to render logic-free views. php-mustache is
+a C++ implementation of Mustache as a PHP extension.
+
+WWW: https://github.com/jbboehr/php-mustache
