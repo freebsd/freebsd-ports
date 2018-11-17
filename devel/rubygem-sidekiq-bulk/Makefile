@@ -4,7 +4,6 @@ PORTNAME=	sidekiq-bulk
 PORTVERSION=	0.1.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
-PKGNAMESUFFIX=	-rails5
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Augment Sidekiq job classes with a push_bulk method
