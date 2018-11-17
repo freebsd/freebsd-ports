@@ -1,7 +1,7 @@
 - Assume NEON is enabled on aarch64
 - Implement NEON runtime detection on FreeBSD
 
---- aom_ports/arm_cpudetect.c.orig	2018-06-25 14:54:59 UTC
+--- aom_ports/arm_cpudetect.c.orig	2018-11-16 20:24:20 UTC
 +++ aom_ports/arm_cpudetect.c
 @@ -38,7 +38,7 @@ static int arm_cpu_env_mask(void) {
    return env && *env ? (int)strtol(env, NULL, 0) : ~0;
@@ -10,9 +10,9 @@
 -#if !CONFIG_RUNTIME_CPU_DETECT
 +#if !CONFIG_RUNTIME_CPU_DETECT || defined(__ARM_NEON)
  
- int arm_cpu_caps(void) {
+ int aom_arm_cpu_caps(void) {
    /* This function should actually be a no-op. There is no way to adjust any of
-@@ -143,7 +143,61 @@ int arm_cpu_caps(void) {
+@@ -143,7 +143,61 @@ int aom_arm_cpu_caps(void) {
    }
    return flags & mask;
  }
@@ -57,7 +57,7 @@
 +#define HWCAP_NEON (1 << 12)
 +#endif
 +
-+int arm_cpu_caps(void) {
++int aom_arm_cpu_caps(void) {
 +  int flags;
 +  int mask;
 +  unsigned long hwcaps;
