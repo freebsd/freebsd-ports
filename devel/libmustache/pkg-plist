@@ -1,0 +1,15 @@
+bin/mustachec
+cmake/mustache-%%CMAKE_BUILD_TYPE%%.cmake
+cmake/mustache.cmake
+include/mustache/data.hpp
+include/mustache/exception.hpp
+include/mustache/lambda.hpp
+include/mustache/mustache.hpp
+include/mustache/mustache_config.h
+include/mustache/node.hpp
+include/mustache/renderer.hpp
+include/mustache/stack.hpp
+include/mustache/tokenizer.hpp
+include/mustache/utils.hpp
+lib/libmustache.so
+lib/libmustache_static.a
