@@ -11,6 +11,10 @@ COMMENT=	GUPnP wrapper extension
 
 LICENSE=	PHP301
 
+BROKEN=		does not build with latest gssdp and gupnp
+DEPRECATED=	does not build with latest gssdp and gupnp
+EXPIRATION_DATE=2018-11-30
+
 LIB_DEPENDS=	libgupnp-1.0.so:net/gupnp
 
 IGNORE_WITH_PHP=70 71 72 73
