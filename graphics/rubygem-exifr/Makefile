@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	exifr
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -11,9 +11,10 @@ COMMENT=	Pure-ruby EXIF reader
 
 LICENSE=	MIT
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/exifr
 
