@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kafo_parsers
-PORTVERSION=	0.1.6
+PORTVERSION=	1.0.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -13,8 +13,9 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	rubygem-json>=0:devel/rubygem-json
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
