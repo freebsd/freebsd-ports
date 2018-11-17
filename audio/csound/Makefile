@@ -4,8 +4,6 @@
 PORTNAME=	csound
 DISTVERSION=	6.12.2
 CATEGORIES=	audio lang
-PKGNAMESUFFIX=	6
-DIST_SUBDIR=	csound
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Sound synthesizer
@@ -20,22 +18,19 @@ LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile
 
 USES=		alias bison cmake:outsource compiler:c++11-lib eigen:3 localbase ncurses python:2.7
-# math/gmm++ requires c++11
 USE_GITHUB=	yes
+USE_LDCONFIG=	yes
+
 CMAKE_ARGS=	-DBUILD_CSOUNDVST:BOOL=OFF \
 		-DBUILD_PD_CLASS:BOOL=OFF \
 		-DPYTHON_MODULE_INSTALL_DIR:PATH="${PYTHONPREFIX_SITELIBDIR}" \
 		-DOPSYS:STRING="${OPSYS}"
 CMAKE_OFF=	USE_ALSA BUILD_JAVA_INTERFACE BUILD_TESTS
-USE_LDCONFIG=	yes
 SSP_UNSAFE=	yes
 BINARY_ALIAS=	swig=swig3.0
 LDFLAGS+=	-lexecinfo
 
 SUB_FILES=	pkg-message
-
-CONFLICTS=		csound-5.*
-CONFLICTS_INSTALL=	outguess-*
 
 OPTIONS_DEFINE=		CURL FLTK HDF5 NLS OPENMP PORTAUDIO PULSEAUDIO
 OPTIONS_GROUP=		PLUGINS
