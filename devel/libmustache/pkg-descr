@@ -1,0 +1,4 @@
+Mustache is a framework-agnostic way to render logic-free views. libmustache is
+a C++ implementation of Mustache.
+
+WWW: https://github.com/jbboehr/libmustache

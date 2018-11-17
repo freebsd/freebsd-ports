@@ -1513,6 +1513,7 @@
     SUBDIR += libmsocket
     SUBDIR += libmtdev
     SUBDIR += libmtrie
+    SUBDIR += libmustache
     SUBDIR += libnaji
     SUBDIR += libnfc
     SUBDIR += libnotify
