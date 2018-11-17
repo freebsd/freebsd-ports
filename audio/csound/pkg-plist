@@ -85,6 +85,7 @@ lib/csound/plugins64-6.0/libipmidi.so
 %%JACK%%lib/csound/plugins64-6.0/libjackTransport.so
 %%JACK%%lib/csound/plugins64-6.0/libjacko.so
 %%HDF5%%lib/csound/plugins64-6.0/libhdf5ops.so
+%%LINALG%%lib/csound/plugins64-6.0/liblinear_algebra.so
 lib/csound/plugins64-6.0/libliveconv.so
 lib/csound/plugins64-6.0/libmixer.so
 %%OSC%%lib/csound/plugins64-6.0/libosc.so
