@@ -10631,3 +10631,4 @@ mail/py-email-reply-parser|mail/py-email_reply_parser|2018-11-15|Rename to match
 net-mgmt/vidalia||2018-11-16|Has expired: outdated and unmaintained
 german/selfhtml||2018-11-16|Has expired: Project migrated to a Wiki
 sysutils/fastest_cvsup||2018-11-16|Has expired: Obsolete, FreeBSD and OpenBSD switched from cvsup to svn and cvsync, NetBSD only have 2 servers left
+devel/rubygem-sidekiq-bulk-rails5|devel/rubygem-sidekiq-bulk|2018-11-17|Remove -rails5 suffix
