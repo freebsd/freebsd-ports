@@ -14,6 +14,7 @@ COMMENT=	ANother Tool for Language Recognition
 LICENSE=	BSD3CLAUSE
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
 INSTALL_JAR=	${DISTFILES}
