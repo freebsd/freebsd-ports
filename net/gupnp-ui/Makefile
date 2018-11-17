@@ -14,17 +14,19 @@ LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gupnp>=0.3:net/gupnp
-LIB_DEPENDS=	libgupnp-1.0.so:net/gupnp \
+LIB_DEPENDS=	libgupnp-1.2.so:net/gupnp \
 		libsoup-2.4.so:devel/libsoup
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+USES=		gnome libtool pathfix pkgconfig python
+USE_GNOME=	gtk20
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
-USES=		gnome libtool pathfix pkgconfig python
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s|tests||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|gupnp-1.0|gupnp-1.2|' ${WRKSRC}/configure ${WRKSRC}/gupnp-ui-1.0.pc.in
 
 .include <bsd.port.mk>
