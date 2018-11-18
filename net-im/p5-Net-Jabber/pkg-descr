@@ -8,7 +8,7 @@ allowing a Jabber client to talk with an AOL user, or an IRC chat room,
 or any number of other programs.
 
 For more information about the Jabber project visit
-WWW: http://www.jabber.org/
+WWW: https://www.jabber.org/
 
 Net::Jabber is a collection of Perl modules that provide a Perl Developer
 access to the Jabber protocol.  Using OOP modules we provide a clean
