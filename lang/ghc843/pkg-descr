@@ -1,0 +1,20 @@
+The Glasgow Haskell Compiler is a state-of-the-art, open source, compiler and
+interactive environment for the functional language Haskell.  Highlights:
+
+ * Supports the entire Haskell 2010 language plus a wide variety of
+   extensions.
+ * Has particularly good support for concurrency and parallelism, including
+   support for Software Transactional Memory (STM).
+ * Generates fast code, particularly for concurrent programs.
+ * Works on several platforms including FreeBSD, Windows, Mac, Linux, most
+   varieties of Unix, and several different processor architectures.
+ * Has extensive optimisation capabilities, including inter-module optimisation.
+ * Compiles Haskell code either directly to native code or using LLVM as a
+   back-end.  It can also generate C code as an intermediate target for porting
+   to new platforms.  The interactive environment compiles Haskell to bytecode,
+   and supports execution of mixed bytecode/compiled programs.
+ * Profiling is supported, both by time/allocation and various kinds of heap
+   profiling.
+ * Comes with several libraries, and thousands more are available on Hackage.
+
+WWW: http://www.haskell.org/ghc/
