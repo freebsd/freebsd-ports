@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml
 
+BROKEN=		fails to build
+
 USES=		cmake:outsource compiler:c++11-lib pkgconfig localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	pjasicek
