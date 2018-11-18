@@ -4,6 +4,7 @@
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
 PORTREVISION=	1
+PKGNAMESUFFIX=	843
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/arrowd/:boot \
