@@ -89,15 +89,15 @@
       SCM sstr, start, args;
  {
 --- bytenumb.c	2013-03-24 19:37:38.000000000 -0400
-+++ bytenumb.c	2015-01-23 18:55:19.000000000 -0500
++++ bytenumb.c	2018-11-18 13:34:10.773431000 -0500
 @@ -27,5 +27,5 @@
  #include "scm.h"
  
 -int get_bytes_length(obj)
-+static int get_bytes_length(obj)
++static ssize_t get_bytes_length(obj)
       SCM obj;
  {
-@@ -47,8 +47,8 @@
+@@ -47,10 +47,10 @@
  }
  
 -static char s_wrong_length[] = "wrong length";
@@ -107,12 +107,16 @@
 -char * get_bytes(obj, minlen, s_name)
 +static void * get_bytes(obj, minlen, s_name)
       SCM obj;
-      int minlen;
+-     int minlen;
++     ssize_t minlen;
+      const char *s_name;
+ {
 @@ -60,13 +60,15 @@
  	 obj, ARG1, s_name);
    {
+-    int byvlen = get_bytes_length(obj);
 +#ifndef RECKLESS
-     int byvlen = get_bytes_length(obj);
++    ssize_t byvlen = get_bytes_length(obj);
 +#endif
      ASRTER((minlen < 0) ? byvlen >= -minlen : byvlen == minlen,
  	   MAKINUM(byvlen), s_wrong_length, s_name);
@@ -127,10 +131,12 @@
 +static SCM scm_bytes_to_integer(sbyts, sn)
       SCM sbyts;
       SCM sn;
-@@ -76,5 +78,5 @@
+@@ -75,6 +77,6 @@
+   if (!(n)) return INUM0;
    {
-     int cnt = abs(n);
+-    int cnt = abs(n);
 -    char *byts = get_bytes(sbyts, -cnt, s_bytes_to_integer);
++    ssize_t cnt = labs(n);
 +    const unsigned char *byts = get_bytes(sbyts, -cnt, s_bytes_to_integer);
      int iu = 0, id = cnt - sizeof(BIGDIG);
      sizet ndigs = (cnt + sizeof(BIGDIG) - 1) / sizeof(BIGDIG);
@@ -321,7 +327,7 @@
  long stack_size P((STACKITEM *start));
  CONTINUATION *make_root_continuation P((STACKITEM *stack_base));
 --- crs.c	2009-10-21 15:41:30.000000000 -0400
-+++ crs.c	2015-01-23 18:55:19.000000000 -0500
++++ crs.c	2018-11-18 13:50:12.053849000 -0500
 @@ -43,5 +43,5 @@
  #define WIN(obj) ((WINDOW*)CDR(obj))
  #define WINP(obj) (tc16_window==TYP16(obj))
@@ -343,7 +349,13 @@
 +     const char *str; WINDOW *win;
  {
    sizet i = 0, prod = siz*num;
-@@ -74,5 +74,5 @@
+@@ -70,9 +70,9 @@
+   bwaddstr,
+   bwwrite,
+-  wrefresh,
+-  wgetch,
++  (int (*)(FILE *))wrefresh,
++  (int (*)(FILE *))wgetch,
    freewindow};
  
 -SCM mkwindow(win)
@@ -533,6 +545,12 @@
 +static SCM lclearok(w, b) SCM w, b;
  {
    if (BOOL_T==w) return ERR==clearok(curscr, BOOL_F != b)?BOOL_F:BOOL_T;
+@@ -388,4 +389,4 @@
+   make_subr(s_box, tc7_subr_3, lbox);
+   add_feature("curses");
+-  add_final(lendwin);
++  add_final((void (*)(void))lendwin);
+ }
 --- debug.c	2008-01-30 22:31:48.000000000 -0500
 +++ debug.c	2015-01-23 18:55:19.000000000 -0500
 @@ -291,5 +291,8 @@
@@ -1030,7 +1048,7 @@
 +static SCM l_dyn_call(symb, shl)
  	SCM symb, shl;
  {
-@@ -419,6 +419,6 @@
+@@ -419,10 +419,10 @@
    return BOOL_T;
  }
 -static char s_main_call[] = "dyn:main-call";
@@ -1039,6 +1057,18 @@
 +static SCM l_dyn_main_call(symb, shl, args)
  	SCM symb, shl, args;
  {
+   int i;
+-  int (*func)P((int argc, const char **argv)) = 0;
++  int (*func)P((int argc, char **argv)) = 0;
+   char **argv;
+ /*  SCM oloadpath = *loc_loadpath; */
+@@ -445,5 +445,5 @@
+   ALLOW_INTS;
+ /*  *loc_loadpath = linkpath; */
+-  i = (*func) ((int)ilength(args), (const char**)argv);
++  i = (*func) ((int)ilength(args), argv);
+ /*  *loc_loadpath = oloadpath; */
+   DEFER_INTS;
 @@ -453,6 +453,6 @@
  }
  
@@ -4524,7 +4554,7 @@
    return (int)INUM(retval);
  }
 --- script.c	2008-01-30 22:32:55.000000000 -0500
-+++ script.c	2015-01-23 18:55:19.000000000 -0500
++++ script.c	2018-11-18
 @@ -54,10 +54,10 @@
      {
        long len = strlen(str1);
@@ -4554,13 +4584,18 @@
 +  char *path = NULL;
  
  #ifdef _WIN32
-@@ -189,5 +189,5 @@
+@@ -189,9 +189,9 @@
      if (!strcmp(sepptr, "exe") || !strcmp(sepptr, "bin") ||
  	!strcmp(sepptr, "EXE") || !strcmp(sepptr, "BIN")) {
 -      char *peer;
 +      const char *peer;
  
        /* Look for initname in peer directory "lib". */
+       if (path) {
+-	strncpy(sepptr, "lib", 3);
++	strcpy(sepptr, "lib");
+ 	path = scm_sep_init_try(path, sep, initname);
+ 	if (path) return path;
 @@ -279,10 +279,10 @@
  }
  
