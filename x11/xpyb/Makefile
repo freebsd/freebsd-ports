@@ -12,6 +12,8 @@ MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Python bindings to access X Window System protocol via libxcb
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-12-19
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/xcb-proto.pc:x11/xcb-proto \
 		xcb-proto>=1.7.1:x11/xcb-proto
