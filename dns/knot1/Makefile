@@ -3,7 +3,7 @@
 
 PORTNAME=	knot
 PORTVERSION=	1.6.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		http://dns-lab.com/downloads/knot-dns/
@@ -13,6 +13,9 @@ MAINTAINER=	freebsd@dns.company
 COMMENT=	High performance authoritative-only DNS server
 
 LICENSE=	GPLv3
+
+DEPRECATED=	EOL upstream; successor dns/knot2 is in place
+EXPIRATION_DATE=	2018-12-15
 
 BUILD_DEPENDS=	flex>=2.5.35_1:textproc/flex
 LIB_DEPENDS=	liburcu.so:sysutils/liburcu
