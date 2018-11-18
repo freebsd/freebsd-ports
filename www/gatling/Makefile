@@ -13,11 +13,10 @@ LICENSE=	GPLv2
 
 BROKEN_mips=		fails to compile: dirfd.c: error: expected ';', ',' or ')' before 'key'
 BROKEN_mips64=		fails to compile: dirfd.c: error: expected ';', ',' or ')' before 'key'
-BROKEN_powerpc64=	fails to compile: dirfd.c: error: expected ';', ',' or ')' before 'key'
 
 BUILD_DEPENDS=	libowfat>=0.31:devel/libowfat
 
-USES=		gmake ssl tar:xz
+USES=		compiler:c++11-lang gmake ssl tar:xz
 USE_RC_SUBR=	gatling
 
 CFLAGS+=	-I${LOCALBASE}/include/libowfat -I${OPENSSLINC} -I${LOCALBASE}/include
