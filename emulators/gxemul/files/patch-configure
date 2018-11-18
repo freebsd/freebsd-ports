@@ -1,0 +1,38 @@
+--- configure.orig	2018-09-06 07:41:13 UTC
++++ configure
+@@ -360,10 +360,10 @@ if [ z$NOX11 = z ]; then
+ 
+ 	XOK=0
+ 
+-	XINCLUDE=-I/usr/X11R6/include
++	XINCLUDE=-I${LOCALBASE}/include
+ 	$CXX $CXXFLAGS _test_x11.cc -c -o _test_x11.o $XINCLUDE 2> /dev/null
+ 
+-	XLIB="-L/usr/X11R6/lib -lX11"
++	XLIB="-L${LOCALBASE}/lib -lX11"
+ 	$CXX $CXXFLAGS _test_x11.o -o _test_x11 $XLIB 2> /dev/null
+ 
+ 	if [ -x _test_x11 ]; then
+@@ -578,22 +578,6 @@ else
+ 	fi
+ fi
+ rm -f _testprog _testprog.error _testprog.stdout
+-
+-
+-#  -O optimization for non-debug builds. Try -O and -O3.
+-if [ ! z"$DEBUG" = zYES ]; then
+-	$CXX $CXXFLAGS -O _testprog.cc -o _testprog 2> /dev/null
+-	if [ -x _testprog ]; then
+-		rm -f _testprog
+-		$CXX $CXXFLAGS -O3 _testprog.cc -o _testprog 2> /dev/null
+-		if [ -x _testprog ]; then
+-			CXXFLAGS="-O3 $CXXFLAGS"
+-		else
+-			CXXFLAGS="-O $CXXFLAGS"
+-		fi
+-	fi
+-fi
+-rm -f _testprog
+ 
+ 
+ #  -fpeephole
