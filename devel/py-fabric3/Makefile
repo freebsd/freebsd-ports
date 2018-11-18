@@ -14,6 +14,8 @@ COMMENT=	Python tool for remote execution and deployment
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		unfetchable
+
 USES=		python
 USE_PYTHON=	autoplist distutils flavors
 
