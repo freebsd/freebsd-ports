@@ -4771,6 +4771,7 @@
     SUBDIR += py-msgpack
     SUBDIR += py-multi_key_dict
     SUBDIR += py-multipledispatch
+    SUBDIR += py-multiprocess
     SUBDIR += py-munch
     SUBDIR += py-mwlib
     SUBDIR += py-mwlib.ext
