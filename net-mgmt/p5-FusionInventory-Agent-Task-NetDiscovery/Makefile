@@ -15,6 +15,9 @@ COMMENT=	Network discovery support for FusionInventory Agent
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	No longer needed
+EXPIRATION_DATE=2018-11-19
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-FusionInventory-Agent>=2.2.0:net-mgmt/p5-FusionInventory-Agent \
 		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
