@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Perl-Tidy
-PORTVERSION=	20180220
+PORTVERSION=	20181118
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,8 +12,9 @@ COMMENT=	Indents and reformats Perl scripts to make them easier to read
 
 LICENSE=	GPLv2
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
