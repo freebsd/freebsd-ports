@@ -3,33 +3,34 @@
 
 PORTNAME=	mussh
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Tool for easily running the same commands on multiple hosts
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	bash:shells/bash
 
+USES=		shebangfix tar:tgz
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		shebangfix tar:tgz
 SHEBANG_FILES=	${WRKSRC}/${PORTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes
 
 PORTDOCS=	BUGS CHANGES EXAMPLES README
-PLIST_FILES=	bin/mussh
+PLIST_FILES=	bin/mussh man/man1/mussh.1.gz
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,seq 1 ,jot 1 ,g" \
-		${WRKSRC}/${PORTNAME}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
