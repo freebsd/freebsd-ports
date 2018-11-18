@@ -2,6 +2,7 @@
 
 PORTNAME=	docbook-xsl
 PORTVERSION=	1.79.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/docbook/${PORTNAME}/${PORTVERSION}:src \
@@ -17,6 +18,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
 RUN_DEPENDS=	docbook>=0:textproc/docbook \
 		xmlcatmgr:textproc/xmlcatmgr
+
+EXTRA_PATCHES=	${PATCHDIR}/docbook-style-xsl-non-recursive-string-subst.patch:-p2
 
 USES=		tar:bzip2
 
