@@ -1,0 +1,1238 @@
+https://github.com/sfackler/rust-openssl/commit/276577553501
+
+--- Cargo.lock.orig	2017-10-24 13:37:25 UTC
++++ Cargo.lock
+@@ -1,24 +1,3 @@
+-[root]
+-name = "flowgger"
+-version = "0.2.6"
+-dependencies = [
+- "capnp 0.8.11 (registry+https://github.com/rust-lang/crates.io-index)",
+- "capnpc 0.8.7 (registry+https://github.com/rust-lang/crates.io-index)",
+- "chrono 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
+- "clap 2.26.2 (registry+https://github.com/rust-lang/crates.io-index)",
+- "clippy 0.0.164 (git+https://github.com/Manishearth/rust-clippy)",
+- "coio 0.2.0 (git+https://github.com/zonyitoo/coio-rs)",
+- "flate2 0.2.20 (registry+https://github.com/rust-lang/crates.io-index)",
+- "kafka 0.6.2 (git+https://github.com/spicavigo/kafka-rust)",
+- "log 0.3.8 (registry+https://github.com/rust-lang/crates.io-index)",
+- "openssl 0.9.19 (registry+https://github.com/rust-lang/crates.io-index)",
+- "rand 0.3.16 (registry+https://github.com/rust-lang/crates.io-index)",
+- "redis 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
+- "serde 0.8.23 (registry+https://github.com/rust-lang/crates.io-index)",
+- "serde_json 0.8.6 (registry+https://github.com/rust-lang/crates.io-index)",
+- "toml 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
+-]
+-
+ [[package]]
+ name = "ansi_term"
+ version = "0.9.0"
+@@ -270,16 +249,45 @@ dependencies = [
+ ]
+ 
+ [[package]]
++name = "flowgger"
++version = "0.2.6"
++dependencies = [
++ "capnp 0.8.11 (registry+https://github.com/rust-lang/crates.io-index)",
++ "capnpc 0.8.7 (registry+https://github.com/rust-lang/crates.io-index)",
++ "chrono 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "clap 2.26.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "clippy 0.0.164 (git+https://github.com/Manishearth/rust-clippy)",
++ "coio 0.2.0 (git+https://github.com/zonyitoo/coio-rs)",
++ "flate2 0.2.20 (registry+https://github.com/rust-lang/crates.io-index)",
++ "kafka 0.6.2 (git+https://github.com/spicavigo/kafka-rust)",
++ "log 0.3.8 (registry+https://github.com/rust-lang/crates.io-index)",
++ "openssl 0.9.24 (registry+https://github.com/rust-lang/crates.io-index)",
++ "rand 0.3.16 (registry+https://github.com/rust-lang/crates.io-index)",
++ "redis 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
++ "serde 0.8.23 (registry+https://github.com/rust-lang/crates.io-index)",
++ "serde_json 0.8.6 (registry+https://github.com/rust-lang/crates.io-index)",
++ "toml 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
++]
++
++[[package]]
+ name = "fnv"
+ version = "1.0.5"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+ 
+ [[package]]
+ name = "foreign-types"
+-version = "0.2.0"
++version = "0.3.2"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
++dependencies = [
++ "foreign-types-shared 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
++]
+ 
+ [[package]]
++name = "foreign-types-shared"
++version = "0.1.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
+ name = "gcc"
+ version = "0.3.54"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -337,7 +345,7 @@ dependencies = [
+  "flate2 0.2.20 (registry+https://github.com/rust-lang/crates.io-index)",
+  "fnv 1.0.5 (registry+https://github.com/rust-lang/crates.io-index)",
+  "log 0.3.8 (registry+https://github.com/rust-lang/crates.io-index)",
+- "openssl 0.9.19 (registry+https://github.com/rust-lang/crates.io-index)",
++ "openssl 0.9.24 (registry+https://github.com/rust-lang/crates.io-index)",
+  "ref_slice 1.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
+  "snap 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
+  "twox-hash 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+@@ -358,6 +366,11 @@ version = "0.2.8"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+ 
+ [[package]]
++name = "lazy_static"
++version = "1.2.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
+ name = "lazycell"
+ version = "0.5.1"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -483,19 +496,19 @@ source = "registry+https://github.com/rust-lang/crates
+ 
+ [[package]]
+ name = "openssl"
+-version = "0.9.19"
++version = "0.9.24"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+ dependencies = [
+  "bitflags 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
+- "foreign-types 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+- "lazy_static 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)",
++ "foreign-types 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
++ "lazy_static 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+  "libc 0.2.31 (registry+https://github.com/rust-lang/crates.io-index)",
+- "openssl-sys 0.9.19 (registry+https://github.com/rust-lang/crates.io-index)",
++ "openssl-sys 0.9.39 (registry+https://github.com/rust-lang/crates.io-index)",
+ ]
+ 
+ [[package]]
+ name = "openssl-sys"
+-version = "0.9.19"
++version = "0.9.39"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+ dependencies = [
+  "cc 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+@@ -831,7 +844,8 @@ dependencies = [
+ "checksum error-chain 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)" = "d9435d864e017c3c6afeac1654189b06cdb491cf2ff73dbf0d73b0f292f42ff8"
+ "checksum flate2 0.2.20 (registry+https://github.com/rust-lang/crates.io-index)" = "e6234dd4468ae5d1e2dbb06fe2b058696fdc50a339c68a393aefbf00bc81e423"
+ "checksum fnv 1.0.5 (registry+https://github.com/rust-lang/crates.io-index)" = "6cc484842f1e2884faf56f529f960cc12ad8c71ce96cc7abba0a067c98fee344"
+-"checksum foreign-types 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "3e4056b9bd47f8ac5ba12be771f77a0dae796d1bbaaf5fd0b9c2d38b69b8a29d"
++"checksum foreign-types 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)" = "f6f339eb8adc052cd2ca78910fda869aefa38d22d5cb648e6485e4d3fc06f3b1"
++"checksum foreign-types-shared 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = "00b0228411908ca8685dba7fc2cdd70ec9990a6e753e89b6ac91a84c40fbaf4b"
+ "checksum gcc 0.3.54 (registry+https://github.com/rust-lang/crates.io-index)" = "5e33ec290da0d127825013597dbdfc28bee4964690c7ce1166cbc2a7bd08b1bb"
+ "checksum getopts 0.2.15 (registry+https://github.com/rust-lang/crates.io-index)" = "65922871abd2f101a2eb0eaebadc66668e54a87ad9c3dd82520b5f86ede5eff9"
+ "checksum idna 0.1.4 (registry+https://github.com/rust-lang/crates.io-index)" = "014b298351066f1512874135335d62a789ffe78a9974f94b43ed5621951eaf7d"
+@@ -842,6 +856,7 @@ dependencies = [
+ "checksum kafka 0.6.2 (git+https://github.com/spicavigo/kafka-rust)" = "<none>"
+ "checksum kernel32-sys 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "7507624b29483431c0ba2d82aece8ca6cdba9382bff4ddd0f7490560c056098d"
+ "checksum lazy_static 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)" = "3b37545ab726dd833ec6420aaba8231c5b320814b9029ad585555d2a03e94fbf"
++"checksum lazy_static 1.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "a374c89b9db55895453a74c1e38861d9deec0b01b405a82516e9d5de4820dea1"
+ "checksum lazycell 0.5.1 (registry+https://github.com/rust-lang/crates.io-index)" = "3b585b7a6811fb03aa10e74b278a0f00f8dd9b45dc681f148bb29fa5cb61859b"
+ "checksum libc 0.2.31 (registry+https://github.com/rust-lang/crates.io-index)" = "d1419b2939a0bc44b77feb34661583c7546b532b192feab36249ab584b86856c"
+ "checksum linked-hash-map 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "7860ec297f7008ff7a1e3382d7f7e1dcd69efc94751a2284bafc3d013c2aa939"
+@@ -857,8 +872,8 @@ dependencies = [
+ "checksum num-integer 0.1.35 (registry+https://github.com/rust-lang/crates.io-index)" = "d1452e8b06e448a07f0e6ebb0bb1d92b8890eea63288c0b627331d53514d0fba"
+ "checksum num-iter 0.1.34 (registry+https://github.com/rust-lang/crates.io-index)" = "7485fcc84f85b4ecd0ea527b14189281cf27d60e583ae65ebc9c088b13dffe01"
+ "checksum num-traits 0.1.40 (registry+https://github.com/rust-lang/crates.io-index)" = "99843c856d68d8b4313b03a17e33c4bb42ae8f6610ea81b28abe076ac721b9b0"
+-"checksum openssl 0.9.19 (registry+https://github.com/rust-lang/crates.io-index)" = "816914b22eb15671d62c73442a51978f311e911d6a6f6cbdafa6abce1b5038fc"
+-"checksum openssl-sys 0.9.19 (registry+https://github.com/rust-lang/crates.io-index)" = "1e4c63a7d559c1e5afa6d6a9e6fa34bbc5f800ffc9ae08b72c605420b0c4f5e8"
++"checksum openssl 0.9.24 (registry+https://github.com/rust-lang/crates.io-index)" = "a3605c298474a3aa69de92d21139fb5e2a81688d308262359d85cdd0d12a7985"
++"checksum openssl-sys 0.9.39 (registry+https://github.com/rust-lang/crates.io-index)" = "278c1ad40a89aa1e741a1eed089a2f60b18fab8089c3139b542140fc7d674106"
+ "checksum percent-encoding 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "de154f638187706bde41d9b4738748933d64e6b37bdbffc0b47a97d16a6ae356"
+ "checksum pkg-config 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)" = "3a8b4c6b8165cd1a1cd4b9b120978131389f64bdaf456435caa41e630edba903"
+ "checksum pulldown-cmark 0.0.15 (registry+https://github.com/rust-lang/crates.io-index)" = "378e941dbd392c101f2cb88097fa4d7167bc421d4b88de3ff7dbee503bc3233b"
+--- cargo-crates/openssl-0.9.24/Cargo.toml.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/openssl-0.9.24/Cargo.toml
+@@ -56,3 +56,4 @@ version = "0.2"
+ v101 = []
+ v102 = []
+ v110 = []
++v111 = ["v110"]
+--- cargo-crates/openssl-0.9.24/build.rs.orig	2018-02-12 17:30:05 UTC
++++ cargo-crates/openssl-0.9.24/build.rs
+@@ -13,6 +13,10 @@ fn main() {
+         Ok(ref v) if v == "110" => {
+             println!("cargo:rustc-cfg=ossl110");
+         }
++        Ok(ref v) if v == "111" => {
++            println!("cargo:rustc-cfg=ossl110");
++            println!("cargo:rustc-cfg=ossl111");
++        }
+         _ => panic!("Unable to detect OpenSSL version"),
+     }
+ 
+--- cargo-crates/openssl-0.9.24/src/dh.rs.orig	2018-02-12 19:02:00 UTC
++++ cargo-crates/openssl-0.9.24/src/dh.rs
+@@ -39,7 +39,7 @@ impl Dh {
+     from_pem!(Dh, ffi::PEM_read_bio_DHparams);
+     from_der!(Dh, ffi::d2i_DHparams);
+ 
+-    /// Requires the `v102` or `v110` features and OpenSSL 1.0.2 or OpenSSL 1.1.0.
++    /// Requires OpenSSL 1.0.2, 1.1.0, or 1.1.1 and the corresponding Cargo feature.
+     #[cfg(any(all(feature = "v102", ossl102), all(feature = "v110", ossl110)))]
+     pub fn get_1024_160() -> Result<Dh, ErrorStack> {
+         unsafe {
+@@ -48,7 +48,7 @@ impl Dh {
+         }
+     }
+ 
+-    /// Requires the `v102` or `v110` features and OpenSSL 1.0.2 or OpenSSL 1.1.0.
++    /// Requires OpenSSL 1.0.2, 1.1.0, or 1.1.1 and the corresponding Cargo feature.
+     #[cfg(any(all(feature = "v102", ossl102), all(feature = "v110", ossl110)))]
+     pub fn get_2048_224() -> Result<Dh, ErrorStack> {
+         unsafe {
+@@ -57,7 +57,7 @@ impl Dh {
+         }
+     }
+ 
+-    /// Requires the `v102` or `v110` features and OpenSSL 1.0.2 or OpenSSL 1.1.0.
++    /// Requires OpenSSL 1.0.2, 1.1.0, or 1.1.1 and the corresponding Cargo feature.
+     #[cfg(any(all(feature = "v102", ossl102), all(feature = "v110", ossl110)))]
+     pub fn get_2048_256() -> Result<Dh, ErrorStack> {
+         unsafe {
+--- cargo-crates/openssl-0.9.24/src/pkcs5.rs.orig	2018-02-12 19:02:00 UTC
++++ cargo-crates/openssl-0.9.24/src/pkcs5.rs
+@@ -59,9 +59,9 @@ pub fn bytes_to_key(
+         ))?;
+ 
+         let mut key = vec![0; len as usize];
+-        let iv_ptr = iv.as_mut().map(|v| v.as_mut_ptr()).unwrap_or(
+-            ptr::null_mut(),
+-        );
++        let iv_ptr = iv.as_mut()
++            .map(|v| v.as_mut_ptr())
++            .unwrap_or(ptr::null_mut());
+ 
+         cvt(ffi::EVP_BytesToKey(
+             cipher,
+@@ -107,7 +107,7 @@ pub fn pbkdf2_hmac(
+ 
+ /// Derives a key from a password and salt using the scrypt algorithm.
+ ///
+-/// Requires the `v110` feature and OpenSSL 1.1.0.
++/// Requires OpenSSL 1.1.0 or 1.1.1 and the corresponding Cargo feature.
+ #[cfg(all(feature = "v110", ossl110))]
+ pub fn scrypt(
+     pass: &[u8],
+@@ -150,24 +150,9 @@ mod tests {
+         assert_eq!(
+             buf,
+             &[
+-                0x55_u8,
+-                0xac_u8,
+-                0x04_u8,
+-                0x6e_u8,
+-                0x56_u8,
+-                0xe3_u8,
+-                0x08_u8,
+-                0x9f_u8,
+-                0xec_u8,
+-                0x16_u8,
+-                0x91_u8,
+-                0xc2_u8,
+-                0x25_u8,
+-                0x44_u8,
+-                0xb6_u8,
+-                0x05_u8,
+-            ]
+-                [..]
++                0x55_u8, 0xac_u8, 0x04_u8, 0x6e_u8, 0x56_u8, 0xe3_u8, 0x08_u8, 0x9f_u8, 0xec_u8,
++                0x16_u8, 0x91_u8, 0xc2_u8, 0x25_u8, 0x44_u8, 0xb6_u8, 0x05_u8,
++            ][..]
+         );
+ 
+         super::pbkdf2_hmac(
+@@ -180,24 +165,9 @@ mod tests {
+         assert_eq!(
+             buf,
+             &[
+-                0x4d_u8,
+-                0xdc_u8,
+-                0xd8_u8,
+-                0xf6_u8,
+-                0x0b_u8,
+-                0x98_u8,
+-                0xbe_u8,
+-                0x21_u8,
+-                0x83_u8,
+-                0x0c_u8,
+-                0xee_u8,
+-                0x5e_u8,
+-                0xf2_u8,
+-                0x27_u8,
+-                0x01_u8,
+-                0xf9_u8,
+-            ]
+-                [..]
++                0x4d_u8, 0xdc_u8, 0xd8_u8, 0xf6_u8, 0x0b_u8, 0x98_u8, 0xbe_u8, 0x21_u8, 0x83_u8,
++                0x0c_u8, 0xee_u8, 0x5e_u8, 0xf2_u8, 0x27_u8, 0x01_u8, 0xf9_u8,
++            ][..]
+         );
+     }
+ 
+@@ -211,72 +181,15 @@ mod tests {
+         assert_eq!(
+             &buf[..],
+             &[
+-                0x73_u8,
+-                0xde_u8,
+-                0xcf_u8,
+-                0xa5_u8,
+-                0x8a_u8,
+-                0xa2_u8,
+-                0xe8_u8,
+-                0x4f_u8,
+-                0x94_u8,
+-                0x77_u8,
+-                0x1a_u8,
+-                0x75_u8,
+-                0x73_u8,
+-                0x6b_u8,
+-                0xb8_u8,
+-                0x8b_u8,
+-                0xd3_u8,
+-                0xc7_u8,
+-                0xb3_u8,
+-                0x82_u8,
+-                0x70_u8,
+-                0xcf_u8,
+-                0xb5_u8,
+-                0x0c_u8,
+-                0xb3_u8,
+-                0x90_u8,
+-                0xed_u8,
+-                0x78_u8,
+-                0xb3_u8,
+-                0x05_u8,
+-                0x65_u8,
+-                0x6a_u8,
+-                0xf8_u8,
+-                0x14_u8,
+-                0x8e_u8,
+-                0x52_u8,
+-                0x45_u8,
+-                0x2b_u8,
+-                0x22_u8,
+-                0x16_u8,
+-                0xb2_u8,
+-                0xb8_u8,
+-                0x09_u8,
+-                0x8b_u8,
+-                0x76_u8,
+-                0x1f_u8,
+-                0xc6_u8,
+-                0x33_u8,
+-                0x60_u8,
+-                0x60_u8,
+-                0xa0_u8,
+-                0x9f_u8,
+-                0x76_u8,
+-                0x41_u8,
+-                0x5e_u8,
+-                0x9f_u8,
+-                0x71_u8,
+-                0xea_u8,
+-                0x47_u8,
+-                0xf9_u8,
+-                0xe9_u8,
++                0x73_u8, 0xde_u8, 0xcf_u8, 0xa5_u8, 0x8a_u8, 0xa2_u8, 0xe8_u8, 0x4f_u8, 0x94_u8,
++                0x77_u8, 0x1a_u8, 0x75_u8, 0x73_u8, 0x6b_u8, 0xb8_u8, 0x8b_u8, 0xd3_u8, 0xc7_u8,
++                0xb3_u8, 0x82_u8, 0x70_u8, 0xcf_u8, 0xb5_u8, 0x0c_u8, 0xb3_u8, 0x90_u8, 0xed_u8,
++                0x78_u8, 0xb3_u8, 0x05_u8, 0x65_u8, 0x6a_u8, 0xf8_u8, 0x14_u8, 0x8e_u8, 0x52_u8,
++                0x45_u8, 0x2b_u8, 0x22_u8, 0x16_u8, 0xb2_u8, 0xb8_u8, 0x09_u8, 0x8b_u8, 0x76_u8,
++                0x1f_u8, 0xc6_u8, 0x33_u8, 0x60_u8, 0x60_u8, 0xa0_u8, 0x9f_u8, 0x76_u8, 0x41_u8,
++                0x5e_u8, 0x9f_u8, 0x71_u8, 0xea_u8, 0x47_u8, 0xf9_u8, 0xe9_u8, 0x06_u8, 0x43_u8,
+                 0x06_u8,
+-                0x43_u8,
+-                0x06_u8,
+-            ]
+-                [..]
++            ][..]
+         );
+ 
+         super::pbkdf2_hmac(
+@@ -289,72 +202,15 @@ mod tests {
+         assert_eq!(
+             &buf[..],
+             &[
+-                0x71_u8,
+-                0xa0_u8,
+-                0xec_u8,
+-                0x84_u8,
+-                0x2a_u8,
+-                0xbd_u8,
+-                0x5c_u8,
+-                0x67_u8,
+-                0x8b_u8,
+-                0xcf_u8,
+-                0xd1_u8,
+-                0x45_u8,
+-                0xf0_u8,
+-                0x9d_u8,
+-                0x83_u8,
+-                0x52_u8,
+-                0x2f_u8,
+-                0x93_u8,
+-                0x36_u8,
+-                0x15_u8,
+-                0x60_u8,
+-                0x56_u8,
+-                0x3c_u8,
+-                0x4d_u8,
+-                0x0d_u8,
+-                0x63_u8,
+-                0xb8_u8,
+-                0x83_u8,
+-                0x29_u8,
+-                0x87_u8,
+-                0x10_u8,
+-                0x90_u8,
+-                0xe7_u8,
+-                0x66_u8,
+-                0x04_u8,
+-                0xa4_u8,
+-                0x9a_u8,
+-                0xf0_u8,
+-                0x8f_u8,
+-                0xe7_u8,
+-                0xc9_u8,
+-                0xf5_u8,
+-                0x71_u8,
+-                0x56_u8,
+-                0xc8_u8,
+-                0x79_u8,
+-                0x09_u8,
+-                0x96_u8,
+-                0xb2_u8,
+-                0x0f_u8,
+-                0x06_u8,
+-                0xbc_u8,
+-                0x53_u8,
+-                0x5e_u8,
+-                0x5a_u8,
+-                0xb5_u8,
+-                0x44_u8,
+-                0x0d_u8,
+-                0xf7_u8,
+-                0xe8_u8,
+-                0x78_u8,
+-                0x29_u8,
+-                0x6f_u8,
++                0x71_u8, 0xa0_u8, 0xec_u8, 0x84_u8, 0x2a_u8, 0xbd_u8, 0x5c_u8, 0x67_u8, 0x8b_u8,
++                0xcf_u8, 0xd1_u8, 0x45_u8, 0xf0_u8, 0x9d_u8, 0x83_u8, 0x52_u8, 0x2f_u8, 0x93_u8,
++                0x36_u8, 0x15_u8, 0x60_u8, 0x56_u8, 0x3c_u8, 0x4d_u8, 0x0d_u8, 0x63_u8, 0xb8_u8,
++                0x83_u8, 0x29_u8, 0x87_u8, 0x10_u8, 0x90_u8, 0xe7_u8, 0x66_u8, 0x04_u8, 0xa4_u8,
++                0x9a_u8, 0xf0_u8, 0x8f_u8, 0xe7_u8, 0xc9_u8, 0xf5_u8, 0x71_u8, 0x56_u8, 0xc8_u8,
++                0x79_u8, 0x09_u8, 0x96_u8, 0xb2_u8, 0x0f_u8, 0x06_u8, 0xbc_u8, 0x53_u8, 0x5e_u8,
++                0x5a_u8, 0xb5_u8, 0x44_u8, 0x0d_u8, 0xf7_u8, 0xe8_u8, 0x78_u8, 0x29_u8, 0x6f_u8,
+                 0xa7_u8,
+-            ]
+-                [..]
++            ][..]
+         );
+ 
+         super::pbkdf2_hmac(
+@@ -367,72 +223,15 @@ mod tests {
+         assert_eq!(
+             &buf[..],
+             &[
+-                0x01_u8,
+-                0x68_u8,
+-                0x71_u8,
+-                0xa4_u8,
+-                0xc4_u8,
+-                0xb7_u8,
+-                0x5f_u8,
+-                0x96_u8,
+-                0x85_u8,
+-                0x7f_u8,
+-                0xd2_u8,
+-                0xb9_u8,
+-                0xf8_u8,
+-                0xca_u8,
+-                0x28_u8,
+-                0x02_u8,
+-                0x3b_u8,
+-                0x30_u8,
+-                0xee_u8,
+-                0x2a_u8,
++                0x01_u8, 0x68_u8, 0x71_u8, 0xa4_u8, 0xc4_u8, 0xb7_u8, 0x5f_u8, 0x96_u8, 0x85_u8,
++                0x7f_u8, 0xd2_u8, 0xb9_u8, 0xf8_u8, 0xca_u8, 0x28_u8, 0x02_u8, 0x3b_u8, 0x30_u8,
++                0xee_u8, 0x2a_u8, 0x39_u8, 0xf5_u8, 0xad_u8, 0xca_u8, 0xc8_u8, 0xc9_u8, 0x37_u8,
++                0x5f_u8, 0x9b_u8, 0xda_u8, 0x1c_u8, 0xcd_u8, 0x1b_u8, 0x6f_u8, 0x0b_u8, 0x2f_u8,
++                0xc3_u8, 0xad_u8, 0xda_u8, 0x50_u8, 0x54_u8, 0x12_u8, 0xe7_u8, 0x9d_u8, 0x89_u8,
++                0x00_u8, 0x56_u8, 0xc6_u8, 0x2e_u8, 0x52_u8, 0x4c_u8, 0x7d_u8, 0x51_u8, 0x15_u8,
++                0x4b_u8, 0x1a_u8, 0x85_u8, 0x34_u8, 0x57_u8, 0x5b_u8, 0xd0_u8, 0x2d_u8, 0xee_u8,
+                 0x39_u8,
+-                0xf5_u8,
+-                0xad_u8,
+-                0xca_u8,
+-                0xc8_u8,
+-                0xc9_u8,
+-                0x37_u8,
+-                0x5f_u8,
+-                0x9b_u8,
+-                0xda_u8,
+-                0x1c_u8,
+-                0xcd_u8,
+-                0x1b_u8,
+-                0x6f_u8,
+-                0x0b_u8,
+-                0x2f_u8,
+-                0xc3_u8,
+-                0xad_u8,
+-                0xda_u8,
+-                0x50_u8,
+-                0x54_u8,
+-                0x12_u8,
+-                0xe7_u8,
+-                0x9d_u8,
+-                0x89_u8,
+-                0x00_u8,
+-                0x56_u8,
+-                0xc6_u8,
+-                0x2e_u8,
+-                0x52_u8,
+-                0x4c_u8,
+-                0x7d_u8,
+-                0x51_u8,
+-                0x15_u8,
+-                0x4b_u8,
+-                0x1a_u8,
+-                0x85_u8,
+-                0x34_u8,
+-                0x57_u8,
+-                0x5b_u8,
+-                0xd0_u8,
+-                0x2d_u8,
+-                0xee_u8,
+-                0x39_u8,
+-            ]
+-                [..]
++            ][..]
+         );
+     }
+ 
+@@ -441,93 +240,19 @@ mod tests {
+         let salt = [16_u8, 34_u8, 19_u8, 23_u8, 141_u8, 4_u8, 207_u8, 221_u8];
+ 
+         let data = [
+-            143_u8,
+-            210_u8,
+-            75_u8,
+-            63_u8,
+-            214_u8,
+-            179_u8,
+-            155_u8,
+-            241_u8,
+-            242_u8,
+-            31_u8,
+-            154_u8,
+-            56_u8,
+-            198_u8,
+-            145_u8,
+-            192_u8,
+-            64_u8,
+-            2_u8,
+-            245_u8,
+-            167_u8,
+-            220_u8,
+-            55_u8,
+-            119_u8,
+-            233_u8,
+-            136_u8,
+-            139_u8,
+-            27_u8,
+-            71_u8,
+-            242_u8,
+-            119_u8,
+-            175_u8,
+-            65_u8,
+-            207_u8,
++            143_u8, 210_u8, 75_u8, 63_u8, 214_u8, 179_u8, 155_u8, 241_u8, 242_u8, 31_u8, 154_u8,
++            56_u8, 198_u8, 145_u8, 192_u8, 64_u8, 2_u8, 245_u8, 167_u8, 220_u8, 55_u8, 119_u8,
++            233_u8, 136_u8, 139_u8, 27_u8, 71_u8, 242_u8, 119_u8, 175_u8, 65_u8, 207_u8,
+         ];
+ 
+-
+-
+         let expected_key = vec![
+-            249_u8,
+-            115_u8,
+-            114_u8,
+-            97_u8,
+-            32_u8,
+-            213_u8,
+-            165_u8,
+-            146_u8,
+-            58_u8,
+-            87_u8,
+-            234_u8,
+-            3_u8,
+-            43_u8,
+-            250_u8,
+-            97_u8,
+-            114_u8,
+-            26_u8,
+-            98_u8,
+-            245_u8,
+-            246_u8,
+-            238_u8,
+-            177_u8,
+-            229_u8,
+-            161_u8,
+-            183_u8,
+-            224_u8,
+-            174_u8,
+-            3_u8,
+-            6_u8,
+-            244_u8,
+-            236_u8,
+-            255_u8,
++            249_u8, 115_u8, 114_u8, 97_u8, 32_u8, 213_u8, 165_u8, 146_u8, 58_u8, 87_u8, 234_u8,
++            3_u8, 43_u8, 250_u8, 97_u8, 114_u8, 26_u8, 98_u8, 245_u8, 246_u8, 238_u8, 177_u8,
++            229_u8, 161_u8, 183_u8, 224_u8, 174_u8, 3_u8, 6_u8, 244_u8, 236_u8, 255_u8,
+         ];
+         let expected_iv = vec![
+-            4_u8,
+-            223_u8,
+-            153_u8,
+-            219_u8,
+-            28_u8,
+-            142_u8,
+-            234_u8,
+-            68_u8,
+-            227_u8,
+-            69_u8,
+-            98_u8,
+-            107_u8,
+-            208_u8,
+-            14_u8,
+-            236_u8,
+-            60_u8,
++            4_u8, 223_u8, 153_u8, 219_u8, 28_u8, 142_u8, 234_u8, 68_u8, 227_u8, 69_u8, 98_u8,
++            107_u8, 208_u8, 14_u8, 236_u8, 60_u8,
+         ];
+ 
+         assert_eq!(
+@@ -552,8 +277,9 @@ mod tests {
+ 
+         let pass = "pleaseletmein";
+         let salt = "SodiumChloride";
+-        let expected = "7023bdcb3afd7348461c06cd81fd38ebfda8fbba904f8e3ea9b543f6545da1f2d5432955613\
+-                        f0fcf62d49705242a9af9e61e85dc0d651e40dfcf017b45575887";
++        let expected =
++            "7023bdcb3afd7348461c06cd81fd38ebfda8fbba904f8e3ea9b543f6545da1f2d5432955613\
++             f0fcf62d49705242a9af9e61e85dc0d651e40dfcf017b45575887";
+ 
+         let mut actual = [0; 64];
+         super::scrypt(
+--- cargo-crates/openssl-0.9.24/src/ssl/connector.rs.orig	2018-02-12 19:02:00 UTC
++++ cargo-crates/openssl-0.9.24/src/ssl/connector.rs
+@@ -3,6 +3,8 @@ use std::ops::{Deref, DerefMut};
+ 
+ use dh::Dh;
+ use error::ErrorStack;
++#[cfg(ossl111)]
++use ssl::SslOption;
+ use ssl::{self, HandshakeError, Ssl, SslRef, SslContext, SslContextBuilder, SslMethod, SslStream,
+           SSL_VERIFY_PEER};
+ use pkey::PKeyRef;
+@@ -271,6 +273,12 @@ impl SslAcceptorBuilder {
+     /// Like `mozilla_intermediate`, but does not load the certificate chain and private key.
+     pub fn mozilla_intermediate_raw(method: SslMethod) -> Result<SslAcceptorBuilder, ErrorStack> {
+         let mut ctx = ctx(method)?;
++        #[cfg(ossl111)]
++        {
++            ctx.set_options(SslOption {
++                bits: ::ffi::SSL_OP_NO_TLSv1_3,
++            });
++        }
+         let dh = Dh::from_pem(DHPARAM_PEM.as_bytes())?;
+         ctx.set_tmp_dh(&dh)?;
+         setup_curves(&mut ctx)?;
+@@ -292,6 +300,13 @@ impl SslAcceptorBuilder {
+     /// Like `mozilla_modern`, but does not load the certificate chain and private key.
+     pub fn mozilla_modern_raw(method: SslMethod) -> Result<SslAcceptorBuilder, ErrorStack> {
+         let mut ctx = ctx(method)?;
++        ctx.set_options(ssl::SSL_OP_NO_TLSV1 | ssl::SSL_OP_NO_TLSV1_1);
++        #[cfg(ossl111)]
++        {
++            ctx.set_options(SslOption {
++                bits: ::ffi::SSL_OP_NO_TLSv1_3,
++            });
++        }
+         setup_curves(&mut ctx)?;
+         ctx.set_cipher_list(
+             "ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:\
+--- cargo-crates/openssl-0.9.24/src/ssl/mod.rs.orig	2018-02-12 19:02:00 UTC
++++ cargo-crates/openssl-0.9.24/src/ssl/mod.rs
+@@ -211,14 +211,20 @@ bitflags! {
+         /// Disables the use of TLSv1.2.
+         const SSL_OP_NO_TLSV1_2 = ffi::SSL_OP_NO_TLSv1_2;
+ 
++        /// Disables the use of TLSv1.3.
++        ///
++        /// Requires the `v111` feature and OpenSSL 1.1.1.
++        #[cfg(all(feature = "v111", ossl111))]
++        const NO_TLSV1_3 = ffi::SSL_OP_NO_TLSv1_3;
++
+         /// Disables the use of DTLSv1.0
+         ///
+-        /// Requires the `v102` or `v110` features and OpenSSL 1.0.2 or OpenSSL 1.1.0.
++        /// Requires OpenSSL 1.0.2, 1.1.0, or 1.1.1 and the corresponding Cargo feature.
+         #[cfg(any(all(feature = "v102", ossl102), all(feature = "v110", ossl110)))]
+         const SSL_OP_NO_DTLSV1 = ffi::SSL_OP_NO_DTLSv1;
+ 
+         /// Disables the use of DTLSv1.2.
+-        /// Requires the `v102` or `v110` features and OpenSSL 1.0.2 or OpenSSL 1.1.0.
++        /// Requires OpenSSL 1.0.2, 1.1.0, or 1.1.1 and the corresponding Cargo feature.
+         #[cfg(any(all(feature = "v102", ossl102), all(feature = "v110", ossl110)))]
+         const SSL_OP_NO_DTLSV1_2 = ffi::SSL_OP_NO_DTLSv1_2;
+ 
+@@ -226,7 +232,7 @@ bitflags! {
+         ///
+         /// This can be used as a mask when whitelisting protocol versions.
+         ///
+-        /// Requires the `v102` or `v110` features and OpenSSL 1.0.2 or OpenSSL 1.1.0.
++        /// Requires OpenSSL 1.0.2, 1.1.0, or 1.1.1 and the corresponding Cargo feature.
+         ///
+         /// # Examples
+         ///
+@@ -573,7 +579,7 @@ impl SslContextBuilder {
+ 
+     /// Sets a custom certificate store for verifying peer certificates.
+     ///
+-    /// Requires the `v102` feature and OpenSSL 1.0.2, or the `v110` feature and OpenSSL 1.1.0.
++    /// Requires OpenSSL 1.0.2, 1.1.0, or 1.1.1 and the corresponding Cargo feature.
+     ///
+     /// This corresponds to [`SSL_CTX_set0_verify_cert_store`].
+     ///
+@@ -582,8 +588,7 @@ impl SslContextBuilder {
+     pub fn set_verify_cert_store(&mut self, cert_store: X509Store) -> Result<(), ErrorStack> {
+         unsafe {
+             let ptr = cert_store.as_ptr();
+-            cvt(ffi::SSL_CTX_set0_verify_cert_store(self.as_ptr(), ptr)
+-                as c_int)?;
++            cvt(ffi::SSL_CTX_set0_verify_cert_store(self.as_ptr(), ptr) as c_int)?;
+             mem::forget(cert_store);
+ 
+             Ok(())
+@@ -613,8 +618,8 @@ impl SslContextBuilder {
+     /// [`SSL_CTX_set_mode`]: https://www.openssl.org/docs/man1.0.2/ssl/SSL_CTX_set_mode.html
+     pub fn set_mode(&mut self, mode: SslMode) -> SslMode {
+         unsafe {
+-            let mode = ffi::SSL_CTX_set_mode(self.as_ptr(), mode.bits());
+-            SslMode::from_bits(mode).unwrap()
++            let bits = ffi::SSL_CTX_set_mode(self.as_ptr(), mode.bits());
++            SslMode { bits }
+         }
+     }
+ 
+@@ -657,11 +662,7 @@ impl SslContextBuilder {
+     ///
+     /// This corresponds to `SSL_CTX_set_tmp_ecdh`.
+     pub fn set_tmp_ecdh(&mut self, key: &EcKeyRef) -> Result<(), ErrorStack> {
+-        unsafe {
+-            cvt(ffi::SSL_CTX_set_tmp_ecdh(self.as_ptr(), key.as_ptr())
+-                as c_int)
+-                .map(|_| ())
+-        }
++        unsafe { cvt(ffi::SSL_CTX_set_tmp_ecdh(self.as_ptr(), key.as_ptr()) as c_int).map(|_| ()) }
+     }
+ 
+     /// Sets the callback which will generate parameters to be used during ephemeral elliptic curve
+@@ -901,8 +902,8 @@ impl SslContextBuilder {
+     ///
+     /// [`SSL_CTX_set_options`]: https://www.openssl.org/docs/manmaster/man3/SSL_CTX_set_options.html
+     pub fn set_options(&mut self, option: SslOption) -> SslOption {
+-        let ret = unsafe { compat::SSL_CTX_set_options(self.as_ptr(), option.bits()) };
+-        SslOption::from_bits(ret).unwrap()
++        let bits = unsafe { compat::SSL_CTX_set_options(self.as_ptr(), option.bits()) };
++        SslOption { bits }
+     }
+ 
+     /// Returns the options used by the context.
+@@ -911,8 +912,8 @@ impl SslContextBuilder {
+     ///
+     /// [`SSL_CTX_get_options`]: https://www.openssl.org/docs/manmaster/man3/SSL_CTX_set_options.html
+     pub fn options(&self) -> SslOption {
+-        let ret = unsafe { compat::SSL_CTX_get_options(self.as_ptr()) };
+-        SslOption::from_bits(ret).unwrap()
++        let bits = unsafe { compat::SSL_CTX_get_options(self.as_ptr()) };
++        SslOption { bits }
+     }
+ 
+     /// Clears the options used by the context, returning the old set.
+@@ -921,8 +922,8 @@ impl SslContextBuilder {
+     ///
+     /// [`SSL_CTX_clear_options`]: https://www.openssl.org/docs/manmaster/man3/SSL_CTX_set_options.html
+     pub fn clear_options(&mut self, option: SslOption) -> SslOption {
+-        let ret = unsafe { compat::SSL_CTX_clear_options(self.as_ptr(), option.bits()) };
+-        SslOption::from_bits(ret).unwrap()
++        let bits = unsafe { compat::SSL_CTX_clear_options(self.as_ptr(), option.bits()) };
++        SslOption { bits }
+     }
+ 
+     /// Set the protocols to be used during Next Protocol Negotiation (the protocols
+@@ -968,7 +969,7 @@ impl SslContextBuilder {
+     ///
+     /// Note that ordering of the protocols controls the priority with which they are chosen.
+     ///
+-    /// Requires the `v102` or `v110` features and OpenSSL 1.0.2 or OpenSSL 1.1.0.
++    /// Requires OpenSSL 1.0.2, 1.1.0, or 1.1.1 and the corresponding Cargo feature.
+     // FIXME overhaul
+     #[cfg(any(all(feature = "v102", ossl102), all(feature = "v110", ossl110)))]
+     pub fn set_alpn_protocols(&mut self, protocols: &[&[u8]]) -> Result<(), ErrorStack> {
+@@ -1059,9 +1060,7 @@ impl SslContextBuilder {
+                 Box::into_raw(callback) as *mut c_void,
+             );
+             let f: unsafe extern "C" fn(_, _) -> _ = raw_tlsext_status::<F>;
+-            cvt(ffi::SSL_CTX_set_tlsext_status_cb(self.as_ptr(), Some(f))
+-                as c_int)
+-                .map(|_| ())
++            cvt(ffi::SSL_CTX_set_tlsext_status_cb(self.as_ptr(), Some(f)) as c_int).map(|_| ())
+         }
+     }
+ 
+@@ -1185,7 +1184,7 @@ impl SslContext {
+ impl SslContextRef {
+     /// Returns the certificate associated with this `SslContext`, if present.
+     ///
+-    /// Requires the `v102` or `v110` features and OpenSSL 1.0.2 or OpenSSL 1.1.0.
++    /// Requires OpenSSL 1.0.2, 1.1.0, or 1.1.1 and the corresponding Cargo feature.
+     ///
+     /// This corresponds to [`SSL_CTX_get0_certificate`].
+     ///
+@@ -1204,7 +1203,7 @@ impl SslContextRef {
+ 
+     /// Returns the private key associated with this `SslContext`, if present.
+     ///
+-    /// Requires the `v102` or `v110` features and OpenSSL 1.0.2 or OpenSSL 1.1.0.
++    /// Requires OpenSSL 1.0.2, 1.1.0, or 1.1.1 and the corresponding Cargo feature.
+     ///
+     /// This corresponds to [`SSL_CTX_get0_privatekey`].
+     ///
+@@ -1789,7 +1788,7 @@ impl SslRef {
+     /// The protocol's name is returned is an opaque sequence of bytes. It is up to the client
+     /// to interpret it.
+     ///
+-    /// Requires the `v102` or `v110` features and OpenSSL 1.0.2 or OpenSSL 1.1.0.
++    /// Requires OpenSSL 1.0.2, 1.1.0, or 1.1.1 and the corresponding Cargo feature.
+     ///
+     /// This corresponds to [`SSL_get0_alpn_selected`].
+     ///
+@@ -1889,7 +1888,7 @@ impl SslRef {
+ 
+     /// Returns a mutable reference to the X509 verification configuration.
+     ///
+-    /// Requires the `v102` or `v110` features and OpenSSL 1.0.2 or 1.1.0.
++    /// Requires OpenSSL 1.0.2, 1.1.0, or 1.1.1 and the corresponding Cargo feature.
+     ///
+     /// This corresponds to [`SSL_get0_param`].
+     ///
+--- cargo-crates/openssl-0.9.24/src/ssl/tests/mod.rs.orig	2018-02-12 19:02:00 UTC
++++ cargo-crates/openssl-0.9.24/src/ssl/tests/mod.rs
+@@ -1084,7 +1084,7 @@ fn connector_no_hostname_can_disable_verify() {
+ 
+ #[test]
+ fn connector_client_server_mozilla_intermediate() {
+-    let listener = TcpListener::bind("127.0.0.1:0").unwrap();
++    let listener = TcpListener::bind("127.0.0.1:1234").unwrap();
+     let port = listener.local_addr().unwrap().port();
+ 
+     let t = thread::spawn(move || {
+@@ -1231,6 +1231,13 @@ fn tmp_dh_callback() {
+ 
+     let stream = TcpStream::connect(("127.0.0.1", port)).unwrap();
+     let mut ctx = SslContext::builder(SslMethod::tls()).unwrap();
++    // TLS 1.3 has no DH suites, and openssl isn't happy if the max version has no suites :(
++    #[cfg(ossl111)]
++    {
++        ctx.set_options(super::SslOption {
++            bits: ::ffi::SSL_OP_NO_TLSv1_3,
++        });
++    }
+     ctx.set_cipher_list("EDH").unwrap();
+     let ssl = Ssl::new(&ctx.build()).unwrap();
+     ssl.connect(stream).unwrap();
+@@ -1298,6 +1305,13 @@ fn tmp_dh_callback_ssl() {
+ 
+     let stream = TcpStream::connect(("127.0.0.1", port)).unwrap();
+     let mut ctx = SslContext::builder(SslMethod::tls()).unwrap();
++    // TLS 1.3 has no DH suites, and openssl isn't happy if the max version has no suites :(
++    #[cfg(ossl111)]
++    {
++        ctx.set_options(super::SslOption {
++            bits: ::ffi::SSL_OP_NO_TLSv1_3,
++        });
++    }
+     ctx.set_cipher_list("EDH").unwrap();
+     let ssl = Ssl::new(&ctx.build()).unwrap();
+     ssl.connect(stream).unwrap();
+--- cargo-crates/openssl-0.9.24/src/symm.rs.orig	2018-02-12 19:02:00 UTC
++++ cargo-crates/openssl-0.9.24/src/symm.rs
+@@ -137,13 +137,13 @@ impl Cipher {
+         unsafe { Cipher(ffi::EVP_rc4()) }
+     }
+ 
+-    /// Requires the `v110` feature and OpenSSL 1.1.0.
++    /// Requires OpenSSL 1.1.0 or 1.1.1 and the corresponding Cargo feature.
+     #[cfg(all(ossl110, feature = "v110"))]
+     pub fn chacha20() -> Cipher {
+         unsafe { Cipher(ffi::EVP_chacha20()) }
+     }
+ 
+-    /// Requires the `v110` feature and OpenSSL 1.1.0.
++    /// Requires OpenSSL 1.1.0 or 1.1.1 and the corresponding Cargo feature.
+     #[cfg(all(ossl110, feature = "v110"))]
+     pub fn chacha20_poly1305() -> Cipher {
+         unsafe { Cipher(ffi::EVP_chacha20_poly1305()) }
+@@ -167,7 +167,11 @@ impl Cipher {
+     pub fn iv_len(&self) -> Option<usize> {
+         unsafe {
+             let len = EVP_CIPHER_iv_length(self.0) as usize;
+-            if len == 0 { None } else { Some(len) }
++            if len == 0 {
++                None
++            } else {
++                Some(len)
++            }
+         }
+     }
+ 
+@@ -590,7 +594,7 @@ pub fn decrypt_aead(
+ }
+ 
+ #[cfg(ossl110)]
+-use ffi::{EVP_CIPHER_iv_length, EVP_CIPHER_block_size, EVP_CIPHER_key_length};
++use ffi::{EVP_CIPHER_block_size, EVP_CIPHER_iv_length, EVP_CIPHER_key_length};
+ 
+ #[cfg(ossl10x)]
+ #[allow(bad_style)]
+@@ -623,74 +627,17 @@ mod tests {
+     #[test]
+     fn test_aes_256_ecb() {
+         let k0 = [
+-            0x00u8,
+-            0x01u8,
+-            0x02u8,
+-            0x03u8,
+-            0x04u8,
+-            0x05u8,
+-            0x06u8,
+-            0x07u8,
+-            0x08u8,
+-            0x09u8,
+-            0x0au8,
+-            0x0bu8,
+-            0x0cu8,
+-            0x0du8,
+-            0x0eu8,
+-            0x0fu8,
+-            0x10u8,
+-            0x11u8,
+-            0x12u8,
+-            0x13u8,
+-            0x14u8,
+-            0x15u8,
+-            0x16u8,
+-            0x17u8,
+-            0x18u8,
+-            0x19u8,
+-            0x1au8,
+-            0x1bu8,
+-            0x1cu8,
+-            0x1du8,
+-            0x1eu8,
+-            0x1fu8,
++            0x00u8, 0x01u8, 0x02u8, 0x03u8, 0x04u8, 0x05u8, 0x06u8, 0x07u8, 0x08u8, 0x09u8, 0x0au8,
++            0x0bu8, 0x0cu8, 0x0du8, 0x0eu8, 0x0fu8, 0x10u8, 0x11u8, 0x12u8, 0x13u8, 0x14u8, 0x15u8,
++            0x16u8, 0x17u8, 0x18u8, 0x19u8, 0x1au8, 0x1bu8, 0x1cu8, 0x1du8, 0x1eu8, 0x1fu8,
+         ];
+         let p0 = [
+-            0x00u8,
+-            0x11u8,
+-            0x22u8,
+-            0x33u8,
+-            0x44u8,
+-            0x55u8,
+-            0x66u8,
+-            0x77u8,
+-            0x88u8,
+-            0x99u8,
+-            0xaau8,
+-            0xbbu8,
+-            0xccu8,
+-            0xddu8,
+-            0xeeu8,
+-            0xffu8,
++            0x00u8, 0x11u8, 0x22u8, 0x33u8, 0x44u8, 0x55u8, 0x66u8, 0x77u8, 0x88u8, 0x99u8, 0xaau8,
++            0xbbu8, 0xccu8, 0xddu8, 0xeeu8, 0xffu8,
+         ];
+         let c0 = [
+-            0x8eu8,
+-            0xa2u8,
+-            0xb7u8,
+-            0xcau8,
+-            0x51u8,
+-            0x67u8,
+-            0x45u8,
+-            0xbfu8,
+-            0xeau8,
+-            0xfcu8,
+-            0x49u8,
+-            0x90u8,
+-            0x4bu8,
+-            0x49u8,
+-            0x60u8,
+-            0x89u8,
++            0x8eu8, 0xa2u8, 0xb7u8, 0xcau8, 0x51u8, 0x67u8, 0x45u8, 0xbfu8, 0xeau8, 0xfcu8, 0x49u8,
++            0x90u8, 0x4bu8, 0x49u8, 0x60u8, 0x89u8,
+         ];
+         let mut c = super::Crypter::new(
+             super::Cipher::aes_256_ecb(),
+@@ -722,74 +669,17 @@ mod tests {
+     #[test]
+     fn test_aes_256_cbc_decrypt() {
+         let iv = [
+-            4_u8,
+-            223_u8,
+-            153_u8,
+-            219_u8,
+-            28_u8,
+-            142_u8,
+-            234_u8,
+-            68_u8,
+-            227_u8,
+-            69_u8,
+-            98_u8,
+-            107_u8,
+-            208_u8,
+-            14_u8,
+-            236_u8,
+-            60_u8,
++            4_u8, 223_u8, 153_u8, 219_u8, 28_u8, 142_u8, 234_u8, 68_u8, 227_u8, 69_u8, 98_u8,
++            107_u8, 208_u8, 14_u8, 236_u8, 60_u8,
+         ];
+         let data = [
+-            143_u8,
+-            210_u8,
+-            75_u8,
+-            63_u8,
+-            214_u8,
+-            179_u8,
+-            155_u8,
+-            241_u8,
+-            242_u8,
+-            31_u8,
+-            154_u8,
+-            56_u8,
+-            198_u8,
+-            145_u8,
+-            192_u8,
+-            64_u8,
+-            2_u8,
+-            245_u8,
+-            167_u8,
+-            220_u8,
+-            55_u8,
+-            119_u8,
+-            233_u8,
+-            136_u8,
+-            139_u8,
+-            27_u8,
+-            71_u8,
+-            242_u8,
+-            119_u8,
+-            175_u8,
+-            65_u8,
+-            207_u8,
++            143_u8, 210_u8, 75_u8, 63_u8, 214_u8, 179_u8, 155_u8, 241_u8, 242_u8, 31_u8, 154_u8,
++            56_u8, 198_u8, 145_u8, 192_u8, 64_u8, 2_u8, 245_u8, 167_u8, 220_u8, 55_u8, 119_u8,
++            233_u8, 136_u8, 139_u8, 27_u8, 71_u8, 242_u8, 119_u8, 175_u8, 65_u8, 207_u8,
+         ];
+         let ciphered_data = [
+-            0x4a_u8,
+-            0x2e_u8,
+-            0xe5_u8,
+-            0x6_u8,
+-            0xbf_u8,
+-            0xcf_u8,
+-            0xf2_u8,
+-            0xd7_u8,
+-            0xea_u8,
+-            0x2d_u8,
+-            0xb1_u8,
+-            0x85_u8,
+-            0x6c_u8,
+-            0x93_u8,
+-            0x65_u8,
+-            0x6f_u8,
++            0x4a_u8, 0x2e_u8, 0xe5_u8, 0x6_u8, 0xbf_u8, 0xcf_u8, 0xf2_u8, 0xd7_u8, 0xea_u8,
++            0x2d_u8, 0xb1_u8, 0x85_u8, 0x6c_u8, 0x93_u8, 0x65_u8, 0x6f_u8,
+         ];
+         let mut cr = super::Crypter::new(
+             super::Cipher::aes_256_cbc(),
+@@ -864,7 +754,6 @@ mod tests {
+ 
+     #[test]
+     fn test_rc4() {
+-
+         let pt = "0000000000000000000000000000000000000000000000000000000000000000000000000000";
+         let ct = "A68686B04D686AA107BD8D4CAB191A3EEC0A6294BC78B60F65C25CB47BD7BB3A48EFC4D26BE4";
+         let key = "97CD440324DA5FD1F7955C1C13B6B466";
+@@ -890,7 +779,6 @@ mod tests {
+ 
+     #[test]
+     fn test_aes128_ctr() {
+-
+         let pt = "6BC1BEE22E409F96E93D7E117393172AAE2D8A571E03AC9C9EB76FAC45AF8E5130C81C46A35CE411\
+                   E5FBC1191A0A52EFF69F2445DF4F9B17AD2B417BE66C3710";
+         let ct = "874D6191B620E3261BEF6864990DB6CE9806F66B7970FDFF8617187BB9FFFDFF5AE4DF3EDBD5D35E\
+@@ -915,7 +803,6 @@ mod tests {
+ 
+     #[test]
+     fn test_aes128_cfb128() {
+-
+         let pt = "6bc1bee22e409f96e93d7e117393172a";
+         let ct = "3b3fd92eb72dad20333449f8e83cfb4a";
+         let key = "2b7e151628aed2a6abf7158809cf4f3c";
+@@ -926,7 +813,6 @@ mod tests {
+ 
+     #[test]
+     fn test_aes128_cfb8() {
+-
+         let pt = "6bc1bee22e409f96e93d7e117393172aae2d";
+         let ct = "3b79424c9c0dd436bace9e0ed4586a4f32b9";
+         let key = "2b7e151628aed2a6abf7158809cf4f3c";
+@@ -937,7 +823,6 @@ mod tests {
+ 
+     #[test]
+     fn test_aes256_cfb1() {
+-
+         let pt = "6bc1";
+         let ct = "9029";
+         let key = "603deb1015ca71be2b73aef0857d77811f352c073b6108d72d9810a30914dff4";
+@@ -948,7 +833,6 @@ mod tests {
+ 
+     #[test]
+     fn test_aes256_cfb128() {
+-
+         let pt = "6bc1bee22e409f96e93d7e117393172a";
+         let ct = "dc7e84bfda79164b7ecd8486985d3860";
+         let key = "603deb1015ca71be2b73aef0857d77811f352c073b6108d72d9810a30914dff4";
+@@ -959,7 +843,6 @@ mod tests {
+ 
+     #[test]
+     fn test_aes256_cfb8() {
+-
+         let pt = "6bc1bee22e409f96e93d7e117393172aae2d";
+         let ct = "dc1f1a8520a64db55fcc8ac554844e889700";
+         let key = "603deb1015ca71be2b73aef0857d77811f352c073b6108d72d9810a30914dff4";
+@@ -982,7 +865,6 @@ mod tests {
+ 
+     #[test]
+     fn test_bf_ecb() {
+-
+         let pt = "5CD54CA83DEF57DA";
+         let ct = "B1B8CC0B250F09A0";
+         let key = "0131D9619DC1376E";
+@@ -993,7 +875,6 @@ mod tests {
+ 
+     #[test]
+     fn test_bf_cfb64() {
+-
+         let pt = "37363534333231204E6F77206973207468652074696D6520666F722000";
+         let ct = "E73214A2822139CAF26ECF6D2EB9E76E3DA3DE04D1517200519D57A6C3";
+         let key = "0123456789ABCDEFF0E1D2C3B4A59687";
+@@ -1004,7 +885,6 @@ mod tests {
+ 
+     #[test]
+     fn test_bf_ofb() {
+-
+         let pt = "37363534333231204E6F77206973207468652074696D6520666F722000";
+         let ct = "E73214A2822139CA62B343CC5B65587310DD908D0C241B2263C2CF80DA";
+         let key = "0123456789ABCDEFF0E1D2C3B4A59687";
+@@ -1015,7 +895,6 @@ mod tests {
+ 
+     #[test]
+     fn test_des_cbc() {
+-
+         let pt = "54686973206973206120746573742e";
+         let ct = "6f2867cfefda048a4046ef7e556c7132";
+         let key = "7cb66337f3d3c0fe";
+@@ -1026,7 +905,6 @@ mod tests {
+ 
+     #[test]
+     fn test_des_ecb() {
+-
+         let pt = "54686973206973206120746573742e";
+         let ct = "0050ab8aecec758843fe157b4dde938c";
+         let key = "7cb66337f3d3c0fe";
+@@ -1080,10 +958,12 @@ mod tests {
+     fn test_chacha20() {
+         let key = "0000000000000000000000000000000000000000000000000000000000000000";
+         let iv = "00000000000000000000000000000000";
+-        let pt = "000000000000000000000000000000000000000000000000000000000000000000000000000000000\
+-                  00000000000000000000000000000000000000000000000";
+-        let ct = "76b8e0ada0f13d90405d6ae55386bd28bdd219b8a08ded1aa836efcc8b770dc7da41597c5157488d7\
+-                  724e03fb8d84a376a43b8f41518a11cc387b669b2ee6586";
++        let pt =
++            "000000000000000000000000000000000000000000000000000000000000000000000000000000000\
++             00000000000000000000000000000000000000000000000";
++        let ct =
++            "76b8e0ada0f13d90405d6ae55386bd28bdd219b8a08ded1aa836efcc8b770dc7da41597c5157488d7\
++             724e03fb8d84a376a43b8f41518a11cc387b669b2ee6586";
+ 
+         cipher_test(Cipher::chacha20(), pt, ct, key, iv);
+     }
+@@ -1094,12 +974,14 @@ mod tests {
+         let key = "808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9f";
+         let iv = "070000004041424344454647";
+         let aad = "50515253c0c1c2c3c4c5c6c7";
+-        let pt = "4c616469657320616e642047656e746c656d656e206f662074686520636c617373206f66202739393\
+-                  a204966204920636f756c64206f6666657220796f75206f6e6c79206f6e652074697020666f722074\
+-                  6865206675747572652c2073756e73637265656e20776f756c642062652069742e";
+-        let ct = "d31a8d34648e60db7b86afbc53ef7ec2a4aded51296e08fea9e2b5a736ee62d63dbea45e8ca967128\
+-                  2fafb69da92728b1a71de0a9e060b2905d6a5b67ecd3b3692ddbd7f2d778b8c9803aee328091b58fa\
+-                  b324e4fad675945585808b4831d7bc3ff4def08e4b7a9de576d26586cec64b6116";
++        let pt =
++            "4c616469657320616e642047656e746c656d656e206f662074686520636c617373206f66202739393\
++             a204966204920636f756c64206f6666657220796f75206f6e6c79206f6e652074697020666f722074\
++             6865206675747572652c2073756e73637265656e20776f756c642062652069742e";
++        let ct =
++            "d31a8d34648e60db7b86afbc53ef7ec2a4aded51296e08fea9e2b5a736ee62d63dbea45e8ca967128\
++             2fafb69da92728b1a71de0a9e060b2905d6a5b67ecd3b3692ddbd7f2d778b8c9803aee328091b58fa\
++             b324e4fad675945585808b4831d7bc3ff4def08e4b7a9de576d26586cec64b6116";
+         let tag = "1ae10b594f09e26a7e902ecbd0600691";
+ 
+         let mut actual_tag = [0; 16];
+--- cargo-crates/openssl-0.9.24/src/verify.rs.orig	2018-02-12 19:02:00 UTC
++++ cargo-crates/openssl-0.9.24/src/verify.rs
+@@ -14,7 +14,7 @@ bitflags! {
+         const X509_CHECK_FLAG_MULTI_LABEL_WILDCARDS = ffi::X509_CHECK_FLAG_MULTI_LABEL_WILDCARDS;
+         const X509_CHECK_FLAG_SINGLE_LABEL_SUBDOMAINS
+             = ffi::X509_CHECK_FLAG_SINGLE_LABEL_SUBDOMAINS;
+-        /// Requires the `v110` feature and OpenSSL 1.1.0.
++        /// Requires OpenSSL 1.1.0 or 1.1.1 and the corresponding Cargo feature.
+         #[cfg(all(feature = "v110", ossl110))]
+         const X509_CHECK_FLAG_NEVER_CHECK_SUBJECT = ffi::X509_CHECK_FLAG_NEVER_CHECK_SUBJECT;
+     }
+--- cargo-crates/openssl-0.9.24/src/x509/verify.rs.orig	2018-02-12 17:30:05 UTC
++++ cargo-crates/openssl-0.9.24/src/x509/verify.rs
+@@ -1,5 +1,5 @@
+ //! X509 certificate verification
+ //!
+-//! Requires the `v102` or `v110` features and OpenSSL 1.0.2 or 1.1.0.
++//! Requires OpenSSL 1.0.2, 1.1.0, or 1.1.1 and the corresponding Cargo feature.
+ 
+ pub use verify::*;
