@@ -692,6 +692,7 @@
     SUBDIR += py-colormath
     SUBDIR += py-cryptominisat
     SUBDIR += py-cvxopt
+    SUBDIR += py-cvxpy
     SUBDIR += py-cyipopt
     SUBDIR += py-ecos
     SUBDIR += py-fastcluster
