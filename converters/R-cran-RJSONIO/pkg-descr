@@ -12,4 +12,4 @@ and allocates memory efficiently (rather than concatenating because
 of event driven parsing). The result is a significantly faster
 parsing of large JSON documents.
 
-WWW: http://cran.r-project.org/web/packages/RJSONIO/
+WWW: https://cran.r-project.org/web/packages/RJSONIO/
