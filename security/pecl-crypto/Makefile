@@ -15,9 +15,8 @@ BROKEN_armv6=			fails to configure: C compiler cannot create executables
 BROKEN_armv7=			fails to configure: C compiler cannot create executables
 BROKEN_mips=			fails to configure: C compiler cannot create executables
 BROKEN_mips64=			fails to configure: C compiler cannot create executables
-BROKEN_powerpc64=		fails to configure: C compiler cannot create executables
 
-USES=		php:pecl
+USES=		compiler:c++11-lang php:pecl
 CONFIGURE_ARGS=	--with-crypto
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
