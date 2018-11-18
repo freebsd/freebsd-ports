@@ -692,6 +692,7 @@
     SUBDIR += py-cryptominisat
     SUBDIR += py-cvxopt
     SUBDIR += py-cyipopt
+    SUBDIR += py-ecos
     SUBDIR += py-fastcluster
     SUBDIR += py-fastdtw
     SUBDIR += py-ffc

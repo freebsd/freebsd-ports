@@ -1,0 +1,23 @@
+# $FreeBSD$
+
+PORTNAME=	ecos
+DISTVERSION=	2.0.7
+DISTVERSIONSUFFIX=	.post1
+CATEGORIES=	math python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Python package for ECOS: Embedded Cone Solver
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=0.9:science/py-scipy@${PY_FLAVOR}
+
+USES=		python
+USE_PYTHON=	distutils autoplist
+
+.include <bsd.port.mk>

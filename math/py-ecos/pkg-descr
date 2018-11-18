@@ -1,0 +1,9 @@
+Python binding for ECOS, a lightweight conic solver for second-order cone
+programming.
+
+Convex optimization is used in fields as diverse as control and estimation,
+finance, signal processing and image reconstruction.
+
+The C version of the ECOS solver is in math/ecos.
+
+WWW: https://www.embotech.com/ECOS
