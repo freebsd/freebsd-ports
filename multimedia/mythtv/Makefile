@@ -14,6 +14,7 @@ COMMENT?=	MythTV is a homebrew PVR project
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
 ONLY_FOR_ARCHS=	amd64 i386
 
 LIB_DEPENDS=	libmp3lame.so:audio/lame \
