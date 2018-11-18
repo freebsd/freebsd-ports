@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libtidy5.so:www/tidy-html5 \
 		libduktape.so:lang/duktape-lib
 
-USES=		cmake perl5 readline
+USES=		cmake compiler:c11 perl5 readline
 USE_PERL5=	build
 USE_GITHUB=	yes
 
