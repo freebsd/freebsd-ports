@@ -1,0 +1,11 @@
+A wrapper around tarsnap which does two things:
+
+* Lets you define "backup jobs" (tarsnap invocations) in a config file,
+  though on it's own this has little advantage over just using a a
+  shell script.
+* The ability to expire old backups using a Grandfather-father-son
+  backup scheme. This feature can be used in conjunction with tarsnapper
+  backup jobs, or standalone, to be applied to any existing set of
+  tarsnap backup archives, regardless of how they have been created.
+
+WWW: https://github.com/miracle2k/tarsnapper
