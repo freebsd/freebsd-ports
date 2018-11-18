@@ -11,6 +11,11 @@ COMMENT=	AMQP & RabbitMQ command-line tool
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE-MIT
 
+BROKEN_SSL=	openssl111
+BROKEN_SSL_REASON_openssl111=	https://github.com/Antti/rust-amqp/issues/43
+BROKEN_FreeBSD_12=	${BROKEN_SSL_REASON_openssl111}
+BROKEN_FreeBSD_13=	${BROKEN_SSL_REASON_openssl111}
+
 USES=		cargo ssl
 USE_GITHUB=	yes
 
