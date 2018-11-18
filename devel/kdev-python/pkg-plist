@@ -2,8 +2,8 @@ etc/xdg/kdevpythonsupport.categories
 lib/libkdevpythoncompletion.so
 lib/libkdevpythonduchain.so
 lib/libkdevpythonparser.so
-%%QT_PLUGINDIR%%/kdevplatform/30/kdevpdb.so
-%%QT_PLUGINDIR%%/kdevplatform/30/kdevpythonlanguagesupport.so
+%%QT_PLUGINDIR%%/kdevplatform/31/kdevpdb.so
+%%QT_PLUGINDIR%%/kdevplatform/31/kdevpythonlanguagesupport.so
 share/kdevappwizard/templates/django_project.tar.bz2
 share/kdevappwizard/templates/qtdesigner_app.tar.bz2
 share/kdevappwizard/templates/simple_pythonapp.tar.bz2
