@@ -13,6 +13,8 @@ COMMENT=	Xpra gives you persistent remote applications for X
 LICENSE=	GPLv2
 
 BROKEN=		fails to build with cython 0.28
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-12-19
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gtk2>2:x11-toolkits/py-gtk2@${PY_FLAVOR} \
 		${PYNUMPY}

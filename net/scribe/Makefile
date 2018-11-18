@@ -12,6 +12,8 @@ COMMENT=	Aggregating log data streamed in real time
 LICENSE=	APACHE20
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-12-19
 
 BUILD_DEPENDS=	fb303>0:devel/fb303 \
 		thrift:devel/thrift

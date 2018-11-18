@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast factorization of big integers using MPQS and GNFS
 
 BROKEN=		missing build depends
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-12-19
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libecm.a:math/gmp-ecm
 

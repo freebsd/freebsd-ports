@@ -14,6 +14,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		Makefiles use hacks that don't work with recent automake.  Try net/ntopng
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-12-19
 
 LIB_DEPENDS=	libgdbm.so:databases/gdbm \
 		libevent.so:devel/libevent

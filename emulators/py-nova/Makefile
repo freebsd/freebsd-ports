@@ -14,6 +14,8 @@ COMMENT=	OpenStack compute service
 LICENSE=	APACHE20
 
 BROKEN=		depends on conflicting dependencies
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-12-19
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=1.6:devel/py-pbr@${PY_FLAVOR}
 

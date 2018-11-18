@@ -1,6 +1,8 @@
 # $FreeBSD$
 
 BROKEN=		Requires PyQt5 for python3 which is broken at the moment.
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-12-19
 
 PORTNAME=	kajongg
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

@@ -14,6 +14,8 @@ COMMENT=	Application to organize and edit image collections
 LICENSE=	GPLv3
 
 BROKEN=		conflicting dependencies dcraw and ufraw
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2018-12-19
 
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		dcraw:graphics/dcraw \
