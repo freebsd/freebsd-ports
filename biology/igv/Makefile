@@ -2,7 +2,7 @@
 
 PORTNAME=	igv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.15
+DISTVERSION=	2.4.16
 CATEGORIES=	biology java
 MASTER_SITES=	http://software.broadinstitute.org/software/igv/sites/cancerinformatics.org.igv/files/images/:img
 DISTFILES=	tools.png:img
