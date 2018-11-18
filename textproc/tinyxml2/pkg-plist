@@ -4,6 +4,6 @@ lib/cmake/tinyxml2/tinyxml2Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/tinyxml2/tinyxml2Targets.cmake
 lib/libtinyxml2.a
 lib/libtinyxml2.so
-lib/libtinyxml2.so.6
+lib/libtinyxml2.so.7
 lib/libtinyxml2.so.%%PORTVERSION%%
 libdata/pkgconfig/tinyxml2.pc
