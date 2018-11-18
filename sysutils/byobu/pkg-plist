@@ -47,7 +47,6 @@ lib/byobu/date
 lib/byobu/disk
 lib/byobu/disk_io
 lib/byobu/distro
-lib/byobu/ec2_cost
 lib/byobu/entropy
 lib/byobu/fan_speed
 lib/byobu/hostname
@@ -57,7 +56,6 @@ lib/byobu/include/config.py
 lib/byobu/include/constants
 lib/byobu/include/cycle-status
 lib/byobu/include/dirs
-lib/byobu/include/ec2instancespricing.py
 lib/byobu/include/icons
 lib/byobu/include/mondrian
 lib/byobu/include/notify_osd
@@ -76,7 +74,6 @@ lib/byobu/menu
 lib/byobu/network
 lib/byobu/processes
 lib/byobu/raid
-lib/byobu/rcs_cost
 lib/byobu/reboot_required
 lib/byobu/release
 lib/byobu/services
