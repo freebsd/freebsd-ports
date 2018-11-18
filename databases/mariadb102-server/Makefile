@@ -215,4 +215,12 @@ post-patch:
 		${WRKSRC}/cmake/os/DragonFly.cmake
 .endif
 
+# Fix build failure in mbstream, see https://jira.mariadb.org/browse/MDEV-14072 	 
+post-configure-INNOBASE-on: 	 
+	${REINPLACE_CMD} -e 's| ${PREFIX}/lib/liblz4.so\(.* ${PREFIX}/lib/liblz4.so.*\)|\1|' \
+		-e 's| ${PREFIX}/lib/liblzo2.so\(.* ${PREFIX}/lib/liblzo2.so.*\)|\1|' \
+		-e 's| ${PREFIX}/lib/libsnappy.so\(.* ${PREFIX}/lib/libsnappy.so\)|\1|' \
+		-e 's| -llzma\(.* -llzma\)|\1|;s| -lbz2\(.* -lbz2\)|\1|;' \
+		${WRKSRC}/extra/mariabackup/CMakeFiles/mbstream.dir/link.txt
+
 .include <bsd.port.post.mk>
