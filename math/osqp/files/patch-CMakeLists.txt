@@ -1,0 +1,71 @@
+--- CMakeLists.txt.orig	2018-09-26 17:51:55 UTC
++++ CMakeLists.txt
+@@ -296,28 +296,32 @@ endif (R_LANG)
+ add_subdirectory(lin_sys)
+ 
+ # Static library
+-add_library (osqpstatic STATIC ${osqp_src} ${osqp_headers} ${linsys_solvers})
+-# Give same name to static library output
+-set_target_properties(osqpstatic PROPERTIES OUTPUT_NAME osqp)
++if (BUILD_STATIC_LIBS)
++    add_library (osqpstatic STATIC ${osqp_src} ${osqp_headers} ${linsys_solvers})
++    # Give same name to static library output
++    set_target_properties(osqpstatic PROPERTIES OUTPUT_NAME osqp)
+ 
+-# Include directories for linear system solvers
+-target_include_directories(osqpstatic PRIVATE ${linsys_solvers_includes})
++    # Include directories for linear system solvers
++    target_include_directories(osqpstatic PRIVATE ${linsys_solvers_includes})
+ 
+-# Declare include directories for the cmake exported target
+-target_include_directories(osqpstatic
+-                           PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+-                                  "$<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CMAKE_INSTALL_INCLUDEDIR}/osqp>")
++    # Declare include directories for the cmake exported target
++    target_include_directories(osqpstatic
++                               PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
++                                      "$<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CMAKE_INSTALL_INCLUDEDIR}/osqp>")
++endif()
+ 
+ # Install Static Library
+ # ----------------------------------------------
+ 
+ include(GNUInstallDirs)
+ 
+-install(TARGETS osqpstatic
+-        EXPORT  ${PROJECT_NAME}
+-        ARCHIVE       DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+-        LIBRARY       DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+-        RUNTIME       DESTINATION "${CMAKE_INSTALL_BINDIR}")
++if (BUILD_STATIC_LIBS)
++    install(TARGETS osqpstatic
++            EXPORT  ${PROJECT_NAME}
++            ARCHIVE       DESTINATION "${CMAKE_INSTALL_LIBDIR}"
++            LIBRARY       DESTINATION "${CMAKE_INSTALL_LIBDIR}"
++            RUNTIME       DESTINATION "${CMAKE_INSTALL_BINDIR}")
++endif()
+ 
+ 
+ # Install Headers
+@@ -355,8 +359,10 @@ if (NOT PYTHON AND NOT MATLAB AND NOT R_
+             RUNTIME       DESTINATION "${CMAKE_INSTALL_BINDIR}")
+ 
+     # Create demo executable (linked to static library)
+-    add_executable (osqp_demo ${PROJECT_SOURCE_DIR}/examples/osqp_demo.c)
+-    target_link_libraries (osqp_demo osqpstatic)
++    if (BUILD_EXAMPLES)
++        add_executable (osqp_demo ${PROJECT_SOURCE_DIR}/examples/osqp_demo.c)
++        target_link_libraries (osqp_demo osqp)
++    endif()
+ 
+ endif (NOT PYTHON AND NOT MATLAB AND NOT R_LANG)
+ 
+@@ -449,7 +455,7 @@ if (UNITTESTS)
+ 		${PROJECT_SOURCE_DIR}/tests/minunit.h
+                 ${test_headers}
+                 ${codegen_test_headers})
+-    target_link_libraries (osqp_tester osqpstatic)
++    target_link_libraries (osqp_tester osqp)
+ 
+     # Add testing
+     include(CTest)

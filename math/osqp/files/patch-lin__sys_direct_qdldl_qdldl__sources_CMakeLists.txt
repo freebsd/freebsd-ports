@@ -1,0 +1,66 @@
+--- lin_sys/direct/qdldl/qdldl_sources/CMakeLists.txt.orig	2018-11-18 21:01:04 UTC
++++ lin_sys/direct/qdldl/qdldl_sources/CMakeLists.txt
+@@ -98,25 +98,29 @@ target_include_directories(qdldlobject P
+ # ----------------------------------------------
+ 
+ # Static library
+-add_library (qdldlstatic STATIC ${qdldl_src} ${qdldl_headers})
+-# Give same name to static library output
+-set_target_properties(qdldlstatic PROPERTIES OUTPUT_NAME qdldl)
++if (BUILD_STATIC_LIBS)
++    add_library (qdldlstatic STATIC ${qdldl_src} ${qdldl_headers})
++    # Give same name to static library output
++    set_target_properties(qdldlstatic PROPERTIES OUTPUT_NAME qdldl)
+ 
+-# Declare include directories for the cmake exported target
+-target_include_directories(qdldlstatic
+-                           PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+-                                  "$<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CMAKE_INSTALL_INCLUDEDIR}/qdldl>")
++    # Declare include directories for the cmake exported target
++    target_include_directories(qdldlstatic
++                               PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
++                                      "$<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CMAKE_INSTALL_INCLUDEDIR}/qdldl>")
++endif()
+ 
+ # Install Static Library
+ # ----------------------------------------------
+ 
+ include(GNUInstallDirs)
+ 
+-install(TARGETS qdldlstatic
+-        EXPORT  ${PROJECT_NAME}
+-        ARCHIVE       DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+-        LIBRARY       DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+-        RUNTIME       DESTINATION "${CMAKE_INSTALL_BINDIR}")
++if (BUILD_STATIC_LIBS)
++    install(TARGETS qdldlstatic
++            EXPORT  ${PROJECT_NAME}
++            ARCHIVE       DESTINATION "${CMAKE_INSTALL_LIBDIR}"
++            LIBRARY       DESTINATION "${CMAKE_INSTALL_LIBDIR}"
++            RUNTIME       DESTINATION "${CMAKE_INSTALL_BINDIR}")
++endif()
+ 
+ 
+ # Install Headers
+@@ -142,8 +146,10 @@ install(TARGETS qdldl
+ 	RUNTIME       DESTINATION "${CMAKE_INSTALL_BINDIR}")
+ 
+ # Create demo executable (linked to static library)
+-add_executable (qdldl_example ${PROJECT_SOURCE_DIR}/examples/c/example.c)
+-target_link_libraries (qdldl_example qdldlstatic)
++if (BUILD_ECAMPLES)
++    add_executable (qdldl_example ${PROJECT_SOURCE_DIR}/examples/c/example.c)
++    target_link_libraries (qdldl_example qdldl)
++endif()
+ 
+ 
+ # Create CMake packages for the build directory
+@@ -200,7 +206,7 @@ if (UNITTESTS)
+     add_executable(qdldl_tester
+                 ${PROJECT_SOURCE_DIR}/tests/qdldl_tester.c ${PROJECT_SOURCE_DIR}/tests/minunit.h
+                 ${test_headers})
+-    target_link_libraries (qdldl_tester qdldlstatic)
++    target_link_libraries (qdldl_tester qdldl)
+ 
+     # Add testing
+     include(CTest)
