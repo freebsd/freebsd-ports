@@ -21,7 +21,7 @@ RUN_DEPENDS=	gupnp>=0.19.0:net/gupnp
 CONFIGURE_ARGS=	--enable-introspection \
 		--enable-gstreamer-metadata-backend
 
-USES=		gmake libtool pathfix pkgconfig tar:xz
+USES=		gmake gnome libtool pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build libxml2
 USE_GSTREAMER1=	yes
 GNU_CONFIGURE=	yes
