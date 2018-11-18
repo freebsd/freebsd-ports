@@ -7,4 +7,7 @@ s.t. A*x = b
 
 where the last inequality is generalized, i.e. h - G*x belongs to the cone K.
 
-WWW: https://github.com/embotech/ecos
+Convex optimization is used in fields as diverse as control and estimation,
+finance, signal processing and image reconstruction.
+
+WWW: https://www.embotech.com/ECOS
