@@ -1,0 +1,8 @@
+SCS (splitting conic solver) is a numerical optimization package for solving
+large-scale convex cone problems, based on our paper Conic Optimization via
+Operator Splitting and Homogeneous Self-Dual Embedding. It is written in C and
+can be used in other C, C++, Python, Matlab, R, Julia, programs via the linked
+interfaces. It can also be called as a solver from convex optimization toolboxes
+CVX (3.0 or later), CVXPY, Convex.jl, and Yalmip.
+
+WWW: https://github.com/cvxgrp/scs
