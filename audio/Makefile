@@ -94,6 +94,7 @@
     SUBDIR += creox
     SUBDIR += crip
     SUBDIR += csound
+    SUBDIR += csoundqt
     SUBDIR += ctronome
     SUBDIR += cue2toc
     SUBDIR += cueplayer
