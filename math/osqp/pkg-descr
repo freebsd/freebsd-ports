@@ -1,0 +1,9 @@
+OSQP uses a specialized ADMM-based first-order method with custom sparse linear
+algebra routines that exploit structure in problem data.
+
+The algorithm is absolutely division free after the setup and it requires no
+assumptions on problem data (the problem only needs to be convex).
+
+OSQP is self-contained and requires no external library to run.
+
+WWW: https://osqp.org/
