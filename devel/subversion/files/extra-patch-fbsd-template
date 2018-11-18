@@ -1,5 +1,5 @@
---- subversion/svn/util.c.orig	2015-02-28 13:37:27.000000000 +0300
-+++ subversion/svn/util.c	2016-03-19 16:53:13.016472654 +0300
+--- subversion/svn/util.c.orig	2015-02-28 10:37:27 UTC
++++ subversion/svn/util.c
 @@ -66,6 +66,9 @@
  #include "private/svn_client_private.h"
  #include "private/svn_cmdline_private.h"
@@ -10,7 +10,7 @@
  
  
  
-@@ -331,6 +334,71 @@
+@@ -331,6 +334,72 @@ truncate_buffer_at_prefix(apr_size_t *new_len,
  }
  
  
@@ -32,6 +32,7 @@
 +  "Relnotes:",
 +  "Security:",
 +  "Sponsored by:",
++  "Pull Request:",
 +  "Differential Revision:",
 +};
 +
@@ -82,15 +83,15 @@
  #define EDITOR_EOF_PREFIX  _("--This line, and those below, will be ignored--")
  
  svn_error_t *
-@@ -343,11 +411,56 @@
+@@ -343,11 +412,58 @@ svn_cl__get_log_message(const char **log_msg,
    svn_stringbuf_t *default_msg = NULL;
    struct log_msg_baton *lmb = baton;
    svn_stringbuf_t *message = NULL;
 +  svn_config_t *cfg;
 +  const char *mfc_after, *sponsored_by;
-+
-+  cfg = lmb->config ? svn_hash_gets(lmb->config, SVN_CONFIG_CATEGORY_CONFIG) : NULL;
  
++  cfg = lmb->config ? svn_hash_gets(lmb->config, SVN_CONFIG_CATEGORY_CONFIG) : NULL;
++
    /* Set default message.  */
    default_msg = svn_stringbuf_create(APR_EOL_STR, pool);
 +  svn_stringbuf_appendcstr(default_msg, APR_EOL_STR);
@@ -118,6 +119,7 @@
 +  if (sponsored_by != NULL)
 +	  svn_stringbuf_appendcstr(default_msg, sponsored_by);
 +  svn_stringbuf_appendcstr(default_msg, APR_EOL_STR);
++  svn_stringbuf_appendcstr(default_msg, "Pull Request:\t" APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "Differential Revision:\t" APR_EOL_STR);
    svn_stringbuf_appendcstr(default_msg, EDITOR_EOF_PREFIX);
 -  svn_stringbuf_appendcstr(default_msg, APR_EOL_STR APR_EOL_STR);
@@ -134,13 +136,14 @@
 +  svn_stringbuf_appendcstr(default_msg, "> Relnotes:                 Set to 'yes' for mention in release notes." APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "> Security:                 Vulnerability reference (one per line) or description." APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "> Sponsored by:             If the change was sponsored by an organization." APR_EOL_STR);
++  svn_stringbuf_appendcstr(default_msg, "> Pull Request:             https://github.com/freebsd/freebsd/pull/### (*full* GitHub URL needed)." APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "> Differential Revision:    https://reviews.freebsd.org/D### (*full* phabric URL needed)." APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, "> Empty fields above will be automatically removed." APR_EOL_STR);
 +  svn_stringbuf_appendcstr(default_msg, APR_EOL_STR);
  
    *tmp_file = NULL;
    if (lmb->message)
-@@ -362,6 +475,7 @@
+@@ -362,6 +478,7 @@ svn_cl__get_log_message(const char **log_msg,
        /* Strip off the EOF marker text and the junk that follows it. */
        truncate_buffer_at_prefix(&(log_msg_str->len), (char *)log_msg_str->data,
                                  EDITOR_EOF_PREFIX);
@@ -148,7 +151,7 @@
  
        *log_msg = log_msg_str->data;
        return SVN_NO_ERROR;
-@@ -472,6 +586,13 @@
+@@ -472,6 +589,13 @@ svn_cl__get_log_message(const char **log_msg,
        if (message)
          truncate_buffer_at_prefix(&message->len, message->data,
                                    EDITOR_EOF_PREFIX);

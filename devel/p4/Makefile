@@ -3,7 +3,7 @@
 
 PORTNAME=	p4
 PORTVERSION=	${YEAR}.${MAJOR}.${MINOR}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 # Perforce stupidly rerolls their distfiles on a regular basis, updating the
 # files' timestamps when they do, which changes the zip file's checksum.  Work
