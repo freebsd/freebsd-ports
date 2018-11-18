@@ -5,7 +5,7 @@ PORTNAME=	mod_cloudflare
 PORTVERSION=	0.0.2016.6.0
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Cloudflare fork of mod_remoteip
 
 LICENSE=	APACHE20
