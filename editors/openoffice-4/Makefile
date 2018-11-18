@@ -3,9 +3,8 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	10
 CATEGORIES=	editors java
-MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/sources \
+MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
 		LOCAL/truckman/openoffice:extsrc
 .if defined(LANG_PKGNAME)
@@ -96,10 +95,9 @@ RUN_DEPENDS=								\
 		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:x11-fonts/crosextrafonts-carlito-ttf \
 		${LOCALBASE}/share/fonts/ChromeOS/Arimo-Bold.ttf:x11-fonts/croscorefonts-fonts-ttf
 
-USES=		autoreconf bison compiler:c++11-lib cpe \
-		desktop-file-utils \
-		gettext-runtime gmake iconv jpeg perl5 pkgconfig python:2.7 \
-		shared-mime-info ssl tar:bzip2
+USES=		autoreconf bison compiler:c++11-lib cpe desktop-file-utils \
+		gettext-runtime gl gmake gnome iconv jpeg perl5 pkgconfig \
+		python:2.7 shared-mime-info ssl tar:bzip2
 USE_GL=		gl glu
 USE_GNOME=	gtk20 libxslt libidl glib20
 USE_JAVA=	yes
@@ -115,10 +113,10 @@ CONFLICTS_INSTALL=	apache-openoffice-devel-*
 
 AOOVERSION1=	4
 AOOVERSION2=	1
-AOOVERSION3=	5
+AOOVERSION3=	6
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
-AOOTAG=		AOO415m1\(Build:9789\)
-SVNREVISION=	1817496
+AOOTAG=		AOO416m1\(Build:9790\)
+SVNREVISION=	1844436
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
 AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
