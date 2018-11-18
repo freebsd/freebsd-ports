@@ -95,16 +95,16 @@ Index: configure
      echo "Cannot overwrite file $CONFIG! Please delete it."
      exit 1
  fi
-@@ -159,7 +159,7 @@
- 
+@@ -160,7 +160,7 @@
  find_pkgconfig() {
      local LIBNAME=$1
--    if pkg-config --exists "$LIBNAME" &> /dev/null; then
-+    if pkg-config --exists "$LIBNAME" >/dev/null; then
-         cflags "$(pkg-config --cflags "$LIBNAME")"
-         lflags "$(pkg-config --libs "$LIBNAME")"
-         LIBRARY_FOUND_VERSION=$(pkg-config --modversion "$LIBNAME")
-@@ -240,9 +240,13 @@
+     PKG_CONFIG=${PKG_CONFIG:-pkg-config}
+-    if $PKG_CONFIG --exists "$LIBNAME" &> /dev/null; then
++    if $PKG_CONFIG --exists "$LIBNAME" > /dev/null; then
+         cflags "$($PKG_CONFIG --cflags "$LIBNAME")"
+         lflags "$($PKG_CONFIG --libs "$LIBNAME")"
+         LIBRARY_FOUND_VERSION=$($PKG_CONFIG --modversion "$LIBNAME")
+@@ -241,9 +241,13 @@
          return 0
      fi
  
@@ -121,7 +121,7 @@ Index: configure
              return 0
          fi
      done
-@@ -299,12 +303,8 @@
+@@ -300,12 +304,8 @@
  # SSE
  if [ "$SSE" = 'auto' ]; then
      SSE=0
@@ -136,7 +136,7 @@ Index: configure
  fi
  
  if [ "$SSE" -eq 1 ]; then
-@@ -327,9 +327,8 @@
+@@ -328,9 +328,8 @@
      else
          OPENMPFLAGS="-fopenmp"
      fi
@@ -148,7 +148,7 @@ Index: configure
          cflags "$OPENMPFLAGS"
          lflags "$OPENMPFLAGS"
          status "OpenMP" "yes"
-@@ -344,38 +343,35 @@
+@@ -345,38 +344,35 @@
  fi
  
  # Cocoa
@@ -199,7 +199,7 @@ Index: configure
      SOLIBSUFFIX=dll
  else
      SOLIBSUFFIX=so
-@@ -416,7 +412,7 @@
+@@ -417,7 +413,7 @@
  if echo "#include \"png.h\"
      int main(){
      return !png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
@@ -208,7 +208,7 @@ Index: configure
      status "libpng" "custom flags"
      HAS_LIBPNG=1
  fi
-@@ -427,7 +423,7 @@
+@@ -428,7 +424,7 @@
      if [ -n "$PNGH" ]; then
          PNGH_STRING=$(pngh_string "$PNGH")
          PNGH_MAJMIN=$(pngh_majmin "$PNGH")
@@ -217,7 +217,7 @@ Index: configure
              LIBPNGA=$(find_f "$LIBPNG_DIR" "libpng${PNGH_MAJMIN}.a")
              if [ -z "$LIBPNGA" ]; then
                  LIBPNGA=$(find_f "$LIBPNG_DIR" "libpng.a")
-@@ -446,14 +442,19 @@
+@@ -447,14 +443,19 @@
      if find_pkgconfig libpng; then
          HAS_LIBPNG=1
      else
@@ -242,7 +242,7 @@ Index: configure
                      if [ -n "$LIBPNGSO" ]; then
                          cflags "-I${PNGH%/*}"
                          lflags "-L${LIBPNGSO%/*} -lpng${PNGH_MAJMIN}"
-@@ -467,7 +468,7 @@
+@@ -468,7 +469,7 @@
      fi
  fi
  if [ "$HAS_LIBPNG" -eq 0 ]; then
@@ -251,7 +251,7 @@ Index: configure
          LIBPNG_CMD='`brew install libpng`'
      else
          LIBPNG_CMD='`apt-get install libpng16-dev` or `apt-get install libpng-dev` or `yum install libpng-devel`'
-@@ -534,6 +535,6 @@
+@@ -535,6 +536,6 @@
  SOLIBSUFFIX = $SOLIBSUFFIX
  STATICLIBDEPS = $STATICLIBDEPS
  LIQSRCDIR = $LIQSRCDIR
