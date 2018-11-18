@@ -11,6 +11,7 @@ COMMENT=	Extra OpenFX plugins for Natron
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build
 ONLY_FOR_ARCHS=	amd64
 BUILD_DEPENDS=	opencl>=0:devel/opencl
 LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio \
