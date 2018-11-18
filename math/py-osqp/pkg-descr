@@ -1,0 +1,6 @@
+The python binfing for OSQP, the operator splitting QP solver.
+
+OSQP uses a specialized ADMM-based first-order method with custom sparse
+linear algebra routines that exploit structure in problem data.
+
+WWW: https://osqp.org
