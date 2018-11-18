@@ -49,7 +49,8 @@ CARGO_CRATES=	ansi_term-0.9.0 \
 		error-chain-0.10.0 \
 		flate2-0.2.20 \
 		fnv-1.0.5 \
-		foreign-types-0.2.0 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
 		gcc-0.3.54 \
 		getopts-0.2.15 \
 		idna-0.1.4 \
@@ -59,6 +60,7 @@ CARGO_CRATES=	ansi_term-0.9.0 \
 		itoa-0.3.4 \
 		kernel32-sys-0.2.2 \
 		lazy_static-0.2.8 \
+		lazy_static-1.2.0 \
 		lazycell-0.5.1 \
 		libc-0.2.40 \
 		linked-hash-map-0.4.2 \
@@ -74,8 +76,8 @@ CARGO_CRATES=	ansi_term-0.9.0 \
 		num-integer-0.1.35 \
 		num-iter-0.1.34 \
 		num-traits-0.1.40 \
-		openssl-0.9.21 \
-		openssl-sys-0.9.21 \
+		openssl-0.9.24 \
+		openssl-sys-0.9.39 \
 		percent-encoding-1.0.0 \
 		pkg-config-0.3.9 \
 		pulldown-cmark-0.0.15 \
