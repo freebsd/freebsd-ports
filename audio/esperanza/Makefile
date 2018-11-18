@@ -14,6 +14,8 @@ COMMENT=	Advanced Qt4 XMMS2 client
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.GPL
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libxmmsclient++.so:audio/cpp-xmms2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}+git${PORTVERSION:E}
