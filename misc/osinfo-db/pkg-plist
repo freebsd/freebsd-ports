@@ -374,6 +374,7 @@ share/osinfo/os/netbsd.org/netbsd-7.0.xml
 share/osinfo/os/netbsd.org/netbsd-7.1.1.xml
 share/osinfo/os/netbsd.org/netbsd-7.1.2.xml
 share/osinfo/os/netbsd.org/netbsd-7.1.xml
+share/osinfo/os/netbsd.org/netbsd-7.2.xml
 share/osinfo/os/netbsd.org/netbsd-8.0.xml
 share/osinfo/os/novell.com/netware-4.xml
 share/osinfo/os/novell.com/netware-5.xml
@@ -458,6 +459,7 @@ share/osinfo/os/redhat.com/rhel-5.6.xml
 share/osinfo/os/redhat.com/rhel-5.7.xml
 share/osinfo/os/redhat.com/rhel-5.8.xml
 share/osinfo/os/redhat.com/rhel-5.9.xml
+share/osinfo/os/redhat.com/rhel-6-unknown.xml
 share/osinfo/os/redhat.com/rhel-6.0.xml
 share/osinfo/os/redhat.com/rhel-6.1.xml
 share/osinfo/os/redhat.com/rhel-6.10.xml
@@ -469,6 +471,7 @@ share/osinfo/os/redhat.com/rhel-6.6.xml
 share/osinfo/os/redhat.com/rhel-6.7.xml
 share/osinfo/os/redhat.com/rhel-6.8.xml
 share/osinfo/os/redhat.com/rhel-6.9.xml
+share/osinfo/os/redhat.com/rhel-7-unknown.xml
 share/osinfo/os/redhat.com/rhel-7.0.xml
 share/osinfo/os/redhat.com/rhel-7.1.xml
 share/osinfo/os/redhat.com/rhel-7.2.xml
@@ -476,11 +479,14 @@ share/osinfo/os/redhat.com/rhel-7.3.xml
 share/osinfo/os/redhat.com/rhel-7.4.xml
 share/osinfo/os/redhat.com/rhel-7.5.xml
 share/osinfo/os/redhat.com/rhel-7.6.xml
+share/osinfo/os/redhat.com/rhel-8-unknown.xml
+share/osinfo/os/redhat.com/rhel-8.0.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.1.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.2.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.3.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.4.xml
+share/osinfo/os/redhat.com/rhel-unknown.xml
 share/osinfo/os/redhat.com/rhl-1.0.xml
 share/osinfo/os/redhat.com/rhl-1.1.xml
 share/osinfo/os/redhat.com/rhl-2.0.xml
@@ -507,7 +513,10 @@ share/osinfo/os/sun.com/solaris-9.xml
 share/osinfo/os/suse.com/caasp-1.0.xml
 share/osinfo/os/suse.com/caasp-2.0.xml
 share/osinfo/os/suse.com/caasp-3.0.xml
+share/osinfo/os/suse.com/caasp-unknown.xml
+share/osinfo/os/suse.com/sle-15-unknown.xml
 share/osinfo/os/suse.com/sle-15.xml
+share/osinfo/os/suse.com/sle-unknown.xml
 share/osinfo/os/suse.com/sled-10.1.xml
 share/osinfo/os/suse.com/sled-10.2.xml
 share/osinfo/os/suse.com/sled-10.3.xml
@@ -518,6 +527,7 @@ share/osinfo/os/suse.com/sled-11.2.xml
 share/osinfo/os/suse.com/sled-11.3.xml
 share/osinfo/os/suse.com/sled-11.4.xml
 share/osinfo/os/suse.com/sled-11.xml
+share/osinfo/os/suse.com/sled-12-unknown.xml
 share/osinfo/os/suse.com/sled-12.1.xml
 share/osinfo/os/suse.com/sled-12.2.xml
 share/osinfo/os/suse.com/sled-12.3.xml
@@ -533,6 +543,7 @@ share/osinfo/os/suse.com/sles-11.2.xml
 share/osinfo/os/suse.com/sles-11.3.xml
 share/osinfo/os/suse.com/sles-11.4.xml
 share/osinfo/os/suse.com/sles-11.xml
+share/osinfo/os/suse.com/sles-12-unknown.xml
 share/osinfo/os/suse.com/sles-12.1.xml
 share/osinfo/os/suse.com/sles-12.2.xml
 share/osinfo/os/suse.com/sles-12.3.xml
@@ -540,6 +551,7 @@ share/osinfo/os/suse.com/sles-12.xml
 share/osinfo/os/suse.com/sles-9.xml
 share/osinfo/os/system76.com/popos-17.10.xml
 share/osinfo/os/system76.com/popos-18.04.xml
+share/osinfo/os/system76.com/popos-18.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-10.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-10.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-11.04.xml
@@ -558,6 +570,7 @@ share/osinfo/os/ubuntu.com/ubuntu-17.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-17.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-18.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-18.10.xml
+share/osinfo/os/ubuntu.com/ubuntu-19.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-4.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.10.xml
