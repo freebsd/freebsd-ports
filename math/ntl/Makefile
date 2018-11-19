@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ntl
-PORTVERSION=	11.3.1
+PORTVERSION=	11.3.2
 CATEGORIES=	math
 MASTER_SITES=	http://www.shoup.net/ntl/
 
@@ -22,8 +22,12 @@ CONFIGURE_ARGS+=AR="${AR}" CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		PREFIX="${PREFIX}" RANLIB="${RANLIB}" SHARED=on
 
 CFLAGS+=	-fPIC
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+WRKSRC_SUBDIR=	src
 MAKEFILE=	makefile
+TEST_TARGET=	check
+
+NTLDOCSDIR=	share/doc/NTL
+PLIST_SUB=	NTLDOCS=${NTLDOCSDIR}
 
 OPTIONS_DEFINE=		DOCS GMP
 OPTIONS_DEFAULT=	GMP
@@ -32,18 +36,11 @@ GMP_DESC=		Arbitrary precision arithmetic(Faster)
 GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 GMP_CONFIGURE_OFF=	NTL_GMP_LIP=off
 
-NTLDOCSDIR=		share/doc/NTL
-PLIST_SUB=		NTLDOCS=${NTLDOCSDIR}
-
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/* ${STAGEDIR}${DOCSDIR}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libntl.so.*
-
-test: build
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} \
-		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
 .include <bsd.port.mk>
