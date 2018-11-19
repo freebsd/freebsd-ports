@@ -1,3 +1,3 @@
-TIMESTAMP = 1514887912
-SHA256 (tcl8.6.8-src.tar.gz) = c43cb0c1518ce42b00e7c8f6eaddd5195c53a98f94adc717234a65cbcfd3f96a
-SIZE (tcl8.6.8-src.tar.gz) = 9793786
+TIMESTAMP = 1542617242
+SHA256 (tcl-core8.6.9-src.tar.gz) = ae52393dca82d5bbc8cad9b95fcf0cf8375603480ee31e7a480a951ab7ecbb4e
+SIZE (tcl-core8.6.9-src.tar.gz) = 5932010
