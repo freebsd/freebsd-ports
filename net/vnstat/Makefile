@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vnstat
-PORTVERSION=	1.15
+PORTVERSION=	2.0
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	https://humdi.net/vnstat/ \
@@ -14,6 +14,8 @@ COMMENT=	Console-based network traffic monitor
 LICENSE=	GPLv2
 
 USE_RC_SUBR=	vnstat
+
+LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
