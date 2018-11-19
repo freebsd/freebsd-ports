@@ -1,3 +1,4 @@
+bin/perltidy
 %%SITE_PERL%%/Perl/Tidy.pm
 %%SITE_PERL%%/Perl/Tidy.pod
 %%SITE_PERL%%/Perl/Tidy/Debugger.pm
@@ -17,5 +18,6 @@
 %%SITE_PERL%%/Perl/Tidy/VerticalAligner.pm
 %%SITE_PERL%%/Perl/Tidy/VerticalAligner/Alignment.pm
 %%SITE_PERL%%/Perl/Tidy/VerticalAligner/Line.pm
+%%PERL5_MAN1%%/perltidy.1.gz
 %%PERL5_MAN3%%/Perl::Tidy.3.gz
 %%PERL5_MAN3%%/Perl::Tidy::Formatter.3.gz
