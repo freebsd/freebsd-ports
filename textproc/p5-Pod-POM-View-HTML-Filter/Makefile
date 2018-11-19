@@ -20,4 +20,6 @@ RUN_DEPENDS=	p5-Pod-POM>=0:textproc/p5-Pod-POM \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
