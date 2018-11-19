@@ -22,7 +22,7 @@ BB_PROJECT=	ign-tools
 BB_COMMIT=	e775d6356667
 
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
-NO_ARCH=	src/ign.in
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/ign \
 		lib/cmake/ignition-tools/ignition-tools-config.cmake \
