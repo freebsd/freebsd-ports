@@ -14,7 +14,7 @@ COMMENT=	Module music library based on OpenMPT
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake libtool pkgconfig
+USES=		compiler:c++11-lang gmake libtool pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
