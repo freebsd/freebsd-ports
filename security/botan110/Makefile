@@ -3,6 +3,7 @@
 
 PORTNAME=	botan
 DISTVERSION=	1.10.17
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	110
@@ -24,11 +25,12 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.py
 CONFIGURE_ARGS=	--prefix=${PREFIX} --cc ${CHOSEN_COMPILER_TYPE} \
 		--with-tr1-implementation=system --with-bzip2 --with-zlib
-MAKE_ARGS=	CXX="${CXX}" LIB_OPT="${CXXFLAGS}"
+MAKE_ARGS=	CXX="${CXX}" CHECK_OPT="${CXXFLAGS}" LIB_OPT="${CXXFLAGS}"
 USE_LDCONFIG=	yes
 PLIST_FILES=	bin/botan-config-1.10 lib/libbotan-1.10.a lib/libbotan-1.10.so lib/libbotan-1.10.so.1 \
 		lib/libbotan-1.10.so.1.17 libdata/pkgconfig/botan-1.10.pc
 SHEBANG_FILES=	configure.py
+TEST_TARGET=	check
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*
@@ -56,5 +58,8 @@ post-patch-DOCS-off:
 
 post-install:
 	@(cd "${STAGEDIR}${PREFIX}"; ${FIND} -s include/botan-1.10 -not -type d) >> ${TMPPLIST}
+
+post-test:
+	cd ${WRKSRC} && ${SETENV} LD_LIBRARY_PATH="." ./check --test
 
 .include <bsd.port.post.mk>
