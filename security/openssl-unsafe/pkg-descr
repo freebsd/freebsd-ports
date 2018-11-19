@@ -16,6 +16,6 @@ This version of OpenSSL enables all possible features of OpenSSL.
 The libraries and binaries in this port must be considered vulnerable
 with known exploits available. Use for testing/scanning only.
 
-WWW: http://www.openssl.org/
+WWW: https://www.openssl.org/
 WWW: https://github.com/PeterMosmans/openssl
 WWW: https://onwebsecurity.com/pages/openssl.html
