@@ -18,7 +18,6 @@ LIB_DEPENDS=	libgle.so:graphics/gle
 
 USE_XORG=	x11 xpm
 USE_GL=		gl
-USE_PERL5=	run
 USE_GNOME=	libglade2
 USES+=		dos2unix gettext gmake jpeg perl5 pathfix pkgconfig
 GNU_CONFIGURE=	yes

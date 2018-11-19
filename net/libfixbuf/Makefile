@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pathfix pkgconfig
+USES=		libtool pathfix perl5 pkgconfig
 USE_GNOME=	glib20
+USE_PERL5=	build
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	glib
 PORTVERSION=	2.56.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -28,6 +29,7 @@ USE_LDCONFIG=	yes
 USES+=		compiler:c11 gettext gmake gnome iconv:wchar_t libtool \
 		localbase pathfix perl5 pkgconfig python shebangfix
 USE_PYTHON=	py3kplist
+USE_PERL5=	build
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
 		--enable-static=yes \
 		--with-pcre=system \

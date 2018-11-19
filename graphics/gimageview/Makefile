@@ -15,9 +15,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gmake jpeg libtool localbase pkgconfig
+USES=		gmake jpeg libtool localbase perl5 pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
+USE_PERL5=	build
 USE_XORG=	ice xinerama
 CONFIGURE_ARGS=	--with-gtk2
 INSTALL_TARGET=	install-strip
