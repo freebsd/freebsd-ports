@@ -1,18 +1,13 @@
---- Makefile.in.orig	2013-11-21 20:49:06 UTC
-+++ Makefile.in
-@@ -222,11 +222,12 @@ install-doc: doc
- 	@$(INSTALL_DATA_DIR) $(DESTDIR)$(mandir)/mann
- 	@echo "Installing documentation in $(DESTDIR)$(mandir)"
- 	@cd $(srcdir)/doc; for i in *.n; do \
-+	    sfxname=`basename $$i | sed -e 's|.n$$|.i4|'`; \
- 	    echo "Installing $$i"; \
--	    rm -f $(DESTDIR)$(mandir)/mann/`basename $$i`; \
-+	    rm -f $(DESTDIR)$(mandir)/mann/$$sfxname; \
- 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
--		$$i > $(DESTDIR)$(mandir)/mann/$$i; \
--	    chmod 444 $(DESTDIR)$(mandir)/mann/$$i; \
-+		$$i > $(DESTDIR)$(mandir)/mann/$$sfxname; \
-+	    chmod 444 $(DESTDIR)$(mandir)/mann/$$sfxname; \
+--- Makefile.in.orig	2018-11-19 12:13:00.434900000 +0000
++++ Makefile.in	2018-11-19 12:14:16.591273000 +0000
+@@ -240,8 +240,9 @@
+ 	    if test X"$$i" = X'$(srcdir)/doc/*.n'; then break; fi; \
+ 	    bi=`basename $$i`; \
+ 	    echo "Installing $$bi"; \
++	    sfxname=`echo $$bi | sed -e 's|.n$$|.i4|'`; \
+ 	    sed -e '/man\.macros/r $(srcdir)/doc/man.macros' -e '/man\.macros/d' $$i > $$bi.tmp \
+-	    && $(INSTALL_DATA) $$bi.tmp $(DESTDIR)$(mandir)/mann/$$bi \
++	    && $(INSTALL_DATA) $$bi.tmp $(DESTDIR)$(mandir)/mann/$$sfxname \
+ 	    && rm -f $$bi.tmp; \
  	done
  
- test: binaries libraries
