@@ -2,7 +2,7 @@
 
 PORTNAME=	rabbiteer
 DISTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	dch@FreeBSD.org
@@ -11,12 +11,7 @@ COMMENT=	AMQP & RabbitMQ command-line tool
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE-MIT
 
-BROKEN_SSL=	openssl111
-BROKEN_SSL_REASON_openssl111=	https://github.com/Antti/rust-amqp/issues/43
-BROKEN_FreeBSD_12=	${BROKEN_SSL_REASON_openssl111}
-BROKEN_FreeBSD_13=	${BROKEN_SSL_REASON_openssl111}
-
-USES=		cargo ssl
+USES=		cargo
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	algesten
@@ -31,7 +26,6 @@ CARGO_CRATES=	aho-corasick-0.5.3 \
 		backtrace-0.3.9 \
 		backtrace-sys-0.1.24 \
 		bit-vec-0.4.4 \
-		bitflags-0.7.1 \
 		bitflags-1.0.4 \
 		byteorder-0.5.3 \
 		cc-1.0.24 \
@@ -44,38 +38,25 @@ CARGO_CRATES=	aho-corasick-0.5.3 \
 		error-chain-0.10.0 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
-		gcc-0.3.55 \
-		gdi32-sys-0.2.0 \
 		idna-0.1.5 \
 		kernel32-sys-0.2.2 \
-		lazy_static-0.2.11 \
 		libc-0.2.43 \
-		libressl-pnacl-sys-2.1.6 \
 		log-0.3.9 \
 		log-0.4.5 \
 		matches-0.1.8 \
 		memchr-0.1.11 \
 		num-traits-0.1.43 \
 		num-traits-0.2.5 \
-		openssl-0.7.14 \
-		openssl-sys-0.7.17 \
-		openssl-sys-extras-0.7.14 \
 		percent-encoding-1.0.1 \
-		pkg-config-0.3.14 \
-		pnacl-build-helper-1.4.11 \
-		rand-0.4.3 \
 		rand-0.5.5 \
 		rand_core-0.2.1 \
 		redox_syscall-0.1.40 \
 		redox_termios-0.1.1 \
 		regex-0.1.80 \
 		regex-syntax-0.3.9 \
-		remove_dir_all-0.5.1 \
 		rustc-demangle-0.1.9 \
 		rustc-serialize-0.3.24 \
-		same-file-0.1.3 \
 		strsim-0.7.0 \
-		tempdir-0.3.7 \
 		termion-1.5.1 \
 		textwrap-0.10.0 \
 		thread-id-2.0.0 \
@@ -84,10 +65,8 @@ CARGO_CRATES=	aho-corasick-0.5.3 \
 		unicode-normalization-0.1.7 \
 		unicode-width-0.1.5 \
 		url-1.7.1 \
-		user32-sys-0.2.0 \
 		utf8-ranges-0.1.3 \
 		vec_map-0.8.1 \
-		walkdir-1.0.7 \
 		winapi-0.2.8 \
 		winapi-0.3.5 \
 		winapi-build-0.1.1 \
