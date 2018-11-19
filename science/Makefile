@@ -32,6 +32,7 @@
     SUBDIR += avogadro2
     SUBDIR += avogadrolibs
     SUBDIR += bagel
+    SUBDIR += berkeleygw
     SUBDIR += bddsolve
     SUBDIR += bodr
     SUBDIR += brian

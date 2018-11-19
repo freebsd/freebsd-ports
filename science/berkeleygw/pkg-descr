@@ -1,0 +1,17 @@
+The BerkeleyGW package is a set of computer codes that calculates the
+quasiparticle properties and the optical responses of a large variety of
+materials from bulk periodic crystals to nanostructures such as slabs, wires and
+molecules. The package takes as input the mean-field results from various
+electronic structure codes such as the Kohn-Sham DFT eigenvalues and
+eigenvectors computed with PARATEC, Quantum ESPRESSO, SIESTA, PARSEC, Abinit,
+Octopus, or TBPW (aka EPM). The package consists of the three main component
+codes:
+* Epsilon computes the irreducible polarizability in the Random Phase
+  Approximation and uses it to generate the dielectric matrix and its inverse.
+* Sigma computes the self-energy corrections to the DFT eigenenergies using the
+  GW approximation of Hedin and Lundqvist, applying the first-principles
+  methodology of Hybertsen and Louie within the generalized plasmon-pole model
+  for the frequency-dependent dielectric matrix.
+* BSE solves the Bethe-Salpeter equation for correlated electron-hole excitations.
+
+WWW: https://berkeleygw.org
