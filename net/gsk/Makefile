@@ -13,7 +13,8 @@ COMMENT=	C library for writing servers
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool pathfix pkgconfig ssl
+USES=		libtool pathfix perl5 pkgconfig ssl
+USE_PERL5=	build
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc

@@ -17,7 +17,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 PORTSCOUT=	limitw:1,even
 
 CFLAGS+=	-Wno-format
-USES=		bison gettext gmake gnome libtool pathfix pkgconfig python tar:xz
+USES=		bison gettext gmake gnome libtool pathfix perl5 pkgconfig python tar:xz
+USE_PERL5=	build
 USE_GNOME=	glib20 introspection:build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tests \

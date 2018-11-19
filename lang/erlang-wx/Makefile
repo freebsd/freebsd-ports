@@ -40,7 +40,8 @@ OPTIONS_DEFINE=	DOCS
 
 ERL_RELEASE=	19.3
 
-USES=		gmake
+USES=		gmake perl5
+USE_PERL5=	build
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib

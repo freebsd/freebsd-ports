@@ -16,7 +16,8 @@ CONFLICTS=	xscreensaver-[0-9]* xscreensaver-gnome-[0-9]*
 OPTIONS_DEFINE=	ALL_FORTUNES
 ALL_FORTUNES_DESC=	Enable support for all fortunes
 
-USES=		shebangfix
+USES=		perl5 shebangfix
+USE_PERL5=	build
 SHEBANG_FILES=	${SS_SCRIPTS:S,^,driver/,}
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-nodriver
 
