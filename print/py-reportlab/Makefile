@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	reportlab
-PORTVERSION=	3.2.0
+PORTVERSION=	3.5.9
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP \
 		http://www.reportlab.com/ftp/
@@ -24,9 +24,7 @@ USE_PYTHON=	distutils autoplist
 CONFLICTS=	py*-reportlab[^3]-[^3].* \
 		py*-reportlab-[^3].*
 
-PORTSCOUT=	limit:^3\.0\.
-
-PFBFER_VERSION=	20070710
+PFBFER_VERSION=	20180109
 PFBFER=	pfbfer-${PFBFER_VERSION}.zip
 
 MAKE_ENV=	PACKAGE_PATH="${REPORTLABDIR}"
