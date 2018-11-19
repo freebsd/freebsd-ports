@@ -15,6 +15,11 @@ BASE_GST_ALL_PLUGINS= \
 		x \
 		xvideo
 
+BASE_GST_NON_PLUGINS= \
+		--disable-gles2 \
+		--disable-egl \
+		--disable-glx
+
 BAD_GST_ALL_PLUGINS+= \
 		aom \
 		assrender \
@@ -66,14 +71,7 @@ BAD_GST_ALL_PLUGINS+= \
 		x265 \
 		zbar \
 
-# --with-egl-window-system=none --disable-opengl --disable-gles2 --disable-egl --disable-glx \
-
-# XXX need to sort these three out.
 BAD_GST_NON_PLUGINS= \
-		--disable-gles2 \
-		--disable-egl \
-		--disable-glx
-BAD_GST_NON_PLUGINS+= \
 		--enable-bz2 \
 		--enable-dvb \
 		--enable-shm \
@@ -149,6 +147,7 @@ UGLY_GST_NON_PLUGINS=
 .for d in ${BASE_GST_ALL_PLUGINS}
 CONFIGURE_ARGS+=	--disable-${d}
 .endfor
+CONFIGURE_ARGS+= ${BASE_GST_NON_PLUGINS}
 .endif
 
 .if ${DIST}=="bad"
