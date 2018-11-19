@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qbittorrent
-DISTVERSION=	4.1.3
-PORTREVISION=	1
+DISTVERSION=	4.1.4
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -29,7 +28,7 @@ CONFIGURE_ARGS=		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 DESTDIRNAME=		INSTALL_ROOT
 
 .if ${FLAVOR} == default
-USES+=			desktop-file-utils
+USES+=			desktop-file-utils gl
 USE_QT+=		concurrent gui svg widgets
 USE_GL=			gl
 .endif
