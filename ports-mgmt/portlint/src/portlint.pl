@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.482 2018/10/14 17:47:55 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.484 2018/11/19 20:03:35 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 18;
-my $micro = 6;
+my $micro = 7;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -1503,16 +1503,8 @@ sub checkmakefile {
 	my $python_plist = 0;
 	if ($makevar{USE_PYTHON} && $makevar{USE_PYTHON} =~ /\bautoplist\b/) {
 		$python_plist = 1;
-		if (-f 'pkg-plist') {
-			&perror("WARN", $file, -1, "If you are using python and using autoplist ".
-				"you may remove the pkg-plist file.");
-		}
 	}
 	if ($whole =~ /\nPLIST_FILES.?=/ || $whole =~ /\nPLIST_DIRS.?=/) {
-		if ($python_plist) {
-			&perror("WARN", $file, -1, "If you are using python and using autoplist you may ".
-				"remove the definition of PLIST_FILE.");
-		}
 		if (-f 'pkg-plist') {
 			my $lineno = &linenumber($`);
 			&perror("WARN", $file, $lineno, "You may remove pkg-plist ".
