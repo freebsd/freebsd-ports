@@ -1,17 +1,8 @@
-===============================================================================
+Edit the configuration files in %%ETCDIR%% to suit your needs.
 
-The Hiawatha webserver is now installed.
-
-Sample configs were copied to .conf. Edit the configuration files in %%ETCDIR%%
-to suit your needs.
-
-Add hiawatha_enable="YES" to rc.conf and start Hiawatha by running:
+Run sysrc hiawatha_enable="YES" and start Hiawatha by running:
 service hiawatha start
 
-If you configured Hiawatha with Monitor, download and install the respective
-files needed to monitor your webserver:
-http://www.hiawatha-webserver.org/monitor
-
-A port to do this for you is in the making...
-
-===============================================================================
+If you configured Hiawatha with Monitor, download and install the
+respective files needed to monitor your webserver:
+https://www.hiawatha-webserver.org/monitor
