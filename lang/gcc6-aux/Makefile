@@ -7,7 +7,7 @@ PORTREVISION=	${MAIN_PR}
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
-		LOCAL/marino:boot GCC/${MS_SUBDIR}
+		LOCAL/marino:boot LOCAL/ericbsd:boot GCC/${MS_SUBDIR}
 DISTFILES=	${IDENTIFICATION}.tar.xz
 
 MAINTAINER=	ericbsd@FreeBSD.org
