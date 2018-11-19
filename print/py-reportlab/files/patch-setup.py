@@ -1,29 +1,25 @@
---- setup.py.orig	2014-02-14 14:22:37 UTC
+--- setup.py.orig	2018-11-06 07:20:18 UTC
 +++ setup.py
-@@ -241,11 +241,7 @@ reportlab_files= [
-         ]
+@@ -288,11 +288,6 @@ reportlab_files= [
  
- def get_fonts(PACKAGE_DIR, reportlab_files):
--    import sys, os, os.path, zipfile, io
+ def url2data(url,returnRaw=False):
+     import io
 -    if isPy3:
 -        import urllib.request as ureq
 -    else:
 -        import urllib2 as ureq
-+    import sys, os, os.path, zipfile
-     rl_dir = PACKAGE_DIR['reportlab']
-     if not [x for x in reportlab_files if not os.path.isfile(pjoin(rl_dir,x))]:
-         infoline("Standard T1 font curves already downloaded")
-@@ -254,12 +250,7 @@ def get_fonts(PACKAGE_DIR, reportlab_fil
-         infoline('not downloading T1 font curve files')
-         return
+-    remotehandle = ureq.urlopen(url)
      try:
--        infoline("Downloading standard T1 font curves")
--
--        remotehandle = ureq.urlopen("http://www.reportlab.com/ftp/pfbfer-20070710.zip")
--        zipdata = io.BytesIO(remotehandle.read())
--        remotehandle.close()
--        archive = zipfile.ZipFile(zipdata)
-+        archive = zipfile.ZipFile("%%DISTDIR%%/%%PFBFER%%")
-         dst = pjoin(rl_dir, 'fonts')
+         raw = remotehandle.read()
+         return raw if returnRaw else io.BytesIO(raw)
+@@ -308,9 +303,7 @@ def get_fonts(PACKAGE_DIR, reportlab_files):
+         xitmsg = "not downloading T1 font curve files"
+     else:
+         try:
+-            infoline("Downloading standard T1 font curves")
+-            zipdata = url2data("http://www.reportlab.com/ftp/pfbfer-20180109.zip")
+-            archive = zipfile.ZipFile(zipdata)
++            archive = zipfile.ZipFile("%%DISTDIR%%/%%PFBFER%%")
+             dst = pjoin(rl_dir, 'fonts')
  
-         for name in archive.namelist():
+             for name in archive.namelist():
