@@ -6,7 +6,7 @@ Please add your default network interface in the 'Interface' line there
 before starting vnstat service.
 You can add any number of additional interfaces either in
 vnstat_additional_ifaces variable in /etc/rc.conf, or with this command:
-su -m %%USERS%% -c "%%PREFIX%%/bin/vnstat --create --iface <your interface>"
+su -m %%USERS%% -c "%%PREFIX%%/bin/vnstat --add --iface <your interface>"
 and restart vnstat service:
 service vnstat restart
 

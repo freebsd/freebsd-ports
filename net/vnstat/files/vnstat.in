@@ -35,8 +35,8 @@ create_iface_database()
 {
 	local iface="$1"
 	local descr="$2"
-	su -m ${vnstat_user} -c "${user_cmd} --create --iface $iface" >/dev/null 2>&1 ||
-	  ! echo "$name: Failed to create database for the $descr interface $iface" || return 1
+	su -m ${vnstat_user} -c "${user_cmd} --add --iface $iface" >/dev/null 2>&1 ||
+	  ! echo "$name: Failed to add database for the $descr interface $iface" || return 1
 	echo "$name: Created the database for the $descr interface $iface"
 }
 
