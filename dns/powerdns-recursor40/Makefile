@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	recursor
-DISTVERSION=	4.0.8
-PORTREVISION=	8
+DISTVERSION=	4.0.9
+PORTREVISION?=	0
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
@@ -14,6 +14,9 @@ MAINTAINER=	tremere@cainites.net
 COMMENT=	Advanced DNS recursor
 
 LICENSE=	GPLv2
+
+DEPRECATED=		FreeBSD 10.3 has reached EoL since 2018-04-30; users should upgrade and use dns/powerdns-recursor instead
+EXPIRATION_DATE=	2018-12-31
 
 BROKEN_armv6=		fails to compile: use of overloaded operator << is ambiguous
 BROKEN_armv7=		fails to compile: use of overloaded operator << is ambiguous
