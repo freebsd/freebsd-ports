@@ -85,6 +85,7 @@
     SUBDIR += cdiff
     SUBDIR += cgrep
     SUBDIR += chpp
+    SUBDIR += chkascii
     SUBDIR += cl-meta
     SUBDIR += cl-meta-sbcl
     SUBDIR += cl-ppcre
