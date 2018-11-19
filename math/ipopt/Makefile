@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Ipopt
-DISTVERSION=	3.12.10
-PORTREVISION=	1
+DISTVERSION=	3.12.11
 CATEGORIES=	math
 MASTER_SITES=	http://www.coin-or.org/download/source/Ipopt/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/OLD/:metis \
@@ -12,7 +11,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		metis-4.0.3.tar.gz:metis MUMPS_4.10.0.tar.gz:mumps
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Software package for large-scale nonlinear optimization
 
 LICENSE=	EPL
