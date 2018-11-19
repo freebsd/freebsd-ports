@@ -1,0 +1,6 @@
+This package is required to build ignition projects, as well as to link your own
+projects against them. It provides modules that are used to find dependencies of
+ignition projects and generate cmake targets for consumers of ignition projects
+to link against.
+
+WWW: https://ignitionrobotics.org/home
