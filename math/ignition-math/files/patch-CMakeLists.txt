@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-11-19 19:12:40 UTC
++++ CMakeLists.txt
+@@ -37,7 +37,7 @@ ign_find_package(
+ 
+ ########################################
+ # Include swig
+-find_package(SWIG QUIET)
++#find_package(SWIG QUIET)
+ if (NOT SWIG_FOUND)
+   IGN_BUILD_WARNING("Swig is missing: Language interfaces are disabled.")
+   message (STATUS "Searching for swig - not found.")

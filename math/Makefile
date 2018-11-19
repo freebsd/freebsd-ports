@@ -278,6 +278,7 @@
     SUBDIR += hs-statistics
     SUBDIR += hs-vector-space
     SUBDIR += igraph
+    SUBDIR += ignition-math
     SUBDIR += intervaltree
     SUBDIR += ipopt
     SUBDIR += ised
