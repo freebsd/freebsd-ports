@@ -10632,3 +10632,4 @@ german/selfhtml||2018-11-16|Has expired: Project migrated to a Wiki
 sysutils/fastest_cvsup||2018-11-16|Has expired: Obsolete, FreeBSD and OpenBSD switched from cvsup to svn and cvsync, NetBSD only have 2 servers left
 devel/rubygem-sidekiq-bulk-rails5|devel/rubygem-sidekiq-bulk|2018-11-17|Remove -rails5 suffix
 audio/csound6|audio/csound|2018-11-17|Move to audio/csound because this is a stable project, no need to have a versioned package name
+x11-fonts/emojione-color-font-ttf|x11-fonts/twemoji-color-font-ttf|2018-11-19|Has expired: EOL upstream, please use x11-fonts/twemoji-color-font-ttf instead
