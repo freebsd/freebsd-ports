@@ -1,4 +1,4 @@
 
-It is recommanded to install a font with emoji, e.g. x11-fonts/emojione-color-font-ttf .
+It is recommanded to install a font with emoji, e.g. x11-fonts/twemoji-color-font-ttf .
 
 And do not forget to run `ibus restart' after an upgrade.
