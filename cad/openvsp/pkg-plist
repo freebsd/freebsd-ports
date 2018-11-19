@@ -54,6 +54,7 @@ scripts/SubSurface.vspscript
 scripts/TestAll.vspscript
 scripts/TestAnalysis.vspscript
 scripts/TestAnalysisVSPAERO.vspscript
+scripts/testanimate.vspscript
 scripts/TestAreaProj.vspscript
 scripts/TestDXF.vspscript
 scripts/TestFacet.vspscript
@@ -101,6 +102,7 @@ scripts/Wing.vspscript
 %%DATADIR%%/TestAll.vspscript
 %%DATADIR%%/TestAnalysis.vspscript
 %%DATADIR%%/TestAnalysisVSPAERO.vspscript
+%%DATADIR%%/testanimate.vspscript
 %%DATADIR%%/TestAreaProj.vspscript
 %%DATADIR%%/TestDXF.vspscript
 %%DATADIR%%/TestFacet.vspscript
