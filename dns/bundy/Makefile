@@ -30,9 +30,6 @@ BROKEN_armv6 =		fails to build: Child process terminated abnormally: Segmentatio
 BROKEN_armv7 =		fails to build: Child process terminated abnormally: Segmentation fault
 BROKEN_powerpc64=	fails to configure: checking for botan/botan.h... no
 
-BROKEN_FreeBSD_12=	fails with sig11
-BROKEN_FreeBSD_13=	fails with sig11
-
 USES=	compiler:c++11-lang pathfix pkgconfig libtool python:3.4+ autoreconf ssl
 USE_CSTD=	gnu99
 USE_CXXSTD=	gnu++98
