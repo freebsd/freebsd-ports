@@ -96,7 +96,9 @@
 %%DATADIR%%/Definitions/downloadville.yml
 %%DATADIR%%/Definitions/dragonworldreloaded.yml
 %%DATADIR%%/Definitions/dreamteam.yml
+%%DATADIR%%/Definitions/dxdhd.yml
 %%DATADIR%%/Definitions/elitehd.yml
+%%DATADIR%%/Definitions/elitetorrent-biz.yml
 %%DATADIR%%/Definitions/elittracker.yml
 %%DATADIR%%/Definitions/empornium.yml
 %%DATADIR%%/Definitions/estone.yml
@@ -158,6 +160,7 @@
 %%DATADIR%%/Definitions/majomparade.yml
 %%DATADIR%%/Definitions/manicomioshare.yml
 %%DATADIR%%/Definitions/megabliz.yml
+%%DATADIR%%/Definitions/metal-iplay-ro.yml
 %%DATADIR%%/Definitions/metaltracker.yml
 %%DATADIR%%/Definitions/mononokebt.yml
 %%DATADIR%%/Definitions/mteamtp.yml
@@ -174,6 +177,7 @@
 %%DATADIR%%/Definitions/ourbits.yml
 %%DATADIR%%/Definitions/passionetorrent.yml
 %%DATADIR%%/Definitions/polishsource.yml
+%%DATADIR%%/Definitions/prostylex.yml
 %%DATADIR%%/Definitions/ptfiles.yml
 %%DATADIR%%/Definitions/puntotorrent.yml
 %%DATADIR%%/Definitions/racing4everyone.yml
@@ -181,6 +185,7 @@
 %%DATADIR%%/Definitions/redtopia.yml
 %%DATADIR%%/Definitions/retroflix.yml
 %%DATADIR%%/Definitions/rgu.yml
+%%DATADIR%%/Definitions/rockbox.yml
 %%DATADIR%%/Definitions/rodvd.yml
 %%DATADIR%%/Definitions/rutor.yml
 %%DATADIR%%/Definitions/scenefz.yml
