@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dimRed
-PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTVERSION=	0.2.2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -13,7 +12,8 @@ COMMENT=	Framework for Dimensionality Reduction
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CRAN_DEPENDS=	R-cran-DRR>0:math/R-cran-DRR
+CRAN_DEPENDS=	R-cran-DRR>0:math/R-cran-DRR \
+		R-cran-magrittr>0:devel/R-cran-magrittr
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
