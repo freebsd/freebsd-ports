@@ -1077,6 +1077,8 @@
     SUBDIR += riak-cs
     SUBDIR += rinse
     SUBDIR += rmonitor
+    SUBDIR += rocr
+    SUBDIR += roct
     SUBDIR += roottail
     SUBDIR += rovclock
     SUBDIR += rpi-firmware

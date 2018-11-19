@@ -1,0 +1,10 @@
+include/roct/hsakmt.h
+include/roct/hsakmttypes.h
+include/roct/linux/kfd_ioctl.h
+lib/libhsakmt.so
+lib/libhsakmt.so.1
+lib/libhsakmt.so.1.0.0
+libhsakmt/LICENSE.md
+@dir include/roct/linux
+@dir include/roct
+@dir include

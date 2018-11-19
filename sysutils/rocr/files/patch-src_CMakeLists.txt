@@ -1,0 +1,39 @@
+--- src/CMakeLists.txt.orig	2018-11-19 03:01:00 UTC
++++ src/CMakeLists.txt
+@@ -63,7 +63,6 @@ include(CheckSymbolExists)
+ CHECK_SYMBOL_EXISTS ( "__NR_memfd_create" "sys/syscall.h" HAVE_MEMFD_CREATE )
+ 
+ ## Compiler preproc definitions.
+-add_definitions ( -D__linux__  )
+ add_definitions ( -DHSA_EXPORT=1 )
+ add_definitions ( -DHSA_EXPORT_FINALIZER=1 )
+ add_definitions ( -DHSA_EXPORT_IMAGES=1 )
+@@ -93,6 +92,7 @@ unset( HSAKMT_INC CACHE )
+ unset( HSAKMT_LIB CACHE )
+ 
+ ## Set include and link directories for libhsakmt
++include_directories ( "/usr/local/include/roct" )
+ include_directories ( ${HSAKMT_INC_PATH} )
+ link_directories ( ${HSAKMT_LIB_PATH} )
+ 
+@@ -177,14 +176,14 @@ if ( "${CMAKE_BUILD_TYPE}" STREQUAL Release )
+ endif ()
+ 
+ ## Create symlinks for packaging and install
+-add_custom_target ( hsa-link ALL WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR} COMMAND ${CMAKE_COMMAND} -E create_symlink ../hsa/include/hsa hsa-link )
+-add_custom_target ( ${CORE_RUNTIME_TARGET}.so-link ALL WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR} COMMAND ${CMAKE_COMMAND} -E create_symlink ../hsa/lib/${CORE_RUNTIME_LIBRARY}.so ${CORE_RUNTIME_LIBRARY}.so-link )
++#add_custom_target ( hsa-link ALL WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR} COMMAND ${CMAKE_COMMAND} -E create_symlink ../include/hsa hsa-link )
++#add_custom_target ( ${CORE_RUNTIME_TARGET}.so-link ALL WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR} COMMAND ${CMAKE_COMMAND} -E create_symlink ../lib/${CORE_RUNTIME_LIBRARY}.so ${CORE_RUNTIME_LIBRARY}.so-link )
+ 
+ ## Set install information
+-install ( TARGETS ${CORE_RUNTIME_TARGET} LIBRARY DESTINATION hsa/lib )
+-install ( DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/inc/ DESTINATION hsa/include/hsa )
+-install ( FILES ${CMAKE_CURRENT_BINARY_DIR}/hsa-link DESTINATION include PERMISSIONS OWNER_WRITE OWNER_READ RENAME hsa )
+-install ( FILES ${CMAKE_CURRENT_BINARY_DIR}/${CORE_RUNTIME_LIBRARY}.so-link DESTINATION lib PERMISSIONS OWNER_WRITE OWNER_READ RENAME ${CORE_RUNTIME_LIBRARY}.so )
++install ( TARGETS ${CORE_RUNTIME_TARGET} LIBRARY DESTINATION lib )
++install ( DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/inc/ DESTINATION include/hsa )
++#install ( FILES ${CMAKE_CURRENT_BINARY_DIR}/hsa-link DESTINATION include PERMISSIONS OWNER_WRITE OWNER_READ RENAME hsa )
++#install ( FILES ${CMAKE_CURRENT_BINARY_DIR}/${CORE_RUNTIME_LIBRARY}.so-link DESTINATION lib PERMISSIONS OWNER_WRITE OWNER_READ RENAME ${CORE_RUNTIME_LIBRARY}.so )
+ 
+ ## Packaging directives
+ set ( CPACK_PACKAGE_NAME "hsa-rocr-dev" )

@@ -1,0 +1,16 @@
+include/hsa/Brig.h
+include/hsa/amd_hsa_common.h
+include/hsa/amd_hsa_elf.h
+include/hsa/amd_hsa_kernel_code.h
+include/hsa/amd_hsa_queue.h
+include/hsa/amd_hsa_signal.h
+include/hsa/hsa.h
+include/hsa/hsa_api_trace.h
+include/hsa/hsa_ext_amd.h
+include/hsa/hsa_ext_finalize.h
+include/hsa/hsa_ext_image.h
+include/hsa/hsa_ven_amd_aqlprofile.h
+include/hsa/hsa_ven_amd_loader.h
+lib/libhsa-runtime64.so
+lib/libhsa-runtime64.so.1
+lib/libhsa-runtime64.so.1.0.0
