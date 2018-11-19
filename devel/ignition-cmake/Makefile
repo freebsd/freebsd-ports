@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ignition-cmake
-DISTVERSION=	1.1.0
+DISTVERSION=	2.0.0
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 
@@ -19,9 +19,11 @@ CMAKE_OFF=	BUILD_TESTING
 
 BB_ACCOUNT=	ignitionrobotics
 BB_PROJECT=	ign-cmake
-BB_COMMIT=	6d43bfc00ac1
+BB_COMMIT=	776c2bfe1d18
+
+PLIST_SUB+=	IGN_VER=${DISTVERSION:R:R}
 
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
-NO_ARCH=	src/ign.in
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
