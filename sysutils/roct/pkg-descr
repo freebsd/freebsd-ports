@@ -1,0 +1,7 @@
+roct
+
+Radeon Open Compute Thunk Interface
+
+The user-mode API interfaces used to interact with the ROCk driver.
+
+WWW: https://github.com/RadeonOpenCompute/ROCT-Thunk-Interface
