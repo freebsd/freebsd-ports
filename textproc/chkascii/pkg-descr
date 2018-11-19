@@ -1,0 +1,16 @@
+chkascii is a small C program that checks files for any ASCII values
+that are possibly junk. The following are considered the only good ASCII
+values permissible in a text file:
+
+32-126
+9
+10
+
+The user can optionally force additional ASCII values to be treated as
+good.
+
+For good text files, chkascii will wind up by checking on proper EOL
+termination. If the file is not EOL-terminated, that too is reported as
+an error.
+
+WWW: https://github.com/bourne-again/chkascii
