@@ -1,4 +1,4 @@
---- src/engine/openssl/ossl_bc.cpp.orig	2018-10-15 00:16:53 UTC
+--- src/engine/openssl/ossl_bc.cpp.orig	2017-10-02 06:00:00 UTC
 +++ src/engine/openssl/ossl_bc.cpp
 @@ -8,10 +8,6 @@
  #include <botan/internal/openssl_engine.h>
@@ -11,7 +11,7 @@
  namespace Botan {
  
  namespace {
-@@ -44,7 +40,7 @@
+@@ -44,7 +40,7 @@ class EVP_BlockCipher : public BlockCipher
        size_t block_sz;
        Key_Length_Specification cipher_key_spec;
        std::string cipher_name;
@@ -20,49 +20,53 @@
     };
  
  /*
-@@ -59,14 +55,14 @@
+@@ -59,14 +55,15 @@ EVP_BlockCipher::EVP_BlockCipher(const EVP_CIPHER* alg
     if(EVP_CIPHER_mode(algo) != EVP_CIPH_ECB_MODE)
        throw Invalid_Argument("EVP_BlockCipher: Non-ECB EVP was passed in");
  
 -   EVP_CIPHER_CTX_init(&encrypt);
 -   EVP_CIPHER_CTX_init(&decrypt);
-+   EVP_CIPHER_CTX_init(encrypt);
-+   EVP_CIPHER_CTX_init(decrypt);
++   if ((encrypt = EVP_CIPHER_CTX_new()) == NULL)
++      throw Invalid_Argument("EVP_BlockCipher: EVP_CIPHER_CTX_new failed");
++   EVP_EncryptInit_ex(encrypt, algo, 0, 0, 0);
++   EVP_CIPHER_CTX_set_padding(encrypt, 0);
  
 -   EVP_EncryptInit_ex(&encrypt, algo, 0, 0, 0);
 -   EVP_DecryptInit_ex(&decrypt, algo, 0, 0, 0);
-+   EVP_EncryptInit_ex(encrypt, algo, 0, 0, 0);
-+   EVP_DecryptInit_ex(decrypt, algo, 0, 0, 0);
- 
+-
 -   EVP_CIPHER_CTX_set_padding(&encrypt, 0);
 -   EVP_CIPHER_CTX_set_padding(&decrypt, 0);
-+   EVP_CIPHER_CTX_set_padding(encrypt, 0);
++   if ((decrypt = EVP_CIPHER_CTX_new()) == NULL)
++      throw Invalid_Argument("EVP_BlockCipher: EVP_CIPHER_CTX_new failed");
++   EVP_DecryptInit_ex(decrypt, algo, 0, 0, 0);
 +   EVP_CIPHER_CTX_set_padding(decrypt, 0);
     }
  
  /*
-@@ -83,14 +79,14 @@
+@@ -83,14 +80,15 @@ EVP_BlockCipher::EVP_BlockCipher(const EVP_CIPHER* alg
     if(EVP_CIPHER_mode(algo) != EVP_CIPH_ECB_MODE)
        throw Invalid_Argument("EVP_BlockCipher: Non-ECB EVP was passed in");
  
 -   EVP_CIPHER_CTX_init(&encrypt);
 -   EVP_CIPHER_CTX_init(&decrypt);
-+   EVP_CIPHER_CTX_init(encrypt);
-+   EVP_CIPHER_CTX_init(decrypt);
++   if ((encrypt = EVP_CIPHER_CTX_new()) == NULL)
++      throw Invalid_Argument("EVP_BlockCipher: EVP_CIPHER_CTX_new failed");
++   EVP_EncryptInit_ex(encrypt, algo, 0, 0, 0);
++   EVP_CIPHER_CTX_set_padding(encrypt, 0);
  
 -   EVP_EncryptInit_ex(&encrypt, algo, 0, 0, 0);
 -   EVP_DecryptInit_ex(&decrypt, algo, 0, 0, 0);
-+   EVP_EncryptInit_ex(encrypt, algo, 0, 0, 0);
-+   EVP_DecryptInit_ex(decrypt, algo, 0, 0, 0);
- 
+-
 -   EVP_CIPHER_CTX_set_padding(&encrypt, 0);
 -   EVP_CIPHER_CTX_set_padding(&decrypt, 0);
-+   EVP_CIPHER_CTX_set_padding(encrypt, 0);
++   if ((decrypt = EVP_CIPHER_CTX_new()) == NULL)
++      throw Invalid_Argument("EVP_BlockCipher: EVP_CIPHER_CTX_new failed");
++   EVP_DecryptInit_ex(decrypt, algo, 0, 0, 0);
 +   EVP_CIPHER_CTX_set_padding(decrypt, 0);
     }
  
  /*
-@@ -98,8 +94,8 @@
+@@ -98,8 +96,8 @@ EVP_BlockCipher::EVP_BlockCipher(const EVP_CIPHER* alg
  */
  EVP_BlockCipher::~EVP_BlockCipher()
     {
@@ -73,7 +77,7 @@
     }
  
  /*
-@@ -109,7 +105,7 @@
+@@ -109,7 +107,7 @@ void EVP_BlockCipher::encrypt_n(const byte in[], byte 
                                  size_t blocks) const
     {
     int out_len = 0;
@@ -82,7 +86,7 @@
     }
  
  /*
-@@ -119,7 +115,7 @@
+@@ -119,7 +117,7 @@ void EVP_BlockCipher::decrypt_n(const byte in[], byte 
                                  size_t blocks) const
     {
     int out_len = 0;
@@ -91,7 +95,7 @@
     }
  
  /*
-@@ -134,19 +130,19 @@
+@@ -134,19 +132,19 @@ void EVP_BlockCipher::key_schedule(const byte key[], s
        full_key += std::make_pair(key, 8);
        }
     else
@@ -117,7 +121,7 @@
     }
  
  /*
-@@ -154,7 +150,7 @@
+@@ -154,7 +152,7 @@ void EVP_BlockCipher::key_schedule(const byte key[], s
  */
  BlockCipher* EVP_BlockCipher::clone() const
     {
@@ -126,7 +130,7 @@
                                cipher_name,
                                cipher_key_spec.minimum_keylength(),
                                cipher_key_spec.maximum_keylength(),
-@@ -166,16 +162,16 @@
+@@ -166,16 +164,16 @@ BlockCipher* EVP_BlockCipher::clone() const
  */
  void EVP_BlockCipher::clear()
     {
@@ -152,7 +156,7 @@
     }
  
  }
---- src/engine/openssl/ossl_md.cpp.orig	2018-10-15 00:26:19 UTC
+--- src/engine/openssl/ossl_md.cpp.orig	2017-10-02 06:00:00 UTC
 +++ src/engine/openssl/ossl_md.cpp
 @@ -8,10 +8,6 @@
  #include <botan/internal/openssl_engine.h>
@@ -165,7 +169,7 @@
  namespace Botan {
  
  namespace {
-@@ -28,12 +24,12 @@
+@@ -28,12 +24,12 @@ class EVP_HashFunction : public HashFunction
  
        size_t output_length() const
           {
@@ -180,7 +184,7 @@
           }
  
        EVP_HashFunction(const EVP_MD*, const std::string&);
-@@ -44,7 +40,7 @@
+@@ -44,7 +40,7 @@ class EVP_HashFunction : public HashFunction
  
        size_t block_size;
        std::string algo_name;
@@ -189,7 +193,7 @@
     };
  
  /*
-@@ -52,7 +48,7 @@
+@@ -52,7 +48,7 @@ class EVP_HashFunction : public HashFunction
  */
  void EVP_HashFunction::add_data(const byte input[], size_t length)
     {
@@ -198,7 +202,7 @@
     }
  
  /*
-@@ -60,9 +56,9 @@
+@@ -60,9 +56,9 @@ void EVP_HashFunction::add_data(const byte input[], si
  */
  void EVP_HashFunction::final_result(byte output[])
     {
@@ -211,7 +215,7 @@
     }
  
  /*
-@@ -70,8 +66,8 @@
+@@ -70,8 +66,8 @@ void EVP_HashFunction::final_result(byte output[])
  */
  void EVP_HashFunction::clear()
     {
@@ -222,7 +226,7 @@
     }
  
  /*
-@@ -79,7 +75,7 @@
+@@ -79,7 +75,7 @@ void EVP_HashFunction::clear()
  */
  HashFunction* EVP_HashFunction::clone() const
     {
@@ -231,18 +235,19 @@
     return new EVP_HashFunction(algo, name());
     }
  
-@@ -90,8 +86,8 @@
+@@ -90,8 +86,9 @@ EVP_HashFunction::EVP_HashFunction(const EVP_MD* algo,
                                     const std::string& name) :
     algo_name(name)
     {
 -   EVP_MD_CTX_init(&md);
 -   EVP_DigestInit_ex(&md, algo, 0);
-+   EVP_MD_CTX_init(md);
++   if ((md = EVP_MD_CTX_new()) == NULL)
++     throw Invalid_Argument("EVP_HashFunction: EVP_MD_CTX_new failed");
 +   EVP_DigestInit_ex(md, algo, 0);
     }
  
  /*
-@@ -99,7 +95,11 @@
+@@ -99,7 +96,11 @@ EVP_HashFunction::EVP_HashFunction(const EVP_MD* algo,
  */
  EVP_HashFunction::~EVP_HashFunction()
     {
