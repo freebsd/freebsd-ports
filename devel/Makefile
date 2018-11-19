@@ -1227,6 +1227,7 @@
     SUBDIR += icu-lx
     SUBDIR += idutils
     SUBDIR += ignition-cmake
+    SUBDIR += ignition-msgs
     SUBDIR += ignition-tools
     SUBDIR += imake
     SUBDIR += inastemp
