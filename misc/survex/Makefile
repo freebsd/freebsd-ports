@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	survex
-DISTVERSION=	1.2.36
-PORTREVISION=	2
+DISTVERSION=	1.2.37
 CATEGORIES=	misc
 MASTER_SITES=	https://survex.com/software/${DISTVERSION}/
 
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libproj.so:graphics/proj
 
-USES=		desktop-file-utils gmake pkgconfig shared-mime-info
+USES=		desktop-file-utils gl gmake gnome pkgconfig shared-mime-info
 GNU_CONFIGURE=	yes
 USE_WX=		3.0
 USE_XORG=	xxf86vm
