@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bitstream
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	multimedia
 MASTER_SITES=	https://get.videolan.org/bitstream/${PORTVERSION}/ \
 		http://get.videolan.org/bitstream/${PORTVERSION}/
