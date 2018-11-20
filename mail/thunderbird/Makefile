@@ -30,7 +30,7 @@ BUILD_DEPENDS=	nspr>=4.19:devel/nspr \
 
 SSP_UNSAFE=	yes
 USE_GECKO=	gecko
-USE_MOZILLA=	-cairo
+USE_MOZILLA=	# empty
 
 USES=		tar:xz
 
@@ -47,7 +47,6 @@ MOZ_PIS_SCRIPTS=moz_pis_S50cleanhome
 
 OPTIONS_DEFINE=	LIGHTNING
 OPTIONS_DEFAULT=CANBERRA LIGHTNING
-OPTIONS_EXCLUDE=BUNDLED_CAIRO
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.pre.mk>
