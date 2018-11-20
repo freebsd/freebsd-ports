@@ -1,6 +1,6 @@
---- video/video.h.orig	Sun Feb  8 23:39:25 2004
-+++ video/video.h	Sun Feb  8 23:39:36 2004
-@@ -432,7 +432,7 @@
+--- video/video.h.orig	2001-02-10 07:36:42 UTC
++++ video/video.h
+@@ -432,7 +432,7 @@ extern unsigned int cacheMiss[8][8];
  #undef  LITTLE_ENDIAN_ARCHITECTURE
  #define BIG_ENDIAN_ARCHITECTURE 1
  #else

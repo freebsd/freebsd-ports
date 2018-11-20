@@ -1,6 +1,6 @@
---- MPEGaudio.h	Tue Mar 20 13:40:18 2007
-+++ MPEGaudio.h	Tue Mar 20 13:43:04 2007
-@@ -148,6 +148,13 @@
+--- MPEGaudio.h.orig	2001-04-04 20:42:40 UTC
++++ MPEGaudio.h
+@@ -148,6 +148,13 @@ class Mpegbitwindow (private)
    char buffer[2*WINDOWSIZE];
  };
  

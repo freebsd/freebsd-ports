@@ -1,6 +1,14 @@
---- configure	2002/07/02 12:33:37	1.1
-+++ configure	2002/07/02 12:34:01
-@@ -1055,7 +1055,7 @@
+--- configure.orig	2001-04-24 19:25:46 UTC
++++ configure
+@@ -58,7 +58,6 @@ ac_help="$ac_help
+ # The variables have the same names as the options, with
+ # dashes changed to underlines.
+ build=NONE
+-cache_file=./config.cache
+ exec_prefix=NONE
+ host=NONE
+ no_create=
+@@ -1055,7 +1054,7 @@ cat > conftest.$ac_ext << EOF
  #line 1056 "configure"
  #include "confdefs.h"
  
@@ -9,7 +17,25 @@
  EOF
  if { (eval echo configure:1061: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
    ac_cv_prog_cc_works=yes
-@@ -2335,6 +2335,7 @@
+@@ -1850,7 +1849,7 @@ esac
+ 
+ 
+ # Save cache, so that ltconfig can load it
+-cat > confcache <<\EOF
++<<\EOF
+ # This file is a shell script that caches the results of configure
+ # tests run on this system so they can be shared between configure
+ # scripts and configure runs.  It is not useful on other systems.
+@@ -1903,8 +1902,6 @@ CC="$CC" CFLAGS="$CFLAGS" CPPFLAGS="$CPPFLAGS" \
+ LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
+ LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
+ DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
+-${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
+-$libtool_flags --no-verify $ac_aux_dir/ltmain.sh $lt_target \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+ 
+ # Reload cache, that may have been modified by ltconfig
+@@ -2335,6 +2332,7 @@ rm -f conftest*
  
  CFLAGS="$CFLAGS $SDL_CFLAGS"
  LIBS="$LIBS $SDL_LIBS"
