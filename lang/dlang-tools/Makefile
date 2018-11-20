@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tools
-PORTVERSION=	2.080.0
+PORTVERSION=	2.083.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
 PKGNAMEPREFIX=	dlang-
@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dlang
 
 LDC2_CMD=	${LOCALBASE}/bin/ldc2
-TOOLS_LIST=	catdoc changed checkwhitespace ddemangle detab dget rdmd tolf
+TOOLS_LIST=	catdoc changed checkwhitespace contributors ddemangle detab dget rdmd tolf
 
 do-build:
 .for f in ${TOOLS_LIST}

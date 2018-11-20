@@ -1,6 +1,7 @@
 bin/catdoc
 bin/changed
 bin/checkwhitespace
+bin/contributors
 bin/ddemangle
 bin/detab
 bin/dget
