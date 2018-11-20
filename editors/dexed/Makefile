@@ -1,7 +1,7 @@
 # $FreeBSD$
 
-PORTNAME=	coedit
-PORTVERSION=	3.6.15
+PORTNAME=	dexed
+PORTVERSION=	3.6.21
 DISTVERSIONPREFIX=v
 CATEGORIES=	editors
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -24,7 +24,7 @@ RUN_DEPENDS=	ldmd2:lang/ldc \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	BBasile
-GH_PROJECT=	Coedit
+#GH_PROJECT=	dexed
 
 USES=		fpc lazarus:flavors
 USE_FPC=	chm fcl-base fcl-db fcl-image fcl-json fcl-net fcl-registry \
@@ -32,9 +32,9 @@ USE_FPC=	chm fcl-base fcl-db fcl-image fcl-json fcl-net fcl-registry \
 		regexpr rtl-extra x11
 USE_XORG=	x11
 
-DESKTOP_ENTRIES="Coedit" \
+DESKTOP_ENTRIES="Dexed" \
 		"IDE for the D programming language" \
-		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}32.png" \
 		"${PREFIX}/bin/${PORTNAME}" \
 		"Application;IDE;Development;" \
 		${TRUE}
@@ -42,7 +42,7 @@ DESKTOP_ENTRIES="Coedit" \
 D_LIB_DIR=	${LOCALBASE}/lib/d
 D_INCLUDE_DIR=	${LOCALBASE}/include/d
 
-LAZARUS_PROJECT_FILES=	anchordocking/anchordocking.lpk lazproj/coedit.lpi
+LAZARUS_PROJECT_FILES=	anchordocking/anchordocking.lpk lazproj/dexed.lpi
 
 LAZBUILD_ARGS=	-d
 
@@ -73,8 +73,8 @@ pre-build:
 	@cd ${WRKSRC}/dastworx && ${SH} build.sh
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/coedit ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/dastworx ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/logo/coedit.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/logo/*.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>
