@@ -3065,6 +3065,7 @@
 %%WWWDIR%%/core/modules/block_content/src/Plugin/migrate/source/d6/Box.php
 %%WWWDIR%%/core/modules/block_content/src/Plugin/migrate/source/d6/BoxTranslation.php
 %%WWWDIR%%/core/modules/block_content/src/Plugin/migrate/source/d7/BlockCustom.php
+%%WWWDIR%%/core/modules/block_content/src/Plugin/migrate/source/d7/BlockCustomTranslation.php
 %%WWWDIR%%/core/modules/block_content/src/Plugin/views/area/ListingEmpty.php
 %%WWWDIR%%/core/modules/block_content/src/Plugin/views/wizard/BlockContent.php
 %%WWWDIR%%/core/modules/block_content/src/Tests/BlockContentTestBase.php
@@ -3138,10 +3139,12 @@
 %%WWWDIR%%/core/modules/block_content/tests/src/Kernel/Migrate/MigrateBlockContentTypeTest.php
 %%WWWDIR%%/core/modules/block_content/tests/src/Kernel/Migrate/d6/MigrateBlockContentTest.php
 %%WWWDIR%%/core/modules/block_content/tests/src/Kernel/Migrate/d6/MigrateCustomBlockContentTranslationTest.php
+%%WWWDIR%%/core/modules/block_content/tests/src/Kernel/Migrate/d7/MigrateCustomBlockContentTranslationTest.php
 %%WWWDIR%%/core/modules/block_content/tests/src/Kernel/Migrate/d7/MigrateCustomBlockTest.php
 %%WWWDIR%%/core/modules/block_content/tests/src/Kernel/Plugin/migrate/source/d6/BoxTest.php
 %%WWWDIR%%/core/modules/block_content/tests/src/Kernel/Plugin/migrate/source/d6/BoxTranslationTest.php
 %%WWWDIR%%/core/modules/block_content/tests/src/Kernel/Plugin/migrate/source/d7/BlockCustomTest.php
+%%WWWDIR%%/core/modules/block_content/tests/src/Kernel/Plugin/migrate/source/d7/BlockCustomTranslationTest.php
 %%WWWDIR%%/core/modules/block_content/tests/src/Unit/Access/AccessGroupAndTest.php
 %%WWWDIR%%/core/modules/block_content/tests/src/Unit/Access/AccessibleTestingTrait.php
 %%WWWDIR%%/core/modules/block_content/tests/src/Unit/Access/DependentAccessTest.php
@@ -3465,6 +3468,7 @@
 %%WWWDIR%%/core/modules/comment/src/Plugin/migrate/source/d6/CommentVariable.php
 %%WWWDIR%%/core/modules/comment/src/Plugin/migrate/source/d6/CommentVariablePerCommentType.php
 %%WWWDIR%%/core/modules/comment/src/Plugin/migrate/source/d7/Comment.php
+%%WWWDIR%%/core/modules/comment/src/Plugin/migrate/source/d7/CommentEntityTranslation.php
 %%WWWDIR%%/core/modules/comment/src/Plugin/migrate/source/d7/CommentType.php
 %%WWWDIR%%/core/modules/comment/src/Plugin/views/argument/UserUid.php
 %%WWWDIR%%/core/modules/comment/src/Plugin/views/field/CommentBulkForm.php
@@ -3601,6 +3605,7 @@
 %%WWWDIR%%/core/modules/comment/tests/src/Kernel/Plugin/migrate/source/d6/CommentTest.php
 %%WWWDIR%%/core/modules/comment/tests/src/Kernel/Plugin/migrate/source/d6/CommentVariablePerCommentTypeTest.php
 %%WWWDIR%%/core/modules/comment/tests/src/Kernel/Plugin/migrate/source/d6/CommentVariableTest.php
+%%WWWDIR%%/core/modules/comment/tests/src/Kernel/Plugin/migrate/source/d7/CommentEntityTranslationTest.php
 %%WWWDIR%%/core/modules/comment/tests/src/Kernel/Plugin/migrate/source/d7/CommentTest.php
 %%WWWDIR%%/core/modules/comment/tests/src/Kernel/Plugin/migrate/source/d7/CommentTypeTest.php
 %%WWWDIR%%/core/modules/comment/tests/src/Kernel/Views/CommentAdminViewTest.php
@@ -3784,12 +3789,19 @@
 %%WWWDIR%%/core/modules/config_translation/config_translation.routing.yml
 %%WWWDIR%%/core/modules/config_translation/config_translation.services.yml
 %%WWWDIR%%/core/modules/config_translation/css/config_translation.admin.css
+%%WWWDIR%%/core/modules/config_translation/migrations/d6_field_instance_label_description_translation.yml
+%%WWWDIR%%/core/modules/config_translation/migrations/d6_field_instance_option_translation.yml
+%%WWWDIR%%/core/modules/config_translation/migrations/d6_field_option_translation.yml
 %%WWWDIR%%/core/modules/config_translation/migrations/d6_system_maintenance_translation.yml
 %%WWWDIR%%/core/modules/config_translation/migrations/d6_system_site_translation.yml
 %%WWWDIR%%/core/modules/config_translation/migrations/d6_taxonomy_vocabulary_translation.yml
 %%WWWDIR%%/core/modules/config_translation/migrations/d6_user_mail_translation.yml
 %%WWWDIR%%/core/modules/config_translation/migrations/d6_user_profile_field_instance_translation.yml
 %%WWWDIR%%/core/modules/config_translation/migrations/d6_user_settings_translation.yml
+%%WWWDIR%%/core/modules/config_translation/migrations/d7_system_maintenance_translation.yml
+%%WWWDIR%%/core/modules/config_translation/migrations/d7_system_site_translation.yml
+%%WWWDIR%%/core/modules/config_translation/migrations/d7_user_mail_translation.yml
+%%WWWDIR%%/core/modules/config_translation/migrations/d7_user_settings_translation.yml
 %%WWWDIR%%/core/modules/config_translation/src/Access/ConfigTranslationFormAccess.php
 %%WWWDIR%%/core/modules/config_translation/src/Access/ConfigTranslationOverviewAccess.php
 %%WWWDIR%%/core/modules/config_translation/src/ConfigEntityMapper.php
@@ -3851,6 +3863,9 @@
 %%WWWDIR%%/core/modules/config_translation/tests/src/Kernel/Migrate/d6/MigrateSystemSiteTranslationTest.php
 %%WWWDIR%%/core/modules/config_translation/tests/src/Kernel/Migrate/d6/MigrateUserConfigsTranslationTest.php
 %%WWWDIR%%/core/modules/config_translation/tests/src/Kernel/Migrate/d6/MigrateUserProfileFieldInstanceTranslationTest.php
+%%WWWDIR%%/core/modules/config_translation/tests/src/Kernel/Migrate/d7/MigrateSystemMaintenanceTranslationTest.php
+%%WWWDIR%%/core/modules/config_translation/tests/src/Kernel/Migrate/d7/MigrateSystemSiteTranslationTest.php
+%%WWWDIR%%/core/modules/config_translation/tests/src/Kernel/Migrate/d7/MigrateUserConfigsTranslationTest.php
 %%WWWDIR%%/core/modules/config_translation/tests/src/Kernel/Plugin/migrate/source/d6/I18nProfileFieldTest.php
 %%WWWDIR%%/core/modules/config_translation/tests/src/Kernel/Plugin/migrate/source/d6/ProfileFieldTranslationTest.php
 %%WWWDIR%%/core/modules/config_translation/tests/src/Unit/ConfigEntityMapperTest.php
@@ -4072,9 +4087,13 @@
 %%WWWDIR%%/core/modules/content_translation/migrations/d6_menu_links_translation.yml
 %%WWWDIR%%/core/modules/content_translation/migrations/d6_node_translation.yml
 %%WWWDIR%%/core/modules/content_translation/migrations/d6_taxonomy_term_translation.yml
+%%WWWDIR%%/core/modules/content_translation/migrations/d7_comment_entity_translation.yml
+%%WWWDIR%%/core/modules/content_translation/migrations/d7_custom_block_translation.yml
 %%WWWDIR%%/core/modules/content_translation/migrations/d7_entity_reference_translation.yml
 %%WWWDIR%%/core/modules/content_translation/migrations/d7_entity_translation_settings.yml
+%%WWWDIR%%/core/modules/content_translation/migrations/d7_node_entity_translation.yml
 %%WWWDIR%%/core/modules/content_translation/migrations/d7_node_translation.yml
+%%WWWDIR%%/core/modules/content_translation/migrations/d7_taxonomy_term_entity_translation.yml
 %%WWWDIR%%/core/modules/content_translation/migrations/d7_user_entity_translation.yml
 %%WWWDIR%%/core/modules/content_translation/migrations/node_translation_menu_links.yml
 %%WWWDIR%%/core/modules/content_translation/migrations/statistics_node_translation_counter.yml
@@ -4098,6 +4117,7 @@
 %%WWWDIR%%/core/modules/content_translation/src/Plugin/Derivative/ContentTranslationLocalTasks.php
 %%WWWDIR%%/core/modules/content_translation/src/Plugin/Validation/Constraint/ContentTranslationSynchronizedFieldsConstraint.php
 %%WWWDIR%%/core/modules/content_translation/src/Plugin/Validation/Constraint/ContentTranslationSynchronizedFieldsConstraintValidator.php
+%%WWWDIR%%/core/modules/content_translation/src/Plugin/migrate/source/I18nQueryTrait.php
 %%WWWDIR%%/core/modules/content_translation/src/Plugin/migrate/source/d7/EntityTranslationSettings.php
 %%WWWDIR%%/core/modules/content_translation/src/Plugin/views/field/TranslationLink.php
 %%WWWDIR%%/core/modules/content_translation/src/Routing/ContentTranslationRouteSubscriber.php
@@ -4228,6 +4248,7 @@
 %%WWWDIR%%/core/modules/datetime/tests/modules/datetime_test/test_views/views.view.test_sort_datetime.yml
 %%WWWDIR%%/core/modules/datetime/tests/src/Functional/DateTestBase.php
 %%WWWDIR%%/core/modules/datetime/tests/src/Functional/DateTimeFieldTest.php
+%%WWWDIR%%/core/modules/datetime/tests/src/Functional/DateTimeTimeAgoFormatterTest.php
 %%WWWDIR%%/core/modules/datetime/tests/src/Functional/EntityResource/EntityTest/EntityTestDateonlyTest.php
 %%WWWDIR%%/core/modules/datetime/tests/src/Functional/EntityResource/EntityTest/EntityTestDatetimeTest.php
 %%WWWDIR%%/core/modules/datetime/tests/src/Kernel/DateTimeFormInjectionTest.php
@@ -4260,10 +4281,13 @@
 %%WWWDIR%%/core/modules/datetime_range/tests/fixtures/update/field.field.node.page.field_range.yml
 %%WWWDIR%%/core/modules/datetime_range/tests/fixtures/update/field.storage.node.field_range.yml
 %%WWWDIR%%/core/modules/datetime_range/tests/fixtures/update/views.view.test_datetime_range_filter_values.yml
+%%WWWDIR%%/core/modules/datetime_range/tests/modules/datetime_range_test/datetime_range_test.info.yml
+%%WWWDIR%%/core/modules/datetime_range/tests/modules/datetime_range_test/datetime_range_test.module
 %%WWWDIR%%/core/modules/datetime_range/tests/src/Functional/DateRangeFieldTest.php
 %%WWWDIR%%/core/modules/datetime_range/tests/src/Functional/Update/DatetimeRangeViewUpdateTest.php
 %%WWWDIR%%/core/modules/datetime_range/tests/src/Kernel/DateRangeItemTest.php
 %%WWWDIR%%/core/modules/datetime_range/tests/src/Kernel/SeparatorTranslationTest.php
+%%WWWDIR%%/core/modules/datetime_range/tests/src/Kernel/Views/EntityTypeWithoutViewsDataTest.php
 %%WWWDIR%%/core/modules/datetime_range/tests/src/Kernel/Views/FilterDateTest.php
 %%WWWDIR%%/core/modules/dblog/config/install/dblog.settings.yml
 %%WWWDIR%%/core/modules/dblog/config/optional/views.view.watchdog.yml
@@ -4307,6 +4331,7 @@
 %%WWWDIR%%/core/modules/dblog/tests/src/Functional/Update/DblogRecentLogsUsingViewsUpdateTest.php
 %%WWWDIR%%/core/modules/dblog/tests/src/Kernel/DbLogControllerTest.php
 %%WWWDIR%%/core/modules/dblog/tests/src/Kernel/DbLogFormInjectionTest.php
+%%WWWDIR%%/core/modules/dblog/tests/src/Kernel/DbLogTest.php
 %%WWWDIR%%/core/modules/dblog/tests/src/Kernel/Migrate/d6/MigrateDblogConfigsTest.php
 %%WWWDIR%%/core/modules/dblog/tests/src/Kernel/Migrate/d7/MigrateDblogConfigsTest.php
 %%WWWDIR%%/core/modules/dblog/tests/src/Kernel/Views/ViewsIntegrationTest.php
@@ -4433,8 +4458,10 @@
 %%WWWDIR%%/core/modules/field/src/Plugin/migrate/process/ProcessField.php
 %%WWWDIR%%/core/modules/field/src/Plugin/migrate/process/d6/FieldFormatterSettingsDefaults.php
 %%WWWDIR%%/core/modules/field/src/Plugin/migrate/process/d6/FieldInstanceDefaults.php
+%%WWWDIR%%/core/modules/field/src/Plugin/migrate/process/d6/FieldInstanceOptionTranslation.php
 %%WWWDIR%%/core/modules/field/src/Plugin/migrate/process/d6/FieldInstanceSettings.php
 %%WWWDIR%%/core/modules/field/src/Plugin/migrate/process/d6/FieldInstanceWidgetSettings.php
+%%WWWDIR%%/core/modules/field/src/Plugin/migrate/process/d6/FieldOptionTranslation.php
 %%WWWDIR%%/core/modules/field/src/Plugin/migrate/process/d6/FieldSettings.php
 %%WWWDIR%%/core/modules/field/src/Plugin/migrate/process/d6/FieldTypeDefaults.php
 %%WWWDIR%%/core/modules/field/src/Plugin/migrate/process/d7/FieldInstanceDefaults.php
@@ -4443,8 +4470,11 @@
 %%WWWDIR%%/core/modules/field/src/Plugin/migrate/process/d7/FieldTypeDefaults.php
 %%WWWDIR%%/core/modules/field/src/Plugin/migrate/source/d6/Field.php
 %%WWWDIR%%/core/modules/field/src/Plugin/migrate/source/d6/FieldInstance.php
+%%WWWDIR%%/core/modules/field/src/Plugin/migrate/source/d6/FieldInstanceOptionTranslation.php
 %%WWWDIR%%/core/modules/field/src/Plugin/migrate/source/d6/FieldInstancePerFormDisplay.php
 %%WWWDIR%%/core/modules/field/src/Plugin/migrate/source/d6/FieldInstancePerViewMode.php
+%%WWWDIR%%/core/modules/field/src/Plugin/migrate/source/d6/FieldLabelDescriptionTranslation.php
+%%WWWDIR%%/core/modules/field/src/Plugin/migrate/source/d6/FieldOptionTranslation.php
 %%WWWDIR%%/core/modules/field/src/Plugin/migrate/source/d7/Field.php
 %%WWWDIR%%/core/modules/field/src/Plugin/migrate/source/d7/FieldInstance.php
 %%WWWDIR%%/core/modules/field/src/Plugin/migrate/source/d7/FieldInstancePerFormDisplay.php
@@ -4593,7 +4623,10 @@
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/FieldValidationTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/FormatterPluginManagerTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/Migrate/d6/MigrateFieldFormatterSettingsTest.php
+%%WWWDIR%%/core/modules/field/tests/src/Kernel/Migrate/d6/MigrateFieldInstanceLabelDescriptionTest.php
+%%WWWDIR%%/core/modules/field/tests/src/Kernel/Migrate/d6/MigrateFieldInstanceOptionTranslationTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/Migrate/d6/MigrateFieldInstanceTest.php
+%%WWWDIR%%/core/modules/field/tests/src/Kernel/Migrate/d6/MigrateFieldOptionTranslationTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/Migrate/d6/MigrateFieldTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/Migrate/d6/MigrateFieldWidgetSettingsTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/Migrate/d7/MigrateFieldFormatterSettingsTest.php
@@ -4605,9 +4638,12 @@
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/Migrate/d7/RollbackFieldTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/Migrate/d7/RollbackViewModesTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/Number/NumberItemTest.php
+%%WWWDIR%%/core/modules/field/tests/src/Kernel/Plugin/migrate/source/d6/FieldInstanceLabelDescriptionTranslationTest.php
+%%WWWDIR%%/core/modules/field/tests/src/Kernel/Plugin/migrate/source/d6/FieldInstanceOptionTranslationTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/Plugin/migrate/source/d6/FieldInstancePerFormDisplayTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/Plugin/migrate/source/d6/FieldInstancePerViewModeTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/Plugin/migrate/source/d6/FieldInstanceTest.php
+%%WWWDIR%%/core/modules/field/tests/src/Kernel/Plugin/migrate/source/d6/FieldOptionTranslationTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/Plugin/migrate/source/d6/FieldTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/Plugin/migrate/source/d7/FieldInstancePerFormDisplayTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/Plugin/migrate/source/d7/FieldInstancePerViewModeTest.php
@@ -4627,6 +4663,7 @@
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/TranslationTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/Uri/UriItemTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Kernel/WidgetPluginManagerTest.php
+%%WWWDIR%%/core/modules/field/tests/src/Traits/EntityReferenceTestTrait.php
 %%WWWDIR%%/core/modules/field/tests/src/Unit/FieldConfigAccessControlHandlerTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Unit/FieldConfigEntityUnitTest.php
 %%WWWDIR%%/core/modules/field/tests/src/Unit/FieldStorageConfigAccessControlHandlerTest.php
@@ -4660,6 +4697,7 @@
 %%WWWDIR%%/core/modules/field_layout/tests/src/Functional/FieldLayoutTest.php
 %%WWWDIR%%/core/modules/field_layout/tests/src/FunctionalJavascript/FieldLayoutTest.php
 %%WWWDIR%%/core/modules/field_layout/tests/src/Kernel/FieldLayoutEntityDisplayTest.php
+%%WWWDIR%%/core/modules/field_layout/tests/src/Kernel/FieldLayoutUninstallTest.php
 %%WWWDIR%%/core/modules/field_layout/tests/src/Unit/FieldLayoutBuilderTest.php
 %%WWWDIR%%/core/modules/field_ui/config/install/field_ui.settings.yml
 %%WWWDIR%%/core/modules/field_ui/config/schema/field_ui.schema.yml
@@ -4703,21 +4741,22 @@
 %%WWWDIR%%/core/modules/field_ui/src/Plugin/Derivative/FieldUiLocalTask.php
 %%WWWDIR%%/core/modules/field_ui/src/Routing/FieldUiRouteEnhancer.php
 %%WWWDIR%%/core/modules/field_ui/src/Routing/RouteSubscriber.php
-%%WWWDIR%%/core/modules/field_ui/src/Tests/FieldUIDeleteTest.php
 %%WWWDIR%%/core/modules/field_ui/src/Tests/FieldUiTestTrait.php
 %%WWWDIR%%/core/modules/field_ui/src/Tests/ManageDisplayTest.php
-%%WWWDIR%%/core/modules/field_ui/src/Tests/ManageFieldsTest.php
 %%WWWDIR%%/core/modules/field_ui/templates/field-ui-table.html.twig
 %%WWWDIR%%/core/modules/field_ui/tests/modules/field_ui_test/field_ui_test.info.yml
 %%WWWDIR%%/core/modules/field_ui/tests/modules/field_ui_test/field_ui_test.module
 %%WWWDIR%%/core/modules/field_ui/tests/src/Functional/EntityDisplayModeTest.php
 %%WWWDIR%%/core/modules/field_ui/tests/src/Functional/EntityDisplayTest.php
+%%WWWDIR%%/core/modules/field_ui/tests/src/Functional/FieldUIDeleteTest.php
 %%WWWDIR%%/core/modules/field_ui/tests/src/Functional/FieldUIIndentationTest.php
 %%WWWDIR%%/core/modules/field_ui/tests/src/Functional/FieldUIRouteTest.php
+%%WWWDIR%%/core/modules/field_ui/tests/src/Functional/ManageFieldsFunctionalTest.php
 %%WWWDIR%%/core/modules/field_ui/tests/src/Functional/ManageFieldsTest.php
 %%WWWDIR%%/core/modules/field_ui/tests/src/FunctionalJavascript/EntityDisplayTest.php
 %%WWWDIR%%/core/modules/field_ui/tests/src/Kernel/EntityDisplayTest.php
 %%WWWDIR%%/core/modules/field_ui/tests/src/Kernel/EntityFormDisplayTest.php
+%%WWWDIR%%/core/modules/field_ui/tests/src/Traits/FieldUiTestTrait.php
 %%WWWDIR%%/core/modules/field_ui/tests/src/Unit/FieldUiTest.php
 %%WWWDIR%%/core/modules/file/config/install/file.settings.yml
 %%WWWDIR%%/core/modules/file/config/optional/views.view.files.yml
@@ -4805,7 +4844,6 @@
 %%WWWDIR%%/core/modules/file/src/Plugin/views/wizard/File.php
 %%WWWDIR%%/core/modules/file/src/Tests/FileFieldTestBase.php
 %%WWWDIR%%/core/modules/file/src/Tests/FileFieldWidgetTest.php
-%%WWWDIR%%/core/modules/file/src/Tests/FileManagedFileElementTest.php
 %%WWWDIR%%/core/modules/file/src/Tests/FileManagedTestBase.php
 %%WWWDIR%%/core/modules/file/templates/file-audio.html.twig
 %%WWWDIR%%/core/modules/file/templates/file-link.html.twig
@@ -4848,6 +4886,7 @@
 %%WWWDIR%%/core/modules/file/tests/src/Functional/FileFieldValidateTest.php
 %%WWWDIR%%/core/modules/file/tests/src/Functional/FileListingTest.php
 %%WWWDIR%%/core/modules/file/tests/src/Functional/FileManagedAccessTest.php
+%%WWWDIR%%/core/modules/file/tests/src/Functional/FileManagedFileElementTest.php
 %%WWWDIR%%/core/modules/file/tests/src/Functional/FileManagedTestBase.php
 %%WWWDIR%%/core/modules/file/tests/src/Functional/FileOnTranslatedEntityTest.php
 %%WWWDIR%%/core/modules/file/tests/src/Functional/FilePrivateTest.php
@@ -4878,6 +4917,7 @@
 %%WWWDIR%%/core/modules/file/tests/src/Functional/Update/FileUsageTemporaryDeletionConfigurationUpdateTest.php
 %%WWWDIR%%/core/modules/file/tests/src/Functional/Views/RelationshipUserFileDataTest.php
 %%WWWDIR%%/core/modules/file/tests/src/FunctionalJavascript/FileFieldValidateTest.php
+%%WWWDIR%%/core/modules/file/tests/src/FunctionalJavascript/FileManagedFileElementTest.php
 %%WWWDIR%%/core/modules/file/tests/src/FunctionalJavascript/MaximumFileSizeExceededUploadTest.php
 %%WWWDIR%%/core/modules/file/tests/src/Kernel/AccessTest.php
 %%WWWDIR%%/core/modules/file/tests/src/Kernel/ComputedFileUrlTest.php
@@ -5406,6 +5446,7 @@
 %%WWWDIR%%/core/modules/language/language.services.yml
 %%WWWDIR%%/core/modules/language/migrations/d6_language_content_menu_settings.yml
 %%WWWDIR%%/core/modules/language/migrations/d6_language_content_settings.yml
+%%WWWDIR%%/core/modules/language/migrations/d6_language_content_taxonomy_vocabulary_settings.yml
 %%WWWDIR%%/core/modules/language/migrations/d6_language_negotiation_settings.yml
 %%WWWDIR%%/core/modules/language/migrations/d6_language_types.yml
 %%WWWDIR%%/core/modules/language/migrations/d7_language_content_settings.yml
@@ -5472,6 +5513,7 @@
 %%WWWDIR%%/core/modules/language/src/Plugin/migrate/process/LanguageTypes.php
 %%WWWDIR%%/core/modules/language/src/Plugin/migrate/source/Language.php
 %%WWWDIR%%/core/modules/language/src/Plugin/migrate/source/d6/LanguageContentSettings.php
+%%WWWDIR%%/core/modules/language/src/Plugin/migrate/source/d6/LanguageContentSettingsTaxonomyVocabulary.php
 %%WWWDIR%%/core/modules/language/src/Plugin/migrate/source/d7/LanguageContentSettings.php
 %%WWWDIR%%/core/modules/language/src/ProxyClass/LanguageConverter.php
 %%WWWDIR%%/core/modules/language/templates/language-content-settings-table.html.twig
@@ -5548,12 +5590,14 @@
 %%WWWDIR%%/core/modules/language/tests/src/Kernel/Migrate/d6/MigrateDefaultLanguageTest.php
 %%WWWDIR%%/core/modules/language/tests/src/Kernel/Migrate/d6/MigrateLanguageContentMenuSettingsTest.php
 %%WWWDIR%%/core/modules/language/tests/src/Kernel/Migrate/d6/MigrateLanguageContentSettingsTest.php
+%%WWWDIR%%/core/modules/language/tests/src/Kernel/Migrate/d6/MigrateLanguageContentTaxonomyVocabularySettingsTest.php
 %%WWWDIR%%/core/modules/language/tests/src/Kernel/Migrate/d6/MigrateLanguageNegotiationSettingsTest.php
 %%WWWDIR%%/core/modules/language/tests/src/Kernel/Migrate/d7/MigrateDefaultLanguageTest.php
 %%WWWDIR%%/core/modules/language/tests/src/Kernel/Migrate/d7/MigrateLanguageContentSettingsTest.php
 %%WWWDIR%%/core/modules/language/tests/src/Kernel/Migrate/d7/MigrateLanguageNegotiationSettingsTest.php
 %%WWWDIR%%/core/modules/language/tests/src/Kernel/Plugin/migrate/source/LanguageTest.php
 %%WWWDIR%%/core/modules/language/tests/src/Kernel/Plugin/migrate/source/d6/LanguageContentSettingsTest.php
+%%WWWDIR%%/core/modules/language/tests/src/Kernel/Plugin/migrate/source/d6/LanguageContentTaxonomyVocabularySettingsTest.php
 %%WWWDIR%%/core/modules/language/tests/src/Kernel/Plugin/migrate/source/d7/LanguageContentSettingsTest.php
 %%WWWDIR%%/core/modules/language/tests/src/Kernel/Views/ArgumentLanguageTest.php
 %%WWWDIR%%/core/modules/language/tests/src/Kernel/Views/FieldLanguageTest.php
@@ -5660,6 +5704,7 @@
 %%WWWDIR%%/core/modules/layout_builder/tests/modules/no_transitions_css/no_transitions_css.libraries.yml
 %%WWWDIR%%/core/modules/layout_builder/tests/modules/no_transitions_css/no_transitions_css.module
 %%WWWDIR%%/core/modules/layout_builder/tests/src/Functional/LayoutBuilderTest.php
+%%WWWDIR%%/core/modules/layout_builder/tests/src/Functional/LayoutDisplayTest.php
 %%WWWDIR%%/core/modules/layout_builder/tests/src/Functional/LayoutSectionTest.php
 %%WWWDIR%%/core/modules/layout_builder/tests/src/Functional/Update/ExtraFieldUpdatePathTest.php
 %%WWWDIR%%/core/modules/layout_builder/tests/src/Functional/Update/LayoutBuilderEnableUpdatePathTest.php
@@ -5680,6 +5725,7 @@
 %%WWWDIR%%/core/modules/layout_builder/tests/src/Kernel/SectionStorageTestBase.php
 %%WWWDIR%%/core/modules/layout_builder/tests/src/Unit/BlockComponentRenderArrayTest.php
 %%WWWDIR%%/core/modules/layout_builder/tests/src/Unit/DefaultsSectionStorageTest.php
+%%WWWDIR%%/core/modules/layout_builder/tests/src/Unit/InlineBlockUsageTest.php
 %%WWWDIR%%/core/modules/layout_builder/tests/src/Unit/LayoutBuilderRouteEnhancerTest.php
 %%WWWDIR%%/core/modules/layout_builder/tests/src/Unit/LayoutBuilderRoutesTest.php
 %%WWWDIR%%/core/modules/layout_builder/tests/src/Unit/LayoutTempstoreParamConverterTest.php
@@ -5733,7 +5779,6 @@
 %%WWWDIR%%/core/modules/link/src/Plugin/migrate/process/FieldLink.php
 %%WWWDIR%%/core/modules/link/src/Plugin/migrate/process/d6/CckLink.php
 %%WWWDIR%%/core/modules/link/src/Plugin/migrate/process/d6/FieldLink.php
-%%WWWDIR%%/core/modules/link/src/Tests/Views/LinkViewsTokensTest.php
 %%WWWDIR%%/core/modules/link/templates/link-formatter-link-separate.html.twig
 %%WWWDIR%%/core/modules/link/tests/modules/link_test_base_field/link_test_base_field.info.yml
 %%WWWDIR%%/core/modules/link/tests/modules/link_test_base_field/link_test_base_field.module
@@ -5741,6 +5786,7 @@
 %%WWWDIR%%/core/modules/link/tests/modules/link_test_views/test_views/views.view.test_link_tokens.yml
 %%WWWDIR%%/core/modules/link/tests/src/Functional/LinkFieldTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Functional/LinkFieldUITest.php
+%%WWWDIR%%/core/modules/link/tests/src/Functional/Views/LinkViewsTokensTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Kernel/LinkItemSerializationTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Kernel/LinkItemTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Kernel/Plugin/migrate/cckfield/d7/LinkCckDeprecationTest.php
@@ -5943,6 +5989,7 @@
 %%WWWDIR%%/core/modules/media/src/OEmbed/ResourceFetcherInterface.php
 %%WWWDIR%%/core/modules/media/src/OEmbed/UrlResolver.php
 %%WWWDIR%%/core/modules/media/src/OEmbed/UrlResolverInterface.php
+%%WWWDIR%%/core/modules/media/src/Plugin/EntityReferenceSelection/MediaSelection.php
 %%WWWDIR%%/core/modules/media/src/Plugin/Field/FieldFormatter/MediaThumbnailFormatter.php
 %%WWWDIR%%/core/modules/media/src/Plugin/Field/FieldFormatter/OEmbedFormatter.php
 %%WWWDIR%%/core/modules/media/src/Plugin/Field/FieldWidget/OEmbedWidget.php
@@ -6013,6 +6060,7 @@
 %%WWWDIR%%/core/modules/media/tests/src/Functional/MediaSettingsTest.php
 %%WWWDIR%%/core/modules/media/tests/src/Functional/MediaSourceFileTest.php
 %%WWWDIR%%/core/modules/media/tests/src/Functional/MediaTemplateSuggestionsTest.php
+%%WWWDIR%%/core/modules/media/tests/src/Functional/MediaTranslationUITest.php
 %%WWWDIR%%/core/modules/media/tests/src/Functional/MediaUiFunctionalTest.php
 %%WWWDIR%%/core/modules/media/tests/src/Functional/ProviderRepositoryTest.php
 %%WWWDIR%%/core/modules/media/tests/src/Functional/ResourceFetcherTest.php
@@ -6454,9 +6502,11 @@
 %%WWWDIR%%/core/modules/migrate_drupal/src/Plugin/migrate/source/EmptySource.php
 %%WWWDIR%%/core/modules/migrate_drupal/src/Plugin/migrate/source/Variable.php
 %%WWWDIR%%/core/modules/migrate_drupal/src/Plugin/migrate/source/VariableMultiRow.php
+%%WWWDIR%%/core/modules/migrate_drupal/src/Plugin/migrate/source/d6/D6VariableTranslation.php
 %%WWWDIR%%/core/modules/migrate_drupal/src/Plugin/migrate/source/d6/VariableTranslation.php
 %%WWWDIR%%/core/modules/migrate_drupal/src/Plugin/migrate/source/d6/i18nVariable.php
 %%WWWDIR%%/core/modules/migrate_drupal/src/Plugin/migrate/source/d7/FieldableEntity.php
+%%WWWDIR%%/core/modules/migrate_drupal/src/Plugin/migrate/source/d7/VariableTranslation.php
 %%WWWDIR%%/core/modules/migrate_drupal/src/Plugin/migrate/source/d8/Config.php
 %%WWWDIR%%/core/modules/migrate_drupal/src/Tests/StubTestTrait.php
 %%WWWDIR%%/core/modules/migrate_drupal/tests/fixtures/drupal6.php
@@ -6480,6 +6530,7 @@
 %%WWWDIR%%/core/modules/migrate_drupal/tests/src/Kernel/Plugin/migrate/source/VariableMultiRowTest.php
 %%WWWDIR%%/core/modules/migrate_drupal/tests/src/Kernel/Plugin/migrate/source/VariableTest.php
 %%WWWDIR%%/core/modules/migrate_drupal/tests/src/Kernel/Plugin/migrate/source/d6/i18nVariableTest.php
+%%WWWDIR%%/core/modules/migrate_drupal/tests/src/Kernel/Plugin/migrate/source/d7/VariableTranslationTest.php
 %%WWWDIR%%/core/modules/migrate_drupal/tests/src/Kernel/Plugin/migrate/source/d8/ConfigTest.php
 %%WWWDIR%%/core/modules/migrate_drupal/tests/src/Kernel/d6/EntityContentBaseTest.php
 %%WWWDIR%%/core/modules/migrate_drupal/tests/src/Kernel/d6/FollowUpMigrationsTest.php
@@ -6581,7 +6632,6 @@
 %%WWWDIR%%/core/modules/node/migrations/d6_node_type.yml
 %%WWWDIR%%/core/modules/node/migrations/d6_view_modes.yml
 %%WWWDIR%%/core/modules/node/migrations/d7_node.yml
-%%WWWDIR%%/core/modules/node/migrations/d7_node_entity_translation.yml
 %%WWWDIR%%/core/modules/node/migrations/d7_node_revision.yml
 %%WWWDIR%%/core/modules/node/migrations/d7_node_settings.yml
 %%WWWDIR%%/core/modules/node/migrations/d7_node_title_label.yml
@@ -7067,6 +7117,7 @@
 %%WWWDIR%%/core/modules/quickedit/tests/modules/src/MockQuickEditEntityFieldAccessCheck.php
 %%WWWDIR%%/core/modules/quickedit/tests/modules/src/Plugin/InPlaceEditor/WysiwygEditor.php
 %%WWWDIR%%/core/modules/quickedit/tests/src/FunctionalJavascript/FieldTest.php
+%%WWWDIR%%/core/modules/quickedit/tests/src/FunctionalJavascript/QuickEditFileTest.php
 %%WWWDIR%%/core/modules/quickedit/tests/src/FunctionalJavascript/QuickEditIntegrationTest.php
 %%WWWDIR%%/core/modules/quickedit/tests/src/FunctionalJavascript/QuickEditJavascriptTestBase.php
 %%WWWDIR%%/core/modules/quickedit/tests/src/Kernel/EditorSelectionTest.php
@@ -7145,7 +7196,6 @@
 %%WWWDIR%%/core/modules/responsive_image/src/ResponsiveImageStyleForm.php
 %%WWWDIR%%/core/modules/responsive_image/src/ResponsiveImageStyleInterface.php
 %%WWWDIR%%/core/modules/responsive_image/src/ResponsiveImageStyleListBuilder.php
-%%WWWDIR%%/core/modules/responsive_image/src/Tests/ResponsiveImageFieldDisplayTest.php
 %%WWWDIR%%/core/modules/responsive_image/src/Tests/ResponsiveImageFieldUiTest.php
 %%WWWDIR%%/core/modules/responsive_image/templates/responsive-image-formatter.html.twig
 %%WWWDIR%%/core/modules/responsive_image/templates/responsive-image.html.twig
@@ -7157,6 +7207,7 @@
 %%WWWDIR%%/core/modules/responsive_image/tests/src/Functional/Hal/ResponsiveImageStyleHalJsonBasicAuthTest.php
 %%WWWDIR%%/core/modules/responsive_image/tests/src/Functional/Hal/ResponsiveImageStyleHalJsonCookieTest.php
 %%WWWDIR%%/core/modules/responsive_image/tests/src/Functional/ResponsiveImageAdminUITest.php
+%%WWWDIR%%/core/modules/responsive_image/tests/src/Functional/ResponsiveImageFieldDisplayTest.php
 %%WWWDIR%%/core/modules/responsive_image/tests/src/Functional/Rest/ResponsiveImageStyleJsonAnonTest.php
 %%WWWDIR%%/core/modules/responsive_image/tests/src/Functional/Rest/ResponsiveImageStyleJsonBasicAuthTest.php
 %%WWWDIR%%/core/modules/responsive_image/tests/src/Functional/Rest/ResponsiveImageStyleJsonCookieTest.php
@@ -7234,6 +7285,8 @@
 %%WWWDIR%%/core/modules/rest/tests/modules/rest_test/src/Authentication/Provider/TestAuth.php
 %%WWWDIR%%/core/modules/rest/tests/modules/rest_test/src/Authentication/Provider/TestAuthGlobal.php
 %%WWWDIR%%/core/modules/rest/tests/modules/rest_test/src/PageCache/RequestPolicy/DenyTestAuthRequests.php
+%%WWWDIR%%/core/modules/rest/tests/modules/rest_test/src/Plugin/Validation/Constraint/RestTestConstraint.php
+%%WWWDIR%%/core/modules/rest/tests/modules/rest_test/src/Plugin/Validation/Constraint/RestTestConstraintValidator.php
 %%WWWDIR%%/core/modules/rest/tests/modules/rest_test/src/Plugin/rest/resource/NoSerializationClassTestResource.php
 %%WWWDIR%%/core/modules/rest/tests/modules/rest_test_views/rest_test_views.info.yml
 %%WWWDIR%%/core/modules/rest/tests/modules/rest_test_views/rest_test_views.module
@@ -7284,6 +7337,13 @@
 %%WWWDIR%%/core/modules/rest/tests/src/Functional/EntityResource/Menu/MenuResourceTestBase.php
 %%WWWDIR%%/core/modules/rest/tests/src/Functional/EntityResource/MenuLinkContent/MenuLinkContentResourceTestBase.php
 %%WWWDIR%%/core/modules/rest/tests/src/Functional/EntityResource/Message/MessageResourceTestBase.php
+%%WWWDIR%%/core/modules/rest/tests/src/Functional/EntityResource/ModeratedNode/ModeratedNodeJsonAnonTest.php
+%%WWWDIR%%/core/modules/rest/tests/src/Functional/EntityResource/ModeratedNode/ModeratedNodeJsonBasicAuthTest.php
+%%WWWDIR%%/core/modules/rest/tests/src/Functional/EntityResource/ModeratedNode/ModeratedNodeJsonCookieTest.php
+%%WWWDIR%%/core/modules/rest/tests/src/Functional/EntityResource/ModeratedNode/ModeratedNodeResourceTestBase.php
+%%WWWDIR%%/core/modules/rest/tests/src/Functional/EntityResource/ModeratedNode/ModeratedNodeXmlAnonTest.php
+%%WWWDIR%%/core/modules/rest/tests/src/Functional/EntityResource/ModeratedNode/ModeratedNodeXmlBasicAuthTest.php
+%%WWWDIR%%/core/modules/rest/tests/src/Functional/EntityResource/ModeratedNode/ModeratedNodeXmlCookieTest.php
 %%WWWDIR%%/core/modules/rest/tests/src/Functional/EntityResource/Node/NodeResourceTestBase.php
 %%WWWDIR%%/core/modules/rest/tests/src/Functional/EntityResource/NodeType/NodeTypeResourceTestBase.php
 %%WWWDIR%%/core/modules/rest/tests/src/Functional/EntityResource/RdfMapping/RdfMappingResourceTestBase.php
@@ -7751,7 +7811,6 @@
 %%WWWDIR%%/core/modules/statistics/src/StatisticsStorageInterface.php
 %%WWWDIR%%/core/modules/statistics/src/StatisticsViewsResult.php
 %%WWWDIR%%/core/modules/statistics/src/Tests/StatisticsTestBase.php
-%%WWWDIR%%/core/modules/statistics/src/Tests/Views/IntegrationTest.php
 %%WWWDIR%%/core/modules/statistics/statistics.es6.js
 %%WWWDIR%%/core/modules/statistics/statistics.info.yml
 %%WWWDIR%%/core/modules/statistics/statistics.install
@@ -7773,6 +7832,7 @@
 %%WWWDIR%%/core/modules/statistics/tests/src/Functional/StatisticsReportsTest.php
 %%WWWDIR%%/core/modules/statistics/tests/src/Functional/StatisticsTestBase.php
 %%WWWDIR%%/core/modules/statistics/tests/src/Functional/StatisticsTokenReplaceTest.php
+%%WWWDIR%%/core/modules/statistics/tests/src/Functional/Views/IntegrationTest.php
 %%WWWDIR%%/core/modules/statistics/tests/src/FunctionalJavascript/StatisticsLoggingTest.php
 %%WWWDIR%%/core/modules/statistics/tests/src/Kernel/Migrate/d6/MigrateNodeCounterTest.php
 %%WWWDIR%%/core/modules/statistics/tests/src/Kernel/Migrate/d6/MigrateStatisticsConfigsTest.php
@@ -7969,17 +8029,13 @@
 %%WWWDIR%%/core/modules/system/src/SystemManager.php
 %%WWWDIR%%/core/modules/system/src/SystemRequirements.php
 %%WWWDIR%%/core/modules/system/src/Tests/Ajax/AjaxTestBase.php
-%%WWWDIR%%/core/modules/system/src/Tests/Ajax/CommandsTest.php
-%%WWWDIR%%/core/modules/system/src/Tests/Ajax/DialogTest.php
 %%WWWDIR%%/core/modules/system/src/Tests/Ajax/ElementValidationTest.php
 %%WWWDIR%%/core/modules/system/src/Tests/Ajax/FormValuesTest.php
 %%WWWDIR%%/core/modules/system/src/Tests/Ajax/FrameworkTest.php
-%%WWWDIR%%/core/modules/system/src/Tests/Ajax/MultiFormTest.php
 %%WWWDIR%%/core/modules/system/src/Tests/Cache/AssertPageCacheContextsAndTagsTrait.php
 %%WWWDIR%%/core/modules/system/src/Tests/Cache/CacheTestBase.php
 %%WWWDIR%%/core/modules/system/src/Tests/Cache/GenericCacheBackendUnitTestBase.php
 %%WWWDIR%%/core/modules/system/src/Tests/Cache/PageCacheTagsTestBase.php
-%%WWWDIR%%/core/modules/system/src/Tests/Condition/ConditionFormTest.php
 %%WWWDIR%%/core/modules/system/src/Tests/Database/DatabaseWebTestBase.php
 %%WWWDIR%%/core/modules/system/src/Tests/Database/FakeRecord.php
 %%WWWDIR%%/core/modules/system/src/Tests/Entity/EntityCacheTagsTestBase.php
@@ -7996,12 +8052,7 @@
 %%WWWDIR%%/core/modules/system/src/Tests/Menu/AssertMenuActiveTrailTrait.php
 %%WWWDIR%%/core/modules/system/src/Tests/Menu/MenuTestBase.php
 %%WWWDIR%%/core/modules/system/src/Tests/Module/ModuleTestBase.php
-%%WWWDIR%%/core/modules/system/src/Tests/Page/DefaultMetatagsTest.php
-%%WWWDIR%%/core/modules/system/src/Tests/Pager/PagerTest.php
 %%WWWDIR%%/core/modules/system/src/Tests/Path/UrlAliasFixtures.php
-%%WWWDIR%%/core/modules/system/src/Tests/Render/HtmlResponseAttachmentsTest.php
-%%WWWDIR%%/core/modules/system/src/Tests/Render/UrlBubbleableMetadataBubblingTest.php
-%%WWWDIR%%/core/modules/system/src/Tests/Routing/DestinationTest.php
 %%WWWDIR%%/core/modules/system/src/Tests/Routing/MockAliasManager.php
 %%WWWDIR%%/core/modules/system/src/Tests/Routing/MockRouteProvider.php
 %%WWWDIR%%/core/modules/system/src/Tests/Routing/RouterTest.php
@@ -8526,6 +8577,7 @@
 %%WWWDIR%%/core/modules/system/tests/modules/form_test/src/Form/FormTestValidateRequiredNoTitleForm.php
 %%WWWDIR%%/core/modules/system/tests/modules/form_test/src/Form/FormTestVerticalTabsAccessForm.php
 %%WWWDIR%%/core/modules/system/tests/modules/form_test/src/Form/FormTestVerticalTabsForm.php
+%%WWWDIR%%/core/modules/system/tests/modules/form_test/src/Form/JavascriptStatesForm.php
 %%WWWDIR%%/core/modules/system/tests/modules/form_test/src/Form/RedirectBlockForm.php
 %%WWWDIR%%/core/modules/system/tests/modules/form_test/src/FormTestArgumentsObject.php
 %%WWWDIR%%/core/modules/system/tests/modules/form_test/src/FormTestAutocompleteForm.php
@@ -8590,6 +8642,9 @@
 %%WWWDIR%%/core/modules/system/tests/modules/lazy_route_provider_install_test/src/PluginManager.php
 %%WWWDIR%%/core/modules/system/tests/modules/link_generation_test/link_generation_test.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/link_generation_test/link_generation_test.module
+%%WWWDIR%%/core/modules/system/tests/modules/mail_html_test/mail_html_test.info.yml
+%%WWWDIR%%/core/modules/system/tests/modules/mail_html_test/mail_html_test.module
+%%WWWDIR%%/core/modules/system/tests/modules/mail_html_test/src/Plugin/Mail/TestHtmlMailCollector.php
 %%WWWDIR%%/core/modules/system/tests/modules/menu_test/config/install/language/nl/menu_test.menu_item.yml
 %%WWWDIR%%/core/modules/system/tests/modules/menu_test/config/install/menu_test.links.action.yml
 %%WWWDIR%%/core/modules/system/tests/modules/menu_test/config/install/menu_test.menu_item.yml
@@ -8875,6 +8930,7 @@
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Common/NoJavaScriptAnonymousTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Common/RenderWebTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Common/UrlTest.php
+%%WWWDIR%%/core/modules/system/tests/src/Functional/Condition/ConditionFormTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/CsrfRequestHeaderTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Database/DatabaseTestBase.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Database/FakeRecord.php
@@ -8944,6 +9000,7 @@
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Mail/MailTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Menu/AssertBreadcrumbTrait.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Menu/AssertMenuActiveTrailTrait.php
+%%WWWDIR%%/core/modules/system/tests/src/Functional/Menu/BreadcrumbFrontCacheContextsTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Menu/BreadcrumbTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Menu/LocalActionTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Menu/LocalTasksTest.php
@@ -8960,12 +9017,16 @@
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Module/PrepareUninstallTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Module/UninstallTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Module/VersionTest.php
+%%WWWDIR%%/core/modules/system/tests/src/Functional/Page/DefaultMetatagsTest.php
+%%WWWDIR%%/core/modules/system/tests/src/Functional/Pager/PagerTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/ParamConverter/UpcastingTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Path/UrlAlterFunctionalTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Render/AjaxPageStateTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Render/DisplayVariantTest.php
+%%WWWDIR%%/core/modules/system/tests/src/Functional/Render/HtmlResponseAttachmentsTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Render/PlaceholderMessageTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Render/RenderArrayNonHtmlSubscriberTest.php
+%%WWWDIR%%/core/modules/system/tests/src/Functional/Render/UrlBubbleableMetadataBubblingTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Rest/ActionJsonAnonTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Rest/ActionJsonBasicAuthTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Rest/ActionJsonCookieTest.php
@@ -8980,6 +9041,7 @@
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Rest/MenuXmlAnonTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Rest/MenuXmlBasicAuthTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Rest/MenuXmlCookieTest.php
+%%WWWDIR%%/core/modules/system/tests/src/Functional/Routing/DestinationTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Routing/MockMatcher.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Routing/RouterPermissionTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/ServiceProvider/ServiceProviderWebTest.php
@@ -9080,7 +9142,7 @@
 %%WWWDIR%%/core/modules/system/tests/src/Kernel/Form/FormElementMaxlengthTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Kernel/Form/FormObjectTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Kernel/Form/ProgrammaticTest.php
-%%WWWDIR%%/core/modules/system/tests/src/Kernel/Installer/InstallerMissingDependenciesTest.php
+%%WWWDIR%%/core/modules/system/tests/src/Kernel/Installer/InstallerDependenciesResolutionTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Kernel/Installer/UninstallKernelTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Kernel/MenuAccessControlHandlerTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Kernel/Migrate/d6/MigrateDateFormatTest.php
@@ -9233,6 +9295,7 @@
 %%WWWDIR%%/core/modules/taxonomy/src/Plugin/migrate/source/d6/VocabularyPerType.php
 %%WWWDIR%%/core/modules/taxonomy/src/Plugin/migrate/source/d6/VocabularyTranslation.php
 %%WWWDIR%%/core/modules/taxonomy/src/Plugin/migrate/source/d7/Term.php
+%%WWWDIR%%/core/modules/taxonomy/src/Plugin/migrate/source/d7/TermEntityTranslation.php
 %%WWWDIR%%/core/modules/taxonomy/src/Plugin/migrate/source/d7/Vocabulary.php
 %%WWWDIR%%/core/modules/taxonomy/src/Plugin/views/argument/IndexTid.php
 %%WWWDIR%%/core/modules/taxonomy/src/Plugin/views/argument/IndexTidDepth.php
@@ -9259,14 +9322,9 @@
 %%WWWDIR%%/core/modules/taxonomy/src/TermTranslationHandler.php
 %%WWWDIR%%/core/modules/taxonomy/src/TermViewBuilder.php
 %%WWWDIR%%/core/modules/taxonomy/src/TermViewsData.php
-%%WWWDIR%%/core/modules/taxonomy/src/Tests/RssTest.php
-%%WWWDIR%%/core/modules/taxonomy/src/Tests/TaxonomyTermIndentationTest.php
 %%WWWDIR%%/core/modules/taxonomy/src/Tests/TaxonomyTestBase.php
 %%WWWDIR%%/core/modules/taxonomy/src/Tests/TaxonomyTestTrait.php
 %%WWWDIR%%/core/modules/taxonomy/src/Tests/TaxonomyTranslationTestTrait.php
-%%WWWDIR%%/core/modules/taxonomy/src/Tests/TermAutocompleteTest.php
-%%WWWDIR%%/core/modules/taxonomy/src/Tests/TermTest.php
-%%WWWDIR%%/core/modules/taxonomy/src/Tests/TermTranslationTest.php
 %%WWWDIR%%/core/modules/taxonomy/src/VocabularyAccessControlHandler.php
 %%WWWDIR%%/core/modules/taxonomy/src/VocabularyForm.php
 %%WWWDIR%%/core/modules/taxonomy/src/VocabularyInterface.php
@@ -9343,19 +9401,24 @@
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/Rest/VocabularyXmlAnonTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/Rest/VocabularyXmlBasicAuthTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/Rest/VocabularyXmlCookieTest.php
+%%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/RssTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/TaxonomyImageTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/TaxonomyQueryAlterTest.php
+%%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/TaxonomyTermIndentationTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/TaxonomyTermPagerTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/TaxonomyTestBase.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/TaxonomyTestTrait.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/TaxonomyTranslationTestTrait.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/TermAccessTest.php
+%%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/TermAutocompleteTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/TermCacheTagsTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/TermContextualLinksTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/TermEntityReferenceTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/TermIndexTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/TermLanguageTest.php
+%%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/TermTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/TermTranslationFieldViewTest.php
+%%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/TermTranslationTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/TermTranslationUITest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/ThemeTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Functional/TokenReplaceTest.php
@@ -9405,6 +9468,7 @@
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Kernel/Plugin/migrate/source/d6/TermTranslationTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Kernel/Plugin/migrate/source/d6/VocabularyTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Kernel/Plugin/migrate/source/d6/VocabularyTranslationTest.php
+%%WWWDIR%%/core/modules/taxonomy/tests/src/Kernel/Plugin/migrate/source/d7/TermEntityTranslationTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Kernel/Plugin/migrate/source/d7/TermSourceWithVocabularyFilterTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Kernel/Plugin/migrate/source/d7/TermTest.php
 %%WWWDIR%%/core/modules/taxonomy/tests/src/Kernel/Plugin/migrate/source/d7/VocabularyTest.php
@@ -9833,14 +9897,7 @@
 %%WWWDIR%%/core/modules/user/src/SharedTempStore.php
 %%WWWDIR%%/core/modules/user/src/SharedTempStoreFactory.php
 %%WWWDIR%%/core/modules/user/src/StatusItem.php
-%%WWWDIR%%/core/modules/user/src/Tests/Functional/UserPasswordResetTest.php
-%%WWWDIR%%/core/modules/user/src/Tests/FunctionalJavascript/UserPasswordResetTest.php
 %%WWWDIR%%/core/modules/user/src/Tests/RestRegisterUserTest.php
-%%WWWDIR%%/core/modules/user/src/Tests/UserAdminLanguageTest.php
-%%WWWDIR%%/core/modules/user/src/Tests/UserAdminSettingsFormTest.php
-%%WWWDIR%%/core/modules/user/src/Tests/UserBlocksTest.php
-%%WWWDIR%%/core/modules/user/src/Tests/UserCreateTest.php
-%%WWWDIR%%/core/modules/user/src/Tests/UserRegistrationTest.php
 %%WWWDIR%%/core/modules/user/src/Tests/UserResetEmailTestTrait.php
 %%WWWDIR%%/core/modules/user/src/Theme/AdminNegotiator.php
 %%WWWDIR%%/core/modules/user/src/TimeZoneItem.php
@@ -9917,11 +9974,14 @@
 %%WWWDIR%%/core/modules/user/tests/src/Functional/Update/UserUpdateEmailToken.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/Update/UserUpdateOrderPermissionsTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserAccountLinksTest.php
+%%WWWDIR%%/core/modules/user/tests/src/Functional/UserAdminLanguageTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserAdminListingTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserAdminTest.php
+%%WWWDIR%%/core/modules/user/tests/src/Functional/UserBlocksTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserCacheTagsTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserCancelTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserCreateFailMailTest.php
+%%WWWDIR%%/core/modules/user/tests/src/Functional/UserCreateTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserDeleteTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserEditTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserEditedOwnAccountTest.php
@@ -9931,8 +9991,10 @@
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserLoginHttpTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserLoginTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserMailNotifyTest.php
+%%WWWDIR%%/core/modules/user/tests/src/Functional/UserPasswordResetTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserPermissionsTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserPictureTest.php
+%%WWWDIR%%/core/modules/user/tests/src/Functional/UserRegistrationTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserRoleAdminTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserRolesAssignmentTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserSaveTest.php
@@ -9959,6 +10021,7 @@
 %%WWWDIR%%/core/modules/user/tests/src/Functional/Views/UserFieldsAccessChangeTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/Views/UserTestBase.php
 %%WWWDIR%%/core/modules/user/tests/src/FunctionalJavascript/RegistrationWithUserFieldsTest.php
+%%WWWDIR%%/core/modules/user/tests/src/FunctionalJavascript/UserPasswordResetTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Kernel/Condition/UserRoleConditionTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Kernel/Field/UserNameFormatterTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Kernel/Migrate/MigrateUserAdminPassTest.php
@@ -9996,6 +10059,7 @@
 %%WWWDIR%%/core/modules/user/tests/src/Kernel/TempStoreDatabaseTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Kernel/UserAccountFormFieldsTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Kernel/UserActionConfigSchemaTest.php
+%%WWWDIR%%/core/modules/user/tests/src/Kernel/UserAdminSettingsFormTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Kernel/UserEntityReferenceTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Kernel/UserEntityTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Kernel/UserFieldsTest.php
@@ -10311,12 +10375,9 @@
 %%WWWDIR%%/core/modules/views/src/ResultRow.php
 %%WWWDIR%%/core/modules/views/src/Routing/ViewPageController.php
 %%WWWDIR%%/core/modules/views/src/Tests/AssertViewsCacheTagsTrait.php
-%%WWWDIR%%/core/modules/views/src/Tests/FieldApiDataTest.php
 %%WWWDIR%%/core/modules/views/src/Tests/Handler/HandlerTestBase.php
-%%WWWDIR%%/core/modules/views/src/Tests/Plugin/DisplayFeedTest.php
 %%WWWDIR%%/core/modules/views/src/Tests/Plugin/PluginKernelTestBase.php
 %%WWWDIR%%/core/modules/views/src/Tests/Plugin/PluginTestBase.php
-%%WWWDIR%%/core/modules/views/src/Tests/Plugin/StyleOpmlTest.php
 %%WWWDIR%%/core/modules/views/src/Tests/TestHelperPlugin.php
 %%WWWDIR%%/core/modules/views/src/Tests/ViewKernelTestBase.php
 %%WWWDIR%%/core/modules/views/src/Tests/ViewResultAssertionTrait.php
@@ -10570,6 +10631,7 @@
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Entity/FilterEntityBundleTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Entity/LatestRevisionFilterTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Entity/ViewNonTranslatableEntityTest.php
+%%WWWDIR%%/core/modules/views/tests/src/Functional/FieldApiDataTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/GlossaryTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Hal/ViewHalJsonAnonTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Hal/ViewHalJsonBasicAuthTest.php
@@ -10595,6 +10657,7 @@
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/DisabledDisplayTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/DisplayAttachmentTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/DisplayEntityReferenceTest.php
+%%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/DisplayFeedTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/DisplayPageWebTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/DisplayTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/ExposedFormCheckboxesTest.php
@@ -10604,6 +10667,7 @@
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/MiniPagerTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/NumericFormatPluralTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/PagerTest.php
+%%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/StyleOpmlTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/StyleSummaryTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/StyleTableTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Functional/Plugin/StyleTest.php
@@ -10831,7 +10895,6 @@
 %%WWWDIR%%/core/modules/views_ui/src/ParamConverter/ViewUIConverter.php
 %%WWWDIR%%/core/modules/views_ui/src/ProxyClass/ParamConverter/ViewUIConverter.php
 %%WWWDIR%%/core/modules/views_ui/src/Tests/PreviewTest.php
-%%WWWDIR%%/core/modules/views_ui/src/Tests/RowUITest.php
 %%WWWDIR%%/core/modules/views_ui/src/Tests/UITestBase.php
 %%WWWDIR%%/core/modules/views_ui/src/ViewAddForm.php
 %%WWWDIR%%/core/modules/views_ui/src/ViewDuplicateForm.php
@@ -10886,6 +10949,7 @@
 %%WWWDIR%%/core/modules/views_ui/tests/src/Functional/RedirectTest.php
 %%WWWDIR%%/core/modules/views_ui/tests/src/Functional/ReportFieldsTest.php
 %%WWWDIR%%/core/modules/views_ui/tests/src/Functional/ReportTest.php
+%%WWWDIR%%/core/modules/views_ui/tests/src/Functional/RowUITest.php
 %%WWWDIR%%/core/modules/views_ui/tests/src/Functional/SettingsTest.php
 %%WWWDIR%%/core/modules/views_ui/tests/src/Functional/StorageTest.php
 %%WWWDIR%%/core/modules/views_ui/tests/src/Functional/StyleTableTest.php
@@ -11145,6 +11209,7 @@
 %%WWWDIR%%/core/profiles/demo_umami/config/install/core.entity_view_mode.node.card.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/core.entity_view_mode.node.card_common.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/core.entity_view_mode.node.card_common_alt.yml
+%%WWWDIR%%/core/profiles/demo_umami/config/install/core.menu.static_menu_link_overrides.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/editor.editor.basic_html.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/editor.editor.full_html.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/field.field.block_content.banner_block.field_banner_image.yml
@@ -11167,7 +11232,6 @@
 %%WWWDIR%%/core/profiles/demo_umami/config/install/field.field.node.article.field_image.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/field.field.node.article.field_tags.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/field.field.node.page.body.yml
-%%WWWDIR%%/core/profiles/demo_umami/config/install/field.field.node.recipe.field_author.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/field.field.node.recipe.field_cooking_time.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/field.field.node.recipe.field_difficulty.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/field.field.node.recipe.field_image.yml
@@ -11191,7 +11255,6 @@
 %%WWWDIR%%/core/profiles/demo_umami/config/install/field.storage.media.field_media_image.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/field.storage.media.field_media_oembed_video.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/field.storage.media.field_media_video_file.yml
-%%WWWDIR%%/core/profiles/demo_umami/config/install/field.storage.node.field_author.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/field.storage.node.field_cooking_time.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/field.storage.node.field_difficulty.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/field.storage.node.field_image.yml
@@ -11224,6 +11287,7 @@
 %%WWWDIR%%/core/profiles/demo_umami/config/install/media.type.image.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/media.type.remote_video.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/media.type.video.yml
+%%WWWDIR%%/core/profiles/demo_umami/config/install/node.settings.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/node.type.article.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/node.type.page.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/node.type.recipe.yml
@@ -11233,12 +11297,16 @@
 %%WWWDIR%%/core/profiles/demo_umami/config/install/responsive_image.styles.3_2_image.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/responsive_image.styles.hero_or_banner.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/responsive_image.styles.square.yml
+%%WWWDIR%%/core/profiles/demo_umami/config/install/system.site.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/system.theme.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/taxonomy.vocabulary.recipe_category.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/taxonomy.vocabulary.tags.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/user.role.administrator.yml
+%%WWWDIR%%/core/profiles/demo_umami/config/install/user.role.anonymous.yml
+%%WWWDIR%%/core/profiles/demo_umami/config/install/user.role.authenticated.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/user.role.author.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/user.role.editor.yml
+%%WWWDIR%%/core/profiles/demo_umami/config/install/user.settings.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/views.view.articles_aside.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/views.view.featured_articles.yml
 %%WWWDIR%%/core/profiles/demo_umami/config/install/views.view.frontpage.yml
@@ -11266,6 +11334,7 @@
 %%WWWDIR%%/core/profiles/demo_umami/modules/demo_umami_content/default_content/LICENCE.txt
 %%WWWDIR%%/core/profiles/demo_umami/modules/demo_umami_content/default_content/article_body/baking-mishaps-our-troubleshooting-tips.html
 %%WWWDIR%%/core/profiles/demo_umami/modules/demo_umami_content/default_content/article_body/give-it-a-go-and-grow-your-own-herbs.html
+%%WWWDIR%%/core/profiles/demo_umami/modules/demo_umami_content/default_content/article_body/give-your-oatmeal-the-ultimate-makeover.html
 %%WWWDIR%%/core/profiles/demo_umami/modules/demo_umami_content/default_content/article_body/lets-hear-it-for-carrots.html
 %%WWWDIR%%/core/profiles/demo_umami/modules/demo_umami_content/default_content/article_body/skip-the-spirits-with-delicious-mocktails.html
 %%WWWDIR%%/core/profiles/demo_umami/modules/demo_umami_content/default_content/article_body/the-real-deal-for-supermarket-savvy-shopping.html
@@ -11279,6 +11348,7 @@
 %%WWWDIR%%/core/profiles/demo_umami/modules/demo_umami_content/default_content/images/mediterranean-quiche-umami.jpg
 %%WWWDIR%%/core/profiles/demo_umami/modules/demo_umami_content/default_content/images/mojito-mocktail.jpg
 %%WWWDIR%%/core/profiles/demo_umami/modules/demo_umami_content/default_content/images/mushrooms-umami.jpg
+%%WWWDIR%%/core/profiles/demo_umami/modules/demo_umami_content/default_content/images/oatmeal-fruit-syrup-topping.jpg
 %%WWWDIR%%/core/profiles/demo_umami/modules/demo_umami_content/default_content/images/pizza-umami.jpg
 %%WWWDIR%%/core/profiles/demo_umami/modules/demo_umami_content/default_content/images/supermarket-savvy-umami.jpg
 %%WWWDIR%%/core/profiles/demo_umami/modules/demo_umami_content/default_content/images/thai-green-curry-umami.jpg
@@ -11304,6 +11374,7 @@
 %%WWWDIR%%/core/profiles/demo_umami/modules/demo_umami_content/tests/src/Functional/DefaultContentFilesAccessTest.php
 %%WWWDIR%%/core/profiles/demo_umami/modules/demo_umami_content/tests/src/Functional/UninstallDefaultContentTest.php
 %%WWWDIR%%/core/profiles/demo_umami/tests/src/Functional/DemoUmamiProfileTest.php
+%%WWWDIR%%/core/profiles/demo_umami/themes/umami/README.txt
 %%WWWDIR%%/core/profiles/demo_umami/themes/umami/css/base.css
 %%WWWDIR%%/core/profiles/demo_umami/themes/umami/css/components/blocks/articles-aside/articles-aside.css
 %%WWWDIR%%/core/profiles/demo_umami/themes/umami/css/components/blocks/banner/banner.css
@@ -11347,6 +11418,7 @@
 %%WWWDIR%%/core/profiles/demo_umami/themes/umami/css/layout/grid-4.css
 %%WWWDIR%%/core/profiles/demo_umami/themes/umami/css/layout/layout-2-col.css
 %%WWWDIR%%/core/profiles/demo_umami/themes/umami/css/layout/layout.css
+%%WWWDIR%%/core/profiles/demo_umami/themes/umami/favicon.ico
 %%WWWDIR%%/core/profiles/demo_umami/themes/umami/images/png/umami-background-pattern-1.png
 %%WWWDIR%%/core/profiles/demo_umami/themes/umami/images/svg/cake.svg
 %%WWWDIR%%/core/profiles/demo_umami/themes/umami/images/svg/chefs-hat.svg
@@ -11535,6 +11607,8 @@
 %%WWWDIR%%/core/profiles/testing_multilingual_with_english/config/install/language.entity.de.yml
 %%WWWDIR%%/core/profiles/testing_multilingual_with_english/config/install/language.entity.es.yml
 %%WWWDIR%%/core/profiles/testing_multilingual_with_english/testing_multilingual_with_english.info.yml
+%%WWWDIR%%/core/profiles/testing_requirements/testing_requirements.info.yml
+%%WWWDIR%%/core/profiles/testing_requirements/testing_requirements.install
 %%WWWDIR%%/core/rebuild.php
 %%WWWDIR%%/core/scripts/cron-curl.sh
 %%WWWDIR%%/core/scripts/cron-lynx.sh
@@ -11569,6 +11643,9 @@
 %%WWWDIR%%/core/tests/Drupal/FunctionalJavascriptTests/Ajax/AjaxInGroupTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalJavascriptTests/Ajax/AjaxTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalJavascriptTests/Ajax/BackwardCompatibilityTest.php
+%%WWWDIR%%/core/tests/Drupal/FunctionalJavascriptTests/Ajax/CommandsTest.php
+%%WWWDIR%%/core/tests/Drupal/FunctionalJavascriptTests/Ajax/DialogTest.php
+%%WWWDIR%%/core/tests/Drupal/FunctionalJavascriptTests/Ajax/MultiFormTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalJavascriptTests/Ajax/ThrobberTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalJavascriptTests/BrowserWithJavascriptTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalJavascriptTests/Core/Form/FormGroupingElementsTest.php
@@ -11595,6 +11672,7 @@
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/BrowserTestBaseTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Core/Config/SchemaConfigListenerTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Core/Test/PhpUnitBridgeTest.php
+%%WWWDIR%%/core/tests/Drupal/FunctionalTests/Datetime/TimestampAgoFormatterTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Datetime/TimestampTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Entity/ContentEntityFormCorrectUserInputMappingOnFieldDeltaElementsTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Entity/ContentEntityFormFieldValidationFilteringTest.php
@@ -11652,6 +11730,7 @@
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Installer/InstallerExistingSettingsTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Installer/InstallerLanguageDirectionTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Installer/InstallerLanguagePageTest.php
+%%WWWDIR%%/core/tests/Drupal/FunctionalTests/Installer/InstallerProfileRequirementsTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Installer/InstallerSkipPermissionHardeningTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Installer/InstallerTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Installer/InstallerTestBase.php
@@ -11727,6 +11806,7 @@
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Action/DeleteActionTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Action/PublishActionTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Action/SaveActionTest.php
+%%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Ajax/CommandsTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Asset/AttachedAssetsTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Asset/LibraryDiscoveryIntegrationTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Asset/ResolvedLibraryDefinitionsFilesMatchTest.php
@@ -11836,6 +11916,7 @@
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Entity/EntityApiTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Entity/EntityAutocompleteTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Entity/EntityBundleFieldTest.php
+%%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Entity/EntityBundleListenerTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Entity/EntityCrudHookTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Entity/EntityDecoupledTranslationRevisionsTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Entity/EntityDefinitionUpdateTest.php
@@ -11925,6 +12006,7 @@
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/KeyValueStore/StorageTestBase.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Layout/IconBuilderTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Lock/LockTest.php
+%%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Menu/LocalActionManagerTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Menu/MenuLinkDefaultIntegrationTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Menu/MenuLinkTreeTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Menu/MenuTreeStorageTest.php
@@ -11942,6 +12024,7 @@
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Plugin/Condition/RequestPathTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Plugin/ContextDefinitionTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Plugin/ContextPluginTest.php
+%%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Plugin/ContextTypedDataTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Plugin/DerivativeTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Plugin/Discovery/AnnotatedClassDiscoveryTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Plugin/Discovery/CustomAnnotationClassDiscoveryTest.php
@@ -12016,6 +12099,7 @@
 %%WWWDIR%%/core/tests/Drupal/Nightwatch/Commands/drupalUserIsLoggedIn.js
 %%WWWDIR%%/core/tests/Drupal/Nightwatch/Tests/exampleTest.js
 %%WWWDIR%%/core/tests/Drupal/Nightwatch/Tests/loginTest.js
+%%WWWDIR%%/core/tests/Drupal/Nightwatch/Tests/statesTest.js
 %%WWWDIR%%/core/tests/Drupal/Nightwatch/globals.js
 %%WWWDIR%%/core/tests/Drupal/Nightwatch/nightwatch.conf.js
 %%WWWDIR%%/core/tests/Drupal/TestSite/Commands/TestSiteInstallCommand.php
@@ -12086,6 +12170,7 @@
 %%WWWDIR%%/core/tests/Drupal/Tests/Component/Plugin/PluginBaseTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Component/Plugin/PluginManagerBaseTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Component/Plugin/StubFallbackPluginManager.php
+%%WWWDIR%%/core/tests/Drupal/Tests/Component/Plugin/StubPluginManagerBaseWithMapper.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Component/ProxyBuilder/ProxyBuilderTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Component/Render/FormattableMarkupTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Component/Render/HtmlEscapedTextTest.php
@@ -12415,7 +12500,6 @@
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Plugin/Context/ContextDefinitionIsSatisfiedTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Plugin/Context/ContextDefinitionTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Plugin/Context/ContextTest.php
-%%WWWDIR%%/core/tests/Drupal/Tests/Core/Plugin/Context/ContextTypedDataTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Plugin/Context/EntityContextDefinitionDeprecationTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Plugin/Context/EntityContextDefinitionIsSatisfiedTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Plugin/Context/LazyContextRepositoryTest.php
@@ -14479,6 +14563,7 @@
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Mbstring.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/README.md
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/bootstrap.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/composer.json
@@ -14519,9 +14604,10 @@
 %%WWWDIR%%/vendor/symfony/process/phpunit.xml.dist
 %%WWWDIR%%/vendor/symfony/psr-http-message-bridge/.gitignore
 %%WWWDIR%%/vendor/symfony/psr-http-message-bridge/.travis.yml
-%%WWWDIR%%/vendor/symfony/psr-http-message-bridge/CHANGELOG
+%%WWWDIR%%/vendor/symfony/psr-http-message-bridge/CHANGELOG.md
 %%WWWDIR%%/vendor/symfony/psr-http-message-bridge/Factory/DiactorosFactory.php
 %%WWWDIR%%/vendor/symfony/psr-http-message-bridge/Factory/HttpFoundationFactory.php
+%%WWWDIR%%/vendor/symfony/psr-http-message-bridge/Factory/PsrHttpFactory.php
 %%WWWDIR%%/vendor/symfony/psr-http-message-bridge/HttpFoundationFactoryInterface.php
 %%WWWDIR%%/vendor/symfony/psr-http-message-bridge/HttpMessageFactoryInterface.php
 %%WWWDIR%%/vendor/symfony/psr-http-message-bridge/LICENSE
