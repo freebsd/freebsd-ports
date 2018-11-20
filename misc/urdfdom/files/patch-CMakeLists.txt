@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2018-11-20 07:38:15 UTC
++++ CMakeLists.txt
+@@ -56,7 +56,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CM
+ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}")
+ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}")
+ 
+-enable_testing()
++if (BUILD_TESTING)
++    enable_testing()
++endif()
+ 
+ add_subdirectory(urdf_parser)
+ 
