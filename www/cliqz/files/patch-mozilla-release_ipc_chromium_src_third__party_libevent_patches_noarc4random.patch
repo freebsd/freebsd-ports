@@ -1,0 +1,68 @@
+--- mozilla-release/ipc/chromium/src/third_party/libevent/patches/openbsd-no-arc4random_addrandom.patch.orig	2018-10-05 16:27:24 UTC
++++ mozilla-release/ipc/chromium/src/third_party/libevent/patches/openbsd-no-arc4random_addrandom.patch
+@@ -1,16 +1,16 @@
+ diff --git a/ipc/chromium/src/third_party/libevent/evutil_rand.c b/ipc/chromium/src/third_party/libevent/evutil_rand.c
+ --- a/ipc/chromium/src/third_party/libevent/evutil_rand.c
+ +++ b/ipc/chromium/src/third_party/libevent/evutil_rand.c
+-@@ -187,20 +187,22 @@ ev_arc4random_buf(void *buf, size_t n)
++@@ -187,14 +187,16 @@ ev_arc4random_buf(void *buf, size_t n)
+  #endif /* } !EVENT__HAVE_ARC4RANDOM */
+- 
++
+  void
+  evutil_secure_rng_get_bytes(void *buf, size_t n)
+  {
+  	ev_arc4random_buf(buf, n);
+  }
+- 
+-+#if !defined(__OpenBSD__) && !defined(ANDROID)
++
+++#if !defined(__OpenBSD__) && !defined(__FreeBSD__) && !defined(ANDROID)
+  void
+  evutil_secure_rng_add_bytes(const char *buf, size_t n)
+  {
+@@ -18,7 +18,7 @@ diff --git a/ipc/chromium/src/third_part
+  	    n>(size_t)INT_MAX ? INT_MAX : (int)n);
+  }
+ +#endif
+- 
++
+  void
+  evutil_free_secure_rng_globals_(void)
+  {
+@@ -35,28 +35,28 @@ diff --git a/ipc/chromium/src/third_part
+   */
+  EVENT2_EXPORT_SYMBOL
+  int evutil_secure_rng_set_urandom_device_file(char *fname);
+- 
+-+#if !defined(__OpenBSD__) && !defined(ANDROID)
++
+++#if !defined(__OpenBSD__) && !defined(__FreeBSD__) && !defined(ANDROID)
+  /** Seed the random number generator with extra random bytes.
+- 
++
+      You should almost never need to call this function; it should be
+      sufficient to invoke evutil_secure_rng_init(), or let Libevent take
+      care of calling evutil_secure_rng_init() on its own.
+- 
++
+      If you call this function as a _replacement_ for the regular
+      entropy sources, then you need to be sure that your input
+      contains a fairly large amount of strong entropy.  Doing so is
+      notoriously hard: most people who try get it wrong.  Watch out!
+- 
++
+      @param dat a buffer full of a strong source of random numbers
+      @param datlen the number of bytes to read from datlen
+   */
+  EVENT2_EXPORT_SYMBOL
+  void evutil_secure_rng_add_bytes(const char *dat, size_t datlen);
+ +#endif
+- 
++
+  #ifdef __cplusplus
+  }
+  #endif
+- 
++
+  #endif /* EVENT1_EVUTIL_H_INCLUDED_ */
