@@ -87,6 +87,7 @@
     SUBDIR += claroline
     SUBDIR += clearsilver
     SUBDIR += clearsilver-python
+    SUBDIR += cliqz
     SUBDIR += closure-compiler
     SUBDIR += cmsmadesimple
     SUBDIR += cntlm

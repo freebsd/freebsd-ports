@@ -1,0 +1,10 @@
+--- mozilla-release/browser/config/cliqz.mozconfig.orig	2018-10-05 16:27:24 UTC
++++ mozilla-release/browser/config/cliqz.mozconfig
+@@ -10,6 +10,7 @@ ac_add_options --enable-official-brandin
+ ac_add_options --with-app-name=cliqz  # name for binaries
+ ac_add_options --enable-crashreporter
+ ac_add_options --enable-js-shell
++ac_add_options --disable-crashreporter
+ 
+ export MOZ_APP_PROFILE=CLIQZ
+ export MOZ_AUTOMATION_UPLOAD=1
