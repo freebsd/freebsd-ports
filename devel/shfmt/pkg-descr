@@ -1,0 +1,4 @@
+Shfmt is a shell script formatter.  It supports POSIX Shell, Bash,
+and mksh.
+
+WWW: https://github.com/mvdan/sh

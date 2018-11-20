@@ -6184,6 +6184,7 @@
     SUBDIR += shedskin
     SUBDIR += shell-toolbox
     SUBDIR += shflags
+    SUBDIR += shfmt
     SUBDIR += shiboken
     SUBDIR += shmap
     SUBDIR += shtk
