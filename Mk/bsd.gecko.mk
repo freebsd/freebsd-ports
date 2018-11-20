@@ -167,14 +167,7 @@ MOZ_OPTIONS+=	--enable-jemalloc=4
 .endif # Mozilla < 55
 
 # Standard depends
-_ALL_DEPENDS=	cairo event ffi graphite harfbuzz hunspell icu jpeg nspr nss png pixman soundtouch sqlite vpx
-
-.if ${PORT_OPTIONS:MINTEGER_SAMPLES}
-MOZ_EXPORT+=	MOZ_INTEGER_SAMPLES=1
-_ALL_DEPENDS+=	tremor
-.else
-_ALL_DEPENDS+=	vorbis
-.endif
+_ALL_DEPENDS=	cairo event ffi graphite harfbuzz hunspell icu jpeg nspr nss png pixman sqlite vpx
 
 .if ! ${PORT_OPTIONS:MBUNDLED_CAIRO}
 cairo_BUILD_DEPENDS=cairo>=1.12.16_1,2:graphics/cairo
@@ -218,25 +211,8 @@ pixman_MOZ_OPTIONS=	--enable-system-pixman
 png_LIB_DEPENDS=	libpng.so:graphics/png
 png_MOZ_OPTIONS=	--with-system-png=${LOCALBASE}
 
-.if exists(${FILESDIR}/patch-z-bug517422)
-soundtouch_LIB_DEPENDS=	libSoundTouch.so:audio/soundtouch
-soundtouch_MOZ_OPTIONS=	--with-system-soundtouch
-.endif
-
 sqlite_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 sqlite_MOZ_OPTIONS=	--enable-system-sqlite
-
-.if exists(${FILESDIR}/patch-z-bug517422)
-# XXX disabled: update to 1.2.x or review backported fixes
-theora_LIB_DEPENDS=	libtheora.so:multimedia/libtheora
-theora_MOZ_OPTIONS=	--with-system-theora
-
-tremor_LIB_DEPENDS=	libogg.so:audio/libogg libvorbisidec.so:audio/libtremor
-tremor_MOZ_OPTIONS=	--with-system-tremor --with-system-ogg
-
-vorbis_LIB_DEPENDS=	libogg.so:audio/libogg libvorbis.so:audio/libvorbis
-vorbis_MOZ_OPTIONS=	--with-system-vorbis --with-system-ogg
-.endif
 
 -vpx_BUILD_DEPENDS=	yasm:devel/yasm
 vpx_LIB_DEPENDS=	libvpx.so:multimedia/libvpx

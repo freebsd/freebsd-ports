@@ -3,7 +3,7 @@
 
 PORTNAME=	firefox
 DISTVERSION=	60.3.0
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source \
@@ -29,13 +29,12 @@ BUILD_DEPENDS=	nspr>=4.19:devel/nspr \
 		autoconf-2.13:devel/autoconf213 \
 		yasm:devel/yasm \
 		zip:archivers/zip
-#		soundtouch>=1.9.0:audio/soundtouch \
 
 USE_GECKO=	gecko
 CPE_PRODUCT=	${PORTNAME}_esr
 CONFLICTS_INSTALL=	firefox
 MOZ_PKGCONFIG_FILES=	# empty
-USE_MOZILLA=	-cairo -soundtouch
+USE_MOZILLA=	-cairo
 
 USES=		tar:xz
 
