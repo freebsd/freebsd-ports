@@ -93,7 +93,6 @@ CONFIGURE_OUTSOURCE=	yes
 BUNDLE_LIBS=	yes
 
 .if ${MOZILLA_VER:R:R} >= 56
-LLVM_DEFAULT?=	70
 BUILD_DEPENDS+=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 MOZ_EXPORT+=	LLVM_CONFIG=llvm-config${LLVM_DEFAULT}
 # Require newer Clang than what's in base system unless user opted out
