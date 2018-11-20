@@ -545,6 +545,7 @@
     SUBDIR += unicode-emoji
     SUBDIR += upclient
     SUBDIR += urbit
+    SUBDIR += urdfdom
     SUBDIR += urdfdom-headers
     SUBDIR += urh
     SUBDIR += us-zipcodes

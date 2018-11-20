@@ -1,0 +1,26 @@
+--- urdf_parser/CMakeLists.txt.orig	2018-11-14 01:51:13 UTC
++++ urdf_parser/CMakeLists.txt
+@@ -25,17 +25,19 @@ add_executable(urdf_to_graphiz src/urdf_
+ target_link_libraries(urdf_to_graphiz urdfdom_model)
+ 
+ # urdf_mem_test is a binary for testing, not a unit test
+-add_executable(urdf_mem_test test/memtest.cpp)
+-target_link_libraries(urdf_mem_test urdfdom_model)
++if (BUILD_TESTING)
++  add_executable(urdf_mem_test test/memtest.cpp)
++  target_link_libraries(urdf_mem_test urdfdom_model)
++endif()
+ 
+-include(CTest)
+ if(BUILD_TESTING)
++  include(CTest)
+   add_subdirectory(test)
+ endif()
+ 
+ INSTALL(TARGETS urdfdom_model DESTINATION ${CMAKE_INSTALL_LIBDIR})
+ INSTALL(TARGETS urdfdom_world DESTINATION ${CMAKE_INSTALL_LIBDIR})
+-INSTALL(TARGETS check_urdf urdf_to_graphiz urdf_mem_test
++INSTALL(TARGETS check_urdf urdf_to_graphiz
+   DESTINATION ${CMAKE_INSTALL_BINDIR})
+ INSTALL(TARGETS urdfdom_sensor DESTINATION ${CMAKE_INSTALL_LIBDIR})
+ INSTALL(TARGETS urdfdom_model_state DESTINATION ${CMAKE_INSTALL_LIBDIR})
