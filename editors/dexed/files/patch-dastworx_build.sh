@@ -1,6 +1,11 @@
---- dastworx/build.sh	2018-06-03 02:41:09.063965000 -0500
-+++ dastworx/build.sh	2018-06-03 02:42:21.888100000 -0500
-@@ -1,18 +1,3 @@
+--- dastworx/build.sh	2018-10-22 01:38:52.000000000 -0500
++++ dastworx/build.sh	2018-11-06 01:09:50.779324000 -0500
+@@ -1,35 +1,14 @@
+-if [[ -z "$DC" ]]; then DC=dmd; fi
+-if [[ "$DC" == "ldc" ]]; then DC=ldmd2; fi
+-if [[ "$DC" == "gdc" ]]; then DC=gdmd; fi
+-if [[ -z "$MFLAGS" ]]; then MFLAGS=-m64; fi
+-
 -#iz sources
 -cd ../etc/iz/import/
 -iz=$(find `pwd` -type f -name \*.d)
@@ -19,15 +24,18 @@
  #dast sources
  cd src/
  dast=$(find `pwd` -type f -name \*.d)
-@@ -21,10 +6,10 @@
- echo building...
+ cd ../
  
+-echo building using $DC...
+-
  #build
--dmd ${dast[@]} ${dparse[@]} ${iz[@]} ${stdxalloc[@]} \
-+%%LDMD2_CMD%% ${dast} \
- -O -release -inline -boundscheck=off \
+-$DC ${dast[@]} ${dparse[@]} ${iz[@]} ${stdxalloc[@]} \
+--O -release -inline -boundscheck=off $MFLAGS \
 --Isrc -I../etc/iz/import -I../etc/libdparse/src -I../etc/stdx-allocator/source \
 --of../bin/dastworx
++
++%%LDMD2_CMD%% ${dast} \
++ -O -release -inline -boundscheck=off \
 +-Isrc -I%%D_INCLUDE_DIR%% -L%%D_LIB_DIR%%/libiz.a -L%%D_LIB_DIR%%/libdparse.a \
 +-L%%D_LIB_DIR%%/libstdx-allocator.a -of../bin/dastworx
  

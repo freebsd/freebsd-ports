@@ -1,4 +1,4 @@
-Coedit is an IDE for the D programming language, its compilers, tools and  
+Dexed is an IDE for the D programming language, its compilers, tools and  
 libraries.
 - available for Windows, Linux and FreeBSD.
 - supports all the D compilers (DMD-GDC-LDC).
@@ -21,4 +21,4 @@ libraries.
 - user-defined tools powered by a string interpolation system.
 - mini file browser, dfmt interface, search & replace and more
 
-WWW: https://github.com/BBasile/Coedit
+WWW: https://github.com/BBasile/dexed

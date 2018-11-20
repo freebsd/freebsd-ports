@@ -20,11 +20,11 @@
     SUBDIR += calligraplan
     SUBDIR += chexedit
     SUBDIR += codelite
-    SUBDIR += coedit
     SUBDIR += conglomerate
     SUBDIR += cooledit
     SUBDIR += cream
     SUBDIR += deforaos-editor
+    SUBDIR += dexed
     SUBDIR += dhex
     SUBDIR += diakonos
     SUBDIR += dkns
