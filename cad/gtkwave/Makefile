@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtkwave
-PORTVERSION=	3.3.95
+PORTVERSION=	3.3.96
 CATEGORIES=	cad
 MASTER_SITES=	http://gtkwave.sourceforge.net/
 
