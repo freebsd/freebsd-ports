@@ -10634,3 +10634,5 @@ devel/rubygem-sidekiq-bulk-rails5|devel/rubygem-sidekiq-bulk|2018-11-17|Remove -
 audio/csound6|audio/csound|2018-11-17|Move to audio/csound because this is a stable project, no need to have a versioned package name
 x11-fonts/emojione-color-font-ttf|x11-fonts/twemoji-color-font-ttf|2018-11-19|Has expired: EOL upstream, please use x11-fonts/twemoji-color-font-ttf instead
 editors/coedit|editors/dexed|2018-11-19|Project was renamed
+net-mgmt/p5-FusionInventory-Agent-Task-NetDiscovery||2018-11-20|Has expired: No longer needed
+net-mgmt/p5-FusionInventory-Agent-Task-SNMPQuery||2018-11-20|Removed, no longer needed
