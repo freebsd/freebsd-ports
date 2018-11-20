@@ -1228,6 +1228,7 @@
     SUBDIR += icu-lx
     SUBDIR += idutils
     SUBDIR += ignition-cmake
+    SUBDIR += ignition-common
     SUBDIR += ignition-msgs
     SUBDIR += ignition-plugin
     SUBDIR += ignition-tools
