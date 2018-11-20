@@ -1,7 +1,7 @@
 include/d/iz/classes.d
 include/d/iz/containers.d
 include/d/iz/enumset.d
-include/d/iz/logicver.d
+include/d/iz/ipc.d
 include/d/iz/math.d
 include/d/iz/memory.d
 include/d/iz/observer.d
