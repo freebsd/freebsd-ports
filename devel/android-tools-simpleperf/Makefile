@@ -30,8 +30,6 @@ TEST_TARGET=	test
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (llvm deps)
 PLIST_FILES=	bin/simpleperf
 
-LLVM_DEFAULT?=	70
-
 OPTIONS_DEFINE=	TEST
 
 TEST_BUILD_DEPENDS=	googletest>=1.6.0:devel/googletest
