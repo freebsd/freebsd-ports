@@ -203,7 +203,6 @@ icu_LIB_DEPENDS=		libicui18n.so:devel/icu
 icu_MOZ_OPTIONS=		--with-system-icu --with-intl-api
 
 -jpeg_BUILD_DEPENDS=yasm:devel/yasm
-# XXX Remove files/patch-ijg-libjpeg once -turbo is default
 jpeg_USES=		jpeg
 jpeg_MOZ_OPTIONS=	--with-system-jpeg=${LOCALBASE}
 
