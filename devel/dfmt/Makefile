@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dfmt
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -13,6 +13,7 @@ LICENSE=	BSL
 
 BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub \
+		rdmd:lang/dlang-tools \
 		${LOCALBASE}/lib/d/libdparse.a:devel/libdparse \
 		${LOCALBASE}/lib/d/libstdx-allocator.a:devel/stdx-allocator
 
