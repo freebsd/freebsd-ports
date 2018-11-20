@@ -1,7 +1,7 @@
 ======================================================================
 
 Some features available on other platforms are not implemented:
-- Native audio (OSS backend is incomplete, doesn't support WebRTC)
+- Native audio (requires OSS backend, feature parity with ALSA or PulseAudio)
 - Encrypted Media Extensions (requires Widevine CDM binary)
 - Process sandboxing (requires Capsicum backend)
 - Reduced memory usage (requires mozjemalloc)
@@ -23,7 +23,7 @@ $ sysctl net.local.stream.recvspace=16384
 
 To select non-default audio backend open about:config page and create
 media.cubeb.backend preference. Supported values are: alsa, jack,
-pulse, pulse-rust, oss, sndio. Currently used backend can be inspected
+pulse, pulse-rust, sndio. Currently used backend can be inspected
 on about:support page.
 
 ======================================================================
