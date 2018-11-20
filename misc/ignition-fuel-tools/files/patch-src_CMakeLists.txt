@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2018-11-20 20:11:32 UTC
++++ src/CMakeLists.txt
+@@ -61,7 +61,7 @@ ign_install_library()
+ # Build the unit tests.
+ ign_build_tests(TYPE UNIT
+                 SOURCES ${gtest_sources}
+-                LIB_DEPS ignition-common1::ignition-common1
++                LIB_DEPS ignition-common3::ignition-common3
+ )
+ 
+ # Command line support.

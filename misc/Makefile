@@ -182,6 +182,7 @@
     SUBDIR += histring
     SUBDIR += hotkeys
     SUBDIR += hulgalugha
+    SUBDIR += ignition-fuel-tools
     SUBDIR += imerge
     SUBDIR += img2xterm
     SUBDIR += ini_file_manager
