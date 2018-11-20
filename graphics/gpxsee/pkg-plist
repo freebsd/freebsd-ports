@@ -9,6 +9,7 @@ share/applications/gpxsee.desktop
 %%DATADIR%%/maps/USGS-imagery.xml
 %%DATADIR%%/maps/USGS-topo.xml
 %%NLS%%%%DATADIR%%/translations/gpxsee_cs.qm
+%%NLS%%%%DATADIR%%/translations/gpxsee_da.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_de.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_en.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_fi.qm
