@@ -5,9 +5,10 @@ PORTNAME=	pingus
 PORTVERSION=	0.7.6
 PORTREVISION=	16
 CATEGORIES=	games
-MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://mirror.amdmi3.ru/distfiles/
 
-PATCH_SITES=	https://gitlab.com/${PORTNAME}/${PORTNAME}/commit/
+PATCH_SITES=	https://gitlab.com/${PORTNAME}/${PORTNAME}/commit/ \
+		https://mirror.amdmi3.ru/distfiles/
 PATCHFILES=	fef8cf6512fa.patch:-p1
 
 MAINTAINER=	amdmi3@FreeBSD.org
