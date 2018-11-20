@@ -3,7 +3,6 @@
 PORTNAME=	bareos
 
 PKGNAMESUFFIX=	-traymonitor
-PORTREVISION=	1
 
 COMMENT=	Backup archiving recovery open sourced (traymonitor)
 

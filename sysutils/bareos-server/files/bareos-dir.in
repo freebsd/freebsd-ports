@@ -24,16 +24,34 @@ load_rc_config $name
 
 : ${bareos_dir_enable="NO"}
 : ${bareos_dir_flags="-u bareos -g bareos -v"}
-: ${bareos_dir_config="%%PREFIX%%/etc/bareos/bareos-dir.conf"}
+: ${bareos_dir_config="%%PREFIX%%/etc/bareos/"}
 : ${bareos_dir_pidfile="/var/run/bareos/bareos-dir.9101.pid"}
 
 command=%%PREFIX%%/sbin/bareos-dir
 command_args="-c ${bareos_dir_config}"
 pidfile="${bareos_dir_pidfile}"
+bconsole_command=/usr/local/bin/bconsole
 start_precmd="bareos_start_precmd"
+restart_precmd="bareos_dir_configtest"
+reload_precmd="bareos_dir_configtest"
+reload_cmd="bareos_dir_reload"
+configtest_cmd="bareos_dir_configtest"
 
 bareos_start_precmd() {
 	[ -d "${pidfile%/*}" ] || install -d -o bareos -g bareos ${pidfile%/*}
+	bareos_dir_configtest
 }
 
+bareos_dir_configtest() {
+	echo "Performing sanity check on ${bareos_dir_config} configuration:"
+	eval ${command} -t
+}
+
+bareos_dir_reload() {
+	echo "Performing a graceful reload"
+	# bconsole always exits with 0, so we can't check the return status for success.
+	echo "reload" | ${bconsole_command}
+}
+
+extra_commands="reload configtest"
 run_rc_command "$1"

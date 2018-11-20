@@ -24,7 +24,7 @@ load_rc_config $name
 
 : ${bareos_fd_enable="NO"}
 : ${bareos_fd_flags="-u root -g wheel -v"}
-: ${bareos_fd_config="%%PREFIX%%/etc/bareos/bareos-fd.conf"}
+: ${bareos_fd_config="%%PREFIX%%/etc/bareos/"}
 : ${bareos_fd_pidfile="/var/run/bareos/bareos-fd.9102.pid"}
 
 command=%%PREFIX%%/sbin/bareos-fd

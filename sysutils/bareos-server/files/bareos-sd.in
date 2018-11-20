@@ -24,7 +24,7 @@ load_rc_config $name
 
 : ${bareos_sd_enable="NO"}
 : ${bareos_sd_flags="-u bareos -g bareos -v"}
-: ${bareos_sd_config="%%PREFIX%%/etc/bareos/bareos-sd.conf"}
+: ${bareos_sd_config="%%PREFIX%%/etc/bareos/"}
 : ${bareos_sd_pidfile="/var/run/bareos/bareos-sd.9103.pid"}
 
 command=%%PREFIX%%/sbin/bareos-sd
