@@ -3,6 +3,7 @@
 
 PORTNAME=	dlangui
 PORTVERSION=	0.9.178
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -10,6 +11,8 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Cross Platform GUI for D programming language
 
 LICENSE=	BSL
+
+BROKEN=		does not compile with latest version of ldc
 
 BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub \
