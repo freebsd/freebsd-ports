@@ -1052,6 +1052,7 @@ man/man1/x509.1.gz
 %%MAN3%%man/man3/OBJ_txt2obj.3.gz
 %%MAN3%%man/man3/OPENSSL_Applink.3.gz
 %%MAN3%%man/man3/OPENSSL_VERSION_NUMBER.3.gz
+%%MAN3%%man/man3/OPENSSL_VERSION_TEXT.3.gz
 %%MAN3%%man/man3/OPENSSL_config.3.gz
 %%MAN3%%man/man3/OPENSSL_ia32cap.3.gz
 %%MAN3%%man/man3/OPENSSL_ia32cap_loc.3.gz
