@@ -1,0 +1,22 @@
+--- CMakeLists.txt.orig	2018-05-30 22:18:39 UTC
++++ CMakeLists.txt
+@@ -9,7 +9,7 @@ project(ignition-fuel_tools1 VERSION 1.2
+ # Find ignition-cmake
+ #============================================================================
+ # If you get an error at this line, you need to install ignition-cmake
+-find_package(ignition-cmake0 REQUIRED)
++find_package(ignition-cmake2 REQUIRED)
+ 
+ #============================================================================
+ # Configure the project
+@@ -44,8 +44,8 @@ ign_find_package(ZIP REQUIRED PRIVATE)
+ 
+ #--------------------------------------
+ # Find ignition-common
+-set(IGN_COMMON_MAJOR_VER 1)
+-ign_find_package(ignition-common${IGN_COMMON_MAJOR_VER} VERSION 1.1.0 REQUIRED PRIVATE)
++set(IGN_COMMON_MAJOR_VER 3)
++ign_find_package(ignition-common${IGN_COMMON_MAJOR_VER} REQUIRED PRIVATE)
+ 
+ #--------------------------------------
+ # Find ignition-tools
