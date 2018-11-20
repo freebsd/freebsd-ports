@@ -1,12 +1,14 @@
---- dub.json.orig	2017-05-22 12:21:31.000000000 -0500
-+++ dub.json	2017-12-13 10:20:13.893225000 -0500
-@@ -3,7 +3,6 @@
+--- dub.json.orig	2018-10-18 18:45:52.000000000 -0500
++++ dub.json	2018-11-06 00:54:08.514446000 -0500
+@@ -3,9 +3,8 @@
      "description": "Dfmt is a formatter for D source code",
      "targetType": "autodetect",
      "license": "BSL-1.0",
 -    "dependencies": {
--      "libdparse": "~>0.8.0-alpha.5"
--    }
+-      "libdparse": "~>0.9.10"
+-    },
 +    "libs": ["dparse","stdx-allocator"],
 +    "lflags": ["-L%%LOCALBASE%%/lib/d"],
- }
+     "targetPath" : "bin/",
+     "targetName" : "dfmt",
+     "stringImportPaths" : [
