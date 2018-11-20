@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	polygraph
-DISTVERSION=	4.12.0
+DISTVERSION=	4.13.0
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://www.web-polygraph.org/downloads/srcs/
