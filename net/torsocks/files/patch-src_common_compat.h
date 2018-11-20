@@ -1,6 +1,6 @@
---- src/common/compat.h.orig	2015-05-27 18:54:22 UTC
+--- src/common/compat.h.orig	2018-04-20 15:41:42 UTC
 +++ src/common/compat.h
-@@ -187,6 +187,10 @@ void tsocks_once(tsocks_once_t *o, void 
+@@ -214,6 +214,10 @@ void tsocks_once(tsocks_once_t *o, void 
  #define TSOCKS_NR_GETPEERNAME SYS_getpeername
  #define TSOCKS_NR_LISTEN    SYS_listen
  #define TSOCKS_NR_RECVMSG   SYS_recvmsg
