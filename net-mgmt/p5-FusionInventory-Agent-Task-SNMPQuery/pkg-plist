@@ -1,5 +1,0 @@
-%%SITE_PERL%%/FusionInventory/Agent/Task/SNMPQuery.pm
-%%SITE_PERL%%/FusionInventory/Agent/Task/SNMPQuery/Cisco.pm
-%%SITE_PERL%%/FusionInventory/Agent/Task/SNMPQuery/Nortel.pm
-%%SITE_PERL%%/FusionInventory/Agent/Task/SNMPQuery/Procurve.pm
-%%SITE_PERL%%/FusionInventory/Agent/Task/SNMPQuery/ThreeCom.pm
