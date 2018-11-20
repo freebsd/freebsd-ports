@@ -199,6 +199,7 @@
     SUBDIR += eval
     SUBDIR += facile
     SUBDIR += fann
+    SUBDIR += fcl
     SUBDIR += fflas-ffpack
     SUBDIR += fftw
     SUBDIR += fftw-float
