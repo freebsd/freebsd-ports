@@ -51,17 +51,21 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/Disclaimers.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Documentation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Donation_Bank.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_BitcoinCash.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_Bitcoin_small.png
+%%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_Ethereum.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_Litecoin.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_VeraCrypt_Monero.png
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_donate_CHF.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_donate_Dollars.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_donate_Euros.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_donate_GBP.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/Donation_donate_PLN.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/Donation_donate_YEN.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/Encryption Algorithms.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Encryption Scheme.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Ethereum_Logo_19x30.png
 %%PORTDOCS%%%%DOCSDIR%%/html/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Favorite Volumes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/Hardware Acceleration.html
@@ -162,6 +166,14 @@ share/applications/veracrypt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/Whirlpool.html
 %%PORTDOCS%%%%DOCSDIR%%/html/arrow_right.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/bank_30x30.png
+%%PORTDOCS%%%%DOCSDIR%%/html/flag-au-small.png
+%%PORTDOCS%%%%DOCSDIR%%/html/flag-au.png
+%%PORTDOCS%%%%DOCSDIR%%/html/flag-eu-small.png
+%%PORTDOCS%%%%DOCSDIR%%/html/flag-eu.png
+%%PORTDOCS%%%%DOCSDIR%%/html/flag-gb-small.png
+%%PORTDOCS%%%%DOCSDIR%%/html/flag-gb.png
+%%PORTDOCS%%%%DOCSDIR%%/html/flag-us-small.png
+%%PORTDOCS%%%%DOCSDIR%%/html/flag-us.png
 %%PORTDOCS%%%%DOCSDIR%%/html/flattr-badge-large.png
 %%PORTDOCS%%%%DOCSDIR%%/html/gf2_mul.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/liberapay_donate.svg
