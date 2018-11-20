@@ -21,9 +21,9 @@ BB_ACCOUNT=	ignitionrobotics
 BB_PROJECT=	ign-cmake
 BB_COMMIT=	776c2bfe1d18
 
-PLIST_SUB+=	IGN_VER=${DISTVERSION:R:R}
-
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
 NO_ARCH=	yes
+
+PLIST_SUB+=	CMAKE_IGN_VER=cmake${DISTVERSION:R:R}
 
 .include <bsd.port.mk>
