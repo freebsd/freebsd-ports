@@ -1,0 +1,10 @@
+libccd is library for a collision detection between two convex shapes. libccd
+implements variation on Gilbert-Johnson-Keerthi algorithm plus Expand Polytope
+Algorithm (EPA) and also implements algorithm Minkowski Portal Refinement (MPR,
+a.k.a. XenoCollide) as described in Game Programming Gems 7.
+
+libccd is the only available open source library of my knowledge that include
+MPR algorithm working in 3-D space. However, there is a library called mpr2d,
+implemented in D programming language, that works in 2-D space.
+
+WWW: https://github.com/danfis/libccd
