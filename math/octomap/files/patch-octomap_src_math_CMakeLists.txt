@@ -1,0 +1,24 @@
+--- octomap/src/math/CMakeLists.txt.orig	2018-11-20 06:36:08 UTC
++++ octomap/src/math/CMakeLists.txt
+@@ -14,17 +14,17 @@ SET_TARGET_PROPERTIES( octomath PROPERTI
+ )
+ # INSTALL_NAME_DIR seems to be necessary for MacOS X
+ 
+-ADD_LIBRARY( octomath-static STATIC ${octomath_SRCS})
+-SET_TARGET_PROPERTIES(octomath-static PROPERTIES OUTPUT_NAME "octomath")
++#ADD_LIBRARY( octomath-static STATIC ${octomath_SRCS})
++#SET_TARGET_PROPERTIES(octomath-static PROPERTIES OUTPUT_NAME "octomath")
+ 
+ if(NOT EXISTS "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/cmake/octomap")
+   file(MAKE_DIRECTORY "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/cmake/octomap")
+ endif()
+ 
+-export(TARGETS octomath octomath-static
++export(TARGETS octomath
+   APPEND FILE "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/cmake/octomap/octomap-targets.cmake")
+ 
+-install(TARGETS octomath octomath-static
++install(TARGETS octomath
+   EXPORT octomap-targets
+   INCLUDES DESTINATION include
+   ${INSTALL_TARGETS_DEFAULT_ARGS}

@@ -1,0 +1,24 @@
+The OctoMap library implements a 3D occupancy grid mapping approach, providing
+data structures and mapping algorithms in C++ particularly suited for robotics.
+The map implementation is based on an octree and is designed to meet the
+following requirements:
+* Full 3D model. The map is able to model arbitrary environments without prior
+  assumptions about it. The representation models occupied areas as well as free
+  space. Unknown areas of the environment are implicitly encoded in the map.
+  While the distinction between free and occupied space is essential for safe
+  robot navigation, information about unknown areas is important, e.g., for
+  autonomous exploration of an environment.
+* Updatable. It is possible to add new information or sensor readings at any
+  time. Modeling and updating is done in a probabilistic fashion. This accounts
+  for sensor noise or measurements which result from dynamic changes in the
+  environment, e.g., because of dynamic objects.
+* Flexible. The extent of the map does not have to be known in advance. Instead,
+  the map is dynamically expanded as needed. The map is multi-resolution so
+  that, for instance, a high-level planner is able to use a coarse map, while a
+  local planner may operate using a fine resolution.
+  close-up views.
+* Compact. The map is stored efficiently, both in memory and on disk. It is
+  possible to generate compressed files for later usage or convenient exchange
+  between robots even under bandwidth constraints.
+
+WWW: https://octomap.github.io/
