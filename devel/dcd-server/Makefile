@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dcd
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.13
 DISTVERSIONPREFIX=	v
 PORTREVISION?=	0
 CATEGORIES?=	devel
@@ -15,10 +15,12 @@ LICENSE=	BSL
 
 BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub \
+		rdmd:lang/dlang-tools \
 		${LOCALBASE}/lib/d/libemsi_containers.a:devel/containers \
 		${LOCALBASE}/lib/d/libdsymbol.a:devel/dsymbol \
 		${LOCALBASE}/lib/d/libmsgpack-d.a:devel/msgpack-d \
 		${LOCALBASE}/lib/d/libdparse.a:devel/libdparse \
+		${LOCALBASE}/lib/d/libmir-core.a:devel/mir-core \
 		${LOCALBASE}/lib/d/libstdx-allocator.a:devel/stdx-allocator
 
 USE_GITHUB=	yes
