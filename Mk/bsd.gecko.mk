@@ -539,8 +539,10 @@ gecko-post-patch:
 		-e 's|share/mozilla/extensions|lib/xpi|g' \
 		${MOZSRC}/xpcom/io/nsAppFileLocationProvider.cpp \
 		${MOZSRC}/toolkit/xre/nsXREDirProvider.cpp
+.if ${MOZILLA_VER:R:R} < 61
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${MOZSRC}/extensions/spellcheck/hunspell/*/mozHunspell.cpp
+.endif
 
 # handles mozilla pis scripts.
 gecko-moz-pis-patch:
