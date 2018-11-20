@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2018-11-20 07:33:37 UTC
++++ CMakeLists.txt
+@@ -116,5 +116,7 @@ SET_DIRECTORY_PROPERTIES(PROPERTIES
+   ADDITIONAL_MAKE_CLEAN_FILES ${CMAKE_BINARY_DIR}/console_bridge-config.cmake
+   ADDITIONAL_MAKE_CLEAN_FILES ${CMAKE_BINARY_DIR}/console_bridge.pc)
+ 
+-enable_testing()
+-add_subdirectory(test)
++if (DO_TESTING)
++    enable_testing()
++    add_subdirectory(test)
++endif()
