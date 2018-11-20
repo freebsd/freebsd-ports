@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-redis
-PORTVERSION=	4.9.0
-PORTREVISION=	2
+PORTVERSION=	4.10.0
 CATEGORIES=	www databases
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +21,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fakeredis>=0:databases/py-fakeredis@${PY_FL
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
 
 do-test: build
