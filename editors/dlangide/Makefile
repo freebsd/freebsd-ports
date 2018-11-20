@@ -3,6 +3,7 @@
 
 PORTNAME=	dlangide
 PORTVERSION=	0.8.12
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -10,6 +11,8 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	D language IDE based on DlangUI
 
 LICENSE=	BSL
+
+BROKEN=		does not compile with latest version of ldc
 
 BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub \
