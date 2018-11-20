@@ -1,0 +1,4 @@
+In order to reduce potential package dependencies and conflicts,
+generics provides a number of commonly used S3 generics.
+
+WWW: https://cran.r-project.org/web/packages/generics/
