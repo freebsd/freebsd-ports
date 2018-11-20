@@ -1,12 +1,11 @@
---- dub.json.orig	2017-12-13 11:01:34.079914000 -0500
-+++ dub.json	2017-12-13 11:01:47.615013000 -0500
-@@ -6,9 +6,6 @@
+--- dub.json.orig	2018-05-04 10:30:32.000000000 -0500
++++ dub.json	2018-08-13 23:39:18.791991000 -0500
+@@ -6,8 +6,5 @@
      "authors": ["Roman Chistokhodov"],
-     "targetPath" : "lib", 
+     "targetPath" : "lib",
      "targetType" : "library",
 -    "dependencies": {
 -        "isfreedesktop" : "~>0.1.0"
 -    },
-     "buildTypes" : {
-         "docs" : {
-             "buildOptions" : ["syntaxOnly"],
+     "versions" : ["xdgpathsFileTest"]
+ }
