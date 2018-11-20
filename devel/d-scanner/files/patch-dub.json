@@ -1,19 +1,19 @@
---- dub.json.orig	2018-05-05 02:47:05.000000000 -0500
-+++ dub.json	2018-05-10 01:11:30.467318000 -0500
+--- dub.json.orig	2018-09-16 13:29:16.000000000 -0500
++++ dub.json	2018-11-05 22:55:09.255569000 -0500
 @@ -11,14 +11,8 @@
      "built_with_dub",
      "StdLoggerDisableWarning"
    ],
 -  "dependencies" : {
--    "libdparse" : "~>0.8.1",
--    "dsymbol" : "~>0.3.5",
+-    "libdparse": "~>0.9.8",
+-    "dsymbol" : "~>0.4.8",
 -    "inifiled" : "~>1.3.1",
--    "emsi_containers" : "~>0.8.0-alpha.6",
--    "libddoc" : "~>0.3.0-beta.1",
--    "stdx-allocator" : "~>2.77.0"
+-    "emsi_containers" : "~>0.8.0-alpha.7",
+-    "libddoc" : "~>0.4.0",
+-    "stdx-allocator" : "~>2.77.2"
 -  },
 +  "lflags":["-L%%LOCALBASE%%/lib/d"],
-+  "libs" : ["dparse","inifiled","dsymbol","emsi_containers","ddoc","stdx-allocator"],
++  "libs" : ["dparse","inifiled","dsymbol","emsi_containers","ddoc","mir-core","stdx-allocator"],
    "targetPath" : "bin",
    "stringImportPaths" : [
      "bin"
