@@ -89,6 +89,7 @@ include/bitstream/ietf/rtcp.h
 include/bitstream/ietf/rtcp3611.h
 include/bitstream/ietf/rtcp_fb.h
 include/bitstream/ietf/rtcp_rr.h
+include/bitstream/ietf/rtcp_sdes.h
 include/bitstream/ietf/rtcp_sr.h
 include/bitstream/ietf/rtp.h
 include/bitstream/ietf/rtp2250.h
