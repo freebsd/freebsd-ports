@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-11-19 20:02:52 UTC
++++ CMakeLists.txt
+@@ -22,7 +22,7 @@ ign_configure_project(VERSION_SUFFIX pre
+ 
+ # ignition-transport currently has no options that are unique to it
+ 
+-if (UNIX AND NOT APPLE)
++if (UNIX AND NOT APPLE AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "^(FreeBSD|DragonFly)$")
+   set (EXTRA_TEST_LIB_DEPS stdc++fs)
+ else()
+   set (EXTRA_TEST_LIB_DEPS)

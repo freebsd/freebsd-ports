@@ -1,0 +1,20 @@
+--- test/test_config.h.in.orig	2018-09-11 18:30:00 UTC
++++ test/test_config.h.in
+@@ -30,7 +30,7 @@
+   DETAIL_IGN_TRANSPORT_TEST_DIR
+ #endif
+ 
+-#ifndef __APPLE__
++#if !defined(__APPLE__) && !defined(__FreeBSD__) && !defined(__DragonFly__)
+ #include <experimental/filesystem>
+ #include <filesystem>
+ #endif
+@@ -91,7 +91,7 @@ namespace testing
+   std::string portablePathUnion(const std::string &_str1,
+                                 const std::string &_str2)
+   {
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__DragonFly__)
+     // Ugly as hell but trying to avoid boost::filesystem
+     return _str1 + "/" + _str2;
+ #else
