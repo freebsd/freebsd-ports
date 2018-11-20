@@ -2,7 +2,7 @@
 
 PORTNAME=	xen
 PORTVERSION=	4.11.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 PKGNAMESUFFIX=	-kernel411
@@ -92,6 +92,17 @@ EXTRA_PATCHES+= ${FILESDIR}/0001-xen-Port-the-array_index_nospec-infrastructure-
 		${FILESDIR}/0042-x86-write-to-correct-variable-in-parse_pv_l1tf.patch:-p1
 # XSA-278: x86: Nested VT-x usable even when disabled
 EXTRA_PATCHES+=	${FILESDIR}/xsa278-4.11.patch:-p1
+# XSA-{275,276,277,279,280,282}
+EXTRA_PATCHES+=	${FILESDIR}/xsa275-4.11-1.patch:-p1 \
+		${FILESDIR}/xsa275-4.11-2.patch:-p1 \
+		${FILESDIR}/0001-x86-hvm-ioreq-fix-page-referencing.patch:-p1 \
+		${FILESDIR}/0002-x86-hvm-ioreq-use-ref-counted-target-assigned-shared.patch:-p1 \
+		${FILESDIR}/xsa277.patch:-p1 \
+		${FILESDIR}/xsa279.patch:-p1 \
+		${FILESDIR}/xsa280-1.patch:-p1 \
+		${FILESDIR}/xsa280-4.11-2.patch:-p1 \
+		${FILESDIR}/xsa282-4.11-1.patch:-p1 \
+		${FILESDIR}/xsa282-2.patch:-p1
 
 .include <bsd.port.options.mk>
 
