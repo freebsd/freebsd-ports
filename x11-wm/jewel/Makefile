@@ -13,11 +13,10 @@ COMMENT=	Window manager based on aewm++
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ALL_TARGET=	all
-DOCS=		Changelog Changelog.DLR Changelog.jewel INSTALL LICENSE README
-PORTDOCS=	*
 USES=		compiler gmake
 USE_XORG=	x11 xext xpm
+ALL_TARGET=	all
+PORTDOCS=	Changelog Changelog.DLR Changelog.jewel INSTALL README
 MAKE_ARGS=	CFLAGS="${CXXFLAGS}"
 
 CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
@@ -27,7 +26,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
-	    ${REINPLACE_CMD} -i '' -e 's|g++|${CXX}|g; s|gcc|${CC}|g'
+		${REINPLACE_CMD} -i '' -e 's|g++|${CXX}|g; s|gcc|${CC}|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jewel ${STAGEDIR}${PREFIX}/bin/jewel
@@ -39,7 +38,7 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for ii in ${DOCS}
+.for ii in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${ii} ${STAGEDIR}${DOCSDIR}
 .endfor
 
