@@ -1,0 +1,14 @@
+include/ccd/ccd.h
+include/ccd/ccd_export.h
+include/ccd/compiler.h
+include/ccd/config.h
+include/ccd/quat.h
+include/ccd/vec3.h
+lib/ccd/ccd-config-version.cmake
+lib/ccd/ccd-config.cmake
+lib/ccd/ccd-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/ccd/ccd-targets.cmake
+lib/libccd.so
+lib/libccd.so.2
+lib/libccd.so.2.0
+libdata/pkgconfig/ccd.pc

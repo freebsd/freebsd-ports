@@ -313,6 +313,7 @@
     SUBDIR += lean
     SUBDIR += levmar
     SUBDIR += libRmath
+    SUBDIR += libccd
     SUBDIR += libflame
     SUBDIR += liblbfgs
     SUBDIR += libmesh
