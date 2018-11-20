@@ -9,6 +9,9 @@ DISTFILES=		${BOOTSTRAP_PATH}:bootstrap
 DIST_SUBDIR=		${PORTNAME}
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
+PATCH_SITES=	https://github.com/crystal-lang/crystal/commit/
+PATCHFILES=	8fef4e4.patch:-p1
+
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Language with Ruby-like syntax and static type checking
 
