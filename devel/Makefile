@@ -1228,6 +1228,7 @@
     SUBDIR += idutils
     SUBDIR += ignition-cmake
     SUBDIR += ignition-msgs
+    SUBDIR += ignition-plugin
     SUBDIR += ignition-tools
     SUBDIR += imake
     SUBDIR += inastemp
