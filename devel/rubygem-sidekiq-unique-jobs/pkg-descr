@@ -4,4 +4,4 @@ to sync an address change with a 3rd party system every time a form is
 submitted. If the form is submitted twice, you don't need to create the second
 job if the first job is still pending.
 
-WWW: https://github.com/mhenrixon/sidekiq-unique-jobs/
+WWW: https://github.com/mhenrixon/sidekiq-unique-jobs
