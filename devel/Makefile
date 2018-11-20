@@ -1788,6 +1788,7 @@
     SUBDIR += mips64-binutils
     SUBDIR += mips64-gcc
     SUBDIR += mips64-xtoolchain-gcc
+    SUBDIR += mir-core
     SUBDIR += mk-configure
     SUBDIR += mkcmd
     SUBDIR += mm

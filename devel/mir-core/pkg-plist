@@ -1,0 +1,14 @@
+include/d/mir/bitmanip.d
+include/d/mir/bitop.d
+include/d/mir/conv.d
+include/d/mir/functional.d
+include/d/mir/internal/memory.d
+include/d/mir/internal/utility.d
+include/d/mir/math/common.d
+include/d/mir/math/constant.d
+include/d/mir/math/package.d
+include/d/mir/primitives.d
+include/d/mir/qualifier.d
+include/d/mir/utility.d
+include/d/std/backdoor.d
+lib/d/libmir-core.a
