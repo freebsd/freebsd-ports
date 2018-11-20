@@ -15,8 +15,6 @@ COMMENT=	Compatible client of Ace of Spades
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to package
-
 BUILD_DEPENDS=	convert:graphics/ImageMagick6 # for building icons
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
