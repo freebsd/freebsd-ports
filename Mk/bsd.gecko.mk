@@ -81,26 +81,16 @@ MOZILLA_VER?=	${PORTVERSION}
 MOZILLA_BIN?=	${PORTNAME}-bin
 MOZILLA_EXEC_NAME?=${MOZILLA}
 MOZ_RPATH?=	${MOZILLA}
-USES+=		cpe gl gmake iconv localbase perl5 pkgconfig \
+USES+=		compiler:c++17-lang cpe gl gmake iconv localbase perl5 pkgconfig \
 			python:2.7,build desktop-file-utils
 CPE_VENDOR?=mozilla
 USE_GL=		gl
 USE_PERL5=	build
-USE_XORG=	x11 xcomposite xdamage xext xfixes xrender xt
+USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xrender xt
 HAS_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
 
 BUNDLE_LIBS=	yes
-
-.if ${MOZILLA_VER:R:R} >= 49
-USES+=		compiler:c++17-lang
-.else
-USES+=		compiler:c++11-lang
-.endif
-
-.if ${MOZILLA_VER:R:R} >= 50
-USE_XORG+=	xcb
-.endif
 
 .if ${MOZILLA_VER:R:R} >= 56
 LLVM_DEFAULT?=	70
@@ -157,14 +147,6 @@ RUSTFLAGS+=	${CFLAGS:M-march=*:S/-march=/-C target-cpu=/}
 .else
 RUSTFLAGS+=	${CFLAGS:M-mcpu=*:S/-mcpu=/-C target-cpu=/}
 .endif
-
-.if ${MOZILLA_VER:R:R} < 55 && ${OPSYS} == FreeBSD && ${OSVERSION} < 1200032
-# use jemalloc 3.0.0 (4.0 for firefox 43+) API for stats/tuning
-MOZ_EXPORT+=	MOZ_JEMALLOC4=1
-.if ${MOZILLA_VER:R:R} >= 48
-MOZ_OPTIONS+=	--enable-jemalloc=4
-.endif # Mozilla >= 48
-.endif # Mozilla < 55
 
 # Standard depends
 _ALL_DEPENDS=	cairo event ffi graphite harfbuzz hunspell icu jpeg nspr nss png pixman sqlite vpx
@@ -303,10 +285,6 @@ MOZ_OPTIONS+=	--disable-dbus
 .if ${PORT_OPTIONS:MFFMPEG}
 # dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp
 RUN_DEPENDS+=	ffmpeg>=0.8,1:multimedia/ffmpeg
-.endif
-
-.if ${MOZILLA_VER:R:R} < 46
-MOZ_OPTIONS+=	--disable-gstreamer
 .endif
 
 .if ${PORT_OPTIONS:MGCONF}
@@ -504,31 +482,12 @@ gecko-post-patch:
 		${PATCH} ${PATCH_ARGS} -d ${MOZSRC}/security/nss < $$i; \
 	done
 .endif
-	@for f in \
-			${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
-			${WRKSRC}/directory/c-sdk/configure \
-			${MOZSRC}/security/coreconf/FreeBSD.mk \
-			${MOZSRC}/js/src/Makefile.in \
-			${MOZSRC}/js/src/configure \
-			${MOZSRC}/configure \
-			${WRKSRC}/configure; do \
-		if [ -f $$f ] ; then \
-			${REINPLACE_CMD} -Ee 's|-lc_r|-pthread|g ; \
-				s|-l?pthread|-pthread|g ; \
-				s|echo aout|echo elf|g ; \
-				s|/usr/X11R6|${LOCALBASE}|g' \
-				$$f; \
-		fi; \
-	done
 	@if [ -f ${WRKSRC}/config/baseconfig.mk ] ; then \
 		${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
 			${WRKSRC}/config/baseconfig.mk; \
 	fi
 	@${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
 			${MOZSRC}/config/baseconfig.mk
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g' \
-			${MOZSRC}/build/unix/run-mozilla.sh
 	@${REINPLACE_CMD} -e 's|/usr/local/netscape|${LOCALBASE}|g ; \
 		s|/usr/local/lib/netscape|${LOCALBASE}/lib|g' \
 		${MOZSRC}/xpcom/io/SpecialSystemDirectory.cpp
