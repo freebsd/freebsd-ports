@@ -149,13 +149,7 @@ RUSTFLAGS+=	${CFLAGS:M-mcpu=*:S/-mcpu=/-C target-cpu=/}
 .endif
 
 # Standard depends
-_ALL_DEPENDS=	cairo event ffi graphite harfbuzz hunspell icu jpeg nspr nss png pixman sqlite vpx
-
-.if ! ${PORT_OPTIONS:MBUNDLED_CAIRO}
-cairo_BUILD_DEPENDS=cairo>=1.12.16_1,2:graphics/cairo
-cairo_LIB_DEPENDS=	libcairo.so:graphics/cairo
-cairo_MOZ_OPTIONS=	--enable-system-cairo
-.endif
+_ALL_DEPENDS=	event ffi graphite harfbuzz hunspell icu jpeg nspr nss png pixman sqlite vpx
 
 event_LIB_DEPENDS=	libevent.so:devel/libevent
 event_MOZ_OPTIONS=	--with-system-libevent

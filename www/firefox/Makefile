@@ -32,7 +32,7 @@ BUILD_DEPENDS=	nspr>=4.19:devel/nspr \
 USE_GECKO=	gecko
 CONFLICTS_INSTALL=	firefox-esr
 MOZ_PKGCONFIG_FILES=	# empty
-USE_MOZILLA=	-cairo -hunspell
+USE_MOZILLA=	-hunspell
 
 USES=		tar:xz
 
@@ -42,7 +42,7 @@ FIREFOX_DESKTOP=	${MOZSRC}/taskcluster/docker/${MOZILLA}-snap/${MOZILLA}.desktop
 MOZ_OPTIONS=	--enable-application=browser \
 		--enable-official-branding
 
-OPTIONS_EXCLUDE=	BUNDLED_CAIRO DTRACE
+OPTIONS_EXCLUDE=	DTRACE
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
