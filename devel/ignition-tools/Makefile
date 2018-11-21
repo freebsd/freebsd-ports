@@ -11,11 +11,9 @@ COMMENT=	Ignition entry point (ign) for using all the suite of ignition tools
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	ruby:lang/ruby24
-RUN_DEPENDS=	ruby:lang/ruby24
-
 USES=		cmake:outsource pkgconfig shebangfix
 SHEBANG_FILES=	src/ign.in
+USE_RUBY=	yes
 
 BB_ACCOUNT=	ignitionrobotics
 BB_PROJECT=	ign-tools
