@@ -6,7 +6,7 @@ PORTVERSION=	0.1.5
 PORTREVISION=	1
 CATEGORIES=	databases
 
-MAINTAINER=	johnpupu@gmail.com
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	This extension is a PHP binding for Google LevelDB
 
 LICENSE=	PHP301

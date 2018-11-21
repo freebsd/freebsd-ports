@@ -5,7 +5,7 @@ PORTNAME=	msgpack
 PORTVERSION=	0.5.7
 CATEGORIES=	devel
 
-MAINTAINER=	johnpupu@gmail.com
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Provides API for communicating with MessagePack serialization
 
 LICENSE=	BSD3CLAUSE

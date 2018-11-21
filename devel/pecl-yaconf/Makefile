@@ -5,7 +5,7 @@ PORTNAME=	yaconf
 DISTVERSION=	1.0.7
 CATEGORIES=	devel
 
-MAINTAINER=	johnpupu@gmail.com
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP Persistent Configurations Container
 
 LICENSE=	PHP301

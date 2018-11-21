@@ -5,7 +5,7 @@ PORTNAME=	uv
 PORTVERSION=	0.2.2
 CATEGORIES=	devel
 
-MAINTAINER=	johnpupu@gmail.com
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP wrapper for libuv
 
 LICENSE=	PHP301
