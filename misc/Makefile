@@ -494,6 +494,7 @@
     SUBDIR += rubygem-vpim
     SUBDIR += rump
     SUBDIR += saaghar
+    SUBDIR += sdformat
     SUBDIR += seabios
     SUBDIR += sent
     SUBDIR += seq2

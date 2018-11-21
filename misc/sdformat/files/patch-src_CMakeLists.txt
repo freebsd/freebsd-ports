@@ -1,0 +1,13 @@
+--- src/CMakeLists.txt.orig	2018-11-21 00:25:29 UTC
++++ src/CMakeLists.txt
+@@ -116,7 +116,9 @@ if (IGNITION-TOOLS_BINARY_DIRS)
+   )
+ endif()
+ 
+-sdf_build_tests(${gtest_sources})
++if (BUILD_TESTING)
++    sdf_build_tests(${gtest_sources})
++endif()
+ 
+ sdf_add_library(${sdf_target} ${sources})
+ target_link_libraries(${sdf_target} PUBLIC ${IGNITION-MATH_LIBRARIES})
