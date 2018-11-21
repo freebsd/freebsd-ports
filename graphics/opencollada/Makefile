@@ -2,7 +2,7 @@
 
 PORTNAME=	opencollada
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.65
+DISTVERSION=	1.6.67
 CATEGORIES=	graphics devel
 
 MAINTAINER=	ports@FreeBSD.org
