@@ -2,7 +2,6 @@
 
 PORTNAME=	bareos16
 PKGNAMESUFFIX=	-bat
-PORTREVISION=	1
 
 COMMENT=	Backup archiving recovery open sourced (GUI)
 
