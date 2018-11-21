@@ -3,6 +3,7 @@
 %%SITE_ARCH%%/FFI/Platypus/Buffer.pm
 %%SITE_ARCH%%/FFI/Platypus/DL.pm
 %%SITE_ARCH%%/FFI/Platypus/Declare.pm
+%%SITE_ARCH%%/FFI/Platypus/Internal.pm
 %%SITE_ARCH%%/FFI/Platypus/Lang.pm
 %%SITE_ARCH%%/FFI/Platypus/Lang/ASM.pm
 %%SITE_ARCH%%/FFI/Platypus/Lang/C.pm
@@ -13,6 +14,7 @@
 %%SITE_ARCH%%/FFI/Platypus/ShareConfig.pm
 %%SITE_ARCH%%/FFI/Platypus/Type.pod
 %%SITE_ARCH%%/FFI/Platypus/Type/PointerSizeBuffer.pm
+%%SITE_ARCH%%/FFI/Platypus/Type/StringArray.pm
 %%SITE_ARCH%%/FFI/Platypus/Type/StringPointer.pm
 %%SITE_ARCH%%/auto/FFI/Platypus/Platypus.so
 %%SITE_ARCH%%/auto/share/dist/FFI-Platypus/README.txt
@@ -22,6 +24,7 @@
 %%PERL5_MAN3%%/FFI::Platypus::Buffer.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::DL.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::Declare.3.gz
+%%PERL5_MAN3%%/FFI::Platypus::Internal.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::Lang.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::Lang::ASM.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::Lang::C.3.gz
@@ -32,4 +35,5 @@
 %%PERL5_MAN3%%/FFI::Platypus::ShareConfig.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::Type.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::Type::PointerSizeBuffer.3.gz
+%%PERL5_MAN3%%/FFI::Platypus::Type::StringArray.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::Type::StringPointer.3.gz
