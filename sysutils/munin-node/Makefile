@@ -58,6 +58,8 @@ JAVA_RUN=	yes
 SUB_FILES=	pkg-message plugins.conf
 USE_RC_SUBR=	munin-asyncd munin-node munin-sched
 
+PORTSCOUT=	ignore:1
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/node/sbin/munin-node \
