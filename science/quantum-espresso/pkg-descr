@@ -11,4 +11,7 @@ active in the field of electronic-structure calculations are encouraged to
 participate in the project by contributing their own codes or by implementing
 their own ideas into existing codes.
 
+You probably also need to install the Quantum ESPRESSO pseudopotentials library:
+quantum-espresso-pseudopotentials (science/quantum-espresso-pseudopotentials).
+
 WWW: https://www.quantum-espresso.org/
