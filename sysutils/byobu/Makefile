@@ -3,18 +3,18 @@
 
 PORTNAME=	byobu
 PORTVERSION=	5.127
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	jcoffman@openfire.io
-COMMENT=	Profile and configuration utilities for GNU Screen
+COMMENT=	Profile and configuration utilities for GNU Screen and/or tmux
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	screen:sysutils/screen \
-		bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf python shebangfix
 
@@ -25,7 +25,21 @@ SHEBANG_FILES=	usr/lib/byobu/include/notify_osd \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS NEWT
+
+OPTIONS_MULTI=	BACKEND
+OPTIONS_MULTI_BACKEND=	TMUX SCREEN
+
+OPTIONS_DEFAULT=	DOCS NEWT TMUX
+
+NEWT_DESC=	Python-based windowing toolkit (required for config menu)
+NEWT_LIB_DEPENDS=	libnewt.so:devel/newt
+
+TMUX_DESC=	Terminal Multiplexer (byobu default)
+TMUX_RUN_DEPENDS=	tmux:sysutils/tmux
+
+SCREEN_DESC=	Multi-screen window manager
+SCREEN_RUN_DEPENDS=	screen:sysutils/screen
 
 NO_ARCH=	yes
 

@@ -1,7 +1,10 @@
-Byobu is a Japanese term for decorative, multi-panel screens that serve as
-folding room dividers. As an open source project, Byobu is an elegant
-enhancement of the otherwise functional, plain, practical GNU Screen. Byobu
-includes an enhanced profile and configuration utilities for the GNU screen
-window manager, such as toggle-able system status notifications.
+Byobu is a GPLv3 open source text-based window manager and terminal
+multiplexer. It was originally designed to provide elegant enhancements
+to the otherwise functional, plain, practical GNU Screen. Byobu now
+includes an enhanced profiles, convenient keybindings, configuration
+utilities, and toggle-able system status notifications for both the GNU
+Screen window manager and the more modern Tmux terminal multiplexer.
+The Python newt library is only needed if you wish to use the menu-
+based config editor.
 
 WWW: http://www.byobu.co
