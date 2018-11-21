@@ -3,6 +3,7 @@
 
 PORTNAME=	python-digitalocean
 PORTVERSION=	1.14.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,7 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.0.0:www/py-requests@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	koalalorenzo
-GH_TAGNAME=	v${PORTVERSION}
 
 USES=	python
 USE_PYTHON=	distutils autoplist
