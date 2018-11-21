@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpaw-setups
-DISTVERSION=	0.9.11271
+DISTVERSION=	0.9.20000
 CATEGORIES=	science
 MASTER_SITES=	https://wiki.fysik.dtu.dk/gpaw-files/
 
