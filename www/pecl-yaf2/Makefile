@@ -5,7 +5,7 @@ PORTNAME=	yaf
 PORTVERSION=	2.3.5
 CATEGORIES=	www
 
-MAINTAINER=	johnpupu@gmail.com
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	MVC framework written as a C PHP extension
 
 LICENSE=	PHP301

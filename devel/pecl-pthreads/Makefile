@@ -5,7 +5,7 @@ PORTNAME=	pthreads
 PORTVERSION=	3.1.6
 CATEGORIES=	devel
 
-MAINTAINER=	johnpupu@gmail.com
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Compatible Threading API for PHP7.0+
 
 LICENSE=	PHP301

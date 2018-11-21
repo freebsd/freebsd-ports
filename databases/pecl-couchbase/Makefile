@@ -5,7 +5,7 @@ PORTNAME=	couchbase
 DISTVERSION=	2.4.2
 CATEGORIES=	databases
 
-MAINTAINER=	johnpupu@gmail.com
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Couchbase Server PHP extension
 
 LICENSE=	APACHE20

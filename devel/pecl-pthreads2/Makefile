@@ -6,7 +6,7 @@ PORTVERSION=	2.0.10
 CATEGORIES=	devel
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	johnpupu@gmail.com
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Compatible Threading API for PHP5.3+
 
 LICENSE=	PHP301
