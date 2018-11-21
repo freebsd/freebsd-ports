@@ -1,0 +1,9 @@
+localzone is a low-calorie library for managing DNS zones.
+
+Features:
+- A simple API focused on managing resource records in local zone files
+- Support for almost all resource record types
+- Auto-save and auto-serial
+- Built for automation
+
+WWW: https://github.com/ags-slc/localzone
