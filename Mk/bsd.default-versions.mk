@@ -76,7 +76,7 @@ _PERL5_FROM_BIN!=	perl -e 'printf "%vd\n", $$^V;'
 _EXPORTED_VARS+=	_PERL5_FROM_BIN
 PERL5_DEFAULT:=		${_PERL5_FROM_BIN:R}
 .endif
-# Possible values: 9.3, 9.4, 9.5, 9.6, 10
+# Possible values: 9.3, 9.4, 9.5, 9.6, 10, 11
 PGSQL_DEFAULT?=		9.5
 # Possible values: 5.6, 7.0, 7.1, 7.2, 7.3
 PHP_DEFAULT?=		7.2
