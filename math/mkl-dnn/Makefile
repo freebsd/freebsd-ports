@@ -15,7 +15,7 @@ BROKEN_i386=	error: shift count >= width of type (and other errors), see https:/
 
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		cmake:outsource compiler:c++11-lib
+USES=		cmake:outsource
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
 USE_LDCONFIG=	yes
