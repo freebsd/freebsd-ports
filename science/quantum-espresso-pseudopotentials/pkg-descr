@@ -1,0 +1,9 @@
+quantum-espresso-pseudopotentials contains pseudopotentials that are
+normally needed in order to run quantum chemistry computations in
+the Quantum Espresso suite.
+
+Quantum Espresso is an integrated suite of open-source computer codes
+for electronic-structure calculations and materials modeling at the nanoscale.
+It is based on density-functional theory, plane waves, and pseudopotentials.
+
+WWW: https://www.quantum-espresso.org/

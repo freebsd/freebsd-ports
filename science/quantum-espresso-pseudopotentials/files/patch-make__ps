@@ -1,0 +1,11 @@
+--- make_ps.orig	2018-11-21 18:54:56 UTC
++++ make_ps
+@@ -18,7 +18,7 @@ work=./WORK
+ #  For QE < 5.0 
+ #. $PWDIR/example/environment_variables
+ #
+-. $PWDIR/environment_variables
++#. $PWDIR/environment_variables
+ BIN_DIR=$PWDIR/bin
+ 
+ mkdir $work >& /dev/null

@@ -264,6 +264,7 @@
     SUBDIR += qmcpack
     SUBDIR += qtresistors
     SUBDIR += quantum-espresso
+    SUBDIR += quantum-espresso-pseudopotentials
     SUBDIR += qwalk
     SUBDIR += rdkit
     SUBDIR += rmf
