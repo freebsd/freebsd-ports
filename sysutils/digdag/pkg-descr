@@ -1,0 +1,8 @@
+Digdag is a simple tool that helps you to build, run, schedule, and monitor
+complex pipelines of tasks. It handles dependency resolution so that tasks run
+in series or in parallel.
+
+Digdag replaces cron, facilitates IT operations automation, orchestrates data
+engineering tasks, coordinates machine learning pipelines, and more.
+
+WWW: https://www.digdag.io/
