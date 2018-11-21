@@ -21,7 +21,6 @@ lib/cliqz/dependentlibs.list
 lib/cliqz/gmp-clearkey/0.1/libclearkey.so
 lib/cliqz/gmp-clearkey/0.1/manifest.json
 lib/cliqz/gtk2/libmozgtk.so
-lib/cliqz/icons/updater.png
 lib/cliqz/libfreebl3.chk
 lib/cliqz/libfreebl3.so
 lib/cliqz/liblgpllibs.so
@@ -48,8 +47,5 @@ lib/cliqz/platform.ini
 lib/cliqz/plugin-container
 lib/cliqz/precomplete
 lib/cliqz/removed-files
-lib/cliqz/update-settings.ini
-lib/cliqz/updater
-lib/cliqz/updater.ini
 share/applications/cliqz.desktop
 share/pixmaps/cliqz.png
