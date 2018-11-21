@@ -47,6 +47,8 @@ NO_ARCH=	yes
 SUB_FILES=	pkg-message
 PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
+PORTSCOUT=	ignore:1
+
 post-install:
 	(cd ${WRKSRC}/build/doc; \
 		${INSTALL_MAN} munin.conf.5 ${STAGEDIR}${MAN5PREFIX}/man/man5; \
