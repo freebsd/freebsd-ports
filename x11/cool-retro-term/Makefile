@@ -23,7 +23,7 @@ USE_QT=		qmake_build buildtools_build core declarative gui widgets \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == powerpc
+.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
 USE_GCC=	yes
 .else
 CC=		clang
