@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cliqz
-DISTVERSION=	1.22.3
+DISTVERSION=	1.23.3
 CATEGORIES=	www
 MASTER_SITES=	https://s3.amazonaws.com/cdn.cliqz.com/browser-f/APT/:amazon \
 		http://repository.cliqz.com/dist/${CLIQZ_CHANNEL}/${DISTVERSION}/${CLIQZ_LAST_BUILD_ID}/:cliqz
@@ -37,6 +37,7 @@ BUILD_DEPENDS=	autoconf-2.13:devel/autoconf213 \
 		libvpx>=1.5.0:multimedia/libvpx \
 		${LOCALBASE}/libdata/pkgconfig/xt.pc:x11-toolkits/libXt \
 		llvm${LLVM_DEFAULT}>=0:devel/llvm${LLVM_DEFAULT} \
+		node:www/node \
 		nspr>=4.19:devel/nspr \
 		nss>=3.39:security/nss \
 		png>=1.6.34:graphics/png \
@@ -56,8 +57,6 @@ USE_GNOME=	gconf2 gtk20 gtk30 cairo gdkpixbuf2
 USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xrender \
 		xcb xt
 
-LLVM_DEFAULT?=	70
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	cliqz-oss
 GH_PROJECT=	browser-f
@@ -66,8 +65,8 @@ USE_LDCONFIG=	yes
 
 CLIQZ_CHANNEL=		release
 # If the DISTVERSION is updated, make sure to update the last build id from
-# fetch -qo - https://s3.amazonaws.com/dist/${CLIQZ_CHANNEL}/${DISTVERSION}/lastbuildid
-CLIQZ_LAST_BUILD_ID=	20181005182933
+# fetch -qo - https://repository.cliqz.com/dist/${CLIQZ_CHANNEL}/${DISTVERSION}/lastbuildid
+CLIQZ_LAST_BUILD_ID=	20181116003917
 CLIQZ_ICON=		${PORTNAME}.png
 CLIQZ_ICON_SRC=		${WRKSRC}/mozilla-release/browser/branding/${PORTNAME}/default48.png
 MOZ_DESKTOP=		${WRKSRC}/mozilla-release/toolkit/mozapps/installer/linux/rpm/mozilla.desktop

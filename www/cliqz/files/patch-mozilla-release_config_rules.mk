@@ -1,6 +1,6 @@
---- mozilla-release/config/rules.mk.orig	2018-11-17 13:03:00 UTC
+--- mozilla-release/config/rules.mk.orig	2018-11-16 08:40:07 UTC
 +++ mozilla-release/config/rules.mk
-@@ -1223,20 +1223,20 @@ $(EXTENSIONS_PATH):
+@@ -1302,20 +1302,20 @@ $(EXTENSIONS_PATH):
  CLIQZ_XPI_PATH = $(EXTENSIONS_PATH)/cliqz@cliqz.com.xpi
  $(CLIQZ_XPI_PATH): $(EXTENSIONS_PATH)
  	echo CLIQZ_XPI_PATH in `pwd`
