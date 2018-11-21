@@ -1,43 +1,53 @@
---- Makefile.orig	2014-10-13 22:41:51.000000000 +0200
-+++ Makefile	2014-12-21 16:18:40.000000000 +0100
-@@ -4,13 +1,17 @@
+--- Makefile.orig	2015-06-30 18:20:12 UTC
++++ Makefile
+@@ -1,5 +1,5 @@
+ VERSION		= 0.9
+-RELEASE		:=
++RELEASE		:= ""
+ ifneq ($(RELEASE),"")
+ 	RELEASE="-$(RELEASE)"
+ endif
+@@ -9,15 +9,20 @@ LD		= $(CROSS_COMPILE)ld
+ OBJCOPY		= $(CROSS_COMPILE)objcopy
  
  ARCH		= $(shell $(CC) -dumpmachine | cut -f1 -d- | sed s,i[3456789]86,ia32,)
- 
++
 +ifeq ($(ARCH),amd64)
-+  override ARCH := x86_64
++	override ARCH := x86_64
 +endif
 +
+ OBJCOPY_GTE224  = $(shell expr `$(OBJCOPY) --version |grep ^"GNU objcopy" | sed 's/^.* //g' | cut -f1-2 -d.` \>= 2.24)
+ 
  SUBDIRS		= Cryptlib lib
  
 -LIB_PATH	= /usr/lib64
-+LIB_PATH	= $(LOCALBASE)/lib
++LIB_PATH	= /usr/lib -L$(LOCALBASE)/lib
  
 -EFI_INCLUDE	:= /usr/include/efi
-+EFI_INCLUDE	:= $(LOCALBASE)/include/efi
- EFI_INCLUDES	= -nostdinc -ICryptlib -ICryptlib/Include -I$(EFI_INCLUDE) -I$(EFI_INCLUDE)/$(ARCH) -I$(EFI_INCLUDE)/protocol -Iinclude
+-EFI_INCLUDES	= -nostdinc -ICryptlib -ICryptlib/Include -I$(EFI_INCLUDE) -I$(EFI_INCLUDE)/$(ARCH) -I$(EFI_INCLUDE)/protocol -I$(shell pwd)/include
 -EFI_PATH	:= /usr/lib64/gnuefi
++EFI_INCLUDE	:= $(LOCALBASE)/include/efi
++EFI_INCLUDES	= -nostdinc -ICryptlib -ICryptlib/Include -I$(EFI_INCLUDE) -I$(EFI_INCLUDE)/$(ARCH) -I$(EFI_INCLUDE)/protocol -I$(shell pwd)/include -I/usr/include
 +EFI_PATH	:= $(LOCALBASE)/lib
  
  LIB_GCC		= $(shell $(CC) -print-libgcc-file-name)
  EFI_LIBS	= -lefi -lgnuefi --start-group Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a --end-group $(LIB_GCC) 
-@@ -57,7 +63,7 @@ LDFLAGS		= -nostdlib -znocombreloc -T $(
+@@ -65,7 +70,7 @@ endif
  
- VERSION		= 0.8
+ LDFLAGS		= --hash-style=sysv -nostdlib -znocombreloc -T $(EFI_LDS) -shared -Bsymbolic -L$(EFI_PATH) -L$(LIB_PATH) -LCryptlib -LCryptlib/OpenSSL $(EFI_CRT_OBJS) --build-id=sha1
  
 -TARGET	= shim.efi MokManager.efi.signed fallback.efi.signed
 +TARGET	= shim.efi MokManager.efi fallback.efi
  OBJS	= shim.o netboot.o cert.o replacements.o version.o
  KEYS	= shim_cert.h ocsp.* ca.* shim.crt shim.csr shim.p12 shim.pem shim.key shim.cer
  SOURCES	= shim.c shim.h netboot.c include/PeImage.h include/wincert.h include/console.h replacements.c replacements.h version.c version.h
-@@ -144,8 +150,8 @@ FORMAT		?= --target efi-app-$(ARCH)
- 		-j .debug_line -j .debug_str -j .debug_ranges \
+@@ -156,9 +161,6 @@ endif
+ 		-j .note.gnu.build-id \
  		$(FORMAT) $^ $@.debug
  
 -%.efi.signed: %.efi certdb/secmod.db
 -	pesign -n certdb -i $< -c "shim" -s -o $@ -f
-+#%.efi.signed: %.efi certdb/secmod.db
-+#	pesign -n certdb -i $< -c "shim" -s -o $@ -f
- 
+-
  clean:
  	$(MAKE) -C Cryptlib clean
+ 	$(MAKE) -C Cryptlib/OpenSSL clean

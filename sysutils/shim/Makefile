@@ -2,43 +2,40 @@
 # $FreeBSD$
 
 PORTNAME=	shim
-PORTVERSION=	0.8
-PORTREVISION=	6
+PORTVERSION=	0.9
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	egypcio@googlemail.com
 COMMENT=	UEFI Secure Boot shim loader
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgnuefi.a:devel/gnu-efi \
 		bash:shells/bash
 
+USES=		compiler gmake shebangfix
+USE_CSTD=	gnu89
+USE_GCC=	yes
+
+SHEBANG_FILES=	make-certs
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	mjg59
 
-USES=		gmake
-USE_CSTD=	gnu89
-USE_GCC=	yes
-USE_GITHUB=	yes
 MAKE_ARGS=	CC="${CC} ${CFLAGS:M-std=*}" LD="${LD}" OBJCOPY="${OBJCOPY}"
 MAKE_JOBS_UNSAFE=	yes
-ONLY_FOR_ARCHS=	amd64
 
 PLIST_FILES=	lib/shim/shim.pem lib/shim/shim.key \
 		lib/shim/MokManager.efi lib/shim/fallback.efi lib/shim/shim.efi
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|/bin/bash|${LOCALBASE}/bin/bash|" ${WRKSRC}/make-certs
-
 do-install:
 	# Note that before this step, the shim.pem contains the _private_ key.
 	openssl x509 -inform der -in ${WRKSRC}/shim.cer -outform pem -out ${WRKSRC}/shim.pem
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/shim
-	${INSTALL_DATA} -m 600 ${WRKSRC}/shim.key ${STAGEDIR}/${PREFIX}/lib/shim
-	${INSTALL_DATA} ${WRKSRC}/shim.pem ${STAGEDIR}/${PREFIX}/lib/shim
-	${INSTALL_DATA} ${WRKSRC}/shim.efi ${STAGEDIR}/${PREFIX}/lib/shim
-	${INSTALL_DATA} ${WRKSRC}/MokManager.efi ${STAGEDIR}/${PREFIX}/lib/shim
-	${INSTALL_DATA} ${WRKSRC}/fallback.efi ${STAGEDIR}/${PREFIX}/lib/shim
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/shim
+	${INSTALL_DATA} -m 600 ${WRKSRC}/shim.key ${STAGEDIR}${PREFIX}/lib/shim
+.for file in shim.pem MokManager.efi fallback.efi shim.efi
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/lib/shim
+.endfor
 
 .include <bsd.port.mk>
