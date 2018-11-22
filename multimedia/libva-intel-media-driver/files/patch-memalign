@@ -1,5 +1,16 @@
 memalign is Linux-specific, so use C11 aligned_alloc instead
 
+In file included from media_driver/agnostic/common/os/mos_utilities.c:36:
+/usr/include/malloc.h:3:2: error: "<malloc.h> has been replaced by <stdlib.h>"
+#error "<malloc.h> has been replaced by <stdlib.h>"
+ ^
+media_driver/agnostic/common/os/mos_utilities.c:3096:11: error: use of undeclared identifier 'memalign'
+    ptr = _aligned_malloc(size, alignment);
+          ^
+media_driver/linux/common/os/mos_utilities_specific.h:91:43: note: expanded from macro '_aligned_malloc'
+#define _aligned_malloc(size, alignment)  memalign(alignment, size)
+                                          ^
+
 --- media_driver/agnostic/common/os/mos_utilities.c.orig	2018-10-01 21:39:52 UTC
 +++ media_driver/agnostic/common/os/mos_utilities.c
 @@ -33,7 +33,6 @@
