@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://gee.cs.oswego.edu/pub/misc/
 DISTFILES=	malloc-${PORTVERSION}.c malloc-${PORTVERSION}.h
 
-MAINTAINER=	roberto@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, fast malloc library by Doug Lea
 
 NO_WRKSUBDIR=	yes
