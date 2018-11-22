@@ -11,18 +11,18 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java NIO client server framework
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_JAVA=	yes
 USES=		cpe tar:bzip2
+USE_JAVA=	yes
 CPE_VENDOR=	netty_project
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
-DATADIR=	${PREFIX}/share/${PKGBASE}
-DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.Final
 
-PLIST_FILES=	%%JAVAJARDIR%%/netty-${PORTVERSION}.jar \
-		%%JAVAJARDIR%%/netty.jar
+PLIST_FILES=	${JAVAJARDIR:S,^${PREFIX}/,,}/netty-${PORTVERSION}.jar \
+		${JAVAJARDIR:S,^${PREFIX}/,,}/netty.jar
 
 PORTDATA=	*
 PORTDOCS=	*
@@ -32,8 +32,8 @@ OPTIONS_DEFINE=	DOCS
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/jar/netty-${PORTVERSION}.Final.jar ${STAGEDIR}${JAVAJARDIR}/netty-${PORTVERSION}.jar
-	cd ${WRKSRC} && ${COPYTREE_SHARE} src ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} src ${STAGEDIR}${DATADIR}
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 	${LN} -nfs netty-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/netty.jar
 
 .include <bsd.port.mk>
