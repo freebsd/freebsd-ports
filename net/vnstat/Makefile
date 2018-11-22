@@ -3,7 +3,7 @@
 
 PORTNAME=	vnstat
 PORTVERSION=	2.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://humdi.net/vnstat/ \
 		https://source.ipfire.org/source-2.x/
