@@ -1,6 +1,6 @@
---- config.m4.orig	2010-02-07 14:06:54.000000000 +0100
-+++ config.m4	2010-03-08 11:56:24.000000000 +0100
-@@ -103,6 +103,8 @@
+--- config.m4.orig	2018-09-11 22:12:36 UTC
++++ config.m4
+@@ -103,6 +103,8 @@ PHP_ARG_WITH(kerberos,for IMAP Kerberos 
  PHP_ARG_WITH(imap-ssl,for IMAP SSL support,
  [  --with-imap-ssl[=DIR]     IMAP: Include SSL support. DIR is the OpenSSL install prefix], no, no)
  
@@ -9,7 +9,7 @@
  
  if test "$PHP_IMAP" != "no"; then  
      PHP_SUBST(IMAP_SHARED_LIBADD)
-@@ -119,6 +121,30 @@
+@@ -119,6 +121,30 @@ if test "$PHP_IMAP" != "no"; then  
        fi
      done
  
