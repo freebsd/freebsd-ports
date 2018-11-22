@@ -11,6 +11,8 @@ PKGNAMEPREFIX=	erlang-
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Fast and scalable library for XMPP written in Erlang/OTP
 
+BROKEN_SSL=	openssl111 openssl-devel
+
 LICENSE=	EPL
 
 BUILD_DEPENDS=	erlc:lang/erlang
@@ -41,6 +43,12 @@ OPTIONS_DEFINE=	DOCS
 DOCS_CONFIGURE_ENABLE=	documentation
 
 MAKE_JOBS_UNSAFE=	yes
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085 && ${SSL_DEFAULT} == base
+BROKEN=	Does not support OpenSSL 1.1
+.endif
 
 post-configure:
 	${REINPLACE_CMD}  's|\(-spec.*\)\/[0-9] ::\(.*\)|\1\2|g' ${WRKSRC}/src/network/*.erl
