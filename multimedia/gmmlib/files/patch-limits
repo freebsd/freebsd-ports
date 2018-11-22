@@ -1,3 +1,5 @@
+<linux/limits.h> is implicitly included via <limits.h> but not required here
+
 Source/GmmLib/Utility/GmmLog/GmmLog.cpp:36:10: fatal error: 'linux/limits.h' file not found
 #include <linux/limits.h>
          ^~~~~~~~~~~~~~~~
