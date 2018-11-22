@@ -25,4 +25,4 @@
 %%PYQT_SIPDIR%%/QtDesigner/qpydesignerpropertysheetextension.sip
 %%PYQT_SIPDIR%%/QtDesigner/qpydesignertaskmenuextension.sip
 %%PYQT_SIPDIR%%/QtDesigner/taskmenu.sip
-%%API%%share/qt5/qsci/api/python/QtDesigner.api
+%%API%%%%PYQT_APIDIR%%/api/python/QtDesigner.api

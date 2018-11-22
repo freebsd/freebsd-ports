@@ -125,4 +125,4 @@
 %%PYQT_SIPDIR%%/QtWidgets/qwidget.sip
 %%PYQT_SIPDIR%%/QtWidgets/qwidgetaction.sip
 %%PYQT_SIPDIR%%/QtWidgets/qwizard.sip
-%%API%%share/qt5/qsci/api/python/QtWidgets.api
+%%API%%%%PYQT_APIDIR%%/api/python/QtWidgets.api

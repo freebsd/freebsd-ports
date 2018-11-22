@@ -15,4 +15,4 @@
 %%PYQT_SIPDIR%%/QtSql/qsqlrelationaltablemodel.sip
 %%PYQT_SIPDIR%%/QtSql/qsqlresult.sip
 %%PYQT_SIPDIR%%/QtSql/qsqltablemodel.sip
-%%API%%share/qt5/qsci/api/python/QtSql.api
+%%API%%%%PYQT_APIDIR%%/api/python/QtSql.api

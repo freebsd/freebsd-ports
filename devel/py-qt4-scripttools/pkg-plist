@@ -1,4 +1,4 @@
 %%PYTHON_SITELIBDIR%%/PyQt4/QtScriptTools.so
 %%PYQT_SIPDIR%%/QtScriptTools/QtScriptToolsmod.sip
 %%PYQT_SIPDIR%%/QtScriptTools/qscriptenginedebugger.sip
-%%API%%share/qt4/qsci/api/python/QtScriptTools.api
+%%API%%%%PYQT_APIDIR%%/api/python/QtScriptTools.api

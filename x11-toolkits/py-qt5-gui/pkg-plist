@@ -94,4 +94,4 @@
 %%PYQT_SIPDIR%%/QtGui/qvector4d.sip
 %%PYQT_SIPDIR%%/QtGui/qwindow.sip
 %%PYQT_SIPDIR%%/QtGui/qwindowdefs.sip
-%%API%%share/qt5/qsci/api/python/QtGui.api
+%%API%%%%PYQT_APIDIR%%/api/python/QtGui.api

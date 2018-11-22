@@ -10,4 +10,4 @@
 %%PYQT_SIPDIR%%/QtPrintSupport/qprintpreviewdialog.sip
 %%PYQT_SIPDIR%%/QtPrintSupport/qprintpreviewwidget.sip
 %%PYQT_SIPDIR%%/QtPrintSupport/qpyprintsupport_qlist.sip
-%%API%%share/qt5/qsci/api/python/QtPrintSupport.api
+%%API%%%%PYQT_APIDIR%%/api/python/QtPrintSupport.api

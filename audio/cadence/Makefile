@@ -4,6 +4,7 @@ PORTNAME=	cadence
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0-7
 DISTVERSIONSUFFIX=	-g4a5f5b4
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,6 +24,9 @@ USE_QT=		core gui widgets buildtools_build
 USE_PYQT=	core_run gui_run network_run widgets_run sip xml_build
 
 CXXFLAGS+=	-DJACKBRIDGE_PROPER_CPP11_SUPPORT=yes
+# Give the Makefile the proper versioned binaries of PyQt
+BINARY_ALIAS=	pyuic5=${LOCALBASE}/bin/pyuic5-${PYTHON_VER} \
+		pyrcc5=${LOCALBASE}/bin/pyrcc5-${PYTHON_VER}
 
 post-patch:
 	@${REINPLACE_CMD} 's|exec $$PYTHON |exec ${PYTHON_CMD} |' ${WRKSRC}/data/cadence

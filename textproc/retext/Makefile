@@ -2,6 +2,7 @@
 
 PORTNAME=	retext
 PORTVERSION=	7.0.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	arved@FreeBSD.org

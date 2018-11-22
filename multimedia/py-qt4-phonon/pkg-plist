@@ -18,4 +18,4 @@
 %%PYQT_SIPDIR%%/phonon/videoplayer.sip
 %%PYQT_SIPDIR%%/phonon/videowidget.sip
 %%PYQT_SIPDIR%%/phonon/volumeslider.sip
-%%API%%share/qt4/qsci/api/python/phonon.api
+%%API%%%%PYQT_APIDIR%%/api/python/phonon.api

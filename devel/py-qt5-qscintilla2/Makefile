@@ -20,16 +20,16 @@ HAS_CONFIGURE=	yes
 USES=		python pyqt:5 qmake:no_env qt:5
 USE_GL=		gl
 USE_PYQT=	sip core gui printsupport widgets
-USE_PYTHON=	flavors
+USE_PYTHON=	concurrent flavors py3kplist
 USE_QT=		core gui printsupport widgets buildtools_build qmake_build
 
 OPTIONS_DEFINE=		DEBUG
 DEBUG_CONFIGURE_ON=	--debug --trace
 
 QSCIDIR=	${PREFIX}/share/qt5/qsci
-CONFIGURE_ARGS=	--pyqt PyQt5 -d ${PYTHONPREFIX_SITELIBDIR}/PyQt5 -v ${SIPDIR} \
-		--apidir ${QSCIDIR} --qmake ${QMAKE} --pyqt-sipdir ${SIPDIR} \
-		--sip ${LOCALBASE}/bin/sip-${PYTHON_VER}
+CONFIGURE_ARGS=	--pyqt PyQt5 -d ${PYTHONPREFIX_SITELIBDIR}/PyQt5 -v ${PYQT_SIPDIR} \
+		--apidir ${PYQT_APIDIR} --qmake ${QMAKE} --pyqt-sipdir ${PYQT_SIPDIR} \
+		--sip ${SIP}
 WRKSRC=		${WRKDIR}/${DISTNAME}/Python
 ALL_TARGET=	#empty
 

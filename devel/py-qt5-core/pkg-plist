@@ -175,6 +175,7 @@ bin/pyuic5
 %%PYQT_SIPDIR%%/QtCore/qpycore_qset.sip
 %%PYQT_SIPDIR%%/QtCore/qpycore_qvector.sip
 %%PYQT_SIPDIR%%/QtCore/qpycore_virtual_error_handler.sip
+%%PYQT_SIPDIR%%/QtCore/qrandom.sip
 %%PYQT_SIPDIR%%/QtCore/qreadwritelock.sip
 %%PYQT_SIPDIR%%/QtCore/qrect.sip
 %%PYQT_SIPDIR%%/QtCore/qregexp.sip
@@ -220,4 +221,4 @@ bin/pyuic5
 %%PYQT_SIPDIR%%/QtCore/qwaitcondition.sip
 %%PYQT_SIPDIR%%/QtCore/qwineventnotifier.sip
 %%PYQT_SIPDIR%%/QtCore/qxmlstream.sip
-%%API%%share/qt5/qsci/api/python/QtCore.api
+%%API%%%%PYQT_APIDIR%%/api/python/QtCore.api

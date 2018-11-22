@@ -54,4 +54,4 @@
 %%PYQT_SIPDIR%%/Qsci/qsciscintillabase.sip
 %%PYQT_SIPDIR%%/Qsci/qscistyle.sip
 %%PYQT_SIPDIR%%/Qsci/qscistyledtext.sip
-%%QT_DATADIR%%/qsci/api/python/QScintilla2.api
+%%PYQT_APIDIR%%/api/python/QScintilla2.api

@@ -14,4 +14,4 @@
 %%PYQT_SIPDIR%%/QtXmlPatterns/qxmlschema.sip
 %%PYQT_SIPDIR%%/QtXmlPatterns/qxmlschemavalidator.sip
 %%PYQT_SIPDIR%%/QtXmlPatterns/qxmlserializer.sip
-%%API%%share/qt4/qsci/api/python/QtXmlPatterns.api
+%%API%%%%PYQT_APIDIR%%/api/python/QtXmlPatterns.api

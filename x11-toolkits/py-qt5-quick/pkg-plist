@@ -26,4 +26,4 @@
 %%PYQT_SIPDIR%%/QtQuick/qsgtexturematerial.sip
 %%PYQT_SIPDIR%%/QtQuick/qsgtextureprovider.sip
 %%PYQT_SIPDIR%%/QtQuick/qsgvertexcolormaterial.sip
-%%API%%share/qt5/qsci/api/python/QtQuick.api
+%%API%%%%PYQT_APIDIR%%/api/python/QtQuick.api

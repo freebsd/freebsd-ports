@@ -7,4 +7,4 @@
 %%PYQT_SIPDIR%%/QtHelp/qhelpsearchengine.sip
 %%PYQT_SIPDIR%%/QtHelp/qhelpsearchquerywidget.sip
 %%PYQT_SIPDIR%%/QtHelp/qhelpsearchresultwidget.sip
-%%API%%share/qt4/qsci/api/python/QtHelp.api
+%%API%%%%PYQT_APIDIR%%/api/python/QtHelp.api

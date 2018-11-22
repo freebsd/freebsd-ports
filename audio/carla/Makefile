@@ -3,7 +3,7 @@
 PORTNAME=	Carla
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,7 +30,10 @@ USE_LDCONFIG=	${PREFIX}/lib/carla
 SHEBANG_FILES=	data/carla-single source/native-plugins/resources/*
 
 MAKE_ARGS=	HAVE_QT4=false \
-		EXTERNAL_PLUGINS=false
+		EXTERNAL_PLUGINS=false \
+# Give the Makefile the proper versioned binaries of PyQt
+BINARY_ALIAS=	pyuic5=${LOCALBASE}/bin/pyuic5-${PYTHON_VER} \
+		pyrcc5=${LOCALBASE}/bin/pyrcc5-${PYTHON_VER}
 
 OPTIONS_DEFINE=		FFMPEG FLUIDSYNTH LINUXSAMPLER
 OPTIONS_DEFAULT=	FFMPEG FLUIDSYNTH JACK LINUXSAMPLER
