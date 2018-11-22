@@ -3,10 +3,13 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.3.26
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/${PORTNAME}/branch_6.3/ \
 		http://mandree.home.pages.de/${PORTNAME}/
+
+PATCH_SITES=	https://gitlab.com/fetchmail/fetchmail/commit/
+PATCHFILES=	9b8b634.patch:-p1
 
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR
