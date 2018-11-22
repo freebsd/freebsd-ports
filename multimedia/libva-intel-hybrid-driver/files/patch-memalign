@@ -1,5 +1,36 @@
 memalign is Linux-specific, so use C11 aligned_alloc instead
 
+In file included from decode_hybrid_vp9.cpp:68:
+In file included from ./decode_hybrid_vp9.h:42:
+/usr/include/malloc.h:3:2: error: "<malloc.h> has been replaced by <stdlib.h>"
+#error "<malloc.h> has been replaced by <stdlib.h>"
+ ^
+
+intel_hybrid_hostvld_vp9.cpp:428:42: error: use of undeclared identifier 'memalign'
+            (PINTEL_HOSTVLD_VP9_NEIGHBOR)memalign(INTEL_HOSTVLD_VP9_PAGE_SIZE, dwSize);
+                                         ^
+intel_hybrid_hostvld_vp9.cpp:433:9: error: use of undeclared identifier 'memalign'
+        VP9_REALLOCATE_ABOVE_CTX_BUFFER(pFrameInfo->EntropyContextAbove.pu8Buffer, dwSize);
+        ^
+intel_hybrid_hostvld_vp9.cpp:91:31: note: expanded from macro 'VP9_REALLOCATE_ABOVE_CTX_BUFFER'
+    pAboveCtxBuffer = (PUINT8)memalign(INTEL_HOSTVLD_VP9_PAGE_SIZE, size); \
+                              ^
+intel_hybrid_hostvld_vp9.cpp:448:40: error: use of undeclared identifier 'memalign'
+        pFrameInfo->ModeInfo.pBuffer = memalign(INTEL_HOSTVLD_VP9_PAGE_SIZE,
+                                       ^
+intel_hybrid_hostvld_vp9.cpp:457:9: error: use of undeclared identifier 'memalign'
+        VP9_REALLOCATE_HOSTVLD_1D_BUFFER_UINT8(pFrameState->pLastSegIdBuf, dwSize);
+        ^
+intel_hybrid_hostvld_vp9.cpp:99:43: note: expanded from macro 'VP9_REALLOCATE_HOSTVLD_1D_BUFFER_UINT8'
+    (pHostvldBuffer)->pu8Buffer = (PUINT8)memalign(INTEL_HOSTVLD_VP9_PAGE_SIZE, dwBufferSize); \
+                                          ^
+/usr/include/malloc.h:3:2: error: "<malloc.h> has been replaced by <stdlib.h>"
+#error "<malloc.h> has been replaced by <stdlib.h>"
+ ^
+intel_hybrid_debug_dump.cpp:169:20: error: use of undeclared identifier 'memalign'
+     ptr = (char *)memalign(alignment, tmp_size);
+                   ^
+
 --- src/vp9hdec/decode_hybrid_vp9.h.orig	2016-09-07 23:36:28 UTC
 +++ src/vp9hdec/decode_hybrid_vp9.h
 @@ -39,8 +39,6 @@
