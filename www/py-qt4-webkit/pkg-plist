@@ -14,4 +14,4 @@
 %%PYQT_SIPDIR%%/QtWebKit/qwebsecurityorigin.sip
 %%PYQT_SIPDIR%%/QtWebKit/qwebsettings.sip
 %%PYQT_SIPDIR%%/QtWebKit/qwebview.sip
-%%API%%share/qt4/qsci/api/python/QtWebKit.api
+%%API%%%%PYQT_APIDIR%%/api/python/QtWebKit.api

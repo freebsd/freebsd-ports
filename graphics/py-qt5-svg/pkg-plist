@@ -5,4 +5,4 @@
 %%PYQT_SIPDIR%%/QtSvg/qsvggenerator.sip
 %%PYQT_SIPDIR%%/QtSvg/qsvgrenderer.sip
 %%PYQT_SIPDIR%%/QtSvg/qsvgwidget.sip
-%%API%%share/qt5/qsci/api/python/QtSvg.api
+%%API%%%%PYQT_APIDIR%%/api/python/QtSvg.api

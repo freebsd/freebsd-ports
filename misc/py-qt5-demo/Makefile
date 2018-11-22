@@ -2,7 +2,6 @@
 
 PORTNAME=	demo
 PORTVERSION=	${PYQT5_VERSION}
-PORTREVISION=	3
 CATEGORIES=	misc devel python
 MASTER_SITES=	${MASTER_SITES_PYQT5}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt5-
@@ -23,19 +22,17 @@ USE_PYQT=	core_run dbus_run designer_run \
 		sql_run svg_run test_run webkit_run xml_run \
 		xmlpatterns_run sip_run qscintilla2_run \
 		printsupport_run serialport_run webkitwidgets_run widgets_run
-USE_PYTHON=	py3kplist flavors
+USE_PYTHON=	concurrent flavors py3kplist
 NO_ARCH=	yes
 
-EXAMPLESDIR=	${PREFIX}/share/examples/py-qt5
-
 do-install:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${PYQT_EXAMPLEDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${PYQT_EXAMPLEDIR}
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 		-f -d ${PYTHONPREFIX_SITELIBDIR} \
-		${STAGEDIR}${EXAMPLESDIR}
+		${STAGEDIR}${PYQT_EXAMPLEDIR}
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
 		-f -d ${PYTHONPREFIX_SITELIBDIR} \
-		${STAGEDIR}${EXAMPLESDIR}
+		${STAGEDIR}${PYQT_EXAMPLEDIR}
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	qt4
 PORTVERSION=	${PYQT4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +11,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt 4 toolkit (meta port)
 
 USES=		metaport python pyqt:4
-USE_PYTHON=	flavors
+USE_PYTHON=	concurrent flavors py3kplist
 
 # Keep these synchronized with _USE_PYQT_ALL / _USE_PYQT4_ONLY in Mk/Use/pyqt.mk
 OPTIONS_DEFINE=		assistant core dbus dbussupport declarative \

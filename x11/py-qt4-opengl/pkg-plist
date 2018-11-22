@@ -6,4 +6,4 @@
 %%PYQT_SIPDIR%%/QtOpenGL/qglframebufferobject.sip
 %%PYQT_SIPDIR%%/QtOpenGL/qglpixelbuffer.sip
 %%PYQT_SIPDIR%%/QtOpenGL/qglshaderprogram.sip
-%%API%%share/qt4/qsci/api/python/QtOpenGL.api
+%%API%%%%PYQT_APIDIR%%/api/python/QtOpenGL.api

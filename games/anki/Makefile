@@ -3,6 +3,7 @@
 
 PORTNAME=	anki
 DISTVERSION=	2.0.52
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	https://apps.ankiweb.net/downloads/current/
 DISTNAME=	anki-${PORTVERSION}-source

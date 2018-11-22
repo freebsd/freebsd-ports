@@ -3,6 +3,7 @@
 PORTNAME=	onionlauncher
 PORTVERSION=	0.0.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	neel@neelc.org

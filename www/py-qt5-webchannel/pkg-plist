@@ -2,4 +2,4 @@
 %%PYQT_SIPDIR%%/QtWebChannel/QtWebChannelmod.sip
 %%PYQT_SIPDIR%%/QtWebChannel/qwebchannel.sip
 %%PYQT_SIPDIR%%/QtWebChannel/qwebchannelabstracttransport.sip
-%%API%%%%QT_DATADIR%%/qsci/api/python/QtWebChannel.api
+%%API%%%%PYQT_APIDIR%%/api/python/QtWebChannel.api

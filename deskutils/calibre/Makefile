@@ -3,6 +3,7 @@
 
 PORTNAME=	calibre
 PORTVERSION=	3.34.0
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 
@@ -71,7 +72,8 @@ MAKE_ENV+=	FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
 		XDG_CONFIG_HOME=${WRKDIR}/xdg-config \
 		XDG_UTILS_INSTALL_MODE=system \
 		QMAKE=${QMAKE} \
-		SIP_BIN=sip-${PYTHON_VER}
+		SIP_BIN=${SIP} \
+		SIP_DIR=${PYQT_SIPDIR}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|#!/usr/bin/env python2|#!${PYTHON_CMD}|" \

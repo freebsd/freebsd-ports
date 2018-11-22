@@ -3,6 +3,7 @@
 
 PORTNAME=	fs-uae-launcher
 PORTVERSION=	2.8.4
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://fs-uae.net/fs-uae/stable/${PORTVERSION}/
 
@@ -16,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		gettext gmake pathfix python:3.4+ pyqt:5
 
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist noflavors
 USE_PYQT=	core sip gui widgets opengl
 
 INSTALLS_ICONS=	yes

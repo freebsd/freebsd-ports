@@ -1,7 +1,6 @@
 # $FreeBSD$
 
 PORTNAME=	core
-PORTREVISION=	6
 CATEGORIES=	devel python
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,7 +13,7 @@ CONFIGURE_ARGS=	${PYQT5_MODULES_ALL:N${PYQT_MODULE}:C/.*/--disable=&/} \
 PYQT_DIST=	yes
 
 USES=		python pyqt:5 qt:5
-USE_PYTHON=	py3kplist flavors
+USE_PYTHON=	concurrent flavors py3kplist
 USE_PYQT=	sip_build
 USE_QT=		core buildtools_build qmake_build
 
@@ -23,7 +22,7 @@ OPTIONS_DEFAULT=API
 OPTIONS_SUB=	yes
 
 API_DESC=		Install QtCore API for QScintilla2
-API_CONFIGURE_ON=	--qsci-api --qsci-api-destdir=${QSCIDIR}
+API_CONFIGURE_ON=	--qsci-api --qsci-api-destdir=${PYQT_APIDIR}
 API_CONFIGURE_OFF=	--no-qsci-api
 API_LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2-qt5
 

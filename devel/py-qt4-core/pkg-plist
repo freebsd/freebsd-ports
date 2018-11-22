@@ -197,4 +197,4 @@ bin/pyuic4
 %%PYQT_SIPDIR%%/QtCore/qwaitcondition.sip
 %%PYQT_SIPDIR%%/QtCore/qwineventnotifier.sip
 %%PYQT_SIPDIR%%/QtCore/qxmlstream.sip
-%%API%%share/qt4/qsci/api/python/QtCore.api
+%%API%%%%PYQT_APIDIR%%/api/python/QtCore.api

@@ -9,4 +9,4 @@
 %%PYQT_SIPDIR%%/QtMultimedia/qaudiooutput.sip
 %%PYQT_SIPDIR%%/QtMultimedia/qvideoframe.sip
 %%PYQT_SIPDIR%%/QtMultimedia/qvideosurfaceformat.sip
-%%API%%share/qt4/qsci/api/python/QtMultimedia.api
+%%API%%%%PYQT_APIDIR%%/api/python/QtMultimedia.api
