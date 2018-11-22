@@ -1,5 +1,31 @@
 memalign is Linux-specific, so use C11 aligned_alloc instead
 
+In file included from decode_hybrid_vp9.cpp:67:
+In file included from ./cmrt_api.h:35:
+In file included from /usr/local/include/cm_rt.h:41:
+In file included from /usr/local/include/cm_rt_linux.h:51:
+/usr/include/malloc.h:3:2: error: "<malloc.h> has been replaced by <stdlib.h>"
+#error "<malloc.h> has been replaced by <stdlib.h>"
+ ^
+/usr/local/include/cm_rt_linux.h:337:9: error: use of undeclared identifier 'memalign'
+        return memalign(alignment, size);
+               ^
+In file included from os_utilities.c:43:
+/usr/include/malloc.h:3:2: error: "<malloc.h> has been replaced by <stdlib.h>"
+#error "<malloc.h> has been replaced by <stdlib.h>"
+ ^
+os_utilities.c:66:8: warning: implicit declaration of function 'memalign' is invalid in C99
+      [-Wimplicit-function-declaration]
+        ptr = _aligned_malloc(size, alignment);
+              ^
+os_utilities.c:59:43: note: expanded from macro '_aligned_malloc'
+#define _aligned_malloc(size, alignment)  memalign(alignment, size)
+                                          ^
+os_utilities.c:66:6: warning: incompatible integer to pointer conversion assigning to 'PVOID' (aka 'void *') from
+      'int' [-Wint-conversion]
+        ptr = _aligned_malloc(size, alignment);
+            ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 --- src/cm_rt_linux.h.orig	2016-09-07 23:51:38 UTC
 +++ src/cm_rt_linux.h
 @@ -48,7 +48,6 @@ extern "C" {
