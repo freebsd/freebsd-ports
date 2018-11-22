@@ -1,5 +1,30 @@
 __sync* are GCC/Clang atomic builtins supported on any platform
 
+In file included from Source/GmmLib/Platform/GmmGen11Platform.cpp:23:
+In file included from Source/GmmLib/inc/Internal/Common/GmmLibInc.h:35:
+In file included from Source/GmmLib/inc/External/Common/GmmCachePolicy.h:332:
+Source/GmmLib/inc/External/Common/GmmCachePolicyCommon.h:74:13: error: control reaches end of non-void function [-Werror,-Wreturn-type]
+            }
+            ^
+In file included from Source/GmmLib/Platform/GmmGen11Platform.cpp:23:
+In file included from Source/GmmLib/inc/Internal/Common/GmmLibInc.h:38:
+Source/GmmLib/inc/../Platform/GmmPlatforms.h:86:9: error: control reaches end of non-void function [-Werror,-Wreturn-type]
+        }
+        ^
+In file included from Source/GmmLib/Platform/GmmGen11Platform.cpp:23:
+In file included from Source/GmmLib/inc/Internal/Common/GmmLibInc.h:42:
+In file included from Source/GmmLib/inc/../Texture/GmmTexture.h:27:
+In file included from Source/GmmLib/inc/External/Common/GmmInfoExt.h:25:
+Source/GmmLib/inc/External/Common/GmmInfo.h:134:9: error: control reaches end of non-void function [-Werror,-Wreturn-type]
+        }
+        ^
+In file included from Source/GmmLib/CachePolicy/GmmGen11CachePolicy.cpp:23:
+In file included from Source/GmmLib/inc/Internal/Common/GmmLibInc.h:42:
+In file included from Source/GmmLib/inc/../Texture/GmmTexture.h:31:
+Source/GmmLib/inc/Internal/Common/Texture/GmmTextureCalc.h:163:13: error: control reaches end of non-void function [-Werror,-Wreturn-type]
+            }
+            ^
+
 --- Source/GmmLib/Platform/GmmPlatforms.h.orig	2018-09-28 18:59:39 UTC
 +++ Source/GmmLib/Platform/GmmPlatforms.h
 @@ -69,7 +69,7 @@ namespace GmmLib {
