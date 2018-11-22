@@ -8921,6 +8921,7 @@
 %%WWWDIR%%/doc/workflow/workflow.md
 %%WWWDIR%%/docker-compose.yml
 %%WWWDIR%%/docker/README.md
+%%WWWDIR%%/ee/changelogs/unreleased/sh-fix-issue-54189.yml
 %%WWWDIR%%/fixtures/emojis/aliases.json
 %%WWWDIR%%/fixtures/emojis/digests.json
 %%WWWDIR%%/fixtures/emojis/emoji-unicode-version-map.json
