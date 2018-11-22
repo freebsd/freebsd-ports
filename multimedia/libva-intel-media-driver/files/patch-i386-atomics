@@ -1,7 +1,11 @@
+FreeBSD doesn't ship libatomic, so use __sync* builtins instead:
+
 media_driver/CMakeFiles/iHD_drv_video_OBJ.dir/linux/common/os/mos_context_specific.cpp.o: In function `OsContextSpecific::SetSliceCount(unsigned int*)':
 media_driver/linux/common/os/mos_context_specific.cpp:441: undefined reference to `__atomic_load_8'
 media_driver/linux/common/os/mos_context_specific.cpp:444: undefined reference to `__atomic_store_8'
 c++: error: linker command failed with exit code 1 (use -v to see invocation)
+
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=220822
 
 --- media_driver/linux/common/os/mos_context_specific.cpp.orig	2018-10-01 21:39:52 UTC
 +++ media_driver/linux/common/os/mos_context_specific.cpp

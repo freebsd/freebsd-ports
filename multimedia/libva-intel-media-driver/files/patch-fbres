@@ -1,5 +1,18 @@
 Get framebuffer resolution on more platforms
 
+media_driver/linux/common/codec/ddi/media_libva_decoder.cpp:48:10: fatal error: 'linux/fb.h' file not found
+#include <linux/fb.h>
+         ^~~~~~~~~~~~
+media_driver/linux/common/codec/ddi/media_libva_decoder.cpp:55:43: error: variable has incomplete type 'struct fb_var_screeninfo'
+    struct fb_var_screeninfo              vsinfo;
+                                          ^
+media_driver/linux/common/codec/ddi/media_libva_decoder.cpp:62:22: error: use of undeclared identifier 'FBIOGET_VSCREENINFO'
+        if(ioctl(fd, FBIOGET_VSCREENINFO, &vsinfo) < 0)
+                     ^
+media_driver/linux/common/ddi/media_libva.cpp:39:10: fatal error: 'linux/fb.h' file not found
+#include <linux/fb.h>
+         ^~~~~~~~~~~~
+
 --- media_driver/linux/common/codec/ddi/media_libva_decoder.cpp.orig	2018-10-01 21:39:52 UTC
 +++ media_driver/linux/common/codec/ddi/media_libva_decoder.cpp
 @@ -45,7 +45,39 @@
