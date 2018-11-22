@@ -26,5 +26,10 @@ INSTALL_TARGET=	install-strip
 post-patch:
 	@${REINPLACE_CMD} -e '/-g/d; /-O2/d' \
 		${WRKSRC}/src/Makefile.am
+# Silence -Wmacro-redefined
+	@${REINPLACE_CMD} -e '/__fastcall/d' \
+		${WRKSRC}/src/cm_mem.h
+	@${REINPLACE_CMD} -e '/#define UINT_MAX/d' \
+		${WRKSRC}/src/oscl_platform_def.h
 
 .include <bsd.port.mk>
