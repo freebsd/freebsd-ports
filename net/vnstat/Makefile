@@ -37,8 +37,6 @@ GUI_DESC=	Build with graphics/gd dependency
 
 GUI_LIB_DEPENDS+=	libgd.so:graphics/gd
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vnstat ${STAGEDIR}/${PREFIX}/bin/vnstat
 	${INSTALL_PROGRAM} ${WRKSRC}/vnstatd ${STAGEDIR}/${PREFIX}/sbin/vnstatd
@@ -46,10 +44,10 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/vnstat.1 ${STAGEDIR}/${MANPREFIX}/man/man1/vnstat.1
 	${INSTALL_MAN} ${WRKSRC}/man/vnstatd.1 ${STAGEDIR}/${MANPREFIX}/man/man1/vnstatd.1
 	${INSTALL_MAN} ${WRKSRC}/man/vnstat.conf.5 ${STAGEDIR}/${MANPREFIX}/man/man5/vnstat.conf.5
-.if ${PORT_OPTIONS:MGUI}
+
+do-install-GUI-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/vnstati ${STAGEDIR}/${PREFIX}/bin/vnstati
 	${INSTALL_MAN} ${WRKSRC}/man/vnstati.1 ${STAGEDIR}/${MANPREFIX}/man/man1/vnstati.1
-.endif
 
 post-install-DOCS-on:
 	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
