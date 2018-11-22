@@ -11,9 +11,10 @@ COMMENT=	Perl extension for cookie string generator/parser
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	p5-URI>0:net/p5-URI
 BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-URI>0:net/p5-URI
 TEST_DEPENDS=	p5-Test-Time>=0:devel/p5-Test-Time
 
 USES=		perl5
