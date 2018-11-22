@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pam_p11
-PORTVERSION=	0.1.5
-PORTREVISION=	3
+PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	SF/opensc/${PORTNAME}
+MASTER_SITES=	https://github.com/OpenSC/pam_p11/releases/download/pam_p11-${PORTVERSION}/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	PAM module using crypto tokens for auth
@@ -14,20 +14,26 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libp11.so:security/libp11
 
-OPTIONS_DEFINE=	DOCS
+USES=		libtool pkgconfig ssl autoreconf
+
+OPTIONS_DEFINE=	DOCS NLS
 
 GNU_CONFIGURE=	yes
-USES=		libtool pkgconfig ssl
+
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext
+NLS_PLIST_FILES=share/locale/de/LC_MESSAGES/pam_p11.mo
+
+CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
 
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
+
+PLIST_FILES=	lib/security/pam_p11.so
 
 PORTDOCS=	*
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/wiki
-	@(cd ${WRKSRC} && ${CP} NEWS ${STAGEDIR}${DOCSDIR})
-	@(cd ${WRKSRC}/doc && ${CP} README ${STAGEDIR}${DOCSDIR})
-	@(cd ${WRKSRC}/doc && ${CP} *.css *.html ${STAGEDIR}${DOCSDIR}/wiki)
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
