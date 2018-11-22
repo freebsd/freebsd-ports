@@ -3,7 +3,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	6.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang java
 MASTER_SITES=	GCC
 PKGNAMESUFFIX=	${SUFFIX}
@@ -14,6 +14,7 @@ COMMENT=	GNU Compiler Collection 6
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+DEPRECATED=	Unsupported by upstream. Use GCC 7 or newer instead.
 ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 armv7 i386 powerpc powerpc64 powerpcspe sparc64
 BROKEN_sparc64=	fails to configure: cannot compute suffix of object files: cannot compile
 
@@ -26,8 +27,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 .if defined(MAINTAINER_MODE)
 BUILD_DEPENDS+=	runtest:misc/dejagnu
 .endif
-
-CONFLICTS=	gcc6-devel-6.*
 
 CPE_VENDOR=	gnu
 
