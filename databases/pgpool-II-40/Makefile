@@ -12,9 +12,6 @@ COMMENT=	Connection pool server for PostgreSQL
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_SSL=	openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	library 'ssl' is required for OpenSSL
-
 PORTSCOUT=	limit:^4.0.[0-9]*
 
 USES=		gmake libtool pgsql:9.6+
