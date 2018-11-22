@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swoole
-PORTVERSION=	4.2.5
+PORTVERSION=	4.2.8
 CATEGORIES=	devel net
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -17,11 +17,9 @@ USE_PHP=	hash:build pcre
 IGNORE_WITH_PHP=	56
 CONFIGURE_ARGS+=	--enable-mysqlnd
 
-OPTIONS_DEFINE=	HTTP2 REDIS SOCKETS PGSQL
+OPTIONS_DEFINE=	HTTP2 SOCKETS PGSQL
 HTTP2_LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 HTTP2_CONFIGURE_ON=	--enable-http2 --enable-openssl
-REDIS_LIB_DEPENDS=	libhiredis.so:databases/hiredis
-REDIS_CONFIGURE_ON=	--enable-async-redis
 SOCKETS_USE=	PHP=sockets:build
 SOCKETS_DESC=	Use native php sockets extension
 SOCKETS_CONFIGURE_ON=	--enable-sockets
