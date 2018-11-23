@@ -1,5 +1,23 @@
---- bin/google_oslogin_control.orig	2018-06-11 17:16:50 UTC
+--- bin/google_oslogin_control.orig	2018-10-11 16:53:23 UTC
 +++ bin/google_oslogin_control
+@@ -20,7 +20,7 @@ sshd_config="/etc/ssh/sshd_config"
+ el_release_file="/etc/redhat-release"
+ sudoers_dir="/var/google-sudoers.d"
+ users_dir="/var/google-users.d"
+-sudoers_file="/etc/sudoers.d/google-oslogin"
++sudoers_file="%%PREFIX%%/etc/sudoers.d/google-oslogin"
+ 
+ usage() {
+   echo "Usage: ${script_name} {activate|deactivate|status} [--norestartsshd]"
+@@ -31,7 +31,7 @@ usage() {
+ }
+ 
+ added_comment="# Added by Google Compute Engine OS Login."
+-sshd_command="AuthorizedKeysCommand /usr/bin/google_authorized_keys"
++sshd_command="AuthorizedKeysCommand %%PREFIX%%/bin/google_authorized_keys"
+ sshd_user="AuthorizedKeysCommandUser root"
+ pam_login="account    requisite    pam_oslogin_login.so"
+ pam_admin="account    optional     pam_oslogin_admin.so"
 @@ -65,24 +65,26 @@ overwrite_file() {
  
  remove_from_config() {
