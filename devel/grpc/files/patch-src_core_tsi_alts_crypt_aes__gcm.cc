@@ -1,6 +1,6 @@
---- src/core/tsi/alts/crypt/aes_gcm.cc.orig	2018-04-16 04:55:21 UTC
+--- src/core/tsi/alts/crypt/aes_gcm.cc.orig	2018-09-24 23:51:30 UTC
 +++ src/core/tsi/alts/crypt/aes_gcm.cc
-@@ -185,7 +185,7 @@ static grpc_status_code aes_gcm_derive_aead_key(uint8_
+@@ -187,7 +187,7 @@ static grpc_status_code aes_gcm_derive_aead_key(uint8_
                                                  const uint8_t* kdf_counter) {
    unsigned char buf[EVP_MAX_MD_SIZE];
    unsigned char ctr = 1;
