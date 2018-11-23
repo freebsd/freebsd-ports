@@ -14,7 +14,6 @@ ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	Nvidia driver is only available on x86
 
 BUILD_DEPENDS=	${LOCALBASE}/include/dbus-1.0/dbus/dbus.h:devel/dbus
-
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libjansson.so:devel/jansson \
@@ -23,8 +22,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	NVIDIA
 
-USE_GNOME=	gtk20 cairo gdkpixbuf2
 USES=		gmake pkgconfig gettext-runtime
+USE_GNOME=	gtk20 cairo gdkpixbuf2
 USE_GL=		gl
 USE_XORG=	x11 xext xv xxf86vm
 
