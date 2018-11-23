@@ -3,8 +3,7 @@
 
 PORTNAME=	qjackctl
 DISTVERSIONPREFIX=	qjackctl_
-DISTVERSION=	0_5_4-1
-DISTVERSIONSUFFIX=	-g75af70c # include the regression fix
+DISTVERSION=	0_5_5
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
