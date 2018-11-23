@@ -163,6 +163,7 @@
     SUBDIR += cfengine310
     SUBDIR += cfengine311
     SUBDIR += cfengine312
+    SUBDIR += cfengine313
     SUBDIR += cfengine32
     SUBDIR += cfengine33
     SUBDIR += cfengine34

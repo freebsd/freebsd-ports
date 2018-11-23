@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: cf-execd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable cf-execd(8)
+#
+# cf_execd_enable (bool):        Set to "NO" by default.
+#                               Set it to "YES" to enable cf-execd.
+# cf_execd_flags (str):          Custom additional arguments to be passed
+#                               to cf-execd (default empty).
+#
+
+. /etc/rc.subr
+
+name="cf_execd"
+rcvar=cf_execd_enable
+
+command="%%PREFIX%%/bin/cf-execd"
+
+load_rc_config $name
+
+: ${cf_execd_enable="NO"}
+
+run_rc_command "$1"
