@@ -1,4 +1,4 @@
---- nss_module/nss_oslogin.cc.orig	2018-06-11 17:16:50 UTC
+--- nss_module/nss_oslogin.cc.orig	2018-10-11 16:53:23 UTC
 +++ nss_module/nss_oslogin.cc
 @@ -16,6 +16,7 @@
  #include <errno.h>
@@ -8,7 +8,7 @@
  #include <pthread.h>
  #include <pwd.h>
  #include <sys/types.h>
-@@ -103,4 +104,30 @@ int _nss_oslogin_getpwnam_r(const char *
+@@ -103,4 +104,30 @@ int _nss_oslogin_getpwnam_r(const char *name, struct p
  // nss_getpwent_r() is intentionally left unimplemented. This functionality is
  // now covered by the nss_cache binary and nss_cache module.
  

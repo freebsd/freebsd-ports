@@ -1,4 +1,4 @@
---- libnss_cache_oslogin/nss_cache_oslogin.c.orig	2018-06-11 17:16:50 UTC
+--- libnss_cache_oslogin/nss_cache_oslogin.c.orig	2018-10-11 16:53:23 UTC
 +++ libnss_cache_oslogin/nss_cache_oslogin.c
 @@ -16,6 +16,7 @@
  
@@ -8,19 +8,20 @@
  #include <sys/mman.h>
  
  // Locking implementation: use pthreads.
-@@ -32,7 +33,7 @@ static pthread_mutex_t mutex = PTHREAD_M
+@@ -32,7 +33,7 @@ static pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZ
  
  static FILE *p_file = NULL;
  static char p_filename[NSS_CACHE_OSLOGIN_PATH_LENGTH] =
 -    "/etc/oslogin_passwd.cache";
-+    "/usr/local/etc/oslogin_passwd.cache";
++    "%%PREFIX%%/etc/oslogin_passwd.cache";
  #ifdef BSD
  extern int fgetpwent_r(FILE *, struct passwd *, char *, size_t,
                         struct passwd **);
-@@ -435,3 +436,26 @@ enum nss_status _nss_cache_oslogin_getpw
+@@ -434,4 +435,27 @@ enum nss_status _nss_cache_oslogin_getpwnam_r(const ch
+   NSS_CACHE_OSLOGIN_UNLOCK();
  
    return ret;
- }
++}
 +
 +NSS_METHOD_PROTOTYPE(__nss_compat_getpwnam_r);
 +NSS_METHOD_PROTOTYPE(__nss_compat_getpwuid_r);
@@ -43,4 +44,4 @@
 +    *size = sizeof (methods) / sizeof (methods[0]);
 +    *unregister = NULL;
 +    return (methods);
-+}
+ }
