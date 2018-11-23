@@ -10,7 +10,7 @@ DISTNAME=	Browser-${PORTVERSION}
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop file browser
 
-LICENSE=	GPLv3
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
@@ -25,9 +25,9 @@ NLS_USES=		gettext
 DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
     ${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 
+USES=		desktop-file-utils gnome pkgconfig
 USE_GNOME=	gtk20 cairo
 USE_XORG=	x11
-USES=		desktop-file-utils pkgconfig
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 MAKE_ARGS+=	PREFIX=${PREFIX}
