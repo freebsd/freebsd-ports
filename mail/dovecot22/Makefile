@@ -26,6 +26,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
 LICENSE_FILE_MIT=	${WRKSRC}/COPYING.MIT
 
+DEPRECATED=	End of Life upstream, use mail/dovecot instead
+EXPIRATION_DATE=	2019-01-31
+
 USES=		cpe iconv libtool ssl
 USE_RC_SUBR=	dovecot
 
