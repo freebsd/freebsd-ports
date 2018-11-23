@@ -5,7 +5,7 @@
  #include <memory.h>
  #endif
 -#ifdef __APPLE__
-+#ifdef __APPLE__ || __FreeBSD__
++#if defined (__APPLE__) || defined (__FreeBSD__)
  #include <memory.h>
  #endif
  #include "gwcommon.h"
