@@ -5,7 +5,7 @@
  	$log = read_config_option('path_cactilog');
  	if ($log == '') {
 -		$log = $config['base_path'] . '/log/cacti.log';
-+		$log = /var/log/cacti/log';
++		$log = '/var/log/cacti/log';
  	}
  
  	$run_time = time();
