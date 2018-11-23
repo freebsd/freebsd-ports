@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mprime
-PORTVERSION=	28.10
+PORTVERSION=	29.4b7
 CATEGORIES=	math benchmarks net
 MASTER_SITES=	http://www.mersenne.org/ftp_root/gimps/ \
 		ftp://mersenne.org/gimps/
@@ -18,7 +18,9 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-LIB_DEPENDS=	libcurl.so:ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl					\
+		libhwloc.so:devel/hwloc					\
+		libgmp.so:math/gmp
 
 USES=		zip
 NO_WRKSUBDIR=	yes

@@ -1,6 +1,13 @@
 --- linux64/makebsd.orig	2016-10-30 18:42:16 UTC
 +++ linux64/makebsd
-@@ -4,13 +4,13 @@
+@@ -1,19 +1,19 @@
+ # Makefile for FreeBSD 10.0 64-bit mprime
+ #
+-# Install the curl package.  This will be installed to /usr/local by default.
++# Install the curl package.  This will be installed to %%LOCALBASE%% by default.
+ #
+ # Hwloc can be downloaded from https://www.open-mpi.org/projects/hwloc/
+ # Configure hwloc with --enable-static --disable-shared --disable-pci --disable-cuda --disable-gl
  #
  
  CC = cc
@@ -11,9 +18,9 @@
  CPPFLAGS = -I.. -I../gwnum -DX86_64 -O2
  
 -LFLAGS = -L/usr/local/lib -Wl,-M
--LIBS = ../gwnum/gwnum.a ../gwnum/gwnum.ld -lm -lpthread -lcurl -lstdc++ -lcompat
-+LFLAGS = -L%%LOCALBASE%%/lib -Wl,-M
-+LIBS = ../gwnum/gwnum.a ../gwnum/gwnum.ld -lm -lpthread -lcurl -lcompat
+-LIBS = ../gwnum/gwnum.a ../gwnum/gwnum.ld -lm -lpthread /usr/local/lib/libhwloc.a -lcurl -lstdc++ -lcompat -lgmp
++LFLAGS = -L%%LOCALBASE%%/lib
++LIBS = ../gwnum/gwnum.a ../gwnum/gwnum.ld -lm -lpthread -lhwloc -lcurl -lcompat -lgmp
  
  FACTOROBJ = factor64.o
  OBJS = prime.o menu.o

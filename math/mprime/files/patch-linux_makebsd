@@ -1,22 +1,23 @@
 --- linux/makebsd.orig	2016-10-30 18:42:16 UTC
 +++ linux/makebsd
-@@ -1,14 +1,14 @@
- # Makefile for FreeBSD 32-bit mprime
+@@ -4,14 +4,14 @@
+ # Configure hwloc with --enable-static --disable-shared --disable-pci --disable-cuda --disable-gl
  #
  
 -CC = gcc
 -CFLAGS = -I.. -I../gwnum -I/usr/local/include -O2 -march=i486 -malign-double
 +CC = cc
-+CFLAGS = -I.. -I../gwnum -I%%LOCALBASE%%/include -O2 -march=i486 
++CFLAGS = -I.. -I../gwnum -I%%LOCALBASE%%/include -O2 -march=i486
  
- CPP = g++
+-CPP = g++
 -CPPFLAGS = -I.. -I../gwnum -I/usr/local/include -O2 -march=i486 -malign-double
-+CPPFLAGS = -I.. -I../gwnum -I%%LOCALBASE%%/include -O2 -march=i486 
++CPP = cc
++CPPFLAGS = -I.. -I../gwnum -I%%LOCALBASE%%/include -O2 -march=i486
  
--LFLAGS = -Wl,-M
--LIBS = ../gwnum/gwnum.a ../gwnum/gwnum.ld -lm -lpthread -Wl,-Bstatic /usr/local/lib/libcurl.a -lz -lcompat -lstdc++ -Wl,-Bdynamic -lssl
-+LFLAGS = -L%%LOCALBASE%%/lib -Wl,-M
-+LIBS = ../gwnum/gwnum.a ../gwnum/gwnum.ld -lm -lpthread -Wl,-lcurl  -lcompat  -Wl,
+-LFLAGS = -Wl,-M -L/usr/local/lib
+-LIBS = ../gwnum/gwnum.a ../gwnum/gwnum.ld -lm -lpthread -Wl,-Bstatic /usr/local/lib/libhwloc.a -Wl,-Bstatic /usr/local/lib/libcurl.a -lz -lcompat -lstdc++ -Wl,-Bdynamic -lssl -lgmp
++LFLAGS = -L%%LOCALBASE%%/lib
++LIBS = ../gwnum/gwnum.a ../gwnum/gwnum.ld -lm -lpthread -lcurl -lhwloc -lz -lcompat -lssl -lgmp
  
  FACTOROBJ = factor32.o
  OBJS = prime.o menu.o
