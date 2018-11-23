@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	falkTX
 GH_PROJECT=	Cadence
 USE_QT=		core gui widgets buildtools_build
-USE_PYQT=	core_run gui_run network_run widgets_run sip xml_build
+USE_PYQT=	core_run gui_run network_run widgets_run sip xml dbussupport
 
 CXXFLAGS+=	-DJACKBRIDGE_PROPER_CPP11_SUPPORT=yes
 # Give the Makefile the proper versioned binaries of PyQt
@@ -29,9 +29,9 @@ BINARY_ALIAS=	pyuic5=${LOCALBASE}/bin/pyuic5-${PYTHON_VER} \
 		pyrcc5=${LOCALBASE}/bin/pyrcc5-${PYTHON_VER}
 
 post-patch:
-	@${REINPLACE_CMD} 's|exec $$PYTHON |exec ${PYTHON_CMD} |' ${WRKSRC}/data/cadence
 	@cd ${WRKSRC}/data && ${REINPLACE_CMD} ' \
 		s|#!/bin/bash|#!/bin/sh| ; \
+		s|exec $$PYTHON |exec ${PYTHON_CMD} | ; \
 		s|ps -f -u |ps -U |' \
 		cadence cadence-aloop-daemon cadence-jacksettings cadence-logs \
 		cadence-pulse2jack cadence-pulse2loopback cadence-render \
