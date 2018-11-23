@@ -2,7 +2,6 @@ bin/geth
 %%DEVTOOLS%%bin/abigen
 %%DEVTOOLS%%bin/bootnode
 %%DEVTOOLS%%bin/evm
-%%DEVTOOLS%%bin/puppeth
 %%DEVTOOLS%%bin/rlpdump
 %%DEVTOOLS%%bin/swarm
-%%DEVTOOLS%%bin/wnode
+%%DEVTOOLS%%bin/puppeth
