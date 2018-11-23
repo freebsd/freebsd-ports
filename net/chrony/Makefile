@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chrony
-PORTVERSION=	3.3
+PORTVERSION=	3.4
 CATEGORIES=	net
 MASTER_SITES=	http://download.tuxfamily.org/chrony/
 
