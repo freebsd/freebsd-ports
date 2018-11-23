@@ -2,6 +2,7 @@
 
 PORTNAME=	vtk
 DISTVERSION=	8.1.2
+PORTREVISION=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	8
@@ -114,11 +115,6 @@ post-patch:
 		${WRKSRC}/ThirdParty/netcdf/vtknetcdf/include/xxxnetcdf.h
 	@${FIND} ${WRKSRC}/ThirdParty/netcdf -type f | ${XARGS} ${REINPLACE_CMD} \
 		-E 's/[[:<:]]netcdf\.h[[:>:]]/xxxnetcdf.h/'
-	@${REINPLACE_CMD} -e "s|reinterpret_cast<const GLvoid \*>(NULL)|nullptr|g" \
-		${WRKSRC}/Rendering/OpenGL2/*.cxx \
-		${WRKSRC}/Rendering/VolumeOpenGL2/vtkOpenGLProjectedTetrahedraMapper.cxx # many files/places, see https://gitlab.kitware.com/vtk/vtk/issues/17179
-	@${REINPLACE_CMD} -e "s|static_cast<Window>(NULL)|0|g" \
-		${WRKSRC}/Rendering/OpenGL2/*.cxx # many files/places, see https://gitlab.kitware.com/vtk/vtk/issues/17179
 
 .include <bsd.port.options.mk>
 
