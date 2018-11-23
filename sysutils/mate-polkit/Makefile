@@ -8,7 +8,7 @@ MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	MATE frontend to the PolicKit framework
+COMMENT=	MATE frontend to the PolicyKit framework
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
