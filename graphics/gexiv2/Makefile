@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gexiv2
-PORTVERSION=	0.10.8
-PORTREVISION=	1
+PORTVERSION=	0.10.9
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -17,14 +16,17 @@ BUILD_DEPENDS=	gm4:devel/m4 \
 		vala>=0:lang/vala
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-introspection=yes \
-			--enable-vala=yes
-USES=		compiler:c++11-lang gmake gnome libtool:build pathfix \
+USES=		compiler:c++11-lang gnome libtool:build meson pathfix \
 		pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
-MAKE_ARGS=	REQUIRED_CFLAGS="" ENABLE_INTROSPECTION=1
+
+OPTIONS_DEFINE=		DOCS
+OPTIONS_SUB=		yes
+DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
+DOCS_CONFIGURE_ON=	-Denable-gtk-doc=true
+
+.include <bsd.port.options.mk>
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/vala/vapi
