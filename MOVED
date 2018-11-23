@@ -10637,3 +10637,4 @@ editors/coedit|editors/dexed|2018-11-19|Project was renamed
 net-mgmt/p5-FusionInventory-Agent-Task-NetDiscovery||2018-11-20|Has expired: No longer needed
 net-mgmt/p5-FusionInventory-Agent-Task-SNMPQuery||2018-11-20|Removed, no longer needed
 textproc/rubygem-github-linguist53|textproc/rubygem-github-linguist|2018-11-23|Obsolete by www/gitlab-ce 11.5.x upgrade, please use textproc/rubygem-github-linguist
+devel/rubygem-google-protobuf351|devel/rubygem-google-protobuf|2018-11-23|Obsolete by www/gitlab-ce 11.5.x upgrade, please use devel/rubygem-google-protobuf
