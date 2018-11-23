@@ -1,6 +1,6 @@
---- config/gitlab.yml.example.orig	2018-09-21 11:36:34 UTC
+--- config/gitlab.yml.example.orig	2018-11-21 10:39:57 UTC
 +++ config/gitlab.yml.example
-@@ -223,7 +223,7 @@ production: &base
+@@ -228,7 +228,7 @@ production: &base
      # external_http: ["1.1.1.1:80", "[2001::1]:80"] # If defined, enables custom domain support in GitLab Pages
      # external_https: ["1.1.1.1:443", "[2001::1]:443"] # If defined, enables custom domain and certificate support in GitLab Pages
      admin:
@@ -9,16 +9,16 @@
  
    ## Mattermost
    ## For enabling Add to Mattermost button
-@@ -585,7 +585,7 @@ production: &base
+@@ -590,7 +590,7 @@ production: &base
    # Gitaly settings
    gitaly:
      # Path to the directory containing Gitaly client executables.
 -    client_path: /home/git/gitaly/bin
 +    client_path: %%PREFIX%%/share/gitaly/bin
-     # Default Gitaly authentication token. Can be overriden per storage. Can
+     # Default Gitaly authentication token. Can be overridden per storage. Can
      # be left blank when Gitaly is running locally on a Unix socket, which
      # is the normal way to deploy Gitaly.
-@@ -603,8 +603,8 @@ production: &base
+@@ -608,8 +608,8 @@ production: &base
      # real path not the symlink.
      storages: # You must have at least a `default` storage path.
        default:
@@ -29,7 +29,7 @@
          # gitaly_token: 'special token' # Optional: override global gitaly.token for this storage.
  
    ## Backup settings
-@@ -632,12 +632,12 @@ production: &base
+@@ -637,12 +637,12 @@ production: &base
  
    ## GitLab Shell settings
    gitlab_shell:
@@ -45,7 +45,7 @@
  
      # Git over HTTP
      upload_pack: true
-@@ -658,7 +658,7 @@ production: &base
+@@ -663,7 +663,7 @@ production: &base
    # CAUTION!
    # Use the default values unless you really know what you are doing
    git:
