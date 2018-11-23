@@ -96,5 +96,5 @@ sbin/keymgr
 sbin/kjournalprint
 sbin/knotc
 sbin/knotd
-@dir /var/db/knot
-@dir /var/run/knot
+@dir(knot,knot,750) /var/db/knot
+@dir(knot,knot,750) /var/run/knot
