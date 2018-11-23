@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	retro12
-DISTVERSION=	2018.4.20
+DISTVERSION=	2018.8
 CATEGORIES=	lang
 MASTER_SITES=	https://forthworks.com/retro/r/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
@@ -12,17 +12,19 @@ COMMENT=	Clean, elegant, and pragmatic dialect of Forth
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+USES=	ncurses shebangfix
+
+SHEBANG_FILES=	example/Atua*
+SHEBANG_LANG=	rre
+
 # Conflicting files: bin/listener bin/repl bin/ri
 CONFLICTS_INSTALL=	audio/listener mail/nmh japanese/mh lang/ruby
-
-USES=	ncurses
 
 MAKE_ENV=	DATADIR=${DATADIR} \
 		DESTDIR=${DESTDIR} \
 		DOCSDIR=${DOCSDIR} \
 		EXAMPLESDIR=${EXAMPLESDIR} \
 		PREFIX=${PREFIX}
-OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PLIST_FILES=	bin/embedimage \
 		bin/extend \
@@ -49,5 +51,7 @@ PORTEXAMPLES=	example
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	test
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.mk>
