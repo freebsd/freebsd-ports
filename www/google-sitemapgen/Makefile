@@ -3,7 +3,7 @@
 
 PORTNAME=	google-sitemapgen
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 MASTER_SITES=	https://fossies.org/linux/www/old/
 DISTNAME=	sitemap_gen_${PORTVERSION}
