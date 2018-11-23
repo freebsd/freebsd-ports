@@ -2,7 +2,7 @@
 
 PORTNAME=	go-ethereum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.16
+DISTVERSION=	1.8.18
 CATEGORIES=	net-p2p
 
 MAINTAINER=	me@enriquefynn.com
@@ -29,9 +29,8 @@ do-install-DEVTOOLS-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/bin/abigen ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/build/bin/bootnode ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/build/bin/evm ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/build/bin/puppeth ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/build/bin/rlpdump ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/build/bin/swarm ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/build/bin/wnode ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/build/bin/puppeth ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
