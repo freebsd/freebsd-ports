@@ -38,10 +38,10 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/apache-mime4j-core-0.7.2.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/apache-mime4j-core-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-LICENSE.txt
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-api-1.2.20.jar
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-dom-1.2.20.jar
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-impl-1.2.20.jar
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-jaxb-1.2.20.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-api-1.2.21.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-dom-1.2.21.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-impl-1.2.21.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/axiom-jaxb-1.2.21.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-adb-%%PORTVERSION%%.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/axis2-adb-codegen-%%PORTVERSION%%.jar
@@ -125,7 +125,7 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/jibx-run-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/jsr311-api-1.1.1.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/jsr311-api-LICENSE.txt
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/juli-6.0.16.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/juli-6.0.53.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/juli-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/log4j-1.2.15.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/log4j-LICENSE.txt
@@ -138,7 +138,7 @@
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/stax2-api.LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar
-%%APPHOME%%/webapps/axis2/WEB-INF/lib/tribes-6.0.16.jar
+%%APPHOME%%/webapps/axis2/WEB-INF/lib/tribes-6.0.53.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/tribes-LICENSE.txt
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/woden-core-1.0M10.jar
 %%APPHOME%%/webapps/axis2/WEB-INF/lib/woden-core-LICENSE.txt
