@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	magit
-PORTVERSION=	2.90.0
-DISTVERSIONPREFIX=	v
+PORTVERSION=	2.90.1
 CATEGORIES=	devel elisp
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	yasu@utahime.org
