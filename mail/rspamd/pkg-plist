@@ -156,6 +156,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lib/lua_cfg_transform.lua
 %%DATADIR%%/lib/lua_clickhouse.lua
 %%DATADIR%%/lib/lua_dkim_tools.lua
+%%DATADIR%%/lib/lua_fuzzy.lua
 %%DATADIR%%/lib/lua_maps.lua
 %%DATADIR%%/lib/lua_meta.lua
 %%DATADIR%%/lib/lua_nn.lua
@@ -169,6 +170,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lib/rescore_utility.lua
 %%DATADIR%%/lib/rspamadm/confighelp.lua
 %%DATADIR%%/lib/rspamadm/configwizard.lua
+%%DATADIR%%/lib/rspamadm/cookie.lua
 %%DATADIR%%/lib/rspamadm/corpus_test.lua
 %%DATADIR%%/lib/rspamadm/fuzzy_convert.lua
 %%DATADIR%%/lib/rspamadm/fuzzy_stat.lua
