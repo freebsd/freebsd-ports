@@ -52,6 +52,7 @@ bin/icingacli
 %%WWWDIR%%/application/fonts/icingaweb.md
 %%WWWDIR%%/application/forms/Account/ChangePasswordForm.php
 %%WWWDIR%%/application/forms/AcknowledgeApplicationStateMessageForm.php
+%%WWWDIR%%/application/forms/ActionForm.php
 %%WWWDIR%%/application/forms/Announcement/AcknowledgeAnnouncementForm.php
 %%WWWDIR%%/application/forms/Announcement/AnnouncementForm.php
 %%WWWDIR%%/application/forms/Authentication/LoginForm.php
@@ -91,6 +92,7 @@ bin/icingacli
 %%WWWDIR%%/application/forms/RepositoryForm.php
 %%WWWDIR%%/application/forms/Security/RoleForm.php
 %%WWWDIR%%/application/layouts/scripts/body.phtml
+%%WWWDIR%%/application/layouts/scripts/external-logout.phtml
 %%WWWDIR%%/application/layouts/scripts/guest-error.phtml
 %%WWWDIR%%/application/layouts/scripts/inline.phtml
 %%WWWDIR%%/application/layouts/scripts/layout.phtml
