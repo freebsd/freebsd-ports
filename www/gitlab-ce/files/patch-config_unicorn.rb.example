@@ -1,4 +1,4 @@
---- config/unicorn.rb.example.orig	2018-08-22 22:40:32 UTC
+--- config/unicorn.rb.example.orig	2018-11-21 10:39:57 UTC
 +++ config/unicorn.rb.example
 @@ -33,12 +33,12 @@ worker_processes 3
  
@@ -32,3 +32,12 @@
  
  # Save memory by sharing the application code among multiple Unicorn workers
  # with "preload_app true". See:
+@@ -81,7 +81,7 @@ preload_app true
+ # fast LAN.
+ check_client_connection false
+ 
+-require_relative "/home/git/gitlab/lib/gitlab/cluster/lifecycle_events"
++require_relative "%%PREFIX%%/www/gitlab-ce/lib/gitlab/cluster/lifecycle_events"
+ 
+ before_exec do |server|
+   # Signal application hooks that we're about to restart

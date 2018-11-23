@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	11.4.7
+PORTVERSION=	11.5.0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -16,10 +16,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # only rubygem-pg and rubygem-mysql are defined later as RUN_DEPENDS
 # for the options
 MY_DEPENDS=	git>=2.16.2:devel/git \
-	gitlab-shell>=8.3.3:devel/gitlab-shell \
-	gitlab-workhorse>=7.0.0:www/gitlab-workhorse \
-	gitaly>=0.125.1:devel/gitaly \
-	gitlab-pages>=1.1.0:www/gitlab-pages \
+	gitlab-shell>=8.4.1:devel/gitlab-shell \
+	gitlab-workhorse>=7.1.0:www/gitlab-workhorse \
+	gitaly>=0.129.0:devel/gitaly \
+	gitlab-pages>=1.3.0:www/gitlab-pages \
 	redis>=3.2.12:databases/redis \
 	npm>=4.3.0:www/npm \
 	yarn>=0.17.0:www/yarn \
@@ -62,8 +62,6 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-gpgme>=2.0.13:security/rubygem-gpgme \
 	rubygem-gitlab_omniauth-ldap20>=2.0.4:net/rubygem-gitlab_omniauth-ldap20 \
 	rubygem-net-ldap>=0.16.0:net/rubygem-net-ldap \
-	rubygem-gitlab-gollum-lib>=4.2.0:www/rubygem-gitlab-gollum-lib \
-	rubygem-github-linguist53>=5.3.3:textproc/rubygem-github-linguist53 \
 	rubygem-grape>=1.1:devel/rubygem-grape \
 	rubygem-grape-entity>=0.7.1:devel/rubygem-grape-entity \
 	rubygem-rack-cors>=1.0.0:www/rubygem-rack-cors \
@@ -101,10 +99,13 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-truncato>=0.7.9:textproc/rubygem-truncato \
 	rubygem-bootstrap_form>=2.7.0:devel/rubygem-bootstrap_form \
 	rubygem-nokogiri>=1.8.2:textproc/rubygem-nokogiri \
+	rubygem-escape_utils>=1.1:textproc/rubygem-escape_utils \
 	rubygem-icalendar>=0:devel/rubygem-icalendar \
 	rubygem-diffy31>=3.1.0:textproc/rubygem-diffy31 \
 	rubygem-unicorn51>=5.1.0:www/rubygem-unicorn51 \
 	rubygem-unicorn-worker-killer044>=0.4.4:www/rubygem-unicorn-worker-killer044 \
+	rubygem-puma>=3.12:www/rubygem-puma \
+	rubygem-puma_worker_killer>=0:www/rubygem-puma_worker_killer \
 	rubygem-state_machines-activerecord>=0.5.1:databases/rubygem-state_machines-activerecord \
 	rubygem-acts-as-taggable-on>=5.0:www/rubygem-acts-as-taggable-on \
 	rubygem-sidekiq>=5.2.1:devel/rubygem-sidekiq \
@@ -124,7 +125,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-connection_pool>=2.0:net/rubygem-connection_pool \
 	rubygem-hipchat15>=1.5.0:net-im/rubygem-hipchat15 \
 	rubygem-jira-ruby>=1.4:devel/rubygem-jira-ruby \
-	rubygem-gitlab-flowdock-git-hook>=1.0.1:www/rubygem-gitlab-flowdock-git-hook \
+	rubygem-flowdock>=0.7:www/rubygem-flowdock \
 	rubygem-slack-notifier1>=1.5.1:devel/rubygem-slack-notifier1 \
 	rubygem-hangouts-chat>=0.0.5:net/rubygem-hangouts-chat \
 	rubygem-asana>=0.6.0:www/rubygem-asana \
@@ -136,7 +137,6 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-licensee8>=8.9:devel/rubygem-licensee8 \
 	rubygem-rack-attack44>=4.4.1:www/rubygem-rack-attack44 \
 	rubygem-ace-rails-ap>=4.1.0:www/rubygem-ace-rails-ap \
-	rubygem-mousetrap-rails>=1.4.6:www/rubygem-mousetrap-rails \
 	rubygem-charlock_holmes>=0.7.5:textproc/rubygem-charlock_holmes \
 	rubygem-fast_blank>=0:devel/rubygem-fast_blank \
 	rubygem-chronic>=0.10.2:devel/rubygem-chronic \
@@ -182,17 +182,16 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-sshkey>=1.9.0:security/rubygem-sshkey \
 	rubygem-ed25519>=1.2:security/rubygem-ed25519 \
 	rubygem-bcrypt_pbkdf>=1.0:security/rubygem-bcrypt_pbkdf \
-	rubygem-gitaly-proto>=0.118.1:net/rubygem-gitaly-proto \
-	rubygem-grpc>=1.11.0:net/rubygem-grpc \
+	rubygem-gitaly-proto>=0.123.0:net/rubygem-gitaly-proto \
+	rubygem-grpc>=1.15.0:net/rubygem-grpc \
 	rubygem-gitaly>=0.8.0:net/rubygem-gitaly \
-	rubygem-google-protobuf351>=3.5.1:devel/rubygem-google-protobuf351 \
+	rubygem-google-protobuf>=3.6:devel/rubygem-google-protobuf \
 	rubygem-toml-rb10>=1.0.0:www/rubygem-toml-rb10 \
 	rubygem-flipper013>=0.13.0:devel/rubygem-flipper013 \
 	rubygem-flipper-active_record013>=0.13.0:databases/rubygem-flipper-active_record013 \
 	rubygem-flipper-active_support_cache_store013>=0.13.0:devel/rubygem-flipper-active_support_cache_store013 \
 	rubygem-lograge>=0.5:www/rubygem-lograge \
-	rubygem-grape_logging>=1.7:devel/rubygem-grape_logging \
-	rubygem-asset_sync>=2.4:net/rubygem-asset_sync
+	rubygem-grape_logging>=1.7:devel/rubygem-grape_logging
 
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 	${MY_DEPENDS}
@@ -216,7 +215,7 @@ USE_RC_SUBR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-ce/tags
-GL_COMMIT=	98f84238230c94a46a9864a5a267becd67d30b50
+GL_COMMIT=	b7b1e8ecdf7407c8ec887a88a92c4a3eb57299d2
 
 USERS=	git
 GROUPS=	git
