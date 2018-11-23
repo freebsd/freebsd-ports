@@ -1,0 +1,11 @@
+--- gexiv2/meson.build.orig	2018-11-23 19:55:20 UTC
++++ gexiv2/meson.build
+@@ -35,7 +35,7 @@ install_headers(gexiv2_headers, subdir :
+ 
+ # Static map file
+ mapfile = 'gexiv2.map'
+-if host_machine.system() == 'darwin'
++if host_machine.system() == 'darwin' or host_machine.system() == 'freebsd'
+     vflag = ''
+ else
+     vflag = '-Wl,--version-script,@0@/@1@'.format(meson.current_source_dir(), mapfile)
