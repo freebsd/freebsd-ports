@@ -4,7 +4,7 @@ PORTNAME=	zapcc
 PORTVERSION=	g20180622
 CATEGORIES=	devel
 
-MAINTAINER=	martinfilla@post.cz
+MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	C++ caching compiler based on clang
 
 LICENSE=	NCSA
