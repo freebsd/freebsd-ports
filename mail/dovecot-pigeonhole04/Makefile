@@ -14,6 +14,9 @@ COMMENT=	Sieve plugin for the Dovecot 'deliver' LDA and LMTP
 
 LICENSE=	LGPL21
 
+DEPRECATED=     End of Life upstream, use mail/dovecot-pigeonhole instead
+EXPIRATION_DATE=        2019-01-31
+
 BUILD_DEPENDS=	dovecot22>=2.2.31:mail/dovecot22
 RUN_DEPENDS=	dovecot22>=2.2.31:mail/dovecot22
 
