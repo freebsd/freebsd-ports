@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly
-DISTVERSION=	0.125.1
-PORTREVISION=	1
+DISTVERSION=	0.129.0
+PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -14,20 +14,20 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # define dependencies that are required for build and run under MY_DEPENDS
 MY_DEPENDS=	git>=2.17:devel/git \
 		rubygem-i18n>=0:devel/rubygem-i18n \
+		rubygem-bundler>=1.16.5:sysutils/rubygem-bundler \
 		rubygem-rugged>=0.27.4:devel/rubygem-rugged \
-		rubygem-github-linguist53>=5.3.3:textproc/rubygem-github-linguist53 \
-		rubygem-bundler>0:sysutils/rubygem-bundler \
+		rubygem-github-linguist>=6.1:textproc/rubygem-github-linguist \
 		rubygem-gitlab-markup>=1.6.4:textproc/rubygem-gitlab-markup \
-		rubygem-gitaly-proto>=0.107.0:net/rubygem-gitaly-proto \
+		rubygem-gitaly-proto>=0.123.0:net/rubygem-gitaly-proto \
 		rubygem-activesupport50>=5.0.2:devel/rubygem-activesupport50 \
 		rubygem-rdoc>=6.0:devel/rubygem-rdoc \
 		rubygem-gitlab-gollum-lib>=4.2:www/rubygem-gitlab-gollum-lib \
 		rubygem-gitlab-gollum-rugged_adapter>=0.4.4:www/rubygem-gitlab-gollum-rugged_adapter \
-		rubygem-grpc>=1.11.0:net/rubygem-grpc \
+		rubygem-grpc>=1.15.0:net/rubygem-grpc \
 		rubygem-sentry-raven>=2.7.2:devel/rubygem-sentry-raven \
 		rubygem-faraday>=0.12:www/rubygem-faraday \
 		rubygem-licensee8>=8.9.0:devel/rubygem-licensee8 \
-		rubygem-google-protobuf351>=3.5.1:devel/rubygem-google-protobuf351
+		rubygem-google-protobuf>=3.6:devel/rubygem-google-protobuf
 
 BUILD_DEPENDS=	go>=1.9:lang/go \
 		gem:devel/ruby-gems \
@@ -42,7 +42,7 @@ USE_RUBY=	yes
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/tags
-GL_COMMIT=	076f3b0710ac07af5530ff20618e3fc27a5aead7
+GL_COMMIT=	1a4581d04d67d2821e5df6866af8ba6bbef40960
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config.toml.example
@@ -56,9 +56,5 @@ do-install:
 	(cd ${WRKSRC}/_build/bin/ && ${COPYTREE_SHARE} .  ${STAGEDIR}${DATADIR}/bin && \
 	cd ${WRKSRC} && ${COPYTREE_SHARE} config.toml.sample  ${STAGEDIR}${DATADIR}) && \
 	cd ${WRKSRC}/ruby && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/ruby
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${DATADIR}/bin/gitaly
-	${STRIP_CMD} ${STAGEDIR}${DATADIR}/bin/gitaly-ssh
 
 .include <bsd.port.mk>
