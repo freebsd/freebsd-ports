@@ -6,6 +6,7 @@ include/libfswatch/c++/libfswatch_exception.hpp
 include/libfswatch/c++/libfswatch_map.hpp
 include/libfswatch/c++/libfswatch_set.hpp
 include/libfswatch/c++/monitor.hpp
+include/libfswatch/c++/monitor_factory.hpp
 include/libfswatch/c++/path_utils.hpp
 include/libfswatch/c++/poll_monitor.hpp
 include/libfswatch/c++/string_utils.hpp
@@ -18,8 +19,8 @@ include/libfswatch/c/libfswatch_log.h
 include/libfswatch/c/libfswatch_types.h
 lib/libfswatch.a
 lib/libfswatch.so
-lib/libfswatch.so.9
-lib/libfswatch.so.9.0.0
+lib/libfswatch.so.11
+lib/libfswatch.so.11.0.0
 man/man7/fswatch.7.gz
 %%NLS%%%%PORTDOCS%%%%DOCSDIR%%/ABOUT-NLS
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS

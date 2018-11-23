@@ -2,35 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	fswatch
-PORTVERSION=	1.11.2
-PORTREVISION=	2
+DISTVERSION=	1.13.0
 CATEGORIES=	sysutils
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/emcrisostomo/${PORTNAME}/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	-mon
 
 MAINTAINER=	enrico.m.crisostomo@gmail.com
 COMMENT=	Cross-platform file change monitor
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lang libtool makeinfo
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-
-INFO=	fswatch
 
 CONFLICTS_INSTALL=	fswatch-[0-9]*
+GNU_CONFIGURE=	yes
+INFO=	fswatch
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
-
-GH_ACCOUNT=	emcrisostomo
-GH_PROJECT=	fswatch
-
-post-install:
-	  ${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfswatch.so
 
 .include <bsd.port.mk>
