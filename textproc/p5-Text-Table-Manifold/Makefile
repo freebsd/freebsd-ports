@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-Table-Manifold
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,8 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Render tables in manifold formats
 
-LICENSE=	ART20
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE_ART10=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Const-Exporter>=0.2.3:devel/p5-Const-Exporter \
@@ -21,8 +22,18 @@ RUN_DEPENDS=	p5-Const-Exporter>=0.2.3:devel/p5-Const-Exporter \
 		p5-Moo>=1.006000:devel/p5-Moo \
 		p5-Type-Tiny>=1.000004:devel/p5-Type-Tiny \
 		p5-Unicode-LineBreak>=2013.10:textproc/p5-Unicode-LineBreak
+TEST_DEPENDS=	p5-Test-Pod>=1.48:devel/p5-Test-Pod
 
-USE_PERL5=	configure
 USES=		perl5 tar:tgz
+USE_PERL5=	configure
 
-.include <bsd.port.mk>
+NO_ARCH=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502710
+BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.50:lang/p5-Scalar-List-Utils
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.50:lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>
