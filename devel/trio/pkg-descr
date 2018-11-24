@@ -9,4 +9,4 @@ There are several cases where you may want to consider using trio:
    3.Extendability of unsupported features.
    4.Your native version don't do everything you need.
 
-WWW: http://daniel.haxx.se/projects/trio/
+WWW: https://daniel.haxx.se/projects/trio/
