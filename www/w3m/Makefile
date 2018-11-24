@@ -73,7 +73,7 @@ PKGMESSAGE=	${NONEXISTENT}
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|\`\(expr\) \(.*\) : \(.*\)`|`\1 \\( \2 : \3 \\)`|' \
+		's|`\(expr\) \(.*\) : \(.*\)`|`\1 \\( \2 : \3 \\)`|' \
 		-e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/configure
 	@${FIND} ${WRKSRC}/doc* -type f \! -name HISTORY \
