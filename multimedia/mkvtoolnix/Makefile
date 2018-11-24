@@ -26,7 +26,7 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libpugixml.so:textproc/pugixml \
 		libmatroska.so:multimedia/libmatroska
 
-USES=		compiler:c++14-lang iconv localbase pkgconfig tar:xz
+USES=		compiler:c++17-lang iconv localbase pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_path_PO4A=no
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE} \
@@ -59,6 +59,12 @@ QT5_LIB_DEPENDS=	libcmark.so:textproc/cmark
 MANTRANS_DESC=		Build and install manpage translations
 MANTRANS_BUILD_DEPENDS=	po4a:textproc/po4a
 
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} != clang
+USE_CXXSTD=	c++17
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/LIBS="-lintl/s,-liconv,$$ICONV_LIBS,' \
 		${WRKSRC}/configure
@@ -70,4 +76,4 @@ post-configure-NLS-off:
 	@${REINPLACE_CMD} -e 's|#define HAVE_LIBINTL_H|//#define HAVE_LIBINTL_H|g' ${WRKSRC}/config.h
 	@${REINPLACE_CMD} -e 's|S["LIBINTL_LIBS"]=|#S["LIBINTL_LIBS"]=|g' ${WRKSRC}/config.status
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
