@@ -23,8 +23,9 @@ RUN_DEPENDS=	p5-Const-Fast>=0:devel/p5-Const-Fast \
 TEST_DEPENDS=	p5-Hash-Objectify>=0:devel/p5-Hash-Objectify \
 		p5-Test-Most>=0:devel/p5-Test-Most
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
