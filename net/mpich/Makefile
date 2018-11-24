@@ -19,7 +19,7 @@ LIB_DEPENDS=	libhwloc.so:devel/hwloc
 CONFLICTS=	lam-7.* mpd-[0-9]* mpiexec-0.* mpich2-[0-9]*
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		libtool pkgconfig
+USES=		compiler:c11 libtool pkgconfig
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		DOCS FORTRAN
