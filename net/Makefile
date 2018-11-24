@@ -1284,7 +1284,6 @@
     SUBDIR += rubygem-geoip
     SUBDIR += rubygem-gitaly
     SUBDIR += rubygem-gitaly-proto
-    SUBDIR += rubygem-gitaly-proto094
     SUBDIR += rubygem-gitlab_omniauth-ldap
     SUBDIR += rubygem-gitlab_omniauth-ldap20
     SUBDIR += rubygem-google-cloud-core
