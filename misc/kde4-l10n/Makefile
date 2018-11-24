@@ -9,6 +9,9 @@ CATEGORIES=	misc kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Localized messages and documentation for KDE SC 4
 
+DEPRECATED=		KDE4 is EOL upstream
+EXPIRATION_DATE=	2018-12-31
+
 USES=		kde:4 metaport
 
 KDE4_LANG_ALL=	ar bg bs ca ca@valencia cs da de el en_GB es et eu fa \
