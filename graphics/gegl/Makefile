@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gegl
-PORTVERSION=	0.4.8
-PORTREVISION=	2
+PORTVERSION=	0.4.12
 CATEGORIES=	graphics
 MASTER_SITES=	GIMP
 
@@ -30,7 +29,7 @@ CONFIGURE_ARGS=	--without-vala --disable-docs
 CONFIGURE_ARGS+=--without-mrg --without-lensfun
 INSTALL_TARGET=	install-strip
 
-GEGL_MINOR=	408
+GEGL_MINOR=	412
 GEGL_VER=	0.4
 PLIST_SUB+=	GEGL_MINOR="${GEGL_MINOR}" GEGL_VER=${GEGL_VER}
 
