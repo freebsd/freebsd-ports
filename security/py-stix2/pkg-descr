@@ -1,0 +1,5 @@
+Python APIs for serializing and de-serializing STIX 2 JSON content, along with
+higher-level APIs for common tasks, including data markings, versioning, and for
+resolving STIX IDs across multiple data sources.
+
+WWW: https://github.com/oasis-open/cti-python-stix2
