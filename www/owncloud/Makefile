@@ -3,6 +3,7 @@
 
 PORTNAME=	owncloud
 PORTVERSION=	10.0.10
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://download.owncloud.org/community/
 

@@ -1,5 +1,5 @@
 @dir etc/newsyslog.conf.d
-@sample %%EXAMPLESDIR%%/newsyslog etc/newsyslog.conf.d/owncloud
+@sample %%EXAMPLESDIR%%/newsyslog etc/newsyslog.conf.d/owncloud.conf
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/.user.ini
 %%WWWDIR%%/AUTHORS
