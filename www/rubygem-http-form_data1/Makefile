@@ -12,6 +12,9 @@ COMMENT=	Build form data request bodies
 
 LICENSE=	MIT
 
+DEPRECATED=	Use www/rubygem-http-form_data instead
+EXPIRATION_DATE=2018-11-30
+
 PORTSCOUT=	limit:^1\.
 
 NO_ARCH=	yes
