@@ -24,7 +24,7 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gnome localbase meson pkgconfig \
+USES=		compiler:c11 gettext gnome localbase meson pkgconfig \
 		python:3.6+,build tar:xz
 USE_GNOME=	glib20
 MESON_ARGS=	-Dca_certificates_path="${LOCALBASE}/share/certs/ca-root-nss.crt"
