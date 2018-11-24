@@ -10,7 +10,7 @@ MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
 DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
-MAINTAINER=	eric@camachat.org
+MAINTAINER=	ronald-lists@klop.ws
 COMMENT=	Distributed document-oriented "NoSQL" database
 
 # mongodb is AGPLv3, C++ driver is APACHE20
@@ -54,8 +54,10 @@ OPTIONS_DEFAULT=	SASL SSL
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_MAKE_ARGS=		--use-sasl-client
 
-SSL_USES=	ssl
+SSL_BUILD_DEPENDS=	${LOCALBASE}/lib/libcrypto.so:security/openssl
+SSL_RUN_DEPENDS=	${LOCALBASE}/lib/libcrypto.so:security/openssl
 SSL_MAKE_ARGS=	--ssl
+SSL_MAKE_ENV=	OPENSSL_ROOT_DIR=${LOCALBASE}
 
 .include <bsd.port.options.mk>
 
