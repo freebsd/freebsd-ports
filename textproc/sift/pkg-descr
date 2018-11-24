@@ -1,0 +1,14 @@
+sift has a slightly different focus than most other grep alternatives. Code
+search, log search / digital forensics and data processing are the main use
+cases, but the primary goal is to provide safe defaults and to make it easily
+configurable for a specific use case. Among the features are:
+- Stable releases, cross platform support
+- Safe defaults: sift searches everywhere if not configured otherwise
+- Complete & working .gitignore support
+- High performance for many uses cases
+- Support for adding custom file types to narrow down searches
+- Multiline support
+- Support for big files: >50GB, >5,000,000,000 lines and >5,000,000,000 matches
+  successfully tested
+
+WWW: https://github.com/svent/sift
