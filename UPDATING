@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20181124:
+  AFFECTS: users of sysutils/munin-master, sysutils/munin-node, www/owncloud, mail/mailman, net/ntpa
+  AUTHOR: woodsb02@FreeBSD.org
+
+  The newsyslog.conf(5) filename installed by the port has been changed:
+  OLD: ${PREFIX}/etc/newsyslog.conf.d/${PORTNAME}
+  NEW: ${PREFIX}/etc/newsyslog.conf.d/${PORTNAME}.conf
+
+  Any file found at the old location will be automatically moved to the new
+  location. This will ensure log rotation will continue to work after change
+  r340318 to FreeBSD base, where the default newsyslog configuration now only
+  includes filenames that end with '.conf' and do not begin with '.'.
+
+  If you use provisioning/configuration management tools to create or edit this
+  file, you will need to change their configuration to use the new filename.
+
 20181111
   AFFECTS: users of graphics/mesa-libs
   AUTHOR: jbeich@FreeBSD.org

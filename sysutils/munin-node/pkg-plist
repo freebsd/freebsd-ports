@@ -6,7 +6,7 @@ bin/munindoc
 @comment BSD.local.dist but if not registered here, it will not exist in PREFIX
 @comment when the package is installed.
 @dir etc/newsyslog.conf.d
-@sample %%ETCDIR%%/munin-node.newsyslog etc/newsyslog.conf.d/munin-node
+@sample %%ETCDIR%%/munin-node.newsyslog etc/newsyslog.conf.d/munin-node.conf
 %%SITE_PERL%%/Munin/Node/Config.pm
 %%SITE_PERL%%/Munin/Node/Configure/Debug.pm
 %%SITE_PERL%%/Munin/Node/Configure/History.pm
