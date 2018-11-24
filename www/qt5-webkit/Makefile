@@ -2,7 +2,7 @@
 
 PORTNAME=		webkit
 DISTVERSION=		5.212.0-alpha2
-PORTREVISION=		14
+PORTREVISION=		15
 CATEGORIES=		www
 MASTER_SITES=		https://github.com/annulen/${PORTNAME}/releases/download/${DISTNAME}/
 PKGNAMEPREFIX=		qt5-
@@ -23,6 +23,7 @@ USES=			bison cmake:outsource compiler:c++11-lang gperf jpeg \
 			pathfix perl5 pkgconfig python:2.7,build qt:5 sqlite:3 \
 			tar:xz
 USE_GNOME=		glib20 libxml2 libxslt
+USE_PERL5=		build
 USE_GSTREAMER1=		core
 USE_QT=			core declarative gui location network opengl printsupport \
 			sensors testlib webchannel widgets \
