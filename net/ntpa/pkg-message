@@ -7,3 +7,19 @@ If you are upgrading from a previous version of NTP Analyzer be sure to
 take a backup of your database before starting ntpa in upgrade mode.
 
 ************************************************************************
+
+The ntpa newsyslog.conf(5) filename has been changed:
+  OLD: ${PREFIX}/etc/newsyslog.conf.d/ntpa
+  NEW: ${PREFIX}/etc/newsyslog.conf.d/ntpa.conf
+
+Any file found at the old location has been automatically moved to
+the new location. This was done to ensure log rotation continued to
+work after change r340318 made to FreeBSD base, where the default
+newsyslog configuration now only includes filenames that end with
+'.conf' and do not begin with '.'.
+
+If you use provisioning/configuration management tools to create or
+edit this file, you will need to change their configuration to use
+the new filename.
+
+************************************************************************
