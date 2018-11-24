@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	1.34.0
+PORTVERSION=	1.35.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www net
 
@@ -20,15 +20,16 @@ OPTIONS_DEFAULT=APP HPACK
 OPTIONS_SUB=	yes
 APP_DESC=	Build h2load, nghttp, nghttpd and nghttpx
 
+USES=		autoreconf compiler:c++14-lang gmake libtool localbase pathfix pkgconfig ssl
+
 CONFIGURE_ARGS=	--disable-python-bindings --with-jemalloc
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USE_CXXSTD=	c++11
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	nghttpx
-USES=		autoreconf compiler:c++11-lib gmake libtool localbase pathfix pkgconfig ssl
 
 PORTDATA=	fetch-ocsp-response
 PORTDOCS=	*
