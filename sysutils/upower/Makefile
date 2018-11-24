@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpolkit-gobject-1.so:sysutils/polkit \
 		libdbus-glib-1.so:devel/dbus-glib
 
-USES=		gettext gmake libtool localbase pathfix pkgconfig tar:xz
+USES=		compiler:c11 gettext gmake gnome libtool localbase \
+		pathfix pkgconfig tar:xz
 USE_GNOME=	intlhack glib20 introspection:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
