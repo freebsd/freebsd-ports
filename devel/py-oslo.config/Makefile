@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oslo.config
-PORTVERSION=	6.4.0
+PORTVERSION=	6.4.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,9 +23,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}debtcollector>=1.2.0:devel/py-debtcollector@
 		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=1.20.0:devel/py-stevedore@${PY_FLAVOR}
 
-NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' \
