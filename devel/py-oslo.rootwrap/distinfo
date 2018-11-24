@@ -1,3 +1,3 @@
-TIMESTAMP = 1526504880
-SHA256 (oslo.rootwrap-5.14.1.tar.gz) = 9e19f9ab92573ee1994d4f6e8b17bec19ac59ecc7d28b99ba7440a80800ca1fa
-SIZE (oslo.rootwrap-5.14.1.tar.gz) = 44474
+TIMESTAMP = 1543058465
+SHA256 (oslo.rootwrap-5.15.0.tar.gz) = 788ed5c747b9e9350575b5e438107bc7873dceef59261cffba9574947dd28888
+SIZE (oslo.rootwrap-5.15.0.tar.gz) = 45340
