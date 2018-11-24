@@ -1,0 +1,4 @@
+On FreeBSD < 11.3 Web Content process may frequently crash due to bug 181741.
+If you cannot upgrade try applying the following workaround:
+
+# sysctl net.local.stream.recvspace=16384
