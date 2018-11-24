@@ -1,0 +1,7 @@
+This is Google's officially supported ruby client library for using OAuth 2.0
+authorization and authentication with Google APIs. It allows simple
+authorization for accessing Google APIs and provides support for Application
+Default Credentials, as described at
+https://developers.google.com/accounts/docs/application-default-credentials
+
+WWW: https://github.com/googleapis/google-auth-library-ruby
