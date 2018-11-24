@@ -4056,6 +4056,7 @@
 %%WWWDIR%%/apps-pkg/cloud_federation_api/lib/Config.php
 %%WWWDIR%%/apps-pkg/cloud_federation_api/lib/Controller/RequestHandlerController.php
 %%WWWDIR%%/apps-pkg/comments/.bowerrc
+%%WWWDIR%%/apps-pkg/comments/.l10nignore
 %%WWWDIR%%/apps-pkg/comments/appinfo/app.php
 %%WWWDIR%%/apps-pkg/comments/appinfo/info.xml
 %%WWWDIR%%/apps-pkg/comments/appinfo/routes.php
@@ -4478,6 +4479,7 @@
 %%WWWDIR%%/apps-pkg/dav/lib/CalDAV/CalendarObject.php
 %%WWWDIR%%/apps-pkg/dav/lib/CalDAV/CalendarRoot.php
 %%WWWDIR%%/apps-pkg/dav/lib/CalDAV/InvitationResponse/InvitationResponseServer.php
+%%WWWDIR%%/apps-pkg/dav/lib/CalDAV/Outbox.php
 %%WWWDIR%%/apps-pkg/dav/lib/CalDAV/Plugin.php
 %%WWWDIR%%/apps-pkg/dav/lib/CalDAV/Principal/Collection.php
 %%WWWDIR%%/apps-pkg/dav/lib/CalDAV/Principal/User.php
@@ -5197,6 +5199,7 @@
 %%WWWDIR%%/apps-pkg/federation/lib/SyncJob.php
 %%WWWDIR%%/apps-pkg/federation/lib/TrustedServers.php
 %%WWWDIR%%/apps-pkg/federation/templates/settings-admin.php
+%%WWWDIR%%/apps-pkg/files/.l10nignore
 %%WWWDIR%%/apps-pkg/files/ajax/download.php
 %%WWWDIR%%/apps-pkg/files/ajax/list.php
 %%WWWDIR%%/apps-pkg/files/appinfo/app.php
@@ -6978,8 +6981,6 @@
 %%WWWDIR%%/apps-pkg/files_texteditor/l10n/.gitkeep
 %%WWWDIR%%/apps-pkg/files_texteditor/l10n/ast.js
 %%WWWDIR%%/apps-pkg/files_texteditor/l10n/ast.json
-%%WWWDIR%%/apps-pkg/files_texteditor/l10n/az.js
-%%WWWDIR%%/apps-pkg/files_texteditor/l10n/az.json
 %%WWWDIR%%/apps-pkg/files_texteditor/l10n/bg.js
 %%WWWDIR%%/apps-pkg/files_texteditor/l10n/bg.json
 %%WWWDIR%%/apps-pkg/files_texteditor/l10n/ca.js
@@ -7355,6 +7356,7 @@
 %%WWWDIR%%/apps-pkg/files_trashbin/lib/Trashbin.php
 %%WWWDIR%%/apps-pkg/files_trashbin/list.php
 %%WWWDIR%%/apps-pkg/files_trashbin/templates/index.php
+%%WWWDIR%%/apps-pkg/files_versions/.l10nignore
 %%WWWDIR%%/apps-pkg/files_versions/ajax/getVersions.php
 %%WWWDIR%%/apps-pkg/files_versions/ajax/rollbackVersion.php
 %%WWWDIR%%/apps-pkg/files_versions/appinfo/app.php
@@ -8405,6 +8407,7 @@
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/lib/Settings/Admin.php
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/templates/admin.php
 %%WWWDIR%%/apps-pkg/notifications/.babelrc.js
+%%WWWDIR%%/apps-pkg/notifications/.l10nignore
 %%WWWDIR%%/apps-pkg/notifications/COPYING
 %%WWWDIR%%/apps-pkg/notifications/appinfo/app.php
 %%WWWDIR%%/apps-pkg/notifications/appinfo/database.xml
@@ -8567,6 +8570,7 @@
 %%WWWDIR%%/apps-pkg/notifications/lib/Handler.php
 %%WWWDIR%%/apps-pkg/notifications/lib/Notifier/AdminNotifications.php
 %%WWWDIR%%/apps-pkg/notifications/lib/Push.php
+%%WWWDIR%%/apps-pkg/oauth2/.l10nignore
 %%WWWDIR%%/apps-pkg/oauth2/appinfo/database.xml
 %%WWWDIR%%/apps-pkg/oauth2/appinfo/info.xml
 %%WWWDIR%%/apps-pkg/oauth2/appinfo/routes.php
@@ -9258,7 +9262,7 @@
 %%WWWDIR%%/apps-pkg/support/lib/Service/SubscriptionService.php
 %%WWWDIR%%/apps-pkg/support/lib/Settings/Admin.php
 %%WWWDIR%%/apps-pkg/support/lib/Settings/Section.php
-%%WWWDIR%%/apps-pkg/support/resources/Why the Nextcloud Subscription?.pdf
+%%WWWDIR%%/apps-pkg/support/resources/Why the Nextcloud Subscription.pdf
 %%WWWDIR%%/apps-pkg/support/templates/admin.php
 %%WWWDIR%%/apps-pkg/survey_client/COPYING
 %%WWWDIR%%/apps-pkg/survey_client/ISSUE_TEMPLATE.md
@@ -9898,6 +9902,7 @@
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/lib/Settings/Personal.php
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/templates/challenge.php
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/templates/personal.php
+%%WWWDIR%%/apps-pkg/updatenotification/.l10nignore
 %%WWWDIR%%/apps-pkg/updatenotification/appinfo/app.php
 %%WWWDIR%%/apps-pkg/updatenotification/appinfo/info.xml
 %%WWWDIR%%/apps-pkg/updatenotification/appinfo/routes.php
@@ -10637,6 +10642,7 @@
 %%WWWDIR%%/config/config.documented.php
 @sample(%%NEXTCLOUD_USERNAME%%,%%NEXTCLOUD_GROUPNAME%%,640) %%WWWDIR%%/config/config.sample.php %%WWWDIR%%/config/config.php
 %%WWWDIR%%/console.php
+%%WWWDIR%%/core/.l10nignore
 %%WWWDIR%%/core/Application.php
 %%WWWDIR%%/core/BackgroundJobs/BackgroundCleanupUpdaterBackupsJob.php
 %%WWWDIR%%/core/Command/App/CheckCode.php
@@ -10860,7 +10866,6 @@
 %%WWWDIR%%/core/doc/admin/_images/skeleton-files.png
 %%WWWDIR%%/core/doc/admin/_images/skeleton-files1.png
 %%WWWDIR%%/core/doc/admin/_images/smb.png
-%%WWWDIR%%/core/doc/admin/_images/smtp-config-php-sendmail.png
 %%WWWDIR%%/core/doc/admin/_images/smtp-config-smtp.png
 %%WWWDIR%%/core/doc/admin/_images/smtp-config-wizard.png
 %%WWWDIR%%/core/doc/admin/_images/theming.png
@@ -11654,6 +11659,8 @@
 %%WWWDIR%%/core/js/visitortimezone.js
 %%WWWDIR%%/core/l10n/af.js
 %%WWWDIR%%/core/l10n/af.json
+%%WWWDIR%%/core/l10n/ar.js
+%%WWWDIR%%/core/l10n/ar.json
 %%WWWDIR%%/core/l10n/ast.js
 %%WWWDIR%%/core/l10n/ast.json
 %%WWWDIR%%/core/l10n/bg.js
@@ -11770,8 +11777,6 @@
 %%WWWDIR%%/core/l10n/tr.json
 %%WWWDIR%%/core/l10n/uk.js
 %%WWWDIR%%/core/l10n/uk.json
-%%WWWDIR%%/core/l10n/uz.js
-%%WWWDIR%%/core/l10n/uz.json
 %%WWWDIR%%/core/l10n/vi.js
 %%WWWDIR%%/core/l10n/vi.json
 %%WWWDIR%%/core/l10n/zh_CN.js
@@ -13019,6 +13024,7 @@
 %%WWWDIR%%/resources/locales.json
 %%WWWDIR%%/robots.txt
 %%WWWDIR%%/settings/.babelrc.js
+%%WWWDIR%%/settings/.l10nignore
 %%WWWDIR%%/settings/Activity/Provider.php
 %%WWWDIR%%/settings/Activity/SecurityFilter.php
 %%WWWDIR%%/settings/Activity/SecurityProvider.php
