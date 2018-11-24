@@ -22,3 +22,4 @@ lib/mariadb/plugin/dialog.so
 lib/mariadb/plugin/mysql_clear_password.so
 lib/mariadb/plugin/remote_io.so
 lib/mariadb/plugin/sha256_password.so
+libdata/pkgconfig/libmariadb.pc
