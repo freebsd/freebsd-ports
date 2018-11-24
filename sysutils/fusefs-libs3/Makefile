@@ -27,4 +27,9 @@ GH_TAGNAME=	11d9ed6
 IGNORE=	fusefs has not been implemented on DragonFly
 .endif
 
+post-patch:
+.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+	${REINPLACE_CMD} -e '/-Wno-unused-result/d' ${WRKSRC}/meson.build
+.endif
+
 .include <bsd.port.post.mk>
