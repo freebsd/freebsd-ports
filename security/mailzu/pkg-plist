@@ -25,6 +25,8 @@
 %%WWWDIR%%/lang/fr.lang.php
 %%WWWDIR%%/lang/it.help.php
 %%WWWDIR%%/lang/it.lang.php
+%%WWWDIR%%/lang/pl.help.php
+%%WWWDIR%%/lang/pl.lang.php
 %%WWWDIR%%/lang/pt_BR.lang.php
 %%WWWDIR%%/lib/AmavisdEngine.class.php
 %%WWWDIR%%/lib/Auth.class.php
