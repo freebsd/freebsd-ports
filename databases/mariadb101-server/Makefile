@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.1.35
-PORTREVISION?=	1
+PORTVERSION=	10.1.37
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
@@ -22,8 +21,10 @@ LICENSE_NAME_PerconaFT=	PerconaFT patents license
 LICENSE_FILE_PerconaFT=	${WRKSRC}/storage/tokudb/PerconaFT/PATENTS
 LICENSE_PERMS_PerconaFT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_SSL=		openssl-devel
-BROKEN_SSL_REASON_openssl-devel=	incomplete definition of type 'struct dh_st'
+BROKEN_SSL=		openssl-devel openssl111
+BROKEN_SSL_REASON=	incomplete definition of type 'struct dh_st'
+BROKEN_FreeBSD_12=	Does not support OpenSSL 1.1, use the 10.2 or 10.3 port
+BROKEN_FreeBSD_13=	${BROKEN_FreeBSD_12}
 
 SUB_FILES=	pkg-message
 
@@ -153,10 +154,6 @@ TOKUDB_IMPLIES=		SNAPPY
 TOKUDB_PORTDOCS=	README.md
 TOKUDB_VARS=		LICENSE+=PerconaFT LICENSE_COMB=multi
 ZMQ_LIB_DEPENDS=	libzmq.so:net/libzmq4
-
-NOT_FOR_ARCHS=		i386
-NOT_FOR_ARCHS_REASON=	currently does not compile on i386, see \
-			https://jira.mariadb.org/browse/MDEV-9627
 
 post-install:
 # Remove programs to avoid conflict with mariadb101-client
