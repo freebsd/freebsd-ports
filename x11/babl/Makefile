@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	babl
-PORTVERSION=	0.1.58
+PORTVERSION=	0.1.60
 CATEGORIES=	x11
 MASTER_SITES=	GIMP
 
@@ -13,23 +13,17 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c11 gmake libtool pathfix pkgconfig tar:bzip2
+
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	SIMD
+OPTIONS_DEFAULT=SIMD
 
-.include <bsd.port.options.mk>
-
-.if !${PORT_OPTIONS:MSIMD}
-CONFIGURE_ARGS+=--disable-mmx \
-		--disable-sse \
-		--disable-sse2 \
-		--disable-sse3 \
-		--disable-sse4.1 \
-		--disable-f16c \
+SIMD_CONFIGURE_OFF=	--disable-mmx --disable-sse --disable-sse2 \
+		--disable-sse3 --disable-sse4_1 --disable-f16c \
 		--disable-altivec
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|x86_64|amd64|g' \
