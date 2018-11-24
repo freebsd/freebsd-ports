@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	github-linguist
-PORTVERSION=	6.2.0
+PORTVERSION=	6.4.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -19,8 +19,8 @@ RUN_DEPENDS=	rubygem-charlock_holmes>=0.7.6:textproc/rubygem-charlock_holmes \
 # bin/linguist
 CONFLICTS_INSTALL=	qtchooser rubygem-github-linguist47 rubygem-gitlab-linguist
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 PLIST_FILES=	bin/git-linguist bin/linguist
 
