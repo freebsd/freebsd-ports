@@ -11,9 +11,7 @@ COMMENT=	Simple and powerful Qt-based text editor
 
 LICENSE=	GPLv3
 
-BROKEN_powerpc64=	fails to link: spellchecker.o:(.text+0xd2c): undefined reference to Hunspell::remove(std::string const&)
-
-USES=		gl pkgconfig:build qmake
+USES=		compiler:c++11-lang gl pkgconfig:build qmake
 
 OPTIONS_SINGLE=	TOOLKITS
 OPTIONS_SINGLE_TOOLKITS=	QT4 QT5
