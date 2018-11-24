@@ -27,6 +27,9 @@ CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=		-fPIC
 
+PATCHES_powerpc64=	${PATCHDIR}/extra-patch-ffcall-abi.h
+EXTRA_PATCHES=		${PATCHES_${ARCH}}
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libavcall.so \
 		${STAGEDIR}${PREFIX}/lib/libcallback.so \
