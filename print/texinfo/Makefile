@@ -3,7 +3,7 @@
 
 PORTNAME=	texinfo
 PORTVERSION=	6.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	print
 MASTER_SITES=	GNU \
@@ -18,17 +18,25 @@ COMMENT=	Typeset documentation system with multiple format output
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	help2man:misc/help2man
+BUILD_DEPENDS=	help2man:misc/help2man \
+		${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Locale-libintl>=0:devel/p5-Locale-libintl \
+		p5-Text-Unidecode>=0:converters/p5-Text-Unidecode \
+		p5-Unicode-EastAsianWidth>=0:textproc/p5-Unicode-EastAsianWidth
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
+USES=		charsetfix cpe gmake iconv libtool ncurses perl5 tar:xz
+
+CONFIGURE_ARGS=	--with-external-libintl-perl \
+		--with-external-Text-Unidecode \
+		--with-external-Unicode-EastAsianWidth
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip install-tex
 MAKE_ARGS=	PERL=${PERL} TEXMF=${LOCALBASE}/${TEXMFDIR}
 PKGDEINSTALL=	${PKGINSTALL}
 USE_TEX=	yes
-USES=		charsetfix cpe gmake iconv libtool ncurses perl5 tar:xz
 
 INFO=		info-stnd texinfo
 
