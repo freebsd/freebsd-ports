@@ -15,11 +15,11 @@ LIB_DEPENDS=	libmp3lame.so:audio/lame \
 		libvorbis.so:audio/libvorbis
 
 USES=		libtool localbase:ldflags
+USE_CXXSTD=	c++98
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-all
 
 CFLAGS+=	-fPIC -DPIC
-CXXFLAGS+=	-Wno-c++11-narrowing
 
 USE_LDCONFIG=	yes
 
