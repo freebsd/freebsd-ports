@@ -1,5 +1,18 @@
-This module provide user-defined Unicode properties that deal with East
-Asian characters' width status, as specified in
+Unicode::EastAsianWidth provide user-defined Unicode properties that deal with
+width status of East Asian characters, as specified in
 http://www.unicode.org/unicode/reports/tr11/.
+
+It exports the following functions to the caller's scope, to be used by Perl's
+Unicode matching system: InEastAsianFullwidth, InEastAsianHalfwidth,
+InEastAsianAmbiguous, InEastAsianNarrow InEastAsianWide, InEastAsianNeutral.
+
+In accord to TR11 cited above, two additional context-sensitive properties are
+exported: InFullwidth (union of Fullwidth and Wide) and InHalfwidth (union of
+Halfwidth, Narrow and Neutral).
+
+Ambiguous characters are treated by default as part of InHalfwidth, but you can
+modify this behaviour by assigning a true value to
+$Unicode::EastAsianWidth::EastAsian at compile time within a BEGIN block before
+loading this module
 
 WWW: https://metacpan.org/release/Unicode-EastAsianWidth
