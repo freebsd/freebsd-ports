@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Imager
-PORTVERSION=	1.006
+PORTVERSION=	1.007
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,12 +24,12 @@ TEST_DEPENDS=	p5-Inline>=0:devel/p5-Inline \
 
 USES=		jpeg perl5
 USE_PERL5=	configure
+
 CONFIGURE_ENV=	IM_CFLAGS="${CFLAGS}" \
 		IM_INCPATH=${LOCALBASE}/include \
 		IM_LIBPATH=${LOCALBASE}/lib
 
 post-install:
-	@${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Imager \
-		-name "*.so" -exec ${STRIP_CMD} {} \;
+	${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Imager -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
