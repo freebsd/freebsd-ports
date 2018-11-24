@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nghttp2
-PORTVERSION=	1.34.0
+PORTVERSION=	1.35.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www net
 PKGNAMEPREFIX=	lib
@@ -13,11 +13,13 @@ COMMENT=	HTTP/2.0 C Library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		autoreconf compiler:c++14-lang libtool pathfix pkgconfig
+
 CONFIGURE_ARGS=	--enable-lib-only
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
-USES=		autoreconf libtool pathfix pkgconfig
 
 USE_GITHUB=	yes
 
