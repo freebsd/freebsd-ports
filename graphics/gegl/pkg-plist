@@ -5,7 +5,10 @@ include/gegl-%%GEGL_VER%%/gegl-apply.h
 include/gegl-%%GEGL_VER%%/gegl-audio-fragment.h
 include/gegl-%%GEGL_VER%%/gegl-buffer-backend.h
 include/gegl-%%GEGL_VER%%/gegl-buffer-cl-iterator.h
+include/gegl-%%GEGL_VER%%/gegl-buffer-enums.h
 include/gegl-%%GEGL_VER%%/gegl-buffer-iterator.h
+include/gegl-%%GEGL_VER%%/gegl-buffer-iterator2.h
+include/gegl-%%GEGL_VER%%/gegl-buffer-matrix2.h
 include/gegl-%%GEGL_VER%%/gegl-buffer.h
 include/gegl-%%GEGL_VER%%/gegl-color.h
 include/gegl-%%GEGL_VER%%/gegl-cpuaccel.h
@@ -24,6 +27,7 @@ include/gegl-%%GEGL_VER%%/gegl-path.h
 include/gegl-%%GEGL_VER%%/gegl-plugin.h
 include/gegl-%%GEGL_VER%%/gegl-processor.h
 include/gegl-%%GEGL_VER%%/gegl-random.h
+include/gegl-%%GEGL_VER%%/gegl-rectangle.h
 include/gegl-%%GEGL_VER%%/gegl-tile-backend.h
 include/gegl-%%GEGL_VER%%/gegl-tile-handler.h
 include/gegl-%%GEGL_VER%%/gegl-tile-source.h
@@ -82,6 +86,7 @@ lib/gegl-%%GEGL_VER%%/gegl-common-gpl3.so
 lib/gegl-%%GEGL_VER%%/gegl-common.so
 lib/gegl-%%GEGL_VER%%/gegl-core.so
 lib/gegl-%%GEGL_VER%%/gegl-generated.so
+lib/gegl-%%GEGL_VER%%/gif-load.so
 lib/gegl-%%GEGL_VER%%/grey2.json
 %%JASPER%%lib/gegl-%%GEGL_VER%%/jp2-load.so
 lib/gegl-%%GEGL_VER%%/jpg-load.so

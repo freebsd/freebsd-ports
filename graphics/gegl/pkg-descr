@@ -6,6 +6,4 @@ non destructive image editing on larger than RAM buffers.
 Through babl it provides support for a wide range of color
 models and pixel storage formats for input and output.
 
-This port is a development snapshot until gegl 0.3.0 is released.
-
 WWW: http://gegl.org/
