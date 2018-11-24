@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Git-Repository
-PORTVERSION=	1.322
+PORTVERSION=	1.323
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,8 +21,9 @@ RUN_DEPENDS=	git:devel/git \
 		p5-namespace-clean>=0:devel/p5-namespace-clean
 TEST_DEPENDS=	p5-Test-Requires-Git>=1.005:devel/p5-Test-Requires-Git
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
