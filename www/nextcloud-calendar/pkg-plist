@@ -15,7 +15,6 @@
 %%WWWDIR%%/css/public/vendor.css
 %%WWWDIR%%/css/public/vendor.min.css
 %%WWWDIR%%/css/public/vendor.min.css.map
-%%WWWDIR%%/http/streamresponse.php
 %%WWWDIR%%/img/calendar.png
 %%WWWDIR%%/img/calendar.svg
 %%WWWDIR%%/img/color_picker.svg
