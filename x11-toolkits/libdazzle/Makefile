@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:lang/vala
 
-USES=		gnome meson pkgconfig tar:xz
+USES=		compiler:c11 gnome meson pkgconfig tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
 
 .include <bsd.port.mk>
