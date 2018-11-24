@@ -837,6 +837,7 @@ share/doc/gimp/libgimpwidgets/gimp-letter-spacing.png
 share/doc/gimp/libgimpwidgets/gimp-line-spacing.png
 share/doc/gimp/libgimpwidgets/gimp-linked.png
 share/doc/gimp/libgimpwidgets/gimp-list.png
+share/doc/gimp/libgimpwidgets/gimp-marker.png
 share/doc/gimp/libgimpwidgets/gimp-menu-left.png
 share/doc/gimp/libgimpwidgets/gimp-menu-right.png
 share/doc/gimp/libgimpwidgets/gimp-merge-down.png
@@ -1698,6 +1699,7 @@ share/gimp/icons/Color/scalable/apps/gimp-letter-spacing.svg
 share/gimp/icons/Color/scalable/apps/gimp-line-spacing.svg
 share/gimp/icons/Color/scalable/apps/gimp-linked.svg
 share/gimp/icons/Color/scalable/apps/gimp-list.svg
+share/gimp/icons/Color/scalable/apps/gimp-marker.svg
 share/gimp/icons/Color/scalable/apps/gimp-menu-left.svg
 share/gimp/icons/Color/scalable/apps/gimp-menu-right.svg
 share/gimp/icons/Color/scalable/apps/gimp-merge-down.svg
@@ -1884,6 +1886,7 @@ share/gimp/icons/Color/scalable/apps/media-floppy.svg
 share/gimp/icons/Color/scalable/apps/media-optical.svg
 share/gimp/icons/Color/scalable/apps/media-playback-pause.svg
 share/gimp/icons/Color/scalable/apps/media-playback-start.svg
+share/gimp/icons/Color/scalable/apps/media-record.svg
 share/gimp/icons/Color/scalable/apps/media-seek-backward.svg
 share/gimp/icons/Color/scalable/apps/media-skip-backward.svg
 share/gimp/icons/Color/scalable/apps/media-skip-forward.svg
@@ -2646,6 +2649,7 @@ share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-letter-spacing.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-line-spacing.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-linked.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-list.svg
+share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-marker.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-menu-left.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-menu-right.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/gimp-merge-down.svg
@@ -2832,6 +2836,7 @@ share/gimp/icons/Symbolic-Inverted/scalable/apps/media-floppy.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/media-optical.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/media-playback-pause.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/media-playback-start.svg
+share/gimp/icons/Symbolic-Inverted/scalable/apps/media-record.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/media-seek-backward.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/media-skip-backward.svg
 share/gimp/icons/Symbolic-Inverted/scalable/apps/media-skip-forward.svg
@@ -3147,6 +3152,7 @@ share/gimp/icons/Symbolic/scalable/apps/gimp-letter-spacing.svg
 share/gimp/icons/Symbolic/scalable/apps/gimp-line-spacing.svg
 share/gimp/icons/Symbolic/scalable/apps/gimp-linked.svg
 share/gimp/icons/Symbolic/scalable/apps/gimp-list.svg
+share/gimp/icons/Symbolic/scalable/apps/gimp-marker.svg
 share/gimp/icons/Symbolic/scalable/apps/gimp-menu-left.svg
 share/gimp/icons/Symbolic/scalable/apps/gimp-menu-right.svg
 share/gimp/icons/Symbolic/scalable/apps/gimp-merge-down.svg
@@ -3333,6 +3339,7 @@ share/gimp/icons/Symbolic/scalable/apps/media-floppy.svg
 share/gimp/icons/Symbolic/scalable/apps/media-optical.svg
 share/gimp/icons/Symbolic/scalable/apps/media-playback-pause.svg
 share/gimp/icons/Symbolic/scalable/apps/media-playback-start.svg
+share/gimp/icons/Symbolic/scalable/apps/media-record.svg
 share/gimp/icons/Symbolic/scalable/apps/media-seek-backward.svg
 share/gimp/icons/Symbolic/scalable/apps/media-skip-backward.svg
 share/gimp/icons/Symbolic/scalable/apps/media-skip-forward.svg
