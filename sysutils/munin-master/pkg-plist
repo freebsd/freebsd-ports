@@ -37,7 +37,7 @@ bin/munin-cron
 @comment BSD.local.dist but if not registered here, it will not exist in PREFIX
 @comment when the package is installed.
 @dir etc/newsyslog.conf.d
-@sample %%ETCDIR%%/munin-master.newsyslog etc/newsyslog.conf.d/munin-master
+@sample %%ETCDIR%%/munin-master.newsyslog etc/newsyslog.conf.d/munin-master.conf
 %%SITE_PERL%%/Munin/Master/Config.pm
 %%SITE_PERL%%/Munin/Master/GraphOld.pm
 %%SITE_PERL%%/Munin/Master/Group.pm
