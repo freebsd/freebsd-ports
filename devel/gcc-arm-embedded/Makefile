@@ -14,7 +14,6 @@ LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
 LICENSE_COMB=	multi
 
 BROKEN_aarch64=		fails to build
-BROKEN_powerpc64=	does not build: __adjust.c: internal compiler error: Segmentation fault
 NOT_FOR_ARCHS=		arm armeb armv6 armv7 \
 			mips mips64 mips64el mipsel mipsn32
 NOT_FOR_ARCHS_REASON=	Very slow to build on emulator
@@ -30,7 +29,7 @@ OPTIONS_DEFAULT=PYGDB SYMLINK
 HTML_DESC=	Install HTML documentation
 PDF_DESC=	Install PDF documentation (requires TeX, it is huge)
 PYGDB_DESC=	Build and install python-enabled gdb in addition to standard one
-SYMLINK_DESC=	Make version-independed symlink ${LOCALBASE}/${PORTNAME}
+SYMLINK_DESC=	Make version-independent symlink ${LOCALBASE}/${PORTNAME}
 
 PDF_USE=		TEX=base:build,tex:build,dvipsk:build
 PDF_BUILD_DEPENDS=	texi2dvi:print/texinfo
@@ -38,7 +37,8 @@ PYGDB_USES=		python:2.7
 
 OPTIONS_SUB=		yes
 
-USES=			bison compiler cpe gmake gettext-runtime iconv makeinfo tar:bzip2
+USES=			bison compiler:c++11-lang cpe gmake gettext-runtime \
+			iconv makeinfo tar:bzip2
 
 GNU_CONFIGURE=	yes
 
