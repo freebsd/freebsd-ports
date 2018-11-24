@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgsl.so:math/gsl \
 #		qwt.5:x11-toolkits/qwt5 \
 #		qwtplot3d-qt4:math/qwtplot3d-qt4
 
-USES=		dos2unix gmake qmake qt:4 tar:bzip2
+USES=		compiler:c++11-lang dos2unix gmake qmake qt:4 tar:bzip2
 USE_QT=		gui opengl svg qt3support network assistantclient \
 		moc_build rcc_build
 USE_GL=		glu
