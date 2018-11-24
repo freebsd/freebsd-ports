@@ -1,31 +1,31 @@
---- libmariadb/plugins/auth/CMakeLists.txt.orig	2017-05-14 23:13:15 UTC
+--- libmariadb/plugins/auth/CMakeLists.txt.orig	2018-11-12 16:32:38 UTC
 +++ libmariadb/plugins/auth/CMakeLists.txt
-@@ -26,6 +26,7 @@ IF(AUTH_DIALOG_PLUGIN_TYPE MATCHES "DYNA
-   INSTALL_PLUGIN(dialog ${CC_BINARY_DIR}/plugins/auth)
- ENDIF()
+@@ -18,6 +18,7 @@ REGISTER_PLUGIN(TARGET dialog
+                 SOURCES ${CC_SOURCE_DIR}/plugins/auth/dialog.c
+                         ${CC_SOURCE_DIR}/libmariadb/get_password.c)
  
 +IF(NOT WITHOUT_CLIENT)
- # SHA256 plugin
- IF(AUTH_SHA256PW_PLUGIN_TYPE MATCHES "DYNAMIC")
-   ADD_DEFINITIONS(-DHAVE_SHA256PW_DYNAMIC=1)
-@@ -51,6 +52,7 @@ IF(AUTH_SHA256PW_PLUGIN_TYPE MATCHES "DY
-   SIGN_TARGET(sha256_password)
-   INSTALL_PLUGIN(sha256_password ${CC_BINARY_DIR}/plugins/auth)
+ #GSSAPI client authentication plugin
+ IF(NOT WIN32)
+   INCLUDE(${CC_SOURCE_DIR}/cmake/FindGSSAPI.cmake)
+@@ -51,6 +52,7 @@ IF(${WITH_SSL} STREQUAL "OPENSSL" OR ${W
+                   SOURCES ${AUTH_DIR}/sha256_pw.c
+                   LIBRARIES ${SHA256_LIBS})
  ENDIF()
 +ENDIF()
  
  # old_password plugin
- IF(AUTH_OLDPASSWORD_PLUGIN_TYPE MATCHES "DYNAMIC")
-@@ -72,6 +74,7 @@ IF(AUTH_OLDPASSWORD_PLUGIN_TYPE MATCHES 
-   SIGN_TARGET(mysql_old_password)
- ENDIF()
+ REGISTER_PLUGIN(TARGET mysql_old_password
+@@ -60,10 +62,11 @@ REGISTER_PLUGIN(TARGET mysql_old_passwor
+                 SOURCES ${AUTH_DIR}/old_password.c)
+ 
  
 +IF(NOT WITHOUT_CLIENT)
  # Cleartext
- IF(AUTH_CLEARTEXT_PLUGIN_TYPE MATCHES "DYNAMIC")
-   ADD_DEFINITIONS(-DHAVE_CLEARTEXT_DYNAMIC=1)
-@@ -124,3 +127,4 @@ IF(${AUTH_GSSAPI_PLUGIN_TYPE} MATCHES "D
-     INSTALL_PLUGIN(auth_gssapi_client ${CC_BINARY_DIR}/plugins/auth)
-   ENDIF()
- ENDIF()
+ REGISTER_PLUGIN(TARGET mysql_clear_password
+                 TYPE MARIADB_CLIENT_PLUGIN_AUTH
+                 CONFIGURATIONS DYNAMIC STATIC OFF
+                 DEFAULT DYNAMIC
+                 SOURCES ${AUTH_DIR}/mariadb_cleartext.c)
+-
 +ENDIF()
