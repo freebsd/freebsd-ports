@@ -10640,3 +10640,4 @@ textproc/rubygem-github-linguist53|textproc/rubygem-github-linguist|2018-11-23|O
 devel/rubygem-google-protobuf351|devel/rubygem-google-protobuf|2018-11-23|Obsolete by www/gitlab-ce 11.5.x upgrade, please use devel/rubygem-google-protobuf
 devel/giggle|devel/gitg|2018-11-23|Has expired: Development stalled. Please switch to devel/gitg.
 net/rubygem-gitaly-proto094|net/rubygem-gitaly-proto|2018-11-24|Use net/rubygem-gitaly-proto instead
+www/rubygem-toml-rb03|www/rubygem-toml-rb|2018-11-25|Has expired: Obsoleted by update of www/gitlab. Please use www/rubygem-tom-rb instead.
