@@ -6,5 +6,5 @@ share/gnome/help/terminatorX/C/terminatorX.xml
 share/mime-info/terminatorX.keys
 share/mime-info/terminatorX.mime
 share/omf/terminatorX/terminatorX-C.omf
-share/pixmaps/terminatorX-app.png
 share/pixmaps/terminatorX-mime.png
+share/pixmaps/terminatorX.png
