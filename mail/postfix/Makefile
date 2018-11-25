@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-DISTVERSION=	3.3.1
-PORTREVISION?=	2
+DISTVERSION=	3.3.2
+PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/ \
@@ -16,7 +16,7 @@ MASTER_SITES:=	${MASTER_SITES:S|$|official/|}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ohauer@FreeBSD.org
-COMMENT=	Secure alternative to widely-used Sendmail
+COMMENT?=	Secure alternative to widely-used Sendmail
 
 LICENSE=	IPL10 EPL
 LICENSE_COMB=	multi
