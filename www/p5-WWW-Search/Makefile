@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	WWW-Search
-PORTVERSION=	2.517
+PORTVERSION=	2.518
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,8 +26,9 @@ RUN_DEPENDS=	p5-Bit-Vector>=0:math/p5-Bit-Vector \
 TEST_DEPENDS=	p5-IO-Capture>=0:devel/p5-IO-Capture \
 		p5-Test-File>=0:devel/p5-Test-File
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
