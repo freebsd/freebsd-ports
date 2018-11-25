@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 USES=		python:2.7 shebangfix
 USE_PYTHON=	flavors
 USE_RC_SUBR=	pdagentd
-USE_GITHUB=	YES
+USE_GITHUB=	yes
 
 GH_ACCOUNT=	PagerDuty
 SHEBANG_FILES=	bin/*
@@ -26,8 +26,8 @@ NO_BUILD=	yes
 SUB_LIST+=	PYTHON_CMD="${PYTHON_CMD}"
 BINFILES=	pd-queue pd-send pdagentd.py
 
-USERS=	pdagent
-GROUPS=	pdagent
+USERS=		pdagent
+GROUPS=		pdagent
 
 do-patch:
 	${REINPLACE_CMD} -e 's|/var/lib/pdagent|/var/db/pdagent| ; s|/etc|${ETCDIR}|' \
