@@ -15,6 +15,7 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub \
 		rdmd:lang/dlang-tools \
 		${LOCALBASE}/lib/d/libdparse.a:devel/libdparse \
+		${LOCALBASE}/lib/d/libmir-core.a:devel/mir-core \
 		${LOCALBASE}/lib/d/libstdx-allocator.a:devel/stdx-allocator
 
 USE_GITHUB=	yes
