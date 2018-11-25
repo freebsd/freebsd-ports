@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-DISTVERSION=	1.8.3
+DISTVERSION=	1.9.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -23,6 +23,7 @@ GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${GH_PROJECT_DEFAULT}
 GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go \
 		cloudfoundry:clock:02e53af:clock/src/code.cloudfoundry.org/clock \
 		collectd:go-collectd:v0.3.0:collectd_org/src/collectd.org \
+		census-ecosystem:opencensus-go-exporter-stackdriver:v0.6.0:census_ecosystem/src/contrib.go.opencensus.io/exporter/stackdriver \
 		Azure:go-autorest:v10.12.0:go_autorest/src/github.com/Azure/go-autorest \
 		Microsoft:ApplicationInsights-Go:d2df5d4:application_insights/src/github.com/Microsoft/ApplicationInsights-Go \
 		Microsoft:go-winio:v0.4.9:go_winio/src/github.com/Microsoft/go-winio \
@@ -33,7 +34,7 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		alecthomas:units:2efee85:units/src/github.com/alecthomas/units \
 		amir:raidman:1ccc43b:raidman/src/github.com/amir/raidman \
 		apache:thrift:f2867c2:thrift/src/github.com/apache/thrift \
-		aws:aws-sdk-go:v1.14.30:aws_sdk_go/src/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.15.54:aws_sdk_go/src/github.com/aws/aws-sdk-go \
 		beorn7:perks:3a771d9:perks/src/github.com/beorn7/perks \
 		bsm:sarama-cluster:v2.1.13:sarama_cluster/src/github.com/bsm/sarama-cluster \
 		cenkalti:backoff:v2.0.0:backoff/src/github.com/cenkalti/backoff \
@@ -48,10 +49,12 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		moby:moby:ed7b642:docker/src/github.com/docker/docker \
 		docker:go-connections:v0.3.0:go_connections/src/github.com/docker/go-connections \
 		docker:go-units:v0.3.3:go_units/src/github.com/docker/go-units \
+		docker:libnetwork:d7b6174:libnetwork/src/github.com/docker/libnetwork \
 		eapache:go-resiliency:v1.1.0:go_resiliency/src/github.com/eapache/go-resiliency \
 		eapache:go-xerial-snappy:040cc1a:go_xerial_snappy/src/github.com/eapache/go-xerial-snappy \
 		eapache:queue:v1.1.0:queue/src/github.com/eapache/queue \
 		eclipse:paho.mqtt.golang:v1.1.1:paho_mqtt_golang/src/github.com/eclipse/paho.mqtt.golang \
+		ericchiang:k8s:v1.2.0:k8s/src/github.com/ericchiang/k8s \
 		go-ini:ini:v1.38.1:ini/src/github.com/go-ini/ini \
 		go-logfmt:logfmt:v0.3.0:go_logfmt/src/github.com/go-logfmt/logfmt \
 		go-ole:go-ole:v1.2.1:go_ole/src/github.com/go-ole/go-ole \
@@ -63,6 +66,7 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		golang:snappy:2e65f85:snappy/src/github.com/golang/snappy \
 		google:go-cmp:v0.2.0:go_cmp/src/github.com/google/go-cmp \
 		google:uuid:0.2:uuid/src/github.com/google/uuid \
+		googleapis:gax-go:v2.0.0:gax_go/src/github.com/googleapis/gax-go \
 		gorilla:context:v1.1.1:context/src/github.com/gorilla/context \
 		gorilla:mux:v1.6.2:mux/src/github.com/gorilla/mux \
 		hailocab:go-hostpool:e80d13c:go_hostpool/src/github.com/hailocab/go-hostpool \
@@ -115,11 +119,15 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		stretchr:testify:v1.2.2:testify/src/github.com/stretchr/testify \
 		tidwall:gjson:v1.1.2:gjson/src/github.com/tidwall/gjson \
 		tidwall:match:1731857:match/src/github.com/tidwall/match \
+		vishvananda:netlink:b2de5d1:netlink/src/github.com/vishvananda/netlink \
+		vishvananda:netns:13995c7:netns/src/github.com/vishvananda/netns \
 		vjeantet:grok:v1.0.0:grok/src/github.com/vjeantet/grok \
 		vmware:govmomi:v0.18.0:govmomi/src/github.com/vmware/govmomi \
 		wvanbergen:kafka:e2edea9:kafka/src/github.com/wvanbergen/kafka \
 		wvanbergen:kazoo-go:f72d861:kazoo_go/src/github.com/wvanbergen/kazoo-go \
 		yuin:gopher-lua:46796da:gopher_lua/src/github.com/yuin/gopher-lua \
+		census-instrumentation:opencensus-go:v0.17.0:opencensus_go/src/go.opencensus.io \
+		googleapis:google-api-go-client:19ff876:api/src/google.golang.org/api \
 		golang:crypto:a214413:crypto/src/golang.org/x/crypto \
 		golang:net:a680a1e:net/src/golang.org/x/net \
 		golang:oauth2:d2e6202:oauth2/src/golang.org/x/oauth2 \
