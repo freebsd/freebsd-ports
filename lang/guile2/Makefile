@@ -3,7 +3,7 @@
 
 PORTNAME=	guile
 PORTVERSION=	2.0.14
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU
 PKGNAMESUFFIX=	2
@@ -23,7 +23,7 @@ CONFLICTS_INSTALL=	guile-[0-9]*
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		charsetfix ${USES_${ARCH}} gmake libtool makeinfo ncurses pathfix \
+USES=		charsetfix ${USES_${ARCH}} gmake iconv libtool makeinfo ncurses pathfix \
 		pkgconfig readline
 USES_powerpc64=	compiler:c11
 
