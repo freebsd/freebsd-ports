@@ -1,0 +1,23 @@
+Index: configure
+===================================================================
+--- src/configure	(revision 2259)
++++ src/configure	(working copy)
+@@ -33,7 +33,9 @@ else
+ fi
+ 
+ echo -n "Looking for ng_ipacct ..."
+-if [ -e /usr/include/netgraph/ng_ipacct.h \
++if [ "$USE_NG_IPACCT" = no ]; then
++    echo " disabled."
++else if [ -e /usr/include/netgraph/ng_ipacct.h \
+   -o -e /usr/local/include/netgraph/ng_ipacct.h ]
+ then
+     echo " found."
+@@ -41,6 +43,7 @@ then
+ else
+     echo " not found."
+ fi
++fi
+ 
+ echo -n "Looking for ng_mppc ..."
+ if [ -e /usr/include/netgraph/ng_mppc.h \

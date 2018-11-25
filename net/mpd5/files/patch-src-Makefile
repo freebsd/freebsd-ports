@@ -1,7 +1,10 @@
---- src/Makefile	2016-01-06 22:42:06.000000000 +0700
-+++ src/Makefile	2017-07-02 17:48:59.910230000 +0700
-@@ -11,8 +11,17 @@
+--- src/Makefile.orig	2016-01-06 22:42:06.000000000 +0700
++++ src/Makefile	2018-11-25 13:48:31.977979000 +0700
+@@ -9,10 +9,20 @@
+ 
+ PROG?=			mpd5
  PREFIX?=		/usr/local
++LOCALBASE?=		${PREFIX}
  BINDIR?=		${PREFIX}/sbin
  VERSION=		5.8
 -NOMAN=
@@ -19,7 +22,17 @@
  
  BINOWN!=		/usr/bin/id -n -u
  BINGRP!=		/usr/bin/id -n -g
-@@ -72,7 +81,7 @@
+@@ -60,9 +70,6 @@
+ USE_AUTH_PAM=		yes
+ USE_AUTH_SYSTEM=	yes
+ 
+-# Build with builtin libpdel
+-NOLIBPDEL=		yes
+-
+ # Build without builtin web server.
+ #NOWEB=			yes
+ 
+@@ -72,7 +79,7 @@
  
  # Print wide protocol names instead of short names.
  # Comment this line, to save about 10 KB space
@@ -28,7 +41,7 @@
  
  # Reduce some internal structures size to save more memory
  # This is to limit amount of active sessions
-@@ -84,27 +93,27 @@
+@@ -84,27 +91,27 @@
  ## filter TCP accept connections
  LDADD+=		-lwrap
  DPADD+=		${LIBWRAP}
@@ -60,8 +73,17 @@
  .endif
  
  LDADD+=		-lnetgraph -lutil
-@@ -122,10 +131,10 @@
+@@ -113,19 +120,12 @@
+ LDADD+=		-L/usr/lib -lradius
+ DPADD+=		${LIBRADIUS}
  
+-## libpdel needs ssl and libexpat (libxml2 cannot be used)
+-.if !defined ( NOLIBPDEL )
+-LDADD+=		-L${PREFIX}/lib
+-LDADD+=		-lpdel
+-LDADD+=		-lexpat
+-.endif
+-
  MPD_VERSION!=	echo -n "${VERSION} (`id -un`@`uname -n` `LC_TIME=C date +'%R %v'`)"
  
 -COPTS+=		-DPATH_CONF_DIR='"${MPD_CONF_DIR}"'
@@ -75,8 +97,13 @@
  		-Wcast-align \
  		-Wchar-subscripts \
  		-Wformat \
-@@ -139,11 +148,11 @@
- 		-I${PREFIX}/include
+@@ -135,15 +135,14 @@
+ 		-Wnested-externs \
+ 		-Wpointer-arith \
+ 		-Wwrite-strings \
+-		-pthread \
+-		-I${PREFIX}/include
++		-pthread
  
  .if defined ( MPD_VENDOR )
 -COPTS+=		-DMPD_VENDOR='"${MPD_VENDOR}"'
@@ -89,7 +116,7 @@
  .endif
  
  # Standard sources
-@@ -155,14 +164,14 @@
+@@ -155,14 +154,13 @@
  		util.c vars.c eap.c msoft.c ippool.c
  
  .if defined ( NOWEB )
@@ -100,13 +127,19 @@
  LDADD+=		-lssl
  .endif
  
- .if defined ( NOLIBPDEL )
+-.if defined ( NOLIBPDEL )
 -COPTS+=		-DNOLIBPDEL -I./contrib/libpdel
-+CFLAGS+=		-DNOLIBPDEL -I./contrib/libpdel
++CFLAGS+=	-DNOLIBPDEL -I./contrib/libpdel
  PDPATH1=	contrib/libpdel/util:contrib/libpdel/structs
  PDPATH2=	contrib/libpdel/structs/type
  .if defined ( NOWEB )
-@@ -206,54 +215,54 @@
+@@ -200,60 +198,59 @@
+ 		string_fp.c \
+ 		timeout_fp.c
+ .endif
+-.endif
+ 
+ # Add sources and flags for the various physical layer types
  
  .if defined ( PHYSTYPE_MODEM )
  SRCS+=		modem.c chat.c
@@ -176,7 +209,7 @@
  .endif
  .endif
  
-@@ -262,46 +271,46 @@
+@@ -262,46 +259,46 @@
  .if defined ( ECP_DES )
  SRCS+=		ecp_dese.c
  SRCS+=		ecp_dese_bis.c
@@ -199,7 +232,7 @@
  .endif
  .if defined ( USE_NG_IPACCT )
 -COPTS+=         -DUSE_NG_IPACCT
-+CFLAGS+=	-DUSE_NG_IPACCT
++CFLAGS+=	-DUSE_NG_IPACCT -nostdinc -I/usr/include -I${LOCALBASE}/include
  .endif
  .if defined ( USE_NG_NAT )
  SRCS+=		nat.c
@@ -234,7 +267,7 @@
  .endif
  
  # Add in required support files and libraries
-@@ -310,7 +319,7 @@
+@@ -310,15 +307,12 @@
  
  .if exists ( /usr/lib/libexecinfo.so )
  LDADD+=		-lexecinfo
@@ -243,3 +276,11 @@
  .endif
  
  # Now add standard sources
+ 
+ SRCS+=		${STDSRCS}
+-
+-.if defined ( NOLIBPDEL )
+ SRCS+=		${PDELSRCS}
+-.endif
+ 
+ .include <bsd.prog.mk>

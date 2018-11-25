@@ -3,7 +3,7 @@
 
 PORTNAME=	mpd
 DISTVERSION=	5.8
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Mpd5/Mpd-${PORTVERSION}
 PKGNAMESUFFIX=	5
@@ -42,6 +42,9 @@ RUN_DEPENDS+=	${KMODDIR}/ng_ipacct.ko:net-mgmt/ng_ipacct
 .else
 RUN_DEPENDS+=	/boot/modules/ng_ipacct.ko:net-mgmt/ng_ipacct
 .endif
+.else
+CONFIGURE_ENV+=	USE_NG_IPACCT=no
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-no-ng_ipacct
 .endif
 
 USE_RC_SUBR=	mpd5
