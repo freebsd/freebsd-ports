@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	oslo.config
-PORTVERSION=	6.4.1
+PORTVERSION=	6.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,11 +29,6 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' \
-		${WRKSRC}/doc/source/reference/sphinxconfiggen.rst \
-		${WRKSRC}/oslo_config/_list_opts.py \
-		${WRKSRC}/oslo_config/cfg.py \
-		${WRKSRC}/oslo_config/tests/test_cfg.py \
-		${WRKSRC}/releasenotes/notes/add-default-config-dirs-03340ff6689afe94.yaml
+	@${GREP} -lr /etc ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e 's|/etc|${PREFIX}&|g'
 
 .include <bsd.port.mk>
