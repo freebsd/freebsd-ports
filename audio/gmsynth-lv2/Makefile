@@ -2,8 +2,8 @@
 
 PORTNAME=	gmsynth
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
-PORTREVISION=	2
+DISTVERSION=	0.3.0-5
+DISTVERSIONSUFFIX=	-g84f6379
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -14,9 +14,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	lv2>0:audio/lv2
-LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
+# FluidSynth is left bundled based on the project owner's request: https://github.com/x42/gmsynth.lv2/issues/2#issuecomment-441458303
 
-USES=		gmake pkgconfig
+USES=		gmake gnome pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	x42
 GH_PROJECT=	${PORTNAME}.lv2
