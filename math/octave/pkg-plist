@@ -2191,6 +2191,14 @@ lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/symbfact.oct
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/symrcm.oct
 libexec/octave/%%OCTAVE_VERSION%%/exec/%%GNU_HOST%%/octave-gui
 share/applications/org.octave.Octave.desktop
+share/icons/hicolor/128x128/apps/octave.png
+share/icons/hicolor/16x16/apps/octave.png
+share/icons/hicolor/22x22/apps/octave.png
+share/icons/hicolor/24x24/apps/octave.png
+share/icons/hicolor/256x256/apps/octave.png
+share/icons/hicolor/32x32/apps/octave.png
+share/icons/hicolor/48x48/apps/octave.png
+share/icons/hicolor/512x512/apps/octave.png
+share/icons/hicolor/64x64/apps/octave.png
 share/icons/hicolor/scalable/apps/octave.svg
-share/icons/hicolor/x/apps/octave.png
 share/metainfo/org.octave.Octave.appdata.xml
