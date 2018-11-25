@@ -673,6 +673,7 @@ include/wine/windows/pstore.h
 include/wine/windows/pstore.idl
 include/wine/windows/qedit.h
 include/wine/windows/qedit.idl
+include/wine/windows/qos2.h
 include/wine/windows/ras.h
 include/wine/windows/rasdlg.h
 include/wine/windows/raserror.h
