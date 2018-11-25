@@ -3,7 +3,7 @@
 
 PORTNAME=	unifi
 PORTVERSION=	5.6.40
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/${PORTVERSION}/
 PKGNAMESUFFIX=	-lts
@@ -14,7 +14,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	UniFi Controller v5
 
-RUN_DEPENDS=	mongodb34>0:databases/mongodb34 \
+RUN_DEPENDS=	mongodb36>0:databases/mongodb36 \
 		snappyjava>0:archivers/snappy-java
 
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS} JAVASHAREDIR=${JAVASHAREDIR} \
