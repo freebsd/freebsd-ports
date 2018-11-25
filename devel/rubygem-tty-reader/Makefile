@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tty-reader
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,8 +16,9 @@ RUN_DEPENDS=	rubygem-tty-cursor>=0.6.0:devel/rubygem-tty-cursor \
 		rubygem-tty-screen>=0.6.4:devel/rubygem-tty-screen \
 		rubygem-wisper>=2.0.0:devel/rubygem-wisper
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
