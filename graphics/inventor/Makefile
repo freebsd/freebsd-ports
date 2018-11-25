@@ -3,7 +3,7 @@
 
 PORTNAME=	inventor
 PORTVERSION=	2.1.5.p10
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://oss.sgi.com/projects/inventor/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-/}
@@ -14,17 +14,16 @@ COMMENT=	SGI's Open Inventor (TM)
 
 LICENSE=	LGPL21
 
-BROKEN=		fails to build
+ONLY_FOR_ARCHS=	amd64 i386
+CONFLICTS=	Coin-[0-9]* SoXt-[0-9]*
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-CONFLICTS=	Coin-[0-9]* SoXt-[0-9]*
-
+USES=		gl gmake iconv jpeg motif
 USE_XORG=	x11 xext xi xp xt
-USE_GL=		glu glw
-USES=		gmake iconv jpeg motif
+USE_GL=		gl glu glw
 USE_LDCONFIG=	yes
-ONLY_FOR_ARCHS=	i386 amd64
+
 MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -46,6 +45,7 @@ DEBUG_MAKE_ENV=	LIBTYPE=debug
 
 LDFLAGS+=	-Wl,--add-needed
 LLD_UNSAFE=	yes
+CFLAGS+=	-Wno-c++11-narrowing # cause of "lib/interaction/src/draggers/geom/SoCenterballDraggerGeom.h"
 
 post-patch:
 # Fix for print/freetype2 v2.7, where FT_Done_GlyphSlot function is not exported
@@ -55,5 +55,4 @@ post-patch:
 		${WRKSRC}/libFL/ang/GNUmakefile
 	@${REINPLACE_CMD} -e 's|%%ICONV_LIB%%|${ICONV_LIB}|' \
 	    ${WRKSRC}/lib/GNUmakefile
-
 .include <bsd.port.mk>
