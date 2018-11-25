@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	clusterssh
-DISTVERSIONPREFIX=	release-
-DISTVERSION=	4.13.2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	4.13.2_01
 CATEGORIES=	security net
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -40,12 +40,20 @@ TEST_DEPENDS=	p5-CPAN-Changes>=0:devel/p5-CPAN-Changes \
 USES=		perl5
 USE_GITHUB=	yes
 USE_PERL5=	modbuild
+
 NO_ARCH=	yes
 
 GH_ACCOUNT=	duncs
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	BASH
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 502701
+BUILD_DEPENDS+=	p5-Getopt-Long>=2.50:devel/p5-Getopt-Long
+RUN_DEPENDS+=	p5-Getopt-Long>=2.50:devel/p5-Getopt-Long
+.endif
 
 post-install-BASH-off:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/clusterssh_bash_completion.dist
@@ -55,4 +63,4 @@ post-install-BASH-on:
 	${MV} ${STAGEDIR}${PREFIX}/bin/clusterssh_bash_completion.dist \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d/clusterssh
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
