@@ -1,0 +1,11 @@
+--- cucumber-formatter-dots.gemspec.orig	2018-11-26 15:41:32 UTC
++++ cucumber-formatter-dots.gemspec
+@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+       s.add_runtime_dependency(%q<c21e>.freeze, ["~> 1.1.8"])
+-      s.add_runtime_dependency(%q<cucumber-messages>.freeze, ["~> 2.0.0"])
++      s.add_runtime_dependency(%q<cucumber-messages>.freeze, ["~> 2.1.0"])
+       s.add_development_dependency(%q<bundler>.freeze, [">= 0"])
+       s.add_development_dependency(%q<rake>.freeze, ["~> 10.5"])
+       s.add_development_dependency(%q<rspec>.freeze, ["~> 3.7"])
