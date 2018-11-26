@@ -9,3 +9,12 @@
  #elif defined(CONFIG_GNUTLS)
  	{
  		/* GnuTLS does not support SSLv2 because it is "insecure".
+@@ -145,7 +145,7 @@
+ 		}
+ 
+ 		if (client_cert) {
+-			SSL_CTX *ctx = ((SSL *) socket->ssl)->ctx;
++			SSL_CTX *ctx = SSL_get_SSL_CTX(socket->ssl);
+ 
+ 			SSL_CTX_use_certificate_chain_file(ctx, client_cert);
+ 			SSL_CTX_use_PrivateKey_file(ctx, client_cert,
