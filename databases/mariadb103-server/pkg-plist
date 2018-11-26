@@ -3,9 +3,9 @@ bin/aria_dump_log
 bin/aria_ftdump
 bin/aria_pack
 bin/aria_read_log
-bin/innochecksum
-bin/mariabackup
-bin/mbstream
+%%INNOBASE%%bin/innochecksum
+%%INNOBASE%%bin/mariabackup
+%%INNOBASE%%bin/mbstream
 @comment bin/msql2mysql
 bin/my_print_defaults
 bin/myisam_ftdump
