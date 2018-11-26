@@ -1,5 +1,6 @@
 include/secp256k1.h
 include/secp256k1_ecdh.h
+include/secp256k1_recovery.h
 lib/libsecp256k1.a
 lib/libsecp256k1.so
 lib/libsecp256k1.so.0
