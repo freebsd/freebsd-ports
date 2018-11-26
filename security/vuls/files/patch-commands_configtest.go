@@ -1,4 +1,4 @@
---- commands/configtest.go.orig	2017-06-23 15:51:48 UTC
+--- commands/configtest.go.orig	2018-11-16 12:22:18 UTC
 +++ commands/configtest.go
 @@ -20,8 +20,6 @@ package commands
  import (
@@ -9,7 +9,7 @@
  
  	"github.com/google/subcommands"
  
-@@ -68,8 +66,7 @@ func (*ConfigtestCmd) Usage() string {
+@@ -63,8 +61,7 @@ func (*ConfigtestCmd) Usage() string {
  
  // SetFlags set flag
  func (p *ConfigtestCmd) SetFlags(f *flag.FlagSet) {
