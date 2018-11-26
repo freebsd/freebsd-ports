@@ -20,3 +20,12 @@
  PKGCONFIGDIR = $(INSTALLDIRLIB)/pkgconfig
  
  FILESTOINSTALL = $(LIBRARY) $(EXECUTABLES)
+@@ -229,7 +228,7 @@ distclean: clean
+ 
+ updateversion:	miniupnpc.h
+ 	cp miniupnpc.h miniupnpc.h.bak
+-	sed 's/\(.*MINIUPNPC_API_VERSION\s\+\)[0-9]\+/\1$(APIVERSION)/' < miniupnpc.h.bak > miniupnpc.h
++	sed -E 's/(.*MINIUPNPC_API_VERSION[[:space:]]+)[0-9]+/\1$(APIVERSION)/' < miniupnpc.h.bak > miniupnpc.h
+ 
+ install:	updateversion $(FILESTOINSTALL)
+ 	$(INSTALL) -d $(DESTDIR)$(INSTALLDIRINC)
