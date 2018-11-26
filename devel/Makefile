@@ -6295,6 +6295,7 @@
     SUBDIR += tex-libtexluajit
     SUBDIR += tex-synctex
     SUBDIR += tex-web2c
+    SUBDIR += thonny
     SUBDIR += thrift
     SUBDIR += thrift-c_glib
     SUBDIR += thrift-cpp
