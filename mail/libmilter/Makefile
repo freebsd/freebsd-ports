@@ -42,7 +42,7 @@ post-patch-MILTER_SHARED-on:
 		${WRKSRC}/libsharedmilter/Makefile.m4
 
 do-configure:
-	${REINPLACE_CMD} -e "s|\`-O\'|\`${CFLAGS}\'|" \
+	${REINPLACE_CMD} -e "s|\`-O'|\`${CFLAGS}'|" \
 		-e 's|%%CC%%|${CC}|' -e 's|%%LD%%|${LD}|' \
 		${WRKSRC}/devtools/OS/FreeBSD
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
