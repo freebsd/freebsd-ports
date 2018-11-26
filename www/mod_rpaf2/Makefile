@@ -4,6 +4,7 @@
 PORTNAME=	mod_rpaf
 PORTVERSION=	0.8.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMESUFFIX=	2
 
@@ -12,12 +13,11 @@ COMMENT=	Make proxied requests appear with client IP
 
 LICENSE=	APACHE20
 
+USES=		apache:2.2+
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	gnif
 
-DOCS=	README.md
-
-USES=		apache:2.2+
 AP_FAST_BUILD=	yes
 SHORTMODNAME=	rpaf
 
@@ -25,8 +25,8 @@ SRC_FILE=	mod_rpaf.c
 
 APMOD_FILE=	200_mod_rpaf.conf.sample
 PLIST_SUB+=	APMOD_FILE=${APMOD_FILE}
-PLIST_FILES=	@sample\ %%APACHEETCDIR%%/modules.d/200_${PORTNAME}.conf.sample \
-		%%APACHEMODDIR%%/${PORTNAME}.so
+PLIST_FILES=	@sample\ ${APACHEETCDIR}/modules.d/200_${PORTNAME}.conf.sample \
+		${APACHEMODDIR}/${PORTNAME}.so
 SUB_FILES=	${APMOD_FILE}
 
 PORTDOCS=	README.md
