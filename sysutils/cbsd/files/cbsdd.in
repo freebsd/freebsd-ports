@@ -49,8 +49,8 @@ start_precmd=${name}_prestart
 stop_precmd=${name}_prestop
 stop_cmd=${name}_stop
 status_cmd="${name}_status"
-reload_cmd=${name}_reload
-extra_commands="reload"
+restart_cmd=${name}_restart
+extra_commands="restart"
 
 command="${toolsdir}/cbsdd"
 pidfile="/var/run/$name.pid"
@@ -58,7 +58,6 @@ command_args="&"
 
 cbsdd_prestart() {
 	%%PREFIX%%/bin/cbsd task mode=flushall > /dev/null 2>&1
-
 	. ${distdir}/initenv.subr
 	. ${inventory}
 
@@ -67,7 +66,7 @@ cbsdd_prestart() {
 	update_netinfo
 	env sqlcolnames="1" ${miscdir}/sqlcli ${dbdir}/local.sqlite "SELECT * FROM local" > ${inventory}
 	${miscdir}/sqlcli ${dbdir}/local.sqlite "UPDATE jails SET status='0' WHERE status='3'"
-	[ -n "$nat_enable" ] && %%PREFIX%%/bin/cbsd naton
+	[ -n "${nat_enable}" ] && %%PREFIX%%/bin/cbsd naton
 	/usr/sbin/daemon -f ${rcddir}/jails-astart start
 }
 
@@ -80,15 +79,21 @@ cbsdd_prestop()
 cbsdd_stop()
 {
 	if [ -f "${pidfile}" ]; then
-		kill -9 $( /bin/cat ${pidfile} )
-		/bin/rm -f ${pidfile}
+		pids=$( pgrep -F ${pidfile} 2>&1 )
+		_err=$?
+		if [ ${_err} -eq  0 ]; then
+			kill -9 ${pids} && /bin/rm -f ${pidfile}
+		else
+			echo "pgrep: ${pids}"
+			return ${_err}
+		fi
 	fi
 }
 
-cbsdd_reload()
+cbsdd_restart()
 {
 	if [ -f "${pidfile}" ]; then
-		kill -9 $( /bin/cat ${pidfile} ) > /dev/null 2>&1
+		pkill -9 -f ${pidfile} > /dev/null 2>&1
 		/bin/rm -f ${pidfile}
 	fi
 	run_rc_command "start"
@@ -97,9 +102,17 @@ cbsdd_reload()
 
 cbsdd_status()
 {
+	local _err
+
 	if [ -f "${pidfile}" ]; then
-		pids=$( /bin/cat ${pidfile} )
-		echo "${name} is running as pid ${pids}."
+		pids=$( pgrep -F ${pidfile} 2>&1 )
+		_err=$?
+		if [ ${_err} -eq  0 ]; then
+			echo "${name} is running as pid ${pids}."
+		else
+			echo "pgrep: ${pids}"
+			return ${_err}
+		fi
 	else
 		echo "${name} is not running."
 		return 1
