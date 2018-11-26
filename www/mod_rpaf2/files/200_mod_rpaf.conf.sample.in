@@ -1,5 +1,5 @@
 LoadModule rpaf_module	%%APACHEMODDIR%%/mod_rpaf.so
-<IfModule mod_rpaf>
+<IfModule rpaf_module>
   # Enable reverse proxy add forward
   #RPAF_Enable On
 
