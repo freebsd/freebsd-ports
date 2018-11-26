@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	jcoffman@openfire.io
+MAINTAINER=	jcoffman@ipsecure.io
 COMMENT=	Profile and configuration utilities for GNU Screen and/or tmux
 
 LICENSE=	GPLv3
