@@ -1,3 +1,3 @@
 bindgen automatically generates Rust FFI bindings to C and C++ libraries.
 
-WWW: https://github.com/rust-lang-nursery/rust-bindgen
+WWW: https://github.com/rust-lang/rust-bindgen

@@ -89,5 +89,5 @@ SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 712e227841d057c
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
 SHA256 (rust/crates/wincolor-1.0.1.tar.gz) = 561ed901ae465d6185fa7864d63fbd5720d0ef718366c9a4dc83cf6170d7e9ba
 SIZE (rust/crates/wincolor-1.0.1.tar.gz) = 4737
-SHA256 (rust-lang-nursery-rust-bindgen-v0.43.2_GH0.tar.gz) = 481cb3b7d187881ac6beaa93f88e494d40a2532a57eb11bf74cfe819cc431a72
-SIZE (rust-lang-nursery-rust-bindgen-v0.43.2_GH0.tar.gz) = 2178421
+SHA256 (rust-lang-rust-bindgen-v0.43.2_GH0.tar.gz) = 481cb3b7d187881ac6beaa93f88e494d40a2532a57eb11bf74cfe819cc431a72
+SIZE (rust-lang-rust-bindgen-v0.43.2_GH0.tar.gz) = 2178421

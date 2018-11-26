@@ -15,7 +15,7 @@ RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 
 USES=		cargo
 USE_GITHUB=	yes
-GH_ACCOUNT=	rust-lang-nursery
+GH_ACCOUNT=	rust-lang
 PLIST_FILES=	bin/bindgen
 
 CARGO_CRATES=	aho-corasick-0.6.8 \
