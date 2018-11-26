@@ -12,6 +12,7 @@ COMMENT=	Perl extension of PSGI reference implementation and utilities
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 	p5-File-ShareDir-Install>=0.03:devel/p5-File-ShareDir-Install
@@ -48,7 +49,7 @@ TEST_DEPENDS=	\
 	p5-Test-Requires>0:devel/p5-Test-Requires \
 	p5-Test-TCP>=2.15:devel/p5-Test-TCP
 
-USES=	perl5
+USES=		perl5
 USE_PERL5=	configure
 NO_ARCH=	YES
 
