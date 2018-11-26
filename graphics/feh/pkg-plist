@@ -1,9 +1,5 @@
 bin/feh
-%%CAM%%bin/feh-cam
-%%CAM%%bin/gen-cam-menu
-%%CAM%%man/man1/feh-cam.1.gz
 man/man1/feh.1.gz
-%%CAM%%man/man1/gen-cam-menu.1.gz
 share/applications/feh.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -18,11 +14,6 @@ share/applications/feh.desktop
 %%DATADIR%%/fonts/yudit.ttf
 %%DATADIR%%/images/feh.png
 %%DATADIR%%/images/feh.svg
-%%DATADIR%%/images/menubg_aluminium.png
-%%DATADIR%%/images/menubg_aqua.png
-%%DATADIR%%/images/menubg_black.png
-%%DATADIR%%/images/menubg_brushed.png
 %%DATADIR%%/images/menubg_default.png
-%%DATADIR%%/images/menubg_sky.png
 share/icons/hicolor/48x48/apps/feh.png
 share/icons/hicolor/scalable/apps/feh.svg
