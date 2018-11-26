@@ -2,7 +2,7 @@
 
 PORTNAME=	sendmail
 PORTVERSION=	8.15.2
-PORTREVISION=	13
+PORTREVISION=	12
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -148,7 +148,7 @@ NO_PACKAGE=	GPLv3 license conflict
 SITE+=	${FILESDIR}/site.config.m4.gdbm
 .endif
 
-SED_SCRIPT=	-e "s|\`-O\'|\`${CFLAGS}\'|" \
+SED_SCRIPT=	-e "s|\`-O'|\`${CFLAGS}'|" \
 		-e 's|%%CC%%|${CC}|' -e 's|%%LD%%|${LD}|'
 
 .if ! ${PORT_OPTIONS:MNIS}
