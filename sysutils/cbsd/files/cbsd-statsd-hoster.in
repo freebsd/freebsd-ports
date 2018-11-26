@@ -1,0 +1,96 @@
+#!/bin/sh
+#
+# PROVIDE: cbsd_statsd_hoster
+# REQUIRE: LOGIN FILESYSTEMS sshd
+# KEYWORD: shutdown
+#
+# cbsd_statsd_hoster_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=cbsd_statsd_hoster
+rcvar=cbsd_statsd_hoster_enable
+load_rc_config $name
+
+# Set defaults
+: ${cbsd_statsd_hoster_enable:="NO"}
+
+export workdir="${cbsd_workdir}"
+globalconf=${cbsd_globalconf:-"${workdir}/cbsd.conf"}
+
+start_cmd=${name}_start
+restart_cmd=${name}_restart
+extra_commands="restart"
+
+command="${cbsd_workdir}/tools/racct-hoster-statsd"
+pidfile="/var/run/$name.pid"
+command_args="&"
+
+pidfile=/var/run/racct-hoster-statsd.pid
+
+if [ ! -f ${globalconf} ]; then
+	echo "cbsd: no such ${globalconf}";
+	exit 1
+fi
+
+if [ ! -f ${subr} ]; then
+	echo "cbsd: no such ${subr}";
+	exit 1
+fi
+
+. ${globalconf}
+. ${subr}
+
+cbsd_statsd_hoster_start()
+{
+	local args= racct_enabled=
+
+	# RACCT enabled?
+	racct_enabled=$( /sbin/sysctl -qn kern.racct.enable )
+	[ $? -ne 0 ] && err 1 "cbsd-statsd-hoster: RACCT not enabled"
+	[ "${racct_enabled}" != "1" ] && err 1 "cbsd-statsd-hoster: RACCT not enabled"
+
+	readconf racct-hoster-statsd.conf
+	[ -n "${log_file}" ] && args="${args} --log_file=${log_file}"
+	[ -n "${log_level}" ] && args="${args} --log_level=${log_level}"
+	[ -n "${loop_interval}" ] && args="${args} --loop_interval=${loop_interval}"
+	[ -n "${save_loop_count}" ] && args="${args} --save_loop_count=${save_loop_count}"
+
+	case "${prometheus_exporter_enable}" in
+		[Yy][Ee][Ss])
+			args="${args} --prometheus_exporter=1"
+			;;
+		[No][Oo])
+			args="${args} --prometheus_exporter=0"
+			;;
+	esac
+
+	case "${beanstald_enable}" in
+		[Yy][Ee][Ss])
+			args="${args} --save_beanstalkd=1"
+			;;
+		[No][Oo])
+			args="${args} --save_beanstalkd=0"
+			;;
+	esac
+
+	case "${sqlite3_enable}" in
+		[Yy][Ee][Ss])
+			args="${args} --save_sqlite=1"
+			;;
+		[No][Oo])
+			args="${args} --save_sqlite=0"
+			;;
+	esac
+
+	exec env workdir=${cbsd_workdir} ${cbsd_workdir}/tools/racct-hoster-statsd ${args}
+}
+
+cbsd_statsd_hoster_restart()
+{
+	cbsd_statsd_hoster_stop
+	cbsd_statsd_hoster_start
+}
+
+run_rc_command "$1"
