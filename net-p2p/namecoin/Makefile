@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	namecoin
-PORTVERSION=	0.16.2
+PORTVERSION=	0.17.0
 DISTVERSIONPREFIX=	nc
 PORTEPOCH=	1
 CATEGORIES=	net-p2p dns
@@ -29,15 +29,14 @@ GH_TAGNAME=	a13a73b:graphics
 SLAVE_PORT?=	no
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
-USES+=		desktop-file-utils qt:4
-USE_QT=		corelib gui moc_build linguisttools_build network qmake_build \
-		rcc_build uic_build xml
+USES+=		desktop-file-utils qt:5
+USE_QT=		core buildtools gui linguisttools_build network qmake_build xml widgets
 
 BUILD_DEPENDS+=	protoc:devel/protobuf \
 		svg2png:graphics/svg2png
 LIB_DEPENDS+=	libprotobuf.so:devel/protobuf
 
-TESTS_USES=		qt:4
+TESTS_USES=		qt:5
 TESTS_USE=		QT=testlib
 TESTS_PLIST_FILES=	bin/test_namecoin-qt \
 			bin/test_namecoin
@@ -54,7 +53,7 @@ WALLET_DESC=	Wallet Management Support
 ZMQ_DESC=	Block and transaction broadcasting with ZeroMQ
 
 DBUS_CONFIGURE_WITH=	qtdbus
-DBUS_USES=		qt:4
+DBUS_USES=		qt:5
 DBUS_USE=		QT=dbus
 
 DEBUG_CONFIGURE_ENABLE=		debug
@@ -86,7 +85,7 @@ ZMQ_BUILD_DEPENDS=	libzmq4>0:net/libzmq4
 ZMQ_RUN_DEPENDS=	libzmq4>0:net/libzmq4
 
 CONFIGURE_ARGS?=	--without-libs \
-			--with-gui=qt4 \
+			--with-gui=qt5 \
 			--without-daemon \
 			--without-utils \
 			--disable-man
@@ -102,10 +101,8 @@ PLIST_FILES?=	bin/namecoin-qt share/applications/namecoin-qt.desktop \
 .if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
 
 post-install:
-	${REINPLACE_CMD} -e 's/bitcoin/namecoin/g;s/Bitcoin/Namecoin/g' \
-		${WRKSRC}/contrib/debian/bitcoin-qt.desktop
-	${INSTALL} ${WRKSRC}/contrib/debian/bitcoin-qt.desktop \
-		${STAGEDIR}${PREFIX}/share/applications/namecoin-qt.desktop
+	${INSTALL_DATA} ${FILESDIR}/namecoin-qt.desktop \
+		${STAGEDIR}${PREFIX}/share/applications/
 	${LOCALBASE}/bin/svg2png -w128 -h128 ${WRKSRC_graphics}/svg/namecoin-logo.svg \
 		${STAGEDIR}${PREFIX}/share/pixmaps/namecoin128.png
 
