@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	feh
-PORTVERSION=	2.28.1
+PORTVERSION=	3.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://feh.finalrewind.org/ \
 		LOCAL/uqs
@@ -18,22 +18,18 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png
 
 USES=		compiler:c++11-lang cpe desktop-file-utils gmake localbase:ldflags \
-		perl5 shebangfix tar:bzip2
-SHEBANG_FILES=	cam/feh-cam
+		tar:bzip2
 USE_XORG=	x11 xt xinerama
 USE_PERL5=	run
 CPE_VENDOR=	daniel_friesel
 
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}" verscmp=0
 
-OPTIONS_DEFINE=	CAM DCRAW DOCS EXAMPLES EXIF
-CAM_DESC=	Install feh-cam and related tools
+OPTIONS_DEFINE=	DCRAW DOCS EXAMPLES EXIF
 EXIF_DESC=	Support EXIF tags
 DCRAW_DESC=	Use dcraw to display raw file previews
-OPTIONS_DEFAULT=CAM EXIF
+OPTIONS_DEFAULT=EXIF
 OPTIONS_SUB=	yes
-
-CAM_MAKE_ENV=	cam=1
 
 EXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
 EXIF_MAKE_ENV=	exif=1
