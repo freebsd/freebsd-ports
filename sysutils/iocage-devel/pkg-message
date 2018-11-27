@@ -1,9 +1,0 @@
-
--------------------------------------------------------
-iocage-devel is highly EXPERIMENTAL!
-
-iocage 2.0 is going to completely replace the backend
-library while aiming to keep a somewhat compatible CLI.
-
-Expect data loss, use at your own risk!
--------------------------------------------------------
