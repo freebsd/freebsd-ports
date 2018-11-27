@@ -15,7 +15,7 @@ BUILD_DEPENDS=	pkgconf:devel/pkgconf
 LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg \
 		libexpat.so:textproc/expat2
 
-USES=		compiler:c++11-lang
+USES=		alias cmake:outsource compiler:c++11-lang tar:bzip2 ssl
 
 OPTIONS_RADIO=		VTK
 OPTIONS_RADIO_VTK=	VTK5 VTK6
@@ -39,7 +39,6 @@ GDCM_PATCH=	8
 VTK5_VERSION=	5.10
 VTK6_VERSION=	6.2
 
-USES=		alias cmake:outsource tar:bzip2 ssl
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 CMAKE_ARGS=	-DGDCM_USE_SYSTEM_OPENSSL:BOOL=ON \
