@@ -30,8 +30,10 @@ include/nng/transport/inproc/inproc.h
 include/nng/transport/ipc/ipc.h
 include/nng/transport/tcp/tcp.h
 include/nng/transport/ws/websocket.h
-lib/cmake/nng/nng-config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/nng/nng-config.cmake
+lib/cmake/nng/nng-config-version.cmake
+lib/cmake/nng/nng-targets.cmake
+lib/cmake/nng/nng-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/libnng.so
 lib/libnng.so.1
-lib/libnng.so.1.0.0
+lib/libnng.so.1.1.0
