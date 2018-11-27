@@ -423,6 +423,7 @@
     SUBDIR += mhash
     SUBDIR += mindterm-binary
     SUBDIR += minisign
+    SUBDIR += modsecurity3
     SUBDIR += monkeysphere
     SUBDIR += morphis
     SUBDIR += munge

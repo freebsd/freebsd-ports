@@ -1,10 +1,10 @@
 # $FreeBSD$
 
-PORTNAME=	mod_security
+PORTNAME=	modsecurity
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.2
-PORTREVISION=	1
-CATEGORIES=	www security
+PORTREVISION=	2
+CATEGORIES=	security www
 PKGNAMESUFFIX=	3
 
 MAINTAINER=	marius.halden@modirum.com
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libyajl.so:devel/yajl \
 		libGeoIP.so:net/GeoIP
 
-USES=		autoreconf compiler:c++11-lang gmake libtool pkgconfig:build
+USES=		autoreconf compiler:c++11-lang gmake gnome libtool pkgconfig:build
 USE_GNOME=	libxml2
 # GCC because of https://github.com/SpiderLabs/ModSecurity/issues/1411
 USE_GCC=	yes
@@ -33,6 +33,8 @@ GH_TUPLE+=	client9:libinjection:da027ab:libinjection/others/libinjection
 GH_TUPLE+=	SpiderLabs:ModSecurity-Python-bindings:bc625d5:modsecurity_python_bindings/bindings/python
 
 ETCDIR=		${PREFIX}/etc/modsecurity
+
+CONFLICTS_INSTALL=	ap??-mod_security mod_security3
 
 post-install:
 	@${MKDIR}	${STAGEDIR}${ETCDIR}
