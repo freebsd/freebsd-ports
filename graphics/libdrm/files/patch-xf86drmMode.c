@@ -1,4 +1,4 @@
---- xf86drmMode.c.orig	2018-05-13 10:01:15 UTC
+--- xf86drmMode.c.orig	2018-10-04 14:50:03 UTC
 +++ xf86drmMode.c
 @@ -43,6 +43,7 @@
  #include <stdlib.h>
@@ -8,7 +8,7 @@
  #include <sys/sysctl.h>
  #endif
  #include <stdio.h>
-@@ -792,41 +793,59 @@ int drmCheckModesettingSupported(const char *busid)
+@@ -799,41 +800,59 @@ drm_public int drmCheckModesettingSupported(const char
  	closedir(sysdir);
  	if (found)
  		return 0;
