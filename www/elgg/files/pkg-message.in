@@ -15,26 +15,14 @@ and change the AllowOverride setting of the DocumentRoot to
 3) Add the following to your Apache configuration, and
    restart the server:
 
-   ### Add the AcceptPathInfo directive only for Apache 2.0.30 or later.
    Alias /elgg %%WWWDIR%%/
-   AcceptPathInfo On
    <Directory %%WWWDIR%%>
-      AllowOverride All
-      Options Indexes FollowSymLinks
-      Order Allow,Deny
-      Allow from all
+      AllowOverride all
+      Require all granted
    </Directory>
 
 4) Visit your Elgg site with a browser (i.e.,
-   http://your.server.com/elgg/), and you should
-   be taken to the install.php script, which will lead
-   you through creating a config.php file and then
-   setting up Elgg.
-
-   When ask for the site URL, please input:
-       http://your.server.com/elgg/
-   and for uploaded URL, please input:
-       /usr/local/www/elggdata/
+   http://your.server.com/elgg/).
 
 For more information, see the INSTALL DOCUMENTATION:
 
