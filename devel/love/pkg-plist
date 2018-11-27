@@ -1,7 +1,6 @@
 bin/love
+lib/liblove-11.1.so
 lib/liblove.so
-lib/liblove.so.0
-lib/liblove.so.0.0.0
 man/man1/love.1.gz
 share/applications/love.desktop
 share/icons/hicolor/scalable/mimetypes/application-x-love-game.svg
