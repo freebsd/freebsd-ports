@@ -1,0 +1,8 @@
+This class implements a "Log::Log4perl" layout format, similar to
+Log::Log4perl::Layout::PatternLayout except that the output is a JSON hash.
+The JSON hash is ASCII encoded, with no newlines or other whitespace, and is
+suitable for output, via Log::Log4perl appenders, to files and syslog etc.
+The JSON hash can, optionally, be UTF-8 encoded.
+Contextual data in the Log::Log4perl::MDC hash can be included.
+
+WWW: https://metacpan.org/release/Log-Log4perl

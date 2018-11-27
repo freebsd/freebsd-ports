@@ -2897,6 +2897,7 @@
     SUBDIR += p5-Log-Log4perl
     SUBDIR += p5-Log-Log4perl-Appender-RabbitMQ
     SUBDIR += p5-Log-Log4perl-Appender-Socket-UNIX
+    SUBDIR += p5-Log-Log4perl-Layout-JSON
     SUBDIR += p5-Log-Log4perl-Tiny
     SUBDIR += p5-Log-Message
     SUBDIR += p5-Log-Message-Simple
