@@ -19,6 +19,7 @@ include/libdrm/i915_drm.h
 %%INTEL_DRIVER%%include/libdrm/intel_debug.h
 include/libdrm/mach64_drm.h
 include/libdrm/mga_drm.h
+include/libdrm/msm_drm.h
 %%NOUVEAU_DRIVER%%include/libdrm/nouveau/nouveau.h
 %%NOUVEAU_DRIVER%%include/libdrm/nouveau/nvif/cl0080.h
 %%NOUVEAU_DRIVER%%include/libdrm/nouveau/nvif/cl9097.h
