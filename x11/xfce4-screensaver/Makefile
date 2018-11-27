@@ -2,9 +2,10 @@
 
 PORTNAME=	xfce4-screensaver
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
-#MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}
-#DIST_SUBDIR=	xfce4
+MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}
+DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfce 4 screen saver and locker
@@ -14,7 +15,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL20=	${WRKSRC}/COPYING.LIB
 
-BUILD_DEPENDS=	xdt-autogen:devel/xfce4-dev-tools
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libnotify.so:devel/libnotify \
@@ -36,10 +36,6 @@ CONFIGURE_ARGS=	--with-xscreensaverdir=${XSCREENSAVER_DIR} \
 
 XSCREENSAVER_DIR=	${LOCALBASE}/share/xscreensaver/config
 SCREENSAVER_DIR=	share/applications/screensavers
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	xfce-mirror
-GH_TAGNAME=	cb0d647
 
 OPTIONS_DEFINE=	NLS PAM XSCREENSAVER
 OPTIONS_DEFAULT=PAM
@@ -63,9 +59,6 @@ XSCREENSAVER_RUN_DEPENDS=	xscreensaver-gnome-hacks>=0:x11/xscreensaver-gnome-hac
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug=yes
 .endif
-
-pre-configure:
-	(cd ${WRKSRC} && ./autogen.sh)
 
 post-patch-PAM-on:
 	@${REINPLACE_CMD} -e 's|/etc/pam.d|${PREFIX}/etc/pam.d|g' \
