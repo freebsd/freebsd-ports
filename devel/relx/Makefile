@@ -27,7 +27,7 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 USE_GITHUB=	yes
 GH_ACCOUNT=	erlware
 
-CACHE_VERSION=	20
+CACHE_VERSION=	21
 # from rebar.config
 REBAR_DEPS=	bbmustache-1.5.0 \
 		cf-0.3.1 \
