@@ -15,9 +15,10 @@ LICENSE=	BSD2CLAUSE
 
 ONLY_FOR_ARCHS=	amd64 i386
 
+USES=		autoreconf:build libtool gmake ncurses
+
 SFSUBDIR=	snapshot_2018-11-23
 
-USES=		autoreconf:build libtool gmake ncurses
 TARGET_SDIR=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
 CONFIGURE_ARGS=	--build=${TARGET_SDIR}
 WRKSRC=		${WRKDIR}/${DISTNAME}
