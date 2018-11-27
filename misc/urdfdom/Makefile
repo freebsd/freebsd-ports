@@ -16,7 +16,7 @@ LIB_DEPENDS=	libconsole_bridge.so:misc/console-bridge \
 		libtinyxml.so:textproc/tinyxml
 RUN_DEPENDS=	urdfdom-headers>0:misc/urdfdom-headers
 
-USES=		cmake:outsource
+USES=		compiler:c++11-lang cmake:outsource
 USE_GITHUB=	yes
 GH_ACCOUNT=	ros
 USE_LDCONFIG=	yes
