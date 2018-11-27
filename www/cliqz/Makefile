@@ -96,7 +96,7 @@ post-patch:
 		${CLIQZ_DESKTOP}
 .if ${ARCH} == "i386"
 	# This prevents linker exhausting memory in i386 builds
-	@${ECHO_CMD} 'export LDFLAGS="-Wl,--no-keep-memory"' >> \
+	@${ECHO_CMD} 'export LDFLAGS="-Wl,--no-keep-memory -Wl,--as-needed"' >> \
 		${WRKSRC}/mozilla-release/browser/config/cliqz.mozconfig
 .endif
 
