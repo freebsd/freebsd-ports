@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	ignition-cmake==2:devel/ignition-cmake
 
-USES=		cmake:outsource eigen:3
+USES=		compiler:c++17-lang cmake:outsource eigen:3
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_TESTING
