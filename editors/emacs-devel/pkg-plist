@@ -2783,6 +2783,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-gvfs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-gvfs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-loaddefs.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-rclone.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-rclone.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-sh.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-sh.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-smb.el.gz
