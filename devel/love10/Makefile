@@ -23,6 +23,8 @@ LIB_DEPENDS=	libmodplug.so:audio/libmodplug \
 		libtheora.so:multimedia/libtheora \
 		libogg.so:audio/libogg
 
+PORTSCOUT=	limit:^0\.10\.
+
 USES=		autoreconf compiler:c++11-lib desktop-file-utils gl gmake \
 		libtool localbase openal pkgconfig shared-mime-info
 USE_SDL=	sdl2
