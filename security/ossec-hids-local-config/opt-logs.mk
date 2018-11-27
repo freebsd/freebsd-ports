@@ -6,7 +6,7 @@ LOGS_DESC=		Log Monitoring
 # Default logs support
 LOGS_BASIC_OPTION=	BASIC
 LOGS_BASIC_PROFILE=	basic
-LOGS_BASIC_DESC=	Default system logs
+LOGS_BASIC_DESC=	Basic system logs
 LOGS_BASIC_DEFINE=	server local agent pushed
 LOGS_BASIC_DEFAULT=	server local pushed
 LOGS_OPTIONS+=		LOGS_BASIC
@@ -14,7 +14,7 @@ LOGS_OPTIONS+=		LOGS_BASIC
 # Active response log support
 LOGS_OSSEC_OPTION=	OSSEC
 LOGS_OSSEC_PROFILE=	ossec
-LOGS_OSSEC_DESC=	Active response logs
+LOGS_OSSEC_DESC=	OSSEC active response logs
 LOGS_OSSEC_DEFINE=	server local agent pushed
 LOGS_OSSEC_DEFAULT=	server local pushed
 LOGS_OPTIONS+=		LOGS_OSSEC
