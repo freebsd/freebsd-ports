@@ -9,10 +9,8 @@ DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Particle physics package with classes for data analysis, histogramming
 
-LICENSE=	GPLv2
-xLICENSE_FILE=	${WRKSRC}/COPYING
-
-LIB_DEPENDS=	libderiv.so:science/libint
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake libtool shebangfix
 GNU_CONFIGURE=	yes
