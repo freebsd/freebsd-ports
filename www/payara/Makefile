@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	payara
-PORTVERSION=	4.1.2.173
+PORTVERSION=	5.183
 CATEGORIES=	www java
-MASTER_SITES=	https://github.com/payara/Payara/releases/download/${PORTNAME}-server-${PORTVERSION}/
-
+MASTER_SITES=	http://central.maven.org/maven2/fish/payara/distributions/${PORTNAME}/${PORTVERSION}/
 MAINTAINER=	dmytro@posteo.net
 COMMENT=	Java EE application server derived from GlassFish Server Open Source Edition
 
@@ -16,7 +15,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.8+
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/payara41
+WRKSRC=		${WRKDIR}/payara5
 DATADIR=	${PREFIX}/${PORTNAME}-${PORTVERSION}
 VARMAIN=	/var/${PORTNAME}
 VARDIR=		/var/${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -30,7 +29,7 @@ PLIST_SUB+=	VARMAIN=${VARMAIN}
 SUB_LIST=	PAYARAVERSION=${PORTVERSION} \
 		JAVA_HOME=${JAVA_HOME}
 
-DOWNLOAD_URL=	https://github.com/payara/Payara/releases/download/${PORTNAME}-server-${PORTVERSION}/
+DOWNLOAD_URL=	http://central.maven.org/maven2/fish/payara/distributions/${PORTNAME}/${PORTVERSION}/
 
 USE_RC_SUBR=	payara
 
@@ -44,6 +43,7 @@ GLASSFISH_BIN_FILES=	appclient asadmin capture-schema jspc package-appclient sch
 do-install:
 	@${SED} "s|%%VARDIR%%|${VARDIR}|g" ${PKGDIR}/pkg-message > ${WRKDIR}/pkg-message
 	@${MKDIR} ${STAGEDIR}${VARDIR}/prefs
+	@${RM} ${WRKSRC}/bin/letsencrypt.py
 	@${FIND} ${WRKSRC} -name '*.bat' -delete
 	@${FIND} ${WRKSRC} -name '*.exe' -delete
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
