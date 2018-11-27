@@ -21,8 +21,8 @@ LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 desktop-file-utils gettext gmake jpeg \
-		libtool localbase pathfix pkgconfig tar:xz
+USES=		compiler:c11 desktop-file-utils gettext gmake gnome \
+		jpeg libtool localbase mate pathfix pkgconfig tar:xz
 USE_MATE=	desktop icontheme
 USE_XORG=	x11
 USE_GNOME=	cairo gnomeprefix gtk30 intltool introspection \
