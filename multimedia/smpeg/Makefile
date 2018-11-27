@@ -14,7 +14,7 @@ COMMENT=	Free MPEG1 video player library with sound support
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool:build
+USES=		compiler gmake libtool:build
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
 
@@ -27,7 +27,8 @@ CONFIGURE_ENV=	GLBASE="${LOCALBASE}" \
 CONFIGURE_ARGS=	--disable-opengl-player \
 		--disable-gtk-player \
 		--enable-mmx
-CFLAGS+=	-Wno-error-narrowing
+CFLAGS+=	${CFLAGS_${CHOSEN_COMPILER_TYPE}}
+CFLAGS_clang=	-Wno-error-narrowing
 LDFLAGS_i386=	-Wl,-znotext
 MAKE_ARGS=	LIBTOOL=${LOCALBASE}/bin/libtool
 INSTALL_TARGET=	install-strip
