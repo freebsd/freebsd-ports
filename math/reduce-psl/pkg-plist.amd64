@@ -92,6 +92,7 @@ man/man1/redpsl.1.gz
 %%DATADIR%%/psl/hash-decls.b
 %%DATADIR%%/psl/hcons.b
 %%DATADIR%%/psl/helferlein.b
+%%DATADIR%%/psl/ieee-decls.b
 %%DATADIR%%/psl/if-system.b
 %%DATADIR%%/psl/if.b
 %%DATADIR%%/psl/init-file.b
