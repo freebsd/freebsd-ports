@@ -7,6 +7,9 @@ DISTVERSIONSUFFIX=	-g9350209
 PORTREVISION=	16
 CATEGORIES=	games
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	fb627bad9129.patch:-p1
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	RealLive virtual machine clone
 

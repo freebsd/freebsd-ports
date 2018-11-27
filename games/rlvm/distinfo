@@ -1,3 +1,5 @@
 TIMESTAMP = 1475126655
 SHA256 (eglaysher-rlvm-release-0.14-67-g9350209_GH0.tar.gz) = 70a48aeca8e9298c1c5d3e4c7c4d9abd49bfc96e1afad5f2141039feb304df50
 SIZE (eglaysher-rlvm-release-0.14-67-g9350209_GH0.tar.gz) = 1895634
+SHA256 (fb627bad9129.patch) = a949dc649fac6cdff44ddf7f76480de82035b979b4bf8d959ae07ab648c5589d
+SIZE (fb627bad9129.patch) = 837
