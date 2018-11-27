@@ -1,6 +1,6 @@
---- src/value.c.orig	2016-08-25 17:21:36 UTC
+--- src/value.c.orig	2018-11-26 08:10:21 UTC
 +++ src/value.c
-@@ -375,20 +375,20 @@ size_t json_array_size(const json_t *jso
+@@ -374,20 +374,20 @@ size_t json_array_size(const json_t *json)
      return json_to_array(json)->entries;
  }
  
@@ -25,7 +25,7 @@
  {
      json_array_t *array;
  
-@@ -402,14 +402,14 @@ int json_array_set_new(json_t *json, siz
+@@ -401,14 +401,14 @@ int json_array_set_new(json_t *json, size_t index, jso
      }
      array = json_to_array(json);
  
@@ -43,7 +43,7 @@
  
      return 0;
  }
-@@ -481,7 +481,7 @@ int json_array_append_new(json_t *json, 
+@@ -480,7 +480,7 @@ int json_array_append_new(json_t *json, json_t *value)
      return 0;
  }
  
@@ -52,7 +52,7 @@
  {
      json_array_t *array;
      json_t **old_table;
-@@ -495,7 +495,7 @@ int json_array_insert_new(json_t *json, 
+@@ -494,7 +494,7 @@ int json_array_insert_new(json_t *json, size_t index, 
      }
      array = json_to_array(json);
  
@@ -61,7 +61,7 @@
          json_decref(value);
          return -1;
      }
-@@ -507,21 +507,21 @@ int json_array_insert_new(json_t *json, 
+@@ -506,21 +506,21 @@ int json_array_insert_new(json_t *json, size_t index, 
      }
  
      if(old_table != array->table) {
@@ -89,7 +89,7 @@
  {
      json_array_t *array;
  
-@@ -529,14 +529,14 @@ int json_array_remove(json_t *json, size
+@@ -528,14 +528,14 @@ int json_array_remove(json_t *json, size_t index)
          return -1;
      array = json_to_array(json);
  
