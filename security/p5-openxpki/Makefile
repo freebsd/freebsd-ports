@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openxpki
-PORTVERSION=	2.0.3
+PORTVERSION=	2.2.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
@@ -19,9 +19,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	bash:shells/bash \
 		openca-tools-forked>=1.4.0:security/openca-tools-forked \
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
+		p5-CGI>=4.21:www/p5-CGI \
 		p5-CGI-Fast>=2.10:www/p5-CGI-Fast \
 		p5-CGI-Session>=0:www/p5-CGI-Session \
-		p5-CGI>=4.21:www/p5-CGI \
 		p5-Class-Accessor-Chained>=0:devel/p5-Class-Accessor-Chained \
 		p5-Class-Std>=0:devel/p5-Class-Std \
 		p5-Config-GitLike>=0:devel/p5-Config-GitLike \
@@ -48,6 +48,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		p5-LWP-Protocol-connect>=0:www/p5-LWP-Protocol-connect \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
 		p5-Locale-libintl>=0:devel/p5-Locale-libintl \
+		p5-Log-Log4perl-Layout-JSON>=0:devel/p5-Log-Log4perl-Layout-JSON \
 		p5-Mail-RFC822-Address>=0:mail/p5-Mail-RFC822-Address \
 		p5-Moose>=0:devel/p5-Moose \
 		p5-MooseX-Params-Validate>=0:devel/p5-MooseX-Params-Validate \
