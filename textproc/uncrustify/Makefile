@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uncrustify
-PORTVERSION=	0.68
+PORTVERSION=	0.68.1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	textproc
 
@@ -12,9 +12,9 @@ COMMENT=	Highly configurable source code beautifier
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_mips=		fails to compile: cc1plus: error: unrecognized command line option "-std=gnu++0x"
-BROKEN_mips64=		fails to compile: cc1plus: error: unrecognized command line option "-std=gnu++0x"
-BROKEN_powerpc64=	fails to compile: cc1plus: error: unrecognized command line option "-std=gnu++0x"
+#BROKEN_mips=		fails to compile: cc1plus: error: unrecognized command line option "-std=gnu++0x"
+#BROKEN_mips64=		fails to compile: cc1plus: error: unrecognized command line option "-std=gnu++0x"
+#BROKEN_powerpc64=	fails to compile: cc1plus: error: unrecognized command line option "-std=gnu++0x"
 
 USE_GITHUB=	yes
 
@@ -25,6 +25,10 @@ TEST_TARGET=	test
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
+
+# fixes BROKENs above, but may introduce different errors
+post-patch:
+	@${REINPLACE_CMD} -e '/gnu++0x/ d' ${WRKSRC}/CMakeLists.txt
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
