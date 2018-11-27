@@ -4,8 +4,8 @@
  /*	This file is contains the AI logic.
   */
  
+ #include "ai.h"
 +#include <algorithm>
 +#include <sys/limits.h>
- #include "ai.h"
  
  AI::AI(BlokishBoard &board)
