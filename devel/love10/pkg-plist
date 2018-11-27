@@ -1,0 +1,9 @@
+bin/love10
+lib/liblove10.so
+lib/liblove10.so.0
+lib/liblove10.so.0.0.0
+man/man1/love10.1.gz
+share/applications/love10.desktop
+share/icons/hicolor/scalable/mimetypes/application-x-love10-game.svg
+share/mime/packages/love10.xml
+share/pixmaps/love10.svg
