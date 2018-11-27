@@ -2,7 +2,7 @@
 
 PORTNAME=	ossec-hids
 PORTVERSION=	3.1.0
-PORTREVISION=
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	-${OSSEC_TYPE}-config
 
@@ -427,17 +427,17 @@ agent-conf-local:
 do-install: ossec-dirs ossec-scripts ossec-rules ossec-conf-managed ossec-conf-local ossec-conf-sample agent-conf-managed agent-conf-local
 
 ossec-permissions:
-	@${CHMOD} -R 550 ${OSSEC_DIR}
-	@${CHMOD} 640 ${COMMAND_CONF} ${OSSEC_CONF_DIR}/* ${OSSEC_LOCAL_CONF_DIR}/*
-	@${CHMOD} 550 ${OSSEC_CONF_DIR} ${OSSEC_LOCAL_CONF_DIR}
-.if ${OSSEC_TYPE} != agent
-	@${CHMOD} 640 ${RULES_DIR}/*
-.endif
-.if ${OSSEC_TYPE} == server
-	@${CHMOD} 640 ${AGENT_CONF_DIR}/* ${AGENT_LOCAL_CONF_DIR}/*
-	@${CHMOD} 550 ${AGENT_CONF_DIR} ${AGENT_LOCAL_CONF_DIR}
-.endif
 .if defined(MAINTAINER_MODE)
+	@${CHMOD} -R 550 ${OSSEC_DIR}
+	@${CHMOD} 640 ${COMMAND_CONF} ${OSSEC_LOCAL_CONF_DIR}/* ${OSSEC_CONF_DIR}/*
+	@${CHMOD} 550 ${OSSEC_LOCAL_CONF_DIR} ${OSSEC_CONF_DIR}
+. if ${OSSEC_TYPE} != agent
+	@${CHMOD} 640 ${RULES_DIR}/*
+. endif
+. if ${OSSEC_TYPE} == server
+	@${CHMOD} 640 ${AGENT_LOCAL_CONF_DIR}/* ${AGENT_CONF_DIR}/*
+	@${CHMOD} 550 ${AGENT_LOCAL_CONF_DIR} ${AGENT_CONF_DIR}
+. endif
 	@${CHOWN} -R ${USER}:${OSSEC_GROUP} ${OSSEC_DIR}
 	@${CHOWN} -R ${USER}:${GROUP} ${BIN_DIR}
 .endif
@@ -451,10 +451,10 @@ post-install: ossec-permissions
 
 .if defined(MAINTAINER_MODE)
 plist: makeplist
-	@${SCRIPTDIR}/plist.sh ${OSSEC_TYPE} ${OSSEC_HOME} ${PLIST} ${WRKDIR} ${STAGEDIR}
+	@${SH} ${SCRIPTDIR}/plist.sh ${OSSEC_TYPE} ${OSSEC_HOME} ${PLIST} ${WRKDIR} ${STAGEDIR}
 
 rules: extract
-	@${SCRIPTDIR}/rules.sh ${FILESDIR}/${RULES_DEFAULT_TEMPLATE}.in ${WRKSRC}
+	@${SH} ${SCRIPTDIR}/rules.sh ${FILESDIR}/${RULES_DEFAULT_TEMPLATE}.in ${WRKSRC}
 .endif
 
 .include <bsd.port.post.mk>

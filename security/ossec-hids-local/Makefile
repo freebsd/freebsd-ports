@@ -2,7 +2,7 @@
 
 PORTNAME=	ossec-hids
 PORTVERSION=	3.1.0
-PORTREVISION=
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	-${OSSEC_TYPE}
 
@@ -88,7 +88,6 @@ ZEROMQ_VARS=	OSSEC_ARGS+=USE_ZEROMQ=yes
 MYSQL_VARS=	OSSEC_ARGS+=DATABASE=mysql PKGMSG_FILES+=message-database DB_TYPE=mysql DB_SCHEMA=mysql.schema
 PGSQL_VARS=	OSSEC_ARGS+=DATABASE=pgsql PKGMSG_FILES+=message-database DB_TYPE=postgresql DB_SCHEMA=postgresql.schema
 
-OSSEC_ARGS+=	TARGET=${OSSEC_TYPE}
 .if ${OSSEC_TYPE} == agent
 STRIP_FILES=	agent-auth \
 		manage_agents \
@@ -184,6 +183,10 @@ PKGMSG_FILES=	message-header
 
 CFLAGS+=	-I${LOCALBASE}/include
 
+OSSEC_ARGS+=	TARGET=${OSSEC_TYPE} INSTALL_LOCALTIME=no
+.if !defined(MAINTAINER_MODE)
+OSSEC_ARGS+=	INSTALL_CMD=install
+.endif
 BUILD_ARGS+=	${MAKE_ARGS} ${OSSEC_ARGS} PREFIX=${OSSEC_HOME}
 INSTALL_ARGS+=	${USER_ARGS} ${OSSEC_ARGS} PREFIX=${STAGEDIR}${OSSEC_HOME}
 
@@ -195,6 +198,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-DLUA_USE_LINUX|& ${CPPFLAGS}|' \
 		-e 's|-lreadline|& ${LDFLAGS}|' \
 		${WRKSRC}/src/external/lua/src/Makefile
+.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+	@${REINPLACE_CMD} -e 's|-Wno-implicit-fallthrough||g' ${WRKSRC}/src/Makefile
+.endif
 
 do-build:
 	@cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${BUILD_ARGS} build
@@ -229,7 +235,7 @@ post-install:
 
 .if defined(MAINTAINER_MODE)
 plist: makeplist
-	@${SCRIPTDIR}/plist.sh ${OSSEC_TYPE} ${OSSEC_HOME} ${PLIST} ${WRKDIR} ${STAGEDIR}
+	@${SH} ${SCRIPTDIR}/plist.sh ${OSSEC_TYPE} ${OSSEC_HOME} ${PLIST} ${WRKDIR} ${STAGEDIR}
 .endif
 
 post-install-DOCS-on:
