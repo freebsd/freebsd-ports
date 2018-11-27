@@ -313,8 +313,8 @@ bin/chrome
 %%DATADIR%%/resources/inspector/worker_app.js
 %%DATADIR%%/resources/inspector/workspace_diff/workspace_diff_module.js
 %%DATADIR%%/snapshot_blob.bin
-%%NOT_AARCH64%%%%DATADIR%%/swiftshader/libEGL.so
-%%NOT_AARCH64%%%%DATADIR%%/swiftshader/libGLESv2.so
+%%DATADIR%%/swiftshader/libEGL.so
+%%DATADIR%%/swiftshader/libGLESv2.so
 %%DATADIR%%/v8_context_snapshot.bin
 %%DATADIR%%/views_mus_resources.pak
 %%DEBUG%%%%DATADIR%%/character_data_generator
