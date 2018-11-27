@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	QtBitcoinTrader
-DISTVERSION=	1.40.23
+DISTVERSION=	1.40.30
 CATEGORIES=	finance
 MASTER_SITES=	SF/bitcointrader/SRC/
 
