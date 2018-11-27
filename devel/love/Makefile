@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	love
-PORTVERSION=	0.10.2
-PORTREVISION=	4
+PORTVERSION=	11.1
 CATEGORIES=	devel games
 MASTER_SITES=	https://bitbucket.org/rude/love/downloads/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -18,13 +17,12 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 LIB_DEPENDS=	libmodplug.so:audio/libmodplug \
 		libmpg123.so:audio/mpg123 \
 		libvorbisfile.so:audio/libvorbis \
-		libphysfs.so:devel/physfs \
 		libfreetype.so:print/freetype2 \
 		libtheora.so:multimedia/libtheora \
 		libogg.so:audio/libogg
 
-USES=		compiler:c++11-lib desktop-file-utils gmake libtool \
-		localbase openal pkgconfig shared-mime-info
+USES=		autoreconf compiler:c++11-lib desktop-file-utils gl gmake \
+		libtool localbase openal pkgconfig shared-mime-info
 USE_SDL=	sdl2
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
@@ -33,21 +31,27 @@ INSTALL_TARGET=	install-strip
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS LUAJIT
+OPTIONS_DEFINE=		DOCS LUAJIT GME
 OPTIONS_DEFAULT_i386=	LUAJIT
 OPTIONS_DEFAULT_amd64=	LUAJIT
 
-LUAJIT_DESC=	Use luajit
+LUAJIT_DESC=		Use luajit
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
 LUAJIT_CONFIGURE_ON=	--with-lua=luajit
-LUAJIT_USES_OFF=	lua
+# does not build with newer lua versions:
+# love.cpp:217:9: error: no matching function for call to 'lua_resume'
+LUAJIT_USES_OFF=	lua:51
 LUAJIT_CONFIGURE_OFF=	--with-lua=lua \
-			--with-luaversion="${LUA_VER}"
+			--with-luaversion="-${LUA_VER}"
 LUAJIT_CONFIGURE_ENV_OFF=LUA_EXECUTABLE="${LUA_CMD}"
 
-post-patch-LUAJIT-off:
-	@${REINPLACE_CMD} -e 's|$${with_lua}$${with_luaversion}|$${with_lua}-$${with_luaversion}|g' \
-		${WRKSRC}/configure
+GME_DESC=		Enable GME support, for more chiptuney goodness
+GME_CONFIGURE_ENABLE=	gme
+GME_LIB_DEPENDS=	libgme.so:audio/libgme
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|g' \
+		${WRKSRC}/platform/unix/deps.m4
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
