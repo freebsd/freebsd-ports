@@ -1715,6 +1715,7 @@
     SUBDIR += love
     SUBDIR += love07
     SUBDIR += love08
+    SUBDIR += love10
     SUBDIR += love5
     SUBDIR += lpc21isp
     SUBDIR += lrmi
