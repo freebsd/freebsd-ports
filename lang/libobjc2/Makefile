@@ -29,12 +29,9 @@ CMAKE_ARGS+=	-DTESTS=OFF
 # This shouldn't be needed, but our llvm port installs llvm-config with a silly
 # name...
 CMAKE_ARGS+=	-DLLVM_OPTS=OFF
-CXXFLAGS_powerpc64=	-stdlib=libstdc++
-CXXFLAGS_powerpcspe=	-stdlib=libstdc++
-CXXFLAGS_powerpc=	-stdlib=libstdc++
-CXXFLAGS_sparc64=	-stdlib=libstdc++
-CXXFLAGS_mips=	-stdlib=libstdc++
-CXXFLAGS_mips64=	-stdlib=libstdc++
+.if exists(/usr/lib/libstdc++.so)
+CXXFLAGS+=	-stdlib=libstdc++
+.endif
 
 post-install:
 	${LN} -sf libobjc.so.${SHLIB_MAJOR}.${SHLIB_MINOR} ${STAGEDIR}${PREFIX}/lib/libobjc.so.${SHLIB_MAJOR}
