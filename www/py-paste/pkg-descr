@@ -7,4 +7,4 @@ nested to build web applications. Each piece of middleware uses the
 WSGI (PEP 333) interface, and should be compatible with other
 middleware based on those interfaces.
 
-WWW: https://pypi.org/project/Paste/
+WWW: https://github.com/cdent/paste
