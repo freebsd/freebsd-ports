@@ -13,8 +13,8 @@ libexec/xfce4-screensaver/slideshow
 man/man1/xfce4-screensaver-command.1.gz
 man/man1/xfce4-screensaver-preferences.1.gz
 man/man1/xfce4-screensaver.1.gz
-share/applications/screensavers/personal-slideshow.desktop
-share/applications/screensavers/popsquares.desktop
+share/applications/screensavers/xfce-personal-slideshow.desktop
+share/applications/screensavers/xfce-popsquares.desktop
 share/applications/screensavers/xfce-floaters.desktop
 share/applications/xfce4-screensaver-preferences.desktop
 share/dbus-1/services/org.xfce.ScreenSaver.service
