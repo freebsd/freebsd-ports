@@ -1,7 +1,6 @@
-iocage is a jail/container manager amalgamating some of the best features and
-technologies the FreeBSD operating system has to offer. It is geared for ease
-of use with a simple and easy to understand command syntax. This development
-version aims to replace the library with a more solid code base while keeping
-the same CLI.
+iocage is a jail/container manager amalgamating some of the best
+features and technologies the FreeBSD operating system has
+to offer. It is geared for ease of use with a simple and easy
+to understand command syntax.
 
 WWW: https://github.com/iocage/iocage

@@ -1,19 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	iocage-devel
-PORTVERSION=	2.0.0.20181008
+PORTVERSION=	1.0.0.20181026
+PORTEPOCH=	1
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	maintainers@iocage.io
+MAINTAINER=	wg@FreeBSD.org
 COMMENT=	FreeBSD jail manager written in Python3
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=2.0.0:devel/py-pytest-runner@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libiocage>0:devel/py-libiocage@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}netifaces>0:net/py-netifaces@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}netifaces>0:net/py-netifaces@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=6.7:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.10.0:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coloredlogs>0:devel/py-coloredlogs@${PY_FLAVOR} \
@@ -27,7 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libiocage>0:devel/py-libiocage@${PY_FLAVOR} 
 USE_GITHUB=	yes
 GH_ACCOUNT=	iocage
 GH_PROJECT=	iocage
-GH_TAGNAME=	810ff4ee
+GH_TAGNAME=	c4016ac
 
 NO_ARCH=	yes
 USES=		python:3.6+
