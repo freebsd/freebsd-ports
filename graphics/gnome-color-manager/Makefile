@@ -26,7 +26,7 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gnome meson pkgconfig tar:xz
+USES=		compiler:c++11-lang gettext gnome meson pkgconfig tar:xz
 USE_GNOME=	cairo gtk30 vte3
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
