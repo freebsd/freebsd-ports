@@ -1,0 +1,5 @@
+YODA is a small set of data analysis (specifically histogramming) classes being
+developed by MCnet members as a lightweight common system for MC event generator
+validation analyses, particularly as the core histogramming system in Rivet.
+
+WWW: https://yoda.hepforge.org/
