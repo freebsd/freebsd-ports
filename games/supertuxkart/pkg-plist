@@ -2,6 +2,5 @@ bin/supertuxkart
 share/appdata/supertuxkart.appdata.xml
 share/applications/supertuxkart.desktop
 share/icons/hicolor/128x128/apps/supertuxkart.png
-share/icons/hicolor/32x32/apps/supertuxkart.png
-share/pixmaps/supertuxkart_128.png
-share/pixmaps/supertuxkart_32.png
+share/icons/hicolor/48x48/apps/supertuxkart.png
+share/pixmaps/supertuxkart.png
