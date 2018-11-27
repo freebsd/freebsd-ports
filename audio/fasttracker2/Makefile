@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fasttracker2
-DISTVERSION=	0.1-b119
+DISTVERSION=	0.1-b120
 CATEGORIES=	audio
 MASTER_SITES=	https://16-bits.org/ \
 		LOCAL/ehaupt
