@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk2
-PORTVERSION=	3.2.9
+PORTVERSION=	3.3.0
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,8 @@ RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}:accessibility/rubygem-atk \
 		rubygem-gdk_pixbuf2>=${PORTVERSION}:graphics/rubygem-gdk_pixbuf2 \
 		rubygem-pango>=${PORTVERSION}:x11-toolkits/rubygem-pango
 
+USES=		gem gnome
 USE_GNOME=	gtk20
 USE_RUBY=	yes
-USES=		gem gnome
 
 .include <bsd.port.mk>
