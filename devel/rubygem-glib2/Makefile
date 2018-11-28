@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	glib2
-PORTVERSION=	3.2.9
+PORTVERSION=	3.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,8 +13,8 @@ LICENSE=	LGPL21+
 RUN_DEPENDS=	rubygem-native-package-installer>=1.0.3:devel/rubygem-native-package-installer \
 		rubygem-pkg-config>=1.2.2:devel/rubygem-pkg-config
 
+USES=		gem gnome
 USE_GNOME=	glib20
 USE_RUBY=	yes
-USES=		gem gnome
 
 .include <bsd.port.mk>
