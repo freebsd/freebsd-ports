@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vte
-PORTVERSION=	3.2.9
+PORTVERSION=	3.3.0
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,8 @@ LICENSE=	LGPL21+
 
 RUN_DEPENDS=	rubygem-gtk2>=${PORTVERSION}:x11-toolkits/rubygem-gtk2
 
+USES=		gem gnome
 USE_GNOME=	vte
 USE_RUBY=	yes
-USES=		gem gnome
 
 .include <bsd.port.mk>
