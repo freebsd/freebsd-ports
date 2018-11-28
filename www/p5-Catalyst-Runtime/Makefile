@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Catalyst-Runtime
-PORTVERSION=	5.90122
+PORTVERSION=	5.90123
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ COMMENT=	Elegant MVC Web Application Framework (Runtime)
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # Do not add the following ports to TEST_DEPENDS to avoid cyclic dependencies:
 # - devel/p5-Test-WWW-Mechanize-Catalyst
