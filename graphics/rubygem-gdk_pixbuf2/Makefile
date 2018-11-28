@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdk_pixbuf2
-PORTVERSION=	3.2.9
+PORTVERSION=	3.3.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -13,9 +13,10 @@ LICENSE=	LGPL21+
 BUILD_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake
 RUN_DEPENDS=	rubygem-gio2>=${PORTVERSION}:devel/rubygem-gio2
 
-NO_ARCH=	yes
+USES=		gem gnome
 USE_GNOME=	gdkpixbuf2
 USE_RUBY=	yes
-USES=		gem gnome
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
