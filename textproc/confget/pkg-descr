@@ -10,4 +10,4 @@ check if a variable is present in the file at all.  It has a "shell-quoting"
 output mode that quotes the variable values in a way suitable for passing
 them directly to a Bourne-style shell.
 
-WWW: http://devel.ringlet.net/textproc/confget/
+WWW: https://devel.ringlet.net/textproc/confget/
