@@ -164,7 +164,7 @@ HTTP_UPSTREAM_CHECK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-http-modules-ngx_
 					${PATCHDIR}/extra-patch-src-http-ngx_http_upstream_round_robin.c \
 					${PATCHDIR}/extra-patch-src-http-ngx_http_upstream_round_robin.h
 
-HTTP_UPSTREAM_FAIR_GH_TUPLE=		cryptofuture:nginx-upstream-fair:b5be36f:upstreamfair
+HTTP_UPSTREAM_FAIR_GH_TUPLE=		jaygooby:nginx-upstream-fair:10ecdcf:upstreamfair
 HTTP_UPSTREAM_FAIR_VARS=		DSO_EXTMODS+=upstreamfair
 
 HTTP_UPSTREAM_STICKY_IMPLIES=		HTTP_SSL
