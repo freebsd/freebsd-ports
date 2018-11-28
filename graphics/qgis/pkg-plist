@@ -3,7 +3,6 @@ bin/qbrowser
 bin/qgis
 %%TESTS%%bin/qgis_bench
 %%SERVER%%bin/qgis_mapserv.fcgi
-%%TESTS%%%%DEBUG%%bin/qgis_wcstest
 %%SERVER%%bin/schemaExtension.xsd
 %%SERVER%%bin/wms_metadata.xml
 include/qgis/Bezier3D.h
@@ -758,21 +757,21 @@ include/qgis/ui_qgsquerybuilderbase.h
 include/qgis/ui_qgssqlcomposerdialogbase.h
 include/qgis/ui_qgssublayersdialogbase.h
 lib/libqgis_analysis.so
-lib/libqgis_analysis.so.2.18.17
+lib/libqgis_analysis.so.2.18.26
 lib/libqgis_app.so
-lib/libqgis_app.so.2.18.17
+lib/libqgis_app.so.2.18.26
 lib/libqgis_core.so
-lib/libqgis_core.so.2.18.17
+lib/libqgis_core.so.2.18.26
 lib/libqgis_gui.so
-lib/libqgis_gui.so.2.18.17
+lib/libqgis_gui.so.2.18.26
 lib/libqgis_networkanalysis.so
-lib/libqgis_networkanalysis.so.2.18.17
+lib/libqgis_networkanalysis.so.2.18.26
 %%SERVER%%lib/libqgis_server.so
-%%SERVER%%lib/libqgis_server.so.2.18.17
+%%SERVER%%lib/libqgis_server.so.2.18.26
 %%GRASS%%lib/libqgisgrass7.so
-%%GRASS%%lib/libqgisgrass7.so.2.18.17
+%%GRASS%%lib/libqgisgrass7.so.2.18.26
 %%PYTHON%%lib/libqgispython.so
-%%PYTHON%%lib/libqgispython.so.2.18.17
+%%PYTHON%%lib/libqgispython.so.2.18.26
 %%PYTHON%%%%CUSTOMWIDGETS%%%%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/qgis_customwidgets.py
 lib/qgis/crssync
 %%GRASS%%lib/qgis/grass/bin/qgis.g.browser7
@@ -821,7 +820,7 @@ lib/qgis/plugins/libwmsprovider.so
 lib/qgis/plugins/libzonalstatisticsplugin.so
 lib/qgis/qgis_help
 %%CUSTOMWIDGETS%%%%QT_PLUGINDIR%%/designer/libqgis_customwidgets.so
-%%CUSTOMWIDGETS%%%%QT_PLUGINDIR%%/designer/libqgis_customwidgets.so.2.18.17
+%%CUSTOMWIDGETS%%%%QT_PLUGINDIR%%/designer/libqgis_customwidgets.so.2.18.26
 man/man1/qbrowser.1.gz
 man/man1/qgis.1.gz
 share/applications/qgis.desktop
@@ -6291,7 +6290,6 @@ share/icons/hicolor/96x96/apps/qgis.png
 %%DATADIR%%/resources/themes/Night Mapping/icons/up_arrow.png
 %%DATADIR%%/resources/themes/Night Mapping/style.qss
 %%DATADIR%%/resources/themes/Night Mapping/variables.qss
-%%TESTS%%%%DEBUG%%%%DATADIR%%/resources/wcs-servers.json
 %%DATADIR%%/svg/accommodation/accommodation_alpinehut.svg
 %%DATADIR%%/svg/accommodation/accommodation_bed_and_breakfast.svg
 %%DATADIR%%/svg/accommodation/accommodation_camping.svg
