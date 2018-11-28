@@ -438,6 +438,10 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/globals.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/implicit_str_concat_in_sequence.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/implicit_str_concat_in_sequence.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/implicit_str_concat_in_sequence_latin1.py
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/implicit_str_concat_in_sequence_latin1.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/implicit_str_concat_in_sequence_utf8.py
+%%PYTHON_SITELIBDIR%%/pylint/test/functional/implicit_str_concat_in_sequence_utf8.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/import_error.py
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/import_error.rc
 %%PYTHON_SITELIBDIR%%/pylint/test/functional/import_error.txt
