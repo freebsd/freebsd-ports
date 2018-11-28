@@ -1,0 +1,34 @@
+#!/bin/sh
+# vim:ts=4:sw=4:et
+
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { DEINSTALL | POST-DEINSTALL }" >&2
+    exit 1
+fi
+
+case $2 in
+    DEINSTALL)
+        : nothing to do here
+        ;;
+    POST-DEINSTALL)
+        RSAKEYS=%%PREFIX%%/etc/xrdp/rsakeys.ini
+        PRIVATEKEY=%%PREFIX%%/etc/xrdp/key.pem
+        CERTIFICATE=%%PREFIX%%/etc/xrdp/cert.pem
+
+        # if keys are generated during post-install script, remove it
+        # but do not remove user's keys
+        for f in $RSAKEYS $PRIVATEKEY $CERTIFICATE;
+        do
+            if cmp -s "${f}.sample" "${f}"; then
+                rm -f "${f}"
+            fi
+                rm -f "${f}.sample"
+        done
+        ;;
+    *)
+        echo "usage: $0 distname { DEINSTALL | POST-DEINSTALL }" >&2
+        exit 1
+        ;;
+esac
+
+exit 0
