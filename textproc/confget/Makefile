@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	confget
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://devel.ringlet.net/files/textproc/confget/ \
+MASTER_SITES=	https://devel.ringlet.net/files/textproc/confget/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -15,9 +15,10 @@ LICENSE=	BSD2CLAUSE
 OPTIONS_DEFINE=	EXAMPLES PCRE
 OPTIONS_DEFAULT=PCRE
 
+USES=		gmake tar:xz
+
 MAKE_ENV=	CFLAGS_CONF=-DHAVE_FGETLN
 TEST_TARGET=	test
-USES=		gmake tar:xz
 
 PLIST_FILES=	bin/confget \
 		man/man1/confget.1.gz
