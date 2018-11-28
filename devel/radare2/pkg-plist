@@ -10,7 +10,6 @@ bin/rahash2
 bin/rarun2
 bin/rasm2
 bin/rax2
-include/libr/btree.h
 include/libr/r2naked.h
 include/libr/r_anal.h
 include/libr/r_anal_ex.h
@@ -25,6 +24,7 @@ include/libr/r_config.h
 include/libr/r_cons.h
 include/libr/r_core.h
 include/libr/r_crypto.h
+include/libr/r_crypto/r_des.h
 include/libr/r_debug.h
 include/libr/r_diff.h
 include/libr/r_egg.h
@@ -42,14 +42,12 @@ include/libr/r_list.h
 include/libr/r_magic.h
 include/libr/r_parse.h
 include/libr/r_pdb.h
-include/libr/r_print.h
 include/libr/r_qrcode.h
 include/libr/r_reg.h
 include/libr/r_regex.h
 include/libr/r_search.h
 include/libr/r_sign.h
 include/libr/r_skiplist.h
-include/libr/r_slist.h
 include/libr/r_socket.h
 include/libr/r_syscall.h
 include/libr/r_th.h
@@ -59,6 +57,7 @@ include/libr/r_userconf.h
 include/libr/r_util.h
 include/libr/r_util/r_ascii_table.h
 include/libr/r_util/r_asn1.h
+include/libr/r_util/r_assert.h
 include/libr/r_util/r_base64.h
 include/libr/r_util/r_base91.h
 include/libr/r_util/r_big.h
@@ -68,7 +67,7 @@ include/libr/r_util/r_cache.h
 include/libr/r_util/r_constr.h
 include/libr/r_util/r_ctypes.h
 include/libr/r_util/r_debruijn.h
-include/libr/r_util/r_des.h
+include/libr/r_util/r_event.h
 include/libr/r_util/r_file.h
 include/libr/r_util/r_graph.h
 include/libr/r_util/r_hex.h
@@ -77,12 +76,12 @@ include/libr/r_util/r_itv.h
 include/libr/r_util/r_json.h
 include/libr/r_util/r_log.h
 include/libr/r_util/r_mem.h
-include/libr/r_util/r_mixed.h
 include/libr/r_util/r_name.h
 include/libr/r_util/r_num.h
 include/libr/r_util/r_panels.h
 include/libr/r_util/r_pkcs7.h
 include/libr/r_util/r_pool.h
+include/libr/r_util/r_print.h
 include/libr/r_util/r_punycode.h
 include/libr/r_util/r_queue.h
 include/libr/r_util/r_range.h
@@ -96,8 +95,8 @@ include/libr/r_util/r_str_util.h
 include/libr/r_util/r_strbuf.h
 include/libr/r_util/r_strpool.h
 include/libr/r_util/r_sys.h
+include/libr/r_util/r_time.h
 include/libr/r_util/r_tree.h
-include/libr/r_util/r_trie.h
 include/libr/r_util/r_uleb128.h
 include/libr/r_util/r_utf16.h
 include/libr/r_util/r_utf32.h
@@ -111,7 +110,10 @@ include/libr/sdb/cdb.h
 include/libr/sdb/cdb_make.h
 include/libr/sdb/config.h
 include/libr/sdb/dict.h
-include/libr/sdb/ht.h
+include/libr/sdb/ht_inc.h
+include/libr/sdb/ht_pp.h
+include/libr/sdb/ht_up.h
+include/libr/sdb/ht_uu.h
 include/libr/sdb/ls.h
 include/libr/sdb/sdb.h
 include/libr/sdb/sdb_version.h
@@ -229,7 +231,6 @@ man/man7/esil.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/brainfuck.md
 %%PORTDOCS%%%%DOCSDIR%%/calling-conventions.md
 %%PORTDOCS%%%%DOCSDIR%%/capstone.md
-%%PORTDOCS%%%%DOCSDIR%%/clang-format
 %%PORTDOCS%%%%DOCSDIR%%/crosscompile
 %%PORTDOCS%%%%DOCSDIR%%/debug-internals.md
 %%PORTDOCS%%%%DOCSDIR%%/debug.md
@@ -254,6 +255,7 @@ man/man7/esil.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/io.md
 %%PORTDOCS%%%%DOCSDIR%%/iocache
 %%PORTDOCS%%%%DOCSDIR%%/ios.md
+%%PORTDOCS%%%%DOCSDIR%%/indent-example.c
 %%PORTDOCS%%%%DOCSDIR%%/iphone.md
 %%PORTDOCS%%%%DOCSDIR%%/kvast.md
 %%PORTDOCS%%%%DOCSDIR%%/lang-plugins
@@ -391,7 +393,7 @@ man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/format/trx
 %%DATADIR%%/%%PORTVERSION%%/format/zip
 %%DATADIR%%/%%PORTVERSION%%/hud/main
-%%DATADIR%%/%%PORTVERSION%%/magic/OpenBSD
+%%DATADIR%%/%%PORTVERSION%%/magic/apple
 %%DATADIR%%/%%PORTVERSION%%/magic/archive
 %%DATADIR%%/%%PORTVERSION%%/magic/cafebabe
 %%DATADIR%%/%%PORTVERSION%%/magic/code
@@ -410,12 +412,12 @@ man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/magic/jpeg
 %%DATADIR%%/%%PORTVERSION%%/magic/linux
 %%DATADIR%%/%%PORTVERSION%%/magic/mach
-%%DATADIR%%/%%PORTVERSION%%/magic/macintosh
 %%DATADIR%%/%%PORTVERSION%%/magic/mail.news
 %%DATADIR%%/%%PORTVERSION%%/magic/microsoft
 %%DATADIR%%/%%PORTVERSION%%/magic/mime
 %%DATADIR%%/%%PORTVERSION%%/magic/netbsd
 %%DATADIR%%/%%PORTVERSION%%/magic/network
+%%DATADIR%%/%%PORTVERSION%%/magic/openbsd
 %%DATADIR%%/%%PORTVERSION%%/magic/pdf
 %%DATADIR%%/%%PORTVERSION%%/magic/perl
 %%DATADIR%%/%%PORTVERSION%%/magic/python
