@@ -10642,4 +10642,5 @@ devel/giggle|devel/gitg|2018-11-23|Has expired: Development stalled. Please swit
 net/rubygem-gitaly-proto094|net/rubygem-gitaly-proto|2018-11-24|Use net/rubygem-gitaly-proto instead
 www/rubygem-toml-rb03|www/rubygem-toml-rb|2018-11-25|Has expired: Obsoleted by update of www/gitlab. Please use www/rubygem-tom-rb instead.
 dns/dnscheck||2018-11-27|Unmaintained upstream over a decade
-www/mod_security3|security/modsecurity3|2018-11-27|Not an Apache module, use correct upstream name 
+www/mod_security3|security/modsecurity3|2018-11-27|Not an Apache module, use correct upstream name
+emulators/qemu-ppcnv|emulators/qemu-powernv|2018-11-28|Use more accurate naming for qemu PowerNV port
