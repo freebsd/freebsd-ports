@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	clutter
-PORTVERSION=	3.2.9
+PORTVERSION=	3.3.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -16,8 +16,9 @@ RUN_DEPENDS=	rubygem-cairo-gobject>=${PORTVERSION}:devel/rubygem-cairo-gobject \
 		rubygem-gobject-introspection>=${PORTVERSION}:devel/rubygem-gobject-introspection \
 		rubygem-pango>=${PORTVERSION}:x11-toolkits/rubygem-pango
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
