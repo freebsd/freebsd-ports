@@ -17,18 +17,23 @@ case $2 in
         # make sure rsakeys and certificates are private
         umask 077
         # generate rsakeys.ini
-        [ -e "$RSAKEYS" ] || %%PREFIX%%/bin/xrdp-keygen xrdp "$RSAKEYS"
+        [ -e "$RSAKEYS" ] || %%PREFIX%%/bin/xrdp-keygen xrdp "$RSAKEYS".sample && \
         # generate self-signed certificate
         [ -e "$PRIVATEKEY" -a -e "$CERTIFICATE" ] || \
             %%OPENSSLBASE%%/bin/openssl req \
                  -x509 \
                  -newkey rsa:4096 \
-                 -keyout "$PRIVATEKEY" \
+                 -keyout "$PRIVATEKEY".sample \
                  -sha256 \
                  -nodes \
-                 -out "$CERTIFICATE" \
+                 -out "$CERTIFICATE".sample \
                  -days 365 \
                  -subj "/CN=$(hostname)"
+
+        for f in "$RSAKEYS" "$PRIVATEKEY" "$CERTIFICATE"
+        do
+            [ -e "${f}" ] || cp -n "${f}.sample" "${f}"
+        done
         ;;
     *)
         echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
