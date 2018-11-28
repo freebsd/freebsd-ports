@@ -7,7 +7,8 @@ for Graphite! To setup graphite, you will need to:
 
 * Initialize the sqlite user database and create the admin user:
 
-	python2 %%PYTHON_SITELIBDIR%%/graphite/manage.py syncdb
+        django-admin.py migrate --settings=graphite.settings --run-syncdb
+        django-admin.py createsuperuser --settings=graphite.settings
 
 * Build the index:
 
