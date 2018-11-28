@@ -1,0 +1,3 @@
+Pod::Section selects specified section from Module's POD.
+
+WWW: https://metacpan.org/release/Pod-Section
