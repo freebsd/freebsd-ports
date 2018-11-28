@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtksourceview3
-PORTVERSION=	3.2.9
+PORTVERSION=	3.3.0
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
@@ -14,9 +14,10 @@ BUILD_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake
 RUN_DEPENDS=	rubygem-gobject-introspection>=${PORTVERSION}:devel/rubygem-gobject-introspection \
 		rubygem-gtk3>=${PORTVERSION}:x11-toolkits/rubygem-gtk3
 
-NO_ARCH=	yes
+USES=		gem gnome
 USE_GNOME=	gtksourceview3
 USE_RUBY=	yes
-USES=		gem gnome
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
