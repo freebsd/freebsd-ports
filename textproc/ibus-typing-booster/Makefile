@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ibus-typing-booster
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
