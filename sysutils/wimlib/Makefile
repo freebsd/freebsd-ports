@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wimlib
-PORTVERSION=	1.12.0
+PORTVERSION=	1.13.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://wimlib.net/downloads/
 
