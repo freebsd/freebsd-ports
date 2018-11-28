@@ -18,12 +18,10 @@ ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 mips powerpc powerpc64
 LIB_DEPENDS=	libmpfr.so:math/mpfr
 TEST_DEPENDS=	runtest:misc/dejagnu
 
+USES=		compiler:c++11-lang cpe gmake libtool tar:xz
+
 TEST_TARGET=	check
-# XXX: This should be compiler:c++11-lib as GDB doesn't really require
-# C++14.  However, clang in 10.3 crashes while building this port.
-# Requiring C++14 forces 10.3 to use an external version of clang while
-# still using the base system clang on 11.0 and later.
-USES=		compiler:c++14-lang cpe gettext-runtime gmake libtool tar:xz
+
 USE_CSTD=	gnu89
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
@@ -46,9 +44,9 @@ LIB_DEPENDS+=	libexpat.so:textproc/expat2
 VER=		${PORTVERSION:S/.//g}
 PLIST_SUB=	VER=${VER}
 
-OPTIONS_DEFINE=	DEBUG GDB_LINK GUILE KGDB PYTHON TUI
+OPTIONS_DEFINE=	DEBUG GDB_LINK GUILE KGDB NLS PYTHON TUI
 
-OPTIONS_DEFAULT=	GDB_LINK KGDB PYTHON TUI PORT_READLINE PORT_ICONV SYSTEM_ZLIB
+OPTIONS_DEFAULT=	GDB_LINK KGDB NLS PYTHON TUI PORT_READLINE PORT_ICONV SYSTEM_ZLIB
 
 OPTIONS_SINGLE=	READLINE ICONV ZLIB
 OPTIONS_SINGLE_READLINE=	BUNDLED_READLINE PORT_READLINE
@@ -72,6 +70,7 @@ DEBUG_CFLAGS=		-g
 GUILE_CONFIGURE_WITH=	guile
 GUILE_USES=		pkgconfig
 GUILE_LIB_DEPENDS=	libguile-2.0.so:lang/guile2
+NLS_USES=	gettext-runtime
 PORT_READLINE_USES=	readline:port
 PORT_ICONV_USES=	iconv:wchar_t
 PYTHON_CONFIGURE_ON=	--with-python=${PYTHON_CMD}
