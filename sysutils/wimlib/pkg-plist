@@ -19,7 +19,7 @@ bin/wimverify
 include/wimlib.h
 lib/libwim.so
 lib/libwim.so.15
-lib/libwim.so.15.14.0
+lib/libwim.so.15.15.0
 libdata/pkgconfig/wimlib.pc
 man/man1/mkwinpeimg.1.gz
 man/man1/wimappend.1.gz

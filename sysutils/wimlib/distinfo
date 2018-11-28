@@ -1,3 +1,3 @@
-TIMESTAMP = 1528383487
-SHA256 (wimlib-1.12.0.tar.gz) = 852cf59d682a91974f715f09fa98cab621b740226adcfea7a42360be0f86464f
-SIZE (wimlib-1.12.0.tar.gz) = 1014508
+TIMESTAMP = 1543424329
+SHA256 (wimlib-1.13.0.tar.gz) = 51d92cafaae0180c7a91b50620f86ffbcec6d6aef360d38dd47e274e65d7970b
+SIZE (wimlib-1.13.0.tar.gz) = 1035146
