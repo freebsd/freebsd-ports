@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gstreamer
-PORTVERSION=	3.2.9
+PORTVERSION=	3.3.0
 CATEGORIES=	multimedia rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libgstreamer-1.0.so:multimedia/gstreamer1
 RUN_DEPENDS=	rubygem-glib2>=${PORTVERSION}:devel/rubygem-glib2 \
 		rubygem-gobject-introspection>=${PORTVERSION}:devel/rubygem-gobject-introspection
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>
