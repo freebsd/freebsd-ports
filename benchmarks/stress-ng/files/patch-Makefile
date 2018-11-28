@@ -1,10 +1,10 @@
---- Makefile.orig	2018-11-09 10:44:59 UTC
+--- Makefile.orig	2018-11-14 13:17:08 UTC
 +++ Makefile
-@@ -21,7 +21,7 @@ VERSION=0.09.45
+@@ -21,7 +21,7 @@ VERSION=0.09.46
  # Codename "portable pressure producer"
  #
  
--CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"' -O2 -std=gnu99 -pipe -g
+-CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"' -O2 -std=gnu99
 +CFLAGS += -Wall -Wextra -DVERSION='"$(VERSION)"' -O2 -std=gnu11 -pipe
  
  #
