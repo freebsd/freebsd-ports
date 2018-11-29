@@ -13,8 +13,6 @@ COMMENT=	RabbitMQ is an implementation of AMQP
 LICENSE=	MPL11
 LICENSE_FILE=	${WRKSRC}/LICENSE-MPL-RabbitMQ
 
-BROKEN_powerpc64=	fails to build: (ArgumentError) argument error
-
 BUILD_DEPENDS=	erlang-runtime19>=19.3:lang/erlang-runtime19 \
 		elixir:lang/elixir \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson@${PY_FLAVOR} \
