@@ -3336,6 +3336,7 @@
 %%WWWDIR%%/app/controllers/concerns/send_file_upload.rb
 %%WWWDIR%%/app/controllers/concerns/sends_blob.rb
 %%WWWDIR%%/app/controllers/concerns/service_params.rb
+%%WWWDIR%%/app/controllers/concerns/sessionless_authentication.rb
 %%WWWDIR%%/app/controllers/concerns/snippets_actions.rb
 %%WWWDIR%%/app/controllers/concerns/spammable_actions.rb
 %%WWWDIR%%/app/controllers/concerns/todos_actions.rb
@@ -4807,6 +4808,8 @@
 %%WWWDIR%%/app/views/devise/mailer/_confirmation_instructions_secondary.text.erb
 %%WWWDIR%%/app/views/devise/mailer/confirmation_instructions.html.haml
 %%WWWDIR%%/app/views/devise/mailer/confirmation_instructions.text.erb
+%%WWWDIR%%/app/views/devise/mailer/email_changed.html.haml
+%%WWWDIR%%/app/views/devise/mailer/email_changed.text.erb
 %%WWWDIR%%/app/views/devise/mailer/password_change.html.haml
 %%WWWDIR%%/app/views/devise/mailer/password_change.text.erb
 %%WWWDIR%%/app/views/devise/mailer/reset_password_instructions.html.haml
@@ -5098,8 +5101,8 @@
 %%WWWDIR%%/app/views/notify/note_merge_request_email.text.erb
 %%WWWDIR%%/app/views/notify/note_personal_snippet_email.html.haml
 %%WWWDIR%%/app/views/notify/note_personal_snippet_email.text.erb
-%%WWWDIR%%/app/views/notify/note_snippet_email.html.haml
-%%WWWDIR%%/app/views/notify/note_snippet_email.text.erb
+%%WWWDIR%%/app/views/notify/note_project_snippet_email.html.haml
+%%WWWDIR%%/app/views/notify/note_project_snippet_email.text.erb
 %%WWWDIR%%/app/views/notify/pages_domain_disabled_email.html.haml
 %%WWWDIR%%/app/views/notify/pages_domain_disabled_email.text.haml
 %%WWWDIR%%/app/views/notify/pages_domain_enabled_email.html.haml
@@ -7182,6 +7185,7 @@
 %%WWWDIR%%/db/migrate/20181026143227_migrate_snippets_access_level_default_value.rb
 %%WWWDIR%%/db/migrate/20181101144347_add_index_for_stuck_mr_query.rb
 %%WWWDIR%%/db/migrate/20181106135939_add_index_to_deployments.rb
+%%WWWDIR%%/db/migrate/20181108091549_cleanup_environments_external_url.rb
 %%WWWDIR%%/db/migrate/gpg_keys_limits_to_mysql.rb
 %%WWWDIR%%/db/migrate/limits_ci_build_trace_chunks_raw_data_for_mysql.rb
 %%WWWDIR%%/db/migrate/limits_to_mysql.rb
@@ -7357,6 +7361,7 @@
 %%WWWDIR%%/db/post_migrate/20181013005024_remove_koding_from_application_settings.rb
 %%WWWDIR%%/db/post_migrate/20181014121030_enqueue_redact_links.rb
 %%WWWDIR%%/db/post_migrate/20181022173835_enqueue_populate_cluster_kubernetes_namespace.rb
+%%WWWDIR%%/db/post_migrate/20181026091631_migrate_forbidden_redirect_uris.rb
 %%WWWDIR%%/db/post_migrate/20181030135124_fill_empty_finished_at_in_deployments.rb
 %%WWWDIR%%/db/post_migrate/20181105201455_steal_fill_store_upload.rb
 %%WWWDIR%%/db/post_migrate/20181107054254_remove_restricted_todos_again.rb
@@ -9031,6 +9036,7 @@
 %%WWWDIR%%/doc/workflow/workflow.md
 %%WWWDIR%%/docker-compose.yml
 %%WWWDIR%%/docker/README.md
+%%WWWDIR%%/ee/changelogs/unreleased/sh-fix-issue-54189.yml
 %%WWWDIR%%/fixtures/emojis/aliases.json
 %%WWWDIR%%/fixtures/emojis/digests.json
 %%WWWDIR%%/fixtures/emojis/emoji-unicode-version-map.json
@@ -10772,6 +10778,7 @@
 %%WWWDIR%%/spec/controllers/dashboard/groups_controller_spec.rb
 %%WWWDIR%%/spec/controllers/dashboard/labels_controller_spec.rb
 %%WWWDIR%%/spec/controllers/dashboard/milestones_controller_spec.rb
+%%WWWDIR%%/spec/controllers/dashboard/projects_controller_spec.rb
 %%WWWDIR%%/spec/controllers/dashboard/todos_controller_spec.rb
 %%WWWDIR%%/spec/controllers/dashboard_controller_spec.rb
 %%WWWDIR%%/spec/controllers/explore/groups_controller_spec.rb
@@ -11278,6 +11285,7 @@
 %%WWWDIR%%/spec/features/milestones/user_creates_milestone_spec.rb
 %%WWWDIR%%/spec/features/milestones/user_deletes_milestone_spec.rb
 %%WWWDIR%%/spec/features/milestones/user_edits_milestone_spec.rb
+%%WWWDIR%%/spec/features/milestones/user_promotes_milestone_spec.rb
 %%WWWDIR%%/spec/features/milestones/user_views_milestone_spec.rb
 %%WWWDIR%%/spec/features/milestones/user_views_milestones_spec.rb
 %%WWWDIR%%/spec/features/oauth_login_spec.rb
@@ -13489,6 +13497,7 @@
 %%WWWDIR%%/spec/migrations/clean_up_for_members_spec.rb
 %%WWWDIR%%/spec/migrations/clean_upload_symlinks_spec.rb
 %%WWWDIR%%/spec/migrations/cleanup_build_stage_migration_spec.rb
+%%WWWDIR%%/spec/migrations/cleanup_environments_external_url_spec.rb
 %%WWWDIR%%/spec/migrations/cleanup_move_system_upload_folder_symlink_spec.rb
 %%WWWDIR%%/spec/migrations/cleanup_namespaceless_pending_delete_projects_spec.rb
 %%WWWDIR%%/spec/migrations/cleanup_nonexisting_namespace_pending_delete_projects_spec.rb
@@ -13509,6 +13518,7 @@
 %%WWWDIR%%/spec/migrations/issues_moved_to_id_foreign_key_spec.rb
 %%WWWDIR%%/spec/migrations/migrate_build_stage_reference_again_spec.rb
 %%WWWDIR%%/spec/migrations/migrate_create_trace_artifact_sidekiq_queue_spec.rb
+%%WWWDIR%%/spec/migrations/migrate_forbidden_redirect_uris_spec.rb
 %%WWWDIR%%/spec/migrations/migrate_gcp_clusters_to_new_clusters_architectures_spec.rb
 %%WWWDIR%%/spec/migrations/migrate_import_attributes_data_from_projects_to_project_mirror_data_spec.rb
 %%WWWDIR%%/spec/migrations/migrate_issues_to_ghost_user_spec.rb
@@ -14372,6 +14382,7 @@
 %%WWWDIR%%/spec/support/controllers/githubish_import_controller_shared_context.rb
 %%WWWDIR%%/spec/support/controllers/githubish_import_controller_shared_examples.rb
 %%WWWDIR%%/spec/support/controllers/ldap_omniauth_callbacks_controller_shared_context.rb
+%%WWWDIR%%/spec/support/controllers/sessionless_auth_controller_shared_examples.rb
 %%WWWDIR%%/spec/support/cycle_analytics_helpers/test_generation.rb
 %%WWWDIR%%/spec/support/db_cleaner.rb
 %%WWWDIR%%/spec/support/features/discussion_comments_shared_example.rb
@@ -14536,6 +14547,7 @@
 %%WWWDIR%%/spec/support/shared_contexts/json_response_shared_context.rb
 %%WWWDIR%%/spec/support/shared_contexts/merge_requests_allowing_collaboration.rb
 %%WWWDIR%%/spec/support/shared_contexts/services_shared_context.rb
+%%WWWDIR%%/spec/support/shared_contexts/url_shared_context.rb
 %%WWWDIR%%/spec/support/shared_examples/chat_slash_commands_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/ci_trace_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/common_system_notes_examples.rb
