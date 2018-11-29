@@ -121,9 +121,9 @@ aiforaf(const char *name, int af, struct addrinfo *pai, struct addrinfo **aip)
 		for (res = res0; res; res = res->ai_next)
 			res->ai_flags = pai->ai_flags;
 
-		(*aip)->ai_next = res0;
 		while ((*aip)->ai_next)
 			*aip = (*aip)->ai_next;
+		(*aip)->ai_next = res0;
 	}
 }
 
@@ -140,10 +140,16 @@ __nss_compat_getaddrinfo(void *retval, void *mdata, va_list ap)
 	memset(&sentinel, 0, sizeof(sentinel));
 	cur = &sentinel;
 
-	if ((ai->ai_family == AF_UNSPEC) || (ai->ai_family == AF_INET6))
-		aiforaf(name, AF_INET6, ai, &cur);
-	if ((ai->ai_family == AF_UNSPEC) || (ai->ai_family == AF_INET))
+	if (ai->ai_family == AF_INET) {
 		aiforaf(name, AF_INET, ai, &cur);
+	}
+	else if (ai->ai_family == AF_INET6) {
+		aiforaf(name, AF_INET6, ai, &cur);
+	}
+	else if (ai->ai_family == AF_UNSPEC) {
+		aiforaf(name, AF_INET6, ai, &cur);
+		aiforaf(name, AF_INET, ai, &cur);
+	}
 
 	if (!sentinel.ai_next) {
 		h_errno = HOST_NOT_FOUND;

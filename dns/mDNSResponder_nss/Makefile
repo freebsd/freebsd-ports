@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mDNSResponder
-PORTVERSION=	878.1.1
-PORTREVISION=	1
+PORTVERSION=	878.70.2
 CATEGORIES=	dns net
 MASTER_SITES=	http://opensource.apple.com/tarballs/mDNSResponder/
 PKGNAMESUFFIX=	_nss
@@ -21,9 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/_nss//}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH:C/^(...).*/\1/} == "arm"
 LD=${CC}
-.endif
 
 post-extract:
 	@${CP} ${FILESDIR}/nss_mdns_freebsd.c ${WRKSRC}/mDNSPosix
@@ -32,7 +29,7 @@ do-build:
 	(cd ${WRKSRC}/mDNSPosix && ${CC} ${CFLAGS} -c -std=c99 -Wall -fPIC \
 		-I. -I${PREFIX}/include -DPREFIX=\"${PREFIX}\" \
 		nss_mdns.c nss_mdns_freebsd.c)
-	(cd ${WRKSRC}/mDNSPosix && ${LD} -shared nss_mdns.o nss_mdns_freebsd.o \
+	(cd ${WRKSRC}/mDNSPosix && ${LD} -shared -Wl,-soname=nss_mdns.so.1 nss_mdns.o nss_mdns_freebsd.o \
 		-o nss_mdns.so.1 -L${PREFIX}/lib -R${PREFIX}/lib -ldns_sd)
 
 post-build:
@@ -41,7 +38,7 @@ post-build:
 do-install:
 	${INSTALL_LIB} ${WRKSRC}/mDNSPosix/nss_mdns.so.1 \
 		${STAGEDIR}${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/nss_mdns.so.1 \
+	${LN} -sf nss_mdns.so.1 \
 		${STAGEDIR}${PREFIX}/lib/nss_mdns.so
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/mDNSPosix/nss_mdns.conf \
