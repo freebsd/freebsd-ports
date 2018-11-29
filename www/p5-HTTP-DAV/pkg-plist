@@ -7,9 +7,9 @@ bin/dave
 %%SITE_PERL%%/HTTP/DAV/ResourceList.pm
 %%SITE_PERL%%/HTTP/DAV/Response.pm
 %%SITE_PERL%%/HTTP/DAV/Utils.pm
+%%PERL5_MAN1%%/dave.1.gz
 %%PERL5_MAN3%%/HTTP::DAV.3.gz
 %%PERL5_MAN3%%/HTTP::DAV::Changes.3.gz
 %%PERL5_MAN3%%/HTTP::DAV::Lock.3.gz
 %%PERL5_MAN3%%/HTTP::DAV::Resource.3.gz
 %%PERL5_MAN3%%/HTTP::DAV::Response.3.gz
-%%PERL5_MAN1%%/dave.1.gz
