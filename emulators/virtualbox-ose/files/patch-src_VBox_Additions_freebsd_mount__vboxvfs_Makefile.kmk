@@ -1,6 +1,6 @@
---- src/VBox/Additions/freebsd/mount_vboxvfs/Makefile.kmk.orig	1970-01-01 01:00:00.000000000 +0100
-+++ src/VBox/Additions/freebsd/mount_vboxvfs/Makefile.kmk	2017-07-13 00:17:45.342815229 +0200
-@@ -0,0 +1,24 @@
+--- src/VBox/Additions/freebsd/mount_vboxvfs/Makefile.kmk.orig	2018-11-29 19:03:21 UTC
++++ src/VBox/Additions/freebsd/mount_vboxvfs/Makefile.kmk
+@@ -0,0 +1,23 @@
 +# $Id: Makefile.kmk $
 +## @file
 +# Sub-Makefile for the FreeBSD Shared folder mount utility.
@@ -13,14 +13,13 @@
 +$(error "The FreeBSD guest additions can only be built on FreeBSD!")
 +endif
 +
-+FREEBSD_SRC=	/usr/src
-+MOUNT=		${FREEBSD_SRC}/sbin/mount
++MOUNT=		$(VBOX_FREEBSD_SRC)/../sbin/mount
 +
-+CFLAGS+=-I${MOUNT}
++CFLAGS+=-I$(MOUNT)
 +
 +PROGRAMS                += mount_vboxvfs
 +mount_vboxvfs_TEMPLATE    = NewVBoxGuestR3Exe
-+mount_vboxvfs_SOURCES     = ${MOUNT}/getmntopts.c \
++mount_vboxvfs_SOURCES     = $(MOUNT)/getmntopts.c \
 +				mount_vboxvfs.c
 +
 +include $(FILE_KBUILD_SUB_FOOTER)
