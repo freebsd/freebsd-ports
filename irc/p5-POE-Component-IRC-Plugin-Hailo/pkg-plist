@@ -1,4 +1,4 @@
 bin/irchailo-seed
-%%PERL5_MAN1%%/irchailo-seed.1.gz
 %%SITE_PERL%%/POE/Component/IRC/Plugin/Hailo.pm
+%%PERL5_MAN1%%/irchailo-seed.1.gz
 %%PERL5_MAN3%%/POE::Component::IRC::Plugin::Hailo.3.gz

@@ -26,4 +26,6 @@ TEST_DEPENDS=	p5-Test-Script>=1.07:devel/p5-Test-Script
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
