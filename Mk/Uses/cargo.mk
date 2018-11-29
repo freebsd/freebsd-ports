@@ -169,6 +169,18 @@ CARGO_ENV+=	RUSTONIG_SYSTEM_LIBONIG=1
 LIB_DEPENDS+=	libonig.so:devel/oniguruma
 .endif
 
+.if ${CARGO_CRATES:Mopenssl-0.[0-9].*}
+# FreeBSD 12.0 updated base OpenSSL in r339270:
+# https://github.com/sfackler/rust-openssl/commit/276577553501
+. if !exists(${PATCHDIR}/patch-openssl-1.1.1) # skip if backported
+_openssl_VER=	${CARGO_CRATES:Mopenssl-0.[0-9].*:C/.*-//}
+.  if ${_openssl_VER:R:R} == 0 && (${_openssl_VER:R:E} < 10 || ${_openssl_VER:R:E} == 10 && ${_openssl_VER:E} < 4)
+DEV_WARNING+=	"CARGO_CRATES=openssl-0.10.3 or older do not support OpenSSL 1.1.1. Consider updating to the latest version."
+.  endif
+. endif
+.undef _openssl_VER
+.endif
+
 .if ${CARGO_CRATES:Mopenssl-sys-[0-9]*}
 # Make sure that openssl-sys can find the correct version of OpenSSL
 .include "${USESDIR}/ssl.mk"
