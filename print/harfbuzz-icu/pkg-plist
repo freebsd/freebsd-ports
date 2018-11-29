@@ -2,6 +2,8 @@
 @comment bin/hb-shape
 @comment bin/hb-subset
 @comment bin/hb-view
+@comment include/harfbuzz/hb-aat-layout.h
+@comment include/harfbuzz/hb-aat.h
 @comment include/harfbuzz/hb-blob.h
 @comment include/harfbuzz/hb-buffer.h
 @comment include/harfbuzz/hb-common.h
