@@ -17,7 +17,8 @@ BUILD_DEPENDS=	asciidoc:textproc/asciidoc
 
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
-USES=		gettext-runtime gmake gnome libtool pathfix pkgconfig ssl
+USES=		compiler:c11 gettext-runtime gmake gnome libtool pathfix \
+		pkgconfig ssl
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 
