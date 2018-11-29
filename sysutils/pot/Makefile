@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pot
-PORTVERSION=	0.5.7
+PORTVERSION=	0.5.8
 CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -11,11 +11,15 @@ COMMENT=	Container framework for FreeBSD
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+RUN_DEPENDS=	potnet:sysutils/potnet \
+	${LOCALBASE}/share/freebsd/MANIFESTS/amd64-amd64-11.2-RELEASE:misc/freebsd-release-manifests
+
+USE_RC_SUBR=	pot
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	pizzamig
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_RC_SUBR=	pot
 
 OPTIONS_DEFINE=	ZSH
 
