@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-systemload-plugin
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
