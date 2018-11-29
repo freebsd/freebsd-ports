@@ -1,0 +1,16 @@
+To run the wxpython based GUI:
+
+export GRASS_PYTHON=python2.7 (or your local python version)
+grass -gui 
+
+To map gcc for numpy, add:
+
+libgcc_s.so.1   gcc6/libgcc_s.so.1
+libgomp.so.1    gcc6/libgomp.so.1
+libssp.so.0     gcc6/libssp.so.0
+libstdc++.so.6  gcc6/libstdc++.so.6
+
+to %%LOCALBASE%%/etc/libmap.d/gcc.conf. Use your local gcc version
+instead of gcc6.
+
+This is required for some modules using fortran.
