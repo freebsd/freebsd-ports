@@ -2,6 +2,8 @@ bin/hb-ot-shape-closure
 bin/hb-shape
 bin/hb-subset
 bin/hb-view
+include/harfbuzz/hb-aat-layout.h
+include/harfbuzz/hb-aat.h
 include/harfbuzz/hb-blob.h
 include/harfbuzz/hb-buffer.h
 include/harfbuzz/hb-common.h
