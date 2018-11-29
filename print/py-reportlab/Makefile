@@ -5,7 +5,7 @@ PORTNAME=	reportlab
 PORTVERSION=	3.5.11
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP \
-		http://www.reportlab.com/ftp/
+		https://www.reportlab.com/ftp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PFBFER}
