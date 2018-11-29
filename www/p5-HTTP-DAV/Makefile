@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTTP-DAV
-PORTVERSION=	0.48
+PORTVERSION=	0.49
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,5 +20,7 @@ RUN_DEPENDS=	p5-URI>0:net/p5-URI \
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
