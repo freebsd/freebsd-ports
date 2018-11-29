@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test2-Suite
-PORTVERSION=	0.000115
+PORTVERSION=	0.000116
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:EXODIST
@@ -23,8 +23,9 @@ RUN_DEPENDS=	p5-Importer>=0.024:devel/p5-Importer \
 		p5-Term-Table>=0.002:devel/p5-Term-Table \
 		p5-Test-Simple>=1.302136:devel/p5-Test-Simple
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
