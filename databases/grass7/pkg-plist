@@ -152,7 +152,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/bin/r.in.bin
 %%GRASS_INST_DIR%%/bin/r.in.gdal
 %%GRASS_INST_DIR%%/bin/r.in.gridatb
-%%LAS%%%%GRASS_INST_DIR%%/bin/r.in.lidar
 %%GRASS_INST_DIR%%/bin/r.in.mat
 %%GRASS_INST_DIR%%/bin/r.in.png
 %%GRASS_INST_DIR%%/bin/r.in.poly
@@ -273,7 +272,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/bin/r3.gwflow
 %%GRASS_INST_DIR%%/bin/r3.in.ascii
 %%GRASS_INST_DIR%%/bin/r3.in.bin
-%%LAS%%%%GRASS_INST_DIR%%/bin/r3.in.lidar
 %%GRASS_INST_DIR%%/bin/r3.in.v5d
 %%GRASS_INST_DIR%%/bin/r3.info
 %%GRASS_INST_DIR%%/bin/r3.mapcalc
@@ -283,7 +281,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/bin/r3.null
 %%GRASS_INST_DIR%%/bin/r3.out.ascii
 %%GRASS_INST_DIR%%/bin/r3.out.bin
-%%NETCDF%%%%GRASS_INST_DIR%%/bin/r3.out.netcdf
 %%GRASS_INST_DIR%%/bin/r3.out.v5d
 %%GRASS_INST_DIR%%/bin/r3.out.vtk
 %%GRASS_INST_DIR%%/bin/r3.retile
@@ -320,7 +317,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/bin/v.in.ascii
 %%GRASS_INST_DIR%%/bin/v.in.db
 %%GRASS_INST_DIR%%/bin/v.in.dxf
-%%LAS%%%%GRASS_INST_DIR%%/bin/v.in.lidar
 %%GRASS_INST_DIR%%/bin/v.in.ogr
 %%GRASS_INST_DIR%%/bin/v.in.region
 %%GRASS_INST_DIR%%/bin/v.info
@@ -356,9 +352,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/bin/v.normal
 %%GRASS_INST_DIR%%/bin/v.out.ascii
 %%GRASS_INST_DIR%%/bin/v.out.dxf
-%%LAS%%%%GRASS_INST_DIR%%/bin/v.out.lidar
 %%GRASS_INST_DIR%%/bin/v.out.ogr
-%%PGSQL%%%%GRASS_INST_DIR%%/bin/v.out.postgis
 %%GRASS_INST_DIR%%/bin/v.out.pov
 %%GRASS_INST_DIR%%/bin/v.out.svg
 %%GRASS_INST_DIR%%/bin/v.out.vtk
@@ -430,8 +424,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/demolocation/PERMANENT/vector/point/hist
 %%GRASS_INST_DIR%%/demolocation/PERMANENT/vector/point/sidx
 %%GRASS_INST_DIR%%/demolocation/PERMANENT/vector/point/topo
-%%GRASS_INST_DIR%%/docs/html/albedo_landsat5.png
-%%GRASS_INST_DIR%%/docs/html/albedo_landsat7.png
 %%GRASS_INST_DIR%%/docs/html/aspect.png
 %%GRASS_INST_DIR%%/docs/html/aspect_diagram.png
 %%GRASS_INST_DIR%%/docs/html/barscales/arrow_ends.png
@@ -724,10 +716,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/gi_vector.jpg
 %%GRASS_INST_DIR%%/docs/html/graphical_index.html
 %%GRASS_INST_DIR%%/docs/html/grass-dbf.html
-%%MYSQL%%%%GRASS_INST_DIR%%/docs/html/grass-mysql.html
-%%ODBC%%%%GRASS_INST_DIR%%/docs/html/grass-odbc.html
 %%GRASS_INST_DIR%%/docs/html/grass-ogr.html
-%%PGSQL%%%%GRASS_INST_DIR%%/docs/html/grass-pg.html
 %%GRASS_INST_DIR%%/docs/html/grass-sqlite.html
 %%GRASS_INST_DIR%%/docs/html/grass7.html
 %%GRASS_INST_DIR%%/docs/html/grass7_arch.png
@@ -787,16 +776,25 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/i.topo.corr.html
 %%GRASS_INST_DIR%%/docs/html/i.vi.html
 %%GRASS_INST_DIR%%/docs/html/i.zc.html
-%%GRASS_INST_DIR%%/docs/html/i_col_enh_corr.jpg
-%%GRASS_INST_DIR%%/docs/html/i_col_enh_uncorr.jpg
+%%GRASS_INST_DIR%%/docs/html/i_albedo_landsat5.png
+%%GRASS_INST_DIR%%/docs/html/i_albedo_landsat7.png
+%%GRASS_INST_DIR%%/docs/html/i_atcorr_B02_atcorr.png
+%%GRASS_INST_DIR%%/docs/html/i_cluster_landsat_clustering.png
+%%GRASS_INST_DIR%%/docs/html/i_colors_enhance_corrected.jpg
+%%GRASS_INST_DIR%%/docs/html/i_colors_enhance_uncorrected.jpg
 %%GRASS_INST_DIR%%/docs/html/i_maxlik_classes.png
 %%GRASS_INST_DIR%%/docs/html/i_maxlik_rejection.png
 %%GRASS_INST_DIR%%/docs/html/i_maxlik_rgb.png
+%%GRASS_INST_DIR%%/docs/html/i_ortho_camera.png
 %%GRASS_INST_DIR%%/docs/html/i_ortho_photo_step1.png
 %%GRASS_INST_DIR%%/docs/html/i_ortho_photo_step5.png
 %%GRASS_INST_DIR%%/docs/html/i_ortho_photo_step6.png
 %%GRASS_INST_DIR%%/docs/html/i_ortho_photo_step7.png
 %%GRASS_INST_DIR%%/docs/html/i_ortho_photo_step8.png
+%%GRASS_INST_DIR%%/docs/html/i_pansharpen_rgb_brovey321.jpg
+%%GRASS_INST_DIR%%/docs/html/i_pansharpen_rgb_ihs321.jpg
+%%GRASS_INST_DIR%%/docs/html/i_pansharpen_rgb_landsat321.jpg
+%%GRASS_INST_DIR%%/docs/html/i_pansharpen_rgb_pca321.jpg
 %%GRASS_INST_DIR%%/docs/html/i_pca_result.png
 %%GRASS_INST_DIR%%/docs/html/i_segment_lsat7_pan.png
 %%GRASS_INST_DIR%%/docs/html/i_segment_lsat7_seg_min100.png
@@ -805,6 +803,11 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/i_segment_ortho_segs_l1.jpg
 %%GRASS_INST_DIR%%/docs/html/i_segment_ortho_segs_l2_l5.jpg
 %%GRASS_INST_DIR%%/docs/html/i_spectral.png
+%%GRASS_INST_DIR%%/docs/html/i_tasscap_brightness.jpg
+%%GRASS_INST_DIR%%/docs/html/i_tasscap_greenness.jpg
+%%GRASS_INST_DIR%%/docs/html/i_tasscap_haze.jpg
+%%GRASS_INST_DIR%%/docs/html/i_tasscap_wetness.jpg
+%%GRASS_INST_DIR%%/docs/html/i_topo_corr_angles.png
 %%GRASS_INST_DIR%%/docs/html/i_vi_arvi.png
 %%GRASS_INST_DIR%%/docs/html/i_vi_gari.png
 %%GRASS_INST_DIR%%/docs/html/i_vi_ndvi.png
@@ -966,7 +969,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/index.html
 %%GRASS_INST_DIR%%/docs/html/jquery.fixedheadertable.min.js
 %%GRASS_INST_DIR%%/docs/html/keywords.html
-%%GRASS_INST_DIR%%/docs/html/landsat_cluster.png
 %%GRASS_INST_DIR%%/docs/html/legend.png
 %%GRASS_INST_DIR%%/docs/html/lrs.html
 %%GRASS_INST_DIR%%/docs/html/m.cogo.html
@@ -1002,7 +1004,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/parser_standard_options.html
 %%GRASS_INST_DIR%%/docs/html/parser_standard_options.js
 %%GRASS_INST_DIR%%/docs/html/pcurv.png
-%%GRASS_INST_DIR%%/docs/html/photo.camera.png
 %%GRASS_INST_DIR%%/docs/html/pngdriver.html
 %%GRASS_INST_DIR%%/docs/html/postscript.html
 %%GRASS_INST_DIR%%/docs/html/postscript_graphical.html
@@ -1051,7 +1052,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/r.in.bin.html
 %%GRASS_INST_DIR%%/docs/html/r.in.gdal.html
 %%GRASS_INST_DIR%%/docs/html/r.in.gridatb.html
-%%LAS%%%%GRASS_INST_DIR%%/docs/html/r.in.lidar.html
 %%GRASS_INST_DIR%%/docs/html/r.in.mat.html
 %%GRASS_INST_DIR%%/docs/html/r.in.png.html
 %%GRASS_INST_DIR%%/docs/html/r.in.poly.html
@@ -1187,7 +1187,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/r3.gwflow.html
 %%GRASS_INST_DIR%%/docs/html/r3.in.ascii.html
 %%GRASS_INST_DIR%%/docs/html/r3.in.bin.html
-%%LAS%%%%GRASS_INST_DIR%%/docs/html/r3.in.lidar.html
 %%GRASS_INST_DIR%%/docs/html/r3.in.v5d.html
 %%GRASS_INST_DIR%%/docs/html/r3.in.xyz.html
 %%GRASS_INST_DIR%%/docs/html/r3.info.html
@@ -1198,7 +1197,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/r3.null.html
 %%GRASS_INST_DIR%%/docs/html/r3.out.ascii.html
 %%GRASS_INST_DIR%%/docs/html/r3.out.bin.html
-%%NETCDF%%%%GRASS_INST_DIR%%/docs/html/r3.out.netcdf.html
 %%GRASS_INST_DIR%%/docs/html/r3.out.v5d.html
 %%GRASS_INST_DIR%%/docs/html/r3.out.vtk.html
 %%GRASS_INST_DIR%%/docs/html/r3.retile.html
@@ -1207,7 +1205,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/r3.timestamp.html
 %%GRASS_INST_DIR%%/docs/html/r3.to.rast.html
 %%GRASS_INST_DIR%%/docs/html/r3.to.rast.png
-%%LAS%%%%GRASS_INST_DIR%%/docs/html/r3_in_lidar.png
 %%GRASS_INST_DIR%%/docs/html/r3.univar.html
 %%GRASS_INST_DIR%%/docs/html/r3flow_flowlines.png
 %%GRASS_INST_DIR%%/docs/html/r3flow_flowlines_color.png
@@ -1235,12 +1232,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/r_grow_distance_sea.png
 %%GRASS_INST_DIR%%/docs/html/r_grow_distance_zoom.png
 %%GRASS_INST_DIR%%/docs/html/r_gwflow_concept.png
-%%LAS%%%%GRASS_INST_DIR%%/docs/html/r_in_lidar.png
-%%LAS%%%%GRASS_INST_DIR%%/docs/html/r_in_lidar_base_raster.png
-%%LAS%%%%GRASS_INST_DIR%%/docs/html/r_in_lidar_binning_count.png
-%%LAS%%%%GRASS_INST_DIR%%/docs/html/r_in_lidar_binning_mean.png
-%%LAS%%%%GRASS_INST_DIR%%/docs/html/r_in_lidar_dem_mean3D.jpg
-%%LAS%%%%GRASS_INST_DIR%%/docs/html/r_in_lidar_zrange.png
 %%GRASS_INST_DIR%%/docs/html/r_lake_lidar_dem.jpg
 %%GRASS_INST_DIR%%/docs/html/r_li_dominance_formula.png
 %%GRASS_INST_DIR%%/docs/html/r_li_edgedensity_formula_1.png
@@ -1288,10 +1279,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/raster_graphical.html
 %%GRASS_INST_DIR%%/docs/html/rasterintro.html
 %%GRASS_INST_DIR%%/docs/html/rcost_knightsmove.png
-%%GRASS_INST_DIR%%/docs/html/rgb_brovey321.jpg
-%%GRASS_INST_DIR%%/docs/html/rgb_ihs321.jpg
-%%GRASS_INST_DIR%%/docs/html/rgb_landsat321.jpg
-%%GRASS_INST_DIR%%/docs/html/rgb_pca321.jpg
 %%GRASS_INST_DIR%%/docs/html/rhorizon_polar_plot.png
 %%GRASS_INST_DIR%%/docs/html/rhorizon_shaded_dem_point.png
 %%GRASS_INST_DIR%%/docs/html/rhorizon_singlepoint_plot.png
@@ -1361,15 +1348,10 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/t.vect.observe.strds.html
 %%GRASS_INST_DIR%%/docs/html/t.vect.univar.html
 %%GRASS_INST_DIR%%/docs/html/t.vect.what.strds.html
-%%GRASS_INST_DIR%%/docs/html/tasscap1.jpg
-%%GRASS_INST_DIR%%/docs/html/tasscap2.jpg
-%%GRASS_INST_DIR%%/docs/html/tasscap3.jpg
-%%GRASS_INST_DIR%%/docs/html/tasscap4.jpg
 %%GRASS_INST_DIR%%/docs/html/tcurv.png
 %%GRASS_INST_DIR%%/docs/html/temporal.html
 %%GRASS_INST_DIR%%/docs/html/temporal_graphical.html
 %%GRASS_INST_DIR%%/docs/html/temporalintro.html
-%%GRASS_INST_DIR%%/docs/html/terrain_correction.png
 %%GRASS_INST_DIR%%/docs/html/test.r3flow.html
 %%GRASS_INST_DIR%%/docs/html/test.raster3d.lib.html
 %%GRASS_INST_DIR%%/docs/html/timeline_2D.jpg
@@ -1516,7 +1498,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/v.in.dxf.html
 %%GRASS_INST_DIR%%/docs/html/v.in.e00.html
 %%GRASS_INST_DIR%%/docs/html/v.in.geonames.html
-%%LAS%%%%GRASS_INST_DIR%%/docs/html/v.in.lidar.html
 %%GRASS_INST_DIR%%/docs/html/v.in.lines.html
 %%GRASS_INST_DIR%%/docs/html/v.in.mapgen.html
 %%GRASS_INST_DIR%%/docs/html/v.in.ogr.html
@@ -1555,9 +1536,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/v.normal.html
 %%GRASS_INST_DIR%%/docs/html/v.out.ascii.html
 %%GRASS_INST_DIR%%/docs/html/v.out.dxf.html
-%%LAS%%%%GRASS_INST_DIR%%/docs/html/v.out.lidar.html
 %%GRASS_INST_DIR%%/docs/html/v.out.ogr.html
-%%PGSQL%%%%GRASS_INST_DIR%%/docs/html/v.out.postgis.html
 %%GRASS_INST_DIR%%/docs/html/v.out.pov.html
 %%GRASS_INST_DIR%%/docs/html/v.out.svg.html
 %%GRASS_INST_DIR%%/docs/html/v.out.vtk.html
@@ -1863,10 +1842,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/man/man1/general_graphical.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/graphical_index.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/grass-dbf.1.gz
-%%MYSQL%%%%GRASS_INST_DIR%%/docs/man/man1/grass-mysql.1.gz
-%%ODBC%%%%GRASS_INST_DIR%%/docs/man/man1/grass-odbc.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/grass-ogr.1.gz
-%%PGSQL%%%%GRASS_INST_DIR%%/docs/man/man1/grass-pg.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/grass-sqlite.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/grass7.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/grass_database.1.gz
@@ -1979,7 +1955,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/man/man1/r.in.bin.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.in.gdal.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.in.gridatb.1.gz
-%%LAS%%%%GRASS_INST_DIR%%/docs/man/man1/r.in.lidar.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.in.mat.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.in.png.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.in.poly.1.gz
@@ -2111,7 +2086,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/man/man1/r3.gwflow.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r3.in.ascii.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r3.in.bin.1.gz
-%%LAS%%%%GRASS_INST_DIR%%/docs/man/man1/r3.in.lidar.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r3.in.v5d.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r3.in.xyz.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r3.info.1.gz
@@ -2122,7 +2096,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/man/man1/r3.null.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r3.out.ascii.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r3.out.bin.1.gz
-%%NETCDF%%%%GRASS_INST_DIR%%/docs/man/man1/r3.out.netcdf.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r3.out.v5d.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r3.out.vtk.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r3.retile.1.gz
@@ -2334,7 +2307,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/man/man1/v.in.dxf.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.in.e00.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.in.geonames.1.gz
-%%LAS%%%%GRASS_INST_DIR%%/docs/man/man1/v.in.lidar.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.in.lines.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.in.mapgen.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.in.ogr.1.gz
@@ -2373,9 +2345,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/man/man1/v.normal.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.out.ascii.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.out.dxf.1.gz
-%%LAS%%%%GRASS_INST_DIR%%/docs/man/man1/v.out.lidar.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.out.ogr.1.gz
-%%PGSQL%%%%GRASS_INST_DIR%%/docs/man/man1/v.out.postgis.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.out.pov.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.out.svg.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/v.out.vtk.1.gz
@@ -2451,8 +2421,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/man/man1/wxpyimgview.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/ximgview.1.gz
 %%GRASS_INST_DIR%%/driver/db/dbf
-%%MYSQL%%%%GRASS_INST_DIR%%/driver/db/mysql
-%%ODBC%%%%GRASS_INST_DIR%%/driver/db/odbc
 %%GRASS_INST_DIR%%/driver/db/ogr
 %%GRASS_INST_DIR%%/driver/db/pg
 %%GRASS_INST_DIR%%/driver/db/sqlite
@@ -4010,6 +3978,9 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/locale/fr/LC_MESSAGES/grasslibs.mo
 %%GRASS_INST_DIR%%/locale/fr/LC_MESSAGES/grassmods.mo
 %%GRASS_INST_DIR%%/locale/fr/LC_MESSAGES/grasswxpy.mo
+%%GRASS_INST_DIR%%/locale/hu/LC_MESSAGES/grasslibs.mo
+%%GRASS_INST_DIR%%/locale/hu/LC_MESSAGES/grassmods.mo
+%%GRASS_INST_DIR%%/locale/hu/LC_MESSAGES/grasswxpy.mo
 %%GRASS_INST_DIR%%/locale/id_ID/LC_MESSAGES/grasslibs.mo
 %%GRASS_INST_DIR%%/locale/id_ID/LC_MESSAGES/grassmods.mo
 %%GRASS_INST_DIR%%/locale/id_ID/LC_MESSAGES/grasswxpy.mo
@@ -4204,7 +4175,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/scripts/v.what.strds
 %%GRASS_INST_DIR%%/scripts/v.what.vect
 %%GRASS_INST_DIR%%/scripts/wxpyimgview
-%%GRASS_INST_DIR%%/share/appdata/grass.appdata.xml
 %%GRASS_INST_DIR%%/share/applications/grass.desktop
 %%GRASS_INST_DIR%%/share/icons/hicolor/128x128/apps/grass.png
 %%GRASS_INST_DIR%%/share/icons/hicolor/16x16/apps/grass.png
@@ -4222,6 +4192,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/share/icons/hicolor/8x8/apps/grass.png
 %%GRASS_INST_DIR%%/share/icons/hicolor/96x96/apps/grass.png
 %%GRASS_INST_DIR%%/share/icons/hicolor/scalable/apps/grass.svg
+%%GRASS_INST_DIR%%/share/metainfo/org.osgeo.grass.appdata.xml
 %%GRASS_INST_DIR%%/tools/g.echo
 %%GRASS_INST_DIR%%/tools/g.html2man.py
 %%GRASS_INST_DIR%%/tools/ggroff.py
@@ -4231,6 +4202,39 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/tools/mkhtml.py
 %%GRASS_INST_DIR%%/translation_status.json
 %%GRASS_INST_DIR%%/translators.csv
+%%LAS%%%%GRASS_INST_DIR%%/bin/r.in.lidar
+%%LAS%%%%GRASS_INST_DIR%%/bin/r3.in.lidar
+%%LAS%%%%GRASS_INST_DIR%%/bin/v.in.lidar
+%%LAS%%%%GRASS_INST_DIR%%/bin/v.out.lidar
+%%LAS%%%%GRASS_INST_DIR%%/docs/html/r.in.lidar.html
+%%LAS%%%%GRASS_INST_DIR%%/docs/html/r3.in.lidar.html
+%%LAS%%%%GRASS_INST_DIR%%/docs/html/r3_in_lidar.png
+%%LAS%%%%GRASS_INST_DIR%%/docs/html/r_in_lidar.png
+%%LAS%%%%GRASS_INST_DIR%%/docs/html/r_in_lidar_base_raster.png
+%%LAS%%%%GRASS_INST_DIR%%/docs/html/r_in_lidar_binning_count.png
+%%LAS%%%%GRASS_INST_DIR%%/docs/html/r_in_lidar_binning_mean.png
+%%LAS%%%%GRASS_INST_DIR%%/docs/html/r_in_lidar_dem_mean3D.jpg
+%%LAS%%%%GRASS_INST_DIR%%/docs/html/r_in_lidar_zrange.png
+%%LAS%%%%GRASS_INST_DIR%%/docs/html/v.in.lidar.html
+%%LAS%%%%GRASS_INST_DIR%%/docs/html/v.out.lidar.html
+%%LAS%%%%GRASS_INST_DIR%%/docs/man/man1/r.in.lidar.1.gz
+%%LAS%%%%GRASS_INST_DIR%%/docs/man/man1/r3.in.lidar.1.gz
+%%LAS%%%%GRASS_INST_DIR%%/docs/man/man1/v.in.lidar.1.gz
+%%LAS%%%%GRASS_INST_DIR%%/docs/man/man1/v.out.lidar.1.gz
+%%MYSQL%%%%GRASS_INST_DIR%%/docs/html/grass-mysql.html
+%%MYSQL%%%%GRASS_INST_DIR%%/docs/man/man1/grass-mysql.1.gz
+%%MYSQL%%%%GRASS_INST_DIR%%/driver/db/mysql
+%%NETCDF%%%%GRASS_INST_DIR%%/bin/r3.out.netcdf
+%%NETCDF%%%%GRASS_INST_DIR%%/docs/html/r3.out.netcdf.html
+%%NETCDF%%%%GRASS_INST_DIR%%/docs/man/man1/r3.out.netcdf.1.gz
+%%ODBC%%%%GRASS_INST_DIR%%/docs/html/grass-odbc.html
+%%ODBC%%%%GRASS_INST_DIR%%/docs/man/man1/grass-odbc.1.gz
+%%ODBC%%%%GRASS_INST_DIR%%/driver/db/odbc
+%%PGSQL%%%%GRASS_INST_DIR%%/bin/v.out.postgis
+%%PGSQL%%%%GRASS_INST_DIR%%/docs/html/grass-pg.html
+%%PGSQL%%%%GRASS_INST_DIR%%/docs/html/v.out.postgis.html
+%%PGSQL%%%%GRASS_INST_DIR%%/docs/man/man1/grass-pg.1.gz
+%%PGSQL%%%%GRASS_INST_DIR%%/docs/man/man1/v.out.postgis.1.gz
 @dir %%GRASS_INST_DIR%%/demolocation/PERMANENT/cats
 @dir %%GRASS_INST_DIR%%/demolocation/PERMANENT/cell
 @dir %%GRASS_INST_DIR%%/demolocation/PERMANENT/cell_misc
