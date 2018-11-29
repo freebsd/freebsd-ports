@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	faraday
-PORTVERSION=	0.15.3
+PORTVERSION=	0.15.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-multipart-post>=1.2:www/rubygem-multipart-post
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
