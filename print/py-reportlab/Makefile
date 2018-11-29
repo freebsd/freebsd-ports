@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	reportlab
-PORTVERSION=	3.5.9
+PORTVERSION=	3.5.11
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP \
 		http://www.reportlab.com/ftp/
