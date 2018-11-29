@@ -66,11 +66,11 @@ UPDATE INFORMATION FOR UPDATES OF 2.1.18/OLDER TO VERSION 2.1.19 AND NEWER:
 
 ********************************************************************
 The mailman newsyslog.conf(5) filename has been changed:
-  OLD: ${PREFIX}/etc/newsyslog.conf.d/mailman.newsyslog
-  NEW: ${PREFIX}/etc/newsyslog.conf.d/mailman.conf
+  OLD: %%PREFIX%%/etc/newsyslog.conf.d/mailman.newsyslog
+  NEW: %%PREFIX%%/etc/newsyslog.conf.d/mailman.conf
 
 Any file found at the old location has been automatically moved to
-the new location. This was done to ensure log rotation continued to
+the new location. This was done to ensure log rotation continues to
 work after change r340318 made to FreeBSD base, where the default
 newsyslog configuration now only includes filenames that end with
 '.conf' and do not begin with '.'.
