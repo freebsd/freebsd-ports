@@ -2,16 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	asm-xml
-PORTVERSION=	1.1
+PORTVERSION=	1.4
 CATEGORIES=	textproc
-MASTER_SITES=	SF
+MASTER_SITES=	http://tibleiz.net/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Very fast XML parser and decoder written in pure assembler
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	fasm:lang/fasm
 
-ONLY_FOR_ARCHS=	i386 amd64
 USES=		dos2unix uidfix
 
 PLIST_FILES=	include/asm-xml.h lib/libasm-xml.a

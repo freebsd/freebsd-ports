@@ -5,7 +5,7 @@ OBJS=	src/elf.So
 INCS=	include/asm-xml.h
 
 NO_PIC=
-NO_PROFILE=
+MK_PROFILE=no
 
 LIBDIR=		${PREFIX}/lib
 INCLUDEDIR=	${PREFIX}/include
