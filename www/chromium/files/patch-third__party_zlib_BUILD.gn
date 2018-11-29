@@ -1,5 +1,14 @@
---- third_party/zlib/BUILD.gn.orig	2018-06-13 00:11:08.000000000 +0200
-+++ third_party/zlib/BUILD.gn	2018-07-19 21:36:13.071700000 +0200
+--- third_party/zlib/BUILD.gn.orig	2018-08-08 21:11:58.000000000 +0200
++++ third_party/zlib/BUILD.gn	2018-09-12 01:00:34.445630000 +0200
+@@ -68,7 +68,7 @@
+       if (is_android) {
+         defines += [ "ARMV8_OS_ANDROID" ]
+       } else if (is_linux || is_chromeos) {
+-        defines += [ "ARMV8_OS_LINUX" ]
++#        defines += [ "ARMV8_OS_LINUX" ]
+       }
+     }
+   }
 @@ -327,7 +327,7 @@
      ]
    }
