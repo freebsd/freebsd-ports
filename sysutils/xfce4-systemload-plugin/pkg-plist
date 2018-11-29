@@ -1,6 +1,7 @@
 lib/xfce4/panel/plugins/libsystemload.so
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-systemload-plugin.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-systemload-plugin.mo
+%%NLS%%share/locale/be/LC_MESSAGES/xfce4-systemload-plugin.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xfce4-systemload-plugin.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfce4-systemload-plugin.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xfce4-systemload-plugin.mo
