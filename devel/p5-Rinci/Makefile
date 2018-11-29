@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Rinci
-PORTVERSION=	1.1.86
+PORTVERSION=	1.1.87
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PERLANCAR
@@ -20,8 +20,9 @@ RUN_DEPENDS=	p5-Data-Sah-Normalize>=0:devel/p5-Data-Sah-Normalize
 TEST_DEPENDS=	p5-DefHash>=1.0.6:devel/p5-DefHash \
 		p5-Sah>=0.9.36:devel/p5-Sah
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
