@@ -3,8 +3,9 @@ include/fdk-aac/genericStds.h
 include/fdk-aac/FDK_audio.h
 include/fdk-aac/aacenc_lib.h
 include/fdk-aac/aacdecoder_lib.h
+include/fdk-aac/syslib_channelMapDescr.h
 lib/libfdk-aac.a
 lib/libfdk-aac.so
-lib/libfdk-aac.so.1
-lib/libfdk-aac.so.1.0.1
+lib/libfdk-aac.so.2
+lib/libfdk-aac.so.2.0.0
 libdata/pkgconfig/fdk-aac.pc
