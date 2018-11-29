@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tilt
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,9 +11,10 @@ COMMENT=	Generic interface to multiple Ruby template engines
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/tilt
 
