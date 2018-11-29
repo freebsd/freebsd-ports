@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	magicrescue
-PORTVERSION=	1.1.9
-PORTREVISION=	1
+PORTVERSION=	1.1.10
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.itu.dk/people/jobr/magicrescue/release/ \
-		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	File recovery tool which recovers deleted files from a block device
@@ -15,25 +13,23 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		perl5 shebangfix
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_PERL5=	run
 
-SHEBANG_FILES=	magicsort tools/gimp-resave.pl
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 
-OPTIONS_DEFINE=	DOCS
+USE_GITHUB=	yes
+GH_ACCOUNT=	jbj
+
+SHEBANG_FILES=	magicsort tools/*.pl tools/checkrecipe
 
 MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-.endfor
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/magicrescue
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dupemap
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/magicrescue \
+		${STAGEDIR}${PREFIX}/bin/dupemap
 .for f in safecat inputseek textextract
-	@${STRIP_CMD} ${STAGEDIR}${DATADIR}/tools/${f}
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/tools/${f}
 .endfor
 
 .include <bsd.port.mk>
