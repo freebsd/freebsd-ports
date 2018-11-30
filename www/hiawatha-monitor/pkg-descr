@@ -1,0 +1,12 @@
+The Hiawatha Monitor is a monitoring tool for the Hiawatha web
+server.  It can be used to keep track of the performance and security
+of all your Hiawatha web servers via one single interface.  It is
+not a replacement for analytics software or the local logfiles, but
+it gives you a quick and easy overview of how your web servers are
+performing and which ones require some attention.
+
+The Hiawatha Monitor is a PHP web application with a MySQL database
+backend.  It requires the cron daemon for periodic downloading of
+statistical information from the web servers it monitors.
+
+WWW: https://www.hiawatha-webserver.org/monitor

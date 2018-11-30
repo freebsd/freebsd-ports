@@ -246,6 +246,7 @@
     SUBDIR += havp
     SUBDIR += helma
     SUBDIR += hiawatha
+    SUBDIR += hiawatha-monitor
     SUBDIR += horde-ansel
     SUBDIR += horde-base
     SUBDIR += horde-passwd
