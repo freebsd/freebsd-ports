@@ -4,7 +4,7 @@
 PORTNAME=	proj
 PORTVERSION=	5.1.0
 CATEGORIES=	graphics geography
-MASTER_SITES=	http://download.osgeo.org/proj/
+MASTER_SITES=	https://download.osgeo.org/proj/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATUM_GRID_FILES}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
