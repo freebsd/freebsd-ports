@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	bgpq3
-PORTVERSION=	0.1.33
+PORTVERSION=	0.1.35
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	snar@snar.spb.ru
-COMMENT=	Lightweight prefix-list generator for Cisco and Juniper routers
+COMMENT=	Lightweight prefix-list generator for various routers
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

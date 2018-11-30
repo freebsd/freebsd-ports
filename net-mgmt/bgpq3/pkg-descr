@@ -1,5 +1,5 @@
 bgpq3 is a lightweight access-list/prefix-list/as-path access-list generator
-for Cisco and Juniper routers.
+for Cisco, Juniper and many other routers and routing daemons.
 
 This program is a mostly complete re-implementation of bgpq (net-mgmt/bgpq),
 with next major advantages:
