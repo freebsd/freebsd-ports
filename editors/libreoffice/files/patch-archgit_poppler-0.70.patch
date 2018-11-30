@@ -1,0 +1,45 @@
+From 557ee0a0f4e40b934c72515f41f3a605803ddb1d Mon Sep 17 00:00:00 2001
+From: Evangelos Foutras <evangelos@foutrelis.com>
+Date: Wed, 24 Oct 2018 17:48:53 +0300
+Subject: [PATCH] fix build with poppler 0.70
+
+---
+ sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx | 4 ++++
+ sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx | 4 ++++
+ 2 files changed, 8 insertions(+)
+
+diff --git a/sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx b/sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx
+index 575a90acb..99219f7e6 100644
+--- sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx
++++ sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx
+@@ -578,7 +578,11 @@ void PDFOutDev::restoreState(GfxState*)
+     printf( "restoreState\n" );
+ }
+ 
++#if POPPLER_CHECK_VERSION(0, 70, 0)
++void PDFOutDev::setDefaultCTM(const double *pMat)
++#else
+ void PDFOutDev::setDefaultCTM(double *pMat)
++#endif
+ {
+     assert(pMat);
+ 
+diff --git a/sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx b/sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx
+index da021a2a0..27440f2bb 100644
+--- sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx
++++ sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx
+@@ -166,7 +166,11 @@ namespace pdfi
+         //----- initialization and control
+ 
+         // Set default transform matrix.
++#if POPPLER_CHECK_VERSION(0, 70, 0)
++        virtual void setDefaultCTM(const double *ctm) override;
++#else
+         virtual void setDefaultCTM(double *ctm) override;
++#endif
+ 
+         // Start a page.
+         virtual void startPage(int pageNum, GfxState *state
+-- 
+2.19.1
+
