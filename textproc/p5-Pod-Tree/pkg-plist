@@ -19,6 +19,10 @@ bin/podtree2html
 %%SITE_PERL%%/Pod/Tree/Pod.pm
 %%SITE_PERL%%/Pod/Tree/StrStream.pm
 %%SITE_PERL%%/Pod/Tree/Stream.pm
+%%PERL5_MAN1%%/mod2html.1.gz
+%%PERL5_MAN1%%/perl2html.1.gz
+%%PERL5_MAN1%%/pods2html.1.gz
+%%PERL5_MAN1%%/podtree2html.1.gz
 %%PERL5_MAN3%%/Pod::Tree.3.gz
 %%PERL5_MAN3%%/Pod::Tree::HTML.3.gz
 %%PERL5_MAN3%%/Pod::Tree::Node.3.gz
@@ -30,7 +34,3 @@ bin/podtree2html
 %%PERL5_MAN3%%/Pod::Tree::PerlPod.3.gz
 %%PERL5_MAN3%%/Pod::Tree::PerlTop.3.gz
 %%PERL5_MAN3%%/Pod::Tree::Pod.3.gz
-%%PERL5_MAN1%%/mod2html.1.gz
-%%PERL5_MAN1%%/perl2html.1.gz
-%%PERL5_MAN1%%/pods2html.1.gz
-%%PERL5_MAN1%%/podtree2html.1.gz
