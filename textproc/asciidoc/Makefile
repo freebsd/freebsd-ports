@@ -13,13 +13,14 @@ LICENSE=	GPLv2 MIT
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
+
+USES=		autoreconf gmake gnome python:2.7 shebangfix
+USE_GNOME=	libxml2 libxslt
 
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
-USE_GNOME=	libxml2 libxslt
-USES=		autoreconf gmake gnome python:2.7 shebangfix
 
 USE_GITHUB=	yes
 
