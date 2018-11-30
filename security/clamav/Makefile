@@ -2,7 +2,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.100.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/downloads/production/
 
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	pkg-config:devel/pkgconf
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libcurl.so:ftp/curl
 
-USES=		cpe gmake gnome libtool ncurses pathfix ssl
+USES=		cpe gmake gnome libtool ncurses pathfix pkgconfig ssl
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 USE_LDCONFIG=	yes
 
@@ -97,7 +97,7 @@ LHA_RUN_DEPENDS=	lha:archivers/lha
 MILTER_CONFIGURE_WITH=	sendmail=/usr/sbin/sendmail
 MILTER_CONFIGURE_ENABLE=milter
 MILTER_USE=		RC_SUBR=clamav-milter
-MSPACK_CONFIGURE_WITH=	system-libmspack=${LOCALBASE}/lib/libmspack.so
+MSPACK_CONFIGURE_WITH=	system-libmspack=${LOCALBASE}/lib/libmspack.so 
 MSPACK_LIB_DEPENDS=	libmspack.so:archivers/libmspack
 PCRE_CONFIGURE_WITH=	pcre
 PCRE_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
