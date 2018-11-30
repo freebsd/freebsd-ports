@@ -3,8 +3,7 @@
 PORTNAME=	tiffgt
 DISTVERSION=	4.0.9
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
-		http://download.osgeo.org/libtiff/
+MASTER_SITES=	https://download.osgeo.org/libtiff/
 DISTNAME=	tiff-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
