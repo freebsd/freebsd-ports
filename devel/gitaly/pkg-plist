@@ -2,6 +2,8 @@
 %%DATADIR%%/ruby/README.md
 @(,,555) %%DATADIR%%/ruby/bin/gitaly-ruby
 @(,,555) %%DATADIR%%/ruby/bin/ruby-cd
+%%DATADIR%%/ruby/.rubocop.yml
+%%DATADIR%%/ruby/.rubocop_todo.yml
 %%DATADIR%%/ruby/lib/gitaly_server.rb
 %%DATADIR%%/ruby/lib/gitaly_server/blob_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/client.rb
@@ -14,6 +16,7 @@
 %%DATADIR%%/ruby/lib/gitaly_server/ref_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/remote_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/repository_service.rb
+%%DATADIR%%/ruby/lib/gitaly_server/rugged_interceptor.rb
 %%DATADIR%%/ruby/lib/gitaly_server/sentry.rb
 %%DATADIR%%/ruby/lib/gitaly_server/sentry_interceptor.rb
 %%DATADIR%%/ruby/lib/gitaly_server/utils.rb
@@ -24,6 +27,7 @@
 %%DATADIR%%/ruby/lib/gitlab/git/blob.rb
 %%DATADIR%%/ruby/lib/gitlab/git/branch.rb
 %%DATADIR%%/ruby/lib/gitlab/git/commit.rb
+%%DATADIR%%/ruby/lib/gitlab/git/commit_patches.rb
 %%DATADIR%%/ruby/lib/gitlab/git/commit_stats.rb
 %%DATADIR%%/ruby/lib/gitlab/git/committer_with_hooks.rb
 %%DATADIR%%/ruby/lib/gitlab/git/conflict/file.rb
@@ -47,6 +51,7 @@
 %%DATADIR%%/ruby/lib/gitlab/git/repository.rb
 %%DATADIR%%/ruby/lib/gitlab/git/repository_mirroring.rb
 %%DATADIR%%/ruby/lib/gitlab/git/rev_list.rb
+%%DATADIR%%/ruby/lib/gitlab/git/submodule.rb
 %%DATADIR%%/ruby/lib/gitlab/git/tag.rb
 %%DATADIR%%/ruby/lib/gitlab/git/user.rb
 %%DATADIR%%/ruby/lib/gitlab/git/wiki.rb
@@ -58,22 +63,40 @@
 %%DATADIR%%/ruby/lib/gitlab/rails_logger.rb
 %%DATADIR%%/ruby/lib/gitlab/utils/strong_memoize.rb
 %%DATADIR%%/ruby/lib/gitlab/version_info.rb
+%%DATADIR%%/ruby/spec/factories/gitaly/commit.rb
+%%DATADIR%%/ruby/spec/factories/gitaly/commit_author.rb
+%%DATADIR%%/ruby/spec/factories/sequences.rb
 %%DATADIR%%/ruby/spec/gitaly/ref_service_spec.rb
 %%DATADIR%%/ruby/spec/gitaly/repository_service_spec.rb
-%%DATADIR%%/ruby/spec/integration_helper.rb
 %%DATADIR%%/ruby/spec/lib/gitaly_server/exception_sanitizer_interceptor_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitaly_server/rugged_interceptor_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitaly_server/utils_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitaly_server/sentry/url_sanitizer_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitaly_server/sentry_interceptor_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/config_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git/blob_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git/branch_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git/commit_patches_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git/commit_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/diff_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/gitlab_projects_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git/hook_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/index_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git/lfs_changes_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git/popen_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git/raw_diff_change_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git/remote_repository_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/repository_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/rev_list_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git/submodule_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git/user_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/wiki_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/version_info_spec.rb
 %%DATADIR%%/ruby/spec/spec_helper.rb
+%%DATADIR%%/ruby/spec/support/generate-seed-repo-rb
+%%DATADIR%%/ruby/spec/support/helpers/gitlab_shell_helper.rb
+%%DATADIR%%/ruby/spec/support/helpers/integration_helper.rb
+%%DATADIR%%/ruby/spec/support/helpers/seed_repo.rb
 %%DATADIR%%/ruby/spec/support/sentry.rb
 %%DATADIR%%/ruby/spec/test_repo_helper.rb
 @(,,555) %%DATADIR%%/bin/gitaly
