@@ -201,9 +201,9 @@
 %%WWWDIR%%/public/js/jquery/jquery.js
 %%WWWDIR%%/public/js/profile.js
 %%WWWDIR%%/public/robots.txt
-%%WWWDIR%%/settings/private_pages.conf.sample
-%%WWWDIR%%/settings/public_pages.conf.sample
-%%WWWDIR%%/settings/website.conf.sample
+@sample %%WWWDIR%%/settings/private_pages.conf.sample
+@sample %%WWWDIR%%/settings/public_pages.conf.sample
+@sample %%WWWDIR%%/settings/website.conf.sample
 %%WWWDIR%%/views/banshee/alphabetize.xslt
 %%WWWDIR%%/views/banshee/browser.xslt
 %%WWWDIR%%/views/banshee/error.xslt
