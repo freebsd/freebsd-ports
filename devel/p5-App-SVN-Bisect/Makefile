@@ -3,7 +3,7 @@
 
 PORTNAME=	App-SVN-Bisect
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +25,6 @@ USES=		perl5
 USE_PERL5=	configure shebangfix
 
 NO_ARCH=	yes
-SHEBANNG_FILES=	bin/svn-bisect
+SHEBANG_FILES=	bin/svn-bisect
 
 .include <bsd.port.mk>
