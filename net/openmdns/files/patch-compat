@@ -24,7 +24,7 @@
  	mdns_set_lookup_PTR_hook(&mdns, my_lookup_PTR_hook);
 --- mdnsd/mdns.h.orig	2017-02-18 03:02:15 UTC
 +++ mdnsd/mdns.h
-@@ -31,6 +31,37 @@
+@@ -31,6 +31,41 @@
  #include <event.h>
  #include <string.h>
  
@@ -38,6 +38,10 @@
 +
 +#ifndef LINK_STATE_IS_UP /* from DragonFly and OpenBSD */
 +#define	LINK_STATE_IS_UP(_s)	((_s) >= LINK_STATE_UP)
++#endif
++
++#ifndef LIST_FOREACH_SAFE /* DragonFly */
++#define	LIST_FOREACH_SAFE	LIST_FOREACH_MUTABLE
 +#endif
 +
 +/* Copied from <sys/time.h> on OpenBSD */
