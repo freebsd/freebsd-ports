@@ -4,7 +4,7 @@
 PORTNAME=	postgis
 PORTVERSION=	2.4.5
 CATEGORIES=	databases geography
-MASTER_SITES=	http://download.osgeo.org/postgis/source/
+MASTER_SITES=	https://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	24
 
 MAINTAINER=	lbartoletti@tuxfamily.org
