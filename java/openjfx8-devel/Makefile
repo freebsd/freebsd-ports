@@ -20,12 +20,12 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	apache-ant>0:devel/apache-ant \
 		antlr3>0:devel/antlr3 \
-		gradle>=4.0:devel/gradle \
+		gradle4>=4.0:devel/gradle4 \
 		${JAVALIBDIR}/junit.jar:java/junit
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gettext-runtime jpeg pkgconfig sqlite
+USES=		gettext-runtime gl gnome jpeg pkgconfig sqlite
 USE_GL=		gl
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
 USE_JAVA=	yes
@@ -66,7 +66,7 @@ WEBKIT_VARS=	RUBY_NO_RUN_DEPENDS=yes COMPILE_WEBKIT=true
 # Move Gradle's home below ${WRKDIR} instead of using ${HOME}/.gradle
 GRADLE_ENV=	GRADLE_USER_HOME=${WRKDIR}/gradle-home \
 		CC=${CC} CXX=${CXX}
-GRADLE_RUN=	${SETENV} ${GRADLE_ENV} gradle --no-daemon
+GRADLE_RUN=	${SETENV} ${GRADLE_ENV} gradle4 --no-daemon
 
 PLIST_SUB=	ARCH=${ARCH} \
 		JAVA_HOME=${JAVA_HOME}
