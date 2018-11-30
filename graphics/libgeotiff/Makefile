@@ -4,8 +4,7 @@
 PORTNAME=	libgeotiff
 PORTVERSION=	1.4.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://download.osgeo.org/geotiff/libgeotiff/ \
-		ftp://ftp.remotesensing.org/geotiff/libgeotiff/ \
+MASTER_SITES=	https://download.osgeo.org/geotiff/libgeotiff/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
