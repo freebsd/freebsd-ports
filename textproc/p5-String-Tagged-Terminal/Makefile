@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	String-Tagged-Terminal
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +20,7 @@ RUN_DEPENDS=	p5-Convert-Color>=0:graphics/p5-Convert-Color \
 		p5-String-Tagged>=0:textproc/p5-String-Tagged
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 NO_ARCH=	yes
 
