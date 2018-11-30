@@ -4,8 +4,7 @@
 PORTNAME=	shapelib
 PORTVERSION=	1.4.1
 CATEGORIES=	devel geography
-MASTER_SITES=	http://download.osgeo.org/shapelib/ \
-		ftp://ftp.remotesensing.org/shapelib/ \
+MASTER_SITES=	https://download.osgeo.org/shapelib/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
