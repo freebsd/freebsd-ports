@@ -5,11 +5,11 @@ bin/ssi-cgi
 @sample %%ETCDIR%%/index.xslt.sample
 @sample %%ETCDIR%%/mimetype.conf.sample
 @sample %%ETCDIR%%/toolkit.conf.sample
-man/man1/cgi-wrapper.1.gz
+%%CGIWRAPPER%%man/man1/cgi-wrapper.1.gz
 man/man1/hiawatha.1.gz
 man/man1/ssi-cgi.1.gz
 man/man1/wigwam.1.gz
-sbin/cgi-wrapper
+%%CGIWRAPPER%%sbin/cgi-wrapper
 sbin/hiawatha
 sbin/wigwam
 @sample %%WWWDIR%%/index.html.sample

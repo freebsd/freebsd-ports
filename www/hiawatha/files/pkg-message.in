@@ -2,7 +2,3 @@ Edit the configuration files in %%ETCDIR%% to suit your needs.
 
 Run sysrc hiawatha_enable="YES" and start Hiawatha by running:
 service hiawatha start
-
-If you configured Hiawatha with Monitor, download and install the
-respective files needed to monitor your webserver:
-https://www.hiawatha-webserver.org/monitor

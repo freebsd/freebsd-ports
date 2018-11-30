@@ -1,0 +1,51 @@
+CACHE
+Enable caching support.  It is required for the CacheMaxFilesize,
+CacheRProxyExtension, CacheSize settings.  CacheRProxyExtension
+requires that RPROXY is also enabled.  With this option enabled
+Hiawatha can cache the output of CGI applications, which can control
+caching with the X-Hiawatha-Cache and X-Hiawatha-Cache-Remove
+headers.
+
+CGIWRAPPER
+Install cgi-wrapper(1), which can be used to run certain CGI programs
+with a different user than the webserver's user.  To function
+properly, the CGI wrapper binary needs to have the setuid bit set.
+
+LOADCHECK
+Enable experimental support for MaxServerLoad.  When the host has
+a load higher than that value, Hiawatha will drop incoming connections.
+Officially this feature is only available on Linux.  FreeBSD support
+is largely untested.
+
+MBEDTLS
+Enable TLS support via security/mbedtls.  It is required for the
+MinTLSversion, PublicKeyPins, RequiredCA, RequireTLS, and TLScertFile
+settings.
+
+MONITOR
+Enable Hiawatha Monitor support.  The MonitorServer setting enables
+logging of statistical information to a remote monitor server running
+www/hiawatha-monitor.  CGI scripts can log additional events via
+the X-Hiawatha-Monitor header.
+
+RPROXY
+Enable reverse proxy support.  It is required for the CacheRProxyExtension,
+CustomHeaderBackend, and ReverseProxy settings.  CacheRProxyExtension
+requires that CACHE is also enabled.  ReverseProxy can be used to
+forward requests with URLs that match POSIX regular expressions to
+other webserver
+
+TOMAHAWK
+Enable support for the Tomahawk command shell.  It is exposed via
+a Telnet service and can be used to view server statistics, to
+ban/unban clients, to clear the cache, etc.
+
+TOOLKIT
+Enable URL toolkit support, a DSL to do URL transformations.  It
+is required for the UseToolkit settings and UrlToolkit directives.
+ 
+XSLT
+With this option enabled, Hiawatha can do XSL transformation via
+textproc/libxslt when an XML file is requested and an XSLT sheet
+is present.  It is required for the ErrorXSLTfile, UseXSLT settings,
+and XSLT support in ShowIndex.

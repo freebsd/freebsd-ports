@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2018-09-11 05:44:11 UTC
++++ CMakeLists.txt
+@@ -39,7 +39,8 @@ include(FindZLIB)
+ include(cmake/CopyIfNotExists.cmake)
+ 
+ # Settings
+-if(EXISTS "/proc/loadavg")
++check_function_exists(getloadavg HAVE_GETLOADAVG)
++if(HAVE_GETLOADAVG OR EXISTS "/proc/loadavg")
+ 	option(ENABLE_LOADCHECK "Enable the ability to check for server load." on)
+ endif()
+ set(CONFIG_DIR ${CMAKE_INSTALL_FULL_SYSCONFDIR}/hiawatha CACHE STRING "Configuration directory")

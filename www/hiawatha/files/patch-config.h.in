@@ -1,0 +1,10 @@
+--- config.h.in.orig	2017-03-13 19:58:34 UTC
++++ config.h.in
+@@ -46,6 +46,7 @@
+ /* Functions
+  */
+ #cmakedefine HAVE_CRYPT_R ${HAVE_CRYPT_R}
++#cmakedefine HAVE_GETLOADAVG ${HAVE_GETLOADAVG}
+ #cmakedefine HAVE_SETENV ${HAVE_SETENV}
+ #cmakedefine HAVE_UNSETENV ${HAVE_UNSETENV}
+ #cmakedefine HAVE_CLEARENV ${HAVE_CLEARENV}
