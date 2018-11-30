@@ -5,4 +5,4 @@ cpu-load. Its advanced feature-set (FastCGI, CGI, Auth, Output-Compression,
 URL-Rewriting and many more) make lighttpd the perfect webserver-software
 for every server that is suffering load problems.
 
-WWW: http://www.lighttpd.net/
+WWW: https://www.lighttpd.net/
