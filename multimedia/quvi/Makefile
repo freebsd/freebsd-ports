@@ -14,14 +14,15 @@ COMMENT=	Command line tool for parsing flash media stream URLs
 LICENSE=	LGPL21+
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	libquvi>=0.4.0:multimedia/libquvi
+BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libcurl.so:ftp/curl
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	libquvi>=0.4.0:multimedia/libquvi
 
 PORTSCOUT=	limit:^0\.4\.
 
-GNU_CONFIGURE=	yes
 USES=		pkgconfig tar:xz
+
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/quvi \
 		man/man1/quvi.1.gz
