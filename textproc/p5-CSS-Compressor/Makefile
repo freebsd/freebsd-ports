@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CSS-Compressor
-PORTVERSION=	0.02
-PORTREVISION=	2
+PORTVERSION=	0.03
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +13,10 @@ COMMENT=	Perl extension for CSS minification
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/csscompressor ${STAGEDIR}${PREFIX}/bin/
