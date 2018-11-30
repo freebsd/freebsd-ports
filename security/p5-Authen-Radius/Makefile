@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Authen-Radius
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,10 +18,11 @@ RUN_DEPENDS=	p5-Data-HexDump>=0.02:devel/p5-Data-HexDump \
 		p5-Net-IP>=1.26:net-mgmt/p5-Net-IP
 TEST_DEPENDS=	p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings
 
-REINPLACE_ARGS=	-i ''
 USES=		perl5
 USE_PERL5=	configure
+
 NO_ARCH=	yes
+REINPLACE_ARGS=	-i ''
 
 PORTDATA=	*
 
