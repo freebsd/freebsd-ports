@@ -2,6 +2,11 @@
 %%JSON%%man/man1/clamsubmit.1.gz
 %%MILTER%%@sample etc/clamav-milter.conf.sample
 %%MILTER%%sbin/clamav-milter
+%%NO_MSPACK%%lib/libclammspack.a
+%%NO_MSPACK%%lib/libclammspack.so
+%%NO_MSPACK%%lib/libclammspack.so.0
+%%NO_MSPACK%%lib/libclammspack.so.0.1.0
+%%NO_MSPACK%%libdata/pkgconfig/libclammspack.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/clam.png
 %%PORTDOCS%%%%DOCSDIR%%/html/clamdoc.css
 %%PORTDOCS%%%%DOCSDIR%%/html/clamdoc.html
@@ -107,12 +112,7 @@ include/clamav.h
 lib/libclamav.so
 lib/libclamav.so.7
 lib/libclamav.so.7.1.1
-lib/libclammspack.a
-lib/libclammspack.so
-lib/libclammspack.so.0
-lib/libclammspack.so.0.1.0
 libdata/pkgconfig/libclamav.pc
-libdata/pkgconfig/libclammspack.pc
 man/man1/clambc.1.gz
 man/man1/clamconf.1.gz
 man/man1/clamdscan.1.gz
