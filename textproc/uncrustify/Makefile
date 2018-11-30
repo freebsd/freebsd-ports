@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 #BROKEN_powerpc64=	fails to compile: cc1plus: error: unrecognized command line option "-std=gnu++0x"
 
 USE_GITHUB=	yes
+GH_TAGNAME=	dbe32c0
 
 USES=		cmake:outsource
 CMAKE_ARGS=	-DNoGitVersionString:BOOL=TRUE
