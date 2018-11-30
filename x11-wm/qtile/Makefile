@@ -2,34 +2,36 @@
 # $FreeBSD$
 
 PORTNAME=	qtile
-PORTVERSION=	0.6
+PORTVERSION=	0.12.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	x11-wm
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ericbsd@FreeBSD.org
 COMMENT=	Small, flexible, scriptable tiling window manager written in Python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	does not run
-EXPIRATION_DATE=	2018-12-19
-BROKEN=		does not run
-
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xpyb>0:x11/xpyb@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR}
+BUILD_DEPENDS=  ${PYTHON_PKGNAMEPREFIX}cffi>1.1.0:devel/py-cffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>1.4.1:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cairocffi>0.7:graphics/py-cairocffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xcffib>=0.5.0:x11/py-xcffib@${PY_FLAVOR}
+LIB_DEPENDS=	libpangocairo-1.0.so:x11-toolkits/pango
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xcffib>=0.5.0:x11/py-xcffib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cairocffi>0.7:graphics/py-cairocffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}asyncio>0:devel/py-asyncio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dbus>=0.8:devel/py-dbus@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	qtile
 
-USE_GNOME=	pygobject pygtk2
+USE_GNOME=	pygobject3
 
-USES=		python:2.7
+USES=		python:3.6
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 
-PORTDOCS=	CHANGELOG INSTALL.rst README.rst
+PORTDOCS=	CHANGELOG README.rst
 
 OPTIONS_DEFINE=	DOCS
 
