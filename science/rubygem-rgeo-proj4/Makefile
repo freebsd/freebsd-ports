@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rgeo-proj4
-PORTVERSION=	1.0.0
+PORTVERSION=	2.0.0
 CATEGORIES=	science rubygems
 MASTER_SITES=	RG
 
@@ -13,10 +13,11 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libproj.so:graphics/proj
-RUN_DEPENDS=	rubygem-rgeo>=1.0:science/rubygem-rgeo
+RUN_DEPENDS=	rubygem-rgeo>=2.0:science/rubygem-rgeo
+
+USES=		gem
+USE_RUBY=	yes
 
 CONFIGURE_ARGS=	--with-proj-dir=${LOCALBASE}
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
