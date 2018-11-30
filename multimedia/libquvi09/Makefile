@@ -15,19 +15,20 @@ COMMENT=	Cross-platform library for parsing flash media stream URLs
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	libquvi-scripts09>=0.9:multimedia/libquvi-scripts09
+BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libproxy.so:net/libproxy \
 		libgcrypt.so:security/libgcrypt
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	libquvi-scripts09>=0.9:multimedia/libquvi-scripts09
 
 OPTIONS_DEFINE=	DOCS
+
+USES=		gnome iconv libtool lua pathfix pkgconfig tar:xz
 
 CONFIGURE_ARGS=	--program-suffix=${PKGNAMESUFFIX}
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_GNOME=	glib20
-USES=		gnome iconv libtool lua pathfix pkgconfig tar:xz
 
 PLIST_SUB=	PKGNAMESUFFIX=${PKGNAMESUFFIX} PORTVERSION=${PORTVERSION} QUVIVERSION=${PORTVERSION:R}
 
