@@ -6,7 +6,7 @@ PORTVERSION=	10.8.3
 CATEGORIES=	www
 MASTER_SITES=	https://www.hiawatha-webserver.org/files/
 
-MAINTAINER=	portmaster@BSDforge.com
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Advanced and secure webserver for Unix
 
 LICENSE=	GPLv2
@@ -21,7 +21,6 @@ USES=		cmake compiler:c11
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	hiawatha
 
-LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_ARGS+=	-DCMAKE_INSTALL_LOCALSTATEDIR=/var \
 		-DCMAKE_INSTALL_MANDIR=${PREFIX}/man \
 		-DWEBROOT_DIR=${WWWDIR} \
@@ -49,6 +48,7 @@ XSLT_USE=		GNOME=libxslt
 XSLT_CMAKE_BOOL=	ENABLE_XSLT
 
 MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
+MBEDTLS_USES=		localbase:ldflags
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
