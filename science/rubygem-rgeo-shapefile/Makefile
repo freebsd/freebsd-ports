@@ -3,6 +3,7 @@
 
 PORTNAME=	rgeo-shapefile
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	science rubygems
 MASTER_SITES=	RG
 
@@ -15,8 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-dbf>=3.0:databases/rubygem-dbf \
 		rubygem-rgeo>=1.0:science/rubygem-rgeo
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
