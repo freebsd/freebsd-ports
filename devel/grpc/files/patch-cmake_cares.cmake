@@ -1,6 +1,6 @@
---- cmake/cares.cmake.orig	2018-03-01 18:16:44 UTC
+--- cmake/cares.cmake.orig	2018-09-24 23:51:30 UTC
 +++ cmake/cares.cmake
-@@ -31,7 +31,8 @@ if("${gRPC_CARES_PROVIDER}" STREQUAL "mo
+@@ -31,7 +31,8 @@ if("${gRPC_CARES_PROVIDER}" STREQUAL "module")
    endif()
  elseif("${gRPC_CARES_PROVIDER}" STREQUAL "package")
    # Use "CONFIG" as there is no built-in cmake module for c-ares.

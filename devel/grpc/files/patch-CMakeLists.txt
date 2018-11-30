@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2018-04-13 18:08:11 UTC
+--- CMakeLists.txt.orig	2018-09-24 23:51:30 UTC
 +++ CMakeLists.txt
-@@ -664,6 +664,7 @@ add_library(address_sorting
+@@ -686,6 +686,7 @@ add_library(address_sorting
    third_party/address_sorting/address_sorting_posix.c
    third_party/address_sorting/address_sorting_windows.c
  )
@@ -8,7 +8,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(address_sorting PROPERTIES COMPILE_PDB_NAME "address_sorting"
-@@ -784,6 +785,7 @@ add_library(gpr
+@@ -809,6 +810,7 @@ add_library(gpr
    src/core/lib/profiling/basic_timers.cc
    src/core/lib/profiling/stap_timers.cc
  )
@@ -16,7 +16,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(gpr PROPERTIES COMPILE_PDB_NAME "gpr"
-@@ -1211,6 +1213,7 @@ add_library(grpc
+@@ -1248,6 +1250,7 @@ add_library(grpc
    src/core/ext/filters/workarounds/workaround_utils.cc
    src/core/plugin_registry/grpc_plugin_registry.cc
  )
@@ -24,15 +24,15 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc PROPERTIES COMPILE_PDB_NAME "grpc"
-@@ -1581,6 +1584,7 @@ add_library(grpc_cronet
-   src/core/ext/filters/load_reporting/server_load_reporting_plugin.cc
+@@ -1624,6 +1627,7 @@ add_library(grpc_cronet
+   src/core/tsi/transport_security_grpc.cc
    src/core/plugin_registry/grpc_cronet_plugin_registry.cc
  )
 +set_target_properties(grpc_cronet PROPERTIES VERSION ${PACKAGE_VERSION} SOVERSION 1)
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc_cronet PROPERTIES COMPILE_PDB_NAME "grpc_cronet"
-@@ -2509,6 +2513,7 @@ add_library(grpc_unsecure
+@@ -2569,6 +2573,7 @@ add_library(grpc_unsecure
    src/core/ext/filters/workarounds/workaround_utils.cc
    src/core/plugin_registry/grpc_unsecure_plugin_registry.cc
  )
@@ -40,7 +40,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc_unsecure PROPERTIES COMPILE_PDB_NAME "grpc_unsecure"
-@@ -2722,6 +2727,7 @@ add_library(grpc++
+@@ -2785,6 +2790,7 @@ add_library(grpc++
    src/cpp/util/time_cc.cc
    src/cpp/codegen/codegen_init.cc
  )
@@ -48,15 +48,15 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc++ PROPERTIES COMPILE_PDB_NAME "grpc++"
-@@ -3282,6 +3288,7 @@ add_library(grpc++_cronet
-   third_party/nanopb/pb_decode.c
-   third_party/nanopb/pb_encode.c
+@@ -3351,6 +3357,7 @@ add_library(grpc++_cronet
+   src/core/ext/transport/chttp2/server/chttp2_server.cc
+   src/core/ext/filters/census/grpc_context.cc
  )
 +set_target_properties(grpc++_cronet PROPERTIES VERSION ${PACKAGE_VERSION} SOVERSION 1)
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc++_cronet PROPERTIES COMPILE_PDB_NAME "grpc++_cronet"
-@@ -3546,6 +3553,7 @@ add_library(grpc++_error_details
+@@ -3620,6 +3627,7 @@ add_library(grpc++_error_details
    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/status/status.grpc.pb.h
    src/cpp/util/error_details.cc
  )
@@ -64,7 +64,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc++_error_details PROPERTIES COMPILE_PDB_NAME "grpc++_error_details"
-@@ -3676,6 +3684,7 @@ add_library(grpc++_reflection
+@@ -3752,6 +3760,7 @@ add_library(grpc++_reflection
    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/reflection/v1alpha/reflection.pb.h
    ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/reflection/v1alpha/reflection.grpc.pb.h
  )
@@ -72,7 +72,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc++_reflection PROPERTIES COMPILE_PDB_NAME "grpc++_reflection"
-@@ -4172,6 +4181,7 @@ add_library(grpc++_unsecure
+@@ -4259,6 +4268,7 @@ add_library(grpc++_unsecure
    src/cpp/util/time_cc.cc
    src/cpp/codegen/codegen_init.cc
  )
@@ -80,7 +80,7 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc++_unsecure PROPERTIES COMPILE_PDB_NAME "grpc++_unsecure"
-@@ -4549,6 +4559,7 @@ add_library(grpc_plugin_support
+@@ -4643,6 +4653,7 @@ add_library(grpc_plugin_support
    src/compiler/python_generator.cc
    src/compiler/ruby_generator.cc
  )
@@ -88,7 +88,15 @@
  
  if(WIN32 AND MSVC)
    set_target_properties(grpc_plugin_support PROPERTIES COMPILE_PDB_NAME "grpc_plugin_support"
-@@ -5061,6 +5072,7 @@ endif (gRPC_BUILD_TESTS)
+@@ -4706,6 +4717,7 @@ add_library(grpcpp_channelz
+   ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/channelz/channelz.pb.h
+   ${_gRPC_PROTO_GENS_DIR}/src/proto/grpc/channelz/channelz.grpc.pb.h
+ )
++set_target_properties(grpcpp_channelz PROPERTIES VERSION ${PACKAGE_VERSION} SOVERSION 1)
+ 
+ if(WIN32 AND MSVC)
+   set_target_properties(grpcpp_channelz PROPERTIES COMPILE_PDB_NAME "grpcpp_channelz"
+@@ -5246,6 +5258,7 @@ if (gRPC_BUILD_CSHARP_EXT)
  add_library(grpc_csharp_ext SHARED
    src/csharp/ext/grpc_csharp_ext.c
  )
