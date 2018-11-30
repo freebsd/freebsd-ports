@@ -874,6 +874,7 @@
     SUBDIR += gpsim
     SUBDIR += gputils
     SUBDIR += gradle
+    SUBDIR += gradle4
     SUBDIR += grantlee
     SUBDIR += grantlee5
     SUBDIR += graphql.el
