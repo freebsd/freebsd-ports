@@ -13,24 +13,25 @@ COMMENT=	Convert DocBook documents into UNIX man page and GNU Texinfo formats
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	OpenSP>=0:textproc/opensp \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	OpenSP>=0:textproc/opensp \
 		dsssl-docbook-modular>=0:textproc/dsssl-docbook-modular \
 		p5-XML-NamespaceSupport>=0:textproc/p5-XML-NamespaceSupport \
 		p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		p5-XML-SAX>=0:textproc/p5-XML-SAX \
 		p5-XML-SAX-Expat>=0:textproc/p5-XML-SAX-Expat \
 		sdocbook-xml>=0:textproc/sdocbook-xml
-RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 # bin/docbook2man bin/docbook2texi man/man1/docbook2man.1.gz man/man1/docbook2texi.1.gz
 CONFLICTS_INSTALL=	docbook-utils
 
 OPTIONS_DEFINE=	DOCS
 
+USES=		gmake gnome iconv perl5
+USE_GNOME=	libxslt
+
 CONFIGURE_ENV=	PERL=${PERL}
 GNU_CONFIGURE=	yes
-USE_GNOME=	libxslt
-USES=		gmake gnome iconv perl5
 
 INFO=		docbook2X docbook2man-xslt docbook2texi-xslt
 
