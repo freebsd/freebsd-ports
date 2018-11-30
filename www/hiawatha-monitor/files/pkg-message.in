@@ -1,0 +1,5 @@
+See %%DOCSDIR%%/INSTALL for setup instructions.
+
+All monitored web servers have to be compiled with Hiawatha Monitor
+support.  In www/hiawatha it can be enabled through the MONITOR
+option.
