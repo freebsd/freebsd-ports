@@ -12,7 +12,6 @@ COMMENT=	Command line virus scanner written entirely in C
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	pkg-config:devel/pkgconf
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libcurl.so:ftp/curl
 
@@ -97,7 +96,7 @@ LHA_RUN_DEPENDS=	lha:archivers/lha
 MILTER_CONFIGURE_WITH=	sendmail=/usr/sbin/sendmail
 MILTER_CONFIGURE_ENABLE=milter
 MILTER_USE=		RC_SUBR=clamav-milter
-MSPACK_CONFIGURE_WITH=	system-libmspack=${LOCALBASE}/lib/libmspack.so 
+MSPACK_CONFIGURE_WITH=	system-libmspack=${LOCALBASE}/lib/libmspack.so
 MSPACK_LIB_DEPENDS=	libmspack.so:archivers/libmspack
 PCRE_CONFIGURE_WITH=	pcre
 PCRE_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
