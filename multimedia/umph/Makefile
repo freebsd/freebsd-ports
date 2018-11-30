@@ -12,14 +12,15 @@ COMMENT=	YouTube video playlist parser for cclive and alike tools
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	p5-Getopt-ArgvFile>=1.11:devel/p5-Getopt-ArgvFile \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Getopt-ArgvFile>=1.11:devel/p5-Getopt-ArgvFile \
 		p5-Umph-Prompt>=0:multimedia/p5-Umph-Prompt \
 		p5-XML-DOM>=1.44:textproc/p5-XML-DOM
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+USES=		perl5
+USE_PERL5=	configure
 
 NO_ARCH=	yes
-USE_PERL5=	configure
-USES=		perl5
 
 PLIST_FILES=	bin/umph \
 		${SITE_MAN1_REL}/umph.1.gz
