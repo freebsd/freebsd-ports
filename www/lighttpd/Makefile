@@ -4,7 +4,7 @@
 PORTNAME?=	lighttpd
 PORTVERSION=	1.4.52
 CATEGORIES?=	www
-MASTER_SITES?=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
+MASTER_SITES?=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 
 MAINTAINER=	pkubaj@anongoth.pl
 COMMENT?=	Secure, fast, compliant, and flexible Web Server
