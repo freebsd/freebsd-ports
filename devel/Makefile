@@ -5698,6 +5698,7 @@
     SUBDIR += rubygem-gem-compare
     SUBDIR += rubygem-gem_plugin
     SUBDIR += rubygem-gemcutter
+    SUBDIR += rubygem-gemdiff
     SUBDIR += rubygem-gemnasium-parser
     SUBDIR += rubygem-gems
     SUBDIR += rubygem-generator_spec-rails4
