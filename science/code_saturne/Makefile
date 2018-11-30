@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	code_saturne
-PORTVERSION=	5.3.0
+PORTVERSION=	5.3.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	science parallel
 
@@ -49,7 +49,7 @@ PARMETIS_CONFIGURE_ON=	--with-metis-include="${LOCALBASE}/include/parmetis"	\
 			--with-metis-lib="${LOCALBASE}/lib/parmetis"
 PARMETIS_CONFIGURE_ENV=	LIBS=-lexecinfo
 
-#TEST_TARGET=	check
+TEST_TARGET=	check
 
 .if defined(PACKAGE_BUILDING)
 TERM=		vt100	# Force for pointyhat to override su
