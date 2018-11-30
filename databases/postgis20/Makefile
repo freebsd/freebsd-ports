@@ -4,7 +4,7 @@ PORTNAME=	postgis
 PORTVERSION=	2.0.7
 PORTREVISION=	5
 CATEGORIES=	databases geography
-MASTER_SITES=	http://download.osgeo.org/postgis/source/
+MASTER_SITES=	https://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	20
 
 MAINTAINER=	sunpoet@FreeBSD.org
