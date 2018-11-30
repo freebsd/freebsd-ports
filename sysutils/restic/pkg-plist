@@ -18,6 +18,7 @@ man/man1/%%PORTNAME%%-mount.1.gz
 man/man1/%%PORTNAME%%-prune.1.gz
 man/man1/%%PORTNAME%%-rebuild-index.1.gz
 man/man1/%%PORTNAME%%-restore.1.gz
+man/man1/%%PORTNAME%%-self-update.1.gz
 man/man1/%%PORTNAME%%-snapshots.1.gz
 man/man1/%%PORTNAME%%-stats.1.gz
 man/man1/%%PORTNAME%%-tag.1.gz
