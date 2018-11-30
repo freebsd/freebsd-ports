@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Pod-Tree
-PORTVERSION=	1.25
+PORTVERSION=	1.26
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +23,8 @@ TEST_DEPENDS=	p5-Path-Tiny>=0.068:devel/p5-Path-Tiny \
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 # conflict with pod2html in perl 5.6 or above
 post-patch:
