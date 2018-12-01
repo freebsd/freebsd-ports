@@ -2,7 +2,7 @@
 
 PORTNAME=	gsd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.4
+DISTVERSION=	1.5.5
 CATEGORIES=	science python
 MASTER_SITES=	http://glotzerlab.engin.umich.edu/Downloads/gsd/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
