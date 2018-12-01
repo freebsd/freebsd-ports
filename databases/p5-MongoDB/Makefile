@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	MongoDB
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mongo Driver for Perl
 
 LICENSE=	APACHE20
@@ -17,8 +17,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Authen-SASL-SASLprep>=0:security/p5-Authen-SASL-SASLprep \
 		p5-Authen-SCRAM>=0.011:security/p5-Authen-SCRAM \
-		p5-BSON>=0:databases/p5-BSON \
-		p5-BSON-XS>=0.4.2:databases/p5-BSON-XS \
+		p5-BSON>=1.10.1:databases/p5-BSON \
+		p5-BSON-XS>=0.6.0:databases/p5-BSON-XS \
 		p5-Class-XSAccessor>=0:devel/p5-Class-XSAccessor \
 		p5-Moo>=2:devel/p5-Moo \
 		p5-Net-DNS>=0:dns/p5-Net-DNS \
@@ -36,8 +36,10 @@ TEST_DEPENDS=	p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
 		p5-Test-Deep>=0.111:devel/p5-Test-Deep \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
-MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+MAKE_JOBS_UNSAFE=	yes
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
