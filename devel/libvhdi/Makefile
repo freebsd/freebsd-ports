@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libvhdi
-PORTVERSION=	20170223
+PORTVERSION=	20181125
 DISTVERSIONPREFIX=	alpha-
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libvhdi/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
