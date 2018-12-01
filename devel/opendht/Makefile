@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opendht
-DISTVERSION=	1.7.4
+DISTVERSION=	1.8.0
 CATEGORIES=	devel net
 
 MAINTAINER=	yuri@FreeBSD.org
