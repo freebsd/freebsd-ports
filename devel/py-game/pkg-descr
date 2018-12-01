@@ -1,4 +1,7 @@
-Pygame is a cross-platfrom library based on top of the SDL and designed
-to make it easy to write multimedia software, such as games, in Python.
+pygame is a Free and Open Source python programming language library for making
+multimedia applications like games built on top of the excellent SDL library.
+Like SDL, pygame is highly portable and runs on nearly every platform and
+operating system. Millions of people have downloaded pygame itself, which is a
+whole lot of bits flying across the interwebs.
 
-WWW: http://www.pygame.org/
+WWW: https://www.pygame.org/
