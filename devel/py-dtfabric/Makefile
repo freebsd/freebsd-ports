@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dtfabric
-PORTVERSION=	20180808
+PORTVERSION=	20181128
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		https://github.com/libyal/dtfabric/releases/download/${PORTVERSION}/
