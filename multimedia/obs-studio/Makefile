@@ -2,9 +2,11 @@
 
 PORTNAME=	obs-studio
 DISTVERSION=	22.0.3
-PORTREVISION=	2
-PORTSREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	5cf2b5fbf925412620e2a40552d6348203851cb3.patch:-p1 # obs-libfdk: Compatibility fix for new API
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source streaming/recording software
