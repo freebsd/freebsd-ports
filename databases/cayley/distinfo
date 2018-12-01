@@ -1,6 +1,6 @@
-TIMESTAMP = 1528077403
-SHA256 (cayleygraph-cayley-v0.7.4_GH0.tar.gz) = 37e2bb3014060f16a7b727a1157aa5420cf4fbc8746d3465c305f3b7ae147f66
-SIZE (cayleygraph-cayley-v0.7.4_GH0.tar.gz) = 4436147
+TIMESTAMP = 1543640381
+SHA256 (cayleygraph-cayley-v0.7.5-2-gcf576ba_GH0.tar.gz) = f1ba8a69217ccac3ee66b5750113a7862a8604e4ad5303d07d95670a7e8f75b8
+SIZE (cayleygraph-cayley-v0.7.5-2-gcf576ba_GH0.tar.gz) = 4454083
 SHA256 (badgerodon-peg-9e5f7f4_GH0.tar.gz) = a019a60ebd3aa7612aaca40da5991a6ba12d2d253097d4d2931671c4720e10ef
 SIZE (badgerodon-peg-9e5f7f4_GH0.tar.gz) = 4102
 SHA256 (boltdb-bolt-fd01fc7_GH0.tar.gz) = ac7e6af898916df991b83e6501eaed92760e7805435219d4ecfca4f3417f46af
