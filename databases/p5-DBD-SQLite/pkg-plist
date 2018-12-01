@@ -2,6 +2,7 @@
 %%SITE_ARCH%%/DBD/SQLite/Constants.pm
 %%SITE_ARCH%%/DBD/SQLite/Cookbook.pod
 %%SITE_ARCH%%/DBD/SQLite/Fulltext_search.pod
+%%SITE_ARCH%%/DBD/SQLite/GetInfo.pm
 %%SITE_ARCH%%/DBD/SQLite/VirtualTable.pm
 %%SITE_ARCH%%/DBD/SQLite/VirtualTable/FileContent.pm
 %%SITE_ARCH%%/DBD/SQLite/VirtualTable/PerlData.pm
