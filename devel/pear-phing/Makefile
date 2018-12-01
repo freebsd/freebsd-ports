@@ -10,8 +10,9 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	PHP project build system based on Apache Ant
 
 LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PEAR_CHANNEL=	phing
-USES=	pear
+USES=		pear
 
 .include <bsd.port.mk>
