@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmake
-DISTVERSION=	3.12.4
+DISTVERSION=	3.13.1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.cmake.org/files/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	-doc
