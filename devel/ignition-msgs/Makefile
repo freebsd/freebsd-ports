@@ -15,7 +15,7 @@ BUILD_DEPENDS=	ignition-cmake==2:devel/ignition-cmake \
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
 		libignition-math6.so:math/ignition-math
 
-USES=		cmake:outsource
+USES=		compiler:c++11-lang cmake:outsource
 USE_RUBY=	yes
 USE_LDCONFIG=	yes
 
