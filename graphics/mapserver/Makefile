@@ -4,7 +4,7 @@
 PORTNAME=		mapserver
 PORTVERSION=		7.2.1
 CATEGORIES=		graphics www geography
-MASTER_SITES=		http://download.osgeo.org/mapserver/
+MASTER_SITES=		https://download.osgeo.org/mapserver/
 
 MAINTAINER=		wen@FreeBSD.org
 COMMENT=		System for developing web-based GIS applications
