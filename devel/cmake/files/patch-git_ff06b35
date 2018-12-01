@@ -1,0 +1,35 @@
+From bde3c3043ae2b48f7d62affaf25a4387dea1a22a Mon Sep 17 00:00:00 2001
+From: "Tobias C. Berner" <tcberner@FreeBSD.org>
+Date: Sun, 11 Nov 2018 19:09:57 +0100
+Subject: [PATCH] FreeBSD switch the installation location of info files to
+ share/info.
+
+---
+ Modules/GNUInstallDirs.cmake | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
+
+diff --git Modules/GNUInstallDirs.cmake Modules/GNUInstallDirs.cmake
+index 48d830ff5..c25363287 100644
+--- Modules/GNUInstallDirs.cmake
++++ Modules/GNUInstallDirs.cmake
+@@ -277,9 +277,14 @@ _GNUInstallDirs_cache_path(CMAKE_INSTALL_DATAROOTDIR "share"
+ _GNUInstallDirs_cache_path_fallback(CMAKE_INSTALL_DATADIR "${CMAKE_INSTALL_DATAROOTDIR}"
+   "Read-only architecture-independent data (DATAROOTDIR)")
+ 
+-if(CMAKE_SYSTEM_NAME MATCHES "^(([^k].*)?BSD|DragonFly)$")
+-  _GNUInstallDirs_cache_path_fallback(CMAKE_INSTALL_INFODIR "info"
+-    "Info documentation (info)")
++if(CMAKE_SYSTEM_NAME MATCHES "^(([^k].*)?BSD|DragonFly)$")
++  if(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
++    _GNUInstallDirs_cache_path_fallback(CMAKE_INSTALL_INFODIR "${CMAKE_INSTALL_DATAROOTDIR}/info"
++      "Info documentation (DATAROOTDIR/info)")
++  else()
++    _GNUInstallDirs_cache_path_fallback(CMAKE_INSTALL_INFODIR "info"
++      "Info documentation (info)")
++  endif()
+   _GNUInstallDirs_cache_path_fallback(CMAKE_INSTALL_MANDIR "man"
+     "Man documentation (man)")
+ else()
+-- 
+2.19.1
+
