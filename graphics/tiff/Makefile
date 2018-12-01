@@ -4,7 +4,7 @@
 PORTNAME=	tiff
 PORTVERSION=	4.0.10
 CATEGORIES=	graphics
-MASTER_SITES=	http://download.osgeo.org/libtiff/
+MASTER_SITES=	https://download.osgeo.org/libtiff/
 
 MAINTAINER=	portmgr@FreeBSD.org
 COMMENT=	Tools and library routines for working with TIFF images
