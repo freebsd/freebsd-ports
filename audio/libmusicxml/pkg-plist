@@ -133,7 +133,7 @@ include/libmusicxml/xmlreader.h
 include/libmusicxml/xmlvisitor.h
 lib/libmusicxml2.so
 lib/libmusicxml2.so.3
-lib/libmusicxml2.so.3.1.2
+lib/libmusicxml2.so.3.1.4
 %%DATADIR%%/CHANGELOG.txt
 %%DATADIR%%/doc/libmusicxml2.pdf
 %%DATADIR%%/dtds/3.1/MusicXML.xpr
