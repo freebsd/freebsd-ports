@@ -5,7 +5,7 @@ PORTNAME=	pyshapelib
 PORTVERSION=	1.0
 CATEGORIES=	devel python geography
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/899/:py \
-		http://download.osgeo.org/shapelib/:c
+		https://download.osgeo.org/shapelib/:c
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:py ${SHAPELIB}${EXTRACT_SUFX}:c
 
