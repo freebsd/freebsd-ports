@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualenv-clone
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+
 NO_ARCH=	yes
+
+USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
