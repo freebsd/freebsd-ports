@@ -5365,6 +5365,7 @@
     SUBDIR += pylint1
     SUBDIR += pymacs
     SUBDIR += pyobfuscate
+    SUBDIR += pyotherside-qt5
     SUBDIR += pypersrc
     SUBDIR += pyrex
     SUBDIR += pyside
