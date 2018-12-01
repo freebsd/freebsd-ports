@@ -1,5 +1,5 @@
---- src/libgambit/matrix.cc.orig	2014-06-06 16:33:54.000000000 +0400
-+++ src/libgambit/matrix.cc	2015-04-13 21:39:08.802909000 +0300
+--- library/src/matrix.cc.orig	2018-12-01 16:51:25 UTC
++++ library/src/matrix.cc
 @@ -25,11 +25,15 @@
  
  using namespace Gambit;
