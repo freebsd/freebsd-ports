@@ -10643,3 +10643,6 @@ www/rubygem-toml-rb03|www/rubygem-toml-rb|2018-11-25|Has expired: Obsoleted by u
 dns/dnscheck||2018-11-27|Unmaintained upstream over a decade
 www/mod_security3|security/modsecurity3|2018-11-27|Not an Apache module, use correct upstream name
 emulators/qemu-ppcnv|emulators/qemu-powernv|2018-11-28|Use more accurate naming for qemu PowerNV port
+net/pecl-gupnp||2018-12-01|Has expired: does not build with latest gssdp and gupnp
+graphics/gimpfx-foundry||2018-12-01|Has expired: No release for 10 years, only partially working with recent GIMP
+www/rubygem-http-form_data1|www/rubygem-http-form_data|2018-12-01|Has expired: Use www/rubygem-http-form_data instead
