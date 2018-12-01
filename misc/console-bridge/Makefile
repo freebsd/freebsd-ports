@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	console-bridge
-DISTVERSION=	0.4.1
+DISTVERSION=	0.4.2
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
