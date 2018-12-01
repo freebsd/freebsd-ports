@@ -778,6 +778,7 @@
     SUBDIR += py-theano
     SUBDIR += py-ufl
     SUBDIR += py-uncertainties
+    SUBDIR += py-vincenty
     SUBDIR += py-viper
     SUBDIR += py-yt
     SUBDIR += py-z3-solver
