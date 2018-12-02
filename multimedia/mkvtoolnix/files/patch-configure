@@ -1,0 +1,17 @@
+--- configure.orig	2018-12-01 11:15:45 UTC
++++ configure
+@@ -8467,13 +8467,9 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_fmt" >&5
+ $as_echo "$ac_cv_fmt" >&6; }
+ 
+-if test x"$ac_cv_fmt" = xyes; then
+-  FMT_INTERNAL=no
+-else
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: Using the internal version of fmt" >&5
++{ $as_echo "$as_me:${as_lineno-$LINENO}: Using the internal version of fmt" >&5
+ $as_echo "$as_me: Using the internal version of fmt" >&6;}
+   FMT_INTERNAL=yes
+-fi
+ 
+ 
+ 
