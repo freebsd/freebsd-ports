@@ -12,4 +12,4 @@ It doesn't set any filter on the MIME type, therefore, it should catch
 all the file transfer channels that aren't received by any other
 handler filtering on MIME type.
 
-WWW: http://community.kde.org/KTp
+WWW: https://community.kde.org/KTp
