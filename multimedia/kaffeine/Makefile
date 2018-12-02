@@ -13,6 +13,9 @@ COMMENT=	Multimedia player based on KDE and VLC
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 LIB_DEPENDS=	libvlc.so:multimedia/vlc-qt4
 

@@ -12,6 +12,9 @@ COMMENT=	Twitter client written in Python
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0.1.1:devel/py-notify@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}setproctitle>=1.1.7:devel/py-setproctitle@${PY_FLAVOR} \

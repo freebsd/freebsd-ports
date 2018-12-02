@@ -5,6 +5,9 @@ PKGNAMESUFFIX=	-qt4
 
 COMMENT=	Qt4 modules of uim input method
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libuim.so:textproc/uim
 
 USE_QT=		gui corelib qmake_build moc_build network qt3support \

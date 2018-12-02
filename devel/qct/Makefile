@@ -13,6 +13,9 @@ COMMENT=	QCT GUI commit tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		pyqt:4 python:2.7
 USE_PYQT=	gui
 USE_PYTHON=	distutils

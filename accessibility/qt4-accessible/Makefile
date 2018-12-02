@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt accessibility widgets
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		qmake:no_env qt-dist:4
 USE_QT=		moc_build qt3support corelib gui network sql xml
 USE_CXXSTD=	gnu++98

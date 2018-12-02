@@ -15,6 +15,9 @@ COMMENT=	Enjoy playing with Sudoku boards designed by yourself
 
 LICENSE=	GPLv2+
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 WRKSRC=		${WRKDIR}/SudokuSenseiSources
 
 USES=		qmake qt:4

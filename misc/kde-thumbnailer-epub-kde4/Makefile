@@ -11,6 +11,9 @@ DISTNAME=	151210-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE thumbnail generator for ePub files
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 PORTSCOUT=	limit:^1\.0
 
 USES=		cmake:outsource kde:4 qt:4

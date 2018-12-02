@@ -38,4 +38,11 @@ QT5_USES=	qt:5
 QT5_USE=	${_USE_QT5:S/^/QT=/}
 QT5_LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
 .include <bsd.port.mk>

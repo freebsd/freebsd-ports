@@ -12,6 +12,9 @@ COMMENT=	massXpert software for (bio)chemists
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libpng.so:graphics/png \

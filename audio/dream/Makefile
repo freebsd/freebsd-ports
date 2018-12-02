@@ -12,6 +12,9 @@ COMMENT=	Software radio for AM and Digital Radio Mondiale (DRM)
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libhamlib.so:comms/hamlib\
 		libqwt.so:x11-toolkits/qwt5\
 		libfftw3.so:math/fftw3

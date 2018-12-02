@@ -11,6 +11,9 @@ MASTER_SITES=	SF/${PORTNAME}/Current_Packages/${PORTVERSION}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Firewall Builder GUI and policy compilers
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BROKEN_powerpc64=	fails to configure: libz library not found
 
 LIB_DEPENDS=	libxslt.so:textproc/libxslt \

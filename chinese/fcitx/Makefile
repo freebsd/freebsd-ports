@@ -48,7 +48,7 @@ USES=		compiler:c++11-lang gnome qt:4 tar:xz cmake:noninja desktop-file-utils \
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	GTK2 GTK3 QT4 OPENCC TPUNC DOCS
-OPTIONS_DEFAULT=GTK2 GTK3 QT4
+OPTIONS_DEFAULT=GTK2 GTK3
 OPTIONS_SUB=	yes
 
 GTK2_DESC=	Enable Gtk2 IM module
@@ -90,6 +90,8 @@ SUB_LIST+=	GTK3_IM=xim
 .endif
 
 .if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
 USES+=		qt:4
 USE_QT+=		qmake_build moc_build rcc_build uic_build dbus gui inputmethods corelib
 USE_LDCONFIG+=	${PREFIX}/lib/fcitx/qt

@@ -212,6 +212,11 @@ CONFIGURE_ARGS+=	--disable-swig
 CONFIGURE_ENV+=		SWIG="/nonexistent"
 .endif
 
+.if ${PORT_OPTIONS:MGVEDIT}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPHP}

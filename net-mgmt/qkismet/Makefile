@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/qKismet/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt 4 GUI client for Kismet
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 RUN_DEPENDS=	kismet:net-mgmt/kismet
 
 USES=		qmake qt:4 tar:bzip2

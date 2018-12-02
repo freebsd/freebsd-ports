@@ -8,6 +8,9 @@ CATEGORIES=	devel python
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt4 toolkit, QtDesigner plugin
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_WRKSRC=	${WRKSRC}/designer
 INSTALL_WRKSRC=	${WRKSRC}/designer
 DESTDIRNAME=	INSTALL_ROOT

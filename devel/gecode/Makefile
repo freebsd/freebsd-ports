@@ -53,6 +53,11 @@ GIST_CONFIGURE_OFF=	--disable-gist --disable-qt
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MGIST}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
 .if ${ARCH} == "amd64"
 CFLAGS+=	-D__USE_ISOC99
 .endif

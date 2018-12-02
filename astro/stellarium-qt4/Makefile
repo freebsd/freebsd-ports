@@ -15,6 +15,9 @@ COMMENT=	3D photo-realistic sky renderer (planetarium)
 
 LICENSE=	GPLv2+
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 CONFLICTS_INSTALL=	${PORTNAME}-0.17.*
 PORTSCOUT=	limit:^0\.12\.			# track only 0.12.x (legacy)
 

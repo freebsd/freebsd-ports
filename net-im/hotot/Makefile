@@ -3,7 +3,7 @@
 
 PORTNAME=	hotot
 PORTVERSION=	0.9.8.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im www
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lyricat
 GH_PROJECT=	Hotot
 
-USES=		cmake gettext kde:4 python:2.7 qt:4
+USES=		cmake gettext python:2.7
 USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 
@@ -23,7 +23,7 @@ CFLAGS+=	-I${LOCALBASE}/include		# does not uphold CPPFLAGS
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 OPTIONS_DEFINE=	GTK2 QT4 KDE4
-OPTIONS_DEFAULT=	GTK2 QT4
+OPTIONS_DEFAULT=	GTK2
 KDE4_DESC=	KDE 4 integration (implies Qt 4)
 
 .include <bsd.port.options.mk>
@@ -38,6 +38,9 @@ PLIST_SUB+=	GTK2="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MQT4} || ${PORT_OPTIONS:MKDE4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+USES+=		kde:4 qt:4
 USE_QT=		moc_build qmake_build rcc_build uic_build \
 		corelib gui sql webkit
 PLIST_SUB+=	QT4=""

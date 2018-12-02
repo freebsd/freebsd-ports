@@ -11,6 +11,9 @@ COMMENT=	Graphical font manager
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BROKEN_armv6=		fails to compile: src/fminfodisplay.cpp:155:17: no matching function for call to 'qMax'
 BROKEN_armv7=		fails to compile: src/fminfodisplay.cpp:155:17: no matching function for call to 'qMax'
 

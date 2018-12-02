@@ -11,6 +11,9 @@ DISTNAME=	polkit-qt-${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	PolicyKit manager for Qt
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libpolkit.so:sysutils/policykit
 
 USE_LDCONFIG=	yes

@@ -14,6 +14,9 @@ COMMENT=	KDE utility that sums up disk usage for directory trees
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 WRKSRC=		${WRKDIR}/jeromerobert-k4dirstat-3a4663ee20e7
 
 USES=		cmake cpe gettext-tools kde:4 qt:4 tar:bzip2

@@ -10,6 +10,9 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE screen management library
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libqjson.so:devel/qjson@qt4 \
 		libxcb.so:x11/libxcb \
 		libxcb-image.so:x11/xcb-util-image \

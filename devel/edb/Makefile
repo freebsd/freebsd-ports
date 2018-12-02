@@ -12,6 +12,9 @@ COMMENT=	Cross-platform x86/x86-64 debugger based on Qt 4
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		qmake qt:4 tar:tgz

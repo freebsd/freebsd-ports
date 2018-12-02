@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	syncer@gmail.com
 COMMENT=	Usenet binary downloader for KDE4
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 RUN_DEPENDS=	${LOCALBASE}/bin/unrar:archivers/unrar \
 		${LOCALBASE}/bin/par2:archivers/par2cmdline \
 		${LOCALBASE}/bin/7z:archivers/p7zip

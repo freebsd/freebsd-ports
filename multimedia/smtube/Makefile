@@ -48,6 +48,13 @@ MPV_RUN_DEPENDS=		mpv:multimedia/mpv
 SMPLAYER_RUN_DEPENDS=		smplayer:multimedia/smplayer
 VLC_RUN_DEPENDS=		vlc:multimedia/vlc
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's|$$(QMAKE_OPTS)|${QMAKE_ARGS:S,\$,\$\$,g}|' \
 		${WRKSRC}/Makefile

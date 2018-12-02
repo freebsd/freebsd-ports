@@ -13,6 +13,9 @@ COMMENT=	Music score editor for lilypond
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	KDE4 is end-of-life, upgrade this port to version 3.0.0
+EXPIRATION_DATE=2018-12-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poppler-qt4>=0:graphics/py-poppler-qt4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-ly>=0:print/py-python-ly@${PY_FLAVOR}
 

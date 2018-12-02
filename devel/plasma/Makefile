@@ -40,6 +40,13 @@ MEMMAP_DESC=	View memory maps (pulls in QT4)
 MEMMAP_USES=	pyqt:4
 MEMMAP_USE=	PYQT=gui_run
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMEMMAP}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|g' ${WRKSRC}/Makefile

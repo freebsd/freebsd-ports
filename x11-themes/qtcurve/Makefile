@@ -2,7 +2,7 @@
 
 PORTNAME=	qtcurve
 DISTVERSION=	1.9.0-rc1
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	x11-themes
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -16,7 +16,7 @@ PATCHDIR=	${MASTERDIR}/none
 OPTIONS_RADIO=		QT5
 OPTIONS_RADIO_QT5=	KF5 QT5
 OPTIONS_DEFINE=		GTK2 KDE4 QT4
-OPTIONS_DEFAULT=	GTK2 KDE4 QT4 QT5
+OPTIONS_DEFAULT=	GTK2 QT5
 
 GTK2_RUN_DEPENDS=	gtk2-qtcurve-theme>=${PORTVERSION}:x11-themes/qtcurve-gtk2
 KDE4_RUN_DEPENDS=	kde4-style-qtcurve>=${PORTVERSION}:x11-themes/qtcurve-kde4
@@ -73,6 +73,8 @@ post-install:
 .endif
 
 .if ${QTCURVE_SLAVE} == "kde4"
+DEPRECATED=	KDE4 is EOL
+EXPIRATION_DATE=2018-12-31
 WITH_qt4=	On # required for KDE 4
 PKGNAMEPREFIX=	kde4-style-
 USE_KDE=	kdelibs workspace automoc4
@@ -95,6 +97,9 @@ BUILD_WRKSRC=	${WRKSRC}/qt5
 .endif
 
 .if ${QTCURVE_SLAVE} == "qt4"
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 PKGNAMEPREFIX=	qt4-style-
 USES+=		qt:4
 USE_QT=		corelib dbus gui svg moc_build qmake_build rcc_build uic_build

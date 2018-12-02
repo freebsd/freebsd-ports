@@ -13,6 +13,9 @@ COMMENT=	Polkit authentication UI for KDE Workspaces
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libpolkit-qt-agent-1.so:sysutils/polkit-qt@qt4
 
 USES=		cmake kde:4 qt:4 tar:bzip2

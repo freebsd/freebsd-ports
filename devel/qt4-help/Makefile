@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt online help integration module
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		qmake:no_env qt-dist:4
 USE_QT=		moc_build rcc_build corelib clucene \
 		gui sql sql-sqlite3_run xml network

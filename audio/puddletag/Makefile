@@ -12,6 +12,9 @@ COMMENT=	Audio tag editor
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 RUN_DEPENDS=	chromaprint>=0.4:audio/chromaprint \
 		${PYTHON_PKGNAMEPREFIX}mutagen>=1.14:audio/py-mutagen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configobj>=4.5.0:devel/py-configobj@${PY_FLAVOR} \

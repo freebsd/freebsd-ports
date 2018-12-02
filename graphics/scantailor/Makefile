@@ -12,6 +12,9 @@ COMMENT=	Interactive post-processing tool for scanned pages
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BROKEN_powerpc64=	fails to compile: core.hpp:69: boost::lambda::<unnamed>::_1 causes a section type conflict
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs

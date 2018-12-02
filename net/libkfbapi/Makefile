@@ -12,6 +12,9 @@ COMMENT=	Library for accessing Facebook services
 
 LICENSE=	LGPL20
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libqjson.so:devel/qjson@qt4
 
 USES=		cmake:outsource gettext kde:4 qt:4 tar:bzip2

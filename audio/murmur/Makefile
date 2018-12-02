@@ -12,6 +12,9 @@ COMMENT=	Murmur is the server component of Mumble
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:devel/boost-libs
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 

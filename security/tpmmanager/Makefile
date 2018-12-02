@@ -12,6 +12,9 @@ COMMENT=	TPM Manager
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libtspi.so:security/trousers
 
 USES=		qmake qt:4

@@ -9,6 +9,9 @@ CATEGORIES=	textproc devel python
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt4 toolkit, QtXml module
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 CONFIGURE_ARGS=	--enable QtXml
 PYQT_DIST=	yes
 

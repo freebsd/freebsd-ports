@@ -19,6 +19,9 @@ COMMENT=	Romanian dictionaries databases and query application
 
 LICENSE=	GPLv3+
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		qmake qt:4
 USE_QT=		corelib gui network moc_build rcc_build
 LDFLAGS+=	-lz

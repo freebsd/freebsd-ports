@@ -12,6 +12,9 @@ COMMENT=	DVD authoring and slideshow tool
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 RUN_DEPENDS=	sox:audio/sox \
 		notify-send:devel/libnotify \

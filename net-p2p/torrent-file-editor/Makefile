@@ -33,4 +33,11 @@ QT5_USE_OFF=	QT=${_QT4_DEPS:ts,}
 QT5_LIB_DEPENDS_OFF=	libqjson.so:devel/qjson@qt4
 QT5_CMAKE_BOOL=	QT5_BUILD
 
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MQT5}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
 .include <bsd.port.mk>

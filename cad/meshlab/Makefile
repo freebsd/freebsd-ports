@@ -13,6 +13,9 @@ COMMENT=	3D triangular meshes processing and editing tool
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BROKEN_aarch64=		fails to compile: constant expression evaluates to -1 which cannot be narrowed to type char
 BROKEN_armv6=		fails to compile: constant expression evaluates to -1 which cannot be narrowed to type char
 BROKEN_armv7=		fails to compile: constant expression evaluates to -1 which cannot be narrowed to type char

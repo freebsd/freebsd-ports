@@ -11,6 +11,9 @@ COMMENT=	Cross-platform multimedia interpreter for TADS games
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BROKEN=		fails to build
 
 USES=		gmake pkgconfig qmake qt:4 tar:bzip2

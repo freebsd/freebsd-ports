@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt WebKit implementation
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USE_QT=		corelib declarative gui network \
 		moc_build rcc_build
 USE_XORG=	xrender

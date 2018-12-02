@@ -13,6 +13,9 @@ COMMENT=	Additional plug-ins for QMMP (Qt4)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libqmmpui.so:multimedia/qmmp
 BUILD_DEPENDS=	qmmp>=0.11.0:multimedia/qmmp
 

@@ -14,6 +14,9 @@ COMMENT=	Python bindings for the Qt applications and UI framework
 
 LICENSE=	LGPL21
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libapiextractor.so:devel/apiextractor \
 		libgenrunner.so:devel/generatorrunner \
 		libshiboken-${PYTHON_VERSION}.so:devel/shiboken

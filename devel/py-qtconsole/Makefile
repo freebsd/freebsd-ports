@@ -12,6 +12,9 @@ COMMENT=	Qt-based console for Jupyter with support for rich media output
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.md
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traitlets>=0:devel/py-traitlets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter_core>=0:devel/py-jupyter_core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter_client>=4.1:devel/py-jupyter_client@${PY_FLAVOR} \

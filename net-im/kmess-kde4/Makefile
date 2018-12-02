@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/Latest%20versions/${PORTVERSION}/
 MAINTAINER=	syncer@gmail.com
 COMMENT=	MSN Messenger client for KDE
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libqca.so:devel/qca@qt4 \
 		libgif.so:graphics/giflib
 

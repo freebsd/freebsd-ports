@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Admin's GUI tool for Sqlite3
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BROKEN_powerpc64=	fails to build: Found unsuitable Qt version "" from NOTFOUND, this code requires Qt 4.x
 
 LIB_DEPENDS=	libqscintilla2_qt4.so:devel/qscintilla2

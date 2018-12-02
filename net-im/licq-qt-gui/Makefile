@@ -12,6 +12,9 @@ COMMENT=	Qt plugin for licq
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/lib/licq/protocol_icq.so:${LICQ_PORT}-icq
 

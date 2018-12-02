@@ -13,6 +13,9 @@ COMMENT=	DVD-9 to DVD-5 shrinking application for KDE
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libxine.so:multimedia/libxine \
 		libmpeg2.so:multimedia/libmpeg2 \
 		libavcodec0.so:multimedia/ffmpeg0

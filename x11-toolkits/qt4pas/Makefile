@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/^/V/}_Qt${QT4_VER_MIN}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Qt4 binding for FreePascal
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USE_LDCONFIG=	yes
 USE_QT=		corelib gui network script webkit \
 		moc_build

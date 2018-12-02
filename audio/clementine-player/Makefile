@@ -15,6 +15,9 @@ COMMENT=	Cross-platform music player based on Amarok 1.4
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 LIB_DEPENDS=	libtag.so:audio/taglib \
 		libchromaprint.so:audio/chromaprint \

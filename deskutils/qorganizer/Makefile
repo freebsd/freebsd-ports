@@ -14,6 +14,9 @@ COMMENT=	General organizer that includes calendar with jurnal and schedule
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		qmake qt:4
 USE_QT=		corelib gui network moc_build rcc_build sql
 WRKSRC=		${WRKDIR}/qOrganizer/src

@@ -66,4 +66,11 @@ QT5_USES=	compiler:c++11-lang qt:5
 QT5_USE=	${_USE_QT5:S/^/QT=/}
 QT5_CMAKE_ON=	-Dkst_qt5=on
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
 .include <bsd.port.mk>

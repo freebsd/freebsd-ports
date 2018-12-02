@@ -13,6 +13,9 @@ COMMENT=	Advanced Kolab Object Handling Library
 # itself to be LGPL3-licensed (and so are all the installed headers).
 LICENSE=	LGPL3
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 PORTSCOUT=	limit:^0\.
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \

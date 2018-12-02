@@ -13,6 +13,9 @@ COMMENT=	C++ code generator for CPython extensions
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libxslt.so:textproc/libxslt
 

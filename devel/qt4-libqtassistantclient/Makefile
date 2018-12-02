@@ -13,6 +13,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt documentation browser integration module
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USE_QT=		moc_build rcc_build corelib gui network
 USES=		qmake qt:4
 QMAKE_ARGS=	CONFIG+="create_prl link_prl" VERSION="${PORTVERSION}"

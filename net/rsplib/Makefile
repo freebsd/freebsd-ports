@@ -14,6 +14,9 @@ LICENSE=	GPLv3
 
 BROKEN=		fails to compile: fractalgeneratorservice.cc:353:12: expected unqualified-id
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-maintainer-mode \
 		--enable-qt --with-qt-lib=${QT_LIBDIR} \

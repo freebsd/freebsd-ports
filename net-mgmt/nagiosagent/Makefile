@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 MAINTAINER=	myc@barev.net
 COMMENT=	Qt-based frontend to Nagios
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 PLIST_FILES=	bin/NagiosAgent \
 		share/pixmaps/NagiosAgent.png
 

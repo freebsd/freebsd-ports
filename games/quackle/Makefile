@@ -12,6 +12,9 @@ COMMENT=	Scrabble-like word game utilizing Qt4
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USE_GITHUB=	yes
 
 USES=		compiler:c++11-lib gmake qmake qt:4

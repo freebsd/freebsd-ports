@@ -1,16 +1,19 @@
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-${FLAVOR}
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-FLAVORS=	qt4 qt5
+FLAVORS=	qt5 qt4
 FLAVOR?=	${FLAVORS:[1]}
 
 qt4_CONFLICTS_INSTALL=	transmission-qt5
 qt5_CONFLICTS_INSTALL=	transmission-qt4
+
+qt4_DEPRECATED=		Qt4 has been EOL since december 2015
+qt4_EXPIRATION_DATE=	2019-03-15
 
 .if ${FLAVOR} == qt4
 USES=		qt:4

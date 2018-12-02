@@ -14,6 +14,9 @@ COMMENT=	DJ mixing application
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BROKEN_aarch64=		fails to compile: Exception("invalid machine type")
 BROKEN_powerpc64=	fails to configure: unmet dependencies: Could not find libprotobuf, libchromaprint, libmp4, and libwavpack
 

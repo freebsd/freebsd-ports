@@ -13,6 +13,9 @@ COMMENT=	Comprehensive desktop publishing program
 
 LICENSE=	GPLv2+
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BROKEN_armv6=		fails to build: scribus.cpp:6711:36: assigning to 'double *' from incompatible type 'qreal *'
 BROKEN_armv7=		fails to build: scribus.cpp:6711:36: assigning to 'double *' from incompatible type 'qreal *'
 

@@ -9,6 +9,9 @@ CATEGORIES=	devel
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cross-platform application and UI framework (metaport)
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USE_QT=		accessible clucene corelib dbus declarative designer \
 		graphicssystems-opengl gui help iconengines \
 		imageformats inputmethods multimedia network opengl \

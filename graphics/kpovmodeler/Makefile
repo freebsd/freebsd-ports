@@ -11,6 +11,9 @@ DIST_SUBDIR=	KDE/extragear
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE editor/frontend for Povray
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 RUN_DEPENDS=	povray:graphics/povray-meta
 
 USES=		cmake gettext kde:4 qt:4 tar:bzip2

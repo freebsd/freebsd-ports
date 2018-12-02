@@ -13,6 +13,9 @@ DISTNAME=	${QSCI2_DISTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt4 Designer plugin for QScintilla2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libqscintilla2_qt4.so:devel/qscintilla2
 
 DISTINFO_FILE=	${.CURDIR:H}/qscintilla2/distinfo

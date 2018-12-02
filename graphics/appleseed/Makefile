@@ -62,6 +62,13 @@ STUDIO_USES=	qt:4
 STUDIO_USE=	QT=moc_build,qmake_build,rcc_build,uic_build,opengl
 STUDIO_CMAKE_OFF=	-DWITH_STUDIO:BOOL=OFF
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSTUDIO}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
 .include <bsd.port.pre.mk>
 
 post-patch:

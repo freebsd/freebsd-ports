@@ -13,6 +13,9 @@ COMMENT=	Desktop bitcoin management system
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BROKEN_aarch64=		fails to compile: c++: language not recognized: 'ar'
 BROKEN_armv6=		fails to compile: c++: language not recognized: 'ar'
 BROKEN_armv7=		fails to compile: c++: language not recognized: 'ar'

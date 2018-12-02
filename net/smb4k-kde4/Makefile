@@ -11,6 +11,9 @@ DISTNAME=	smb4k-${PORTVERSION}
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	KDE 4.x SMB Network browser and SMB shares mounting center
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 RUN_DEPENDS=	sudo:security/sudo
 
 USES=		cmake gettext kde:4 qt:4 samba:run tar:bzip2

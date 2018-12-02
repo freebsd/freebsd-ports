@@ -19,6 +19,9 @@ LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell \
 FLAVORS=	qt5 qt4
 FLAVOR?=	${FLAVORS:[1]}
 
+qt4_DEPRECATED=		Qt4 has been EOL since december 2015
+qt4_EXPIRATION_DATE=	2019-03-15
+
 qt4_LIB_DEPENDS=	libpoppler-qt4.so:graphics/poppler-qt4 \
 			libquazip.so:archivers/quazip@qt4
 qt5_LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5 \

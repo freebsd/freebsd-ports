@@ -13,6 +13,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The xine backend for Phonon
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libxine.so:multimedia/libxine
 
 USES=		cmake kde:4 pkgconfig qt:4 tar:bzip2

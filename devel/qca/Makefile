@@ -3,7 +3,7 @@
 
 PORTNAME=	qca
 PORTVERSION=	2.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	KDE/stable/qca/${PORTVERSION}/src
 PKGNAMESUFFIX=	-${FLAVOR}
@@ -17,8 +17,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-FLAVORS=	qt4 qt5
+FLAVORS=	qt5 qt4
 FLAVOR?=	${FLAVORS:[1]}
+
+qt4_DEPRECATED=		Qt4 has been EOL since december 2015
+qt4_EXPIRATION_DATE=	2019-03-15
 
 USES=		cmake:outsource tar:xz
 CMAKE_ARGS=	-DBUILD_PLUGINS=none -DBUILD_TESTS=no \

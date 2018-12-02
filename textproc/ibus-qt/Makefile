@@ -14,6 +14,9 @@ COMMENT=	IBus input method module for Qt4
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	ibus>=1.3.7:textproc/ibus
 RUN_DEPENDS=	ibus>=1.3.7:textproc/ibus
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \

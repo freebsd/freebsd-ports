@@ -11,6 +11,9 @@ COMMENT=	General purpose 3D CAD modeller
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	pyside-rcc:devel/pyside-tools \
 		swig3.0:devel/swig30
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \

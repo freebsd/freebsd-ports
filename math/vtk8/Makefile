@@ -107,6 +107,11 @@ post-patch:
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
 .for g in ${VTK_GROUPS}
 .  if ${PORT_OPTIONS:M${g}}
 CMAKE_ARGS+=	-DVTK_Group_${g}:BOOL=ON

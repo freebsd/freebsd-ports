@@ -13,6 +13,9 @@ COMMENT=	Feature-rich Qt4 based dictionary lookup program
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell \
 		libvorbis.so:audio/libvorbis
 

@@ -17,6 +17,9 @@ COMMENT=	Qt 4 wrapper library around the Zeitgeist D-Bus API
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	rapper:textproc/raptor2 \
 		${PYTHON_PKGNAMEPREFIX}rdflib>=0:textproc/py-rdflib@${PY_FLAVOR}
 

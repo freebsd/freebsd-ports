@@ -10,6 +10,9 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Kactivities library
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 USES=		cmake:outsource compiler:c++11-lib kde:4 qt:4 tar:xz
 USE_KDE=	automoc4 kdelibs soprano nepomuk-core
 USE_QT=		declarative moc_build qmake_build rcc_build uic_build

@@ -5,6 +5,7 @@ PORTNAME=	yafaray
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.0-11
 DISTVERSIONSUFFIX=	-g1c0b43a
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	ports@FreeBSD.org
@@ -37,13 +38,19 @@ USE_LDCONFIG=	yes
 CMAKE_OFF=	WITH_YAF_PY_BINDINGS
 
 OPTIONS_DEFINE=	DOCS QT
-OPTIONS_DEFAULT=	QT
 OPTIONS_SUB=	yes
 
 QT_DESC=	Enable Qt Gui build
 QT_USES=	qt:4
 QT_CMAKE_BOOL=	WITH_QT
 QT_USE=		QT=corelib,gui,moc_build,qmake_build,rcc_build,uic_build
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-install:
 	@${RM} ${STAGEDIR}${DOCSDIR}/LICENSES

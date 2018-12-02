@@ -126,6 +126,9 @@ PLIST_SUB+=	MPI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES+=		qt:4
 USE_QT=		gui_build gui_run network_build network_run sql_build sql_run \
 		moc_build uic_build qmake_build rcc_build opengl webkit_build \

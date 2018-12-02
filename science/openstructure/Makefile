@@ -12,6 +12,9 @@ COMMENT=	Molecular modelling and visualization environment
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	fftw3>0:math/fftw3
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libfftw3f.so:math/fftw3-float \

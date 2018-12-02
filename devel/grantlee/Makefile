@@ -13,6 +13,9 @@ COMMENT=	String template engine for Qt 4
 
 LICENSE=	LGPL21
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 PORTSCOUT=	limit:^0\.
 
 USE_QT=		corelib gui qtestlib_build script \

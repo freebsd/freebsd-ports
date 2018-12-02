@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/Soprano/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt/C++ RDF framework
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libraptor2.so:textproc/raptor2 \
 		librdf.so:textproc/redland \
 		libiodbc.so:databases/libiodbc

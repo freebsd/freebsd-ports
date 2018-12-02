@@ -28,6 +28,13 @@ SHEBANG_FILES=	intl/convert.sh
 PLIST_FILES=	bin/fuel share/applications/fuel.desktop \
 		share/icons/hicolor/256x256/apps/fuel.png
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		-e 's|/usr$$|${PREFIX}|' ${WRKSRC}/fuel.pro

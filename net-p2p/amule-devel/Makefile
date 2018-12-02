@@ -111,6 +111,11 @@ XAS_USE=	PERL5+=run
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MPLASMAMULE}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+.endif
+
 .if ${PORT_OPTIONS:MED2K}
 CONFLICTS+=		ed2k-hash*
 .endif

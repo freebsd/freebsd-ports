@@ -13,6 +13,9 @@ COMMENT=	Search using regexes for file names and text
 
 LICENSE=	GPLv3+
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		qmake dos2unix qt:4 zip
 USE_CXXSTD=	c++98
 DOS2UNIX_GLOB=	*.cpp *.h

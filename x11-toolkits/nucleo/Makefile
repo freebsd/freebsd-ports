@@ -62,6 +62,11 @@ QT4_MAKE_ARGS=		QT4MOC="${MOC}"
 CONFIGURE_ARGS+=	--without-dns-sd
 .endif
 
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/nucleo
 

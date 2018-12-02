@@ -12,6 +12,9 @@ COMMENT=	Multiple alignment of nucleic acid and protein sequences with GUI
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		qmake qt:4
 USE_QT=		corelib gui moc qmake_build xml
 

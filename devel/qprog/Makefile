@@ -11,6 +11,9 @@ DISTNAME=	QProg_${PORTVERSION}
 MAINTAINER=	bfoz@bfoz.net
 COMMENT=	Cross-platform software for the DIY line of PIC programmers
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		qmake qt:4 tar:tgz
 USE_QT=		moc_build gui network
 

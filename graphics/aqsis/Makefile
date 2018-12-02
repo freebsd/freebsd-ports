@@ -13,6 +13,9 @@ COMMENT=	Photorealistic rendering system
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	multi
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	bison:devel/bison \
 		xsltproc:textproc/libxslt
 LIB_DEPENDS=	libIlmImf.so:graphics/openexr \

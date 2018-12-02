@@ -13,6 +13,9 @@ COMMENT=	Traditional Chinese input utility in X
 
 LICENSE=	LGPL21
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libgcin-im-client.so:chinese/gcin
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/qt4-im

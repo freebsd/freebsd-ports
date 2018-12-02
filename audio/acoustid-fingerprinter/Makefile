@@ -11,6 +11,9 @@ COMMENT=	AcoustID audio fingerprint submission tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BROKEN_armv6=		fails to link: fingerprintcalculator.cpp: undefined reference to 'chromaprint_new'
 
 LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \

@@ -13,6 +13,9 @@ COMMENT=	Fast Mercurial log navigator written in pyqt4
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BROKEN=		fails to configure
 
 RUN_DEPENDS=	hg:devel/mercurial \

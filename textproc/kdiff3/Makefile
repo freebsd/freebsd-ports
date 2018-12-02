@@ -13,6 +13,9 @@ COMMENT=	KDE4 graphical frontend for diff
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		cmake:outsource kde:4 qt:4
 USE_KDE=	kdelibs libkonq automoc4
 USE_QT=		moc_build qmake_build rcc_build uic_build

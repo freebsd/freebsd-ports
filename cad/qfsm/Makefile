@@ -12,6 +12,9 @@ COMMENT=	Graphical tool for designing finite state machines
 
 LICENSE=	GPLv3+
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 OPTIONS_DEFINE=	GRAPHVIZ DOCS EXAMPLES
 
 USES=		qt:4 tar:bzip2 cmake desktop-file-utils
