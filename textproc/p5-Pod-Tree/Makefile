@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Pod-Tree
-PORTVERSION=	1.26
+PORTVERSION=	1.27
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,9 +16,9 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-Stream>=1.49:www/p5-HTML-Stream \
 		p5-IO-String>=1:devel/p5-IO-String \
-		p5-Path-Tiny>=0.068:devel/p5-Path-Tiny \
+		p5-Path-Tiny>=0.105:devel/p5-Path-Tiny \
 		p5-Text-Template>=1:textproc/p5-Text-Template
-TEST_DEPENDS=	p5-Path-Tiny>=0.068:devel/p5-Path-Tiny \
+TEST_DEPENDS=	p5-Path-Tiny>=0.105:devel/p5-Path-Tiny \
 		p5-Test-Compile>1.2.1:devel/p5-Test-Compile
 
 USES=		perl5
