@@ -11,6 +11,9 @@ COMMENT=	KDE4 audio CD ripping utility
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libcdda_paranoia.so:audio/cdparanoia
 
 USES=		qt:4 tar:xz cmake kde:4

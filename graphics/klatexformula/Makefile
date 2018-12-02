@@ -10,6 +10,9 @@ COMMENT=	Convert LaTeX formula to image
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	help2man:misc/help2man
 
 USES=		cmake:outsource desktop-file-utils ghostscript:run \

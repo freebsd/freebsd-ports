@@ -9,6 +9,9 @@ MASTER_SITES=	http://delta.affinix.com/download/psimedia/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voice and video API for Psi-like IM clients
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	liboil-0.3.so:devel/liboil \
 		libspeexdsp.so:audio/speexdsp
 

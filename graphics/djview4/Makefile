@@ -39,6 +39,13 @@ QT4_USE+=	XORG=x11
 QT5_USES=	qt:5
 QT5_USE=	QT=core,gui,network,opengl,printsupport,widgets,buildtools_build,linguisttools_build,qmake_build
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
 post-patch:
 # Use prebuilt icons, without using conversion tool
 	@${REINPLACE_CMD} -e 's/conversion_tool=[[:alpha:]]*/conversion_tool=no/' \

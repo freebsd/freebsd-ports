@@ -11,6 +11,9 @@ COMMENT=	Qt-only fork of Kross, the KDE scripting framework
 
 LICENSE=	LGPL20+
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		cmake qt:4
 USE_LDCONFIG=	yes
 USE_QT=		corelib designer gui network xml qmake_build uic_build moc_build \

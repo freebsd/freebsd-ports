@@ -3,7 +3,7 @@
 
 PORTNAME=	qpdfview
 DISTVERSION=	0.4.17beta1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	https://launchpadlibrarian.net/294276875/ \
 		https://launchpad.net/${PORTNAME}/trunk/${DISTVERSION}/+download/
@@ -26,7 +26,7 @@ OPTIONS_DEFINE=	CUPS
 OPTIONS_MULTI=	BACKEND
 OPTIONS_MULTI_BACKEND=	DJVU PS
 BACKEND_DESC=	Additional documents support
-OPTIONS_DEFAULT=	QT4 CUPS PS
+OPTIONS_DEFAULT=	QT5 CUPS PS
 OPTIONS_SUB=	yes
 
 CUPS_QMAKE_OFF=	"CONFIG+=without_cups"
@@ -45,6 +45,13 @@ QT5_LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 
 PS_LIB_DEPENDS=	libspectre.so:print/libspectre
 PS_QMAKE_OFF=	"CONFIG+=without_ps"
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 pre-configure:
 	${REINPLACE_CMD} -e 's#/usr#${PREFIX}#g;s#${PREFIX}/share/man#${PREFIX}/man#g' \

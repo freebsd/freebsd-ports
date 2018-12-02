@@ -14,6 +14,9 @@ COMMENT=	Qt 4 quick 3D model editor
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/license.txt
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		dos2unix qmake qt:4 zip
 DOS2UNIX_FILES=	*.pro src/cmds/*.cpp src/fgui/*.cpp docs/*.txt
 DOS2UNIX_REGEX=	.*.[^p][^n][^g]$

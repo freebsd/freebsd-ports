@@ -9,6 +9,9 @@ MASTER_SITES=	LOCAL/makc
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Web browser component for KDE SC based on QtWebKit
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 USES=		cmake kde:4 cpe qt:4 tar:xz
 USE_KDE=	kdelibs automoc4
 USE_QT=		designer gui webkit \

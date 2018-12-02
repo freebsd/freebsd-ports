@@ -12,6 +12,9 @@ COMMENT=	Mail notification utility for KDE with nice features
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 USES=		cmake gettext kde:4 perl5 qt:4 tar:bzip2
 USE_KDE=	automoc4 kdelibs
 USE_QT=		corelib dbus gui network svg xml \

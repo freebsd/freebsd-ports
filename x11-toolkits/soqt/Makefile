@@ -14,6 +14,9 @@ COMMENT=	Qt4 toolkit library for Coin
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libCoin.so:graphics/Coin
 
 USES=		gmake libtool pathfix pkgconfig qmake:no_env qt:4

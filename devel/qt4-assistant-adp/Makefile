@@ -14,6 +14,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt *.adp-compatible documentation browser
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USE_QT=		moc_build rcc_build uic_build corelib \
 		gui network xml doc dbus
 USES=		qmake qt:4

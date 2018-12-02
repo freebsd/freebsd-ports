@@ -329,6 +329,13 @@ CMAKE_ARGS+=	-DBUILD_opencv_${module}:BOOL=OFF
 CMAKE_ARGS+=	-DBUILD_JAVA:BOOL=OFF
 .endif
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
 post-extract-EXTRA_MODULES-on:
 	@${MV} ${WRKSRC_extra_mod}/doc/tutorials/* ${WRKSRC}/doc/tutorials/
 	@${MV} ${WRKSRC_extra_mod}/modules/* ${WRKSRC}/modules/

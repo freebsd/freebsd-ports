@@ -13,6 +13,9 @@ COMMENT=	Simple Qt-based financial manager
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libgpgme.so:security/gpgme \
 		libqwt6.so:x11-toolkits/qwt6@qt4
 

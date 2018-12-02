@@ -11,6 +11,9 @@ MASTER_SITES=	KDE/stable/${PORTNAME}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Open Collaboration Services API library
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USE_QT=		network qtestlib_build xml \
 		moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes

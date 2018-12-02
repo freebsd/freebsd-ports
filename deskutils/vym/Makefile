@@ -10,6 +10,9 @@ MASTER_SITES=	SF/vym/Archive/${PORTVERSION}
 MAINTAINER=	lichray@gmail.com
 COMMENT=	VYM is a tool to generate and manipulate mind maps
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		qmake qt:4 shebangfix tar:bzip2
 SHEBANG_FILES=	scripts/makedist-vym scripts/vivym
 USE_QT=		uic_build moc_build qt3support_build \

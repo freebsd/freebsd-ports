@@ -67,6 +67,11 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 INSTALLS_ICONS=	yes
 .endif
 
+.if ${PORT_OPTIONS:MKDE4}
+DEPRECATED=	KDE4 is end-of-life
+EXPIRATION_DATE=2018-12-31
+.endif
+
 OPERA_ARCH=	${ARCH:S,i386,intel,}
 
 post-extract:

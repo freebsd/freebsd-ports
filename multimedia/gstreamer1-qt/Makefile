@@ -2,7 +2,7 @@
 
 PORTNAME=	gstreamer1
 PORTVERSION=	1.2.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/qt-gstreamer/
 PKGNAMESUFFIX=	-${FLAVOR}
@@ -14,8 +14,11 @@ COMMENT=	Qt ${FLAVOR:C/qt//} bindings for GStreamer 1.x multimedia library
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libgstreamer-1.0.so:multimedia/gstreamer1
 
-FLAVORS=	qt4 qt5
+FLAVORS=	qt5 qt4
 FLAVOR?=	${FLAVORS:[1]}
+
+qt4_DEPRECATED=		Qt4 has been EOL since december 2015
+qt4_EXPIRATION_DATE=	2019-03-15
 
 CONFLICTS_INSTALL=	gstreamer${PKGNAMESUFFIX}-*
 

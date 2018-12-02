@@ -12,6 +12,9 @@ COMMENT=	Graphical user interface around gdb using KDE
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 USES=		cmake kde:4 qt:4
 USE_KDE=	kdelibs automoc4
 USE_QT=		moc_build qmake_build rcc_build uic_build network xml dbus corelib gui svg

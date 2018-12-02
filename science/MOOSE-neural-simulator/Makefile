@@ -13,6 +13,9 @@ COMMENT=	Multiphysics Object Oriented Simulation Environment
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5 \
 		libsbml.so:biology/libsbml \

@@ -62,6 +62,9 @@ CONFIGURE_ARGS+=--disable-poppler-glib
 .endif
 
 .if ${SLAVEPORT}==qt4
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 CONFIGURE_ARGS+=--enable-poppler-qt4
 CONFIGURE_ENV+=	MOCQT4=${MOC}
 USES+=		qt:4

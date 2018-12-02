@@ -3,7 +3,7 @@
 
 PORTNAME=	recoll
 DISTVERSION=	1.23.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/recoll/
 
@@ -40,7 +40,7 @@ PLIST_SUB=		VERSION="${PORTVERSION}" \
 
 OPTIONS_DEFINE=		ASPELL CHM DJVU KONQUEROR LATEX IMAGE PDF PS \
 			SOUND QT4 X11MON
-OPTIONS_DEFAULT=	ASPELL IMAGE PDF PS SOUND QT4
+OPTIONS_DEFAULT=	ASPELL IMAGE PDF PS SOUND
 OPTIONS_SUB=		yes
 
 ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
@@ -70,6 +70,12 @@ X11MON_USE=		xorg=ice,sm,x11
 X11MON_CONFIGURE_ENABLE=x11mon
 X11MON_CONFIGURE_WITH=	fam
 X11MON_BROKEN=		does not build: index/rclmonrcv.cpp:(.text+0x1f13): undefined reference to `FAMOpen2'
+
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \

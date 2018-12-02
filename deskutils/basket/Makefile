@@ -12,6 +12,9 @@ COMMENT=	Desktop organization tool
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libgpgme.so:security/gpgme
 
 USES=		cmake gettext-tools kde:4 qt:4 tar:bzip2

@@ -9,6 +9,9 @@ CATEGORIES=	x11 kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Software Compilation 4 (legacy)
 
+DEPRECATED=	KDE4 is end-of-life
+EXPIRATION_DATE=2018-12-31
+
 USES=		kde:4 metaport
 USE_KDE=	baseapps_run runtime_run workspace_run
 

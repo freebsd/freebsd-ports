@@ -3,7 +3,7 @@
 
 PORTNAME=	texmacs
 PORTVERSION=	1.99.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors print
 MASTER_SITES=	http://www.texmacs.org/Download/ftp/tmftp/source/
 DISTNAME=	TeXmacs-${PORTVERSION}-src
@@ -40,7 +40,7 @@ SHEBANG_FILES=	plugins/asymptote/bin/* plugins/dratex/bin/* \
 DATADIR=	${PREFIX}/share/TeXmacs
 
 OPTIONS_DEFINE=	ASPELL FREETYPE GHOSTSCRIPT IMLIB2 PDF QT4 SQLITE
-OPTIONS_DEFAULT=ASPELL FREETYPE GHOSTSCRIPT IMLIB2 PDF QT4 SQLITE
+OPTIONS_DEFAULT=ASPELL FREETYPE GHOSTSCRIPT IMLIB2 PDF SQLITE
 OPTIONS_SUB=	yes
 
 ASPELL_RUN_DEPENDS=	aspell:textproc/aspell
@@ -66,6 +66,13 @@ QT4_VARS=		QT_PLUGINS_LIST="accessible imageformats"
 QT4_VARS_OFF=		QT_PLUGINS_LIST=""
 SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_ON=	--with-sqlite3
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \

@@ -12,6 +12,9 @@ COMMENT=	Comprehensive and easy to use graphical front end for Synergy
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		qmake qt:4
 USE_QT=		moc_build rcc_build uic_build corelib gui network
 

@@ -14,6 +14,9 @@ COMMENT=	Library for building UPnP devices and control points
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/hupnp/LICENSE_LGPLv3.txt
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		gmake qmake qt:4 zip
 USE_QT=		corelib network xml dbus gui \
 		moc_build rcc_build uic_build

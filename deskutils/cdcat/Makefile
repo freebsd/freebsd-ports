@@ -13,6 +13,9 @@ COMMENT=	Qt based tool for offline CD/DVD/disk catalogs
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libtar.so:devel/libtar \
 		libexif.so:graphics/libexif \
 		libmediainfo.so:multimedia/libmediainfo \

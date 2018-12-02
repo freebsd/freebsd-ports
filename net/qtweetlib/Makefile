@@ -11,6 +11,9 @@ COMMENT=	C++ Qt based Twitter library
 
 LICENSE=	LGPL21
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libqjson.so:devel/qjson@qt4
 
 GH_ACCOUNT=	minimoog

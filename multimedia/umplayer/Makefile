@@ -13,6 +13,9 @@ COMMENT=	Modern front-end for MPlayer (fork of SMPlayer)
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/Copying.txt
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 RUN_DEPENDS=	mplayer:multimedia/mplayer
 
 USES=		desktop-file-utils gmake qmake qt:4 tar:xz

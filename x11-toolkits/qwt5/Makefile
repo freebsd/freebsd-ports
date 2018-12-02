@@ -9,6 +9,9 @@ PKGNAMESUFFIX=	5
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt Widgets for Technical Applications
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		gmake qmake qt:4 tar:bzip2
 USE_QT=		gui svg moc_build
 USE_LDCONFIG=	yes

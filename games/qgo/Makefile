@@ -10,6 +10,9 @@ DISTNAME=	${PORTNAME}_2~svn764.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Go board and SGF editor written with the Qt library
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BROKEN=		fails to build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -15,6 +15,9 @@ COMMENT=	Qt APIs for mobile devices and desktop platforms
 
 LICENSE=	LGPL21
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libblkid.so:misc/e2fsprogs-libblkid
 
 DATE=	20130703

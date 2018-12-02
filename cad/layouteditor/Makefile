@@ -11,6 +11,9 @@ DISTNAME=	LayoutEditor-${PORTVERSION:S,^0.0.,,}-gpl-src
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	IC/MEMS layout editor
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libttf.so:print/freetype
 
 BROKEN_armv6=		fails to compile: no matching member function for call to 'map'

@@ -3,6 +3,7 @@
 
 PORTNAME=	yabause
 PORTVERSION=	0.9.14
+PORTREVISION=	1	
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -25,7 +26,7 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=		SDL2
 OPTIONS_SINGLE=		GUI
 OPTIONS_SINGLE_GUI=	GTK2 QT4 QT5
-OPTIONS_DEFAULT=	QT4
+OPTIONS_DEFAULT=	QT5
 
 GTK2_LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 GTK2_USE=		gnome=gtk20
@@ -43,6 +44,15 @@ SDL2_USE=		sdl=sdl2
 SDL2_USE_OFF=		sdl=sdl
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
+.if ${PORT_OPTIONS:MQT5}
+BROKEN=			does not compile
+.endif
 
 post-patch:
 .if empty(PORT_OPTIONS:MSDL2)

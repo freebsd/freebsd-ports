@@ -13,6 +13,9 @@ COMMENT=	Search, watch, and download from Google Image and YouTube
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		qmake qt:4
 USE_GL=		gl glu
 USE_XORG=	xtst

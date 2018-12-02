@@ -12,6 +12,9 @@ COMMENT=	Grapical control panel for the virtual OSS daemon
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 RUN_DEPENDS=	virtual_oss:audio/virtual_oss
 
 USES=		qmake qt:4 tar:bzip2

@@ -277,6 +277,13 @@ MAKE_ENV+=	GNUSED=${LOCALBASE}/bin/gsed
 MAKE_ENV+=	DISPLAY=
 MAKE_ENV+=	verbose=1
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MKDE4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == "clang"

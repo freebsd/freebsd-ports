@@ -12,6 +12,9 @@ COMMENT=	POP3 mail checker for KDE
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 USES=		cmake gettext kde:4 perl5 qt:4
 USE_KDE=	automoc4 kdelibs pimlibs
 USE_QT=		corelib dbus gui network svg xml \

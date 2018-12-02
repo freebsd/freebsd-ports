@@ -14,6 +14,9 @@ COMMENT=	Development environment entirely dedicated to Qt 4
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/copying
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 RUN_DEPENDS=	exctags:devel/ctags
 
 USE_QT=		corelib gui sql network xml designer sql-sqlite3_run \

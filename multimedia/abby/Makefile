@@ -13,6 +13,9 @@ COMMENT=	Front-end for c/clive
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		qmake qt:4 tar:bzip2
 USE_QT=		gui network xml moc_build rcc_build uic_build
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	dssi
 PORTVERSION=	1.1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -34,11 +34,17 @@ EXAMPLES_FILES1=dssi_analyse_plugin dssi_list_plugins \
 EXAMPLES_FILES2=LTS_qt trivial_sampler_qt
 
 OPTIONS_DEFINE=	DOCS EXAMPLES QT4
-OPTIONS_DEFAULT=QT4
 OPTIONS_SUB=	yes
 
 QT4_USES=	qmake:no_env qt:4
 QT4_USE=	QT=corelib,gui,moc_build
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \

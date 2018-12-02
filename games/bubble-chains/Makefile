@@ -11,6 +11,9 @@ COMMENT=	2D arcade-puzzle game based on Qt/SDL
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	icotool:graphics/icoutils
 
 USE_GITHUB=	yes

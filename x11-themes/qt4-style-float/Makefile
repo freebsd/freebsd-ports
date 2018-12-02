@@ -15,6 +15,9 @@ COMMENT=	Style for Qt 4 and KDE
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		qt:4 tar:bzip2 qmake
 USE_QT=		corelib gui moc_build rcc_build
 

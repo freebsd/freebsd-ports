@@ -13,6 +13,9 @@ COMMENT=	All-in-one sequencer, drum machine, sampler, and more
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libfluidsynth.so:audio/fluidsynth \

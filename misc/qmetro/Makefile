@@ -11,6 +11,9 @@ COMMENT=	Map of the transport system for many city subways
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		dos2unix qmake qt:4 zip
 INSTALLS_ICONS=	yes
 USE_QT=		gui xml uic_build moc_build multimedia \

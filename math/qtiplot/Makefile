@@ -10,6 +10,9 @@ MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Data analysis and scientific plotting
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		libmuparser.so:math/muparser \
 		libpng.so:graphics/png

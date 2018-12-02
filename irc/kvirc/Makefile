@@ -18,6 +18,9 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}/source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	IRC client for KDE 4
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USE_PERL5=	build
 USE_QT=		moc_build qmake_build rcc_build uic_build \
 		dbus gui network sql xml

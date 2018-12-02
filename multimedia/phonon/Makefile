@@ -3,6 +3,7 @@
 
 PORTNAME=	phonon
 DISTVERSION=	4.10.1
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/phonon
@@ -13,7 +14,7 @@ COMMENT=	KDE multimedia framework
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-FLAVORS=	qt4 qt5
+FLAVORS=	qt5 qt4
 FLAVOR?=	${FLAVORS:[1]}
 
 qt4_LIB_DEPENDS=	libqzeitgeist.so:sysutils/qzeitgeist
@@ -21,6 +22,9 @@ qt4_PKGNAMESUFFIX=	-qt4
 qt5_PKGNAMESUFFIX=	-qt5
 qt4_PLIST=	${.CURDIR}/pkg-plist.qt4
 qt5_PLIST=	${.CURDIR}/pkg-plist.qt5
+
+qt4_DEPRECATED=		Qt4 has been EOL since december 2015
+qt4_EXPIRATION_DATE=	2019-03-15
 
 USES=		cmake compiler:c++11-lang pathfix tar:xz
 CMAKE_ON=	PHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT \

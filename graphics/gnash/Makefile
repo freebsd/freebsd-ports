@@ -107,6 +107,8 @@ GNASH_GUIS+=	gtk
 .endif
 
 .if ${PORT_OPTIONS:MKDE4}
+DEPRECATED=	KDE4 is end-of-life
+EXPIRATION_DATE=2018-12-31
 GNASH_GUIS+=	kde4
 USE_QT=		moc_build
 USE_KDE=	kdelibs

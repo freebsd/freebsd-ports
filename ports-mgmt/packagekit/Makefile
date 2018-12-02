@@ -75,6 +75,9 @@ PLIST_SUB+=	GTK="@comment "
 CONFIGURE_ARGS+=--disable-qt
 
 .elif defined(${SLAVEPORT}) && ${SLAVEPORT}=="qt4"
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS+=	libpackagekit-glib2.so:ports-mgmt/packagekit
 
 CONFIGURE_ARGS+=--enable-qt

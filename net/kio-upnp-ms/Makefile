@@ -11,6 +11,9 @@ MASTER_SITES=	LOCAL/fluffy
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KIO slave to access UPnP MediaServers
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libHUpnp.so:net/hupnp
 
 USES=		cmake kde:4 qt:4 tar:bzip2

@@ -10,6 +10,9 @@ COMMENT=	X-Plane Scenery Tools
 
 LICENSE=	MIT
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 # Platform-specific defines in patch-src_XESCore_Airports.cpp.
 # Somewhere on FlightGear wiki it is said WED would only work for AMD64 anyway.
 ONLY_FOR_ARCHS=	amd64

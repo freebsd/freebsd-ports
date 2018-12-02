@@ -20,6 +20,9 @@ USE_LDCONFIG=	yes
 
 SLAVE?=		qt5
 .if ${SLAVE} ==	qt4
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES+=		qt:4
 USE_QT=		corelib dbus \
 		moc_build qmake_build rcc_build

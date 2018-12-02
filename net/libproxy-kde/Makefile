@@ -7,6 +7,9 @@ PKGNAMESUFFIX=	-${LIBPROXY_SLAVE}
 
 COMMENT=	KDE plug-in for libproxy
 
+DEPRECATED=	KDE4 is end-of-life
+EXPIRATION_DATE=2018-12-31
+
 USES=		kde:4
 USE_KDE=	runtime
 

@@ -13,6 +13,9 @@ COMMENT=	Open source keystroke launcher
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/bin/xdg-open:devel/xdg-utils
 

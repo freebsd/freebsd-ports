@@ -142,6 +142,11 @@ CMAKE_ARGS+=		-DOSG_USE_QT:BOOL=OFF
 PLIST_SUB+=		QT="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC}/CMakeModules -type f -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g'

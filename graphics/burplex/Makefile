@@ -12,6 +12,9 @@ COMMENT=	Preview and select images for batch processing
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 RUN_DEPENDS=	${LOCALBASE}/bin/dcraw:graphics/dcraw
 
 USES=		qmake qt:4

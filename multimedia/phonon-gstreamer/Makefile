@@ -3,7 +3,7 @@
 
 PORTNAME=	phonon
 PORTVERSION=	4.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTNAME}-backend-${PHONON_PLUGIN}/${DISTVERSION}
 DISTNAME=	${PORTNAME}-backend-${PHONON_PLUGIN}-${DISTVERSION}
@@ -14,13 +14,16 @@ COMMENT=	GStreamer backend for Phonon
 
 LICENSE=	LGPL21
 
-FLAVORS=	qt4 qt5
+FLAVORS=	qt5 qt4
 FLAVOR?=	${FLAVORS:[1]}
 
 qt4_PKGNAMESUFFIX=	-${PHONON_PLUGIN}-qt4
 qt5_PKGNAMESUFFIX=	-${PHONON_PLUGIN}-qt5
 qt4_PLIST=	${.CURDIR}/pkg-plist.qt4
 qt5_PLIST=	${.CURDIR}/pkg-plist.qt5
+
+qt4_DEPRECATED=		Qt4 has been EOL since december 2015
+qt4_EXPIRATION_DATE=	2019-03-15
 
 USES=		cmake pkgconfig tar:xz
 USE_GL=		gl

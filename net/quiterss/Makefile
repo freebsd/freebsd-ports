@@ -30,6 +30,13 @@ QT5_USES=	qt:5 qt:5
 QT5_USE=	QT=buildtools_build,linguisttools_build,core,xml,gui,widgets
 QT5_USE+=	QT=network,multimedia,printsupport,webkit,sql,sql-sqlite3_run
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
 post-patch-DEBUG-on:
 	@${REINPLACE_CMD} 's|debug_and_release|debug|' \
 		${WRKSRC}/QuiteRSS.pro

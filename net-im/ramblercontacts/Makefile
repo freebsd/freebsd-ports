@@ -13,6 +13,9 @@ COMMENT=	Free, multi-service communication client from Rambler
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		qmake dos2unix qt:4
 DOS2UNIX_GLOB=	*
 USE_XORG=	xscrnsaver

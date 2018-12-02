@@ -14,6 +14,9 @@ COMMENT=	KDE style with animations
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 WRKSRC=		${WRKDIR}/kde4-kstyle-nitrogen-${PORTVERSION}-Source
 
 USES=		cmake kde:4 qt:4

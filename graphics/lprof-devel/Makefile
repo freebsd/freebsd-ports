@@ -12,6 +12,9 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open source color profiler
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	liblcms.so:graphics/lcms \
 		libtiff.so:graphics/tiff \
 		libvigraimpex.so:graphics/vigra

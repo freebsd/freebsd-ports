@@ -3,7 +3,7 @@
 
 PORTNAME=	rosegarden
 PORTVERSION=	17.04
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -30,7 +30,7 @@ USES=		alias cmake:outsource desktop-file-utils localbase:ldflags \
 OPTIONS_DEFINE=		LIRC
 OPTIONS_SINGLE=		TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	QT4 QT5
-OPTIONS_DEFAULT=	QT4
+OPTIONS_DEFAULT=	QT5
 
 LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
 LIRC_CMAKE_ON=		-DENABLE_LIRC:BOOL=ON
@@ -44,5 +44,12 @@ QT5_USE=		qt=network,printsupport,testlib,widgets,xml \
 			qt=buildtools_build,linguisttools_build,qmake_build
 QT5_CMAKE_ON=		-DUSE_QT5:BOOL=ON
 TOOLKIT_DESC=		Qt toolkit
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
 
 .include <bsd.port.mk>

@@ -14,6 +14,9 @@ COMMENT=	KDE style featuring 3D artwork and enhanced the visual experience
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 USES=		cmake kde:4 qt:4
 USE_KDE=	kdelibs automoc4 workspace
 USE_QT=		corelib qmake_build moc_build rcc_build uic_build

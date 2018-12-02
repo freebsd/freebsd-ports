@@ -14,6 +14,9 @@ COMMENT=	Transparent KDE4 window decoration
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 LIB_DEPENDS=	libqimageblitz.so:x11/qimageblitz
 
 USES=		cmake kde:4 qt:4 tar:bzip2

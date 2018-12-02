@@ -12,6 +12,9 @@ COMMENT=	KDE mind mapping tool
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 USES=		kde:4 pkgconfig python:2.7 qmake:no_env,no_configure qt:4 shebangfix tar:bzip2 waf \
 		gettext shared-mime-info
 USE_KDE=	kdelibs

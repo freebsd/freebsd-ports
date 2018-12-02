@@ -59,6 +59,12 @@ X11_MAKE_ENV=		xt=1
 
 CPPFLAGS+=	-D_WANT_SEMUN
 
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/$$libdir/pkgconfig|/libdata/pkgconfig|g' \

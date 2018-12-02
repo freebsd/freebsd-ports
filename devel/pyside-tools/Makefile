@@ -13,6 +13,9 @@ COMMENT=	Utilities for creating PySide applications
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	multi
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	pyside${PYTHON_PKGNAMESUFFIX}>=1.0.9:devel/pyside
 LIB_DEPENDS=	libshiboken-${PYTHON_VERSION}.so:devel/shiboken
 RUN_DEPENDS=	pyside${PYTHON_PKGNAMESUFFIX}>=1.0.9:devel/pyside

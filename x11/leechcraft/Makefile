@@ -13,6 +13,9 @@ COMMENT=	Cross-platform modular live environment
 LICENSE=	BSL
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libqwt6.so:x11-toolkits/qwt6@qt4 \
 		libpcre.so:devel/pcre \
 		libboost_program_options.so:devel/boost-libs

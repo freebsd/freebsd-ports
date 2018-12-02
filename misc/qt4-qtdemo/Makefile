@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	qt4-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 4 demonstration and example applications
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		pkgconfig qmake:no_env qt-dist:4
 USE_GSTREAMER=	yes
 USE_QT=		moc_build rcc_build uic_build corelib designer \

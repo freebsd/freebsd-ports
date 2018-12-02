@@ -13,6 +13,9 @@ PORTNAME=	qt4-qtsolutions-soap
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QT4 Solutions SOAP Component
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 DESCR=		${.CURDIR}/pkg-descr
 
 PATCHDIR=	${.CURDIR}/files

@@ -55,6 +55,13 @@ QT5_USE=	QT=qmake_build,buildtools_build,core,gui,widgets
 QT5_CMAKE_ON=	-DDESIRED_QT_VERSION:STRING=5
 QT5_IMPLIES=	QT
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} '/set.*AFT_VERSION/s/".*"/"${GH_TAGNAME}"/' \
 		${WRKSRC}/CMakeLists.txt

@@ -57,6 +57,13 @@ X11_USES=	qt:4
 X11_USE=	QT=moc_build,qmake_build,rcc_build,uic_build,corelib,gui
 X11_PLIST_FILES=	bin/luxrender
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
 post-extract:
 	@${LN} -sf ${PORTNAME}-luxrays-${LUXRAYS_REV} ${WRKDIR}/luxrays
 

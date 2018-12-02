@@ -13,6 +13,9 @@ COMMENT=	Qt 4 program that displays images of various formats
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		qmake qt:4 tar:bzip2
 USE_QT=		corelib gui moc_build uic_build rcc_build
 MAKE_JOBS_UNSAFE=	yes

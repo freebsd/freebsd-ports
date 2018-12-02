@@ -12,6 +12,9 @@ COMMENT=	Graphical circuit design and simulation tool
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/qucs/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 BUILD_DEPENDS=	gperf:devel/gperf \
 		admsXml:cad/adms
 

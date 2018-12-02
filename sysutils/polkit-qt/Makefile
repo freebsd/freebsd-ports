@@ -4,7 +4,7 @@
 PORTNAME=	polkit-qt
 DISTVERSIONPREFIX=	1-
 DISTVERSION=	0.112.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	KDE/stable/apps/KDE4.x/admin/
 PKGNAMESUFFIX=	${FLAVOR:C/qt//}
@@ -17,8 +17,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpolkit-agent-1.so:sysutils/polkit
 
-FLAVORS=	qt4 qt5
+FLAVORS=	qt5 qt4
 FLAVOR?=	${FLAVORS:[1]}
+
+qt4_DEPRECATED=		Qt4 has been EOL since december 2015
+qt4_EXPIRATION_DATE=	2019-03-15
 
 USES=		cmake:outsource gnome pkgconfig tar:bzip2
 USE_GNOME=	glib20

@@ -13,6 +13,9 @@ COMMENT=	Large file hex editor
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		bison qmake qt:4
 USE_QT=		corelib gui moc_build rcc_build
 

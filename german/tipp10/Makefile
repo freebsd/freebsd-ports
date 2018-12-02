@@ -14,6 +14,9 @@ COMMENT=	10-finger touch typing learning program
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license_en.txt
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		qmake dos2unix qt:4 zip
 DOS2UNIX_GLOB=	*.pro *.cpp
 USE_QT=		corelib gui network sql rcc_build uic_build moc_build \

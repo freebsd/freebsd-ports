@@ -13,6 +13,9 @@ COMMENT=	Qt 4 based dictionary program (stardict clone)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		dos2unix pkgconfig qmake qt:4 tar:bzip2
 USE_QT=		corelib gui network xml uic_build moc_build rcc_build
 USE_GNOME=	glib20

@@ -13,6 +13,9 @@ COMMENT=	KDE oxygen style with transparency
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 USES=		cmake kde:4 qt:4 tar:xz
 USE_KDE=	kdelibs workspace automoc4
 USE_QT=		corelib qmake_build moc_build rcc_build uic_build

@@ -73,6 +73,11 @@ X11_USE=	XORG=x11,xcb,xext GL=gl,glu
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MQT4}
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+.endif
+
 .if ${PORT_OPTIONS:MX11} || ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGTK3} || ${PORT_OPTIONS:MQT4} || ${PORT_OPTIONS:MQT5} || ${PORT_OPTIONS:MSHOW} || ${PORT_OPTIONS:MKX}
 PLIST_SUB+=	UI=""
 .else

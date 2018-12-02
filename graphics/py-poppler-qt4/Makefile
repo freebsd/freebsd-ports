@@ -14,6 +14,9 @@ COMMENT=	Python bindings for the Poppler-Qt4 PDF rendering library
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libpoppler-qt4.so:graphics/poppler-qt4
 
 USES=		compiler:c++11-lang pkgconfig pyqt:4 python

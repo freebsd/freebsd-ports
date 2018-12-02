@@ -15,6 +15,9 @@ COMMENT=	Qt4 bindings for GStreamer multimedia library
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		bison cmake:noninja gmake kde:4 pathfix pkgconfig qt:4 tar:bzip2

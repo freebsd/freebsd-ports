@@ -12,6 +12,9 @@ COMMENT=	Qt4 graphical Wine frontend
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 RUN_DEPENDS=	xterm:x11/xterm \
 		cabextract:archivers/cabextract \
 		icotool:graphics/icoutils

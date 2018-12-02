@@ -10,6 +10,9 @@ COMMENT=	Implementation of OAuth 1.0 in C++ for Qt
 
 LICENSE=	LGPL21
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		pkgconfig qmake qt:4
 USE_QT=		corelib network gui moc_build qtestlib_build
 USE_LDCONFIG=	yes

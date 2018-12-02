@@ -13,6 +13,9 @@ COMMENT=	Cross-platform integrated development environment (IDE)
 
 LICENSE=	GPLv3
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 USES=		pyqt:4 python:2.7
 USE_PYQT=	declarative_run network  webkit
 USE_PYTHON=	distutils autoplist

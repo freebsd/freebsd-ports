@@ -3,7 +3,7 @@
 PORTNAME=	qtkeychain
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -13,8 +13,11 @@ COMMENT=	Platform independent Qt API for storing passwords
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-FLAVORS=	qt4 qt5
+FLAVORS=	qt5 qt4
 FLAVOR?=	${FLAVORS:[1]}
+
+qt4_DEPRECATED=		Qt4 has been EOL since december 2015
+qt4_EXPIRATION_DATE=	2019-03-15
 
 USES=		cmake localbase:ldflags pkgconfig
 USE_GITHUB=	yes

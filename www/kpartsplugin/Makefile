@@ -10,6 +10,9 @@ DISTNAME=	${PORTNAME}-${PORTDATE}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Browser file viewer using KDE technology
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2018-12-31
+
 USES=		cmake kde:4 qt:4 webplugin:native tar:bzip2
 USE_KDE=	kdelibs automoc4
 USE_QT=		corelib gui moc_build qmake_build rcc_build uic_build

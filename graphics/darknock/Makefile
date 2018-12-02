@@ -12,6 +12,9 @@ COMMENT=	Program that can detect edges in images
 
 LICENSE=	GPLv2+
 
+DEPRECATED=		Qt4 has been EOL since december 2015
+EXPIRATION_DATE=	2019-03-15
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		qmake qt:4
