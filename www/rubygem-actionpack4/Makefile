@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	actionpack
-PORTVERSION=	4.2.10
+PORTVERSION=	4.2.11
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -20,8 +20,9 @@ RUN_DEPENDS=	rubygem-actionview4>=${PORTVERSION}:devel/rubygem-actionview4 \
 		rubygem-rails-dom-testing1>=1.0.5:textproc/rubygem-rails-dom-testing1 \
 		rubygem-rails-html-sanitizer>=1.0.2:textproc/rubygem-rails-html-sanitizer
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
