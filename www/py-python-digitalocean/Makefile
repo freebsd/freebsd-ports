@@ -12,6 +12,8 @@ COMMENT=	API to manage digitalocean.com droplets
 
 LICENSE=	GPLv3
 
+BROKEN=		fails to configure, non ascii char in position 820 of long_description
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.0.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonpickle>0:devel/py-jsonpickle@${PY_FLAVOR}
 
