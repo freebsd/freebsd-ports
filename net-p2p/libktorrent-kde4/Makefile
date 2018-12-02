@@ -16,7 +16,7 @@ EXPIRATION_DATE=	2018-12-31
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:devel/boost-libs
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgmp.so:math/gmp \
-		libqca.so:devel/qca
+		libqca.so:devel/qca@qt4
 
 USES=		cmake:outsource gettext kde:4 qt:4 tar:bzip2
 USE_KDE=	kdelibs automoc4
