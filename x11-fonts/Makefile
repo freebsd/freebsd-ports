@@ -183,6 +183,7 @@
     SUBDIR += stix-fonts
     SUBDIR += suxus
     SUBDIR += symbola
+    SUBDIR += tamsyn
     SUBDIR += terminus-font
     SUBDIR += terminus-ttf
     SUBDIR += tkfont
