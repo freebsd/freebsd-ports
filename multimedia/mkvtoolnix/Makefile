@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	28.2.0
-PORTREVISION=	1
+PORTVERSION=	29.0.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/
@@ -27,6 +26,7 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libmatroska.so:multimedia/libmatroska
 
 USES=		compiler:c++17-lang iconv localbase pkgconfig tar:xz
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_path_PO4A=no
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE} \
@@ -51,7 +51,7 @@ NLS_CONFIGURE_WITH=	gettext
 
 QT5_DESC=	Build and install GUI application (Qt 5)
 QT5_USES=	desktop-file-utils qt:5 shared-mime-info
-QT5_USE=	QT=buildtools_build,concurrent,core,declarative,gui,multimedia,network,widgets
+QT5_USE=	QT=buildtools_build,concurrent,core,dbus,declarative,gui,multimedia,network,widgets
 QT5_CONFIGURE_ENABLE=	qt
 QT5_BUILD_DEPENDS=	qmake:devel/qt5-qmake
 QT5_LIB_DEPENDS=	libcmark.so:textproc/cmark
