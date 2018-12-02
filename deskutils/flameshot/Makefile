@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	flameshot
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -13,18 +12,15 @@ COMMENT=	Powerful yet simple to use screenshot software
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		compiler:c++11-lang gl qmake qt:5
+
 GH_ACCOUNT=	lupoDharkael
 
 INSTALL_ICONS=	yes
 
-USES=		compiler:c++11-lang qmake qt:5
 USE_GITHUB=	yes
 USE_GL=		gl
-USE_QT=		core dbus gui linguist network widgets \
+USE_QT=		core dbus gui linguist network svg widgets \
 		buildtools_build
-
-post-patch:
-		@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},1' \
-			${WRKSRC}/${PORTNAME}.pro
 
 .include <bsd.port.mk>
