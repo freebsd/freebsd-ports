@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	actionpack
-PORTVERSION=	5.1.6
+PORTVERSION=	5.1.6.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	5
@@ -22,8 +22,9 @@ RUN_DEPENDS=	rubygem-actionview5>=${PORTVERSION}:devel/rubygem-actionview5 \
 
 PORTSCOUT=	limit:^5\.1\.
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
