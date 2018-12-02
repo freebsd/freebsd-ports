@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rails
-PORTVERSION=	5.0.7
+PORTVERSION=	5.0.7.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	50
@@ -22,9 +22,8 @@ RUN_DEPENDS=	rubygem-actioncable50>=${PORTVERSION}:www/rubygem-actioncable50 \
 		rubygem-activesupport50>=${PORTVERSION}:devel/rubygem-activesupport50 \
 		rubygem-bundler<2.0:sysutils/rubygem-bundler \
 		rubygem-railties50>=${PORTVERSION}:www/rubygem-railties50 \
-		rubygem-sprockets-rails-rails50>=2.0.0:devel/rubygem-sprockets-rails-rails50
-
- RUN_DEPENDS+=	rubygem-bindex>=0.5.0:devel/rubygem-bindex \
+		rubygem-sprockets-rails-rails50>=2.0.0:devel/rubygem-sprockets-rails-rails50 \
+		rubygem-bindex>=0.5.0:devel/rubygem-bindex \
 		rubygem-byebug>=9.0.6:devel/rubygem-byebug \
 		rubygem-coffee-rails-rails50>=4.2.1:devel/rubygem-coffee-rails-rails50 \
 		rubygem-coffee-script-source>=1.12.2:devel/rubygem-coffee-script-source \
@@ -50,10 +49,10 @@ RUN_DEPENDS=	rubygem-actioncable50>=${PORTVERSION}:www/rubygem-actioncable50 \
 
 PORTSCOUT=	limit:^5\.0\.
 
-NO_ARCH=	yes
-
 USES=		gem
 USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 CPE_VENDOR=	rubyonrails
 CPE_PRODUCT=	ruby_on_rails
