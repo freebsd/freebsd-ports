@@ -417,6 +417,7 @@
     SUBDIR += libgpod-sharp
     SUBDIR += libgroove
     SUBDIR += libid3tag
+    SUBDIR += libinstpatch
     SUBDIR += libkcddb
     SUBDIR += libkcddb-kde4
     SUBDIR += libkcompactdisc
