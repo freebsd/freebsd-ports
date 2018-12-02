@@ -17,7 +17,7 @@ GH_ACCOUNT=	lupoDharkael
 
 INSTALL_ICONS=	yes
 
-USES=		qmake qt:5
+USES=		compiler:c++11-lang qmake qt:5
 USE_GITHUB=	yes
 USE_GL=		gl
 USE_QT=		core dbus gui linguist network widgets \
