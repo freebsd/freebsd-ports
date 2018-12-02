@@ -12,6 +12,8 @@ COMMENT=	Library to convert numbers to words in multiple languages
 
 LICENSE=	LGPL21
 
+BROKEN=		fails to configure, non ascii char in position 1557 of LONG_DESC
+
 USES=		python
 USE_PYTHON=	distutils autoplist
 
