@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rails
-PORTVERSION=	4.2.10
-PORTREVISION=	2
+PORTVERSION=	4.2.11
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -43,9 +42,10 @@ RUN_DEPENDS=	rubygem-actionmailer4>=${PORTVERSION}:mail/rubygem-actionmailer4 \
 		rubygem-uglifier>=2.5.0:www/rubygem-uglifier \
 		rubygem-web-console2>=2.1.2:devel/rubygem-web-console2
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		cpe gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 CPE_VENDOR=	rubyonrails
 CPE_PRODUCT=	ruby_on_rails
