@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rails
-PORTVERSION=	5.1.6
+PORTVERSION=	5.1.6.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	5
@@ -51,10 +51,10 @@ RUN_DEPENDS=	rubygem-actioncable5>=${PORTVERSION}:www/rubygem-actioncable5 \
 
 PORTSCOUT=	limit:^5\.1\.
 
-NO_ARCH=	yes
-
 USES=		gem
 USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 CPE_VENDOR=	rubyonrails
 CPE_PRODUCT=	ruby_on_rails
