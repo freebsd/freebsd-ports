@@ -1,3 +1,8 @@
-Certifi: Python Mozilla's SSL Certificates.
+Certifi is a carefully curated collection of Root Certificates for validating
+the trustworthiness of SSL certificates while verifying the identity of TLS
+hosts. It has been extracted from the Requests project.
 
-WWW: https://pypi.org/project/certifi/
+This MPL Licensed CA Bundle is extracted from the Mozilla Included CA
+Certificate List.
+
+WWW: https://certifi.io/
