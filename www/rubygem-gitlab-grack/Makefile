@@ -13,8 +13,12 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-rack15>=1.5.1:www/rubygem-rack15
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e '/s.executables = \["console".freeze, "testserver".freeze\]/d; s|"bin/console".freeze, "bin/testserver".freeze, ||' ${WRKSRC}/${GEMSPEC}
 
 .include <bsd.port.mk>
