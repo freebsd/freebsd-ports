@@ -46,9 +46,14 @@ EXTRA_PATCHES+=	${FILESDIR}/no-inet6.patch
 
 OPTIONS_DEFINE=	DOCS
 
-.if defined(BAD_TESTS)
+.include <bsd.port.pre.mk>
+
 post-patch:
+.if defined(BAD_TESTS)
 	${RM} ${BAD_TESTS:C|.+|${WRKSRC}/bin/varnishtest/tests/\0.vtc|}
 .endif
+.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
+	${REINPLACE_CMD} -e '/-Wno-unknown-warning-option -Wno-implicit-fallthrough/d' ${WRKSRC}/configure.ac
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
