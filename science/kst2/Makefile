@@ -62,7 +62,7 @@ NETCDF_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_Netcdf=ON
 TOOLKIT_DESC=	Qt toolkit
 QT4_USES=	qt:4
 QT4_USE=	${_USE_QT4:S/^/QT=/}
-QT5_USES=	qt:5
+QT5_USES=	compiler:c++11-lang qt:5
 QT5_USE=	${_USE_QT5:S/^/QT=/}
 QT5_CMAKE_ON=	-Dkst_qt5=on
 
