@@ -13,8 +13,6 @@ COMMENT=	Clocks for GNOME 3
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Wno-unused-but-set-variable"
-
 BUILD_DEPENDS=	itstool:textproc/itstool \
 		vala:lang/vala
 LIB_DEPENDS=	libgeoclue-2.so:net/geoclue \
