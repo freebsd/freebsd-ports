@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	activerecord
-PORTVERSION=	4.2.10
+PORTVERSION=	4.2.11
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -17,8 +17,9 @@ RUN_DEPENDS=	rubygem-activemodel4>=${PORTVERSION}:databases/rubygem-activemodel4
 		rubygem-activesupport4>=${PORTVERSION}:devel/rubygem-activesupport4 \
 		rubygem-arel6>=6.0:databases/rubygem-arel6
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
