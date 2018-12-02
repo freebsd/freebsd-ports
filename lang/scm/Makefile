@@ -15,6 +15,8 @@ COMMENT=	Scheme interpreter
 
 LICENSE=	LGPL21
 
+BROKEN=		fails to stage
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		readline zip
