@@ -21,6 +21,8 @@ USES=		libedit pkgconfig
 USE_GITHUB=	yes
 USE_RC_SUBR=	cbsdd cbsdrsyncd cbsd-statsd-bhyve cbsd-statsd-hoster cbsd-statsd-jail
 
+CFLAGS_powerpc64=	-mminimal-toc
+
 SUB_FILES=	pkg-message pkg-deinstall
 
 CBSD_HOME?=	${PREFIX}/cbsd
