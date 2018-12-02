@@ -8,6 +8,9 @@ CATEGORIES=	devel
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Provides API for communicating with MessagePack serialization
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	BSD3CLAUSE
 
 USES=		php:pecl

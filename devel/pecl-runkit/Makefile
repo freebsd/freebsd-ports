@@ -9,6 +9,9 @@ CATEGORIES=	devel pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PECL extension to modify constants, user-defined functions, and classes
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	PHP30
 
 USES=		php:pecl

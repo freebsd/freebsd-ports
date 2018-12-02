@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 MAINTAINER=	komarov@valerka.net
 COMMENT=	PHP-extension part of statistics server for PHP
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 BROKEN_powerpc64=	fails to compile: class 'google::protobuf::internal::InternalMetadataWithArenaLite' does not have any field named 'InternalMetadataWithArenaBase'

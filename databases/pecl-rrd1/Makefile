@@ -7,6 +7,9 @@ CATEGORIES=	databases pear
 MAINTAINER=	daniel@blodan.se
 COMMENT=	PHP bindings to rrd tool system
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	PHP301
 
 IGNORE_WITH_PHP=70 71 72 73

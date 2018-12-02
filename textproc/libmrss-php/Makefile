@@ -11,6 +11,9 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP library for parsing, writing, and creating RSS
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/../COPYING
 

@@ -9,6 +9,9 @@ MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open source ePortfolio system
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING
 

@@ -9,6 +9,9 @@ CATEGORIES=	devel
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	URI Template(RFC6570) library for PHP
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	PHP301
 
 USES=		php:pecl

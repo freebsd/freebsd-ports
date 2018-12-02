@@ -8,6 +8,9 @@ CATEGORIES=	textproc pear
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	YAML-1.1 parser and emitter
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

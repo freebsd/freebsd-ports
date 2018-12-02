@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	PHP extension which transparently caches PHP functions
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	arraypad
 GH_PROJECT=	php-${PORTNAME}

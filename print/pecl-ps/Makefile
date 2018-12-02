@@ -9,6 +9,9 @@ CATEGORIES=	print pear
 MAINTAINER=	alan@fromorbit.com
 COMMENT=	PHP extension for pslib to generate postscript
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	PHP202
 
 IGNORE_WITH_PHP=	70 71 72 73

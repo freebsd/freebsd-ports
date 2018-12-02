@@ -10,6 +10,9 @@ DISTNAME=	Judy-${PORTVERSION}
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	PHP Judy implements sparse dynamic arrays
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	PHP301
 
 RUN_DEPENDS=	Judy>=0:devel/judy

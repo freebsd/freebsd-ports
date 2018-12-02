@@ -8,6 +8,9 @@ CATEGORIES=	math textproc pear
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PECL extension with routines for statistical computation
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

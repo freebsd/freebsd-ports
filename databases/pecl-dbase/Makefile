@@ -8,6 +8,9 @@ CATEGORIES=	databases pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	dBase database file access functions for PHP
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	PHP301
 
 USES=		php:pecl

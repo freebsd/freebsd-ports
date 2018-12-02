@@ -11,6 +11,9 @@ DISTNAME=	CTwig-${PORTVERSION}
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Twig C extension to improve performance of the Twig template language
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	BSD3CLAUSE
 
 USES=		php:ext tar:tgz

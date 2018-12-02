@@ -9,6 +9,9 @@ CATEGORIES=	net pear
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Extension to interact with Apple Push Notification Service
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	PHP301
 
 LIB_DEPENDS=	libcapn.so:net/libcapn

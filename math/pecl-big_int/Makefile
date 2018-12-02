@@ -9,6 +9,9 @@ CATEGORIES=	math devel pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Functions for calculations with arbitrary length integers and bitsets
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	BIG_INT
 LICENSE_NAME=	BIG_INT license
 LICENSE_FILE=	${WRKSRC}/LICENSE

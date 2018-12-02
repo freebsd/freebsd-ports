@@ -9,6 +9,9 @@ CATEGORIES=	devel
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Strict scalar parameter type hint support for 5.4+
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	PHP301
 
 USES=		php:pecl
