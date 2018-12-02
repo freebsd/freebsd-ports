@@ -9,6 +9,9 @@ CATEGORIES=	devel pear
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PECL extension to the libsvn library
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	PHP301
 
 LIB_DEPENDS=	libsvn_client-1.so:devel/subversion

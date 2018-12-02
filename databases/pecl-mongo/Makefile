@@ -8,6 +8,9 @@ CATEGORIES=	databases pear
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PECL classes for Mongo Database Driver
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	re2c>=0.13.4:devel/re2c

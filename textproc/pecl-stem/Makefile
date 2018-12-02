@@ -9,6 +9,9 @@ CATEGORIES=	textproc pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PECL extension which provides word stemming
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 

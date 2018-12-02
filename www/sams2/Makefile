@@ -9,6 +9,9 @@ MASTER_SITES=	http://sams.perm.ru/download/ http://razumit.ru/
 MAINTAINER=	roma.a.g@gmail.com
 COMMENT=	Squid Accounting Management System
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	BSD4CLAUSE
 
 IGNORE_WITH_PHP=	70 71 72 73

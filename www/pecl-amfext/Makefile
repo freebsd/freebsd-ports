@@ -9,6 +9,9 @@ CATEGORIES=	www
 MAINTAINER=	meritus@innervision.pl
 COMMENT=	Implements encoding and decoding of AMF and AMF3 messages
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	PHP30
 
 USES=		dos2unix libtool php:pecl

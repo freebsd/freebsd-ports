@@ -9,6 +9,9 @@ MASTER_SITES=	SF/iphawk/iphawk/Hawk%20${PORTVERSION}/
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Track uptime and DNS status for machines on your networks
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-Net-Netmask>=0:net-mgmt/p5-Net-Netmask \

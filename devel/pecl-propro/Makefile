@@ -9,6 +9,9 @@ CATEGORIES=	devel
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Facility to manage extension object properties
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

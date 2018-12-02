@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-4.3.2-build-${SNAPSHOT}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complete IPv4 IPAM (IP address management) suite
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 

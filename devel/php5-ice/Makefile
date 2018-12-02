@@ -7,6 +7,9 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 MAINTAINER=	freebsd@grem.de
 COMMENT=	Ice (Internet Communications Engine) language mapping for PHP
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	mcpp:devel/mcpp \

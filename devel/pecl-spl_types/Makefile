@@ -10,6 +10,9 @@ DISTNAME=	SPL_Types-${PORTVERSION}
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	PECL extension of a collection of special typehandling classes
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	PHP301
 
 OPTIONS_DEFINE=	RE2C

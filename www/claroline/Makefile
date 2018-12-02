@@ -10,6 +10,9 @@ DISTNAME=	${PORTNAME}-1.11.10-1
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open Source eLearning and eWorking platform
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	GPLv2
 
 IGNORE_WITH_PHP=	70 71 72 73

@@ -11,6 +11,9 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	PECL extension for ctemplate library
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LIB_DEPENDS=	libctemplate.so:textproc/google-ctemplate
 
 USES=		php:ext localbase:ldflags

@@ -10,6 +10,9 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Fast and stable php opcode cacher
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	BSD3CLAUSE
 
 USES=		php:phpize tar:bzip2

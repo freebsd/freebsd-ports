@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S^.^^}plus-build10232-20110608
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	PHP-based survey building and runing system
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	GPLv2
 
 IGNORE_WITH_PHP=	70 71 72 73

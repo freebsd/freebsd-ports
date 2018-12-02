@@ -9,6 +9,9 @@ CATEGORIES=	devel pear
 MAINTAINER=	ports@mcdermottroe.com
 COMMENT=	Hierarchical Profiler for PHP
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	APACHE20
 
 WRKSRC_SUBDIR=		extension

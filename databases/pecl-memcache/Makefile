@@ -9,6 +9,9 @@ CATEGORIES=	databases
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Memcached extension for PHP 5.6
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	PHP30
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

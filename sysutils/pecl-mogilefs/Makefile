@@ -9,6 +9,9 @@ CATEGORIES=	sysutils pear
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	PHP client library to communicate with the MogileFS storage
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libneon.so:www/neon

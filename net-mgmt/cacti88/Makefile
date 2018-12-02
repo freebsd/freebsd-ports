@@ -9,6 +9,9 @@ PKGNAMESUFFIX=	88
 MAINTAINER=	egypcio@googlemail.com
 COMMENT=	Web-driven graphing interface for RRDTool
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

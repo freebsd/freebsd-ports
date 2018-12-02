@@ -10,6 +10,9 @@ MASTER_SITES=	http://download.revive-adserver.org/
 MAINTAINER=	meritus@innervision.pl
 COMMENT=	Free, opensource ad server in PHP
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 

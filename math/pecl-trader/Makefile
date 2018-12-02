@@ -9,6 +9,9 @@ CATEGORIES=	math devel
 MAINTAINER=	jim@ohlste.in
 COMMENT=	Trader extension based on TA-Lib
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	BSD2CLAUSE
 
 USES=		php:pecl

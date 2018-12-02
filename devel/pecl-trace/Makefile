@@ -8,6 +8,9 @@ CATEGORIES=	devel
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Low-overhead tracing tool for PHP
 
+DEPRECATED=	Works only with EOL php 5.6
+EXPIRATION_DATE=	2018-12-30
+
 LICENSE=	APACHE20
 
 WRKSRC_SUBDIR=	extension
