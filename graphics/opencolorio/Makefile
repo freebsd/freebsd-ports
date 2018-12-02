@@ -21,7 +21,7 @@ OPTIONS_DEFINE=	DOCS
 DOCS_CMAKE_BOOL=	OCIO_BUILD_DOCS
 
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		alias cmake:outsource pkgconfig shebangfix
+USES=		alias compiler:c++11-lang cmake:outsource pkgconfig shebangfix
 CMAKE_ARGS=	-DOCIO_BUILD_JNIGLUE:BOOL=OFF \
 		-DOCIO_BUILD_NUKE:BOOL=OFF \
 		-DOCIO_BUILD_STATIC:BOOL=OFF \
