@@ -12,6 +12,8 @@ COMMENT=	Point Cloud Library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_i386=	undefined reference to `__atomic_load'
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libexpat.so:textproc/expat2 \
 		libflann_cpp.so:math/flann \
