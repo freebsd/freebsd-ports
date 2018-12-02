@@ -7,6 +7,7 @@
     SUBDIR += R-cran-xfun
     SUBDIR += achievo
     SUBDIR += aclgen
+    SUBDIR += actiona
     SUBDIR += amanda-client
     SUBDIR += amanda-perl-wrapper
     SUBDIR += amanda-server
