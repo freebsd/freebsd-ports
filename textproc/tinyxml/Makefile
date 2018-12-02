@@ -13,7 +13,7 @@ COMMENT=	Small C++ XML parser
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		uidfix
+USES=		compiler:c++11-lang uidfix
 USE_LDCONFIG=	YES
 SHLIB_MAJOR=	3
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
