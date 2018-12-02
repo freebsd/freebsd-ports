@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gems
-# Do not forget to update the following gemspec patches:
-# - security/rubygem-ezcrypto/files/patch-gemspec
-# - www/rubygem-gitlab-grack/files/patch-gemspec
+# Do not forget to check the following ports which contain gemspec patches:
+# - security/rubygem-ezcrypto
+# - www/rubygem-gitlab-grack
 PORTVERSION=	2.7.7
 CATEGORIES=	devel ruby
 MASTER_SITES=	https://production.cf.rubygems.org/rubygems/
