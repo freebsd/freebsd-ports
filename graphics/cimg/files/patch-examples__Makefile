@@ -1,39 +1,36 @@
---- examples/Makefile.orig	2018-10-02 08:22:30 UTC
+--- examples/Makefile.orig	2018-11-30 12:37:36 UTC
 +++ examples/Makefile
-@@ -84,7 +84,7 @@ EXTRA_FILES = use_tiff_stream use_jpeg_b
- # Set correct variables and paths
- #---------------------------------
- VERSION = `grep 'cimg_version\ ' ../CImg.h | tail -c4 | head -c3`
--X11PATH      = /usr/X11R6
-+X11PATH      = $(LOCALBASE)
- EXEPFX       =
- ifeq ($(MSYSTEM),MINGW32)
- EXESFX       = .exe
-@@ -107,7 +107,7 @@ CXXVER       = "icpc \( `$(CXX) -v 2>&1`
- CFLAGS       = -I..
- LIBS         =
- else
--CFLAGS       = -I.. -Wall -Wextra -Wfatal-errors
-+CFLAGS       = -I.. -Wall -Wextra $(CPPFLAGS)
- LIBS         = -lm
+@@ -89,7 +89,7 @@ VERSION2 = $(shell grep 'cimg_version\ '
+ VERSION3 = $(shell grep 'cimg_version\ ' ../CImg.h | tail -c2 | head -c1)
+ SVERSION=$(VERSION1).$(VERSION2).$(VERSION3)
+ 
+-X11PATH = /usr/X11R6
++X11PATH = $(LOCALBASE)
+ 
+ EXE_PRE =
+ EXE_EXT =
+@@ -111,7 +111,7 @@ IS_ICPC = 1
  endif
  
-@@ -131,12 +131,12 @@ VT100_CFLAGS = -Dcimg_use_vt100
+ CXXVER = $(CXX)
+-CFLAGS = -I.. -Wall -Wextra -Wfatal-errors
++CFLAGS = -I.. -Wall -Wextra $(CPPFLAGS)
+ LIBS = -lm
+ ifdef IS_GCC
+ CXXVER = $(shell $(CXX) -v 2>&1 | tail -n 1)
+@@ -144,9 +144,9 @@ DEBUG_CFLAGS = -Dcimg_verbosity=3 -Dcimg
+ VT100_CFLAGS = -Dcimg_use_vt100
  
  # Flags to enable code optimization by the compiler.
- ifeq ($(notdir $(CXX)),g++)
--OPT_CFLAGS = -Ofast -mtune=generic
-+OPT_CFLAGS = -mtune=generic
- else
- ifeq ($(notdir $(CXX)),icpc)
- OPT_CFLAGS = -fast
- else
 -OPT_CFLAGS = -Ofast
 +OPT_CFLAGS = # -Ofast - handled by the port CFLAGS
+ ifdef IS_GCC
+-OPT_CFLAGS = -Ofast -mtune=generic
++OPT_CFLAGS = -mtune=generic
  endif
- endif
- 
-@@ -203,7 +203,7 @@ JPEG_LIBS = -ljpeg
+ ifdef IS_ICPC
+ OPT_CFLAGS = -fast
+@@ -217,7 +217,7 @@ JPEG_LIBS = -ljpeg
  TIFF_DEFINE = -Dcimg_use_tiff
  TIFF_INCDIR =
  TIFF_CFLAGS = $(TIFF_DEFINE) $(TIFF_INCDIR)
@@ -42,7 +39,7 @@
  
  # Flags to enable native support for MINC2 image files, using the MINC2 library.
  # ( http://en.wikibooks.org/wiki/MINC/Reference/MINC2.0_Users_Guide )
-@@ -215,16 +215,16 @@ MINC2_LIBS = -lminc_io -lvolume_io2 -lmi
+@@ -229,16 +229,16 @@ MINC2_LIBS = -lminc_io -lvolume_io2 -lmi
  # Flags to enable native support for EXR image files, using the OpenEXR library.
  # ( http://www.openexr.com/ )
  OPENEXR_DEFINE = -Dcimg_use_openexr
@@ -64,7 +61,7 @@
  
  # Flags to enable native support for compressed .cimgz files, using the Zlib library.
  # ( http://www.zlib.net/ )
-@@ -260,18 +260,21 @@ endif
+@@ -274,15 +274,15 @@ endif
  
  # Flags to enable the use of LAPACK routines for matrix computation
  # ( http://www.netlib.org/lapack/ )
@@ -77,20 +74,14 @@
 +#LAPACK_LIBS = -lblas -llapack
  
  # Flags to enable the use of the Board library
- # ( http://libboard.sourceforge.net/ )
+ # ( https://github.com/c-koi/libboard )
  BOARD_DEFINE = -Dcimg_use_board
 -BOARD_INCDIR = -I/usr/include/board
 +BOARD_INCDIR = -I$(LOCALBASE)/include/board
  BOARD_CFLAGS = $(BOARD_DEFINE) $(BOARD_INCDIR)
  BOARD_LIBS = -lboard
  
-+# Flags to compile on FreeBSD
-+FREEBSD_LDFLAGS = $(LDFLAGS) -ffast-math  -I$(X11PATH)/include $(EXTRA_FLAGS) -lX11 -L$(X11PATH)/lib
-+
- # Flags to compile on Sun Solaris
- SOLARIS_LIBS = -R$(X11PATH)/lib -lrt -lnsl -lsocket
- 
-@@ -347,6 +350,7 @@ $(X11_LIBS) \
+@@ -361,6 +361,7 @@ $(X11_LIBS) \
  $(TIFF_LIBS) \
  $(LAPACK_LIBS) \
  $(XSHM_LIBS)" \
@@ -98,7 +89,7 @@
  all $(EXTRA_FILES)
  
  # Linux/BSD/Mac OSX targets, with X11 display.
-@@ -439,8 +443,11 @@ $(ZLIB_CFLAGS) \
+@@ -453,8 +454,11 @@ $(ZLIB_CFLAGS) \
  $(CURL_CFLAGS) \
  $(OPENCV_CFLAGS) \
  $(MAGICK_CFLAGS) \
@@ -110,7 +101,7 @@
  $(X11_LIBS) \
  $(XSHM_LIBS) \
  $(XRANDR_LIBS) \
-@@ -452,6 +459,8 @@ $(ZLIB_LIBS) \
+@@ -466,6 +470,8 @@ $(ZLIB_LIBS) \
  $(CURL_LIBS) \
  $(OPENCV_LIBS) \
  $(MAGICK_LIBS) \

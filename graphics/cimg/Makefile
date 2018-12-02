@@ -3,8 +3,7 @@
 
 PORTNAME=	cimg
 DISTVERSIONPREFIX=	v.
-DISTVERSION=	2.4.1
-PORTREVISION=	1
+DISTVERSION=	2.4.2
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 
@@ -92,6 +91,7 @@ USE_XORG+=	xext
 . endif
 
 DOCBASE=	README.txt
+MAKE_ENV+=	FREEBSD_LDFLAGS="${LDFLAGS}"
 PROGS=		CImg_demo captcha curve_editor2d dtmri_view3d			\
 	edge_explorer2d fade_images gaussian_fit1d generate_loop_macros		\
 	hough_transform2d image2ascii image_registration2d image_surface3d	\
