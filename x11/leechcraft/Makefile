@@ -72,7 +72,7 @@ AZOTH_LIB_DEPENDS=	libQtMultimediaKit.so:multimedia/qt4-mobility \
 			libkqoauth.so:security/kqoauth \
 			libotr.so.5:security/libotr \
 			libpurple.so:net-im/libpurple \
-			libqca.so:devel/qca \
+			libqca.so:devel/qca@qt4 \
 			libqxmpp.so:net-im/qxmpp \
 			libspeex.so:audio/speex
 AZOTH_USES=		desktop-file-utils
