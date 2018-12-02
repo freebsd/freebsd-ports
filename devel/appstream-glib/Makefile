@@ -13,8 +13,6 @@ COMMENT=	Library to help with AppStream metadata
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_BUILD=	appstream-glib-0.5.*
-
 BUILD_DEPENDS=	gtkdoc-check:textproc/gtk-doc \
 		gcab:archivers/gcab
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
@@ -25,7 +23,9 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	gcab:archivers/gcab
 
-USES=		gettext gperf gnome libarchive meson \
+CONFLICTS_BUILD=	appstream-glib-0.5.*
+
+USES=		compiler:c11 gettext gperf gnome libarchive meson \
 		pkgconfig sqlite tar:xz
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 introspection:build \
 		libxml2:build pango
