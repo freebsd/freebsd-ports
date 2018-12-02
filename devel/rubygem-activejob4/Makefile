@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	activejob
-PORTVERSION=	4.2.10
+PORTVERSION=	4.2.11
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	4
@@ -16,8 +16,9 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-activesupport4>=${PORTVERSION}:devel/rubygem-activesupport4 \
 		rubygem-globalid>=0.3.0:databases/rubygem-globalid
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
