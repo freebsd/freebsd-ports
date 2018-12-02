@@ -1,11 +1,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%X11%%%%FONTSDIR%%/fonts.alias
-%%FONTSDIR%%/spleen-12x24.fnt
+%%VT%%%%FONTSDIR%%/spleen-12x24.fnt
 %%X11%%%%FONTSDIR%%/spleen-12x24.pcf.gz
-%%FONTSDIR%%/spleen-16x32.fnt
+%%VT%%%%FONTSDIR%%/spleen-16x32.fnt
 %%X11%%%%FONTSDIR%%/spleen-16x32.pcf.gz
 %%X11%%%%FONTSDIR%%/spleen-32x64.pcf.gz
-%%FONTSDIR%%/spleen-5x8.fnt
+%%VT%%%%FONTSDIR%%/spleen-5x8.fnt
 %%X11%%%%FONTSDIR%%/spleen-5x8.pcf.gz
-%%FONTSDIR%%/spleen-8x16.fnt
+%%VT%%%%FONTSDIR%%/spleen-8x16.fnt
 %%X11%%%%FONTSDIR%%/spleen-8x16.pcf.gz
