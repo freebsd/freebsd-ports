@@ -14,7 +14,10 @@ COMMENT=	Realtime audio synthesizer that allows you to "scratch" on audio data
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails configure: checking gnome-doc-utils >= 0.3.2... no
 BROKEN_powerpc64=fails to configure: checking for XOpenDisplay in -lX11... no
+DEPRECATED=	Unmaintained, broken too often
+EXPIRATION_DATE=	2018-12-31
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
 		rarian-sk-config:textproc/rarian
