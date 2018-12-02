@@ -12,13 +12,13 @@ COMMENT=	Subtitle editor
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL=	subtitlecomposer-kde4-*
-
 LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libavcodec.so:multimedia/ffmpeg
 
-USES=		cmake:outsource desktop-file-utils gettext kde:5 pkgconfig \
-		qt:5 shared-mime-info
+CONFLICTS_INSTALL=	subtitlecomposer-kde4-*
+
+USES=		compiler:c++11-lang cmake:outsource desktop-file-utils gettext \
+		kde:5 pkgconfig qt:5 shared-mime-info
 USE_KDE=	auth codecs config configwidgets coreaddons ecm_build i18n \
 		kio kross sonnet textwidgets widgetsaddons xmlgui
 USE_QT=		buildtools_build qmake_build core gui widgets
