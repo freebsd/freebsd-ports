@@ -1,20 +1,17 @@
 Load, configure, and compose WSGI applications and servers
 
-Paste Deployment is a system for finding and configuring WSGI
-applications and servers. For WSGI application consumers it provides a
-single, simple function (loadapp) for loading a WSGI application from
-a configuration file or a Python Egg. For WSGI application providers
-it only asks for a single, simple entry point to your application, so
-that application users don't need to be exposed to the implementation
-details of your application.
+Paste Deployment is a system for finding and configuring WSGI applications and
+servers. For WSGI application consumers it provides a single, simple function
+(loadapp) for loading a WSGI application from a configuration file or a Python
+Egg. For WSGI application providers it only asks for a single, simple entry
+point to your application, so that application users don't need to be exposed to
+the implementation details of your application.
 
-The result is something a system administrator can install and manage
-without knowing any Python, or the details of the WSGI application or
-its container.
+The result is something a system administrator can install and manage without
+knowing any Python, or the details of the WSGI application or its container.
 
-This tool provides code to load WSGI applications and servers from
-URIs; these URIs can refer to Python Eggs for INI-style configuration
-files. Paste Script provides commands to serve applications based on
-this configuration file.
+This tool provides code to load WSGI applications and servers from URIs; these
+URIs can refer to Python Eggs for INI-style configuration files. Paste Script
+provides commands to serve applications based on this configuration file.
 
-WWW: http://pythonpaste.org/deploy/
+WWW: https://pylonsproject.org/
