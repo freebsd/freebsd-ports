@@ -4,7 +4,7 @@
 PORTNAME=	osgearth
 PORTVERSION=	2.9
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 
 MAINTAINER=	lbartoletti@tuxfamily.org
@@ -22,11 +22,12 @@ LIB_DEPENDS=	libosg.so:graphics/osg \
 		libprotoc.so:devel/protobuf \
 		librocksdb.so:databases/rocksdb
 
-USES=		cmake pkgconfig sqlite
+USES=		cmake compiler:c++11-lang pkgconfig sqlite
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gwaldron
 
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 USE_GL+=	gl glu
 PLIST_SUB=	OSGVERSION=3.4.0

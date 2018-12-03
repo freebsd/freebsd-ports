@@ -3,7 +3,7 @@
 PORTNAME=	mixxx
 PORTVERSION=	2.0.0
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.mixxx.org/${PORTNAME}-${PORTVERSION}/
 PKGNAMESUFFIX=	20
@@ -34,7 +34,8 @@ LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		qt:4 scons iconv pkgconfig
+USES=		compiler:c++11-lang iconv pkgconfig qt:4 scons
+USE_CXXSTD=	c++11
 USE_QT=		corelib gui network opengl script scripttools sql sql-sqlite3 \
 		svg testlib xml xmlpatterns linguisttools_build moc_build \
 		qmake_build rcc_build uic_build
