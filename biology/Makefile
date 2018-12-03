@@ -37,6 +37,7 @@
     SUBDIR += fluctuate
     SUBDIR += freebayes
     SUBDIR += garlic
+    SUBDIR += gatk
     SUBDIR += gff2ps
     SUBDIR += gmap
     SUBDIR += gperiodic
