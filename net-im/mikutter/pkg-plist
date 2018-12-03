@@ -140,7 +140,8 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/activity/po/zh_TW/activity.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/alsa/.mikutter.yml
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/alsa/alsa.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/plugin/api_request_file_cache.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/api_request_file_cache/.mikutter.yml
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/api_request_file_cache/api_request_file_cache.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/aspectframe/.mikutter.yml
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/aspectframe/aspectframe.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/bitly/.mikutter.yml
@@ -231,6 +232,7 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/core/core.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/current_world/.mikutter.yml
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/current_world/current_world.rb
+%%RUBY_SITELIBDIR%%/mikutter/core/plugin/current_world/error.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/.mikutter.yml
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/direct_message.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/direct_message/dmlistview.rb
@@ -709,8 +711,6 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/spell/spell.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/spell/struct.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/.mikutter.yml
-%%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/filter.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/perma_streamer.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/ar/streaming.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/de/streaming.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/el/streaming.po
@@ -723,8 +723,6 @@ bin/mikutter
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/zh/streaming.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/zh_CN/streaming.po
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/po/zh_TW/streaming.po
-%%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/streamer.rb
-%%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/streamer_error.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming/streaming.rb
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming_connection_status/.mikutter.yml
 %%RUBY_SITELIBDIR%%/mikutter/core/plugin/streaming_connection_status/streaming_connection_status.rb
