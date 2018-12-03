@@ -1,0 +1,13 @@
+GATK, pronounced "Gee Ay Tee Kay" (not "Gat-Kay"), stands for
+GenomeAnalysisToolkit. It is a collection of command-line tools for analyzing
+high-throughput sequencing data with a primary focus on variant discovery. The
+tools can be used individually or chained together into complete workflows.
+end-to-end workflows are provided, called GATK Best Practices, tailored for
+specific use cases.
+
+Developed in the Data Sciences Platform at the Broad Institute, the toolkit
+offers a wide variety of tools with a primary focus on variant discovery and
+genotyping. Its powerful processing engine and high-performance computing
+features make it capable of taking on projects of any size.
+
+WWW: https://software.broadinstitute.org/gatk/

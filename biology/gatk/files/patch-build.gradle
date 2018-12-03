@@ -1,0 +1,29 @@
+--- build.gradle.orig	2018-10-23 15:15:16 UTC
++++ build.gradle
+@@ -115,7 +115,7 @@ def resolveLargeResourceStubFiles(largeR
+     }
+ 
+     // check for stub files, try to pull once if there are any, then check again
+-    if (checkForLFSStubFiles(largeResourcesFolder)) {
++    if (false && checkForLFSStubFiles(largeResourcesFolder)) {
+         final gitLFSPullLargeResources = "git lfs pull --include $largeResourcesFolder"
+         execGitLFSCommand(gitLFSPullLargeResources)
+         if (checkForLFSStubFiles(largeResourcesFolder)) {
+@@ -135,7 +135,7 @@ def ensureBuildPrerequisites(requiredJav
+                 "The ClassLoader obtained from the Java ToolProvider is null. "
+                 + "A Java $requiredJavaVersion JDK must be installed. $buildPrerequisitesMessage")
+     }
+-    if (!file(".git").isDirectory()) {
++    if (false && !file(".git").isDirectory()) {
+         throw new GradleException("The GATK Github repository must be cloned using \"git clone\" to run the build. "
+                 + "$buildPrerequisitesMessage")
+     }
+@@ -366,7 +366,7 @@ def createGatkSymlinks(destinationDir, a
+ }
+ 
+ final isRelease = Boolean.getBoolean("release")
+-version = (isRelease ? gitVersion() : gitVersion() + "-SNAPSHOT").replaceAll(".dirty", "")
++version = (isRelease ? "1.0" : "1.0" + "-SNAPSHOT").replaceAll(".dirty", "")
+ 
+ logger.info("build for version:" + version)
+ group = 'org.broadinstitute'
