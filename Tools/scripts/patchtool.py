@@ -16,7 +16,7 @@
 #
 # $FreeBSD$
 #
-# MAINTAINER= sobomax@FreeBSD.org <- any unapproved commits to this file are
+# MAINTAINER= ports@FreeBSD.org <- any unapproved commits to this file are
 #				     highly discouraged!!!
 #
 

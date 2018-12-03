@@ -16,7 +16,7 @@
 #
 # $FreeBSD: /tmp/pcvs/ports/Tools/scripts/distclean.sh,v 1.18 2010-11-18 11:28:05 pav Exp $
 #
-# MAINTAINER= sobomax@FreeBSD.org
+# MAINTAINER= ports@FreeBSD.org
 
 PATH=/sbin:/bin:/usr/bin
 
@@ -25,8 +25,6 @@ cleanup() {
 	echo "Terminated."
 	exit 1
 }
-
-echo "Distfiles clean utility by Maxim Sobolev <sobomax@FreeBSD.org>."
 
 PORTSDIR=${PORTSDIR:-/usr/ports}
 if [ ! -d ${PORTSDIR} ]; then

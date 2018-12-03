@@ -14,7 +14,7 @@
 #
 # $FreeBSD$
 #
-# MAINTAINER= sobomax@FreeBSD.org
+# MAINTAINER= ports@FreeBSD.org
 
 display_warn () {
   if [ x"${SILENT}" != x"yes" ]; then
