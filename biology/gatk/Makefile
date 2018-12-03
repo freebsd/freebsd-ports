@@ -30,7 +30,7 @@ DEPS_CACHE_DIR=	/tmp # should be ${WRKDIR}, but workaround for the gradle bug th
 PLIST_FILES=	bin/${PORTNAME} \
 		${JAVAJARDIR}/GenomeAnalysisTK-${PORTVERSION}.jar
 
-post-patch: # to rebuild the deps archive: 1. remove post-patch: 2. remove --offline 3. build 4. package ${DEPS_CACHE_DIR}/gradle-${PORTNAME} into the deps archive
+post-extract: # to rebuild the deps archive: 1. remove post-extract: 2. remove --offline 3. build 4. package ${DEPS_CACHE_DIR}/gradle-${PORTNAME} into the deps archive
 	@cd ${DEPS_CACHE_DIR} && ${TAR} xzf ${DISTDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}
 
 do-build:
