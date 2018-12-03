@@ -5,7 +5,7 @@ PORTNAME=	debugedit
 PORTVERSION=	20170411.1
 CATEGORIES=	devel
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ELF file debug information extractor and editor
 
 LICENSE=	GPLv2+
