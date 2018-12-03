@@ -1421,7 +1421,7 @@ USES+=	mate
 .endif
 
 .if defined(USE_GL) && (!defined(USES) || !${USES:Mgl})
-DEV_WARNING+=	"Setting USE_GL without USES=gl is deprecated"
+DEV_WARNING+=	"Using USE_GL alone is deprecated, please add USES=gl."
 USES+=	gl
 .endif
 
