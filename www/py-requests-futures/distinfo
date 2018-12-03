@@ -1,3 +1,3 @@
-TIMESTAMP = 1540495399
-SHA256 (requests-futures-0.9.8.tar.gz) = 76a22b95723267b53d8cc50e54d00b98d95afa02fd8449501b07a3797f46a96d
-SIZE (requests-futures-0.9.8.tar.gz) = 7729
+TIMESTAMP = 1543863647
+SHA256 (requests-futures-0.9.9.tar.gz) = 200729e932ec1f6d6e58101a8d2b144d48c9695f0585bc1dcf37139190f699a1
+SIZE (requests-futures-0.9.9.tar.gz) = 10507
