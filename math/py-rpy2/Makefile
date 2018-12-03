@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	rpy2
-DISTVERSION=	2.9.4
-PORTREVISION=	1
+DISTVERSION=	2.9.5
 CATEGORIES=	math
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python interface to the R Programming Language
 
 LICENSE=	GPLv2+
@@ -20,11 +19,11 @@ LIB_DEPENDS=	libR.so:math/R \
 		libomp.so:devel/openmp \
 		libpcre.so:devel/pcre
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
-		${PYNUMPY}
+		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
-USES=		fortran python:3.4+ readline
-USE_PYTHON=	distutils autoplist
+USES=		fortran python:3.5+ readline
+USE_PYTHON=	autoplist distutils
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/rpy2/rinterface/*.so
