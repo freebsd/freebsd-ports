@@ -1,6 +1,18 @@
-jshon parses, reads and creates JSON. It is designed to be as usable as
-possible from within the shell and replaces fragile adhoc parsers made
+Jshon parses, reads and creates JSON. It is designed to be as usable as
+possible from within the shell and replaces fragile ad hoc parsers made
 from grep/sed/awk as well as heavyweight one-line parsers made from
 perl/python.
+
+Jshon loads JSON text from stdin, performs actions, then displays the last
+action on stdout. Some of the options output JSON, others output plain text
+meta information. Because Bash has very poor nested data structures, Jshon does
+not try to return a native bash data structure as a typical library would.
+Instead, Jshon provides a history stack containing all the manipulations.
+
+The big change in the latest release is switching the everything from
+pass-by-value to pass-by-reference. In a typical use case (processing AUR
+search results for 'python') by-ref is twice as fast and uses one sixth the
+memory. If you are editing JSON, by-ref also makes your life a lot easier as
+modifications do not need to be manually inserted through the entire stack.
 
 WWW: http://kmkeen.com/jshon/
