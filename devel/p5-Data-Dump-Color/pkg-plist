@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Data/Dump/Color.pm
+%%SITE_PERL%%/auto/share/dist/Data-Dump-Color/examples/example.pl
+%%SITE_PERL%%/auto/share/dist/Data-Dump-Color/examples/example2.pl
+%%PERL5_MAN3%%/Data::Dump::Color.3.gz

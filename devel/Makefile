@@ -2271,6 +2271,7 @@
     SUBDIR += p5-Data-Diver
     SUBDIR += p5-Data-Domain
     SUBDIR += p5-Data-Dump
+    SUBDIR += p5-Data-Dump-Color
     SUBDIR += p5-Data-Dump-Streamer
     SUBDIR += p5-Data-DumpXML
     SUBDIR += p5-Data-Dumper

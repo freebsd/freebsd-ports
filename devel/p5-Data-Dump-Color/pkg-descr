@@ -1,0 +1,5 @@
+Data::Dump::Color aims to be a drop-in replacement for Data::Dump. It adds
+colors to dumps. It also adds various visual aids in the comments, e.g.
+array/hash index, depth indicator, and so on.
+
+WWW: https://metacpan.org/release/Data-Dump-Color
