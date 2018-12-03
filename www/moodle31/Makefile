@@ -12,7 +12,11 @@ COMMENT=	Course management system based on social constructionism
 
 LICENSE=	GPLv3
 
-CONFLICTS=	moodle33-3.3.[0-9]* moodle34-3.4.[0-9]* moodle35-3.5.[0-9]*
+DEPRECATED=	Upstream no longer maintained
+EXPIRATION_DATE=2019-03-03
+
+CONFLICTS=	moodle33-3.3.[0-9]* moodle34-3.4.[0-9]* moodle35-3.5.[0-9]* \
+		moodle36-3.6
 
 USES=		cpe php tar:tgz
 USE_PHP=	ctype curl dom gd hash iconv intl json mbstring opcache \
