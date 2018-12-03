@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bottle
-PORTVERSION=	0.12.14
+PORTVERSION=	0.12.15
 PORTREVISION=	0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
@@ -14,6 +14,9 @@ COMMENT=	Fast and simple WSGI-framework for small web-applications
 LICENSE=	MIT
 
 USES=		python
+
+NO_ARCH=	yes
+
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
