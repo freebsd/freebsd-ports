@@ -11,18 +11,6 @@ POST-INSTALL CONFIGURATION FOR MOODLE
 2) Add the following to your Apache configuration file
    httpd.conf, and restart the server:
 
-   For Apache versions earlier than 2.4:
-
-   Alias /moodle %%PREFIX%%/%%MOODLEDIR%%/
-   AcceptPathInfo On
-   <Directory %%PREFIX%%/%%MOODLEDIR%%>
-      AllowOverride None
-      Order Allow,Deny
-      Allow from all
-   </Directory>
-
-   For Apache version 2.4.x or above:
-
    Alias /moodle %%PREFIX%%/%%MOODLEDIR%%/
    AcceptPathInfo On
    <Directory %%PREFIX%%/%%MOODLEDIR%%/>
