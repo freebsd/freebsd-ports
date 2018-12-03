@@ -497,6 +497,7 @@
     SUBDIR += moodle33
     SUBDIR += moodle34
     SUBDIR += moodle35
+    SUBDIR += moodle36
     SUBDIR += mozplugger
     SUBDIR += multisort
     SUBDIR += multiwatch
