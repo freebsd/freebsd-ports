@@ -3,7 +3,7 @@
 
 PORTNAME=	pinba
 PORTVERSION=	2012.03.20
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
@@ -22,7 +22,8 @@ GH_ACCOUNT=	tony2001
 GH_PROJECT=	pinba_extension
 GH_TAGNAME=	f76b673
 
-USES=		php:ext
+USES=		compiler:c++11-lang php:ext
+USE_CXXSTD=	c++11
 IGNORE_WITH_PHP=	70 71 72 73
 
 .include <bsd.port.mk>

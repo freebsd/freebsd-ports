@@ -2,7 +2,7 @@
 
 PORTNAME=	caffe
 PORTVERSION=	1.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	graphics
 
 MAINTAINER=	eric@camachat.org
@@ -36,8 +36,9 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=1.1:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PyWavelets>=0.4:math/py-PyWavelets@${PY_FLAVOR}
 
+USES=		compiler:c++11-lib fortran gmake pkgconfig python:2.7
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
-USES=		gmake python:2.7 fortran compiler:c++11-lib pkgconfig
 USE_PYTHON=	flavors cython
 
 CXXFLAGS+=	-DGTEST_USE_OWN_TR1_TUPLE=1

@@ -3,7 +3,7 @@
 
 PORTNAME=	recursor
 DISTVERSION=	4.0.9
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-

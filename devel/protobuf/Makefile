@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	protobuf
-PORTVERSION=	3.5.2
+PORTVERSION=	3.6.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -19,19 +18,23 @@ BROKEN_sparc64=	fails to compile: no atomic ops available
 TEST_DEPENDS=	googlemock>=0:devel/googlemock \
 		googletest>=0:devel/googletest
 
+USES=		autoreconf compiler:c++11-lang gmake libtool localbase pathfix pkgconfig
+
 CFLAGS+=	-DGOOGLE_PROTOBUF_NO_RTTI -I${WRKSRC}/src
-CONFIGURE_ENV=	CC_FOR_BUILD="${CC}" CFLAGS_FOR_BUILD="${CFLAGS}" \
+CONFIGURE_ENV=	CC_FOR_BUILD="${CC}" \
+		CFLAGS_FOR_BUILD="${CFLAGS}" \
 		CPPFLAGS_FOR_BUILD="${CPPFLAGS}" \
-		CXX_FOR_BUILD="${CXX}" CXXFLAGS_FOR_BUILD="${CXXFLAGS}" \
+		CXX_FOR_BUILD="${CXX}" \
+		CXXFLAGS_FOR_BUILD="${CXXFLAGS}" \
 		LDFLAGS_FOR_BUILD="${LDFLAGS}"
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_ARGS=	${MAKE_ARGS} ${_MAKE_JOBS}
 TEST_TARGET=	check
-USES=		autoreconf compiler:c++11-lang gmake libtool localbase pathfix pkgconfig
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
-GH_ACCOUNT=	google
+GH_ACCOUNT=	protocolbuffers
 USE_GITHUB=	yes
 
 post-patch:
