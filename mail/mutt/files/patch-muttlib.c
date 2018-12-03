@@ -1,6 +1,6 @@
---- muttlib.c.orig	2016-10-08 19:35:50 UTC
+--- muttlib.c.orig	2018-11-24 19:06:21 UTC
 +++ muttlib.c
-@@ -802,16 +802,15 @@ void mutt_merge_envelopes(ENVELOPE* base
+@@ -845,16 +845,15 @@ void _mutt_buffer_mktemp (BUFFER *buf, c
  void _mutt_mktemp (char *s, size_t slen, const char *prefix, const char *suffix,
                     const char *src, int line)
  {
