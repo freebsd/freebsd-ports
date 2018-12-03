@@ -28,6 +28,7 @@
     SUBDIR += cdent
     SUBDIR += ceylon
     SUBDIR += cfortran
+    SUBDIR += chaiscript
     SUBDIR += chez-scheme
     SUBDIR += chibi-scheme
     SUBDIR += chicken
