@@ -11,8 +11,8 @@ COMMENT=	Library to deal with pinyin
 
 LICENSE=	GPLv2
 
+USES=		bdb compiler:c++11-lang gettext gmake libtool pathfix pkgconfig
 USE_GNOME=	glib20
-USES=		bdb gettext gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
