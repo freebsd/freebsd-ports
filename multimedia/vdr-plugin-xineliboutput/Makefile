@@ -21,7 +21,7 @@ LIB_DEPENDS=	libxine.so:multimedia/libxine \
 		libvdpau.so:multimedia/libvdpau
 
 PATCH_STRIP=	-p1
-USES=		pkgconfig tar:bzip2
+USES=		compiler:c++11-lang pkgconfig tar:bzip2
 USE_XORG=	xrandr xrender
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--cc="${CC}" --cxx="${CXX}" --add-cflags=-I${VDRDIR}
