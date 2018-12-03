@@ -4,8 +4,8 @@
      s.specification_version = 4
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<multi_json>.freeze, [">= 1.12.1", "~> 1.12.0"])
-+      s.add_runtime_dependency(%q<multi_json>.freeze, [">= 1.12.1", "~> 1.12"])
-       s.add_runtime_dependency(%q<httpclient>.freeze, [">= 2.8.2.4", "~> 2.8"])
+-      s.add_runtime_dependency(%q<multi_json>.freeze, ["~> 1.12.0", ">= 1.12.1"])
++      s.add_runtime_dependency(%q<multi_json>.freeze, ["~> 1.12", ">= 1.12.1"])
+       s.add_runtime_dependency(%q<httpclient>.freeze, ["~> 2.8", ">= 2.8.2.4"])
        s.add_development_dependency(%q<bundler>.freeze, ["~> 1.14"])
-       s.add_development_dependency(%q<rake>.freeze, [">= 10.3.2", "~> 10.3"])
+       s.add_development_dependency(%q<rake>.freeze, ["~> 10.3", ">= 10.3.2"])

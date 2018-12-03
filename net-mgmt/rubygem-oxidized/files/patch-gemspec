@@ -6,6 +6,6 @@
        s.add_runtime_dependency(%q<slop>.freeze, ["~> 3.5"])
 -      s.add_runtime_dependency(%q<net-ssh>.freeze, ["~> 4.1.0"])
 +      s.add_runtime_dependency(%q<net-ssh>.freeze, ["~> 4.1"])
-       s.add_runtime_dependency(%q<rugged>.freeze, [">= 0.21.4", "~> 0.21"])
+       s.add_runtime_dependency(%q<rugged>.freeze, ["~> 0.21", ">= 0.21.4"])
        s.add_development_dependency(%q<pry>.freeze, ["~> 0"])
        s.add_development_dependency(%q<bundler>.freeze, ["~> 1.10"])

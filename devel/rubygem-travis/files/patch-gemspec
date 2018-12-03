@@ -4,7 +4,7 @@
        s.add_runtime_dependency(%q<backports>.freeze, [">= 0"])
        s.add_runtime_dependency(%q<gh>.freeze, ["~> 0.13"])
        s.add_runtime_dependency(%q<launchy>.freeze, ["~> 2.1"])
--      s.add_runtime_dependency(%q<typhoeus>.freeze, [">= 0.6.8", "~> 0.6"])
+-      s.add_runtime_dependency(%q<typhoeus>.freeze, ["~> 0.6", ">= 0.6.8"])
 +      s.add_runtime_dependency(%q<typhoeus>.freeze, [">= 0.6.8"])
        s.add_runtime_dependency(%q<pusher-client>.freeze, ["~> 0.4"])
        s.add_development_dependency(%q<rspec>.freeze, ["~> 2.12"])

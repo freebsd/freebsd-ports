@@ -7,5 +7,5 @@
 -      s.add_runtime_dependency(%q<tty-which>.freeze, ["~> 0.3.0"])
 +      s.add_runtime_dependency(%q<tty-which>.freeze, ["~> 0.3"])
        s.add_runtime_dependency(%q<strings>.freeze, ["~> 0.1.0"])
-       s.add_development_dependency(%q<bundler>.freeze, ["< 2.0", ">= 1.5.0"])
+       s.add_development_dependency(%q<bundler>.freeze, [">= 1.5.0", "< 2.0"])
        s.add_development_dependency(%q<rake>.freeze, [">= 0"])

@@ -7,7 +7,7 @@
 -      s.add_runtime_dependency(%q<gollum-grit_adapter>.freeze, ["~> 1.0"])
 +      s.add_runtime_dependency(%q<gollum-grit_adapter>.freeze, [">= 1.0"])
        s.add_runtime_dependency(%q<rouge>.freeze, ["~> 2.1"])
-       s.add_runtime_dependency(%q<nokogiri>.freeze, ["< 2.0", ">= 1.6.1"])
+       s.add_runtime_dependency(%q<nokogiri>.freeze, [">= 1.6.1", "< 2.0"])
        s.add_runtime_dependency(%q<stringex>.freeze, ["~> 2.6"])
 -      s.add_runtime_dependency(%q<sanitize>.freeze, ["~> 2.1"])
 -      s.add_runtime_dependency(%q<github-markup>.freeze, ["~> 1.6"])

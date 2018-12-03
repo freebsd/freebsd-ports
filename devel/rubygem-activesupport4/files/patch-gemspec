@@ -8,4 +8,4 @@
 +      s.add_runtime_dependency(%q<i18n>.freeze, [">= 0.7"])
        s.add_runtime_dependency(%q<tzinfo>.freeze, ["~> 1.1"])
        s.add_runtime_dependency(%q<minitest>.freeze, ["~> 5.1"])
-       s.add_runtime_dependency(%q<thread_safe>.freeze, [">= 0.3.4", "~> 0.3"])
+       s.add_runtime_dependency(%q<thread_safe>.freeze, ["~> 0.3", ">= 0.3.4"])

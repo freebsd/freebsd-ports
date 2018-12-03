@@ -5,7 +5,7 @@ PORTNAME=	gems
 # Do not forget to check the following ports which contain gemspec patches:
 # - security/rubygem-ezcrypto
 # - www/rubygem-gitlab-grack
-PORTVERSION=	2.7.7
+PORTVERSION=	2.7.8
 CATEGORIES=	devel ruby
 MASTER_SITES=	https://production.cf.rubygems.org/rubygems/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
