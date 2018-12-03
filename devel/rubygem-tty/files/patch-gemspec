@@ -1,4 +1,4 @@
---- tty.gemspec.orig	2018-12-02 13:33:05 UTC
+--- tty.gemspec.orig	2018-12-03 19:09:08 UTC
 +++ tty.gemspec
 @@ -26,21 +26,21 @@ Gem::Specification.new do |s|
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
@@ -14,9 +14,10 @@
 +      s.add_runtime_dependency(%q<tty-font>.freeze, ["~> 0.2"])
        s.add_runtime_dependency(%q<tty-markdown>.freeze, ["~> 0.4.0"])
        s.add_runtime_dependency(%q<tty-pager>.freeze, ["~> 0.11.0"])
-       s.add_runtime_dependency(%q<tty-platform>.freeze, ["~> 0.1.0"])
+-      s.add_runtime_dependency(%q<tty-platform>.freeze, ["~> 0.1.0"])
 -      s.add_runtime_dependency(%q<tty-progressbar>.freeze, ["~> 0.15.0"])
 -      s.add_runtime_dependency(%q<tty-prompt>.freeze, ["~> 0.16.1"])
++      s.add_runtime_dependency(%q<tty-platform>.freeze, ["~> 0.1"])
 +      s.add_runtime_dependency(%q<tty-progressbar>.freeze, ["~> 0.15"])
 +      s.add_runtime_dependency(%q<tty-prompt>.freeze, ["~> 0.16", ">= 0.16.1"])
        s.add_runtime_dependency(%q<tty-screen>.freeze, ["~> 0.6.4"])
