@@ -29,6 +29,7 @@ MAKE_ARGS=      SUBDIRS=pixman
 .if ${ARCH} == "armv6" || ${ARCH} == "armv7"
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 CONFIGURE_ENV+=	CCASFLAGS="${CFLAGS} -B${LOCALBASE}/bin -no-integrated-as"
+LLD_UNSAFE=	yes
 .endif
 
 .if ${ARCH} == "powerpc64" || ${ARCH} == "powerpc"
