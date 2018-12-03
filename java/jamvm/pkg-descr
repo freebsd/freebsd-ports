@@ -1,8 +1,0 @@
-JamVM is an extremely small Java Virtual Machine which conforms to the
-JVM specification version 2 (blue book).
-
-It is designed to support the full specification, and includes support
-for object finalisation, Soft/Weak/Phantom References, class-unloading,
-the Java Native Interface (JNI) and the Reflection API.
-
-WWW: http://jamvm.sourceforge.net/
