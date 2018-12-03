@@ -1,6 +1,4 @@
 %%LUA%%%%LUA_MODLIBDIR%%/xapian.so
-%%PHP%%lib/php/%%PHP_EXT_DIR%%/xapian.so
-%%PHP%%%%DATADIR%%/php5/xapian.php
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/xapian/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/xapian/__init__.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/xapian/__init__.pyo
