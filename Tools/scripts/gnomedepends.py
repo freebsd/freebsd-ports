@@ -15,7 +15,7 @@
 #
 # $FreeBSD$
 #
-# MAINTAINER= sobomax@FreeBSD.org
+# MAINTAINER= gnome@FreeBSD.org
 #
 # TODO:
 #  - analyse actual {RUN,LIB}_DEPENDS and give an advice about what should be
