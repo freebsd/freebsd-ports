@@ -31,6 +31,11 @@ share/aclocal/bison-i18n.m4
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/simple.yy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/variant-11.yy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/variant.yy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/calc++/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/calc++/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/calc++/calc++.cc
@@ -41,7 +46,6 @@ share/aclocal/bison-i18n.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mfcalc/calc.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mfcalc/mfcalc.y
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rpcalc/rpcalc.y
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/variant.yy
 %%NLS%%share/locale/ast/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/bison.mo
