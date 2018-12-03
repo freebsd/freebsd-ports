@@ -4,8 +4,8 @@
      s.specification_version = 4
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<faraday>.freeze, ["< 0.14.0", ">= 0.9.0"])
+-      s.add_runtime_dependency(%q<faraday>.freeze, [">= 0.9.0", "< 0.14.0"])
 +      s.add_runtime_dependency(%q<faraday>.freeze, [">= 0.9.0"])
-       s.add_runtime_dependency(%q<faraday_middleware>.freeze, ["< 0.13.0", ">= 0.9.0"])
+       s.add_runtime_dependency(%q<faraday_middleware>.freeze, [">= 0.9.0", "< 0.13.0"])
        s.add_runtime_dependency(%q<semantic_puppet>.freeze, ["~> 1.0"])
        s.add_runtime_dependency(%q<minitar>.freeze, [">= 0"])

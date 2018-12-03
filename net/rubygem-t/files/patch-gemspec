@@ -6,6 +6,6 @@
        s.add_runtime_dependency(%q<oauth>.freeze, ["~> 0.5.1"])
 -      s.add_runtime_dependency(%q<retryable>.freeze, ["~> 2.0"])
 +      s.add_runtime_dependency(%q<retryable>.freeze, [">= 2.0"])
-       s.add_runtime_dependency(%q<thor>.freeze, ["< 2", ">= 0.19.1"])
+       s.add_runtime_dependency(%q<thor>.freeze, [">= 0.19.1", "< 2"])
        s.add_runtime_dependency(%q<twitter>.freeze, ["~> 6.0"])
        s.add_development_dependency(%q<bundler>.freeze, ["~> 1.0"])

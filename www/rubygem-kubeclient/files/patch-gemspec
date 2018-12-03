@@ -3,7 +3,7 @@
 @@ -33,7 +33,7 @@ Gem::Specification.new do |s|
        s.add_development_dependency(%q<googleauth>.freeze, ["~> 0.5.1"])
        s.add_runtime_dependency(%q<rest-client>.freeze, ["~> 2.0"])
-       s.add_runtime_dependency(%q<recursive-open-struct>.freeze, [">= 1.0.4", "~> 1.0"])
+       s.add_runtime_dependency(%q<recursive-open-struct>.freeze, ["~> 1.0", ">= 1.0.4"])
 -      s.add_runtime_dependency(%q<http>.freeze, ["~> 2.2.2"])
 +      s.add_runtime_dependency(%q<http>.freeze, [">= 2.2.2"])
      else

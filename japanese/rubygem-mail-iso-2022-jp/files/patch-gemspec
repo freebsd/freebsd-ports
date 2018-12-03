@@ -4,8 +4,8 @@
      s.specification_version = 4
  
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
--      s.add_runtime_dependency(%q<mail>.freeze, ["<= 2.7.0", ">= 2.2.6"])
+-      s.add_runtime_dependency(%q<mail>.freeze, [">= 2.2.6", "<= 2.7.0"])
 +      s.add_runtime_dependency(%q<mail>.freeze, [">= 2.2.6"])
-       s.add_development_dependency(%q<actionmailer>.freeze, ["< 6.0", ">= 3.0.0"])
-       s.add_development_dependency(%q<rdoc>.freeze, ["< 5.0", ">= 3.12"])
+       s.add_development_dependency(%q<actionmailer>.freeze, [">= 3.0.0", "< 6.0"])
+       s.add_development_dependency(%q<rdoc>.freeze, [">= 3.12", "< 5.0"])
      else
