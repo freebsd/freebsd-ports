@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-DISTVERSION=	1.10.1
+DISTVERSION=	1.11.0
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -18,12 +18,16 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://vc.org.ua/mutt/:vc
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER?=	dereks@lifeofadishwasher.com
-COMMENT?=	Small but powerful text based program for read/writing e-mail
+MAINTAINER=	dereks@lifeofadishwasher.com
+COMMENT=	Small but powerful text based program for read/writing e-mail
 
 LICENSE=	GPLv2+
 
-CONFLICTS?=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-1.4* mutt-devel-lite-[0-9]* mutt-lite-[0-9]* zh-mutt-devel-[0-9]*
+RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support
+
+USES=		cpe shebangfix ssl
+
+CONFLICTS=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-1.4* mutt-devel-lite-[0-9]* mutt-lite-[0-9]* zh-mutt-devel-[0-9]*
 
 DOCSDIR?=	${PREFIX}/share/doc/mutt
 EXAMPLESDIR?=	${PREFIX}/share/examples/mutt
@@ -34,7 +38,8 @@ CONFIGURE_ARGS=	--disable-fcntl --with-ssl=${OPENSSLBASE} \
 		--enable-external-dotlock --enable-pop --enable-imap \
 		--enable-compressed --enable-sidebar
 
-USES+=		cpe ncurses shebangfix ssl
+INFO=	${PORTNAME}
+
 SHEBANG_FILES=	doc/gen-map-doc smime_keys.pl contrib/smime_keys_test.pl
 
 .if defined(MUTT_CONFIGURE_ARGS)
@@ -45,9 +50,6 @@ GNU_CONFIGURE=	yes
 
 OPTIONS_SUB=	yes
 
-.if defined (MUTT_LITE)
-OPTIONS_EXCLUDE=	NLS DOCS EXAMPLES
-.else
 OPTIONS_DEFINE=	SASL DEBUG DOCS EXAMPLES FLOCK \
 		FORCEBASE64 GPGME GREETING_PATCH HTML ICONV IDN IFDEF_PATCH \
 		LOCALES_FIX MAILBOX_MANPAGES MAILDIR_MTIME_PATCH \
@@ -93,28 +95,12 @@ OPTIONS_DEFAULT=	GPGME HTML HCACHE_BDB ICONV IDN \
 		IFDEF_PATCH LOCALES_FIX MAILBOX_MANPAGES MAILDIR_MTIME_PATCH \
 		NLS NCURSES QUOTE_PATCH REVERSE_REPLY_PATCH SMART_DATE \
 		SMIME_OUTLOOK_COMPAT SASL SMTP URLVIEW XML GSSAPI_NONE
-.endif
 
-RUN_DEPENDS+=	${LOCALBASE}/etc/mime.types:misc/mime-support
-
-.if !defined (MUTT_LITE)
 ASPELL_BUILD_DEPENDS=	aspell:textproc/aspell
 ASPELL_RUN_DEPENDS=	aspell:textproc/aspell
 ISPELL_BUILD_DEPENDS=	ispell:textproc/aspell-ispell
 ISPELL_RUN_DEPENDS=	ispell:textproc/aspell-ispell
 URLVIEW_RUN_DEPENDS=	urlview:textproc/urlview
-.endif
-
-.if defined (MUTT_LITE)
-PKGNAMESUFFIX=	-lite
-USES+=	ncurses
-PLIST_SUB+=	MAILBOX_MANPAGES=""
-PLIST_SUB+=	HTML="@comment "
-PLIST_SUB+=	NNTP="@comment "
-# XXX bug in bpm ?
-PLIST_SUB+=	NLS="@comment "
-CONFIGURE_ARGS+=	--disable-nls --disable-iconv --without-idn
-.endif
 
 .ifmake makesum # for optional distfiles patchfiles
 PORT_DBDIR=		/dev/null
@@ -172,7 +158,8 @@ FLOCK_CONFIGURE_ENABLE=	flock
 
 LOCALES_FIX_CONFIGURE_ON=	--enable-locales-fix
 
-IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2
+IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2 \
+			libunistring.so:devel/libunistring
 IDN_CONFIGURE_WITH=	idn2
 IDN_IMPLIES=	ICONV
 
@@ -190,6 +177,7 @@ GREETING_PATCH_PATCHFILES=	mutt-${GREETING_PATCH_VERSION}.vc.greeting:vc
 QUOTE_PATCH_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.initials.gz:vvv \
 			patch-${VVV_PATCH_VERSION}.vvv.quote.gz:vvv
 
+NNTP_BROKEN=	NNTP 1.10.0 broken with mutt 1.11.0
 NNTP_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:-p1:vvv
 NNTP_CONFIGURE_ON=	--enable-nntp
 NNTP_VARS=	XML_NEEDED=yes
@@ -202,7 +190,7 @@ DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
 
 # un/comment as each VERSION is created for PORTVERSION
 VVV_PATCH_VERSION=	1.10.0
-GREETING_PATCH_VERSION=	1.10.0
+#GREETING_PATCH_VERSION=	1.11.0
 
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}

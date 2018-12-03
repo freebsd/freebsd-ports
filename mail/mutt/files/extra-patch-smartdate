@@ -1,6 +1,6 @@
---- hdrline.c.orig	2018-05-19 20:36:17 UTC
+--- hdrline.c.orig	2018-11-29 23:19:39 UTC
 +++ hdrline.c
-@@ -249,6 +249,89 @@
+@@ -249,6 +249,89 @@ static char *apply_subject_mods (ENVELOP
   * %Y = `x-label:' field (if present, tree unfolded, and != parent's x-label)
   * %Z = status flags	*/
  
@@ -90,7 +90,7 @@
  static const char *
  hdr_format_str (char *dest,
  		size_t destlen,
-@@ -422,7 +505,13 @@
+@@ -422,7 +505,13 @@ hdr_format_str (char *dest,
  
          if (!do_locales)
            setlocale (LC_TIME, "C");
@@ -105,9 +105,9 @@
          if (!do_locales)
            setlocale (LC_TIME, "");
  
---- mutt.h.orig	2018-05-19 20:44:10 UTC
+--- mutt.h.orig	2018-11-29 23:17:47 UTC
 +++ mutt.h
-@@ -148,6 +148,16 @@
+@@ -156,6 +156,16 @@ typedef enum
    MUTT_FORMAT_NOFILTER    = (1<<7)  /* do not allow filtering on this pass */
  } format_flag;
  

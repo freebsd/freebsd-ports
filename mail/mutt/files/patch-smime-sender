@@ -1,4 +1,4 @@
---- commands.c.orig	2017-09-08 22:18:16 UTC
+--- commands.c.orig	2018-10-04 22:30:10 UTC
 +++ commands.c
 @@ -186,7 +186,7 @@ int mutt_display_message (HEADER *cur)
      {
@@ -9,9 +9,9 @@
  	  mutt_message ( _("S/MIME signature successfully verified."));
  	else
  	  mutt_error ( _("S/MIME certificate owner does not match sender."));
---- init.h.orig	2017-09-08 22:18:16 UTC
+--- init.h.orig	2018-11-24 19:06:11 UTC
 +++ init.h
-@@ -3160,6 +3169,15 @@ struct option_t MuttVars[] = {
+@@ -3232,6 +3232,15 @@ struct option_t MuttVars[] = {
    ** to determine the key to use. It will ask you to supply a key, if it can't find one.
    ** (S/MIME only)
    */
@@ -27,9 +27,9 @@
    { "smime_self_encrypt_as",	DT_SYN,  R_NONE, UL "smime_default_key", 0 },
    { "smime_default_key",		DT_STR,	 R_NONE, UL &SmimeDefaultKey, 0 },
    /*
---- mutt.h.orig	2017-09-08 22:18:16 UTC
+--- mutt.h.orig	2018-11-24 19:06:11 UTC
 +++ mutt.h
-@@ -539,6 +540,7 @@ enum
+@@ -551,6 +551,7 @@ enum
    OPTSMIMEISDEFAULT,
    OPTSMIMESELFENCRYPT,
    OPTASKCERTLABEL,
