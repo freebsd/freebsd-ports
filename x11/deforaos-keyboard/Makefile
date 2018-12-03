@@ -11,16 +11,16 @@ DISTNAME=	Keyboard-${PORTVERSION}
 MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	DeforaOS desktop virtual keyboard
 
-LICENSE=	GPLv3
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libDesktop.so:x11/deforaos-libdesktop \
-				libSystem.so:devel/deforaos-libsystem \
-				libfontconfig.so:x11-fonts/fontconfig \
-				libfreetype.so:print/freetype2
+		libSystem.so:devel/deforaos-libsystem \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
+USES=		desktop-file-utils gnome pkgconfig
 USE_GNOME=	gtk20 cairo gdkpixbuf2
-USES=		desktop-file-utils pkgconfig
 USE_XORG=	x11 xtst
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
