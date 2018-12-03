@@ -1,0 +1,8 @@
+Color::ANSI::Util provides routines for dealing with ANSI colors. The two main
+functions are ansifg and ansibg. With those functions, you can specify colors in
+RGB and let it output the correct ANSI color escape code according to the color
+depth support of the terminal (whether 16-color, 256-color, or 24bit). There are
+other functions to convert RGB to ANSI in specific color depths, or reverse
+functions to convert from ANSI to RGB codes.
+
+WWW: https://metacpan.org/release/Color-ANSI-Util
