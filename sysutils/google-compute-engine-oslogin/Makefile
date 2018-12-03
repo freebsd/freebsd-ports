@@ -15,7 +15,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 RUN_DEPENDS=	gsed:textproc/gsed \
 		${LOCALBASE}/lib/pam_mkhomedir.so:security/pam_mkhomedir
 
-USES=		gmake localbase:ldflags
+USES=		compiler:c++11-lang gmake localbase:ldflags
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	GoogleCloudPlatform
