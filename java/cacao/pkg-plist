@@ -1,4 +1,0 @@
-bin/cacao
-lib/libjvm.so
-man/man1/cacao.1.gz
-%%DATADIR%%/vm.zip

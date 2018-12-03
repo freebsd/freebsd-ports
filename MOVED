@@ -10646,3 +10646,6 @@ emulators/qemu-ppcnv|emulators/qemu-powernv|2018-11-28|Use more accurate naming 
 net/pecl-gupnp||2018-12-01|Has expired: does not build with latest gssdp and gupnp
 graphics/gimpfx-foundry||2018-12-01|Has expired: No release for 10 years, only partially working with recent GIMP
 www/rubygem-http-form_data1|www/rubygem-http-form_data|2018-12-01|Has expired: Use www/rubygem-http-form_data instead
+java/classpath||2018-12-03|Has expired: Staled since 2012, OpenJDK is live now
+java/cacao||2018-12-03|Removed, depends on expired java/classpath
+java/jamvm||2018-12-03|Has expired: Abandonware, depends on expired java/classpath
