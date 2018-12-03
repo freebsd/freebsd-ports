@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.lysator.liu.se/~tab/erlang/py_interface/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py_${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python implementation of an Erlang node
 
 LICENSE=	LGPL20

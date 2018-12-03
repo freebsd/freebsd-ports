@@ -6,7 +6,7 @@ PORTVERSION=	2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program that compares two images
 
 LICENSE=	GPLv2

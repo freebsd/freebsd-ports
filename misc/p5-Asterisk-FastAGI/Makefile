@@ -8,7 +8,7 @@ CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for FastAGI handling
 
 LICENSE=	ART10 GPLv1+
