@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.25.1
+PORTVERSION=	3.26.0
 CATEGORIES=	databases tcl
 MASTER_SITES=	https://www.sqlite.org/2018/ http://www2.sqlite.org/2018/ http://www3.sqlite.org/2018/
 PKGNAMEPREFIX=	tcl-
@@ -14,13 +14,13 @@ LICENSE=	PD
 
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
+USES=		pkgconfig tcl:tea
+USE_LDCONFIG=	yes
+
 OPTIONS_DEFINE=	EXAMPLES THREADS
 OPTIONS_DEFAULT=	THREADS
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/tea
-
-USES=		pkgconfig tcl:tea
-USE_LDCONFIG=	yes
 
 CFLAGS+=	`pkg-config --cflags sqlite3`
 LDFLAGS+=	`pkg-config --libs sqlite3`
