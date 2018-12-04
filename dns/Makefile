@@ -93,6 +93,7 @@
     SUBDIR += knot-resolver
     SUBDIR += knot1
     SUBDIR += knot2
+    SUBDIR += knot2-lib
     SUBDIR += ldapdns
     SUBDIR += ldns
     SUBDIR += libasr

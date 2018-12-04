@@ -6,10 +6,10 @@ DISTVERSION=	2.7.4
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		https://dns.company/downloads/knot-dns/
-PKGNAMESUFFIX=	2
+PKGNAMESUFFIX?=	2
 
 MAINTAINER=	freebsd@dns.company
-COMMENT=	High performance authoritative-only DNS server
+COMMENT?=	High performance authoritative-only DNS server
 
 LICENSE=	GPLv3
 
