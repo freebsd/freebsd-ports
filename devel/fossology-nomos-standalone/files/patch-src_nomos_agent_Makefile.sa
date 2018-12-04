@@ -20,7 +20,7 @@
 +LDFLAGS_LOCAL = `pkg-config glib-2.0 --libs`
  
 -all: encode $(EXE)
-+all: $(EXE)
++all: encode $(EXE)
  
  debug: nomos-gl
  
