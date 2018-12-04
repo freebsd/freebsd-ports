@@ -10649,3 +10649,4 @@ www/rubygem-http-form_data1|www/rubygem-http-form_data|2018-12-01|Has expired: U
 java/classpath||2018-12-03|Has expired: Staled since 2012, OpenJDK is live now
 java/cacao||2018-12-03|Removed, depends on expired java/classpath
 java/jamvm||2018-12-03|Has expired: Abandonware, depends on expired java/classpath
+devel/ztcl||2018-12-04|Has expired: Unfetchable, unmaintained, info page unbuildable with recent makeinfo
