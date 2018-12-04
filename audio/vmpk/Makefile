@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vmpk
-DISTVERSION=	0.7.0
+DISTVERSION=	0.7.1
 CATEGORIES=	audio
 MASTER_SITES=	https://phoenixnap.dl.sourceforge.net/project/vmpk/vmpk/${PORTVERSION}/
 
