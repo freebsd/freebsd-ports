@@ -1,6 +1,6 @@
---- 3rdparty/3rdparty.pri.orig	2018-09-22 00:19:48 UTC
+--- 3rdparty/3rdparty.pri.orig	2018-11-30 15:24:26 UTC
 +++ 3rdparty/3rdparty.pri
-@@ -81,15 +81,11 @@ unix:!macx { # ubuntu & debian
+@@ -88,15 +88,11 @@ unix:!macx { # ubuntu & debian
          #QMAKE_LFLAGS = -Wl,-rpath=/home/user/Qt5.9.3/5.9.3/gcc_64/lib
      }
  
