@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/downloads/production/
 
-MAINTAINER=	ler@FreeBSD.org
+MAINTAINER=	yasu@utahime.org
 COMMENT=	Command line virus scanner written entirely in C
 
 LICENSE=	GPLv2
