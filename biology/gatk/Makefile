@@ -13,7 +13,7 @@ COMMENT=	Variant discovery in high-throughput sequencing data
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-BUILD_DEPENDS=	gradle:devel/gradle
+BUILD_DEPENDS=	gradle4:devel/gradle4
 
 USES=		gettext-runtime
 USE_GITHUB=	yes
@@ -34,7 +34,7 @@ post-extract: # to rebuild the deps archive: 1. remove post-extract: 2. remove -
 	@cd ${DEPS_CACHE_DIR} && ${TAR} xzf ${DISTDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle \
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle4 \
 		--gradle-user-home ${DEPS_CACHE_DIR}/gradle-${PORTNAME} --project-cache-dir ${DEPS_CACHE_DIR}/gradle-${PORTNAME} \
 		--offline --build-cache localJar
 
