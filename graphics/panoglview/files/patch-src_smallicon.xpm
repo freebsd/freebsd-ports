@@ -1,0 +1,9 @@
+--- src/smallicon.xpm.orig	2008-07-23 21:09:10 UTC
++++ src/smallicon.xpm
+@@ -1,5 +1,5 @@
+ /* XPM */
+-static char *smallicon[]={
++static char const *smallicon[]={
+ "16 16 9 1",
+ ". c None",
+ "# c #0058c0",
