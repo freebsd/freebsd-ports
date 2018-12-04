@@ -3,7 +3,7 @@
 
 PORTNAME=	sipp
 PORTVERSION=	3.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	benchmarks net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
 
@@ -18,9 +18,10 @@ BROKEN_powerpc64=	fails to compile: stat.hpp:307: error: ISO C++ does not suppor
 
 BUILD_DEPENDS=	help2man:misc/help2man
 
+USES=		autoreconf gmake ncurses pkgconfig
+
 PLIST_FILES=	bin/sipp man/man1/sipp.1.gz
 
-USES=		autoreconf gmake ncurses
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	OPENSSL GSL PCAP RTPSTREAM SCTP
