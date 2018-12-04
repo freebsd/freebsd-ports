@@ -26,7 +26,7 @@ COMMENT=	Language with a focus on memory safety and concurrency
 LICENSE=	APACHE20 \
 		MIT
 LICENSE_COMB=	dual
-# APACHE20 license is standard, see Templates/Licenses/APACHE20
+LICENSE_FILE_APACHE=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 BUILD_DEPENDS=		cmake:devel/cmake
