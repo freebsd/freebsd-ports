@@ -1,9 +1,8 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	exercism
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.9
+DISTVERSION=	3.0.11
 CATEGORIES=	misc
 
 MAINTAINER=	swills@FreeBSD.org
