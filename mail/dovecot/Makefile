@@ -8,7 +8,7 @@
 
 PORTNAME=	dovecot
 PORTVERSION=	2.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	https://www.dovecot.org/releases/2.3/
 
@@ -17,8 +17,6 @@ COMMENT=	Secure, fast and powerful IMAP and POP3 server
 
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	dual
-LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
-LICENSE_FILE_MIT=	${WRKSRC}/COPYING.MIT
 
 USES=		cpe iconv libtool pkgconfig ssl
 USE_RC_SUBR=	dovecot
@@ -27,7 +25,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-statedir=/var/db/dovecot \
 		--without-shadow \
-		--without-sodium \
 		--with-ssl=openssl \
 		--with-docs
 
@@ -39,7 +36,7 @@ GROUPS=		${USERS}
 
 CONFLICTS_INSTALL=	dovecot22
 
-OPTIONS_DEFINE=	LIBWRAP LUA LZ4 VPOPMAIL DOCS EXAMPLES 
+OPTIONS_DEFINE=	LIBSODIUM LIBWRAP LUA LZ4 VPOPMAIL DOCS EXAMPLES
 OPTIONS_DEFAULT=GSSAPI_NONE LIBWRAP
 OPTIONS_SUB=	yes
 
@@ -68,6 +65,10 @@ GSSAPI_HEIMDAL_DESC=	Use Heimdal GSSAPI from security/heimdal
 GSSAPI_MIT_DESC=	Use MIT GSSAPI from security/krb5
 
 # General options
+LIBSODIUM_DESC=		support libsodium based crypts (ARGON2I/ARGON2ID)
+LIBSODIUM_LIB_DEPENDS=	libsodium.so:security/libsodium
+LIBSODIUM_CONFIGURE_WITH=	sodium
+
 LIBWRAP_CONFIGURE_WITH=	libwrap
 
 LUA_CONFIGURE_WITH=	lua
@@ -98,7 +99,6 @@ SQLITE_CONFIGURE_WITH=	sqlite
 # FTS
 ICU_CONFIGURE_WITH=	icu
 ICU_LIB_DEPENDS=	libicui18n.so:devel/icu
-ICU_USES=		pkgconfig
 
 LUCENE_CONFIGURE_WITH=	lucene
 LUCENE_LIB_DEPENDS=	libclucene-core.so:textproc/clucene
