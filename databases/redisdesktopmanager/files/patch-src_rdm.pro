@@ -1,6 +1,6 @@
---- src/rdm.pro.orig	2018-08-31 12:53:12 UTC
+--- src/rdm.pro.orig	2018-11-27 08:26:54 UTC
 +++ src/rdm.pro
-@@ -26,8 +26,6 @@ SOURCES += \
+@@ -25,8 +25,6 @@ SOURCES += \
      $$PWD/modules/connections-tree/items/*.cpp \
      $$PWD/modules/console/*.cpp \
      $$PWD/modules/value-editor/*.cpp \
@@ -9,7 +9,7 @@
      $$PWD/modules/bulk-operations/*.cpp \
      $$PWD/modules/common/*.cpp \
      $$PWD/modules/server-stats/*.cpp \
-@@ -42,8 +40,6 @@ HEADERS  += \
+@@ -41,8 +39,6 @@ HEADERS  += \
      $$PWD/modules/connections-tree/items/*.h \
      $$PWD/modules/console/*.h \
      $$PWD/modules/value-editor/*.h \
@@ -18,7 +18,7 @@
      $$PWD/modules/*.h \
      $$PWD/modules/bulk-operations/*.h \
      $$PWD/modules/common/*.h \
-@@ -97,8 +93,8 @@ unix:!macx { # ubuntu & debian
+@@ -96,8 +92,8 @@ unix:!macx { # ubuntu & debian
  
      QMAKE_CXXFLAGS += -Wno-sign-compare    
  
