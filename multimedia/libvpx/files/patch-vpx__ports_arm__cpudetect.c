@@ -1,5 +1,14 @@
 --- vpx_ports/arm_cpudetect.c.orig	2017-01-12 20:27:27 UTC
 +++ vpx_ports/arm_cpudetect.c
+@@ -38,7 +38,7 @@ static int arm_cpu_env_mask(void) {
+   return env && *env ? (int)strtol(env, NULL, 0) : ~0;
+ }
+ 
+-#if !CONFIG_RUNTIME_CPU_DETECT
++#if !CONFIG_RUNTIME_CPU_DETECT || defined(__ARM_NEON)
+ 
+ int arm_cpu_caps(void) {
+   /* This function should actually be a no-op. There is no way to adjust any of
 @@ -147,7 +147,57 @@ int arm_cpu_caps(void) {
    }
    return flags & mask;
