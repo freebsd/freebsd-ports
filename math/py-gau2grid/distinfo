@@ -1,3 +1,5 @@
-TIMESTAMP = 1538885352
-SHA256 (dgasmith-gau2grid-v1.2.0_GH0.tar.gz) = 5c0312256c794d17c806bafa4a755489d21d3985e44a4429e865b51e67666b9c
-SIZE (dgasmith-gau2grid-v1.2.0_GH0.tar.gz) = 124928
+TIMESTAMP = 1543900549
+SHA256 (dgasmith-gau2grid-v1.3.0_GH0.tar.gz) = 3e93304cb6b6871811f43c5491fe7d597dcf6432bd09cb1f70e6c41fa20ab1a2
+SIZE (dgasmith-gau2grid-v1.3.0_GH0.tar.gz) = 208146
+SHA256 (0deace28eaad3359a595e384daf7bb9dd157c0d6.patch) = 1f689856c9c691e9106e66365d5da337c7abcd1edb645c7ddfe9d6e39fb2e074
+SIZE (0deace28eaad3359a595e384daf7bb9dd157c0d6.patch) = 1051
