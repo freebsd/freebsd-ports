@@ -1,5 +1,0 @@
-ZTCL is an extension library for TCL written in the C language. It
-implements an interface to the ZLIB compression and decompression
-library, the one used by GZIP.
-
-WWW: http://gna.org/projects/ztcl/
