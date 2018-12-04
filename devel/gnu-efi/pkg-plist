@@ -39,11 +39,19 @@ include/efi/protocol/legacyboot.h
 include/efi/protocol/piflash64.h
 include/efi/protocol/vgaclass.h
 include/efi/romload.h
-include/efi/x86_64/efibind.h
-include/efi/x86_64/efilibplat.h
-include/efi/x86_64/efisetjmp_arch.h
-include/efi/x86_64/pe.h
-lib/crt0-efi-x86_64.o
-lib/elf_x86_64_fbsd_efi.lds
 lib/libefi.a
 lib/libgnuefi.a
+@comment Architecture Specific Packages List, amd64
+%%ARCH_amd64%%include/efi/x86_64/efibind.h
+%%ARCH_amd64%%include/efi/x86_64/efilibplat.h
+%%ARCH_amd64%%include/efi/x86_64/efisetjmp_arch.h
+%%ARCH_amd64%%include/efi/x86_64/pe.h
+%%ARCH_amd64%%lib/crt0-efi-x86_64.o
+%%ARCH_amd64%%lib/elf_x86_64_fbsd_efi.lds
+@comment Architecture Specific Packages List, i386
+%%ARCH_i386%%include/efi/ia32/efibind.h
+%%ARCH_i386%%include/efi/ia32/efilibplat.h
+%%ARCH_i386%%include/efi/ia32/efisetjmp_arch.h
+%%ARCH_i386%%include/efi/ia32/pe.h
+%%ARCH_i386%%lib/crt0-efi-ia32.o
+%%ARCH_i386%%lib/elf_ia32_efi.lds
