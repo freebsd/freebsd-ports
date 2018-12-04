@@ -8,7 +8,7 @@
 
 PORTNAME=	dovecot
 PORTVERSION=	2.3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	https://www.dovecot.org/releases/2.3/
 
