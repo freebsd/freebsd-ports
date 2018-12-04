@@ -20,8 +20,8 @@ no_tls: False
 # make HTTPS requests to this server will check that the TLS
 # certificates returned by this server match one of the fingerprints.
 #
-# Synapse automatically adds its the fingerprint of its own certificate
-# to the list. So if federation traffic is handle directly by synapse
+# Synapse automatically adds the fingerprint of its own certificate
+# to the list. So if federation traffic is handled directly by synapse
 # then no modification to the list is required.
 #
 # If synapse is run behind a load balancer that handles the TLS then it
@@ -34,6 +34,12 @@ no_tls: False
 # key. It may be necessary to publish the fingerprints of a new
 # certificate and wait until the "valid_until_ts" of the previous key
 # responses have passed before deploying it.
+#
+# You can calculate a fingerprint from a given TLS listener via:
+# openssl s_client -connect $host:$port < /dev/null 2> /dev/null |
+#   openssl x509 -outform DER | openssl sha256 -binary | base64 | tr -d '='
+# or by checking matrix.org/federationtester/api/report?server_name=$host
+#
 tls_fingerprints: []
 # tls_fingerprints: [{"sha256": "<base64_encoded_sha256_fingerprint>"}]
 
@@ -49,8 +55,37 @@ server_name: "example.com"
 # When running as a daemon, the file to store the pid in
 pid_file: %%PIDDIR%%/homeserver.pid
 
+# CPU affinity mask. Setting this restricts the CPUs on which the
+# process will be scheduled. It is represented as a bitmask, with the
+# lowest order bit corresponding to the first logical CPU and the
+# highest order bit corresponding to the last logical CPU. Not all CPUs
+# may exist on a given system but a mask may specify more CPUs than are
+# present.
+#
+# For example:
+#    0x00000001  is processor #0,
+#    0x00000003  is processors #0 and #1,
+#    0xFFFFFFFF  is all processors (#0 through #31).
+#
+# Pinning a Python process to a single CPU is desirable, because Python
+# is inherently single-threaded due to the GIL, and can suffer a
+# 30-40% slowdown due to cache blow-out and thread context switching
+# if the scheduler happens to schedule the underlying threads across
+# different cores. See
+# https://www.mirantis.com/blog/improve-performance-python-programs-restricting-single-cpu/.
+#
+# This setting requires the affinity package to be installed!
+#
+# cpu_affinity: 0xFFFFFFFF
+
 # Whether to serve a web client from the HTTP/HTTPS root resource.
 web_client: True
+
+# The root directory to server for the above web client.
+# If left undefined, synapse will serve the matrix-angular-sdk web client.
+# Make sure matrix-angular-sdk is installed with pip if web_client is True
+# and web_client_location is undefined
+# web_client_location: "/path/to/web/root"
 
 # The public-facing base URL for the client API (not including _matrix/...)
 # public_baseurl: https://example.com:8448/
@@ -60,8 +95,30 @@ web_client: True
 # hard limit.
 soft_file_limit: 0
 
+# Set to false to disable presence tracking on this homeserver.
+use_presence: true
+
 # The GC threshold parameters to pass to `gc.set_threshold`, if defined
 # gc_thresholds: [700, 10, 10]
+
+# Set the limit on the returned events in the timeline in the get
+# and sync operations. The default value is -1, means no upper limit.
+# filter_timeline_limit: 5000
+
+# Whether room invites to users on this server should be blocked
+# (except those sent by local server admins). The default is False.
+# block_non_admin_invites: True
+
+# Restrict federation to the following whitelist of domains.
+# N.B. we recommend also firewalling your federation listener to limit
+# inbound federation traffic as early as possible, rather than relying
+# purely on this application-layer restriction.  If not specified, the
+# default is to whitelist everything.
+#
+# federation_domain_whitelist:
+#  - lon.example.com
+#  - nyc.example.com
+#  - syd.example.com
 
 # List of ports that Synapse should listen on, their purpose and their
 # configuration.
@@ -72,9 +129,13 @@ listeners:
     # The port to listen for HTTPS requests on.
     port: 8448
 
-    # Local interface to listen on.
-    # The empty string will cause synapse to listen on all interfaces.
-    bind_address: ''
+    # Local addresses to listen on.
+    # On Linux and Mac OS, `::` will listen on all IPv4 and IPv6
+    # addresses by default. For most other OSes, this will only listen
+    # on IPv6.
+    bind_addresses:
+      - '::'
+      - '0.0.0.0'
 
     # This is a 'http' listener, allows us to specify 'resources'.
     type: http
@@ -101,11 +162,18 @@ listeners:
       - names: [federation]  # Federation APIs
         compress: false
 
+    # optional list of additional endpoints which can be loaded via
+    # dynamic modules
+    # additional_resources:
+    #   "/_matrix/my/custom/endpoint":
+    #     module: my_module.CustomRequestHandler
+    #     config: {}
+
   # Unsecure HTTP listener,
   # For when matrix traffic passes through loadbalancer that unwraps TLS.
   - port: 8008
     tls: false
-    bind_address: ''
+    bind_addresses: ['::', '0.0.0.0']
     type: http
 
     x_forwarded: false
@@ -119,8 +187,35 @@ listeners:
   # Turn on the twisted ssh manhole service on localhost on the given
   # port.
   # - port: 9000
-  #   bind_address: 127.0.0.1
+  #   bind_addresses: ['::1', '127.0.0.1']
   #   type: manhole
+
+
+  # Homeserver blocking
+  #
+  # How to reach the server admin, used in ResourceLimitError
+  # admin_contact: 'mailto:admin@server.com'
+  #
+  # Global block config
+  #
+  # hs_disabled: False
+  # hs_disabled_message: 'Human readable reason for why the HS is blocked'
+  # hs_disabled_limit_type: 'error code(str), to help clients decode reason'
+  #
+  # Monthly Active User Blocking
+  #
+  # Enables monthly active user checking
+  # limit_usage_by_mau: False
+  # max_mau_value: 50
+  # mau_trial_days: 2
+  #
+  # Sometimes the server admin will want to ensure certain accounts are
+  # never blocked by mau checking. These accounts are specified here.
+  #
+  # mau_limit_reserved_threepids:
+  # - medium: 'email'
+  #   address: 'reserved_user@example.com'
+
 
 
 # Database configuration
@@ -137,19 +232,8 @@ event_cache_size: "10K"
 
 
 
-# Logging verbosity level.
-verbose: 0
-
-# File to write logging to
-log_file: "%%LOGDIR%%/homeserver.log"
-
 # A yaml python logging config file
 log_config: "%%ETCDIR%%/log.config"
-
-# Stop twisted from discarding the stack traces of exceptions in
-# deferreds by waiting a reactor tick before running a deferred's
-# callbacks.
-# full_twisted_stacktraces: true
 
 
 ## Ratelimiting ##
@@ -183,6 +267,20 @@ federation_rc_concurrent: 3
 
 # Directory where uploaded images and attachments are stored.
 media_store_path: "%%DBDIR%%/media_store"
+
+# Media storage providers allow media to be stored in different
+# locations.
+# media_storage_providers:
+# - module: file_system
+#   # Whether to write new local files.
+#   store_local: false
+#   # Whether to write new remote media
+#   store_remote: false
+#   # Whether to block upload requests waiting for write to this
+#   # provider to complete
+#   store_synchronous: false
+#   config:
+#     directory: /mnt/some/other/directory
 
 # Directory where in-progress uploads are stored.
 uploads_path: "%%DBDIR%%/uploads"
@@ -238,6 +336,9 @@ url_preview_enabled: False
 # - '192.168.0.0/16'
 # - '100.64.0.0/10'
 # - '169.254.0.0/16'
+# - '::1/128'
+# - 'fe80::/64'
+# - 'fc00::/7'
 #
 # List of IP address CIDR ranges that the URL preview spider is allowed
 # to access even if they are specified in url_preview_ip_range_blacklist.
@@ -312,13 +413,25 @@ recaptcha_siteverify_api: "https://www.google.com/recaptcha/api/siteverify"
 ## Turn ##
 
 # The public URIs of the TURN server to give to clients
-turn_uris: []
+#turn_uris: []
 
 # The shared secret used to compute passwords for the TURN server
-turn_shared_secret: "YOUR_SHARED_SECRET"
+#turn_shared_secret: "YOUR_SHARED_SECRET"
+
+# The Username and password if the TURN server needs them and
+# does not use a token
+#turn_username: "TURNSERVER_USERNAME"
+#turn_password: "TURNSERVER_PASSWORD"
 
 # How long generated TURN credentials last
 turn_user_lifetime: "1h"
+
+# Whether guests should be allowed to use the TURN server.
+# This defaults to True, otherwise VoIP will be unreliable for guests.
+# However, it does introduce a slight security risk as it allows users to
+# connect to arbitrary endpoints without having first signed up for a
+# valid account (e.g. by passing a CAPTCHA).
+turn_allow_guests: True
 
 
 ## Registration ##
@@ -326,13 +439,32 @@ turn_user_lifetime: "1h"
 # Enable registration for new users.
 enable_registration: False
 
+# The user must provide all of the below types of 3PID when registering.
+#
+# registrations_require_3pid:
+#     - email
+#     - msisdn
+
+# Mandate that users are only allowed to associate certain formats of
+# 3PIDs with accounts on this server.
+#
+# allowed_local_3pids:
+#     - medium: email
+#       pattern: ".*@matrix\.org"
+#     - medium: email
+#       pattern: ".*@vector\.im"
+#     - medium: msisdn
+#       pattern: "\+44"
+
 # If set, allows registration by anyone who also has the shared
 # secret, even if registration is otherwise disabled.
 registration_shared_secret: "CHANGEME_50CHAR_RANDOM"
 
 # Set the number of bcrypt rounds used to generate password hash.
 # Larger numbers increase the work factor needed to generate the hash.
-# The default number of rounds is 12.
+# The default number is 12 (which equates to 2^12 rounds).
+# N.B. that increasing this will exponentially increase the time required
+# to register or login - e.g. 24 => 2^24 rounds which will take >20 mins.
 bcrypt_rounds: 12
 
 # Allows users to register as guests without a password/email/etc, and
@@ -345,6 +477,19 @@ allow_guest_access: False
 trusted_third_party_id_servers:
     - matrix.org
     - vector.im
+    - riot.im
+
+# Users who register on this homeserver will automatically be joined
+# to these rooms
+#auto_join_rooms:
+#    - "#example:example.com"
+
+# Where auto_join_rooms are specified, setting this flag ensures that the
+# the rooms exist by creating them when the first user on the
+# homeserver registers.
+# Setting to false means that if the rooms are not manually created,
+# users cannot be auto-joined since they do not exist.
+autocreate_auto_join_rooms: true
 
 
 ## Metrics ###
@@ -372,6 +517,10 @@ macaroon_secret_key: "CHANGEME_50CHAR_RANDOM"
 
 # Used to enable access token expiration.
 expire_access_token: False
+
+# a secret which is used to calculate HMACs for form values, to stop
+# falsification of values
+form_secret: "CHANGEME_50CHAR_RANDOM"
 
 ## Signing Keys ##
 
@@ -443,16 +592,29 @@ password_config:
 
 
 # Enable sending emails for notification events
+# Defining a custom URL for Riot is only needed if email notifications
+# should contain links to a self-hosted installation of Riot; when set
+# the "app_name" setting is ignored.
+#
+# If your SMTP server requires authentication, the optional smtp_user &
+# smtp_pass variables should be used
+#
 #email:
 #   enable_notifs: false
 #   smtp_host: "localhost"
 #   smtp_port: 25
+#   smtp_user: "exampleusername"
+#   smtp_pass: "examplepassword"
+#   require_transport_security: False
 #   notif_from: "Your Friendly %(app)s Home Server <noreply@example.com>"
 #   app_name: Matrix
-#   template_dir: res/templates
+#   # if template_dir is unset, uses the example templates that are part of
+#   # the Synapse distribution.
+#   #template_dir: res/templates
 #   notif_template_html: notif_mail.html
 #   notif_template_text: notif_mail.txt
 #   notif_for_new_users: True
+#   riot_base_url: "http://localhost/riot"
 
 
 # password_providers:
@@ -469,3 +631,124 @@ password_config:
 #         #bind_dn:
 #         #bind_password:
 #         #filter: "(objectClass=posixAccount)"
+
+
+
+# Clients requesting push notifications can either have the body of
+# the message sent in the notification poke along with other details
+# like the sender, or just the event ID and room ID (`event_id_only`).
+# If clients choose the former, this option controls whether the
+# notification request includes the content of the event (other details
+# like the sender are still included). For `event_id_only` push, it
+# has no effect.
+
+# For modern android devices the notification content will still appear
+# because it is loaded by the app. iPhone, however will send a
+# notification saying only that a message arrived and who it came from.
+#
+#push:
+#   include_content: true
+
+
+# spam_checker:
+#     module: "my_custom_project.SuperSpamChecker"
+#     config:
+#         example_option: 'things'
+
+
+# Whether to allow non server admins to create groups on this server
+enable_group_creation: false
+
+# If enabled, non server admins can only create groups with local parts
+# starting with this prefix
+# group_creation_prefix: "unofficial/"
+
+
+
+# User Directory configuration
+#
+# 'search_all_users' defines whether to search all users visible to your HS
+# when searching the user directory, rather than limiting to users visible
+# in public rooms.  Defaults to false.  If you set it True, you'll have to run
+# UPDATE user_directory_stream_pos SET stream_id = NULL;
+# on your database to tell it to rebuild the user_directory search indexes.
+#
+#user_directory:
+#   search_all_users: false
+
+
+# User Consent configuration
+#
+# for detailed instructions, see
+# https://github.com/matrix-org/synapse/blob/master/docs/consent_tracking.md
+#
+# Parts of this section are required if enabling the 'consent' resource under
+# 'listeners', in particular 'template_dir' and 'version'.
+#
+# 'template_dir' gives the location of the templates for the HTML forms.
+# This directory should contain one subdirectory per language (eg, 'en', 'fr'),
+# and each language directory should contain the policy document (named as
+# '<version>.html') and a success page (success.html).
+#
+# 'version' specifies the 'current' version of the policy document. It defines
+# the version to be served by the consent resource if there is no 'v'
+# parameter.
+#
+# 'server_notice_content', if enabled, will send a user a "Server Notice"
+# asking them to consent to the privacy policy. The 'server_notices' section
+# must also be configured for this to work. Notices will *not* be sent to
+# guest users unless 'send_server_notice_to_guests' is set to true.
+#
+# 'block_events_error', if set, will block any attempts to send events
+# until the user consents to the privacy policy. The value of the setting is
+# used as the text of the error.
+#
+# user_consent:
+#   template_dir: res/templates/privacy
+#   version: 1.0
+#   server_notice_content:
+#     msgtype: m.text
+#     body: >-
+#       To continue using this homeserver you must review and agree to the
+#       terms and conditions at %(consent_uri)s
+#   send_server_notice_to_guests: True
+#   block_events_error: >-
+#     To continue using this homeserver you must review and agree to the
+#     terms and conditions at %(consent_uri)s
+#
+
+
+# Server Notices room configuration
+#
+# Uncomment this section to enable a room which can be used to send notices
+# from the server to users. It is a special room which cannot be left; notices
+# come from a special "notices" user id.
+#
+# If you uncomment this section, you *must* define the system_mxid_localpart
+# setting, which defines the id of the user which will be used to send the
+# notices.
+#
+# It's also possible to override the room name, the display name of the
+# "notices" user, and the avatar for the user.
+#
+# server_notices:
+#   system_mxid_localpart: notices
+#   system_mxid_display_name: "Server Notices"
+#   system_mxid_avatar_url: "mxc://server.com/oumMVlgDnLYFaPVkExemNVVZ"
+#   room_name: "Server Notices"
+
+
+
+# The `alias_creation` option controls who's allowed to create aliases
+# on this server.
+#
+# The format of this option is a list of rules that contain globs that
+# match against user_id and the new alias (fully qualified with server
+# name). The action in the first rule that matches is taken, which can
+# currently either be "allow" or "deny".
+#
+# If no rules match the request is denied.
+alias_creation_rules:
+    - user_id: "*"
+      alias: "*"
+      action: allow

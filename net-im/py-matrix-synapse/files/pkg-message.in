@@ -12,7 +12,7 @@ If you wish to have Synapse handle this for you including generation of
 self-signed TLS certificates and dhparams you can use the following
 command:
 
-%%PYTHON_CMD%% -B -m synapse.app.homeserver -c %%ETCDIR%%/homeserver.yaml --generate-config --server-name=example.com --report-stats=false
+%%PYTHON_CMD%% -B -m synapse.app.homeserver -c %%ETCDIR%%/homeserver.yaml --generate-config -H <SERVER_NAME> --report-stats no
 
 Please note that you will still need to manually configure paths to log
 directory, database, and media storage with this method.
