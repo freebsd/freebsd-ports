@@ -1,7 +1,9 @@
-GDL - GNU Data Language - is a free IDL (Interactive Data Language) compatible
-incremental compiler (i.e.  runs IDL programs).
+GDL is a free/libre/open source incremental compiler compatible with IDL
+(Interactive Data Language) and to some extent with PV-WAVE. Together with its
+library routines it serves as a tool for data analysis and visualization in such
+disciplines as astronomy, geosciences and medical imaging.
 
-IDL is a registered trademark of Research Systems Inc.
-(see: <http://www.rsinc.com/>)
+IDL is a registered trademark of Harris Geospatial Solutions. PV-WAVE is a
+product of Rogue Wave Software.
 
-WWW: http://gnudatalanguage.sourceforge.net/
+WWW: https://github.com/gnudatalanguage/gdl
