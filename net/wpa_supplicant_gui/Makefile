@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wpa_supplicant_gui
-PORTVERSION=	2.6
-PORTREVISION=	2
+DISTVERSION=	2.7
 CATEGORIES=	net
 MASTER_SITES=	http://w1.fi/releases/ \
 		http://partmedia.users.sourceforge.net/dist/:icons \
@@ -18,7 +17,7 @@ COMMENT=	Qt-based frontend for wpa_supplicant
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
-USES=		gmake qt:5
+USES=		gl gmake qt:5
 USE_QT=		qmake_build buildtools_build linguisttools_build core gui \
 		widgets svg_run
 USE_GL=		gl
