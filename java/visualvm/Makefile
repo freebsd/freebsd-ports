@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	visualvm
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	java devel
 MASTER_SITES=	https://github.com/visualvm/visualvm.src/releases/download/${PORTVERSION}/
 DISTNAME=	visualvm_${PORTVERSION:S/.//g}
