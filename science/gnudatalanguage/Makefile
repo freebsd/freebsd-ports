@@ -2,27 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	gnudatalanguage
-DISTVERSION=	0.9.8
-PORTREVISION=	4
+PORTVERSION=	0.9.9
+DISTVERSIONPREFIX=	v
 CATEGORIES=	science lang
-MASTER_SITES=	SF/${PORTNAME}/gdl/${PORTVERSION}
 .if defined(BUILD_PYTHON_MODULE)
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 .endif
-DISTNAME=	gdl-${DISTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT?=	GDL, a free IDL compatible incremental compiler
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS+=	libplplot.so:math/plplot	\
+LIB_DEPENDS+=	libgeotiff.so:graphics/libgeotiff\
+		libplplot.so:math/plplot	\
+		libtiff.so:graphics/tiff	\
 		libpng.so:graphics/png		\
 		libsz.so:science/szip		\
 		libps.so:print/pslib		\
 		libgsl.so:math/gsl
 
-USES=		cmake:outsource compiler:c++11-lang dos2unix ncurses pkgconfig readline tar:tgz
+USE_GITHUB=	yes
+GH_PROJECT=	gdl
+
+USES=		cmake:outsource compiler:c++11-lang fortran ncurses pkgconfig readline tar:tgz
 USE_WX=		3.0+
 USE_XORG=	x11 sm ice xext
 
@@ -42,8 +45,8 @@ USE_CXXSTD=	gnu++11
 # TODO:	create a port for TexToIdl http://physics.mnstate.edu/mcraig/textoidl/textoidl-2-1-2.tar
 
 CMAKE_ARGS=	-DREADLINEDIR:STRING="/usr"	\
+		-DOPENMP:BOOL=NO		\
 		-DNCURSESDIR:STRING="/usr"	\
-		-DOPENMP:BOOL=OFF		\
 		-DMAGICK:BOOL=OFF
 CPPFLAGS+=	${CFLAGS} -fno-inline -DNPY_NO_DEPRECATED_API -DNPY_1_7_API_VERSION
 CXXFLAGS+=	-std=gnu++11
@@ -51,7 +54,7 @@ LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 SLAVEDIRS=	science/py-gnudatalanguage
 
-OPTIONS_DEFINE=	EIGEN EXAMPLES FFTW GLPK GRAPHICSMAGICK GRIB HDF5 LIBPROJ4 MPI NETCDF PYTHON QHULL UDUNITS
+OPTIONS_DEFINE=	EIGEN EXAMPLES FFTW GLPK GRAPHICSMAGICK GRIB HDF5 LIBPROJ4 MPI NETCDF PYTHON UDUNITS
 OPTIONS_DEFAULT=EIGEN FFTW GLPK GRAPHICSMAGICK GRIB HDF5 LIBPROJ4 NETCDF PYTHON UDUNITS
 
 EIGEN_DESC=		Eigen3 support (boost performance)
@@ -88,10 +91,9 @@ LIBPROJ4_LIB_DEPENDS=	libproj.so:graphics/proj
 LIBPROJ4_CMAKE_ON=	-DLIBPROJ4:BOOL=YES
 LIBPROJ4_CMAKE_OFF=	-DLIBPROJ4:BOOL=NO
 
-MPI_USES=		fortran
 MPI_LIB_DEPENDS=	libmpich.so:net/mpich
-MPI_CMAKE_ON=		-DMPICH:BOOL=YES
-MPI_CMAKE_OFF=		-DMPICH:BOOL=NO
+MPI_CMAKE_ON=		-DMPICH:BOOL=ON
+MPI_CMAKE_OFF=		-DMPICH:BOOL=OFF
 
 NETCDF_LIB_DEPENDS=	libnetcdf.so:science/netcdf
 NETCDF_CMAKE_ON=	-DNETCDF:BOOL=YES -DHDF:BOOL=NO
@@ -104,10 +106,11 @@ PYTHON_RUN_DEPENDS=	${PYNUMPY} \
 PYTHON_CMAKE_ON=	-DPYTHON:BOOL=YES -DPYTHONVERSION:STRING="${PYTHON_VER}"
 PYTHON_CMAKE_OFF=	-DPYTHON:BOOL=NO
 
-QHULL_DESC=		Enable Qhull support
-QHULL_LIB_DEPENDS=	libqhull.so:math/qhull
-QHULL_CMAKE_ON=		-DQHULL:BOOL=YES
-QHULL_CMAKE_OFF=	-DQHULL:BOOL=NO
+# QHULL IS NOT NEEDED YET!
+#QHULL_DESC=		Enable Triangulate and Qhull support
+#QHULL_LIB_DEPENDS=	libqhull.so:math/qhull
+#QHULL_CMAKE_ON=		-DQHULL:BOOL=YES
+#QHULL_CMAKE_OFF=	-DQHULL:BOOL=NO
 
 UDUNITS_LIB_DEPENDS=	libudunits2.so:science/udunits
 UDUNITS_CMAKE_ON=	-DUDUNITS:BOOL=YES
@@ -115,14 +118,11 @@ UDUNITS_CMAKE_OFF=	-DUDUNITS:BOOL=NO
 
 .if defined(BUILD_PYTHON_MODULE)
 CATEGORIES+=	python
-CMAKE_ARGS+=	-DPYTHON_MODULE:BOOL=YES -DOPENMP:BOOL=NO
+CMAKE_ARGS+=	-DPYTHON_MODULE:BOOL=YES
 PLIST=		${.CURDIR}/pkg-plist.pymod
 .else
 CMAKE_ARGS+=	-DPYTHON_MODULE:BOOL=NO
 .endif
-
-pre-patch:
-	${RM} ${WRKSRC}/src/gdl
 
 .if defined(BUILD_PYTHON_MODULE)
 do-install:
