@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-DISTVERSION=	3.25.1
-PORTREVISION=	1
+DISTVERSION=	3.26.0
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/2018/ http://www2.sqlite.org/2018/ http://www3.sqlite.org/2018/
 DISTNAME=	sqlite-autoconf-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
@@ -14,17 +13,18 @@ COMMENT=	SQL database engine in a C library
 LICENSE=	PD
 
 USES=		libtool ncurses pathfix
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
 
+GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
+INSTALL_TARGET=	install-strip
 
 # Compilation Options For SQLite https://www.sqlite.org/compile.html
 OPTIONS_DEFINE=		FTS4 URI URI_AUTHORITY METADATA \
 			DIRECT_READ MEMMAN SECURE_DELETE UNLOCK_NOTIFY THREADS \
 			EXTENSION ARMOR STMT DBPAGE DBSTAT FTS5 RBU NULL_TRIM \
-			LIKENOTBLOB STSHELL FTS3_TOKEN UNKNOWN_SQL SORT_REF
+			LIKENOTBLOB STSHELL FTS3_TOKEN UNKNOWN_SQL SORT_REF \
+			NORMALIZE
 OPTIONS_SINGLE=		RAMT
 OPTIONS_RADIO=		STAT
 OPTIONS_GROUP=		OPT_EXT OPT_FUNC UNICODE RTREEG RL
@@ -44,6 +44,7 @@ SECURE_DELETE_DESC=	Overwrite deleted information with zeros
 UNLOCK_NOTIFY_DESC=	Enable notification on unlocking
 EXTENSION_DESC=		Allow loadable extensions
 STSHELL_DESC=		Statically link libsqlite3 into shell
+NORMALIZE_DESC=		Enable normalized sql function
 
 # https://sqlite.org/compile.html#enable_null_trim
 NULL_TRIM_DESC=		Omits NULL columns at the ends of rows
@@ -221,6 +222,8 @@ OFFSET_CPPFLAGS=	-DSQLITE_ENABLE_OFFSET_SQL_FUNC=1
 SER1_CPPFLAGS=	-DSQLITE_ENABLE_DESERIALIZE=1
 
 SORT_REF_CPPFLAGS=	-DSQLITE_ENABLE_SORTER_REFERENCES=1
+
+NORMALIZE_CPPFLAGS=	-DSQLITE_ENABLE_NORMALIZE=1
 
 .include <bsd.port.options.mk>
 
