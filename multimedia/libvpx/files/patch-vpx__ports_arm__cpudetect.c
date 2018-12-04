@@ -49,18 +49,18 @@
 +int arm_cpu_caps(void) {
 +  int flags;
 +  int mask;
-+  u_long hwcaps = 0;
++  u_long hwcap = 0;
 +  if (!arm_cpu_env_flags(&flags)) {
 +    return flags;
 +  }
 +  mask = arm_cpu_env_mask();
 +#if __FreeBSD__ < 12
-+  hwcaps = getauxval(AT_HWCAP);
++  hwcap = getauxval(AT_HWCAP);
 +#else
-+  elf_aux_info(AT_HWCAP, &hwcaps, sizeof(hwcaps));
++  elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap));
 +#endif
 +#if HAVE_NEON || HAVE_NEON_ASM
-+  if (hwcaps & HWCAP_NEON) flags |= HAS_NEON;
++  if (hwcap & HWCAP_NEON) flags |= HAS_NEON;
 +#endif
 +  return flags & mask;
 +}

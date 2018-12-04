@@ -45,7 +45,7 @@
 +int ppc_simd_caps(void) {
 +  int flags;
 +  int mask;
-+  u_long cpu_features = 0;
++  u_long hwcap = 0;
 +
 +  // If AOM_SIMD_CAPS is set then allow only those capabilities.
 +  if (!cpu_env_flags(&flags)) {
@@ -55,13 +55,13 @@
 +  mask = cpu_env_mask();
 +
 +#if __FreeBSD__ < 12
-+  size_t sz = sizeof(cpu_features);
-+  sysctlbyname("hw.cpu_features", &cpu_features, &sz, NULL, 0);
++  size_t sz = sizeof(hwcap);
++  sysctlbyname("hw.cpu_features", &hwcap, &sz, NULL, 0);
 +#else
-+  elf_aux_info(AT_HWCAP, &cpu_features, sizeof(cpu_features));
++  elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap));
 +#endif
 +#if HAVE_VSX
-+  if (cpu_features & PPC_FEATURE_HAS_VSX) flags |= HAS_VSX;
++  if (hwcap & PPC_FEATURE_HAS_VSX) flags |= HAS_VSX;
 +#endif
 +
 +  return flags & mask;
