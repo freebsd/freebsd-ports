@@ -1,5 +1,3 @@
-TIMESTAMP = 1535819146
-SHA256 (fava-static-gen-1.8.tar.gz) = 068d9e2bdbb3ebbb599cdb3e8b8fc1d7729ebe93591217865152b9b676042e9e
-SIZE (fava-static-gen-1.8.tar.gz) = 422835
-SHA256 (beancount-fava-v1.8_GH0.tar.gz) = 4262fb01daed2964c5f75700f4fdce6fedbfffdb25bdb221a41de87b5ba49ba0
-SIZE (beancount-fava-v1.8_GH0.tar.gz) = 332251
+TIMESTAMP = 1543918959
+SHA256 (fava-1.9.tar.gz) = 337d04d9c898f7a34d89e251574b8f32ee8c9badc0b13b9f5391ba6e684ab984
+SIZE (fava-1.9.tar.gz) = 522228
