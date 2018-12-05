@@ -1,6 +1,6 @@
---- src/meson.build.orig	2018-07-11 01:43:01.888587000 +0000
-+++ src/meson.build	2018-07-11 01:43:07.416631000 +0000
-@@ -51,6 +51,10 @@ if zlib_dep.found()
+--- src/meson.build.orig	2018-09-04 16:23:32 UTC
++++ src/meson.build
+@@ -58,6 +58,10 @@ if zlib_dep.found()
      deps += [zlib_dep]
  endif
  
