@@ -275,7 +275,6 @@
     SUBDIR += php-mode.el
     SUBDIR += php56
     SUBDIR += php56-extensions
-    SUBDIR += php70
     SUBDIR += php71
     SUBDIR += php71-extensions
     SUBDIR += php72
