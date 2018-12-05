@@ -288,7 +288,6 @@
     SUBDIR += percona-monitoring-plugins
     SUBDIR += pftabled
     SUBDIR += php56-snmp
-    SUBDIR += php70-snmp
     SUBDIR += php71-snmp
     SUBDIR += php72-snmp
     SUBDIR += php73-snmp

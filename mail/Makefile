@@ -488,7 +488,6 @@
     SUBDIR += pflogsumm
     SUBDIR += pfqueue
     SUBDIR += php56-imap
-    SUBDIR += php70-imap
     SUBDIR += php71-imap
     SUBDIR += php72-imap
     SUBDIR += php73-imap

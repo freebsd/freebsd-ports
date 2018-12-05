@@ -994,10 +994,6 @@
     SUBDIR += php56-soap
     SUBDIR += php56-sockets
     SUBDIR += php56-xmlrpc
-    SUBDIR += php70-ldap
-    SUBDIR += php70-soap
-    SUBDIR += php70-sockets
-    SUBDIR += php70-xmlrpc
     SUBDIR += php71-ldap
     SUBDIR += php71-soap
     SUBDIR += php71-sockets
