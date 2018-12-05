@@ -1,0 +1,4 @@
+A fast implementation of the self initialising quadratic sieve (SIMPQS),
+for factoring large integers, written by William Hart.
+
+WWW: http://www.friedspace.com/QS/
