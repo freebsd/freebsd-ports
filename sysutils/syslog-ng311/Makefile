@@ -53,7 +53,6 @@ USES=		autoreconf:build gmake libtool pathfix pkgconfig ssl \
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	syslog-ng
 SHEBANG_FILES=	lib/merge-grammar.py
-SHEBANG_LANG=	python
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 SUB_FILES=	pkg-message
