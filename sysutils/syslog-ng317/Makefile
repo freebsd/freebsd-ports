@@ -17,7 +17,6 @@ COMMENT=	Powerful syslogd replacement
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-BROKEN_powerpc64=	fails to link: Internal error: Segmentation fault (program ld)
 BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
