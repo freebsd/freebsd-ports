@@ -211,6 +211,7 @@
     SUBDIR += fityk
     SUBDIR += flann
     SUBDIR += flint2
+    SUBDIR += flintqs
     SUBDIR += form
     SUBDIR += fpc-fftw
     SUBDIR += fpc-gmp
