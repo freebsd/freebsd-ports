@@ -10005,15 +10005,12 @@ devel/boaconstructor||2018-03-02|Has expired: Abandonware, does not work with re
 audio/amp||2018-03-02|Has expired: No more upstream
 devel/alf||2018-03-02|Has expired: Abandonware, unused in the ports tree
 net/remmina-plugin-gnome|net/remmina-plugin-secret|2018-03-04|Renamed upstream
-databases/php70-memcache|databases/php-memcache@php70|2018-03-08|Merge into a flavorized version
 databases/php71-memcache|databases/php-memcache@php71|2018-03-08|Merge into a flavorized version
 databases/php72-memcache|databases/php-memcache@php72|2018-03-08|Merge into a flavorized version
 ftp/php56-fastdfs|ftp/php-fastdfs@php56|2018-03-08|Merge into flavorized version
-ftp/php70-fastdfs|ftp/php-fastdfs@php70|2018-03-08|Merge into flavorized version
 ftp/php71-fastdfs|ftp/php-fastdfs@php71|2018-03-08|Merge into flavorized version
 ftp/php72-fastdfs|ftp/php-fastdfs@php72|2018-03-08|Merge into flavorized version
 www/unit-php56|www/unit-php@php56|2018-03-08|Merge into flavorized version
-www/unit-php70|www/unit-php@php70|2018-03-08|Merge into flavorized version
 www/unit-php71|www/unit-php@php71|2018-03-08|Merge into flavorized version
 www/unit-php72|www/unit-php@php72|2018-03-08|Merge into flavorized version
 databases/php70-memcached|databases/php-memcached|2018-03-08|Move to flavorized version
@@ -10637,9 +10634,9 @@ net-mgmt/p5-FusionInventory-Agent-Task-NetDiscovery||2018-11-20|Has expired: No 
 net-mgmt/p5-FusionInventory-Agent-Task-SNMPQuery||2018-11-20|Removed, no longer needed
 textproc/rubygem-github-linguist53|textproc/rubygem-github-linguist|2018-11-23|Obsolete by www/gitlab-ce 11.5.x upgrade, please use textproc/rubygem-github-linguist
 devel/rubygem-google-protobuf351|devel/rubygem-google-protobuf|2018-11-23|Obsolete by www/gitlab-ce 11.5.x upgrade, please use devel/rubygem-google-protobuf
-devel/giggle|devel/gitg|2018-11-23|Has expired: Development stalled. Please switch to devel/gitg.
+devel/giggle|devel/gitg|2018-11-23|Has expired: Development stalled. Please switch to devel/gitg
 net/rubygem-gitaly-proto094|net/rubygem-gitaly-proto|2018-11-24|Use net/rubygem-gitaly-proto instead
-www/rubygem-toml-rb03|www/rubygem-toml-rb|2018-11-25|Has expired: Obsoleted by update of www/gitlab. Please use www/rubygem-tom-rb instead.
+www/rubygem-toml-rb03|www/rubygem-toml-rb|2018-11-25|Has expired: Obsoleted by update of www/gitlab. Please use www/rubygem-tom-rb instead
 dns/dnscheck||2018-11-27|Unmaintained upstream over a decade
 www/mod_security3|security/modsecurity3|2018-11-27|Not an Apache module, use correct upstream name
 emulators/qemu-ppcnv|emulators/qemu-powernv|2018-11-28|Use more accurate naming for qemu PowerNV port
