@@ -338,6 +338,7 @@
     SUBDIR += lll_spect
     SUBDIR += lp_solve
     SUBDIR += lrng
+    SUBDIR += lrslib
     SUBDIR += ltl
     SUBDIR += ltl2ba
     SUBDIR += lybniz
