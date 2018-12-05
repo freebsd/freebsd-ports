@@ -77,6 +77,7 @@
 %%PERL5_MAN3%%/Dancer::Test.3.gz
 %%PERL5_MAN3%%/Dancer::Timer.3.gz
 %%PERL5_MAN3%%/Dancer::Tutorial.3.gz
+%%PERL5_MAN3%%/HTTP::Tiny::NoProxy.3.gz
 bin/dancer
 %%SITE_PERL%%/Dancer.pm
 %%SITE_PERL%%/Dancer/App.pm
@@ -156,3 +157,4 @@ bin/dancer
 %%SITE_PERL%%/Dancer/Test.pm
 %%SITE_PERL%%/Dancer/Timer.pm
 %%SITE_PERL%%/Dancer/Tutorial.pod
+%%SITE_PERL%%/HTTP/Tiny/NoProxy.pm
