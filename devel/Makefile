@@ -4656,7 +4656,6 @@
     SUBDIR += py-initgroups
     SUBDIR += py-instant
     SUBDIR += py-intbitset
-    SUBDIR += py-interface
     SUBDIR += py-intervaltree
     SUBDIR += py-invoke
     SUBDIR += py-ioflo
@@ -4906,6 +4905,7 @@
     SUBDIR += py-pudb
     SUBDIR += py-py
     SUBDIR += py-py-ubjson
+    SUBDIR += py-py_interface
     SUBDIR += py-pyasn1
     SUBDIR += py-pyasn1-modules
     SUBDIR += py-pybind11
