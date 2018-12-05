@@ -656,8 +656,6 @@
     SUBDIR += petiga
     SUBDIR += php56-bcmath
     SUBDIR += php56-gmp
-    SUBDIR += php70-bcmath
-    SUBDIR += php70-gmp
     SUBDIR += php71-bcmath
     SUBDIR += php71-gmp
     SUBDIR += php72-bcmath
