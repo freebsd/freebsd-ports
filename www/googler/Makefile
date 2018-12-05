@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	googler
-PORTVERSION=	3.6
+PORTVERSION=	3.7.1
 DISTVERSIONPREFIX=	v
 PORTREVISION=	0
 CATEGORIES=	www
@@ -26,7 +26,7 @@ NO_ARCH=	yes
 PLIST_FILES=	bin/googler man/man1/googler.1.gz
 
 post-patch:
-	@${SED} -i.bak 's/^\(ENABLE_SELF_UPGRADE_MECHANISM=\)True$$/\1False/' \
+	@${SED} -i.bak 's/^\(ENABLE_SELF_UPGRADE_MECHANISM = \)True$$/\1False/' \
 		${WRKSRC}/${PORTNAME}
 
 do-install:
