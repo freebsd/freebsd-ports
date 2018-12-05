@@ -10650,3 +10650,5 @@ java/classpath||2018-12-03|Has expired: Staled since 2012, OpenJDK is live now
 java/cacao||2018-12-03|Removed, depends on expired java/classpath
 java/jamvm||2018-12-03|Has expired: Abandonware, depends on expired java/classpath
 devel/ztcl||2018-12-04|Has expired: Unfetchable, unmaintained, info page unbuildable with recent makeinfo
+x11-toolkits/vtkfox||2018-12-05|Has expired: Depends on expiring vtk5
+lang/php70-extensions|lang/php72-extensions|2018-12-05|Has expired: Works only with EOL php 7.0
