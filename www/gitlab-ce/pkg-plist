@@ -4090,7 +4090,6 @@
 %%WWWDIR%%/app/models/sent_notification.rb
 %%WWWDIR%%/app/models/service.rb
 %%WWWDIR%%/app/models/shard.rb
-%%WWWDIR%%/app/models/site_statistic.rb
 %%WWWDIR%%/app/models/snippet.rb
 %%WWWDIR%%/app/models/snippet_blob.rb
 %%WWWDIR%%/app/models/spam_log.rb
@@ -5646,6 +5645,7 @@
 %%WWWDIR%%/app/views/shared/_no_ssh.html.haml
 %%WWWDIR%%/app/views/shared/_old_visibility_level.html.haml
 %%WWWDIR%%/app/views/shared/_outdated_browser.html.haml
+%%WWWDIR%%/app/views/shared/_personal_access_tokens_created_container.html.haml
 %%WWWDIR%%/app/views/shared/_personal_access_tokens_form.html.haml
 %%WWWDIR%%/app/views/shared/_personal_access_tokens_table.html.haml
 %%WWWDIR%%/app/views/shared/_ping_consent.html.haml
@@ -7365,6 +7365,7 @@
 %%WWWDIR%%/db/post_migrate/20181030135124_fill_empty_finished_at_in_deployments.rb
 %%WWWDIR%%/db/post_migrate/20181105201455_steal_fill_store_upload.rb
 %%WWWDIR%%/db/post_migrate/20181107054254_remove_restricted_todos_again.rb
+%%WWWDIR%%/db/post_migrate/20181123042307_drop_site_statistics.rb
 @(git,,) %%WWWDIR%%/db/schema.rb
 %%WWWDIR%%/db/seeds.rb
 %%WWWDIR%%/doc/README.md
@@ -7649,6 +7650,7 @@
 %%WWWDIR%%/doc/ci/img/types-of-pipelines.svg
 %%WWWDIR%%/doc/ci/img/view_on_env_blob.png
 %%WWWDIR%%/doc/ci/img/view_on_env_mr.png
+%%WWWDIR%%/doc/ci/img/view_on_mr_widget.png
 %%WWWDIR%%/doc/ci/interactive_web_terminal/img/finished_job_with_terminal_open.png
 %%WWWDIR%%/doc/ci/interactive_web_terminal/img/interactive_web_terminal_page.png
 %%WWWDIR%%/doc/ci/interactive_web_terminal/img/interactive_web_terminal_running_job.png
@@ -8439,6 +8441,7 @@
 %%WWWDIR%%/doc/user/discussions/img/discussion_view.png
 %%WWWDIR%%/doc/user/discussions/img/discussions_resolved.png
 %%WWWDIR%%/doc/user/discussions/img/image_resolved_discussion.png
+%%WWWDIR%%/doc/user/discussions/img/index_notes_filters.png
 %%WWWDIR%%/doc/user/discussions/img/lock_form_member.png
 %%WWWDIR%%/doc/user/discussions/img/lock_form_non_member.png
 %%WWWDIR%%/doc/user/discussions/img/merge_request_commits_tab.png
@@ -8793,6 +8796,7 @@
 %%WWWDIR%%/doc/user/project/merge_requests/img/merge_request.png
 %%WWWDIR%%/doc/user/project/merge_requests/img/merge_request_diff.png
 %%WWWDIR%%/doc/user/project/merge_requests/img/merge_request_diff_file_navigation.png
+%%WWWDIR%%/doc/user/project/merge_requests/img/merge_request_pipeline.png
 %%WWWDIR%%/doc/user/project/merge_requests/img/merge_request_widget.png
 %%WWWDIR%%/doc/user/project/merge_requests/img/merge_when_pipeline_succeeds_enable.png
 %%WWWDIR%%/doc/user/project/merge_requests/img/merge_when_pipeline_succeeds_only_if_succeeds_msg.png
@@ -9036,7 +9040,6 @@
 %%WWWDIR%%/doc/workflow/workflow.md
 %%WWWDIR%%/docker-compose.yml
 %%WWWDIR%%/docker/README.md
-%%WWWDIR%%/ee/changelogs/unreleased/sh-fix-issue-54189.yml
 %%WWWDIR%%/fixtures/emojis/aliases.json
 %%WWWDIR%%/fixtures/emojis/digests.json
 %%WWWDIR%%/fixtures/emojis/emoji-unicode-version-map.json
@@ -10159,6 +10162,7 @@
 %%WWWDIR%%/lib/gitlab/sidekiq_logging/json_formatter.rb
 %%WWWDIR%%/lib/gitlab/sidekiq_logging/structured_logger.rb
 %%WWWDIR%%/lib/gitlab/sidekiq_middleware/arguments_logger.rb
+%%WWWDIR%%/lib/gitlab/sidekiq_middleware/batch_loader.rb
 %%WWWDIR%%/lib/gitlab/sidekiq_middleware/request_store_middleware.rb
 %%WWWDIR%%/lib/gitlab/sidekiq_middleware/shutdown.rb
 %%WWWDIR%%/lib/gitlab/sidekiq_status.rb
@@ -10345,7 +10349,6 @@
 %%WWWDIR%%/lib/tasks/gitlab/pages.rake
 %%WWWDIR%%/lib/tasks/gitlab/setup.rake
 %%WWWDIR%%/lib/tasks/gitlab/shell.rake
-%%WWWDIR%%/lib/tasks/gitlab/site_statistics.rake
 %%WWWDIR%%/lib/tasks/gitlab/storage.rake
 %%WWWDIR%%/lib/tasks/gitlab/tcp_check.rake
 %%WWWDIR%%/lib/tasks/gitlab/test.rake
@@ -10384,9 +10387,11 @@
 @(git,,) %%WWWDIR%%/locale/bg/gitlab.po.time_stamp
 @(git,,) %%WWWDIR%%/locale/ca_ES/gitlab.po
 @(git,,) %%WWWDIR%%/locale/cs_CZ/gitlab.po
+@(git,,) %%WWWDIR%%/locale/cy_GB/gitlab.po
 @(git,,) %%WWWDIR%%/locale/da_DK/gitlab.po
 @(git,,) %%WWWDIR%%/locale/de/gitlab.po
 @(git,,) %%WWWDIR%%/locale/de/gitlab.po.time_stamp
+@(git,,) %%WWWDIR%%/locale/el_GR/gitlab.po
 @(git,,) %%WWWDIR%%/locale/en/gitlab.po
 @(git,,) %%WWWDIR%%/locale/en/gitlab.po.time_stamp
 @(git,,) %%WWWDIR%%/locale/eo/gitlab.po
@@ -10400,6 +10405,7 @@
 @(git,,) %%WWWDIR%%/locale/gitlab.pot
 @(git,,) %%WWWDIR%%/locale/gl_ES/gitlab.po
 @(git,,) %%WWWDIR%%/locale/he_IL/gitlab.po
+@(git,,) %%WWWDIR%%/locale/hu_HU/gitlab.po
 @(git,,) %%WWWDIR%%/locale/id_ID/gitlab.po
 @(git,,) %%WWWDIR%%/locale/it/gitlab.po
 @(git,,) %%WWWDIR%%/locale/it/gitlab.po.time_stamp
@@ -10413,10 +10419,14 @@
 @(git,,) %%WWWDIR%%/locale/pl_PL/gitlab.po
 @(git,,) %%WWWDIR%%/locale/pt_BR/gitlab.po
 @(git,,) %%WWWDIR%%/locale/pt_BR/gitlab.po.time_stamp
+@(git,,) %%WWWDIR%%/locale/pt_PT/gitlab.po
 @(git,,) %%WWWDIR%%/locale/ro_RO/gitlab.po
 @(git,,) %%WWWDIR%%/locale/ru/gitlab.po
 @(git,,) %%WWWDIR%%/locale/ru/gitlab.po.time_stamp
+@(git,,) %%WWWDIR%%/locale/sk_SK/gitlab.po
 @(git,,) %%WWWDIR%%/locale/sq_AL/gitlab.po
+@(git,,) %%WWWDIR%%/locale/sr_CS/gitlab.po
+@(git,,) %%WWWDIR%%/locale/sr_SP/gitlab.po
 @(git,,) %%WWWDIR%%/locale/tr_TR/gitlab.po
 @(git,,) %%WWWDIR%%/locale/uk/gitlab.po
 @(git,,) %%WWWDIR%%/locale/uk/gitlab.po.time_stamp
@@ -11010,7 +11020,6 @@
 %%WWWDIR%%/spec/factories/sequences.rb
 %%WWWDIR%%/spec/factories/service_hooks.rb
 %%WWWDIR%%/spec/factories/services.rb
-%%WWWDIR%%/spec/factories/site_statistics.rb
 %%WWWDIR%%/spec/factories/snippets.rb
 %%WWWDIR%%/spec/factories/spam_logs.rb
 %%WWWDIR%%/spec/factories/subscriptions.rb
@@ -11943,6 +11952,7 @@
 %%WWWDIR%%/spec/helpers/wiki_helper_spec.rb
 %%WWWDIR%%/spec/initializers/6_validations_spec.rb
 %%WWWDIR%%/spec/initializers/8_metrics_spec.rb
+%%WWWDIR%%/spec/initializers/attr_encrypted_no_db_connection_spec.rb
 %%WWWDIR%%/spec/initializers/direct_upload_support_spec.rb
 %%WWWDIR%%/spec/initializers/doorkeeper_spec.rb
 %%WWWDIR%%/spec/initializers/fog_google_https_private_urls_spec.rb
@@ -13841,7 +13851,6 @@
 %%WWWDIR%%/spec/models/sent_notification_spec.rb
 %%WWWDIR%%/spec/models/service_spec.rb
 %%WWWDIR%%/spec/models/shard_spec.rb
-%%WWWDIR%%/spec/models/site_statistic_spec.rb
 %%WWWDIR%%/spec/models/snippet_blob_spec.rb
 %%WWWDIR%%/spec/models/snippet_spec.rb
 %%WWWDIR%%/spec/models/spam_log_spec.rb
@@ -14650,7 +14659,6 @@
 %%WWWDIR%%/spec/tasks/gitlab/lfs/migrate_rake_spec.rb
 %%WWWDIR%%/spec/tasks/gitlab/mail_google_schema_whitelisting.rb
 %%WWWDIR%%/spec/tasks/gitlab/shell_rake_spec.rb
-%%WWWDIR%%/spec/tasks/gitlab/site_statistics_rake_spec.rb
 %%WWWDIR%%/spec/tasks/gitlab/storage_rake_spec.rb
 %%WWWDIR%%/spec/tasks/gitlab/task_helpers_spec.rb
 %%WWWDIR%%/spec/tasks/gitlab/traces_rake_spec.rb
