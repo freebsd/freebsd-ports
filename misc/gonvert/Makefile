@@ -10,10 +10,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Conversion utility that allows conversion between many units
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
-USE_GNOME=	pygtk2
 USES=		python:2.7
+USE_GNOME=	pygtk2
 NO_BUILD=	yes
+NO_ARCH=	yes
 
 PORTDOCS=	CHANGELOG FAQ README THANKS
 
