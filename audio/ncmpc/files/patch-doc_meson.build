@@ -1,50 +1,14 @@
---- doc/meson.build.orig	2018-04-04 08:23:50 UTC
+--- doc/meson.build.orig	2018-10-25 17:01:44 UTC
 +++ doc/meson.build
-@@ -1,24 +1,28 @@
- sphinx = find_program('sphinx-build', required:false)
--if sphinx.found()
--  custom_target(
--    'HTML documentation',
--    output: 'html',
--    input: ['index.rst', 'conf.py'],
--    command: [sphinx, '-q', '-b', 'html', '-d', '@OUTDIR@/doctrees', meson.current_source_dir(), '@OUTPUT@'],
--    build_by_default: true,
--    install: true,
--    install_dir: join_paths(get_option('datadir'), 'doc', meson.project_name()),
--  )
-+if sphinx.found() and get_option('manual')
-+  if get_option('html_manual')
-+    custom_target(
-+      'HTML documentation',
-+      output: 'html',
-+      input: ['index.rst', 'conf.py'],
-+      command: [sphinx, '-q', '-b', 'html', '-d', '@OUTDIR@/html_doctrees', meson.current_source_dir(), '@OUTPUT@'],
-+      build_by_default: true,
-+      install: true,
-+      install_dir: join_paths(get_option('datadir'), 'doc', meson.project_name()),
-+    )
-+  endif
- 
--  custom_target(
--    'Manpage documentation',
+@@ -30,9 +30,9 @@ endif
+ if get_option('manual')
+   custom_target(
+     'Manpage documentation',
 -    output: 'man',
--    input: ['index.rst', 'conf.py'],
--    command: [sphinx, '-q', '-b', 'man', '-d', '@OUTDIR@/doctrees', meson.current_source_dir(), '@OUTPUT@/man1'],
--    build_by_default: true,
--    install: true,
--    install_dir: get_option('datadir'),
--  )
-+  if get_option('manual')
-+    custom_target(
-+      'Manpage documentation',
-+      output: 'man1',
-+      input: ['index.rst', 'conf.py'],
-+      command: [sphinx, '-q', '-b', 'man', '-d', '@OUTDIR@/man_doctrees', meson.current_source_dir(), '@OUTPUT@'],
-+      build_by_default: true,
-+      install: true,
-+      install_dir: get_option('mandir'),
-+    )
-+  endif
- endif
- 
- if get_option('documentation')
++    output: 'man1',
+     input: ['index.rst', 'conf.py'],
+-    command: [sphinx, '-q', '-b', 'man', '-d', '@OUTDIR@/man_doctrees', meson.current_source_dir(), '@OUTPUT@/man1'],
++    command: [sphinx, '-q', '-b', 'man', '-d', '@OUTDIR@/man_doctrees', meson.current_source_dir(), '@OUTPUT@'],
+     build_by_default: true,
+     install: true,
+     install_dir: get_option('mandir'),
