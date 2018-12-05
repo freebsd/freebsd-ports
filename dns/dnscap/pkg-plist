@@ -1,5 +1,15 @@
 bin/dnscap
 %%CDS%%bin/dnscap-rssm-rssac002
+lib/dnscap/anonaes128.a
+lib/dnscap/anonaes128.so
+lib/dnscap/anonmask.a
+lib/dnscap/anonmask.so
+lib/dnscap/cryptopan.a
+lib/dnscap/cryptopan.so
+lib/dnscap/cryptopant.a
+lib/dnscap/cryptopant.so
+lib/dnscap/ipcrypt.a
+lib/dnscap/ipcrypt.so
 lib/dnscap/pcapdump.a
 lib/dnscap/pcapdump.so
 lib/dnscap/royparse.a

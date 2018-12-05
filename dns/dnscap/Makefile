@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	dnscap
-PORTVERSION=	1.9.0
-DISTVERSIONPREFIX=	v
+PORTVERSION=	1.10.0
+MASTER_SITES=	https://www.dns-oarc.net/files/dnscap/
 PORTEPOCH=	1
 CATEGORIES=	dns
 
@@ -18,15 +18,13 @@ OPTIONS_DEFAULT=THREADS
 OPTIONS_SUB=	yes
 CDS_DESC=	CBOR DNS Stream (CDS) format (experimental)
 
+USES=		autoreconf libtool localbase pkgconfig ssl
+
 CONFIGURE_ARGS=	--enable-shared --enable-static
+CONFIGURE_ENV=	libcrypto_CFLAGS=-I${OPENSSLINC}/include \
+		libcrypto_LIBS="-L${OPENSSLLIB}/lib -lcrypto"
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		autoreconf libtool localbase
-
-GH_ACCOUNT=	DNS-OARC
-# https://github.com/DNS-OARC/dnscap/tree/develop/src
-GH_TUPLE=	DNS-OARC:pcap-thread:v3.1.0:pcap/src/pcap-thread
-USE_GITHUB=	yes
 
 CDS_CONFIGURE_OFF=	ac_cv_lib_ldns_ldns_wire2pkt=no \
 			ac_cv_lib_tinycbor_cbor_parser_init=no
