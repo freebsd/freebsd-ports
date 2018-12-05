@@ -1,0 +1,7 @@
+The Simple Encrypted Arithmetic Library (SEAL) is an easy-to-use but powerful
+open-source homomorphic encryption library, developed by researchers in the
+Cryptography Research Group at Microsoft Research. SEAL is written in standard
+C++; it has no external dependencies, so it is easy to compile in many
+different environments. SEAL is licensed under the MIT license.
+
+WWW: http://sealcrypto.org
