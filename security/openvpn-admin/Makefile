@@ -8,7 +8,7 @@ PORTREVISION=	6
 CATEGORIES=	security gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/release-${PORTVERSION}
 
-MAINTAINER=	egypcio@googlemail.com
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	GUI frontend to openvpn
 
 LICENSE=	LGPL21+

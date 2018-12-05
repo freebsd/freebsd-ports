@@ -7,7 +7,7 @@ CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	egypcio@googlemail.com
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Convert amongst many different IPv4 notations
 
 LICENSE=	BSD3CLAUSE

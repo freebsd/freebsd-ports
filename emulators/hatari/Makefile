@@ -6,7 +6,7 @@ PORTVERSION=	2.1.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.tuxfamily.org/hatari/${PORTVERSION}/
 
-MAINTAINER=	egypcio@googlemail.com
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Atari ST emulator
 
 LICENSE=	GPLv2+

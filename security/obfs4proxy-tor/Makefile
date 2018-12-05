@@ -8,7 +8,7 @@ MASTER_SITES=	https://people.torproject.org/~yawning/releases/${PORTNAME}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 PKGNAMESUFFIX=	-tor
 
-MAINTAINER=	egypcio@googlemail.com
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Pluggable transport proxy for Tor (obfs4, The Obfuscator)
 
 LICENSE=	BSD3CLAUSE

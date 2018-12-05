@@ -7,7 +7,7 @@ CATEGORIES=	dns
 MASTER_SITES=	ftp://ftp.dhis.org/pub/dhis/ \
 		LOCAL/meta
 
-MAINTAINER=	egypcio@googlemail.com
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	DHIS server for dynamic updates on the server using specific engines
 
 LICENSE=	BSD2CLAUSE

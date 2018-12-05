@@ -7,7 +7,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	fte-${PORTVERSION}
 
-MAINTAINER=	egypcio@googlemail.com
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Format-Transforming Encryption Library/Toolkit
 
 LICENSE=	APACHE20

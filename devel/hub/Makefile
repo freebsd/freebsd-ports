@@ -6,7 +6,7 @@ PORTVERSION=	2.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel sysutils
 
-MAINTAINER=	egypcio@googlemail.com
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Introduces git to GitHub
 
 LICENSE=	MIT

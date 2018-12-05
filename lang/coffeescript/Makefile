@@ -4,7 +4,7 @@ PORTNAME=	coffeescript
 DISTVERSION=	2.3.2
 CATEGORIES=	lang
 
-MAINTAINER=	egypcio@googlemail.com
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Unfancy JavaScript
 
 LICENSE=	MIT

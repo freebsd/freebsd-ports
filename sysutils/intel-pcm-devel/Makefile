@@ -7,7 +7,7 @@ PORTEPOCH=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	egypcio@googlemail.com
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Process Count Monitor (PCM) for Intel processors
 
 LICENSE=	BSD3CLAUSE

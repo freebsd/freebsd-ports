@@ -7,7 +7,7 @@ CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	egypcio@googlemail.com
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Python library and command line tool for configuring a YubiKey
 
 LICENSE=	BSD2CLAUSE

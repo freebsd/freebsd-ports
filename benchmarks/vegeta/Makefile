@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	cli/v
 DISTVERSION=	12.1.0
 CATEGORIES=	benchmarks www
 
-MAINTAINER=	egypcio@googlemail.com
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	HTTP load testing tool and library
 
 LICENSE=	MIT

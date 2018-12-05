@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	OnionScan-
 DISTVERSION=	0.2
 CATEGORIES=	security net
 
-MAINTAINER=	egypcio@googlemail.com
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Free and open source tool for investigating Onion Services
 
 LICENSE=	MIT
