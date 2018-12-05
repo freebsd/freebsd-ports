@@ -25,4 +25,4 @@ o The Python node runs on Python 2.5 and Erlang R12. It may well still work
   with older version of both Python and Erlang. Development started on
   Python 1.5 and Erlang R7.
 
-WWW: http://www.lysator.liu.se/~tab/erlang/py_interface/
+WWW: https://www.lysator.liu.se/~tab/erlang/py_interface/
