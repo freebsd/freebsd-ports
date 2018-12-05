@@ -1227,16 +1227,6 @@
     SUBDIR += php56-xmlreader
     SUBDIR += php56-xmlwriter
     SUBDIR += php56-xsl
-    SUBDIR += php70-ctype
-    SUBDIR += php70-dom
-    SUBDIR += php70-enchant
-    SUBDIR += php70-pspell
-    SUBDIR += php70-simplexml
-    SUBDIR += php70-wddx
-    SUBDIR += php70-xml
-    SUBDIR += php70-xmlreader
-    SUBDIR += php70-xmlwriter
-    SUBDIR += php70-xsl
     SUBDIR += php71-ctype
     SUBDIR += php71-dom
     SUBDIR += php71-enchant

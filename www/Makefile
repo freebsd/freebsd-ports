@@ -463,7 +463,6 @@
     SUBDIR += mod_pagespeed
     SUBDIR += mod_perl2
     SUBDIR += mod_php56
-    SUBDIR += mod_php70
     SUBDIR += mod_php71
     SUBDIR += mod_php72
     SUBDIR += mod_php73
@@ -1457,9 +1456,6 @@
     SUBDIR += php56-opcache
     SUBDIR += php56-session
     SUBDIR += php56-tidy
-    SUBDIR += php70-opcache
-    SUBDIR += php70-session
-    SUBDIR += php70-tidy
     SUBDIR += php71-opcache
     SUBDIR += php71-session
     SUBDIR += php71-tidy
