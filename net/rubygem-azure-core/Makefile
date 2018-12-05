@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure-core
-PORTVERSION=	0.1.14
+PORTVERSION=	0.1.15
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -15,8 +15,9 @@ RUN_DEPENDS=	rubygem-faraday>=0.9:www/rubygem-faraday \
 		rubygem-faraday_middleware>=0.10:www/rubygem-faraday_middleware \
 		rubygem-nokogiri>=1.6:textproc/rubygem-nokogiri
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
