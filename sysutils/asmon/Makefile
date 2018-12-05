@@ -16,14 +16,12 @@ BROKEN_FreeBSD_12=	fails to compile: read_mem.c: invalid use of undefined type '
 BROKEN_FreeBSD_13=	fails to compile: read_mem.c: invalid use of undefined type 'struct vmmeter'
 BROKEN_mips=		fails to compile: asmon.c: storage size of 'sum' isn't known
 BROKEN_mips64=		fails to compile: asmon.c: storage size of 'sum' isn't known
-BROKEN_powerpc64=	fails to compile: asmon.c: storage size of 'sum' isn't known
-
-USE_XORG=	xpm x11
 
 BUILD_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/asmon
 CFLAGS+=	-I${LOCALBASE}/include
 USES=		gmake
 USE_CSTD=	gnu89
+USE_XORG=	xpm x11
 ALL_TARGET=	asmon
 MAKE_ARGS+=	LIBDIR="-L${LOCALBASE}/lib" \
 		SOLARIS_LIBS=-lkvm

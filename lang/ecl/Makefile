@@ -15,7 +15,6 @@ LICENSE=	LGPL20
 BROKEN_aarch64=		fails to compile: error: unknown type name AO_TS_t
 BROKEN_mips=		fails to build: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
 BROKEN_mips64=		fails to build: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
-BROKEN_powerpc64=	fails to link: undefined reference to fmodl
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 

@@ -14,7 +14,6 @@ BROKEN_FreeBSD_12=	fails to compile: read_mem.c: invalid use of undefined type '
 BROKEN_FreeBSD_13=	fails to compile: read_mem.c: invalid use of undefined type 'struct vmmeter'
 BROKEN_mips=		fails to compile: mem_freebsd.c: storage size of 'vm' isn't known
 BROKEN_mips64=		fails to compile: mem_freebsd.c: storage size of 'vm' isn't known
-BROKEN_powerpc64=	fails to compile: mem_freebsd.c: storage size of 'vm' isn't known
 
 USES=		tar:bzip2
 USE_XORG=	xpm

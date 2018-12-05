@@ -12,8 +12,6 @@ COMMENT=	MAC policy to manage access for setting realtime priorities by GID
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	fails to build: make[1]: don't know how to make /usr/src/sys/tools/vnode_if.awk
-
 USES=		kmod uidfix
 
 USE_GITHUB=	yes

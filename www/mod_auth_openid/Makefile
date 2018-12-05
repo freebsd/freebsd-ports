@@ -3,8 +3,8 @@
 
 PORTNAME=	mod_auth_openid
 PORTVERSION=	0.8
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
@@ -13,8 +13,6 @@ COMMENT=	Authentication module for the Apache 2 webserver with OpenID
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_powerpc64=	Does not build
 
 LIB_DEPENDS=	libopkele.so:devel/libopkele \
 		libsqlite3.so:databases/sqlite3

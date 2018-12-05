@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_mips=		fails to compile: md_json.c:29: expected [error|warning|ignored] after pragma GCC diagnostic
 BROKEN_mips64=		fails to compile: md_json.c:29: expected [error|warning|ignored] after pragma GCC diagnostic
-BROKEN_powerpc64=	fails to compile: md_json.c:29: expected [error|warning|ignored] after pragma GCC diagnostic
 
 LIB_DEPENDS=	libaprutil-1.so:devel/apr1 \
 		libcurl.so:ftp/curl \

@@ -19,8 +19,6 @@ COMMENT=	The Public Domain Korn Shell
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_powerpc64=	fails to compile siglist.in
-
 OPTIONS_DEFINE=	STATIC
 
 GNU_CONFIGURE=	yes
