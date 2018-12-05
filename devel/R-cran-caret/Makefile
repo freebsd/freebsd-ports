@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	caret
-DISTVERSION=	6.0-80
+DISTVERSION=	6.0-81
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -16,7 +16,7 @@ CRAN_DEPENDS=	R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
 		R-cran-plyr>0:devel/R-cran-plyr \
 		R-cran-ModelMetrics>=1.1.0:devel/R-cran-ModelMetrics \
 		R-cran-reshape2>0:devel/R-cran-reshape2 \
-		R-cran-recipes>0.0.1:math/R-cran-recipes \
+		R-cran-recipes>=0.1.4:math/R-cran-recipes \
 		R-cran-withr>=2.0.0:devel/R-cran-withr
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
