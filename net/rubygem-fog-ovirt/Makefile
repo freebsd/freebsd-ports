@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-ovirt
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -18,8 +18,9 @@ RUN_DEPENDS=	rubygem-fog-core>=0:devel/rubygem-fog-core \
 		rubygem-ovirt-engine-sdk>=4.1.3:net/rubygem-ovirt-engine-sdk \
 		rubygem-rbovirt>=0.1.5:www/rubygem-rbovirt
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
