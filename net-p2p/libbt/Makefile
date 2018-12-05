@@ -6,7 +6,7 @@ DISTVERSION=	1.06
 CATEGORIES=	net-p2p devel
 MASTER_SITES=	SF
 
-MAINTAINER=	egypcio@googlemail.com
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	C library implementing the core BitTorrent protocol
 
 LICENSE=	GPLv2 LGPL21

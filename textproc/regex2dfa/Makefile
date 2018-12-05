@@ -5,7 +5,7 @@ DISTVERSION=	0.1.6
 PORTREVISION=	1
 CATEGORIES=	textproc
 
-MAINTAINER=	egypcio@googlemail.com
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Command-line utility that converts regular expressions to DFA
 
 LICENSE=	APACHE20

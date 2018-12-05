@@ -6,7 +6,7 @@ PORTVERSION=		0.11.0
 DISTVERSIONPREFIX=	releases/
 CATEGORIES=		devel
 
-MAINTAINER=	egypcio@googlemail.com
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	High-performance datastructures and utilities for C++
 
 LICENSE=	BSD3CLAUSE

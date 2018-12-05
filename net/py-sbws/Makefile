@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=		net python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	egypcio@googlemail.com
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Tor network bandwidth scanner
 
 LICENSE=	CC0-1.0

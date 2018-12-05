@@ -6,7 +6,7 @@ PORTVERSION=		0.7.0
 DISTVERSIONPREFIX=	releases/
 CATEGORIES=		devel
 
-MAINTAINER=	egypcio@googlemail.com
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	High-performance messaging layer
 
 LICENSE=	BSD3CLAUSE

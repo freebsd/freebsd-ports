@@ -6,7 +6,7 @@ DISTVERSION=	1.9.2
 CATEGORIES=	irc security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	egypcio@googlemail.com
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	WeeChat script for Off-the-Record (OTR) messaging
 
 LICENSE=	GPLv3

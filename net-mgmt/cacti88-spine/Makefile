@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.cacti.net/downloads/${PORTNAME}/
 PKGNAMEPREFIX=	cacti88-
 DISTNAME=	cacti-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	egypcio@googlemail.com
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Multithreaded poller for Cacti written in C
 
 LICENSE=	LGPL21+

@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=		2.6.0
 CATEGORIES=		devel
 
-MAINTAINER=	egypcio@googlemail.com
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Git extension for versioning large files
 
 LICENSE=	MIT
