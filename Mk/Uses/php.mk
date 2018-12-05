@@ -96,7 +96,7 @@ DIST_SUBDIR=	PECL
 
 PHPBASE?=	${LOCALBASE}
 
-_ALL_PHP_VERSIONS=	56 70 71 72 73
+_ALL_PHP_VERSIONS=	56 71 72 73
 
 # Make the already installed PHP the default one.
 .  if exists(${PHPBASE}/etc/php.conf)
@@ -168,9 +168,6 @@ PHP_EXT_DIR=   20170718
 PHP_EXT_INC=    pcre spl
 .    elif ${PHP_VER} == 71
 PHP_EXT_DIR=   20160303
-PHP_EXT_INC=    pcre spl
-.    elif ${PHP_VER} == 70
-PHP_EXT_DIR=   20151012
 PHP_EXT_INC=    pcre spl
 .    elif ${PHP_VER} == 56
 PHP_EXT_DIR=	20131226
@@ -357,13 +354,12 @@ _USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dom \
 		tidy tokenizer wddx xml xmlreader xmlrpc xmlwriter xsl zip zlib
 # version specific components
 _USE_PHP_VER56=	${_USE_PHP_ALL} mssql mysql sybase_ct
-_USE_PHP_VER70=	${_USE_PHP_ALL}
 _USE_PHP_VER71=	${_USE_PHP_ALL}
 _USE_PHP_VER72=	${_USE_PHP_ALL} sodium
 _USE_PHP_VER73=	${_USE_PHP_ALL} sodium
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
-.    if ${PHP_VER} >= 70
+.    if ${PHP_VER} >= 71
 bitset_DEPENDS=	math/pecl-bitset@${PHP_FLAVOR}
 .    else
 bitset_DEPENDS=	math/pecl-bitset2@${PHP_FLAVOR}
@@ -388,7 +384,7 @@ iconv_DEPENDS=	converters/php${PHP_VER}-iconv
 igbinary_DEPENDS=	converters/pecl-igbinary@${PHP_FLAVOR}
 imap_DEPENDS=	mail/php${PHP_VER}-imap
 interbase_DEPENDS=	databases/php${PHP_VER}-interbase
-.    if ${PHP_VER} >= 70
+.    if ${PHP_VER} >= 71
 intl_DEPENDS=	devel/php${PHP_VER}-intl
 .    else
 intl_DEPENDS=	devel/pecl-intl@${PHP_FLAVOR}
@@ -401,12 +397,12 @@ mcrypt_DEPENDS=	security/pecl-mcrypt@${PHP_FLAVOR}
 .    else
 mcrypt_DEPENDS=	security/php${PHP_VER}-mcrypt
 .    endif
-.    if ${PHP_VER} >= 70
+.    if ${PHP_VER} >= 71
 memcache_DEPENDS=	databases/php-memcache@${PHP_FLAVOR}
 .    else
 memcache_DEPENDS=	databases/pecl-memcache@${PHP_FLAVOR}
 .    endif
-.    if ${PHP_VER} >= 70
+.    if ${PHP_VER} >= 71
 memcached_DEPENDS=	databases/pecl-memcached@${PHP_FLAVOR}
 .    else
 memcached_DEPENDS=	databases/pecl-memcached2@${PHP_FLAVOR}
