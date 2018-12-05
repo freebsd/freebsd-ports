@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncmpc
-PORTVERSION=	0.30
+PORTVERSION=	0.33
 CATEGORIES=	audio
 MASTER_SITES=	http://www.musicpd.org/download/ncmpc/0/
 
@@ -12,16 +12,21 @@ COMMENT=	Ncurses client for the musicpd
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libmpdclient.so:audio/libmpdclient \
+		libpcre.so:devel/pcre
 
-USES=		compiler:c++14-lang gnome iconv localbase meson ncurses pkgconfig tar:xz
-USE_GNOME=	glib20
+USES=		compiler:c++14-lang iconv localbase:ldflags meson ncurses \
+		pkgconfig tar:xz
 
-OPTIONS_DEFINE=		DOCS LYRICS MANPAGES NLS
-OPTIONS_DEFAULT=	LYRICS MANPAGES
+OPTIONS_DEFINE=		COLORS DOCS LYRICS MANPAGES NLS
+OPTIONS_DEFAULT=	COLORS LYRICS MANPAGES
 OPTIONS_SUB=		yes
 
+COLORS_DESC=		Compile with color support
 LYRICS_DESC=		Compile with lyrics screen
+
+COLORS_MESON_TRUE=	colors
 
 DOCS_IMPLIES=		MANPAGES
 DOCS_MESON_TRUE=	html_manual
@@ -34,7 +39,9 @@ MANPAGES_MAKE_ENV=	PYTHON=${PYTHON_CMD} \
 MANPAGES_MESON_TRUE=	manual
 MANPAGES_USES=		python:build
 
-NLS_MESON_TRUE=		nls
+NLS_LDFLAGS=		-lintl
+NLS_MESON_OFF=		-Dnls=disabled
+NLS_MESON_ON=		-Dnls=enabled
 NLS_USES=		gettext
 
 .include <bsd.port.mk>
