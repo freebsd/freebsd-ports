@@ -174,7 +174,7 @@ PHP_EXT_DIR=	20131226
 PHP_EXT_INC=	pcre spl
 .    else
 # (rene) default to DEFAULT_VERSIONS
-PHP_EXT_DIR=	20131226
+PHP_EXT_DIR=	20170718
 PHP_EXT_INC=	pcre spl
 .    endif
 
