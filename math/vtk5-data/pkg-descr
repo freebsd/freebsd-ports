@@ -1,9 +1,0 @@
-This port contains data and baseline images for VTK regression testing
-and other VTK examples. The Data directory are data files of various
-types. This includes polygonal data, images, volumes, structured grids,
-rectilinear grids, and multi-variate data.
-The Baseline are the testing images. These are used in testing to compare
-a valid image against a generated image. If a difference between the two
-images is found, then the test is considered to have failed.
-
-WWW: http://www.vtk.org/

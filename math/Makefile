@@ -869,7 +869,6 @@
     SUBDIR += unuran
     SUBDIR += viennacl
     SUBDIR += vowpal_wabbit
-    SUBDIR += vtk5-data
     SUBDIR += vtk6
     SUBDIR += vtk8
     SUBDIR += wcalc
