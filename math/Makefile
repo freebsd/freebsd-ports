@@ -3,6 +3,7 @@
 
     COMMENT = Mathematics
 
+    SUBDIR += 4ti2
     SUBDIR += GiNaC
     SUBDIR += PDL
     SUBDIR += R

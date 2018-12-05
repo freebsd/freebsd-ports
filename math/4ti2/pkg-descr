@@ -1,0 +1,21 @@
+4ti2 is a software package for algebraic, geometric and combinatorial problems
+on linear spaces. It computes
+* the circuits of a cone
+* a problem matrix corresponding to graphical statistical models
+* generators for the symmetry group acting on 4-way tables
+* the Graver basis of a matrix or a given lattice
+* a Groebner basis of the toric ideal of a matrix or, more general, of the
+  lattice ideal of a lattice
+* a Markov basis (generating set) of the toric ideal
+* the minimal solution of an integer linear program or, more general, a lattice
+  program, using a Groebner basis
+* the normal form of a list of feasible points
+* the primitive partition identities, that is, the Graver basis of [1 2 3 ... N]
+* a generator description of a cone
+* the extreme rays of a cone
+* the minimal solution of an integer linear program or, more general, a lattice
+  program using a Groebner basis
+* an integer lattice basis
+* solutions of linear inequality and equation systems over the integers
+
+WWW: https://4ti2.github.io/
