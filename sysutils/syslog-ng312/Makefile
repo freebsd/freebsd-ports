@@ -19,7 +19,6 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 
 DEPRECATED=		No longer officially supported by Balabit
 EXPIRATION_DATE=	2019-12-31
-BROKEN_powerpc64=	fails to link: Internal error: Segmentation fault (program ld)
 BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
