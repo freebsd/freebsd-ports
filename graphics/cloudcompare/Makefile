@@ -4,7 +4,7 @@ PORTNAME=	cloudcompare
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.9.1-288
 DISTVERSIONSUFFIX=	-gb4d51361
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 MAINTAINER=	neel@neelc.org
@@ -13,7 +13,6 @@ COMMENT=	3D point cloud processing software
 LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi
 
-BROKEN=		wrong LIB_DEPENDS: libpcl_people.so - not found
 BROKEN_aarch64=		fails to compile: mmintrin.h:47:5: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
 
 USES=		cmake:outsource localbase:ldflags qt:5
@@ -56,7 +55,7 @@ PLUGINS_USES=		eigen:3 jpeg python:2.7
 PLUGINS_CMAKE_BOOL=	INSTALL_QANIMATION_PLUGIN INSTALL_QBLUR_PLUGIN INSTALL_QBROOM_PLUGIN INSTALL_QCOMPASS_PLUGIN \
 			INSTALL_QCSF_PLUGIN INSTALL_QCSV_MATRIX_IO_PLUGIN INSTALL_QDUMMY_PLUGIN INSTALL_QEDL_PLUGIN INSTALL_QFACETS_PLUGIN \
 			INSTALL_QHPR_PLUGIN INSTALL_QM3C2_PLUGIN \
-			INSTALL_QPCL_PLUGIN INSTALL_QPCV_PLUGIN INSTALL_QPHOTOSCAN_IO_PLUGIN INSTALL_QRANSAC_SD_PLUGIN \
+			INSTALL_QPCV_PLUGIN INSTALL_QPHOTOSCAN_IO_PLUGIN INSTALL_QRANSAC_SD_PLUGIN \
 			INSTALL_QSRA_PLUGIN INSTALL_QSSAO_PLUGIN # plugins requiring rare external libs are left out, TODO maybe add some of them?
 PLUGINS_CMAKE_ON=	-DEIGEN_ROOT_DIR:BOOL=${LOCALBASE}/include/eigen3
 PLUGINS_CXXFLAGS=	-Wno-narrowing
@@ -66,7 +65,6 @@ PLUGINS_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libexpat.so:textproc/expat2 \
 			libflann_cpp_s.so:math/flann \
 			libfreetype.so:print/freetype2 \
-			libpcl_people.so:graphics/pcl-pointclouds \
 			libpng.so:graphics/png \
 			libtiff.so:graphics/tiff \
 			libvtkDomainsChemistry-6.2.so:math/vtk6

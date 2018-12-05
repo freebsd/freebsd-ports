@@ -14,8 +14,6 @@ lib/cloudcompare/libQCC_IO_LIB.so
 %%PLUGINS%%lib/cloudcompare/plugins/libQFACETS_PLUGIN_DLL.so
 %%PLUGINS%%lib/cloudcompare/plugins/libQHPR_PLUGIN.so
 %%PLUGINS%%lib/cloudcompare/plugins/libQM3C2_PLUGIN_DLL.so
-%%PLUGINS%%lib/cloudcompare/plugins/libQPCL_IO_PLUGIN.so
-%%PLUGINS%%lib/cloudcompare/plugins/libQPCL_PLUGIN.so
 %%PLUGINS%%lib/cloudcompare/plugins/libQPCV_PLUGIN.so
 %%PLUGINS%%lib/cloudcompare/plugins/libQPHOTOSCAN_IO_PLUGIN.so
 %%PLUGINS%%lib/cloudcompare/plugins/libQRANSAC_SD_PLUGIN.so
