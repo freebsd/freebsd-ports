@@ -1,0 +1,4 @@
+prompt_toolkit could be a replacement for GNU readline, but it can be much more
+than that. Version 2.0 is incompatible with version 1.0.
+
+WWW: https://github.com/prompt-toolkit/python-prompt-toolkit
