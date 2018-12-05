@@ -15,7 +15,6 @@ LICENSE=	BSD2CLAUSE
 BROKEN_armv6=		fails to link: testmain uses VFP register arguments, dict.o does not
 BROKEN_armv7=		fails to link: testmain uses VFP register arguments, dict.o does not
 BROKEN_mips64=		fails to link: relocation truncated to fit: R_MIPS_26 against `__assert@@FBSD_1.0'
-BROKEN_powerpc64=	fails to build: ficl/Makefile line 25: Could not find bsd.stand.mk
 BROKEN_FreeBSD_12=	fails to build: ficl/Makefile line 13: Could not find bsd.stand.mk
 BROKEN_FreeBSD_13=	fails to build: ficl/Makefile line 13: Could not find bsd.stand.mk
 

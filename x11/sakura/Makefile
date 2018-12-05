@@ -14,13 +14,11 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libpcre2-8.so:devel/pcre2
 
-BROKEN_powerpc64=	fails to build: sakura.c:1348: 'for' loop initial declaration used outside C99 mode
-
 OPTIONS_DEFINE=	DOCS
 
+USES=		cmake pkgconfig gettext perl5 tar:bzip2
 USE_GNOME=	cairo gdkpixbuf2 vte3
 USE_XORG=	x11
-USES=		cmake pkgconfig gettext perl5 tar:bzip2
 USE_PERL5=	build
 LDFLAGS+=	-lintl
 
