@@ -66,7 +66,8 @@ BASHTESTS_DESC=	Enable tests that require the GNU bash shell
 FUSEFS_CONFIGURE_ENABLE=	fuse2fs
 
 BUILD_DEPENDS+=	gdd:sysutils/coreutils
-BASHTEST_BUILD_DEPENDS=	bash:shells/bash
+BASHTESTS_BUILD_DEPENDS=	${BASH_CMD}:shells/bash
+BASH_CMD=	${LOCALBASE}/bin/bash
 
 LIB_DEPENDS+=	libblkid.so:misc/e2fsprogs-libblkid
 LIB_DEPENDS+=	libss.so:devel/e2fsprogs-libss
@@ -207,7 +208,7 @@ _checkaddargs+=TMPDIR=${WRKDIR}/tmp
 .endif
 
 .if ${PORT_OPTIONS:MBASHTESTS}
-_checkaddargs+=--eval SHELL:=${LOCALBASE}/bin/bash
+_checkaddargs+=--eval SHELL:=${BASH_CMD}
 .endif
 
 .if ${PORT_OPTIONS:MSLOWTESTS}
