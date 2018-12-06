@@ -1,0 +1,14 @@
+--- Makefile.am.orig	2018-12-05 08:20:55 UTC
++++ Makefile.am
+@@ -2,9 +2,9 @@ ACLOCAL_AMFLAGS = -I m4 -I m4/gnulib
+ 
+ SUBDIRS = code EXAMPLES doc
+ 
+-docdir = $(pkgdatadir)/doc
++docdir = ${prefix}/share/doc/latte-integrale
+ 
+-dist_doc_DATA = NEWS README
++dist_doc_DATA = # NEWS README
+ 
+ 
+ cvstag:
