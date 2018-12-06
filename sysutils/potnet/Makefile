@@ -2,6 +2,7 @@
 
 PORTNAME=	potnet
 DISTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
