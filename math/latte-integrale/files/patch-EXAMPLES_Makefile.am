@@ -1,0 +1,9 @@
+--- EXAMPLES/Makefile.am.orig	2018-12-05 08:27:21 UTC
++++ EXAMPLES/Makefile.am
+@@ -1,5 +1,5 @@
+ 
+-examplesdir = $(pkgdatadir)/examples
++examplesdir = $(prefix)/share/examples/latte-integrale
+ 
+ # Install and distribute these examples.
+ # Without "nobase" the directories would be flattened 

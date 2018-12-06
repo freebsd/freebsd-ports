@@ -306,6 +306,7 @@
     SUBDIR += kmplot
     SUBDIR += kmplot-kde4
     SUBDIR += labplot
+    SUBDIR += latte-integrale
     SUBDIR += lambda
     SUBDIR += lapack
     SUBDIR += lapack++

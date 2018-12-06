@@ -1,0 +1,12 @@
+LattE (Lattice point Enumeration) is a computer software dedicated to the
+problems of counting lattice points and integration inside convex polytopes.
+LattE contains the first ever implementation of Barvinok's algorithm. The LattE
+macchiato version (by M. Koppe) incorporated fundamental improvements and
+speedups.
+
+LattE integrale, the latest version, has the ability to directly compute
+integrals of polynomial functions over polytopes and in particular to do exact
+volume computations. Version 1.6 adds the capability of computing the highest
+coefficients of weighted Ehrhart quasipolynomials.
+
+WWW: https://www.math.ucdavis.edu/~latte/

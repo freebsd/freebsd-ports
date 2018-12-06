@@ -41,4 +41,6 @@ MPI_PLIST_FILES_OFF=	bin/LATTE_DOUBLE
 
 PLIST_FILES=	lib/liblatte.so
 
+CONFLICTS_INSTALL=	latte-integrale
+
 .include <bsd.port.mk>
