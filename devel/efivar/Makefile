@@ -20,7 +20,7 @@ LIB_DEPENDS=	libpopt.so:devel/popt
 USES=		gmake localbase pkgconfig
 USE_GCC=	yes
 USE_GITHUB=	yes
-GH_ACCOUNT=	rhinstaller
+GH_ACCOUNT=	rhboot
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
