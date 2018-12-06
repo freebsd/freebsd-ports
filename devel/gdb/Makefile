@@ -3,6 +3,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	8.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -38,7 +39,8 @@ CFLAGS+=	-DRL_NO_COMPAT -Wno-unused-function -Wno-unused-variable
 CFLAGS+=	-Wno-unknown-warning-option
 EXCLUDE=	dejagnu expect sim texinfo intl
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
-EXTRA_PATCHES=	${FILESDIR}/commit-8aa0243d54
+EXTRA_PATCHES=	${FILESDIR}/commit-8aa0243d54 \
+		${FILESDIR}/commit-93579f6f90
 LIB_DEPENDS+=	libexpat.so:textproc/expat2
 
 VER=		${PORTVERSION:S/.//g}
