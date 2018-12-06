@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmic
-DISTVERSION=	2.4.1
+DISTVERSION=	2.4.2
 CATEGORIES=	graphics
 MASTER_SITES=	https://gmic.eu/files/source/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -21,7 +21,6 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libGraphicsMagick++.so:graphics/GraphicsMagick \
 		libIlmImf.so:graphics/openexr \
 		libImath.so:graphics/ilmbase \
-		libomp.so:devel/openmp \
 		libopencv_core.so:graphics/opencv-core \
 		libopencv_video.so:graphics/opencv \
 		libpng.so:graphics/png \
@@ -37,9 +36,12 @@ CMAKE_ON=	ENABLE_DYNAMIC_LINKING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-OPTIONS_DEFINE=		PLUGINS X11
-OPTIONS_DEFAULT=	X11
+OPTIONS_DEFINE=		OPENMP PLUGINS X11
+OPTIONS_DEFAULT=	OPENMP X11
 OPTIONS_SUB=		yes
+
+OPENMP_CMAKE_BOOL=	ENABLE_OPENMP
+OPENMP_LIB_DEPENDS=	libomp.so:devel/openmp
 
 PLUGINS_CMAKE_BOOL=	BUILD_PLUGIN
 PLUGINS_USE=		GNOME=atk,cairo,gdkpixbuf2,glib20,gtk20,pango
