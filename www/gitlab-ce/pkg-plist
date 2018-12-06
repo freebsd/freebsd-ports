@@ -13419,6 +13419,7 @@
 %%WWWDIR%%/spec/lib/gitlab/string_range_marker_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/string_regex_marker_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/tcp_checker_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/template/finders/global_template_finder_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/template/finders/repo_template_finders_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/template/gitignore_template_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/template/gitlab_ci_yml_template_spec.rb
