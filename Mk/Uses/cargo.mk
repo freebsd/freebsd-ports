@@ -62,15 +62,13 @@ CARGO_TARGET_DIR?=	${WRKDIR}/target
 #  - RUSTC: path of rustc binary (default to lang/rust)
 #  - RUSTDOC: path of rustdoc binary (default to lang/rust)
 #  - RUSTFLAGS: custom flags to pass to all compiler invocations that Cargo performs
-#
-# XXX LDFLAGS => -C link-arg=$1 (via RUSTFLAGS)
 CARGO_ENV+= \
 	CARGO_HOME=${WRKDIR}/cargo-home \
 	CARGO_BUILD_JOBS=${MAKE_JOBS_NUMBER} \
 	CARGO_TARGET_DIR=${CARGO_TARGET_DIR} \
 	RUSTC=${LOCALBASE}/bin/rustc \
 	RUSTDOC=${LOCALBASE}/bin/rustdoc \
-	RUSTFLAGS="${RUSTFLAGS}"
+	RUSTFLAGS="${RUSTFLAGS} ${LDFLAGS:S/^/-C link-arg=/}"
 
 # Adjust -C target-cpu if -march/-mcpu is set by bsd.cpu.mk
 .if ${ARCH} == amd64 || ${ARCH} == i386
