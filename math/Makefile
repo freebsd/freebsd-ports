@@ -860,6 +860,7 @@
     SUBDIR += tmv
     SUBDIR += tomsfastmath
     SUBDIR += topaz
+    SUBDIR += topcom
     SUBDIR += triangle
     SUBDIR += trlan
     SUBDIR += truthtable

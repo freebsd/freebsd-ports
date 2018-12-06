@@ -1,0 +1,6 @@
+TOPCOM is a package for computing Triangulations Of Point Configurations and
+Oriented Matroids. It was very much inspired by the maple program PUNTOS, which
+was written by Jesus de Loera. TOPCOM is entirely written in C++, so there is a
+significant speed up compared to PUNTOS.
+
+WWW: http://www.rambau.wm.uni-bayreuth.de/TOPCOM/
