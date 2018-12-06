@@ -56,7 +56,7 @@ OCC_LIB_DEPENDS=	libopenblas.so:math/openblas libTKernel.so:cad/opencascade
 OCC_USES=		gnome
 OCC_USE=		gnome=cairo
 SHARED_CMAKE_BOOL=	ENABLE_BUILD_SHARED
-SHARED_VARS=		USE_LDCONFIG=yes
+SHARED_USE=		LDCONFIG=yes
 STATIC_CMAKE_BOOL=	ENABLE_BUILD_LIB
 
 post-patch:
