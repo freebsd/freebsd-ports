@@ -1,0 +1,6 @@
+PyGeodesy is a pure Python implementation of geodesy tools for various
+ellipsoidal and spherical earth models using precision trigonometric,
+vector-based and approximate methods for geodetic (lat-/longitude) and
+geocentric cartesian (x/y/z) coordinates.
+
+WWW: https://github.com/mrJean1/PyGeodesy
