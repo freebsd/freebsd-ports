@@ -1216,6 +1216,7 @@
     SUBDIR += rfbproxy
     SUBDIR += rinetd
     SUBDIR += ripe-whois
+    SUBDIR += routinator
     SUBDIR += rp-pppoe
     SUBDIR += rsplib
     SUBDIR += rsync
