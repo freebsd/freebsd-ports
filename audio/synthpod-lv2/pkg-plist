@@ -4,7 +4,6 @@
 %%X11%%bin/synthpod_sandbox_x11
 %%GTK2%%bin/synthpod_sandbox_gtk2
 %%GTK3%%bin/synthpod_sandbox_gtk3
-%%QT4%%bin/synthpod_sandbox_qt4
 %%QT5%%bin/synthpod_sandbox_qt5
 %%SHOW%%bin/synthpod_sandbox_show
 %%KX%%bin/synthpod_sandbox_kx
