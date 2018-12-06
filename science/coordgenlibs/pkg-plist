@@ -1,3 +1,4 @@
+include/coordgen/CoordgenConfig.hpp
 include/coordgen/CoordgenFragmentBuilder.h
 include/coordgen/CoordgenFragmenter.h
 include/coordgen/CoordgenMacrocycleBuilder.h
@@ -17,4 +18,7 @@ include/coordgen/sketcherMinimizerResidue.h
 include/coordgen/sketcherMinimizerResidueInteraction.h
 include/coordgen/sketcherMinimizerRing.h
 include/coordgen/sketcherMinimizerStretchInteraction.h
-lib/libcoordgenlibs.so
+lib/libcoordgen.so
+lib/libcoordgen.so.1
+lib/libcoordgen.so.1.2
+share/coordgen/templates.mae
