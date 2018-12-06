@@ -14,9 +14,12 @@ COMMENT=	JSON::XS compatible pure-Perl module
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-NO_ARCH=	yes
-USE_PERL5=	configure
+PORTSCOUT=	limit:^[0-9\.]*$$
+
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 pre-patch:
 	@${MV} ${WRKSRC}/bin/json_pp ${WRKSRC}/bin/p5json_pp
