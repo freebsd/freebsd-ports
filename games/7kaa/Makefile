@@ -26,7 +26,6 @@ LLD_UNSAFE=	yes
 CONFIGURE_ARGS=	--disable-nls # no translations ATM
 USE_SDL=	sdl2
 CXXFLAGS+=		-Wno-error=narrowing
-CXXFLAGS_clang=		-Wno-c++11-narrowing
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.ico
