@@ -14,8 +14,6 @@ COMMENT=	Climate Data Operators
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to compile: remaplib.cc:1504:6: internal compiler error: in gsi_insert_seq_nodes_after, at gimple-iterator.c:283
-
 OPTIONS_DEFINE=	CGRIBEX HDF5 JASPER NETCDF PROJ SZIP UDUNITS UUID
 OPTIONS_DEFAULT=CGRIBEX HDF5 JASPER NETCDF PROJ SZIP UDUNITS UUID
 OPTIONS_SUB=	yes
