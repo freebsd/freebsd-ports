@@ -3,7 +3,7 @@
 
 PORTNAME=	seamonkey
 DISTVERSION=	2.49.4
-PORTREVISION=	18
+PORTREVISION=	19
 MOZILLA_VER=	52 # above + 3
 CATEGORIES?=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \

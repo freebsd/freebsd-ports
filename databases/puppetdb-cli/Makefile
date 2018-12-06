@@ -2,7 +2,7 @@
 
 PORTNAME=	puppetdb-cli
 PORTVERSION=	1.2.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 
 MAINTAINER=	puppet@FreeBSD.org

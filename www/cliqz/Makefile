@@ -2,6 +2,7 @@
 
 PORTNAME=	cliqz
 DISTVERSION=	1.23.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://s3.amazonaws.com/cdn.cliqz.com/browser-f/APT/:amazon \
 		http://repository.cliqz.com/dist/${CLIQZ_CHANNEL}/${DISTVERSION}/${CLIQZ_LAST_BUILD_ID}/:cliqz
