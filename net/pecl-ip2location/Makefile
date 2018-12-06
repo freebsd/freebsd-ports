@@ -17,6 +17,6 @@ LICENSE=	PHP301
 LIB_DEPENDS=	libIP2Location.so:net/ip2location
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	70 71 72 73
+IGNORE_WITH_PHP=	71 72 73
 
 .include <bsd.port.mk>

@@ -13,7 +13,7 @@ COMMENT=	Full-featured open source e-commerce system
 DEPRECATED=	Works only with EOL php 5.6
 EXPIRATION_DATE=	2018-12-30
 
-IGNORE_WITH_PHP=	70 71 72 73
+IGNORE_WITH_PHP=	71 72 73
 
 USES=		cpe php:web zip
 USE_PHP=	mysql session pcre gd curl openssl

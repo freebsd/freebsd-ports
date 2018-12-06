@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	kjdev
 GH_PROJECT=	php-ext-jq
 
-IGNORE_WITH_PHP=	70 71 72 73
+IGNORE_WITH_PHP=	71 72 73
 USES=		php:ext
 
 JQ_CMD=		${LOCALBASE}/bin/jq

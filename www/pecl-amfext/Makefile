@@ -16,7 +16,7 @@ LICENSE=	PHP30
 
 USES=		dos2unix libtool php:pecl
 PHP_MODNAME=	amf
-IGNORE_WITH_PHP=	70 71 72 73
+IGNORE_WITH_PHP=	71 72 73
 
 CONFIGURE_ARGS=	--with-amf
 

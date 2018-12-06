@@ -23,7 +23,7 @@ OPTIONS_DEFAULT=APACHE
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
-IGNORE_WITH_PHP=70 71 72 73
+IGNORE_WITH_PHP=71 72 73
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_PHP=	ftp mysql session zlib

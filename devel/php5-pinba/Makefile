@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 MAINTAINER=	komarov@valerka.net
 COMMENT=	PHP-extension part of statistics server for PHP
 
-IGNORE_WITH_PHP=	70 71 72 73
+IGNORE_WITH_PHP=	71 72 73
 DEPRECATED=	Works only with EOL php 5.6
 EXPIRATION_DATE=	2018-12-30
 

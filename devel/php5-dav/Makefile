@@ -21,7 +21,7 @@ LIB_DEPENDS=	libneon.so:www/neon
 
 USES=		php:ext
 
-IGNORE_WITH_PHP=	70 71 72 73
+IGNORE_WITH_PHP=	71 72 73
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

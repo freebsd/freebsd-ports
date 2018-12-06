@@ -17,7 +17,7 @@ LICENSE=	PHP301
 LIB_DEPENDS=	libsvn_client-1.so:devel/subversion
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	70 71 72 73
+IGNORE_WITH_PHP=	71 72 73
 USE_CSTD=	c99
 
 .include <bsd.port.mk>

@@ -27,7 +27,7 @@ USES=		libtool php:ext
 USE_LDCONFIG=	yes
 
 PHP_MODNAME=	mrss
-IGNORE_WITH_PHP=	70 71 72 73
+IGNORE_WITH_PHP=	71 72 73
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/phpmrss
 
 post-install:
