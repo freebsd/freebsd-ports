@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmsh
-DISTVERSION=	4.0.2
-PORTREVISION=	1
+DISTVERSION=	4.0.6
 CATEGORIES=	cad
 MASTER_SITES=	http://gmsh.info/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -14,9 +13,6 @@ COMMENT=	Automatic 3D finite element mesh generator
 
 LICENSE=	AGPLv3+ APACHE20 GPLv3+ GPLv2+ LGPL21
 LICENSE_COMB=	multi
-
-BROKEN_FreeBSD_12_i386=	fails to build on FreeBSD 12 i386 due to a clang bug: https://llvm.org/bugs/show_bug.cgi?id=21903
-BROKEN_FreeBSD_13_i386=	fails to build on FreeBSD 13 i386 due to a clang bug: https://llvm.org/bugs/show_bug.cgi?id=21903
 
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -29,13 +25,13 @@ RUN_DEPENDS=	getdp:science/getdp
 USES=		blaslapack compiler:c++11-lang cmake fortran gl jpeg tar:tgz
 USE_GL=		gl glu
 USE_XORG=	x11 xcursor xext xinerama xfixes xft xrender
-
-MAKE_JOBS_UNSAFE=	yes
+USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCMAKE_SKIP_RPATH:BOOL=YES
 
 OPTIONS_DEFINE=	CGNS DOCS MED OCC SHARED STATIC
 OPTIONS_DEFAULT=	CGNS MED OCC
+OPTIONS_SUB=	yes
 
 CGNS_DESC=	Enable CGNS mesh import
 MED_DESC=	Enable MED mesh and post file formats
@@ -43,7 +39,6 @@ OCC_DESC=	Enable OpenCASCADE geometrical models
 SHARED_DESC=	Build shared library and install header files
 STATIC_DESC=	Build static library
 
-OPTIONS_SUB=	yes
 PLIST_SUB=	VER=${PORTVERSION} VE=${PORTVERSION:R}
 
 # TODO
