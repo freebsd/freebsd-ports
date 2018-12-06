@@ -12,7 +12,7 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Text widget that adds syntax highlighting to the GtkTextView widget
 
-USES=		tar:xz
+USES=		compiler:c11 tar:xz
 
 PORTSCOUT=	limitw:1,even
 
@@ -21,7 +21,7 @@ PORTSCOUT=	limitw:1,even
 BUILD_DEPENDS=	vala:lang/vala
 LIB_DEPENDS=	libfribidi.so:converters/fribidi
 
-USES+=		compiler:c11 gettext gmake gnome libtool pathfix pkgconfig
+USES+=		gettext gmake gnome libtool pathfix pkgconfig
 USE_CSTD=	c11
 USE_GNOME=	cairo gdkpixbuf2 gnomeprefix gtk30 intlhack \
 		introspection:build libxml2 referencehack
