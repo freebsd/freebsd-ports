@@ -16,7 +16,7 @@ LICENSE=	PHP301
 USES=		php:pecl pkgconfig
 CONFIGURE_ARGS=	--with-jsonc
 MAKE_ARGS=	EXTRA_CFLAGS=-DCOMPILE_DL_JSON=1
-IGNORE_WITH_PHP=70 71 72 73
+IGNORE_WITH_PHP=71 72 73
 CONFLICTS_INSTALL=	php54-json-5* php55-json-5* php5-json-5*
 
 .include <bsd.port.mk>

@@ -16,7 +16,7 @@ LICENSE=	PHP202
 
 USES=		php:pecl
 USE_PHP=	mbstring:build
-IGNORE_WITH_PHP=	70 71 72 73
+IGNORE_WITH_PHP=	71 72 73
 
 PORTSCOUT=	limit:^2.*
 

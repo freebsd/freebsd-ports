@@ -19,6 +19,6 @@ CONFLICTS=	php5-blitz-0.6*
 
 USES=		php:ext
 PHP_MODNAME=	blitz
-IGNORE_WITH_PHP=	70 71 72 73
+IGNORE_WITH_PHP=	71 72 73
 
 .include <bsd.port.mk>

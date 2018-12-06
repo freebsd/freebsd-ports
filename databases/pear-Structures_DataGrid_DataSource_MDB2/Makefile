@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid@$
 
 USES=	pear
 USE_PHP=	mysql
-IGNORE_WITH_PHP=	70 71 72 73
+IGNORE_WITH_PHP=	71 72 73
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

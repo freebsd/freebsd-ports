@@ -19,6 +19,6 @@ LIB_DEPENDS=	libcapn.so:net/libcapn
 USES=		php:pecl ssl:build,run
 CONFIGURE_ARGS=	--with-apn=${LOCALBASE}
 CFLAGS+=	-I${OPENSSLINC}
-IGNORE_WITH_PHP=	70 71 72 73
+IGNORE_WITH_PHP=	71 72 73
 
 .include <bsd.port.mk>

@@ -17,7 +17,7 @@ LICENSE=	PHP202
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	70 71 72 73
+IGNORE_WITH_PHP=	71 72 73
 
 # libImlib2 may or may not depend on X, however,
 # imlib2 extension doesn't need X related functions in libImlib2

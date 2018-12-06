@@ -15,7 +15,7 @@ EXPIRATION_DATE=	2018-12-30
 LIB_DEPENDS=	libfribidi.so:converters/fribidi
 
 USES=		php:pecl pkgconfig
-IGNORE_WITH_PHP=	70 71 72 73
+IGNORE_WITH_PHP=	71 72 73
 
 CONFIGURE_ARGS=	--with-fribidi=${LOCALBASE}
 

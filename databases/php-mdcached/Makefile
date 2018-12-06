@@ -20,7 +20,7 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS=	libmdcached.so:databases/mdcached
 
 USES=		php:ext
-IGNORE_WITH_PHP=	70 71 72 73
+IGNORE_WITH_PHP=	71 72 73
 CONFIGURE_ARGS=	--enable-mdcached
 WRKSRC_SUBDIR=		${PORTNAME}/client_php/${PORTNAME}
 

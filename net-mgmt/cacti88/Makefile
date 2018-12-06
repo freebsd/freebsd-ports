@@ -23,7 +23,7 @@ USE_PHP=	mysqli pcre session sockets snmp xml
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-IGNORE_WITH_PHP=	70 71 72 73
+IGNORE_WITH_PHP=	71 72 73
 
 SUB_FILES=	pkg-message
 
