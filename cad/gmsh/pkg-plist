@@ -17,6 +17,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/gui.cpp
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/gui.jl
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/gui.py
+%%PORTDOCS%%%%DOCSDIR%%/demos/api/mesh_from_discrete_curve.py
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/normals.py
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/onelab_data.c
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/onelab_data.cpp
