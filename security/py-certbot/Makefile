@@ -41,6 +41,7 @@ post-patch:
 		-e 's|/etc/|${LOCALBASE}/etc/|' \
 		-e 's|/var/lib|/var/db|' \
 		${WRKSRC}/${PORTNAME}/constants.py
+
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
