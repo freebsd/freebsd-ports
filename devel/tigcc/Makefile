@@ -15,13 +15,8 @@ DISTFILES=		gcc-core-4.1-20060728.tar.bz2:gcc \
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	C compiler for the TI89, 92, and 92+ calculators
 
-BROKEN_mips=		fails to compile: main_opt.inc: nested functions are disabled, use -fnested-functions to re-enable
-BROKEN_mips64=		fails to compile: main_opt.inc: nested functions are disabled, use -fnested-functions to re-enable
-BROKEN_powerpc64=	fails to compile: main_opt.inc: nested functions are disabled, use -fnested-functions to re-enable
-BROKEN_sparc64=		fails to compile: main_opt.inc: nested functions are disabled, use -fnested-functions to re-enable
-
-USE_CSTD=	gnu89
 USES=		bison compiler:nestedfct gmake tar:bzip2
+USE_CSTD=	gnu89
 NO_WRKSUBDIR=	yes
 SUB_FILES=	pkg-message
 
@@ -143,4 +138,10 @@ do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${CP} ${WRKSRC}/tigcc/tigcclib/examples/* ${STAGEDIR}${EXAMPLESDIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+CFLAGS+=	-fnested-functions
+.endif
+
+.include <bsd.port.post.mk>
