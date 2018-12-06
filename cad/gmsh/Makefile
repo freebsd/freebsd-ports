@@ -25,7 +25,6 @@ RUN_DEPENDS=	getdp:science/getdp
 USES=		blaslapack compiler:c++11-lang cmake fortran gl jpeg tar:tgz
 USE_GL=		gl glu
 USE_XORG=	x11 xcursor xext xinerama xfixes xft xrender
-USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCMAKE_SKIP_RPATH:BOOL=YES
 
