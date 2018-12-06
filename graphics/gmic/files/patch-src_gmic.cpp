@@ -1,6 +1,6 @@
---- src/gmic.cpp.orig	2018-05-30 23:49:53 UTC
+--- src/gmic.cpp.orig	2018-12-03 08:57:03 UTC
 +++ src/gmic.cpp
-@@ -2224,7 +2224,7 @@ double gmic::mp_ext(char *const str, voi
+@@ -2029,7 +2029,7 @@ double gmic::mp_ext(char *const str, voi
  // Manage correspondence between abort pointers and thread ids.
  CImgList<void*> gmic::list_p_is_abort = CImgList<void*>();
  bool *gmic::abort_ptr(bool *const p_is_abort) {
@@ -9,7 +9,7 @@
    void* tid = (void*)(cimg_ulong)getpid();
  #elif cimg_OS==1
    void* tid = (void*)(cimg_ulong)syscall(SYS_gettid);
-@@ -2557,7 +2557,7 @@ gmic::~gmic() {
+@@ -2362,7 +2362,7 @@ gmic::~gmic() {
  #endif // #if cimg_display!=0
  
    cimg::mutex(21);

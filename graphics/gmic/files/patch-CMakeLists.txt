@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2018-10-04 13:30:14 UTC
+--- CMakeLists.txt.orig	2018-12-06 08:43:18 UTC
 +++ CMakeLists.txt
 @@ -108,7 +108,7 @@ set(COMPILE_FLAGS "-Dgmic_build -Dcimg_u
  if(APPLE)
@@ -14,9 +14,9 @@
  # CImg.h header
  if(NOT EXISTS ${CMAKE_SOURCE_DIR}/src/CImg.h)
 -  file(DOWNLOAD https://framagit.org/dtschump/CImg/raw/master/CImg.h ${CMAKE_SOURCE_DIR}/src/CImg.h)
--  file(TOUCH ${CMAKE_SOURCE_DIR}/src/CImg.h)
+-  execute_process(COMMAND ${CMAKE_COMMAND} -E touch ${CMAKE_SOURCE_DIR}/src/CImg.h)
 +  #file(DOWNLOAD https://framagit.org/dtschump/CImg/raw/master/CImg.h ${CMAKE_SOURCE_DIR}/src/CImg.h)
-+  #file(TOUCH ${CMAKE_SOURCE_DIR}/src/CImg.h)
++  #execute_process(COMMAND ${CMAKE_COMMAND} -E touch ${CMAKE_SOURCE_DIR}/src/CImg.h)
 +  execute_process(COMMAND ln -s ${CMAKE_INSTALL_PREFIX}/include/CImg.h ${CMAKE_SOURCE_DIR}/src/CImg.h)
  endif()
  
