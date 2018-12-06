@@ -1,0 +1,57 @@
+commit 93579f6f908fa6010b141fd5da2974d878869c80
+Author: John Baldwin <jhb@FreeBSD.org>
+Date:   Fri Nov 30 15:14:18 2018 -0800
+
+    Use kinfo_getfile to implement fdwalk on FreeBSD.
+    
+    kinfo_getfile() requires a couple of system calls to fetch the list of
+    open file descriptors.  This can be much cheaper than invoking fstat
+    on all of the values from 0 to the open file resource limit maximum.
+    
+    gdb/ChangeLog:
+    
+            * common/filestuff.c [HAVE_KINFO_GETFILE]: Include headers.
+            (fdwalk) [HAVE_KINFO_GETFILE]: Use kinfo_getfile.
+
+diff --git gdb/common/filestuff.c gdb/common/filestuff.c
+index 0db5c6936b..f4d5e38f07 100644
+--- gdb/common/filestuff.c
++++ gdb/common/filestuff.c
+@@ -36,6 +36,11 @@
+ #define HAVE_SOCKETS 1
+ #endif
+ 
++#ifdef HAVE_KINFO_GETFILE
++#include <sys/user.h>
++#include <libutil.h>
++#endif
++
+ #ifdef HAVE_SYS_RESOURCE_H
+ #include <sys/resource.h>
+ #endif /* HAVE_SYS_RESOURCE_H */
+@@ -108,6 +113,25 @@ fdwalk (int (*func) (void *, int), void *arg)
+     }
+   /* We may fall through to the next case.  */
+ #endif
++#ifdef HAVE_KINFO_GETFILE
++  int nfd;
++  gdb::unique_xmalloc_ptr<struct kinfo_file[]> fdtbl
++    (kinfo_getfile (getpid (), &nfd));
++  if (fdtbl != NULL)
++    {
++      for (int i = 0; i < nfd; i++)
++	{
++	  if (fdtbl[i].kf_fd >= 0)
++	    {
++	      int result = func (arg, fdtbl[i].kf_fd);
++	      if (result != 0)
++		return result;
++	    }
++	}
++      return 0;
++    }
++  /* We may fall through to the next case.  */
++#endif
+ 
+   {
+     int max, fd;
