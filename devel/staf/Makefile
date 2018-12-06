@@ -3,6 +3,7 @@
 
 PORTNAME=	staf
 PORTVERSION=	3.4.26
+PORTREVISION=	1
 CATEGORIES=	devel net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/V${PORTVERSION}
 DISTNAME=	STAF${PORTVERSION:S/.//g}-src
@@ -12,9 +13,6 @@ COMMENT=	Software Testing Automation Framework
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE.htm
-
-BROKEN_SSL=	openssl111
-BROKEN_SSL_REASON_openssl111=	variable has incomplete type 'EVP_MD_CTX' (aka 'evp_md_ctx_st')
 
 WRKSRC=		${WRKDIR}/src
 WRKSRC_SUBDIR=	${PORTNAME}
@@ -151,8 +149,8 @@ do-install:
 .for bin in ${STAF_BIN_FILES}
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bin/${bin} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-	${LN} -s ${PREFIX}/bin/STAF ${STAGEDIR}${PREFIX}/bin/staf
-	${LN} -s ${PREFIX}/bin/FmtLog ${STAGEDIR}${PREFIX}/bin/fmtlog
+	${LN} -s STAF ${STAGEDIR}${PREFIX}/bin/staf
+	${LN} -s FmtLog ${STAGEDIR}${PREFIX}/bin/fmtlog
 .for lib in ${STAF_LIB_FILES}
 	${INSTALL_LIB} ${INSTALL_WRKSRC}/lib/${lib} ${STAGEDIR}${PREFIX}/lib/
 .endfor
