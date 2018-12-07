@@ -20,8 +20,6 @@ COMMENT=	Compiler for the functional language Haskell
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
-
 GHC_VERSION=		8.4.3
 HSCOLOUR_VERSION=	1.24.4
 LLVM_VERSION=		50
