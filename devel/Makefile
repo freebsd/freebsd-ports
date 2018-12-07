@@ -4201,6 +4201,7 @@
     SUBDIR += plasma5-plasma-sdk
     SUBDIR += pmccabe
     SUBDIR += pmd
+    SUBDIR += pmdk
     SUBDIR += poco
     SUBDIR += poco-ssl
     SUBDIR += popt
