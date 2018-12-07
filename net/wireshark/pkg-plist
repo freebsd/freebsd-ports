@@ -637,10 +637,10 @@ include/wireshark/wsutil/wspcap.h
 include/wireshark/wsutil/xtea.h
 lib/libwireshark.so
 lib/libwireshark.so.10
-lib/libwireshark.so.10.1.4
+lib/libwireshark.so.10.1.5
 lib/libwiretap.so
 lib/libwiretap.so.8
-lib/libwiretap.so.8.0.4
+lib/libwiretap.so.8.0.5
 %%GUI%%lib/libwscodecs.so
 %%GUI%%lib/libwscodecs.so.2
 %%GUI%%lib/libwscodecs.so.2.0.0
@@ -648,7 +648,9 @@ lib/libwsutil.so
 lib/libwsutil.so.9
 lib/libwsutil.so.9.0.0
 %%ANDROIDDUMP_LIB%%lib/wireshark/extcap/androiddump
+%%CISCODUMP_LIB%%lib/wireshark/extcap/ciscodump
 %%RANDPKTDUMP_LIB%%lib/wireshark/extcap/randpktdump
+%%SSHDUMP_LIB%%lib/wireshark/extcap/sshdump
 %%UDPDUMP_LIB%%lib/wireshark/extcap/udpdump
 lib/wireshark/plugins/2.6/codecs/l16mono.so
 lib/wireshark/plugins/2.6/epan/ethercat.so
@@ -668,6 +670,7 @@ libdata/pkgconfig/wireshark.pc
 %%ANDROIDDUMP_MAN%%man/man1/androiddump.1.gz
 %%CAPINFOS_MAN%%man/man1/capinfos.1.gz
 %%CAPTYPE_MAN%%man/man1/captype.1.gz
+%%CISCODUMP_MAN%%man/man1/ciscodump.1.gz
 %%DFTEST_MAN%%man/man1/dftest.1.gz
 %%DUMPCAP_MAN%%man/man1/dumpcap.1.gz
 %%EDITCAP_MAN%%man/man1/editcap.1.gz
@@ -676,6 +679,7 @@ libdata/pkgconfig/wireshark.pc
 %%RANDPKTDUMP_MAN%%man/man1/randpktdump.1.gz
 %%RAWSHARK_MAN%%man/man1/rawshark.1.gz
 %%REORDERCAP_MAN%%man/man1/reordercap.1.gz
+%%SSHDUMP_MAN%%man/man1/sshdump.1.gz
 %%TEXT2PCAP_MAN%%man/man1/text2pcap.1.gz
 man/man1/tshark.1.gz
 %%UDPDUMP_MAN%%man/man1/udpdump.1.gz
