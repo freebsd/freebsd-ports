@@ -1,5 +1,5 @@
 bin/icecast
-etc/icecast.xml.sample
+@sample etc/icecast.xml.sample
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 @comment %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
