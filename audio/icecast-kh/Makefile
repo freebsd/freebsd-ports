@@ -1,10 +1,11 @@
 # Created by: Anes Mukhametov <anes@anes.su>
 # $FreeBSD$
 
-PORTNAME=	icecast-kh
+PORTNAME=	icecast
 DISTVERSIONPREFIX=	icecast-
 DISTVERSION=	2.4.0-kh10
 CATEGORIES=	audio net ipv6
+PKGNAMESUFFIX=	-kh
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Streaming mp3/ogg-vorbis audio server, KH branch
@@ -19,6 +20,7 @@ LIB_DEPENDS=	libogg.so:audio/libogg \
 USES=		gmake gnome localbase pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	karlheyes
+GH_PROJECT=	icecast-kh
 USE_GNOME=	libxml2 libxslt
 USE_RC_SUBR=	icecast
 
