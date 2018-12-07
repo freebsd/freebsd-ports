@@ -1,0 +1,20 @@
+The Polyhedral Library (PolyLib for short) operates on objects made up of
+unions of polyhedra of any dimension. It was first developed by Doran Wilde at
+IRISA, in Rennes, France, in connection with the ALPHA project. This first
+version (1.1) manipulates non parameterized unions of polyhedra through the
+following operations: intersection, difference, union, convex hull, simplify,
+image and preimage, plus some input and output functions. The polyhedra are
+computed in their dual implicit and Minkowski representations, in homogeneous
+spaces.
+
+Version 2 of the PolyLib included parameterized vertices computation.
+PolyLib3.14 includes Ehrhart polynomials computation, which permits to count
+the number of integer points contained in a parameterized polyhedron. PolyLib4
+included the GNU MP library (as a compilation option), and 64 bits computations,
+in order to avoid integer overflows. Polylib5 is a merge of Strasbourg, Rennes
+and BYU Polylib.
+
+There is also the 'visualpolylib' project that permits to use the PolyLib
+interactively.
+
+WWW: https://icps.u-strasbg.fr/polylib/
