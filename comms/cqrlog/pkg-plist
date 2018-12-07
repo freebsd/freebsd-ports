@@ -15,10 +15,13 @@ share/applications/cqrlog.desktop
 %%DATADIR%%/ctyfiles/eqsl.txt
 %%DATADIR%%/ctyfiles/iota.tbl
 %%DATADIR%%/ctyfiles/lotw1.txt
+%%DATADIR%%/ctyfiles/prop_mode.tab
 %%DATADIR%%/ctyfiles/qslmgr.csv
+%%DATADIR%%/ctyfiles/sat_name.tab
 %%DATADIR%%/ctyfiles/us_states.tab
 %%DATADIR%%/help/contest.html
 %%DATADIR%%/help/cwd.html
+%%DATADIR%%/help/cwh.html
 %%DATADIR%%/help/fldxml.html
 %%DATADIR%%/help/h1.html
 %%DATADIR%%/help/h20.html
@@ -30,6 +33,8 @@ share/applications/cqrlog.desktop
 %%DATADIR%%/help/h26.html
 %%DATADIR%%/help/h27.html
 %%DATADIR%%/help/h28.html
+%%DATADIR%%/help/h29.html
+%%DATADIR%%/help/h30.html
 %%DATADIR%%/help/h3.html
 %%DATADIR%%/help/h4.html
 %%DATADIR%%/help/h5.html
@@ -59,6 +64,9 @@ share/applications/cqrlog.desktop
 %%DATADIR%%/help/img/h109.png
 %%DATADIR%%/help/img/h11.png
 %%DATADIR%%/help/img/h110.png
+%%DATADIR%%/help/img/h117.png
+%%DATADIR%%/help/img/h118.png
+%%DATADIR%%/help/img/h165.png
 %%DATADIR%%/help/img/h111.png
 %%DATADIR%%/help/img/h1112.png
 %%DATADIR%%/help/img/h1114.png
@@ -190,8 +198,18 @@ share/applications/cqrlog.desktop
 %%DATADIR%%/help/img/wsjt2.png
 %%DATADIR%%/help/img/wsjt20.png
 %%DATADIR%%/help/img/wsjt21.png
+%%DATADIR%%/help/img/wsjt22.png
+%%DATADIR%%/help/img/wsjt23.png
 %%DATADIR%%/help/img/wsjt27.png
 %%DATADIR%%/help/img/wsjt28.png
+%%DATADIR%%/help/img/wsjt29.png
+%%DATADIR%%/help/img/wsjt30.png
+%%DATADIR%%/help/img/wsjt31.png
+%%DATADIR%%/help/img/wsjt32.png
+%%DATADIR%%/help/img/wsjt33.png
+%%DATADIR%%/help/img/wsjt34.png
+%%DATADIR%%/help/img/wsjt35.png
+%%DATADIR%%/help/img/wsjt36.png
 %%DATADIR%%/help/img/wsjt4.png
 %%DATADIR%%/help/index.html
 %%DATADIR%%/help/remi.html
@@ -249,6 +267,7 @@ share/applications/cqrlog.desktop
 %%DATADIR%%/members/599dxa.txt
 %%DATADIR%%/members/9acwg.txt
 %%DATADIR%%/members/a1-club.txt
+%%DATADIR%%/members/a1a-ea.txt
 %%DATADIR%%/members/a1-op.txt
 %%DATADIR%%/members/afm.txt
 %%DATADIR%%/members/agb.txt
@@ -274,6 +293,7 @@ share/applications/cqrlog.desktop
 %%DATADIR%%/members/cwops.txt
 %%DATADIR%%/members/cwsp.txt
 %%DATADIR%%/members/dig.txt
+%%DATADIR%%/members/dmc.txt
 %%DATADIR%%/members/dtc.txt
 %%DATADIR%%/members/ehsc.txt
 %%DATADIR%%/members/epc.txt
@@ -298,6 +318,7 @@ share/applications/cqrlog.desktop
 %%DATADIR%%/members/hhc.txt
 %%DATADIR%%/members/hsc.txt
 %%DATADIR%%/members/htc.txt
+%%DATADIR%%/members/kdr.txt
 %%DATADIR%%/members/inorc.txt
 %%DATADIR%%/members/jaig.txt
 %%DATADIR%%/members/lcc.txt
@@ -324,7 +345,9 @@ share/applications/cqrlog.desktop
 %%DATADIR%%/members/qcwa.txt
 %%DATADIR%%/members/qthloc.txt
 %%DATADIR%%/members/rafars.txt
+%%DATADIR%%/members/rcc.txt
 %%DATADIR%%/members/rcwc.txt
+%%DATADIR%%/members/rdrc.txt
 %%DATADIR%%/members/ria.txt
 %%DATADIR%%/members/rnars.txt
 %%DATADIR%%/members/rrdxa.txt
@@ -338,6 +361,7 @@ share/applications/cqrlog.desktop
 %%DATADIR%%/members/spar.txt
 %%DATADIR%%/members/spcwc.txt
 %%DATADIR%%/members/spdxc.txt
+%%DATADIR%%/members/tbdxc.txt
 %%DATADIR%%/members/ten-ten.txt
 %%DATADIR%%/members/tenten.txt
 %%DATADIR%%/members/tfc.txt

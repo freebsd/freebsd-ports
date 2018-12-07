@@ -19,6 +19,7 @@ USES=		fpc lazarus:flavors shebangfix ssl:run dos2unix mysql
 USE_GITHUB=	yes
 GH_ACCOUNT=	ok2cqr
 
+LLD_UNSAFE=	yes
 SHEBANG_FILES=	tools/cqrlog-apparmor-fix \
 		voice_keyer/voice_keyer.sh
 USE_FPC=	cairo fcl-base chm fcl-db fcl-image fcl-json fcl-net fcl-web \
