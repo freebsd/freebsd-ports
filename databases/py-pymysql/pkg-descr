@@ -1,4 +1,4 @@
 This pure Python MySQL client provides a DB-API to a MySQL database by
 talking directly to the server via the binary client/server protocol.
 
-WWW: https://github.com/petehunt/PyMySQL
+WWW: https://github.com/PyMySQL/PyMySQL
