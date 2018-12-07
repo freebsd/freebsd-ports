@@ -134,6 +134,7 @@
     SUBDIR += aspcud
     SUBDIR += asymptote
     SUBDIR += atlas
+    SUBDIR += barvinok
     SUBDIR += biggles
     SUBDIR += blacs
     SUBDIR += blas
