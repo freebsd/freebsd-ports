@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bwidget
-PORTVERSION=	1.9.12
+PORTVERSION=	1.9.13
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/tcllib/BWidget/${PORTVERSION}
 
@@ -14,9 +14,10 @@ LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+USES=		tk:run zip
+
 OPTIONS_DEFINE=	DOCS
 
-USES=		tk:run zip
 NO_BUILD=	yes
 NO_ARCH=	yes
 PORTDOCS=	*
