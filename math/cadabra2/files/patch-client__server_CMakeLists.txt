@@ -1,35 +1,26 @@
---- client_server/CMakeLists.txt.orig	2018-03-30 09:33:27 UTC
+--- client_server/CMakeLists.txt.orig	2018-12-07 04:46:45 UTC
 +++ client_server/CMakeLists.txt
-@@ -28,7 +28,6 @@ find_package(Boost 1.53.0 COMPONENTS sys
- set(CADABRA_SERVER_SRC
-   Server.cc 
-   Snoop.cc 
--  jsoncpp/jsoncpp.cpp 
-   ../core/CdbPython.cc 
-   ../core/Stopwatch.cc 
-   ../core/ProgressMonitor.cc
-@@ -43,7 +42,6 @@ set(CADABRA_CLIENT_SRC
-   ../core/DataCell.cc 
-   Actions.cc 
-   Snoop.cc 
--  jsoncpp/jsoncpp.cpp
-   ../libs/whereami/whereami.c
-   ../core/InstallPrefix.cc
- #  ../libs/sqlite3/sqlite3.c
-@@ -58,7 +56,6 @@ include_directories(
-   "../core"
-   "../libs/pybind11/include"
-   "websocketpp" 
--  "jsoncpp"
-   "../libs/internal/include"
-   "../libs/whereami"
-   ${Boost_INCLUDE_DIRS}
-@@ -114,7 +111,7 @@ add_executable(cadabra2html cadabra2html
- target_link_libraries(cadabra2html cadabra_client)
+@@ -32,7 +32,6 @@ set(CADABRA_SERVER_SRC
+ 	${CADABRA_CORE_DIR}/InstallPrefix.cc
+ 	${CADABRA_CORE_DIR}/CdbPython.cc 
+ 	${CADABRA_CORE_DIR}/Stopwatch.cc 
+-	${CADABRA_LIBS_DIR}/jsoncpp/jsoncpp.cpp 
+ 	${CADABRA_LIBS_DIR}/whereami/whereami.c
+ )
  
- # Client library
--add_library(cadabra_client STATIC ${CADABRA_CLIENT_SRC})
-+add_library(cadabra_client SHARED ${CADABRA_CLIENT_SRC})
- target_link_libraries(cadabra_client
-   ${Boost_LIBRARIES}
-   ${SQLITE3_LIBRARIES}
+@@ -43,7 +42,6 @@ set(CADABRA_CLIENT_SRC
+ 	Snoop.cc 
+ 	${CADABRA_CORE_DIR}/DataCell.cc 
+ 	${CADABRA_CORE_DIR}/InstallPrefix.cc
+-	${CADABRA_LIBS_DIR}/jsoncpp/jsoncpp.cpp
+ 	${CADABRA_LIBS_DIR}/whereami/whereami.c
+ )
+ 
+@@ -56,7 +54,6 @@ include_directories(
+ 	"${CADABRA_CORE_DIR}"
+ 	"${CADABRA_LIBS_DIR}/pybind11/include"
+ 	"${CADABRA_LIBS_DIR}/websocketpp" 
+-	"${CADABRA_LIBS_DIR}/jsoncpp"
+ 	"${CADABRA_LIBS_DIR}/internal/include"
+ 	"${CADABRA_LIBS_DIR}/whereami"
+ 	${Boost_INCLUDE_DIRS}

@@ -1,31 +1,15 @@
---- frontend/gtkmm/CMakeLists.txt.orig	2018-03-30 09:33:27 UTC
+--- frontend/gtkmm/CMakeLists.txt.orig	2018-12-07 05:18:13 UTC
 +++ frontend/gtkmm/CMakeLists.txt
-@@ -126,11 +126,11 @@ install(FILES    ${PROJECT_SOURCE_DIR}/.
- #     there anyway.
- #   - gtk-update-icon-cache is broken and only works half of the time.
+@@ -165,9 +165,9 @@ if (NOT INSTALL_TARGETS_ONLY)
+ 	install(FILES    ${CADABRA_IMAGES_DIR}/256x256/cadabra2-gtk.png   DESTINATION ${ICON_PREFIX}/share/icons/hicolor/256x256/apps)
+ 	install(FILES    ${CADABRA_IMAGES_DIR}/cadabra2-gtk.svg           DESTINATION ${ICON_PREFIX}/share/icons/hicolor/scalable/apps)
+ 	install(FILES    ${CADABRA_ROOT_DIR}/config/cadabra2-gtk.desktop  DESTINATION ${ICON_PREFIX}/share/applications)
+-	install(CODE     "execute_process(COMMAND touch ${ICON_PREFIX}/share/icons/hicolor/icon-theme.cache)")
+-	install(CODE     "execute_process(COMMAND gtk-update-icon-cache-3.0 ${ICON_PREFIX}/share/icons/hicolor)")
+-	install(CODE     "execute_process(COMMAND chmod go+r ${ICON_PREFIX}/share/icons/hicolor/icon-theme.cache)")
++	#install(CODE     "execute_process(COMMAND touch ${ICON_PREFIX}/share/icons/hicolor/icon-theme.cache)")
++	#install(CODE     "execute_process(COMMAND gtk-update-icon-cache-3.0 ${ICON_PREFIX}/share/icons/hicolor)")
++	#install(CODE     "execute_process(COMMAND chmod go+r ${ICON_PREFIX}/share/icons/hicolor/icon-theme.cache)")
  
--if(APPLE)
-+#if(APPLE)
-   set(ICON_PREFIX "${CMAKE_INSTALL_PREFIX}")
--else()
--  set(ICON_PREFIX "/usr")
--endif()
-+#else()
-+#  set(ICON_PREFIX "/usr")
-+#endif()
- 
- #set(ICON_THEME ${ICON_PREFIX}/share/icons/hicolor/index.theme)
- #if(EXISTS "${ICON_THEME}")
-@@ -144,9 +144,9 @@ install(FILES    ${PROJECT_SOURCE_DIR}/.
- install(FILES    ${PROJECT_SOURCE_DIR}/../../images/256x256/cadabra2-gtk.png   DESTINATION ${ICON_PREFIX}/share/icons/hicolor/256x256/apps)
- install(FILES    ${PROJECT_SOURCE_DIR}/../../images/cadabra2-gtk.svg           DESTINATION ${ICON_PREFIX}/share/icons/hicolor/scalable/apps)
- install(FILES    ${PROJECT_SOURCE_DIR}/../../config/cadabra2-gtk.desktop       DESTINATION ${ICON_PREFIX}/share/applications)
--install(CODE     "execute_process(COMMAND touch ${ICON_PREFIX}/share/icons/hicolor/icon-theme.cache)")
--install(CODE     "execute_process(COMMAND gtk-update-icon-cache-3.0 ${ICON_PREFIX}/share/icons/hicolor)")
--install(CODE     "execute_process(COMMAND chmod go+r ${ICON_PREFIX}/share/icons/hicolor/icon-theme.cache)")
-+#install(CODE     "execute_process(COMMAND touch ${ICON_PREFIX}/share/icons/hicolor/icon-theme.cache)")
-+#install(CODE     "execute_process(COMMAND gtk-update-icon-cache-3.0 ${ICON_PREFIX}/share/icons/hicolor)")
-+#install(CODE     "execute_process(COMMAND chmod go+r ${ICON_PREFIX}/share/icons/hicolor/icon-theme.cache)")
- 
- # Install shared libraries on Windows. 
- # https://stackoverflow.com/questions/32662215/how-do-you-install-gtk-3-0-on-windows
+ 	# Install shared libraries on Windows. 
+ 	# https://stackoverflow.com/questions/32662215/how-do-you-install-gtk-3-0-on-windows
