@@ -1,0 +1,6 @@
+barvinok is a library for counting the number of integer points in parametric
+and non-parametric polytopes based on polylib. For a parametric polytope, the
+number of points is represented by either a piecewise quasi-polynomial or an
+Ehrhart series.
+
+WWW: http://freshmeat.sourceforge.net/projects/barvinok
