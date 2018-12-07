@@ -871,6 +871,7 @@
     SUBDIR += units
     SUBDIR += unuran
     SUBDIR += viennacl
+    SUBDIR += visualpolylib
     SUBDIR += vowpal_wabbit
     SUBDIR += vtk6
     SUBDIR += vtk8
