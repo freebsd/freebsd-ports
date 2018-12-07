@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libcddb.so:audio/libcddb \
 		libtag.so:audio/taglib
 
-USES=		pkgconfig tar:tgz
+USES=		compiler:c++11-lang pkgconfig tar:tgz
 
 PLIST_FILES=	bin/taglookup \
 		man/man1/taglookup.1.gz
