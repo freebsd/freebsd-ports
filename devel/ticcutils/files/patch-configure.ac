@@ -1,0 +1,19 @@
+--- configure.ac.orig	2018-12-07 22:25:32 UTC
++++ configure.ac
+@@ -75,11 +75,11 @@ fi
+ # for now we demand boost, because on some systems gcc4.8 is installed still
+ # and that fails on regex.
+ 
+-AX_BOOST_BASE( [1.50],
+-	       [AX_BOOST_REGEX
+-	        LIBS="$LIBS $BOOST_REGEX_LIB"
+-                AC_DEFINE(HAVE_BOOST_REGEX, 1 , [Define to 1 if you have boost regular expresions] )],
+-               [AC_MSG_ERROR([No Regular expression support available. Please install libboost-regex-dev])])
++#AX_BOOST_BASE( [1.50], # Boost detection is broken: https://github.com/LanguageMachines/ticcutils/issues/18
++#	       [AX_BOOST_REGEX
++#	        LIBS="$LIBS $BOOST_REGEX_LIB"
++#                AC_DEFINE(HAVE_BOOST_REGEX, 1 , [Define to 1 if you have boost regular expresions] )],
++#               [AC_MSG_ERROR([No Regular expression support available. Please install libboost-regex-dev])])
+ 
+ PKG_PROG_PKG_CONFIG
+ 
