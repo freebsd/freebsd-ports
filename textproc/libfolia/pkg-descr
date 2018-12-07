@@ -1,0 +1,9 @@
+FoLiA is an XML-based annotation format, suitable for the representation of
+linguistically annotated language resources. FoLiA's intended use is as a format
+for storing and/or exchanging language resources, including corpora. Our aim is
+to introduce a single rich format that can accomodate a wide variety of
+linguistic annotation types through a single generalised paradigm. We do not
+commit to any label set, language or linguistic theory. This is always left to
+the developer of the language resource, and provides maximum flexibility.
+
+WWW: https://proycon.github.io/folia/

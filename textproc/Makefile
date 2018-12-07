@@ -422,6 +422,7 @@
     SUBDIR += libexttextcat
     SUBDIR += libflate
     SUBDIR += libfo
+    SUBDIR += libfolia
     SUBDIR += libgepub
     SUBDIR += libguess
     SUBDIR += libkmfl
