@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	easyrpg-player
-PORTVERSION=	0.5.3
-PORTREVISION=	4
+PORTVERSION=	0.5.4
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -12,16 +11,22 @@ COMMENT=	RPG Maker 2000/2003 and EasyRPG games interpreter
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+LIB_DEPENDS=	liblcf.so:games/liblcf \
 		libpng.so:graphics/png \
-		liblcf.so:games/liblcf \
+		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
-		libmpg123.so:audio/mpg123 \
-		libvorbis.so:audio/libvorbis \
-		libsndfile.so:audio/libsndfile \
-		libxmp.so:audio/libxmp \
 		libspeexdsp.so:audio/speexdsp \
-		libopusfile.so:audio/opusfile
+		libmpg123.so:audio/mpg123 \
+		libsndfile.so:audio/libsndfile \
+		libvorbis.so:audio/libvorbis \
+		libogg.so:audio/libogg \
+		libopusfile.so:audio/opusfile \
+		libopus.so:audio/opus \
+		libWildMidi.so:audio/wildmidi \
+		libxmp.so:audio/libxmp
+# these come from liblcf
+LIB_DEPENDS+=	libicui18n.so:devel/icu \
+		libexpat.so:textproc/expat2
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 
@@ -29,15 +34,20 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	EasyRPG
 GH_PROJECT=	Player
 
-USES=		autoreconf compiler:c++11-lib gmake libtool localbase pkgconfig
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-bash-completion-dir=${PREFIX}/share/bash-completion/completions
+USES=		cmake compiler:c++11-lib pkgconfig
+CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=man \
+		-DPLAYER_AUDIO_BACKEND=SDL2_mixer
 USE_XORG=	pixman
 USE_SDL=	sdl2 mixer2
 
-PORTDOCS=	AUTHORS README
+PORTDOCS=	AUTHORS.md README.md
 
 OPTIONS_DEFINE=	DOCS
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
+	${INSTALL_DATA} ${WRKSRC}/resources/unix/bash-completion/easyrpg-player \
+		${STAGEDIR}${PREFIX}/share/bash-completion/completions/
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
