@@ -1,3 +1,3 @@
-TIMESTAMP = 1521136405
-SHA256 (jupyter_console-5.2.0.tar.gz) = 545dedd3aaaa355148093c5609f0229aeb121b4852995c2accfa64fe3e0e55cd
-SIZE (jupyter_console-5.2.0.tar.gz) = 27063
+TIMESTAMP = 1543970482
+SHA256 (jupyter_console-6.0.0.tar.gz) = 308ce876354924fb6c540b41d5d6d08acfc946984bf0c97777c1ddcb42e0b2f5
+SIZE (jupyter_console-6.0.0.tar.gz) = 27780
