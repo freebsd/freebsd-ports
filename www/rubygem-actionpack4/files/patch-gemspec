@@ -2,10 +2,10 @@
 +++ actionpack.gemspec
 @@ -25,7 +25,7 @@ Gem::Specification.new do |s|
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-       s.add_runtime_dependency(%q<activesupport>.freeze, ["= 4.2.9"])
+       s.add_runtime_dependency(%q<activesupport>.freeze, ["= 4.2.11"])
        s.add_runtime_dependency(%q<rack>.freeze, ["~> 1.6"])
 -      s.add_runtime_dependency(%q<rack-test>.freeze, ["~> 0.6.2"])
 +      s.add_runtime_dependency(%q<rack-test>.freeze, ["~> 0.6", ">= 0.6.2"])
        s.add_runtime_dependency(%q<rails-html-sanitizer>.freeze, [">= 1.0.2", "~> 1.0"])
        s.add_runtime_dependency(%q<rails-dom-testing>.freeze, [">= 1.0.5", "~> 1.0"])
-       s.add_runtime_dependency(%q<actionview>.freeze, ["= 4.2.9"])
+       s.add_runtime_dependency(%q<actionview>.freeze, ["= 4.2.11"])
