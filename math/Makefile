@@ -671,6 +671,7 @@
     SUBDIR += ploticus-nox11
     SUBDIR += plplot
     SUBDIR += plplot-ada
+    SUBDIR += polylib
     SUBDIR += primegen
     SUBDIR += primme
     SUBDIR += prng
