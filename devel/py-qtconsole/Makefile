@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traitlets>=0:devel/py-traitlets@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipykernel5>=5.1:devel/py-ipykernel5@${PY_FLAVOR}
 
-USES=		pyqt:5 python
+USES=		pyqt:5 python:3.4+
 
 USE_PYQT=	core gui printsupport sip svg widgets
 USE_PYTHON=	distutils autoplist
