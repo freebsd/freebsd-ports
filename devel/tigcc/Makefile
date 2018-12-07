@@ -140,7 +140,7 @@ do-install-EXAMPLES-on:
 
 .include <bsd.port.pre.mk>
 
-.if ${CHOSEN_COMPILER_TYPE} == gcc
+.if exists(/usr/lib/libstdc++.so)
 CFLAGS+=	-fnested-functions
 .endif
 
