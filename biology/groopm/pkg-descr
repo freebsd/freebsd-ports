@@ -1,0 +1,7 @@
+GroopM is a metagenomic binning toolset. It leverages spatio-temoral
+dynamics (differential coverage) to accurately (and almost automatically)
+extract population genomes from multi-sample metagenomic datasets.
+
+GroopM is largely parameter-free. Use: groopm -h for more info.
+
+WWW: http://ecogenomics.github.io/GroopM/
