@@ -1,0 +1,10 @@
+--- src/Makefile.am.orig	2018-12-07 23:02:14 UTC
++++ src/Makefile.am
+@@ -1,5 +1,6 @@
+ AM_CPPFLAGS = -I@top_srcdir@/include
+-AM_CXXFLAGS = -g -std=c++11 -O3 -W -Wall -pedantic
++AM_CXXFLAGS = -std=c++11 -W -Wall -pedantic
++AM_LDFLAGS = $(LDFLAGS)
+ 
+ LDADD = libticcutils.la
+ 

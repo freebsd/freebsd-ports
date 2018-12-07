@@ -3,6 +3,7 @@
 PORTNAME=	ticcutils
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	devel textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,6 +30,6 @@ TEST_TARGET=	check
 
 # Workaround for https://github.com/LanguageMachines/ticcutils/issues/18 (also see the patch files/patch-configure.ac)
 CXXFLAGS+=	-DHAVE_BOOST_REGEX
-LDFLAGS+=	${LOCALBASE}/lib/libboost_regex.so
+LDFLAGS+=	-lboost_regex
 
 .include <bsd.port.mk>
