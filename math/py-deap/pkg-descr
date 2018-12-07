@@ -1,0 +1,23 @@
+DEAP is a novel evolutionary computation framework for rapid prototyping and
+testing of ideas. It seeks to make algorithms explicit and data structures
+transparent. It works in perfect harmony with parallelisation mechanisms such
+as multiprocessing and SCOOP.
+
+DEAP includes the following features:
+* Genetic algorithm using any imaginable representation
+  o List, Array, Set, Dictionary, Tree, Numpy Array, etc.
+* Genetic programing using prefix trees
+  o  Loosely typed, Strongly typed
+  o  Automatically defined functions
+* Evolution strategies (including CMA-ES)
+* Multi-objective optimisation (NSGA-II, SPEA2, MO-CMA-ES)
+* Co-evolution (cooperative and competitive) of multiple populations
+* Parallelization of the evaluations (and more)
+* Hall of Fame of the best individuals that lived in the population
+* Checkpoints that take snapshots of a system regularly
+* Benchmarks module containing most common test functions
+* Genealogy of an evolution (that is compatible with NetworkX)
+* Examples of alternative algorithms : Particle Swarm Optimization, Differential
+  Evolution, Estimation of Distribution Algorithm
+
+WWW: https://github.com/DEAP/deap
