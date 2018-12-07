@@ -1,7 +1,6 @@
 # $FreeBSD$
 
 PORTNAME=	topcom
-DISTVERSIONPREFIX=	Release_
 DISTVERSION=	0.17.8
 CATEGORIES=	math
 MASTER_SITES=	http://www.rambau.wm.uni-bayreuth.de/Software/
