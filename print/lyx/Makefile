@@ -14,6 +14,7 @@ MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libmythes-1.2.so:textproc/mythes
