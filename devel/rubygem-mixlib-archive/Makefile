@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mixlib-archive
-PORTVERSION=	0.4.16
+PORTVERSION=	0.4.18
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-mixlib-log>=0:devel/rubygem-mixlib-log
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
