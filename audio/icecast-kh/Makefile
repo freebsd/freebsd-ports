@@ -1,67 +1,50 @@
 # Created by: Anes Mukhametov <anes@anes.su>
 # $FreeBSD$
 
-PORTNAME=	icecast
+PORTNAME=	icecast-kh
 DISTVERSIONPREFIX=	icecast-
-DISTVERSION=	${ICVERSION}-kh${KH}
-PORTREVISION=	3
+DISTVERSION=	2.4.0-kh10
 CATEGORIES=	audio net ipv6
-PKGNAMESUFFIX=	-kh
 
-MAINTAINER=	anes@anes.su
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Streaming mp3/ogg-vorbis audio server, KH branch
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libogg.so:audio/libogg \
 		libtheora.so:multimedia/libtheora \
-		libvorbis.so:audio/libvorbis \
-		libxml2.so:textproc/libxml2 \
-		libxslt.so:textproc/libxslt
+		libvorbis.so:audio/libvorbis
 
+USES=		gmake gnome localbase pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	karlheyes
-GH_PROJECT=	icecast-kh
+USE_GNOME=	libxml2 libxslt
+USE_RC_SUBR=	icecast
 
-USES=		gmake pkgconfig ssl
+CONFLICTS_INSTALL=	icecast icecast2
+
 GNU_CONFIGURE=	yes
-USE_RC_SUBR=	${PORTNAME}
-SUB_FILES=	pkg-message
 CONFIGURE_ENV=	OGG_PREFIX=${LOCALBASE}
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+# /usr/bin/ld: error: undefined symbol: ERR_get_error
+LIBS+=		-L${OPENSSLLIB} -lcrypto
 
-ICVERSION=	2.3.3
-KH=		10
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=		CURL DOCS KATE SPEEX
 OPTIONS_DEFAULT=	CURL KATE SPEEX
+
 CURL_DESC=		Support Directory server interaction (YP) via curl
 KATE_DESC=		Support Kate/Skeleton codec within Ogg streams
 SPEEX_DESC=		Support Speex codec within Ogg streams
 
-CONFLICTS_INSTALL=	icecast-[0-9]* icecast2-[0-9]*
+CURL_CONFIGURE_WITH=	curl=${LOCALBASE}
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 
-.include <bsd.port.options.mk>
+KATE_CONFIGURE_WITH=	kate
+KATE_LIB_DEPENDS=	libkate.so:multimedia/libkate
 
-.if ${PORT_OPTIONS:MCURL}
-BUILD_DEPENDS+=	curl>=7.10:ftp/curl
-CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--without-curl
-.endif
-
-.if ${PORT_OPTIONS:MKATE}
-LIB_DEPENDS+=	libkate.so:multimedia/libkate
-.else
-CONFIGURE_ARGS+=	--without-kate
-.endif
-
-.if ${PORT_OPTIONS:MSPEEX}
-BUILD_DEPENDS+=	speex>=1:audio/speex
-CONFIGURE_ARGS+=	--with-speex=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--without-speex
-.endif
+SPEEX_CONFIGURE_WITH=	speex=${LOCALBASE}
+SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex
 
 .include <bsd.port.mk>
