@@ -1,0 +1,34 @@
+# $FreeBSD$
+
+PORTNAME=	ticcutils
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.20
+CATEGORIES=	devel textproc
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Generic utility library shared by the Tilburg University software
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
+LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
+		libicui18n.so:devel/icu \
+		libtar.so:devel/libtar
+
+USES=		autoreconf compiler:c++11-lib gmake gnome libtool localbase:ldflags pkgconfig
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-static
+USE_GITHUB=	yes
+GH_ACCOUNT=	LanguageMachines
+USE_GNOME=	libxml2
+USE_LDCONFIG=	yes
+
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
+
+# Workaround for https://github.com/LanguageMachines/ticcutils/issues/18 (also see the patch files/patch-configure.ac)
+CXXFLAGS+=	-DHAVE_BOOST_REGEX
+LDFLAGS+=	${LOCALBASE}/lib/libboost_regex.so
+
+.include <bsd.port.mk>
