@@ -1,0 +1,16 @@
+--- configure.orig	2018-12-07 03:44:09 UTC
++++ configure
+@@ -3502,11 +3502,11 @@ echo "$as_me: error: \"No libpolylib64.s
+ 			or give the path with ./configure   --with-polylib=LOCATION \"" >&2;}
+    { (exit 1); exit 1; }; }
+ 	else
+-		POLY_ADD_FLAGS="-lpolylib64"
++		POLY_ADD_FLAGS="-lpolylibgmp"
+ 	fi
+ else
+ 	POLY_LD_FLAGS="${polylibloc}"
+-	POLY_ADD_FLAGS="-lpolylib64"
++	POLY_ADD_FLAGS="-lpolylibgmp"
+ fi
+ 
+ echo "$as_me:$LINENO: checking if polylib uses GNUmp" >&5
