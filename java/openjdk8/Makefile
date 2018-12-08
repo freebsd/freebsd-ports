@@ -2,7 +2,6 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
-PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${DIST_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
@@ -34,7 +33,8 @@ PATCHFILES=	patch-8u05-b13.xz \
 		patch-8u152-b16.xz \
 		patch-8u162-b12.xz \
 		patch-8u172-b11.xz \
-		patch-8u181-b13.xz
+		patch-8u181-b13.xz \
+		patch-8u192-b26.xz
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT?=	Java Development Kit ${JDK_MAJOR_VERSION}
@@ -206,8 +206,8 @@ INSTALLDIR=	${PREFIX}/${PKGBASE}
 NOPRECIOUSMAKEVARS=	yes
 
 JDK_MAJOR_VERSION=	8
-JDK_UPDATE_VERSION=	181
-JDK_BUILD_NUMBER=	13
+JDK_UPDATE_VERSION=	192
+JDK_BUILD_NUMBER=	26
 DIST_BUILD_NUMBER=	132
 JTREG_VERSION=		4.1
 JTREG_BUILD_NUMBER=	b08
