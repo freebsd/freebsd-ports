@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde4-style-
 DISTNAME=	112652-kde4-kstyle-nitrogen-${PORTVERSION}-Source
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE style with animations
 
 LICENSE=	GPLv2
