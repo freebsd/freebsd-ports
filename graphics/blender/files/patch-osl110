@@ -1,0 +1,168 @@
+--- intern/cycles/kernel/shaders/node_brick_texture.osl.orig	2018-12-03 16:56:43 UTC
++++ intern/cycles/kernel/shaders/node_brick_texture.osl
+@@ -19,10 +19,10 @@
+ 
+ /* Brick */
+ 
+-float brick_noise(int n) /* fast integer noise */
++float brick_noise(int ns) /* fast integer noise */
+ {
+ 	int nn;
+-	n = (n + 1013) & 2147483647;
++	int n = (ns + 1013) & 2147483647;
+ 	n = (n >> 13) ^ n;
+ 	nn = (n * (n * n * 60493 + 19990303) + 1376312589) & 2147483647;
+ 	return 0.5 * ((float)nn / 1073741824.0);
+@@ -30,7 +30,7 @@ float brick_noise(int n) /* fast integer noise */
+ 
+ float brick(point p, float mortar_size, float mortar_smooth, float bias,
+ 	float BrickWidth, float row_height, float offset_amount, int offset_frequency,
+-	float squash_amount, int squash_frequency, float tint)
++	float squash_amount, int squash_frequency, output float tint)
+ {
+ 	int bricknum, rownum;
+ 	float offset = 0.0;
+--- intern/cycles/kernel/shaders/node_checker_texture.osl.orig	2018-12-03 16:56:43 UTC
++++ intern/cycles/kernel/shaders/node_checker_texture.osl
+@@ -19,11 +19,12 @@
+ 
+ /* Checker */
+ 
+-float checker(point p)
++float checker(point ip)
+ {
+-	p[0] = (p[0] + 0.000001) * 0.999999;
+-	p[1] = (p[1] + 0.000001) * 0.999999;
+-	p[2] = (p[2] + 0.000001) * 0.999999;
++	point p;
++	p[0] = (ip[0] + 0.000001) * 0.999999;
++	p[1] = (ip[1] + 0.000001) * 0.999999;
++	p[2] = (ip[2] + 0.000001) * 0.999999;
+ 	
+ 	int xi = (int)fabs(floor(p[0]));
+ 	int yi = (int)fabs(floor(p[1]));
+--- intern/cycles/kernel/shaders/node_environment_texture.osl.orig	2018-12-03 16:56:43 UTC
++++ intern/cycles/kernel/shaders/node_environment_texture.osl
+@@ -25,8 +25,9 @@ vector environment_texture_direction_to_equirectangular(vector dir)
+ 	return vector(u, v, 0.0);
+ }
+ 
+-vector environment_texture_direction_to_mirrorball(vector dir)
++vector environment_texture_direction_to_mirrorball(vector idir)
+ {
++	vector dir = idir;
+ 	dir[1] -= 1.0;
+ 
+ 	float div = 2.0 * sqrt(max(-0.5 * dir[1], 0.0));
+--- intern/cycles/kernel/shaders/node_musgrave_texture.osl.orig	2018-12-03 16:56:43 UTC
++++ intern/cycles/kernel/shaders/node_musgrave_texture.osl
+@@ -26,13 +26,14 @@
+  * from "Texturing and Modelling: A procedural approach"
+  */
+ 
+-float noise_musgrave_fBm(point p, float H, float lacunarity, float octaves)
++float noise_musgrave_fBm(point ip, float H, float lacunarity, float octaves)
+ {
+ 	float rmd;
+ 	float value = 0.0;
+ 	float pwr = 1.0;
+ 	float pwHL = pow(lacunarity, -H);
+ 	int i;
++	point p = ip;
+ 
+ 	for (i = 0; i < (int)octaves; i++) {
+ 		value += safe_noise(p, "signed") * pwr;
+@@ -54,13 +55,14 @@ float noise_musgrave_fBm(point p, float H, float lacunarity, float octaves)
+  * octaves: number of frequencies in the fBm
+  */
+ 
+-float noise_musgrave_multi_fractal(point p, float H, float lacunarity, float octaves)
++float noise_musgrave_multi_fractal(point ip, float H, float lacunarity, float octaves)
+ {
+ 	float rmd;
+ 	float value = 1.0;
+ 	float pwr = 1.0;
+ 	float pwHL = pow(lacunarity, -H);
+ 	int i;
++	point p = ip;
+ 
+ 	for (i = 0; i < (int)octaves; i++) {
+ 		value *= (pwr * safe_noise(p, "signed") + 1.0);
+@@ -83,12 +85,13 @@ float noise_musgrave_multi_fractal(point p, float H, float lacunarity, float oct
+  * offset: raises the terrain from `sea level'
+  */
+ 
+-float noise_musgrave_hetero_terrain(point p, float H, float lacunarity, float octaves, float offset)
++float noise_musgrave_hetero_terrain(point ip, float H, float lacunarity, float octaves, float offset)
+ {
+ 	float value, increment, rmd;
+ 	float pwHL = pow(lacunarity, -H);
+ 	float pwr = pwHL;
+ 	int i;
++	point p = ip;
+ 
+ 	/* first unscaled octave of function; later octaves are scaled */
+ 	value = offset + safe_noise(p, "signed");
+@@ -118,13 +121,14 @@ float noise_musgrave_hetero_terrain(point p, float H, float lacunarity, float oc
+  * offset: raises the terrain from `sea level'
+  */
+ 
+-float noise_musgrave_hybrid_multi_fractal(point p, float H, float lacunarity,
++float noise_musgrave_hybrid_multi_fractal(point ip, float H, float lacunarity,
+                                           float octaves, float offset, float gain)
+ {
+ 	float result, signal, weight, rmd;
+ 	float pwHL = pow(lacunarity, -H);
+ 	float pwr = pwHL;
+ 	int i;
++	point p = ip;
+ 
+ 	result = safe_noise(p, "signed") + offset;
+ 	weight = gain * result;
+@@ -156,13 +160,14 @@ float noise_musgrave_hybrid_multi_fractal(point p, float H, float lacunarity,
+  * offset: raises the terrain from `sea level'
+  */
+ 
+-float noise_musgrave_ridged_multi_fractal(point p, float H, float lacunarity,
++float noise_musgrave_ridged_multi_fractal(point ip, float H, float lacunarity,
+                                           float octaves, float offset, float gain)
+ {
+ 	float result, signal, weight;
+ 	float pwHL = pow(lacunarity, -H);
+ 	float pwr = pwHL;
+ 	int i;
++	point p = ip;
+ 
+ 	signal = offset - fabs(safe_noise(p, "signed"));
+ 	signal *= signal;
+--- intern/cycles/kernel/shaders/node_noise_texture.osl.orig	2018-12-03 16:56:43 UTC
++++ intern/cycles/kernel/shaders/node_noise_texture.osl
+@@ -19,9 +19,10 @@
+ 
+ /* Noise */
+ 
+-float noise(point p, float distortion, float detail, float fac, color Color)
++float noise(point ip, float distortion, float detail, output color Color)
+ {
+ 	point r;
++	point p = ip;
+ 	int hard = 0;
+ 
+ 	if (distortion != 0.0) {
+@@ -32,7 +33,7 @@ float noise(point p, float distortion, float detail, float fac, color Color)
+ 		p += r;
+ 	}
+ 
+-	fac = noise_turbulence(p, detail, hard);
++	float fac = noise_turbulence(p, detail, hard);
+ 	
+ 	Color = color(fac, noise_turbulence(point(p[1], p[0], p[2]), detail, hard),
+ 		noise_turbulence(point(p[1], p[2], p[0]), detail, hard));
+@@ -55,6 +56,6 @@ shader node_noise_texture(
+ 	if (use_mapping)
+ 		p = transform(mapping, p);
+ 
+-	Fac = noise(p * Scale, Distortion, Detail, Fac, Color);
++	Fac = noise(p * Scale, Distortion, Detail, Color);
+ }
+ 
