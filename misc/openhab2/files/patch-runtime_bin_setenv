@@ -1,6 +1,6 @@
---- runtime/bin/setenv.orig	2017-12-18 10:24:01 UTC
+--- runtime/bin/setenv.orig	2018-05-28 07:56:37 UTC
 +++ runtime/bin/setenv
-@@ -111,7 +111,7 @@ export EXTRA_JAVA_OPTS="${EXTRA_JAVA_OPTS_COMMON} ${EX
+@@ -121,7 +121,7 @@ export EXTRA_JAVA_OPTS="${EXTRA_JAVA_OPTS_COMMON} ${EX
  
  die() {
    # echo and exit, && /bin/true delays the exit for systemd logging (workaround).
@@ -9,31 +9,13 @@
    exit 1
  }
  
-@@ -121,6 +121,7 @@ detectOS() {
-     darwin=false;
-     aix=false;
-     os400=false;
-+    freebsd=false;
-     case "`uname`" in
-         CYGWIN*)
-             cygwin=true
-@@ -134,6 +135,9 @@ detectOS() {
-         OS400*)
-             os400=true
-             ;;
-+	FreeBSD*)
-+	    freebsd=true
-+	    ;;
-     esac
-     # For AIX, set an environment variable
-     if $aix; then
-@@ -172,6 +176,9 @@ locateJava() {
+@@ -137,6 +137,9 @@ locateJava() {
      fi
-     if [ "x$JAVA" = "x" ] && [ -r /etc/gentoo-release ] ; then
-         JAVA_HOME=`java-config --jre-home`
+     if [ "x${JAVA}" = "x" ] && [ -r /etc/gentoo-release ] ; then
+         JAVA_HOME=$(java-config --jre-home)
 +    fi
-+    if [ "x$JAVA_HOME" = "x" ] && [ "$freebsd" = "true" ] ; then
-+	eval $(env JAVAVM_DRYRUN=true %%LOCALBASE%%/bin/java | grep JAVA_HOME)
++    if [ "x$JAVA_HOME" = "x" ]; then
++        eval $(env JAVAVM_DRYRUN=true %%LOCALBASE%%/bin/java | grep JAVA_HOME)
      fi
-     if [ "x$JAVA" = "x" ]; then
-         if [ "x$JAVA_HOME" != "x" ]; then
+     if [ "x${JAVA}" = "x" ]; then
+         if [ "x${JAVA_HOME}" != "x" ]; then
