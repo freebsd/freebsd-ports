@@ -21,3 +21,10 @@ A workaround is to use the following rc.conf setting which will
 prefer IPv4 over IPv6:
 	openhab2_java_opts="-Djava.net.preferIPv4Stack=true"
 
+
+If you upgrade from a pevious version, make a backup of
+	/var/db/openhab2
+and run
+	%%PREFIX%%/libexec/openhab2/runtime/bin/update.freebsd
+
+

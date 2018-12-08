@@ -5,6 +5,26 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20181210:
+  AFFECTS: users of misc/openhab2
+  AUTHOR: netchild@FreeBSD.org
+
+  If you upgrade from a pevious version, make a backup of
+       /var/db/openhab2
+  and run
+       %%PREFIX%%/libexec/openhab2/runtime/bin/update.freebsd
+
+  Config specific info:
+  Nest Binding: The 'camera' Thing Type now has channel groups.
+                Add 'camera#' before the channel ID in the channel UID of
+                existing camera channels. The 'time_to_target_mins' channel
+                of the 'thermostat' Thing Type is renamed to 'time_to_target'
+  Oceanic Binding: The 'softener' Thing Type no longer exists and is replaced
+                   by the 'serial' and 'ethernet' Thing Types
+  Yamaha Receiver Binding: The configuration parameter names now use lower
+                           camel case convention. Change 'HOST' to 'host',
+                           'PORT' to 'port' etc
+
 20181124:
   AFFECTS: users of sysutils/munin-master, sysutils/munin-node, www/owncloud, mail/mailman, net/ntpa
   AUTHOR: woodsb02@FreeBSD.org

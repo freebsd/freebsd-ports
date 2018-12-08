@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openhab2
-PORTVERSION=	2.2.0
-PORTREVISION=	3
+PORTVERSION=	2.3.0
+#PORTREVISION=	3
 CATEGORIES=	misc java
 MASTER_SITES=	https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F${PORTVERSION}/
 DISTNAME=	openhab-${PORTVERSION}
@@ -18,7 +18,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.8
 JAVA_RUN=	yes
 USE_RC_SUBR=	openhab2
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message update.freebsd
 NO_WRKSUBDIR=	yes
 NO_ARCH=	yes
 
@@ -33,7 +33,9 @@ do-build:
 	${MV} ${WRKSRC}/conf/${conf} ${WRKSRC}/conf/${conf}.sample
 .endfor
 	${RM} -r ${WRKSRC}/runtime/bin/contrib
-	${RM} ${WRKSRC}/*.ps1 ${WRKSRC}/*.bat ${WRKSRC}/runtime/bin/*.ps1 ${WRKSRC}/runtime/bin/*.bat
+	${RM} ${WRKSRC}/*.ps1 ${WRKSRC}/*.bat ${WRKSRC}/runtime/bin/*.ps1 ${WRKSRC}/runtime/bin/*.bat \
+	    ${WRKSRC}/runtime/bin/setenv.bak \
+	    ${WRKSRC}/runtime/bin/setenv.orig
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
@@ -58,6 +60,7 @@ do-install:
 .for script in start.sh start_debug.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/${script} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/
 .endfor
+	${INSTALL_SCRIPT} ${WRKDIR}/update.freebsd ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/runtime/bin/
 	(cd ${WRKSRC}/userdata && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/${PORTNAME})
 
 .include <bsd.port.mk>

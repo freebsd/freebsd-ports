@@ -1,0 +1,14 @@
+#!/bin/sh
+# $FreeBSD$
+
+: ${OPENHAB_USERDATA:="/var/db/openhab2/userdata"}
+: ${OPENHAB_RUNTIME:="%%PREFIX%%/libexec/openhab2/runtime"}
+: ${OPENHAB_REPL:="%%PREFIX%%/share/openhab2/etc"}
+
+rm -r $OPENHAB_USERDATA/cache/* $OPENHAB_USERDATA/tmp/*
+rm -r $OPENHAB_USERDATA/kar
+
+for file in $(cat $OPENHAB_RUNTIME/bin/userdata_sysfiles.lst); do
+	cp -pv $OPENHAB_REPL/$file $OPENHAB_USERDATA/etc/$file
+done
+
