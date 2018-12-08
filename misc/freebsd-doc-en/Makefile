@@ -14,7 +14,6 @@ COMMENT?=	Documentation from the FreeBSD Documentation Project
 LICENSE=	BSD2CLAUSE
 
 BROKEN_aarch64=		fails to build: Exception in thread "main" java.lang.StackOverflowError at org.apache.fop.hyphenation.TernaryTree.insert(TernaryTree.java:180)
-BROKEN_powerpc64=	fails to build: Java Runtime Environment: SIGSEGV happened inside stack but outside yellow and red zone.
 
 BUILD_DEPENDS=	docproj>=2.0_6:textproc/docproj
 
