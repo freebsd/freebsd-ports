@@ -1,0 +1,12 @@
+--- config/Makefile.am.orig	2018-12-08 03:11:07 UTC
++++ config/Makefile.am
+@@ -7,7 +7,7 @@ EXTRA_DIST = $(config_DATA)
+ install-data-hook:
+ 	rm -f $(configdir)/textcat.cfg
+ if OLD_LM
+-	$(LN_S) $(configdir)/textcat_alt.cfg $(configdir)/textcat.cfg
++	cd $(DESTDIR)$(configdir) && $(LN_S) textcat_alt.cfg textcat.cfg
+ else
+-	$(LN_S) $(configdir)/textcat_normal.cfg $(configdir)/textcat.cfg
++	cd $(DESTDIR)$(configdir) && $(LN_S) textcat_normal.cfg textcat.cfg
+ endif
