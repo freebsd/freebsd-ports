@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	amass
-DISTVERSION=	2.8.4
+DISTVERSION=	2.8.5
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
