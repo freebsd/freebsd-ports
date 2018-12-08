@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.7:devel/py-click@${PY_FLAVOR} \
 USE_GITHUB=	yes
 
 NO_ARCH=	yes
-USES=		python:3.6
+USES=		python:3.4+
 USE_PYTHON=	autoplist distutils
 
 CONFLICTS=	py27-iocage-[0-9]*
