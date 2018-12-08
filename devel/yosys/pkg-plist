@@ -78,10 +78,10 @@ bin/yosys-smtbmc
 %%DATADIR%%/xilinx/arith_map.v
 %%DATADIR%%/xilinx/brams.txt
 %%DATADIR%%/xilinx/brams_bb.v
-%%DATADIR%%/xilinx/brams_init_%%PYTHON_SUFFIX%%.vh
 %%DATADIR%%/xilinx/brams_init_16.vh
 %%DATADIR%%/xilinx/brams_init_18.vh
 %%DATADIR%%/xilinx/brams_init_32.vh
+%%DATADIR%%/xilinx/brams_init_36.vh
 %%DATADIR%%/xilinx/brams_map.v
 %%DATADIR%%/xilinx/cells_map.v
 %%DATADIR%%/xilinx/cells_sim.v
