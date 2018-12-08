@@ -8,7 +8,7 @@ MASTER_SITES=	http://twocats.free.fr/pub/h264tobox/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	tsMuxeR_${PORTVERSION}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to create TS and M2TS files for IP broadcasting
 
 USES=		linux
