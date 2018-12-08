@@ -12,6 +12,9 @@ DISTNAME=	gst-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Buzztard gstreamer plugins
 
+DEPRECATED=	Unused in the ports tree and unmaintained upstream
+EXPIRATION_DATE=	2018-12-21
+
 OPTIONS_DEFINE=	DOCS
 
 LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
