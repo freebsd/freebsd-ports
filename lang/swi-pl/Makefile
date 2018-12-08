@@ -12,15 +12,15 @@ COMMENT=	Edinburgh-style Prolog compiler
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_mips=		fails to link: libswipl.so: undefined reference to '__sync_sub_and_fetch_4'
+BROKEN_mips64=		fails to link: libswipl.so: undefined reference to '__sync_sub_and_fetch_4'
+BROKEN_powerpc64=	fails to compile: pce_principal.pl:155: Shared object "pl2xpce" not found, required by "swipl"
+
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libodbc.so:databases/unixODBC \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpcre.so:devel/pcre
-
-BROKEN_mips=		fails to link: libswipl.so: undefined reference to '__sync_sub_and_fetch_4'
-BROKEN_mips64=		fails to link: libswipl.so: undefined reference to '__sync_sub_and_fetch_4'
-BROKEN_powerpc64=	fails to compile: pce_principal.pl:155: Shared object "pl2xpce" not found, required by "swipl"
 
 SWIPLDIR=	${PORTNAME:C/-//}-${PORTVERSION}
 
@@ -56,6 +56,10 @@ PLIST_SUB+=	BITS=64
 
 .if (${ARCH} == amd64)
 ARCH=		x86_64
+.endif
+
+.if (${ARCH} == aarch64)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-skip-gnu-qsort
 .endif
 
 post-configure:
