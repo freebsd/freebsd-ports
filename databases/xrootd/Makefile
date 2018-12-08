@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xrootd
-DISTVERSION=	4.8.4
+DISTVERSION=	4.8.5
 CATEGORIES=	databases
 MASTER_SITES=	http://xrootd.org/download/v${DISTVERSION}/
 
@@ -20,7 +20,7 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPL
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	librados.so:net/ceph
 
-USES=		cmake:outsource localbase:ldflags pkgconfig readline shebangfix ssl
+USES=		cmake:outsource gnome localbase:ldflags pkgconfig readline shebangfix ssl
 SHEBANG_GLOB=	*.sh
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
