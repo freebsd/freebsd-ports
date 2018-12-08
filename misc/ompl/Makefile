@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ompl
-DISTVERSION=	1.4.0
-PORTREVISION=	1
+DISTVERSION=	1.4.1
 DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	misc comms
 MASTER_SITES=	http://cdn.bitbucket.org/${PORTNAME}/${PORTNAME}/downloads/
