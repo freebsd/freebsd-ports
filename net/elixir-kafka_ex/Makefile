@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kafka_ex
-PORTVERSION=	0.6.4
+PORTVERSION=	0.9.0
 CATEGORIES=	net
 PKGNAMEPREFIX=	elixir-
 
