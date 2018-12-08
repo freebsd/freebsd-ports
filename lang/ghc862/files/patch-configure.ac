@@ -1,0 +1,12 @@
+--- configure.ac.orig	2018-04-17 19:30:22 UTC
++++ configure.ac
+@@ -447,6 +447,9 @@ XCODE_VERSION()
+ dnl ** Building a cross compiler?
+ dnl --------------------------------------------------------------
+ CrossCompiling=NO
++
++build=`echo $build | sed -e 's/amd64-/x86_64-/g; s/armv[[67]]-/arm-/g; s/-freebsd.*$/-freebsd/g'`
++
+ # If 'host' and 'target' differ, then this means we are building a cross-compiler.
+ if test "$TargetPlatform" != "$HostPlatform" ; then
+     CrossCompiling=YES
