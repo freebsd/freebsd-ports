@@ -113,6 +113,7 @@
     SUBDIR += gforth
     SUBDIR += ghc
     SUBDIR += ghc843
+    SUBDIR += ghc862
     SUBDIR += gjs
     SUBDIR += gnat_util
     SUBDIR += gnatcross-aarch64
