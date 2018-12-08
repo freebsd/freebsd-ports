@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde4-style-
 DISTFILES=	59031-${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE style featuring 3D artwork and enhanced the visual experience
 
 LICENSE=	GPLv3
