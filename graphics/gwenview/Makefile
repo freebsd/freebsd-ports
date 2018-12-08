@@ -13,7 +13,8 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png
 
-USES=		cmake:outsource gettext jpeg pkgconfig kde:5 qt:5 tar:xz
+USES=		compiler:c++11-lang cmake:outsource gettext jpeg pkgconfig \
+		kde:5 qt:5 tar:xz
 USE_KDE=	activities auth baloo bookmarks codecs completion config \
 		configwidgets coreaddons ecm emoticons filemetadata i18n \
 		iconthemes init itemmodels itemviews jobwidgets \
