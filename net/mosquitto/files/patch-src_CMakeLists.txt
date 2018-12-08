@@ -1,6 +1,6 @@
 --- src/CMakeLists.txt.orig	2018-09-25 15:27:43 UTC
 +++ src/CMakeLists.txt
-@@ -114,6 +114,7 @@ if (WIN32 OR CYGWIN)
+@@ -114,6 +114,7 @@
  endif (WIN32 OR CYGWIN)
  
  add_definitions (-DWITH_BROKER)
@@ -8,16 +8,16 @@
  
  set (MOSQ_LIBS ${MOSQ_LIBS} ${OPENSSL_LIBRARIES})
  
-@@ -131,7 +132,7 @@ if (UNIX)
- 	if (APPLE)
- 		set (MOSQ_LIBS ${MOSQ_LIBS} dl m)
- 	else (APPLE)
--		set (MOSQ_LIBS ${MOSQ_LIBS} dl m)
-+		set (MOSQ_LIBS ${MOSQ_LIBS} m)
- 		find_library(LIBRT rt)
- 		if (LIBRT)
- 			set (MOSQ_LIBS ${MOSQ_LIBS} rt)
-@@ -185,7 +186,6 @@ if (${WITH_TLS} STREQUAL ON)
+@@ -132,7 +133,7 @@
+     elseif(QNX)
+         set(MOSQ_LIBS ${MOSQ_LIBS} m socket)
+     else(APPLE)
+-        set (MOSQ_LIBS ${MOSQ_LIBS} dl m)
++        set (MOSQ_LIBS ${MOSQ_LIBS} m)
+         find_library(LIBRT rt)
+         if (LIBRT)
+             set (MOSQ_LIBS ${MOSQ_LIBS} rt)
+@@ -186,7 +187,6 @@
  endif (${WITH_TLS} STREQUAL ON)
  
  if (UNIX AND NOT APPLE)
