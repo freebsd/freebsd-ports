@@ -5,7 +5,7 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20181210:
+20181208:
   AFFECTS: users of misc/openhab2
   AUTHOR: netchild@FreeBSD.org
 
