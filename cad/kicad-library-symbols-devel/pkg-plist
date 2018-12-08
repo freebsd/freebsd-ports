@@ -308,6 +308,8 @@
 %%DATADIR%%/library/Relay.lib
 %%DATADIR%%/library/Relay_SolidState.dcm
 %%DATADIR%%/library/Relay_SolidState.lib
+%%DATADIR%%/library/Security.dcm
+%%DATADIR%%/library/Security.lib
 %%DATADIR%%/library/Sensor.dcm
 %%DATADIR%%/library/Sensor.lib
 %%DATADIR%%/library/Sensor_Audio.dcm
