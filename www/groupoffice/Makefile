@@ -3,9 +3,10 @@
 
 PORTNAME=	groupoffice
 DISTVERSIONPREFIX=	com-
-DISTVERSION=	6.3.6
+DISTVERSION=	6.3.56
 CATEGORIES=	www
 MASTER_SITES=	SF/group-office/${DISTVERSION:R}
+DISTNAME=	${PORTNAME}-${DISTVERSION}-php-71
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Modular web application framework for office
@@ -13,19 +14,16 @@ COMMENT=	Modular web application framework for office
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.AGPL
 
+USES=		mysql shebangfix php:web python
+
 RESTRICTED=	Free for personal use only
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		mysql shebangfix php:web python
 USE_PHP=	mysqli session mbstring pcre xml
 SHEBANG_FILES=	groupoffice \
 		groupofficecli.php \
-		install/autoinstall.php \
 		modules/postfixadmin/scripts/vacation.pl \
-		modules/sync/z-push/install.sh \
-		modules/sync/z-push/z-push-admin.php \
-		modules/sync/z-push/z-push-top.php \
 		vendor/sabre/dav/bin/naturalselection \
 		vendor/sabre/dav/bin/googlecode_upload.py \
 		vendor/bin/../sabre/dav/bin/naturalselection \
