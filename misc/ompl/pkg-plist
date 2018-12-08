@@ -219,7 +219,7 @@ include/ompl/util/ProlateHyperspheroid.h
 include/ompl/util/RandomNumbers.h
 include/ompl/util/Time.h
 lib/libompl.so
-lib/libompl.so.1.4.0
+lib/libompl.so.1.4.1
 lib/libompl.so.15
 libdata/pkgconfig/ompl.pc
 man/man1/ompl_benchmark_statistics.1.gz
