@@ -6,7 +6,7 @@ DISTVERSION=	0.10.1
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Rule-based tunnel on Go
+COMMENT=	Rule-based tunnel in Go
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
