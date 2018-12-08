@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grass
-PORTVERSION=	7.4.1
+PORTVERSION=	7.4.3
 CATEGORIES=	databases geography
 MASTER_SITES=	http://grass.osgeo.org/%SUBDIR%/ \
 		http://grass.cict.fr/%SUBDIR%/ \
@@ -25,8 +25,6 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL.TXT
 
 BROKEN_sparc64=	Does not configure on sparc64
-DEPRECATED=	Broken for more than 6 months
-EXPIRATION_DATE=	2018-12-19
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.2:math/py-numpy@${PY_FLAVOR}
 LIB_DEPENDS=	libgdal.so:graphics/gdal \
@@ -167,6 +165,21 @@ post-patch:
 post-install:
 	${RM} -rf ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/demolocation/PERMANENT/.tmp/
 	${RM} -rf ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/docs/html/colortables/*bak.png
+	${MKDIR} ${STAGEDIR}${LOCALBASE}/${PORTNAME}-${PORTVERSION}/docs/html/
+.for file in i_atcorr_B02_atcorr.png \
+		i_ortho_photo_step1.png \
+		i_ortho_photo_step5.png \
+		i_ortho_photo_step6.png \
+		i_ortho_photo_step7.png \
+		i_ortho_photo_step8.png \
+		r.viewshed.png \
+		rterraflow_accumulation.png \
+		rterraflow_dir2.png \
+		rterraflow_dir3.png \
+		sweep1.png \
+		sweep2.png
+	${TOUCH} ${STAGEDIR}${LOCALBASE}/${PORTNAME}-${PORTVERSION}/docs/html/${file}
+.endfor
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/bin/*
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/driver/db/*
 .for i in clean_temp current_time_s_ms echo i.find lock run r.watershed/seg r.watershed/ram
