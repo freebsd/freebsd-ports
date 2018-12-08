@@ -9,7 +9,7 @@ MASTER_SITES=	http://bsd.e-shell.net/local/
 PKGNAMEPREFIX=	kde4-style-
 DISTNAME=	cloudcity-${PORTVERSION}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configurable KDE4 style
 
 LICENSE=	LGPL21
