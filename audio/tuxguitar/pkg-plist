@@ -1,7 +1,14 @@
 bin/tuxguitar
-man/man1/tuxguitar.1.gz
 lib/libtuxguitar-fluidsynth-jni.so
 lib/libtuxguitar-oss-jni.so
+man/man1/tuxguitar.1.gz
+share/applications/tuxguitar.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/pixmaps/tuxguitar.xpm
+share/sounds/sf2/8MBGMSFX.SF2
 %%DATADIR%%/8MBGMSFX.SF2
 %%DATADIR%%/help/about.html
 %%DATADIR%%/help/css/styles.css
@@ -81,7 +88,6 @@ lib/libtuxguitar-oss-jni.so
 %%DATADIR%%/lang/messages_zh_GB.properties
 %%DATADIR%%/lang/messages_zh_TW.properties
 %%DATADIR%%/plugins/tuxguitar-ascii.jar
-%%DATADIR%%/plugins/tuxguitar-browser-ftp.jar
 %%DATADIR%%/plugins/tuxguitar-compat.jar
 %%DATADIR%%/plugins/tuxguitar-converter.jar
 %%DATADIR%%/plugins/tuxguitar-fluidsynth.jar
@@ -510,9 +516,3 @@ lib/libtuxguitar-oss-jni.so
 %%DATADIR%%/skins/ersplus/transport_stop_2.png
 %%DATADIR%%/tuxguitar.jar
 %%DATADIR%%/tuxguitar.tg
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
-share/applications/tuxguitar.desktop
-share/pixmaps/tuxguitar.xpm

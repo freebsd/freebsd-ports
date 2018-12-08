@@ -1,7 +1,10 @@
+======================================================================
+You installed TuxGuitar: The multitrack tablature editor and player.
 
-SoundFonts for the FluidSynth plugin are available at:
+SoundFonts pack 8MBGMSFX.SF2 for the TuxGuitar's FluidSynth plugin
+has been shared with FluidSynth. The 8MBGMSFX.SF2 file has been
+installed at:
 
-    %%DATADIR%%/8MBGMSFX.SF2
+%%SF2_DIR%%/8MBGMSFX.SF2
 
-Add this path in the FluidSynth plugin configuration to enable them.
-
+======================================================================
