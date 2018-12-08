@@ -1,0 +1,16 @@
+fplll contains implementations of several lattice algorithms. The implementation
+relies on floating-point orthogonalization, and LLL is central to the code,
+hence the name.
+
+It includes implementations of floating-point LLL reduction algorithms, offering
+different speed/guarantees ratios. It contains a 'wrapper' choosing the
+estimated best sequence of variants in order to provide a guaranteed output as
+fast as possible. In the case of the wrapper, the succession of variants is
+oblivious to the user.
+
+It includes an implementation of the BKZ reduction algorithm, including the
+BKZ-2.0 improvements (extreme enumeration pruning, pre-processing of blocks,
+early termination). Additionally, Slide reduction and self dual BKZ are
+supported.
+
+WWW: https://github.com/fplll/fplll
