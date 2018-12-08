@@ -5,7 +5,7 @@ PORTVERSION=	2.4.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source alternative to Ansible Tower
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go \
