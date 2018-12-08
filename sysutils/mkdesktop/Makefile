@@ -1,28 +1,29 @@
 # $FreeBSD$
 
 PORTNAME=	mkdesktop
-PORTVERSION=	1.8
+PORTVERSION=	2.8
 CATEGORIES=	sysutils
 
 MAINTAINER=	bourne.identity@hotmail.com
 COMMENT=	Powerful, flexible utility to setup a FreeBSD desktop
 
-RUN_DEPENDS=	pkg>0:ports-mgmt/pkg
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	bourne-again
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-DATA1=		stage-definitions
-DATA2=		mkdesktop.help
-PLIST_FILES=	bin/${PORTNAME} ${DATADIR}/${DATA1} ${DATADIR}/${DATA2}
+USE_GITHUB=	yes
+GH_ACCOUNT=	bourne-again
+
+PLIST_FILES=	bin/mkdesktop \
+		share/mkdesktop/stage-definitions \
+		man/man1/mkdesktop.1.gz
 
 do-install:
 		${MKDIR} ${STAGEDIR}${DATADIR}
-		${INSTALL_DATA} ${WRKSRC}/${DATA1} ${STAGEDIR}${DATADIR}
-		${INSTALL_DATA} ${WRKSRC}/${DATA2} ${STAGEDIR}${DATADIR}
-		${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+		${INSTALL_DATA} ${WRKSRC}/stage-definitions ${STAGEDIR}${DATADIR}
+		${INSTALL_SCRIPT} ${WRKSRC}/mkdesktop ${STAGEDIR}${PREFIX}/bin
+		${INSTALL_MAN} ${WRKSRC}/mkdesktop.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
