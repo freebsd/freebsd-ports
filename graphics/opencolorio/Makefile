@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	opencolorio
-PORTVERSION=	1.0.9
-PORTREVISION?=	5
+PORTVERSION=	1.1.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -11,30 +11,31 @@ COMMENT?=	Complete color management solution
 
 LICENSE=	BSD3CLAUSE
 
+USES=		alias cmake:outsource compiler:c++11-lang pkgconfig shebangfix
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	imageworks
 GH_PROJECT=	OpenColorIO
-GH_TAGNAME=	67e455b97e
 
-OPTIONS_DEFINE=	DOCS
-
-DOCS_CMAKE_BOOL=	OCIO_BUILD_DOCS
-
+CMAKE_ON=	USE_EXTERNAL_TINYXML USE_EXTERNAL_YAML
+CMAKE_OFF=	OCIO_BUILD_JNIGLUE OCIO_BUILD_NUKE OCIO_BUILD_STATIC
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		alias compiler:c++11-lang cmake:outsource pkgconfig shebangfix
-CMAKE_ARGS=	-DOCIO_BUILD_JNIGLUE:BOOL=OFF \
-		-DOCIO_BUILD_NUKE:BOOL=OFF \
-		-DOCIO_BUILD_STATIC:BOOL=OFF \
-		-DUSE_EXTERNAL_TINYXML:BOOL=ON \
-		-DUSE_EXTERNAL_YAML:BOOL=ON
+# pyglue gives an error on use of register
+# this should only be an error using c++17
+CXXFLAGS+=	-Wno-deprecated-register
+
 SHEBANG_FILES=	share/sphinx/ExtractRstFromSourceCPP.py \
 		share/sphinx/ExtractRstFromSourceSimple.py \
 		src/pyglue/createPyDocH.py
 
+OPTIONS_DEFINE=		DOCS
+
+DOCS_CMAKE_BOOL=	OCIO_BUILD_DOCS
+
 .if ${MACHINE_CPU:Msse2}
-CMAKE_ARGS+=	-DOCIO_USE_SSE:BOOL=ON
+CMAKE_ON+=	OCIO_USE_SSE
 .else
-CMAKE_ARGS+=	-DOCIO_USE_SSE:BOOL=OFF
+CMAKE_OFF+=	OCIO_USE_SSE
 .endif
 
 .include <bsd.port.options.mk>
@@ -43,23 +44,22 @@ CMAKE_ARGS+=	-DOCIO_USE_SSE:BOOL=OFF
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libOpenImageIO.so:graphics/openimageio \
 		libOpenColorIO.so:graphics/opencolorio
-CMAKE_ARGS+=	-DOCIO_BUILD_APPS:BOOL=ON \
-		-DOCIO_BUILD_SHARED:BOOL=OFF \
-		-DOCIO_BUILD_PYGLUE:BOOL=OFF
+CMAKE_ON+=	OCIO_BUILD_APPS USE_EXTERNAL_LCMS
+CMAKE_OFF+=	OCIO_BUILD_SHARED OCIO_BUILD_PYGLUE
+LDFLAGS+=	-lOpenColorIO
 USE_GL=		gl glu glut glew
 USE_XORG=	xi xmu
 PLIST=		${PKGDIR}/pkg-plist-tools
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-CMakeLists.txt \
-		${FILESDIR}/extra-tools-patch-src_core_CMakeLists.txt
+EXTRA_PATCHES=	${PATCHDIR}/tools
 .elif defined(OCIO_SLAVE) && ${OCIO_SLAVE} == pymodule
 LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio \
 		libOpenColorIO.so:graphics/opencolorio
 USES+=		python
 USE_PYTHON=	flavors
-CMAKE_ARGS+=	-DOCIO_BUILD_APPS:BOOL=OFF \
-		-DOCIO_BUILD_SHARED:BOOL=OFF \
-		-DOCIO_BUILD_PYGLUE:BOOL=ON \
-		-DPYTHON:STRING=${PYTHON_CMD}
+LDFLAGS+=	-lOpenColorIO
+CMAKE_ON+=	OCIO_BUILD_PYGLUE OCIO_PYGLUE_LINK
+CMAKE_OFF+=	OCIO_BUILD_APPS OCIO_BUILD_SHARED
+CMAKE_ARGS+=	-DPYTHON:FILEPATH=${PYTHON_CMD}
 PLIST=		${PKGDIR}/pkg-plist-pyglue
 .else # master port
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR}
@@ -67,10 +67,9 @@ LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml \
 		libyaml-cpp03.so:devel/yaml-cpp03
 USES+=		python:2.7,build
 USE_LDCONFIG=	yes
-CMAKE_ARGS+=	-DOCIO_BUILD_APPS:BOOL=OFF \
-		-DOCIO_BUILD_SHARED:BOOL=ON \
-		-DOCIO_BUILD_PYGLUE:BOOL=ON \
-		-DPYTHON:FILEPATH=${PYTHON_CMD}
+CMAKE_ON+=	OCIO_BUILD_SHARED OCIO_BUILD_PYGLUE
+CMAKE_OFF+=	OCIO_BUILD_APPS
+CMAKE_ARGS+=	-DPYTHON:FILEPATH=${PYTHON_CMD}
 # we enable pyglue in master port. This makes the python module
 # available when generating docs, we leave the python header in place
 # but only install the python module with the py-opencolorio port
@@ -78,7 +77,7 @@ CMAKE_ARGS+=	-DOCIO_BUILD_APPS:BOOL=OFF \
 # doc building fails using python3 - but the py-opencolorio port can still
 # be used to build a python 3 module
 PLIST=		${PKGDIR}/pkg-plist
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_core_CMakeLists.txt
+EXTRA_PATCHES=	${PATCHDIR}/libs
 .endif
 
 post-patch:

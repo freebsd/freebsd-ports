@@ -1,9 +1,11 @@
---- src/core/CMakeLists.txt.orig	2014-09-12 04:38:18.000000000 +0930
+--- src/core/CMakeLists.txt.orig	2018-02-05 14:07:04 UTC
 +++ src/core/CMakeLists.txt
-@@ -81,13 +81,3 @@ if(OCIO_BUILD_STATIC)
-     install(TARGETS OpenColorIO_STATIC DESTINATION ${CMAKE_INSTALL_EXEC_PREFIX}/lib)
- endif()
- 
+@@ -105,15 +105,3 @@ macro(target_link_OCIO target)
+         set_target_properties(${target} PROPERTIES COMPILE_DEFINITIONS OpenColorIO_STATIC)
+     endif()
+ endmacro()
+-
+-
 -# public interface
 -install(FILES ${core_export_headers}
 -    DESTINATION ${CMAKE_INSTALL_PREFIX}/include/OpenColorIO/)
