@@ -1,0 +1,55 @@
+--- src/configure.orig	2018-11-06 17:02:55 UTC
++++ src/configure
+@@ -8796,52 +8796,6 @@ if test "x$ac_cv_func_qsort_r" = xyes; then
+ $as_echo "$as_me: checking \"GNU style qsort_r()\"..." >&6;}
+   qsort_r_gnu=no
+ 
+-  if test "$cross_compiling" = yes; then :
+-  { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+-$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+-as_fn_error $? "cannot run test program while cross compiling
+-See \`config.log' for more details" "$LINENO" 5; }
+-else
+-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-
+-#define _GNU_SOURCE
+-#include <stdlib.h>
+-
+-static int
+-mycompare(const void *p1, const void *p2, void *c)
+-{ const int *s1 = p1;
+-  const int *s2 = p2;
+-  int *ip = c;
+-
+-  if ( *ip != 1 )
+-    exit(1);
+-
+-  return *s1 - *s2;
+-}
+-
+-int
+-main(int argc, char**argv)
+-{ int data[] = {0,1,2,3,4,5,6,7,8,9};
+-  int ctx = 1;
+-
+-  qsort_r(data, 10, sizeof(int), mycompare, (void*)&ctx);
+-  return 0;
+-}
+-
+-_ACEOF
+-if ac_fn_c_try_run "$LINENO"; then :
+-
+-$as_echo "#define QSORT_R_GNU 1" >>confdefs.h
+-
+-qsort_r_gnu=yes
+-else
+-  true
+-fi
+-rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+-  conftest.$ac_objext conftest.beam conftest.$ac_ext
+-fi
+-
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $qsort_r_gnu" >&5
+ $as_echo "$qsort_r_gnu" >&6; }
+ fi
