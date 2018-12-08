@@ -27,8 +27,8 @@ GH_ACCOUNT=	qtile
 
 USE_GNOME=	pygobject3
 
-USES=		python:3.6
-USE_PYTHON=	distutils autoplist
+USES=		python:3.4+
+USE_PYTHON=	distutils autoplist noflavors
 NO_ARCH=	yes
 
 PORTDOCS=	CHANGELOG README.rst
