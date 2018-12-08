@@ -14,12 +14,8 @@ the same server.
 
 1. Preliminary steps
 
-1.1 Install databases/mysql56-server or newer
+1.1 Install databases/mysql57-server or newer
 	You may choose your favourite method - ports or packages here. 
-	FreeBSD default setting use STRICT_TRANS_TABLES sql_mode. It's mandatory to disable it. Edit your my.cnf accordingly
-
-	The following SQL mode should be compatible with ZM:
-		sql_mode= NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
 
 	ZoneMinder use very simple queries, however it tends to write to 
 	the database quite a lot depending on your capture mode and number 
@@ -33,42 +29,62 @@ the same server.
 	We provide an example for an HTTP install, however, you should use 
 	HTTPS if you plan to expose your installation to the public. There 
 	are plenty guides how to do it and security/letsencrypt.sh is a 
-	good way to get a valid SSL certificate.
+	good way to get a valid SSL certificate. Probably, your installation
+	will be behind reverse proxy, so this example should work for you.
+
+	Please, notive the following issues with ZM:
+
+	- web interface has several hardcoded /zm in url generation, so it is
+		mandatory to serve your installtion from /zm subfolder
+	- if behind reverse proxy, HTTP_X_FORWARDED_PROTO must be supplied or link
+		generation will use http://
 
 	Your server block should include the following:
 
-		server {
-				root /usr/local/www/zoneminder;
-				try_files $uri $uri/ /index.php$is_args$args;
-				index index.php;
+	server {
+		listen 80;
 
-				location = /cgi-bin/nph-zms {
-						include fastcgi_params;
-						fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
-						fastcgi_pass    unix:/var/run/fcgiwrap/fcgiwrap.sock;
-				}
+		root /usr/local/www/zoneminder;
+		index index.php
+		gzip off;
 
-				location ~ \.php$ { 
-						include fastcgi_params;
-						fastcgi_param   SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-						fastcgi_pass    unix:/var/run/php-fpm.sock;
-				}
+		location /cgi-bin/nph-zms {
 
-				location /api {
-						rewrite ^/api/(.+)$ /api/index.php?p=$1 last;
-				}
+			include fastcgi_params;
+			fastcgi_param SCRIPT_FILENAME $request_filename;
+			fastcgi_pass  unix:/var/run/fcgiwrap/fcgiwrap.sock;
 		}
 
-1.2.1 ZoneMinder has it's own authentication system, however it's recommend to use NGINX basic 
-	auth over HTTPS if you don't need fine grain control to ZoneMinder components.
+		location /zm/cache {
 
-1.2.2 If you choose ZoneMinder authentication, it's recommended to prohibit access to 
-	image and events folder as it's possible to guess file names inside it.
+			alias /var/cache/zoneminder;
+		}
 
-        location ~ ^/(?:images|events)/ {
-                deny all;
-        }
-        
+		location /zm {
+
+			alias	/usr/local/www/zoneminder;
+
+			location ~ \.php$ {
+
+				if (!-f $request_filename) { return 404; }
+				include fastcgi_params;
+				fastcgi_param SCRIPT_FILENAME $request_filename;
+				fastcgi_index index.php;
+				fastcgi_pass unix:/var/run/php-fpm.sock;
+			}
+
+			location ~ \.(jpg|jpeg|gif|png|ico)$ {
+				access_log	off;
+				expires	33d;
+			}
+
+			location /zm/api/ {
+				alias	/usr/local/www/zoneminder;
+				rewrite ^/zm/api(.+)$ /zm/api/app/webroot/index.php?p=$1 last;
+			}
+		}
+	}
+
 	Enable and start NGINX
 		sysrc nginx_enable="YES"
 		service nginx start
@@ -158,3 +174,17 @@ Upgrades
 	
 3. Start ZoneMinder
 	service zoneminder start
+
+Upgrading from www/zoneminder 1.30.x or www/zoneminder-h264
+=====================================================
+
+Before proceeding to upgrade sequence listed above,
+
+1. Connect to mysql server with root and issue
+	set global log_bin_trust_function_creators=1;
+
+2. Add write access to www user to /usr/local/etc/zoneminder/zmcustom.conf
+
+3. Take notice, that default monitor files are not under ${WWWDIR} anymore.
+	Old setup will work, but as security concideration it is recommended to
+	move them to /var/db/zoneminder (default) or to any place not under www root.
