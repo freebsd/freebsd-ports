@@ -1,6 +1,6 @@
---- rdnssd/merge-hook.in.orig	2011-09-30 17:29:15.000000000 +0200
-+++ rdnssd/merge-hook.in	2011-09-30 17:29:53.000000000 +0200
-@@ -21,7 +21,7 @@
+--- rdnssd/merge-hook.in.orig	2014-12-14 10:13:57 UTC
++++ rdnssd/merge-hook.in
+@@ -19,7 +19,7 @@
  
  set -e
  
@@ -9,7 +9,7 @@
  
  # Max number of nameserver options taken into account. Should be as
  # defined in <resolv.h>
-@@ -33,14 +33,14 @@
+@@ -31,14 +31,14 @@ MAXNS=3
  # will limit the IPv6 entries it adds to $RDNSS_LIMIT only.
  RDNSS_LIMIT=$(($MAXNS - 1))
  

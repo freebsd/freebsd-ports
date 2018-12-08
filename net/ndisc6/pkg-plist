@@ -24,6 +24,7 @@ sbin/tracert6
 %%NLS%%share/locale/cs/LC_MESSAGES/ndisc6.mo
 %%NLS%%share/locale/de/LC_MESSAGES/ndisc6.mo
 %%NLS%%share/locale/en/LC_MESSAGES/ndisc6.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/ndisc6.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/ndisc6.mo
 @owner nobody
 @dir var/run/rdnssd
