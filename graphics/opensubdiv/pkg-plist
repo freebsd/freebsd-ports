@@ -949,10 +949,6 @@ lib/libosdGPU.so.%%LIBVERS%%
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/search/related_5.js
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/search/related_6.html
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/search/related_6.js
-%%PORTDOCS%%%%DOCSDIR%%/doxy_html/search/related_7.html
-%%PORTDOCS%%%%DOCSDIR%%/doxy_html/search/related_7.js
-%%PORTDOCS%%%%DOCSDIR%%/doxy_html/search/related_8.html
-%%PORTDOCS%%%%DOCSDIR%%/doxy_html/search/related_8.js
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/search/search.css
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/search/search.js
 %%PORTDOCS%%%%DOCSDIR%%/doxy_html/search/search_l.png
