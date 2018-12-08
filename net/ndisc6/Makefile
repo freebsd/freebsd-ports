@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ndisc6
-PORTVERSION=	1.0.2
-PORTREVISION=	6
+PORTVERSION=	1.0.3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.remlab.net/files/ndisc6/ \
 		http://people.via.ecp.fr/~rem/www.remlab.net/files/ndisc6/
@@ -15,6 +14,7 @@ LICENSE=	GPLv2
 
 USES=		tar:bzip2 perl5
 USE_GCC=	any
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-suid-install --localstatedir="${PREFIX}/var"
 CONFIGURE_ENV=	PERL=${LOCALBASE}/bin/perl
@@ -24,17 +24,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-LDFLAGS+=	-lintl
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext
+NLS_LDFLAGS=	-lintl
 
 USE_RC_SUBR=	rdnssd
 

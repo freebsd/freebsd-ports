@@ -1,6 +1,6 @@
---- configure.orig  2011-04-24 02:27:27.000000000 +0400
-+++ configure   2011-04-24 02:29:19.000000000 +0400
-@@ -5483,7 +5483,7 @@
+--- configure.orig	2014-12-14 10:09:45 UTC
++++ configure
+@@ -5713,7 +5713,7 @@ fi
                  if test "X$additional_includedir" = "X/usr/local/include"; then
                    if test -n "$GCC"; then
                      case $host_os in
@@ -9,8 +9,8 @@
                      esac
                    fi
                  fi
-@@ -5527,7 +5527,7 @@
-                       if test "X$additional_libdir" = "X/usr/local/$acl_libdirstem"; then
+@@ -5759,7 +5759,7 @@ fi
+                          || test "X$additional_libdir" = "X/usr/local/$acl_libdirstem2"; then
                          if test -n "$GCC"; then
                            case $host_os in
 -                            linux* | gnu* | k*bsd*-gnu) haveit=yes;;
@@ -18,7 +18,7 @@
                            esac
                          fi
                        fi
-@@ -6288,7 +6288,7 @@
+@@ -6597,7 +6597,7 @@ fi
                  if test "X$additional_includedir" = "X/usr/local/include"; then
                    if test -n "$GCC"; then
                      case $host_os in
@@ -27,8 +27,8 @@
                      esac
                    fi
                  fi
-@@ -6332,7 +6332,7 @@
-                       if test "X$additional_libdir" = "X/usr/local/$acl_libdirstem"; then
+@@ -6643,7 +6643,7 @@ fi
+                          || test "X$additional_libdir" = "X/usr/local/$acl_libdirstem2"; then
                          if test -n "$GCC"; then
                            case $host_os in
 -                            linux* | gnu* | k*bsd*-gnu) haveit=yes;;
@@ -36,4 +36,3 @@
                            esac
                          fi
                        fi
-
