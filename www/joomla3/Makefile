@@ -2,16 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	joomla
-DISTVERSION=	3-8-12
+DISTVERSION=	3-9-1
 CATEGORIES=	www
 MASTER_SITES=	https://downloads.joomla.org/cms/joomla3/${DISTVERSION}/
 PKGNAMESUFFIX=	3
-DISTNAME=	Joomla_${DISTVERSION}-Stable-Full_Package
+DISTNAME=	Joomla_${DISTVERSION}-Stable-Full_Package-tar-bz2?format=bz2
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Dynamic web content management system (CMS)
 
 LICENSE=	GPLv2
+
+USES=		php:web tar:bz2 shebangfix
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -23,7 +25,6 @@ OPTIONS_SUB=	yes
 
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-USES=		php:web tar:bz2 shebangfix
 SHEBANG_FILES=	libraries/vendor/leafo/lessphp/lessify
 
 SUB_FILES=	pkg-message
