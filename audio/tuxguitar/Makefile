@@ -3,7 +3,7 @@
 
 PORTNAME=	tuxguitar
 PORTVERSION=	1.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio java
 MASTER_SITES=	SF/${PORTNAME}/TuxGuitar/TuxGuitar-${PORTVERSION}:src \
 		LOCAL/gahr/:fluid \
@@ -34,23 +34,23 @@ USES=		cpe desktop-file-utils gmake pkgconfig
 CPE_VENDOR=	herac
 USE_JAVA=	yes
 USE_ANT=	yes
-WITH_GECKO=	libxul
 USE_LDCONFIG=	yes
 JAVA_VERSION=	1.6+
 NOCCACHE=	yes
 
 WRKSRC_SUBDIR=	TuxGuitar
+SF2_DIR=	${LOCALBASE}/share/sounds/sf2
 
 OPTIONS_DEFINE=	DOCS
 
-PLUGINS=	ascii browser-ftp compat converter fluidsynth gervill gtp \
+PLUGINS=	ascii compat converter fluidsynth gervill gtp \
 		jsa lilypond midi musicxml oss pdf ptb tef tray tuner
 
 SUB_FILES=	pkg-message tuxguitar
 SUB_LIST=	DATADIR=${DATADIR} \
 		PREFIX=${PREFIX} \
 		JAVALIBDIR=${JAVALIBDIR} \
-		GECKO=${GECKO:S/19//}
+		SF2_DIR=${SF2_DIR}
 
 post-extract:
 	@${CP} ${DISTDIR}/8MBGMSFX.SF2 ${WRKDIR}
@@ -105,6 +105,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/../misc/tuxguitar.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/../misc/tuxguitar.desktop ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_MAN} ${WRKSRC}/../misc/tuxguitar.1 ${STAGEDIR}${MANPREFIX}/man/man1
+
+	# Share soundfont with FluidSynth
+	@${MKDIR} ${STAGEDIR}${SF2_DIR}
+	${RLN} ${STAGEDIR}${DATADIR}/8MBGMSFX.SF2 ${STAGEDIR}${SF2_DIR}
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
