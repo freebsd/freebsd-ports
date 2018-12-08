@@ -4,7 +4,8 @@
 PORTNAME=	ncurses
 DISTVERSION=	6.1-${SNAPSHOT}
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.invisible-island.net/${PORTNAME}/current/
+MASTER_SITES=	ftp://ftp.invisible-island.net/${PORTNAME}/current/ \
+		https://invisible-mirror.net/archives/ncurses/current/
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	swills@FreeBSD.org
