@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	barvinok
-DISTVERSION=	0.41
+DISTVERSION=	0.41.1
 CATEGORIES=	math
 MASTER_SITES=	http://barvinok.gforge.inria.fr/
 
