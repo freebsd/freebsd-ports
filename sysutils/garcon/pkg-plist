@@ -48,10 +48,12 @@ share/desktop-directories/xfce-system.directory
 %%NLS%%share/locale/am/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/garcon.mo
+%%NLS%%share/locale/be/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/garcon.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/da/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/de/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/el/LC_MESSAGES/garcon.mo
@@ -65,6 +67,7 @@ share/desktop-directories/xfce-system.directory
 %%NLS%%share/locale/fr/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/he/LC_MESSAGES/garcon.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/id/LC_MESSAGES/garcon.mo
@@ -82,8 +85,8 @@ share/desktop-directories/xfce-system.directory
 %%NLS%%share/locale/oc/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/garcon.mo
-%%NLS%%share/locale/pt/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/garcon.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/garcon.mo
@@ -96,8 +99,8 @@ share/desktop-directories/xfce-system.directory
 %%NLS%%share/locale/tr/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/garcon.mo
-%%NLS%%share/locale/uz/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/uz@Latn/LC_MESSAGES/garcon.mo
+%%NLS%%share/locale/uz/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/garcon.mo
