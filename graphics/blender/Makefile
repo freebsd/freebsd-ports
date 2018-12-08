@@ -24,8 +24,7 @@ RUN_DEPENDS=	${PYNUMPY}
 # libraries are used, if either of the most common options in blender
 # are set. We will pull boost in just to be on the safe side.
 
-# 10.4 fails to build with clang3.4 so we want to use clang50
-# clang50 is already in place for opengl
+# USES=compiler is needed to support gcc built archs
 USES=		cmake:outsource compiler:c++14-lang desktop-file-utils \
 		jpeg python:3.5 shebangfix
 USE_XORG=	x11 xext xfixes xmu xrender
@@ -69,10 +68,10 @@ CYCLES_CMAKE_BOOL=		WITH_CYCLES
 CYCLESOSL_IMPLIES=		CYCLES
 CYCLESOSL_CMAKE_BOOL=		WITH_CYCLES_OSL WITH_LLVM
 CYCLESOSL_CMAKE_ON=		-DLLVM_STATIC:BOOL=OFF \
-				-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config40"
-CYCLESOSL_BUILD_DEPENDS=	llvm-config40:devel/llvm40
+				-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config60"
+CYCLESOSL_BUILD_DEPENDS=	llvm-config60:devel/llvm60
 CYCLESOSL_LIB_DEPENDS=		liboslcomp.so:graphics/openshadinglanguage
-CYCLESOSL_RUN_DEPENDS=		llvm-config40:devel/llvm40
+CYCLESOSL_RUN_DEPENDS=		llvm-config60:devel/llvm60
 DDS_CMAKE_BOOL=			WITH_IMAGE_DDS
 FFMPEG_CMAKE_BOOL=		WITH_CODEC_FFMPEG
 FFMPEG_LIB_DEPENDS=		libavutil.so:multimedia/ffmpeg
