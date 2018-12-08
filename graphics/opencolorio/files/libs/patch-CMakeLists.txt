@@ -1,0 +1,17 @@
+--- ./CMakeLists.txt.orig	2018-01-05 12:08:27 UTC
++++ ./CMakeLists.txt
+@@ -596,7 +599,7 @@ if(TARGET OpenColorIO_STATIC)
+         set(OCIO_STATIC_COMPILE_DEFINITIONS )
+     endif()
+ endif()
+-install(EXPORT OpenColorIO DESTINATION cmake)
++install(EXPORT OpenColorIO DESTINATION ${CMAKE_INSTALL_PREFIX}/share/cmake/Modules)
+ file(WRITE "${CMAKE_BINARY_DIR}/OpenColorIOConfig.cmake"
+     "
+     get_filename_component(OpenColorIO_DIR \"\${CMAKE_CURRENT_LIST_FILE}\" PATH)
+@@ -646,4 +649,4 @@ file(WRITE "${CMAKE_BINARY_DIR}/OpenColo
+     message(STATUS OPENCOLORIO_FOUND=\${OPENCOLORIO_FOUND})
+     "
+ )
+-install(FILES "${CMAKE_BINARY_DIR}/OpenColorIOConfig.cmake" DESTINATION .)
++install(FILES "${CMAKE_BINARY_DIR}/OpenColorIOConfig.cmake" DESTINATION ${CMAKE_INSTALL_PREFIX}/share/cmake/Modules)

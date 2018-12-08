@@ -5,8 +5,11 @@ include/OpenColorIO/OpenColorTypes.h
 include/PyOpenColorIO/PyOpenColorIO.h
 lib/libOpenColorIO.so
 lib/libOpenColorIO.so.1
-lib/libOpenColorIO.so.1.0.9
+lib/libOpenColorIO.so.1.1.0
 libdata/pkgconfig/OpenColorIO.pc
+share/cmake/Modules/OpenColorIOConfig.cmake
+share/cmake/Modules/OpenColorIO-%%CMAKE_BUILD_TYPE%%.cmake
+share/cmake/Modules/OpenColorIO.cmake
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.html
 %%PORTDOCS%%%%DOCSDIR%%/CompatibleSoftware.html
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.html
@@ -25,11 +28,11 @@ libdata/pkgconfig/OpenColorIO.pc
 %%PORTDOCS%%%%DOCSDIR%%/_sources/CompatibleSoftware.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/FAQ.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/License.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/configurations/aces_1.0.3.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/configurations/allocation_vars.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/configurations/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/configurations/nuke_default.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/configurations/spi_anim.txt
-%%PORTDOCS%%%%DOCSDIR%%/_sources/configurations/spi_pipeline.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/configurations/spi_vfx.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/developers/api/OpenColorIO.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/developers/api/OpenColorTransforms.txt
@@ -48,6 +51,7 @@ libdata/pkgconfig/OpenColorIO.pc
 %%PORTDOCS%%%%DOCSDIR%%/_sources/developers/usage_examples.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/downloads.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/introduction.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/installation.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/userguide/baking_luts.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/userguide/config_syntax.txt
@@ -81,11 +85,11 @@ libdata/pkgconfig/OpenColorIO.pc
 %%PORTDOCS%%%%DOCSDIR%%/_static/up-pressed.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/up.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/websupport.js
+%%PORTDOCS%%%%DOCSDIR%%/configurations/aces_1.0.3.html
 %%PORTDOCS%%%%DOCSDIR%%/configurations/allocation_vars.html
 %%PORTDOCS%%%%DOCSDIR%%/configurations/index.html
 %%PORTDOCS%%%%DOCSDIR%%/configurations/nuke_default.html
 %%PORTDOCS%%%%DOCSDIR%%/configurations/spi_anim.html
-%%PORTDOCS%%%%DOCSDIR%%/configurations/spi_pipeline.html
 %%PORTDOCS%%%%DOCSDIR%%/configurations/spi_vfx.html
 %%PORTDOCS%%%%DOCSDIR%%/developers/api/OpenColorIO.html
 %%PORTDOCS%%%%DOCSDIR%%/developers/api/OpenColorTransforms.html
@@ -106,6 +110,7 @@ libdata/pkgconfig/OpenColorIO.pc
 %%PORTDOCS%%%%DOCSDIR%%/genindex.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/objects.inv
 %%PORTDOCS%%%%DOCSDIR%%/py-modindex.html
 %%PORTDOCS%%%%DOCSDIR%%/search.html
