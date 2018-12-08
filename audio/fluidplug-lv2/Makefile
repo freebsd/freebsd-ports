@@ -7,6 +7,9 @@ CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	0a215d9b05a36c41f0d1abcf72818cec2b53fbbf.patch:-p1 # https://github.com/falkTX/FluidPlug/pull/7
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SoundFonts as LV2 plugins via FluidSynth
 
