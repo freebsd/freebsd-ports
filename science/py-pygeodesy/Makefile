@@ -16,4 +16,6 @@ LICENSE=	MIT
 USES=		python zip
 USE_PYTHON=	autoplist concurrent distutils
 
+USE_LOCALE=	en_US.UTF-8
+
 .include <bsd.port.mk>
