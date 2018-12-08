@@ -556,6 +556,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/d_mon_wx0_raster.png
 %%GRASS_INST_DIR%%/docs/html/d_polar_aspect.png
 %%GRASS_INST_DIR%%/docs/html/d_rast_arrow_wind.png
+%%GRASS_INST_DIR%%/docs/html/d_rast_edit.png
 %%GRASS_INST_DIR%%/docs/html/d_rast_elevation.png
 %%GRASS_INST_DIR%%/docs/html/d_rast_elevation_values.png
 %%GRASS_INST_DIR%%/docs/html/d_rast_landuse.png
@@ -3960,6 +3961,9 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/lib/libgrass_vedit.so
 %%GRASS_INST_DIR%%/locale/ar/LC_MESSAGES/grasslibs.mo
 %%GRASS_INST_DIR%%/locale/ar/LC_MESSAGES/grassmods.mo
+%%GRASS_INST_DIR%%/locale/bn/LC_MESSAGES/grasslibs.mo
+%%GRASS_INST_DIR%%/locale/bn/LC_MESSAGES/grassmods.mo
+%%GRASS_INST_DIR%%/locale/bn/LC_MESSAGES/grasswxpy.mo
 %%GRASS_INST_DIR%%/locale/cs/LC_MESSAGES/grasslibs.mo
 %%GRASS_INST_DIR%%/locale/cs/LC_MESSAGES/grassmods.mo
 %%GRASS_INST_DIR%%/locale/cs/LC_MESSAGES/grasswxpy.mo
