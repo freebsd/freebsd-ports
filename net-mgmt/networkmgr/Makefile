@@ -14,14 +14,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	doas:security/doas \
 		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme
 
-USES=		python:3.6 gnome shebangfix
+USES=		python:3.4+ gnome shebangfix
 SHEBANG_GLOB=	*.py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	GhostBSD
 
 NO_ARCH=	yes
-USE_PYTHON=	distutils
+USE_PYTHON=	distutils noflavors
 USE_GNOME=	pygobject3 gtk-update-icon-cache
 
 SUB_FILES=	pkg-message
