@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	snakemake
-DISTVERSION=	5.3.0
+DISTVERSION=	5.3.1
 CATEGORIES=	misc
 MASTER_SITES=	CHEESESHOP
 
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>0:devel/py-appdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 
 USES=		python:3.5+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils noflavors autoplist
 
 NO_ARCH=	yes
 
