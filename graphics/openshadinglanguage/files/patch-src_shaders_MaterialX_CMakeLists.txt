@@ -1,0 +1,18 @@
+--- src/shaders/MaterialX/CMakeLists.txt.orig	2018-12-03 14:24:20 UTC
++++ src/shaders/MaterialX/CMakeLists.txt
+@@ -64,7 +64,7 @@ macro (mx_oslc_compile)
+         message (STATUS "oslc will make ${mxfile_justname} -> ${oslfile_justname} -> ${osofile_justname}")
+     endif ()
+     add_custom_command (OUTPUT ${osofile}
+-        COMMAND python "${CMAKE_CURRENT_SOURCE_DIR}/build_materialX_osl.py"
++        COMMAND %%PYCMD%% "${CMAKE_CURRENT_SOURCE_DIR}/build_materialX_osl.py"
+                        -s "${_shader_SHADERNAME}"
+                        -m "${mxfile}"
+                        -o "${oslfile}"
+@@ -258,5 +258,5 @@ add_custom_target (mxshaders ALL
+                    SOURCES ${shader_source} ${mx_shader_headers})
+ 
+ install (FILES ${mx_shader_headers} ${mx_shader_objs} ${mx_shader_osls}
+-         DESTINATION shaders/MaterialX)
++         DESTINATION %%DATADIR%%/shaders/MaterialX)
+ 

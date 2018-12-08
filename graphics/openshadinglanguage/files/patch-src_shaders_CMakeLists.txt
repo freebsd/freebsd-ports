@@ -1,9 +1,8 @@
---- src/shaders/CMakeLists.txt.orig	2015-03-10 21:57:05 UTC
+--- src/shaders/CMakeLists.txt.orig	2018-02-02 20:54:13 UTC
 +++ src/shaders/CMakeLists.txt
-@@ -49,5 +49,5 @@ add_custom_target (shaders ALL
+@@ -63,4 +63,4 @@ add_custom_target (shaders ALL
                     SOURCES ${shader_source} ${shader_headers})
  
  install (FILES ${shader_headers} ${shader_source} ${shader_objs}
--         DESTINATION shaders)
-+         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/openshadinglanguage/shaders)
- 
+-        DESTINATION shaders)
++        DESTINATION %%DATADIR%%/shaders)

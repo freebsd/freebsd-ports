@@ -1,21 +1,11 @@
---- src/doc/CMakeLists.txt.orig	2017-07-01 03:52:54 UTC
+--- src/doc/CMakeLists.txt.orig	2018-12-03 20:09:06 UTC
 +++ src/doc/CMakeLists.txt
-@@ -3,15 +3,15 @@ set (public_docs osl-languagespec.pdf
-                  markdeep.min.js
-                  )
- 
--install (FILES ${public_docs} DESTINATION doc COMPONENT documentation)
-+install (FILES ${public_docs} DESTINATION ${CMAKE_INSTALL_PREFIX}/share/openshadinglanguage COMPONENT documentation)
- 
- install ( FILES "${PROJECT_SOURCE_DIR}/LICENSE"
-                 "${PROJECT_SOURCE_DIR}/INSTALL.md"
-                 "${PROJECT_SOURCE_DIR}/CHANGES.md"
-                 "${PROJECT_SOURCE_DIR}/README.md"
--          DESTINATION doc )
-+          DESTINATION ${CMAKE_INSTALL_PREFIX}/share/openshadinglanguage )
- 
- 
- file (GLOB testshade_figures "Figures/testshade/*.jpg")
- install (FILES ${testshade_figures}
--         DESTINATION doc/Figures/testshade )
-+         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/openshadinglanguage/Figures/testshade )
+@@ -39,7 +39,7 @@ macro (docdeep_generate)
+     endif ()
+     set (docdeep_program ${CMAKE_SOURCE_DIR}/src/build-scripts/docdeep.py)
+     add_custom_command (OUTPUT ${mdfile}
+-        COMMAND python ${docdeep_program} -d ${_docdeep_NAME} -s docs.css
++        COMMAND %%PYCMD%% ${docdeep_program} -d ${_docdeep_NAME} -s docs.css
+                 ${_docdeep_SOURCE} > "${CMAKE_CURRENT_BINARY_DIR}/${mdfile}"
+         MAIN_DEPENDENCY ${docdeep_program}
+         DEPENDS ${_docdeep_SOURCE}
