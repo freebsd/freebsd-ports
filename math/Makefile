@@ -217,6 +217,7 @@
     SUBDIR += fpc-fftw
     SUBDIR += fpc-gmp
     SUBDIR += fpc-numlib
+    SUBDIR += fplll
     SUBDIR += fricas
     SUBDIR += fxt
     SUBDIR += g2o
