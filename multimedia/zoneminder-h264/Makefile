@@ -10,6 +10,9 @@ COMMENT=	Complete security camera solution, fully web based with image analysis,
 
 LICENSE=	GPLv2
 
+DEPRECATED=	h264 feature was commited to main branch, please upgrade to www/zoneminder
+EXPIRATION_DATE= 2019-01-01
+
 CONFLICTS_INSTALL=	zoneminder
 
 ZM_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
