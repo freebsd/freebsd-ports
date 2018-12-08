@@ -1,0 +1,304 @@
+From 1f7cd3ed5af6640c0e38a2dc2d9be5a9ae036dc8 Mon Sep 17 00:00:00 2001
+From: Hyunjin Song <tteu.ingog@gmail.com>
+Date: Sun, 28 Oct 2018 10:31:33 +0900
+Subject: [PATCH] Allow building SF2 player with FluidSynth 2.x (#4678)
+
+Resolves the incompatibility between FluidSynth 1.x and 2.x
+due to some API changes by shimming some functions.
+
+Note that 1.x and 2.x are not binary compatible.
+--- plugins/sf2_player/fluidsynthshims.h.orig	2018-12-08 09:48:11 UTC
++++ plugins/sf2_player/fluidsynthshims.h
+@@ -0,0 +1,88 @@
++/*
++ * fluidsynthshims.h - a shim header for FluidSynth 2.0 API changes
++ *
++ * Copyright (c) 2018 Hyunjin Song <tteu.ingog@gmail.com>
++ *
++ * This file is part of LMMS - https://lmms.io
++ *
++ * This program is free software; you can redistribute it and/or
++ * modify it under the terms of the GNU General Public
++ * License as published by the Free Software Foundation; either
++ * version 2 of the License, or (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ * General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public
++ * License along with this program (see COPYING); if not, write to the
++ * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
++ * Boston, MA 02110-1301 USA.
++ *
++ */
++
++
++#ifndef FLUIDSYNTHSHIMS_H
++#define FLUIDSYNTHSHIMS_H
++
++#include <fluidsynth.h>
++
++#if FLUIDSYNTH_VERSION_MAJOR < 2
++
++inline const char* fluid_preset_get_name(fluid_preset_t* preset)
++{
++	return preset->get_name(preset);
++}
++
++inline int fluid_preset_get_banknum(fluid_preset_t* preset)
++{
++	return preset->get_banknum(preset);
++}
++
++inline int fluid_preset_get_num(fluid_preset_t* preset)
++{
++	return preset->get_num(preset);
++}
++
++inline fluid_sfont_t* fluid_preset_get_sfont(fluid_preset_t* preset)
++{
++	return preset->sfont;
++}
++
++inline char* fluid_sfont_get_name(fluid_sfont_t* sfont)
++{
++	return sfont->get_name(sfont);
++}
++
++inline void fluid_sfont_iteration_start(fluid_sfont_t* sfont)
++{
++	sfont->iteration_start(sfont);
++}
++
++// Due to the API change, we can't simply shim the 'fluid_sfont_iteration_next' function
++inline fluid_preset_t* fluid_sfont_iteration_next_wrapper(fluid_sfont_t* sfont, fluid_preset_t* preset)
++{
++	return sfont->iteration_next(sfont, preset) ? preset : nullptr;
++}
++
++#else // FLUIDSYNTH_VERSION_MAJOR < 2
++
++#define FLUID_REVERB_DEFAULT_ROOMSIZE 0.2f
++#define FLUID_REVERB_DEFAULT_DAMP 0.0f
++#define FLUID_REVERB_DEFAULT_WIDTH 0.5f
++#define FLUID_REVERB_DEFAULT_LEVEL 0.9f
++
++#define FLUID_CHORUS_DEFAULT_N 3
++#define FLUID_CHORUS_DEFAULT_LEVEL 2.0f
++#define FLUID_CHORUS_DEFAULT_SPEED 0.3f
++#define FLUID_CHORUS_DEFAULT_DEPTH 8.0f
++
++inline fluid_preset_t* fluid_sfont_iteration_next_wrapper(fluid_sfont_t* sfont, fluid_preset_t*)
++{
++	return fluid_sfont_iteration_next(sfont);
++}
++
++#endif // FLUIDSYNTH_VERSION_MAJOR < 2
++
++#endif // FLUIDSYNTHSHIMS_H
+ plugins/sf2_player/fluidsynthshims.h  | 88 +++++++++++++++++++++++++++
+ plugins/sf2_player/patches_dialog.cpp | 44 ++++++++------
+ plugins/sf2_player/patches_dialog.h   |  2 +-
+ plugins/sf2_player/sf2_player.cpp     | 43 ++++++++++---
+ plugins/sf2_player/sf2_player.h       |  2 +-
+ 5 files changed, 152 insertions(+), 27 deletions(-)
+ create mode 100644 plugins/sf2_player/fluidsynthshims.h
+
+new file mode 100644
+--- plugins/sf2_player/patches_dialog.cpp.orig	2018-09-25 07:47:51 UTC
++++ plugins/sf2_player/patches_dialog.cpp
+@@ -143,7 +143,6 @@ void patchesDialog::setup ( fluid_synth_t * pSynth, in
+ 	m_iChan  = iChan;
+ 
+ 
+-	fluid_preset_t preset;
+ 	QTreeWidgetItem *pBankItem = NULL;
+ 	// For all soundfonts (in reversed stack order) fill the available banks...
+ 	int cSoundFonts = ::fluid_synth_sfcount(m_pSynth);
+@@ -151,11 +150,17 @@ void patchesDialog::setup ( fluid_synth_t * pSynth, in
+ 		fluid_sfont_t *pSoundFont = ::fluid_synth_get_sfont(m_pSynth, i);
+ 		if (pSoundFont) {
+ #ifdef CONFIG_FLUID_BANK_OFFSET
+-			int iBankOffset = ::fluid_synth_get_bank_offset(m_pSynth, pSoundFont->id);
++			int iBankOffset = ::fluid_synth_get_bank_offset(m_pSynth, fluid_sfont_get_id(pSoundFont));
+ #endif
+-			pSoundFont->iteration_start(pSoundFont);
+-			while (pSoundFont->iteration_next(pSoundFont, &preset)) {
+-				int iBank = preset.get_banknum(&preset);
++			fluid_sfont_iteration_start(pSoundFont);
++#if FLUIDSYNTH_VERSION_MAJOR < 2
++			fluid_preset_t preset;
++			fluid_preset_t *pCurPreset = &preset;
++#else
++			fluid_preset_t *pCurPreset;
++#endif
++			while ((pCurPreset = fluid_sfont_iteration_next_wrapper(pSoundFont, pCurPreset))) {
++				int iBank = fluid_preset_get_banknum(pCurPreset);
+ #ifdef CONFIG_FLUID_BANK_OFFSET
+ 				iBank += iBankOffset;
+ #endif
+@@ -173,9 +178,9 @@ void patchesDialog::setup ( fluid_synth_t * pSynth, in
+ 	m_iBank = 0;
+ 	fluid_preset_t *pPreset = ::fluid_synth_get_channel_preset(m_pSynth, m_iChan);
+ 	if (pPreset) {
+-		m_iBank = pPreset->get_banknum(pPreset);
++		m_iBank = fluid_preset_get_banknum(pPreset);
+ #ifdef CONFIG_FLUID_BANK_OFFSET
+-		m_iBank += ::fluid_synth_get_bank_offset(m_pSynth, (pPreset->sfont)->id);
++		m_iBank += ::fluid_synth_get_bank_offset(m_pSynth, fluid_sfont_get_id(fluid_preset_get_sfont(sfont)));
+ #endif
+ 	}
+ 
+@@ -186,7 +191,7 @@ void patchesDialog::setup ( fluid_synth_t * pSynth, in
+ 
+ 	// Set the selected program.
+ 	if (pPreset)
+-		m_iProg = pPreset->get_num(pPreset);
++		m_iProg = fluid_preset_get_num(pPreset);
+ 	QTreeWidgetItem *pProgItem = findProgItem(m_iProg);
+ 	m_progListView->setCurrentItem(pProgItem);
+ 	m_progListView->scrollToItem(pProgItem);
+@@ -312,7 +317,6 @@ void patchesDialog::bankChanged (void)
+ 	// Clear up the program listview.
+ 	m_progListView->setSortingEnabled(false);
+ 	m_progListView->clear();
+-	fluid_preset_t preset;
+ 	QTreeWidgetItem *pProgItem = NULL;
+ 	// For all soundfonts (in reversed stack order) fill the available programs...
+ 	int cSoundFonts = ::fluid_synth_sfcount(m_pSynth);
+@@ -320,23 +324,29 @@ void patchesDialog::bankChanged (void)
+ 		fluid_sfont_t *pSoundFont = ::fluid_synth_get_sfont(m_pSynth, i);
+ 		if (pSoundFont) {
+ #ifdef CONFIG_FLUID_BANK_OFFSET
+-			int iBankOffset = ::fluid_synth_get_bank_offset(m_pSynth, pSoundFont->id);
++			int iBankOffset = ::fluid_synth_get_bank_offset(m_pSynth, fluid_sfont_get_id(pSoundFont));
+ #endif
+-			pSoundFont->iteration_start(pSoundFont);
+-			while (pSoundFont->iteration_next(pSoundFont, &preset)) {
+-				int iBank = preset.get_banknum(&preset);
++			fluid_sfont_iteration_start(pSoundFont);
++#if FLUIDSYNTH_VERSION_MAJOR < 2
++			fluid_preset_t preset;
++			fluid_preset_t *pCurPreset = &preset;
++#else
++			fluid_preset_t *pCurPreset;
++#endif
++			while ((pCurPreset = fluid_sfont_iteration_next_wrapper(pSoundFont, pCurPreset))) {
++				int iBank = fluid_preset_get_banknum(pCurPreset);
+ #ifdef CONFIG_FLUID_BANK_OFFSET
+ 				iBank += iBankOffset;
+ #endif
+-				int iProg = preset.get_num(&preset);
++				int iProg = fluid_preset_get_num(pCurPreset);
+ 				if (iBank == iBankSelected && !findProgItem(iProg)) {
+ 					pProgItem = new patchItem(m_progListView, pProgItem);
+ 					if (pProgItem) {
+ 						pProgItem->setText(0, QString::number(iProg));
+-						pProgItem->setText(1, preset.get_name(&preset));
+-						//pProgItem->setText(2, QString::number(pSoundFont->id));
++						pProgItem->setText(1, fluid_preset_get_name(pCurPreset));
++						//pProgItem->setText(2, QString::number(fluid_sfont_get_id(pSoundFont)));
+ 						//pProgItem->setText(3, QFileInfo(
+-						//	pSoundFont->get_name(pSoundFont)).baseName());
++						//	fluid_sfont_get_name(pSoundFont).baseName());
+ 					}
+ 				}
+ 			}
+--- plugins/sf2_player/patches_dialog.h.orig	2018-09-25 07:47:51 UTC
++++ plugins/sf2_player/patches_dialog.h
+@@ -29,7 +29,7 @@
+ #include "ui_patches_dialog.h"
+ #include "LcdSpinBox.h"
+ 
+-#include <fluidsynth.h>
++#include "fluidsynthshims.h"
+ #include <QWidget>
+ #include <QLabel>
+ 
+--- plugins/sf2_player/sf2_player.cpp.orig	2018-09-25 07:47:51 UTC
++++ plugins/sf2_player/sf2_player.cpp
+@@ -127,6 +127,29 @@ sf2Instrument::sf2Instrument( InstrumentTrack * _instr
+ 	// everytime we load a new soundfont.
+ 	m_synth = new_fluid_synth( m_settings );
+ 
++#if FLUIDSYNTH_VERSION_MAJOR >= 2
++	// Get the default values from the setting
++	double settingVal;
++
++	fluid_settings_getnum_default(m_settings, "synth.reverb.room-size", &settingVal);
++	m_reverbRoomSize.setInitValue(settingVal);
++	fluid_settings_getnum_default(m_settings, "synth.reverb.damping", &settingVal);
++	m_reverbDamping.setInitValue(settingVal);
++	fluid_settings_getnum_default(m_settings, "synth.reverb.width", &settingVal);
++	m_reverbWidth.setInitValue(settingVal);
++	fluid_settings_getnum_default(m_settings, "synth.reverb.level", &settingVal);
++	m_reverbLevel.setInitValue(settingVal);
++
++	fluid_settings_getnum_default(m_settings, "synth.chorus.nr", &settingVal);
++	m_chorusNum.setInitValue(settingVal);
++	fluid_settings_getnum_default(m_settings, "synth.chorus.level", &settingVal);
++	m_chorusLevel.setInitValue(settingVal);
++	fluid_settings_getnum_default(m_settings, "synth.chorus.speed", &settingVal);
++	m_chorusSpeed.setInitValue(settingVal);
++	fluid_settings_getnum_default(m_settings, "synth.chorus.depth", &settingVal);
++	m_chorusDepth.setInitValue(settingVal);
++#endif
++
+ 	loadFile( ConfigManager::inst()->defaultSoundfont() );
+ 
+ 	updateSampleRate();
+@@ -392,7 +415,6 @@ QString sf2Instrument::getCurrentPatchName()
+ 	int iBankSelected = m_bankNum.value();
+ 	int iProgSelected = m_patchNum.value();
+ 
+-	fluid_preset_t preset;
+ 	// For all soundfonts (in reversed stack order) fill the available programs...
+ 	int cSoundFonts = ::fluid_synth_sfcount( m_synth );
+ 	for( int i = 0; i < cSoundFonts; i++ )
+@@ -403,21 +425,26 @@ QString sf2Instrument::getCurrentPatchName()
+ #ifdef CONFIG_FLUID_BANK_OFFSET
+ 			int iBankOffset =
+ 				fluid_synth_get_bank_offset(
+-						m_synth, pSoundFont->id );
++						m_synth, fluid_sfont_get_id(pSoundFont) );
+ #endif
+-			pSoundFont->iteration_start( pSoundFont );
+-			while( pSoundFont->iteration_next( pSoundFont,
+-								&preset ) )
++			fluid_sfont_iteration_start( pSoundFont );
++#if FLUIDSYNTH_VERSION_MAJOR < 2
++			fluid_preset_t preset;
++			fluid_preset_t *pCurPreset = &preset;
++#else
++			fluid_preset_t *pCurPreset;
++#endif
++			while ((pCurPreset = fluid_sfont_iteration_next_wrapper(pSoundFont, pCurPreset)))
+ 			{
+-				int iBank = preset.get_banknum( &preset );
++				int iBank = fluid_preset_get_banknum( pCurPreset );
+ #ifdef CONFIG_FLUID_BANK_OFFSET
+ 				iBank += iBankOffset;
+ #endif
+-				int iProg = preset.get_num( &preset );
++				int iProg = fluid_preset_get_num( pCurPreset );
+ 				if( iBank == iBankSelected && iProg ==
+ 								iProgSelected )
+ 				{
+-					return preset.get_name( &preset );
++					return fluid_preset_get_name( pCurPreset );
+ 				}
+ 			}
+ 		}
+--- plugins/sf2_player/sf2_player.h.orig	2018-09-25 07:47:51 UTC
++++ plugins/sf2_player/sf2_player.h
+@@ -36,7 +36,7 @@
+ #include "Knob.h"
+ #include "LcdSpinBox.h"
+ #include "LedCheckbox.h"
+-#include "fluidsynth.h"
++#include "fluidsynthshims.h"
+ #include "MemoryManager.h"
+ 
+ class sf2InstrumentView;
