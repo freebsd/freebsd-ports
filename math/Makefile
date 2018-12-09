@@ -318,6 +318,7 @@
     SUBDIR += laspack
     SUBDIR += ldouble
     SUBDIR += lean
+    SUBDIR += lemon
     SUBDIR += levmar
     SUBDIR += libRmath
     SUBDIR += libccd
