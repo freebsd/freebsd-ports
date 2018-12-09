@@ -10,7 +10,7 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Qt-based console for Jupyter with support for rich media output
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/COPYING.md
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traitlets>=0:devel/py-traitlets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter_core>=0:devel/py-jupyter_core@${PY_FLAVOR} \
