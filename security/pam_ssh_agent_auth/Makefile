@@ -10,7 +10,6 @@ MASTER_SITES=	SF/pamsshagentauth/${PORTNAME}/v${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PAM module which permits authentication via ssh-agent
 
-BROKEN_SSL=	openssl111
 BROKEN_mips64=		fails to compile: ed25519-donna-portable.h:85:4: Need a uint128_t implementation!
 BROKEN_powerpc64=	fails to compile: ed25519-donna-portable.h: warning: ALIGN redefined
 
