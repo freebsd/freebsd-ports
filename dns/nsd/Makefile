@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nsd
-PORTVERSION=	4.1.25
+PORTVERSION=	4.1.26
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -13,9 +13,12 @@ COMMENT=	Authoritative only non-recursive name server
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		cpe ssl
+
+LIB_DEPENDS+=	libevent.so:devel/libevent
+
 CONFLICTS=	nsd-[0-3]* nsd3-[0-9]*
 
-USES=		cpe ssl
 CPE_VENDOR=	nlnetlabs
 USE_RC_SUBR=	nsd
 
@@ -50,8 +53,9 @@ PORTDOCS=	CREDITS ChangeLog LICENSE NSD-DATABASE NSD-DIFFFILE \
 
 OPTIONS_DEFINE=		ROOT_SERVER LARGEFILE IPV6 BIND8_STATS CHECKING \
 		MINRESPSIZE NSEC3 MMAP DOCS RRL ZONE_STATS MUNIN_PLUGIN \
-		RADIXTREE PACKED
-OPTIONS_DEFAULT=	LARGEFILE NSEC3 MINRESPSIZE RRL RADIXTREE BIND8_STATS ZONE_STATS
+		RADIXTREE PACKED DNSTAP
+OPTIONS_DEFAULT=	LARGEFILE NSEC3 MINRESPSIZE RRL RADIXTREE \
+		 BIND8_STATS ZONE_STATS
 OPTIONS_SUB=	yes
 
 MUNIN_PLUGIN_IMPLIES=	BIND8_STATS
@@ -68,8 +72,7 @@ ZONE_STATS_DESC=	Separate statistics for each zone
 MUNIN_PLUGIN_DESC=	Install Munin plugin (requires BIND8_STATS)
 RADIXTREE_DESC=		Enabled: more (15%) memory use but less CPU cycles
 PACKED_DESC=		Enable packed structures for reduced memory use
-
-LIB_DEPENDS+=	libevent.so:devel/libevent
+DNSTAP_DESC=		Enable dnstap logging support
 
 ROOT_SERVER_CONFIGURE_ENABLE=	root-server
 LARGEFILE_CONFIGURE_ENABLE=	largefile
@@ -83,6 +86,9 @@ ZONE_STATS_CONFIGURE_ENABLE=	zone-stats
 IPV6_CONFIGURE_ENABLE=		ipv6
 RADIXTREE_CONFIGURE_ENABLE=	radix-tree
 PACKED_CONFIGURE_ENABLE=	packed
+DNSTAP_CONFIGURE_ENABLE=	dnstap
+DNSTAP_LIB_DEPENDS=		libfstrm.so:devel/fstrm \
+				libprotobuf-c.so:devel/protobuf-c
 
 post-build-MUNIN_PLUGIN-on:
 	${REINPLACE_CMD} \
