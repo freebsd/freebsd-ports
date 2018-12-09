@@ -13,6 +13,9 @@ COMMENT=	Base set of libraries needed by KDE programs
 DEPRECATED=	KDE4 is EOL upstream
 EXPIRATION_DATE=	2018-12-31
 
+BROKEN_SSL=	openssl111
+BROKEN_SSL_REASON_openssl111=	error: member access into incomplete type 'RSA' (aka 'rsa_st')
+
 LIB_DEPENDS=	libImath.so:graphics/ilmbase \
 		libjasper.so:graphics/jasper \
 		libpcre.so:devel/pcre \
