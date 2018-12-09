@@ -1,19 +1,6 @@
-Bug 4889: No connections are accepted after ECONNABORTED
-
-Ignore ECONNABORTED errors when accepting connections. These "client
-decided not to wait for accept(2)" errors do not indicate a problem with
-the listening socket and should not lead to listening socket closure.
-
-Also polished errno checking code for non-ignored errors.
-
-Also documented a bug that prevents TcpAcceptor::acceptOne() from
-stopping to listen on non-ignored accept errors.
-
-Also documented ENFILE and EMFILE mishandling.
-
---- src/comm/TcpAcceptor.cc.orig	2018-09-30 20:57:54.000000000 +0200
-+++ src/comm/TcpAcceptor.cc	2018-10-10 18:10:05.897616000 +0200
-@@ -297,6 +297,7 @@
+--- src/comm/TcpAcceptor.cc.orig	2018-10-27 20:44:55 UTC
++++ src/comm/TcpAcceptor.cc
+@@ -297,6 +297,7 @@ Comm::TcpAcceptor::acceptOne()
          if (intendedForUserConnections())
              logAcceptError(newConnDetails);
          notify(flag, newConnDetails);
@@ -21,7 +8,7 @@ Also documented ENFILE and EMFILE mishandling.
          mustStop("Listener socket closed");
          return;
      }
-@@ -366,11 +367,12 @@
+@@ -366,11 +367,12 @@ Comm::TcpAcceptor::oldAccept(Comm::Conne
  
          PROF_stop(comm_accept);
  
