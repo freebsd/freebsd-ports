@@ -1,0 +1,12 @@
+Geogram is a programming library of geometric algorithms. It includes a simple
+yet efficient Mesh data structure (for surfacic and volumetric meshes), exact
+computer arithmetics (a-la Shewchuck, implemented in GEO::expansion), a
+predicate code generator (PCK: Predicate Construction Kit), standard geometric
+predicates (orient/insphere), Delaunay triangulation, Voronoi diagram, spatial
+search data structures, spatial sorting) and less standard ones (more general
+geometric predicates, intersection between a Voronoi diagram and a triangular or
+tetrahedral mesh embedded in n dimensions). The latter is used by FWD/WarpDrive,
+the first algorithm that computes semi-discrete Optimal Transport in 3d that
+scales up to 1 million Dirac masses (see compute_OTM in example programs).
+
+WWW: http://alice.loria.fr/software/geogram/doc/html/index.html
