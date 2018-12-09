@@ -3,7 +3,7 @@
 
 PORTNAME=	knot-resolver
 DISTVERSION=	3.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-resolver/ \
 		https://dns.company/downloads/knot-resolver/
@@ -16,7 +16,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	bash:shells/bash \
 		git:devel/git
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
-		libknot.so:dns/knot2 \
+		libknot.so:dns/knot2-lib \
 		liblmdb.so:databases/lmdb \
 		libluajit-5.1.so:lang/luajit \
 		libuv.so:devel/libuv
