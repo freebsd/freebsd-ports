@@ -14,6 +14,6 @@ lib/girepository-1.0/Gom-1.0.typelib
 lib/libgom-1.0.so
 lib/libgom-1.0.so.0
 lib/libgom-1.0.so.0.1.0
-lib/python3.6/site-packages/gi/overrides/Gom.py
+%%PYTHON_SITELIBDIR%%/gi/overrides/Gom.py
 libdata/pkgconfig/gom-1.0.pc
 share/gir-1.0/Gom-1.0.gir
