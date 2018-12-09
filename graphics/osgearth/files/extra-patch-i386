@@ -1,0 +1,21 @@
+--- src/osgEarthDrivers/fastdxt/CMakeLists.txt.orig	2018-11-12 18:17:36 UTC
++++ src/osgEarthDrivers/fastdxt/CMakeLists.txt
+@@ -30,7 +30,6 @@ SET(TARGET_SRC
+     dxt.cpp
+     util.cpp
+     libdxt.cpp
+-    intrinsic.cpp
+ )
+ 
+ SETUP_PLUGIN(fastdxt)
+--- src/osgEarthDrivers/fastdxt/dxt.cpp.orig	2018-11-12 18:17:36 UTC
++++ src/osgEarthDrivers/fastdxt/dxt.cpp
+@@ -7,7 +7,7 @@
+ #include "util.h"
+ 
+ 
+-#define DXT_INTR 1
++#define DXT_INTR 0
+ 
+ void ExtractBlock( const byte *inPtr, int width, byte *colorBlock );
+ void ExtractBlock_Intrinsics( const byte *inPtr, int width, byte *colorBlock );
