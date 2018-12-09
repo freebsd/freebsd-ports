@@ -23,8 +23,12 @@
 #			Default: None
 # kafka_pid_file:	Full path of the Kafka process PID file
 #			Default: %%KAFKA_RUNDIR%%/kafka.pid
-# kafka_out_file:	Filename to store Kafka's stdout and stderr
-#			Default: kafkaServer.out
+# kafka_syslog_output_enable:		Set to enable syslog output.
+#					Default: YES
+# kafka_syslog_output_priority: 	Set syslog priority if syslog enabled.
+#					Default: info
+# kafkat_syslog_output_facility:	Set syslog facility if syslog enabled.
+#					Default: daemon
 
 . /etc/rc.subr
 
@@ -41,7 +45,17 @@ load_rc_config "${name}"
 : ${kafka_log_dir:=%%KAFKA_LOGDIR%%}
 : ${kafka_java_opts:=}
 : ${kafka_pid_file:=%%KAFKA_RUNDIR%%/kafka.pid}
-: ${kafka_out_file:=kafkaServer.out}
+: ${kafka_syslog_output_enable:="YES"}
+
+if checkyesno kafka_syslog_output_enable; then
+	kafka_syslog_output_flags="-t ${name} -T ${name}"
+	if [ -n "${kafka_syslog_output_priority}" ]; then
+		kafka_syslog_output_flags="${kafka_syslog_output_flags} -s ${kafka_syslog_output_priority}"
+	fi
+	if [ -n "${kafka_syslog_output_facility}" ]; then
+		kafka_syslog_output_flags="${kafka_syslog_output_flags} -l ${kafka_syslog_output_facility}"
+	fi
+fi
 
 JAVA=%%JAVA%%
 
@@ -53,24 +67,17 @@ pidfile=${kafka_pid_file}
 procname=${JAVA}
 required_files="${kafka_config} ${kafka_log4j_profile}"
 
-daemon_head="-f"
-daemon_tail=""
-
-if [ -n "$kafka_out_file" ]; then
-	daemon_head=""
-	daemon_tail=" > ${kafka_log_dir}/${kafka_out_file} 2>&1 < /dev/null"
-	[ -d "$kafka_log_dir" ] || mkdir -p "$kafka_log_dir"
-	[ -f "${kafka_log_dir}/${kafka_out_file}" ] || touch "${kafka_log_dir}/${kafka_out_file}"
-fi
 
 command="/usr/sbin/daemon"
-command_args="${daemon_head} -p ${pidfile} ${JAVA} ${kafka_main} kafka.Kafka ${kafka_config} ${daemon_tail}"
+command_args="-f ${kafka_syslog_output_flags} -p ${pidfile} ${JAVA} ${kafka_main} kafka.Kafka ${kafka_config}"
 
 start_precmd="kafka_init"
 
+
 kafka_init()
 {
-	chown ${kafka_user}:${kafka_group} ${pidfile%/*} ${kafka_log_dir} ${kafka_log_dir}/${kafka_out_file} ${kafka_config} ${kafka_log4j_profile}
+	[ -d "$kafka_log_dir" ] || mkdir -p "$kafka_log_dir"
+	chown ${kafka_user}:${kafka_group} ${pidfile%/*} ${kafka_log_dir} ${kafka_config} ${kafka_log4j_profile}
 }
 
 run_rc_command "$1"
