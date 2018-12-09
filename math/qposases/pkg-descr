@@ -1,0 +1,9 @@
+qpOASES is an open-source C++ implementation of the recently proposed online
+active set strategy for solving quadratic programming (QP) problems. It has
+several theoretical features that make it particularly suited for model
+predictive control (MPC) applications. Further numerical modifications have
+made qpOASES a reliable QP solver, even when tackling semi-definite, ill-posed
+or degenerated QP problems. Moreover, several interfaces to third-party software
+make qpOASES easy-to-use even for users without knowledge of C/C++.
+
+WWW: https://projects.coin-or.org/qpOASES
