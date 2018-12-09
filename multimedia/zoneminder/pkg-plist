@@ -6175,6 +6175,7 @@ man/man8/zoneminder-zmx10.pl.8.gz
 %%DATADIR%%/db/zm_update-1.32.0.sql
 %%DATADIR%%/db/zm_update-1.32.1.sql
 %%DATADIR%%/db/zm_update-1.32.2.sql
+%%DATADIR%%/db/zm_update-1.32.3.sql
 %%DATADIR%%/icons/16x16/icon.xpm
 %%WWWDIR%%/ajax/add_monitors.php
 %%WWWDIR%%/ajax/alarm.php
@@ -6236,6 +6237,7 @@ man/man8/zoneminder-zmx10.pl.8.gz
 %%WWWDIR%%/api/app/Model/Host.php
 %%WWWDIR%%/api/app/Model/Log.php
 %%WWWDIR%%/api/app/Model/Monitor.php
+%%WWWDIR%%/api/app/Model/Monitor_Status.php
 %%WWWDIR%%/api/app/Model/Server.php
 %%WWWDIR%%/api/app/Model/State.php
 %%WWWDIR%%/api/app/Model/Storage.php
@@ -7532,11 +7534,13 @@ man/man8/zoneminder-zmx10.pl.8.gz
 %%WWWDIR%%/includes/lang.php
 %%WWWDIR%%/includes/logger.php
 %%WWWDIR%%/index.php
+%%WWWDIR%%/js/Server.js
 %%WWWDIR%%/js/logger.js
 %%WWWDIR%%/js/mootools.ext.js
 %%WWWDIR%%/js/overlay.js
 %%WWWDIR%%/js/videojs.zoomrotate.js
 %%WWWDIR%%/lang/big5_big5.php
+%%WWWDIR%%/lang/ba_ba.php
 %%WWWDIR%%/lang/cn_zh.php
 %%WWWDIR%%/lang/cs_cz.php
 %%WWWDIR%%/lang/de_de.php
@@ -7561,7 +7565,6 @@ man/man8/zoneminder-zmx10.pl.8.gz
 %%WWWDIR%%/lang/updateLangs.php
 %%WWWDIR%%/robots.txt
 %%WWWDIR%%/skins/classic/css/base/export.css
-%%WWWDIR%%/skins/classic/css/base/jquery-ui-theme.css
 %%WWWDIR%%/skins/classic/css/base/skin.css
 %%WWWDIR%%/skins/classic/css/base/views/console.css
 %%WWWDIR%%/skins/classic/css/base/views/control.css
@@ -7598,7 +7601,6 @@ man/man8/zoneminder-zmx10.pl.8.gz
 %%WWWDIR%%/skins/classic/css/base/views/zone.css
 %%WWWDIR%%/skins/classic/css/base/views/zones.css
 %%WWWDIR%%/skins/classic/css/classic/export.css
-%%WWWDIR%%/skins/classic/css/classic/jquery-ui-theme.css
 %%WWWDIR%%/skins/classic/css/classic/skin.css
 %%WWWDIR%%/skins/classic/css/classic/views/console.css
 %%WWWDIR%%/skins/classic/css/classic/views/control.css
@@ -7633,7 +7635,6 @@ man/man8/zoneminder-zmx10.pl.8.gz
 %%WWWDIR%%/skins/classic/css/classic/views/zone.css
 %%WWWDIR%%/skins/classic/css/classic/views/zones.css
 %%WWWDIR%%/skins/classic/css/dark/export.css
-%%WWWDIR%%/skins/classic/css/dark/jquery-ui-theme.css
 %%WWWDIR%%/skins/classic/css/dark/skin.css
 %%WWWDIR%%/skins/classic/css/dark/views/console.css
 %%WWWDIR%%/skins/classic/css/dark/views/control.css
