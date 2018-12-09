@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kicad
-PORTVERSION=	5.0.1
+PORTVERSION=	5.0.2
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-library-tmpl
 
