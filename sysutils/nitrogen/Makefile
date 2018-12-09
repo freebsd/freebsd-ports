@@ -2,45 +2,38 @@
 # $FreeBSD$
 
 PORTNAME=	nitrogen
-PORTVERSION=	1.5.2
-PORTREVISION=	9
+DISTVERSION=	1.6.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://projects.l3ib.org/nitrogen/files/
+MASTER_SITES=	https://github.com/l3ib/nitrogen/releases/download/${DISTVERSION}/
 
-MAINTAINER=	corentin@ralite.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Background browser and setter for X windows
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 RUN_DEPENDS=	gnome-icon-theme>0:misc/gnome-icon-theme \
 		hicolor-icon-theme>0:misc/hicolor-icon-theme
 
-OPTIONS_DEFINE=	XINERAMA
-OPTIONS_DEFAULT=XINERAMA
-
-USES=		compiler:c++11-lang gettext iconv pkgconfig
+USES=		compiler:c++11-lang gettext gmake gnome iconv localbase pkgconfig
 USE_CXXSTD=	c++11
 USE_GNOME=	gtkmm24
+INSTALLS_ICONS=	yes
 USE_XORG=	x11
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-inotify
-INSTALLS_ICONS=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lX11
+LIBS+=		-lX11
 
-DESKTOP_ENTRIES="Nitrogen" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" \
-		"Graphics;Viewer;" true
+OPTIONS_DEFINE=		XINERAMA
+OPTIONS_DEFAULT=	XINERAMA
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MXINERAMA}
-USE_XORG+=	xinerama
-CONFIGURE_ARGS+=--enable-xinerama
-.else
-CONFIGURE_ARGS+=--disable-xinerama
-.endif
+XINERAMA_CONFIGURE_ENABLE=	xinerama
+XINERAMA_USE=			xorg=xinerama
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
