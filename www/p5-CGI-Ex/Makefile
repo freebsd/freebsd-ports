@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CGI-Ex
-PORTVERSION=	2.47
+PORTVERSION=	2.48
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,13 +16,13 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-CGI>=0:www/p5-CGI \
 		p5-Template-Alloy>=1.004:www/p5-Template-Alloy
-TEST_DEPENDS=	p5-Test-Warn>=0:devel/p5-Test-Warn
 
 OPTIONS_DEFINE=	EXAMPLES
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 PORTEXAMPLES=	*
 
