@@ -3,11 +3,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/additional-features/custom-fields.md
 %%PORTDOCS%%%%DOCSDIR%%/additional-features/export-templates.md
 %%PORTDOCS%%%%DOCSDIR%%/additional-features/graphs.md
-%%PORTDOCS%%%%DOCSDIR%%/additional-features/netbox-shell.md
 %%PORTDOCS%%%%DOCSDIR%%/additional-features/reports.md
 %%PORTDOCS%%%%DOCSDIR%%/additional-features/tags.md
 %%PORTDOCS%%%%DOCSDIR%%/additional-features/topology-maps.md
 %%PORTDOCS%%%%DOCSDIR%%/additional-features/webhooks.md
+%%PORTDOCS%%%%DOCSDIR%%/administration/netbox-shell.md
 %%PORTDOCS%%%%DOCSDIR%%/administration/replicating-netbox.md
 %%PORTDOCS%%%%DOCSDIR%%/api/authentication.md
 %%PORTDOCS%%%%DOCSDIR%%/api/examples.md
@@ -25,8 +25,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/core-functionality/tenancy.md
 %%PORTDOCS%%%%DOCSDIR%%/core-functionality/virtual-machines.md
 %%PORTDOCS%%%%DOCSDIR%%/core-functionality/vlans.md
+%%PORTDOCS%%%%DOCSDIR%%/development/extending-models.md
 %%PORTDOCS%%%%DOCSDIR%%/development/index.md
 %%PORTDOCS%%%%DOCSDIR%%/development/release-checklist.md
+%%PORTDOCS%%%%DOCSDIR%%/development/style-guide.md
 %%PORTDOCS%%%%DOCSDIR%%/development/utility-views.md
 %%PORTDOCS%%%%DOCSDIR%%/index.md
 %%PORTDOCS%%%%DOCSDIR%%/installation/1-postgresql.md
@@ -483,6 +485,7 @@
 %%DATADIR%%/templates/extras/objectchange_list.html
 %%DATADIR%%/templates/extras/report.html
 %%DATADIR%%/templates/extras/report_list.html
+%%DATADIR%%/templates/extras/tag.html
 %%DATADIR%%/templates/extras/tag_list.html
 %%DATADIR%%/templates/home.html
 %%DATADIR%%/templates/import_success.html
@@ -641,6 +644,7 @@
 %%DATADIR%%/utilities/testing.py
 %%DATADIR%%/utilities/tests/__init__.py
 %%DATADIR%%/utilities/tests/test_managers.py
+%%DATADIR%%/utilities/tests/test_utils.py
 %%DATADIR%%/utilities/utils.py
 %%DATADIR%%/utilities/validators.py
 %%DATADIR%%/utilities/views.py
