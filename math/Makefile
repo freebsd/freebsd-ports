@@ -228,6 +228,7 @@
     SUBDIR += gdcalc
     SUBDIR += geg
     SUBDIR += geogebra
+    SUBDIR += geogram
     SUBDIR += geonext
     SUBDIR += gexpr
     SUBDIR += ggobi

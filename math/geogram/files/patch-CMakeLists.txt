@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-12-09 18:48:27 UTC
++++ CMakeLists.txt
+@@ -132,7 +132,7 @@ if(NOT GEOGRAM_LIB_ONLY)
+   add_subdirectory(tests)
+ endif()
+ 
+-add_subdirectory(doc)
++#add_subdirectory(doc)
+ 
+ ##############################################################################
+ # Cleanup from previous builds
