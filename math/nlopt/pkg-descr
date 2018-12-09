@@ -14,5 +14,7 @@ other algorithms. Its features include:
     algorithms exploiting user-supplied gradients.
   - Algorithms for unconstrained optimization, bound-constrained
     optimization, and general nonlinear inequality/equality constraints.
+  - Free/open-source software under the GNU LGPL
+    (and looser licenses for some portions of NLopt).
 
-WWW: http://ab-initio.mit.edu/wiki/index.php/NLopt
+WWW: https://nlopt.readthedocs.io/en/latest/
