@@ -1,5 +1,7 @@
 bin/nitrogen
 man/man1/nitrogen.1.gz
+share/appdata/nitrogen.appdata.xml
+share/applications/nitrogen.desktop
 share/icons/hicolor/128x128/apps/nitrogen.png
 share/icons/hicolor/16x16/actions/wallpaper-centered.png
 share/icons/hicolor/16x16/actions/wallpaper-scaled.png
@@ -11,3 +13,9 @@ share/icons/hicolor/16x16/mimetypes/image-x-generic.png
 share/icons/hicolor/22x22/apps/nitrogen.png
 share/icons/hicolor/32x32/apps/nitrogen.png
 share/icons/hicolor/48x48/apps/nitrogen.png
+share/locale/bs/LC_MESSAGES/nitrogen.mo
+share/locale/fi/LC_MESSAGES/nitrogen.mo
+share/locale/hr/LC_MESSAGES/nitrogen.mo
+share/locale/pl/LC_MESSAGES/nitrogen.mo
+share/locale/ru/LC_MESSAGES/nitrogen.mo
+share/locale/sr/LC_MESSAGES/nitrogen.mo
