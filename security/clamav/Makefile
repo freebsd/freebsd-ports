@@ -2,7 +2,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.101.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/downloads/production/
 
@@ -174,7 +174,8 @@ post-build-TESTS-on:
 	fi
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/clamav-config.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/clamav-config.h ${WRKSRC}/libclamav/cltypes.h ${WRKSRC}/platform.h \
+		${STAGEDIR}${PREFIX}/include/
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html \
 		  ${STAGEDIR}${DBDIR} \
 		  ${STAGEDIR}${LOGDIR} \

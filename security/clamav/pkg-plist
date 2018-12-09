@@ -58,6 +58,8 @@ bin/freshclam
 bin/sigtool
 include/clamav-config.h
 include/clamav.h
+include/cltypes.h
+include/platform.h
 lib/libclamav.so
 lib/libclamav.so.9
 lib/libclamav.so.9.0.0
