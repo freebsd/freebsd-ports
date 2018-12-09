@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pijul
-PORTVERSION=	0.10.0
-PORTREVISION=	5
+PORTVERSION=	0.11.0
 CATEGORIES=	devel
 MASTER_SITES=	https://pijul.org/releases/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -16,202 +15,232 @@ LICENSE=	GPLv2
 BROKEN_aarch64=		fails to compile: aesv8-armx-linux64.S:53:2: instruction requires: crypto aese v6.16b,v0.16b
 
 USES=		cargo
-CARGO_CRATES=	adler32-1.0.2 \
+CARGO_CRATES=	adler32-1.0.3 \
 		advapi32-sys-0.2.0 \
-		aho-corasick-0.6.4 \
+		aho-corasick-0.6.8 \
 		ansi_term-0.11.0 \
+		argon2rs-0.2.5 \
 		arrayvec-0.4.7 \
-		atty-0.2.8 \
-		backtrace-0.3.6 \
-		backtrace-sys-0.1.16 \
-		base64-0.8.0 \
-		base64-0.9.0 \
-		bincode-0.8.0 \
+		atty-0.2.11 \
+		backtrace-0.3.9 \
+		backtrace-sys-0.1.24 \
+		base64-0.9.3 \
+		bincode-1.0.1 \
 		bit-vec-0.4.4 \
-		bitflags-0.9.1 \
-		bitflags-1.0.1 \
-		bs58-0.2.0 \
+		bitflags-1.0.4 \
+		blake2-rfc-0.2.18 \
+		bs58-0.2.2 \
 		build_const-0.2.1 \
-		byteorder-1.2.2 \
-		bytes-0.4.6 \
-		cc-1.0.10 \
-		cfg-if-0.1.2 \
-		chrono-0.4.2 \
-		clap-2.31.2 \
-		core-foundation-0.2.3 \
-		core-foundation-sys-0.2.3 \
-		crc-1.7.0 \
-		crossbeam-0.2.12 \
-		crossbeam-deque-0.3.0 \
-		crossbeam-epoch-0.4.1 \
-		crossbeam-utils-0.2.2 \
-		crossbeam-utils-0.3.2 \
-		cryptovec-0.4.4 \
-		dtoa-0.4.2 \
-		encoding_rs-0.7.2 \
-		env_logger-0.4.3 \
-		env_logger-0.5.8 \
-		errno-0.2.3 \
-		error-chain-0.11.0 \
-		filetime-0.2.0 \
-		flate2-1.0.1 \
+		byteorder-1.2.6 \
+		bytes-0.4.10 \
+		cc-1.0.25 \
+		cfg-if-0.1.6 \
+		chrono-0.4.6 \
+		clap-2.32.0 \
+		cloudabi-0.0.3 \
+		constant_time_eq-0.1.3 \
+		core-foundation-0.5.1 \
+		core-foundation-sys-0.5.1 \
+		crc-1.8.1 \
+		crossbeam-channel-0.2.6 \
+		crossbeam-deque-0.6.1 \
+		crossbeam-epoch-0.5.2 \
+		crossbeam-epoch-0.6.0 \
+		crossbeam-utils-0.5.0 \
+		cryptovec-0.4.5 \
+		dirs-1.0.4 \
+		dtoa-0.4.3 \
+		encoding_rs-0.8.10 \
+		env_logger-0.5.13 \
+		errno-0.2.4 \
+		errno-dragonfly-0.1.1 \
+		error-chain-0.12.0 \
+		failure-0.1.3 \
+		failure_derive-0.1.3 \
+		filetime-0.2.1 \
+		flate2-1.0.4 \
 		fnv-1.0.6 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		fs2-0.4.3 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
-		futures-0.1.21 \
+		futures-0.1.25 \
 		futures-cpupool-0.1.8 \
+		gcc-0.3.55 \
 		getch-0.2.0 \
-		globset-0.2.1 \
+		globset-0.4.2 \
+		h2-0.1.13 \
 		hex-0.3.2 \
-		httparse-1.2.4 \
+		http-0.1.13 \
+		httparse-1.3.3 \
 		humantime-1.1.1 \
-		hyper-0.11.25 \
-		hyper-tls-0.1.3 \
-		idna-0.1.4 \
-		ignore-0.3.1 \
+		hyper-0.12.12 \
+		hyper-tls-0.3.1 \
+		idna-0.1.5 \
+		ignore-0.4.4 \
+		indexmap-1.0.2 \
 		iovec-0.1.2 \
-		isatty-0.1.7 \
-		itoa-0.3.4 \
-		itoa-0.4.1 \
+		isatty-0.1.9 \
+		itoa-0.4.3 \
 		kernel32-sys-0.2.2 \
-		language-tags-0.2.2 \
-		lazy_static-0.2.11 \
-		lazy_static-1.0.0 \
-		lazycell-0.6.0 \
-		libc-0.2.40 \
-		libflate-0.1.14 \
-		libpijul-0.10.1 \
-		line-0.1.7 \
-		log-0.3.9 \
-		log-0.4.1 \
-		matches-0.1.6 \
-		memchr-2.0.1 \
+		lazy_static-1.1.0 \
+		lazycell-1.2.0 \
+		libc-0.2.43 \
+		libflate-0.1.18 \
+		libpijul-0.11.0 \
+		line-0.1.9 \
+		lock_api-0.1.4 \
+		log-0.4.5 \
+		matches-0.1.8 \
+		memchr-2.1.0 \
 		memmap-0.6.2 \
 		memoffset-0.2.1 \
-		mime-0.3.5 \
-		mime_guess-2.0.0-alpha.4 \
-		miniz-sys-0.1.10 \
-		mio-0.6.14 \
-		mio-uds-0.6.4 \
+		mime-0.3.12 \
+		mime_guess-2.0.0-alpha.6 \
+		miniz-sys-0.1.11 \
+		miniz_oxide-0.2.0 \
+		miniz_oxide_c_api-0.2.0 \
+		mio-0.6.16 \
+		mio-uds-0.6.7 \
 		miow-0.2.1 \
-		native-tls-0.1.5 \
-		net2-0.2.32 \
+		native-tls-0.2.2 \
+		net2-0.2.33 \
 		nodrop-0.1.12 \
 		num-0.1.42 \
-		num-bigint-0.1.43 \
+		num-bigint-0.1.44 \
 		num-complex-0.1.43 \
-		num-integer-0.1.36 \
-		num-iter-0.1.35 \
+		num-integer-0.1.39 \
+		num-iter-0.1.37 \
 		num-rational-0.1.42 \
-		num-traits-0.1.43 \
-		num-traits-0.2.2 \
+		num-traits-0.2.6 \
 		num_cpus-1.8.0 \
-		openssl-0.10.6 \
-		openssl-0.9.24 \
-		openssl-sys-0.9.28 \
+		openssl-0.10.15 \
+		openssl-probe-0.1.2 \
+		openssl-sys-0.9.39 \
+		owning_ref-0.3.3 \
 		pager-0.14.0 \
+		parking_lot-0.6.4 \
+		parking_lot_core-0.3.1 \
 		percent-encoding-1.0.1 \
-		phf-0.7.21 \
-		phf_codegen-0.7.21 \
-		phf_generator-0.7.21 \
-		phf_shared-0.7.21 \
-		pkg-config-0.3.9 \
-		proc-macro2-0.3.6 \
+		phf-0.7.23 \
+		phf_codegen-0.7.23 \
+		phf_generator-0.7.23 \
+		phf_shared-0.7.23 \
+		pkg-config-0.3.14 \
+		proc-macro2-0.4.20 \
 		progrs-0.1.1 \
-		quick-error-1.2.1 \
-		quote-0.5.1 \
-		rand-0.3.22 \
-		rand-0.4.2 \
-		redox_syscall-0.1.37 \
+		quick-error-1.2.2 \
+		quote-0.6.8 \
+		rand-0.4.3 \
+		rand-0.5.5 \
+		rand_core-0.2.2 \
+		rand_core-0.3.0 \
+		redox_syscall-0.1.40 \
 		redox_termios-0.1.1 \
-		regex-0.2.10 \
-		regex-syntax-0.5.5 \
-		relay-0.1.1 \
+		redox_users-0.2.0 \
+		regex-1.0.5 \
+		regex-syntax-0.6.2 \
 		remove_dir_all-0.5.1 \
-		reqwest-0.8.5 \
+		reqwest-0.9.3 \
 		rpassword-2.0.0 \
-		rustc-demangle-0.1.7 \
+		rustc-demangle-0.1.9 \
 		rustc-serialize-0.3.24 \
-		safemem-0.2.0 \
-		same-file-1.0.2 \
-		sanakirja-0.8.16 \
-		schannel-0.1.12 \
-		scoped-tls-0.1.1 \
+		rustc_version-0.2.3 \
+		ryu-0.2.6 \
+		safemem-0.3.0 \
+		same-file-1.0.3 \
+		sanakirja-0.8.19 \
+		schannel-0.1.14 \
+		scoped_threadpool-0.1.9 \
 		scopeguard-0.3.3 \
-		security-framework-0.1.16 \
-		security-framework-sys-0.1.16 \
-		serde-1.0.41 \
-		serde_derive-1.0.41 \
-		serde_derive_internals-0.23.1 \
-		serde_json-1.0.15 \
-		serde_urlencoded-0.5.1 \
+		security-framework-0.2.1 \
+		security-framework-sys-0.2.1 \
+		semver-0.9.0 \
+		semver-parser-0.7.0 \
+		serde-1.0.80 \
+		serde_derive-1.0.80 \
+		serde_json-1.0.32 \
+		serde_urlencoded-0.5.3 \
 		shell-escape-0.1.4 \
-		siphasher-0.2.2 \
-		slab-0.3.0 \
-		slab-0.4.0 \
-		smallvec-0.2.1 \
+		siphasher-0.2.3 \
+		slab-0.4.1 \
+		smallvec-0.6.5 \
+		stable_deref_trait-1.1.1 \
+		string-0.1.1 \
 		strsim-0.7.0 \
-		syn-0.13.1 \
-		take-0.1.0 \
-		tar-0.4.15 \
+		syn-0.15.13 \
+		synstructure-0.10.0 \
+		tar-0.4.17 \
 		tempdir-0.3.7 \
+		tempfile-3.0.4 \
 		term-0.5.1 \
-		termcolor-0.3.6 \
+		termcolor-1.0.4 \
 		termion-1.5.1 \
 		termios-0.2.2 \
-		textwrap-0.9.0 \
-		thread_local-0.3.5 \
-		thrussh-0.19.5 \
-		thrussh-keys-0.9.5 \
+		textwrap-0.10.0 \
+		thread_local-0.3.6 \
+		thrussh-0.20.5 \
+		thrussh-config-0.1.0 \
+		thrussh-keys-0.11.3 \
 		thrussh-libsodium-0.1.3 \
-		time-0.1.39 \
-		tokio-0.1.5 \
-		tokio-core-0.1.17 \
-		tokio-executor-0.1.2 \
-		tokio-io-0.1.6 \
-		tokio-proto-0.1.1 \
-		tokio-reactor-0.1.1 \
-		tokio-service-0.1.0 \
-		tokio-tcp-0.1.0 \
-		tokio-threadpool-0.1.2 \
-		tokio-timer-0.2.1 \
-		tokio-tls-0.1.4 \
-		tokio-udp-0.1.0 \
-		tokio-uds-0.1.7 \
-		toml-0.4.6 \
+		time-0.1.40 \
+		tokio-0.1.11 \
+		tokio-codec-0.1.1 \
+		tokio-current-thread-0.1.3 \
+		tokio-executor-0.1.5 \
+		tokio-fs-0.1.3 \
+		tokio-io-0.1.9 \
+		tokio-reactor-0.1.6 \
+		tokio-tcp-0.1.2 \
+		tokio-threadpool-0.1.7 \
+		tokio-timer-0.2.7 \
+		tokio-udp-0.1.2 \
+		tokio-uds-0.2.2 \
+		toml-0.4.8 \
+		try-lock-0.2.2 \
 		ucd-util-0.1.1 \
 		unicase-1.4.2 \
-		unicase-2.1.0 \
+		unicase-2.2.0 \
 		unicode-bidi-0.3.4 \
-		unicode-normalization-0.1.5 \
-		unicode-width-0.1.4 \
+		unicode-normalization-0.1.7 \
+		unicode-width-0.1.5 \
 		unicode-xid-0.1.0 \
 		unreachable-1.0.0 \
-		url-1.7.0 \
+		url-1.7.1 \
 		username-0.2.0 \
-		utf8-ranges-1.0.0 \
-		utf8parse-0.1.0 \
-		uuid-0.5.1 \
-		vcpkg-0.2.3 \
-		vec_map-0.8.0 \
-		version_check-0.1.3 \
+		utf8-ranges-1.0.1 \
+		utf8parse-0.1.1 \
+		uuid-0.7.1 \
+		vcpkg-0.2.6 \
+		vec_map-0.8.1 \
+		version_check-0.1.5 \
 		void-1.0.2 \
-		walkdir-2.1.4 \
+		walkdir-2.2.5 \
+		want-0.0.6 \
 		winapi-0.2.8 \
-		winapi-0.3.4 \
+		winapi-0.3.6 \
 		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.1 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		wincolor-0.1.6 \
+		wincolor-1.0.1 \
 		ws2_32-sys-0.2.1 \
-		xattr-0.2.1 \
-		yasna-0.1.3 \
+		xattr-0.2.2 \
+		yasna-0.1.3
+CARGO_CARGOLOCK=	${WRKSRC:H}/Cargo.lock
 
 PLIST_FILES=	bin/pijul
 WRKSRC_SUBDIR=	pijul
+
+# We are using pijul/Cargo.toml for all phases and profiles are ignored
+# if specified in non root packages.  cargo.mk has no way to override
+# the Cargo.toml used for each phase, so append the release profile
+# to the root Cargo.toml.
+post-configure:
+	@${ECHO_CMD} "[profile.release]" >> ${WRKSRC:H}/Cargo.toml
+	@${ECHO_CMD} "opt-level = 2" >> ${WRKSRC:H}/Cargo.toml
+	@${ECHO_CMD} "debug = false" >> ${WRKSRC:H}/Cargo.toml
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pijul
