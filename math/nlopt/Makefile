@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	nlopt
-PORTVERSION=	2.4.2
-PORTREVISION=	3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.5.0
 CATEGORIES=	math
-MASTER_SITES=	http://ab-initio.mit.edu/nlopt/
 
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	Nonlinear optimization library
@@ -20,17 +19,16 @@ BROKEN_armv7=		fails to package: Unable to access file site-packages/_nlopt.a:No
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libguile-2.0.so:lang/guile2
 BUILD_DEPENDS=	swig3.0:devel/swig30 \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.9.1,1:math/py-numpy@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.9.1,1:math/py-numpy@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.15.1:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.15.1:math/py-numpy@${PY_FLAVOR}
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared
-CONFIGURE_ENV=	SWIG="${LOCALBASE}/bin/swig3.0"
-
-USES=		autoreconf compiler:features libtool pathfix \
-		pkgconfig python:2.7
+USES=		cmake compiler:features pathfix pkgconfig python:2.7
 USE_LDCONFIG=	yes
 
-INSTALL_TARGET=	install-strip
+USE_GITHUB=	yes
+GH_ACCOUNT=	stevengj
+
+# Needed to find gmp.h
+CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>
