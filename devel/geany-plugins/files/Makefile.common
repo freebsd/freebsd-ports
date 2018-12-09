@@ -2,18 +2,25 @@
 
 .include "${.CURDIR}/../../devel/geany-plugins/files/bsd.geany-plugins.mk"
 
+PORTREVISION=	1
+
 MASTER_SITES=	http://plugins.geany.org/geany-plugins/
 DISTNAME=	geany-plugins-${PORTVERSION}
 DISTINFO_FILE=	${.CURDIR}/../../devel/geany-plugins/distinfo
 
-BUILD_DEPENDS+=	${LOCALBASE}/bin/geany:devel/geany
-LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
-RUN_DEPENDS+=	${LOCALBASE}/bin/geany:devel/geany
-
 GNU_CONFIGURE=	yes
-USES+=		gettext-tools gmake libtool pkgconfig tar:bzip2
-USE_GNOME+=	cairo gdkpixbuf2 gtk20 intltool
+USES+=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2
+USE_GNOME+=	intltool
+
+FLAVORS?=	gtk3 gtk2
+FLAVOR?=	${FLAVORS:[1]}
+
+gtk2_CONFLICTS_INSTALL=	geany-plugin-${GEANY_PLUGIN}
+gtk2_PKGNAMESUFFIX=	-gtk2
+gtk2_LIB_DEPENDS+=	libgeany.so:devel/geany@gtk2
+
+gtk3_CONFLICTS_INSTALL=	geany-plugin-${GEANY_PLUGIN}-gtk2
+gtk3_LIB_DEPENDS+=	libgeany.so:devel/geany@gtk3
 
 # geany-plugins-l10n is not a plugin, thus special treatment
 .if ${PORTNAME} == "geany-plugins-l10n"
@@ -22,6 +29,17 @@ po_SWITCH=	--enable-nls
 USES+=		localbase
 .else
 INSTALL_TARGET=	install-strip
+USE_GNOME+=	cairo gdkpixbuf2
+
+.if ${FLAVOR} == gtk3
+CONFIGURE_ARGS+=	--enable-gtk3
+USE_GNOME+=	gtk30
+.else
+LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+CONFIGURE_ARGS+=	--disable-gtk3
+USE_GNOME+=	gtk20
+.endif
 .endif
 
 GEANY_PLUGIN?=			${PORTNAME:S,geany-plugin-,,}
@@ -38,8 +56,9 @@ DOCSDIR=	share/doc/geany-plugins
 
 .if ${GEANY_UTIL:M${GEANY_PLUGIN}}
 
-LIB_DEPENDS+=	libgeanypluginutils.so:devel/geany-plugin-utilslib
-CONFIGURE_ARGS+=--enable-utilslib
+gtk2_LIB_DEPENDS+=	libgeanypluginutils.so:devel/geany-plugin-utilslib@gtk2
+gtk3_LIB_DEPENDS+=	libgeanypluginutils.so:devel/geany-plugin-utilslib@gtk3
+CONFIGURE_ARGS+=	--enable-utilslib
 
 pre-build:
 	(cd ${WRKSRC}/utils; ${DO_MAKE_BUILD} ${ALL_TARGET})

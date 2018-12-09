@@ -153,8 +153,11 @@ share/applications/geany.desktop
 %%DATADIR%%/filedefs/filetypes.xml
 %%DATADIR%%/filedefs/filetypes.yaml
 %%DATADIR%%/filedefs/filetypes.zephir
+%%GTK3%%%%DATADIR%%/geany-3.0.css
+%%GTK3%%%%DATADIR%%/geany-3.20.css
+%%GTK3%%%%DATADIR%%/geany.css
 %%DATADIR%%/geany.glade
-%%DATADIR%%/geany.gtkrc
+%%GTK2%%%%DATADIR%%/geany.gtkrc
 %%DATADIR%%/snippets.conf
 %%DATADIR%%/tags/entities.html.tags
 %%DATADIR%%/tags/std.pas.tags

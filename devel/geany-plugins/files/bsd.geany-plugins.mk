@@ -1,18 +1,21 @@
 # $FreeBSD$
 
 GEANY_VER=		1.33
+GEANY_PLUGINS_GTK2=	debugger \
+			devhelp \
+			geanypy \
+			multiterm \
+			scope
+
 GEANY_PLUGINS_ALL=	addons \
 			autoclose \
 			automark \
 			codenav \
 			commander \
 			ctags \
-			debugger \
 			defineformat \
-			devhelp \
 			doc \
 			extrasel \
-			geanypy \
 			gendoc \
 			geniuspaste \
 			git-changebar \
@@ -24,7 +27,6 @@ GEANY_PLUGINS_ALL=	addons \
 			macro \
 			markdown \
 			miniscript \
-			multiterm \
 			numberedbookmarks \
 			overview \
 			pairtaghighlighter \
@@ -33,7 +35,6 @@ GEANY_PLUGINS_ALL=	addons \
 			pretty-printer \
 			projectorganizer \
 			prj \
-			scope \
 			sendmail \
 			shiftcolumn \
 			spellcheck \
