@@ -3,14 +3,17 @@
 
 PORTNAME=	tpop3d
 PORTVERSION=	1.5.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual-domain capable POP3 server supporting MySQL, PgSQL etc auth
 
+LICENSE=	GPLv2
+
 USES=		ssl
+
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lcrypto
 CONFIGURE_ARGS=	--enable-auth-other \
