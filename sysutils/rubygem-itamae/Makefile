@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	itamae
-PORTVERSION=	1.9.11
+PORTVERSION=	1.9.13
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -18,9 +18,10 @@ RUN_DEPENDS=	rubygem-ansi>=0:devel/rubygem-ansi \
 		rubygem-specinfra>=2.64.0:sysutils/rubygem-specinfra \
 		rubygem-thor>=0:devel/rubygem-thor
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/itamae
 
