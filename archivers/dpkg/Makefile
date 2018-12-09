@@ -19,7 +19,8 @@ BUILD_DEPENDS=	po4a:textproc/po4a \
 RUN_DEPENDS=	gtar:archivers/gtar \
 		gpatch:devel/patch
 
-USES=		cpe gmake iconv libtool ncurses perl5 pkgconfig tar:xz
+USES=		compiler:c11 cpe gmake iconv libtool ncurses perl5 pkgconfig \
+		tar:xz
 
 CPE_VENDOR=	debian
 WRKSRC=		${WRKDIR}/dpkg-${PORTVERSION}
