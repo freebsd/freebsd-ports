@@ -1,14 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	FluidPlug
-PORTVERSION=	g20161020
-PORTREVISION=	2
+PORTVERSION=	g20181209
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-PATCHFILES=	0a215d9b05a36c41f0d1abcf72818cec2b53fbbf.patch:-p1 # https://github.com/falkTX/FluidPlug/pull/7
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SoundFonts as LV2 plugins via FluidSynth
@@ -22,7 +18,7 @@ LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 USES=		gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	falkTX
-GH_TAGNAME=	889b256
+GH_TAGNAME=	8457f10
 
 SOUNDFONT_DIR=	${PREFIX}/share/sounds/sf2
 
