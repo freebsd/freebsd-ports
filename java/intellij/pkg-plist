@@ -117,6 +117,7 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/lib/eddsa-0.2.0.jar
 %%IDEA_HOME%%/lib/error_prone_annotations-2.3.1.jar
 %%IDEA_HOME%%/lib/extensions.jar
+%%IDEA_HOME%%/lib/external-system-impl.jar
 %%IDEA_HOME%%/lib/external-system-rt.jar
 %%IDEA_HOME%%/lib/fluent-hc-4.5.6.jar
 %%IDEA_HOME%%/lib/forms-1.1-preview.jar
