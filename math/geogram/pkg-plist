@@ -305,7 +305,11 @@ include/geogram1/geogram_gfx/third_party/imgui_fonts/roboto_medium.h
 include/geogram1/geogram_gfx/third_party/imgui_lua_bindings/imgui_iterator.h
 include/geogram1/geogram_gfx/third_party/quicktext/glQuickText.h
 lib/cmake/modules/FindGeogram.cmake
-lib/libgeogram.a
-lib/libgeogram_gfx.a
+lib/libgeogram.so
+lib/libgeogram.so.1
+lib/libgeogram.so.1.6.9
+lib/libgeogram_gfx.so
+lib/libgeogram_gfx.so.1
+lib/libgeogram_gfx.so.1.6.9
 libdata/pkgconfig/geogram1.pc
 libdata/pkgconfig/geogram_gfx1.pc
