@@ -41,14 +41,14 @@ fi
 if [ -z ${mysqld_exporter_conffile} ]; then
 conf_arg=""
 else
-conf_arg="-config.my-cnf=${mysqld_exporter_conffile}"
+conf_arg="--config.my-cnf=${mysqld_exporter_conffile}"
 fi
 
 pidfile=/var/run/mysqld_exporter.pid
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/mysqld_exporter"
 command_args="-p ${pidfile} /usr/bin/env ${procname} \
-    -web.listen-address=${mysqld_exporter_listen_address} \
+    --web.listen-address=${mysqld_exporter_listen_address} \
     ${conf_arg} \
     ${mysqld_exporter_args}"
 
