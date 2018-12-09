@@ -5,7 +5,7 @@
 
 PORTNAME=	jpilot
 PORTVERSION=	1.8.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES+=	palm comms
 MASTER_SITES=	http://www.mirrorservice.org/sites/master.us.finkmirrors.net/distfiles/ \
 		http://jpilot.org/
@@ -16,9 +16,9 @@ COMMENT=	Desktop Organizer Software for the Palm Pilot
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpisock.so:palm/pilot-link
+LIB_DEPENDS=	libpisock.so:palm/pilot-link \
+		libgcrypt.so:security/libgcrypt
 
-USE_GCC=	any
 USES=		pkgconfig gmake libtool
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
