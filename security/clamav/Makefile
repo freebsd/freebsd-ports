@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	clamav
-PORTVERSION=	0.101.0
-PORTREVISION=	2
+PORTVERSION=	0.100.2
+PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/downloads/production/
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Command line virus scanner written entirely in C
 
 LICENSE=	GPLv2
@@ -149,13 +149,8 @@ post-patch:
 		${WRKSRC}/etc/clamd.conf.sample \
 		${WRKSRC}/etc/freshclam.conf.sample \
 		${WRKSRC}/etc/clamav-milter.conf.sample
-.if exists(/usr/lib/libstdc++.so)
-	@${REINPLACE_CMD} -e 's|-Wno-logical-op-parentheses||' \
-			  -e 's|-Wno-dangling-else||' \
-		${WRKSRC}/libclamav/Makefile.am \
-		${WRKSRC}/libclamav/Makefile.in \
-		${WRKSRC}/libclamunrar/makefile
-.endif
+	@${REINPLACE_CMD} -e 's|0x100000000|0x100000000ULL|g' \
+		${WRKSRC}/libclamunrar/unrar.c
 
 pre-configure-TESTS-on:
 	@if ! ${PYTHON_CMD} -c "import thread" >/dev/null 2>&1; then \
@@ -174,12 +169,11 @@ post-build-TESTS-on:
 	fi
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/clamav-config.h ${WRKSRC}/libclamav/cltypes.h ${WRKSRC}/platform.h \
-		${STAGEDIR}${PREFIX}/include/
+	${INSTALL_DATA} ${WRKSRC}/clamav-config.h ${STAGEDIR}${PREFIX}/include
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html \
 		  ${STAGEDIR}${DBDIR} \
 		  ${STAGEDIR}${LOGDIR} \
 		  ${STAGEDIR}${RUNDIR}
-	(cd ${WRKSRC}/docs/html; ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/html)
+	${INSTALL_DATA} ${WRKSRC}/docs/html/* ${STAGEDIR}${DOCSDIR}/html
 
 .include <bsd.port.mk>
