@@ -1,8 +1,18 @@
-This package aims to provide a central list of the country, language,
-and currency names and their translations.  The data comes from
-ISO standards 639 (language names), 3166 (country names),
-3166-2 (sub-territory) and 4217 (currency).
-The translations are from the Translation Project. The data is provided
-in tabular files as well as XML.
+This project provides lists of various ISO standards (e.g. country,
+language, language scripts, and currency names) in one place, rather
+than repeated in many programs throughout the system.
 
-WWW: http://pkg-isocodes.alioth.debian.org/
+Currently there are lists of languages and countries embedded in
+several different programs, which leads to dozens of lists of
+200 languages, translated into more than 90 languages ... not
+very efficient.
+
+With this project, we create a single "gettext domain" for every
+supported ISO standard which contains the translations of
+that domain. It is easy for a programmer to re-use those
+translations instead of maintaining their own translation
+infrastructure. Moreover, the programmer does not need to follow
+changes in the ISO standard and will not work with outdated
+information.
+
+WWW: https://salsa.debian.org/iso-codes-team/iso-codes
