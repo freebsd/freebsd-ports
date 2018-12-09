@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpop
-DISTVERSION=	1.4.0
-PORTREVISION=	1
+DISTVERSION=	1.4.1
 CATEGORIES=	mail
 MASTER_SITES=	https://marlam.de/mpop/releases/
 
