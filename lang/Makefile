@@ -130,6 +130,7 @@
     SUBDIR += go
     SUBDIR += go14
     SUBDIR += gprolog
+    SUBDIR += gravity
     SUBDIR += groovy
     SUBDIR += gscheme
     SUBDIR += guile
