@@ -1,77 +1,65 @@
 bin/suricata
+include/htp/bstr.h
+include/htp/bstr_builder.h
+include/htp/htp.h
+include/htp/htp_base64.h
+include/htp/htp_config.h
+include/htp/htp_connection_parser.h
+include/htp/htp_core.h
+include/htp/htp_decompressors.h
+include/htp/htp_hooks.h
+include/htp/htp_list.h
+include/htp/htp_multipart.h
+include/htp/htp_table.h
+include/htp/htp_transaction.h
+include/htp/htp_urlencoded.h
+include/htp/htp_utf8_decoder.h
+include/htp/htp_version.h
+lib/libhtp.a
+lib/libhtp.so
+lib/libhtp.so.2
+lib/libhtp.so.2.0.0
+libdata/pkgconfig/htp.pc
 man/man1/suricata.1.gz
 %%SC%%bin/suricatasc
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/Basic_Setup.txt
-%%DOCSDIR%%/CentOS5.txt
-%%DOCSDIR%%/CentOS_56_Installation.txt
-%%DOCSDIR%%/Debian_Installation.txt
-%%DOCSDIR%%/Fedora_Core.txt
-%%DOCSDIR%%/FreeBSD_8.txt
 %%DOCSDIR%%/GITGUIDE
-%%DOCSDIR%%/HTP_library_installation.txt
 %%DOCSDIR%%/INSTALL
 %%DOCSDIR%%/INSTALL.PF_RING
 %%DOCSDIR%%/INSTALL.WINDOWS
-%%DOCSDIR%%/Installation_from_GIT_with_PCRE-JIT.txt
-%%DOCSDIR%%/Installation_from_GIT_with_PF_RING_on_Ubuntu_server_1104.txt
-%%DOCSDIR%%/Installation_with_CUDA_and_PFRING_on_Scientific_Linux_6.txt
-%%DOCSDIR%%/Installation_with_CUDA_and_PF_RING_on_Ubuntu_server_1104.txt
-%%DOCSDIR%%/Installation_with_CUDA_on_Scientific_Linux_6.txt
-%%DOCSDIR%%/Installation_with_CUDA_on_Ubuntu_server_1104.txt
-%%DOCSDIR%%/Installation_with_PF_RING.txt
-%%DOCSDIR%%/Mac_OS_X_106x.txt
 %%DOCSDIR%%/NEWS
-%%DOCSDIR%%/OpenBSD_Installation_from_GIT.txt
 %%DOCSDIR%%/README
 %%DOCSDIR%%/Setting_up_IPSinline_for_Linux.txt
 %%DOCSDIR%%/TODO
 %%DOCSDIR%%/Third_Party_Installation_Guides.txt
-%%DOCSDIR%%/Ubuntu_Installation.txt
-%%DOCSDIR%%/Ubuntu_Installation_from_GIT.txt
-%%DOCSDIR%%/Windows.txt
-%%NO_HTP_PORT%%include/htp/bstr.h
-%%NO_HTP_PORT%%include/htp/bstr_builder.h
-%%NO_HTP_PORT%%include/htp/htp.h
-%%NO_HTP_PORT%%include/htp/htp_base64.h
-%%NO_HTP_PORT%%include/htp/htp_config.h
-%%NO_HTP_PORT%%include/htp/htp_connection_parser.h
-%%NO_HTP_PORT%%include/htp/htp_core.h
-%%NO_HTP_PORT%%include/htp/htp_decompressors.h
-%%NO_HTP_PORT%%include/htp/htp_hooks.h
-%%NO_HTP_PORT%%include/htp/htp_list.h
-%%NO_HTP_PORT%%include/htp/htp_multipart.h
-%%NO_HTP_PORT%%include/htp/htp_table.h
-%%NO_HTP_PORT%%include/htp/htp_transaction.h
-%%NO_HTP_PORT%%include/htp/htp_urlencoded.h
-%%NO_HTP_PORT%%include/htp/htp_utf8_decoder.h
-%%NO_HTP_PORT%%include/htp/htp_version.h
-%%NO_HTP_PORT%%lib/libhtp.a
-%%NO_HTP_PORT%%lib/libhtp.so
-%%NO_HTP_PORT%%lib/libhtp.so.2
-%%NO_HTP_PORT%%lib/libhtp.so.2.0.0
-%%NO_HTP_PORT%%libdata/pkgconfig/htp.pc
-%%NO_HTP_PORT%%@dir include/htp
 %%SC%%%%PYTHON_SITELIBDIR%%/suricatasc-0.9-py%%PYTHON_VER%%.egg-info
 %%SC%%%%PYTHON_SITELIBDIR%%/suricatasc/__init__.py
 %%SC%%%%PYTHON_SITELIBDIR%%/suricatasc/__init__.pyc
 %%SC%%%%PYTHON_SITELIBDIR%%/suricatasc/suricatasc.py
 %%SC%%%%PYTHON_SITELIBDIR%%/suricatasc/suricatasc.pyc
-@sample %%ETCDIR%%/suricata.yaml.sample
 @sample %%ETCDIR%%/classification.config.sample
 @sample %%ETCDIR%%/reference.config.sample
+@sample %%ETCDIR%%/suricata.yaml.sample
 @sample %%ETCDIR%%/threshold.config.sample
-%%ETCDIR%%/rules/app-layer-events.rules
-%%ETCDIR%%/rules/decoder-events.rules
-%%ETCDIR%%/rules/dns-events.rules
-%%ETCDIR%%/rules/files.rules
-%%ETCDIR%%/rules/http-events.rules
-%%ETCDIR%%/rules/modbus-events.rules
-%%ETCDIR%%/rules/smtp-events.rules
-%%ETCDIR%%/rules/stream-events.rules
-%%ETCDIR%%/rules/tls-events.rules
-@dir etc/suricata/rules
-@dir etc/suricata
+%%DATADIR%%/rules/app-layer-events.rules
+%%DATADIR%%/rules/decoder-events.rules
+%%DATADIR%%/rules/dnp3-events.rules
+%%DATADIR%%/rules/dns-events.rules
+%%DATADIR%%/rules/files.rules
+%%DATADIR%%/rules/http-events.rules
+%%DATADIR%%/rules/ipsec-events.rules
+%%DATADIR%%/rules/kerberos-events.rules
+%%DATADIR%%/rules/modbus-events.rules
+%%DATADIR%%/rules/nfs-events.rules
+%%DATADIR%%/rules/ntp-events.rules
+%%DATADIR%%/rules/smb-events.rules
+%%DATADIR%%/rules/smtp-events.rules
+%%DATADIR%%/rules/stream-events.rules
+%%DATADIR%%/rules/tls-events.rules
+@dir %%DATADIR%%
+@dir %%ETCDIR%%
+@dir include/htp
 @dir(root,wheel,0700) /var/log/suricata
-@postunexec if [ -d %D/%%ETCDIR%% ]; then echo "==> If you are permanently removing this port, run ``rm -rf ${PKG_PREFIX}/etc/suricata`` to remove configuration files."; fi
+@postunexec if [ -d %D/%%ETCDIR%% ]; then echo "==> If you are permanently removing this port, run ``rm -rf ${PKG_PREFIX}/%%ETCDIR%%`` to remove configuration files."; fi
 @dir %%DOCSDIR%%
