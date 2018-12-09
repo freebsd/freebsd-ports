@@ -21,7 +21,6 @@ dt/app-defaults/C/Dtscreen
 dt/app-defaults/C/Dtsession
 dt/app-defaults/C/Dtstyle
 dt/app-defaults/C/Dtterm
-dt/app-defaults/C/Dtudcfonted
 dt/app-defaults/C/Dtwm
 dt/app-defaults/C/Ttsnoop
 dt/app-defaults/C/UNIXbindings
@@ -45,7 +44,6 @@ dt/app-defaults/de_DE.ISO8859-1/Dtscreen
 dt/app-defaults/de_DE.ISO8859-1/Dtsession
 dt/app-defaults/de_DE.ISO8859-1/Dtstyle
 dt/app-defaults/de_DE.ISO8859-1/Dtterm
-dt/app-defaults/de_DE.ISO8859-1/Dtudcfonted
 dt/app-defaults/de_DE.ISO8859-1/Dtwm
 dt/app-defaults/es_ES.ISO8859-1/Dt
 dt/app-defaults/es_ES.ISO8859-1/Dtbuilder
@@ -67,7 +65,6 @@ dt/app-defaults/es_ES.ISO8859-1/Dtscreen
 dt/app-defaults/es_ES.ISO8859-1/Dtsession
 dt/app-defaults/es_ES.ISO8859-1/Dtstyle
 dt/app-defaults/es_ES.ISO8859-1/Dtterm
-dt/app-defaults/es_ES.ISO8859-1/Dtudcfonted
 dt/app-defaults/es_ES.ISO8859-1/Dtwm
 dt/app-defaults/fr_FR.ISO8859-1/Dt
 dt/app-defaults/fr_FR.ISO8859-1/Dtbuilder
@@ -89,7 +86,6 @@ dt/app-defaults/fr_FR.ISO8859-1/Dtscreen
 dt/app-defaults/fr_FR.ISO8859-1/Dtsession
 dt/app-defaults/fr_FR.ISO8859-1/Dtstyle
 dt/app-defaults/fr_FR.ISO8859-1/Dtterm
-dt/app-defaults/fr_FR.ISO8859-1/Dtudcfonted
 dt/app-defaults/fr_FR.ISO8859-1/Dtwm
 dt/app-defaults/it_IT.ISO8859-1/Dt
 dt/app-defaults/it_IT.ISO8859-1/Dtbuilder
@@ -111,7 +107,6 @@ dt/app-defaults/it_IT.ISO8859-1/Dtscreen
 dt/app-defaults/it_IT.ISO8859-1/Dtsession
 dt/app-defaults/it_IT.ISO8859-1/Dtstyle
 dt/app-defaults/it_IT.ISO8859-1/Dtterm
-dt/app-defaults/it_IT.ISO8859-1/Dtudcfonted
 dt/app-defaults/it_IT.ISO8859-1/Dtwm
 dt/appconfig/appmanager/C/Desktop_Apps/DtLoadInfoLib
 dt/appconfig/appmanager/C/Desktop_Apps/DtPrintManager
@@ -4117,8 +4112,8 @@ dt/appconfig/types/it_IT.ISO8859-1/xclients.dt
 dt/backdrops
 dt/bin/Xsession
 dt/bin/dsdm
-dt/bin/dtaction
-dt/bin/dtappgather
+@(,,6755) dt/bin/dtaction
+@(,,4755) dt/bin/dtappgather
 dt/bin/dtappintegrate
 dt/bin/dtbuilder
 dt/bin/dtcalc
@@ -4153,18 +4148,19 @@ dt/bin/dthelpview
 dt/bin/dticon
 dt/bin/dtimsstart
 dt/bin/dtinfo
+dt/bin/dtinfogen
 dt/bin/dtksh
 dt/bin/dtlogin
 dt/bin/dtlp
-@(root,mail,2555) dt/bin/dtmail
-dt/bin/dtmailpr
+@(,mail,2755) dt/bin/dtmail
+@(,mail,2755) dt/bin/dtmailpr
 dt/bin/dtpad
 dt/bin/dtpdm
 dt/bin/dtpdmd
-dt/bin/dtprintinfo
+@(,,2755) dt/bin/dtprintinfo
 dt/bin/dtscreen
 dt/bin/dtsearchpath
-dt/bin/dtsession
+@(,,2755) dt/bin/dtsession
 dt/bin/dtsession_res
 dt/bin/dtspcd
 dt/bin/dtsrclean
@@ -4176,10 +4172,8 @@ dt/bin/dtsrindex
 dt/bin/dtsrkdump
 dt/bin/dtsrload
 dt/bin/dtstyle
-dt/bin/dtterm
+@(,,2755) dt/bin/dtterm
 dt/bin/dttypes
-dt/bin/dtudcexch
-dt/bin/dtudcfonted
 dt/bin/dtwm
 dt/bin/huffcode
 dt/bin/rpc.cmsd
@@ -4202,7 +4196,6 @@ dt/config/C/Xresources.d/0120.session
 dt/config/C/Xresources.d/0140.session
 dt/config/C/Xresources.d/0160.session
 dt/config/C/dtfile.config
-dt/config/C/fonts.list
 dt/config/C/sys.dtwmrc
 dt/config/C/sys.font
 dt/config/C/sys.resources
@@ -4215,7 +4208,6 @@ dt/config/Xservers
 dt/config/Xsession.d/0010.dtpaths
 dt/config/Xsession.d/0020.dtims
 dt/config/Xsession.d/0030.dttmpdir
-dt/config/Xsession.d/0040.xmbind
 dt/config/Xsession.d/0060.dtsysenv
 dt/config/Xsetup
 dt/config/Xstartup
@@ -4405,6 +4397,9 @@ dt/infolib/etc/StyleUpdate
 dt/infolib/etc/dbdrv
 dt/infolib/etc/de_DE.ISO8859-1/dtsr/deu.sfx
 dt/infolib/etc/de_DE.ISO8859-1/dtsr/deu.stp
+dt/infolib/etc/dtinfo_start
+dt/infolib/etc/dtinfogen_worker
+dt/infolib/etc/dtsr/dtsearch.dbd
 dt/infolib/etc/es_ES.ISO8859-1/dtsr/esp.sfx
 dt/infolib/etc/es_ES.ISO8859-1/dtsr/esp.stp
 dt/infolib/etc/fr_FR.ISO8859-1/dtsr/fra.sfx
@@ -4419,41 +4414,7 @@ dt/infolib/etc/nsgmls
 dt/infolib/etc/online.feature.spec
 dt/infolib/etc/valBase
 dt/infolib/etc/validator
-dt/lib/bindings/acorn
-dt/lib/bindings/apollo
-dt/lib/bindings/dec
-dt/lib/bindings/dg_AViiON
-dt/lib/bindings/doubleclick
-dt/lib/bindings/hal
-dt/lib/bindings/hitachi
-dt/lib/bindings/hp
-dt/lib/bindings/ibm
-dt/lib/bindings/intergraph
-dt/lib/bindings/intergraph17
-dt/lib/bindings/megatek
-dt/lib/bindings/motorola
-dt/lib/bindings/ncr_at
-dt/lib/bindings/ncr_vt
-dt/lib/bindings/pc
-dt/lib/bindings/sgi
-dt/lib/bindings/siemens_9733
-dt/lib/bindings/siemens_wx200
-dt/lib/bindings/sni
-dt/lib/bindings/sni_97801
-dt/lib/bindings/sony
-dt/lib/bindings/sun
-dt/lib/bindings/sun_at
-dt/lib/bindings/tek
-dt/lib/bindings/xmbind.alias
 dt/lib/dtksh/DtFuncs.dtsh
-dt/lib/dtudcfonted/dtaddcpf
-dt/lib/dtudcfonted/dtbdftocpf
-dt/lib/dtudcfonted/dtcpftobdf
-dt/lib/dtudcfonted/dtcpftogpf
-dt/lib/dtudcfonted/dtcpgpf
-dt/lib/dtudcfonted/dtgpftobdf
-dt/lib/dtudcfonted/dtgpftocpf
-dt/lib/dtudcfonted/dtlsgpf
 dt/lib/libDtHelp.so
 dt/lib/libDtHelp.so.2
 dt/lib/libDtMmdb.so
@@ -4514,8 +4475,6 @@ dt/lib/nls/msg/C/dtsession.cat
 dt/lib/nls/msg/C/dtstyle.cat
 dt/lib/nls/msg/C/dtterm.cat
 dt/lib/nls/msg/C/dttypes.cat
-dt/lib/nls/msg/C/dtudcexch.cat
-dt/lib/nls/msg/C/dtudcfonted.cat
 dt/lib/nls/msg/C/dtwm.cat
 dt/lib/nls/msg/C/fmt_tbl.cat
 dt/lib/nls/msg/C/libDtMail.cat
@@ -4558,8 +4517,6 @@ dt/lib/nls/msg/de_DE.ISO8859-1/dtsession.cat
 dt/lib/nls/msg/de_DE.ISO8859-1/dtstyle.cat
 dt/lib/nls/msg/de_DE.ISO8859-1/dtterm.cat
 dt/lib/nls/msg/de_DE.ISO8859-1/dttypes.cat
-dt/lib/nls/msg/de_DE.ISO8859-1/dtudcexch.cat
-dt/lib/nls/msg/de_DE.ISO8859-1/dtudcfonted.cat
 dt/lib/nls/msg/de_DE.ISO8859-1/dtwm.cat
 dt/lib/nls/msg/de_DE.ISO8859-1/fmt_tbl.cat
 dt/lib/nls/msg/de_DE.ISO8859-1/libDtMail.cat
@@ -4602,8 +4559,6 @@ dt/lib/nls/msg/es_ES.ISO8859-1/dtsession.cat
 dt/lib/nls/msg/es_ES.ISO8859-1/dtstyle.cat
 dt/lib/nls/msg/es_ES.ISO8859-1/dtterm.cat
 dt/lib/nls/msg/es_ES.ISO8859-1/dttypes.cat
-dt/lib/nls/msg/es_ES.ISO8859-1/dtudcexch.cat
-dt/lib/nls/msg/es_ES.ISO8859-1/dtudcfonted.cat
 dt/lib/nls/msg/es_ES.ISO8859-1/dtwm.cat
 dt/lib/nls/msg/es_ES.ISO8859-1/fmt_tbl.cat
 dt/lib/nls/msg/es_ES.ISO8859-1/libDtMail.cat
@@ -4646,8 +4601,6 @@ dt/lib/nls/msg/fr_FR.ISO8859-1/dtsession.cat
 dt/lib/nls/msg/fr_FR.ISO8859-1/dtstyle.cat
 dt/lib/nls/msg/fr_FR.ISO8859-1/dtterm.cat
 dt/lib/nls/msg/fr_FR.ISO8859-1/dttypes.cat
-dt/lib/nls/msg/fr_FR.ISO8859-1/dtudcexch.cat
-dt/lib/nls/msg/fr_FR.ISO8859-1/dtudcfonted.cat
 dt/lib/nls/msg/fr_FR.ISO8859-1/dtwm.cat
 dt/lib/nls/msg/fr_FR.ISO8859-1/fmt_tbl.cat
 dt/lib/nls/msg/fr_FR.ISO8859-1/libDtMail.cat
@@ -4690,8 +4643,6 @@ dt/lib/nls/msg/it_IT.ISO8859-1/dtsession.cat
 dt/lib/nls/msg/it_IT.ISO8859-1/dtstyle.cat
 dt/lib/nls/msg/it_IT.ISO8859-1/dtterm.cat
 dt/lib/nls/msg/it_IT.ISO8859-1/dttypes.cat
-dt/lib/nls/msg/it_IT.ISO8859-1/dtudcexch.cat
-dt/lib/nls/msg/it_IT.ISO8859-1/dtudcfonted.cat
 dt/lib/nls/msg/it_IT.ISO8859-1/dtwm.cat
 dt/lib/nls/msg/it_IT.ISO8859-1/fmt_tbl.cat
 dt/lib/nls/msg/it_IT.ISO8859-1/libDtMail.cat
@@ -4733,26 +4684,20 @@ dt/share/backdrops/desc.it_IT.ISO8859-1
 dt/share/examples/README
 dt/share/examples/dtaction/Makefile.HP
 dt/share/examples/dtaction/Makefile.IBM
-dt/share/examples/dtaction/Makefile.NOVELL
 dt/share/examples/dtaction/Makefile.SUN
-dt/share/examples/dtaction/Makefile.UXP
 dt/share/examples/dtaction/README
 dt/share/examples/dtaction/actions.c
 dt/share/examples/dtbuilder/README
 dt/share/examples/dtbuilder/about_box.bil
 dt/share/examples/dtcalendar/Makefile.HP
 dt/share/examples/dtcalendar/Makefile.IBM
-dt/share/examples/dtcalendar/Makefile.NOVELL
 dt/share/examples/dtcalendar/Makefile.SUN
-dt/share/examples/dtcalendar/Makefile.UXP
 dt/share/examples/dtcalendar/README
 dt/share/examples/dtcalendar/attributes.c
 dt/share/examples/dtdnd/Dtdnddemo
 dt/share/examples/dtdnd/Makefile.HP
 dt/share/examples/dtdnd/Makefile.IBM
 dt/share/examples/dtdnd/Makefile.SUN
-dt/share/examples/dtdnd/Makefile.USL
-dt/share/examples/dtdnd/Makefile.UXP
 dt/share/examples/dtdnd/README
 dt/share/examples/dtdnd/buff.c
 dt/share/examples/dtdnd/buff.h
@@ -4766,9 +4711,7 @@ dt/share/examples/dtdnd/text.c
 dt/share/examples/dtdnd/text.h
 dt/share/examples/dtdts/Makefile.HP
 dt/share/examples/dtdts/Makefile.IBM
-dt/share/examples/dtdts/Makefile.NOVELL
 dt/share/examples/dtdts/Makefile.SUN
-dt/share/examples/dtdts/Makefile.UXP
 dt/share/examples/dtdts/README
 dt/share/examples/dtdts/datatyping.c
 dt/share/examples/dthelp/Dthelpdemo
@@ -4779,11 +4722,9 @@ dt/share/examples/dthelp/HourGlass.c
 dt/share/examples/dthelp/HourGlassI.h
 dt/share/examples/dthelp/Main.c
 dt/share/examples/dthelp/Main.h
-dt/share/examples/dthelp/Makefile.DEC
 dt/share/examples/dthelp/Makefile.HP
 dt/share/examples/dthelp/Makefile.IBM
 dt/share/examples/dthelp/Makefile.SUN
-dt/share/examples/dthelp/Makefile.UXP
 dt/share/examples/dthelp/README
 dt/share/examples/dthelp/help/Makefile
 dt/share/examples/dthelp/help/graphics/AppWithHelp.xwd
@@ -4843,89 +4784,32 @@ dt/share/examples/dtksh/crMovesText1
 dt/share/examples/dtksh/ksh93.memo
 dt/share/examples/dtscreen/Makefile.HP
 dt/share/examples/dtscreen/Makefile.IBM
-dt/share/examples/dtscreen/Makefile.NOVELL
 dt/share/examples/dtscreen/Makefile.SUN
-dt/share/examples/dtscreen/Makefile.UXP
 dt/share/examples/dtscreen/README
 dt/share/examples/dtscreen/dt/appconfig/types/C/screensaver.dt
 dt/share/examples/dtscreen/screensaver.c
 dt/share/examples/dtsession/Makefile.HP
 dt/share/examples/dtsession/Makefile.IBM
-dt/share/examples/dtsession/Makefile.NOVELL
 dt/share/examples/dtsession/Makefile.SUN
-dt/share/examples/dtsession/Makefile.UXP
 dt/share/examples/dtsession/README
 dt/share/examples/dtsession/session.c
 dt/share/examples/dtterm/Makefile.HP
 dt/share/examples/dtterm/Makefile.IBM
-dt/share/examples/dtterm/Makefile.NOVELL
 dt/share/examples/dtterm/Makefile.SUN
-dt/share/examples/dtterm/Makefile.UXP
 dt/share/examples/dtterm/README
 dt/share/examples/dtterm/term.c
 dt/share/examples/dtwidget/Makefile.HP
 dt/share/examples/dtwidget/Makefile.IBM
-dt/share/examples/dtwidget/Makefile.NOVELL
 dt/share/examples/dtwidget/Makefile.SUN
-dt/share/examples/dtwidget/Makefile.UXP
 dt/share/examples/dtwidget/README
 dt/share/examples/dtwidget/controls.c
 dt/share/examples/dtwidget/editor.c
 dt/share/examples/dtwsm/Makefile.HP
 dt/share/examples/dtwsm/Makefile.IBM
-dt/share/examples/dtwsm/Makefile.NOVELL
 dt/share/examples/dtwsm/Makefile.SUN
-dt/share/examples/dtwsm/Makefile.UXP
 dt/share/examples/dtwsm/README
 dt/share/examples/dtwsm/occupy.c
 dt/share/examples/dtwsm/wsinfo.c
-dt/share/examples/motif/clipboard/Makefile.HP
-dt/share/examples/motif/clipboard/Makefile.IBM
-dt/share/examples/motif/clipboard/Makefile.NOVELL
-dt/share/examples/motif/clipboard/Makefile.SUN
-dt/share/examples/motif/clipboard/Makefile.UXP
-dt/share/examples/motif/clipboard/README
-dt/share/examples/motif/clipboard/cutpaste.c
-dt/share/examples/motif/clipboard/cutpaste.uil
-dt/share/examples/motif/clipboard/cutpaste_local.uil
-dt/share/examples/motif/dogs/Dog.c
-dt/share/examples/motif/dogs/Dog.h
-dt/share/examples/motif/dogs/Dog.uil
-dt/share/examples/motif/dogs/DogP.h
-dt/share/examples/motif/dogs/Makefile.HP
-dt/share/examples/motif/dogs/Makefile.IBM
-dt/share/examples/motif/dogs/Makefile.NOVELL
-dt/share/examples/motif/dogs/Makefile.SUN
-dt/share/examples/motif/dogs/Makefile.UXP
-dt/share/examples/motif/dogs/README
-dt/share/examples/motif/dogs/Square.c
-dt/share/examples/motif/dogs/Square.h
-dt/share/examples/motif/dogs/Square.uil
-dt/share/examples/motif/dogs/SquareP.h
-dt/share/examples/motif/dogs/bark.bm
-dt/share/examples/motif/dogs/dogs.c
-dt/share/examples/motif/dogs/dogs.uil
-dt/share/examples/motif/dogs/down.bm
-dt/share/examples/motif/dogs/up.bm
-dt/share/examples/motif/draganddrop/DNDDemo.c
-dt/share/examples/motif/draganddrop/DNDDemo.h
-dt/share/examples/motif/draganddrop/DNDDraw.c
-dt/share/examples/motif/draganddrop/Makefile.HP
-dt/share/examples/motif/draganddrop/Makefile.IBM
-dt/share/examples/motif/draganddrop/Makefile.NOVELL
-dt/share/examples/motif/draganddrop/Makefile.SUN
-dt/share/examples/motif/draganddrop/Makefile.UXP
-dt/share/examples/motif/draganddrop/README
-dt/share/examples/motif/periodic/Makefile.HP
-dt/share/examples/motif/periodic/Makefile.IBM
-dt/share/examples/motif/periodic/Makefile.NOVELL
-dt/share/examples/motif/periodic/Makefile.SUN
-dt/share/examples/motif/periodic/Makefile.UXP
-dt/share/examples/motif/periodic/Periodic
-dt/share/examples/motif/periodic/README
-dt/share/examples/motif/periodic/periodic.c
-dt/share/examples/motif/periodic/periodic.uil
-dt/share/examples/motif/periodic/periodic_local.uil
 dt/share/examples/sys.font.iso
 dt/share/examples/template/C/README
 dt/share/examples/template/C/Template.ad
@@ -4946,9 +4830,7 @@ dt/share/examples/template/C/template_icon.pm
 dt/share/examples/template/C/template_icon_m.bm
 dt/share/examples/template/Makefile.HP
 dt/share/examples/template/Makefile.IBM
-dt/share/examples/template/Makefile.NOVELL
 dt/share/examples/template/Makefile.SUN
-dt/share/examples/template/Makefile.UXP
 dt/share/examples/template/README
 dt/share/examples/template/TemplateNew
 dt/share/examples/template/TemplateOpen
@@ -4958,9 +4840,7 @@ dt/share/examples/template/template.c
 dt/share/examples/template/template.ptype
 dt/share/examples/tt/Makefile.HP
 dt/share/examples/tt/Makefile.IBM
-dt/share/examples/tt/Makefile.NOVELL
 dt/share/examples/tt/Makefile.SUN
-dt/share/examples/tt/Makefile.UXP
 dt/share/examples/tt/README
 dt/share/examples/tt/broadcast.c
 dt/share/examples/types/C/IconBrowse.dt
@@ -5059,8 +4939,6 @@ dt/share/man/man1/dtsrload.1.gz
 dt/share/man/man1/dtstyle.1.gz
 dt/share/man/man1/dtterm.1.gz
 dt/share/man/man1/dttypes.1.gz
-dt/share/man/man1/dtudcexch.1.gz
-dt/share/man/man1/dtudcfonted.1.gz
 dt/share/man/man1/dtwm.1.gz
 dt/share/man/man1/huffcode.1.gz
 dt/share/man/man1/ksh.1.gz
@@ -5712,7 +5590,29 @@ dt/share/palettes/desc.de_DE.ISO8859-1
 dt/share/palettes/desc.es_ES.ISO8859-1
 dt/share/palettes/desc.fr_FR.ISO8859-1
 dt/share/palettes/desc.it_IT.ISO8859-1
+etc/pam.d/cde.conf
+etc/man.d/cde.conf
 @dir dt/appconfig/appmanager/de_DE.ISO8859-1/System_Admin
 @dir dt/appconfig/appmanager/es_ES.ISO8859-1/System_Admin
 @dir dt/appconfig/appmanager/fr_FR.ISO8859-1/System_Admin
 @dir dt/appconfig/appmanager/it_IT.ISO8859-1/System_Admin
+@dir etc/dt/appconfig/appmanager/C
+@dir etc/dt/appconfig/appmanager/de_DE.ISO8859-1
+@dir etc/dt/appconfig/appmanager/es_ES.ISO8859-1
+@dir etc/dt/appconfig/appmanager/fr_FR.ISO8859-1
+@dir etc/dt/appconfig/appmanager/it_IT.ISO8859-1
+@dir etc/dt/appconfig/help/C
+@dir etc/dt/appconfig/help/de_DE.ISO8859-1
+@dir etc/dt/appconfig/help/es_ES.ISO8859-1
+@dir etc/dt/appconfig/help/fr_FR.ISO8859-1
+@dir etc/dt/appconfig/help/it_IT.ISO8859-1
+@dir etc/dt/appconfig/icons/C
+@dir etc/dt/appconfig/types/C
+@dir etc/dt/appconfig/types/de_DE.ISO8859-1
+@dir etc/dt/appconfig/types/es_ES.ISO8859-1
+@dir etc/dt/appconfig/types/fr_FR.ISO8859-1
+@dir etc/dt/appconfig/types/it_IT.ISO8859-1
+@dir etc/dt/config/Xsession.d
+@dir /var/dt/appconfig/appmanager
+@dir /var/dt/appconfig
+@dir /var/dt

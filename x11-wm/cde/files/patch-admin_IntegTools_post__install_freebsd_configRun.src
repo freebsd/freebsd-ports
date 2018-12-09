@@ -1,0 +1,50 @@
+--- admin/IntegTools/post_install/freebsd/configRun.src.orig	2016-06-21 UTC
++++ admin/IntegTools/post_install/freebsd/configRun.src
+@@ -221,9 +221,9 @@ XCOMM ##################################
+ PRODUCT=CDE
+ FILESET=CDE-RUN
+ 
+-DT_TOP=CDE_INSTALLATION_TOP
+-DT_CONFIG_TOP=CDE_CONFIGURATION_TOP
+-DT_TEMP_TOP=CDE_LOGFILES_TOP
++DT_TOP=STAGEDIR/usr/dt
++DT_CONFIG_TOP=STAGEDIR/etc/dt
++DT_TEMP_TOP=STAGEDIR/var/dt
+ ROOT=/
+ 
+ retval=0
+@@ -253,17 +253,6 @@ DEFAULT_PRINTER="DtPrint"
+        mkdir -p $DT_TEMP_TOP/$APPCONFIG/appmanager
+     fi
+ 
+-    cd $DT_TEMP_TOP
+-    mv $APPCONFIG/appmanager .hidden-appmanager
+-    chmod -R 755 *
+-    chmod 755 .hidden-appmanager
+-    chown -R bin *
+-    chgrp -R bin *
+-    mv .hidden-appmanager $APPCONFIG/appmanager
+-    chmod 755 .
+-    chown bin .
+-    chgrp bin .
+-
+     HASH
+     HASH create the CDE_CONFIGURATION_TOP and its config directory
+     HASH
+@@ -296,8 +285,6 @@ DEFAULT_PRINTER="DtPrint"
+     cd $DT_CONFIG_TOP
+     chmod -R 755 *
+ 
+-    FixInetdDotConf
+-
+   elif [ "$OPERATION" = "deconfigure" ]
+   then
+ 
+@@ -322,7 +309,4 @@ DEFAULT_PRINTER="DtPrint"
+     /etc/rc.d/inetd onereload
+   fi
+ 
+-  HASH dtmail requires setgid
+-  chmod 2555 $DT_TOP/bin/dtmail
+-
+   return $retval

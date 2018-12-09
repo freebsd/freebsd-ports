@@ -1,0 +1,30 @@
+--- admin/IntegTools/post_install/freebsd/configShlibs.src.orig	2016-05-27 14:25:51 UTC
++++ admin/IntegTools/post_install/freebsd/configShlibs.src
+@@ -54,7 +54,7 @@ XCOMM
+ XCOMM creates links in the install tree libtt.so -> libtt.so.1
+ XCOMM
+ 
+-  cd CDE_INSTALLATION_TOP/lib
++  cd STAGEDIR/LOCALBASE/dt/lib
+ 
+   for lib in `/bin/ls *.so.*`
+   do
+@@ -78,7 +78,7 @@ FILESET=CDE-SHLIBS
+ retval=0
+ CDE_TOP=CDE_INSTALLATION_TOP
+ CDE_CONF_TOP=CDE_CONFIGURATION_TOP
+-LDCONFIGFILE=/usr/local/libdata/ldconfig/cde
++LDCONFIGFILE=STAGEDIR/LOCALBASE/libdata/ldconfig/cde
+ 
+   HandleOption $*
+ 
+@@ -100,8 +100,7 @@ LDCONFIGFILE=/usr/local/libdata/ldconfig
+     MakeTheLink
+ 
+     rm -f $LDCONFIGFILE
+-    echo $CDE_TOP/lib > $LDCONFIGFILE
+-    /sbin/ldconfig -m $CDE_TOP/lib
++    echo LOCALBASE/dt/lib > $LDCONFIGFILE
+ 
+   elif [ "$OPERATION" = "verify" ]
+   then
