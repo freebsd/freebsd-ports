@@ -1,2 +1,5 @@
-SHA256 (clipgrab-3.4.11.tar.bz2) = 48f7cbd9a503b19246ae2d31af8d2bba7c57945f5ba8ca4fcf7bf6b3a265bd83
-SIZE (clipgrab-3.4.11.tar.bz2) = 371620
+TIMESTAMP = 1544368991
+SHA256 (clipgrab-3.7.2.tar.gz) = 8ce5f1ea5a71f58a636b2cdc06a4c675e823e988dc61e6308060a2fe3eb96af6
+SIZE (clipgrab-3.7.2.tar.gz) = 628479
+SHA256 (clipgrab-qt5-3.7.2.patch) = d2b86b1f8e0a0d5642d852bac1ae60ff844df49fbd858dff986f894732d0da55
+SIZE (clipgrab-qt5-3.7.2.patch) = 24502
