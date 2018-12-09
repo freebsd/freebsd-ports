@@ -1,0 +1,5 @@
+Implementation of validators for the ruby OptionParser lib.
+
+Mainly used in the CMSScanner gem to define the cli options available.
+
+WWW: https://github.com/wpscanteam/OptParseValidator
