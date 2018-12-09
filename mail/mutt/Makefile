@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-DISTVERSION=	1.11.0
+DISTVERSION=	1.11.1
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -177,7 +177,7 @@ GREETING_PATCH_PATCHFILES=	mutt-${GREETING_PATCH_VERSION}.vc.greeting:vc
 QUOTE_PATCH_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.initials.gz:vvv \
 			patch-${VVV_PATCH_VERSION}.vvv.quote.gz:vvv
 
-NNTP_BROKEN=	NNTP 1.10.0 broken with mutt 1.11.0
+NNTP_BROKEN=	NNTP 1.10.0 broken with mutt ${DISTVERSION}
 NNTP_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:-p1:vvv
 NNTP_CONFIGURE_ON=	--enable-nntp
 NNTP_VARS=	XML_NEEDED=yes
@@ -190,7 +190,7 @@ DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
 
 # un/comment as each VERSION is created for PORTVERSION
 VVV_PATCH_VERSION=	1.10.0
-#GREETING_PATCH_VERSION=	1.11.0
+#GREETING_PATCH_VERSION=	1.11.1
 
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
