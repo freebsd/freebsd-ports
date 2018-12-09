@@ -7,7 +7,7 @@ PORTREVISION=	7
 CATEGORIES=	science
 MASTER_SITES=	SF/chemical-mime/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of chemical MIME types for UNIX desktops
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/librsvg-2.0.pc:graphics/librsvg2
