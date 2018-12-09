@@ -41,7 +41,6 @@ SQLITE3_CONFIGURE_WITH=	sqlite3
 
 SSL_USES=		ssl
 SSL_CONFIGURE_WITH=	openssl
-SSL_VARS=		BROKEN_SSL=	openssl111
 
 .include <bsd.port.options.mk>
 
