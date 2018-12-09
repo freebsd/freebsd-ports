@@ -1,3 +1,5 @@
 TIMESTAMP = 1544005139
 SHA256 (php-7.1.25.tar.xz) = 0fd8dad1903cd0b2d615a1fe4209f99e53b7292403c8ffa1919c0f4dd1eada88
 SIZE (php-7.1.25.tar.xz) = 12205972
+SHA256 (php-7.1.x-mail-header.patch) = 8f173d89672f7ebfabfcc3c5d7f8dec1c4243aba665db4b4046e67c34d9d4dc7
+SIZE (php-7.1.x-mail-header.patch) = 4504
