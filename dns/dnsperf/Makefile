@@ -13,6 +13,8 @@ COMMENT=	Performance measurement of Domain Name System (DNS) servers
 
 LICENSE=	ISCL
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	isc-config.sh:dns/bind912
 LIB_DEPENDS=	liblmdb.so:databases/lmdb \
 		libjson-c.so:devel/json-c
