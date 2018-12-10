@@ -498,6 +498,7 @@
     SUBDIR += openmesh
     SUBDIR += opensolaris-libm
     SUBDIR += orpie
+    SUBDIR += osi
     SUBDIR += osqp
     SUBDIR += p5-AI-DecisionTree
     SUBDIR += p5-AI-Genetic
