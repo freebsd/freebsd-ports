@@ -1,0 +1,26 @@
+commit 4425b9140c4c
+Author: Martin Stransky <stransky@redhat.com>
+Date:   Mon Oct 22 09:14:07 2018 +0000
+
+    Bug 1500850 - [Wayland] Add missing dbus header dbus-glib-lowlevel.h. r=jhorak, a=RyanVM
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D9365
+    
+    --HG--
+    extra : source : 5203edd6ea29e4b73681674d2a5268dd6a310102
+---
+ widget/xremoteclient/DBusRemoteClient.cpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git widget/xremoteclient/DBusRemoteClient.cpp widget/xremoteclient/DBusRemoteClient.cpp
+index ba5bda06201d..b2f03dccc133 100644
+--- widget/xremoteclient/DBusRemoteClient.cpp
++++ widget/xremoteclient/DBusRemoteClient.cpp
+@@ -13,6 +13,7 @@
+ #include "nsPrintfCString.h"
+ 
+ #include <dlfcn.h>
++#include <dbus/dbus-glib-lowlevel.h>
+ 
+ using mozilla::LogLevel;
+ static mozilla::LazyLogModule sRemoteLm("DBusRemoteClient");
