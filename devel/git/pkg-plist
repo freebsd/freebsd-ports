@@ -98,6 +98,7 @@ libexec/git-core/git-init
 libexec/git-core/git-init-db
 libexec/git-core/git-instaweb
 libexec/git-core/git-interpret-trailers
+libexec/git-core/git-legacy-rebase
 libexec/git-core/git-log
 libexec/git-core/git-ls-files
 libexec/git-core/git-ls-remote
@@ -120,6 +121,7 @@ libexec/git-core/git-mergetool--lib
 libexec/git-core/git-mktag
 libexec/git-core/git-mktree
 libexec/git-core/git-mv
+libexec/git-core/git-multi-pack-index
 libexec/git-core/git-name-rev
 libexec/git-core/git-notes
 %%P4%%libexec/git-core/git-p4
@@ -137,7 +139,7 @@ libexec/git-core/git-range-diff
 libexec/git-core/git-read-tree
 libexec/git-core/git-rebase
 libexec/git-core/git-rebase--am
-libexec/git-core/git-rebase--helper
+libexec/git-core/git-rebase--common
 libexec/git-core/git-rebase--interactive
 libexec/git-core/git-rebase--merge
 libexec/git-core/git-rebase--preserve-merges
@@ -307,6 +309,7 @@ man/man1/git-mergetool.1.gz
 man/man1/git-mktag.1.gz
 man/man1/git-mktree.1.gz
 man/man1/git-mv.1.gz
+man/man1/git-multi-pack-index.1.gz
 man/man1/git-name-rev.1.gz
 man/man1/git-notes.1.gz
 man/man1/git-p4.1.gz
@@ -677,6 +680,7 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.19.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.19.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.19.2.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.20.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
@@ -754,14 +758,12 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/cmds-synchingrepositories.txt
 %%HTMLDOCS%%%%DOCSDIR%%/config.txt
 %%HTMLDOCS%%%%DOCSDIR%%/date-formats.txt
-%%HTMLDOCS%%%%DOCSDIR%%/diff-config.txt
 %%HTMLDOCS%%%%DOCSDIR%%/diff-format.txt
 %%HTMLDOCS%%%%DOCSDIR%%/diff-generate-patch.txt
 %%HTMLDOCS%%%%DOCSDIR%%/diff-options.txt
 %%HTMLDOCS%%%%DOCSDIR%%/docbook-xsl.css
 %%HTMLDOCS%%%%DOCSDIR%%/everyday.html
 %%HTMLDOCS%%%%DOCSDIR%%/fetch-options.txt
-%%HTMLDOCS%%%%DOCSDIR%%/fmt-merge-msg-config.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-add.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-add.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-am.html
@@ -1147,7 +1149,6 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/index.html
 %%HTMLDOCS%%%%DOCSDIR%%/line-range-format.txt
 %%HTMLDOCS%%%%DOCSDIR%%/mailmap.txt
-%%HTMLDOCS%%%%DOCSDIR%%/merge-config.txt
 %%HTMLDOCS%%%%DOCSDIR%%/merge-options.txt
 %%HTMLDOCS%%%%DOCSDIR%%/merge-strategies.txt
 %%HTMLDOCS%%%%DOCSDIR%%/mergetools-diff.txt
@@ -1156,7 +1157,6 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/pretty-options.txt
 %%HTMLDOCS%%%%DOCSDIR%%/pull-fetch-param.txt
 %%HTMLDOCS%%%%DOCSDIR%%/rev-list-options.txt
-%%HTMLDOCS%%%%DOCSDIR%%/rebase-config.txt
 %%HTMLDOCS%%%%DOCSDIR%%/revisions.txt
 %%HTMLDOCS%%%%DOCSDIR%%/sequencer.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-allocation-growing.html
@@ -1284,6 +1284,7 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/contacts/Makefile
 %%CONTRIB%%share/git-core/contrib/contacts/git-contacts
 %%CONTRIB%%share/git-core/contrib/contacts/git-contacts.txt
+%%CONTRIB%%share/git-core/contrib/coverage-diff.sh
 %%CONTRIB%%share/git-core/contrib/credential/gnome-keyring/.gitignore
 %%CONTRIB%%share/git-core/contrib/credential/gnome-keyring/Makefile
 %%CONTRIB%%share/git-core/contrib/credential/gnome-keyring/git-credential-gnome-keyring.c
