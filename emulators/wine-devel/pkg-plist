@@ -600,6 +600,7 @@ include/wine/windows/ntddcdrm.h
 include/wine/windows/ntddndis.h
 include/wine/windows/ntddscsi.h
 include/wine/windows/ntddstor.h
+include/wine/windows/ntddvdeo.h
 include/wine/windows/ntdef.h
 include/wine/windows/ntdsapi.h
 include/wine/windows/ntlsa.h
@@ -1388,6 +1389,7 @@ lib/wine/ext-ms-win-ntuser-draw-l1-1-0.dll.so
 lib/wine/ext-ms-win-ntuser-gui-l1-3-0.dll.so
 lib/wine/ext-ms-win-ntuser-keyboard-l1-3-0.dll.so
 lib/wine/ext-ms-win-ntuser-message-l1-1-1.dll.so
+lib/wine/ext-ms-win-ntuser-misc-l1-2-0.dll.so
 lib/wine/ext-ms-win-ntuser-misc-l1-5-1.dll.so
 lib/wine/ext-ms-win-ntuser-mouse-l1-1-0.dll.so
 lib/wine/ext-ms-win-ntuser-private-l1-1-1.dll.so
@@ -1822,6 +1824,7 @@ lib/wine/fakedlls/ext-ms-win-ntuser-draw-l1-1-0.dll
 lib/wine/fakedlls/ext-ms-win-ntuser-gui-l1-3-0.dll
 lib/wine/fakedlls/ext-ms-win-ntuser-keyboard-l1-3-0.dll
 lib/wine/fakedlls/ext-ms-win-ntuser-message-l1-1-1.dll
+lib/wine/fakedlls/ext-ms-win-ntuser-misc-l1-2-0.dll
 lib/wine/fakedlls/ext-ms-win-ntuser-misc-l1-5-1.dll
 lib/wine/fakedlls/ext-ms-win-ntuser-mouse-l1-1-0.dll
 lib/wine/fakedlls/ext-ms-win-ntuser-private-l1-1-1.dll
@@ -2179,6 +2182,7 @@ lib/wine/fakedlls/traffic.dll
 %%WINE32%%lib/wine/fakedlls/twain.dll16
 lib/wine/fakedlls/twain_32.dll
 %%WINE32%%lib/wine/fakedlls/typelib.dll16
+lib/wine/fakedlls/tzres.dll
 lib/wine/fakedlls/ucrtbase.dll
 %%STAGING%%lib/wine/fakedlls/uianimation.dll
 lib/wine/fakedlls/uiautomationcore.dll
@@ -2474,7 +2478,6 @@ lib/wine/libiphlpapi.def
 lib/wine/libjsproxy.def
 %%WINE32%%lib/wine/libkernel.def
 lib/wine/libkernel32.def
-%%STAGING%%lib/wine/libkernelbase.def
 lib/wine/libloadperf.def
 lib/wine/liblz32.def
 lib/wine/libmapi32.def
@@ -2859,6 +2862,7 @@ lib/wine/traffic.dll.so
 %%WINE32%%lib/wine/twain.dll16.so
 lib/wine/twain_32.dll.so
 %%WINE32%%lib/wine/typelib.dll16.so
+lib/wine/tzres.dll.so
 lib/wine/ucrtbase.dll.so
 %%STAGING%%lib/wine/uianimation.dll.so
 lib/wine/uiautomationcore.dll.so
