@@ -1,7 +1,7 @@
 # Created by: rooneg@electricjellyfish.net
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Version control system
@@ -18,7 +18,8 @@ OPTIONS_DEFINE=	\
 		BDB		\
 		DOCS		\
 		FREEBSD_TEMPLATE\
-		GPG_AGENT \
+		GITHUB_HACK	\
+		GPG_AGENT 	\
 		MAINTAINER_DEBUG\
 		NLS		\
 		SASL		\
@@ -31,6 +32,7 @@ OPTIONS_DEFINE=	\
 OPTIONS_DEFAULT=FREEBSD_TEMPLATE SERF TOOLS
 
 FREEBSD_TEMPLATE_DESC=	FreeBSD Project log template
+GITHUB_HACK_DESC=	Enable use subversion with brain-dead github server
 GPG_AGENT_DESC=		Enable GPG agent password store
 MAINTAINER_DEBUG_DESC=	Build debug version
 SERF_DESC=		WebDAV/Delta-V (HTTP/HTTPS) repo access module
@@ -42,6 +44,8 @@ TOOLS_DESC=		Install several tools
 # Patches required for use with the FreeBSD Project repository only
 FREEBSD_TEMPLATE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-fbsd-template
 SVNSERVE_WRAPPER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-svnserve-wrapper
+
+GITHUB_HACK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-github-request-id
 
 USES+=			shebangfix python:2.7,env
 python_OLD_CMD+=	"/bin/env python"
