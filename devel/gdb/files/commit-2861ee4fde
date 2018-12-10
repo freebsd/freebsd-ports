@@ -1,0 +1,63 @@
+commit 2861ee4fde97d0afafc506380c5deaf71c8439ac
+Author: John Baldwin <jhb@FreeBSD.org>
+Date:   Wed Dec 5 10:51:16 2018 -0800
+
+    Use separate sed expressions to escape auto-load directories.
+    
+    Not all sed implementations support alternation via \| in the default
+    regular expressions.  Instead, resort to separate sed expressions via
+    -e for $debugdir and $datadir.  This fixes the default setting of the
+    auto-load directories on FreeBSD.  Previously on FreeBSD the sed
+    invocation was a no-op causing the debugdir and datadir values to be
+    expanded yielding an autoload path of ':${prefix}/share/gdb'.
+    
+    gdb/ChangeLog:
+    
+            * configure: Re-generate.
+            * configure.ac: Use separate sed expressions to escape variables
+            in auto-load directories.
+
+diff --git gdb/configure gdb/configure
+index 7665ba6531..3777230898 100755
+--- gdb/configure
++++ gdb/configure
+@@ -6579,7 +6579,7 @@ else
+   with_auto_load_dir='$debugdir:$datadir/auto-load'
+ fi
+ 
+-escape_dir=`echo $with_auto_load_dir | sed 's/[$]\(datadir\|debugdir\)\>/\\\\\\\\\\\\&/g'`
++escape_dir=`echo $with_auto_load_dir | sed -e 's/[$]datadir\>/\\\\\\\\\\\\&/g' -e 's/[$]debugdir\>/\\\\\\\\\\\\&/g'`
+ 
+   test "x$prefix" = xNONE && prefix="$ac_default_prefix"
+   test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
+@@ -6606,7 +6606,7 @@ else
+   with_auto_load_safe_path="$with_auto_load_dir"
+ fi
+ 
+-escape_dir=`echo $with_auto_load_safe_path | sed 's/[$]\(datadir\|debugdir\)\>/\\\\\\\\\\\\&/g'`
++escape_dir=`echo $with_auto_load_safe_path | sed -e 's/[$]datadir\>/\\\\\\\\\\\\&/g' -e 's/[$]debugdir\>/\\\\\\\\\\\\&/g'`
+ 
+   test "x$prefix" = xNONE && prefix="$ac_default_prefix"
+   test "x$exec_prefix" = xNONE && exec_prefix='${prefix}'
+diff --git gdb/configure.ac gdb/configure.ac
+index e1ea60660b..eca7ea6d41 100644
+--- gdb/configure.ac
++++ gdb/configure.ac
+@@ -146,7 +146,7 @@ AC_ARG_WITH(auto-load-dir,
+ AS_HELP_STRING([--with-auto-load-dir=PATH],
+   [directories from which to load auto-loaded scripts @<:@$debugdir:$datadir/auto-load@:>@]),,
+   [with_auto_load_dir='$debugdir:$datadir/auto-load'])
+-escape_dir=`echo $with_auto_load_dir | sed 's/[[$]]\(datadir\|debugdir\)\>/\\\\\\\\\\\\&/g'`
++escape_dir=`echo $with_auto_load_dir | sed -e 's/[[$]]datadir\>/\\\\\\\\\\\\&/g' -e 's/[[$]]debugdir\>/\\\\\\\\\\\\&/g'`
+ AC_DEFINE_DIR(AUTO_LOAD_DIR, escape_dir,
+ 	      [Directories from which to load auto-loaded scripts.])
+ AC_MSG_RESULT([$with_auto_load_dir])
+@@ -161,7 +161,7 @@ AS_HELP_STRING([--without-auto-load-safe-path],
+      with_auto_load_safe_path="/"
+      fi],
+ [with_auto_load_safe_path="$with_auto_load_dir"])
+-escape_dir=`echo $with_auto_load_safe_path | sed 's/[[$]]\(datadir\|debugdir\)\>/\\\\\\\\\\\\&/g'`
++escape_dir=`echo $with_auto_load_safe_path | sed -e 's/[[$]]datadir\>/\\\\\\\\\\\\&/g' -e 's/[[$]]debugdir\>/\\\\\\\\\\\\&/g'`
+ AC_DEFINE_DIR(AUTO_LOAD_SAFE_PATH, escape_dir,
+ 	      [Directories safe to hold auto-loaded files.])
+ AC_MSG_RESULT([$with_auto_load_safe_path])

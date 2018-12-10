@@ -3,7 +3,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -29,7 +29,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CONFIGURED_M4=m4 CONFIGURED_BISON=byacc
 CONFIGURE_ARGS=	--program-suffix=${PORTVERSION:S/.//g} \
 		--enable-targets=all --enable-64-bit-bfd \
-		--with-gdb-datadir=${PREFIX}/share/gdb${PORTVERSION:S/.//g} \
 		--with-separate-debug-dir=/usr/lib/debug \
 		${ICONV_CONFIGURE_ARG} \
 		--with-expat=yes --with-libexpat-prefix=${LOCALBASE} \
@@ -40,7 +39,8 @@ CFLAGS+=	-Wno-unknown-warning-option
 EXCLUDE=	dejagnu expect sim texinfo intl
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
 EXTRA_PATCHES=	${FILESDIR}/commit-8aa0243d54 \
-		${FILESDIR}/commit-93579f6f90
+		${FILESDIR}/commit-93579f6f90 \
+		${FILESDIR}/commit-2861ee4fde
 LIB_DEPENDS+=	libexpat.so:textproc/expat2
 
 VER=		${PORTVERSION:S/.//g}
@@ -127,16 +127,20 @@ do-install-TUI-on:
 
 do-install-GDB_LINK-on:
 	${LN} -sf gdb${VER} ${STAGEDIR}${PREFIX}/bin/gdb
+	${LN} -sf gdb${VER}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/gdb.1
 .if ${PORT_OPTIONS:MKGDB}
 	${LN} -sf kgdb${VER} ${STAGEDIR}${PREFIX}/bin/kgdb
+	${LN} -sf kgdb${VER}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/kgdb.1
 .endif
 
 do-install-PYTHON-on:
 	(cd ${WRKSRC}/gdb; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-python )
 	(cd ${WRKSRC}/gdb/data-directory ; \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-python )
+	@(cd ${STAGEDIR}${PREFIX}/share/gdb/python && \
+		${PYTHON_CMD} -m compileall .)
 . for f in gdb gdb/command gdb/function gdb/printer
-	@(cd ${STAGEDIR}${PREFIX}/share/gdb${VER}/python/${f} ; ${CHMOD} 644 *.py* )
+	@(cd ${STAGEDIR}${PREFIX}/share/gdb/python/${f} ; ${CHMOD} 644 *.py* )
 . endfor
 
 do-install-GUILE-on:
