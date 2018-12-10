@@ -96,6 +96,8 @@ include/wine/windows/accctrl.h
 include/wine/windows/access.idl
 include/wine/windows/aclapi.h
 include/wine/windows/aclui.h
+include/wine/windows/activation.h
+include/wine/windows/activation.idl
 include/wine/windows/activaut.h
 include/wine/windows/activaut.idl
 include/wine/windows/activdbg.h
@@ -975,7 +977,7 @@ lib32/.libGL/dri/swrast_dri.so
 lib32/.libGL/dri/vmwgfx_dri.so
 lib32/.libGL/libGL.so.1
 lib32/libGLU.so.1
-lib32/libLLVM-5.0.so
+lib32/libLLVM-6.0.so
 lib32/libX11-xcb.so.1
 lib32/libX11.so.6
 lib32/libXau.so.6
@@ -1854,7 +1856,6 @@ lib32/wine/fakedlls/itss.dll
 lib32/wine/fakedlls/joy.cpl
 lib32/wine/fakedlls/jscript.dll
 lib32/wine/fakedlls/jsproxy.dll
-lib32/wine/fakedlls/kerberos.dll
 lib32/wine/fakedlls/kernel32.dll
 lib32/wine/fakedlls/kernelbase.dll
 lib32/wine/fakedlls/keyboard.drv16
@@ -2292,7 +2293,6 @@ lib32/wine/itss.dll.so
 lib32/wine/joy.cpl.so
 lib32/wine/jscript.dll.so
 lib32/wine/jsproxy.dll.so
-lib32/wine/kerberos.dll.so
 lib32/wine/kernel32.dll.so
 lib32/wine/kernelbase.dll.so
 lib32/wine/keyboard.drv16.so
