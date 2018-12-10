@@ -38,13 +38,13 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2
 # XXX: remove tar:bz2
 USES=	compiler:c11 cpe libedit ssl tar:bz2
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.13.4a0.2018.12.04
+ISCVERSION=	9.13.4a0.2018.12.10
 # XXX: Remove gitlab
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.isc.org
 GL_ACCOUNT=	isc-projects
 GL_PROJECT=	bind9
-GL_COMMIT=	8743a853d2afe4bddb8f4d314f2fa8a7bbeb4025
+GL_COMMIT=	e5da71f746f11cc8df458d41d97d9f9c4a9a318d
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -81,7 +81,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFAULT=	SIGCHASE IDN GSSAPI_NONE JSON PYTHON
 OPTIONS_DEFINE=		IDN LARGE_FILE PYTHON JSON \
-			FIXED_RRSET SIGCHASE IPV6
+			FIXED_RRSET SIGCHASE
 
 OPTIONS_RADIO=	CRYPTO
 OPTIONS_RADIO_CRYPTO=	NATIVE_PKCS11
@@ -172,8 +172,6 @@ IDN_CONFIGURE_OFF=	--without-libidn2
 IDN_CONFIGURE_ON=	--with-libidn2=${LOCALBASE} ${ICONV_CONFIGURE_BASE}
 IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2
 IDN_USES=		iconv
-
-IPV6_CONFIGURE_ENABLE=	ipv6
 
 JSON_CONFIGURE_WITH=	libjson=${LOCALBASE}
 JSON_LIB_DEPENDS=	libjson-c.so:devel/json-c
