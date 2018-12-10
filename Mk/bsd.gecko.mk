@@ -117,6 +117,10 @@ BUILD_DEPENDS+=	rust-cbindgen>=0.6.2:devel/rust-cbindgen \
 				node:www/node
 .endif
 
+.if ${MOZILLA_VER:R:R} < 64
+MOZ_OPTIONS+=	--enable-pie
+.endif
+
 .if ${OPSYS} == FreeBSD && ${OSREL} == 11.1 && ${MOZILLA_VER:R:R} < 49
 LLD_UNSAFE=	yes
 .endif
@@ -267,8 +271,7 @@ MOZ_OPTIONS+=	\
 		--enable-chrome-format=${MOZ_CHROME} \
 		--enable-default-toolkit=${MOZ_TOOLKIT} \
 		--enable-update-channel=${MOZ_CHANNEL} \
-		--disable-updater \
-		--enable-pie
+		--disable-updater
 # others
 MOZ_OPTIONS+=	--with-system-zlib		\
 		--with-system-bz2
