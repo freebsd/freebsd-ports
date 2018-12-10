@@ -34,7 +34,6 @@ share/appdata/kicad.appdata.xml
 %%PORTDOCS%%%%DOCSDIR%%/scripts/ddr3_length_match.py
 %%PORTDOCS%%%%DOCSDIR%%/scripts/get_libngspice_so.sh
 %%PORTDOCS%%%%DOCSDIR%%/scripts/lib_convert.py
-%%PORTDOCS%%%%DOCSDIR%%/scripts/library-repos-install.sh
 %%PORTDOCS%%%%DOCSDIR%%/scripts/mk_macos_icons.py
 %%PORTDOCS%%%%DOCSDIR%%/scripts/mk_mime_icons.py
 %%PORTDOCS%%%%DOCSDIR%%/scripts/test_kicad_plugin.py
