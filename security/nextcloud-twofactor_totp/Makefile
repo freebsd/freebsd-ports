@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	twofactor_totp
-PORTVERSION=	1.5.0
+PORTVERSION=	2.0.1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/${PKGNAMEPREFIX:S/-//}/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
@@ -17,7 +17,7 @@ COMMENT=	TOTP multi-factor auth app for Nextcloud
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=14:www/nextcloud@${PHP_FLAVOR}
+RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=15:www/nextcloud@${PHP_FLAVOR}
 
 USES=		php:flavors
 NO_BUILD=	yes
