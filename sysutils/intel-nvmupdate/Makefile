@@ -39,12 +39,6 @@ NVMUPDATE_DIR=	intel-nvmupdate
 
 .include <bsd.port.pre.mk>
 
-# This is the workaround for directory permission issues for 10.x.
-# Remove this after the directory permissions are fixed upstream.
-post-extract:
-	${CHMOD} a+x ${WRKDIR}/XL710
-	${CHMOD} a+x ${WRKSRC}
-
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${NVMUPDATE_DIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${NVMUPDATE_DIR} "! -name 'nvmupdate64e'"
