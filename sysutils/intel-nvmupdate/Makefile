@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nvmupdate
-DISTVERSION=	6_01
+DISTVERSION=	6_80
 CATEGORIES=	sysutils
 MASTER_SITES=	https://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/ \
 		http://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/
