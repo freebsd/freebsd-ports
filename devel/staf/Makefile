@@ -149,8 +149,8 @@ do-install:
 .for bin in ${STAF_BIN_FILES}
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bin/${bin} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-	${LN} -s STAF ${STAGEDIR}${PREFIX}/bin/staf
-	${LN} -s FmtLog ${STAGEDIR}${PREFIX}/bin/fmtlog
+	${RLN} ${STAGEDIR}${PREFIX}/bin/STAF ${STAGEDIR}${PREFIX}/bin/staf
+	${RLN} ${STAGEDIR}${PREFIX}/bin/FmtLog ${STAGEDIR}${PREFIX}/bin/fmtlog
 .for lib in ${STAF_LIB_FILES}
 	${INSTALL_LIB} ${INSTALL_WRKSRC}/lib/${lib} ${STAGEDIR}${PREFIX}/lib/
 .endfor
