@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaf
-DISTVERSION=	3.0.6
+DISTVERSION=	3.0.7
 CATEGORIES=	www
 
 MAINTAINER=	joneum@freeBSD.org
