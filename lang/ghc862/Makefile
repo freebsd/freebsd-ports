@@ -24,8 +24,6 @@ LLVM_VERSION=		60
 
 CONFLICTS_INSTALL=	ghc-7.4.* ghc-7.6.* ghc-7.8.* ghc-7.10.* ghc-8.0.* ghc-8.4.*
 
-PLIST=			${.CURDIR}/../../lang/ghc/pkg-plist
-
 .include "${.CURDIR}/../../lang/ghc/bsd.ghc.mk"
 
 .include <bsd.port.mk>
