@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net_IPv4
-DISTVERSION=	1.3.4
+DISTVERSION=	1.3.5
 CATEGORIES=	net pear
 
 MAINTAINER=	joneum@FreeBSD.org
