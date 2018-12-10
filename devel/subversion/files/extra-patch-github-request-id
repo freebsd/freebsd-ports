@@ -1,0 +1,70 @@
+Index: subversion/libsvn_ra_serf/options.c
+===================================================================
+--- subversion/libsvn_ra_serf/options.c	(revision 1846667)
++++ subversion/libsvn_ra_serf/options.c	(working copy)
+@@ -74,6 +74,10 @@
+   /* Have we received any DAV headers at all? */
+   svn_boolean_t received_dav_header;
+ 
++  /* ### FIXME: SVN-4789
++     Have we received the bespoke GitHub request ID header? */
++  svn_boolean_t received_github_request_id_header;
++
+   const char *activity_collection;
+   svn_revnum_t youngest_rev;
+ 
+@@ -355,6 +359,22 @@
+         }
+     }
+ 
++  /* ### FIXME: SVN-4789
++     GitHub's Subversion bridge does not set any DAV: headers in its
++     response, even though it supports bits of our HTTP protocol and
++     returns a valid response body to an OPTIONS request. We try to work
++     around that monumental brokenness by checking for this
++     GitHub-specific response header.
++
++     Note that the case-sensitive string comparison here is intentional;
++     we do *not* want to support any number of strange hacks, so if
++     GitHub changes the case of their header name, this becomes their
++     problem entirely. */
++  else if (strcmp(key, "X-GitHub-Request-Id") == 0)
++    {
++      opt_ctx->received_github_request_id_header = TRUE;
++    }
++
+   return 0;
+ }
+ 
+@@ -401,8 +421,19 @@
+       serf_bucket_headers_do(hdrs, capabilities_headers_iterator_callback,
+                              opt_ctx);
+ 
+-      /* Bail out early if we're not talking to a DAV server.
+-         Note that this check is only valid if we've received a success
++
++      /* ### FIXME: SVN-4789
++         Treat GitHub as a DAV server, even though it's broken. */
++      if (opt_ctx->received_github_request_id_header
++          && !opt_ctx->received_dav_header)
++        {
++          /* FIXME: We really should emit a warning here, but apparently
++             we don't have a notification API for that. */
++          opt_ctx->received_dav_header = TRUE;
++        }
++
++      /* Bail out early if we're not talking to a DAV server. Note
++         that this check is only valid if we've received a success
+          response; redirects and errors don't count. */
+       if (opt_ctx->handler->sline.code >= 200
+           && opt_ctx->handler->sline.code < 300
+@@ -410,7 +441,7 @@
+         {
+           return svn_error_createf
+             (SVN_ERR_RA_DAV_OPTIONS_REQ_FAILED, NULL,
+-             _("The server at '%s' does not support the HTTP/DAV protocol"),
++             _("The server at '%s' does not support the WebDAV protocol"),
+              session->session_url_str);
+         }
+ 
+
