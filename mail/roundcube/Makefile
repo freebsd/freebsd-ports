@@ -2,6 +2,7 @@
 
 PORTNAME=	roundcube
 DISTVERSION=	1.3.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	https://github.com/roundcube/roundcubemail/releases/download/${DISTVERSION}/
@@ -28,9 +29,9 @@ CPE_VENDOR=	roundcube
 
 USE_PHP=	pcre mbstring session iconv dom xml json intl zip filter openssl fileinfo exif
 
-OPTIONS_DEFINE=	LDAP GD PSPELL NSC DOCS
-OPTIONS_SINGLE=	DB
-OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE
+OPTIONS_DEFINE=	LDAP GD PSPELL NSC DOCS EXAMPLES
+OPTIONS_MULTI=	DB
+OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=MYSQL
 
 DB_DESC=	Database backend
@@ -50,6 +51,8 @@ NSC_VARS=	use_php+=simplexml rcubecomp+=spellchecker.php
 PGSQL_VARS=	use_php+=pdo_pgsql
 PSPELL_VARS=	use_php+=pspell
 SQLITE_VARS=	use_php+=pdo_sqlite
+
+SUB_FILES=	newsyslog.conf
 
 post-extract-NSC:
 	@${CP} ${FILESDIR}/spellchecker.php ${WRKSRC}
@@ -75,5 +78,13 @@ do-install-DOCS-on:
 .for i in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
+
+do-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKDIR}/newsyslog.conf ${STAGEDIR}${EXAMPLESDIR}
+	@${ECHO_CMD} '@dir etc/newsyslog.conf.d' \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} '@sample ${EXAMPLESDIR}/newsyslog.conf etc/newsyslog.conf.d/roundcube.conf' \
+		>> ${TMPPLIST}
 
 .include <bsd.port.mk>
