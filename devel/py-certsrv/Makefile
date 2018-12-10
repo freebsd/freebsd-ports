@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	certsrv
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 USES=		python
 USE_PYTHON=	autoplist distutils
-NO_BUILD=	yes
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
