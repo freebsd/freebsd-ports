@@ -3,6 +3,7 @@
 
 PORTNAME=	suricata
 DISTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.openinfosecfoundation.org/download/
 
@@ -32,9 +33,9 @@ INSTALL_TARGET=		install-strip
 TEST_TARGET=		check
 
 OPTIONS_DEFINE=		GEOIP IPFW JSON NETMAP NSS PORTS_PCAP PRELUDE \
-			REDIS RUST SC TESTS
+			PYTHON REDIS RUST TESTS
 OPTIONS_DEFINE_amd64=	HYPERSCAN
-OPTIONS_DEFAULT=	IPFW JSON NETMAP PRELUDE
+OPTIONS_DEFAULT=	IPFW JSON NETMAP PYTHON RUST
 OPTIONS_SUB=		yes
 
 OPTIONS_RADIO=		SCRIPTS
@@ -52,9 +53,9 @@ NETMAP_DESC=		Netmap support for inline IDP
 NSS_DESC=		File checksums and SSL/TLS fingerprinting
 PORTS_PCAP_DESC=	Use libpcap from ports
 PRELUDE_DESC=		Prelude support for NIDS alerts
+PYTHON_DESC=		Python-based update and control utilities
 REDIS_DESC=		Redis output support
 RUST_DESC=		Rust parser support
-SC_DESC=		Suricata socket client (suricatasc)
 TESTS_DESC=		Unit tests in suricata binary
 
 GEOIP_LIB_DEPENDS=		libGeoIP.so:net/GeoIP
@@ -102,6 +103,10 @@ PRELUDE_LIB_DEPENDS=		libprelude.so:security/libprelude \
 PRELUDE_CONFIGURE_ENABLE=	prelude
 PRELUDE_CONFIGURE_ON=		--with-libprelude-prefix=${LOCALBASE}
 
+PYTHON_USES=			python:2.7
+PYTHON_CONFIGURE_ENABLE=	python
+PYTHON_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
+
 REDIS_LIB_DEPENDS=		libhiredis.so:databases/hiredis
 REDIS_CONFIGURE_ON=		--enable-hiredis \
 				--with-libhiredis-includes=${LOCALBASE}/include \
@@ -109,9 +114,6 @@ REDIS_CONFIGURE_ON=		--enable-hiredis \
 
 RUST_BUILD_DEPENDS=		rustc:lang/rust
 RUST_CONFIGURE_ENABLE=		rust
-
-SC_USES=			python:2.7
-SC_CONFIGURE_ENABLE=		python
 
 TESTS_CONFIGURE_ENABLE=		unittests
 
@@ -143,7 +145,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${CONFIG_DIR}/${f}.sample
 .endfor
 
-post-install-SC-on:
+post-install-PYTHON-on:
 	(cd ${STAGEDIR}${PREFIX} \
 	&& ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 	-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
