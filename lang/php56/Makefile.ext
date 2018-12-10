@@ -316,6 +316,7 @@ USES+=		readline
 LIB_DEPENDS+=	librecode.so:converters/recode
 
 CONFIGURE_ARGS+=--with-recode=${LOCALBASE}
+MPHP_MOD_PRIO=	18
 .endif
 
 .if ${PHP_MODNAME} == "session"
