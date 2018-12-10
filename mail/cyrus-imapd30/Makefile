@@ -59,7 +59,6 @@ BACKUP_CONFIGURE_ENABLE=backup
 CLAMAV_DESC=		Use ClamAV
 CLAMAV_CONFIGURE_WITH=	clamav
 CLAMAV_LIB_DEPENDS=	libclamav.so:security/clamav
-CLAMAV_BROKEN=		Does not build with recent clamav
 DRAC_DESC=		Enable DRAC support
 DRAC_CONFIGURE_ON=	--with-drac=${LOCALBASE}
 DRAC_BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:mail/drac
