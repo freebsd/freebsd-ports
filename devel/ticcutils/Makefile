@@ -28,6 +28,7 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
+CFLAGS+=	-D_THREAD_SAFE # configure on GCC-based architectures fails w/out this
 # Workaround for https://github.com/LanguageMachines/ticcutils/issues/18 (also see the patch files/patch-configure.ac)
 CXXFLAGS+=	-DHAVE_BOOST_REGEX
 LDFLAGS+=	-lboost_regex
