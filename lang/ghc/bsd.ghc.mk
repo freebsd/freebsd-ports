@@ -74,6 +74,7 @@ PROFILE_SUB_LIST=	WITH_PROFILE="YES"
 PROFILE_SUB_LIST_OFF=	WITH_PROFILE="NO"
 
 LOCALBASE?=	/usr/local
+PLIST?=		${.CURDIR}/../../lang/ghc/pkg-plist
 
 GHC_ARCH=		${ARCH:S/amd64/x86_64/:C/armv.*/arm/}
 
