@@ -12,11 +12,11 @@ COMMENT=	COIN-OR Open Solver Interface, an API for calling solver libraries
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/Osi/LICENSE
 
-BUILD_DEPENDS=	coin-or-Data-Sample>0:math/coin-or-data-sample \
-		coin-or-Data-Netlib>0:math/coin-or-data-netlib
+BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libCoinUtils.so:math/coinutils \
 		libopenblas.so:math/openblas
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+RUN_DEPENDS=	coin-or-Data-Sample>0:math/coin-or-data-sample \
+		coin-or-Data-Netlib>0:math/coin-or-data-netlib
 
 USES=		fortran gmake libtool localbase:ldflags pkgconfig tar:tgz
 GNU_CONFIGURE=	yes
