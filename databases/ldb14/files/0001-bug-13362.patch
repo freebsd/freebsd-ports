@@ -1,0 +1,170 @@
+From 75e572c6ac2e537839da341e76236d1c4003cae7 Mon Sep 17 00:00:00 2001
+From: Volker Lendecke <vl@samba.org>
+Date: Mon, 7 May 2018 16:41:55 +0200
+Subject: [PATCH 1/2] lib: Put "results_store" into a doubly linked list
+
+Bug: https://bugzilla.samba.org/show_bug.cgi?id=13362
+Signed-off-by: Volker Lendecke <vl@samba.org>
+Reviewed-by: Jeremy Allison <jra@samba.org>
+(cherry picked from commit 8063995a92fffc93aa9d6d1d92a75bf3f3c9592b)
+---
+ lib/ldb/modules/paged_results.c | 25 +++++--------------------
+ 1 file changed, 5 insertions(+), 20 deletions(-)
+
+diff --git a/lib/ldb/modules/paged_results.c b/lib/ldb/modules/paged_results.c
+index de014a39699..aafbcbf4483 100644
+--- a/lib/ldb/modules/paged_results.c
++++ b/lib/ldb/modules/paged_results.c
+@@ -35,6 +35,7 @@
+ #include "replace.h"
+ #include "system/filesys.h"
+ #include "system/time.h"
++#include "dlinklist.h"
+ #include "ldb_module.h"
+ 
+ struct message_store {
+@@ -48,14 +49,13 @@ struct message_store {
+ struct private_data;
+ 
+ struct results_store {
++	struct results_store *prev, *next;
+ 
+ 	struct private_data *priv;
+ 
+ 	char *cookie;
+ 	time_t timestamp;
+ 
+-	struct results_store *next;
+-
+ 	struct message_store *first;
+ 	struct message_store *last;
+ 	int num_entries;
+@@ -75,22 +75,8 @@ struct private_data {
+ static int store_destructor(struct results_store *del)
+ {
+ 	struct private_data *priv = del->priv;
+-	struct results_store *loop;
+-
+-	if (priv->store == del) {
+-		priv->store = del->next;
+-		return 0;
+-	}
+-
+-	for (loop = priv->store; loop; loop = loop->next) {
+-		if (loop->next == del) {
+-			loop->next = del->next;
+-			return 0;
+-		}
+-	}
+-
+-	/* is not in list ? */
+-	return -1;
++	DLIST_REMOVE(priv->store, del);
++	return 0;
+ }
+ 
+ static struct results_store *new_store(struct private_data *priv)
+@@ -120,8 +106,7 @@ static struct results_store *new_store(struct private_data *priv)
+ 	newr->first_ref = NULL;
+ 	newr->controls = NULL;
+ 
+-	newr->next = priv->store;
+-	priv->store = newr;
++	DLIST_ADD(priv->store, newr);
+ 
+ 	talloc_set_destructor(newr, store_destructor);
+ 
+-- 
+2.11.0
+
+
+From fd3d38f5d3de45e6d5e47ed6bd42ef86abae8836 Mon Sep 17 00:00:00 2001
+From: Volker Lendecke <vl@samba.org>
+Date: Mon, 7 May 2018 16:53:00 +0200
+Subject: [PATCH 2/2] lib: Hold at most 10 outstanding paged result cookies
+
+Bug: https://bugzilla.samba.org/show_bug.cgi?id=13362
+Signed-off-by: Volker Lendecke <vl@samba.org>
+Reviewed-by: Jeremy Allison <jra@samba.org>
+
+Autobuild-User(master): Jeremy Allison <jra@samba.org>
+Autobuild-Date(master): Tue May 15 09:37:21 CEST 2018 on sn-devel-144
+
+(cherry picked from commit 9fbd4672b06de5333a9c44fc126b8edac0b9d31a)
+---
+ lib/ldb/modules/paged_results.c | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+
+diff --git a/lib/ldb/modules/paged_results.c b/lib/ldb/modules/paged_results.c
+index aafbcbf4483..ecb22271d28 100644
+--- a/lib/ldb/modules/paged_results.c
++++ b/lib/ldb/modules/paged_results.c
+@@ -36,6 +36,7 @@
+ #include "system/filesys.h"
+ #include "system/time.h"
+ #include "dlinklist.h"
++#include <assert.h>
+ #include "ldb_module.h"
+ 
+ struct message_store {
+@@ -68,6 +69,7 @@ struct results_store {
+ 
+ struct private_data {
+ 	uint32_t next_free_id;
++	size_t num_stores;
+ 	struct results_store *store;
+ 	
+ };
+@@ -76,6 +78,10 @@ static int store_destructor(struct results_store *del)
+ {
+ 	struct private_data *priv = del->priv;
+ 	DLIST_REMOVE(priv->store, del);
++
++	assert(priv->num_stores > 0);
++	priv->num_stores -= 1;
++
+ 	return 0;
+ }
+ 
+@@ -108,8 +114,21 @@ static struct results_store *new_store(struct private_data *priv)
+ 
+ 	DLIST_ADD(priv->store, newr);
+ 
++	assert(priv->num_stores < SIZE_MAX);
++	priv->num_stores += 1;
++
+ 	talloc_set_destructor(newr, store_destructor);
+ 
++	if (priv->num_stores > 10) {
++		struct results_store *last;
++		/*
++		 * 10 is the default for MaxResultSetsPerConn --
++		 * possibly need to parameterize it.
++		 */
++		last = DLIST_TAIL(priv->store);
++		TALLOC_FREE(last);
++	}
++
+ 	return newr;
+ }
+ 
+@@ -366,6 +385,8 @@ static int paged_search(struct ldb_module *module, struct ldb_request *req)
+ 			return LDB_ERR_UNWILLING_TO_PERFORM;
+ 		}
+ 
++		DLIST_PROMOTE(private_data->store, current);
++
+ 		ac->store = current;
+ 
+ 		/* check if it is an abandon */
+@@ -397,6 +418,7 @@ static int paged_request_init(struct ldb_module *module)
+ 	}
+ 
+ 	data->next_free_id = 1;
++	data->num_stores = 0;
+ 	data->store = NULL;
+ 	ldb_module_set_private(module, data);
+ 
+-- 
+2.11.0
+
