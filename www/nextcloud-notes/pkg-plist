@@ -6,7 +6,7 @@
 %%WWWDIR%%/appinfo/info.xml
 %%WWWDIR%%/appinfo/routes.php
 %%WWWDIR%%/appinfo/signature.json
-%%WWWDIR%%/css/notes.css
+%%WWWDIR%%/css/notes.scss
 %%WWWDIR%%/img/favicon-mask.svg
 %%WWWDIR%%/img/favicon-touch.png
 %%WWWDIR%%/img/favicon-touch.svg
@@ -19,7 +19,6 @@
 %%WWWDIR%%/img/notes.svg
 %%WWWDIR%%/img/recent.svg
 %%WWWDIR%%/img/search.svg
-%%WWWDIR%%/img/star.svg
 %%WWWDIR%%/js/.bowerrc
 %%WWWDIR%%/js/.jshintrc
 %%WWWDIR%%/js/README.md
