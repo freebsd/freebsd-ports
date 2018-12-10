@@ -170,6 +170,7 @@
     SUBDIR += cminpack
     SUBDIR += cmlib
     SUBDIR += coinmp
+    SUBDIR += coinutils
     SUBDIR += concorde
     SUBDIR += convertall
     SUBDIR += coq
