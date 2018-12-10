@@ -44,6 +44,8 @@ couchdb2_start()
         -c \
         -u ${couchdb2_user} \
         env ERL_FLAGS="${erl_flags}" \
+        COUCHDB_QUERY_SERVER_JAVASCRIPT="%%APPDIR%%/bin/couchjs %%APPDIR%%/share/server/main.js" \
+        COUCHDB_QUERY_SERVER_COFFEESCRIPT="%%APPDIR%%/bin/couchjs %%APPDIR%%/share/server/main-coffee.js" \
         ${command}
 }
 
