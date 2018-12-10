@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libav
-PORTVERSION=	12.1
-PORTREVISION=	8
+PORTVERSION=	12.3
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://libav.org/releases/
 
@@ -20,14 +19,15 @@ LIB_DEPENDS=	libopencv_core.so:graphics/opencv-core \
 		libvdpau.so:multimedia/libvdpau \
 		libhogweed.so:security/nettle
 
-USES=		cpe gmake perl5 pkgconfig tar:xz
+USES=		cpe gmake localbase perl5 pkgconfig tar:xz
+
 USE_XORG=	x11
-HAS_CONFIGURE=	yes
 USE_PERL5=	build
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
+
+HAS_CONFIGURE=	yes
 NOPRECIOUSMAKEVARS=	yes # ARCH
 
-CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--libdir="${PREFIX}/lib/${PORTNAME}" \
 		--shlibdir="${PREFIX}/lib/${PORTNAME}" \
