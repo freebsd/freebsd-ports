@@ -13,6 +13,8 @@ COMMENT=	Signing utility for UEFI secure boot
 
 LICENSE=	GPLv3
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgnuefi.a:devel/gnu-efi \
 		help2man:misc/help2man
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
