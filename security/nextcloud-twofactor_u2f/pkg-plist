@@ -1,22 +1,20 @@
+@comment %%WWWDIR%%/.babelrc
 @comment %%WWWDIR%%/.github/ISSUE_TEMPLATE/bug.md
 @comment %%WWWDIR%%/.github/ISSUE_TEMPLATE/feature_request.md
 @comment %%WWWDIR%%/.github/ISSUE_TEMPLATE/question.md
 %%WWWDIR%%/CHANGELOG.md
 %%WWWDIR%%/README.md
 %%WWWDIR%%/appinfo/autoload.php
-%%WWWDIR%%/appinfo/database.xml
 %%WWWDIR%%/appinfo/info.xml
 %%WWWDIR%%/appinfo/routes.php
 %%WWWDIR%%/css/style.css
 %%WWWDIR%%/img/app-dark.svg
 %%WWWDIR%%/img/app.svg
-%%WWWDIR%%/js/build/challenge.js
-%%WWWDIR%%/js/build/settings.js
+%%WWWDIR%%/js/challenge.js
+%%WWWDIR%%/js/challenge.js.map
+%%WWWDIR%%/js/settings.js
+%%WWWDIR%%/js/settings.js.map
 %%WWWDIR%%/l10n/.gitkeep
-%%WWWDIR%%/l10n/ast.js
-%%WWWDIR%%/l10n/ast.json
-%%WWWDIR%%/l10n/ca.js
-%%WWWDIR%%/l10n/ca.json
 %%WWWDIR%%/l10n/cs.js
 %%WWWDIR%%/l10n/cs.json
 %%WWWDIR%%/l10n/da.js
@@ -25,16 +23,12 @@
 %%WWWDIR%%/l10n/de.json
 %%WWWDIR%%/l10n/de_DE.js
 %%WWWDIR%%/l10n/de_DE.json
-%%WWWDIR%%/l10n/el.js
-%%WWWDIR%%/l10n/el.json
 %%WWWDIR%%/l10n/en_GB.js
 %%WWWDIR%%/l10n/en_GB.json
 %%WWWDIR%%/l10n/es.js
 %%WWWDIR%%/l10n/es.json
 %%WWWDIR%%/l10n/es_419.js
 %%WWWDIR%%/l10n/es_419.json
-%%WWWDIR%%/l10n/es_AR.js
-%%WWWDIR%%/l10n/es_AR.json
 %%WWWDIR%%/l10n/es_CL.js
 %%WWWDIR%%/l10n/es_CL.json
 %%WWWDIR%%/l10n/es_CO.js
@@ -69,10 +63,6 @@
 %%WWWDIR%%/l10n/fi.json
 %%WWWDIR%%/l10n/fr.js
 %%WWWDIR%%/l10n/fr.json
-%%WWWDIR%%/l10n/gl.js
-%%WWWDIR%%/l10n/gl.json
-%%WWWDIR%%/l10n/he.js
-%%WWWDIR%%/l10n/he.json
 %%WWWDIR%%/l10n/hu.js
 %%WWWDIR%%/l10n/hu.json
 %%WWWDIR%%/l10n/is.js
@@ -85,12 +75,6 @@
 %%WWWDIR%%/l10n/ka_GE.json
 %%WWWDIR%%/l10n/ko.js
 %%WWWDIR%%/l10n/ko.json
-%%WWWDIR%%/l10n/lt_LT.js
-%%WWWDIR%%/l10n/lt_LT.json
-%%WWWDIR%%/l10n/lv.js
-%%WWWDIR%%/l10n/lv.json
-%%WWWDIR%%/l10n/mn.js
-%%WWWDIR%%/l10n/mn.json
 %%WWWDIR%%/l10n/nb.js
 %%WWWDIR%%/l10n/nb.json
 %%WWWDIR%%/l10n/nl.js
@@ -103,12 +87,8 @@
 %%WWWDIR%%/l10n/ru.json
 %%WWWDIR%%/l10n/sk.js
 %%WWWDIR%%/l10n/sk.json
-%%WWWDIR%%/l10n/sq.js
-%%WWWDIR%%/l10n/sq.json
 %%WWWDIR%%/l10n/sr.js
 %%WWWDIR%%/l10n/sr.json
-%%WWWDIR%%/l10n/sv.js
-%%WWWDIR%%/l10n/sv.json
 %%WWWDIR%%/l10n/tr.js
 %%WWWDIR%%/l10n/tr.json
 %%WWWDIR%%/l10n/zh_CN.js
@@ -125,6 +105,7 @@
 %%WWWDIR%%/lib/Listener/IListener.php
 %%WWWDIR%%/lib/Listener/StateChangeActivity.php
 %%WWWDIR%%/lib/Listener/StateChangeRegistryUpdater.php
+%%WWWDIR%%/lib/Migration/Version010601Date20181022142736.php
 %%WWWDIR%%/lib/Provider/U2FProvider.php
 %%WWWDIR%%/lib/Service/U2FManager.php
 %%WWWDIR%%/lib/Settings/Personal.php
@@ -139,6 +120,15 @@
 %%WWWDIR%%/vendor/composer/autoload_real.php
 %%WWWDIR%%/vendor/composer/autoload_static.php
 %%WWWDIR%%/vendor/composer/installed.json
+%%WWWDIR%%/vendor/paragonie/random_compat/LICENSE
+%%WWWDIR%%/vendor/paragonie/random_compat/build-phar.sh
+%%WWWDIR%%/vendor/paragonie/random_compat/composer.json
+%%WWWDIR%%/vendor/paragonie/random_compat/dist/random_compat.phar.pubkey
+%%WWWDIR%%/vendor/paragonie/random_compat/dist/random_compat.phar.pubkey.asc
+%%WWWDIR%%/vendor/paragonie/random_compat/lib/random.php
+%%WWWDIR%%/vendor/paragonie/random_compat/other/build_phar.php
+%%WWWDIR%%/vendor/paragonie/random_compat/psalm-autoload.php
+%%WWWDIR%%/vendor/paragonie/random_compat/psalm.xml
 %%WWWDIR%%/vendor/yubico/u2flib-server/.gitignore
 %%WWWDIR%%/vendor/yubico/u2flib-server/.travis.yml
 %%WWWDIR%%/vendor/yubico/u2flib-server/BLURB
@@ -154,6 +144,7 @@
 %%WWWDIR%%/vendor/yubico/u2flib-server/examples/localstorage/index.phps
 %%WWWDIR%%/vendor/yubico/u2flib-server/examples/pdo/index.phps
 %%WWWDIR%%/vendor/yubico/u2flib-server/phpunit.xml
+%%WWWDIR%%/vendor/yubico/u2flib-server/psalm.xml
 %%WWWDIR%%/vendor/yubico/u2flib-server/src/u2flib_server/U2F.php
 %%WWWDIR%%/vendor/yubico/u2flib-server/tests/certs/yubico-u2f-ca-1.pem
 %%WWWDIR%%/vendor/yubico/u2flib-server/tests/u2flib_test.php
