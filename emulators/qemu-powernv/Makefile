@@ -10,6 +10,8 @@ COMMENT=	Fork of QEMU with experimental PowerNV emulation support
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+
 BUILD_DEPENDS=		${LOCALBASE}/lib/libfdt.so:sysutils/dtc
 
 USES=		bison:build gmake libtool makeinfo pkgconfig python:2.7,build
