@@ -65,6 +65,7 @@
     SUBDIR += bosh-bootloader
     SUBDIR += bosh-cli
     SUBDIR += bounce
+    SUBDIR += bredbandskollen
     SUBDIR += bsdec2-image-upload
     SUBDIR += bsdproxy
     SUBDIR += bsdrcmds
