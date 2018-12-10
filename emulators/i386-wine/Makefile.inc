@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-PORTVERSION=	3.0
+PORTVERSION=	3.0.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/dbn/repos/wine/${DIST_SUBDIR}/
@@ -49,7 +50,7 @@ PORTSCOUT=	limitw:1,even
 # Included for OPSYS and OSVERSION
 .include <bsd.port.pre.mk>
 
-.for osrel in 11 12
+.for osrel in 11 12 13
 .if ${OSREL:C/\..*//} == ${osrel}
 PLIST_SUB+=	OSREL${osrel}=""
 .else
@@ -57,8 +58,8 @@ PLIST_SUB+=	OSREL${osrel}="@comment "
 .endif
 .endfor
 
-.if ${OPSYS} != FreeBSD || (!(${OSVERSION} < 1000000) && !(${OSVERSION} >= 1003000 && ${OSVERSION} < 1100000) && !(${OSVERSION} >= 1101000 && ${OSVERSION} < 1200000) && !(${OSVERSION} >= 1200056 && ${OSVERSION} < 1300000))
-IGNORE=		binaries compiled for FreeBSD 11.2+ only
+.if ${OPSYS} != FreeBSD || (!(${OSVERSION} >= 1102000 && ${OSVERSION} < 1200000) && !(${OSVERSION} >= 1200500 && ${OSVERSION} < 1300000) && !(${OSVERSION} >= 1300003 && ${OSVERSION} < 1400000))
+IGNORE=		binaries compiled for FreeBSD 11.2+, 12.0+ and -current only
 DISTFILES=
 .endif
 
@@ -75,7 +76,7 @@ ${PLIST}: fetch
 
 port-update:
 	${RM} ${SLAVEDIR}/distinfo ${SLAVEDIR}/distinfo~ ${SLAVEDIR}/pkg-plist.*
-.for osrel in 11 12
+.for osrel in 11 12 13
 	${MAKE} fetch OSREL=${osrel} OSVERSION=${osrel}99999 _OSRELEASE=${osrel}
 	${MAKE} makesum OSREL=${osrel} OSVERSION=${osrel}99999 _OSRELEASE=${osrel}
 	${CAT} ${SLAVEDIR}/distinfo >> ${SLAVEDIR}/distinfo~
