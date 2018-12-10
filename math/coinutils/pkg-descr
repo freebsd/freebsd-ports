@@ -1,0 +1,10 @@
+CoinUtils (Coin-or Utilities) is an open-source collection of classes and
+functions that are generally useful to more than one COIN-OR project. These
+utilities include:
+
+* Vector classes
+* Matrix classes
+* MPS file reading
+* Comparing floating point numbers with a tolerance 
+
+WWW: https://projects.coin-or.org/CoinUtils
