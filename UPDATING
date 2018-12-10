@@ -22,7 +22,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of devel/geany and devel/geany-plugins
   AUTHOR: madpilot@FreeBSD.org
 
-  Geany and it's plugins port have been moved to gtk3 and a new gtk2
+  Geany and its plugins port have been moved to gtk3 and a new gtk2
   flavor has been added. The gtk2 flavor has a -gtk2 suffix added to the
   package name.
 
@@ -31,7 +31,7 @@ you update your ports collection, before attempting any port upgrades.
   gtk3 flavors.
  
   If using port, to maintain the gtk2 version, you will need to deinstall
-  geany and it's plugins and reinstall specifying the gtk2 flavor.
+  geany and its plugins and reinstall specifying the gtk2 flavor.
 
   Note that the following plugins are not available if using the new
   gtk3 flavor:
