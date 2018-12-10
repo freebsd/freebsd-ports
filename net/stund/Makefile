@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/stun/stun/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_Aug13
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	Simple STUN (RFC 3489) server and client
 
 USES=		gmake tar:tgz

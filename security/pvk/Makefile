@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.drh-consultancy.demon.co.uk/
 DISTNAME=	pvksrc
 EXTRACT_SUFX=	.tgz.bin
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	Tool to convert a RSA key in PEM format into a PVK file and vice versa
 
 USES=		ssl

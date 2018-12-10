@@ -6,7 +6,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=	net
 MASTER_SITES=	https://www.linphone.org/releases/sources/ortp/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	Real-time Transport Protocol (RTP) library
 
 LICENSE=	GPLv2+
