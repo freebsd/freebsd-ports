@@ -32,7 +32,7 @@ OPTIONS_DEFINE=	\
 OPTIONS_DEFAULT=FREEBSD_TEMPLATE SERF TOOLS
 
 FREEBSD_TEMPLATE_DESC=	FreeBSD Project log template
-GITHUB_HACK_DESC=	Enable use subversion with brain-dead github server
+GITHUB_HACK_DESC=	Enable hack to support checkout from github.com
 GPG_AGENT_DESC=		Enable GPG agent password store
 MAINTAINER_DEBUG_DESC=	Build debug version
 SERF_DESC=		WebDAV/Delta-V (HTTP/HTTPS) repo access module
