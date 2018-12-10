@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://download.sippysoft.com/thirdparty/
 DISTNAME=	${PORTNAME}-${GITREVISION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	Utility to merge existing RRD data from backups into new RRD files
 
 LICENSE=	GPLv3+

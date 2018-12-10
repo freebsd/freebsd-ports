@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.speech.cs.cmu.edu/flite/packed/${PORTNAME}-${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-release
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	Small run-time speech synthesis engine
 
 OPTIONS_DEFINE=	DOCS

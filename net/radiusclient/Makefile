@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/radiusclient-ng.berlios
 DISTNAME=	${PORTNAME}-ng-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	Client library and basic utilities for RADIUS AAA
 
 GNU_CONFIGURE=	yes
