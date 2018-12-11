@@ -1,0 +1,11 @@
+prefix=%%PREFIX%%
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libsysinfo
+Description: %%COMMENT%%
+Version: %%PORTVERSION%%
+Libs: -L${libdir} -lsysinfo
+Libs.private:
+Cflags: -I${includedir}
