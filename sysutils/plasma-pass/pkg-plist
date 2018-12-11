@@ -1,0 +1,10 @@
+etc/xdg/plasma-pass.categories
+%%QT_QMLDIR%%/org/kde/plasma/private/plasmapass/libplasmapassplugin.so
+%%QT_QMLDIR%%/org/kde/plasma/private/plasmapass/qmldir
+share/kservices5/plasma-applet-org.kde.plasma.pass.desktop
+share/metainfo/org.kde.plasma.pass.appdata.xml
+share/plasma/plasmoids/org.kde.plasma.pass/contents/ui/PasswordItemDelegate.qml
+share/plasma/plasmoids/org.kde.plasma.pass/contents/ui/PasswordsPage.qml
+share/plasma/plasmoids/org.kde.plasma.pass/contents/ui/main.qml
+share/plasma/plasmoids/org.kde.plasma.pass/metadata.desktop
+share/plasma/plasmoids/org.kde.plasma.pass/metadata.json
