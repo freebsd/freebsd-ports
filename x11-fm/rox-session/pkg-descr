@@ -3,5 +3,4 @@ It loads, runs any programs you asked it to, and then quits when you run it
 a second time (thus ending your session). It does not display any windows
 until you ask it to quit.
 
-WWW: http://roscidus.com/desktop/ROX-Session
-WWW: http://rox.sourceforge.net/rox_session.html
+WWW: http://rox.sourceforge.net/desktop/
