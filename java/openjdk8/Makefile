@@ -362,6 +362,7 @@ CONFIGURE_ENV+=	LIBCXX="-lc++"
 
 # GCC is broken with PCH: https://lists.freebsd.org/pipermail/svn-src-all/2015-March/101722.html
 .if ${COMPILER_TYPE} == gcc
+CONFIGURE_ARGS+=	--with-toolchain-type=gcc
 .if ${ARCH} == "powerpc64"
 MAKE_ARGS+=	USE_PRECOMPILED_HEADER=1
 .else
