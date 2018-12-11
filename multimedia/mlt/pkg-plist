@@ -1,6 +1,7 @@
 bin/melt
 include/mlt++/Mlt.h
 include/mlt++/MltAnimation.h
+include/mlt++/MltConfig.h
 include/mlt++/MltConsumer.h
 include/mlt++/MltDeque.h
 include/mlt++/MltEvent.h
@@ -23,7 +24,6 @@ include/mlt++/MltService.h
 include/mlt++/MltTokeniser.h
 include/mlt++/MltTractor.h
 include/mlt++/MltTransition.h
-include/mlt++/MltConfig.h
 include/mlt/framework/mlt.h
 include/mlt/framework/mlt_animation.h
 include/mlt/framework/mlt_cache.h
@@ -53,11 +53,11 @@ include/mlt/framework/mlt_transition.h
 include/mlt/framework/mlt_types.h
 include/mlt/framework/mlt_version.h
 lib/libmlt++.so
-lib/libmlt++.so.%%PORTVERSION%%
 lib/libmlt++.so.3
+lib/libmlt++.so.%%PORTVERSION%%
 lib/libmlt.so
-lib/libmlt.so.%%PORTVERSION%%
 lib/libmlt.so.6
+lib/libmlt.so.%%PORTVERSION%%
 %%FFMPEG%%lib/mlt/libmltavformat.so
 lib/mlt/libmltcore.so
 lib/mlt/libmltdecklink.so
@@ -76,8 +76,8 @@ lib/mlt/libmltplusgpl.so
 lib/mlt/libmltsdl.so
 %%SOX%%lib/mlt/libmltsox.so
 %%SWFDEC%%lib/mlt/libmltswfdec.so
-%%VIDSTAB%%lib/mlt/libmltvidstab.so
 lib/mlt/libmltvideostab.so
+%%VIDSTAB%%lib/mlt/libmltvidstab.so
 lib/mlt/libmltvmfx.so
 lib/mlt/libmltxine.so
 lib/mlt/libmltxml.so
@@ -237,8 +237,8 @@ man/man1/melt.1.gz
 %%DATADIR%%/plus/filter_affine.yml
 %%DATADIR%%/plus/filter_charcoal.yml
 %%DATADIR%%/plus/filter_dance.yml
-%%DATADIR%%/plus/filter_dynamictext.yml
 %%DATADIR%%/plus/filter_dynamic_loudness.yml
+%%DATADIR%%/plus/filter_dynamictext.yml
 %%DATADIR%%/plus/filter_fft.yml
 %%DATADIR%%/plus/filter_invert.yml
 %%DATADIR%%/plus/filter_lift_gamma_gain.yml
@@ -247,6 +247,9 @@ man/man1/melt.1.gz
 %%DATADIR%%/plus/filter_lumakey.yml
 %%DATADIR%%/plus/filter_rgblut.yml
 %%DATADIR%%/plus/filter_sepia.yml
+%%DATADIR%%/plus/filter_spot_remover.yml
+%%DATADIR%%/plus/filter_text.yml
+%%DATADIR%%/plus/filter_timer.yml
 %%DATADIR%%/plus/producer_blipflash.yml
 %%DATADIR%%/plus/producer_count.yml
 %%DATADIR%%/plus/transition_affine.yml
@@ -269,6 +272,10 @@ man/man1/melt.1.gz
 %%DATADIR%%/presets/consumer/avformat/WMV
 %%DATADIR%%/presets/consumer/avformat/XDCAM-HD422
 %%DATADIR%%/presets/consumer/avformat/YouTube
+%%DATADIR%%/presets/consumer/avformat/alpha/Quicktime Animation
+%%DATADIR%%/presets/consumer/avformat/alpha/Ut Video
+%%DATADIR%%/presets/consumer/avformat/alpha/vp8
+%%DATADIR%%/presets/consumer/avformat/alpha/vp9
 %%DATADIR%%/presets/consumer/avformat/atsc_1080i_50/DNxHD
 %%DATADIR%%/presets/consumer/avformat/atsc_1080i_5994/DNxHD
 %%DATADIR%%/presets/consumer/avformat/atsc_1080p_2398/DNxHD
@@ -315,6 +322,7 @@ man/man1/melt.1.gz
 %%DATADIR%%/presets/consumer/avformat/lossless/FFV1
 %%DATADIR%%/presets/consumer/avformat/lossless/H.264
 %%DATADIR%%/presets/consumer/avformat/lossless/HuffYUV
+%%DATADIR%%/presets/consumer/avformat/lossless/Ut Video
 %%DATADIR%%/presets/consumer/avformat/stills/BMP
 %%DATADIR%%/presets/consumer/avformat/stills/DPX
 %%DATADIR%%/presets/consumer/avformat/stills/JPEG
@@ -341,6 +349,7 @@ man/man1/melt.1.gz
 %%DATADIR%%/presets/filter/movit.opacity/fade_out
 %%DATADIR%%/presets/filter/volume/fade_in
 %%DATADIR%%/presets/filter/volume/fade_out
+%%DATADIR%%/profiles/Makefile.bak
 %%DATADIR%%/profiles/atsc_1080i_50
 %%DATADIR%%/profiles/atsc_1080i_5994
 %%DATADIR%%/profiles/atsc_1080i_60
@@ -395,6 +404,8 @@ man/man1/melt.1.gz
 %%DATADIR%%/profiles/quarter_pal_wide
 %%DATADIR%%/profiles/sdi_486i_5994
 %%DATADIR%%/profiles/sdi_486p_2398
+%%DATADIR%%/profiles/square_1080p_30
+%%DATADIR%%/profiles/square_1080p_60
 %%DATADIR%%/profiles/square_ntsc
 %%DATADIR%%/profiles/square_ntsc_wide
 %%DATADIR%%/profiles/square_pal
