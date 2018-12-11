@@ -1,0 +1,13 @@
+bin/mcpp
+include/mcpp_lib.h
+include/mcpp_out.h
+lib/libmcpp.a
+lib/libmcpp.so
+lib/libmcpp.so.0
+lib/libmcpp.so.0.3.0
+man/man1/mcpp.1.gz
+@comment %%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/mcpp-manual-jp.html
+%%PORTDOCS%%%%DOCSDIR%%/mcpp-manual.html
