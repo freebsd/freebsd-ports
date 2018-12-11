@@ -18,6 +18,9 @@ COMMENT=	Distributed document-oriented "NoSQL" database
 LICENSE=	AGPLv3 APACHE20
 LICENSE_COMB=	multi
 
+DEPRECATED=	EOL upstream since September 2018
+EXPIRATION_DATE=2018-12-31
+
 BROKEN_SSL=	openssl111
 BROKEN_SSL_REASON_openssl111=	variable has incomplete type 'EVP_MD_CTX' (aka 'evp_md_ctx_st')
 LIB_DEPENDS=	libpcre.so:devel/pcre \
