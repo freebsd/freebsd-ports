@@ -195,13 +195,13 @@ MAN1SRCS+=	bugpoint.1 dsymutil.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == "FreeBSD" && ${COMPILER_TYPE} != clang
+.if ${OPSYS} == FreeBSD && ${CHOSEN_COMPILER_TYPE} != clang
 # Evil hack around gcc48 not providing a usable c++11 environment on 9.x
 PLIST_SUB:=	${PLIST_SUB:NLLDB=*} LLDB="@comment "
 .endif
 
 post-extract-LLDB-on:
-.if ${OPSYS} != "FreeBSD" || ${COMPILER_TYPE} == clang
+.if ${OPSYS} != FreeBSD || ${CHOSEN_COMPILER_TYPE} == clang
 	${MV} ${WRKSRC_lldb} ${PATCH_WRKSRC}/tools/lldb
 .endif
 

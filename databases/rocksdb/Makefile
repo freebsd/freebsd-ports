@@ -68,12 +68,8 @@ PLIST_SUB+=	LITE=${PKGNAMESUFFIX}
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 36
+.if ${CHOSEN_COMPILER_TYPE} == clang
 CXXFLAGS+=	-Wno-inconsistent-missing-override
-.endif
-
-.if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 60
-CFLAGS+=	-D_GLIBCXX_USE_C99
 .endif
 
 post-patch:

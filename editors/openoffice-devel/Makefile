@@ -241,7 +241,7 @@ CONFIGURE_ARGS+=	--without-commons-logging
 
 .include <${FILESDIR}/Makefile.localized>
 
-.if ${COMPILER_TYPE} == clang
+.if ${CHOSEN_COMPILER_TYPE} == clang
 CPPFLAGS+=		-I${LOCALBASE}/include
 .endif
 

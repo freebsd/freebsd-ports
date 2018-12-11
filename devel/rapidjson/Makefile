@@ -41,7 +41,7 @@ CXXFLAGS_powerpc=	-Wno-error
 CXXFLAGS_powerpcspe=	-Wno-error
 CXXFLAGS_powerpc64=	-Wno-error
 CXXFLAGS_sparc64=	-Wno-error
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 50
+.if ${CHOSEN_COMPILER_TYPE} == clang
 CXXFLAGS+=	-Wno-zero-as-null-pointer-constant
 .endif
 

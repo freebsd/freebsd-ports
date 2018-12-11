@@ -20,7 +20,7 @@ USE_JAVA=	yes
 USE_LDCONFIG=	yes
 MAKE_ARGS+=	JAVA_HOME=${JAVA_HOME}
 
-WRKSRC=		${WRKDIR}/astyle/build/${COMPILER_TYPE}
+WRKSRC=		${WRKDIR}/astyle/build/${CHOSEN_COMPILER_TYPE}
 
 PLIST_FILES=	lib/jni/libastylej${PKGNAMESUFFIX}.so lib/jni/libastylej${PKGNAMESUFFIX}.so.${PORTVERSION}
 

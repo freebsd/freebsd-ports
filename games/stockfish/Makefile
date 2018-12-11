@@ -24,7 +24,7 @@ USES=		compiler:c++11-lang gmake zip
 NO_WRKSUBDIR=	yes
 WRKSRC_SUBDIR=	src
 MYARCH=		${ARCH}
-MYCC=		${COMPILER_TYPE}
+MYCC=		${CHOSEN_COMPILER_TYPE}
 TGTBLD=		build
 
 PLIST_FILES=	bin/stockfish
