@@ -1,15 +1,15 @@
---- configure.orig	2014-10-06 21:33:44 UTC
+--- configure.orig	2018-12-11 18:11:57 UTC
 +++ configure
-@@ -3947,7 +3947,7 @@ case "${host}" in
+@@ -3897,7 +3897,7 @@ case "${host}" in
  
-     DEFAULT_DEFAULT_wxUSE_MOTIF=1
+     DEFAULT_DEFAULT_wxUSE_GTK=1
    ;;
 -  *-*-freebsd*)
 +  *-*-dragonfly*|*-*-freebsd*)
      USE_BSD=1
      USE_FREEBSD=1
      $as_echo "#define __FREEBSD__ 1" >>confdefs.h
-@@ -21894,6 +21894,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+@@ -22306,6 +22306,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
  
  SEARCH_INCLUDE="\
@@ -17,7 +17,7 @@
      /usr/local/include        \
      /usr/local/X11/include    \
      /usr/local/include/X11    \
-@@ -31852,9 +31853,6 @@ $as_echo "$as_me: WARNING: BeOS threads 
+@@ -32469,9 +32470,6 @@ $as_echo "$as_me: WARNING: BeOS threads 
                                          THREAD_OPTS="-pthreads $THREAD_OPTS"
                  fi
                  ;;
@@ -27,27 +27,27 @@
            *-*-darwin* | *-*-cygwin* )
                                                  THREAD_OPTS=""
                  ;;
-@@ -33127,7 +33125,7 @@ else
-         fi
-     fi
+@@ -33247,7 +33245,7 @@ if test "x$ac_cv_func_gmtime_r" = xyes; 
+    $as_echo "#define HAVE_GMTIME_R 1" >>confdefs.h
+ 
  fi
 -
 +OPTIMISE_CFLAGS=
  
- if test "x$WXWIN_COMPATIBILITY_2_6" = "xyes"; then
-     $as_echo "#define WXWIN_COMPATIBILITY_2_6 1" >>confdefs.h
-@@ -39390,6 +39388,7 @@ EOF
+ 
+ 
+@@ -40172,6 +40170,7 @@ fi
        ;;
  
        powerpc-apple-macos* | \
 +      *-*-dragonfly* | \
-       *-*-freebsd* | *-*-openbsd* | *-*-netbsd* | *-*-gnu* | *-*-k*bsd*-gnu | \
+       *-*-freebsd* | *-*-openbsd* | *-*-haiku* | *-*-netbsd* | *-*-gnu* | *-*-k*bsd*-gnu | \
        *-*-mirbsd* | \
        *-*-sunos4* | \
-@@ -39432,6 +39431,7 @@ EOF
+@@ -40213,6 +40212,7 @@ fi
  
      case "${BAKEFILE_HOST}" in
-       *-*-linux* | *-*-freebsd* | *-*-openbsd* | *-*-netbsd* | \
+       *-*-linux* | *-*-freebsd* | *-*-openbsd* | *-*-haiku* | *-*-netbsd* | \
 +      *-*-dragonfly* | \
        *-*-k*bsd*-gnu | *-*-mirbsd* | *-*-gnu* )
          if test "x$SUNCXX" = "xyes"; then
