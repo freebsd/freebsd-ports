@@ -10,10 +10,8 @@ COMMENT=	CMake modules to be used by the Ignition projects
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	ruby:lang/ruby24
-RUN_DEPENDS=	ruby:lang/ruby24
-
 USES=		cmake:outsource pkgconfig
+USE_RUBY=	yes
 
 CMAKE_OFF=	BUILD_TESTING
 
