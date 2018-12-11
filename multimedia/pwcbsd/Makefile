@@ -14,8 +14,6 @@ COMMENT=	The Linux pwc webcam driver ported to FreeBSD
 
 LICENSE=	GPLv2
 
-BROKEN_powerpc64=	fails to compile: pcpu.h:187: error: size of array '__assert_0' is negative
-
 CONFLICTS=	pwcview-[0-9]*
 
 SSP_UNSAFE=	kernel module does not support ssp

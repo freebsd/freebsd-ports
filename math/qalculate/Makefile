@@ -14,8 +14,6 @@ COMMENT=	Multi-purpose desktop calculator (GTK+3 frontend)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to compile:  main.cc: undefined reference to Calculator::temporaryCategory[abi:cxx11]()
-
 LIB_DEPENDS=	libqalculate.so:math/libqalculate
 RUN_DEPENDS=	gnuplot:math/gnuplot
 

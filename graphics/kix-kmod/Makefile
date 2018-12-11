@@ -12,8 +12,6 @@ PKGNAMESUFFIX=	-kmod
 MAINTAINER=	jon@witchspace.com
 COMMENT=	Graphical screensaver kernel module
 
-BROKEN_powerpc64=	fails to compile: pcpu.h: size of array '__assert_0' is negative
-
 USES=		kmod
 
 MAKE_ENV+=	WERROR=

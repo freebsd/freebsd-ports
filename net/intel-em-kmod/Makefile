@@ -11,7 +11,6 @@ MAINTAINER=	freebsd@intel.com
 COMMENT=	Gigabit FreeBSD Base Drivers for Intel(R) Ethernet
 
 BROKEN_armv6=		fails to compile: implicit declaration of function 'cp15_pmccntr_get' is invalid in C99
-BROKEN_powerpc64=	fails to compile: pcpu.h: size of array '__assert_0' is negative
 
 MAX_NETMAP_OSVERSION=	1199999  # Doesn't build w/NETMAP on 12
 

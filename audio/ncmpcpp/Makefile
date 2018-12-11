@@ -19,8 +19,6 @@ LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
 		libboost_filesystem.so:devel/boost-libs \
 		libcurl.so:ftp/curl
 
-BROKEN_powerpc64=	fails to compile: tags.cpp: undefined reference to TagLib::String::to8Bit
-
 USES=		compiler:c++14-lang iconv libtool localbase ncurses:port pkgconfig readline tar:bzip2
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20

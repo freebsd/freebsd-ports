@@ -13,8 +13,6 @@ LICENSE=	BSD4CLAUSE
 DEPRECATED=		Qt4 has been EOL since december 2015
 EXPIRATION_DATE=	2019-03-15
 
-BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-std=c++11"
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	anpp
 

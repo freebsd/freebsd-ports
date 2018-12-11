@@ -12,8 +12,6 @@ LICENSE=	PHP30
 
 LIB_DEPENDS=	libpdf.so:print/pdflib
 
-BROKEN_powerpc64=	Does not build
-
 USES=		php:pecl
 USE_PHP=	gd:build
 PHP_MODNAME=	pdf
