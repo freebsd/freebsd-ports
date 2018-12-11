@@ -373,7 +373,6 @@
     SUBDIR += qt4-mobility
     SUBDIR += qt4-multimedia
     SUBDIR += qt5-multimedia
-    SUBDIR += quark
     SUBDIR += quodlibet
     SUBDIR += quvi
     SUBDIR += quvi09

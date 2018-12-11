@@ -30,7 +30,6 @@
     SUBDIR += gftp
     SUBDIR += gnustep-ftp
     SUBDIR += gstreamer1-plugins-curl
-    SUBDIR += gwget
     SUBDIR += horde-gollem
     SUBDIR += hs-curl
     SUBDIR += hsftp

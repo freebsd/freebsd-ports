@@ -1,8 +1,0 @@
-bin/gribouy
-share/applications/gribouy.desktop
-share/locale/fr/LC_MESSAGES/gribouy.mo
-share/gnome-2.0/ui/gribouy-ui.xml
-share/gribouy/glade/gribouy.glade
-share/pixmaps/gribouy.png
-share/pixmaps/gribouy/gribouy-graphics.png
-share/pixmaps/gribouy/gribouy-logo.jpg

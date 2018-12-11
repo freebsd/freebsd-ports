@@ -1,5 +1,0 @@
-Interface between FUSE and the Gnome VFS 2.0. It allows the user to mount
-everything you can access via the Nautilus file manager. But of course you
-can use a convenient CLI instead of the Desktop.
-
-WWW: http://www.evolware.org/chri/

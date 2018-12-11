@@ -1,6 +1,0 @@
-This is a GNOME program to manage devices and device drivers. It's
-inspired by hal-device-manager, from the HAL project, but rewritten in
-C for efficiency and an outlook to actually make it manage devices
-rather than just show information.
-
-WWW: http://www.freedesktop.org/Software/hal

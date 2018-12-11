@@ -1,9 +1,0 @@
-GtkTetcolor is a game that resembles well-known tetris and columns. The rules
-of the game are simple - you can move or rotate the block which continue to
-fall. After block landing the sequence of at least three cells horizontally,
-vertically or diagonally having matching colors is removed and the above blocks
-will collapse. If two or more sequences will be removed simultaneously the
-player has got bonus points. The game will be over when new block cannot be
-placed on screen.
-
-WWW: https://web.archive.org/web/20080409165301/http://canopus.iacp.dvo.ru/~panov/gtktetcolor/

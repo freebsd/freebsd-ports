@@ -27,7 +27,6 @@
     SUBDIR += blast
     SUBDIR += bmpanel2
     SUBDIR += bricons
-    SUBDIR += brightside
     SUBDIR += brisk-menu
     SUBDIR += cde
     SUBDIR += cinnamon

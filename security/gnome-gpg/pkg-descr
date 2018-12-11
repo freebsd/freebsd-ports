@@ -1,3 +1,0 @@
-Simple commandline wrapper around gpg that makes it store its passphrase
-in gnome-keyring.  It is a direct competitor to (the unmaintained)
-quintuple-agent.

@@ -20,7 +20,6 @@
     SUBDIR += calligraplan
     SUBDIR += chexedit
     SUBDIR += codelite
-    SUBDIR += conglomerate
     SUBDIR += cooledit
     SUBDIR += cream
     SUBDIR += deforaos-editor

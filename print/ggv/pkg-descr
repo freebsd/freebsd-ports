@@ -1,4 +1,0 @@
-GGV, the Gnome GhostView, is a Gnome PostScript document previewer.
-It can also preview PDFs, but as it is not a native PDF viewer, it
-does not take advantage of all the features of the PDF format.
-graphics/gpdf is a more capable PDF viewer.

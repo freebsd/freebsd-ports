@@ -249,7 +249,6 @@
     SUBDIR += gqradio
     SUBDIR += gradio
     SUBDIR += gramofile
-    SUBDIR += grip
     SUBDIR += gsm
     SUBDIR += gsound
     SUBDIR += gstreamer-plugins-a52dec
@@ -356,7 +355,6 @@
     SUBDIR += ir-lv2
     SUBDIR += jack
     SUBDIR += jack-keyboard
-    SUBDIR += jack-rack
     SUBDIR += jack-smf-utils
     SUBDIR += jack_ghero
     SUBDIR += jack_mixer

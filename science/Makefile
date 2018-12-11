@@ -129,7 +129,6 @@
     SUBDIR += libsvm-python
     SUBDIR += libxc
     SUBDIR += liggghts
-    SUBDIR += linsmith
     SUBDIR += lm
     SUBDIR += luscus
     SUBDIR += madness

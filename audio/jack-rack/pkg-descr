@@ -1,5 +1,0 @@
-JACK Rack is an effects "rack" for the JACK low latency audio API. The rack
-can be filled with LADSPA effects plugins. It's phat; it turns your computer
-into an effects box.
-
-WWW: http://jack-rack.sourceforge.net/

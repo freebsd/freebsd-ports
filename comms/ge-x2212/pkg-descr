@@ -1,9 +1,0 @@
-This program is a software package for programming the X22C12 EEPROM
-in the GE Phoenix SX radios (specifically the VHF and UHF 16 channel
-scanning versions). The X2212 is removed from the radio, placed
-in the parallel port adaper socket and can be read/written/verified
-or archived. The prom contents can be saved in a hex file format
-or exported as a text file for printing. Changing frequencies and
-channel guard settings is as easy as filling in the blanks.
-
-WWW: http://members.shaw.ca/swstuff/phoenix2212.html

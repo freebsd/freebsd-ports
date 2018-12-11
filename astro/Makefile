@@ -9,7 +9,6 @@
     SUBDIR += boinc-astropulse
     SUBDIR += boinc-setiathome
     SUBDIR += celestia
-    SUBDIR += celestia-gnome
     SUBDIR += celestia-gtk
     SUBDIR += cfitsio
     SUBDIR += fowsr

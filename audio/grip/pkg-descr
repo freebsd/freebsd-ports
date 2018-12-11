@@ -1,8 +1,0 @@
-Grip is a front-end to external cd audio rippers (such as dagrab or
-cdda2wav). It also provides an automated frontend for MP3 encoders, letting
-you take a disc and transform it easily straight into MP3s. The CDDB
-protocol is supported for retrieving track information from disc database
-servers. Grip works with DigitalDJ to provide a unified "computerized"
-version of your music collection.
-
-WWW: https://sourceforge.net/projects/grip/

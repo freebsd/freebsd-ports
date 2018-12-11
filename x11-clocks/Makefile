@@ -20,7 +20,6 @@
     SUBDIR += emiclock
     SUBDIR += eyeclock
     SUBDIR += glclock
-    SUBDIR += gtubeclock
     SUBDIR += intclock
     SUBDIR += kdetoys-kde4
     SUBDIR += kteatime
@@ -37,7 +36,6 @@
     SUBDIR += plasma-applet-adjustableclock
     SUBDIR += plasma-applet-geekclock
     SUBDIR += rclock
-    SUBDIR += sanduhr
     SUBDIR += stopwatch
     SUBDIR += t3d
     SUBDIR += tclock
