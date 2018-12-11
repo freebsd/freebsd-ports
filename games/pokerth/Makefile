@@ -16,6 +16,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 DEPRECATED=		Qt4 has been EOL since december 2015
 EXPIRATION_DATE=	2019-03-15
 
+BROKEN_SSL=	openssl111 openssl-devel
+BROKEN_SSL_REASON=	Does not build with OpenSSL 1.1, variable has incomplete type 'EVP_CIPHER_CTX'
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libmikmod.so:audio/libmikmod \
 		libgnutls.so:security/gnutls \
@@ -31,6 +34,7 @@ USE_CXXSTD=	c++11
 USE_QT=		gui corelib network sql sql-sqlite3 \
 		moc_build rcc_build uic_build
 USE_SDL=	mixer
+
 QMAKE_SOURCE_PATH=	pokerth.pro
 QMAKE_ARGS+=	CONFIG+="client"
 WRKSRC=		${WRKDIR}/${DISTNAME}-rc
@@ -38,6 +42,12 @@ WRKSRC=		${WRKDIR}/${DISTNAME}-rc
 PORTDOCS=	server_setup_howto.txt
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085 && ${SSL_DEFAULT} == base
+BROKEN=		${BROKEN_SSL_REASON}
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E \
