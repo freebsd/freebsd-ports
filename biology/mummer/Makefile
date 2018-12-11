@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	yaggo:devel/yaggo
 
-USES=		autoreconf gmake libtool perl5 shebangfix
+USES=		autoreconf compiler:c++11-lang gmake libtool perl5 shebangfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 USE_GITHUB=	yes
