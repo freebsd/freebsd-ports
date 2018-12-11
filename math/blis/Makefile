@@ -14,8 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	bash:shells/bash \
 		llvm60>=0:devel/llvm60
 
-BROKEN_powerpc64=	fails to configure: common.mk:118: Unable to determine compiler vendor
-
 OPTIONS_DEFINE=	PARA CBLAS
 PARA_DESC=	use pthread parallelization
 CBLAS_DESC=	build the CBLAS compatibility layer

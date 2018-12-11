@@ -11,13 +11,11 @@ COMMENT=	Compact Language Detection for Ruby
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	fails to install: Error installing cld3-3.1.2.gem: Failed to build gem native extension
-
 RUN_DEPENDS=	protobuf>0:devel/protobuf \
 		rubygem-ffi>0:devel/rubygem-ffi
 
-USE_RUBY=	yes
 USES=		gem pkgconfig
+USE_RUBY=	yes
 
 ## do-install here to prevent removal of ext
 do-install:

@@ -14,10 +14,9 @@ COMMENT=	GAP is a system for computational discrete algebra
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libgmp.so:math/gmp
-
 BROKEN_aarch64=		fails to link: undefined reference to SyAllocBags
-BROKEN_powerpc64=	fails to package: 2_manifolds_54.scb: No such file or directory
+
+LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		gmake shebangfix tar:bzip2
 SHEBANG_FILES=	configure \
