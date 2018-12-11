@@ -37,7 +37,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 PY_FLAVORS=	py${PYTHON_DEFAULT:S/.//} py${PYTHON2_DEFAULT:S/.//} py${PYTHON3_DEFAULT:S/.//}
 .for flavor in ${PY_FLAVORS}
 .  if empty(FLAVORS:Mqt4_${flavor})
-FLAVORS:=	${FLAVORS} qt4_${flavor} qt5_${flavor}
+FLAVORS:=	${FLAVORS} qt5_${flavor} qt4_${flavor}
 .  endif
 .endfor
 .if empty(FLAVOR)
