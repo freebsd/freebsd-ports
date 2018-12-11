@@ -1,0 +1,4 @@
+[Thumbnailer Entry]
+TryExec=@PREFIX@/bin/gdk-pixbuf-thumbnailer
+Exec=@PREFIX@/bin/gdk-pixbuf-thumbnailer -s %s %u %o
+MimeType=image/webp;
