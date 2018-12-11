@@ -1614,7 +1614,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/nadvice.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package-x.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package-x.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package.el
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/pcase.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/pcase.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/pp.el.gz
