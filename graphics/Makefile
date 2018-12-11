@@ -383,6 +383,7 @@
     SUBDIR += imgv
     SUBDIR += imlib2
     SUBDIR += imlib2_loaders
+    SUBDIR += imlib2-webp
     SUBDIR += impressive
     SUBDIR += imv
     SUBDIR += inkscape

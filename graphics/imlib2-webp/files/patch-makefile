@@ -1,0 +1,11 @@
+--- makefile.orig	2018-10-31 22:21:03 UTC
++++ makefile
+@@ -2,7 +2,7 @@ include commands.mk
+ 
+ OPTS    := -O2
+ CFLAGS  := -std=c99 $(OPTS) $(shell imlib2-config --cflags) -fPIC -Wall
+-LDFLAGS := $(shell imlib2-config --libs) -lwebp
++LDFLAGS := $(shell imlib2-config --libs) $(shell pkg-config --libs libwebp)
+ 
+ SRC = $(wildcard *.c)
+ OBJ = $(foreach obj, $(SRC:.c=.o), $(notdir $(obj)))
