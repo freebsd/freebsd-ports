@@ -1,0 +1,4 @@
+A WebP image loader for GdkPixbuf2.
+Also a thumbnailer definition file for e.g. Nautilus.
+
+WWW: https://github.com/aruiz/webp-pixbuf-loader
