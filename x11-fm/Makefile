@@ -12,7 +12,6 @@
     SUBDIR += ezfm
     SUBDIR += filerunner
     SUBDIR += gentoo
-    SUBDIR += gnome-commander2
     SUBDIR += gprename
     SUBDIR += konqueror
     SUBDIR += krusader2

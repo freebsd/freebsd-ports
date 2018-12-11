@@ -1,8 +1,0 @@
-bin/gnomekiss
-man/man1/gnomekiss.1.gz
-share/applications/gnomekiss.desktop
-share/locale/en_GB/LC_MESSAGES/gnomekiss.mo
-share/locale/es/LC_MESSAGES/gnomekiss.mo
-share/locale/es_ES/LC_MESSAGES/gnomekiss.mo
-share/pixmaps/gnomekiss/besito_sinfondo.png
-share/pixmaps/gnomekiss/gnome-kiss.png

@@ -43,7 +43,6 @@
     SUBDIR += dlume
     SUBDIR += docear
     SUBDIR += dosage
-    SUBDIR += drivel
     SUBDIR += easystroke
     SUBDIR += egroupware
     SUBDIR += everygui
@@ -95,7 +94,6 @@
     SUBDIR += gnome-utils
     SUBDIR += gnome-weather
     SUBDIR += gnote
-    SUBDIR += gnotime
     SUBDIR += gnustep-wrapper
     SUBDIR += go-for-it
     SUBDIR += gourmet
@@ -104,12 +102,9 @@
     SUBDIR += grantleetheme
     SUBDIR += griffith
     SUBDIR += growl-for-linux
-    SUBDIR += gruler
     SUBDIR += gsimplecal
     SUBDIR += gtg
     SUBDIR += gtimer
-    SUBDIR += gtodo
-    SUBDIR += gtweakui
     SUBDIR += gucharmap
     SUBDIR += gworkspace
     SUBDIR += gworkspace-gwmetadata
@@ -185,14 +180,12 @@
     SUBDIR += menumaker
     SUBDIR += moregroupware
     SUBDIR += mozo
-    SUBDIR += multisync
     SUBDIR += myitcrm
     SUBDIR += nautilus-actions
     SUBDIR += nautilus-sendto
     SUBDIR += nemo-extensions
     SUBDIR += nextcloudclient
     SUBDIR += note
-    SUBDIR += notecase
     SUBDIR += noti
     SUBDIR += notification-daemon
     SUBDIR += notify-osd
@@ -211,7 +204,6 @@
     SUBDIR += pim-sieve-editor
     SUBDIR += pinot
     SUBDIR += plan
-    SUBDIR += planner
     SUBDIR += plans
     SUBDIR += plasma-applet-cwp
     SUBDIR += plasma-applet-daisy

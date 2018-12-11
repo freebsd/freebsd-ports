@@ -108,7 +108,6 @@
     SUBDIR += gd
     SUBDIR += gedy
     SUBDIR += gimp-help
-    SUBDIR += gjiten
     SUBDIR += groff
     SUBDIR += gskk
     SUBDIR += gsuica

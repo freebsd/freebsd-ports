@@ -98,7 +98,6 @@
     SUBDIR += bareos16-server
     SUBDIR += bareos16-traymonitor
     SUBDIR += batmon
-    SUBDIR += battfink
     SUBDIR += battmond
     SUBDIR += battray
     SUBDIR += bbapm
@@ -193,7 +192,6 @@
     SUBDIR += cmockery2
     SUBDIR += cmogstored
     SUBDIR += cmospwd
-    SUBDIR += cog
     SUBDIR += colorize
     SUBDIR += condor
     SUBDIR += confctl
@@ -386,7 +384,6 @@
     SUBDIR += fusefs-fusepak
     SUBDIR += fusefs-fusexmp_fh
     SUBDIR += fusefs-gitfs
-    SUBDIR += fusefs-gnome-vfs
     SUBDIR += fusefs-gstfs
     SUBDIR += fusefs-gunzip
     SUBDIR += fusefs-hfsfuse
@@ -416,13 +413,11 @@
     SUBDIR += fvcool
     SUBDIR += fwup
     SUBDIR += gaffitter
-    SUBDIR += gai-leds
     SUBDIR += ganglia-monitor-core
     SUBDIR += ganglia-webfrontend
     SUBDIR += gapcmon
     SUBDIR += garcon
     SUBDIR += gather
-    SUBDIR += gcdmaster
     SUBDIR += gcombust
     SUBDIR += gconf-editor
     SUBDIR += gdisk
@@ -443,9 +438,7 @@
     SUBDIR += gksu
     SUBDIR += glogg
     SUBDIR += gnome-control-center
-    SUBDIR += gnome-device-manager
     SUBDIR += gnome-mount
-    SUBDIR += gnome-pkgview
     SUBDIR += gnome-power-manager
     SUBDIR += gnome-schedule
     SUBDIR += gnome-settings-daemon

@@ -1,5 +1,0 @@
-bin/cog
-share/applications/cog.desktop
-share/cog/%%VERSION%%/glade/cog.glade
-share/pixmaps/cog-icon-2-48x48.png
-share/locale/fr/LC_MESSAGES/cog.mo

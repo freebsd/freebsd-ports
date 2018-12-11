@@ -1,6 +1,0 @@
-Pkgview is an application that displays the versions of all installed GNOME 2
-components, then tries to guess the overall GNOME 2 version.  This tool
-can be very useful when trying to report bugs in GNOME's Bugzilla
-database.
-
-WWW: http://www.mikegtn.net/

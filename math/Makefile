@@ -229,7 +229,6 @@
     SUBDIR += gambit
     SUBDIR += gap
     SUBDIR += gau2grid
-    SUBDIR += gdcalc
     SUBDIR += geg
     SUBDIR += geogebra
     SUBDIR += geogram

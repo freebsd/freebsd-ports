@@ -1,8 +1,0 @@
-GNOME Commander is file mangager aimed at people that wants an efficent
-and fast file mangager. The program can currently perform most common
-file operations such as copy, move, delete, chown and chmod and so on.
-It can also detect changes to files caused by other programs and update
-the views without the need for the user to manually reload. The program
-also supports Copy & Paste as well as Drag & Drop.
-
-WWW: https://gcmd.github.io/

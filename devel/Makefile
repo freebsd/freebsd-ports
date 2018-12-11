@@ -815,7 +815,6 @@
     SUBDIR += gnome-common
     SUBDIR += gnome-js-common
     SUBDIR += gnome-vfs
-    SUBDIR += gnome-vfs-monikers
     SUBDIR += gnome-vfs-reference
     SUBDIR += gnome-vfsmm
     SUBDIR += gnu-efi

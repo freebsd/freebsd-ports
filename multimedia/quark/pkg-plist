@@ -1,7 +1,0 @@
-bin/charm-quark
-bin/quark
-bin/strange-quark
-share/applications/quark.desktop
-share/pixmaps/quark.png
-share/pixmaps/quark48.png
-%%NLS%%share/locale/ko/LC_MESSAGES/quark.mo

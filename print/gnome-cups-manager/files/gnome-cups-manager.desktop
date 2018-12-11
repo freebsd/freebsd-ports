@@ -1,9 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Type=Application
-Exec=gnome-cups-manager
-Icon=gnome-dev-printer
-Terminal=false
-Name=CUPS manager
-Comment=Printer manager
-Categories=Application;System;

@@ -39,7 +39,6 @@
     SUBDIR += ebook2cwgui
     SUBDIR += echolinux
     SUBDIR += efax
-    SUBDIR += efax-gtk
     SUBDIR += ems-flasher
     SUBDIR += fl_moxgen
     SUBDIR += flcluster
@@ -49,10 +48,8 @@
     SUBDIR += flwrap
     SUBDIR += freedv
     SUBDIR += gammu
-    SUBDIR += ge-x2212
     SUBDIR += geoid
     SUBDIR += gkermit
-    SUBDIR += gmfsk
     SUBDIR += gnocky
     SUBDIR += gnokii
     SUBDIR += gnuradio

@@ -1,8 +1,0 @@
---- charm-quark/charm-quark.orig	Mon Jul 21 02:39:44 2003
-+++ charm-quark/charm-quark	Mon Jul 21 02:41:04 2003
-@@ -1,4 +1,4 @@
--#! /bin/bash
-+#! /bin/sh
- 
- NAME="charm-quark"
- VERSION="1.0"

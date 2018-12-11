@@ -45,7 +45,6 @@
     SUBDIR += agg
     SUBDIR += alembic
     SUBDIR += alpng
-    SUBDIR += amide
     SUBDIR += ampasACES-container
     SUBDIR += ampasCTL
     SUBDIR += animorph
@@ -87,7 +86,6 @@
     SUBDIR += cal3d
     SUBDIR += camera
     SUBDIR += camerakit
-    SUBDIR += cbrpager
     SUBDIR += cbview
     SUBDIR += cbviewer
     SUBDIR += cegui
@@ -353,7 +351,6 @@
     SUBDIR += guilib
     SUBDIR += gwenview
     SUBDIR += gwenview-kde4
-    SUBDIR += gx
     SUBDIR += hdr_tools
     SUBDIR += hiptext
     SUBDIR += hobbes-icons-xpm
@@ -1110,7 +1107,6 @@
     SUBDIR += tinyows
     SUBDIR += tkpng
     SUBDIR += togl
-    SUBDIR += truevision
     SUBDIR += ttygif
     SUBDIR += tulip
     SUBDIR += tumble
