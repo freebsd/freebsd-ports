@@ -6,7 +6,7 @@
 # german/eric6, russian/eric6, devel/es-eric6
 
 PORTNAME=	eric6
-PORTVERSION=	18.11
+PORTVERSION=	18.12
 MASTER_SITES=	SF/eric-ide/${PORTNAME}/stable/${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
