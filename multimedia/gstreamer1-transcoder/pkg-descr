@@ -1,0 +1,5 @@
+Transcodes a stream defined by its first <input-uri> argument to the place
+defined by its second <output-uri> argument into the format described in its
+third <encoding-format> argument or using the given <output-uri> file extension.
+
+WWW: https://github.com/pitivi/gst-transcoder
