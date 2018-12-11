@@ -186,8 +186,6 @@
     SUBDIR += moregroupware
     SUBDIR += mozo
     SUBDIR += multisync
-    SUBDIR += multisync-backup
-    SUBDIR += multisync-syncml
     SUBDIR += myitcrm
     SUBDIR += nautilus-actions
     SUBDIR += nautilus-sendto
