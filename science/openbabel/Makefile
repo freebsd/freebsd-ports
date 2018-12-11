@@ -13,11 +13,9 @@ COMMENT=	Chemical toolbox designed to speak the many languages of chemical data
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	Does not build: relocation truncated to fit: R_PPC64_TOC16_DS
-
 CONFLICTS_INSTALL=	babel-*
 
-USES=		cmake:outsource eigen:3
+USES=		compiler:c++11-lang cmake:outsource eigen:3 gnome
 USE_CXXSTD=	gnu++98
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
@@ -37,7 +35,12 @@ PYTHON_CMAKE_BOOL=	PYTHON_BINDINGS
 
 GUI_CMAKE_BOOL=	BUILD_GUI
 GUI_CMAKE_ON=	-DwxWidgets_CONFIG_EXECUTABLE:STRING=${WX_CONFIG}
-GUI_USE=	WX=3.0
+GUI_USE=	WX=3.1
+
+.if exists(/usr/lib/libstdc++.so)
+CXXFLAGS+=	-Wno-narrowing
+USE_CXXSTD=	c++11
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e '/pkgconfig/s,$${LIB_INSTALL_DIR},libdata,' \
