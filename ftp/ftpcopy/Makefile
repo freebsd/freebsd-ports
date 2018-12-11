@@ -9,6 +9,8 @@ MASTER_SITES=	http://www.ohse.de/uwe/ftpcopy/
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Command line ftp tools for listing and mirroring
 
+LICENSE=	GPLv2
+
 BROKEN_aarch64=		fails to build: regparm is not valid on this platform
 BROKEN_armv6=		fails to build: regparm is not valid on this platform
 BROKEN_armv7=		fails to build: regparm is not valid on this platform
