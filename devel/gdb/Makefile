@@ -92,11 +92,11 @@ EXCLUDE+=	readline
 EXCLUDE+=	zlib
 .endif
 
-.if ${ARCH} == "amd64"
+.if ${ARCH} == amd64
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .endif
 
-.if ${COMPILER_TYPE} == "clang"
+.if ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-extended-offsetof
 .endif
 

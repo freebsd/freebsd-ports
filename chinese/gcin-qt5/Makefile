@@ -25,18 +25,8 @@ MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 
 PLIST_FILES=	${QT_PLUGINDIR}/platforminputcontexts/libgcinplatforminputcontextplugin.so
 
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 60
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang60:devel/llvm60
-CPP=		${LOCALBASE}/bin/clang-cpp60
-CC=		${LOCALBASE}/bin/clang60
-CXX=		${LOCALBASE}/bin/clang++60
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g; \
 		s,%%MOC%%,${MOC},;' ${WRKSRC}/Makefile
-	@${ECHO} "XXXX: ${COMPILER_VERSION}"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

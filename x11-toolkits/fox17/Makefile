@@ -69,7 +69,7 @@ CXXFLAGS+=	-O2 -ffast-math
 .  if !${PORT_OPTIONS:MPROFILE}
 CXXFLAGS+=	-fomit-frame-pointer
 .  endif
-.  if ${COMPILER_TYPE} == "gcc"
+.  if ${CHOSEN_COMPILER_TYPE} == gcc
 CXXFLAGS+=	-fexpensive-optimizations -finline-functions
 .  endif
 .endif

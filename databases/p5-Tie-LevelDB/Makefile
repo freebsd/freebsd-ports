@@ -26,7 +26,7 @@ MAKE_ARGS=	CC="${CXX}"
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == clang
+.if ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-reserved-user-defined-literal
 .endif
 

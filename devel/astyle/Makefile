@@ -22,7 +22,7 @@ USES=		compiler:c++11-lang dos2unix gmake
 
 ALL_TARGET=	astyle
 DOS2UNIX_GLOB=	*.ini
-WRKSRC=		${WRKDIR}/astyle/build/${COMPILER_TYPE}
+WRKSRC=		${WRKDIR}/astyle/build/${CHOSEN_COMPILER_TYPE}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

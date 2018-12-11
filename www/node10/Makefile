@@ -83,7 +83,7 @@ IGNORE=		cannot build node.js with LibreSSL. You must enable BUNDLED_SSL
 CONFIGURE_ARGS+=--openssl-no-asm
 .endif
 
-.if ${COMPILER_TYPE} == gcc
+.if ${CHOSEN_COMPILER_TYPE} == gcc
 # GCC does not expose std::snprintf() without this define
 CXXFLAGS+=	-D_GLIBCXX_USE_C99
 .endif

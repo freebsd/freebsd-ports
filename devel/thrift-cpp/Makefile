@@ -63,7 +63,7 @@ EXPIRATION_DATE=	2019-03-15
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == clang
+.if ${CHOSEN_COMPILER_TYPE} == clang
 USE_CXXSTD=	c++11
 .endif
 
