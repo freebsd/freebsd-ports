@@ -8,7 +8,7 @@ CATEGORIES=	biology
 MASTER_SITES=	SF
 DISTNAME=	MUMmer${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modular system for rapid whole genome alignment
 
 LICENSE=	ART10
