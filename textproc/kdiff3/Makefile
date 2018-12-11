@@ -1,33 +1,26 @@
-# Created by: Heiner Eichmann <h.eichmann@gmx.de>
 # $FreeBSD$
 
 PORTNAME=	kdiff3
-PORTVERSION=	0.9.98
-PORTREVISION=	2
+DISTVERSION=	1.7.90.20181029
 CATEGORIES=	textproc kde
-MASTER_SITES=	SF
 
-MAINTAINER=	pizzamig@FreeBSD.org
-COMMENT=	KDE4 graphical frontend for diff
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	KDE graphical frontend for diff
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
+USES=		cmake:outsource kde:5 qt:5
+USE_GITHUB=	yes
+GH_ACCOUNT=	KDE
+GH_TAGNAME=	42403aa
+USE_KDE=	auth bookmarks codecs completion config configwidgets \
+		coreaddons crash ecm i18n iconthemes jobwidgets kio \
+		parts service sonnet textwidgets widgetsaddons xmlgui
+USE_QT=		concurrent core dbus gui network printsupport widgets xml \
+		buildtools_build qmake_build
 
-USES=		cmake:outsource kde:4 qt:4
-USE_KDE=	kdelibs libkonq automoc4
-USE_QT=		moc_build qmake_build rcc_build uic_build
-
-OPTIONS_DEFINE=	NLS DOCS
-
-OPTIONS_SUB=	yes
-
-NLS_USES=	gettext
-NLS_CMAKE_OFF=	-DBUILD_po:BOOL=FALSE
-NLS_CMAKE_ON=	-DBUILD_po:BOOL=TRUE
-DOCS_CMAKE_OFF=	-DBUILD_doc:BOOL=FALSE
-DOCS_CMAKE_ON=	-DBUILD_doc:BOOL=TRUE
+OPTIONS_DEFINE=	DOCS
+DOCSDIR_REL=	share/doc/HTML
 
 .include <bsd.port.mk>
