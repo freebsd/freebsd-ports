@@ -2,7 +2,7 @@
 
 PORTNAME=	xetex
 PORTVERSION=	0.99992
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMEPREFIX=	tex-
@@ -21,7 +21,6 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libharfbuzz-icu.so:print/harfbuzz-icu \
 		libpng.so:graphics/png \
-		libpoppler.so:graphics/poppler \
 		libTECkit.so:textproc/teckit
 
 USES=		compiler:c++11-lib pkgconfig tar:xz
@@ -32,6 +31,7 @@ USE_GNOME=	cairo
 TEXHASHDIRS=	${TEXMFDISTDIR} ${TEXMFVARDIR}
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES=	build-aux \
+		libs/poppler \
 		libs/xpdf \
 		texk/web2c
 EXTRACT_AFTER_ARGS_TEXMF= \
@@ -66,7 +66,7 @@ CONFIGURE_ARGS=	${EXCLUDE_ENGINES:S/^/--disable-/} \
 		--with-graphite2-includes=${LOCALBASE}/include/graphite2 \
 		--with-graphite2-libdir=${LOCALBASE}/lib \
 		--with-system-harfbuzz \
-		--with-system-poppler \
+		--without-system-poppler \
 		--with-system-teckit \
 		--with-teckit-includes=${LOCALBASE}/include/teckit \
 		--with-teckit-libdir=${LOCALBASE}/lib \
@@ -82,7 +82,7 @@ MAKE_JOBS_UNSAFE=	yes
 TEX_FORMATS=	xetex
 
 pre-configure:
-	for D in libs/xpdf; do \
+	for D in libs/xpdf libs/poppler; do \
 		cd ${WRKDIR}/${DISTNAME}/$$D && \
 		    ${SETENV} ${CONFIGURE_ENV} ${SH} ${CONFIGURE_SCRIPT} \
 			${CONFIGURE_ARGS}; \

@@ -2,7 +2,7 @@
 
 PORTNAME=	luatex
 PORTVERSION=	0.80.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
 PKGNAMEPREFIX=	tex-
@@ -16,7 +16,6 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Extended version of pdfTeX using Lua
 
 LIB_DEPENDS=	libpng.so:graphics/png \
-		libpoppler.so:graphics/poppler \
 		libmpfr.so:math/mpfr \
 		libzzip.so:devel/zziplib
 
@@ -31,6 +30,7 @@ EXTRACT_FILES=	build-aux \
 		libs/xpdf \
 		libs/lua52 \
 		libs/luajit \
+		libs/poppler \
 		texk/web2c
 EXTRACT_AFTER_ARGS_TEXMF=| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner \
@@ -66,7 +66,7 @@ EXCLUDE_ENGINES=aleph etex pdftex mf mf-nowin \
 CONFIGURE_ARGS=	${EXCLUDE_ENGINES:S/^/--disable-/} \
 		--enable-luatex \
 		--enable-luajittex \
-		--with-system-poppler \
+		--without-system-poppler \
 		--with-system-zlib \
 		--with-system-zziplib
 .for L in cairo gmp kpathsea libpng mpfr pixman ptexenc
@@ -84,7 +84,7 @@ post-extract:
 	    ${LN} -s -f ${LOCALBASE}/${TEXMFDISTDIR}/web2c kpathsea
 
 pre-configure:
-	for D in libs/xpdf; do \
+	for D in libs/xpdf libs/poppler; do \
 		cd ${WRKDIR}/${DISTNAME}/$$D && \
 		${SETENV} ${CONFIGURE_ENV} ${SH} ${CONFIGURE_SCRIPT} \
 		    ${CONFIGURE_ARGS}; \
