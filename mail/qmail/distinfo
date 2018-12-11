@@ -87,5 +87,3 @@ SHA256 (qmail/enhacelogging-ldap-20120221.patch) = e5403eee9c180180eb52ce343575b
 SIZE (qmail/enhacelogging-ldap-20120221.patch) = 1207
 SHA256 (qmail/ucspi-ssl-0.94.tgz) = 343c0281269d88650823eb053fe80bf34b81f52c12b895f27534706b983a23b4
 SIZE (qmail/ucspi-ssl-0.94.tgz) = 112640
-SHA256 (qmail/qmail-ldap-1.03-20060201-SRS.patch) = 2c54abef2af35e7e7a54b94e06cd002877db3ea96fa06f1b53e6d741a62a2154
-SIZE (qmail/qmail-ldap-1.03-20060201-SRS.patch) = 25883
