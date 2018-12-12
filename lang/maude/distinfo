@@ -1,5 +1,5 @@
-TIMESTAMP = 1478641858
-SHA256 (Maude-2.6.tar.gz) = a5ba79bf3d30565c874e80b3531b51a7e835b600e86cac82508a6eb9e15f4aa0
-SIZE (Maude-2.6.tar.gz) = 1600026
-SHA256 (full-maude.maude.zip) = 57ebfc41056b7afc2be48983f6a1311e817d23eeaaed71023471bc4edaf6b128
-SIZE (full-maude.maude.zip) = 154881
+TIMESTAMP = 1537177216
+SHA256 (Maude-2.7.1.tar.gz) = b1887c7fa75e85a1526467727242f77b5ec7cd6a5dfa4ceb686b6f545bb1534b
+SIZE (Maude-2.7.1.tar.gz) = 1853963
+SHA256 (Full-Maude-2.7.1.zip) = 4c3a11b053ea92df4cfe89939a97c6b02c68489b174eb689c844c08decb18f78
+SIZE (Full-Maude-2.7.1.zip) = 156771

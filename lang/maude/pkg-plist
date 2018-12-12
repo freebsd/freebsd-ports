@@ -1,9 +1,10 @@
 bin/maude
-%%FULL_MAUDE%%%%DATADIR%%/full-maude%%FULL_MAUDE_VER%%.maude
+%%FULL_MAUDE%%%%DATADIR%%/full-maude.maude
 %%DATADIR%%/linear.maude
 %%DATADIR%%/machine-int.maude
 %%DATADIR%%/metaInterpreter.maude
 %%DATADIR%%/model-checker.maude
 %%DATADIR%%/prelude.maude
+%%CVC4%%%%DATADIR%%/smt.maude
 %%DATADIR%%/socket.maude
 %%DATADIR%%/term-order.maude
