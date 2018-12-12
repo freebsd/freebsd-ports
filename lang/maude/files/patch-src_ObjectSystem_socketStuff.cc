@@ -1,6 +1,6 @@
---- src/ObjectSystem/socketStuff.cc.orig	2018-08-27 20:56:09 UTC
+--- src/ObjectSystem/socketStuff.cc.orig	2018-09-17 10:38:45 UTC
 +++ src/ObjectSystem/socketStuff.cc
-@@ -219,7 +219,7 @@ SocketManagerSymbol::createServerTcpSocket(FreeDagNode
+@@ -230,7 +230,7 @@ SocketManagerSymbol::createServerTcpSocket(FreeDagNode
  	sockName.sin_family = AF_INET;
  	sockName.sin_port = htons(port);
  	sockName.sin_addr.s_addr = htonl(INADDR_ANY);  // HACK - what is the portable way to set this?
