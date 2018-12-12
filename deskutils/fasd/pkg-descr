@@ -1,0 +1,5 @@
+Fasd is a handy shell helper program to access files and directories faster.
+Fasd will try to expand path arguments from previously seen ones ordered by 
+frequency of access.
+
+WWW: https://github.com/clvv/fasd
