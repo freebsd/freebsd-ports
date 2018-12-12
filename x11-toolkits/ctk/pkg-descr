@@ -1,0 +1,11 @@
+The goal of CTK is to support biomedical image computing. CTK code is licensed
+under Apache 2.0. This means that users of CTK are allowed to use the code for
+academic, commercial, or other purposes without paying license fees or being
+restricted in their ability to redistribute their code or keep it private.
+
+CTK works on topics that are not covered by existing toolkits that support the
+mutual interest and needs of the CTK community. The main scope of current CTK
+efforts includes the topics DICOM, DICOM Application Hosting, Widgets, and
+Plugin Framework.
+
+WWW: http://www.commontk.org/index.php/Main_Page
