@@ -1,3 +1,7 @@
 GeoIP does not ship with the actual data files. You must download
 them yourself! To obtain the free database, run:
 # %%PREFIX%%/bin/geoipupdate.sh
+
+If you are using the free database, you will need to create some
+symlinks for the geoiplookup tools, as described in
+https://github.com/maxmind/geoip-api-c/blob/master/NEWS.md
