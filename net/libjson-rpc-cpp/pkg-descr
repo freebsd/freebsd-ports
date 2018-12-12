@@ -1,0 +1,7 @@
+A cross platform JSON-RPC (remote procedure call) framework for C++ that is
+fully JSON-RPC 2.0 & 1.0 compatible.
+
+Includes ready to use HTTP + TCP server and client implementations, as well
+as a stub class generator for C++, JavaScript and Python.
+
+WWW: https://github.com/cinemast/libjson-rpc-cpp
