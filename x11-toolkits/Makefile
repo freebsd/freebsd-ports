@@ -11,6 +11,7 @@
     SUBDIR += blt
     SUBDIR += bwidget
     SUBDIR += c++-gtk-utils
+    SUBDIR += ctk
     SUBDIR += diorite
     SUBDIR += flowcanvas
     SUBDIR += fltk
