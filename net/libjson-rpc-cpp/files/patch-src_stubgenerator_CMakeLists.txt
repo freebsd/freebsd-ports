@@ -1,0 +1,11 @@
+--- src/stubgenerator/CMakeLists.txt.orig	2018-09-25 08:59:06 UTC
++++ src/stubgenerator/CMakeLists.txt
+@@ -46,7 +46,7 @@ if (NOT ${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
+         VERBATIM
+     )
+     add_custom_target(manpage ALL DEPENDS jsonrpcstub.1.gz)
+-    install(FILES ${CMAKE_BINARY_DIR}/jsonrpcstub.1.gz DESTINATION share/man/man1/)
++    install(FILES ${CMAKE_BINARY_DIR}/jsonrpcstub.1.gz DESTINATION man/man1/)
+     add_dependencies(jsonrpcstub manpage)
+ endif()
+ 
