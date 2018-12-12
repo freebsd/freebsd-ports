@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	alacritty
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	zeising@FreeBSD.org
@@ -18,7 +17,6 @@ USES=		cargo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jwilm
-GH_TUPLE=	zacps:winpty:9ccec6459c2c8b7555846910c12ba697b688f44d:winptysys
 
 OPTIONS_DEFINE=	EXAMPLES
 
@@ -41,10 +39,11 @@ CARGO_CRATES=	adler32-1.0.3 \
 		approx-0.3.0 \
 		argon2rs-0.2.5 \
 		arraydeque-0.4.3 \
-		arrayvec-0.4.7 \
+		arrayvec-0.4.8 \
 		atty-0.2.11 \
 		backtrace-0.3.9 \
 		backtrace-sys-0.1.24 \
+		base64-0.10.0 \
 		base64-0.9.3 \
 		bindgen-0.33.2 \
 		bitflags-0.7.0 \
@@ -54,9 +53,9 @@ CARGO_CRATES=	adler32-1.0.3 \
 		block-0.1.6 \
 		build_const-0.2.1 \
 		byteorder-1.2.7 \
-		bytes-0.4.10 \
+		bytes-0.4.11 \
 		bzip2-0.3.3 \
-		bzip2-sys-0.1.6 \
+		bzip2-sys-0.1.7 \
 		cc-1.0.25 \
 		cexpr-0.2.3 \
 		cfg-if-0.1.6 \
@@ -82,13 +81,13 @@ CARGO_CRATES=	adler32-1.0.3 \
 		core-text-13.1.1 \
 		core-text-9.2.0 \
 		crc-1.8.1 \
+		crc32fast-1.1.2 \
 		crossbeam-deque-0.2.0 \
 		crossbeam-deque-0.6.2 \
 		crossbeam-epoch-0.3.1 \
 		crossbeam-epoch-0.6.1 \
 		crossbeam-utils-0.2.2 \
-		crossbeam-utils-0.5.0 \
-		crossbeam-utils-0.6.1 \
+		crossbeam-utils-0.6.2 \
 		deflate-0.7.19 \
 		dirs-1.0.4 \
 		dlib-0.4.1 \
@@ -97,17 +96,18 @@ CARGO_CRATES=	adler32-1.0.3 \
 		dunce-0.1.1 \
 		either-1.5.0 \
 		embed-resource-1.1.4 \
-		encoding_rs-0.8.10 \
+		encoding_rs-0.8.13 \
 		env_logger-0.5.13 \
+		env_logger-0.6.0 \
 		errno-0.2.4 \
 		errno-dragonfly-0.1.1 \
 		error-chain-0.11.0 \
-		euclid-0.17.3 \
+		euclid-0.19.4 \
 		expat-sys-2.1.6 \
 		failure-0.1.3 \
 		failure_derive-0.1.3 \
-		filetime-0.2.3 \
-		flate2-1.0.4 \
+		filetime-0.2.4 \
+		flate2-1.0.6 \
 		fnv-1.0.6 \
 		font-loader-0.6.0 \
 		foreign-types-0.3.2 \
@@ -124,12 +124,11 @@ CARGO_CRATES=	adler32-1.0.3 \
 		gdi32-sys-0.2.0 \
 		gif-0.10.1 \
 		gl_generator-0.10.0 \
-		gl_generator-0.9.0 \
-		gleam-0.6.6 \
+		gleam-0.6.8 \
 		glob-0.2.11 \
 		glutin-0.19.0 \
 		httparse-1.3.3 \
-		humantime-1.1.1 \
+		humantime-1.2.0 \
 		hyper-0.11.27 \
 		hyper-tls-0.1.4 \
 		idna-0.1.5 \
@@ -141,20 +140,19 @@ CARGO_CRATES=	adler32-1.0.3 \
 		itoa-0.4.3 \
 		jpeg-decoder-0.1.15 \
 		kernel32-sys-0.2.2 \
-		khronos_api-2.2.0 \
 		khronos_api-3.0.0 \
 		language-tags-0.2.2 \
 		lazy_static-0.2.11 \
 		lazy_static-1.2.0 \
 		lazycell-0.4.0 \
-		lazycell-1.2.0 \
-		libc-0.2.43 \
-		libflate-0.1.18 \
+		lazycell-1.2.1 \
+		libc-0.2.44 \
+		libflate-0.1.19 \
 		libloading-0.5.0 \
 		libz-sys-1.0.25 \
 		line_drawing-0.7.0 \
 		linked-hash-map-0.5.1 \
-		lock_api-0.1.4 \
+		lock_api-0.1.5 \
 		log-0.3.9 \
 		log-0.4.6 \
 		lzw-0.10.0 \
@@ -162,7 +160,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		matches-0.1.8 \
 		memchr-1.0.2 \
 		memchr-2.1.1 \
-		memmap-0.6.2 \
+		memmap-0.7.0 \
 		memoffset-0.2.1 \
 		mime-0.3.12 \
 		mime_guess-2.0.0-alpha.6 \
@@ -180,6 +178,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		native-tls-0.1.5 \
 		net2-0.2.33 \
 		nix-0.11.0 \
+		nix-0.12.0 \
 		nodrop-0.1.13 \
 		nom-3.2.1 \
 		nom-4.1.1 \
@@ -199,9 +198,11 @@ CARGO_CRATES=	adler32-1.0.3 \
 		ordered-float-0.5.2 \
 		ordered-float-1.0.1 \
 		osmesa-sys-0.1.2 \
-		owning_ref-0.3.3 \
+		owning_ref-0.4.0 \
 		parking_lot-0.6.4 \
+		parking_lot-0.7.0 \
 		parking_lot_core-0.3.1 \
+		parking_lot_core-0.4.0 \
 		peeking_take_while-0.1.2 \
 		percent-encoding-1.0.1 \
 		phf-0.7.23 \
@@ -211,30 +212,36 @@ CARGO_CRATES=	adler32-1.0.3 \
 		pkg-config-0.3.14 \
 		png-0.12.0 \
 		podio-0.1.6 \
-		proc-macro2-0.4.23 \
+		proc-macro2-0.4.24 \
 		quick-error-1.2.2 \
 		quote-0.3.15 \
 		quote-0.6.10 \
 		rand-0.4.3 \
 		rand-0.5.5 \
+		rand-0.6.1 \
+		rand_chacha-0.1.0 \
 		rand_core-0.2.2 \
 		rand_core-0.3.0 \
+		rand_hc-0.1.0 \
+		rand_isaac-0.1.1 \
+		rand_pcg-0.1.1 \
+		rand_xorshift-0.1.0 \
 		rayon-1.0.3 \
 		rayon-core-1.4.1 \
-		redox_syscall-0.1.40 \
+		redox_syscall-0.1.43 \
 		redox_termios-0.1.1 \
 		redox_users-0.2.0 \
 		regex-0.2.11 \
-		regex-1.0.6 \
+		regex-1.1.0 \
 		regex-syntax-0.5.6 \
-		regex-syntax-0.6.3 \
+		regex-syntax-0.6.4 \
 		relay-0.1.1 \
 		remove_dir_all-0.5.1 \
 		reqwest-0.8.8 \
 		rustc-demangle-0.1.9 \
 		rustc_version-0.2.3 \
 		rusttype-0.4.3 \
-		rusttype-0.7.2 \
+		rusttype-0.7.3 \
 		ryu-0.2.7 \
 		safemem-0.3.0 \
 		same-file-1.0.4 \
@@ -246,27 +253,28 @@ CARGO_CRATES=	adler32-1.0.3 \
 		security-framework-sys-0.1.16 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.80 \
-		serde_derive-1.0.80 \
+		serde-1.0.81 \
+		serde_derive-1.0.81 \
 		serde_json-1.0.33 \
-		serde_urlencoded-0.5.3 \
-		serde_yaml-0.8.7 \
+		serde_urlencoded-0.5.4 \
+		serde_yaml-0.8.8 \
 		servo-fontconfig-0.4.0 \
 		servo-fontconfig-sys-4.0.7 \
 		shared_library-0.1.9 \
 		siphasher-0.2.3 \
 		slab-0.3.0 \
 		slab-0.4.1 \
-		smallvec-0.6.5 \
-		smithay-client-toolkit-0.4.2 \
+		smallvec-0.6.7 \
+		smithay-client-toolkit-0.4.3 \
 		socket2-0.3.8 \
 		stable_deref_trait-1.1.1 \
-		static_assertions-0.2.5 \
+		static_assertions-0.3.1 \
 		stb_truetype-0.2.4 \
 		strsim-0.7.0 \
-		syn-0.15.20 \
+		syn-0.15.22 \
 		synstructure-0.10.1 \
 		tempdir-0.3.7 \
+		tempfile-3.0.5 \
 		termcolor-1.0.4 \
 		terminfo-0.6.1 \
 		termion-1.5.1 \
@@ -274,23 +282,23 @@ CARGO_CRATES=	adler32-1.0.3 \
 		thread_local-0.3.6 \
 		tiff-0.2.1 \
 		time-0.1.40 \
-		tokio-0.1.11 \
+		tokio-0.1.13 \
 		tokio-codec-0.1.1 \
 		tokio-core-0.1.17 \
-		tokio-current-thread-0.1.3 \
+		tokio-current-thread-0.1.4 \
 		tokio-executor-0.1.5 \
 		tokio-fs-0.1.4 \
 		tokio-io-0.1.10 \
-		tokio-reactor-0.1.6 \
+		tokio-reactor-0.1.7 \
 		tokio-service-0.1.0 \
 		tokio-tcp-0.1.2 \
-		tokio-threadpool-0.1.8 \
-		tokio-timer-0.2.7 \
+		tokio-threadpool-0.1.9 \
+		tokio-timer-0.2.8 \
 		tokio-tls-0.1.4 \
-		tokio-udp-0.1.2 \
-		tokio-uds-0.2.3 \
+		tokio-udp-0.1.3 \
+		tokio-uds-0.2.4 \
 		try-lock-0.1.0 \
-		ucd-util-0.1.2 \
+		ucd-util-0.1.3 \
 		unicase-1.4.2 \
 		unicase-2.2.0 \
 		unicode-bidi-0.3.4 \
@@ -310,11 +318,11 @@ CARGO_CRATES=	adler32-1.0.3 \
 		vte-0.3.3 \
 		walkdir-2.2.7 \
 		want-0.0.4 \
-		wayland-client-0.21.4 \
-		wayland-commons-0.21.4 \
-		wayland-protocols-0.21.4 \
-		wayland-scanner-0.21.4 \
-		wayland-sys-0.21.4 \
+		wayland-client-0.21.7 \
+		wayland-commons-0.21.7 \
+		wayland-protocols-0.21.7 \
+		wayland-scanner-0.21.7 \
+		wayland-sys-0.21.7 \
 		which-1.0.5 \
 		widestring-0.2.2 \
 		winapi-0.2.8 \
@@ -325,20 +333,16 @@ CARGO_CRATES=	adler32-1.0.3 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		wincolor-1.0.1 \
 		winit-0.18.0 \
+		winpty-sys-0.4.3 \
 		winreg-0.4.0 \
 		ws2_32-sys-0.2.1 \
 		x11-clipboard-0.2.2 \
 		x11-dl-2.18.3 \
 		xcb-0.8.2 \
-		xdg-2.1.0 \
-		xml-rs-0.7.0 \
+		xdg-2.2.0 \
 		xml-rs-0.8.0 \
 		yaml-rust-0.4.2 \
 		zip-0.4.2
-CARGO_USE_GITHUB=	yes
-CARGO_GH_CARGOTOML=	${CARGO_CARGOTOML} \
-			${WRKSRC}/winpty/Cargo.toml \
-			${WRKSRC_winptysys}/Cargo.toml
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/alacritty
