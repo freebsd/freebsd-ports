@@ -1,0 +1,833 @@
+--- pgadmin/include/libssh2/openssl.h.orig	2016-01-07 18:47:32.000000000 +0600
++++ pgadmin/include/libssh2/openssl.h	2018-12-12 14:42:16.774278000 +0700
+@@ -114,54 +114,61 @@
+ 
+ #define _libssh2_random(buf, len) RAND_bytes ((buf), (len))
+ 
+-#define libssh2_sha1_ctx EVP_MD_CTX
++void _libssh2_digest_final(EVP_MD_CTX *ctx, unsigned char *out);
++
++#define libssh2_sha1_ctx EVP_MD_CTX *
+ 
+ /* returns 0 in case of failure */
+ int _libssh2_sha1_init(libssh2_sha1_ctx *ctx);
+ #define libssh2_sha1_init(x) _libssh2_sha1_init(x)
+-#define libssh2_sha1_update(ctx, data, len) EVP_DigestUpdate(&(ctx), data, len)
+-#define libssh2_sha1_final(ctx, out) EVP_DigestFinal(&(ctx), out, NULL)
++#define libssh2_sha1_update(ctx, data, len) EVP_DigestUpdate(ctx, data, len)
++#define libssh2_sha1_final(ctx, out) _libssh2_digest_final(ctx, out)
+ int _libssh2_sha1(const unsigned char *message, unsigned long len,
+                   unsigned char *out);
+ #define libssh2_sha1(x,y,z) _libssh2_sha1(x,y,z)
+ 
+-#define libssh2_sha256_ctx EVP_MD_CTX
++#define libssh2_sha256_ctx EVP_MD_CTX *
+ 
+ /* returns 0 in case of failure */
+ int _libssh2_sha256_init(libssh2_sha256_ctx *ctx);
+ #define libssh2_sha256_init(x) _libssh2_sha256_init(x)
+-#define libssh2_sha256_update(ctx, data, len) EVP_DigestUpdate(&(ctx), data, len)
+-#define libssh2_sha256_final(ctx, out) EVP_DigestFinal(&(ctx), out, NULL)
++#define libssh2_sha256_update(ctx, data, len) EVP_DigestUpdate(ctx, data, len)
++#define libssh2_sha256_final(ctx, out) _libssh2_digest_final(ctx, out)
+ int _libssh2_sha256(const unsigned char *message, unsigned long len,
+                   unsigned char *out);
+ #define libssh2_sha256(x,y,z) _libssh2_sha256(x,y,z)
+ 
+-#define libssh2_md5_ctx EVP_MD_CTX
++#define libssh2_md5_ctx EVP_MD_CTX *
+ 
+ /* returns 0 in case of failure */
+ int _libssh2_md5_init(libssh2_md5_ctx *);
+ #define libssh2_md5_init(x) _libssh2_md5_init(x)
+-#define libssh2_md5_update(ctx, data, len) EVP_DigestUpdate(&(ctx), data, len)
+-#define libssh2_md5_final(ctx, out) EVP_DigestFinal(&(ctx), out, NULL)
++#define libssh2_md5_update(ctx, data, len) EVP_DigestUpdate(ctx, data, len)
++#define libssh2_md5_final(ctx, out) _libssh2_digest_final(ctx, out)
++
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
++HMAC_CTX *HMAC_CTX_new(void);
++void HMAC_CTX_free(HMAC_CTX *ctx);
++#endif
+ 
+-#define libssh2_hmac_ctx HMAC_CTX
++#define libssh2_hmac_ctx HMAC_CTX *
+ #define libssh2_hmac_ctx_init(ctx) \
+-  HMAC_CTX_init(&ctx)
+-#define libssh2_hmac_sha1_init(ctx, key, keylen) \
+-  HMAC_Init_ex(ctx, key, keylen, EVP_sha1(), NULL)
+-#define libssh2_hmac_md5_init(ctx, key, keylen) \
+-  HMAC_Init_ex(ctx, key, keylen, EVP_md5(), NULL)
+-#define libssh2_hmac_ripemd160_init(ctx, key, keylen) \
+-  HMAC_Init_ex(ctx, key, keylen, EVP_ripemd160(), NULL)
+-#define libssh2_hmac_sha256_init(ctx, key, keylen) \
+-  HMAC_Init_ex(ctx, key, keylen, EVP_sha256(), NULL)
+-#define libssh2_hmac_sha512_init(ctx, key, keylen) \
+-  HMAC_Init_ex(ctx, key, keylen, EVP_sha512(), NULL)
++  ctx = HMAC_CTX_new()
++#define libssh2_hmac_sha1_init(pctx, key, keylen) \
++  HMAC_Init_ex(*(pctx), key, keylen, EVP_sha1(), NULL)
++#define libssh2_hmac_md5_init(pctx, key, keylen) \
++  HMAC_Init_ex(*(pctx), key, keylen, EVP_md5(), NULL)
++#define libssh2_hmac_ripemd160_init(pctx, key, keylen) \
++  HMAC_Init_ex(*(pctx), key, keylen, EVP_ripemd160(), NULL)
++#define libssh2_hmac_sha256_init(pctx, key, keylen) \
++  HMAC_Init_ex(*(pctx), key, keylen, EVP_sha256(), NULL)
++#define libssh2_hmac_sha512_init(pctx, key, keylen) \
++  HMAC_Init_ex(*(pctx), key, keylen, EVP_sha512(), NULL)
+ 
+ #define libssh2_hmac_update(ctx, data, datalen) \
+-  HMAC_Update(&(ctx), data, datalen)
+-#define libssh2_hmac_final(ctx, data) HMAC_Final(&(ctx), data, NULL)
+-#define libssh2_hmac_cleanup(ctx) HMAC_cleanup(ctx)
++  HMAC_Update(ctx, data, datalen)
++#define libssh2_hmac_final(ctx, data) HMAC_Final(ctx, data, NULL)
++#define libssh2_hmac_cleanup(ctx) HMAC_CTX_free(*(ctx))
+ 
+ #define libssh2_crypto_init() \
+   OpenSSL_add_all_algorithms(); \
+@@ -180,7 +187,7 @@
+ #define _libssh2_dsa_free(dsactx) DSA_free(dsactx)
+ 
+ #define _libssh2_cipher_type(name) const EVP_CIPHER *(*name)(void)
+-#define _libssh2_cipher_ctx EVP_CIPHER_CTX
++#define _libssh2_cipher_ctx EVP_CIPHER_CTX *
+ 
+ #define _libssh2_cipher_aes256 EVP_aes_256_cbc
+ #define _libssh2_cipher_aes192 EVP_aes_192_cbc
+@@ -199,7 +206,7 @@
+ #define _libssh2_cipher_cast5 EVP_cast5_cbc
+ #define _libssh2_cipher_3des EVP_des_ede3_cbc
+ 
+-#define _libssh2_cipher_dtor(ctx) EVP_CIPHER_CTX_cleanup(ctx)
++#define _libssh2_cipher_dtor(ctx) EVP_CIPHER_CTX_free(*(ctx))
+ 
+ #define _libssh2_bn BIGNUM
+ #define _libssh2_bn_ctx BN_CTX
+--- pgadmin/libssh2/openssl.c.orig	2016-01-07 18:47:32.000000000 +0600
++++ pgadmin/libssh2/openssl.c	2018-12-12 14:50:08.851143000 +0700
+@@ -48,6 +48,280 @@
+ #define EVP_MAX_BLOCK_LENGTH 32
+ #endif
+ 
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
++static void *
++OPENSSL_zalloc(size_t num)
++{
++    void *ret = OPENSSL_malloc(num);
++
++    if (ret != NULL)
++        memset(ret, 0, num);
++    return ret;
++}
++
++HMAC_CTX *
++HMAC_CTX_new(void)
++{   
++    HMAC_CTX *ctx = OPENSSL_zalloc(sizeof(HMAC_CTX));
++    
++    if (ctx != NULL) {
++        HMAC_CTX_init(ctx);
++    }
++    return ctx;
++}
++
++void
++HMAC_CTX_free(HMAC_CTX *ctx)
++{
++    if (ctx != NULL) {
++        HMAC_CTX_cleanup(ctx);
++        OPENSSL_free(ctx);
++    }
++}
++
++static EVP_MD_CTX *
++EVP_MD_CTX_new(void)
++{
++    return EVP_MD_CTX_create();
++}
++
++static void
++EVP_MD_CTX_free(EVP_MD_CTX *ctx)
++{
++    EVP_MD_CTX_destroy(ctx);
++}
++
++static void
++RSA_get0_key(const RSA *r,
++             const BIGNUM **n, const BIGNUM **e, const BIGNUM **d)
++{
++    if (n != NULL)
++        *n = r->n;
++    if (e != NULL)
++        *e = r->e;
++    if (d != NULL)
++        *d = r->d;
++}
++
++static int
++RSA_set0_key(RSA *r, BIGNUM *n, BIGNUM *e, BIGNUM *d)
++{
++    /* If the fields n and e in r are NULL, the corresponding input
++     * parameters MUST be non-NULL for n and e.  d may be
++     * left NULL (in case only the public key is used).
++     */
++    if ((r->n == NULL && n == NULL)
++        || (r->e == NULL && e == NULL))
++        return 0;
++
++    if (n != NULL) {
++        BN_free(r->n);
++        r->n = n;
++    }
++    if (e != NULL) {
++        BN_free(r->e);
++        r->e = e;
++    }
++    if (d != NULL) {
++        BN_free(r->d);
++        r->d = d;
++    }
++
++    return 1;
++}
++
++static int
++RSA_set0_factors(RSA *r, BIGNUM *p, BIGNUM *q)
++{
++    /* If the fields p and q in r are NULL, the corresponding input
++     * parameters MUST be non-NULL.
++     */
++    if ((r->p == NULL && p == NULL)
++        || (r->q == NULL && q == NULL))
++        return 0;
++
++    if (p != NULL) {
++        BN_free(r->p);
++        r->p = p;
++    }
++    if (q != NULL) {
++        BN_free(r->q);
++        r->q = q;
++    }
++
++    return 1;
++}
++
++static int
++RSA_set0_crt_params(RSA *r, BIGNUM *dmp1, BIGNUM *dmq1, BIGNUM *iqmp)
++{
++    /* If the fields dmp1, dmq1 and iqmp in r are NULL, the corresponding input
++     * parameters MUST be non-NULL.
++     */
++    if ((r->dmp1 == NULL && dmp1 == NULL)
++        || (r->dmq1 == NULL && dmq1 == NULL)
++        || (r->iqmp == NULL && iqmp == NULL))
++        return 0;
++
++    if (dmp1 != NULL) {
++        BN_free(r->dmp1);
++        r->dmp1 = dmp1;
++    }
++    if (dmq1 != NULL) {
++        BN_free(r->dmq1);
++        r->dmq1 = dmq1;
++    }
++    if (iqmp != NULL) {
++        BN_free(r->iqmp);
++        r->iqmp = iqmp;
++    }
++
++    return 1;
++}
++
++static void
++DSA_get0_pqg(const DSA *d,
++             const BIGNUM **p, const BIGNUM **q, const BIGNUM **g)
++{
++    if (p != NULL)
++        *p = d->p;
++    if (q != NULL)
++        *q = d->q;
++    if (g != NULL)
++        *g = d->g;
++}
++
++static int
++DSA_set0_pqg(DSA *d, BIGNUM *p, BIGNUM *q, BIGNUM *g)
++{
++    /* If the fields p, q and g in d are NULL, the corresponding input
++     * parameters MUST be non-NULL.
++     */
++    if ((d->p == NULL && p == NULL)
++        || (d->q == NULL && q == NULL)
++        || (d->g == NULL && g == NULL))
++        return 0;
++
++    if (p != NULL) {
++        BN_free(d->p);
++        d->p = p;
++    }
++    if (q != NULL) {
++        BN_free(d->q);
++        d->q = q;
++    }
++    if (g != NULL) {
++        BN_free(d->g);
++        d->g = g;
++    }
++
++    return 1;
++}
++
++static void
++DSA_get0_key(const DSA *d,
++             const BIGNUM **pub_key, const BIGNUM **priv_key)
++{
++    if (pub_key != NULL)
++        *pub_key = d->pub_key;
++    if (priv_key != NULL)
++        *priv_key = d->priv_key;
++}
++
++static int
++DSA_set0_key(DSA *d, BIGNUM *pub_key, BIGNUM *priv_key)
++{
++    /* If the field pub_key in d is NULL, the corresponding input
++     * parameters MUST be non-NULL.  The priv_key field may
++     * be left NULL.
++     */
++    if (d->pub_key == NULL && pub_key == NULL)
++        return 0;
++
++    if (pub_key != NULL) {
++        BN_free(d->pub_key);
++        d->pub_key = pub_key;
++    }
++    if (priv_key != NULL) {
++        BN_free(d->priv_key);
++        d->priv_key = priv_key;
++    }
++
++    return 1;
++}
++
++static int
++DSA_SIG_set0(DSA_SIG *sig, BIGNUM *r, BIGNUM *s)
++{
++    if (r == NULL || s == NULL)
++        return 0;
++    BN_clear_free(sig->r);
++    BN_clear_free(sig->s);
++    sig->r = r;
++    sig->s = s;
++    return 1;
++}
++
++static void
++DSA_SIG_get0(const DSA_SIG *sig, const BIGNUM **pr, const BIGNUM **ps)
++{
++    if (pr != NULL)
++        *pr = sig->r;
++    if (ps != NULL)
++        *ps = sig->s;
++}
++
++static EVP_CIPHER *
++EVP_CIPHER_meth_new(int cipher_type, int block_size, int key_len)
++{
++    EVP_CIPHER *cipher = OPENSSL_zalloc(sizeof(EVP_CIPHER));
++
++    if (cipher != NULL) {
++        cipher->nid = cipher_type;
++        cipher->block_size = block_size;
++        cipher->key_len = key_len;
++    }
++    return cipher;
++}
++
++static int
++EVP_CIPHER_meth_set_iv_length(EVP_CIPHER *cipher, int iv_len)
++{
++    cipher->iv_len = iv_len;
++    return 1;
++}
++
++static int
++EVP_CIPHER_meth_set_init(EVP_CIPHER *cipher,
++                         int (*init) (EVP_CIPHER_CTX *ctx,
++                                      const unsigned char *key,
++                                      const unsigned char *iv,
++                                      int enc))
++{
++    cipher->init = init;
++    return 1;
++}
++
++static int
++EVP_CIPHER_meth_set_do_cipher(EVP_CIPHER *cipher,
++                              int (*do_cipher) (EVP_CIPHER_CTX *ctx,
++                                                unsigned char *out,
++                                                const unsigned char *in,
++                                                size_t inl))
++{
++    cipher->do_cipher = do_cipher;
++    return 1;
++}
++
++static int
++EVP_CIPHER_meth_set_cleanup(EVP_CIPHER *cipher,
++                            int (*cleanup) (EVP_CIPHER_CTX *))
++{
++    cipher->cleanup = cleanup;
++    return 1;
++}
++#endif
++
+ int
+ _libssh2_rsa_new(libssh2_rsa_ctx ** rsa,
+                  const unsigned char *edata,
+@@ -67,31 +341,43 @@
+                  const unsigned char *coeffdata, unsigned long coefflen)
+ {
+     *rsa = RSA_new();
++    BIGNUM *e, *n;
++
++    e = BN_new();
++    BN_bin2bn(edata, elen, e);
+ 
+-    (*rsa)->e = BN_new();
+-    BN_bin2bn(edata, elen, (*rsa)->e);
++    n = BN_new();
++    BN_bin2bn(ndata, nlen, n);
+ 
+-    (*rsa)->n = BN_new();
+-    BN_bin2bn(ndata, nlen, (*rsa)->n);
++    RSA_set0_key(*rsa, n, e, NULL);
+ 
+     if (ddata) {
+-        (*rsa)->d = BN_new();
+-        BN_bin2bn(ddata, dlen, (*rsa)->d);
++        BIGNUM *d;
++        BIGNUM *p, *q, *dmp1, *dmq1, *iqmp;
++
++        d = BN_new();
++        BN_bin2bn(ddata, dlen, d);
++
++        RSA_set0_key(*rsa, 0, 0, d);
++
++        p = BN_new();
++        BN_bin2bn(pdata, plen, p);
++
++        q = BN_new();
++        BN_bin2bn(qdata, qlen, q);
+ 
+-        (*rsa)->p = BN_new();
+-        BN_bin2bn(pdata, plen, (*rsa)->p);
++        RSA_set0_factors(*rsa, p, q);
+ 
+-        (*rsa)->q = BN_new();
+-        BN_bin2bn(qdata, qlen, (*rsa)->q);
++        dmp1 = BN_new();
++        BN_bin2bn(e1data, e1len, dmp1);
+ 
+-        (*rsa)->dmp1 = BN_new();
+-        BN_bin2bn(e1data, e1len, (*rsa)->dmp1);
++        dmq1 = BN_new();
++        BN_bin2bn(e2data, e2len, dmq1);
+ 
+-        (*rsa)->dmq1 = BN_new();
+-        BN_bin2bn(e2data, e2len, (*rsa)->dmq1);
++        iqmp = BN_new();
++        BN_bin2bn(coeffdata, coefflen, iqmp);
+ 
+-        (*rsa)->iqmp = BN_new();
+-        BN_bin2bn(coeffdata, coefflen, (*rsa)->iqmp);
++        RSA_set0_crt_params(*rsa, dmp1, dmq1, iqmp);
+     }
+     return 0;
+ }
+@@ -125,25 +411,34 @@
+                  unsigned long y_len,
+                  const unsigned char *x, unsigned long x_len)
+ {
++    BIGNUM *pn, *qn, *gn;
++    BIGNUM *pub_key, *priv_key;
++
+     *dsactx = DSA_new();
+ 
+-    (*dsactx)->p = BN_new();
+-    BN_bin2bn(p, p_len, (*dsactx)->p);
++    pn = BN_new();
++    BN_bin2bn(p, p_len, pn);
++
++    qn = BN_new();
++    BN_bin2bn(q, q_len, qn);
+ 
+-    (*dsactx)->q = BN_new();
+-    BN_bin2bn(q, q_len, (*dsactx)->q);
++    gn = BN_new();
++    BN_bin2bn(g, g_len, gn);
+ 
+-    (*dsactx)->g = BN_new();
+-    BN_bin2bn(g, g_len, (*dsactx)->g);
++    DSA_set0_pqg(*dsactx, pn, qn, gn);
+ 
+-    (*dsactx)->pub_key = BN_new();
+-    BN_bin2bn(y, y_len, (*dsactx)->pub_key);
++    pub_key = BN_new();
++    BN_bin2bn(y, y_len, pub_key);
+ 
+     if (x_len) {
+-        (*dsactx)->priv_key = BN_new();
+-        BN_bin2bn(x, x_len, (*dsactx)->priv_key);
++        priv_key = BN_new();
++        BN_bin2bn(x, x_len, priv_key);
++    } else {
++        priv_key = NULL;
+     }
+ 
++    DSA_set0_key(*dsactx, pub_key, priv_key);
++
+     return 0;
+ }
+ 
+@@ -153,20 +448,22 @@
+                          const unsigned char *m, unsigned long m_len)
+ {
+     unsigned char hash[SHA_DIGEST_LENGTH];
+-    DSA_SIG dsasig;
++    DSA_SIG *dsasig;
++    BIGNUM *r, *s;
+     int ret = -1;
+ 
+-    dsasig.r = BN_new();
+-    BN_bin2bn(sig, 20, dsasig.r);
+-    dsasig.s = BN_new();
+-    BN_bin2bn(sig + 20, 20, dsasig.s);
++    dsasig = DSA_SIG_new();
++    r = BN_new();
++    BN_bin2bn(sig, 20, r);
++    s = BN_new();
++    BN_bin2bn(sig + 20, 20, s);
++    DSA_SIG_set0(dsasig, r, s);
+ 
+     if (!_libssh2_sha1(m, m_len, hash))
+         /* _libssh2_sha1() succeeded */
+-        ret = DSA_do_verify(hash, SHA_DIGEST_LENGTH, &dsasig, dsactx);
++        ret = DSA_do_verify(hash, SHA_DIGEST_LENGTH, dsasig, dsactx);
+ 
+-    BN_clear_free(dsasig.s);
+-    BN_clear_free(dsasig.r);
++    DSA_SIG_free(dsasig);
+ 
+     return (ret == 1) ? 0 : -1;
+ }
+@@ -177,8 +474,8 @@
+                      _libssh2_cipher_type(algo),
+                      unsigned char *iv, unsigned char *secret, int encrypt)
+ {
+-    EVP_CIPHER_CTX_init(h);
+-    return !EVP_CipherInit(h, algo(), secret, iv, encrypt);
++    *h = EVP_CIPHER_CTX_new();
++    return !EVP_CipherInit(*h, algo(), secret, iv, encrypt);
+ }
+ 
+ int
+@@ -191,7 +488,7 @@
+     (void) algo;
+     (void) encrypt;
+ 
+-    ret = EVP_Cipher(ctx, buf, block, blocksize);
++    ret = EVP_Cipher(*ctx, buf, block, blocksize);
+     if (ret == 1) {
+         memcpy(block, buf, blocksize);
+     }
+@@ -222,7 +519,7 @@
+     const EVP_CIPHER *aes_cipher;
+     (void) enc;
+ 
+-    switch (ctx->key_len) {
++    switch (EVP_CIPHER_CTX_key_length(ctx)) {
+     case 16:
+         aes_cipher = EVP_aes_128_ecb();
+         break;
+@@ -240,7 +537,7 @@
+     if (c == NULL)
+         return 0;
+ 
+-    c->aes_ctx = malloc(sizeof(EVP_CIPHER_CTX));
++    c->aes_ctx = EVP_CIPHER_CTX_new();
+     if (c->aes_ctx == NULL) {
+         free(c);
+         return 0;
+@@ -312,7 +609,7 @@
+     }
+ 
+     if (c->aes_ctx != NULL) {
+-        _libssh2_cipher_dtor(c->aes_ctx);
++        _libssh2_cipher_dtor(&(c->aes_ctx));
+         free(c->aes_ctx);
+     }
+ 
+@@ -322,40 +619,40 @@
+ }
+ 
+ static const EVP_CIPHER *
+-make_ctr_evp (size_t keylen, EVP_CIPHER *aes_ctr_cipher)
++make_ctr_evp (size_t keylen, EVP_CIPHER **aes_ctr_cipher)
+ {
+-    aes_ctr_cipher->block_size = 16;
+-    aes_ctr_cipher->key_len = keylen;
+-    aes_ctr_cipher->iv_len = 16;
+-    aes_ctr_cipher->init = aes_ctr_init;
+-    aes_ctr_cipher->do_cipher = aes_ctr_do_cipher;
+-    aes_ctr_cipher->cleanup = aes_ctr_cleanup;
++    if (*aes_ctr_cipher == NULL) {
++        *aes_ctr_cipher = EVP_CIPHER_meth_new(0, 16, keylen);
++        if (*aes_ctr_cipher != NULL) {
++            EVP_CIPHER_meth_set_iv_length(*aes_ctr_cipher, 16);
++            EVP_CIPHER_meth_set_init(*aes_ctr_cipher, aes_ctr_init);
++            EVP_CIPHER_meth_set_do_cipher(*aes_ctr_cipher, aes_ctr_do_cipher);
++            EVP_CIPHER_meth_set_cleanup(*aes_ctr_cipher, aes_ctr_cleanup);
++        }
++    }
+ 
+-    return aes_ctr_cipher;
++    return *aes_ctr_cipher;
+ }
+ 
+ const EVP_CIPHER *
+ _libssh2_EVP_aes_128_ctr(void)
+ {
+-    static EVP_CIPHER aes_ctr_cipher;
+-    return !aes_ctr_cipher.key_len?
+-        make_ctr_evp (16, &aes_ctr_cipher) : &aes_ctr_cipher;
++    static EVP_CIPHER *aes_ctr_cipher;
++    return make_ctr_evp(16, &aes_ctr_cipher);
+ }
+ 
+ const EVP_CIPHER *
+ _libssh2_EVP_aes_192_ctr(void)
+ {
+-    static EVP_CIPHER aes_ctr_cipher;
+-    return !aes_ctr_cipher.key_len?
+-        make_ctr_evp (24, &aes_ctr_cipher) : &aes_ctr_cipher;
++    static EVP_CIPHER *aes_ctr_cipher;
++    return make_ctr_evp(24, &aes_ctr_cipher);
+ }
+ 
+ const EVP_CIPHER *
+ _libssh2_EVP_aes_256_ctr(void)
+ {
+-    static EVP_CIPHER aes_ctr_cipher;
+-    return !aes_ctr_cipher.key_len?
+-        make_ctr_evp (32, &aes_ctr_cipher) : &aes_ctr_cipher;
++    static EVP_CIPHER *aes_ctr_cipher;
++    return make_ctr_evp(32, &aes_ctr_cipher);
+ }
+ 
+ void _libssh2_init_aes_ctr(void)
+@@ -536,6 +833,7 @@
+                        unsigned long hash_len, unsigned char *signature)
+ {
+     DSA_SIG *sig;
++    const BIGNUM *r, *s;
+     int r_len, s_len;
+     (void) hash_len;
+ 
+@@ -544,12 +842,13 @@
+         return -1;
+     }
+ 
+-    r_len = BN_num_bytes(sig->r);
++    DSA_SIG_get0(sig, &r, &s);
++    r_len = BN_num_bytes(r);
+     if (r_len < 1 || r_len > 20) {
+         DSA_SIG_free(sig);
+         return -1;
+     }
+-    s_len = BN_num_bytes(sig->s);
++    s_len = BN_num_bytes(s);
+     if (s_len < 1 || s_len > 20) {
+         DSA_SIG_free(sig);
+         return -1;
+@@ -557,8 +856,8 @@
+ 
+     memset(signature, 0, 40);
+ 
+-    BN_bn2bin(sig->r, signature + (20 - r_len));
+-    BN_bn2bin(sig->s, signature + 20 + (20 - s_len));
++    BN_bn2bin(r, signature + (20 - r_len));
++    BN_bn2bin(s, signature + 20 + (20 - s_len));
+ 
+     DSA_SIG_free(sig);
+ 
+@@ -566,55 +865,66 @@
+ }
+ #endif /* LIBSSH_DSA */
+ 
++void
++_libssh2_digest_final(libssh2_md5_ctx ctx, unsigned char *out)
++{
++    EVP_DigestFinal(ctx, out, NULL);
++    EVP_MD_CTX_free(ctx);
++}
++
+ int
+ _libssh2_sha1_init(libssh2_sha1_ctx *ctx)
+ {
+-    EVP_MD_CTX_init(ctx);
+-    return EVP_DigestInit(ctx, EVP_get_digestbyname("sha1"));
++    EVP_MD_CTX_init(*ctx);
++    return EVP_DigestInit(*ctx, EVP_get_digestbyname("sha1"));
+ }
+ 
+ int
+ _libssh2_sha1(const unsigned char *message, unsigned long len,
+               unsigned char *out)
+ {
+-    EVP_MD_CTX ctx;
++    EVP_MD_CTX *ctx;
+ 
+-    EVP_MD_CTX_init(&ctx);
+-    if (EVP_DigestInit(&ctx, EVP_get_digestbyname("sha1"))) {
+-        EVP_DigestUpdate(&ctx, message, len);
+-        EVP_DigestFinal(&ctx, out, NULL);
++    ctx = EVP_MD_CTX_new();
++    if (EVP_DigestInit(ctx, EVP_get_digestbyname("sha1"))) {
++        EVP_DigestUpdate(ctx, message, len);
++        EVP_DigestFinal(ctx, out, NULL);
++        EVP_MD_CTX_free(ctx);
+         return 0; /* success */
+     }
++    EVP_MD_CTX_free(ctx);
+     return 1; /* error */
+ }
+ 
+ int
+ _libssh2_sha256_init(libssh2_sha256_ctx *ctx)
+ {
+-    EVP_MD_CTX_init(ctx);
+-    return EVP_DigestInit(ctx, EVP_get_digestbyname("sha256"));
++    EVP_MD_CTX_init(*ctx);
++    return EVP_DigestInit(*ctx, EVP_get_digestbyname("sha256"));
+ }
+ 
+ int
+ _libssh2_sha256(const unsigned char *message, unsigned long len,
+                 unsigned char *out)
+ {
+-    EVP_MD_CTX ctx;
++    EVP_MD_CTX *ctx;
+ 
+-    EVP_MD_CTX_init(&ctx);
+-    if(EVP_DigestInit(&ctx, EVP_get_digestbyname("sha256"))) {
+-        EVP_DigestUpdate(&ctx, message, len);
+-        EVP_DigestFinal(&ctx, out, NULL);
++    ctx = EVP_MD_CTX_new();
++    if(EVP_DigestInit(ctx, EVP_get_digestbyname("sha256"))) {
++        EVP_DigestUpdate(ctx, message, len);
++        EVP_DigestFinal(ctx, out, NULL);
++        EVP_MD_CTX_free(ctx);
+         return 0; /* success */
+     }
++    EVP_MD_CTX_free(ctx);
+     return 1; /* error */
+ }
+ 
+ int
+ _libssh2_md5_init(libssh2_md5_ctx *ctx)
+ {
+-    EVP_MD_CTX_init(ctx);
+-    return EVP_DigestInit(ctx, EVP_get_digestbyname("md5"));
++    EVP_MD_CTX_init(*ctx);
++    return EVP_DigestInit(*ctx, EVP_get_digestbyname("md5"));
+ }
+ 
+ static unsigned char *
+@@ -639,13 +949,15 @@
+ gen_publickey_from_rsa(LIBSSH2_SESSION *session, RSA *rsa,
+                        size_t *key_len)
+ {
++    const BIGNUM *e, *n;
+     int            e_bytes, n_bytes;
+     unsigned long  len;
+     unsigned char* key;
+     unsigned char* p;
+ 
+-    e_bytes = BN_num_bytes(rsa->e) + 1;
+-    n_bytes = BN_num_bytes(rsa->n) + 1;
++    RSA_get0_key(rsa, &n, &e, NULL);
++    e_bytes = BN_num_bytes(e) + 1;
++    n_bytes = BN_num_bytes(n) + 1;
+ 
+     /* Key form is "ssh-rsa" + e + n. */
+     len = 4 + 7 + 4 + e_bytes + 4 + n_bytes;
+@@ -663,8 +975,8 @@
+     memcpy(p, "ssh-rsa", 7);
+     p += 7;
+ 
+-    p = write_bn(p, rsa->e, e_bytes);
+-    p = write_bn(p, rsa->n, n_bytes);
++    p = write_bn(p, e, e_bytes);
++    p = write_bn(p, n, n_bytes);
+ 
+     *key_len = (size_t)(p - key);
+     return key;
+@@ -675,15 +987,18 @@
+ gen_publickey_from_dsa(LIBSSH2_SESSION* session, DSA *dsa,
+                        size_t *key_len)
+ {
++    const BIGNUM *pn, *qn, *gn, *pub_key;
+     int            p_bytes, q_bytes, g_bytes, k_bytes;
+     unsigned long  len;
+     unsigned char* key;
+     unsigned char* p;
+ 
+-    p_bytes = BN_num_bytes(dsa->p) + 1;
+-    q_bytes = BN_num_bytes(dsa->q) + 1;
+-    g_bytes = BN_num_bytes(dsa->g) + 1;
+-    k_bytes = BN_num_bytes(dsa->pub_key) + 1;
++    DSA_get0_pqg(dsa, &pn, &qn, &gn);
++    p_bytes = BN_num_bytes(pn) + 1;
++    q_bytes = BN_num_bytes(qn) + 1;
++    g_bytes = BN_num_bytes(gn) + 1;
++    DSA_get0_key(dsa, &pub_key, NULL);
++    k_bytes = BN_num_bytes(pub_key) + 1;
+ 
+     /* Key form is "ssh-dss" + p + q + g + pub_key. */
+     len = 4 + 7 + 4 + p_bytes + 4 + q_bytes + 4 + g_bytes + 4 + k_bytes;
+@@ -701,10 +1016,10 @@
+     memcpy(p, "ssh-dss", 7);
+     p += 7;
+ 
+-    p = write_bn(p, dsa->p, p_bytes);
+-    p = write_bn(p, dsa->q, q_bytes);
+-    p = write_bn(p, dsa->g, g_bytes);
+-    p = write_bn(p, dsa->pub_key, k_bytes);
++    p = write_bn(p, pn, p_bytes);
++    p = write_bn(p, qn, q_bytes);
++    p = write_bn(p, gn, g_bytes);
++    p = write_bn(p, pub_key, k_bytes);
+ 
+     *key_len = (size_t)(p - key);
+     return key;
+@@ -867,7 +1182,7 @@
+                               "private key file format");
+     }
+ 
+-    switch (pk->type) {
++    switch (EVP_PKEY_base_id(pk)) {
+     case EVP_PKEY_RSA :
+         st = gen_publickey_from_rsa_evp(
+             session, method, method_len, pubkeydata, pubkeydata_len, pk);
+@@ -936,7 +1251,7 @@
+                               "private key file format");
+     }
+ 
+-    switch (pk->type) {
++    switch (EVP_PKEY_base_id(pk)) {
+     case EVP_PKEY_RSA :
+         st = gen_publickey_from_rsa_evp(session, method, method_len,
+                                         pubkeydata, pubkeydata_len, pk);
