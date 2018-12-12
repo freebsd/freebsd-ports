@@ -1,0 +1,7 @@
+To get fasd working in a shell, some initialization code must be run. Put the
+line below in your shell rc.
+
+eval "$(fasd --init auto)"
+
+This will setup a command hook that executes on every command and advanced tab
+completion for zsh and bash.
