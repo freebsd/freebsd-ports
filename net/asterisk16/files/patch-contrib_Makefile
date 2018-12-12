@@ -1,15 +1,23 @@
---- contrib/Makefile.orig	2017-04-12 21:47:53 UTC
+--- contrib/Makefile.orig	2018-12-04 00:03:56 UTC
 +++ contrib/Makefile
-@@ -24,10 +24,10 @@ install:
+@@ -24,14 +24,14 @@ install:
  	$(INSTALL) -m 755 scripts/ast_logescalator "$(DESTDIR)$(ASTDATADIR)/scripts/ast_logescalator"
  	$(INSTALL) -m 755 scripts/ast_loggrabber "$(DESTDIR)$(ASTDATADIR)/scripts/ast_loggrabber"
  	$(INSTALL) -m 755 scripts/ast_coredumper "$(DESTDIR)$(ASTDATADIR)/scripts/ast_coredumper"
 -	$(INSTALL) -m 755 scripts/refcounter.py "$(DESTDIR)$(ASTDATADIR)/scripts/refcounter.py"
+-	$(INSTALL) -m 755 scripts/refstats.py "$(DESTDIR)$(ASTDATADIR)/scripts/refstats.py"
+-	$(INSTALL) -m 755 scripts/reflocks.py "$(DESTDIR)$(ASTDATADIR)/scripts/reflocks.py"
 +#	$(INSTALL) -m 755 scripts/refcounter.py "$(DESTDIR)$(ASTDATADIR)/scripts/refcounter.py"
++#	$(INSTALL) -m 755 scripts/refstats.py "$(DESTDIR)$(ASTDATADIR)/scripts/refstats.py"
++#	$(INSTALL) -m 755 scripts/reflocks.py "$(DESTDIR)$(ASTDATADIR)/scripts/reflocks.py"
  
  uninstall:
  	-rm -f "$(DESTDIR)$(ASTDATADIR)/scripts/ast_logescalator"
  	-rm -f "$(DESTDIR)$(ASTDATADIR)/scripts/ast_loggrabber"
  	-rm -f "$(DESTDIR)$(ASTDATADIR)/scripts/ast_coredumper"
 -	-rm -f "$(DESTDIR)$(ASTDATADIR)/scripts/refcounter.py"
+-	-rm -f "$(DESTDIR)$(ASTDATADIR)/scripts/refstats.py"
+-	-rm -f "$(DESTDIR)$(ASTDATADIR)/scripts/reflocks.py"
 +#	-rm -f "$(DESTDIR)$(ASTDATADIR)/scripts/refcounter.py"
++#	-rm -f "$(DESTDIR)$(ASTDATADIR)/scripts/refstats.py"
++#	-rm -f "$(DESTDIR)$(ASTDATADIR)/scripts/reflocks.py"

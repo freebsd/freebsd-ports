@@ -28,7 +28,6 @@ include/pj/compat/malloc.h
 include/pj/compat/os_auto.h
 include/pj/compat/os_auto.h.in
 include/pj/compat/os_darwinos.h
-include/pj/compat/os_linux_kernel.h
 include/pj/compat/os_linux.h
 include/pj/compat/os_palmos.h
 include/pj/compat/os_rtems.h
@@ -195,6 +194,7 @@ include/pjmedia/null_port.h
 include/pjmedia/plc.h
 include/pjmedia/port.h
 include/pjmedia/resample.h
+include/pjmedia/rtcp_fb.h
 include/pjmedia/rtcp_xr.h
 include/pjmedia/rtcp.h
 include/pjmedia/rtp.h

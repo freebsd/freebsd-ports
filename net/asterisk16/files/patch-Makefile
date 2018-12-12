@@ -1,4 +1,4 @@
---- Makefile.orig	2018-08-08 16:02:31 UTC
+--- Makefile.orig	2018-12-04 00:03:56 UTC
 +++ Makefile
 @@ -138,7 +138,7 @@ ASTTOPDIR:=$(subst $(space),\$(space),$(CURDIR))
  OVERWRITE=y
@@ -77,7 +77,7 @@
 @@ -764,23 +768,10 @@ upgrade: bininstall
  #  (2) the extension to strip off
  define INSTALL_CONFIGS
- 	@for x in configs/$(1)/*$(2); do \
+ 	@for x in $(1)/*$(2); do \
 -		dst="$(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x $(2)`"; \
 -		if [ -f "$${dst}" ]; then \
 -			if [ "$(OVERWRITE)" = "y" ]; then \
@@ -93,7 +93,7 @@
 -		fi ; \
  		echo "Installing file $$x"; \
 -		$(INSTALL) -m 644 "$$x" "$${dst}" ;\
-+		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample`.sample ; \
++		 $(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample`.sample ; \
  	done ; \
 -	if [ "$(OVERWRITE)" = "y" ]; then \
 +	if true; then \
@@ -111,7 +111,7 @@
  		rm -f "$(DESTDIR)$(ASTCONFPATH).tmp" ; \
  	fi
  endef
-@@ -810,7 +801,7 @@ adsi:
+@@ -818,7 +809,7 @@ adsi:
  		else \
  			echo "Installing $$x" ; \
  		fi ; \
