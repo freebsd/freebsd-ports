@@ -63,7 +63,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-system-zlib \
 			--with-gmp=${LOCALBASE} \
 			--with-mpfr=${LOCALBASE} \
-			--enable-targets=all
+			--enable-targets=all \
+			--enable-threads=yes
 INFO=		as \
 		binutils \
 		gprof \
