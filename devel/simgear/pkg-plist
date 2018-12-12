@@ -54,6 +54,7 @@ include/simgear/canvas/layout/SpacerItem.hxx
 include/simgear/compiler.h
 include/simgear/constants.h
 include/simgear/debug/BufferedLogCallback.hxx
+include/simgear/debug/OsgIoCapture.hxx
 include/simgear/debug/debug_types.h
 include/simgear/debug/logstream.hxx
 include/simgear/embedded_resources/EmbeddedResource.hxx
