@@ -12,6 +12,6 @@ Upstream doesn't disable these by default.
 +  <policy domain="coder" rights="none" pattern="HTTPS" />
 +  <policy domain="coder" rights="none" pattern="MVG" />
 +  <policy domain="coder" rights="none" pattern="MSL" />
-   <!-- <policy domain="resource" name="area" value="100MP"/> -->
-   <!-- <policy domain="resource" name="disk" value="16EiB"/> -->
-   <!-- <policy domain="resource" name="file" value="768"/> -->
+   <!-- <policy domain="delegate" rights="none" pattern="HTTPS" /> -->
+   <!-- <policy domain="path" rights="none" pattern="@*" /> -->
+   <!-- <policy domain="cache" name="memory-map" value="anonymous"/> -->
