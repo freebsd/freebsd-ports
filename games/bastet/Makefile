@@ -3,7 +3,7 @@
 
 PORTNAME=	bastet
 PORTVERSION=	0.43
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://fph.altervista.org/prog/files/
 

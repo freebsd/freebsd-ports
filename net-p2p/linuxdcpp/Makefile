@@ -2,7 +2,7 @@
 
 PORTNAME=	linuxdcpp
 PORTVERSION=	1.1.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://launchpadlibrarian.net/69733951/
 

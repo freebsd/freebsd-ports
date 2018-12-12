@@ -3,7 +3,7 @@
 
 PORTNAME=	luxrender
 DISTVERSION?=	1.6
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/luxrender/lux/get/ \
 		https://bitbucket.org/luxrender/luxrays/get/:lr

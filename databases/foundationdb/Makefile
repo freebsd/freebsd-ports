@@ -3,6 +3,7 @@
 
 PORTNAME=	foundationdb
 PORTVERSION=	5.2.8
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	vanilla@FreeBSD.org

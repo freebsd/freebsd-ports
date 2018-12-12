@@ -1,7 +1,7 @@
 # Created by: Alexander Botero-Lowry <alex@foxybanana.com>
 # $FreeBSD$
 
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	audio
 PKGNAMEPREFIX=	cpp-
 

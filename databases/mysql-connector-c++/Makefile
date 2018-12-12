@@ -3,7 +3,7 @@
 
 PORTNAME=	mysql-connector-c++
 PORTVERSION=	1.1.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases
 MASTER_SITES=	MYSQL/Connector-C++
 

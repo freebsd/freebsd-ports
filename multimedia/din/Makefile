@@ -2,6 +2,7 @@
 
 PORTNAME=	din
 PORTVERSION=	38
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://archive.org/download/dinisnoise_source_code/
 

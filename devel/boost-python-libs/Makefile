@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 PORTNAME=	boost-libs
-PORTREVISION=	1
 COMMENT=	Framework for interfacing Python and C++
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

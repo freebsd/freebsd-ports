@@ -3,7 +3,7 @@
 
 PORTNAME=	ktorrent
 DISTVERSION=	4.3.1
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${DISTVERSION}/
 PKGNAMESUFFIX=	-kde4

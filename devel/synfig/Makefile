@@ -3,7 +3,7 @@
 
 PORTNAME=	synfig
 PORTVERSION=	1.2.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	devel graphics multimedia
 MASTER_SITES=	SF/${PORTNAME}/releases/${PORTVERSION}/source
 
