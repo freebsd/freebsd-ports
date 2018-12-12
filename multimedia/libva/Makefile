@@ -40,7 +40,6 @@ DEBUG_CFLAGS_OFF=	-DNDEBUG
 
 WAYLAND_CONFIGURE_ENABLE=	wayland
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
-WAYLAND_BUILD_DEPENDS=	gsed:textproc/gsed
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|$${libdir}/\(pkgconfig\)|${PREFIX}/libdata/\1|' \
@@ -48,9 +47,5 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} '/^export VA_HEADER_/d' \
 		${WRKSRC}/doc/Makefile.am
 	${REINPLACE_CMD} 's/-ldl//' ${WRKSRC}/va/Makefile.am
-
-post-configure-WAYLAND-on: .SILENT
-	${REINPLACE_CMD} -e 's|\(SED = \).*|\1${LOCALBASE}/bin/gsed|' \
-		${WRKSRC}/va/wayland/Makefile
 
 .include <bsd.port.mk>

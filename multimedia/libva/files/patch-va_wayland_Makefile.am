@@ -1,0 +1,20 @@
+BSD sed doesn't support inlining argument for i command, so embed
+newlines via C-style quoting as proposed for POSIX[1].
+
+$ echo '/* comment */' | sed -e '1i#include "sysdeps.h"'
+sed: 1: "1i#include "sysdeps.h"
+": command i expects \ followed by text
+
+[1] http://austingroupbugs.net/view.php?id=249
+
+--- va/wayland/Makefile.am.orig	2018-10-01 23:31:25 UTC
++++ va/wayland/Makefile.am
+@@ -70,7 +70,7 @@ va_wayland_drm.c: $(protocol_source_h)
+ %-client-protocol-export.c : %.xml
+ 	$(AM_V_GEN)$(WAYLAND_SCANNER) code < $< > $@
+ %-client-protocol.c: %-client-protocol-export.c
+-	$(AM_V_GEN)$(SED) -e '1i#include "sysdeps.h"' \
++	$(AM_V_GEN)$(SED) -e $$'1i\\\n#include "sysdeps.h"\n' \
+ 	                   -e 's@WL_EXPORT@DLL_HIDDEN@g' < $< > $@
+ 
+ EXTRA_DIST = \
