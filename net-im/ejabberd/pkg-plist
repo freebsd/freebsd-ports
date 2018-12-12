@@ -117,10 +117,6 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_caps_riak.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_caps_sql.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_carboncopy.beam
-%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_carboncopy_mnesia.beam
-%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_carboncopy_redis.beam
-%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_carboncopy_riak.beam
-%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_carboncopy_sql.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_client_state.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_configure.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_disco.beam
@@ -226,6 +222,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/nodetree_tree_sql.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/nodetree_virtual.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/prosody2ejabberd.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/proxy_protocol.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/pubsub_db_sql.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/pubsub_subscription_sql.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/pubsub_index.beam
@@ -235,6 +232,8 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/str.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/translate.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/win32_dns.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/xml_compress.beam
+%%TOOLS%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/xml_compress_gen.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/ELDAPv3.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/adhoc.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/bosh.hrl
@@ -254,7 +253,6 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/logger.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/mod_announce.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/mod_caps.hrl
-%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/mod_carboncopy.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/mod_last.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/mod_mam.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/mod_muc.hrl
@@ -595,6 +593,12 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_utils-%%P1_UTILS_VER%%/ebin/p1_utils_sup.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_utils-%%P1_UTILS_VER%%/ebin/treap.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_utils-%%P1_UTILS_VER%%/include/p1_queue.hrl
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/pkix-%%PKIX_VER%%/LICENSE
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/pkix-%%PKIX_VER%%/ebin/pkix.app
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/pkix-%%PKIX_VER%%/ebin/pkix.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/pkix-%%PKIX_VER%%/ebin/pkix_app.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/pkix-%%PKIX_VER%%/ebin/pkix_sup.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/pkix-%%PKIX_VER%%/priv/cacert.pem
 %%RIAK%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/riak_pb-%%RIAK_PB_VER%%/LICENSE
 %%RIAK%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/riak_pb-%%RIAK_PB_VER%%/ebin/riak_dt_pb.beam
 %%RIAK%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/riak_pb-%%RIAK_PB_VER%%/ebin/riak_kv_pb.beam
@@ -820,6 +824,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/img/vcss.png
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/js/admin.js
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/js/muc.js
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/lua/redis_sm.lua
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/ca.msg
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/cs.msg
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/de.msg
