@@ -3,6 +3,7 @@
 
 PORTNAME=	openexr
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/:dist \
 		LOCAL/mandree/:test

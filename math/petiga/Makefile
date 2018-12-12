@@ -2,7 +2,7 @@
 
 PORTNAME=	petiga
 DISTVERSION=	g20180518
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math python
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 

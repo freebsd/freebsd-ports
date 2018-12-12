@@ -2,6 +2,7 @@
 
 PORTNAME=	davix
 DISTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/cern-fts/davix/releases/download/R_${DISTVERSION:S/./_/g}/
 

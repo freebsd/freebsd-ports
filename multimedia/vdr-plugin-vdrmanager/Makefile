@@ -3,7 +3,7 @@
 
 PORTNAME=	vdr-plugin-vdrmanager
 PORTVERSION=	0.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/828/
 DISTNAME=	${PORTNAME:S/-plugin//}-${PORTVERSION}

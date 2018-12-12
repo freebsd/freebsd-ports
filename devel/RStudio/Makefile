@@ -6,7 +6,7 @@
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.679
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-dictionaries/:dictionaries \
 		https://s3.amazonaws.com/rstudio-buildtools/:buildtools

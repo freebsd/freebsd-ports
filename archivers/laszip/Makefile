@@ -3,6 +3,7 @@
 
 PORTNAME=	laszip
 PORTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	archivers
 
 MAINTAINER=	rhurlin@gwdg.de

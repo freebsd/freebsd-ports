@@ -3,6 +3,7 @@
 
 PORTNAME=	pointcloud
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases geography
 

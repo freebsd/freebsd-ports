@@ -2,6 +2,7 @@
 
 PORTNAME=	cjose
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jamie@chair6.net

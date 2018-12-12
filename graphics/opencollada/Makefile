@@ -3,6 +3,7 @@
 PORTNAME=	opencollada
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.68
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 
 MAINTAINER=	sunpoet@FreeBSD.org

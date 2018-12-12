@@ -2,6 +2,7 @@
 
 PORTNAME=	belr
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.linphone.org/releases/sources/belr/
 

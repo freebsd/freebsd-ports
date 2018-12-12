@@ -3,6 +3,7 @@
 
 PORTNAME=	SCIP
 DISTVERSION=	6.0.0
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	http://scip.zib.de/download/release/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}

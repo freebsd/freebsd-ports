@@ -3,6 +3,7 @@
 
 PORTNAME=	zita-convolver
 DISTVERSION=	4.0.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 

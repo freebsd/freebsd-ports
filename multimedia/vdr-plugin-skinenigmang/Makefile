@@ -3,7 +3,7 @@
 
 PORTNAME=	vdr-plugin-skinenigmang
 PORTVERSION=	0.1.2s20120606
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://andreas.vdr-developer.org/enigmang/download/:release \
 		LOCAL/nox:snapshot

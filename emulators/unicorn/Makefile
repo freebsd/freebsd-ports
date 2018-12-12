@@ -2,6 +2,7 @@
 
 PORTNAME=	unicorn
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	antoine@FreeBSD.org

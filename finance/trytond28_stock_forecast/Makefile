@@ -3,6 +3,7 @@
 
 PORTNAME=	trytond28_stock_forecast
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	finance python
 MASTER_SITES=	CHEESESHOP \
 		http://downloads.tryton.org/${PORTVERSION:R}/

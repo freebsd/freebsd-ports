@@ -3,6 +3,7 @@
 PORTNAME=	pandas-datareader
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.0-30 # dev version because of this fix: https://github.com/pydata/pandas-datareader/pull/520
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g3c17058
 CATEGORIES=	math finance python
 #MASTER_SITES=	CHEESESHOP

@@ -2,6 +2,7 @@
 
 PORTNAME=	ncbi-cxx-toolkit
 DISTVERSION=	21_0_0
+PORTREVISION=	1
 CATEGORIES=	biology science devel
 MASTER_SITES=	ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools++/2018/Apr_2_2018/
 DISTNAME=	ncbi_cxx--${DISTVERSION}

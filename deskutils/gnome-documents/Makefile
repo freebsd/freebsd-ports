@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-documents
 PORTVERSION=	3.28.2
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

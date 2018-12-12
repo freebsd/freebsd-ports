@@ -2,6 +2,7 @@
 
 PORTNAME=	gnome-mpv
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
 

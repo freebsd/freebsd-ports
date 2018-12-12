@@ -2,7 +2,7 @@
 
 PORTNAME=	linphone
 PORTVERSION=	4.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://www.linphone.org/releases/sources/linphoneqt/

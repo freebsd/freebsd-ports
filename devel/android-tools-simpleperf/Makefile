@@ -3,7 +3,7 @@
 PORTNAME=	android-tools-simpleperf
 DISTVERSIONPREFIX=	android-
 DISTVERSION=	7.1.2_r17
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org

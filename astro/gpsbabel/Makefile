@@ -4,6 +4,7 @@
 PORTNAME=	gpsbabel
 DISTVERSIONPREFIX=	${PORTNAME}_
 DISTVERSION=	1_5_4
+PORTREVISION=	1
 CATEGORIES=	astro geography
 
 MAINTAINER=	dev2@heesakkers.info

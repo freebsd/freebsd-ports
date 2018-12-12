@@ -3,6 +3,7 @@
 
 PORTNAME=	bro
 PORTVERSION=	2.5.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.bro.org/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

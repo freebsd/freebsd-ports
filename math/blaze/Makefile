@@ -2,7 +2,7 @@
 
 PORTNAME=	blaze
 DISTVERSION=	3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/downloads/
 

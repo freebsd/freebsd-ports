@@ -3,6 +3,7 @@
 
 PORTNAME=	metasploit
 PORTVERSION=	4.17.26
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com

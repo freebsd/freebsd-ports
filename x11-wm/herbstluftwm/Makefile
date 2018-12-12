@@ -2,6 +2,7 @@
 
 PORTNAME=	herbstluftwm
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://herbstluftwm.org/tarballs/
 

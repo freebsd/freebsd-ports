@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-color-manager
 PORTVERSION=	3.28.0
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome

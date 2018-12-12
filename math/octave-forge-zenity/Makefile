@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-zenity
 PORTVERSION=	0.5.7
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

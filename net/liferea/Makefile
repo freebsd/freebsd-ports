@@ -3,6 +3,7 @@
 
 PORTNAME=	liferea
 DISTVERSION=	1.12.6
+PORTREVISION=	1
 DISTVERSIONSUFFIX=b
 CATEGORIES=	net gnome
 MASTER_SITES=	https://github.com/lwindolf/liferea/releases/download/v${PORTVERSION:S/.r/-rc/}/

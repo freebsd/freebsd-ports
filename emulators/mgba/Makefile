@@ -2,7 +2,7 @@
 
 PORTNAME=	mgba
 DISTVERSION=	0.6.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

@@ -3,6 +3,7 @@
 
 PORTNAME=	julia
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-full
 CATEGORIES=	lang math
 MASTER_SITES=	https://github.com/JuliaLang/julia/releases/download/v${PORTVERSION}/

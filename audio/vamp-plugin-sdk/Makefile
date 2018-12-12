@@ -3,6 +3,7 @@
 
 PORTNAME=	vamp-plugin-sdk
 PORTVERSION=	2.7.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://code.soundsoftware.ac.uk/attachments/download/2206/
 

@@ -2,7 +2,7 @@
 
 PORTNAME=	ebook2cwgui
 PORTVERSION=	0.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://fkurz.net/ham/ebook4cw/
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	sql-ledger
 PORTVERSION=	3.2.6
+PORTREVISION=	1
 CATEGORIES=	finance perl5
 MASTER_SITES=	http://www.sql-ledger.com/source/
 

@@ -2,6 +2,7 @@
 
 PORTNAME=		nss_wrapper
 PORTVERSION=		1.1.3
+PORTREVISION=	1
 CATEGORIES=		devel
 MASTER_SITES=		SAMBA/cwrap
 

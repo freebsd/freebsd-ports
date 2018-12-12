@@ -3,7 +3,7 @@
 
 PORTNAME=	x12arima
 PORTVERSION=	0.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math finance
 MASTER_SITES=	http://www.census.gov/ts/x12a/v03/unix/
 DISTFILES=	omegav03src.tar.gz

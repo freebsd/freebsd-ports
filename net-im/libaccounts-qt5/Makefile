@@ -3,7 +3,7 @@
 
 PORTNAME=	libaccounts-qt5
 PORTVERSION=	1.13
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-im
 MASTER_SITES=	https://drive.google.com/uc?export=download&id=0B8fX9XOwH_g4cTRCaktXNDRmMXM&dummy= \
 		LOCAL/rakuco

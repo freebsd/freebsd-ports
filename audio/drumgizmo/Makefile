@@ -3,6 +3,7 @@
 
 PORTNAME=	drumgizmo
 PORTVERSION=	0.9.16
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.drumgizmo.org/releases/${PORTNAME}-${PORTVERSION}/
 

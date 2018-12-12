@@ -3,6 +3,7 @@
 
 PORTNAME=	kicad
 PORTVERSION=	5.0.2
+PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-library-footprints
 

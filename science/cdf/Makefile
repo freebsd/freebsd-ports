@@ -3,7 +3,7 @@
 
 PORTNAME=	cdf3
 PORTVERSION=	3.3.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	science
 MASTER_SITES=	LOCAL/thierry/${PORTNAME} \
 		ftp://cdaweb.gsfc.nasa.gov/pub/cdf/dist/cdf${VER}/unix/

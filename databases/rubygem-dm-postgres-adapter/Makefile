@@ -3,6 +3,7 @@
 
 PORTNAME=	dm-postgres-adapter
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 

@@ -2,7 +2,7 @@
 
 PORTNAME=	stacks
 DISTVERSION=	1.48
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology
 MASTER_SITES=	http://catchenlab.life.illinois.edu/stacks/source/
 

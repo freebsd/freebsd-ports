@@ -3,6 +3,7 @@
 
 PORTNAME=	ip4r
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	databases net
 
 MAINTAINER=	tobez@FreeBSD.org

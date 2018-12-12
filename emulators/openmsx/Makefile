@@ -2,7 +2,7 @@
 
 PORTNAME=	openmsx
 PORTVERSION=	0.13.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	emulators
 MASTER_SITES=	https://github.com/openMSX/openMSX/releases/download/RELEASE_${PORTVERSION:S/./_/g}/
 

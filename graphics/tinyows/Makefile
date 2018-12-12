@@ -3,7 +3,7 @@
 
 PORTNAME=	tinyows
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics www geography
 MASTER_SITES=	https://download.osgeo.org/mapserver/
 

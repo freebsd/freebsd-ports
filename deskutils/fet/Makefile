@@ -3,6 +3,7 @@
 
 PORTNAME=	fet
 DISTVERSION=	5.37.2
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://lalescu.ro/liviu/fet/download/ \
 		http://lalescu.ro/liviu/fet/download/old/ \

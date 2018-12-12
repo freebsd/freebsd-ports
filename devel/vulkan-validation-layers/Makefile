@@ -3,6 +3,7 @@
 PORTNAME=	vulkan-validation-layers
 DISTVERSIONPREFIX=	sdk-
 DISTVERSION=	1.1.82.0
+PORTREVISION=	1
 CATEGORIES=	devel graphics
 
 MAINTAINER=	greg@unrelenting.technology

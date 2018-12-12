@@ -3,7 +3,7 @@
 
 PORTNAME=	spek
 PORTVERSION=	0.8.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/alexkay/${PORTNAME}/releases/download/v${PORTVERSION}/
 

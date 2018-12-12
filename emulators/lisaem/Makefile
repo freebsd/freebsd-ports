@@ -3,6 +3,7 @@
 
 PORTNAME=	lisaem
 PORTVERSION=	1.2.6.2
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://lisaem.sunder.net/downloads/
 

@@ -2,7 +2,7 @@
 
 PORTNAME=	coot
 DISTVERSION=	0.8.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/${PORTNAME}/source/releases/ \
 		https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/${PORTNAME}/dependencies/:data

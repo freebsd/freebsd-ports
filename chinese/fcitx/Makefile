@@ -3,6 +3,7 @@
 
 PORTNAME=	fcitx
 PORTVERSION=	4.2.9.6
+PORTREVISION=	1
 CATEGORIES=	chinese x11
 MASTER_SITES=	http://download.fcitx-im.org/fcitx/:fcitx \
 		http://download.fcitx-im.org/data/:data

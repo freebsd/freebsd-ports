@@ -3,7 +3,7 @@
 
 PORTNAME=	enchant
 PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc gnome
 MASTER_SITES=	https://github.com/AbiWord/enchant/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	2

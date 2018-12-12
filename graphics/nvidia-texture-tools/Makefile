@@ -3,7 +3,7 @@
 
 PORTNAME=	nvidia-texture-tools
 PORTVERSION=	2.0.8.1 # needed to not bump PORTEPOCH; remove on next update
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org

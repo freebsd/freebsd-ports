@@ -3,6 +3,7 @@
 
 PORTNAME=	mustache
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org

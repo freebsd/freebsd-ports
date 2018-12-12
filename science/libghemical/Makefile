@@ -3,7 +3,7 @@
 
 PORTNAME=	libghemical
 PORTVERSION=	3.0.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	science
 MASTER_SITES=	http://bioinformatics.org/ghemical/download/release20111012/	\
 		http://bioinformatics.org/ghemical/download/current/

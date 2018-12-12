@@ -2,6 +2,7 @@
 
 PORTNAME=	pgpool-II
 PORTVERSION=	4.0.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 PKGNAMESUFFIX=	40

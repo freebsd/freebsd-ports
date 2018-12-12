@@ -3,7 +3,7 @@
 
 PORTNAME=	xanim
 PORTVERSION=	2.92.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia graphics
 MASTER_SITES=	ftp://ftp.nstu.ru/pub/mirrors/xanim.va.pubnix.com/:main \
 		LOCAL/dinoex:main,DEFAULT \

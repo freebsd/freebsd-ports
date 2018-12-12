@@ -3,6 +3,7 @@
 
 PORTNAME=	highwayhash
 PORTVERSION=	g20181002
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org

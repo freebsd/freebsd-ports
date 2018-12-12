@@ -2,6 +2,7 @@
 
 PORTNAME=	bareos-webui
 PORTVERSION=	17.2.5
+PORTREVISION=	1
 DISTVERSIONPREFIX=	Release/
 CATEGORIES=	www sysutils
 

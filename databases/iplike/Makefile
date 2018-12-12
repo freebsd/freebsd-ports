@@ -3,6 +3,7 @@
 
 PORTNAME=	iplike
 PORTVERSION=	2.0.6
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF/opennms/IPLIKE/stable-2.0/
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	fracplanet
 PORTVERSION=	0.5.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		SF/nemysisfreebsdp/:icons

@@ -3,6 +3,7 @@
 
 PORTNAME=	psycopg2
 PORTVERSION=	2.7.6.1
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP \
 		http://initd.org/psycopg/tarballs/PSYCOPG-${PORTVERSION:R:R:S|.|-|}/

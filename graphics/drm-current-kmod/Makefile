@@ -3,6 +3,7 @@
 
 PORTNAME=	drm-current-kmod
 PORTVERSION=	4.16.g20181121
+PORTREVISION=	1
 CATEGORIES=	graphics kld
 
 MAINTAINER=	jmd@FreeBSD.org

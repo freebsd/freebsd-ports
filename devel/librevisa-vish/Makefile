@@ -3,6 +3,7 @@
 
 PORTNAME=	librevisa-vish
 PORTVERSION=	0.0.20130714
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.librevisa.org/download/
 DISTNAME=	vish-${PORTVERSION}

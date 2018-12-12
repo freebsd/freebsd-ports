@@ -3,7 +3,7 @@
 
 PORTNAME=	afnix
 PORTVERSION=	2.6.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	http://www.afnix.org/ftp/ \
 		ftp://ftp.stack.nl/pub/users/johans/afnix/

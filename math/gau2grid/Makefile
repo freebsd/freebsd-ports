@@ -3,6 +3,7 @@
 PORTNAME=	gau2grid
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	math python
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

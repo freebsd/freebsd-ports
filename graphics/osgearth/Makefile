@@ -3,6 +3,7 @@
 
 PORTNAME=	osgearth
 PORTVERSION=	2.10
+PORTREVISION=	1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	graphics geography
 CATEGORIES=	graphics geography

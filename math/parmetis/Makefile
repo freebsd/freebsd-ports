@@ -3,7 +3,7 @@
 
 PORTNAME=	ParMetis
 PORTVERSION=	4.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math parallel
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/
 DISTNAME=	${PORTNAME:tl}-${PORTVERSION}

@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-data-smoothing
 PORTVERSION=	1.3.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

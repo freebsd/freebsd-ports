@@ -3,7 +3,7 @@
 
 PORTNAME=	mypaint
 PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/mypaint/mypaint/releases/download/${PORTVERSION:S/^/v/}/
 

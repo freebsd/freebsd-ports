@@ -2,6 +2,7 @@
 
 PORTNAME=	xmlf90
 DISTVERSION=	1.5.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://launchpad.net/xmlf90/trunk/1.5/+download/
 

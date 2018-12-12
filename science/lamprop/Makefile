@@ -2,7 +2,7 @@
 
 PORTNAME=	lamprop
 PORTVERSION=	3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science python
 
 MAINTAINER=	rsmith@xs4all.nl

@@ -2,7 +2,7 @@
 
 PORTNAME=	multimc
 DISTVERSION=	0.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games java
 
 MAINTAINER=	me@tsundoku.ne.jp

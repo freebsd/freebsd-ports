@@ -3,6 +3,7 @@
 
 PORTNAME=	yate
 PORTVERSION=	6.1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://yate.null.ro/tarballs/yate6/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1

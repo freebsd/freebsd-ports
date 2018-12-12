@@ -3,6 +3,7 @@
 
 PORTNAME=	pg_reorg
 PORTVERSION=	1.1.11
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/3821/ \
 		http://BSDforge.com/projects/source/databases/pg_reorg/

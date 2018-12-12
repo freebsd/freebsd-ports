@@ -2,7 +2,7 @@
 
 PORTNAME=	vtk
 DISTVERSION=	8.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	8

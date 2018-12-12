@@ -3,7 +3,7 @@
 
 PORTNAME=	giacxcas
 DISTVERSION=	1.4.9-59
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/debian/dists/stable/main/source/:giac \
 		http://www-fourier.ujf-grenoble.fr/~parisse/giac/freebsd/

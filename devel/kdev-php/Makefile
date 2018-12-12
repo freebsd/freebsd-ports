@@ -2,6 +2,7 @@
 
 PORTNAME=	kdev-php
 DISTVERSION=	5.3.0
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/kdevelop/${DISTVERSION}/src
 DIST_SUBDIR=	KDE/kdevelop

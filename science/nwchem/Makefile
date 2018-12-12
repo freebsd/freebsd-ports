@@ -2,6 +2,7 @@
 
 PORTNAME=	nwchem
 PORTVERSION=	6.8.1.20181107
+PORTREVISION=	1
 CATEGORIES=	science
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/

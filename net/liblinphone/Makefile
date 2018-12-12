@@ -2,6 +2,7 @@
 
 PORTNAME=	linphone
 PORTVERSION=	3.12.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://www.linphone.org/releases/sources/linphone/
 PKGNAMEPREFIX=	lib

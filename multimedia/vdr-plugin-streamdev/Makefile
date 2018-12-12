@@ -3,7 +3,7 @@
 
 PORTNAME=	vdr-plugin-streamdev
 PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/1580/:release \
 		LOCAL/nox:snapshot

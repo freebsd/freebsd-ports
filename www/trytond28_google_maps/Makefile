@@ -3,7 +3,7 @@
 
 PORTNAME=	trytond28_google_maps
 PORTVERSION=	2.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www finance python
 MASTER_SITES=	https://pypi.python.org/packages/source/t/trytond_google_maps/ \
 		http://downloads.tryton.org/${PORTVERSION:R}/

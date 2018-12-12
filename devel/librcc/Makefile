@@ -3,7 +3,7 @@
 
 PORTNAME=	librcc
 PORTVERSION=	0.2.12
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel
 MASTER_SITES=	http://dside.dyndns.org/files/rusxmms/ \
 		LOCAL/fluffy

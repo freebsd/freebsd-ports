@@ -4,7 +4,7 @@
 PORTNAME=	xneur
 PORTVERSION=	0.17.0
 DISTVERSIONSUFFIX=.orig
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpad.net/~andrew-crew-kuznetsov/+archive/xneur-stable/+files/
 DISTNAME=	${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}

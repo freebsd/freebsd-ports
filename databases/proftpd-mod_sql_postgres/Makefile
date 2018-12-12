@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_sql_postgres
+PORTREVISION=	1
 CATEGORIES=	databases ftp
 PKGNAMEPREFIX=	proftpd-
 

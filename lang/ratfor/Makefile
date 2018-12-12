@@ -3,7 +3,7 @@
 
 PORTNAME=	ratfor
 PORTVERSION=	1985.06
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/obrien \
 		http://sepwww.stanford.edu/sep/prof/

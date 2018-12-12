@@ -2,6 +2,7 @@
 
 PORTNAME=	dsdp
 DISTVERSION=	5.8
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://www.mcs.anl.gov/hs/software/${PORTNAME:tu}/
 DISTNAME=	${PORTNAME:tu}${DISTVERSION}

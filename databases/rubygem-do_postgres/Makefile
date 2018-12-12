@@ -3,6 +3,7 @@
 
 PORTNAME=	do_postgres
 PORTVERSION=	0.10.17
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	trytond28_account_invoice_history
 PORTVERSION=	2.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance python
 MASTER_SITES=	https://pypi.python.org/packages/source/t/trytond_account_invoice_history/ \
 		http://downloads.tryton.org/${PORTVERSION:R}/

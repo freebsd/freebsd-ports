@@ -2,7 +2,7 @@
 
 PORTNAME=	xlife++
 DISTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://uma.ensta-paristech.fr/soft/XLiFE++/var/files/src/
 DISTNAME=	xlifepp-sources-v${DISTVERSION}-2018-05-09

@@ -3,7 +3,7 @@
 
 PORTNAME=	super_methane_brothers
 PORTVERSION=	1.5.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	SF/methane/Methane%20Stable/Methane%20V${PORTVERSION}
 DISTNAME=	methane-${PORTVERSION}

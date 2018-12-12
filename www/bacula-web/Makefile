@@ -3,6 +3,7 @@
 
 PORTNAME=	bacula-web
 DISTVERSION=	7.2.0
+PORTREVISION=	1
 CATEGORIES=	www sysutils
 MASTER_SITES=	http://www.bacula-web.org/files/bacula-web.org/downloads/
 

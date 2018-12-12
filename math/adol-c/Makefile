@@ -2,7 +2,7 @@
 
 PORTNAME=	adol-c
 DISTVERSION=	2.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://www.coin-or.org/download/source/${PORTNAME:tu}/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}

@@ -3,7 +3,7 @@
 
 PORTNAME=	thingylaunch
 PORTVERSION=	2.0.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	http://gahr.ch/thingylaunch/
 

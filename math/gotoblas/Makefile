@@ -3,7 +3,7 @@
 
 PORTNAME=	gotoblas
 PORTVERSION=	2.${GOTOBLAS2VER}.${LAPACKVER}
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	math
 MASTER_SITES=	LOCAL/maho/gotoblas \
 		NL/lapack:lapack NL/lapack/timing:lapack_tmg

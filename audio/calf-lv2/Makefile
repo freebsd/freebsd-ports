@@ -3,7 +3,7 @@
 
 PORTNAME=	calf
 DISTVERSION=	0.90.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://calf-studio-gear.org/files/
 PKGNAMESUFFIX=	-lv2

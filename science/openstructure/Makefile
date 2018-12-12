@@ -2,7 +2,7 @@
 
 PORTNAME=	openstructure
 DISTVERSION=	1.7.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	science
 MASTER_SITES=	https://git.scicore.unibas.ch/schwede/${PORTNAME}/repository/${DISTVERSION}/archive.tar.gz?dummy=/
 

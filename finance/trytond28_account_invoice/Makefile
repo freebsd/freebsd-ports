@@ -3,6 +3,7 @@
 
 PORTNAME=	trytond28_account_invoice
 PORTVERSION=	2.8.8
+PORTREVISION=	1
 CATEGORIES=	finance python
 MASTER_SITES=	CHEESESHOP \
 		http://downloads.tryton.org/${PORTVERSION:R}/

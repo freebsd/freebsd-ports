@@ -3,7 +3,7 @@
 
 PORTNAME=	peg-e
 PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://gottcode.org/peg-e/ \
 		https://mirror.amdmi3.ru/distfiles/

@@ -3,6 +3,7 @@
 
 PORTNAME=	postgresql-repmgr
 PORTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.repmgr.org/download/
 DISTNAME=	repmgr-${PORTVERSION}

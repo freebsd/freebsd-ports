@@ -3,7 +3,7 @@
 
 PORTNAME=	quantis
 DISTVERSION=	v18.03.08
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security devel java
 MASTER_SITES=	https://www.idquantique.com/wordpress/wp-content/uploads/
 DISTNAME=	Quantis-${DISTVERSION}

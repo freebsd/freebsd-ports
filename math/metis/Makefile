@@ -3,7 +3,7 @@
 
 PORTNAME=	metis
 PORTVERSION=	5.1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
 

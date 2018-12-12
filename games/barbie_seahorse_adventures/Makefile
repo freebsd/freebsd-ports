@@ -3,7 +3,7 @@
 
 PORTNAME=	barbie_seahorse_adventures
 PORTVERSION=	1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games python
 MASTER_SITES=	http://www.imitationpickles.org/barbie/files/
 DISTNAME=	barbie-${DISTVERSION}

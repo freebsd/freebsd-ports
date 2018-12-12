@@ -3,6 +3,7 @@
 
 PORTNAME=	xapian
 PORTVERSION=	1.4.9
+PORTREVISION=	1
 DISTVERSIONPREFIX=	bindings-
 CATEGORIES=	databases python
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \

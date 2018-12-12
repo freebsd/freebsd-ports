@@ -3,7 +3,7 @@
 PORTNAME=	nxengine
 PORTVERSION=	2.6.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES+=	https://www.cavestory.org/downloads/:data \
 		SF/lifanov-ports-distfiles/games/${PORTNAME}/:icons

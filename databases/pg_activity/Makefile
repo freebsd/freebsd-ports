@@ -3,6 +3,7 @@
 
 PORTNAME=	pg_activity
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases python
 

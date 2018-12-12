@@ -3,7 +3,7 @@
 
 PORTNAME=	telldus-core
 PORTVERSION=	2.1.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	comms
 MASTER_SITES=	http://download.telldus.se/TellStick/Software/telldus-core/
 

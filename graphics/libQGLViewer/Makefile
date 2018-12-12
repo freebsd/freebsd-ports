@@ -3,6 +3,7 @@
 
 PORTNAME=	libQGLViewer
 DISTVERSION=	2.7.1
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.libqglviewer.com/src/
 

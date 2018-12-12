@@ -3,6 +3,7 @@
 
 PORTNAME=	lumina-coreutils
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	jt@ixsystems.com

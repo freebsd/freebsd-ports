@@ -3,7 +3,7 @@
 
 PORTNAME=	vm
 PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://gitlab.com/OpenMusicKontrollers/vm.lv2/repository/archive.tar.gz?ref=${PORTVERSION}&dummy=/
 PKGNAMESUFFIX=	-lv2

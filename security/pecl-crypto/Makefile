@@ -3,6 +3,7 @@
 
 PORTNAME=	crypto
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	gasol.wu@gmail.com

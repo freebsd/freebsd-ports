@@ -3,7 +3,7 @@
 
 PORTNAME=	mod_auth_pgsql
 PORTVERSION=	2.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.giuseppetanzilli.it/mod_auth_pgsql2/dist/
 PKGNAMESUFFIX=	2

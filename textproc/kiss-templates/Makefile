@@ -3,7 +3,7 @@
 
 PORTNAME=		kiss-templates
 PORTVERSION=		0.19
-PORTREVISION=		8
+PORTREVISION=		9
 CATEGORIES=		textproc
 
 MAINTAINER=		andreas.sommer87@googlemail.com

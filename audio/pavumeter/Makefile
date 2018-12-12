@@ -3,7 +3,7 @@
 
 PORTNAME=	pavumeter
 PORTVERSION=	0.9.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 

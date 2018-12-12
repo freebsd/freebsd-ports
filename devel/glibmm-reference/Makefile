@@ -1,7 +1,7 @@
 # Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	2
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/glibmm-2.4.pc:devel/glibmm \
 		gm4:devel/m4

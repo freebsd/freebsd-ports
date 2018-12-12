@@ -2,6 +2,7 @@
 
 PORTNAME=	tsearch_extras
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	rm@FreeBSD.org

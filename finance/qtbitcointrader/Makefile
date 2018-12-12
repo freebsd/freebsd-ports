@@ -2,6 +2,7 @@
 
 PORTNAME=	QtBitcoinTrader
 DISTVERSION=	1.40.30
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	SF/bitcointrader/SRC/
 

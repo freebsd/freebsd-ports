@@ -3,7 +3,7 @@
 
 PORTNAME=	pivy
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics python
 MASTER_SITES=	https://bitbucket.org/Coin3D/pivy/get/
 DISTNAME=	8eab90908f2a

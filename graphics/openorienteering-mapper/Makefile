@@ -3,6 +3,7 @@
 
 PORTNAME=	openorienteering-mapper
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics geography
 

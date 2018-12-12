@@ -3,6 +3,7 @@
 
 PORTNAME=	sassc
 PORTVERSION=	3.5.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	nivit@FreeBSD.org
