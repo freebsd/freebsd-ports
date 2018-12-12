@@ -2,7 +2,7 @@
 
 PORTNAME=	glucose
 DISTVERSION=	4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.labri.fr/perso/lsimon/downloads/softwares/
 DISTNAME=	glucose-syrup-${DISTVERSION}

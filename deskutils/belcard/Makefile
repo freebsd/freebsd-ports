@@ -2,6 +2,7 @@
 
 PORTNAME=	belcard
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://www.linphone.org/releases/sources/belcard/
 

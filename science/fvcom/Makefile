@@ -2,7 +2,7 @@
 
 PORTNAME=	fvcom
 PORTVERSION=	2.7.1
-PORTREVISION?=	12
+PORTREVISION?=	13
 CATEGORIES=	science
 MASTER_SITES=	http://fvcom.smast.umassd.edu/FVCOM/index.html/
 DISTNAME=	sourcecode1

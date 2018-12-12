@@ -2,7 +2,7 @@
 
 PORTNAME=	rtorrent
 PORTVERSION=	0.9.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://rtorrent.net/downloads/
 

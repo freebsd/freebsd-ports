@@ -2,6 +2,7 @@
 
 PORTNAME=	signon-plugin-oauth2
 DISTVERSION=	0.24
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
 DISTNAME=	archive
 DIST_SUBDIR=	KDE/${GL_ACCOUNT}

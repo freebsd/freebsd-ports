@@ -3,7 +3,7 @@
 
 PORTNAME=	cdo
 PORTVERSION=	1.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/18264/ \
 		LOCAL/sunpoet

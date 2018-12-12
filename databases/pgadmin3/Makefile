@@ -3,6 +3,7 @@
 
 PORTNAME=	pgadmin3
 PORTVERSION=	1.22.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	PGSQL/pgadmin/pgadmin3/v${PORTVERSION}/src
 DIST_SUBDIR=	postgresql

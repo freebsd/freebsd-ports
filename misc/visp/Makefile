@@ -2,7 +2,7 @@
 
 PORTNAME=	visp
 DISTVERSION=	3.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://gforge.inria.fr/frs/download.php/latestfile/475/
 

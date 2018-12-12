@@ -3,6 +3,7 @@
 
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_SYM_DATE}
+PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-library-symbols-devel
 

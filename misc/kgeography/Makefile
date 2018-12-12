@@ -2,6 +2,7 @@
 
 PORTNAME=	kgeography
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	misc kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org

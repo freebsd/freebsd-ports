@@ -3,7 +3,7 @@
 
 PORTNAME=	nelly
 PORTVERSION=	1.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games python
 MASTER_SITES=	http://www.partiallydisassembled.net/nelly/ \
 		http://media.pyweek.org/dl/2/rushed/ \

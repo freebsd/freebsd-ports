@@ -3,7 +3,7 @@
 
 PORTNAME=	numptyphysics
 DISTVERSION=	0.3.r20090104
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	graphthing
 PORTVERSION=	1.3.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	math
 MASTER_SITES=	http://graph.seul.org/
 

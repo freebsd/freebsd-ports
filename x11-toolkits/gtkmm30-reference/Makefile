@@ -1,7 +1,7 @@
 # Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	2
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtkmm-3.0.pc:x11-toolkits/gtkmm30 \
 		glibmm-reference>=0:devel/glibmm-reference

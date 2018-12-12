@@ -2,6 +2,7 @@
 
 PORTNAME=	intel-hybrid-driver
 DISTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	libva-
 

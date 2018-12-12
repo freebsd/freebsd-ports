@@ -2,7 +2,7 @@
 
 PORTNAME=	clone
 PORTVERSION=	1.0.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cyclaero.com/public/clone/
 

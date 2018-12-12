@@ -3,7 +3,7 @@
 
 PORTNAME=	pgaccess
 PORTVERSION=	1.00.20140902
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases tcl tk
 MASTER_SITES=	http://bsdforge.com/projects/source/databases/pgaccess/
 

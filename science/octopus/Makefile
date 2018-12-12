@@ -2,7 +2,7 @@
 
 PORTNAME=	octopus
 DISTVERSION=	8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://www.tddft.org/programs/${PORTNAME}/download/${DISTVERSION}/
 

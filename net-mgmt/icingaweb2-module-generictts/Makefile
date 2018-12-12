@@ -3,6 +3,7 @@
 PORTNAME=	icingaweb2-module-generictts
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	lme@FreeBSD.org

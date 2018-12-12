@@ -3,7 +3,7 @@
 
 PORTNAME=	fgallery
 PORTVERSION=	1.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www graphics
 
 MAINTAINER=	ehaupt@FreeBSD.org

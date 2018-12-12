@@ -3,7 +3,7 @@
 
 PORTNAME=		spidermonkey24
 PORTVERSION=		24.2.0
-PORTREVISION=		9
+PORTREVISION=		10
 CATEGORIES=		lang
 MASTER_SITES=		MOZILLA/js
 #http://people.mozilla.org/~sstangl/

@@ -3,7 +3,7 @@
 
 PORTNAME=	trytond28_account_stock_continental
 PORTVERSION=	2.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance python
 MASTER_SITES=	https://pypi.python.org/packages/source/t/trytond_account_stock_continental/ \
 		http://downloads.tryton.org/${PORTVERSION:R}/

@@ -3,7 +3,7 @@
 
 PORTNAME=	pure
 PORTVERSION=	0.64
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	lang
 MASTER_SITES=	https://bitbucket.org/purelang/pure-lang/downloads/
 EXTRACT_ONLY=	${DISTNAME}.tar.gz

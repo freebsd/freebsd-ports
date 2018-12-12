@@ -3,6 +3,7 @@
 
 PORTNAME=	trytond28_purchase
 PORTVERSION=	2.8.4
+PORTREVISION=	1
 CATEGORIES=	finance python
 MASTER_SITES=	CHEESESHOP \
 		http://downloads.tryton.org/${PORTVERSION:R}/

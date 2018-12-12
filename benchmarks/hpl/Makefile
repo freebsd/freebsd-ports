@@ -3,6 +3,7 @@
 
 PORTNAME=	hpl
 DISTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	NETLIB/benchmark/hpl
 

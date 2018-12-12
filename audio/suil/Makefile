@@ -3,6 +3,7 @@
 
 PORTNAME=	suil
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 

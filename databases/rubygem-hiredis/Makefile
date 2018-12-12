@@ -3,6 +3,7 @@
 
 PORTNAME=	hiredis
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 

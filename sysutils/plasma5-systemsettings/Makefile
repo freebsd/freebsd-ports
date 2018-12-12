@@ -2,7 +2,7 @@
 
 PORTNAME=	systemsettings
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org

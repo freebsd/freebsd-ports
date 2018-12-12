@@ -3,6 +3,7 @@
 
 PORTNAME=	qlipper
 PORTVERSION=	5.1.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	jsm@FreeBSD.org

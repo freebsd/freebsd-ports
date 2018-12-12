@@ -3,6 +3,7 @@
 
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_FP_DATE}
+PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-library-footprints-devel
 

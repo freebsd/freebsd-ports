@@ -3,6 +3,7 @@
 
 PORTNAME=	pgroonga
 PORTVERSION=	2.0.9
+PORTREVISION=	1
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/pgroonga/
 

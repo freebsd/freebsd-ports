@@ -3,7 +3,7 @@
 
 PORTNAME=	asmutils
 PORTVERSION=	0.18
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	http://asm.sourceforge.net/asmutils/
 

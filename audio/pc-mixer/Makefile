@@ -2,6 +2,7 @@
 
 PORTNAME=	pc-mixer
 PORTVERSION=	20171212
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	jmaloney@ixsystems.com

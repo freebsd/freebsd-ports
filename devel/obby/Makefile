@@ -3,7 +3,7 @@
 
 PORTNAME=	obby
 PORTVERSION=	0.4.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://releases.0x539.de/obby/
 

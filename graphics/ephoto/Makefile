@@ -2,7 +2,7 @@
 
 PORTNAME=	ephoto
 DISTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	https://download.enlightenment.org/rel/apps/${PORTNAME}/
 DIST_SUBDIR=	enlightenment

@@ -2,6 +2,7 @@
 
 PORTNAME=	freedv
 DISTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	https://hobbes1069.fedorapeople.org/freetel/freedv/
 

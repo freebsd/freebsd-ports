@@ -3,7 +3,7 @@
 
 PORTNAME=	qelectrotech
 PORTVERSION=	0.5
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://download.tuxfamily.org/qet/tags/20151127/

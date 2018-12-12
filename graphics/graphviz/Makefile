@@ -3,7 +3,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.40.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics tk
 MASTER_SITES=	https://graphviz.gitlab.io/pub/graphviz/stable/SOURCES/
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	dilay
 DISTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org

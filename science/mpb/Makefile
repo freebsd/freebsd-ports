@@ -3,7 +3,7 @@
 
 PORTNAME=	mpb
 PORTVERSION=	1.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/mpb/
 

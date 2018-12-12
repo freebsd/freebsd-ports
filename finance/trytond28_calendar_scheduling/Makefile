@@ -3,6 +3,7 @@
 
 PORTNAME=	trytond28_calendar_scheduling
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	finance python
 MASTER_SITES=	CHEESESHOP \
 		http://downloads.tryton.org/${PORTVERSION:R}/

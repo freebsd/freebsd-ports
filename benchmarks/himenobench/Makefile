@@ -3,7 +3,7 @@
 
 PORTNAME=	himenobench
 PORTVERSION=	2015.07.09
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://accc.riken.jp/wp-content/uploads/2015/07/
 DISTFILES=	himenobmtxp_xl.zip himenobmtxp_l.zip \

@@ -2,7 +2,7 @@
 
 PORTNAME=	hexxagon
 PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.nesqi.se/download/
 

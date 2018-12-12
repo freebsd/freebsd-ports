@@ -3,6 +3,7 @@
 
 PORTNAME=	gatling
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	www benchmarks ftp ipv6
 MASTER_SITES=	http://www.fefe.de/gatling/
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	tablelog
 PORTVERSION=	0.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/1387/
 

@@ -3,6 +3,7 @@
 PORTNAME=	replxx
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	meka@tilda.center

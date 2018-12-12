@@ -3,6 +3,7 @@
 
 PORTNAME=	SoPlex
 DISTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	http://soplex.zib.de/download/release/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}

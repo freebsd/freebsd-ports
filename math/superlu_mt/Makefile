@@ -3,7 +3,7 @@
 
 PORTNAME=	superlu_mt
 PORTVERSION=	3.1.20160319
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \
 		http://crd.lbl.gov/~xiaoye/:doc

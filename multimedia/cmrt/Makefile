@@ -2,6 +2,7 @@
 
 PORTNAME=	cmrt
 DISTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org

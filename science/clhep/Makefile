@@ -3,7 +3,7 @@
 
 PORTNAME=	clhep
 PORTVERSION=	2.4.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://proj-clhep.web.cern.ch/proj-clhep/DISTRIBUTION/tarFiles/
 

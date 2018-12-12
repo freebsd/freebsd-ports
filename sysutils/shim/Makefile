@@ -3,6 +3,7 @@
 
 PORTNAME=	shim
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	egypcio@FreeBSD.org

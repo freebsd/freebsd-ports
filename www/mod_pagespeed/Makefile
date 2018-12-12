@@ -2,7 +2,7 @@
 
 PORTNAME=	mod_pagespeed
 PORTVERSION=	1.12.34.2
-PORTREVISION=	16
+PORTREVISION=	17
 PORTEPOCH=	1
 CATEGORIES=	www devel
 MASTER_SITES=	LOCAL/mmokhi:boringssl,chromium_base,chromium_build,googleurl,gflags_arch,gflags_src,libjpeg_turbo_src,yasm_patched,libwebp,modpb64 \

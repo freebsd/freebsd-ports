@@ -3,7 +3,7 @@
 
 PORTNAME=	xtr
 PORTVERSION=	1.50e.0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese textproc
 MASTER_SITES=	ftp://ftp.abk.nu/pub/redist/xtr/
 DISTNAME=	${PORTNAME}1.50e-0.2

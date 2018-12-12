@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-linear-algebra
 PORTVERSION=	2.2.2
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	math
 

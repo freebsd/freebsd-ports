@@ -3,6 +3,7 @@
 
 PORTNAME=	sam2p
 PORTVERSION=	0.49.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/v${PORTVERSION}/

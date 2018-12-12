@@ -2,7 +2,7 @@
 
 PORTNAME=	openkim
 PORTVERSION=	1.1.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	science
 MASTER_SITES=	http://s3.openkim.org/openkim-api/
 DISTNAME=	${PORTNAME}-api-v${PORTVERSION}

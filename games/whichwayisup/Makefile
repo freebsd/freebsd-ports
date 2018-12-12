@@ -3,7 +3,7 @@
 
 PORTNAME=	whichwayisup
 PORTVERSION=	0.7.9
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games python
 MASTER_SITES=	http://www.oletus.fi/static/whichwayisup/ \
 		SF/nemysisfreebsdp/games/${PORTNAME}/:icons

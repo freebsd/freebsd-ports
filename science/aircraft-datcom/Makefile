@@ -2,7 +2,7 @@
 
 PORTNAME=	aircraft-datcom
 DISTVERSION=	0.0.20120723
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 
 MAINTAINER=	mike.d.ft402@gmail.com

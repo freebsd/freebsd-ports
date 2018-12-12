@@ -2,6 +2,7 @@
 
 PORTNAME=	ponyc
 DISTVERSION=	0.25.0
+PORTREVISION=	1
 CATEGORIES=	lang
 
 MAINTAINER=	greg@unrelenting.technology

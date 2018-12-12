@@ -2,7 +2,7 @@
 
 PORTNAME=	elpa
 DISTVERSION=	2018.05.001
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://elpa.mpcdf.mpg.de/html/Releases/${DISTVERSION}/
 

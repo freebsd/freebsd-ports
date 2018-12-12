@@ -3,7 +3,7 @@
 
 PORTNAME=	gutenmark
 PORTVERSION=	20090510
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.sandroid.org/GutenMark/wasftp.GutenMark/SoftwareSnapshots/
 DISTNAME=	GutenMark_source_dev-${PORTVERSION}

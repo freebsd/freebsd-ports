@@ -2,6 +2,7 @@
 
 PORTNAME=	plasma-pass
 DISTVERSION=	0.1.a.20181210
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
 
 MAINTAINER=	kde@FreeBSD.org

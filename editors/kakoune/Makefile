@@ -2,6 +2,7 @@
 
 PORTNAME=	kakoune
 DISTVERSION=	2018.10.27
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/mawww/kakoune/releases/download/v${DISTVERSION}/
 

@@ -3,7 +3,7 @@
 
 PORTNAME?=	openvas8-scanner
 PORTVERSION?=	5.0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES?=	http://wald.intevation.org/frs/download.php/2436/
 DISTNAME=	${PORTNAME:S/${OPENVAS_VER}//}-${PORTVERSION}

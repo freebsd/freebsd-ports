@@ -3,7 +3,7 @@
 
 PORTNAME=	gmagick
 PORTVERSION=	1.1.7RC3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 MAINTAINER=	bsdports@wayfair.com

@@ -2,7 +2,7 @@
 
 PORTNAME=	swt
 PORTVERSION=	0.1.20
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	http://atoms.scilab.org/toolboxes/swt/${PORTVERSION}/files/
 PKGNAMEPREFIX=	scilab-toolbox-

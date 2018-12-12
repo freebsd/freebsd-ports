@@ -2,6 +2,7 @@
 
 PORTNAME=	BerkeleyGW
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://berkeley.box.com/shared/static/
 DISTFILES=	wkqu37wu77tll53r8t1soe6ozqja67yy.gz

@@ -3,7 +3,7 @@
 
 PORTNAME=	gecko-mediaplayer
 PORTVERSION=	1.0.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www multimedia gnome
 MASTER_SITES=	https://pkgs.rpmfusion.org/repo/pkgs/free/gecko-mediaplayer/gecko-mediaplayer-1.0.9.tar.gz/69b50ecbbbf34ca6d980a477345dbd40/ \
 		LOCAL/tobik:npapi

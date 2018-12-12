@@ -3,7 +3,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	6.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	6

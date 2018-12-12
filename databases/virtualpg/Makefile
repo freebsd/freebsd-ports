@@ -3,6 +3,7 @@
 
 PORTNAME=	virtualpg
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 

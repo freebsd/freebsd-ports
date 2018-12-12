@@ -3,7 +3,7 @@
 
 PORTNAME=	zathura-pdf-mupdf
 PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://pwmt.org/projects/zathura-pdf-mupdf/download/ \
 		http://www.madpilot.net/~mad/pwmt.org/

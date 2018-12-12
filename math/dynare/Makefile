@@ -2,7 +2,7 @@
 
 PORTNAME=	dynare
 DISTVERSION=	4.5.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://www.dynare.org/release/source/
 

@@ -2,6 +2,7 @@
 
 PORTNAME=	filezilla
 PORTVERSION=	3.36.0
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	https://download.filezilla-project.org/client/
 DISTNAME=	FileZilla_${PORTVERSION}_src

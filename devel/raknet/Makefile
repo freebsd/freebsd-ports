@@ -3,7 +3,7 @@
 
 PORTNAME=	raknet
 PORTVERSION=	3.9.2
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	1
 CATEGORIES=	devel net
 MASTER_SITES=	http://www.jenkinssoftware.com/raknet/downloads/ \

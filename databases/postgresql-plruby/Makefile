@@ -3,7 +3,7 @@
 
 PORTNAME=	postgresql-plruby
 PORTVERSION=	0.5.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases ruby
 DIST_SUBDIR=	ruby
 

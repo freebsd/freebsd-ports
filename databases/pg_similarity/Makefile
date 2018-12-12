@@ -3,6 +3,7 @@
 
 PORTNAME=	pg_similarity
 PORTVERSION=	20160917
+PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 

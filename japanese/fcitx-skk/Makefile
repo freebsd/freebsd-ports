@@ -2,6 +2,7 @@
 
 PORTNAME=	fcitx-skk
 PORTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx

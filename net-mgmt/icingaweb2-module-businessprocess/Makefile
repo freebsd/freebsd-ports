@@ -3,7 +3,7 @@
 PORTNAME=	icingaweb2-module-businessprocess
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	lme@FreeBSD.org

@@ -2,6 +2,7 @@
 
 PORTNAME=	kross
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	lang kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org

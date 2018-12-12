@@ -3,7 +3,7 @@
 
 PORTNAME=	mopac
 PORTVERSION=	7.${MOPAC_SUBVERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://bioinformatics.org/ghemical/download/%SUBDIR%/

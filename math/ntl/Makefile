@@ -3,6 +3,7 @@
 
 PORTNAME=	ntl
 PORTVERSION=	11.3.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.shoup.net/ntl/
 

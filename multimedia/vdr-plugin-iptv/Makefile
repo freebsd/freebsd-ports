@@ -3,7 +3,7 @@
 
 PORTNAME=	vdr-plugin-iptv
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.saunalahti.fi/~rahrenbe/vdr/iptv/files/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}

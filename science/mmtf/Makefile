@@ -2,6 +2,7 @@
 
 PORTNAME=	mmtf
 DISTVERSION=	g20180730
+PORTREVISION=	1
 CATEGORIES=	science biology
 
 MAINTAINER=	yuri@FreeBSD.org

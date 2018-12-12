@@ -2,7 +2,7 @@
 
 PORTNAME=	openvas9-scanner
 PORTVERSION=	5.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/2423/
 
 COMMENT=	OpenVAS 9 scanner

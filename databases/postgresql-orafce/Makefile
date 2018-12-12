@@ -3,6 +3,7 @@
 
 PORTNAME=	orafce
 PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 

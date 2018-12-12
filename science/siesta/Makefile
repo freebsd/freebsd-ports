@@ -2,6 +2,7 @@
 
 PORTNAME=	siesta
 DISTVERSION=	4.0.2
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/${DISTVERSION:R}/${DISTVERSION}/+download/
 

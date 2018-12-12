@@ -2,6 +2,7 @@
 
 PORTNAME=	qsudo
 DISTVERSION=	201711240000
+PORTREVISION=	1
 CATEGORIES=	sysutils security
 
 MAINTAINER=	jt@ixsystems.com

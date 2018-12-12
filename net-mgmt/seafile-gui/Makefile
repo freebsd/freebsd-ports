@@ -3,7 +3,7 @@
 PORTNAME=	seafile-gui
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

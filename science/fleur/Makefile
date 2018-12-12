@@ -2,7 +2,7 @@
 
 PORTNAME=	fleur
 DISTVERSION=	0.27-3 # Release 3 of Version 0.27
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	http://www.flapw.de/pm/uploads/FLEUR/
 DISTNAME=	fleurMaXR${DISTVERSION:C/.*-//}

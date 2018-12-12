@@ -3,7 +3,7 @@
 
 PORTNAME=	gramofile
 PORTVERSION=	1.6P
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	audio
 MASTER_SITES=	http://www.opensourcepartners.nl/~costar/gramofile/
 

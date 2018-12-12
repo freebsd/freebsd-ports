@@ -3,6 +3,7 @@
 
 PORTNAME=	slony1v2
 PORTVERSION=	2.2.6
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://main.slony.info/downloads/2.2/source/
 DISTNAME=	slony1-${PORTVERSION}

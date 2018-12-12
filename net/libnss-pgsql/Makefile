@@ -3,6 +3,7 @@
 
 PORTNAME=	libnss-pgsql
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	PGSQL/projects/pgFoundry/sysauth/NSS/nss1.5.0-beta
 DISTNAME=	${PORTNAME}-${PORTVERSION}-beta

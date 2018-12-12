@@ -3,7 +3,7 @@
 
 PORTNAME=	monster
 PORTVERSION=	1.8.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games gnome
 MASTER_SITES=	http://people.iola.dk/olau/monster-masher/source/
 PKGNAMESUFFIX=	-masher

@@ -2,7 +2,7 @@
 
 PORTNAME=		webkit
 DISTVERSION=		5.212.0-alpha2
-PORTREVISION=		15
+PORTREVISION=		16
 CATEGORIES=		www
 MASTER_SITES=		https://github.com/annulen/${PORTNAME}/releases/download/${DISTNAME}/
 PKGNAMEPREFIX=		qt5-

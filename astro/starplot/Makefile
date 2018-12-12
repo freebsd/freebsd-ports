@@ -3,7 +3,7 @@
 
 PORTNAME=	starplot
 PORTVERSION=	0.95.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	astro
 MASTER_SITES=	http://starplot.org/downloads/
 

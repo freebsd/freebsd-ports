@@ -3,7 +3,7 @@
 
 PORTNAME=	mk-livestatus
 PORTVERSION=	1.2.8p20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://mathias-kettner.de/download/
 DIST_SUBDIR=	check_mk

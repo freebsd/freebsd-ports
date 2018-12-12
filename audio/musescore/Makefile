@@ -3,7 +3,7 @@
 
 PORTNAME=	musescore
 PORTVERSION=	2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.osuosl.org/pub/musescore/releases/MuseScore-${PORTVERSION}/
 DISTNAME=	MuseScore-${PORTVERSION}

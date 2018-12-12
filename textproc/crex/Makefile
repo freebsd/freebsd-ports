@@ -2,6 +2,7 @@
 
 PORTNAME=	crex
 DISTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	tobik@FreeBSD.org

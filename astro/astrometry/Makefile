@@ -3,7 +3,7 @@
 
 PORTNAME=	astrometry
 PORTVERSION=	0.65
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro
 MASTER_SITES=	http://www.astrometry.net/downloads/
 DISTNAME=	${PORTNAME}.net-${PORTVERSION}

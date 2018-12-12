@@ -3,7 +3,7 @@
 
 PORTNAME=	gtkpool
 PORTVERSION=	0.5.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.seul.org/pub/gtkpool/ \
 		http://www.sourcefiles.org/Games/Sports/Pool/

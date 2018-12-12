@@ -2,6 +2,7 @@
 
 PORTNAME=	ignition-tools
 DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 

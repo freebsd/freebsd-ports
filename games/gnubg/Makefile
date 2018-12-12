@@ -3,6 +3,7 @@
 
 PORTNAME=	gnubg
 PORTVERSION=	1.06.002
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://files.gnubg.org/media/sources/
 DISTFILES=	gnubg-release-${PORTVERSION}-sources.tar.gz

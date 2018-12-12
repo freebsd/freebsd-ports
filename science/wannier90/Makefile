@@ -2,6 +2,7 @@
 
 PORTNAME=	wannier90
 DISTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.wannier.org/code/
 

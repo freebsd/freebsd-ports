@@ -3,6 +3,7 @@
 
 PORTNAME=	opencolorio
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics multimedia
 

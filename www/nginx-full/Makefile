@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
+PORTREVISION=	1
 PKGNAMESUFFIX=	-full
 
 MAINTAINER=	robak@FreeBSD.org

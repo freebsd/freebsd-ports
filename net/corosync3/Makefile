@@ -2,6 +2,7 @@
 # $FreeBSD$
 
 PORTVERSION=		2.99.2
+PORTREVISION=	1
 PKGNAMESUFFIX=		3
 
 .include "${.CURDIR}/../corosync2/Makefile.common"

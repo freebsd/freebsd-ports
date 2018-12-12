@@ -3,6 +3,7 @@
 
 PORTNAME=	icestorm
 PORTVERSION=	g20181021
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jsorocil@gmail.com

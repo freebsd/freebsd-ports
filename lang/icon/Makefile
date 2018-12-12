@@ -3,7 +3,7 @@
 
 PORTNAME=	icon
 PORTVERSION=	9.5.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cs.arizona.edu/icon/ftp/packages/unix/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/.//g}src

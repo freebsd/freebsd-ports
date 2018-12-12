@@ -2,6 +2,7 @@
 
 PORTNAME=	hpenc
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	vsevolod@FreeBSD.org

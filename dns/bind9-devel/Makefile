@@ -5,11 +5,11 @@ PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
 .if defined(BIND_TOOLS_SLAVE)
 # dns/bind-tools here
-PORTREVISION=	0
+PORTREVISION=	1
 .else
 # XXX: correct version
 # dns/bind9xx here
-PORTREVISION=	0
+PORTREVISION=	1
 .endif
 CATEGORIES=	dns net ipv6
 # XXX: put the ISC master_site

@@ -3,6 +3,7 @@
 
 PORTNAME=	schismtracker
 PORTVERSION=	20180810
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
