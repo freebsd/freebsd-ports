@@ -118,6 +118,7 @@ include/spot/twaalgos/dtwasat.hh
 include/spot/twaalgos/dualize.hh
 include/spot/twaalgos/emptiness.hh
 include/spot/twaalgos/emptiness_stats.hh
+include/spot/twaalgos/genem.hh
 include/spot/twaalgos/gfguarantee.hh
 include/spot/twaalgos/gtec/ce.hh
 include/spot/twaalgos/gtec/gtec.hh
@@ -162,6 +163,7 @@ include/spot/twaalgos/stutter.hh
 include/spot/twaalgos/sum.hh
 include/spot/twaalgos/tau03.hh
 include/spot/twaalgos/tau03opt.hh
+include/spot/twaalgos/toparity.hh
 include/spot/twaalgos/totgba.hh
 include/spot/twaalgos/toweak.hh
 include/spot/twaalgos/translate.hh
