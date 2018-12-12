@@ -121,7 +121,6 @@
     SUBDIR += darktable
     SUBDIR += dataplot
     SUBDIR += dc20pack
-    SUBDIR += dcmtk
     SUBDIR += dcp2icc
     SUBDIR += dcraw
     SUBDIR += dcraw-m
