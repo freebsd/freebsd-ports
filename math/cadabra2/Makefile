@@ -2,6 +2,7 @@
 
 PORTNAME=	cadabra2
 DISTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	math
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

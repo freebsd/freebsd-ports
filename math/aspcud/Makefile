@@ -3,8 +3,8 @@
 
 PORTNAME=	aspcud
 PORTVERSION=	1.9.4
-PORTREVISION=	1
 DISTVERSIONPREFIX=     v
+PORTREVISION=	2
 CATEGORIES=	math ports-mgmt sysutils
 
 MAINTAINER=	vsevolod@FreeBSD.org

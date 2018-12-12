@@ -2,6 +2,7 @@
 
 PORTNAME=	esys-particle
 DISTVERSION=	2.3.5
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://launchpad.net/esys-particle/trunk/${DISTVERSION}/+download/
 DISTNAME=	ESyS-Particle-${DISTVERSION}

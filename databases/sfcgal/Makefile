@@ -4,7 +4,7 @@
 PORTNAME=	sfcgal
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases math graphics
 
 MAINTAINER=	lbartoletti@tuxfamily.org

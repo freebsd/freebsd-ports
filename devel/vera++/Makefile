@@ -3,7 +3,7 @@
 
 PORTNAME=	vera++
 PORTVERSION=	1.3.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/verateam/vera/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \

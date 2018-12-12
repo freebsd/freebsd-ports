@@ -2,7 +2,7 @@
 
 PORTNAME=	cvc4
 DISTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math java
 MASTER_SITES=	https://cvc4.cs.stanford.edu/downloads/builds/src/
 

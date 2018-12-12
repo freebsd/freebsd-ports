@@ -3,7 +3,7 @@
 
 PORTNAME=	appleseed
 DISTVERSION=	1.7.1-beta
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org

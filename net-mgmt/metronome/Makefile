@@ -2,7 +2,7 @@
 
 PORTNAME=	metronome
 DISTVERSION=	0.9.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt dns
 
 MAINTAINER=	krion@FreeBSD.org

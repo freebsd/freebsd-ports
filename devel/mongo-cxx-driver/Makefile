@@ -4,7 +4,7 @@
 PORTNAME=	mongo-cxx-driver
 PORTVERSION=	1.1.2
 DISTVERSIONPREFIX=legacy-
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel
 
 MAINTAINER=	numisemis@yahoo.com

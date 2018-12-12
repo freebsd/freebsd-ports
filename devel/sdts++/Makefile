@@ -3,7 +3,7 @@
 
 PORTNAME=	sdts++
 PORTVERSION=	1.5.1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	devel
 MASTER_SITES=	http://thor-f5.er.usgs.gov/sdts/sdtsxx/ \
 		http://lychnobite.org/sdts/
