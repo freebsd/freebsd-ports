@@ -1,4 +1,4 @@
-TIMESTAMP = 1543296220
+TIMESTAMP = 1544267376
 SHA256 (rust/crates/aho-corasick-0.6.9.tar.gz) = 1e9a933f4e58658d7b12defcf96dc5c720f20832deebe3e0a19efd3b6aaeeb9e
 SIZE (rust/crates/aho-corasick-0.6.9.tar.gz) = 25979
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
@@ -189,5 +189,5 @@ SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 712e227841d057c
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
 SHA256 (rust/crates/wincolor-1.0.1.tar.gz) = 561ed901ae465d6185fa7864d63fbd5720d0ef718366c9a4dc83cf6170d7e9ba
 SIZE (rust/crates/wincolor-1.0.1.tar.gz) = 4737
-SHA256 (racer-rust-racer-v2.1.14_GH0.tar.gz) = fae8722639f9f5310d49a365ad74380761640f7cf01d50948d9cbfaa4aa02064
-SIZE (racer-rust-racer-v2.1.14_GH0.tar.gz) = 194058
+SHA256 (racer-rust-racer-v2.1.16_GH0.tar.gz) = 88a93bce41829aab4024a8c1f1460caa8b33a4819b0cd25798880626816f4723
+SIZE (racer-rust-racer-v2.1.16_GH0.tar.gz) = 194416
