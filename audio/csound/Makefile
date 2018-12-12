@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	csound
-DISTVERSION=	6.12.2
-PORTREVISION=	3
+DISTVERSION=	6.12.2-83
+DISTVERSIONSUFFIX=	-gdf2edd269
 CATEGORIES=	audio lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -79,7 +79,7 @@ FAUST_CMAKE_ON=		-DFAUST_LLVM_VERSION:STRING=${FAUST_LLVM_VERSION}
 FLUIDSYNTH_DESC=	Building FluidSynth opcodes
 FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 FLUIDSYNTH_CMAKE_BOOL=	BUILD_FLUID_OPCODES
-FLUIDSYNTH_BROKEN=	FluidSynth 2.x is broken upstream: https://github.com/csound/csound/issues/1078#issuecomment-441459803
+xFLUIDSYNTH_BROKEN=	FluidSynth 2.x is broken upstream: https://github.com/csound/csound/issues/1078#issuecomment-441459803
 
 HDF5_DESC=		Build HDF5 read/write opcodes
 HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5 \

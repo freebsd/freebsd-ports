@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2018-11-07 14:05:23 UTC
+--- CMakeLists.txt.orig	2018-12-12 19:23:43 UTC
 +++ CMakeLists.txt
 @@ -164,8 +164,8 @@ endif()
  
@@ -35,7 +35,7 @@
      set(LINUX YES)
  else()
      set(LINUX NO)
-@@ -527,15 +527,17 @@ find_package(FLTK )
+@@ -527,9 +527,11 @@ find_package(FLTK )
  #        LIST_REPLACE(FLTK_LIBRARIES 2 "fltk_images_SHARED")
  #    endif()
  #endif()
@@ -43,13 +43,15 @@
 -find_package(Java)
 -find_package(JNI)
 +if (BUILD_FAUST_OPCODES)
-+    find_package(FAUST)
++  find_package(FAUST)
 +endif()
 +#find_package(Java)
 +#find_package(JNI)
  find_package(LIBLO)
  find_package(LUAJIT)
  find_package(MUSICXML)
+@@ -540,7 +542,7 @@ find_package(MUSICXML)
+ 
  find_package(PORTSMF)
  find_package(PythonLibs 2.7)
 -if(NOT STK_LOCAL)
@@ -57,7 +59,7 @@
      find_package(STK)
  endif()
  find_package(SWIG)
-@@ -1245,11 +1247,11 @@ if(CURL_FOUND)
+@@ -1251,11 +1253,11 @@ if(USE_CURL AND CURL_FOUND)
  endif()
  
  # Linux does not have a separate libintl, it is part of libc
@@ -71,7 +73,7 @@
          list(APPEND libcsound_LIBS ${LIBINTL_LIBRARY})
      endif()
      list(APPEND libcsound_CFLAGS -DGNU_GETTEXT)
-@@ -1269,8 +1271,8 @@ endif()
+@@ -1275,8 +1277,8 @@ endif()
  
  if(LINUX)
      message(STATUS "Building on Linux.")
