@@ -5,4 +5,4 @@ CPython2.3 to Python3.1, Jython and PyPy. It co-operates well with
 Python's help() system, custom importers (PEP302) and common command
 line completion tools.
 
-WWW: http://bitbucket.org/hpk42/apipkg
+WWW: https://bitbucket.org/hpk42/apipkg
