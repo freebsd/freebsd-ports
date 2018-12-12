@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	slackclient
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Python client for Slack.com
+COMMENT=	Slack API clients for Web API and RTM API
 
 LICENSE=	MIT
 
@@ -19,6 +20,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}responses>0:devel/py-responses@${PY_FLAVOR}
 
 USES=		python
+
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 
