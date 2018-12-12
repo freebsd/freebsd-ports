@@ -1,9 +1,3 @@
-TIMESTAMP = 1524855265
-SHA256 (SpiderLabs-ModSecurity-v3.0.2_GH0.tar.gz) = a27c48a410870627c5d07aa8822b6459afff925b81b649905c7383bdee8fc1ce
-SIZE (SpiderLabs-ModSecurity-v3.0.2_GH0.tar.gz) = 550800
-SHA256 (SpiderLabs-secrules-language-tests-add8f63_GH0.tar.gz) = 18894cf90d6a1ade441053b2aa89fff495a50eec0c632d346cc223c692973cba
-SIZE (SpiderLabs-secrules-language-tests-add8f63_GH0.tar.gz) = 58901
-SHA256 (client9-libinjection-da027ab_GH0.tar.gz) = 7eaa6306d13427e002f976d4ce1bf3aaa3f94e7dd4ada02a69354fa482e6afca
-SIZE (client9-libinjection-da027ab_GH0.tar.gz) = 1656633
-SHA256 (SpiderLabs-ModSecurity-Python-bindings-bc625d5_GH0.tar.gz) = 7b10d90ec76985ddbdc4ca15c0675254cb6d10af6eaba620d1785d1b24b017eb
-SIZE (SpiderLabs-ModSecurity-Python-bindings-bc625d5_GH0.tar.gz) = 2647
+TIMESTAMP = 1543329304
+SHA256 (modsecurity-v3.0.3.tar.gz) = 8aa1300105d8cc23315a5e54421192bc617a66246ad004bd89e67c232208d0f4
+SIZE (modsecurity-v3.0.3.tar.gz) = 3246882

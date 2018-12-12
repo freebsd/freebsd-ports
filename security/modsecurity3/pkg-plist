@@ -20,5 +20,6 @@ include/modsecurity/variable_value.h
 lib/libmodsecurity.a
 lib/libmodsecurity.so
 lib/libmodsecurity.so.3
-lib/libmodsecurity.so.3.0.2
+lib/libmodsecurity.so.3.0.3
+libdata/pkgconfig/modsecurity.pc
 @sample %%ETCDIR%%/modsecurity.conf.sample
