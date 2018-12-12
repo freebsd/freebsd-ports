@@ -47,6 +47,7 @@ lib/kamailio/modules/benchmark.so
 lib/kamailio/modules/blst.so
 lib/kamailio/modules/call_control.so
 lib/kamailio/modules/call_obj.so
+lib/kamailio/modules/carrierroute.so
 %%MYSQL%%lib/kamailio/modules/cfg_db.so
 lib/kamailio/modules/cfg_rpc.so
 lib/kamailio/modules/cfgt.so
@@ -120,6 +121,7 @@ lib/kamailio/modules/sdpops.so
 lib/kamailio/modules/seas.so
 %%MYSQL%%lib/kamailio/modules/sipcapture.so
 lib/kamailio/modules/sipdump.so
+lib/kamailio/modules/sipjson.so
 lib/kamailio/modules/sipt.so
 %%MYSQL%%lib/kamailio/modules/siptrace.so
 lib/kamailio/modules/siputils.so
