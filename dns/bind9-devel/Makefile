@@ -9,7 +9,7 @@ PORTREVISION=	1
 .else
 # XXX: correct version
 # dns/bind9xx here
-PORTREVISION=	1
+PORTREVISION=	2
 .endif
 CATEGORIES=	dns net ipv6
 # XXX: put the ISC master_site
@@ -54,7 +54,6 @@ CPE_UPDATE=	${ISCVERSION:C/.*-//:tl}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
-		--disable-symtable \
 		--with-libxml2=${LOCALBASE} \
 		--with-readline="-L${LOCALBASE}/lib -ledit" \
 		--with-dlopen=yes \
@@ -209,6 +208,18 @@ TUNING_LARGE_CONFIGURE_ON=	--with-tuning=large
 TUNING_LARGE_CONFIGURE_OFF=	--with-tuning=default
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-symtable
+.else
+CONFIGURE_ARGS+=	--disable-symtable
+.endif
+
+.if ${SSL_DEFAULT} == base
+SUB_LIST+=	ENGINES=/usr/lib/engines
+.else
+SUB_LIST+=	ENGINES=${LOCALBASE}/lib/engines
+.endif
 
 # XXX: Remove
 post-extract:

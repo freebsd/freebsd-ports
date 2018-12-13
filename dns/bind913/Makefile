@@ -5,10 +5,10 @@ PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
 .if defined(BIND_TOOLS_SLAVE)
 # dns/bind-tools here
-PORTREVISION=	1
+PORTREVISION=	0
 .else
 # dns/bind913 here
-PORTREVISION=	1
+PORTREVISION=	0
 .endif
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
@@ -33,7 +33,7 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 USES=	compiler:c11 cpe libedit ssl
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.13.4
+ISCVERSION=	9.13.5
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -43,7 +43,6 @@ CPE_UPDATE=	${ISCVERSION:C/.*-//:tl}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
-		--disable-symtable \
 		--with-libxml2=${LOCALBASE} \
 		--with-readline="-L${LOCALBASE}/lib -ledit" \
 		--with-dlopen=yes \
@@ -198,6 +197,18 @@ TUNING_LARGE_CONFIGURE_ON=	--with-tuning=large
 TUNING_LARGE_CONFIGURE_OFF=	--with-tuning=default
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-symtable
+.else
+CONFIGURE_ARGS+=	--disable-symtable
+.endif
+
+.if ${SSL_DEFAULT} == base
+SUB_LIST+=	ENGINES=/usr/lib/engines
+.else
+SUB_LIST+=	ENGINES=${LOCALBASE}/lib/engines
+.endif
 
 post-patch:
 .if defined(BIND_TOOLS_SLAVE)
