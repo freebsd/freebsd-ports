@@ -1,22 +1,13 @@
---- imagepool/poolfindassociation.cpp.orig	2014-01-19 07:38:17 UTC
+--- imagepool/poolfindassociation.cpp.orig	2018-12-12 23:22:31 UTC
 +++ imagepool/poolfindassociation.cpp
-@@ -40,8 +40,8 @@ FindAssociation::~FindAssociation() {
- 	DeleteResultStack();
- }
+@@ -57,7 +57,10 @@ OFCondition FindAssociation::findSCU(T_A
+ 	req.Priority = DIMSE_PRIORITY_LOW;
+ 	strcpy(req.AffectedSOPClassUID, m_abstractSyntax);
  
--CONDITION FindAssociation::findSCU(T_ASC_Association *assoc, DcmDataset *query) {
--	CONDITION cond;
-+OFCondition FindAssociation::findSCU(T_ASC_Association *assoc, DcmDataset *query) {
-+	OFCondition cond;
- 	DIC_US msgId = assoc->nextMsgID++;
- 	T_ASC_PresentationContextID presId;
- 	T_DIMSE_C_FindRQ req;
-@@ -100,7 +100,7 @@ void FindAssociation::findCallback(void*
- 	caller->OnResponseReceived(response);
- }
- 
--CONDITION FindAssociation::SendObject(DcmDataset *dataset) {
-+OFCondition FindAssociation::SendObject(DcmDataset *dataset) {
- 	return findSCU(assoc, dataset);
- }
- 
++        int responseCount = 0;
++
+ 	cond = DIMSE_findUser(assoc, presId, &req, query, 
++			responseCount,
+ 			findCallback, (void*)this, 
+ 			(m_timeout == 0) ? DIMSE_BLOCKING : DIMSE_NONBLOCKING,
+ 			m_timeout, 

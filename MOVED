@@ -10782,3 +10782,4 @@ sysutils/battfink||2018-12-11|Has expired: GNOME 2 application
 sysutils/cog||2018-12-11|Has expired: GNOME 2 application
 sysutils/gcdmaster||2018-12-11|Has expired: GNOME 2 application
 biology/njplot|biology/seaview|2018-12-11|Has expired: Deprecated by upstream; use biology/seaview instead
+devel/dcmtk|graphics/dcmtk|2018-12-12|Move to a proper category
