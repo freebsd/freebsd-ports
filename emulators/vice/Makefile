@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	vice
-PORTVERSION=	3.1
-PORTREVISION=	7
+PORTVERSION=	3.2
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
-		ftp://ftp.zimmers.net/pub/cbm/crossplatform/emulators/VICE/
+MASTER_SITES=	SF/vice-emu/releases
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Emulator for Commodore C64, C128, VIC20, PET, and CBM-II
@@ -15,7 +13,8 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf \
 		mkfontdir:x11-fonts/mkfontdir \
-		mkfontscale:x11-fonts/mkfontscale
+		mkfontscale:x11-fonts/mkfontscale \
+		xa65:devel/xa65
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libgif.so:graphics/giflib \
 		libportaudio.so:audio/portaudio \
@@ -32,16 +31,19 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 
 RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
 
-USES=		compiler:c++11-lang pkgconfig makeinfo gmake iconv jpeg
+USES=		compiler:c++11-lang pkgconfig makeinfo gmake \
+		iconv:wchar_t jpeg readline
 USE_XORG=	xpm ice sm xext xv xt x11 xmu xxf86vm
 USE_XORG+=	xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 MAKE_ENV+=	MAKEINFOFLAGS="--no-split"
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-fullscreen --enable-ipv6 \
 			--enable-external-ffmpeg \
+			--mandir="${PREFIX}/man" \
+			--infodir="${PREFIX}/${INFO_PATH}" \
 			--disable-dependency-tracking
 
 LMLINKS=	vice.1 x64.1 \
@@ -53,23 +55,25 @@ LMLINKS=	vice.1 x64.1 \
 
 OPTIONS_DEFINE=	SDL ALSA PULSEAUDIO DOCS NLS
 OPTIONS_SINGLE=	GUI
-OPTIONS_SINGLE_GUI=	GNOMEUI3 GNOMEUI2 XAW
-OPTIONS_DEFAULT?=	GNOMEUI3 SDL ALSA
+OPTIONS_SINGLE_GUI=	GTK3 GNOMEUI2 XAW
+OPTIONS_DEFAULT?=	GNOMEUI2 SDL ALSA
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
-GNOMEUI3_DESC=	use gnome3 user interface
+GTK3_DESC=	use GTK3 user interface
 GNOMEUI2_DESC=	use gnome2 user interface
 XAW_DESC=	use plain Xaw library
 SDL_DESC=	build with SDL2 sound system support
 
 GNOMEUI2_CONFIGURE_ENABLE=	gnomeui
-GNOMEUI3_CONFIGURE_ENABLE=	gnomeui3
+GTK3_CONFIGURE_ENABLE=	native-gtk3ui
 SDL_USE=		SDL=sdl2
 SDL_CONFIGURE_ON=	--with-sdlsound
 ALSA_CONFIGURE_OFF=	--without-alsa
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 PULSEAUDIO_CONFIGURE_OFF=	--without-pulse
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+XAW_USE=		XORG=xaw
+XAW_USES=		readline
 
 .include <bsd.port.options.mk>
 
@@ -88,22 +92,15 @@ USE_GL+=	glu gl
 LIB_DEPENDS+=	libgdkglext-x11-1.0.so:x11-toolkits/gtkglext
 .endif
 
-.if ${PORT_OPTIONS:MGNOMEUI3}
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext-runtime
-.endif
+.if ${PORT_OPTIONS:MGTK3}
+USES+=		readline
 USE_GNOME+=	gtk30 vte3 cairo gdkpixbuf2
 USE_GL+=	glu gl
 .endif
 
-.if ${PORT_OPTIONS:MXAW}
-USE_XORG+=	xaw
-USES+=		readline
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
+.if ${PORT_OPTIONS:MNLS} && ! ${PORT_OPTIONS:MGTK3}
 USES+=		gettext
-CONFIGURE_ARGS+=	--enable-nls --localedir=${LOCALBASE}/share/locale
+CONFIGURE_ARGS+=	--enable-nls --localedir="${LOCALBASE}/share/locale"
 PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
@@ -119,12 +116,10 @@ USE_SDL=	sdl2
 .endif
 
 post-patch:
-	${REINPLACE_CMD} \
-		-e 's|enum PixelFormat|enum AVPixelFormat|g' \
-		${WRKSRC}/src/gfxoutputdrv/ffmpeglib.h
-.for i in da.po de.po es.po fr.po hu.po it.po nl.po pl.po sv.po tr.po
+.for i in da.po de.po fr.po
 	${MV} "${WRKSRC}/po/${i}" "${WRKSRC}/po/${i}.latin"
 	${ICONV_CMD} -f latin1 -t utf-8 < "${WRKSRC}/po/${i}.latin" > "${WRKSRC}/po/${i}"
+	${REINPLACE_CMD} -e 's|ISO-8859-1|UTF-8|' ${WRKSRC}/Makefile.in
 .endfor
 
 pre-configure:
