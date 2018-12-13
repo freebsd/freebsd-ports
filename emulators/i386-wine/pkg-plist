@@ -834,6 +834,7 @@ include/wine/windows/ver.h
 include/wine/windows/verrsrc.h
 include/wine/windows/vfw.h
 include/wine/windows/vfwmsgs.h
+include/wine/windows/virtdisk.h
 include/wine/windows/vmr9.h
 include/wine/windows/vmr9.idl
 include/wine/windows/vmrender.idl
