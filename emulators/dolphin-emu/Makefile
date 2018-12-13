@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dolphin-emu
-PORTVERSION=	5.0.8715
-PORTREVISION=	2
+PORTVERSION=	5.0.9209
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -20,8 +19,6 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 # - xxhash comes from Externals/ as it cannot be properly detected yet
 # - gtest detection is missing (Externals/ version enforced by CMakeLists.txt)
 # - cubeb comes from Externals/ as it is not available from ports yet
-# - sdl2 support is buggy and leads to an infinite wait when Dolphin starts:
-#   ciface::SDL::PopulateDevices () at Source/Core/InputCommon/ControllerInterface/SDL/SDL.cpp:177
 LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
 		libavcodec.so:multimedia/ffmpeg \
 		libavdevice.so:multimedia/ffmpeg \
@@ -46,9 +43,10 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gl iconv \
 
 USE_GITHUB=	yes
 GH_PROJECT=	dolphin
-GH_TAGNAME=	5f0d825
+GH_TAGNAME=	2dcd058
 
 USE_GL=		gl glew glu
+USE_SDL=	sdl2
 USE_XORG=	ice sm x11 xext xi xrandr
 USE_QT=		buildtools_build core gui widgets
 
@@ -58,7 +56,6 @@ CMAKE_ARGS+=	-DTRY_X11:BOOL=ON \
 		-DENABLE_ALSA:BOOL=OFF \
 		-DENABLE_PULSEAUDIO:BOOL=ON \
 		-DUSE_DISCORD_PRESENCE:BOOL=OFF \
-		-DENABLE_SDL:BOOL=OFF \
 		-DCMAKE_REQUIRED_INCLUDES:PATH="${LOCALBASE}/include" \
 		-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib"
 MAKE_ENV+=	DESTDIR="${STAGEDIR}"
