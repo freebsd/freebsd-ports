@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	composer
-DISTVERSION=	1.7.2
+DISTVERSION=	1.8.0
 CATEGORIES=	devel
 MASTER_SITES=	http://getcomposer.org/download/${DISTVERSION}/
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
