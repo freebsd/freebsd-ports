@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	meta1
-PORTVERSION=	1.1.0a.10.0
+PORTVERSION=	1.1.0a.11.0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.MeTA1.org/download/.alpha/tlsa2/
+MASTER_SITES=	http://www.MeTA1.org/download/.alpha/mstack/
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${BERKELEYDB_SUFFIX}${PMILTER_SUFFIX}${PKGNAMESUFFIX2}
-DISTNAME=	${PORTNAME}-1.1.Alpha10.0
+DISTNAME=	${PORTNAME}-1.1.Alpha11.0
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Secure and efficient mail gateway
