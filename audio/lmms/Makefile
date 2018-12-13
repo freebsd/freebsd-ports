@@ -4,7 +4,7 @@
 PORTNAME=	lmms
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0-rc7
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	audio
 
@@ -14,12 +14,10 @@ COMMENT=	All-in-one sequencer, drum machine, sampler, and more
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libfluidsynth.so:audio/fluidsynth \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libsamplerate.so:audio/libsamplerate \
 		libsndfile.so:audio/libsndfile \
 		libvorbis.so:audio/libvorbis \
@@ -33,17 +31,18 @@ RUN_DEPENDS=	${LOCALBASE}/share/ladspa/rdf/caps.rdf:audio/caps-plugins \
 		${LOCALBASE}/share/ladspa/rdf/tap-plugins.rdf:audio/tap-plugins
 
 USES=		cmake:outsource desktop-file-utils localbase:ldflags pkgconfig \
-		qt:4 shared-mime-info
+		qt:5 shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	LMMS
-GH_TUPLE=	rampantpixels:rpmalloc:1.3.1:rpmalloc/src/3rdparty/rpmalloc/rpmalloc
+GH_TUPLE=	rampantpixels:rpmalloc:1.3.1:rpmalloc/src/3rdparty/rpmalloc/rpmalloc \
+		lukas-w:qt5-x11embed:ec77d4ba40bebc0c53a016adb646b6fa65dd5faf:qt5x11embed/src/3rdparty/qt5-x11embed
 USE_LDCONFIG=	yes
-USE_QT=		corelib gui linguisttools xml moc_build uic_build rcc_build qmake_build
-USE_XORG=	x11 xext xft ice sm
+USE_QT=		core gui widgets x11extras xml buildtools_build linguisttools_build qmake_build
+USE_XORG=	xcursor xext xfixes xft xinerama xrender
 
 CMAKE_OFF=	WANT_ALSA WANT_CALF WANT_CAPS WANT_CMT WANT_SWH WANT_STK \
 		WANT_TAP WANT_VST
-INSTALLS_ICONS=	yes
+CMAKE_ON=	WANT_QT5
 
 OPTIONS_DEFINE=		OSS JACK PULSEAUDIO PORTAUDIO SDL SNDIO
 OPTIONS_DEFAULT=	OSS

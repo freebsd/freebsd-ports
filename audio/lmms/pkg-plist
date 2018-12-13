@@ -269,6 +269,7 @@ lib/lmms/libvibedstrings.so
 lib/lmms/libwatsyn.so
 lib/lmms/libwaveshaper.so
 lib/lmms/libzynaddsubfx.so
+lib/libqx11embedcontainer.a
 man/man1/lmms.1.gz
 share/applications/lmms.desktop
 share/icons/hicolor/128x128/apps/lmms.png
