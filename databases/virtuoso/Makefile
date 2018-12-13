@@ -40,6 +40,7 @@ CONFIGURE_ARGS=	--with-readline\
 		--with-layout=freebsd\
 		--datadir="${PREFIX}"\
 		--localstatedir="${PREFIX}"
+CONFIGURE_ENV=	ac_cv_header_sys_timeb_h=no
 CPPFLAGS+=	-std=gnu89 ${IODBC_CPPFLAGS}
 LDFLAGS+=	-lexecinfo
 MAKE_ENV=	PATH=${LOCALBASE}/bin:${PATH}\
