@@ -53,10 +53,6 @@ PORTEXAMPLES=	*
 MAKE_ARGS+=	USE_REGPARM=1
 .endif
 
-.if ${PORT_OPTIONS:MOPENSSL} && ${SSL_DEFAULT:Mopenssl111}
-BROKEN=	Does not build with openssl111
-.endif
-
 post-build:
 	cd ${WRKSRC}/contrib/halog && ${MAKE_CMD} ${MAKE_ENV}
 
