@@ -11,8 +11,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Combine command line options, environment vars, and option file values
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+
 USES=		perl5 shebangfix
 USE_PERL5=	configure
 SHEBANG_FILES=	bin/*
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
