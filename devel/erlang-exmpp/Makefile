@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	erlang-
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Fast and scalable library for XMPP written in Erlang/OTP
 
-BROKEN_SSL=	openssl111 openssl-devel
+BROKEN_SSL=	openssl111
 
 LICENSE=	EPL
 

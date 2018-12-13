@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 DEPRECATED=		Qt4 has been EOL since december 2015
 EXPIRATION_DATE=	2019-03-15
 
-BROKEN_SSL=	openssl111 openssl-devel
+BROKEN_SSL=	openssl111
 BROKEN_SSL_REASON=	Does not build with OpenSSL 1.1, variable has incomplete type 'EVP_CIPHER_CTX'
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
