@@ -1,5 +1,5 @@
---- Makefile.orig	2012-09-26 22:46:23.000000000 +0700
-+++ Makefile	2012-11-03 17:39:22.000000000 +0700
+--- Makefile.orig	2017-01-27 23:25:12.000000000 +0700
++++ Makefile	2018-12-12 06:20:14.634544000 +0700
 @@ -24,7 +24,7 @@
  # Uncomment if you want libpri not send PROGRESS_INDICATOR w/ALERTING
  #ALERTING=-DALERTING_NO_PROGRESS
@@ -18,10 +18,10 @@
  
  STATIC_LIBRARY=libpri.a
  DYNAMIC_LIBRARY:=libpri.so.$(SONAME)
-@@ -67,10 +67,10 @@
- DYNAMIC_OBJS= \
+@@ -68,10 +68,10 @@
  	$(STATIC_OBJS)
  CFLAGS ?= -g
+ CFLAGS += $(CPPFLAGS)
 -CFLAGS += -Wall -Werror -Wstrict-prototypes -Wmissing-prototypes
 +CFLAGS += -Wall -Wstrict-prototypes -Wmissing-prototypes
  CFLAGS += -fPIC $(ALERTING) $(LIBPRI_OPT) $(COVERAGE_CFLAGS)
@@ -32,7 +32,7 @@
  libdir?=$(INSTALL_BASE)/lib
  ifneq ($(findstring Darwin,$(OSARCH)),)
    SOFLAGS=$(LDFLAGS) -dynamic -bundle -Xlinker -macosx_version_min -Xlinker 10.4 -Xlinker -undefined -Xlinker dynamic_lookup -force_flat_namespace
-@@ -88,7 +88,7 @@
+@@ -89,7 +89,7 @@
  ifeq (${OSARCH},FreeBSD)
  LDCONFIG_FLAGS=-m
  CFLAGS += -I../zaptel -I../zapata
@@ -41,7 +41,7 @@
  endif
  endif
  ifeq (${OSARCH},SunOS)
-@@ -148,12 +148,12 @@
+@@ -149,12 +149,12 @@
  	mkdir -p $(INSTALL_PREFIX)$(libdir)
  	mkdir -p $(INSTALL_PREFIX)$(INSTALL_BASE)/include
  ifneq (${OSARCH},SunOS)
@@ -58,7 +58,7 @@
  else
  	install -f $(INSTALL_PREFIX)$(INSTALL_BASE)/include -m 644 libpri.h
  	install -f $(INSTALL_PREFIX)$(libdir) -m 755 $(DYNAMIC_LIBRARY)
-@@ -189,7 +189,7 @@
+@@ -190,7 +190,7 @@
  	$(CC) $(CFLAGS) $(MAKE_DEPS) -c -o $@ $<
  
  %.lo: %.c
@@ -67,7 +67,7 @@
  
  $(STATIC_LIBRARY): $(STATIC_OBJS)
  	ar rcs $(STATIC_LIBRARY) $(STATIC_OBJS)
-@@ -197,7 +197,7 @@
+@@ -198,7 +198,7 @@
  
  $(DYNAMIC_LIBRARY): $(DYNAMIC_OBJS)
  	$(CC) $(SOFLAGS) -o $@ $(DYNAMIC_OBJS)
