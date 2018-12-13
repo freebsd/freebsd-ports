@@ -1,0 +1,4 @@
+bin/qnetwalk
+man/man6/qnetwalk.6.gz
+share/applications/qnetwalk.desktop
+share/pixmaps/qnetwalk.xpm
