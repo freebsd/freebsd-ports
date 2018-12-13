@@ -643,6 +643,7 @@ include/wine/windows/ntddcdrm.h
 include/wine/windows/ntddndis.h
 include/wine/windows/ntddscsi.h
 include/wine/windows/ntddstor.h
+include/wine/windows/ntddvdeo.h
 include/wine/windows/ntdef.h
 include/wine/windows/ntdsapi.h
 include/wine/windows/ntlsa.h
@@ -713,6 +714,7 @@ include/wine/windows/pstore.h
 include/wine/windows/pstore.idl
 include/wine/windows/qedit.h
 include/wine/windows/qedit.idl
+include/wine/windows/qos2.h
 include/wine/windows/ras.h
 include/wine/windows/rasdlg.h
 include/wine/windows/raserror.h
@@ -1456,6 +1458,7 @@ lib32/wine/ext-ms-win-ntuser-draw-l1-1-0.dll.so
 lib32/wine/ext-ms-win-ntuser-gui-l1-3-0.dll.so
 lib32/wine/ext-ms-win-ntuser-keyboard-l1-3-0.dll.so
 lib32/wine/ext-ms-win-ntuser-message-l1-1-1.dll.so
+lib32/wine/ext-ms-win-ntuser-misc-l1-2-0.dll.so
 lib32/wine/ext-ms-win-ntuser-misc-l1-5-1.dll.so
 lib32/wine/ext-ms-win-ntuser-mouse-l1-1-0.dll.so
 lib32/wine/ext-ms-win-ntuser-private-l1-1-1.dll.so
@@ -1885,6 +1888,7 @@ lib32/wine/fakedlls/ext-ms-win-ntuser-draw-l1-1-0.dll
 lib32/wine/fakedlls/ext-ms-win-ntuser-gui-l1-3-0.dll
 lib32/wine/fakedlls/ext-ms-win-ntuser-keyboard-l1-3-0.dll
 lib32/wine/fakedlls/ext-ms-win-ntuser-message-l1-1-1.dll
+lib32/wine/fakedlls/ext-ms-win-ntuser-misc-l1-2-0.dll
 lib32/wine/fakedlls/ext-ms-win-ntuser-misc-l1-5-1.dll
 lib32/wine/fakedlls/ext-ms-win-ntuser-mouse-l1-1-0.dll
 lib32/wine/fakedlls/ext-ms-win-ntuser-private-l1-1-1.dll
@@ -2230,6 +2234,7 @@ lib32/wine/fakedlls/traffic.dll
 lib32/wine/fakedlls/twain.dll16
 lib32/wine/fakedlls/twain_32.dll
 lib32/wine/fakedlls/typelib.dll16
+lib32/wine/fakedlls/tzres.dll
 lib32/wine/fakedlls/ucrtbase.dll
 lib32/wine/fakedlls/uiautomationcore.dll
 lib32/wine/fakedlls/uiribbon.dll
@@ -2870,6 +2875,7 @@ lib32/wine/traffic.dll.so
 lib32/wine/twain.dll16.so
 lib32/wine/twain_32.dll.so
 lib32/wine/typelib.dll16.so
+lib32/wine/tzres.dll.so
 lib32/wine/ucrtbase.dll.so
 lib32/wine/uiautomationcore.dll.so
 lib32/wine/uiribbon.dll.so
