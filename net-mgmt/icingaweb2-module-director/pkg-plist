@@ -4,6 +4,7 @@
 %%WWWDIR%%/.travis.yml
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
+%%WWWDIR%%/application/clicommands/BasketCommand.php
 %%WWWDIR%%/application/clicommands/BenchmarkCommand.php
 %%WWWDIR%%/application/clicommands/CommandCommand.php
 %%WWWDIR%%/application/clicommands/CommandsCommand.php
@@ -34,6 +35,8 @@
 %%WWWDIR%%/application/clicommands/ZoneCommand.php
 %%WWWDIR%%/application/controllers/ApiuserController.php
 %%WWWDIR%%/application/controllers/ApiusersController.php
+%%WWWDIR%%/application/controllers/BasketController.php
+%%WWWDIR%%/application/controllers/BasketsController.php
 %%WWWDIR%%/application/controllers/CommandController.php
 %%WWWDIR%%/application/controllers/CommandsController.php
 %%WWWDIR%%/application/controllers/CommandtemplateController.php
@@ -48,6 +51,7 @@
 %%WWWDIR%%/application/controllers/DeploymentController.php
 %%WWWDIR%%/application/controllers/EndpointController.php
 %%WWWDIR%%/application/controllers/EndpointsController.php
+%%WWWDIR%%/application/controllers/HealthController.php
 %%WWWDIR%%/application/controllers/HostController.php
 %%WWWDIR%%/application/controllers/HostgroupController.php
 %%WWWDIR%%/application/controllers/HostgroupsController.php
@@ -89,7 +93,11 @@
 %%WWWDIR%%/application/controllers/UsertemplateController.php
 %%WWWDIR%%/application/controllers/ZoneController.php
 %%WWWDIR%%/application/controllers/ZonesController.php
+%%WWWDIR%%/application/forms/AddToBasketForm.php
 %%WWWDIR%%/application/forms/ApplyMigrationsForm.php
+%%WWWDIR%%/application/forms/BasketCreateSnapshotForm.php
+%%WWWDIR%%/application/forms/BasketForm.php
+%%WWWDIR%%/application/forms/BasketUploadForm.php
 %%WWWDIR%%/application/forms/CustomvarForm.php
 %%WWWDIR%%/application/forms/DeployConfigForm.php
 %%WWWDIR%%/application/forms/DeploymentLinkForm.php
@@ -132,6 +140,7 @@
 %%WWWDIR%%/application/forms/ImportSourceForm.php
 %%WWWDIR%%/application/forms/KickstartForm.php
 %%WWWDIR%%/application/forms/RemoveLinkForm.php
+%%WWWDIR%%/application/forms/RestoreBasketForm.php
 %%WWWDIR%%/application/forms/RestoreObjectForm.php
 %%WWWDIR%%/application/forms/SelfServiceSettingsForm.php
 %%WWWDIR%%/application/forms/SettingsForm.php
@@ -255,6 +264,7 @@
 %%WWWDIR%%/library/Director/Dashboard/Dashboard.php
 %%WWWDIR%%/library/Director/Dashboard/Dashlet/ActivityLogDashlet.php
 %%WWWDIR%%/library/Director/Dashboard/Dashlet/ApiUserObjectDashlet.php
+%%WWWDIR%%/library/Director/Dashboard/Dashlet/BasketDashlet.php
 %%WWWDIR%%/library/Director/Dashboard/Dashlet/CheckCommandsDashlet.php
 %%WWWDIR%%/library/Director/Dashboard/Dashlet/ChoicesDashlet.php
 %%WWWDIR%%/library/Director/Dashboard/Dashlet/CommandObjectDashlet.php
@@ -301,6 +311,7 @@
 %%WWWDIR%%/library/Director/Dashboard/Dashlet/ZoneObjectDashlet.php
 %%WWWDIR%%/library/Director/Dashboard/DataDashboard.php
 %%WWWDIR%%/library/Director/Dashboard/DeploymentDashboard.php
+%%WWWDIR%%/library/Director/Dashboard/DirectorDashboard.php
 %%WWWDIR%%/library/Director/Dashboard/HostsDashboard.php
 %%WWWDIR%%/library/Director/Dashboard/InfrastructureDashboard.php
 %%WWWDIR%%/library/Director/Dashboard/NotificationsDashboard.php
@@ -332,11 +343,18 @@
 %%WWWDIR%%/library/Director/Db/Cache/CustomVariableCache.php
 %%WWWDIR%%/library/Director/Db/Cache/GroupMembershipCache.php
 %%WWWDIR%%/library/Director/Db/Cache/PrefetchCache.php
+%%WWWDIR%%/library/Director/Db/HostMembershipHousekeeping.php
 %%WWWDIR%%/library/Director/Db/Housekeeping.php
 %%WWWDIR%%/library/Director/Db/IcingaObjectFilterHelper.php
+%%WWWDIR%%/library/Director/Db/MembershipHousekeeping.php
 %%WWWDIR%%/library/Director/Db/Migration.php
 %%WWWDIR%%/library/Director/Db/Migrations.php
 %%WWWDIR%%/library/Director/Deployment/DeploymentInfo.php
+%%WWWDIR%%/library/Director/DirectorObject/Automation/Basket.php
+%%WWWDIR%%/library/Director/DirectorObject/Automation/BasketContent.php
+%%WWWDIR%%/library/Director/DirectorObject/Automation/BasketSnapshot.php
+%%WWWDIR%%/library/Director/DirectorObject/Automation/BasketSnapshotFieldResolver.php
+%%WWWDIR%%/library/Director/DirectorObject/Automation/ExportInterface.php
 %%WWWDIR%%/library/Director/DirectorObject/Automation/ImportExport.php
 %%WWWDIR%%/library/Director/Exception/DuplicateKeyException.php
 %%WWWDIR%%/library/Director/Exception/JsonEncodeException.php
@@ -384,6 +402,7 @@
 %%WWWDIR%%/library/Director/Objects/DirectorDatalistEntry.php
 %%WWWDIR%%/library/Director/Objects/DirectorDeploymentLog.php
 %%WWWDIR%%/library/Director/Objects/DirectorJob.php
+%%WWWDIR%%/library/Director/Objects/DynamicApplyMatches.php
 %%WWWDIR%%/library/Director/Objects/Extension/Arguments.php
 %%WWWDIR%%/library/Director/Objects/Extension/FlappingSupport.php
 %%WWWDIR%%/library/Director/Objects/Extension/PriorityColumn.php
@@ -437,10 +456,12 @@
 %%WWWDIR%%/library/Director/Objects/ImportSource.php
 %%WWWDIR%%/library/Director/Objects/ObjectApplyMatches.php
 %%WWWDIR%%/library/Director/Objects/ObjectWithArguments.php
+%%WWWDIR%%/library/Director/Objects/ServiceGroupMembershipResolver.php
 %%WWWDIR%%/library/Director/Objects/SyncProperty.php
 %%WWWDIR%%/library/Director/Objects/SyncRule.php
 %%WWWDIR%%/library/Director/Objects/SyncRun.php
 %%WWWDIR%%/library/Director/PlainObjectRenderer.php
+%%WWWDIR%%/library/Director/PropertyModifier/PropertyModifierArrayElementByPosition.php
 %%WWWDIR%%/library/Director/PropertyModifier/PropertyModifierArrayFilter.php
 %%WWWDIR%%/library/Director/PropertyModifier/PropertyModifierBitmask.php
 %%WWWDIR%%/library/Director/PropertyModifier/PropertyModifierCombine.php
@@ -539,6 +560,8 @@
 %%WWWDIR%%/library/Director/Web/SelfService.php
 %%WWWDIR%%/library/Director/Web/Table/ActivityLogTable.php
 %%WWWDIR%%/library/Director/Web/Table/ApplyRulesTable.php
+%%WWWDIR%%/library/Director/Web/Table/BasketSnapshotTable.php
+%%WWWDIR%%/library/Director/Web/Table/BasketTable.php
 %%WWWDIR%%/library/Director/Web/Table/ChoicesTable.php
 %%WWWDIR%%/library/Director/Web/Table/ConfigFileDiffTable.php
 %%WWWDIR%%/library/Director/Web/Table/CoreApiFieldsTable.php
@@ -603,6 +626,7 @@
 %%WWWDIR%%/library/Director/Web/Widget/AdditionalTableActions.php
 %%WWWDIR%%/library/Director/Web/Widget/DeployedConfigInfoHeader.php
 %%WWWDIR%%/library/Director/Web/Widget/DeploymentInfo.php
+%%WWWDIR%%/library/Director/Web/Widget/HealthCheckPluginOutput.php
 %%WWWDIR%%/library/Director/Web/Widget/HostServiceRedirector.php
 %%WWWDIR%%/library/Director/Web/Widget/IcingaObjectInspection.php
 %%WWWDIR%%/library/Director/Web/Widget/ImportSourceDetails.php
@@ -807,6 +831,13 @@
 %%WWWDIR%%/schema/mysql-migrations/upgrade_148.sql
 %%WWWDIR%%/schema/mysql-migrations/upgrade_149.sql
 %%WWWDIR%%/schema/mysql-migrations/upgrade_150.sql
+%%WWWDIR%%/schema/mysql-migrations/upgrade_151.sql
+%%WWWDIR%%/schema/mysql-migrations/upgrade_152.sql
+%%WWWDIR%%/schema/mysql-migrations/upgrade_153.sql
+%%WWWDIR%%/schema/mysql-migrations/upgrade_154.sql
+%%WWWDIR%%/schema/mysql-migrations/upgrade_155.sql
+%%WWWDIR%%/schema/mysql-migrations/upgrade_156.sql
+%%WWWDIR%%/schema/mysql-migrations/upgrade_157.sql
 %%WWWDIR%%/schema/mysql-migrations/upgrade_63.sql
 %%WWWDIR%%/schema/mysql-migrations/upgrade_64.sql
 %%WWWDIR%%/schema/mysql-migrations/upgrade_65.sql
@@ -898,6 +929,13 @@
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_148.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_149.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_150.sql
+%%WWWDIR%%/schema/pgsql-migrations/upgrade_151.sql
+%%WWWDIR%%/schema/pgsql-migrations/upgrade_152.sql
+%%WWWDIR%%/schema/pgsql-migrations/upgrade_153.sql
+%%WWWDIR%%/schema/pgsql-migrations/upgrade_154.sql
+%%WWWDIR%%/schema/pgsql-migrations/upgrade_155.sql
+%%WWWDIR%%/schema/pgsql-migrations/upgrade_156.sql
+%%WWWDIR%%/schema/pgsql-migrations/upgrade_157.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_77.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_78.sql
 %%WWWDIR%%/schema/pgsql-migrations/upgrade_79.sql
@@ -934,6 +972,7 @@
 %%WWWDIR%%/test/php/library/Director/Import/HostSyncTest.php
 %%WWWDIR%%/test/php/library/Director/Import/SyncUtilsTest.php
 %%WWWDIR%%/test/php/library/Director/Objects/HostApplyMatchesTest.php
+%%WWWDIR%%/test/php/library/Director/Objects/HostGroupMembershipResolverTest.php
 %%WWWDIR%%/test/php/library/Director/Objects/IcingaCommandTest.php
 %%WWWDIR%%/test/php/library/Director/Objects/IcingaHostTest.php
 %%WWWDIR%%/test/php/library/Director/Objects/IcingaNotificationTest.php
@@ -959,6 +998,7 @@
 %%WWWDIR%%/test/php/library/Director/Objects/rendered/service5.out
 %%WWWDIR%%/test/php/library/Director/Objects/rendered/service6.out
 %%WWWDIR%%/test/php/library/Director/Objects/rendered/service7.out
+%%WWWDIR%%/test/php/library/Director/PropertyModifier/PropertyModifierArrayElementByPositionTest.php
 %%WWWDIR%%/test/php/library/Director/PropertyModifier/PropertyModifierArrayFilterTest.php
 %%WWWDIR%%/test/php/library/Director/PropertyModifier/PropertyModifierCombineTest.php
 %%WWWDIR%%/test/php/library/Director/Resolver/TemplateTreeTest.php
