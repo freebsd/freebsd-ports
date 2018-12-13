@@ -1,11 +1,11 @@
---- sah_config.h.orig	2018-01-14 23:23:42 UTC
-+++ sah_config.h
-@@ -774,7 +774,7 @@
+--- configure.ac.orig	2018-12-13 10:20:53 UTC
++++ configure.ac
+@@ -658,7 +658,7 @@ AH_BOTTOM([
  #endif
  
  #if !defined(CUSTOM_STRING) && defined(COMPILER_STRING)
 -#define CUSTOM_STRING PACKAGE_STRING" "SVN_REV" "COMPILER_STRING
-+#define CUSTOM_STRING PACKAGE_STRING" " SVN_REV" " COMPILER_STRING
++#define CUSTOM_STRING PACKAGE_STRING " " SVN_REV " " COMPILER_STRING
  #endif
  
  #include "std_fixes.h"

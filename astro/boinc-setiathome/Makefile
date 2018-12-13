@@ -3,6 +3,7 @@
 
 PORTNAME=	boinc-setiathome
 PORTVERSION=	8.00
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	LOCAL/ler/setiathome \
 		http://www.lerctr.org/setiathome/
@@ -23,8 +24,9 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 RUN_DEPENDS=	boinc_client:net/boinc-client
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
 
-GNU_CONFIGURE=	yes
 USES=		autoreconf compiler gmake libtool pkgconfig tar:xz
+
+GNU_CONFIGURE=	yes
 
 CFLAGS+=	-O2 -I${LOCALBASE}/include/boinc -I${LOCALBASE}/include \
 		-L${LOCALBASE}/lib
