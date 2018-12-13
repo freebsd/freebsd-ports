@@ -13,8 +13,6 @@ COMMENT=	Secure RTP (SRTP) Reference Implementation
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_SSL=	openssl111
-
 PORTSCOUT=	limit:^1\.
 
 USE_GITHUB=	yes
