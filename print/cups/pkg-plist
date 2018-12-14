@@ -49,14 +49,8 @@ include/cups/transcode.h
 include/cups/versioning.h
 lib/libcups.so
 lib/libcups.so.2
-lib/libcupscgi.so
-lib/libcupscgi.so.1
 lib/libcupsimage.so
 lib/libcupsimage.so.2
-lib/libcupsmime.so
-lib/libcupsmime.so.1
-lib/libcupsppdc.so
-lib/libcupsppdc.so.1
 libexec/cups/backend/http
 %%GNUTLS%%libexec/cups/backend/https
 libexec/cups/backend/ipp
