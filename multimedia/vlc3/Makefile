@@ -3,7 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	3.0.4
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -56,8 +56,9 @@ CONFIGURE_ARGS=	--enable-avcodec --enable-avformat --enable-dvbpsi \
 		--disable-tiger --disable-tremor --disable-udev \
 		--disable-update-check --disable-vsxu \
 		--disable-wasapi --disable-x26410b \
-		--with-kde-solid=${PREFIX}/share/apps/solid/actions \
-		ac_cv_search_pthread_rwlock_init=-pthread
+		--with-kde-solid=${PREFIX}/share/solid/actions \
+		ac_cv_search_pthread_rwlock_init=-pthread \
+		BUILDCC="${CC}"
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
 .endif
