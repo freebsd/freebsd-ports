@@ -12,7 +12,7 @@ COMMENT=	Particle physics package with classes for data analysis, histogramming
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool
+USES=		compiler:c++11-lang gmake libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
