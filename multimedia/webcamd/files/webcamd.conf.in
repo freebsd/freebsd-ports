@@ -59,11 +59,7 @@ notify 100 {
 	match "type"		"ATTACH";
 
 	match "vendor"		"0x046d";
-	match "product"		"0xc216";
-
-	match "intclass"	"0x03";
-	match "intsubclass"	"0x00";
-	match "intprotocol"	"0x00";
+	match "product"		"0xc216|0xc219";
 
 	action "%%PREFIX%%/etc/rc.d/webcamd start $cdev $interface";
 };
