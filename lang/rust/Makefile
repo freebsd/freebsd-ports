@@ -103,7 +103,7 @@ X_PY_ENV=	HOME="${WRKDIR}" \
 		OPENSSL_DIR="${OPENSSLBASE}"
 X_PY_CMD=	${PYTHON_CMD} ${WRKSRC}/x.py
 
-CRATES_PATCHED_BY_FBSD10_FIX=	src/vendor/libssh2-sys \
+CRATES_PATCHED_BY_FBSD10_FIX?=	src/vendor/libssh2-sys \
 				src/vendor/lzma-sys
 
 pre-fetch:
@@ -194,12 +194,14 @@ CCACHE_VALUE=	"${CCACHE_WRAPPER_PATH:C,/libexec/ccache$,,}/bin/ccache"
 CCACHE_VALUE=	false
 .endif
 
+.if !target(pre-configure)
 pre-configure:
 	@for file in \
 		${WRKSRC}/src/vendor/backtrace-sys/src/libbacktrace/configure \
 		${WRKSRC}/src/vendor/backtrace-sys/src/libbacktrace/config/libtool.m4; do \
 		mv "$$file" "$$file.dont-fix"; \
 	done
+.endif
 
 do-configure:
 	${SED} -E \
@@ -230,12 +232,14 @@ do-configure:
 		fi; \
 	done
 
+.if !target(post-configure)
 post-configure:
 	@for file in \
 		${WRKSRC}/src/vendor/backtrace-sys/src/libbacktrace/configure \
 		${WRKSRC}/src/vendor/backtrace-sys/src/libbacktrace/config/libtool.m4; do \
 		mv "$$file.dont-fix" "$$file"; \
 	done
+.endif
 
 post-configure-DOCS-on:
 	${REINPLACE_CMD} -e 's,%DOCS%,true,' ${WRKSRC}/config.toml
