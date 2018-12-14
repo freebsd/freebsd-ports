@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	mod_fastcgi
-PORTVERSION=	2.4.7
-PORTREVISION=	1
+PORTVERSION=	2.4.7.1
 CATEGORIES=	www
-MASTER_SITES=	http://www.fastcgi.com/dist/ \
-		LOCAL/ohauer
-DISTNAME=	mod_fastcgi-SNAP-0910052141
 DIST_SUBDIR=	apache2
 
 MAINTAINER=	apache@FreeBSD.org
-COMMENT=	Apache 2.2 fast-cgi module
+COMMENT=	Apache 2.4 fast-cgi module
 
-USES=		apache:2.2+
+USES=		apache:2.4+
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	FastCGI-Archives
+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SRC_FILE=	*.c
