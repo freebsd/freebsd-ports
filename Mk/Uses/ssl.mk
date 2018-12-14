@@ -98,12 +98,12 @@ IGNORE=	not compatible DEFAULT_VERSIONS+=ssl=${SSL_DEFAULT}
 .  endif
 
 OPENSSLDIR?=		${OPENSSLBASE}/openssl
-.if defined(_SSL_BUILD_DEP)
+.  if defined(_SSL_BUILD_DEP)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libcrypto.so.${OPENSSL_SHLIBVER}:${OPENSSL_PORT}
-.endif
-.if defined(_SSL_RUN_DEP)
+.  endif
+.  if defined(_SSL_RUN_DEP)
 RUN_DEPENDS+=		${LOCALBASE}/lib/libcrypto.so.${OPENSSL_SHLIBVER}:${OPENSSL_PORT}
-.endif
+.  endif
 OPENSSLRPATH=		${LOCALBASE}/lib
 
 .endif
