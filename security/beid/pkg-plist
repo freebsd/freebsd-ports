@@ -18,6 +18,7 @@ lib/libbeidpkcs11.so.0.0.0
 lib/libeidviewer.so
 lib/libeidviewer.so.0
 lib/libeidviewer.so.0.1.0
+lib/mozilla/pkcs11-modules/beidp11kit.json
 lib/mozilla/pkcs11-modules/beidpkcs11.json
 lib/pkcs11/beidpkcs11.so
 lib/firefox/browser/extensions/belgiumeid@eid.belgium.be.xpi
