@@ -125,10 +125,6 @@ share/icons/hicolor/32x32/apps/vlc.png
 share/icons/hicolor/32x32/apps/vlc.xpm
 share/icons/hicolor/48x48/apps/vlc-xmas.png
 share/icons/hicolor/48x48/apps/vlc.png
-share/apps/solid/actions/vlc-openbd.desktop
-share/apps/solid/actions/vlc-opencda.desktop
-share/apps/solid/actions/vlc-opendvd.desktop
-share/apps/solid/actions/vlc-openvcd.desktop
 %%NLS%%share/locale/ach/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/af/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/am/LC_MESSAGES/vlc.mo
@@ -228,3 +224,7 @@ share/apps/solid/actions/vlc-openvcd.desktop
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/vlc.mo
 %%NLS%%share/locale/zu/LC_MESSAGES/vlc.mo
 share/metainfo/vlc.appdata.xml
+share/solid/actions/vlc-openbd.desktop
+share/solid/actions/vlc-opencda.desktop
+share/solid/actions/vlc-opendvd.desktop
+share/solid/actions/vlc-openvcd.desktop
