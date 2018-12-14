@@ -105,11 +105,10 @@ include/marble/MarbleMap.h
 include/marble/MarbleMath.h
 include/marble/MarbleModel.h
 include/marble/MarbleNavigator.h
+include/marble/MarbleWebView.h
 include/marble/MarbleWidget.h
 include/marble/MarbleWidgetInputHandler.h
 include/marble/MarbleWidgetPopupMenu.h
-include/marble/NullMarbleWebView.h
-include/marble/NullTinyWebBrowser.h
 include/marble/OsmcSymbol.h
 include/marble/ParseRunnerPlugin.h
 include/marble/ParsingRunner.h
@@ -154,6 +153,7 @@ include/marble/TileCreator.h
 include/marble/TileCreatorDialog.h
 include/marble/TileId.h
 include/marble/TileLevelRangeWidget.h
+include/marble/TinyWebBrowser.h
 include/marble/TourControlEditWidget.h
 include/marble/TourItemDelegate.h
 include/marble/TourPlayback.h
@@ -216,10 +216,12 @@ lib/marble/plugins/libNominatimReverseGeocodingPlugin.so
 lib/marble/plugins/libNominatimSearchPlugin.so
 lib/marble/plugins/libNotesPlugin.so
 lib/marble/plugins/libOSRMPlugin.so
+lib/marble/plugins/libOpenDesktopPlugin.so
 lib/marble/plugins/libOpenLocationCodeSearchPlugin.so
 lib/marble/plugins/libOpenRouteServicePlugin.so
 lib/marble/plugins/libOsmPlugin.so
 lib/marble/plugins/libOverviewMap.so
+lib/marble/plugins/libPhoto.so
 lib/marble/plugins/libPn2Plugin.so
 lib/marble/plugins/libPntPlugin.so
 lib/marble/plugins/libPositionMarker.so
@@ -232,6 +234,8 @@ lib/marble/plugins/libSatellitesPlugin.so
 lib/marble/plugins/libSpeedometer.so
 lib/marble/plugins/libStarsPlugin.so
 lib/marble/plugins/libSunPlugin.so
+lib/marble/plugins/libWeather.so
+lib/marble/plugins/libWikipedia.so
 lib/marble/plugins/libYoursPlugin.so
 lib/plugins/designer/libLatLonEditPlugin.so
 lib/plugins/designer/libMarbleNavigatorPlugin.so
