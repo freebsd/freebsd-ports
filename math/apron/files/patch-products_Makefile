@@ -1,0 +1,14 @@
+--- products/Makefile.orig	1970-01-01 00:00:00 UTC
++++ products/Makefile
+@@ -120,9 +120,9 @@ libap_pkgrid_debug.a: ap_pkgrid_debug.o
+ 	$(AR) rcs $@ $^
+ 	$(RANLIB) $@
+ libap_pkgrid.so: ap_pkgrid.o
+-	$(CXX_APRON_DYLIB) $(CXXFLAGS) -o $@ $^ -L../newpolka -lpolkaMPQ $(LDFLAGS) $(LIBS)
++	$(CXX_APRON_DYLIB) -Wl,-soname,$@ $(CXXFLAGS) -o $@ $^ -L../newpolka -lpolkaMPQ $(LDFLAGS) $(LIBS)
+ libap_pkgrid_debug.so: ap_pkgrid_debug.o
+-	$(CXX_APRON_DYLIB) $(CXXFLAGS_DEBUG) -o $@ $^ -L../newpolka -lpolkaMPQ_debug $(LDFLAGS) $(LIBS_DEBUG)
++	$(CXX_APRON_DYLIB) -Wl,-soname,$@ $(CXXFLAGS_DEBUG) -o $@ $^ -L../newpolka -lpolkaMPQ_debug $(LDFLAGS) $(LIBS_DEBUG)
+ 
+ #---------------------------------------
+ # C rules

@@ -1,0 +1,17 @@
+--- apron/Makefile.orig	2018-12-14 19:17:40 UTC
++++ apron/Makefile
+@@ -141,12 +141,12 @@ libapron_debug.a: $(O_FILES_DEBUG) ../it
+ 	$(RANLIB) $@
+ 
+ libapron.so: $(O_FILES) ../itv/libitv.a
+-	$(CC_APRON_DYLIB) $(CFLAGS) -o $@ $(O_FILES) $(patsubst	\
++	$(CC_APRON_DYLIB) -Wl,-soname,$@ $(CFLAGS) -o $@ $(O_FILES) $(patsubst	\
+ 		%,../itv/%,$(filter %.o, $(shell $(AR) t	\
+ 		../itv/libitv.a))) $(LDFLAGS)
+ 
+ libapron_debug.so: $(O_FILES_DEBUG) ../itv/libitv_debug.a
+-	$(CC_APRON_DYLIB) $(CFLAGS_DEBUG) -o $@ $(O_FILES_DEBUG)	\
++	$(CC_APRON_DYLIB) -Wl,-soname,$@ $(CFLAGS_DEBUG) -o $@ $(O_FILES_DEBUG)	\
+ 		$(patsubst %,../itv/%,$(filter %.o, $(shell $(AR) t	\
+ 		../itv/libitv_debug.a))) $(LDFLAGS)
+ 
