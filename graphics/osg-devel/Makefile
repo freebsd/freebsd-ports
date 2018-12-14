@@ -21,9 +21,9 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-CONFLICTS=	osg-[0-9]*
+CONFLICTS=	osg
 
-USES=		alias cmake:outsource jpeg pkgconfig zip
+USES=		alias cmake:outsource jpeg gl pkgconfig zip
 USE_GL=		gl glu
 USE_XORG=	x11
 USE_LDCONFIG=	yes
