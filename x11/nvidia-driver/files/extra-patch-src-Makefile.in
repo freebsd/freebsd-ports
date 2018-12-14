@@ -1,6 +1,6 @@
---- src/Makefile.orig	2014-04-04 23:24:59.000000000 +0200
-+++ src/Makefile	2014-05-06 14:31:07.000000000 +0200
-@@ -24,6 +24,15 @@
+--- src/%%NVSRC%%/Makefile.orig	2017-09-14 20:46:30 UTC
++++ src/%%NVSRC%%/Makefile
+@@ -30,6 +30,15 @@ NOOBJ=		true
  stdarg.h:
  	@ln -s machine/stdarg.h stdarg.h
  

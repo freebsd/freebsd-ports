@@ -1,6 +1,6 @@
---- src/nv-freebsd.h.orig	2014-02-13 05:07:44.000000000 +0100
-+++ src/nv-freebsd.h	2014-05-05 18:38:59.000000000 +0200
-@@ -143,6 +143,11 @@
+--- src/%%NVSRC%%/nv-freebsd.h.orig	2017-09-14 20:46:30 UTC
++++ src/%%NVSRC%%/nv-freebsd.h
+@@ -157,6 +157,11 @@ MALLOC_DECLARE(M_NVIDIA);
  #define NV_SUPPORT_ACPI_PM
  
  /*
