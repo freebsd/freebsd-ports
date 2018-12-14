@@ -19,11 +19,18 @@ rcvar=cups_browsed_enable
 
 load_rc_config ${name}
 
- : ${cups_browsed_enable:=NO}
+: ${cups_browsed_enable:=NO}
+: ${cups_browsed_flags:=}
 
-command=/usr/sbin/daemon
 pidfile=/var/run/cups-browsed.pid
-command_args="-p ${pidfile} %%PREFIX%%/sbin/cups-browsed"
-procname="%%PREFIX%%/sbin/cups-browsed"
+command="%%PREFIX%%/sbin/cups-browsed"
+
+start_cmd="${name}_start"
+
+cups_browsed_start()
+{
+	echo -n "Starting ${name}."
+	/usr/sbin/daemon -p ${pidfile} ${command} ${cups_browsed_flags}
+}
 
 run_rc_command "$1"
