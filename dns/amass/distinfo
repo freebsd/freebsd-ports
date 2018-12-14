@@ -1,12 +1,14 @@
-TIMESTAMP = 1544256110
-SHA256 (OWASP-Amass-2.8.5_GH0.tar.gz) = db1b2e4f4bf7768ca9a7822b0b657f96ba6739eb166b28eea0f9deb51f90d36e
-SIZE (OWASP-Amass-2.8.5_GH0.tar.gz) = 7941830
+TIMESTAMP = 1544747959
+SHA256 (OWASP-Amass-2.8.6_GH0.tar.gz) = bf1894d29682ba9927de03436ab2bcad85573922f43045f613094dfc93dfb98d
+SIZE (OWASP-Amass-2.8.6_GH0.tar.gz) = 7946050
 SHA256 (andybalholm-cascadia-v1.0.0_GH0.tar.gz) = 00ab6f915e958c9e0509836cd67082a802513459c12c4aa6e7a28ef37743ce52
 SIZE (andybalholm-cascadia-v1.0.0_GH0.tar.gz) = 13232
 SHA256 (asaskevich-EventBus-d46933a_GH0.tar.gz) = f1c2764fb95aa403c1de1445098c1a417985866983be8066316a9ae97a5bb5b7
 SIZE (asaskevich-EventBus-d46933a_GH0.tar.gz) = 7290
 SHA256 (fatih-color-v1.7.0_GH0.tar.gz) = 4650d7aa3feed266fc85d91dc34ca9cffdf7ee03ea29bf2cbf84bbecc75fb755
 SIZE (fatih-color-v1.7.0_GH0.tar.gz) = 816449
+SHA256 (go-ini-ini-f55231c_GH0.tar.gz) = f2a669c1b057641ab195c0468b751d29bcd1dfc4df5151247b082228a73a026b
+SIZE (go-ini-ini-f55231c_GH0.tar.gz) = 34809
 SHA256 (irfansharif-cfilter-d07d951_GH0.tar.gz) = 11450dc129507f8f3122aa7bc1cda38c8d0cddfbfe79b52f2f1e50cbaf04349a
 SIZE (irfansharif-cfilter-d07d951_GH0.tar.gz) = 6081
 SHA256 (johnnadratowski-golang-neo4j-bolt-driver-v0.1_GH0.tar.gz) = 9de7ed31b0c4ccd6bf5e8df6aa0fb9e48ae97c4e0d1c78d143f635bb32055a96
