@@ -1232,6 +1232,7 @@
     SUBDIR += ignition-plugin
     SUBDIR += ignition-tools
     SUBDIR += ignition-transport
+    SUBDIR += ikos
     SUBDIR += imake
     SUBDIR += inastemp
     SUBDIR += include-what-you-use
