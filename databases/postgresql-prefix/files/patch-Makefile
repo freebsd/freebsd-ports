@@ -1,0 +1,10 @@
+--- Makefile.orig	2018-09-26 20:01:05 UTC
++++ Makefile
+@@ -2,7 +2,6 @@ PKGNAME = prefix
+ EXTENSION = prefix
+ MODULES = prefix
+ DATA = prefix--1.2.0.sql prefix--unpackaged--1.2.0.sql prefix--1.1--1.2.0.sql
+-DOCS = $(wildcard *.md)
+ # "explain (costs off)" needs 9.0+ (and 9.0 needs expected/explain_1.out)
+ EXPLAINSQL = $(shell $(PG_CONFIG) --version | grep -qE " 8\." || echo explain)
+ REGRESS = create_extension prefix falcon $(EXPLAINSQL) queries
