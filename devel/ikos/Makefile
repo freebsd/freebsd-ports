@@ -3,6 +3,7 @@
 PORTNAME=	ikos
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,10 +13,13 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.pdf
 
 BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
-		libgmp.so:math/gmp
+LIB_DEPENDS=	libapron.so:math/apron \
+		libboost_system.so:devel/boost-libs \
+		libmpfr.so:math/mpfr \
+		libgmp.so:math/gmp \
+		libppl.so:devel/ppl
 
-USES=		cmake:outsource python sqlite
+USES=		cmake:outsource ncurses python sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	NASA-SW-VnV
 
