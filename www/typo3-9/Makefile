@@ -17,7 +17,7 @@ IGNORE_WITH_PHP=56 71
 
 USES=		cpe php:web,flavors shebangfix
 USE_PHP=	ctype dom fileinfo filter hash intl json openssl pcre session simplexml \
-		spl soap tokenizer xml zip
+		spl tokenizer xml zip
 
 WRKSRC=		${WRKDIR}/${TYPO3SRC}
 NO_BUILD=	yes
@@ -27,7 +27,7 @@ PORTSCOUT=	limit:^${PORT_V_MAJOR}\.${PORT_V_MINOR}\.
 
 PORT_V_MAJOR=	9
 PORT_V_MINOR=	5
-PORT_V_PATCH=	1
+PORT_V_PATCH=	2
 
 TYPO3WWW=	www
 TYPO3SRC=	${PORTNAME}_src-${PORTVERSION}
