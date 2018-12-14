@@ -3,7 +3,7 @@
 PORTNAME=	modsecurity
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	https://github.com/SpiderLabs/ModSecurity/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	3
@@ -24,9 +24,11 @@ USE_GNOME=	libxml2
 # GCC because of https://github.com/SpiderLabs/ModSecurity/issues/1411
 USE_GCC=	yes
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-lmdb --without-ssdeep --without-lua
+
+PLIST_SUB=	SHLIBVER=${DISTVERSION}
 
 ETCDIR=		${PREFIX}/etc/modsecurity
 
