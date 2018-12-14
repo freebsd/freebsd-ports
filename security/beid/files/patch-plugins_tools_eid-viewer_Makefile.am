@@ -4,7 +4,7 @@
  	certs/belgiumrca4.pem
  
  install-data-hook:
--	$(SSL_PREFIX)/bin/c_rehash $(DESTDIR)/$(trustdir)
+-	$(SSL_PREFIX)/bin/openssl rehash $(DESTDIR)/$(trustdir)
 +	(cd $(DESTDIR)$(trustdir) && for i in *.pem; do \
 +	ln -sfh $$i $$($(SSL_PREFIX)/bin/openssl x509 -hash -noout -in $$i).0; \
 +	done)
