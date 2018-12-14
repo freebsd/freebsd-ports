@@ -2,11 +2,11 @@ bin/drumkv1_jack
 lib/libdrumkv1.so
 lib/libdrumkv1.so.0
 lib/libdrumkv1.so.0.9
-lib/libdrumkv1.so.0.9.3
+lib/libdrumkv1.so.0.9.4
 lib/libdrumkv1_ui.so
 lib/libdrumkv1_ui.so.0
 lib/libdrumkv1_ui.so.0.9
-lib/libdrumkv1_ui.so.0.9.3
+lib/libdrumkv1_ui.so.0.9.4
 lib/lv2/drumkv1.lv2/drumkv1.so
 lib/lv2/drumkv1.lv2/drumkv1.ttl
 lib/lv2/drumkv1.lv2/drumkv1_ui.so
