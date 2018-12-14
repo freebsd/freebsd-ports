@@ -11,9 +11,10 @@ COMMENT=	PuppetDB CLI Tooling
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_SSL=	libressl openssl111
-BROKEN_SSL_REASON_libressl=	Needs an old version of OpenSSL (older than 1.1)
-BROKEN_SSL_REASON_openssl111=	Needs an older version of OpenSSL (older than 1.1)
+BROKEN_SSL=				libressl libressl-devel openssl111
+BROKEN_SSL_REASON_libressl=		Needs an old version of OpenSSL (older than 1.1)
+BROKEN_SSL_REASON_libressl-devel=	Needs an old version of OpenSSL (older than 1.1)
+BROKEN_SSL_REASON_openssl111=		Needs an older version of OpenSSL (older than 1.1)
 
 USES=		cargo perl5 ssl
 USE_GITHUB=	yes
@@ -94,11 +95,10 @@ CARGO_CRATES=	advapi32-sys-0.2.0 \
 		winapi-build-0.1.1 \
 		winreg-0.4.0
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${OSVERSION} >= 1200085
-BROKEN_SSL+=	base
-BROKEN_SSL_REASON_base=		Needs an older version of OpenSSL (older than 1.1)
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085 && ${SSL_DEFAULT} == base
+BROKEN=		Needs an older version of OpenSSL (older than 1.1)
 .endif
 
 PLIST_FILES=	bin/puppet-db \
@@ -119,4 +119,4 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/puppet-query
 	cd ${WRKSRC} && ./pod2man.sh ${STAGEDIR}${MANPREFIX}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
