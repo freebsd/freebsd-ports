@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flare
-PORTVERSION=	1.08
+PORTVERSION=	1.09.01
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 PKGNAMESUFFIX=	-game
@@ -15,10 +15,10 @@ LICENSE=	CC-BY-SA-3.0
 RUN_DEPENDS=	flare:games/flare-engine
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	clintbellanger
+GH_ACCOUNT=	flareteam
 GH_PROJECT=	${PORTNAME}${PKGNAMESUFFIX}
 
-USES=		cmake
+USES=		cmake gnome
 CMAKE_BUILD_TYPE=	#empty
 INSTALLS_ICONS=	yes
 NO_ARCH=	yes
