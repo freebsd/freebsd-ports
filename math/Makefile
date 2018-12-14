@@ -126,6 +126,7 @@
     SUBDIR += ann
     SUBDIR += antic
     SUBDIR += apc
+    SUBDIR += apron
     SUBDIR += arb
     SUBDIR += aribas
     SUBDIR += armadillo
