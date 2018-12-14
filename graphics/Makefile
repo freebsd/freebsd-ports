@@ -987,6 +987,7 @@
     SUBDIR += qt5-svg
     SUBDIR += qt5-wayland
     SUBDIR += qtawesome
+    SUBDIR += qtpbfimageplugin
     SUBDIR += quat
     SUBDIR += quat-gui
     SUBDIR += quesa

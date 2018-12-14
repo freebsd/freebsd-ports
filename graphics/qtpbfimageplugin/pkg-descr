@@ -1,0 +1,5 @@
+QtPBFImagePlugin is a Qt image plugin that enables applications capable of
+displaying raster MBTiles maps or raster XYZ online maps to also display PBF
+vector tiles without (almost) any application modifications.
+
+WWW: https://github.com/tumic0/QtPBFImagePlugin
