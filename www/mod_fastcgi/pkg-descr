@@ -4,4 +4,4 @@ FastCGI is a language independent, scalable, open extension to CGI that
 provides high performance without the limitations of server specific APIs.
 See the docs for more details.
 
-WWW: http://www.fastcgi.com/
+WWW: https://github.com/FastCGI-Archives/mod_fastcgi

@@ -1,6 +1,6 @@
---- fcgi_util.c.orig
+--- fcgi_util.c.orig	2017-03-29 21:11:44 UTC
 +++ fcgi_util.c
-@@ -268,13 +268,17 @@
+@@ -268,13 +268,17 @@ fcgi_util_check_access(pool *tp, 
      /* Get the user membership for the file's group.  If the
       * uid is a member, check the group bits. */
      {
@@ -23,7 +23,7 @@
                      if (mode & R_OK && !(statBuf->st_mode & S_IRGRP))
                          return "read not allowed by group";
                      if (mode & W_OK && !(statBuf->st_mode & S_IWGRP))
-@@ -445,8 +449,9 @@
+@@ -445,8 +449,9 @@ fcgi_util_fs_set_uid_n_gid(pool *p, fcgi_server *s, ui
  {
  #ifndef WIN32
  
@@ -34,7 +34,7 @@
  
      if (fcgi_wrapper == NULL)
          return NULL;
-@@ -467,14 +472,14 @@
+@@ -467,14 +472,14 @@ fcgi_util_fs_set_uid_n_gid(pool *p, fcgi_server *s, ui
      s->username = s->user;
  
      s->gid = gid;
