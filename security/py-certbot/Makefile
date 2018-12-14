@@ -3,7 +3,7 @@
 
 PORTNAME=	certbot
 PORTVERSION=	${ACME_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
@@ -38,9 +38,8 @@ NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|/etc/|${LOCALBASE}/etc/|' \
-		-e 's|/var/lib|/var/db|' \
-		${WRKSRC}/${PORTNAME}/constants.py
+		s,%%LOCALBASE%%,${LOCALBASE}, \
+		${WRKSRC}/${PORTNAME}/compat.py
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
