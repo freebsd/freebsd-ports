@@ -4,19 +4,17 @@
 PORTNAME=	stixfonts
 PORTVERSION=	2.0.0
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/stipub/stixfonts/archive/
-DISTNAME=	${PORTVERSION}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	OpenType Unicode fonts for Scientific, Technical, and Math texts
 
 LICENSE=	OFL11
 
-USES=		fonts zip
+USES=		fonts
 USE_XORG=	x11
+USE_GITHUB=	yes
+GH_ACCOUNT=	stipub
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_ARCH=	yes
 NO_BUILD=	yes
 
