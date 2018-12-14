@@ -1,0 +1,13 @@
+IKOS (Inference Kernel for Open Static Analyzers) is a static analyzer for C/C++
+based on the theory of Abstract Interpretation.
+
+IKOS provides a generic and efficient implementation of state-of-the-art
+Abstract Interpretation data structures and algorithms, such as control-flow
+graphs, fixpoint iterators, numerical abstract domains, etc. IKOS is independent
+of a particular programming language.
+
+IKOS also provides a C and C++ static analyzer based on LLVM. It implements
+scalable analyses for detecting and proving the absence of runtime errors in C
+and C++ programs.
+
+WWW: https://github.com/NASA-SW-VnV/ikos
