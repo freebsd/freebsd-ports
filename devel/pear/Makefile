@@ -5,7 +5,8 @@ PORTNAME=	pear
 PORTVERSION=	1.10.6
 PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://mirror.bsdproject.de/
+MASTER_SITES=	http://mirror.bsdproject.de/ \
+	LOCAL/joneum
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
