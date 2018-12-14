@@ -317,9 +317,6 @@ share/kxmlgui5/kig/kigui.rc
 share/locale/ar/LC_MESSAGES/kfile_drgeo.mo
 share/locale/ar/LC_MESSAGES/kfile_kig.mo
 share/locale/ar/LC_MESSAGES/kig.mo
-share/locale/ast/LC_MESSAGES/kfile_drgeo.mo
-share/locale/ast/LC_MESSAGES/kfile_kig.mo
-share/locale/ast/LC_MESSAGES/kig.mo
 share/locale/bg/LC_MESSAGES/kfile_drgeo.mo
 share/locale/bg/LC_MESSAGES/kfile_kig.mo
 share/locale/bg/LC_MESSAGES/kig.mo

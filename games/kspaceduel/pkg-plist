@@ -31,7 +31,6 @@ share/icons/hicolor/64x64/apps/kspaceduel.png
 %%DATADIR%%/sprites/playerinfo/win.png
 share/kxmlgui5/kspaceduel/kspaceduelui.rc
 share/locale/ar/LC_MESSAGES/kspaceduel.mo
-share/locale/ast/LC_MESSAGES/kspaceduel.mo
 share/locale/bg/LC_MESSAGES/kspaceduel.mo
 share/locale/bs/LC_MESSAGES/kspaceduel.mo
 share/locale/ca/LC_MESSAGES/kspaceduel.mo

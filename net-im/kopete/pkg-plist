@@ -611,8 +611,6 @@ share/kxmlgui5/kopete_otr/otrchatui.rc
 share/kxmlgui5/kopete_otr/otrui.rc
 share/locale/ar/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/ar/LC_MESSAGES/kopete.mo
-share/locale/ast/LC_MESSAGES/kio_jabberdisco.mo
-share/locale/ast/LC_MESSAGES/kopete.mo
 share/locale/bg/LC_MESSAGES/kio_jabberdisco.mo
 share/locale/bg/LC_MESSAGES/kopete.mo
 share/locale/bs/LC_MESSAGES/kio_jabberdisco.mo

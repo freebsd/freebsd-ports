@@ -10,8 +10,6 @@ share/akonadi/accountwizard/tine20/tine20wizard.ui
 share/applications/org.kde.accountwizard.desktop
 share/locale/ar/LC_MESSAGES/accountwizard.mo
 share/locale/ar/LC_MESSAGES/accountwizard_tine20.mo
-share/locale/ast/LC_MESSAGES/accountwizard.mo
-share/locale/ast/LC_MESSAGES/accountwizard_tine20.mo
 share/locale/bs/LC_MESSAGES/accountwizard.mo
 share/locale/bs/LC_MESSAGES/accountwizard_tine20.mo
 share/locale/ca/LC_MESSAGES/accountwizard.mo

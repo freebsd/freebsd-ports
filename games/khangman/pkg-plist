@@ -88,7 +88,6 @@ share/icons/hicolor/scalable/apps/khangman.svgz
 %%DATADIR%%/themes/standardthemes.xml
 %%DATADIR%%/tr.txt
 share/locale/ar/LC_MESSAGES/khangman.mo
-share/locale/ast/LC_MESSAGES/khangman.mo
 share/locale/bg/LC_MESSAGES/khangman.mo
 share/locale/bs/LC_MESSAGES/khangman.mo
 share/locale/ca/LC_MESSAGES/khangman.mo

@@ -1,3 +1,4 @@
+etc/xdg/libkdegames.categories
 include/KF5/KF5KDEGames/KDE/KExtHighscore
 include/KF5/KF5KDEGames/KDE/KGameClock
 include/KF5/KF5KDEGames/KDE/KGamePopupItem
@@ -127,7 +128,6 @@ share/carddecks/svg-xskat-german/german.svgz
 share/carddecks/svg-xskat-german/index.desktop
 share/kconf_update/kgthemeprovider-migration.upd
 share/locale/ar/LC_MESSAGES/libkdegames5.mo
-share/locale/ast/LC_MESSAGES/libkdegames5.mo
 share/locale/bg/LC_MESSAGES/libkdegames5.mo
 share/locale/bs/LC_MESSAGES/libkdegames5.mo
 share/locale/ca/LC_MESSAGES/libkdegames5.mo

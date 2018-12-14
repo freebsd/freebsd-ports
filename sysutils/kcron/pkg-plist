@@ -1,7 +1,7 @@
+etc/xdg/kcron.categories
 %%QT_PLUGINDIR%%/kcm_cron.so
 share/kservices5/kcm_cron.desktop
 share/locale/ar/LC_MESSAGES/kcron.mo
-share/locale/ast/LC_MESSAGES/kcron.mo
 share/locale/bg/LC_MESSAGES/kcron.mo
 share/locale/bs/LC_MESSAGES/kcron.mo
 share/locale/ca/LC_MESSAGES/kcron.mo

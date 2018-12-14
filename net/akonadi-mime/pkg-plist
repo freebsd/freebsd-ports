@@ -41,7 +41,6 @@ lib/libKF5AkonadiMime.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 share/akonadi/plugins/serializer/akonadi_serializer_mail.desktop
 share/config.kcfg/specialmailcollections.kcfg
 share/locale/ar/LC_MESSAGES/libakonadi-kmime5.mo
-share/locale/ast/LC_MESSAGES/libakonadi-kmime5.mo
 share/locale/bs/LC_MESSAGES/libakonadi-kmime5.mo
 share/locale/ca/LC_MESSAGES/libakonadi-kmime5.mo
 share/locale/ca@valencia/LC_MESSAGES/libakonadi-kmime5.mo

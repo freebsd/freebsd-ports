@@ -1,4 +1,5 @@
 bin/kshisen
+etc/xdg/kshisen.categories
 share/applications/org.kde.kshisen.desktop
 share/config.kcfg/kshisen.kcfg
 share/icons/hicolor/128x128/apps/kshisen.png
@@ -9,7 +10,6 @@ share/icons/hicolor/48x48/apps/kshisen.png
 share/icons/hicolor/64x64/apps/kshisen.png
 share/kxmlgui5/kshisen/kshisenui.rc
 share/locale/ar/LC_MESSAGES/kshisen.mo
-share/locale/ast/LC_MESSAGES/kshisen.mo
 share/locale/bg/LC_MESSAGES/kshisen.mo
 share/locale/bs/LC_MESSAGES/kshisen.mo
 share/locale/ca/LC_MESSAGES/kshisen.mo

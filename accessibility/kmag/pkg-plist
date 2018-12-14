@@ -20,7 +20,6 @@ share/icons/hicolor/32x32/apps/kmag.png
 %%DATADIR%%/icons/hicolor/16x16/actions/window.png
 share/kxmlgui5/kmag/kmagui.rc
 share/locale/ar/LC_MESSAGES/kmag.mo
-share/locale/ast/LC_MESSAGES/kmag.mo
 share/locale/bg/LC_MESSAGES/kmag.mo
 share/locale/bs/LC_MESSAGES/kmag.mo
 share/locale/ca/LC_MESSAGES/kmag.mo

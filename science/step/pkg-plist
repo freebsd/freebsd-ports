@@ -34,8 +34,6 @@ share/icons/hicolor/48x48/apps/step.png
 share/icons/hicolor/64x64/apps/step.png
 share/kxmlgui5/step/stepui.rc
 share/locale/ar/LC_MESSAGES/step.mo
-share/locale/ast/LC_MESSAGES/step.mo
-share/locale/ast/LC_MESSAGES/step_qt.qm
 share/locale/bg/LC_MESSAGES/step.mo
 share/locale/bg/LC_MESSAGES/step_qt.qm
 share/locale/bs/LC_MESSAGES/step.mo

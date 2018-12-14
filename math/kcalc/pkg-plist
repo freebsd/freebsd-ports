@@ -6,7 +6,6 @@ share/config.kcfg/kcalc.kcfg
 share/kconf_update/kcalcrc.upd
 share/kxmlgui5/kcalc/kcalcui.rc
 share/locale/ar/LC_MESSAGES/kcalc.mo
-share/locale/ast/LC_MESSAGES/kcalc.mo
 share/locale/bg/LC_MESSAGES/kcalc.mo
 share/locale/bs/LC_MESSAGES/kcalc.mo
 share/locale/ca/LC_MESSAGES/kcalc.mo

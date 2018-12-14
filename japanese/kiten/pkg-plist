@@ -13,7 +13,6 @@ include/libkiten/entry.h
 include/libkiten/entrylist.h
 include/libkiten/historyptrlist.h
 include/libkiten/kromajiedit.h
-include/libkiten/libkitenexport.h
 lib/libkiten.so
 lib/libkiten.so.5
 lib/libkiten.so.5.0.0
@@ -38,7 +37,6 @@ share/kxmlgui5/kiten/kitenui.rc
 share/kxmlgui5/kitenkanjibrowser/kanjibrowserui.rc
 share/kxmlgui5/kitenradselect/radselectui.rc
 share/locale/ar/LC_MESSAGES/kiten.mo
-share/locale/ast/LC_MESSAGES/kiten.mo
 share/locale/bg/LC_MESSAGES/kiten.mo
 share/locale/bs/LC_MESSAGES/kiten.mo
 share/locale/ca/LC_MESSAGES/kiten.mo

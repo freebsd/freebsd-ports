@@ -113,7 +113,6 @@ share/icons/hicolor/scalable/apps/kolourpaint.svgz
 %%DATADIR%%/pics/tool_spraycan_9x9.png
 share/kxmlgui5/kolourpaint/kolourpaintui.rc
 share/locale/ar/LC_MESSAGES/kolourpaint.mo
-share/locale/ast/LC_MESSAGES/kolourpaint.mo
 share/locale/bg/LC_MESSAGES/kolourpaint.mo
 share/locale/bs/LC_MESSAGES/kolourpaint.mo
 share/locale/ca/LC_MESSAGES/kolourpaint.mo

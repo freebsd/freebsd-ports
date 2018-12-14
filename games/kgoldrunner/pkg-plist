@@ -1,4 +1,5 @@
 bin/kgoldrunner
+etc/xdg/kgoldrunner.categories
 etc/xdg/kgoldrunner.knsrc
 share/applications/org.kde.kgoldrunner.desktop
 share/icons/hicolor/128x128/apps/kgoldrunner.png
@@ -74,7 +75,6 @@ share/icons/hicolor/64x64/apps/kgoldrunner.png
 %%DATADIR%%/themes/nostalgia/set.svg
 share/kxmlgui5/kgoldrunner/kgoldrunnerui.rc
 share/locale/ar/LC_MESSAGES/kgoldrunner.mo
-share/locale/ast/LC_MESSAGES/kgoldrunner.mo
 share/locale/bg/LC_MESSAGES/kgoldrunner.mo
 share/locale/bs/LC_MESSAGES/kgoldrunner.mo
 share/locale/ca/LC_MESSAGES/kgoldrunner.mo

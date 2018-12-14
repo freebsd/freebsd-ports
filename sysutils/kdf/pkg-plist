@@ -1,5 +1,6 @@
 bin/kdf
 bin/kwikdisk
+etc/xdg/kdf.categories
 lib/libkdfprivate.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
 lib/libkdfprivate.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/libkcm_kdf.so
@@ -23,7 +24,6 @@ share/icons/hicolor/64x64/apps/kwikdisk.png
 share/kservices5/kcmdf.desktop
 share/kxmlgui5/kdf/kdfui.rc
 share/locale/ar/LC_MESSAGES/kdf.mo
-share/locale/ast/LC_MESSAGES/kdf.mo
 share/locale/bg/LC_MESSAGES/kdf.mo
 share/locale/bs/LC_MESSAGES/kdf.mo
 share/locale/ca/LC_MESSAGES/kdf.mo

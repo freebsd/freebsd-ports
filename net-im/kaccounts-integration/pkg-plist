@@ -23,7 +23,6 @@ lib/libkaccounts.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kaccounts/qmldir
 share/kservices5/kcm_kaccounts.desktop
 share/locale/ar/LC_MESSAGES/kaccounts-integration.mo
-share/locale/ast/LC_MESSAGES/kaccounts-integration.mo
 share/locale/bs/LC_MESSAGES/kaccounts-integration.mo
 share/locale/ca/LC_MESSAGES/kaccounts-integration.mo
 share/locale/ca@valencia/LC_MESSAGES/kaccounts-integration.mo

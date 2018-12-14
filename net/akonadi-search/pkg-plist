@@ -52,7 +52,6 @@ share/akonadi/agents/akonadiindexingagent.desktop
 share/kservices5/plasma-krunner-pimcontacts.desktop
 share/kservices5/plasma-krunner-pimcontacts_config.desktop
 share/locale/ar/LC_MESSAGES/akonadi_search.mo
-share/locale/ast/LC_MESSAGES/akonadi_search.mo
 share/locale/ca/LC_MESSAGES/akonadi_search.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_search.mo
 share/locale/cs/LC_MESSAGES/akonadi_search.mo

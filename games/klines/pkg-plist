@@ -23,7 +23,6 @@ share/icons/hicolor/64x64/apps/klines.png
 %%DATADIR%%/themes/pool.png
 %%DATADIR%%/themes/pool.svgz
 share/locale/ar/LC_MESSAGES/klines.mo
-share/locale/ast/LC_MESSAGES/klines.mo
 share/locale/bg/LC_MESSAGES/klines.mo
 share/locale/bs/LC_MESSAGES/klines.mo
 share/locale/ca/LC_MESSAGES/klines.mo

@@ -12,11 +12,11 @@ share/icons/hicolor/22x22/apps/kontact.png
 share/icons/hicolor/32x32/apps/kontact.png
 share/icons/hicolor/48x48/apps/kontact.png
 share/icons/hicolor/64x64/apps/kontact.png
+share/icons/hicolor/scalable/apps/kontact.svg
 share/kconf_update/kontact-15.08-kickoff.sh
 share/kconf_update/kontact.upd
 share/kservices5/kontactconfig.desktop
 share/locale/ar/LC_MESSAGES/kontact.mo
-share/locale/ast/LC_MESSAGES/kontact.mo
 share/locale/bg/LC_MESSAGES/kontact.mo
 share/locale/bs/LC_MESSAGES/kontact.mo
 share/locale/ca/LC_MESSAGES/kontact.mo

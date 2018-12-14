@@ -79,7 +79,6 @@ lib/libKF5MailImporterAkonadi.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_MailImporter.pri
 %%QT_MKSPECDIR%%/modules/qt_MailImporterAkonadi.pri
 share/locale/ar/LC_MESSAGES/libmailimporter.mo
-share/locale/ast/LC_MESSAGES/libmailimporter.mo
 share/locale/bg/LC_MESSAGES/libmailimporter.mo
 share/locale/bs/LC_MESSAGES/libmailimporter.mo
 share/locale/ca/LC_MESSAGES/libmailimporter.mo

@@ -1,6 +1,7 @@
 bin/dolphin
 bin/servicemenudeinstallation
 bin/servicemenuinstallation
+etc/xdg/dolphin.categories
 etc/xdg/servicemenu.knsrc
 include/Dolphin/KVersionControlPlugin
 include/Dolphin/dolphinvcs_version.h

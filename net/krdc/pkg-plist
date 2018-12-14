@@ -22,7 +22,6 @@ share/kservices5/krdc_vnc_config.desktop
 share/kservices5/vnc.protocol
 share/kxmlgui5/krdc/krdcui.rc
 share/locale/ar/LC_MESSAGES/krdc.mo
-share/locale/ast/LC_MESSAGES/krdc.mo
 share/locale/bg/LC_MESSAGES/krdc.mo
 share/locale/bs/LC_MESSAGES/krdc.mo
 share/locale/ca/LC_MESSAGES/krdc.mo

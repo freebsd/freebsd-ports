@@ -27,7 +27,6 @@ lib/libKF5Tnef.so.5
 lib/libKF5Tnef.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_KTNef.pri
 share/locale/ar/LC_MESSAGES/libktnef5.mo
-share/locale/ast/LC_MESSAGES/libktnef5.mo
 share/locale/bs/LC_MESSAGES/libktnef5.mo
 share/locale/ca/LC_MESSAGES/libktnef5.mo
 share/locale/ca@valencia/LC_MESSAGES/libktnef5.mo

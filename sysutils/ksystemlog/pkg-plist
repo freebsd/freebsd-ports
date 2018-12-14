@@ -2,7 +2,6 @@ bin/ksystemlog
 share/applications/org.kde.ksystemlog.desktop
 share/kxmlgui5/ksystemlog/ksystemlogui.rc
 share/locale/ar/LC_MESSAGES/ksystemlog.mo
-share/locale/ast/LC_MESSAGES/ksystemlog.mo
 share/locale/bg/LC_MESSAGES/ksystemlog.mo
 share/locale/bs/LC_MESSAGES/ksystemlog.mo
 share/locale/ca/LC_MESSAGES/ksystemlog.mo

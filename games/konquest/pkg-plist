@@ -10,7 +10,6 @@ share/icons/hicolor/64x64/apps/konquest.png
 %%DATADIR%%/pics/konquest-splash.png
 share/kxmlgui5/konquest/konquestui.rc
 share/locale/ar/LC_MESSAGES/konquest.mo
-share/locale/ast/LC_MESSAGES/konquest.mo
 share/locale/bg/LC_MESSAGES/konquest.mo
 share/locale/bs/LC_MESSAGES/konquest.mo
 share/locale/ca/LC_MESSAGES/konquest.mo

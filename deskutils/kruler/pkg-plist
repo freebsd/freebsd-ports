@@ -17,7 +17,6 @@ share/icons/hicolor/64x64/apps/kruler.png
 share/knotifications5/kruler.notifyrc
 %%DATADIR%%/sounds/move.wav
 share/locale/ar/LC_MESSAGES/kruler.mo
-share/locale/ast/LC_MESSAGES/kruler.mo
 share/locale/bg/LC_MESSAGES/kruler.mo
 share/locale/bs/LC_MESSAGES/kruler.mo
 share/locale/ca/LC_MESSAGES/kruler.mo

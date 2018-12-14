@@ -8,7 +8,6 @@ share/config.kcfg/sieveeditorglobalconfig.kcfg
 share/kconf_update/sieveeditor-15.08-kickoff.sh
 share/kconf_update/sieveeditor.upd
 share/locale/ar/LC_MESSAGES/sieveeditor.mo
-share/locale/ast/LC_MESSAGES/sieveeditor.mo
 share/locale/bs/LC_MESSAGES/sieveeditor.mo
 share/locale/ca/LC_MESSAGES/sieveeditor.mo
 share/locale/ca@valencia/LC_MESSAGES/sieveeditor.mo
@@ -43,3 +42,4 @@ share/locale/tr/LC_MESSAGES/sieveeditor.mo
 share/locale/uk/LC_MESSAGES/sieveeditor.mo
 share/locale/zh_CN/LC_MESSAGES/sieveeditor.mo
 share/locale/zh_TW/LC_MESSAGES/sieveeditor.mo
+share/metainfo/org.kde.sieveeditor.appdata.xml

@@ -16,7 +16,6 @@ share/kconf_update/knavalbattle.upd
 share/kservices5/knavalbattle.protocol
 share/kxmlgui5/knavalbattle/knavalbattleui.rc
 share/locale/ar/LC_MESSAGES/knavalbattle.mo
-share/locale/ast/LC_MESSAGES/knavalbattle.mo
 share/locale/bg/LC_MESSAGES/knavalbattle.mo
 share/locale/bs/LC_MESSAGES/knavalbattle.mo
 share/locale/ca/LC_MESSAGES/knavalbattle.mo

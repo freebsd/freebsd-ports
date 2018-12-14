@@ -104,9 +104,6 @@ share/kservicetypes5/kaddressbookimprotocol.desktop
 share/locale/ar/LC_MESSAGES/akonadicontact5-serializer.mo
 share/locale/ar/LC_MESSAGES/akonadicontact5.mo
 share/locale/ar/LC_MESSAGES/kcm_akonadicontact_actions.mo
-share/locale/ast/LC_MESSAGES/akonadicontact5-serializer.mo
-share/locale/ast/LC_MESSAGES/akonadicontact5.mo
-share/locale/ast/LC_MESSAGES/kcm_akonadicontact_actions.mo
 share/locale/bs/LC_MESSAGES/akonadicontact5-serializer.mo
 share/locale/bs/LC_MESSAGES/akonadicontact5.mo
 share/locale/bs/LC_MESSAGES/kcm_akonadicontact_actions.mo

@@ -38,7 +38,6 @@ lib/libKF5Blog.so.5
 lib/libKF5Blog.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_KBlog.pri
 share/locale/ar/LC_MESSAGES/libkblog5.mo
-share/locale/ast/LC_MESSAGES/libkblog5.mo
 share/locale/bs/LC_MESSAGES/libkblog5.mo
 share/locale/ca/LC_MESSAGES/libkblog5.mo
 share/locale/ca@valencia/LC_MESSAGES/libkblog5.mo

@@ -1,6 +1,5 @@
 %%QT_PLUGINDIR%%/krunner_ktp_contacts.so
 share/kservices5/plasma-runner-ktp-contact.desktop
-share/locale/ast/LC_MESSAGES/plasma_runner_ktp_contacts.mo
 share/locale/bs/LC_MESSAGES/plasma_runner_ktp_contacts.mo
 share/locale/ca/LC_MESSAGES/plasma_runner_ktp_contacts.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_ktp_contacts.mo

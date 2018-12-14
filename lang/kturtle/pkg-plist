@@ -57,7 +57,6 @@ share/katepart/syntax/logohighlightstyle.nl.xml
 %%DATADIR%%/examples/nl/vierkanten.logo
 share/kxmlgui5/kturtle/kturtleui.rc
 share/locale/ar/LC_MESSAGES/kturtle.mo
-share/locale/ast/LC_MESSAGES/kturtle.mo
 share/locale/bg/LC_MESSAGES/kturtle.mo
 share/locale/bs/LC_MESSAGES/kturtle.mo
 share/locale/ca/LC_MESSAGES/kturtle.mo

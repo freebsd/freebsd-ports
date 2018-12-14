@@ -28,6 +28,8 @@ include/KF5/AkonadiAgentBase/resourcebasesettings.h
 include/KF5/AkonadiAgentBase/resourcesettings.h
 include/KF5/AkonadiAgentBase/transportresourcebase.h
 include/KF5/AkonadiCore/AbstractDifferencesReporter
+include/KF5/AkonadiCore/AgentConfigurationBase
+include/KF5/AkonadiCore/AgentConfigurationFactoryBase
 include/KF5/AkonadiCore/AgentFilterProxyModel
 include/KF5/AkonadiCore/AgentInstance
 include/KF5/AkonadiCore/AgentInstanceCreateJob
@@ -130,6 +132,8 @@ include/KF5/AkonadiCore/TrashSettings
 include/KF5/AkonadiCore/UnlinkJob
 include/KF5/AkonadiCore/VectorHelper
 include/KF5/AkonadiCore/abstractdifferencesreporter.h
+include/KF5/AkonadiCore/agentconfigurationbase.h
+include/KF5/AkonadiCore/agentconfigurationfactorybase.h
 include/KF5/AkonadiCore/agentfilterproxymodel.h
 include/KF5/AkonadiCore/agentinstance.h
 include/KF5/AkonadiCore/agentinstancecreatejob.h
@@ -235,6 +239,8 @@ include/KF5/AkonadiCore/trashsettings.h
 include/KF5/AkonadiCore/unlinkjob.h
 include/KF5/AkonadiCore/vectorhelper.h
 include/KF5/AkonadiWidgets/AgentActionManager
+include/KF5/AkonadiWidgets/AgentConfigurationDialog
+include/KF5/AkonadiWidgets/AgentConfigurationWidget
 include/KF5/AkonadiWidgets/AgentInstanceWidget
 include/KF5/AkonadiWidgets/AgentTypeDialog
 include/KF5/AkonadiWidgets/AgentTypeWidget
@@ -261,6 +267,8 @@ include/KF5/AkonadiWidgets/TagSelectWidget
 include/KF5/AkonadiWidgets/TagSelectionDialog
 include/KF5/AkonadiWidgets/TagWidget
 include/KF5/AkonadiWidgets/agentactionmanager.h
+include/KF5/AkonadiWidgets/agentconfigurationdialog.h
+include/KF5/AkonadiWidgets/agentconfigurationwidget.h
 include/KF5/AkonadiWidgets/agentinstancewidget.h
 include/KF5/AkonadiWidgets/agenttypedialog.h
 include/KF5/AkonadiWidgets/agenttypewidget.h
@@ -370,8 +378,6 @@ share/kf5/akonadi/kcfg2dbus.xsl
 share/kf5/akonadi_knut_resource/knut-template.xml
 share/locale/ar/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/ar/LC_MESSAGES/libakonadi5.mo
-share/locale/ast/LC_MESSAGES/akonadi_knut_resource.mo
-share/locale/ast/LC_MESSAGES/libakonadi5.mo
 share/locale/bs/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/bs/LC_MESSAGES/libakonadi5.mo
 share/locale/ca/LC_MESSAGES/akonadi_knut_resource.mo

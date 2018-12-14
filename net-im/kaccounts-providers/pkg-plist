@@ -12,7 +12,6 @@ share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/main.qml
 share/kpackage/genericqml/org.kde.kaccounts.owncloud/metadata.desktop
 share/kpackage/genericqml/org.kde.kaccounts.owncloud/metadata.json
 share/locale/ar/LC_MESSAGES/kaccounts-providers.mo
-share/locale/ast/LC_MESSAGES/kaccounts-providers.mo
 share/locale/bs/LC_MESSAGES/kaccounts-providers.mo
 share/locale/ca/LC_MESSAGES/kaccounts-providers.mo
 share/locale/ca@valencia/LC_MESSAGES/kaccounts-providers.mo

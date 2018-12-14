@@ -71,7 +71,6 @@ lib/libKF5KGeoMap.so.5.0.0
 %%DATADIR%%/marker-ffff00.png
 %%DATADIR%%/marker-icon-16x16.png
 share/locale/ar/LC_MESSAGES/libkgeomap.mo
-share/locale/ast/LC_MESSAGES/libkgeomap.mo
 share/locale/bg/LC_MESSAGES/libkgeomap.mo
 share/locale/bs/LC_MESSAGES/libkgeomap.mo
 share/locale/ca/LC_MESSAGES/libkgeomap.mo

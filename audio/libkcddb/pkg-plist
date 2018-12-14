@@ -31,8 +31,6 @@ share/config.kcfg/libkcddb5.kcfg
 share/kservices5/libkcddb.desktop
 share/locale/ar/LC_MESSAGES/kcmcddb.mo
 share/locale/ar/LC_MESSAGES/libkcddb.mo
-share/locale/ast/LC_MESSAGES/kcmcddb.mo
-share/locale/ast/LC_MESSAGES/libkcddb.mo
 share/locale/bg/LC_MESSAGES/kcmcddb.mo
 share/locale/bg/LC_MESSAGES/libkcddb.mo
 share/locale/bs/LC_MESSAGES/kcmcddb.mo

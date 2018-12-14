@@ -9,7 +9,7 @@ COMMENT=	Find files and folders
 
 USES=		cmake:outsource gettext kde:5 qt:5 tar:xz
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
-		coreaddons crash ecm guiaddons i18n iconthemes itemviews \
+		coreaddons crash ecm filemetadata guiaddons i18n iconthemes itemviews \
 		jobwidgets kdelibs4support kio notifications parts service \
 		solid sonnet textwidgets unitconversion widgetsaddons \
 		windowsystem xmlgui

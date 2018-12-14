@@ -91,8 +91,6 @@ lib/libKF5SendLater.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_SendLater.pri
 share/locale/ar/LC_MESSAGES/libkaddressbookgrantlee.mo
 share/locale/ar/LC_MESSAGES/libsendlater.mo
-share/locale/ast/LC_MESSAGES/libkaddressbookgrantlee.mo
-share/locale/ast/LC_MESSAGES/libsendlater.mo
 share/locale/bs/LC_MESSAGES/libkaddressbookgrantlee.mo
 share/locale/bs/LC_MESSAGES/libsendlater.mo
 share/locale/ca/LC_MESSAGES/libkaddressbookgrantlee.mo
@@ -119,12 +117,14 @@ share/locale/es/LC_MESSAGES/libsendlater.mo
 share/locale/et/LC_MESSAGES/libkaddressbookgrantlee.mo
 share/locale/et/LC_MESSAGES/libsendlater.mo
 share/locale/fi/LC_MESSAGES/libkaddressbookgrantlee.mo
+share/locale/fi/LC_MESSAGES/libkaddressbookimportexport.mo
 share/locale/fi/LC_MESSAGES/libsendlater.mo
 share/locale/fr/LC_MESSAGES/libkaddressbookgrantlee.mo
 share/locale/fr/LC_MESSAGES/libkaddressbookimportexport.mo
 share/locale/fr/LC_MESSAGES/libsendlater.mo
 share/locale/gl/LC_MESSAGES/libkaddressbookgrantlee.mo
 share/locale/gl/LC_MESSAGES/libsendlater.mo
+share/locale/gl/LC_MESSAGES/libkaddressbookimportexport.mo
 share/locale/hu/LC_MESSAGES/libkaddressbookgrantlee.mo
 share/locale/hu/LC_MESSAGES/libsendlater.mo
 share/locale/ia/LC_MESSAGES/libkaddressbookgrantlee.mo
@@ -154,6 +154,7 @@ share/locale/pt/LC_MESSAGES/libkaddressbookgrantlee.mo
 share/locale/pt/LC_MESSAGES/libkaddressbookimportexport.mo
 share/locale/pt/LC_MESSAGES/libsendlater.mo
 share/locale/pt_BR/LC_MESSAGES/libkaddressbookgrantlee.mo
+share/locale/pt_BR/LC_MESSAGES/libkaddressbookimportexport.mo
 share/locale/pt_BR/LC_MESSAGES/libsendlater.mo
 share/locale/ro/LC_MESSAGES/libkaddressbookgrantlee.mo
 share/locale/ro/LC_MESSAGES/libsendlater.mo

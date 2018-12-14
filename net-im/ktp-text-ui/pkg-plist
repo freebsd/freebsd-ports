@@ -235,15 +235,6 @@ share/locale/ar/LC_MESSAGES/kcm_ktp_chat_behavior.mo
 share/locale/ar/LC_MESSAGES/ktp-filters.mo
 share/locale/ar/LC_MESSAGES/ktp-log-viewer.mo
 share/locale/ar/LC_MESSAGES/ktpchat.mo
-share/locale/ast/LC_MESSAGES/kcm_ktp_chat_appearance.mo
-share/locale/ast/LC_MESSAGES/kcm_ktp_chat_behavior.mo
-share/locale/ast/LC_MESSAGES/kcm_ktp_chat_messages.mo
-share/locale/ast/LC_MESSAGES/kcm_ktp_chat_otr.mo
-share/locale/ast/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo
-share/locale/ast/LC_MESSAGES/ktp-filters.mo
-share/locale/ast/LC_MESSAGES/ktp-log-viewer.mo
-share/locale/ast/LC_MESSAGES/ktp-text-ui.mo
-share/locale/ast/LC_MESSAGES/ktpchat.mo
 share/locale/bs/LC_MESSAGES/kcm_ktp_chat_appearance.mo
 share/locale/bs/LC_MESSAGES/kcm_ktp_chat_behavior.mo
 share/locale/bs/LC_MESSAGES/ktp-adiumxtra-protocol-handler.mo

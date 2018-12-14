@@ -1,3 +1,4 @@
+etc/xdg/libkmahjongg.categories
 include/KF5/KF5KMahjongg/kmahjonggbackground.h
 include/KF5/KF5KMahjongg/kmahjonggconfigdialog.h
 include/KF5/KF5KMahjongg/kmahjongglib_version.h
@@ -45,7 +46,6 @@ share/kmahjongglib/tilesets/traditional.copyright
 share/kmahjongglib/tilesets/traditional.desktop
 share/kmahjongglib/tilesets/traditional.svgz
 share/locale/ar/LC_MESSAGES/libkmahjongg5.mo
-share/locale/ast/LC_MESSAGES/libkmahjongg5.mo
 share/locale/bs/LC_MESSAGES/libkmahjongg5.mo
 share/locale/ca/LC_MESSAGES/libkmahjongg5.mo
 share/locale/ca@valencia/LC_MESSAGES/libkmahjongg5.mo

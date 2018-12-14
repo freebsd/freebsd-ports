@@ -14,7 +14,6 @@ share/kxmlgui5/lokalize/projectmanagerui.rc
 share/kxmlgui5/lokalize/scriptsui.rc
 share/kxmlgui5/lokalize/translationmemoryrui.rc
 share/locale/ar/LC_MESSAGES/lokalize.mo
-share/locale/ast/LC_MESSAGES/lokalize.mo
 share/locale/bg/LC_MESSAGES/lokalize.mo
 share/locale/bs/LC_MESSAGES/lokalize.mo
 share/locale/ca/LC_MESSAGES/lokalize.mo

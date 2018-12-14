@@ -11,7 +11,6 @@ share/dbus-1/services/org.freedesktop.Telepathy.Client.KTp.CallUi.service
 %%DATADIR%%/core/Toolbar.qml
 %%DATADIR%%/core/Tooltip.qml
 share/kxmlgui5/ktp-call-ui/callwindowui.rc
-share/locale/ast/LC_MESSAGES/ktp-call-ui.mo
 share/locale/bg/LC_MESSAGES/ktp-call-ui.mo
 share/locale/bs/LC_MESSAGES/ktp-call-ui.mo
 share/locale/ca/LC_MESSAGES/ktp-call-ui.mo

@@ -23,7 +23,6 @@ share/icons/hicolor/64x64/apps/knetwalk.png
 %%DATADIR%%/themes/electronic.svgz
 %%DATADIR%%/themes/electronic_preview.png
 share/locale/ar/LC_MESSAGES/knetwalk.mo
-share/locale/ast/LC_MESSAGES/knetwalk.mo
 share/locale/bg/LC_MESSAGES/knetwalk.mo
 share/locale/bs/LC_MESSAGES/knetwalk.mo
 share/locale/ca/LC_MESSAGES/knetwalk.mo

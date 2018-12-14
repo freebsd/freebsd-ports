@@ -1,7 +1,6 @@
 %%QT_PLUGINDIR%%/pothumbnail.so
 share/config.kcfg/pocreatorsettings.kcfg
 share/kservices5/pothumbnail.desktop
-share/locale/ast/LC_MESSAGES/pothumbnail.mo
 share/locale/bs/LC_MESSAGES/pothumbnail.mo
 share/locale/ca/LC_MESSAGES/pothumbnail.mo
 share/locale/ca@valencia/LC_MESSAGES/pothumbnail.mo

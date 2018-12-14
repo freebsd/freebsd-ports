@@ -3,7 +3,6 @@ share/applications/org.kde.kcolorchooser.desktop
 share/icons/hicolor/16x16/apps/kcolorchooser.png
 share/icons/hicolor/22x22/apps/kcolorchooser.png
 share/locale/ar/LC_MESSAGES/kcolorchooser.mo
-share/locale/ast/LC_MESSAGES/kcolorchooser.mo
 share/locale/bg/LC_MESSAGES/kcolorchooser.mo
 share/locale/bs/LC_MESSAGES/kcolorchooser.mo
 share/locale/ca/LC_MESSAGES/kcolorchooser.mo

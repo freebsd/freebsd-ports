@@ -1,6 +1,5 @@
 lib/libexec/ktp-filetransfer-handler
 share/dbus-1/services/org.freedesktop.Telepathy.Client.KTp.FileTransferHandler.service
-share/locale/ast/LC_MESSAGES/ktp-filetransfer-handler.mo
 share/locale/bs/LC_MESSAGES/ktp-filetransfer-handler.mo
 share/locale/ca/LC_MESSAGES/ktp-filetransfer-handler.mo
 share/locale/ca@valencia/LC_MESSAGES/ktp-filetransfer-handler.mo

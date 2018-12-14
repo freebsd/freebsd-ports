@@ -66,7 +66,6 @@ share/libanalitza/plots/basic_curves.plots
 share/libanalitza/plots/conics.plots
 share/libanalitza/plots/polar.plots
 share/locale/ar/LC_MESSAGES/analitza_qt.qm
-share/locale/ast/LC_MESSAGES/analitza_qt.qm
 share/locale/bs/LC_MESSAGES/analitza_qt.qm
 share/locale/ca/LC_MESSAGES/analitza_qt.qm
 share/locale/ca@valencia/LC_MESSAGES/analitza_qt.qm
