@@ -1,0 +1,11 @@
+The APRON library is dedicated to the static analysis of the numerical variables
+of a program by Abstract Interpretation. The aim of such an analysis is to infer
+invariants about these variables. like 1<=x+y<=z, which holds during any
+execution of the program. You may look at to the Interproc analyzer for an
+online demonstration of static analysis.
+
+The APRON library is intended to be a common interface to various underlying
+libraries/abstract domains and to provide additional services that can be
+implemented independently from the underlying library/abstract domain.
+
+WWW: http://apron.cri.ensmp.fr/library/
