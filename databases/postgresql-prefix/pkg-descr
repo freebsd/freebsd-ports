@@ -1,0 +1,13 @@
+Prefix matching is both very common and important in telephony applications,
+where call routing and costs depend on matching caller/callee phone number 
+to an operator prefix.
+
+Let's say the prefixes table is called prefixes, a typical query will try to
+match a phone number to the longest prefix in the table:
+
+SELECT * 
+  FROM prefixes
+ WHERE prefix @> '0123456789'
+ORDER BY length(prefix) DESC LIMIT 1;
+
+WWW: https://github.com/dimitri/prefix
