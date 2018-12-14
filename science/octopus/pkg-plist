@@ -1141,6 +1141,7 @@ man/man1/octopus.1.gz
 %%DATADIR%%/testsuite/finite_systems_3d/20-eigensolver.04-plan.inp
 %%DATADIR%%/testsuite/finite_systems_3d/20-eigensolver.05-evolution.inp
 %%DATADIR%%/testsuite/finite_systems_3d/20-eigensolver.06-rmmdiis.inp
+%%DATADIR%%/testsuite/finite_systems_3d/20-eigensolver.07-psd.inp
 %%DATADIR%%/testsuite/finite_systems_3d/20-eigensolver.test
 %%DATADIR%%/testsuite/finite_systems_3d/21-lobpcg.01-spin_polarized.inp
 %%DATADIR%%/testsuite/finite_systems_3d/21-lobpcg.02-spinors.inp
