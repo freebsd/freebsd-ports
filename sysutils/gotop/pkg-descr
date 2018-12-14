@@ -1,0 +1,5 @@
+gotop is a terminal-based graphical activity monitor inspired by gtop and vtop.
+
+It shows CPU/Disk/Memory/Network usage and process lists.
+
+WWW: https://github.com/cjbassi/gotop
