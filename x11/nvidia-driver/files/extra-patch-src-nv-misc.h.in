@@ -1,5 +1,5 @@
---- src/nv-misc.h.orig	2014-02-13 05:07:44.000000000 +0100
-+++ src/nv-misc.h	2014-05-05 18:45:44.000000000 +0200
+--- src/%%NVSRC%%/nv-misc.h.orig	2017-09-14 20:46:30 UTC
++++ src/%%NVSRC%%/nv-misc.h
 @@ -11,6 +11,8 @@
  #ifndef _NV_MISC_H_
  #define _NV_MISC_H_

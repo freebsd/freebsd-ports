@@ -1,0 +1,10 @@
+--- src/%%NVSRC%%/nvidia_pci.c.orig	2017-09-14 20:46:30 UTC
++++ src/%%NVSRC%%/nvidia_pci.c
+@@ -405,4 +405,7 @@ MODULE_DEPEND(nvidia, agp, 1, 1, 1);
+ 
+ #ifdef NV_SUPPORT_LINUX_COMPAT /* (COMPAT_LINUX || COMPAT_LINUX32) */
+ MODULE_DEPEND(nvidia, linux, 1, 1, 1);
++#if defined(NVCPU_X86_64)
++MODULE_DEPEND(nvidia, linux_common, 1, 1, 1);
++#endif
+ #endif
