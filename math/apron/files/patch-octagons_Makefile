@@ -1,0 +1,15 @@
+--- octagons/Makefile.orig	2018-12-14 19:22:15 UTC
++++ octagons/Makefile
+@@ -158,10 +158,10 @@ liboct%_debug.a: $(subst .c,%_debug.o,$(
+ 	$(RANLIB) $@
+ 
+ liboct%.so: $(subst .c,%.o,$(CCSOURCES))
+-	$(CC_APRON_DYLIB) $(CFLAGS) -o $@ $^ $(LDFLAGS) $(LIBS)
++	$(CC_APRON_DYLIB) -Wl,-soname,$@ $(CFLAGS) -o $@ $^ $(LDFLAGS) $(LIBS)
+ 
+ liboct%_debug.so: $(subst .c,%_debug.o,$(CCSOURCES))
+-	$(CC_APRON_DYLIB) $(CFLAGS) -o $@ $^ $(LDFLAGS) $(LIBS_DEBUG)
++	$(CC_APRON_DYLIB) -Wl,-soname,$@ $(CFLAGS) -o $@ $^ $(LDFLAGS) $(LIBS_DEBUG)
+ 
+ ifneq ($(HAS_SHARED),)
+ octtest%: oct_test%.o liboct%_debug.a liboct%_debug.so

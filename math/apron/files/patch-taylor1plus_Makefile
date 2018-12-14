@@ -1,0 +1,14 @@
+--- taylor1plus/Makefile.orig	2018-12-14 19:24:08 UTC
++++ taylor1plus/Makefile
+@@ -178,9 +178,9 @@ libt1p%_debug.a: $(subst .c,%_debug.o,$(
+ ## should work across all archs
+ ##
+ libt1p%.so:  $(subst .c,%.o,$(CCMODULES:%=%.c))
+-	$(CC_APRON_DYLIB) $(CFLAGS) -o $@ $^ $(LDFLAGS) -lbox$* -lpolkaMPQ $(LIBS)
++	$(CC_APRON_DYLIB) -Wl,-soname,$@ $(CFLAGS) -o $@ $^ $(LDFLAGS) -lbox$* -lpolkaMPQ $(LIBS)
+ libt1p%_debug.so: $(subst .c,%_debug.o,$(CCMODULES:%=%.c))
+-	$(CC_APRON_DYLIB) $(CFLAGS_DEBUG) -o $@ $^ $(LDFLAGS) -lbox$*_debug -lpolkaMPQ_debug $(LIBS_DEBUG)
++	$(CC_APRON_DYLIB) -Wl,-soname,$@ $(CFLAGS_DEBUG) -o $@ $^ $(LDFLAGS) -lbox$*_debug -lpolkaMPQ_debug $(LIBS_DEBUG)
+ 
+ %MPQ.o: %.c
+ 	$(CC) $(CFLAGS) $(ICFLAGS) -DNUM_MPQ -c -o $@ $<

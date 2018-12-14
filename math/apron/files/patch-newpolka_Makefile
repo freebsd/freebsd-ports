@@ -1,0 +1,14 @@
+--- newpolka/Makefile.orig	2018-12-14 19:21:39 UTC
++++ newpolka/Makefile
+@@ -165,9 +165,9 @@ libpolka%_debug.a: $(subst .c,%_debug.o,
+ 	$(AR) rcs $@ $^
+ 	$(RANLIB) $@
+ libpolka%.so:  $(subst .c,%.o,$(CCMODULES:%=%.c))
+-	$(CC_APRON_DYLIB) $(CFLAGS) -o $@ $^ $(LDFLAGS) $(LIBS)
++	$(CC_APRON_DYLIB) -Wl,-soname,$@  $(CFLAGS) -o $@ $^ $(LDFLAGS) $(LIBS)
+ libpolka%_debug.so: $(subst .c,%_debug.o,$(CCMODULES:%=%.c))
+-	$(CC_APRON_DYLIB) $(CFLAGS_DEBUG) -o $@ $^ $(LDFLAGS) $(LIBS_DEBUG)
++	$(CC_APRON_DYLIB) -Wl,-soname,$@  $(CFLAGS_DEBUG) -o $@ $^ $(LDFLAGS) $(LIBS_DEBUG)
+ 
+ %Rl.o: %.c $(CCINC)
+ 	$(CC) $(CFLAGS) $(ICFLAGS) -DNUM_LONGRAT -c -o $@ $<

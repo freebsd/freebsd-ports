@@ -1,0 +1,14 @@
+--- box/Makefile.orig	2018-12-14 19:21:04 UTC
++++ box/Makefile
+@@ -147,9 +147,9 @@ libbox%_debug.a: $(subst .c,%_debug.o,$(
+ 	$(AR) rcs $@ $^
+ 	$(RANLIB) $@
+ libbox%.so:  $(subst .c,%.o,$(CCMODULES:%=%.c))
+-	$(CC_APRON_DYLIB) $(CFLAGS) -o $@ $^ $(LDFLAGS) $(LIBS)
++	$(CC_APRON_DYLIB) -Wl,-soname,$@ $(CFLAGS) -o $@ $^ $(LDFLAGS) $(LIBS)
+ libbox%_debug.so: $(subst .c,%_debug.o,$(CCMODULES:%=%.c))
+-	$(CC_APRON_DYLIB) $(CFLAGS_DEBUG) -o $@ $^ $(LDFLAGS) $(LIBS_DEBUG)
++	$(CC_APRON_DYLIB) -Wl,-soname,$@ $(CFLAGS_DEBUG) -o $@ $^ $(LDFLAGS) $(LIBS_DEBUG)
+ 
+ %MPQ.o: %.c
+ 	$(CC) $(CFLAGS) $(ICFLAGS) -DNUM_MPQ -c -o $@ $<
