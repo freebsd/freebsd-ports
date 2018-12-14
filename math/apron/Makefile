@@ -18,7 +18,6 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 
 USES=		gmake localbase:ldflags
 USE_LDCONFIG=	yes
-xNO_CHECKSUM=	yes
 
 SVN_URL=	svn://scm.gforge.inria.fr/svnroot/apron/apron/trunk
 SVN_REVISION=	1104
