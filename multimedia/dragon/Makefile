@@ -2,7 +2,6 @@
 
 PORTNAME=	dragon
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia kde kde-applications
 PKGNAMESUFFIX=	-player
 

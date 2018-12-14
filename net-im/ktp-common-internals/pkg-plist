@@ -150,8 +150,6 @@ share/knotifications5/ktelepathy.notifyrc
 share/kservices5/ktploggerplugin_tplogger.desktop
 share/kservicetypes5/ktp_logger_plugin.desktop
 share/locale/ar/LC_MESSAGES/ktp-debugger.mo
-share/locale/ast/LC_MESSAGES/ktp-common-internals.mo
-share/locale/ast/LC_MESSAGES/ktp-debugger.mo
 share/locale/bs/LC_MESSAGES/ktp-common-internals.mo
 share/locale/bs/LC_MESSAGES/ktp-debugger.mo
 share/locale/ca/LC_MESSAGES/ktp-common-internals.mo

@@ -4,7 +4,6 @@ share/dbus-1/services/org.freedesktop.Telepathy.Client.KTp.KdedIntegrationModule
 share/kservices5/kcm_ktp_integration_module.desktop
 share/kservices5/kded/ktp_integration_module.desktop
 share/locale/ar/LC_MESSAGES/kded_ktp_integration_module.mo
-share/locale/ast/LC_MESSAGES/kded_ktp_integration_module.mo
 share/locale/bs/LC_MESSAGES/kded_ktp_integration_module.mo
 share/locale/ca/LC_MESSAGES/kded_ktp_integration_module.mo
 share/locale/ca@valencia/LC_MESSAGES/kded_ktp_integration_module.mo

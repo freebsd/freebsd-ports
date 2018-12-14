@@ -3,7 +3,6 @@ etc/xdg/kde.categories
 etc/xdg/kde.renamecategories
 share/applications/org.kde.kdebugsettings.desktop
 share/locale/ar/LC_MESSAGES/kdebugsettings.mo
-share/locale/ast/LC_MESSAGES/kdebugsettings.mo
 share/locale/ca/LC_MESSAGES/kdebugsettings.mo
 share/locale/ca@valencia/LC_MESSAGES/kdebugsettings.mo
 share/locale/cs/LC_MESSAGES/kdebugsettings.mo

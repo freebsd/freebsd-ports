@@ -133,7 +133,6 @@ share/icons/hicolor/scalable/apps/ktouch.svgz
 %%DATADIR%%/schemata/data.xsd
 %%DATADIR%%/schemata/keyboardlayout.xsd
 share/locale/ar/LC_MESSAGES/ktouch.mo
-share/locale/ast/LC_MESSAGES/ktouch.mo
 share/locale/bg/LC_MESSAGES/ktouch.mo
 share/locale/bs/LC_MESSAGES/ktouch.mo
 share/locale/ca/LC_MESSAGES/ktouch.mo

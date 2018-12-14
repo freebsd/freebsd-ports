@@ -2,7 +2,6 @@
 
 PORTNAME=	kolf
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	2
 CATEGORIES=	games kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org

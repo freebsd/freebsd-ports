@@ -1,5 +1,6 @@
 bin/konsole
 bin/konsoleprofile
+etc/xdg/konsole.categories
 etc/xdg/konsole.knsrc
 lib/libkdeinit5_konsole.so
 lib/libkonsoleprivate.so.%%KDE_APPLICATIONS_VERSION_SHORT%%

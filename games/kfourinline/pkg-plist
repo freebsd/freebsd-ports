@@ -1,5 +1,6 @@
 bin/kfourinline
 bin/kfourinlineproc
+etc/xdg/kfourinline.categories
 share/applications/org.kde.kfourinline.desktop
 share/config.kcfg/kwin4.kcfg
 share/icons/hicolor/128x128/apps/kfourinline.png
@@ -20,7 +21,6 @@ share/icons/hicolor/64x64/apps/kfourinline.png
 %%DATADIR%%/grafix/yellow_reflection.desktop
 %%DATADIR%%/grafix/yellow_reflection.rc
 share/locale/ar/LC_MESSAGES/kfourinline.mo
-share/locale/ast/LC_MESSAGES/kfourinline.mo
 share/locale/bg/LC_MESSAGES/kfourinline.mo
 share/locale/bs/LC_MESSAGES/kfourinline.mo
 share/locale/ca/LC_MESSAGES/kfourinline.mo
@@ -70,3 +70,4 @@ share/locale/ug/LC_MESSAGES/kfourinline.mo
 share/locale/uk/LC_MESSAGES/kfourinline.mo
 share/locale/zh_CN/LC_MESSAGES/kfourinline.mo
 share/locale/zh_TW/LC_MESSAGES/kfourinline.mo
+share/metainfo/org.kde.kfourinline.appdata.xml

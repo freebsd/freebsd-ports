@@ -1,7 +1,6 @@
 bin/mboximporter
 share/applications/org.kde.mboximporter.desktop
 share/locale/ar/LC_MESSAGES/mboximporter.mo
-share/locale/ast/LC_MESSAGES/mboximporter.mo
 share/locale/bg/LC_MESSAGES/mboximporter.mo
 share/locale/bs/LC_MESSAGES/mboximporter.mo
 share/locale/ca/LC_MESSAGES/mboximporter.mo

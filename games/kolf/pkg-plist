@@ -29,7 +29,6 @@ share/icons/hicolor/64x64/apps/kolf.png
 %%DATADIR%%/tutorial.kolfgame
 share/kxmlgui5/kolf/kolfui.rc
 share/locale/ar/LC_MESSAGES/kolf.mo
-share/locale/ast/LC_MESSAGES/kolf.mo
 share/locale/bg/LC_MESSAGES/kolf.mo
 share/locale/bs/LC_MESSAGES/kolf.mo
 share/locale/ca/LC_MESSAGES/kolf.mo

@@ -1,5 +1,6 @@
 bin/kpat
 etc/xdg/kcardtheme.knsrc
+etc/xdg/kpat.categories
 etc/xdg/kpat.knsrc
 lib/libkcardgame.so
 man/de/man6/kpat.6.gz
@@ -51,7 +52,6 @@ share/icons/hicolor/64x64/apps/kpat.png
 %%DATADIR%%/themes/oldertheme.svgz
 share/kxmlgui5/kpat/kpatui.rc
 share/locale/ar/LC_MESSAGES/kpat.mo
-share/locale/ast/LC_MESSAGES/kpat.mo
 share/locale/bg/LC_MESSAGES/kpat.mo
 share/locale/bs/LC_MESSAGES/kpat.mo
 share/locale/ca/LC_MESSAGES/kpat.mo
@@ -104,4 +104,5 @@ share/locale/uk/LC_MESSAGES/kpat.mo
 share/locale/wa/LC_MESSAGES/kpat.mo
 share/locale/zh_CN/LC_MESSAGES/kpat.mo
 share/locale/zh_TW/LC_MESSAGES/kpat.mo
+share/metainfo/org.kde.kpat.appdata.xml
 share/mime/packages/kpatience.xml

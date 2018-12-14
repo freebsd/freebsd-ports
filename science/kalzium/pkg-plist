@@ -378,13 +378,6 @@ share/libkdeedu/data/spectra.xml
 share/libkdeedu/data/symbols.csv
 share/libkdeedu/data/symbols2.csv
 share/locale/ar/LC_MESSAGES/kalzium.mo
-share/locale/ast/LC_MESSAGES/kalzium.mo
-share/locale/ast/LC_MESSAGES/plasma_applet_Molmasscalculator.mo
-share/locale/ast/LC_MESSAGES/plasma_applet_concentrationCalculator.mo
-share/locale/ast/LC_MESSAGES/plasma_applet_gasCalculator.mo
-share/locale/ast/LC_MESSAGES/plasma_applet_kalzium.mo
-share/locale/ast/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
-share/locale/ast/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/bg/LC_MESSAGES/kalzium.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/bg/LC_MESSAGES/plasma_engine_kalzium.mo

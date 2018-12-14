@@ -125,7 +125,6 @@ share/icons/hicolor/32x32/apps/ksudoku.png
 %%DATADIR%%/themes/scribble_preview.png
 share/kxmlgui5/ksudoku/ksudokuui.rc
 share/locale/ar/LC_MESSAGES/ksudoku.mo
-share/locale/ast/LC_MESSAGES/ksudoku.mo
 share/locale/bg/LC_MESSAGES/ksudoku.mo
 share/locale/bs/LC_MESSAGES/ksudoku.mo
 share/locale/ca/LC_MESSAGES/ksudoku.mo

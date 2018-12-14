@@ -2,6 +2,7 @@ bin/kimagemapeditor
 etc/xdg/kimagemapeditor.categories
 %%QT_PLUGINDIR%%/kimagemapeditor.so
 share/applications/org.kde.kimagemapeditor.desktop
+share/icons/hicolor/128x128/apps/kimagemapeditor.png
 share/icons/hicolor/16x16/apps/kimagemapeditor.png
 share/icons/hicolor/22x22/actions/addpoint.png
 share/icons/hicolor/22x22/actions/arrow.png
@@ -13,8 +14,11 @@ share/icons/hicolor/22x22/actions/polygon.png
 share/icons/hicolor/22x22/actions/raise.png
 share/icons/hicolor/22x22/actions/rectangle.png
 share/icons/hicolor/22x22/actions/removepoint.png
+share/icons/hicolor/22x22/apps/kimagemapeditor.png
 share/icons/hicolor/32x32/apps/kimagemapeditor.png
 share/icons/hicolor/48x48/apps/kimagemapeditor.png
+share/icons/hicolor/64x64/apps/kimagemapeditor.png
+share/icons/hicolor/scalable/apps/kimagemapeditor.svgz
 %%DATADIR%%/addpointcursor.png
 %%DATADIR%%/freehandcursor.png
 %%DATADIR%%/polygoncursor.png
@@ -23,7 +27,6 @@ share/kservices5/kimagemapeditorpart.desktop
 share/kxmlgui5/kimagemapeditor/kimagemapeditorpartui.rc
 share/kxmlgui5/kimagemapeditor/kimagemapeditorui.rc
 share/locale/ar/LC_MESSAGES/kimagemapeditor.mo
-share/locale/ast/LC_MESSAGES/kimagemapeditor.mo
 share/locale/bg/LC_MESSAGES/kimagemapeditor.mo
 share/locale/bs/LC_MESSAGES/kimagemapeditor.mo
 share/locale/ca/LC_MESSAGES/kimagemapeditor.mo

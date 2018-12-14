@@ -43,8 +43,6 @@ lib/libKF5AkonadiCalendar.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 share/akonadi/plugins/serializer/akonadi_serializer_kcalcore.desktop
 share/locale/ar/LC_MESSAGES/libakonadi-calendar5-serializer.mo
 share/locale/ar/LC_MESSAGES/libakonadi-calendar5.mo
-share/locale/ast/LC_MESSAGES/libakonadi-calendar5-serializer.mo
-share/locale/ast/LC_MESSAGES/libakonadi-calendar5.mo
 share/locale/bs/LC_MESSAGES/libakonadi-calendar5-serializer.mo
 share/locale/bs/LC_MESSAGES/libakonadi-calendar5.mo
 share/locale/ca/LC_MESSAGES/libakonadi-calendar5-serializer.mo

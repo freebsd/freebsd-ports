@@ -20,7 +20,6 @@ share/icons/hicolor/64x64/apps/kmines.png
 %%DATADIR%%/themes/kmines_oxygen.svgz
 share/knotifications5/kmines.notifyrc
 share/locale/ar/LC_MESSAGES/kmines.mo
-share/locale/ast/LC_MESSAGES/kmines.mo
 share/locale/bg/LC_MESSAGES/kmines.mo
 share/locale/bs/LC_MESSAGES/kmines.mo
 share/locale/ca/LC_MESSAGES/kmines.mo

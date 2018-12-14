@@ -1,4 +1,5 @@
 bin/spectacle
+etc/xdg/spectacle.categories
 share/applications/org.kde.spectacle.desktop
 share/dbus-1/interfaces/org.kde.Spectacle.xml
 share/dbus-1/services/org.kde.Spectacle.service
@@ -10,7 +11,6 @@ share/icons/hicolor/scalable/apps/spectacle.svgz
 share/khotkeys/spectacle.khotkeys
 share/knotifications5/spectacle.notifyrc
 share/locale/ar/LC_MESSAGES/spectacle.mo
-share/locale/ast/LC_MESSAGES/spectacle.mo
 share/locale/bg/LC_MESSAGES/spectacle.mo
 share/locale/ca/LC_MESSAGES/spectacle.mo
 share/locale/ca@valencia/LC_MESSAGES/spectacle.mo

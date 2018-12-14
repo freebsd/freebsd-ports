@@ -20,7 +20,6 @@ share/icons/hicolor/64x64/apps/kdiamond.png
 share/knotifications5/kdiamond.notifyrc
 share/kxmlgui5/kdiamond/kdiamondui.rc
 share/locale/ar/LC_MESSAGES/kdiamond.mo
-share/locale/ast/LC_MESSAGES/kdiamond.mo
 share/locale/bg/LC_MESSAGES/kdiamond.mo
 share/locale/bs/LC_MESSAGES/kdiamond.mo
 share/locale/ca/LC_MESSAGES/kdiamond.mo
@@ -68,6 +67,7 @@ share/locale/ug/LC_MESSAGES/kdiamond.mo
 share/locale/uk/LC_MESSAGES/kdiamond.mo
 share/locale/zh_CN/LC_MESSAGES/kdiamond.mo
 share/locale/zh_TW/LC_MESSAGES/kdiamond.mo
+share/metainfo/org.kde.kdiamond.appdata.xml
 share/sounds/KDiamond-Stone-Drop.ogg
 share/sounds/KDiamond-Stone-Swap.ogg
 share/sounds/KDiamond-Stone-Touch.ogg

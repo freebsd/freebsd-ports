@@ -1,5 +1,6 @@
 bin/kgpg
 etc/xdg/autostart/org.kde.kgpg.desktop
+etc/xdg/kgpg.categories
 share/applications/org.kde.kgpg.desktop
 share/config.kcfg/kgpg.kcfg
 share/dbus-1/interfaces/org.kde.kgpg.Key.xml
@@ -50,7 +51,6 @@ share/kservices5/ServiceMenus/viewdecrypted.desktop
 share/kxmlgui5/kgpg/keysmanager.rc
 share/kxmlgui5/kgpg/kgpgeditor.rc
 share/locale/ar/LC_MESSAGES/kgpg.mo
-share/locale/ast/LC_MESSAGES/kgpg.mo
 share/locale/bg/LC_MESSAGES/kgpg.mo
 share/locale/bs/LC_MESSAGES/kgpg.mo
 share/locale/ca/LC_MESSAGES/kgpg.mo

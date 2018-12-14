@@ -8,7 +8,6 @@ share/icons/hicolor/32x32/apps/picmi.png
 share/icons/hicolor/48x48/apps/picmi.png
 share/icons/hicolor/64x64/apps/picmi.png
 share/kxmlgui5/picmi/picmiui.rc
-share/locale/ast/LC_MESSAGES/picmi.mo
 share/locale/bs/LC_MESSAGES/picmi.mo
 share/locale/ca/LC_MESSAGES/picmi.mo
 share/locale/ca@valencia/LC_MESSAGES/picmi.mo

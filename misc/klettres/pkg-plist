@@ -1,4 +1,5 @@
 bin/klettres
+etc/xdg/klettres.categories
 etc/xdg/klettres.knsrc
 share/applications/org.kde.klettres.desktop
 share/config.kcfg/klettres.kcfg
@@ -1334,7 +1335,6 @@ share/icons/hicolor/64x64/apps/klettres.png
 %%DATADIR%%/uk/syllab/zyk.ogg
 share/kxmlgui5/klettres/klettresui.rc
 share/locale/ar/LC_MESSAGES/klettres.mo
-share/locale/ast/LC_MESSAGES/klettres.mo
 share/locale/bg/LC_MESSAGES/klettres.mo
 share/locale/bs/LC_MESSAGES/klettres.mo
 share/locale/ca/LC_MESSAGES/klettres.mo

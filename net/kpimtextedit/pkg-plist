@@ -2,7 +2,6 @@ etc/xdg/kpimtextedit.categories
 include/KF5/KPIMTextEdit/KPIMTextEdit/AbstractTextToSpeechInterface
 include/KF5/KPIMTextEdit/KPIMTextEdit/EditorUtil
 include/KF5/KPIMTextEdit/KPIMTextEdit/EmoticonTextEditAction
-include/KF5/KPIMTextEdit/KPIMTextEdit/InsertImageDialog
 include/KF5/KPIMTextEdit/KPIMTextEdit/InsertImageWidget
 include/KF5/KPIMTextEdit/KPIMTextEdit/InsertTableDialog
 include/KF5/KPIMTextEdit/KPIMTextEdit/InsertTableWidget
@@ -33,10 +32,8 @@ include/KF5/KPIMTextEdit/KPIMTextEdit/TextToSpeechInterface
 include/KF5/KPIMTextEdit/KPIMTextEdit/TextToSpeechWidget
 include/KF5/KPIMTextEdit/KPIMTextEdit/TextUtils
 include/KF5/KPIMTextEdit/kpimtextedit/abstracttexttospeechinterface.h
-include/KF5/KPIMTextEdit/kpimtextedit/config-kpimtextedit.h
 include/KF5/KPIMTextEdit/kpimtextedit/editorutil.h
 include/KF5/KPIMTextEdit/kpimtextedit/emoticontexteditaction.h
-include/KF5/KPIMTextEdit/kpimtextedit/insertimagedialog.h
 include/KF5/KPIMTextEdit/kpimtextedit/insertimagewidget.h
 include/KF5/KPIMTextEdit/kpimtextedit/inserttabledialog.h
 include/KF5/KPIMTextEdit/kpimtextedit/inserttablewidget.h
@@ -78,7 +75,6 @@ lib/libKF5PimTextEdit.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_KPIMTextEdit.pri
 %%QT_PLUGINDIR%%/designer/kpimtexteditwidgets.so
 share/locale/ar/LC_MESSAGES/libkpimtextedit.mo
-share/locale/ast/LC_MESSAGES/libkpimtextedit.mo
 share/locale/bs/LC_MESSAGES/libkpimtextedit.mo
 share/locale/ca/LC_MESSAGES/libkpimtextedit.mo
 share/locale/ca@valencia/LC_MESSAGES/libkpimtextedit.mo

@@ -168,7 +168,6 @@ share/knotifications5/kwordquiz.notifyrc
 %%DATADIR%%/icons/hicolor/scalable/actions/unmarkasblank.svgz
 share/kxmlgui5/kwordquiz/kwordquizui.rc
 share/locale/ar/LC_MESSAGES/kwordquiz.mo
-share/locale/ast/LC_MESSAGES/kwordquiz.mo
 share/locale/bg/LC_MESSAGES/kwordquiz.mo
 share/locale/bs/LC_MESSAGES/kwordquiz.mo
 share/locale/ca/LC_MESSAGES/kwordquiz.mo

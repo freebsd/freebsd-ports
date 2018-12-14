@@ -20,7 +20,6 @@ share/icons/hicolor/32x32/actions/kmousetool_on.png
 share/icons/hicolor/32x32/apps/kmousetool.png
 %%DATADIR%%/sounds/mousetool_tap.wav
 share/locale/ar/LC_MESSAGES/kmousetool.mo
-share/locale/ast/LC_MESSAGES/kmousetool.mo
 share/locale/bg/LC_MESSAGES/kmousetool.mo
 share/locale/bs/LC_MESSAGES/kmousetool.mo
 share/locale/ca/LC_MESSAGES/kmousetool.mo

@@ -280,7 +280,6 @@ lib/sasl2/libkdexoauth2.so
 lib/sasl2/libkdexoauth2.so.3
 lib/sasl2/libkdexoauth2.so.3.0.0
 share/locale/ar/LC_MESSAGES/libkgapi_qt.qm
-share/locale/ast/LC_MESSAGES/libkgapi_qt.qm
 share/locale/bs/LC_MESSAGES/libkgapi_qt.qm
 share/locale/ca/LC_MESSAGES/libkgapi_qt.qm
 share/locale/ca@valencia/LC_MESSAGES/libkgapi_qt.qm

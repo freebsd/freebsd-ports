@@ -35,8 +35,6 @@ lib/libKF5AlarmCalendar.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 share/akonadi/plugins/serializer/akonadi_serializer_kalarm.desktop
 share/locale/ar/LC_MESSAGES/libkalarmcal5-serializer.mo
 share/locale/ar/LC_MESSAGES/libkalarmcal5.mo
-share/locale/ast/LC_MESSAGES/libkalarmcal5-serializer.mo
-share/locale/ast/LC_MESSAGES/libkalarmcal5.mo
 share/locale/bg/LC_MESSAGES/libkalarmcal5.mo
 share/locale/bs/LC_MESSAGES/libkalarmcal5-serializer.mo
 share/locale/bs/LC_MESSAGES/libkalarmcal5.mo

@@ -15,7 +15,6 @@ share/icons/hicolor/64x64/apps/kiriki.png
 %%DATADIR%%/images/dice-none.png
 share/kxmlgui5/kiriki/kirikiui.rc
 share/locale/ar/LC_MESSAGES/kiriki.mo
-share/locale/ast/LC_MESSAGES/kiriki.mo
 share/locale/bs/LC_MESSAGES/kiriki.mo
 share/locale/ca/LC_MESSAGES/kiriki.mo
 share/locale/ca@valencia/LC_MESSAGES/kiriki.mo

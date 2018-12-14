@@ -35,7 +35,6 @@ include/KF5/MailCommon/MailFilter
 include/KF5/MailCommon/MailInterfaces
 include/KF5/MailCommon/MailKernel
 include/KF5/MailCommon/MailUtil
-include/KF5/MailCommon/MetaType
 include/KF5/MailCommon/RedirectDialog
 include/KF5/MailCommon/ResourceReadConfigFile
 include/KF5/MailCommon/SearchPattern
@@ -83,7 +82,6 @@ include/KF5/mailcommon/mailinterfaces.h
 include/KF5/mailcommon/mailkernel.h
 include/KF5/mailcommon/mailutil.h
 include/KF5/mailcommon/mdnstateattribute.h
-include/KF5/mailcommon/metatype.h
 include/KF5/mailcommon/pop3settings.h
 include/KF5/mailcommon/redirectdialog.h
 include/KF5/mailcommon/resourcereadconfigfile.h
@@ -106,7 +104,6 @@ lib/libKF5MailCommon.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_MailCommon.pri
 %%QT_PLUGINDIR%%/designer/mailcommonwidgets.so
 share/locale/ar/LC_MESSAGES/libmailcommon.mo
-share/locale/ast/LC_MESSAGES/libmailcommon.mo
 share/locale/bs/LC_MESSAGES/libmailcommon.mo
 share/locale/ca/LC_MESSAGES/libmailcommon.mo
 share/locale/ca@valencia/LC_MESSAGES/libmailcommon.mo

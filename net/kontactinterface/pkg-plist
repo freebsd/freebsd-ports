@@ -24,7 +24,6 @@ lib/libKF5KontactInterface.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_KontactInterface.pri
 share/kservicetypes5/kontactplugin.desktop
 share/locale/ar/LC_MESSAGES/kontactinterfaces5.mo
-share/locale/ast/LC_MESSAGES/kontactinterfaces5.mo
 share/locale/bg/LC_MESSAGES/kontactinterfaces5.mo
 share/locale/bs/LC_MESSAGES/kontactinterfaces5.mo
 share/locale/ca/LC_MESSAGES/kontactinterfaces5.mo

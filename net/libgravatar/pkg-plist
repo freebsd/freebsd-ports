@@ -22,7 +22,6 @@ lib/libKF5Gravatar.so.5
 lib/libKF5Gravatar.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_Gravatar.pri
 share/locale/ar/LC_MESSAGES/libgravatar.mo
-share/locale/ast/LC_MESSAGES/libgravatar.mo
 share/locale/ca/LC_MESSAGES/libgravatar.mo
 share/locale/ca@valencia/LC_MESSAGES/libgravatar.mo
 share/locale/cs/LC_MESSAGES/libgravatar.mo

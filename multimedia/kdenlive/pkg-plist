@@ -317,7 +317,6 @@ share/knotifications5/kdenlive.notifyrc
 share/kservices5/mltpreview.desktop
 share/kxmlgui5/kdenlive/kdenliveui.rc
 share/locale/ar/LC_MESSAGES/kdenlive.mo
-share/locale/ast/LC_MESSAGES/kdenlive.mo
 share/locale/bs/LC_MESSAGES/kdenlive.mo
 share/locale/ca/LC_MESSAGES/kdenlive.mo
 share/locale/ca@valencia/LC_MESSAGES/kdenlive.mo

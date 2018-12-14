@@ -1,5 +1,6 @@
 bin/kwalletmanager5
 etc/dbus-1/system.d/org.kde.kcontrol.kcmkwallet5.conf
+etc/xdg/kwalletmanager.categories
 lib/libexec/kauth/kcm_kwallet_helper5
 %%QT_PLUGINDIR%%/kcm_kwallet5.so
 share/applications/kwalletmanager5-kwalletd.desktop
@@ -23,8 +24,6 @@ share/kservices5/kwalletmanager5_show.desktop
 share/kxmlgui5/kwalletmanager5/kwalletmanager.rc
 share/locale/ar/LC_MESSAGES/kcmkwallet.mo
 share/locale/ar/LC_MESSAGES/kwalletmanager.mo
-share/locale/ast/LC_MESSAGES/kcmkwallet.mo
-share/locale/ast/LC_MESSAGES/kwalletmanager.mo
 share/locale/bg/LC_MESSAGES/kcmkwallet.mo
 share/locale/bg/LC_MESSAGES/kwalletmanager.mo
 share/locale/bs/LC_MESSAGES/kcmkwallet.mo

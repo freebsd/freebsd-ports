@@ -1,4 +1,5 @@
 bin/ksnakeduel
+etc/xdg/ksnakeduel.categories
 etc/xdg/ksnakeduel.knsrc
 share/applications/org.kde.ksnakeduel.desktop
 share/config.kcfg/ksnakeduel.kcfg
@@ -15,7 +16,6 @@ share/icons/hicolor/64x64/apps/ksnakeduel.png
 %%DATADIR%%/themes/neon.desktop
 %%DATADIR%%/themes/neon.png
 %%DATADIR%%/themes/neon.svg
-share/locale/ast/LC_MESSAGES/ksnakeduel.mo
 share/locale/bs/LC_MESSAGES/ksnakeduel.mo
 share/locale/ca/LC_MESSAGES/ksnakeduel.mo
 share/locale/ca@valencia/LC_MESSAGES/ksnakeduel.mo

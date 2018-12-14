@@ -33,7 +33,7 @@ include/cantor/worksheetaccess.h
 lib/libcantor_config.so
 lib/libcantor_pythonbackend.so
 lib/libcantorlibs.so
-lib/libcantorlibs.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
+lib/libcantorlibs.so.20
 lib/libcantorlibs.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/cantor/assistants/cantor_advancedplotassistant.so
 %%QT_PLUGINDIR%%/cantor/assistants/cantor_creatematrixassistant.so
@@ -112,7 +112,6 @@ share/kxmlgui5/cantor/cantor_runscript_assistant.rc
 share/kxmlgui5/cantor/cantor_scripteditor.rc
 share/kxmlgui5/cantor/cantor_shell.rc
 share/kxmlgui5/cantor/cantor_solve_assistant.rc
-share/locale/ast/LC_MESSAGES/cantor.mo
 share/locale/bs/LC_MESSAGES/cantor.mo
 share/locale/ca/LC_MESSAGES/cantor.mo
 share/locale/ca@valencia/LC_MESSAGES/cantor.mo

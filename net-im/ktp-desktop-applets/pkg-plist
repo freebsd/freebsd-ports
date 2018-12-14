@@ -7,9 +7,6 @@ share/kservices5/plasma-applet-org.kde.ktp-contactlist.desktop
 share/kservices5/plasma-applet-org.kde.person.desktop
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.ktp-chat.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.person.mo
-share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.ktp-chat.mo
-share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.ktp-contactlist.mo
-share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.person.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_org.kde.ktp-chat.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_org.kde.ktp-contactlist.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_org.kde.person.mo

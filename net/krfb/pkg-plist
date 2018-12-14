@@ -9,7 +9,6 @@ share/icons/hicolor/48x48/apps/krfb.png
 share/icons/hicolor/scalable/apps/krfb.svgz
 share/kservicetypes5/krfb-framebuffer.desktop
 share/locale/ar/LC_MESSAGES/krfb.mo
-share/locale/ast/LC_MESSAGES/krfb.mo
 share/locale/bg/LC_MESSAGES/krfb.mo
 share/locale/bs/LC_MESSAGES/krfb.mo
 share/locale/ca/LC_MESSAGES/krfb.mo

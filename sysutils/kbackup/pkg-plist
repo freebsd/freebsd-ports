@@ -8,7 +8,6 @@ share/icons/hicolor/22x22/actions/kbackup_start.png
 share/icons/hicolor/32x32/apps/kbackup.png
 share/icons/hicolor/32x32/mimetypes/text-x-kbp.png
 share/kxmlgui5/kbackup/kbackupui.rc
-share/locale/ast/LC_MESSAGES/kbackup.mo
 share/locale/ca/LC_MESSAGES/kbackup.mo
 share/locale/ca@valencia/LC_MESSAGES/kbackup.mo
 share/locale/cs/LC_MESSAGES/kbackup.mo

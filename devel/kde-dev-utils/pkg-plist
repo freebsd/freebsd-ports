@@ -15,8 +15,6 @@ share/kxmlgui5/kpartloader/kpartloaderui.rc
 share/kxmlgui5/kuiviewer/kuiviewerui.rc
 share/kxmlgui5/kuiviewerpart/kuiviewer_part.rc
 share/locale/ar/LC_MESSAGES/kuiviewer.mo
-share/locale/ast/LC_MESSAGES/kpartloader.mo
-share/locale/ast/LC_MESSAGES/kuiviewer.mo
 share/locale/bg/LC_MESSAGES/kuiviewer.mo
 share/locale/bs/LC_MESSAGES/kpartloader.mo
 share/locale/bs/LC_MESSAGES/kuiviewer.mo

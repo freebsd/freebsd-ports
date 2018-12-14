@@ -18,8 +18,6 @@ share/icons/hicolor/64x64/apps/kcachegrind.png
 %%DATADIR%%/tips
 share/kxmlgui5/kcachegrind/kcachegrindui.rc
 share/locale/ar/LC_MESSAGES/kcachegrind.mo
-share/locale/ast/LC_MESSAGES/kcachegrind.mo
-share/locale/ast/LC_MESSAGES/kcachegrind_qt.qm
 share/locale/bs/LC_MESSAGES/kcachegrind.mo
 share/locale/bs/LC_MESSAGES/kcachegrind_qt.qm
 share/locale/ca/LC_MESSAGES/kcachegrind.mo

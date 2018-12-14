@@ -496,7 +496,6 @@ share/icons/hicolor/scalable/apps/kajongg.svgz
 %%DATADIR%%/voices/male2/ww.ogg
 %%DATADIR%%/wall.py
 %%DATADIR%%/wind.py
-share/locale/ast/LC_MESSAGES/kajongg.mo
 share/locale/bg/LC_MESSAGES/kajongg.mo
 share/locale/bs/LC_MESSAGES/kajongg.mo
 share/locale/ca/LC_MESSAGES/kajongg.mo

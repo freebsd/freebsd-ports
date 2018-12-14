@@ -15,7 +15,6 @@ share/icons/hicolor/48x48/apps/bomber.png
 share/icons/hicolor/64x64/apps/bomber.png
 share/kxmlgui5/bomber/bomberui.rc
 share/locale/ar/LC_MESSAGES/bomber.mo
-share/locale/ast/LC_MESSAGES/bomber.mo
 share/locale/bg/LC_MESSAGES/bomber.mo
 share/locale/bs/LC_MESSAGES/bomber.mo
 share/locale/ca/LC_MESSAGES/bomber.mo

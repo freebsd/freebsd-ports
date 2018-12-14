@@ -1,4 +1,5 @@
 bin/kubrick
+etc/xdg/kubrick.categories
 share/applications/org.kde.kubrick.desktop
 share/icons/hicolor/128x128/apps/kubrick.png
 share/icons/hicolor/16x16/apps/kubrick.png
@@ -31,7 +32,6 @@ share/icons/hicolor/64x64/apps/kubrick.png
 %%DATADIR%%/p333X6.kbk
 %%DATADIR%%/themes/default.svgz
 share/kxmlgui5/kubrick/kubrickui.rc
-share/locale/ast/LC_MESSAGES/kubrick.mo
 share/locale/bs/LC_MESSAGES/kubrick.mo
 share/locale/ca/LC_MESSAGES/kubrick.mo
 share/locale/ca@valencia/LC_MESSAGES/kubrick.mo

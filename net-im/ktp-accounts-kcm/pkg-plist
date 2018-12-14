@@ -51,17 +51,6 @@ share/locale/ar/LC_MESSAGES/kcmtelepathyaccounts_plugin_idle.mo
 share/locale/ar/LC_MESSAGES/kcmtelepathyaccounts_plugin_morse.mo
 share/locale/ar/LC_MESSAGES/kcmtelepathyaccounts_plugin_pintxo.mo
 share/locale/ar/LC_MESSAGES/kcmtelepathyaccounts_plugin_salut.mo
-share/locale/ast/LC_MESSAGES/kcm_ktp_accounts.mo
-share/locale/ast/LC_MESSAGES/kcmtelepathyaccounts_plugin_butterfly.mo
-share/locale/ast/LC_MESSAGES/kcmtelepathyaccounts_plugin_gabble.mo
-share/locale/ast/LC_MESSAGES/kcmtelepathyaccounts_plugin_haze.mo
-share/locale/ast/LC_MESSAGES/kcmtelepathyaccounts_plugin_idle.mo
-share/locale/ast/LC_MESSAGES/kcmtelepathyaccounts_plugin_morse.mo
-share/locale/ast/LC_MESSAGES/kcmtelepathyaccounts_plugin_pintxo.mo
-share/locale/ast/LC_MESSAGES/kcmtelepathyaccounts_plugin_rakia.mo
-share/locale/ast/LC_MESSAGES/kcmtelepathyaccounts_plugin_salut.mo
-share/locale/ast/LC_MESSAGES/kcmtelepathyaccounts_plugin_sipe.mo
-share/locale/ast/LC_MESSAGES/kcmtelepathyaccounts_plugin_sunshine.mo
 share/locale/bs/LC_MESSAGES/kcm_ktp_accounts.mo
 share/locale/bs/LC_MESSAGES/kcmtelepathyaccounts_plugin_butterfly.mo
 share/locale/bs/LC_MESSAGES/kcmtelepathyaccounts_plugin_gabble.mo

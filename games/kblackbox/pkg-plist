@@ -9,7 +9,6 @@ share/icons/hicolor/64x64/apps/kblackbox.png
 %%DATADIR%%/pics/kblackbox.svgz
 share/kxmlgui5/kblackbox/kblackboxui.rc
 share/locale/ar/LC_MESSAGES/kblackbox.mo
-share/locale/ast/LC_MESSAGES/kblackbox.mo
 share/locale/bg/LC_MESSAGES/kblackbox.mo
 share/locale/bs/LC_MESSAGES/kblackbox.mo
 share/locale/ca/LC_MESSAGES/kblackbox.mo

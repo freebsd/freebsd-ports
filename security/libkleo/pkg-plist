@@ -96,7 +96,6 @@ lib/libKF5Libkleo.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%DATADIR%%patra/pics/key_unknown.png
 %%DATADIR%%patra/pics/smartcard.xpm
 share/locale/ar/LC_MESSAGES/libkleopatra.mo
-share/locale/ast/LC_MESSAGES/libkleopatra.mo
 share/locale/bg/LC_MESSAGES/libkleopatra.mo
 share/locale/bs/LC_MESSAGES/libkleopatra.mo
 share/locale/ca/LC_MESSAGES/libkleopatra.mo

@@ -129,7 +129,6 @@ lib/libKF5IMAP.so
 lib/libKF5IMAP.so.5
 lib/libKF5IMAP.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_KIMAP.pri
-share/locale/ast/LC_MESSAGES/libkimap5.mo
 share/locale/bs/LC_MESSAGES/libkimap5.mo
 share/locale/ca/LC_MESSAGES/libkimap5.mo
 share/locale/ca@valencia/LC_MESSAGES/libkimap5.mo

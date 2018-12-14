@@ -9,7 +9,6 @@ share/config.kcfg/pimsettingexporterglobalconfig.kcfg
 share/kconf_update/pimsettingexporter-15.08-kickoff.sh
 share/kconf_update/pimsettingexporter.upd
 share/locale/ar/LC_MESSAGES/pimsettingexporter.mo
-share/locale/ast/LC_MESSAGES/pimsettingexporter.mo
 share/locale/bs/LC_MESSAGES/pimsettingexporter.mo
 share/locale/ca/LC_MESSAGES/pimsettingexporter.mo
 share/locale/ca@valencia/LC_MESSAGES/pimsettingexporter.mo
@@ -51,3 +50,4 @@ share/locale/ug/LC_MESSAGES/pimsettingexporter.mo
 share/locale/uk/LC_MESSAGES/pimsettingexporter.mo
 share/locale/zh_CN/LC_MESSAGES/pimsettingexporter.mo
 share/locale/zh_TW/LC_MESSAGES/pimsettingexporter.mo
+share/metainfo/org.kde.pimsettingexporter.appdata.xml

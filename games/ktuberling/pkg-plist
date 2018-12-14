@@ -1529,7 +1529,6 @@ share/icons/hicolor/64x64/mimetypes/application-x-tuberling.png
 %%DATADIR%%/sounds/wa/tv_vweteure.ogg
 share/kxmlgui5/ktuberling/ktuberlingui.rc
 share/locale/ar/LC_MESSAGES/ktuberling.mo
-share/locale/ast/LC_MESSAGES/ktuberling.mo
 share/locale/bg/LC_MESSAGES/ktuberling.mo
 share/locale/bs/LC_MESSAGES/ktuberling.mo
 share/locale/ca/LC_MESSAGES/ktuberling.mo

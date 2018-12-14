@@ -1,7 +1,7 @@
 bin/ark
 etc/xdg/ark.categories
 lib/libkerfuffle.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
-lib/libkerfuffle.so.18.8.3
+lib/libkerfuffle.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/arkpart.so
 %%QT_PLUGINDIR%%/kerfuffle/kerfuffle_cli7z.so
 %%QT_PLUGINDIR%%/kerfuffle/kerfuffle_clirar.so
@@ -39,7 +39,6 @@ share/kservices5/ark_part.desktop
 share/kservicetypes5/kerfufflePlugin.desktop
 share/kxmlgui5/ark/ark_viewer.rc
 share/locale/ar/LC_MESSAGES/ark.mo
-share/locale/ast/LC_MESSAGES/ark.mo
 share/locale/bg/LC_MESSAGES/ark.mo
 share/locale/bs/LC_MESSAGES/ark.mo
 share/locale/ca/LC_MESSAGES/ark.mo
@@ -93,3 +92,4 @@ share/locale/uk/LC_MESSAGES/ark.mo
 share/locale/zh_CN/LC_MESSAGES/ark.mo
 share/locale/zh_TW/LC_MESSAGES/ark.mo
 share/metainfo/org.kde.ark.appdata.xml
+share/mime/packages/kerfuffle.xml

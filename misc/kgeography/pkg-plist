@@ -489,6 +489,24 @@ share/icons/hicolor/scalable/apps/kgeography.svgz
 %%DATADIR%%/flags/nkorea.png
 %%DATADIR%%/flags/norfolk_island.png
 %%DATADIR%%/flags/northern_mariana_islands.png
+%%DATADIR%%/flags/norway/akershus.png
+%%DATADIR%%/flags/norway/aust-agder.png
+%%DATADIR%%/flags/norway/buskerud.png
+%%DATADIR%%/flags/norway/finnmark.png
+%%DATADIR%%/flags/norway/hedmark.png
+%%DATADIR%%/flags/norway/hordaland.png
+%%DATADIR%%/flags/norway/more_og_romsdal.png
+%%DATADIR%%/flags/norway/nordland.png
+%%DATADIR%%/flags/norway/oppland.png
+%%DATADIR%%/flags/norway/oslo.png
+%%DATADIR%%/flags/norway/ostfold.png
+%%DATADIR%%/flags/norway/rogaland.png
+%%DATADIR%%/flags/norway/sogn_og_fjordane.png
+%%DATADIR%%/flags/norway/telemark.png
+%%DATADIR%%/flags/norway/troms.png
+%%DATADIR%%/flags/norway/trondelag.png
+%%DATADIR%%/flags/norway/vest-agder.png
+%%DATADIR%%/flags/norway/vestfold.png
 %%DATADIR%%/flags/norway.png
 %%DATADIR%%/flags/oman.png
 %%DATADIR%%/flags/pakistan.png
@@ -995,7 +1013,6 @@ share/icons/hicolor/scalable/apps/kgeography.svgz
 %%DATADIR%%/zimbabwe_districts.png
 share/kxmlgui5/kgeography/kgeographyui.rc
 share/locale/ar/LC_MESSAGES/kgeography.mo
-share/locale/ast/LC_MESSAGES/kgeography.mo
 share/locale/bg/LC_MESSAGES/kgeography.mo
 share/locale/bs/LC_MESSAGES/kgeography.mo
 share/locale/ca/LC_MESSAGES/kgeography.mo
@@ -1056,3 +1073,4 @@ share/locale/uk/LC_SCRIPTS/kgeography/general.pmapc
 share/locale/uk/LC_SCRIPTS/kgeography/kgeography.js
 share/locale/zh_CN/LC_MESSAGES/kgeography.mo
 share/locale/zh_TW/LC_MESSAGES/kgeography.mo
+share/metainfo/org.kde.kgeography.appdata.xml

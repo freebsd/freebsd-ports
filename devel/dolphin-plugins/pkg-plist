@@ -11,10 +11,6 @@ share/kservices5/fileviewdropboxplugin.desktop
 share/kservices5/fileviewgitplugin.desktop
 share/kservices5/fileviewhgplugin.desktop
 share/kservices5/fileviewsvnplugin.desktop
-share/locale/ast/LC_MESSAGES/fileviewbazaarplugin.mo
-share/locale/ast/LC_MESSAGES/fileviewgitplugin.mo
-share/locale/ast/LC_MESSAGES/fileviewhgplugin.mo
-share/locale/ast/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/bs/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/bs/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/bs/LC_MESSAGES/fileviewhgplugin.mo

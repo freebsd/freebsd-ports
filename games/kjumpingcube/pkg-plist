@@ -10,7 +10,6 @@ share/icons/hicolor/64x64/apps/kjumpingcube.png
 %%DATADIR%%/pics/default.desktop
 %%DATADIR%%/pics/default.svg
 share/locale/ar/LC_MESSAGES/kjumpingcube.mo
-share/locale/ast/LC_MESSAGES/kjumpingcube.mo
 share/locale/bg/LC_MESSAGES/kjumpingcube.mo
 share/locale/bs/LC_MESSAGES/kjumpingcube.mo
 share/locale/ca/LC_MESSAGES/kjumpingcube.mo

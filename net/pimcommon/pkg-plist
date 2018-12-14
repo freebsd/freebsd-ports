@@ -21,7 +21,6 @@ include/KF5/PimCommon/KPimPrintPreviewDialog
 include/KF5/PimCommon/LineEditWithAutoCorrection
 include/KF5/PimCommon/LineEditWithCompleterNg
 include/KF5/PimCommon/LogActivitiesManager
-include/KF5/PimCommon/MetaType
 include/KF5/PimCommon/MigrateApplicationFiles
 include/KF5/PimCommon/MigrateFileInfo
 include/KF5/PimCommon/MinimumComboBox
@@ -30,6 +29,7 @@ include/KF5/PimCommon/NetworkUtil
 include/KF5/PimCommon/PimCommonSettings
 include/KF5/PimCommon/PimUtil
 include/KF5/PimCommon/PluginUtil
+include/KF5/PimCommon/PurposeMenuWidget
 include/KF5/PimCommon/RenameFileDialog
 include/KF5/PimCommon/RichTexteditWithAutoCorrection
 include/KF5/PimCommon/ShareServiceUrlManager
@@ -59,6 +59,7 @@ include/KF5/pimcommon/abstractgenericplugininterface.h
 include/KF5/pimcommon/autocorrection.h
 include/KF5/pimcommon/autocorrectionlanguage.h
 include/KF5/pimcommon/autocorrectionwidget.h
+include/KF5/pimcommon/config-pimcommon.h
 include/KF5/pimcommon/configureimmutablewidgetutils.h
 include/KF5/pimcommon/configureplugindialog.h
 include/KF5/pimcommon/configurepluginslistwidget.h
@@ -76,7 +77,6 @@ include/KF5/pimcommon/kpimprintpreviewdialog.h
 include/KF5/pimcommon/lineeditwithautocorrection.h
 include/KF5/pimcommon/lineeditwithcompleterng.h
 include/KF5/pimcommon/logactivitiesmanager.h
-include/KF5/pimcommon/metatype.h
 include/KF5/pimcommon/migrateapplicationfiles.h
 include/KF5/pimcommon/migratefileinfo.h
 include/KF5/pimcommon/minimumcombobox.h
@@ -88,6 +88,7 @@ include/KF5/pimcommon/pimcommonsetting_base.h
 include/KF5/pimcommon/pimcommonsettings.h
 include/KF5/pimcommon/pimutil.h
 include/KF5/pimcommon/pluginutil.h
+include/KF5/pimcommon/purposemenuwidget.h
 include/KF5/pimcommon/renamefiledialog.h
 include/KF5/pimcommon/richtexteditwithautocorrection.h
 include/KF5/pimcommon/shareserviceurlmanager.h
@@ -134,7 +135,6 @@ lib/libKF5PimCommonAkonadi.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_PimCommonAkonadi.pri
 %%QT_PLUGINDIR%%/designer/pimcommonwidgets.so
 share/locale/ar/LC_MESSAGES/libpimcommon.mo
-share/locale/ast/LC_MESSAGES/libpimcommon.mo
 share/locale/bs/LC_MESSAGES/libpimcommon.mo
 share/locale/ca/LC_MESSAGES/libpimcommon.mo
 share/locale/ca@valencia/LC_MESSAGES/libpimcommon.mo

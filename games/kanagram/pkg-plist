@@ -39,7 +39,6 @@ share/icons/hicolor/scalable/apps/kanagram.svgz
 %%DATADIR%%/ui/sounds/wrong.ogg
 %%DATADIR%%/ui/sounds/wrong.wav
 share/locale/ar/LC_MESSAGES/kanagram.mo
-share/locale/ast/LC_MESSAGES/kanagram.mo
 share/locale/bg/LC_MESSAGES/kanagram.mo
 share/locale/bs/LC_MESSAGES/kanagram.mo
 share/locale/ca/LC_MESSAGES/kanagram.mo

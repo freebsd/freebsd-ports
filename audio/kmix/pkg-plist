@@ -3,8 +3,6 @@ bin/kmixctrl
 bin/kmixremote
 etc/xdg/autostart/kmix_autostart.desktop
 etc/xdg/autostart/restore_kmix_volumes.desktop
-lib/libkdeinit5_kmix.so
-lib/libkdeinit5_kmixctrl.so
 lib/libkmixcore.so.5
 lib/libkmixcore.so.5.13.80
 %%QT_PLUGINDIR%%/kf5/kded/kmixd.so
@@ -21,7 +19,6 @@ share/icons/hicolor/64x64/actions/kmix.png
 share/knotifications5/kmix.notifyrc
 %%DATADIR%%/pics/show-mixer.png
 share/locale/ar/LC_MESSAGES/kmix.mo
-share/locale/ast/LC_MESSAGES/kmix.mo
 share/locale/bg/LC_MESSAGES/kmix.mo
 share/locale/bs/LC_MESSAGES/kmix.mo
 share/locale/ca/LC_MESSAGES/kmix.mo

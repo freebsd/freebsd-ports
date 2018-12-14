@@ -3,7 +3,6 @@ share/applications/org.kde.sweeper.desktop
 share/dbus-1/interfaces/org.kde.sweeper.xml
 share/kxmlgui5/sweeper/sweeperui.rc
 share/locale/ar/LC_MESSAGES/sweeper.mo
-share/locale/ast/LC_MESSAGES/sweeper.mo
 share/locale/bg/LC_MESSAGES/sweeper.mo
 share/locale/bs/LC_MESSAGES/sweeper.mo
 share/locale/ca/LC_MESSAGES/sweeper.mo

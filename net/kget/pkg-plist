@@ -1,4 +1,5 @@
 bin/kget
+etc/xdg/kget.categories
 lib/libkgetcore.so
 lib/libkgetcore.so.5
 lib/libkgetcore.so.5.0.0
@@ -48,10 +49,6 @@ share/kxmlgui5/kget/kgetui.rc
 share/locale/ar/LC_MESSAGES/kget.mo
 share/locale/ar/LC_MESSAGES/kgetplugin.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_kget.mo
-share/locale/ast/LC_MESSAGES/kget.mo
-share/locale/ast/LC_MESSAGES/kgetplugin.mo
-share/locale/ast/LC_MESSAGES/plasma_applet_kget.mo
-share/locale/ast/LC_MESSAGES/plasma_runner_kget.mo
 share/locale/bg/LC_MESSAGES/kget.mo
 share/locale/bg/LC_MESSAGES/kgetplugin.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_kget.mo

@@ -1,4 +1,5 @@
 bin/granatier
+etc/xdg/granatier.categories
 share/applications/org.kde.granatier.desktop
 share/config.kcfg/granatier.kcfg
 %%DATADIR%%/arenas/clanbomber_Arena.desktop
@@ -115,7 +116,6 @@ share/icons/hicolor/48x48/apps/granatier.png
 share/icons/hicolor/64x64/apps/granatier.png
 share/kxmlgui5/granatier/granatierui.rc
 share/locale/ar/LC_MESSAGES/granatier.mo
-share/locale/ast/LC_MESSAGES/granatier.mo
 share/locale/bg/LC_MESSAGES/granatier.mo
 share/locale/bs/LC_MESSAGES/granatier.mo
 share/locale/ca/LC_MESSAGES/granatier.mo

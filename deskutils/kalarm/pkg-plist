@@ -33,7 +33,6 @@ share/kconf_update/kalarm-version.pl
 share/kconf_update/kalarm.upd
 share/kxmlgui5/kalarm/kalarmui.rc
 share/locale/ar/LC_MESSAGES/kalarm.mo
-share/locale/ast/LC_MESSAGES/kalarm.mo
 share/locale/bg/LC_MESSAGES/kalarm.mo
 share/locale/bs/LC_MESSAGES/kalarm.mo
 share/locale/ca/LC_MESSAGES/kalarm.mo

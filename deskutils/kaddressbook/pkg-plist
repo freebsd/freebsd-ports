@@ -14,6 +14,7 @@ share/icons/hicolor/22x22/apps/kaddressbook.png
 share/icons/hicolor/32x32/apps/kaddressbook.png
 share/icons/hicolor/48x48/apps/kaddressbook.png
 share/icons/hicolor/64x64/apps/kaddressbook.png
+share/icons/hicolor/scalable/apps/kaddressbook.svg
 %%DATADIR%%/printing/compact-style.png
 %%DATADIR%%/printing/detailed-style.png
 %%DATADIR%%/printing/mike-style.png
@@ -39,7 +40,6 @@ share/kservices5/kaddressbook_config_plugins.desktop
 share/kservices5/kaddressbookpart.desktop
 share/kservices5/kontact/kaddressbookplugin.desktop
 share/locale/ar/LC_MESSAGES/kaddressbook.mo
-share/locale/ast/LC_MESSAGES/kaddressbook.mo
 share/locale/bg/LC_MESSAGES/kaddressbook.mo
 share/locale/bs/LC_MESSAGES/kaddressbook.mo
 share/locale/ca/LC_MESSAGES/kaddressbook.mo

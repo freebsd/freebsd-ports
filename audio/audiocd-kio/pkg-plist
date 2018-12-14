@@ -1,3 +1,4 @@
+etc/xdg/kio_audiocd.categories
 include/audiocdencoder.h
 include/audiocdplugins_export.h
 lib/libaudiocdplugins.so
@@ -17,11 +18,6 @@ share/locale/ar/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/ar/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/ar/LC_MESSAGES/kcmaudiocd.mo
 share/locale/ar/LC_MESSAGES/kio_audiocd.mo
-share/locale/ast/LC_MESSAGES/audiocd_encoder_flac.mo
-share/locale/ast/LC_MESSAGES/audiocd_encoder_lame.mo
-share/locale/ast/LC_MESSAGES/audiocd_encoder_vorbis.mo
-share/locale/ast/LC_MESSAGES/kcmaudiocd.mo
-share/locale/ast/LC_MESSAGES/kio_audiocd.mo
 share/locale/bg/LC_MESSAGES/audiocd_encoder_lame.mo
 share/locale/bg/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/bg/LC_MESSAGES/kcmaudiocd.mo
@@ -261,3 +257,4 @@ share/locale/zh_TW/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/zh_TW/LC_MESSAGES/kcmaudiocd.mo
 share/locale/zh_TW/LC_MESSAGES/kio_audiocd.mo
 share/solid/actions/solid_audiocd.desktop
+share/metainfo/org.kde.kio_audiocd.appdata.xml

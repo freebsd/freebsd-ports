@@ -45,8 +45,6 @@ share/kservices5/ldap.protocol
 share/kservices5/ldaps.protocol
 share/locale/ar/LC_MESSAGES/kio_ldap.mo
 share/locale/ar/LC_MESSAGES/libkldap5.mo
-share/locale/ast/LC_MESSAGES/kio_ldap.mo
-share/locale/ast/LC_MESSAGES/libkldap5.mo
 share/locale/bg/LC_MESSAGES/kio_ldap.mo
 share/locale/bs/LC_MESSAGES/kio_ldap.mo
 share/locale/bs/LC_MESSAGES/libkldap5.mo

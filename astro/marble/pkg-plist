@@ -105,10 +105,11 @@ include/marble/MarbleMap.h
 include/marble/MarbleMath.h
 include/marble/MarbleModel.h
 include/marble/MarbleNavigator.h
-include/marble/MarbleWebView.h
 include/marble/MarbleWidget.h
 include/marble/MarbleWidgetInputHandler.h
 include/marble/MarbleWidgetPopupMenu.h
+include/marble/NullMarbleWebView.h
+include/marble/NullTinyWebBrowser.h
 include/marble/OsmcSymbol.h
 include/marble/ParseRunnerPlugin.h
 include/marble/ParsingRunner.h
@@ -153,7 +154,6 @@ include/marble/TileCreator.h
 include/marble/TileCreatorDialog.h
 include/marble/TileId.h
 include/marble/TileLevelRangeWidget.h
-include/marble/TinyWebBrowser.h
 include/marble/TourControlEditWidget.h
 include/marble/TourItemDelegate.h
 include/marble/TourPlayback.h
@@ -216,12 +216,10 @@ lib/marble/plugins/libNominatimReverseGeocodingPlugin.so
 lib/marble/plugins/libNominatimSearchPlugin.so
 lib/marble/plugins/libNotesPlugin.so
 lib/marble/plugins/libOSRMPlugin.so
-lib/marble/plugins/libOpenDesktopPlugin.so
 lib/marble/plugins/libOpenLocationCodeSearchPlugin.so
 lib/marble/plugins/libOpenRouteServicePlugin.so
 lib/marble/plugins/libOsmPlugin.so
 lib/marble/plugins/libOverviewMap.so
-lib/marble/plugins/libPhoto.so
 lib/marble/plugins/libPn2Plugin.so
 lib/marble/plugins/libPntPlugin.so
 lib/marble/plugins/libPositionMarker.so
@@ -234,8 +232,6 @@ lib/marble/plugins/libSatellitesPlugin.so
 lib/marble/plugins/libSpeedometer.so
 lib/marble/plugins/libStarsPlugin.so
 lib/marble/plugins/libSunPlugin.so
-lib/marble/plugins/libWeather.so
-lib/marble/plugins/libWikipedia.so
 lib/marble/plugins/libYoursPlugin.so
 lib/plugins/designer/libLatLonEditPlugin.so
 lib/plugins/designer/libMarbleNavigatorPlugin.so
@@ -274,11 +270,6 @@ share/kxmlgui5/marble/marble_part.rc
 share/kxmlgui5/marble/marbleui.rc
 share/locale/ar/LC_MESSAGES/marble.mo
 share/locale/ar/LC_MESSAGES/marble_qt.qm
-share/locale/ast/LC_MESSAGES/marble.mo
-share/locale/ast/LC_MESSAGES/marble_qt.qm
-share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo
-share/locale/ast/LC_MESSAGES/plasma_runner_marble.mo
-share/locale/ast/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
 share/locale/bg/LC_MESSAGES/marble.mo
 share/locale/bg/LC_MESSAGES/marble_qt.qm
 share/locale/bs/LC_MESSAGES/marble.mo

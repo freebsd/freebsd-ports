@@ -34,7 +34,6 @@ share/kservices5/dragonplayer_part.desktop
 share/kxmlgui5/dragonplayer/dragonlogo.png
 share/kxmlgui5/dragonplayer/dragonplayerui.rc
 share/locale/ar/LC_MESSAGES/dragonplayer.mo
-share/locale/ast/LC_MESSAGES/dragonplayer.mo
 share/locale/bg/LC_MESSAGES/dragonplayer.mo
 share/locale/bs/LC_MESSAGES/dragonplayer.mo
 share/locale/ca/LC_MESSAGES/dragonplayer.mo

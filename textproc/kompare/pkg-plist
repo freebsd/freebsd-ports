@@ -20,7 +20,6 @@ share/kservicetypes5/kompareviewpart.desktop
 share/kxmlgui5/komparepart/komparepartui.rc
 share/kxmlgui5/kompare/kompareui.rc
 share/locale/ar/LC_MESSAGES/kompare.mo
-share/locale/ast/LC_MESSAGES/kompare.mo
 share/locale/bg/LC_MESSAGES/kompare.mo
 share/locale/bs/LC_MESSAGES/kompare.mo
 share/locale/ca/LC_MESSAGES/kompare.mo

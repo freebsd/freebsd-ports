@@ -25,7 +25,6 @@ share/icons/hicolor/64x64/apps/kapman.png
 %%DATADIR%%/themes/retro_preview.png
 share/kxmlgui5/kapman/kapmanui.rc
 share/locale/ar/LC_MESSAGES/kapman.mo
-share/locale/ast/LC_MESSAGES/kapman.mo
 share/locale/bg/LC_MESSAGES/kapman.mo
 share/locale/bs/LC_MESSAGES/kapman.mo
 share/locale/ca/LC_MESSAGES/kapman.mo

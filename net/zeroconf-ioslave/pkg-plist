@@ -3,7 +3,6 @@
 share/dbus-1/interfaces/org.kde.kdnssd.xml
 share/kservices5/kded/dnssdwatcher.desktop
 share/locale/ar/LC_MESSAGES/kio5_zeroconf.mo
-share/locale/ast/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/bg/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/bs/LC_MESSAGES/kio5_zeroconf.mo
 share/locale/ca/LC_MESSAGES/kio5_zeroconf.mo
