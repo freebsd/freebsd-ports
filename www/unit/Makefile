@@ -3,7 +3,7 @@
 
 PORTNAME=	unit
 PORTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://unit.nginx.org/download/
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 EXTRA_PATCHES=	${FILESDIR}/php_zts.patch:-p1
 
-USES+=		cpe
+USES+=		compiler:c11 cpe
 
 CPE_VENDOR=	nginx
 CPE_PRODUCT=	unit
