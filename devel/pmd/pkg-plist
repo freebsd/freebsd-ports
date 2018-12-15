@@ -23,7 +23,7 @@ bin/pmd
 %%DATADIR%%/j2objc-annotations-1.1.jar
 %%DATADIR%%/javacc-5.0.jar
 %%DATADIR%%/javax.inject-1.jar
-%%DATADIR%%/jcommander-1.48.jar
+%%DATADIR%%/jcommander-1.72.jar
 %%DATADIR%%/jol-core-0.4.jar
 %%DATADIR%%/jsr305-3.0.1.jar
 %%DATADIR%%/logback-classic-1.1.7.jar
@@ -43,6 +43,7 @@ bin/pmd
 %%DATADIR%%/pmd-java-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-javascript-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-jsp-%%PORTVERSION%%.jar
+%%DATADIR%%/pmd-kotlin-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-matlab-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-objectivec-%%PORTVERSION%%.jar
 %%DATADIR%%/pmd-perl-%%PORTVERSION%%.jar
