@@ -4,8 +4,8 @@
 
     <appender name="FILE" class="org.apache.log4j.rolling.RollingFileAppender">
         <rollingPolicy class="org.apache.log4j.rolling.FixedWindowRollingPolicy" >
-            <param name="activeFileName" value="/var/log/graylog/server.log" /> <!-- ADAPT -->
-            <param name="fileNamePattern" value="/var/log/graylog/server.%i.log" /> <!-- ADAPT -->
+            <param name="activeFileName" value="%%GRAYLOG_LOGS_DIR%%/server.log" /> <!-- ADAPT -->
+            <param name="fileNamePattern" value="%%GRAYLOG_LOGS_DIR%%/server.%i.log" /> <!-- ADAPT -->
             <param name="minIndex" value="1" /> <!-- ADAPT -->
             <param name="maxIndex" value="10" /> <!-- ADAPT -->
         </rollingPolicy>

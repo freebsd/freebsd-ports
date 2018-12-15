@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	graylog
-DISTVERSION=	2.4.3
+DISTVERSION=	2.4.6
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://packages.graylog2.org/releases/graylog/ \
 		http://packages.graylog2.org/releases/graylog/
@@ -15,14 +15,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:tgz
 USE_JAVA=	yes
+
 JAVA_VERSION=	1.8+
 JAVA_EXTRACT=	yes
 JAVA_RUN=	yes
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 
 USE_RC_SUBR=	graylog
-SUB_FILES=	server.conf log4j2.xml pkg-message
+SUB_FILES=	server.conf log4j2.xml pkg-message graylog_logging.xml
 
 GRAYLOGUSER?=	graylog
 GRAYLOGGROUP?=	${GRAYLOGUSER}
