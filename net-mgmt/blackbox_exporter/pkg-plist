@@ -1,4 +1,0 @@
-bin/blackbox_exporter
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blackbox.yml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/circle.yml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.yml
