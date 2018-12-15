@@ -19,7 +19,7 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.${X264_BUILD}.${X264_REV}
-PORTREVISION?=	5 # 0 in libx264
+PORTREVISION?=	5	# 0 in libx264
 CATEGORIES=	multimedia
 MASTER_SITES=	https://downloads.videolan.org/pub/videolan/x264/snapshots/ \
 		https://samples.mplayerhq.hu/yuv4mpeg2/:pgo
