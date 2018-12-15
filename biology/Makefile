@@ -106,6 +106,7 @@
     SUBDIR += py-biopython
     SUBDIR += py-bx-python
     SUBDIR += py-cutadapt
+    SUBDIR += py-fastTSNE
     SUBDIR += py-gffutils
     SUBDIR += py-gtfparse
     SUBDIR += py-loompy

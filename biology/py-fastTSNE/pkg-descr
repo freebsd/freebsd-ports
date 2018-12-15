@@ -1,0 +1,6 @@
+Fast, parallel implementations of t-SNE allows, for example, in one case
+to visualize 160,796 single cell transcriptomes from the mouse nervous system
+computed in under 2 minutes using FFT accelerated interpolation and approximate
+nearest neighbors.
+
+WWW: https://github.com/pavlin-policar/fastTSNE
