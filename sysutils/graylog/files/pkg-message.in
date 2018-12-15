@@ -1,6 +1,7 @@
 ======================================================================
 
-Please see %%ETCDIR%% for sample versions of server.conf and log4j2.xml
+Please see %%ETCDIR%% for sample versions of server.conf, log4j.xml, and
+graylog_logging.xml, and adjust them for your configuration.
 
 For GeoIP support you need to install the net/GeoIP port and
 configure the path to the GeoIP databases in the Graylog Web Interface.
@@ -9,8 +10,8 @@ When running graylog in a jail, you need to set enforce_statfs for the jail.
 
 For a single-node installation, install:
 
-- databases/mongodb
-- textproc/elasticsearch2
+- databases/mongodb36
+- textproc/elasticsearch5
 
 And ensure that the elasticsearch cluster name matches that used by graylog.
 ======================================================================

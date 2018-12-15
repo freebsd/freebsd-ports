@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20181215:
+  AFFECTS: users of sysutils/graylog
+  AUTHOR: dch@FreeBSD.org
+
+  The dependent ports for ElasticSearch and MongoDB have both changed,
+  and upstream changes to the configuration file may require minor
+  changes to work correctly. Refer to the new sample files installed
+  alongside the port for reference:
+
+  server.conf
+  log4j.xml
+  graylog_logging.xml
+
 20181213:
   AFFECTS: users of lang/perl5*
   AUTHOR: mat@FreeBSD.org
