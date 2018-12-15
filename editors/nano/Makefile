@@ -25,8 +25,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 OPTIONS_DEFINE=	DOCS EXAMPLES NLS
 OPTIONS_SUB=	yes
 
-DOCS_USES=	groff
-
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
@@ -34,17 +32,16 @@ INFO=		nano
 
 PORTSCOUT=	limitw:1,even
 
-post-configure:
-	${REINPLACE_CMD} -e 's/update_revision//g' ${WRKSRC}/src/Makefile
+post-patch:
+	${REINPLACE_CMD} -e 's/^groff.*/false/' ${WRKSRC}/configure
 
-post-build:
-	cd ${WRKSRC}/doc; ${REINPLACE_CMD} \
-		-e 's:SYSCONFDIR:${PREFIX}/etc:g' \
-		-e 's:EXAMPLESDIR:${EXAMPLESDIR}:g' \
-		nano.1 rnano.1 nanorc.5 ${WRKSRC}/doc/${INFO:=.info}
-
-post-install:
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/sample.nanorc ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-DOCS-on:
+.for doc in nano.1.html rnano.1.html nanorc.5.html
+	${INSTALL_DATA} ${WRKSRC}/doc/${doc} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
