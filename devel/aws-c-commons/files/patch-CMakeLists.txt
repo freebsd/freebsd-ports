@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-12-05 21:54:26 UTC
++++ CMakeLists.txt
+@@ -182,7 +182,7 @@ list(APPEND EXPORT_MODULES
+ 
+ install(FILES ${EXPORT_MODULES} DESTINATION "lib/cmake/")
+ 
+-if (NOT CMAKE_CROSSCOMPILING)
++if (NOT CMAKE_CROSSCOMPILING AND BUILD_TESTING)
+     include(CTest)
+     add_subdirectory(tests)
+ endif()
