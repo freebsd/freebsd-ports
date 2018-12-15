@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitg
-PORTVERSION=	3.26.0
-PORTREVISION=	2
+PORTVERSION=	3.30.1
 CATEGORIES=	devel deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -29,26 +28,29 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 CONFLICTS=	gitg0-[0-9]*
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 desktop-file-utils gmake libtool localbase \
-		pathfix pkgconfig tar:xz
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--disable-maintainer-mode \
-		--enable-compile-warnings=no
+USES=		compiler:c11 desktop-file-utils gettext gnome localbase \
+		meson pathfix pkgconfig python:3.4+,build tar:xz
 USE_GNOME=	cairo gtk30 gtksourceview3 intltool introspection
-INSTALL_TARGET=	install-strip
 
 INSTALLS_ICONS=	yes
+USE_LDCONFIG=	yes
 GLIB_SCHEMAS=	org.gnome.gitg.gschema.xml
+BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
-OPTIONS_DEFINE=	DEBUG NLS PYTHON
+OPTIONS_DEFINE=	PYTHON
 OPTIONS_SUB=	yes
-DEBUG_CONFIGURE_ENABLE=	debug
-NLS_USES=	gettext
-NLS_USES_OFF=	gettext-tools
-NLS_CONFIGURE_ENABLE=	nls
+
 PYTHON_USES=	python:3.2+
-PYTHON_CONFIGURE_ENABLE=	python
+PYTHON_MESON_TRUE=	python
 PYTHON_USE=	GNOME=pygobject3
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|0.27.0|0.28.0|g' \
+		${WRKSRC}/meson.build
+
+post-install-PYTHON-on:
+	(cd ${STAGEDIR}${PREFIX} \
+		&& ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PREFIX} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
 
 .include <bsd.port.mk>
