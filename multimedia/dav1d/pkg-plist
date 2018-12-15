@@ -1,0 +1,10 @@
+bin/dav1d
+include/dav1d/common.h
+include/dav1d/data.h
+include/dav1d/dav1d.h
+include/dav1d/headers.h
+include/dav1d/picture.h
+lib/libdav1d.so
+lib/libdav1d.so.0
+lib/libdav1d.so.0.1.0
+libdata/pkgconfig/dav1d.pc
