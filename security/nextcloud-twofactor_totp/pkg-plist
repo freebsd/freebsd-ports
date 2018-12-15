@@ -125,6 +125,7 @@
 %%WWWDIR%%/lib/Controller/SettingsController.php
 %%WWWDIR%%/lib/Db/TotpSecret.php
 %%WWWDIR%%/lib/Db/TotpSecretMapper.php
+%%WWWDIR%%/lib/Event/DisabledByAdmin.php
 %%WWWDIR%%/lib/Event/StateChanged.php
 %%WWWDIR%%/lib/Exception/NoTotpSecretFoundException.php
 %%WWWDIR%%/lib/Exception/TotpSecretAlreadySet.php
@@ -240,8 +241,6 @@
 %%WWWDIR%%/vendor/christophwurst/nextcloud/.git/logs/refs/heads/master
 %%WWWDIR%%/vendor/christophwurst/nextcloud/.git/logs/refs/remotes/origin/HEAD
 %%WWWDIR%%/vendor/christophwurst/nextcloud/.git/objects/info/packs
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/objects/pack/pack-813d3b6519b75f1e4aa12cff9b97dfe5e362faff.idx
-%%WWWDIR%%/vendor/christophwurst/nextcloud/.git/objects/pack/pack-813d3b6519b75f1e4aa12cff9b97dfe5e362faff.pack
 %%WWWDIR%%/vendor/christophwurst/nextcloud/.git/packed-refs
 %%WWWDIR%%/vendor/christophwurst/nextcloud/.git/refs/heads/master
 %%WWWDIR%%/vendor/christophwurst/nextcloud/.git/refs/remotes/origin/HEAD
@@ -631,6 +630,7 @@
 %%WWWDIR%%/vendor/christophwurst/nextcloud/OCP/User/Backend/ICreateUserBackend.php
 %%WWWDIR%%/vendor/christophwurst/nextcloud/OCP/User/Backend/IGetDisplayNameBackend.php
 %%WWWDIR%%/vendor/christophwurst/nextcloud/OCP/User/Backend/IGetHomeBackend.php
+%%WWWDIR%%/vendor/christophwurst/nextcloud/OCP/User/Backend/IPasswordConfirmationBackend.php
 %%WWWDIR%%/vendor/christophwurst/nextcloud/OCP/User/Backend/IProvideAvatarBackend.php
 %%WWWDIR%%/vendor/christophwurst/nextcloud/OCP/User/Backend/ISetDisplayNameBackend.php
 %%WWWDIR%%/vendor/christophwurst/nextcloud/OCP/User/Backend/ISetPasswordBackend.php
@@ -657,9 +657,6 @@
 %%WWWDIR%%/vendor/endroid/qr-code/.vscode/temp.sql
 %%WWWDIR%%/vendor/endroid/qr-code/LICENSE
 %%WWWDIR%%/vendor/endroid/qr-code/README.md
-%%WWWDIR%%/vendor/endroid/qr-code/assets/noto_sans.otf
-%%WWWDIR%%/vendor/endroid/qr-code/assets/open_sans.ttf
-%%WWWDIR%%/vendor/endroid/qr-code/assets/symfony.png
 %%WWWDIR%%/vendor/endroid/qr-code/composer.json
 %%WWWDIR%%/vendor/endroid/qr-code/phpunit.xml.dist
 %%WWWDIR%%/vendor/endroid/qr-code/src/Bundle/QrCodeBundle/Controller/QrCodeController.php
