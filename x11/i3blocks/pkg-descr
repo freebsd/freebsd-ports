@@ -1,0 +1,14 @@
+A minimalist scheduler for your status line scripts.
+
+i3blocks executes your command lines and generates a status line from their
+output. Commands are scheduled at configured time intervals, upon signal
+reception or on clicks.
+
+The generated line is meant to be displayed by the i3 window manager
+through its i3bar component, as an alternative to i3status.
+
+i3blocks is meant to be highly flexible but intuitive. No library package
+is required, just output what your status bar expects, from your favorite
+programming language and your preferred format.
+
+WWW: https://github.com/Minbar1/i3blocks
