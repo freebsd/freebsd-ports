@@ -12,6 +12,7 @@ COMMENT=	Free Prolog compiler
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build
 DEPRECATED=		Abandonware upstream (more than five years), fails in various ways with remotely recent compilers
 EXPIRATION_DATE=	2018-12-18
 
