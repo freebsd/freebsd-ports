@@ -11,6 +11,8 @@ COMMENT=	Dump the internal representation of PHP scripts
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+IGNORE_WITH_PHP=	56
+
 USES=		php:pecl
 
 CONFIGURE_ARGS=	--enable-vld
