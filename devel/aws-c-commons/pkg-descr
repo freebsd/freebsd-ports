@@ -1,0 +1,4 @@
+Core c99 package for AWS SDK for C. Includes cross-platform primitives,
+configuration, data structures, and error handling.
+
+WWW: https://github.com/awslabs/aws-c-common

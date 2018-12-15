@@ -1,0 +1,6 @@
+include/aws/event-stream/event_stream.h
+include/aws/event-stream/event_stream_exports.h
+lib/aws-c-event-stream/cmake/aws-c-event-stream-config.cmake
+lib/aws-c-event-stream/cmake/aws-c-event-stream-targets-release.cmake
+lib/aws-c-event-stream/cmake/aws-c-event-stream-targets.cmake
+lib/libaws-c-event-stream.so

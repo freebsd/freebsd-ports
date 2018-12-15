@@ -1,0 +1,4 @@
+Cross-Platform HW accelerated CRC32c and CRC32 with fallback to
+efficient SW implementations.
+
+WWW: https://github.com/awslabs/aws-checksums
