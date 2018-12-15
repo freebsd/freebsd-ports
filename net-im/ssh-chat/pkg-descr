@@ -1,0 +1,3 @@
+Custom SSH server written in Go. Instead of a shell, you get a chat prompt.
+
+WWW: https://github.com/shazow/ssh-chat

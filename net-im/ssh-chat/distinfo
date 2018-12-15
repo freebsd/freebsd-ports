@@ -1,0 +1,15 @@
+TIMESTAMP = 1544849393
+SHA256 (shazow-ssh-chat-v1.7-4-gf36d7eb_GH0.tar.gz) = bef55195517606c2f11af09c3ad735cf057da8449bcf3eabcd97f0424e9b9d96
+SIZE (shazow-ssh-chat-v1.7-4-gf36d7eb_GH0.tar.gz) = 34661
+SHA256 (shazow-rateio-e8e0088_GH0.tar.gz) = 75fa928cb0b3445a94d5ef05b15ab67ac7f5c2a8a5617e4b829bcc27ef4c0eba
+SIZE (shazow-rateio-e8e0088_GH0.tar.gz) = 2528
+SHA256 (alexcesaro-log-61e6862_GH0.tar.gz) = 75e35a9d70ada8d32a43f37aecc47a1a67305547658a6a86054ceca87bb9a263
+SIZE (alexcesaro-log-61e6862_GH0.tar.gz) = 8800
+SHA256 (howeyc-gopass-bf9dde6_GH0.tar.gz) = 365806397c1f279fbb45b86562c43e6f112e8a81cf788df5ea356a18c80f6537
+SIZE (howeyc-gopass-bf9dde6_GH0.tar.gz) = 11287
+SHA256 (jessevdk-go-flags-c6ca198_GH0.tar.gz) = 7985a6a45b8dd2de04a7e295f562a5589801076c265baea39c7ea51410db4489
+SIZE (jessevdk-go-flags-c6ca198_GH0.tar.gz) = 55457
+SHA256 (golang-crypto-c126467_GH0.tar.gz) = af4ccc970d8ad62b042a0dcfa54d00c3b059840e61cd9023b059f848964b7b17
+SIZE (golang-crypto-c126467_GH0.tar.gz) = 1624160
+SHA256 (golang-sys-ac767d6_GH0.tar.gz) = 8cfe5e75d7d145302d18a41938c0c0c18d82644de0a753b7b503efe3071258dd
+SIZE (golang-sys-ac767d6_GH0.tar.gz) = 980197
