@@ -393,3 +393,4 @@ share/locale/xh/LC_MESSAGES/gnome-nibbles.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-nibbles.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-nibbles.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-nibbles.mo
+@dir share/games

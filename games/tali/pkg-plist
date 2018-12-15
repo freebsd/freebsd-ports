@@ -2,6 +2,8 @@ bin/tali
 man/man6/tali.6.gz
 share/appdata/tali.appdata.xml
 share/applications/tali.desktop
+@unexec [ -s %D/share/games/gtali.Colors.scores ] || rm -f %D/share/games/gtali.Colors.scores
+@unexec [ -s %D/share/games/gtali.Regular.scores ] || rm -f %D/share/games/gtali.Regular.scores
 share/help/C/tali/figures/mainwindow.png
 share/help/C/tali/figures/preferences.png
 share/help/C/tali/index.docbook
@@ -193,3 +195,4 @@ share/locale/zh_TW/LC_MESSAGES/tali.mo
 %%DATADIR%%/kismet4.svg
 %%DATADIR%%/kismet5.svg
 %%DATADIR%%/kismet6.svg
+@dir share/games
