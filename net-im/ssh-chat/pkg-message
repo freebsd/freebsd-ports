@@ -1,0 +1,10 @@
+======================================================================
+You installed ssh-chat, the SSH server written in Go.
+
+Security warning:
+Please note that despite having SSH in its name ssh-chat is not secure
+because in its default configuration it doesn't require client
+authentication, and is therefore susceptible to MITM attacks. ssh-chat
+can be made secure by enabling SSH authentication, or running it within
+the Tor network and hosting its server as a hidden service on Tor.
+======================================================================
