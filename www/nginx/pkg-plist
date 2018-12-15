@@ -55,6 +55,7 @@
 %%DSO%%%%SMALL_LIGHT%%libexec/nginx/ngx_http_small_light_module.so
 %%DSO%%%%SRCACHE%%libexec/nginx/ngx_http_srcache_filter_module.so
 %%DSO%%%%STREAM%%libexec/nginx/ngx_stream_module.so
+%%DSO%%%%VOD%%libexec/nginx/ngx_http_vod_module.so
 %%WWW%%@postexec mkdir -p -m 755 %D/www/nginx-dist
 %%WWW%%@postexec if [ ! -d %D/www/nginx/ ] ; then ln -fs %D/www/nginx-dist %D/www/nginx; fi
 %%WWW%%www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING

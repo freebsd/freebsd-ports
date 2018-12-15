@@ -1,0 +1,17 @@
+--- ../nginx-vod-module-1.23/config.orig	2018-04-24 17:51:34.654430000 -0400
++++ ../nginx-vod-module-1.23/config	2018-04-24 18:10:13.517041000 -0400
+@@ -154,8 +154,12 @@
+ ngx_feature_run=no
+ ngx_feature_incs="#include <libxml/parser.h>
+                   #include <libxml/tree.h>"
+-ngx_feature_path="/usr/include/libxml2"
+-ngx_feature_libs="-lxml2"
++ngx_feature_path="%%PREFIX%%/include/libxml2 %%PREFIX%%/include"
++if [ $NGX_RPATH = YES ]; then
++    ngx_feature_libs="-R%%PREFIX%%/lib -L%%PREFIX%%/lib -lxml2 -lxslt"
++else
++    ngx_feature_libs="-L%%PREFIX%%/lib -lxml2 -lxslt"
++fi
+ ngx_feature_test="xmlReadMemory(NULL, 0, NULL, NULL, 0);"
+ . auto/feature
+ 
