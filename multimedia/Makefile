@@ -44,6 +44,7 @@
     SUBDIR += cmrt
     SUBDIR += cuse4bsd-kmod
     SUBDIR += cx88
+    SUBDIR += dav1d
     SUBDIR += deforaos-player
     SUBDIR += devede
     SUBDIR += din
