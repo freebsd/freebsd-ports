@@ -4,7 +4,8 @@
 LLVM_PREFIX="%%LLVM_PREFIX%%"
 LLVM_SUFFIX="%%LLVM_SUFFIX%%"
 
-tool=$(/bin/realpath $0)
+tool=$0
+[ -L "$tool" ] && tool=$(/bin/realpath $tool)
 tool=${tool##*/}
 tool="${LLVM_PREFIX}/bin/${tool%${LLVM_SUFFIX}}"
 LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}${LLVM_PREFIX}/lib" \
