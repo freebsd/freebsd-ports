@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mmdb2
-DISTVERSION=	2.0.16
+DISTVERSION=	2.0.19
 CATEGORIES=	science
 MASTER_SITES=	https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/
 
