@@ -5,7 +5,7 @@ PORTNAME=	bspwm
 PORTVERSION=	0.9.5
 CATEGORIES=	x11-wm
 
-MAINTAINER=	gor@clogic.com.ua
+MAINTAINER=	o.hushchenkov@gmail.com
 COMMENT=	Tiling window manager based on binary space partitioning
 
 LICENSE=	BSD2CLAUSE

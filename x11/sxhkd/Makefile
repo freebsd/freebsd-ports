@@ -5,7 +5,7 @@ PORTNAME=	sxhkd
 PORTVERSION=	0.5.9
 CATEGORIES=	x11
 
-MAINTAINER=	gor@clogic.com.ua
+MAINTAINER=	o.hushchenkov@gmail.com
 COMMENT=	Simple X hotkey daemon
 
 LICENSE=	BSD2CLAUSE
