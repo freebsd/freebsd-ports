@@ -1,12 +1,12 @@
-TIMESTAMP = 1539493654
-SHA256 (zquestz-s-v0.5.13_GH0.tar.gz) = aac903c372324b1e57b0c61ba28d2c631ed81cb0e04f085661f2b6c0763ec818
-SIZE (zquestz-s-v0.5.13_GH0.tar.gz) = 47964
+TIMESTAMP = 1544850601
+SHA256 (zquestz-s-v0.5.14_GH0.tar.gz) = c32eedf6a4080cbe221c902cf7f63b1668b3927edfc448d963d69ed66c8ec2fb
+SIZE (zquestz-s-v0.5.14_GH0.tar.gz) = 48210
 SHA256 (zquestz-go-ucl-ec59c7a_GH0.tar.gz) = 287b63ef270b5ff42801cc0d1948cd0e161ca49c29db36d43faf5bf5d469d4ec
 SIZE (zquestz-go-ucl-ec59c7a_GH0.tar.gz) = 9727
-SHA256 (NYTimes-gziphandler-v1.0.1_GH0.tar.gz) = d2e803e5c7571c8649b0040ef80cb27a1ac51dbf328bfcbae4842872f1fe3e87
-SIZE (NYTimes-gziphandler-v1.0.1_GH0.tar.gz) = 49966
 SHA256 (mitchellh-go-homedir-v1.0.0_GH0.tar.gz) = ab2c930759869efe565a658b86e1a38ca2e2a0ea71635601ddcff1171aaff10a
 SIZE (mitchellh-go-homedir-v1.0.0_GH0.tar.gz) = 3247
+SHA256 (NYTimes-gziphandler-v1.0.1_GH0.tar.gz) = d2e803e5c7571c8649b0040ef80cb27a1ac51dbf328bfcbae4842872f1fe3e87
+SIZE (NYTimes-gziphandler-v1.0.1_GH0.tar.gz) = 49966
 SHA256 (spf13-cobra-v0.0.3_GH0.tar.gz) = 7eafb953b58fdd738c4db5202d94a0b6ac0de4f07718fc85a80450c2347c2f9c
 SIZE (spf13-cobra-v0.0.3_GH0.tar.gz) = 101526
 SHA256 (spf13-pflag-v1.0.3_GH0.tar.gz) = 9e57f86f493f04d9077fccd04e7139ebf243dd544e917ab83d35729b3e54a124
