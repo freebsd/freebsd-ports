@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pqiv
-PORTVERSION=	2.10.4
-PORTREVISION=	1
+PORTVERSION=	2.11
 CATEGORIES=	graphics
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -34,7 +33,7 @@ WAND_DESC=		ImageMagick image processing support
 
 OPTIONS_DEFAULT=	GTK2 PIXBUF
 
-USES=		gettext-runtime gmake pkgconfig
+USES=		gettext-runtime gmake gnome pkgconfig
 USE_XORG=	x11
 USE_GNOME=	cairo gdkpixbuf2
 HAS_CONFIGURE=	yes
