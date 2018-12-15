@@ -12,8 +12,10 @@ MAINTAINER=	mail@derzinn.de
 COMMENT=	JSON library wrapper for Python
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
