@@ -1,0 +1,7 @@
+minal is a modern terminal emulator for Mac/Linux/BSD implemented in Golang and
+utilising OpenGL.
+
+The project is experimental at the moment, so you probably won't want to rely on
+Aminal as your main terminal for a while.
+
+WWW: https://github.com/liamg/aminal

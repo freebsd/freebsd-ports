@@ -11,6 +11,7 @@
     SUBDIR += alltray
     SUBDIR += alttab
     SUBDIR += altyo
+    SUBDIR += aminal
     SUBDIR += antimicro
     SUBDIR += appres
     SUBDIR += apwal
