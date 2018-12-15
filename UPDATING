@@ -76,7 +76,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of misc/openhab2
   AUTHOR: netchild@FreeBSD.org
 
-  If you upgrade from a pevious version, make a backup of
+  If you upgrade from a previous version, make a backup of
        /var/db/openhab2
   and run
        %%PREFIX%%/libexec/openhab2/runtime/bin/update.freebsd
