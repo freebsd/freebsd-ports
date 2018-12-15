@@ -313,6 +313,9 @@ go/misc/cgo/test/issue26517.go
 go/misc/cgo/test/issue26743.go
 go/misc/cgo/test/issue26743/a.go
 go/misc/cgo/test/issue26743/b.go
+go/misc/cgo/test/issue27340.go
+go/misc/cgo/test/issue27340/a.go
+go/misc/cgo/test/issue28896.go
 go/misc/cgo/test/issue3250.go
 go/misc/cgo/test/issue3250w.go
 go/misc/cgo/test/issue3261.go
@@ -403,6 +406,7 @@ go/misc/cgo/test/sigprocmask.c
 go/misc/cgo/test/sigprocmask.go
 go/misc/cgo/test/test22906.go
 go/misc/cgo/test/test26213.go
+go/misc/cgo/test/test27660.go
 go/misc/cgo/testasan/main.go
 go/misc/cgo/testcarchive/carchive_test.go
 go/misc/cgo/testcarchive/main.c
@@ -2504,6 +2508,7 @@ go/src/cmd/go/testdata/script/mod_versions.txt
 go/src/cmd/go/testdata/script/mod_why.txt
 go/src/cmd/go/testdata/script/pattern_syntax_error.txt
 go/src/cmd/go/testdata/script/run_hello.txt
+go/src/cmd/go/testdata/script/run_wildcard.txt
 go/src/cmd/go/testdata/script/test_badtest.txt
 go/src/cmd/go/testdata/script/test_compile_binary.txt
 go/src/cmd/go/testdata/script/vendor_complex.txt
@@ -8468,12 +8473,18 @@ go/test/fixedbugs/issue26426.go
 go/test/fixedbugs/issue26438.go
 go/test/fixedbugs/issue26495.go
 go/test/fixedbugs/issue27143.go
+go/test/fixedbugs/issue27232.go
+go/test/fixedbugs/issue27267.go
 go/test/fixedbugs/issue27278.go
 go/test/fixedbugs/issue27289.go
 go/test/fixedbugs/issue27356.go
 go/test/fixedbugs/issue27695.go
 go/test/fixedbugs/issue27695b.go
+go/test/fixedbugs/issue27695c.go
 go/test/fixedbugs/issue27961.go
+go/test/fixedbugs/issue28616.go
+go/test/fixedbugs/issue28688.go
+go/test/fixedbugs/issue28797.go
 go/test/fixedbugs/issue3552.dir/one.go
 go/test/fixedbugs/issue3552.dir/two.go
 go/test/fixedbugs/issue3552.go
