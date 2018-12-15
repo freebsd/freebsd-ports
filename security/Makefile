@@ -989,6 +989,7 @@
     SUBDIR += py-obfsproxy-tor
     SUBDIR += py-onetime
     SUBDIR += py-openssl
+    SUBDIR += py-ospd
     SUBDIR += py-paramiko
     SUBDIR += py-paramiko1
     SUBDIR += py-passlib
