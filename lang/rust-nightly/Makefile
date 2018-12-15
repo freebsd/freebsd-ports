@@ -1,7 +1,7 @@
 # Created by: Jean-Sébastien Pédron <dumbbell@FreeBSD.org>
 # $FreeBSD$
 
-PORTVERSION=	1.32.0.${NIGHTLY_DATE:C,-,,g}
+PORTVERSION=	1.33.0.${NIGHTLY_DATE:C,-,,g}
 PKGNAMESUFFIX=	-nightly
 DISTNAME=	rustc-nightly-src
 
@@ -14,7 +14,7 @@ CONFLICTS_INSTALL=	rust
 # Which source to pull:
 #   https://static.rust-lang.org/dist/${NIGHTLY_DATE}/rustc-nightly-src.tar.gz
 #   https://static.rust-lang.org/dist/channel-rust-nightly.toml
-NIGHTLY_DATE=			2018-12-14
+NIGHTLY_DATE=			2018-12-15
 NIGHTLY_SUBDIR=			${NIGHTLY_DATE}/
 
 # See WRKSRC/src/stage0.txt for this date
