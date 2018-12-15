@@ -6,7 +6,7 @@ PORTVERSION=	1.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
-MAINTAINER=	gor@clogic.com.ua
+MAINTAINER=	o.hushchenkov@gmail.com
 COMMENT=	Rewrite of unclutter using the x11-xfixes extension
 
 LICENSE=	MIT
