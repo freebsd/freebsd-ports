@@ -1,0 +1,7 @@
+OSPD is a community edition of OpenVAS, a framework of several services and
+tools offering a comprehensive and powerful vulnerability scanning and
+vulnerability management solution.
+
+Sevaral OSPD plugins are available to use with this base OSPD package.
+
+WWW: http://openvas.org/
