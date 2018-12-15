@@ -4,11 +4,10 @@
 # Also update devel/libgit2, devel/rubygem-rugged, devel/py-pygit2
 
 PORTNAME=	libgit2-glib
-PORTVERSION=	0.26.0
-PORTREVISION=	2
+PORTVERSION=	0.27.7
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Glib wrapper library around the libgit2 git access library
@@ -19,15 +18,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	vapigen:lang/vala
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 
-USES=		compiler:c11 gmake libtool localbase \
-		pathfix pkgconfig tar:xz
-USE_GNOME=	glib20 gnomeprefix introspection
+USES=		compiler:c11 gnome localbase \
+		meson pkgconfig python:3.4+,build tar:xz
+USE_GNOME=	glib20 introspection
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-CONFIGURE_ARGS=	--disable-python
-INSTALL_TARGET=	install-strip
-
-OPTIONS_DEFINE=	DOCS
+MESON_ARGS=	-Dpython=false
+BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 .include <bsd.port.mk>
