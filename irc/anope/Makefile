@@ -2,25 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	anope
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	irc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Set of IRC services for IRC networks
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
 USES=		cmake:outsource localbase:ldflags shebangfix
-CMAKE_ARGS=	-DINSTDIR:STRING="${PREFIX}/anope"
-SHEBANG_FILES=	${WRKSRC}/src/tools/*.sh
-
-CFLAGS_amd64=	-fPIC
-
 USE_GITHUB=	yes
-
 USE_RC_SUBR=	anope
 
+CMAKE_ARGS=	-DINSTDIR:STRING="${PREFIX}/anope"
+SHEBANG_FILES=	${WRKSRC}/src/tools/*.sh
+CFLAGS_amd64=	-fPIC
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	GNUTLS LDAP MYSQL NLS OPENSSL PCRE POSIX REDIS SASL SQLITE STATS TRE
