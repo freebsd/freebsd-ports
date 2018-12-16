@@ -6,6 +6,9 @@ CATEGORIES=	net devel python
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt5 toolkit, QtNetwork module
 
+BUILD_DEPENDS=	${PY_ENUM34}
+RUN_DEPENDS=	${PY_ENUM34}
+
 CONFIGURE_ARGS=	--enable QtNetwork
 PYQT_DIST=	yes
 

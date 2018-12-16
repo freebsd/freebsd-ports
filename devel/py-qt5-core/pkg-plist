@@ -2,8 +2,8 @@ bin/pyuic5
 %%PYTHON_SITELIBDIR%%/PyQt5/Qt.py
 %%PYTHON_SITELIBDIR%%/PyQt5/Qt.pyc
 %%PYTHON_SITELIBDIR%%/PyQt5/Qt.pyo
-%%PYTHON_SITELIBDIR%%/PyQt5/QtCore.so
 %%PYTHON_SITELIBDIR%%/PyQt5/QtCore.pyi
+%%PYTHON_SITELIBDIR%%/PyQt5/QtCore.so
 %%PYTHON_SITELIBDIR%%/PyQt5/__init__.py
 %%PYTHON_SITELIBDIR%%/PyQt5/__init__.pyc
 %%PYTHON_SITELIBDIR%%/PyQt5/__init__.pyo
@@ -97,6 +97,7 @@ bin/pyuic5
 %%PYTHON_SITELIBDIR%%/PyQt5/uic/widget-plugins/qtwebkit.py
 %%PYTHON_SITELIBDIR%%/PyQt5/uic/widget-plugins/qtwebkit.pyc
 %%PYTHON_SITELIBDIR%%/PyQt5/uic/widget-plugins/qtwebkit.pyo
+%%API%%%%PYQT_APIDIR%%/api/python/QtCore.api
 %%PYQT_SIPDIR%%/QtCore/QtCoremod.sip
 %%PYQT_SIPDIR%%/QtCore/qabstractanimation.sip
 %%PYQT_SIPDIR%%/QtCore/qabstracteventdispatcher.sip
@@ -173,6 +174,7 @@ bin/pyuic5
 %%PYQT_SIPDIR%%/QtCore/qpycore_qmap.sip
 %%PYQT_SIPDIR%%/QtCore/qpycore_qpair.sip
 %%PYQT_SIPDIR%%/QtCore/qpycore_qset.sip
+%%PYQT_SIPDIR%%/QtCore/qpycore_qvariantmap.sip
 %%PYQT_SIPDIR%%/QtCore/qpycore_qvector.sip
 %%PYQT_SIPDIR%%/QtCore/qpycore_virtual_error_handler.sip
 %%PYQT_SIPDIR%%/QtCore/qrandom.sip
@@ -221,4 +223,3 @@ bin/pyuic5
 %%PYQT_SIPDIR%%/QtCore/qwaitcondition.sip
 %%PYQT_SIPDIR%%/QtCore/qwineventnotifier.sip
 %%PYQT_SIPDIR%%/QtCore/qxmlstream.sip
-%%API%%%%PYQT_APIDIR%%/api/python/QtCore.api

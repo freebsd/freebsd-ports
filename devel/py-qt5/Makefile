@@ -9,7 +9,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt 5 toolkit (meta port)
 
 USES=		metaport python pyqt:5
-USE_PYTHON=	flavors
+USE_PYTHON=	concurrent flavors py3kplist
 
 # Keep these synchronized with _USE_PYQT_ALL / _USE_PYQT5_ONLY in Mk/Use/pyqt.mk
 OPTIONS_DEFINE=	core dbus dbussupport demo designer \
