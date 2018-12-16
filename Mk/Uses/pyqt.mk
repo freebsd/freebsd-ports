@@ -60,10 +60,10 @@ MASTER_SITES_PYQT5=	SF/pyqt/PyQt5/PyQt-${PORTVERSION} \
 MASTER_SITES_QSCI2=	SF/pyqt/QScintilla2/QScintilla-${PORTVERSION} \
 			GENTOO
 
-SIP_VERSION=		4.19.8
-QSCI2_VERSION=		2.10.4
+SIP_VERSION=		4.19.13
+QSCI2_VERSION=		2.10.8
 PYQT4_VERSION=		4.12.1
-PYQT5_VERSION=		5.10.1
+PYQT5_VERSION=		5.11.3
 
 SIP_DISTNAME=		sip-${SIP_VERSION}
 PYQT4_DISTNAME=		PyQt4_gpl_x11-${PYQT4_VERSION}
@@ -255,10 +255,12 @@ CONFIGURE_ARGS+=-b ${PREFIX}/bin \
 		--confirm-license \
 		--sip ${SIP} \
 		--sipdir ${PYQT_SIPDIR}
-# Move the designer plugin and qml libraries to versioned folders.
 .if ${_PYQT_VERSION:M5}
+# Move the designer plugin and qml libraries to versioned folders.
 CONFIGURE_ARGS+=--qml-plugindir ${PYQT_QMLDIR} \
 		--designer-plugindir ${PYQT_DESIGNERDIR}
+# Further do not gernate the dinstinfo files.
+CONFIGURE_ARGS+=--no-dist-info
 .endif
 # One of the things PyQt looks for to determine whether to build the Qt DBus
 # main loop module (${PYQT_RELNAME}-dbussupport) is whether the dbus/ directory is

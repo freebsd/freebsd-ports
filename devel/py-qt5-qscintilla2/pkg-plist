@@ -1,3 +1,6 @@
+%%PYTHON_SITELIBDIR%%/QScintilla-2.10.8.dist-info/INSTALLER
+%%PYTHON_SITELIBDIR%%/QScintilla-2.10.8.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/QScintilla-2.10.8.dist-info/RECORD
 %%PYTHON_SITELIBDIR%%/PyQt5/Qsci.pyi
 %%PYTHON_SITELIBDIR%%/PyQt5/Qsci.so
 %%PYQT_SIPDIR%%/Qsci/qsciabstractapis.sip
@@ -17,6 +20,7 @@
 %%PYQT_SIPDIR%%/Qsci/qscilexercustom.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerd.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerdiff.sip
+%%PYQT_SIPDIR%%/Qsci/qscilexeredifact.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerfortran.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerfortran77.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerhtml.sip

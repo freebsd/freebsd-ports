@@ -16,6 +16,7 @@
 %%QT_INCDIR%%/Qsci/qscilexercustom.h
 %%QT_INCDIR%%/Qsci/qscilexerd.h
 %%QT_INCDIR%%/Qsci/qscilexerdiff.h
+%%QT_INCDIR%%/Qsci/qscilexeredifact.h
 %%QT_INCDIR%%/Qsci/qscilexerfortran.h
 %%QT_INCDIR%%/Qsci/qscilexerfortran77.h
 %%QT_INCDIR%%/Qsci/qscilexerhtml.h
@@ -52,8 +53,8 @@
 %%QT_INCDIR%%/Qsci/qscistyledtext.h
 %%QT_LIBDIR%%/libqscintilla2_qt5.so
 %%QT_LIBDIR%%/libqscintilla2_qt5.so.13
-%%QT_LIBDIR%%/libqscintilla2_qt5.so.13.1
-%%QT_LIBDIR%%/libqscintilla2_qt5.so.13.1.1
+%%QT_LIBDIR%%/libqscintilla2_qt5.so.13.2
+%%QT_LIBDIR%%/libqscintilla2_qt5.so.13.2.1
 %%QT_MKSPECDIR%%/features/qscintilla2.prf
 %%QT_DATADIR%%/qsci/api/python/Python-2.4.api
 %%QT_DATADIR%%/qsci/api/python/Python-2.5.api

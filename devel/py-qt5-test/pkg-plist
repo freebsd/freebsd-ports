@@ -1,6 +1,7 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/QtTest.so
 %%PYTHON_SITELIBDIR%%/PyQt5/QtTest.pyi
 %%PYQT_SIPDIR%%/QtTest/QtTestmod.sip
+%%PYQT_SIPDIR%%/QtTest/qabstractitemmodeltester.sip
 %%PYQT_SIPDIR%%/QtTest/qsignalspy.sip
 %%PYQT_SIPDIR%%/QtTest/qtestcase.sip
 %%PYQT_SIPDIR%%/QtTest/qtestkeyboard.sip
