@@ -1,6 +1,12 @@
 %%GUI%%bin/zynaddsubfx
 %%GUI%%bin/zynaddsubfx-ext-gui
 %%DSSI%%lib/dssi/libzynaddsubfx_dssi.so
+lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX.so
+lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX.ttl
+%%GUI%%lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX_ui.so
+%%GUI%%lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX_ui.ttl
+lib/lv2/ZynAddSubFX.lv2/manifest.ttl
+lib/lv2/ZynAddSubFX.lv2/presets.ttl
 lib/lv2/ZynAddSubFX.lv2presets/Arpeggios.ttl
 lib/lv2/ZynAddSubFX.lv2presets/Bass.ttl
 lib/lv2/ZynAddSubFX.lv2presets/Brass.ttl
@@ -33,13 +39,42 @@ lib/lv2/ZynAddSubFX.lv2presets/the_mysterious_bank.ttl
 lib/lv2/ZynAddSubFX.lv2presets/the_mysterious_bank_2.ttl
 lib/lv2/ZynAddSubFX.lv2presets/the_mysterious_bank_3.ttl
 lib/lv2/ZynAddSubFX.lv2presets/the_mysterious_bank_4.ttl
-lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX.so
-lib/lv2/ZynAddSubFX.lv2/manifest.ttl
-lib/lv2/ZynAddSubFX.lv2/presets.ttl
-lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX.ttl
-lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX_ui.so
-lib/lv2/ZynAddSubFX.lv2/ZynAddSubFX_ui.ttl
+lib/lv2/ZynAlienWah.lv2/ZynAlienWah.so
+lib/lv2/ZynAlienWah.lv2/ZynAlienWah.ttl
+lib/lv2/ZynAlienWah.lv2/manifest.ttl
+lib/lv2/ZynAlienWah.lv2/presets.ttl
+lib/lv2/ZynChorus.lv2/ZynChorus.so
+lib/lv2/ZynChorus.lv2/ZynChorus.ttl
+lib/lv2/ZynChorus.lv2/manifest.ttl
+lib/lv2/ZynChorus.lv2/presets.ttl
+lib/lv2/ZynDistortion.lv2/ZynDistortion.so
+lib/lv2/ZynDistortion.lv2/ZynDistortion.ttl
+lib/lv2/ZynDistortion.lv2/manifest.ttl
+lib/lv2/ZynDistortion.lv2/presets.ttl
+lib/lv2/ZynDynamicFilter.lv2/ZynDynamicFilter.so
+lib/lv2/ZynDynamicFilter.lv2/ZynDynamicFilter.ttl
+lib/lv2/ZynDynamicFilter.lv2/manifest.ttl
+lib/lv2/ZynDynamicFilter.lv2/presets.ttl
+lib/lv2/ZynEcho.lv2/ZynEcho.so
+lib/lv2/ZynEcho.lv2/ZynEcho.ttl
+lib/lv2/ZynEcho.lv2/manifest.ttl
+lib/lv2/ZynEcho.lv2/presets.ttl
+lib/lv2/ZynPhaser.lv2/ZynPhaser.so
+lib/lv2/ZynPhaser.lv2/ZynPhaser.ttl
+lib/lv2/ZynPhaser.lv2/manifest.ttl
+lib/lv2/ZynPhaser.lv2/presets.ttl
+lib/lv2/ZynReverb.lv2/ZynReverb.so
+lib/lv2/ZynReverb.lv2/ZynReverb.ttl
+lib/lv2/ZynReverb.lv2/manifest.ttl
+lib/lv2/ZynReverb.lv2/presets.ttl
 lib/vst/ZynAddSubFX.so
+lib/vst/ZynAlienWah.so
+lib/vst/ZynChorus.so
+lib/vst/ZynDistortion.so
+lib/vst/ZynDynamicFilter.so
+lib/vst/ZynEcho.so
+lib/vst/ZynPhaser.so
+lib/vst/ZynReverb.so
 %%GUI%%share/applications/zynaddsubfx-jack.desktop
 %%GUI%%share/applications/zynaddsubfx-alsa.desktop
 %%GUI%%share/applications/zynaddsubfx-oss.desktop
@@ -812,13 +847,13 @@ share/pixmaps/zynaddsubfx.svg
 %%DATADIR%%/banks/net-wisdom/0028-Fast Bass.xiz
 %%DATADIR%%/banks/net-wisdom/0029-Res-Synth Bass 3.xiz
 %%DATADIR%%/banks/net-wisdom/0030-Analog Bass.xiz
-%%DATADIR%%/banks/net-wisdom/0037-buzz.xiz
 %%DATADIR%%/banks/net-wisdom/0031-Chip Bass 3.xiz
 %%DATADIR%%/banks/net-wisdom/0032-Chip Bass 4.xiz
 %%DATADIR%%/banks/net-wisdom/0033-Vangelis Saw - A.xiz
 %%DATADIR%%/banks/net-wisdom/0034-Vangelis Saw - B.xiz
 %%DATADIR%%/banks/net-wisdom/0035-Vangelis Saw - C.xiz
 %%DATADIR%%/banks/net-wisdom/0036-Vangelis Saw - D.xiz
+%%DATADIR%%/banks/net-wisdom/0037-buzz.xiz
 %%DATADIR%%/banks/net-wisdom/0038-Saw String 1.xiz
 %%DATADIR%%/banks/net-wisdom/0039-StarWind Strings.xiz
 %%DATADIR%%/banks/net-wisdom/0040-brightstrings.xiz
@@ -859,8 +894,8 @@ share/pixmaps/zynaddsubfx.svg
 %%DATADIR%%/banks/net-wisdom/0075-Synth Piano 3.xiz
 %%DATADIR%%/banks/net-wisdom/0076-Bells 3.xiz
 %%DATADIR%%/banks/net-wisdom/0077-Seraphim Organ.xiz
-%%DATADIR%%/banks/net-wisdom/0079-Enhanced SpCh.xiz
 %%DATADIR%%/banks/net-wisdom/0078-StillLagoonSine.xiz
+%%DATADIR%%/banks/net-wisdom/0079-Enhanced SpCh.xiz
 %%DATADIR%%/banks/net-wisdom/0080-wahiano01.xiz
 %%DATADIR%%/banks/net-wisdom/0081-Smooth 1.xiz
 %%DATADIR%%/banks/net-wisdom/0082-Smooth 1 FM.xiz
@@ -876,7 +911,6 @@ share/pixmaps/zynaddsubfx.svg
 %%DATADIR%%/banks/net-wisdom/0092-Retro Sound_.xiz
 %%DATADIR%%/banks/net-wisdom/0093-Hum 1.xiz
 %%DATADIR%%/banks/net-wisdom/0094-Flute.xiz
-%%DATADIR%%/banks/net-wisdom/0108-chord.xiz
 %%DATADIR%%/banks/net-wisdom/0095-Second_Rendezvous_Part_1.xiz
 %%DATADIR%%/banks/net-wisdom/0096-Trash Synth mod.xiz
 %%DATADIR%%/banks/net-wisdom/0097-Old radio lead 1.xiz
@@ -890,6 +924,7 @@ share/pixmaps/zynaddsubfx.svg
 %%DATADIR%%/banks/net-wisdom/0105-Filter Trem clean.xiz
 %%DATADIR%%/banks/net-wisdom/0106-Quantize Lead.xiz
 %%DATADIR%%/banks/net-wisdom/0107-Computer Game.xiz
+%%DATADIR%%/banks/net-wisdom/0108-chord.xiz
 %%DATADIR%%/banks/net-wisdom/0109-smp_lead.xiz
 %%DATADIR%%/banks/net-wisdom/0110-Smooth 2.xiz
 %%DATADIR%%/banks/net-wisdom/0111-Smooth 3.xiz
@@ -925,7 +960,6 @@ share/pixmaps/zynaddsubfx.svg
 %%DATADIR%%/banks/olivers-100/0013-Soft Guitar.xiz
 %%DATADIR%%/banks/olivers-100/0014-Dist Jazz Guitar.xiz
 %%DATADIR%%/banks/olivers-100/0015-Dist Jazz Guitar 2.xiz
-%%DATADIR%%/banks/olivers-100/README
 %%DATADIR%%/banks/olivers-100/0016-Banjoey.xiz
 %%DATADIR%%/banks/olivers-100/0017-Twang Bass.xiz
 %%DATADIR%%/banks/olivers-100/0018-Bass Guitar - Slap.xiz
@@ -1031,14 +1065,15 @@ share/pixmaps/zynaddsubfx.svg
 %%DATADIR%%/banks/olivers-100/0118-Flangey Swell.xiz
 %%DATADIR%%/banks/olivers-100/0119-Demo 1 Swell.xiz
 %%DATADIR%%/banks/olivers-100/0120-Phaser Pad.xiz
-%%DATADIR%%/banks/olivers-100/0122-Nu Gritar.xiz
 %%DATADIR%%/banks/olivers-100/0121-Another OB Thang.xiz
+%%DATADIR%%/banks/olivers-100/0122-Nu Gritar.xiz
 %%DATADIR%%/banks/olivers-100/0123-Double Bass.xiz
 %%DATADIR%%/banks/olivers-100/0124-Simple Clonewheel.xiz
 %%DATADIR%%/banks/olivers-100/0125-Simple Clonewheel Percussion.xiz
 %%DATADIR%%/banks/olivers-100/0126-Prayer I.xiz
 %%DATADIR%%/banks/olivers-100/0127-Prayer II.xiz
 %%DATADIR%%/banks/olivers-100/0128-Vibra Toe Lead.xiz
+%%DATADIR%%/banks/olivers-100/README
 %%DATADIR%%/banks/olivers-other/.bankdir
 %%DATADIR%%/banks/olivers-other/0001-Bender Lead.xiz
 %%DATADIR%%/banks/olivers-other/0002-Yessound.xiz
@@ -1054,7 +1089,6 @@ share/pixmaps/zynaddsubfx.svg
 %%DATADIR%%/banks/olivers-other/0014-Warm Pad.xiz
 %%DATADIR%%/banks/olivers-other/0015-Choo Stab.xiz
 %%DATADIR%%/banks/olivers-other/0016-Choo Stab II.xiz
-%%DATADIR%%/banks/olivers-other/0028-Nasal Bass.xiz
 %%DATADIR%%/banks/olivers-other/0019-Distorted Organ.xiz
 %%DATADIR%%/banks/olivers-other/0020-Organ w_ Vibrato.xiz
 %%DATADIR%%/banks/olivers-other/0021-Funky Alien Clavinet.xiz
@@ -1064,6 +1098,7 @@ share/pixmaps/zynaddsubfx.svg
 %%DATADIR%%/banks/olivers-other/0025-Country Fiddle.xiz
 %%DATADIR%%/banks/olivers-other/0026-String section.xiz
 %%DATADIR%%/banks/olivers-other/0027-Country Twang Guitar.xiz
+%%DATADIR%%/banks/olivers-other/0028-Nasal Bass.xiz
 %%DATADIR%%/banks/olivers-other/0029-Fretless Bass.xiz
 %%DATADIR%%/banks/olivers-other/0033-Train Bell.xiz
 %%DATADIR%%/banks/olivers-other/0034-Drip.xiz
@@ -1095,9 +1130,9 @@ share/pixmaps/zynaddsubfx.svg
 %%DATADIR%%/banks/the_mysterious_bank/0015-superpulse.xiz
 %%DATADIR%%/banks/the_mysterious_bank/0016-sine_pad.xiz
 %%DATADIR%%/banks/the_mysterious_bank/0018-organ1.xiz
-%%DATADIR%%/banks/the_mysterious_bank/0022-rock_organ.xiz
 %%DATADIR%%/banks/the_mysterious_bank/0020-pulse_organ.xiz
 %%DATADIR%%/banks/the_mysterious_bank/0021-rock_organ+distorsion.xiz
+%%DATADIR%%/banks/the_mysterious_bank/0022-rock_organ.xiz
 %%DATADIR%%/banks/the_mysterious_bank/0023-space_organ.xiz
 %%DATADIR%%/banks/the_mysterious_bank/0024-space_organ2.xiz
 %%DATADIR%%/banks/the_mysterious_bank/0026-bell_pad.xiz
