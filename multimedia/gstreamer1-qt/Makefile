@@ -17,9 +17,6 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 FLAVORS=	qt5 qt4
 FLAVOR?=	${FLAVORS:[1]}
 
-qt4_DEPRECATED=		Qt4 has been EOL since december 2015
-qt4_EXPIRATION_DATE=	2019-03-15
-
 CONFLICTS_INSTALL=	gstreamer${PKGNAMESUFFIX}-*
 
 USES=		bison cmake:outsource gl gnome pathfix pkgconfig tar:xz
@@ -33,6 +30,8 @@ CMAKE_OFF=	USE_GST_PLUGIN_DIR USE_QT_PLUGIN_DIR
 CMAKE_ARGS=	-DQT_VERSION=${FLAVOR:C/qt//}
 
 .  if ${FLAVOR} == qt4
+DEPRECATED=	Qt4 has been EOL since december 2015
+EXPIRATION_DATE=2019-03-15
 USES+=		qt:4
 USE_QT=		corelib gui opengl declarative script \
 		qmake_build moc_build rcc_build uic_build qtestlib_build

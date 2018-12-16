@@ -23,9 +23,6 @@ qt5_PKGNAMESUFFIX=	-qt5
 qt4_PLIST=	${.CURDIR}/pkg-plist.qt4
 qt5_PLIST=	${.CURDIR}/pkg-plist.qt5
 
-qt4_DEPRECATED=		Qt4 has been EOL since december 2015
-qt4_EXPIRATION_DATE=	2019-03-15
-
 USES=		cmake compiler:c++11-lang pathfix tar:xz
 CMAKE_ON=	PHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT \
 		PHONON_NO_PLATFORMPLUGIN
@@ -33,6 +30,8 @@ CMAKE_OFF=	PHONON_BUILD_DESIGNER_PLUGIN:BOOL=OFF
 USE_LDCONFIG=	yes
 
 .  if ${FLAVOR} == qt4
+DEPRECATED=	Qt4 has been EOL since december 2015
+EXPIRATION_DATE=2019-03-15
 USES+=		kde:4 qt:4
 USE_KDE=	automoc4
 USE_QT=		corelib dbus declarative gui testlib \

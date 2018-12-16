@@ -35,10 +35,9 @@ qt4_CONFLICTS_INSTALL=	${PORTNAME}
 qt4_PKGNAMESUFFIX=	-qt4
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt4
 
-qt4_DEPRECATED=		Qt4 has been EOL since december 2015
-qt4_EXPIRATION_DATE=	2019-03-15
-
 .if ${FLAVOR:U} == qt4
+DEPRECATED=	Qt4 has been EOL since december 2015
+EXPIRATION_DATE=2019-03-15
 USES+=		qt:4
 USE_QT=		qmake_build moc_build rcc_build uic_build corelib gui network
 CMAKE_ON=	FORCE_QT4
