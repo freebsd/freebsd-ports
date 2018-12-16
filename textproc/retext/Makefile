@@ -23,4 +23,7 @@ USE_PYTHON=	distutils noflavors
 USE_PYQT=	core_run sip_run gui_run widgets_run printsupport_run \
 		network_run
 
+post-stage: # https://github.com/retext-project/retext/issues/422
+	@${RMDIR} ${STAGEDIR}${DATADIR}/locale
+
 .include <bsd.port.mk>
