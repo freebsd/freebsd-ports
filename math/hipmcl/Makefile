@@ -19,8 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so.1:lang/gcc${GCC_DEFA
 USES=		cmake:outsource compiler:c++14-lang dos2unix localbase:ldflags
 DOS2UNIX_FILES=	CMakeLists.txt
 
-CMAKE_ON=	BUILD_SHARED_LIBS
-
 BB_ACCOUNT=	azadcse
 BB_PROJECT=	${PORTNAME:tl}
 BB_COMMIT=	e20476acc473
