@@ -1,0 +1,24 @@
+--- CMakeLists.txt.orig	2018-12-16 07:56:08 UTC
++++ CMakeLists.txt
+@@ -23,7 +23,11 @@ target_include_directories(CombBLAS PRIV
+ 
+ # MPI and OpenMP dependencies
+ find_package(MPI REQUIRED)
+-find_package(OpenMP REQUIRED)
++#find_package(OpenMP REQUIRED)
++set(OPENMP_FOUND TRUE)
++set(OpenMP_CXX_FOUND TRUE)
++set(OpenMP_CXX_FLAGS "")
++set(OpenMP_LINK_FLAGS "-lomp")
+ 
+ if(TARGET MPI::MPI_CXX) # Use target if available (cmake >= 3.9)
+   target_link_libraries(CombBLAS PUBLIC MPI::MPI_CXX)
+@@ -40,7 +44,7 @@ if(OPENMP_FOUND OR OpenMP_CXX_FOUND)
+     target_link_libraries(CombBLAS PUBLIC OpenMP::OpenMP_CXX)
+   else()
+     target_compile_options(CombBLAS PUBLIC "${OpenMP_CXX_FLAGS}")
+-    target_link_libraries(CombBLAS PUBLIC "${OpenMP_CXX_FLAGS}")
++    target_link_libraries(CombBLAS PUBLIC "${OpenMP_LINK_FLAGS}")
+   endif()
+ endif()
+ 
