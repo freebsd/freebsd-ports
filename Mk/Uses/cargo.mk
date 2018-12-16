@@ -251,6 +251,7 @@ do-build:
 .if !target(do-install) && ${CARGO_INSTALL:tl} == "yes"
 do-install:
 	@${CARGO_CARGO_RUN} install \
+		--path . \
 		--root "${STAGEDIR}${PREFIX}" \
 		--verbose \
 		${CARGO_INSTALL_ARGS}
