@@ -1,9 +1,6 @@
 %%QT_INCDIR%%/QtHelp/%%FULLVER%%/QtHelp/private/qhelpcollectionhandler_p.h
-%%QT_INCDIR%%/QtHelp/%%FULLVER%%/QtHelp/private/qhelpdatainterface_p.h
 %%QT_INCDIR%%/QtHelp/%%FULLVER%%/QtHelp/private/qhelpdbreader_p.h
 %%QT_INCDIR%%/QtHelp/%%FULLVER%%/QtHelp/private/qhelpengine_p.h
-%%QT_INCDIR%%/QtHelp/%%FULLVER%%/QtHelp/private/qhelpgenerator_p.h
-%%QT_INCDIR%%/QtHelp/%%FULLVER%%/QtHelp/private/qhelpprojectdata_p.h
 %%QT_INCDIR%%/QtHelp/%%FULLVER%%/QtHelp/private/qhelpsearchindexreader_default_p.h
 %%QT_INCDIR%%/QtHelp/%%FULLVER%%/QtHelp/private/qhelpsearchindexreader_p.h
 %%QT_INCDIR%%/QtHelp/%%FULLVER%%/QtHelp/private/qhelpsearchindexwriter_default_p.h
@@ -42,7 +39,6 @@
 %%QT_LIBDIR%%/libQt5Help.so.%%FULLVER%%
 %%DEBUG%%%%QT_LIBDIR%%/libQt5Help.so.%%FULLVER%%.debug
 %%QT_BINDIR%%/qcollectiongenerator
-%%QT_BINDIR%%/qhelpconverter
 %%QT_BINDIR%%/qhelpgenerator
 %%QT_MKSPECDIR%%/modules/qt_lib_help.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_help_private.pri

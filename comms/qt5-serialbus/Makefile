@@ -9,8 +9,8 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt functions to access industrial bus systems
 
-USE_QT=		core network serialport buildtools_build
 USES=		compiler:c++11-lib qmake qt-dist:5,serialbus
+USE_QT=		core network serialport buildtools_build
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 .include <bsd.port.mk>

@@ -9,10 +9,10 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 translation tool
 
+USES=		compiler:c++11-lang qmake qt-dist:5,tools
 USE_QT=		core gui printsupport widgets xml \
 		assistant_run linguisttools_run \
 		buildtools_build designer_build uitools_build
-USES=		compiler:c++11-lang qmake qt-dist:5,tools
 
 DESKTOP_ENTRIES="Qt 5 Linguist" "" \
 		"${PREFIX}/share/pixmaps/linguist-qt5.png" \

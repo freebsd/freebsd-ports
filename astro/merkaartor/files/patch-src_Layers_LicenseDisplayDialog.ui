@@ -1,0 +1,11 @@
+--- src/Layers/LicenseDisplayDialog.ui.orig	2018-12-11 15:26:59 UTC
++++ src/Layers/LicenseDisplayDialog.ui
+@@ -43,7 +43,7 @@
+   <customwidget>
+    <class>QWebView</class>
+    <extends>QWidget</extends>
+-   <header>QtWebKit/QWebView</header>
++   <header>QtWebKitWidgets/QWebView</header>
+   </customwidget>
+  </customwidgets>
+  <resources/>

@@ -13,6 +13,7 @@
 %%QT_MKSPECDIR%%/common/android/qplatformdefs.h
 %%QT_MKSPECDIR%%/common/angle.conf
 %%QT_MKSPECDIR%%/common/bsd/bsd.conf
+%%QT_MKSPECDIR%%/common/bsd/bsd.conf.orig
 %%QT_MKSPECDIR%%/common/bsd/qplatformdefs.h
 %%QT_MKSPECDIR%%/common/c89/qplatformdefs.h
 %%QT_MKSPECDIR%%/common/clang-mac.conf
@@ -29,6 +30,7 @@
 %%QT_MKSPECDIR%%/common/ghs-integrity-armv7.conf
 %%QT_MKSPECDIR%%/common/ghs-integrity-armv8.conf
 %%QT_MKSPECDIR%%/common/ghs-integrity-x86.conf
+%%QT_MKSPECDIR%%/common/icc-base-unix.conf
 %%QT_MKSPECDIR%%/common/integrity/qplatformdefs.h
 %%QT_MKSPECDIR%%/common/ios.conf
 %%QT_MKSPECDIR%%/common/linux.conf
@@ -193,6 +195,7 @@
 %%QT_MKSPECDIR%%/features/exclusive_builds.prf
 %%QT_MKSPECDIR%%/features/exclusive_builds_post.prf
 %%QT_MKSPECDIR%%/features/file_copies.prf
+%%QT_MKSPECDIR%%/features/gc_binaries.prf
 %%QT_MKSPECDIR%%/features/gcov.prf
 %%QT_MKSPECDIR%%/features/include_source_dir.prf
 %%QT_MKSPECDIR%%/features/incredibuild_xge.prf
@@ -200,6 +203,7 @@
 %%QT_MKSPECDIR%%/features/lex.prf
 %%QT_MKSPECDIR%%/features/link_ltcg.prf
 %%QT_MKSPECDIR%%/features/link_pkgconfig.prf
+%%QT_MKSPECDIR%%/features/lrelease.prf
 %%QT_MKSPECDIR%%/features/ltcg.prf
 %%QT_MKSPECDIR%%/features/mac/asset_catalogs.prf
 %%QT_MKSPECDIR%%/features/mac/default_post.prf
@@ -246,8 +250,9 @@
 %%QT_MKSPECDIR%%/features/qt_parts.prf
 %%QT_MKSPECDIR%%/features/qt_plugin.prf
 %%QT_MKSPECDIR%%/features/qt_targets.prf
-%%QT_MKSPECDIR%%/features/qt_tracepoints.prf
+%%QT_MKSPECDIR%%/features/qt_test_helper.prf
 %%QT_MKSPECDIR%%/features/qt_tool.prf
+%%QT_MKSPECDIR%%/features/qt_tracepoints.prf
 %%QT_MKSPECDIR%%/features/resolve_config.prf
 %%QT_MKSPECDIR%%/features/resolve_target.prf
 %%QT_MKSPECDIR%%/features/resources.prf
@@ -269,6 +274,7 @@
 %%QT_MKSPECDIR%%/features/uikit/device_destinations.sh
 %%QT_MKSPECDIR%%/features/uikit/devices.py
 %%QT_MKSPECDIR%%/features/uikit/exclusive_builds_post.prf
+%%QT_MKSPECDIR%%/features/uikit/gc_binaries.prf
 %%QT_MKSPECDIR%%/features/uikit/qt.prf
 %%QT_MKSPECDIR%%/features/uikit/qt_parts.prf
 %%QT_MKSPECDIR%%/features/uikit/resolve_config.prf
@@ -293,6 +299,8 @@
 %%QT_MKSPECDIR%%/features/vxworks.prf
 %%QT_MKSPECDIR%%/features/warn_off.prf
 %%QT_MKSPECDIR%%/features/warn_on.prf
+%%QT_MKSPECDIR%%/features/wasm/qt.prf
+%%QT_MKSPECDIR%%/features/wasm/wasm.prf
 %%QT_MKSPECDIR%%/features/wayland-scanner.prf
 %%QT_MKSPECDIR%%/features/win32/console.prf
 %%QT_MKSPECDIR%%/features/win32/default_pre.prf
@@ -361,6 +369,7 @@
 %%QT_MKSPECDIR%%/lynxos-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/macx-clang/Info.plist.app
 %%QT_MKSPECDIR%%/macx-clang/Info.plist.dSYM.in
+%%QT_MKSPECDIR%%/macx-clang/Info.plist.disable_highdpi
 %%QT_MKSPECDIR%%/macx-clang/Info.plist.lib
 %%QT_MKSPECDIR%%/macx-clang/qmake.conf
 %%QT_MKSPECDIR%%/macx-clang/qplatformdefs.h
@@ -440,6 +449,8 @@
 %%QT_MKSPECDIR%%/unsupported/vxworks-simpentium-dcc/qplatformdefs.h
 %%QT_MKSPECDIR%%/unsupported/vxworks-simpentium-g++/qmake.conf
 %%QT_MKSPECDIR%%/unsupported/vxworks-simpentium-g++/qplatformdefs.h
+%%QT_MKSPECDIR%%/wasm-emscripten/qmake.conf
+%%QT_MKSPECDIR%%/wasm-emscripten/qplatformdefs.h
 %%QT_MKSPECDIR%%/win32-clang-g++/qmake.conf
 %%QT_MKSPECDIR%%/win32-clang-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/win32-clang-msvc/qmake.conf

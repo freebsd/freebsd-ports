@@ -1,0 +1,11 @@
+--- mainwindow.ui.orig	2018-12-14 14:52:59 UTC
++++ mainwindow.ui
+@@ -1252,7 +1252,7 @@ Visit &lt;a href=&quot;https://www.qt.io&quot;&gt;qt.i
+   <customwidget>
+    <class>QWebView</class>
+    <extends>QWidget</extends>
+-   <header>QtWebKit/QWebView</header>
++   <header>QtWebKitWidgets/QWebView</header>
+   </customwidget>
+  </customwidgets>
+  <tabstops>

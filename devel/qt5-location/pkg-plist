@@ -1,6 +1,5 @@
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/error_messages_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/locationvaluetypehelper_p.h
-%%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/mapitemviewdelegateincubator_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qabstractgeotilecache_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qcache3q_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qdeclarativecategory_p.h
@@ -12,6 +11,7 @@
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qdeclarativegeomapcopyrightsnotice_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qdeclarativegeomapitembase_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qdeclarativegeomapitemgroup_p.h
+%%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qdeclarativegeomapitemtransitionmanager_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qdeclarativegeomapitemview_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qdeclarativegeomapparameter_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qdeclarativegeomapquickitem_p.h
@@ -123,6 +123,7 @@
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qplacereply_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qplaceresult_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qplacereview_p.h
+%%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qplacesearchrequest_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qplacesearchresult_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qplacesupplier_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qplaceuser_p.h
@@ -135,6 +136,7 @@
 %%QT_INCDIR%%/QtLocation/QGeoCodingManagerEngine
 %%QT_INCDIR%%/QtLocation/QGeoManeuver
 %%QT_INCDIR%%/QtLocation/QGeoRoute
+%%QT_INCDIR%%/QtLocation/QGeoRouteLeg
 %%QT_INCDIR%%/QtLocation/QGeoRouteReply
 %%QT_INCDIR%%/QtLocation/QGeoRouteRequest
 %%QT_INCDIR%%/QtLocation/QGeoRouteSegment
@@ -281,6 +283,8 @@
 %%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qdeclarativeposition_p.h
 %%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qdeclarativepositionsource_p.h
 %%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qpositioningquickglobal_p.h
+%%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qquickgeocoordinateanimation_p.h
+%%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qquickgeocoordinateanimation_p_p.h
 %%QT_INCDIR%%/QtPositioningQuick/QtPositioningQuick
 %%QT_INCDIR%%/QtPositioningQuick/QtPositioningQuickDepends
 %%QT_INCDIR%%/QtPositioningQuick/QtPositioningQuickVersion
@@ -296,6 +300,7 @@
 %%QT_CMAKEDIR%%/Qt5Positioning/Qt5PositioningConfig.cmake
 %%QT_CMAKEDIR%%/Qt5Positioning/Qt5PositioningConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5Positioning/Qt5Positioning_QGeoPositionInfoSourceFactoryGeoclue.cmake
+%%QT_CMAKEDIR%%/Qt5Positioning/Qt5Positioning_QGeoPositionInfoSourceFactoryGeoclue2.cmake
 %%QT_CMAKEDIR%%/Qt5Positioning/Qt5Positioning_QGeoPositionInfoSourceFactoryPoll.cmake
 %%QT_CMAKEDIR%%/Qt5PositioningQuick/Qt5PositioningQuickConfig.cmake
 %%QT_CMAKEDIR%%/Qt5PositioningQuick/Qt5PositioningQuickConfigVersion.cmake
@@ -335,6 +340,8 @@
 %%DEBUG%%%%QT_PLUGINDIR%%/geoservices/libqtgeoservices_osm.so.debug
 %%QT_PLUGINDIR%%/position/libqtposition_geoclue.so
 %%DEBUG%%%%QT_PLUGINDIR%%/position/libqtposition_geoclue.so.debug
+%%QT_PLUGINDIR%%/position/libqtposition_geoclue2.so
+%%DEBUG%%%%QT_PLUGINDIR%%/position/libqtposition_geoclue2.so.debug
 %%QT_PLUGINDIR%%/position/libqtposition_positionpoll.so
 %%DEBUG%%%%QT_PLUGINDIR%%/position/libqtposition_positionpoll.so.debug
 %%QT_QMLDIR%%/Qt/labs/location/liblocationlabsplugin.so

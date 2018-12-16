@@ -1,0 +1,25 @@
+--- plugins/VOIP/gui/AudioStats.ui.orig	2018-12-11 15:36:53 UTC
++++ plugins/VOIP/gui/AudioStats.ui
+@@ -306,19 +306,19 @@
+   <customwidget>
+    <class>AudioBar</class>
+    <extends>QWidget</extends>
+-   <header>AudioStats.h</header>
++   <header>gui/AudioStats.h</header>
+    <container>1</container>
+   </customwidget>
+   <customwidget>
+    <class>AudioNoiseWidget</class>
+    <extends>QWidget</extends>
+-   <header>AudioStats.h</header>
++   <header>gui/AudioStats.h</header>
+    <container>1</container>
+   </customwidget>
+   <customwidget>
+    <class>AudioEchoWidget</class>
+    <extends>QWidget</extends>
+-   <header>AudioStats.h</header>
++   <header>gui/AudioStats.h</header>
+    <container>1</container>
+   </customwidget>
+  </customwidgets>

@@ -11,6 +11,7 @@ include/qbs/api/project.h
 include/qbs/api/projectdata.h
 include/qbs/api/rulecommand.h
 include/qbs/api/runenvironment.h
+include/qbs/api/transformerdata.h
 include/qbs/buildgraph/forward_decls.h
 include/qbs/generators/generator.h
 include/qbs/generators/generatordata.h
@@ -19,6 +20,7 @@ include/qbs/logging/ilogsink.h
 include/qbs/qbs.h
 include/qbs/qbs_version.pri
 include/qbs/qtenvironment.h
+include/qbs/qtmsvctools.h
 include/qbs/qtprofilesetup.h
 include/qbs/tools/architectures.h
 include/qbs/tools/buildoptions.h
@@ -35,6 +37,7 @@ include/qbs/tools/projectgeneratormanager.h
 include/qbs/tools/qbs_export.h
 include/qbs/tools/settings.h
 include/qbs/tools/settingsmodel.h
+include/qbs/tools/settingsrepresentation.h
 include/qbs/tools/setupprojectparameters.h
 include/qbs/tools/toolchains.h
 include/qbs/tools/version.h
@@ -43,14 +46,15 @@ include/qbs/use_installed_qtprofilesetup.pri
 lib/libqbscore.prl
 lib/libqbscore.so
 lib/libqbscore.so.1
-lib/libqbscore.so.1.11
+lib/libqbscore.so.1.12
 lib/libqbscore.so.%%SHLIB_VERSION%%
 lib/libqbsqtprofilesetup.prl
 lib/libqbsqtprofilesetup.so
 lib/libqbsqtprofilesetup.so.1
-lib/libqbsqtprofilesetup.so.1.11
+lib/libqbsqtprofilesetup.so.1.12
 lib/libqbsqtprofilesetup.so.%%SHLIB_VERSION%%
 lib/qbs/plugins/libclangcompilationdbgenerator.so
+lib/qbs/plugins/libmakefilegenerator.so
 lib/qbs/plugins/libqbs_cpp_scanner.so
 lib/qbs/plugins/libqbs_qt_scanner.so
 lib/qbs/plugins/libvisualstudiogenerator.so
@@ -69,6 +73,7 @@ man/man1/qbs.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/cli-generate.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cli-help.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cli-install.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cli-list-products.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cli-resolve.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cli-run.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cli-setup-android.html
@@ -222,6 +227,10 @@ man/man1/qbs.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-cpufeatures.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-dmg-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-dmg.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-exporter-pkgconfig-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-exporter-pkgconfig.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-exporter-qbs-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-exporter-qbs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-ib-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-ib.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-ico-members.html
@@ -428,6 +437,10 @@ man/man1/qbs.1.gz
 %%DATADIR%%/modules/Android/ndk/utils.js
 %%DATADIR%%/modules/Android/sdk/sdk.qbs
 %%DATADIR%%/modules/Android/sdk/utils.js
+%%DATADIR%%/modules/Exporter/pkgconfig/pkgconfig.js
+%%DATADIR%%/modules/Exporter/pkgconfig/pkgconfig.qbs
+%%DATADIR%%/modules/Exporter/qbs/qbsexporter.js
+%%DATADIR%%/modules/Exporter/qbs/qbsexporter.qbs
 %%DATADIR%%/modules/archiver/archiver.qbs
 %%DATADIR%%/modules/bundle/BundleModule.qbs
 %%DATADIR%%/modules/bundle/MacOSX-Package-Types.xcspec
@@ -443,6 +456,7 @@ man/man1/qbs.1.gz
 %%DATADIR%%/modules/cpp/LinuxGCC.qbs
 %%DATADIR%%/modules/cpp/UnixGCC.qbs
 %%DATADIR%%/modules/cpp/android-gcc.qbs
+%%DATADIR%%/modules/cpp/cpp.js
 %%DATADIR%%/modules/cpp/darwin.js
 %%DATADIR%%/modules/cpp/freebsd-gcc.qbs
 %%DATADIR%%/modules/cpp/freebsd.js
