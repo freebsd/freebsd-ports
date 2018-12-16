@@ -379,6 +379,7 @@
     SUBDIR += quvi
     SUBDIR += quvi09
     SUBDIR += rage
+    SUBDIR += rav1e
     SUBDIR += recmpeg
     SUBDIR += recordmydesktop
     SUBDIR += replex
