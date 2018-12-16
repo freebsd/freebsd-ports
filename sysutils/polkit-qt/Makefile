@@ -20,15 +20,14 @@ LIB_DEPENDS=	libpolkit-agent-1.so:sysutils/polkit
 FLAVORS=	qt5 qt4
 FLAVOR?=	${FLAVORS:[1]}
 
-qt4_DEPRECATED=		Qt4 has been EOL since december 2015
-qt4_EXPIRATION_DATE=	2019-03-15
-
 USES=		cmake:outsource gnome pkgconfig tar:bzip2
 USE_GNOME=	glib20
 CMAKE_OFF=	BUILD_EXAMPLES  \
 		BUILD_TEST
 
 .  if ${FLAVOR} == qt4
+DEPRECATED=	Qt4 has been EOL since december 2015
+EXPIRATION_DATE=2019-03-15
 USES+=		kde:4 qt:4
 USE_KDE=	automoc4
 USE_QT=		corelib dbus gui \

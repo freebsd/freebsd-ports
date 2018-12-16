@@ -18,13 +18,12 @@ LICENSE=	LGPL20
 FLAVORS=	qt5 qt4
 FLAVOR?=	${FLAVORS:[1]}
 
-qt4_DEPRECATED=		Qt4 has been EOL since december 2015
-qt4_EXPIRATION_DATE=	2019-03-15
-
 USES=		compiler:c++11-lib cmake:outsource
 USE_LDCONFIG=	yes
 
 .  if ${FLAVOR} == qt4
+DEPRECATED=	Qt4 has been EOL since december 2015
+EXPIRATION_DATE=2019-03-15
 USES+=		qt:4
 USE_QT=		corelib dbus gui \
 		moc_build qmake_build rcc_build uic_build

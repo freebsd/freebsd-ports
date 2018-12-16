@@ -21,12 +21,11 @@ FLAVOR?=	${FLAVORS:[1]}
 qt4_LIB_DEPENDS=	libvlc.so:multimedia/vlc-qt4
 qt5_LIB_DEPENDS=	libvlc.so:multimedia/vlc3
 
-qt4_DEPRECATED=		Qt4 has been EOL since december 2015
-qt4_EXPIRATION_DATE=	2019-03-15
-
 USES=		cmake:outsource pkgconfig tar:xz
 
 .  if ${FLAVOR} == qt4
+DEPRECATED=	Qt4 has been EOL since december 2015
+EXPIRATION_DATE=2019-03-15
 USES+=		kde:4 qt:4
 USE_KDE=	automoc4
 USE_QT=		corelib gui phonon \

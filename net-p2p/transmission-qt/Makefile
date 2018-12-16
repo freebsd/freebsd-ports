@@ -12,10 +12,9 @@ FLAVOR?=	${FLAVORS:[1]}
 qt4_CONFLICTS_INSTALL=	transmission-qt5
 qt5_CONFLICTS_INSTALL=	transmission-qt4
 
-qt4_DEPRECATED=		Qt4 has been EOL since december 2015
-qt4_EXPIRATION_DATE=	2019-03-15
-
 .if ${FLAVOR} == qt4
+DEPRECATED=	Qt4 has been EOL since december 2015
+EXPIRATION_DATE=2019-03-15
 USES=		qt:4
 NLS_USES=	gettext-runtime:run qt:4
 USE_QT=		moc_build linguisttools_build qmake_build rcc_build \

@@ -22,9 +22,6 @@ qt5_PKGNAMESUFFIX=	-${PHONON_PLUGIN}-qt5
 qt4_PLIST=	${.CURDIR}/pkg-plist.qt4
 qt5_PLIST=	${.CURDIR}/pkg-plist.qt5
 
-qt4_DEPRECATED=		Qt4 has been EOL since december 2015
-qt4_EXPIRATION_DATE=	2019-03-15
-
 USES=		cmake pkgconfig tar:xz
 USE_GL=		gl
 USE_GNOME=	glib20 libxml2
@@ -32,6 +29,8 @@ USE_GSTREAMER1=	yes
 USE_XORG=	x11
 
 .  if ${FLAVOR} == qt4
+DEPRECATED=	Qt4 has been EOL since december 2015
+EXPIRATION_DATE=2019-03-15
 USES+=		kde:4 qt:4
 USE_KDE=	automoc4
 USE_QT=		corelib gui opengl phonon \

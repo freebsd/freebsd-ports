@@ -16,9 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 FLAVORS=	qt5 qt4
 FLAVOR?=	${FLAVORS:[1]}
 
-qt4_DEPRECATED=		Qt4 has been EOL since december 2015
-qt4_EXPIRATION_DATE=	2019-03-15
-
 USES=		qmake
 USE_GL=		gl
 
@@ -28,6 +25,8 @@ GH_PROJECT=	zNotes
 GH_TAGNAME=	6423c5e
 
 . if ${FLAVOR} == qt4
+DEPRECATED=	Qt4 has been EOL since december 2015
+EXPIRATION_DATE=2019-03-15
 USES+=		qt:4
 USE_QT=		uic_build moc_build rcc_build linguisttools_build corelib gui network xml
 . else
