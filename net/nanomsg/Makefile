@@ -2,6 +2,7 @@
 
 PORTNAME=			nanomsg
 PORTVERSION=			1.1.5
+PORTREVISION=			1
 CATEGORIES=			net
 
 MAINTAINER=			crest@bultmann.eu
@@ -22,5 +23,7 @@ DOCS_DESC=			Build and/or install HTML and manpages
 
 DOCS_BUILD_DEPENDS=		asciidoctor:textproc/rubygem-asciidoctor
 DOCS_CMAKE_BOOL=		NN_ENABLE_DOC
+
+PORTDOCS=			*
 
 .include <bsd.port.mk>

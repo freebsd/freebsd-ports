@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-12-16 21:09:15 UTC
++++ CMakeLists.txt
+@@ -330,7 +330,7 @@ if (NN_ENABLE_DOC)
+         )
+         install (
+             FILES ${CMAKE_CURRENT_BINARY_DIR}/${NAME}.${SECT}
+-            DESTINATION ${CMAKE_INSTALL_MANDIR}/man${SECT}
++            DESTINATION man/man${SECT}
+         )
+ 
+     endmacro (add_libnanomsg_man)
