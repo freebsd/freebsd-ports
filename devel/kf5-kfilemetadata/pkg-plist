@@ -47,6 +47,7 @@ lib/libKF5FileMetaData.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_PLUGINDIR%%/kf5/kfilemetadata/kfilemetadata_plaintextextractor.so
 %%QT_PLUGINDIR%%/kf5/kfilemetadata/kfilemetadata_poextractor.so
 %%QT_PLUGINDIR%%/kf5/kfilemetadata/kfilemetadata_popplerextractor.so
+%%QT_PLUGINDIR%%/kf5/kfilemetadata/kfilemetadata_postscriptdscextractor.so
 %%QT_PLUGINDIR%%/kf5/kfilemetadata/kfilemetadata_taglibextractor.so
 %%QT_PLUGINDIR%%/kf5/kfilemetadata/kfilemetadata_xmlextractor.so
 %%QT_PLUGINDIR%%/kf5/kfilemetadata/writers/kfilemetadata_taglibwriter.so

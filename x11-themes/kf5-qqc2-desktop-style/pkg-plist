@@ -43,5 +43,8 @@ lib/cmake/KF5QQC2DeskopStyle/KF5QQC2DeskopStyleConfigVersion.cmake
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/ToolTip.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/private/DefaultListItemBackground.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/private/FocusRect.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/private/MobileCursor.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/private/MobileTextActionsToolBar.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/org.kde.desktop/private/qmldir
 %%QT_QMLDIR%%/org/kde/qqc2desktopstyle/private/libqqc2desktopstyleplugin.so
 %%QT_QMLDIR%%/org/kde/qqc2desktopstyle/private/qmldir

@@ -1,5 +1,6 @@
 etc/dbus-1/system.d/org.kde.ktexteditor.katetextbuffer.conf
 etc/xdg/ktexteditor.categories
+include/KF5/KTextEditor/KTextEditor/AbstractAnnotationItemDelegate
 include/KF5/KTextEditor/KTextEditor/AnnotationInterface
 include/KF5/KTextEditor/KTextEditor/Application
 include/KF5/KTextEditor/KTextEditor/Attribute
@@ -29,6 +30,7 @@ include/KF5/KTextEditor/KTextEditor/Range
 include/KF5/KTextEditor/KTextEditor/SessionConfigInterface
 include/KF5/KTextEditor/KTextEditor/TextHintInterface
 include/KF5/KTextEditor/KTextEditor/View
+include/KF5/KTextEditor/ktexteditor/abstractannotationitemdelegate.h
 include/KF5/KTextEditor/ktexteditor/annotationinterface.h
 include/KF5/KTextEditor/ktexteditor/application.h
 include/KF5/KTextEditor/ktexteditor/attribute.h
