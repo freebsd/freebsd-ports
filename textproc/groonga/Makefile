@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	groonga
-PORTVERSION=	8.0.4
+PORTVERSION=	8.0.9
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.groonga.org/source/groonga/
 
@@ -13,6 +13,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		gmake libedit libtool pathfix pkgconfig
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-benchmark \
 		--disable-document \
@@ -57,7 +58,7 @@ post-patch:
 		'/NGX_PID_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_HTTP_LOG_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_ERROR_LOG_PATH/s|mkdir|${TRUE}|' \
-		${WRKSRC}/vendor/nginx-1.15.0/auto/install
+		${WRKSRC}/vendor/nginx-1.15.7/auto/install
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/groonga-httpd
