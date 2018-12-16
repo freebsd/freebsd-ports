@@ -4,6 +4,8 @@ lib/postgresql/repmgr.so
 share/postgresql/extension/repmgr--4.0.sql
 share/postgresql/extension/repmgr--4.0--4.1.sql
 share/postgresql/extension/repmgr--4.1.sql
+share/postgresql/extension/repmgr--4.1--4.2.sql
+share/postgresql/extension/repmgr--4.2.sql
 share/postgresql/extension/repmgr--unpackaged--4.0.sql
 share/postgresql/extension/repmgr.control
 @sample etc/repmgr.conf.sample
