@@ -1,0 +1,4 @@
+Unified Font Object (UFO) is a cross-platform, human-readable, future-proof
+format for storing font data. ufoLib is a low-level reader and writer for it.
+
+WWW: http://unifiedfontobject.org/

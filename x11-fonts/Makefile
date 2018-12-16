@@ -171,6 +171,7 @@
     SUBDIR += psftools
     SUBDIR += py-QtAwesome
     SUBDIR += py-bdflib
+    SUBDIR += py-ufoLib
     SUBDIR += raleway
     SUBDIR += roboto-fonts-ttf
     SUBDIR += sgifonts
