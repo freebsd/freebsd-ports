@@ -174,6 +174,7 @@
     SUBDIR += py-compreffor
     SUBDIR += py-defcon
     SUBDIR += py-fontMath
+    SUBDIR += py-glyphsLib
     SUBDIR += py-ufoLib
     SUBDIR += raleway
     SUBDIR += roboto-fonts-ttf
