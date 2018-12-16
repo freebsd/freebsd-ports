@@ -7,7 +7,7 @@ DISTVERSIONSUFFIX=	-g192bcd3ef
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	AV1 Codec Library
+COMMENT=	AV1 reference encoder/decoder
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
