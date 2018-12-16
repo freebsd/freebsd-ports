@@ -55,6 +55,7 @@ include/groonga/groonga/output.h
 include/groonga/groonga/pat.h
 include/groonga/groonga/plugin.h
 include/groonga/groonga/portability.h
+include/groonga/groonga/raw_string.h
 include/groonga/groonga/request_canceler.h
 include/groonga/groonga/request_timer.h
 include/groonga/groonga/scorer.h
@@ -63,16 +64,18 @@ include/groonga/groonga/table.h
 include/groonga/groonga/thread.h
 include/groonga/groonga/time.h
 include/groonga/groonga/token.h
+include/groonga/groonga/token_cursor.h
 include/groonga/groonga/token_filter.h
+include/groonga/groonga/token_metadata.h
 include/groonga/groonga/tokenizer.h
 include/groonga/groonga/tokenizer_query_deprecated.h
 include/groonga/groonga/type.h
 include/groonga/groonga/util.h
 include/groonga/groonga/vector.h
+include/groonga/groonga/version.h
 include/groonga/groonga/windows.h
 include/groonga/groonga/windows_event_logger.h
 include/groonga/groonga/window_function.h
-%%RUBY%%lib/groonga/plugins/expression_rewriters/optimizer.rb
 lib/groonga/plugins/functions/index_column.a
 lib/groonga/plugins/functions/index_column.so
 lib/groonga/plugins/functions/math.a
@@ -114,6 +117,7 @@ lib/groonga/plugins/sharding/keys_parsable.rb
 %%RUBY%%lib/groonga/scripts/ruby/eval_context.rb
 %%RUBY%%lib/groonga/scripts/ruby/expression.rb
 %%RUBY%%lib/groonga/scripts/ruby/expression_rewriter.rb
+%%RUBY%%lib/groonga/scripts/ruby/expression_rewriters/optimizer.rb
 %%RUBY%%lib/groonga/scripts/ruby/expression_rewriters.rb
 %%RUBY%%lib/groonga/scripts/ruby/expression_size_estimator.rb
 %%RUBY%%lib/groonga/scripts/ruby/expression_tree.rb
@@ -125,6 +129,7 @@ lib/groonga/plugins/sharding/keys_parsable.rb
 %%RUBY%%lib/groonga/scripts/ruby/expression_tree/logical_operation.rb
 %%RUBY%%lib/groonga/scripts/ruby/expression_tree/options.rb
 %%RUBY%%lib/groonga/scripts/ruby/expression_tree/procedure.rb
+%%RUBY%%lib/groonga/scripts/ruby/expression_tree/unary_operation.rb
 %%RUBY%%lib/groonga/scripts/ruby/expression_tree/variable.rb
 %%RUBY%%lib/groonga/scripts/ruby/expression_tree_builder.rb
 %%RUBY%%lib/groonga/scripts/ruby/fixed_size_column.rb
