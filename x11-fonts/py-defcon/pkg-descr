@@ -1,0 +1,8 @@
+Defcon is a set of UFO based objects optimized for use in font editing
+applications. The objects are built to be lightweight, fast and flexible.
+The objects are very bare-bones and they are not meant to be end-all, be-all
+objects. Rather, they are meant to provide base functionality so that you can
+focus on your application's behavior, not object observing or maintaining
+cached data.
+
+WWW: https://github.com/typesupply/defcon
