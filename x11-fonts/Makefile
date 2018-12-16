@@ -176,6 +176,7 @@
     SUBDIR += py-cu2qu
     SUBDIR += py-defcon
     SUBDIR += py-fontMath
+    SUBDIR += py-fontmake
     SUBDIR += py-glyphsLib
     SUBDIR += py-ufo2ft
     SUBDIR += py-ufoLib

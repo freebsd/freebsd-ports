@@ -1,0 +1,4 @@
+fontmake provides a wrapper for several other Python libraries which together
+compile fonts from various sources (.glyphs, .ufo) into binaries (.otf, .ttf).
+
+WWW: https://github.com/googlei18n/fontmake
