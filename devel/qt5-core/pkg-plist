@@ -11,6 +11,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbig5codec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbytearray_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qbytedata_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcborvalue_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcfsocketnotifier_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qcollator_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qconfig_p.h
@@ -90,6 +91,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qlogging_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qloggingregistry_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmachparser_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmakearray_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmetaobject_moc_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmetaobject_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qmetaobjectbuilder_p.h
@@ -111,6 +113,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qoperatingsystemversion_win_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qorderedmutexlocker_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qparallelanimationgroup_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qplugin_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qpoll_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qppsattribute_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qppsattributeprivate_p.h
@@ -131,6 +134,7 @@
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsignaleventgenerator_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsignaltransition_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsimd_p.h
+%%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsimd_x86_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsimplecodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qsjiscodec_p.h
 %%QT_INCDIR%%/QtCore/%%FULLVER%%/QtCore/private/qstate_p.h
@@ -203,6 +207,14 @@
 %%QT_INCDIR%%/QtCore/QByteArrayMatcher
 %%QT_INCDIR%%/QtCore/QByteRef
 %%QT_INCDIR%%/QtCore/QCache
+%%QT_INCDIR%%/QtCore/QCborArray
+%%QT_INCDIR%%/QtCore/QCborError
+%%QT_INCDIR%%/QtCore/QCborMap
+%%QT_INCDIR%%/QtCore/QCborParserError
+%%QT_INCDIR%%/QtCore/QCborStreamReader
+%%QT_INCDIR%%/QtCore/QCborStreamWriter
+%%QT_INCDIR%%/QtCore/QCborValue
+%%QT_INCDIR%%/QtCore/QCborValueRef
 %%QT_INCDIR%%/QtCore/QChar
 %%QT_INCDIR%%/QtCore/QCharRef
 %%QT_INCDIR%%/QtCore/QChildEvent
@@ -370,6 +382,7 @@
 %%QT_INCDIR%%/QtCore/QReturnArgument
 %%QT_INCDIR%%/QtCore/QRunnable
 %%QT_INCDIR%%/QtCore/QSaveFile
+%%QT_INCDIR%%/QtCore/QScopeGuard
 %%QT_INCDIR%%/QtCore/QScopedArrayPointer
 %%QT_INCDIR%%/QtCore/QScopedPointer
 %%QT_INCDIR%%/QtCore/QScopedPointerArrayDeleter
@@ -479,6 +492,7 @@
 %%QT_INCDIR%%/QtCore/Q_STARTUPINFO
 %%QT_INCDIR%%/QtCore/Qt
 %%QT_INCDIR%%/QtCore/QtAlgorithms
+%%QT_INCDIR%%/QtCore/QtCborCommon
 %%QT_INCDIR%%/QtCore/QtCleanUpFunction
 %%QT_INCDIR%%/QtCore/QtConfig
 %%QT_INCDIR%%/QtCore/QtContainerFwd
@@ -519,6 +533,11 @@
 %%QT_INCDIR%%/QtCore/qbytearraylist.h
 %%QT_INCDIR%%/QtCore/qbytearraymatcher.h
 %%QT_INCDIR%%/QtCore/qcache.h
+%%QT_INCDIR%%/QtCore/qcborarray.h
+%%QT_INCDIR%%/QtCore/qcborcommon.h
+%%QT_INCDIR%%/QtCore/qcbormap.h
+%%QT_INCDIR%%/QtCore/qcborstream.h
+%%QT_INCDIR%%/QtCore/qcborvalue.h
 %%QT_INCDIR%%/QtCore/qchar.h
 %%QT_INCDIR%%/QtCore/qcollator.h
 %%QT_INCDIR%%/QtCore/qcommandlineoption.h
@@ -624,6 +643,7 @@
 %%QT_INCDIR%%/QtCore/qsavefile.h
 %%QT_INCDIR%%/QtCore/qscopedpointer.h
 %%QT_INCDIR%%/QtCore/qscopedvaluerollback.h
+%%QT_INCDIR%%/QtCore/qscopeguard.h
 %%QT_INCDIR%%/QtCore/qsemaphore.h
 %%QT_INCDIR%%/QtCore/qsequentialanimationgroup.h
 %%QT_INCDIR%%/QtCore/qset.h
@@ -658,6 +678,7 @@
 %%QT_INCDIR%%/QtCore/qtcoreversion.h
 %%QT_INCDIR%%/QtCore/qtemporarydir.h
 %%QT_INCDIR%%/QtCore/qtemporaryfile.h
+%%QT_INCDIR%%/QtCore/qtestsupport_core.h
 %%QT_INCDIR%%/QtCore/qtextboundaryfinder.h
 %%QT_INCDIR%%/QtCore/qtextcodec.h
 %%QT_INCDIR%%/QtCore/qtextstream.h
@@ -691,6 +712,7 @@
 %%QT_CMAKEDIR%%/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake
 %%QT_CMAKEDIR%%/Qt5Core/Qt5CoreConfigVersion.cmake
 %%QT_CMAKEDIR%%/Qt5Core/Qt5CoreMacros.cmake
+%%QT_BINDIR%%/qlalr
 %%QT_LIBDIR%%/libQt5Core.prl
 %%QT_LIBDIR%%/libQt5Core.so
 %%QT_LIBDIR%%/libQt5Core.so.5

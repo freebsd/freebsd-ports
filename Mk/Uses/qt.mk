@@ -30,7 +30,7 @@ _QT_MK_INCLUDED=	qt.mk
 # Qt versions currently supported by the framework.
 _QT_SUPPORTED?=		4 5
 QT4_VERSION?=		4.8.7
-QT5_VERSION?=		5.11.2
+QT5_VERSION?=		5.12.0
 
 # We accept the Qt version to be passed by either or all of the three mk files.
 .  if empty(qt_ARGS) && empty(qmake_ARGS) && empty(qt-dist_ARGS)

@@ -14,7 +14,7 @@ LIB_DEPENDS=	libjasper.so:graphics/jasper \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp
 
-USE_QT=		core gui buildtools_build
 USES=		compiler:c++11-lang localbase qmake qt-dist:5,imageformats
+USE_QT=		core gui buildtools_build
 
 .include <bsd.port.mk>

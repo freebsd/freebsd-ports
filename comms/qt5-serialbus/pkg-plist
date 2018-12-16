@@ -60,6 +60,7 @@
 %%QT_CMAKEDIR%%/Qt5SerialBus/Qt5SerialBus_PassThruCanBusPlugin.cmake
 %%QT_CMAKEDIR%%/Qt5SerialBus/Qt5SerialBus_PeakCanBusPlugin.cmake
 %%QT_CMAKEDIR%%/Qt5SerialBus/Qt5SerialBus_TinyCanBusPlugin.cmake
+%%QT_CMAKEDIR%%/Qt5SerialBus/Qt5SerialBus_VirtualCanBusPlugin.cmake
 %%QT_LIBDIR%%/libQt5SerialBus.prl
 %%QT_LIBDIR%%/libQt5SerialBus.so
 %%QT_LIBDIR%%/libQt5SerialBus.so.5
@@ -74,4 +75,6 @@
 %%DEBUG%%%%QT_PLUGINDIR%%/canbus/libqtpeakcanbus.so.debug
 %%QT_PLUGINDIR%%/canbus/libqttinycanbus.so
 %%DEBUG%%%%QT_PLUGINDIR%%/canbus/libqttinycanbus.so.debug
+%%QT_PLUGINDIR%%/canbus/libqtvirtualcanbus.so
+%%DEBUG%%%%QT_PLUGINDIR%%/canbus/libqtvirtualcanbus.so.debug
 libdata/pkgconfig/Qt5SerialBus.pc

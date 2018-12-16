@@ -9,6 +9,7 @@
 %%QT_INCDIR%%/QtScxml/%%FULLVER%%/QtScxml/private/qscxmlstatemachine_p.h
 %%QT_INCDIR%%/QtScxml/%%FULLVER%%/QtScxml/private/qscxmlstatemachineinfo_p.h
 %%QT_INCDIR%%/QtScxml/%%FULLVER%%/QtScxml/private/qscxmltabledata_p.h
+%%QT_INCDIR%%/QtScxml/%%FULLVER%%/QtScxml/private/qtscxml-config_p.h
 %%QT_INCDIR%%/QtScxml/QScxmlCompiler
 %%QT_INCDIR%%/QtScxml/QScxmlCppDataModel
 %%QT_INCDIR%%/QtScxml/QScxmlDataModel
@@ -37,6 +38,7 @@
 %%QT_INCDIR%%/QtScxml/qscxmlnulldatamodel.h
 %%QT_INCDIR%%/QtScxml/qscxmlstatemachine.h
 %%QT_INCDIR%%/QtScxml/qscxmltabledata.h
+%%QT_INCDIR%%/QtScxml/qtscxml-config.h
 %%QT_INCDIR%%/QtScxml/qtscxmlversion.h
 %%QT_CMAKEDIR%%/Qt5Scxml/Qt5ScxmlConfig.cmake
 %%QT_CMAKEDIR%%/Qt5Scxml/Qt5ScxmlConfigExtras.cmake

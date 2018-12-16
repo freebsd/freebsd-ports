@@ -1,9 +1,9 @@
---- tools/qmlcachegen/qmlcachegen.pro.orig	2018-06-22 17:15:33 UTC
+--- tools/qmlcachegen/qmlcachegen.pro.orig	2018-10-01 23:20:01 UTC
 +++ tools/qmlcachegen/qmlcachegen.pro
-@@ -15,7 +15,7 @@ prefix_build: INSTALLS += build_integration
- else: COPIES += build_integration
+@@ -29,7 +29,7 @@ cmake_config_file.output = $$MODULE_BASE_OUTDIR/lib/cm
+ QMAKE_SUBSTITUTES += cmake_config_file
  
- cmake_build_integration.files = Qt5QuickCompilerConfig.cmake
+ cmake_build_integration.files = $$cmake_config_file.output
 -cmake_build_integration.path = $$[QT_INSTALL_LIBS]/cmake/Qt5QuickCompiler
 +cmake_build_integration.path = $$[QT_INSTALL_PREFIX]/lib/cmake/Qt5QuickCompiler
  prefix_build: INSTALLS += cmake_build_integration

@@ -1,0 +1,11 @@
+--- qmc2/htmleditor/htmleditor.ui.orig	2018-12-11 18:01:15 UTC
++++ qmc2/htmleditor/htmleditor.ui
+@@ -771,7 +771,7 @@
+   <customwidget>
+    <class>QWebView</class>
+    <extends>QWidget</extends>
+-   <header>QtWebKit/QWebView</header>
++   <header>QtWebKitWidgets/QWebView</header>
+   </customwidget>
+  </customwidgets>
+  <resources>

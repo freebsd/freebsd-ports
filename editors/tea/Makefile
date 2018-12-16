@@ -10,7 +10,7 @@ COMMENT=	Simple and powerful Qt-based text editor
 
 LICENSE=	GPLv3
 
-USES=		compiler:c++11-lang gl pkgconfig:build qmake qt:5
+USES=		compiler:c++11-lang gl gmake pkgconfig:build qmake qt:5
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_GROUP=		SPELL

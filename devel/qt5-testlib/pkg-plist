@@ -2,6 +2,7 @@
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/cycle_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/linux_perf_event_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qabstracttestlogger_p.h
+%%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qappletestlogger_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qbenchmark_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qbenchmarkevent_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qbenchmarkmeasurement_p.h
@@ -13,6 +14,7 @@
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qplaintestlogger_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qsignaldumper_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qteamcitylogger_p.h
+%%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtaptestlogger_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestblacklist_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestcoreelement_p.h
 %%QT_INCDIR%%/QtTest/%%FULLVER%%/QtTest/private/qtestcorelist_p.h

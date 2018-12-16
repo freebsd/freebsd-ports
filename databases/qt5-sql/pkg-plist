@@ -1,3 +1,4 @@
+%%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private/qtsql-config_p.h
 %%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private/qsqlcachedresult_p.h
 %%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private/qsqldriver_p.h
 %%QT_INCDIR%%/QtSql/%%FULLVER%%/QtSql/private/qsqlnulldriver_p.h
@@ -25,6 +26,7 @@
 %%QT_INCDIR%%/QtSql/QtSql
 %%QT_INCDIR%%/QtSql/QtSqlDepends
 %%QT_INCDIR%%/QtSql/QtSqlVersion
+%%QT_INCDIR%%/QtSql/qtsql-config.h
 %%QT_INCDIR%%/QtSql/qsql.h
 %%QT_INCDIR%%/QtSql/qsqldatabase.h
 %%QT_INCDIR%%/QtSql/qsqldriver.h

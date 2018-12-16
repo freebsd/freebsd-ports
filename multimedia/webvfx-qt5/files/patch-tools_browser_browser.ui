@@ -1,0 +1,11 @@
+--- tools/browser/browser.ui.orig	2018-12-11 15:29:09 UTC
++++ tools/browser/browser.ui
+@@ -59,7 +59,7 @@
+   <customwidget>
+    <class>QWebView</class>
+    <extends>QWidget</extends>
+-   <header>QtWebKit/QWebView</header>
++   <header>QtWebKitWidgets/QWebView</header>
+   </customwidget>
+  </customwidgets>
+  <resources/>

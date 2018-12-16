@@ -16,6 +16,8 @@
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qgstreamerbushelper_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qgstreamermessage_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qgstreamermirtexturerenderer_p.h
+%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qgstreamerplayercontrol_p.h
+%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qgstreamerplayersession_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qgstreamervideoinputdevicecontrol_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qgstreamervideooverlay_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qgstreamervideoprobecontrol_p.h
@@ -278,9 +280,9 @@
 %%QT_INCDIR%%/QtMultimediaWidgets/qvideowidgetcontrol.h
 %%QT_CMAKEDIR%%/Qt5Multimedia/Qt5MultimediaConfig.cmake
 %%QT_CMAKEDIR%%/Qt5Multimedia/Qt5MultimediaConfigVersion.cmake
-%%ALSA%%%%QT_CMAKEDIR%%/Qt5Multimedia/Qt5Multimedia_QAlsaPlugin.cmake
 %%NO_GSTREAMER%%%%QT_CMAKEDIR%%/Qt5Multimedia/Qt5Multimedia_AudioCaptureServicePlugin.cmake
 %%GSTREAMER%%%%QT_CMAKEDIR%%/Qt5Multimedia/Qt5Multimedia_CameraBinServicePlugin.cmake
+%%ALSA%%%%QT_CMAKEDIR%%/Qt5Multimedia/Qt5Multimedia_QAlsaPlugin.cmake
 %%GSTREAMER%%%%QT_CMAKEDIR%%/Qt5Multimedia/Qt5Multimedia_QGstreamerAudioDecoderServicePlugin.cmake
 %%GSTREAMER%%%%QT_CMAKEDIR%%/Qt5Multimedia/Qt5Multimedia_QGstreamerCaptureServicePlugin.cmake
 %%GSTREAMER%%%%QT_CMAKEDIR%%/Qt5Multimedia/Qt5Multimedia_QGstreamerPlayerServicePlugin.cmake

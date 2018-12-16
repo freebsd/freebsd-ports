@@ -1,20 +1,24 @@
 Only enter the directories we want to build, otherwise we might fail due to
 missing dependencies.
 
---- src/src.pro.orig	2018-09-21 17:44:37 UTC
+--- src/src.pro.orig	2018-10-16 20:14:56 UTC
 +++ src/src.pro
-@@ -1,48 +1,3 @@
+@@ -1,52 +1,3 @@
  TEMPLATE = subdirs
  
 -qtHaveModule(widgets) {
 -    no-png {
 -        message("Some graphics-related tools are unavailable without PNG support")
 -    } else {
--        SUBDIRS = assistant \
--                  pixeltool \
--                  designer
+-        QT_FOR_CONFIG += widgets
+-        qtConfig(pushbutton):qtConfig(toolbutton) {
+-            SUBDIRS = assistant \
+-                      designer \
+-                      pixeltool
 -
--        linguist.depends = designer
+-            linguist.depends = designer
+-        }
+-        qtHaveModule(quick):qtConfig(thread):qtConfig(toolbutton): SUBDIRS += distancefieldgenerator
 -    }
 -}
 -
@@ -25,11 +29,11 @@ missing dependencies.
 -    !android|android_app: SUBDIRS += qtplugininfo
 -}
 -
--config_clang: SUBDIRS += qdoc
+-config_clang: qtConfig(thread): SUBDIRS += qdoc
 -
--if(!android|android_app):!uikit: SUBDIRS += qtpaths
+-!android|android_app: SUBDIRS += qtpaths
 -
--mac {
+-macos {
 -    SUBDIRS += macdeployqt
 -}
 -
@@ -40,8 +44,8 @@ missing dependencies.
 -qtHaveModule(gui):!android:!uikit:!qnx:!winrt: SUBDIRS += qtdiag
 -
 -qtNomakeTools( \
+-    distancefieldgenerator \
 -    pixeltool \
--    macdeployqt \
 -)
 -
 -# This is necessary to avoid a race condition between toolchain.prf

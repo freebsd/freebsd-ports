@@ -1,0 +1,199 @@
+diff --git a/cmake/FindQHelpGenerator.cmake b/cmake/FindQHelpGenerator.cmake
+new file mode 100644
+--- /dev/null
++++ cmake/FindQHelpGenerator.cmake
+@@ -0,0 +1,94 @@
++#.rst:
++# FindQHelpGenerator
++# ------------------
++#
++# Try to find the Qt help generator.
++# Based on FindQCollectionGenerator.cmake
++#
++# This will define the following variables:
++#
++# ``QHelpGenerator_FOUND``
++#     True if (the requested version of) Sphinx is available
++# ``QHelpGenerator_VERSION``
++#     The version of the Qt help generator. Note that this not the
++#     same as the version of Qt it is provided by.
++# ``QHelpGenerator_QT_VERSION``
++#     The version of Qt that the Qt help generator is from.
++# ``QHelpGenerator_EXECUTABLE``
++#     The path to the Qt help generator executable.
++#
++# If ``QHelpGenerator_FOUND`` is TRUE, it will also define the following
++# imported target:
++#
++# ``QHelpGenerator::Generator``
++#     The Qt help generator.
++#
++# In general we recommend using the imported target, as it is easier to use.
++#
++# Since 5.53.0.
++
++#=============================================================================
++# Copyright 2015 Alex Merry <alex.merry@kde.org>
++#
++# Redistribution and use in source and binary forms, with or without
++# modification, are permitted provided that the following conditions
++# are met:
++#
++# 1. Redistributions of source code must retain the copyright
++#    notice, this list of conditions and the following disclaimer.
++# 2. Redistributions in binary form must reproduce the copyright
++#    notice, this list of conditions and the following disclaimer in the
++#    documentation and/or other materials provided with the distribution.
++# 3. The name of the author may not be used to endorse or promote products
++#    derived from this software without specific prior written permission.
++#
++# THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
++# IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
++# OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
++# IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
++# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
++# NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
++# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
++# THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
++# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
++# THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
++#=============================================================================
++
++find_program(QHelpGenerator_EXECUTABLE
++    NAMES
++        qhelpgenerator-qt5
++        qhelpgenerator
++    DOC "Qt help generator"
++)
++
++if (QHelpGenerator_EXECUTABLE)
++    if(NOT TARGET QHelpGenerator::Generator)
++        add_executable(QHelpGenerator::Generator IMPORTED)
++        set_target_properties(QHelpGenerator::Generator PROPERTIES
++            IMPORTED_LOCATION "${QHelpGenerator_EXECUTABLE}"
++        )
++    endif()
++
++    execute_process(
++        COMMAND "${QHelpGenerator_EXECUTABLE}" -v
++        OUTPUT_VARIABLE _QHelpGenerator_version_raw
++        ERROR_VARIABLE _QHelpGenerator_version_raw
++    )
++    if (_QHelpGenerator_version_raw MATCHES "^Qt Help Generator version ([0-9]+(\\.[0-9]+)*) \\(Qt ([0-9]+(\\.[0-9]+)*)\\)")
++        set(QHelpGenerator_VERSION "${CMAKE_MATCH_1}")
++        set(QHelpGenerator_QT_VERSION "${CMAKE_MATCH_3}")
++    endif()
++    unset(_QHelpGenerator_version_raw)
++endif()
++
++include(FindPackageHandleStandardArgs)
++find_package_handle_standard_args(QHelpGenerator
++    FOUND_VAR
++        QHelpGenerator_FOUND
++    REQUIRED_VARS
++        QHelpGenerator_EXECUTABLE
++    VERSION_VAR
++        QHelpGenerator_VERSION
++)
++
++mark_as_advanced(QHelpGenerator_EXECUTABLE)
+diff --git a/docs/CMakeLists.txt b/docs/CMakeLists.txt
+--- docs/CMakeLists.txt
++++ docs/CMakeLists.txt
+@@ -27,6 +27,7 @@
+ #=============================================================================
+ 
+ include(CMakeDependentOption)
++include("${CMAKE_SOURCE_DIR}/modules/ECMQueryQmake.cmake")
+ 
+ find_package(Sphinx 1.2 MODULE)
+ set_package_properties(
+@@ -38,15 +39,39 @@
+         PURPOSE "Required to build documentation for Extra CMake Modules."
+ )
+ 
+-find_package(QCollectionGenerator MODULE)
+-set_package_properties(
+-    QCollectionGenerator
+-    PROPERTIES
+-        URL "http://www.qt.io/"
+-        DESCRIPTION "Qt help collection generator."
+-        TYPE OPTIONAL
+-        PURPOSE "Required to build Extra CMake Modules documentation in Qt Help format."
+-)
++# QCollectionGenerator and QHelpGenerator were merged in Qt 5.12
++query_qmake(QT_VERSION QT_VERSION)
++
++if(QT_VERSION VERSION_LESS 5.12.0)
++    find_package(QCollectionGenerator MODULE)
++    set_package_properties(
++        QCollectionGenerator
++        PROPERTIES
++            URL "http://www.qt.io/"
++            DESCRIPTION "Qt help collection generator"
++            TYPE OPTIONAL
++            PURPOSE "Required to build Extra CMake Modules documentation in Qt Help format."
++    )
++    if(QCollectionGenerator_FOUND)
++        set(_ecm_qtdoc_generator QCollectionGenerator::Generator)
++    endif()
++else()
++    find_package(QHelpGenerator MODULE)
++    set_package_properties(
++        QHelpGenerator
++        PROPERTIES
++            URL "http://www.qt.io/"
++            DESCRIPTION "Qt help generator"
++            TYPE OPTIONAL
++            PURPOSE "Required to build Extra CMake Modules documentation in Qt Help format."
++    )
++    if(QHelpGenerator_FOUND)
++        set(_ecm_qtdoc_generator QHelpGenerator::Generator)
++    endif()
++endif()
++if(DEFINED _ecm_qtdoc_generator)
++    set(QT_HELP_GENERATOR_FOUND TRUE)
++endif()
+ 
+ cmake_dependent_option(
+     BUILD_HTML_DOCS "Build html help with Sphinx" ON
+@@ -62,7 +87,7 @@
+ 
+ cmake_dependent_option(
+     BUILD_QTHELP_DOCS "Build Qt help with Sphinx" OFF
+-    "Sphinx_FOUND;QCollectionGenerator_FOUND" OFF
++    "Sphinx_FOUND;QT_HELP_GENERATOR_FOUND" OFF
+ )
+ add_feature_info(BUILD_QTHELP_DOCS BUILD_QTHELP_DOCS "Generate QtHelp documentation for installed modules.")
+ 
+@@ -78,7 +103,7 @@
+     list(APPEND doc_formats qthelp)
+     set(qthelp_extra_commands
+         COMMAND
+-            QCollectionGenerator::Generator
++            "${_ecm_qtdoc_generator}"
+             ${CMAKE_CURRENT_BINARY_DIR}/qthelp/ExtraCMakeModules.qhcp
+     )
+ endif()
+diff --git a/modules/ECMQueryQmake.cmake b/modules/ECMQueryQmake.cmake
+--- modules/ECMQueryQmake.cmake
++++ modules/ECMQueryQmake.cmake
+@@ -1,11 +1,14 @@
+ find_package(Qt5Core QUIET)
+ 
+-if (Qt5Core_FOUND)
+-    set(_qmake_executable_default "qmake-qt5")
+-endif ()
+ if (TARGET Qt5::qmake)
+     get_target_property(_qmake_executable_default Qt5::qmake LOCATION)
++else()
++    # If the project() line contains the 'NONE' keyword, the find_package call
++    # above will not be able to find Qt5Core.
++    # We need to look for the executable directly.
++    find_program(_qmake_executable_default NAMES qmake)
+ endif()
++
+ set(QMAKE_EXECUTABLE ${_qmake_executable_default}
+     CACHE FILEPATH "Location of the Qt5 qmake executable")
+ 
+

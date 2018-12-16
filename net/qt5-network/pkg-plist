@@ -14,6 +14,8 @@
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qbearerengine_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qbearerplugin_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qdnslookup_p.h
+%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qdtls_openssl_p.h
+%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qdtls_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qftp_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhostaddress_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhostinfo_p.h
@@ -57,6 +59,7 @@
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkreplyfileimpl_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkreplyhttpimpl_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkreplyimpl_p.h
+%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkreplywasmimpl_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworkrequest_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qnetworksession_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qsctpserver_p.h
@@ -85,6 +88,7 @@
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qtnetwork-config_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qtnetworkglobal_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qurlinfo_p.h
+%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qwindowscarootfetcher_p.h
 %%QT_INCDIR%%/QtNetwork/QAbstractNetworkCache
 %%QT_INCDIR%%/QtNetwork/QAbstractSocket
 %%QT_INCDIR%%/QtNetwork/QAuthenticator
@@ -94,6 +98,8 @@
 %%QT_INCDIR%%/QtNetwork/QDnsMailExchangeRecord
 %%QT_INCDIR%%/QtNetwork/QDnsServiceRecord
 %%QT_INCDIR%%/QtNetwork/QDnsTextRecord
+%%QT_INCDIR%%/QtNetwork/QDtls
+%%QT_INCDIR%%/QtNetwork/QDtlsClientVerifier
 %%QT_INCDIR%%/QtNetwork/QHostAddress
 %%QT_INCDIR%%/QtNetwork/QHostInfo
 %%QT_INCDIR%%/QtNetwork/QHstsPolicy
@@ -142,6 +148,7 @@
 %%QT_INCDIR%%/QtNetwork/qabstractsocket.h
 %%QT_INCDIR%%/QtNetwork/qauthenticator.h
 %%QT_INCDIR%%/QtNetwork/qdnslookup.h
+%%QT_INCDIR%%/QtNetwork/qdtls.h
 %%QT_INCDIR%%/QtNetwork/qhostaddress.h
 %%QT_INCDIR%%/QtNetwork/qhostinfo.h
 %%QT_INCDIR%%/QtNetwork/qhstspolicy.h
@@ -160,6 +167,7 @@
 %%QT_INCDIR%%/QtNetwork/qnetworkreply.h
 %%QT_INCDIR%%/QtNetwork/qnetworkrequest.h
 %%QT_INCDIR%%/QtNetwork/qnetworksession.h
+%%QT_INCDIR%%/QtNetwork/qpassworddigestor.h
 %%QT_INCDIR%%/QtNetwork/qsctpserver.h
 %%QT_INCDIR%%/QtNetwork/qsctpsocket.h
 %%QT_INCDIR%%/QtNetwork/qssl.h

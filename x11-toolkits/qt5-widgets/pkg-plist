@@ -455,6 +455,7 @@
 %%QT_INCDIR%%/QtWidgets/qtableview.h
 %%QT_INCDIR%%/QtWidgets/qtablewidget.h
 %%QT_INCDIR%%/QtWidgets/qtabwidget.h
+%%QT_INCDIR%%/QtWidgets/qtestsupport_widgets.h
 %%QT_INCDIR%%/QtWidgets/qtextbrowser.h
 %%QT_INCDIR%%/QtWidgets/qtextedit.h
 %%QT_INCDIR%%/QtWidgets/qtoolbar.h

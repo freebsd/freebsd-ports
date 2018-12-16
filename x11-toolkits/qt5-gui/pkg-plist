@@ -110,6 +110,7 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qimage_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qimagepixmapcleanuphooks_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qimagescale_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qimagereaderwriterhelpers_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qinputcontrol_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qinputdevicemanager_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qinputdevicemanager_p_p.h
@@ -117,6 +118,7 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qinternalmimedata_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qkeymapper_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qkeysequence_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qktxhandler_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qlayoutpolicy_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qmath_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qmemrotate_p.h
@@ -138,6 +140,7 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qopengltexturecache_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qopengltextureglyphcache_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qopengltexturehelper_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qopengltextureuploader_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qopenglversionfunctionsfactory_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qopenglvertexarrayobject_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qoutlinemapper_p.h
@@ -158,6 +161,7 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qpixmap_blitter_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qpixmap_raster_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qpixmapcache_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qpkmhandler_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qpnghandler_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qpolygonclipper_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qppmhandler_p.h
@@ -196,6 +200,9 @@
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtextodfwriter_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtexttable_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtextureglyphcache_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtexturefiledata_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtexturefilehandler_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtexturefilereader_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtgui-config_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtguiglobal_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qtouchdevice_p.h
@@ -614,6 +621,7 @@
 %%QT_INCDIR%%/QtGui/qsurface.h
 %%QT_INCDIR%%/QtGui/qsurfaceformat.h
 %%QT_INCDIR%%/QtGui/qsyntaxhighlighter.h
+%%QT_INCDIR%%/QtGui/qtestsupport_gui.h
 %%QT_INCDIR%%/QtGui/qtextcursor.h
 %%QT_INCDIR%%/QtGui/qtextdocument.h
 %%QT_INCDIR%%/QtGui/qtextdocumentfragment.h
@@ -676,7 +684,6 @@
 %%QT_INCDIR%%/QtPlatformHeaders/QWGLNativeContext
 %%QT_INCDIR%%/QtPlatformHeaders/QWaylandWindowFunctions
 %%QT_INCDIR%%/QtPlatformHeaders/QWindowsWindowFunctions
-%%QT_INCDIR%%/QtPlatformHeaders/QXcbIntegrationFunctions
 %%QT_INCDIR%%/QtPlatformHeaders/QXcbScreenFunctions
 %%QT_INCDIR%%/QtPlatformHeaders/QXcbWindowFunctions
 %%QT_INCDIR%%/QtPlatformHeaders/QtPlatformHeaders
@@ -692,7 +699,6 @@
 %%QT_INCDIR%%/QtPlatformHeaders/qwaylandwindowfunctions.h
 %%QT_INCDIR%%/QtPlatformHeaders/qwglnativecontext.h
 %%QT_INCDIR%%/QtPlatformHeaders/qwindowswindowfunctions.h
-%%QT_INCDIR%%/QtPlatformHeaders/qxcbintegrationfunctions.h
 %%QT_INCDIR%%/QtPlatformHeaders/qxcbscreenfunctions.h
 %%QT_INCDIR%%/QtPlatformHeaders/qxcbwindowfunctions.h
 %%QT_INCDIR%%/QtServiceSupport/%%FULLVER%%/QtServiceSupport/private/qgenericunixservices_p.h

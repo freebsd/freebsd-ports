@@ -61,6 +61,7 @@
 %%QT_DOCDIR%%/global/template/images/sprites-combined.png
 %%QT_DOCDIR%%/global/template/scripts/extras.js
 %%QT_DOCDIR%%/global/template/scripts/main.js
+%%QT_DOCDIR%%/global/template/style/cookie-confirm.css
 %%QT_DOCDIR%%/global/template/style/cookiebar-x.png
 %%QT_DOCDIR%%/global/template/style/doc_search.png
 %%QT_DOCDIR%%/global/template/style/gsc.css

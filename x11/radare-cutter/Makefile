@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 LIB_DEPENDS=	libr_bin.so:devel/radare2
 
-USES=		gl pkgconfig python:3.4+ qmake:outsource qt:5
+USES=		gl gmake pkgconfig python:3.4+ qmake:outsource qt:5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	radareorg

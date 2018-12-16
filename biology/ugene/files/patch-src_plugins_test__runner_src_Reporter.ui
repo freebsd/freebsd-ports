@@ -1,0 +1,11 @@
+--- src/plugins/test_runner/src/Reporter.ui.orig	2018-12-11 15:24:12 UTC
++++ src/plugins/test_runner/src/Reporter.ui
+@@ -36,7 +36,7 @@
+   <customwidget>
+    <class>QWebView</class>
+    <extends>QWidget</extends>
+-   <header>QtWebKit/QWebView</header>
++   <header>QtWebKitWidgets/QWebView</header>
+   </customwidget>
+  </customwidgets>
+  <resources/>

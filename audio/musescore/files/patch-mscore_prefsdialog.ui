@@ -1,0 +1,11 @@
+--- mscore/prefsdialog.ui.orig	2018-12-11 15:47:09 UTC
++++ mscore/prefsdialog.ui
+@@ -4058,7 +4058,7 @@
+    </item>
+   </layout>
+  </widget>
+- <pixmapfunction>getPixmap</pixmapfunction>
++ <pixmapfunction></pixmapfunction>
+  <customwidgets>
+   <customwidget>
+    <class>Awl::ColorLabel</class>

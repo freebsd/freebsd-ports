@@ -18,7 +18,7 @@ OPTIONS_SINGLE=		GUI
 OPTIONS_SINGLE_GUI=	QT4 QT5
 OPTIONS_DEFAULT=	QT5
 
-USES=		qmake shebangfix
+USES=		gmake qmake shebangfix
 QT4_USES=	qt:4
 QT4_USE=	QT=corelib,gui,webkit,linguisttools_build,moc_build,rcc_build,uic_build
 QT5_USES=	qt:5
