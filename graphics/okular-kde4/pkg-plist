@@ -44,7 +44,6 @@ lib/kde4/okularGenerator_kimgio.so
 lib/kde4/okularGenerator_mobi.so
 lib/kde4/okularGenerator_ooo.so
 lib/kde4/okularGenerator_plucker.so
-lib/kde4/okularGenerator_poppler.so
 lib/kde4/okularGenerator_tiff.so
 lib/kde4/okularGenerator_txt.so
 lib/kde4/okularGenerator_xps.so
@@ -63,7 +62,6 @@ share/applications/kde4/active-documentviewer_fb.desktop
 share/applications/kde4/active-documentviewer_ghostview.desktop
 share/applications/kde4/active-documentviewer_kimgio.desktop
 share/applications/kde4/active-documentviewer_ooo.desktop
-share/applications/kde4/active-documentviewer_pdf.desktop
 share/applications/kde4/active-documentviewer_plucker.desktop
 share/applications/kde4/active-documentviewer_tiff.desktop
 share/applications/kde4/active-documentviewer_txt.desktop
@@ -80,7 +78,6 @@ share/applications/kde4/okularApplication_ghostview.desktop
 share/applications/kde4/okularApplication_kimgio.desktop
 share/applications/kde4/okularApplication_mobi.desktop
 share/applications/kde4/okularApplication_ooo.desktop
-share/applications/kde4/okularApplication_pdf.desktop
 share/applications/kde4/okularApplication_plucker.desktop
 share/applications/kde4/okularApplication_tiff.desktop
 share/applications/kde4/okularApplication_txt.desktop
@@ -125,7 +122,6 @@ share/apps/okular/tools.xml
 share/config.kcfg/gssettings.kcfg
 share/config.kcfg/okular.kcfg
 share/config.kcfg/okular_core.kcfg
-share/config.kcfg/pdfsettings.kcfg
 share/doc/HTML/en/okular/annotation-properties.png
 share/doc/HTML/en/okular/annotations.png
 share/doc/HTML/en/okular/bookmark-management.png
@@ -174,7 +170,6 @@ share/kde4/services/libokularGenerator_kimgio.desktop
 share/kde4/services/libokularGenerator_mobi.desktop
 share/kde4/services/libokularGenerator_ooo.desktop
 share/kde4/services/libokularGenerator_plucker.desktop
-share/kde4/services/libokularGenerator_poppler.desktop
 share/kde4/services/libokularGenerator_tiff.desktop
 share/kde4/services/libokularGenerator_txt.desktop
 share/kde4/services/libokularGenerator_xps.desktop
@@ -191,7 +186,6 @@ share/kde4/services/okularKimgio.desktop
 share/kde4/services/okularMobi.desktop
 share/kde4/services/okularOoo.desktop
 share/kde4/services/okularPlucker.desktop
-share/kde4/services/okularPoppler.desktop
 share/kde4/services/okularTiff.desktop
 share/kde4/services/okularTxt.desktop
 share/kde4/services/okularXps.desktop

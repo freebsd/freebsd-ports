@@ -10785,3 +10785,4 @@ biology/njplot|biology/seaview|2018-12-11|Has expired: Deprecated by upstream; u
 devel/dcmtk|graphics/dcmtk|2018-12-12|Move to a proper category
 graphics/cuneiform||2018-12-16|Has expired: Unmaintained upstream
 dns/knot1|dns/knot2|2018-12-16|Has expired: EOL upstream; successor dns/knot2 is in place
+print/frescobaldi||2018-12-16|Depends on non-existent poppler-qt4

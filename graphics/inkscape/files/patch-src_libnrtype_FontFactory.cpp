@@ -1,6 +1,6 @@
---- src/libnrtype/FontFactory.cpp.orig	2017-01-05 22:10:01.490293000 +0100
-+++ src/libnrtype/FontFactory.cpp	2017-01-05 22:13:37.547401000 +0100
-@@ -695,8 +695,9 @@
+--- src/libnrtype/FontFactory.cpp.orig	2018-03-11 20:38:09 UTC
++++ src/libnrtype/FontFactory.cpp
+@@ -704,8 +704,9 @@ font_instance *font_factory::Face(PangoFontDescription
              guint script_index = -1;
              if( pango_ot_info_find_script( info, PANGO_OT_TABLE_GSUB, scripts[i], &script_index )) {
  

@@ -2,7 +2,7 @@
 
 PORTNAME=	okular
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	graphics kde kde-kde4
 
 MAINTAINER=	kde@FreeBSD.org
@@ -15,7 +15,6 @@ LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre \
 		libkscreen.so:graphics/libkscreen \
 		libqca.so:devel/qca@qt4 \
 		libtiff.so:graphics/tiff \
-		libpoppler-qt4.so:graphics/poppler-qt4 \
 		libspectre.so:print/libspectre \
 		libchm.so:misc/chmlib \
 		libfreetype.so:print/freetype2 \

@@ -864,7 +864,6 @@
     SUBDIR += poppler
     SUBDIR += poppler-data
     SUBDIR += poppler-glib
-    SUBDIR += poppler-qt4
     SUBDIR += poppler-qt5
     SUBDIR += poppler-utils
     SUBDIR += potrace
@@ -935,7 +934,6 @@
     SUBDIR += py-plotly
     SUBDIR += py-png
     SUBDIR += py-poppler
-    SUBDIR += py-poppler-qt4
     SUBDIR += py-pycha
     SUBDIR += py-pycollada
     SUBDIR += py-pydot

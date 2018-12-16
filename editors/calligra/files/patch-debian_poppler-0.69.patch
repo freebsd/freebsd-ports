@@ -1,0 +1,17 @@
+Description: Fix build with poppler 0.69
+Author: Gianfranco Costamagna <locutusofborg@debian.org>
+Bug-Debian: https://bugs.debian.org/910873
+Last-Update: 2018-10-22
+
+--- filters/karbon/pdf/PdfImport.cpp
++++ filters/karbon/pdf/PdfImport.cpp
+@@ -102,9 +102,6 @@ KoFilter::ConversionStatus PdfImport::co
+     delete globalParams;
+     globalParams = 0;
+ 
+-    // check for memory leaks
+-    Object::memCheck(stderr);
+-
+     return KoFilter::OK;
+ }
+

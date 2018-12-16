@@ -60,7 +60,6 @@
     SUBDIR += fpdf
     SUBDIR += freetype
     SUBDIR += freetype2
-    SUBDIR += frescobaldi
     SUBDIR += ft2demos
     SUBDIR += ghostscript7-base
     SUBDIR += ghostscript7-commfont

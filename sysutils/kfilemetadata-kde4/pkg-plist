@@ -17,7 +17,6 @@ lib/kde4/kfilemetadata_odfextractor.so
 lib/kde4/kfilemetadata_office2007extractor.so
 lib/kde4/kfilemetadata_officeextractor.so
 lib/kde4/kfilemetadata_plaintextextractor.so
-lib/kde4/kfilemetadata_popplerextractor.so
 lib/kde4/kfilemetadata_taglibextractor.so
 lib/libkfilemetadata.so
 lib/libkfilemetadata.so.4
@@ -30,6 +29,5 @@ share/kde4/services/kfilemetadata_odfextractor.desktop
 share/kde4/services/kfilemetadata_office2007extractor.desktop
 share/kde4/services/kfilemetadata_officeextractor.desktop
 share/kde4/services/kfilemetadata_plaintextextractor.desktop
-share/kde4/services/kfilemetadata_popplerextractor.desktop
 share/kde4/services/kfilemetadata_taglibextractor.desktop
 share/kde4/servicetypes/kfilemetadataextractor.desktop

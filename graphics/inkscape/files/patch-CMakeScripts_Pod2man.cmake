@@ -1,6 +1,6 @@
---- CMakeScripts/Pod2man.cmake.orig	2017-01-06 16:19:54.351838000 +0100
-+++ CMakeScripts/Pod2man.cmake	2017-01-06 16:20:26.957487000 +0100
-@@ -48,7 +48,7 @@
+--- CMakeScripts/Pod2man.cmake.orig	2018-03-11 20:38:09 UTC
++++ CMakeScripts/Pod2man.cmake
+@@ -48,7 +48,7 @@ macro(pod2man PODFILE_FULL RELEASE SECTION CENTER)
          )
          install(
              FILES ${MANFILE_FULL}

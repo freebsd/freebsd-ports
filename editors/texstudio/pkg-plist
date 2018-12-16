@@ -128,6 +128,8 @@ share/icons/hicolor/scalable/apps/texstudio.svg
 %%DATADIR%%/texstudio_hu.qm
 %%DATADIR%%/texstudio_it.qm
 %%DATADIR%%/texstudio_ja.qm
+%%DATADIR%%/texstudio_ko.qm
+%%DATADIR%%/texstudio_ko_KR.qm
 %%DATADIR%%/texstudio_nl.qm
 %%DATADIR%%/texstudio_pl.qm
 %%DATADIR%%/texstudio_pt_BR.qm
