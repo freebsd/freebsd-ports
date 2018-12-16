@@ -1,0 +1,22 @@
+--- src/gpgrt-config.orig	2018-11-15 16:10:09 UTC
++++ src/gpgrt-config
+@@ -448,8 +448,8 @@ sysroot () {
+ 	    _result="$_result${_result:+ }$_opt"
+ 	    shift
+ 	    _result="$_result $PKG_CONFIG_SYSROOT_DIR$1"
+-	elif expr "$1" : "^$_opt" >/dev/null; then
+-	    _result="$_result${_result:+ }$_opt$PKG_CONFIG_SYSROOT_DIR$(expr "$1" : "^$_opt\(.*\)")"
++	elif expr "x$1" : "^x$_opt" >/dev/null; then
++	    _result="$_result${_result:+ }$_opt$PKG_CONFIG_SYSROOT_DIR$(expr "x$1" : "^x$_opt\(.*\)")"
+ 	else
+ 	    _result="$_result${_result:+ }$1"
+ 	fi
+@@ -568,7 +568,7 @@ done
+ 
+ if [ -z "$module_list" ]; then
+     module_list=${myname%-config}
+-elif expr match "$module_list" "=\|!=\|<\|>\|<=\|>=" >/dev/null; then
++elif expr "$module_list" : "=\|!=\|<\|>\|<=\|>=" >/dev/null; then
+     module_list="${myname%-config} $module_list"
+ fi
+ 
