@@ -173,6 +173,7 @@
     SUBDIR += py-bdflib
     SUBDIR += py-booleanOperations
     SUBDIR += py-compreffor
+    SUBDIR += py-cu2qu
     SUBDIR += py-defcon
     SUBDIR += py-fontMath
     SUBDIR += py-glyphsLib
