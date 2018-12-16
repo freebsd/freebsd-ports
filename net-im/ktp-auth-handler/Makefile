@@ -17,7 +17,8 @@ LIB_DEPENDS=	libqca-qt5.so:devel/qca@qt5 \
 		libkaccounts.so:net-im/kaccounts-integration \
 		libsignon-qt5.so:sysutils/signon-qt5
 
-USES=		cmake:outsource gettext kde:5 pkgconfig qt:5 tar:xz
+USES=		compiler:c++11-lang cmake:outsource gettext kde:5 pkgconfig \
+		qt:5 tar:xz
 USE_KDE=	completion config coreaddons ecm i18n jobwidgets kdewebkit \
 		kio wallet service widgetsaddons
 USE_QT=		core dbus gui network webkit widgets xml \
