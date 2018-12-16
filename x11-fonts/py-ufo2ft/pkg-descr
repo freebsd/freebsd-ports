@@ -1,0 +1,4 @@
+ufo2ft ("UFO to FontTools") is a fork of ufo2fdk whose goal is to generate
+OpenType font binaries from UFOs without the FDK dependency.
+
+WWW: https://github.com/googlei18n/ufo2ft
