@@ -2,12 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	vigra
-DISTVERSION=	1.11.0
-PORTREVISION=	26
+DISTVERSIONPREFIX=v
+DISTVERSION=	1.11.1
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	18675a51fca2.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VIGRA stands for "Vision with Generic Algorithms"
@@ -18,17 +15,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libHalf.so:graphics/ilmbase \
 		libsz.so:science/szip
 
-USES=		cmake:outsource python:2.7,run shebangfix
+USES=		cmake:outsource compiler:c++14-lang python:2.7,run shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	ukoethe
+GH_TAGNAME=	8acd73a
+USE_LDCONFIG=	yes
+
 CMAKE_ARGS=	-DDEPENDENCY_SEARCH_PREFIX:PATH=${LOCALBASE} \
 		-DDOCINSTALL:PATH=${DOCSDIR_REL}
-
-USE_GITHUB=	yes
-GH_ACCOUNT=     ukoethe
-GH_TAGNAME=     e6c21f3
-
 SHEBANG_FILES=	config/vigra-config.in
-
-USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		HDF5 OPENEXR NUMPY DOCS FFTW
 OPTIONS_DEFAULT=	HDF5 OPENEXR FFTW ${OPTIONS_GROUP_IMAGEFORMATS}
