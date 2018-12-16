@@ -1,0 +1,4 @@
+Boolean operations on paths based on a super fast polygon clipper library by
+Angus Johnson.
+
+WWW: https://github.com/typemytype/booleanOperations

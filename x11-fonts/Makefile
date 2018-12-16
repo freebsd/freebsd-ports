@@ -171,6 +171,7 @@
     SUBDIR += psftools
     SUBDIR += py-QtAwesome
     SUBDIR += py-bdflib
+    SUBDIR += py-booleanOperations
     SUBDIR += py-compreffor
     SUBDIR += py-defcon
     SUBDIR += py-fontMath
