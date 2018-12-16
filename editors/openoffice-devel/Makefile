@@ -196,9 +196,10 @@ MYSQL_USES=			mysql
 SDK_CONFIGURE_ENABLE=		odk
 SDK_DISTFILES=			unowinreg.dll:unoreg
 
+# The current version of openoffice is not compatible with the changed API and
+# requirements of popller-0.7x. Switch to using bundled version for now.
+CONFIGURE_ARGS+=		--without-system-poppler
 PDFIMPORT_CONFIGURE_ENABLE=	pdfimport
-PDFIMPORT_CONFIGURE_WITH=	system-poppler
-PDFIMPORT_LIB_DEPENDS=		libpoppler.so:graphics/poppler
 
 REPORT_BUILDER_BROKEN=		REPORT_BUILDER option requires additional .jar files
 REPORT_BUILDER_CONFIGURE_ENABLE=	report-builder

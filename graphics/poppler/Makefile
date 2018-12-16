@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	poppler
-PORTVERSION=	0.57.0
-PORTREVISION=	2
+DISTVERSION=	0.72.0
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
 
@@ -13,136 +12,87 @@ COMMENT?=	PDF rendering library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:graphics/png \
-		libtiff.so:graphics/tiff \
-		libfontconfig.so:x11-fonts/fontconfig \
+LIB_DEPENDS=	libnspr4.so:devel/nspr \
 		liblcms2.so:graphics/lcms2 \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
 		libfreetype.so:print/freetype2 \
 		libnss3.so:security/nss \
-		libnspr4.so:devel/nspr
+		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	poppler-data>0:graphics/poppler-data
 
-USES=		compiler:c++11-lang cpe gmake jpeg libtool localbase pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lang cpe cmake gnome jpeg libtool \
+		localbase pathfix pkgconfig tar:xz
 CPE_VENDOR=	freedesktop
-USE_GNOME=	libxml2
-GNU_CONFIGURE=	yes
+USE_GNOME=	cairo libxml2
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--enable-zlib \
-		--enable-xpdf-headers \
-		--disable-libnss \
-		--disable-gtk-test \
-		--without-html-dir \
-		--disable-static \
-		--enable-libnss
+CMAKE_ON=	ENABLE_LIBJPEG  \
+		ENABLE_LIBPNG \
+		ENABLE_LIBTIFF \
+		ENABLE_XPDF_HEADERS \
+		ENABLE_ZLIB \
+		ENABLE_NSS \
+		ENABLE_SPLASH
 
-INSTALL_TARGET=	install-strip
 
-.if !defined(SLAVEPORT)
+# Slave ports.
+_POPPLER_SLAVES=	library glib qt5 utils
+_SLAVE_PORT?=		library
+
+# Activate the wanted module, and deactivate the others.
+CMAKE_ON+=	ENABLE_${_SLAVE_PORT:tu}
+CMAKE_OFF+=	${_POPPLER_SLAVES:N${_SLAVE_PORT}:tu:S/^/ENABLE_/}
+
+.if ${_SLAVE_PORT} == library
 PORTSCOUT=	limitw:1,even
-
-OPTIONS_DEFINE=	CAIRO CURL OPENJPEG
-OPTIONS_DEFAULT=CAIRO OPENJPEG
-
 USES+=		iconv
-.endif
+CMAKE_ON+=	ENABLE_CPP
 
-.include <bsd.port.options.mk>
-
-.if defined(SLAVEPORT)
-PORTSCOUT=	ignore:1
-LIB_DEPENDS+=	libpoppler.so:graphics/poppler
-
-.if ${SLAVEPORT}==glib
-CONFIGURE_ARGS+=--enable-poppler-glib --enable-introspection=yes
-USE_GNOME+=	cairo glib20 introspection:build
-BUILD_WRKSRC=	${WRKSRC}/glib
-INSTALL_WRKSRC=	${WRKSRC}/glib
+OPTIONS_DEFINE=		CURL OPENJPEG
+OPTIONS_DEFAULT=	OPENJPEG
+OPTIONS_SUB=		yes
 .else
-CONFIGURE_ARGS+=--disable-poppler-glib
-.endif
+PORTSCOUT=		ignore:1
 
-.if ${SLAVEPORT}==qt4
 DEPRECATED=		Qt4 has been EOL since december 2015
 EXPIRATION_DATE=	2019-03-15
 
-CONFIGURE_ARGS+=--enable-poppler-qt4
-CONFIGURE_ENV+=	MOCQT4=${MOC}
-USES+=		qt:4
-USE_QT=		gui corelib xml qtestlib moc_build
-BUILD_WRKSRC=	${WRKSRC}/qt4
-INSTALL_WRKSRC=	${WRKSRC}/qt4
-.else
-CONFIGURE_ARGS+=--disable-poppler-qt4
+LIB_DEPENDS+=		libpoppler.so:graphics/poppler
+PKGNAMESUFFIX=		-${_SLAVE_PORT}
+
+BUILD_WRKSRC=		${WRKSRC}/${_SLAVE_PORT}
+INSTALL_WRKSRC=		${WRKSRC}/${_SLAVE_PORT}
+
+CMAKE_ARGS+=		-DENABLE_LIBOPENJPEG:STRING="none" \
+			-DENABLE_LIBCURL:BOOL=FALSE
+
+.  if ${_SLAVE_PORT} == glib
+USE_GNOME+=		glib20 introspection:Build
+.  elif ${_SLAVE_PORT} == qt5
+USES+=			qt:5
+USE_QT=			core gui widgets xml \
+			buildtools_build qmake_build testlib_build
+.  elif ${_SLAVE_PORT} == utils
+LIB_DEPENDS+=		libpoppler-glib.so:graphics/poppler-glib
+USES+=			gnome
+.  endif
+
 .endif
 
-.if ${SLAVEPORT}==qt5
-CONFIGURE_ARGS+=--enable-poppler-qt5
-CONFIGURE_ENV+=	MOCQT5=${MOC}
-USES+=		qt:5
-USE_QT=		core gui widgets xml buildtools_build testlib_build
-# Qt from 5.7.0 on requires c++11.
-USE_CXXSTD=	c++11
-BUILD_WRKSRC=	${WRKSRC}/qt5
-INSTALL_WRKSRC=	${WRKSRC}/qt5
-.else
-CONFIGURE_ARGS+=--disable-poppler-qt5
-.endif
+CURL_CMAKE_BOOL=	ENABLE_LIBCURL
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 
-.if ${SLAVEPORT}==utils
-LIB_DEPENDS+=	libpoppler-glib.so:graphics/poppler-glib
-CONFIGURE_ARGS+=--enable-utils
-BUILD_WRKSRC=	${WRKSRC}/utils
-INSTALL_WRKSRC=	${WRKSRC}/utils
-.else
-CONFIGURE_ARGS+=--disable-utils
-.endif
-
-.else # ! SLAVE options below
-CONFIGURE_ARGS+=--disable-poppler-glib \
-		--disable-poppler-qt4 \
-		--disable-poppler-qt5 \
-		--disable-utils
-
-.if ${PORT_OPTIONS:MCAIRO}
-LIB_DEPENDS+=	libcairo.so:graphics/cairo
-PLIST_SUB+=	CAIRO=""
-.else
-CONFIGURE_ARGS+=--disable-cairo-output
-PLIST_SUB+=	CAIRO="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	libcurl.so:ftp/curl
-CONFIGURE_ARGS+=--enable-libcurl
-PLIST_SUB+=	CURL=""
-.else
-CONFIGURE_ARGS+=--disable-libcurl
-PLIST_SUB+=	CURL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MOPENJPEG}
-CONFIGURE_ARGS+=--enable-libopenjpeg=openjpeg2
-LIB_DEPENDS+=	libopenjp2.so:graphics/openjpeg
-.else
-CONFIGURE_ARGS+=--enable-libopenjpeg=none
-.endif
-.endif # end of options
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-fno-check-new||g' ${WRKSRC}/configure
+OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
+OPENJPEG_CMAKE_ON=	-DENABLE_LIBOPENJPEG:STRING="openjpeg2"
+OPENJPEG_CMAKE_OFF=	-DENABLE_LIBOPENJPEG:STRING="none"
 
 post-install:
-.if defined(SLAVEPORT)
-. if ${SLAVEPORT}==glib
+.if ${_SLAVE_PORT} == glib
 	${INSTALL_DATA} ${WRKSRC}/poppler-glib.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig
-. elif ${SLAVEPORT}==qt4
-	${INSTALL_DATA} ${WRKSRC}/poppler-qt4.pc \
-		${STAGEDIR}${PREFIX}/libdata/pkgconfig
-. elif ${SLAVEPORT}==qt5
+.elif ${_SLAVE_PORT} == qt5
 	${INSTALL_DATA} ${WRKSRC}/poppler-qt5.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig
-. endif
 .endif
 
 .include <bsd.port.mk>

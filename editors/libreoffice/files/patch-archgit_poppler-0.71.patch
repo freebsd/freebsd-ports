@@ -1,155 +1,6 @@
-diff -ru sdext/source/pdfimport/xpdfwrapper.orig/pdfioutdev_gpl.cxx sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx
---- sdext/source/pdfimport/xpdfwrapper.orig/pdfioutdev_gpl.cxx	2018-11-01 20:43:55.802520387 +0000
-+++ sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx	2018-11-01 20:44:33.399286879 +0000
-@@ -514,7 +514,7 @@
- PDFOutDev::PDFOutDev( PDFDoc* pDoc ) :
-     m_pDoc( pDoc ),
-     m_aFontMap(),
--    m_pUtf8Map( new UnicodeMap("UTF-8", gTrue, &mapUTF8) ),
-+    m_pUtf8Map( new UnicodeMap("UTF-8", true, &mapUTF8) ),
-     m_bSkipImages(false)
- {
- }
-@@ -943,11 +943,11 @@
- }
- 
- void PDFOutDev::drawImageMask(GfxState* pState, Object*, Stream* str,
--                              int width, int height, GBool invert,
-+                              int width, int height, bool invert,
- #if POPPLER_CHECK_VERSION(0, 12, 0)
--                              GBool /*interpolate*/,
-+                              bool /*interpolate*/,
- #endif
--                              GBool /*inlineImg*/ )
-+                              bool /*inlineImg*/ )
- {
-     if (m_bSkipImages)
-         return;
-@@ -976,9 +976,9 @@
- void PDFOutDev::drawImage(GfxState*, Object*, Stream* str,
-                           int width, int height, GfxImageColorMap* colorMap,
- #if POPPLER_CHECK_VERSION(0, 12, 0)
--                          GBool /*interpolate*/,
-+                          bool /*interpolate*/,
- #endif
--                          int* maskColors, GBool /*inlineImg*/ )
-+                          int* maskColors, bool /*inlineImg*/ )
- {
-     if (m_bSkipImages)
-         return;
-@@ -1027,13 +1027,13 @@
-                                 int width, int height,
-                                 GfxImageColorMap* colorMap,
- #if POPPLER_CHECK_VERSION(0, 12, 0)
--                                GBool /*interpolate*/,
-+                                bool /*interpolate*/,
- #endif
-                                 Stream* maskStr,
-                                 int maskWidth, int maskHeight,
--                                GBool maskInvert
-+                                bool maskInvert
- #if POPPLER_CHECK_VERSION(0, 12, 0)
--                                , GBool /*maskInterpolate*/
-+                                , bool /*maskInterpolate*/
- #endif
-                                )
- {
-@@ -1049,13 +1049,13 @@
-                                     int width, int height,
-                                     GfxImageColorMap* colorMap,
- #if POPPLER_CHECK_VERSION(0, 12, 0)
--                                    GBool /*interpolate*/,
-+                                    bool /*interpolate*/,
- #endif
-                                     Stream* maskStr,
-                                     int maskWidth, int maskHeight,
-                                     GfxImageColorMap* maskColorMap
- #if POPPLER_CHECK_VERSION(0, 12, 0)
--                                    , GBool /*maskInterpolate*/
-+                                    , bool /*maskInterpolate*/
- #endif
-                                    )
- {
-diff -ru sdext/source/pdfimport/xpdfwrapper.orig/pdfioutdev_gpl.hxx sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx
---- sdext/source/pdfimport/xpdfwrapper.orig/pdfioutdev_gpl.hxx	2018-11-01 20:43:55.802520387 +0000
-+++ sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.hxx	2018-11-01 20:44:33.402620221 +0000
-@@ -151,17 +151,17 @@
- 
-         // Does this device use upside-down coordinates?
-         // (Upside-down means (0,0) is the top left corner of the page.)
--        virtual GBool upsideDown() override { return gTrue; }
-+        virtual bool upsideDown() override { return true; }
- 
-         // Does this device use drawChar() or drawString()?
--        virtual GBool useDrawChar() override { return gTrue; }
-+        virtual bool useDrawChar() override { return true; }
- 
-         // Does this device use beginType3Char/endType3Char?  Otherwise,
-         // text in Type 3 fonts will be drawn with drawChar/drawString.
--        virtual GBool interpretType3Chars() override { return gFalse; }
-+        virtual bool interpretType3Chars() override { return false; }
- 
-         // Does this device need non-text content?
--        virtual GBool needNonText() override { return gTrue; }
-+        virtual bool needNonText() override { return true; }
- 
-         //----- initialization and control
- 
-@@ -237,40 +237,40 @@
- 
-         //----- image drawing
-         virtual void drawImageMask(GfxState *state, Object *ref, Stream *str,
--                                   int width, int height, GBool invert,
-+                                   int width, int height, bool invert,
- #if POPPLER_CHECK_VERSION(0, 12, 0)
--                                   GBool interpolate,
-+                                   bool interpolate,
- #endif
--                                   GBool inlineImg) override;
-+                                   bool inlineImg) override;
-         virtual void drawImage(GfxState *state, Object *ref, Stream *str,
-                                int width, int height, GfxImageColorMap *colorMap,
- #if POPPLER_CHECK_VERSION(0, 12, 0)
--                               GBool interpolate,
-+                               bool interpolate,
- #endif
--                               int *maskColors, GBool inlineImg) override;
-+                               int *maskColors, bool inlineImg) override;
-         virtual void drawMaskedImage(GfxState *state, Object *ref, Stream *str,
-                                      int width, int height,
-                                      GfxImageColorMap *colorMap,
- #if POPPLER_CHECK_VERSION(0, 12, 0)
--                                     GBool interpolate,
-+                                     bool interpolate,
- #endif
-                                      Stream *maskStr, int maskWidth, int maskHeight,
--                                     GBool maskInvert
-+                                     bool maskInvert
- #if POPPLER_CHECK_VERSION(0, 12, 0)
--                                     , GBool maskInterpolate
-+                                     , bool maskInterpolate
- #endif
-                                     ) override;
-         virtual void drawSoftMaskedImage(GfxState *state, Object *ref, Stream *str,
-                                          int width, int height,
-                                          GfxImageColorMap *colorMap,
- #if POPPLER_CHECK_VERSION(0, 12, 0)
--                                         GBool interpolate,
-+                                         bool interpolate,
- #endif
-                                          Stream *maskStr,
-                                          int maskWidth, int maskHeight,
-                                          GfxImageColorMap *maskColorMap
- #if POPPLER_CHECK_VERSION(0, 12, 0)
--                                         , GBool maskInterpolate
-+                                         , bool maskInterpolate
- #endif
-                                         ) override;
- 
-diff -ru sdext/source/pdfimport/xpdfwrapper.orig/wrapper_gpl.cxx sdext/source/pdfimport/xpdfwrapper/wrapper_gpl.cxx
---- sdext/source/pdfimport/xpdfwrapper.orig/wrapper_gpl.cxx	2018-11-01 20:43:55.802520387 +0000
-+++ sdext/source/pdfimport/xpdfwrapper/wrapper_gpl.cxx	2018-11-01 20:44:33.402620221 +0000
-@@ -69,7 +69,7 @@
+--- sdext/source/pdfimport/xpdfwrapper/wrapper_gpl.cxx.orig	2018-10-30 16:55:21 UTC
++++ sdext/source/pdfimport/xpdfwrapper/wrapper_gpl.cxx
+@@ -69,7 +69,7 @@ int main(int argc, char **argv)
  
      // read config file
      globalParams = new GlobalParams();
@@ -158,7 +9,7 @@ diff -ru sdext/source/pdfimport/xpdfwrapper.orig/wrapper_gpl.cxx sdext/source/pd
  #if defined(_MSC_VER)
      globalParams->setupBaseFonts(nullptr);
  #endif
-@@ -143,7 +143,7 @@
+@@ -143,7 +143,7 @@ int main(int argc, char **argv)
                  i,
                  PDFI_OUTDEV_RESOLUTION,
                  PDFI_OUTDEV_RESOLUTION,
@@ -167,4 +18,3 @@ diff -ru sdext/source/pdfimport/xpdfwrapper.orig/wrapper_gpl.cxx sdext/source/pd
          rDoc.processLinks(&aOutDev, i);
      }
  
-

@@ -1,13 +1,12 @@
 # $FreeBSD$
 
-PORTREVISION=	2
+PORTREVISION=	0
 PKGNAMESUFFIX=	-qt5
 
-MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Qt 5 bindings to poppler
 
 MASTERDIR=	${.CURDIR}/../../graphics/poppler
-SLAVEPORT=	qt5
+_SLAVE_PORT=	qt5
 PLIST=		${.CURDIR}/pkg-plist
 
 .include "${MASTERDIR}/Makefile"

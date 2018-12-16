@@ -129,7 +129,6 @@ lib/kde4/nepomukodfextractor.so
 lib/kde4/nepomukoffice2007extractor.so
 lib/kde4/nepomukofficeextractor.so
 lib/kde4/nepomukplaintextextractor.so
-lib/kde4/nepomukpopplerextractor.so
 lib/kde4/nepomuktaglibextractor.so
 lib/libkdeinit4_nepomukserver.so
 lib/libnepomukcleaner.so
@@ -173,7 +172,6 @@ share/kde4/services/nepomukoffice2007extractor.desktop
 share/kde4/services/nepomukofficeextractor.desktop
 share/kde4/services/nepomukontologyloader.desktop
 share/kde4/services/nepomukplaintextextractor.desktop
-share/kde4/services/nepomukpopplerextractor.desktop
 share/kde4/services/nepomukqueryservice.desktop
 share/kde4/services/nepomukremovablestorageservice.desktop
 share/kde4/services/nepomukstorage.desktop

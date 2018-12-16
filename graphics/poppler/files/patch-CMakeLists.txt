@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2018-10-07 08:06:59 UTC
++++ CMakeLists.txt
+@@ -263,6 +263,7 @@ endif()
+ 
+ if (NSS3_FOUND)
+   add_definitions(${NSS3_CFLAGS})
++  link_directories(${NSS3_LIBRARY_DIRS})
+   set(ENABLE_NSS3 ON)
+ endif()
+ if(JPEG_FOUND)

@@ -7,6 +7,7 @@ include/poppler/glib/poppler-enums.h
 include/poppler/glib/poppler-features.h
 include/poppler/glib/poppler-form-field.h
 include/poppler/glib/poppler-layer.h
+include/poppler/glib/poppler-macros.h
 include/poppler/glib/poppler-media.h
 include/poppler/glib/poppler-movie.h
 include/poppler/glib/poppler-page.h
@@ -15,6 +16,6 @@ include/poppler/glib/poppler.h
 lib/girepository-1.0/Poppler-0.18.typelib
 lib/libpoppler-glib.so
 lib/libpoppler-glib.so.8
-lib/libpoppler-glib.so.8.9.0
+lib/libpoppler-glib.so.8.11.0
 libdata/pkgconfig/poppler-glib.pc
 share/gir-1.0/Poppler-0.18.gir

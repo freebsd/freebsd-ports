@@ -3,7 +3,7 @@
 
 PORTNAME=	texmaker
 PORTVERSION=	4.5
-PORTREVISION=	10
+PORTREVISION=	11
 PORTEPOCH=	3
 CATEGORIES=	editors
 MASTER_SITES=	http://www.xm1math.net/texmaker/
@@ -33,7 +33,6 @@ OPTIONS_DEFAULT=	QT5
 TOOLKIT_DESC=	Qt toolkit
 QT4_USES=	qt:4
 QT4_USE=	${_USE_QT4:S/^/QT=/}
-QT4_LIB_DEPENDS=	libpoppler-qt4.so:graphics/poppler-qt4
 QT5_USES=	qt:5
 QT5_USE=	${_USE_QT5:S/^/QT=/}
 QT5_LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
