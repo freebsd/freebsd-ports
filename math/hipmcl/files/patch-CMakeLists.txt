@@ -1,0 +1,15 @@
+--- CMakeLists.txt.orig	2018-08-14 19:42:54 UTC
++++ CMakeLists.txt
+@@ -30,10 +30,10 @@ else (NOT C14)
+ endif (NOT C14)
+ 
+ 
+-ADD_SUBDIRECTORY( src/CombBLAS ) 
++#ADD_SUBDIRECTORY( src/CombBLAS ) 
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+ add_executable(hipmcl src/HipMCL.cpp)
+-target_link_libraries(hipmcl CombBLASlib )
++target_link_libraries(hipmcl CombBLAS )
+ 
+ 
+ 

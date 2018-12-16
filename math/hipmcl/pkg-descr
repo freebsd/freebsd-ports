@@ -1,0 +1,16 @@
+HipMCL is a high-performance parallel algorithm for large-scale network
+clustering. HipMCL parallelizes popular Markov Cluster (MCL) algorithm that has
+been shown to be one of the most successful and widely used algorithms for
+network clustering. It is based on random walks and was initially designed to
+detect families in protein-protein interaction networks. Despite MCL's
+efficiency and multi-threading support, scalability remains a bottleneck as it
+fails to process networks of several hundred million nodes and billion edges in
+an affordable running time. HipMCL overcomes all of these challenges by
+developing massively-parallel algorithms for all components of MCL. HipMCL can
+be 1000 times faster than the original MCL without any information loss. It can
+easily cluster a network of ~75 million nodes with ~68 billion edges in ~2.4
+hours using ~2000 nodes of Cori supercomputer at NERSC. HipMCL is developed in
+C++ language and uses standard OpenMP and MPI libraries for shared- and
+distributed-memory parallelization.
+
+WWW: https://bitbucket.org/azadcse/hipmcl/wiki/Home
