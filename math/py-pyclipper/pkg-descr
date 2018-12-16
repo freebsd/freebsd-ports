@@ -1,0 +1,4 @@
+Pyclipper is a Cython wrapper exposing public functions and classes of the C++
+translation of the Angus Johnson's Clipper library.
+
+WWW: https://github.com/greginvm/pyclipper
