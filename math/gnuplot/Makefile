@@ -100,4 +100,9 @@ post-install-DOCS-on:
 		gnuplot.ps ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs/psdoc && ${INSTALL_DATA} README ps_* ${STAGEDIR}${DOCSDIR}/psdoc
 
+.if defined(LITE)
+post-stage:
+	@cd ${STAGEDIR}${PREFIX} && ${RMDIR} libexec/gnuplot/5.2 libexec/gnuplot
+.endif
+
 .include <bsd.port.mk>
