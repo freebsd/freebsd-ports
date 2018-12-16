@@ -5,7 +5,6 @@ etc/ssl/openssl.cnf
 etc/ssl/x509v3.cnf
 include/openssl/aes.h
 include/openssl/asn1.h
-include/openssl/asn1_mac.h
 include/openssl/asn1t.h
 include/openssl/bio.h
 include/openssl/blowfish.h
@@ -58,6 +57,7 @@ include/openssl/ripemd.h
 include/openssl/rsa.h
 include/openssl/safestack.h
 include/openssl/sha.h
+include/openssl/sm3.h
 include/openssl/srtp.h
 include/openssl/ssl.h
 include/openssl/ssl2.h
@@ -76,16 +76,16 @@ include/openssl/x509v3.h
 include/tls.h
 lib/libcrypto.a
 lib/libcrypto.so
-lib/libcrypto.so.44
-lib/libcrypto.so.44.0.1
+lib/libcrypto.so.45
+lib/libcrypto.so.45.0.1
 lib/libssl.a
 lib/libssl.so
-lib/libssl.so.46
-lib/libssl.so.46.0.1
+lib/libssl.so.47
+lib/libssl.so.47.0.1
 lib/libtls.a
 lib/libtls.so
-lib/libtls.so.18
-lib/libtls.so.18.0.1
+lib/libtls.so.19
+lib/libtls.so.19.0.2
 libdata/pkgconfig/libcrypto.pc
 libdata/pkgconfig/libssl.pc
 libdata/pkgconfig/libtls.pc
@@ -2835,6 +2835,7 @@ man/man1/openssl.1.gz
 %%MAN3%%man/man3/tls_connect_fds.3.gz
 %%MAN3%%man/man3/tls_connect_servername.3.gz
 %%MAN3%%man/man3/tls_connect_socket.3.gz
+%%MAN3%%man/man3/tls_default_ca_cert_file.3.gz
 %%MAN3%%man/man3/tls_error.3.gz
 %%MAN3%%man/man3/tls_free.3.gz
 %%MAN3%%man/man3/tls_handshake.3.gz
