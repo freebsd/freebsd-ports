@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	erkale
-DISTVERSION=	g20181009
-PORTREVISION=	2
+DISTVERSION=	g20181121
+PORTREVISION=	3
 CATEGORIES=	science
-DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Quantum chemistry program to solve the electronic structure of atoms
@@ -21,20 +20,55 @@ LIB_DEPENDS=	libderiv.so:science/libint \
 		libsz.so:science/szip \
 		libxc.so:science/libxc
 
-USES=		cmake:outsource,noninja fortran localbase:ldflags pkgconfig
+FLAVORS=	serial parallel
+FLAVOR?=	${FLAVORS:[1]}
+serial_PKGNAMESUFFIX=	-serial
+
+USES=		cmake:outsource,noninja fortran pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	susilehtola
-GH_TAGNAME=	f1e1ebc
+GH_TAGNAME=	0927d8c
 USE_LDCONFIG=	yes
 
-TEST_TARGET=	test # some tests fail: https://github.com/susilehtola/erkale/issues/29
+TEST_TARGET=	test
 
-CMAKE_ARGS=	-DLAPACK_LIBRARIES=-lopenblas -DBLAS_LIBRARIES=-lopenblasp
 CMAKE_ON=	BUILD_SHARED_LIBS
 
-OPTIONS_DEFINE=		OPENMP
+PLIST_SUB=	SUFFIX="${SUFFIX}"
 
-OPENMP_CMAKE_BOOL=	USE_OPENMP
-OPENMP_BROKEN=		cmake can't fine OpenMP, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=223678
+.if ${FLAVOR} == serial
+CMAKE_OFF=	USE_OPENMP
+.else # parallel
+CMAKE_ON+=	USE_OPENMP
+LIB_DEPENDS+=	libomp.so:devel/openmp
+SUFFIX=		_omp
+.endif
+
+OPTIONS_SINGLE=		LINALG
+OPTIONS_SINGLE_LINALG=	NETLIB OPENBLAS
+OPTIONS_DEFAULT=	NETLIB
+LINALG_DESC=		Linear algebra library
+
+NETLIB_USES=		blaslapack:netlib
+NETLIB_CMAKE_ON=	-DLAPACK_LIBRARIES:STRING=-llapack -DBLAS_LIBRARIES:STRING=-lblas
+NETLIB_LDFLAGS=		${LOCALBASE}/lib/libcblas.so ${LOCALBASE}/lib/liblapack.so ${LOCALBASE}/lib/libblas.so
+NETLIB_LIB_DEPENDS=	libcblas.so:math/cblas
+
+OPENBLAS_USES=		blaslapack:openblas
+OPENBLAS_CMAKE_ON=	-DLAPACK_LIBRARIES:STRING=-lopenblas -DBLAS_LIBRARIES:STRING=-lopenblasp
+xOPENBLAS_BROKEN=	hits the number of threads limit: https://github.com/xianyi/OpenBLAS/issues/1882
+
+# use clang from ports because cmake can't find OpenMP with base clang, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=223678
+# have the same compiler for both serial and parallel flavors so that performance numbers can be compared
+BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+CPP=		clang-cpp${LLVM_DEFAULT}
+CC=		clang${LLVM_DEFAULT}
+CXX=		clang++${LLVM_DEFAULT}
+
+.if ${FLAVOR} == parallel
+post-install:
+	@${MV} ${STAGEDIR}${PREFIX}/include/erkale ${STAGEDIR}${PREFIX}/include/erkale${SUFFIX}
+	@${MV} ${STAGEDIR}${PREFIX}/bin/erkale_bastool ${STAGEDIR}${PREFIX}/bin/erkale_bastool${SUFFIX}
+.endif
 
 .include <bsd.port.mk>
