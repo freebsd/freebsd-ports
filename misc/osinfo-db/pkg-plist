@@ -85,6 +85,7 @@ share/osinfo/os/altlinux.org/altlinux-4.1.xml
 share/osinfo/os/altlinux.org/altlinux-5.0.xml
 share/osinfo/os/altlinux.org/altlinux-6.0.xml
 share/osinfo/os/altlinux.org/altlinux-7.0.xml
+share/osinfo/os/android-x86.org/android-x86-8.1.xml
 share/osinfo/os/apple.com/macosx-10.0.xml
 share/osinfo/os/apple.com/macosx-10.1.xml
 share/osinfo/os/apple.com/macosx-10.2.xml
@@ -194,6 +195,7 @@ share/osinfo/os/dragonflybsd.org/dragonflybsd-5.0.2.xml
 share/osinfo/os/dragonflybsd.org/dragonflybsd-5.2.0.xml
 share/osinfo/os/dragonflybsd.org/dragonflybsd-5.2.1.xml
 share/osinfo/os/dragonflybsd.org/dragonflybsd-5.2.2.xml
+share/osinfo/os/dragonflybsd.org/dragonflybsd-5.4.0.xml
 share/osinfo/os/endlessos.com/eos-3.3.xml
 share/osinfo/os/fedoraproject.org/fedora-1.xml
 share/osinfo/os/fedoraproject.org/fedora-10.xml
