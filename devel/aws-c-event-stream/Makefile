@@ -20,7 +20,7 @@ GH_ACCOUNT=	awslabs
 GH_TAGNAME=	46391e3
 
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=ON
-LDFLAGS+=	-lexecinfo
+LDFLAGS+=	-lexecinfo -lpthread
 
 USE_LDCONFIG=	yes
 
