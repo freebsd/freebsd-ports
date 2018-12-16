@@ -91,7 +91,6 @@
     SUBDIR += kadnode
     SUBDIR += kf5-kdnssd
     SUBDIR += knot-resolver
-    SUBDIR += knot1
     SUBDIR += knot2
     SUBDIR += knot2-lib
     SUBDIR += ldapdns
