@@ -1,0 +1,5 @@
+MutatorMath is a Python library for the calculation of piecewise linear
+interpolations in n-dimensions with any number of masters. It was developed for
+interpolating data related to fonts, but if can handle any arithmetic object.
+
+WWW: https://github.com/LettError/MutatorMath
