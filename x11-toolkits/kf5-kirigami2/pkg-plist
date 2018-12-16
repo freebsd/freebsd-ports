@@ -14,6 +14,7 @@ lib/libKF5Kirigami2.so
 lib/libKF5Kirigami2.so.5
 lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_Kirigami2.pri
+%%QT_QMLDIR%%/org/kde/kirigami.2/AboutPage.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/AbstractApplicationHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/AbstractApplicationItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/AbstractApplicationWindow.qml
@@ -37,6 +38,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/InlineMessage.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ItemViewHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/Label.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/LinkButton.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ListItemDragHandle.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/OverlayDrawer.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/OverlaySheet.qml
@@ -48,6 +50,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/Theme.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ToolBarApplicationHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/Units.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/UrlButton.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/libkirigamiplugin.so
 %%QT_QMLDIR%%/org/kde/kirigami.2/plugins.qmltypes
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/ActionButton.qml

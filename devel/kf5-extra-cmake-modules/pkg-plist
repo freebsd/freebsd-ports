@@ -13,6 +13,7 @@ share/ECM/find-modules/FindGperf.cmake
 share/ECM/find-modules/FindIcoTool.cmake
 share/ECM/find-modules/FindInotify.cmake
 share/ECM/find-modules/FindKF5.cmake
+share/ECM/find-modules/FindLibExiv2.cmake
 share/ECM/find-modules/FindLibGit2.cmake
 share/ECM/find-modules/FindOpenEXR.cmake
 share/ECM/find-modules/FindPng2Ico.cmake
@@ -85,6 +86,7 @@ share/ECM/toolchain/specifydependencies.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindGLIB2.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindIcoTool.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindKF5.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindLibExiv2.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindLibGit2.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindOpenEXR.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/find-module/FindPng2Ico.rst.txt
@@ -159,6 +161,7 @@ share/ECM/toolchain/specifydependencies.cmake
 %%PORTDOCS%%%%DOCSDIR%%/html/find-module/FindGLIB2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/find-module/FindIcoTool.html
 %%PORTDOCS%%%%DOCSDIR%%/html/find-module/FindKF5.html
+%%PORTDOCS%%%%DOCSDIR%%/html/find-module/FindLibExiv2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/find-module/FindLibGit2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/find-module/FindOpenEXR.html
 %%PORTDOCS%%%%DOCSDIR%%/html/find-module/FindPng2Ico.html

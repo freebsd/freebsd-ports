@@ -112,6 +112,9 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/ToolTip.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/private/ButtonShadow.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/private/DefaultListItemBackground.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/private/MobileCursor.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/private/MobileTextActionsToolBar.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/private/qmldir
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/private/RoundShadow.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/private/TextFieldFocus.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/Plasma/qmldir
@@ -192,6 +195,9 @@ lib/libKF5PlasmaQuick.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/plasma/components.3/ToolButton.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/private/ButtonShadow.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/private/DefaultListItemBackground.qml
+%%QT_QMLDIR%%/org/kde/plasma/components.3/private/MobileCursor.qml
+%%QT_QMLDIR%%/org/kde/plasma/components.3/private/MobileTextActionsToolBar.qml
+%%QT_QMLDIR%%/org/kde/plasma/components.3/private/qmldir
 %%QT_QMLDIR%%/org/kde/plasma/components.3/private/RoundShadow.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/private/TextFieldFocus.qml
 %%QT_QMLDIR%%/org/kde/plasma/components.3/qmldir

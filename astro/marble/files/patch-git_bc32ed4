@@ -1,0 +1,35 @@
+From bc32ed4ef08d858edadcfd9eb87d550dfc2704ac Mon Sep 17 00:00:00 2001
+From: Aleix Pol <aleixpol@kde.org>
+Date: Wed, 21 Nov 2018 03:47:59 +0100
+Subject: [PATCH] Include a comment to the desktop file
+
+Summary:
+Otherwise the appstream file won't have a summary and appstream complains.
+
+CCBUG: 400431
+
+Reviewers: #marble, kossebau, sanjibanb
+
+Reviewed By: sanjibanb
+
+Subscribers: marble-devel, kde-edu
+
+Tags: #marble, #kde_edu
+
+Differential Revision: https://phabricator.kde.org/D16866
+---
+ src/plasma/wallpapers/worldmap/metadata.desktop | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/plasma/wallpapers/worldmap/metadata.desktop b/src/plasma/wallpapers/worldmap/metadata.desktop
+index af0eef807..816232d5e 100644
+--- src/plasma/wallpapers/worldmap/metadata.desktop
++++ src/plasma/wallpapers/worldmap/metadata.desktop
+@@ -26,6 +26,7 @@ Name[uk]=Карта світу
+ Name[x-test]=xxWorld Mapxx
+ Name[zh_CN]=世界地图
+ Name[zh_TW]=世界地圖
++Comment=Our beautiful globe as your wallpaper
+ Type=Service
+ Icon=marble
+ 
