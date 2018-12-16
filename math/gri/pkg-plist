@@ -1,0 +1,15 @@
+bin/gri
+bin/gri_merge
+bin/gri_unpage
+info/gri.info
+info/gri.info-1
+info/gri.info-2
+info/gri.info-3
+man/man1/gri.1.gz
+man/man1/gri_merge.1.gz
+man/man1/gri_unpage.1.gz
+share/emacs/site-lisp/gri-mode.el
+%%DATADIR%%/gri.cmd
+%%DATADIR%%/logo.dat
+%%DATADIR%%/rgb.txt
+%%DATADIR%%/startup.msg
