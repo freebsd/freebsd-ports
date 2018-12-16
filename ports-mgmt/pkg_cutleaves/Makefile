@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkg_cutleaves
-PORTVERSION=	20180108
+PORTVERSION=	20181216
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -12,12 +12,14 @@ COMMENT=	Interactive script for deinstalling 'leaf' packages
 
 LICENSE=	BSD2CLAUSE
 
-NO_BUILD=	yes
 USES=		perl5 shebangfix
+
+NO_BUILD=	yes
 SHEBANG_FILES=	pkg_cutleaves
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	sbin/pkg_cutleaves man/man1/pkg_cutleaves.1.gz
+NO_ARCH=	yes
 
 do-extract:
 	${MKDIR} ${WRKSRC}
