@@ -1,0 +1,37 @@
+https://github.com/medek/nasm-rs/pull/21
+
+--- Cargo.toml.orig	2018-12-12 23:00:16 UTC
++++ Cargo.toml
+@@ -33,7 +33,7 @@ paste = "0.1"
+ cmake = { version = "0.1", optional = true }
+ 
+ [target.'cfg(target_arch = "x86_64")'.build-dependencies]
+-nasm-rs = { git = "https://github.com/tdaede/nasm-rs.git", optional = true }
++nasm-rs = { version = "0.1.2", optional = true }
+ 
+ [target.'cfg(unix)'.build-dependencies]
+ pkg-config = "0.3.12"
+--- cargo-crates/nasm-rs-0.1.3/src/lib.rs.orig	2018-02-24 13:50:36 UTC
++++ cargo-crates/nasm-rs-0.1.3/src/lib.rs
+@@ -10,19 +10,17 @@ use std::path::{Path, PathBuf};
+ 
+ fn x86_triple(os: &str) -> &'static str {
+     match os {
+-        "linux" => "-felf32",
+         "darwin" => "-fmacho32",
+         "windows" => "-fwin32",
+-        _ => ""
++        _ => "-felf32"
+     }
+ }
+ 
+ fn x86_64_triple(os: &str) -> &'static str {
+     match os {
+-        "linux" => "-felf64",
+         "darwin" => "-fmacho64",
+         "windows" => "-fwin64",
+-        _ => ""
++        _ => "-felf64"
+     }
+ }
+ 
