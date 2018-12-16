@@ -20,7 +20,6 @@ PORTAUDIO_DEPEND=	${LOCALBASE}/include/portaudio.h:audio/portaudio
 SDL_DEPEND=	# Handled with USE_SDL in Makefile
 SNDFILE_DEPEND=	${LOCALBASE}/include/sndfile.h:audio/libsndfile
 SPEEX_DEPEND=	${LOCALBASE}/include/speex/speex.h:audio/speex
-SRTP_DEPEND=	${LOCALBASE}/include/srtp/srtp.h:net/libsrtp
 STDIO_DEPEND=	# In base
 UUID_DEPEND=	${LOCALBASE}/include/uuid/uuid.h:misc/e2fsprogs-libuuid
 V4L_DEPEND=	${LOCALBASE}/include/linux/videodev.h:multimedia/v4l_compat
