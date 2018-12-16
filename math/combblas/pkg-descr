@@ -1,0 +1,12 @@
+The Combinatorial BLAS (CombBLAS) is an extensible distributed-memory parallel
+graph library offering a small but powerful set of linear algebra primitives
+specifically targeting graph analytics.
+
+* The Combinatorial BLAS development influences the Graph BLAS standardization
+  process.
+* CombBLAS achieves scalability via its two dimensional distribution and
+  coarse-grained parallelism.
+* CombBLAS powers HipMCL, a highly-scalable parallel implementation of the
+  Markov Cluster Algorithm (MCL).
+
+WWW: https://people.eecs.berkeley.edu/~aydin/CombBLAS/html/
