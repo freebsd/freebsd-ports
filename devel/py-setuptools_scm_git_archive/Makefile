@@ -17,6 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
