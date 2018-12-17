@@ -265,6 +265,7 @@
     SUBDIR += lc
     SUBDIR += lesspipe
     SUBDIR += libeatmydata
+    SUBDIR += libemos
     SUBDIR += libisocodes
     SUBDIR += libkdeedu-kde4
     SUBDIR += libkeduvocdocument
