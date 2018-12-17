@@ -39,11 +39,6 @@ ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
 
 BROKEN_aarch64=		fails to build: bootstrap compiler crashes
 
-# FIXME: The bootstrapped rustc adds -L/usr/local/lib in front of
-# the LDFLAGS. When stage0's rustc is linked, it picks the installed
-# librust*so and fails.
-#CONFLICTS_BUILD?=	rust-nightly
-#CONFLICTS_BUILD+=	${PKGBASE}
 CONFLICTS_INSTALL?=	rust-nightly
 
 # See WRKSRC/src/stage0.txt for this date and version values.
@@ -105,30 +100,6 @@ X_PY_CMD=	${PYTHON_CMD} ${WRKSRC}/x.py
 
 CRATES_PATCHED_BY_FBSD10_FIX?=	src/vendor/libssh2-sys \
 				src/vendor/lzma-sys
-
-pre-fetch:
-	# FIXME: This is the same check for CONFLICTS as the standard
-	# one, except port origins are not compared. This allows
-	# the port to conflict with itself, because Rust would pick
-	# installed Rust libraries instead of freshly built ones.
-	@conflicts_with=$$( \
-	{ ${PKG_QUERY} -g "%n-%v %p %o" ${CONFLICTS:C/.+/'&'/} ${CONFLICTS_BUILD:C/.+/'&'/} 2>/dev/null || : ; } \
-		| while read pkgname prfx orgn; do \
-		if [ "/${PREFIX}" = "/$${prfx}" ]; then \
-			${ECHO_CMD} -n " $${pkgname}"; \
-		fi; \
-	done); \
-	if [ -n "$${conflicts_with}" ]; then \
-		${ECHO_MSG}; \
-		${ECHO_MSG} "===>  ${PKGNAME} conflicts with installed package(s): "; \
-		for entry in $${conflicts_with}; do \
-			${ECHO_MSG} "      $${entry}"; \
-		done; \
-		${ECHO_MSG}; \
-		${ECHO_MSG} "      They will not build together."; \
-		${ECHO_MSG} "      Please remove them first with pkg delete."; \
-		exit 1;\
-	fi
 
 RUST_STD_DIR=		${RUST_STD_BOOTSTRAP:T:R:R}
 
