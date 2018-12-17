@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	grafana
-PORTVERSION=	5.4.1
+PORTVERSION=	5.4.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES+=	https://s3-us-west-2.amazonaws.com/grafana-releases/release/:public
