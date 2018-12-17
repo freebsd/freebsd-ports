@@ -23,7 +23,8 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack \
 		libmpqc.so:science/mpqc
 
-USES=		fortran gettext gmake pathfix pkgconfig libtool
+USES=		fortran gettext gl gmake libtool localbase pathfix pkgconfig 
+USE_CXXSTD=	c++98
 USE_GL=		gl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -31,15 +32,11 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LD_PRELOAD=${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so # workaround: otherwise configure fails
 
 CONFIGURE_ARGS+=	--enable-mpqc
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lSCbasis -lSCcints -lSCclass \
-		-lSCcontainer -lSCdft -lSCgroup -lSCintv3 -lSCisosurf \
-		-lSCkeyval -lSCmbpt -lSCmbptr12 -lSCmisc -lSCmolecule \
-		-lSCoint3 -lSCoptimize -lSCoptions -lSCpsi -lSCref \
-		-lSCrender -lSCscf -lSCscmat -lSCsolvent -lSCstate \
-		-lSCsymmetry -lSCwfn \
-		-lgfortran -lpthread -lblas -llapack
-CXXFLAGS+=	-Wno-c++11-narrowing # fix errors like error: non-constant-expression cannot be narrowed from type 'double' to 'fGL'
+LDFLAGS+=	-lSCbasis -lSCcints -lSCclass -lSCcontainer -lSCdft -lSCgroup \
+		-lSCintv3 -lSCisosurf -lSCkeyval -lSCmbpt -lSCmbptr12 -lSCmisc \
+		-lSCmolecule -lSCoint3 -lSCoptimize -lSCoptions -lSCpsi \
+		-lSCref -lSCrender -lSCscf -lSCscmat -lSCsolvent -lSCstate \
+		-lSCsymmetry -lSCwfn -lgfortran -lpthread -lblas -llapack
 PLIST_SUB=	LIBGHEMICAL_VERSION="${PORTVERSION}"
 INSTALL_TARGET=	install-strip
 
