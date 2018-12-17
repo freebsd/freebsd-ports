@@ -36,9 +36,4 @@ https://github.com/libinotify-kqueue/libinotify-kqueue/tree/master/patches
 You might want to consider increasing the kern.maxfiles tunable if you plan
 to use this library for applications that need to monitor activity of a lot
 of files.
-
-If the default on your system is too low, add the following line to
-/boot/loader.conf, then reboot the system:
-
-    kern.maxfiles="25000"
 =============================================================================
