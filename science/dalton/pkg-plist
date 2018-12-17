@@ -166,7 +166,6 @@ bin/dalton.x
 %%DATADIR%%/basis/cc-pV6Z
 %%DATADIR%%/basis/cc-pV6Z-RI
 %%DATADIR%%/basis/cc-pVDZ
-%%DATADIR%%/basis/cc-pVDZ+
 %%DATADIR%%/basis/cc-pVDZ-DK
 %%DATADIR%%/basis/cc-pVDZ-F12
 %%DATADIR%%/basis/cc-pVDZ-F12_OPTRI
@@ -268,6 +267,14 @@ bin/dalton.x
 %%DATADIR%%/basis/lanl2tz
 %%DATADIR%%/basis/lanl2tz_f
 %%DATADIR%%/basis/lanl2tz_p
+%%DATADIR%%/basis/loprop-6-31+G*
+%%DATADIR%%/basis/loprop-6-31G*
+%%DATADIR%%/basis/loprop-aug-cc-pVDZ
+%%DATADIR%%/basis/loprop-aug-cc-pVQZ
+%%DATADIR%%/basis/loprop-aug-cc-pVTZ
+%%DATADIR%%/basis/loprop-augx-cc-pVDZ
+%%DATADIR%%/basis/loprop-cc-pVDZ
+%%DATADIR%%/basis/loprop-cc-pVTZ
 %%DATADIR%%/basis/modified_lanl2dz
 %%DATADIR%%/basis/pV6Z
 %%DATADIR%%/basis/pV7Z

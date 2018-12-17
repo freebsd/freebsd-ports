@@ -1,8 +1,8 @@
---- dalton.in.orig	2018-09-02 07:27:27 UTC
+--- dalton.in.orig	2018-12-17 03:56:23 UTC
 +++ dalton.in
-@@ -22,19 +22,10 @@ else #DALTON only
- fi
- 
+@@ -18,18 +18,9 @@ mpi_enabled=@ENABLE_MPI@
+ dalton="dalton"
+ DALTON="DALTON"
  
 -# radovan: this is to figure out the location of this script
 -# http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
@@ -16,9 +16,17 @@
 -SCRIPT_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 +SCRIPT_DIR="%%SCRIPT_DIR%%"
  
- LSLIB_TEST=$SCRIPT_DIR/lslib_tester.x
 -DALTON_EXECUTABLE=$SCRIPT_DIR/$dalton.x
 +DALTON_EXECUTABLE=%%PREFIX%%/bin/$dalton.x
  
  which mpirun > /dev/null # check if mpirun exists, if not, then assume mpiexec
  if [ $? -eq 0 ]; then
+@@ -494,7 +485,7 @@ if [ $opt_cpexe -eq 1 ] ; then
+          fi
+       done
+    fi
+-   DALTON_EXECUTABLE=$SCRATCHDIR/dalton.x
++   DALTON_EXECUTABLE=%%PREFIX%%/bin/dalton.x
+ fi
+ 
+ if ! [ -s "$DALTON_EXECUTABLE" -a -x "$DALTON_EXECUTABLE" ]; then
