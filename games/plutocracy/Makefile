@@ -13,6 +13,10 @@ COMMENT=	Multiplayer 3D economy/trade-based RTS
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		segfaults on startup
+DEPRECATED=	broken, upstream gone
+EXPIRATION_DATE=2019-02-17
+
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		python:2.7 tar:bzip2
