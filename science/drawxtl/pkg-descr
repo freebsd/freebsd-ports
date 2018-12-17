@@ -1,0 +1,10 @@
+DRAWxtl is a program to display crystal structures on ordinary computer hardware
+and operating systems. Four forms of graphics are produced:
+(1) an openGL window for immediate viewing,
+(2) the Persistence of Vision Ray Tracer (POV-RAY) scene language for
+    publication-quality drawings, (3) the Virtual Reality Modeling Language
+    (VRML) for dissemination across the Internet, and
+(4) a Postscript rendering of the OpenGL window for those that want high-quality
+    output but do not have POV-RAY installed.
+
+WWW: http://www.lwfinger.net/drawxtl/
