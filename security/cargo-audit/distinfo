@@ -1,4 +1,4 @@
-TIMESTAMP = 1544939173
+TIMESTAMP = 1545024528
 SHA256 (rust/crates/atty-0.2.11.tar.gz) = 9a7d5b8723950951411ee34d271d99dddcc2035a16ab25310ea2c8cfd4369652
 SIZE (rust/crates/atty-0.2.11.tar.gz) = 5916
 SHA256 (rust/crates/autocfg-0.1.1.tar.gz) = 4e5f34df7a019573fb8bdc7e24a2bfebe51a2a1d6bfdbaeccedb3c41fc574727
@@ -117,5 +117,5 @@ SHA256 (rust/crates/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = ac3b87c63620426dd
 SIZE (rust/crates/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
-SHA256 (RustSec-cargo-audit-v0.6.0_GH0.tar.gz) = f97db03138630778ab9e7a799766b65d9145e12b45301dd9bd6d7c4c1aa882b8
-SIZE (RustSec-cargo-audit-v0.6.0_GH0.tar.gz) = 83523
+SHA256 (RustSec-cargo-audit-v0.6.1_GH0.tar.gz) = 29be878cccb9066a7567d23c1579544d309ebc30070c543b98be5dc191ff08d3
+SIZE (RustSec-cargo-audit-v0.6.1_GH0.tar.gz) = 83586
