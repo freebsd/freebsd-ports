@@ -1,3 +1,3 @@
-TIMESTAMP = 1541460125
-SHA256 (cloudfoundry-cli-v6.40.1_GH0.tar.gz) = 0b0f2e1247c31fa6f0628cb30ae54a0951d83f45fc72c335264be11653fdff9f
-SIZE (cloudfoundry-cli-v6.40.1_GH0.tar.gz) = 9062028
+TIMESTAMP = 1545039801
+SHA256 (cloudfoundry-cli-v6.41.0_GH0.tar.gz) = cc3732d4618248be397bd5cad6cce9e2300ddbcc97e0597a9dcbfacb2e1cc341
+SIZE (cloudfoundry-cli-v6.41.0_GH0.tar.gz) = 9149038
