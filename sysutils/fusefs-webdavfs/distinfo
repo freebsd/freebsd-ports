@@ -1,7 +1,7 @@
-TIMESTAMP = 1528138200
-SHA256 (miquels-webdavfs-g20180413-c503b3c_GH0.tar.gz) = 585eb08f0ca0ba74921bf09f989df64a4edbba4f4b7bd2ea1532f68e44a509c3
-SIZE (miquels-webdavfs-g20180413-c503b3c_GH0.tar.gz) = 19344
-SHA256 (pborman-getopt-7148bc3_GH0.tar.gz) = 5828aab17ad7c149535cb87b5db6ca2b0bb1a9209e051bef00a3ac73809a4528
-SIZE (pborman-getopt-7148bc3_GH0.tar.gz) = 37914
+TIMESTAMP = 1545061102
+SHA256 (miquels-webdavfs-g20181010-c03fa01_GH0.tar.gz) = 3631c83203b5b75a4584702f47dde941c6fe6726d98a2e5d831a9d15284b2278
+SIZE (miquels-webdavfs-g20181010-c03fa01_GH0.tar.gz) = 20207
+SHA256 (pborman-getopt-2b5b3bf_GH0.tar.gz) = 057df545a42dd3b439ed73f3b93b9858888c729d4a623f82774c40e8f967b79c
+SIZE (pborman-getopt-2b5b3bf_GH0.tar.gz) = 38203
 SHA256 (bazil-fuse-65cc252_GH0.tar.gz) = bfff5537e4b9edd9cc757f9022fb3cb41574342bc82d7df3d1400b9d8764eae9
 SIZE (bazil-fuse-65cc252_GH0.tar.gz) = 187854
