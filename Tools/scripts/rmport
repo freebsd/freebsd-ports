@@ -3,7 +3,7 @@
 # rmport - remove port(s) from the FreeBSD Ports Collection.
 #
 # Copyright 2006-2007 Vasil Dimov
-# Copyright 2012-2012 Chris Rees
+# Copyright 2012-2018 Chris Rees
 # Copyright 2016-2018 Rene Ladan
 # All rights reserved.
 #
@@ -121,7 +121,7 @@ find_expired()
 	EXPVAR=EXPIRATION_DATE
 
 	find -H ${PORTSDIR} -mindepth 3 -maxdepth 3 -name "Makefile*" \
-		|xargs grep -H "^[0-9a-zA-Z_]*${EXPVAR}"  \
+		|xargs grep -H "^${EXPVAR}"  \
 		|grep -v '^#'  \
 		|sed -E "s|${PORTSDIR}/?([^/]+/[^/]+)/Makefile[^:]*:${EXPVAR}=[[:space:]]*([0-9-]{10})$|\2 \1|g" \
 		|perl -ne "if ((substr(\$_, 0, 10) cmp '${TODAY}') <= 0) { print(\$_); }" \
