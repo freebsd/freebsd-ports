@@ -17,7 +17,7 @@ BUILD_DEPENDS_armv6=	${LOCALBASE}/bin/as:devel/binutils
 BUILD_DEPENDS_armv7=	${LOCALBASE}/bin/as:devel/binutils
 BUILD_DEPENDS_i386=	nasm:devel/nasm
 
-USES=		meson
+USES=		compiler:c11 meson
 USE_GITLAB=	yes
 USE_LDCONFIG=	yes
 GL_SITE=	https://code.videolan.org
