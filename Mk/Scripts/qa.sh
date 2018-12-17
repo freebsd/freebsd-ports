@@ -279,31 +279,16 @@ libperl() {
 			# No results presents a blank line from heredoc.
 			[ -z "${f}" ] && continue
 			files=$((files+1))
-			found=$(readelf -d ${f} | awk "BEGIN {libperl=1; rpath=10; runpath=100}
+			found=$(readelf -d ${f} | awk "BEGIN {libperl=1}
 				/NEEDED.*${LIBPERL}/  { libperl = 0 }
-				/RPATH.*perl.*CORE/   { rpath   = 0 }
-				/RUNPATH.*perl.*CORE/ { runpath = 0 }
-				END {print libperl+rpath+runpath}
+				END {print libperl}
 				")
 			case "${found}" in
-				*1)
+				1)
 					warn "${f} is not linked with ${LIBPERL}, not respecting lddlflags?"
 					;;
-				*0)
+				0)
 					has_some_libperl_so=1
-					# Older Perl did not USE_LDCONFIG.
-					if [ ! -f ${LOCALBASE}/${LDCONFIG_DIR}/perl5 ]; then
-						case "${found}" in
-							*1?)
-								warn "${f} does not have a rpath to ${LIBPERL}, not respecting lddlflags?"
-								;;
-						esac
-						case "${found}" in
-							1??)
-								warn "${f} does not have a runpath to ${LIBPERL}, not respecting lddlflags?"
-								;;
-						esac
-					fi
 					;;
 			esac
 		# Use heredoc to avoid losing rc from find|while subshell
@@ -312,7 +297,7 @@ libperl() {
 		EOT
 
 		if [ ${files} -gt 0 -a ${has_some_libperl_so} -eq 0 ]; then
-			err "None of the .so in ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL} are linked with ${LIBPERL}, see above for the full list."
+			err "None of the ${files} .so in ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL} are linked with ${LIBPERL}, see above for the full list."
 			return 1
 		else
 			return 0
