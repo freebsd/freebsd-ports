@@ -54,9 +54,6 @@ OPTIONS_SUB=		yes
 .else
 PORTSCOUT=		ignore:1
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 LIB_DEPENDS+=		libpoppler.so:graphics/poppler
 PKGNAMESUFFIX=		-${_SLAVE_PORT}
 
