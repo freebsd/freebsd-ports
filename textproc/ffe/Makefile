@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	ffe
-DISTVERSION=	0.3.8
-PORTREVISION=	1
+DISTVERSION=	0.3.9
 CATEGORIES=	textproc
 MASTER_SITES=	SF/ff-extractor/ff-extractor/${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Flat file extractor
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		makeinfo localbase
+
 GNU_CONFIGURE=	yes
 
 INFO=		ffe
