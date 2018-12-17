@@ -84,7 +84,7 @@ DEBUG_CONFIGURE_OFF=	--disable-debug-symbols
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64 || ${ARCH} == powerpc || ${ARCH} == sparc64
+.if ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
 CONFIGURE_ARGS+=	--disable-jit
 CFLAGS+=		-DENABLE_YARR_JIT=0
 .endif
