@@ -65,6 +65,7 @@
     SUBDIR += dkh
     SUBDIR += dlib-cpp
     SUBDIR += dlpoly-classic
+    SUBDIR += drawxtl
     SUBDIR += eccodes
     SUBDIR += elk
     SUBDIR += epte

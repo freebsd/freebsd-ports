@@ -1,0 +1,34 @@
+--- Makefile.orig	2011-03-08 18:55:26 UTC
++++ Makefile
+@@ -38,7 +38,7 @@ ifeq ($(OS),Linux)
+ 
+   BUILD_CPU=$(shell uname -m)
+   ifneq (,$(findstring 64,$(BUILD_CPU)))
+-      libdir	  = /usr/lib64/
++      libdir	  = ${prefix}/lib/
+   endif
+ 
+ # compiler name:
+@@ -52,11 +52,11 @@ ifeq ($(OS),Linux)
+   CXXFLAGS        = $(OPTIM)  -I/usr/X11R6/include $(GLUT)
+ 
+ # libraries to link with:
+-  GLDLIBS  =  -L/usr/X11R6/lib  -lGLU -lGL -lXinerama -lXft -lpthread -lm  -lXext -lX11  -lXpm \
++  GLDLIBS  =  -L$(prefix)/lib  -lGLU -lGL -lXinerama -lXft -lpthread -lm  -lXext -lX11  -lXpm \
+ 		-lfltk \
+ # -lglut # only needed with old versions of fltk before 1.1.8
+ #       -lXi -lgdkglext-x11-1.0a  # Fedora Core 2 needs these libraries
+-  LINKFLTKGL  = $(libdir)libfltk.a $(libdir)libfltk_gl.a
++  LINKFLTKGL  = $(libdir)libfltk.so $(libdir)libfltk_gl.so
+ 
+ # The extension to use for executables...
+   EXEEXT          =
+@@ -216,7 +216,7 @@ clean:
+ .deps:  $(CPPFILES)
+ 	echo "Building dependencies..."
+ 	echo >.deps
+-	for i in $(CPPFILES); do gcc -MM $(PREINC) $$i >>.deps; done
++	for i in $(CPPFILES); do gcc $(CFLAGS) -MM $(PREINC) $$i >>.deps; done
+ 
+ -include .deps
+ 
