@@ -1,6 +1,6 @@
---- cmake/ConfigArchitecture.cmake.orig	2018-09-02 01:24:27 UTC
+--- cmake/ConfigArchitecture.cmake.orig	2018-11-19 22:33:46 UTC
 +++ cmake/ConfigArchitecture.cmake
-@@ -6,6 +6,14 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux"
+@@ -14,6 +14,14 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "FreeBS
      endif()
  endif()
  
