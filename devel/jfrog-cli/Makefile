@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jfrog-cli
-PORTVERSION=	1.22.1
+PORTVERSION=	1.23.0
 CATEGORIES=	devel
 
 MAINTAINER=	swills@FreeBSD.org
@@ -10,8 +10,9 @@ COMMENT=	CLI client for Artifactory
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 
 USE_GITHUB=	yes
-GH_TUPLE=	jfrog:jfrog-cli-go:3f06184:DEFAULT/src/github.com/jfrog/jfrog-cli-go \
-		jfrog:jfrog-client-go:v0.1.3:client/src/github.com/jfrog/jfrog-client-go \
+
+GH_TUPLE=	jfrog:jfrog-cli-go:${PORTVERSION}:DEFAULT/src/github.com/jfrog/jfrog-cli-go \
+		jfrog:jfrog-client-go:v0.2.0:client/src/github.com/jfrog/jfrog-client-go \
 		codegangsta:cli:v1.20.0:cli/src/github.com/codegangsta/cli \
 		buger:jsonparser:6acdf747ae99:jsonparser/src/github.com/buger/jsonparser \
 		chzyer:readline:2972be24d48e:readline/src/github.com/chzyer/readline \
@@ -34,7 +35,7 @@ GH_TUPLE=	jfrog:jfrog-cli-go:3f06184:DEFAULT/src/github.com/jfrog/jfrog-cli-go \
 		spf13:pflag:v1.0.2:pflag/src/github.com/spf13/pflag \
 		ulikunitz:xz:v0.5.4:xz/src/github.com/ulikunitz/xz \
 		xanzy:ssh-agent:v0.2.0:sshagent/src/github.com/xanzy/ssh-agent \
-		golang:crypto:e363607:crypto/src/golang.org/x/crypto \
+		golang:crypto:505ab14:crypto/src/golang.org/x/crypto \
 		golang:sys:8cf3aee42992:sys/src/golang.org/x/sys \
 		golang:text:v0.3.0:text/src/golang.org/x/text \
 		src-d:go-git:v4.7.0:gogit/src/gopkg.in/src-d/go-git.v4 \
@@ -47,7 +48,7 @@ GH_TUPLE=	jfrog:jfrog-cli-go:3f06184:DEFAULT/src/github.com/jfrog/jfrog-cli-go \
 		src-d:gcfg:v1.3.0:gcfg/src/github.com/src-d/gcfg \
 		golang:net:4dfa2610cdf3:net/src/golang.org/x/net \
 		src-d:go-billy:v4.3.0:gobilly/src/gopkg.in/src-d/go-billy.v4 \
-		go-yaml:yaml:v2.2.1:yaml/src/gopkg.in/yaml.v2 \
+		go-yaml:yaml:v2.2.2:yaml/src/gopkg.in/yaml.v2 \
 		go-warnings:warnings:v0.1.2:warnings/src/gopkg.in/warnings.v0
 
 PLIST_FILES=	bin/jfrog
