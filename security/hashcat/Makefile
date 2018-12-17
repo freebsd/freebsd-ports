@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hashcat
-PORTVERSION=	5.0.0
+PORTVERSION=	5.1.0
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	security
@@ -40,7 +40,7 @@ BRAIN_MAKE_ARGS_OFF=ENABLE_BRAIN=0
 MAKE_ARGS+=	SHARED=1 \
 		CC="${CC}" \
 		LFLAGS_NATIVE="${LDFLAGS} -lpthread -lm" \
-		CFLAGS_NATIVE="${CFLAGS} -Iinclude -IOpenCL -Ideps/lzma_sdk -Ideps/git/OpenCL-Headers"
+		CFLAGS_NATIVE="${CFLAGS} -Iinclude -IOpenCL -Ideps/LZMA-SDK/C -Ideps/git/OpenCL-Headers"
 
 pre-install:
 	${STRIP_CMD} ${WRKSRC}/libhashcat.so.${PORTVERSION}
