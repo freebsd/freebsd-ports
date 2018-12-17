@@ -1275,6 +1275,7 @@
     SUBDIR += syslog-ng315
     SUBDIR += syslog-ng317
     SUBDIR += syslog-ng318
+    SUBDIR += syslog-ng319
     SUBDIR += syslog-ng36
     SUBDIR += syslog-ng37
     SUBDIR += syslog-ng39

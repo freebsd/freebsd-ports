@@ -1,0 +1,29 @@
+--- configure.orig	2016-08-10 07:38:05.000000000 -0700
++++ configure	2016-08-10 12:33:00.605666000 -0700
+@@ -10250,7 +10250,7 @@
+   hardcode_minus_L=no
+   hardcode_shlibpath_var=unsupported
+   inherit_rpath=no
+-  link_all_deplibs=unknown
++  link_all_deplibs=no
+   module_cmds=
+   module_expsym_cmds=
+   old_archive_from_new_cmds=
+@@ -13035,7 +13036,7 @@
+ old_striplib=
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether stripping libraries is possible" >&5
+ $as_echo_n "checking whether stripping libraries is possible... " >&6; }
+-if test -n "$STRIP" && $STRIP -V 2>&1 | $GREP "GNU strip" >/dev/null; then
++if test -n "$STRIP" && $STRIP -V 2>&1 | $GREP "strip" >/dev/null; then
+   test -z "$old_striplib" && old_striplib="$STRIP --strip-debug"
+   test -z "$striplib" && striplib="$STRIP --strip-unneeded"
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+@@ -16424,7 +16425,7 @@
+       if test -e "$JAVA_HOME_CHECKER"; then
+         JNI_HOME=`$JAVA_HOME_CHECKER`
+       else
+-        JNI_HOME=`echo $JAVAC_BIN | sed "s/\(.*\)[/]bin[/]java.*/\1\//"`
++        JNI_HOME=`echo $JAVAC_BIN | sed "s/\(.*\)[/]bin[/]java.*/\1\/openjdk\*/"`
+       fi
+ 
+       JNI_LIBDIR=`find $JNI_HOME \( -name "libjvm.so" -or -name "libjvm.dylib" \) \
