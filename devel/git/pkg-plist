@@ -681,6 +681,7 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.19.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.19.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.20.0.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.20.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
