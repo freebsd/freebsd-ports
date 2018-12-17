@@ -115,18 +115,16 @@ INFO+=		vice
 USE_SDL=	sdl2
 .endif
 
-post-patch:
-.for i in da.po de.po fr.po
-	${MV} "${WRKSRC}/po/${i}" "${WRKSRC}/po/${i}.latin"
-	${ICONV_CMD} -f latin1 -t utf-8 < "${WRKSRC}/po/${i}.latin" > "${WRKSRC}/po/${i}"
-	${REINPLACE_CMD} -e 's|ISO-8859-1|UTF-8|' ${WRKSRC}/Makefile.in
-.endfor
-
 pre-configure:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/man/vice.1
 	${REINPLACE_CMD} -e 's|^localedir.*|localedir = $$(DESTDIR)${LOCALBASE}/share/locale|' \
 		${WRKSRC}/po/Makefile.in.in
+.for i in da.po de.po fr.po
+	${MV} "${WRKSRC}/po/${i}" "${WRKSRC}/po/${i}.latin"
+	${ICONV_CMD} -f latin1 -t utf-8 < "${WRKSRC}/po/${i}.latin" > "${WRKSRC}/po/${i}"
+	${REINPLACE_CMD} -e 's|ISO-8859-1|UTF-8|' ${WRKSRC}/Makefile.in
+.endfor
 .if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's| doc||' ${WRKSRC}/Makefile.in
 .endif
