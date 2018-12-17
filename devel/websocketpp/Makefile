@@ -14,6 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	zaphoyd
+
 NO_ARCH=	yes
+
+post-stage: # https://github.com/zaphoyd/websocketpp/issues/781
+	@${RMDIR} ${STAGEDIR}${PREFIX}/include/websocketpp/CMakeFiles
 
 .include <bsd.port.mk>
