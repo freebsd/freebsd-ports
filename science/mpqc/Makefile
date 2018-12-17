@@ -3,7 +3,7 @@
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
-PORTREVISION=	40
+PORTREVISION=	41
 CATEGORIES=	science parallel
 MASTER_SITES=	SF
 
@@ -15,8 +15,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=		fails to compile: lapack.h:2:10: 'chemistry/qc/mbptr12/f77sym.h' file not found
 
+BUILD_DEPENDS=	dot:graphics/graphviz
 LIB_DEPENDS=	libint.so:science/libint
-RUN_DEPENDS=	wish:x11-toolkits/tk-wrapper
+RUN_DEPENDS=	wish:x11-toolkits/tk-wrapper \
+		dot:graphics/graphviz
 
 CONFLICTS_BUILD=	ga # devel/ga: it links to libarmci.so, has HAVE_ARMCI defined, and hits some bug
 
@@ -49,7 +51,7 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			dot:graphics/graphviz
 ICC_BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:lang/icc
 MPI_CONFIGURE_ENABLE=	parallel
-MPI_LIB_DEPENDS=	libmpich.so:net/mpich2
+MPI_LIB_DEPENDS=	libmpich.so:net/mpich
 MPI_LDFLAGS=		-lmpich # build fails to supply libmpich.so to link
 OPTIFLAGS_CFLAGS=	-ffast-math
 OPTIFLAGS_CXXFLAGS=	-ffast-math
@@ -70,6 +72,10 @@ post-patch:
 		-e 's/pthread_join(0,0)/pthread_create(0,0,0,0)/' \
 		-e 's|/usr/bin/wish|${LOCALBASE}/bin/wish|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} \
+		's|#include <chemistry/qc/mbptr12/f77sym.h>|#include <${WRKSRC}/src/lib/chemistry/qc/mbptr12/f77sym.h>|' \
+		${WRKSRC}/src/lib/chemistry/qc/mbptr12/blas.h \
+		${WRKSRC}/src/lib/chemistry/qc/mbptr12/lapack.h
 
 post-configure: # workaround: https://github.com/ValeevGroup/mpqc/issues/56
 	@${REINPLACE_CMD} -e ' \
