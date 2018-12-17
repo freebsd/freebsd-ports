@@ -1,0 +1,16 @@
+The Interpolation library (EMOSLIB) includes Interpolation software and
+BUFR &CREX encoding/decoding routines. It is used by the ECMWF meteorological
+archival and retrieval system (MARS) and also by the ECMWF workstation Metview.
+
+This software covers :
+* Interpolating fields
+  * spectral coefficients to spectral coefficients
+  * spectral coefficients to rotated spectral coefficients
+  * spectral coefficients to regular latitude-longitude grids
+  * spectral coefficients to regular gaussian grids
+* encoding/decoding of WMO FM-94 BUFR BUFR code messages
+* encoding/decoding of WMO FM-95 CREX CREX code messages
+* handling pure binary unix files
+* multiple (Temperton's) FFT routine
+
+WWW: https://confluence.ecmwf.int/display/EMOS/Emoslib
