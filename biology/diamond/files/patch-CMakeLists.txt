@@ -1,8 +1,8 @@
---- CMakeLists.txt.orig	2017-11-03 03:31:11 UTC
+--- CMakeLists.txt.orig	2018-12-07 02:22:51 UTC
 +++ CMakeLists.txt
-@@ -9,16 +9,6 @@ if(BUILD_STATIC)
-     set(CMAKE_EXE_LINKER_FLAGS "-static")
- endif()
+@@ -12,16 +12,6 @@ endif()
+ 
+ set(CMAKE_CXX_STANDARD 11)
  
 -if(CMAKE_BUILD_MARCH)
 -  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=${CMAKE_BUILD_MARCH}")
