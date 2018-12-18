@@ -3,7 +3,7 @@
 
 PORTNAME=	boinc-setiathome
 PORTVERSION=	8.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	LOCAL/ler/setiathome \
 		http://www.lerctr.org/setiathome/
@@ -18,13 +18,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_aarch64=		fails to link: vector/analyzeFuncs_vector.cpp:(.data+0x38): undefined symbol 'vfp_GetPowerSpectrum(float (*) [2], float*, int)'
 BROKEN_armv6=		fails to compile: vector/analyzeFuncs_neon.S:178:17: invalid instruction, did you mean: neg?
 BROKEN_armv7=		fails to compile: vector/analyzeFuncs_neon.S:178:17: invalid instruction, did you mean: neg?
-BROKEN_powerpc64=	fails to compile: analyzeFuncs_altivec.cpp: CoreServices/CoreServices.h: No such file or directory
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 RUN_DEPENDS=	boinc_client:net/boinc-client
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
 
-USES=		autoreconf compiler gmake libtool pkgconfig tar:xz
+USES=		autoreconf compiler:c++11-lang gmake gnome libtool pkgconfig \
+		tar:xz
 
 GNU_CONFIGURE=	yes
 
@@ -47,7 +47,7 @@ X11_DESC=	Build screensaver (requires net/boinc-client with X11)
 OPTIONS_SUB=	yes
 
 X11_BUILD_DEPENDS=	${LOCALBASE}/lib/libboinc_graphics2.a:net/boinc-client
-X11_USES=		jpeg
+X11_USES=		gl jpeg
 X11_USE=		GL=gl,glu,glut \
 			XORG=ice,sm,x11,xau,xcb,xext,xi,xdamage,xdmcp,xfixes,xmu,xt,xxf86vm
 X11_CONFIGURE_ENABLE=	graphics
