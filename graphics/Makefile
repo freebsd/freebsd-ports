@@ -953,7 +953,6 @@
     SUBDIR += py-sane
     SUBDIR += py-scikit-image
     SUBDIR += py-seqdiag
-    SUBDIR += py-sk1
     SUBDIR += py-sorl-thumbnail
     SUBDIR += py-soya3d
     SUBDIR += py-stltools
@@ -1071,6 +1070,7 @@
     SUBDIR += silgraphite
     SUBDIR += simage
     SUBDIR += simpleviewer
+    SUBDIR += sk1
     SUBDIR += sk1libs
     SUBDIR += skanlite
     SUBDIR += skanlite-kde4
