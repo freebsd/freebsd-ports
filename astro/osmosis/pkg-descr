@@ -6,4 +6,4 @@ deriving and applying change sets to data sources, components for sorting data,
 etc. It has been written so that it is easy to add new features without
 re-writing common tasks such as file or database handling.
 
-WWW: http://wiki.openstreetmap.org/wiki/Osmosis
+WWW: https://wiki.openstreetmap.org/wiki/Osmosis
