@@ -11,6 +11,8 @@ COMMENT=	ELMER FEM package
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libparpack.so:math/arpack-ng \
 		libmpich.so:net/mpich
 
