@@ -1,0 +1,13 @@
+GPyOpt is a Python open-source library for Bayesian Optimization developed by
+the Machine Learning group of the University of Sheffield. It is based on GPy,
+a Python framework for Gaussian process modelling.
+
+With GPyOpt you can:
+* Automatically configure your models and Machine Learning algorithms.
+* Design your wet-lab experiments saving time and money.
+
+Among other functionalities, with GPyOpt you can design experiments in parallel,
+use cost models and mix different types of variables in your designs. Many users
+already use GpyOpt for research purposes.
+
+WWW: https://sheffieldml.github.io/GPyOpt/
