@@ -2,38 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	apachetop
-PORTVERSION=	0.12.6
-PORTREVISION=	5
+PORTVERSION=	0.18.4
 CATEGORIES=	sysutils
-MASTER_SITES=	https://www.freebsd.systems/files/
 
 MAINTAINER=	lukasz@wasikowski.net
 COMMENT=	Apache realtime log stats
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-GNU_CONFIGURE=	yes
-USES=		ncurses readline
+USES=		autoreconf ncurses readline
+USE_GITHUB=	yes
+GH_ACCOUNT=	tessus
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
 OPTIONS_DEFINE=	ADNS FAM PCRE
-ADNS_DESC=	Asynchronous-capable DNS support
 
+ADNS_DESC=	Asynchronous-capable DNS support
 ADNS_LIB_DEPENDS=	libadns.so:dns/adns
-ADNS_CONFIGURE_ON=	--with-adns=${LOCALBASE}
+ADNS_CONFIGURE_WITH=	adns=${LOCALBASE}
 
 FAM_LIB_DEPENDS=	libfam.so:devel/fam
-FAM_CONFIGURE_ON=	--with-fam=${LOCALBASE}
+FAM_CONFIGURE_WITH=	fam=${LOCALBASE}
 
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
-PCRE_COFNIGURE_ON=	--with-pcre=${LOCALBASE}
-
-post-patch:
-	@${REINPLACE_CMD} -E -e 's,struct (circle_struct),\1,g' \
-		${WRKSRC}/src/hits_circle.*
-	@${REINPLACE_CMD} -E -e 's,enum (adns_queryflags),\1,g' \
-		${WRKSRC}/src/log.*
-	@cd ${WRKSRC} && ${TOUCH} -r configure.ac aclocal.m4 stamp-h.in
+PCRE_CONFIGURE_WITH=	pcre=${LOCALBASE}
 
 .include <bsd.port.mk>
