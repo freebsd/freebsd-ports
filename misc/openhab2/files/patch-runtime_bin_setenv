@@ -1,21 +1,12 @@
---- runtime/bin/setenv.orig	2018-05-28 07:56:37 UTC
+--- runtime/bin/setenv.orig	2018-12-17 01:24:37 UTC
 +++ runtime/bin/setenv
-@@ -121,7 +121,7 @@ export EXTRA_JAVA_OPTS="${EXTRA_JAVA_OPTS_COMMON} ${EX
- 
- die() {
-   # echo and exit, && /bin/true delays the exit for systemd logging (workaround).
--  echo "$*" && /bin/true
-+  echo "$*" && true
-   exit 1
- }
- 
-@@ -137,6 +137,9 @@ locateJava() {
-     fi
+@@ -139,6 +139,9 @@ locateJava() {
      if [ "x${JAVA}" = "x" ] && [ -r /etc/gentoo-release ] ; then
          JAVA_HOME=$(java-config --jre-home)
-+    fi
+     fi
 +    if [ "x$JAVA_HOME" = "x" ]; then
 +        eval $(env JAVAVM_DRYRUN=true %%LOCALBASE%%/bin/java | grep JAVA_HOME)
-     fi
++    fi
      if [ "x${JAVA}" = "x" ]; then
          if [ "x${JAVA_HOME}" != "x" ]; then
+             if [ ! -d "${JAVA_HOME}" ]; then
