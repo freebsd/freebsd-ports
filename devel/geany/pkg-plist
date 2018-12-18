@@ -221,6 +221,7 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%NLS%%share/locale/bg/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/da/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/de/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/el/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/geany.mo

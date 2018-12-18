@@ -2,8 +2,6 @@
 
 .include "${.CURDIR}/../../devel/geany-plugins/files/bsd.geany-plugins.mk"
 
-PORTREVISION=	1
-
 MASTER_SITES=	http://plugins.geany.org/geany-plugins/
 DISTNAME=	geany-plugins-${PORTVERSION}
 DISTINFO_FILE=	${.CURDIR}/../../devel/geany-plugins/distinfo
