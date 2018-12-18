@@ -3,6 +3,7 @@
 
 PORTNAME=	Crypt-OpenSSL-ECDSA
 PORTVERSION=	0.08
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,10 +14,8 @@ COMMENT=	Perl extension for OpenSSL ECDSA
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Crypt-OpenSSL-EC>=0.05:security/p5-Crypt-OpenSSL-EC
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-BROKEN_SSL=	openssl-devel
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Crypt-OpenSSL-EC>=0.05:security/p5-Crypt-OpenSSL-EC
 
 USES=		perl5 ssl
 USE_PERL5=	5.18+ configure
