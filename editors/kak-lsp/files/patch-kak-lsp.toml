@@ -1,17 +1,17 @@
---- kak-lsp.toml.orig	2018-10-28 11:11:42 UTC
+--- kak-lsp.toml.orig	2018-12-18 02:50:14 UTC
 +++ kak-lsp.toml
-@@ -52,11 +52,16 @@ extensions = ["py"]
+@@ -52,11 +52,16 @@ filetypes = ["python"]
  roots = ["requirements.txt", "setup.py", ".git", ".hg"]
  command = "pyls"
  
 +#[language.c_cpp]
-+#extensions = ["c", "h", "cc", "hh", "cpp", "hpp"]
++#filetypes = ["c", "cpp"]
 +#roots = ["compile_commands.json", ".cquery"]
 +#command = "cquery"
 +#args = ["--init={\"cacheDirectory\":\"/tmp/cquery\"}"]
 +
  [language.c_cpp]
- extensions = ["c", "h", "cc", "hh", "cpp", "hpp"]
+ filetypes = ["c", "cpp"]
 -roots = ["compile_commands.json", ".cquery"]
 -command = "cquery"
 -args = ["--init={\"cacheDirectory\":\"/tmp/cquery\"}"]
@@ -19,4 +19,4 @@
 +command = "ccls"
  
  [language.haskell]
- extensions = ["hs"]
+ filetypes = ["haskell"]
