@@ -29,8 +29,8 @@ GH_TAGNAME=	71fcc9f
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000 && ${OSVERSION} < 1200058
-IGNORE=		not supported on older CURRENT, no kernel support
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200058
+IGNORE=		only supported on FreeBSD 12.0 and later
 .endif
 .if ${OPSYS} != FreeBSD
 IGNORE=		not supported on anything but FreeBSD (missing linuxkpi functionality)
