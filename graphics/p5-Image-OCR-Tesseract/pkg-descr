@@ -1,0 +1,17 @@
+Provides a perl interface to tesseract.
+
+This is just an interface to make it quick an easy to get ocr output from an
+image file. No matter what image type you provide, imagemagick convert is
+called to turn it into the format for tesseract
+
+Also accepts any image input- takes care of converting your imput image to a
+tiff to the required specs, without changing the original.
+
+Example usage:
+
+ocr ./image.jpg > ./savetext.txt
+ocr ./image.png
+ocr ./image1.jpg ./image2.jpg > ./alltext.txt
+ocr ./image*jpg
+
+WWW: https://metacpan.org/release/LEOCHARRE/Image-OCR-Tesseract-1.24
