@@ -19,16 +19,20 @@ libexec/openhab2/runtime/etc/jetty.xml
 libexec/openhab2/runtime/etc/quartz.properties
 libexec/openhab2/runtime/lib/README
 libexec/openhab2/runtime/lib/boot/README
-libexec/openhab2/runtime/lib/boot/org.apache.karaf.diagnostic.boot-4.1.5.jar
-libexec/openhab2/runtime/lib/boot/org.apache.karaf.jaas.boot-4.1.5.jar
-libexec/openhab2/runtime/lib/boot/org.apache.karaf.main-4.1.5.jar
+libexec/openhab2/runtime/lib/boot/activation-1.1.1.jar
+libexec/openhab2/runtime/lib/boot/jaxb-api-2.3.0.jar
+libexec/openhab2/runtime/lib/boot/jaxb-core-2.2.11.jar
+libexec/openhab2/runtime/lib/boot/jaxb-impl-2.2.11.jar
+libexec/openhab2/runtime/lib/boot/org.apache.karaf.diagnostic.boot-4.2.1.jar
+libexec/openhab2/runtime/lib/boot/org.apache.karaf.jaas.boot-4.2.1.jar
+libexec/openhab2/runtime/lib/boot/org.apache.karaf.main-4.2.1.jar
 libexec/openhab2/runtime/lib/boot/org.osgi.core-6.0.0.jar
 libexec/openhab2/runtime/lib/endorsed/README
-libexec/openhab2/runtime/lib/endorsed/org.apache.karaf.exception-4.1.5.jar
+libexec/openhab2/runtime/lib/endorsed/org.apache.karaf.specs.java.xml-4.2.1.jar
+libexec/openhab2/runtime/lib/endorsed/org.apache.karaf.specs.locator-4.2.1.jar
 libexec/openhab2/runtime/lib/ext/README
 libexec/openhab2/runtime/services.cfg
 libexec/openhab2/runtime/system/README
-libexec/openhab2/runtime/system/com/eclipsesource/jaxrs/provider-security/2.2/provider-security-2.2.jar
 libexec/openhab2/runtime/system/com/eclipsesource/jaxrs/publisher/5.3.1/publisher-5.3.1.jar
 libexec/openhab2/runtime/system/com/fasterxml/jackson/core/jackson-annotations/2.4.5/jackson-annotations-2.4.5.jar
 libexec/openhab2/runtime/system/com/fasterxml/jackson/core/jackson-core/2.4.5/jackson-core-2.4.5.jar
@@ -41,22 +45,19 @@ libexec/openhab2/runtime/system/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-p
 libexec/openhab2/runtime/system/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.4.5/jackson-module-jaxb-annotations-2.4.5.jar
 libexec/openhab2/runtime/system/com/google/code/findbugs/annotations/2.0.1/annotations-2.0.1.jar
 libexec/openhab2/runtime/system/com/google/code/gson/gson/2.3.1/gson-2.3.1.jar
-libexec/openhab2/runtime/system/com/google/code/gson/gson/2.7/gson-2.7.jar
 libexec/openhab2/runtime/system/com/google/guava/guava/15.0/guava-15.0.jar
 libexec/openhab2/runtime/system/com/google/guava/guava/18.0/guava-18.0.jar
+libexec/openhab2/runtime/system/com/neuronrobotics/nrjavaserial/3.14.0/nrjavaserial-3.14.0.jar
 libexec/openhab2/runtime/system/commons-codec/commons-codec/1.6/commons-codec-1.6.jar
 libexec/openhab2/runtime/system/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar
 libexec/openhab2/runtime/system/commons-io/commons-io/2.2/commons-io-2.2.jar
 libexec/openhab2/runtime/system/commons-lang/commons-lang/2.6/commons-lang-2.6.jar
-libexec/openhab2/runtime/system/commons-net/commons-net/3.2/commons-net-3.2.jar
+libexec/openhab2/runtime/system/commons-net/commons-net/3.3/commons-net-3.3.jar
 libexec/openhab2/runtime/system/de/maggu2810/p2redist/com.google.inject/3.0.0.v201312141243/com.google.inject-3.0.0.v201312141243.jar
 libexec/openhab2/runtime/system/de/maggu2810/p2redist/org.antlr.runtime/3.2.0.v201101311130/org.antlr.runtime-3.2.0.v201101311130.jar
-libexec/openhab2/runtime/system/de/maggu2810/requirebundle/fix/org.objectweb.asm/5.0.2/org.objectweb.asm-5.0.2.jar
 libexec/openhab2/runtime/system/de/maggu2810/thirdparty/modified/com/eclipsesource/jaxrs/provider-swagger/1.1.1.201605111122/provider-swagger-1.1.1.201605111122.jar
 libexec/openhab2/runtime/system/de/maggu2810/thirdparty/modified/io/swagger/swagger-jersey2-jaxrs/1.5.8.v20160511-1038/swagger-jersey2-jaxrs-1.5.8.v20160511-1038.jar
 libexec/openhab2/runtime/system/de/maggu2810/thirdparty/modified/org/reflections/reflections/0.9.10.v20160429-1435/reflections-0.9.10.v20160429-1435.jar
-libexec/openhab2/runtime/system/de/maggu2810/thirdparty/org/eclipse/xtext/org.eclipse.xtext.ide/2.12.0.sp2/org.eclipse.xtext.ide-2.12.0.sp2.jar
-libexec/openhab2/runtime/system/io/swagger/swagger-annotations/1.5.5/swagger-annotations-1.5.5.jar
 libexec/openhab2/runtime/system/io/swagger/swagger-annotations/1.5.8/swagger-annotations-1.5.8.jar
 libexec/openhab2/runtime/system/io/swagger/swagger-core/1.5.8/swagger-core-1.5.8.jar
 libexec/openhab2/runtime/system/io/swagger/swagger-jaxrs/1.5.8/swagger-jaxrs-1.5.8.jar
@@ -69,213 +70,222 @@ libexec/openhab2/runtime/system/javax/validation/validation-api/1.1.0.Final/vali
 libexec/openhab2/runtime/system/javax/websocket/javax.websocket-api/1.1/javax.websocket-api-1.1.jar
 libexec/openhab2/runtime/system/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar
 libexec/openhab2/runtime/system/joda-time/joda-time/2.2/joda-time-2.2.jar
+libexec/openhab2/runtime/system/net/java/dev/jna/jna-platform/4.5.2/jna-platform-4.5.2.jar
+libexec/openhab2/runtime/system/net/java/dev/jna/jna/4.5.2/jna-4.5.2.jar
 libexec/openhab2/runtime/system/org/apache/aries/org.apache.aries.util/1.1.0/org.apache.aries.util-1.1.0.jar
-libexec/openhab2/runtime/system/org/apache/aries/spifly/org.apache.aries.spifly.dynamic.bundle/1.0.2/org.apache.aries.spifly.dynamic.bundle-1.0.2.jar
-libexec/openhab2/runtime/system/org/apache/commons/commons-collections4/4.1/commons-collections4-4.1.jar
+libexec/openhab2/runtime/system/org/apache/aries/spifly/org.apache.aries.spifly.dynamic.bundle/1.0.10/org.apache.aries.spifly.dynamic.bundle-1.0.10.jar
 libexec/openhab2/runtime/system/org/apache/commons/commons-exec/1.1/commons-exec-1.1.jar
 libexec/openhab2/runtime/system/org/apache/commons/commons-lang3/3.2.1/commons-lang3-3.2.1.jar
-libexec/openhab2/runtime/system/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar
-libexec/openhab2/runtime/system/org/apache/felix/org.apache.felix.configadmin/1.8.16/org.apache.felix.configadmin-1.8.16.jar
+libexec/openhab2/runtime/system/org/apache/felix/org.apache.felix.configadmin/1.9.4/org.apache.felix.configadmin-1.9.4.jar
+libexec/openhab2/runtime/system/org/apache/felix/org.apache.felix.coordinator/1.0.2/org.apache.felix.coordinator-1.0.2.jar
 libexec/openhab2/runtime/system/org/apache/felix/org.apache.felix.fileinstall/3.6.4/org.apache.felix.fileinstall-3.6.4.jar
 libexec/openhab2/runtime/system/org/apache/felix/org.apache.felix.framework/5.6.10/org.apache.felix.framework-5.6.10.jar
 libexec/openhab2/runtime/system/org/apache/felix/org.apache.felix.inventory/1.0.4/org.apache.felix.inventory-1.0.4.jar
-libexec/openhab2/runtime/system/org/apache/felix/org.apache.felix.metatype/1.1.6/org.apache.felix.metatype-1.1.6.jar
-libexec/openhab2/runtime/system/org/apache/felix/org.apache.felix.scr.compat/1.0.4/org.apache.felix.scr.compat-1.0.4.jar
-libexec/openhab2/runtime/system/org/apache/felix/org.apache.felix.scr/2.0.12/org.apache.felix.scr-2.0.12.jar
+libexec/openhab2/runtime/system/org/apache/felix/org.apache.felix.metatype/1.2.0/org.apache.felix.metatype-1.2.0.jar
+libexec/openhab2/runtime/system/org/apache/felix/org.apache.felix.scr/2.1.2/org.apache.felix.scr-2.1.2.jar
 libexec/openhab2/runtime/system/org/apache/felix/org.apache.felix.webconsole.plugins.ds/2.0.8/org.apache.felix.webconsole.plugins.ds-2.0.8.jar
 libexec/openhab2/runtime/system/org/apache/felix/org.apache.felix.webconsole.plugins.event/1.1.8/org.apache.felix.webconsole.plugins.event-1.1.8.jar
 libexec/openhab2/runtime/system/org/apache/geronimo/specs/geronimo-jaspic_1.0_spec/1.1/geronimo-jaspic_1.0_spec-1.1.jar
 libexec/openhab2/runtime/system/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1.1/geronimo-jta_1.1_spec-1.1.1.jar
 libexec/openhab2/runtime/system/org/apache/httpcomponents/httpclient-osgi/4.2.3/httpclient-osgi-4.2.3.jar
 libexec/openhab2/runtime/system/org/apache/httpcomponents/httpcore-osgi/4.2.3/httpcore-osgi-4.2.3.jar
-libexec/openhab2/runtime/system/org/apache/karaf/bundle/org.apache.karaf.bundle.core/4.1.5/org.apache.karaf.bundle.core-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/config/org.apache.karaf.config.core/4.1.5/org.apache.karaf.config.core-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/deployer/org.apache.karaf.deployer.blueprint/4.1.5/org.apache.karaf.deployer.blueprint-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/deployer/org.apache.karaf.deployer.features/4.1.5/org.apache.karaf.deployer.features-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/deployer/org.apache.karaf.deployer.kar/4.1.5/org.apache.karaf.deployer.kar-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/deployer/org.apache.karaf.deployer.wrap/4.1.5/org.apache.karaf.deployer.wrap-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/diagnostic/org.apache.karaf.diagnostic.boot/4.1.5/org.apache.karaf.diagnostic.boot-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/diagnostic/org.apache.karaf.diagnostic.core/4.1.5/org.apache.karaf.diagnostic.core-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/features/framework/4.1.5/framework-4.1.5-features.xml
-libexec/openhab2/runtime/system/org/apache/karaf/features/org.apache.karaf.features.command/4.1.5/org.apache.karaf.features.command-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/features/org.apache.karaf.features.core/4.1.5/org.apache.karaf.features.core-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/features/org.apache.karaf.features.extension/4.1.5/org.apache.karaf.features.extension-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/features/standard/4.1.5/standard-4.1.5-features.xml
-libexec/openhab2/runtime/system/org/apache/karaf/http/org.apache.karaf.http.core/4.1.5/org.apache.karaf.http.core-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/instance/org.apache.karaf.instance.core/4.1.5/org.apache.karaf.instance.core-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/jaas/blueprint/org.apache.karaf.jaas.blueprint.config/4.1.5/org.apache.karaf.jaas.blueprint.config-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/jaas/org.apache.karaf.jaas.boot/4.1.5/org.apache.karaf.jaas.boot-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/jaas/org.apache.karaf.jaas.command/4.1.5/org.apache.karaf.jaas.command-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/jaas/org.apache.karaf.jaas.config/4.1.5/org.apache.karaf.jaas.config-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/jaas/org.apache.karaf.jaas.modules/4.1.5/org.apache.karaf.jaas.modules-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/kar/org.apache.karaf.kar.core/4.1.5/org.apache.karaf.kar.core-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/log/org.apache.karaf.log.core/4.1.5/org.apache.karaf.log.core-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/org.apache.karaf.client/4.1.5/org.apache.karaf.client-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/org.apache.karaf.event/4.1.5/org.apache.karaf.event-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/package/org.apache.karaf.package.core/4.1.5/org.apache.karaf.package.core-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/scr/org.apache.karaf.scr.command/4.1.5/org.apache.karaf.scr.command-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/scr/org.apache.karaf.scr.management/4.1.5/org.apache.karaf.scr.management-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/scr/org.apache.karaf.scr.state/4.1.5/org.apache.karaf.scr.state-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/service/org.apache.karaf.service.core/4.1.5/org.apache.karaf.service.core-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/services/org.apache.karaf.services.eventadmin/4.1.5/org.apache.karaf.services.eventadmin-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/shell/org.apache.karaf.shell.commands/4.1.5/org.apache.karaf.shell.commands-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/shell/org.apache.karaf.shell.core/4.1.5/org.apache.karaf.shell.core-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/shell/org.apache.karaf.shell.ssh/4.1.5/org.apache.karaf.shell.ssh-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/system/org.apache.karaf.system.core/4.1.5/org.apache.karaf.system.core-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/webconsole/org.apache.karaf.webconsole.http/4.1.5/org.apache.karaf.webconsole.http-4.1.5.jar
-libexec/openhab2/runtime/system/org/apache/karaf/wrapper/org.apache.karaf.wrapper.core/4.1.5/org.apache.karaf.wrapper.core-4.1.5.jar
+libexec/openhab2/runtime/system/org/apache/karaf/bundle/org.apache.karaf.bundle.core/4.2.1/org.apache.karaf.bundle.core-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/config/org.apache.karaf.config.core/4.2.1/org.apache.karaf.config.core-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/deployer/org.apache.karaf.deployer.blueprint/4.2.1/org.apache.karaf.deployer.blueprint-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/deployer/org.apache.karaf.deployer.features/4.2.1/org.apache.karaf.deployer.features-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/deployer/org.apache.karaf.deployer.kar/4.2.1/org.apache.karaf.deployer.kar-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/deployer/org.apache.karaf.deployer.wrap/4.2.1/org.apache.karaf.deployer.wrap-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/diagnostic/org.apache.karaf.diagnostic.boot/4.2.1/org.apache.karaf.diagnostic.boot-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/diagnostic/org.apache.karaf.diagnostic.core/4.2.1/org.apache.karaf.diagnostic.core-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/features/framework/4.2.1/framework-4.2.1-features.xml
+libexec/openhab2/runtime/system/org/apache/karaf/features/org.apache.karaf.features.command/4.2.1/org.apache.karaf.features.command-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/features/org.apache.karaf.features.core/4.2.1/org.apache.karaf.features.core-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/features/org.apache.karaf.features.extension/4.2.1/org.apache.karaf.features.extension-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/features/standard/4.2.1/standard-4.2.1-features.xml
+libexec/openhab2/runtime/system/org/apache/karaf/http/org.apache.karaf.http.core/4.2.1/org.apache.karaf.http.core-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/instance/org.apache.karaf.instance.core/4.2.1/org.apache.karaf.instance.core-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/jaas/blueprint/org.apache.karaf.jaas.blueprint.config/4.2.1/org.apache.karaf.jaas.blueprint.config-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/jaas/org.apache.karaf.jaas.boot/4.2.1/org.apache.karaf.jaas.boot-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/jaas/org.apache.karaf.jaas.command/4.2.1/org.apache.karaf.jaas.command-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/jaas/org.apache.karaf.jaas.config/4.2.1/org.apache.karaf.jaas.config-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/jaas/org.apache.karaf.jaas.modules/4.2.1/org.apache.karaf.jaas.modules-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/kar/org.apache.karaf.kar.core/4.2.1/org.apache.karaf.kar.core-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/log/org.apache.karaf.log.core/4.2.1/org.apache.karaf.log.core-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/org.apache.karaf.client/4.2.1/org.apache.karaf.client-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/org.apache.karaf.event/4.2.1/org.apache.karaf.event-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/package/org.apache.karaf.package.core/4.2.1/org.apache.karaf.package.core-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/scr/org.apache.karaf.scr.management/4.2.1/org.apache.karaf.scr.management-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/scr/org.apache.karaf.scr.state/4.2.1/org.apache.karaf.scr.state-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/service/org.apache.karaf.service.core/4.2.1/org.apache.karaf.service.core-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/services/org.apache.karaf.services.eventadmin/4.2.1/org.apache.karaf.services.eventadmin-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/shell/org.apache.karaf.shell.commands/4.2.1/org.apache.karaf.shell.commands-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/shell/org.apache.karaf.shell.core/4.2.1/org.apache.karaf.shell.core-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/shell/org.apache.karaf.shell.ssh/4.2.1-sp1/org.apache.karaf.shell.ssh-4.2.1-sp1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/shell/org.apache.karaf.shell.ssh/4.2.1/org.apache.karaf.shell.ssh-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/system/org.apache.karaf.system.core/4.2.1/org.apache.karaf.system.core-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/webconsole/org.apache.karaf.webconsole.http/4.2.1/org.apache.karaf.webconsole.http-4.2.1.jar
+libexec/openhab2/runtime/system/org/apache/karaf/wrapper/org.apache.karaf.wrapper.core/4.2.1/org.apache.karaf.wrapper.core-4.2.1.jar
 libexec/openhab2/runtime/system/org/apache/servicemix/bundles/org.apache.servicemix.bundles.commons-httpclient/3.1_7/org.apache.servicemix.bundles.commons-httpclient-3.1_7.jar
 libexec/openhab2/runtime/system/org/apache/servicemix/bundles/org.apache.servicemix.bundles.javax-inject/1_2/org.apache.servicemix.bundles.javax-inject-1_2.jar
+libexec/openhab2/runtime/system/org/apache/servicemix/bundles/org.apache.servicemix.bundles.jaxb-impl/2.2.11_1/org.apache.servicemix.bundles.jaxb-impl-2.2.11_1.jar
 libexec/openhab2/runtime/system/org/apache/servicemix/bundles/org.apache.servicemix.bundles.not-yet-commons-ssl/0.3.11_1/org.apache.servicemix.bundles.not-yet-commons-ssl-0.3.11_1.jar
 libexec/openhab2/runtime/system/org/apache/servicemix/specs/org.apache.servicemix.specs.activation-api-1.1/2.5.0/org.apache.servicemix.specs.activation-api-1.1-2.5.0.jar
-libexec/openhab2/runtime/system/org/apache/sshd/sshd-core/1.6.0/sshd-core-1.6.0.jar
-libexec/openhab2/runtime/system/org/apache/xbean/xbean-bundleutils/4.1/xbean-bundleutils-4.1.jar
-libexec/openhab2/runtime/system/org/apache/xbean/xbean-finder/4.1/xbean-finder-4.1.jar
-libexec/openhab2/runtime/system/org/apache/xbean/xbean-reflect/4.1/xbean-reflect-4.1.jar
+libexec/openhab2/runtime/system/org/apache/servicemix/specs/org.apache.servicemix.specs.jaxb-api-2.2/2.5.0/org.apache.servicemix.specs.jaxb-api-2.2-2.5.0.jar
+libexec/openhab2/runtime/system/org/apache/sshd/sshd-core/1.7.0/sshd-core-1.7.0.jar
+libexec/openhab2/runtime/system/org/apache/xbean/xbean-bundleutils/4.6/xbean-bundleutils-4.6.jar
+libexec/openhab2/runtime/system/org/apache/xbean/xbean-finder/4.6/xbean-finder-4.6.jar
+libexec/openhab2/runtime/system/org/apache/xbean/xbean-reflect/4.6/xbean-reflect-4.6.jar
 libexec/openhab2/runtime/system/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4.jar
 libexec/openhab2/runtime/system/org/eclipse/californium/californium-osgi/1.0.6/californium-osgi-1.0.6.jar
 libexec/openhab2/runtime/system/org/eclipse/californium/element-connector/1.0.6/element-connector-1.0.6.jar
 libexec/openhab2/runtime/system/org/eclipse/californium/scandium/1.0.6/scandium-1.0.6.jar
-libexec/openhab2/runtime/system/org/eclipse/emf/org.eclipse.emf.common/2.11.0-v20150805-0538/org.eclipse.emf.common-2.11.0-v20150805-0538.jar
-libexec/openhab2/runtime/system/org/eclipse/emf/org.eclipse.emf.ecore.xmi/2.11.1-v20150805-0538/org.eclipse.emf.ecore.xmi-2.11.1-v20150805-0538.jar
-libexec/openhab2/runtime/system/org/eclipse/emf/org.eclipse.emf.ecore/2.11.1-v20150805-0538/org.eclipse.emf.ecore-2.11.1-v20150805-0538.jar
+libexec/openhab2/runtime/system/org/eclipse/emf/org.eclipse.emf.common/2.12.0/org.eclipse.emf.common-2.12.0.jar
+libexec/openhab2/runtime/system/org/eclipse/emf/org.eclipse.emf.ecore.change/2.11.0/org.eclipse.emf.ecore.change-2.11.0.jar
+libexec/openhab2/runtime/system/org/eclipse/emf/org.eclipse.emf.ecore.xmi/2.12.0/org.eclipse.emf.ecore.xmi-2.12.0.jar
+libexec/openhab2/runtime/system/org/eclipse/emf/org.eclipse.emf.ecore/2.12.0/org.eclipse.emf.ecore-2.12.0.jar
 libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-client/9.3.15.v20161220/jetty-client-9.3.15.v20161220.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-client/9.3.21.v20170918/jetty-client-9.3.21.v20170918.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-continuation/9.3.21.v20170918/jetty-continuation-9.3.21.v20170918.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-deploy/9.3.21.v20170918/jetty-deploy-9.3.21.v20170918.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-client/9.4.11.v20180605/jetty-client-9.4.11.v20180605.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-continuation/9.4.11.v20180605/jetty-continuation-9.4.11.v20180605.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-deploy/9.4.11.v20180605/jetty-deploy-9.4.11.v20180605.jar
 libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-http/9.3.15.v20161220/jetty-http-9.3.15.v20161220.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-http/9.3.21.v20170918/jetty-http-9.3.21.v20170918.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-http/9.4.11.v20180605/jetty-http-9.4.11.v20180605.jar
 libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-io/9.3.15.v20161220/jetty-io-9.3.15.v20161220.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-io/9.3.21.v20170918/jetty-io-9.3.21.v20170918.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-jaas/9.3.21.v20170918/jetty-jaas-9.3.21.v20170918.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-jaspi/9.3.21.v20170918/jetty-jaspi-9.3.21.v20170918.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-jmx/9.3.21.v20170918/jetty-jmx-9.3.21.v20170918.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-jndi/9.3.21.v20170918/jetty-jndi-9.3.21.v20170918.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-plus/9.3.21.v20170918/jetty-plus-9.3.21.v20170918.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-io/9.4.11.v20180605/jetty-io-9.4.11.v20180605.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-jaas/9.4.11.v20180605/jetty-jaas-9.4.11.v20180605.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-jaspi/9.4.11.v20180605/jetty-jaspi-9.4.11.v20180605.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-jmx/9.4.11.v20180605/jetty-jmx-9.4.11.v20180605.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-jndi/9.4.11.v20180605/jetty-jndi-9.4.11.v20180605.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-plus/9.4.11.v20180605/jetty-plus-9.4.11.v20180605.jar
 libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-proxy/9.3.15.v20161220/jetty-proxy-9.3.15.v20161220.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-proxy/9.3.21.v20170918/jetty-proxy-9.3.21.v20170918.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-rewrite/9.3.21.v20170918/jetty-rewrite-9.3.21.v20170918.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-security/9.3.21.v20170918/jetty-security-9.3.21.v20170918.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-server/9.3.21.v20170918/jetty-server-9.3.21.v20170918.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-servlet/9.3.21.v20170918/jetty-servlet-9.3.21.v20170918.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-servlets/9.3.21.v20170918/jetty-servlets-9.3.21.v20170918.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-util-ajax/9.3.21.v20170918/jetty-util-ajax-9.3.21.v20170918.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-proxy/9.4.11.v20180605/jetty-proxy-9.4.11.v20180605.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-rewrite/9.4.11.v20180605/jetty-rewrite-9.4.11.v20180605.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-security/9.4.11.v20180605/jetty-security-9.4.11.v20180605.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-server/9.4.11.v20180605/jetty-server-9.4.11.v20180605.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-servlet/9.4.11.v20180605/jetty-servlet-9.4.11.v20180605.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-servlets/9.4.11.v20180605/jetty-servlets-9.4.11.v20180605.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-util-ajax/9.4.11.v20180605/jetty-util-ajax-9.4.11.v20180605.jar
 libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-util/9.3.15.v20161220/jetty-util-9.3.15.v20161220.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-util/9.3.21.v20170918/jetty-util-9.3.21.v20170918.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-webapp/9.3.21.v20170918/jetty-webapp-9.3.21.v20170918.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-xml/9.3.21.v20170918/jetty-xml-9.3.21.v20170918.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/websocket/javax-websocket-client-impl/9.3.21.v20170918/javax-websocket-client-impl-9.3.21.v20170918.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/websocket/javax-websocket-server-impl/9.3.21.v20170918/javax-websocket-server-impl-9.3.21.v20170918.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-util/9.4.11.v20180605/jetty-util-9.4.11.v20180605.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-webapp/9.4.11.v20180605/jetty-webapp-9.4.11.v20180605.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/jetty-xml/9.4.11.v20180605/jetty-xml-9.4.11.v20180605.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/websocket/javax-websocket-client-impl/9.4.11.v20180605/javax-websocket-client-impl-9.4.11.v20180605.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/websocket/javax-websocket-server-impl/9.4.11.v20180605/javax-websocket-server-impl-9.4.11.v20180605.jar
 libexec/openhab2/runtime/system/org/eclipse/jetty/websocket/websocket-api/9.3.15.v20161220/websocket-api-9.3.15.v20161220.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/websocket/websocket-api/9.3.21.v20170918/websocket-api-9.3.21.v20170918.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/websocket/websocket-api/9.4.11.v20180605/websocket-api-9.4.11.v20180605.jar
 libexec/openhab2/runtime/system/org/eclipse/jetty/websocket/websocket-client/9.3.15.v20161220/websocket-client-9.3.15.v20161220.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/websocket/websocket-client/9.3.21.v20170918/websocket-client-9.3.21.v20170918.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/websocket/websocket-client/9.4.11.v20180605/websocket-client-9.4.11.v20180605.jar
 libexec/openhab2/runtime/system/org/eclipse/jetty/websocket/websocket-common/9.3.15.v20161220/websocket-common-9.3.15.v20161220.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/websocket/websocket-common/9.3.21.v20170918/websocket-common-9.3.21.v20170918.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/websocket/websocket-server/9.3.21.v20170918/websocket-server-9.3.21.v20170918.jar
-libexec/openhab2/runtime/system/org/eclipse/jetty/websocket/websocket-servlet/9.3.21.v20170918/websocket-servlet-9.3.21.v20170918.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/websocket/websocket-common/9.4.11.v20180605/websocket-common-9.4.11.v20180605.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/websocket/websocket-server/9.4.11.v20180605/websocket-server-9.4.11.v20180605.jar
+libexec/openhab2/runtime/system/org/eclipse/jetty/websocket/websocket-servlet/9.4.11.v20180605/websocket-servlet-9.4.11.v20180605.jar
 libexec/openhab2/runtime/system/org/eclipse/kura/org.eclipse.soda.dk.comm.aarch64/1.2.201/org.eclipse.soda.dk.comm.aarch64-1.2.201.jar
 libexec/openhab2/runtime/system/org/eclipse/kura/org.eclipse.soda.dk.comm.armv6hf/1.2.201/org.eclipse.soda.dk.comm.armv6hf-1.2.201.jar
 libexec/openhab2/runtime/system/org/eclipse/kura/org.eclipse.soda.dk.comm.x86_64/1.2.201/org.eclipse.soda.dk.comm.x86_64-1.2.201.jar
 libexec/openhab2/runtime/system/org/eclipse/kura/org.eclipse.soda.dk.comm/1.2.201/org.eclipse.soda.dk.comm-1.2.201.jar
-libexec/openhab2/runtime/system/org/eclipse/lsp4j/org.eclipse.lsp4j.jsonrpc/0.2.1/org.eclipse.lsp4j.jsonrpc-0.2.1.jar
-libexec/openhab2/runtime/system/org/eclipse/lsp4j/org.eclipse.lsp4j/0.2.1/org.eclipse.lsp4j-0.2.1.jar
-libexec/openhab2/runtime/system/org/eclipse/paho/org.eclipse.paho.client.mqttv3/1.0.2/org.eclipse.paho.client.mqttv3-1.0.2.jar
+libexec/openhab2/runtime/system/org/eclipse/lsp4j/org.eclipse.lsp4j.jsonrpc/0.4.1/org.eclipse.lsp4j.jsonrpc-0.4.1.jar
+libexec/openhab2/runtime/system/org/eclipse/lsp4j/org.eclipse.lsp4j/0.4.1/org.eclipse.lsp4j-0.4.1.jar
+libexec/openhab2/runtime/system/org/eclipse/orbit/bundles/com.google.gson/2.7.0.v20170129-0911/com.google.gson-2.7.0.v20170129-0911.jar
+libexec/openhab2/runtime/system/org/eclipse/paho/org.eclipse.paho.client.mqttv3/1.2.0/org.eclipse.paho.client.mqttv3-1.2.0.jar
 libexec/openhab2/runtime/system/org/eclipse/platform/org.eclipse.equinox.common/3.8.0/org.eclipse.equinox.common-3.8.0.jar
 libexec/openhab2/runtime/system/org/eclipse/platform/org.eclipse.equinox.registry/3.6.100/org.eclipse.equinox.registry-3.6.100.jar
 libexec/openhab2/runtime/system/org/eclipse/platform/org.eclipse.equinox.supplement/1.6.100/org.eclipse.equinox.supplement-1.6.100.jar
-libexec/openhab2/runtime/system/org/eclipse/platform/org.eclipse.osgi/3.12.50/org.eclipse.osgi-3.12.50.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/auth/org.eclipse.smarthome.auth.jaas/0.10.0.oh230/org.eclipse.smarthome.auth.jaas-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.api/0.10.0.oh230/org.eclipse.smarthome.automation.api-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.commands/0.10.0.oh230/org.eclipse.smarthome.automation.commands-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.core/0.10.0.oh230/org.eclipse.smarthome.automation.core-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.module.core/0.10.0.oh230/org.eclipse.smarthome.automation.module.core-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.module.media/0.10.0.oh230/org.eclipse.smarthome.automation.module.media-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.module.script.defaultscope/0.10.0.oh230/org.eclipse.smarthome.automation.module.script.defaultscope-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.module.script.rulesupport/0.10.0.oh230/org.eclipse.smarthome.automation.module.script.rulesupport-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.module.script/0.10.0.oh230/org.eclipse.smarthome.automation.module.script-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.module.timer/0.10.0.oh230/org.eclipse.smarthome.automation.module.timer-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.parser.gson/0.10.0.oh230/org.eclipse.smarthome.automation.parser.gson-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.providers/0.10.0.oh230/org.eclipse.smarthome.automation.providers-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.rest/0.10.0.oh230/org.eclipse.smarthome.automation.rest-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/config/org.eclipse.smarthome.config.core/0.10.0.oh230/org.eclipse.smarthome.config.core-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/config/org.eclipse.smarthome.config.discovery.mdns/0.10.0.oh230/org.eclipse.smarthome.config.discovery.mdns-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/config/org.eclipse.smarthome.config.discovery.upnp/0.10.0.oh230/org.eclipse.smarthome.config.discovery.upnp-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/config/org.eclipse.smarthome.config.discovery.usbserial.linuxsysfs/0.10.0.oh230/org.eclipse.smarthome.config.discovery.usbserial.linuxsysfs-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/config/org.eclipse.smarthome.config.discovery.usbserial/0.10.0.oh230/org.eclipse.smarthome.config.discovery.usbserial-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/config/org.eclipse.smarthome.config.discovery/0.10.0.oh230/org.eclipse.smarthome.config.discovery-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/config/org.eclipse.smarthome.config.dispatch/0.10.0.oh230/org.eclipse.smarthome.config.dispatch-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/config/org.eclipse.smarthome.config.serial/0.10.0.oh230/org.eclipse.smarthome.config.serial-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/config/org.eclipse.smarthome.config.xml/0.10.0.oh230/org.eclipse.smarthome.config.xml-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core.audio/0.10.0.oh230/org.eclipse.smarthome.core.audio-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core.autoupdate/0.10.0.oh230/org.eclipse.smarthome.core.autoupdate-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core.binding.xml/0.10.0.oh230/org.eclipse.smarthome.core.binding.xml-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core.id/0.10.0.oh230/org.eclipse.smarthome.core.id-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core.persistence/0.10.0.oh230/org.eclipse.smarthome.core.persistence-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core.scheduler/0.10.0.oh230/org.eclipse.smarthome.core.scheduler-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core.thing.xml/0.10.0.oh230/org.eclipse.smarthome.core.thing.xml-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core.thing/0.10.0.oh230/org.eclipse.smarthome.core.thing-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core.transform/0.10.0.oh230/org.eclipse.smarthome.core.transform-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core.voice/0.10.0.oh230/org.eclipse.smarthome.core.voice-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core/0.10.0.oh230/org.eclipse.smarthome.core-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/extension/ui/iconset/org.eclipse.smarthome.ui.iconset.classic/0.10.0.oh230/org.eclipse.smarthome.ui.iconset.classic-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.console.karaf/0.10.0.oh230/org.eclipse.smarthome.io.console.karaf-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.console/0.10.0.oh230/org.eclipse.smarthome.io.console-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.javasound/0.10.0.oh230/org.eclipse.smarthome.io.javasound-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.monitor/0.10.0.oh230/org.eclipse.smarthome.io.monitor-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.net/0.10.0.oh230/org.eclipse.smarthome.io.net-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.rest.auth.basic/0.10.0.oh230/org.eclipse.smarthome.io.rest.auth.basic-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.rest.auth/0.10.0.oh230/org.eclipse.smarthome.io.rest.auth-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.rest.core/0.10.0.oh230/org.eclipse.smarthome.io.rest.core-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.rest.log/0.10.0.oh230/org.eclipse.smarthome.io.rest.log-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.rest.mdns/0.10.0.oh230/org.eclipse.smarthome.io.rest.mdns-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.rest.optimize/0.10.0.oh230/org.eclipse.smarthome.io.rest.optimize-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.rest.sitemap/0.10.0.oh230/org.eclipse.smarthome.io.rest.sitemap-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.rest.sse/0.10.0.oh230/org.eclipse.smarthome.io.rest.sse-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.rest.voice/0.10.0.oh230/org.eclipse.smarthome.io.rest.voice-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.rest/0.10.0.oh230/org.eclipse.smarthome.io.rest-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.transport.dbus/0.10.0.oh230/org.eclipse.smarthome.io.transport.dbus-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.transport.mdns/0.10.0.oh230/org.eclipse.smarthome.io.transport.mdns-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.transport.mqtt/0.10.0.oh230/org.eclipse.smarthome.io.transport.mqtt-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.transport.serial.javacomm/0.10.0.oh230/org.eclipse.smarthome.io.transport.serial.javacomm-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.transport.serial.rxtx/0.10.0.oh230/org.eclipse.smarthome.io.transport.serial.rxtx-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.transport.serial/0.10.0.oh230/org.eclipse.smarthome.io.transport.serial-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.transport.upnp/0.10.0.oh230/org.eclipse.smarthome.io.transport.upnp-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.webaudio/0.10.0.oh230/org.eclipse.smarthome.io.webaudio-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.core/0.10.0.oh230/org.eclipse.smarthome.model.core-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.item.ide/0.10.0.oh230/org.eclipse.smarthome.model.item.ide-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.item.runtime/0.10.0.oh230/org.eclipse.smarthome.model.item.runtime-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.item/0.10.0.oh230/org.eclipse.smarthome.model.item-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.lsp/0.10.0.oh230/org.eclipse.smarthome.model.lsp-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.persistence.ide/0.10.0.oh230/org.eclipse.smarthome.model.persistence.ide-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.persistence.runtime/0.10.0.oh230/org.eclipse.smarthome.model.persistence.runtime-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.persistence/0.10.0.oh230/org.eclipse.smarthome.model.persistence-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.rule.ide/0.10.0.oh230/org.eclipse.smarthome.model.rule.ide-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.rule.runtime/0.10.0.oh230/org.eclipse.smarthome.model.rule.runtime-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.rule/0.10.0.oh230/org.eclipse.smarthome.model.rule-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.script.ide/0.10.0.oh230/org.eclipse.smarthome.model.script.ide-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.script.runtime/0.10.0.oh230/org.eclipse.smarthome.model.script.runtime-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.script/0.10.0.oh230/org.eclipse.smarthome.model.script-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.sitemap.ide/0.10.0.oh230/org.eclipse.smarthome.model.sitemap.ide-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.sitemap.runtime/0.10.0.oh230/org.eclipse.smarthome.model.sitemap.runtime-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.sitemap/0.10.0.oh230/org.eclipse.smarthome.model.sitemap-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.thing.ide/0.10.0.oh230/org.eclipse.smarthome.model.thing.ide-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.thing.runtime/0.10.0.oh230/org.eclipse.smarthome.model.thing.runtime-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.thing/0.10.0.oh230/org.eclipse.smarthome.model.thing-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/storage/org.eclipse.smarthome.storage.json/0.10.0.oh230/org.eclipse.smarthome.storage.json-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/storage/org.eclipse.smarthome.storage.mapdb/0.10.0.oh230/org.eclipse.smarthome.storage.mapdb-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/ui/org.eclipse.smarthome.ui.icon/0.10.0.oh230/org.eclipse.smarthome.ui.icon-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/smarthome/ui/org.eclipse.smarthome.ui/0.10.0.oh230/org.eclipse.smarthome.ui-0.10.0.oh230.jar
-libexec/openhab2/runtime/system/org/eclipse/xtend/org.eclipse.xtend.lib.macro/2.12.0/org.eclipse.xtend.lib.macro-2.12.0.jar
-libexec/openhab2/runtime/system/org/eclipse/xtend/org.eclipse.xtend.lib/2.12.0/org.eclipse.xtend.lib-2.12.0.jar
-libexec/openhab2/runtime/system/org/eclipse/xtext/org.eclipse.xtext.common.types/2.12.0/org.eclipse.xtext.common.types-2.12.0.jar
-libexec/openhab2/runtime/system/org/eclipse/xtext/org.eclipse.xtext.smap/2.12.0/org.eclipse.xtext.smap-2.12.0.jar
-libexec/openhab2/runtime/system/org/eclipse/xtext/org.eclipse.xtext.util/2.12.0/org.eclipse.xtext.util-2.12.0.jar
-libexec/openhab2/runtime/system/org/eclipse/xtext/org.eclipse.xtext.xbase.ide/2.12.0/org.eclipse.xtext.xbase.ide-2.12.0.jar
-libexec/openhab2/runtime/system/org/eclipse/xtext/org.eclipse.xtext.xbase.lib/2.12.0/org.eclipse.xtext.xbase.lib-2.12.0.jar
-libexec/openhab2/runtime/system/org/eclipse/xtext/org.eclipse.xtext.xbase/2.12.0/org.eclipse.xtext.xbase-2.12.0.jar
-libexec/openhab2/runtime/system/org/eclipse/xtext/org.eclipse.xtext/2.12.0/org.eclipse.xtext-2.12.0.jar
-libexec/openhab2/runtime/system/org/fusesource/jansi/jansi/1.17/jansi-1.17.jar
+libexec/openhab2/runtime/system/org/eclipse/platform/org.eclipse.osgi/3.12.100/org.eclipse.osgi-3.12.100.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/auth/org.eclipse.smarthome.auth.jaas/0.10.0.oh240/org.eclipse.smarthome.auth.jaas-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/auth/org.eclipse.smarthome.auth.oauth2client/0.10.0.oh240/org.eclipse.smarthome.auth.oauth2client-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.api/0.10.0.oh240/org.eclipse.smarthome.automation.api-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.commands/0.10.0.oh240/org.eclipse.smarthome.automation.commands-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.core/0.10.0.oh240/org.eclipse.smarthome.automation.core-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.module.core/0.10.0.oh240/org.eclipse.smarthome.automation.module.core-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.module.media/0.10.0.oh240/org.eclipse.smarthome.automation.module.media-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.module.script.defaultscope/0.10.0.oh240/org.eclipse.smarthome.automation.module.script.defaultscope-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.module.script.rulesupport/0.10.0.oh240/org.eclipse.smarthome.automation.module.script.rulesupport-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.module.script/0.10.0.oh240/org.eclipse.smarthome.automation.module.script-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.module.timer/0.10.0.oh240/org.eclipse.smarthome.automation.module.timer-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.parser.gson/0.10.0.oh240/org.eclipse.smarthome.automation.parser.gson-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.providers/0.10.0.oh240/org.eclipse.smarthome.automation.providers-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/automation/org.eclipse.smarthome.automation.rest/0.10.0.oh240/org.eclipse.smarthome.automation.rest-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/config/org.eclipse.smarthome.config.core/0.10.0.oh240/org.eclipse.smarthome.config.core-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/config/org.eclipse.smarthome.config.discovery.mdns/0.10.0.oh240/org.eclipse.smarthome.config.discovery.mdns-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/config/org.eclipse.smarthome.config.discovery.upnp/0.10.0.oh240/org.eclipse.smarthome.config.discovery.upnp-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/config/org.eclipse.smarthome.config.discovery.usbserial.linuxsysfs/0.10.0.oh240/org.eclipse.smarthome.config.discovery.usbserial.linuxsysfs-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/config/org.eclipse.smarthome.config.discovery.usbserial/0.10.0.oh240/org.eclipse.smarthome.config.discovery.usbserial-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/config/org.eclipse.smarthome.config.discovery/0.10.0.oh240/org.eclipse.smarthome.config.discovery-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/config/org.eclipse.smarthome.config.dispatch/0.10.0.oh240/org.eclipse.smarthome.config.dispatch-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/config/org.eclipse.smarthome.config.serial/0.10.0.oh240/org.eclipse.smarthome.config.serial-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/config/org.eclipse.smarthome.config.xml/0.10.0.oh240/org.eclipse.smarthome.config.xml-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core.audio/0.10.0.oh240/org.eclipse.smarthome.core.audio-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core.binding.xml/0.10.0.oh240/org.eclipse.smarthome.core.binding.xml-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core.id/0.10.0.oh240/org.eclipse.smarthome.core.id-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core.persistence/0.10.0.oh240/org.eclipse.smarthome.core.persistence-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core.scheduler/0.10.0.oh240/org.eclipse.smarthome.core.scheduler-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core.semantics/0.10.0.oh240/org.eclipse.smarthome.core.semantics-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core.thing.xml/0.10.0.oh240/org.eclipse.smarthome.core.thing.xml-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core.thing/0.10.0.oh240/org.eclipse.smarthome.core.thing-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core.transform/0.10.0.oh240/org.eclipse.smarthome.core.transform-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core.voice/0.10.0.oh240/org.eclipse.smarthome.core.voice-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/core/org.eclipse.smarthome.core/0.10.0.oh240/org.eclipse.smarthome.core-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/extension/ui/iconset/org.eclipse.smarthome.ui.iconset.classic/0.10.0.oh240/org.eclipse.smarthome.ui.iconset.classic-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.console.karaf/0.10.0.oh240/org.eclipse.smarthome.io.console.karaf-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.console/0.10.0.oh240/org.eclipse.smarthome.io.console-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.http.auth.basic/0.10.0.oh240/org.eclipse.smarthome.io.http.auth.basic-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.http.auth/0.10.0.oh240/org.eclipse.smarthome.io.http.auth-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.http/0.10.0.oh240/org.eclipse.smarthome.io.http-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.javasound/0.10.0.oh240/org.eclipse.smarthome.io.javasound-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.monitor/0.10.0.oh240/org.eclipse.smarthome.io.monitor-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.net/0.10.0.oh240/org.eclipse.smarthome.io.net-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.rest.auth/0.10.0.oh240/org.eclipse.smarthome.io.rest.auth-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.rest.core/0.10.0.oh240/org.eclipse.smarthome.io.rest.core-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.rest.log/0.10.0.oh240/org.eclipse.smarthome.io.rest.log-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.rest.mdns/0.10.0.oh240/org.eclipse.smarthome.io.rest.mdns-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.rest.optimize/0.10.0.oh240/org.eclipse.smarthome.io.rest.optimize-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.rest.sitemap/0.10.0.oh240/org.eclipse.smarthome.io.rest.sitemap-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.rest.sse/0.10.0.oh240/org.eclipse.smarthome.io.rest.sse-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.rest.voice/0.10.0.oh240/org.eclipse.smarthome.io.rest.voice-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.rest/0.10.0.oh240/org.eclipse.smarthome.io.rest-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.transport.dbus/0.10.0.oh240/org.eclipse.smarthome.io.transport.dbus-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.transport.mdns/0.10.0.oh240/org.eclipse.smarthome.io.transport.mdns-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.transport.mqtt/0.10.0.oh240/org.eclipse.smarthome.io.transport.mqtt-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.transport.serial.javacomm/0.10.0.oh240/org.eclipse.smarthome.io.transport.serial.javacomm-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.transport.serial.rxtx.rfc2217/0.10.0.oh240/org.eclipse.smarthome.io.transport.serial.rxtx.rfc2217-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.transport.serial.rxtx/0.10.0.oh240/org.eclipse.smarthome.io.transport.serial.rxtx-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.transport.serial/0.10.0.oh240/org.eclipse.smarthome.io.transport.serial-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.transport.upnp/0.10.0.oh240/org.eclipse.smarthome.io.transport.upnp-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/io/org.eclipse.smarthome.io.webaudio/0.10.0.oh240/org.eclipse.smarthome.io.webaudio-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.core/0.10.0.oh240/org.eclipse.smarthome.model.core-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.item.ide/0.10.0.oh240/org.eclipse.smarthome.model.item.ide-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.item.runtime/0.10.0.oh240/org.eclipse.smarthome.model.item.runtime-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.item/0.10.0.oh240/org.eclipse.smarthome.model.item-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.lsp/0.10.0.oh240/org.eclipse.smarthome.model.lsp-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.persistence.ide/0.10.0.oh240/org.eclipse.smarthome.model.persistence.ide-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.persistence.runtime/0.10.0.oh240/org.eclipse.smarthome.model.persistence.runtime-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.persistence/0.10.0.oh240/org.eclipse.smarthome.model.persistence-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.rule.ide/0.10.0.oh240/org.eclipse.smarthome.model.rule.ide-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.rule.runtime/0.10.0.oh240/org.eclipse.smarthome.model.rule.runtime-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.rule/0.10.0.oh240/org.eclipse.smarthome.model.rule-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.script.ide/0.10.0.oh240/org.eclipse.smarthome.model.script.ide-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.script.runtime/0.10.0.oh240/org.eclipse.smarthome.model.script.runtime-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.script/0.10.0.oh240/org.eclipse.smarthome.model.script-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.sitemap.ide/0.10.0.oh240/org.eclipse.smarthome.model.sitemap.ide-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.sitemap.runtime/0.10.0.oh240/org.eclipse.smarthome.model.sitemap.runtime-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.sitemap/0.10.0.oh240/org.eclipse.smarthome.model.sitemap-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.thing.ide/0.10.0.oh240/org.eclipse.smarthome.model.thing.ide-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.thing.runtime/0.10.0.oh240/org.eclipse.smarthome.model.thing.runtime-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/model/org.eclipse.smarthome.model.thing/0.10.0.oh240/org.eclipse.smarthome.model.thing-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/storage/org.eclipse.smarthome.storage.json/0.10.0.oh240/org.eclipse.smarthome.storage.json-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/storage/org.eclipse.smarthome.storage.mapdb/0.10.0.oh240/org.eclipse.smarthome.storage.mapdb-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/ui/org.eclipse.smarthome.ui.icon/0.10.0.oh240/org.eclipse.smarthome.ui.icon-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/smarthome/ui/org.eclipse.smarthome.ui/0.10.0.oh240/org.eclipse.smarthome.ui-0.10.0.oh240.jar
+libexec/openhab2/runtime/system/org/eclipse/xtend/org.eclipse.xtend.lib.macro/2.14.0/org.eclipse.xtend.lib.macro-2.14.0.jar
+libexec/openhab2/runtime/system/org/eclipse/xtend/org.eclipse.xtend.lib/2.14.0/org.eclipse.xtend.lib-2.14.0.jar
+libexec/openhab2/runtime/system/org/eclipse/xtext/org.eclipse.xtext.common.types/2.14.0/org.eclipse.xtext.common.types-2.14.0.jar
+libexec/openhab2/runtime/system/org/eclipse/xtext/org.eclipse.xtext.ide/2.14.0/org.eclipse.xtext.ide-2.14.0.jar
+libexec/openhab2/runtime/system/org/eclipse/xtext/org.eclipse.xtext.smap/2.14.0/org.eclipse.xtext.smap-2.14.0.jar
+libexec/openhab2/runtime/system/org/eclipse/xtext/org.eclipse.xtext.util/2.14.0/org.eclipse.xtext.util-2.14.0.jar
+libexec/openhab2/runtime/system/org/eclipse/xtext/org.eclipse.xtext.xbase.ide/2.14.0/org.eclipse.xtext.xbase.ide-2.14.0.jar
+libexec/openhab2/runtime/system/org/eclipse/xtext/org.eclipse.xtext.xbase.lib/2.14.0/org.eclipse.xtext.xbase.lib-2.14.0.jar
+libexec/openhab2/runtime/system/org/eclipse/xtext/org.eclipse.xtext.xbase/2.14.0/org.eclipse.xtext.xbase-2.14.0.jar
+libexec/openhab2/runtime/system/org/eclipse/xtext/org.eclipse.xtext/2.14.0/org.eclipse.xtext-2.14.0.jar
+libexec/openhab2/runtime/system/org/fusesource/jansi/jansi/1.17.1/jansi-1.17.1.jar
 libexec/openhab2/runtime/system/org/glassfish/hk2/external/aopalliance-repackaged/2.4.0-b34/aopalliance-repackaged-2.4.0-b34.jar
 libexec/openhab2/runtime/system/org/glassfish/hk2/external/javax.inject/2.4.0-b34/javax.inject-2.4.0-b34.jar
 libexec/openhab2/runtime/system/org/glassfish/hk2/hk2-api/2.4.0-b34/hk2-api-2.4.0-b34.jar
@@ -293,45 +303,56 @@ libexec/openhab2/runtime/system/org/glassfish/jersey/media/jersey-media-multipar
 libexec/openhab2/runtime/system/org/glassfish/jersey/media/jersey-media-sse/2.22.2/jersey-media-sse-2.22.2.jar
 libexec/openhab2/runtime/system/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar
 libexec/openhab2/runtime/system/org/javassist/javassist/3.19.0-GA/javassist-3.19.0-GA.jar
-libexec/openhab2/runtime/system/org/jline/jline/3.6.0/jline-3.6.0.jar
-libexec/openhab2/runtime/system/org/jmdns/jmdns/3.5.2/jmdns-3.5.2.jar
-libexec/openhab2/runtime/system/org/jupnp/org.jupnp/2.3.0/org.jupnp-2.3.0.jar
+libexec/openhab2/runtime/system/org/jline/jline-builtins/3.9.0/jline-builtins-3.9.0.jar
+libexec/openhab2/runtime/system/org/jline/jline-reader/3.9.0/jline-reader-3.9.0.jar
+libexec/openhab2/runtime/system/org/jline/jline-terminal-jansi/3.9.0/jline-terminal-jansi-3.9.0.jar
+libexec/openhab2/runtime/system/org/jline/jline-terminal/3.9.0/jline-terminal-3.9.0.jar
+libexec/openhab2/runtime/system/org/jline/jline/3.9.0/jline-3.9.0.jar
+libexec/openhab2/runtime/system/org/jmdns/jmdns/3.5.5/jmdns-3.5.5.jar
+libexec/openhab2/runtime/system/org/jupnp/org.jupnp/2.5.1/org.jupnp-2.5.1.jar
 libexec/openhab2/runtime/system/org/jvnet/mimepull/mimepull/1.9.6/mimepull-1.9.6.jar
 libexec/openhab2/runtime/system/org/mapdb/mapdb/1.0.9/mapdb-1.0.9.jar
-libexec/openhab2/runtime/system/org/openhab/core/org.openhab.core.compat1x/2.3.0/org.openhab.core.compat1x-2.3.0.jar
-libexec/openhab2/runtime/system/org/openhab/core/org.openhab.core.karaf/2.3.0/org.openhab.core.karaf-2.3.0.jar
-libexec/openhab2/runtime/system/org/openhab/core/org.openhab.core/2.3.0/org.openhab.core-2.3.0.jar
-libexec/openhab2/runtime/system/org/openhab/core/org.openhab.io.jetty.certificate/2.3.0/org.openhab.io.jetty.certificate-2.3.0.jar
-libexec/openhab2/runtime/system/org/openhab/core/org.openhab.io.sound/2.3.0/org.openhab.io.sound-2.3.0.jar
-libexec/openhab2/runtime/system/org/openhab/core/org.openhab.ui.dashboard/2.3.0/org.openhab.ui.dashboard-2.3.0.jar
-libexec/openhab2/runtime/system/org/openhab/core/org.openhab.ui.homebuilder/2.3.0/org.openhab.ui.homebuilder-2.3.0.jar
-libexec/openhab2/runtime/system/org/openhab/distro/distro-kar/2.3.0/distro-kar-2.3.0-features.xml
-libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.3.0/distro-resources-2.3.0-automation-js.cfg
-libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.3.0/distro-resources-2.3.0-items.cfg
-libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.3.0/distro-resources-2.3.0-persistence-rrd4j.cfg
-libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.3.0/distro-resources-2.3.0-rules.cfg
-libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.3.0/distro-resources-2.3.0-scripts.cfg
-libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.3.0/distro-resources-2.3.0-services-basicui.cfg
-libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.3.0/distro-resources-2.3.0-services-classicui.cfg
-libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.3.0/distro-resources-2.3.0-services-logging.cfg
-libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.3.0/distro-resources-2.3.0-sitemaps.cfg
-libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.3.0/distro-resources-2.3.0-things.cfg
-libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.3.0/distro-resources-2.3.0-transform-en.cfg
-libexec/openhab2/runtime/system/org/openhab/distro/distro/2.3.0/distro-2.3.0-features.xml
-libexec/openhab2/runtime/system/org/openhab/distro/openhab-addons/2.3.0/openhab-addons-2.3.0-features.xml
-libexec/openhab2/runtime/system/org/openhab/nrjavaserial/3.12.0.OH/nrjavaserial-3.12.0.OH.jar
+libexec/openhab2/runtime/system/org/openhab/core/org.openhab.core.compat1x/2.4.0/org.openhab.core.compat1x-2.4.0.jar
+libexec/openhab2/runtime/system/org/openhab/core/org.openhab.core.karaf/2.4.0/org.openhab.core.karaf-2.4.0.jar
+libexec/openhab2/runtime/system/org/openhab/core/org.openhab.core/2.4.0/org.openhab.core-2.4.0.jar
+libexec/openhab2/runtime/system/org/openhab/core/org.openhab.io.jetty.certificate/2.4.0/org.openhab.io.jetty.certificate-2.4.0.jar
+libexec/openhab2/runtime/system/org/openhab/core/org.openhab.io.rest.docs/2.4.0/org.openhab.io.rest.docs-2.4.0.jar
+libexec/openhab2/runtime/system/org/openhab/core/org.openhab.io.sound/2.4.0/org.openhab.io.sound-2.4.0.jar
+libexec/openhab2/runtime/system/org/openhab/core/org.openhab.ui.dashboard/2.4.0/org.openhab.ui.dashboard-2.4.0.jar
+libexec/openhab2/runtime/system/org/openhab/core/org.openhab.ui.homebuilder/2.4.0/org.openhab.ui.homebuilder-2.4.0.jar
+libexec/openhab2/runtime/system/org/openhab/distro/distro-kar/2.4.0/distro-kar-2.4.0-features.xml
+libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.4.0/distro-resources-2.4.0-automation-js.cfg
+libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.4.0/distro-resources-2.4.0-items.cfg
+libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.4.0/distro-resources-2.4.0-persistence-rrd4j.cfg
+libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.4.0/distro-resources-2.4.0-rules.cfg
+libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.4.0/distro-resources-2.4.0-scripts.cfg
+libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.4.0/distro-resources-2.4.0-services-basicui.cfg
+libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.4.0/distro-resources-2.4.0-services-classicui.cfg
+libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.4.0/distro-resources-2.4.0-services-logging.cfg
+libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.4.0/distro-resources-2.4.0-sitemaps.cfg
+libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.4.0/distro-resources-2.4.0-things.cfg
+libexec/openhab2/runtime/system/org/openhab/distro/distro-resources/2.4.0/distro-resources-2.4.0-transform-en.cfg
+libexec/openhab2/runtime/system/org/openhab/distro/distro/2.4.0/distro-2.4.0-features.xml
+libexec/openhab2/runtime/system/org/openhab/distro/openhab-addons/2.4.0/openhab-addons-2.4.0-features.xml
+libexec/openhab2/runtime/system/org/openhab/distro/overrides/2.4.0/overrides-2.4.0-features.xml
+libexec/openhab2/runtime/system/org/openhab/nrjavaserial/3.15.0.OH2/nrjavaserial-3.15.0.OH2.jar
 libexec/openhab2/runtime/system/org/ops4j/pax/logging/pax-logging-api/1.10.1/pax-logging-api-1.10.1.jar
 libexec/openhab2/runtime/system/org/ops4j/pax/logging/pax-logging-log4j2/1.10.1/pax-logging-log4j2-1.10.1.jar
 libexec/openhab2/runtime/system/org/ops4j/pax/logging/pax-logging-logback/1.10.1/pax-logging-logback-1.10.1.jar
 libexec/openhab2/runtime/system/org/ops4j/pax/url/pax-url-aether/2.5.4/pax-url-aether-2.5.4.jar
 libexec/openhab2/runtime/system/org/ops4j/pax/url/pax-url-wrap/2.5.4/pax-url-wrap-2.5.4-uber.jar
-libexec/openhab2/runtime/system/org/ops4j/pax/web/pax-web-api/6.0.9/pax-web-api-6.0.9.jar
-libexec/openhab2/runtime/system/org/ops4j/pax/web/pax-web-features/6.0.9/pax-web-features-6.0.9-features.xml
-libexec/openhab2/runtime/system/org/ops4j/pax/web/pax-web-features/6.0.9/pax-web-features-6.0.9-jettyconfig.xml
-libexec/openhab2/runtime/system/org/ops4j/pax/web/pax-web-jetty/6.0.9/pax-web-jetty-6.0.9.jar
-libexec/openhab2/runtime/system/org/ops4j/pax/web/pax-web-runtime/6.0.9/pax-web-runtime-6.0.9.jar
-libexec/openhab2/runtime/system/org/ops4j/pax/web/pax-web-spi/6.0.9/pax-web-spi-6.0.9.jar
-libexec/openhab2/runtime/system/org/ow2/asm/asm-all/5.0.2/asm-all-5.0.2.jar
+libexec/openhab2/runtime/system/org/ops4j/pax/web/pax-web-api/7.2.3/pax-web-api-7.2.3.jar
+libexec/openhab2/runtime/system/org/ops4j/pax/web/pax-web-features/7.2.3/pax-web-features-7.2.3-features.xml
+libexec/openhab2/runtime/system/org/ops4j/pax/web/pax-web-features/7.2.3/pax-web-features-7.2.3-jettyconfig.xml
+libexec/openhab2/runtime/system/org/ops4j/pax/web/pax-web-jetty/7.2.3/pax-web-jetty-7.2.3.jar
+libexec/openhab2/runtime/system/org/ops4j/pax/web/pax-web-runtime/7.2.3/pax-web-runtime-7.2.3.jar
+libexec/openhab2/runtime/system/org/ops4j/pax/web/pax-web-spi/7.2.3/pax-web-spi-7.2.3.jar
+libexec/openhab2/runtime/system/org/ow2/asm/asm-analysis/6.2/asm-analysis-6.2.jar
+libexec/openhab2/runtime/system/org/ow2/asm/asm-commons/6.2/asm-commons-6.2.jar
+libexec/openhab2/runtime/system/org/ow2/asm/asm-tree/6.2/asm-tree-6.2.jar
+libexec/openhab2/runtime/system/org/ow2/asm/asm-util/6.2/asm-util-6.2.jar
+libexec/openhab2/runtime/system/org/ow2/asm/asm/6.1.1/asm-6.1.1.jar
+libexec/openhab2/runtime/system/org/ow2/asm/asm/6.2/asm-6.2.jar
 libexec/openhab2/runtime/system/org/slf4j/slf4j-api/1.7.12/slf4j-api-1.7.12.jar
 libexec/openhab2/runtime/system/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar
 libexec/openhab2/runtime/system/org/yaml/snakeyaml/1.12/snakeyaml-1.12.jar
@@ -341,53 +362,54 @@ libexec/openhab2/start.sh
 libexec/openhab2/start_debug.sh
 @owner openhab
 @group openhab
-@sample share/openhab2/etc/all.policy /var/db/openhab2/userdata/etc/all.policy
-@sample share/openhab2/etc/branding-ssh.properties /var/db/openhab2/userdata/etc/branding-ssh.properties
-@sample share/openhab2/etc/branding.properties /var/db/openhab2/userdata/etc/branding.properties
-@sample share/openhab2/etc/com.eclipsesource.jaxrs.connector.cfg /var/db/openhab2/userdata/etc/com.eclipsesource.jaxrs.connector.cfg
-@sample share/openhab2/etc/com.eclipsesource.jaxrs.swagger.config.cfg /var/db/openhab2/userdata/etc/com.eclipsesource.jaxrs.swagger.config.cfg
-@sample share/openhab2/etc/config.properties /var/db/openhab2/userdata/etc/config.properties
-@sample share/openhab2/etc/custom.properties /var/db/openhab2/userdata/etc/custom.properties
-@sample share/openhab2/etc/custom.system.properties /var/db/openhab2/userdata/etc/custom.system.properties
-@sample share/openhab2/etc/distribution.info /var/db/openhab2/userdata/etc/distribution.info
-@sample share/openhab2/etc/equinox-debug.properties /var/db/openhab2/userdata/etc/equinox-debug.properties
-@sample share/openhab2/etc/java.util.logging.properties /var/db/openhab2/userdata/etc/java.util.logging.properties
-@sample share/openhab2/etc/jmx.acl.org.apache.karaf.bundle.cfg /var/db/openhab2/userdata/etc/jmx.acl.org.apache.karaf.bundle.cfg
-@sample share/openhab2/etc/jmx.acl.org.apache.karaf.config.cfg /var/db/openhab2/userdata/etc/jmx.acl.org.apache.karaf.config.cfg
-@sample share/openhab2/etc/jre.properties /var/db/openhab2/userdata/etc/jre.properties
-@sample share/openhab2/etc/keys.properties /var/db/openhab2/userdata/etc/keys.properties
-@sample share/openhab2/etc/keystore /var/db/openhab2/userdata/etc/keystore
-@sample share/openhab2/etc/org.apache.felix.eventadmin.impl.EventAdmin.cfg /var/db/openhab2/userdata/etc/org.apache.felix.eventadmin.impl.EventAdmin.cfg
-@sample share/openhab2/etc/org.apache.felix.fileinstall-deploy.cfg /var/db/openhab2/userdata/etc/org.apache.felix.fileinstall-deploy.cfg
-@sample share/openhab2/etc/org.apache.karaf.command.acl.bundle.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.command.acl.bundle.cfg
-@sample share/openhab2/etc/org.apache.karaf.command.acl.config.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.command.acl.config.cfg
-@sample share/openhab2/etc/org.apache.karaf.command.acl.feature.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.command.acl.feature.cfg
-@sample share/openhab2/etc/org.apache.karaf.command.acl.jaas.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.command.acl.jaas.cfg
-@sample share/openhab2/etc/org.apache.karaf.command.acl.kar.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.command.acl.kar.cfg
-@sample share/openhab2/etc/org.apache.karaf.command.acl.scope_bundle.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.command.acl.scope_bundle.cfg
-@sample share/openhab2/etc/org.apache.karaf.command.acl.shell.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.command.acl.shell.cfg
-@sample share/openhab2/etc/org.apache.karaf.command.acl.system.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.command.acl.system.cfg
-@sample share/openhab2/etc/org.apache.karaf.features.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.features.cfg
-@sample share/openhab2/etc/org.apache.karaf.features.repos.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.features.repos.cfg
-@sample share/openhab2/etc/org.apache.karaf.jaas.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.jaas.cfg
-@sample share/openhab2/etc/org.apache.karaf.kar.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.kar.cfg
-@sample share/openhab2/etc/org.apache.karaf.log.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.log.cfg
-@sample share/openhab2/etc/org.apache.karaf.shell.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.shell.cfg
-@sample share/openhab2/etc/org.eclipse.smarthome.audio.cfg /var/db/openhab2/userdata/etc/org.eclipse.smarthome.audio.cfg
-@sample share/openhab2/etc/org.eclipse.smarthome.voice.cfg /var/db/openhab2/userdata/etc/org.eclipse.smarthome.voice.cfg
-@sample share/openhab2/etc/org.jupnp.cfg /var/db/openhab2/userdata/etc/org.jupnp.cfg
-@sample share/openhab2/etc/org.ops4j.pax.logging.cfg /var/db/openhab2/userdata/etc/org.ops4j.pax.logging.cfg
-@sample share/openhab2/etc/org.ops4j.pax.url.mvn.cfg /var/db/openhab2/userdata/etc/org.ops4j.pax.url.mvn.cfg
-@sample share/openhab2/etc/org.ops4j.pax.web.cfg /var/db/openhab2/userdata/etc/org.ops4j.pax.web.cfg
-@sample share/openhab2/etc/overrides.properties /var/db/openhab2/userdata/etc/overrides.properties
-@sample share/openhab2/etc/profile.cfg /var/db/openhab2/userdata/etc/profile.cfg
-@sample share/openhab2/etc/scripts/shell.completion.script /var/db/openhab2/userdata/etc/scripts/shell.completion.script
-@sample share/openhab2/etc/shell.init.script /var/db/openhab2/userdata/etc/shell.init.script
-@sample share/openhab2/etc/startup.properties /var/db/openhab2/userdata/etc/startup.properties
-@sample share/openhab2/etc/system.properties /var/db/openhab2/userdata/etc/system.properties
-@sample share/openhab2/etc/users.properties /var/db/openhab2/userdata/etc/users.properties
-@sample share/openhab2/etc/version.properties /var/db/openhab2/userdata/etc/version.properties
-@sample share/openhab2/tmp/README /var/db/openhab2/userdata/etc/README
+@sample %%DATADIR%%/etc/all.policy /var/db/openhab2/userdata/etc/all.policy
+@sample %%DATADIR%%/etc/branding-ssh.properties /var/db/openhab2/userdata/etc/branding-ssh.properties
+@sample %%DATADIR%%/etc/branding.properties /var/db/openhab2/userdata/etc/branding.properties
+@sample %%DATADIR%%/etc/com.eclipsesource.jaxrs.connector.cfg /var/db/openhab2/userdata/etc/com.eclipsesource.jaxrs.connector.cfg
+@sample %%DATADIR%%/etc/com.eclipsesource.jaxrs.swagger.config.cfg /var/db/openhab2/userdata/etc/com.eclipsesource.jaxrs.swagger.config.cfg
+@sample %%DATADIR%%/etc/config.properties /var/db/openhab2/userdata/etc/config.properties
+@sample %%DATADIR%%/etc/custom.properties /var/db/openhab2/userdata/etc/custom.properties
+@sample %%DATADIR%%/etc/custom.system.properties /var/db/openhab2/userdata/etc/custom.system.properties
+@sample %%DATADIR%%/etc/distribution.info /var/db/openhab2/userdata/etc/distribution.info
+@sample %%DATADIR%%/etc/equinox-debug.properties /var/db/openhab2/userdata/etc/equinox-debug.properties
+@sample %%DATADIR%%/etc/java.util.logging.properties /var/db/openhab2/userdata/etc/java.util.logging.properties
+@sample %%DATADIR%%/etc/jmx.acl.org.apache.karaf.bundle.cfg /var/db/openhab2/userdata/etc/jmx.acl.org.apache.karaf.bundle.cfg
+@sample %%DATADIR%%/etc/jmx.acl.org.apache.karaf.config.cfg /var/db/openhab2/userdata/etc/jmx.acl.org.apache.karaf.config.cfg
+@sample %%DATADIR%%/etc/jre.properties /var/db/openhab2/userdata/etc/jre.properties
+@sample %%DATADIR%%/etc/keys.properties /var/db/openhab2/userdata/etc/keys.properties
+@sample %%DATADIR%%/etc/keystore /var/db/openhab2/userdata/etc/keystore
+@sample %%DATADIR%%/etc/org.apache.felix.eventadmin.impl.EventAdmin.cfg /var/db/openhab2/userdata/etc/org.apache.felix.eventadmin.impl.EventAdmin.cfg
+@sample %%DATADIR%%/etc/org.apache.felix.fileinstall-deploy.cfg /var/db/openhab2/userdata/etc/org.apache.felix.fileinstall-deploy.cfg
+@sample %%DATADIR%%/etc/org.apache.karaf.command.acl.bundle.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.command.acl.bundle.cfg
+@sample %%DATADIR%%/etc/org.apache.karaf.command.acl.config.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.command.acl.config.cfg
+@sample %%DATADIR%%/etc/org.apache.karaf.command.acl.feature.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.command.acl.feature.cfg
+@sample %%DATADIR%%/etc/org.apache.karaf.command.acl.jaas.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.command.acl.jaas.cfg
+@sample %%DATADIR%%/etc/org.apache.karaf.command.acl.kar.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.command.acl.kar.cfg
+@sample %%DATADIR%%/etc/org.apache.karaf.command.acl.scope_bundle.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.command.acl.scope_bundle.cfg
+@sample %%DATADIR%%/etc/org.apache.karaf.command.acl.shell.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.command.acl.shell.cfg
+@sample %%DATADIR%%/etc/org.apache.karaf.command.acl.system.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.command.acl.system.cfg
+@sample %%DATADIR%%/etc/org.apache.karaf.features.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.features.cfg
+@sample %%DATADIR%%/etc/org.apache.karaf.features.repos.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.features.repos.cfg
+@sample %%DATADIR%%/etc/org.apache.karaf.jaas.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.jaas.cfg
+@sample %%DATADIR%%/etc/org.apache.karaf.kar.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.kar.cfg
+@sample %%DATADIR%%/etc/org.apache.karaf.log.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.log.cfg
+@sample %%DATADIR%%/etc/org.apache.karaf.shell.cfg /var/db/openhab2/userdata/etc/org.apache.karaf.shell.cfg
+@sample %%DATADIR%%/etc/org.eclipse.smarthome.audio.cfg /var/db/openhab2/userdata/etc/org.eclipse.smarthome.audio.cfg
+@sample %%DATADIR%%/etc/org.eclipse.smarthome.voice.cfg /var/db/openhab2/userdata/etc/org.eclipse.smarthome.voice.cfg
+@sample %%DATADIR%%/etc/org.jupnp.cfg /var/db/openhab2/userdata/etc/org.jupnp.cfg
+@sample %%DATADIR%%/etc/org.ops4j.pax.logging.cfg /var/db/openhab2/userdata/etc/org.ops4j.pax.logging.cfg
+@sample %%DATADIR%%/etc/org.ops4j.pax.url.mvn.cfg /var/db/openhab2/userdata/etc/org.ops4j.pax.url.mvn.cfg
+@sample %%DATADIR%%/etc/org.ops4j.pax.web.cfg /var/db/openhab2/userdata/etc/org.ops4j.pax.web.cfg
+@sample %%DATADIR%%/etc/overrides.properties /var/db/openhab2/userdata/etc/overrides.properties
+@sample %%DATADIR%%/etc/profile.cfg /var/db/openhab2/userdata/etc/profile.cfg
+@sample %%DATADIR%%/etc/scripts/shell.colors.script /var/db/openhab2/userdata/etc/scripts/shell.colors.script
+@sample %%DATADIR%%/etc/scripts/shell.completion.script /var/db/openhab2/userdata/etc/scripts/shell.completion.script
+@sample %%DATADIR%%/etc/shell.init.script /var/db/openhab2/userdata/etc/shell.init.script
+@sample %%DATADIR%%/etc/startup.properties /var/db/openhab2/userdata/etc/startup.properties
+@sample %%DATADIR%%/etc/system.properties /var/db/openhab2/userdata/etc/system.properties
+@sample %%DATADIR%%/etc/users.properties /var/db/openhab2/userdata/etc/users.properties
+@sample %%DATADIR%%/etc/version.properties /var/db/openhab2/userdata/etc/version.properties
+@sample %%DATADIR%%/tmp/README /var/db/openhab2/userdata/tmp/README
 @dir %%ETCDIR%%
 @dir %%ETCDIR%%/html
 @dir %%ETCDIR%%/icons

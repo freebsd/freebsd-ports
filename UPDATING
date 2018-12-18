@@ -5,6 +5,45 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20181218:
+  AFFECTS: users of misc/openhab2
+  AUTHOR: netchild@FreeBSD.org
+
+  If you upgrade from a previous version, make a backup of
+       /var/db/openhab2
+  and run
+       %%PREFIX%%/libexec/openhab2/runtime/bin/update.freebsd
+
+  Config specific info (changes from 2.3.0 to 2.4.0):
+  Astro Binding: The 'kilometer' and 'miles' channels have been replaced
+                 by a new 'distance' channel
+  Jeelink Binding: The 'currentWatt' and 'maxWatt' channels have been
+                   replaced with 'currentPower' and 'maxPower' channels
+  WeatherUnderground Binding: A bridge has been added on top of the
+                              current things, you need to add a bridge
+                              containing your api-key.
+  ZWave Binding: Major changes have been merged to support features
+                 such as security. All things must be deleted and
+                 re-added. Refer to
+                 https://community.openhab.org/t/zwave-binding-updates/51080
+                 for further information.
+  Synop Binding is now using UoM. 'wind-speed-ms' and 'wind-speed-knots'
+                channels have been replaced by a single 'wind-speed'
+                channel.
+  Amazonechocontrol Binding: The account thing does not have settings
+                             anymore. You have to login at amazon
+                             once again through the proxy server
+                             http(s)://<YourOpenHAB>/amazonechocontrol
+  Milight Binding: The various available bulb types do not appear in
+                   the Paper UI Inbox anymore. The correct bulb need
+                   to be added manually. The bulb "zone" is now a
+                   configuration. Bulb Things need to be recreated
+                   to apply this change.
+  Hue emulation: The item to hue ID mapping is no longer stored in
+                 files, but in the openHAB storage service. You need
+                 to rediscover "devices" in all services that use the
+                 hue emulation (Amazon Echo, Google Home, etc).
+
 20181215:
   AFFECTS: users of sysutils/graylog
   AUTHOR: dch@FreeBSD.org
@@ -81,7 +120,7 @@ you update your ports collection, before attempting any port upgrades.
   and run
        %%PREFIX%%/libexec/openhab2/runtime/bin/update.freebsd
 
-  Config specific info:
+  Config specific info (changes from 2.2.0 to 2.3.0):
   Nest Binding: The 'camera' Thing Type now has channel groups.
                 Add 'camera#' before the channel ID in the channel UID of
                 existing camera channels. The 'time_to_target_mins' channel
