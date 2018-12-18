@@ -8,14 +8,16 @@ bin/svclone
 %%RUNITDIR%%/core-services/11-kld.sh
 %%RUNITDIR%%/core-services/11-set-defaults.sh
 @sample %%RUNITDIR%%/core-services/12-console.sh.sample
-%%RUNITDIR%%/core-services/21-swap.sh
 @sample %%RUNITDIR%%/core-services/30-geli.sh.sample
-%%RUNITDIR%%/core-services/31-enable-dumpdev.sh
 %%RUNITDIR%%/core-services/31-fsck.sh
 %%RUNITDIR%%/core-services/31-mount.sh
 %%RUNITDIR%%/core-services/31-zfs-mount.sh
+%%RUNITDIR%%/core-services/33-init-var.sh
 %%RUNITDIR%%/core-services/33-microcode_update.sh
-%%RUNITDIR%%/core-services/33-var.sh
+%%RUNITDIR%%/core-services/33-savecore.sh
+%%RUNITDIR%%/core-services/33-set-dumpdev.sh
+%%RUNITDIR%%/core-services/33-swap.sh
+%%RUNITDIR%%/core-services/41-devfs-rules.sh
 %%RUNITDIR%%/core-services/41-entropy.sh
 %%RUNITDIR%%/core-services/41-hostid.sh
 %%RUNITDIR%%/core-services/41-hostname.sh
@@ -27,9 +29,12 @@ bin/svclone
 @sample %%RUNITDIR%%/core-services/44-bhyve-network.sh.sample
 @sample %%RUNITDIR%%/core-services/44-jail-network.sh.sample
 %%RUNITDIR%%/core-services/51-pf.sh
-%%RUNITDIR%%/core-services/99-cleanup.sh
-%%RUNITDIR%%/core-services/99-mount-late.sh
-%%RUNITDIR%%/core-services/99-qemu_user_static.sh
+%%RUNITDIR%%/core-services/91-cleanup.sh
+@sample %%RUNITDIR%%/core-services/92-nfs.sh.sample
+%%RUNITDIR%%/core-services/93-ctld.sh
+%%RUNITDIR%%/core-services/95-mount-late.sh
+%%RUNITDIR%%/core-services/99-binmisc.sh
+%%RUNITDIR%%/core-services/99-start-jails.sh
 %%RUNITDIR%%/ctrlaltdel
 %%RUNITDIR%%/functions
 %%RUNITDIR%%/jail
@@ -37,6 +42,7 @@ bin/svclone
 @dir %%RUNITDIR%%/runsvdir
 @dir %%RUNITDIR%%/runsvdir/default
 %%RUNITDIR%%/stopit
+man/man7/runit-faster.7.gz
 man/man8/chpst.8.gz
 man/man8/runit-init.8.gz
 man/man8/runit.8.gz

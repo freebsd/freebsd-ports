@@ -4,7 +4,7 @@
 PORTNAME=	runit
 DISTVERSION=	${RUNITVERSION}-${CONFVERSION}
 RUNITVERSION=	2.1.2
-CONFVERSION=	0.1.26
+CONFVERSION=	0.1.31
 CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/runit/ \
 		http://www.bayofrum.net/dist/runit/ \
