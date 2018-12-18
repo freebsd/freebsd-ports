@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 PORTSCOUT=	limit:^.*[1-9]\. # prevent words like 'broken'
 
-USES=		fortran gmake perl5
+USES=		compiler:c++11-lang fortran gmake gnome perl5
 USE_GITHUB=	yes
 GH_ACCOUNT=	QWalk
 GH_PROJECT=	mainline
