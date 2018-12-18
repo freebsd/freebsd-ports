@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rapi
-DISTVERSION=	0.1.3
+DISTVERSION=	0.1.5
 CATEGORIES=	math
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,5 +17,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}multipledispatch>0:devel/py-multipledispatch
 USES=		python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
+
+post-extract: # https://github.com/randy3k/rchitect/issues/5
+	@${RM} -r ${WRKSRC}/tests
 
 .include <bsd.port.mk>
