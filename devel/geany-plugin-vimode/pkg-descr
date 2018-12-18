@@ -1,0 +1,16 @@
+Vimode is a Vim-mode plugin for Geany written by a guy who does not
+use Vim.
+
+Despite the limited Vim knowledge of the author, the plugin tries
+to be a reasonably complete Vim mode implementation featuring:
+
+ - normal mode, insert/replace mode, visual mode, line visual mode
+ - repeated commands (e.g. 10dd - delete 10 lines)
+ - "motion" commands (e.g. d10l - delete 10 characters to the right)
+ - "text object" commands (e.g. di( - delete inner contents of parentheses)
+ - visual mode commands (e.g. ~ to swap case of the selected text)
+ - basic ex mode commands like :s, including range specifications
+ - most basic navigation, selection and text manipulation commands
+ - command repetition using "." and repeated insert
+
+WWW: https://plugins.geany.org/vimode.html

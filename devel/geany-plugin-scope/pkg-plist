@@ -33,3 +33,4 @@ share/geany-plugins/scope/StepOver.png
 share/geany-plugins/scope/StepOver22.png
 share/geany-plugins/scope/StepOver24.png
 share/geany-plugins/scope/scope.glade
+share/geany-plugins/scope/scope_gtk3.glade

@@ -1,11 +1,10 @@
 # $FreeBSD$
 
-GEANY_VER=		1.33
+GEANY_VER=		1.34
 GEANY_PLUGINS_GTK2=	debugger \
 			devhelp \
 			geanypy \
-			multiterm \
-			scope
+			multiterm
 
 GEANY_PLUGINS_ALL=	addons \
 			autoclose \
@@ -35,6 +34,7 @@ GEANY_PLUGINS_ALL=	addons \
 			pretty-printer \
 			projectorganizer \
 			prj \
+			scope \
 			sendmail \
 			shiftcolumn \
 			spellcheck \
@@ -42,6 +42,7 @@ GEANY_PLUGINS_ALL=	addons \
 			treebrowser \
 			updatechecker \
 			vc \
+			vimode \
 			webhelper \
 			workbench \
 			xmlsnippets
@@ -87,6 +88,7 @@ treebrowser_DESC=	alternate file browser
 updatechecker_DESC=	check for new version of Geany
 utilslib_DESC=		utility library
 vc_DESC=		access to different version-control systems
+vimode_DESC=		vim-mode plugin for Geany written by a guy who does not use Vim
 webhelper_DESC=		web development facilities
 workbench_DESC=		manage multiple projects in geany
 xmlsnippets_DESC=	XML/HTML tag autocompletion
@@ -110,4 +112,4 @@ vc_DIR=			geanyvc
 git-changebar_SWITCH=	--enable-gitchangebar
 pretty-printer_SWITCH=	--enable-pretty_printer
 
-GEANY_UTIL=		workbench
+GEANY_UTIL=		scope workbench
