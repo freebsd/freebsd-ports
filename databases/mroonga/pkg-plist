@@ -47,6 +47,7 @@ man/man1/mroonga.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/en/html/install.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/install/centos.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/install/debian.html
+%%PORTDOCS%%%%DOCSDIR%%/en/html/install/docker.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/install/fedora.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/install/macos.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/install/others.html
@@ -129,6 +130,7 @@ man/man1/mroonga.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/install.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/install/centos.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/install/debian.html
+%%PORTDOCS%%%%DOCSDIR%%/ja/html/install/docker.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/install/fedora.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/install/macos.html
 %%PORTDOCS%%%%DOCSDIR%%/ja/html/install/others.html
@@ -191,6 +193,7 @@ man/man1/mroonga.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/source/install/32bit-note.inc
 %%PORTDOCS%%%%DOCSDIR%%/source/install/centos.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/install/debian.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/install/docker.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/install/fedora.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/install/macos.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/install/others.rst
