@@ -12,7 +12,7 @@ COMMENT=	Read an image with Resseract OCR and get output
 
 LICENSE=	GPLv3
 
-MYDEPENDS=	tesseract>0:graphics/tesseract \
+MY_DEPENDS=	tesseract>0:graphics/tesseract \
 		ImageMagick6-nox11>0:graphics/ImageMagick6-nox11
 BUILD_DEPENDS=	${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS}
