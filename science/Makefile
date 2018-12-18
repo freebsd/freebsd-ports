@@ -205,6 +205,7 @@
     SUBDIR += psychopy
     SUBDIR += pulseview
     SUBDIR += py-DendroPy
+    SUBDIR += py-GPy
     SUBDIR += py-PyFR
     SUBDIR += py-lifelines
     SUBDIR += py-MDAnalysis
