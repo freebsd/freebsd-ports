@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	tautulli
-PORTVERSION=	2.1.22
+PORTVERSION=	2.1.26
 DISTVERSIONPREFIX=v
 CATEGORIES=	multimedia python
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	christer.edwards@gmail.com
 COMMENT=	Monitoring, analytics, and notifications for Plex Media Server
 
 LICENSE=	GPLv3
