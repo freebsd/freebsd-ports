@@ -26,4 +26,10 @@ USES=		perl5 ssl
 USE_PERL5=	configure
 MAKE_ARGS+=	PASTHRU_INC=-I${OPENSSLINC}
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085 && ${SSL_DEFAULT} == base
+BROKEN=        Does not support OpenSSL 1.1
+.endif
+
 .include <bsd.port.mk>
