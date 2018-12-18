@@ -25,7 +25,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libtoxcore.so:net-im/tox \
 		libvpx.so:multimedia/libvpx
 
-USES=		cmake compiler:c++11-lib desktop-file-utils gettext openal:soft pkgconfig qt:5
+USES=		cmake compiler:c++11-lib desktop-file-utils gettext gnome openal:soft pkgconfig qt:5
 USE_GITHUB=	yes
 USE_GNOME=	gtk20 gdkpixbuf2 cairo
 USE_QT=		core gui network xml opengl sql sql-sqlite3_run widgets svg \
