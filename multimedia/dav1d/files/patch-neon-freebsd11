@@ -1,0 +1,42 @@
+- Implement NEON runtime detection on FreeBSD 11.* armv6
+
+--- src/arm/cpu.c.orig	2018-12-11 14:14:56 UTC
++++ src/arm/cpu.c
+@@ -68,7 +68,37 @@ static unsigned parse_proc_cpuinfo(const char *flag) {
+ }
+ #endif
+ 
++#if defined(__FreeBSD__) && __FreeBSD__ < 12
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#include <elf.h>
++#include <errno.h>
++#include <unistd.h>
++
++#define HAVE_GETAUXVAL
++#define NEON_HWCAP HWCAP_NEON
++static unsigned long getauxval(unsigned long type) {
++  Elf_Auxinfo auxv[AT_COUNT];
++  size_t len = sizeof(auxv);
++  int mib[] = {
++    CTL_KERN,
++    KERN_PROC,
++    KERN_PROC_AUXV,
++    getpid(),
++  };
++
++  if (sysctl(mib, nitems(mib), auxv, &len, NULL, 0) != -1) {
++    for (size_t i = 0; i < nitems(auxv); i++)
++      if ((unsigned long)auxv[i].a_type == type)
++        return auxv[i].a_un.a_val;
++
++    errno = ENOENT;
++  }
++  return 0;
++}
++#endif
++
+ unsigned dav1d_get_cpu_flags_arm(void) {
+     unsigned flags = 0;
+ #if ARCH_AARCH64
+     flags |= DAV1D_ARM_CPU_FLAG_NEON;
