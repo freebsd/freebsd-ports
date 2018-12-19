@@ -1,0 +1,10 @@
+--- CMakeLists.txt.orig	2018-12-19 05:45:58 UTC
++++ CMakeLists.txt
+@@ -80,4 +80,6 @@ include(eigen)
+ include(libtaylor)
+ include(zlib)
+ include(autocmake_src)
+-include(test)
++if (BUILD_TESTING)
++  include(test)
++endif()
