@@ -273,7 +273,7 @@ gst_gdk_pixbuf_PLIST_FILES=	${GST_LIB_DIR}/libgstgdkpixbuf.so
 # gl
 gst_gl_USES=	gl
 gst_gl_USE_GL=	gl glu glesv2 egl
-gst_gl_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:multimedia/v4l_compat
+gst_gl_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 gst_gl_LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene
 gst_gl_CONFIGURE_ARGS=	--enable-gl --enable-glx \
 			--enable-egl --enable-gles2

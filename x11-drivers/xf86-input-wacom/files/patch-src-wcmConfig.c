@@ -1,6 +1,6 @@
---- src/wcmConfig.c~
+--- src/wcmConfig.c.orig	2018-02-12 16:43:12 UTC
 +++ src/wcmConfig.c
-@@ -307,7 +307,7 @@ out:
+@@ -311,7 +311,7 @@ out:
   */
  static void wcmSplitName(char* devicename, char *basename, char *subdevice, char *tool, size_t len)
  {
@@ -9,7 +9,7 @@
  	char *a, *b;
  
  	*basename = *subdevice = *tool = '\0';
-@@ -325,6 +325,7 @@ static void wcmSplitName(char* devicenam
+@@ -338,6 +338,7 @@ static void wcmSplitName(char* devicename, char *basen
  		strncat(tool, a+1, len-1);
  	}
  	strncat(basename, name, len-1);

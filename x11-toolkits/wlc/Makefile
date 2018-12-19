@@ -2,7 +2,7 @@
 
 PORTNAME=	wlc
 PORTVERSION=	0.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits wayland
 
 MAINTAINER=	x11@FreeBSD.org
@@ -14,7 +14,8 @@ EXPIRATION_DATE=	2018-12-31
 LICENSE=	MIT
 LICENSE_FILES=	${WRKSRC}/LISENSE
 
-BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols
+BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols \
+		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
 		libxcb-ewmh.so:x11/xcb-util-wm \
 		libwayland-server.so:graphics/wayland \
