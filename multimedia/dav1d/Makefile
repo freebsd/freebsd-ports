@@ -4,6 +4,10 @@ PORTNAME=	dav1d
 DISTVERSION=	0.1.0
 CATEGORIES=	multimedia
 
+PATCH_SITES=	${GL_SITE}/jbeich/${GL_PROJECT}/commit/
+PATCHFILES+=	d3a03bd9939d.patch:-p1
+PATCHFILES+=	7f01c6166519.patch:-p1
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Small and fast AV1 decoder
 
