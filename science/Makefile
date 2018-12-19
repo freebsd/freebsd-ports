@@ -95,6 +95,7 @@
     SUBDIR += gtamsanalyzer
     SUBDIR += gwyddion
     SUBDIR += h5utils
+    SUBDIR += h5z-zfp
     SUBDIR += harminv
     SUBDIR += hdf
     SUBDIR += hdf5
