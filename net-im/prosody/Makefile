@@ -20,8 +20,7 @@ RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:net/luasocket-51 \
 		${LUA_MODLIBDIR}/bit.so:devel/lua51-bitop
 LIB_DEPENDS=	libidn.so:dns/libidn
 
-USES=		cpe gmake lua:51 shebangfix ssl
-USE_CSTD=	c99
+USES=		compiler:c11 cpe gmake lua:51 shebangfix ssl
 SHEBANG_FILES=	prosody prosodyctl
 LUA_PREMK=	yes
 HAS_CONFIGURE=	yes
