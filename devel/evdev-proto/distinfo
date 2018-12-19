@@ -1,7 +1,7 @@
-TIMESTAMP = 1544273147
-SHA256 (input.h) = 6daff6404fe93484d1c53f8f8bd49d3ae2094f3c1b41871e05a9ba5c8eecc420
-SIZE (input.h) = 15929
-SHA256 (input-event-codes.h) = a736ca688b6d5fd5d0f52d77b620387dd1f0d360ebba53106ca7be96a8231249
-SIZE (input-event-codes.h) = 24313
-SHA256 (uinput.h) = 9123b078f13047c34797332c4f835e5f1e418387e9a950024920faa5a1186974
-SIZE (uinput.h) = 9276
+TIMESTAMP = 1545220953
+SHA256 (evdev-proto-4.19/input.h) = 6daff6404fe93484d1c53f8f8bd49d3ae2094f3c1b41871e05a9ba5c8eecc420
+SIZE (evdev-proto-4.19/input.h) = 15929
+SHA256 (evdev-proto-4.19/input-event-codes.h) = a736ca688b6d5fd5d0f52d77b620387dd1f0d360ebba53106ca7be96a8231249
+SIZE (evdev-proto-4.19/input-event-codes.h) = 24313
+SHA256 (evdev-proto-4.19/uinput.h) = 9123b078f13047c34797332c4f835e5f1e418387e9a950024920faa5a1186974
+SIZE (evdev-proto-4.19/uinput.h) = 9276

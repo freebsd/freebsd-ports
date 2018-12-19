@@ -4,8 +4,8 @@ PORTNAME=	evdev-proto
 PORTVERSION=	4.19
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/torvalds/linux/raw/v${PORTVERSION}/include/uapi/linux/
-DISTNAME=	input.h input-event-codes.h uinput.h
-EXTRACT_SUFX=	# empty
+DISTFILES=	input.h input-event-codes.h uinput.h
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Input event device header files
@@ -14,14 +14,14 @@ LICENSE=	GPLv2
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	${DISTNAME:S|^|include/linux/|}
+PLIST_FILES=	${DISTFILES:S|^|include/linux/|}
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-.for i in ${DISTNAME}
-	@${CP} ${DISTDIR}/${i} ${WRKSRC}
+.for i in ${DISTFILES}
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${i} ${WRKSRC}
 .endfor
 
 post-patch:
@@ -50,7 +50,7 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/linux/
-.for i in ${DISTNAME}
+.for i in ${DISTFILES}
 	${INSTALL_DATA} ${WRKSRC}/${i} \
 		${STAGEDIR}${PREFIX}/include/linux/
 .endfor
