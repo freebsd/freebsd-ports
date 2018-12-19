@@ -2,5 +2,3 @@ This module give direct access to the internal perl routines that let
 you store reference to things in arrays and hashes.
 
 WWW: https://metacpan.org/release/Array-RefElem
-
-Seamus Venasse <svenasse@polaris.ca>
