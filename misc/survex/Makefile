@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libproj.so:graphics/proj
 
-USES=		desktop-file-utils gl gmake gnome pkgconfig shared-mime-info
+USES=		compiler:c++11-lang desktop-file-utils gl gmake gnome pkgconfig shared-mime-info
 GNU_CONFIGURE=	yes
 USE_WX=		3.0
 USE_XORG=	xxf86vm
