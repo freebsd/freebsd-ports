@@ -15,8 +15,6 @@ COMMENT=	Scheme interpreter
 
 LICENSE=	LGPL21
 
-BROKEN=		fails to stage
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		readline zip
@@ -52,7 +50,7 @@ SCM_MODULES=	byte.so bytenumb.so crs.so differ.so edline.so gsubr.so \
 		socket.so unix.so
 SCM_MODULES_X11=x.so
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MX11}
 SCM_MODULES+=	${SCM_MODULES_X11}
@@ -64,12 +62,21 @@ EXTRA_PATCHES+=	${FILESDIR}/ia64-patch
 ARCHOBJS=	continue-ia64.S
 .endif
 
+.if "${readline_ARGS}" == "port"
+LIBEDIT_SUB1=	${CPPFLAGS}" "${LDFLAGS:M-L*}
+LIBEDIT_SUB2=	${LDFLAGS:M-L*}
+.else
+LIBEDIT_SUB1=	-I/usr/include/edit" "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include| ; \
 		 /strip/s|^|#|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ; \
 		 s|%%CFLAGS%%|${CFLAGS}|g ; \
 		 s|%%ARCHOBJS%%|${ARCHOBJS}|g ; \
+		 s|editline freebsd "" "|editline freebsd "${LIBEDIT_SUB1}| ; \
+		 s|-lreadline")$$|${LIBEDIT_SUB2} -lreadline")| ; \
 		 s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/build.scm
 	@${REINPLACE_CMD} -e 's|__osf__|__FreeBSD__|' ${WRKSRC}/gmalloc.c
 	@${REINPLACE_CMD} -e 's|gnuregex\.h|gnu/regex.h|g' ${WRKSRC}/rgx.c
@@ -77,6 +84,7 @@ post-patch:
 		${WRKSRC}/xgen.scm
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g'	\
 		${WRKSRC}/*.info ${WRKSRC}/*.texi
+	${TOUCH} ${WRKSRC}/scm.core
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scm ${WRKSRC}/scmlit \
@@ -91,4 +99,4 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/slib/*.scm ${STAGEDIR}${PREFIX}/lib/scm/slib/
 	${INSTALL_DATA} ${WRKDIR}/scm/scm.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
