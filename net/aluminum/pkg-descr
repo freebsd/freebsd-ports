@@ -1,0 +1,6 @@
+Aluminum provides a generic interface to high-performance communication
+libraries, with a focus on allreduce algorithms. Blocking and non-blocking
+algorithms and GPU-aware algorithms are supported. Aluminum also contains
+custom implementations of select algorithms to optimize for certain situations.
+
+WWW: https://github.com/LLNL/Aluminum
