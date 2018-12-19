@@ -2,7 +2,7 @@
 
 PORTNAME=	sdl2
 PORTVERSION=	2.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
 DISTNAME=	SDL2-${PORTVERSION}
@@ -260,7 +260,7 @@ IGNORE=	option VIDEO_WAYLAND requires VIDEO_OPENGLES2
 CONFIGURE_ARGS+=	--enable-video-wayland \
 			--enable-wayland-shared
 BUILD_DEPENDS+=		wayland-protocols>0:graphics/wayland-protocols \
-			${LOCALBASE}/include/linux/input.h:multimedia/v4l_compat
+			${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS+=		libwayland-egl.so:graphics/wayland \
 			libxkbcommon.so:x11/libxkbcommon
 .else

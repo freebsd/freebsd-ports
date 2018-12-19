@@ -1,4 +1,4 @@
---- src/wcmISDV4.c~
+--- src/wcmISDV4.c.orig	2017-05-30 18:42:52 UTC
 +++ src/wcmISDV4.c
 @@ -24,14 +24,19 @@
  #include "xf86Wacom.h"
@@ -22,7 +22,7 @@
  #define RESET_RELATIVE(ds) do { (ds).relwheel = 0; } while (0)
  
  /* resolution in points/m */
-@@ -192,10 +197,15 @@ static int wcmSerialValidate(InputInfoPt
+@@ -195,10 +200,15 @@ static int wcmSerialValidate(InputInfoPtr pInfo, const
  
  static Bool isdv4Detect(InputInfoPtr pInfo)
  {
@@ -39,7 +39,7 @@
  	if (rc == -1)
  		return FALSE;
  
-@@ -959,6 +969,7 @@ static Bool get_keys_vendor_tablet_id(ch
+@@ -968,6 +978,7 @@ static Bool get_keys_vendor_tablet_id(char *name, Waco
  	return TRUE;
  }
  
@@ -47,7 +47,7 @@
  /**
   * Return the content of id file from sysfs:  /sys/.../device/id
   *
-@@ -1004,6 +1015,7 @@ out:
+@@ -1017,6 +1028,7 @@ out:
  
  	return ret;
  }
@@ -55,7 +55,7 @@
  
  /**
   * Query the device's fd for the key bits and the tablet ID. Returns the ID
-@@ -1018,11 +1030,16 @@ out:
+@@ -1031,11 +1043,16 @@ out:
   */
  static int isdv4ProbeKeys(InputInfoPtr pInfo)
  {
@@ -73,7 +73,7 @@
  		return 0;
  
  	common->tablet_id = 0x90;
-@@ -1037,9 +1054,11 @@ static int isdv4ProbeKeys(InputInfoPtr p
+@@ -1050,9 +1067,11 @@ static int isdv4ProbeKeys(InputInfoPtr pInfo)
  	common->wcmProtocolLevel = WCM_PROTOCOL_GENERIC;
  
  	if (!get_keys_vendor_tablet_id(pInfo->name, common)) {
