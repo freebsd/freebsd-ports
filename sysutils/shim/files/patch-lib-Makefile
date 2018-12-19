@@ -1,8 +1,11 @@
 --- lib/Makefile.orig	2015-06-30 18:20:12 UTC
 +++ lib/Makefile
-@@ -1,3 +1,7 @@
+@@ -1,3 +1,10 @@
 +ifeq ($(ARCH),amd64)
 +	override ARCH	= x86_64
++endif
++ifeq ($(ARCH),i386)
++	override ARCH   = ia32
 +endif
 +
  TARGET = lib.a

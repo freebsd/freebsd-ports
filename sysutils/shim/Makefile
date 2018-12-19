@@ -3,7 +3,7 @@
 
 PORTNAME=	shim
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libgnuefi.a:devel/gnu-efi \
 		bash:shells/bash
 
 USES=		compiler gmake shebangfix
-USE_CSTD=	gnu89
+USE_CSTD=	gnu99
 USE_GCC=	yes
 
 SHEBANG_FILES=	make-certs

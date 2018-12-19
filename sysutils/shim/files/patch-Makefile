@@ -7,13 +7,16 @@
  ifneq ($(RELEASE),"")
  	RELEASE="-$(RELEASE)"
  endif
-@@ -9,15 +9,20 @@ LD		= $(CROSS_COMPILE)ld
+@@ -9,15 +9,23 @@ LD		= $(CROSS_COMPILE)ld
  OBJCOPY		= $(CROSS_COMPILE)objcopy
  
  ARCH		= $(shell $(CC) -dumpmachine | cut -f1 -d- | sed s,i[3456789]86,ia32,)
 +
 +ifeq ($(ARCH),amd64)
 +	override ARCH := x86_64
++endif
++ifeq ($(ARCH),i386)
++	override ARCH := ia32
 +endif
 +
  OBJCOPY_GTE224  = $(shell expr `$(OBJCOPY) --version |grep ^"GNU objcopy" | sed 's/^.* //g' | cut -f1-2 -d.` \>= 2.24)
@@ -32,7 +35,7 @@
  
  LIB_GCC		= $(shell $(CC) -print-libgcc-file-name)
  EFI_LIBS	= -lefi -lgnuefi --start-group Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a --end-group $(LIB_GCC) 
-@@ -65,7 +70,7 @@ endif
+@@ -65,7 +73,7 @@ endif
  
  LDFLAGS		= --hash-style=sysv -nostdlib -znocombreloc -T $(EFI_LDS) -shared -Bsymbolic -L$(EFI_PATH) -L$(LIB_PATH) -LCryptlib -LCryptlib/OpenSSL $(EFI_CRT_OBJS) --build-id=sha1
  
@@ -41,7 +44,7 @@
  OBJS	= shim.o netboot.o cert.o replacements.o version.o
  KEYS	= shim_cert.h ocsp.* ca.* shim.crt shim.csr shim.p12 shim.pem shim.key shim.cer
  SOURCES	= shim.c shim.h netboot.c include/PeImage.h include/wincert.h include/console.h replacements.c replacements.h version.c version.h
-@@ -156,9 +161,6 @@ endif
+@@ -156,9 +164,6 @@ endif
  		-j .note.gnu.build-id \
  		$(FORMAT) $^ $@.debug
  
