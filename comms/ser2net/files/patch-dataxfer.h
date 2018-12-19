@@ -1,5 +1,5 @@
---- dataxfer.h.orig	2014-12-28 21:17:23.000000000 +0200
-+++ dataxfer.h	2014-12-28 21:17:53.000000000 +0200
+--- dataxfer.h.orig	2014-12-28 23:17:23 UTC
++++ dataxfer.h
 @@ -20,7 +20,7 @@
  #ifndef DATAXFER
  #define DATAXFER
