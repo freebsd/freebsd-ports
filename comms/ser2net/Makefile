@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	ser2net
-PORTVERSION=	3.5
+PORTVERSION=	3.5.1
 CATEGORIES=	comms net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Allows to access serial ports over IP
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		libtool
 USE_RC_SUBR=	${PORTNAME}
 
-USES=		libtool
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
