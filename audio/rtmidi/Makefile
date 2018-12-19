@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libjack.so:audio/jack
 
-USES=		autoreconf libtool localbase
+USES=		autoreconf compiler:c11 libtool localbase
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	thestk
