@@ -1,0 +1,10 @@
+H5Z-ZFP is a compression filter for HDF5 using the ZFP compression library,
+supporting lossy compression of floating point and integer data to meet bitrate,
+accuracy, and/or precision targets. The filter uses the registered HDF5 filter
+ID, 32013. It supports single and double precision floating point and integer
+data chunked in 1, 2 or 3 dimensions. The filter will function on datasets of
+more than 3 dimensions, albiet at the probable expense of compression
+performance, as long as the chunking is such that no more than 3 dimensions of a
+chunk are non-unity.
+
+WWW: https://h5z-zfp.readthedocs.io/en/latest/

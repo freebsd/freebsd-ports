@@ -1,0 +1,49 @@
+--- src/Makefile.orig	2018-04-06 16:34:55 UTC
++++ src/Makefile
+@@ -30,33 +30,33 @@ H5Zzfp_props_f.o H5Zzfp_props_f.mod: H5Z
+ 	$(FC) -c $< -o $@ $(FCFLAGS) -I$(H5Z_ZFP_BASE) -I$(ZFP_INC) -I$(HDF5_INC)
+ 
+ # The filter member of the filter library
+-libh5zzfp.a(H5Zzfp_lib.o): H5Zzfp_lib.o
+-	$(AR) cr libh5zzfp.a $<
++libh5zzfp-s.$(SOEXT)(H5Zzfp_lib.o): H5Zzfp_lib.o
++	$(CC) -shared -o libh5zzfp-s.$(SOEXT) $<
+ 
+ # The C properties interface member of the filter library
+-libh5zzfp.a(H5Zzfp_props.o): H5Zzfp_props.o
+-	$(AR) cr libh5zzfp.a $<
++libh5zzfp-s.$(SOEXT)(H5Zzfp_props.o): H5Zzfp_props.o
++	$(CC) -shared -o libh5zzfp-s.$(SOEXT) $<
+ 
+ # The Fortran properties interface member of the filter library
+-libh5zzfp.a(H5Zzfp_props_f.o): H5Zzfp_props_f.o
+-	$(AR) cr libh5zzfp.a $<
++libh5zzfp-s.$(SOEXT)(H5Zzfp_props_f.o): H5Zzfp_props_f.o
++	$(CC) -shared -o libh5zzfp-s.$(SOEXT) $<
+ 
+ # Alias target for filter library, conditionally includes Fortran
+-LIBOBJ = libh5zzfp.a(H5Zzfp_lib.o) libh5zzfp.a(H5Zzfp_props.o)
++LIBOBJ = libh5zzfp-s.$(SOEXT)(H5Zzfp_lib.o) libh5zzfp-s.$(SOEXT)(H5Zzfp_props.o)
+ ifneq ($(FC),)
+-LIBOBJ += libh5zzfp.a(H5Zzfp_props_f.o)
++LIBOBJ += libh5zzfp-s.$(SOEXT)(H5Zzfp_props_f.o)
+ endif
+ lib: $(LIBOBJ)
+ 
+ all: lib plugin
+ 
+ install: all
+-	$(INSTALL) -d $(PREFIX)/{plugin,include,lib}
+-	$(INSTALL) plugin/libh5zzfp.$(SOEXT) $(PREFIX)/plugin
+-	$(INSTALL) libh5zzfp.a $(PREFIX)/lib
+-	$(INSTALL) -m 644 H5Zzfp.h H5Zzfp_lib.h H5Zzfp_plugin.h H5Zzfp_props.h $(PREFIX)/include
++	$(INSTALL) -d $(DESTDIR)$(PREFIX)/{plugin,include,lib}
++	$(INSTALL) plugin/libh5zzfp.$(SOEXT) $(DESTDIR)$(PREFIX)/plugin
++	$(INSTALL) libh5zzfp-s.$(SOEXT) $(DESTDIR)$(PREFIX)/lib/libh5zzfp.so
++	$(INSTALL) -m 644 H5Zzfp.h H5Zzfp_lib.h H5Zzfp_plugin.h H5Zzfp_props.h $(DESTDIR)$(PREFIX)/include
+ ifneq ($(FC),)
+-	$(INSTALL) -m 644 *.[mM][oO][dD] $(PREFIX)/include
++	$(INSTALL) -m 644 *.[mM][oO][dD] $(DESTDIR)$(PREFIX)/include
+ endif
+ 
+ clean:
