@@ -13,6 +13,8 @@ COMMENT=	Base set of libraries needed by KDE programs
 DEPRECATED=	KDE4 is EOL upstream
 EXPIRATION_DATE=	2018-12-31
 
+BROKEN_FreeBSD_12=	incompatible with base SSL, wontfix before deprecation
+BROKEN_FreeBSD_13=	incompatible with base SSL, wontfix before deprecation
 BROKEN_SSL=	openssl111
 BROKEN_SSL_REASON_openssl111=	error: member access into incomplete type 'RSA' (aka 'rsa_st')
 
