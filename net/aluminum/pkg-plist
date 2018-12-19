@@ -1,0 +1,15 @@
+include/aluminum/Al.hpp
+include/aluminum/Al_config.hpp
+include/aluminum/base.hpp
+include/aluminum/internal.hpp
+include/aluminum/mempool.hpp
+include/aluminum/mpi_impl.hpp
+include/aluminum/progress.hpp
+include/aluminum/tuning_params.hpp
+lib/cmake/aluminum/AluminumConfig.cmake
+lib/cmake/aluminum/AluminumConfigVersion.cmake
+lib/cmake/aluminum/AluminumTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/aluminum/AluminumTargets.cmake
+lib/cmake/aluminum/FindHWLOC.cmake
+lib/cmake/aluminum/FindNCCL.cmake
+lib/libAl.so

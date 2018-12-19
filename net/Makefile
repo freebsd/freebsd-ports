@@ -18,6 +18,7 @@
     SUBDIR += akonadi-mime
     SUBDIR += akonadi-notes
     SUBDIR += akonadi-search
+    SUBDIR += aluminum
     SUBDIR += anet
     SUBDIR += aoe
     SUBDIR += apinger
