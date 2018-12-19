@@ -612,7 +612,7 @@
     SUBDIR += etcd33
     SUBDIR += etl
     SUBDIR += euca2ools
-    SUPDIR += evdev-proto
+    SUBDIR += evdev-proto
     SUBDIR += evemu
     SUBDIR += eventxx
     SUBDIR += evolution-gconf-tools
