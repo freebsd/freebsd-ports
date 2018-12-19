@@ -30,4 +30,7 @@ USE_GL=		gl glu
 
 CMAKE_ARGS=	-DRADIANCE_SYSTEM_RESOURCES:STRING=${DATADIR}/
 
+post-patch:
+	@${REINPLACE_CMD} '/-march=native/d' ${WRKSRC}/CMakeLists.txt
+
 .include <bsd.port.mk>
