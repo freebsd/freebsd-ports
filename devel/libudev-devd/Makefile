@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libudev-devd
-PORTVERSION=	0.3
-PORTREVISION=	2
+PORTVERSION=	0.4
 CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
@@ -14,7 +13,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
-GH_TAGNAME=	b7aa09f
+GH_TAGNAME=	fbe5a0b
 
 USES=		autoreconf gmake libtool localbase pathfix pkgconfig
 USE_LDCONFIG=	yes
