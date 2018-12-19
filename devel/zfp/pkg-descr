@@ -1,0 +1,6 @@
+zfp is a BSD licensed open source C/C++ library for compressed floating-point
+arrays that support very high throughput read and write random access. zfp was
+written by Peter Lindstrom, Markus Salasoo, and Matt Larsen at Lawrence
+Livermore National Laboratory.
+
+WWW: https://computation.llnl.gov/projects/floating-point-compression
