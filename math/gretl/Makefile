@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	gretl
-PORTVERSION=	1.9.13
-PORTREVISION=	15
+DISTVERSION=	2018c
 CATEGORIES=	math finance
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	GNU Regression, Econometrics, and Time-series Library
 
 LICENSE=	GPLv3
@@ -16,22 +15,27 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfftw3.so:math/fftw3 \
 		libgmp.so:math/gmp \
+		libjson-glib-1.0.so:devel/json-glib \
+		libmpi.so:net/mpich \
 		libmpfr.so:math/mpfr
 
+USES=		fortran gmake gnome localbase libtool ncurses pathfix pkgconfig \
+		readline tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		fortran gmake localbase libtool ncurses pathfix pkgconfig \
-		readline tar:bzip2
 
-ALL_TARGET=		# empty
-CONFIGURE_ARGS=	--enable-static --enable-shared --with-gmake \
-			--disable-xdg-utils
+BINARY_ALIAS=	make=${GMAKE}
+ALL_TARGET=	# empty
 CONFIGURE_ENV=	ac_cv_lib_dl_dlopen="" \
 		LAPACK_LIBS="${LAPACK} ${BLAS}"
 
-OPTIONS_DEFINE=	ATLAS GUI NLS ODBC OPENMP R UNZIP
-OPTIONS_DEFAULT=	GUI OPENMP UNZIP
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		ADDONS ATLAS GUI NLS ODBC OPENMP R UNZIP
+OPTIONS_DEFAULT=	ADDONS GUI OPENMP UNZIP
+OPTIONS_SUB=		yes
+
+ADDONS_DESC=		Build gretl addons
+ADDONS_CONFIGURE_ENABLE=	build-addons
+ADDONS_BUILD_DEPENDS=	pdflatex:print/tex-formats
 
 ATLAS_DESC=		Use ATLAS for BLAS and LAPACK
 ATLAS_LIB_DEPENDS=	libatlas.so:math/atlas
@@ -52,18 +56,18 @@ GUI_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 			libfontconfig.so:x11-fonts/fontconfig
 GUI_RUN_DEPENDS=	gnuplot:math/gnuplot
 
-NLS_CONFIGURE_ON=	--enable-nls=yes
-NLS_CONFIGURE_OFF=	--enable-nls=no
+NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
 ODBC_CONFIGURE_WITH=	odbc
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
-OPENMP_CONFIGURE_ON=	--enable-openmp
+OPENMP_CONFIGURE_ENABLE=	openmp
+OPENMP_LIB_DEPENDS=	libomp.so:devel/openmp
 
 R_DESC=			libR support
 R_CONFIGURE_WITH=	libR
-R_LIB_DEPENDS=          ${CRAN_DEPENDS}
+R_BROKEN=		Doesn't link to R libraries
 
 UNZIP_DESC=		UnZip compression support via libgsf
 UNZIP_CONFIGURE_WITH=	gsf
@@ -84,10 +88,11 @@ post-patch:
 		${WRKSRC}/cephes/iv.c
 
 regression-test test check: build
-	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
+	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 		${MAKE_ARGS} check
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gretl-gtk2/*.so
+	@${RMDIR} ${STAGEDIR}${DATADIR}/doc
 
 .include <bsd.port.mk>

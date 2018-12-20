@@ -1,6 +1,6 @@
---- Makefile.in.orig	2017-06-01 20:13:36 UTC
+--- Makefile.in.orig	2018-12-19 23:18:25 UTC
 +++ Makefile.in
-@@ -40,8 +40,9 @@ ifeq ($(use_xdg),yes)
+@@ -45,8 +45,9 @@ ifeq ($(use_xdg),yes)
    XDGDIR = xdg
  endif
  
