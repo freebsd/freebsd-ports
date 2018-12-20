@@ -68,5 +68,4 @@ man/man1/gitrgrep.1.gz
 man/man1/gitunpack.1.gz
 man/man1/gitview.1.gz
 man/man1/gitwipe.1.gz
-share/info/gnuit.info
 %%DOCSDIR%%/gnuit.html

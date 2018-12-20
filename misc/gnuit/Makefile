@@ -3,7 +3,7 @@
 
 PORTNAME=	gnuit
 PORTVERSION=	4.9.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
 MASTER_SITES=	GNU
 
@@ -16,6 +16,7 @@ LICENSE_COMB=	multi
 USES=		ncurses
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--disable-transition
+INFO=		gnuit
 
 post-install:
 	# Clean stage from orphans.
