@@ -19,7 +19,8 @@ CONFLICTS=	gimp-print-[0-9]*
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --enable-simplified-cups-ppds DLOPEN_LIBS=" "
 INSTALL_TARGET=	install-strip
-USES=		gettext gmake libtool pathfix perl5 pkgconfig tar:bzip2
+USES=		compiler:c11 gettext gmake libtool pathfix perl5 pkgconfig \
+		tar:bzip2
 
 .if !defined(GUT_SLAVE)
 LIB_DEPENDS+=	libcupsimage.so:print/cups
