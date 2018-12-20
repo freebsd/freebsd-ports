@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpxsee
-PORTVERSION=	6.3
+DISTVERSION=	7.0
 CATEGORIES=	graphics geography
 
 MAINTAINER=	sikmir@gmail.com
@@ -11,8 +11,8 @@ COMMENT=	GPS log file viewer and analyzer
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/licence.txt
 
-USES=		qmake:outsource desktop-file-utils qt:5 shared-mime-info
-USE_QT=		buildtools_build core gui network opengl printsupport \
+USES=		gl qmake:outsource desktop-file-utils qt:5 shared-mime-info
+USE_QT=		buildtools_build concurrent core gui network opengl printsupport \
 		sql sql-sqlite3_run widgets
 USE_GL=		gl
 
@@ -20,17 +20,15 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tumic0
 GH_PROJECT=	GPXSee
 
-OPTIONS_DEFINE=	NLS TIFF
-OPTIONS_DEFAULT=	TIFF
+OPTIONS_DEFINE=	NLS PBF TIFF
+OPTIONS_DEFAULT=	PBF TIFF
 OPTIONS_SUB=	yes
 NLS_USE=	QT=linguisttools_build
-NLS_USES=	gettext-runtime qt:5
-TIFF_DESC=	Support for TIFF
-TIFF_USES=	qt:5
+NLS_USES=	gettext-runtime
+PBF_DESC=	Support for PBF vector maps
+PBF_RUN_DEPENDS=	${QT_PLUGINDIR}/imageformats/libpbf.so:graphics/qtpbfimageplugin
+TIFF_DESC=	Support for GeoTIFF images
 TIFF_USE=	QT=imageformats_run
-
-do-patch:
-	@${REINPLACE_CMD} -e "s|/usr/share/gpxsee|${DATADIR}|" ${WRKSRC}/src/config.h
 
 pre-build-NLS-on:
 	${LRELEASE} ${WRKSRC}/${PORTNAME}.pro
@@ -45,6 +43,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/pkg/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages
 	${INSTALL_DATA} ${WRKSRC}/pkg/${PORTNAME}.xml ${STAGEDIR}${PREFIX}/share/mime/packages
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/metainfo
+	${INSTALL_DATA} ${WRKSRC}/pkg/appdata.xml ${STAGEDIR}${PREFIX}/share/metainfo/${PORTNAME}.appdata.xml
 
 do-install-NLS-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/translations
