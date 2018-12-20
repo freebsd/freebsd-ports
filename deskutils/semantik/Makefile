@@ -1,29 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	semantik
-DISTVERSION=	0.9.5
-PORTREVISION=	4
+DISTVERSION=	1.1.0
 CATEGORIES=	deskutils kde
-MASTER_SITES=	http://ftp.waf.io/pub/release/ \
-		http://www.freehackers.org/~tnagy/release/
+MASTER_SITES=	https://waf.io/
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE mind mapping tool
+COMMENT=	Mind mapping tool
 
 LICENSE=	GPLv3
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2018-12-31
-
-USES=		kde:4 pkgconfig python:2.7 qmake:no_env,no_configure qt:4 shebangfix tar:bzip2 waf \
+USES=		kde:5 pkgconfig python:3.6 qt:5 shebangfix tar:bzip2 waf \
 		gettext shared-mime-info
-USE_KDE=	kdelibs
-USE_OCAML=	yes
-NO_OCAML_RUNDEPENDS=	yes
-USE_QT=		corelib gui linguist_build svg webkit xml \
-		moc_build qmake_build uic_build
-CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS}" \
-		PATH="${KDE_PREFIX}/bin:$$PATH" \
+USE_KDE=	auth config configwidgets coreaddons i18n iconthemes kdelibs4support kio sonnet widgetsaddons xmlgui
+USE_QT=		core dbus declarative gui location network printsupport svg webchannel webengine widgets xml \
+		buildtools_build qmake_build
+CONFIGURE_ENV=	PATH="${KDE_PREFIX}/bin:$$PATH" \
 		WAF_HOME="${WRKSRC}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
@@ -42,8 +34,6 @@ OPTIONS_SUB=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/kde-config/kde4-config/g' \
-		${WRKSRC}/wscript
 .if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e '/langs/ d' \
 		${WRKSRC}/wscript
