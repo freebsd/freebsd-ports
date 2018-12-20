@@ -1456,6 +1456,7 @@
     SUBDIR += libfmt
     SUBDIR += libfortuna
     SUBDIR += libfreefare
+    SUBDIR += libfsapfs
     SUBDIR += libfsntfs
     SUBDIR += libftdi
     SUBDIR += libftdi1
