@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libuchardet.so:textproc/uchardet
 
-USES=		gettext gmake gnome libtool pkgconfig tar:xz
+USES=		compiler:c11 gettext gmake gnome libtool pkgconfig tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gtksourceview4 libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
