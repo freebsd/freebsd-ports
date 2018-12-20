@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libglpk.so:math/glpk \
 		libgmp.so:math/gmp
 
-USES=		autoreconf gmake libtool
+USES=		autoreconf compiler:c++11-lang gmake libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --enable-shared --with-glpk=${LOCALBASE} --with-gmp=${LOCALBASE}
 USE_GITHUB=	yes
