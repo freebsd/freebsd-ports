@@ -1485,7 +1485,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/platform-api.jar
 %%DATADIR%%/lib/platform-impl.jar
 %%DATADIR%%/lib/proxy-vole-1.0.5.jar
-%%DATADIR%%/lib/pty4j-0.8.5.jar
+%%DATADIR%%/lib/pty4j-0.8.6.jar
 %%DATADIR%%/lib/purejavacomm-0.0.11.1.jar
 %%DATADIR%%/lib/pycharm-pydev.jar
 %%DATADIR%%/lib/pycharm.jar
