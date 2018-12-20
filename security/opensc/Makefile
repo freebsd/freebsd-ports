@@ -11,7 +11,7 @@ COMMENT=	Libraries and utilities to access smart cards
 
 LICENSE=	LGPL21
 
-BROKEN_powerpc64=	fails to compile: cc1: unrecognized command line option "-Wno-unused-but-set-variable"
+USES=		libtool pkgconfig gmake ssl
 
 OPTIONS_SINGLE=	BACKEND
 OPTIONS_SINGLE_BACKEND=PCSC OPENCT CTAPI
@@ -25,7 +25,6 @@ CTAPI_DESC=	Use CT-API backend
 SM_DESC=	Enable secure messaging support
 NOTIFY_DESC=	Enable notification support
 
-USES=		libtool pkgconfig gmake ssl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
@@ -65,6 +64,12 @@ CONFIGURE_ARGS+=--with-xsl-stylesheetsdir=${LOCALBASE}/share/xsl/docbook
 .else
 CONFIGURE_ENV+=	XSLTPROC="${FALSE}"
 CONFIGURE_ARGS+=--without-xsl-stylesheetsdir
+.endif
+
+post-patch:
+.if exists(/usr/lib/libstdc++.so)
+	${REINPLACE_CMD} -e '/-Wno-unused-but-set-variable/d' \
+		${WRKSRC}/src/tools/Makefile.am
 .endif
 
 .include <bsd.port.mk>
