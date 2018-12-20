@@ -55,7 +55,7 @@ pidfile="/var/run/puppetdb/puppetdb.pid"
 command="/usr/sbin/daemon"
 java_cmd="${puppetdb_java_home}/bin/java"
 procname="${java_cmd}"
-command_args="-p ${pidfile} ${java_cmd} -Djava.security.egd=/dev/urandom -cp %%DATADIR%%/puppetdb.jar clojure.main -m puppetlabs.puppetdb.main  ${puppetdb_args} > ${puppetdb_log_file} 2>&1"
+command_args="-p ${pidfile} ${java_cmd} -Djava.security.egd=/dev/urandom -cp %%DATADIR%%/puppetdb.jar clojure.main -m puppetlabs.puppetdb.core  ${puppetdb_args} > ${puppetdb_log_file} 2>&1"
 
 
 required_files="${java_cmd}"
