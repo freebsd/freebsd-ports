@@ -18,7 +18,7 @@ LIB_DEPENDS=	libftdi1.so:devel/libftdi1 \
 		libvisa.so:devel/librevisa \
 		libzip.so:archivers/libzip
 
-USES=		gnome pathfix libtool pkgconfig
+USES=		compiler:c11 gnome pathfix libtool pkgconfig
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
