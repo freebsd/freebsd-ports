@@ -116,6 +116,7 @@ include/freerdp2/freerdp/server/rdpei.h
 include/freerdp2/freerdp/server/rdpgfx.h
 include/freerdp2/freerdp/server/rdpsnd.h
 include/freerdp2/freerdp/server/remdesk.h
+include/freerdp2/freerdp/server/server-common.h
 include/freerdp2/freerdp/server/shadow.h
 include/freerdp2/freerdp/session.h
 include/freerdp2/freerdp/settings.h
