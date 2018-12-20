@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		hitch
-PORTVERSION=		1.4.8
-PORTREVISION=		2
+PORTVERSION=		1.5.0
 CATEGORIES=		security
 MASTER_SITES=		http://hitch-tls.org/source/ \
 			ZI
@@ -27,11 +26,15 @@ CONFIGURE_ENV=		CRYPTO_CFLAGS="-I${OPENSSLINC}" CRYPTO_LIBS="-L${OPENSSLLIB}" \
 USE_RC_SUBR=		${PORTNAME}
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib -lcrypto -lssl
+CACHE_DIR?=		/var/cache/hitch
+PLIST_SUB=		CACHE_DIR=${CACHE_DIR}
+SUB_LIST+=		CACHE_DIR="${CACHE_DIR}"
+SUB_FILES=		${PORTNAME}.conf.sample
 
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.conf.sample ${STAGEDIR}${PREFIX}/etc/
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc ${STAGEDIR}${CACHE_DIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.conf.sample ${STAGEDIR}${PREFIX}/etc/
 
 .include <bsd.port.mk>

@@ -45,6 +45,11 @@ prefer-server-ciphers = off
 # type: string
 ssl-engine = ""
 
+# Directory for OCSP staple retrieval
+#
+# type: string
+ocsp-dir = "%%CACHE_DIR%%"
+
 # Number of worker processes
 #
 # type: integer
