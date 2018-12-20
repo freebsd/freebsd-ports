@@ -4,6 +4,7 @@ bin/cppcheck
 %%DATADIR%%/cppcheck-lib.cfg
 %%DATADIR%%/embedded_sql.cfg
 %%DATADIR%%/gnu.cfg
+%%DATADIR%%/googletest.cfg
 %%DATADIR%%/gtk.cfg
 %%DATADIR%%/microsoft_sal.cfg
 %%DATADIR%%/motif.cfg
@@ -14,4 +15,5 @@ bin/cppcheck
 %%DATADIR%%/std.cfg
 %%DATADIR%%/windows.cfg
 %%DATADIR%%/wxwidgets.cfg
+%%DATADIR%%/zlib.cfg
 %%MANPAGES%%man/man1/cppcheck.1.gz
