@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmsiecf
-DISTVERSION=	alpha-20170116
-PORTREVISION=	1
+DISTVERSION=	alpha-20181215
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libmsiecf/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
