@@ -1,7 +1,3 @@
-
-
-
-
 The sarge package provides a wrapper for subprocess which provides command
 pipeline functionality.
 
@@ -15,9 +11,9 @@ https://bitbucket.org/vinay.sajip/sarge/
 
 The latest documentation (kept updated between releases) is on Read The Docs:
 
-http://sarge.readthedocs.org/
+https://sarge.readthedocs.org/
 
 Please report any problems or suggestions for improvement either via the mailing
 list or the issue tracker.
 
-WWW: http://sarge.readthedocs.org/
+WWW: https://sarge.readthedocs.org/
