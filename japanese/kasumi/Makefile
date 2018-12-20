@@ -10,14 +10,12 @@ MASTER_SITES=	OSDN/${PORTNAME}/41436
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Dictionary management tool for anthy
 
-USES=		gmake pkgconfig
-USE_GNOME=	gtk20
 LIB_DEPENDS=	libanthy.so:japanese/anthy
 
-GNU_CONFIGURE=	yes
+USES=		compiler:c++11-lang gmake localbase:ldflags pkgconfig
+USE_GNOME=	gtk20
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	NLS
 
