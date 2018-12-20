@@ -3,7 +3,7 @@
 
 PORTNAME=	xorriso
 PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 DISTNAME=	libisoburn-${PORTVERSION}
@@ -51,7 +51,7 @@ post-patch:
 do-install-TK-off:
 	${RM} ${STAGEDIR}${PREFIX}/bin/xorriso-tcltk \
 		${STAGEDIR}${PREFIX}/man/man1/xorriso-tcltk.1.gz \
-		${STAGEDIR}${PREFIX}/info/xorriso-tcltk.info
+		${STAGEDIR}${PREFIX}/share/info/xorriso-tcltk.info
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
