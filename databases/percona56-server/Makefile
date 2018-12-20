@@ -16,12 +16,10 @@ LICENSE?=	GPLv2+
 
 BROKEN_armv6=		fails to compile: sql/mysqld.cc:198:19: error: cannot combine with previous 'type-name' declaration specifier
 BROKEN_armv7=		fails to compile: sql/mysqld.cc:198:19: error: cannot combine with previous 'type-name' declaration specifier
-NOT_FOR_ARCHS=		powerpc64
-NOT_FOR_ARCHS_REASON=	unsupported platform
 
 SLAVEDIRS=	databases/percona56-client \
 		databases/percona-pam-for-mysql
-USES=		bison cmake:noninja perl5 shebangfix
+USES=		bison compiler:c++11-lang cmake:noninja perl5 shebangfix
 
 OPTIONS_DEFINE=	OPENSSL FASTMTX INNODBMEMCACHED TOKUDB
 OPTIONS_DEFAULT=	OPENSSL INNODBMEMCACHED
