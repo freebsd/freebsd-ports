@@ -18,5 +18,7 @@ share/applications/gpxsee.desktop
 %%NLS%%%%DATADIR%%/translations/gpxsee_pl.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_ru.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_sv.qm
+%%NLS%%%%DATADIR%%/translations/gpxsee_tr.qm
+share/metainfo/gpxsee.appdata.xml
 share/mime/packages/gpxsee.xml
 share/pixmaps/gpxsee.png
