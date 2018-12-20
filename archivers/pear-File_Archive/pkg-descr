@@ -4,6 +4,4 @@ writing simple code, yet the library is very powerful.
 It lets you easily read or generate tar, gz, tgz, bz2, tbz, zip, ar (or deb)
 archives to files, memory, mail or standard output.
 
-See http://poocl.la-grotte.org for a tutorial.
-
 WWW: https://pear.php.net/package/File_Archive
