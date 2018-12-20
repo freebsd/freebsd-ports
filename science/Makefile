@@ -24,6 +24,7 @@
     SUBDIR += R-cran-udunits2
     SUBDIR += abinit
     SUBDIR += afni
+    SUBDIR += agrum
     SUBDIR += aircraft-datcom
     SUBDIR += antioch
     SUBDIR += atom
