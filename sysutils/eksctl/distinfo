@@ -1,3 +1,3 @@
-TIMESTAMP = 1541843255
-SHA256 (weaveworks-eksctl-0.1.11_GH0.tar.gz) = 573170735e330819f974094d4f7fbad448e337502b58370210b9b45755d8ffba
-SIZE (weaveworks-eksctl-0.1.11_GH0.tar.gz) = 17605840
+TIMESTAMP = 1545345196
+SHA256 (weaveworks-eksctl-0.1.13_GH0.tar.gz) = c1963d77fc636e0cbf8f1cb66c07051f0e90b07cf97ff0b4aa9b400692fed561
+SIZE (weaveworks-eksctl-0.1.13_GH0.tar.gz) = 17579671
