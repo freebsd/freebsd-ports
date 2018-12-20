@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libevt
-DISTVERSION=	alpha-20180317
+DISTVERSION=	alpha-20181216
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libevt/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
