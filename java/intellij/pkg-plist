@@ -139,8 +139,8 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/lib/imageio-tiff-3.3.2.jar
 %%IDEA_HOME%%/lib/imgscalr-lib-4.2.jar
 %%IDEA_HOME%%/lib/ini4j-0.5.5-2.jar
-%%IDEA_HOME%%/lib/intellij-coverage-agent-1.0.494.jar
-%%IDEA_HOME%%/lib/intellij-test-discovery-agent-1.0.494.jar
+%%IDEA_HOME%%/lib/intellij-coverage-agent-1.0.495.jar
+%%IDEA_HOME%%/lib/intellij-test-discovery-agent-1.0.495.jar
 %%IDEA_HOME%%/lib/isorelax-20030108.jar
 %%IDEA_HOME%%/lib/jackson-annotations-2.9.0.jar
 %%IDEA_HOME%%/lib/jackson-core-2.9.6.jar
@@ -216,13 +216,13 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/lib/plexus-utils-3.0.22.jar
 %%IDEA_HOME%%/lib/protobuf-java-3.4.0.jar
 %%IDEA_HOME%%/lib/proxy-vole-1.0.5.jar
-%%IDEA_HOME%%/lib/pty4j-0.8.5.jar
+%%IDEA_HOME%%/lib/pty4j-0.8.6.jar
 %%IDEA_HOME%%/lib/purejavacomm-0.0.11.1.jar
 %%IDEA_HOME%%/lib/resources.jar
 %%IDEA_HOME%%/lib/resources_en.jar
 %%IDEA_HOME%%/lib/rngom-20051226-patched.jar
 %%IDEA_HOME%%/lib/rt/debugger-agent.jar
-%%IDEA_HOME%%/lib/sa-jdwp-1.0.9.jar
+%%IDEA_HOME%%/lib/sa-jdwp-1.12.jar
 %%IDEA_HOME%%/lib/serviceMessages.jar
 %%IDEA_HOME%%/lib/slf4j-api-1.7.25.jar
 %%IDEA_HOME%%/lib/slf4j-log4j12-1.7.25.jar
