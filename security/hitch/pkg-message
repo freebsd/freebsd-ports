@@ -1,2 +1,2 @@
 Don't forget to append DH params to your pem file using:
-openssl dhparam -rand - 1024 >> /path/to/cert.pem
+openssl dhparam -rand - 2048 >> /path/to/cert.pem

@@ -5,3 +5,4 @@ sbin/hitch
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/hitch.conf.example
 @sample etc/hitch.conf.sample
+@dir(hitch,hitch,) %%CACHE_DIR%%
