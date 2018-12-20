@@ -21,7 +21,7 @@ LIB_DEPENDS=	lib4ti2util.so:math/4ti2 \
 RUN_DEPENDS=	lrs:math/lrslib \
 		points2triangs:math/topcom
 
-USES=		autoreconf gmake libtool localbase:ldflags
+USES=		autoreconf compiler:c++11-lang gmake libtool localbase:ldflags
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
 		--with-topcom=${LOCALBASE} --with-4ti2=${LOCALBASE} --with-cddlib=${LOCALBASE} --with-gmp=${LOCALBASE} --with-ntl=${LOCALBASE}
