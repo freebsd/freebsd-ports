@@ -17,6 +17,7 @@ OPUS_DEPEND=	${LOCALBASE}/include/opus/opus.h:audio/opus
 OSS_DEPEND=	# In base
 PLC_DEPEND=	${LOCALBASE}/include/spandsp/plc.h:comms/spandsp
 PORTAUDIO_DEPEND=	${LOCALBASE}/include/portaudio.h:audio/portaudio
+PULSEAUDIO_DEPEND=	${LOCALBASE}/include/pulse/pulseaudio.h:audio/pulseaudio
 SDL_DEPEND=	# Handled with USE_SDL in Makefile
 SNDFILE_DEPEND=	${LOCALBASE}/include/sndfile.h:audio/libsndfile
 SPEEX_DEPEND=	${LOCALBASE}/include/speex/speex.h:audio/speex
