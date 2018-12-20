@@ -20,7 +20,7 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-extras
-USES=		gettext gmake jpeg pkgconfig autoreconf
+USES=		compiler:c++11-lang gettext gmake jpeg pkgconfig autoreconf
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
