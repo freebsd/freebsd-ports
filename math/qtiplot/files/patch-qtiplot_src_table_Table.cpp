@@ -16,3 +16,12 @@ Index: qtiplot/qtiplot/src/table/Table.cpp
      mup->defineVariable("j", (double)col);
      mup->defineVariable("sr", startRow + 1.0);
      mup->defineVariable("er", endRow + 1.0);
+@@ -1080,7 +1080,7 @@ void Table::setColName(int col, const QS
+ 		if (enumerateRight)
+             newLabel += QString::number(n);
+ 
+-		if (col_label.contains(newLabel) > 0){
++		if (col_label.contains(newLabel)){
+ 			if (warn){
+ 				QMessageBox::critical(0, tr("QtiPlot - Error"),
+ 				tr("There is already a column called : <b>"+newLabel+"</b> in table <b>"+caption+"</b>!<p>Please choose another name!"));
