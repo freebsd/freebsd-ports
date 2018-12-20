@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dfvfs
-PORTVERSION=	20180831
+PORTVERSION=	20181215
 CATEGORIES=	security devel python
 MASTER_SITES=	https://github.com/log2timeline/dfvfs/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	libbde>=a:devel/libbde \
 		libewf>=0:devel/libewf \
+		libfsapfs>=e:devel/libfsapfs \
 		libfsntfs>=e:devel/libfsntfs \
 		libfvde>=0:sysutils/libfvde \
 		libfwnt>=e:devel/libfwnt \
