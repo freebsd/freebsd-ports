@@ -17,9 +17,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libburn.so:devel/libburn \
 		libisofs.so:devel/libisofs
 
-GNU_CONFIGURE=	yes
-USES=		gmake iconv libtool libedit pathfix pkgconfig shebangfix
+USES=		gmake iconv libtool libedit pathfix pkgconfig readline shebangfix
 SHEBANG_FILES=	frontend/xorriso-tcltk
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
