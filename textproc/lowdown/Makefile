@@ -3,7 +3,7 @@
 PORTNAME=	lowdown
 PORTVERSION=	0.4.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://kristaps.bsd.lv/lowdown/snapshots/
+MASTER_SITES=	https://kristaps.bsd.lv/lowdown/snapshots/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Simple Markdown translator

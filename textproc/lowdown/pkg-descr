@@ -4,4 +4,4 @@ troff, or even mandoc(1). lowdown doesn't require XSLT, Python, or even Perl -
 it's just clean, secure, open source C code with no dependencies. Its
 canonical documentation is the lowdown(1) manpage.
 
-WWW: http://kristaps.bsd.lv/lowdown/
+WWW: https://kristaps.bsd.lv/lowdown/
