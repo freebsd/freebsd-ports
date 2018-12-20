@@ -1,0 +1,13 @@
+aGrUM is a C++ library for graphical models. It is designed for easily building
+applications using graphical models such as Bayesian networks, influence
+diagrams, decision trees, GAI networks or Markov decision processes.
+
+aGrUM is written to provide the basic building blocks to perform the
+following tasks:
+* designing graphical models,
+* learning graphical models,
+* elicitation of graphical models,
+* inference within graphical models,
+* planification. 
+
+WWW: https://agrum.gitlab.io/
