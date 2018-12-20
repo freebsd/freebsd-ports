@@ -35,7 +35,7 @@ man/man1/suricata.1.gz
 %%DOCSDIR%%/Setting_up_IPSinline_for_Linux.txt
 %%DOCSDIR%%/TODO
 %%DOCSDIR%%/Third_Party_Installation_Guides.txt
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata-4.1.0-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata-4.1.1-py%%PYTHON_VER%%.egg-info
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/__init__.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/config/__init__.py
@@ -86,6 +86,12 @@ man/man1/suricata.1.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/config.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/configs/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/configs/__init__.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/configs/disable.conf
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/configs/drop.conf
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/configs/enable.conf
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/configs/modify.conf
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/configs/threshold.in
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/configs/update.yaml
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/data/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/data/__init__.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/data/index.py
@@ -116,7 +122,7 @@ man/man1/suricata.1.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/util.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/version.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata/update/version.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata_update-1.0.0-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/suricata_update-1.0.1-py%%PYTHON_VER%%.egg-info
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricatasc/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/suricatasc/__init__.pyc
 @sample %%ETCDIR%%/classification.config.sample
