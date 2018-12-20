@@ -3,6 +3,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	21.2
+# NB when bumping OTP versions also bump PORTREVISION in databases/couchdb2
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg			\
 		http://erlang.stacken.kth.se/download/:erlangorg		\
