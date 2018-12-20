@@ -13,7 +13,8 @@ LICENSE=	GPLv2+
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libfftw3.so:math/fftw3
 
-USES=		autoreconf gmake eigen:3,build,run libtool pathfix pkgconfig
+USES=		autoreconf compiler:c++11-lang gmake eigen:3,build,run libtool \
+		pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
