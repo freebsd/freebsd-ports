@@ -12,9 +12,12 @@ LICENSE=	GPLv3
 
 USES=		kde:5 pkgconfig python:3.6 qt:5 shebangfix tar:bzip2 waf \
 		gettext shared-mime-info
-USE_KDE=	auth config configwidgets coreaddons i18n iconthemes kdelibs4support kio sonnet widgetsaddons xmlgui
-USE_QT=		core dbus declarative gui location network printsupport svg webchannel webengine widgets xml \
+USE_KDE=	auth config configwidgets coreaddons i18n iconthemes \
+		kdelibs4support kio sonnet widgetsaddons xmlgui
+USE_QT=		core dbus declarative gui location network printsupport \
+		svg webchannel webengine widgets xml \
 		buildtools_build qmake_build
+
 CONFIGURE_ENV=	PATH="${KDE_PREFIX}/bin:$$PATH" \
 		WAF_HOME="${WRKSRC}"
 CPPFLAGS+=	-I${LOCALBASE}/include
