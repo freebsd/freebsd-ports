@@ -1,5 +1,5 @@
---- src/pngoutput.c.orig	2003-12-08 18:33:27.000000000 +0100
-+++ src/pngoutput.c	2012-04-25 06:41:11.000000000 +0200
+--- src/pngoutput.c.orig	2003-12-08 17:33:27 UTC
++++ src/pngoutput.c
 @@ -27,6 +27,7 @@
  #include <errno.h>
  #include <string.h>
