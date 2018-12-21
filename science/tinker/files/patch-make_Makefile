@@ -1,5 +1,14 @@
---- make/Makefile.orig	2018-10-06 22:01:02 UTC
+--- make/Makefile.orig	2018-05-01 03:12:05 UTC
 +++ make/Makefile
+@@ -84,7 +84,7 @@ APBS_LIBS = -lapbsmainroutines -lapbs -l
+ 
+ F77 = gfortran
+ F77FLAGS = -c
+-OPTFLAGS = -Ofast -mssse3 -fopenmp
++OPTFLAGS = -Ofast $(PORT_SIMD_FLAGS) -fopenmp
+ LIBDIR = -L. -L$(TINKER_LIBDIR)/macos
+ LIBS = 
+ LIBFLAGS = -crusv
 @@ -754,130 +754,130 @@ listing:
  	cat *.f *.c > tinker.txt
  
