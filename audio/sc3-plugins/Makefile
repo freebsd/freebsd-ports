@@ -23,7 +23,7 @@ OPTIONS_DEFAULT=	SUPERNOVA
 SUPERNOVA_DESC=	Build plugins for supernova
 OPTIONS_SUB=	yes
 
-USES=		cmake:outsource localbase pkgconfig
+USES=		compiler:c++11-lang cmake:outsource localbase pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	supercollider
 GH_TUPLE=	timblechmann:nova-simd:3140689:n/external_libraries/nova-simd
