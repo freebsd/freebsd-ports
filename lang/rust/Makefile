@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION?=	1.31.0
+PORTVERSION?=	1.31.1
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
@@ -51,6 +51,8 @@ RUST_STD_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rust-std-${R
 CARGO_BOOTSTRAP_VERSION?=	0.31.0
 CARGO_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
 
+CARGO_VENDOR_DIR?=		${WRKSRC}/src/vendor
+
 RUST_CHANNEL=	${PKGNAMESUFFIX:Ustable:S/^-//}
 
 # Rust's target arch string is different from *BSD arch strings
@@ -98,10 +100,7 @@ X_PY_ENV=	HOME="${WRKDIR}" \
 		OPENSSL_DIR="${OPENSSLBASE}"
 X_PY_CMD=	${PYTHON_CMD} ${WRKSRC}/x.py
 
-CRATES_PATCHED_BY_FBSD10_FIX?=	src/vendor/libssh2-sys \
-				src/vendor/lzma-sys
-
-RUST_STD_DIR=		${RUST_STD_BOOTSTRAP:T:R:R}
+RUST_STD_DIR=	${RUST_STD_BOOTSTRAP:T:R:R}
 
 post-extract:
 	@${MKDIR} \
@@ -129,35 +128,10 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^cargo:.*|cargo: ${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}|' \
 		${WRKSRC}/src/stage0.txt
-# After patching crates, we need to update their corresponding
-# `.cargo-checksum.json` to reflect the new checksums verified by Cargo.
-	@for dir in "${WRKSRC}/src/vendor/libc" \
-	"${WRKSRC}/src/vendor/libgit2-sys" \
-	"${WRKSRC}/src/vendor/openssl"; do \
-		if ! test -d "$$dir"; then \
-			continue; \
-		fi; \
-		cd "$$dir"; \
-		for file in $$(${FIND} * -name "*.orig"); do \
-			old_checksum=$$(${SHA256} -q "$$file"); \
-			new_checksum=$$(${SHA256} -q "$${file%%.orig}"); \
-			regex="$$regex -e s|\"$${file%%.orig}\":\"$$old_checksum\"|\"$${file%%.orig}\":\"$$new_checksum\"|"; \
-		done; \
-		if test "$$regex"; then \
-			${REINPLACE_CMD} -E $$regex .cargo-checksum.json; \
-		fi; \
-	done
-# We make a backup of a few files before the FreeBSD 10 autotools
-# fix is applied. We'll need them in `do-configure` to update the
-# `.cargo-checksum.json` files.
-	@for crate in ${CRATES_PATCHED_BY_FBSD10_FIX}; do \
-		if ! test -d "${WRKSRC}/$$crate"; then \
-			continue; \
-		fi; \
-		for file in $$(${FIND} "${WRKSRC}/$$crate" -name "config.rpath"); do \
-			${CP} "$$file" "$$file.orig"; \
-		done; \
-	done
+# Disable vendor checksums
+	@${REINPLACE_CMD} -e \
+		's/"files":{[^}]*}/"files":{}/' \
+		${CARGO_VENDOR_DIR}/*/.cargo-checksum.json
 
 .if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
 CCACHE_VALUE=	"${CCACHE_WRAPPER_PATH:C,/libexec/ccache$,,}/bin/ccache"
@@ -165,14 +139,12 @@ CCACHE_VALUE=	"${CCACHE_WRAPPER_PATH:C,/libexec/ccache$,,}/bin/ccache"
 CCACHE_VALUE=	false
 .endif
 
-.if !target(pre-configure)
 pre-configure:
 	@for file in \
-		${WRKSRC}/src/vendor/backtrace-sys/src/libbacktrace/configure \
-		${WRKSRC}/src/vendor/backtrace-sys/src/libbacktrace/config/libtool.m4; do \
+		${CARGO_VENDOR_DIR}/backtrace-sys/src/libbacktrace/configure \
+		${CARGO_VENDOR_DIR}/backtrace-sys/src/libbacktrace/config/libtool.m4; do \
 		mv "$$file" "$$file.dont-fix"; \
 	done
-.endif
 
 do-configure:
 	${SED} -E \
@@ -185,32 +157,13 @@ do-configure:
 		-e 's,%CCACHE%,${CCACHE_VALUE},' \
 		< ${FILESDIR}/config.toml \
 		> ${WRKSRC}/config.toml
-# The FreeBSD 10 autotools fix may modify some files just before
-# `do-configure`. Like after `extra-path-ino64`, we need to update
-# `.cargo-checksum.json`.
-	@for crate in ${CRATES_PATCHED_BY_FBSD10_FIX}; do \
-		if ! test -d "${WRKSRC}/$$crate"; then \
-			continue; \
-		fi; \
-		cd "${WRKSRC}/$$crate"; \
-		for file in $$(${FIND} * -name "*.orig"); do \
-			old_checksum=$$(${SHA256} -q "$$file"); \
-			new_checksum=$$(${SHA256} -q "$${file%%.orig}"); \
-			regex="$$regex -e s|\"$${file%%.orig}\":\"$$old_checksum\"|\"$${file%%.orig}\":\"$$new_checksum\"|"; \
-		done; \
-		if test "$$regex"; then \
-			${REINPLACE_CMD} -E $$regex .cargo-checksum.json; \
-		fi; \
-	done
 
-.if !target(post-configure)
 post-configure:
 	@for file in \
-		${WRKSRC}/src/vendor/backtrace-sys/src/libbacktrace/configure \
-		${WRKSRC}/src/vendor/backtrace-sys/src/libbacktrace/config/libtool.m4; do \
+		${CARGO_VENDOR_DIR}/backtrace-sys/src/libbacktrace/configure \
+		${CARGO_VENDOR_DIR}/backtrace-sys/src/libbacktrace/config/libtool.m4; do \
 		mv "$$file.dont-fix" "$$file"; \
 	done
-.endif
 
 post-configure-DOCS-on:
 	${REINPLACE_CMD} -e 's,%DOCS%,true,' ${WRKSRC}/config.toml
