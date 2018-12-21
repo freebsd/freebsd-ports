@@ -1,3 +1,3 @@
-TIMESTAMP = 1543642557
-SHA256 (intel-mkl-dnn-v0.17.1_GH0.tar.gz) = 75777735458c9e03434d9b1b111b92bca4230427b8de890dd694039dc34480ed
-SIZE (intel-mkl-dnn-v0.17.1_GH0.tar.gz) = 1413722
+TIMESTAMP = 1545356669
+SHA256 (intel-mkl-dnn-v0.17.2_GH0.tar.gz) = 56c3e22d4fad816059cc58fd8e78ab3bacbec76a6bbded7eaead66220d8e5134
+SIZE (intel-mkl-dnn-v0.17.2_GH0.tar.gz) = 1413803
