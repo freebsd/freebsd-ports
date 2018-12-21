@@ -108,7 +108,6 @@ lib/collectd/write_log.so
 %%REDIS%%lib/collectd/write_redis.so
 %%RIEMANN%%lib/collectd/write_riemann.so
 %%TSDB%%lib/collectd/write_tsdb.so
-%%XMMS%%lib/collectd/xmms.so
 lib/collectd/zfs_arc.so
 %%JAVA%%%%DATADIR%%/java/collectd-api.jar
 %%JAVA%%%%DATADIR%%/java/generic-jmx.jar
