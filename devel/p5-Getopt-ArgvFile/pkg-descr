@@ -8,5 +8,4 @@ Getopt::ArgvFile does NOT perform any option processing itself, and
 should work fine together with any other option handling module
 (e.g. Getopt::Long) or even self coded option handling.
 
--Anton
-<tobez@FreeBSD.org>
+WWW: https://metacpan.org/release/Getopt-ArgvFile
