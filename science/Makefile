@@ -304,6 +304,7 @@
     SUBDIR += triqs
     SUBDIR += udunits
     SUBDIR += v_sim
+    SUBDIR += vipster
     SUBDIR += vmd
     SUBDIR += voro++
     SUBDIR += wannier90
