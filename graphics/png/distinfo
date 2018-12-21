@@ -1,5 +1,5 @@
-TIMESTAMP = 1535286999
-SHA256 (libpng-1.6.35.tar.xz) = 23912ec8c9584917ed9b09c5023465d71709dce089be503c7867fec68a93bcd7
-SIZE (libpng-1.6.35.tar.xz) = 1014320
-SHA256 (libpng-1.6.35-apng.patch.gz) = 8c7b24db9d0a4c95bd663ae8f3369013520d6cee0fbea9b0c4a459a24bc530cf
-SIZE (libpng-1.6.35-apng.patch.gz) = 10396
+TIMESTAMP = 1545245505
+SHA256 (libpng-1.6.36.tar.xz) = eceb924c1fa6b79172fdfd008d335f0e59172a86a66481e09d4089df872aa319
+SIZE (libpng-1.6.36.tar.xz) = 1012544
+SHA256 (libpng-1.6.36-apng.patch.gz) = 3cac5b8cdb850517d85a5a0da7515fa14baec7c8d1b227963d65f0797e727274
+SIZE (libpng-1.6.36-apng.patch.gz) = 10329
