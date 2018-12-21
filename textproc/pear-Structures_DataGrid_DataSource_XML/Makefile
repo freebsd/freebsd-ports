@@ -8,14 +8,16 @@ CATEGORIES=	textproc databases www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	DataSource driver using XML files
 
-DEPRECATED=	Works only with EOL php 5.6
-EXPIRATION_DATE=	2018-12-30
+LICENSE=	BSD2CLAUSE
+
+IGNORE_WITH_PHP=	56
 
 BUILD_DEPENDS=	${PEARDIR}/Structures/DataGrid/DataSource/Array.php:databases/pear-Structures_DataGrid_DataSource_Array@${PHP_FLAVOR}
 RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid/DataSource/Array.php:databases/pear-Structures_DataGrid_DataSource_Array@${PHP_FLAVOR}
 
 USES=	pear
-USE_PHP=	mysql
-IGNORE_WITH_PHP=71 72 73
+USE_PHP=	mysqli
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
