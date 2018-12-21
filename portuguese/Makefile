@@ -14,7 +14,6 @@
     SUBDIR += libreoffice
     SUBDIR += libreoffice-pt_BR
     SUBDIR += mythes
-    SUBDIR += php_doc-br
     SUBDIR += webalizer-pt_BR
     SUBDIR += webalizer-pt_PT
 

@@ -16,7 +16,6 @@
     SUBDIR += libreoffice
     SUBDIR += libtlen
     SUBDIR += mythes
-    SUBDIR += php_doc
     SUBDIR += qfaktury
     SUBDIR += qnapi
     SUBDIR += tleenx2
