@@ -1,5 +1,0 @@
-Gtk-Perl is a set of modules that let you exploit the Gtk+ and Gnome
-libraries from Perl. The module maps the Gtk+ objects to Perl packages
-while trying to remain as close as possible to the C API, but not closer.
-
-This is the base module (Gtk and Gtk::Gdk namespaces).

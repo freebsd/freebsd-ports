@@ -53,7 +53,6 @@
     SUBDIR += freeplane
     SUBDIR += fasd
     SUBDIR += fusenshi
-    SUBDIR += gaddr
     SUBDIR += ganttproject
     SUBDIR += ganyremote
     SUBDIR += gbirthday
@@ -122,7 +121,6 @@
     SUBDIR += howm
     SUBDIR += hs-fdo-notify
     SUBDIR += ical
-    SUBDIR += ithought
     SUBDIR += jjclient
     SUBDIR += jlj
     SUBDIR += kaddressbook

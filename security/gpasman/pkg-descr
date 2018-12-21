@@ -1,7 +1,0 @@
-Gpasman is a password manager. People working with the internet have to
-remember lots of passwords. Saving them in a textfile is not a secure idea.
-Gpasman is a GTK solution to this problem since it saves the password
-information encrypted, so now you have to remember only one password instead of
-ten (or more).
-
-http://gpasman.sourceforge.net/

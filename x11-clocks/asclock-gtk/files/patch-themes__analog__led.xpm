@@ -1,5 +1,0 @@
---- themes/analog/led.xpm.orig	2014-09-22 20:38:11 UTC
-+++ themes/analog/led.xpm
-@@ -1 +1 @@
--char *led_xpm[];
-+static char *led_xpm[];

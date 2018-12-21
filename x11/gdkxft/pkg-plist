@@ -1,5 +1,0 @@
-bin/gdkxft_sysinstall
-etc/gdkxft.conf
-lib/libgdkxft.so
-man/man8/gdkxft_sysinstall.8.gz
-%%PORTDOCS%%%%DOCSDIR%%/README

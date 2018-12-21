@@ -1,8 +1,0 @@
-bin/graphopt
-%%DATADIR%%/pixmaps/export.xpm
-%%DATADIR%%/pixmaps/import.xpm
-%%DATADIR%%/pixmaps/new.xpm
-%%DATADIR%%/pixmaps/open.xpm
-%%DATADIR%%/pixmaps/quit.xpm
-%%DATADIR%%/pixmaps/save.xpm
-%%DATADIR%%/pixmaps/save_as.xpm

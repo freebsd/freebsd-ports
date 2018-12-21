@@ -1,8 +1,0 @@
-ithought is a personal thought manager, allowing you to create and store
-entries that can be linked together via keywords.  Through the use of
-various modules, it is possible to do a number of things with these
-entries, including uploading to a website as part of an online journal.
-
-Modules can be written in C or in any scripting language.
-
-WWW: http://ithought.sourceforge.net/

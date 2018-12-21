@@ -1,6 +1,0 @@
-Xlogmaster displays logfiles and/or devices that can be read via cat.
-It allows for quick and easy control of all logfiles and most of the
-hardware/device status within one program.
-
-Filters allow to highlight/lowlight/hide lines of higher/lower/no
-interest. Click right mouse button in text window to bring up the menu.

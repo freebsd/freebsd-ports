@@ -1,6 +1,0 @@
-IP Sorcery is a network troubleshooting and firewall testing tool. The
-prorgram works by generating custom "packets" and sending them to a
-target host. Thus testing the authenticity of firewall rules and host
-verification. It also has a graphical user interface.
-
-WWW: http://BSDforge.com/projects/net/ipsorcery/

@@ -171,7 +171,6 @@
     SUBDIR += connectfive
     SUBDIR += conquest
     SUBDIR += construo
-    SUBDIR += corewars
     SUBDIR += corsix-th
     SUBDIR += cosmo
     SUBDIR += cosmosmash
@@ -222,7 +221,6 @@
     SUBDIR += doom-wolfendoom
     SUBDIR += doomlegacy
     SUBDIR += doomsday
-    SUBDIR += dopewars
     SUBDIR += drcreep
     SUBDIR += drm
     SUBDIR += duckmaze
@@ -326,7 +324,6 @@
     SUBDIR += galaxis
     SUBDIR += galaxyhack
     SUBDIR += garden-of-coloured-lights
-    SUBDIR += garith
     SUBDIR += gbottler
     SUBDIR += gbrainy
     SUBDIR += gcompris
@@ -398,7 +395,6 @@
     SUBDIR += gtkatlantic
     SUBDIR += gtkballs
     SUBDIR += gtkevemon
-    SUBDIR += gtklife
     SUBDIR += gtkpool
     SUBDIR += gtkradiant
     SUBDIR += gtypist
@@ -460,7 +456,6 @@
     SUBDIR += jvgs
     SUBDIR += jzip
     SUBDIR += kajaani-kombat
-    SUBDIR += kajongg
     SUBDIR += kajongg-kde4
     SUBDIR += kanagram
     SUBDIR += kanagram-kde4
@@ -638,7 +633,6 @@
     SUBDIR += meqcc
     SUBDIR += meritous
     SUBDIR += mindfocus
-    SUBDIR += mindguard
     SUBDIR += minecraft-client
     SUBDIR += minecraft-server
     SUBDIR += minerbold
@@ -685,7 +679,6 @@
     SUBDIR += netradiant
     SUBDIR += netrek-BRMH-bin
     SUBDIR += netrek-client-cow
-    SUBDIR += netspades
     SUBDIR += nettoe
     SUBDIR += netwalk
     SUBDIR += neverball
@@ -1100,7 +1093,6 @@
     SUBDIR += wmeyes
     SUBDIR += wmpuzzle
     SUBDIR += wmqstat
-    SUBDIR += wmquake
     SUBDIR += wmshuffle
     SUBDIR += wmtictactoe
     SUBDIR += wolfpack
@@ -1116,8 +1108,6 @@
     SUBDIR += xasteroids
     SUBDIR += xataxx
     SUBDIR += xbat
-    SUBDIR += xbattle
-    SUBDIR += xbill
     SUBDIR += xbl
     SUBDIR += xblackjack
     SUBDIR += xblast
@@ -1192,7 +1182,6 @@
     SUBDIR += xpipeman
     SUBDIR += xpired
     SUBDIR += xptools
-    SUBDIR += xpuyopuyo
     SUBDIR += xpuzzletama
     SUBDIR += xpyraminx
     SUBDIR += xqf
@@ -1239,7 +1228,6 @@
     SUBDIR += zdoom
     SUBDIR += zephulor
     SUBDIR += zhlt
-    SUBDIR += znibbles
     SUBDIR += zoom
     SUBDIR += ztrack
 

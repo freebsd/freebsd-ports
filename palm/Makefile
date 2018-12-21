@@ -15,7 +15,6 @@
     SUBDIR += palm-db-tools
     SUBDIR += pilot-link
     SUBDIR += pilot_makedoc
-    SUBDIR += pilrc
     SUBDIR += synce-libsynce
 
 .include <bsd.port.subdir.mk>

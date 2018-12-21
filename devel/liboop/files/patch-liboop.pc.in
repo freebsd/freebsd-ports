@@ -1,9 +1,0 @@
---- liboop.pc.in.orig	Mon Oct 27 01:40:31 2003
-+++ liboop.pc.in	Tue Oct 28 14:35:15 2003
-@@ -6,5 +6,5 @@
- Name: liboop
- Description: Event loop management library
- Version: @VERSION@
--Libs: -L${libdir} -lpthread -loop
-+Libs: -L${libdir} -loop
- Cflags: -D_REENTRANT -I${includedir}

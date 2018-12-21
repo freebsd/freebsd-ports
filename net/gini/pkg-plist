@@ -1,8 +1,0 @@
-bin/ginicon
-bin/ginifeed
-etc/rc.d/gini.sh.sample
-man/man1/ginicon.1.gz
-man/man1/ginifeed.1.gz
-man/man8/gini.8.gz
-sbin/gini
-%%PORTDOCS%%%%DOCSDIR%%/README

@@ -1,9 +1,0 @@
-bin/pilrc
-bin/pilrcui
-%%PORTDOCS%%%%DOCSDIR%%/archive.html
-%%PORTDOCS%%%%DOCSDIR%%/contrib.html
-%%PORTDOCS%%%%DOCSDIR%%/download.html
-%%PORTDOCS%%%%DOCSDIR%%/history.html
-%%PORTDOCS%%%%DOCSDIR%%/images/download.gif
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/manual.html

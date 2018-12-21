@@ -1,4 +1,0 @@
-xpyb provides a Python binding to the X Window System
-protocol via libxcb.
-
-WWW: http://xcb.freedesktop.org/

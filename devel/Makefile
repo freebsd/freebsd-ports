@@ -701,7 +701,6 @@
     SUBDIR += gconf2
     SUBDIR += gconf2-reference
     SUBDIR += gconfmm26
-    SUBDIR += gcvs
     SUBDIR += gdb
     SUBDIR += gdcm
     SUBDIR += geany
@@ -1536,7 +1535,6 @@
     SUBDIR += libol
     SUBDIR += libolecf
     SUBDIR += liboobs
-    SUBDIR += liboop
     SUBDIR += libopenbsd
     SUBDIR += libopencm3
     SUBDIR += libopensync

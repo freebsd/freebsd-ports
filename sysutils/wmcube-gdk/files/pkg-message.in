@@ -1,7 +1,0 @@
----------------------------------------------------
-The extra 3d objects are located in:
-	%%DATADIR%%
-
-To run wmcube type:
-	wmcube-gdk -o %%DATADIR%% &
----------------------------------------------------

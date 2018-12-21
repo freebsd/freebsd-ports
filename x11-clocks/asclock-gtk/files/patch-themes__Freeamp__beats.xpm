@@ -1,6 +1,0 @@
---- themes/Freeamp/beats.xpm.orig	1999-03-26 07:06:51 UTC
-+++ themes/Freeamp/beats.xpm
-@@ -1,2 +1,2 @@
--static char *beats_xpm[] = { NULL };
-+char *beats_xpm[] = { NULL };
- 

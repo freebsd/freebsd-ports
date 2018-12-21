@@ -1,8 +1,0 @@
-Core Wars is a simulation game. A number of programs are loaded into a
-virtual machine and executed. The programs can try to crash each other,
-manipulate other programs, overwrite as much memory as they can, etc...
-The "best" program is selected according to a scoring mechanism which
-involves the number of memory cells the program has overwritten, the
-number of other programs it has crashed and whether/when it crashed.
-
-WWW: http://corewars.sourceforge.net/

@@ -1,9 +1,0 @@
---- themes/Freeamp/hour.xpm.orig	1999-03-26 07:06:57 UTC
-+++ themes/Freeamp/hour.xpm
-@@ -1,5 +1,5 @@
- /* XPM */
--static char * hour_xpm[] = {
-+char * hour_xpm[] = {
- "5 11 3 1",
- " 	c None   ",
- ".      c #596b5e",

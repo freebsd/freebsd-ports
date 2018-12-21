@@ -18,7 +18,6 @@
     SUBDIR += krusader2-kde4
     SUBDIR += librfm
     SUBDIR += libtubo
-    SUBDIR += mtoolsfm
     SUBDIR += mucommander
     SUBDIR += nautilus
     SUBDIR += nemo

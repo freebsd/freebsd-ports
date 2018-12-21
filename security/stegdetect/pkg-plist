@@ -1,7 +1,0 @@
-bin/stegdetect
-bin/stegbreak
-bin/stegcompare
-bin/stegdeimage
-%%X11%%bin/xsteg
-man/man1/stegbreak.1.gz
-man/man1/stegdetect.1.gz

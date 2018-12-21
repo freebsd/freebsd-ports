@@ -52,7 +52,6 @@
     SUBDIR += ghostwriter
     SUBDIR += gmanedit
     SUBDIR += gnome-latex
-    SUBDIR += gnotepad+
     SUBDIR += gobby
     SUBDIR += gomate
     SUBDIR += gwrite
@@ -190,7 +189,6 @@
     SUBDIR += linux-sublime
     SUBDIR += linux-sublime3
     SUBDIR += madedit
-    SUBDIR += manedit
     SUBDIR += medit
     SUBDIR += mg
     SUBDIR += micro

@@ -1,4 +1,0 @@
-A graph layout optimizer based on the iterative application of laws of physics
-instead of using finite-pass algorithms.
-
-WWW: http://www.schmuhl.org/graphopt/

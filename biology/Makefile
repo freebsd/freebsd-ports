@@ -147,6 +147,5 @@
     SUBDIR += vcftools
     SUBDIR += velvet
     SUBDIR += wise
-    SUBDIR += xmolwt
 
 .include <bsd.port.subdir.mk>
