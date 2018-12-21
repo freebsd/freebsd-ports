@@ -366,6 +366,7 @@
     SUBDIR += libsparkcrypto
     SUBDIR += libssh
     SUBDIR += libssh2
+    SUBDIR += libssh2-devel
     SUBDIR += libtasn1
     SUBDIR += libtomcrypt
     SUBDIR += libu2f-host
@@ -1080,6 +1081,7 @@
     SUBDIR += quantis
     SUBDIR += quantis-kmod
     SUBDIR += racoon2
+    SUBDIR += racoon2-legacy
     SUBDIR += radamsa
     SUBDIR += ranpwd
     SUBDIR += ratproxy

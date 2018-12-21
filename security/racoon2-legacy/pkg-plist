@@ -1,0 +1,50 @@
+sbin/iked
+%%KINK%%sbin/kinkd
+sbin/spmd
+sbin/spmdctl
+sbin/pskgen
+etc/racoon2/default.conf.sample
+etc/racoon2/local-test.conf.sample
+etc/racoon2/racoon2.conf.sample
+etc/racoon2/transport_ike.conf.sample
+etc/racoon2/transport_kink.conf.sample
+etc/racoon2/tunnel_ike.conf.sample
+etc/racoon2/tunnel_ike_natt.conf.sample
+etc/racoon2/tunnel_kink.conf.sample
+etc/racoon2/vals.conf.sample
+etc/racoon2/hook/functions
+etc/racoon2/hook/ikesa-up.d/00ikesaup_sample
+etc/racoon2/hook/ikesa-up
+etc/racoon2/hook/ikesa-down
+etc/racoon2/hook/ikesa-rekey
+etc/racoon2/hook/child-up.d/00childup_sample
+etc/racoon2/hook/child-up
+etc/racoon2/hook/child-down
+etc/racoon2/hook/child-rekey
+etc/racoon2/hook/migration
+etc/racoon2/hook/ph1-up
+etc/racoon2/hook/ph1-down
+etc/rc.d/iked
+etc/rc.d/spmd
+%%KINK%%etc/rc.d/kinkd
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.jp
+%%PORTDOCS%%%%DOCSDIR%%/README
+man/man8/spmd.8.gz
+man/man8/spmdctl.8.gz
+man/man8/pskgen.8.gz
+man/man8/iked.8.gz
+%%KINK%%man/man8/kinkd.8.gz
+@dir etc/racoon2/psk
+@dir etc/racoon2/hook/ph1-up.d
+@dir etc/racoon2/hook/ph1-down.d
+@dir etc/racoon2/hook/migration.d
+@dir etc/racoon2/hook/ikesa-rekey.d
+@dir etc/racoon2/hook/ikesa-down.d
+@dir etc/racoon2/hook/child-rekey.d
+@dir etc/racoon2/hook/child-down.d
+@dir etc/racoon2/cert
+@postexec [ ! -e %D/%%ETCDIR%%/spmd.pwd ] || mv %D/%%ETCDIR%%/spmd.pwd %D/%%ETCDIR%%/spmd.pwd.bak
+@postexec %D/sbin/pskgen -r -o %D/%%ETCDIR%%/spmd.pwd
+@rmtry %%ETCDIR%%/spmd.pwd
+@dir(root,wheel,700) /var/run/racoon2

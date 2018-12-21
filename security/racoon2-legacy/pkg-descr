@@ -1,0 +1,18 @@
+"racoon2" is a system to exchange and to install security parameters
+for the IPsec.
+
+Currently the system supports the following specification:
+
+	Internet Key Exchange (IKEv2) Protocol
+	draft-ietf-ipsec-ikev2-17.txt
+
+	Kerberized Internet Negotiation of Keys (KINK)
+	draft-ietf-kink-kink-06.txt
+
+	PF_KEY Key Management API, Version 2
+	RFC2367
+
+	The Internet Key Exchange (IKE)
+	RFC2409
+
+WWW: http://www.racoon2.wide.ad.jp/
