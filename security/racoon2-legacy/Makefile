@@ -14,6 +14,9 @@ USES=		perl5 tar:tgz ssl
 CONFIGURE_ARGS+=	--disable-kinkd
 PLIST_SUB+=	KINK="@comment "
 
+DEPRECATED=	To retire when FreeBSD 11 is EOL
+EXPIRATION_DATE=	2021-09-30
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	YACC=/usr/bin/yacc perl_bindir=${LOCALBASE}/bin/perl5
 
