@@ -8,6 +8,8 @@ CATEGORIES=	databases www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	an object oriented interface to backup Sqlite databases
 
+LICENSE=	BSD2CLAUSE
+
 BUILD_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB@${PHP_FLAVOR} \
 		${PEARDIR}/Log/null.php:sysutils/pear-Log@${PHP_FLAVOR}
 RUN_DEPENDS=	${PEARDIR}/DB.php:databases/pear-DB@${PHP_FLAVOR} \
