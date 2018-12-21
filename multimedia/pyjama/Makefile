@@ -14,6 +14,10 @@ COMMENT=	Frontend to the Jamendo music network
 LICENSE=	GPLv2 CC-BY-NC-SA-3.0 PD
 LICENSE_COMB=	multi
 
+BROKEN=		Fetching Jamendo database dump is broken
+DEPRECATED=	Unmaintained upstream
+EXPIRATION_DATE=	2019-01-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=2.2:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson@${PY_FLAVOR}	\
