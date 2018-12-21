@@ -1,15 +1,21 @@
---- Makefile.orig	2018-02-22 21:13:38 UTC
+--- Makefile.orig	2018-11-29 14:45:26 UTC
 +++ Makefile
-@@ -205,10 +205,12 @@ ifeq ($(COMP),clang)
- 	CXX=clang++
- 	CXXFLAGS += -pedantic -Wextra -Wshadow
- ifneq ($(KERNEL),Darwin)
-+ifneq ($(KERNEL),FreeBSD)
- ifneq ($(KERNEL),OpenBSD)
- 	LDFLAGS += -latomic
+@@ -29,7 +29,7 @@ EXE = stockfish
  endif
- endif
-+endif
  
- 	ifeq ($(ARCH),armv7)
- 		ifeq ($(OS),Android)
+ ### Installation dir definitions
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ BINDIR = $(PREFIX)/bin
+ 
+ ### Built-in benchmark for pgo-builds
+@@ -211,7 +211,9 @@ ifeq ($(COMP),clang)
+ 
+ 	ifneq ($(KERNEL),Darwin)
+ 	ifneq ($(KERNEL),OpenBSD)
++	ifneq ($(KERNEL),FreeBSD)
+ 		LDFLAGS += -latomic
++	endif
+ 	endif
+ 	endif
+ 
