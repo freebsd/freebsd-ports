@@ -1,0 +1,10 @@
+--- pskgen/Makefile.in.orig	2007-12-11 23:12:22.000000000 -0800
++++ pskgen/Makefile.in	2014-07-04 13:38:23.919692384 -0700
+@@ -21,7 +21,6 @@
+ 	$(INSTALL_SCRIPT) $(PROG) $(sbindir)
+ 	$(INSTALL_DATA) $(PROG).8 $(mandir)/man8
+ 	$(INSTALL) -d $(prefix)/etc/racoon2
+-	sh ./autogen.spmd.pwd
+ 
+ depend:
+ 
