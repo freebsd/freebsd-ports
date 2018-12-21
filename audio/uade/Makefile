@@ -34,19 +34,15 @@ PORTDOCS=	BUGS PLANS REDUNDANT_REPLAYERS UAE-CREDITS UAE-README \
 		play_loop_state_diagram.dia play_loop_state_diagram.eps \
 		play_loop_state_diagram.txt uade.html
 
-OPTIONS_DEFINE=	TEXTSCOPE FUSE XMMS DOCS
+OPTIONS_DEFINE=	TEXTSCOPE FUSE DOCS
 OPTIONS_SUB=	yes
 
 TEXTSCOPE_DESC=	Audio register debug mode
-XMMS_DESC=	XMMS plugin
 
 TEXTSCOPE_CONFIGURE_WITH=	text-scope
 
 FUSE_USES=		fuse
 FUSE_CONFIGURE_WITH=	uadefs
-
-XMMS_LIB_DEPENDS=	libxmms.so:multimedia/xmms
-XMMS_CONFIGURE_WITH=	xmms
 
 post-extract:
 	@${RM} -r ${WRKSRC}/players/S
