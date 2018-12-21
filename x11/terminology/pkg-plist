@@ -7,8 +7,16 @@ bin/typop
 bin/tyq
 bin/tysend
 man/man1/terminology.1.gz
+man/man1/terminology-helpers.1.gz
+man/man1/tyalpha.1.gz
+man/man1/tybg.1.gz
+man/man1/tycat.1.gz
+man/man1/tyls.1.gz
+man/man1/typop.1.gz
+man/man1/tyq.1.gz
+man/man1/tysend.1.gz
 share/applications/terminology.desktop
-share/icons/terminology.png
+share/icons/hicolor/128x128/apps/terminology.png
 %%DATADIR%%/backgrounds/mystic.png
 %%DATADIR%%/backgrounds/texture_background.png
 %%DATADIR%%/fonts/10x20.pcf
