@@ -1,0 +1,14 @@
+--- rel/overlay/etc/vm.args.orig	2018-12-19 09:30:35 UTC
++++ rel/overlay/etc/vm.args
+@@ -43,9 +43,9 @@
+ # Start a pool of asynchronous IO threads
+ +A 16
+ 
+-# Comment this line out to enable the interactive Erlang shell on startup
++# Comment these lines out to enable the interactive Erlang shell on startup
+ +Bd -noinput
+-
++-detached
+ # Force use of the smp scheduler, fixes #1296
+ -smp enable
+ 
