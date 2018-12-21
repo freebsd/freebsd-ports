@@ -1,5 +1,0 @@
---- themes/beats/led.xpm.orig	1999-02-20 22:54:43 UTC
-+++ themes/beats/led.xpm
-@@ -1 +1 @@
--char *led_xpm[];
-+static char *led_xpm[];

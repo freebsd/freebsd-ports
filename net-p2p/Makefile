@@ -31,7 +31,6 @@
     SUBDIR += eiskaltdcpp-qt
     SUBDIR += frost
     SUBDIR += gkremldk
-    SUBDIR += gnewtellium
     SUBDIR += go-ethereum
     SUBDIR += gtk-gnutella
     SUBDIR += gtorrentviewer
@@ -62,7 +61,6 @@
     SUBDIR += namecoin
     SUBDIR += namecoin-daemon
     SUBDIR += namecoin-utils
-    SUBDIR += napshare
     SUBDIR += ncdc
     SUBDIR += opendchub
     SUBDIR += p5-Net-BitTorrent

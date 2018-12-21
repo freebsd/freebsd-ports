@@ -1,9 +1,0 @@
-bin/mtoolsfm
-man/man1/mtoolsfm.1.gz
-share/locale/de/LC_MESSAGES/mtoolsfm.mo
-share/locale/en@boldquot/LC_MESSAGES/mtoolsfm.mo
-share/locale/en@quot/LC_MESSAGES/mtoolsfm.mo
-share/locale/fr/LC_MESSAGES/mtoolsfm.mo
-share/locale/pt_BR/LC_MESSAGES/mtoolsfm.mo
-share/locale/pt_PT/LC_MESSAGES/mtoolsfm.mo
-share/locale/ru/LC_MESSAGES/mtoolsfm.mo

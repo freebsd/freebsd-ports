@@ -172,7 +172,6 @@
     SUBDIR += gplink
     SUBDIR += granulate
     SUBDIR += grc
-    SUBDIR += gtkfind
     SUBDIR += gwhich
     SUBDIR += hb
     SUBDIR += hello

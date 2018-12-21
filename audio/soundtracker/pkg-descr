@@ -1,8 +1,0 @@
-SoundTracker is a pattern-oriented music editor (similar to the classic DOS
-program FastTracker and the Amiga legend ProTracker).  Samples can be lined
-up on tracks and patterns which are then arranged to a song.
-
-Supported module formats are XM and MOD; the player code is the one from
-OpenCP.  A basic sample recorder and editor is also included.
-
-WWW: http://www.soundtracker.org/

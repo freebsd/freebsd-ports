@@ -103,7 +103,6 @@
     SUBDIR += geminifonts
     SUBDIR += gentium-basic
     SUBDIR += gentium-plus
-    SUBDIR += gfe
     SUBDIR += gnu-unifont
     SUBDIR += gnu-unifont-ttf
     SUBDIR += gofont-ttf

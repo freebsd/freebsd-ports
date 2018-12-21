@@ -143,7 +143,6 @@
     SUBDIR += p5-Gnome2-Canvas
     SUBDIR += p5-Gnome2-VFS
     SUBDIR += p5-Gnome2-Wnck
-    SUBDIR += p5-Gtk-Perl
     SUBDIR += p5-Gtk2
     SUBDIR += p5-Gtk2-Chmod
     SUBDIR += p5-Gtk2-Ex-Dialogs

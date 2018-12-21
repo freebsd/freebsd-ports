@@ -8,7 +8,6 @@
     SUBDIR += alltraxclock
     SUBDIR += amor-kde4
     SUBDIR += asclock
-    SUBDIR += asclock-gtk
     SUBDIR += asclock-xlib
     SUBDIR += astime
     SUBDIR += astzclock
@@ -45,7 +44,6 @@
     SUBDIR += wmblueclock
     SUBDIR += wmcalclock
     SUBDIR += wmclock
-    SUBDIR += wmclockmon
     SUBDIR += wmfishtime
     SUBDIR += wmfuzzy
     SUBDIR += wmtime

@@ -1,8 +1,0 @@
-The ManEdit UNIX Manual Page Editor is an editor specifically tailored
-for UNIX manual pages. It has a preview viewer, uses the manual page XML
-format for easy editing, and comes with a tutorial and reference guide.
-It uses the GTK+ widget set and features syntax highlighting, a complete
-drag and drop system for easy viewing and editing, a crash recovery
-system, and sample manual page templates.
-
-WWW: http://freecode.com/projects/manedit

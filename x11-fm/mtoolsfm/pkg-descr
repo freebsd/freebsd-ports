@@ -1,6 +1,0 @@
-As a graphical frontend to mtools, mtoolsfm is a program which should
-give people easy access to floppies under UNIX-like operating
-systems. It can do simple tasks of a file-manager and makes use of
-mtools to access floppies.
-
-WWW: http://mtoolsfm.sourceforge.net/

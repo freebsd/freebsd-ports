@@ -1,9 +1,0 @@
---- themes/shaped/led.xpm.orig	1999-02-20 08:49:20 UTC
-+++ themes/shaped/led.xpm
-@@ -1,5 +1,5 @@
- /* XPM */
--char * led_xpm[] = {
-+static char * led_xpm[] = {
- "135 11 3 1",
- " 	c #282828",
- "O	c #00df00",

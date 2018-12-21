@@ -1,9 +1,0 @@
-This is a XMMS input plugin for playing .nsf and .hes audio files.
-
-It supports all internal sound channels and the extra sound channels found in
-the Konami VRC6, Konami VRC7, Namco 106, Nintendo MMC5, and Sunsoft FME-07
-chips.
-
-The extra sound channel present in the Famicom Disk System is also emulated.
-
-WWW: http://projects.raphnet.net/#festalon

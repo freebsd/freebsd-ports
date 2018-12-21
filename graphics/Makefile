@@ -92,7 +92,6 @@
     SUBDIR += cenon
     SUBDIR += cfdg
     SUBDIR += charls
-    SUBDIR += chbg
     SUBDIR += cimg
     SUBDIR += cinepaint
     SUBDIR += cloudcompare
@@ -115,7 +114,6 @@
     SUBDIR += cthumb
     SUBDIR += curator
     SUBDIR += cuttlefish
-    SUBDIR += danpei
     SUBDIR += darknock
     SUBDIR += darktable
     SUBDIR += dataplot
@@ -196,7 +194,6 @@
     SUBDIR += fly
     SUBDIR += fortytwo
     SUBDIR += fotofix
-    SUBDIR += fotoxx
     SUBDIR += founts
     SUBDIR += fpc-cairo
     SUBDIR += fpc-graph
@@ -226,7 +223,6 @@
     SUBDIR += fyre
     SUBDIR += g2
     SUBDIR += gauche-gl
-    SUBDIR += gcolor
     SUBDIR += gcolor2
     SUBDIR += gcolor3
     SUBDIR += gd
@@ -311,7 +307,6 @@
     SUBDIR += grafx2
     SUBDIR += graphene
     SUBDIR += graphite2
-    SUBDIR += graphopt
     SUBDIR += graphos
     SUBDIR += graphviz
     SUBDIR += grx

@@ -1,7 +1,0 @@
-bin/ithought
-libexec/ithought/module_actions/libadvogato.so
-libexec/ithought/module_actions/libitep.so
-libexec/ithought/module_actions/libkuro5hin.so
-libexec/ithought/module_actions/liblivejournal.so
-libexec/ithought/module_actions/libstdout.so
-libexec/ithought/script_actions/stdout

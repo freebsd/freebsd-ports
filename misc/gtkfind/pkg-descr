@@ -1,6 +1,0 @@
-gtkfind is the program to use when you don't want to have to remember all
-the options to find(1). It is a graphical program that allows you to
-search for files and (optionally) perform operations on them. You can
-search for files by using wildcards, by matching file types and/or
-permissions, etc. gtkfind requires X and the GTK+ toolkit. It is still
-under development, but has reached a stage where it is actually useful.

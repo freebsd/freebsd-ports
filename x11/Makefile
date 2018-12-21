@@ -71,7 +71,6 @@
     SUBDIR += fpc-x11
     SUBDIR += fstobdf
     SUBDIR += gcb
-    SUBDIR += gdkxft
     SUBDIR += gdm
     SUBDIR += gmrun
     SUBDIR += gnome-clipboard-daemon
@@ -92,8 +91,6 @@
     SUBDIR += gstreamer1-plugins-x
     SUBDIR += gstreamer1-plugins-ximagesrc
     SUBDIR += gsynaptics
-    SUBDIR += gtk-launch
-    SUBDIR += gtk-theme-switch
     SUBDIR += gtk-theme-switch2
     SUBDIR += gtkchtheme
     SUBDIR += gtkterm2
@@ -481,12 +478,10 @@
     SUBDIR += xorgproto
     SUBDIR += xplsprinters
     SUBDIR += xpr
-    SUBDIR += xpra
     SUBDIR += xprehashprinterlist
     SUBDIR += xprintidle
     SUBDIR += xprompt
     SUBDIR += xprop
-    SUBDIR += xpyb
     SUBDIR += xrandr
     SUBDIR += xrdb
     SUBDIR += xrefresh

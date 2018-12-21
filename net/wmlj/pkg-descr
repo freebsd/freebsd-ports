@@ -1,7 +1,0 @@
-wmlj monitors your Friends List at LiveJournal.com, an online
-journaling service. It's designed to sit at your WindowMaker dock
-panel. It checks the Friends List for updates every given time
-interval, and if some of your friends post new entries, it signals
-you with a neat graphic animation sequence.
-
-WWW: http://wmlj.sourceforge.net/

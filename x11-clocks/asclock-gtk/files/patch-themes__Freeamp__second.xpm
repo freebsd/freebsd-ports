@@ -1,9 +1,0 @@
---- themes/Freeamp/second.xpm.orig	1999-03-26 07:07:00 UTC
-+++ themes/Freeamp/second.xpm
-@@ -1,5 +1,5 @@
- /* XPM */
--static char * second_xpm[] = {
-+char * second_xpm[] = {
- "5 20 2 1",
- " 	c None   ",
- "+	c #0C110D",

@@ -10788,3 +10788,116 @@ dns/knot1|dns/knot2|2018-12-16|Has expired: EOL upstream; successor dns/knot2 is
 print/frescobaldi||2018-12-16|Depends on non-existent poppler-qt4
 lang/python34|lang/python36|2018-12-18|Has expired: Fails to build with recent OpenSSL
 graphics/py-sk1|graphics/sk1|2018-12-18|sk1 is an app, not a python library
+net/py-libstorj||2018-12-21|Has expired: Broken for more than 6 months
+net/xferstats||2018-12-21|Has expired: Uses obsolete glib12
+net/wmlj||2018-12-21|Has expired: Uses obsolete glib12
+net/ipsorc||2018-12-21|Has expired: Uses obsolete glib12
+net/bsdproxy||2018-12-21|Has expired: Uses obsolete glib12
+net/gini||2018-12-21|Has expired: Uses obsolete glib12
+net/netatalk|net/netatalk3|2018-12-21|Has expired: Outdated branch of netatalk; use net/netatalk3 instead
+net/nocatsplash||2018-12-21|Has expired: Uses obsolete glib12
+net/jags||2018-12-21|Has expired: Uses obsolete glib12
+net/scribe||2018-12-21|Has expired: Broken for more than 6 months
+net/libnetdude||2018-12-21|Has expired: Uses obsolete glib12
+net/nepim||2018-12-21|Has expired: Uses obsolete glib12
+emulators/generator||2018-12-21|Has expired: Uses obsolete glib12
+emulators/py-nova||2018-12-21|Has expired: Broken for more than 6 months
+emulators/generator-cbiere||2018-12-21|Has expired: Uses obsolete glib12
+x11-toolkits/p5-Gtk-Perl||2018-12-21|Has expired: Uses obsolete glib12
+deskutils/ithought||2018-12-21|Has expired: Uses obsolete glib12
+deskutils/gaddr||2018-12-21|Has expired: Uses obsolete glib12
+x11-fonts/gfe||2018-12-21|Has expired: Uses obsolete glib12
+graphics/graphopt||2018-12-21|Has expired: Uses obsolete glib12
+graphics/fotoxx||2018-12-21|Has expired: Broken for more than 6 months
+graphics/gcolor||2018-12-21|Has expired: Uses obsolete glib12
+graphics/danpei||2018-12-21|Has expired: Uses obsolete glib12
+graphics/chbg||2018-12-21|Has expired: Uses obsolete glib12
+mail/pop3lite||2018-12-21|Has expired: Uses obsolete glib12
+mail/gbuffy||2018-12-21|Has expired: Uses obsolete glib12
+security/gtk-knocker||2018-12-21|Has expired: Uses obsolete glib12
+security/gpasman||2018-12-21|Has expired: Uses obsolete glib12
+security/crank||2018-12-21|Has expired: Uses obsolete glib12
+security/stegdetect||2018-12-21|Has expired: Uses obsolete glib12
+devel/liboop||2018-12-21|Has expired: Uses obsolete glib12
+devel/gcvs||2018-12-21|Has expired: Uses obsolete glib12
+print/lpr-wrapper||2018-12-21|Has expired: Uses obsolete glib12
+print/libppd||2018-12-21|Has expired: Uses obsolete glib12
+net-p2p/napshare||2018-12-21|Has expired: Uses obsolete glib12
+net-p2p/gnewtellium||2018-12-21|Has expired: Uses obsolete glib12
+editors/gnotepad+||2018-12-21|Has expired: Uses obsolete glib12
+editors/manedit||2018-12-21|Has expired: Uses obsolete glib12
+misc/gtkfind||2018-12-21|Has expired: Uses obsolete glib12
+games/mindguard||2018-12-21|Has expired: Uses obsolete glib12
+games/xbattle||2018-12-21|Has expired: Uses obsolete glib12
+games/xbill||2018-12-21|Has expired: Uses obsolete glib12
+games/corewars||2018-12-21|Has expired: Uses obsolete glib12
+games/dopewars||2018-12-21|Has expired: Uses obsolete glib12
+games/garith||2018-12-21|Has expired: Uses obsolete glib12
+games/wmquake||2018-12-21|Has expired: Uses obsolete glib12
+games/znibbles||2018-12-21|Has expired: Uses obsolete glib12
+games/xpuyopuyo||2018-12-21|Has expired: Uses obsolete glib12
+games/kajongg||2018-12-21|Has expired: Broken for more than 6 months
+games/netspades||2018-12-21|Has expired: Uses obsolete glib12
+games/gtklife||2018-12-21|Has expired: Uses obsolete glib12
+biology/xmolwt||2018-12-21|Has expired: Uses obsolete glib12
+x11-clocks/wmclockmon||2018-12-21|Has expired: Uses obsolete glib12
+x11-clocks/asclock-gtk||2018-12-21|Has expired: Uses obsolete glib12
+net-im/gale||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-ahx||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-curses||2018-12-21|Has expired: Uses obsolete glib12
+audio/scrobbler||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-nsf||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-nas||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-gbsplay||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-wavpack||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-shn||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-volnorm||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-faad||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-scrobbler||2018-12-21|Has expired: Uses obsolete glib12
+audio/mcplay||2018-12-21|Has expired: Uses obsolete glib12
+audio/gmixer||2018-12-21|Has expired: Uses obsolete glib12
+audio/soundtracker||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-sapplug||2018-12-21|Has expired: Uses obsolete glib12
+audio/rio500||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmmsctrl||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-xf86audio||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-mailnotify||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-sexypsf||2018-12-21|Has expired: Uses obsolete glib12
+audio/gqmpeg||2018-12-21|Has expired: Uses obsolete glib12
+audio/wmalbum||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-xymms||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-flac||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-festalon||2018-12-21|Has expired: Uses obsolete glib12
+audio/gkrellmms2||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-ladspa||2018-12-21|Has expired: Uses obsolete glib12
+math/octave-forge-engine||2018-12-21|Has expired: Broken for more than 6 months
+math/surf||2018-12-21|Has expired: Uses obsolete glib12
+math/msieve||2018-12-21|Has expired: Broken for more than 6 months
+math/octave-forge-fl-core||2018-12-21|Has expired: Broken for more than 6 months
+math/octave-forge-pdb||2018-12-21|Has expired: Broken for more than 6 months
+math/octave-forge-audio||2018-12-21|Has expired: Broken for more than 6 months
+math/geg||2018-12-21|Has expired: Uses obsolete glib12
+math/grpn||2018-12-21|Has expired: Uses obsolete glib12
+x11/gdkxft||2018-12-21|Has expired: Uses obsolete glib12
+x11/gtk-theme-switch||2018-12-21|Has expired: Uses obsolete glib12
+x11/xpyb||2018-12-21|Has expired: Broken for more than 6 months
+x11/gtk-launch||2018-12-21|Has expired: Uses obsolete glib12
+x11/xpra||2018-12-21|Has expired: Broken for more than 6 months
+palm/pilrc||2018-12-21|Has expired: Uses obsolete glib12
+x11-fm/mtoolsfm||2018-12-21|Has expired: Uses obsolete glib12
+german/steak||2018-12-21|Has expired: Uses obsolete glib12
+multimedia/xmms-skins-huge||2018-12-21|Has expired: Uses obsolete glib12
+multimedia/openquicktime||2018-12-21|Has expired: Uses obsolete glib12
+multimedia/xmms-skins||2018-12-21|Has expired: Uses obsolete glib12
+multimedia/oqtplayer||2018-12-21|Has expired: Uses obsolete glib12
+multimedia/oqtencoder||2018-12-21|Has expired: Uses obsolete glib12
+multimedia/p5-Video-OpenQuicktime||2018-12-21|Has expired: Uses obsolete glib12
+multimedia/xtheater||2018-12-21|Has expired: Uses obsolete glib12
+multimedia/dv2jpg||2018-12-21|Has expired: Uses obsolete glib12
+comms/hf||2018-12-21|Has expired: Uses obsolete glib12
+comms/gscmxx||2018-12-21|Has expired: Uses obsolete glib12
+sysutils/wmcube-gdk||2018-12-21|Has expired: Uses obsolete glib12
+sysutils/gcombust||2018-12-21|Has expired: Uses obsolete glib12
+sysutils/xlogmaster||2018-12-21|Has expired: Uses obsolete glib12
+sysutils/mount.app||2018-12-21|Has expired: Uses obsolete glib12
+sysutils/bbapm||2018-12-21|Has expired: Uses obsolete glib12

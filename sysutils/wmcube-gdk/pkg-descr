@@ -1,7 +1,0 @@
-wmcube-gdk is a modified version of wmCube that features much faster
-redraws, significantly lower CPU usage, ability to specify color
-for both flat-shaded and wireframe objects, and transparent CPU
-load / zoom buttons. The roll in sequence of the original wmCube
-has been removed.
-
-WWW: http://www.ne.jp/asahi/linux/timecop/

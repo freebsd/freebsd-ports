@@ -1,9 +1,0 @@
---- themes/classic/led.xpm.orig	Sun Mar 25 13:12:27 2007
-+++ themes/classic/led.xpm	Sun Mar 25 13:12:33 2007
-@@ -1,5 +1,5 @@
- /* XPM */
--char * led_xpm[] = {
-+static char * led_xpm[] = {
- "135 11 3 1",
- " 	c #282828",
- "O	c #00df00",
