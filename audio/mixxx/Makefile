@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mixxx
-DISTVERSION=	2.1.5
-PORTREVISION=	2
 DISTVERSIONPREFIX=	release-
+DISTVERSION=	2.1.5
+PORTREVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	acm@FreeBSD.org
@@ -12,9 +12,6 @@ COMMENT=	DJ mixing application
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
 
 BROKEN_aarch64=		fails to compile: Exception("invalid machine type")
 BROKEN_powerpc64=	fails to configure: unmet dependencies: Could not find libprotobuf, libchromaprint, libmp4, and libwavpack
@@ -37,7 +34,7 @@ LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 		libtag.so:audio/taglib \
 		libprotobuf.so:devel/protobuf
 
-USES=		compiler:c++11-lang iconv qt:5 pkgconfig scons
+USES=		compiler:c++11-lang gl iconv qt:5 pkgconfig scons
 USE_XORG=	x11
 USE_GL=		gl glu
 USE_GITHUB=	yes
@@ -112,5 +109,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} Mixxx-Manual.pdf \
 		${STAGEDIR}${DOCSDIR}
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/mixxx/plugins/soundsource -type d -empty -delete
 
 .include <bsd.port.mk>
