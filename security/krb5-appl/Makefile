@@ -33,32 +33,17 @@ PATCH_DIST_STRIP=	-p1
 OPTIONS_DEFINE=	KRB5_RENAME_FTP KRB5_RENAME_TELNET KRB5_RENAME_RLOGIN KRB5_RENAME_RSH KRB5_RENAME_RCP
 OPTIONS_DEFAULT=	KRB5_PORT KRB5_RENAME_FTP KRB5_RENAME_TELNET \
 			KRB5_RENAME_RLOGIN KRB5_RENAME_RSH KRB5_RENAME_RCP
-OPTIONS_SINGLE=		KRB5_VERSION
-OPTIONS_SINGLE_KRB5_VERSION=	KRB5_PORT \
-			KRB5_114_PORT KRB5_115_PORT KRB5_116_PORT KRB5_DEVEL_PORT
 KRB5_RENAME_FTP_DESC=		Rename ftp to kftp
 KRB5_RENAME_TELNET_DESC=	Rename telnet to ktelnet
 KRB5_RENAME_RLOGIN_DESC=	Rename rlogin to krlogin
 KRB5_RENAME_RSH_DESC=		Rename rsh to krsh
 KRB5_RENAME_RCP_DESC=		Rename rcp to krcp
 KRB5_PORT_DESC=			Depend on security/krb5
-KRB5_114_PORT_DESC=		Depend on security/krb5-114
-KRB5_115_PORT_DESC=		Depend on security/krb5-115
-KRB5_116_PORT_DESC=		Depend on security/krb5-116
-KRB5_DEVEL_PORT_DESC=		Depend on security/krb5-devel
 
 .include <bsd.port.pre.mk>
 
 KRB5_PORT_LIB_DEPENDS=		libkrb5support.so:security/krb5
 KRB5_PORT_RUN_DEPENDS=		kinit:security/krb5
-KRB5_114_PORT_LIB_DEPENDS=		libkrb5support.so:security/krb5-114
-KRB5_114_PORT_RUN_DEPENDS=		kinit:security/krb5-114
-KRB5_115_PORT_LIB_DEPENDS=		libkrb5support.so:security/krb5-115
-KRB5_115_PORT_RUN_DEPENDS=		kinit:security/krb5-114
-KRB5_116_PORT_LIB_DEPENDS=		libkrb5support.so:security/krb5-116
-KRB5_116_PORT_RUN_DEPENDS=		kinit:security/krb5-116
-KRB5_DEVEL_PORT_LIB_DEPENDS=		libkrb5support.so:security/krb5-devel
-KRB5_DEVEL_PORT_RUN_DEPENDS=		kinit:security/krb5-devel
 
 KRB5_DOC_BUILD_DEPENDS+=	texi2dvi:print/texinfo \
 			dvips:print/dvipsk-tetex
