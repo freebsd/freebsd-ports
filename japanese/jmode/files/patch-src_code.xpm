@@ -1,9 +1,0 @@
---- src/code.xpm.orig	2018-02-10 09:59:43 UTC
-+++ src/code.xpm
-@@ -1,5 +1,5 @@
- /* XPM */
--static char * code_xpm[] = {
-+static const char * code_xpm[] = {
- "24 32 13 1",
- " 	c None",
- ".	c #7FFF00",

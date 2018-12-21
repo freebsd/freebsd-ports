@@ -1,9 +1,0 @@
---- src/anthy.xpm.orig	2018-02-10 09:55:51 UTC
-+++ src/anthy.xpm
-@@ -1,5 +1,5 @@
- /* XPM */
--static char * anthy_xpm[] = {
-+static const char * anthy_xpm[] = {
- "24 32 81 1",
- " 	c None",
- ".	c #EAAFC3",

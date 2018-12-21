@@ -1,6 +1,0 @@
-Xdialog is designed to be a drop in replacement for the "dialog" or
-"cdialog" programs. It converts any terminal based program into a
-program with an X-windows interface. The dialogs are easier to see
-and use while adding even more functionalities.
-
-WWW: http://xdialog.free.fr/

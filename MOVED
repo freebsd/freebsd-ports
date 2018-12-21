@@ -10907,3 +10907,12 @@ polish/php_doc||2018-12-21|Has expired: unmaintained and documents obsolete PHP 
 portuguese/php_doc-br||2018-12-21|Has expired: unmaintained and documents obsolete PHP < 5.6
 french/php_doc||2018-12-21|Has expired: unmaintained and documents obsolete PHP < 5.6
 japanese/php_doc||2018-12-21|Has expired: unmaintained and documents obsolete PHP < 5.6
+net/ntop||2018-12-21|Has expired: Broken for more than 6 months
+textproc/ots||2018-12-21|Has expired: Broken for more than 6 months
+x11/xdialog||2018-12-21|Has expired: Uses obsolete glib12
+net/netdude||2018-12-21|Has expired: Uses obsolete glib12
+japanese/jmode-skk||2018-12-21|Has expired: Uses obsolete glib12
+print/gsview||2018-12-21|Has expired: Uses obsolete glib12
+x11/dgs||2018-12-21|Has expired: Uses obsolete glib12
+japanese/jmode||2018-12-21|Has expired: Uses obsolete glib12
+multimedia/xmms||2018-12-21|Has expired: Uses obsolete glib12

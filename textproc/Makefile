@@ -542,7 +542,6 @@
     SUBDIR += opentoken
     SUBDIR += openvanilla-framework
     SUBDIR += or-aspell
-    SUBDIR += ots
     SUBDIR += p5-AI-Categorizer
     SUBDIR += p5-Algorithm-CheckDigits
     SUBDIR += p5-Algorithm-RabinKarp
