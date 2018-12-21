@@ -164,7 +164,6 @@ lib/libQFutil.so.1
 lib/libQFutil.so.1.0.0
 %%CLIENTS%%%%VORBIS%%lib/quakeforge/plugins/cd_file.so
 %%CLIENTS%%%%SDL%%lib/quakeforge/plugins/cd_sdl.so
-%%CLIENTS%%%%XMMS%%lib/quakeforge/plugins/cd_xmms.so
 %%CLIENTS%%lib/quakeforge/plugins/console_client.so
 %%SERVERS%%lib/quakeforge/plugins/console_server.so
 %%CLIENTS%%lib/quakeforge/plugins/snd_output_oss.so
