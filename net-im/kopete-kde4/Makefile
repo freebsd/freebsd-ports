@@ -46,17 +46,10 @@ CMAKE_ARGS+=	-DWITH_Alsa:BOOL=OFF
 # Route Mozilla plugin by standard path.
 CMAKE_ARGS+=	-DMOZPLUGIN_INSTALL_DIR:PATH="${WEBPLUGIN_DIR}"
 
-# Forcefully disable net-im/libmsn which was deprecated on 2013-07-27.
-CMAKE_ARGS+=	-DWITH_wlm:BOOL=OFF
+CMAKE_ARGS+=	-DWITH_wlm:BOOL=OFF -DWITH_Xmms:BOOL=OFF
 
 # Fix build with fresh multimedia/v4l_compat installed.
 CFLAGS+=	-DHAVE_LINUX_INTEGER_TYPES=1
-
-OPTIONS_DEFINE=	XMMS
-XMMS_DESC=	XMMS Kopete nowlistening plugin
-XMMS_LIB_DEPENDS=	libxmms.so:multimedia/xmms
-XMMS_CMAKE_ON=	-DWITH_Xmms:BOOL=ON
-XMMS_CMAKE_OFF=	-DWITH_Xmms:BOOL=OFF
 
 post-patch:
 	${REINPLACE_CMD} 's,-std=gnu90,-std=gnu89,' \
