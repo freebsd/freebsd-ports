@@ -27,7 +27,7 @@ OPTIONS_EXCLUDE+=	DTRACE
 # dt_modtext:/usr/src/cddl/contrib/opensolaris/lib/libdtrace/common/dt_link.c(820): arm not implemented
 OPTIONS_EXCLUDE_armv6=		DTRACE
 OPTIONS_EXCLUDE_armv7=		DTRACE
-OPTIONS_EXCLIDE_powerpc64=	DTRACE
+OPTIONS_EXCLUDE_powerpc64=	DTRACE
 
 BUNDLED_SSL_DESC=		Use node.js's bundled OpenSSL implementation #'
 BUNDLED_SSL_USES_OFF=		ssl
