@@ -25,7 +25,7 @@ OPTIONS_GROUP_INPUT=	CHRONY CURL CURL_JSON CURL_XML DBI IPMI JSON \
 			MEMCACHEC MODBUS MQTT MYSQL NUTUPS OLSRD ONEWIRE OPENLDAP \
 			PERL PGSQL PINBA PING PYTHON RABBITMQ REDIS ROUTEROS \
 			SIGROK SNMP STATSD TOKYOTYRANT VARNISH XML \
-			XMMS ZOOKEEPER
+			ZOOKEEPER
 
 OPTIONS_DEFAULT=	LOGGING GCRYPT PING
 
@@ -71,7 +71,6 @@ TSDB_DESC=		Enable write_tsdb plugin
 VARNISH_DESC=		Enable varnish 4.x cache statistics
 VIRT_DESC=		Enable libvirt plugin (requires XML)
 XML_DESC=		Enable XML plugins
-XMMS_DESC=		Enable xmms plugin
 ZOOKEEPER_DESC=		Enable zookeeper plugin
 
 OPTIONS_SUB=	yes
@@ -280,12 +279,6 @@ VIRT_CONFIGURE_WITH=		virt=${LOCALBASE}
 
 XML_LIB_DEPENDS=		libxml2.so:textproc/libxml2
 XML_CONFIGURE_WITH=		libxml2=${LOCALBASE}
-
-XMMS_CFLAGS=			`xmms-config --cflags`
-XMMS_LIB_DEPENDS=		libxmms.so:multimedia/xmms
-XMMS_CONFIGURE_ENABLE=		xmms
-XMMS_CONFIGURE_WITH=		libxmms=${LOCALBASE}
-XMMS_USE=			XORG=x11,xext,xi
 
 ZOOKEEPER_LIB_DEPENDS=		libzookeeper_mt.so:devel/libzookeeper
 ZOOKEEPER_CONFIGURE_ENABLE=	zookeeper
