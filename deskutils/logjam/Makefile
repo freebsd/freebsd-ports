@@ -13,7 +13,7 @@ COMMENT=	GTK2 interface to livejournals, ie www.livejournal.com
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libdbus-glib-1.so:devel/dbus-glib
 
-OPTIONS_DEFINE=	GTKSPELL SQLITE XMMS GTKHTML RSVG
+OPTIONS_DEFINE=	GTKSPELL SQLITE GTKHTML RSVG
 OPTIONS_DEFAULT=	GTKSPELL
 OPTIONS_SUB=	yes
 
@@ -21,7 +21,6 @@ GTKSPELL_DESC=	Support spell checking
 GTKHTML_DESC=	Support rendering HTML
 RSVG_DESC=	Support rendering SVG
 SQLITE_DESC=	Use sqlite3 as a backend
-XMMS_DESC=	Enable XMMS music detection
 
 USES=		gettext gmake pathfix pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
@@ -35,9 +34,6 @@ GTKSPELL_CONFIGURE_WITH=	gtkspell
 
 SQLITE_CONFIGURE_WITH=	sqlite3
 SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
-
-XMMS_LIB_DEPENDS=	libxmms.so:multimedia/xmms
-XMMS_CONFIGURE_WITH=	xmms
 
 GTKHTML_USE=	GNOME=gtkhtml3
 GTKHTML_CONFIGURE_WITH=	gtkhtml
