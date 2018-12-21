@@ -19,7 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Fedict
 GH_PROJECT=	eid-mw
 
-USES=		autoreconf gettext-tools gmake libtool pkgconfig ssl
+USES=		autoreconf compiler:c++11-lang gettext-tools gmake gnome \
+		libtool pkgconfig ssl
 USE_GNOME=	gtk30 libxml2
 GLIB_SCHEMAS=	eid-viewer.gschema.xml
 
