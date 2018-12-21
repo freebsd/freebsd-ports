@@ -35,7 +35,7 @@ INSTALL_TARGET=	install-strip
 
 PLIST_SUB+=	ABIVERSION=3.0
 
-OPTIONS_DEFINE=	CLIPART DEBUG MATHVIEW NLS OTS PSION \
+OPTIONS_DEFINE=	CLIPART DEBUG MATHVIEW NLS PSION \
 		TEMPLATES WP
 OPTIONS_DEFAULT=CLIPART COLSERVICE COLSUGAR COLTCP SPELLCHECK TEMPLATES
 OPTIONS_SUB=	yes
@@ -56,7 +56,6 @@ COLXMPP_DESC=		Collaborate with the Jabber/XMPP backend
 DICT_DESC=		Spelling and grammar checking
 GRAMMAR_DESC=		Grammar checking plugin
 MATHVIEW_DESC=		MathML render plugin
-OTS_DESC=		Text Summarizer plugin
 PSION_DESC=		Psion 5(MX) files convertion plugin
 SPELLCHECK_DESC=	Spell checking support
 TEMPLATES_DESC=		Include additional templates
@@ -110,8 +109,6 @@ MATHVIEW_LIB_DEPENDS=		libmathview.so:x11-toolkits/gtkmathview
 NLS_USES=			gettext
 NLS_CONFIGURE_ENABLE=		nls
 
-OTS_LIB_DEPENDS=		libots-1.so:textproc/ots
-
 PSION_LIB_DEPENDS=		libpsiconv.so:converters/psiconv
 
 SPELLCHECK_LIB_DEPENDS=		libenchant.so:textproc/enchant
@@ -139,10 +136,6 @@ ABIWORD_PLUGINS+=	grammar
 
 .if ${PORT_OPTIONS:MMATHVIEW}
 ABIWORD_PLUGINS+=	mathview
-.endif
-
-.if ${PORT_OPTIONS:MOTS}
-ABIWORD_PLUGINS+=	ots
 .endif
 
 .if ${PORT_OPTIONS:MPSION}
