@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/doc/GPL.txt
 
 LIB_DEPENDS=	libopenbabel.so:science/openbabel
 
-USES=		qmake qt:5
+USES=		compiler:c++11-lang gl qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	bryanherger
 USE_QT=		core gui network printsupport widgets xml buildtools_build
