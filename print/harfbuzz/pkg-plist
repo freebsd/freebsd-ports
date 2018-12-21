@@ -18,6 +18,7 @@ include/harfbuzz/hb-gobject.h
 include/harfbuzz/hb-graphite2.h
 include/harfbuzz/hb-map.h
 include/harfbuzz/hb-ot-color.h
+include/harfbuzz/hb-ot-deprecated.h
 include/harfbuzz/hb-ot-font.h
 include/harfbuzz/hb-ot-layout.h
 include/harfbuzz/hb-ot-math.h
@@ -96,6 +97,7 @@ share/gtk-doc/html/harfbuzz/ch03s03.html
 share/gtk-doc/html/harfbuzz/ch09.html
 share/gtk-doc/html/harfbuzz/ch10.html
 share/gtk-doc/html/harfbuzz/ch11.html
+share/gtk-doc/html/harfbuzz/ch12.html
 share/gtk-doc/html/harfbuzz/clusters.html
 share/gtk-doc/html/harfbuzz/complex-scripts.html
 share/gtk-doc/html/harfbuzz/customizing-unicode-functions.html
@@ -103,6 +105,7 @@ share/gtk-doc/html/harfbuzz/deprecated-api-index.html
 share/gtk-doc/html/harfbuzz/fonts-and-faces.html
 share/gtk-doc/html/harfbuzz/getting-started.html
 share/gtk-doc/html/harfbuzz/graphite-shaping.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-aat-layout.html
 share/gtk-doc/html/harfbuzz/harfbuzz-hb-blob.html
 share/gtk-doc/html/harfbuzz/harfbuzz-hb-buffer.html
 share/gtk-doc/html/harfbuzz/harfbuzz-hb-common.html

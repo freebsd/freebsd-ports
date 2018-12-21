@@ -19,6 +19,7 @@
 @comment include/harfbuzz/hb-map.h
 include/harfbuzz/hb-icu.h
 @comment include/harfbuzz/hb-ot-color.h
+@comment include/harfbuzz/hb-ot-deprecated.h
 @comment include/harfbuzz/hb-ot-font.h
 @comment include/harfbuzz/hb-ot-layout.h
 @comment include/harfbuzz/hb-ot-math.h
