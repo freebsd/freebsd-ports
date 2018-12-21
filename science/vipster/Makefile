@@ -26,6 +26,6 @@ DESKTOP_USES=		qt:5
 DESKTOP_USE=		QT=core,gui,widgets,buildtools_build,qmake_build
 
 PYTHON_CMAKE_BOOL=	PYTHON
-PYTHON_BROKEN=		Bundles pybind11: https://repology.org/metapackage/pybind11/versions
+PYTHON_BROKEN=		Bundles pybind11: https://github.com/sgsaenger/vipster/issues/23
 
 .include <bsd.port.mk>
