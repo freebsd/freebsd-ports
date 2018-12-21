@@ -62,7 +62,7 @@ required_dirs="${named_chrootdir}"
 _named_confdirroot="${named_conf%/*}"
 _named_confdir="${named_chrootdir}${_named_confdirroot}"
 _named_program_root="${named_program%/sbin/named}"
-_openssl_engines="%%LOCALBASE%%/lib/engines"
+_openssl_engines="%%ENGINES%%"
 
 # Needed if named.conf and rndc.conf are moved or if rndc.conf is used
 rndc_conf=${rndc_conf:-"$_named_confdir/rndc.conf"}
@@ -143,19 +143,16 @@ chroot_autoupdate()
 		fi
 	fi
 
-	# If OpenSSL from ports, then the engines should be present in the
-	# chroot, named loads them after chrooting.
+	# The OpenSSL engines should be present in the chroot, named loads them
+	# after chrooting.
 	if [ -d ${_openssl_engines} ]; then
-		# FIXME when 8.4 is gone see if
-		# security.jail.param.allow.mount.nullfs can be used.
-		if [ `${SYSCTL_N} security.jail.jailed` -eq 0 -o `${SYSCTL_N} security.jail.mount_allowed` -eq 1 ]; then
-			mkdir -p ${named_chrootdir}${_openssl_engines}
+		mkdir -p ${named_chrootdir}${_openssl_engines}
+		if can_mount nullfs ; then
 			mount -t nullfs ${_openssl_engines} ${named_chrootdir}${_openssl_engines}
 		else
 			warn "named chroot: cannot nullfs mount OpenSSL" \
 				"engines into the chroot, will copy the shared" \
 				"libraries instead."
-			mkdir -p ${named_chrootdir}${_openssl_engines}
 			cp -f ${_openssl_engines}/*.so ${named_chrootdir}${_openssl_engines}
 		fi
 	fi
@@ -241,20 +238,39 @@ named_stop()
 
 named_poststop()
 {
-	if [ -n "${named_chrootdir}" -a -c ${named_chrootdir}/dev/null ]; then
+	if [ -n "${named_chrootdir}" ]; then
 		# if using OpenSSL from ports, unmount OpenSSL engines, if they
 		# were not mounted but only copied, do nothing.
-		if [ -d ${_openssl_engines} -a \( `${SYSCTL_N} security.jail.jailed` -eq 0 -o `${SYSCTL_N} security.jail.mount_allowed` -eq 1 \) ]; then
-		  umount ${named_chrootdir}${_openssl_engines}
+		if [ -d ${_openssl_engines} ]; then
+			if can_mount nullfs; then
+				umount ${named_chrootdir}${_openssl_engines}
+			fi
 		fi
-		# unmount /dev
-		if [ `${SYSCTL_N} security.jail.jailed` -eq 0 ]; then
-			umount ${named_chrootdir}/dev 2>/dev/null || true
-		else
-			warn "named chroot:" \
-			    "cannot unmount devfs from inside jail!"
+		if [ -c ${named_chrootdir}/dev/null ]; then
+			# unmount /dev
+			if [ `${SYSCTL_N} security.jail.jailed` -eq 0 ]; then
+				umount ${named_chrootdir}/dev 2>/dev/null || true
+			else
+				warn "named chroot:" \
+					"cannot unmount devfs from inside jail!"
+			fi
 		fi
 	fi
+}
+
+can_mount()
+{
+	local kld
+	kld=$1
+	if ! load_kld $kld; then
+		return 1
+	fi
+	if [ `${SYSCTL_N} security.jail.jailed` -eq 0 ] ||
+		[ `${SYSCTL_N} security.jail.mount_allowed` -eq 1 ] ||
+		[ `${SYSCTL_N} security.jail.mount_${kld}_allowed` -eq 1 ] ; then
+		return 0
+	fi
+	return 1
 }
 
 create_file()

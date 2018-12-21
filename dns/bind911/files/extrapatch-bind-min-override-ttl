@@ -1,6 +1,6 @@
---- bin/named/config.c.orig	2018-06-10 06:06:33 UTC
+--- bin/named/config.c.orig	2018-10-06 01:36:17 UTC
 +++ bin/named/config.c
-@@ -176,6 +176,8 @@ options {\n\
+@@ -177,6 +177,8 @@ options {\n\
  "	max-acache-size 16M;\n\
  	max-cache-size 90%;\n\
  	max-cache-ttl 604800; /* 1 week */\n\
@@ -9,9 +9,9 @@
  	max-clients-per-query 100;\n\
  	max-ncache-ttl 10800; /* 3 hours */\n\
  	max-recursion-depth 7;\n\
---- bin/named/server.c.orig	2018-06-10 06:06:33 UTC
+--- bin/named/server.c.orig	2018-10-06 01:36:17 UTC
 +++ bin/named/server.c
-@@ -3692,6 +3692,16 @@ configure_view(dns_view_t *view, dns_vie
+@@ -3695,6 +3695,16 @@ configure_view(dns_view_t *view, dns_vie
  	}
  
  	obj = NULL;
@@ -28,20 +28,20 @@
  	result = ns_config_get(maps, "max-cache-ttl", &obj);
  	INSIST(result == ISC_R_SUCCESS);
  	view->maxcachettl = cfg_obj_asuint32(obj);
---- lib/dns/include/dns/view.h.orig	2018-06-10 06:06:33 UTC
+--- lib/dns/include/dns/view.h.orig	2018-10-06 01:36:17 UTC
 +++ lib/dns/include/dns/view.h
-@@ -150,6 +150,8 @@ struct dns_view {
- 	isc_boolean_t			requestnsid;
- 	isc_boolean_t			sendcookie;
+@@ -152,6 +152,8 @@ struct dns_view {
+ 	bool			requestnsid;
+ 	bool			sendcookie;
  	dns_ttl_t			maxcachettl;
 +	dns_ttl_t			mincachettl;
 +	dns_ttl_t			overridecachettl;
  	dns_ttl_t			maxncachettl;
- 	isc_uint32_t			nta_lifetime;
- 	isc_uint32_t			nta_recheck;
---- lib/dns/resolver.c.orig	2018-06-10 06:06:33 UTC
+ 	uint32_t			nta_lifetime;
+ 	uint32_t			nta_recheck;
+--- lib/dns/resolver.c.orig	2018-10-06 01:36:17 UTC
 +++ lib/dns/resolver.c
-@@ -5473,6 +5473,18 @@ cache_name(fetchctx_t *fctx, dns_name_t 
+@@ -5474,6 +5474,18 @@ cache_name(fetchctx_t *fctx, dns_name_t 
  		}
  
  		/*
@@ -60,9 +60,9 @@
  		 * Enforce the configure maximum cache TTL.
  		 */
  		if (rdataset->ttl > res->view->maxcachettl) {
---- lib/isccfg/namedconf.c.orig	2018-06-10 06:06:33 UTC
+--- lib/isccfg/namedconf.c.orig	2018-10-06 01:36:17 UTC
 +++ lib/isccfg/namedconf.c
-@@ -1770,6 +1770,8 @@ view_clauses[] = {
+@@ -1773,6 +1773,8 @@ view_clauses[] = {
  #endif
  	{ "max-acache-size", &cfg_type_sizenodefault, 0 },
  	{ "max-cache-size", &cfg_type_sizeorpercent, 0 },
