@@ -8,6 +8,6 @@ updated/added in a DB. This package bases on an SQL-Builder which lets you
 easily build SQL-Statements and execute them.
 
 NB: this is a PEAR::MDB porting from the original DB_QueryTool written by
-Wolfram Kriesing and Paolo Panto (vision:produktion, wk@visionp.de).
+Wolfram Kriesing and Paolo Panto.
 
 WWW: https://pear.php.net/package/MDB_QueryTool
