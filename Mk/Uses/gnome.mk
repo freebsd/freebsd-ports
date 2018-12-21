@@ -71,9 +71,6 @@ _USE_GNOME_ALL= esound intlhack intltool introspection \
 		referencehack gnomemimedata \
 		gnomeprefix
 
-# GNOME 1 components
-_USE_GNOME_ALL+= gdkpixbuf glib12 gtk12
-
 # GNOME 2 components
 _USE_GNOME_ALL+= atk cairo \
 		gdkpixbuf2 gconf2 glib20 \
@@ -172,23 +169,6 @@ ESD_CONFIG?=		${LOCALBASE}/bin/esd-config
 esound_LIB_DEPENDS=	libesd.so:audio/esound
 esound_CONFIGURE_ENV=	ESD_CONFIG="${ESD_CONFIG}"
 esound_MAKE_ENV=	ESD_CONFIG="${ESD_CONFIG}"
-
-GLIB_CONFIG?=		${LOCALBASE}/bin/glib-config
-glib12_LIB_DEPENDS=	libglib.so:devel/glib12
-glib12_CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
-glib12_MAKE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
-
-GTK_CONFIG?=		${LOCALBASE}/bin/gtk-config
-gtk12_LIB_DEPENDS=	libgtk.so:x11-toolkits/gtk12
-gtk12_CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
-gtk12_MAKE_ENV=		GTK_CONFIG="${GTK_CONFIG}"
-gtk12_USE_GNOME_IMPL=	glib12
-
-GDK_PIXBUF_CONFIG?=	${LOCALBASE}/bin/gdk-pixbuf-config
-gdkpixbuf_LIB_DEPENDS=	libgdk_pixbuf.so:graphics/gdk-pixbuf
-gdkpixbuf_CONFIGURE_ENV=GDK_PIXBUF_CONFIG="${GDK_PIXBUF_CONFIG}"
-gdkpixbuf_MAKE_ENV=	GDK_PIXBUF_CONFIG="${GDK_PIXBUF_CONFIG}"
-gdkpixbuf_USE_GNOME_IMPL=gtk12
 
 gnomemimedata_BUILD_DEPENDS=${LOCALBASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:misc/gnome-mime-data
 gnomemimedata_RUN_DEPENDS=${LOCALBASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:misc/gnome-mime-data
@@ -425,11 +405,6 @@ _USE_GNOME+=	${${component}_USE_GNOME_IMPL} ${component}
 # and theme engines.
 PLIST_SUB+=			GTK2_VERSION="${GTK2_VERSION}" \
 				GTK3_VERSION="${GTK3_VERSION}"
-
-# Set USE_CSTD for all ports that depend on glib12
-.if defined(_USE_GNOME) && !empty(_USE_GNOME:Mglib12)
-USE_CSTD=	gnu89
-.endif
 
 .if defined(_USE_GNOME) && empty(_USE_GNOME:Mglib20:u) && defined(GLIB_SCHEMAS)
 IGNORE=		GLIB_SCHEMAS is set, but needs USE_GNOME=glib20 to work
