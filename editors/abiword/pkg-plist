@@ -31,7 +31,6 @@ lib/abiword-%%ABIVERSION%%/plugins/opendocument.so
 lib/abiword-%%ABIVERSION%%/plugins/openwriter.so
 lib/abiword-%%ABIVERSION%%/plugins/openxml.so
 lib/abiword-%%ABIVERSION%%/plugins/opml.so
-%%OTS%%lib/abiword-%%ABIVERSION%%/plugins/ots.so
 lib/abiword-%%ABIVERSION%%/plugins/paint.so
 lib/abiword-%%ABIVERSION%%/plugins/passepartout.so
 lib/abiword-%%ABIVERSION%%/plugins/pdb.so
@@ -361,7 +360,6 @@ man/man1/abiword.1.gz
 %%DATADIR%%-%%ABIVERSION%%/ui/ap_UnixDialog_Stylist.ui
 %%DATADIR%%-%%ABIVERSION%%/ui/ap_UnixDialog_Tab.ui
 %%DATADIR%%-%%ABIVERSION%%/ui/ap_UnixDialog_WordCount.ui
-%%OTS%%%%DATADIR%%-%%ABIVERSION%%/ui/ots.ui
 %%DATADIR%%-%%ABIVERSION%%/ui/pd_RDFContact.ui
 %%DATADIR%%-%%ABIVERSION%%/ui/pd_RDFEvent.ui
 %%DATADIR%%-%%ABIVERSION%%/ui/pd_RDFInsertReference.ui
