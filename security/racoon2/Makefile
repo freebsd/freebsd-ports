@@ -10,6 +10,8 @@ RACOON2_COMMIT_DATE=20181215
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Racoon2 IPsec daemon
 
+CONFLICTS=	racoon2-legacy-*
+
 USE_GITHUB=     yes
 GH_ACCOUNT=     zoulasc
 GH_TAGNAME=     ${HASH}
