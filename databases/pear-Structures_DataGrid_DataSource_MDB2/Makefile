@@ -8,8 +8,9 @@ CATEGORIES=	databases www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	DataSource driver using PEAR::MDB2 and an SQL query
 
-DEPRECATED=	Works only with EOL php 5.6
-EXPIRATION_DATE=	2018-12-30
+LICENSE=	BSD2CLAUSE
+
+IGNORE_WITH_PHP=	56
 
 BUILD_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid@${PHP_FLAVOR} \
 		${PEARDIR}/MDB2.php:databases/pear-MDB2@${PHP_FLAVOR}
@@ -17,8 +18,8 @@ RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid.php:devel/pear-Structures_DataGrid@$
 		${PEARDIR}/MDB2.php:databases/pear-MDB2@${PHP_FLAVOR}
 
 USES=	pear
-USE_PHP=	mysql
-IGNORE_WITH_PHP=	71 72 73
+USE_PHP=	mysqli
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
