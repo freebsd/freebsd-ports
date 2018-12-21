@@ -1,6 +1,6 @@
---- config.m4.orig	2014-05-14 10:14:22.929420181 +0000
-+++ config.m4	2014-05-14 10:15:36.967414693 +0000
-@@ -4,6 +4,9 @@
+--- config.m4.orig	2018-12-04 18:06:11 UTC
++++ config.m4
+@@ -4,6 +4,9 @@ dnl config.m4 for extension simplexml
  PHP_ARG_ENABLE(simplexml, whether to enable SimpleXML support,
  [  --disable-simplexml     Disable SimpleXML support], yes)
  
@@ -9,8 +9,8 @@
 +
  if test -z "$PHP_LIBXML_DIR"; then
    PHP_ARG_WITH(libxml-dir, libxml2 install dir,
-   [  --with-libxml-dir=DIR     SimpleXML: libxml2 install prefix], no, no)
-@@ -11,6 +14,30 @@
+   [  --with-libxml-dir=DIR   SimpleXML: libxml2 install prefix], no, no)
+@@ -11,6 +14,30 @@ fi
  
  if test "$PHP_SIMPLEXML" != "no"; then
  
@@ -38,6 +38,6 @@
 +    ])
 +  ])
 +
-   if test "$PHP_LIBXML" = "no"; then   
-     AC_MSG_ERROR([SimpleXML extension requires LIBXML extension, add --enable-libxml])                
+   if test "$PHP_LIBXML" = "no"; then
+     AC_MSG_ERROR([SimpleXML extension requires LIBXML extension, add --enable-libxml])
    fi

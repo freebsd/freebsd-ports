@@ -1,4 +1,4 @@
---- config.m4.orig	2016-10-25 15:23:21 UTC
+--- config.m4.orig	2018-12-04 18:06:13 UTC
 +++ config.m4
 @@ -100,13 +100,17 @@ dnl
  dnl configure options
@@ -79,7 +79,7 @@
  PHP_ARG_WITH(birdstep,,
 -[  --with-birdstep[=DIR]     Include Birdstep support [/usr/local/birdstep]])
 +[  --with-birdstep[=DIR]     Include Birdstep support [/usr/local/birdstep]], no, no)
-   
+ 
    AC_MSG_CHECKING(for Birdstep support)
    if test "$PHP_BIRDSTEP" != "no"; then
 @@ -366,7 +370,7 @@ PHP_ARG_WITH(custom-odbc,,
