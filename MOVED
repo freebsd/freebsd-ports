@@ -10901,3 +10901,9 @@ sysutils/gcombust||2018-12-21|Has expired: Uses obsolete glib12
 sysutils/xlogmaster||2018-12-21|Has expired: Uses obsolete glib12
 sysutils/mount.app||2018-12-21|Has expired: Uses obsolete glib12
 sysutils/bbapm||2018-12-21|Has expired: Uses obsolete glib12
+lang/php_doc||2018-12-21|Has expired: unmaintained and documents obsolete PHP < 5.6
+german/php_doc||2018-12-21|Has expired: unmaintained and documents obsolete PHP < 5.6
+polish/php_doc||2018-12-21|Has expired: unmaintained and documents obsolete PHP < 5.6
+portuguese/php_doc-br||2018-12-21|Has expired: unmaintained and documents obsolete PHP < 5.6
+french/php_doc||2018-12-21|Has expired: unmaintained and documents obsolete PHP < 5.6
+japanese/php_doc||2018-12-21|Has expired: unmaintained and documents obsolete PHP < 5.6

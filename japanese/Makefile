@@ -220,7 +220,6 @@
     SUBDIR += p5-nkf
     SUBDIR += pejv-fpw
     SUBDIR += php5-mecab
-    SUBDIR += php_doc
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += prn

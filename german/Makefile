@@ -22,7 +22,6 @@
     SUBDIR += mediathekview
     SUBDIR += mythes
     SUBDIR += phone
-    SUBDIR += php_doc
     SUBDIR += schwobifyer
     SUBDIR += tipp10
     SUBDIR += trytond28_account_de_skr03
