@@ -23,14 +23,4 @@ USE_LDCONFIG=	yes
 
 BROKEN_powerpc=	Does not build
 
-OPTIONS_DEFINE=	XMMS
-OPTIONS_SUB=	yes
-
-XMMS_DESC=		Build XMMS visualization plugin
-XMMS_LIB_DEPENDS=	libxmms.so:multimedia/xmms
-XMMS_USES=		gettext-runtime
-XMMS_USE=		GNOME=glib12,gtk12 \
-			XORG=x11,xext,xi
-XMMS_CONFIGURE_ENV_OFF=	ac_cv_path_XMMS_CONFIG="no"
-
 .include <bsd.port.mk>
