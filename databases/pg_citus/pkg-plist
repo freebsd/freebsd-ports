@@ -6,6 +6,7 @@ include/postgresql/server/distributed/citus_nodefuncs.h
 include/postgresql/server/distributed/citus_nodes.h
 include/postgresql/server/distributed/citus_ruleutils.h
 include/postgresql/server/distributed/colocation_utils.h
+include/postgresql/server/distributed/commands.h
 include/postgresql/server/distributed/connection_management.h
 include/postgresql/server/distributed/deparse_shard_query.h
 include/postgresql/server/distributed/distributed_deadlock_detection.h
@@ -13,8 +14,8 @@ include/postgresql/server/distributed/distributed_planner.h
 include/postgresql/server/distributed/distribution_column.h
 include/postgresql/server/distributed/errormessage.h
 include/postgresql/server/distributed/extended_op_node_utils.h
-include/postgresql/server/distributed/foreign_constraint.h
 include/postgresql/server/distributed/foreign_key_relationship.h
+include/postgresql/server/distributed/function_utils.h
 include/postgresql/server/distributed/hash_helpers.h
 include/postgresql/server/distributed/insert_select_executor.h
 include/postgresql/server/distributed/insert_select_planner.h
@@ -27,7 +28,6 @@ include/postgresql/server/distributed/master_protocol.h
 include/postgresql/server/distributed/metadata_cache.h
 include/postgresql/server/distributed/metadata_sync.h
 include/postgresql/server/distributed/multi_client_executor.h
-include/postgresql/server/distributed/multi_copy.h
 include/postgresql/server/distributed/multi_executor.h
 include/postgresql/server/distributed/multi_explain.h
 include/postgresql/server/distributed/multi_join_order.h
@@ -42,7 +42,6 @@ include/postgresql/server/distributed/multi_router_executor.h
 include/postgresql/server/distributed/multi_router_planner.h
 include/postgresql/server/distributed/multi_server_executor.h
 include/postgresql/server/distributed/multi_shard_transaction.h
-include/postgresql/server/distributed/multi_utility.h
 include/postgresql/server/distributed/pg_dist_colocation.h
 include/postgresql/server/distributed/pg_dist_local_group.h
 include/postgresql/server/distributed/pg_dist_node.h
@@ -52,7 +51,6 @@ include/postgresql/server/distributed/pg_dist_placement.h
 include/postgresql/server/distributed/pg_dist_shard.h
 include/postgresql/server/distributed/pg_dist_transaction.h
 include/postgresql/server/distributed/placement_connection.h
-include/postgresql/server/distributed/policy.h
 include/postgresql/server/distributed/query_colocation_checker.h
 include/postgresql/server/distributed/query_pushdown_planning.h
 include/postgresql/server/distributed/query_stats.h
@@ -244,8 +242,8 @@ share/postgresql/extension/citus--7.4-1--7.4-2.sql
 share/postgresql/extension/citus--7.4-1.sql
 share/postgresql/extension/citus--7.4-2--7.4-3.sql
 share/postgresql/extension/citus--7.4-2.sql
-share/postgresql/extension/citus--7.4-3.sql
 share/postgresql/extension/citus--7.4-3--7.5-1.sql
+share/postgresql/extension/citus--7.4-3.sql
 share/postgresql/extension/citus--7.5-1--7.5-2.sql
 share/postgresql/extension/citus--7.5-1.sql
 share/postgresql/extension/citus--7.5-2--7.5-3.sql
@@ -258,10 +256,18 @@ share/postgresql/extension/citus--7.5-5--7.5-6.sql
 share/postgresql/extension/citus--7.5-5.sql
 share/postgresql/extension/citus--7.5-6--7.5-7.sql
 share/postgresql/extension/citus--7.5-6.sql
-share/postgresql/extension/citus--7.5-7.sql
 share/postgresql/extension/citus--7.5-7--8.0-1.sql
+share/postgresql/extension/citus--7.5-7.sql
 share/postgresql/extension/citus--8.0-1--8.0-2.sql
 share/postgresql/extension/citus--8.0-1.sql
+share/postgresql/extension/citus--8.0-10--8.0-11.sql
+share/postgresql/extension/citus--8.0-10.sql
+share/postgresql/extension/citus--8.0-11--8.0-12.sql
+share/postgresql/extension/citus--8.0-11.sql
+share/postgresql/extension/citus--8.0-12--8.0-13.sql
+share/postgresql/extension/citus--8.0-12.sql
+share/postgresql/extension/citus--8.0-13--8.1-1.sql
+share/postgresql/extension/citus--8.0-13.sql
 share/postgresql/extension/citus--8.0-2--8.0-3.sql
 share/postgresql/extension/citus--8.0-2.sql
 share/postgresql/extension/citus--8.0-3--8.0-4.sql
@@ -274,5 +280,8 @@ share/postgresql/extension/citus--8.0-6--8.0-7.sql
 share/postgresql/extension/citus--8.0-6.sql
 share/postgresql/extension/citus--8.0-7--8.0-8.sql
 share/postgresql/extension/citus--8.0-7.sql
+share/postgresql/extension/citus--8.0-8--8.0-9.sql
 share/postgresql/extension/citus--8.0-8.sql
+share/postgresql/extension/citus--8.0-9--8.0-10.sql
+share/postgresql/extension/citus--8.0-9.sql
 share/postgresql/extension/citus.control
