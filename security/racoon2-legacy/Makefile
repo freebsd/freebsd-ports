@@ -6,9 +6,12 @@ PORTVERSION=	20100526a
 PORTREVISION=	13
 CATEGORIES=	security net ipv6
 MASTER_SITES=	ftp://ftp.racoon2.wide.ad.jp/pub/racoon2/
+PKGNAMESUFFIX=	legacy
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Racoon2 IPsec daemon
+
+CONFLICTS=	racoon2-[0-9]*
 
 USES=		perl5 tar:tgz ssl
 CONFIGURE_ARGS+=	--disable-kinkd
