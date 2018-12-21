@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unit
-PORTVERSION=	1.6
-PORTREVISION=	2
+PORTVERSION=	1.7
 CATEGORIES=	www
 MASTER_SITES=	https://unit.nginx.org/download/
 
@@ -12,8 +11,6 @@ COMMENT?=	Dynamic web application server
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-EXTRA_PATCHES=	${FILESDIR}/php_zts.patch:-p1
 
 USES+=		compiler:c11 cpe
 
