@@ -1,9 +1,8 @@
 "LiveJournal.com... because you like to think other people care." LogJam is
 a GTK2 client for the LiveJournal API.  It sits unobtrusively in the corner
 of your screen, waiting for you to have something worthwhile to tell the
-world.  It can read your current music from XMMS, spellcheck with gtkspell,
-and offers preview capabilities using gtkhtml3.  It will interface with any
-site running LiveJournal, not just www.livejournal.com, and can create
-offline copies of your journal.
+world.  It can spellcheck with gtkspell and offers preview capabilities
+using gtkhtml3.  It will interface with any site running LiveJournal, not
+just www.livejournal.com, and can create offline copies of your journal.
 
 WWW: http://logjam.danga.com/
