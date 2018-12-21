@@ -10916,3 +10916,6 @@ print/gsview||2018-12-21|Has expired: Uses obsolete glib12
 x11/dgs||2018-12-21|Has expired: Uses obsolete glib12
 japanese/jmode||2018-12-21|Has expired: Uses obsolete glib12
 multimedia/xmms||2018-12-21|Has expired: Uses obsolete glib12
+devel/glib12||2018-12-21|Has expired: Obsolete
+graphics/gdk-pixbuf||2018-12-21|Has expired: Uses obsolete glib12
+x11-toolkits/gtk12||2018-12-21|Has expired: Uses obsolete glib12

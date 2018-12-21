@@ -38,7 +38,6 @@
     SUBDIR += gtk-sharp-beans
     SUBDIR += gtk-sharp20
     SUBDIR += gtk-sharp30
-    SUBDIR += gtk12
     SUBDIR += gtk20
     SUBDIR += gtk20-reference
     SUBDIR += gtk30
