@@ -1,9 +1,35 @@
---- kinkd/Makefile.in~	2006-01-11 11:38:55.000000000 +0900
-+++ kinkd/Makefile.in	2009-11-22 10:39:25.000000000 +0900
-@@ -68,3 +68,7 @@
- 
- .PHONY: .depend
- @IF_GMAKE@-include .depend
+--- kinkd/Makefile.in.orig	2018-08-15 21:36:53.000000000 -0700
++++ kinkd/Makefile.in	2018-12-15 13:47:35.410335000 -0800
+@@ -109,7 +109,7 @@
+ PROGRAMS = $(sbin_PROGRAMS)
+ am_kinkd_OBJECTS = main.$(OBJEXT) kink_fmt.$(OBJEXT) \
+ 	kink_crypto.$(OBJEXT) bbkk_common.$(OBJEXT) \
+-	bbkk_heimdal.$(OBJEXT) session.$(OBJEXT) base.$(OBJEXT) \
++	bbkk_$(KRB5_TYPE).$(OBJEXT) session.$(OBJEXT) base.$(OBJEXT) \
+ 	dpd.$(OBJEXT) peer.$(OBJEXT) handle.$(OBJEXT) \
+ 	algorithm.$(OBJEXT) crypto_openssl.$(OBJEXT) oakley.$(OBJEXT) \
+ 	ipsec_doi.$(OBJEXT) isakmp.$(OBJEXT) isakmp_quick.$(OBJEXT) \
+@@ -333,7 +333,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ kinkd_SOURCES = main.c \
+-	kink_fmt.c kink_crypto.c bbkk_common.c bbkk_heimdal.c \
++	kink_fmt.c kink_crypto.c bbkk_common.c bbkk_$(KRB5_TYPE).c \
+ 	session.c base.c dpd.c peer.c handle.c \
+ 	algorithm.c crypto_openssl.c oakley.c \
+ 	ipsec_doi.c isakmp.c isakmp_quick.c isakmp_inf.c proposal.c \
+@@ -457,6 +457,7 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/base.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bbkk_common.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bbkk_heimdal.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bbkk_mit.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/crypto_openssl.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dpd.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/etchosts.Po@am__quote@
+@@ -902,3 +903,7 @@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
 +
 +# override default .c.o rule in case it doesn't include CPPFLAGS (FreeBSD)
 +.c.o:

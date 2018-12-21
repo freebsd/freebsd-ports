@@ -18,13 +18,20 @@ etc/racoon2/hook/ikesa-up
 etc/racoon2/hook/ikesa-down
 etc/racoon2/hook/ikesa-rekey
 etc/racoon2/hook/child-up.d/00childup_sample
+etc/racoon2/hook/child-up.d/01setkey
+etc/racoon2/hook/child-up.d/02ifconfig-gif
+etc/racoon2/hook/child-up.d/03arp
 etc/racoon2/hook/child-up
+etc/racoon2/hook/child-down.d/01setkey
+etc/racoon2/hook/child-down.d/02ifconfig-gif
+etc/racoon2/hook/child-down.d/03arp
 etc/racoon2/hook/child-down
 etc/racoon2/hook/child-rekey
 etc/racoon2/hook/migration
 etc/racoon2/hook/ph1-up
 etc/racoon2/hook/ph1-down
 etc/rc.d/iked
+etc/rc.d/racoon2
 etc/rc.d/spmd
 %%KINK%%etc/rc.d/kinkd
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
@@ -43,7 +50,9 @@ man/man8/iked.8.gz
 @dir etc/racoon2/hook/ikesa-down.d
 @dir etc/racoon2/hook/child-rekey.d
 @dir etc/racoon2/hook/child-down.d
+@dir etc/racoon2/hook/child-up.d
 @dir etc/racoon2/cert
+@dir etc/racoon2
 @postexec [ ! -e %D/%%ETCDIR%%/spmd.pwd ] || mv %D/%%ETCDIR%%/spmd.pwd %D/%%ETCDIR%%/spmd.pwd.bak
 @postexec %D/sbin/pskgen -r -o %D/%%ETCDIR%%/spmd.pwd
 @rmtry %%ETCDIR%%/spmd.pwd

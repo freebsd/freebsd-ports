@@ -1,0 +1,17 @@
+--- samples/hook/child-down.d/Makefile.in.orig	2018-08-15 21:36:53.000000000 -0700
++++ samples/hook/child-down.d/Makefile.in	2018-12-19 22:39:38.279682000 -0800
+@@ -405,10 +405,10 @@
+ 
+ 
+ install-exec-hook:
+-	$(INSTALL) -d $(sysconfdir)/hook/child-down.d
+-	$(INSTALL_DATA) 01setkey $(sysconfdir)/hook/child-down.d
+-	$(INSTALL_DATA) 02ifconfig-gif $(sysconfdir)/hook/child-down.d
+-	$(INSTALL_DATA) 03arp $(sysconfdir)/hook/child-down.d
++	$(INSTALL) -d $(DESTDIR)/$(sysconfdir)/hook/child-down.d
++	$(INSTALL_DATA) 01setkey $(DESTDIR)/$(sysconfdir)/hook/child-down.d
++	$(INSTALL_DATA) 02ifconfig-gif $(DESTDIR)/$(sysconfdir)/hook/child-down.d
++	$(INSTALL_DATA) 03arp $(DESTDIR)/$(sysconfdir)/hook/child-down.d
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
