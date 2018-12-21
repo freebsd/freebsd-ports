@@ -9,11 +9,9 @@
 .if !defined(_INCLUDE_USES_HORDE_MK)
 _INCLUDE_USES_HORDE_MK=	yes
 
-MASTER_SITES?=	http://pear.horde.org/get/
+MASTER_SITES?=	https://pear.horde.org/get/
 
 HORDE_DIR?=	www/horde
-
-CONFLICTS+=	horde3-*.[0-9]*
 
 CPE_VENDOR?=	horde
 
