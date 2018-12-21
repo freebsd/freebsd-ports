@@ -1,19 +1,19 @@
---- configure.orig	2008-07-06 02:41:34 UTC
-+++ configure
-@@ -785,7 +785,7 @@ if test x"$enable_startup_scripts" = xyes; then
+--- configure.orig	2018-08-15 21:36:53.000000000 -0700
++++ configure	2018-10-19 07:12:40.370712000 -0700
+@@ -3740,7 +3740,7 @@
  	netbsd*1.[56]*|netbsd*[2-9].*)
- 		startup_scripts=rc-d
+ 		startup_scripts=rc.d
  		;;
 -	freebsd[5-9].*)
 +	freebsd[5-9].*|freebsd[1-4][0-9].*)
- 		startup_scripts=rc-d
+ 		startup_scripts=rc.d
  		;;
  	*)
-@@ -1126,6 +1126,7 @@ rm -fr confdefs* $ac_clean_files
- test "$no_create" = yes || ${CONFIG_SHELL-/bin/sh} $CONFIG_STATUS || exit 1
- 
+@@ -5132,6 +5132,7 @@
+ # CONFIG_SUBDIRS section.
+ #
  if test "$no_recursion" != yes; then
 +ac_given_INSTALL="$INSTALL"
  
-   # Remove --cache-file and --srcdir arguments so they do not pile up.
-   ac_sub_configure_args=
+   # Remove --cache-file, --srcdir, and --disable-option-checking arguments
+   # so they do not pile up.

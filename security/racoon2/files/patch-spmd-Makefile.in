@@ -1,0 +1,89 @@
+--- spmd/Makefile.in.orig	2018-08-15 21:36:53.000000000 -0700
++++ spmd/Makefile.in	2018-12-19 13:07:42.520771000 -0800
+@@ -70,6 +70,9 @@
+   test $$has_opt = yes
+ am__make_dryrun = (target_option=n; $(am__make_running_with_option))
+ am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
++am__base_list = \
++  sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
++  sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -140,6 +143,7 @@
+ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+ am__v_CCLD_0 = @echo "  CCLD    " $@;
+ am__v_CCLD_1 = 
++man8dir = $(mandir)/man8
+ SOURCES = $(spmd_SOURCES) spmdctl.c
+ DIST_SOURCES = $(spmd_SOURCES) spmdctl.c
+ am__can_run_installinfo = \
+@@ -284,7 +288,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AM_CPPFLAGS = -DSYSCONFDIR=\"${sysconfdir}\" 
+-MAN_MANS = spmd.8 spmdctl.8
++man_MANS = spmd.8 spmdctl.8
+ spmd_SOURCES = main.c dns.c udp.c query.c task.c signal.c shell.c utils.c cache.c spmd_pfkey.c fqdn_query.c
+ spmdctl_SOURCE = spmdctl.c
+ all: config.h
+@@ -672,6 +676,41 @@
+ 	    install_sh_PROGRAM="$(INSTALL_STRIP_PROGRAM)" INSTALL_STRIP_FLAG=-s \
+ 	    "INSTALL_PROGRAM_ENV=STRIPPROG='$(STRIP)'" install; \
+ 	fi
++
++install-man8: $(man_MANS)
++	@$(NORMAL_INSTALL)
++	@list1=''; \
++	list2='$(man_MANS)'; \
++	test -n "$(man8dir)" \
++	  && test -n "`echo $$list1$$list2`" \
++	  || exit 0; \
++	echo " $(MKDIR_P) '$(DESTDIR)$(man8dir)'"; \
++	$(MKDIR_P) "$(DESTDIR)$(man8dir)" || exit 1; \
++	{ for i in $$list1; do echo "$$i"; done;  \
++	if test -n "$$list2"; then \
++	  for i in $$list2; do echo "$$i"; done \
++	    | sed -n '/\.8[a-z]*$$/p'; \
++	fi; \
++	} | while read p; do \
++	  if test -f $$p; then d=; else d="$(srcdir)/"; fi; \
++	  echo "$$d$$p"; echo "$$p"; \
++	done | \
++	sed -e 'n;s,.*/,,;p;h;s,.*\.,,;s,^[^8][0-9a-z]*$$,8,;x' \
++	      -e 's,\.[0-9a-z]*$$,,;$(transform);G;s,\n,.,' | \
++	sed 'N;N;s,\n, ,g' | { \
++	list=; while read file base inst; do \
++	  if test "$$base" = "$$inst"; then list="$$list $$file"; else \
++	    echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man8dir)/$$inst'"; \
++	    $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man8dir)/$$inst" || exit $$?; \
++	  fi; \
++	done; \
++	for i in $$list; do echo "$$i"; done | $(am__base_list) | \
++	while read files; do \
++	  test -z "$$files" || { \
++	    echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(man8dir)'"; \
++	    $(INSTALL_DATA) $$files "$(DESTDIR)$(man8dir)" || exit $$?; }; \
++	done; }
++
+ mostlyclean-generic:
+ 
+ clean-generic:
+@@ -706,7 +745,7 @@
+ 
+ info-am:
+ 
+-install-data-am:
++install-data-am: install-man
+ 
+ install-dvi: install-dvi-am
+ 
+@@ -722,7 +761,7 @@
+ 
+ install-info-am:
+ 
+-install-man:
++install-man: install-man8
+ 
+ install-pdf: install-pdf-am
+ 

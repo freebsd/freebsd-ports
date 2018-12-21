@@ -1,0 +1,19 @@
+--- samples/hook/child-up.d/Makefile.in.orig	2018-08-15 21:36:53.000000000 -0700
++++ samples/hook/child-up.d/Makefile.in	2018-12-19 19:18:25.771791000 -0800
+@@ -405,11 +405,11 @@
+ 
+ 
+ install-exec-hook:
+-	$(INSTALL) -d $(sysconfdir)/hook/child-up.d
+-	$(INSTALL_DATA) 00childup_sample $(sysconfdir)/hook/child-up.d
+-	$(INSTALL_DATA) 01setkey $(sysconfdir)/hook/child-up.d
+-	$(INSTALL_DATA) 02ifconfig-gif $(sysconfdir)/hook/child-up.d
+-	$(INSTALL_DATA) 03arp $(sysconfdir)/hook/child-up.d
++	$(INSTALL) -d $(DESTDIR)/$(sysconfdir)/hook/child-up.d
++	$(INSTALL_DATA) 00childup_sample $(DESTDIR)/$(sysconfdir)/hook/child-up.d
++	$(INSTALL_DATA) 01setkey $(DESTDIR)/$(sysconfdir)/hook/child-up.d
++	$(INSTALL_DATA) 02ifconfig-gif $(DESTDIR)/$(sysconfdir)/hook/child-up.d
++	$(INSTALL_DATA) 03arp $(DESTDIR)/$(sysconfdir)/hook/child-up.d
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

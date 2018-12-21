@@ -1,0 +1,13 @@
+--- samples/hook/ikesa-up.d/Makefile.in.orig	2018-08-15 21:36:53.000000000 -0700
++++ samples/hook/ikesa-up.d/Makefile.in	2018-12-19 20:22:29.223583000 -0800
+@@ -405,8 +405,8 @@
+ 
+ 
+ install-exec-hook:
+-	$(INSTALL) -d $(sysconfdir)/hook/ikesa-up.d
+-	$(INSTALL_DATA) 00ikesaup_sample $(sysconfdir)/hook/ikesa-up.d
++	$(INSTALL) -d $(DESTDIR)/$(sysconfdir)/hook/ikesa-up.d
++	$(INSTALL_DATA) 00ikesaup_sample $(DESTDIR)/$(sysconfdir)/hook/ikesa-up.d
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

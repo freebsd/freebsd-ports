@@ -1,10 +1,11 @@
---- pskgen/Makefile.in.orig	2007-12-11 23:12:22.000000000 -0800
-+++ pskgen/Makefile.in	2014-07-04 13:38:23.919692384 -0700
-@@ -21,7 +21,6 @@
- 	$(INSTALL_SCRIPT) $(PROG) $(sbindir)
- 	$(INSTALL_DATA) $(PROG).8 $(mandir)/man8
- 	$(INSTALL) -d $(prefix)/etc/racoon2
+--- pskgen/Makefile.in.orig	2018-08-15 21:36:53.000000000 -0700
++++ pskgen/Makefile.in	2018-12-19 23:35:20.908316000 -0800
+@@ -530,8 +530,6 @@
+ 
+ 
+ install-exec-hook:
+-	$(INSTALL) -d $(sysconfdir)
 -	sh ./autogen.spmd.pwd
  
- depend:
- 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

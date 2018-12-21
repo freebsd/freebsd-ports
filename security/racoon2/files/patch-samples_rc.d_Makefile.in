@@ -1,0 +1,19 @@
+--- samples/rc.d/Makefile.in.orig	2018-08-15 21:36:53.000000000 -0700
++++ samples/rc.d/Makefile.in	2018-12-18 20:45:22.072125000 -0800
+@@ -414,11 +414,11 @@
+ 
+ 
+ install-exec-hook:
+-	$(INSTALL) -d $(sysconfdir)/rc.d
+-	$(INSTALL_SCRIPT) iked $(sysconfdir)/rc.d/iked
+-	$(INSTALL_SCRIPT) kinkd $(sysconfdir)/rc.d/kinkd
+-	$(INSTALL_SCRIPT) spmd $(sysconfdir)/rc.d/spmd
+-	$(INSTALL_SCRIPT) racoon2 $(sysconfdir)/rc.d/racoon2
++	$(INSTALL) -d $(DESTDIR)/${PREFIX}/etc/rc.d
++	$(INSTALL_SCRIPT) iked $(DESTDIR)/${PREFIX}/etc/rc.d/iked
++	$(INSTALL_SCRIPT) kinkd $(DESTDIR)/${PREFIX}/etc/rc.d/kinkd
++	$(INSTALL_SCRIPT) spmd $(DESTDIR)/${PREFIX}/etc/rc.d/spmd
++	$(INSTALL_SCRIPT) racoon2 $(DESTDIR)/${PREFIX}/etc/rc.d/racoon2
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

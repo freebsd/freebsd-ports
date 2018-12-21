@@ -1,5 +1,5 @@
---- samples/rc.d-kinkd.in.orig	2005-10-28 15:33:16.000000000 +0900
-+++ samples/rc.d-kinkd.in	2008-04-17 15:11:55.000000000 +0900
+--- samples/rc.d/kinkd.in.orig	2005-10-28 15:33:16.000000000 +0900
++++ samples/rc.d/kinkd.in	2008-04-17 15:11:55.000000000 +0900
 @@ -14,10 +14,10 @@
  exec_prefix=@exec_prefix@
  
