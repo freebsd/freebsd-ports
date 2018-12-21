@@ -126,8 +126,6 @@
     SUBDIR += jed
     SUBDIR += jishyo
     SUBDIR += jls
-    SUBDIR += jmode
-    SUBDIR += jmode-skk
     SUBDIR += jpilot
     SUBDIR += jstrings
     SUBDIR += jvim3

@@ -96,7 +96,6 @@ giftool*		graphics/giftool	Do not redistribute for profit
 gnome2/mcitymicrogui-default* x11-themes/metacity-theme-microgui Themes may contain artwork not done by the author.  Keep FreeBSD safe if the theme author violated copyrights
 GoogleEarthLinux-*	astro/google-earth	Not really sure about the redistribution terms
 groupoffice-com-*	www/groupoffice		Free for personal use only
-gsview*			print/gsview		Can only be distributed for free
 HeroesOfMightAndMagic-*	games/HeroesOfMightAndMagic	Software is commercial
 homard-*		french/homard		The free downloading of HOMARD software is only allowed for coupling with Code_Aster. For any other use, a license agreement is requested. Please contact HOMARD project: <homard@edf.fr>.
 hplip-*-plugin.run	print/hplip-plugin	License agreement is required

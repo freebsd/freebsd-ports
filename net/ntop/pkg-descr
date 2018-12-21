@@ -1,5 +1,0 @@
-ntop is a flexible and feature-rich tool for monitoring and troubleshooting
-local area networks.  It provides command line and web interfaces, the latter
-via an embedded web server.  ntop is based on libpcap.
-
-WWW: http://www.ntop.org/

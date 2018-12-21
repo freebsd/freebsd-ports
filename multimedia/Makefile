@@ -473,7 +473,6 @@
     SUBDIR += xawtv
     SUBDIR += xfce4-parole
     SUBDIR += xine
-    SUBDIR += xmms
     SUBDIR += xporthdmv
     SUBDIR += xvid
     SUBDIR += yamdi

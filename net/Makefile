@@ -509,7 +509,6 @@
     SUBDIR += net6
     SUBDIR += netatalk3
     SUBDIR += netcat
-    SUBDIR += netdude
     SUBDIR += netembryo
     SUBDIR += nethogs
     SUBDIR += netmap
@@ -542,7 +541,6 @@
     SUBDIR += nsscache
     SUBDIR += ntimed
     SUBDIR += ntlmaps
-    SUBDIR += ntop
     SUBDIR += ntopng
     SUBDIR += ntp
     SUBDIR += ntpa

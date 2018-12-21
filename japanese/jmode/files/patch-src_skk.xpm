@@ -1,9 +1,0 @@
---- src/skk.xpm.orig	2001-01-29 07:48:17 UTC
-+++ src/skk.xpm
-@@ -1,5 +1,5 @@
- /* XPM */
--static char * skk_xpm[] = {
-+static const char * skk_xpm[] = {
- "24 32 13 1",
- " 	c None",
- ".	c #FFFFFF",

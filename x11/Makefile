@@ -48,7 +48,6 @@
     SUBDIR += deforaos-panel
     SUBDIR += deskmenu
     SUBDIR += deskpaint
-    SUBDIR += dgs
     SUBDIR += dmenu
     SUBDIR += dmenu2
     SUBDIR += docker-tray
@@ -399,7 +398,6 @@
     SUBDIR += xcursorgen
     SUBDIR += xcut
     SUBDIR += xdbedizzy
-    SUBDIR += xdialog
     SUBDIR += xditview
     SUBDIR += xdm
     SUBDIR += xdotool

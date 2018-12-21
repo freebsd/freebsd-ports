@@ -76,7 +76,6 @@
     SUBDIR += gl2ps
     SUBDIR += gsfonts
     SUBDIR += gspdf
-    SUBDIR += gsview
     SUBDIR += gtklp
     SUBDIR += gutenprint
     SUBDIR += gv

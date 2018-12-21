@@ -1,9 +1,0 @@
---- src/on.xpm.orig	2018-02-10 09:57:51 UTC
-+++ src/on.xpm
-@@ -1,5 +1,5 @@
- /* XPM */
--static char * on_xpm[] = {
-+static const char * on_xpm[] = {
- "12 32 3 1",
- " 	c None",
- ".	c #FFFF00",
