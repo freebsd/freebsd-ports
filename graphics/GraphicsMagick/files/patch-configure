@@ -69,25 +69,6 @@
  
    # Check for system-dependent libraries X programs must link with.
    # Do this before checking for the system-independent R6 libraries
-@@ -25245,15 +25190,16 @@ fi
-     # Cygwin doesn't deliver -lXt as a DLL, which prevents a DLL build.
-     # Adobe DPS (as delivered on Solaris) doesn't require -lXt.
-     # GraphicsMagick itself doesn't use -lXt.
-+    # in FreeBSD < 10, libXt is added by the linker, bot on >= 10
-     have_libdps='no'
--    LIBDPS_XT=''
-+    LIBDPS_XT='-lXt'
-     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for DPSInitialize in -ldps" >&5
- $as_echo_n "checking for DPSInitialize in -ldps... " >&6; }
- if ${ac_cv_lib_dps_DPSInitialize+:} false; then :
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-ldps  $LIBS"
-+LIBS="-ldps $LIBDPS_XT $LIBS"
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- 
 @@ -27703,7 +27649,7 @@ fi
  #
  
