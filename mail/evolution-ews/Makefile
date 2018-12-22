@@ -27,7 +27,7 @@ RUN_DEPENDS=	evolution>=3.0.0:mail/evolution
 
 PORTSCOUT=	limitw:1,even
 
-USES=		bdb:5 cmake gettext gnome localbase pathfix \
+USES=		bdb:5 compiler:c11 cmake gettext gnome localbase pathfix \
 		pkgconfig sqlite tar:xz
 USE_GNOME=	cairo gdkpixbuf2 evolutiondataserver3 intltool
 
