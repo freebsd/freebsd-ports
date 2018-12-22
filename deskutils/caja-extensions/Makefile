@@ -20,8 +20,8 @@ LIB_DEPENDS=	libgupnp-1.2.so:net/gupnp \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool localbase pathfix \
-		pkgconfig tar:xz
+USES=		compiler:c11 gettext gmake gnome libtool localbase mate \
+		pathfix pkgconfig tar:xz
 USE_MATE=	caja desktop
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 USE_LDCONFIG=	yes
