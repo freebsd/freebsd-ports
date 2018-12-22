@@ -27,9 +27,11 @@ bin/wsrep_sst_xtrabackup
 bin/wsrep_sst_xtrabackup-v2
 lib/mysql/plugin/adt_null.so
 lib/mysql/plugin/auth.so
+lib/mysql/plugin/auth_pam.so
 lib/mysql/plugin/auth_test_plugin.so
 lib/mysql/plugin/connection_control.so
 lib/mysql/plugin/daemon_example.ini
+lib/mysql/plugin/dialog.so
 lib/mysql/plugin/group_replication.so
 %%NO_EXAMPLE%%lib/mysql/plugin/ha_example.so
 lib/mysql/plugin/innodb_engine.so
