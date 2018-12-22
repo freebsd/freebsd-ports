@@ -8,31 +8,31 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/p${PORTNAME}/p${PORTNAME}/libUPnP%20${PORTVERSION}
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	phascolarctos@protonmail.ch
 COMMENT=	Universal Plug and Play Software Development Kit
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cpe libtool pathfix tar:bzip2
+USE_LDCONFIG=	yes
 
 PORTSCOUT=	skipv:1.8.3	# released on 2017-11-14; older than 1.6.25
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-USES=		cpe libtool pathfix tar:bzip2
 CPE_VENDOR=	libupnp_project
 CPE_PRODUCT=	libupnp
-USE_LDCONFIG=	yes
 
 PORTDOCS=	ixml/*.html upnp/*.html
 
 OPTIONS_DEFINE=	DEBUG DOCS IPV6
 OPTIONS_SUB=	yes
 
-DEBUG_CONFIGURE_ON=	--enable-debug
-DOCS_CONFIGURE_ON=	--with-documentation=${DOCSDIR}
-DOCS_CONFIGURE_OFF=	--without-documentation
-IPV6_CONFIGURE_ON=	--enable-ipv6
+DEBUG_CONFIGURE_ENABLE=	debug
+DOCS_CONFIGURE_WITH=	documentation=${DOCSDIR}
+IPV6_CONFIGURE_ENABLE=	ipv6
 
 pre-configure:
 	${REINPLACE_CMD} -e '386s,docs/dist,,' ${WRKSRC}/Makefile.in
