@@ -16,7 +16,7 @@ BUILD_DEPENDS=	znc:irc/znc
 LIB_DEPENDS=	libicudata.so:devel/icu
 RUN_DEPENDS=	znc:irc/znc
 
-USES=	gmake ssl
+USES=	compiler:c++11-lang gmake ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jreese
