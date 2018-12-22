@@ -6,7 +6,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	vladimirv@ixsystems.com
+MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Microsoft Azure common code
 
 LICENSE=	APACHE20
