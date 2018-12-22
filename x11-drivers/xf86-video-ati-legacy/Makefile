@@ -13,6 +13,10 @@ COMMENT=	X.Org ati display driver
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+# No Radeon kernel driver on non-x86 and PC98.
+ONLY_FOR_ARCHS=		amd64 i386 powerpc64
+ONLY_FOR_ARCHS_REASON=	KMS is required and currently only available on x86
+
 LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess \
 		libdrm_radeon.so:graphics/libdrm
 
@@ -23,10 +27,6 @@ PORTSCOUT=	limit:^7\.9\.0
 USE_GL=		gl
 XORG_CAT=	driver
 USE_XORG=	pciaccess
-
-# No Radeon kernel driver on non-x86 and PC98.
-ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	KMS is required and currently only available on x86
 
 CONFIGURE_ARGS+=--disable-udev
 
