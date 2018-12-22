@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rawtherapee
-PORTVERSION=	5.4
-PORTREVISION=	2
+PORTVERSION=	5.5
 #DISTNAME=	${PORTNAME}-${PORTVERSION:R}-r${PORTVERSION:E}${DISTVERSIONSUFFIX}
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawtherapee.com/shared/source/
@@ -28,7 +27,7 @@ LIB_DEPENDS=	\
 		libsigc-2.0.so:devel/libsigc++20 \
 		libtiff.so:graphics/tiff
 
-USES=		cmake:outsource desktop-file-utils dos2unix \
+USES=		cmake:outsource desktop-file-utils gnome dos2unix \
 		jpeg localbase:ldflags pkgconfig tar:xz
 DOS2UNIX_REGEX=	.*\.(cc|h)
 LDFLAGS+=	-Wl,--as-needed # fontconfig, freetype, gettext, libX11
@@ -51,6 +50,8 @@ CMAKE_ARGS+=	-DDOCDIR="${DOCSDIR}" \
 # any more. The CMP0056 policy must be explicitly set to NEW to ensure
 # linker flags are passed. Else -lomp is not found with clang.
 # See: https://cmake.org/cmake/help/v3.4/policy/CMP0056.html
+
+SUB_FILES=	run-rawtherapee
 
 INSTALLS_ICONS=	yes
 
@@ -138,5 +139,10 @@ post-install:
 	    | ${EGREP} -q "RawTherapee, version ${PKGVERSION:C/_.*//:C/,.*//}|cannot open display:" && \
 	${SETENV} LANG= LC_ALL=C LANGUAGE= DISPLAY= HOME="$$TMP" ${STAGEDIR}${PREFIX}/bin/rawtherapee-cli --version 2>&1 \
 	    | ${EGREP} -q "RawTherapee, version ${PKGVERSION:C/_.*//:C/,.*//}"
+	@${ECHO_MSG} "===> Wrapping rawtherapee to prevent core dumps unless \$$DEBUG is nonempty"
+	# wrap things in a script that prevents core dumps
+	${MV} ${STAGEDIR}${PREFIX}/bin/rawtherapee ${STAGEDIR}${PREFIX}/bin/rawtherapee.real
+	${INSTALL_SCRIPT} ${WRKDIR}/run-rawtherapee ${STAGEDIR}${PREFIX}/bin/rawtherapee
+	
 
 .include <bsd.port.post.mk>

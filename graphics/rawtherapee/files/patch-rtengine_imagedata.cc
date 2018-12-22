@@ -1,6 +1,6 @@
---- rtengine/imagedata.cc.orig	2017-01-26 22:12:23 UTC
+--- rtengine/imagedata.cc.orig	2018-12-18 19:12:08 UTC
 +++ rtengine/imagedata.cc
-@@ -444,7 +444,7 @@ void ImageData::extractInfo ()
+@@ -413,7 +413,7 @@ FrameData::FrameData (rtexif::TagDirectory* frameRootD
                          if (baseIsoTag) {
                              std::string isoData = baseIsoTag->valueToString();
                              if (isoData.size() > 1) {

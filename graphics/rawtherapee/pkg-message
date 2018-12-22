@@ -1,5 +1,4 @@
-
-======================================================================
+=======================================================================
 DISK SPACE WARNING:
 
 Note that RawTherapee uses version-dependent cache and configuration
@@ -9,4 +8,11 @@ remove older cache directories.
 
 Also, after configurations have been moved to the new version's
 directory, older $HOME/.config/RawTherapee* directories may be removed.
-======================================================================
+=======================================================================
+Also, due to a bug that has not yet been found, RawTherapee will
+cause an abort trap when shutting down. rawtherapee is now installed 
+as rawtherapee.real, and rawtherapee is a wrapper script that will
+prevent the creation of a core file in this situation, unless the
+environment variable DEBUG is set and not empty.
+-> <https://github.com/Beep6581/RawTherapee/issues/3636>
+=======================================================================
