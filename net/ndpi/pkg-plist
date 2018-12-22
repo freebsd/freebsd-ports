@@ -11,5 +11,6 @@ include/ndpi/ndpi_unix.h
 include/ndpi/ndpi_win32.h
 lib/libndpi.a
 lib/libndpi.so
-lib/libndpi.so.%%MAJOR_VER%%.0
+lib/libndpi.so.%%MAJOR_VER%%
+lib/libndpi.so.%%VER%%.0
 libdata/pkgconfig/libndpi.pc

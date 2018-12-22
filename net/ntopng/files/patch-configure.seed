@@ -1,6 +1,6 @@
---- configure.seed.orig	2018-06-04 09:56:33 UTC
+--- configure.seed.orig	2018-12-21 18:58:17 UTC
 +++ configure.seed
-@@ -27,33 +27,8 @@ fi
+@@ -53,33 +53,8 @@ fi
  # On CentOS 6 `git rev-list HEAD --count` does not work
  #
  #
@@ -35,7 +35,7 @@
  SHORT_MACHINE=`uname -m | cut -b1-3`
  
  GIT_RELEASE="@GIT_RELEASE@"
-@@ -94,7 +69,7 @@ AC_ARG_WITH(ndpi-includes,
+@@ -131,7 +106,7 @@ fi
  PKG_CHECK_MODULES([NDPI], [libndpi >= 2.0], [
     NDPI_INC=`echo $NDPI_CFLAGS | sed -e "s/[ ]*$//"`/libndpi
     # Use static libndpi library as building against the dynamic library fails
@@ -44,7 +44,7 @@
     NDPI_LIB_DEP=
     ], [
        AC_MSG_CHECKING(for nDPI source)
-@@ -505,18 +480,6 @@ GMAKE=`which gmake`
+@@ -530,18 +505,6 @@ GMAKE=`which gmake`
  if test x$GMAKE = x
  then
  	GMAKE="make"

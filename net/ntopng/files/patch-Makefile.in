@@ -1,6 +1,6 @@
---- Makefile.in.orig	2018-08-22 08:00:26 UTC
+--- Makefile.in.orig	2018-12-21 18:58:17 UTC
 +++ Makefile.in
-@@ -99,7 +99,7 @@ ifeq (@NEDGE@, 0)
+@@ -95,7 +95,7 @@ ifeq (@NEDGE@, 0)
   HAS_ZEROMQ=$(shell pkg-config --exists libzmq; echo $$?)
   ifeq ($(HAS_ZEROMQ), 0)
  	ZEROMQ_INC = $(shell pkg-config --cflags libzmq)
