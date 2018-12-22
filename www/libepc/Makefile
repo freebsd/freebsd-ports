@@ -25,4 +25,10 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
+post-patch:
+.if exists(/usr/lib/libstdc++.so)
+	${REINPLACE_CMD} -e '/#pragma GCC diagnostic/d' \
+		${WRKSRC}/examples/simple-publisher.c
+.endif
+
 .include <bsd.port.mk>
