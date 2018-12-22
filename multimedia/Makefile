@@ -103,7 +103,6 @@
     SUBDIR += gstreamer-plugins-all
     SUBDIR += gstreamer-plugins-annodex
     SUBDIR += gstreamer-plugins-bad
-    SUBDIR += gstreamer-plugins-buzztard
     SUBDIR += gstreamer-plugins-bz2
     SUBDIR += gstreamer-plugins-core
     SUBDIR += gstreamer-plugins-dts
