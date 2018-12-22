@@ -95,6 +95,7 @@ lib/gretl-gtk2/garch.so
 lib/gretl-gtk2/heckit.so
 lib/gretl-gtk2/interpolate.so
 lib/gretl-gtk2/interval.so
+lib/gretl-gtk2/iso3166.so
 lib/gretl-gtk2/jmulti_import.so
 lib/gretl-gtk2/johansen.so
 lib/gretl-gtk2/json_get.so
@@ -124,8 +125,8 @@ lib/gretl-gtk2/vif.so
 %%GUI%%lib/gretl-gtk2/xlsx_import.so
 %%GUI%%lib/gretl-gtk2/xml_get.so
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.26
-lib/libgretl-1.0.so.26.0.0
+lib/libgretl-1.0.so.27
+lib/libgretl-1.0.so.27.0.0
 libdata/pkgconfig/gretl.pc
 man/man1/gretl.1.gz
 %%GUI%%share/appdata/gretl.appdata.xml
@@ -151,6 +152,7 @@ man/man1/gretl.1.gz
 %%DATADIR%%/data/gretldata.dtd
 %%DATADIR%%/data/misc/AWM.gdt
 %%DATADIR%%/data/misc/AWM17.gdt
+%%DATADIR%%/data/misc/AWM18.gdt
 %%DATADIR%%/data/misc/CEL.gdt
 %%DATADIR%%/data/misc/abdata.gdt
 %%DATADIR%%/data/misc/anscombe.gdt
@@ -345,6 +347,8 @@ man/man1/gretl.1.gz
 %%ADDONS%%%%DATADIR%%/functions/dbnomics/examples/get_other_example.inp
 %%ADDONS%%%%DATADIR%%/functions/dbnomics/examples/get_series_example.inp
 %%ADDONS%%%%DATADIR%%/functions/dbnomics/examples/get_single_example.inp
+%%ADDONS%%%%DATADIR%%/functions/extra/extra.gfn
+%%ADDONS%%%%DATADIR%%/functions/extra/extra.pdf
 %%ADDONS%%%%DATADIR%%/functions/gig/examples/IBM.gdt
 %%ADDONS%%%%DATADIR%%/functions/gig/examples/README
 %%ADDONS%%%%DATADIR%%/functions/gig/examples/example1.inp
@@ -374,6 +378,7 @@ man/man1/gretl.1.gz
 %%DATADIR%%/gretl_cli_cmdref.it
 %%DATADIR%%/gretl_cli_cmdref.pt
 %%DATADIR%%/gretl_cli_fnref.en
+%%DATADIR%%/gretl_cli_fnref.es
 %%DATADIR%%/gretl_cli_fnref.gl
 %%DATADIR%%/gretl_cli_fnref.it
 %%DATADIR%%/gretl_cli_fnref.pt
@@ -383,6 +388,7 @@ man/man1/gretl.1.gz
 %%DATADIR%%/gretl_gui_cmdref.it
 %%DATADIR%%/gretl_gui_cmdref.pt
 %%DATADIR%%/gretl_gui_fnref.en
+%%DATADIR%%/gretl_gui_fnref.es
 %%DATADIR%%/gretl_gui_fnref.gl
 %%DATADIR%%/gretl_gui_fnref.it
 %%DATADIR%%/gretl_gui_fnref.pt

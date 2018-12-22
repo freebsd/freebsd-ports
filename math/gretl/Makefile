@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gretl
-DISTVERSION=	2018c
+DISTVERSION=	2018d
 CATEGORIES=	math finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/
 
@@ -35,7 +35,7 @@ OPTIONS_SUB=		yes
 
 ADDONS_DESC=		Build gretl addons
 ADDONS_CONFIGURE_ENABLE=	build-addons
-ADDONS_BUILD_DEPENDS=	pdflatex:print/tex-formats
+ADDONS_VARS=		USE_TEX="formats dvipsk:build"
 
 ATLAS_DESC=		Use ATLAS for BLAS and LAPACK
 ATLAS_LIB_DEPENDS=	libatlas.so:math/atlas
