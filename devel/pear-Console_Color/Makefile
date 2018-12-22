@@ -8,6 +8,9 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR use ANSI console colors
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		pear
 
 .include <bsd.port.mk>
