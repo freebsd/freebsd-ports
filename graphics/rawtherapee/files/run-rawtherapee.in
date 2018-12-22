@@ -1,0 +1,6 @@
+#!/bin/sh
+# suppress core files unless DEBUG variable is set
+if test -z "$DEBUG" ; then
+  ulimit -c 0
+fi
+exec "%%PREFIX%%/bin/rawtherapee.real" "$@"

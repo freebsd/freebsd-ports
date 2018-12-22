@@ -1,0 +1,14 @@
+LLVM doesn't have a libatomic, it's all in compiler-rt
+--- rtgui/CMakeLists.txt.orig	2018-12-18 19:27:46 UTC
++++ rtgui/CMakeLists.txt
+@@ -226,10 +226,6 @@ else()
+         )
+ endif()
+ 
+-if(OPENMP_FOUND AND NOT APPLE)
+-    set(EXTRA_LIB_RTGUI ${EXTRA_LIB_RTGUI} "atomic")
+-endif()
+-
+ # Create config.h which defines where data are stored
+ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/config.h.in" "${CMAKE_CURRENT_BINARY_DIR}/config.h")
+ 
