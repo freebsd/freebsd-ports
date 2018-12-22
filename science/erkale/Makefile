@@ -11,6 +11,8 @@ COMMENT=	Quantum chemistry program to solve the electronic structure of atoms
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_i386=	liberkale_omp.so.0.1.0: undefined reference to `__atomic_compare_exchange'
+
 BUILD_DEPENDS=	armadillo>0:math/armadillo
 LIB_DEPENDS=	libderiv.so:science/libint \
 		libgsl.so:math/gsl \
