@@ -14,7 +14,7 @@ RUN_DEPENDS=	avahi-app>=0.7:net/avahi-app
 
 USES=		metaport
 
-OPTIONS_DEFINE=	AUTOIPD GTK MONO QT4 PYTHON
+OPTIONS_DEFINE=	AUTOIPD GTK MONO QT4 QT5 PYTHON
 OPTIONS_DEFAULT=AUTOIPD GTK
 AUTOIPD_DESC=	IPv4LL network address configuration daemon
 GTK_DESC=	Gtk+ tools and bindings
@@ -25,6 +25,7 @@ GTK_RUN_DEPENDS=	avahi-discover-standalone:net/avahi-gtk
 #LIBDNS_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/avahi-compat-libdns_sd.pc:net/avahi-libdns
 MONO_RUN_DEPENDS=	${LOCALBASE}/lib/mono/avahi-sharp/avahi-sharp.dll:net/avahi-sharp
 QT4_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/avahi-qt4.pc:net/avahi-qt4
+QT5_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/avahi-qt5.pc:net/avahi-qt5
 PYTHON_RUN_DEPENDS=	avahi-bookmarks:net/py-avahi
 
 .include <bsd.port.mk>

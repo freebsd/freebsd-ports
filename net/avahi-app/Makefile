@@ -26,7 +26,7 @@ LIB_DEPENDS?=	libexpat.so:textproc/expat2 \
 USERS?=		${PORTNAME}
 GROUPS?=	${USERS}
 
-USES+=		alias gettext gmake libtool pathfix pkgconfig
+USES+=		alias gettext gmake gnome libtool pathfix pkgconfig
 USE_GNOME+=	glib20 intltool introspection
 USE_GNOME_SUBR=	yes
 USE_LDCONFIG=	yes
@@ -84,6 +84,13 @@ CONFIGURE_ARGS+=--enable-qt4 \
 		--disable-gdbm
 .else
 CONFIGURE_ARGS+=--disable-qt4
+.endif
+.if ${AVAHI_SLAVE} == qt5
+CONFIGURE_ARGS+=--enable-qt5 \
+		--disable-expat \
+		--disable-gdbm
+.else
+CONFIGURE_ARGS+=--disable-qt5
 .endif
 .if ${AVAHI_SLAVE} == sharp
 CONFIGURE_ARGS+=--enable-mono
