@@ -8,6 +8,9 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR Date and Time Zone Classes
 
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/docs/LICENSE
+
 USES=		pear
 
 .include <bsd.port.mk>
