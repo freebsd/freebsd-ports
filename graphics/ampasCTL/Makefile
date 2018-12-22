@@ -19,7 +19,7 @@ LIB_DEPENDS=	libImath.so:graphics/ilmbase \
 		libtiff.so:graphics/tiff \
 		libAcesContainer.so:graphics/ampasACES-container
 
-USES=		cmake:outsource pathfix pkgconfig
+USES=		compiler:c++11-lang cmake:outsource pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 
