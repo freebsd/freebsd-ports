@@ -24,7 +24,8 @@ USE_GNOME=	cairo
 USE_XORG=	x11
 USE_BINUTILS=	yes # linking needs some GNU features, fails on 12 without this, see https://github.com/brummer10/GxPlugins.lv2/issues/9
 
-LDFLAGS+=	-B ${LOCALBASE}/bin/ld # Use ld provided by USE_BINUTILS for GNU features, otherwise GNU ld isn't called
+MAKE_ENV=	PATH=${LOCALBASE}/bin:/usr/bin:/bin # 'ld' needs to be first in the path on 12, -B{path} isn't sufficient for some reason
+LDFLAGS+=	-B${LOCALBASE}/bin # Use ld provided by USE_BINUTILS for GNU features, otherwise GNU ld isn't called
 
 .for x in	GxAxisFace.lv2:c370e75 GxBottleRocket.lv2:8d1a914 GxDOP250.lv2:574b709 GxFz1b.lv2:d204796 GxFz1s.lv2:973d6f7 \
 		GxGuvnor.lv2:6082bcf GxHeathkit.lv2:bb73b24 GxHotBox.lv2:db17513 GxHyperion.lv2:9b91395 GxKnightFuzz.lv2:0d9518f \
