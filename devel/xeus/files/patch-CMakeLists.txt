@@ -1,46 +1,28 @@
---- CMakeLists.txt.orig	2018-07-01 17:59:23 UTC
+--- CMakeLists.txt.orig	2018-12-12 21:29:43 UTC
 +++ CMakeLists.txt
-@@ -46,11 +46,12 @@ message(STATUS "xeus binary version: v${XEUS_BINARY_VE
+@@ -47,10 +47,11 @@ message(STATUS "xeus binary version: v${
  # Dependencies
  # ============
  
 +FIND_PACKAGE(PkgConfig)
- find_package(nlohmann_json 3.1.1 REQUIRED)
- find_package(xtl 0.4 REQUIRED)
--find_package(ZeroMQ 4.2.3 REQUIRED)
-+pkg_check_modules(ZeroMQ libzmq>=4.2.3 REQUIRED)
- find_package(cppzmq 4.2.3 REQUIRED)
+ find_package(nlohmann_json 3.2.0 REQUIRED)
+ find_package(xtl 0.5 REQUIRED)
+ find_package(cppzmq 4.3.0 REQUIRED)
 -find_package(cryptopp REQUIRED)
-+pkg_check_modules(cryptopp libcryptopp REQUIRED)
++pkg_check_modules(cryptopp libcryptopp REQUIRED) # see https://github.com/QuantStack/xeus/issues/113
  
- # Source files
- # ============
-@@ -111,7 +112,7 @@ target_link_libraries(xeus
+ # On Unix platforms, ZeroMQ is built with autotools and pkg-config is
+ # required to locate it.
+@@ -132,7 +133,7 @@ target_link_libraries(xeus
                        PUBLIC cppzmq
-                       PUBLIC nlohmann_json
+                       PUBLIC nlohmann_json::nlohmann_json
                        PUBLIC xtl
 -                      PRIVATE cryptopp-static)
 +                      PRIVATE cryptopp)
  
  if(NOT MSVC)
      if(APPLE)
-@@ -139,14 +140,12 @@ include(CMakePushCheckState)
- cmake_push_check_state()
- 
- # HAVE_CRYPTOPP_BYTE_T
--get_target_property(cryptopp_INCLUDE_DIR cryptopp-static INTERFACE_INCLUDE_DIRECTORIES)
--get_target_property(cryptopp_LIBRARY cryptopp-static LOCATION)
- set(CMAKE_REQUIRED_LIBRARIES ${cryptopp_LIBRARY})
- set(CMAKE_REQUIRED_INCLUDES ${cryptopp_INCLUDE_DIR})
- check_cxx_source_compiles("
- #include \"cryptopp/config.h\"
- int main(){
--  [[maybe_unused]] CryptoPP::byte b = CryptoPP::byte{0x36};
-+  CryptoPP::byte b = (CryptoPP::byte){0x36};
- }" HAVE_CRYPTOPP_BYTE_T)
- 
- cmake_pop_check_state()
-@@ -160,17 +159,11 @@ endif()
+@@ -156,17 +157,11 @@ set_target_properties(xeus PROPERTIES
  
  include(CheckCXXCompilerFlag)
  string(TOUPPER "${CMAKE_BUILD_TYPE}" U_CMAKE_BUILD_TYPE)
@@ -58,7 +40,7 @@
  
      # Enable link time optimization and set the default symbol
      # visibility to hidden (very important to obtain small binaries)
-@@ -206,7 +199,7 @@ if(MSVC)
+@@ -202,7 +197,7 @@ if(MSVC)
  elseif(APPLE)
      target_compile_definitions(xeus PUBLIC -DGUID_CFUUID)
  else()
