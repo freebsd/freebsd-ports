@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	logitechmediaserver
-PORTVERSION=	7.9.1.g2018.04.23
+PORTVERSION=	7.9.2.g2018.12.10
 CATEGORIES=	audio
 
 MAINTAINER=	mark@tranquillussoftware.co.uk
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libgd.so:graphics/gd
 
 USES=		gettext-runtime gmake perl5 shebangfix
 USE_GITHUB=	yes
-GH_TUPLE=	Logitech:slimserver:7b3c28c \
+GH_TUPLE=	Logitech:slimserver:d3dc895 \
 		Logitech:slimserver-vendor:21f307f:vendor
 USE_RC_SUBR=	logitechmediaserver
 SHEBANG_FILES=	Bin/darwin/check-update.pl \
