@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	asmctl
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	naito.yuichiro@gmail.com
 COMMENT=	Apple System Management Controller
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuichiro-naito
