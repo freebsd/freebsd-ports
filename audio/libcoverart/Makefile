@@ -21,6 +21,11 @@ USE_LDCONFIG=	yes
 
 CXXFLAGS+=	-Wno-implicit-fallthrough
 
+.if exists(/usr/lib/libstdc++.so)
+CXXFLAGS+=	-Wno-unused-function -Wno-class-memaccess -Wno-catch-value
+CFLAGS+=	-Wno-format-overflow
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		 ${WRKSRC}/cmake/modules/*.cmake
