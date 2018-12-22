@@ -1,6 +1,11 @@
 --- Makefile.orig	2011-03-08 18:55:26 UTC
 +++ Makefile
-@@ -38,7 +38,7 @@ ifeq ($(OS),Linux)
+@@ -34,11 +34,11 @@ ifeq ($(OS),Linux)
+ 
+   prefix          = /usr/local
+   includedir      = ${prefix}/include
+-  libdir          = /usr/lib/
++  libdir          = ${prefix}/lib/
  
    BUILD_CPU=$(shell uname -m)
    ifneq (,$(findstring 64,$(BUILD_CPU)))
