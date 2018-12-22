@@ -13,13 +13,11 @@ COMMENT=	Simple image viewer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to configure: C++ compiler cannot create executables
-
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		compiler:c++11-lang desktop-file-utils gettext pkgconfig
+USES=		compiler:c++11-lang desktop-file-utils gettext gnome pkgconfig
 USE_GNOME=	gtkmm24 gdkpixbuf2
 GNU_CONFIGURE=	yes
 USE_CXXSTD=	c++11
@@ -28,9 +26,12 @@ OPTIONS_DEFINE=		NLS
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	gettext
 
-CXXFLAGS+=	-stdlib=libc++ -Wc++11-extensions -Wc++11-long-long \
+CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
+
+.if !exists(/usr/lib/libstdc++.so)
+CXXFLAGS+=	-Wc++11-extensions -Wc++11-long-long \
 		-Wunused-command-line-argument -Wreturn-type \
 		-Wwritable-strings -Wlogical-op-parentheses
-CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
+.endif
 
 .include <bsd.port.mk>
