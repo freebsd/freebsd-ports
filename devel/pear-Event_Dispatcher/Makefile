@@ -8,6 +8,8 @@ CATEGORIES=	devel pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR dispatch notifications using PHP callbacks
 
+LICENSE=	BSD2CLAUSE
+
 USES=		pear
 
 post-extract:
