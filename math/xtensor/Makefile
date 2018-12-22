@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xtensor
-DISTVERSION=	0.17.3
+DISTVERSION=	0.19.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,6 +21,7 @@ TEST_DEPENDS=	nlohmann-json>0:devel/nlohmann-json \
 USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	QuantStack
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

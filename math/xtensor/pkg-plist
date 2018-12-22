@@ -14,10 +14,12 @@ include/xtensor/xdynamic_view.hpp
 include/xtensor/xeval.hpp
 include/xtensor/xexception.hpp
 include/xtensor/xexpression.hpp
+include/xtensor/xexpression_holder.hpp
 include/xtensor/xfixed.hpp
 include/xtensor/xfunction.hpp
 include/xtensor/xfunctor_view.hpp
 include/xtensor/xgenerator.hpp
+include/xtensor/xhistogram.hpp
 include/xtensor/xindex_view.hpp
 include/xtensor/xinfo.hpp
 include/xtensor/xio.hpp
@@ -25,8 +27,11 @@ include/xtensor/xiterable.hpp
 include/xtensor/xiterator.hpp
 include/xtensor/xjson.hpp
 include/xtensor/xlayout.hpp
+include/xtensor/xmanipulation.hpp
+include/xtensor/xmasked_value.hpp
 include/xtensor/xmasked_view.hpp
 include/xtensor/xmath.hpp
+include/xtensor/xmime.hpp
 include/xtensor/xnoalias.hpp
 include/xtensor/xnorm.hpp
 include/xtensor/xnpy.hpp
