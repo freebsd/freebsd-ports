@@ -8,6 +8,8 @@ CATEGORIES=	databases www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Berkely-style database abstraction class
 
+LICENSE=	LGPL3
+
 USES=		pear
 
 .include <bsd.port.mk>
