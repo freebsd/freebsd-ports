@@ -1,9 +1,7 @@
 --- PATCHES.orig	2018-11-29 22:49:51 UTC
 +++ PATCHES
-@@ -1,2 +1,3 @@
+@@ -0,0 +1 @@
 +patch-1.5.4.cd.ifdef.1
- vvv.quote
- vvv.initials
 --- init.c.orig	2018-11-24 19:06:11 UTC
 +++ init.c
 @@ -650,6 +650,52 @@ static mbchar_table *parse_mbchar_table 

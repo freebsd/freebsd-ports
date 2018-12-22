@@ -1,10 +1,7 @@
 --- PATCHES.orig	2018-11-29 22:55:14 UTC
 +++ PATCHES
-@@ -1,3 +1,4 @@
+@@ -0,0 +1 @@
 +patch-1.5.6.cb.reverse_reply.2
- patch-1.5.4.cd.ifdef.1
- vvv.quote
- vvv.initials
 --- init.h.orig	2018-11-29 22:55:14 UTC
 +++ init.h
 @@ -2820,6 +2820,13 @@ struct option_t MuttVars[] = {
