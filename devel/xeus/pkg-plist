@@ -2,6 +2,9 @@ include/xeus/xauthentication.hpp
 include/xeus/xcomm.hpp
 include/xeus/xeus.hpp
 include/xeus/xguid.hpp
+include/xeus/xhistory_manager.hpp
+include/xeus/xin_memory_history_manager.hpp
+include/xeus/xinput.hpp
 include/xeus/xinterpreter.hpp
 include/xeus/xjson.hpp
 include/xeus/xkernel.hpp
