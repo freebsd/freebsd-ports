@@ -1,10 +1,10 @@
---- autogen.sh.orig	2018-04-06 15:23:12 UTC
+--- autogen.sh.orig	2018-12-21 16:33:57 UTC
 +++ autogen.sh
-@@ -5,44 +5,9 @@ NDPI_MINOR="2"
- NDPI_PATCH="2"
+@@ -5,44 +5,9 @@ NDPI_MINOR="6"
+ NDPI_PATCH="0"
  NDPI_VERSION_SHORT="$NDPI_MAJOR.$NDPI_MINOR.$NDPI_PATCH"
  
--rm -f configure config.h config.h.in src/lib/Makefile.in
+-rm -f configure config.h config.h.in
 -
 -AUTOCONF=$(command -v autoconf)
 -AUTOMAKE=$(command -v automake)

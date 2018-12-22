@@ -5,4 +5,4 @@ nDPI do be more suitable for traffic monitoring applications, by disabling
 specific features that slow down the DPI engine while being them un-necessary
 for network traffic monitoring.
 
-WWW: http://www.ntop.org/products/ndpi/
+WWW: https://www.ntop.org/products/deep-packet-inspection/ndpi/

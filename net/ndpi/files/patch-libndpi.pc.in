@@ -1,8 +1,0 @@
---- libndpi.pc.in.orig	2018-08-22 06:29:35 UTC
-+++ libndpi.pc.in
-@@ -7,4 +7,4 @@ Name: libndpi
- Description: deep packet inspection library
- Version: @VERSION@
- Libs: -L${libdir} -lndpi
--Cflags: -I${includedir}/libndpi-@VERSION@
-+Cflags: -I${includedir}/ndpi

@@ -1,0 +1,31 @@
+-	/bin/rm -f libndpi.a $(OBJECTS)
+new file mode 100644
+--- src/lib/Makefile.in.orig	2018-12-21 16:33:57 UTC
++++ src/lib/Makefile.in
+@@ -17,24 +17,15 @@ CC         = @CC@
+ CFLAGS     += -fPIC -DPIC -I../include -Ithird_party/include -DNDPI_LIB_COMPILATION -O2 -g
+ RANLIB     = ranlib
+ 
+-OBJECTS   = $(patsubst protocols/%.c, protocols/%.o, $(wildcard protocols/*.c)) $(patsubst third_party/src/%.c, third_party/src/%.o, $(wildcard third_party/src/*.c)) ndpi_main.o
+-HEADERS   = $(wildcard ../include/*.h)
++OBJECTS != ls protocols/*.c | sed 's/\(.*\)\.c$$/\1.o/' && ls third_party/src/*.c | sed 's/\(.*\)\.c$$/\1.o/' && echo ndpi_main.o
++HEADERS != ls ../include/*.h
+ NDPI_VERSION_MAJOR   = @NDPI_MAJOR@
+ NDPI_LIB_STATIC      = libndpi.a
+ NDPI_LIB_SHARED_BASE = libndpi.so
+ NDPI_LIB_SHARED      = $(NDPI_LIB_SHARED_BASE).@NDPI_VERSION_SHORT@
+ NDPI_LIBS            = $(NDPI_LIB_STATIC) $(NDPI_LIB_SHARED)
+ 
+-ifneq ($(OS),Windows_NT)
+-OS := $(shell uname)
+-endif
+-
+-ifeq ($(OS),Darwin)
+-CC=clang
+-SONAME_FLAG=
+-else
+ SONAME_FLAG=-Wl,-soname,$(NDPI_LIB_SHARED_BASE).$(NDPI_VERSION_MAJOR)
+-endif
+ 
+ all: $(NDPI_LIBS)
+ 
