@@ -13,8 +13,6 @@ COMMENT=	GNUstep GUI library
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-BROKEN_powerpc64=	fails to build: Illegal instruction (core dumped)
-
 LIB_DEPENDS+=	libtiff.so:graphics/tiff
 LIB_DEPENDS+=	libpng.so:graphics/png
 LIB_DEPENDS+=	libgif.so:graphics/giflib
