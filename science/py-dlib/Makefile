@@ -20,7 +20,8 @@ BROKEN_armv7=		fails to build: CMake Error at test_for_avx/CMakeLists.txt:17 (if
 BUILD_DEPENDS=		cmake:devel/cmake
 LIB_DEPENDS=		${PY_BOOST}
 
-USES=			pkgconfig python shebangfix tar:bzip2
+USES=			compiler:c++11-lang pkgconfig python shebangfix \
+			tar:bzip2
 USE_PYTHON=		autoplist distutils
 SHEBANG_FILES=		python_examples/*.py
 
@@ -50,11 +51,12 @@ SQLITE_VARS=		sqliteargs="--yes DLIB_LINK_WITH_SQLITE3"
 SQLITE_VARS_OFF=	sqliteargs="--no DLIB_LINK_WITH_SQLITE3"
 
 BLASLAPACK_USES=	blaslapack
-BLASLAPACK_VARS_OFF=	avxargs="--no DLIB_USE_BLAS --no DLIB_USE_LAPACK --no DLIB_USE_MKL_FFT"
+BLASLAPACK_VARS_OFF=	blaslapackargs="--no DLIB_USE_BLAS --no DLIB_USE_LAPACK --no DLIB_USE_MKL_FFT"
 
 AVX_VARS=		avxargs="--yes USE_AVX_INSTRUCTIONS"
+AVX_VARS_OFF=		avxargs="--no AVX_IS_AVAILABLE_ON_HOST"
 
-PYDISTUTILS_BUILDARGS=	--set BOOST_PYTHON_SUFFIX:STRING=${PYTHON_SUFFIX} ${X11ARGS} ${JPEGARGS} ${PNGARGS} ${GIFARGS} ${SQLITEARGS} ${BLASLAPACKARGS} ${AVXARGS}
+PYDISTUTILS_BUILDARGS=	--set BOOST_PYTHON_SUFFIX:STRING=${PYTHON_SUFFIX} ${X11ARGS} ${JPEGARGS} ${PNGARGS} ${GIFARGS} ${SQLITEARGS} ${BLASLAPACKARGS} ${AVXARGS} ${BLASLAPACK}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/dlib.so
