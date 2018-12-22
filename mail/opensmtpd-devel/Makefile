@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=	--with-libasr=${LOCALBASE} \
 .if ${OPSYS} == FreeBSD && \
     ((${OSVERSION} > 1200084 && ${SSL_DEFAULT} == "base") || \
     (${SSL_DEFAULT} == "openssl111"))
-OBBROKEN=		Incompatible with Openssl 1.1.x yet
+BROKEN=		Incompatible with Openssl 1.1.x yet
 .endif
 
 post-patch:
