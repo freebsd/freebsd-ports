@@ -20,7 +20,7 @@ BUILD_DEPENDS=	itstool:textproc/itstool
 CONFLICTS=	glade3-3.*
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake libtool \
+USES=		compiler:c11 desktop-file-utils gettext gmake gnome libtool \
 		localbase:ldflags pathfix pkgconfig tar:xz
 USE_GNOME=	cairo gtk30 gnomedocutils intlhack \
 		introspection:build
