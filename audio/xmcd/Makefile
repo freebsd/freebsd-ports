@@ -16,18 +16,17 @@ RUN_DEPENDS+=	lame:audio/lame
 
 USES=		imake motif ncurses
 USE_XORG=	x11 xext xaw xmu xp xpm xt sm ice
-PLIST_SUB+=	RELEASE=${OSREL:R:R} ARCH=${ARCH} OPSYS=${OPSYS}
+PLIST_SUB+=	RELEASE=${OSREL:R:R} ARCH=${ARCH:S/powerpc64/powerpc/} OPSYS=${OPSYS}
 SUB_FILES=	pkg-message
 
 CFLAGS+=	-D_WANT_SEMUN
 
-LIBBINDIR=	${STAGEDIR}${PREFIX}/lib/X11/xmcd/bin-${OPSYS}_${OSREL:R:R}-${ARCH}
+LIBBINDIR=	${STAGEDIR}${PREFIX}/lib/X11/xmcd/bin-${OPSYS}_${OSREL:R:R}-${ARCH:S/powerpc64/powerpc/}
 
 BROKEN_aarch64=		Fails to compile: many undefined symbols in xorg.cf
 BROKEN_armv6=		Fails to install: strip: xmcd/bin-FreeBSD_12-armv6/cda failed: No such file or directory
 BROKEN_armv7=		Fails to install: strip: xmcd/bin-FreeBSD_12-armv7/cda failed: No such file or directory
 BROKEN_mips64=		Fails to compile: many undefined symbols in xorg.cf
-BROKEN_powerpc64=	Fails to compile: many undefined symbols in xorg.cf
 
 pre-patch:
 	@${CP} ${WRKSRC}/xmcd_d/XMcd.ad ${WRKSRC}/xmcd_d/XMcd.ad.in
@@ -69,7 +68,7 @@ post-install:
 		-e 's:${STAGEDIR}::' \
 		${STAGEDIR}${PREFIX}/lib/X11/xmcd/discog/discog.html \
 		${STAGEDIR}${PREFIX}/lib/X11/xmcd/config/config.sh \
-		${STAGEDIR}${PREFIX}/lib/X11/xmcd/bin-${OPSYS}_${OSREL:R:R}-${ARCH}/README
+		${STAGEDIR}${PREFIX}/lib/X11/xmcd/bin-${OPSYS}_${OSREL:R:R}-${ARCH:S/powerpc64/powerpc/}/README
 	${FIND} ${STAGEDIR}${PREFIX} -name \*.bak -delete
 	${FIND} ${STAGEDIR}${PREFIX} -type d -empty -delete
 
