@@ -1,0 +1,9 @@
+Python XMODEM protocol implementation
+
+This is a literal implementation of XMODEM.TXT, XMODEM1K.TXT and
+XMODMCRC.TXT, support for YMODEM and ZMODEM is pending. YMODEM should
+be fairly easy to implement as it is a hack on top of the XMODEM
+protocol using sequence bytes ``0x00`` for sending file names (and some
+meta data).
+
+WWW: https://github.com/tehmaze/xmodem
