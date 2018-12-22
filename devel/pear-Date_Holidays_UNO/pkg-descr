@@ -1,3 +1,5 @@
-Driver based class to calculate holidays in UNO.
+Date_Holidays helps you calculate the dates and titles of
+holidays and other special celebrations. This is the driver
+for calculating UNO holidays.
 
 WWW: https://pear.php.net/package/Date_Holidays_UNO
