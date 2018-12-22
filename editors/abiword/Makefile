@@ -22,7 +22,8 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libgoffice-0.10.so:devel/goffice010
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSerif.ttf:x11-fonts/dejavu
 
-USES=		desktop-file-utils gmake iconv jpeg libtool pathfix pkgconfig
+USES=		compiler:c++11-lang desktop-file-utils gmake gnome iconv jpeg \
+		libtool pathfix pkgconfig
 USE_GNOME=	libxml2 gtk30 librsvg2 libxslt
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
