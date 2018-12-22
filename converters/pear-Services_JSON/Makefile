@@ -8,6 +8,8 @@ CATEGORIES=	converters www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PHP implementation of json_encode/decode
 
+LICENSE=	BSD2CLAUSE
+
 USES=		pear
 
 .include <bsd.port.mk>
