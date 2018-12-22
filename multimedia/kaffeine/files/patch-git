@@ -1,0 +1,720 @@
+This patch contains the amalgamated diff of upstream commits post-v2.0.15:
+
+a9f09d4d84509259b92153f39e99e036bfcbcb61
+    only use qPrintable() for debug messages
+06b78c5f24891fd38d25ed64f5029106eec7c4fb
+    Fix breakages with qt5.11-rc2
+2bd25c928579a443f260f79a0fd65bffe18d54de
+    Fix minor EBN issues
+3b6052eeb82516b7acb0e1280059b2201dc6636e
+    Fix minor typos and EBN issues
+114a1016b3261d07de992b4c368b70e98a20bd59
+    Fix compile on FreeBSD
+c40e3c17d90b5bfc9df579cef992800578cc0a54
+    Don't assume someone else pulls in errno.h
+06d54c9310455168dfbf5d711705ddfbae6b72f5
+    Don't delete what was new[]'ed
+
+These are mashed together because they touch the same files multiple times.
+
+--- include/dmx.h.orig	2018-05-01 12:51:57 UTC
++++ include/dmx.h
+@@ -24,7 +24,7 @@
+ #ifndef _DVBDMX_H_
+ #define _DVBDMX_H_
+ 
+-#include <linux/types.h>
++#include "linuxtypes.h"
+ #include <time.h>
+ 
+ 
+--- include/frontend.h.orig	2018-05-01 12:51:57 UTC
++++ include/frontend.h
+@@ -26,7 +26,7 @@
+ #ifndef _DVBFRONTEND_H_
+ #define _DVBFRONTEND_H_
+ 
+-#include <linux/types.h>
++#include "linuxtypes.h"
+ 
+ enum fe_type {
+ 	FE_QPSK,
+--- include/linuxtypes.h.orig	2018-12-22 19:38:00 UTC
++++ include/linuxtypes.h
+@@ -0,0 +1,13 @@
++#ifdef __linux__
++#include <linux/types.h>
++#else
++#ifndef LINUX_TYPES_ADDED
++#define LINUX_TYPES_ADDED
++#include <sys/types.h>
++typedef uint64_t __u64;
++typedef uint32_t __u32;
++typedef uint16_t __u16;
++typedef uint8_t __u8;
++typedef int64_t __s64;
++#endif
++#endif
+--- src/backend-vlc/vlcmediawidget.cpp.orig	2018-05-01 12:51:57 UTC
++++ src/backend-vlc/vlcmediawidget.cpp
+@@ -64,18 +64,18 @@ bool VlcMediaWidget::init()
+ 
+ 	if (vlcInstance == NULL) {
+ 		qFatal("Cannot create vlc instance %s", qPrintable(libvlc_errmsg()));
+-		delete argv;
++		delete[] argv;
+ 		return false;
+ 	}
+ 
+ 	if (argc) {
+ 		QString log = "Using libVLC with args:";
+ 		for (int i = 0; i < argc; i++)
+-			log += " " + QLatin1String(argv[i]);
++			log += ' ' + QLatin1String(argv[i]);
+ 
+ 		qCDebug(logVlc, "%s", qPrintable(log));
+ 	}
+-	delete argv;
++	delete[] argv;
+ 
+ 	vlcMediaPlayer = libvlc_media_player_new(vlcInstance);
+ 
+@@ -95,7 +95,7 @@ bool VlcMediaWidget::init()
+ 
+ 	for (uint i = 0; i < (sizeof(eventTypes) / sizeof(eventTypes[0])); ++i) {
+ 		if (libvlc_event_attach(eventManager, eventTypes[i], vlcEventHandler, this) != 0) {
+-			qCCritical(logMediaWidget, "Cannot attach event handler %s", qPrintable(eventTypes[i]));
++			qCCritical(logMediaWidget, "Cannot attach event handler %d", eventTypes[i]);
+ 			return false;
+ 		}
+ 	}
+@@ -328,7 +328,7 @@ void VlcMediaWidget::play(const MediaSou
+ 
+ 	for (uint i = 0; i < (sizeof(eventTypes) / sizeof(eventTypes[0])); ++i) {
+ 		if (libvlc_event_attach(eventManager, eventTypes[i], vlcEventHandler, this) != 0) {
+-			qCWarning(logMediaWidget, "Cannot attach event handler %s", qPrintable(eventTypes[i]));
++			qCWarning(logMediaWidget, "Cannot attach event handler %d", eventTypes[i]);
+ 		}
+ 	}
+ 
+@@ -427,7 +427,7 @@ void VlcMediaWidget::setExternalSubtitle
+ 		qCWarning(logMediaWidget, "Cannot set subtitle file %s", qPrintable(fname));
+ #else
+ 	if (libvlc_video_set_subtitle_file(vlcMediaPlayer,
+-					   qPrintable(fname)) == 0)
++					   fname.toLocal8Bit().constData()) == 0)
+ 		qCWarning(logMediaWidget, "Cannot set subtitle file %s", qPrintable(fname));
+ #endif
+ }
+--- src/dvb/dvbchannel.cpp.orig	2018-05-01 12:51:57 UTC
++++ src/dvb/dvbchannel.cpp
+@@ -293,7 +293,7 @@ void DvbChannelModel::cloneFrom(DvbChann
+ 			addChannel(newChannel);
+ 		}
+ 	} else {
+-		qCWarning(logDvb, "Iillegal type of clone");
++		qCWarning(logDvb, "Illegal type of clone");
+ 	}
+ }
+ 
+--- src/dvb/dvbconfigdialog.cpp.orig	2018-05-01 12:51:57 UTC
++++ src/dvb/dvbconfigdialog.cpp
+@@ -1539,7 +1539,7 @@ void DvbSLnbConfigObject::configure()
+ 
+ 	for (i = 0; i < size; i++) {
+ 		struct lnbSat lnb = device->getLnbSatModels().at(i);
+-		QRadioButton *radioButton = new QRadioButton(i18nd("libdvbv5", qPrintable(lnb.name)), mainWidget);
++		QRadioButton *radioButton = new QRadioButton(i18nd("libdvbv5", lnb.name.toLocal8Bit().constData()), mainWidget);
+ 		mainLayout->addWidget(radioButton);
+ 		lnbSelectionGroup->addButton(radioButton, i + 1);
+ 		gridLayout->addWidget(radioButton, i % ((size + 1) / 2), i / ((size + 1) / 2));
+--- src/dvb/dvbdevice_linux.cpp.orig	2018-05-01 12:51:57 UTC
++++ src/dvb/dvbdevice_linux.cpp
+@@ -1245,7 +1245,7 @@ bool DvbLinuxDevice::getProps(DvbTranspo
+ 		qCWarning(logDev, "Invalid transmission type");
+ 		return false;
+ 	default:
+-		qCWarning(logDev, "Unknown transmission type %s", qPrintable(transponder.getTransmissionType()));
++		qCWarning(logDev, "Unknown transmission type %d", transponder.getTransmissionType());
+ 		return false;
+ 	}
+ 	return true;
+--- src/dvb/dvbepg.cpp.orig	2018-05-01 12:51:57 UTC
++++ src/dvb/dvbepg.cpp
+@@ -289,7 +289,7 @@ DvbSharedEpgEntry DvbEpgModel::addEntry(
+ 	}
+ 
+ 	if (hasPendingOperation) {
+-		qCWarning(logEpg, "Iillegal recursive call");
++		qCWarning(logEpg, "Illegal recursive call");
+ 		return DvbSharedEpgEntry();
+ 	}
+ 
+@@ -859,13 +859,13 @@ QString DvbEpgFilter::getContent(DvbCont
+ 			if (s == "")
+ 				s = braNibble1Str[nibble1];
+ 			if (s != "")
+-				content += i18n(s) + "\n";
++				content += i18n(s) + '\n';
+ 		} else {
+ 			s = contentStr[nibble1][nibble2];
+ 			if (s == "")
+ 				s = nibble1Str[nibble1];
+ 			if (s != "")
+-				content += i18n(s) + "\n";
++				content += i18n(s) + '\n';
+ 		}
+ 	}
+ 
+@@ -926,7 +926,7 @@ QString DvbEpgFilter::getParental(DvbPar
+ 					GenStr = i18n("drugs / ");
+ 				if (genre) {
+ 					GenStr.truncate(GenStr.size() - 2);
+-					GenStr = " (" + GenStr + ")";
++					GenStr = " (" + GenStr + ')';
+ 				}
+ 
+ 				QString ratingStr = i18n(braRating[entry.rating()]);
+--- src/dvb/dvbepgdialog.cpp.orig	2018-05-01 12:51:57 UTC
++++ src/dvb/dvbepgdialog.cpp
+@@ -89,10 +89,10 @@ DvbEpgDialog::DvbEpgDialog(DvbManager *m
+ 		}
+ 	}
+ 	langLayout->addWidget(languageBox);
+-	connect(languageBox, SIGNAL(currentTextChanged(QString)),
+-		this, SLOT(languageChanged(QString)));
+-	connect(manager_->getEpgModel(), SIGNAL(languageAdded(const QString)),
+-		this, SLOT(languageAdded(const QString)));
++	connect(languageBox, &QComboBox::currentTextChanged,
++		this, &DvbEpgDialog::languageChanged);
++	connect(manager_->getEpgModel(), &DvbEpgModel::languageAdded,
++		this, &DvbEpgDialog::languageAdded);
+ 
+ 	languageLabel = new QLabel(mainWidget);
+ 	langLayout->addWidget(languageLabel);
+@@ -100,7 +100,7 @@ DvbEpgDialog::DvbEpgDialog(DvbManager *m
+ 	QString languageString;
+ 	if (IsoCodes::getLanguage(currentLanguage, &languageString))
+ 		languageLabel->setText(languageString);
+-	else if (currentLanguage == "")
++	else if (currentLanguage.isEmpty())
+ 		languageLabel->setText(i18n("Any language"));
+ 	else
+ 		languageLabel->setText("");
+@@ -188,10 +188,10 @@ void DvbEpgDialog::languageChanged(const
+ 	QString languageString;
+ 	if (IsoCodes::getLanguage(currentLanguage, &languageString))
+ 		languageLabel->setText(languageString);
+-	else if (currentLanguage == "")
++	else if (currentLanguage.isEmpty())
+ 		languageLabel->setText(i18n("Any language"));
+ 	else
+-		languageLabel->setText("");
++		languageLabel->setText(QString());
+ 
+ 	epgTableModel->setLanguage(currentLanguage);
+ 	epgView->setCurrentIndex(epgTableModel->index(0, 0));
+--- src/dvb/dvbrecording.cpp.orig	2018-05-01 12:51:57 UTC
++++ src/dvb/dvbrecording.cpp
+@@ -20,6 +20,8 @@
+ 
+ #include "../log.h"
+ 
++#include <errno.h>
++
+ #include <QCoreApplication>
+ #include <QDataStream>
+ #include <QDir>
+@@ -473,7 +475,7 @@ DvbSharedRecording DvbRecordingModel::ge
+ 	DvbSharedRecording leastImportant = recList.value(0);
+ 	foreach(DvbSharedRecording listRec, recList)
+ 	{
+-		qCDebug(logDvb, "name and priority %s %s", qPrintable(listRec->name), qPrintable(listRec->priority));
++		qCDebug(logDvb, "name and priority %s %d", qPrintable(listRec->name), listRec->priority);
+ 		if (listRec->priority < leastImportant->priority) {
+ 			leastImportant = listRec;
+ 		}
+@@ -789,7 +791,7 @@ bool DvbRecordingFile::start(DvbRecordin
+ 		filename = filename.replace("%channel", recording.channel->name);
+ 		filename = filename.replace("%title", QString(recording.name));
+ 		filename = filename.replace(QLatin1Char('/'), QLatin1Char('_'));
+-		if (filename == "") {
++		if (filename.isEmpty()) {
+ 			filename = QString(recording.name);
+ 		}
+ 
+--- src/dvb/dvbscan.cpp.orig	2018-05-01 12:51:57 UTC
++++ src/dvb/dvbscan.cpp
+@@ -883,7 +883,7 @@ void DvbScan::processPmt(const DvbPmtSec
+ 			break;
+ 		}
+ 		case DvbBackendDevice::Percentage: {
+-			channel.snr = QString::number(snr, 'f', 0) + "%";
++			channel.snr = QString::number(snr, 'f', 0) + '%';
+ 			break;
+ 		}
+ 		case DvbBackendDevice::Decibel: {
+@@ -1283,7 +1283,7 @@ void DvbScan::processNitDescriptor(const
+ 	    }
+ 	case DvbTransponderBase::DvbT2:
+ 		// FIXME: Implement T2_delivery_system_descriptor
+-		// decriptor 0x7f, extension descriptor 0x04  or use libdvbv5
++		// descriptor 0x7f, extension descriptor 0x04  or use libdvbv5
+ 
+ 	case DvbTransponderBase::DvbT: {
+ 		if (descriptor.descriptorTag() != 0x5a) {
+--- src/dvb/dvbscandialog.cpp.orig	2018-05-01 12:51:57 UTC
++++ src/dvb/dvbscandialog.cpp
+@@ -59,13 +59,13 @@ void DvbGradProgress::setValue(float val
+ 
+ 	switch(scale) {
+ 	case DvbBackendDevice::NotSupported: {
+-		text = "-";
++		text = '-';
+ 		max = 100;
+ 		min = 0;
+ 		break;
+ 	    }
+ 	case DvbBackendDevice::Percentage: {
+-		text = QString::number(value, 'f', 0) + "%";
++		text = QString::number(value, 'f', 0) + '%';
+ 		max = 100;
+ 		min = 0;
+ 		break;
+@@ -77,7 +77,7 @@ void DvbGradProgress::setValue(float val
+ 		break;
+ 	    }
+ 	case DvbBackendDevice::dBuV: {
+-		text = QString::number(value, 'f', 2) + " dB" + QString((QChar) 0x00b5) + "V";
++		text = QString::number(value, 'f', 2) + " dB" + QString((QChar) 0x00b5) + 'V';
+ 		max = 80;
+ 		min = 20;
+ 		break;
+--- src/dvb/dvbsi.cpp.orig	2018-05-01 12:51:57 UTC
++++ src/dvb/dvbsi.cpp
+@@ -481,7 +481,7 @@ QString AtscPsipText::convertText(const 
+ 			result +=
+ 				AtscHuffmanString::convertText(comp_string, num_bytes, comp_type);
+ 		} else {
+-			qCInfo(logDvbSi, "Usupported compression / mode %d %d", comp_type, mode);
++			qCInfo(logDvbSi, "Unsupported compression / mode %d %d", comp_type, mode);
+ 		}
+ 
+ 		offset += num_bytes;
+--- src/iso-codes.h.orig	2018-05-01 12:51:57 UTC
++++ src/iso-codes.h
+@@ -14,6 +14,9 @@
+  * GNU General Public License for more details.
+  */
+ 
++#ifndef ISO_CODES_H
++#define ISO_CODES_H
++
+ class QString;
+ 
+ namespace IsoCodes
+@@ -21,3 +24,5 @@ namespace IsoCodes
+ 	bool getLanguage(const QString &code, QString *language);
+ 	bool getCountry(const QString &code, QString *country);
+ }
++
++#endif
+--- src/log.h.orig	2018-05-01 12:51:57 UTC
++++ src/log.h
+@@ -18,6 +18,9 @@
+  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+  */
+ 
++#ifndef LOG_H
++#define LOG_H
++
+ #include <KLocalizedString>
+ 
+ #include <QDebug>
+@@ -40,3 +43,5 @@ Q_DECLARE_LOGGING_CATEGORY(logMediaWidge
+ Q_DECLARE_LOGGING_CATEGORY(logPlaylist)
+ Q_DECLARE_LOGGING_CATEGORY(logSql)
+ Q_DECLARE_LOGGING_CATEGORY(logVlc)
++
++#endif
+--- src/playlist/playlistmodel.cpp.orig	2018-05-01 12:51:57 UTC
++++ src/playlist/playlistmodel.cpp
+@@ -172,8 +172,8 @@ QString Playlist::toRelativeUrl(const QU
+ 		if (trackPath.startsWith(playlistPath)) {
+ 			trackPath.remove(0, index + 1);
+ 			QUrl absolute (playlistPath);
+-			QStringList sBase = trackUrl.toString().split("/");
+-			QStringList sAbsolute = absolute.toString().split("/");
++			QStringList sBase = trackUrl.toString().split('/');
++			QStringList sAbsolute = absolute.toString().split('/');
+ 			QStringList res = QStringList(sAbsolute);
+ 
+ 			if (trackUrl.isParentOf(absolute)) {
+--- src/sqlinterface.cpp.orig	2018-05-01 12:51:57 UTC
++++ src/sqlinterface.cpp
+@@ -135,7 +135,7 @@ void SqlInterface::sqlInsert(SqlKey key)
+ 		break;
+ 	}
+ 
+-	qCWarning(logSql, "Invalid pending statement '%s'", qPrintable(pendingStatement));
++	qCWarning(logSql, "Invalid pending statement '%d'", pendingStatement);
+ }
+ 
+ void SqlInterface::sqlUpdate(SqlKey key)
+@@ -155,7 +155,7 @@ void SqlInterface::sqlUpdate(SqlKey key)
+ 		break;
+ 	}
+ 
+-	qCWarning(logSql, "Invalid pending statement '%s'", qPrintable(pendingStatement));
++	qCWarning(logSql, "Invalid pending statement '%d'", pendingStatement);
+ }
+ 
+ void SqlInterface::sqlRemove(SqlKey key)
+@@ -176,7 +176,7 @@ void SqlInterface::sqlRemove(SqlKey key)
+ 		break;
+ 	}
+ 
+-	qCWarning(logSql, "Invalid pending statement %s", qPrintable(pendingStatement));
++	qCWarning(logSql, "Invalid pending statement %d", pendingStatement);
+ }
+ 
+ void SqlInterface::requestSubmission()
+@@ -226,7 +226,7 @@ void SqlInterface::sqlSubmit()
+ 			continue;
+ 		}
+ 
+-		qCWarning(logSql, "Invalid pending statement %s", qPrintable(pendingStatement));
++		qCWarning(logSql, "Invalid pending statement %d", pendingStatement);
+ 	}
+ 
+ 	pendingStatements.clear();
+--- tools/convertscanfiles.cpp.orig	2018-05-01 12:51:57 UTC
++++ tools/convertscanfiles.cpp
+@@ -106,7 +106,7 @@ private:
+ 	QString rollOff = "";
+ 	QString plscode = "";
+ 	QString plsmode = "";
+-	QString bandwith = "";
++	QString bandwidth = "";
+ 	QString fec_hi = "";
+ 	QString fec_lo = "";
+ 	QString t_mode = "";
+@@ -164,7 +164,7 @@ void parseDvbv5::resetParser()
+ 	rollOff = "";
+ 	plscode = "";
+ 	plsmode = "";
+-	bandwith = "";
++	bandwidth = "";
+ 	fec_hi = "";
+ 	fec_lo = "";
+ 	t_mode = "";
+@@ -282,7 +282,7 @@ bool parseDvbv5::parseInputLine(QString 
+ 		return false;
+ 	}
+ 	if (line.contains("BANDWIDTH_HZ")) {
+-		bandwith = line.split(" = ")[1];
++		bandwidth = line.split(" = ")[1];
+ 		return false;
+ 	}
+ 	if (line.contains("TRANSMISSION_MODE")) {
+@@ -425,12 +425,12 @@ QString parseDvbv5::outputLine()
+ 					<< lineno << " file" << name;
+ 			return line;
+ 		}
+-		line = "C " + frq + " " + symbolRate + " " + fec + " " + modulation.replace("/", "");
++		line = "C " + frq + ' ' + symbolRate + ' ' + fec + ' ' + modulation.remove("/");
+ 		return line;
+ 	}
+ 	case DvbTransponderBase::DvbS: {
+ 		if (rollOff.isEmpty() && (modulation.isEmpty() || !modulation.compare("QPSK"))) {
+-			line = "S " + frq + " " + polar[0] + " " + symbolRate + " " + fec;
++			line = "S " + frq + ' ' + polar[0] + ' ' + symbolRate + ' ' + fec;
+ 			return line;
+ 		}
+ 		type = DvbTransponderBase::DvbS2;
+@@ -445,49 +445,49 @@ QString parseDvbv5::outputLine()
+ 		if (modulation.isEmpty()) {
+ 			modulation = "AUTO";
+ 		} if (modulation.contains("/")) {
+-			QString temp1 = modulation.split("/")[0];
+-			QString temp2 = modulation.split("/")[1];
++			QString temp1 = modulation.split('/')[0];
++			QString temp2 = modulation.split('/')[1];
+ 			modulation = temp2 + temp1;
+ 		}
+ 
+-		line = "S2 " + frq + " " + polar[0] + " " + symbolRate + " " + fec + " " + rollOff + " " + modulation;
++		line = "S2 " + frq + ' ' + polar[0] + ' ' + symbolRate + ' ' + fec + ' ' + rollOff + ' ' + modulation;
+ 
+ 		return line;
+ 	}
+ 	case DvbTransponderBase::DvbT: {
+ 		line = "T " + frq;
+-		if (!bandwith.isEmpty()) {
+-			int number = bandwith.toInt();
++		if (!bandwidth.isEmpty()) {
++			int number = bandwidth.toInt();
+ 			number = number / 1000000;
+-			line += " " + QString::number(number) + "MHz";
++			line += ' ' + QString::number(number) + "MHz";
+ 		}
+ 		if (!fec_hi.isEmpty()) {
+-			line += " " + fec_hi;
++			line += ' ' + fec_hi;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!fec_lo.isEmpty()) {
+-			line += " " + fec_lo;
++			line += ' ' + fec_lo;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!modulation.isEmpty()) {
+-			line += " " + modulation.replace("/", "").replace("QAMAUTO", "AUTO");
++			line += ' ' + modulation.remove("/").replace("QAMAUTO", "AUTO");
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!t_mode.isEmpty()) {
+-			line += " " + t_mode.replace("K", "k");
++			line += ' ' + t_mode.replace("K", "k");
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!g_interval.isEmpty()) {
+-			line += " " + g_interval;
++			line += ' ' + g_interval;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!hierarchy.isEmpty()) {
+-			line += " " + hierarchy;
++			line += ' ' + hierarchy;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+@@ -495,53 +495,53 @@ QString parseDvbv5::outputLine()
+ 	}
+ 	case DvbTransponderBase::DvbT2: {
+ 		line = "T2 " + frq;
+-		if (!bandwith.isEmpty()) {
+-			int number = bandwith.toInt();
++		if (!bandwidth.isEmpty()) {
++			int number = bandwidth.toInt();
+ 			number = number / 1000000;
+-			line += " " + QString::number(number) + "MHz";
++			line += ' ' + QString::number(number) + "MHz";
+ 		}
+ 		if (!fec_hi.isEmpty()) {
+-			line += " " + fec_hi;
++			line += ' ' + fec_hi;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!fec_lo.isEmpty()) {
+-			line += " " + fec_lo;
++			line += ' ' + fec_lo;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!modulation.isEmpty()) {
+-			line += " " + modulation.replace("/", "").replace("QAMAUTO", "AUTO");
++			line += ' ' + modulation.remove("/").replace("QAMAUTO", "AUTO");
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!t_mode.isEmpty()) {
+-			line += " " + t_mode.replace("K", "k");
++			line += ' ' + t_mode.replace("K", "k");
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!g_interval.isEmpty()) {
+-			line += " " + g_interval;
++			line += ' ' + g_interval;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!hierarchy.isEmpty()) {
+-			line += " " + hierarchy;
++			line += ' ' + hierarchy;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+-		line += " " + QString::number(streamid);
++		line += ' ' + QString::number(streamid);
+ 		return line;
+ 	}
+ 	case DvbTransponderBase::Atsc: {
+ 		line = "A " + frq;
+ 		if (!modulation.isEmpty()) {
+-			QString temp1 = modulation.split("/")[0];
+-			QString temp2 = modulation.split("/")[1];
++			QString temp1 = modulation.split('/')[0];
++			QString temp2 = modulation.split('/')[1];
+ 			if (!(temp1 == "QAM")) {
+-				line += " " + temp2 + temp1;
++				line += ' ' + temp2 + temp1;
+ 			} else {
+-				line += " " + temp1 + temp2;
++				line += ' ' + temp1 + temp2;
+ 			}
+ 		} else {
+ 			line += " AUTO";
+@@ -550,111 +550,111 @@ QString parseDvbv5::outputLine()
+ 	}
+ 	case DvbTransponderBase::IsdbT: {
+ 		line = "I " + frq;
+-		if (!bandwith.isEmpty()) {
+-			int number = bandwith.toInt();
++		if (!bandwidth.isEmpty()) {
++			int number = bandwidth.toInt();
+ 			number = number / 1000000;
+-			line += " " + QString::number(number) + "MHz";
++			line += ' ' + QString::number(number) + "MHz";
+ 		} else {
+ 			line += " 6MHz";
+ 		}
+ 		if (!t_mode.isEmpty()) {
+-			line += " " + t_mode.replace("K", "k");
++			line += ' ' + t_mode.replace("K", "k");
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!g_interval.isEmpty()) {
+-			line += " " + g_interval;
++			line += ' ' + g_interval;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!isdbtPartialReception.isEmpty()) {
+-			line += " " + isdbtPartialReception;
++			line += ' ' + isdbtPartialReception;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!isdbtSb.isEmpty()) {
+-			line += " " + isdbtSb;
++			line += ' ' + isdbtSb;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!isdbtSbSubchId.isEmpty()) {
+-			line += " " + isdbtSbSubchId;
++			line += ' ' + isdbtSbSubchId;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!isdbtSbSegCount.isEmpty()) {
+-			line += " " + isdbtSbSegCount;
++			line += ' ' + isdbtSbSegCount;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!isdbtSbSegIdx.isEmpty()) {
+-			line += " " + isdbtSbSegIdx;
++			line += ' ' + isdbtSbSegIdx;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 
+-		line += " " + QString::number(isdbtLayers);
++		line += ' ' + QString::number(isdbtLayers);
+ 
+ 		// Layer A
+ 		if (!isdbtLayerAModulation.isEmpty()) {
+-			line += " " + isdbtLayerAModulation.replace("/", "").replace("QAMAUTO", "AUTO");
++			line += ' ' + isdbtLayerAModulation.remove("/").replace("QAMAUTO", "AUTO");
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!isdbtLayerAFec.isEmpty()) {
+-			line += " " + isdbtLayerAFec;
++			line += ' ' + isdbtLayerAFec;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!isdbtLayerASegCount.isEmpty()) {
+-			line += " " + isdbtLayerASegCount;
++			line += ' ' + isdbtLayerASegCount;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!isdbtLayerAInterleaving.isEmpty()) {
+-			line += " " + isdbtLayerAInterleaving;
++			line += ' ' + isdbtLayerAInterleaving;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		// Layer B
+ 		if (!isdbtLayerBModulation.isEmpty()) {
+-			line += " " + isdbtLayerBModulation.replace("/", "").replace("QAMAUTO", "AUTO");
++			line += ' ' + isdbtLayerBModulation.remove("/").replace("QAMAUTO", "AUTO");
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!isdbtLayerBFec.isEmpty()) {
+-			line += " " + isdbtLayerBFec;
++			line += ' ' + isdbtLayerBFec;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!isdbtLayerBSegCount.isEmpty()) {
+-			line += " " + isdbtLayerBSegCount;
++			line += ' ' + isdbtLayerBSegCount;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!isdbtLayerBInterleaving.isEmpty()) {
+-			line += " " + isdbtLayerBInterleaving;
++			line += ' ' + isdbtLayerBInterleaving;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		// Layer C
+ 		if (!isdbtLayerCModulation.isEmpty()) {
+-			line += " " + isdbtLayerCModulation.replace("/", "").replace("QAMAUTO", "AUTO");
++			line += ' ' + isdbtLayerCModulation.remove("/").replace("QAMAUTO", "AUTO");
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!isdbtLayerCFec.isEmpty()) {
+-			line += " " + isdbtLayerCFec;
++			line += ' ' + isdbtLayerCFec;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!isdbtLayerCSegCount.isEmpty()) {
+-			line += " " + isdbtLayerCSegCount;
++			line += ' ' + isdbtLayerCSegCount;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+ 		if (!isdbtLayerCInterleaving.isEmpty()) {
+-			line += " " + isdbtLayerCInterleaving;
++			line += ' ' + isdbtLayerCInterleaving;
+ 		} else {
+ 			line += " AUTO";
+ 		}
+--- tools/updatemimetypes.cpp.orig	2018-05-01 12:51:57 UTC
++++ tools/updatemimetypes.cpp
+@@ -290,6 +290,6 @@ int main(int argc, char *argv[])
+ 		file.close();
+ 	}
+ 
+-	qInfo() << "file extensions updated successfuly.";
++	qInfo() << "file extensions updated successfully.";
+ 	return 0;
+ }
+--- tools/updatesource.cpp.orig	2018-05-01 12:51:57 UTC
++++ tools/updatesource.cpp
+@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
+ 			return 1;
+ 		}
+ 
+-		if (path.endsWith(".png") || path.endsWith(".svgz")) {
++		if (path.endsWith(QLatin1String(".png")) || path.endsWith(QLatin1String(".svgz"))) {
+ 			continue;
+ 		}
+ 

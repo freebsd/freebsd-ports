@@ -2,30 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	kaffeine
-PORTVERSION=	1.3.1
-PORTREVISION=	7
+PORTVERSION=	2.0.15
 CATEGORIES=	multimedia kde
-MASTER_SITES=	SF/kaffeine/current
+MASTER_SITES=	KDE/stable/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Multimedia player based on KDE and VLC
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2018-12-31
-
 BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
-LIB_DEPENDS=	libvlc.so:multimedia/vlc-qt4
+LIB_DEPENDS=	libvlc.so:multimedia/vlc3 \
+		libdvbv5.so:multimedia/libv4l
 
-USES=		cmake kde:4 cpe gettext pkgconfig qt:4
-USE_KDE=	automoc4 kdelibs
-USE_QT=		corelib dbus gui network phonon sql svg xml \
-		moc_build qmake_build rcc_build uic_build sql-sqlite2
+USES=		cmake cpe desktop-file-utils gettext pkgconfig \
+		kde:5 qt:5 tar:xz
+USE_KDE=	auth bookmarks codecs completion config configwidgets \
+		coreaddons i18n itemviews kio solid dbusaddons jobwidgets \
+		service widgetsaddons windowsystem xmlgui
+USE_QT=		concurrent core dbus gui network phonon4 sql svg x11extras xml \
+		widgets qmake_build buildtools_build
 USE_XORG=	xscrnsaver
 
 CPE_VENDOR=	kaffeine
 CPE_PRODUCT=	kaffeine_player
+
+post-build:
+	# Cleanup translated manpages, we don't want them
+	${RM} ${STAGEDIR}/man/{ca,id,it,nl,pt,pt_BR,sv,uk}/man1/kaffeine.1.gz
 
 .include <bsd.port.mk>
