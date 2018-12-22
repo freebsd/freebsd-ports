@@ -13,8 +13,6 @@ COMMENT=	Simple and beatiful calendar application for GNOME
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PORTSCOUT=	limitw:1,even
-
 BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libical.so:devel/libical \
 		libdazzle-1.0.so:x11-toolkits/libdazzle \
@@ -25,8 +23,10 @@ LIB_DEPENDS=	libical.so:devel/libical \
 		libgoa-1.0.so:net/gnome-online-accounts
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
-USES=		desktop-file-utils gettext gnome localbase:ldflags meson \
-		pkgconfig python:3.4+,build tar:xz
+PORTSCOUT=	limitw:1,even
+
+USES=		compiler:c11 desktop-file-utils gettext gnome \
+		localbase:ldflags meson pkgconfig python:3.4+,build tar:xz
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	cairo evolutiondataserver3 gtksourceview3
