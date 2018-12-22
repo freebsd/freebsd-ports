@@ -28,8 +28,8 @@ share/icons/hicolor/scalable/actions/xc_crosshair.svg
 %%NLS%%share/locale/ja/LC_MESSAGES/xfce4-taskmanager.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/xfce4-taskmanager.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/xfce4-taskmanager.mo
-%%NLS%%share/locale/lv/LC_MESSAGES/xfce4-taskmanager.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/xfce4-taskmanager.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/xfce4-taskmanager.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/xfce4-taskmanager.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/xfce4-taskmanager.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/xfce4-taskmanager.mo
