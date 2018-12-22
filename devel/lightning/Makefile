@@ -13,7 +13,7 @@ COMMENT=	Generates assembly language code at run-time
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 armv7 i386 mips powerpc sparc64
+ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 armv7 i386 mips powerpc powerpc64 sparc64
 BROKEN_armv6=	fails to link: ../lib/.libs/liblightning.so: undefined reference to `__addsf3'
 BROKEN_armv7=	fails to link: ../lib/.libs/liblightning.so: undefined reference to `__addsf3'
 
