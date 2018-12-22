@@ -60,7 +60,6 @@
     SUBDIR += keitairc2
     SUBDIR += konversation
     SUBDIR += kvirc
-    SUBDIR += kvirc-qt4
     SUBDIR += libircclient
     SUBDIR += lostirc
     SUBDIR += miau
