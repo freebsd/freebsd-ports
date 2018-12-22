@@ -1,18 +1,324 @@
---- configure.orig	2012-02-14 22:36:33 UTC
-+++ configure
-@@ -16895,6 +16895,7 @@ $as_echo_n "checking whether to check fo
-    check_inconsistencies=yes
-    case "${host_cpu}-${host_os}" in
-      *-darwin*) check_inconsistencies=no ;;
-+     *-freebsd*) check_inconsistencies=no ;;
-    esac
-    if test x"$GCC" != xyes -o "x$check_inconsistencies" != xyes ; then
-       { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
-@@ -18460,6 +18461,7 @@ else
-   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- $ac_includes_default
-+#include <sys/socket.h>
- int
- main ()
- {
+--- configure.orig	2018-12-22 21:11:56.328592000 +0100
++++ configure	2018-12-22 21:12:12.121977000 +0100
+@@ -763,6 +763,11 @@
+ HAVE_GTK_TRUE
+ GTK20_LIBS
+ GTK20_CFLAGS
++HAVE_QT5_FALSE
++HAVE_QT5_TRUE
++MOC_QT5
++QT5_LIBS
++QT5_CFLAGS
+ HAVE_QT4_FALSE
+ HAVE_QT4_TRUE
+ MOC_QT4
+@@ -948,6 +953,7 @@
+ LIBAVAHI_COMPAT_HOWL_VERSION_INFO
+ LIBAVAHI_COMPAT_LIBDNS_SD_VERSION_INFO
+ LIBAVAHI_UI_VERSION_INFO
++LIBAVAHI_QT5_VERSION_INFO
+ LIBAVAHI_QT4_VERSION_INFO
+ LIBAVAHI_QT3_VERSION_INFO
+ LIBAVAHI_GOBJECT_VERSION_INFO
+@@ -1042,6 +1048,7 @@
+ enable_introspection
+ enable_qt3
+ enable_qt4
++enable_qt5
+ enable_gtk
+ enable_gtk3
+ enable_dbus
+@@ -1105,6 +1112,8 @@
+ QT3_LIBS
+ QT4_CFLAGS
+ QT4_LIBS
++QT5_CFLAGS
++QT5_LIBS
+ GTK20_CFLAGS
+ GTK20_LIBS
+ GTK30_CFLAGS
+@@ -1757,6 +1766,7 @@
+                           Enable introspection for this build
+   --disable-qt3           Disable building of Qt3 mainloop integration
+   --disable-qt4           Disable building of Qt4Core mainloop integration
++  --disable-qt5           Disable building of Qt5Core mainloop integration
+   --disable-gtk           Disable use of GTK+ 2
+   --disable-gtk3          Disable use of GTK+ 3
+   --disable-dbus          Disable use of D-Bus
+@@ -1854,6 +1864,8 @@
+   QT3_LIBS    linker flags for QT3, overriding pkg-config
+   QT4_CFLAGS  C compiler flags for QT4, overriding pkg-config
+   QT4_LIBS    linker flags for QT4, overriding pkg-config
++  QT5_CFLAGS  C compiler flags for QT5, overriding pkg-config
++  QT5_LIBS    linker flags for QT5, overriding pkg-config
+   GTK20_CFLAGS
+               C compiler flags for GTK20, overriding pkg-config
+   GTK20_LIBS  linker flags for GTK20, overriding pkg-config
+@@ -3597,6 +3609,8 @@
+ 
+ LIBAVAHI_QT4_VERSION_INFO=1:2:0
+ 
++LIBAVAHI_QT5_VERSION_INFO=1:2:0
++
+ LIBAVAHI_UI_VERSION_INFO=1:4:1
+ 
+ 
+@@ -21586,6 +21600,231 @@
+ 
+ 
+ #
++# Check for Qt 5
++#
++# Check whether --enable-qt5 was given.
++if test "${enable_qt5+set}" = set; then :
++  enableval=$enable_qt5; case "${enableval}" in
++                yes) HAVE_QT5=yes ;;
++                no)  HAVE_QT5=no ;;
++                *) as_fn_error $? "bad value ${enableval} for --enable-qt5" "$LINENO" 5 ;;
++        esac
++else
++  HAVE_QT5=yes
++fi
++
++
++if test "x$HAVE_QT5" = "xyes" ; then
++
++pkg_failed=no
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for QT5" >&5
++$as_echo_n "checking for QT5... " >&6; }
++
++if test -n "$QT5_CFLAGS"; then
++    pkg_cv_QT5_CFLAGS="$QT5_CFLAGS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \" Qt5Core >= 5.0.0 \""; } >&5
++  ($PKG_CONFIG --exists --print-errors " Qt5Core >= 5.0.0 ") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
++  test $ac_status = 0; }; then
++  pkg_cv_QT5_CFLAGS=`$PKG_CONFIG --cflags " Qt5Core >= 5.0.0 " 2>/dev/null`
++		      test "x$?" != "x0" && pkg_failed=yes
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++if test -n "$QT5_LIBS"; then
++    pkg_cv_QT5_LIBS="$QT5_LIBS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \" Qt5Core >= 5.0.0 \""; } >&5
++  ($PKG_CONFIG --exists --print-errors " Qt5Core >= 5.0.0 ") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
++  test $ac_status = 0; }; then
++  pkg_cv_QT5_LIBS=`$PKG_CONFIG --libs " Qt5Core >= 5.0.0 " 2>/dev/null`
++		      test "x$?" != "x0" && pkg_failed=yes
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++
++
++
++if test $pkg_failed = yes; then
++   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++
++if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
++        _pkg_short_errors_supported=yes
++else
++        _pkg_short_errors_supported=no
++fi
++        if test $_pkg_short_errors_supported = yes; then
++	        QT5_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs " Qt5Core >= 5.0.0 " 2>&1`
++        else
++	        QT5_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs " Qt5Core >= 5.0.0 " 2>&1`
++        fi
++	# Put the nasty error message in config.log where it belongs
++	echo "$QT5_PKG_ERRORS" >&5
++
++	as_fn_error $? "Package requirements ( Qt5Core >= 5.0.0 ) were not met:
++
++$QT5_PKG_ERRORS
++
++Consider adjusting the PKG_CONFIG_PATH environment variable if you
++installed software in a non-standard prefix.
++
++Alternatively, you may set the environment variables QT5_CFLAGS
++and QT5_LIBS to avoid the need to call pkg-config.
++See the pkg-config man page for more details." "$LINENO" 5
++elif test $pkg_failed = untried; then
++     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
++$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
++as_fn_error $? "The pkg-config script could not be found or is too old.  Make sure it
++is in your PATH or set the PKG_CONFIG environment variable to the full
++path to pkg-config.
++
++Alternatively, you may set the environment variables QT5_CFLAGS
++and QT5_LIBS to avoid the need to call pkg-config.
++See the pkg-config man page for more details.
++
++To get pkg-config, see <http://pkg-config.freedesktop.org/>.
++See \`config.log' for more details" "$LINENO" 5; }
++else
++	QT5_CFLAGS=$pkg_cv_QT5_CFLAGS
++	QT5_LIBS=$pkg_cv_QT5_LIBS
++        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++$as_echo "yes" >&6; }
++
++fi
++
++
++    ac_ext=cpp
++ac_cpp='$CXXCPP $CPPFLAGS'
++ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
++ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
++ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
++
++	save_CPPFLAGS="$CPPFLAGS"
++	CPPFLAGS="$CPPFLAGS $QT5_CFLAGS"
++	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether Qt works without -fPIC" >&5
++$as_echo_n "checking whether Qt works without -fPIC... " >&6; }
++	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++#include <QtCore>
++_ACEOF
++if ac_fn_cxx_try_cpp "$LINENO"; then :
++  { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++$as_echo "yes" >&6; }
++else
++
++			{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++			{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether Qt works with -fPIC" >&5
++$as_echo_n "checking whether Qt works with -fPIC... " >&6; }
++			CPPFLAGS="$CPPFLAGS -fPIC"
++			cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++#include <QtCore>
++_ACEOF
++if ac_fn_cxx_try_cpp "$LINENO"; then :
++
++					{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++$as_echo "yes" >&6; }
++					QT5_CFLAGS="$QT5_CFLAGS -fPIC"
++
++else
++
++					{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++					as_fn_error $? "Couldn't compile Qt without -fPIC nor with -fPIC" "$LINENO" 5
++
++fi
++rm -f conftest.err conftest.i conftest.$ac_ext
++
++fi
++rm -f conftest.err conftest.i conftest.$ac_ext
++	CPPFLAGS="$save_CPPFLAGS"
++    ac_ext=c
++ac_cpp='$CPP $CPPFLAGS'
++ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
++ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
++ac_compiler_gnu=$ac_cv_c_compiler_gnu
++
++
++
++
++        QT5_PREFIX="`$PKG_CONFIG --variable=host_bins Qt5Core`"
++        for ac_prog in moc-qt5 moc
++do
++  # Extract the first word of "$ac_prog", so it can be a program name with args.
++set dummy $ac_prog; ac_word=$2
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
++$as_echo_n "checking for $ac_word... " >&6; }
++if ${ac_cv_path_MOC_QT5+:} false; then :
++  $as_echo_n "(cached) " >&6
++else
++  case $MOC_QT5 in
++  [\\/]* | ?:[\\/]*)
++  ac_cv_path_MOC_QT5="$MOC_QT5" # Let the user override the test with a path.
++  ;;
++  *)
++  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
++for as_dir in $QT5_PREFIX
++do
++  IFS=$as_save_IFS
++  test -z "$as_dir" && as_dir=.
++    for ac_exec_ext in '' $ac_executable_extensions; do
++  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
++    ac_cv_path_MOC_QT5="$as_dir/$ac_word$ac_exec_ext"
++    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
++    break 2
++  fi
++done
++  done
++IFS=$as_save_IFS
++
++  ;;
++esac
++fi
++MOC_QT5=$ac_cv_path_MOC_QT5
++if test -n "$MOC_QT5"; then
++  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $MOC_QT5" >&5
++$as_echo "$MOC_QT5" >&6; }
++else
++  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++fi
++
++
++  test -n "$MOC_QT5" && break
++done
++test -n "$MOC_QT5" || MOC_QT5="no"
++
++        if test "$MOC_QT5" = no; then
++            as_fn_error $? "Could not find QT5 moc" "$LINENO" 5
++        fi
++
++fi
++ if test "x$HAVE_QT5" = "xyes"; then
++  HAVE_QT5_TRUE=
++  HAVE_QT5_FALSE='#'
++else
++  HAVE_QT5_TRUE='#'
++  HAVE_QT5_FALSE=
++fi
++
++
++#
+ # Check for GTK+ 2.0
+ #
+ # Check whether --enable-gtk was given.
+@@ -25878,6 +26117,10 @@
+   as_fn_error $? "conditional \"HAVE_QT4\" was never defined.
+ Usually this means the macro was only invoked conditionally." "$LINENO" 5
+ fi
++if test -z "${HAVE_QT5_TRUE}" && test -z "${HAVE_QT5_FALSE}"; then
++  as_fn_error $? "conditional \"HAVE_QT5\" was never defined.
++Usually this means the macro was only invoked conditionally." "$LINENO" 5
++fi
+ if test -z "${HAVE_GTK_TRUE}" && test -z "${HAVE_GTK_FALSE}"; then
+   as_fn_error $? "conditional \"HAVE_GTK\" was never defined.
+ Usually this means the macro was only invoked conditionally." "$LINENO" 5
+@@ -28556,6 +28799,7 @@
+     Enable python-dbus:                        ${HAVE_PYTHON_DBUS}
+     Enable QT3:                                ${HAVE_QT3}
+     Enable QT4:                                ${HAVE_QT4}
++    Enable QT5:                                ${HAVE_QT5}
+     Enable Mono:                               ${HAVE_MONO}
+     Enable Monodoc:                            ${HAVE_MONODOC}
+     Distribution/OS:                           ${with_distro}
+@@ -28625,6 +28869,7 @@
+     Building avahi-discover-standalone: ${HAVE_GTK2OR3}
+     Building libavahi-qt3:              ${HAVE_QT3}
+     Building libavahi-qt4:              ${HAVE_QT4}
++    Building libavahi-qt5:              ${HAVE_QT5}
+     Building avahi-sharp:               ${HAVE_MONO}
+     Building avahi-compat-libdns_sd:    ${ENABLE_COMPAT_LIBDNS_SD}
+     Building avahi-compat-howl:         ${ENABLE_COMPAT_HOWL}
