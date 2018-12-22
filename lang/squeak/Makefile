@@ -21,6 +21,8 @@ COMMENT=	Full Smalltalk 80 with portability to Unix, Mac, and Windows
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi
 
+ONLY_FOR_ARCHS=		amd64 i386 powerpc powerpc64 powerpcspe
+
 BUILD_DEPENDS=	cmake:devel/cmake \
 		v4l_compat>=1.0.20120501:multimedia/v4l_compat
 LIB_DEPENDS=	libaudio.so:audio/nas \
@@ -28,8 +30,6 @@ LIB_DEPENDS=	libaudio.so:audio/nas \
 		libasound.so:audio/alsa-lib \
 		libpulse-simple.so:audio/pulseaudio \
 		libv4l2.so:multimedia/libv4l
-
-ONLY_FOR_ARCHS=		amd64 i386 powerpc
 
 USES=		pkgconfig
 USE_GNOME=	cairo pango
