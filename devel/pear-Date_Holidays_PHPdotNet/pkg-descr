@@ -1,4 +1,5 @@
-Driver based class to calculate birthdays of some members of the
-PHP.net community.
+Date_Holidays helps you calculate the dates and titles of holidays
+and other special celebrations. This is the driver for calculating
+the birthdays of some members of the PHP.net community.
 
 WWW: https://pear.php.net/package/Date_Holidays_PHPdotNet
