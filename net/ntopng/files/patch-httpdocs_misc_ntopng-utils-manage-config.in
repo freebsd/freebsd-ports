@@ -1,0 +1,11 @@
+--- httpdocs/misc/ntopng-utils-manage-config.in.orig	2018-12-21 18:58:17 UTC
++++ httpdocs/misc/ntopng-utils-manage-config.in
+@@ -2,7 +2,7 @@
+ 
+ DEFAULT_CONF_FILE="/etc/ntopng/ntopng.conf"
+ 
+-DEFAULT_DATADIR="/var/lib/ntopng"
++DEFAULT_DATADIR="/var/db/ntopng"
+ OLD_DEFAULT_DATADIR="/var/tmp/ntopng"
+ if [ -d "${OLD_DEFAULT_DATADIR}" ]; then
+     DEFAULT_DATADIR="${OLD_DEFAULT_DATADIR}"

@@ -514,5 +514,4 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/lua/username_details.lua
 %%DATADIR%%/scripts/lua/vlan_details.lua
 %%DATADIR%%/scripts/lua/vlan_stats.lua
-@dir(%%NTOPNGUSER%%,%%NTOPNGGROUP%%,750) /var/lib/ntopng
-@dir /var/lib
+@dir(%%NTOPNGUSER%%,%%NTOPNGGROUP%%,750) /var/db/ntopng
