@@ -140,6 +140,7 @@
     SUBDIR += py-lirc
     SUBDIR += py-qt5-serialport
     SUBDIR += py-serial
+    SUBDIR += py-xmodem
     SUBDIR += pyla
     SUBDIR += qico
     SUBDIR += qpage
