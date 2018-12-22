@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-USES=		autoreconf libtool pkgconfig python
+USES=		autoreconf compiler:c++11-lang libtool pkgconfig python
 USE_GITHUB=	yes
 
 USE_RC_SUBR=	e2guardian
