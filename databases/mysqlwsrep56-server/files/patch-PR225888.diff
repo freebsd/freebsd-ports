@@ -1,0 +1,302 @@
+diff --git extra/yassl/include/openssl/ssl.h extra/yassl/include/openssl/ssl.h
+index 10fa4913b7e..ff6cb696661 100644
+--- extra/yassl/include/openssl/ssl.h.orig
++++ extra/yassl/include/openssl/ssl.h
+@@ -1,5 +1,5 @@
+ /*
+-   Copyright (c) 2005, 2017, Oracle and/or its affiliates. All rights reserved.
++   Copyright (c) 2005, 2018, Oracle and/or its affiliates. All rights reserved.
+ 
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+@@ -179,7 +179,7 @@ enum { /* X509 Constants */
+ unsigned long ERR_get_error_line_data(const char**, int*, const char**, int *);
+ void          ERR_print_errors_fp(FILE*);
+ char*         ERR_error_string(unsigned long,char*);
+-void          ERR_remove_state(unsigned long);
++void          ERR_remove_thread_state(const void *);
+ unsigned long ERR_get_error(void);
+ unsigned long ERR_peek_error(void);
+ int           ERR_GET_REASON(int);
+diff --git extra/yassl/src/ssl.cpp extra/yassl/src/ssl.cpp
+index 39244a01b92..c992d446487 100644
+--- extra/yassl/src/ssl.cpp.orig
++++ extra/yassl/src/ssl.cpp
+@@ -1,5 +1,5 @@
+ /*
+-   Copyright (c) 2005, 2014, Oracle and/or its affiliates. All rights reserved.
++   Copyright (c) 2005, 2018, Oracle and/or its affiliates. All rights reserved.
+ 
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+@@ -1615,7 +1615,7 @@ int SSLeay_add_ssl_algorithms()  // compatibility only
+ }
+ 
+ 
+-void ERR_remove_state(unsigned long)
++void ERR_remove_thread_state(const void *)
+ {
+     GetErrors().Remove();
+ }
+diff --git mysys_ssl/my_aes_openssl.cc mysys_ssl/my_aes_openssl.cc
+index 261ba8ab732..a0f8c147c7a 100644
+--- mysys_ssl/my_aes_openssl.cc.orig
++++ mysys_ssl/my_aes_openssl.cc
+@@ -1,4 +1,4 @@
+-/* Copyright (c) 2015, 2014 Oracle and/or its affiliates. All rights reserved.
++/* Copyright (c) 2015, 2018 Oracle and/or its affiliates. All rights reserved.
+ 
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+@@ -122,33 +122,46 @@ int my_aes_encrypt(const unsigned char *source, uint32 source_length,
+                    const unsigned char *key, uint32 key_length,
+                    enum my_aes_opmode mode, const unsigned char *iv)
+ {
+-  EVP_CIPHER_CTX ctx;
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
++  EVP_CIPHER_CTX stack_ctx;
++  EVP_CIPHER_CTX *ctx= &stack_ctx;
++#else /* OPENSSL_VERSION_NUMBER < 0x10100000L */
++  EVP_CIPHER_CTX *ctx= EVP_CIPHER_CTX_new();
++#endif /* OPENSSL_VERSION_NUMBER < 0x10100000L */
+   const EVP_CIPHER *cipher= aes_evp_type(mode);
+   int u_len, f_len;
+   /* The real key to be used for encryption */
+   unsigned char rkey[MAX_AES_KEY_LENGTH / 8];
+   my_aes_create_key(key, key_length, rkey, mode);
+ 
+-  if (!cipher || (EVP_CIPHER_iv_length(cipher) > 0 && !iv))
++  if (!ctx || !cipher || (EVP_CIPHER_iv_length(cipher) > 0 && !iv))
+     return MY_AES_BAD_DATA;
+ 
+-  if (!EVP_EncryptInit(&ctx, cipher, rkey, iv))
++  if (!EVP_EncryptInit(ctx, cipher, rkey, iv))
+     goto aes_error;                             /* Error */
+-  if (!EVP_CIPHER_CTX_set_padding(&ctx, 1))
++  if (!EVP_CIPHER_CTX_set_padding(ctx, 1))
+     goto aes_error;                             /* Error */
+-  if (!EVP_EncryptUpdate(&ctx, dest, &u_len, source, source_length))
++  if (!EVP_EncryptUpdate(ctx, dest, &u_len, source, source_length))
+     goto aes_error;                             /* Error */
+ 
+-  if (!EVP_EncryptFinal(&ctx, dest + u_len, &f_len))
++  if (!EVP_EncryptFinal(ctx, dest + u_len, &f_len))
+     goto aes_error;                             /* Error */
+ 
+-  EVP_CIPHER_CTX_cleanup(&ctx);
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
++  EVP_CIPHER_CTX_cleanup(ctx);
++#else /* OPENSSL_VERSION_NUMBER < 0x10100000L */
++  EVP_CIPHER_CTX_free(ctx);
++#endif /* OPENSSL_VERSION_NUMBER < 0x10100000L */
+   return u_len + f_len;
+ 
+ aes_error:
+   /* need to explicitly clean up the error if we want to ignore it */
+   ERR_clear_error();
+-  EVP_CIPHER_CTX_cleanup(&ctx);
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
++    EVP_CIPHER_CTX_cleanup(ctx);
++#else /* OPENSSL_VERSION_NUMBER < 0x10100000L */
++    EVP_CIPHER_CTX_free(ctx);
++#endif /* OPENSSL_VERSION_NUMBER < 0x10100000L */
+   return MY_AES_BAD_DATA;
+ }
+ 
+@@ -159,7 +172,12 @@ int my_aes_decrypt(const unsigned char *source, uint32 source_length,
+                    enum my_aes_opmode mode, const unsigned char *iv)
+ {
+ 
+-  EVP_CIPHER_CTX ctx;
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
++  EVP_CIPHER_CTX stack_ctx;
++  EVP_CIPHER_CTX *ctx= &stack_ctx;
++#else /* OPENSSL_VERSION_NUMBER < 0x10100000L */
++  EVP_CIPHER_CTX *ctx= EVP_CIPHER_CTX_new();
++#endif /* OPENSSL_VERSION_NUMBER < 0x10100000L */
+   const EVP_CIPHER *cipher= aes_evp_type(mode);
+   int u_len, f_len;
+ 
+@@ -167,27 +185,34 @@ int my_aes_decrypt(const unsigned char *source, uint32 source_length,
+   unsigned char rkey[MAX_AES_KEY_LENGTH / 8];
+ 
+   my_aes_create_key(key, key_length, rkey, mode);
+-  if (!cipher || (EVP_CIPHER_iv_length(cipher) > 0 && !iv))
++  if (!ctx || !cipher || (EVP_CIPHER_iv_length(cipher) > 0 && !iv))
+     return MY_AES_BAD_DATA;
+ 
+-  EVP_CIPHER_CTX_init(&ctx);
+-
+-  if (!EVP_DecryptInit(&ctx, aes_evp_type(mode), rkey, iv))
++  if (!EVP_DecryptInit(ctx, aes_evp_type(mode), rkey, iv))
+     goto aes_error;                             /* Error */
+-  if (!EVP_CIPHER_CTX_set_padding(&ctx, 1))
++  if (!EVP_CIPHER_CTX_set_padding(ctx, 1))
+     goto aes_error;                             /* Error */
+-  if (!EVP_DecryptUpdate(&ctx, dest, &u_len, source, source_length))
++  if (!EVP_DecryptUpdate(ctx, dest, &u_len, source, source_length))
+     goto aes_error;                             /* Error */
+-  if (!EVP_DecryptFinal_ex(&ctx, dest + u_len, &f_len))
++  if (!EVP_DecryptFinal_ex(ctx, dest + u_len, &f_len))
+     goto aes_error;                             /* Error */
+ 
+-  EVP_CIPHER_CTX_cleanup(&ctx);
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
++  EVP_CIPHER_CTX_cleanup(ctx);
++#else /* OPENSSL_VERSION_NUMBER < 0x10100000L */
++  EVP_CIPHER_CTX_free(ctx);
++#endif /* OPENSSL_VERSION_NUMBER < 0x10100000L */
++
+   return u_len + f_len;
+ 
+ aes_error:
+   /* need to explicitly clean up the error if we want to ignore it */
+   ERR_clear_error();
+-  EVP_CIPHER_CTX_cleanup(&ctx);
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
++  EVP_CIPHER_CTX_cleanup(ctx);
++#else /* OPENSSL_VERSION_NUMBER < 0x10100000L */
++  EVP_CIPHER_CTX_free(ctx);
++#endif /* OPENSSL_VERSION_NUMBER < 0x10100000L */
+   return MY_AES_BAD_DATA;
+ }
+ 
+diff --git sql-common/client.c sql-common/client.c
+index 19faefe8323..f1192306ccb 100644
+--- sql-common/client.c.orig
++++ sql-common/client.c
+@@ -2744,7 +2744,11 @@ static int ssl_verify_server_cert(Vio *vio, const char* server_hostname, const c
+     goto error;
+   }
+ 
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+   cn= (char *) ASN1_STRING_data(cn_asn1);
++#else /* OPENSSL_VERSION_NUMBER < 0x10100000L */
++  cn= (char *) ASN1_STRING_get0_data(cn_asn1);
++#endif /* OPENSSL_VERSION_NUMBER < 0x10100000L */
+ 
+   // There should not be any NULL embedded in the CN
+   if ((size_t)ASN1_STRING_length(cn_asn1) != strlen(cn))
+diff --git sql/mysqld.cc sql/mysqld.cc
+index 4acff4e4d9b..307778771be 100644
+--- sql/mysqld.cc.orig
++++ sql/mysqld.cc
+@@ -3408,7 +3408,11 @@ static int init_ssl()
+ {
+ #ifdef HAVE_OPENSSL
+ #ifndef HAVE_YASSL
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+   CRYPTO_malloc_init();
++#else /* OPENSSL_VERSION_NUMBER < 0x10100000L */
++  OPENSSL_malloc_init();
++#endif /* OPENSSL_VERSION_NUMBER < 0x10100000L */
+ #endif
+   ssl_start();
+ #ifndef EMBEDDED_LIBRARY
+@@ -3434,7 +3438,9 @@ static int init_ssl()
+ 					  opt_ssl_cipher, &error,
+                                           opt_ssl_crl, opt_ssl_crlpath, ssl_ctx_flags);
+     DBUG_PRINT("info",("ssl_acceptor_fd: 0x%lx", (long) ssl_acceptor_fd));
+-    ERR_remove_state(0);
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
++    ERR_remove_thread_state(0);
++#endif /* OPENSSL_VERSION_NUMBER < 0x10100000L */
+     if (!ssl_acceptor_fd)
+     {
+       /*
+diff --git sql/rpl_slave.cc sql/rpl_slave.cc
+index aee13e12cb2..37a20870bd4 100644
+--- sql/rpl_slave.cc.orig
++++ sql/rpl_slave.cc
+@@ -6026,7 +6026,9 @@ ignore_log_space_limit=%d",
+   mysql_mutex_unlock(&mi->run_lock);
+   DBUG_LEAVE;                                   // Must match DBUG_ENTER()
+   my_thread_end();
+-  ERR_remove_state(0);
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
++  ERR_remove_thread_state(0);
++#endif /* OPENSSL_VERSION_NUMBER < 0x10100000L */
+   pthread_exit(0);
+   return(0);                                    // Avoid compiler warnings
+ }
+@@ -6256,7 +6258,9 @@ extern "C" void *handle_slave_worker(void *arg)
+   }
+ 
+   my_thread_end();
+-  ERR_remove_state(0);
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
++  ERR_remove_thread_state(0);
++#endif /* OPENSSL_VERSION_NUMBER < 0x10100000L */
+   pthread_exit(0);
+   DBUG_RETURN(0); 
+ }
+@@ -7597,7 +7601,9 @@ llstr(rli->get_group_master_log_pos(), llbuff));
+ 
+   DBUG_LEAVE;                            // Must match DBUG_ENTER()
+   my_thread_end();
+-  ERR_remove_state(0);
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
++  ERR_remove_thread_state(0);
++#endif /* OPENSSL_VERSION_NUMBER < 0x10100000L */
+   pthread_exit(0);
+   return 0;                             // Avoid compiler warnings
+ }
+diff --git vio/viossl.c vio/viossl.c
+index 5622cb7ee92..f738570f832 100644
+--- vio/viossl.c.orig
++++ vio/viossl.c
+@@ -1,4 +1,4 @@
+-/* Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
++/* Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+ 
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+@@ -419,7 +421,11 @@ static int ssl_do(struct st_VioSSLFd *ptr, Vio *vio, long timeout,
+       for (j = 0; j < n; j++)
+       {
+         SSL_COMP *c = sk_SSL_COMP_value(ssl_comp_methods, j);
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+         DBUG_PRINT("info", ("  %d: %s\n", c->id, c->name));
++#else /* OPENSSL_VERSION_NUMBER < 0x10100000L */
++        DBUG_PRINT("info", ("  %d: %s\n", SSL_COMP_get_id(c), SSL_COMP_get0_name(c)));
++#endif /* OPENSSL_VERSION_NUMBER < 0x10100000L */
+       }
+   }
+ #endif
+diff --git vio/viosslfactories.c vio/viosslfactories.c
+index f50678a37b3..d3891fd8b12 100644
+--- vio/viosslfactories.c.orig
++++ vio/viosslfactories.c
+@@ -1,4 +1,4 @@
+-/* Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
++/* Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+ 
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+@@ -121,13 +121,21 @@ static DH *get_dh2048(void)
+   DH *dh;
+   if ((dh=DH_new()))
+   {
+-    dh->p=BN_bin2bn(dh2048_p,sizeof(dh2048_p),NULL);
+-    dh->g=BN_bin2bn(dh2048_g,sizeof(dh2048_g),NULL);
+-    if (! dh->p || ! dh->g)
+-    {
++    BIGNUM *p= BN_bin2bn(dh2048_p, sizeof(dh2048_p), NULL);
++    BIGNUM *g= BN_bin2bn(dh2048_g, sizeof(dh2048_g), NULL);
++    if (!p || !g
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++        || !DH_set0_pqg(dh, p, NULL, g)
++#endif /* OPENSSL_VERSION_NUMBER >= 0x10100000L */
++    ) {
++      /* DH_free() will free 'p' and 'g' at once. */
+       DH_free(dh);
+-      dh=0;
++      return NULL;
+     }
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
++    dh->p= p;
++    dh->g= g;
++#endif /* OPENSSL_VERSION_NUMBER < 0x10100000L */
+   }
+   return(dh);
+ }
