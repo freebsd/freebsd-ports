@@ -11863,6 +11863,7 @@
 %%WWWDIR%%/spec/fixtures/security-reports/master/gl-license-management-report.json
 %%WWWDIR%%/spec/fixtures/security-reports/master/gl-sast-report.json
 %%WWWDIR%%/spec/fixtures/ssh_host_example_key.pub
+%%WWWDIR%%/spec/fixtures/symlink_export.tar.gz
 %%WWWDIR%%/spec/fixtures/trace/ansi-sequence-and-unicode
 %%WWWDIR%%/spec/fixtures/trace/sample_trace
 %%WWWDIR%%/spec/fixtures/trace/trace_with_sections
@@ -13220,6 +13221,7 @@
 %%WWWDIR%%/spec/lib/gitlab/import_export/attribute_configuration_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/import_export/avatar_restorer_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/import_export/avatar_saver_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/import_export/command_line_util_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/import_export/file_importer_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/import_export/fork_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/import_export/group_project_object_builder_spec.rb
