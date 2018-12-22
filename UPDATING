@@ -10,7 +10,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: madpilot@FreeBSD.org
 
   Since ntopng 3.7, for security reasons, the default setting for
-  the data directory has been changed to "/var/lib/ntopng", and the
+  the data directory has been changed to "/var/db/ntopng", and the
   default user has been changed to "ntopng". This new directory is
   created automatically by the port/package with correct permissions.
 
@@ -21,8 +21,8 @@ you update your ports collection, before attempting any port upgrades.
   the new settings, unless you are already using a custom directory:
 
   # service ntopng stop
-  # mv /var/tmp/ntopng/* /var/lib/ntopng/
-  # chown -R ntopng:ntopng /var/lib/ntopng
+  # mv /var/tmp/ntopng/* /var/db/ntopng/
+  # chown -R ntopng:ntopng /var/db/ntopng
   # service ntopng start
 
   Please check hte upstream FAQ for reference:

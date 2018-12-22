@@ -3,6 +3,7 @@
 
 PORTNAME=	ntopng
 PORTVERSION=	3.8.d20181221
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -58,7 +59,7 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ntopng
-	${MKDIR} ${STAGEDIR}/var/lib/ntopng
+	${MKDIR} ${STAGEDIR}/var/db/ntopng
 
 post-install-GEOIP-on:
 	${INSTALL_SCRIPT} ${WRKDIR}/ntopng-geoipupdate.sh ${STAGEDIR}${PREFIX}/bin
