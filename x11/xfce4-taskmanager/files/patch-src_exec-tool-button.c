@@ -1,6 +1,6 @@
 --- src/exec-tool-button.c.orig	2014-12-23 21:35:43 UTC
 +++ src/exec-tool-button.c
-@@ -51,7 +51,7 @@ xtm_exec_tool_button_init (XtmExecToolBu
+@@ -51,7 +51,7 @@ xtm_exec_tool_button_init (XtmExecToolButton *button)
  {
  	GtkWidget *menu;
  
