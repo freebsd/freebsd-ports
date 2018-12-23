@@ -80,7 +80,6 @@ share/color/icc/ghostscript/sgray.icc
 share/color/icc/ghostscript/srgb.icc
 %%PORTDOCS%%%%DOCSDIR%%/API.htm
 %%PORTDOCS%%%%DOCSDIR%%/C-style.htm
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/Commprod.htm
 %%PORTDOCS%%%%DOCSDIR%%/DLL.htm
 %%PORTDOCS%%%%DOCSDIR%%/Deprecated.htm
@@ -89,7 +88,6 @@ share/color/icc/ghostscript/srgb.icc
 %%PORTDOCS%%%%DOCSDIR%%/Drivers.htm
 %%PORTDOCS%%%%DOCSDIR%%/Fonts.htm
 %%PORTDOCS%%%%DOCSDIR%%/GS9_Color_Management.pdf
-%%PORTDOCS%%%%DOCSDIR%%/GS9_Color_Management.tex
 %%PORTDOCS%%%%DOCSDIR%%/History9.htm
 %%PORTDOCS%%%%DOCSDIR%%/Install.htm
 %%PORTDOCS%%%%DOCSDIR%%/Language.htm
@@ -108,11 +106,17 @@ share/color/icc/ghostscript/srgb.icc
 %%PORTDOCS%%%%DOCSDIR%%/VectorDevices.htm
 %%PORTDOCS%%%%DOCSDIR%%/WhatIsGS.htm
 %%PORTDOCS%%%%DOCSDIR%%/gdevds32.c
-%%PORTDOCS%%%%DOCSDIR%%/gs-vms.hlp
-%%PORTDOCS%%%%DOCSDIR%%/gsdoc.el
+%%PORTDOCS%%%%DOCSDIR%%/gs-style.css
+%%PORTDOCS%%%%DOCSDIR%%/images/Artifex_logo.png
+%%PORTDOCS%%%%DOCSDIR%%/images/favicon.png
+%%PORTDOCS%%%%DOCSDIR%%/images/ghostscript_logo.png
+%%PORTDOCS%%%%DOCSDIR%%/images/hamburger-light.png
+%%PORTDOCS%%%%DOCSDIR%%/images/x-light.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/index.js
 %%PORTDOCS%%%%DOCSDIR%%/pscet_status.txt
 %%PORTDOCS%%%%DOCSDIR%%/sample_downscale_device.htm
+%%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/subclass.htm
 %%PORTDOCS%%%%DOCSDIR%%/thirdparty.htm
 %%DATADIR%%/Resource/CIDFSubst/DroidSansFallback.ttf
