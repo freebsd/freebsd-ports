@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nagstamon
-PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTVERSION=	3.2
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	https://nagstamon.ifw-dresden.de/files/stable/ \
 		LOCAL/ehaupt
