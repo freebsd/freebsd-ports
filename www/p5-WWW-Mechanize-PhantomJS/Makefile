@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	WWW-Mechanize-PhantomJS
-PORTVERSION=	0.18
+PORTVERSION=	0.22
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,5 +22,6 @@ TEST_DEPENDS=	p5-HTTP-Daemon>=6.0:www/p5-HTTP-Daemon \
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
