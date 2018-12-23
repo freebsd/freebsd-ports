@@ -1,3 +1,3 @@
-TIMESTAMP = 1503269175
-SHA256 (aiosmtpd-1.1.tar.gz) = 8ab8cd2bb2459f8eb04b835bf1f0dbb8fe590140080b2b3b7793a0992270a557
-SIZE (aiosmtpd-1.1.tar.gz) = 50722
+TIMESTAMP = 1544092168
+SHA256 (aiosmtpd-1.2.tar.gz) = b7ea7ee663f3b8514d3224d55c4e8827148277b124ea862a0bbfca1bc899aef5
+SIZE (aiosmtpd-1.2.tar.gz) = 51457
