@@ -51,6 +51,7 @@
 %%DATADIR%%/ruby/lib/gitlab/git/repository.rb
 %%DATADIR%%/ruby/lib/gitlab/git/repository_mirroring.rb
 %%DATADIR%%/ruby/lib/gitlab/git/rev_list.rb
+%%DATADIR%%/ruby/lib/gitlab/git/ssh_auth.rb
 %%DATADIR%%/ruby/lib/gitlab/git/submodule.rb
 %%DATADIR%%/ruby/lib/gitlab/git/tag.rb
 %%DATADIR%%/ruby/lib/gitlab/git/user.rb
@@ -67,6 +68,7 @@
 %%DATADIR%%/ruby/spec/factories/gitaly/commit_author.rb
 %%DATADIR%%/ruby/spec/factories/sequences.rb
 %%DATADIR%%/ruby/spec/gitaly/ref_service_spec.rb
+%%DATADIR%%/ruby/spec/gitaly/remote_service_spec.rb
 %%DATADIR%%/ruby/spec/gitaly/repository_service_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitaly_server/exception_sanitizer_interceptor_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitaly_server/rugged_interceptor_spec.rb
@@ -85,20 +87,29 @@
 %%DATADIR%%/ruby/spec/lib/gitlab/git/lfs_changes_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/popen_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/raw_diff_change_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git/remote_mirror_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git/remote_repository_client_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/remote_repository_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/repository_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/rev_list_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git/ssh_auth_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/submodule_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/git/testdata/certs/gitalycert.pem
+%%DATADIR%%/ruby/spec/lib/gitlab/git/testdata/certs/gitalycert2.pem
+%%DATADIR%%/ruby/spec/lib/gitlab/git/testdata/gitalycert.pem
 %%DATADIR%%/ruby/spec/lib/gitlab/git/user_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/wiki_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/version_info_spec.rb
 %%DATADIR%%/ruby/spec/spec_helper.rb
 %%DATADIR%%/ruby/spec/support/generate-seed-repo-rb
+%%DATADIR%%/ruby/spec/support/helpers/certs/gitalycert.pem
+%%DATADIR%%/ruby/spec/support/helpers/certs/gitalykey.pem
 %%DATADIR%%/ruby/spec/support/helpers/gitlab_shell_helper.rb
 %%DATADIR%%/ruby/spec/support/helpers/integration_helper.rb
 %%DATADIR%%/ruby/spec/support/helpers/seed_repo.rb
 %%DATADIR%%/ruby/spec/support/sentry.rb
 %%DATADIR%%/ruby/spec/test_repo_helper.rb
 @(,,555) %%DATADIR%%/bin/gitaly
+@(,,555) %%DATADIR%%/bin/gitaly-debug
 @(,,555) %%DATADIR%%/bin/gitaly-ssh
 @sample %%DATADIR%%/config.toml.sample

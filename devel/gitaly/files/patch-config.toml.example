@@ -1,4 +1,4 @@
---- config.toml.example.orig	2018-08-17 16:15:58 UTC
+--- config.toml.example.orig	2018-12-10 17:27:53 UTC
 +++ config.toml.example
 @@ -1,9 +1,9 @@
  # Example Gitaly configuration file
@@ -12,8 +12,8 @@
  
  # # Optional: listen on a TCP socket. This is insecure (no authentication)
  # listen_addr = "localhost:9999"
-@@ -17,12 +17,12 @@ bin_dir = "/home/git/gitaly"
- # prometheus_listen_addr = "localhost:9236"
+@@ -22,12 +22,12 @@ bin_dir = "/home/git/gitaly"
+ # key_path = '/home/git/key.pem'
  
  # # Git executable settings
 -# [git]
@@ -28,7 +28,7 @@
  
  # # You can optionally configure more storages for this Gitaly instance to serve up
  #
-@@ -50,7 +50,7 @@ path = "/home/git/repositories"
+@@ -55,7 +55,7 @@ path = "/home/git/repositories"
  
  [gitaly-ruby]
  # The directory where gitaly-ruby is installed
@@ -37,7 +37,7 @@
  
  # # Gitaly-ruby resident set size (RSS) that triggers a memory restart (bytes)
  # max_rss = 200000000
-@@ -66,7 +66,7 @@ dir = "/home/git/gitaly/ruby"
+@@ -71,7 +71,7 @@ dir = "/home/git/gitaly/ruby"
  
  [gitlab-shell]
  # The directory where gitlab-shell is installed
