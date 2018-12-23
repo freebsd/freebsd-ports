@@ -72,6 +72,8 @@ include/sqlrelay/private/sqlrquery.h
 include/sqlrelay/private/sqlrquerycursor.h
 include/sqlrelay/private/sqlrresultsetheadertranslation.h
 include/sqlrelay/private/sqlrresultsetheadertranslations.h
+include/sqlrelay/private/sqlrresultsetrowblocktranslation.h
+include/sqlrelay/private/sqlrresultsetrowblocktranslations.h
 include/sqlrelay/private/sqlrresultsetrowtranslation.h
 include/sqlrelay/private/sqlrresultsetrowtranslations.h
 include/sqlrelay/private/sqlrresultsettranslation.h
@@ -107,12 +109,12 @@ lib/libsqlrclientwrapper.so.5
 lib/libsqlrclientwrapper.so.5.0.0
 lib/libsqlrserver.a
 lib/libsqlrserver.so
-lib/libsqlrserver.so.7
-lib/libsqlrserver.so.7.0.0
+lib/libsqlrserver.so.8
+lib/libsqlrserver.so.8.0.0
 lib/libsqlrutil.a
 lib/libsqlrutil.so
-lib/libsqlrutil.so.7
-lib/libsqlrutil.so.7.0.0
+lib/libsqlrutil.so.8
+lib/libsqlrutil.so.8.0.0
 libdata/pkgconfig/sqlrelay-c++.pc
 libdata/pkgconfig/sqlrelay-c.pc
 libexec/sqlrelay/sqlrauth_database.so
@@ -129,6 +131,7 @@ libexec/sqlrelay/sqlrlogger_custom_nw.so
 libexec/sqlrelay/sqlrlogger_custom_sc.so
 libexec/sqlrelay/sqlrlogger_debug.so
 libexec/sqlrelay/sqlrlogger_slowqueries.so
+libexec/sqlrelay/sqlrlogger_stalecursors.so
 libexec/sqlrelay/sqlrnotification_events.so
 libexec/sqlrelay/sqlrparser_default.so
 libexec/sqlrelay/sqlrprotocol_sqlrclient.so

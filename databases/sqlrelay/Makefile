@@ -3,7 +3,6 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -14,9 +13,11 @@ LICENSE=	LGPL20
 
 LIB_DEPENDS=	librudiments.so:devel/rudiments \
 		libkrb5.so:security/krb5 \
-		libcurl.so:ftp/curl
+		libcurl.so:ftp/curl \
+		libiconv.so:converters/libiconv
 
-USES=		gmake libtool pathfix python readline
+USES=		gmake iconv libedit libtool pathfix python readline ssl
+
 PATHFIX_MAKEFILEIN=	Makefile
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
@@ -46,23 +47,24 @@ TOSTRIP=	bin/sqlr-start \
 		bin/sqlr-pwdenc \
 		bin/sqlr-status \
 		bin/sqlrsh \
-		lib/libsqlrodbc.so.4.0.0 \
-		lib/libsqlrutil.so.6.0.0 \
-		lib/libsqlrclient.so.4.0.0 \
-		lib/libsqlrclientwrapper.so.4.0.0 \
-		lib/libpqsqlrelay.so.4.0.0 \
-		lib/libmysql3sqlrelay.so.4.0.0 \
-		lib/libmysql40sqlrelay.so.4.0.0 \
-		lib/libmysql41sqlrelay.so.4.0.0 \
-		lib/libmysql50sqlrelay.so.4.0.0 \
-		lib/libmysql51sqlrelay.so.4.0.0 \
-		lib/libsqlrserver.so.6.0.0 \
+		lib/libmysql3sqlrelay.so.5.0.0 \
+		lib/libmysql40sqlrelay.so.5.0.0 \
+		lib/libmysql41sqlrelay.so.5.0.0 \
+		lib/libmysql50sqlrelay.so.5.0.0 \
+		lib/libmysql51sqlrelay.so.5.0.0 \
+		lib/libpqsqlrelay.so.5.0.0 \
+		lib/libsqlrclient.so.5.0.0 \
+		lib/libsqlrclientwrapper.so.5.0.0 \
+		lib/libsqlrodbc.so.5.0.0 \
+		lib/libsqlrserver.so.8.0.0 \
+		lib/libsqlrutil.so.8.0.0 \
 		libexec/sqlrelay/sqlrauth_database.so \
 		libexec/sqlrelay/sqlrauth_proxied.so \
 		libexec/sqlrelay/sqlrauth_sqlrelay.so \
 		libexec/sqlrelay/sqlrauth_userlist.so \
 		libexec/sqlrelay/sqlrconfig_xmldom.so \
 		libexec/sqlrelay/sqlrconnection_router.so \
+		libexec/sqlrelay/sqlrdirective_custom_wf.so \
 		libexec/sqlrelay/sqlrfilter_patterns.so \
 		libexec/sqlrelay/sqlrfilter_regex.so \
 		libexec/sqlrelay/sqlrfilter_string.so \
@@ -70,6 +72,7 @@ TOSTRIP=	bin/sqlr-start \
 		libexec/sqlrelay/sqlrlogger_custom_sc.so \
 		libexec/sqlrelay/sqlrlogger_debug.so \
 		libexec/sqlrelay/sqlrlogger_slowqueries.so \
+		libexec/sqlrelay/sqlrlogger_stalecursors.so \
 		libexec/sqlrelay/sqlrnotification_events.so \
 		libexec/sqlrelay/sqlrparser_default.so \
 		libexec/sqlrelay/sqlrprotocol_sqlrclient.so \
@@ -80,11 +83,14 @@ TOSTRIP=	bin/sqlr-start \
 		libexec/sqlrelay/sqlrquery_sqlrcmdgstat.so \
 		libexec/sqlrelay/sqlrresultsettranslation_reformatdatetime.so \
 		libexec/sqlrelay/sqlrresultsettranslation_test.so \
+		libexec/sqlrelay/sqlrrouter_clientinfolist.so \
 		libexec/sqlrelay/sqlrrouter_clientiplist.so \
 		libexec/sqlrelay/sqlrrouter_regex.so \
+		libexec/sqlrelay/sqlrrouter_usedatabase.so \
 		libexec/sqlrelay/sqlrrouter_userlist.so \
 		libexec/sqlrelay/sqlrschedule_cron_userlist.so \
-		libexec/sqlrelay/sqlrtranslation_normalize.so
+		libexec/sqlrelay/sqlrtranslation_normalize.so \
+		libexec/sqlrelay/sqlrtranslation_patterns.so
 
 .include "${.CURDIR}/Makefile.common"
 
