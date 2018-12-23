@@ -10928,3 +10928,4 @@ mail/rubygem-premailer-rails19|mail/rubygem-premailer-rails19-rails50|2018-12-23
 devel/rubygem-peek-redis|devel/rubygem-peek-redis-rails50|2018-12-23|Dep change for gitlab-ce, please use devel/rubygem-peek-redis-rails50 instead
 devel/rubygem-peek-gc|devel/rubygem-peek-gc-rails50|2018-12-23|Dep change for gitlab-ce, please use devel/rubygem-peek-gc-rails50 instead
 devel/rubygem-peek-rblineprof|devel/rubygem-peek-rblineprof-rails50|2018-12-23|Dep change for gitlab-ce, please use devel/rubygem-peek-rblineprof-rails50 instead
+devel/rubygem-health_check26|devel/rubygem-health_check26-rails50|2018-12-23|Dep change for gitlab-ce, please use devel/rubygem-health_check26-rails50 instead
