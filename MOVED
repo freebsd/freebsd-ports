@@ -10930,3 +10930,4 @@ devel/rubygem-peek-gc|devel/rubygem-peek-gc-rails50|2018-12-23|Dep change for gi
 devel/rubygem-peek-rblineprof|devel/rubygem-peek-rblineprof-rails50|2018-12-23|Dep change for gitlab-ce, please use devel/rubygem-peek-rblineprof-rails50 instead
 devel/rubygem-health_check26|devel/rubygem-health_check26-rails50|2018-12-23|Dep change for gitlab-ce, please use devel/rubygem-health_check26-rails50 instead
 devel/rubygem-default_value_for30|devel/rubygem-gitlab-default_value_for|2018-12-23|Dep change for gitlab-ce, please use devel/rubygem-gitlab-default_value_for instead
+devel/rubygem-gettext_i18n_rails_js|devel/rubygem-gettext_i18n_rails_js-rails50|2018-12-23|Dep change for gitlab-ce, please use devel/rubygem-gettext_i18n_rails_js-rails50 instead
