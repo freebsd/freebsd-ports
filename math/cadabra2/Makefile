@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cadabra2
-DISTVERSION=	2.2.2
-PORTREVISION=	2
+DISTVERSION=	2.2.4
 CATEGORIES=	math
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
