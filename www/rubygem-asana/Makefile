@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	asana
-PORTVERSION=	0.6.3
+PORTVERSION=	0.8.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -16,8 +16,9 @@ RUN_DEPENDS=	rubygem-faraday>=0.9:www/rubygem-faraday \
 		rubygem-faraday_middleware-multi_json>=0.0:devel/rubygem-faraday_middleware-multi_json \
 		rubygem-oauth2>=1.0:net/rubygem-oauth2
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
