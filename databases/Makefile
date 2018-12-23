@@ -1002,7 +1002,7 @@
     SUBDIR += rubygem-openid-redis-store
     SUBDIR += rubygem-paranoia
     SUBDIR += rubygem-peek-mysql2-rails50
-    SUBDIR += rubygem-peek-pg
+    SUBDIR += rubygem-peek-pg-rails50
     SUBDIR += rubygem-pg
     SUBDIR += rubygem-pg0
     SUBDIR += rubygem-pg018
