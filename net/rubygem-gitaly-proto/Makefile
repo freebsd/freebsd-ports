@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly-proto
-PORTVERSION=	0.123.0
+PORTVERSION=	1.3.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
