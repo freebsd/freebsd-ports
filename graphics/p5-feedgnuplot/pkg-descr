@@ -3,4 +3,4 @@ creates plots from data coming in on STDIN or given in a filename
 passed on the commandline. Various data representations are supported,
 as is hardcopy output and streaming display of live data.
 
-WWW: https://metacpan.org/release/DKOGAN/feedgnuplot-1.49
+WWW: https://metacpan.org/release/DKOGAN/feedgnuplot-1.51
