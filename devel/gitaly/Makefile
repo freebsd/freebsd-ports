@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly
-DISTVERSION=	0.129.0
-PORTREVISION=	0
+DISTVERSION=	1.7.1
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -17,8 +16,8 @@ MY_DEPENDS=	git>=2.17:devel/git \
 		rubygem-bundler>=1.16.5:sysutils/rubygem-bundler \
 		rubygem-rugged>=0.27.4:devel/rubygem-rugged \
 		rubygem-github-linguist>=6.1:textproc/rubygem-github-linguist \
-		rubygem-gitlab-markup>=1.6.4:textproc/rubygem-gitlab-markup \
-		rubygem-gitaly-proto>=0.123.0:net/rubygem-gitaly-proto \
+		rubygem-gitlab-markup>=1.6.5:textproc/rubygem-gitlab-markup \
+		rubygem-gitaly-proto>=1.3.0:net/rubygem-gitaly-proto \
 		rubygem-activesupport50>=5.0.2:devel/rubygem-activesupport50 \
 		rubygem-rdoc>=6.0:devel/rubygem-rdoc \
 		rubygem-gitlab-gollum-lib>=4.2:www/rubygem-gitlab-gollum-lib \
@@ -42,7 +41,7 @@ USE_RUBY=	yes
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/tags
-GL_COMMIT=	1a4581d04d67d2821e5df6866af8ba6bbef40960
+GL_COMMIT=	8a89c4a6e20ff92193cdabd1bb9964b8e817d6b2
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config.toml.example
