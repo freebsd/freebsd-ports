@@ -10919,5 +10919,4 @@ multimedia/xmms||2018-12-21|Has expired: Uses obsolete glib12
 devel/glib12||2018-12-21|Has expired: Obsolete
 graphics/gdk-pixbuf||2018-12-21|Has expired: Uses obsolete glib12
 x11-toolkits/gtk12||2018-12-21|Has expired: Uses obsolete glib12
-multimedia/gstreamer-plugins-buzztard||2018-12-22|Has expired: Unused in the ports tree and unmaintained upstream
-irc/kvirc-qt4||2018-12-22|Has expired: switched to KF5 version
+databases/rubygem-peek-mysql2|databases/rubygem-peek-mysql2-rails50|2018-12-23|Dep change for gitlab-ce, please use databases/rubygem-peek-mysql2-rails50 instead
