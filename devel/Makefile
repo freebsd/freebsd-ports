@@ -5902,7 +5902,7 @@
     SUBDIR += rubygem-peek-host
     SUBDIR += rubygem-peek-performance_bar
     SUBDIR += rubygem-peek-rails4
-    SUBDIR += rubygem-peek-rblineprof
+    SUBDIR += rubygem-peek-rblineprof-rails50
     SUBDIR += rubygem-peek-redis-rails50
     SUBDIR += rubygem-pkg-config
     SUBDIR += rubygem-platform
