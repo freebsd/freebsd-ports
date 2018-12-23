@@ -131,6 +131,8 @@ lib/netdata/conf.d/python.d/.keep
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/nginx_plus.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/nsd.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/ntpd.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/nvidia_smi.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/openldap.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/ovpn_status_log.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/phpfpm.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/portcheck.conf.sample
@@ -150,6 +152,7 @@ lib/netdata/conf.d/python.d/.keep
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/springboot.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/squid.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/tomcat.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/tor.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/traefik.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/unbound.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/uwsgi.conf.sample
@@ -247,6 +250,8 @@ libexec/netdata/python.d/nginx.chart.py
 libexec/netdata/python.d/nginx_plus.chart.py
 libexec/netdata/python.d/nsd.chart.py
 libexec/netdata/python.d/ntpd.chart.py
+libexec/netdata/python.d/nvidia_smi.chart.py
+libexec/netdata/python.d/openldap.chart.py
 libexec/netdata/python.d/ovpn_status_log.chart.py
 libexec/netdata/python.d/phpfpm.chart.py
 libexec/netdata/python.d/portcheck.chart.py
@@ -355,6 +360,7 @@ libexec/netdata/python.d/spigotmc.chart.py
 libexec/netdata/python.d/springboot.chart.py
 libexec/netdata/python.d/squid.chart.py
 libexec/netdata/python.d/tomcat.chart.py
+libexec/netdata/python.d/tor.chart.py
 libexec/netdata/python.d/traefik.chart.py
 libexec/netdata/python.d/unbound.chart.py
 libexec/netdata/python.d/uwsgi.chart.py
@@ -394,23 +400,37 @@ sbin/netdata
 %%DATADIR%%/web/images/alert-128-red.png
 %%DATADIR%%/web/images/alert-multi-size-orange.ico
 %%DATADIR%%/web/images/alert-multi-size-red.ico
+%%DATADIR%%/web/images/android-icon-144x144.png
+%%DATADIR%%/web/images/android-icon-192x192.png
+%%DATADIR%%/web/images/android-icon-36x36.png
+%%DATADIR%%/web/images/android-icon-48x48.png
+%%DATADIR%%/web/images/android-icon-72x72.png
+%%DATADIR%%/web/images/android-icon-96x96.png
 %%DATADIR%%/web/images/animated.gif
+%%DATADIR%%/web/images/apple-icon-114x114.png
+%%DATADIR%%/web/images/apple-icon-120x120.png
+%%DATADIR%%/web/images/apple-icon-144x144.png
+%%DATADIR%%/web/images/apple-icon-152x152.png
+%%DATADIR%%/web/images/apple-icon-180x180.png
+%%DATADIR%%/web/images/apple-icon-57x57.png
+%%DATADIR%%/web/images/apple-icon-60x60.png
+%%DATADIR%%/web/images/apple-icon-72x72.png
+%%DATADIR%%/web/images/apple-icon-76x76.png
+%%DATADIR%%/web/images/apple-icon-precomposed.png
+%%DATADIR%%/web/images/apple-icon.png
+%%DATADIR%%/web/images/banner-icon-144x144.png
 %%DATADIR%%/web/images/check-mark-2-128-green.png
 %%DATADIR%%/web/images/check-mark-2-multi-size-green.ico
+%%DATADIR%%/web/images/favicon-16x16.png
+%%DATADIR%%/web/images/favicon-32x32.png
+%%DATADIR%%/web/images/favicon-96x96.png
+%%DATADIR%%/web/images/favicon.ico
+%%DATADIR%%/web/images/ms-icon-144x144.png
+%%DATADIR%%/web/images/ms-icon-150x150.png
+%%DATADIR%%/web/images/ms-icon-310x310.png
+%%DATADIR%%/web/images/ms-icon-70x70.png
 %%DATADIR%%/web/images/netdata.svg
 %%DATADIR%%/web/images/post.png
-%%DATADIR%%/web/images/seo-performance-114.png
-%%DATADIR%%/web/images/seo-performance-128.png
-%%DATADIR%%/web/images/seo-performance-16.png
-%%DATADIR%%/web/images/seo-performance-24.png
-%%DATADIR%%/web/images/seo-performance-256.png
-%%DATADIR%%/web/images/seo-performance-32.png
-%%DATADIR%%/web/images/seo-performance-48.png
-%%DATADIR%%/web/images/seo-performance-512.png
-%%DATADIR%%/web/images/seo-performance-64.png
-%%DATADIR%%/web/images/seo-performance-72.png
-%%DATADIR%%/web/images/seo-performance-multi-size.icns
-%%DATADIR%%/web/images/seo-performance-multi-size.ico
 %%DATADIR%%/web/index.html
 %%DATADIR%%/web/infographic.html
 %%DATADIR%%/web/lib/bootstrap-3.3.7.min.js
@@ -436,10 +456,11 @@ sbin/netdata
 %%DATADIR%%/web/lib/perfect-scrollbar-0.6.15.min.js
 %%DATADIR%%/web/lib/raphael-2.2.4-min.js
 %%DATADIR%%/web/lib/tableExport-1.6.0.min.js
+%%DATADIR%%/web/main.css
+%%DATADIR%%/web/main.js
 %%DATADIR%%/web/netdata-swagger.json
 %%DATADIR%%/web/netdata-swagger.yaml
 %%DATADIR%%/web/refresh-badges.js
-%%DATADIR%%/web/registry.html
 %%DATADIR%%/web/robots.txt
 %%DATADIR%%/web/sitemap.xml
 %%DATADIR%%/web/tv.html
