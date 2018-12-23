@@ -1,3 +1,3 @@
-TIMESTAMP = 1536235204
-SHA256 (xorg/driver/xf86-video-intel-25c9a2fcc83ae7252a178b42262da383e59df744.tar.bz2) = ecc00353001a5ffa83b848a3e6bda9342de5bf4f2cad49c4c22be83864831589
-SIZE (xorg/driver/xf86-video-intel-25c9a2fcc83ae7252a178b42262da383e59df744.tar.bz2) = 1246291
+TIMESTAMP = 1543827685
+SHA256 (xorg/driver/xf86-video-intel-e5ff8e1828f97891c819c919d7115c6e18b2eb1f.tar.bz2) = 11b7e70c6efecad6540eda24c7370b47597f92dea9b24ca031d83b89eb6a8337
+SIZE (xorg/driver/xf86-video-intel-e5ff8e1828f97891c819c919d7115c6e18b2eb1f.tar.bz2) = 1247314
