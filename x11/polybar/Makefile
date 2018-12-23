@@ -11,10 +11,6 @@ COMMENT=	Fast and easy-to-use status bar
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=	fails to build: KeyError: 'eventstruct'
-BROKEN_armv6=	fails to build: KeyError: 'eventstruct'
-BROKEN_armv7=	fails to build: KeyError: 'eventstruct'
-
 BUILD_DEPENDS=	xcb-proto>=1.9:x11/xcb-proto
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
