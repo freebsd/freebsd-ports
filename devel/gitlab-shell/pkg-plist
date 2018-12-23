@@ -40,6 +40,7 @@
 %%DATADIR%%/lib/gitlab_logger.rb
 %%DATADIR%%/lib/gitlab_metrics.rb
 %%DATADIR%%/lib/gitlab_net.rb
+%%DATADIR%%/lib/gitlab_net/errors.rb
 %%DATADIR%%/lib/gitlab_post_receive.rb
 %%DATADIR%%/lib/gitlab_shell.rb
 %%DATADIR%%/lib/httpunix.rb
@@ -89,7 +90,8 @@
 %%DATADIR%%/spec/vcr_cassettes/discover-ok.yml
 %%DATADIR%%/spec/vcr_cassettes/http-pull-disabled.yml
 %%DATADIR%%/spec/vcr_cassettes/http-push-disabled.yml
-%%DATADIR%%/spec/vcr_cassettes/lfs-authenticate-ok.yml
+%%DATADIR%%/spec/vcr_cassettes/lfs-authenticate-ok-download.yml
+%%DATADIR%%/spec/vcr_cassettes/lfs-authenticate-ok-upload.yml
 %%DATADIR%%/spec/vcr_cassettes/notify-post-receive.yml
 %%DATADIR%%/spec/vcr_cassettes/post-receive-not-found.yml
 %%DATADIR%%/spec/vcr_cassettes/post-receive.yml
