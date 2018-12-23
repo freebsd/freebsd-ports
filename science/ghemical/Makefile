@@ -27,7 +27,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libmpqc.so:science/mpqc
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		fortran gettext gmake pathfix pkgconfig
+USES=		compiler:c++11-lang fortran gettext gl gmake gnome pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gtk --enable-threads --enable-openbabel
 USE_GNOME=	cairo gdkpixbuf2 gtk20 libglade2 intltool pangox-compat
