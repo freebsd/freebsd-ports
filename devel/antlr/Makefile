@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 CONFLICTS=	pccts-[0-9]*
 
-USES=		gmake
+USES=		compiler:c++11-lang gmake
 USE_JAVA=	yes
 
 HAS_CONFIGURE=	yes
