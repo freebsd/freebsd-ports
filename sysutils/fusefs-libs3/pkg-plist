@@ -5,5 +5,5 @@ include/fuse3/fuse_lowlevel.h
 include/fuse3/fuse_opt.h
 lib/libfuse3.so
 lib/libfuse3.so.3
-lib/libfuse3.so.3.3.0
+lib/libfuse3.so.3.4.1
 libdata/pkgconfig/fuse3.pc
