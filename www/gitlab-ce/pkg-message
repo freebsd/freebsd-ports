@@ -4,12 +4,12 @@ Gitlab was installed successfully.
 You now need to set up the various components of Gitlab, so please
 follow the instructions in the guide at:
 
-https://gitlab.fechner.net/mfechner/Gitlab-docu/blob/master/install/11.5-freebsd.md
+https://gitlab.fechner.net/mfechner/Gitlab-docu/blob/master/install/11.6-freebsd.md
 
 If you just installed an major upgrade of GitLab, for example you
-switched from 11.4.x to 11.5.x, please follow the instructions in the guide at:
+switched from 11.5.x to 11.6.x, please follow the instructions in the guide at:
 
-https://gitlab.fechner.net/mfechner/Gitlab-docu/blob/master/update/11.4-11.5-freebsd.md
+https://gitlab.fechner.net/mfechner/Gitlab-docu/blob/master/update/11.5-11.6-freebsd.md
 
 If you just installed an minor upgrade of GitLab please follow
 the instructions in the guide at:

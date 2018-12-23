@@ -1,4 +1,4 @@
---- config/unicorn.rb.example.orig	2018-11-21 10:39:57 UTC
+--- config/unicorn.rb.example.orig	2018-12-21 14:23:37 UTC
 +++ config/unicorn.rb.example
 @@ -33,12 +33,12 @@ worker_processes 3
  
@@ -15,7 +15,7 @@
  listen "127.0.0.1:8080", :tcp_nopush => true
  
  # nuke workers after 30 seconds instead of 60 seconds (the default)
-@@ -59,13 +59,13 @@ listen "127.0.0.1:8080", :tcp_nopush => 
+@@ -59,13 +59,13 @@ listen "127.0.0.1:8080", :tcp_nopush => true
  timeout 60
  
  # feel free to point this anywhere accessible on the filesystem
