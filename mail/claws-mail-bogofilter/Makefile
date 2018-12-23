@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bogofilter
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	Spam filtering plugin for Claws Mail
 
