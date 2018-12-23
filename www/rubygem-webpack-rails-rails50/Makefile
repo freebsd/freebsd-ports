@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-railties50>=3.2.0:www/rubygem-railties50
 
 # www/gitlab-ce still depends on this port
 DEPRECATED=	Upstream no longer maintained, use devel/rubygem-webpacker-rails* instead
-EXPIRATION_DATE=2019-06-31
+EXPIRATION_DATE=2019-06-30
 
 USES=		gem
 USE_RUBY=	yes
