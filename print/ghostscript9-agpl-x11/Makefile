@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ghostscript
-PORTVERSION=	9.25
+PORTVERSION=	9.26
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${PORTVERSION:S/.//}/
 PKGNAMESUFFIX=	9-agpl-x11
@@ -29,11 +29,11 @@ CONFIGURE_ARGS=	--disable-compile-inits \
 		--disable-cups \
 		--disable-dbus \
 		--disable-gtk \
+		--disable-openjpeg \
 		--enable-contrib \
 		--enable-dynamic \
 		--enable-fontconfig \
 		--enable-freetype \
-		--enable-openjpeg \
 		--with-drivers=ALL \
 		--with-fontpath=${LOCALBASE}/share/fonts \
 		--with-jbig2dec \
