@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmltooling
-PORTVERSION=	3.0.2
-PORTREVISION=	2
+PORTVERSION=	3.0.3
 CATEGORIES=	devel security
 MASTER_SITES=	http://shibboleth.net/downloads/c++-opensaml/3.0.0/
 
