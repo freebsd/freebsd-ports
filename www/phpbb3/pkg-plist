@@ -991,8 +991,10 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/enable_accurate_pm_button.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/f_list_topics_permission_add.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/fix_user_styles.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/forum_topics_per_page_type.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/load_user_activity_limit.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/merge_duplicate_bbcodes.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/remove_imagick.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/update_prosilver_bitfield.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/user_notifications_table_index_p1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/user_notifications_table_index_p2.php
@@ -1008,6 +1010,8 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/v323.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/v323rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/v323rc2.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/v324.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/v324rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/exception.php
 %%PHPBBDIR%%/phpbb/db/migration/helper.php
 %%PHPBBDIR%%/phpbb/db/migration/migration.php
@@ -1180,7 +1184,6 @@
 %%PHPBBDIR%%/phpbb/install/module/obtain_data/task/obtain_database_data.php
 %%PHPBBDIR%%/phpbb/install/module/obtain_data/task/obtain_email_data.php
 %%PHPBBDIR%%/phpbb/install/module/obtain_data/task/obtain_file_updater_method.php
-%%PHPBBDIR%%/phpbb/install/module/obtain_data/task/obtain_imagick_path.php
 %%PHPBBDIR%%/phpbb/install/module/obtain_data/task/obtain_server_data.php
 %%PHPBBDIR%%/phpbb/install/module/obtain_data/task/obtain_update_files.php
 %%PHPBBDIR%%/phpbb/install/module/obtain_data/task/obtain_update_ftp_data.php
@@ -1615,6 +1618,7 @@
 %%PHPBBDIR%%/vendor/composer/autoload_namespaces.php
 %%PHPBBDIR%%/vendor/composer/autoload_psr4.php
 %%PHPBBDIR%%/vendor/composer/autoload_real.php
+%%PHPBBDIR%%/vendor/composer/autoload_static.php
 %%PHPBBDIR%%/vendor/composer/installed.json
 %%PHPBBDIR%%/vendor/google/recaptcha/LICENSE
 %%PHPBBDIR%%/vendor/google/recaptcha/composer.json
