@@ -5633,7 +5633,6 @@
     SUBDIR += rubygem-deep_test
     SUBDIR += rubygem-deface
     SUBDIR += rubygem-default_value_for
-    SUBDIR += rubygem-default_value_for30
     SUBDIR += rubygem-delayed_job
     SUBDIR += rubygem-delayer
     SUBDIR += rubygem-delayer-deferred
@@ -5722,6 +5721,7 @@
     SUBDIR += rubygem-git
     SUBDIR += rubygem-git-version-bump
     SUBDIR += rubygem-github_api
+    SUBDIR += rubygem-gitlab-default_value_for
     SUBDIR += rubygem-gitlab-pygments.rb
     SUBDIR += rubygem-gitlab-sidekiq-fetcher
     SUBDIR += rubygem-gitlab_git
