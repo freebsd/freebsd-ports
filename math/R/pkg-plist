@@ -1080,6 +1080,9 @@ lib/R/library/survival/doc/adjcurve.pdf
 lib/R/library/survival/doc/compete.R
 lib/R/library/survival/doc/compete.Rnw
 lib/R/library/survival/doc/compete.pdf
+lib/R/library/survival/doc/concordance.R
+lib/R/library/survival/doc/concordance.Rnw
+lib/R/library/survival/doc/concordance.pdf
 lib/R/library/survival/doc/index.html
 lib/R/library/survival/doc/multi.R
 lib/R/library/survival/doc/multi.Rnw
