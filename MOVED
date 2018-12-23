@@ -10924,4 +10924,5 @@ databases/rubygem-peek-pg|databases/rubygem-peek-pg-rails50|2018-12-23|Dep chang
 devel/rubygem-font-awesome-rails-rails4|devel/rubygem-font-awesome-rails-rails50|2018-12-23|Dep change for gitlab-ce, please use databases/rubygem-peek-pg-rails50 instead
 www/rubygem-webpack-rails|www/rubygem-webpack-rails-rails50|2018-12-23|Dep change for gitlab-ce, please use www/rubygem-webpack-rails-rails50 instead
 www/rubygem-gon|www/rubygem-gon-rails50|2018-12-23|Dep change for gitlab-ce, please use www/rubygem-gon-rails50 instead
-l/rubygem-premailer-rails19|mail/rubygem-premailer-rails19-rails50|2018-12-23|Dep change for gitlab-ce, please use www/rubygem-premailer-rails19-rails50 instead
+mail/rubygem-premailer-rails19|mail/rubygem-premailer-rails19-rails50|2018-12-23|Dep change for gitlab-ce, please use www/rubygem-premailer-rails19-rails50 instead
+devel/rubygem-peek-redis|devel/rubygem-peek-redis-rails50|2018-12-23|Dep change for gitlab-ce, please use devel/rubygem-peek-redis-rails50 instead
