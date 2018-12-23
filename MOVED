@@ -10923,3 +10923,4 @@ databases/rubygem-peek-mysql2|databases/rubygem-peek-mysql2-rails50|2018-12-23|D
 databases/rubygem-peek-pg|databases/rubygem-peek-pg-rails50|2018-12-23|Dep change for gitlab-ce, please use databases/rubygem-peek-pg-rails50 instead
 devel/rubygem-font-awesome-rails-rails4|devel/rubygem-font-awesome-rails-rails50|2018-12-23|Dep change for gitlab-ce, please use databases/rubygem-peek-pg-rails50 instead
 www/rubygem-webpack-rails|www/rubygem-webpack-rails-rails50|2018-12-23|Dep change for gitlab-ce, please use www/rubygem-webpack-rails-rails50 instead
+www/rubygem-gon|www/rubygem-gon-rails50|2018-12-23|Dep change for gitlab-ce, please use www/rubygem-gon-rails50 instead
