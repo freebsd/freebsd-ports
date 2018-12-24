@@ -1,8 +1,8 @@
---- Makefile.orig	2018-09-21 02:11:11 UTC
+--- Makefile.orig	2018-12-19 20:56:49 UTC
 +++ Makefile
-@@ -93,60 +93,47 @@ install: install-master-prime install-co
+@@ -96,60 +96,47 @@ install: install-master-prime install-common-prime ins
  
- install-pre: Makefile Makefile.config
+ install-pre: $(MAKEFILES)
  	@$(CHECKUSER)
 -	mkdir -p $(LOGDIR)
 -	mkdir -p $(STATEDIR)
@@ -24,12 +24,6 @@
 -	mkdir -p $(DBDIR)
 -	mkdir -p $(DBDIR)/cgi-tmp
 -	mkdir -p $(CGIDIR)
--
--	$(CHOWN) $(USER) $(HTMLDIR) $(DBDIR)
--	$(CHMOD) 0755 $(DBDIR)
--
--	$(CHOWN) $(CGIUSER) $(DBDIR)/cgi-tmp
--	$(CHMOD) 0755 $(DBDIR)/cgi-tmp
 +	mkdir -p $(DESTDIR)$(CONFDIR)/templates
 +	mkdir -p $(DESTDIR)$(CONFDIR)/static
 +	mkdir -p $(DESTDIR)$(CONFDIR)/templates/partial
@@ -40,6 +34,12 @@
 +	mkdir -p $(DESTDIR)$(DBDIR)/cgi-tmp
 +	mkdir -p $(DESTDIR)$(CGIDIR)
  
+-	$(CHOWN) $(USER) $(HTMLDIR) $(DBDIR)
+-	$(CHMOD) 0755 $(DBDIR)
+-
+-	$(CHOWN) $(CGIUSER) $(DBDIR)/cgi-tmp
+-	$(CHMOD) 0755 $(DBDIR)/cgi-tmp
+-
  	for p in master/www/*.tmpl ;  do \
 -		$(INSTALL) -m 0644 "$$p" $(CONFDIR)/templates/ ; \
 +		$(INSTALL) -m 0644 "$$p" $(DESTDIR)$(CONFDIR)/templates/ ; \
@@ -88,23 +88,23 @@
  
  # Not ready to be installed yet
  # $(INSTALL) -m 0755 build/master/_bin/munin-gather $(LIBDIR)/
-@@ -156,36 +143,30 @@ install-node-plugins: install-plugins-pr
- install-plugins-prime: install-plugins build $(PLUGINS) Makefile Makefile.config
+@@ -159,36 +146,30 @@ install-node-plugins: install-plugins-prime
+ install-plugins-prime: install-plugins build $(PLUGINS) $(MAKEFILES)
  	@$(CHECKGROUP)
  
 -	mkdir -p $(CONFDIR)/plugins
 -	mkdir -p $(CONFDIR)/plugin-conf.d
 -	mkdir -p $(LIBDIR)/plugins
 -	mkdir -p $(PLUGSTATE)
--
--	$(CHOWN) root:root $(PLUGSTATE)
--	$(CHMOD) 0755 $(PLUGSTATE)
--	$(CHMOD) 0755 $(CONFDIR)/plugin-conf.d
 +	mkdir -p $(DESTDIR)$(CONFDIR)/plugins
 +	mkdir -p $(DESTDIR)$(CONFDIR)/plugin-conf.d
 +	mkdir -p $(DESTDIR)$(LIBDIR)/plugins
 +	mkdir -p $(DESTDIR)$(PLUGSTATE)
  
+-	$(CHOWN) root:root $(PLUGSTATE)
+-	$(CHMOD) 0755 $(PLUGSTATE)
+-	$(CHMOD) 0755 $(CONFDIR)/plugin-conf.d
+-
  	@# Process the OS specific plugins at the end. Otherwise they would be overridden by the
  	@# generic ones.
  	for p in build/plugins/node.d/* build/plugins/node.d.$(OSTYPE)/* ; do \
@@ -136,7 +136,7 @@
  		fi \
  	done
  
-@@ -196,14 +177,14 @@ install-plugins-java: build-plugins-java
+@@ -199,14 +180,14 @@ install-plugins-java: build-plugins-java
  install-async-prime: install-async
  
  install-async:
@@ -155,7 +155,7 @@
  
  
  install-common-prime: build-common install-common
-@@ -516,7 +497,7 @@ t/install:
+@@ -519,7 +500,7 @@ t/install:
  
  # This builds */Build from Build.PL
  %/Build: %/Build.PL
@@ -164,7 +164,7 @@
  
  build-%: %/Build
  	cd $* && $(PERL) Build
-@@ -532,6 +513,7 @@ install-%: %/Build
+@@ -535,6 +516,7 @@ install-%: %/Build
  		--install_path script=$(BINDIR) \
  		--install_path sbin=$(SBINDIR) \
  		--install_path bindoc=$(MANDIR)/man1 \
