@@ -1033,6 +1033,7 @@
     SUBDIR += pxe-pdhcp
     SUBDIR += py-GeoIP
     SUBDIR += py-GeoIP2
+    SUBDIR += py-aiohttp-socks
     SUBDIR += py-amqp
     SUBDIR += py-amqplib
     SUBDIR += py-avahi
