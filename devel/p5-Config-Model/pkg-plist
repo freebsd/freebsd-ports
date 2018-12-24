@@ -10,7 +10,6 @@
 %%SITE_PERL%%/Config/Model/Backend/PerlFile.pm
 %%SITE_PERL%%/Config/Model/Backend/PlainFile.pm
 %%SITE_PERL%%/Config/Model/Backend/ShellVar.pm
-%%SITE_PERL%%/Config/Model/Backend/Yaml.pm
 %%SITE_PERL%%/Config/Model/BackendMgr.pm
 %%SITE_PERL%%/Config/Model/BackendTrackOrder.pm
 %%SITE_PERL%%/Config/Model/CheckList.pm
@@ -82,7 +81,6 @@
 %%PERL5_MAN3%%/Config::Model::Backend::PerlFile.3.gz
 %%PERL5_MAN3%%/Config::Model::Backend::PlainFile.3.gz
 %%PERL5_MAN3%%/Config::Model::Backend::ShellVar.3.gz
-%%PERL5_MAN3%%/Config::Model::Backend::Yaml.3.gz
 %%PERL5_MAN3%%/Config::Model::BackendMgr.3.gz
 %%PERL5_MAN3%%/Config::Model::BackendTrackOrder.3.gz
 %%PERL5_MAN3%%/Config::Model::CheckList.3.gz
