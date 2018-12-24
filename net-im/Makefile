@@ -118,6 +118,7 @@
     SUBDIR += pidgin-fetion
     SUBDIR += pidgin-guifications
     SUBDIR += pidgin-hotkeys
+    SUBDIR += pidgin-icyque
     SUBDIR += pidgin-latex
     SUBDIR += pidgin-libnotify
     SUBDIR += pidgin-manualsize
