@@ -1,5 +1,7 @@
---- src/network/socket/qnet_unix_p.h.orig	2018-08-27 06:31:41.917561000 +0200
-+++ src/network/socket/qnet_unix_p.h	2018-08-27 06:33:20.404588000 +0200
+Some extra includes for us.
+
+--- src/network/socket/qnet_unix_p.h.orig	2018-12-03 11:15:26 UTC
++++ src/network/socket/qnet_unix_p.h
 @@ -71,6 +71,12 @@
  #  include <resolv.h>
  #endif
