@@ -3,7 +3,7 @@
 
 PORTNAME=	docproj
 PORTVERSION=	2.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	textproc
 
 MAINTAINER=	doceng@FreeBSD.org
@@ -31,7 +31,7 @@ OPTIONS_DEFAULT=	CJK		      IGOR          TRANSLATOR
 .if !exists(/usr/bin/groff)
 OPTIONS_DEFAULT+=	GROFF
 .endif
-.if !exists(/usr/bin/svnlite)
+.if !exists(/usr/bin/svnlite) && !exists(/usr/bin/svn)
 OPTIONS_DEFAULT+=	SVN
 .endif
 
@@ -50,7 +50,7 @@ IGOR_RUN_DEPENDS=	igor:textproc/igor
 JING_DESC=		Jing for advanced RELAX NG validation
 JING_RUN_DEPENDS=	jing:textproc/jing
 SVN_DESC=		Subversion support from ports
-SVN_RUN_DEPENDS=	svn:devel/subversion
+SVN_RUN_DEPENDS=	${LOCALBASE}/bin/svn:devel/subversion
 TRANSLATOR_DESC=	Tools for translators
 TRANSLATOR_RUN_DEPENDS=	itstool:textproc/itstool \
 			msgcat:devel/gettext-tools
