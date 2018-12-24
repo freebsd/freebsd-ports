@@ -7,8 +7,9 @@ Clean up interface type and MTU detection.
  - In particular, don't use a union of structs passed in to ioctl().
    Make them separate structs (with block scope so the compiler might
    place them on top of each other, that would be ok).
+ - IFM_FDDI (still) exists in 11.2, not in 12.0
 
---- src/network/kernel/qnetworkinterface_unix.cpp.orig	2018-12-24 17:00:42 UTC
+--- src/network/kernel/qnetworkinterface_unix.cpp.orig	2018-12-03 11:15:26 UTC
 +++ src/network/kernel/qnetworkinterface_unix.cpp
 @@ -419,12 +419,23 @@ QT_BEGIN_INCLUDE_NAMESPACE
  #endif // QT_PLATFORM_UIKIT
@@ -39,7 +40,17 @@ Clean up interface type and MTU detection.
  
  static QNetworkInterface::InterfaceType probeIfType(int socket, int iftype, struct ifmediareq *req)
  {
-@@ -477,15 +488,8 @@ static QNetworkInterface::InterfaceType 
+@@ -463,9 +474,6 @@ static QNetworkInterface::InterfaceType 
+         case IFM_ETHER:
+             return QNetworkInterface::Ethernet;
+ 
+-        case IFM_FDDI:
+-            return QNetworkInterface::Fddi;
+-
+         case IFM_IEEE80211:
+             return QNetworkInterface::Ieee80211;
+         }
+@@ -477,15 +485,8 @@ static QNetworkInterface::InterfaceType 
  static QList<QNetworkInterfacePrivate *> createInterfaces(ifaddrs *rawList)
  {
      QList<QNetworkInterfacePrivate *> interfaces;
@@ -57,7 +68,7 @@ Clean up interface type and MTU detection.
  
      // on NetBSD we use AF_LINK and sockaddr_dl
      // scan the list for that family
-@@ -500,13 +504,21 @@ static QList<QNetworkInterfacePrivate *>
+@@ -500,13 +501,21 @@ static QList<QNetworkInterfacePrivate *>
              iface->flags = convertFlags(ptr->ifa_flags);
              iface->hardwareAddress = iface->makeHwAddress(sdl->sdl_alen, (uchar*)LLADDR(sdl));
  
@@ -84,7 +95,7 @@ Clean up interface type and MTU detection.
      return interfaces;
  }
  
-@@ -605,7 +617,7 @@ static QList<QNetworkInterfacePrivate *>
+@@ -605,7 +614,7 @@ static QList<QNetworkInterfacePrivate *>
  {
      QList<QNetworkInterfacePrivate *> interfaces;
  
