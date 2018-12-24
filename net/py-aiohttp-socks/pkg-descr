@@ -1,0 +1,3 @@
+SOCKS proxy connector for aiohttp. SOCKS4(a) and SOCKS5 are supported.
+
+WWW: https://pypi.org/project/aiohttp-socks/
