@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	polybar
-DISTVERSION=	3.2.1
-PORTREVISION=	1
+DISTVERSION=	3.3.0
 CATEGORIES=	x11
 
 MAINTAINER=	rigoletto@FreeBSD.org
@@ -15,38 +14,46 @@ BUILD_DEPENDS=	xcb-proto>=1.9:x11/xcb-proto
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libinotify.so:devel/libinotify \
-		libxcb-cursor.so:x11/xcb-util-cursor \
 		libxcb-ewmh.so:x11/xcb-util-wm \
 		libxcb-icccm.so:x11/xcb-util-wm \
 		libxcb-image.so:x11/xcb-util-image \
 		libxcb-util.so:x11/xcb-util \
 		libxcb-xrm.so:x11/xcb-util-xrm
 
-USES=		cmake:outsource compiler:c++11-lang localbase:ldflags \
-		pkgconfig python:2.7,build
+USES=		cmake:outsource localbase:ldflags pkgconfig \
+		python:2.7,build
 USE_GITHUB=	yes
 GH_ACCOUNT=	jaagr
 GH_TUPLE=	jaagr:i3ipcpp:v0.7.1-4-gd4e4786:i3ipcpp/lib/i3ipcpp \
-		jaagr:xpp:1.4.0-4-g00165e1:xpp/lib/xpp
+		jaagr:xpp:1.4.0-4-gbf6ff36:xpp/lib/xpp
 USE_GNOME=	cairo
 USE_XORG=	xcb
 
-OPTIONS_DEFINE=	ALSA DEBUG CURL EXAMPLES I3 IPC MPD TESTS
-OPTIONS_DEFAULT=	CURL I3 IPC MPD
-OPTIONS_SUB=	yes
+# Needs libnl to work. Disabling completely.
+CMAKE_OFF=	ENABLE_NETWORK
 
-ALSA_DESC=	Volume control
-CURL_DESC=	Github support
-I3_DESC=	i3wm support
+OPTIONS_DEFINE=		ALSA CURSOR DEBUG GITHUB I3 IPC MPD PULSEAUDIO \
+			TESTS XKEYBOARD
+OPTIONS_DEFAULT=	CURSOR GITHUB I3 IPC MPD PULSEAUDIO XKEYBOARD
+OPTIONS_SUB=		yes
+
+ALSA_DESC=	Shows volume and mute state for Alsa
+CURSOR_DESC=	Required for click and scroll settings
+GITHUB_DESC=	Shows the unread notification count
+I3_DESC=	Uses the i3 IPC to display information
 IPC_DESC=	Built-in IPC support
 MPD_DESC=	Support for controlling MPD
 TESTS_DESC=	Build testsuite
+XKEYBOARD_DESC=	Shows the current layout and active indicators
 
 ALSA_CMAKE_BOOL=	ENABLE_ALSA
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
-CURL_CMAKE_BOOL=	ENABLE_CURL
-CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
+CURSOR_CMAKE_BOOL=	WITH_XCURSOR
+CURSOR_LIB_DEPENDS=	libxcb-cursor.so:x11/xcb-util-cursor
+
+GITHUB_CMAKE_BOOL=	ENABLE_CURL
+GITHUB_LIB_DEPENDS=	libcurl.so:ftp/curl
 
 DEBUG_CMAKE_BOOL=	DEBUG_LOGGER
 
@@ -59,10 +66,16 @@ IPC_CMAKE_BOOL=		BUILD_IPC_MSG
 MPD_CMAKE_BOOL=		ENABLE_MPD
 MPD_LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient
 
-# fail while building on poudriere because it need network access
+PULSEAUDIO_CMAKE_BOOL=		ENABLE_PULSEAUDIO
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
+
+# fail while building on poudriere because it needs network access
 # during the building process to download googletest on-the-fly.
 TESTS_BUILD_DEPENDS=	git>=0:devel/git
 TESTS_CMAKE_BOOL=	BUILD_TESTS
+
+XKEYBOARD_CMAKE_BOOL=	ENABLE_XKEYBOARD
+XKEYBOARD_LIB_DEPENDS=	libxcb-xkb.so:x11/libxcb
 
 do-test-TESTS-on:
 	cd ${TEST_WRKSRC} && ${SETENV} BUILD_TESTS=ON \

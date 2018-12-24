@@ -2,6 +2,5 @@ bin/polybar
 %%IPC%%bin/polybar-msg
 man/man1/polybar.1.gz
 share/bash-completion/completions/polybar
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/config
 share/zsh/site-functions/_polybar
 share/zsh/site-functions/_polybar_msg
