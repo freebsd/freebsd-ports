@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libopenmpt
-PORTVERSION=	0.3.13
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 DISTVERSIONSUFFIX=	+release.autotools
 CATEGORIES=	audio
 MASTER_SITES=	https://lib.openmpt.org/files/libopenmpt/src/ \
@@ -38,6 +37,9 @@ OGG_CONFIGURE_WITH=		ogg
 PORTAUDIO_CONFIGURE_WITH=	portaudio
 SNDFILE_CONFIGURE_WITH=		sndfile
 VORBIS_CONFIGURE_WITH=		vorbis vorbisfile
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopenmpt.so.*
 
 post-install-DOCS-on:
 	@${RM} ${STAGEDIR}${DOCSDIR}/LICENSE # do not install twice
