@@ -25,8 +25,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S,${DISTVERSIONSUFFIX}$$,,}
 MAJOR_VERSION=	2.3
 MINOR_VERSION=	1
 
-USES=		desktop-file-utils gmake iconv pkgconfig perl5 \
-		python:2.7 qt:5 shebangfix tar:xz
+USES=		compiler:c++11-lang desktop-file-utils gmake iconv pkgconfig \
+		perl5 python:2.7 qt:5 shebangfix tar:xz
 USE_QT=		core concurrent gui svg widgets buildtools_build qmake_build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-boost \
