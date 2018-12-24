@@ -5,7 +5,7 @@
  #  include <CoreFoundation/CoreFoundation.h>
  #  include <ApplicationServices/ApplicationServices.h>
 -#elif defined(__linux__)
-+#elif defined(__linux__) || defined(__FreeBSD_cc_version)
++#elif defined(__linux__) || defined(__FreeBSD__)
  #  include "PSOutputDev.h"
  #  include <cups/cups.h>
  #endif
@@ -14,7 +14,7 @@
  //------------------------------------------------------------------------
  
 -#elif defined(__linux__)
-+#elif defined(__linux__) || defined(__FreeBSD_cc_version)
++#elif defined(__linux__) || defined(__FreeBSD__)
  
  static void fileOut(void *stream, const char *data, int len) {
    fwrite(data, 1, len, (FILE *)stream);
