@@ -1,5 +1,5 @@
-TIMESTAMP = 1539587693
-SHA256 (nbari-www-1.1.2_GH0.tar.gz) = 85297c0d62b2402e712bff34587c3c37b2b2f193f91bd38990734828520b226a
-SIZE (nbari-www-1.1.2_GH0.tar.gz) = 8099
-SHA256 (golang-crypto-e363607_GH0.tar.gz) = e32166defb1f0f47bfe9ceca4aadfb9508599cda40d9f058aa00eee9e4e00547
-SIZE (golang-crypto-e363607_GH0.tar.gz) = 1639213
+TIMESTAMP = 1545612395
+SHA256 (nbari-www-2.0.0_GH0.tar.gz) = 28df1a06e48fbffd5d09feab493e9a5158942b4203f66f4aa3c61141b3be3fca
+SIZE (nbari-www-2.0.0_GH0.tar.gz) = 8144
+SHA256 (golang-crypto-505ab14_GH0.tar.gz) = 66208e5bab6d39db520fb59b79a597ddb38cd6160e7ae7fb3e5c212fe9146125
+SIZE (golang-crypto-505ab14_GH0.tar.gz) = 1644620
