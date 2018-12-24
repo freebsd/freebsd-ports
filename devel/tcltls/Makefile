@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tcltls
-PORTVERSION=	1.7.14
+PORTVERSION=	1.7.16
 CATEGORIES=	devel security tcl
 MASTER_SITES=	http://core.tcl.tk/tcltls/uv/ \
 		http://tcltls.rkeene.org/uv/
