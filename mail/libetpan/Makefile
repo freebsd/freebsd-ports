@@ -18,7 +18,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-USES=		autoreconf gmake iconv libtool localbase
+USES=		autoreconf compiler:c++11-lang gmake iconv libtool localbase
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	dinhviethoa

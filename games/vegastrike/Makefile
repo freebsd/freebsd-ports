@@ -14,14 +14,16 @@ COMMENT=	Open source 3D space simulator
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=		Fails to compile: POSH cannot determine target CPU
+
 RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/vegastrike.ico:games/vegastrike-data
 LIB_DEPENDS=	${PY_BOOST} \
 		libexpat.so:textproc/expat2 \
 		libvorbis.so:audio/libvorbis \
 		libogg.so:audio/libogg
 
-USES=		dos2unix gmake localbase:ldflags openal:al pkgconfig python:2.7 \
-		tar:bzip2
+USES=		compiler:c++11-lang dos2unix gmake localbase:ldflags \
+		openal:al pkgconfig python:2.7 tar:bzip2
 USE_CXXSTD=	c++98
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
@@ -49,8 +51,6 @@ MESHER_DESC=	Enable mesher modelling tool
 MESHER_PLIST_FILES=	bin/mesher
 MESHER_LIB_DEPENDS=	libOgreMain.so:graphics/ogre3d
 MESHER_CONFIGURE_ENABLE=	ogre
-
-BROKEN_aarch64=		Fails to compile: POSH cannot determine target CPU
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,/usr/(local|X11R6),${LOCALBASE},' \
