@@ -13,7 +13,7 @@ LICENSE=	LGPL21+
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libboinc.a:net/boinc-client
 
-USES=		ncurses tar:bzip2
+USES=		compiler:c++11-lang ncurses tar:bzip2
 MAKE_ENV=	BOINCLIBDIR=${LOCALBASE}/lib BOINCINCDIR=${LOCALBASE}/include/boinc
 
 PLIST_FILES=	bin/boinc_curses
