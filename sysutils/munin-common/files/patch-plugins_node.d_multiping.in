@@ -1,6 +1,6 @@
---- plugins/node.d/multiping.in.orig	2018-07-24 11:34:38 UTC
+--- plugins/node.d/multiping.in.orig	2018-12-19 20:56:49 UTC
 +++ plugins/node.d/multiping.in
-@@ -58,6 +58,7 @@ Foundation, Inc., 51 Franklin Street, Fi
+@@ -58,6 +58,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Bos
  host=${host:-www.google.com}
  
  
