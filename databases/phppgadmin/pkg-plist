@@ -1,3 +1,4 @@
+%%PGADMDIR%%/BUGS
 %%PGADMDIR%%/CREDITS
 %%PGADMDIR%%/DEVELOPERS
 %%PGADMDIR%%/FAQ
@@ -29,7 +30,15 @@
 %%PGADMDIR%%/classes/database/Postgres84.php
 %%PGADMDIR%%/classes/database/Postgres90.php
 %%PGADMDIR%%/classes/database/Postgres91.php
+%%PGADMDIR%%/classes/database/Postgres10.php
+%%PGADMDIR%%/classes/database/Postgres11.php
+%%PGADMDIR%%/classes/database/Postgres92.php
+%%PGADMDIR%%/classes/database/Postgres93.php
+%%PGADMDIR%%/classes/database/Postgres94.php
+%%PGADMDIR%%/classes/database/Postgres95.php
+%%PGADMDIR%%/classes/database/Postgres96.php
 %%PGADMDIR%%/colproperties.php
+%%PGADMDIR%%/composer.json
 @sample %%PGADMDIR%%/conf/config.inc.php-dist %%PGADMDIR%%/conf/config.inc.php
 %%PGADMDIR%%/constraints.php
 %%PGADMDIR%%/conversions.php
@@ -53,7 +62,17 @@
 %%PGADMDIR%%/help/PostgresDoc90.php
 %%PGADMDIR%%/help/PostgresDoc91.php
 %%PGADMDIR%%/help/PostgresDoc92.php
+%%PGADMDIR%%/help/PostgresDoc10.php
+%%PGADMDIR%%/help/PostgresDoc11.php
+%%PGADMDIR%%/help/PostgresDoc12.php
+%%PGADMDIR%%/help/PostgresDoc93.php
+%%PGADMDIR%%/help/PostgresDoc94.php
+%%PGADMDIR%%/help/PostgresDoc95.php
+%%PGADMDIR%%/help/PostgresDoc96.php
 %%PGADMDIR%%/history.php
+%%PGADMDIR%%/images/themes/bootstrap/Favicon.ico
+%%PGADMDIR%%/images/themes/bootstrap/Introduction.png
+%%PGADMDIR%%/images/themes/bootstrap/title.png
 %%PGADMDIR%%/images/themes/cappuccino/Lminus.png
 %%PGADMDIR%%/images/themes/cappuccino/Lplus.png
 %%PGADMDIR%%/images/themes/cappuccino/Tminus.png
@@ -345,6 +364,8 @@
 %%PGADMDIR%%/tables.php
 %%PGADMDIR%%/tablespaces.php
 %%PGADMDIR%%/tblproperties.php
+%%PGADMDIR%%/themes/bootstrap/global.css
+%%PGADMDIR%%/themes/bootstrap/title.png
 %%PGADMDIR%%/themes/default/global.css
 %%PGADMDIR%%/themes/global.css
 %%PGADMDIR%%/themes/themes.php
