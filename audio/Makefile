@@ -264,7 +264,6 @@
     SUBDIR += gstreamer-plugins-jack
     SUBDIR += gstreamer-plugins-ladspa
     SUBDIR += gstreamer-plugins-lame
-    SUBDIR += gstreamer-plugins-lv2
     SUBDIR += gstreamer-plugins-mad
     SUBDIR += gstreamer-plugins-mp3
     SUBDIR += gstreamer-plugins-musepack
@@ -298,6 +297,7 @@
     SUBDIR += gstreamer1-plugins-jack
     SUBDIR += gstreamer1-plugins-ladspa
     SUBDIR += gstreamer1-plugins-lame
+    SUBDIR += gstreamer1-plugins-lv2
     SUBDIR += gstreamer1-plugins-modplug
     SUBDIR += gstreamer1-plugins-mpg123
     SUBDIR += gstreamer1-plugins-musepack
