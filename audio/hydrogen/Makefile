@@ -2,27 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	hydrogen
-PORTVERSION=	0.9.7
-PORTREVISION=	2
+DISTVERSION=	1.0.0-beta1-325
+DISTVERSIONSUFFIX=	-g538eaeb9
 CATEGORIES=	audio
 
 MAINTAINER=	FreeBSD@ShaneWare.Biz
 COMMENT=	Advanced drum machine
 
-LICENSE=	GPLv2
-
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		liblo.so:audio/liblo
 
+USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig \
+		localbase qt:5
+USE_QT=		core gui network widgets xml xmlpatterns buildtools_build \
+		linguisttools_build qmake_build
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	hydrogen-music
-
-USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig qt:4
-USE_QT=		qmake_build moc_build rcc_build uic_build corelib \
-		gui network xml xmlpatterns
 
 OPTIONS_SINGLE=		EXPORT
 OPTIONS_SINGLE_EXPORT=	LIBARCHIVE LIBTAR

@@ -1,27 +1,32 @@
---- CMakeLists.txt.orig	2016-11-05 18:52:50 UTC
+--- CMakeLists.txt.orig	2017-11-21 17:47:16 UTC
 +++ CMakeLists.txt
-@@ -111,9 +111,9 @@ IF (NOT CMAKE_CXX_COMPILER_ID MATCHES "C
-     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-implement-inlines")
+@@ -196,6 +196,11 @@ ENDIF()
+ FIND_HELPER(LIBARCHIVE libarchive archive.h archive)
+ IF( WANT_LIBARCHIVE AND LIBARCHIVE_FOUND)
+     SET(WANT_LIBTAR FALSE)
++    SET(LIBTAR_LIBRARIES "")
++    SET(LIBTAR_INCLUDE_DIRS "")
++ELSE()
++    SET(LIBARCHIVE_LIBRARIES "")
++    SET(LIBARCHIVE_INCLUDE_DIRS "")
  ENDIF()
+ FIND_HELPER(LIBSNDFILE sndfile sndfile.h sndfile)
+ FIND_HELPER(ALSA alsa alsa/asoundlib.h asound )
+@@ -205,6 +210,8 @@ FIND_HELPER(OSC liblo lo/lo.h lo)
  
--SET(CMAKE_CXX_FLAGS_RELEASE "")
-+SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}")
- 
--SET(CMAKE_CXX_FLAGS_DEBUG "-g ")#-Winline")
-+SET(CMAKE_CXX_FLAGS_DEBUG "-g ${CMAKE_CXX_FLAGS_DEBUG}")#-Winline")
- 
- 
- IF(APPLE)
-@@ -201,7 +201,11 @@ FIND_HELPER(NSMSESSION liblo lo/lo.h lo)
  IF("${CMAKE_SYSTEM_NAME}" MATCHES "NetBSD")
  	FIND_HELPER(OSS oss sys/soundcard.h ossaudio )
++ELSEIF("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
++	FIND_HELPER(OSS oss sys/soundcard.h c )
  ELSE()
--	FIND_HELPER(OSS oss sys/soundcard.h OSSlib )
-+    IF("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
-+        FIND_HELPER(OSS oss sys/soundcard.h c )
-+    ELSE()
-+        FIND_HELPER(OSS oss sys/soundcard.h OSSlib )
-+    ENDIF()
+ 	FIND_HELPER(OSS oss sys/soundcard.h OSSlib )
+ ENDIF()
+@@ -368,7 +375,7 @@ ENDIF()
+ IF(NOT MINGW AND NOT APPLE)
+ 	INSTALL(FILES ${CMAKE_SOURCE_DIR}/linux/hydrogen.appdata.xml DESTINATION "${CMAKE_INSTALL_PREFIX}/share/appdata")
+ 	INSTALL(FILES ${CMAKE_SOURCE_DIR}/linux/hydrogen.desktop DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications")
+-	INSTALL(FILES ${CMAKE_SOURCE_DIR}/data/img/gray/h2-icon.svg DESTINATION "${H2_UNIX_ICON_PATH}")
++	INSTALL(FILES ${CMAKE_SOURCE_DIR}/data/img/gray/h2-icon.svg DESTINATION "${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps")
+ 	INSTALL(FILES ${CMAKE_SOURCE_DIR}/linux/hydrogen.1 DESTINATION "${CMAKE_INSTALL_PREFIX}/man/man1")
  ENDIF()
  
- FIND_HELPER(JACK jack jack/jack.h jack)
