@@ -1,0 +1,8 @@
+--- oldssl-workaround/CMakeLists.txt.orig	2018-09-07 13:02:18 UTC
++++ oldssl-workaround/CMakeLists.txt
+@@ -6,4 +6,5 @@ else()
+         set(COMPAT_SRCS hostcheck.h openssl_hostname_validation.h)
+ endif()
+ ADD_LIBRARY(osslcompat OBJECT ${COMPAT_SRCS})
++set_target_properties(osslcompat PROPERTIES LINKER_LANGUAGE C)
+ SET_TARGET_PROPERTIES(osslcompat PROPERTIES COMPILE_FLAGS "${ACNG_COMPFLAGS}")

@@ -1,0 +1,100 @@
+--- CMakeLists.txt.orig	2018-09-07 13:02:18 UTC
++++ CMakeLists.txt
+@@ -26,20 +26,20 @@ INCLUDE(CheckSymbolExists)
+ INCLUDE(FindPkgConfig)
+ 
+ set(PACKAGE "apt-cacher-ng")
+-IF(NOT DEFINED(CMAKE_INSTALL_PREFIX))
++IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
+ set(CMAKE_INSTALL_PREFIX "/usr/local" CACHE STRING "Target file space")
+ ENDIF()
+-IF(NOT DEFINED(DATADIR))
++IF(NOT DEFINED DATADIR)
+ 	set(DATADIR "${CMAKE_INSTALL_PREFIX}/share" CACHE STRING "Shared data files directory")
+ ENDIF()
+-IF(NOT DEFINED(LIBDIR))
++IF(NOT DEFINED LIBDIR)
+ 	set(LIBDIR "${CMAKE_INSTALL_PREFIX}/lib/${PACKAGE}" CACHE STRING "Location of ${PACKAGE} extra files")
+ ENDIF()
+-IF(NOT DEFINED(DOCDIR))
++IF(NOT DEFINED DOCDIR)
+ 	set(DOCDIR "${DATADIR}/doc/${PACKAGE}" CACHE STRING "Location of documentation files")
+ ENDIF()
+ 
+-IF(NOT DEFINED(SYSCONFDIR))
++IF(NOT DEFINED SYSCONFDIR)
+    if("${CMAKE_INSTALL_PREFIX}" STREQUAL "/usr")
+       set(SYSCONFDIR /etc)
+    else()
+@@ -47,15 +47,15 @@ IF(NOT DEFINED(SYSCONFDIR))
+    endif()
+ ENDIF()
+ 
+-if(NOT DEFINED(CFGDIR))
++if(NOT DEFINED CFGDIR)
+ set(CFGDIR "${SYSCONFDIR}/${PACKAGE}")
+ endif()
+ 
+-if(NOT DEFINED(SBINDIR))
++if(NOT DEFINED SBINDIR)
+ set(SBINDIR "${CMAKE_INSTALL_PREFIX}/sbin")
+ endif()
+ 
+-if(NOT DEFINED(RUNDIR))
++if(NOT DEFINED RUNDIR)
+ 	set(RUNDIR "/run")
+ endif()
+ 
+@@ -71,7 +71,7 @@ endmacro()
+ 
+ INCLUDE_DIRECTORIES(${CMAKE_BINARY_DIR} ${CMAKE_SOURCE_DIR} "include")
+ 
+-IF(NOT DEFINED(ACVERSION))
++IF(NOT DEFINED ACVERSION)
+ FILE(READ "${CMAKE_SOURCE_DIR}/VERSION" ACVERSION)
+ string(REPLACE "\n" "" ACVERSION ${ACVERSION})
+ #MESSAGE(STATUS "Version: ${ACVERSION}")
+@@ -308,7 +308,9 @@ SET(CMAKE_REQUIRED_LIBRARIES "")
+ set(HAVE_CHECKSUM on)
+ 
+ if(USE_SSL)
+-	pkg_check_modules(openssl openssl)
++	if(NOT CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
++		pkg_check_modules(openssl openssl)
++	endif()
+ 	if(openssl_FOUND)
+ 		set(HAVE_SSL on)
+     _append(ACNG_COMPFLAGS ${openssl_CFLAGS})
+@@ -388,18 +390,22 @@ add_subdirectory(systemd)
+ ###
+ ### Extra install rules for static files
+ ###
+-if(NOT DEFINED(HTMLDIR))
++if(NOT DEFINED HTMLDIR)
+ 		set(HTMLDIR ${DOCDIR}/html)
+ endif()
+-if(NOT DEFINED(MANDIR))
++if(NOT DEFINED MANDIR)
+    set(MANDIR ${DATADIR}/man)
+ endif()
+ install(FILES doc/README doc/apt-cacher-ng.pdf DESTINATION ${DOCDIR})
+ install(DIRECTORY doc/html/ DESTINATION ${HTMLDIR}
+    FILES_MATCHING PATTERN "*.*")
+ install(DIRECTORY doc/man/ DESTINATION ${MANDIR}/man8
+-   FILES_MATCHING PATTERN "*.8")
+-if(NOT DEFINED(AVAHIDIR))
++   FILES_MATCHING PATTERN "apt-cacher-ng.8")
++if (USE_FUSE)
++install(DIRECTORY doc/man/ DESTINATION ${MANDIR}/man8
++   FILES_MATCHING PATTERN "acngfs.8")
++endif()
++if(NOT DEFINED AVAHIDIR)
+    set(AVAHIDIR "${SYSCONFDIR}/avahi/services")
+ endif()
+ install(FILES contrib/apt-cacher-ng.service DESTINATION ${AVAHIDIR})
+@@ -414,4 +420,5 @@ DOCDIR: ${DOCDIR}
+ SYSCONFDIR: ${SYSCONFDIR}
+ CFGDIR: ${CFGDIR}
+ SBINDIR: ${SBINDIR}
++MANDIR: ${MANDIR}
+ ")

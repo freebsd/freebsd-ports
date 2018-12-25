@@ -1,0 +1,27 @@
+--- fs/CMakeLists.txt.orig	2018-09-07 13:02:18 UTC
++++ fs/CMakeLists.txt
+@@ -3,6 +3,10 @@
+ ## Attempt to build acngfs where possible ##
+ ############################################
+ 
++option(USE_FUSE "Use FUSE library to build acngfs" on)
++
++if(USE_FUSE)
++
+ pkg_check_modules(fuse fuse)
+ 
+ _append(acngfs_cflags -DMINIBUILD ${fuse_CFLAGS} ${CFLAGS_PTHREAD})
+@@ -22,6 +26,7 @@ if(fuse_FOUND AND HAVE_FUSE_25)
+ 
+         ADD_EXECUTABLE(acngfs ${fsSRCS} $<TARGET_OBJECTS:osslcompat>)
+         SET_TARGET_PROPERTIES(acngfs PROPERTIES COMPILE_FLAGS "${ACNG_COMPFLAGS} ${ACNG_CXXFLAGS} ${acngfs_cflags}")
++	target_compile_features(acngfs PRIVATE cxx_auto_type)
+         INSTALL(TARGETS acngfs DESTINATION ${LIBDIR})
+         if(HAVE_DLOPEN)
+                 _append(EXTRA_LIBS_ACNGFS dl)
+@@ -32,4 +37,4 @@ else(fuse_FOUND AND HAVE_FUSE_25)
+         message("- FUSE not found or not compatible, not building acngfs")
+ endif(fuse_FOUND AND HAVE_FUSE_25)
+ 
+-
++endif()

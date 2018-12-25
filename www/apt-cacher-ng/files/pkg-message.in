@@ -1,0 +1,14 @@
+This port sets up apt-cacher-ng to be used in a FreeBSD context.
+
+The FreeBSD installer on the official media does not allow to provide the name of a proxy server.
+When asked for a mirror to use, prepend the offered URL with the url of the proxy.
+E.g. http://myproxy:3142/ftp.FreeBSD.org/pub/FreeBSD/releases/amd64/amd64/10.3-RELEASE
+
+PKGNG can be bootstrapped by setting the http_proxy environment
+setenv http_proxy http://myproxy:3142
+pkg bootstrap
+
+proxy settings for pkgng can be persisted by editing /usr/local/etc/pkg.conf and adding
+pkg_env: {
+        http_proxy: "http://myproxy:3142",
+}

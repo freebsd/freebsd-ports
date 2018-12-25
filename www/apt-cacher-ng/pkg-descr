@@ -1,0 +1,8 @@
+apt-cacher-ng is a caching http/s proxy specialized in
+handling distribution websites.  Originating from Debian it can be used 
+to cache package retrieval for other distributions as well.
+
+The port includes support to add FreeBSD distribution specifics 
+to apt-cacher-ng.
+
+WWW: https://www.unix-ag.uni-kl.de/~bloch/acng/

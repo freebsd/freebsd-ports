@@ -28,6 +28,7 @@
     SUBDIR += apache-mode.el
     SUBDIR += apache24
     SUBDIR += apercu
+    SUBDIR += apt-cacher-ng
     SUBDIR += archiva
     SUBDIR += aria2
     SUBDIR += aria2fe

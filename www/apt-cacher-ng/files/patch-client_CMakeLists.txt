@@ -1,0 +1,10 @@
+--- client/CMakeLists.txt.orig	2018-09-07 13:02:18 UTC
++++ client/CMakeLists.txt
+@@ -1,6 +1,7 @@
+ PROJECT(ACNG CXX C)
+ 
+ ADD_EXECUTABLE(in.acng client.cc)
++target_compile_features(in.acng PRIVATE cxx_auto_type)
+ SET_TARGET_PROPERTIES(in.acng PROPERTIES COMPILE_FLAGS "${ACNG_COMPFLAGS} ${ACNG_CXXFLAGS} -DMINIBUILD")
+ TARGET_LINK_LIBRARIES(in.acng ${NetworkLibs} ${EXTRA_LIBS_INETD})
+ INSTALL(TARGETS in.acng DESTINATION ${LIBDIR})

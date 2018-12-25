@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: apt_cacher_ng
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# apt_cacher_ng_enable (bool):	Set to NO by default.
+#				Set it to YES to enable apt-cacher-ng.
+# apt_cacher_ng_user (string):	User name to run the proxy with default=proxy.
+
+. /etc/rc.subr
+
+name=apt_cacher_ng
+desc="apt-cacher-ng http/s proxy daemon"
+rcvar=apt_cacher_ng_enable
+
+load_rc_config $name
+
+: ${apt_cacher_ng_enable:=NO}
+: ${apt_cacher_ng_user:=proxy}
+
+command=%%PREFIX%%/sbin/apt-cacher-ng
+command_args="-c %%PREFIX%%/etc/apt-cacher-ng"
+
+run_rc_command "$1"
