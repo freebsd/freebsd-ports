@@ -25,7 +25,7 @@ post-configure:
 	cd ${WRKSRC} && ${SETENV} ${GO_ENV} ./configure go --go-path=${WRKDIR}
 
 pre-build:
-	cd ${WRKSRC} && ${MAKE} go-install
+	cd ${WRKSRC} && ${MAKE} && ${MAKE} go-install
 
 post-install:
 	@true # override master's
