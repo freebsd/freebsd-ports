@@ -192,6 +192,7 @@
     SUBDIR += suxus
     SUBDIR += symbola
     SUBDIR += tamsyn
+    SUBDIR += tamzen
     SUBDIR += terminus-font
     SUBDIR += terminus-ttf
     SUBDIR += tkfont
