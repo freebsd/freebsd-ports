@@ -16,15 +16,14 @@ RUN_DEPENDS=	pidgin:net-im/pidgin
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libpurple.so:net-im/libpurple
 
-PLIST_FILES=	lib/purple-2/libicyque.so
+USES=		gnome gmake localbase:ldflags pkgconfig
 
-USES=		gmake localbase:ldflags pkgconfig
+PLIST_FILES=	lib/purple-2/libicyque.so
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	EionRobb
 GH_PROJECT=	icyque
 GH_TAGNAME=	c70f9f8
-WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}
 
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
