@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 
-USES=		cmake:outsource gettext-runtime gnome localbase:ldflags pkgconfig tar:bz2
+USES=		cmake gettext-runtime gnome localbase:ldflags pkgconfig tar:bz2
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

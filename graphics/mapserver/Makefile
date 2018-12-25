@@ -20,7 +20,7 @@ LIB_DEPENDS=		libgd.so:graphics/gd \
 			libfreetype.so:print/freetype2 \
 			libprotobuf-c.so:devel/protobuf-c
 
-USES=			cpe cmake:outsource jpeg
+USES=			cpe cmake jpeg
 CPE_VENDOR=		umn
 USE_GNOME=		libxml2
 LDFLAGS+=		-L${LOCALBASE} -pthread

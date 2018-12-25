@@ -11,7 +11,7 @@ COMMENT=	Plasma5 user manager
 LIB_DEPENDS=	libpwquality.so:security/libpwquality
 RUN_DEPENDS=	accountsservice>=0:sysutils/accountsservice
 
-USES=		cmake:outsource compiler:c++11-lib cpe gettext \
+USES=		cmake compiler:c++11-lib cpe gettext \
 		kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash ecm emoticons guiaddons i18n iconthemes \

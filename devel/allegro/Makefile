@@ -21,7 +21,7 @@ BUILD_DEPENDS=	png>0:graphics/png \
 LIB_DEPENDS=	libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis
 
-USES=		cmake makeinfo pkgconfig
+USES=		cmake:insource makeinfo pkgconfig
 USE_XORG=	ice sm x11 xpm xext xcursor xxf86vm xxf86dga
 USE_LDCONFIG=	yes
 

@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libxcb.so:x11/libxcb \
 		libxcb-keysyms.so:x11/xcb-util-keysyms
 
-USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
+USES=		cmake compiler:c++11-lib desktop-file-utils \
 		kde:5 libarchive pkgconfig qt:5 sqlite
 USE_GL=		gl  # Dependency added by qt5-gui.
 USE_GITHUB=	yes

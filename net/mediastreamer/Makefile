@@ -19,7 +19,7 @@ LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox \
 		libsrtp2.so:net/libsrtp2 \
 		libbzrtp.so:security/bzrtp
 
-USES=		cmake:outsource compiler python:build
+USES=		cmake compiler python:build
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DENABLE_ALSA=NO -DENABLE_BV16=NO -DENABLE_DOC=NO \

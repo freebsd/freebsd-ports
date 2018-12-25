@@ -14,7 +14,7 @@ COMMENT=	Alternate menu for the Xfce Desktop
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:outsource compiler:c++14-lang gettext-tools localbase pkgconfig \
+USES=		cmake compiler:c++14-lang gettext-tools localbase pkgconfig \
 		tar:bzip2 xfce:gtk3
 USE_GNOME=	gtk30 cairo
 USE_XFCE=	panel

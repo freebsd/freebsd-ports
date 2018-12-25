@@ -22,7 +22,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 
 USE_GITHUB=	yes
 
-USES=		cmake:outsource pkgconfig shebangfix
+USES=		cmake pkgconfig shebangfix
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}

@@ -14,7 +14,7 @@ LICENSE=	APACHE20
 LIB_DEPENDS=	libhwloc.so:devel/hwloc \
 		libmpi.so:net/openmpi
 
-USES=		cmake:outsource
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	LLNL
 USE_LDCONFIG=	yes

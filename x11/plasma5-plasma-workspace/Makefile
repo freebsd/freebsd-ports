@@ -21,7 +21,7 @@ RUN_DEPENDS=	ck-launch-session:sysutils/consolekit2\
 		${LOCALBASE}/libdata/pkgconfig/xkeyboard-config.pc:x11/xkeyboard-config \
 		iso-codes>=0:misc/iso-codes
 
-USES=		cmake:outsource compiler:c++11-lib cpe gettext kde:5 pkgconfig \
+USES=		cmake compiler:c++11-lib cpe gettext kde:5 pkgconfig \
 		qt:5 tar:xz
 USE_KDE=	activities activitymanagerd attica auth baloo bookmarks \
 		codecs completion config configwidgets coreaddons crash \

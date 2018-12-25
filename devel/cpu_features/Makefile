@@ -10,7 +10,7 @@ COMMENT=	Cross platform C99 library to get cpu features at runtime
 
 LICENSE=	APACHE20
 
-USES=	cmake
+USES=	cmake:insource
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 

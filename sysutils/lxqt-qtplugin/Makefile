@@ -17,7 +17,7 @@ LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt@qt5 \
 		libmenu-cache.so:x11/menu-cache \
 		libexif.so:graphics/libexif
 
-USES=	cmake:outsource compiler:c++11-lib kde:5 lxqt pkgconfig tar:xz qt:5 gettext-runtime
+USES=	cmake compiler:c++11-lib kde:5 lxqt pkgconfig tar:xz qt:5 gettext-runtime
 
 USE_XORG=xcb
 USE_GNOME=glib20

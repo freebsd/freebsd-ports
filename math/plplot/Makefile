@@ -21,7 +21,7 @@ LIB_DEPENDS=	libLASi.so:devel/lasi \
 RUN_DEPENDS=	bash:shells/bash \
 		${FREEFONT_DIR}/FreeMono.ttf:x11-fonts/freefont-ttf
 
-USES=		compiler:c11 cmake:outsource gettext-runtime ghostscript gnome \
+USES=		compiler:c11 cmake gettext-runtime ghostscript gnome \
 		localbase perl5 pathfix pkgconfig
 USE_GNOME=	cairo pango
 USE_PERL5=	build

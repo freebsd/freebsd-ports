@@ -15,7 +15,7 @@ COMMENT?=	Minimalistic plugin API for video effects
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=	cmake:outsource pkgconfig
+USES=	cmake pkgconfig
 
 .if defined(BUILDING_FREI0R_OPENCV) && defined(BUILDING_FREI0R_GAVL)
 IGNORE=		cannot build OpenCV and gavl plugins simultaneously

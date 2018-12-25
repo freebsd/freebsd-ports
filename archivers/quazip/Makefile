@@ -16,7 +16,7 @@ LICENSE=	LGPL21
 FLAVORS=	qt5 qt4
 FLAVOR?=	${FLAVORS:[1]}
 
-USES=		cmake:outsource
+USES=		cmake
 USE_LDCONFIG=	yes
 
 .  if ${FLAVOR} == qt4

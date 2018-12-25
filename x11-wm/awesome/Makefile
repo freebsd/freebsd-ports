@@ -30,7 +30,7 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 
 CONFLICTS_INSTALL=	awesome3-[0-9]*
 
-USES=		cmake:outsource compiler:c11 gettext iconv pkgconfig lua shebangfix
+USES=		cmake compiler:c11 gettext iconv pkgconfig lua shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	awesomewm
 SHEBANG_FILES=	utils/awesome-client

@@ -14,7 +14,7 @@ USE_GITHUB=	YES
 GH_ACCOUNT=	mossmann
 GH_TAGNAME=	31a37bd
 
-USES=		cmake:outsource
+USES=		cmake
 CMAKE_SOURCE_PATH=	${WRKSRC}/host
 CMAKE_ARGS=	-DLIBUSB_LIBRARIES=/usr/lib/libusb.so
 

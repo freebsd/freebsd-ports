@@ -13,7 +13,7 @@ EXPIRATION_DATE=	2018-12-31
 
 LIB_DEPENDS=	${PY_BOOST}
 
-USES=		cmake:outsource compiler:c++11-lib kde:4 python:2.7,run \
+USES=		cmake compiler:c++11-lib kde:4 python:2.7,run \
 		qt:4 shebangfix tar:xz
 USE_KDE=	kdelibs soprano automoc4
 USE_QT=		corelib dbus gui network svg xml \

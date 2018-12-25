@@ -17,7 +17,7 @@ LIB_DEPENDS=	libmpi.so:net/mpich \
 		libomp.so:devel/openmp
 RUN_DEPENDS=	${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so.1:lang/gcc${GCC_DEFAULT} # because of the link flags induced by mpich
 
-USES=		cmake:outsource compiler:c++14-lang localbase:ldflags tar:tgz
+USES=		cmake compiler:c++14-lang localbase:ldflags tar:tgz
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS

@@ -16,7 +16,7 @@ BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 	libdbus-glib-1.so:devel/dbus-glib
 
-USES=	cmake:outsource gettext-runtime pkgconfig tar:xz
+USES=	cmake gettext-runtime pkgconfig tar:xz
 USE_GNOME=	glib20
 
 .include <bsd.port.mk>

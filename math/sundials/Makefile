@@ -12,7 +12,7 @@ COMMENT=	SUite of Nonlinear and DIfferential/ALgebraic Equation Solvers
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource,noninja python:build # ninja doesn't support fortran
+USES=		cmake:noninja python:build # ninja doesn't support fortran
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DPTHREAD_ENABLE:BOOL=ON \

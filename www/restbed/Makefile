@@ -11,7 +11,7 @@ COMMENT=	Asynchronous RESTful functionality to C++11 applications
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource compiler:c++11-lib ssl
+USES=		cmake compiler:c++11-lib ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	Corvusoft
 GH_TUPLE=	Corvusoft:asio-dependency:f5c5708:a/dependency/asio \

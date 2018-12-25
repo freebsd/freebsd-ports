@@ -11,7 +11,7 @@ COMMENT=	Free programmer for Xilinx Spartan S3E Starter Kit
 LIB_DEPENDS=	libftdi.so:devel/libftdi
 RUN_DEPENDS=	${LOCALBASE}/sbin/fxload:misc/fxload
 
-USES=		tar:xz cmake
+USES=		tar:xz cmake:insource
 ALL_TARGET=	xc3sprog
 
 PLIST_FILES=	bin/xc3sprog

@@ -10,6 +10,7 @@ MASTER_SITES=	SF/qterm/qterm/${PORTVERSION}
 MAINTAINER=	kaiwang27@gmail.com
 COMMENT=	BBS client for BSD/Linux
 
+USES=		qt:4 tar:bzip2 cmake:insource perl5
 DEPRECATED=		Qt4 has been EOL since december 2015
 EXPIRATION_DATE=	2019-03-15
 

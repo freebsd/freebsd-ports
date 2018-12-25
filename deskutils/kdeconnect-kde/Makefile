@@ -19,7 +19,7 @@ RUN_DEPENDS=	sshfs:sysutils/fusefs-sshfs
 
 CONFLICTS_INSTALL=	kdeconnect-kde-0.7* kdeconnect-kde-kde4-0.7.*
 
-USES=		cmake:outsource compiler:c++11-lang desktop-file-utils gettext kde:5 \
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 \
 		pkgconfig qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons dbusaddons doctools ecm i18n iconthemes \

@@ -24,7 +24,7 @@ RUN_DEPENDS=	dssi_osc_update:audio/dssi \
 		xdg-open:devel/xdg-utils \
 		lilypond:print/lilypond
 
-USES=		alias cmake:outsource desktop-file-utils localbase:ldflags \
+USES=		alias cmake desktop-file-utils localbase:ldflags \
 		pkgconfig shared-mime-info tar:bzip2
 
 OPTIONS_DEFINE=		LIRC

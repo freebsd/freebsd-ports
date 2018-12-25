@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libcurl.so:ftp/curl
 
-USES=		compiler:c++11-lang cmake:outsource gettext
+USES=		compiler:c++11-lang cmake gettext
 USE_GITHUB=	yes
 GH_ACCOUNT=	puppetlabs
 

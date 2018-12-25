@@ -13,7 +13,7 @@ EXPIRATION_DATE=	2018-12-31
 
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 
-USES=		cmake:outsource kde:4 qt:4 tar:xz
+USES=		cmake kde:4 qt:4 tar:xz
 USE_KDE=	automoc4 kdelibs
 USE_QT=		corelib gui xml \
 		moc_build qmake_build rcc_build uic_build

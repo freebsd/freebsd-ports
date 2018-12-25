@@ -21,7 +21,7 @@ OPTIONS_DEFAULT=	LIBX11
 
 USE_XORG=	xorgproto
 USE_CXXSTD=	c++11
-USES=		cmake:outsource compiler:c++11-lib
+USES=		cmake compiler:c++11-lib
 
 .include <bsd.port.options.mk>
 

@@ -29,7 +29,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:security/libssh
 RUN_DEPENDS=	cagibid:net/cagibi
 
-USES=		cmake:outsource gettext jpeg kde:4 qt:4 samba:lib shared-mime-info \
+USES=		cmake gettext jpeg kde:4 qt:4 samba:lib shared-mime-info \
 		shebangfix tar:xz
 USE_KDE=	kactivities kdelibs oxygen-icons5 \
 		attica automoc4 pimlibs soprano strigi nepomuk-core

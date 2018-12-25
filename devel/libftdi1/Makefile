@@ -22,7 +22,7 @@ OPTIONS_SUB=		yes
 BOOST_DESC=	Build with boost
 PYTHON_DESC=	Build Python bindings
 
-USES=		cmake compiler:c++11-lang gettext-runtime pkgconfig tar:bzip2
+USES=		cmake:insource compiler:c++11-lang gettext-runtime pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 PORTDOCS=	COPYING.LIB ChangeLog README

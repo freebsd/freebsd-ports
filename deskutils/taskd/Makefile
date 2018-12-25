@@ -15,7 +15,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	libgnutls.so:security/gnutls
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cmake:outsource compiler:c++11-lib shebangfix
+USES=		cmake compiler:c++11-lib shebangfix
 USE_RC_SUBR=	taskd
 
 USERS=		taskd

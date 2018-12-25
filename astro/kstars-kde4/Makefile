@@ -16,7 +16,7 @@ LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 BUILD_DEPENDS=	xplanet:astro/xplanet
 RUN_DEPENDS=	xplanet:astro/xplanet
 
-USES=		cmake:outsource compiler:c++11-lib eigen:3 kde:4 qt:4 tar:xz
+USES=		cmake compiler:c++11-lib eigen:3 kde:4 qt:4 tar:xz
 USE_KDE=	kdelibs automoc4
 USE_QT=		opengl qmake_build moc_build rcc_build uic_build
 

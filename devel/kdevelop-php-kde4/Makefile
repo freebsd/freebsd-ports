@@ -17,7 +17,7 @@ EXPIRATION_DATE=	2018-12-31
 LIB_DEPENDS=	libkdevplatforminterfaces.so:devel/kdevplatform-kde4
 BUILD_DEPENDS=	${KDE_PREFIX}/bin/kdev-pg-qt:devel/kdevelop-pg-qt-kde4
 
-USES=		cmake:outsource compiler:c++11-lib kde:4 qt:4 tar:xz
+USES=		cmake compiler:c++11-lib kde:4 qt:4 tar:xz
 USE_KDE=	kdelibs automoc4
 USE_QT=		moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_UNSAFE=	yes

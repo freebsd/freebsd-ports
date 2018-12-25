@@ -19,7 +19,7 @@ LIB_DEPENDS=	libsratom-0.so:audio/sratom \
 		libsord-0.so:devel/sord \
 		libuv.so:devel/libuv
 
-USES=		cmake:outsource pkgconfig
+USES=		cmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenMusicKontrollers
 GH_PROJECT=	eteroj.lv2

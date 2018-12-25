@@ -11,7 +11,7 @@ COMMENT=	Library for collision detection between two convex shapes
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/BSD-LICENSE
 
-USES=		cmake:outsource
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	danfis
 USE_LDCONFIG=	yes

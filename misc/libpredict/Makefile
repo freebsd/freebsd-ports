@@ -11,7 +11,7 @@ COMMENT=	Satellite orbit prediction library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:outsource
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	la1k
 USE_LDCONFIG=	yes

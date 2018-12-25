@@ -29,7 +29,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libx265.so:multimedia/x265 \
 		libxvidcore.so:multimedia/xvid
 
-USES=		cmake:outsource iconv localbase:ldflags pkgconfig
+USES=		cmake iconv localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	CCExtractor
 USE_XORG=	x11

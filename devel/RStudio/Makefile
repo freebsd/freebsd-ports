@@ -29,7 +29,7 @@ LIB_DEPENDS=	libR.so:math/R \
 		libinotify.so:devel/libinotify \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		cmake:outsource desktop-file-utils fortran pkgconfig qt:5 shared-mime-info ssl
+USES=		cmake desktop-file-utils fortran pkgconfig qt:5 shared-mime-info ssl
 USE_QT=		core dbus declarative gui location network opengl printsupport sensors \
 		sql svg webchannel webengine webkit widgets xml xmlpatterns buildtools_build qmake_build
 USE_JAVA=	yes

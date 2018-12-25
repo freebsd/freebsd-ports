@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	wernerd
 GH_PROJECT=	ZRTPCPP
 
-USES=		cmake:outsource,noninja compiler:c++11-lib
+USES=		cmake:noninja compiler:c++11-lib
 USE_CXXSTD=	c++11
 CMAKE_ARGS=	-DCORE_LIB:BOOL=ON
 USE_LDCONFIG=	yes

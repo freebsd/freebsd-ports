@@ -10,7 +10,7 @@ DIST_SUBDIR=		KDE/${PORTNAME}
 MAINTAINER=		kde@FreeBSD.org
 COMMENT=		Property editing framwork
 
-USES=			cmake:outsource compiler:c++11-lang gettext kde:5 qt:5 \
+USES=			cmake compiler:c++11-lang gettext kde:5 qt:5 \
 			tar:xz
 USE_KDE=		ecm config coreaddons guiaddons i18n widgetsaddons
 USE_QT=			core declarative gui widgets xml \

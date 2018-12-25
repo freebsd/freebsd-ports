@@ -23,7 +23,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libpcap.so:net/libpcap \
 		libtiff.so:graphics/tiff
 
-USES=		cmake:outsource eigen:3 jpeg python
+USES=		cmake eigen:3 jpeg python
 USE_GITHUB=	yes
 GH_ACCOUNT=	PointCloudLibrary
 USE_XORG=	x11 xext xt ice sm

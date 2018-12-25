@@ -17,7 +17,7 @@ CONFLICTS_INSTALL=	kde-runtime-4.12.* \
 LIB_DEPENDS=	libxapian.so:databases/xapian-core \
 		libqjson.so:devel/qjson@qt4
 
-USES=		cmake:outsource kde:4 qt:4 tar:xz
+USES=		cmake kde:4 qt:4 tar:xz
 USE_KDE=	akonadi automoc4 kdelibs kfilemetadata \
 		pimlibs
 USE_QT=		corelib qmake_build moc_build rcc_build uic_build

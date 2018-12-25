@@ -12,7 +12,7 @@ COMMENT=	Yet another sourcecode indexing tool
 
 LICENSE=	GPLv2
 
-USES=		cmake:outsource
+USES=		cmake
 
 PORTDOCS=	README
 PLIST_FILES=	bin/silentbob

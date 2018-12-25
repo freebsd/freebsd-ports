@@ -12,7 +12,7 @@ COMMENT=	GTK2 and GTK3 Configurator for KDE
 DEPRECATED=		Qt4 has been EOL since december 2015
 EXPIRATION_DATE=	2018-12-31
 
-USES=		cmake:outsource gettext kde:4 pkgconfig qt:4 tar:xz
+USES=		cmake gettext kde:4 pkgconfig qt:4 tar:xz
 USE_GNOME=	gtk20 gtk30
 USE_KDE=	automoc4 kdelibs
 USE_QT=		moc_build qmake_build rcc_build uic_build

@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb
 
-USES=		cmake:outsource pkgconfig
+USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

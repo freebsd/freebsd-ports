@@ -15,7 +15,7 @@ ONLY_FOR_ARCHS=	amd64
 
 LIB_DEPENDS=	libhsakmt.so:sysutils/roct
 
-USES=		cmake:outsource
+USES=		cmake
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

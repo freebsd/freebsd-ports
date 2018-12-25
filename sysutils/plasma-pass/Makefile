@@ -10,7 +10,7 @@ COMMENT=	Plasma applet for Pass password manager
 
 RUN_DEPENDS=	pass:sysutils/password-store
 
-USES=		cmake:outsource compiler:c++11-lib kde:5 qt:5
+USES=		cmake compiler:c++11-lib kde:5 qt:5
 USE_KDE=	config coreaddons i18n itemmodels package plasma-framework service \
 		ecm_build
 USE_QT=		core dbus declarative gui network \

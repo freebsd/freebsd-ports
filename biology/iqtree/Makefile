@@ -16,7 +16,7 @@ BROKEN_armv6=		fails to compile: unrecognized command line options '-m32' and '-
 BROKEN_armv7=		fails to compile: unrecognized command line options '-m32' and '-msse3'
 BROKEN_powerpc64=	fails to build: GCC version must be at least 4.8!
 
-USES=		cmake compiler:openmp eigen:3
+USES=		cmake:insource compiler:openmp eigen:3
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cibiv
 GH_PROJECT=	IQ-TREE

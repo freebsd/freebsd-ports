@@ -11,7 +11,7 @@ COMMENT=	Crystalline and molecular structure visualisation program
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource compiler:c++17-lang
+USES=		cmake compiler:c++17-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	sgsaenger
 USE_LDCONFIG=	yes

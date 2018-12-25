@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libwayland-egl.so:graphics/wayland
 
-USES=		cmake:outsource localbase pkgconfig
+USES=		cmake localbase pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	NilsBrause
 USE_GL=		egl

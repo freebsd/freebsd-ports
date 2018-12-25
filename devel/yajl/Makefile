@@ -15,7 +15,7 @@ GH_ACCOUNT=	lloyd
 CFLAGS+=	-g -O0
 
 USE_LDCONFIG=	yes
-USES=		cmake:outsource
+USES=		cmake
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 

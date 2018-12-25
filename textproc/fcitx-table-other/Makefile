@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		cmake:outsource gettext tar:xz
+USES=		cmake gettext tar:xz
 NO_ARCH=	yes
 STRIP=		# ninja breaks without this: unknown target 'install/strip'
 

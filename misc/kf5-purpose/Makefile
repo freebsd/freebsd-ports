@@ -10,7 +10,7 @@ COMMENT=	Offers available actions for a specific purpose
 LIB_DEPENDS=	libaccounts-qt5.so:net-im/libaccounts-qt5 \
 		libkaccounts.so:net-im/kaccounts-integration
 
-USES=		cmake:outsource compiler:c++11-lang gettext \
+USES=		cmake compiler:c++11-lang gettext \
 		kde:5 pkgconfig qt:5 tar:xz
 USE_GNOME=	intltool
 USE_KDE=	config coreaddons ecm i18n kdeclarative kio service widgetsaddons

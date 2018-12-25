@@ -16,7 +16,7 @@ LICENSE_FILE=		${WRKSRC}/LICENSE
 LIB_DEPENDS=		libboost_system.so:devel/boost-libs libboost_date_time.so:devel/boost-libs \
 			libboost_filesystem.so:devel/boost-libs
 
-USES=			cmake:outsource compiler:c++11-lib
+USES=			cmake compiler:c++11-lib
 USE_GCC=		yes
 USE_LDCONFIG=		yes
 

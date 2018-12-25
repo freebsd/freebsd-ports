@@ -13,7 +13,7 @@ COMMENT=	Header-only test framework for C++
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		compiler:c++14-lang cmake:outsource pathfix
+USES=		compiler:c++14-lang cmake pathfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	catchorg
 GH_PROJECT=	Catch2

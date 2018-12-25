@@ -12,7 +12,7 @@ COMMENT=	Modular OpenRobots Simulation Engine
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource pkgconfig python:3.4+ shebangfix
+USES=		cmake pkgconfig python:3.4+ shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}-simulator
 SHEBANG_FILES=	bin/morse_inspector

@@ -16,7 +16,7 @@ EXPIRATION_DATE=	2019-03-15
 
 LIB_DEPENDS=	libxkbfile.so:x11/libxkbfile
 
-USES=		cmake qt:4
+USES=		cmake:insource qt:4
 USE_QT=		linguisttools_build moc_build qmake_build rcc_build uic_build \
 		corelib gui svg
 

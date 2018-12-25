@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS=	armv6 armv7
 
 CONFLICTS_INSTALL=	mesa-libs
 
-USES=		cmake:outsource pkgconfig shebangfix
+USES=		cmake pkgconfig shebangfix
 
 USE_LDCONFIG=	yes
 

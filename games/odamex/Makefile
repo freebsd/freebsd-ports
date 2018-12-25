@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USE_SDL=	sdl mixer
-USES=		cmake compiler dos2unix tar:bzip2
+USES=		cmake:insource compiler dos2unix tar:bzip2
 DOS2UNIX_FILES=	CMakeLists.txt odalaunch/CMakeLists.txt common/d_main.cpp
 
 CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}

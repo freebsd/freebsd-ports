@@ -23,7 +23,7 @@ LIB_DEPENDS=	libqwt6.so:x11-toolkits/qwt6@qt4 \
 #LC_REV=		1526-g7fdb92a
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-USES=		cmake pkgconfig qt:4 tar:xz
+USES=		cmake:insource pkgconfig qt:4 tar:xz
 USE_QT=		corelib declarative gui network script sql sql-sqlite3_run \
 		webkit xml qmake_build moc_build rcc_build uic_build \
 		linguisttools_build

@@ -11,7 +11,7 @@ COMMENT=	Set of IRC services for IRC networks
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
-USES=		cmake:outsource localbase:ldflags shebangfix
+USES=		cmake localbase:ldflags shebangfix
 USE_GITHUB=	yes
 USE_RC_SUBR=	anope
 

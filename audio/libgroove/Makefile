@@ -20,7 +20,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 USE_GITHUB=	yes
 GH_ACCOUNT=	andrewrk
 
-USES=		cmake:outsource
+USES=		cmake
 USE_SDL=	sdl2
 USE_LDCONFIG=	yes
 CFLAGS+=	-Wno-error=deprecated-declarations # ffmpeg 3.1

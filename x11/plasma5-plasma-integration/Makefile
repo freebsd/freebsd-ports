@@ -10,7 +10,7 @@ COMMENT=	Qt Platform Theme integration plugins for the Plasma workspaces
 
 RUN_DEPENDS=	hack-font>=0:x11-fonts/hack-font
 
-USES=		cmake:outsource compiler:c++11-lib cpe gettext kde:5 pkgconfig \
+USES=		cmake compiler:c++11-lib cpe gettext kde:5 pkgconfig \
 		qt:5 shebangfix tar:xz
 USE_KDE=	auth bookmarks breeze codecs completion config configwidgets \
 		coreaddons ecm i18n iconthemes itemviews jobwidgets kio \

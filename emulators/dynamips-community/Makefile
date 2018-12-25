@@ -21,7 +21,7 @@ CFLAGS+=	-I${PREFIX}/include/libelf
 
 CONFLICTS=	dynamips-[0-9]* dynamips-devel-[0-9]*
 
-USES=		cmake
+USES=		cmake:insource
 USE_GITHUB=	yes
 
 OPTIONS_DEFINE=	DOCS

@@ -8,7 +8,7 @@ CATEGORIES=	devel kde kde-plasma
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 applications useful for Plasma development
 
-USES=		cmake:outsource compiler:c++11-lib cpe gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lib cpe gettext kde:5 qt:5 tar:xz
 USE_KDE=	archive attica auth codecs completion config configwidgets \
 		coreaddons dbusaddons ecm i18n iconthemes itemmodels \
 		jobwidgets kdeclarative kio kirigami2 newstuff package parts \

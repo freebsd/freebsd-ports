@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgoto2.so:math/gotoblas \
 		libmetis.so:math/metis \
 		libtbb.so:devel/tbb
 
-USES=		cmake:outsource compiler:c++17-lang localbase:ldflags
+USES=		cmake compiler:c++17-lang localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tl:S/.//}
 GH_PROJECT=	${PORTNAME:tl:S/.//}

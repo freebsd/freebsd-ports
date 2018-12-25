@@ -49,7 +49,7 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 # Building libcpluff.a requires autoreconf and gmake.  Using ninja
 # leads to dependency problems where libcpluff.a is not yet finished
 # building when it's required.
-USES=		autoreconf:build cmake:outsource,noninja compiler:c++11-lib \
+USES=		autoreconf:build cmake:noninja compiler:c++11-lib \
 		gettext gmake gnome iconv:wchar_t jpeg libtool pkgconfig \
 		python:2.7 ssl sqlite
 USE_GITHUB=	yes

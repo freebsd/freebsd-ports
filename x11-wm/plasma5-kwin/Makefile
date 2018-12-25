@@ -28,7 +28,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		Xwayland:x11-servers/xwayland
 RUN_DEPENDS=	Xwayland:x11-servers/xwayland
 
-USES=		cmake:outsource compiler:c++11-lib cpe gettext \
+USES=		cmake compiler:c++11-lib cpe gettext \
 		kde:5 pkgconfig qt:5 tar:xz
 USE_GL=		egl
 USE_KDE=	activities activities attica auth breeze codecs \

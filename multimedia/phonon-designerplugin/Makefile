@@ -18,7 +18,7 @@ FLAVOR?=	${FLAVORS:[1]}
 qt4_PKGNAMESUFFIX=	-designerplugin-qt4
 qt5_PKGNAMESUFFIX=	-designerplugin-qt5
 
-USES=		cmake tar:xz
+USES=		cmake:insource tar:xz
 
 .  if ${FLAVOR} == qt4
 DEPRECATED=	Qt4 has been EOL since december 2015

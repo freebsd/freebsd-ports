@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		cmake:outsource compiler:c++11-lang gnome localbase:ldflags python:build shebangfix ssl
+USES=		cmake compiler:c++11-lang gnome localbase:ldflags python:build shebangfix ssl
 SHEBANG_GLOB=	*.py
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes

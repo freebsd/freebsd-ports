@@ -11,7 +11,7 @@ COMMENT=	Wolf, Reiher, and Hess's Douglas-Kroll-Hess relativistic correction
 
 LICENSE=	GPLv3
 
-USES=		cmake:outsource fortran
+USES=		cmake fortran
 USE_GITHUB=	yes
 GH_ACCOUNT=	psi4
 USE_LDCONFIG=	yes

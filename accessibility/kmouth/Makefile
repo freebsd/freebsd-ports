@@ -10,7 +10,7 @@ COMMENT=	Speech synthesizer frontend for KDE
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:outsource compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		ecm i18n jobwidgets kio service widgetsaddons xmlgui
 USE_QT=		core dbus gui network printsupport speech widgets xml \

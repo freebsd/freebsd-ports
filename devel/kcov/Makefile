@@ -21,7 +21,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libdw.so:devel/elfutils \
 		libelf.so:devel/elfutils
 
-USES=		cmake:outsource shebangfix python:build gettext-runtime
+USES=		cmake shebangfix python:build gettext-runtime
 
 # Remove -DPORTVERSION (and associated patch) when basing the port on an
 # official release

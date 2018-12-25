@@ -23,7 +23,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libodbc.so:databases/unixODBC \
 		libmariadb.so:databases/mariadb-connector-c
 
-USES=		cmake
+USES=		cmake:insource
 USE_LDCONFIG=	${PREFIX}/lib/mariadbconnector-odbc
 SITESDIR=	${PORTNAME}/${PKGNAMESUFFIX:S/^-//}-${PORTVERSION:S/.b$//}
 DOCSDIR=	${PREFIX}/share/doc/mysql

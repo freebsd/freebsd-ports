@@ -21,7 +21,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libpugixml.so:textproc/pugixml
 RUN_DEPENDS=	llvm-config60:devel/llvm60
 
-USES=		bison cmake:outsource compiler:c++11-lang ncurses python:build
+USES=		bison cmake compiler:c++11-lang ncurses python:build
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

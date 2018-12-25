@@ -22,7 +22,7 @@ PLIST_SUB=	SYSTEM_PROCESSOR=${SYSTEM_PROCESSOR}
 SYSTEM_PROCESSOR=	x86
 
 USE_GITHUB=	yes
-USES=		cmake iconv pkgconfig
+USES=		cmake:insource iconv pkgconfig
 
 XPI_DIR=	lib/xpi
 XPI_ID=		u2f4moz@prefiks.org

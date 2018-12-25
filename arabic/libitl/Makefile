@@ -12,7 +12,7 @@ COMMENT=	API abstraction to common Islamic calculations
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake pkgconfig
+USES=		cmake:insource pkgconfig
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 SLAVEDIRS=	databases/percona55-client
-USES=		bison cmake:noninja readline shebangfix
+USES=		bison cmake:insource,noninja readline shebangfix
 USE_CXXSTD=	gnu++98
 
 CXXFLAGS+=	${CPPFLAGS}

@@ -12,7 +12,7 @@ COMMENT=	Monte Carlo X-ray tracing package
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/lib/LGPL
 
-USES=		bison:build cmake:outsource
+USES=		bison:build cmake
 
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 

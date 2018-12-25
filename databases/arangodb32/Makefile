@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	"Only builds on amd64"
-USES=		gmake ssl cmake:outsource,noninja python:2.7 compiler
+USES=		gmake ssl cmake:noninja python:2.7 compiler
 USE_GITHUB=	yes
 
 CMAKE_ARGS=	-DUSE_JEMALLOC:BOOL=off \

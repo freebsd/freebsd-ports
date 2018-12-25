@@ -19,7 +19,7 @@ LIB_DEPENDS=	liblilv-0.so:audio/lilv \
 		libsord-0.so:devel/sord \
 		libsratom-0.so:audio/sratom
 
-USES=		cmake:outsource compiler:c++11-lib pkgconfig localbase
+USES=		cmake:insource compiler:c++11-lib pkgconfig localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenMusicKontrollers
 GH_TAGNAME=	07cae54

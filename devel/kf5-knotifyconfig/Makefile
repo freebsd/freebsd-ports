@@ -7,7 +7,7 @@ CATEGORIES=	devel kde kde-frameworks
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 configuration system for KNotify
 
-USES=		cmake:outsource compiler:c++11-lib gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	completion config coreaddons ecm i18n jobwidgets kio \
 		service widgetsaddons
 USE_QT=		buildtools_build core dbus gui network phonon4 \

@@ -18,7 +18,7 @@ BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Wdocument
 
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
-USES=		cmake:outsource
+USES=		cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	apple

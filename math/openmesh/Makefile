@@ -12,7 +12,7 @@ COMMENT=	Generic data structure for manipulating polygonal meshes
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource dos2unix gl qt:5
+USES=		cmake dos2unix gl qt:5
 DOS2UNIX_FILES=	src/OpenMesh/Tools/CMakeLists.txt
 USE_QT=		core concurrent gui help network opengl printsupport script scripttools sql svg x11extras xml xmlpatterns webkit widgets \
 		buildtools_build qmake_build uitools_build

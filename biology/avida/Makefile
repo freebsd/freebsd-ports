@@ -20,7 +20,7 @@ BROKEN_mips64=		invokes x86 assembler
 BROKEN_sparc64=		missing atomics implementation
 BROKEN_powerpc64=	fails to compile: sibling call optimization does not allow automatic multiple TOCs
 
-USES=		cmake:outsource ncurses
+USES=		cmake ncurses
 USE_CXXSTD=	gnu++98
 CMAKE_ARGS=	-DAPTO_UNIT_TESTS:BOOL=OFF \
 		-DAVD_UNIT_TESTS:BOOL=OFF \

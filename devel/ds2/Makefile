@@ -17,7 +17,7 @@ GH_TAGNAME=	52c45f3
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	the ptrace code only has an amd64 backend
 
-USES=		cmake compiler
+USES=		cmake:insource compiler
 
 PLIST_FILES=	bin/ds2
 

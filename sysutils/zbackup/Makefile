@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
 		liblzo2.so:archivers/lzo2
 
-USES=		alias cmake compiler:c++11-lang ssl
+USES=		alias cmake:insource compiler:c++11-lang ssl
 USE_CXXSTD=	c++11
 USE_GITHUB=	yes
 

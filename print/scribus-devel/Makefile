@@ -36,7 +36,7 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libharfbuzz.so:print/harfbuzz \
 		libicuuc.so:devel/icu
 
-USES=		cmake:outsource desktop-file-utils dos2unix jpeg pkgconfig python qt:5 shared-mime-info ssl tar:xz
+USES=		cmake desktop-file-utils dos2unix jpeg pkgconfig python qt:5 shared-mime-info ssl tar:xz
 USE_QT=		buildtools_build core declarative gui linguisttools_build network opengl \
 		printsupport qmake_build widgets xml
 USE_GNOME=	libxml2

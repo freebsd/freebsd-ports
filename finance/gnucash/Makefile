@@ -55,7 +55,7 @@ PYTHON_USES=		python:3.3+
 TEST_BUILD_DEPENDS=	${NONEXISTENT}:devel/googlemock:build \
 			gtest-config:devel/googletest
 
-USES=		cmake compiler:c++11-lib desktop-file-utils gettext-tools libtool localbase \
+USES=		cmake:insource compiler:c++11-lib desktop-file-utils gettext-tools libtool localbase \
 		perl5 pkgconfig shebangfix tar:bzip2
 USE_XORG=	x11
 USE_CXXSTD=	c++11

@@ -18,7 +18,7 @@ EXPIRATION_DATE=	2018-12-31
 
 RUN_DEPENDS=	mplayer:multimedia/mplayer
 
-USES=		cmake:outsource kde:4 qt:4 tar:xz
+USES=		cmake kde:4 qt:4 tar:xz
 USE_KDE=	automoc4 kdelibs
 USE_QT=		phonon moc_build qmake_build rcc_build uic_build
 

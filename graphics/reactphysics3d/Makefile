@@ -11,7 +11,7 @@ COMMENT=	C++ physics engine library in 3D
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	DanielChappuis
 GH_TAGNAME=	f3be5384997da7ddeccc526036985a80de660bae  # branch 'fix37'

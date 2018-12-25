@@ -11,7 +11,7 @@ COMMENT=	Dockable musicpd client applet for Window Maker
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake:insource
 USE_GITHUB=	yes
 GH_ACCOUNT=	yogsothoth
 USE_XORG=	xpm x11 xext

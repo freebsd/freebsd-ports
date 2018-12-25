@@ -21,7 +21,7 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libproj.so:graphics/proj \
 		libgps.so:astro/gpsd
 
-USES=		cmake desktop-file-utils qt:4
+USES=		cmake:insource desktop-file-utils qt:4
 USE_QT=		dbus gui opengl network sql xml linguist_build \
 		moc_build uic_build rcc_build qmake_build
 USE_GL=		glu

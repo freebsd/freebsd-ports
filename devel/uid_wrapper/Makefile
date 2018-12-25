@@ -10,7 +10,7 @@ COMMENT=		Wrapper to fake privilege separation
 
 LICENSE=		GPLv3
 
-USES=			cmake:outsource
+USES=			cmake
 USE_LDCONFIG=		yes
 
 CMAKE_ARGS=		-DMAN_INSTALL_DIR:PATH="${PREFIX}/man"

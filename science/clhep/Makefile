@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 
 WRKSRC=		${WRKDIR}/${PORTVERSION}/${PORTNAME:tu}
 
-USES=		cmake:outsource compiler:c++11-lang perl5 tar:tgz
+USES=		cmake compiler:c++11-lang perl5 tar:tgz
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 

@@ -16,7 +16,7 @@ LIB_DEPENDS=	libCombBLAS.so:math/combblas \
 		libomp.so:devel/openmp
 RUN_DEPENDS=	${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so.1:lang/gcc${GCC_DEFAULT} # because of the link flags induced by mpich
 
-USES=		cmake:outsource compiler:c++14-lang dos2unix localbase:ldflags
+USES=		cmake compiler:c++14-lang dos2unix localbase:ldflags
 DOS2UNIX_FILES=	CMakeLists.txt
 
 BB_ACCOUNT=	azadcse

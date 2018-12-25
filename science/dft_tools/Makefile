@@ -23,7 +23,7 @@ LIB_DEPENDS=	libcpp2py.so:devel/cpp2py \
 		libsz.so:science/szip \
 		libtriqs.so:science/triqs
 
-USES=		cmake:outsource,noninja fortran gettext-runtime python:-2.7
+USES=		cmake:noninja fortran gettext-runtime python:-2.7
 USE_GITHUB=	yes
 GH_ACCOUNT=	TRIQS
 

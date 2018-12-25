@@ -17,7 +17,7 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 		libphonon4qt5.so:multimedia/phonon@qt5
 
 GH_ACCOUNT=	HessiJames
-USES=		cmake:outsource compiler:c++11-lang kde:5 qt:5
+USES=		cmake compiler:c++11-lang kde:5 qt:5
 USE_GITHUB=	yes
 USE_QT=		dbus concurrent core buildtools_build gui network printsupport \
 		qmake_build widgets xml

@@ -13,7 +13,7 @@ COMMENT=	Library and tools for the MusicXML format
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		cmake:outsource compiler:c++11-lang
+USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
 USE_LDCONFIG=	yes

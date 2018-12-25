@@ -26,7 +26,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libopus.so:audio/opus \
 		libtoxcore.so:net-im/tox
 
-USES=		cmake:outsource compiler:c11 desktop-file-utils dos2unix \
+USES=		cmake compiler:c11 desktop-file-utils dos2unix \
 		openal pkgconfig
 USE_XORG=	ice sm x11 xext xrender
 CMAKE_OFF=	ENABLE_LTO

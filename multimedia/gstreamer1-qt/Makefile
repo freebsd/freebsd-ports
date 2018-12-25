@@ -19,7 +19,7 @@ FLAVOR?=	${FLAVORS:[1]}
 
 CONFLICTS_INSTALL=	gstreamer${PKGNAMESUFFIX}-*
 
-USES=		bison cmake:outsource gl gnome pathfix pkgconfig tar:xz
+USES=		bison cmake gl gnome pathfix pkgconfig tar:xz
 USE_GSTREAMER1=	yes
 
 USE_GL=		gl

@@ -15,7 +15,7 @@ LICENSE=	APACHE20
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libmpi.so:net/mpich
 
-USES=		cmake:outsource fortran
+USES=		cmake fortran
 USE_LDCONFIG=	yes
 
 LDFLAGS+=	${LOCALBASE}/lib/libboost_filesystem.so

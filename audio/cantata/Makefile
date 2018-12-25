@@ -12,7 +12,7 @@ COMMENT=		Graphical client for MPD using Qt5
 LICENSE=		GPLv3
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
-USES=			cmake:outsource cpe pkgconfig qt:5 shebangfix
+USES=			cmake cpe pkgconfig qt:5 shebangfix
 USE_GITHUB=		yes
 GH_ACCOUNT=		CDrummond
 

@@ -9,7 +9,7 @@ COMMENT=	KDE utility and user interface functions for accessing calendar
 
 LICENSE=	LGPL21
 
-USES=		cmake:outsource compiler:c++11-lib gettext grantlee:5 kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 qt:5 tar:xz
 USE_KDE=	codecs config coreaddons ecm i18n iconthemes kdelibs4support \
 		widgetsaddons
 # pim components

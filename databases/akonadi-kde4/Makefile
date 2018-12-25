@@ -21,7 +21,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 # Let process generate meaningful backtrace on core dump.
 BUILD_DEPENDS=	xsltproc:textproc/libxslt
 
-USES=		cmake:outsource kde:4 qt:4 shared-mime-info \
+USES=		cmake kde:4 qt:4 shared-mime-info \
 		compiler:c++11-lang pathfix tar:bzip2
 USE_KDE=	automoc4 soprano
 USE_QT=		corelib dbus gui network qtestlib_build sql xml \

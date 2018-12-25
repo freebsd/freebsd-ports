@@ -28,7 +28,7 @@ PORTDOCS=	*
 
 TEST_TARGET=	test
 
-USES=		cmake:outsource compiler:c++11-lib
+USES=		cmake compiler:c++11-lib
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	grzegorzmazur

@@ -20,7 +20,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libignition-math6.so:math/ignition-math
 
-USES=		cmake:outsource compiler:c++17-lang gnome pkgconfig
+USES=		cmake compiler:c++17-lang gnome pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

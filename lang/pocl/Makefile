@@ -24,7 +24,7 @@ RUN_DEPENDS=	llvm${LLVM_VERSION}>=0:devel/llvm${LLVM_VERSION}
 
 LLVM_VERSION=	${MESA_LLVM_VER:U40}
 
-USES=		cmake:outsource localbase:ldflags ncurses pkgconfig
+USES=		cmake localbase:ldflags ncurses pkgconfig
 USE_CXXSTD=	gnu++11
 USE_LDCONFIG=	yes
 

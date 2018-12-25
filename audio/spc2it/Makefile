@@ -11,7 +11,7 @@ COMMENT=	Convert SPC files to IT (Impulse Tracker) files
 
 LICENSE=	GPLv2
 
-USES=		cmake
+USES=		cmake:insource
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	uyjulian

@@ -12,7 +12,7 @@ COMMENT=	Support for Python plugins in Kate
 DEPRECATED=	KDE4 is EOL upstream
 EXPIRATION_DATE=	2018-12-31
 
-USES=		cmake:outsource,noninja kde:4 python:2.7 qt:4 tar:xz
+USES=		cmake:noninja kde:4 python:2.7 qt:4 tar:xz
 USE_KDE=	kdelibs automoc4 kate \
 		pykde4_build pykde4_run
 USE_QT=		gui webkit \

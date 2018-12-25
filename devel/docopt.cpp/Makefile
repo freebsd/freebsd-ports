@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
 
 TEST_DEPENDS=	python${PYTHON_DEFAULT}:lang/python${PYTHON_DEFAULT:S/.//}
 
-USES=		cmake:outsource compiler:c++11-lang
+USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	docopt
 USE_LDCONFIG=	yes

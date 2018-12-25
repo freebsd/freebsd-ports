@@ -15,7 +15,7 @@ LIB_DEPENDS=	libanalitza.so:math/analitza-kde4
 
 CMAKE_ARGS=	-DBUILD_mobile:BOOL=FALSE
 
-USES=		cmake:outsource kde:4 qt:4 tar:xz
+USES=		cmake kde:4 qt:4 tar:xz
 USE_GL=		glu
 USE_KDE=	kdelibs libkeduvocdocument automoc4
 USE_QT=		corelib declarative gui opengl \

@@ -10,7 +10,7 @@ COMMENT=	Headers for the Vulkan graphics API
 
 LICENSE=	APACHE20
 
-USES=		cmake:outsource
+USES=		cmake
 STRIP=		# nothing to strip
 
 USE_GITHUB=	yes

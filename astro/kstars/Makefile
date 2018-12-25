@@ -19,7 +19,7 @@ LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 BUILD_DEPENDS=	xplanet:astro/xplanet
 RUN_DEPENDS=	xplanet:astro/xplanet
 
-USES=		cmake:outsource compiler:c++11-lib eigen:3 gettext kde:5 \
+USES=		cmake compiler:c++11-lib eigen:3 gettext kde:5 \
 		pkgconfig qt:5 tar:xz
 USE_KDE=	attica auth bookmarks codecs completion config configwidgets\
 		coreaddons crash dbusaddons doctools ecm guiaddons i18n \

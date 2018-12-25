@@ -17,7 +17,7 @@ BROKEN_powerpc64=	fails to compile: ruby.h:1381: wrong number of arguments speci
 LIB_DEPENDS=	libqwt.so:x11-toolkits/qwt5 \
 		libqscintilla2_qt4.so:devel/qscintilla2
 
-USES=		cmake:outsource kde:4 qt:4 tar:xz
+USES=		cmake kde:4 qt:4 tar:xz
 USE_KDE=	smokeqt
 USE_QT=		corelib dbus declarative gui network phonon script webkit xml \
 		qmake_build moc_build uic_build rcc_build

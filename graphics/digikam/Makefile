@@ -30,7 +30,7 @@ LIB_DEPENDS=	libKF5KGeoMap.so:astro/libkgeomap \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		cmake:outsource compiler:c++11-lib eigen:3 jpeg kde:5 pkgconfig \
+USES=		cmake compiler:c++11-lib eigen:3 jpeg kde:5 pkgconfig \
 		qt:5 shebangfix tar:xz
 USE_GNOME=	glib20 libxml2 libxslt
 USE_KDE=	archive auth bookmarks calendarcore codecs completion config \

@@ -18,7 +18,7 @@ RUN_DEPENDS=	gringo:math/gringo \
 		clasp:math/clasp \
 		bash:shells/bash
 
-USES=		compiler:c++11-lang cmake:outsource python:run
+USES=		compiler:c++11-lang cmake python:run
 USE_GITHUB=	yes
 GH_ACCOUNT=	potassco
 

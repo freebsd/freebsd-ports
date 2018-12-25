@@ -17,7 +17,7 @@ LIB_DEPENDS=	libogg.so:audio/libogg \
 		libpng.so:graphics/png \
 		libvorbisfile.so:audio/libvorbis
 
-USES=		cmake compiler:c++11-lib dos2unix gl localbase:ldflags openal pkgconfig
+USES=		cmake:insource compiler:c++11-lib dos2unix gl localbase:ldflags openal pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	TurningWheel
 GH_PROJECT=	Barony

@@ -22,7 +22,7 @@ LIB_DEPENDS=	libkasten3controllers.so:devel/okteta \
 		libclang.so.${LLVM_VERSION:C/([1-9])([0-9])/\1/}:devel/llvm${LLVM_VERSION}
 RUN_DEPENDS=	gmake:devel/gmake
 
-USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
+USES=		cmake compiler:c++11-lib desktop-file-utils \
 		gettext grantlee:5 kde:5 qt:5 shared-mime-info shebangfix tar:xz
 USE_KDE=	archive attica auth bookmarks codecs completion config configwidgets \
 		coreaddons crash guiaddons emoticons i18n iconthemes init \

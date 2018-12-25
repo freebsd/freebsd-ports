@@ -19,7 +19,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libtcmalloc.so:devel/google-perftools \
 		libxc.so:science/libxc
 
-USES=		cmake:outsource compiler:c++14-lang fortran localbase:ldflags python:build
+USES=		cmake compiler:c++14-lang fortran localbase:ldflags python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	m-a-d-n-e-s-s
 GH_TAGNAME=	ebb3fd7

@@ -12,7 +12,7 @@ COMMENT=	Character selector for KDE
 DEPRECATED=	KDE4 is EOL upstream
 EXPIRATION_DATE=	2018-12-31
 
-USES=		cmake:outsource kde:4 qt:4 tar:xz
+USES=		cmake kde:4 qt:4 tar:xz
 USE_KDE=	automoc4 kdelibs
 USE_QT=		qmake_build moc_build rcc_build uic_build
 

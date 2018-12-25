@@ -11,7 +11,7 @@ COMMENT=	Electronic Arts Standard Template Library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource compiler:c++14-lang
+USES=		cmake compiler:c++14-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	electronicarts
 GH_PROJECT=	${PORTNAME:tu}

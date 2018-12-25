@@ -15,7 +15,7 @@ EXPIRATION_DATE=	2018-12-31
 LIB_DEPENDS=	libqscintilla2_qt4.so:devel/qscintilla2 \
 		libqwt.so:x11-toolkits/qwt5
 
-USES=		cmake:outsource kde:4 perl5 qt:4 tar:xz
+USES=		cmake kde:4 perl5 qt:4 tar:xz
 USE_KDE=	smokeqt qimageblitz
 USE_QT=		corelib dbus gui network xml \
 		qmake_build moc_build uic_build rcc_build

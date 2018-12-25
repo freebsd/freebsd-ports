@@ -17,7 +17,7 @@ EXPIRATION_DATE=	2018-12-31
 LIB_DEPENDS=	libdiscid.so:audio/libdiscid \
 		libmusicbrainz5.so:audio/libmusicbrainz5
 
-USES=		cmake:outsource kde:4 qt:4 tar:xz
+USES=		cmake kde:4 qt:4 tar:xz
 USE_KDE=	kdelibs automoc4
 USE_QT=		phonon moc_build qmake_build rcc_build uic_build
 

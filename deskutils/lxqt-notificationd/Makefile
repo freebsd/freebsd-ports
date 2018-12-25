@@ -12,7 +12,7 @@ COMMENT=	LXQt notification daemon
 
 LICENSE=	LGPL21+
 
-USES=	cmake:outsource compiler:c++11-lib gettext kde:5 lxqt qt:5 \
+USES=	cmake compiler:c++11-lib gettext kde:5 lxqt qt:5 \
 	pkgconfig tar:xz
 USE_QT=	buildtools_build qmake_build dbus core gui \
 	linguisttools svg widgets x11extras xml

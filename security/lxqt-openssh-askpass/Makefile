@@ -11,7 +11,7 @@ COMMENT=	LXQt GUI dialog for OpenSSH authentication
 
 LICENSE=	LGPL21+
 
-USES=	cmake:outsource gettext-runtime kde:5 lxqt pkgconfig tar:xz qt:5
+USES=	cmake gettext-runtime kde:5 lxqt pkgconfig tar:xz qt:5
 USE_QT=	buildtools_build qmake_build core dbus gui linguisttools \
 	svg widgets x11extras xml
 USE_KDE=	windowsystem

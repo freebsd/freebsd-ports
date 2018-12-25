@@ -22,7 +22,7 @@ USE_GITHUB=     yes
 GH_ACCOUNT=     Andrettin
 GH_PROJECT=     Wyrmgus
 
-USES=		compiler:c++11-lib cmake:outsource lua:51 pkgconfig sqlite
+USES=		compiler:c++11-lib cmake lua:51 pkgconfig sqlite
 USE_SDL=	sdl
 CMAKE_ARGS=	-DGAMEDIR:STRING="bin" \
 		-DTOLUA++_APP:STRING="tolua++-${LUA_VER}" \

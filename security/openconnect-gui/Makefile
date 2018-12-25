@@ -21,7 +21,7 @@ RUN_DEPENDS=	openconnect:security/openconnect \
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:C/-gui//}
 
-USES=		cmake pkgconfig qt:5
+USES=		cmake:insource pkgconfig qt:5
 USE_QT=		buildtools_build concurrent core gui network qmake_build widgets
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=Release
 PLIST_FILES=	bin/openconnect-gui

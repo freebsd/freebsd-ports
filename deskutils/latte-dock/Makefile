@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libxcb-util.so:x11/xcb-util
 
-USES=		cmake:outsource gettext kde:5 qt:5 tar:xz
+USES=		cmake gettext kde:5 qt:5 tar:xz
 USE_KDE=	activities archive attica auth codecs config configwidgets \
 		coreaddons crash dbusaddons globalaccel i18n iconthemes \
 		kdeclarative newstuff notifications package plasma-framework service \

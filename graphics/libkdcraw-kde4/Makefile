@@ -19,7 +19,7 @@ LIB_DEPENDS=	liblcms.so:graphics/lcms \
 CMAKE_ARGS+=	-DWITH_OpenMP:BOOL=False \
 		-DENABLE_RAWSPEED=True
 
-USES=		cmake:outsource jpeg kde:4 pkgconfig qt:4 tar:xz
+USES=		cmake jpeg kde:4 pkgconfig qt:4 tar:xz
 USE_KDE=	automoc4 kdelibs
 USE_QT=		corelib gui moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes

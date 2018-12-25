@@ -17,7 +17,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 USE_GITHUB=	yes
 GH_ACCOUNT=	luceneplusplus
 GH_PROJECT=	LucenePlusPlus
-USES=		cmake:outsource compiler:c++11-lang
+USES=		cmake compiler:c++11-lang
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>

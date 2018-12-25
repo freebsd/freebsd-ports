@@ -13,13 +13,15 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libuv.so:devel/libuv
 
-USES=		cmake:outsource compiler:c++11-lang pkgconfig pathfix ssl
+USES=		cmake compiler:c++11-lang pkgconfig pathfix ssl
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	datastax
 GH_PROJECT=	cpp-driver
 
-CMAKE_ARGS=	-DCMAKE_INSTALL_LIBDIR:STRING=lib -DCASS_BUILD_STATIC:BOOL=ON
+USES=		cmake pkgconfig pathfix ssl
+CMAKE_ARGS=	-DCMAKE_INSTALL_LIBDIR:STRING=lib \
+		-DCASS_BUILD_STATIC:BOOL=ON
 
 PLIST_FILES=	include/cassandra.h \
 		lib/libcassandra.so \

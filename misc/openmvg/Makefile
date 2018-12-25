@@ -18,7 +18,7 @@ LIB_DEPENDS=	libflann_cpp.so:math/flann \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		cmake:outsource eigen:3 jpeg qt:5
+USES=		cmake eigen:3 jpeg qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	openMVG
 GH_PROJECT=	openMVG

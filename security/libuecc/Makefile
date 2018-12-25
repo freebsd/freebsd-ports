@@ -17,6 +17,6 @@ LIB_DEPENDS=	libsodium.so:security/libsodium
 
 USE_LDCONFIG=	yes
 
-USES=		cmake:outsource pkgconfig tar
+USES=		cmake pkgconfig tar
 
 .include <bsd.port.mk>

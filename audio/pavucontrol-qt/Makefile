@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
-USES=	cmake:outsource compiler:c++11-lang gettext-runtime localbase:ldflags qt:5 \
+USES=	cmake compiler:c++11-lang gettext-runtime localbase:ldflags qt:5 \
 	lxqt pkgconfig tar:xz gnome
 USE_QT=	buildtools_build qmake_build core dbus gui linguisttools \
 	widgets

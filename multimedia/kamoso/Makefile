@@ -9,7 +9,7 @@ COMMENT=	Application to take pictures and videos out of your webcam
 
 LICENSE=	GPLv2
 
-USES=		cmake:outsource gettext kde:5 pkgconfig qt:5 tar:xz
+USES=		cmake gettext kde:5 pkgconfig qt:5 tar:xz
 USE_GNOME=	glib20
 USE_GSTREAMER1=	yes
 USE_KDE=	auth bookmarks codecs completion config configwidgets \

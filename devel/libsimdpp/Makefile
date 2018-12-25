@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
 PORTSCOUT=	limit:^[v1-9]
 
-USES=		cmake:outsource
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	p12tic
 NO_BUILD=	yes

@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
-USES=		cmake:outsource
+USES=		cmake
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR:PATH="man"
 
 PLIST_FILES=	bin/subnetcalc \

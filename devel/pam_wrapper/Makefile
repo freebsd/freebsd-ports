@@ -13,7 +13,7 @@ LICENSE=		GPLv3
 
 EXTRA_PATCHES=		${PATCHDIR}/python-detection.patch:-p1
 
-USES=			cmake:outsource python:2.7+
+USES=			cmake python:2.7+
 USE_LDCONFIG=		yes
 
 CMAKE_ARGS=		-DMAN_INSTALL_DIR:PATH="${PREFIX}/man"

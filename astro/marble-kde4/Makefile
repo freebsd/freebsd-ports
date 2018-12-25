@@ -13,7 +13,7 @@ LIB_DEPENDS=	libquazip.so:archivers/quazip@qt4
 DEPRECATED=	KDE4 is EOL upstream
 EXPIRATION_DATE=	2018-12-31
 
-USES=		cmake:outsource kde:4 qt:4 shared-mime-info tar:xz
+USES=		cmake kde:4 qt:4 shared-mime-info tar:xz
 USE_KDE=	kdelibs automoc4
 USE_QT=		corelib dbus declarative designer_build gui network phonon \
 		qtestlib script sql svg webkit xml \

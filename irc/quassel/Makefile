@@ -13,7 +13,7 @@ COMMENT?=	Qt 5 based distributed IRC client (client and monolithic binary)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:outsource compiler:c++11-lib cpe pkgconfig qt:5 tar:bzip2
+USES=		cmake compiler:c++11-lib cpe pkgconfig qt:5 tar:bzip2
 
 CPE_VENDOR=	quassel-irc
 CPE_PRODUCT=	quassel_irc

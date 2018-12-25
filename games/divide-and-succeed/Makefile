@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_powerpc64=	fails to compile: Polygone.h: 'vector' was not declared in this scope
 
-USES=		cmake
+USES=		cmake:insource
 USE_SDL=	sdl ttf
 DATADIR=	${PREFIX}/share/divideandsucceed
 INSTALLS_ICONS=	yes

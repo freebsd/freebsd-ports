@@ -20,7 +20,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libwebp.so:graphics/webp \
 		libhdf5.so:science/hdf5
 
-USES=		cmake:outsource jpeg compiler:c++11-lib
+USES=		cmake jpeg compiler:c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenImageIO
 GH_PROJECT=	oiio

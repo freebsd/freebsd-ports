@@ -13,7 +13,7 @@ COMMENT=	Open source re-implementation of Caesar III
 
 LICENSE=	GPLv3
 
-USES=		cmake:outsource
+USES=		cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bvschaik

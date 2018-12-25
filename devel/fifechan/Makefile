@@ -12,7 +12,7 @@ COMMENT=	Small, efficient C++ GUI library designed for games
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=	cmake:outsource
+USES=	cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fifengine

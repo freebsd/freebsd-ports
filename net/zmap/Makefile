@@ -19,7 +19,7 @@ LIB_DEPENDS=	libdnet.so:net/libdnet \
 
 USE_GITHUB=	yes
 
-USES=		cmake pkgconfig
+USES=		cmake:insource pkgconfig
 
 MANPAGE=	zblacklist.1 zmap.1 ztee.1
 

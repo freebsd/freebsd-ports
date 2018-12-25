@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libleveldb.so:databases/leveldb
 
 DATE=		20151214
-USES=		cmake tar:bzip2
+USES=		cmake:insource tar:bzip2
 
 CONFLICTS=	tarantool-c
 

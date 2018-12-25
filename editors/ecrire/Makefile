@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libefl.so:devel/efl
 
-USES=		cmake:outsource desktop-file-utils pkgconfig
+USES=		cmake desktop-file-utils pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	Obsidian-StudiosInc
 

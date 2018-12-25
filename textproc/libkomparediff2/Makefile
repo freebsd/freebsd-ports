@@ -7,7 +7,7 @@ CATEGORIES=	textproc kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library to compare files and strings
 
-USES=		cmake:outsource compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs config configwidgets coreaddons ecm i18n kio parts \
 		service widgetsaddons xmlgui
 USE_QT=		core dbus gui widgets xml \

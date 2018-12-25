@@ -37,7 +37,7 @@ JAVA_CMAKE_BOOL=	WITH_JAVA
 CONFLICTS=	xqilla-[0-9]*
 CONFLICTS_BUILD=	bison
 
-USES=		cmake:outsource compiler:c++11-lib libedit
+USES=		cmake compiler:c++11-lib libedit
 USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
 USE_CXXSTD=	c++11

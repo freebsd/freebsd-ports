@@ -24,7 +24,7 @@ BROKEN_powerpc64=	fails to compile: uses x86 assembly
 USE_GITHUB=	yes
 GH_ACCOUNT=	yvt
 
-USES=		cmake compiler:c++11-lib desktop-file-utils
+USES=		cmake:insource compiler:c++11-lib desktop-file-utils
 CMAKE_ARGS=	-DOPENSPADES_RESOURCES=OFF \
 		-DOPENSPADES_INSTALL_MAN="man/man6" \
 		-DOPENSPADES_INSTALL_BINARY="bin" \

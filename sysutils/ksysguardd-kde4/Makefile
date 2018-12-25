@@ -14,7 +14,7 @@ DEPRECATED=	KDE4 is EOL upstream
 EXPIRATION_DATE=	2018-12-31
 
 DISTINFO_FILE=	${.CURDIR:H:H}/x11/kde-workspace-kde4/distinfo
-USES=		cmake kde:4 tar:xz
+USES=		cmake:insource kde:4 tar:xz
 CMAKE_ARGS+=	-DBIN_INSTALL_DIR:STRING="${PREFIX}/bin" \
 		-DSYSCONF_INSTALL_DIR:STRING="${PREFIX}/etc"
 

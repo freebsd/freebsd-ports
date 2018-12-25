@@ -14,7 +14,7 @@ EXPIRATION_DATE=	2018-12-31
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
 
-USES=		cmake:outsource kde:4 qt:4 tar:xz
+USES=		cmake kde:4 qt:4 tar:xz
 USE_KDE=	automoc4 kdelibs
 USE_QT=		xml qmake_build moc_build rcc_build uic_build
 

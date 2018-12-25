@@ -23,7 +23,7 @@ LIB_DEPENDS=	libpgmath.so:math/libpgmath
 OPTIONS_DEFINE=	TESTS
 TESTS_DESC=	build unit tests for flang
 
-USES=		cmake:outsource,noninja compiler:c++11-lib libedit perl5 tar:xz \
+USES=		cmake:noninja compiler:c++11-lib libedit perl5 tar:xz \
 		shebangfix
 _USES_PYTHON?=	python:build
 USES+=		${_USES_PYTHON}

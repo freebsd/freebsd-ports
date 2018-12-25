@@ -12,7 +12,7 @@ COMMENT=	Answer set solver for (extended) normal logic programs
 
 BROKEN_sparc64=	Fails to build: internal compiler error
 
-USES=	cmake:outsource
+USES=	cmake
 
 PLIST_FILES=	bin/${PORTNAME}
 

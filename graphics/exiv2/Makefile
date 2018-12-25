@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-USES=		cmake:outsource compiler:c++11-lang cpe gettext iconv pathfix localbase:ldflags
+USES=		cmake compiler:c++11-lang cpe gettext iconv pathfix localbase:ldflags
 USE_LDCONFIG=	yes
 
 LDFLAGS+=	-lintl

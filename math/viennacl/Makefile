@@ -18,6 +18,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/CL/opencl.h:devel/opencl
 LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
 RUN_DEPENDS=	${LOCALBASE}/include/CL/opencl.h:devel/opencl
 
-USES=		cmake:outsource compiler:openmp localbase
+USES=		cmake compiler:openmp localbase
 
 .include <bsd.port.mk>

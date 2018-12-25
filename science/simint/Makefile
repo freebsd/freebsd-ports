@@ -12,7 +12,7 @@ COMMENT=	Obara-Saika (OS) method of calculating electron repulsion integrals
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource tar:bz2
+USES=		cmake tar:bz2
 USE_LDCONFIG=	yes
 
 OPTIONS_SINGLE=		VECTOR

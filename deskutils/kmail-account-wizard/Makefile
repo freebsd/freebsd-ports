@@ -13,7 +13,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpgmepp.so:security/gpgme-cpp \
 		libqgpgme.so:security/gpgme-qt5
 
-USES=		cmake:outsource compiler:c++11-lib gettext  kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lib gettext  kde:5 qt:5 tar:xz
 USE_KDE=	attica auth codecs config configwidgets coreaddons crash \
 		dbusaddons ecm i18n itemmodels itemviews kcmutils kio kross \
 		newstuff notifications notifyconfig service texteditor wallet \

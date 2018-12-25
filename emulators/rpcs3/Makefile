@@ -36,7 +36,7 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-27-g9220f5e:hidapi/3rdparty/hidapi \
 		USCiLab:cereal:v1.2.0:cereal/3rdparty/cereal \
 		zeux:pugixml:v1.9:pugixml/3rdparty/pugixml
 
-USES=		cmake:outsource compiler:c++17-lang iconv:wchar_t localbase:ldflags \
+USES=		cmake compiler:c++17-lang iconv:wchar_t localbase:ldflags \
 		openal:soft pkgconfig qt:5
 USE_GL=		gl glew
 USE_QT=		qmake_build buildtools_build core dbus declarative gui network widgets

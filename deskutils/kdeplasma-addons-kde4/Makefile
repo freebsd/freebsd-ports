@@ -18,7 +18,7 @@ CONFLICTS_INSTALL=	plasma-applet-icontasks-0.[89].*
 DEPRECATED=	KDE4 is EOL upstream
 EXPIRATION_DATE=	2018-12-31
 
-USES=		cmake:outsource eigen:2 kde:4 pkgconfig qt:4 shared-mime-info tar:xz
+USES=		cmake eigen:2 kde:4 pkgconfig qt:4 shared-mime-info tar:xz
 USE_KDE=	kdelibs libkexiv2 pimlibs workspace \
 		akonadi attica automoc4 qimageblitz soprano
 USE_QT=		corelib dbus declarative gui network script sql webkit \

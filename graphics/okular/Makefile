@@ -23,7 +23,7 @@ LIB_DEPENDS=	libchm.so:misc/chmlib \
 		libtiff.so:graphics/tiff \
 		libzip.so:archivers/libzip
 
-USES=		cmake:outsource compiler:c++11-lib desktop-file-utils \
+USES=		cmake compiler:c++11-lib desktop-file-utils \
 		gettext jpeg kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	activities archive auth bookmarks codecs completion config \
 		configwidgets coreaddons dbusaddons ecm emoticons i18n \

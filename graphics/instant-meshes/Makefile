@@ -17,7 +17,7 @@ LIB_DEPENDS=	libglfw.so:graphics/glfw \
 		libtbb.so:devel/tbb
 RUN_DEPENDS=	zenity:x11/zenity
 
-USES=		cmake:outsource compiler:c++14-lang eigen:3 localbase:ldflags pkgconfig
+USES=		cmake compiler:c++14-lang eigen:3 localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	wjakob
 GH_TUPLE=	wjakob:nanogui:2a61f03:nanogui/ext/nanogui \

@@ -28,7 +28,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 
 PORTSCOUT=	limit:[0-9]\..* # not v.220 and similar
 
-USES=		cmake:outsource compiler:c++11-lang jpeg pkgconfig
+USES=		cmake compiler:c++11-lang jpeg pkgconfig
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_LIB_STATIC

@@ -28,7 +28,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libpng16.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		cmake:outsource gnome jpeg
+USES=		cmake gnome jpeg
 USE_GITHUB=	yes
 GH_ACCOUNT=	YafaRay
 GH_PROJECT=	Core

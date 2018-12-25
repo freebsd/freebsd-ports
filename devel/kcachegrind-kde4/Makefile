@@ -12,7 +12,7 @@ COMMENT=	Profiler frontend for KDE
 DEPRECATED=	KDE4 is EOL upstream
 EXPIRATION_DATE=	2018-12-31
 
-USES=		cmake:outsource kde:4 python:run qt:4 tar:xz shebangfix
+USES=		cmake kde:4 python:run qt:4 tar:xz shebangfix
 USE_KDE=	kdelibs automoc4
 USE_QT=		moc_build qmake_build rcc_build uic_build \
 		corelib dbus gui

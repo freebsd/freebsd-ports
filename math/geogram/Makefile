@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/doc/devkit/license.dox
 
 LIB_DEPENDS=	libglfw.so:graphics/glfw
 
-USES=		cmake:outsource gl localbase:ldflags
+USES=		cmake gl localbase:ldflags
 USE_XORG=	x11 xcursor xi xinerama xrandr xxf86vm
 USE_GL=		gl glu
 USE_LDCONFIG=	yes

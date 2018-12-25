@@ -35,7 +35,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libv4l2.so:multimedia/libv4l \
 		libx264.so:multimedia/libx264
 
-USES=		cmake:outsource compiler:c++11-lib lua pkgconfig python:3.4+ qt:5
+USES=		cmake compiler:c++11-lib lua pkgconfig python:3.4+ qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	obsproject
 USE_QT=		core gui widgets x11extras buildtools_build imageformats_run qmake_build

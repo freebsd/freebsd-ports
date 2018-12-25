@@ -117,7 +117,7 @@ LICENSE?=	GPLv2
 USES+=		qt:4 tar:bzip2
 
 .if !defined(NO_BUILD)
-USES+=		cmake:noninja kde:4
+USES+=		cmake:insource,noninja kde:4
 USE_KDE+=	automoc4 kdelibs
 USE_QT+=	qmake_build moc_build rcc_build uic_build
 

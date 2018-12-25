@@ -21,7 +21,7 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 
 CONFLICTS?=	${PORTNAME:S/${OPENVAS_VER}/9/}-*
 
-USES=		cmake:outsource gettext gnome pkgconfig
+USES=		cmake gettext gnome pkgconfig
 USE_GNOME=	glib20 libxml2 libxslt
 USE_RC_SUBR=	gsad
 ETCDIR=		${PREFIX}/etc/openvas

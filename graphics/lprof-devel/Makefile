@@ -19,7 +19,7 @@ LIB_DEPENDS=	liblcms.so:graphics/lcms \
 		libtiff.so:graphics/tiff \
 		libvigraimpex.so:graphics/vigra
 
-USES=		cmake compiler:c++11-lang desktop-file-utils jpeg qt:4 tar:bzip2
+USES=		cmake:insource compiler:c++11-lang desktop-file-utils jpeg qt:4 tar:bzip2
 USE_XORG=	x11 xext sm ice xxf86vm
 USE_QT=		corelib gui qt3support svg assistantclient \
 		linguisttools_build qmake_build moc_build uic_build rcc_build

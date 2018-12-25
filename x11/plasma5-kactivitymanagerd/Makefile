@@ -8,7 +8,7 @@ CATEGORIES=	x11 kde kde-plasma
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	System service to manage user's activities, track the usage patterns
 
-USES=		cmake:outsource compiler:c++11-lib gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons ecm \
 		globalaccel i18n kio service widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus gui network sql widgets xml \

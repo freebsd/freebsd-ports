@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/gmp.h:math/gmp \
 RUN_DEPENDS=	${LOCALBASE}/include/gmp.h:math/gmp \
 		${LOCALBASE}/include/mpfr.h:math/mpfr
 
-USES=		cmake:outsource
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	bluescarni
 NO_BUILD=	yes

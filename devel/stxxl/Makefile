@@ -12,7 +12,7 @@ COMMENT=	Standard Template Library for Extra Large Data Sets
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
-USES=		cmake:outsource
+USES=		cmake
 CMAKE_ARGS=	-DINSTALL_PKGCONFIG_DIR:STRING="libdata/pkgconfig" \
 		-DUSE_GNU_PARALLEL:BOOL=OFF # may be enabled for future versions of clang with openmp support
 

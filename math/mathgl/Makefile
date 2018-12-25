@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libpng.so:graphics/png \
 		libsz.so:science/szip
 
-USES=		cmake:outsource jpeg gettext-runtime python:2.7
+USES=		cmake jpeg gettext-runtime python:2.7
 USE_GL=		gl glu glut
 USE_XORG=	xi xmu
 USE_LDCONFIG=	yes

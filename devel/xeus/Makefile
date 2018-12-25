@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcryptopp.so:security/cryptopp \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libzmq.so:net/libzmq4
 
-USES=		cmake:outsource compiler:c++14-lang localbase:ldflags pkgconfig
+USES=		cmake compiler:c++14-lang localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	QuantStack
 USE_LDCONFIG=	yes

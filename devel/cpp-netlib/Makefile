@@ -17,7 +17,7 @@ LICENSE_FILE=		${WRKSRC}/LICENSE_1_0.txt
 BUILD_DEPENDS=		boost-libs>0:devel/boost-libs \
 					asio>0:net/asio
 
-USES=			cmake:outsource compiler:c++11-lang
+USES=			cmake compiler:c++11-lang
 USE_LDCONFIG=		yes
 CFLAGS+=	-fPIC
 CMAKE_ARGS+=		-DCPP-NETLIB_BUILD_EXAMPLES=OFF \

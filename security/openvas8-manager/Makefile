@@ -24,7 +24,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 CONFLICTS?=	${PORTNAME:S/${OPENVAS_VER}/9/}-*
 
-USES=		cmake:outsource gnome pkgconfig
+USES=		cmake gnome pkgconfig
 USE_GNOME=	glib20 libxslt:run
 PGSQL_USES=	pgsql
 SQLITE3_USES=	sqlite

@@ -19,7 +19,7 @@ ONLY_FOR_ARCHS=	amd64
 BUILD_DEPENDS=	llvm60>=0:devel/llvm60
 RUN_DEPENDS=	llvm60>=0:devel/llvm60
 
-USES=		cmake:outsource compiler:c++11-lib libedit tar:xz perl5 \
+USES=		cmake compiler:c++11-lib libedit tar:xz perl5 \
 		python shebangfix
 USE_LDCONFIG=	${PREFIX}/flang/lib
 USE_GNOME=	libxml2

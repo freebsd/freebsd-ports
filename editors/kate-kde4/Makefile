@@ -14,7 +14,7 @@ EXPIRATION_DATE=	2018-12-31
 
 LIB_DEPENDS=	libqjson.so:devel/qjson@qt4
 
-USES=		cmake:outsource gettext kde:4 perl5 qt:4 tar:xz
+USES=		cmake gettext kde:4 perl5 qt:4 tar:xz
 USE_KDE=	kdelibs automoc4 kactivities
 USE_PERL5=	build
 USE_QT=		dbus gui script sql webkit xml \

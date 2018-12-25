@@ -23,7 +23,7 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libopenal.so:audio/openal-soft \
 		libopus.so:audio/opus
 
-USES=		compiler:c++17-lang cmake:noninja,outsource desktop-file-utils gmake pkgconfig python:2.7,build qt:5 ssl
+USES=		compiler:c++17-lang cmake:noninja desktop-file-utils gmake pkgconfig python:2.7,build qt:5 ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	telegramdesktop

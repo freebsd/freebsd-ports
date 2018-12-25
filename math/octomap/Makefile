@@ -15,7 +15,7 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/octovis/LICENSE.txt
 
 BUILD_DEPENDS=		libQGLViewer>0:graphics/libQGLViewer # otherwise it doesn't build, see https://github.com/OctoMap/octomap/issues/225
 
-USES=		cmake:outsource localbase:ldflags
+USES=		cmake localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	OctoMap
 USE_LDCONFIG=	yes

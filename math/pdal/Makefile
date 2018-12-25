@@ -21,7 +21,7 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		liblaszip.so:archivers/laszip \
 		libjsoncpp.so:devel/jsoncpp
 
-USES=		cmake:outsource compiler:c++11-lib pathfix pkgconfig
+USES=		cmake compiler:c++11-lib pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}

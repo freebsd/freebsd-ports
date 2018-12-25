@@ -19,7 +19,7 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/buffer_concepts.hpp:devel/boost-libs
 
-USES=		cmake:outsource kde:4 pathfix qt:4 tar:xz
+USES=		cmake kde:4 pathfix qt:4 tar:xz
 USE_KDE=	kdelibs automoc4 marble
 USE_LDCONFIG=	yes
 USE_QT=		network phonon xml moc_build qmake_build rcc_build uic_build

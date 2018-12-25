@@ -24,7 +24,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 DATADIR=	${DMDIR}/${PORTNAME}
 
-USES=		cmake:outsource	gettext jpeg openal pkgconfig
+USES=		cmake	gettext jpeg openal pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	coelckers

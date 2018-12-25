@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libsz.so:science/szip
 
-USES=		blaslapack:openblas cmake:outsource fortran
+USES=		blaslapack:openblas cmake fortran
 USE_GITHUB=	yes
 GH_ACCOUNT=	SebWouters
 USE_LDCONFIG=	yes

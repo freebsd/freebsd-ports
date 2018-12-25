@@ -26,7 +26,7 @@ LIB_DEPENDS=		libtbb.so:devel/tbb \
 			libboost_regex.so:devel/boost-libs \
 			libexpat.so:textproc/expat2
 
-USES=			cmake:outsource lua:53 compiler:c++14-lang
+USES=			cmake lua:53 compiler:c++14-lang
 USE_GITHUB=		yes
 GH_ACCOUNT=		Project-OSRM
 USE_LDCONFIG=		yes

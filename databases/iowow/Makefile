@@ -12,7 +12,7 @@ COMMENT=	Persistent key-value database engine
 
 LICENSE=	MIT
 
-USES=		cmake:outsource compiler:c11
+USES=		cmake compiler:c11
 USE_GITHUB=	yes
 GH_ACCOUNT=	Softmotions
 USE_LDCONFIG=	yes

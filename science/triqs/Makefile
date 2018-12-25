@@ -28,7 +28,7 @@ RUN_DEPENDS=	${PYNUMPY}
 
 PORTSCOUT=	limit:^[0-9]+\.[0-9].*$$
 
-USES=		cmake:outsource,noninja fortran gettext-runtime python:2.7 # python:2.7 matches that in devel/cpp2py
+USES=		cmake:noninja fortran gettext-runtime python:2.7 # python:2.7 matches that in devel/cpp2py
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}
 USE_LDCONFIG=	yes

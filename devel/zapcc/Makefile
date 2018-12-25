@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 BUILD_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:outsource libedit python:3.4+ shebangfix
+USES=		cmake libedit python:3.4+ shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	yrnkrn
 GH_PROJECT=	zapcc

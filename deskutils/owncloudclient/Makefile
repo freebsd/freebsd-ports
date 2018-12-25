@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libqt5keychain.so:security/qtkeychain@qt5
 
-USES=		cmake:outsource,noninja compiler:c++11-lib gmake iconv kde:5 \
+USES=		cmake:noninja compiler:c++11-lib gmake iconv kde:5 \
 		localbase:ldflags pkgconfig qt:5 sqlite
 USE_QT=		buildtools_build concurrent core dbus gui linguist_build network \
 		qmake_build sql webkit widgets xml

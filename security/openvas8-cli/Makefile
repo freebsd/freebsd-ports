@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls \
 CONFLICTS?=	${PORTNAME:S/${OPENVAS_VER}/9/}-*
 
 CFLAGS+=	-Wno-missing-field-initializers
-USES=		cmake:outsource gnome pkgconfig shebangfix
+USES=		cmake gnome pkgconfig shebangfix
 SHEBANG_FILES=	dialog/omp-dialog
 USE_GNOME=	glib20 libxslt:run
 

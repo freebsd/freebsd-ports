@@ -16,7 +16,7 @@ LIB_DEPENDS=	libglfw.so:graphics/glfw \
 		libjsoncpp.so:devel/jsoncpp \
 		libpng16.so:graphics/png
 
-USES=		cmake:outsource compiler:c++14-lang eigen:3 jpeg localbase:ldflags pkgconfig
+USES=		cmake compiler:c++14-lang eigen:3 jpeg localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	IntelVCL
 USE_GL=		gl glew glu

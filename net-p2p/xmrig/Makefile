@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_powerpc64=	fails to configure: Target "xmrig" requires the language dialect "CXX11", but CMake does not know the compile flags to use to enable it.
 
-USES=		cmake:outsource ssl
+USES=		cmake ssl
 USE_GITHUB=	yes
 USE_RC_SUBR=	${PORTNAME}
 

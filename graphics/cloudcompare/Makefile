@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 
 BROKEN_aarch64=		fails to compile: mmintrin.h:47:5: use of undeclared identifier '__builtin_ia32_emms'; did you mean '__builtin_isless'?
 
-USES=		cmake:outsource localbase:ldflags qt:5
+USES=		cmake localbase:ldflags qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	CloudCompare
 GH_PROJECT=	${GH_ACCOUNT}
@@ -59,7 +59,7 @@ PLUGINS_CMAKE_BOOL=	INSTALL_QANIMATION_PLUGIN INSTALL_QBLUR_PLUGIN INSTALL_QBROO
 			INSTALL_QSRA_PLUGIN INSTALL_QSSAO_PLUGIN # plugins requiring rare external libs are left out, TODO maybe add some of them?
 PLUGINS_CMAKE_ON=	-DEIGEN_ROOT_DIR:BOOL=${LOCALBASE}/include/eigen3
 PLUGINS_CXXFLAGS=	-Wno-narrowing
-PLUGINS_CXXFLAGS+=	-DEIGEN_DONT_PARALLELIZE # OpenMP is broken in cmake, see bug#223678
+PLUGINS_CXXFLAGS+=	-DEIGEN_DONT_PARALLELIZE # OpenMP is broken in cmake: see bug#223678
 PLUGINS_USE=		XORG=ice,sm,x11,xext,xt GL=gl,glu
 PLUGINS_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libexpat.so:textproc/expat2 \

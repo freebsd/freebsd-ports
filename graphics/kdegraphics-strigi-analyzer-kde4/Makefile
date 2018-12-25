@@ -14,7 +14,7 @@ EXPIRATION_DATE=	2018-12-31
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff
 
-USES=		cmake:outsource kde:4 qt:4 tar:xz
+USES=		cmake kde:4 qt:4 tar:xz
 USE_KDE=	kdelibs automoc4 strigi
 USE_QT=		moc_build qmake_build rcc_build uic_build
 

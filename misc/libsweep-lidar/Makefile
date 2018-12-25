@@ -13,7 +13,7 @@ LICENSE_FILE=		${WRKSRC}/LICENSE
 
 BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Weverything"
 
-USES=			cmake:outsource
+USES=			cmake
 USE_GITHUB=		yes
 GH_ACCOUNT=		scanse
 GH_PROJECT=		sweep-sdk

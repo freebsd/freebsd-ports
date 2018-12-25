@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	corporateshark
 GH_PROJECT=	WCMCommander
 
-USES=		compiler:c++11-lib cmake:outsource
+USES=		compiler:c++11-lib cmake
 CMAKE_ARGS=	-DDATADIR="${DATADIR_REL}"
 USE_XORG=	x11
 

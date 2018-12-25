@@ -14,7 +14,7 @@ COMMENT=	Translations of Qtermwidget
 
 LICENSE=	LGPL21+
 
-USES=		cmake:outsource lxqt pkgconfig qt:5 tar:xz
+USES=		cmake lxqt pkgconfig qt:5 tar:xz
 USE_QT=		buildtools_build qmake_build linguisttools
 USE_LXQT=	buildtools
 

@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libmxml.so:textproc/mxml \
 		liblo.so:audio/liblo
 
-USES=		tar:bzip2 cmake pkgconfig
+USES=		tar:bzip2 cmake:insource pkgconfig
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		OSS JACK GUI PORTAUDIO LASH DOCS EXAMPLES

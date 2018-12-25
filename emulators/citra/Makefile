@@ -38,7 +38,7 @@ GH_TUPLE=	citra-emu:ext-libressl-portable:7d01cb0:libressl/externals/libressl \
 		zeromq:cppzmq:v4.2.3:cppzmq/externals/cppzmq \
 		zeromq:libzmq:v4.2.5:libzmq/externals/libzmq
 
-USES=		cmake:outsource compiler:c++17-lang iconv localbase:ldflags
+USES=		cmake compiler:c++17-lang iconv localbase:ldflags
 USE_SDL=	sdl2
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
 TEST_TARGET=	test

@@ -41,7 +41,7 @@ SQLITE3_INTERNAL_DESC=	Link SQLite 3 backend into CppDB
 SQLITE3_MODULE_DESC=	Build SQLite 3 backend as a CppDB module
 
 USE_LDCONFIG=	yes
-USES=		cmake:outsource tar:bzip2
+USES=		cmake tar:bzip2
 
 .include <bsd.port.options.mk>
 
