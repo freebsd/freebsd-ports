@@ -1,0 +1,2 @@
+# Debian mirrors use geodns to dispatch to the nearest location
+http://ftp.debian.org/debian

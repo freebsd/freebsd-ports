@@ -1,0 +1,18 @@
+--- conf/acng.conf.in.orig	2018-09-07 13:02:18 UTC
++++ conf/acng.conf.in
+@@ -69,6 +69,7 @@ Remap-epel:   file:epel_mirrors # Fedora EPEL
+ Remap-slrep:  file:sl_mirrors # Scientific Linux
+ Remap-gentoo: file:gentoo_mirrors.gz /gentoo ; file:backends_gentoo # Gentoo Archives
+ Remap-secdeb: security.debian.org ; security.debian.org deb.debian.org/debian-security
++Remap-FreeBSD: file:freebsd_mirrors ; file:backends_freebsd # FreeBSD Archives
+ 
+ # Virtual page accessible in a web browser to see statistics and status
+ # information, i.e. under http://localhost:3142/acng-report.html
+@@ -365,6 +366,7 @@ LocalDirs: acng-doc @DOCDIR@
+ # in /etc/hosts.allow or /etc/hosts.deny files.
+ #
+ # UseWrap: 0
++UseWrap: 0
+ 
+ # If many machines from the same local network attempt to update index files
+ # (apt-get update) at nearly the same time, the known state of these index file

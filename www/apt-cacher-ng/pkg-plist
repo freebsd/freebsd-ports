@@ -1,0 +1,49 @@
+@sample %%ETCDIR%%/acng.conf.sample
+@sample %%ETCDIR%%/backends_debian.sample
+@sample %%ETCDIR%%/backends_freebsd.sample
+@sample %%ETCDIR%%/backends_ubuntu.sample
+@sample %%ETCDIR%%/security.conf.sample
+etc/avahi/services/apt-cacher-ng.service
+%%FUSE%%man/man8/acngfs.8.gz
+man/man8/apt-cacher-ng.8.gz
+sbin/apt-cacher-ng
+%%FUSE%%%%DATADIR%%/acngfs
+%%DATADIR%%/acngtool
+%%DATADIR%%/archlx_mirrors
+%%DATADIR%%/backends_debian.default
+%%DATADIR%%/backends_gentoo.default
+%%DATADIR%%/backends_ubuntu.default
+%%DATADIR%%/cygwin_mirrors
+%%DATADIR%%/deb_mirrors.gz
+%%DATADIR%%/debvol_mirrors.gz
+%%DATADIR%%/delconfirm.html
+%%DATADIR%%/epel_mirrors
+%%DATADIR%%/fedora_mirrors
+%%DATADIR%%/freebsd_mirrors
+%%DATADIR%%/gentoo_mirrors.gz
+%%DATADIR%%/in.acng
+%%DATADIR%%/maint.html
+%%DATADIR%%/report.html
+%%DATADIR%%/sfnet_mirrors
+%%DATADIR%%/sl_mirrors
+%%DATADIR%%/style.css
+%%DATADIR%%/ubuntu_mirrors
+%%DATADIR%%/userinfo.html
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/apt-cacher-ng.pdf
+%%PORTDOCS%%%%DOCSDIR%%/html/Intro.html
+%%PORTDOCS%%%%DOCSDIR%%/html/bugs.html
+%%PORTDOCS%%%%DOCSDIR%%/html/config-serv.html
+%%PORTDOCS%%%%DOCSDIR%%/html/config-servquick.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cont.html
+%%PORTDOCS%%%%DOCSDIR%%/html/distinstructions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/howtos.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/maint.html
+%%PORTDOCS%%%%DOCSDIR%%/html/secure.html
+%%PORTDOCS%%%%DOCSDIR%%/html/troublefaq.html
+%%PORTDOCS%%%%DOCSDIR%%/html/usage.html
+@dir(proxy,proxy,755) /var/cache/apt-cacher-ng
+@dir(proxy,proxy,755) /var/log/apt-cacher-ng
