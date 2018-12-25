@@ -26,6 +26,7 @@ lib/codelite/PHPLint.so
 lib/codelite/PHPRefactoring.so
 lib/codelite/QMakePlugin.so
 %%SFTP%%lib/codelite/SFTP.so
+lib/codelite/SmartCompletion.so
 lib/codelite/SnipWiz.so
 lib/codelite/SpellCheck.so
 lib/codelite/Subversion.so
@@ -296,4 +297,5 @@ share/icons/hicolor/32x32@2x/apps/codelite.png
 share/icons/hicolor/64x64/apps/codelite.png
 share/icons/hicolor/64x64@2x/apps/codelite.png
 share/locale/cs/LC_MESSAGES/codelite.mo
+share/locale/ru_RU/LC_MESSAGES/codelite.mo
 share/locale/zh_CN/LC_MESSAGES/codelite.mo
