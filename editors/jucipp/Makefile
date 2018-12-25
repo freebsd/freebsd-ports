@@ -13,14 +13,12 @@ COMMENT=	Lightweight C++-IDE with support for C++11, C++14 and C++17
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	fails to build: cc1plus: unrecognized command line option -Wno-cpp
-
 LIB_DEPENDS=	libaspell.so:textproc/aspell \
 		libboost_filesystem.so:devel/boost-libs \
 		libgit2.so:devel/libgit2 \
 		libclang.so.5:devel/llvm50
 
-USES=		cmake:outsource desktop-file-utils pkgconfig
+USES=		cmake:outsource compiler:c++14-lang desktop-file-utils pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	cppit
 GH_TUPLE=	cppit:libclangmm:5a0195e:libclangmm/libclangmm \
