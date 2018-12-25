@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eaglemode
-PORTVERSION=	0.93.2
-PORTREVISION=	2
+PORTVERSION=	0.94.0
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,7 +15,8 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libfreetype.so:print/freetype2
 
-USES=		compiler:features jpeg perl5 pkgconfig shebangfix tar:bzip2
+USES=		compiler:features jpeg gnome perl5 \
+		pkgconfig tar:bzip2
 USE_PERL5=	build
 USE_XORG=	x11 xext xxf86vm
 SUB_FILES=	eaglemode.sh
@@ -58,8 +58,6 @@ BUILD_ARGS+=	xine-inc-dir="${LOCALBASE}/include" \
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|"-O2"|"${CFLAGS}"|' \
-		${WRKSRC}/makers/unicc/plugins/unicc_gnu.pm
 	@${FIND} ${WRKSRC} -name "*.pl" | ${XARGS} \
 		${REINPLACE_CMD} -e '1s|/usr/bin/perl|${perl_CMD}|'
 
