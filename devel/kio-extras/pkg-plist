@@ -34,7 +34,7 @@ lib/libmolletnetwork5.so.%%KDE_APPLICATIONS_VERSION%%
 %%SSH%%%%QT_PLUGINDIR%%/kf5/kio/sftp.so
 %%SAMBA%%%%QT_PLUGINDIR%%/kf5/kio/smb.so
 %%QT_PLUGINDIR%%/kf5/kio/thumbnail.so
-%%QT_PLUGINDIR%%/kf5/kiod/kmtpd.so
+%%MTP%%%%QT_PLUGINDIR%%/kf5/kiod/kmtpd.so
 %%QT_PLUGINDIR%%/kfileaudiopreview.so
 %%QT_PLUGINDIR%%/kio_activities.so
 %%QT_PLUGINDIR%%/kritathumbnail.so
@@ -47,7 +47,7 @@ lib/libmolletnetwork5.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/windowsimagethumbnail.so
 share/config.kcfg/jpegcreatorsettings5.kcfg
 share/dbus-1/interfaces/kf5_org.kde.network.kioslavenotifier.xml
-share/dbus-1/services/org.kde.kmtp.daemon.service
+%%MTP%%share/dbus-1/services/org.kde.kmtp.daemon.service
 share/kio_bookmarks/kio_bookmarks.css
 share/kio_docfilter/kio_docfilter.css
 share/kio_info/kde-info2html
