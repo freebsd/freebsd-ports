@@ -36,7 +36,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gnome localbase meson \
+USES=		desktop-file-utils gettext gl gnome localbase meson \
 		pkgconfig python:3.4+ tar:xz
 USE_GNOME=	cairo gtk30 intlhack introspection libxml2 nautilus3 \
 		pygobject3
@@ -77,5 +77,11 @@ pre-everything::
 	@${ECHO_MSG} "===> The default DVD device is ${DEFAULT_DVD_DEVICE}"
 	@${ECHO_MSG} "===> Define WITH_DVD_DEVICE if you want to change the default"
 	@${ECHO_MSG} "===> For example, 'make WITH_DVD_DEVICE=\"/dev/somedevice\"'"
+
+post-patch:
+.if exists(/usr/lib/libstdc++.so)
+	${REINPLACE_CMD} -e '/-Wno-unused-but-set-variable/d' \
+		${WRKSRC}/src/plugins/meson.build
+.endif
 
 .include <bsd.port.mk>
