@@ -25,7 +25,7 @@ LIB_DEPENDS=	libIlmImf.so:graphics/openexr \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp
 
-USES=		cmake compiler:c++11-lang jpeg pkgconfig tar:bzip2
+USES=		cmake:insource compiler:c++11-lang jpeg pkgconfig tar:bzip2
 USE_GL=		glu
 USE_XORG=	ice sm x11 xcursor xext xinerama xrandr xxf86vm
 

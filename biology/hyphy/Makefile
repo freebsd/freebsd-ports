@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		compiler:c++14-lang cmake:outsource localbase:ldflags ssl
+USES=		compiler:c++14-lang cmake localbase:ldflags ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	veg
 

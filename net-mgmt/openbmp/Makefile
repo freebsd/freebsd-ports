@@ -18,7 +18,7 @@ LIB_DEPENDS=	librdkafka.so:net/librdkafka \
 				libsasl2.so:security/cyrus-sasl2 \
 				libyaml-cpp.so:devel/yaml-cpp
 
-USES=		cmake:outsource ssl
+USES=		cmake ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenBMP
 

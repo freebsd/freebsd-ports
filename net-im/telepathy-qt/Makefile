@@ -22,7 +22,7 @@ FLAVOR?=	${FLAVORS:[1]}
 qt4_PKGNAMESUFFIX=	4
 qt5_PKGNAMESUFFIX=	5
 
-USES=		cmake:outsource gettext gnome localbase:ldflags pathfix pkgconfig python:2.7,build
+USES=		cmake gettext gnome localbase:ldflags pathfix pkgconfig python:2.7,build
 USE_GNOME=	glib20 libxslt:build
 USE_GSTREAMER=	yes
 USE_LDCONFIG=	yes

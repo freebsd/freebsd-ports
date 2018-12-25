@@ -17,7 +17,7 @@ BUILD_DEPENDS=	catch>0:devel/catch \
 		rapidjson>=0:devel/rapidjson
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USES=		bison:build cmake:outsource eigen:3 python
+USES=		bison:build cmake eigen:3 python
 USE_GITHUB=	yes
 GH_TUPLE=	schrodinger:maeparser:1.0.0:maeparser/External/CoordGen/maeparser \
 		schrodinger:coordgenlibs:ede3191:coordgenlibs/External/CoordGen/coordgenlibs

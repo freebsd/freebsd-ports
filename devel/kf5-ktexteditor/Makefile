@@ -9,7 +9,7 @@ COMMENT=	KF5 advanced embeddable text editor
 
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 
-USES=		cmake:outsource compiler:c++11-lib gettext kde:5 pkgconfig qt:5 tar:xz
+USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	archive auth codecs completion config configwidgets \
 		coreaddons ecm guiaddons i18n iconthemes itemviews \
 		jobwidgets kio parts service sonnet syntaxhighlighting \

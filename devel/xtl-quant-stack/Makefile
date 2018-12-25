@@ -16,7 +16,7 @@ RUN_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 TEST_DEPENDS=	nlohmann-json>0:devel/nlohmann-json \
 		googletest>0:devel/googletest
 
-USES=		cmake:outsource
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	QuantStack
 

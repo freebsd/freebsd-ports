@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ElmerCSC
 GH_TAGNAME=	release-8.3
 
-USES=		blaslapack:netlib cmake:outsource fortran gmake tcl
+USES=		blaslapack:netlib cmake fortran gmake tcl
 
 USE_LDCONFIG=	${PREFIX}/lib/elmersolver
 ALL_TARGET=	# empty

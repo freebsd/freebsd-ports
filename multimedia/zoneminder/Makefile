@@ -35,7 +35,7 @@ RUN_DEPENDS=	${ZM_DEPENDS} \
 		p5-Device-SerialPort>=0:comms/p5-Device-SerialPort \
 		zip:archivers/zip
 
-USES=		cmake:noninja jpeg mysql perl5 php shebangfix ssl
+USES=		cmake:insource,noninja jpeg mysql perl5 php shebangfix ssl
 USE_GITHUB=	yes
 GH_PROJECT=	zoneminder
 GH_TUPLE=	zoneminder:crud:0bd63fb:crud \

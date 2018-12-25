@@ -11,7 +11,7 @@ COMMENT?=	Static analysis of C/C++ code
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lib cmake tar:bzip2
+USES=		compiler:c++11-lib cmake:insource tar:bzip2
 USE_GITHUB=	yes
 GH_ACCOUNT=	danmar
 

@@ -14,7 +14,7 @@ COMMENT=	Encrypted pass-through FUSE filesystem
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:outsource compiler:c++11-lib fuse ssl
+USES=		cmake compiler:c++11-lib fuse ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	vgough
 

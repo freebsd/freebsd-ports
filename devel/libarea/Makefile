@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Heeks
 GH_TAGNAME=	f1986ac
 
-USES=		cmake:outsource python
+USES=		cmake python
 USE_LDCONFIG=	yes
 
 post-patch:

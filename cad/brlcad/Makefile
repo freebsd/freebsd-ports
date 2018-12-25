@@ -28,7 +28,7 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 
 CONFLICTS_INSTALL=	py[23][0-9]-epsilon
 
-USES=		bison cmake:outsource pathfix pkgconfig python:env shebangfix \
+USES=		bison cmake:insource pathfix pkgconfig python:env shebangfix \
 		tar:bzip2 tk:85
 USE_GL=		gl glu
 USE_XORG=	ice sm x11 xau xcb xdamage xdmcp xext xfixes xft xi \

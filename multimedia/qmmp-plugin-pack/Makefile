@@ -22,7 +22,7 @@ BUILD_DEPENDS=	qmmp>=0.11.0:multimedia/qmmp
 CONFLICTS=	${PORTNAME}-qt5-1.*
 PORTSCOUT=	limit:^0.*
 
-USES=		cmake:outsource localbase pkgconfig qt:4 tar:bzip2
+USES=		cmake localbase pkgconfig qt:4 tar:bzip2
 USE_QT=		corelib gui linguisttools_build moc_build qmake_build rcc_build
 USE_LDCONFIG=	yes
 

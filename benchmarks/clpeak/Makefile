@@ -23,7 +23,7 @@ GH_TAGNAME=	75c8746
 
 USE_LDCONFIG=	yes
 USE_GL=		gl
-USES=		cmake
+USES=		cmake:insource
 
 CXXFLAGS+=	-std=c++11
 

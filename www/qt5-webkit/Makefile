@@ -19,7 +19,7 @@ LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
 			libpng.so:graphics/png \
 			libwebp.so:graphics/webp
 
-USES=			bison cmake:outsource compiler:c++11-lang gperf jpeg \
+USES=			bison cmake compiler:c++11-lang gperf jpeg \
 			pathfix perl5 pkgconfig python:2.7,build qt:5 sqlite:3 \
 			tar:xz
 USE_GNOME=		glib20 libxml2 libxslt

@@ -18,7 +18,7 @@ EXPIRATION_DATE=	2018-12-31
 
 LIB_DEPENDS=	libqjson.so:devel/qjson@qt4
 
-USES=		cmake:outsource kde:4 qt:4 tar:bzip2
+USES=		cmake kde:4 qt:4 tar:bzip2
 USE_KDE=	automoc4 kdelibs pimlibs
 USE_LDCONFIG=	yes
 USE_QT=		corelib network webkit xml \

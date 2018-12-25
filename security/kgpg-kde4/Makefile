@@ -14,7 +14,7 @@ EXPIRATION_DATE=	2018-12-31
 
 RUN_DEPENDS=	gpg2:security/gnupg
 
-USES=		cmake:outsource kde:4 qt:4 tar:xz
+USES=		cmake kde:4 qt:4 tar:xz
 USE_KDE=	automoc4 kdelibs pimlibs
 USE_QT=		qmake_build moc_build rcc_build uic_build
 

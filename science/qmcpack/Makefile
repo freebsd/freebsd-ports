@@ -21,7 +21,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libopenblas.so:math/openblas \
 		libsz.so:science/szip
 
-USES=		cmake:outsource compiler:c++11-lang fortran gnome localbase:ldflags pkgconfig
+USES=		cmake compiler:c++11-lang fortran gnome localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}
 USE_GNOME=	libxml2

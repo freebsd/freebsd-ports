@@ -14,7 +14,7 @@ COMMENT=	Translations of lxqt-globalkeys
 
 LICENSE=	LGPL21+
 
-USES=	cmake:outsource lxqt pkgconfig tar:xz qt:5
+USES=	cmake lxqt pkgconfig tar:xz qt:5
 USE_QT=	buildtools_build qmake_build linguisttools
 USE_LXQT=	buildtools
 

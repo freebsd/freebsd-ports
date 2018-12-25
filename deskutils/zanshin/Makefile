@@ -11,7 +11,7 @@ COMMENT=	Daily organizer for KDE
 
 LIB_DEPENDS=	libical.so:devel/libical
 
-USES=		cmake:outsource compiler:c++14-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++14-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	akonadi auth bookmarks codecs completion config configwidgets \
 		coreaddons crash ecm guiaddons i18n iconthemes itemmodels \
 		itemviews jobwidgets kdelibs4support kio notifications package \

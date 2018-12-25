@@ -22,7 +22,7 @@ SERVER_DESC=		Install the craft server
 OPTIONS_DEFAULT=	SERVER
 OPTIONS_SUB=		yes
 
-USES=		cmake compiler:c11
+USES=		cmake:insource compiler:c11
 USE_XORG=	x11 xi xrandr
 USE_GL=		gl glu
 

@@ -11,7 +11,7 @@ COMMENT=	High throughput library for compressed floating-point arrays
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource
+USES=		cmake
 USE_LDCONFIG=	yes
 
 LDFLAGS+=	-lm

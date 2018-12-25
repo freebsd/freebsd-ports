@@ -10,7 +10,7 @@ COMMENT=	Per face texture library
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cmake
+USES=		cmake:insource
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

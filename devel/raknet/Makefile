@@ -30,7 +30,7 @@ LEGAL_TEXT=	Special authorization granted to distribute version 3.x under GPLv3
 
 NO_WRKSUBDIR=	yes
 
-USES=		dos2unix cmake zip
+USES=		dos2unix cmake:insource zip
 
 USE_LDCONFIG=	yes
 USE_GCC=	any

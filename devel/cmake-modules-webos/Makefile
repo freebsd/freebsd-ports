@@ -13,7 +13,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	FreeWebOS
 GH_TAGNAME=	submissions/19
 
-USES=		cmake:outsource
+USES=		cmake
 INSTALL_TARGET=	install
 
 .include <bsd.port.mk>

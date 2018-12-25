@@ -10,7 +10,7 @@ COMMENT=	Plugins for Dolphin file manager
 BUILD_DEPENDS=	dolphin:x11-fm/dolphin
 RUN_DEPENDS=	dolphin:x11-fm/dolphin
 
-USES=		cmake:outsource gettext kde:5 qt:5 tar:xz
+USES=		cmake gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash guiaddons i18n iconthemes itemviews jobwidgets \
 		kdelibs4support kio notifications parts service solid sonnet \

@@ -19,7 +19,7 @@ CONFLICTS=	pfstmo-1.* pfscalibration-1.*
 
 LDFLAGS+=	-lthr
 
-USES=		cmake:outsource tar:tgz dos2unix jpeg perl5
+USES=		cmake tar:tgz dos2unix jpeg perl5
 USE_PERL5=	run
 USE_LDCONFIG=	yes
 

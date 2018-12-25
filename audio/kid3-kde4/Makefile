@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl
 
-USES=		cmake:outsource gnome pkgconfig
+USES=		cmake gnome pkgconfig
 USE_GNOME=	libxslt:build
 USE_LDCONFIG=	yes
 

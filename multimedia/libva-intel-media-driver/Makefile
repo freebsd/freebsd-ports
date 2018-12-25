@@ -21,7 +21,7 @@ LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess \
 		libigdgmm.so:multimedia/gmmlib \
 		libva.so:multimedia/libva
 
-USES=		cmake:outsource compiler:c++11-lib pkgconfig
+USES=		cmake compiler:c++11-lib pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
 ARCH_SUFX=	${ARCH:S/i386/32/:S/amd//:S/x86_//}

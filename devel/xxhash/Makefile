@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Cyan4973
 GH_PROJECT=	xxHash
 
-USES=		cmake:outsource
+USES=		cmake
 USE_LDCONFIG=	yes
 CMAKE_SOURCE_PATH=	${WRKSRC}/cmake_unofficial
 

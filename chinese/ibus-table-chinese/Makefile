@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/cmake/Modules/ManageEnvironment.cmake:devel/cm
 RUN_DEPENDS=	ibus-daemon:textproc/ibus \
 		${LOCALBASE}/libexec/ibus-engine-table:textproc/ibus-table
 
-USES=		cmake:noninja pkgconfig
+USES=		cmake:insource,noninja pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	definite

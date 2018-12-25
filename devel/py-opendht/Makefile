@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 LIB_DEPENDS=	libopendht.so:devel/opendht \
 		libgnutls.so:security/gnutls
 
-USES=		cmake:outsource compiler:c++11-lib localbase python:3.4+
+USES=		cmake compiler:c++11-lib localbase python:3.4+
 USE_GITHUB=	yes
 GH_ACCOUNT=	savoirfairelinux
 USE_PYTHON=	distutils cython autoplist

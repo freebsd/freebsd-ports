@@ -16,7 +16,7 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 DEPRECATED=	KDE4 is EOL upstream
 EXPIRATION_DATE=	2018-12-31
 
-USES=		cmake:outsource ncurses kde:4 qt:4 readline tar:xz
+USES=		cmake ncurses kde:4 qt:4 readline tar:xz
 USE_KDE=	kdelibs automoc4
 USE_QT=		corelib dbus gui opengl svg xml \
 		moc_build qmake_build rcc_build uic_build

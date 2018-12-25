@@ -33,7 +33,7 @@ LIB_DEPENDS=	liblcms.so:graphics/lcms \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR}
 
-USES=		cmake:outsource desktop-file-utils ghostscript:run jpeg \
+USES=		cmake desktop-file-utils ghostscript:run jpeg \
 		pkgconfig python:2.7 qt:4 shared-mime-info tar:xz
 USE_QT=		corelib gui linguist_build moc_build qmake_build rcc_build uic_build xml network
 USE_GNOME=	libartlgpl2 libxml2

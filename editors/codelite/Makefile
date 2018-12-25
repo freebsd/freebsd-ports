@@ -19,7 +19,7 @@ BROKEN_armv6=		fails to configure: has leading or trailing whitespace.  This is 
 USE_GITHUB=	yes
 GH_ACCOUNT=	eranif
 
-USES=		cmake:outsource,noninja compiler:c++11-lib dos2unix gettext \
+USES=		cmake:noninja compiler:c++11-lib dos2unix gettext \
 		pathfix shebangfix sqlite
 USE_GNOME+=	cairo gtk20
 DOS2UNIX_GLOB=	*.cpp *.txt

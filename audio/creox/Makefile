@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	laudrup
 GH_PROJECT=	Creox4
 
-USES=		cmake:outsource kde:4 qt:4
+USES=		cmake kde:4 qt:4
 USE_KDE=	automoc4 kdelibs
 USE_QT=		moc_build qmake_build rcc_build uic_build
 USE_XORG=	xft xpm

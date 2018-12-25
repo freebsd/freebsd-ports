@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CPE_VENDOR=	nih
 
-USES=		cmake:outsource cpe perl5 ssl tar:xz
+USES=		cmake cpe perl5 ssl tar:xz
 USE_LDCONFIG=	yes
 USE_PERL5=	test
 TEST_TARGET=	test

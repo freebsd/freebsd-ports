@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 
 LIB_DEPENDS=	libpoly.so:math/libpoly
 
-USES=		cmake:outsource localbase:ldflags python:2.7
+USES=		cmake localbase:ldflags python:2.7
 USE_GITHUB=	yes
 GH_ACCOUNT=	SRI-CSL
 USE_LDCONFIG=	yes

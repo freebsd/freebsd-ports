@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	melanhit
 
-USES=		cmake:outsource
+USES=		cmake
 
 PLIST_FILES=	bin/rndpassw \
 		man/man1/rndpassw.1.gz

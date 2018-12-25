@@ -9,7 +9,7 @@ COMMENT=	KDE interactive geometry application
 
 LIB_DEPENDS=	${PY_BOOST}
 
-USES=		cmake:outsource gettext compiler:c++11-lib kde:5 \
+USES=		cmake gettext compiler:c++11-lib kde:5 \
 		python:2.7,run qt:5 shebangfix tar:xz
 USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		crash doctools ecm emoticons i18n iconthemes init itemmodels \

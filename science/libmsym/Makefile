@@ -12,7 +12,7 @@ COMMENT=	Molecular point group symmetry library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	mcodev31
 USE_LDCONFIG=	yes

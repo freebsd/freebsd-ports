@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		cmake:outsource jpeg
+USES=		cmake jpeg
 USE_XORG=	xft
 USE_GL=		glu
 USE_LDCONFIG=	${PREFIX}/lib/fltk-devel

@@ -9,7 +9,7 @@ COMMENT=	KWallet integration for signon framework
 
 LIB_DEPENDS=	libsignon-qt5.so:sysutils/signon-qt5
 
-USES=		cmake:outsource compiler:c++11-lang kde:5 pkgconfig qt:5 tar:xz
+USES=		cmake compiler:c++11-lang kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	ecm wallet
 USE_QT=		core dbus gui \
 		buildtools_build qmake_build

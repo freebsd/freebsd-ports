@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		cmake:outsource iconv:build
+USES=		cmake iconv:build
 USE_CXXSTD=	c++98
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes

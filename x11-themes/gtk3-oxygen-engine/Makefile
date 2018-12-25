@@ -17,7 +17,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libdbus-glib-1.so:devel/dbus-glib
 
-USES=		cmake:outsource compiler:c++11-lang pkgconfig tar:bzip2
+USES=		cmake compiler:c++11-lang pkgconfig tar:bzip2
 USE_GNOME=	gtk30
 
 .include <bsd.port.mk>

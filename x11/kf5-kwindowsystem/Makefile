@@ -9,7 +9,7 @@ COMMENT=	KF5 library for access to the windowing system
 
 LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms
 
-USES=		cmake:outsource compiler:c++11-lib kde:5 pkgconfig qt:5 tar:xz
+USES=		cmake compiler:c++11-lib kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	ecm
 USE_QT=		buildtools_build core gui linguisttools qmake_build \
 		testlib widgets x11extras

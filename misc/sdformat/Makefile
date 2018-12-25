@@ -19,7 +19,7 @@ LIB_DEPENDS=	libignition-math6.so:math/ignition-math \
 		liburdfdom_world.so:misc/urdfdom
 RUN_DEPENDS=	ignition-tools>0:devel/ignition-tools
 
-USES=		cmake:outsource compiler:c++17-lang pkgconfig
+USES=		cmake compiler:c++17-lang pkgconfig
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_TESTING

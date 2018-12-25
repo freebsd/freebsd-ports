@@ -15,7 +15,7 @@ COMMENT=	Advertise a service via Rendezvous
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	Pro
 USE_LDCONFIG=	yes

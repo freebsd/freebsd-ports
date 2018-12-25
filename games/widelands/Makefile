@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libicuuc.so:devel/icu \
 		libboost_regex.so:devel/boost-libs
 
-USES=		cmake:outsource compiler:c++11-lib gettext \
+USES=		cmake compiler:c++11-lib gettext \
 		tar:bzip2 python:build
 CMAKE_ARGS=	-DWL_INSTALL_BASEDIR="${PREFIX}" \
 		-DWL_INSTALL_DATADIR="${DATADIR}" \

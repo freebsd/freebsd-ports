@@ -14,7 +14,7 @@ EXPIRATION_DATE=	2018-12-31
 
 LIB_DEPENDS=	libphonon.so:multimedia/phonon@qt4
 
-USES=		cmake:outsource kde:4 qt:4 tar:xz
+USES=		cmake kde:4 qt:4 tar:xz
 USE_KDE=	kdelibs automoc4 soprano
 USE_QT=		corelib dbus gui network svg xml \
 		moc_build qmake_build rcc_build uic_build

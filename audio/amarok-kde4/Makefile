@@ -26,7 +26,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:dev
 RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:devel/qtscriptgenerator \
 		${KDE_PREFIX}/lib/kde4/kio_upnp_ms.so:net/kio-upnp-ms
 
-USES=		cmake:outsource kde:4 mysql:client,embedded pkgconfig \
+USES=		cmake kde:4 mysql:client,embedded pkgconfig \
 		qt:4 shared-mime-info shebangfix ssl tar:bzip2
 USE_GL=		gl
 USE_KDE=	automoc4 kdelibs libkcddb libkcompactdisc \

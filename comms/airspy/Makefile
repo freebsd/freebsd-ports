@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/airspy-tools/LICENSE.md
 BROKEN_aarch64=		fails to compile: invalid conversion between vector type '__m64' and integer type 'int'
 BROKEN_powerpc64=	fails to build: iqconverter_float.c:45:23: error: immintrin.h: No such file or directory
 
-USES=		cmake:outsource pkgconfig
+USES=		cmake pkgconfig
 USE_GITHUB=	yes
 GH_PROJECT=	airspyone_host
 USE_LDCONFIG=	yes

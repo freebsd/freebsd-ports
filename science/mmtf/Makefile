@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/include/msgpack.hpp:devel/msgpack
 
-USES=		cmake:outsource compiler:c++11-lang localbase:ldflags
+USES=		cmake compiler:c++11-lang localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	rcsb
 GH_PROJECT=	mmtf-cpp

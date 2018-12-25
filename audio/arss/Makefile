@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3
 
 WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
-USES=		cmake
+USES=		cmake:insource
 USE_LDCONFIG=	${PREFIX}/lib
 CFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include
 CMAKE_C_FLAGS=	${CFLAGS}

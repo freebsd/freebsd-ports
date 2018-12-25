@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libccd.so:math/libccd
 
-USES=		cmake:outsource compiler:c++11-lang eigen:3
+USES=		cmake compiler:c++11-lang eigen:3
 USE_GITHUB=	yes
 GH_ACCOUNT=	flexible-collision-library
 USE_LDCONFIG=	yes

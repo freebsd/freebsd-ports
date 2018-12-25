@@ -31,7 +31,7 @@ BROKEN_SSL_REASON_openssl111=	Does not support OpenSSL 1.1, use MariaDB 10.2 or 
 SUB_FILES=	pkg-message
 
 SLAVEDIRS=	databases/mariadb100-client
-USES=		bison:build cmake:noninja compiler:c++11-lib cpe \
+USES=		bison:build cmake:insource,noninja compiler:c++11-lib cpe \
 		ncurses shebangfix ssl
 USE_LDCONFIG=	${PREFIX}/lib/mysql ${PREFIX}/lib/mysql/plugin
 SHEBANG_FILES=	scripts/*.sh

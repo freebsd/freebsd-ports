@@ -11,7 +11,7 @@ COMMENT=	Cross-platform library for USB video devices
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake:outsource jpeg pkgconfig
+USES=		cmake jpeg pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	ktossell
 

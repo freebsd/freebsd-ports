@@ -13,7 +13,7 @@ COMMENT=	SIMD Library for Evaluating Elementary Functions, vectorized libm
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake:outsource compiler:c11
+USES=		cmake compiler:c11
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

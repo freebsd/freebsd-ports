@@ -12,7 +12,7 @@ COMMENT=	Library implementing the Test Anything Protocol
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:outsource perl5 tar:bz2
+USES=		cmake perl5 tar:bz2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 

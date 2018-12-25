@@ -25,7 +25,7 @@ TEST_TARGET=		test
 
 CMAKE_SOURCE_PATH=	${WRKSRC}
 
-USES=		cmake tar:bzip2
+USES=		cmake:insource tar:bzip2
 USE_LDCONFIG=	yes
 
 LLVM_SVN=	http://llvm.org/svn/llvm-project

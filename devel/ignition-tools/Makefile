@@ -12,7 +12,7 @@ COMMENT=	Ignition entry point (ign) for using all the suite of ignition tools
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource compiler:c++11-lang pkgconfig shebangfix
+USES=		cmake compiler:c++11-lang pkgconfig shebangfix
 SHEBANG_FILES=	src/ign.in
 USE_RUBY=	yes
 

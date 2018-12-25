@@ -11,7 +11,7 @@ COMMENT=	Fmt is an open-source formatting library for C++
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-USES=		cmake:outsource compiler:c++11-lib
+USES=		cmake compiler:c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	fmtlib
 GH_PROJECT=	fmt

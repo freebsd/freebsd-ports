@@ -23,7 +23,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 
 CONFLICTS=	osg
 
-USES=		alias cmake:outsource jpeg gl pkgconfig zip
+USES=		alias cmake jpeg gl pkgconfig zip
 USE_GL=		gl glu
 USE_XORG=	x11
 USE_LDCONFIG=	yes

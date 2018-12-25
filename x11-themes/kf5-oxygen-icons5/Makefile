@@ -7,7 +7,7 @@ CATEGORIES=	x11-themes kde kde-frameworks
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The Oxygen icon theme for KDE
 
-USES=		cmake:outsource kde:5 qt:5 tar:xz
+USES=		cmake kde:5 qt:5 tar:xz
 USE_KDE=	ecm_build  # We only install icons.
 
 # The qmake dependency is only needed so that kf5-e-c-m can query qmake for

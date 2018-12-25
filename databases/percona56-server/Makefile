@@ -19,7 +19,7 @@ BROKEN_armv7=		fails to compile: sql/mysqld.cc:198:19: error: cannot combine wit
 
 SLAVEDIRS=	databases/percona56-client \
 		databases/percona-pam-for-mysql
-USES=		bison compiler:c++11-lang cmake:noninja perl5 shebangfix
+USES=		bison compiler:c++11-lang cmake:insource,noninja perl5 shebangfix
 
 OPTIONS_DEFINE=	OPENSSL FASTMTX INNODBMEMCACHED TOKUDB
 OPTIONS_DEFAULT=	OPENSSL INNODBMEMCACHED

@@ -15,7 +15,7 @@ ONLY_FOR_ARCHS=	amd64
 
 LIB_DEPENDS=	libpci.so:devel/libpci
 
-USES=		cmake:outsource pkgconfig
+USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

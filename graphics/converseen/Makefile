@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick6
 
-USES=		cmake:outsource compiler:c++11-lang qt:5 tar:bzip2
+USES=		cmake compiler:c++11-lang qt:5 tar:bzip2
 USE_QT=		core gui network widgets \
 		buildtools_build linguisttools_build qmake_build
 

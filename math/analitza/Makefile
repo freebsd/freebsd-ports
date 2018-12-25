@@ -12,7 +12,7 @@ LICENSE_COMB=		multi
 LICENSE_FILE_GFDL=	${WRKSRC}/COPYING.DOC
 LICENSE_FILE_GPLv2=	 ${WRKSRC}/COPYING
 
-USES=		cmake:outsource compiler:c++11-lang gl kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gl kde:5 qt:5 tar:xz
 USE_GL=		glu
 USE_KDE=	ecm
 USE_QT=		core declarative gui network opengl printsupport svg widgets xml \

@@ -25,7 +25,7 @@ LICENSE_DISTFILES_FREEWARE=	${DISTFILES:[2]:S/:data//}
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake:outsource compiler:c++11-lang
+USES=		cmake compiler:c++11-lang
 
 USE_SDL=	mixer2 sdl2
 SUB_FILES=	${PORTNAME}

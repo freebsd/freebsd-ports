@@ -16,7 +16,7 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libpng16.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		compiler:c++11-lang cmake:outsource gnome jpeg ssl
+USES=		compiler:c++11-lang cmake gnome jpeg ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}
 USE_GNOME=	libxml2

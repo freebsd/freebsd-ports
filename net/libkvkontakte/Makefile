@@ -13,7 +13,7 @@ COMMENT=	KDE library for accessing vk.com
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-USES=		cmake:outsource compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	config coreaddons ecm i18n kdewebkit kio service widgetsaddons
 USE_QT=		core gui network webkit widgets \
 		buildtools_build qmake_build

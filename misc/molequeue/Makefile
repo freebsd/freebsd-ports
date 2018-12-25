@@ -12,7 +12,7 @@ COMMENT=	Desktop integration of high performance computing resources
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource compiler:c++11-lang qt:5
+USES=		cmake compiler:c++11-lang qt:5
 USE_QT=		core gui network widgets buildtools_build qmake_build
 USE_LDCONFIG=	yes
 

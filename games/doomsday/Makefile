@@ -16,7 +16,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfluidsynth.so:audio/fluidsynth
 RUN_DEPENDS=	timidity:audio/timidity
 
-USES=		cmake:outsource compiler:c++11-lib gl localbase:ldflags ninja openal pkgconfig python:2.7,build qt:5
+USES=		cmake compiler:c++11-lib gl localbase:ldflags ninja openal pkgconfig python:2.7,build qt:5
 
 USE_GL=		gl glu
 USE_LDCONFIG=	yes

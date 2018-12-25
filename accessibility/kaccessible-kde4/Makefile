@@ -13,7 +13,7 @@ EXPIRATION_DATE=	2018-12-31
 
 LIB_DEPENDS=	libspeechd.so:accessibility/speech-dispatcher
 
-USES=		cmake:outsource kde:4 qt:4 tar:xz
+USES=		cmake kde:4 qt:4 tar:xz
 USE_KDE=	kdelibs automoc4
 USE_QT=		corelib dbus gui xml \
 		qmake_build moc_build rcc_build uic_build

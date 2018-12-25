@@ -14,7 +14,7 @@ LICENSE=	LGPL21+
 
 LIB_DEPENDS=	libpolkit-qt5-core-1.so:sysutils/polkit-qt@qt5
 
-USES=	cmake:outsource compiler:c++11-lib gettext kde:5 lxqt \
+USES=	cmake compiler:c++11-lib gettext kde:5 lxqt \
 	pkgconfig qt:5 tar:xz
 USE_QT=		buildtools_build qmake_build dbus core gui linguisttools \
 	svg widgets x11extras xml

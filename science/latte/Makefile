@@ -12,7 +12,7 @@ COMMENT=	Quantum chemistry: Density functional tight binding molecular dynamics
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE_GPL-2.0
 
-USES=		blaslapack:openblas cmake:outsource,noninja fortran shebangfix
+USES=		blaslapack:openblas cmake:noninja fortran shebangfix
 SHEBANG_FILES=	tests/run_test.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	lanl

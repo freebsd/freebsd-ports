@@ -12,7 +12,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS+=	libjsoncpp.so:devel/jsoncpp
 
-USES=		cmake:outsource
+USES=		cmake
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	pezmaster31

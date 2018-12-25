@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	swig3.0:devel/swig30
 LIB_DEPENDS=	libRMF.so:science/rmf
 
-USES=		cmake:outsource python shebangfix
+USES=		cmake python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	salilab
 GH_TAGNAME=	f917cf2

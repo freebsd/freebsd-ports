@@ -17,7 +17,7 @@ USE_GNOME=	libxml2
 
 OPTIONS_FILE=	${PORT_DBDIR}/${OPTIONS_NAME:C/-.*//}/options
 
-USES=		cmake:outsource,noninja pkgconfig iconv gmake compiler:features sqlite
+USES=		cmake:noninja pkgconfig iconv gmake compiler:features sqlite
 USES+=		dos2unix
 DOS2UNIX_FILES=	cmake/admCheckMiscLibs.cmake \
 		avidemux_core/ADM_coreVideoCodec/include/ADM_coreVideoCodec6_export.h \

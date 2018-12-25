@@ -10,7 +10,7 @@ COMMENT=	KDE graphical frontend for diff
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:outsource kde:5 qt:5
+USES=		cmake kde:5 qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	KDE
 GH_TAGNAME=	42403aa

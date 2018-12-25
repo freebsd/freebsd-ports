@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/src/COPYING
 LIB_DEPENDS=	libKF5Sane.so:graphics/libksane \
 		libpng.so:graphics/png
 
-USES=		cmake:outsource compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	ecm auth config configwidgets codecs completion \
 		coreaddons doctools i18n jobwidgets kio \
 		service widgetsaddons xmlgui

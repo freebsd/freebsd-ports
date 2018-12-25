@@ -7,7 +7,7 @@ CATEGORIES=	lang kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Educational programming environment for KDE
 
-USES=		cmake:outsource compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	attica auth codecs config configwidgets coreaddons crash ecm \
 		emoticons i18n init itemmodels kdelibs4support kio newstuff \
 		service sonnet textwidgets widgetsaddons xmlgui

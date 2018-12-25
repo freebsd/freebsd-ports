@@ -11,7 +11,7 @@ COMMENT=	C++ library to use SIMD vectorization
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource
+USES=		cmake
 NO_ARCH=	yes
 CMAKE_ARGS=	-DINASTEMP_DO_INSTALL:BOOL=ON \
 		-DINASTEMP_JUST_LIB:BOOL=ON

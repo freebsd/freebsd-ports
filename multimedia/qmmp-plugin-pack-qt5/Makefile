@@ -20,7 +20,7 @@ BUILD_DEPENDS=	qmmp-qt5>=1.2.0:multimedia/qmmp-qt5
 CONFLICTS=	${PORTNAME}-0.*
 PORTSCOUT=	limit:^1\..*
 
-USES=		cmake:outsource pkgconfig qt:5 tar:bzip2
+USES=		cmake pkgconfig qt:5 tar:bzip2
 USE_QT=		core gui widgets \
 		buildtools_build linguisttools_build qmake_build
 USE_LDCONFIG=	yes

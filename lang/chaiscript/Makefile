@@ -12,7 +12,7 @@ COMMENT=	Embedded scripting language designed for C++
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource localbase:ldflags readline
+USES=		cmake localbase:ldflags readline
 USE_GITHUB=	yes
 USE_LDCONFIG=	${PREFIX}/lib/chaiscript
 

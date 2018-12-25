@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libopenbabel.so:science/openbabel
 
-USES=		cmake:outsource desktop-file-utils localbase:ldflags pkgconfig qt:5 shared-mime-info
+USES=		cmake desktop-file-utils localbase:ldflags pkgconfig qt:5 shared-mime-info
 USE_QT=		core gui network printsupport svg widgets buildtools_build qmake_build
 USE_LDCONFIG=	${PREFIX}/lib/molsketch
 

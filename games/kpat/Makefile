@@ -9,7 +9,7 @@ COMMENT=	${${PORTNAME}_DESC}
 
 LIB_DEPENDS=	libfreecell-solver.so:games/freecell-solver
 
-USES=		cmake:outsource compiler:c++11-lang gettext kde:5 pkgconfig \
+USES=		cmake compiler:c++11-lang gettext kde:5 pkgconfig \
 		qt:5 shared-mime-info tar:xz
 USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 		crash dbusaddons ecm guiaddons i18n iconthemes itemviews \

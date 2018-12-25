@@ -7,7 +7,7 @@ CATEGORIES=	devel kde kde-frameworks
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 library for downloading application assets from the network
 
-USES=		cmake:outsource compiler:c++11-lib gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	archive attica5 auth codecs completion config \
 		configwidgets coreaddons ecm i18n iconthemes itemviews \
 		jobwidgets kio service sonnet textwidgets widgetsaddons \

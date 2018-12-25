@@ -23,7 +23,7 @@ LIB_DEPENDS+=	libjack.so:audio/jack \
 		libFLAC.so:audio/flac \
 		libphysfs.so:devel/physfs
 
-USES=		cmake jpeg openal:soft pkgconfig
+USES=		cmake:insource jpeg openal:soft pkgconfig
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga
 USE_GL=		glu
 USE_GNOME=	gtk20

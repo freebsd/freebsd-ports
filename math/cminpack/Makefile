@@ -10,7 +10,7 @@ COMMENT=	Solving nonlinear equations and nonlinear least squares problems
 
 LICENSE_FILE=	${WRKSRC}/CopyrightMINPACK.txt
 
-USES=		cmake:outsource
+USES=		cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	devernay

@@ -12,7 +12,7 @@ COMMENT=	OpenGL and OpenGL ES shader front end and validator
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKDIR}/LICENSE
 
-USES=		cmake:outsource compiler:c++11-lib
+USES=		cmake compiler:c++11-lib
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup

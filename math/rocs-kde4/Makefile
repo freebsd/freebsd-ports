@@ -13,7 +13,7 @@ EXPIRATION_DATE=	2018-12-31
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-USES=		cmake:outsource grantlee:4 kde:4 qt:4 tar:xz
+USES=		cmake grantlee:4 kde:4 qt:4 tar:xz
 USE_KDE=	kdelibs automoc4
 USE_QT=		gui qtestlib script scripttools webkit xml \
 		moc_build qmake_build rcc_build uic_build

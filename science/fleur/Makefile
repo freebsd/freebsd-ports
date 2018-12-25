@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libopenblas.so:math/openblas
 
-USES=		cmake:outsource,noninja fortran gnome localbase:ldflags tar:tgz
+USES=		cmake:noninja fortran gnome localbase:ldflags tar:tgz
 USE_GNOME=	libxml2
 
 FFLAGS=		-I${LOCALBASE}/include

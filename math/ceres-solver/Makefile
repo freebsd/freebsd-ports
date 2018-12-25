@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libglog.so:devel/glog
 RUN_DEPENDS:=	${BUILD_DEPENDS:Meigen*}
 
-USES=		cmake:outsource compiler:${OPENMP}c++11-lib eigen:3 localbase shebangfix
+USES=		cmake compiler:${OPENMP}c++11-lib eigen:3 localbase shebangfix
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	examples/slam/pose_graph_*/plot_results.py \

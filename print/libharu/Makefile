@@ -15,7 +15,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 OPTIONS_DEFINE=	EXAMPLES
 
 USE_LDCONFIG=	yes
-USES+=		cmake:outsource
+USES+=		cmake
 
 USE_GITHUB=	yes
 

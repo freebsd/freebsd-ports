@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE
 BUILD_DEPENDS=	${LOCALBASE}/include/pybind11/pybind11.h:devel/pybind11
 LIB_DEPENDS=	libAvogadroCore.so:science/avogadrolibs
 
-USES=		cmake:outsource compiler:c++11-lang eigen:3 python:3.5+
+USES=		cmake compiler:c++11-lang eigen:3 python:3.5+
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenChemistry
 USE_PYTHON=	flavors

@@ -17,7 +17,7 @@ BROKEN_powerpc64=	fails to compile: City.cpp: byteswap.h: No such file or direct
 USE_GITHUB=	yes
 GH_ACCOUNT=	gvnn3
 
-USES=		cmake
+USES=		cmake:insource
 
 PLIST_FILES=	bin/SMHasher
 

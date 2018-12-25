@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libchm.so:misc/chmlib
 
-USES=		cmake:outsource kde:5 qt:5
+USES=		cmake kde:5 qt:5
 USE_KDE=	ecm_build kio
 USE_QT=		buildtools_build qmake_build gui
 

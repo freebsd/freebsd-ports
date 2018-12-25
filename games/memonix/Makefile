@@ -23,7 +23,7 @@ LICENSE_PERMS_unknown=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_DISTFILES_unknown=	memx16.tar.gz
 LICENSE_DISTFILES_GPLv2=	${DISTNAME}${EXTRACT_SUFX}
 
-USES=		cmake zip
+USES=		cmake:insource zip
 USE_SDL=	sdl mixer image
 USE_GL=		yes
 

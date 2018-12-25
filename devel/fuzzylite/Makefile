@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_powerpc64=	fails to compile: unrecognized command line option "-Wno-type-limits"
 
-USES=		cmake:outsource compiler
+USES=		cmake compiler
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 

@@ -18,7 +18,7 @@ BROKEN_powerpc64=	fails to link: sibling call optimization does not allow automa
 LIB_DEPENDS=		libIrrlicht.so:x11-toolkits/irrlicht \
 			libfreetype.so:print/freetype2
 
-USES=			cmake tar:bzip2
+USES=			cmake:insource tar:bzip2
 LLD_UNSAFE=		yes
 
 WRKSRC=			${WRKDIR}/${PORTNAME}

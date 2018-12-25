@@ -11,7 +11,7 @@ DESCR=			${.CURDIR}/../strigi/pkg-descr
 
 CONFLICTS_INSTALL=	strigi-0.7.[0-7]* strigi-0.7.8 strigi-0.7.8_1
 
-USES+=			cmake:outsource tar:bzip2
+USES+=			cmake tar:bzip2
 CMAKE_SOURCE_PATH=	${WRKSRC}/${PORTNAME}
 
 PLIST_SUB=		SHLIB_VER=${STRIGI_VERSION}

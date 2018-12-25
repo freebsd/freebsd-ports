@@ -20,7 +20,7 @@ LIB_DEPENDS=	libpolkit-agent-1.so:sysutils/polkit
 FLAVORS=	qt5 qt4
 FLAVOR?=	${FLAVORS:[1]}
 
-USES=		cmake:outsource gnome pkgconfig tar:bzip2
+USES=		cmake gnome pkgconfig tar:bzip2
 USE_GNOME=	glib20
 CMAKE_OFF=	BUILD_EXAMPLES  \
 		BUILD_TEST

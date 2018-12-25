@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS_INSTALL=	babel-*
 
-USES=		compiler:c++11-lang cmake:outsource eigen:3 gnome
+USES=		compiler:c++11-lang cmake eigen:3 gnome
 USE_CXXSTD=	gnu++98
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes

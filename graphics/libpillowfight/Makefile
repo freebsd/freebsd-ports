@@ -14,7 +14,7 @@ BUILD_DEPENDS=	gmake:devel/gmake
 TEST_DEPENDS=	gmake:devel/gmake \
 		tox:devel/py-tox@${PY_FLAVOR}
 
-USES=		cmake:outsource
+USES=		cmake
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org/World
 GL_ACCOUNT=	OpenPaperwork

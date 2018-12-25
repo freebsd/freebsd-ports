@@ -13,7 +13,7 @@ LIB_DEPENDS=	liblapack.so:math/lapack \
 		libopenblas.so:math/openblas
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cmake:outsource,noninja fortran python:build shebangfix
+USES=		cmake:noninja fortran python:build shebangfix
 SHEBANG_FILES=	dalton.in
 USE_GITLAB=	yes
 GL_COMMIT=	d16802317e0785578e491e600c73cfb6bfb70ff0

@@ -21,7 +21,7 @@ LIB_DEPENDS=	libignition-math6.so:math/ignition-math \
 		libzmq.so:net/libzmq4
 RUN_DEPENDS=	ignition-tools>0:devel/ignition-tools
 
-USES=		cmake:outsource pkgconfig sqlite
+USES=		cmake pkgconfig sqlite
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_TESTING

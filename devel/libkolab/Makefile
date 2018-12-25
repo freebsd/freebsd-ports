@@ -28,7 +28,7 @@ CMAKE_ARGS=	-DBUILD_TESTS:BOOL=OFF \
 		-DPHP_BINDINGS:BOOL=OFF \
 		-DPYTHON_BINDINGS:BOOL=OFF \
 		-DUSE_LIBCALENDARING:BOOL=OFF
-USES=		cmake:outsource kde:4 qt:4
+USES=		cmake kde:4 qt:4
 USE_KDE=	automoc4 kdelibs pimlibs
 USE_LDCONFIG=	yes
 USE_QT=		corelib dbus gui network svg xml \

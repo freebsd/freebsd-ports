@@ -16,7 +16,7 @@ LICENSE_NAME=	University of Minnesota METIS License
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	auto-accept
 
-USES=		cmake:noninja gmake
+USES=		cmake:insource,noninja gmake
 USE_LDCONFIG=	${PREFIX}/lib/parmetis
 
 OPTIONS_DEFINE=	OPENMPI DOCS STATIC

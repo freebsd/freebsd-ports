@@ -11,7 +11,7 @@ COMMENT=	Tools for processing SPIR-V intermediate shader language modules
 
 LICENSE=	APACHE20
 
-USES=		cmake:outsource compiler:c++11-lib python:build shebangfix
+USES=		cmake compiler:c++11-lib python:build shebangfix
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	tools/lesspipe/spirv-lesspipe.sh
 

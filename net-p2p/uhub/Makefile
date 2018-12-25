@@ -17,7 +17,7 @@ BROKEN_aarch64=	fails to compile: CPUINFO not defined
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		cmake perl5 sqlite
+USES=		cmake:insource perl5 sqlite
 USE_RC_SUBR=	uhub
 USE_PERL5=	build
 

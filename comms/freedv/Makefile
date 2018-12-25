@@ -20,7 +20,7 @@ LIB_DEPENDS=	libcodec2.so:audio/codec2 \
 		libspeex.so:audio/speex \
 		libspeexdsp.so:audio/speexdsp
 
-USES=		cmake:outsource compiler:c++11-lib tar:xz
+USES=		cmake compiler:c++11-lib tar:xz
 USE_WX=		3.0+
 CMAKE_ARGS+=	-DCODEC2_INCLUDE_DIRS=${LOCALBASE}/include/codec2 \
 		-DCODEC2_LIBRARY=${LOCALBASE}/lib/libcodec2.so \

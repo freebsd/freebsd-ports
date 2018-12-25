@@ -9,7 +9,7 @@ COMMENT=	KDE api to manage contact information
 
 LICENSE=	LGPL21
 
-USES=		cmake:outsource compiler:c++11-lib gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	ecm codecs config coreaddons i18n
 USE_QT=		core dbus gui \
 		buildtools_build qmake_build

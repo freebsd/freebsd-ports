@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libczmq.so:net/czmq \
 		libzmq.so:net/libzmq4
 
-USES=		cmake:outsource
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	zeromq
 USE_LDCONFIG=	yes

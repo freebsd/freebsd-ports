@@ -20,7 +20,7 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 
 CONFLICTS=	vtk5 vtk6
 
-USES=		alias cmake:outsource compiler:c++11-lang gl jpeg localbase
+USES=		alias cmake compiler:c++11-lang gl jpeg localbase
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
 USE_XORG=	ice x11 xt xext sm
 

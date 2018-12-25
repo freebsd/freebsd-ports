@@ -10,7 +10,7 @@ COMMENT=	Effective fragment potential method in quantum chemistry
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	ilyak
 USE_LDCONFIG=	yes

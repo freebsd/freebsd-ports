@@ -17,7 +17,7 @@ FLAVOR?=	${FLAVORS:[1]}
 qt4_PKGNAMESUFFIX=	4
 qt5_PKGNAMESUFFIX=	5
 
-USES=		cmake:outsource compiler:c++11-lib localbase pkgconfig
+USES=		cmake compiler:c++11-lib localbase pkgconfig
 .  if ${FLAVOR} == qt4
 DEPRECATED=	Qt4 has been EOL since december 2015
 EXPIRATION_DATE=2019-03-15

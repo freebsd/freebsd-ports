@@ -15,7 +15,7 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgmp.so:math/gmp \
 		libqca-qt5.so:devel/qca@qt5
 
-USES=		cmake:outsource compiler:c++11-lang gettext kde:5 qt:5
+USES=		cmake compiler:c++11-lang gettext kde:5 qt:5
 USE_KDE=	archive completion config coreaddons crash ecm i18n \
 		jobwidgets kio service solid widgetsaddons
 USE_QT=		core gui network testlib xml \

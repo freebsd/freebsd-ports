@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 DEPRECATED=		Qt4 has been EOL since december 2015
 EXPIRATION_DATE=	2018-12-31
 
-USES=		cmake:outsource kde:4 qt:4 tar:bzip2
+USES=		cmake kde:4 qt:4 tar:bzip2
 USE_KDE=	kdelibs automoc4 workspace libkdegames
 USE_QT=		qmake_build moc_build rcc_build uic_build
 

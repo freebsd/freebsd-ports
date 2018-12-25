@@ -41,7 +41,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-them
 # kdelibs's last release was as part of KDE Applications 17.08.3
 KDE_APPLICATIONS_VERSION=	17.08.3
 
-USES=		cmake:outsource fam gettext grantlee:4 jpeg kde:4 perl5 \
+USES=		cmake fam gettext grantlee:4 jpeg kde:4 perl5 \
 		qt:4 shared-mime-info shebangfix tar:xz ssl
 USE_GNOME=	libxml2 libxslt
 USE_KDE=	oxygen-icons5 \

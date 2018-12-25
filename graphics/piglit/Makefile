@@ -30,7 +30,7 @@ GH_ACCOUNT=	dumbbell
 GH_PROJECT=	piglit
 GH_TAGNAME=	a0db4427446ab50882a721ae3084fa26cc9e751a
 
-USES=		cmake:outsource compiler:c11 pkgconfig python:2.7 shebangfix
+USES=		cmake compiler:c11 pkgconfig python:2.7 shebangfix
 USE_GL=		egl gbm gl glu
 USE_XORG=	x11 xcb xext xrender
 SHEBANG_FILES=	piglit

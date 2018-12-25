@@ -25,7 +25,7 @@ BROKEN_aarch64=		fails to compile: c++: warning: argument unused during compilat
 BROKEN_armv6=		fails to compile: c++: warning: argument unused during compilation: '-msse'
 BROKEN_armv7=		fails to compile: c++: warning: argument unused during compilation: '-msse'
 
-USES=		cmake:outsource ncurses pkgconfig readline:port
+USES=		cmake ncurses pkgconfig readline:port
 USE_GITHUB=	yes
 USE_GNOME=	cairo
 USE_GL=		gl glu

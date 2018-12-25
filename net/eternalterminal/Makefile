@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgflags.so:devel/gflags \
 		libprotobuf.so:devel/protobuf \
 		libsodium.so:security/libsodium
 
-USES=		cmake:outsource compiler:c++11-lang ncurses
+USES=		cmake compiler:c++11-lang ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	MisterTea
 GH_PROJECT=	EternalTerminal

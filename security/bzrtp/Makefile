@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox
 
-USES=		cmake:outsource sqlite
+USES=		cmake sqlite
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 

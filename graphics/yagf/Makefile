@@ -24,7 +24,7 @@ OPTIONS_DEFINE=TESSERACT
 TESSERACT_DESC=		Tesseract OCR engine
 TESSERACT_RUN_DEPENDS=	tesseract:graphics/tesseract
 
-USES=		cmake desktop-file-utils pkgconfig qt:4
+USES=		cmake:insource desktop-file-utils pkgconfig qt:4
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_QT=		corelib gui imageformats linguist_build \

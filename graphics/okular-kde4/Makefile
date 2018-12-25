@@ -21,7 +21,7 @@ LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre \
 		libepub.so:textproc/ebook-tools \
 		libqmobipocket.so:graphics/kdegraphics-mobipocket-kde4
 
-USES=		cmake:outsource jpeg kde:4 pkgconfig qt:4 tar:xz
+USES=		cmake jpeg kde:4 pkgconfig qt:4 tar:xz
 USE_KDE=	kdelibs automoc4 qimageblitz kactivities \
 		libkexiv2
 USE_QT=		corelib declarative gui opengl xml \

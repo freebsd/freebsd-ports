@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/cmake/Modules/webOS/webOS.cmake:devel/cmake-mo
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeWebOS
 
-USES=		cmake:outsource
+USES=		cmake
 
 USE_LDCONFIG=	yes
 

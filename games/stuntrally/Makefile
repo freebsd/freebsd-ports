@@ -20,7 +20,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 USE_GITHUB=	yes
 GH_TUPLE=	stuntrally:tracks:${PORTVERSION}:tracks/data/tracks
 
-USES=		compiler:c++11-lib cmake:outsource dos2unix pkgconfig
+USES=		compiler:c++11-lib cmake dos2unix pkgconfig
 USE_CXXSTD=	gnu++11
 DOS2UNIX_FILES=	source/ogre/BaseApp_Create.cpp
 CMAKE_ARGS=	-DSHARE_INSTALL="${DATADIR_REL}" \

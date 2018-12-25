@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libBox2D.so:x11-toolkits/qml-box2d
 
-USES=		cmake:outsource kde:5 qt:5 tar:xz
+USES=		cmake kde:5 qt:5 tar:xz
 USE_KDE=	doctools
 USE_QT=		core declarative graphicaleffects gui multimedia network quickcontrols \
 		sensors svg widgets xml xmlpatterns \

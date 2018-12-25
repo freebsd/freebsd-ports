@@ -17,7 +17,7 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 		libpodofo.so:graphics/podofo \
 		libfreetype.so:print/freetype2
 
-USES=		cmake:outsource gettext kde:5 qt:5 tar:xz
+USES=		cmake gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash i18n iconthemes itemviews jobwidgets \
 		js kio service solid widgetsaddons xmlgui

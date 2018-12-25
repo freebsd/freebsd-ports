@@ -16,7 +16,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libnetcdf.so:science/netcdf \
 		libopenblas.so:math/openblas
 
-USES=		cmake:outsource,noninja eigen:3 fortran
+USES=		cmake:noninja eigen:3 fortran
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DBLAS_LIBRARIES:STRING=${LOCALBASE}/lib/libopenblas.so -DLAPACK_LIBRARIES:STRING=${LOCALBASE}/lib/libopenblas.so

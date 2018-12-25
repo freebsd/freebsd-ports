@@ -13,7 +13,7 @@ COMMENT=	Polygon and line clipping and offsetting library
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-USES=		cmake:outsource zip
+USES=		cmake zip
 USE_LDCONFIG=	yes
 
 NO_WRKSUBDIR=	yes

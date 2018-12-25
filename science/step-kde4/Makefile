@@ -14,7 +14,7 @@ EXPIRATION_DATE=	2018-12-31
 LIB_DEPENDS=	libqalculate.so:math/libqalculate \
 		libgsl.so:math/gsl
 
-USES=		cmake:outsource eigen:2 kde:4 pkgconfig qt:4 tar:xz
+USES=		cmake eigen:2 kde:4 pkgconfig qt:4 tar:xz
 USE_KDE=	kdelibs automoc4
 USE_QT=		opengl moc_build qmake_build rcc_build uic_build
 

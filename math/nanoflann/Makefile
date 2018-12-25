@@ -11,7 +11,7 @@ COMMENT=	Header-only library for Nearest Neighbor (NN) search with KD-trees
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:outsource
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	jlblancoc
 

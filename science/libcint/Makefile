@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libopenblas.so:math/openblas
 
-USES=		cmake:outsource blaslapack:openblas
+USES=		cmake blaslapack:openblas
 USE_GITHUB=	yes
 GH_ACCOUNT=	sunqm
 USE_LDCONFIG=	yes

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt@qt5 \
 		libsysstat-qt5.so:sysutils/libsysstat
 RUN_DEPENDS=	lxmenu-data>=0.1.2:x11/lxmenu-data
 
-USES=	cmake:outsource compiler:c++11-lib gettext-runtime kde:5 qt:5 \
+USES=	cmake compiler:c++11-lib gettext-runtime kde:5 qt:5 \
 	localbase:ldflags lxqt pkgconfig tar:xz
 USE_QT=	buildtools_build qmake_build core dbus gui svg widgets \
 	x11extras xml

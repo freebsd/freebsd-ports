@@ -17,7 +17,7 @@ LIB_DEPENDS=	libp8-platform.so:devel/p8-platform \
 		libudev.so:devel/libudev-devd
 RUN_DEPENDS=	kodi:multimedia/kodi
 
-USES=		cmake:outsource,noninja
+USES=		cmake:noninja
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc

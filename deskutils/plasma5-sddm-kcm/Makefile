@@ -8,7 +8,7 @@ CATEGORIES=	deskutils kde kde-plasma
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 config module for SDDM
 
-USES=		cmake:outsource compiler:c++11-lib gettext kde:5 cpe pkgconfig \
+USES=		cmake compiler:c++11-lib gettext kde:5 cpe pkgconfig \
 		qt:5 tar:xz
 USE_KDE=	auth archive attica codecs completion config configwidgets \
 		coreaddons ecm i18n jobwidgets kio newstuff service \

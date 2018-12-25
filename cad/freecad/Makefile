@@ -35,7 +35,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libhdf5.so:science/hdf5
 RUN_DEPENDS=	pivy>0:graphics/py-pivy@${PY_FLAVOR}
 
-USES=		dos2unix compiler:c++11-lib cmake:outsource eigen:3 fortran jpeg \
+USES=		dos2unix compiler:c++11-lib cmake eigen:3 fortran jpeg \
 		python:2.7 localbase qt:4
 USE_GITHUB=	yes
 USE_XORG=	ice sm x11 xext xt

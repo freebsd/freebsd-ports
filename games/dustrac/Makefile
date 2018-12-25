@@ -10,7 +10,7 @@ COMMENT=	2D top-view racing game
 
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 
-USES=		compiler:c++11-lib cmake:outsource openal pkgconfig qt:5
+USES=		compiler:c++11-lib cmake openal pkgconfig qt:5
 USE_GL=		glu
 USE_QT=		core opengl xml widgets \
 		buildtools_build linguisttools_build qmake_build

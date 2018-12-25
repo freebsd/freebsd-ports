@@ -26,7 +26,7 @@ CONFLICTS_INSTALL=	xpdf
 MANPREFIX=	${PREFIX}/share/xpdf
 SUB_FILES=	xpdf-man.conf
 
-USES=		compiler:c++11-lang cmake:outsource localbase:ldflags
+USES=		compiler:c++11-lang cmake localbase:ldflags
 CMAKE_ARGS+=	-DOPI_SUPPORT:BOOL=ON -DCMAKE_DISABLE_FIND_PACKAGE_Qt4:BOOL=ON \
 		-DUSE_LCMS:BOOL=OFF -DSYSTEM_XPDFRC=${PREFIX}/etc/xpdfrc
 

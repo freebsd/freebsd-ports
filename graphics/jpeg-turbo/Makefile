@@ -20,7 +20,7 @@ LICENSE_FILE_IJG=	${WRKSRC}/README.ijg
 LICENSE_FILE_ZLIB=	${WRKSRC}/LICENSE.md
 LICENSE_PERMS_IJG=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		cmake:outsource cpe
+USES=		cmake cpe
 USE_LDCONFIG=	yes
 CMAKE_ON=	WITH_JPEG8
 CPE_VENDOR=	d.r.commander

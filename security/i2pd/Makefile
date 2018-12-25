@@ -17,7 +17,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 USE_GITHUB=	yes
 GH_ACCOUNT=	PurpleI2P
 
-USES=		cmake compiler:c++11-lib ssl
+USES=		cmake:insource compiler:c++11-lib ssl
 CMAKE_ARGS=	-DWITH_GUI=OFF
 CMAKE_SOURCE_PATH=	${WRKSRC}/build
 USE_RC_SUBR=	${PORTNAME}

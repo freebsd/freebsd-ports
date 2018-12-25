@@ -14,7 +14,7 @@ BUILD_DEPENDS=	clang${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 RUN_DEPENDS=	clang${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 TEST_DEPENDS=	${LOCALBASE}/lib/libxml2.so:textproc/libxml2
 
-USES=		cmake:outsource
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	CastXML
 GH_PROJECT=	CastXML

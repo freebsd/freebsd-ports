@@ -20,7 +20,7 @@ LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/LICENSE.CC-BY-3.0
 
 RUN_DEPENDS=	dbus-run-session:devel/dbus
 
-USES=		cmake:outsource compiler:c++11-lang kde:5 qt:5
+USES=		cmake compiler:c++11-lang kde:5 qt:5
 USE_GITHUB=	yes
 USE_KDE=	ecm
 USE_QT=		core declarative dbus gui network \

@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libquazip5.so:archivers/quazip@qt5
 
-USES=		cmake:outsource compiler:c++11-lang desktop-file-utils gettext \
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext \
 		kde:5 qt:5 tar:xz
 USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 		crash doctools ecm i18n jobwidgets kio newstuff package parts \

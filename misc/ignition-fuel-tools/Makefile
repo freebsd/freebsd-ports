@@ -20,7 +20,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libyaml.so:textproc/libyaml \
 		libzip.so:archivers/libzip
 
-USES=		cmake:outsource compiler:c++17-lang pkgconfig
+USES=		cmake compiler:c++17-lang pkgconfig
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_TESTING

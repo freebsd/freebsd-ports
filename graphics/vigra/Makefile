@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libHalf.so:graphics/ilmbase \
 		libsz.so:science/szip
 
-USES=		cmake:outsource compiler:c++14-lang python:2.7,run shebangfix
+USES=		cmake compiler:c++14-lang python:2.7,run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	ukoethe
 GH_TAGNAME=	8acd73a

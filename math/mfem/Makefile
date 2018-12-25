@@ -11,7 +11,7 @@ COMMENT=	Lightweight, general, scalable C++ library for finite element methods
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource
+USES=		cmake
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 

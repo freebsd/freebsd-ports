@@ -18,7 +18,7 @@ LIB_DEPENDS=	libphysfs.so:devel/physfs \
 LLD_UNSAFE=	yes
 USE_SDL=	sdl2 image2
 USE_GL=		glew
-USES=		cmake:outsource compiler:c++11-lib dos2unix iconv \
+USES=		cmake compiler:c++11-lib dos2unix iconv \
 		openal:al pkgconfig tar:bzip2
 # Unhide std::to_string() to fix build with GCC (see ports/193528 for details)
 CFLAGS+=	-D_GLIBCXX_USE_C99

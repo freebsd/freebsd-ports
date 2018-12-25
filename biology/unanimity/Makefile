@@ -21,7 +21,7 @@ BUILD_DEPENDS=	pbseqan>=g20171002:biology/pbseqan \
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libboost_regex.so:devel/boost-libs
 
-USES=		cmake compiler:c++14-lang pkgconfig python
+USES=		cmake:insource compiler:c++14-lang pkgconfig python
 USE_GITHUB=	yes
 GH_ACCOUNT=	PacificBiosciences
 

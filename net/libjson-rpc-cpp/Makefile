@@ -16,7 +16,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjsoncpp.so:devel/jsoncpp \
 		libargtable2.so:devel/argtable
 
-USES=		cmake:outsource pkgconfig
+USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

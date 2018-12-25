@@ -17,7 +17,7 @@ LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb
 
-USES=		cmake:outsource pkgconfig
+USES=		cmake pkgconfig
 #USES=		cmake:noninja pkgconfig
 USE_LDCONFIG=	yes
 LDFLAGS+=	-pthread

@@ -19,7 +19,7 @@ LIB_DEPENDS=	libapron.so:math/apron \
 		libgmp.so:math/gmp \
 		libppl.so:devel/ppl
 
-USES=		cmake:outsource ncurses python sqlite
+USES=		cmake ncurses python sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	NASA-SW-VnV
 

@@ -14,7 +14,7 @@ LICENSE_NAME=	Eduard Bloch license
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		compiler:c++11-lang cmake:outsource ssl tar:xz
+USES=		compiler:c++11-lang cmake ssl tar:xz
 USE_RC_SUBR=	apt_cacher_ng
 
 CMAKE_ARGS=	-DLIBDIR:PATH=${DATADIR} \

@@ -21,7 +21,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 BUILD_DEPENDS=	valac:lang/vala
 RUN_DEPENDS=	dbus-send:devel/dbus
 
-USES=		cmake:outsource desktop-file-utils gettext pkgconfig
+USES=		cmake desktop-file-utils gettext pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 GH_PROJECT=	terminal

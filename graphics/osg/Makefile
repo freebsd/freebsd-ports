@@ -24,7 +24,7 @@ GH_PROJECT=	OpenSceneGraph
 
 CONFLICTS=	osg-devel
 
-USES=		alias cmake:outsource compiler:c++11-lang gl jpeg pkgconfig
+USES=		alias cmake compiler:c++11-lang gl jpeg pkgconfig
 USE_GL=		gl glu
 USE_XORG=	x11
 USE_LDCONFIG=	yes

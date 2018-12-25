@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 USE_GNOME=	libgsf
 GNU_CONFIGURE=	yes
-USES=		cmake:outsource iconv libtool pkgconfig tar:bzip2
+USES=		cmake iconv libtool pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 post-patch:

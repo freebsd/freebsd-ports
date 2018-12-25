@@ -15,7 +15,7 @@ LIB_DEPENDS=	libp8-platform.so:devel/p8-platform \
 		libkodiplatform.so:devel/kodi-platform
 RUN_DEPENDS=	kodi:multimedia/kodi
 
-USES=		cmake:outsource,noninja
+USES=		cmake:noninja
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kodi-pvr

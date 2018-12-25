@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libqhttpengine.so:www/qhttpengine \
 		libqmdnsengine.so:dns/qmdnsengine
 
-USES=		cmake:outsource qt:5
+USES=		cmake qt:5
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}-desktop
 USE_QT=		core gui network widgets buildtools_build qmake_build

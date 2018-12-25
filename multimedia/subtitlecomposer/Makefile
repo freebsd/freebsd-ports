@@ -17,7 +17,7 @@ LIB_DEPENDS=	libicui18n.so:devel/icu \
 
 CONFLICTS_INSTALL=	subtitlecomposer-kde4-*
 
-USES=		compiler:c++11-lang cmake:outsource desktop-file-utils gettext \
+USES=		compiler:c++11-lang cmake desktop-file-utils gettext \
 		kde:5 pkgconfig qt:5 shared-mime-info
 USE_KDE=	auth codecs config configwidgets coreaddons ecm_build i18n \
 		kio kross sonnet textwidgets widgetsaddons xmlgui

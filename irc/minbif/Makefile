@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpurple.so:net-im/libpurple
 
-USES=		cmake pkgconfig
+USES=		cmake:insource pkgconfig
 USE_GNOME=	glib20
 USE_RC_SUBR=	${PORTNAME}
 

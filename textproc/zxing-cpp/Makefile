@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libopencv_core.so:graphics/opencv-core \
 		libopencv_photo.so:graphics/opencv
 
-USES=		cmake:outsource compiler:c++11-lang iconv
+USES=		cmake compiler:c++11-lang iconv
 USE_GITHUB=	yes
 GH_ACCOUNT=	glassechidna
 GH_TAGNAME=	5aad474

@@ -18,7 +18,7 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.lgpl3
 BUILD_DEPENDS=	${HEADER_DEPENDS}
 RUN_DEPENDS=	${HEADER_DEPENDS}
 
-USES=		cmake:outsource compiler:c++14-lang
+USES=		cmake compiler:c++14-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	bluescarni
 NO_BUILD=	yes

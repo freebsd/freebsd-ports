@@ -12,7 +12,7 @@ COMMENT=	Data description language designed for openage
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/legal/LGPLv3
 
-USES=		cmake:outsource compiler:c++17-lang
+USES=		cmake compiler:c++17-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	SFTtech
 GH_TAGNAME=	3c263e2

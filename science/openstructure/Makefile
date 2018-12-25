@@ -24,7 +24,7 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 RUN_DEPENDS=	${PYNUMPY} \
 		bash:shells/bash
 
-USES=		cmake:outsource eigen:3 python pyqt:4 qt:4 shebangfix
+USES=		cmake eigen:3 python pyqt:4 qt:4 shebangfix
 SHEBANG_FILES=	scripts/dng.in scripts/ost.in scripts/ost_config.in
 USE_QT=		corelib gui network opengl xml qmake_build moc_build rcc_build uic_build
 USE_PYQT=	core gui

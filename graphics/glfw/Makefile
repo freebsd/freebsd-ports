@@ -13,7 +13,7 @@ COMMENT=	Portable framework for OpenGL development
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=		cmake localbase zip
+USES=		cmake:insource localbase zip
 USE_GL=		glu
 USE_LDCONFIG=	yes
 CMAKE_ON=	BUILD_SHARED_LIBS

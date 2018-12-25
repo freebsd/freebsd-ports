@@ -22,7 +22,7 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 BUILD_DEPENDS=	xf86-input-evdev>0:x11-drivers/xf86-input-evdev \
 		xf86-input-libinput>0:x11-drivers/xf86-input-libinput
 
-USES=		cmake:outsource compiler:c++11-lib cpe desktop-file-utils \
+USES=		cmake compiler:c++11-lib cpe desktop-file-utils \
 		gettext kde:5 pkgconfig qt:5 tar:xz
 USE_GNOME=	glib20
 USE_KDE=	activities activities-stats archive attica auth baloo \

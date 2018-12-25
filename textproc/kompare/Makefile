@@ -9,7 +9,7 @@ COMMENT=	Diff/Patch Frontend
 
 LIB_DEPENDS=	libkomparediff2.so:textproc/libkomparediff2
 
-USES=		cmake:outsource compiler:c++11-lang gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		doctools ecm i18n iconthemes jobwidgets kio parts service \
 		sonnet texteditor textwidgets widgetsaddons xmlgui

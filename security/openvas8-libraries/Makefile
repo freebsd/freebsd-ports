@@ -25,7 +25,7 @@ LIB_DEPENDS=	libhiredis.so:databases/hiredis \
 
 CONFLICTS?=	${PORTNAME:S/${OPENVAS_VER}/9/}-*
 
-USES=		bison cmake:outsource gnome pkgconfig
+USES=		bison cmake gnome pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 

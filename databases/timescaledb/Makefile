@@ -11,7 +11,7 @@ COMMENT=	Time-series database built on PostgreSQL
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE-APACHE
 
-USES=		compiler:c11 cmake:outsource pgsql:9.6,10,11 ssl
+USES=		compiler:c11 cmake pgsql:9.6,10,11 ssl
 
 USE_GITHUB=	YES
 GH_ACCOUNT=	timescale

@@ -11,7 +11,7 @@ COMMENT=	Monte Carlo neutron ray tracing package
 
 LICENSE=	LGPL21+
 
-USES=		bison:build cmake:outsource
+USES=		bison:build cmake
 CMAKE_ARGS=	"-Denable_mcstas=1"
 
 MANDIRS=	${PREFIX}/${PORTNAME}/${DISTVERSION}/doc/man/man1

@@ -11,7 +11,7 @@ COMMENT=	Operator Splitting QP Solver
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	oxfordcontrol
 GH_TUPLE=	oxfordcontrol:qdldl:7ab0fca:q/lin_sys/direct/qdldl/qdldl_sources

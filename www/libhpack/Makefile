@@ -23,7 +23,7 @@ LIB_DEPENDS=	libcheck.so:devel/check
 CMAKE_OFF=	BUILD_DOCS BUILD_TESTS ENABLE_GCOV USE_VALGRIND
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
-USES=		cmake pathfix pkgconfig python:2.7,build shebangfix
+USES=		cmake:insource pathfix pkgconfig python:2.7,build shebangfix
 
 GH_ACCOUNT=	alobbs
 GH_TAGNAME=	b0ade19

@@ -10,6 +10,12 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20181225:
+AUTHOR: kde@FreeBSD.org
+
+  cmake.mk now defaults to out-of-sourcetree builds. The option 'outsource'
+  has been removed. Ports that need an intree build now can pass 'insource'.
+
 20181110:
 AUTHOR: bapt@FreeBSD.org
 

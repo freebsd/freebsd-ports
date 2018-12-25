@@ -7,7 +7,7 @@ CATEGORIES=	dns kde kde-frameworks
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 abstraction to system DNSSD features
 
-USES=		cmake:outsource compiler:c++11-lib kde:5 pkgconfig qt:5 tar:xz
+USES=		cmake compiler:c++11-lib kde:5 pkgconfig qt:5 tar:xz
 USE_KDE=	ecm
 USE_QT=		buildtools_build core linguisttools network qmake_build
 

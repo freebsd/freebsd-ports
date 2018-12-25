@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS_INSTALL=	py[2-3][0-9]-CommonMark
 
-USES=		cmake:outsource python:3.4+,test
+USES=		cmake python:3.4+,test
 USE_GITHUB=	yes
 GH_ACCOUNT=	commonmark
 USE_LDCONFIG=	yes

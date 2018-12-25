@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libopenblas.so:math/openblas
 
-USES=		blaslapack:openblas cmake:outsource compiler:c++11-lang fortran # fortran only for openblas
+USES=		blaslapack:openblas cmake compiler:c++11-lang fortran # fortran only for openblas
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 

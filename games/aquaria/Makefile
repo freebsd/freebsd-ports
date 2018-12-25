@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	AquariaOSE
 GH_PROJECT=	Aquaria
 
-USES=		cmake lua:51 openal pkgconfig
+USES=		cmake:insource lua:51 openal pkgconfig
 EXCLUDE=	AL FTGL GL SDL* freetype2 glm glpng/png glpng/zlib \
 		libogg-* libvorbis-* lua-* tinyxml2*
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ExternalLibs/,}

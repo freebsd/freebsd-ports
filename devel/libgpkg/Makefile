@@ -20,7 +20,7 @@ OPTIONS_DEFINE=	GEOS
 OPTIONS_DEFAULT=GEOS
 
 USE_LDCONFIG=	yes
-USES=		cmake tar:bzip2
+USES=		cmake:insource tar:bzip2
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 WRKSRC=		${WRKDIR}/luciad-libgpkg-c56e3708453e

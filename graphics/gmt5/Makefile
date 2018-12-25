@@ -32,7 +32,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/dcw-gmt/dcw-gmt.nc:graphics/gmt5-dcw \
 
 WRKSRC=		${WRKDIR}/gmt-${PORTVERSION}
 
-USES=		shebangfix cmake:outsource
+USES=		shebangfix cmake
 SHEBANG_GLOB=	*.sh *.in
 SHEBANG_FILES=	share/tools/ncdeflate src/img/img2google src/gmtswitch
 

@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 RUN_DEPENDS=	${LOCALBASE}/share/sounds/sf2/FluidR3_GM.sf2:audio/fluid-soundfont
 
-USES=		compiler:c++11-lang cmake:outsource pkgconfig qt:5 shared-mime-info tar:bz2
+USES=		compiler:c++11-lang cmake pkgconfig qt:5 shared-mime-info tar:bz2
 USE_QT=		core gui network svg testlib widgets buildtools_build qmake_build
 USE_LDCONFIG=	yes
 

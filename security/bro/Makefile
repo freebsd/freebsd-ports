@@ -16,7 +16,7 @@ BROKEN_powerpc64=	Does not build: error: zero-size array 'names'
 
 LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
-USES=		bison cmake:outsource compiler:c++11-lang gettext-runtime ninja perl5 python shebangfix ssl
+USES=		bison cmake compiler:c++11-lang gettext-runtime ninja perl5 python shebangfix ssl
 
 CMAKE_ARGS+=	-DPYTHON_EXECUTABLE:PATH=${PYTHON_CMD}
 CXXFLAGS+=	-std=c++11 -Wall

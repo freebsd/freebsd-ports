@@ -13,7 +13,7 @@ LICENSE=	LGPL21+
 
 RUN_DEPENDS=	${LOCALBASE}/mcxtrace/${DISTVERSION}/bin/mcxtrace:science/mcxtrace
 
-USES=		cmake:outsource
+USES=		cmake
 # Apparently cmake does not generate an install/strip target if nothing
 # is supposed to be stripped, so override the cmake-default install
 # target of install/strip by resetting STRIP

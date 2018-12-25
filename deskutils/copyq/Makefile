@@ -11,7 +11,7 @@ COMMENT=	Qt5 based clipboard manager
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource qt:5
+USES=		cmake qt:5
 USE_XORG=	ice sm x11 xext xfixes xtst
 USE_QT=		core gui network script svg widgets x11extras xml \
 		buildtools_build linguist_build qmake_build \

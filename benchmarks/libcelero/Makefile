@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/include/sys/sysinfo.h:devel/libsysinfo
 
-USES=		cmake:outsource compiler:c++11-lang localbase:ldflags
+USES=		cmake compiler:c++11-lang localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	DigitalInBlue
 GH_PROJECT=	Celero

@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	davidsansome
 GH_TAGNAME=	0dc6c26
 
-USES=		cmake gettext kde:4 pkgconfig qt:4
+USES=		cmake:insource gettext kde:4 pkgconfig qt:4
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_KDE=	kdelibs automoc4
 USE_QT=		dbus corelib gui moc_build rcc_build uic_build qmake_build svg

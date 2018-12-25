@@ -9,7 +9,7 @@ COMMENT=	KF5 abstraction for system notifications
 
 LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt@qt5
 
-USES=		cmake:outsource compiler:c++11-lib gettext kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	codecs config coreaddons ecm windowsystem
 USE_QT=		buildtools_build core dbus gui linguisttools phonon4 \
 		qmake_build widgets x11extras

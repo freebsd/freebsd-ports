@@ -17,7 +17,7 @@ BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION} \
 
 LLVM_VERSION=	38 # the latest llvm version that the master branch (79ac709) currently supports
 
-USES=		cmake:outsource localbase pkgconfig python:run shebangfix
+USES=		cmake localbase pkgconfig python:run shebangfix
 USE_GITHUB=	yes
 SHEBANG_FILES=	tools/klee-stats/klee-stats tools/ktest-tool/ktest-tool
 USE_LDCONFIG=	yes

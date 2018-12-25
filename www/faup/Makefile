@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	stricaud
 
-USES=		cmake:outsource lua
+USES=		cmake lua
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*

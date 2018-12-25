@@ -14,7 +14,7 @@ COMMENT=	KDE thumbnail generator for fb2 files
 DEPRECATED=		Qt4 has been EOL since december 2015
 EXPIRATION_DATE=	2018-12-31
 
-USES=		cmake:outsource kde:4 qt:4
+USES=		cmake kde:4 qt:4
 USE_KDE=	kdelibs automoc4
 USE_QT=		moc_build qmake_build rcc_build uic_build
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

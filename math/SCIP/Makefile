@@ -22,7 +22,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 
 CONFLICTS_BUILD=	Ipopt
 
-USES=		compiler:c11 cmake:outsource readline tar:tgz
+USES=		compiler:c11 cmake readline tar:tgz
 EXTRACT_CMD=	gtar
 USE_LDCONFIG=	yes
 PLIST_SUB=	SHL4=${DISTVERSION}.0 SHL2=${DISTVERSION:R}

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 EXTRACT_AFTER_ARGS=	${DISTNAME}/aux/broccoli
 
-USES=		cmake:outsource ssl bison
+USES=		cmake ssl bison
 USE_LDCONFIG=	yes
 CMAKE_SOURCE_PATH=	${WRKSRC}/aux/broccoli
 BINARY_ALIAS=	swig=swig3.0

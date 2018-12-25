@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libImlib2.so:graphics/imlib2 \
 		libstartup-notification-1.so:x11/startup-notification
 
-USES=		alias cmake:outsource desktop-file-utils gettext-runtime \
+USES=		alias cmake desktop-file-utils gettext-runtime \
 		pkgconfig shared-mime-info
 USE_GNOME=	cairo glib20 gtk20 librsvg2 pango
 USE_XORG=	x11 xcomposite xdamage xext xfixes xinerama xrandr xrender

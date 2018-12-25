@@ -16,7 +16,7 @@ COMMENT=	Library of routines for performing sparse factorization
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-USES=		cmake:outsource fortran
+USES=		cmake fortran
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/SuperLU_${PORTVERSION}

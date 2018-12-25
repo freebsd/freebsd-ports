@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 USE_GITHUB=	yes
 GH_ACCOUNT=	Wargus
 
-USES=		cmake:outsource compiler:c++11-lang gl lua:51 pkgconfig sqlite
+USES=		cmake compiler:c++11-lang gl lua:51 pkgconfig sqlite
 USE_GL=		gl glu
 USE_SDL=	sdl
 CMAKE_ARGS=	-DGAMEDIR:STRING="bin" \

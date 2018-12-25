@@ -10,7 +10,7 @@ COMMENT=	Unified Robot Description Format (URDF) parser headers
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:outsource
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	ros
 GH_PROJECT=	${PORTNAME:S/-/_/}

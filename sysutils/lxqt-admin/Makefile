@@ -11,7 +11,7 @@ COMMENT=	System administration tool for the LXQt desktop
 
 LICENSE=	LGPL21+
 
-USES=	cmake:outsource compiler:c++11-lang gnome kde:5 localbase \
+USES=	cmake compiler:c++11-lang gnome kde:5 localbase \
 	lxqt pkgconfig tar:xz qt:5
 USE_QT=	buildtools_build qmake_build core dbus gui svg \
 	widgets x11extras xml

@@ -23,7 +23,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libtiff.so:graphics/tiff \
 		libvtkIOSQL-8.1.so:math/vtk8
 
-USES=		cmake:outsource compiler:c++11-lang jpeg qt:5
+USES=		cmake compiler:c++11-lang jpeg qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	open-vv
 USE_QT=		core designer gui network sql widgets xml buildtools_build qmake_build

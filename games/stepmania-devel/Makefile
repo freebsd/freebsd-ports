@@ -24,7 +24,7 @@ BROKEN_powerpc64=	fails to compile: cc1plus: unrecognized command line option "-
 
 USE_GITHUB=	yes
 
-USES=		cmake:outsource iconv jpeg perl5 pkgconfig shebangfix
+USES=		cmake:insource iconv jpeg perl5 pkgconfig shebangfix
 SHEBANG_FILES=	Utils/*.pl extern/zlib/zlib2ansi
 USE_XORG=	x11 xrandr xtst
 USE_GL=		glew
