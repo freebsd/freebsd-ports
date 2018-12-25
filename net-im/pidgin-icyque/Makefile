@@ -28,4 +28,7 @@ GH_TAGNAME=	c70f9f8
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
+post-install:
+		${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/purple-2/libicyque.so
+
 .include <bsd.port.mk>
