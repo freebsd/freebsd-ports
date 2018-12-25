@@ -15,12 +15,11 @@ LICENSE=	CC-BY-NC-SA-2.0
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
+USES=		gl gmake localbase
 GNU_CONFIGURE=	yes
-USES=		gmake localbase
+USE_CXXSTD=	c++98
 USE_SDL=	sdl image mixer
 USE_GL=		gl glu
-
-CXXFLAGS+=	-Wno-c++11-narrowing
 
 DATA_WRKSRC=	${WRKDIR}/${PORTNAME}-data-${PORTVERSION}
 
