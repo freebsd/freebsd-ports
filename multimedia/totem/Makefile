@@ -78,8 +78,8 @@ pre-everything::
 	@${ECHO_MSG} "===> Define WITH_DVD_DEVICE if you want to change the default"
 	@${ECHO_MSG} "===> For example, 'make WITH_DVD_DEVICE=\"/dev/somedevice\"'"
 
-post-patch:
 .if exists(/usr/lib/libstdc++.so)
+post-patch:
 	${REINPLACE_CMD} -e '/-Wno-unused-but-set-variable/d' \
 		${WRKSRC}/src/plugins/meson.build
 .endif
