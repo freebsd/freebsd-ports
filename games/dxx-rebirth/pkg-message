@@ -1,0 +1,22 @@
+dxx-rebirth requires the original game files from Descent I and/or
+Descent II to work properly.  These can come from an original CD or from
+GOG.com.
+
+If using the GOG.com version of Descent I, you must extract the files
+from setup_descent_1.4a_(16596).exe using the innoextract package.
+
+You can install it with "pkg install innoextract" or 
+"portmaster archivers/innoextract".
+
+The files will be in a directory named app. You must move the contents
+of this directory to a directory named ~/.d1x-rebirth/Data
+
+The eaisest way to do this is to follow these steps:
+$ mkdir -p ~/.d1x-rebirth/Data
+$ cp -R app/* ~/.d1x-rebirth/Data
+
+You can then delete everything extracted from the exe.
+
+If you own the GOG.com version of Descent II, follow the above steps
+with the setup_descent_2_1.1_(16596).exe file and using
+~/.d2x-rebirth/Data as the directory name.

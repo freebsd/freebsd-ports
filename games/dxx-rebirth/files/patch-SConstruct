@@ -1,0 +1,11 @@
+--- SConstruct.orig	2018-11-21 15:51:35 UTC
++++ SConstruct
+@@ -3502,7 +3502,7 @@ class DXXCommon(LazyObjectConstructor):
+ 				'variable': EnumVariable,
+ 				'arguments': (
+ 					('host_endian', None, 'endianness of host platform', {'allowed_values' : ('little', 'big')}),
+-					('host_platform', sys.platform.rstrip('0123456789'), 'cross-compile to specified platform', {'allowed_values' : ('darwin', 'linux', 'openbsd', 'win32')}),
++					('host_platform', sys.platform.rstrip('0123456789'), 'cross-compile to specified platform', {'allowed_values' : ('darwin', 'linux', 'freebsd', 'openbsd', 'win32')}),
+ 					('screenshot', 'png', 'screenshot file format', {'allowed_values' : ('legacy', 'png')}),
+ 				),
+ 			},
