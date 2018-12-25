@@ -34,13 +34,13 @@ BAD_GST_ALL_PLUGINS+= \
 		flite \
 		gme \
 		gsm \
-		gtk3 \
 		hls \
 		kate \
 		kms \
 		ladspa \
 		libde265 \
 		libmms \
+		lv2 \
 		modplug \
 		mpeg2enc \
 		mplex \
@@ -91,7 +91,6 @@ BAD_GST_NON_PLUGINS= \
 		--disable-uvch264 \
 		--disable-vcd \
 		--disable-wasapi \
-		--disable-wgl \
 		--disable-winks \
 		--disable-winscreencap
 
@@ -101,6 +100,7 @@ GOOD_GST_ALL_PLUGINS+= \
 		flac \
 		gdk_pixbuf \
 		gst_v4l2 \
+		gtk3 \
 		jack \
 		jpeg \
 		lame \
@@ -123,7 +123,6 @@ GOOD_GST_NON_PLUGINS=	\
 		--disable-directsound \
 		--disable-osx_audio \
 		--disable-osx_video \
-		--disable-sunaudio \
 		--disable-waveform \
 		--enable-bz2 \
 		--enable-oss \
@@ -330,6 +329,12 @@ gst_libmms_PLIST_FILES=	${GST_LIB_DIR}/libgstmms.so
 
 # librfb
 gst_librfb_USE_XORG=	x11
+
+# liblv2
+gst_lv2_LIB_DEPENDS=	libsord-0.so:devel/sord \
+			libserd-0.so:devel/serd \
+			libsratom-0.so:audio/sratom \
+			liblilv-0.so:audio/lilv
 
 # png
 gst_libpng_LIB_DEPENDS=	libpng.so:graphics/png
