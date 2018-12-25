@@ -103,8 +103,7 @@ PLIST_SUB=	INFLUXD_USER=${INFLUXD_USER} \
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == "FreeBSD" && ((${OSVERSION} >= 1100513 && ${OSVERSION} < 1200000) || \
-	${OSVERSION} >= 1200015)
+.if ${OPSYS} == "FreeBSD"
 SUB_LIST+=	INFLUXD_LOGCMD="daemon"
 .else
 SUB_LIST+=	INFLUXD_LOGCMD="logger"
