@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsbmc-cli
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freeshell.de/~mk/download/
 
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	dsbmd>=0.3:sysutils/dsbmd
 
 USES=		tar:tgz
+
 PLIST_FILES=	bin/dsbmc-cli man/man1/dsbmc-cli.1.gz
 
 .include <bsd.port.mk>
