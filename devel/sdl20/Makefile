@@ -120,6 +120,7 @@ SDL_TIMERS_CONFIGURE_ENABLE=	timers
 SDL_VIDEO_CONFIGURE_ENABLE=	video
 UDEV_CONFIGURE_ENABLE=		libudev
 UDEV_LIB_DEPENDS=		libudev.so:devel/libudev-devd
+UDEV_BUILD_DEPENDS=		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 
 .include <bsd.port.options.mk>
 
