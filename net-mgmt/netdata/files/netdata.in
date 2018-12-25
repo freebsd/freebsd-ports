@@ -23,8 +23,8 @@ rcvar=netdata_enable
 load_rc_config $name
 
 : ${netdata_enable="NO"}
+: ${netdata_user="netdata"}
 
-netdata_user="netdata"
 pidfile="%%NETDATA_PERST%%/${name}.pid"
 procname="%%PREFIX%%/sbin/${name}"
 command="/usr/sbin/daemon"
