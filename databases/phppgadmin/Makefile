@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	phppgadmin
-PORTVERSION=	5.1
-PORTREVISION=	5
+DISTVERSIONPREFIX=	REL_
+DISTVERSION=	5-6-0
 CATEGORIES=	databases www
-MASTER_SITES=	SF/${PORTNAME}/phpPgAdmin%20%5Bstable%5D/phpPgAdmin-5.1
-DISTNAME=	phpPgAdmin-${PORTVERSION}
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -17,6 +15,8 @@ LICENSE=	GPLv2
 NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		cpe tar:bzip2 php:web,flavors shebangfix
+USE_GITHUB=	yes
+
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	pgsql pcre session
 .endif
