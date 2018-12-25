@@ -3,7 +3,7 @@
 
 PORTNAME=	gstreamer1-editing-services
 PORTVERSION=	1.14.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer-editing-services/
 DISTNAME=	gstreamer-editing-services-${PORTVERSION}

@@ -66,6 +66,8 @@ lib/libges-%%VERSION%%.so
 lib/libges-%%VERSION%%.so.0
 lib/libges-%%VERSION%%.so.%%SOVERSION%%
 %%PYTHON_SITELIBDIR%%/gstreamer-editing-services/GES.py
+%%PYTHON_SITELIBDIR%%/gstreamer-editing-services/__pycache__/GES.cpython-%%PYTHON_SUFFIX%%.%%PYTHON_PYOEXTENSION%%
+%%PYTHON_SITELIBDIR%%/gstreamer-editing-services/__pycache__/GES.cpython-%%PYTHON_SUFFIX%%.pyc
 libdata/pkgconfig/gst-editing-services-%%VERSION%%.pc
 man/man1/ges-launch-%%VERSION%%.1.gz
 share/bash-completion/completions/ges-launch-%%VERSION%%
