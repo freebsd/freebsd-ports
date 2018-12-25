@@ -27,13 +27,13 @@ CONFIGURE_ARGS=	--enable-notify-plugin \
 		--disable-mpris2-plugin \
 		--without-html-dir \
 		--with-gstreamer=1.0
+USES=		compiler:c++11-lang desktop-file-utils gettext-tools \
+		gmake libtool pkgconfig tar:bzip2 xfce:gtk3
 USE_GNOME=	cairo gtk30 glib20 intltool intlhack
 USE_GSTREAMER1=	core faad flac wavpack rtmp x
 USE_XFCE=	panel
 USE_XORG=	ice sm x11
 USE_LDCONFIG=	yes
-USES=		desktop-file-utils gettext-tools gmake libtool pkgconfig \
-		tar:bzip2 xfce:gtk3
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		NLS

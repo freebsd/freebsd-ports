@@ -13,7 +13,7 @@ COMMENT=	The open source version of Bungie's Marathon game
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:devel/boost-libs
 
-USES=		gmake localbase pkgconfig tar:bzip2
+USES=		compiler:c++11-lang gmake localbase pkgconfig tar:bzip2
 USE_CXXSTD=	gnu++98
 USE_SDL=	image net sdl ttf
 USE_GL=		yes
