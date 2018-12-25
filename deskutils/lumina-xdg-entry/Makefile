@@ -11,6 +11,7 @@ MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	XDG desktop entry creator from the Lumina Desktop
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/../../../LICENSE
 
 OPTIONS_DEFINE=	I18N
 OPTIONS_DEFAULT=I18N
