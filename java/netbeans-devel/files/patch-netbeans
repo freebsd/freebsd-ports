@@ -1,26 +1,28 @@
---- bin/netbeans.orig	2015-08-04 14:44:18.000000000 +0200
-+++ bin/netbeans	2015-09-16 13:23:02.012670000 +0200
-@@ -163,6 +163,10 @@
+--- bin/netbeans.orig	2018-02-02 14:08:50 UTC
++++ bin/netbeans
+@@ -136,7 +136,11 @@ heap_size () {
          mem=`/usr/sbin/sysctl hw.memsize | tr -d [:alpha:][:space:].:`
          mem=`expr $mem / 1048576`
          ;;
-+	 FreeBSD*)
-+		  mem=`/sbin/sysctl -n hw.realmem`
-+		  mem=`expr $mem / 1048576`
-+		  ;;
-         *) 
+-        *) 
++    FreeBSD*)
++        mem=`/sbin/sysctl -n hw.realmem`
++        mem=`expr $mem / 1048576`
++	;;
++    *) 
          ;;
      esac
-@@ -190,7 +194,7 @@
- if grep -v -- "-J-XX:MaxPermSize" >/dev/null <<EOF ; then
+     if [ -z "$mem" ] ; then
+@@ -157,7 +161,7 @@ if grep -v -- "-J-Xmx" >/dev/null <<EOF ; then
  ${netbeans_default_options}
  EOF
--	netbeans_default_options="-L-XX:MaxPermSize=384m ${netbeans_default_options}"
-+	netbeans_default_options="-L-XX:MaxPermSize=512m ${netbeans_default_options} --nosplash"
+         heap_size
+-	netbeans_default_options="-J-Xmx${max_heap_size}m ${netbeans_default_options}"
++	netbeans_default_options="-J-Xmx${max_heap_size}m ${netbeans_default_options} --nosplash"
  fi
  
- if grep -v -- "-J-XX:PermSize" >/dev/null <<EOF ; then
-@@ -245,6 +249,8 @@
+ launchNbexec() {
+@@ -205,6 +209,8 @@ case "`uname`" in
              --jdkhome '"$netbeans_jdkhome"' \
              --branding nb \
              --clusters '"$netbeans_clusters"' \
