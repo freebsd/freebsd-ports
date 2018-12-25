@@ -229,6 +229,7 @@
     SUBDIR += dungeon
     SUBDIR += dungeoncrawl
     SUBDIR += dustrac
+    SUBDIR += dxx-rebirth
     SUBDIR += easyrpg-player
     SUBDIR += eboard
     SUBDIR += edge
