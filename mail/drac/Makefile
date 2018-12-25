@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic Relay Authorization Control, a POP-before-SMTP implementation
 
+DEPRECATED=	Unmaintained upstream since 2003
+EXPIRATION_DATE=	2019-01-15
+
 PLIST_FILES=	sbin/rpc.dracd include/drac.h lib/libdrac.a \
 		etc/dracd.allow-sample
 
