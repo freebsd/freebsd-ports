@@ -2790,6 +2790,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-sh.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-smb.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-smb.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-sudoedit.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-sudoedit.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-uu.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-uu.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp.el.gz
