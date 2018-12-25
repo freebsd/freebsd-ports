@@ -1,3 +1,3 @@
-TIMESTAMP = 1541490377
-SHA256 (qemu-powernv-3.0.50.tar.gz) = 6935e4b4b5def6c5b1cc1ac1717bae56323e673193ab587978929db9f8849b52
-SIZE (qemu-powernv-3.0.50.tar.gz) = 17249849
+TIMESTAMP = 1545712992
+SHA256 (qemu-powernv-3.0.50.tar.bz2) = 945547d7e5e2aea7cd57d2e3239d0a315889f0b7cd7991afcd28bd2aebe3f2a5
+SIZE (qemu-powernv-3.0.50.tar.bz2) = 42110513
