@@ -26,8 +26,8 @@ LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib \
 PORTSCOUT=	limitw:1,even
 SLAVEPORT?=	no
 
-USES=		desktop-file-utils gettext gmake libarchive libtool pathfix \
-		pkgconfig tar:xz
+USES=		compiler:c11 desktop-file-utils gettext gmake gnome libarchive \
+		libtool mate pathfix pkgconfig tar:xz
 USE_MATE=	icontheme
 USE_XORG=	ice sm x11
 USE_GNOME=	cairo gtk30 intlhack libxml2
