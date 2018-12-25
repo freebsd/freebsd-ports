@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ranger
-PORTVERSION=	1.9.1
+PORTVERSION=	1.9.2
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://ranger.github.io/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
