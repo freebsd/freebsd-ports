@@ -31,6 +31,9 @@
 %%SITEPACKAGEDIR%%/wsgidav/addons/seafile/seafile_dav_provider.py
 %%SITEPACKAGEDIR%%/wsgidav/addons/seafile/seafile_dav_provider.pyc
 %%SITEPACKAGEDIR%%/wsgidav/addons/seafile/seafile_dav_provider.pyo
+%%SITEPACKAGEDIR%%/wsgidav/addons/seafile/seahub_db.py
+%%SITEPACKAGEDIR%%/wsgidav/addons/seafile/seahub_db.pyc
+%%SITEPACKAGEDIR%%/wsgidav/addons/seafile/seahub_db.pyo
 %%SITEPACKAGEDIR%%/wsgidav/dav_error.py
 %%SITEPACKAGEDIR%%/wsgidav/dav_error.pyc
 %%SITEPACKAGEDIR%%/wsgidav/dav_error.pyo
