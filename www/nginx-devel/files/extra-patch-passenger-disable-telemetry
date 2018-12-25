@@ -1,0 +1,11 @@
+--- ../passenger-6.0.0/src/ruby_supportlib/phusion_passenger/nginx/config_options.rb.orig	2018-12-03 12:23:06.980728000 -0500
++++ ../passenger-6.0.0/src/ruby_supportlib/phusion_passenger/nginx/config_options.rb	2018-12-03 12:23:32.978924000 -0500
+@@ -204,7 +204,7 @@
+     :name     => 'passenger_disable_anonymous_telemetry',
+     :scope    => :global,
+     :type     => :flag,
+-    :default  => false,
++    :default  => true,
+     :context  => [:main],
+     :struct   => 'NGX_HTTP_MAIN_CONF_OFFSET'
+   },
