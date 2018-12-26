@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	immortal
-PORTVERSION=	0.21.0
+PORTVERSION=	0.22.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	nbari@tequila.io
@@ -18,7 +18,7 @@ GH_TUPLE=	immortal:logrotate:6f52ae7:logrotate/src/github.com/immortal/logrotate
 		immortal:natcasesort:162328b:natcasesort/src/github.com/immortal/natcasesort \
 		immortal:xtime:fb1aca1:xtime/src/github.com/immortal/xtime \
 		nbari:violetear:5c7cdfe:nbari/src/github.com/nbari/violetear \
-		go-yaml:yaml:5420a8b:yaml/src/github.com/go-yaml/yaml
+		go-yaml:yaml:51d6538:yaml/src/github.com/go-yaml/yaml
 GH_SUBDIR=	src/github.com/${PORTNAME}/${PORTNAME}
 
 OPTIONS_DEFINE=	EXAMPLES
