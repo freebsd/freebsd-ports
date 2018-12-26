@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce-evolution
-DISTVERSION=	4.12.0
+DISTVERSION=	5.6.2
 CATEGORIES=	x11-themes
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -9,7 +9,7 @@ MAINTAINER=	fbsd@opal.com
 COMMENT=	Complete Xfce Evolution Gtk2, Gtk3, Qt4, Qt5, wxWidgets, Xfce themes
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/Xfce\ Evolution/GPL-v2
+LICENSE_FILE=	${WRKSRC}/GPL-v2
 
 RUN_DEPENDS=	fontconfig>0:x11-fonts/fontconfig \
 		gtk-murrine-engine>0:x11-themes/gtk-murrine-engine \
@@ -24,21 +24,17 @@ bash_CMD=	/bin/sh
 
 EXTRACT_AFTER_ARGS=	-d ${DISTNAME}
 
-EXTRAFILES=	ABOUT \
-		GPL-v2 \
-		HACKING \
-		HISTORY \
-		INSTALL
+EXTRADIRS=	TOOLS
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/themes
 	@cd ${WRKSRC} && \
 		${COPYTREE_SHARE} "Xfce*" ${STAGEDIR}${PREFIX}/share/themes
-	@cd ${STAGEDIR}${PREFIX}/share/themes/Xfce\ Evolution && ${RM} ${EXTRAFILES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail ${STAGEDIR}${PREFIX}/etc/fonts/conf.d
-	@${RLN} ${STAGEDIR}${PREFIX}/share/themes/Xfce\ Evolution/90-qt5.conf \
-		${STAGEDIR}${PREFIX}/etc/fonts/conf.avail/90-qt5.conf
-	@${RLN} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail/90-qt5.conf \
-		${STAGEDIR}${PREFIX}/etc/fonts/conf.d/90-qt5.conf
+	@${RLN} ${STAGEDIR}${PREFIX}/share/themes/Xfce\ Evolution/TOOLS/SETUP/lib/90-xfce-evolution_qt5fontfix.conf \
+		${STAGEDIR}${PREFIX}/etc/fonts/conf.avail/90-xfce-evolution_qt5fontfix.conf
+	@${RLN} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail/90-xfce-evolution_qt5fontfix.conf \
+		${STAGEDIR}${PREFIX}/etc/fonts/conf.d/90-xfce-evolution_qt5fontfix.conf
+	@cd ${STAGEDIR}${PREFIX}/share/themes/Xfce\ Evolution && ${RM} -r ${EXTRADIRS}
 
 .include <bsd.port.mk>
