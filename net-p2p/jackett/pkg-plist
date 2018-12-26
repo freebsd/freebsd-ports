@@ -54,6 +54,7 @@
 %%DATADIR%%/Definitions/1337x.yml
 %%DATADIR%%/Definitions/2fast4you.yml
 %%DATADIR%%/Definitions/3dtorrents.yml
+%%DATADIR%%/Definitions/420files.yml
 %%DATADIR%%/Definitions/Bittorrentfiles.yml
 %%DATADIR%%/Definitions/acidlounge.yml
 %%DATADIR%%/Definitions/anidex.yml
@@ -61,6 +62,7 @@
 %%DATADIR%%/Definitions/aox.yml
 %%DATADIR%%/Definitions/arabafenice.yml
 %%DATADIR%%/Definitions/archetorrent.yml
+%%DATADIR%%/Definitions/arenabg.yml
 %%DATADIR%%/Definitions/asiandvdclub.yml
 %%DATADIR%%/Definitions/ast4u.yml
 %%DATADIR%%/Definitions/audiobookbay.yml
@@ -105,7 +107,6 @@
 %%DATADIR%%/Definitions/ethor.yml
 %%DATADIR%%/Definitions/ettv.yml
 %%DATADIR%%/Definitions/extratorrent-ag.yml
-%%DATADIR%%/Definitions/extratorrentclone.yml
 %%DATADIR%%/Definitions/eztv.yml
 %%DATADIR%%/Definitions/fanoin.yml
 %%DATADIR%%/Definitions/femdomcult.yml
@@ -127,6 +128,7 @@
 %%DATADIR%%/Definitions/hd4free.yml
 %%DATADIR%%/Definitions/hdbits.yml
 %%DATADIR%%/Definitions/hdbitscom.yml
+%%DATADIR%%/Definitions/hdcenter.yml
 %%DATADIR%%/Definitions/hdchina.yml
 %%DATADIR%%/Definitions/hdcity.yml
 %%DATADIR%%/Definitions/hdhome.yml
@@ -189,7 +191,9 @@
 %%DATADIR%%/Definitions/rodvd.yml
 %%DATADIR%%/Definitions/rutor.yml
 %%DATADIR%%/Definitions/scenefz.yml
+%%DATADIR%%/Definitions/scenehd.yml
 %%DATADIR%%/Definitions/scenereactor.yml
+%%DATADIR%%/Definitions/scenerush.yml
 %%DATADIR%%/Definitions/sdbits.yml
 %%DATADIR%%/Definitions/shareisland.yml
 %%DATADIR%%/Definitions/sharespacedb.yml
@@ -220,6 +224,7 @@
 %%DATADIR%%/Definitions/torlock.yml
 %%DATADIR%%/Definitions/torrent-turk.yml
 %%DATADIR%%/Definitions/torrent9.yml
+%%DATADIR%%/Definitions/torrent9clone.yml
 %%DATADIR%%/Definitions/torrentbd.yml
 %%DATADIR%%/Definitions/torrentccf.yml
 %%DATADIR%%/Definitions/torrentcouch.yml
@@ -241,6 +246,7 @@
 %%DATADIR%%/Definitions/ultimategamerclub.yml
 %%DATADIR%%/Definitions/unionfansub.yml
 %%DATADIR%%/Definitions/waffles.yml
+%%DATADIR%%/Definitions/wihd.yml
 %%DATADIR%%/Definitions/worldofp2p.yml
 %%DATADIR%%/Definitions/worldwidetorrents.yml
 %%DATADIR%%/Definitions/x-ite.me.yml
