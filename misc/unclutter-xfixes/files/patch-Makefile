@@ -1,8 +1,6 @@
-Index: Makefile
-===================================================================
---- Makefile.orig	2018-01-24 07:43:43 UTC
+--- Makefile.orig	2018-12-11 20:44:10 UTC
 +++ Makefile
-@@ -4,15 +4,14 @@ IDIR = include
+@@ -5,11 +5,10 @@ IDIR = include
  ODIR = obj
  
  INSTALL = install
@@ -10,23 +8,20 @@ Index: Makefile
  
 -BINDIR = $(PREFIX)/bin
 -MANDIR = $(PREFIX)/share/man/man1
+-LICENSEDIR = $(PREFIX)/share/licenses/$(TARGET)
 +BINDIR = /bin
 +MANDIR = /man/man1
++LICENSEDIR = /share/licenses/$(TARGET)
  
  CC = gcc
  LD = $(CC)
- 
--CPPFLAGS += -D'__VERSION="$(shell git describe --all --long --always)"' "-I$(IDIR)"
-+CPPFLAGS += -D'__VERSION="$(UNCLUTTER_VERSION)"' "-I$(IDIR)"
- 
- CFLAGS += -std=gnu99
- CFLAGS += -Wall -Wundef -Wshadow -Wformat-security
-@@ -41,8 +40,8 @@ $(ODIR)/%.o: $(SDIR)/%.c $(INCS)
+@@ -44,9 +43,8 @@ $(ODIR)/%.o: $(SDIR)/%.c $(INCS)
  
  .PHONY: install
  install: $(TARGET) mans
 -	$(INSTALL) -Dm 0755 "$(TARGET)" "$(DESTDIR)$(BINDIR)/$(TARGET)"
 -	$(INSTALL) -Dm 0644 man/unclutter-xfixes.1 "$(DESTDIR)$(MANDIR)/unclutter.1"
+-	$(INSTALL) -Dm 0644 -t "$(DESTDIR)$(LICENSEDIR)/" LICENSE
 +	$(BSD_INSTALL_PROGRAM) "$(TARGET)" "$(DESTDIR)$(PREFIX)$(BINDIR)/$(TARGET)"
 +	$(BSD_INSTALL_MAN) man/unclutter-xfixes.1 "$(DESTDIR)$(PREFIX)$(MANDIR)/$(TARGET).1"
  

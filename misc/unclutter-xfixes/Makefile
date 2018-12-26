@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unclutter-xfixes
-PORTVERSION=	1.3
+PORTVERSION=	1.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
@@ -27,7 +27,6 @@ CONFLICTS_INSTALL=	unclutter-8*
 PLIST_FILES=	bin/unclutter \
 		man/man1/unclutter.1.gz
 
-MAKE_ENV+=	UNCLUTTER_VERSION=${PORTVERSION}
 MAKE_ARGS=	CC=${CC}
 
 CFLAGS+=	-I${LOCALBASE}/include
