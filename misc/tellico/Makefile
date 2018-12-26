@@ -3,6 +3,7 @@
 
 PORTNAME=	tellico
 DISTVERSION=	3.1.4
+PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	http://tellico-project.org/files/
 
@@ -11,11 +12,15 @@ COMMENT=	Collection manager for KDE
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
+LIB_DEPENDS=	libbtparse.so:textproc/btparse \
+		libcdio.so:sysutils/libcdio \
+	 	libcsv.so:textproc/libcsv \
+		libexempi.so:textproc/exempi \
 		libiso9660.so:sysutils/libcdio \
 		libpoppler-qt5.so:graphics/poppler-qt5 \
 		libpoppler.so:graphics/poppler \
-		libtag.so:audio/taglib
+		libtag.so:audio/taglib \
+		libyaz.so:net/yaz
 
 USES=		cmake desktop-file-utils gettext kde:5 pkgconfig python:run \
 		qt:5 shared-mime-info shebangfix tar:xz
