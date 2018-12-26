@@ -1,0 +1,12 @@
+include/igfxcmrt/cm_hw_vebox_cmd_g10.h
+include/igfxcmrt/cm_rt.h
+include/igfxcmrt/cm_rt_api_os.h
+include/igfxcmrt/cm_rt_def_os.h
+include/igfxcmrt/cm_rt_extension.h
+include/igfxcmrt/cm_rt_g10.h
+include/igfxcmrt/cm_rt_g8.h
+include/igfxcmrt/cm_rt_g9.h
+lib/libigfxcmrt.so
+lib/libigfxcmrt.so.7
+lib/libigfxcmrt.so.7.2.0
+libdata/pkgconfig/igfxcmrt.pc

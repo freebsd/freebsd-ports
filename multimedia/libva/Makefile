@@ -2,8 +2,11 @@
 
 PORTNAME=	libva
 PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	cf11abe5e1b9.patch:-p1 # for media-driver 18.4+
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	VAAPI wrapper and dummy driver
