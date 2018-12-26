@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stellarium
-PORTVERSION=	0.18.2
+PORTVERSION=	0.18.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	astro
 EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat:N*.pdf}
@@ -23,7 +23,7 @@ USE_QT=		qmake_build buildtools_build linguisttools_build \
 
 CMAKE_ARGS=	-DENABLE_GPS:BOOL=OFF	# XXX: requires Qt5Positioning
 
-GUIDE_VERSION=	0.16.1
+GUIDE_VERSION=	${PORTVERSION}
 
 PORTDOCS=	CREDITS.md ChangeLog README.md \
 		stellarium_user_guide-${GUIDE_VERSION}-1.pdf
@@ -38,7 +38,7 @@ MULTIMEDIA_DESC=	Sound and video support
 SCRIPTING_DESC=		Scripting support
 TELESCOPE_DESC=		Telescope control plugin
 
-DOCS_MASTER_SITES=	SF/${PORTNAME}/Stellarium-user-guide/${GUIDE_VERSION}-1:ug
+DOCS_MASTER_SITES=	https://github.com/Stellarium/stellarium/releases/download/v${GUIDE_VERSION}/:ug
 DOCS_DISTFILES=		stellarium_user_guide-${GUIDE_VERSION}-1.pdf:ug
 
 TEXTURES_MASTER_SITES=	SF/${PORTNAME}/Extra-data-files/textures:gfx
@@ -56,7 +56,7 @@ TELESCOPE_CMAKE_OFF=	-DUSE_PLUGIN_TELESCOPECONTROL:BOOL=OFF
 .  for i in 4 5 6 7 8
 MASTER_SITES+=	SF/${PORTNAME}/Extra-data-files/stars${i}:stars${i}
 .  endfor
-DISTFILES+=	stars_4_1v0_1.cat:stars4 stars_5_2v0_1.cat:stars5 \
+DISTFILES+=	stars_4_1v0_2.cat:stars4 stars_5_2v0_1.cat:stars5 \
 		stars_6_2v0_1.cat:stars6 stars_7_2v0_1.cat:stars7 \
 		stars_8_2v0_1.cat:stars8
 PLIST_SUB+=	MORE_STARS=""
@@ -72,23 +72,16 @@ CMAKE_ARGS+=	-DENABLE_SCRIPTING:BOOL=OFF
 PLIST_SUB+=	SCRIPTS="@comment "
 .endif
 
-# Work-around the vestige of bzr->git conversion upstream
-post-extract:
-	@${MV} ${WRKSRC}/textures/earth-shadow-new.png \
-		${WRKSRC}/textures/earth-shadow.png
-
 post-extract-DOCS-on:
 	@${LN} -sf ${_DISTDIR}/stellarium_user_guide-${GUIDE_VERSION}-1.pdf \
 		${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's, -Wno-unused-result,,' ${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e '/<netinet\/in\.h>/ { x ; \
-		s,.*,#include <sys/socket.h>, ; G ; }' \
-		${WRKSRC}/src/external/libindi/libs/indibase/baseclient.cpp
 
 post-install-MORE_STARS-on:
-	${INSTALL_DATA} ${DISTDIR}/stars_[45678]_[12]v0_1.cat \
+	${INSTALL_DATA} ${DISTDIR}/stars_4_1v0_2.cat \
+		${DISTDIR}/stars_[5678]_2v0_1.cat \
 		${STAGEDIR}${DATADIR}/stars/default
 
 post-install-TEXTURES-on:
