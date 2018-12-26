@@ -34,11 +34,17 @@ OPTIONS_DEFINE=	LIBNOTIFY
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S,^${PREFIX}/,,}
 
-USES=		autoreconf compiler:nestedfct libtool pkgconfig sqlite:3 ssl
+USES=		autoreconf compiler:nestedfct gnome libtool pkgconfig sqlite:3 \
+		ssl
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk20 libxml2
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}/display \
 		${PREFIX}/lib/${PORTNAME}/subscribe
+
+.if exists(/usr/lib/libstdc++.so)
+CFLAGS+=	-fnested-functions
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} '/^gol_LDADD =/s/$$/ -lgmodule-2.0/' \
 		${WRKSRC}/Makefile.am
