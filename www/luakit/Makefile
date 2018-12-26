@@ -12,6 +12,9 @@ COMMENT=	Fast, small, webkit2 based browser framework extensible with Lua
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.GPLv3
 
+NOT_FOR_ARCHS=	sparc64
+NOT_FOR_ARCHS_REASON_sparc64=	Does not install on sparc64
+
 BUILD_DEPENDS=	help2man:misc/help2man \
 		${LUA_MODLIBDIR}/lfs.so:devel/luafilesystem-51
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
@@ -21,12 +24,10 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}luafilesystem>=0:devel/luafilesystem-51
 
-USES=		desktop-file-utils gettext-runtime gmake lua:51 pkgconfig sqlite
+USES=		compiler:c++11-lang desktop-file-utils gettext-runtime gmake \
+		lua:51 pkgconfig sqlite
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
-
-NOT_FOR_ARCHS=	sparc64
-NOT_FOR_ARCHS_REASON_sparc64=	Does not install on sparc64
 
 MAKE_ARGS+=	DEVELOPMENT_PATHS=0
 
