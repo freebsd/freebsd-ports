@@ -1885,6 +1885,14 @@ lib/libclickhouse.so.%%SOVERSION%%
 %%DATADIR%%-test/queries/0_stateless/00738_nested_merge_multidimensional_array.reference
 %%DATADIR%%-test/queries/0_stateless/00738_nested_merge_multidimensional_array.sql
 %%DATADIR%%-test/queries/0_stateless/mergetree_mutations.lib
+%%DATADIR%%-test/queries/0_stateless/00712_prewhere_with_sampling_and_alias.reference
+%%DATADIR%%-test/queries/0_stateless/00712_prewhere_with_sampling_and_alias.sql
+%%DATADIR%%-test/queries/0_stateless/00749_inner_join_of_unnamed_subqueries.reference
+%%DATADIR%%-test/queries/0_stateless/00749_inner_join_of_unnamed_subqueries.sql
+%%DATADIR%%-test/queries/0_stateless/00755_avg_value_size_hint_passing.reference
+%%DATADIR%%-test/queries/0_stateless/00755_avg_value_size_hint_passing.sql
+%%DATADIR%%-test/queries/0_stateless/00764_max_query_size_allocation.reference
+%%DATADIR%%-test/queries/0_stateless/00764_max_query_size_allocation.sh
 %%DATADIR%%-test/queries/1_stateful/00001_count_hits.reference
 %%DATADIR%%-test/queries/1_stateful/00001_count_hits.sql
 %%DATADIR%%-test/queries/1_stateful/00002_count_visits.reference
