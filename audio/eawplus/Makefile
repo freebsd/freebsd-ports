@@ -17,6 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/eawpats/acbass.pat:audio/eawpats \
 NO_CDROM=	Some of the patches are marked no-commercial-use
 
 NO_WRKSUBDIR=	yes
+NO_ARCH=	yes
 
 TIMIDITY_DATADIR=	share/timidity
 PLIST_SUB=	TIMIDITY_DATADIR=${TIMIDITY_DATADIR}
@@ -38,6 +39,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${TIMIDITY_DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/timidity.cfg \
 		${STAGEDIR}${PREFIX}/${TIMIDITY_DATADIR}/timidity.cfg-eawplus
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*/*.txt.gz ${STAGEDIR}${DOCSDIR}
 
