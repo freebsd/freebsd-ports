@@ -1,4 +1,4 @@
---- configure.ac.orig	2018-06-26 18:36:29 UTC
+--- configure.ac.orig	2018-11-22 07:53:05 UTC
 +++ configure.ac
 @@ -20,13 +20,13 @@ AC_PROG_LIBTOOL
  AC_CHECK_LIB([opencv_core], [cvGetRows], CVFOUND=1,,)
@@ -16,4 +16,4 @@
 +AC_CHECK_HEADER([svm.h],[AC_CHECK_LIB([svm], [svm_get_svm_type], SVMFOUND=1,,)])
  PKG_CHECK_MODULES([DXFLIB], [dxflib], [LIBDXFFOUND=1],[LIBDXFFOUND=0])
  PKG_CHECK_MODULES([HDF5],[hdf5],LIBHDF5FOUND=1,LIBHDF5FOUND=0)
- 
+ LIBCURL_CHECK_CONFIG([yes], [7.7.2],,)

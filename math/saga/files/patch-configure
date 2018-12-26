@@ -1,6 +1,6 @@
---- configure.orig	2017-12-21 10:57:30 UTC
+--- configure.orig	2018-10-05 11:27:46 UTC
 +++ configure
-@@ -16235,13 +16235,13 @@ if test "x$ac_cv_lib_fftw3_fftw_execute" = xyes; then 
+@@ -16241,13 +16241,13 @@ if test "x$ac_cv_lib_fftw3_fftw_execute" = xyes; then 
    FFTWFOUND=1
  fi
  

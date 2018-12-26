@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	saga
-PORTVERSION=	6.4.0
-PORTREVISION=	4
+PORTVERSION=	7.0.0
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
 
@@ -15,7 +14,8 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	clang60:devel/llvm60 \
 		swig3.0:devel/swig30
-LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libfftw3.so:math/fftw3 \
 		libgdal.so:graphics/gdal \
 		libhpdf.so:print/libharu \
 		libjasper.so:graphics/jasper \
@@ -46,11 +46,16 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 OPTIONS_DEFINE=	PGSQL OPENMP VIGRA
 OPTIONS_DEFAULT=	PGSQL VIGRA
 OPTIONS_DEFAULT_amd64=	OPENMP
+OPTIONS_DEFAULT_i386=	OPENMP
 NO_OPTIONS_SORT=	yes
 OPTIONS_SUB=	yes
-OPENMP_DESC=	Enable Multiprocessing (only amd64, NOT i386)
+OPENMP_DESC=	Enable Multiprocessing (only amd64 and i386)
 VIGRA_DESC=	Enable 'Vision with Generic Algorithms' Library
 
+OPENMP_CONFIGURE_ENABLE=	openmp
+OPENMP_LDFLAGS=		-L${LOCALBASE}/lib -lm
+# Use OpenMP from lang/llvm60
+OPENMP_LDFLAGS+=	-L${LOCALBASE}/llvm60/lib -lomp
 PGSQL_CONFIGURE_OFF=	--with-postgresql=no
 PGSQL_CONFIGURE_ON=	--with-postgresql=${LOCALBASE}/bin/pg_config
 PGSQL_USES=		pgsql
@@ -65,14 +70,6 @@ INSTALL_TARGET=	install-strip
 CPP=		clang-cpp60
 CC=		clang60
 CXX=		clang++60
-
-### TODO: OPENMP_?= NOT for other archs
-.if ${OPSYS} == FreeBSD && ${ARCH} != i386
-OPENMP_CONFIGURE_ENABLE=	openmp
-OPENMP_LDFLAGS=		-L${LOCALBASE}/lib -lm -L${LOCALBASE}/llvm60/lib -lomp
-.else
-OPENMP_CONFIGURE_DISABLE=	openmp
-.endif
 
 SUB_FILES=	pkg-message
 
@@ -121,9 +118,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga.png ${STAGEDIR}${DATADIR}
 	${RM} ${STAGEDIR}${DATADIR}/saga_dic.txt ${STAGEDIR}${DATADIR}/saga_srs.txt
 # toolchains dir was moved in r2805 (and followups r2810,r2811,r2820)
-	${MKDIR} ${STAGEDIR}${DATADIR}/accessories
-	(cd ${WRKSRC}/src/accessories && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/accessories)
+	(cd ${WRKSRC}/src/accessories && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
+	${RM} -R ${STAGEDIR}${DATADIR}/CMakeLists.txt
 	${RM} -R ${STAGEDIR}${DATADIR}/accessories/toolchains
+	${RM} -R ${STAGEDIR}${DATADIR}/templates/template4saga-tools/my_tool_library/Makefile.bak
 	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
 # library helper files are not needed and cripple some math/qgis extensions
