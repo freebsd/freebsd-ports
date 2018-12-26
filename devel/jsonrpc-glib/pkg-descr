@@ -1,2 +1,4 @@
+jsonrpc-glib is a library to communicate using the JSON-RPC 2.0
+specification.
 
-WWW:
+WWW: https://gitlab.gnome.org/GNOME/jsonrpc-glib

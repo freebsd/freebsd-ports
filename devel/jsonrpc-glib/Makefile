@@ -6,9 +6,9 @@ CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Staging and stabilizing for facy Glib and Gtk+ features
+COMMENT=	Library to communicate using the JSON-RPC 2.0 specification
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:lang/vala
