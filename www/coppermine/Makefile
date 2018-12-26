@@ -1,33 +1,31 @@
 # $FreeBSD$
 
 PORTNAME=	coppermine
-PORTVERSION=	1.5.46
+PORTVERSION=	1.6.05
+DISTVERSIONPREFIX=	v
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/Coppermine/1.5.x/
-DISTNAME=	cpg${PORTVERSION}
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Web picture gallery script
 
-DEPRECATED=	Works only with EOL php 5.6
-EXPIRATION_DATE=	2018-12-30
-
 LICENSE=	GPLv3
 
-IGNORE_WITH_PHP=	71 72 73
+USES=		php
 
 OPTIONS_DEFINE=	DOCS IMAGEMAGICK
 IMAGEMAGICK_DESC=	Use ImageMagick instead of PHP GD extension
 
 IMAGEMAGICK_RUN_DEPENDS+=	convert:graphics/ImageMagick6
 
-USE_PHP=	mysql pcre ctype
-USES=		php zip
+USE_PHP=	ctype hash json mysqli pcre xml
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	coppermine-gallery
+GH_PROJECT=	cpg1.6.x
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-WRKSRC=		${WRKDIR}/cpg${PORTVERSION:R:R}${PORTVERSION:R:E}x
-DOCFILES=	CHANGELOG.txt COPYING.txt README.txt
+PORTDOCS=	CHANGELOG.txt LICENSE.txt README.txt
 
 SUB_FILES+=	pkg-message
 
@@ -45,10 +43,10 @@ pre-everything::
 
 pre-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCFILES} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 do-install:
-	cd ${WRKSRC}/ && ${RM} ${DOCFILES}
+	cd ${WRKSRC}/ && ${RM} ${PORTDOCS}
 	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/
 
 .include <bsd.port.mk>
