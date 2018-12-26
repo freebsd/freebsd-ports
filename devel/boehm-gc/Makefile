@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gc
-PORTVERSION=	7.6.8
-PORTREVISION=	1
+PORTVERSION=	7.6.10
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hboehm.info/gc/gc_source/ \
 		https://github.com/ivmai/bdwgc/releases/download/v${PORTVERSION}/
@@ -23,7 +22,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 BUILD_DEPENDS=	${LOCALBASE}/lib/libatomic_ops.a:devel/libatomic_ops
 
 GNU_CONFIGURE=	yes
-USES=		cpe libtool pathfix pkgconfig
+USES=		cpe libtool localbase pathfix pkgconfig
 CPE_VENDOR=	boehm-demers-weiser
 CPE_PRODUCT=	garbage_collector
 USE_LDCONFIG=	yes
@@ -46,11 +45,11 @@ PLIST=		${NONEXISTENT}
 PLIST_FILES=	${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.a,} \
 		${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
 		${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
-		${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.3.1,} \
+		${CORDLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.3.2,} \
 		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.a,} \
 		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
 		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
-		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.3.4,} \
+		${GCLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1.3.5,} \
 		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.a,} \
 		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so,} \
 		${GCCPPLIBS:S,^,lib/lib,:S,$,-${GC_VARIANT}.so.1,} \
