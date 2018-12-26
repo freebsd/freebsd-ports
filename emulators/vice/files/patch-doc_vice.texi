@@ -1,6 +1,6 @@
---- doc/vice.texi.orig	2016-12-15 21:30:13 UTC
+--- doc/vice.texi.orig	2018-12-19 23:41:08 UTC
 +++ doc/vice.texi
-@@ -1555,8 +1555,8 @@ System files can still be installed in a
+@@ -1552,8 +1552,8 @@ System files can still be installed in a
  specify a complete path instead of just a file name.  For example, if
  you specify @file{./kernal} as the kernal image name, the kernal image
  will be loaded from the current directory.  This can be done by using
@@ -11,7 +11,7 @@
  
  @menu
  * ROM files::                   Files containing dumps of the original ROMs.
-@@ -11013,8 +11013,9 @@ character cell, the 8 colour bits are us
+@@ -11775,8 +11775,9 @@ character cell, the 8 colour bits are us
  @subsection Changing screen colors
  
  It is also possible to choose what color set is used for the emulation
@@ -23,7 +23,7 @@
  following values:
  
  @itemize @bullet
-@@ -11442,8 +11443,9 @@ xcbm5x0: (510)
+@@ -12204,8 +12205,9 @@ xcbm5x0: (510)
  @subsection Changing screen colors
  
  It is also possible to choose what color set is used for the emulation
@@ -35,7 +35,7 @@
  following values:
  
  @itemize @bullet
-@@ -27895,8 +27897,8 @@ the VICE FAQ (it is available on the Int
+@@ -26924,8 +26926,8 @@ the VICE FAQ (it is available on the Int
  VICE home page:
  @uref{http://vice-emu.sourceforge.net});
  @item
