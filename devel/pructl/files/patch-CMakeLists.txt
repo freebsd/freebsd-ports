@@ -1,0 +1,9 @@
+--- CMakeLists.txt.orig	2018-12-24 20:28:37 UTC
++++ CMakeLists.txt
+@@ -8,5 +8,5 @@ find_library(libedit NAMES edit)
+ find_library(libutil NAMES util)
+ target_link_libraries(pructl ${libpru})
+ target_link_libraries(prudbg ${libpru} ${libedit} ${libutil})
+-set(CMAKE_C_FLAGS "-Weverything -Werror")
++set(CMAKE_C_FLAGS "-Werror")
+ install(TARGETS pructl prudbg DESTINATION sbin)
