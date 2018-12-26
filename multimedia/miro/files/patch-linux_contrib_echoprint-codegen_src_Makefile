@@ -6,8 +6,8 @@
  UNAME := $(shell uname -s)
 -CXX=g++
 -CC=gcc
-+CXX=c++
-+CC=cc
++CXX?=c++
++CC?=cc
  #OPTFLAGS=-g -O0
  OPTFLAGS=-O3 -DBOOST_UBLAS_NDEBUG -DNDEBUG
 -BOOST_CFLAGS=-I/usr/local/include/boost-1_35
