@@ -1,0 +1,51 @@
+From 39ede9c7e64ba23300a419ee9f58d953f7606b39 Mon Sep 17 00:00:00 2001
+From: Adriaan de Groot <groot@kde.org>
+Date: Mon, 24 Dec 2018 22:04:07 +0100
+Subject: [PATCH] Update logic for disabling the PCI module.
+
+Summary:
+FreeBSD on ThunderX2 does support PCI, and apparently the KCM
+even works. https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=234256
+
+Reviewers: davidedmundson
+
+Reviewed By: davidedmundson
+
+Subscribers: plasma-devel
+
+Tags: #plasma
+
+Differential Revision: https://phabricator.kde.org/D17785
+---
+ Modules/CMakeLists.txt | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+
+diff --git Modules/CMakeLists.txt Modules/CMakeLists.txt
+index f513752..43420d6 100644
+--- Modules/CMakeLists.txt
++++ Modules/CMakeLists.txt
+@@ -44,7 +44,20 @@ set_package_properties(PCIUTILS PROPERTIES DESCRIPTION "PciUtils is a library fo
+                        PURPOSE "View PCI details in kinfocenter."
+                       )
+ 
+-if(NOT APPLE AND NOT ${CMAKE_SYSTEM_PROCESSOR} MATCHES "arm" AND NOT ${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
++# PCI module doesn't work on Linux arm64, nor on MacOS, but does on
++# FreeBSD arm64, so this is a bit of a tangle of what-is-supported.
++set(_want_pci ON)
++if(APPLE) 
++    set(_want_pci OFF)
++elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "arm" OR ${CMAKE_SYSTEM_PROCESSOR} MATCHES "aarch64")
++    if (${CMAKE_SYSTEM} MATCHES "FreeBSD")
++        message(STATUS "FreeBSD arm64 pci support enabled.")
++    else()
++        set(_want_pci OFF)
++    endif()
++endif()
++
++if(_want_pci)
+     add_subdirectory( pci )
+ endif()
+ endif()
+-- 
+2.20.1
+
