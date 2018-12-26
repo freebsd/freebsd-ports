@@ -30,7 +30,8 @@ RUN_DEPENDS=	p5-AnyEvent-I3>=0:devel/p5-AnyEvent-I3 \
 		p5-JSON-XS>=0:converters/p5-JSON-XS \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 
-USES=		autoreconf gettext-runtime gmake iconv localbase perl5 pkgconfig
+USES=		autoreconf compiler:c11 gettext-runtime gmake gnome iconv \
+		localbase perl5 pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	Airblader
 USE_PERL5=	run
