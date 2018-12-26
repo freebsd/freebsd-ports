@@ -28,9 +28,10 @@ MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \
 PLIST_FILES=	"@(,,4755) bin/i3lock" \
 		man/man1/i3lock.1.gz
 
+USES=		gmake iconv localbase pkgconfig tar:bzip2
 LDFLAGS+=	${ICONV_LIB}
 USE_XORG=	x11 xcb xt xorgproto xext
-USES=		gmake iconv localbase pkgconfig tar:bzip2
+USE_CSTD=	c99
 GNU_CONFIGURE=	yes
 BUILD_WRKSRC=	${WRKSRC}/${CONFIGURE_TARGET}
 INSTALL_WRKSRC=	${WRKSRC}/${CONFIGURE_TARGET}
