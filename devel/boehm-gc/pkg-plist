@@ -22,11 +22,11 @@ include/gc_cpp.h
 lib/libcord.a
 lib/libcord.so
 lib/libcord.so.1
-lib/libcord.so.1.3.1
+lib/libcord.so.1.3.2
 lib/libgc.a
 lib/libgc.so
 lib/libgc.so.1
-lib/libgc.so.1.3.4
+lib/libgc.so.1.3.5
 lib/libgccpp.a
 lib/libgccpp.so
 lib/libgccpp.so.1
