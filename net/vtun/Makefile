@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	SF
 
-MAINTAINER=	cy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual Tunnels over TCP/IP networks with traffic shaping
 
 LICENSE=	GPLv2
