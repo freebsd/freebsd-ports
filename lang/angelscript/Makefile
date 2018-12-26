@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	angelscript
-PORTVERSION=	2.32.0
-PORTREVISION=	1
+PORTVERSION=	2.33.0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.angelcode.com/angelscript/sdk/files/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
