@@ -12,7 +12,6 @@ bin/vcd2fst
 bin/vcd2lxt
 bin/vcd2lxt2
 bin/vcd2vzt
-bin/vermin
 bin/vzt2vcd
 bin/vztminer
 bin/xml2stems
@@ -30,7 +29,6 @@ man/man1/vcd2fst.1.gz
 man/man1/vcd2lxt.1.gz
 man/man1/vcd2lxt2.1.gz
 man/man1/vcd2vzt.1.gz
-man/man1/vermin.1.gz
 man/man1/vzt2vcd.1.gz
 man/man1/vztminer.1.gz
 man/man1/xml2stems.1.gz
