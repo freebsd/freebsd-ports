@@ -11,7 +11,7 @@ MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
 DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
-MAINTAINER=	eric@camachat.org
+MAINTAINER=	ronald-lists@klop.ws
 COMMENT=	Distributed document-oriented "NoSQL" database
 
 # mongodb is AGPLv3, C++ driver is APACHE20
