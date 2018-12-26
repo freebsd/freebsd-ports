@@ -14,7 +14,7 @@ COMMENT=	Jigsaw puzzle program
 BROKEN_armv6=		fails to compile: use of undeclared identifier __NR_SYSCALL_BASE
 BROKEN_armv7=		fails to compile: use of undeclared identifier __NR_SYSCALL_BASE
 
-USES=		dos2unix gmake pkgconfig
+USES=		compiler:c++11-lang dos2unix gmake gnome pkgconfig
 DOS2UNIX_GLOB=	*.h
 USE_GNOME=	gtk20
 
