@@ -1,0 +1,6 @@
+Users of Qt5 programs that need the Gtk2 theme must define an
+environment variable:
+
+	export QT_QPA_PLATFORMTHEME=gtk2
+
+which can be done in your shell's .profile file. 
