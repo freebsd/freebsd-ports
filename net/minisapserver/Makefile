@@ -36,7 +36,6 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc/sap.cfg|${PREFIX}/etc/sap.cfg|' \
 		${WRKSRC}/sapserver.h
-	@${REINPLACE_CMD} -e 's|a6->sin_len|a6->sin6_len|g' ${WRKSRC}/broadcast.cpp
 	@${CP} -f ${WRKSRC}/sap.cfg ${WRKSRC}/sap.cfg-dist
 
 .include <bsd.port.mk>
