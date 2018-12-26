@@ -280,6 +280,10 @@ WITH_DEBUG?=		yes
 # Finally, add additional user specified configuration options:
 CONFIGURE_ARGS+=	${SQUID_CONFIGURE_ARGS}
 
+.if ${PORT_OPTIONS:MSSL} && ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085 && ${SSL_DEFAULT} == base
+BROKEN=		Does not build on FreeBSD 12 with OpenSSL 1.1. You may add DEFAULT_VERSIONS+=ssl=openssl to /etc/make.conf as a workaround
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/src/cf.data.pre
