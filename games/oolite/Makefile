@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=		oolite
-PORTVERSION=		1.86
-PORTREVISION=	1
+PORTVERSION=		1.88
 CATEGORIES=		games gnustep
-MASTER_SITES=		https://github.com/OoliteProject/oolite/releases/download/1.86/
+MASTER_SITES=		https://github.com/OoliteProject/oolite/releases/download/1.88/
 DISTNAME=		${PORTNAME}-source-${PORTVERSION}
 DIST_SUBDIR=		oolite
 
@@ -24,7 +23,7 @@ LIB_DEPENDS=		libespeak.so:audio/espeak \
 			libpng.so:graphics/png \
 			libminizip.so:archivers/minizip
 
-USES=			gnustep openal:al perl5 python:build tar:bzip2
+USES=			gl gnustep openal:al perl5 python:build tar:bzip2
 USE_CXXSTD=		gnu++98
 USE_GL=			gl glu
 USE_SDL=		sdl
@@ -47,7 +46,7 @@ DATADIR=	${GNUSTEP_LOCAL_APPS}/oolite.app
 PORTDATA=	Resources
 PORTDOCS=	*.pdf CHANGELOG.TXT contributors.txt
 
-PLIST_FILES+=	bin/oolite %%DATADIR%%/oolite \
+PLIST_FILES+=	bin/oolite ${DATADIR}/oolite \
 		share/applications/oolite.desktop \
 		share/pixmaps/oolite-icon.png
 
