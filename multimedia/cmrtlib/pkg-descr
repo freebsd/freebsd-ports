@@ -1,0 +1,6 @@
+cmrtlib is a runtime library needed when user wants to execute their
+own GPU kernels on render engine. It calls iHD media driver to load
+the kernels and allocate the resources. It provides a set of APIs for
+user to call directly from application.
+
+WWW: https://01.org/intel-media-for-linux

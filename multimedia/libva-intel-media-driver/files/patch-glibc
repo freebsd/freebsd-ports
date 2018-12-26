@@ -1,14 +1,14 @@
 makedev() is defined in <sys/types.h> on BSDs and <sys/mkdev.h> on Solaris
 
-mon/os/libdrm/xf86drm.c:50:10: fatal error: 'sys/sysmacros.h' file not found
+media_driver/linux/common/os/i915/xf86drm.c:50:10: fatal error: 'sys/sysmacros.h' file not found
 #include <sys/sysmacros.h>
          ^~~~~~~~~~~~~~~~~
 media_driver/linux/ult/libdrm_mock/xf86drm_mock.c:50:10: fatal error: 'sys/sysmacros.h' file not found
 #include <sys/sysmacros.h>
          ^~~~~~~~~~~~~~~~~
 
---- media_driver/linux/common/os/libdrm/xf86drm.c.orig	2018-10-01 21:39:52 UTC
-+++ media_driver/linux/common/os/libdrm/xf86drm.c
+--- media_driver/linux/common/os/i915/xf86drm.c.orig	2018-10-01 21:39:52 UTC
++++ media_driver/linux/common/os/i915/xf86drm.c
 @@ -47,13 +47,15 @@
  #include <signal.h>
  #include <time.h>

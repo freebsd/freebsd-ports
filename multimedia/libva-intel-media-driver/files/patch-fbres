@@ -64,7 +64,7 @@ media_driver/linux/common/ddi/media_libva.cpp:39:10: fatal error: 'linux/fb.h' f
      if(fd > 0)
      {
          if(ioctl(fd, FBIOGET_VSCREENINFO, &vsinfo) < 0)
---- media_driver/linux/common/ddi/media_libva.cpp.orig	2018-10-01 21:39:52 UTC
+--- media_driver/linux/common/ddi/media_libva.cpp.orig	2018-11-26 07:05:55 UTC
 +++ media_driver/linux/common/ddi/media_libva.cpp
 @@ -36,8 +36,6 @@
  #include <X11/Xutil.h>
@@ -72,6 +72,6 @@ media_driver/linux/common/ddi/media_libva.cpp:39:10: fatal error: 'linux/fb.h' f
  
 -#include <linux/fb.h>
 -
+ #include "media_libva.h"
+ 
  #include "media_libva_util.h"
- #include "media_libva_decoder.h"
- #include "media_libva_encoder.h"

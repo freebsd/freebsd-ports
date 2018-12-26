@@ -1,0 +1,35 @@
+memalign is Linux-specific, so use C11 aligned_alloc instead
+
+In file included from media_driver/agnostic/gen9_skl/codec/hal/codechal_fei_hevc_g9_skl.cpp:27:
+In file included from media_driver/agnostic/gen9_skl/codec/hal/codechal_fei_hevc_g9_skl.h:35:
+In file included from media_driver/agnostic/gen9_skl/codec/cmrt_kernel/CMRTKernel_header_file.h:30:
+In file included from media_driver/agnostic/gen9_skl/codec/cmrt_kernel/CMRTKernel_DownScaling.h:30:
+In file included from media_driver/agnostic/gen9_skl/codec/cmrt_kernel/CMRTKernelBase.h:33:
+In file included from /usr/local/include/igfxcmrt/cm_rt.h:185:
+In file included from /usr/local/include/igfxcmrt/cm_rt_def_os.h:39:
+/usr/include/malloc.h:3:2: error: "<malloc.h> has been replaced by <stdlib.h>"
+#error "<malloc.h> has been replaced by <stdlib.h>"
+ ^
+/usr/local/include/igfxcmrt/cm_rt_def_os.h:153:10: error: use of undeclared identifier 'memalign'
+  return memalign(alignment, size);
+         ^
+
+--- linux/share/cm_rt_def_os.h.orig	2018-12-20 08:52:32 UTC
++++ linux/share/cm_rt_def_os.h
+@@ -36,7 +36,6 @@
+ #include <stdlib.h>
+ #include <stdint.h>
+ #include <math.h>
+-#include <malloc.h>
+ #include <string.h>
+ #include <sys/time.h>
+ #include <pthread.h>
+@@ -150,7 +149,7 @@ template<> inline const char * CM_TYPE_NAME_UNMANGLED<
+ 
+ inline void * CM_ALIGNED_MALLOC(size_t size, size_t alignment) 
+ {
+-  return memalign(alignment, size);
++  return aligned_alloc(alignment, size);
+ } 
+ 
+ inline void CM_ALIGNED_FREE(void * memory) 
