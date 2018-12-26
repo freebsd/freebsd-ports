@@ -4,7 +4,3 @@ Known issues:
   file using controllermap (or antimicro) then check with testgamecontroller
   it's detected (pay attention to guid). If you have trouble making it
   work try OLDJOY option for v1.3 behavior.
-- Vulkan support may not work on Intel iGPUs due to
-  https://github.com/FreeBSDDesktop/DEPRECATED-freebsd-base-graphics/issues/132
-  which can be worked around by running PPSSPP as root (via sudo, doas, etc.)
-  after applying https://bz-attachments.freebsd.org/attachment.cgi?id=187401
