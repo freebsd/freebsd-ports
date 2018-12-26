@@ -1,9 +1,8 @@
 bin/k4dirstat
 bin/kdirstat
-share/applications/kde4/k4dirstat.desktop
-share/apps/k4dirstat/k4dirstatui.rc
+man/man1/k4dirstat.1.gz
+share/applications/k4dirstat.desktop
 share/config.kcfg/k4dirstat.kcfg
-share/doc/HTML/en/k4dirstat/common
 share/doc/HTML/en/k4dirstat/feedback-mail.png
 share/doc/HTML/en/k4dirstat/index.cache.bz2
 share/doc/HTML/en/k4dirstat/index.docbook
@@ -14,9 +13,13 @@ share/icons/hicolor/16x16/apps/k4dirstat.png
 share/icons/hicolor/32x32/apps/k4dirstat.png
 share/icons/hicolor/48x48/apps/k4dirstat.png
 share/icons/hicolor/scalable/apps/k4dirstat.svgz
+share/locale/ca/LC_MESSAGES/k4dirstat.mo
 share/locale/de/LC_MESSAGES/k4dirstat.mo
+share/locale/es_AR/LC_MESSAGES/k4dirstat.mo
 share/locale/fr/LC_MESSAGES/k4dirstat.mo
 share/locale/hu/LC_MESSAGES/k4dirstat.mo
 share/locale/it/LC_MESSAGES/k4dirstat.mo
 share/locale/ja/LC_MESSAGES/k4dirstat.mo
+share/locale/lt/LC_MESSAGES/k4dirstat.mo
+share/locale/lv/LC_MESSAGES/k4dirstat.mo
 share/locale/nl/LC_MESSAGES/k4dirstat.mo
