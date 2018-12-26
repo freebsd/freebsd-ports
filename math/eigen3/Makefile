@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	eigen
-DISTVERSION=	3.3.5
+DISTVERSION=	3.3.7
 CATEGORIES=	math
 MASTER_SITES=	https://bitbucket.org/${PORTNAME}/${PORTNAME}/get/
 DISTNAME=	${PORTVERSION}
@@ -20,6 +20,6 @@ USES=		cmake tar:bzip2
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-b3f3d4950030
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-323c052e1731
 
 .include <bsd.port.mk>
