@@ -19,7 +19,7 @@ BUILD_DEPENDS=	gccmakedep:devel/gccmakedep
 LIB_DEPENDS=	liblcms.so.1:graphics/lcms \
 		libgimp-2.0.so:graphics/gimp-app
 
-USES=		gettext-tools gmake pkgconfig zip
+USES=		compiler:c++11-lang gettext-tools gmake pkgconfig zip
 
 BIN_TARGETS=	separate separate_import icc_colorspace
 L10N_TARGETS=	cs es fr ja ko pl ru
