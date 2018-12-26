@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	nextcloudclient
-PORTVERSION=	0.0.0.20180323
-#DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTVERSION=	0.0.0.20181226
+#PORTREVISION=	2
 CATEGORIES=	deskutils
 
 MAINTAINER=	mr@FreeBSD.org
@@ -15,20 +14,21 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libqt5keychain.so:security/qtkeychain@qt5
 
-USES=		cmake:noninja compiler:c++11-lib gmake iconv \
+USES=		cmake:outsource,noninja compiler:c++11-lib gmake iconv \
 		localbase:ldflags pkgconfig qt:5 sqlite ssl
-USE_QT=		buildtools_build concurrent core dbus gui linguist_build network \
-		qmake_build sql webkit widgets xml
+USE_QT=		buildtools_build concurrent core dbus declarative gui linguist_build location network \
+		printsupport qmake_build sql webchannel webengine webkit widgets xml
 CMAKE_ARGS=	-DBUILD_WITH_QT4:BOOL=OFF \
 		-DCMAKE_INSTALL_MANDIR:STRING=man \
 		-DWITH_STACK_PROTECTOR:BOOL=OFF
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
+DEBUG=		yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	nextcloud
-GH_PROJECT=	client
-GH_TAGNAME=	4c40789dcafe5b193e125620b63dcc95e08ffba5
+GH_PROJECT=	desktop
+GH_TAGNAME=	9cea77b0fbc7130134a02475ade3392c402ae1ce
 
 #OPTIONS_DEFINE=		DEBUG DOCS
 OPTIONS_DEFINE=		DEBUG # DOCS doesn't build currently
