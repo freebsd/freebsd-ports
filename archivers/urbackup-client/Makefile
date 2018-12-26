@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcryptopp.so:security/cryptopp
 
-USES=		autoreconf dos2unix gettext localbase pkgconfig
+USES=		autoreconf compiler:c++11-lang dos2unix gettext localbase \
+		pkgconfig
 USE_RC_SUBR=	urbackup_client
 
 USERS=		urbackup
