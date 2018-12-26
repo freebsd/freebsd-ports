@@ -2861,7 +2861,6 @@ lang/p5-JavaScript||2011-11-01|Does not fetch
 lang/TenDRA||2011-11-01|Website disappeared; last release in 2006, does not compile on recent FreeBSD-9
 mail/freepops||2011-11-01|Does not build
 mail/itraxp||2011-11-01|Does not build
-misc/tellico||2011-11-01|Leaves files behind on deinstallation
 net/gsambad||2011-11-01|Does not fetch
 net/nocatauth-gateway||2011-11-01|Uses a UID registered to another port
 net/nocatauth-server||2011-11-01|Uses a UID registered to another port
@@ -10931,3 +10930,4 @@ devel/rubygem-health_check26|devel/rubygem-health_check26-rails50|2018-12-23|Dep
 devel/rubygem-default_value_for30|devel/rubygem-gitlab-default_value_for|2018-12-23|Dep change for gitlab-ce, please use devel/rubygem-gitlab-default_value_for instead
 devel/rubygem-gettext_i18n_rails_js|devel/rubygem-gettext_i18n_rails_js-rails50|2018-12-23|Dep change for gitlab-ce, please use devel/rubygem-gettext_i18n_rails_js-rails50 instead
 sysutils/kshutdown-kde4|sysutils/kshutdown|2018-12-26|Renamed as no longer kde4 based
+misc/tellico-kde4|misc/tellico|2018-12-24|Renamed as no longer kde4 based
