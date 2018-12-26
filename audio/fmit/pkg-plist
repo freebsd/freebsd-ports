@@ -1,7 +1,15 @@
 bin/fmit
 share/appdata/fmit.appdata.xml
 share/applications/fmit.desktop
-%%DATADIR%%/tr/fmit_de.qm
-%%DATADIR%%/tr/fmit_fr.qm
-%%DATADIR%%/tr/fmit_pt.qm
+%%DATADIR%%/scales/15-edo.scl
+%%DATADIR%%/scales/16-edo.scl
+%%DATADIR%%/scales/17-edo.scl
+%%DATADIR%%/scales/19-edo.scl
+%%DATADIR%%/scales/22-edo.scl
+%%DATADIR%%/scales/Bernhard Stopper OnlyPure tuning.scl
+%%DATADIR%%/scales/Carlos Beta.scl
+%%DATADIR%%/scales/bohlen-p_et.scl
+%%DATADIR%%/scales/meanquar.scl
+share/icons/hicolor/128x128/apps/fmit.png
 share/icons/hicolor/scalable/apps/fmit.svg
+share/icons/hicolor/symbolic/apps/fmit-symbolic.svg

@@ -1,9 +1,0 @@
---- libs/CppAddons/CMakeLists.txt.orig	2012-06-23 20:03:59 UTC
-+++ libs/CppAddons/CMakeLists.txt
-@@ -8,6 +8,4 @@ INCLUDE_DIRECTORIES(
-     ${CMAKE_CURRENT_BINARY_DIR}
- )
- 
--set(CMAKE_CXX_FLAGS "-Wall -ansi -pedantic")
--
- add_library(CppAddons STATIC ${libCppAddons_SRCS})
