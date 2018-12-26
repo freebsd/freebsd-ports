@@ -78,13 +78,9 @@ pid_file: %%PIDDIR%%/homeserver.pid
 #
 # cpu_affinity: 0xFFFFFFFF
 
-# Whether to serve a web client from the HTTP/HTTPS root resource.
-web_client: True
-
-# The root directory to server for the above web client.
-# If left undefined, synapse will serve the matrix-angular-sdk web client.
-# Make sure matrix-angular-sdk is installed with pip if web_client is True
-# and web_client_location is undefined
+# The path to the web client which will be served at /_matrix/client/
+# if 'webclient' is configured under the 'listeners' configuration.
+#
 # web_client_location: "/path/to/web/root"
 
 # The public-facing base URL for the client API (not including _matrix/...)
@@ -152,7 +148,7 @@ listeners:
         # List of resources to host on this listener.
         names:
           - client     # The client-server APIs, both v1 and v2
-          - webclient  # The bundled webclient.
+          # - webclient  # The bundled webclient. (no longer available)
 
         # Should synapse compress HTTP responses to clients that support it?
         # This should be disabled if running synapse behind a load balancer
@@ -179,7 +175,8 @@ listeners:
     x_forwarded: false
 
     resources:
-      - names: [client, webclient]
+      - names: [client] # change to "client, webclient" to activate web client
+                        # also set web_client_location to a correct location
         compress: true
       - names: [federation]
         compress: false

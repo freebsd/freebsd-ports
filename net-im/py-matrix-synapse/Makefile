@@ -3,7 +3,7 @@
 
 PORTNAME=	matrix-synapse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.33.9
+DISTVERSION=	0.34.0
 CATEGORIES=	net-im python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -40,9 +40,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=2.5.1:devel/py-jsonschema@${PY_F
 		${PYTHON_PKGNAMEPREFIX}prometheus-client>=0.2.0:net-mgmt/py-prometheus-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}attrs>16.0.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=0.7.18:net/py-netaddr@${PY_FLAVOR}
-
-# Conditional requirements that aren't so conditional
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}matrix-angular-sdk>=0.6.8:devel/py-matrix-angular-sdk@${PY_FLAVOR}
 
 # Dependencies that aren't declared in python_dependencies.py which I have discovered
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>=3.10.0:devel/py-simplejson@${PY_FLAVOR} \
