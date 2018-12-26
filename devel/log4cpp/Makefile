@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		gmake libtool pathfix
+USES=		compiler:c++11-lang gmake libtool pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-html-docs
 REINPLACE_ARGS=	-i ""
