@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdeflate
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 
@@ -20,7 +20,7 @@ MAKE_ARGS=	V=1
 
 PLIST_FILES=	bin/gunzip bin/gzip \
 		include/libdeflate.h \
-		lib/libdeflate.a lib/libdeflate.so
+		lib/libdeflate.a lib/libdeflate.so lib/libdeflate.so.0
 PORTDOCS=	NEWS README.md
 
 OPTIONS_DEFINE=	DOCS
