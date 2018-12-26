@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libykpers-1.so:security/ykpers \
 		libyubikey.so:security/libyubikey
 
-USES=		pkgconfig qmake
+USES=		compiler:c++11-lang pkgconfig qmake
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	Yubico
