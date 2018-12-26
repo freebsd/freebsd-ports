@@ -8,7 +8,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Staging and stabilizing for facy Glib and Gtk+ features
+COMMENT=	Companion library to GObject and Gtk+
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
