@@ -3,4 +3,4 @@ aren't quite ready or generic enough for use inside those libraries.
 This is often a proving ground for new widget prototypes. Applications
 such as Builder tend to drive development of this project.
 
-WWW:
+WWW: https://gitlab.gnome.org/GNOME/libdazzle
