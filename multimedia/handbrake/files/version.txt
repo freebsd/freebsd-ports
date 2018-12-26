@@ -1,0 +1,9 @@
+URL=https://github.com/HandBrake/HandBrake.git
+HASH=23bc08b55d58308862e940c97f2d1aeb0f07544b
+SHORTHASH=23bc08b55
+TAG=1.2.0
+TAG_HASH=23bc08b55d58308862e940c97f2d1aeb0f07544b
+REV=0
+BRANCH=heads/1.2.0
+REMOTE=https://github.com/HandBrake/HandBrake.git
+DATE=2018-12-16 17:16:51 +0000

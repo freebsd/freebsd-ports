@@ -1,0 +1,11 @@
+--- a/libavutil/x86/asm.h.orig	2018-04-14 08:34:28.000000000 +0900
++++ b/libavutil/x86/asm.h	2018-06-23 22:34:29.258291000 +0900
+@@ -72,7 +72,7 @@
+ typedef int x86_reg;
+ #endif
+ 
+-#define HAVE_7REGS (ARCH_X86_64 || (HAVE_EBX_AVAILABLE && HAVE_EBP_AVAILABLE))
++#define HAVE_7REGS (ARCH_X86_64 || (HAVE_EBX_AVAILABLE && HAVE_EBP_AVAILABLE && !defined(__clang__)))
+ #define HAVE_6REGS (ARCH_X86_64 || (HAVE_EBX_AVAILABLE || HAVE_EBP_AVAILABLE))
+ 
+ #if ARCH_X86_64 && defined(PIC)

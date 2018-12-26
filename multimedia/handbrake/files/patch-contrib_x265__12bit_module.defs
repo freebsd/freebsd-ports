@@ -1,4 +1,4 @@
---- contrib/x265_12bit/module.defs.orig	2017-12-24 00:33:48 UTC
+--- contrib/x265_12bit/module.defs.orig	2018-06-17 04:23:34 UTC
 +++ contrib/x265_12bit/module.defs
 @@ -19,6 +19,10 @@ X265_12.CONFIGURE.static      =
  X265_12.CONFIGURE.shared      = -DENABLE_SHARED=OFF
@@ -10,4 +10,4 @@
 +
  ifneq (none,$(X265_12.GCC.g))
      X265_12.CONFIGURE.extra += -DCMAKE_BUILD_TYPE=Debug
- endif
+ else
