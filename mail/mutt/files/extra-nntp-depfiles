@@ -1,0 +1,12 @@
+--- Makefile.in.orig	2018-12-22 21:21:33 UTC
++++ Makefile.in
+@@ -240,7 +240,8 @@ am__depfiles_remade = $(DEPDIR)/mkdtemp.Po $(DEPDIR)/r
+ 	./$(DEPDIR)/mutt_sasl.Po ./$(DEPDIR)/mutt_socket.Po \
+ 	./$(DEPDIR)/mutt_ssl.Po ./$(DEPDIR)/mutt_ssl_gnutls.Po \
+ 	./$(DEPDIR)/mutt_tunnel.Po ./$(DEPDIR)/muttlib.Po \
+-	./$(DEPDIR)/mx.Po ./$(DEPDIR)/pager.Po ./$(DEPDIR)/parse.Po \
++	./$(DEPDIR)/mx.Po ./$(DEPDIR)/newsrc.Po ./$(DEPDIR)/nntp.Po \
++	./$(DEPDIR)/pager.Po ./$(DEPDIR)/parse.Po \
+ 	./$(DEPDIR)/patchlist.Po ./$(DEPDIR)/pattern.Po \
+ 	./$(DEPDIR)/pgp.Po ./$(DEPDIR)/pgpewrap.Po \
+ 	./$(DEPDIR)/pgpinvoke.Po ./$(DEPDIR)/pgpkey.Po \

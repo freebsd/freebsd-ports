@@ -3,6 +3,7 @@
 
 PORTNAME=	mutt
 DISTVERSION=	1.11.1
+PORTREVISION=	1
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -29,9 +30,6 @@ USES=		cpe shebangfix ssl
 
 CONFLICTS=	ja-mutt-[0-9]* ja-mutt-devel-[0-9]* mutt-1.4* mutt-devel-lite-[0-9]* mutt-lite-[0-9]* zh-mutt-devel-[0-9]*
 
-DOCSDIR?=	${PREFIX}/share/doc/mutt
-EXAMPLESDIR?=	${PREFIX}/share/examples/mutt
-DATADIR?=	${PREFIX}/share/mutt
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-fcntl --with-ssl=${OPENSSLBASE} \
 		--with-docdir=${DOCSDIR} --sysconfdir=${PREFIX}/etc \
@@ -174,11 +172,11 @@ SMTP_CONFIGURE_ENABLE=	smtp
 
 GREETING_PATCH_PATCHFILES=	mutt-${GREETING_PATCH_VERSION}.vc.greeting:vc
 
-QUOTE_PATCH_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.initials.gz:vvv \
-			patch-${VVV_PATCH_VERSION}.vvv.quote.gz:vvv
+QUOTE_PATCH_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.initials.xz:vvv \
+			patch-${VVV_PATCH_VERSION}.vvv.quote.xz:vvv
 
-NNTP_BROKEN=	NNTP 1.10.0 broken with mutt ${DISTVERSION}
-NNTP_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:-p1:vvv
+NNTP_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.nntp.xz:-p1:vvv
+NNTP_EXTRA_PATCHES=	${PATCHDIR}/extra-nntp-depfiles
 NNTP_CONFIGURE_ON=	--enable-nntp
 NNTP_VARS=	XML_NEEDED=yes
 NNTP_CATEGORIES=	news
@@ -189,7 +187,7 @@ DOCS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-doc-ref
 .include <bsd.port.options.mk>
 
 # un/comment as each VERSION is created for PORTVERSION
-VVV_PATCH_VERSION=	1.10.0
+#VVV_PATCH_VERSION=	1.11.1
 #GREETING_PATCH_VERSION=	1.11.1
 
 .if !defined(VVV_PATCH_VERSION)
@@ -231,8 +229,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 pre-configure::
 	@${REINPLACE_CMD} -e 's,?eimdal\*),?eimdal*|\"FreeBSD heimdal\"*),' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's,/usr/bin/gpg,${LOCALBASE}/bin/gpg,g' \
-		${WRKSRC}/contrib/gpg.rc
 	@${REINPLACE_CMD} -e 's,pgp6,pgp,g' \
 		${WRKSRC}/contrib/pgp6.rc
 	@${REINPLACE_CMD} -E -e 's#(/samples|samples/)#share/examples/mutt#g' \
