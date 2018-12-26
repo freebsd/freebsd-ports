@@ -11,7 +11,6 @@ COMMENT=	RPKI signed route collector and validator
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	rust>=1.29.0:lang/rust
 RUN_DEPENDS=	rsync:net/rsync
 
 USES=		cargo
