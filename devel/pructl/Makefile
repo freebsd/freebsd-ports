@@ -14,6 +14,7 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS=	libpru.so:devel/libpru
 
 USES=		cmake libedit
+USE_CSTD=	c99
 
 WRKSRC=		${WRKDIR}/rpaulo-pructl-ef9fa544e6a3
 
