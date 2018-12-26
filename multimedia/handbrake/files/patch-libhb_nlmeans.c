@@ -1,6 +1,6 @@
---- libhb/nlmeans.c.orig	2017-10-05 21:17:34 UTC
+--- libhb/nlmeans.c.orig	2018-06-17 04:23:34 UTC
 +++ libhb/nlmeans.c
-@@ -787,7 +787,7 @@ static int nlmeans_init(hb_filter_object
+@@ -898,7 +898,7 @@ static int nlmeans_init(hb_filter_object_t *filter,
      NLMeansFunctions *functions = &pv->functions;
  
      functions->build_integral = build_integral_scalar;
