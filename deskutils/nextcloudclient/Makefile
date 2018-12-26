@@ -38,9 +38,17 @@ OPTIONS_DEFINE=		DEBUG # DOCS doesn't build currently
 #DOCS_USE=		tex=dvipsk:build,latex:build
 #DOCS_CMAKE_ON=		-DWITH_DOC:BOOL=ON
 
-DEBUG_CMAKE_ON=		-DCMAKE_BUILD_TYPE:STRING=Debug
-
 PLIST_SUB=	VERSION=${PORTVERSION}
+
+.include <bsd.port.pre.mk>
+
+.ifdef WITH_DEBUG
+CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Debug
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085 && !${SSL_DEFAULT:Mopenssl111}
+BROKEN=	nextcloudclient requires OpenSSL 1.1.0, add DEFAULT_VERSIONS+=ssl=openssl111 to /etc/make.conf
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -49,4 +57,4 @@ post-patch:
 pre-configure:
 	@(cd ${WRKSRC} && ${CP} -f sync-exclude.lst sync-exclude.lst.sample)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
