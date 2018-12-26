@@ -256,3 +256,4 @@ man/sk/man8/rpm.8.gz
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/rpm.mo
 @dir lib/rpm/macros.d
+@dir %%LUA_LIBDIR%%/rpm/lua
