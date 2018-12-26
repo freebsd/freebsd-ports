@@ -21,6 +21,7 @@ share/locale/sl/LC_MESSAGES/tilda.mo
 share/locale/sv/LC_MESSAGES/tilda.mo
 share/locale/tr/LC_MESSAGES/tilda.mo
 share/locale/zh_CN/LC_MESSAGES/tilda.mo
+share/locale/zh_TW/LC_MESSAGES/tilda.mo
 share/pixmaps/tilda.png
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
