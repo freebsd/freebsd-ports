@@ -19,7 +19,7 @@ LIB_DEPENDS=	libquazip5.so:archivers/quazip@qt5
 
 MAKE_JOBS_UNSAFE=yes
 
-USES=		gmake qmake qt:5
+USES=		compiler:c++11-lang gmake qmake qt:5
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_QT=		buildtools qmake_build \
