@@ -21,6 +21,7 @@ share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 %%DATADIR%%/rcc/ballcatch.rcc
 %%DATADIR%%/rcc/bargame.rcc
 %%DATADIR%%/rcc/bargame_2players.rcc
+%%DATADIR%%/rcc/binary_bulb.rcc
 %%DATADIR%%/rcc/braille_alphabets.rcc
 %%DATADIR%%/rcc/braille_fun.rcc
 %%DATADIR%%/rcc/calendar.rcc
@@ -122,12 +123,17 @@ share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 %%DATADIR%%/rcc/mosaic.rcc
 %%DATADIR%%/rcc/nine_men_morris.rcc
 %%DATADIR%%/rcc/nine_men_morris_2players.rcc
+%%DATADIR%%/rcc/note_names.rcc
 %%DATADIR%%/rcc/number_sequence.rcc
 %%DATADIR%%/rcc/numbers-odd-even.rcc
 %%DATADIR%%/rcc/paintings.rcc
 %%DATADIR%%/rcc/penalty.rcc
 %%DATADIR%%/rcc/photo_hunter.rcc
+%%DATADIR%%/rcc/piano_composition.rcc
 %%DATADIR%%/rcc/planegame.rcc
+%%DATADIR%%/rcc/play_piano.rcc
+%%DATADIR%%/rcc/play_rhythm.rcc
+%%DATADIR%%/rcc/railroad.rcc
 %%DATADIR%%/rcc/readingh.rcc
 %%DATADIR%%/rcc/readingv.rcc
 %%DATADIR%%/rcc/redraw.rcc
@@ -142,6 +148,7 @@ share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 %%DATADIR%%/rcc/simplepaint.rcc
 %%DATADIR%%/rcc/smallnumbers.rcc
 %%DATADIR%%/rcc/smallnumbers2.rcc
+%%DATADIR%%/rcc/solar_system.rcc
 %%DATADIR%%/rcc/submarine.rcc
 %%DATADIR%%/rcc/sudoku.rcc
 %%DATADIR%%/rcc/superbrain.rcc
@@ -164,9 +171,11 @@ share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 %%DATADIR%%/translations/gcompris_da.qm
 %%DATADIR%%/translations/gcompris_de.qm
 %%DATADIR%%/translations/gcompris_el.qm
+%%DATADIR%%/translations/gcompris_en.qm
 %%DATADIR%%/translations/gcompris_en_GB.qm
 %%DATADIR%%/translations/gcompris_es.qm
 %%DATADIR%%/translations/gcompris_et.qm
+%%DATADIR%%/translations/gcompris_eu.qm
 %%DATADIR%%/translations/gcompris_fi.qm
 %%DATADIR%%/translations/gcompris_fr.qm
 %%DATADIR%%/translations/gcompris_ga.qm
@@ -179,6 +188,7 @@ share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 %%DATADIR%%/translations/gcompris_ja.qm
 %%DATADIR%%/translations/gcompris_ko.qm
 %%DATADIR%%/translations/gcompris_lv.qm
+%%DATADIR%%/translations/gcompris_ml.qm
 %%DATADIR%%/translations/gcompris_nb.qm
 %%DATADIR%%/translations/gcompris_nl.qm
 %%DATADIR%%/translations/gcompris_nn.qm
