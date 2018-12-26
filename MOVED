@@ -4695,7 +4695,6 @@ sysutils/klineakconfig||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/kmilo||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/knutclient||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/komparator||2013-07-26|Has expired: Depends on Qt 3.x
-sysutils/kshutdown||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/ksynaptics||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/lineak-kdeplugins||2013-07-26|Has expired: Depends on Qt 3.x
 sysutils/luma||2013-07-26|Has expired: Depends on Qt 3.x
@@ -10931,3 +10930,4 @@ devel/rubygem-peek-rblineprof|devel/rubygem-peek-rblineprof-rails50|2018-12-23|D
 devel/rubygem-health_check26|devel/rubygem-health_check26-rails50|2018-12-23|Dep change for gitlab-ce, please use devel/rubygem-health_check26-rails50 instead
 devel/rubygem-default_value_for30|devel/rubygem-gitlab-default_value_for|2018-12-23|Dep change for gitlab-ce, please use devel/rubygem-gitlab-default_value_for instead
 devel/rubygem-gettext_i18n_rails_js|devel/rubygem-gettext_i18n_rails_js-rails50|2018-12-23|Dep change for gitlab-ce, please use devel/rubygem-gettext_i18n_rails_js-rails50 instead
+sysutils/kshutdown-kde4|sysutils/kshutdown|2018-12-26|Renamed as no longer kde4 based
