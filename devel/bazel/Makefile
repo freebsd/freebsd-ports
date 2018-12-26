@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		bazel
-DISTVERSION=		0.20.0
+DISTVERSION=		0.21.0
 CATEGORIES=		devel java
 MASTER_SITES=		https://storage.googleapis.com/bazel/${PORTVERSION}/rc${FINALRC}/
 DISTNAME=		bazel-${PORTVERSION}rc${FINALRC}-dist
@@ -24,7 +24,7 @@ BUILD_DEPENDS=		bash:shells/bash \
 # In bazel, a release is always code-wise identical to the final release candidate.
 # Hence we can also download that one and so have a simple way to also test earlier release
 # candidates.
-FINALRC=		5
+FINALRC=		4
 
 USES=			shebangfix zip:infozip python
 SHEBANG_REGEX=		.*(sh|txt|_stub|stub_.*|bazel|get_workspace_status|protobuf_support|_so)
@@ -49,10 +49,13 @@ EXTRA_PATCHES=	${FILESDIR}/extra-i386_src_BUILD ${FILESDIR}/extra-i386_tools_cpp
 # do not work reliably on FreeBSD.
 post-patch:
 	@${REINPLACE_CMD} \
-	-e "s|\"/etc/bazel.bazelrc\"|\"${ETCDIR}/bazel.bazelrc\"|" \
-	${WRKSRC}/src/main/cpp/blaze_util_posix.cc
+	-e "s|/etc/bazel.bazelrc|${ETCDIR}/bazel.bazelrc|" \
+	${WRKSRC}/src/main/cpp/blaze_util_posix.cc \
+	${WRKSRC}/src/main/cpp/BUILD
 	@${ECHO_CMD} build --strategy=Javac=standalone >> ${WRKSRC}/scripts/packages/bazel.bazelrc
 	@${ECHO_CMD} build --python_path=${PYTHON_CMD} >> ${WRKSRC}/scripts/packages/bazel.bazelrc
+	@${ECHO_CMD} build --host_javabase=@local_jdk//:jdk >> ${WRKSRC}/scripts/packages/bazel.bazelrc
+	@${ECHO_CMD} build --action_env=PATH=/bin:/usr/bin/:${LOCALBASE}/bin >> ${WRKSRC}/scripts/packages/bazel.bazelrc
 	@${REINPLACE_CMD} \
 	-e 's|\$$command|$$command --python_path=${PYTHON_CMD}|' \
 	${WRKSRC}/scripts/bootstrap/bootstrap.sh
@@ -72,6 +75,7 @@ do-build:
 	EMBED_LABEL='${PORTVERSION}' \
 	PATH=${LOCALBASE}/bin:$$PATH \
 	SOURCE_DATE_EPOCH=$${SOURCE_DATE_EPOCH} \
+	EXTRA_BAZEL_ARGS=--host_javabase=@local_jdk//:jdk \
 	${LOCALBASE}/bin/bash ./compile.sh)
 
 do-install:
