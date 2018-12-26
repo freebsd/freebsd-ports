@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libesd.so:audio/esound
 
-USES=		localbase libtool pkgconfig
+USES=		compiler:c++11-lang gnome libtool localbase pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 LIBS+=		-lm
