@@ -17,14 +17,14 @@ LIB_DEPENDS=	libgaiagraphics.so:graphics/libgaiagraphics \
 		libfreexl.so:textproc/freexl \
 		libspatialite.so:databases/spatialite
 
+USES=		compiler:c++11-lang gmake gnome iconv localbase:ldflags \
+		pkgconfig
 USE_WX=		2.8
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
-USES=		gmake pkgconfig iconv
 
-CFLAGS+=	-I${LOCALBASE}/include
-CPPFLAGS+=	-I${LOCALBASE}/include `${WX_CONFIG} --cppflags`
-LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB} `${WX_CONFIG} --libs` -lsqlite3
+CPPFLAGS+=	`${WX_CONFIG} --cppflags`
+LDFLAGS+=	${ICONV_LIB} `${WX_CONFIG} --libs` -lsqlite3
 CONFIGURE_ARGS=	CFLAGS="${CFLAGS} ${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
