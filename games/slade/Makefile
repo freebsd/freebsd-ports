@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	slade
-PORTVERSION=	3.1.3
+PORTVERSION=	3.1.4
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sirjuddington
 GH_PROJECT=	${PORTNAME:tu}
 
-USES=		cmake compiler:c++11-lib pkgconfig
+USES=		cmake compiler:c++11-lib gl pkgconfig
 USE_WX=		3.0+
 USE_GL=		glew
 USE_CXXSTD=	c++11
