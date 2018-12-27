@@ -17,7 +17,7 @@ RUN_DEPENDS:=	psselect:print/psutils
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		cpe ghostscript gmake perl5 shebangfix
+USES=		cpe ghostscript gmake perl5 shebangfix makeinfo
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-awk=/usr/bin/awk
 CONFIGURE_ENV+=	PERLPATH=${perl_CMD} # shebangfix
