@@ -60,5 +60,7 @@ VORBIS_CONFIGURE_ENABLE=ogg
 post-patch:
 	@${REINPLACE_CMD} 's|timidity.cfg|${PREFIX}/share/timidity/&|' \
 		${WRKSRC}/decoders/timidity/options.h
+	@${REINPLACE_CMD} 's|__EXPORT__||' \
+		${WRKSRC}/playsound/physfsrwops.h
 
 .include <bsd.port.mk>
