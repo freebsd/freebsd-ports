@@ -1,6 +1,6 @@
---- ./configure.orig	2012-08-17 20:31:25.000000000 +0200
-+++ ./configure	2012-09-23 17:27:26.000000000 +0200
-@@ -4672,7 +4672,7 @@
+--- configure.orig	2018-11-25 22:25:28 UTC
++++ configure
+@@ -4715,7 +4715,7 @@ eval "WRAPPER=${WRAPPER}"
  
  
  # Determine what targets to build

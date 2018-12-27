@@ -1,6 +1,6 @@
---- ./if.c.orig	2012-08-17 20:31:25.000000000 +0200
-+++ ./if.c	2012-09-23 17:27:26.000000000 +0200
-@@ -274,7 +274,7 @@
+--- if.c.orig	2018-11-25 22:25:28 UTC
++++ if.c
+@@ -276,7 +276,7 @@ initFilter(int fd, UINT16_t type, unsigned char *hwadd
  * traffic on this network.
  ***********************************************************************/
  int
@@ -9,7 +9,7 @@
  {
      static int fd = -1;
      char bpfName[32];
-@@ -285,7 +285,12 @@
+@@ -287,7 +287,12 @@ openInterface(char const *ifname, UINT16_t type, unsig
      int i;
  
      /* BSD only opens one socket for both Discovery and Session packets */
@@ -22,12 +22,12 @@
  	return fd;
      }
  
-@@ -395,6 +400,8 @@
+@@ -396,6 +401,8 @@ openInterface(char const *ifname, UINT16_t type, unsig
+ 		ifname);
  	rp_fatal(buffer);
      }
- 
-+    if (mtu) *mtu = ifr.ifr_mtu;
 +
++    if (mtu) *mtu = ifr.ifr_mtu;
+ 
      syslog(LOG_INFO, "Interface=%.16s HWaddr=%02X:%02X:%02X:%02X:%02X:%02X Device=%.32s Buffer size=%d",
  	   ifname,
- 	   hwaddr[0], hwaddr[1], hwaddr[2],

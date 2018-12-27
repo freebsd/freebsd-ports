@@ -7,4 +7,4 @@ Note that this port has had little testing (it works on 5-CURRENT
 to access T-Online in Germany from the client side) and the server side
 is entirely untested.
 
-WWW: http://www.roaringpenguin.com/products/pppoe
+WWW: https://dianne.skoll.ca/projects/rp-pppoe/

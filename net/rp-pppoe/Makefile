@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	rp-pppoe
-PORTVERSION=	3.12
+PORTVERSION=	3.13
 CATEGORIES=	net
-MASTER_SITES=	http://www.roaringpenguin.com/files/download/
+MASTER_SITES=	https://dianne.skoll.ca/projects/rp-pppoe/download/
 
 MAINTAINER=	mandree@FreeBSD.org
-COMMENT=	The popular Roaring Penguin's PPPoE software
+COMMENT=	Roaring Penguin's PPPoE software
+
+LICENSE=	GPLv2+
 
 GNU_CONFIGURE=	yes
 PATCH_WRKSRC=	${WRKSRC}/src

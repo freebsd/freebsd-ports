@@ -1,4 +1,4 @@
-@unexec for i in ppp/pppoe.conf rc.d/04pppoe-server.sh rc.d/04pppoe-relay.sh ; do if cmp -s %D/etc/$i.sample %D/etc/$i ; then rm %D/etc/$i ; fi ; done
+@postunexec for i in ppp/pppoe.conf rc.d/04pppoe-server.sh rc.d/04pppoe-relay.sh ; do if cmp -s %D/etc/$i.sample %D/etc/$i ; then rm %D/etc/$i ; fi ; done
 etc/ppp/firewall-masq.sample
 etc/ppp/firewall-standalone.sample
 etc/ppp/pap-secrets.sample
@@ -24,4 +24,4 @@ sbin/pppoe-stop
 sbin/pppoe
 sbin/pppoe-relay
 sbin/pppoe-server
-@unexec rmdir %D/etc/ppp 2>/dev/null || echo "If you are permanently removing pppoe, you should also ``rm -Rf ${PKG_PREFIX}/etc/ppp'' removing any configuration and password files left." | /usr/bin/fmt
+@postunexec rmdir %D/etc/ppp 2>/dev/null || echo "If you are permanently removing pppoe, you should also ``rm -Rf ${PKG_PREFIX}/etc/ppp'' removing any configuration and password files left." | /usr/bin/fmt
