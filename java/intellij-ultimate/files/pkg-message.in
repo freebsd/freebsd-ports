@@ -1,8 +1,6 @@
-There is experimental native (faster) file watching support which is
-disabled by default.  Currently there are problems with watching large
-trees.  To enable edit %%IDEA_HOME%%/bin/idea.properties and append
+There is a native (faster) file watching support backed by kqueue which is
+enabled by default.  If you encounter problems with watching large
+trees you can disable it by appending the following property into
+%%IDEA_HOME%%/bin/idea.properties:
 
-      idea.filewatcher.disabled=false
-      idea.filewatcher.executable.path=%%IDEA_HOME%%/bin/fsnotifier
-
-Only enable fsnotifier if your projects have < 600 files.
+      idea.filewatcher.disabled=true
