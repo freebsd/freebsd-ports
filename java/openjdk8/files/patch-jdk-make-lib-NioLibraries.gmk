@@ -1,0 +1,14 @@
+--- ./jdk/make/lib/NioLibraries.gmk.orig	2018-12-13 14:21:04.047810000 +0100
++++ ./jdk/make/lib/NioLibraries.gmk	2018-12-13 14:48:16.288168000 +0100
+@@ -92,8 +92,11 @@
+       PollArrayWrapper.c \
+       UnixAsynchronousServerSocketChannelImpl.c \
+       UnixAsynchronousSocketChannelImpl.c \
++      LinuxWatchService.c \
+       UnixCopyFile.c \
+       UnixNativeDispatcher.c
++  BUILD_LIBNIO_CFLAGS += -I%%LOCALBASE%%/include
++  BUILD_LIBNIO_LDFLAGS += -L%%LOCALBASE%%/lib -linotify
+ endif
+ 
+ ifeq ($(OPENJDK_TARGET_OS), macosx)

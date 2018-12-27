@@ -1,0 +1,17 @@
+--- ./jdk/make/mapfiles/libnio/mapfile-bsd.orig	2018-12-13 15:20:56.817147000 +0100
++++ ./jdk/make/mapfiles/libnio/mapfile-bsd	2018-12-13 15:22:41.507010000 +0100
+@@ -143,6 +143,14 @@
+ 		Java_sun_nio_fs_MagicFileTypeDetector_initialize0;
+ 		Java_sun_nio_fs_MagicFileTypeDetector_probe0;
+ 		Java_sun_nio_fs_UnixCopyFile_transfer;
++		Java_sun_nio_fs_LinuxWatchService_eventSize;
++		Java_sun_nio_fs_LinuxWatchService_eventOffsets;
++		Java_sun_nio_fs_LinuxWatchService_inotifyInit;
++		Java_sun_nio_fs_LinuxWatchService_inotifyAddWatch;
++		Java_sun_nio_fs_LinuxWatchService_inotifyRmWatch;
++		Java_sun_nio_fs_LinuxWatchService_configureBlocking;
++		Java_sun_nio_fs_LinuxWatchService_socketpair;
++		Java_sun_nio_fs_LinuxWatchService_poll;
+ 		Java_sun_nio_fs_UnixNativeDispatcher_access0;
+ 		Java_sun_nio_fs_UnixNativeDispatcher_chmod0;
+ 		Java_sun_nio_fs_UnixNativeDispatcher_chown0;
