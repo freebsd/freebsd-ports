@@ -10879,7 +10879,6 @@ x11/gdkxft||2018-12-21|Has expired: Uses obsolete glib12
 x11/gtk-theme-switch||2018-12-21|Has expired: Uses obsolete glib12
 x11/xpyb||2018-12-21|Has expired: Broken for more than 6 months
 x11/gtk-launch||2018-12-21|Has expired: Uses obsolete glib12
-x11/xpra||2018-12-21|Has expired: Broken for more than 6 months
 palm/pilrc||2018-12-21|Has expired: Uses obsolete glib12
 x11-fm/mtoolsfm||2018-12-21|Has expired: Uses obsolete glib12
 german/steak||2018-12-21|Has expired: Uses obsolete glib12
