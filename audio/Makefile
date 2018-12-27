@@ -525,6 +525,7 @@
     SUBDIR += mixmos
     SUBDIR += mixxx
     SUBDIR += mixxx20
+    SUBDIR += mixxx21
     SUBDIR += mma
     SUBDIR += moc
     SUBDIR += modplugplay
