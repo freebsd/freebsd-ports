@@ -3,6 +3,7 @@
 
 PORTNAME=	chrony
 PORTVERSION=	3.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.tuxfamily.org/chrony/
 
