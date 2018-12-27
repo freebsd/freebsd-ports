@@ -1,6 +1,6 @@
---- bin/sbt-launch-lib.bash.orig	2017-08-29 21:39:02 UTC
+--- bin/sbt-launch-lib.bash.orig	2018-12-03 08:50:53 UTC
 +++ bin/sbt-launch-lib.bash
-@@ -26,7 +26,7 @@ while [ -h "$SCRIPT" ] ; do
+@@ -27,7 +27,7 @@ while [ -h "$SCRIPT" ] ; do
    fi
  done
  declare -r sbt_bin_dir="$(dirname "$SCRIPT")"
@@ -9,7 +9,7 @@
  
  echoerr () {
    echo 1>&2 "$@"
-@@ -39,7 +39,7 @@ dlog () {
+@@ -40,7 +40,7 @@ dlog () {
  }
  
  jar_file () {
@@ -18,21 +18,20 @@
  }
  
  acquire_sbt_jar () {
-@@ -172,14 +172,14 @@ process_args () {
+@@ -249,14 +249,14 @@ getPreloaded() {
+ }
+ 
  syncPreloaded() {
+-  local source_preloaded="$sbt_home/lib/local-preloaded"
++  local source_preloaded="$sbt_home/local-preloaded"
+   local target_preloaded="$(getPreloaded)"
    if [[ "$init_sbt_version" == "" ]]; then
      # FIXME: better $init_sbt_version detection
--    init_sbt_version="$(ls -1 "$sbt_home/lib/local-preloaded/org.scala-sbt/sbt/")"
-+    init_sbt_version="$(ls -1 "$sbt_home/local-preloaded/org.scala-sbt/sbt/")"
+     init_sbt_version="$(ls -1 "$source_preloaded/org.scala-sbt/sbt/")"
    fi
-   [[ -f "$HOME/.sbt/preloaded/org.scala-sbt/sbt/$init_sbt_version/jars/sbt.jar" ]] || {
-     # lib/local-preloaded exists (This is optional)
--    [[ -d "$sbt_home/lib/local-preloaded/" ]] && {
-+    [[ -d "$sbt_home/local-preloaded/" ]] && {
+   [[ -f "$target_preloaded/org.scala-sbt/sbt/$init_sbt_version/jars/sbt.jar" ]] || {
+-    # lib/local-preloaded exists (This is optional)
++    # local-preloaded exists (This is optional)
+     [[ -d "$source_preloaded" ]] && {
        command -v rsync >/dev/null 2>&1 && {
-         mkdir -p "$HOME/.sbt/preloaded"
--        rsync -a --ignore-existing "$sbt_home/lib/local-preloaded/" "$HOME/.sbt/preloaded"
-+        rsync -a --ignore-existing "$sbt_home/local-preloaded/" "$HOME/.sbt/preloaded"
-       }
-     }
-   }
+         mkdir -p "$target_preloaded"
