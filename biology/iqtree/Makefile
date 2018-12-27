@@ -17,7 +17,7 @@ BROKEN_armv6=		fails to compile: unrecognized command line options '-m32' and '-
 BROKEN_armv7=		fails to compile: unrecognized command line options '-m32' and '-msse3'
 BROKEN_powerpc64=	fails to build: GCC version must be at least 4.8!
 
-USES=		cmake:insource compiler:openmp eigen:3
+USES=		cmake compiler:openmp eigen:3
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cibiv
 GH_PROJECT=	IQ-TREE
@@ -28,7 +28,7 @@ PORTEXAMPLES=	example.cf example.nex example.phy models.nex
 OPTIONS_DEFINE=	EXAMPLES
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/iqtree ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/iqtree ${STAGEDIR}${PREFIX}/bin
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
