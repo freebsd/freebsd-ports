@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dht
-PORTVERSION=	0.22
+PORTVERSION=	0.25
 CATEGORIES=	devel
 MASTER_SITES=	http://www.pps.univ-paris-diderot.fr/~jch/software/files/
 
