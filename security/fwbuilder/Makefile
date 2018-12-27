@@ -3,13 +3,11 @@
 
 PORTNAME=	fwbuilder
 PORTVERSION=	5.3.7
+DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Firewall Builder GUI and policy compilers
-
-USE_GITHUB=     yes
-GH_TAGNAME=     v${PORTVERSION}
 
 BROKEN_powerpc64=	fails to configure: libz library not found
 
@@ -27,6 +25,7 @@ CONFLICTS=	fwbuilder-[234].* fwbuilder-devel-* \
 .endif
 
 USES=		autoreconf:build gmake libtool qmake:no_configure qt:5 ssl
+USE_GITHUB=     yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USE_QT=		gui \
 		linguist_build \
