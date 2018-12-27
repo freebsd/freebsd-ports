@@ -229,8 +229,14 @@
 %%WWWDIR%%/include/classes/api/clients/CApiClient.php
 %%WWWDIR%%/include/classes/api/clients/CLocalApiClient.php
 %%WWWDIR%%/include/classes/api/managers/CApplicationManager.php
+%%WWWDIR%%/include/classes/api/managers/CGraphManager.php
+%%WWWDIR%%/include/classes/api/managers/CGraphPrototypeManager.php
 %%WWWDIR%%/include/classes/api/managers/CHistoryManager.php
 %%WWWDIR%%/include/classes/api/managers/CHttpTestManager.php
+%%WWWDIR%%/include/classes/api/managers/CItemManager.php
+%%WWWDIR%%/include/classes/api/managers/CItemPrototypeManager.php
+%%WWWDIR%%/include/classes/api/managers/CTriggerManager.php
+%%WWWDIR%%/include/classes/api/managers/CTriggerPrototypeManager.php
 %%WWWDIR%%/include/classes/api/services/CAPIInfo.php
 %%WWWDIR%%/include/classes/api/services/CAction.php
 %%WWWDIR%%/include/classes/api/services/CAlert.php
