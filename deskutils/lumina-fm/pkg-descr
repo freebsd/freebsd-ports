@@ -1,12 +1,11 @@
 The Insight file manager from the Lumina Desktop.
 Capabilities:
 * Standard File Manager Stuff (cut/copy/paste/move/rename files and directories)
-* Bookmarks for commonly used locations on your system (great for saving 
+* Bookmarks for commonly used locations on your system (great for saving
     network shares accessed through /net)
 * ZFS snapshot browsing - view/restore files from the past via a "time-slider"
 * Multiple tab browser, with up to two side-by-side directories per tab
 * Image slideshow - click through all the image files in a directory
 * Multimedia Player - play multimedia files from a directory
 
-
-WWW: http://lumina-desktop.org
+WWW: https://lumina-desktop.org/
