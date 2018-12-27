@@ -2,7 +2,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${DIST_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
@@ -46,7 +46,8 @@ BUILD_DEPENDS=	zip:archivers/zip \
 		autoconf>0:devel/autoconf \
 		${LOCALBASE}/include/cups/cups.h:print/cups \
 		bash:shells/bash
-LIB_DEPENDS=	libfreetype.so:print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libinotify.so:devel/libinotify
 RUN_DEPENDS=	javavm:java/javavmwrapper \
 		dejavu>0:x11-fonts/dejavu
 
@@ -406,6 +407,7 @@ post-patch:
 	    ${WRKSRC}/configure \
 	    ${WRKSRC}/common/autoconf/toolchain.m4 \
 	    ${WRKSRC}/jdk/make/lib/Awt2dLibraries.gmk \
+	    ${WRKSRC}/jdk/make/lib/NioLibraries.gmk \
 	    ${WRKSRC}/jdk/src/share/classes/com/sun/java/swing/plaf/gtk/Metacity.java \
 	    ${WRKSRC}/jdk/src/share/classes/sun/print/PSPrinterJob.java \
 	    ${WRKSRC}/jdk/src/solaris/classes/sun/nio/fs/BsdFileSystemProvider.java
