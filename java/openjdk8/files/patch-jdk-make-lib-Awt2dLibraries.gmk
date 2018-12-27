@@ -1,20 +1,23 @@
---- jdk/make/lib/Awt2dLibraries.gmk.orig	2015-07-18 14:30:01.000000000 -0700
-+++ jdk/make/lib/Awt2dLibraries.gmk	2015-07-18 14:30:08.000000000 -0700
-@@ -1259,7 +1259,7 @@
-   else ifeq ($(OPENJDK_TARGET_OS), bsd)
-     LIBSPLASHSCREEN_CFLAGS += -DWITH_X11 $(X_CFLAGS) -I$(PACKAGE_PATH)/include
-     ifneq ($(OPENJDK_TARGET_OS_VENDOR), openbsd)
--      LIBSPLASHSCREEN_CFLAGS += -DLIBICONV_PLUG
+--- jdk/make/lib/Awt2dLibraries.gmk.orig	2018-12-02 16:06:28.335527000 -0800
++++ jdk/make/lib/Awt2dLibraries.gmk	2018-12-02 16:29:22.253979000 -0800
+@@ -1236,6 +1236,11 @@
+     LIBSPLASHSCREEN_splashscreen_png.c_CFLAGS := -x objective-c -O0
+     LIBSPLASHSCREEN_splashscreen_sys.m_CFLAGS := -O0
+ 
++  else ifeq ($(OPENJDK_TARGET_OS), bsd)
++    LIBSPLASHSCREEN_CFLAGS += -DWITH_X11 $(X_CFLAGS) -I$(PACKAGE_PATH)/include
++    ifneq ($(OPENJDK_TARGET_OS_VENDOR), openbsd)
 +      LIBSPLASHSCREEN_CFLAGS += %%ICONV_CPPFLAGS%%
-     endif
++    endif
+   else ifeq ($(OPENJDK_TARGET_OS), windows)
+     LIBSPLASHSCREEN_CFLAGS += -DWITH_WIN32
    else
-     LIBSPLASHSCREEN_CFLAGS += -DWITH_X11 $(X_CFLAGS)
-@@ -1285,7 +1285,7 @@
-     # Solaris still uses OPENWIN_LIB ..
-     LIBSPLASHSCREEN_LDFLAGS_SUFFIX += -L$(OPENWIN_LIB)$(OPENJDK_TARGET_CPU_ISADIR) -lX11 -lXext $(LIBM) -lpthread
-   else ifeq ($(OPENJDK_TARGET_OS), bsd)
--    LIBSPLASHSCREEN_LDFLAGS_SUFFIX += $(X_LIBS) -lX11 -lXext $(LIBM) -L$(PACKAGE_PATH)/lib -liconv -pthread
-+    LIBSPLASHSCREEN_LDFLAGS_SUFFIX += $(X_LIBS) -lX11 -lXext $(LIBM) %%ICONV_LDFLAGS%% -pthread
+@@ -1257,6 +1262,8 @@
+         -framework JavaNativeFoundation
+   else ifeq ($(OPENJDK_TARGET_OS), windows)
+     LIBSPLASHSCREEN_LDFLAGS_SUFFIX += kernel32.lib user32.lib gdi32.lib delayimp.lib -DELAYLOAD:user32.dll
++  else ifeq ($(OPENJDK_TARGET_OS), bsd)
++     LIBSPLASHSCREEN_LDFLAGS_SUFFIX += $(X_LIBS) -lX11 -lXext $(LIBM) %%ICONV_LDFLAGS%% -pthread
    else	# .. all other Unixes can use X_LIBS
      LIBSPLASHSCREEN_LDFLAGS_SUFFIX += $(X_LIBS) -lX11 -lXext $(LIBM) -lpthread
    endif

@@ -1,11 +1,14 @@
---- configure
-+++ configure
-@@ -26,4 +26,7 @@
- # make sure that is called using bash.
- 
+--- configure.orig	2018-12-02 13:45:44.142931000 -0800
++++ configure	2018-12-02 15:16:05.112400000 -0800
+@@ -29,6 +29,10 @@
  this_script_dir=`dirname $0`
--bash $this_script_dir/common/autoconf/configure "$@"
+ this_script_dir=`cd $this_script_dir > /dev/null && pwd`
+ 
 +export CONFIG_SHELL=%%LOCALBASE%%/bin/bash
 +export MAKE=%%LOCALBASE%%/bin/gmake
 +export OBJCOPY=%%OBJCOPY%%
-+%%LOCALBASE%%/bin/bash $this_script_dir/common/autoconf/configure "$@"
++
+ # Delegate to wrapper, forcing wrapper to believe $0 is this script by using -c.
+ # This trick is needed to get autoconf to co-operate properly.
+-bash -c ". $this_script_dir/common/autoconf/configure" $this_script_dir/configure CHECKME $this_script_dir "$@"
++%%LOCALBASE%%/bin/bash -c ". $this_script_dir/common/autoconf/configure" $this_script_dir/configure CHECKME $this_script_dir "$@"

@@ -2,6 +2,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER:S/^0//}
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}/promoted/b${DIST_BUILD_NUMBER}/:jdk \
 		https://adopt-openjdk.ci.cloudbees.com/job/jtreg/${JTREG_JENKINS_BUILD}/artifact/:jtreg \
@@ -33,7 +34,8 @@ PATCHFILES=	patch-8u05-b13.xz \
 		patch-8u152-b16.xz \
 		patch-8u162-b12.xz \
 		patch-8u172-b11.xz \
-		patch-8u181-b13.xz
+		patch-8u181-b13.xz \
+		patch-8u192-b26.xz
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT?=	Java Development Kit ${JDK_MAJOR_VERSION}
@@ -202,12 +204,11 @@ JDK_JVMDIR=	lib/${ARCH:C/armv.*/arm/:S/powerpc64/ppc64/}
 JDK_OSARCH=	bsd-${ARCH:S/amd64/x86_64/:C/armv.*/arm/:S/i386/x86/:S/powerpc64/ppc64/}
 INSTALLDIR=	${PREFIX}/${PKGBASE}
 
-NO_CCACHE=		yes
 NOPRECIOUSMAKEVARS=	yes
 
 JDK_MAJOR_VERSION=	8
-JDK_UPDATE_VERSION=	181
-JDK_BUILD_NUMBER=	13
+JDK_UPDATE_VERSION=	192
+JDK_BUILD_NUMBER=	26
 DIST_BUILD_NUMBER=	132
 JTREG_VERSION=		4.1
 JTREG_BUILD_NUMBER=	b08
@@ -219,8 +220,10 @@ CONFIGURE_ARGS+=	--with-build-number="b${JDK_BUILD_NUMBER}"
 .if ${JDK_UPDATE_VERSION} > 0
 CONFIGURE_ARGS+=	--with-update-version=${JDK_UPDATE_VERSION}
 .endif
-CONFIGURE_ARGS+=	--disable-ccache \
-			--disable-freetype-bundling \
+.if defined(NO_CCACHE)
+CONFIGURE_ARGS+=	--disable-ccache
+.endif
+CONFIGURE_ARGS+=	--disable-freetype-bundling \
 			--disable-zip-debug-info \
 			--with-cacerts-file=${FILESDIR}/cacerts \
 			--with-cups=${LOCALBASE} \
@@ -359,6 +362,7 @@ CONFIGURE_ENV+=	LIBCXX="-lc++"
 
 # GCC is broken with PCH: https://lists.freebsd.org/pipermail/svn-src-all/2015-March/101722.html
 .if ${COMPILER_TYPE} == gcc
+CONFIGURE_ARGS+=	--with-toolchain-type=gcc
 .if ${ARCH} == "powerpc64"
 MAKE_ARGS+=	USE_PRECOMPILED_HEADER=1
 .else
