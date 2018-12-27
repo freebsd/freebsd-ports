@@ -1,8 +1,8 @@
-TIMESTAMP = 1545058119
-SHA256 (jfrog-jfrog-cli-go-1.23.0_GH0.tar.gz) = 4c158c9e53952786d18f361a0ff171cdd2904794861a9513c4a5d8c1f05afc30
-SIZE (jfrog-jfrog-cli-go-1.23.0_GH0.tar.gz) = 240161
-SHA256 (jfrog-jfrog-client-go-v0.2.0_GH0.tar.gz) = 62aa2950bf0173d86c4ff737119c3437999b9ddb84991615da8464348bd68378
-SIZE (jfrog-jfrog-client-go-v0.2.0_GH0.tar.gz) = 98178
+TIMESTAMP = 1545919168
+SHA256 (jfrog-jfrog-cli-go-1.23.1_GH0.tar.gz) = a5200552acdf55592a6972900f2f658cb25dd6508793bc52fb3386a310a75414
+SIZE (jfrog-jfrog-cli-go-1.23.1_GH0.tar.gz) = 240272
+SHA256 (jfrog-jfrog-client-go-v0.2.1_GH0.tar.gz) = 0bb133ad733e2fbfea5d63db40e04dcba9d665cb853ff2cbeb4f1ef3445a4d10
+SIZE (jfrog-jfrog-client-go-v0.2.1_GH0.tar.gz) = 98159
 SHA256 (codegangsta-cli-v1.20.0_GH0.tar.gz) = c5ba59f5742c99618b5ba34211699287cd3e80c41488bb267035ce0163e3bade
 SIZE (codegangsta-cli-v1.20.0_GH0.tar.gz) = 58397
 SHA256 (buger-jsonparser-6acdf747ae99_GH0.tar.gz) = 2fa99b9906653956c1decc496ea2b0c9eb88b5602b26a55517a92193bfadf1d6
