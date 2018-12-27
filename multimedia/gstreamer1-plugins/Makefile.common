@@ -331,6 +331,8 @@ gst_libmms_PLIST_FILES=	${GST_LIB_DIR}/libgstmms.so
 gst_librfb_USE_XORG=	x11
 
 # liblv2
+gst_lv2_USES=		pkgconfig
+gst_lv2_BUILD_DEPENDS=	lv2>=1.14.0:audio/lv2
 gst_lv2_LIB_DEPENDS=	libsord-0.so:devel/sord \
 			libserd-0.so:devel/serd \
 			libsratom-0.so:audio/sratom \
