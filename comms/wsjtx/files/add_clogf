@@ -1,9 +1,9 @@
---- CMakeLists.txt.orig	2018-06-14 09:21:04.286608000 -0400
-+++ CMakeLists.txt	2018-06-14 09:20:17.307460000 -0400
-@@ -313,6 +313,8 @@
-   main.cpp
+--- CMakeLists.txt.orig	2018-12-26 23:40:10.475771000 -0500
++++ CMakeLists.txt	2018-12-26 23:40:25.193281000 -0500
+@@ -318,6 +318,8 @@
    wsprnet.cpp
    WSPRBandHopping.cpp
+   widgets/ExportCabrillo.cpp
 +# No, this isn't the right place for clogf
 +  clogf.c
    )
