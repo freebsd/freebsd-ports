@@ -28,7 +28,7 @@ PORTEXAMPLES=	datum_shift.py geodtest.py sample.out \
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/_proj.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/_proj.so
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
