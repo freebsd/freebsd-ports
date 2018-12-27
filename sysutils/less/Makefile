@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	less
-PORTVERSION=	458
+PORTVERSION=	530
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.greenwoodsoftware.com/less/ \
 		http://bitrote.org/distfiles/
