@@ -1,20 +1,20 @@
---- dht.c	2011-07-25 17:59:36.000000000 -0400
-+++ dht.c	2012-07-28 16:21:07.000000000 -0400
-@@ -356,5 +356,5 @@
+--- dht.c	2018-02-09 16:44:37.000000000 -0500
++++ dht.c	2018-12-02 18:00:11.873381000 -0500
+@@ -365,5 +365,5 @@
      switch(sa->sa_family) {
      case AF_INET: {
 -        struct sockaddr_in *sin = (struct sockaddr_in*)sa;
 +        const struct sockaddr_in *sin = (const struct sockaddr_in*)sa;
          const unsigned char *address = (const unsigned char*)&sin->sin_addr;
          return sin->sin_port == 0 ||
-@@ -364,5 +364,5 @@
+@@ -373,5 +373,5 @@
      }
      case AF_INET6: {
 -        struct sockaddr_in6 *sin6 = (struct sockaddr_in6*)sa;
 +        const struct sockaddr_in6 *sin6 = (const struct sockaddr_in6*)sa;
          const unsigned char *address = (const unsigned char*)&sin6->sin6_addr;
          return sin6->sin6_port == 0 ||
-@@ -1281,13 +1281,13 @@
+@@ -1427,13 +1427,13 @@
      int i, len;
      struct storage *st;
 -    unsigned char *ip;
@@ -33,7 +33,7 @@
 +        ip = (const unsigned char*)&sin6->sin6_addr;
          len = 16;
      } else {
-@@ -1406,15 +1406,15 @@
+@@ -1552,15 +1552,15 @@
  make_token(const struct sockaddr *sa, int old, unsigned char *token_return)
  {
 -    void *ip;
@@ -52,63 +52,66 @@
 +        const struct sockaddr_in6 *sin6 = (const struct sockaddr_in6*)sa;
          ip = &sin6->sin6_addr;
          iplen = 16;
-@@ -1892,5 +1892,5 @@
+@@ -2038,5 +2038,5 @@
          }
  
 -        if(((char*)buf)[buflen] != '\0') {
 +        if(((const char*)buf)[buflen] != '\0') {
              debugf("Unterminated message.\n");
              errno = EINVAL;
-@@ -2743,5 +2743,5 @@
+@@ -2905,5 +2905,5 @@
  
  #define CHECK(ptr, len)                                                 \
 -    if(((unsigned char*)ptr) + (len) > (buf) + (buflen)) goto overflow;
 +    if(((const unsigned char*)ptr) + (len) > (buf) + (buflen)) goto overflow;
  
      if(tid_return) {
-@@ -2750,5 +2750,5 @@
+@@ -2912,5 +2912,5 @@
              long l;
              char *q;
 -            l = strtol((char*)p + 3, &q, 10);
 +            l = strtol((const char*)p + 3, &q, 10);
              if(q && *q == ':' && l > 0 && l < *tid_len) {
                  CHECK(q + 1, l);
-@@ -2782,5 +2782,5 @@
+@@ -2944,5 +2944,5 @@
              long l;
              char *q;
--            l = strtol((char*)p + 5, &q, 10);
-+            l = strtol((const char*)p + 5, &q, 10);
+-            l = strtol((char*)p + 7, &q, 10);
++            l = strtol((const char*)p + 7, &q, 10);
              if(q && *q == 'e' && l > 0 && l < 0x10000)
                  *port_return = l;
-@@ -2804,5 +2804,5 @@
+@@ -2957,5 +2957,5 @@
+             long l;
+             char *q;
+-            l = strtol((char*)p + 16, &q, 10);
++            l = strtol((const char*)p + 16, &q, 10);
+             if(q && *q == 'e' && l > 0 && l < 0x10000)
+                 *implied_port_return = l;
+@@ -2979,5 +2979,5 @@
              long l;
              char *q;
 -            l = strtol((char*)p + 7, &q, 10);
 +            l = strtol((const char*)p + 7, &q, 10);
              if(q && *q == ':' && l > 0 && l < *token_len) {
                  CHECK(q + 1, l);
-@@ -2820,5 +2820,5 @@
+@@ -2995,5 +2995,5 @@
              long l;
              char *q;
 -            l = strtol((char*)p + 7, &q, 10);
 +            l = strtol((const char*)p + 7, &q, 10);
-             if(q && *q == ':' && l > 0 && l < *nodes_len) {
+             if(q && *q == ':' && l > 0 && l <= *nodes_len) {
                  CHECK(q + 1, l);
-@@ -2836,5 +2836,5 @@
+@@ -3011,5 +3011,5 @@
              long l;
              char *q;
 -            l = strtol((char*)p + 8, &q, 10);
 +            l = strtol((const char*)p + 8, &q, 10);
-             if(q && *q == ':' && l > 0 && l < *nodes6_len) {
+             if(q && *q == ':' && l > 0 && l <= *nodes6_len) {
                  CHECK(q + 1, l);
-@@ -2855,8 +2855,8 @@
+@@ -3030,5 +3030,5 @@
                  long l;
                  char *q;
 -                l = strtol((char*)buf + i, &q, 10);
 +                l = strtol((const char*)buf + i, &q, 10);
                  if(q && *q == ':' && l > 0) {
                      CHECK(q + 1, l);
--                    i = q + 1 + l - (char*)buf;
-+                    i = q + 1 + l - (const char*)buf;
-                     if(l == 6) {
-                         if(j + l > *values_len)
