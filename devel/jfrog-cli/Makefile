@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jfrog-cli
-PORTVERSION=	1.23.0
+PORTVERSION=	1.23.1
 CATEGORIES=	devel
 
 MAINTAINER=	swills@FreeBSD.org
@@ -12,7 +12,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
 USE_GITHUB=	yes
 
 GH_TUPLE=	jfrog:jfrog-cli-go:${PORTVERSION}:DEFAULT/src/github.com/jfrog/jfrog-cli-go \
-		jfrog:jfrog-client-go:v0.2.0:client/src/github.com/jfrog/jfrog-client-go \
+		jfrog:jfrog-client-go:v0.2.1:client/src/github.com/jfrog/jfrog-client-go \
 		codegangsta:cli:v1.20.0:cli/src/github.com/codegangsta/cli \
 		buger:jsonparser:6acdf747ae99:jsonparser/src/github.com/buger/jsonparser \
 		chzyer:readline:2972be24d48e:readline/src/github.com/chzyer/readline \
