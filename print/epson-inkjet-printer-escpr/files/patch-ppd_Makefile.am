@@ -1,0 +1,18 @@
+--- ppd/Makefile.am.orig	2018-11-15 06:21:39 UTC
++++ ppd/Makefile.am
+@@ -596,8 +596,10 @@ EXTRA_DIST = $(cupsppd_DATA)
+ 
+ # LSBビルド環境の場合、~/.rpmmacros %adjust_ppds が担っている処理を実施
+ install-data-hook:
+-if LSB
+-else
+-	echo "Make CUPS filter paths in the PPDs absolute"
+-	sed -i 's,0 epson-escpr-wrapper,0 @CUPS_FILTER_DIR@/epson-escpr-wrapper,' $(DESTDIR)$(cupsppddir)/*.ppd
+-endif
++#if LSB
++#else
++#	echo "Make CUPS filter paths in the PPDs absolute"
++#	sed -i 's,0 epson-escpr-wrapper,0 @CUPS_FILTER_DIR@/epson-escpr-wrapper,' $(DESTDIR)$(cupsppddir)/*.ppd
++#endif
++	@echo "Make CUPS filter paths in the PPDs absolute"
++	$(SED) -i '' 's,0 epson-escpr-wrapper,0 @CUPS_FILTER_DIR@/epson-escpr-wrapper,' $(DESTDIR)$(cupsppddir)/*.ppd
