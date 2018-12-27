@@ -1,2 +1,2 @@
-DBDIR=		/var/db/pwned-check
-URLBASE=	https://downloads.pwnedpasswords.com/passwords
+DBDIR=/var/db/pwned-check
+URLBASE=https://downloads.pwnedpasswords.com/passwords
