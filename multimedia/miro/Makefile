@@ -67,7 +67,7 @@ post-patch:
 .endfor
 
 .if defined(MAINTAINER_MODE)
-regression-test:	install
+do-test:
 	${PREFIX}/bin/miro --unittest
 .endif
 
