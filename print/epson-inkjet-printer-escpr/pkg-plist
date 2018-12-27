@@ -90,6 +90,7 @@ share/cups/model/epson-inkjet-printer-escpr/Epson-ET-2710_Series-epson-escpr-en.
 share/cups/model/epson-inkjet-printer-escpr/Epson-ET-2750_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-ET-4500_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-ET-4550_Series-epson-escpr-en.ppd
+share/cups/model/epson-inkjet-printer-escpr/Epson-ET-4700_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-ET-7700_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-ET-7750_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-ET-M1100_Series-epson-escpr-en.ppd
@@ -101,6 +102,7 @@ share/cups/model/epson-inkjet-printer-escpr/Epson-EW-M770T_Series-epson-escpr-en
 share/cups/model/epson-inkjet-printer-escpr/Epson-EW-M970A3T_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-K200-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-K300-epson-escpr-en.ppd
+share/cups/model/epson-inkjet-printer-escpr/Epson-L1110_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-L1455_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-L3050_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-L3060_Series-epson-escpr-en.ppd
@@ -122,11 +124,13 @@ share/cups/model/epson-inkjet-printer-escpr/Epson-L475_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-L485_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-L486_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-L495_Series-epson-escpr-en.ppd
+share/cups/model/epson-inkjet-printer-escpr/Epson-L5190_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-L565_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-L575_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-L605_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-L655_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-L7160_Series-epson-escpr-en.ppd
+share/cups/model/epson-inkjet-printer-escpr/Epson-L7180_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-L805_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-L810_Series-epson-escpr-en.ppd
 share/cups/model/epson-inkjet-printer-escpr/Epson-L850_Series-epson-escpr-en.ppd
