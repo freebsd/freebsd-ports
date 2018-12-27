@@ -1,5 +1,5 @@
---- ../modsecurity-2.9.2/configure.orig	2016-02-07 12:45:53.346098000 -0500
-+++ ../modsecurity-2.9.2/configure	2016-02-07 12:47:50.081558000 -0500
+--- ../modsecurity-2.9.3/configure.orig	2016-02-07 12:45:53.346098000 -0500
++++ ../modsecurity-2.9.3/configure	2016-02-07 12:47:50.081558000 -0500
 @@ -14949,7 +14949,7 @@
  LUA_LDADD=""
  LUA_LDFLAGS=""
