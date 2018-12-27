@@ -1,0 +1,6 @@
+sshtunnel is a Python module for easily creating ssh tunnels in the background,
+from within Python. An example use case is when you want to access a remote
+database. With sshtunnel all you need is ssh access to the remote machine and
+Python installed.
+
+WWW: https://pypi.org/project/sshtunnel/

@@ -1137,6 +1137,7 @@
     SUBDIR += py-socketio-client
     SUBDIR += py-softlayer
     SUBDIR += py-speedtest-cli
+    SUBDIR += py-sshtunnel
     SUBDIR += py-sshuttle
     SUBDIR += py-stomp.py
     SUBDIR += py-suds
