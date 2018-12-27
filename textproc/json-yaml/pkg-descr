@@ -1,0 +1,4 @@
+json-yaml is a small command line utility to convert JSON to YAML.
+It is useful to get more readable output from web APIs and such.
+
+WWW: https://github.com/sjmulder/json-yaml
