@@ -10,15 +10,14 @@ MASTER_SITES=	SF/${PORTNAME}/HebrewEditor/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Editor for editing (primarily LaTeX) Hebrew files
 
-LICENSE=	GPLv2
-
-BROKEN=		fails to build
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	iw-elmar-fonts>0:hebrew/elmar-fonts
 
 USES=		gmake ncurses
 GNU_CONFIGURE=	yes
-ALL_TARGET=	-j${MAKE_JOBS_NUMBER}
+USE_CXXSTD=	c++98
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lcurses -ltermcap|-lncurses|' \
