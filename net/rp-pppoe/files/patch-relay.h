@@ -1,6 +1,6 @@
---- ./relay.h.orig	2012-08-17 20:31:25.000000000 +0200
-+++ ./relay.h	2012-09-23 17:27:26.000000000 +0200
-@@ -51,8 +51,13 @@
+--- relay.h.orig	2018-11-25 22:25:28 UTC
++++ relay.h
+@@ -51,8 +51,13 @@ typedef struct SessionHashStruct {
  
  /* Function prototypes */
  
