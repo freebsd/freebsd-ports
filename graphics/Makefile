@@ -943,6 +943,7 @@
     SUBDIR += py-pypillowfight
     SUBDIR += py-pyproj
     SUBDIR += py-pyqtgraph
+    SIBDIR += py-python-poppler-qt5
     SUBDIR += py-qt4-svg
     SUBDIR += py-qt5-svg
     SUBDIR += py-sane
