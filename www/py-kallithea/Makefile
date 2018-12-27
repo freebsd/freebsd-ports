@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kallithea
-PORTVERSION=	0.3.2
-PORTREVISION=	3
+PORTVERSION=	0.3.6
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -37,11 +36,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}waitress>=0.8.8:www/py-waitress@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}routes>=1.13:www/py-routes@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dulwich>=0.9.9:devel/dulwich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bcrypt>=0.3.0:security/py-bcrypt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}bleach>=2.1.3:www/py-bleach@${PY_FLAVOR} \
 		mercurial>=2.9:devel/mercurial
 
 USES=		python:2.7 shebangfix
-SHEBANG_FILES=	kallithea/tests/scripts/manual_test_crawler.py
 USE_PYTHON=	distutils autoplist
+
+SHEBANG_FILES=	kallithea/tests/scripts/manual_test_crawler.py
 
 NO_ARCH=	yes
 
