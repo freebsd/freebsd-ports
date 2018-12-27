@@ -10783,7 +10783,6 @@ biology/njplot|biology/seaview|2018-12-11|Has expired: Deprecated by upstream; u
 devel/dcmtk|graphics/dcmtk|2018-12-12|Move to a proper category
 graphics/cuneiform||2018-12-16|Has expired: Unmaintained upstream
 dns/knot1|dns/knot2|2018-12-16|Has expired: EOL upstream; successor dns/knot2 is in place
-print/frescobaldi||2018-12-16|Depends on non-existent poppler-qt4
 lang/python34|lang/python36|2018-12-18|Has expired: Fails to build with recent OpenSSL
 graphics/py-sk1|graphics/sk1|2018-12-18|sk1 is an app, not a python library
 net/py-libstorj||2018-12-21|Has expired: Broken for more than 6 months
