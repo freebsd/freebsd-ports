@@ -81,7 +81,6 @@ man/man1/grolj4.1.gz
 man/man1/gropdf.1.gz
 man/man1/grops.1.gz
 man/man1/grotty.1.gz
-man/man7/groff_filenames.7.gz
 %%X11%%man/man1/gxditview.1.gz
 man/man1/hpftodit.1.gz
 man/man1/indxbib.1.gz
@@ -108,6 +107,7 @@ man/man1/tbl.1.gz
 man/man1/tfmtodit.1.gz
 man/man1/troff.1.gz
 %%X11%%man/man1/xtotroff.1.gz
+man/man5/groff_filenames.5.gz
 man/man5/groff_font.5.gz
 man/man5/groff_out.5.gz
 man/man5/groff_tmac.5.gz
@@ -431,6 +431,11 @@ man/man7/roff.7.gz
 %%DATADIR%%/font/devascii/DESC
 %%DATADIR%%/font/devascii/I
 %%DATADIR%%/font/devascii/R
+%%DATADIR%%/font/devcp1047/B
+%%DATADIR%%/font/devcp1047/BI
+%%DATADIR%%/font/devcp1047/DESC
+%%DATADIR%%/font/devcp1047/I
+%%DATADIR%%/font/devcp1047/R
 %%DATADIR%%/font/devdvi/CW
 %%DATADIR%%/font/devdvi/CWEC
 %%DATADIR%%/font/devdvi/CWI
@@ -648,7 +653,6 @@ man/man7/roff.7.gz
 %%DATADIR%%/font/devpdf/map/symbolchars
 %%DATADIR%%/font/devpdf/map/symbolmap
 %%DATADIR%%/font/devpdf/map/textmap
-%%DATADIR%%/font/devpdf/util/BuildFoundries
 %%DATADIR%%/font/devps/AB
 %%DATADIR%%/font/devps/ABI
 %%DATADIR%%/font/devps/AI
@@ -774,7 +778,6 @@ man/man7/roff.7.gz
 %%DATADIR%%/tmac/hyphen.sv
 %%DATADIR%%/tmac/hyphen.us
 %%DATADIR%%/tmac/hyphenex.cs
-%%DATADIR%%/tmac/hyphenex.det
 %%DATADIR%%/tmac/hyphenex.us
 %%DATADIR%%/tmac/ja.tmac
 %%DATADIR%%/tmac/latin1.tmac
@@ -808,6 +811,7 @@ man/man7/roff.7.gz
 %%DATADIR%%/tmac/papersize.tmac
 %%DATADIR%%/tmac/pdf.tmac
 %%DATADIR%%/tmac/pdfmark.tmac
+%%DATADIR%%/tmac/pdfpic.tmac
 %%DATADIR%%/tmac/pic.tmac
 %%DATADIR%%/tmac/ps.tmac
 %%DATADIR%%/tmac/psatk.tmac
@@ -829,9 +833,9 @@ man/man7/roff.7.gz
 %%DATADIR%%/tmac/tty.tmac
 %%DATADIR%%/tmac/unicode.tmac
 %%DATADIR%%/tmac/www.tmac
+%%DATADIR%%/tmac/zh.tmac
 share/groff/current
 share/groff/site-tmac/man.local
 share/groff/site-tmac/mdoc.local
-@dir lib/groff/refer
 @dir lib/groff/site-tmac
 @dir share/groff/site-font
