@@ -1,0 +1,12 @@
+S-nail provides a simple and friendly environment for sending and
+receiving mail. It is intended to provide the functionality of the
+POSIX mailx(1) command, but is MIME capable and optionally offers
+extensions for line editing, S/MIME, SMTP and POP3, among others.
+S-nail divides incoming mail into its constituent messages and allows
+the user to deal with them in any order. It offers many COMMANDS and
+INTERNAL VARIABLES for manipulating messages and sending mail. It
+provides the user simple editing capabilities to ease the composition
+of outgoing messages, and increasingly powerful and reliable
+non-interactive scripting capabilities.
+
+WWW: https://www.sdaoden.eu/code.html#s-mailx

@@ -637,6 +637,7 @@
     SUBDIR += rubygem-ruby-qmail
     SUBDIR += rubygem-tmail
     SUBDIR += rubygem-vmail
+    SUBDIR += s-nail
     SUBDIR += sa-stats
     SUBDIR += sa-utils
     SUBDIR += scam-backscatter
