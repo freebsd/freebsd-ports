@@ -1,5 +1,5 @@
---- build/depends.py	2018-09-05 15:20:52.000000000 -0500
-+++ build/depends.py	2018-10-30 14:47:39.928944000 -0500
+--- build/depends.py	2018-12-24 01:37:23.000000000 -0500
++++ build/depends.py	2018-12-26 22:17:54.336049000 -0500
 @@ -12,7 +12,7 @@
          if not conf.CheckLib('portaudio'):
              raise Exception(
@@ -38,37 +38,37 @@
                         'windows': 'C:\\qt\\4.6.0'}
  
      DEFAULT_QT5DIRS64 = {'linux': '/usr/lib/x86_64-linux-gnu/qt5',
-+                         'bsd': '%%LOCALBASE%%/lib/qt5',
++			 'bsd': '%%LOCALBASE%%/lib/qt5',
                           'osx': '/Library/Frameworks',
-                          'windows': 'C:\\qt\\5.0.1'}
+                          'windows': 'C:\\qt\\5.11.1'}
  
      DEFAULT_QT5DIRS32 = {'linux': '/usr/lib/i386-linux-gnu/qt5',
-+                         'bsd': '%%LOCALBASE%%/lib/qt5',
++			 'bsd': '%%LOCALBASE%%/lib/qt5',
                           'osx': '/Library/Frameworks',
-                          'windows': 'C:\\qt\\5.0.1'}
+                          'windows': 'C:\\qt\\5.11.1'}
  
-@@ -319,9 +322,17 @@
+@@ -324,9 +327,17 @@
                  build.env.Append(CCFLAGS='-fPIC')
  
          elif build.platform_is_bsd:
 -            build.env.Append(LIBS=qt_modules)
 -            include_paths = ['$QTDIR/include/%s' % module
 -                             for module in qt_modules]
-+	    qt_modules.extend(['QtDBus'])
-+	    if qt5:
-+		qt5_modules = [w.replace('Qt', 'Qt5') for w in qt_modules]
-+		build.env.Append(LIBS = qt5_modules)
-+		build.env.Append(CCFLAGS='-fPIC')
-+                include_paths = ['%%LOCALBASE%%/include/qt5/%s' % module
++            qt_modules.extend(['QtDBus'])
++            if qt5:
++               qt5_modules = [w.replace('Qt', 'Qt5') for w in qt_modules]
++               build.env.Append(LIBS = qt5_modules)
++               build.env.Append(CCFLAGS='-fPIC')
++               include_paths = ['%%LOCALBASE%%/include/qt5/%s' % module
 +                                for module in qt_modules]
 +            else:
-+		build.env.Append(LIBS = qt_modules)
-+                include_paths = ['%%LOCALBASE%%/include/qt4/%s' % module
++               build.env.Append(LIBS = qt_modules)
++               include_paths = ['%%LOCALBASE%%/include/qt4/%s' % module
 +                                for module in qt_modules]
              build.env.Append(CPPPATH=include_paths)
          elif build.platform_is_osx:
              qtdir = build.env['QTDIR']
-@@ -487,7 +498,7 @@
+@@ -492,7 +503,7 @@
          if not build.platform_is_windows and not (using_104_sdk or compiling_on_104):
              qtdir = build.env['QTDIR']
              framework_path = Qt.find_framework_libdir(qtdir, qt5)
@@ -77,7 +77,7 @@
                  build.env.Append(LINKFLAGS="-L" + framework_path)
  
          # Mixxx requires C++11 support. Windows enables C++11 features by
-@@ -581,7 +592,7 @@
+@@ -586,7 +597,7 @@
          if env is None:
              env = build.env
  
@@ -86,16 +86,16 @@
              # Try using system lib
              if conf.CheckForPKG('soundtouch', '2.0.0'):
                  # System Lib found
-@@ -625,7 +636,7 @@
-         # the files correctly. Adding this folder ot the include path should fix
+@@ -630,7 +641,7 @@
+         # the files correctly. Adding this folder to the include path should fix
          # it, though might cause issues. This is safe to remove once we
          # deprecate Karmic support. rryan 2/2011
 -        build.env.Append(CPPPATH='/usr/include/taglib/')
-+        build.env.Append(CPPPATH='%%LOCALBASE%%/include/taglib/')
++	build.env.Append(CPPPATH='%%LOCALBASE%%/include/taglib/')
  
          if build.platform_is_windows and build.static_dependencies:
              build.env.Append(CPPDEFINES='TAGLIB_STATIC')
-@@ -1337,7 +1348,6 @@
+@@ -1343,7 +1354,6 @@
  
          if build.toolchain_is_gnu:
              # Default GNU Options
@@ -103,29 +103,16 @@
              build.env.Append(CCFLAGS='-Wall')
              if build.compiler_is_clang:
                  # Quiet down Clang warnings about inconsistent use of override
-@@ -1445,9 +1455,9 @@
- 
-         elif build.platform_is_osx:
-             # Stuff you may have compiled by hand
--            if os.path.isdir('/usr/local/include'):
--                build.env.Append(LIBPATH=['/usr/local/lib'])
--                build.env.Append(CPPPATH=['/usr/local/include'])
-+            if os.path.isdir('%%LOCALBASE%%/include'):
-+                build.env.Append(LIBPATH=['%%LOCALBASE%%/lib'])
-+                build.env.Append(CPPPATH=['%%LOCALBASE%%/include'])
- 
-             # Non-standard libpaths for fink and certain (most?) darwin ports
-             if os.path.isdir('/sw/include'):
-@@ -1460,17 +1470,24 @@
+@@ -1472,17 +1482,24 @@
                  build.env.Append(CPPPATH=['/opt/local/include'])
  
          elif build.platform_is_bsd:
-+	    qt5 = Qt.qt5_enabled(build)
++            qt5 = Qt.qt5_enabled(build)
 +
-+	    if qt5:
-+	      qtdirectory = 'qt5'
++            if qt5:
++              qtdirectory = 'qt5'
 +            else:
-+	      qtdirectory = 'qt4'
++              qtdirectory = 'qt4'
 +
              build.env.Append(CPPDEFINES='__BSD__')
              build.env.Append(CPPPATH=['/usr/include',
@@ -146,7 +133,7 @@
  
          # Define for things that would like to special case UNIX (Linux or BSD)
          if build.platform_is_bsd or build.platform_is_linux:
-@@ -1503,7 +1520,7 @@
+@@ -1515,7 +1532,7 @@
          # Say where to find resources on Unix. TODO(XXX) replace this with a
          # RESOURCE_PATH that covers Win and OSX too:
          if build.platform_is_linux or build.platform_is_bsd:
@@ -155,12 +142,18 @@
              share_path = os.path.join (prefix, build.env.get(
                  'SHAREDIR', default='share'), 'mixxx')
              build.env.Append(
-@@ -1514,7 +1531,7 @@
+@@ -1526,10 +1543,10 @@
                  CPPDEFINES=('UNIX_LIB_PATH', r'\"%s\"' % lib_path))
  
      def depends(self, build):
 -        return [SoundTouch, ReplayGain, Ebur128Mit, PortAudio, PortMIDI, Qt, TestHeaders,
+-                FidLib, SndFile, FLAC, OggVorbis, OpenGL, TagLib, ProtoBuf,
+-                Chromaprint, RubberBand, SecurityFramework, CoreServices, IOKit,
+-                QtScriptByteArray, Reverb, FpClassify, PortAudioRingBuffer]
 +        return [SoundTouch, ReplayGain, Ebur128Mit, PortAudio, Qt, TestHeaders,
-                 FidLib, SndFile, FLAC, OggVorbis, OpenGL, TagLib, ProtoBuf,
-                 Chromaprint, RubberBand, SecurityFramework, CoreServices, IOKit,
-                 QtScriptByteArray, Reverb, FpClassify, PortAudioRingBuffer]
++                 FidLib, SndFile, FLAC, OggVorbis, OpenGL, TagLib, ProtoBuf,
++                 Chromaprint, RubberBand, SecurityFramework, CoreServices, IOKit,
++                 QtScriptByteArray, Reverb, FpClassify, PortAudioRingBuffer]
+ 
+     def post_dependency_check_configure(self, build, conf):
+         """Sets up additional things in the Environment that must happen
