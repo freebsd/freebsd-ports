@@ -1,0 +1,10 @@
+A Python binding for libpoppler-qt5 that aims for completeness
+and for being actively maintained.
+
+Created and currently maintained by Wilbert Berendsen <wbsoft@xs4all.nl>.
+
+Usage:
+	import popplerqt5
+	d = popplerqt5.Poppler.Document.load('file.pdf')
+
+WWW: https://pypi.python.org/pypi/python-poppler-qt5
