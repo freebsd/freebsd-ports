@@ -1,0 +1,9 @@
+--- runqmake.sh.orig	2017-01-14 01:49:18.000000000 -0800
++++ runqmake.sh	2018-12-10 15:50:46.374226000 -0800
+@@ -13,5 +13,5 @@
+ 
+ test -z "$EXTRA_CXXFLAGS" || FLAGS="QMAKE_CXXFLAGS += $EXTRA_CXXFLAGS"
+ 
+-$QMAKE "$FLAGS" $C
++eval $QMAKE "$FLAGS2" $C
+ 
