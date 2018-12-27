@@ -1057,7 +1057,6 @@
     SUBDIR += py-vulndb
     SUBDIR += py-yara
     SUBDIR += py-yubikey-manager
-    SUBDIR += py-yubioath-desktop
     SUBDIR += py-zope.app.authentication
     SUBDIR += py-zope.app.localpermission
     SUBDIR += py-zope.app.principalannotation
@@ -1363,6 +1362,7 @@
     SUBDIR += yubico-piv-tool
     SUBDIR += yubikey-personalization-gui
     SUBDIR += yubikey-piv-manager
+    SUBDIR += yubioath-desktop
     SUBDIR += zebedee
     SUBDIR += zenmap
     SUBDIR += zeronet
