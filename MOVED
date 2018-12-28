@@ -10843,9 +10843,9 @@ net-im/gale||2018-12-21|Has expired: Uses obsolete glib12
 audio/xmms-ahx||2018-12-21|Has expired: Uses obsolete glib12
 audio/xmms-curses||2018-12-21|Has expired: Uses obsolete glib12
 audio/scrobbler||2018-12-21|Has expired: Uses obsolete glib12
-audio/xmms-nsf||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-nsf||2018-12-21|Has expired: Uses obsolete glib12, use audio/festalon instead
 audio/xmms-nas||2018-12-21|Has expired: Uses obsolete glib12
-audio/xmms-gbsplay||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-gbsplay||2018-12-21|Has expired: Uses obsolete glib12, use audio/gbsplay instead
 audio/xmms-wavpack||2018-12-21|Has expired: Uses obsolete glib12
 audio/xmms-shn||2018-12-21|Has expired: Uses obsolete glib12
 audio/xmms-volnorm||2018-12-21|Has expired: Uses obsolete glib12
@@ -10854,7 +10854,7 @@ audio/xmms-scrobbler||2018-12-21|Has expired: Uses obsolete glib12
 audio/mcplay||2018-12-21|Has expired: Uses obsolete glib12
 audio/gmixer||2018-12-21|Has expired: Uses obsolete glib12
 audio/soundtracker||2018-12-21|Has expired: Uses obsolete glib12
-audio/xmms-sapplug||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-sapplug||2018-12-21|Has expired: Uses obsolete glib12, use audio/penguinsap instead
 audio/rio500||2018-12-21|Has expired: Uses obsolete glib12
 audio/xmmsctrl||2018-12-21|Has expired: Uses obsolete glib12
 audio/xmms-xf86audio||2018-12-21|Has expired: Uses obsolete glib12
