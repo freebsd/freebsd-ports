@@ -26,6 +26,7 @@ sbin/auto-db-dir
 sbin/auto-denyhosts-remove-ip
 sbin/auto-denyhosts-setup
 sbin/auto-detect-intel-gpu
+sbin/auto-detect-nvidia-gpu
 sbin/auto-disable-host-key-prompt
 sbin/auto-disable-service
 sbin/auto-disable-tcp-timestamps
@@ -39,6 +40,7 @@ sbin/auto-fastest-mirror
 sbin/auto-file-secure
 sbin/auto-harden
 sbin/auto-insert-line
+sbin/auto-install-linux_base
 sbin/auto-install-packages
 sbin/auto-ipfw-gateway-setup
 sbin/auto-ipmi-install
@@ -56,6 +58,7 @@ sbin/auto-password-status
 sbin/auto-pkg-latest
 sbin/auto-pkgsrc-dir
 sbin/auto-pkgsrc-prefix
+sbin/auto-pkgsrc-remote-x11
 sbin/auto-pkgsrc-setup
 sbin/auto-ports-checkout
 sbin/auto-ports-setup
@@ -64,6 +67,7 @@ sbin/auto-pxe-installer-setup
 sbin/auto-pxe-node-discover
 sbin/auto-remove-user
 sbin/auto-replace-file
+sbin/auto-restore-ownership
 sbin/auto-restore-pw
 sbin/auto-restore-user
 sbin/auto-secure-directory
@@ -74,6 +78,7 @@ sbin/auto-set-sysctl
 sbin/auto-set-umask
 sbin/auto-ssh-authorize
 sbin/auto-ssh-reverse-authorize
+sbin/auto-transfer-pw
 sbin/auto-unlock-user
 sbin/auto-update-port-framework
 sbin/auto-update-system
