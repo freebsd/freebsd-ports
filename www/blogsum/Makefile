@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.dixongroup.net/
 
-MAINTAINER=	jhuldtgren@gmail.com
+MAINTAINER=	ports@FreeBSD.com
 COMMENT=	Simple weblog
 
 RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
