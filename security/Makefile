@@ -832,6 +832,7 @@
     SUBDIR += pecl-scrypt
     SUBDIR += pecl-ssh2
     SUBDIR += pecl-ssh2-0
+    SUBDIR += peda
     SUBDIR += pev
     SUBDIR += pgpdump
     SUBDIR += pgpgpg

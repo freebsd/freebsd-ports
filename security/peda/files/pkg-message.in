@@ -1,0 +1,16 @@
+Now that PEDA is installed it can be used with gdb(1).
+
+Run the following command in the gdb prompt to load the plugin:
+
+```
+source %%LIBEXECDIR%%/%%UTILITY_NAME%%
+```
+
+In order to load PEDA automatically on gdb(1) launch add the line mentioned
+above to ~/.gdbinit:
+
+```
+echo "source %%LIBEXECDIR%%/%%UTILITY_NAME%%" >> ~/.gdbinit
+```
+
+Keep in mind that PEDA requires at least GDB 7.0 to work.
