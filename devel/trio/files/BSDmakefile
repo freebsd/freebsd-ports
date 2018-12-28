@@ -1,0 +1,17 @@
+LIB=	trio
+SHLIB_MAJOR=	2
+SHLIB_MINOR=	0
+
+NO_PROFILE=	nope
+
+INCLUDEDIR=	${PREFIX}/include
+LIBDIR=		${PREFIX}/lib
+
+INCS=		trio.h triop.h triodef.h trionan.h triostr.h
+
+CFLAGS+=	-DHAVE_STRUCT_SIGACTION
+LDADD=		-lm
+
+SRCS=	triostr.c trio.c trionan.c
+
+.include <bsd.lib.mk>

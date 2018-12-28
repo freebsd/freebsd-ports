@@ -4,7 +4,8 @@ include/triop.h
 include/trionan.h
 include/triostr.h
 lib/libtrio.a
-lib/libtrio.so.2.0.0
+lib/libtrio.so.2
+lib/libtrio.so
 %%PORTDOCS%%%%DOCSDIR%%/doc/doc.h
 %%PORTDOCS%%%%DOCSDIR%%/doc/doc_dynamic.h
 %%PORTDOCS%%%%DOCSDIR%%/doc/doc_printf.h
