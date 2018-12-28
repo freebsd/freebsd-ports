@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20181228:
+  AFFECTS: users of devel/trio
+  AUTHOR: rodrigo@freebsd.org
+
+  Since trio 1.16-1, the shared lib previously misnamed libtrio.so.2.0.0
+  is now named libtrio.so.2 and the symlink libtrio.so is created.
+
 20181222:
   AFFECTS: users of net/ntopng
   AUTHOR: madpilot@FreeBSD.org
