@@ -38,7 +38,7 @@ PLIST_FILES=	bin/solarus-quest-editor \
 		share/pixmaps/${PORTNAME}.png
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/solarus-quest-editor ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/solarus-quest-editor ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/images/logo/sqe-logo.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
