@@ -209,11 +209,12 @@ MODSECURITY_LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 				libpcre.so:devel/pcre \
 				libyajl.so:devel/yajl
 MODSECURITY_USE=		GNOME=libxml2
-MODSECURITY_USES=		apache:2.2+ pkgconfig shebangfix
-MODSECURITY_MASTER_SITES=	http://www.modsecurity.org/tarball/2.9.2/:modsecurity
-MODSECURITY_DISTFILES=		modsecurity-2.9.2.tar.gz:modsecurity
+MODSECURITY_VERSION=	2.9.3
+MODSECURITY_USES=		apache:2.4+ pkgconfig shebangfix
+MODSECURITY_MASTER_SITES=	http://www.modsecurity.org/tarball/${MODSECURITY_VERSION}/:modsecurity
+MODSECURITY_DISTFILES=		modsecurity-${MODSECURITY_VERSION}.tar.gz:modsecurity
 MODSECURITY_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-modsecurity-configure
-MODSECURITY_VARS=		WRKSRC_modsecurity=${WRKDIR}/modsecurity-2.9.2
+MODSECURITY_VARS=		WRKSRC_modsecurity=${WRKDIR}/modsecurity-${MODSECURITY_VERSION}
 
 MODSECURITY3_LIB_DEPENDS=	libmodsecurity.so:security/modsecurity3
 MODSECURITY3_GH_TUPLE=		SpiderLabs:ModSecurity-nginx:71ede63:modsec
@@ -223,7 +224,7 @@ NAXSI_NGINX_VER=	0.56
 NAXSI_GH_TUPLE=		nbs-system:naxsi:${NAXSI_NGINX_VER}:naxsi
 NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 
-NJS_GH_TUPLE=		nginx:njs:36f1295:njs
+NJS_GH_TUPLE=		nginx:njs:21572a0:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 
 PASSENGER_NGINX_VER=	6.0.0
