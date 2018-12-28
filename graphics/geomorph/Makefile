@@ -13,7 +13,8 @@ COMMENT=	Height field generator and editor
 LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
 		libpng.so:graphics/png
 
-USES=		desktop-file-utils gmake pkgconfig shebangfix
+USES=		compiler:c++11-lang desktop-file-utils gmake pkgconfig \
+		shebangfix
 SHEBANG_FILES=	update-rc
 USE_GL=		yes
 GNU_CONFIGURE=	yes
