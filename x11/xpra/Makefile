@@ -1,8 +1,7 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	xpra
-PORTVERSION=	2.3
+PORTVERSION=	2.4.2
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -12,7 +11,8 @@ COMMENT=	Xpra gives you persistent remote applications for X
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gtk2>2:x11-toolkits/py-gtk2@${PY_FLAVOR} \
-		${PYNUMPY}
+		${PYNUMPY} \
+		brotli:archivers/brotli
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libturbojpeg.so:graphics/libjpeg-turbo \
@@ -35,7 +35,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lz4>=0.7.0_1:archivers/py-lz4@${PY_FLAVOR} \
 		Xvfb:x11-servers/xorg-vfbserver \
 		${PYTHON_PKGNAMEPREFIX}gtk2>2:x11-toolkits/py-gtk2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gtkglext>1:x11-toolkits/py-gtkglext@${PY_FLAVOR} \
-		${PYNUMPY}
+		${PYNUMPY} \
+		gstreamer1-plugins-pulse>=0:audio/gstreamer1-plugins-pulse
 
 USES=		desktop-file-utils fortran gettext-runtime gnome pkgconfig python:2.7 shared-mime-info shebangfix tar:xz
 
@@ -44,6 +45,7 @@ USE_PYTHON=	cython distutils
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xkbfile xrandr xtst
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} PYTHON_VER=${PYTHON_VER}
 SHEBANG_FILES=	cups/xpraforwarder scripts/auth_dialog scripts/xpra_udev_product_version
+MAKE_ENV=	XPRA_USE_PROCESS_POLLING=1
 
 OPTIONS_DEFINE=		AVAHI AVCODEC CUPS FFMPEG GSTREAMER HTML5 LIBYUV SWSCALE VPX WEBCAM X264 X265
 OPTIONS_DEFAULT=	AVAHI AVCODEC CUPS FFMPEG GSTREAMER HTML5 LIBYUV SWSCALE VPX X264
@@ -90,7 +92,7 @@ XPRA_OPTIONS_ALL=	csc_libyuv csc_swscale
 XPRA_OPTIONS_ALL+=	dec_avcodec2 enc_ffmpeg enc_x264 enc_x265
 XPRA_OPTIONS_ALL+=	html5 mdns sound printing vpx webcam
 XPRA_OPTIONS_ALL+=	${XPRA_OPTIONS_DISABLED}
-XPRA_OPTIONS_DISABLED=	Xdummy Xdummy_wrapper minify uinput
+XPRA_OPTIONS_DISABLED=	Xdummy Xdummy_wrapper minify uinput netdev
 
 .include <bsd.port.options.mk>
 
