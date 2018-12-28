@@ -2,3 +2,4 @@ bin/mdb
 lib/mdb/kvm/amd64/kernel.so
 lib/mdb/kvm/amd64/kld.so
 lib/mdb/kvm/amd64/mdb_ks.so
+lib/mdb/kvm/amd64/opensolaris.so
