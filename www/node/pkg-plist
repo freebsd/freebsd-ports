@@ -1,6 +1,8 @@
 bin/node
 include/node/common.gypi
 include/node/config.gypi
+include/node/js_native_api.h
+include/node/js_native_api_types.h
 include/node/libplatform/libplatform.h
 include/node/libplatform/libplatform-export.h
 include/node/libplatform/v8-tracing.h
