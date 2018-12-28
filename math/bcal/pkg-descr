@@ -1,0 +1,24 @@
+bcal (Byte CALculator) is a REPL CLI utility for storage expressions, unit
+conversions or address calculations. If you can't calculate the hex address
+offset for (512 - 16) MiB, or the value when the 43rd bit of a 64-bit address
+is set mentally, bcal is for you.
+
+It has a bc mode for general-purpose numerical calculations.
+
+bcal follows Ubuntu's standard unit conversion and notation policy. Only 64-bit
+operating systems are supported.
+
+Features:
+
+- evaluate arithmetic expressions involving storage units
+- perform general purpose calculations (using bc)
+- convert to IEC/SI standard data storage units
+- interactive mode with the last valid result stored for reuse
+- show the address in bytes
+- show address as LBA:OFFSET
+- convert CHS to LBA and vice versa
+- base conversion to binary, decimal and hex
+- custom sector size, max heads/cylinder and max sectors/track
+- minimal dependencies
+
+WWW: https://github.com/jarun/bcal
