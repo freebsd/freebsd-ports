@@ -334,6 +334,7 @@
     SUBDIR += hs-OpenAL
     SUBDIR += hs-libmpd
     SUBDIR += hts_engine-API
+    SUBDIR += hvl2wav
     SUBDIR += hydrogen
     SUBDIR += icecast
     SUBDIR += icecast-kh
