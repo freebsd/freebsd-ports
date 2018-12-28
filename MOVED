@@ -10840,7 +10840,7 @@ biology/xmolwt||2018-12-21|Has expired: Uses obsolete glib12
 x11-clocks/wmclockmon||2018-12-21|Has expired: Uses obsolete glib12
 x11-clocks/asclock-gtk||2018-12-21|Has expired: Uses obsolete glib12
 net-im/gale||2018-12-21|Has expired: Uses obsolete glib12
-audio/xmms-ahx||2018-12-21|Has expired: Uses obsolete glib12
+audio/xmms-ahx||2018-12-21|Has expired: Uses obsolete glib12, use audio/hvl2wav instead
 audio/xmms-curses||2018-12-21|Has expired: Uses obsolete glib12
 audio/scrobbler||2018-12-21|Has expired: Uses obsolete glib12
 audio/xmms-nsf||2018-12-21|Has expired: Uses obsolete glib12, use audio/festalon instead
