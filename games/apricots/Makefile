@@ -11,8 +11,9 @@ MASTER_SITES=	http://www.fishies.org.uk/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fly a little plane around and shoot things and drop bombs
 
-USES=		compiler dos2unix
+USES=		dos2unix
 USE_SDL=	sdl
+USE_CXXSTD=	c++98
 DOS2UNIX_GLOB=	*.cpp
 SUB_FILES=	${PORTNAME}
 
@@ -21,9 +22,6 @@ PORTDATA=	*
 PORTDOCS=	*
 CPPFLAGS+=	-DAP_PATH="\"${DATADIR}/\""
 LLD_UNSAFE=	yes
-
-CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
-CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 DESKTOP_ENTRIES="Apricots" \
 		"${COMMENT}" \
@@ -46,11 +44,13 @@ do-build:
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/apricots/${PORTNAME} ${STAGEDIR}${PREFIX}/libexec
-	${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for ext in wav shapes psf cfg
 	${INSTALL_DATA} ${WRKSRC}/apricots/*.${ext} ${STAGEDIR}${DATADIR}
 .endfor
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
