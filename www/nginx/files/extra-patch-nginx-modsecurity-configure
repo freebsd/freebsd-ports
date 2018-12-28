@@ -1,5 +1,5 @@
---- ../modsecurity-2.9.2/configure.orig	2018-07-17 14:12:34.223173000 +0200
-+++ ../modsecurity-2.9.2/configure	2018-07-17 14:16:23.284534000 +0200
+--- ../modsecurity-2.9.3/configure.orig	2018-07-17 14:12:34.223173000 +0200
++++ ../modsecurity-2.9.3/configure	2018-07-17 14:16:23.284534000 +0200
 @@ -15715,7 +15715,7 @@ LUA_CPPFLAGS=""
  LUA_LDADD=""
  LUA_LDFLAGS=""
