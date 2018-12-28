@@ -1,0 +1,33 @@
+--- configure.orig	2018-12-25 13:50:45 UTC
++++ configure
+@@ -669,7 +669,6 @@ fi
+ 
+ ## check for various headers
+ 
+-need_include inttypes.h
+ 
+ if [ "$use_devdsp" != no ]; then
+     remember_use devdsp
+@@ -729,11 +728,11 @@ fi
+ 
+ if [ "$use_nas" != no ]; then
+     remember_use nas
+-    check_include audio/audiolib.h "/usr/X11R6/include"
++    check_include audio/audiolib.h ""
+     retval1=$?
+     retval2=1
+     if [ $retval1 -eq 0 ]; then
+-        check_libs audio "X11 Xt m" "/usr/X11R6/lib /usr/X11/lib /usr/lib/X11" <<EOF
++        check_libs audio "X11 Xt m" " /usr/local/lib /usr/local/lib/X11" <<EOF
+ int main(int argc, char **argv) { return 0; }
+ EOF
+         retval2=$?
+@@ -954,7 +953,7 @@ append_nodupe CFLAGS -D_FORTIFY_SOURCE=2 -Wall -fsigne
+ if [ "$use_debug" = "yes" ]; then
+     append_nodupe CFLAGS -g3
+ else
+-    append_nodupe CFLAGS -Os -pipe -fomit-frame-pointer
++    append_nodupe CFLAGS   
+ fi
+ 
+ EXTRA_CFLAGS="$CFLAGS"

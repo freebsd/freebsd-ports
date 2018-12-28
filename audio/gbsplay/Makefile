@@ -2,92 +2,56 @@
 # $FreeBSD$
 
 PORTNAME=	gbsplay
-PORTVERSION=	0.0.93.20161217
-PORTREVISION=	6
+DISTVERSION=	0.0.93-130
+DISTVERSIONSUFFIX=	-g6225989
+PORTEPOCH=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Emulates the sound hardware of the Nintendo Game Boy(TM)
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		gmake compiler:c++11-lib
-USE_GITHUB=	yes
-GH_ACCOUNT=	mmitch
-GH_TAGNAME=	2c4486e
-HAS_CONFIGURE=	yes
+USES=		compiler:c++11-lib desktop-file-utils gmake localbase:ldflags \
+		shared-mime-info
 USE_CSTD=	gnu89
 
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
+USE_GITHUB=	yes
+GH_ACCOUNT=	mmitch
 
-CONFIGURE_ARGS+=	--without-xmmsplugin
+HAS_CONFIGURE=	yes
 
-MANPAGE1=	gbsplay.1 gbsinfo.1
-MANPAGE5=	gbsplayrc.5
-PORTDOCS=	COPYRIGHT HISTORY README
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --without-xmmsplugin \
+			--sysconfdir=${PREFIX}/etc
 
-OPTIONS_DEFINE=	DOCS NAS NLS
+MAKE_ENV+=	EXAMPLESDIR="${STAGEDIR}${EXAMPLESDIR}"
+
+OPTIONS_DEFINE=	BASH_COMPLETIONS DOCS EXAMPLES NAS NLS
+OPTIONS_DEFAULT=BASH_COMPLETIONS
 OPTIONS_SUB=	yes
+
+BASH_COMPLETIONS_DESC=	Install bash completions
 
 NAS_LIB_DEPENDS=	libaudio.so:audio/nas
 NAS_CONFIGURE_ENABLE=	nas
 NLS_CONFIGURE_OFF=	--disable-i18n
 NLS_USES=		gettext
-NLS_LDFLAGS=		-L${LOCALBASE}/lib -lintl
-
-.include <bsd.port.options.mk>
+NLS_LDFLAGS=		-lintl
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|^\(default.*\)test|\1|' \
-		-e 's#md5sum | cut -f1 -d..#md5 -q#' \
-		${WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} -e \
-		'/^need_include\ /d; \
-		 468s|char argc|int argc|; \
-		 s|/usr/local/include|${LOCALBASE}/include|; \
-		 s|/usr/local/lib|${LOCALBASE}/lib|; \
-		 s|/usr/X11R6/include||; \
-		 s|/usr/X11R6/lib||; \
-		 s|/usr/X11/lib|${LOCALBASE}/lib|; \
-		 s|/usr/lib/X11|${LOCALBASE}/lib/X11|; \
-		 s|-Os||; s|-pipe||; s|-fomit-frame-pointer||; \
-		 s|-march=$$ARCH||' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/\(etc/gbsplayrc\)|${PREFIX}/\1|' \
-		${WRKSRC}/gbsplay.c \
-		${WRKSRC}/gbsplay.in.1 \
-		${WRKSRC}/gbsplayrc.in.5
+	@${REINPLACE_CMD} -e "s|/etc/\(gbsplayrc\)|${PREFIX}/etc/\1|" \
+		${WRKSRC}/man/gbsplay.in.1 ${WRKSRC}/man/gbsplayrc.in.5
 
-do-install:
-.for f in ${PORTNAME} gbsinfo
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
-.endfor
-
-.for f in ${MANPAGE1} ${MANPAGE5}
-	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${MAN${f:E}PREFIX}/man/man${f:E}
-.endfor
-
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/nightmode.gbs \
-		${STAGEDIR}${EXAMPLESDIR}
-
+post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/gbsplayrc_sample \
 		${STAGEDIR}${PREFIX}/etc/gbsplayrc.sample
-.if !exists(${STAGEDIR}${PREFIX}/etc/gbsplayrc)
-	${INSTALL_DATA} ${WRKSRC}/examples/gbsplayrc_sample \
-		${STAGEDIR}${PREFIX}/etc/gbsplayrc
-.endif
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gbsplay \
+		${STAGEDIR}${PREFIX}/bin/gbsinfo
 
-.if ${PORT_OPTIONS:MNLS}
-.for l in de en
-	${INSTALL_DATA} ${WRKSRC}/po/${l}.mo \
-		${STAGEDIR}${PREFIX}/share/locale/${l}/LC_MESSAGES/gbsplay.mo
-.endfor
-.endif
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-.endfor
+post-install-BASH_COMPLETIONS-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
+	${INSTALL_DATA} ${WRKSRC}/contrib/gbsplay.bashcompletion \
+		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}
 
 .include <bsd.port.mk>
