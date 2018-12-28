@@ -1,7 +1,7 @@
---- gtk/gtkdatabox.c.orig	2011-07-16 04:24:33.000000000 +0900
-+++ gtk/gtkdatabox.c	2012-06-02 13:32:51.000000000 +0900
-@@ -26,6 +26,11 @@
- #include <gtk/gtkgc.h>
+--- gtk/gtkdatabox.c.orig	2018-11-02 17:08:28 UTC
++++ gtk/gtkdatabox.c
+@@ -23,6 +23,11 @@
+ #include <gtk/gtk.h>
  #include <math.h>
  
 +#include <sys/param.h>
@@ -11,4 +11,4 @@
 +
  
  static gint gtk_databox_button_press (GtkWidget * widget,
- 				      GdkEventButton * event);
+                                       GdkEventButton * event);
