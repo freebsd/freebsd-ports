@@ -1,4 +1,4 @@
---- Makefile.in.orig	2017-11-20 12:14:44 UTC
+--- Makefile.in.orig	2018-12-21 09:44:15 UTC
 +++ Makefile.in
 @@ -21,7 +21,7 @@ SBINDIR = $(DESTDIR)@sbindir@
  LIBDIR =  $(DESTDIR)@libdir@
@@ -9,8 +9,8 @@
  
  # /share/doc/ejabberd
  PACKAGE_TARNAME = @PACKAGE_TARNAME@
-@@ -59,10 +59,10 @@ JSDIR = $(PRIVDIR)/js
- SQLDIR = $(PRIVDIR)/sql
+@@ -62,10 +62,10 @@ SQLDIR = $(PRIVDIR)/sql
+ LUADIR = $(PRIVDIR)/lua
  
  # /var/lib/ejabberd/
 -SPOOLDIR = $(DESTDIR)@localstatedir@/lib/ejabberd
@@ -23,7 +23,7 @@
  
  # /var/lib/ejabberd/.erlang.cookie
  COOKIEFILE = $(SPOOLDIR)/.erlang.cookie
-@@ -123,7 +123,7 @@ JOIN_PATHS=$(if $(wordlist 2,1000,$(1)),
+@@ -132,7 +132,7 @@ JOIN_PATHS=$(if $(wordlist 2,1000,$(1)),$(firstword $(
  VERSIONED_DEP=$(if $(DEP_$(1)_VERSION),$(DEP_$(1)_VERSION),$(1))
  
  ELIXIR_TO_DEST=$(LIBDIR) $(call VERSIONED_DEP,$(word 2,$(1))) $(wordlist 5,1000,$(1))
@@ -32,7 +32,7 @@
  MAIN_TO_DEST=$(LIBDIR) $(call VERSIONED_DEP,ejabberd) $(1)
  TO_DEST_SINGLE=$(if $(subst XdepsX,,X$(word 1,$(1))X),$(call MAIN_TO_DEST,$(1)),$(if $(subst XlibX,,X$(word 3,$(1))X),$(call DEPS_TO_DEST,$(1)),$(call ELIXIR_TO_DEST,$(1))))
  TO_DEST=$(foreach path,$(1),$(call JOIN_PATHS,$(call TO_DEST_SINGLE,$(subst /, ,$(path)))))
-@@ -183,9 +183,7 @@ install: all copy-files
+@@ -202,9 +202,7 @@ install: all copy-files
  	#
  	# Configuration files
  	$(INSTALL) -d -m 750 $(G_USER) $(ETCDIR)
@@ -43,7 +43,7 @@
  	$(SED) -e "s*{{rootdir}}*@prefix@*g" \
  		-e "s*{{installuser}}*@INSTALLUSER@*g" \
  		-e "s*{{bindir}}*@bindir@*g" \
-@@ -194,16 +192,15 @@ install: all copy-files
+@@ -213,16 +211,15 @@ install: all copy-files
  		-e "s*{{localstatedir}}*@localstatedir@*g" \
  		-e "s*{{docdir}}*@docdir@*g" \
  		-e "s*{{erl}}*@ERL@*g" \
@@ -64,7 +64,7 @@
  	# Elixir binaries
  	[ -d $(BINDIR) ] || $(INSTALL) -d -m 755 $(BINDIR)
  	[ -f deps/elixir/bin/iex ] && $(INSTALL) -m 550 $(G_USER) deps/elixir/bin/iex $(BINDIR)/iex || true
-@@ -238,11 +235,13 @@ install: all copy-files
+@@ -257,11 +254,13 @@ install: all copy-files
  	chmod -R 750 $(LOGDIR)
  	#
  	# Documentation

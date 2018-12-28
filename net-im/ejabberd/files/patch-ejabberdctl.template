@@ -1,6 +1,6 @@
---- ejabberdctl.template.orig	2017-12-14 20:47:43 UTC
+--- ejabberdctl.template.orig	2018-12-27 10:21:03 UTC
 +++ ejabberdctl.template
-@@ -58,8 +58,8 @@ done
+@@ -56,8 +56,8 @@ done
  
  # define ejabberd variables if not already defined from the command line
  : "${ETC_DIR:="{{sysconfdir}}/ejabberd"}"
@@ -11,7 +11,7 @@
  : "${EJABBERD_CONFIG_PATH:="$ETC_DIR/ejabberd.yml"}"
  : "${EJABBERDCTL_CONFIG_PATH:="$ETC_DIR/ejabberdctl.cfg"}"
  [ -f "$EJABBERDCTL_CONFIG_PATH" ] && . "$EJABBERDCTL_CONFIG_PATH"
-@@ -79,7 +79,8 @@ if [ -n "$INET_DIST_INTERFACE" ] ; then
+@@ -77,7 +77,8 @@ if [ -n "$INET_DIST_INTERFACE" ] ; then
          ERLANG_OPTS="$ERLANG_OPTS -kernel inet_dist_use_interface $INET_DIST_INTERFACE2"
      fi
  fi

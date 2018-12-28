@@ -247,6 +247,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/%%PORTNAME%%_router.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/%%PORTNAME%%_sm.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/%%PORTNAME%%_sql_pt.hrl
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/%%PORTNAME%%_stacktrace.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/%%PORTNAME%%_web_admin.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/eldap.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/include/http_bind.hrl

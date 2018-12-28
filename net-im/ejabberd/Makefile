@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ejabberd
-PORTVERSION=	18.12
+PORTVERSION=	18.12.1
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -18,11 +18,12 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libpng.so:graphics/png \
 		libwebp.so:graphics/webp
 
+USES=		cpe gmake pkgconfig shebangfix ssl jpeg autoreconf:build
+
 USERS=		ejabberd
 GROUPS=		${USERS}
 
 GNU_CONFIGURE=	yes
-USES=		cpe gmake pkgconfig shebangfix ssl jpeg autoreconf:build
 USE_RC_SUBR=	${PORTNAME}
 NOPRECIOUSMAKEVARS=	yes
 CPE_VENDOR=	process-one
@@ -116,7 +117,7 @@ RIAKC_VER=	2.5.3
 SQLITE3_VER=	1.1.6
 STRINGPREP_VER=	1.0.14
 STUN_VER=	1.0.26
-XMPP_VER=	1.2.7
+XMPP_VER=	1.2.8
 
 OPTIONS_SUB=		yes
 RIAK_DESC=	Riak database support
@@ -154,6 +155,14 @@ SQLITE_USES=		sqlite
 ICONV_USES=		iconv:wchar_t
 ICONV_LDFLAGS=		${ICONV_LIB}
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=yes
+
+pre-everything::
+	@if pkg query %n-%v net-im/ejabberd; then \
+		${ECHO_MSG} needs to be uninstalled, before this port build could proceed. ; \
+		${ECHO_MSG} For details: https://github.com/processone/ejabberd/issues/2194 ; \
+		${ECHO_MSG} Sorry for the inconvenience. ; \
+		exit 1; \
+	fi
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^convert,${LOCALBASE}/bin/convert,' ${WRKSRC}/tools/captcha.sh
