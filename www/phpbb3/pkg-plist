@@ -992,6 +992,7 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/f_list_topics_permission_add.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/fix_user_styles.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/forum_topics_per_page_type.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/jquery_update.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/load_user_activity_limit.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/merge_duplicate_bbcodes.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/remove_imagick.php
@@ -1012,6 +1013,8 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/v323rc2.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/v324.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v32x/v324rc1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/v325.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v32x/v325rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/exception.php
 %%PHPBBDIR%%/phpbb/db/migration/helper.php
 %%PHPBBDIR%%/phpbb/db/migration/migration.php

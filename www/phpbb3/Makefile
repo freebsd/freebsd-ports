@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpbb
-DISTVERSION=	3.2.4
+DISTVERSION=	3.2.5
 CATEGORIES=	www
 MASTER_SITES=	https://www.phpbb.com/files/release/
 PKGNAMESUFFIX=	3
