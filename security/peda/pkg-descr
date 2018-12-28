@@ -1,0 +1,13 @@
+PEDA (Python Exploit Development Assistance for GDB) is a plugin for GDB. It
+extends GDB with a colorful text-based UI making it easier to work with the
+debugger.
+
+Note that PEDA requires that GDB is compiled with Python support.
+
+Its key features are:
+
+- Enhance the display of GDB: colorize and display disassembly codes,
+  registers, memory information during debugging.
+- Add commands to support debugging and exploit development.
+
+WWW: http://ropshell.com/peda/
