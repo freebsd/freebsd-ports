@@ -23,7 +23,7 @@
     SUBDIR += alsa-sndio
     SUBDIR += alsa-utils
     SUBDIR += alure
-    SUBDIR += amarok-kde4
+    SUBDIR += amarok
     SUBDIR += amb-plugins
     SUBDIR += ample
     SUBDIR += amsynth

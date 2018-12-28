@@ -4402,7 +4402,6 @@ arabic/kde3-i18n||2013-07-26|Has expired: Depends on Qt 3.x
 archivers/kio_p7zip||2013-07-26|Has expired: Depends on Qt 3.x
 astro/celestia-kde||2013-07-26|Has expired: Depends on Qt 3.x
 astro/orsa||2013-07-26|Has expired: Depends on Qt 3.x
-audio/amarok||2013-07-26|Has expired: Depends on Qt 3.x
 audio/amarok-fs||2013-07-26|Has expired: Depends on Qt 3.x
 audio/arts||2013-07-26|Has expired: Depends on Qt 3.x
 audio/cheesetracker||2013-07-26|Has expired: Depends on Qt 3.x
@@ -10930,3 +10929,4 @@ devel/rubygem-gettext_i18n_rails_js|devel/rubygem-gettext_i18n_rails_js-rails50|
 sysutils/kshutdown-kde4|sysutils/kshutdown|2018-12-26|Renamed as no longer kde4 based
 misc/tellico-kde4|misc/tellico|2018-12-24|Renamed as no longer kde4 based
 security/py-yubioath-desktop|security/yubioath-desktop|2018-12-27|New Yubikey Oath Desktop app, written in Qt
+audio/amarok-kde4|audio/amarok|2018-12-28|Renamed as no longer kde4 based
