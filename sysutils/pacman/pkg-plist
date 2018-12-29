@@ -19,7 +19,7 @@ include/alpm_list.h
 lib/libalpm.a
 lib/libalpm.so
 lib/libalpm.so.11
-lib/libalpm.so.11.0.1
+lib/libalpm.so.11.0.2
 libdata/pkgconfig/libalpm.pc
 man/man1/makepkg-template.1.gz
 man/man3/libalpm.3.gz
