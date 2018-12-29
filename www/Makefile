@@ -194,6 +194,7 @@
     SUBDIR += gallery2
     SUBDIR += gallery3
     SUBDIR += gatling
+    SUBDIR += gauche-makiki
     SUBDIR += gecko-mediaplayer
     SUBDIR += geckodriver
     SUBDIR += geeknote

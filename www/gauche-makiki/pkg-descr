@@ -1,0 +1,14 @@
+Gauche-makiki is a simple multithreaded HTTP server intended for applications
+that want to provide HTTP server capability easily.  The main functionalities
+are available by just one file, `makiki.scm', so you can either install it as
+an ordinary Gauche extension library, or you can just copy the file into your
+application.
+
+You'll get the idea by looking at the minimal server:
+
+    (use makiki)
+    (define (main args) (start-http-server :port 6789))
+    (define-http-handler "/"
+      (^[req app] (respond/ok req "<h1>It worked!</h1>")))
+
+WWW: https://github.com/shirok/Gauche-makiki
