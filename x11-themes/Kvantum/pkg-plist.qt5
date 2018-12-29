@@ -114,12 +114,17 @@ share/color-schemes/KvSimplicityTurquoise.colors
 share/color-schemes/Kvantum.colors
 share/color-schemes/KvantumAlt.colors
 share/icons/hicolor/scalable/apps/kvantum.svg
+share/kvantummanager/translations/kvantummanager_cy.qm
 share/kvantummanager/translations/kvantummanager_de.qm
 share/kvantummanager/translations/kvantummanager_eo.qm
+share/kvantummanager/translations/kvantummanager_es.qm
 share/kvantummanager/translations/kvantummanager_lt.qm
 share/kvantummanager/translations/kvantummanager_pl.qm
+share/kvantumpreview/translations/kvantumpreview_cy.qm
 share/kvantumpreview/translations/kvantumpreview_de.qm
 share/kvantumpreview/translations/kvantumpreview_eo.qm
+share/kvantumpreview/translations/kvantumpreview_es.qm
+share/kvantumpreview/translations/kvantumpreview_lt.qm
 share/themes/KvAdapta/openbox-3/close.xbm
 share/themes/KvAdapta/openbox-3/close_hover.xbm
 share/themes/KvAdapta/openbox-3/close_pressed.xbm
