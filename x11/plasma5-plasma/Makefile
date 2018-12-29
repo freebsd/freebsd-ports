@@ -16,7 +16,5 @@ USES=		kde:5 metaport qt:5
 #   * plasma-pa don't depend on plamsa-pa by default
 #   * breeze-kde4 don't pull in qt4 bits
 USE_KDE=	${_USE_PLASMA_ALL:Nplasma-pa:Nbreeze-kde4}
-# pull bsd.qt.mk for QT_PLUGINDIR in the kf5-dependencies
-USE_QT=		#
 
 .include <bsd.port.mk>
