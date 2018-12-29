@@ -5,4 +5,4 @@ The Zone Key Tool consists of two commands:
 o dnssec-zkt to create and list dnssec zone keys and
 o dnssec-signer to sign a zone and manage the lifetime of the zone signing keys
 
-WWW: http://www.hznet.de/dns/zkt/
+WWW: https://www.hznet.de/dns/zkt/
