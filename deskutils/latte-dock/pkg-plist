@@ -195,6 +195,7 @@ share/plasma/plasmoids/audoban.applet.separator/metadata.json
 share/plasma/plasmoids/org.kde.latte.containment/contents/code/AppletIdentifier.js
 share/plasma/plasmoids/org.kde.latte.containment/contents/code/HeuristicTools.js
 share/plasma/plasmoids/org.kde.latte.containment/contents/code/LayoutManager.js
+share/plasma/plasmoids/org.kde.latte.containment/contents/code/MathTools.js
 share/plasma/plasmoids/org.kde.latte.containment/contents/config/main.xml
 share/plasma/plasmoids/org.kde.latte.containment/contents/icons/blueprint.jpg
 share/plasma/plasmoids/org.kde.latte.containment/contents/icons/brownprint.jpg
