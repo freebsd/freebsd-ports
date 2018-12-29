@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Browser
-PORTVERSION=	2.0.15
+PORTVERSION=	2.0.16
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org
