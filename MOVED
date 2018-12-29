@@ -4492,7 +4492,6 @@ games/kbilliards||2013-07-26|Has expired: Depends on Qt 3.x
 games/kdegames3||2013-07-26|Has expired: Depends on Qt 3.x
 games/kfreerings||2013-07-26|Has expired: Depends on Qt 3.x
 games/kmastermind||2013-07-26|Has expired: Depends on Qt 3.x
-games/knights||2013-07-26|Has expired: Depends on Qt 3.x
 games/kpicframer||2013-07-26|Has expired: Depends on Qt 3.x
 games/kpictorial||2013-07-26|Has expired: Depends on Qt 3.x
 games/kpuzzle||2013-07-26|Has expired: Depends on Qt 3.x
@@ -10930,3 +10929,4 @@ sysutils/kshutdown-kde4|sysutils/kshutdown|2018-12-26|Renamed as no longer kde4 
 misc/tellico-kde4|misc/tellico|2018-12-24|Renamed as no longer kde4 based
 security/py-yubioath-desktop|security/yubioath-desktop|2018-12-27|New Yubikey Oath Desktop app, written in Qt
 audio/amarok-kde4|audio/amarok|2018-12-28|Renamed as no longer kde4 based
+games/knights-kde|games/knights|2018-12-31|Switch to verson from KDE Applications
