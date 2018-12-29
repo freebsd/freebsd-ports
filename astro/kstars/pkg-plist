@@ -1183,6 +1183,14 @@ share/knotifications5/kstars.notifyrc
 %%DATADIR%%/kstarslite/qml/images/splash_bg@2x.jpeg
 %%DATADIR%%/kstarslite/qml/images/splash_bg@3x.jpeg
 %%DATADIR%%/kstarslite/qml/images/splash_bg@4x.jpeg
+%%DATADIR%%/kstarslite/qml/images/telescope-down.png
+%%DATADIR%%/kstarslite/qml/images/telescope-down@2x.png
+%%DATADIR%%/kstarslite/qml/images/telescope-left.png
+%%DATADIR%%/kstarslite/qml/images/telescope-left@2x.png
+%%DATADIR%%/kstarslite/qml/images/telescope-right.png
+%%DATADIR%%/kstarslite/qml/images/telescope-right@2x.png
+%%DATADIR%%/kstarslite/qml/images/telescope-up.png
+%%DATADIR%%/kstarslite/qml/images/telescope-up@2x.png
 %%DATADIR%%/kstarslite/qml/images/tutorial-arrow-horizontal.png
 %%DATADIR%%/kstarslite/qml/images/tutorial-arrow-horizontal@2x.png
 %%DATADIR%%/kstarslite/qml/images/tutorial-arrow-horizontal@3x.png
@@ -1554,10 +1562,10 @@ share/knotifications5/kstars.notifyrc
 %%DATADIR%%/wzekos.png
 %%DATADIR%%/wzgeo.png
 %%DATADIR%%/wzscope.png
+%%DATADIR%%/wzserialportassistant.png
 %%DATADIR%%/wzstars.png
 share/locale/af/LC_MESSAGES/kstars.mo
 share/locale/ar/LC_MESSAGES/kstars.mo
-share/locale/ast/LC_MESSAGES/kstars.mo
 share/locale/be/LC_MESSAGES/kstars.mo
 share/locale/bg/LC_MESSAGES/kstars.mo
 share/locale/bn/LC_MESSAGES/kstars.mo
