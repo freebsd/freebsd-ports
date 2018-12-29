@@ -1,0 +1,61 @@
+From b7d677ac9a99ee137c2b8bb75503ce1156a7b650 Mon Sep 17 00:00:00 2001
+From: "Tobias C. Berner" <tcberner@FreeBSD.org>
+Date: Wed, 26 Dec 2018 11:37:55 +0100
+Subject: [PATCH] FreeBSD: lld does not support -Wl,-z,nodump
+
+---
+ CMakeLists.txt                  |  6 +++++-
+ cmake/modules/CheckNodump.cmake | 23 +++++++++++++++++++++++
+ 2 files changed, 28 insertions(+), 1 deletion(-)
+ create mode 100644 cmake/modules/CheckNodump.cmake
+
+diff --git CMakeLists.txt CMakeLists.txt
+index c8e9b3715..5e4e4ceae 100644
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -295,8 +295,12 @@ IF (UNIX OR APPLE OR ANDROID)
+     SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${SEC_COMP_FLAGS}")
+     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SEC_COMP_FLAGS}")
+     SET(SEC_LINK_FLAGS "")
++
++    include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules/CheckNodump.cmake")
++    check_nodump(NODUMP_FLAGS)
++
+     IF (NOT APPLE)
+-        SET(SEC_LINK_FLAGS "${SEC_LINK_FLAGS} -Wl,-z,nodump -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now")
++       SET(SEC_LINK_FLAGS "${SEC_LINK_FLAGS} ${NODUMP_FLAGS} -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now")
+     ENDIF ()
+     IF (NOT ANDROID AND NOT APPLE)
+         SET(SEC_LINK_FLAGS "${SEC_LINK_FLAGS} -pie")
+diff --git cmake/modules/CheckNodump.cmake cmake/modules/CheckNodump.cmake
+new file mode 100644
+index 000000000..a04bc074b
+--- /dev/null
++++ cmake/modules/CheckNodump.cmake
+@@ -0,0 +1,23 @@
++# Check if the linker supports -Wl,z,nodump
++
++function(check_nodump result)
++  set(NODUMP_FLAGS "-Wl,-z,nodump")
++  cmake_policy(SET CMP0056 NEW)
++  set(CMAKE_EXE_LINKER_FLAGS "${NODUMP_FLAGS}")
++  set(TEST_PROGRAM "int main() { return 0 ; }")
++  set(TEST_FILE "${CMAKE_CURRENT_BINARY_DIR}/test_nodump.cc")
++  file(WRITE "${TEST_FILE}" "${TEST_PROGRAM}")
++
++  message(STATUS "Checking whether the linker supports ${NODUMP_FLAGS} ...")
++  try_compile(SUPPORT_NODUMP
++              "${CMAKE_CURRENT_BINARY_DIR}/try_has_nodump"
++              "${TEST_FILE}"
++  )
++  message(STATUS "  supports ${NODUMP_FLAGS}: ${SUPPORT_NODUMP}")
++
++  if(SUPPORT_NODUMP)
++    set(${result} "${NODUMP_FLAGS}")
++  else()
++    set(${result} "")
++  endif()
++endfunction()
+-- 
+2.20.1
+
