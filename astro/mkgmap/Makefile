@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkgmap
-PORTVERSION=	r4259
+PORTVERSION=	r4260
 CATEGORIES=	astro converters java
 MASTER_SITES=	http://www.mkgmap.org.uk/download/ \
 		http://mirror.amdmi3.ru/distfiles/
