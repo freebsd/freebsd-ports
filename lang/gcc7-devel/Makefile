@@ -74,6 +74,7 @@ CONFIGURE_ARGS+=	--with-cpu=8540 --enable-e500_double --without-fp
 
 LANGUAGES:=	c,c++,objc,fortran
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
+TARGLIB32=	${PREFIX}/lib32	# The version information is added later
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
@@ -143,7 +144,13 @@ post-stage:
 	${RM} -r ${STAGEDIR}${TARGLIB}/gcc/*/${GCC_VERSION}/include-fixed/
 	# Add target libraries and include files to packaging list.
 	${RM} ${WRKDIR}/PLIST.lib
-.for d in ${TARGLIB:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///}
+
+.if ${ARCH} == powerpc64 && ${PORT_OPTIONS:MMULTILIB}
+	${MKDIR} ${STAGEDIR}${TARGLIB32}/gcc${SUFFIX}
+	${MV} ${STAGEDIR}${PREFIX}/lib/lib32/* ${STAGEDIR}${TARGLIB32}/gcc${SUFFIX}
+.endif
+
+.for d in ${TARGLIB:S/^${PREFIX}\///} ${TARGLIB32:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///}
 	cd ${STAGEDIR}${PREFIX} ; if [ -d $d ]; then \
 	    ${FIND} $d -type f -o -type l >>${WRKDIR}/PLIST.lib ;\
 	fi
