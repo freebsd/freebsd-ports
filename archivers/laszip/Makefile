@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	laszip
-PORTVERSION=	3.2.2
-PORTREVISION=	1
+PORTVERSION=	3.2.9
 CATEGORIES=	archivers
 
 MAINTAINER=	rhurlin@gwdg.de
