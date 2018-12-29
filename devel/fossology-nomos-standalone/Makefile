@@ -3,6 +3,7 @@
 
 PORTNAME=	fossology
 PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-nomos-standalone
 
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	gawk:lang/gawk
 
 USE_GITHUB=	yes
 
-USES=		gmake gettext pkgconfig
+USES=		gnome gmake gettext pkgconfig
 USE_GNOME=	glib20
 
 BUILD_WRKSRC=	${WRKSRC}/src/nomos/agent
