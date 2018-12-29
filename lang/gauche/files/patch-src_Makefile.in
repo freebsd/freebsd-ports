@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2018-06-30 03:25:22 UTC
+--- src/Makefile.in.orig	2018-12-20 17:50:35 UTC
 +++ src/Makefile.in
-@@ -259,7 +259,7 @@ test-extra$(EXEEXT) : $(LIBGAUCHE).$(SOEXT) $(test_ext
+@@ -267,7 +267,7 @@ test-extra$(EXEEXT) : $(LIBGAUCHE).$(SOEXT) $(test_ext
  # need to relink gosh-noconsole.exe (windows no-console version).
  relink :
  	$(RELINK) $(libgauche_LDFLAGS) $(LIBGAUCHE).$(SOEXT) $(libgauche_OBJECTS) $(libgc_pic_LIBRARY) $(GC_ATOMIC_OPS_LIBS) $(LIBS)
@@ -9,16 +9,7 @@
  	$(RELINK) -o gauche-config$(EXEEXT) gauche-config.$(OBJEXT) $(LIBS)
  
  $(OBJECTS) : $(HEADERS)
-@@ -417,7 +417,7 @@ $(LIBGAUCHE_STATIC).a : all $(STATICINIT_OBJS)
-             `if [ X$(libgc_pic_LIBRARY) != X ]; then echo $(libgc_pic_OBJECTS); fi` \
-             `if [ X$(libatomic_ops_pic_LIBRARY) != X ]; then echo $(libatomic_ops_pic_OBJECTS); fi` \
-             $(STATICINIT_OBJS) \
--            `"$(srcdir)/list-ext-objects.sh" "$(top_builddir)"`
-+            `MAKE=$(MAKE) "$(srcdir)/list-ext-objects.sh" "$(top_builddir)"`
- 
- $(STATICINIT_SRCS) : all gen-staticinit.scm
- 	$(STATIC_GOSH) $(srcdir)/gen-staticinit.scm $(top_srcdir) $(top_builddir)
-@@ -537,8 +537,10 @@ install-relink : install-aux
+@@ -542,8 +542,10 @@ install-relink : install-aux
  install-core : install-relink
  	$(INSTALL)        $(INSTALL_LIBS) "$(DESTDIR)$(LIB_INSTALL_DIR)"
  	$(INSTALL)        $(INSTALL_LIBS) "$(DESTDIR)$(ARCH_INSTALL_DIR)"
@@ -28,6 +19,6 @@
 +	$(INSTALL) -m 555 gosh-relinked$(EXEEXT) "$(DESTDIR)$(BIN_INSTALL_DIR)/gosh$(EXEEXT)"
 +	$(INSTALL) -m 555 $(filter-out gosh$(EXEEXT),$(INSTALL_BINS)) "$(DESTDIR)$(ARCH_INSTALL_DIR)"
 +	$(INSTALL) -m 555 gosh-relinked$(EXEEXT) "$(DESTDIR)$(ARCH_INSTALL_DIR)/gosh$(EXEEXT)"
- 	@case `$(GAUCHE_CONFIG) --arch` in *-cygwin*|*-mingw*) \
+ 	@case $(host) in *-cygwin*|*-mingw*) \
  	  $(INSTALL) $(INSTALL_LIBS) "$(DESTDIR)$(BIN_INSTALL_DIR)";;\
  	esac
