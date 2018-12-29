@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gauche
-PORTVERSION=	0.9.6
-PORTREVISION=	4
+PORTVERSION=	0.9.7
 CATEGORIES=	lang scheme
 MASTER_SITES=	SF/${PORTNAME}/Gauche
 DISTNAME=	Gauche-${PORTVERSION}
@@ -32,6 +31,7 @@ PLIST_SUB=	VERSION="${PORTVERSION}" \
 
 # avoids a problem with with ccache's pre-processor optimization
 MAKE_ENV+=	CCACHE_CPP2=1
+TEST_ENV=	# must be empty, otherwise cf-check-lib test fails
 
 INFO=		gauche-refe gauche-refj
 
@@ -73,15 +73,19 @@ post-patch:
 # required for sparc64, no-op elsewhere
 	@${REINPLACE_CMD} -e \
 		'/^VPATH = /s,$$,/src,' ${WRKSRC}/gc/Makefile.in
+# unbreak "make test" by using the same workaround as for OSX (darwin),
+# apparently because we both use clang (XXX: what about gcc?)
+	@${REINPLACE_CMD} -e \
+		's,darwin,&|${OPSYS:tl},' ${WRKSRC}/test/scripts.scm
 
 post-install:
-	@${TOUCH} ${STAGEDIR}${PREFIX}/lib/gauche-0.9/site/${CONFIGURE_TARGET}/.keepme
+	@${TOUCH} ${STAGEDIR}${PREFIX}/lib/gauche-0.97/site/${CONFIGURE_TARGET}/.keepme
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${PORTVERSION}/lib/.packages
 	@${TOUCH} ${STAGEDIR}${DATADIR}/${PORTVERSION}/lib/.packages/.keepme
 	@${MKDIR} ${STAGEDIR}${DATADIR}/site/lib/.packages
 	@${TOUCH} ${STAGEDIR}${DATADIR}/site/lib/.packages/.keepme
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/gauche-0.9/site/lib/.packages
-	@${TOUCH} ${STAGEDIR}${PREFIX}/share/gauche-0.9/site/lib/.packages/.keepme
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/gauche-0.97/site/lib/.packages
+	@${TOUCH} ${STAGEDIR}${PREFIX}/share/gauche-0.97/site/lib/.packages/.keepme
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${TOUCH} ${STAGEDIR}${DOCSDIR}/.keepme
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
@@ -91,11 +95,11 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
 	@${CHMOD} u-w ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgauche-0.9.so.[0-9].*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgauche-0.97.so.[0-9].*
 .for i in gauche-config gosh *.so
-	@${CHMOD} u+w ${STAGEDIR}${PREFIX}/lib/gauche-0.9/${PORTVERSION}/${CONFIGURE_TARGET}/${i}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gauche-0.9/${PORTVERSION}/${CONFIGURE_TARGET}/${i}
-	@${CHMOD} u-w ${STAGEDIR}${PREFIX}/lib/gauche-0.9/${PORTVERSION}/${CONFIGURE_TARGET}/${i}
+	@${CHMOD} u+w ${STAGEDIR}${PREFIX}/lib/gauche-0.97/${PORTVERSION}/${CONFIGURE_TARGET}/${i}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gauche-0.97/${PORTVERSION}/${CONFIGURE_TARGET}/${i}
+	@${CHMOD} u-w ${STAGEDIR}${PREFIX}/lib/gauche-0.97/${PORTVERSION}/${CONFIGURE_TARGET}/${i}
 .endfor
 
 .include <bsd.port.mk>
