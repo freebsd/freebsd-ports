@@ -11,11 +11,7 @@ lib/libskgbasegui.so.%%SHLIB_VER%%
 lib/libskgbasemodeler.so.2
 lib/libskgbasemodeler.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/designer/libskgbankguidesigner.so
-%%QT_PLUGINDIR%%/designer/libskgbankguidesigner.so.2
-%%QT_PLUGINDIR%%/designer/libskgbankguidesigner.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/designer/libskgbaseguidesigner.so
-%%QT_PLUGINDIR%%/designer/libskgbaseguidesigner.so.2
-%%QT_PLUGINDIR%%/designer/libskgbaseguidesigner.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/grantlee/%%GRANTLEE_VERSION_SHORT%%/grantlee_skgfilters%%GRANTLEE_DEBUG_SUFFIX%%.so
 %%QT_PLUGINDIR%%/skg_advice.so
 %%QT_PLUGINDIR%%/skg_bookmark.so
