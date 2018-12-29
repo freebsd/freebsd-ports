@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pacman
-PORTVERSION=	5.1.1
+PORTVERSION=	5.1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://sources.archlinux.org/other/${PORTNAME}/ \
 		https://mirror.amdmi3.ru/distfiles/
