@@ -5,7 +5,7 @@ PORTNAME=	pootle
 DISTVERSION=	2.8.2
 CATEGORIES=	textproc
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User-friendly web portal for simple translation process
 
 LICENSE=	GPLv3
