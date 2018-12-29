@@ -12,7 +12,7 @@ COMMENT=	Xdebug extension for PHP
 LICENSE=	PHP30
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_WITH_PHP=	56
+IGNORE_WITH_PHP=	56 71
 
 USES=		php:pecl,zend tar:tgz
 
