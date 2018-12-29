@@ -2,6 +2,7 @@
 
 PORTNAME=	ark
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	archivers kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -22,6 +23,7 @@ USE_QT=		concurrent core dbus gui network widgets xml \
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	7ZIP RAR ZIP DOCS
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 OPTIONS_SUB=		YES
 
 7ZIP_DESC=	Support for 7-Zip archives
