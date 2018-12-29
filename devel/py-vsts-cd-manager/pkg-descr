@@ -1,0 +1,7 @@
+Visual Studio Team Services Continuous Delivery Manager
+
+This project provides the class ContinuousDeliveryManager and supporting
+classes. This CD manager class allows the caller to manage Azure Continuous
+Delivery pipelines that are maintained within a VSTS account.
+
+WWW: https://pypi.org/project/vsts-cd-manager/
