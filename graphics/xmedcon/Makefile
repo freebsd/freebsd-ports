@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmedcon
-PORTVERSION=	0.15.0
+PORTVERSION=	0.16.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/XMedCon-Source/${PORTVERSION}
 
@@ -12,21 +12,17 @@ COMMENT=	Medical image conversion utility and library
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-USES=		libtool pkgconfig tar:bzip2
-USE_GNOME=	cairo gdkpixbuf2
-
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
+
+USES=		gnome libtool localbase pkgconfig tar:bzip2
+USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/xmedcon \
 		--enable-llcheck
-USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-LIBS+=		`pkg-config --libs gtk+-x11-2.0`
 
 OPTIONS_DEFINE=	X11 GLIB ACR_NEMA ANALYZE CONCORDE DICOM DICOM_LJPEG ECAT GIF \
 		INTERFILE INW PNG
