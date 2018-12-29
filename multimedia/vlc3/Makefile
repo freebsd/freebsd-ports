@@ -3,7 +3,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	3.0.4
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -375,5 +375,7 @@ post-install:
 	@(cd ${STAGEDIR}${PREFIX} && ${FIND} -s lib/vlc -not -name '*.la' \
 		-type f -o -type l >> ${TMPPLIST})
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/vlc/plugins/*/*.so
+	# plugin cache becomes stale after strip. Regenerate it:
+	${WRKSRC}/bin/vlc-cache-gen ${STAGEDIR}${PREFIX}/lib/vlc/plugins
 
 .include <bsd.port.mk>
