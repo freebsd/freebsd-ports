@@ -20,7 +20,17 @@
  				if (LogLevel > 9)
  					sm_syslog(LOG_WARNING, e->e_id,
  						  "AUTH failure (%s): %s (%d) %s, relay=%.100s",
-@@ -3523,7 +3527,10 @@ doquit:
+@@ -1867,6 +1871,9 @@ smtp(nullserver, d_flags, e)
+ 			DELAY_CONN("AUTH");
+ 			if (!sasl_ok || n_mechs <= 0)
+ 			{
++				int fd;
++				fd = sm_io_getinfo(InChannel, SM_IO_WHAT_FD, NULL);
++				BLACKLIST_NOTIFY(BLACKLIST_AUTH_FAIL, fd, "AUTH LOGIN FAIL");
+ 				message("503 5.3.3 AUTH not available");
+ 				break;
+ 			}
+@@ -3523,7 +3530,10 @@ doquit:
  #if MAXBADCOMMANDS > 0
  			if (++n_badcmds > MAXBADCOMMANDS)
  			{
