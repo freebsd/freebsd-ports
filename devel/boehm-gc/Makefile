@@ -63,6 +63,7 @@ CONFIGURE_ARGS+=	--disable-threads --enable-redirect-malloc
 CONFIGURE_ARGS+=	--enable-threads=posix --disable-redirect-malloc
 OPTIONS_DEFINE+=	PARALLEL_MARK
 PARALLEL_MARK_DESC=	Parallel-thread marking (faster for SMP)
+USES+=		compiler:c11
 . endif
 .else
 CONFIGURE_ARGS+=	--disable-threads --disable-redirect-malloc
