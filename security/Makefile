@@ -1361,6 +1361,7 @@
     SUBDIR += ykclient
     SUBDIR += ykpers
     SUBDIR += yubico-piv-tool
+    SUBDIR += yubikey-manager-qt
     SUBDIR += yubikey-personalization-gui
     SUBDIR += yubikey-piv-manager
     SUBDIR += yubioath-desktop
