@@ -219,6 +219,7 @@
     SUBDIR += preferences
     SUBDIR += projectlibre
     SUBDIR += puush
+    SUBDIR += py-autokey
     SUBDIR += py-bugwarrior
     SUBDIR += py-khal
     SUBDIR += py-khard
