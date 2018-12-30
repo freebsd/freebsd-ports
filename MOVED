@@ -4628,7 +4628,6 @@ multimedia/grpplaylist||2013-07-26|Has expired: Depends on Qt 3.x
 multimedia/k9copy||2013-07-26|Has expired: Depends on Qt 3.x
 multimedia/kdemultimedia3||2013-07-26|Has expired: Depends on Qt 3.x
 multimedia/kmenc15||2013-07-26|Has expired: Depends on Qt 3.x
-multimedia/kmplayer||2013-07-26|Has expired: Depends on Qt 3.x
 multimedia/konverter||2013-07-26|Has expired: Depends on Qt 3.x
 multimedia/kplayer||2013-07-26|Has expired: Depends on Qt 3.x
 multimedia/ksubeditor||2013-07-26|Has expired: Depends on Qt 3.x
@@ -10930,3 +10929,4 @@ misc/tellico-kde4|misc/tellico|2018-12-26|Renamed as no longer kde4 based
 security/py-yubioath-desktop|security/yubioath-desktop|2018-12-27|New Yubikey Oath Desktop app, written in Qt
 audio/amarok-kde4|audio/amarok|2018-12-28|Renamed as no longer kde4 based
 games/knights-kde|games/knights|2018-12-30|Switch to version from KDE Applications
+multimedia/kmplayer-kde4|multimedia/kmplayer|2018-12-30|Moved to KF5 based version
