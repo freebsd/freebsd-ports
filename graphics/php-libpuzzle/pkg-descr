@@ -1,7 +1,0 @@
-This is the PHP extension of the Puzzle library, which is designed to
-quickly find visually similar images (GIF, PNG, JPG), even if they have been
-resized, recompressed, recolored or slightly modified.
-The library is free, lightweight yet very fast, configurable, easy to use
-and it has been designed with security in mind.
-
-WWW: http://libpuzzle.pureftpd.org/project/libpuzzle/php

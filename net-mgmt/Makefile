@@ -29,7 +29,6 @@
     SUBDIR += bwm-ng
     SUBDIR += cacti
     SUBDIR += cacti-spine
-    SUBDIR += cacti88
     SUBDIR += cacti88-spine
     SUBDIR += carbon-relay-ng
     SUBDIR += carbonzipper
@@ -83,7 +82,6 @@
     SUBDIR += gsnmp
     SUBDIR += guifi-snpservices
     SUBDIR += hastmon
-    SUBDIR += hawk
     SUBDIR += icinga
     SUBDIR += icinga-classicweb
     SUBDIR += icinga-core
@@ -109,7 +107,6 @@
     SUBDIR += ipaudit
     SUBDIR += ipcad
     SUBDIR += ipcalc
-    SUBDIR += ipplan
     SUBDIR += iprange
     SUBDIR += ipv6calc
     SUBDIR += ipv6gen
@@ -175,7 +172,6 @@
     SUBDIR += nbtscan
     SUBDIR += ndoutils
     SUBDIR += ndpmon
-    SUBDIR += nedi
     SUBDIR += nefu
     SUBDIR += net-snmp
     SUBDIR += netbox
@@ -291,7 +287,6 @@
     SUBDIR += php71-snmp
     SUBDIR += php72-snmp
     SUBDIR += php73-snmp
-    SUBDIR += phpip
     SUBDIR += phpipam
     SUBDIR += phpweathermap
     SUBDIR += pixilate

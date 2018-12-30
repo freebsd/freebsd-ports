@@ -1,5 +1,0 @@
-pecl-stomp allows php applications to communicate with any
-Stomp compliant Message Brokers through easy object oriented
-and procedural interfaces.
-
-WWW: https://pecl.php.net/package/stomp

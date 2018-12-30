@@ -642,7 +642,6 @@
     SUBDIR += minilens
     SUBDIR += mirrormagic
     SUBDIR += miscom
-    SUBDIR += mkgichessclub
     SUBDIR += mkhexgrid
     SUBDIR += moagg
     SUBDIR += monster-masher

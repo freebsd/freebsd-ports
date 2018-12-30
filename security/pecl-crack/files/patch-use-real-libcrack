@@ -1,9 +1,0 @@
---- config.m4	2005-09-21 05:00:06.000000000 -0400
-+++ config.m4	2015-04-09 21:44:51.000000000 -0400
-@@ -9,6 +9,4 @@
- 
-   if test "$PHP_CRACK" != "yes"; then
--    AC_MSG_ERROR(Only the bundled library is supported right now)
--    
-     for i in $PHP_CRACK/lib $PHP_CRACK/cracklib /usr/local/lib /usr/lib; do
-       test -f $i/libcrack.$SHLIB_SUFFIX_NAME -o -f $i/libcrack.a && CRACK_LIBDIR=$i && break

@@ -1,9 +1,0 @@
-include/php/ext/gdal/php_gdal.h
-include/php/ext/gdal/php_gdalconst.h
-include/php/ext/gdal/php_gnm.h
-include/php/ext/gdal/php_ogr.h
-include/php/ext/gdal/php_osr.h
-lib/php/%%PHP_EXT_DIR%%/php_gdal.so
-lib/php/%%PHP_EXT_DIR%%/php_gdalconst.so
-lib/php/%%PHP_EXT_DIR%%/php_ogr.so
-lib/php/%%PHP_EXT_DIR%%/php_osr.so

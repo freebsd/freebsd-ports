@@ -1,5 +1,0 @@
-A facility to manage possibly persistent resources with a comprehensible API.
-Provides simliar functionality like the zend_list API, but with more flexiblity
-and freedom.
-
-WWW: https://pecl.php.net/package/propro

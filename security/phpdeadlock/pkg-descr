@@ -1,5 +1,0 @@
-Deadlock is an open source user authentication/password protection
-system written in PHP/MySQL and licensed under the GNU GPL. It uses
-.htpasswd and .htaccess files to protect any web directory.
-
-WWW: http://www.phpdeadlock.org/

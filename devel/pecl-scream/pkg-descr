@@ -1,6 +1,0 @@
-The scream extension gives the possibility to disable the silencing error
-control operator (aka The At Sign: '@') so all errors are being reported.
-
-This feature is controlled by an ini setting.
-
-WWW: https://pecl.php.net/package/scream

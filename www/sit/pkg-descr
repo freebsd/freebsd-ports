@@ -1,9 +1,0 @@
-Support Incident Tracker (or SiT!) is a Free Software/Open Source (GPL)
-web based application which uses PHP and MySQL for tracking technical support
-calls/emails (also commonly known as a 'Help Desk' or 'Support Ticket System').
-Manage contacts, sites, technical support contracts and support incidents in
-one place. Send emails directly from SiT!, attach files and record every
-communication in the incident log. SiT is aware of Service Level Agreements and
-incidents are flagged if they stray outside of them.
-
-WWW: http://sitracker.org

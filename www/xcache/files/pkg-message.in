@@ -1,8 +1,0 @@
-*****************************************************************************
-
-You have installed the xcache package.
-
-To enable it copy the %%EXAMPLESDIR%%/xcache.ini sample
-config file into %%PREFIX%%/etc/php/ and modify it to suit your needs.
-
-*****************************************************************************

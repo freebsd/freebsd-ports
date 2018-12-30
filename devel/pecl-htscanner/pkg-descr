@@ -1,6 +1,0 @@
-Allow one to use htaccess-like file to configure PHP per directory,
-just like apache's htaccess. It is especially useful with fastcgi.
-
-This package was originally developed by Bart Vanbrabant.
-
-WWW: https://pecl.php.net/package/htscanner

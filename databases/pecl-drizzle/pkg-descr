@@ -1,4 +1,0 @@
-This PHP extension provides a wrapper for libdrizzle, the
-client and protocol library for the Drizzle database.
-
-WWW: https://pecl.php.net/package/drizzle

@@ -1,8 +1,0 @@
-******************************************************************************
-****    See %%PREFIX%%/share/doc/hawk/create_hawk* for instructions on    ****
-****    creating the database and user that the PHP code expects.         ****
-****                                                                      ****
-****    Copy daemon.conf.sample and php.conf.sample to their non-sample   ****
-****    names in %%ETCDIR%% and configure local networks, etc.            ****
-******************************************************************************
-

@@ -1,9 +1,0 @@
-ncurses (new curses) is a free software emulation of curses in
-System V Rel 4.0 (and above). It uses terminfo format, supports
-pads, colors, multiple highlights, form characters and function
-key mapping. Because of the interactive nature of this library,
-it will be of little use for writing Web applications, but may
-be useful when writing scripts meant using PHP from the command
-line.
-
-WWW: http://www.gnu.org/software/ncurses/ncurses.html

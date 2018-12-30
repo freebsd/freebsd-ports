@@ -1,8 +1,0 @@
-libstatgrab is a library that provides a common interface for
-retrieving a variety of system statistics on a number of *NIX like
-systems.
-
-This extension allows you to call the functions made available by
-libstatgrab library.
-
-WWW: https://pecl.php.net/package/statgrab

@@ -71,7 +71,6 @@
     SUBDIR += py-skog
     SUBDIR += symports
     SUBDIR += synth
-    SUBDIR += tinderbox
     SUBDIR += wanted-ports
 
 .include <bsd.port.subdir.mk>

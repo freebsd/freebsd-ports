@@ -1,9 +1,0 @@
-Trace is a low-overhead tracing tool for PHP.
-
-It can trace all PHP execution, function calls, request information during
-run-time. And provides features like Filter, Statistics, Current Status and
-so on.
-It is very useful to locate blocking, heavy-load problems and debug in all
-environments, especially in production environments.
-
-WWW: https://pecl.php.net/package/trace

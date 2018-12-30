@@ -33,8 +33,6 @@
     SUBDIR += aria2
     SUBDIR += aria2fe
     SUBDIR += asql
-    SUBDIR += asterisk-stat
-    SUBDIR += atutor
     SUBDIR += august
     SUBDIR += awffull
     SUBDIR += aws
@@ -85,12 +83,10 @@
     SUBDIR += ckeditor
     SUBDIR += cl-lml
     SUBDIR += cl-lml-sbcl
-    SUBDIR += claroline
     SUBDIR += clearsilver
     SUBDIR += clearsilver-python
     SUBDIR += cliqz
     SUBDIR += closure-compiler
-    SUBDIR += cmsmadesimple
     SUBDIR += cntlm
     SUBDIR += codeigniter
     SUBDIR += coppermine
@@ -120,7 +116,6 @@
     SUBDIR += dojo-shrinksafe
     SUBDIR += dokuwiki
     SUBDIR += domoticz
-    SUBDIR += dotproject
     SUBDIR += drood
     SUBDIR += drraw
     SUBDIR += drupal7
@@ -147,7 +142,6 @@
     SUBDIR += elixir-webassembly
     SUBDIR += emacs-w3m
     SUBDIR += encode-explorer
-    SUBDIR += entrans
     SUBDIR += ephemera
     SUBDIR += epiphany
     SUBDIR += erlang-cowboy
@@ -176,7 +170,6 @@
     SUBDIR += flickcurl
     SUBDIR += flood
     SUBDIR += flot
-    SUBDIR += fluxbb
     SUBDIR += fnord
     SUBDIR += formication
     SUBDIR += foswiki
@@ -192,7 +185,6 @@
     SUBDIR += g-gcl
     SUBDIR += gaeutilities
     SUBDIR += gallery2
-    SUBDIR += gallery3
     SUBDIR += gatling
     SUBDIR += gauche-makiki
     SUBDIR += gecko-mediaplayer
@@ -345,7 +337,6 @@
     SUBDIR += kf5-kjsembed
     SUBDIR += kohana
     SUBDIR += kpartsplugin
-    SUBDIR += kplaylist
     SUBDIR += kurly
     SUBDIR += kwebkitpart
     SUBDIR += larbin
@@ -366,7 +357,6 @@
     SUBDIR += lightsquid
     SUBDIR += lighttpd
     SUBDIR += lighttpd-mod_h264_streaming
-    SUBDIR += limesurvey
     SUBDIR += linkcheck
     SUBDIR += linkchecker
     SUBDIR += linklint
@@ -387,8 +377,6 @@
     SUBDIR += lynx-current
     SUBDIR += madsonic
     SUBDIR += madsonic-standalone
-    SUBDIR += magento
-    SUBDIR += mahara
     SUBDIR += man2web
     SUBDIR += mathjax
     SUBDIR += mathopd
@@ -503,13 +491,11 @@
     SUBDIR += multiwatch
     SUBDIR += mybb
     SUBDIR += myfaces
-    SUBDIR += mysar
     SUBDIR += mysqlphp2postgres
     SUBDIR += mythplugin-mythweb
     SUBDIR += nanoblogger
     SUBDIR += nanoblogger-extra
     SUBDIR += neon
-    SUBDIR += netoffice
     SUBDIR += netrik
     SUBDIR += netstiff
     SUBDIR += netsurf
@@ -563,7 +549,6 @@
     SUBDIR += opera
     SUBDIR += opera-linuxplugins
     SUBDIR += orangehrm
-    SUBDIR += oscommerce
     SUBDIR += osrm-backend
     SUBDIR += otrs
     SUBDIR += otter-browser
@@ -1437,24 +1422,15 @@
     SUBDIR += pear-XML_GRDDL
     SUBDIR += pear-twig
     SUBDIR += pebble
-    SUBDIR += pecl-amfext
     SUBDIR += pecl-http
-    SUBDIR += pecl-http1
-    SUBDIR += pecl-http2
     SUBDIR += pecl-solr
-    SUBDIR += pecl-sphinx
-    SUBDIR += pecl-swish
-    SUBDIR += pecl-twig
     SUBDIR += pecl-yaf
-    SUBDIR += pecl-yaf2
     SUBDIR += pecl-yar
-    SUBDIR += pecl-yar1
     SUBDIR += perlbal
     SUBDIR += pglogd
     SUBDIR += phalcon
     SUBDIR += photo_gallery
     SUBDIR += php-screw
-    SUBDIR += php-templates
     SUBDIR += php56-opcache
     SUBDIR += php56-session
     SUBDIR += php56-tidy
@@ -1928,7 +1904,6 @@
     SUBDIR += radicale
     SUBDIR += radicale2
     SUBDIR += red5
-    SUBDIR += redaxo
     SUBDIR += redmine
     SUBDIR += redmine-a_common_libs
     SUBDIR += redmine-backlogs
@@ -1951,8 +1926,6 @@
     SUBDIR += resin3
     SUBDIR += restbed
     SUBDIR += retawq
-    SUBDIR += revive-adserver
-    SUBDIR += rnews
     SUBDIR += roundup
     SUBDIR += rsskit
     SUBDIR += rssowl
@@ -2234,7 +2207,6 @@
     SUBDIR += sabredav
     SUBDIR += sahi
     SUBDIR += sakai
-    SUBDIR += sams2
     SUBDIR += sarg
     SUBDIR += scloader
     SUBDIR += script4rss
@@ -2249,8 +2221,6 @@
     SUBDIR += sfnt2woff
     SUBDIR += shellinabox
     SUBDIR += shttpd
-    SUBDIR += sit
-    SUBDIR += sitebar
     SUBDIR += sitecopy
     SUBDIR += skytemplate
     SUBDIR += slowcgi
@@ -2294,7 +2264,6 @@
     SUBDIR += tdom
     SUBDIR += template_
     SUBDIR += templatelite
-    SUBDIR += testlink
     SUBDIR += thttpd
     SUBDIR += thumbnail_index
     SUBDIR += thundercache
@@ -2422,7 +2391,6 @@
     SUBDIR += unit-go
     SUBDIR += unit-perl
     SUBDIR += unit-php
-    SUBDIR += usermanager
     SUBDIR += uwsgi
     SUBDIR += uwsgitop
     SUBDIR += uzbl
@@ -2487,7 +2455,6 @@
     SUBDIR += wwwoffle
     SUBDIR += xapian-omega
     SUBDIR += xapian-omega12
-    SUBDIR += xcache
     SUBDIR += xfce4-smartbookmark-plugin
     SUBDIR += xist
     SUBDIR += xombrero

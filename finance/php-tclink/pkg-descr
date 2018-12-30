@@ -1,5 +1,0 @@
-TCLink is a thin client API that allows a merchant to process credit card
-transactions through the TrustCommerce processing gateway over a encrypted
-channel (SSL) using TCP/IP.
-
-WWW: http://www.trustcommerce.com/

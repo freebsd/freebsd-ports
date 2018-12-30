@@ -1,5 +1,0 @@
-===>  asterisk-stat:
-
-		**** NOTE ****
-	Before the first use of Asterisk-stat, copy defines.php-dist to defines.php
-	in %%ASTERISKDIR%%
