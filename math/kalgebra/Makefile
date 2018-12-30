@@ -17,9 +17,16 @@ USE_GL=		glu
 USE_KDE=	auth codecs config configwidgets coreaddons doctools ecm i18n \
 		kio service widgetsaddons xmlgui
 USE_QT=		core dbus declarative gui location network opengl printsupport \
-		svg testlib webchannel webengine widgets xml \
+		svg testlib webchannel widgets xml \
 		buildtools_build qmake_build
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS WEBENGINE
+OPTIONS_DEFAULT_amd64=	WEBENGINE
+OPTIONS_DEFAULT_i386=	WEBENGINE
+OPTIONS_SUB=	yes
+
+WEBENGINE_DESC=	Add dependency on qt5-webengine
+WEBENGINE_USE=	QT=webengine
+WEBENGINE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngineWidgets
 
 .include <bsd.port.mk>
