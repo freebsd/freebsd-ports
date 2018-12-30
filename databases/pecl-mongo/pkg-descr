@@ -1,4 +1,0 @@
-pecl-mongo provides an interface for communicating with the
-Mongo database in PHP.
-
-WWW: https://pecl.php.net/package/mongo

@@ -1,6 +1,0 @@
-pecl-oauth is a php interface to the oauth protocol.
-Oauth is an authorization protocol built on top of
-HTTP which allows applications to securely access
-data without having to store usernames and passwords.
-
-WWW: https://pecl.php.net/package/oauth

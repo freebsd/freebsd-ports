@@ -1,3 +1,0 @@
-Make sure you create Virtual Directories to reflect the Doc-root of entrans
-if you are creating a VHost look for the <VirtualHost> directive and then set
-DocumentRoot appropriatel.

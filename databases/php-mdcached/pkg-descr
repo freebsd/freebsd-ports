@@ -1,7 +1,0 @@
-Bullet Cache is a memory database intended to be used much like memcached,
-but offering much higher flexibility through use of record tags which can be
-used to perform bulk operations on sets of records.
-
-This port contains the PHP client module for Bullet Cache.
-
-WWW: http://mdcached.sourceforge.net/

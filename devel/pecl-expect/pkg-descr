@@ -1,4 +1,0 @@
-This extension allows to interact with processes through PTY, using expect
-library.
-
-WWW: https://pecl.php.net/package/expect

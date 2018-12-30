@@ -1,5 +1,0 @@
-This extension provides an image manipulation interface using libImlib2.
-Imlib2 is a very fast image manipulation library, but without the support
-for as many image formats as other libraries such as imagemagick.
-
-WWW: https://pecl.php.net/package/imlib2

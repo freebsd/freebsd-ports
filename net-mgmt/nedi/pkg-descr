@@ -1,9 +1,0 @@
-NeDi is a lightweight network management framework, which is based on a
-scheduled discovery, an SQL backend, and a web-based user interface.  It
-sucks information through SNMP or CLI from your switches and routers and
-stores information (such as MACs and IPs) in a MySQL database.
-
-Later, you can use its web interface to easily locate nodes withing your
-network.
-
-WWW: http://www.nedi.ch/

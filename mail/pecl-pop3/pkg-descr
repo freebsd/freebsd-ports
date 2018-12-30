@@ -1,6 +1,0 @@
-The POP3 extension makes it possible for a PHP
-script to connect to and interact with a POP3 mail server.
-It is based on the PHP streams interface and requires no
-external library.
-
-WWW: https://pecl.php.net/package/POP3

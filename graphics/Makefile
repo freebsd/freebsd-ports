@@ -802,9 +802,7 @@
     SUBDIR += pear-Image_Graph
     SUBDIR += pear-Image_GraphViz
     SUBDIR += pear-Image_Transform
-    SUBDIR += pecl-gmagick
     SUBDIR += pecl-imagick
-    SUBDIR += pecl-imlib2
     SUBDIR += pecl-qrencode
     SUBDIR += pecomato
     SUBDIR += pencil
@@ -819,11 +817,7 @@
     SUBDIR += photoqt
     SUBDIR += phototonic
     SUBDIR += php-facedetect
-    SUBDIR += php-gdal
     SUBDIR += php-geos
-    SUBDIR += php-libpuzzle
-    SUBDIR += php-magickwand
-    SUBDIR += php5-ffmpeg
     SUBDIR += php56-exif
     SUBDIR += php56-gd
     SUBDIR += php71-exif

@@ -1,5 +1,0 @@
-dracMail is a webmail interface built using PHP, ExtJS (JavaScript framework),
-MySQL and IMAP. Features include: Rich UI, WYSIWYG editor, HTML mail composing
-and message caching.
-
-WWW: http://dracmail.net/

@@ -433,7 +433,6 @@
     SUBDIR += liblingoteach
     SUBDIR += liblrdf
     SUBDIR += libmrss
-    SUBDIR += libmrss-php
     SUBDIR += libmwaw03
     SUBDIR += libnxml
     SUBDIR += libodfgen01
@@ -1204,16 +1203,9 @@
     SUBDIR += pear-XML_HTMLSax
     SUBDIR += pear-XML_Wddx
     SUBDIR += pear-YAML
-    SUBDIR += pecl-ctemplate
-    SUBDIR += pecl-doublemetaphone
-    SUBDIR += pecl-stem
-    SUBDIR += pecl-syck
-    SUBDIR += pecl-wbxml
     SUBDIR += pecl-xdiff
     SUBDIR += pecl-xdiff2
-    SUBDIR += pecl-xslcache
     SUBDIR += pecl-yaml
-    SUBDIR += pecl-yaml1
     SUBDIR += peco
     SUBDIR += perl2html
     SUBDIR += permute

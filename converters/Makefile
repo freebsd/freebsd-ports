@@ -137,7 +137,6 @@
     SUBDIR += p5-bsdconv
     SUBDIR += p5-plutil
     SUBDIR += pear-Services_JSON
-    SUBDIR += pecl-fribidi
     SUBDIR += pecl-igbinary
     SUBDIR += php-bsdconv
     SUBDIR += php56-iconv

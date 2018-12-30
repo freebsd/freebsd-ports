@@ -217,7 +217,6 @@
     SUBDIR += p5-WWW-MobileCarrierJP
     SUBDIR += p5-nkf
     SUBDIR += pejv-fpw
-    SUBDIR += php5-mecab
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += prn

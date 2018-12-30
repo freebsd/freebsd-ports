@@ -1,7 +1,0 @@
-PHK is a PHP-oriented package/archive system. Basically, it can be considered
-as a PHP-oriented equivalent of the Java jar format. As jar, PHK allows to
-distribute and run a library or an application as a single file.
-
-The PHK accelerator transparently makes PHK runtime faster.
-
-WWW: https://pecl.php.net/package/phk

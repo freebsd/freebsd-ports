@@ -1,5 +1,0 @@
-uprofiler is a hierarchical profiler for PHP. It reports function-level call
-counts and inclusive and exclusive metrics such as wall (elapsed) time, CPU time
-and memory usage. A function's profile can be broken down by callers or callees.
-
-WWW: https://github.com/FriendsOfPHP/uprofiler

@@ -1,6 +1,0 @@
-PHP Judy implements sparse dynamic arrays (aka Judy Arrays). This extension
-is based on the Judy C library. A Judy array consumes memory only when it is
-populated, yet can grow to take advantage of all available memory if desired.
-Judy's key benefits are scalability, high performance, and memory efficiency.
-
-WWW: https://pecl.php.net/package/Judy

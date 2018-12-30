@@ -197,7 +197,6 @@
     SUBDIR += p5-Goo
     SUBDIR += pal
     SUBDIR += parcellite
-    SUBDIR += phpcollab
     SUBDIR += phpicalendar
     SUBDIR += pim-data-exporter
     SUBDIR += pim-sieve-editor
@@ -248,7 +247,6 @@
     SUBDIR += shutter
     SUBDIR += silence
     SUBDIR += simpleagenda
-    SUBDIR += simplegroupware
     SUBDIR += sliderule
     SUBDIR += spice-gtk
     SUBDIR += strigi
@@ -257,7 +255,6 @@
     SUBDIR += strigiutils
     SUBDIR += sugarcrm
     SUBDIR += superkaramba-kde4
-    SUBDIR += surrealtodo
     SUBDIR += synapse
     SUBDIR += syncthing-gtk
     SUBDIR += systempreferences

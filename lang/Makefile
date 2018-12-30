@@ -264,7 +264,6 @@
     SUBDIR += parrot
     SUBDIR += pbasic
     SUBDIR += pcc
-    SUBDIR += pecl-perl
     SUBDIR += perl5-devel
     SUBDIR += perl5.24
     SUBDIR += perl5.26
@@ -276,7 +275,6 @@
     SUBDIR += phc
     SUBDIR += php-mode.el
     SUBDIR += php56
-    SUBDIR += php56-extensions
     SUBDIR += php71
     SUBDIR += php71-extensions
     SUBDIR += php72

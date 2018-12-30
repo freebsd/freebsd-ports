@@ -1,4 +1,0 @@
-A PHP frontend to the FriBidi library: an implementation of the unicode
-Bidi algorithm, provides means for handling right-to-left text.
-
-WWW: https://pecl.php.net/package/fribidi

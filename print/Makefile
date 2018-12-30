@@ -159,9 +159,7 @@
     SUBDIR += pdfstitch
     SUBDIR += pdftk
     SUBDIR += pear-File_PDF
-    SUBDIR += pecl-haru
     SUBDIR += pecl-pdflib
-    SUBDIR += pecl-ps
     SUBDIR += pfbtopfa
     SUBDIR += photoprint
     SUBDIR += pic2fig

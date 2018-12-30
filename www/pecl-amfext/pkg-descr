@@ -1,9 +1,0 @@
-AMFEXT is a PHP extension written in C that implements encoding and decoding
-of AMF and AMF3 messages for the PHP language. It has been based on some of
-the experience gained with AMFPP, a native code for encoding and decoding C.
-
-The native encoding and decoding is extremely fast and memory efficient
-respect existing PHP implementation, and the flexibility has been
-provided using callbacks to the PHP code.
-
-WWW: https://pecl.php.net/package/amfext
