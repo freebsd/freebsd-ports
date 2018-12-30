@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hmatuschek
 
 MAKE_JOBS_UNSAFE=	yes
-USES=		cmake pkgconfig
+USES=		compiler:c++11-lang cmake pkgconfig
 CMAKE_ARGS+=-DCMAKE_BUILD_TYPE=RELEASE
 USE_LDCONFIG=	yes
 
