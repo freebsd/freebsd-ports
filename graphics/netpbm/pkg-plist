@@ -69,6 +69,7 @@ bin/pamlevels
 bin/pamlookup
 bin/pammasksharpen
 bin/pammixinterlace
+bin/pammixmulti
 bin/pammosaicknit
 bin/pamoil
 bin/pampaintspill
@@ -172,6 +173,7 @@ bin/pbmtoybm
 bin/pbmtozinc
 bin/pbmupc
 bin/pc1toppm
+bin/pcdindex
 bin/pcdovtoppm
 bin/pcxtoppm
 bin/pdbimgtopam
@@ -393,7 +395,7 @@ include/netpbm/shhopt.h
 lib/libnetpbm.a
 lib/libnetpbm.so
 lib/libnetpbm.so.11
-lib/libnetpbm.so.11.84
+lib/libnetpbm.so.11.85
 %%MANPAGES%%man/man1/411toppm.1.gz
 %%MANPAGES%%man/man1/anytopnm.1.gz
 %%MANPAGES%%man/man1/asciitopgm.1.gz
@@ -469,6 +471,7 @@ lib/libnetpbm.so.11.84
 %%MANPAGES%%man/man1/pamlookup.1.gz
 %%MANPAGES%%man/man1/pammasksharpen.1.gz
 %%MANPAGES%%man/man1/pammixinterlace.1.gz
+%%MANPAGES%%man/man1/pammixmulti.1.gz
 %%MANPAGES%%man/man1/pammosaicknit.1.gz
 %%MANPAGES%%man/man1/pamoil.1.gz
 %%MANPAGES%%man/man1/pampaintspill.1.gz
