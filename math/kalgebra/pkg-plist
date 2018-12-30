@@ -1,7 +1,7 @@
 bin/calgebra
 %%WEBENGINE%%bin/kalgebra
 bin/kalgebramobile
-%%WEBENGINE%%hare/applications/org.kde.kalgebra.desktop
+%%WEBENGINE%%share/applications/org.kde.kalgebra.desktop
 share/applications/org.kde.kalgebramobile.desktop
 share/icons/hicolor/64x64/apps/kalgebra.png
 share/icons/hicolor/scalable/apps/kalgebra.svgz
