@@ -1,0 +1,24 @@
+From 2126d76b8f16381e576de779b94b5b4555e562c2 Mon Sep 17 00:00:00 2001
+From: Luigi Toscano <luigi.toscano@tiscali.it>
+Date: Sat, 13 May 2017 21:13:43 +0200
+Subject: Fix .desktop: Qt5 apps accept qwindowtitle, not caption
+
+---
+ src/org.kde.kmplayer.desktop | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/org.kde.kmplayer.desktop b/src/org.kde.kmplayer.desktop
+index fcc5255..2b5435c 100644
+--- src/kmplayer.desktop
++++ src/kmplayer.desktop
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Type=Application
+-Exec=kmplayer -caption %c %i %U
++Exec=kmplayer -qwindowtitle %c %i %U
+ Icon=kmplayer
+ X-DocPath=kmplayer/index.html
+ Comment=KDE interface for MPlayer
+-- 
+cgit v1.1
+

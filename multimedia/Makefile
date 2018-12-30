@@ -183,7 +183,7 @@
     SUBDIR += kdenlive-kde4
     SUBDIR += kf5-kmediaplayer
     SUBDIR += kissdx
-    SUBDIR += kmplayer-kde4
+    SUBDIR += kmplayer
     SUBDIR += kodi
     SUBDIR += kodi-addon-peripheral-joystick
     SUBDIR += kodi-addon-pvr-hts
