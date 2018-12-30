@@ -13,8 +13,6 @@ COMMENT=	GNUstep Foundation library
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-BROKEN_aarch64=		fails to compile: <inline asm>:1:27: unexpected token in argument list
-
 LIB_DEPENDS+=	libffi.so:devel/libffi
 LIB_DEPENDS+=	libxml2.so:textproc/libxml2
 LIB_DEPENDS+=	libxslt.so:textproc/libxslt
