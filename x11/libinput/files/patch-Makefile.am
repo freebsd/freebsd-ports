@@ -1,8 +1,0 @@
---- Makefile.am.orig	2017-02-11 05:10:33 UTC
-+++ Makefile.am
-@@ -1,4 +1,4 @@
--SUBDIRS = src doc test tools udev
-+SUBDIRS = src doc tools udev
- 
- ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
- 
