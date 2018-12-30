@@ -13,7 +13,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libwayland-egl.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		pkgconfig qmake:norecursive qt-dist:5,wayland
+USES=		compiler:c++11-lang gl gnome pkgconfig qmake:norecursive \
+		qt-dist:5,wayland
 USE_GL=		egl gl
 USE_GNOME=	glib20
 USE_QT=		core dbus gui declarative \

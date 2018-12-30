@@ -11,8 +11,8 @@ COMMENT=	IRC client for KDE
 LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 		libenchant.so:textproc/enchant
 
-USES=		cmake cpe desktop-file-utils gettext gnome kde:5 perl5 \
-		pkgconfig python qt:5 ssl tar:bzip2
+USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext gnome \
+		kde:5 perl5 pkgconfig python qt:5 ssl tar:bzip2
 USE_GNOME=	glib20
 USE_PERL5=	build
 USE_KDE=	auth codecs config configwidgets coreaddons i18n notifications \

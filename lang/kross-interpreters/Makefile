@@ -7,7 +7,7 @@ CATEGORIES=	lang kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Language interpreters to enable in-process scripting with Kross
 
-USES=		cmake gettext kde:5 python:2.7 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext kde:5 python:2.7 qt:5 tar:xz
 USE_KDE=	ecm kross
 USE_QT=		core gui script widgets xml \
 		buildtools_build qmake_build

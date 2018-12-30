@@ -12,7 +12,8 @@ COMMENT?=	Multimedia framework for TV broadcasting
 LICENSE?=	GPLv2 GPLv3 LGPL21
 LICENSE_COMB?=	multi
 
-USES+=		alias eigen:3 gmake localbase pkgconfig
+USES+=		alias compiler:c++11-lang eigen:3 gl gmake gnome localbase \
+		pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-gpl --enable-gpl3 --target-os=FreeBSD
 USE_GITHUB=	yes

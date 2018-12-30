@@ -28,7 +28,7 @@ USE_QT=		corelib designer gui phonon \
 		qmake_build moc_build rcc_build uic_build
 PLIST_FILES=	${QT_PLUGINDIR_REL}/designer/libphononwidgets.so
 .  else
-USES+=		kde:5 qt:5
+USES+=		compiler:c++11-lang kde:5 qt:5
 USE_KDE=	ecm
 USE_QT=		core designer gui phonon4 widgets xml \
 		buildtools_build qmake_build
