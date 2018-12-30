@@ -1,7 +1,7 @@
 bin/calgebra
-bin/kalgebra
+%%WEBENGINE%%bin/kalgebra
 bin/kalgebramobile
-share/applications/org.kde.kalgebra.desktop
+%%WEBENGINE%%hare/applications/org.kde.kalgebra.desktop
 share/applications/org.kde.kalgebramobile.desktop
 share/icons/hicolor/64x64/apps/kalgebra.png
 share/icons/hicolor/scalable/apps/kalgebra.svgz
@@ -32,8 +32,8 @@ share/kalgebramobile/plugins/widgets/Label.qml
 share/kalgebramobile/plugins/widgets/RealInput.qml
 share/kalgebramobile/plugins/widgets/SimpleListView.qml
 share/kalgebramobile/plugins/widgets/qmldir
-share/katepart5/syntax/kalgebra.xml
-share/kservices5/graphsplasmoid.desktop
+%%WEBENGINE%%share/katepart5/syntax/kalgebra.xml
+%%WEBENGINE%%share/kservices5/graphsplasmoid.desktop
 share/locale/ar/LC_MESSAGES/kalgebra.mo
 share/locale/bg/LC_MESSAGES/kalgebra.mo
 share/locale/bg/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
@@ -141,8 +141,8 @@ share/locale/zh_CN/LC_MESSAGES/kalgebramobile.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/zh_TW/LC_MESSAGES/kalgebra.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
-share/metainfo/org.kde.kalgebra.appdata.xml
+%%WEBENGINE%%share/metainfo/org.kde.kalgebra.appdata.xml
 share/metainfo/org.kde.kalgebramobile.appdata.xml
-share/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/config.ui
-share/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/main.qml
-share/plasma/plasmoids/org.kde.graphsplasmoid/metadata.desktop
+%%WEBENGINE%%share/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/config.ui
+%%WEBENGINE%%share/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/main.qml
+%%WEBENGINE%%share/plasma/plasmoids/org.kde.graphsplasmoid/metadata.desktop
