@@ -2,6 +2,7 @@
 
 PORTNAME=	akonadi-contacts
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -15,7 +16,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		prison service sonnet textwidgets widgetsaddons xmlgui
 # pim components
 USE_KDE+=	akonadi akonadimime calendarcore contacts mime
-USE_QT=		dbus core gui network testlib webengine widgets xml \
+USE_QT=		dbus core gui network testlib widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 
