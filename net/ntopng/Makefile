@@ -22,8 +22,8 @@ LIB_DEPENDS=	librrd.so:databases/rrdtool \
 		libmaxminddb.so:net/libmaxminddb
 BUILD_DEPENDS=  bash:shells/bash
 
-USES=		autoreconf cpe gmake libtool localbase mysql pathfix pkgconfig \
-		shebangfix sqlite ssl
+USES=		autoreconf compiler:c++11-lang cpe gmake libtool localbase \
+		mysql pathfix pkgconfig shebangfix sqlite ssl
 
 SUB_FILES=	ntopng-geoipupdate.sh pkg-deinstall
 SHEBANG_FILES=	httpdocs/misc/ntopng-add-user.sh \
