@@ -25,4 +25,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pitivi
 GH_PROJECT=	gst-transcoder
 
+post-patch:
+.if exists(/usr/lib/libstdc++.so)
+	${REINPLACE_CMD} -e '/-Wno-pedantic/d' \
+		${WRKSRC}/meson.build
+.endif
+
 .include <bsd.port.mk>
