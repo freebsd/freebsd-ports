@@ -1,0 +1,36 @@
+--- CMakeLists.txt.orig	2018-12-30 17:28:44 UTC
++++ CMakeLists.txt
+@@ -76,6 +76,7 @@ include( MarbleMacros )
+ # Generate the tiles with the tilecreator at compile time
+ # if this option is set, srtm.jpg will not be installed but the generated tiles instead
+ option(MOBILE "Create a Marble version optimized for handheld devices")
++option(WEBENGINE "Build browser plugin" ON)
+ 
+ ####################################################
+ # Build a D-Bus interface for the Marble widget
+@@ -128,15 +129,17 @@ if(CMAKE_SYSTEM_NAME STREQUAL Android)
+     )
+    set ( MARBLE_NO_WEBKITWIDGETS TRUE )
+ else()
+-   find_package(Qt5 ${REQUIRED_QT_VERSION}
+-        COMPONENTS
+-            WebEngine
+-            WebEngineWidgets
+-    )
++   if(WEBENGINE)
++       find_package(Qt5 ${REQUIRED_QT_VERSION}
++            COMPONENTS
++                WebEngine
++                WebEngineWidgets
++        )
+ 
+-   if ( NOT Qt5WebEngineWidgets_FOUND )
+-     set ( MARBLE_NO_WEBKITWIDGETS TRUE )
+-   endif()
++       if( NOT Qt5WebEngineWidgets_FOUND )
++           set ( MARBLE_NO_WEBKITWIDGETS TRUE )
++       endif()
++    endif()
+ endif()
+ 
+ if (BUILD_WITH_DBUS)
