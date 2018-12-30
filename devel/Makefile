@@ -1450,6 +1450,7 @@
     SUBDIR += libffcall
     SUBDIR += libffi
     SUBDIR += libfirm
+    SUBDIR += libfixposix
     SUBDIR += libflatarray
     SUBDIR += libfmt
     SUBDIR += libfortuna
