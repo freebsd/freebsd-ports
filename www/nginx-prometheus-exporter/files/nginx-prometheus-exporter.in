@@ -1,0 +1,64 @@
+#!/bin/sh
+
+#
+# $FreeBSD$
+#
+
+# PROVIDE: nginx_prometheus_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# nginx_prometheus_exporter_enable (bool):	Set to NO by default.
+#		Set it to YES to enable nginx_prometheus_exporter.
+# nginx_prometheus_exporter_user (string):	Set user that
+#		nginx_prometheus_exporter will run under
+#		Default is "nobody".
+# nginx_prometheus_exporter_group (string):	Set group that
+#		nginx_prometheus_exporter will run under
+#		Default is "nobody".
+# nginx_prometheus_exporter_args (string):	Set extra arguments to pass to
+#		nginx_prometheus_exporter
+#		Default is "".
+# nginx_prometheus_exporter_listen_address (string):	Set ip:port that
+#		nginx_prometheus_exporter will listen on
+#		Default is ":9113".
+# nginx_prometheus_exporter_scrape_uri (string):	Set server address to
+#		connect to
+#		Default is "http://127.0.0.1:8080/stub_status".
+
+. /etc/rc.subr
+
+name=nginx_prometheus_exporter
+rcvar=nginx_prometheus_exporter_enable
+
+load_rc_config $name
+
+: ${nginx_prometheus_exporter_enable:="NO"}
+: ${nginx_prometheus_exporter_user:="nobody"}
+: ${nginx_prometheus_exporter_group:="nobody"}
+: ${nginx_prometheus_exporter_args:=""}
+: ${nginx_prometheus_exporter_listen_address:=":9113"}
+: ${nginx_prometheus_exporter_scrape_uri:="http://127.0.0.1:8080/stub_status"}
+
+pidfile=/var/run/nginx_prometheus_exporter.pid
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/nginx-prometheus-exporter"
+command_args="-p ${pidfile} /usr/bin/env ${procname} \
+    --nginx.scrape-uri=${nginx_prometheus_exporter_scrape_uri} \
+    --web.listen-address=${nginx_prometheus_exporter_listen_address} \
+    ${nginx_prometheus_exporter_args}"
+
+start_precmd=nginx_prometheus_exporter_startprecmd
+
+nginx_prometheus_exporter_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+	install -o ${nginx_prometheus_exporter_user} -g ${nginx_prometheus_exporter_group} /dev/null ${pidfile};
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

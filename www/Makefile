@@ -525,6 +525,7 @@
     SUBDIR += nginx-full
     SUBDIR += nginx-lite
     SUBDIR += nginx-naxsi
+    SUBDIR += nginx-prometheus-exporter
     SUBDIR += nibbleblog
     SUBDIR += node
     SUBDIR += node6
