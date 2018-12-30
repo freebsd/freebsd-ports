@@ -4,6 +4,7 @@ bin/rofi-theme-selector
 include/rofi/helper.h
 include/rofi/mode-private.h
 include/rofi/mode.h
+include/rofi/rofi-icon-fetcher.h
 include/rofi/rofi-types.h
 libdata/pkgconfig/rofi.pc
 man/man1/rofi-sensible-terminal.1.gz
