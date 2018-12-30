@@ -2,6 +2,7 @@
 
 PORTNAME=	kwallet
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -20,5 +21,11 @@ USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons \
 		doctools ecm i18n iconthemes notifications service \
 		widgetsaddons windowsystem
 USE_QT=		buildtools_build core dbus gui qmake_build widgets xml
+
+OPTIONS_DEFINE=	PINENTRY
+OPTIONS_DEFAULT= PINENTRY
+
+PINENTRY_DESC=	Include pinentry-qt, for wallet passwords
+PINENTRY_RUN_DEPENDS=	pinentry-qt5:security/pinentry-qt5
 
 .include <bsd.port.mk>
