@@ -100,9 +100,9 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of net-im/ejabberd
   AUTHOR: ashish@FreeBSD.org
 
-  There are some new features added in ejabberd 18.12, esp. related to 
+  There are some new features added in ejabberd 18.12, esp. related to
   bookmarks, and XML compression in message archive storage. Please
-  refer to: https://blog.process-one.net/ejabberd-18-12/ 
+  refer to: https://blog.process-one.net/ejabberd-18-12/
 
 20181211:
   AFFECTS: users of news/inn when upgrading to FreeBSD 12
@@ -145,7 +145,7 @@ you update your ports collection, before attempting any port upgrades.
   If you want to stay with the gtk2 version you need to use "pkg install"
   to install the new gtk2 flavor, pkg will automatically deinstall the
   gtk3 flavors.
- 
+
   If using port, to maintain the gtk2 version, you will need to deinstall
   geany and its plugins and reinstall specifying the gtk2 flavor.
 
@@ -430,7 +430,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: net-mgmt/librenms
   AUTHOR: dvl@FreeBSD.org
 
-  As of version 1.42, to conform with man hier, logs and rrd files have 
+  As of version 1.42, to conform with man hier, logs and rrd files have
   relocated outside the WWW directory. When upgrading from < 1.42 to more
   recent versions, the following steps are required.
 
@@ -476,7 +476,7 @@ you update your ports collection, before attempting any port upgrades.
    > y
 
   Application key [base64:P62La9V........qw=] set successfully.
- 
+
 
 20180901:
   AFFECTS: users of samba46
@@ -524,7 +524,7 @@ you update your ports collection, before attempting any port upgrades.
   datatype per default. To retain support for the XML datatype you should build
   the port and check the XML option in the option dialog. The reason for this
   is the bad security reputation of libxml2.
- 
+
 20180806:
   AFFECTS: www/tt-rss
   AUTHOR: thierry@FreeBSD.org
@@ -611,9 +611,9 @@ you update your ports collection, before attempting any port upgrades.
   escalation by allowing an unprivileged user to connect to the console and
   execute Lua code as the dnsdist user. We therefore decided to refuse any
   connection to the console until a key has been set, so please check that
-  you do set a key before upgrading if you use the console.  
+  you do set a key before upgrading if you use the console.
 
-  For further details read: 
+  For further details read:
   https://blog.powerdns.com/2018/07/10/dnsdist-1-3-2-released/
 
 20180704:
@@ -847,7 +847,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of databases/pecl-redis
   AUTHOR: daniel@blodan.se
 
-  pecl-redis 4.0.0 breaks backwards compatibility, users 
+  pecl-redis 4.0.0 breaks backwards compatibility, users
   not aware if you are using the changed functionality or not
   should swap to databases/pecl-redis3
 
@@ -1186,9 +1186,9 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of x11-toolkits/kf5-kirigami2 and x11/kf5-plasma-framework
   AUTHOR: kde@FreeBSD.org
 
-  Files that were previously installed by kf5-kirigami2 are now installed 
+  Files that were previously installed by kf5-kirigami2 are now installed
   by kf5-plasma-framework. This can lead to a conflict during the upgrade
-  of the packages. 
+  of the packages.
   It is recommended to first remove the package kf5-kirigami2.
 
 20180115:
@@ -1267,7 +1267,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of net-im/ejabberd
   AUTHOR: ashish@FreeBSD.org
 
-  If you are building ejabberd 17.11 on a host, which already has an older 
+  If you are building ejabberd 17.11 on a host, which already has an older
   version of ejabberd installed, then build process will fail with "unknown type
   specifier" errors. As a workaround, please uninstall ejabberd before building
   ejabberd.
@@ -1492,7 +1492,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20171107:
   AFFECTS: users of www/node
-  AUTHOR: bhughes@FreeBSD.org	
+  AUTHOR: bhughes@FreeBSD.org
 
   The www/node port has been updated to node.js v9.0.0, the latest
   upstream release. A new port, www/node8, has been created for the
@@ -1542,7 +1542,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: brnrd@FreeBSD.org
 
   The configuration of mod_rpaf2 has been heavily modified since version
-  0.6. Have a look at https://github.com/gnif/mod_rpaf/tree/v0.8.4 to 
+  0.6. Have a look at https://github.com/gnif/mod_rpaf/tree/v0.8.4 to
   determine what you need to change in your configuration.
 
 20171031:
@@ -1672,7 +1672,7 @@ you update your ports collection, before attempting any port upgrades.
 
   Users should delete the devel/cmake-modules package and then
   upgrade or reinstall devel/cmake.
- 
+
   All ports have been updated to depend only on CMake.
 
 20170904:
