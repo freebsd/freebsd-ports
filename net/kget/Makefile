@@ -17,7 +17,7 @@ LIB_DEPENDS=    libKF5Torrent.so:net-p2p/libktorrent  \
 		libqca-qt5.so:devel/qca@qt5 \
 		libqgpgme.so:security/gpgme-qt5
 
-USES=		cmake kde:5 qt:5 shebangfix sqlite tar:xz
+USES=		cmake compiler:c++11-lang kde:5 qt:5 shebangfix sqlite tar:xz
 
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons emoticons guiaddons i18n \
