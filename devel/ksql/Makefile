@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ksql
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.5
 CATEGORIES=	devel databases
 MASTER_SITES=	http://kristaps.bsd.lv/ksql/snapshots/
 
@@ -10,12 +10,10 @@ COMMENT=	Lazy man's wrapper for the SQLite C API
 
 LICENSE=	ISCL
 
-BUILD_DEPENDS=	${LOCALBASE}/include/sqlite3.h:databases/sqlite3
-
-USES=		localbase
+USES=		localbase:ldflags sqlite
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	PREFIX="${PREFIX}"
+CONFIGURE_ARGS=	PREFIX="${PREFIX}" LDFLAGS="${LDFLAGS}"
 
 do-test:
 	@cd ${WRKSRC} && ./test
