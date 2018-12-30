@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		cmake
+USES=		compiler:c++11-lang cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	whoshuu
 GH_TUPLE=	whoshuu:mongoose:df9f7a7:mongoose/opt/mongoose
