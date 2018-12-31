@@ -1,17 +1,3 @@
-%%PLASMAMULE%%@cwd %%KDE_PREFIX%%
-%%PLASMAMULE%%bin/plasmamule-engine-feeder
-%%PLASMAMULE%%lib/kde4/plasma-applet-plasmamule.so
-%%PLASMAMULE%%lib/kde4/plasma-engine-plasmamule.so
-%%PLASMAMULE%%share/applications/plasmamule-engine-feeder.desktop
-%%PLASMAMULE%%share/icons/hicolor/scalable/mimetypes/application-x-emulecollection.svg
-%%PLASMAMULE%%share/kde4/services/ed2k.protocol
-%%PLASMAMULE%%share/kde4/services/magnet.protocol
-%%PLASMAMULE%%share/kde4/services/plasma-applet-plasmamule.desktop
-%%PLASMAMULE%%share/kde4/services/plasma-engine-plasmamule.desktop
-%%PLASMAMULE%%share/mime/amule.xml
-%%PLASMAMULE%%@postexec [ -f %%LOCALBASE%%/bin/update-mime-database ] && %%LOCALBASE%%/bin/update-mime-database %D/share/mime >/dev/null 2>&1 || true
-%%PLASMAMULE%%@postunexec [ -f %%LOCALBASE%%/bin/update-mime-database ] && %%LOCALBASE%%/bin/update-mime-database %D/share/mime >/dev/null 2>&1 || true
-%%PLASMAMULE%%@cwd %%RESETPREFIX%%
 %%ALC%%bin/alc
 %%ALCC%%bin/alcc
 %%MONOLITHIC%%bin/amule
