@@ -1,4 +1,4 @@
---- meson.build.orig	2018-06-29 08:34:57 UTC
+--- meson.build.orig	2018-12-22 14:33:52 UTC
 +++ meson.build
 @@ -19,12 +19,7 @@ int main(void) {
      (void) get_4();
@@ -10,7 +10,7 @@
 -endif
  
 -
- rst2man = find_program('rst2man', required: false)
+ rst2man = find_program('rst2man', 'rst2man.py', required: false)
    
  cfg = configuration_data()
 @@ -62,11 +57,6 @@ if rst2man.found()
