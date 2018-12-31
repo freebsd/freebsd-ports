@@ -38,7 +38,7 @@ PYDISTUTILS_PKGVERSION=	1.0
 PLIST_SUB=		VERSION="${PORTVERSION}" \
 			PYDISTUTILS_EGGINFO="${PYDISTUTILS_EGGINFO}"
 
-OPTIONS_DEFINE=		ASPELL CHM DJVU KONQUEROR LATEX IMAGE PDF PS \
+OPTIONS_DEFINE=		ASPELL CHM DJVU LATEX IMAGE PDF PS \
 			SOUND QT4 X11MON
 OPTIONS_DEFAULT=	ASPELL IMAGE PDF PS SOUND
 OPTIONS_SUB=		yes
@@ -50,8 +50,6 @@ CHM_RUN_DEPENDS=	pychm>0:textproc/pychm
 DJVU_RUN_DEPENDS=	djvutxt:graphics/djvulibre
 IMAGE_DESC=		Store personal tags or textual descriptions in images
 IMAGE_RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
-KONQUEROR_DESC=		Konqueror webarchive format with Python
-KONQUEROR_RUN_DEPENDS=	kwebkitpart>0:www/kwebkitpart
 LATEX_USE=		tex=dvipsk:run,latex:run
 PDF_RUN_DEPENDS=	pdftotext:graphics/poppler-utils
 PS_RUN_DEPENDS=		pstotext:print/pstotext
