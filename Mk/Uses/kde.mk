@@ -3,14 +3,13 @@
 # Provides support for KDE and KF5-based ports.
 #
 # Feature:	kde
-# Valid ARGS:	4 5
+# Valid ARGS:	5
 #
-# 4:		Depend on KDE4 components and variables.
 # 5:		Depend on KDE Frameworks 5 components and variables.
 #
 # Variables that can be set by a port:
 #
-# USE_KDE	List of KDE4/KF5/Plasma5 components (other ports) that this
+# USE_KDE	List of KF5/Plasma5 components (other ports) that this
 #		port depends on.
 #		* foo_build	Add a build-time dependency (BUILD_DEPENDS)
 #		* foo_run	Add a run-time dependency (RUN_DEPENDS)
@@ -20,8 +19,8 @@
 # To simplify the ports, also:
 # CATEGORIES	If the port is part of one of the KDE Software distribution,
 #		it can add, in addition to 'kde' one of the following:
+#			kde-application:	part of applications release
 #			kde-frameworks:		part of frameworks release
-#			kde-kde4: 		part of kde4 release
 #			kde-plasma:		part of plasma release
 #		this will then set default values for MASTER_SITES and DIST_SUBDIR
 #		as well as CPE_VENDOR and LICENSE.
@@ -31,7 +30,7 @@
 .if !defined(_INCLUDE_USES_KDE_MK)
 _INCLUDE_USES_KDE_MK=	yes
 
-_KDE_SUPPORTED=		4 5
+_KDE_SUPPORTED=		5
 
 .  if empty(kde_ARGS)
 IGNORE=	kde needs a version (${_KDE_SUPPORTED})
@@ -49,22 +48,11 @@ IGNORE?=	cannot be installed: different KDE versions specified via kde:[${_KDE_S
 
 .  if empty(_KDE_VERSION)
 IGNORE?=	kde:[${_KDE_SUPPORTED:S/ //g}] needs an argument  #'
-.  endif
+.  else
 
 _KDE_RELNAME=		KDE${_KDE_VERSION}
 
 # === VERSIONS OF THE DIFFERENT COMPONENTS =====================================
-# Old KDE desktop.
-KDE4_VERSION?=			4.14.3
-KDE4_KDELIBS_VERSION=		4.14.38
-KDE4_ACTIVITIES_VERSION=	4.13.3
-KDE4_WORKSPACE_VERSION=		4.11.22
-KDE4_KDEPIM_VERSION?=		4.14.10
-# Applications version for the kde4-applications.
-KDE4_APPLICATIONS_BRANCH?=	Attic
-KDE4_APPLICATIONS_VERSION?=	15.04.3
-KDE4_BRANCH?=			stable
-
 # Current KDE desktop.
 KDE_PLASMA_VERSION?=		5.14.4
 KDE_PLASMA_BRANCH?=		stable
@@ -84,12 +72,6 @@ _KDE_APPLICATIONS_ATTIC_VERSION=	17.08.3
 # Extended KDE universe applications.
 CALLIGRA_VERSION?=		2.9.11
 CALLIGRA_BRANCH?=		stable
-
-KDEVELOP_VERSION?=		4.7.4
-KDEVELOP_BRANCH?=		stable
-
-KTP_VERSION?=			0.9.0
-KTP_BRANCH?=			stable
 # ==============================================================================
 
 # === INSTALLATION PREFIXES AND HEADER LOCATION ================================
@@ -99,18 +81,18 @@ KDE_PREFIX=	${LOCALBASE}
 
 # === CATEGORIES HANDLING -- SETTING DEFAULT VALUES ============================
 # Doing MASTER_SITES magic based on the category of the port
-_KDE_CATEGORIES_SUPPORTED=	kde-applications kde-frameworks kde-kde4 kde-plasma
-.  for cat in ${_KDE_CATEGORIES_SUPPORTED}
-.    if ${CATEGORIES:M${cat}}
-.      if !defined(_KDE_CATEGORY)
+_KDE_CATEGORIES_SUPPORTED=	kde-applications kde-frameworks kde-plasma
+.    for cat in ${_KDE_CATEGORIES_SUPPORTED}
+.      if ${CATEGORIES:M${cat}}
+.        if !defined(_KDE_CATEGORY)
 _KDE_CATEGORY=	${cat}
-.      else
+.        else
 IGNORE?=	cannot be installed: multiple kde-<...> categories specified via CATEGORIES=${CATEGORIES} #'
+.        endif
 .      endif
-.    endif
-.  endfor
+.    endfor
 
-.  if defined(_KDE_CATEGORY)
+.    if defined(_KDE_CATEGORY)
 # KDE is normally licensed under the LGPL 2.0.
 LICENSE?=		LGPL20
 
@@ -119,24 +101,12 @@ LICENSE?=		LGPL20
 #    vendor is therefore kde.
 CPE_VENDOR?=		kde
 
-.    if ${_KDE_CATEGORY:Mkde-kde4}
-PORTVERSION?=		${KDE4_VERSION}
-MASTER_SITES?=		KDE/${KDE4_BRANCH}/${KDE4_VERSION}/src
-DIST_SUBDIR?=		KDE/${KDE4_VERSION}
-PKGNAMESUFFIX=		-kde4
-CONFLICTS_INSTALL=	${PORTNAME}
-.    elif  ${_KDE_CATEGORY:Mkde-applications}
+.      if ${_KDE_CATEGORY:Mkde-applications}
 PORTVERSION?=		${KDE_APPLICATIONS_VERSION}
-.      if ${_KDE_VERSION:M4}
-CONFLICTS_INSTALL?=	${PORTNAME}-[0-9]*
-PKGNAMESUFFIX?=		-kde4
-.      else
-CONFLICTS_INSTALL?=	${PORTNAME}-kde4
-.      endif
 # Decide where the file lies on KDE's servers: Check whether the file lies in Attic
-.      if ${KDE_APPLICATIONS_VERSION:R:R} <= ${_KDE_APPLICATIONS_ATTIC_VERSION:R:R}
+.        if ${KDE_APPLICATIONS_VERSION:R:R} <= ${_KDE_APPLICATIONS_ATTIC_VERSION:R:R}
 MASTER_SITES?=		KDE/Attic/applications/${KDE_APPLICATIONS_VERSION}/src
-.      else
+.        else
 MASTER_SITES?=		KDE/${KDE_APPLICATIONS_BRANCH}/applications/${KDE_APPLICATIONS_VERSION}/src
 # Let bsd.port.mk create the plist-entries for the documentation.
 # KDE Applications ports install their documentation to
@@ -146,29 +116,29 @@ PORTDOCS?=		HTML/*
 # Further pass along a SHLIB_VER PLIST_SUB
 PLIST_SUB+=		KDE_APPLICATIONS_SHLIB_VER=${KDE_APPLICATIONS_SHLIB_VER} \
 			KDE_APPLICATIONS_VERSION_SHORT="${KDE_APPLICATIONS_VERSION:R:R}"
-.      endif
+.        endif
 DIST_SUBDIR?=		KDE/applications/${KDE_APPLICATIONS_VERSION}
-.    elif ${_KDE_CATEGORY:Mkde-plasma}
+.      elif ${_KDE_CATEGORY:Mkde-plasma}
 PORTVERSION?=		${KDE_PLASMA_VERSION}
 PKGNAMEPREFIX?=		plasma5-
 MASTER_SITES?=		KDE/${KDE_PLASMA_BRANCH}/plasma/${KDE_PLASMA_VERSION}
 DIST_SUBDIR?=		KDE/plasma/${KDE_PLASMA_VERSION}
-.    elif ${_KDE_CATEGORY:Mkde-frameworks}
+.      elif ${_KDE_CATEGORY:Mkde-frameworks}
 PORTVERSION?=		${KDE_FRAMEWORKS_VERSION}
 PKGNAMEPREFIX?=		kf5-
 # This is a slight duplication of _USE_FRAMEWORKS_PORTING -- it maybe would be
 # better to rely on ${_USE_FRAMEWORKS_PORTING:S/^/k/g}
 _PORTINGAIDS=		kjs kjsembed kdelibs4support khtml kmediaplayer kross
-.      if ${_PORTINGAIDS:M*${PORTNAME}*}
+.        if ${_PORTINGAIDS:M*${PORTNAME}*}
 MASTER_SITES?=		KDE/${KDE_FRAMEWORKS_BRANCH}/frameworks/${KDE_FRAMEWORKS_VERSION:R}/portingAids
-.      else
+.        else
 MASTER_SITES?=		KDE/${KDE_FRAMEWORKS_BRANCH}/frameworks/${KDE_FRAMEWORKS_VERSION:R}
-.      endif
+.        endif
 DIST_SUBDIR?=		KDE/frameworks/${KDE_FRAMEWORKS_VERSION}
-.    else
+.      else
 IGNORE?=		unknown CATEGORY value '${_KDE_CATEGORY}' #'
-.    endif
-.  endif #defined(_KDE_CATEGORY)
+.      endif
+.    endif #defined(_KDE_CATEGORY)
 
 # ==============================================================================
 
@@ -176,16 +146,14 @@ IGNORE?=		unknown CATEGORY value '${_KDE_CATEGORY}' #'
 # Help cmake to find files when testing ports with non-default PREFIX.
 CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH="${LOCALBASE}"
 
-.  if ${_KDE_VERSION:M*4*}
-CMAKE_ARGS+=	-DKDE4_BUILD_TESTS:BOOL=OFF
-.  elif ${_KDE_VERSION:M*5*}
+.    if ${_KDE_VERSION:M*5*}
 # We set KDE_INSTALL_USE_QT_SYS_PATHS to install mkspecs files, plugins and
 # imports to the Qt 5 install directory.
 CMAKE_ARGS+=   -DBUILD_TESTING:BOOL=OFF \
                -DCMAKE_MODULE_PATH="${LOCALBASE};${KDE_PREFIX}" \
                -DCMAKE_INSTALL_PREFIX="${KDE_PREFIX}" \
                -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=TRUE
-.  endif
+.    endif
 
 # Set man-page installation prefix.
 CMAKE_ARGS+=	-DKDE_INSTALL_MANDIR:PATH="${KDE_PREFIX}/man" \
@@ -197,48 +165,29 @@ CMAKE_ARGS+=	-DKDE_INSTALL_MANDIR:PATH="${KDE_PREFIX}/man" \
 PLIST_SUB+=		KDE_PREFIX="${KDE_PREFIX}"
 # KDE Applications version.
 PLIST_SUB+=		KDE_APPLICATIONS_VERSION="${KDE_APPLICATIONS_VERSION}"
-# For KDE4 applications provide KDE4 version numbers.
-.  if ${_KDE_VERSION:M*4*}
-PLIST_SUB+=		KDE4_VERSION="${KDE4_VERSION}" \
-			KDE4_GENERIC_LIB_VERSION=${KDE4_KDELIBS_VERSION} \
-			KDE4_NON_GENERIC_LIB_VERSION=${KDE4_KDELIBS_VERSION:S,^4,5,} \
-			KDE4_KDELIBS_VERSION=${KDE4_KDELIBS_VERSION} \
-			KDE4_NG_KDELIBS_VERSION=${KDE4_KDELIBS_VERSION:S,^4,5,}
-.  elif ${_KDE_VERSION:M*5*}
+.    if ${_KDE_VERSION:M*5*}
 PLIST_SUB+=		KDE_PLASMA_VERSION="${KDE_PLASMA_VERSION}" \
 			KDE_FRAMEWORKS_VERSION="${KDE_FRAMEWORKS_VERSION}"
-.  endif
+.    endif
 # ==============================================================================
 
 # === HANDLE PYTHON ============================================================
 # TODO: Keep in sync with cmake/modules/PythonMacros.cmake
 _PYTHON_SHORT_VER=	${PYTHON_VERSION:S/^python//:S/.//}
-.  if ${_PYTHON_SHORT_VER} > 31
+.    if ${_PYTHON_SHORT_VER} > 31
 PLIST_SUB+=		PYCACHE="__pycache__/" \
 			PYC_SUFFIX=cpython-${_PYTHON_SHORT_VER}.pyc \
 			PYO_SUFFIX=cpython-${_PYTHON_SHORT_VER}.pyo
-.  else
+.    else
 PLIST_SUB+=		PYCACHE="" \
 			PYC_SUFFIX=pyc \
 			PYO_SUFFIX=pyo
-.  endif
+.    endif
 # ==============================================================================
 
 _USE_KDE_BOTH=		akonadi attica libkcddb libkcompactdisc libkdcraw libkdegames \
 			libkeduvocdocument libkexiv2 libkipi libksane okular \
 			baloo baloo-widgets kate marble
-
-_USE_KDE4_ALL=		baseapps kactivities kdelibs \
-			kfilemetadata korundum \
-			libkonq  nepomuk-core nepomuk-widgets \
-			oxygen-icons5 perlkde perlqt pimlibs pykde4 \
-			pykdeuic4 qtruby runtime smokegen smokekde smokeqt \
-			workspace
-# These components are not part of the Software Compilation.
-_USE_KDE4_ALL+=		automoc4 ontologies qimageblitz soprano \
-			strigi
-
-_USE_KDE4_ALL+= 	${_USE_KDE_BOTH}
 
 # List of components of the KDE Frameworks distribution.
 # The *_TIER<n> variables are internal, primarily for checking
@@ -278,7 +227,7 @@ _USE_FRAMEWORKS_ALL=	ecm \
 
 # List of components of the KDE Plasma distribution.
 _USE_PLASMA_ALL=	activitymanagerd breeze breeze-gtk \
-			breeze-kde4 decoration discover drkonqi hotkeys \
+			decoration discover drkonqi hotkeys \
 			infocenter kde-cli-tools kde-gtk-config \
 			kdeplasma-addons kgamma5 kmenuedit kscreen \
 			kscreenlocker ksshaskpass ksysguard kwallet-pam \
@@ -309,89 +258,6 @@ _USE_KDE5_ALL=		${_USE_FRAMEWORKS_ALL} \
 			${_USE_PLASMA_ALL} \
 			${_USE_KDEPIM5_ALL} \
 			${_USE_KDE_BOTH}
-
-# ====================== kde4 components =======================================
-
-baseapps_PORT=		x11/kde-baseapps-kde4
-baseapps_PATH=		${KDE_PREFIX}/bin/kfmclient
-baseapps_TYPE=		run
-
-kactivities_PORT=	x11/kactivities
-kactivities_LIB=	libkactivities.so
-
-kdelibs_PORT=		x11/kdelibs-kde4
-kdelibs_LIB=		libkdecore.so
-
-kfilemetadata_PORT=	sysutils/kfilemetadata-kde4
-kfilemetadata_LIB=	libkfilemetadata.so
-
-korundum_PORT=		devel/ruby-korundum-kde4
-korundum_PATH=		${KDE_PREFIX}/lib/kde4/krubypluginfactory.so
-korundum_TYPE=		run
-
-libkonq_PORT=		x11/libkonq-kde4
-libkonq_LIB=		libkonq.so
-
-nepomuk-core_PORT=	sysutils/nepomuk-core-kde4
-nepomuk-core_LIB=	libnepomukcore.so
-
-nepomuk-widgets_PORT=	sysutils/nepomuk-widgets-kde4
-nepomuk-widgets_LIB=	libnepomukwidgets.so
-
-perlkde_PORT=		devel/p5-perlkde-kde4
-perlkde_PATH=		${KDE_PREFIX}/lib/kde4/kperlpluginfactory.so
-perlkde_TYPE=		run
-
-perlqt_PORT=		devel/p5-perlqt-kde4
-perlqt_PATH=		${KDE_PREFIX}/bin/puic4
-
-pimlibs_PORT=		deskutils/kdepimlibs-kde4
-pimlibs_LIB=		libkpimutils.so
-
-pykde4_PORT=		devel/py-pykde4-kde4
-pykde4_PATH=		${KDE_PREFIX}/lib/kde4/kpythonpluginfactory.so
-pykde4_TYPE=		run
-
-pykdeuic4_PORT=		devel/py-pykdeuic4-kde4
-pykdeuic4_PATH=		${LOCALBASE}/bin/pykdeuic4
-pykdeuic4_TYPE=		run
-
-qtruby_PORT=		devel/ruby-qtruby-kde4
-qtruby_LIB=		libqtruby4shared.so
-
-runtime_PORT=		x11/kde-runtime-kde4
-runtime_PATH=		${KDE_PREFIX}/bin/knotify4
-runtime_TYPE=		run
-
-smokegen_PORT=		devel/smokegen-kde4
-smokegen_LIB=		libsmokebase.so
-
-smokekde_PORT=		devel/smokekde-kde4
-smokekde_LIB=		libsmokekdecore.so
-
-smokeqt_PORT=		devel/smokeqt-kde4
-smokeqt_LIB=		libsmokeqtcore.so
-
-workspace_PORT=		x11/kde-workspace-kde4
-workspace_LIB=		libkworkspace.so
-
-# Non-Software Compilation components
-automoc4_PORT=		devel/automoc4
-automoc4_PATH=		${LOCALBASE}/bin/automoc4
-automoc4_TYPE=		build
-
-ontologies_PORT=	x11-toolkits/shared-desktop-ontologies
-ontologies_PATH=	${LOCALBASE}/share/ontology/core/rdf.ontology
-
-qimageblitz_PORT=	x11/qimageblitz
-qimageblitz_LIB=	libqimageblitz.so
-
-soprano_PORT=		textproc/soprano
-soprano_LIB=		libsoprano.so
-
-strigi_PORT=		deskutils/libstreamanalyzer
-strigi_LIB=		libstreamanalyzer.so.0
-# ====================== end of kde4 components ================================
 
 # ====================== frameworks components =================================
 activities_PORT=	x11/kf5-kactivities
@@ -639,9 +505,6 @@ breeze_PATH=		${KDE_PREFIX}/share/QtCurve/Breeze.qtcurve
 
 breeze-gtk_PORT=	x11-themes/plasma5-breeze-gtk
 breeze-gtk_PATH=	${KDE_PREFIX}/lib/kconf_update_bin/gtkbreeze5.5
-
-breeze-kde4_PORT=	x11-themes/plasma5-breeze-kde4
-breeze-kde4_PATH=	${KDE_PREFIX}/lib/kde4/kstyle_breeze_config.so
 
 decoration_PORT=	x11-wm/plasma5-kdecoration
 decoration_LIB=		libkdecorations2.so
@@ -903,91 +766,58 @@ pim-data-exporter_PATH=	${KDE_PREFIX}/bin/pimsettingexporter
 # ====================== end of pim5 components ================================
 
 # ====================== multiversion component ================================
-akonadi4_PORT=		databases/akonadi-kde4
-akonadi4_LIB=		libakonadiprotocolinternals.so
 akonadi5_PORT=		databases/akonadi
 akonadi5_LIB=		libKF5AkonadiPrivate.so
 
-attica4_PORT=		x11-toolkits/attica
-attica4_LIB=		libattica.so
-
-baloo4_PORT=		sysutils/baloo-kde4
-baloo4_LIB=		libbaloocore.so
-# baloo5 defined above, under KDE5 components
-
-baloo-widgets4_PORT=	sysutils/baloo-widgets-kde4
-baloo-widgets4_LIB=	libbaloowidgets.so
 baloo-widgets5_PORT=	sysutils/baloo-widgets
 baloo-widgets5_LIB=	libKF5BalooWidgets.so
 
-kate4_PORT=		editors/kate-kde4
-kate4_LIB=		libkateinterfaces.so
 kate5_PORT=		editors/kate
 kate5_PATH=		${QT_PLUGINDIR}/ktexteditor/katebacktracebrowserplugin.so
 
-libkcddb4_PORT=		audio/libkcddb-kde4
-libkcddb4_LIB=		libkcddb.so
 libkcddb5_PORT=		audio/libkcddb
 libkcddb5_LIB=		libKF5Cddb.so
 
-libkcompactdisc4_PORT=	audio/libkcompactdisc-kde4
-libkcompactdisc4_LIB=	libkcompactdisc.so
 libkcompactdisc5_PORT=	audio/libkcompactdisc-kde5
 libkcompactdisc5_LIB=	libKF5CompactDisc.so
 
-libkdcraw4_PORT=	graphics/libkdcraw-kde4
-libkdcraw4_LIB=		libkdcraw.so
 libkdcraw5_PORT=	graphics/libkdcraw
 libkdcraw5_LIB=		libKF5KDcraw.so
 
-libkdegames4_PORT=	games/libkdegames-kde4
-libkdegames4_LIB=	libkdegames.so
 libkdegames5_PORT=	games/libkdegames
 libkdegames5_LIB=	libKF5KDEGames.so
 
-libkeduvocdocument4_PORT=	misc/libkdeedu-kde4
-libkeduvocdocument4_LIB=	libkeduvocdocument.so
 libkeduvocdocument5_PORT=	misc/libkeduvocdocument
 libkeduvocdocument5_LIB=	libKEduVocDocument.so
 
-libkexiv24_PORT=	graphics/libkexiv2-kde4
-libkexiv24_LIB=		libkexiv2.so
 libkexiv25_PORT=	graphics/libkexiv2
 libkexiv25_LIB=		libKF5KExiv2.so
 
-libkipi4_PORT=		graphics/libkipi-kde4
-libkipi4_LIB=		libkipi.so
 libkipi5_PORT=		graphics/libkipi
 libkipi5_LIB=		libKF5Kipi.so
 
-libksane4_PORT=		graphics/libksane-kde4
-libksane4_LIB=		libksane.so
 libksane5_PORT=		graphics/libksane
 libksane5_LIB=		libKF5Sane.so
 
-marble4_PORT=		astro/marble-kde4
-marble4_LIB=		libmarblewidget.so
 marble5_PORT=		astro/marble
 marble5_LIB=		libmarblewidget-qt5.so
 
-okular4_PORT=		graphics/okular-kde4
-okular4_LIB=		libokularcore.so
 okular5_PORT=		graphics/okular
 okular5_LIB=		libOkular5Core.so
 # ====================== end of multiversion components ========================
 
 # ====================== select the proper multiversion component ==============
-.  for comp in ${_USE_KDE_BOTH}
+.    for comp in ${_USE_KDE_BOTH}
 ${comp}_PORT=		${${comp}${_KDE_VERSION}_PORT}
-.    if defined(${comp}${_KDE_VERSION}_LIB)
+.      if defined(${comp}${_KDE_VERSION}_LIB)
 ${comp}_LIB=		${${comp}${_KDE_VERSION}_LIB}
-.    else
-.      if defined(${comp}${_KDE_VERSION}_PATH})
+.      else
+.        if defined(${comp}${_KDE_VERSION}_PATH})
 ${comp}_PATH=		${${comp}${_KDE_VERSION}_LIB}
-.      endif
+.        endif
 # If neither is defined, this gets caught below when checking components
-.    endif
-. endfor
+.      endif
+.    endfor
 #===============================================================================
 
 # end of component list ########################################################
@@ -995,42 +825,43 @@ ${comp}_PATH=		${${comp}${_KDE_VERSION}_LIB}
 _USE_KDE_ALL=	${_USE_${_KDE_RELNAME}_ALL}
 
 # Iterate through components deprived of suffix.
-.  for component in ${USE_KDE:O:u:C/_.+//}
+.    for component in ${USE_KDE:O:u:C/_.+//}
   # Check that the component is valid.
-.    if ${_USE_KDE_ALL:M${component}} != ""
+.      if ${_USE_KDE_ALL:M${component}} != ""
    # Skip meta-components (currently none).
-.      if defined(${component}_PORT) && (defined(${component}_PATH) || defined(${component}_LIB))
+.        if defined(${component}_PORT) && (defined(${component}_PATH) || defined(${component}_LIB))
     # Check if a dependency type is explicitly requested.
-.        if ${USE_KDE:M${component}_*} != "" && ${USE_KDE:M${component}} == ""
+.          if ${USE_KDE:M${component}_*} != "" && ${USE_KDE:M${component}} == ""
 ${component}_TYPE=	# empty
-.          if ${USE_KDE:M${component}_build} != ""
+.            if ${USE_KDE:M${component}_build} != ""
 ${component}_TYPE+=	build
-.          endif
-.          if ${USE_KDE:M${component}_run} != ""
+.            endif
+.            if ${USE_KDE:M${component}_run} != ""
 ${component}_TYPE+=	run
-.          endif
-.        endif # ${USE_KDE:M${component}_*} != "" && ${USE_KDE:M${component}} == ""
+.            endif
+.          endif # ${USE_KDE:M${component}_*} != "" && ${USE_KDE:M${component}} == ""
     # If no dependency type is set, default to full dependency.
-.        if !defined(${component}_TYPE)
+.          if !defined(${component}_TYPE)
 ${component}_TYPE=	build run
-.        endif
+.          endif
     # Set real dependencies.
-.        if defined(${component}_LIB) && ${${component}_TYPE:Mbuild} && ${${component}_TYPE:Mrun}
+.          if defined(${component}_LIB) && ${${component}_TYPE:Mbuild} && ${${component}_TYPE:Mrun}
 LIB_DEPENDS+=		${${component}_LIB}:${${component}_PORT}
-.        else
+.          else
 ${component}_PATH?=	${KDE_PREFIX}/lib/${${component}_LIB}
 ${component}_DEPENDS=	${${component}_PATH}:${${component}_PORT}
-.          if ${${component}_TYPE:Mbuild} != ""
+.            if ${${component}_TYPE:Mbuild} != ""
 BUILD_DEPENDS+=		${${component}_DEPENDS}
-.          endif
-.          if ${${component}_TYPE:Mrun} != ""
+.            endif
+.            if ${${component}_TYPE:Mrun} != ""
 RUN_DEPENDS+=		${${component}_DEPENDS}
-.          endif
-.        endif # ${${component}_LIB} && ${${component}_TYPE:Mbuild} && ${${component}_TYPE:Mrun}
-.      endif # defined(${component}_PORT) && defined(${component}_PATH)
-.    else # ! ${_USE_KDE_ALL:M${component}} != ""
+.            endif
+.          endif # ${${component}_LIB} && ${${component}_TYPE:Mbuild} && ${${component}_TYPE:Mrun}
+.        endif # defined(${component}_PORT) && defined(${component}_PATH)
+.      else # ! ${_USE_KDE_ALL:M${component}} != ""
 IGNORE=				cannot be installed: unknown USE_KDE component '${component}'
-.    endif # ${_USE_KDE_ALL:M${component}} != ""
-.  endfor
+.      endif # ${_USE_KDE_ALL:M${component}} != ""
+.    endfor
 
+.  endif
 .endif
