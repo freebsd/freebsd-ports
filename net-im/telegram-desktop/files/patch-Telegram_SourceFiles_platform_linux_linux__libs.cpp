@@ -1,4 +1,4 @@
---- Telegram/SourceFiles/platform/linux/linux_libs.cpp.orig	2018-08-04 18:53:40 UTC
+--- Telegram/SourceFiles/platform/linux/linux_libs.cpp.orig	2018-12-24 08:16:05 UTC
 +++ Telegram/SourceFiles/platform/linux/linux_libs.cpp
 @@ -121,6 +121,7 @@ bool setupGtkBase(QLibrary &lib_gtk) {
  	return true;
@@ -34,7 +34,7 @@
  	bool indicatorLoaded = false;
  	QLibrary lib_gtk, lib_indicator;
 +#ifdef HAVE_APPINDICATOR
- 	if (loadLibrary(lib_indicator, "appindicator3", 1)) {
+ 	if (loadLibrary(lib_indicator, "ayatana-appindicator3", 1) || loadLibrary(lib_indicator, "appindicator3", 1)) {
  		if (loadLibrary(lib_gtk, "gtk-3", 0)) {
  			gtkLoaded = setupGtkBase(lib_gtk);
 @@ -249,6 +254,7 @@ void start() {

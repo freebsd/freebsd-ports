@@ -1,6 +1,6 @@
---- Telegram/gyp/telegram_sources.txt.orig	2018-10-09 21:21:48 UTC
+--- Telegram/gyp/telegram_sources.txt.orig	2018-12-24 08:16:05 UTC
 +++ Telegram/gyp/telegram_sources.txt
-@@ -761,14 +761,7 @@
+@@ -805,14 +805,7 @@
  <(emoji_suggestions_loc)/emoji_suggestions.cpp
  <(emoji_suggestions_loc)/emoji_suggestions.h
  
