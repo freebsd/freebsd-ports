@@ -2,9 +2,7 @@ bin/eglinfo-gnash
 bin/gnash
 %%GTK2%%bin/gnash-gtk-launcher
 %%GTK2%%bin/gtk-gnash
-%%KDE4%%bin/gnash-qt-launcher
 bin/gprocessor
-%%KDE4%%bin/qt4-gnash
 bin/rtmpget
 %%GSTREAMER%%bin/findmicrophones
 %%GSTREAMER%%bin/findwebcams
@@ -202,7 +200,6 @@ lib/gnash/libgnashsound.so
 %%VAAPI%%lib/gnash/libgnashvaapi.so
 libdata/pkgconfig/gnash.pc
 %%GTK2%%share/applications/gnash.desktop
-%%KDE4%%share/applications/klash.desktop
 man/man1/cygnal.1.gz
 man/man1/findmicrophones.1.gz
 man/man1/findwebcams.1.gz
@@ -213,8 +210,6 @@ man/man1/rtmpget.1.gz
 man/man1/soldumper.1.gz
 %%GTK2%%man/man1/gnash-gtk-launcher.1.gz
 %%GTK2%%man/man1/gtk-gnash.1.gz
-%%KDE4%%man/man1/gnash-qt-launcher.1.gz
-%%KDE4%%man/man1/qt4-gnash.1.gz
 %%DATADIR%%/GnashG.png
 %%DATADIR%%/gnash-splash.swf
 %%DATADIR%%/gnash_128_96.ico
@@ -222,7 +217,6 @@ man/man1/soldumper.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/gnashuser.html
 %%PORTDOCS%%%%DOCSDIR%%/images/rtmp.png
 %%GTK2%%share/icons/hicolor/32x32/apps/gnash.xpm
-%%KDE4%%share/icons/hicolor/32x32/apps/klash.xpm
 share/locale/cs/LC_MESSAGES/gnash.mo
 share/locale/da/LC_MESSAGES/gnash.mo
 share/locale/de/LC_MESSAGES/gnash.mo
