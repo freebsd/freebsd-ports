@@ -1,0 +1,17 @@
+Z88 normally assumes that all the files for the software are located
+in the same directory - i.e. all binaries, configuration files, input
+and output files should be in the same directory. The port instead
+installs the files in standard locations consistently with FreeBSD
+policies.
+A directory is created for every user at the first execution of z88
+(just run "z88" in a terminal) with path ${HOME}/.z88 and has the role
+of the main directory assumed by Z88: it is automatically populated as
+needed by copying or linking to the files installed in the standard
+locations.
+
+The port sets gedit as default editor and firefox as default web
+browser: you can change it for a particular user by modifying the file
+${HOME}/.z88/z88.fcd.
+No explicit dependency on gedit or firefox is set in the port, hence
+if a user really wants to use gedit or firefox it is necessary to
+install them manually on the system.

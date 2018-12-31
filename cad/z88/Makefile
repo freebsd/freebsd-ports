@@ -2,75 +2,62 @@
 # $FreeBSD$
 
 PORTNAME=	z88
-PORTVERSION=	13.0
-PORTREVISION=	5
+DISTVERSIONPREFIX=	v
+DISTVERSION=	15
 CATEGORIES=	cad
-MASTER_SITES=	http://www.z88.uni-bayreuth.de/download/
-DISTFILES=	${PORTNAME}130${EXTRACT_SUFX} ${PORTNAME}mane.pdf
-DIST_SUBDIR=	z88
-EXTRACT_ONLY=	${PORTNAME}130${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	phascolarctos@protonmail.ch
 COMMENT=	Compact Finite Element Analysis System
 
-LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_WRKSUBDIR=	yes
-USES=		pkgconfig
-USE_GL=		glu
-USE_GNOME=	gtk20
+LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
-#These defaults can be changed in z88.fcd too
-BROWSER?=	firefox3
-XEDITOR?=	gedit
+USES=		gl gnome pkgconfig
+USE_GITHUB=	yes
+USE_GL=		gl glu
+USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_XORG=	x11
 
-Z88_BINS=	z88f z88i1 z88i2 z88com z88d z88e z88g z88h z88n z88o	\
-		z88x z88v
-Z88_DATA=	z88.fcd z88.dyn *.dxf *.txt
+GH_ACCOUNT=	LSCAD
+GH_PROJECT=	Z88OS
 
-PORTDATA=	*
-PORTDOCS=	*
+BUILD_WRKSRC=	${WRKSRC}/make/make_unix_64
+INSTALL_WRKSRC=	${WRKSRC}/bin/unix64
 
-OPTIONS_DEFINE=	DOCS
+Z88_BIN_SUFFIXES=	g h n r o x
+Z88_DATA=	51.txt z88.dyn z88.fcd z88elp.txt z88i1.txt z88i2.txt z88i5.txt z88int.txt \
+		z88man.txt z88mat.txt z88ni.txt z88o0.txt z88o1.txt z88o2.txt z88o3.txt z88o4.txt z88o5.txt z88o8.txt z88x.dxf
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
-	@${CP} ${WRKSRC}/z88.fcd.linux ${WRKSRC}/z88.fcd
-	@${CP} ${WRKSRC}/z88.mk.kernel.gcc32 ${WRKSRC}/z88.kernel.mk
-	@${CP} ${WRKSRC}/z88.mk.other.gcc32 ${WRKSRC}/z88.other.mk
-	@${CP} ${WRKSRC}/z88.mk.gtk.gcc32 ${WRKSRC}/z88.gtk.mk
-	@${CP} ${FILESDIR}/z88.sh ${WRKSRC}/z88.sh
-	@${CP} ${FILESDIR}/z88.sh ${WRKSRC}/z88.sh
-	@${REINPLACE_CMD} -e 's+%%DOCSDIR%%+${DOCSDIR}+g; \
-	s+firefox+${BROWSER}+ ; \
-	s+joe+${XEDITOR}+ ;' \
-		${WRKSRC}/z88.fcd
-	@${REINPLACE_CMD} -e 's+%%CC%%+${CC}+g ; s+%%CFLAGS%%+${CFLAGS}+g' \
-		${WRKSRC}/z88.kernel.mk
-	@${REINPLACE_CMD} -e 's+%%CC%%+${CC}+g ; s+%%CFLAGS%%+${CFLAGS}+g ; \
-	s+%%LOCALBASE%%+${LOCALBASE}+g;' \
-		${WRKSRC}/z88.other.mk
-	@${REINPLACE_CMD} -e 's+%%CC%%+${CC}+g ; s+%%CFLAGS%%+${CFLAGS}+g' \
-		${WRKSRC}/z88.gtk.mk
-	@${REINPLACE_CMD} -e 's+%%PREFIX%%+${PREFIX}+g; ' \
-		${WRKSRC}/z88.sh
+	for x in ${BUILD_WRKSRC}/*; do ${REINPLACE_CMD} 's,z88v15os,Z88OS-15, ; s,gcc,${CC}, ; s,CFLAGS =,CFLAGS+=, ; s,-O2,, ; s,LDLIBSOX,LDFLAGS, ; s,LDFLAGS =,LDFLAGS+=, ; s,--copy-dt-needed-entries,,' $$x; done
+
+post-patch-DOCS-on:
+	${REINPLACE_CMD} 's,%%DOCSDIR%%,${DOCSDIR},' ${INSTALL_WRKSRC}/z88.fcd
 
 do-build:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} -f z88.kernel.mk kernel)
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} -f z88.other.mk other clean)
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} -f z88.gtk.mk gtk)
+	cd ${BUILD_WRKSRC}; for x in com ${Z88_BIN_SUFFIXES}; do ${SETENV} ${MAKE_ENV} ${MAKE} -f z88$$x.mk.gcc64 z88$$x ; done
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/z88.sh ${STAGEDIR}${PREFIX}/bin/z88
-	${INSTALL_PROGRAM} ${Z88_BINS:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${Z88_DATA:S|^|${WRKSRC}/|} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/z88com ${STAGEDIR}${DATADIR}
+	for x in ${Z88_BIN_SUFFIXES}; do ${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/z88$$x ${STAGEDIR}${PREFIX}/bin; done
+	${INSTALL_DATA} ${Z88_DATA:S,^,${INSTALL_WRKSRC}/,} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${FILESDIR}/z88 ${STAGEDIR}${PREFIX}/bin
+	${SED} -i '' 's,%%DATADIR%%,${DATADIR},' ${STAGEDIR}${PREFIX}/bin/z88
+	${SED} -i '' 's,%%Z88_DATA%%,${Z88_DATA},' ${STAGEDIR}${PREFIX}/bin/z88
 
 do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.htm ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.gif ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.jpg ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/z88mane.pdf ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	for x in e g; do ${INSTALL_DATA} ${WRKSRC}/docu/z88man$$x.pdf ${STAGEDIR}${DOCSDIR}; done
+
+do-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

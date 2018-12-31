@@ -1,0 +1,19 @@
+#!/bin/sh
+
+if test ! -d $HOME/.z88
+then
+	mkdir -p $HOME/.z88
+fi
+cd $HOME/.z88
+if test ! -e z88com
+then
+	ln -vs %%DATADIR%%/z88com .
+fi
+for x in %%Z88_DATA%%
+do
+	if test ! -e $x
+	then
+		cp -v %%DATADIR%%/$x .
+	fi
+done
+exec ./z88com "$@"
