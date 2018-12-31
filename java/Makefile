@@ -100,7 +100,6 @@
     SUBDIR += mmake
     SUBDIR += mx4j
     SUBDIR += netbeans
-    SUBDIR += netbeans-devel
     SUBDIR += netcomponents
     SUBDIR += netrexx
     SUBDIR += netty
