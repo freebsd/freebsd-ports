@@ -40,5 +40,4 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/book.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/book.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/book.txt
-%%DOCSDIR%%/%%DOCLANG%%/books/pmake/book.txt
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/book.txt

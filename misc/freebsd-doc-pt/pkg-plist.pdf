@@ -1,5 +1,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/bsdl-gpl/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/building-products/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributors/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/cups/article.pdf
@@ -7,6 +8,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/fonts/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/article.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/geom-class/article.pdf
 %%DOCSDIR%%/%%DOCLANG%%/articles/gjournal-desktop/article.pdf
@@ -34,3 +36,4 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/dev-model/book.pdf
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/book.pdf
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/book.pdf
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/book.pdf
