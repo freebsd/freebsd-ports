@@ -162,7 +162,6 @@
     SUBDIR += slim-themes
     SUBDIR += thewidgetfactory
     SUBDIR += ubuntulooks
-    SUBDIR += wallpapers-freebsd-kde4
     SUBDIR += xcursor-themes
     SUBDIR += xfce-evolution
     SUBDIR += xfce-icons-elementary

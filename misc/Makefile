@@ -198,7 +198,6 @@
     SUBDIR += kde-thumbnailer-chm
     SUBDIR += kde-thumbnailer-epub
     SUBDIR += kde-thumbnailer-fb2
-    SUBDIR += kde4-xdg-env
     SUBDIR += kdeedu
     SUBDIR += kdeedu-data
     SUBDIR += kdeutils
