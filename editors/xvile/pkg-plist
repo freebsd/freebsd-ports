@@ -68,6 +68,7 @@ lib/vile/vile-rexx-filt%%SO_EXT%%
 lib/vile/vile-rpm-filt%%SO_EXT%%
 lib/vile/vile-rtf-filt%%SO_EXT%%
 lib/vile/vile-ruby-filt%%SO_EXT%%
+lib/vile/vile-rust-filt%%SO_EXT%%
 lib/vile/vile-sccs-filt%%SO_EXT%%
 lib/vile/vile-scheme-filt%%SO_EXT%%
 lib/vile/vile-sed-filt%%SO_EXT%%
@@ -90,7 +91,11 @@ lib/vile/vile-xq-filt%%SO_EXT%%
 lib/vile/vile-xres-filt%%SO_EXT%%
 lib/vile/vile-xs-filt%%SO_EXT%%
 lib/vile/vile-yacc-filt%%SO_EXT%%
+lib/vile/vile-yaml-filt%%SO_EXT%%
 man/man1/xvile.1.gz
+man/man1/xvile-libdir-path.1.gz
+man/man1/xvile-pager.1.gz
+man/man1/xvile-to-html.1.gz
 share/applications/lxvile.desktop
 share/applications/uxvile.desktop
 share/applications/xvile.desktop
@@ -181,6 +186,10 @@ share/pixmaps/vile.xpm
 %%DATADIR%%/palettes.rc
 %%DATADIR%%/pas.keywords
 %%DATADIR%%/pc.keywords
+%%DATADIR%%/rust.keywords
+%%DATADIR%%/vcproj.keywords
+%%DATADIR%%/vcxproj.keywords
+%%DATADIR%%/yaml.keywords
 %%PERL%%%%DATADIR%%/perl/Breadcrumbs.pm
 %%PERL%%%%DATADIR%%/perl/CaptHook.pm
 %%PERL%%%%DATADIR%%/perl/Glob2re.pm
