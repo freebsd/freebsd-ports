@@ -1,4 +1,4 @@
---- bin/sbt-launch-lib.bash.orig	2018-12-03 08:50:53 UTC
+--- bin/sbt-launch-lib.bash.orig	2018-12-30 07:45:19 UTC
 +++ bin/sbt-launch-lib.bash
 @@ -27,7 +27,7 @@ while [ -h "$SCRIPT" ] ; do
    fi
@@ -22,8 +22,8 @@
  }
  
  syncPreloaded() {
--  local source_preloaded="$sbt_home/lib/local-preloaded"
-+  local source_preloaded="$sbt_home/local-preloaded"
+-  local source_preloaded="$sbt_home/lib/local-preloaded/"
++  local source_preloaded="$sbt_home/local-preloaded/"
    local target_preloaded="$(getPreloaded)"
    if [[ "$init_sbt_version" == "" ]]; then
      # FIXME: better $init_sbt_version detection
