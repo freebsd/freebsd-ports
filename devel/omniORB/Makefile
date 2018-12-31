@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	omniORB
-DISTVERSION=	4.2.2
+DISTVERSION=	4.2.3
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTNAME}-${DISTVERSION:S/-2//}
 
@@ -14,10 +14,12 @@ LICENSE=	GPLv2
 BROKEN_SSL=	openssl111
 BROKEN_SSL_REASON_openssl111=	member access into incomplete type 'DH' (aka 'dh_st')
 
-CONFLICTS=	omniORB41-4.1.*
-PLIST_SUB+=	SONUM=2
-GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig python tar:bzip2 shebangfix ssl
+
+CONFLICTS=	omniORB41-4.1.*
+SONUM=		3
+PLIST_SUB+=	SONUM=${SONUM}
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	py3kplist
 MAKEFILE=	GNUmakefile
@@ -47,10 +49,10 @@ post-install:
 .for i in catior convertior omniMapper omniNames omnicpp nameclt omkdepend genior
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
-.for i in libomniDynamic4.so.2.2 libomnisslTP4.so.2.2 libCOS4.so.2.2 \
-	libomniCodeSets4.so.2.2 libomniZIOPDynamic4.so.2.2 libomniZIOP4.so.2.2 \
-	libomniConnectionMgmt4.so.2.2 libomniORB4.so.2.2 libCOSDynamic4.so.2.2 \
-	libomnithread.so.4.0
+.for i in libomniDynamic4.so.2.${SONUM} libomnisslTP4.so.2.${SONUM} libCOS4.so.2.${SONUM} \
+	libomniCodeSets4.so.2.${SONUM} libomniZIOPDynamic4.so.2.${SONUM} libomniZIOP4.so.2.${SONUM} \
+	libomniConnectionMgmt4.so.2.${SONUM} libomniORB4.so.2.${SONUM} libCOSDynamic4.so.2.${SONUM} \
+	libomnithread.so.4.1
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${i}
 .endfor
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/*.so
