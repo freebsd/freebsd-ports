@@ -2,8 +2,7 @@
 
 PORTNAME=	diamond
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.23-6
-DISTVERSIONSUFFIX=	-gfecab3e
+DISTVERSION=	0.9.24
 CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -18,10 +17,9 @@ USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	bbuchfink
 
-CFLAGS+=	-DNDEBUG
 PLIST_FILES=	bin/diamond
-.if ! defined(PACKAGE_BUILDING)
-CXXFLAGS+=	-march=native
+.if defined(PACKAGE_BUILDING)
+CFLAGS+=	-mtune=generic
 .endif
 
 .include <bsd.port.mk>
