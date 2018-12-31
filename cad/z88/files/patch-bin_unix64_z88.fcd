@@ -1,0 +1,16 @@
+--- bin/unix64/z88.fcd.orig	2018-12-05 19:37:25 UTC
++++ bin/unix64/z88.fcd
+@@ -20,11 +20,11 @@ Z88COM START
+ 
+     Your HTML-Browser or Internet-Browser for use with Z88
+     Ihr HTML- oder Internet- Browser fuer Z88
+-    CBROWSER     acroread
++    CBROWSER     firefox
+ 
+     Your HTML-or Internet Browser's prefix
+     Prefix fuer Ihren HTML- oder Internet Browser
+-    CPREFIX      $HOME/z88v15os/docu/
++    CPREFIX      file://%%DOCSDIR%%/
+ 
+   WINDOW END
+ 
