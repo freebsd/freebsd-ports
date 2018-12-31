@@ -246,7 +246,7 @@ lib/libomnisslTP4.so.2
 lib/libomnisslTP4.so.2.%%SONUM%%
 lib/libomnithread.so
 lib/libomnithread.so.4
-lib/libomnithread.so.4.0
+lib/libomnithread.so.4.1
 libdata/pkgconfig/omniCOS4.pc
 libdata/pkgconfig/omniCOSDynamic4.pc
 libdata/pkgconfig/omniConnectionMgmt4.pc
