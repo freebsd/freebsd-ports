@@ -43,7 +43,7 @@ case "$daily_status_3ware_raid_enable" in
 		mv -f ${ctrl_log}.today ${ctrl_log}.yesterday
 		${tw_cli} info ${ctrl} > ${ctrl_log}.today
 		lines=`wc -l ${ctrl_log}.today | awk '{ print $1 }'`
-		diff -u -$lines ${ctrl_log}.yesterday ${ctrl_log}.today
+		diff -U $lines ${ctrl_log}.yesterday ${ctrl_log}.today
 		raid_rc=$?
 		if test $raid_rc -eq 0; then
 			cat  ${ctrl_log}.today
