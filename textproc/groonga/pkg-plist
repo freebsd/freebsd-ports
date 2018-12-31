@@ -52,6 +52,7 @@ include/groonga/groonga/obj.h
 include/groonga/groonga/operator.h
 include/groonga/groonga/option.h
 include/groonga/groonga/output.h
+include/groonga/groonga/output_columns.h
 include/groonga/groonga/pat.h
 include/groonga/groonga/plugin.h
 include/groonga/groonga/portability.h
