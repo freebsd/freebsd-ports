@@ -1,9 +1,0 @@
-lib/kde4/kipiplugin_piwigoexport.so
-share/apps/kipi/kipiplugin_piwigoexportui.rc
-share/apps/kipiplugin_piwigoexport/pics/piwigo_logo.png
-share/icons/hicolor/16x16/apps/kipi-piwigo.png
-share/icons/hicolor/22x22/apps/kipi-piwigo.png
-share/icons/hicolor/32x32/apps/kipi-piwigo.png
-share/icons/hicolor/48x48/apps/kipi-piwigo.png
-share/icons/hicolor/scalable/apps/kipi-piwigo.svgz
-share/kde4/services/kipiplugin_piwigoexport.desktop

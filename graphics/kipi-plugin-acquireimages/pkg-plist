@@ -1,5 +1,0 @@
-bin/scangui
-lib/kde4/kipiplugin_acquireimages.so
-share/applications/kde4/scangui.desktop
-share/apps/kipi/kipiplugin_acquireimagesui.rc
-share/kde4/services/kipiplugin_acquireimages.desktop
