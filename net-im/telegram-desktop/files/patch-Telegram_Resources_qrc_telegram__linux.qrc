@@ -1,8 +1,9 @@
---- Telegram/Resources/qrc/telegram_linux.qrc.orig	2018-08-04 18:53:40 UTC
+--- Telegram/Resources/qrc/telegram_linux.qrc.orig	2018-12-24 08:16:05 UTC
 +++ Telegram/Resources/qrc/telegram_linux.qrc
-@@ -1,5 +1,4 @@
+@@ -1,6 +1,5 @@
  <RCC>
    <qresource prefix="/qt">
 -    <file alias="etc/qt.conf">../etc/qt_linux.conf</file>
    </qresource>
- </RCC>
+   <qresource prefix="/fc">
+     <file alias="fc-custom.conf">../fc-custom.conf</file>

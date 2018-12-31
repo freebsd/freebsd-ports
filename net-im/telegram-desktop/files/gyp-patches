@@ -1,4 +1,4 @@
---- Telegram/gyp/codegen_rules.gypi.orig	2018-09-28 13:08:38 UTC
+--- Telegram/gyp/codegen_rules.gypi.orig	2018-12-24 08:16:05 UTC
 +++ Telegram/gyp/codegen_rules.gypi
 @@ -15,7 +15,7 @@
        '<(SHARED_INTERMEDIATE_DIR)/update_dependent_styles.timestamp',
@@ -25,7 +25,7 @@
        '-o', '<(SHARED_INTERMEDIATE_DIR)/update_dependent_qrc.timestamp',
        '<@(qrc_files)',
      ],
---- Telegram/gyp/lib_export.gyp.orig	2018-09-28 13:08:38 UTC
+--- Telegram/gyp/lib_export.gyp.orig	2018-12-24 08:16:05 UTC
 +++ Telegram/gyp/lib_export.gyp
 @@ -48,7 +48,7 @@
      'include_dirs': [
@@ -36,7 +36,7 @@
        '<(submodules_loc)/GSL/include',
        '<(submodules_loc)/variant/include',
        '<(submodules_loc)/crl/src',
---- Telegram/gyp/lib_scheme.gyp.orig	2018-09-28 13:08:38 UTC
+--- Telegram/gyp/lib_scheme.gyp.orig	2018-12-24 08:16:05 UTC
 +++ Telegram/gyp/lib_scheme.gyp
 @@ -48,7 +48,7 @@
          '<(SHARED_INTERMEDIATE_DIR)/scheme.h',
@@ -47,7 +47,7 @@
          '-o', '<(SHARED_INTERMEDIATE_DIR)', '<(res_loc)/scheme.tl',
        ],
        'message': 'codegen_scheme-ing scheme.tl..',
---- Telegram/gyp/qt_moc.gypi.orig	2018-09-28 13:08:38 UTC
+--- Telegram/gyp/qt_moc.gypi.orig	2018-12-24 08:16:05 UTC
 +++ Telegram/gyp/qt_moc.gypi
 @@ -12,12 +12,12 @@
        '<(SHARED_INTERMEDIATE_DIR)/<(_target_name)/moc/moc_<(RULE_INPUT_ROOT).cpp',
@@ -64,7 +64,7 @@
        # '<!@(python -c "for s in \'<@(_include_dirs)\'.split(\' \'): print(\'-I\' + s)")',
        '<(RULE_INPUT_PATH)',
        '-o', '<(SHARED_INTERMEDIATE_DIR)/<(_target_name)/moc/moc_<(RULE_INPUT_ROOT).cpp',
---- Telegram/gyp/qt_rcc.gypi.orig	2018-09-28 13:08:38 UTC
+--- Telegram/gyp/qt_rcc.gypi.orig	2018-12-24 08:16:05 UTC
 +++ Telegram/gyp/qt_rcc.gypi
 @@ -15,7 +15,7 @@
        '<(SHARED_INTERMEDIATE_DIR)/<(_target_name)/qrc/qrc_<(RULE_INPUT_ROOT).cpp',
@@ -75,7 +75,7 @@
        '-name', '<(RULE_INPUT_ROOT)',
        '-no-compress',
        '<(RULE_INPUT_PATH)',
---- Telegram/gyp/qt.gypi.orig	2018-09-28 13:08:38 UTC
+--- Telegram/gyp/qt.gypi.orig	2018-12-24 08:16:05 UTC
 +++ Telegram/gyp/qt.gypi
 @@ -14,25 +14,21 @@
                [ 'build_macold', {
@@ -233,7 +233,7 @@
          '-pthread',
          '-rdynamic',
        ],
---- Telegram/gyp/telegram_linux.gypi.orig	2018-09-28 13:08:38 UTC
+--- Telegram/gyp/telegram_linux.gypi.orig	2018-12-24 08:16:05 UTC
 +++ Telegram/gyp/telegram_linux.gypi
 @@ -10,7 +10,7 @@
        'variables': {
@@ -265,7 +265,7 @@
        '/usr/local/lib',
        '<(linux_path_ffmpeg)/lib',
        '<(linux_path_openal)/lib',
-@@ -43,25 +45,16 @@
+@@ -43,27 +45,16 @@
        '<(linux_path_breakpad)/lib',
      ],
      'libraries': [
@@ -274,6 +274,7 @@
 -      'ibusplatforminputcontextplugin',
 -      'fcitxplatforminputcontextplugin',
 -      'himeplatforminputcontextplugin',
+-      'nimfplatforminputcontextplugin',
 -      'liblzma.a',
 -      'libopenal.a',
 -      'libavformat.a',
@@ -288,6 +289,7 @@
 -      'libvdpau.a',
 -      'libdrm.a',
 -      'libz.a',
+-#      '<!(pkg-config 2> /dev/null --libs <@(pkgconfig_libs))',
 +      'lzma',
 +      'openal',
 +      'avformat',
@@ -298,10 +300,10 @@
 +      'minizip',
 +      'opus',
 +      'z',
- #      '<!(pkg-config 2> /dev/null --libs <@(pkgconfig_libs))',
      ],
      'cflags_cc': [
-@@ -71,7 +64,6 @@
+       '-Wno-strict-overflow',
+@@ -72,7 +63,6 @@
      'ldflags': [
        '-Wl,-wrap,aligned_alloc',
        '-Wl,-wrap,secure_getenv',
@@ -309,7 +311,7 @@
        '-Wl,--no-as-needed,-lrt',
      ],
      'configurations': {
-@@ -79,13 +71,16 @@
+@@ -80,13 +70,16 @@
          'cflags_c': [
            '-Ofast',
            '-fno-strict-aliasing',
@@ -326,19 +328,18 @@
          ],
        },
      },
-@@ -96,10 +91,7 @@
+@@ -97,9 +90,7 @@
          ],
        }], ['not_need_gtk!="True"', {
          'cflags_cc': [
--          '<!(pkg-config 2> /dev/null --cflags appindicator-0.1)',
 -          '<!(pkg-config 2> /dev/null --cflags gtk+-2.0)',
 -          '<!(pkg-config 2> /dev/null --cflags glib-2.0)',
 -          '<!(pkg-config 2> /dev/null --cflags dee-1.0)',
 +          '<!(pkg-config 2> /dev/null --cflags gtk+-3.0)',
          ],
-       }]
-     ],
---- Telegram/gyp/Telegram.gyp.orig	2018-09-28 13:08:38 UTC
+       }], ['<!(pkg-config ayatana-appindicator3-0.1; echo $?) == 0', {
+         'cflags_cc': [ '<!(pkg-config --cflags ayatana-appindicator3-0.1)' ],
+--- Telegram/gyp/Telegram.gyp.orig	2018-12-24 08:16:05 UTC
 +++ Telegram/gyp/Telegram.gyp
 @@ -51,7 +51,7 @@
          'pt-BR',
@@ -357,7 +358,7 @@
        '../ThirdParty/libtgvoip/libtgvoip.gyp:libtgvoip',
        'crl.gyp:crl',
        'lib_base.gyp:lib_base',
-@@ -84,25 +83,16 @@
+@@ -84,27 +83,18 @@
      ],
  
      'defines': [
@@ -365,6 +366,8 @@
        'AL_ALEXT_PROTOTYPES',
        'TGVOIP_USE_CXX11_LIB',
        'XXH_INLINE_ALL',
+       'TDESKTOP_API_ID=<(api_id)',
+       'TDESKTOP_API_HASH=<(api_hash)',
 -      '<!@(python -c "for s in \'<(build_defines)\'.split(\',\'): print(s)")',
 +      '<!@(%%PYTHON_CMD%% -c "for s in \'<(build_defines)\'.split(\',\'): print(s)")',
      ],
@@ -385,7 +388,7 @@
        '<(emoji_suggestions_loc)',
        '<(submodules_loc)/GSL/include',
        '<(submodules_loc)/variant/include',
-@@ -121,7 +111,7 @@
+@@ -123,7 +113,7 @@
        '<(res_loc)/export_html/images/back@2x.png',
      ],
      'sources!': [
@@ -394,7 +397,7 @@
      ],
      'conditions': [
        [ '"<(official_build_target)" != ""', {
---- Telegram/gyp/tests/tests.gyp.orig	2018-09-28 13:08:38 UTC
+--- Telegram/gyp/tests/tests.gyp.orig	2018-12-24 08:16:05 UTC
 +++ Telegram/gyp/tests/tests.gyp
 @@ -13,7 +13,7 @@
      'src_loc': '../../SourceFiles',
@@ -405,9 +408,9 @@
    },
    'targets': [{
      'target_name': 'tests',
---- Telegram/ThirdParty/libtgvoip/libtgvoip.gyp.orig	2018-09-18 16:52:01 UTC
+--- Telegram/ThirdParty/libtgvoip/libtgvoip.gyp.orig	2018-11-23 01:03:16 UTC
 +++ Telegram/ThirdParty/libtgvoip/libtgvoip.gyp
-@@ -13,11 +13,12 @@
+@@ -14,11 +14,12 @@
          'variables': {
            'tgvoip_src_loc': '.',
            'official_build_target%': '',
@@ -421,7 +424,7 @@
          ],
          'direct_dependent_settings': {
            'include_dirs': [
-@@ -263,7 +264,7 @@
+@@ -739,7 +740,7 @@
              },
            ],
            [
@@ -430,7 +433,7 @@
                'sources/': [['exclude', '<(tgvoip_src_loc)/os/linux/']],
              },
            ],
-@@ -383,12 +384,15 @@
+@@ -864,13 +865,16 @@
              },
            ],
            [
@@ -438,6 +441,7 @@
 +            '"<(OS)" == "freebsd"', {
                'defines': [
                  'WEBRTC_POSIX',
+                 'WEBRTC_LINUX',
                ],
 +              'cflags_cc': [
 +                '-std=gnu++11',
