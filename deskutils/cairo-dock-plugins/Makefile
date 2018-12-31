@@ -32,7 +32,7 @@ PLIST_SUB=	PYVER="${PYTHON_VERSION:S/thon//}"
 CMAKE_ARGS=	-DROOT_PREFIX:PATH=${STAGEDIR}
 
 OPTIONS_GROUP=		INTEGR PLUGINS ADDON TPI
-OPTIONS_GROUP_INTEGR=	GNOME_INTEGRATION KDE_INTEGRATION XFCE_INTEGRATION
+OPTIONS_GROUP_INTEGR=	GNOME_INTEGRATION XFCE_INTEGRATION
 OPTIONS_GROUP_PLUGINS=	ALSA_MIXER GMENU IMPULSE KEYBOARD_INDICATOR \
 			MAIL SOUND_EFFECTS WEBLETS XGAMMA ZEITGEIST
 OPTIONS_GROUP_ADDON=	EXIF ICAL UPOWER
@@ -48,7 +48,6 @@ GMENU_DESC=		GMenu applet
 GNOME_INTEGRATION_DESC=	GNOME integration support
 ICAL_DESC=		IETF Calendaring and Scheduling protocols
 IMPULSE_DESC=		Impulse applet
-KDE_INTEGRATION_DESC=	KDE integration support
 KEYBOARD_INDICATOR_DESC=	 Keyboard-indicator applet
 MAIL_DESC=		Mail applet
 #MONO_DESC=		Mono interface
@@ -86,12 +85,6 @@ ICAL_CMAKE_BOOL=	enable-ical-support
 
 IMPULSE_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 IMPULSE_CMAKE_BOOL=	enable-impulse
-
-#KDE_INTEGRATION_LIB_DEPENDS=
-KDE_INTEGRATION_USE_QT=		corelib
-KDE_INTEGRATION_USES=		kde:4 qt:4
-KDE_INTEGRATION_USE=		KDE=kdelibs
-KDE_INTEGRATION_CMAKE_BOOL=	enable-kde-integration
 
 KEYBOARD_INDICATOR_LIB_DEPENDS=	libexif.so:graphics/libexif \
 				libxklavier.so:x11/libxklavier
@@ -141,11 +134,6 @@ ZEITGEIST_LIB_DEPENDS=	libzeitgeist-2.0.so:sysutils/zeitgeist
 ZEITGEIST_CMAKE_BOOL=	enable-recent-events
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MKDE_INTEGRATION}
-DEPRECATED=		KDE4 is EOL upstream
-EXPIRATION_DATE=	2018-12-31
-.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f \( -name "*.c" -o -name "*.conf" \

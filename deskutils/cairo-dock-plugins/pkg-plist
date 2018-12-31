@@ -43,7 +43,6 @@ lib/cairo-dock/libcd-weather.so
 %%WEBLETS%%lib/cairo-dock/libcd-weblets.so
 lib/cairo-dock/libcd-wifi.so
 %%GNOME_INTEGRATION%%lib/cairo-dock/libcd_gnome-integration.so
-%%KDE_INTEGRATION%%lib/cairo-dock/libcd_kde-integration.so
 %%KEYBOARD_INDICATOR%%lib/cairo-dock/libcd-keyboard-indicator.so
 %%XFCE_INTEGRATION%%lib/cairo-dock/libcd_xfce-integration.so
 %%DATADIR%%/gauges/Battery-Mono/0.svg
@@ -274,7 +273,6 @@ lib/cairo-dock/libcd-wifi.so
 %%DATADIR%%/plug-ins/illusion/icon.svg
 %%DATADIR%%/plug-ins/illusion/illusion.conf
 %%DATADIR%%/plug-ins/illusion/preview.jpg
-%%KDE_INTEGRATION%%%%DATADIR%%/plug-ins/kde-integration/icon.png
 %%DATADIR%%/plug-ins/logout/icon-scheduling.svg
 %%DATADIR%%/plug-ins/logout/icon.svg
 %%DATADIR%%/plug-ins/logout/locked.svg
