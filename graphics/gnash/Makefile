@@ -31,7 +31,7 @@ USES=		autoreconf compiler:c++11-lang cpe desktop-file-utils gl \
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 WANT_GSTREAMER=	yes
-USE_GNOME=	libxml2
+USE_GNOME=	atk gconf2 gtk20 libxml2 pango
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm xv
 USE_GL=		egl
 INSTALLS_ICONS=	yes
@@ -45,6 +45,7 @@ CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-boost-lib="${LOCALBASE}/lib" \
 		--with-plugins-install=prefix \
 		--sysconfdir="${SYSCONFIGDIR}" \
+		--enable-gui=gtk \
 		--disable-testsuite \
 		--disable-kparts3 \
 		--disable-jemalloc
@@ -57,11 +58,11 @@ PLIST_SUB+=	GNASHVER="${GNASHVER}"
 
 USE_LDCONFIG=	${PREFIX}/lib/gnash
 
-OPTIONS_DEFINE=	CYGNAL VAAPI DOCS NLS GTK2
+OPTIONS_DEFINE=	CYGNAL VAAPI DOCS NLS
 OPTIONS_SINGLE=	MEDIA RENDERER
 OPTIONS_SINGLE_MEDIA=	FFMPEG GSTREAMER
 OPTIONS_SINGLE_RENDERER=AGG OPENGL CAIRO
-OPTIONS_DEFAULT=GTK2 AGG FFMPEG VAAPI
+OPTIONS_DEFAULT=AGG FFMPEG VAAPI
 
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
@@ -91,25 +92,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-CONFIGURE_ARGS+=	--disable-npapi
-
-CONFIGURE_ARGS+=	--disable-kparts4
-
-#
-# GUI options processing
-#
-GNASH_GUIS=
-
-.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=	gtk20 pango atk gconf2
-GNASH_GUIS+=	gtk
-.endif
-
-.if ${GNASH_GUIS} == ""
-IGNORE=		needs at least one GUI enabled. Please rerun 'make config' and enable GTK
-.endif
-
-CONFIGURE_ARGS+=--enable-gui=`${ECHO} ${GNASH_GUIS} | ${TR} ' ' ,`
+CONFIGURE_ARGS+=	--disable-npapi --disable-kparts4
 
 #
 # Renderer options processing
@@ -124,9 +107,7 @@ GNASH_RENDERERS+=	agg
 .if ${PORT_OPTIONS:MOPENGL}
 IGNORE=		support for OpenGL is currently broken, use option AGG
 GNASH_RENDERERS+=	ogl
-.if ${PORT_OPTIONS:MGTK2}
 LIB_DEPENDS+=		libgdkglext-x11-1.0.so:x11-toolkits/gtkglext
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MCAIRO}
