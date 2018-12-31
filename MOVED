@@ -11108,3 +11108,7 @@ graphics/kipi-plugin-videoslideshow||2018-12-31|Removed, part of expired KDE4
 graphics/kipi-plugin-vkontakte||2018-12-31|Removed, part of expired KDE4
 graphics/kipi-plugin-yandexfotki||2018-12-31|Removed, part of expired KDE4
 graphics/libkipiplugins||2018-12-31|Removed, part of expired KDE4
+graphics/kipi-plugin-imgurexport||2018-12-31|Removed, part of expired KDE4
+graphics/kipi-plugin-printimages||2018-12-31|Removed, part of expired KDE4
+graphics/digikam-kde4-doc||2018-12-31|Removed, part of expired KDE4
+graphics/digikam-kde4-l10n||2018-12-31|Has expired: KDE4 is EOL upstream
