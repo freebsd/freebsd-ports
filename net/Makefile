@@ -422,7 +422,6 @@
     SUBDIR += librsync2
     SUBDIR += libsignal
     SUBDIR += libsocket++
-    SUBDIR += libsrtp
     SUBDIR += libsrtp2
     SUBDIR += libstorj
     SUBDIR += libtnl

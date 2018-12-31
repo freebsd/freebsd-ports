@@ -1,5 +1,0 @@
-This package provides an implementation of the Secure Real-time
-Transport Protocol (SRTP), the Universal Security Transform (UST),
-and a supporting cryptographic kernel.
-
-WWW: https://github.com/cisco/libsrtp

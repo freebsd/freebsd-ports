@@ -11112,3 +11112,19 @@ graphics/kipi-plugin-imgurexport||2018-12-31|Removed, part of expired KDE4
 graphics/kipi-plugin-printimages||2018-12-31|Removed, part of expired KDE4
 graphics/digikam-kde4-doc||2018-12-31|Removed, part of expired KDE4
 graphics/digikam-kde4-l10n||2018-12-31|Has expired: KDE4 is EOL upstream
+net/libsrtp|net/libsrtp2|2018-12-31|Has expired: Superseded by libsrtp2
+x11-toolkits/wlc||2018-12-31|Has expired: Deprecated upstream
+japanese/spamassassin|mail/spamassassin|2018-12-31|Has expired: does not build
+www/spdylay||2018-12-31|Has expired: SPDY is deprecated, use HTTP/2 instead
+www/moodle33|www/moodle35|2018-12-31|Has expired: Upstream no longer maintained
+security/krb5-114|security/krb5|2018-12-31|Has expired: EOL twelve months after release of krb5-1.16
+databases/mongodb32|databases/mongodb34|2018-12-31|Has expired: EOL upstream since September 2018
+databases/mongodb32-tools|databases/mongodb34-tools|2018-12-31|Has expired: EOL upstream since September 2018
+audio/creox||2018-12-31|Has expired: Qt4 has been EOL since december 2015
+audio/terminatorx||2018-12-31|Has expired: Unmaintained, broken too often
+audio/shoutcast||2018-12-31|Has expired: Upstream vendor no longer provides releases
+dns/powerdns-recursor40|dns/powerdns-recursor|2018-12-31|Has expired: FreeBSD 10.3 has reached EoL since 2018-04-30; users should upgrade and use dns/powerdns-recursor instead
+sysutils/ataidle||2018-12-31|Has expired: obsoleted by camcontrol(8)
+sysutils/syslog-ng37|sysutils/syslog-ng|2018-12-31|Has expired: No longer officially supported by Balabit, does not support openssl111
+sysutils/cfengine22|sysutils/cfengine|2018-12-31|Has expired: No longeer supported by cfengine.com
+sysutils/syslog-ng36|sysutils/syslog-ng|2018-12-31|Has expired: No longer officially supported by Balabit, does not support openssl111

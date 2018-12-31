@@ -1,8 +1,0 @@
-terminatorX is a realtime audio synthesizer that allows you to "scratch"
-on digitally sampled audio data (*.wav, *.au, *.mp3, etc.) the way
-hiphop-DJs scratch on vinyl records.
-
-It features multiple turntables, realtime effects (built-in as well as
-LADSPA plugin effects), a sequencer and an easy-to-use gtk+ GUI.
-
-WWW: http://www.terminatorx.org/
