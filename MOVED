@@ -11129,3 +11129,4 @@ sysutils/syslog-ng37|sysutils/syslog-ng|2018-12-31|Has expired: No longer offici
 sysutils/cfengine22|sysutils/cfengine|2018-12-31|Has expired: No longeer supported by cfengine.com
 sysutils/syslog-ng36|sysutils/syslog-ng|2018-12-31|Has expired: No longer officially supported by Balabit, does not support openssl111
 sysutils/syslog-ng-incubator||2018-12-31|Removed, depends on expired sysutils/syslog-ng36
+deskutils/strigi||2018-12-31|Has expired: KDE4 is end-of-life

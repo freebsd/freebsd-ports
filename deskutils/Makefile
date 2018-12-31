@@ -247,7 +247,6 @@
     SUBDIR += simpleagenda
     SUBDIR += sliderule
     SUBDIR += spice-gtk
-    SUBDIR += strigi
     SUBDIR += sugarcrm
     SUBDIR += superkaramba-kde4
     SUBDIR += synapse

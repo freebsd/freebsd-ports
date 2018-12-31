@@ -1,9 +1,0 @@
-Strigi is a daemon which uses a very fast and efficient crawler
-that can index data on your harddrive. Indexing operations are
-performed without hammering your system, this makes Strigi the
-fastest and smallest desktop searching program.
-
-Strigi can index different file formats, including the contents of
-the archive files.
-
-WWW: http://www.vandenoever.info/software/strigi/
