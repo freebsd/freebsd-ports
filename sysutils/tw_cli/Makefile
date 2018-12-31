@@ -2,6 +2,7 @@
 
 PORTNAME=	tw_cli
 PORTVERSION=	9.5.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://docs.broadcom.com/docs-and-downloads/raid-controllers/raid-controllers-common-files/
 DISTNAME=	CLI_freebsd-from_the_10-2-2-1_9-5-5-1_codesets
@@ -17,13 +18,12 @@ LICENSE_TEXT=	Source recipient must acknowledge license.\
 		See https://www.broadcom.com/cs/Satellite?pagename=AVG2/Utilities/EulaMsg
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
-USES=		zip
+ONLY_FOR_ARCHS=	amd64 i386
 
-ONLY_FOR_ARCHS=		amd64 i386
+USES=		zip
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-
 SUB_FILES=	407.status-3ware-raid
 PORTDOCS=	tw_cli.8.html
 PLIST_FILES=	etc/periodic/daily/407.status-3ware-raid\
