@@ -11,7 +11,7 @@
 -		echo "${o_output}"
 -
 +	if openssl dhparam -C "$@" | sed	\
-+	    -e 's/^DH \*get_dh[0-9]*/static DH *get_dhParams/'	\
++	    -e 's/^\(static \)*DH \*get_dh[0-9]*/static DH *get_dhParams/'	\
 +	    -e '/^-----BEGIN DH PARAMETERS-----$/,/^-----END DH PARAMETERS-----$/ d;/^#/ d'
 +	then
  		return 0
