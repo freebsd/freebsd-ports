@@ -304,7 +304,6 @@ lib/gnucash/scm/ccache/2.0/gnucash/report/report-gnome.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/report-system.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/report-system/collectors.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/report-system/report-collectors.go
-%%TEST%%lib/gnucash/scm/ccache/2.0/gnucash/report/report-system/test/test-collectors.go
 %%TEST%%lib/gnucash/scm/ccache/2.0/gnucash/report/report-system/test/test-extras.go
 %%TEST%%lib/gnucash/scm/ccache/2.0/gnucash/report/report-system/test/test-load-report-system-module.go
 %%TEST%%lib/gnucash/scm/ccache/2.0/gnucash/report/report-system/test/test-test-extras.go
@@ -334,10 +333,6 @@ lib/gnucash/scm/ccache/2.0/gnucash/report/standard-reports/price-scatter.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/standard-reports/register.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/standard-reports/sx-summary.go
 %%TEST%%lib/gnucash/scm/ccache/2.0/gnucash/report/standard-reports/test/test-cash-flow.go
-%%TEST%%lib/gnucash/scm/ccache/2.0/gnucash/report/standard-reports/test/test-cashflow-barchart.go
-%%TEST%%lib/gnucash/scm/ccache/2.0/gnucash/report/standard-reports/test/test-standard-category-report.go
-%%TEST%%lib/gnucash/scm/ccache/2.0/gnucash/report/standard-reports/test/test-standard-net-barchart.go
-%%TEST%%lib/gnucash/scm/ccache/2.0/gnucash/report/standard-reports/test/test-standard-net-linechart.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/standard-reports/transaction.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/standard-reports/trial-balance.go
 lib/gnucash/scm/ccache/2.0/gnucash/report/stylesheet-easy.go
@@ -398,7 +393,6 @@ lib/gnucash/scm/ccache/2.0/simple-obj.go
 %%TEST%%lib/gnucash/scm/ccache/2.0/test-c-interface.go
 %%TEST%%lib/gnucash/scm/ccache/2.0/test-create-account.go
 %%TEST%%lib/gnucash/scm/ccache/2.0/test-split.go
-%%TEST%%lib/gnucash/scm/ccache/2.0/test-test-extras.go
 lib/gnucash/scm/ccache/2.0/txf-de_DE.go
 lib/gnucash/scm/ccache/2.0/txf-help-de_DE.go
 lib/gnucash/scm/ccache/2.0/txf-help.go
@@ -430,8 +424,8 @@ lib/libgnc-module.so
 man/man1/gnc-fq-dump.1.gz
 man/man1/gnc-fq-helper.1.gz
 man/man1/gnucash.1.gz
-share/appdata/gnucash.appdata.xml
 share/applications/gnucash.desktop
+share/metainfo/gnucash.appdata.xml
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.1999
@@ -545,6 +539,7 @@ share/applications/gnucash.desktop
 %%DATADIR%%/accounts/de_AT/acctchrt_brokerage.gnucash-xea
 %%DATADIR%%/accounts/de_AT/acctchrt_business.gnucash-xea
 %%DATADIR%%/accounts/de_AT/acctchrt_common.gnucash-xea
+%%DATADIR%%/accounts/de_AT/acctchrt_ekr2017.gnucash-xea
 %%DATADIR%%/accounts/de_AT/acctchrt_houseown.gnucash-xea
 %%DATADIR%%/accounts/de_AT/acctchrt_investment.gnucash-xea
 %%DATADIR%%/accounts/de_AT/acctchrt_kids.gnucash-xea
@@ -1076,7 +1071,6 @@ share/applications/gnucash.desktop
 %%DATADIR%%/scm/gnucash/report/report-system.scm
 %%DATADIR%%/scm/gnucash/report/report-system/collectors.scm
 %%DATADIR%%/scm/gnucash/report/report-system/report-collectors.scm
-%%TEST%%%%DATADIR%%/scm/gnucash/report/report-system/test/test-collectors.scm
 %%TEST%%%%DATADIR%%/scm/gnucash/report/report-system/test/test-extras.scm
 %%TEST%%%%DATADIR%%/scm/gnucash/report/report-system/test/test-load-report-system-module.scm
 %%TEST%%%%DATADIR%%/scm/gnucash/report/report-system/test/test-test-extras.scm
@@ -1106,10 +1100,6 @@ share/applications/gnucash.desktop
 %%DATADIR%%/scm/gnucash/report/standard-reports/register.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/sx-summary.scm
 %%TEST%%%%DATADIR%%/scm/gnucash/report/standard-reports/test/test-cash-flow.scm
-%%TEST%%%%DATADIR%%/scm/gnucash/report/standard-reports/test/test-cashflow-barchart.scm
-%%TEST%%%%DATADIR%%/scm/gnucash/report/standard-reports/test/test-standard-category-report.scm
-%%TEST%%%%DATADIR%%/scm/gnucash/report/standard-reports/test/test-standard-net-barchart.scm
-%%TEST%%%%DATADIR%%/scm/gnucash/report/standard-reports/test/test-standard-net-linechart.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/transaction.scm
 %%DATADIR%%/scm/gnucash/report/standard-reports/trial-balance.scm
 %%DATADIR%%/scm/gnucash/report/stylesheet-easy.scm
@@ -1172,7 +1162,6 @@ share/applications/gnucash.desktop
 %%TEST%%%%DATADIR%%/scm/test-c-interface.scm
 %%TEST%%%%DATADIR%%/scm/test-create-account.scm
 %%TEST%%%%DATADIR%%/scm/test-split.scm
-%%TEST%%%%DATADIR%%/scm/test-test-extras.scm
 %%DATADIR%%/scm/txf-de_DE.scm
 %%DATADIR%%/scm/txf-help-de_DE.scm
 %%DATADIR%%/scm/txf-help.scm
