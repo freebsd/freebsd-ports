@@ -62,6 +62,7 @@ lib/vile/vile-rexx-filt%%SO_EXT%%
 lib/vile/vile-rpm-filt%%SO_EXT%%
 lib/vile/vile-rtf-filt%%SO_EXT%%
 lib/vile/vile-ruby-filt%%SO_EXT%%
+lib/vile/vile-rust-filt%%SO_EXT%%
 lib/vile/vile-sccs-filt%%SO_EXT%%
 lib/vile/vile-scheme-filt%%SO_EXT%%
 lib/vile/vile-sed-filt%%SO_EXT%%
@@ -84,6 +85,10 @@ lib/vile/vile-xq-filt%%SO_EXT%%
 lib/vile/vile-xres-filt%%SO_EXT%%
 lib/vile/vile-xs-filt%%SO_EXT%%
 lib/vile/vile-yacc-filt%%SO_EXT%%
+lib/vile/vile-yaml-filt%%SO_EXT%%
+man/man1/vile-libdir-path.1.gz
+man/man1/vile-pager.1.gz
+man/man1/vile-to-html.1.gz
 man/man1/vile.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/Vileserv.doc
 %%PORTDOCS%%%%DOCSDIR%%/config.doc
@@ -207,6 +212,7 @@ man/man1/vile.1.gz
 %%DATADIR%%/rpm.keywords
 %%DATADIR%%/rtf.keywords
 %%DATADIR%%/ruby.keywords
+%%DATADIR%%/rust.keywords
 %%DATADIR%%/sccs.keywords
 %%DATADIR%%/scheme.keywords
 %%DATADIR%%/search.rc
@@ -227,6 +233,8 @@ man/man1/vile.1.gz
 %%DATADIR%%/vb.keywords
 %%DATADIR%%/vb6.keywords
 %%DATADIR%%/vbs.keywords
+%%DATADIR%%/vcproj.keywords
+%%DATADIR%%/vcxproj.keywords
 %%DATADIR%%/vile.hlp
 %%DATADIR%%/vile.keywords
 %%DATADIR%%/vileinit.rc
@@ -241,4 +249,5 @@ man/man1/vile.1.gz
 %%DATADIR%%/xs.keywords
 %%DATADIR%%/xsl.keywords
 %%DATADIR%%/yacc.keywords
+%%DATADIR%%/yaml.keywords
 %%DATADIR%%/zsh.keywords
