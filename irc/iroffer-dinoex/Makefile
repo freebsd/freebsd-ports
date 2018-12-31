@@ -3,7 +3,7 @@
 PORTNAME=	iroffer
 PORTVERSION=	3.31
 CATEGORIES=	irc
-MASTER_SITES=	http://iroffer.dinoex.net/
+MASTER_SITES=	https://iroffer.net/
 PKGNAMESUFFIX=	-dinoex${PKGNAMESUFFIX2}
 DISTNAME=	iroffer-dinoex-${PORTVERSION}
 
