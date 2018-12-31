@@ -10,10 +10,6 @@ share/doc/HTML/ca/kcontrol/khotkeys/index.docbook
 share/doc/HTML/ca/kcontrol/khotkeys/manage-export.png
 share/doc/HTML/ca/kcontrol/khotkeys/oxygen-22x22-edit-clear-locationbar-rtl.png
 share/doc/HTML/ca/kcontrol/khotkeys/settings.png
-share/doc/HTML/ca/kcontrol/khotkeys/shorcuts-action-command.png
-share/doc/HTML/ca/kcontrol/khotkeys/shorcuts-action-keyboard.png
-share/doc/HTML/ca/kcontrol/khotkeys/shorcuts-trigger-keyboard.png
-share/doc/HTML/ca/kcontrol/khotkeys/shorcuts-trigger-mouse.png
 share/doc/HTML/de/kcontrol/khotkeys/index.cache.bz2
 share/doc/HTML/de/kcontrol/khotkeys/index.docbook
 share/doc/HTML/en/kcontrol/khotkeys/document-open.png
@@ -50,8 +46,16 @@ share/doc/HTML/ru/kcontrol/khotkeys/shortcuts-trigger-keyboard.png
 share/doc/HTML/ru/kcontrol/khotkeys/shortcuts-trigger-mouse.png
 share/doc/HTML/sv/kcontrol/khotkeys/index.cache.bz2
 share/doc/HTML/sv/kcontrol/khotkeys/index.docbook
+share/doc/HTML/uk/kcontrol/khotkeys/groups-comment.png
 share/doc/HTML/uk/kcontrol/khotkeys/index.cache.bz2
 share/doc/HTML/uk/kcontrol/khotkeys/index.docbook
+share/doc/HTML/uk/kcontrol/khotkeys/manage-export.png
+share/doc/HTML/uk/kcontrol/khotkeys/settings.png
+share/doc/HTML/uk/kcontrol/khotkeys/shortcuts-action-command.png
+share/doc/HTML/uk/kcontrol/khotkeys/shortcuts-action-dbus.png
+share/doc/HTML/uk/kcontrol/khotkeys/shortcuts-action-keyboard.png
+share/doc/HTML/uk/kcontrol/khotkeys/shortcuts-trigger-keyboard.png
+share/doc/HTML/uk/kcontrol/khotkeys/shortcuts-trigger-mouse.png
 %%DATADIR%%/defaults.khotkeys
 %%DATADIR%%/kde32b1.khotkeys
 %%DATADIR%%/konqueror_gestures_kde321.khotkeys

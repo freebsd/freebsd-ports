@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plasma-desktop
-DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	3
+DISTVERSION=	${KDE_PLASMA_VERSION}.1
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -42,7 +41,7 @@ USE_QT=		concurrent core dbus declarative gui network phonon4 printsupport \
 		buildtools_build qmake_build
 USE_XORG=	ice sm x11 xcb xcursor xext xfixes xft xi xrender
 
-OPTIONS_DEFINE=	PULSEAUDIO SYNAPTICS
+OPTIONS_DEFINE=	SYNAPTICS
 OPTIONS_SUB=	yes
 
 OPTIONS_GROUP=		IM
@@ -50,9 +49,6 @@ OPTIONS_GROUP_IM=	IBUS SCIM
 IM_DESC=		Input Method Support
 
 OPTIONS_DEFAULT=	SYNAPTICS
-
-PULSEAUDIO_CMAKE_BOOL=		WANT_PULSEAUDIO
-PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 
 SYNAPTICS_DESC=			Build touchpad KCM
 SYNAPTICS_BUILD_DEPENDS=	xf86-input-synaptics>0:x11-drivers/xf86-input-synaptics

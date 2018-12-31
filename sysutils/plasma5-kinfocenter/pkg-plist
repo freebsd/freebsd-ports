@@ -39,6 +39,7 @@ share/doc/HTML/sv/kinfocenter/index.cache.bz2
 share/doc/HTML/sv/kinfocenter/index.docbook
 share/doc/HTML/uk/kinfocenter/index.cache.bz2
 share/doc/HTML/uk/kinfocenter/index.docbook
+share/doc/HTML/uk/kinfocenter/kinfocenter.png
 share/kcmusb/usb.ids
 %%DATADIR%%/images/freebsd_logo.svg
 share/kservices5/about-distro.desktop

@@ -14,6 +14,7 @@ lib/libKScreenLocker.so.%%KDE_PLASMA_VERSION%%
 lib/libexec/kscreenlocker_greet
 %%QT_PLUGINDIR%%/screenlocker_kcm.so
 share/dbus-1/interfaces/kf5_org.freedesktop.ScreenSaver.xml
+share/dbus-1/interfaces/org.kde.screensaver.xml
 share/kconf_update/kscreenlocker.upd
 share/kconf_update/ksreenlocker_5_3_separate_autologin.pl
 share/knotifications5/ksmserver.notifyrc
@@ -78,8 +79,8 @@ share/locale/hu/LC_MESSAGES/screenlocker_kcm.mo
 share/locale/ia/LC_MESSAGES/kscreenlocker.mo
 share/locale/ia/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/ia/LC_MESSAGES/screenlocker_kcm.mo
-share/locale/id/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/id/LC_MESSAGES/kscreenlocker.mo
+share/locale/id/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/id/LC_MESSAGES/screenlocker_kcm.mo
 share/locale/it/LC_MESSAGES/kscreenlocker.mo
 share/locale/it/LC_MESSAGES/kscreenlocker_greet.mo

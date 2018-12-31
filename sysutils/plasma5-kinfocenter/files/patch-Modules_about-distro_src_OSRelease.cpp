@@ -2,7 +2,7 @@ Dirtily patch in FreeBSD Name/Information. This should be done
 in a better way down the line.
 
 
---- Modules/about-distro/src/OSRelease.cpp.orig	2018-02-01 13:18:11 UTC
+--- Modules/about-distro/src/OSRelease.cpp.orig	2018-09-13 16:46:31 UTC
 +++ Modules/about-distro/src/OSRelease.cpp
 @@ -63,73 +63,10 @@ static void setVar(QStringList *var, const QString &va
  
@@ -34,7 +34,7 @@ in a better way down the line.
 -    QString line;
 -    QStringList comps;
 -    while (!file.atEnd()) {
--        line = file.readLine();
+-        line = QString::fromLatin1(file.readLine());
 -
 -        if (line.startsWith(QLatin1Char('#'))) {
 -            // Comment line
@@ -77,11 +77,10 @@ in a better way down the line.
 -        // os-release explicitly allows for vendor specific aditions. We have no
 -        // interest in those right now.
 -    }
--}
 +    name = QLatin1String("FreeBSD");
 +    id = QLatin1String("FreeBSD");
 +    prettyName = QLatin1String("FreeBSD");
 +    homeUrl = QLatin1String("https://freebsd.org");
 +    supportUrl = QLatin1String("https://www.freebsd.org/support.html");
 +    bugReportUrl = QLatin1String("https://bugs.freebsd.org/bugzilla");
-+}	
+ }

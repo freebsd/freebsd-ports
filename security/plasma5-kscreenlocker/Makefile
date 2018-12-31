@@ -2,7 +2,6 @@
 
 PORTNAME=	kscreenlocker
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	2
 CATEGORIES=	security kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -26,12 +25,5 @@ USE_QT=		core dbus declarative gui network testlib widgets x11extras xml \
 USE_XORG=	ice sm x11 xcb xcursor xext xi
 
 SHEBANG_FILES=	updaters/ksreenlocker_5_3_separate_autologin.pl
-
-# Install a generic console kit based program to unlock the screen in the event
-# of a failure.
-SUB_FILES=     ck-unlock-session
-
-post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/ck-unlock-session ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

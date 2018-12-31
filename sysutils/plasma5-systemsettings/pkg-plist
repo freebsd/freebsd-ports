@@ -1,4 +1,5 @@
 bin/systemsettings5
+etc/xdg/systemsettings.categories
 include/systemsettingsview/BaseData.h
 include/systemsettingsview/BaseMode.h
 include/systemsettingsview/MenuItem.h
