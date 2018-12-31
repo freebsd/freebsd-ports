@@ -154,12 +154,6 @@ USES+=		bdb
 LDFLAGS+=		-lpthread
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MLUA} && ${LUA_VER_STR} >= 53
-BROKEN=		Does not build with Lua 5.3: miltertest.c:4171:54: error: too few arguments to function call, expected 5, have 4
-.endif
-
 pre-configure:
 	${REINPLACE_CMD} -e '/PKG_CHECK_MODULES/s/lua5\.[0-9]/lua-${LUA_VER}/' \
 	    -e '/PKG_CONFIG/s/cyrussasl/libsasl2/'			 \
@@ -175,4 +169,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/opendkim/opendkim.conf.sample \
 	    ${STAGEDIR}${PREFIX}/etc/mail/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
