@@ -2,38 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	kdbg
-PORTVERSION=	2.5.6
-PORTREVISION=	2
+DISTVERSIONPREFIX=	${PORTNAME}-
+DISTVERSION=	3.0.0
 CATEGORIES=	devel kde
-MASTER_SITES=	SF/${PORTNAME}/Source%20Code/${PORTVERSION}
 
 MAINTAINER=	thomas.sander@gmx.de
 COMMENT=	Graphical user interface around gdb using KDE
 
 LICENSE=	GPLv2
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2018-12-31
-
-USES=		cmake kde:4 qt:4
-USE_KDE=	kdelibs automoc4
-USE_QT=		moc_build qmake_build rcc_build uic_build network xml dbus corelib gui svg
-INSTALLS_ICONS=	yes
-
-OPTIONS_DEFINE=	NLS
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-post-patch:
-.if empty(PORT_OPTIONS:MNLS)
-	${REINPLACE_CMD} -e 's|add_subdirectory(po)||g' ${WRKSRC}/CMakeLists.txt
-.endif
+USES=		cmake kde:5 qt:5
+USE_KDE=	auth codecs config configwidgets coreaddons ecm \
+		i18n iconthemes widgetsaddons windowsystem xmlgui
+USE_QT=		core dbus gui widgets xml \
+		buildtools_build qmake_build
+USE_GITHUB=	yes
+GH_ACCOUNT=	j6t
 
 .include <bsd.port.mk>
