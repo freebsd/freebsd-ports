@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	omniorb
-DISTVERSION=	4.2.2
+DISTVERSION=	4.2.3
 CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/omniORBpy/omniORBpy-${DISTVERSION:S/-2//}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +19,8 @@ RUN_DEPENDS=	omniidl:devel/omniORB
 # see also the "post-extract" target below.
 BUILD_DEPENDS=	${NONEXISTENT}:devel/omniORB:patch
 
+USES=		gmake python shebangfix ssl tar:bzip2
+
 CONFLICTS=	py*-orbit-2* ${PYTHON_PKGNAMEPREFIX}omniorb3-3*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
@@ -31,7 +33,6 @@ OMNIORB_WRKSRC!=	cd ${.CURDIR}/../omniORB && ${MAKE} -V WRKSRC
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
 MAKEFILE=	GNUmakefile
-USES=		gmake python shebangfix ssl tar:bzip2
 SHEBANG_FILES=	examples/tests/*.py examples/poa/*.py \
 		examples/fortune/*.py examples/embed/*.py \
 		examples/valuetype/tests/*.py \
