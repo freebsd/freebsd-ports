@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ioncube
-DISTVERSION=	10.3.0
+DISTVERSION=	10.3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.ioncube.com/loader_downloads/ \
 		http://downloads2.ioncube.com/loader_downloads/ \
