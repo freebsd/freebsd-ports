@@ -26,7 +26,8 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 
 CONFLICTS=	gnash-devel-[0-9]*
 
-USES=		autoreconf compiler:c++11-lang cpe desktop-file-utils gmake jpeg libtool pkgconfig tar:bzip2
+USES=		autoreconf compiler:c++11-lang cpe desktop-file-utils gl \
+		gmake gnome jpeg libtool pkgconfig tar:bzip2
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 WANT_GSTREAMER=	yes
@@ -56,10 +57,9 @@ PLIST_SUB+=	GNASHVER="${GNASHVER}"
 
 USE_LDCONFIG=	${PREFIX}/lib/gnash
 
-OPTIONS_DEFINE=	CYGNAL VAAPI DOCS NLS
-OPTIONS_SINGLE=	MEDIA GUI RENDERER
+OPTIONS_DEFINE=	CYGNAL VAAPI DOCS NLS GTK2
+OPTIONS_SINGLE=	MEDIA RENDERER
 OPTIONS_SINGLE_MEDIA=	FFMPEG GSTREAMER
-OPTIONS_SINGLE_GUI=	GTK2 KDE4
 OPTIONS_SINGLE_RENDERER=AGG OPENGL CAIRO
 OPTIONS_DEFAULT=GTK2 AGG FFMPEG VAAPI
 
@@ -73,7 +73,6 @@ FFMPEG_DESC=	ffmpeg media handler
 GSTREAMER_DESC=	GStreamer media handler
 VAAPI_DESC=	VAAPI support (requires FFMPEG)
 
-KDE4_USES=	kde:4 qmake:no_env qt:4
 CYGNAL_CONFIGURE_ENABLE=	cygnal
 
 .include <bsd.port.options.mk>
@@ -106,21 +105,8 @@ USE_GNOME+=	gtk20 pango atk gconf2
 GNASH_GUIS+=	gtk
 .endif
 
-.if ${PORT_OPTIONS:MKDE4}
-DEPRECATED=	KDE4 is end-of-life
-EXPIRATION_DATE=2018-12-31
-GNASH_GUIS+=	kde4
-USE_QT=		moc_build
-USE_KDE=	kdelibs
-CONFIGURE_ARGS+=	--without-gconf
-CONFIGURE_ENV+=	KDE4_CONFIG="${KDE_PREFIX}/bin/kde4-config"
-.if ${PORT_OPTIONS:MNLS}
-LDFLAGS+=	-lintl
-.endif
-.endif
-
 .if ${GNASH_GUIS} == ""
-IGNORE=		needs at least one GUI enabled. Please rerun 'make config' and enable GTK or KDE4
+IGNORE=		needs at least one GUI enabled. Please rerun 'make config' and enable GTK
 .endif
 
 CONFIGURE_ARGS+=--enable-gui=`${ECHO} ${GNASH_GUIS} | ${TR} ' ' ,`
@@ -144,9 +130,6 @@ LIB_DEPENDS+=		libgdkglext-x11-1.0.so:x11-toolkits/gtkglext
 .endif
 
 .if ${PORT_OPTIONS:MCAIRO}
-.if ${PORT_OPTIONS:MKDE4}
-IGNORE=			doesn't support Cairo renderer with KDE4 gui. Please rerun 'make config' and select different renderer or disable KDE4 GUI
-.endif
 LIB_DEPENDS+=		libcairo.so:graphics/cairo
 GNASH_RENDERERS+=	cairo
 .endif
