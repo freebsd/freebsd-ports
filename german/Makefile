@@ -17,7 +17,6 @@
     SUBDIR += hyphen
     SUBDIR += jdictionary-eng-ger
     SUBDIR += jdictionary-ger-hun
-    SUBDIR += kde4-l10n
     SUBDIR += libreoffice
     SUBDIR += mediathekview
     SUBDIR += mythes

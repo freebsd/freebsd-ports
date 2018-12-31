@@ -1,8 +1,0 @@
-lib/kde4/kcm_kamera.so
-lib/kde4/kio_kamera.so
-share/apps/solid/actions/solid_camera.desktop
-share/doc/HTML/en/kcontrol/kamera/common
-share/doc/HTML/en/kcontrol/kamera/index.cache.bz2
-share/doc/HTML/en/kcontrol/kamera/index.docbook
-share/kde4/services/camera.protocol
-share/kde4/services/kamera.desktop

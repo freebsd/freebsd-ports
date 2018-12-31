@@ -109,16 +109,9 @@
     SUBDIR += imwheel
     SUBDIR += innerspace
     SUBDIR += ipager
-    SUBDIR += kactivities
-    SUBDIR += kactivitymanagerd
     SUBDIR += kb2mb2
     SUBDIR += kde-baseapps
-    SUBDIR += kde-baseapps-kde4
-    SUBDIR += kde-runtime-kde4
-    SUBDIR += kde-workspace-kde4
-    SUBDIR += kde4
     SUBDIR += kde5
-    SUBDIR += kdelibs-kde4
     SUBDIR += keybinder
     SUBDIR += keybinder-gtk3
     SUBDIR += keyboardcast
@@ -135,9 +128,7 @@
     SUBDIR += kf5-kwayland
     SUBDIR += kf5-kwindowsystem
     SUBDIR += kf5-plasma-framework
-    SUBDIR += kgamma-kde4
     SUBDIR += konsole
-    SUBDIR += konsole-kde4
     SUBDIR += leechcraft
     SUBDIR += lemonbar
     SUBDIR += libICE
@@ -181,7 +172,6 @@
     SUBDIR += libgnomekbd
     SUBDIR += libgnomemm26
     SUBDIR += libinput
-    SUBDIR += libkonq-kde4
     SUBDIR += libmatekbd
     SUBDIR += liboldX
     SUBDIR += libsx
@@ -261,8 +251,6 @@
     SUBDIR += perwindowlayoutd
     SUBDIR += pipeglade
     SUBDIR += pixman
-    SUBDIR += plasma-scriptengine-python-kde4
-    SUBDIR += plasma-scriptengine-ruby-kde4
     SUBDIR += plasma5-kactivitymanagerd
     SUBDIR += plasma5-kgamma5
     SUBDIR += plasma5-kscreen
@@ -532,7 +520,6 @@
     SUBDIR += xzoom
     SUBDIR += yad
     SUBDIR += yakuake
-    SUBDIR += yakuake-kde4
     SUBDIR += yalias
     SUBDIR += yeahconsole
     SUBDIR += yelp

@@ -1,5 +1,0 @@
-KDE System Guard Daemon is the daemon part of ksysguard. The daemon
-can be installed on a remote machine to enable ksysguard on another
-machine to monitor it through the daemon running there.
-
-WWW: http://www.kde.org/

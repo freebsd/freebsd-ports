@@ -1,5 +1,0 @@
-Baloo is the next generation of the Nepomuk project.  It's responsible
-for handling user metadata such as tags, rating and comments.  It
-also handles indexing and searching for files, emails, contacts, etc.
-
-WWW: https://projects.kde.org/projects/kde/kdelibs/baloo

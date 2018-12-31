@@ -1,5 +1,0 @@
-kdesvn installs alternative svn protocols to that of kdesdk4. To use the
-kdesvn protocols append a 'k' to the beginning of the protocol, i.e.
-"svn+https://www.example.com/" becomes "ksvn+https://www.example.com/".
-kdesvn provides the following svn protocols:
-  ksvn, ksvn+file, ksvn+ssh, ksvn+http, ksvn+https

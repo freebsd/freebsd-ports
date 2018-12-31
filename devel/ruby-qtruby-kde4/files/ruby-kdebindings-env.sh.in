@@ -1,6 +1,0 @@
-#!/bin/sh
-
-if [ %%PREFIX%% != %%LOCALBASE%% ]; then
-RUBYLIB=${RUBYLIB}:%%RUBY_SITELIBDIR%%:%%RUBY_SITEARCHLIBDIR%%
-export RUBYLIB
-fi

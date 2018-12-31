@@ -72,11 +72,7 @@
     SUBDIR += kak-lsp
     SUBDIR += kakoune
     SUBDIR += kate
-    SUBDIR += kate-kde4
-    SUBDIR += kate-plugin-pate-kde4
     SUBDIR += kile
-    SUBDIR += kile-kde4
-    SUBDIR += klat4
     SUBDIR += komodo-edit
     SUBDIR += lazarus
     SUBDIR += lazarus-qt4

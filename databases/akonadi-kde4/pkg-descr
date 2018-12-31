@@ -1,6 +1,0 @@
-The Akonadi framework is responsible for providing applications with a
-centralized database to store, index and retrieve the user's personal
-information. This includes the user's emails, contacts, calendars,
-events, journals, alarms, notes, etc.
-
-WWW: https://community.kde.org/KDE_PIM/Akonadi

@@ -1,6 +1,0 @@
-lib/kde4/kded_dnssdwatcher.so
-lib/kde4/kio_zeroconf.so
-share/apps/remoteview/zeroconf.desktop
-share/dbus-1/interfaces/org.kde.kdnssd.xml
-share/kde4/services/kded/dnssdwatcher.desktop
-share/kde4/services/zeroconf.protocol

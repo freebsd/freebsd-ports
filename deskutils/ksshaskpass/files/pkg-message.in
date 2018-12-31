@@ -1,7 +1,0 @@
-------------------------------------------------------------------------------
-You may want to add the following to ~/.kde4/Autostart/ssh-add:
-
-#!/bin/sh
-exec /usr/bin/env SSH_ASKPASS=%%PREFIX%%/bin/ksshaskpass \
-  /usr/bin/ssh-add < /dev/null
-------------------------------------------------------------------------------

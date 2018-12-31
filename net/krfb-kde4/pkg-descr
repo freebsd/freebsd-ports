@@ -1,6 +1,0 @@
-KDE Desktop Sharing (krfb)  is a small server for the RFB protocol,
-better known as VNC. Unlike most other Unix/Linux RFB servers, KRfb
-allows you to share your X11 session instead of creating a new X11
-session.
-
-WWW: http://www.kde.org

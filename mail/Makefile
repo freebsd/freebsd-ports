@@ -180,8 +180,6 @@
     SUBDIR += jmba
     SUBDIR += junkfilter
     SUBDIR += jwsmtp
-    SUBDIR += kbiff
-    SUBDIR += kshowmail
     SUBDIR += lbdb
     SUBDIR += lens
     SUBDIR += libcmime

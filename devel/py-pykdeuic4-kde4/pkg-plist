@@ -1,8 +1,0 @@
-bin/pykdeuic4
-bin/pykdeuic4-%%PYTHON_VER%%
-%%PYTHON_SITELIBDIR%%/PyQt4/uic/pykdeuic4.py
-%%PYTHON_SITELIBDIR%%/PyQt4/uic/%%PYCACHE%%pykdeuic4.%%PYC_SUFFIX%%
-%%PYTHON_SITELIBDIR%%/PyQt4/uic/%%PYCACHE%%pykdeuic4.%%PYO_SUFFIX%%
-%%PYTHON_SITELIBDIR%%/PyQt4/uic/widget-plugins/kde4.py
-%%PYTHON_SITELIBDIR%%/PyQt4/uic/%%PYCACHE%%widget-plugins/kde4.%%PYC_SUFFIX%%
-%%PYTHON_SITELIBDIR%%/PyQt4/uic/%%PYCACHE%%widget-plugins/kde4.%%PYO_SUFFIX%%

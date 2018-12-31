@@ -77,7 +77,6 @@
     SUBDIR += chems
     SUBDIR += cherokee
     SUBDIR += choqok
-    SUBDIR += choqok-kde4
     SUBDIR += chpasswd
     SUBDIR += chromium
     SUBDIR += ckeditor
@@ -330,15 +329,12 @@
     SUBDIR += kannel
     SUBDIR += kannel-sqlbox
     SUBDIR += kcgi
-    SUBDIR += kdewebdev-kde4
     SUBDIR += kf5-kdewebkit
     SUBDIR += kf5-khtml
     SUBDIR += kf5-kjs
     SUBDIR += kf5-kjsembed
     SUBDIR += kohana
-    SUBDIR += kpartsplugin
     SUBDIR += kurly
-    SUBDIR += kwebkitpart
     SUBDIR += larbin
     SUBDIR += libapreq2
     SUBDIR += libdom
@@ -1919,7 +1915,6 @@
     SUBDIR += redmine-single_auth
     SUBDIR += redmine-wiki_notes
     SUBDIR += rejik
-    SUBDIR += rekonq
     SUBDIR += reportmagic
     SUBDIR += repos-style
     SUBDIR += resin3

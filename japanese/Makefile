@@ -136,11 +136,9 @@
     SUBDIR += kbanner
     SUBDIR += kcc
     SUBDIR += kcode
-    SUBDIR += kde4-l10n
     SUBDIR += kdrill
     SUBDIR += kinput2
     SUBDIR += kiten
-    SUBDIR += kiten-kde4
     SUBDIR += kon2-14dot
     SUBDIR += kon2-16dot
     SUBDIR += kpcal

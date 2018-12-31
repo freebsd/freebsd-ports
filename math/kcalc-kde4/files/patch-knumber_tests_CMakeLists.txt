@@ -1,8 +1,0 @@
---- knumber/tests/CMakeLists.txt.orig	2013-03-09 12:21:29.000000000 +0100
-+++ knumber/tests/CMakeLists.txt	2013-03-09 12:22:29.000000000 +0100
-@@ -5,4 +5,4 @@
- 
- kde4_add_unit_test(knumbertest TESTNAME KNumber ${knumbertest_SRCS})
- 
--target_link_libraries(knumbertest ${KDE4_KDECORE_LIBS} ${GMP_LIBRARIES})
-+target_link_libraries(knumbertest ${KDE4_KDECORE_LIBS} ${GMP_LIBRARIES} ${MPFR_LIBRARIES})

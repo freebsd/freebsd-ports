@@ -71,7 +71,6 @@
     SUBDIR += php73-curl
     SUBDIR += php73-ftp
     SUBDIR += phpwebftp
-    SUBDIR += plasma-applet-ftpmonitor
     SUBDIR += proftpd
     SUBDIR += proftpd-mod_geoip
     SUBDIR += profxp

@@ -163,7 +163,6 @@
     SUBDIR += kf5-kross
     SUBDIR += kross-interpreters
     SUBDIR += kturtle
-    SUBDIR += kturtle-kde4
     SUBDIR += lafontaine
     SUBDIR += lci
     SUBDIR += ldc

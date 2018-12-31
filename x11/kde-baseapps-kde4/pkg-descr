@@ -1,9 +1,0 @@
-KDE Base Applications consists of what runs on the desktop. This
-module isn't a complete collection of essential applications that a
-user would expect on a desktop (such as e-mail and calculator). This
-package is the basic set of applications beyond the workspace that KDE
-applications can assume are installed. These applications should have
-no problem running on Windows, OS X, Gnome, etc. as stand alone
-applications if the user wanted to use them there.
-
-WWW: http://www.kde.org

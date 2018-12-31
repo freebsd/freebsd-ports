@@ -1,9 +1,0 @@
---- CMakeLists.txt.orig	2014-08-14 20:17:11 UTC
-+++ CMakeLists.txt
-@@ -1,3 +1,6 @@
-+find_package(KDE4 REQUIRED)
-+FIND_PACKAGE(PythonLibrary REQUIRED)
-+INCLUDE(PythonMacros)
- 
- PYTHON_INSTALL(kde4.py ${PYTHON_SITE_PACKAGES_INSTALL_DIR}/PyQt4/uic/widget-plugins/ TRUE)
- PYTHON_INSTALL(pykdeuic4.py ${PYTHON_SITE_PACKAGES_INSTALL_DIR}/PyQt4/uic/)

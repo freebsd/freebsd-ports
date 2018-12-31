@@ -11,7 +11,6 @@
     SUBDIR += hunspell
     SUBDIR += hyphen
     SUBDIR += kadu
-    SUBDIR += kde4-l10n
     SUBDIR += libgadu
     SUBDIR += libreoffice
     SUBDIR += libtlen
