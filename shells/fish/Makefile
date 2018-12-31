@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	fish
-PORTVERSION=	2.7.0
+PORTVERSION=	3.0.0
 CATEGORIES=	shells
-MASTER_SITES=	http://fishshell.com/files/${PORTVERSION}/
+MASTER_SITES=	https://github.com/fish-shell/fish-shell/releases/download/${PORTVERSION}/
 
 MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	User friendly command line shell
@@ -13,42 +13,35 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS+=	libpcre2-32.so:devel/pcre2
 
-USES=		autoreconf cpe gmake libtool ncurses pkgconfig pathfix python:3.4+ \
+# The python dependency is only needed by shebangfix.  At runtime python is
+# only needed by some optional scripts that aren't in PATH.
+USES=		cmake cpe ncurses python:3.4+:build \
 		localbase compiler:c++11-lang shebangfix
+
 SHEBANG_FILES=	share/tools/*.py share/tools/web_config/webconfig.py
 
 CONFLICTS_INSTALL=	comms/mlan3
 
-GNU_CONFIGURE=	yes
-
 CPE_VENDOR=	fishshell
 
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 MANDIRS=	${DATADIR}/man/man1
 
-OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_DEFAULT=	MANPAGES DOCS NLS
+OPTIONS_DEFINE=	MANPAGES DOCS NLS
 OPTIONS_SUB=	yes
 
+DOCS_BUILD_DEPENDS+=	doxygen:devel/doxygen
+MANPAGES_BUILD_DEPENDS+=	doxygen:devel/doxygen
 NLS_USES=		gettext
-NLS_CONFIGURE_ENV=	ac_cv_func_gettext=yes
-NLS_CONFIGURE_OFF=	--without-gettext
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^all:/s|user_doc|| ; \
-		 s| "$$(HAVE_GETTEXT)" = 1| x$$(HAVE_GETTEXT) = x1| ; \
-		 s| $$(HAVE_GETTEXT) = 1| x$$(HAVE_GETTEXT) = x1| ; \
-		 s|$$(DESTDIR)$$(bindir)/fish|$$(bindir)/fish|g' \
-		 ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e \
-		's|-rdynamic|-Wl,--export-dynamic| ; \
-		 /pthread_create/d ; \
-		 s|ncurses curses|curses| ; \
-		 s|ncurses.h||' ${WRKSRC}/configure.ac
+NLS_CMAKE_BOOL=		WITH_GETTEXT
 
 post-install:
 .for i in fish fish_indent fish_key_reader
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
+
+post-stage-MANPAGES-off:
+	@${RM} -rf ${STAGEDIR}${MANPREFIX}/man/man1
+	@${RM} -rf ${STAGEDIR}${DATADIR}/man
 
 .include <bsd.port.mk>
