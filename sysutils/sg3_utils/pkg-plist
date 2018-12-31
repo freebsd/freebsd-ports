@@ -1,3 +1,4 @@
+bin/rescan-scsi-bus.sh
 bin/scsi_logging_level
 bin/scsi_mandat
 bin/scsi_readcap
@@ -6,6 +7,7 @@ bin/scsi_satl
 bin/scsi_start
 bin/scsi_stop
 bin/scsi_temperature
+bin/sg_bg_ctl
 bin/sg_compare_and_write
 bin/sg_decode_sense
 bin/sg_format
@@ -39,11 +41,13 @@ bin/sg_sat_identify
 bin/sg_sat_phy_event
 bin/sg_sat_read_gplog
 bin/sg_sat_set_features
+bin/sg_seek
 bin/sg_senddiag
 bin/sg_ses
 bin/sg_ses_microcode
 bin/sg_start
 bin/sg_stpg
+bin/sg_stream_ctl
 bin/sg_sync
 bin/sg_timestamp
 bin/sg_turs
@@ -55,14 +59,18 @@ bin/sg_write_buffer
 bin/sg_write_long
 bin/sg_write_same
 bin/sg_write_verify
+bin/sg_write_x
 bin/sg_zone
+include/scsi/sg_cmds.h
 include/scsi/sg_cmds_basic.h
 include/scsi/sg_cmds_extra.h
 include/scsi/sg_cmds_mmc.h
-include/scsi/sg_cmds.h
-include/scsi/sg_lib_data.h
 include/scsi/sg_lib.h
+include/scsi/sg_lib_data.h
+include/scsi/sg_pr2serr.h
 include/scsi/sg_pt.h
+include/scsi/sg_pt_nvme.h
+include/scsi/sg_unaligned.h
 lib/libsgutils2.a
 lib/libsgutils2.so
 lib/libsgutils2.so.2
@@ -74,6 +82,8 @@ man/man8/scsi_satl.8.gz
 man/man8/scsi_start.8.gz
 man/man8/scsi_stop.8.gz
 man/man8/scsi_temperature.8.gz
+man/man8/sg3_utils.8.gz
+man/man8/sg_bg_ctl.8.gz
 man/man8/sg_compare_and_write.8.gz
 man/man8/sg_decode_sense.8.gz
 man/man8/sg_format.8.gz
@@ -107,11 +117,13 @@ man/man8/sg_sat_identify.8.gz
 man/man8/sg_sat_phy_event.8.gz
 man/man8/sg_sat_read_gplog.8.gz
 man/man8/sg_sat_set_features.8.gz
+man/man8/sg_seek.8.gz
 man/man8/sg_senddiag.8.gz
-man/man8/sg_ses_microcode.8.gz
 man/man8/sg_ses.8.gz
+man/man8/sg_ses_microcode.8.gz
 man/man8/sg_start.8.gz
 man/man8/sg_stpg.8.gz
+man/man8/sg_stream_ctl.8.gz
 man/man8/sg_sync.8.gz
 man/man8/sg_timestamp.8.gz
 man/man8/sg_turs.8.gz
@@ -123,6 +135,6 @@ man/man8/sg_write_buffer.8.gz
 man/man8/sg_write_long.8.gz
 man/man8/sg_write_same.8.gz
 man/man8/sg_write_verify.8.gz
+man/man8/sg_write_x.8.gz
 man/man8/sg_zone.8.gz
-man/man8/sg3_utils.8.gz
 @dir include/scsi
