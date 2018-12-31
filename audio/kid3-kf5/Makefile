@@ -1,6 +1,6 @@
 # $FreeBSD$
 
 SLAVE=		kf5
-MASTERDIR=	${.CURDIR}/../../audio/kid3-kde4
+MASTERDIR=	${.CURDIR}/../../audio/kid3-qt5
 
 .include "${MASTERDIR}/Makefile"
