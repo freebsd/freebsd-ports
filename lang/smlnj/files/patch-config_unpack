@@ -1,0 +1,12 @@
+--- config/unpack.orig	2016-08-04 14:38:24 UTC
++++ config/unpack
+@@ -291,6 +291,9 @@ do
+         # cd $ROOT/doc
+ 	# build $ROOT
+ 	;;
++      asdl)
++	unpack "Abstract Syntax Description Library" "$ROOT" asdl asdl
++	;;
+       *)
+ 	echo Unknown package: ${i}.
+ 	echo Trying default method...

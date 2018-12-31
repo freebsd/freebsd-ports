@@ -1,6 +1,6 @@
---- config/_heap2exec.orig	2006-04-20 17:28:53.000000000 +0200
-+++ config/_heap2exec	2013-06-14 22:18:55.050990989 +0200
-@@ -83,6 +83,7 @@
+--- config/_heap2exec.orig	2006-04-20 15:28:53 UTC
++++ config/_heap2exec
+@@ -83,6 +83,7 @@ SO_LIBS=
  A_PROG=
  A_FLAGS=
  A_LIBS=
@@ -8,7 +8,7 @@
  
  case ${OPSYS} in
  	darwin)
-@@ -96,6 +97,13 @@
+@@ -96,6 +97,13 @@ case ${OPSYS} in
  		A_PROG=${CC}
  		A_FLAGS=-Wl,--export-dynamic
  		A_LIBS=-lm
@@ -22,7 +22,7 @@
  		;;
  	linux)
  		SO_PROG=${CC}
-@@ -116,7 +124,7 @@
+@@ -116,7 +124,7 @@ fi
  RESULT=0
  if ${H2A} "$heapfile" "$execfile".s ; then
  	if [ -f "$execfile".s ] ; then

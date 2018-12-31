@@ -1,0 +1,9 @@
++++ asdl/configure	2018-12-17 15:01:00.142964000 +0100
+@@ -4893,6 +4893,7 @@
+     sparc:solaris2*)	SMLNJ_ARCH=sparc;	SMLNJ_OPSYS=sunos;;
+     sparc:solaris3*)	SMLNJ_ARCH=sparc;	SMLNJ_OPSYS=solaris;;
+     x86_64:linux*)	SMLNJ_ARCH=x86;		SMLNJ_OPSYS=linux;;
++    x86_64:freebsd*)	SMLNJ_ARCH=x86;		SMLNJ_OPSYS=freebsd;;
+     x86_64:darwin*)	SMLNJ_ARCH=x86;		SMLNJ_OPSYS=darwin;;
+     *)
+     as_fn_error $? "unsupported configuration ${host_cpu}-${host_os}" "$LINENO" 5 ;;
