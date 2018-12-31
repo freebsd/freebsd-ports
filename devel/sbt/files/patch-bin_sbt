@@ -1,4 +1,4 @@
---- bin/sbt.orig	2017-08-29 21:39:02 UTC
+--- bin/sbt.orig	2018-12-30 07:45:19 UTC
 +++ bin/sbt
 @@ -63,7 +63,7 @@ cygwinpath() {
  
@@ -9,7 +9,7 @@
  declare -r dist_sbt_opts_file="${sbt_home}/conf/sbtopts"
  declare -r win_sbt_opts_file="${sbt_home}/conf/sbtconfig.txt"
  
-@@ -101,7 +101,7 @@ Usage: $script_name [options]
+@@ -101,7 +101,7 @@ Usage: `basename "$0"` [options]
    SBT_OPTS           environment variable, if unset uses "$default_sbt_opts"
    .sbtopts           if this file exists in the current directory, its contents
                       are prepended to the runner args
