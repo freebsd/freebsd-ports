@@ -5,6 +5,7 @@ share/applications/nvim.desktop
 %%NLS%%share/locale/ca/LC_MESSAGES/nvim.mo
 %%NLS%%share/locale/cs.cp1250/LC_MESSAGES/nvim.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/nvim.mo
+%%NLS%%share/locale/da/LC_MESSAGES/nvim.mo
 %%NLS%%share/locale/de/LC_MESSAGES/nvim.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/nvim.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/nvim.mo
@@ -29,6 +30,7 @@ share/applications/nvim.desktop
 %%NLS%%share/locale/vi/LC_MESSAGES/nvim.mo
 %%NLS%%share/locale/zh_CN.UTF-8/LC_MESSAGES/nvim.mo
 %%NLS%%share/locale/zh_TW.UTF-8/LC_MESSAGES/nvim.mo
+share/nvim/runtime/autoload/RstFold.vim
 share/nvim/runtime/autoload/ada.vim
 share/nvim/runtime/autoload/adacomplete.vim
 share/nvim/runtime/autoload/ccomplete.vim
@@ -40,6 +42,7 @@ share/nvim/runtime/autoload/decada.vim
 share/nvim/runtime/autoload/dist/ft.vim
 share/nvim/runtime/autoload/gnat.vim
 share/nvim/runtime/autoload/gzip.vim
+share/nvim/runtime/autoload/haskellcomplete.vim
 share/nvim/runtime/autoload/health.vim
 share/nvim/runtime/autoload/health/nvim.vim
 share/nvim/runtime/autoload/health/provider.vim
@@ -90,6 +93,7 @@ share/nvim/runtime/autoload/xml/xhtml11.vim
 share/nvim/runtime/autoload/xml/xsd.vim
 share/nvim/runtime/autoload/xml/xsl.vim
 share/nvim/runtime/autoload/xmlcomplete.vim
+share/nvim/runtime/autoload/xmlformat.vim
 share/nvim/runtime/autoload/zip.vim
 share/nvim/runtime/bugreport.vim
 share/nvim/runtime/colors/blue.vim
@@ -168,6 +172,7 @@ share/nvim/runtime/compiler/rustc.vim
 share/nvim/runtime/compiler/sass.vim
 share/nvim/runtime/compiler/se.vim
 share/nvim/runtime/compiler/splint.vim
+share/nvim/runtime/compiler/stack.vim
 share/nvim/runtime/compiler/tcl.vim
 share/nvim/runtime/compiler/tex.vim
 share/nvim/runtime/compiler/tidy.vim
@@ -242,7 +247,6 @@ share/nvim/runtime/doc/russian.txt
 share/nvim/runtime/doc/scroll.txt
 share/nvim/runtime/doc/sign.txt
 share/nvim/runtime/doc/spell.txt
-share/nvim/runtime/doc/sponsor.txt
 share/nvim/runtime/doc/starting.txt
 share/nvim/runtime/doc/syntax.txt
 share/nvim/runtime/doc/tabpage.txt
@@ -314,7 +318,9 @@ share/nvim/runtime/ftplugin/calendar.vim
 share/nvim/runtime/ftplugin/cdrdaoconf.vim
 share/nvim/runtime/ftplugin/ch.vim
 share/nvim/runtime/ftplugin/changelog.vim
+share/nvim/runtime/ftplugin/chicken.vim
 share/nvim/runtime/ftplugin/clojure.vim
+share/nvim/runtime/ftplugin/cmake.vim
 share/nvim/runtime/ftplugin/cobol.vim
 share/nvim/runtime/ftplugin/conf.vim
 share/nvim/runtime/ftplugin/config.vim
@@ -494,6 +500,7 @@ share/nvim/runtime/ftplugin/verilog.vim
 share/nvim/runtime/ftplugin/vhdl.vim
 share/nvim/runtime/ftplugin/vim.vim
 share/nvim/runtime/ftplugin/vroom.vim
+share/nvim/runtime/ftplugin/wast.vim
 share/nvim/runtime/ftplugin/xdefaults.vim
 share/nvim/runtime/ftplugin/xf86conf.vim
 share/nvim/runtime/ftplugin/xhtml.vim
@@ -535,6 +542,7 @@ share/nvim/runtime/indent/d.vim
 share/nvim/runtime/indent/dictconf.vim
 share/nvim/runtime/indent/dictdconf.vim
 share/nvim/runtime/indent/docbk.vim
+share/nvim/runtime/indent/dosbatch.vim
 share/nvim/runtime/indent/dtd.vim
 share/nvim/runtime/indent/dtrace.vim
 share/nvim/runtime/indent/dylan.vim
@@ -573,6 +581,7 @@ share/nvim/runtime/indent/matlab.vim
 share/nvim/runtime/indent/mf.vim
 share/nvim/runtime/indent/mma.vim
 share/nvim/runtime/indent/mp.vim
+share/nvim/runtime/indent/nsis.vim
 share/nvim/runtime/indent/objc.vim
 share/nvim/runtime/indent/ocaml.vim
 share/nvim/runtime/indent/occam.vim
@@ -619,6 +628,7 @@ share/nvim/runtime/indent/verilog.vim
 share/nvim/runtime/indent/vhdl.vim
 share/nvim/runtime/indent/vim.vim
 share/nvim/runtime/indent/vroom.vim
+share/nvim/runtime/indent/wast.vim
 share/nvim/runtime/indent/xf86conf.vim
 share/nvim/runtime/indent/xhtml.vim
 share/nvim/runtime/indent/xinetd.vim
@@ -666,6 +676,8 @@ share/nvim/runtime/keymap/kazakh-jcuken.vim
 share/nvim/runtime/keymap/lithuanian-baltic.vim
 share/nvim/runtime/keymap/magyar_utf-8.vim
 share/nvim/runtime/keymap/mongolian_utf-8.vim
+share/nvim/runtime/keymap/oldturkic-orkhon_utf-8.vim
+share/nvim/runtime/keymap/oldturkic-yenisei_utf-8.vim
 share/nvim/runtime/keymap/persian-iranian_utf-8.vim
 share/nvim/runtime/keymap/persian.vim
 share/nvim/runtime/keymap/pinyin.vim
@@ -701,6 +713,7 @@ share/nvim/runtime/keymap/ukrainian-jcuken.vim
 share/nvim/runtime/keymap/vietnamese-telex_utf-8.vim
 share/nvim/runtime/keymap/vietnamese-viqr_utf-8.vim
 share/nvim/runtime/keymap/vietnamese-vni_utf-8.vim
+share/nvim/runtime/lua/vim/compat.lua
 share/nvim/runtime/lua/man.lua
 share/nvim/runtime/macmap.vim
 share/nvim/runtime/macros/editexisting.vim
@@ -715,6 +728,7 @@ share/nvim/runtime/makemenu.vim
 share/nvim/runtime/menu.vim
 share/nvim/runtime/mswin.vim
 share/nvim/runtime/optwin.vim
+share/nvim/runtime/pack/dist/opt/cfilter/plugin/cfilter.vim
 share/nvim/runtime/pack/dist/opt/justify/plugin/justify.vim
 share/nvim/runtime/pack/dist/opt/shellmenu/plugin/shellmenu.vim
 share/nvim/runtime/pack/dist/opt/swapmouse/plugin/swapmouse.vim
@@ -730,7 +744,6 @@ share/nvim/runtime/plugin/matchit.vim
 share/nvim/runtime/plugin/matchparen.vim
 share/nvim/runtime/plugin/netrwPlugin.vim
 share/nvim/runtime/plugin/rplugin.vim
-share/nvim/runtime/plugin/rrhelper.vim
 share/nvim/runtime/plugin/shada.vim
 share/nvim/runtime/plugin/spellfile.vim
 share/nvim/runtime/plugin/tarPlugin.vim
@@ -806,6 +819,7 @@ share/nvim/runtime/syntax/aspvbs.vim
 share/nvim/runtime/syntax/asterisk.vim
 share/nvim/runtime/syntax/asteriskvm.vim
 share/nvim/runtime/syntax/atlas.vim
+share/nvim/runtime/syntax/autodoc.vim
 share/nvim/runtime/syntax/autohotkey.vim
 share/nvim/runtime/syntax/autoit.vim
 share/nvim/runtime/syntax/automake.vim
@@ -840,6 +854,7 @@ share/nvim/runtime/syntax/change.vim
 share/nvim/runtime/syntax/changelog.vim
 share/nvim/runtime/syntax/chaskell.vim
 share/nvim/runtime/syntax/cheetah.vim
+share/nvim/runtime/syntax/chicken.vim
 share/nvim/runtime/syntax/chill.vim
 share/nvim/runtime/syntax/chordpro.vim
 share/nvim/runtime/syntax/cl.vim
@@ -847,6 +862,7 @@ share/nvim/runtime/syntax/clean.vim
 share/nvim/runtime/syntax/clipper.vim
 share/nvim/runtime/syntax/clojure.vim
 share/nvim/runtime/syntax/cmake.vim
+share/nvim/runtime/syntax/cmod.vim
 share/nvim/runtime/syntax/cmusrc.vim
 share/nvim/runtime/syntax/cobol.vim
 share/nvim/runtime/syntax/coco.vim
@@ -881,6 +897,7 @@ share/nvim/runtime/syntax/dcd.vim
 share/nvim/runtime/syntax/dcl.vim
 share/nvim/runtime/syntax/debchangelog.vim
 share/nvim/runtime/syntax/debcontrol.vim
+share/nvim/runtime/syntax/debcopyright.vim
 share/nvim/runtime/syntax/debsources.vim
 share/nvim/runtime/syntax/def.vim
 share/nvim/runtime/syntax/denyhosts.vim
@@ -1339,6 +1356,7 @@ share/nvim/runtime/syntax/voscm.vim
 share/nvim/runtime/syntax/vrml.vim
 share/nvim/runtime/syntax/vroom.vim
 share/nvim/runtime/syntax/vsejcl.vim
+share/nvim/runtime/syntax/wast.vim
 share/nvim/runtime/syntax/wdiff.vim
 share/nvim/runtime/syntax/web.vim
 share/nvim/runtime/syntax/webmacro.vim
@@ -1370,6 +1388,7 @@ share/nvim/runtime/syntax/yaml.vim
 share/nvim/runtime/syntax/z8a.vim
 share/nvim/runtime/syntax/zimbu.vim
 share/nvim/runtime/syntax/zsh.vim
+share/nvim/runtime/tools/check_colors.vim
 share/nvim/runtime/tutor/en/vim-01-beginner.tutor
 share/nvim/runtime/tutor/en/vim-01-beginner.tutor.json
 share/nvim/runtime/tutor/tutor.tutor
