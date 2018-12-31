@@ -276,7 +276,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization/vmware-freebsd10.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization/vmware-freebsd11.png
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization/vmware-freebsd12.png
-%%DOCSDIR%%/%%DOCLANG%%/books/pmake/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/imagelib/callouts/1.png
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/imagelib/callouts/10.png

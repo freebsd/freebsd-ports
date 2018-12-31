@@ -441,6 +441,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-documentation.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-freebsdupdate.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/usb-device-mode-network.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/usb-device-mode-storage.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/usb-device-mode-terminals.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/usb-device-mode.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/usb-disks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/userppp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-synopsis.html
