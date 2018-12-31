@@ -1,6 +1,0 @@
-ATAidle is a utility to set the power management and performance
-features of ATA hard drives.  This includes standby timeouts, power
-(APM), write cache and acoustic (AAM) level settings, and it can show
-details about the installed devices.
-
-WWW: http://bluestop.org/ataidle/

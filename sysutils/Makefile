@@ -56,7 +56,6 @@
     SUBDIR += asmem
     SUBDIR += asmon
     SUBDIR += asusoled
-    SUBDIR += ataidle
     SUBDIR += atf-allwinner
     SUBDIR += atitvout
     SUBDIR += atop
@@ -157,7 +156,6 @@
     SUBDIR += cfengine-masterfiles37
     SUBDIR += cfengine-masterfiles38
     SUBDIR += cfengine-masterfiles39
-    SUBDIR += cfengine22
     SUBDIR += cfengine310
     SUBDIR += cfengine311
     SUBDIR += cfengine312
@@ -1272,8 +1270,6 @@
     SUBDIR += syslog-ng317
     SUBDIR += syslog-ng318
     SUBDIR += syslog-ng319
-    SUBDIR += syslog-ng36
-    SUBDIR += syslog-ng37
     SUBDIR += syslog-ng39
     SUBDIR += syslogger
     SUBDIR += sysrc

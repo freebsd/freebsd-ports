@@ -1,9 +1,0 @@
-%%SITE_PERL%%/Mail/SpamAssassin/Plugin/Tokenizer/MeCab.pm
-%%SITE_PERL%%/Mail/SpamAssassin/Plugin/Tokenizer/SimpleJA.pm
-%%SITE_PERL%%/Mail/SpamAssassin/Plugin/Tokenizer.pm
-%%SITE_PERL%%/Mail/SpamAssassin/Util/Charset.pm
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Tokenizer.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Tokenizer::MeCab.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Plugin::Tokenizer::SimpleJA.3.gz
-%%PERL5_MAN3%%/Mail::SpamAssassin::Util::Charset.3.gz
-@sample %%ETCDIR%%/%%TOKENIZER_PRE%%.sample

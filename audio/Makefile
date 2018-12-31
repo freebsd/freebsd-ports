@@ -91,7 +91,6 @@
     SUBDIR += cpige
     SUBDIR += cplay
     SUBDIR += cpp-xmms2
-    SUBDIR += creox
     SUBDIR += crip
     SUBDIR += csound
     SUBDIR += csoundqt
@@ -765,7 +764,6 @@
     SUBDIR += shorten
     SUBDIR += shout
     SUBDIR += shout-idjc
-    SUBDIR += shoutcast
     SUBDIR += sidplay
     SUBDIR += sidplay2
     SUBDIR += sidplayer
@@ -826,7 +824,6 @@
     SUBDIR += tcd
     SUBDIR += teamspeak3-server
     SUBDIR += tempest_for_eliza
-    SUBDIR += terminatorx
     SUBDIR += thunar-media-tags-plugin
     SUBDIR += timemachine
     SUBDIR += timidity

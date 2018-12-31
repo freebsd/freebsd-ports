@@ -285,7 +285,6 @@
     SUBDIR += vte
     SUBDIR += vte-reference
     SUBDIR += vte3
-    SUBDIR += wlc
     SUBDIR += wmapp
     SUBDIR += wxgtk28
     SUBDIR += wxgtk28-common

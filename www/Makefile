@@ -482,7 +482,6 @@
     SUBDIR += mongoose
     SUBDIR += mongrel2
     SUBDIR += moodle31
-    SUBDIR += moodle33
     SUBDIR += moodle34
     SUBDIR += moodle35
     SUBDIR += moodle36
@@ -2235,7 +2234,6 @@
     SUBDIR += sogo4
     SUBDIR += sogo4-activesync
     SUBDIR += spawn-fcgi
-    SUBDIR += spdylay
     SUBDIR += spreadlogd
     SUBDIR += sqstat
     SUBDIR += squid

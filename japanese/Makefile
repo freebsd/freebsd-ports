@@ -259,7 +259,6 @@
     SUBDIR += skkserv
     SUBDIR += slimeforest
     SUBDIR += slrn
-    SUBDIR += spamassassin
     SUBDIR += srd-fpw-package
     SUBDIR += suicavalue
     SUBDIR += t2ps
