@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	groonga
-PORTVERSION=	8.0.9
+PORTVERSION=	8.1.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.groonga.org/source/groonga/
 
@@ -49,6 +49,7 @@ SUGGEST_CONFIGURE_OFF=	--without-libevent \
 			--disable-zeromq
 RUBY_CONFIGURE_ON=	--enable-mruby
 RUBY_USE=		RUBY=yes
+RUBY_RUN_DEPENDS=	rubygem-bundler>=0:sysutils/rubygem-bundler
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -58,7 +59,7 @@ post-patch:
 		'/NGX_PID_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_HTTP_LOG_PATH/s|mkdir|${TRUE}| ; \
 		 /NGX_ERROR_LOG_PATH/s|mkdir|${TRUE}|' \
-		${WRKSRC}/vendor/nginx-1.15.7/auto/install
+		${WRKSRC}/vendor/nginx-1.15.8/auto/install
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/groonga-httpd
