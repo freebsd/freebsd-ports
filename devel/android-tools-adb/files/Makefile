@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PROG_CXX=adb
-NO_MAN=
+NOMAN= # DragonFly, NetBSD, OpenBSD
+NO_MAN= # FreeBSD
 BINDIR?=/usr/bin
 FILESDIR?=${DOCDIR}/${PROG}
 VERSION?= 0.0.0-0
