@@ -23,6 +23,8 @@ LDFLAGS+=	-lm
 PLIST_FILES=	bin/hvl2wav man/man1/hvl2wav.1.gz
 PORTEXAMPLES=	*
 
+PORTSCOUT=	ignore:1
+
 do-build:
 	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/${PORTNAME}/*.c \
 		-o ${WRKSRC}/${PORTNAME}/${PORTNAME}
