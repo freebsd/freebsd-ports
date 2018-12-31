@@ -1,8 +1,0 @@
-lib/kde4/kipiplugin_imageviewer.so
-share/apps/kipi/kipiplugin_imageviewerui.rc
-share/apps/kipiplugin_imageviewer/pics/hand.png
-share/apps/kipiplugin_imageviewer/pics/nullImage.png
-share/apps/kipiplugin_imageviewer/pics/zoom.png
-share/icons/hicolor/16x16/apps/kipi-ogl.png
-share/icons/hicolor/32x32/apps/kipi-ogl.png
-share/kde4/services/kipiplugin_imageviewer.desktop

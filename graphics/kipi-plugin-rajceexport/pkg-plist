@@ -1,7 +1,0 @@
-lib/kde4/kipiplugin_rajceexport.so
-share/apps/kipi/kipiplugin_rajceexportui.rc
-share/icons/hicolor/16x16/apps/kipi-rajce.png
-share/icons/hicolor/32x32/apps/kipi-rajce.png
-share/icons/hicolor/48x48/apps/kipi-rajce.png
-share/icons/hicolor/64x64/apps/kipi-rajce.png
-share/kde4/services/kipiplugin_rajceexport.desktop
