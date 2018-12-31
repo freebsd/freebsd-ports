@@ -73,7 +73,6 @@
     SUBDIR += kb
     SUBDIR += kermit
     SUBDIR += klog
-    SUBDIR += kremotecontrol-kde4
     SUBDIR += libbtbb
     SUBDIR += libconcord
     SUBDIR += libfap

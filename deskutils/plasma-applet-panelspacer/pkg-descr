@@ -1,6 +1,0 @@
-Panel Spacer is a Plasma applet for KDE4 that lets you put some blank space
-between the other applets located in a panel. You can set a minimum fixed size
-and/or allow the spacer to stretch if there is free space on the right.
-Optionally, you can display a thin separator line.
-
-WWW: http://www.kde-look.org/content/show.php?content=89304

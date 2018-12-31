@@ -58,8 +58,6 @@
     SUBDIR += ibus-table-chinese
     SUBDIR += jis2gb
     SUBDIR += kcfonts
-    SUBDIR += kde4-l10n-zh_CN
-    SUBDIR += kde4-l10n-zh_TW
     SUBDIR += libcangjie
     SUBDIR += libchewing
     SUBDIR += libpinyin

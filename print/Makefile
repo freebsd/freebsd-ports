@@ -92,7 +92,6 @@
     SUBDIR += indexinfo
     SUBDIR += jabref
     SUBDIR += kde_poster
-    SUBDIR += kover
     SUBDIR += kpdftool
     SUBDIR += latex-beamer
     SUBDIR += latex-biber
@@ -175,7 +174,6 @@
     SUBDIR += pnm2ppa
     SUBDIR += poster
     SUBDIR += print-manager
-    SUBDIR += print-manager-kde4
     SUBDIR += ps2eps
     SUBDIR += pscal
     SUBDIR += psdim

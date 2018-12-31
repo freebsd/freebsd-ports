@@ -107,7 +107,6 @@
     SUBDIR += jdftx
     SUBDIR += jstrack
     SUBDIR += kalzium
-    SUBDIR += kalzium-kde4
     SUBDIR += kst2
     SUBDIR += lammps
     SUBDIR += lamprop
@@ -296,7 +295,6 @@
     SUBDIR += sparta
     SUBDIR += spglib
     SUBDIR += step
-    SUBDIR += step-kde4
     SUBDIR += svmlight
     SUBDIR += szip
     SUBDIR += teem

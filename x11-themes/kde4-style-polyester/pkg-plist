@@ -1,7 +1,0 @@
-lib/kde4/libpolyester_config.so
-lib/kde4/plugins/styles/libpolyester.so
-share/apps/color-schemes/PolyesterEmerald.colors
-share/apps/color-schemes/PolyesterOrangeJuice.colors
-share/apps/kstyle/themes/polyester.themerc
-share/locale/it/LC_MESSAGES/kstyle_polyester_config.mo
-share/locale/pl/LC_MESSAGES/kstyle_polyester_config.mo

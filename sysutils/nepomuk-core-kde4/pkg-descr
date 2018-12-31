@@ -1,7 +1,0 @@
-The core Nepomuk system contains of the central services like file
-indexing, file system monitoring, query, and of course storage, as
-well as the corresponding client libraries.
-
-This is a compile time dependency for kde4-runtime.
-
-WWW: http://nepomuk.kde.org/

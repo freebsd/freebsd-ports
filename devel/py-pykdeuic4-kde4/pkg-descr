@@ -1,6 +1,0 @@
-Python bindings for KDE. This port provides pykdeuic4 utility.
-pykdeuic4 is an enhanced version of pyuic4 which supports KDE4
-widgets and i18n. It compiles Designer Qt .ui files to Python
-classes.
-
-WWW: http://www.kde.org/

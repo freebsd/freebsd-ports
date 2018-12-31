@@ -1,7 +1,0 @@
-Homerun is a fullscreen launcher with content organized in tabs.
-A tab is composed of several "sources". A source can provide one
-or more sections to a tab. Homerun comes with a few built-in sources,
-but custom sources can be written using libhomerun.
-
-WWW: https://userbase.kde.org/Homerun
-

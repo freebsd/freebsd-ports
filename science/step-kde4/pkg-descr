@@ -1,9 +1,0 @@
-Step is an interactive physics simulator. It works like this: you
-place some bodies on the scene, add some forces such as gravity or
-springs, then click "Simulate" and Step shows you how your scene will
-evolve according to the laws of physics. You can change every property
-of bodies/forces in your experiment (even during simulation) and see
-how this will change the outcome of the experiment. With Step you can
-not only learn but feel how physics works!
-
-WWW: http://edu.kde.org/step

@@ -1,9 +1,0 @@
-This KIO slave enables KDE applications to access
-files over the UPnP MediaServer protocol. It currently
-supports both Browse and Search operations depending on
-what the server supports.
-
-The protocol is "upnp-ms://<uuid>", where UUID is the UUID
-of the MediaServer device without the "uuid:" prefix.
-
-WWW: https://projects.kde.org/projects/playground/base/kio-upnp-ms

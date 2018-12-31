@@ -90,7 +90,6 @@
     SUBDIR += gtk-nodoka-engine
     SUBDIR += gtk-oxygen-engine
     SUBDIR += gtk-qnxtheme
-    SUBDIR += gtk-qt4-engine
     SUBDIR += gtk-xfce-engine
     SUBDIR += gtk3-oxygen-engine
     SUBDIR += gtk3-unico-engine
@@ -99,8 +98,6 @@
     SUBDIR += icons-tango
     SUBDIR += icons-tango-extras
     SUBDIR += irssi-themes
-    SUBDIR += kde-base-artwork-kde4
-    SUBDIR += kde-gtk-config
     SUBDIR += kde-icons-black-and-white
     SUBDIR += kde-icons-gartoon-blue-svg
     SUBDIR += kde-icons-gartoon-svg
@@ -111,15 +108,6 @@
     SUBDIR += kde-icons-noia
     SUBDIR += kde-icons-nuovext2
     SUBDIR += kde-icons-nuvola
-    SUBDIR += kde-wallpapers-kde4
-    SUBDIR += kde4-style-bespin
-    SUBDIR += kde4-style-nitrogen
-    SUBDIR += kde4-style-oxygen-transparent
-    SUBDIR += kde4-style-polyester
-    SUBDIR += kde4-style-skulpture
-    SUBDIR += kde4-windeco-crystal
-    SUBDIR += kde4-windeco-dekorator
-    SUBDIR += kdeartwork-kde4
     SUBDIR += kf5-breeze-icons
     SUBDIR += kf5-kemoticons
     SUBDIR += kf5-kiconthemes
@@ -153,7 +141,6 @@
     SUBDIR += plank-theme-moka
     SUBDIR += plasma5-breeze
     SUBDIR += plasma5-breeze-gtk
-    SUBDIR += plasma5-breeze-kde4
     SUBDIR += plasma5-kde-gtk-config
     SUBDIR += plasma5-oxygen
     SUBDIR += plasma5-plasma-workspace-wallpapers
@@ -163,7 +150,6 @@
     SUBDIR += qt5-style-plugins
     SUBDIR += qtcurve
     SUBDIR += qtcurve-gtk2
-    SUBDIR += qtcurve-kde4
     SUBDIR += qtcurve-kf5
     SUBDIR += qtcurve-qt4
     SUBDIR += qtcurve-qt5

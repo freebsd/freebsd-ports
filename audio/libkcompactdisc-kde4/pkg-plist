@@ -1,7 +1,0 @@
-include/kde4/libkcompactdisc/kcompactdisc.h
-lib/cmake/libkcompactdisc/LibkcompactdiscConfig.cmake
-lib/cmake/libkcompactdisc/LibkcompactdiscTargets.cmake
-lib/cmake/libkcompactdisc/LibkcompactdiscTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/libkcompactdisc.so
-lib/libkcompactdisc.so.4
-lib/libkcompactdisc.so.%%KDE4_GENERIC_LIB_VERSION%%

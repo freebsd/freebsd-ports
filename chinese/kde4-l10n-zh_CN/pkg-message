@@ -1,3 +1,0 @@
-Documents written in Simplified Chinese often use text encodings which
-require a Qt plugin available as chinese/qt4-codecs-cn in the ports
-collection.

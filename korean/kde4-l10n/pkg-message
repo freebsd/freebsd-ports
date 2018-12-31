@@ -1,2 +1,0 @@
-Documents written in Korean often use text encodings which require a Qt
-plugin available as korean/qt4-codecs-kr in the ports collection.

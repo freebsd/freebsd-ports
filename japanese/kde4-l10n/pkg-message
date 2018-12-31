@@ -1,2 +1,0 @@
-Documents written in Japanese often use text encodings which require a Qt
-plugin available as japanese/qt4-codecs-jp in the ports collection.

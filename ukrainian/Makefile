@@ -8,7 +8,6 @@
     SUBDIR += gd
     SUBDIR += hunspell
     SUBDIR += hyphen
-    SUBDIR += kde4-l10n
     SUBDIR += libreoffice
     SUBDIR += monacofonts
     SUBDIR += mythes

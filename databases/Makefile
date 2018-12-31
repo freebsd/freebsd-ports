@@ -15,7 +15,6 @@
     SUBDIR += adodb
     SUBDIR += adodb5
     SUBDIR += akonadi
-    SUBDIR += akonadi-kde4
     SUBDIR += apq
     SUBDIR += apq-mysql
     SUBDIR += apq-odbc

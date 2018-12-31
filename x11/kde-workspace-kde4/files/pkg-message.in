@@ -1,8 +1,0 @@
-======================================================================
-
-To enable KDE Display Manager (KDM), add kdm4_enable="YES" to
-rc.conf(5). To get full functionality you also need procfs(5) mounted.
-
-If sysutils/upower is installed, backlight management support requires
-acpi_video(4) to be loaded.
-

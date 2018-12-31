@@ -10,16 +10,10 @@
     SUBDIR += atkmm
     SUBDIR += caribou
     SUBDIR += eflite
-    SUBDIR += jovie-kde4
-    SUBDIR += kaccessible-kde4
     SUBDIR += kdeaccessibility
-    SUBDIR += kdeaccessibility-kde4
     SUBDIR += kmag
-    SUBDIR += kmag-kde4
     SUBDIR += kmousetool
-    SUBDIR += kmousetool-kde4
     SUBDIR += kmouth
-    SUBDIR += kmouth-kde4
     SUBDIR += linux-c6-atk
     SUBDIR += linux-c7-atk
     SUBDIR += orca

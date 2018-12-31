@@ -1,8 +1,0 @@
-KRemoteControl (formerly known as KDELirc) is a KDE frontend for
-your remote controls. It allows to configure actions for button
-presses on remotes. All types of remotes supported by the Solid
-module in the KDE platform are also supported by KRemoteControl
-(e.g. with the Linux Infrared Remote Control system (LIRC) as
-backend).
-
-WWW: http://utils.kde.org

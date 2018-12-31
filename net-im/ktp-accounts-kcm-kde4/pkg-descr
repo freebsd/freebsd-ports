@@ -1,8 +1,0 @@
-The KDE Telepathy project aims to integrate real time communication
-deeply into KDE Workspaces, and to provide an infrastructure to aid
-development of collaborative features for KDE Applications.
-
-This is a KControl module which handles adding/editing/removing
-Telepathy accounts.
-
-WWW: http://community.kde.org/KTp

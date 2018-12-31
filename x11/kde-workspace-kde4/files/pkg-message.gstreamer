@@ -1,5 +1,0 @@
-Warning: should you want to use Phonon-GStreamer as your Phonon
-backend, you'll need to install *at least* audio/gstreamer-plugins-ogg
-to avoid finding yourself stuck when logging out of KDE Plasma
-Desktop.
-

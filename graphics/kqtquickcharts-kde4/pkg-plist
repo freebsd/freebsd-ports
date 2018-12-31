@@ -1,7 +1,0 @@
-lib/kde4/imports/org/kde/charts/BarChart.qml
-lib/kde4/imports/org/kde/charts/Label.qml
-lib/kde4/imports/org/kde/charts/LegendItem.qml
-lib/kde4/imports/org/kde/charts/LineChart.qml
-lib/kde4/imports/org/kde/charts/LineLabel.qml
-lib/kde4/imports/org/kde/charts/libkqtquickcharts.so
-lib/kde4/imports/org/kde/charts/qmldir
