@@ -33,7 +33,7 @@ CXXFLAGS+=	`pkgconf --cflags-only-other libcryptopp`
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	ALC ALCC AMULECMD AMULEDAEMON AMULEGUI CAS DEBUG DOCS ED2K \
-	FILEVIEW GEOIP MMAP MONOLITHIC NLS PLASMAMULE UPNP \
+	FILEVIEW GEOIP MMAP MONOLITHIC NLS UPNP \
 	WEBSERVER WXCAS XAS
 ALC_DESC=		Compile aMule Link Creator for GUI
 ALCC_DESC=		Compile aMule Link Creator for console
@@ -45,7 +45,6 @@ ED2K_DESC=		Compile aMule ed2k links handler
 FILEVIEW_DESC=		Compile file viewer for console (EXPERIMENTAL)
 MMAP_DESC=		Use mapped memory
 MONOLITHIC_DESC=	Compile monolithic aMule
-PLASMAMULE_DESC=	Compile aMule plasma applet and engine
 WXCAS_DESC=		Compile aMule Statistics for GUI
 XAS_DESC=		Install XChat2 plugin
 OPTIONS_DEFAULT=ALC ALCC AMULECMD AMULEDAEMON AMULEGUI CAS ED2K \
@@ -87,14 +86,6 @@ MMAP_CONFIGURE_ON=	--enable-mmap
 
 MONOLITHIC_CONFIGURE_OFF=	--disable-monolithic
 
-PLASMAMULE_CONFIGURE_ON=	--enable-plasmamule
-PLASMAMULE_USES=	kde:4 qt:4
-PLASMAMULE_USE=	KDE=kdelibs QT=dbus,gui,moc_build
-PLASMAMULE_CONFIGURE_ENV= \
-			ac_cv_path_KDE4_CONFIG=${KDE_PREFIX}/bin/kde4-config \
-			KBUILDSYCOCA=${KDE_PREFIX}/bin/kbuildsycoca4 \
-			UPDATE_MIME_DATABASE=/usr/bin/true
-
 UPNP_LIB_DEPENDS=	libupnp.so:devel/upnp
 UPNP_CONFIGURE_OFF=	--disable-upnp
 
@@ -106,11 +97,6 @@ XAS_CONFIGURE_ON=	--enable-xas
 XAS_USE=	PERL5+=run
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPLASMA_MULE}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2018-12-31
-.endif
 
 .if ${PORT_OPTIONS:MED2K}
 CONFLICTS+=		ed2k-hash*
@@ -124,11 +110,6 @@ post-patch:
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} 's/install-data-am:.*/install-data-am:/' \
 		${WRKSRC}/docs/Makefile.in
-
-post-patch-PLASMAMULE-on:
-	@${REINPLACE_CMD} -e 's|@prefix@|${KDE_PREFIX}|' \
-		-e 's|LDFLAGS =|& -L${KDE_PREFIX}/lib |' \
-		${WRKSRC}/src/utils/plasmamule/Makefile.in
 
 post-install-FILEVIEW-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/utils/fileview/mulefileview ${STAGEDIR}${PREFIX}/bin
