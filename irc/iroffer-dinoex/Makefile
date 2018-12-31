@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	iroffer
-PORTVERSION=	3.30
-PORTREVISION=	3
+PORTVERSION=	3.31
 CATEGORIES=	irc
 MASTER_SITES=	http://iroffer.dinoex.net/
 PKGNAMESUFFIX=	-dinoex${PKGNAMESUFFIX2}
@@ -15,6 +14,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	iroffer-1* iroffer-lamm-1.*
 
+USES=		ssl
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	CC="${CC}" LDFLAGS="${LDFLAGS}" LOCALBASE="${LOCALBASE}"
@@ -45,7 +45,8 @@ OPTIONS_DEFAULT=CURL RUBY UPNP GEOIP
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_ON=	-curl
 RUBY_USE=		RUBY=yes
-RUBY_LIB_DEPENDS=	lib${RUBY_NAME}.so:${RUBY_PORT}
+RUBY_LIB_DEPENDS=	lib${RUBY_NAME}.so:${RUBY_PORT} \
+			libunwind.so:devel/libunwind
 RUBY_CONFIGURE_ON=	-ruby
 UPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
 UPNP_CONFIGURE_ON=	-upnp
