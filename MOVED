@@ -11468,3 +11468,6 @@ sysutils/kcm-polkit-kde||2018-12-31|Has expired: Qt4 has been EOL since december
 hungarian/kde4-l10n||2018-12-31|Has expired: KDE4 is EOL upstream
 java/netbeans-devel|java/netbeans|2018-12-31|Development port was removed now that this version is stable
 audio/kid3-qt4|audio/kid3-qt5|2018-12-31|Has expired: KDE4 is EOL upstream
+textproc/uim-kde4||2018-12-31|Has expired: Qt4 has been EOL since december 2015
+misc/kde4-xdg-env||2018-12-31|Removed, KDE4-related
+x11-themes/wallpapers-freebsd-kde4||2018-12-31|Removed, KDE4-related

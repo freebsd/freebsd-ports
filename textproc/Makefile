@@ -1785,7 +1785,6 @@
     SUBDIR += uim-el
     SUBDIR += uim-gtk
     SUBDIR += uim-gtk3
-    SUBDIR += uim-kde4
     SUBDIR += uim-m17nlib
     SUBDIR += uim-qt4
     SUBDIR += uim-qt5
