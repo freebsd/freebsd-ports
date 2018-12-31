@@ -79,7 +79,6 @@
 %%DATADIR%%/Definitions/bluebird.yml
 %%DATADIR%%/Definitions/blutopia.yml
 %%DATADIR%%/Definitions/btbit.yml
-%%DATADIR%%/Definitions/btdb.yml
 %%DATADIR%%/Definitions/btgigs.yml
 %%DATADIR%%/Definitions/btnext.yml
 %%DATADIR%%/Definitions/btstornet.yml
@@ -94,6 +93,7 @@
 %%DATADIR%%/Definitions/cztorrent.yml
 %%DATADIR%%/Definitions/datascene.yml
 %%DATADIR%%/Definitions/deildu.yml
+%%DATADIR%%/Definitions/desitorrents.yml
 %%DATADIR%%/Definitions/diablotorrent.yml
 %%DATADIR%%/Definitions/downloadville.yml
 %%DATADIR%%/Definitions/dragonworldreloaded.yml
@@ -191,7 +191,6 @@
 %%DATADIR%%/Definitions/rodvd.yml
 %%DATADIR%%/Definitions/rutor.yml
 %%DATADIR%%/Definitions/scenefz.yml
-%%DATADIR%%/Definitions/scenehd.yml
 %%DATADIR%%/Definitions/scenereactor.yml
 %%DATADIR%%/Definitions/scenerush.yml
 %%DATADIR%%/Definitions/sdbits.yml
@@ -236,7 +235,6 @@
 %%DATADIR%%/Definitions/torrentlt.yml
 %%DATADIR%%/Definitions/torrentsectorcrew.yml
 %%DATADIR%%/Definitions/torrentseeds.yml
-%%DATADIR%%/Definitions/torrentsmd.yml
 %%DATADIR%%/Definitions/torrentz2.yml
 %%DATADIR%%/Definitions/torviet.yml
 %%DATADIR%%/Definitions/totheglory.yml
@@ -316,6 +314,7 @@
 %%DATADIR%%/Microsoft.AspNetCore.Rewrite.dll
 %%DATADIR%%/Microsoft.AspNetCore.Routing.Abstractions.dll
 %%DATADIR%%/Microsoft.AspNetCore.Routing.dll
+%%DATADIR%%/Microsoft.AspNetCore.Server.IIS.dll
 %%DATADIR%%/Microsoft.AspNetCore.Server.IISIntegration.dll
 %%DATADIR%%/Microsoft.AspNetCore.Server.Kestrel.Core.dll
 %%DATADIR%%/Microsoft.AspNetCore.Server.Kestrel.Https.dll
@@ -353,6 +352,7 @@
 %%DATADIR%%/Microsoft.Extensions.Logging.Configuration.dll
 %%DATADIR%%/Microsoft.Extensions.Logging.Console.dll
 %%DATADIR%%/Microsoft.Extensions.Logging.Debug.dll
+%%DATADIR%%/Microsoft.Extensions.Logging.EventSource.dll
 %%DATADIR%%/Microsoft.Extensions.Logging.dll
 %%DATADIR%%/Microsoft.Extensions.ObjectPool.dll
 %%DATADIR%%/Microsoft.Extensions.Options.ConfigurationExtensions.dll
@@ -485,6 +485,5 @@
 %%DATADIR%%/System.Xml.XmlSerializer.dll
 %%DATADIR%%/Upstart.config
 %%DATADIR%%/YamlDotNet.dll
-%%DATADIR%%/install_service_macos
 %%DATADIR%%/netstandard.dll
 %%DATADIR%%/web.config
