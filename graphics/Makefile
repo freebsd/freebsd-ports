@@ -137,8 +137,6 @@
     SUBDIR += diffpdf
     SUBDIR += digikam
     SUBDIR += digikam-kde4
-    SUBDIR += digikam-kde4-doc
-    SUBDIR += digikam-kde4-l10n
     SUBDIR += dilay
     SUBDIR += ditaa
     SUBDIR += djview4
@@ -427,8 +425,6 @@
     SUBDIR += kgraphviewer
     SUBDIR += kiconedit
     SUBDIR += kimagemapeditor
-    SUBDIR += kipi-plugin-imgurexport
-    SUBDIR += kipi-plugin-printimages
     SUBDIR += kipiplugins
     SUBDIR += kix-kmod
     SUBDIR += klatexformula
