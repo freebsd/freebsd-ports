@@ -1,5 +1,5 @@
---- base/runtime/objs/mk.x86-freebsd.orig	2006-04-20 15:28:53 UTC
-+++ base/runtime/objs/mk.x86-freebsd
+--- base/runtime/objs/mk.x86-freebsd.orig	2006-04-20 17:28:53.000000000 +0200
++++ base/runtime/objs/mk.x86-freebsd	2018-12-20 21:55:00.154477000 +0100
 @@ -5,19 +5,19 @@
  
  SHELL =		/bin/sh
@@ -13,7 +13,7 @@
 -CPP =		gcc -x assembler-with-cpp -E -P 
 +CC ?=		gcc -ansi
 +CFLAGS ?=	-O2
-+CPP =		${CC} -x assembler-with-cpp -E -P 
++CPP =		$(CC) -x assembler-with-cpp -E -P 
  #CPP =		/usr/bin/cpp -P
  
  XOBJS =
@@ -25,13 +25,13 @@
  TARGET =	X86
  VERSION =	v-x86-freebsd
  RUNTIME =	run.x86-freebsd
-@@ -25,6 +25,6 @@ RUNTIME_SO =	run.x86-freebsd.so
+@@ -25,6 +25,6 @@
  RUNTIME_A =	run.x86-freebsd.a
  
  all:
 -	($(MAKE) RUNTIME="$(RUNTIME)" VERSION="$(VERSION)" MAKE="$(MAKE)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" $(RUNTIME))
 -	($(MAKE) RUNTIME="$(RUNTIME_SO)" VERSION="$(VERSION)" MAKE="$(MAKE)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" LDFLAGS="-shared" $(RUNTIME_SO))
 -	($(MAKE) RUNTIME_A="$(RUNTIME_A)" VERSION="$(VERSION)" MAKE="$(MAKE)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" LDFLAGS="" $(RUNTIME_A))
-+	($(MAKE) RUNTIME="$(RUNTIME)" VERSION="$(VERSION)" MAKE="$(MAKE)" AS="$(AS)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" LDFLAGS="$(LDFLAGS)" $(RUNTIME))
-+	($(MAKE) RUNTIME="$(RUNTIME_SO)" VERSION="$(VERSION)" MAKE="$(MAKE)" AS="$(AS)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" LDFLAGS="-shared $(LDFLAGS)" $(RUNTIME_SO))
-+	($(MAKE) RUNTIME_A="$(RUNTIME_A)" VERSION="$(VERSION)" MAKE="$(MAKE)" AS="$(AS)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" LDFLAGS="$(LDFLAGS)" $(RUNTIME_A))
++	($(MAKE) RUNTIME="$(RUNTIME)" VERSION="$(VERSION)" MAKE="$(MAKE)" AS="$(AS)" ASFLAGS="$(ASFLAGS)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" LDFLAGS="$(LDFLAGS)" $(RUNTIME))
++	($(MAKE) RUNTIME="$(RUNTIME_SO)" VERSION="$(VERSION)" MAKE="$(MAKE)" AS="$(AS)" ASFLAGS="$(ASFLAGS)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" LDFLAGS="-shared $(LDFLAGS)" $(RUNTIME_SO))
++	($(MAKE) RUNTIME_A="$(RUNTIME_A)" VERSION="$(VERSION)" MAKE="$(MAKE)" AS="$(AS)" ASFLAGS="$(ASFLAGS)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" LDFLAGS="$(LDFLAGS)" $(RUNTIME_A))

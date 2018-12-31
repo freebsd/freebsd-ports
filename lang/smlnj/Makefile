@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	smlnj
-PORTVERSION=	110.77
+PORTVERSION=	110.84
 CATEGORIES=	lang
 MASTER_SITES=	http://smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/ \
 		ftp://mirror.free.de/http/smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/
@@ -18,7 +18,7 @@ LICENSE_TEXT=	The text of the license can be obtained from the following URL:\
 		http://www.smlnj.org/license.html
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64 i386
 LLD_UNSAFE=	yes
 
 NO_WRKSUBDIR=	yes
@@ -27,54 +27,37 @@ SUB_FILES=	pkg-install
 SUB_LIST=	EXEBINDIR=${MLBINRELATIVE} EXENAMES="${MLEXE}"
 PKGDEINSTALL=	${PKGINSTALL}
 
-# Calm portlint
-CALM=
-
-OPTIONS_RADIO=		RG1
-OPTIONS_RADIO_RG1=	EVERYTHING RECOMPILE POSITION64
-OPTIONS_EXCLUDE_amd64=	RECOMPILE POSITION64
-EVERYTHING_DESC=	install${CALM} everything from the SML/NJ distribution
+OPTIONS_DEFINE=		EVERYTHING RECOMPILE POSITION64
+RECOMPILE_IMPLIES=	EVERYTHING
+POSITION64_IMPLIES=	RECOMPILE
+EVERYTHING_DESC=	install everything from the SML/NJ distribution
 RECOMPILE_DESC=		recompile the SML compiler - implies EVERYTHING
-POSITION64_DESC=	use 64bit file${CALM} positions - implies RECOMPILE
+POSITION64_DESC=	use 64bit file positions - implies RECOMPILE
 
 .include <bsd.port.pre.mk>
-
-# Recompiling the compiler currently fails on amd64
-.if ${ARCH} == "i386"
-ML_RECOMPILE_OPTIONS=	RECOMPILE POSITION64
-.endif
 
 .if (${ARCH} == "amd64")
 CFLAGS+=	-m32
 AS?=		as
-AS+=		--32
+ASFLAGS+=	--32
 .endif
 .if (${ARCH} == "i386" || ${ARCH} == "amd64")
 MLARCH=		x86
 DISTFILES+=	boot.x86-unix.tgz
 .endif
-DISTFILES+=	MLRISC.tgz ckit.tgz cml.tgz doc.tgz heap2asm.tgz \
-		ml-burg.tgz ml-lpt.tgz ml-lex.tgz ml-yacc.tgz nlffi.tgz \
-		smlnj-lib.tgz trace-debug-profile.tgz
+DISTFILES+=	MLRISC.tgz asdl.tgz ckit.tgz cml.tgz doc.tgz heap2asm.tgz \
+		ml-burg.tgz ml-lex.tgz ml-lpt.tgz ml-yacc.tgz nlffi.tgz \
+		old-basis.tgz smlnj-lib.tgz trace-debug-profile.tgz
 
 PLIST_SUB+=	MLARCH=${MLARCH}
 
-.if ${PORT_OPTIONS:MPOSITION64} || defined(ML_POSITION64)
-ML_POSITION64?=	${PORT_OPTIONS:MPOSITION64}
-ML_RECOMPILE?=	${ML_POSITION64}
-ML_EVERYTHING?=	${ML_POSITION64}
+.if ${PORT_OPTIONS:MPOSITION64}
 CMB_COMMAND=	'(\#set o CMB.symval) "USE_64_BIT_POSITIONS" (SOME 1);'
 .else
 CMB_COMMAND=
 .endif
 
-.if ${PORT_OPTIONS:MRECOMPILE} || defined(ML_RECOMPILE)
-ML_RECOMPILE?=	${PORT_OPTIONS:MRECOMPILE}
-ML_EVERYTHING?=	${ML_RECOMPILE}
-.endif
-
-.if ${PORT_OPTIONS:MEVERYTHING} || defined(ML_EVERYTHING)
-ML_EVERYTHING?=	${PORT_OPTIONS:MEVERYTHING}
+.if ${PORT_OPTIONS:MEVERYTHING}
 DISTFILES+=	cm.tgz compiler.tgz eXene.tgz \
 		pgraph.tgz smlnj-c.tgz system.tgz
 PLIST_SUB+=	EVERYTHING=""
@@ -87,7 +70,8 @@ MLROOT=		${PREFIX}/${MLROOTRELATIVE}
 MLBINRELATIVE=	${MLROOTRELATIVE}/bin
 MLBIN=		${MLROOT}/bin
 MLLIB=		${MLROOT}/lib
-MLSTDSRCDIRS=	cml doc heap2asm ml-burg ml-lex ml-lpt ml-yacc nlffi smlnj-lib
+MLSTDSRCDIRS=	asdl cml doc heap2asm ml-burg ml-lex ml-lpt ml-yacc \
+		nlffi smlnj-lib
 MLSRCDIRS=	base ${MLSTDSRCDIRS} \
 		ckit eXene pgraph smlnj-c
 MLSRCS=
@@ -95,9 +79,9 @@ MLSRCS=
 MLSRCS+=	${MLROOT}/${srcdir}
 .endfor
 MLTARGETS=	heap2asm
-MLEXE=		heap2exec ml-antlr ml-build ml-burg ml-lex ml-makedepend \
-		ml-nlffigen ml-ulex ml-yacc sml
-.if defined(ML_EVERYTHING)
+MLEXE=		asdlgen heap2exec ml-antlr ml-build ml-burg ml-lex \
+		ml-makedepend ml-nlffigen ml-ulex ml-yacc sml
+.if ${PORT_OPTIONS:MEVERYTHING}
 MLTARGETS+=	eXene mlrisc-tools nowhere pgraph-util src-smlnj
 MLEXE+=		nowhere
 PLIST=		${WRKDIR}/.PLIST
@@ -108,19 +92,19 @@ MLPLISTFILES=	${.CURDIR}/pkg-plist ${MLRUNTIMEPLIST} ${MLSRCPLIST}
 
 pre-fetch:
 	@${ECHO}
-.if ! defined(ML_EVERYTHING)
-	@${ECHO} 'Use make ML_EVERYTHING=yes to also build/install'
+.if ! ${PORT_OPTIONS:MEVERYTHING}
+	@${ECHO} 'Use port option EVERYTHING to also build/install'
 	@${ECHO} ' eXene (X Windows toolkit),'
 	@${ECHO} ' nowhere (preprocessor for conditional patterns),'
 	@${ECHO} ' various libraries, and all the sources.'
 .endif
-.if !empty(ML_RECOMPILE_OPTIONS:MRECOMPILE) && !defined(ML_RECOMPILE)
-	@${ECHO} 'Use make ML_RECOMPILE=yes to recompile the compiler.'
-	@${ECHO} ' This implies ML_EVERYTHING.'
+.if ! ${PORT_OPTIONS:MRECOMPILE}
+	@${ECHO} 'Use port option RECOMPILE to recompile the compiler.'
+	@${ECHO} ' This implies EVERYTHING.'
 .endif
-.if !empty(ML_RECOMPILE_OPTIONS:MPOSITION64) && !defined(ML_POSITION64)
-	@${ECHO} 'Use make ML_POSITION64=yes to use 64bit file positions.'
-	@${ECHO} ' This implies ML_RECOMPILE.'
+.if ! ${PORT_OPTIONS:MPOSITION64}
+	@${ECHO} 'Use port option POSITION64 to use 64bit file positions.'
+	@${ECHO} ' This implies RECOMPILE.'
 .endif
 	@${ECHO}
 
@@ -145,7 +129,7 @@ do-configure:
 # Recompilation requires ml-lex and ml-yacc. All requested targets
 # will be built later using the recompiled core system after
 # removing targets.customized. See "do-build" below.
-.if defined(ML_RECOMPILE)
+.if ${PORT_OPTIONS:MRECOMPILE}
 	( ${ECHO_CMD} "request	ml-yacc" && \
 	  ${ECHO_CMD} "request	ml-lex" && \
 	  ${ECHO_CMD} "request	ml-lex-mllex-tool" && \
@@ -158,7 +142,7 @@ do-configure:
 # a subsequent make install.
 # See base/system/README for information on recompiling the compiler.
 
-.if defined(ML_RECOMPILE)
+.if ${PORT_OPTIONS:MRECOMPILE}
 RECOMPILEDIR=	base/system
 .else
 RECOMPILEDIR=
@@ -174,9 +158,9 @@ MLSTANDARDPATCHES_CMD=	cd ${FILESDIR} && \
 MLSTANDARDPATCHDIRS_CMD=	cd ${FILESDIR} && \
 			( for srcdir in ${MLSTDSRCDIRS} ; \
 			  do if ${LS} do-patch-$${srcdir}_* 1>&- 2>&- ; \
-			     then ${ECHO_CMD} -n $${srcdir} " " ; break ; fi ; \
+			     then ${ECHO_CMD} -n $${srcdir} " " ; fi ; \
 			  done ) || ${TRUE}
-.if defined(ML_EVERYTHING)
+.if ${PORT_OPTIONS:MEVERYTHING}
 MLSOURCEPATCHES_CMD=	cd ${FILESDIR} && \
 			( ${LS} do-patch-* 2>&- || \
 			  ${TRUE} )
@@ -192,9 +176,10 @@ do-build:
 	MLSTANDARDPATCHES=`${MLSTANDARDPATCHES_CMD}` \
 	MLSTANDARDPATCHDIRS=`${MLSTANDARDPATCHDIRS_CMD}` \
 	MLSOURCEPATCHES=`${MLSOURCEPATCHES_CMD}` \
-	CFLAGS='${CFLAGS}' LDFLAGS='${LDFLAGS}' AS='${AS}' EXTRA_DEFS='${EXTRA_DEFS}' \
+	CFLAGS='${CFLAGS}' LDFLAGS='${LDFLAGS}' \
+	AS='${AS}' ASFLAGS='${ASFLAGS}' EXTRA_DEFS='${EXTRA_DEFS}' \
 	./config/install.sh
-.if defined(ML_RECOMPILE)
+.if ${PORT_OPTIONS:MRECOMPILE}
 	-${RM} ${WRKSRC}/config/targets.customized
 	@${ECHO} '(* Recompiling the core system: *)'
 	cd ${WRKSRC}/${RECOMPILEDIR} && ( \
@@ -215,31 +200,29 @@ do-build:
 	./installml
 	@${ECHO} '(* Building requested targets: *)'
 	cd ${WRKSRC} && unset PWD && \
-	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="-d ${PATCH_WRKSRC} ${PATCH_ARGS}" \
+	FILESDIR="${FILESDIR}" PATCH="${PATCH}" \
+	PATCH_ARGS="-d ${PATCH_WRKSRC} ${PATCH_ARGS}" \
 	MLNORUNTIMECLEAN=yes RECOMPILEDIR="${RECOMPILEDIR}" \
-	CFLAGS='${CFLAGS}' LDFLAGS='${LDFLAGS}' AS='${AS}' EXTRA_DEFS='${EXTRA_DEFS}' \
+	CFLAGS='${CFLAGS}' LDFLAGS='${LDFLAGS}' \
+	AS='${AS}' ASFLAGS='${ASFLAGS}' EXTRA_DEFS='${EXTRA_DEFS}' \
 	./config/install.sh
 .endif
 
-# If Mac OS X resource files make it into the distribution tarballs,
-# then we have to remove them at several points during the
-# installation process. This is no longer necessary with FreeBSD 10
-# as it uses libarchive 3.x (via bsdtar), but earlier versions
-# don't ignore such resource files and hence WRKSRC and STAGEDIR
-# are full of them. Once FreeBSD 9 will be out of service, all
-# lines in this Makefile can be removed which contain a pattern
-# for the prefix "._" of the resource files. Background information:
-# <https://github.com/libarchive/libarchive/wiki/TarExtendedAttributes#Apple_tar>
-
+.if ${PORT_OPTIONS:MEVERYTHING}
 post-build:
-	${FIND} ${WRKSRC} -type f -name '\._*' -delete
+	${CHMOD} a-x ${WRKSRC}/eXene/examples/basicwin/test.sh \
+		${WRKSRC}/smlnj-lib/HTML4/helper.py
+	@${ECHO} '(* Cleaning asdl: *)'
+	${FIND} ${WRKSRC}/asdl -type f \
+		-exec ${GREP} -F -l "${WRKDIR}" {} \; -delete
+.endif
 
 # Nowadays PLIST has to be computed before installation. We do it in
 # "pre-install" because source extraction happens during "build".
 
-.if defined(ML_EVERYTHING)
+.if ${PORT_OPTIONS:MEVERYTHING}
 MLNOINSTALL=	.cm
-.if defined(ML_RECOMPILE)
+.if ${PORT_OPTIONS:MRECOMPILE}
 MLNOINSTALL+=	sml.bin.${MLARCH}-unix sml.boot.${MLARCH}-unix \
 		sml.lib sml.${MLARCH}-bsd
 .endif
@@ -252,10 +235,9 @@ MLPATCHPATHREGEX=	-E -e 's%(^|[^_])_([^_]|$$)%\1/\2%g' \
 .endif
 
 pre-install:
-.if defined(ML_EVERYTHING)
+.if ${PORT_OPTIONS:MEVERYTHING}
 	@${ECHO} -n '(* Computing package list ...'
 	@${TAR} -tzf ${WRKSRC}/runtime.tgz | \
-	${GREP} -E -v '(^|/)\._.*' | \
 	${SED} -E -n -e 's%^(.*[^/])$$%${MLROOTRELATIVE}/base/\1%p' \
 	> ${MLRUNTIMEPLIST}
 	@${MLRUNTIMEPATCHES_CMD} | \
@@ -274,6 +256,7 @@ pre-install:
 	${AWK} '{ print "${MLROOTRELATIVE}/" $$0 }' ) ; \
 	( ${FIND} -s -d ${MLSRCDIRS} -type d -empty | \
 	${AWK} '{ print "@dir ${MLROOTRELATIVE}/" $$0 }' ) ) | \
+	${EGREP} -v "^${MLROOTRELATIVE}/base/runtime" | \
 	${EGREP} -v ${MLSRCEXCLUDEREGEX} > ${MLSRCPLIST}
 	@${SED} -e 's/^%%EVERYTHING%%//' ${MLPLISTFILES} | \
 	${GREP} -h -v "^@dir" | ${SORT} -u > ${PLIST}
@@ -304,7 +287,7 @@ pre-install:
 # When staging CM_PATHCONFIG has to point to the final
 # ${MLLIB}/pathconfig (in ${PREFIX}) while building the compiler.
 
-.if defined(ML_EVERYTHING)
+.if ${PORT_OPTIONS:MEVERYTHING}
 MLSRCEXCLUDES=
 .for excl in ${MLNOINSTALL}
 MLSRCEXCLUDES+=	--exclude "${excl}"
@@ -313,12 +296,13 @@ MLSRCEXCLUDES+=	--exclude "${excl}"
 
 do-install:
 	${MKDIR} "${STAGEDIR}${MLROOT}"
-.if ! defined(ML_RECOMPILE)
+.if ! ${PORT_OPTIONS:MRECOMPILE}
 	cd ${WRKSRC} && unset PWD && \
 	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="-d ${PATCH_WRKSRC} ${PATCH_ARGS}" \
 	STAGEDIR="${STAGEDIR}" MLLIB="${MLLIB}" \
 	INSTALLDIR="${STAGEDIR}${MLROOT}" \
-	CFLAGS='${CFLAGS}' LDFLAGS='${LDFLAGS}' AS='${AS}' EXTRA_DEFS='${EXTRA_DEFS}' \
+	CFLAGS='${CFLAGS}' LDFLAGS='${LDFLAGS}' \
+	AS='${AS}' ASFLAGS='${ASFLAGS}' EXTRA_DEFS='${EXTRA_DEFS}' \
 	./config/install.sh
 .else
 	@${ECHO} '(* Rebuilding the recompiled libs: *)'
@@ -330,16 +314,15 @@ do-install:
 	@${ECHO} '(* Rebuilding the recompiled heap: *)'
 	cd ${WRKSRC}/${RECOMPILEDIR} && \
 	./makeml
-	@${ECHO} '(* Installing into ${MLROOT}: *)'
+	@${ECHO} '(* Installing into ${STAGEDIR}${MLROOT}: *)'
 	cd ${WRKSRC} && unset PWD && \
 	FILESDIR="${FILESDIR}" PATCH="${PATCH}" PATCH_ARGS="-d ${PATCH_WRKSRC} ${PATCH_ARGS}" \
 	STAGEDIR="${STAGEDIR}" MLLIB="${MLLIB}" \
 	INSTALLDIR="${STAGEDIR}${MLROOT}" RECOMPILEDIR="${RECOMPILEDIR}" \
-	CFLAGS='${CFLAGS}' LDFLAGS='${LDFLAGS}' AS='${AS}' EXTRA_DEFS='${EXTRA_DEFS}' \
+	CFLAGS='${CFLAGS}' LDFLAGS='${LDFLAGS}' \
+	AS='${AS}' ASFLAGS='${ASFLAGS}' EXTRA_DEFS='${EXTRA_DEFS}' \
 	./config/install.sh
 .endif
-	[ ! -d ${STAGEDIR} ] || \
-	${FIND} ${STAGEDIR} -type f -name '\._*' -delete
 	@${ECHO} '(* Installing man pages. *)'
 .for mansect in 1 2 3 4 5 6 7 8 9
 	@[ ! -d ${WRKSRC}/doc/man/man${mansect} ] || \
@@ -352,27 +335,23 @@ do-install:
 	( eval $${MLARCHOPSYS} ; \
 	${STRIP_CMD} "${STAGEDIR}${MLBIN}/.run/run.$${ARCH}-$${OPSYS}" \
 	  "${STAGEDIR}${MLBIN}/.run/run.$${ARCH}-$${OPSYS}.so" )
-.if defined(ML_EVERYTHING)
+.if ${PORT_OPTIONS:MEVERYTHING}
 	@${ECHO} '(* Cleaning base/runtime: *)'
 	cd ${WRKSRC}/base/runtime/objs && ${MAKE_CMD} clean
+	@${ECHO} '(* Cleaning asdl: *)'
+	${FIND} ${WRKSRC}/asdl -type f \
+		-exec ${GREP} -F -l "${WRKDIR}" {} \; -delete
 	@${ECHO} -n '(* Installing sources into ${STAGEDIR}${MLROOT} ...'
 	@cd ${WRKSRC} && ${TAR} -cf - ${MLSRCEXCLUDES} ${MLSRCDIRS} | \
 	${TAR} -xf - -C "${STAGEDIR}${MLROOT}"
 	@${ECHO} ' done. *)'
 .endif
-
 # Only execute ${PKGINSTALL} when installing to ${PREFIX},
 # but not when staging.
-.ifmake install${CALM}
+.ifmake install${CALM_PORTLINT}
 	PKG_PREFIX=${PREFIX} MULTIEXEC_WRAPPER_VERBOSE=yes \
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
-
-	${FIND} ${STAGEDIR} -type f -name '\._*' -delete
-	MLARCHOPSYS=`${STAGEDIR}${MLBIN}/.arch-n-opsys` && \
-	( eval $${MLARCHOPSYS} ; \
-	${STRIP_CMD} "${STAGEDIR}${MLBIN}/.run/run.$${ARCH}-$${OPSYS}" \
-	  "${STAGEDIR}${MLBIN}/.run/run.$${ARCH}-$${OPSYS}.so" )
 
 .ifndef MULTIEXEC_WRAPPER_VERBOSE
 deinstall:
