@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	saga
-PORTVERSION=	7.0.0
+PORTVERSION=	7.1.1
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
 
@@ -12,7 +12,7 @@ COMMENT=	System for Automated Geoscientific Analyses
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	clang60:devel/llvm60 \
+BUILD_DEPENDS=	clang70:devel/llvm70 \
 		swig3.0:devel/swig30
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfftw3.so:math/fftw3 \
@@ -33,10 +33,12 @@ USES=		autoreconf compiler:c++11-lib desktop-file-utils dos2unix \
 		iconv:wchar_t libtool localbase pkgconfig python:2.7
 USE_LDCONFIG=	yes
 USE_WX=		3.0+
+
 CONFIGURE_ARGS=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
 		--enable-python --with-system-svm
 CONFIGURE_ENV=	SWIG="${LOCALBASE}/bin/swig3.0"
 GNU_CONFIGURE=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 INSTALLS_ICONS=	yes
@@ -54,8 +56,8 @@ VIGRA_DESC=	Enable 'Vision with Generic Algorithms' Library
 
 OPENMP_CONFIGURE_ENABLE=	openmp
 OPENMP_LDFLAGS=		-L${LOCALBASE}/lib -lm
-# Use OpenMP from lang/llvm60
-OPENMP_LDFLAGS+=	-L${LOCALBASE}/llvm60/lib -lomp
+# Use OpenMP from lang/llvm70
+OPENMP_LDFLAGS+=	-L${LOCALBASE}/llvm70/lib -lomp
 PGSQL_CONFIGURE_OFF=	--with-postgresql=no
 PGSQL_CONFIGURE_ON=	--with-postgresql=${LOCALBASE}/bin/pg_config
 PGSQL_USES=		pgsql
@@ -67,9 +69,9 @@ INSTALL_TARGET=	install-strip
 .include <bsd.port.pre.mk>
 
 # make describe needs them here
-CPP=		clang-cpp60
-CC=		clang60
-CXX=		clang++60
+CPP=		clang-cpp70
+CC=		clang70
+CXX=		clang++70
 
 SUB_FILES=	pkg-message
 
