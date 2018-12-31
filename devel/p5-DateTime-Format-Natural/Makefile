@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-Format-Natural
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,6 +25,7 @@ TEST_DEPENDS=	p5-Test-MockTime>=0:devel/p5-Test-MockTime
 
 USES=		perl5
 USE_PERL5=	modbuild
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
