@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	vile
-PORTVERSION=	9.8s
+PORTVERSION=	9.8t
 CATEGORIES=	editors
 MASTER_SITES=	ftp://dickey.his.com/vile/current/ \
-		ftp://invisible-island.net/vile/current/ \
-		http://invisible-mirror.net/archives/vile/current/
+		ftp://ftp.invisible-island.net/vile/current/ \
+		https://invisible-mirror.net/archives/vile/current/
 PKGNAMEPREFIX=	x
 
 PATCH_SITES=	${MASTER_SITES:S,vile/current/,vile/patches/,g}
 PATCHFILES=	# none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dickey@invisible-island.net
 COMMENT=	VI Like Emacs -- X11 version
 
 LICENSE=	GPLv2
