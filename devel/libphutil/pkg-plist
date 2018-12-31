@@ -328,6 +328,7 @@ lib/php/libphutil/src/ip/PhutilIPv4Address.php
 lib/php/libphutil/src/ip/PhutilIPv6Address.php
 lib/php/libphutil/src/ip/__tests__/PhutilIPAddressTestCase.php
 lib/php/libphutil/src/lexer/PhutilJSONFragmentLexer.php
+lib/php/libphutil/src/lexer/PhutilJavaFragmentLexer.php
 lib/php/libphutil/src/lexer/PhutilLexer.php
 lib/php/libphutil/src/lexer/PhutilPHPFragmentLexer.php
 lib/php/libphutil/src/lexer/PhutilPythonFragmentLexer.php
@@ -662,6 +663,7 @@ lib/php/libphutil/src/parser/http/PhutilHTTPResponse.php
 lib/php/libphutil/src/parser/http/PhutilHTTPResponseParser.php
 lib/php/libphutil/src/parser/http/__tests__/PhutilHTTPResponseParserTestCase.php
 lib/php/libphutil/src/parser/xhpast/__tests__/PHPASTParserTestCase.php
+lib/php/libphutil/src/parser/xhpast/__tests__/data/anonymous_class.php.test
 lib/php/libphutil/src/parser/xhpast/__tests__/data/base-fail-parse.php.test
 lib/php/libphutil/src/parser/xhpast/__tests__/data/base-fail-syntax.php.test
 lib/php/libphutil/src/parser/xhpast/__tests__/data/base-pass.php.test
@@ -786,8 +788,11 @@ lib/php/libphutil/src/utils/__tests__/memory/vmstat.yosemite.txt
 lib/php/libphutil/src/utils/utf8.php
 lib/php/libphutil/src/utils/utils.php
 lib/php/libphutil/src/utils/viewutils.php
+lib/php/libphutil/src/xsprintf/AphrontDatabaseTableRef.php
+lib/php/libphutil/src/xsprintf/AphrontDatabaseTableRefInterface.php
 lib/php/libphutil/src/xsprintf/PhutilCommandString.php
 lib/php/libphutil/src/xsprintf/PhutilQsprintfInterface.php
+lib/php/libphutil/src/xsprintf/PhutilQueryString.php
 lib/php/libphutil/src/xsprintf/PhutilTerminalString.php
 lib/php/libphutil/src/xsprintf/__tests__/PhutilCsprintfTestCase.php
 lib/php/libphutil/src/xsprintf/__tests__/PhutilHgsprintfTestCase.php

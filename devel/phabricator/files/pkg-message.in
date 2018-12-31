@@ -1,8 +1,8 @@
 To run the phabricator daemons from startup, add phd_enable="YES"
 to /etc/rc.conf. You can control the daemons using
 
-service start
-service stop
+service phd start
+service phd stop
 etc.
 
 Before starting the daemons, please finish configuring your Phabricator
@@ -29,3 +29,44 @@ by default. If you're updating from a version before 20170630 you will need
 to fix permissions of /var/tmp/phd and repositories. Alternatively
 you can continue to run phabricator daemons as root by adding
 phd_user="root" to /etc/rc.conf.
+
+Phabricator daemons and ssh-git requires setting up sudo, see
+
+  %%PREFIX%%lib/php/phabricator/resources/sshd/phabricator-sudoers.sample
+
+for an example.
+
+A phabricator example configuration installed here:
+
+  %%PREFIX%%lib/php/phabricator/conf/local/local.json.sample
+
+Don't forget to update the database schema after update:
+
+  service phd stop
+  cd %%PREFIX%%/lib/php/phabricator
+  ./bin/storage upgrade
+  service phd start
+
+You also might want to stop the web server while upgrading the database.
+
+If you want to access phabricator hosted git repositories via git,
+you can add the following configuration snippet to /etc/sshd_config
+and reload sshd afterwards (`service sshd reload'):
+
+========================================================================
+Match User git
+ AllowUsers git
+ AuthorizedKeysCommand %%PREFIX%%/lib/php/phabricator/resources/sshd/phabricator-ssh-hook.sh
+ AuthorizedKeysCommandUser git
+ AuthorizedKeysFile none
+ AuthenticationMethods publickey
+ PermitRootLogin no
+ PasswordAuthentication no
+ PermitTTY no
+ AllowAgentForwarding no
+ AllowTcpForwarding no
+ GatewayPorts no
+ PermitOpen none
+ PermitTunnel no
+ X11Forwarding no
+========================================================================
