@@ -8,7 +8,6 @@ share/doc/HTML/ca/kmenuedit/itemname.png
 share/doc/HTML/ca/kmenuedit/new.png
 share/doc/HTML/ca/kmenuedit/reset.png
 share/doc/HTML/ca/kmenuedit/selectinternet.png
-share/doc/HTML/ca/kmenuedit/selection.png
 share/doc/HTML/de/kmenuedit/index.cache.bz2
 share/doc/HTML/de/kmenuedit/index.docbook
 share/doc/HTML/en/kmenuedit/done.png
@@ -33,8 +32,6 @@ share/doc/HTML/pt_BR/kmenuedit/new.png
 share/doc/HTML/pt_BR/kmenuedit/reset.png
 share/doc/HTML/pt_BR/kmenuedit/selecticon.png
 share/doc/HTML/pt_BR/kmenuedit/selectinternet.png
-share/doc/HTML/uk/kmenuedit/index.cache.bz2
-share/doc/HTML/uk/kmenuedit/index.docbook
 share/doc/HTML/ru/kmenuedit/done.png
 share/doc/HTML/ru/kmenuedit/index.cache.bz2
 share/doc/HTML/ru/kmenuedit/index.docbook
@@ -44,6 +41,13 @@ share/doc/HTML/ru/kmenuedit/selecticon.png
 share/doc/HTML/ru/kmenuedit/selectinternet.png
 share/doc/HTML/sv/kmenuedit/index.cache.bz2
 share/doc/HTML/sv/kmenuedit/index.docbook
+share/doc/HTML/uk/kmenuedit/done.png
+share/doc/HTML/uk/kmenuedit/index.cache.bz2
+share/doc/HTML/uk/kmenuedit/index.docbook
+share/doc/HTML/uk/kmenuedit/itemname.png
+share/doc/HTML/uk/kmenuedit/new.png
+share/doc/HTML/uk/kmenuedit/selecticon.png
+share/doc/HTML/uk/kmenuedit/selectinternet.png
 share/icons/hicolor/16x16/apps/kmenuedit.png
 share/icons/hicolor/22x22/apps/kmenuedit.png
 share/icons/hicolor/32x32/apps/kmenuedit.png

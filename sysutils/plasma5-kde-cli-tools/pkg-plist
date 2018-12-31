@@ -23,6 +23,7 @@ man/nb/man1/kdesu.1.gz
 man/nl/man1/kdesu.1.gz
 man/pt/man1/kdesu.1.gz
 man/pt_BR/man1/kdesu.1.gz
+man/ru/man1/kdesu.1.gz
 man/sr/man1/kdesu.1.gz
 man/sr@latin/man1/kdesu.1.gz
 man/sv/man1/kdesu.1.gz
@@ -63,6 +64,8 @@ share/doc/HTML/pt_BR/kdesu/index.cache.bz2
 share/doc/HTML/pt_BR/kdesu/index.docbook
 share/doc/HTML/ru/kcontrol5/filetypes/index.cache.bz2
 share/doc/HTML/ru/kcontrol5/filetypes/index.docbook
+share/doc/HTML/ru/kdesu/index.cache.bz2
+share/doc/HTML/ru/kdesu/index.docbook
 share/doc/HTML/sr/kcontrol5/filetypes/index.cache.bz2
 share/doc/HTML/sr/kcontrol5/filetypes/index.docbook
 share/doc/HTML/sr/kdesu/index.cache.bz2

@@ -129,3 +129,4 @@ share/locale/wa/LC_MESSAGES/ksysguard.mo
 share/locale/xh/LC_MESSAGES/ksysguard.mo
 share/locale/zh_CN/LC_MESSAGES/ksysguard.mo
 share/locale/zh_TW/LC_MESSAGES/ksysguard.mo
+share/metainfo/org.kde.ksysguard.appdata.xml

@@ -2,6 +2,8 @@ bin/breeze-settings5
 lib/cmake/Breeze/BreezeConfig.cmake
 lib/cmake/Breeze/BreezeConfigVersion.cmake
 lib/kconf_update_bin/kde4breeze
+lib/libbreezecommon5.so.5
+lib/libbreezecommon5.so.%%KDE_PLASMA_VERSION%%
 %%QT_PLUGINDIR%%/kstyle_breeze_config.so
 %%QT_PLUGINDIR%%/org.kde.kdecoration2/breezedecoration.so
 %%QT_PLUGINDIR%%/styles/breeze.so
@@ -44,6 +46,7 @@ share/QtCurve/Breeze.qtcurve
 share/color-schemes/Breeze.colors
 share/color-schemes/BreezeDark.colors
 share/color-schemes/BreezeHighContrast.colors
+share/color-schemes/BreezeLight.colors
 share/icons/Breeze_Snow/cursors/00000000000000020006000e7e9ffc3f
 share/icons/Breeze_Snow/cursors/00008160000006810000408080010102
 share/icons/Breeze_Snow/cursors/03b6e0fcb3499374a867c041f52298f0
@@ -60,6 +63,7 @@ share/icons/Breeze_Snow/cursors/9d800788f1b08800ae810202380a0822
 share/icons/Breeze_Snow/cursors/a2a266d0498c3104214a47bd64ab0fc8
 share/icons/Breeze_Snow/cursors/alias
 share/icons/Breeze_Snow/cursors/all-scroll
+share/icons/Breeze_Snow/cursors/arrow
 share/icons/Breeze_Snow/cursors/b66166c04f8c3109214a4fbd64a50fc8
 share/icons/Breeze_Snow/cursors/bottom_left_corner
 share/icons/Breeze_Snow/cursors/bottom_right_corner
@@ -102,7 +106,9 @@ share/icons/Breeze_Snow/cursors/left_side
 share/icons/Breeze_Snow/cursors/link
 share/icons/Breeze_Snow/cursors/move
 share/icons/Breeze_Snow/cursors/n-resize
+share/icons/Breeze_Snow/cursors/ne-resize
 share/icons/Breeze_Snow/cursors/no-drop
+share/icons/Breeze_Snow/cursors/nw-resize
 share/icons/Breeze_Snow/cursors/not-allowed
 share/icons/Breeze_Snow/cursors/openhand
 share/icons/Breeze_Snow/cursors/pencil
@@ -119,6 +125,7 @@ share/icons/Breeze_Snow/cursors/row-resize
 share/icons/Breeze_Snow/cursors/s-resize
 share/icons/Breeze_Snow/cursors/sb_h_double_arrow
 share/icons/Breeze_Snow/cursors/sb_v_double_arrow
+share/icons/Breeze_Snow/cursors/se-resize
 share/icons/Breeze_Snow/cursors/size-bdiag
 share/icons/Breeze_Snow/cursors/size-fdiag
 share/icons/Breeze_Snow/cursors/size-hor
@@ -130,6 +137,7 @@ share/icons/Breeze_Snow/cursors/size_hor
 share/icons/Breeze_Snow/cursors/size_ver
 share/icons/Breeze_Snow/cursors/split_h
 share/icons/Breeze_Snow/cursors/split_v
+share/icons/Breeze_Snow/cursors/sw-resize
 share/icons/Breeze_Snow/cursors/text
 share/icons/Breeze_Snow/cursors/top_left_arrow
 share/icons/Breeze_Snow/cursors/top_left_corner
@@ -164,6 +172,7 @@ share/icons/breeze_cursors/cursors/9d800788f1b08800ae810202380a0822
 share/icons/breeze_cursors/cursors/a2a266d0498c3104214a47bd64ab0fc8
 share/icons/breeze_cursors/cursors/alias
 share/icons/breeze_cursors/cursors/all-scroll
+share/icons/breeze_cursors/cursors/arrow
 share/icons/breeze_cursors/cursors/b66166c04f8c3109214a4fbd64a50fc8
 share/icons/breeze_cursors/cursors/bottom_left_corner
 share/icons/breeze_cursors/cursors/bottom_right_corner
@@ -206,8 +215,10 @@ share/icons/breeze_cursors/cursors/left_side
 share/icons/breeze_cursors/cursors/link
 share/icons/breeze_cursors/cursors/move
 share/icons/breeze_cursors/cursors/n-resize
+share/icons/breeze_cursors/cursors/ne-resize
 share/icons/breeze_cursors/cursors/no-drop
 share/icons/breeze_cursors/cursors/not-allowed
+share/icons/breeze_cursors/cursors/nw-resize
 share/icons/breeze_cursors/cursors/openhand
 share/icons/breeze_cursors/cursors/pencil
 share/icons/breeze_cursors/cursors/pirate
@@ -223,6 +234,7 @@ share/icons/breeze_cursors/cursors/row-resize
 share/icons/breeze_cursors/cursors/s-resize
 share/icons/breeze_cursors/cursors/sb_h_double_arrow
 share/icons/breeze_cursors/cursors/sb_v_double_arrow
+share/icons/breeze_cursors/cursors/se-resize
 share/icons/breeze_cursors/cursors/size-bdiag
 share/icons/breeze_cursors/cursors/size-fdiag
 share/icons/breeze_cursors/cursors/size-hor
@@ -234,6 +246,7 @@ share/icons/breeze_cursors/cursors/size_hor
 share/icons/breeze_cursors/cursors/size_ver
 share/icons/breeze_cursors/cursors/split_h
 share/icons/breeze_cursors/cursors/split_v
+share/icons/breeze_cursors/cursors/sw-resize
 share/icons/breeze_cursors/cursors/text
 share/icons/breeze_cursors/cursors/top_left_arrow
 share/icons/breeze_cursors/cursors/top_left_corner

@@ -1,4 +1,5 @@
 etc/dbus-1/system.d/org.kde.ksysguard.processlisthelper.conf
+etc/xdg/libksysguard.categories
 include/ksysguard/ksgrd/SensorAgent.h
 include/ksysguard/ksgrd/SensorClient.h
 include/ksysguard/ksgrd/SensorManager.h

@@ -9,6 +9,8 @@ man/man1/plasmoidviewer.1.gz
 share/applications/org.kde.cuttlefish.desktop
 share/applications/org.kde.plasma.lookandfeelexplorer.desktop
 share/applications/org.kde.plasma.themeexplorer.desktop
+share/applications/org.kde.plasmaengineexplorer.desktop
+share/applications/org.kde.plasmoidviewer.desktop
 share/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/contents/ui/FormField.qml
 share/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/contents/ui/FormLabel.qml
 share/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/contents/ui/MetadataEditor.qml
@@ -52,6 +54,7 @@ share/kservices5/plasma-package-org.kde.plasma.cuttlefish.desktop
 share/kservices5/plasma-shell-org.kde.plasma.plasmoidviewershell.desktop
 share/locale/ar/LC_MESSAGES/cuttlefish.mo
 share/locale/ar/LC_MESSAGES/cuttlefish_editorplugin.mo
+share/locale/ar/LC_MESSAGES/org.kde.plasma.lookandfeelexplorer.mo
 share/locale/ar/LC_MESSAGES/org.kde.plasma.themeexplorer.mo
 share/locale/ar/LC_MESSAGES/plasma_shell_org.kde.plasmoidviewershell.mo
 share/locale/ar/LC_MESSAGES/plasmaengineexplorer.mo
@@ -229,6 +232,7 @@ share/locale/id/LC_MESSAGES/cuttlefish.mo
 share/locale/id/LC_MESSAGES/cuttlefish_editorplugin.mo
 share/locale/id/LC_MESSAGES/org.kde.plasma.lookandfeelexplorer.mo
 share/locale/id/LC_MESSAGES/org.kde.plasma.themeexplorer.mo
+share/locale/id/LC_MESSAGES/plasma_shell_org.kde.plasmoidviewershell.mo
 share/locale/id/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/id/LC_MESSAGES/plasmawallpaperviewer.mo
 share/locale/id/LC_MESSAGES/plasmoidviewer.mo
@@ -470,6 +474,8 @@ share/metainfo/org.kde.plasma.cuttlefish.appdata.xml
 share/metainfo/org.kde.plasma.lookandfeelexplorer.appdata.xml
 share/metainfo/org.kde.plasma.plasmoidviewershell.appdata.xml
 share/metainfo/org.kde.plasma.themeexplorer.appdata.xml
+share/metainfo/org.kde.plasmaengineexplorer.appdata.xml
+share/metainfo/org.kde.plasmoidviewer.appdata.xml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/IconGrid.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/IconGridDelegate.qml
 share/plasma/packages/org.kde.plasma.cuttlefish/contents/ui/Preview.qml

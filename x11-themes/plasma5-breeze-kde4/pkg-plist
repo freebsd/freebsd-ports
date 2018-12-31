@@ -1,3 +1,5 @@
+lib/libbreezecommon4.so.5
+lib/libbreezecommon4.so.5.14.0
 lib/kde4/kstyle_breeze_config.so
 lib/kde4/plugins/styles/breeze.so
 share/apps/kstyle/themes/breeze.themerc
