@@ -11063,3 +11063,8 @@ lang/php56-extensions|lang/php72-extensions|2018-12-30|Has expired: Works only w
 finance/php-tclink||2018-12-30|Has expired: Works only with EOL php 5.6
 converters/pecl-fribidi||2018-12-30|Has expired: Works only with EOL php 5.6
 sysutils/pecl-mogilefs||2018-12-30|Has expired: Works only with EOL php 5.6
+deskutils/strigidaemon||2018-12-31|Has expired: KDE4 is end-of-life
+deskutils/strigiutils||2018-12-31|Has expired: KDE4 is end-of-life
+deskutils/strigiclient||2018-12-31|Has expired: KDE4 is end-of-life
+deskutils/libstreams||2018-12-31|Has expired: KDE4 is end-of-life
+deskutils/libstreamanalyzer||2018-12-31|Has expired: KDE4 is end-of-life
