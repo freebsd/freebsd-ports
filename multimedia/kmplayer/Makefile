@@ -7,7 +7,7 @@ PORTEPOCH=	3
 CATEGORIES=	multimedia audio kde
 
 MAINTAINER=	jhale@FreeBSD.org
-COMMENT=	KDE frontend to Phonon / KDE4
+COMMENT=	KDE frontend to Phonon / KDE5
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
