@@ -157,6 +157,8 @@ include/kea/dhcpsrv/lease_mgr.h
 include/kea/dhcpsrv/lease_mgr_factory.h
 include/kea/dhcpsrv/memfile_lease_mgr.h
 include/kea/dhcpsrv/memfile_lease_storage.h
+%%MYSQL%%include/kea/dhcpsrv/mysql_host_data_source.h
+%%MYSQL%%include/kea/dhcpsrv/mysql_lease_mgr.h
 include/kea/dhcpsrv/ncr_generator.h
 include/kea/dhcpsrv/network.h
 include/kea/dhcpsrv/network_state.h
@@ -175,6 +177,8 @@ include/kea/dhcpsrv/parsers/shared_networks_list_parser.h
 include/kea/dhcpsrv/parsers/simple_parser4.h
 include/kea/dhcpsrv/parsers/simple_parser6.h
 include/kea/dhcpsrv/pool.h
+%%PGSQL%%include/kea/dhcpsrv/pgsql_host_data_source.h
+%%PGSQL%%include/kea/dhcpsrv/pgsql_lease_mgr.h
 include/kea/dhcpsrv/sanity_checker.h
 include/kea/dhcpsrv/shared_network.h
 include/kea/dhcpsrv/srv_config.h
@@ -293,6 +297,11 @@ include/kea/log/message_initializer.h
 include/kea/log/message_reader.h
 include/kea/log/message_types.h
 include/kea/log/output_option.h
+%%MYSQL%%include/kea/mysql/mysql_binding.h
+%%MYSQL%%include/kea/mysql/mysql_connection.h
+%%MYSQL%%include/kea/mysql/mysql_constants.h
+%%PGSQL%%include/kea/pgsql/pgsql_connection.h
+%%PGSQL%%include/kea/pgsql/pgsql_exchange.h
 include/kea/process/config_base.h
 include/kea/process/config_ctl_info.h
 include/kea/process/config_ctl_parser.h
@@ -413,6 +422,14 @@ lib/libkea-log.a
 lib/libkea-log.so
 lib/libkea-log.so.3
 lib/libkea-log.so.3.0.1
+%%MYSQL%%lib/libkea-mysql.a
+%%MYSQL%%lib/libkea-mysql.so
+%%MYSQL%%lib/libkea-mysql.so.0
+%%MYSQL%%lib/libkea-mysql.so.0.0.1
+%%PGSQL%%lib/libkea-pgsql.a
+%%PGSQL%%lib/libkea-pgsql.so
+%%PGSQL%%lib/libkea-pgsql.so.0
+%%PGSQL%%lib/libkea-pgsql.so.0.0.0
 lib/libkea-process.a
 lib/libkea-process.so
 lib/libkea-process.so.3

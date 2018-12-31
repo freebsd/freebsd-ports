@@ -27,7 +27,7 @@ CPE_VERSION=	${ISCVERSION:C/-.*//}
 CPE_UPDATE=	${ISCVERSION:C/.*-//:tl}
 .endif
 
-USES=		autoreconf compiler:c++11-lang libtool pathfix ssl cpe
+USES=		autoreconf compiler:c++11-lang iconv libtool pathfix ssl cpe
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
@@ -45,6 +45,7 @@ PORTDOCS=	AUTHORS COPYING ChangeLog README \
 		examples
 
 OPTIONS_DEFINE=	DOCS MYSQL PGSQL
+OPTIONS_SUB=	yes
 DOCS_MAKE_ARGS_OFF=	\
 		INSTALL_STRIP_PROGRAM="${WRKSRC}/install-sh -c -s" \
 		INSTALL_STRIP_FLAG="-s" \
