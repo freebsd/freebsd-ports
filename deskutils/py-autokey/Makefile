@@ -2,6 +2,7 @@
 
 PORTNAME=	autokey
 DISTVERSION=	0.95.4
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,8 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyinotify>0:devel/py-pyinotify@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xlib>0:x11-toolkits/py-xlib@${PY_FLAVOR}
 
-USES=		python:3.5+ shebangfix
-USE_PYTHON=	distutils
+USES=		python:3.6+ shebangfix
+USE_PYTHON=	distutils concurrent
 
 NO_ARCH=	yes
 
@@ -34,22 +35,24 @@ GTK3_RUN_DEPENDS=	libappindicator>0:devel/libappindicator
 GTK3_USES=	gnome
 GTK3_USE=	GNOME=gtk30,gtksourceview3,pygobject3
 
-QT5_USES=	pyqt:5 qt:5
-QT5_USE=	PYQT=qscintilla2,sip,svg,xml
+QT5_USES=	pyqt:5
+QT5_USE=	PYQT=dbus,qscintilla2,sip,svg,xml
 
 post-patch:
-	${REINPLACE_CMD} 's|share/man|man|g' ${WRKSRC}/setup.py
-	# Remove dbus-python from reqs as its the wrong dep name, devs will fix next release.
-	${REINPLACE_CMD} "/install_requires=/s|'dbus-python', ||g" ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} 's|share/man|man|g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} "/install_requires=/s|'dbus-python', ||g" ${WRKSRC}/setup.py
 
 # setup.py installs both gtk and qt files no matter what, need to clean that up.
 post-install-GTK3-off:
-	${RM} ${STAGEDIR}${PREFIX}/share/applications/autokey-gtk.desktop
-	${RM} ${STAGEDIR}${PREFIX}/bin/autokey-gtk
-	${RM} ${STAGEDIR}${PREFIX}/man/man1/autokey-gtk.1
+	@${RM} ${STAGEDIR}${PREFIX}/share/applications/autokey-gtk.desktop
+	@${RM} ${STAGEDIR}${PREFIX}/bin/autokey-gtk
+	@${RM} ${STAGEDIR}${PREFIX}/man/man1/autokey-gtk.1
+	@${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}${PORTNAME}/gtkui
+
 post-install-QT5-off:
-	${RM} ${STAGEDIR}${PREFIX}/share/applications/autokey-qt.desktop
-	${RM} ${STAGEDIR}${PREFIX}/bin/autokey-qt
-	${RM} ${STAGEDIR}${PREFIX}/man/man1/autokey-qt.1
+	@${RM} ${STAGEDIR}${PREFIX}/share/applications/autokey-qt.desktop
+	@${RM} ${STAGEDIR}${PREFIX}/bin/autokey-qt
+	@${RM} ${STAGEDIR}${PREFIX}/man/man1/autokey-qt.1
+	@${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}${PORTNAME}/gtkui
 
 .include <bsd.port.mk>
