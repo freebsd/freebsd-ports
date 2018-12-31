@@ -430,7 +430,6 @@
     SUBDIR += kipi-plugin-acquireimages
     SUBDIR += kipi-plugin-advancedslideshow
     SUBDIR += kipi-plugin-batchprocess
-    SUBDIR += kipi-plugin-calendar
     SUBDIR += kipi-plugin-debianscreenshots
     SUBDIR += kipi-plugin-dngconverter
     SUBDIR += kipi-plugin-dropbox
@@ -467,7 +466,6 @@
     SUBDIR += kipi-plugin-videoslideshow
     SUBDIR += kipi-plugin-vkontakte
     SUBDIR += kipi-plugin-yandexfotki
-    SUBDIR += kipi-plugins-kde4
     SUBDIR += kipiplugins
     SUBDIR += kix-kmod
     SUBDIR += klatexformula

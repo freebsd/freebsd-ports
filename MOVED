@@ -11068,3 +11068,5 @@ deskutils/strigiutils||2018-12-31|Has expired: KDE4 is end-of-life
 deskutils/strigiclient||2018-12-31|Has expired: KDE4 is end-of-life
 deskutils/libstreams||2018-12-31|Has expired: KDE4 is end-of-life
 deskutils/libstreamanalyzer||2018-12-31|Has expired: KDE4 is end-of-life
+graphics/kipi-plugin-calendar||2018-12-31|Removed, part of expired KDE4
+graphics/kipi-plugins-kde4||2018-12-31|Has expired: KDE4 is EOL upstream
