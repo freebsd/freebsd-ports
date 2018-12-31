@@ -1,4 +1,19 @@
 {
-  "mysql.user": "root",
-  "mysql.pass": ""
+  "phd.user": "www",
+  "phd.log-directory": "/var/log",
+  "mysql.host": "localhost",
+  "mysql.port": "3306",
+  "mysql.user": "phabric",
+  "mysql.pass": "SECRET",
+  "repository.default-local-path": "/var/phabricator/repo",
+  "storage.local-disk.path": "/var/phabricator/files",
+  "phabricator.base-uri": "http://phabricator.example.com/",
+  "phabricator.show-prototypes": true,
+  "diffusion.ssh-user": "git",
+  "diffusion.ssh-port": 22,
+  "phpmailer.smtp-host": "mail.example.com",
+  "phpmailer.smtp-port": 25,
+  "phpmailer.smtp-user": "phabricator@example.com",
+  "phpmailer.smtp-password": "SECRET",
+  "phpmailer.smtp-protocol": "tls"
 }

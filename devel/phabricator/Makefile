@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	phabricator
-PORTVERSION=	20180420
+PORTVERSION=	20181231
 CATEGORIES=	devel
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -20,6 +20,7 @@ OPTIONS_DEFAULT=GD OPCACHE
 OPCACHE_DESC?=	Use OPcache to improve performance
 
 USES=		php:flavors shebangfix
+REINPLACE_ARGS=	-i ""
 SHEBANG_FILES=	externals/httpful/build \
 		externals/restful/build-phar \
 		scripts/almanac/*.php \
@@ -66,9 +67,23 @@ NO_BUILD=	yes
 USE_RC_SUBR=	phd
 SUB_FILES=	pkg-message
 GH_ACCOUNT=	phacility
-GH_TAGNAME=	9bf4df2
+GH_TAGNAME=	106e90d
 
 PHP_DESTDIR=	lib/php/phabricator
+
+post-patch:
+	@${SED} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${FILESDIR}/phabricator-sudoers.sample > ${WRKSRC}/resources/sshd/phabricator-sudoers.sample
+	@${REINPLACE_CMD} \
+		's|/path/to/phabricator|${LOCALBASE}/lib/php/phabricator|g; \
+		 s|vcs-user|git|g' \
+		${WRKSRC}/resources/sshd/phabricator-ssh-hook.sh
+	@${REINPLACE_CMD} \
+		's|/usr/libexec/phabricator-ssh-hook.sh|${LOCALBASE}/lib/php/phabricator/resources/sshd/phabricator-ssh-hook.sh|; \
+		 s|vcs-user|git|g; \
+		 s|PrintLastLog no||g; \
+		 s|PidFile /var/run/sshd-phabricator.pid||g' \
+		${WRKSRC}/resources/sshd/sshd_config.phabricator.example
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_DESTDIR}/conf/local

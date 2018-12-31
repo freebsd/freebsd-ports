@@ -33,6 +33,7 @@ lib/php/arcanist/src/differential/constants/ArcanistDifferentialRevisionHash.php
 lib/php/arcanist/src/differential/constants/ArcanistDifferentialRevisionStatus.php
 lib/php/arcanist/src/docs/book/arcanist.book
 lib/php/arcanist/src/events/constant/ArcanistEventType.php
+lib/php/arcanist/src/exception/ArcanistDiffByteSizeException.php
 lib/php/arcanist/src/exception/ArcanistUsageException.php
 lib/php/arcanist/src/exception/usage/ArcanistNoEffectException.php
 lib/php/arcanist/src/exception/usage/ArcanistNoEngineException.php
@@ -329,6 +330,7 @@ lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistCommentSpacingXHPASTLinter
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistCommentStyleXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistConcatenationOperatorXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistConstructorParenthesesXHPASTLinterRule.php
+lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistContinueInsideSwitchXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistControlStatementSpacingXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistCurlyBraceArrayIndexXHPASTLinterRule.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/ArcanistDeclarationParenthesesXHPASTLinterRule.php
@@ -430,6 +432,7 @@ lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistClassNameLiteral
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistCommentStyleXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistConcatenationOperatorXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistConstructorParenthesesXHPASTLinterRuleTestCase.php
+lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistContinueInsideSwitchXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistControlStatementSpacingXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistCurlyBraceArrayIndexXHPASTLinterRuleTestCase.php
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/ArcanistDeclarationParenthesesXHPASTLinterRuleTestCase.php
@@ -541,6 +544,9 @@ lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/class-name-literal/class
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/comment-style/hash-comments.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/concatenation-operator/concatenation-operator.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/constructor-parentheses/constructor-parentheses.lint-test
+lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/continue-inside-switch/continue-inside-switch-1-valid.lint-test
+lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/continue-inside-switch/continue-inside-switch-2-n.lint-test
+lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/continue-inside-switch/continue-inside-switch-3-rewrite.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/control-statement-spacing/control-statement-spacing.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/curly-brace-array-index/array.lint-test
 lib/php/arcanist/src/lint/linter/xhpast/rules/__tests__/curly-brace-array-index/array_push.lint-test
@@ -713,6 +719,12 @@ lib/php/arcanist/src/parser/__tests__/bundle.git.tgz
 lib/php/arcanist/src/parser/__tests__/bundle/disjoint-hunks.diff
 lib/php/arcanist/src/parser/__tests__/bundle/disjoint-hunks.new
 lib/php/arcanist/src/parser/__tests__/bundle/disjoint-hunks.old
+lib/php/arcanist/src/parser/__tests__/bundle/merge-hunks.diff
+lib/php/arcanist/src/parser/__tests__/bundle/merge-hunks.new
+lib/php/arcanist/src/parser/__tests__/bundle/merge-hunks.old
+lib/php/arcanist/src/parser/__tests__/bundle/no-merge-hunks.diff
+lib/php/arcanist/src/parser/__tests__/bundle/no-merge-hunks.new
+lib/php/arcanist/src/parser/__tests__/bundle/no-merge-hunks.old
 lib/php/arcanist/src/parser/__tests__/bundle/trailing-context.diff
 lib/php/arcanist/src/parser/__tests__/bundle/trailing-context.new
 lib/php/arcanist/src/parser/__tests__/bundle/trailing-context.old
