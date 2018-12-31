@@ -36,7 +36,7 @@ lib/libsaga_gdi.so
 %%PYTHON_SITELIBDIR%%/_saga_api.so
 %%PYTHON_SITELIBDIR%%/saga_api.py
 %%PYTHON_SITELIBDIR%%/saga_api.pyc
-%%PYTHON_SITELIBDIR%%/saga_api.%%PYTHON_PYOEXTENSION%%
+%%PYTHON_SITELIBDIR%%/saga_api.pyo
 lib/saga/libclimate_tools.so
 lib/saga/libcontrib_perego.so
 lib/saga/libdb_odbc.so
@@ -192,6 +192,7 @@ share/pixmaps/saga.png
 %%DATADIR%%/toolchains/gc_filter_laplacian.xml
 %%DATADIR%%/toolchains/gc_filter_rank.xml
 %%DATADIR%%/toolchains/gc_filter_simple.xml
+%%DATADIR%%/toolchains/gc_longitudinal_range.xml
 %%DATADIR%%/toolchains/gc_tools.xml
 %%DATADIR%%/toolchains/grid_filter.xml
 %%DATADIR%%/toolchains/grid_list_simple_filter.xml
@@ -200,12 +201,14 @@ share/pixmaps/saga.png
 %%DATADIR%%/toolchains/gridding.xml
 %%DATADIR%%/toolchains/group_files.xml
 %%DATADIR%%/toolchains/imagery.xml
+%%DATADIR%%/toolchains/imagery_fmask_clouds.xml
 %%DATADIR%%/toolchains/imagery_lczc.xml
 %%DATADIR%%/toolchains/import_text_tables.xml
 %%DATADIR%%/toolchains/obia.xml
 %%DATADIR%%/toolchains/points_to_contour.xml
 %%DATADIR%%/toolchains/polygons_max_interior_circles.xml
 %%DATADIR%%/toolchains/polygons_remove_from_boundary.xml
+%%DATADIR%%/toolchains/shapes_select_delete.xml
 %%DATADIR%%/toolchains/sieve_and_clump.xml
 %%DATADIR%%/toolchains/temperature_downscaling.xml
 %%DATADIR%%/toolchains/temperature_downscaling_bulk.xml
