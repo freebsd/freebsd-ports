@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 PKGNAMEPREFIX=	libva-intel-
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Intel Media Driver for VAAPI
+COMMENT=	VAAPI driver for Intel HD 5000 (Gen8) or newer
 
 LICENSE=	MIT BSD3CLAUSE
 LICENSE_COMB=	multi

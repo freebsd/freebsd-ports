@@ -1,4 +1,7 @@
-Libva driver for intel graphics cards with hardware accelerated
-features for video encode/decode.
+VA-API (Video Acceleration API) user mode driver for Intel GEN
+Graphics family provides a bridge to the GEN GPUs through the
+packaging of buffers and commands to be sent to the i915 driver for
+exercising both hardware and shader functionality for video decode,
+encode, and processing.
 
-WWW: https://github.com/intel/intel-vaapi-driver
+WWW: https://01.org/linuxmedia
