@@ -4,7 +4,7 @@
 PORTNAME=	weatherspect
 PORTVERSION=	1.11
 CATEGORIES=	astro
-MASTER_SITES=	http://www.robobunny.com/projects/weatherspect/ \
+MASTER_SITES=	https://robobunny.com/projects/weatherspect/ \
 		LOCAL/sunpoet
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
@@ -20,8 +20,10 @@ RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
 
 PORTSCOUT=	skipv:1.31
 
-NO_BUILD=	yes
 USES=		perl5
+
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 PLIST_FILES=	bin/weatherspect
 
