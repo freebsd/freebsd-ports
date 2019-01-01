@@ -8,4 +8,4 @@ filtering and conversion functions. Osmium can create WKT, WKB,
 OGR, GEOS and GeoJSON geometries for easy conversion into many GIS
 formats and it can assemble multipolygons from ways and relations.
 
-WWW: http://osmcode.org/libosmium/
+WWW: https://osmcode.org/libosmium/
