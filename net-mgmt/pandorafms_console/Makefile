@@ -7,13 +7,8 @@ CATEGORIES=	net-mgmt
 MAINTAINER=	koichiro@rworks.jp
 COMMENT=	Pandora FMS console
 
-DEPRECATED=	Works only with EOL php 5.6
-EXPIRATION_DATE=	2018-12-30
-
 LICENSE=	${PANDORA_LICENSE}
 LICENSE_FILE=	${PANDORA_LICENSE_FILE}
-
-IGNORE_WITH_PHP=	71 72 73
 
 RUN_DEPENDS=	${LOCALBASE}/bin/twopi:graphics/graphviz
 
@@ -32,7 +27,7 @@ OPTIONS_DEFINE=	DOCS PGSQL
 DOCS_DESC=	Install AUTHORS and ChangeLog
 PGSQL_DESC=	Use PostgreSQL backend (experimental)
 
-USE_PHP=	curl filter gd gettext hash json ldap mbstring mysql \
+USE_PHP=	curl filter gd gettext hash json ldap mbstring mysqli \
 		snmp session xml zip zlib
 
 SUB_FILES+=	pandora_console.conf pkg-message newsyslog.conf
@@ -42,7 +37,7 @@ PGSQL_USE=	PHP=pgsql
 
 .include "${.CURDIR}/../pandorafms_server/bsd.pandora.mk"
 
-PORTREVISION=	2
+PORTREVISION=	3
 
 PANDORA_INSTALLER_ARGS+=	--destdir ${STAGEDIR}
 
