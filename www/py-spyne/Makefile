@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spyne
-PORTVERSION=	2.12.14
-PORTREVISION=	1
+PORTVERSION=	2.12.15
 CATEGORIES=	www devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +14,9 @@ LICENSE=	LGPL21
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR}
 
-NO_ARCH=	yes
-USE_LOCALE=	en_US.UTF-8
-USE_PYTHON=	autoplist concurrent distutils
 USES=		python
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
