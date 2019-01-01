@@ -16,3 +16,8 @@
  as maia.conf.dist and maiad.conf.dist.
 *******************************************************************
 
+ Please note that Maia Mailguard no longer supports "mysql" but has
+ moved forward to using "mysqli" instead. So, please check your
+ %%WWWDIR%%/config.php file and make any appropriate changes.
+*******************************************************************
+
