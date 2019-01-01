@@ -3,7 +3,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.3
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/qt-${PORTNAME}/
 PKGNAMESUFFIX=	-qt4
@@ -20,11 +20,10 @@ EXPIRATION_DATE=	2019-03-15
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-USES=		bison cmake:noninja gmake kde:4 pathfix pkgconfig qt:4 tar:bzip2
+USES=		bison cmake:noninja gmake pathfix pkgconfig qt:4 tar:bzip2
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	yes
 USE_GNOME=	glib20
-USE_KDE=	automoc4
 USE_QT=		corelib gui opengl declarative \
 		qmake_build moc_build rcc_build uic_build qtestlib_build
 
