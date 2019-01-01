@@ -1,0 +1,5 @@
+TTY::Box provides box drawing component for TTY toolkit. It draws various frames
+and boxes in your terminal interface.
+
+WWW: https://piotrmurach.github.io/tty/
+WWW: https://github.com/piotrmurach/tty-box

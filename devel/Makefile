@@ -6037,6 +6037,7 @@
     SUBDIR += rubygem-trollop
     SUBDIR += rubygem-trollop1
     SUBDIR += rubygem-tty
+    SUBDIR += rubygem-tty-box
     SUBDIR += rubygem-tty-color
     SUBDIR += rubygem-tty-command
     SUBDIR += rubygem-tty-config
