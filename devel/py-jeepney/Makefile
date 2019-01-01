@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jeepney
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +13,9 @@ COMMENT=	Low-level, pure Python DBus protocol wrapper
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
-USE_PYTHON=	autoplist distutils
 USES=		python:3.5+
+USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
