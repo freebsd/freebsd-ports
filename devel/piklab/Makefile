@@ -3,7 +3,7 @@
 
 PORTNAME=	piklab
 PORTVERSION=	0.16.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel kde
 MASTER_SITES=	SF
 
@@ -20,14 +20,6 @@ USE_QT=		corelib gui qt3support qtestlib xml \
 		moc_build qmake_build rcc_build uic_build network
 USES=		cmake gettext qt:4 readline dos2unix tar:bzip2
 USE_CXXSTD=	gnu++98
-
-OPTIONS_DEFINE=	KDE4
-OPTIONS_SUB=	yes
-
-KDE4_USES=	kde:4 shared-mime-info
-KDE4_USE=	KDE=automoc4,kdelibs
-KDE4_CMAKE_OFF=	-DQT_ONLY:BOOL=ON \
-		-DLOCALE_INSTALL_DIR:STRING="${PREFIX}/share/locale"
 
 BROKEN=			does not link
 BROKEN_sparc64=		does not compile on sparc64
