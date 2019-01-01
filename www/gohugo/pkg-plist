@@ -1,5 +1,4 @@
 bin/hugo
-%%MANPAGES%%man/man1/hugo-benchmark.1.gz
 %%MANPAGES%%man/man1/hugo-config.1.gz
 %%MANPAGES%%man/man1/hugo-convert-toJSON.1.gz
 %%MANPAGES%%man/man1/hugo-convert-toTOML.1.gz
