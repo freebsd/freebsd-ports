@@ -1,6 +1,6 @@
---- omniidl_be/dir.mk.orig	Wed Feb  8 23:42:52 2006
-+++ omniidl_be/dir.mk	Wed Feb  8 23:43:03 2006
-@@ -13,8 +13,6 @@
+--- omniidl_be/dir.mk.orig	2003-03-23 21:51:59 UTC
++++ omniidl_be/dir.mk
+@@ -13,8 +13,6 @@ export:: $(FILES)
            for file in $^; do \
              $(ExportFileToDir) \
            done; \
@@ -9,7 +9,7 @@
  	 )
  
  ifdef INSTALLTARGET
-@@ -23,7 +21,5 @@
+@@ -23,7 +21,5 @@ install:: $(FILES)
            for file in $^; do \
              $(ExportFileToDir) \
            done; \
