@@ -12,6 +12,9 @@ COMMENT=	IRC "bot" that makes sharing files via DCC extremely easy
 
 LICENSE=	GPLv2
 
+EXPIRATION_DATE=	2019-02-01
+DEPRECATED=		Abandoned upstream
+
 CONFLICTS=	iroffer-lamm-1.* iroffer-dinoex-3.*
 
 USES=		tar:tgz
