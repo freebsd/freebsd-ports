@@ -2112,8 +2112,8 @@ lib/python%%XYDOT%%/ensurepip/__pycache__/__main__.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/ensurepip/__pycache__/_uninstall.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/ensurepip/_bundled/pip-10.0.1-py2.py3-none-any.whl
-lib/python%%XYDOT%%/ensurepip/_bundled/setuptools-39.0.1-py2.py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/pip-18.1-py2.py3-none-any.whl
+lib/python%%XYDOT%%/ensurepip/_bundled/setuptools-40.6.2-py2.py3-none-any.whl
 lib/python%%XYDOT%%/ensurepip/_uninstall.py
 lib/python%%XYDOT%%/enum.py
 lib/python%%XYDOT%%/filecmp.py
@@ -5287,10 +5287,6 @@ lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_windows_utils.cpython-%%X
 lib/python%%XYDOT%%/test/test_asyncio/echo.py
 lib/python%%XYDOT%%/test/test_asyncio/echo2.py
 lib/python%%XYDOT%%/test/test_asyncio/echo3.py
-lib/python%%XYDOT%%/test/test_asyncio/keycert3.pem
-lib/python%%XYDOT%%/test/test_asyncio/pycacert.pem
-lib/python%%XYDOT%%/test/test_asyncio/ssl_cert.pem
-lib/python%%XYDOT%%/test/test_asyncio/ssl_key.pem
 lib/python%%XYDOT%%/test/test_asyncio/test_base_events.py
 lib/python%%XYDOT%%/test/test_asyncio/test_events.py
 lib/python%%XYDOT%%/test/test_asyncio/test_futures.py
