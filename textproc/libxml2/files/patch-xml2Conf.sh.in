@@ -1,5 +1,5 @@
---- xml2Conf.sh.in	2001/05/19 19:57:43	1.1
-+++ xml2Conf.sh.in	2001/05/19 19:59:40
+--- xml2Conf.sh.in.orig	2009-07-30 15:24:35 UTC
++++ xml2Conf.sh.in
 @@ -1,6 +1,12 @@
  #
  # Configuration file for using the XML library in GNOME applications

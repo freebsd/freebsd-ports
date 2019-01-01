@@ -1,6 +1,6 @@
---- libxml-2.0-uninstalled.pc.in.orig	2014-10-03 11:00:53.000000000 +0200
-+++ libxml-2.0-uninstalled.pc.in	2015-07-31 13:26:13.641069000 +0200
-@@ -8,5 +8,5 @@
+--- libxml-2.0-uninstalled.pc.in.orig	2016-02-09 10:17:32 UTC
++++ libxml-2.0-uninstalled.pc.in
+@@ -8,5 +8,5 @@ Name: libXML
  Version: @VERSION@
  Description: libXML library version2.
  Requires:
