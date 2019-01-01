@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20181226
+PORTVERSION=	s20181230
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	16ff6cd
+GH_TAGNAME=	242003c
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	aho-corasick-0.6.9 \
@@ -40,15 +40,15 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		cloudabi-0.0.3 \
 		cmake-0.1.35 \
 		criterion-0.2.5 \
-		criterion-plot-0.2.6 \
-		criterion-stats-0.2.6 \
+		criterion-plot-0.2.7 \
+		criterion-stats-0.2.5 \
 		csv-1.0.5 \
 		csv-core-0.1.5 \
 		either-1.5.0 \
 		encode_unicode-0.1.3 \
 		env_logger-0.5.13 \
-		failure-0.1.3 \
-		failure_derive-0.1.3 \
+		failure-0.1.4 \
+		failure_derive-0.1.4 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		glob-0.2.11 \
@@ -76,7 +76,7 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		pest-1.0.6 \
 		pest_derive-1.0.8 \
 		pkg-config-0.3.14 \
-		proc-macro-hack-0.5.3 \
+		proc-macro-hack-0.5.4 \
 		proc-macro2-0.3.5 \
 		proc-macro2-0.4.24 \
 		quick-error-1.2.2 \
@@ -87,7 +87,7 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		rand-0.5.5 \
 		rand_core-0.2.2 \
 		rand_core-0.3.0 \
-		redox_syscall-0.1.45 \
+		redox_syscall-0.1.49 \
 		redox_termios-0.1.1 \
 		regex-1.1.0 \
 		regex-syntax-0.6.4 \
@@ -97,7 +97,7 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		same-file-1.0.4 \
 		serde-1.0.83 \
 		serde_derive-1.0.83 \
-		serde_json-1.0.33 \
+		serde_json-1.0.34 \
 		simplelog-0.5.3 \
 		strsim-0.7.0 \
 		syn-0.11.11 \
