@@ -25,7 +25,6 @@ BUILD_DEPENDS=	automoc4:devel/automoc4 \
 		${PYTHON_PKGNAMEPREFIX}rdflib>=0:textproc/py-rdflib@${PY_FLAVOR}
 
 USES=		cmake python:2.7,build qt:4 tar:bzip2
-USE_KDE=	automoc4
 USE_QT=		corelib dbus declarative qtestlib \
 		moc_build qmake_build rcc_build uic_build
 USE_LDCONFIG=	yes
