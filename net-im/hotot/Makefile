@@ -3,7 +3,7 @@
 
 PORTNAME=	hotot
 PORTVERSION=	0.9.8.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-im www
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -22,9 +22,8 @@ INSTALLS_ICONS=	yes
 CFLAGS+=	-I${LOCALBASE}/include		# does not uphold CPPFLAGS
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
-OPTIONS_DEFINE=	GTK2 QT4 KDE4
+OPTIONS_DEFINE=	GTK2 QT4
 OPTIONS_DEFAULT=	GTK2
-KDE4_DESC=	KDE 4 integration (implies Qt 4)
 
 .include <bsd.port.options.mk>
 
@@ -37,10 +36,10 @@ CMAKE_ARGS+=	-DWITH_GTK=off
 PLIST_SUB+=	GTK2="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MQT4} || ${PORT_OPTIONS:MKDE4}
+.if ${PORT_OPTIONS:MQT4}
 DEPRECATED=		Qt4 has been EOL since december 2015
 EXPIRATION_DATE=	2019-03-15
-USES+=		kde:4 qt:4
+USES+=		qt:4
 USE_QT=		moc_build qmake_build rcc_build uic_build \
 		corelib gui sql webkit
 PLIST_SUB+=	QT4=""
@@ -50,11 +49,7 @@ INSTALL_TARGET=	install
 PLIST_SUB+=	QT4="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MKDE4}
-USE_KDE=	automoc4 kdelibs
-.else
 CMAKE_ARGS+=	-DWITH_KDE=off
-.endif
 
 post-patch:
 # Fix hardcoded platform name (it is not always Linux)
