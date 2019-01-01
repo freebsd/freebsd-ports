@@ -39,7 +39,6 @@ etc/privoxy/templates/show-request
 etc/privoxy/templates/show-status
 etc/privoxy/templates/show-status-file
 etc/privoxy/templates/show-url-info
-etc/privoxy/templates/show-version
 etc/privoxy/templates/toggle
 etc/privoxy/templates/toggle-mini
 etc/privoxy/templates/untrusted
