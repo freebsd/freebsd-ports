@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgeotiff
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	graphics
 MASTER_SITES=	https://download.osgeo.org/geotiff/libgeotiff/ \
 		LOCAL/sunpoet
@@ -17,6 +17,8 @@ LIB_DEPENDS=	libjbig.so:graphics/jbigkit \
 		libproj.so:graphics/proj \
 		libtiff.so:graphics/tiff
 
+USES=		jpeg libtool
+
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--disable-doxygen-doc \
 		--disable-doxygen-dot \
@@ -30,6 +32,5 @@ CPPFLAGS+=	-fPIC
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		jpeg libtool
 
 .include <bsd.port.mk>
