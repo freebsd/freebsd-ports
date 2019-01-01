@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jhead
-PORTVERSION=	3.00
+PORTVERSION=	3.02
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.sentex.net/~mwandel/${PORTNAME}/ \
 		LOCAL/sunpoet
@@ -12,8 +12,9 @@ COMMENT=	EXIF JPEG header manipulation tool
 
 OPTIONS_DEFINE=	DOCS
 
-MAKEFILE=	makefile
 USES=		jpeg:run
+
+MAKEFILE=	makefile
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
@@ -25,6 +26,8 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1/
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
