@@ -20,10 +20,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 DEPRECATED=		Qt4 has been EOL since december 2015
 EXPIRATION_DATE=	2019-03-15
 
-BUILD_DEPENDS=	rapper:textproc/raptor2 \
+BUILD_DEPENDS=	automoc4:devel/automoc4 \
+		rapper:textproc/raptor2 \
 		${PYTHON_PKGNAMEPREFIX}rdflib>=0:textproc/py-rdflib@${PY_FLAVOR}
 
-USES=		cmake kde:4 python:2.7,build qt:4 tar:bzip2
+USES=		cmake python:2.7,build qt:4 tar:bzip2
 USE_KDE=	automoc4
 USE_QT=		corelib dbus declarative qtestlib \
 		moc_build qmake_build rcc_build uic_build
