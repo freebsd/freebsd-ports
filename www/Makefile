@@ -434,7 +434,6 @@
     SUBDIR += mod_gnutls
     SUBDIR += mod_gzip2
     SUBDIR += mod_h264_streaming
-    SUBDIR += mod_http2-devel
     SUBDIR += mod_jk
     SUBDIR += mod_layout22
     SUBDIR += mod_limitipconn2
@@ -2394,7 +2393,6 @@
     SUBDIR += varnish-modules
     SUBDIR += varnish-nagios
     SUBDIR += varnish4
-    SUBDIR += varnish5
     SUBDIR += varnish6
     SUBDIR += vdr-plugin-live
     SUBDIR += vdradmin-am

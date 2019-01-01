@@ -1,4 +1,0 @@
-@sample %%APACHEETCDIR%%/modules.d/200_mod_h2.conf.sample
-@sample %%APACHEETCDIR%%/modules.d/300_mod_proxy_h2.conf.sample
-%%APACHEMODDIR%%/mod_h2.so
-%%APACHEMODDIR%%/mod_proxy_h2.so

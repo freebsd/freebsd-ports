@@ -1,4 +1,0 @@
-A small, self-contained API server written in Ruby and Sinatra to
-provide a private backend for the open-source Bitwarden apps.
-
-WWW: https://github.com/jcs/bitwarden-ruby

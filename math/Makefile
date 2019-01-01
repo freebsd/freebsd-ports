@@ -646,7 +646,6 @@
     SUBDIR += pear-Math_BigInteger
     SUBDIR += pear-Math_Combinatorics
     SUBDIR += pecl-bitset
-    SUBDIR += pecl-bitset2
     SUBDIR += pecl-stats2
     SUBDIR += petiga
     SUBDIR += php56-bcmath

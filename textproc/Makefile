@@ -1201,7 +1201,6 @@
     SUBDIR += pear-XML_HTMLSax
     SUBDIR += pear-XML_Wddx
     SUBDIR += pear-YAML
-    SUBDIR += pecl-xdiff
     SUBDIR += pecl-xdiff2
     SUBDIR += pecl-yaml
     SUBDIR += peco

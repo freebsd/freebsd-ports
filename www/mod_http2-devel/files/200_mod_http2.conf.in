@@ -1,8 +1,0 @@
-# To enable, uncomment the LoadModule line
-
-# LoadModule md_module %%APACHE_MODDIR%%/mod_h2.so
-
-<IfModule http2_module>
-Protocols h2 http/1.1
-ProtocolsHonorOrder On
-</IfModule>

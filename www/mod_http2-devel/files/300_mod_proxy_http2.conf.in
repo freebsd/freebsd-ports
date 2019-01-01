@@ -1,8 +1,0 @@
-# To enable, uncomment the LoadModule line
-
-# LoadModule md_module %%APACHE_MODDIR%%/mod_proxy_h2.so
-
-<IfModule proxy_http2_module>
-# ProxyPass "/app" "h2://app.example.com"
-# ProxyPassReverse "/app" "https://app.example.com"
-</IfModule>

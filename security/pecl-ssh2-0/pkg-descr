@@ -1,5 +1,0 @@
-PHP bindings to the libssh2 library which provide access to resources
-(shell, remote exec, tunneling, file transfer) on a remote machine using a
-secure cryptographic transport.
-
-WWW: https://pecl.php.net/package/ssh2

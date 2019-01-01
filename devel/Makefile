@@ -4038,14 +4038,12 @@
     SUBDIR += pear-pdepend-staticReflection
     SUBDIR += pear-phing
     SUBDIR += pecl-APCu
-    SUBDIR += pecl-APCu4
     SUBDIR += pecl-dio
     SUBDIR += pecl-eio
     SUBDIR += pecl-ev
     SUBDIR += pecl-event
     SUBDIR += pecl-grpc
     SUBDIR += pecl-hrtime
-    SUBDIR += pecl-intl
     SUBDIR += pecl-jsmin
     SUBDIR += pecl-json_post
     SUBDIR += pecl-jsond
