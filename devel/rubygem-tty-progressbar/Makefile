@@ -17,8 +17,9 @@ RUN_DEPENDS=	rubygem-strings-ansi>=0.1.0:devel/rubygem-strings-ansi \
 		rubygem-tty-screen>=0.6.4:devel/rubygem-tty-screen \
 		rubygem-unicode-display_width>=1.3:devel/rubygem-unicode-display_width
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
