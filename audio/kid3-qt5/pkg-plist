@@ -19,15 +19,11 @@ man/de/man1/kid3.1.gz
 %%CLI%%man/man1/kid3-cli.1.gz
 %%QT%%man/man1/kid3-qt.1.gz
 man/man1/kid3.1.gz
-%%KDE4%%share/applications/kde4/kid3.desktop
 %%KF5%%share/applications/net.sourceforge.kid3.desktop
 %%QT%%share/applications/kid3-qt.desktop
-%%KDE4%%share/apps/kid3/kid3ui.rc
 %%KDE%%share/dbus-1/interfaces/net.sourceforge.Kid3.xml
-%%KDE4%%share/doc/HTML/de/kid3/common
 %%KDE%%share/doc/HTML/de/kid3/index.cache.bz2
 %%KDE%%share/doc/HTML/de/kid3/index.docbook
-%%KDE4%%share/doc/HTML/en/kid3/common
 %%KDE%%share/doc/HTML/en/kid3/index.cache.bz2
 %%KDE%%share/doc/HTML/en/kid3/index.docbook
 %%QT%%share/doc/kid3-qt/kid3_de.html
