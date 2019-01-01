@@ -3,7 +3,7 @@
 
 PORTNAME=	yzis
 PORTVERSION=	1.0.a.1
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	editors
 MASTER_SITES=	http://labs.freehackers.org/attachments/download/45/ \
 		http://contribs.martymac.org/FreeBSD-ports/distfiles/
@@ -34,13 +34,8 @@ USE_GCC=	any
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	KYZIS NYZIS DOXYGEN
+OPTIONS_DEFINE=	NYZIS DOXYGEN
 OPTIONS_SUB=	yes
-KYZIS_DESC=	Build kyzis and Yzis kpart
-KYZIS_USES=	kde:4 qt:4
-KYZIS_USE=	KDE=kdeprefix,kdelibs,automoc4 QT=phonon
-KYZIS_CMAKE_ON=	-DENABLE_KYZIS:BOOL=ON -DENABLE_KPART_YZIS:BOOL=ON
-KYZIS_CMAKE_OFF=	-DENABLE_KYZIS:BOOL=OFF -DENABLE_KPART_YZIS:BOOL=OFF
 NYZIS_DESC=	Build nyzis (ncurses frontend)
 NYZIS_CPPFLAGS=	-D_XOPEN_SOURCE_EXTENDED
 NYZIS_CMAKE_ON=	-DENABLE_NYZIS:BOOL=ON
@@ -49,13 +44,5 @@ DOXYGEN_BUILD_DEPENDS=	dot:graphics/graphviz \
 			doxygen:devel/doxygen
 DOXYGEN_CMAKE_ON=	-DENABLE_DOCUMENTATION:BOOL=ON
 DOXYGEN_CMAKE_OFF=	-DENABLE_DOCUMENTATION:BOOL=OFF
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MKYZIS}
-PLIST_SUB+=	QYZIS="@comment "
-.else
-PLIST_SUB+=	QYZIS=""
-.endif
 
 .include <bsd.port.mk>
