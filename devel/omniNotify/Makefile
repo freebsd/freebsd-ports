@@ -4,25 +4,29 @@
 PORTNAME=	omniNotify
 PORTVERSION=	2.1.01
 #It' snapshot of development version actually
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.stasyan.com/devel/distfiles/
 DISTNAME=	omniNotify-2-latest
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	CORBA Notification Service (CosNotification) for omniORB
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unmaintained upstream since 2004
+EXPIRATIION_DATE=	2019-02-01
+
 LIB_DEPENDS=	libomniORB4.so:devel/omniORB-4.1
 # parts of omniORB4-4.1 source tree is required to build
 BUILD_DEPENDS=	${NONEXISTENT}:devel/omniORB-4.1:patch
 
+USES=		gmake python
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 OMNIORB_WRKSRC=	`cd ${PORTSDIR}/devel/omniORB-4.1 && ${MAKE} -V WRKSRC`
 
-USES=		gmake python
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
 MAKEFILE=	GNUmakefile
