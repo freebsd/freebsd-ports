@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	memcached
-PORTVERSION=	3.0.4
+PORTVERSION=	3.1.3
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
