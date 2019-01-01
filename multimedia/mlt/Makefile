@@ -12,7 +12,7 @@ COMMENT?=	Multimedia framework for TV broadcasting
 LICENSE?=	GPLv2 GPLv3 LGPL21
 LICENSE_COMB?=	multi
 
-USES+=		alias compiler:c++11-lang eigen:3 gl gmake gnome localbase \
+USES+=		alias compiler:c++11-lang eigen:3 gmake gnome localbase \
 		pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-gpl --enable-gpl3 --target-os=FreeBSD
@@ -38,7 +38,7 @@ USE_GL=		gl
 USE_GNOME=	libxml2
 USE_SDL=	image
 USE_XORG=	x11
-USES+=		iconv pathfix
+USES+=		gl iconv pathfix
 PATHFIX_MAKEFILEIN=	Makefile
 CONFIGURE_ARGS+=--disable-qt --swig-languages=none
 USE_LDCONFIG=	yes
