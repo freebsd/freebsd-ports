@@ -1,6 +1,5 @@
 o Add DragonFly and GNU/kFreeBSD support
 o Implement GetThreadCount() for BSDs
-o Work around StreamingListenerTest with GCC 4.2
 
 --- include/gtest/internal/gtest-port-arch.h.orig	2017-09-23 23:21:02 UTC
 +++ include/gtest/internal/gtest-port-arch.h
@@ -177,21 +176,3 @@ o Work around StreamingListenerTest with GCC 4.2
  void* ThreadFunc(void* data) {
    internal::Mutex* mutex = static_cast<internal::Mutex*>(data);
    mutex->Lock();
---- test/gtest_unittest.cc.orig	2017-09-23 23:21:02 UTC
-+++ test/gtest_unittest.cc
-@@ -118,6 +118,7 @@ TEST_F(StreamingListenerTest, OnTestIterationEnd) {
-   EXPECT_EQ("event=TestIterationEnd&passed=1&elapsed_time=0ms\n", *output());
- }
- 
-+#if GTEST_LANG_CXX11 // workaround breakage with GCC 4.2
- TEST_F(StreamingListenerTest, OnTestCaseStart) {
-   *output() = "";
-   streamer_.OnTestCaseStart(TestCase("FooTest", "Bar", NULL, NULL));
-@@ -129,6 +130,7 @@ TEST_F(StreamingListenerTest, OnTestCaseEnd) {
-   streamer_.OnTestCaseEnd(TestCase("FooTest", "Bar", NULL, NULL));
-   EXPECT_EQ("event=TestCaseEnd&passed=1&elapsed_time=0ms\n", *output());
- }
-+#endif
- 
- TEST_F(StreamingListenerTest, OnTestStart) {
-   *output() = "";
