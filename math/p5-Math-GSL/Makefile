@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Math-GSL
-PORTVERSION=	0.39
-PORTREVISION=	4
+PORTVERSION=	0.40
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,8 +20,8 @@ TEST_DEPENDS=	p5-Test-Class>=0.12:devel/p5-Test-Class \
 		p5-Test-Most>=0.31:devel/p5-Test-Most \
 		p5-Test-Taint>=1.06:devel/p5-Test-Taint
 
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
 
 post-install:
 	${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Math/GSL/ -name "*.so" -exec ${STRIP_CMD} {} +
