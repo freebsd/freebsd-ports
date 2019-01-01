@@ -1,6 +1,5 @@
-lib/licq/licq_%%GUI_NAME%%-gui.so
-%%WITH_KDE%%share/applications/kde4/licq.desktop
-%%WITH_QT%%share/applications/licq.desktop
+lib/licq/licq_qt4-gui.so
+share/applications/licq.desktop
 share/licq/qt4-gui/dock/console/away.xpm
 share/licq/qt4-gui/dock/console/bothmsg.xpm
 share/licq/qt4-gui/dock/console/console.dock
