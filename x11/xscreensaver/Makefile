@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xscreensaver
-PORTVERSION=	5.40
-PORTREVISION=	1
+PORTVERSION=	5.42
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
@@ -20,7 +19,8 @@ LIB_DEPENDS=	libgle.so:graphics/gle \
 
 CONFLICTS=	xscreensaver-gnome-[0-9]* xscreensaver-gnome-hacks-[0-9]*
 
-USES=		autoreconf gettext gmake jpeg localbase:ldflags perl5 pkgconfig
+USES=		autoreconf gettext gl gmake gnome jpeg localbase:ldflags perl5 \
+		pkgconfig
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf2 gtk20 intltool libglade2 libxml2
 USE_PERL5=	run

@@ -106,6 +106,7 @@ bin/xscreensaver-hacks/grav
 bin/xscreensaver-hacks/greynetic
 bin/xscreensaver-hacks/halftone
 bin/xscreensaver-hacks/halo
+bin/xscreensaver-hacks/handsy
 bin/xscreensaver-hacks/helix
 bin/xscreensaver-hacks/hexadrop
 bin/xscreensaver-hacks/hexstrut
@@ -351,6 +352,7 @@ man/man6/grav.6.gz
 man/man6/greynetic.6.gz
 man/man6/halftone.6.gz
 man/man6/halo.6.gz
+man/man6/handsy.6.gz
 man/man6/helix.6.gz
 man/man6/hexadrop.6.gz
 man/man6/hexstrut.6.gz
@@ -611,6 +613,7 @@ share/pixmaps/xscreensaver.xpm
 %%DATADIR%%/config/greynetic.xml
 %%DATADIR%%/config/halftone.xml
 %%DATADIR%%/config/halo.xml
+%%DATADIR%%/config/handsy.xml
 %%DATADIR%%/config/helix.xml
 %%DATADIR%%/config/hexadrop.xml
 %%DATADIR%%/config/hexstrut.xml
