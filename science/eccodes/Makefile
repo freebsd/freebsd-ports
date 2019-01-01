@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eccodes
-PORTVERSION=	2.8.2
+PORTVERSION=	2.10.0
 DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	science
 MASTER_SITES=	https://confluence.ecmwf.int/download/attachments/45757960/ \
@@ -25,10 +25,11 @@ AEC_DESC=	Adaptive Entropy Coding support
 
 PORTSCOUT=	site:https://software.ecmwf.int/wiki/display/ECC/Releases
 
+USES=		cmake shebangfix
+
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS=BOTH
 CMAKE_OFF=	ENABLE_ECCODES_OMP_THREADS ENABLE_FORTRAN ENABLE_MEMFS ENABLE_PYTHON
 CMAKE_ON=	ENABLE_ECCODES_THREADS ENABLE_NETCDF ENABLE_PNG
-USES=		cmake shebangfix
 USE_CSTD=	c99
 USE_LDCONFIG=	yes
 
