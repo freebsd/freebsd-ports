@@ -1,7 +1,0 @@
-CFLAGS+=	-DNOANALYSIS
-
-SRCS=	common.c dct64_i386.c decode_i386.c interface.c layer3.c tabinit.c
-
-LIB=	mpglibDBL
-
-.include <bsd.lib.mk>
