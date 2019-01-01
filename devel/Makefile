@@ -6047,6 +6047,7 @@
     SUBDIR += rubygem-tty-font
     SUBDIR += rubygem-tty-markdown
     SUBDIR += rubygem-tty-pager
+    SUBDIR += rubygem-tty-pie
     SUBDIR += rubygem-tty-platform
     SUBDIR += rubygem-tty-progressbar
     SUBDIR += rubygem-tty-prompt
