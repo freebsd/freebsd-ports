@@ -1,7 +1,7 @@
---- python/tests/Makefile.in.orig	2008-05-23 22:41:49.000000000 -0500
-+++ python/tests/Makefile.in	2008-05-23 22:42:12.000000000 -0500
-@@ -270,7 +270,7 @@
- target_alias = @target_alias@
+--- python/tests/Makefile.in.orig	2017-09-20 18:23:56 UTC
++++ python/tests/Makefile.in
+@@ -385,7 +385,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -exampledir = $(datadir)/doc/libxml2-python-$(LIBXML_VERSION)/examples

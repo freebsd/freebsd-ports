@@ -1,7 +1,7 @@
---- Makefile.in.orig	2014-10-17 20:26:52.547793054 +0200
-+++ Makefile.in	2014-10-17 20:27:34.868791352 +0200
-@@ -1234,7 +1234,7 @@
- @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c `$(CYGPATH_W) '$<'`
+--- Makefile.in.orig	2017-09-20 18:23:56 UTC
++++ Makefile.in
+@@ -1245,7 +1245,7 @@ distclean-compile:
+ @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
  
  .c.lo:
 -@am__fastdepCC_TRUE@	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
@@ -9,7 +9,7 @@
  @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
  @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@@ -1712,7 +1712,7 @@
+@@ -1730,7 +1730,7 @@ distcleancheck: distclean
  check-am: all-am
  check: $(BUILT_SOURCES)
  	$(MAKE) $(AM_MAKEFLAGS) check-recursive
@@ -18,7 +18,7 @@
  		config.h
  install-binPROGRAMS: install-libLTLIBRARIES
  
-@@ -1780,7 +1780,7 @@
+@@ -1798,7 +1798,7 @@ info: info-recursive
  
  info-am:
  

@@ -1,6 +1,6 @@
---- libxml-2.0.pc.in.orig	2014-10-03 11:00:53.000000000 +0200
-+++ libxml-2.0.pc.in	2015-07-31 13:26:13.647320000 +0200
-@@ -9,5 +9,5 @@
+--- libxml-2.0.pc.in.orig	2016-02-09 10:17:32 UTC
++++ libxml-2.0.pc.in
+@@ -9,5 +9,5 @@ Version: @VERSION@
  Description: libXML library version2.
  Requires:
  Libs: -L${libdir} -lxml2

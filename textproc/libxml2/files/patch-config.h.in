@@ -1,11 +1,11 @@
---- config.h.in.orig	2012-05-23 10:56:31.000000000 +0200
-+++ config.h.in	2012-07-23 09:34:22.000000000 +0200
+--- config.h.in.orig	2018-03-05 15:54:17 UTC
++++ config.h.in
 @@ -1,5 +1,8 @@
- /* config.h.in.  Generated from configure.in by autoheader.  */
+ /* config.h.in.  Generated from configure.ac by autoheader.  */
  
 +/* XXX */
 +#define HAVE_VFSCANF
 +
- /* Define to 1 if you have the <ansidecl.h> header file. */
- #undef HAVE_ANSIDECL_H
+ /* Type cast for the gethostbyname() argument */
+ #undef GETHOSTBYNAME_ARG_CAST
  
