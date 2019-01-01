@@ -96,7 +96,7 @@ DIST_SUBDIR=	PECL
 
 PHPBASE?=	${LOCALBASE}
 
-_ALL_PHP_VERSIONS=	56 71 72 73
+_ALL_PHP_VERSIONS=	71 72 73
 
 # Make the already installed PHP the default one.
 .  if exists(${PHPBASE}/etc/php.conf)
@@ -169,9 +169,6 @@ PHP_EXT_INC=    pcre spl
 .    elif ${PHP_VER} == 71
 PHP_EXT_DIR=   20160303
 PHP_EXT_INC=    pcre spl
-.    elif ${PHP_VER} == 56
-PHP_EXT_DIR=	20131226
-PHP_EXT_INC=	pcre spl
 .    else
 # (rene) default to DEFAULT_VERSIONS
 PHP_EXT_DIR=	20170718
@@ -208,7 +205,7 @@ PECL_PKGNAMEPREFIX=	php${PHP_VER}-pecl-
 .      if ${PHP_VER} == "${VER}"
 _IGNORE_PHP_SET=
 IGNORE=		cannot be installed: doesn't work with lang/php${PHP_VER} port\
-		(doesn't support PHP ${IGNORE_WITH_PHP:C/^([57])/\1./})
+		(doesn't support PHP ${IGNORE_WITH_PHP:C/^(7)/\1./})
 .      endif
 .    endfor
 .  endif
@@ -353,7 +350,6 @@ _USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dom \
 		sockets spl sqlite3 sysvmsg sysvsem sysvshm \
 		tidy tokenizer wddx xml xmlreader xmlrpc xmlwriter xsl zip zlib
 # version specific components
-_USE_PHP_VER56=	${_USE_PHP_ALL} mssql mysql sybase_ct
 _USE_PHP_VER71=	${_USE_PHP_ALL}
 _USE_PHP_VER72=	${_USE_PHP_ALL} sodium
 _USE_PHP_VER73=	${_USE_PHP_ALL} sodium
