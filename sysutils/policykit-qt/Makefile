@@ -19,7 +19,6 @@ LIB_DEPENDS=	libpolkit.so:sysutils/policykit
 
 USE_LDCONFIG=	yes
 USES=		cmake gettext pkgconfig qt:4 tar:bzip2
-USE_KDE=	automoc4
 USE_QT=		corelib dbus gui network svg xml  \
 		qmake_build moc_build rcc_build uic_build
 
