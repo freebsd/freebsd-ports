@@ -89,11 +89,7 @@ CMAKE_ARGS+=	-DZM_PERL_MM_PARMS=INSTALLDIRS=site \
 
 .include <bsd.port.pre.mk>
 
-.if ${PHP_VER} >= 71
 RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu@${PHP_FLAVOR}
-.else
-RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu4@${PHP_FLAVOR}
-.endif
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
