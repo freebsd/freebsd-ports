@@ -3,23 +3,28 @@
 
 PORTNAME=	omniorb
 PORTVERSION=	3.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/omniORBpy/omniORBpy-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	3
 DISTNAME=	omniORBpy-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python bindings for omniORB4, a CORBA 2.6 ORB
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libomniORB4.so.1:devel/omniORB-4.1
+DEPRECATED=	Uses legacy version of omniORB, consider using devel/py-omniorb
+EXPIRATION_DATE=2019-01-31
+
+LIB_DEPENDS=	libomniORB4.so:devel/omniORB-4.1
 # parts of omniORB4 source tree is required to build omniORBpy;
 # see also the "post-extract" target below.
 BUILD_DEPENDS=	${NONEXISTENT}:devel/omniORB-4.1:patch
+
+USES=		gmake python:2.7 shebangfix ssl tar:bzip2
 
 CONFLICTS=	${PYTHON_PKGNAMEPREFIX}orbit-2* ${PYTHON_PKGNAMEPREFIX}omniorb-4.2*
 
@@ -32,8 +37,7 @@ OMNIORB_WRKSRC!=	cd ${.CURDIR}/../omniORB-4.1 && ${MAKE} -V WRKSRC
 GNU_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
 MAKEFILE=	GNUmakefile
-USE_LDCONFIG=	yes
-USES=		gmake python:2.7 shebangfix ssl tar:bzip2
+#USE_LDCONFIG=	yes
 SHEBANG_FILES=	examples/tests/*.py examples/poa/*.py \
 		examples/fortune/*.py examples/embed/*.py \
 		examples/valuetype/tests/*.py \

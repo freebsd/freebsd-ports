@@ -1,6 +1,6 @@
---- python/dir.mk.orig	Wed Feb  8 23:42:23 2006
-+++ python/dir.mk	Wed Feb  8 23:42:44 2006
-@@ -24,7 +24,7 @@
+--- python/dir.mk.orig	2003-03-23 21:51:59 UTC
++++ python/dir.mk
+@@ -24,7 +24,7 @@ export:: $(FILES)
              $(ExportFileToDir) \
            done; \
            cd $(PYLIBDIR); \
@@ -9,7 +9,7 @@
  	 )
  
  ifdef INSTALLTARGET
-@@ -34,6 +34,6 @@
+@@ -34,6 +34,6 @@ install:: $(FILES)
              $(ExportFileToDir) \
            done; \
            cd $(INSTALLPYLIBDIR); \
