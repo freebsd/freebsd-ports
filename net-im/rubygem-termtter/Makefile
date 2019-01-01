@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	termtter
-PORTVERSION=	2.2.8
+PORTVERSION=	2.2.9
 CATEGORIES=	net-im rubygems
 MASTER_SITES=	RG
 
@@ -20,9 +20,10 @@ RUN_DEPENDS=	rubygem-activerecord4>=4.1.0:databases/rubygem-activerecord4 \
 		rubygem-rubytter>=1.5.1:net/rubygem-rubytter \
 		rubygem-termcolor>=1.0:textproc/rubygem-termcolor
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/termtter bin/termtter_frame
 
