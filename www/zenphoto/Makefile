@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zenphoto
-PORTVERSION=	1.5
+PORTVERSION=	1.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -13,10 +13,11 @@ COMMENT=	Simpler web photo gallery
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		cpe php:flavors,web
+USE_PHP=	gd gettext hash json mbstring mysqli pcre session
+
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_PHP=	gd gettext hash json mbstring mysqli pcre session
-USES=		cpe php:flavors,web
 
 SUB_FILES=	pkg-deinstall pkg-message
 
@@ -38,8 +39,8 @@ MS_PLIST=	${WRKDIR}/.ms-pkg-plist
 genplist: do-clean extract
 	@${ECHO_CMD} '@owner www' > ${MS_PLIST}
 	@${ECHO_CMD} '@group www' >> ${MS_PLIST}
-	@cd ${WRKSRC}/ && ${FIND} * -type f | ${SORT} | ${SED} 's|^|%%WWWDIR%%/|' >> ${MS_PLIST}
-	@cd ${WRKSRC}/ && (${FIND} * -type d -empty | ${XARGS} -I _ ${ECHO_CMD} '@dir %%WWWDIR%%/_') >> ${MS_PLIST}
+	@cd ${WRKSRC}/ && ${FIND} -s * -type f | ${SORT} | ${SED} 's|^|%%WWWDIR%%/|' >> ${MS_PLIST}
+	@cd ${WRKSRC}/ && (${FIND} -s * -type d -empty | ${XARGS} -I _ ${ECHO_CMD} '@dir %%WWWDIR%%/_') >> ${MS_PLIST}
 	@${ECHO_CMD} '@owner' >> ${MS_PLIST}
 	@${ECHO_CMD} '@group' >> ${MS_PLIST}
 	@${INSTALL} -m 600 ${MS_PLIST} ${PLIST}

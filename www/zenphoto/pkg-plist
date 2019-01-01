@@ -518,7 +518,7 @@
 %%WWWDIR%%/zp-core/js/jquery.js
 %%WWWDIR%%/zp-core/js/jquery.masonry.min.js
 %%WWWDIR%%/zp-core/js/jquery.pagination.js
-%%WWWDIR%%/zp-core/js/jquery.scrollTo.js
+%%WWWDIR%%/zp-core/js/jquery.scrollTo.min.js
 %%WWWDIR%%/zp-core/js/jquery.ui.nestedSortable.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery-ui-i18n.js
 %%WWWDIR%%/zp-core/js/jqueryui/i18n/jquery.ui.datepicker-af.js
@@ -692,8 +692,9 @@
 %%WWWDIR%%/zp-core/reconfigure.php
 %%WWWDIR%%/zp-core/rewrite.php
 %%WWWDIR%%/zp-core/setup.php
+%%WWWDIR%%/zp-core/setup/class-setup.php
+%%WWWDIR%%/zp-core/setup/class-setupmutex.php
 %%WWWDIR%%/zp-core/setup/index.php
-%%WWWDIR%%/zp-core/setup/setup-functions.php
 %%WWWDIR%%/zp-core/setup/setup-option-defaults.php
 %%WWWDIR%%/zp-core/setup/setup-primitive.php
 %%WWWDIR%%/zp-core/setup/setup-sqlform.php
@@ -733,10 +734,10 @@
 %%WWWDIR%%/zp-core/zp-extensions/GoogleMap/markerClustererPlus/markerclusterer.js
 %%WWWDIR%%/zp-core/zp-extensions/GoogleMap/overlappingMarkerSpiderfier/oms.min.js
 %%WWWDIR%%/zp-core/zp-extensions/PHPMailer.php
-%%WWWDIR%%/zp-core/zp-extensions/PHPMailer/PHPMailerAutoload.php
-%%WWWDIR%%/zp-core/zp-extensions/PHPMailer/class.phpmailer.php
-%%WWWDIR%%/zp-core/zp-extensions/PHPMailer/class.pop3.php
-%%WWWDIR%%/zp-core/zp-extensions/PHPMailer/class.smtp.php
+%%WWWDIR%%/zp-core/zp-extensions/PHPMailer/Exception.php
+%%WWWDIR%%/zp-core/zp-extensions/PHPMailer/PHPMailer.php
+%%WWWDIR%%/zp-core/zp-extensions/PHPMailer/POP3.php
+%%WWWDIR%%/zp-core/zp-extensions/PHPMailer/SMTP.php
 %%WWWDIR%%/zp-core/zp-extensions/admin-approval.php
 %%WWWDIR%%/zp-core/zp-extensions/auto_backup.php
 %%WWWDIR%%/zp-core/zp-extensions/bxslider_thumb_nav.php
@@ -750,7 +751,7 @@
 %%WWWDIR%%/zp-core/zp-extensions/cacheManager.php
 %%WWWDIR%%/zp-core/zp-extensions/cacheManager/cacheDBImages.php
 %%WWWDIR%%/zp-core/zp-extensions/cacheManager/cacheImages.php
-%%WWWDIR%%/zp-core/zp-extensions/cacheManager/functions.php
+%%WWWDIR%%/zp-core/zp-extensions/cacheManager/deprecated-functions.php
 %%WWWDIR%%/zp-core/zp-extensions/check_for_update.php
 %%WWWDIR%%/zp-core/zp-extensions/class-AnyFile.php
 %%WWWDIR%%/zp-core/zp-extensions/class-AnyFile/anyFileDefault.png
@@ -990,19 +991,21 @@
 %%WWWDIR%%/zp-core/zp-extensions/jplayer/js/jquery.jplayer.min.js
 %%WWWDIR%%/zp-core/zp-extensions/jplayer/js/jquery.jplayer.swf
 %%WWWDIR%%/zp-core/zp-extensions/jplayer/js/popcorn.jplayer.min.js
-%%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/blue.monday/jplayer.blue.monday.css
-%%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/blue.monday/jplayer.blue.monday.jpg
-%%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/blue.monday/jplayer.blue.monday.seeking.gif
-%%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/blue.monday/jplayer.blue.monday.video.play.png
+%%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/blue.monday/css/jplayer.blue.monday.css
+%%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/blue.monday/css/jplayer.blue.monday.min.css
+%%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/blue.monday/image/jplayer.blue.monday.jpg
+%%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/blue.monday/image/jplayer.blue.monday.seeking.gif
+%%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/blue.monday/image/jplayer.blue.monday.video.play.png
 %%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/blue.monday/mustache/jplayer.blue.monday.audio.playlist.html
 %%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/blue.monday/mustache/jplayer.blue.monday.audio.single.html
 %%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/blue.monday/mustache/jplayer.blue.monday.audio.stream.html
 %%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/blue.monday/mustache/jplayer.blue.monday.video.playlist.html
 %%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/blue.monday/mustache/jplayer.blue.monday.video.single.html
-%%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/pink.flag/jplayer.pink.flag.css
-%%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/pink.flag/jplayer.pink.flag.jpg
-%%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/pink.flag/jplayer.pink.flag.seeking.gif
-%%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/pink.flag/jplayer.pink.flag.video.play.png
+%%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/pink.flag/css/jplayer.pink.flag.css
+%%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/pink.flag/css/jplayer.pink.flag.min.css
+%%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/pink.flag/image/jplayer.pink.flag.jpg
+%%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/pink.flag/image/jplayer.pink.flag.seeking.gif
+%%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/pink.flag/image/jplayer.pink.flag.video.play.png
 %%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/pink.flag/mustache/jplayer.pink.flag.audio.playlist.html
 %%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/pink.flag/mustache/jplayer.pink.flag.audio.single.html
 %%WWWDIR%%/zp-core/zp-extensions/jplayer/skin/pink.flag/mustache/jplayer.pink.flag.audio.stream.html
@@ -1051,7 +1054,6 @@
 %%WWWDIR%%/zp-core/zp-extensions/openstreetmap/leaflet.js
 %%WWWDIR%%/zp-core/zp-extensions/openstreetmap/leaflet.markercluster.js
 %%WWWDIR%%/zp-core/zp-extensions/openstreetmap/openstreetmap.css
-%%WWWDIR%%/zp-core/zp-extensions/openstreetmap/tile-definitions.js
 %%WWWDIR%%/zp-core/zp-extensions/paged_thumbs_nav.php
 %%WWWDIR%%/zp-core/zp-extensions/print_album_menu.php
 %%WWWDIR%%/zp-core/zp-extensions/publishContent.php
@@ -1349,9 +1351,9 @@
 %%WWWDIR%%/zp-core/zp-extensions/zenphoto_sendmail.php
 @dir %%WWWDIR%%/albums
 @dir %%WWWDIR%%/cache
-@dir %%WWWDIR%%/plugins/watermarks
 @dir %%WWWDIR%%/plugins/gd_fonts
 @dir %%WWWDIR%%/plugins/imagick_fonts
+@dir %%WWWDIR%%/plugins/watermarks
 @dir %%WWWDIR%%/uploaded
 @dir %%WWWDIR%%/zp-data
 @owner
