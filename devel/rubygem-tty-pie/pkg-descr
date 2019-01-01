@@ -1,0 +1,5 @@
+TTY::Pie provides pie chart drawing component for TTY toolkit. It draws pie
+charts in your terminal window.
+
+WWW: https://piotrmurach.github.io/tty/
+WWW: https://github.com/piotrmurach/tty-pie
