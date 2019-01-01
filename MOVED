@@ -11471,3 +11471,15 @@ audio/kid3-qt4|audio/kid3-qt5|2018-12-31|Has expired: KDE4 is EOL upstream
 textproc/uim-kde4||2018-12-31|Has expired: Qt4 has been EOL since december 2015
 misc/kde4-xdg-env||2018-12-31|Removed, KDE4-related
 x11-themes/wallpapers-freebsd-kde4|x11-themes/wallpapers-freebsd-kde|2018-12-31|Renamed, the port is not KDE4 specific
+textproc/pecl-xdiff|textproc/pecl-xdiff2|2019-01-01|Has expired: Works only with EOL php 5.6
+www/mod_http2-devel||2019-01-01|Has expired: Use the module that is shipped with Apache 2.4
+www/varnish5|www/varnish6|2019-01-01|Has expired: Varnish 5 is Retired
+security/pecl-ssh2-0|security/pecl-ssh2|2019-01-01|Has expired: Works only with EOL php 5.6
+security/bitwarden-ruby||2019-01-01|Has expired: Expects very specific rubygem versions for new updates. Please follow instructions in git repo.
+devel/pecl-intl||2019-01-01|Has expired: Works only with EOL php 5.6
+devel/pecl-APCu4|devel/pecl-APCu|2019-01-01|Has expired: Works only with EOL php 5.6
+databases/pecl-memcache||2019-01-01|Has expired: Works only with EOL php 5.6
+databases/pecl-memcached2|databases/pecl-memcached|2019-01-01|Has expired: Works only with EOL php 5.6
+math/pecl-bitset2|math/pecl-bitset|2019-01-01|Has expired: Works only with EOL php 5.6
+multimedia/zoneminder-h264|multimedia/zoneminder|2019-01-01|Has expired: h264 feature was commited to main branch, please upgrade to www/zoneminder
+lang/php56|lang/php72|2019-01-01|Has expired: Security Support ends on 31 Dec 2018
