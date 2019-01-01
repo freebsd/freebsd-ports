@@ -8,7 +8,6 @@ lib/qupzilla/libAutoScroll.so
 lib/qupzilla/libFlashCookieManager.so
 %%GNOMEKEYRING%%lib/qupzilla/libGnomeKeyringPasswords.so
 lib/qupzilla/libGreaseMonkey.so
-%%KWALLET%%lib/qupzilla/libKWalletPasswords.so
 lib/qupzilla/libMouseGestures.so
 lib/qupzilla/libPIM.so
 lib/qupzilla/libStatusBarIcons.so
