@@ -2,7 +2,7 @@
 
 PORTNAME=	openbor
 # Hint: svn revision is git rev-list --count ${GH_TAGNAME}
-PORTVERSION?=	6560
+PORTVERSION?=	6569
 .ifndef PKGNAMESUFFIX
 PORTREVISION=	0
 .endif
@@ -31,7 +31,7 @@ PORTSCOUT=	ignore:1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DCurrent
-GH_TAGNAME?=	5026dd18
+GH_TAGNAME?=	dc2161e6
 
 USES+=		gmake pkgconfig
 .if ${PORTVERSION} < 4433
