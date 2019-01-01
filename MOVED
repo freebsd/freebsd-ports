@@ -11470,4 +11470,4 @@ java/netbeans-devel|java/netbeans|2018-12-31|Development port was removed now th
 audio/kid3-qt4|audio/kid3-qt5|2018-12-31|Has expired: KDE4 is EOL upstream
 textproc/uim-kde4||2018-12-31|Has expired: Qt4 has been EOL since december 2015
 misc/kde4-xdg-env||2018-12-31|Removed, KDE4-related
-x11-themes/wallpapers-freebsd-kde4||2018-12-31|Removed, KDE4-related
+x11-themes/wallpapers-freebsd-kde4|x11-themes/wallpapers-freebsd-kde|2018-12-31|Renamed, the port is not KDE4 specific
