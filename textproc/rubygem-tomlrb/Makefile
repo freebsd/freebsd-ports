@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tomlrb
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -12,10 +12,9 @@ COMMENT=	Racc-based TOML parser
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-NO_ARCH=	yes
+USES=		gem
 USE_RUBY=	yes
-USES=		gem shebangfix
 
-SHEBANG_FILES=	bin/setup
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
