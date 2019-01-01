@@ -751,8 +751,6 @@
     SUBDIR += phototonic
     SUBDIR += php-facedetect
     SUBDIR += php-geos
-    SUBDIR += php56-exif
-    SUBDIR += php56-gd
     SUBDIR += php71-exif
     SUBDIR += php71-gd
     SUBDIR += php72-exif

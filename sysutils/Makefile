@@ -881,8 +881,6 @@
     SUBDIR += pftables
     SUBDIR += pftop
     SUBDIR += phantom
-    SUBDIR += php56-fileinfo
-    SUBDIR += php56-posix
     SUBDIR += php71-fileinfo
     SUBDIR += php71-posix
     SUBDIR += php72-fileinfo

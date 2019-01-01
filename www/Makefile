@@ -1425,9 +1425,6 @@
     SUBDIR += phalcon
     SUBDIR += photo_gallery
     SUBDIR += php-screw
-    SUBDIR += php56-opcache
-    SUBDIR += php56-session
-    SUBDIR += php56-tidy
     SUBDIR += php71-opcache
     SUBDIR += php71-session
     SUBDIR += php71-tidy

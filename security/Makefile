@@ -831,10 +831,6 @@
     SUBDIR += pgpdump
     SUBDIR += pgpgpg
     SUBDIR += pgpin
-    SUBDIR += php56-filter
-    SUBDIR += php56-hash
-    SUBDIR += php56-mcrypt
-    SUBDIR += php56-openssl
     SUBDIR += php71-filter
     SUBDIR += php71-hash
     SUBDIR += php71-mcrypt
