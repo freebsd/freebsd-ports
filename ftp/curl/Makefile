@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	curl
-PORTVERSION=	7.62.0
+PORTVERSION=	7.63.0
 CATEGORIES=	ftp net www
 MASTER_SITES=	https://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -42,6 +42,9 @@ SMTP_DESC=		SMTP/SMTPS support
 THREADED_RESOLVER_DESC=	Threaded DNS resolver
 TLS_SRP_DESC=		TLS-SRP (Secure Remote Password) support
 
+USES=		cpe gmake libtool localbase pathfix perl5 shebangfix tar:xz
+USE_PERL5=	build
+
 CONFIGURE_ARGS=	--disable-werror \
 		--with-zsh-functions-dir=${LOCALBASE}/share/zsh/site-functions \
 		--without-axtls
@@ -51,8 +54,6 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	test
 USE_LDCONFIG=	yes
-USE_PERL5=	build
-USES=		cpe gmake libtool localbase pathfix perl5 shebangfix tar:xz
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
