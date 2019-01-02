@@ -1,8 +1,4 @@
 include/tuntap.h
 %%CXX_WRPR%%include/tuntap++.hh
 lib/libtuntap.a
-lib/libtuntap.so
-lib/libtuntap.so.2.1
 %%CXX_WRPR%%lib/libtuntap++.a
-%%CXX_WRPR%%lib/libtuntap++.so
-%%CXX_WRPR%%lib/libtuntap++.so.2.1
