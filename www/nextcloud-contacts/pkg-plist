@@ -86,6 +86,8 @@
 %%WWWDIR%%/js/chunks/121.js.map
 %%WWWDIR%%/js/chunks/122.js
 %%WWWDIR%%/js/chunks/122.js.map
+%%WWWDIR%%/js/chunks/123.js
+%%WWWDIR%%/js/chunks/123.js.map
 %%WWWDIR%%/js/chunks/13.js
 %%WWWDIR%%/js/chunks/13.js.map
 %%WWWDIR%%/js/chunks/14.js
@@ -349,6 +351,8 @@
 %%WWWDIR%%/l10n/fi.json
 %%WWWDIR%%/l10n/fr.js
 %%WWWDIR%%/l10n/fr.json
+%%WWWDIR%%/l10n/gl.js
+%%WWWDIR%%/l10n/gl.json
 %%WWWDIR%%/l10n/he.js
 %%WWWDIR%%/l10n/he.json
 %%WWWDIR%%/l10n/hu.js
