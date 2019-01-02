@@ -14,10 +14,6 @@ COMMENT=	Source code indenter and formatter for C, C++, C\#, and Java
 LICENSE=	MIT
 LICENSE_FILE=	${WRKDIR}/astyle/LICENSE.md
 
-BROKEN_mips=		fails to build: unrecognized command line option "-std=c++11"
-BROKEN_mips64=		fails to build: unrecognized command line option "-std=c++11"
-BROKEN_powerpc64=	fails to build: unrecognized command line option "-std=c++11"
-
 USES=		compiler:c++11-lang dos2unix gmake
 
 ALL_TARGET=	astyle
@@ -25,6 +21,10 @@ DOS2UNIX_GLOB=	*.ini
 WRKSRC=		${WRKDIR}/astyle/build/${CHOSEN_COMPILER_TYPE}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+do-configure:
+	@${REINPLACE_CMD} -e "s:%%CXX%%:${CXX}:" \
+		${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/astyle ${STAGEDIR}${PREFIX}/bin
