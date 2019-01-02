@@ -3,7 +3,7 @@
 
 PORTNAME=	lincity-ng
 PORTVERSION=	2.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	games
 MASTER_SITES=	BERLIOS
 
@@ -13,17 +13,19 @@ COMMENT=	Improved rich city simulation game for X
 BUILD_DEPENDS=	jam:devel/jam
 LIB_DEPENDS=	libphysfs.so:devel/physfs
 
-USES=		pkgconfig tar:bzip2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		gl gnome localbase:ldflags pkgconfig tar:bzip2
 USE_SDL=	sdl mixer image ttf gfx
 USE_GL=		gl
 USE_XORG=	x11
 USE_GNOME=	libxml2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libphysfs=${PREFIX} \
+CONFIGURE_ARGS=	--with-libphysfs=${LOCALBASE} \
 		--x-libraries=${LOCALBASE}/lib --x-includes=${LOCALBASE}/include
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
+LDFLAGS+=	-lpthread
 
 PLIST_FILES=	bin/lincity-ng \
 		share/applications/lincity-ng.desktop \
@@ -36,10 +38,11 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -e 's| -O| -I${LOCALBASE}/include&|g' \
 		${WRKSRC}/Jamrules
+
 do-build:
 	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} jam -dx -j${MAKE_JOBS_NUMBER})
 
 do-install:
-	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} jam -dx -sprefix=${STAGEDIR}${PREFIX} ${INSTALL_TARGET})
+	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} jam -dx -sprefix=${PREFIX} -sDESTDIR=${STAGEDIR} ${INSTALL_TARGET})
 
 .include <bsd.port.mk>

@@ -9,12 +9,3 @@
  appconfdir ?= [ ConcatDirs $(sysconfdir) $(PACKAGE_NAME) ] ;
  plugindir ?= [ ConcatDirs $(libdir) $(PACKAGE_NAME) ] ;
  applicationsdir ?= [ ConcatDirs $(datadir) applications ] ;
-@@ -111,7 +111,7 @@
- rule DoInstall
- {
-     local targets target i dir gdir ;
--    dir = [ ConcatDirs $(DESTDIR) $(2) ] ;
-+    dir = [ ConcatDirs  $(2) ] ;
- 
-     gdir = $(dir:G=dir) ;
-     MkDir $(gdir) ;
