@@ -11549,3 +11549,5 @@ sysutils/php56-posix|sysutils/php72-posix|2019-01-01|Has expired: Security Suppo
 sysutils/php56-fileinfo|sysutils/php72-fileinfo|2019-01-01|Has expired: Security Support ends on 31 Dec 2018
 www/mod_php56|www/mod_php72|2019-01-01|Has expired: Security Support ends on 31 Dec 2018
 multimedia/vlc-qt4||2019-01-02|Has expired: Upstream supported ended in 2018, port deprecated on 31 Dec 2018
+multimedia/phonon-vlc@qt4||2019-01-02|vlc-qt4 has been removed, vlc now always uses qt5
+multimedia/phonon-vlc@qt5|multimedia/phonon-vlc|2019-01-02|vlc-qt4 has been removed, vlc now always uses qt5
