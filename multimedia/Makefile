@@ -450,7 +450,6 @@
     SUBDIR += vdr-plugins
     SUBDIR += vid.stab
     SUBDIR += vlc
-    SUBDIR += vlc-qt4
     SUBDIR += vlc3
     SUBDIR += vtkmpeg2encode
     SUBDIR += w_scan

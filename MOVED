@@ -11548,3 +11548,4 @@ converters/php56-recode|converters/php72-recode|2019-01-01|Has expired: Security
 sysutils/php56-posix|sysutils/php72-posix|2019-01-01|Has expired: Security Support ends on 31 Dec 2018
 sysutils/php56-fileinfo|sysutils/php72-fileinfo|2019-01-01|Has expired: Security Support ends on 31 Dec 2018
 www/mod_php56|www/mod_php72|2019-01-01|Has expired: Security Support ends on 31 Dec 2018
+multimedia/vlc-qt4||2019-01-02|Has expired: Upstream supported ended in 2018, port deprecated on 31 Dec 2018
