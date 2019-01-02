@@ -22,7 +22,6 @@ USES=		php:pecl pkgconfig
 USE_PHP=	json:build session:build
 
 CONFIGURE_ARGS=	--with-libmemcached-dir=${LOCALBASE}
-IGNORE_WITH_PHP=56
 
 IGBINARY_CONFIGURE_ENABLE=	memcached-igbinary
 IGBINARY_USE=		PHP=igbinary:build
