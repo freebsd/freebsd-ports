@@ -12,6 +12,7 @@ COMMENT=	Official Last.fm desktop application suite
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Requires vlc-qt4 which was deprecated on 2018-12-31
 DEPRECATED=		Qt4 has been EOL since december 2015
 EXPIRATION_DATE=	2019-03-15
 
@@ -43,7 +44,8 @@ GSTREAMER_DESC=		Multimedia via Phonon-GStreamer
 GSTREAMER_USES=	qt:4
 GSTREAMER_USE=		QT=phonon-gst_run
 VLC_DESC=		Multimedia via Phonon-VLC
-VLC_RUN_DEPENDS=	phonon-vlc-qt4>=0.6.1:multimedia/phonon-vlc@qt4
+#multimedia/phonon-vlc@qt4 flavor was removed due to depreciation of vlc-qt4
+#VLC_RUN_DEPENDS=	phonon-vlc-qt4>=0.6.1:multimedia/phonon-vlc@qt4
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
