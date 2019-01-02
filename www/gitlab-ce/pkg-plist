@@ -3902,6 +3902,7 @@
 %%WWWDIR%%/app/models/concerns/from_union.rb
 %%WWWDIR%%/app/models/concerns/ghost_user.rb
 %%WWWDIR%%/app/models/concerns/group_descendant.rb
+%%WWWDIR%%/app/models/concerns/has_ref.rb
 %%WWWDIR%%/app/models/concerns/has_status.rb
 %%WWWDIR%%/app/models/concerns/has_variable.rb
 %%WWWDIR%%/app/models/concerns/ignorable_column.rb
@@ -11505,6 +11506,7 @@
 %%WWWDIR%%/spec/features/merge_request/user_selects_branches_for_new_mr_spec.rb
 %%WWWDIR%%/spec/features/merge_request/user_suggests_changes_on_diff_spec.rb
 %%WWWDIR%%/spec/features/merge_request/user_toggles_whitespace_changes_spec.rb
+%%WWWDIR%%/spec/features/merge_request/user_tries_to_access_private_repository_through_new_mr_spec.rb
 %%WWWDIR%%/spec/features/merge_request/user_uses_quick_actions_spec.rb
 %%WWWDIR%%/spec/features/merge_request/user_views_diffs_spec.rb
 %%WWWDIR%%/spec/features/merge_request/user_views_open_merge_request_spec.rb
@@ -13979,6 +13981,7 @@
 %%WWWDIR%%/spec/models/concerns/feature_gate_spec.rb
 %%WWWDIR%%/spec/models/concerns/from_union_spec.rb
 %%WWWDIR%%/spec/models/concerns/group_descendant_spec.rb
+%%WWWDIR%%/spec/models/concerns/has_ref_spec.rb
 %%WWWDIR%%/spec/models/concerns/has_status_spec.rb
 %%WWWDIR%%/spec/models/concerns/has_variable_spec.rb
 %%WWWDIR%%/spec/models/concerns/ignorable_column_spec.rb
