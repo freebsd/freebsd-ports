@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	terminus-font
-PORTVERSION=	4.46
+PORTVERSION=	4.47
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}-${PORTVERSION}
 
@@ -13,7 +13,7 @@ LICENSE=	OFL11
 
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
-USES=		gmake fonts python:build,3.4+ shebangfix
+USES=		gmake fonts python:build,3.5+ shebangfix
 NO_ARCH=	yes
 
 SHEBANG_FILES=	bin/*.py
