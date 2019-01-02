@@ -1,5 +1,36 @@
+- Make sure NEON is available when building with intrinsics
+
 --- build/make/Makefile.orig
 +++ build/make/Makefile
+@@ -142,6 +142,28 @@ $(BUILD_PFX)%_avx2.c.o: CFLAGS += -mavx2
+ $(BUILD_PFX)%_avx512.c.d: CFLAGS += -mavx512f -mavx512cd -mavx512bw -mavx512dq -mavx512vl
+ $(BUILD_PFX)%_avx512.c.o: CFLAGS += -mavx512f -mavx512cd -mavx512bw -mavx512dq -mavx512vl
+ 
++# ARM
++ifeq ($(TGT_ISA),armv6)
++ifeq (,$(filter -march=%,$(CFLAGS)))
++$(BUILD_PFX)%_neon.c.d: CFLAGS += -march=armv7-a
++$(BUILD_PFX)%_neon.c.o: CFLAGS += -march=armv7-a
++$(BUILD_PFX)%_neon.asm.S.d: ASFLAGS += -march=armv7-a
++$(BUILD_PFX)%_neon.asm.S.o: ASFLAGS += -march=armv7-a
++$(BUILD_PFX)%_neon_asm.asm.S.d: ASFLAGS += -march=armv7-a
++$(BUILD_PFX)%_neon_asm.asm.S.o: ASFLAGS += -march=armv7-a
++endif
++$(BUILD_PFX)%_neon.asm.S.d: ASFLAGS += -meabi=5
++$(BUILD_PFX)%_neon.asm.S.o: ASFLAGS += -meabi=5
++$(BUILD_PFX)%_neon_asm.asm.S.d: ASFLAGS += -meabi=5
++$(BUILD_PFX)%_neon_asm.asm.S.o: ASFLAGS += -meabi=5
++endif
++ifneq (,$(filter arm%,$(TGT_ISA)))
++$(BUILD_PFX)%_neon.asm.S.d: ASFLAGS += -mfpu=neon
++$(BUILD_PFX)%_neon.asm.S.o: ASFLAGS += -mfpu=neon
++$(BUILD_PFX)%_neon_asm.asm.S.d: ASFLAGS += -mfpu=neon
++$(BUILD_PFX)%_neon_asm.asm.S.o: ASFLAGS += -mfpu=neon
++endif
++
+ # POWER
+ $(BUILD_PFX)%_vsx.c.d: CFLAGS += -maltivec -mvsx
+ $(BUILD_PFX)%_vsx.c.o: CFLAGS += -maltivec -mvsx
 @@ -230,8 +230,8 @@
  define install_map_template
  $(DIST_DIR)/$(1): $(2)
