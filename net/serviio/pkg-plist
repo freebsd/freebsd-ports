@@ -1,5 +1,6 @@
 sbin/serviiod
-%%JAVAJARDIR%%/serviio/aXMLRPC.jar
+%%JAVAJARDIR%%/serviio/aspectjrt.jar
+%%JAVAJARDIR%%/serviio/aspectjweaver.jar
 %%JAVAJARDIR%%/serviio/commons-codec.jar
 %%JAVAJARDIR%%/serviio/commons-imaging.jar
 %%JAVAJARDIR%%/serviio/commons-io.jar
@@ -17,10 +18,10 @@ sbin/serviiod
 %%JAVAJARDIR%%/serviio/icu4j.jar
 %%JAVAJARDIR%%/serviio/imgscalr-lib.jar
 %%JAVAJARDIR%%/serviio/jaudiotagger.jar
+%%JAVAJARDIR%%/serviio/javax.xml.soap-api.jar
 %%JAVAJARDIR%%/serviio/jcl-over-slf4j.jar
 %%JAVAJARDIR%%/serviio/jcs.jar
 %%JAVAJARDIR%%/serviio/jdom.jar
-%%JAVAJARDIR%%/serviio/jISO8601.jar
 %%JAVAJARDIR%%/serviio/jnat-pmplib.jar
 %%JAVAJARDIR%%/serviio/jul-to-slf4j.jar
 %%JAVAJARDIR%%/serviio/log4j.jar
