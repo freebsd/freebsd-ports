@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	core
+PORTREVISION=	1
 CATEGORIES=	devel python
 
 MAINTAINER=	kde@FreeBSD.org
@@ -17,7 +18,7 @@ PYQT_DIST=	yes
 
 USES=		python pyqt:5 qt:5
 USE_PYTHON=	concurrent flavors py3kplist
-USE_PYQT=	sip_build
+USE_PYQT=	sip
 USE_QT=		core buildtools_build qmake_build
 
 OPTIONS_DEFINE=	API DEBUG
