@@ -60,12 +60,10 @@ do-install:
 		${WRKSRC}/j3d-core/build/default/opt/lib/ext/j3dcore.jar \
 		${WRKSRC}/j3d-core/build/default/opt/lib/ext/j3dutils.jar \
 		${STAGEDIR}${JAVA_HOME}/jre/lib/ext
-.if ${ARCH} != powerpc64
 	@${MKDIR} ${STAGEDIR}${JAVA_HOME}/jre/lib/${ARCH}
 	${INSTALL} \
 		${WRKSRC}/j3d-core/build/default/opt/native/libj3dcore-ogl.so \
 		${STAGEDIR}${JAVA_HOME}/jre/lib/${ARCH}
-.endif
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

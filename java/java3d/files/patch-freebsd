@@ -126,7 +126,7 @@ diff -ruN ../java3d-1.5.2/j3d-core/src/native/ogl/build-freebsd.xml ./j3d-core/s
 +
 +    <!-- Compile the c source files-->
 +    <exec dir="${build}/${platform}/${bldType}/native/ogl/objs" executable="gcc">
-+	<arg line="-fPIC -march=k8 -I${oglsrc} -I${ports.localbase}/include -I${java.home}/../include -I${java.home}/../include/freebsd -I${javahCoreTarget} ${bldFlag} -DLINUX ${cflags.cg} -c ${oglsrc}/DrawingSurfaceObjectAWT.c ${oglsrc}/Canvas3D.c ${oglsrc}/GraphicsContext3D.c  ${oglsrc}/NativeScreenInfo.c  ${oglsrc}/NativeConfigTemplate3D.c  ${oglsrc}/MasterControl.c  ${oglsrc}/GeometryArrayRetained.c  ${oglsrc}/Attributes.c  ${oglsrc}/CgShaderProgram.c  ${oglsrc}/GLSLShaderProgram.c  ${oglsrc}/Lights.c"/>
++	<arg line="-fPIC -I${oglsrc} -I${ports.localbase}/include -I${java.home}/../include -I${java.home}/../include/freebsd -I${javahCoreTarget} ${bldFlag} -DLINUX ${cflags.cg} -c ${oglsrc}/DrawingSurfaceObjectAWT.c ${oglsrc}/Canvas3D.c ${oglsrc}/GraphicsContext3D.c  ${oglsrc}/NativeScreenInfo.c  ${oglsrc}/NativeConfigTemplate3D.c  ${oglsrc}/MasterControl.c  ${oglsrc}/GeometryArrayRetained.c  ${oglsrc}/Attributes.c  ${oglsrc}/CgShaderProgram.c  ${oglsrc}/GLSLShaderProgram.c  ${oglsrc}/Lights.c"/>
 +    </exec>
 +
 +    <!-- Create the library file-->
@@ -139,7 +139,7 @@ diff -ruN ../java3d-1.5.2/j3d-core/src/native/ogl/build-freebsd.xml ./j3d-core/s
 +  <target name="compile-ogl-cg" if="build.cg">
 +    <!-- Compile the wrapper -->
 +    <exec dir="${build}/${platform}/${bldType}/native/ogl/objs" executable="gcc">
-+	<arg line="-march=k8 -I${oglsrc} -I${java.home}/../include -I${java.home}/../include/freebsd -I${javahCoreTarget} ${bldFlag} -DLINUX ${cflags.cg} -c ${oglsrc}/CgWrapper.c"/>
++	<arg line="-I${oglsrc} -I${java.home}/../include -I${java.home}/../include/freebsd -I${javahCoreTarget} ${bldFlag} -DLINUX ${cflags.cg} -c ${oglsrc}/CgWrapper.c"/>
 +    </exec>
 +
 +    <!-- Create the wrapper library -->
