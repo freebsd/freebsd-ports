@@ -1,0 +1,11 @@
+--- ../../build/gcc/Makefile.orig	2018-01-11 17:18:18 UTC
++++ ../../build/gcc/Makefile
+@@ -37,7 +37,7 @@ objdir = obj
+ ipath=$(prefix)/bin
+ CBASEFLAGS = -Wall -Wextra -fno-rtti -fno-exceptions -std=c++11
+ JAVAINCS   = -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/linux
+-CXX = g++
++CXX = %%CXX%%
+ INSTALL=install -o $(USER) -g $(USER)
+ 
+ # Library's major version number -- Increment in case of incompatible API
