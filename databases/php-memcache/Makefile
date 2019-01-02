@@ -20,7 +20,6 @@ USES=		dos2unix php:ext
 USE_PHP=	session:build zlib:build
 
 CONFIGURE_ARGS=	--with-zlib-dir=/usr
-IGNORE_WITH_PHP=56
 USE_CSTD=	gnu89
 
 GH_ACCOUNT=	websupport-sk
