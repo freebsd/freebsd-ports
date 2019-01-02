@@ -10,8 +10,6 @@
 %%WWWDIR%%/cache/export/.empty
 %%WWWDIR%%/cache/feeds/.empty
 %%WWWDIR%%/cache/images/.empty
-%%WWWDIR%%/cache/js/.empty
-%%WWWDIR%%/cache/simplepie/.empty
 %%WWWDIR%%/cache/upload/.empty
 %%WWWDIR%%/classes/api.php
 %%WWWDIR%%/classes/article.php
@@ -24,6 +22,7 @@
 %%WWWDIR%%/classes/db/pgsql.php
 %%WWWDIR%%/classes/db/prefs.php
 %%WWWDIR%%/classes/dbupdater.php
+%%WWWDIR%%/classes/debug.php
 %%WWWDIR%%/classes/digest.php
 %%WWWDIR%%/classes/dlg.php
 %%WWWDIR%%/classes/feedenclosure.php
@@ -60,11 +59,13 @@
 @mode 0400
 @sample %%WWWDIR%%/config.php.sample
 @mode
-%%WWWDIR%%/css/Makefile
 %%WWWDIR%%/css/cdm.less
 %%WWWDIR%%/css/default.css
+%%WWWDIR%%/css/default.css.map
 %%WWWDIR%%/css/default.less
-%%WWWDIR%%/css/dijit.less
+%%WWWDIR%%/css/defines.less
+%%WWWDIR%%/css/dijit_basic.less
+%%WWWDIR%%/css/dijit_light.less
 %%WWWDIR%%/css/prefs.less
 %%WWWDIR%%/css/tt-rss.less
 %%WWWDIR%%/css/utility.less
@@ -73,45 +74,15 @@
 %%WWWDIR%%/feed-icons/.empty
 %%WWWDIR%%/feed-icons/index.html
 %%WWWDIR%%/icons/.empty
-%%WWWDIR%%/images/alert.png
-%%WWWDIR%%/images/archive.png
 %%WWWDIR%%/images/blank_icon.gif
-%%WWWDIR%%/images/collapse.png
-%%WWWDIR%%/images/cross.png
-%%WWWDIR%%/images/error.png
 %%WWWDIR%%/images/favicon-72px.png
 %%WWWDIR%%/images/favicon.png
-%%WWWDIR%%/images/feed.png
-%%WWWDIR%%/images/filter.png
-%%WWWDIR%%/images/folder.png
-%%WWWDIR%%/images/fresh.png
 %%WWWDIR%%/images/indicator_tiny.gif
 %%WWWDIR%%/images/indicator_white.gif
 %%WWWDIR%%/images/information.png
-%%WWWDIR%%/images/label.png
 %%WWWDIR%%/images/logo_small.png
 %%WWWDIR%%/images/logo_wide.png
-%%WWWDIR%%/images/mark_set.png
-%%WWWDIR%%/images/mark_unset.png
-%%WWWDIR%%/images/new_version.png
-%%WWWDIR%%/images/page_white_go.png
-%%WWWDIR%%/images/plugin.png
-%%WWWDIR%%/images/plugin_disabled.png
-%%WWWDIR%%/images/pub_set.png
-%%WWWDIR%%/images/pub_unset.png
-%%WWWDIR%%/images/score_half_high.png
-%%WWWDIR%%/images/score_half_low.png
-%%WWWDIR%%/images/score_high.png
-%%WWWDIR%%/images/score_low.png
-%%WWWDIR%%/images/score_neutral.png
-%%WWWDIR%%/images/star.png
-%%WWWDIR%%/images/tag.png
-%%WWWDIR%%/images/tick.png
-%%WWWDIR%%/images/time.png
 %%WWWDIR%%/images/toolbar.png
-%%WWWDIR%%/images/treeExpandImages.png
-%%WWWDIR%%/images/untick.png
-%%WWWDIR%%/images/user.png
 %%WWWDIR%%/include/autoload.php
 %%WWWDIR%%/include/colors.php
 %%WWWDIR%%/include/controls.php
@@ -127,26 +98,31 @@
 %%WWWDIR%%/include/version.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/install/index.php
+%%WWWDIR%%/js/AppBase.js
+%%WWWDIR%%/js/Article.js
+%%WWWDIR%%/js/CommonDialogs.js
+%%WWWDIR%%/js/CommonFilters.js
 %%WWWDIR%%/js/FeedStoreModel.js
 %%WWWDIR%%/js/FeedTree.js
+%%WWWDIR%%/js/Feeds.js
+%%WWWDIR%%/js/Headlines.js
 %%WWWDIR%%/js/PluginHost.js
 %%WWWDIR%%/js/PrefFeedStore.js
 %%WWWDIR%%/js/PrefFeedTree.js
 %%WWWDIR%%/js/PrefFilterStore.js
 %%WWWDIR%%/js/PrefFilterTree.js
+%%WWWDIR%%/js/PrefHelpers.js
 %%WWWDIR%%/js/PrefLabelTree.js
-%%WWWDIR%%/js/feedlist.js
-%%WWWDIR%%/js/functions.js
+%%WWWDIR%%/js/PrefUsers.js
+%%WWWDIR%%/js/common.js
 %%WWWDIR%%/js/index.html
 %%WWWDIR%%/js/prefs.js
 %%WWWDIR%%/js/tt-rss.js
-%%WWWDIR%%/js/viewfeed.js
 %%WWWDIR%%/lib/CheckBoxStoreModel.js
 %%WWWDIR%%/lib/CheckBoxTree.js
 %%WWWDIR%%/lib/MiniTemplator.class.php
-%%WWWDIR%%/lib/Mobile_Detect.php
-%%WWWDIR%%/lib/accept-to-gettext.php
 %%WWWDIR%%/lib/_CheckBoxTreeNode.js
+%%WWWDIR%%/lib/accept-to-gettext.php
 %%WWWDIR%%/lib/dijit/BackgroundIframe.js
 %%WWWDIR%%/lib/dijit/CONTRIBUTING.md
 %%WWWDIR%%/lib/dijit/Calendar.js
@@ -1693,6 +1669,7 @@
 %%WWWDIR%%/lib/dojo/fx/Toggler.js
 %%WWWDIR%%/lib/dojo/fx/easing.js
 %%WWWDIR%%/lib/dojo/gears.js
+%%WWWDIR%%/lib/dojo/global.js
 %%WWWDIR%%/lib/dojo/has.js
 %%WWWDIR%%/lib/dojo/hash.js
 %%WWWDIR%%/lib/dojo/hccss.js
@@ -1840,11 +1817,29 @@
 %%WWWDIR%%/lib/dojo/uacss.js
 %%WWWDIR%%/lib/dojo/when.js
 %%WWWDIR%%/lib/dojo/window.js
+%%WWWDIR%%/lib/flat-ttrss/flat_combined.css
+%%WWWDIR%%/lib/flat-ttrss/flat_combined_dark.css
+%%WWWDIR%%/lib/flat-ttrss/flat_combined_dark_blue.css
+%%WWWDIR%%/lib/flat-ttrss/fonts/flat-icon.eot
+%%WWWDIR%%/lib/flat-ttrss/fonts/flat-icon.svg
+%%WWWDIR%%/lib/flat-ttrss/fonts/flat-icon.ttf
+%%WWWDIR%%/lib/flat-ttrss/fonts/flat-icon.woff
+%%WWWDIR%%/lib/flat-ttrss/images/loadingAnimation.gif
+%%WWWDIR%%/lib/flat-ttrss/images/progressBarStrips.png
 %%WWWDIR%%/lib/floIcon.php
 %%WWWDIR%%/lib/gettext/README
 %%WWWDIR%%/lib/gettext/gettext.inc
 %%WWWDIR%%/lib/gettext/gettext.php
 %%WWWDIR%%/lib/gettext/streams.php
+%%WWWDIR%%/lib/iconfont/MaterialIcons-Regular.eot
+%%WWWDIR%%/lib/iconfont/MaterialIcons-Regular.ijmap
+%%WWWDIR%%/lib/iconfont/MaterialIcons-Regular.svg
+%%WWWDIR%%/lib/iconfont/MaterialIcons-Regular.ttf
+%%WWWDIR%%/lib/iconfont/MaterialIcons-Regular.woff
+%%WWWDIR%%/lib/iconfont/MaterialIcons-Regular.woff2
+%%WWWDIR%%/lib/iconfont/README.md
+%%WWWDIR%%/lib/iconfont/codepoints
+%%WWWDIR%%/lib/iconfont/material-icons.css
 %%WWWDIR%%/lib/index.html
 %%WWWDIR%%/lib/jimIcon.php
 %%WWWDIR%%/lib/phpqrcode/CHANGELOG
@@ -2351,7 +2346,6 @@
 %%WWWDIR%%/plugins/af_comics/filters/af_comics_whomp.php
 %%WWWDIR%%/plugins/af_comics/init.php
 %%WWWDIR%%/plugins/af_fsckportal/init.php
-%%WWWDIR%%/plugins/af_psql_trgm/button.png
 %%WWWDIR%%/plugins/af_psql_trgm/init.js
 %%WWWDIR%%/plugins/af_psql_trgm/init.php
 %%WWWDIR%%/plugins/af_readability/init.php
@@ -2369,12 +2363,7 @@
 %%WWWDIR%%/plugins/auto_assign_labels/init.php
 %%WWWDIR%%/plugins/bookmarklets/init.php
 %%WWWDIR%%/plugins/cache_starred_images/init.php
-%%WWWDIR%%/plugins/close_button/button.png
 %%WWWDIR%%/plugins/close_button/init.php
-%%WWWDIR%%/plugins/embed_original/button.png
-%%WWWDIR%%/plugins/embed_original/init.css
-%%WWWDIR%%/plugins/embed_original/init.js
-%%WWWDIR%%/plugins/embed_original/init.php
 %%WWWDIR%%/plugins/googlereaderkeys/init.php
 %%WWWDIR%%/plugins/import_export/import_export.js
 %%WWWDIR%%/plugins/import_export/init.php
@@ -2385,7 +2374,6 @@
 %%WWWDIR%%/plugins/mailto/init.js
 %%WWWDIR%%/plugins/mailto/init.php
 %%WWWDIR%%/plugins/mailto/mail.png
-%%WWWDIR%%/plugins/mark_button/init.php
 %%WWWDIR%%/plugins/no_iframes/init.php
 %%WWWDIR%%/plugins/no_title_counters/init.js
 %%WWWDIR%%/plugins/no_title_counters/init.php
@@ -2393,24 +2381,20 @@
 %%WWWDIR%%/plugins/no_url_hashes/init.php
 %%WWWDIR%%/plugins/note/init.php
 %%WWWDIR%%/plugins/note/note.js
-%%WWWDIR%%/plugins/note/note.png
 %%WWWDIR%%/plugins/nsfw/init.js
 %%WWWDIR%%/plugins/nsfw/init.php
 %%WWWDIR%%/plugins/search_sphinx/init.php
 %%WWWDIR%%/plugins/search_sphinx/sphinxapi.php
 %%WWWDIR%%/plugins/share/init.php
-%%WWWDIR%%/plugins/share/notshared.png
+%%WWWDIR%%/plugins/share/share.css
 %%WWWDIR%%/plugins/share/share.js
-%%WWWDIR%%/plugins/share/share.png
 %%WWWDIR%%/plugins/share/share_prefs.js
 %%WWWDIR%%/plugins/shorten_expanded/init.css
 %%WWWDIR%%/plugins/shorten_expanded/init.js
 %%WWWDIR%%/plugins/shorten_expanded/init.php
 %%WWWDIR%%/plugins/swap_jk/init.php
-%%WWWDIR%%/plugins/toggle_sidebar/application_side_list.png
 %%WWWDIR%%/plugins/toggle_sidebar/init.php
 %%WWWDIR%%/plugins/vf_shared/init.php
-%%WWWDIR%%/plugins/vf_shared/share.png
 %%WWWDIR%%/prefs.php
 %%WWWDIR%%/public.php
 %%WWWDIR%%/register.php
@@ -2455,6 +2439,7 @@
 %%WWWDIR%%/schema/versions/mysql/132.sql
 %%WWWDIR%%/schema/versions/mysql/133.sql
 %%WWWDIR%%/schema/versions/mysql/134.sql
+%%WWWDIR%%/schema/versions/mysql/135.sql
 %%WWWDIR%%/schema/versions/mysql/14.sql
 %%WWWDIR%%/schema/versions/mysql/15.sql
 %%WWWDIR%%/schema/versions/mysql/16.sql
@@ -2587,6 +2572,7 @@
 %%WWWDIR%%/schema/versions/pgsql/132.sql
 %%WWWDIR%%/schema/versions/pgsql/133.sql
 %%WWWDIR%%/schema/versions/pgsql/134.sql
+%%WWWDIR%%/schema/versions/pgsql/135.sql
 %%WWWDIR%%/schema/versions/pgsql/14.sql
 %%WWWDIR%%/schema/versions/pgsql/15.sql
 %%WWWDIR%%/schema/versions/pgsql/16.sql
@@ -2687,13 +2673,18 @@
 %%WWWDIR%%/templates/resetpass_link_template.txt
 %%WWWDIR%%/templates/resetpass_template.txt
 %%WWWDIR%%/tests/ApiTest.php
-%%WWWDIR%%/tests/functional/BasicTest.php
-%%WWWDIR%%/tests/functional/PrefsTest.php
 %%WWWDIR%%/themes.local/.empty
 %%WWWDIR%%/themes/.empty
 %%WWWDIR%%/themes/compact.css
-%%WWWDIR%%/themes/default.php
+%%WWWDIR%%/themes/compact.css.map
+%%WWWDIR%%/themes/compact.less
 %%WWWDIR%%/themes/night.css
+%%WWWDIR%%/themes/night.css.map
+%%WWWDIR%%/themes/night.less
+%%WWWDIR%%/themes/night_base.less
+%%WWWDIR%%/themes/night_blue.css
+%%WWWDIR%%/themes/night_blue.css.map
+%%WWWDIR%%/themes/night_blue.less
 @mode u=rx
 %%WWWDIR%%/update.php
 %%WWWDIR%%/update_daemon2.php
@@ -2725,8 +2716,6 @@
 %%WWWDIR%%/vendor/OTPHP/LICENCE
 %%WWWDIR%%/vendor/OTPHP/HOTP.php
 %%WWWDIR%%/vendor/OTPHP/Base32.php
-%%WWWDIR%%/vendor/JShrink/README.md
-%%WWWDIR%%/vendor/JShrink/Minifier.php
 %%WWWDIR%%/vendor/andreskrey/Readability/Readability.php
 %%WWWDIR%%/vendor/andreskrey/Readability/ParseException.php
 %%WWWDIR%%/vendor/andreskrey/Readability/Nodes/NodeUtility.php
@@ -2751,7 +2740,6 @@
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/vendor/Psr/Log/Test
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/vendor/Psr/Log
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/vendor/OTPHP
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/vendor/JShrink
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/vendor/andreskrey/Readability/Nodes/DOM
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/vendor/andreskrey/Readability/Nodes
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/vendor/andreskrey/Readability
@@ -2759,7 +2747,6 @@
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/utils
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/themes.local
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/themes
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tests/functional
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tests
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/templates
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/schema/versions/pgsql
@@ -2777,12 +2764,10 @@
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/no_url_hashes
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/no_title_counters
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/no_iframes
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/mark_button
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/mailto
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/mail
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/import_export
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/googlereaderkeys
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/embed_original
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/close_button
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/cache_starred_images
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/plugins/bookmarklets
@@ -3143,9 +3128,6 @@
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/classes/auth
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/classes
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/cache/upload
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/cache/simplepie
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/cache/js
-@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/cache/images
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/cache/feeds
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/cache/export
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/cache
