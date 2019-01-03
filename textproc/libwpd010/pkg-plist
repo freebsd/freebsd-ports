@@ -5,5 +5,5 @@ include/libwpd-%%MAJVER%%/libwpd/WPDocument.h
 include/libwpd-%%MAJVER%%/libwpd/libwpd.h
 lib/libwpd-%%MAJVER%%.so
 lib/libwpd-%%MAJVER%%.so.10
-lib/libwpd-%%MAJVER%%.so.10.0.2
+lib/libwpd-%%MAJVER%%.so.10.0.3
 libdata/pkgconfig/libwpd-%%MAJVER%%.pc
