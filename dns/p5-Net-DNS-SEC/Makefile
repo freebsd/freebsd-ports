@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-DNS-SEC
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN \
 		http://www.ripe.net/ripencc/pub-services/np/DISI/SRC/
