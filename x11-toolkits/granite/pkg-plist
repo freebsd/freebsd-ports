@@ -3,8 +3,8 @@ include/granite/granite.h
 include/granite/widgets-utils.h
 lib/girepository-1.0/Granite-1.0.typelib
 lib/libgranite.so
-lib/libgranite.so.4
-lib/libgranite.so.4.0
+lib/libgranite.so.5
+lib/libgranite.so.5.0
 libdata/pkgconfig/granite.pc
 share/applications/granite-demo.desktop
 share/gir-1.0/Granite-1.0.gir

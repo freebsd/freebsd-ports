@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-12-17 13:02:11 UTC
++++ CMakeLists.txt
+@@ -59,7 +59,7 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ elseif (${CMAKE_SYSTEM_NAME} MATCHES "DragonFly")
+     set (VALAC_OPTIONS ${VALAC_OPTIONS} --define=DRAGON_FLY)
+ elseif (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+-    set (VALAC_OPTIONS ${VALAC_OPTIONS} --define=FFREE_BSD)
++    set (VALAC_OPTIONS ${VALAC_OPTIONS} --define=FREE_BSD)
+ elseif (${CMAKE_SYSTEM_NAME} MATCHES "NetBSD")
+     set (VALAC_OPTIONS ${VALAC_OPTIONS} --define=NET_BSD)
+ elseif (${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")

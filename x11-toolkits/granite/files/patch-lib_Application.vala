@@ -1,8 +1,8 @@
---- lib/Application.vala.orig	2015-08-30 10:13:06 UTC
+--- lib/Application.vala.orig	2018-12-17 13:02:11 UTC
 +++ lib/Application.vala
 @@ -157,7 +157,11 @@ namespace Granite {
              message ("Kernel version: %s", (string) un.release);
-             Logger.DisplayLevel = LogLevel.WARN;
+             Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.WARN;
  
 -            Intl.bindtextdomain (exec_name, build_data_dir + "/locale");
 +            Intl.setlocale (LocaleCategory.ALL, "");
@@ -11,5 +11,5 @@
 +            Intl.bind_textdomain_codeset (exec_name, "UTF-8");
 +            Intl.textdomain (exec_name);
  
-             add_actions ();
- 
+             handle_local_options.connect (on_handle_local_options);
+         }
