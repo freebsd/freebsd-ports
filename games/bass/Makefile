@@ -5,7 +5,10 @@ PORTNAME=	bass
 PORTVERSION=	1.2
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	SF/scummvm/extras/Beneath%20a%20Steel%20Sky
+MASTER_SITES=	http://de2.eu.scummvm.net/extras/Beneath%20a%20Steel%20Sky/ \
+		http://de1.eu.scummvm.net/extras/Beneath%20a%20Steel%20Sky/ \
+		http://at1.eu.scummvm.net/extras/Beneath%20a%20Steel%20Sky/ \
+		http://lt1.eu.scummvm.net/extras/Beneath%20a%20Steel%20Sky/
 DISTNAME=	bass-cd-1.2
 
 MAINTAINER=	lme@FreeBSD.org
@@ -19,6 +22,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 RUN_DEPENDS=	scummvm:games/scummvm
 
 USES=		zip
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 
