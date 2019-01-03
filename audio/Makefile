@@ -52,6 +52,7 @@
     SUBDIR += autozen
     SUBDIR += avldrums-lv2
     SUBDIR += aylet
+    SUBDIR += bambootracker
     SUBDIR += baresip
     SUBDIR += baudline
     SUBDIR += bcg729
