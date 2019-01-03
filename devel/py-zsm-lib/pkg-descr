@@ -1,0 +1,8 @@
+A python library that manages ZFS snapshots.
+
+- Manage multiple sets of rolling snapshots.
+- Configure a custom schedule via the config file.
+
+See also zsm, which provides a console interface to zsm-lib.
+
+WWW: https://zsm.rtfd.io/
