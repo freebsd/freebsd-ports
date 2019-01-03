@@ -11552,3 +11552,4 @@ multimedia/vlc-qt4||2019-01-02|Has expired: Upstream supported ended in 2018, po
 multimedia/phonon-vlc@qt4||2019-01-02|vlc-qt4 has been removed, vlc now always uses qt5
 multimedia/phonon-vlc@qt5|multimedia/phonon-vlc|2019-01-02|vlc-qt4 has been removed, vlc now always uses qt5
 multimedia/vlc3|multimedia/vlc|2019-01-03|multimedia/vlc updated to supported upstream branch (previously vlc3)
+databases/php7-tarantool|databases/php-tarantool|2019-01-03|Rename php7-tarantool to php-tarantool after php5-tarantool removal
