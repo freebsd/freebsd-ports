@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mucommander
-DISTVERSION=	0_9_0
+PORTVERSION=	0.9.3
 CATEGORIES=	x11-fm java
-MASTER_SITES=	http://www.mucommander.com/download/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}-2/
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Lightweight file manager featuring a Norton Commander style interface
@@ -12,15 +12,16 @@ COMMENT=	Lightweight file manager featuring a Norton Commander style interface
 LICENSE=	GPLv3
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+
+JAVA_VERSION=	1.8+
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/mucommander %%DATADIR%%/mucommander.jar %%DATADIR%%/license.txt
+PLIST_FILES=	bin/mucommander ${DATADIR}/mucommander.jar ${DATADIR}/license.txt
 SUB_FILES=	mucommander
 
 PORTDOCS=	readme.txt
 
-WRKSRC=		${WRKDIR}/muCommander-${PORTVERSION:S/./_/g}
+WRKSRC=		${WRKDIR}/muCommander-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
