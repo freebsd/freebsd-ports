@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libetonyek
-PORTVERSION=	0.1.8
-PORTREVISION=	4
+PORTVERSION=	0.1.9
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	LODEV/${PORTNAME}
@@ -25,7 +24,7 @@ CONFIGURE_ARGS=	--disable-tests --disable-werror --without-docs
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 GNU_CONFIGURE=	yes
-USES=		autoreconf compiler:c++11-lib gmake libtool pathfix \
+USES=		compiler:c++11-lib gmake libtool pathfix \
 		pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
