@@ -15,7 +15,7 @@ COMMENT=	Perl library for Japanese character code conversion
 LICENSE=	JCODE.PL
 LICENSE_NAME=	License of jcode.pl
 LICENSE_FILE=	${FILESDIR}/LICENSE
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		perl5
 USE_PERL5=	run
