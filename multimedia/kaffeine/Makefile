@@ -3,6 +3,7 @@
 
 PORTNAME=	kaffeine
 PORTVERSION=	2.0.15
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 
@@ -13,7 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
-LIB_DEPENDS=	libvlc.so:multimedia/vlc3 \
+LIB_DEPENDS=	libvlc.so:multimedia/vlc \
 		libdvbv5.so:multimedia/libv4l
 
 USES=		cmake cpe desktop-file-utils gettext pkgconfig \

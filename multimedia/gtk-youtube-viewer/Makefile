@@ -3,6 +3,7 @@
 
 PORTNAME=	gtk-youtube-viewer
 PORTVERSION=	3.5.0
+PORTREVISION=	1
 CATEGORIES=	multimedia perl5
 
 MAINTAINER=	ndowens@yahoo.com
