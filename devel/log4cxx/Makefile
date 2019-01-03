@@ -18,11 +18,10 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1
 
 GNU_CONFIGURE=	yes
 USES=		pathfix libtool
+USE_CXXSTD=	c++98
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
-
-CXXFLAGS+=	-Wno-c++11-narrowing
 
 OPTIONS_DEFINE=	BOOST DOXYGEN
 
