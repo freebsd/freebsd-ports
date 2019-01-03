@@ -3,6 +3,7 @@
 
 PORTNAME=	mtr
 PORTVERSION=	0.92
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://www.bitwizard.nl/mtr/files/ \
 		LOCAL/sunpoet
