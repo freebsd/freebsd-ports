@@ -5279,6 +5279,7 @@
     SUBDIR += py-zope.testing
     SUBDIR += py-zope.traversing
     SUBDIR += py-zope.viewlet
+    SUBDIR += py-zsm-lib
     SUBDIR += py_static_check
     SUBDIR += pybind11
     SUBDIR += pybugz
