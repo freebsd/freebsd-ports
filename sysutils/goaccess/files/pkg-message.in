@@ -1,0 +1,8 @@
+====================================================================
+
+The goaccess.conf location has changed for goaccess-1.3. To preserve
+your settings, you must move your goaccess.conf to the new location:
+
+  mv %%PREFIX%%/etc/goaccess.conf %%ETCDIR%%/goaccess.conf
+
+====================================================================
