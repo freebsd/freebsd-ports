@@ -1,0 +1,21 @@
+r342593 | dim | 2018-12-29 16:21:51 +0100 (Sat, 29 Dec 2018) | 8 lines
+
+Pull in r342863 from upstream llvm trunk (by Hans Wennborg):
+
+  Remove debug printf leftover from r342397
+
+PR:		234480
+
+Index: lib/CodeGen/SelectionDAG/DAGCombiner.cpp
+===================================================================
+--- lib/CodeGen/SelectionDAG/DAGCombiner.cpp	(revision 342592)
++++ lib/CodeGen/SelectionDAG/DAGCombiner.cpp	(revision 342593)
+@@ -13738,8 +13738,6 @@ bool DAGCombiner::MergeStoresOfConstantsOrVecElts(
+                   ((uint64_t)IdxC * MemVT.getVectorNumElements()) / Elts;
+               Idx = DAG.getConstant(NewIdx, SDLoc(Val), Idx.getValueType());
+             }
+-            if (!MemVT.isVector() && Val.getValueType().isVector())
+-              dbgs() << "hit!\n";
+             EVT NewVecTy =
+                 EVT::getVectorVT(*DAG.getContext(), MemVTScalarTy, Elts);
+             Vec = DAG.getBitcast(NewVecTy, Vec);
