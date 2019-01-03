@@ -1,6 +1,6 @@
---- 3rdparty/libprojectm/Renderer/VideoEcho.cpp.orig	2018-01-31 22:10:05.891427000 +0000
-+++ 3rdparty/libprojectm/Renderer/VideoEcho.cpp	2018-01-31 22:14:31.332885000 +0000
-@@ -77,10 +77,10 @@
+--- 3rdparty/libprojectm/Renderer/VideoEcho.cpp.orig	2018-12-05 17:16:34 UTC
++++ 3rdparty/libprojectm/Renderer/VideoEcho.cpp
+@@ -77,10 +77,10 @@ void VideoEcho::Draw(RenderContext &context)
  			default: flipx=1;flipy=1; break;
  		}
  
