@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aircrack-ng
-DISTVERSION=	1.4
-PORTREVISION=	1
+DISTVERSION=	1.5.2
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://download.aircrack-ng.org/
 
