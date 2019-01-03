@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xf86-video-neomagic
-PORTVERSION=	1.2.9
-PORTREVISION=	3
+PORTVERSION=	1.3.0
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org

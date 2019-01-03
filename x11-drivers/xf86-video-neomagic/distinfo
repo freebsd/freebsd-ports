@@ -1,2 +1,3 @@
-SHA256 (xorg/driver/xf86-video-neomagic-1.2.9.tar.bz2) = 72f89396b10527549337cb72a7eafb1194cf140144f9236a94ad2becdf140bf2
-SIZE (xorg/driver/xf86-video-neomagic-1.2.9.tar.bz2) = 340789
+TIMESTAMP = 1546511815
+SHA256 (xorg/driver/xf86-video-neomagic-1.3.0.tar.bz2) = 93833950fae7757088eb6abb125e15e8c245e5e25681c19c3ad4213ec7319064
+SIZE (xorg/driver/xf86-video-neomagic-1.3.0.tar.bz2) = 362347
