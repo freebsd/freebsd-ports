@@ -8,7 +8,7 @@ CATEGORIES=	comms net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	steinex@nognu.de
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface and script to send SMS via SMS77.de
 
 BUILD_DEPENDS=	p5-libwww>=0:www/p5-libwww
