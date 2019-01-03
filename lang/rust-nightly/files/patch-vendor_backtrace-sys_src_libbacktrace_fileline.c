@@ -1,3 +1,5 @@
+This file is in the public domain.
+
 --- vendor/backtrace-sys/src/libbacktrace/fileline.c.orig	2017-06-06 00:42:59 UTC
 +++ vendor/backtrace-sys/src/libbacktrace/fileline.c
 @@ -38,8 +38,39 @@ POSSIBILITY OF SUCH DAMAGE.  */
