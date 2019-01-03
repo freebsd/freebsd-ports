@@ -33,4 +33,10 @@ nightly-post-patch:
 # https://github.com/rust-lang/rust/pull/57184
 	@${REINPLACE_CMD} '/RUSTC_DENY_WARNINGS/d' ${WRKSRC}/src/bootstrap/builder.rs
 
+post-configure:	nightly-post-configure
+nightly-post-configure:
+# Don't abort if optional tools fail to build
+# https://github.com/rust-lang/rust/commit/53254a888b42
+	@${ECHO_CMD} 'missing-tools = true' >>${WRKSRC}/config.toml
+
 .include "${MASTERDIR}/Makefile"
