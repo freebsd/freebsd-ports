@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlmap
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.12
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 
@@ -14,10 +14,11 @@ LICENSE_FILE=	${WRKSRC}/sqlmap/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
-NO_ARCH=	yes
 USES=		python:-2.7 shebangfix
 USE_PYTHON=	autoplist distutils
+
 SHEBANG_FILES=	*.py sqlmap/extra/shutils/*.sh sqlmap/extra/shutils/*.py
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	MSF
 MSF_DESC=	Enable Metasploit Framework integration
