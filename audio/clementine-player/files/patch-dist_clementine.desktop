@@ -1,6 +1,6 @@
---- dist/clementine.desktop.orig	2016-04-19 15:08:35 UTC
+--- dist/clementine.desktop.orig	2018-12-05 17:16:34 UTC
 +++ dist/clementine.desktop
-@@ -26,8 +26,8 @@ Comment[sr]=Репродукује му�
+@@ -31,8 +31,8 @@ Comment[sr]=Репродукује музику и las
  Comment[sr@ijekavian]=Репродукује музику и last.fm токове
  Comment[sr@ijekavianlatin]=Reprodukuje muziku i last.fm tokove
  Comment[sr@latin]=Reprodukuje muziku i last.fm tokove

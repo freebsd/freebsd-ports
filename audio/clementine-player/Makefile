@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	clementine
-DISTVERSIONPREFIX=	v
-DISTVERSION=		1.3.1-441
-DISTVERSIONSUFFIX=	-gc01b7bc
-PORTREVISION=	7
+DISTVERSION=	1.3.1.g20190103
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-player
+
+MASTER_SITES=	GH
 
 MAINTAINER=	sbruno@FreeBSD.org
 COMMENT=	Cross-platform music player based on Amarok 1.4
@@ -15,51 +14,49 @@ COMMENT=	Cross-platform music player based on Amarok 1.4
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 LIB_DEPENDS=	libtag.so:audio/taglib \
 		libchromaprint.so:audio/chromaprint \
 		libprotobuf.so:devel/protobuf \
-		libqca.so:devel/qca@qt4 \
-		libqjson.so:devel/qjson@qt4 \
+		libqca-qt5.so:devel/qca@qt5 \
+		libqjson-qt5.so:devel/qjson@qt5 \
 		libfftw3.so:math/fftw3 \
-		libechonest.so:audio/libechonest \
+		libechonest5.so:audio/libechonest \
 		libcryptopp.so:security/cryptopp
 
 BROKEN_powerpc64=	fails to compile: tagreader.cpp: undefined reference to TagLib::String::String
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}${PKGNAMESUFFIX}
-GH_PROJECT=	Clementine
+GH_TUPLE=       clementine-player:Clementine:4ff370c
 
 USES=		cmake \
 		compiler:c++11-lib \
 		desktop-file-utils \
 		gettext-tools \
 		pkgconfig \
-		qt:4 sqlite
+		qt:5 \
+		sqlite \
+		gl
+
 USE_CXXSTD=	c++11
 
 USE_GL=		gl glew glu
 USE_XORG=	x11
 
-CONFLICTS_BUILD=	qt-3.*
-USE_QT=		corelib \
+USE_QT=		buildtools \
+		concurrent \
+		core \
 		dbus \
 		gui \
 		imageformats \
-		qmake_build \
 		linguist_build \
-		moc_build \
 		network \
 		opengl \
-		qtestlib \
-		rcc_build \
+		qmake_build \
+		testlib \
 		sql \
-		uic_build \
-		webkit \
+		widgets \
+		x11extras \
 		xml
 
 USE_GSTREAMER1=	cdparanoia \
@@ -70,6 +67,7 @@ USE_GSTREAMER1=	cdparanoia \
 		lame \
 		mpg123 \
 		neon \
+		opus \
 		shout2 \
 		soup \
 		taglib \
@@ -86,6 +84,7 @@ CMAKE_ARGS+=	-DCMAKE_LIBRARY_PATH:PATH="${LOCALBASE}/lib:${PREFIX}/lib" \
 		-DENABLE_DBUS=ON \
 		-DENABLE_SPOTIFY_BLOB=OFF
 
+OPTIONS_SUB=		yes
 OPTIONS_DEFINE=		AMAZON \
 			AUDIOCD \
 			BOX \
@@ -103,7 +102,6 @@ OPTIONS_DEFINE=		AMAZON \
 			VISUALISATION \
 			WIIMOTEDEV
 
-OPTIONS_SUB=		yes
 
 AMAZON_DESC=		Amazon Drive support
 AUDIOCD_DESC=		Devices: Audio CD support
@@ -158,6 +156,7 @@ DROPBOX_BUILD_DEPENDS=	sparsehash>=2.0.2:devel/sparsehash
 DROPBOX_CMAKE_ON=	-DENABLE_DROPBOX=ON
 DROPBOX_CMAKE_OFF=	-DENABLE_DROPBOX=OFF
 
+GIO_USES=		gnome
 GIO_USE=		GNOME=glib20
 GIO_CMAKE_ON=		-DENABLE_GIO=ON
 GIO_CMAKE_OFF=		-DENABLE_GIO=OFF
@@ -173,7 +172,7 @@ GPOD_LIB_DEPENDS=	libgpod.so:audio/libgpod \
 GPOD_CMAKE_ON=		-DENABLE_LIBGPOD=ON
 GPOD_CMAKE_OFF=		-DENABLE_LIBGPOD=OFF
 
-LASTFM_LIB_DEPENDS=	liblastfm.so:audio/liblastfm
+LASTFM_LIB_DEPENDS=	liblastfm5.so:audio/liblastfm-qt5
 LASTFM_CMAKE_ON=	-DENABLE_LIBLASTFM=ON
 LASTFM_CMAKE_OFF=	-DENABLE_LIBLASTFM=OFF
 

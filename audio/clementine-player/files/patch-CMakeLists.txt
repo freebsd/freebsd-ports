@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2018-08-17 05:31:45 UTC
+--- CMakeLists.txt.orig	2018-12-05 17:16:34 UTC
 +++ CMakeLists.txt
-@@ -59,7 +59,7 @@ find_library(PROTOBUF_STATIC_LIBRARY libprotobuf.a lib
+@@ -58,7 +58,7 @@ find_library(PROTOBUF_STATIC_LIBRARY libprotobuf.a lib
  
  pkg_check_modules(CDIO libcdio)
  pkg_check_modules(CHROMAPRINT REQUIRED libchromaprint)

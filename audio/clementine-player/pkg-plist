@@ -1,14 +1,14 @@
 bin/clementine-player
 bin/clementine-tagreader
-share/appdata/clementine.appdata.xml
 share/applications/clementine.desktop
 share/icons/hicolor/128x128/apps/clementine.png
 share/icons/hicolor/64x64/apps/clementine.png
 share/icons/hicolor/scalable/apps/clementine.svg
-share/kde4/services/clementine-feed.protocol
-share/kde4/services/clementine-itms.protocol
-share/kde4/services/clementine-itpc.protocol
-share/kde4/services/clementine-zune.protocol
+share/kservices5/clementine-feed.protocol
+share/kservices5/clementine-itms.protocol
+share/kservices5/clementine-itpc.protocol
+share/kservices5/clementine-zune.protocol
+share/metainfo/clementine.appdata.xml
 %%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Agitator.milk
 %%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Aimless (Gravity Directive Mix).milk
 %%VISUALISATION%%%%DATADIR%%/projectm-presets/Aderrasi - Aimless (Spirogravity Mix).milk

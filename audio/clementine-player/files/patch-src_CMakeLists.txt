@@ -1,18 +1,18 @@
---- src/CMakeLists.txt.orig	2018-05-23 13:23:53 UTC
+--- src/CMakeLists.txt.orig	2018-12-05 17:16:34 UTC
 +++ src/CMakeLists.txt
-@@ -1295,6 +1295,7 @@ if(HAVE_BREAKPAD)
- endif(HAVE_BREAKPAD)
+@@ -1319,6 +1319,7 @@ if(HAVE_SPOTIFY)
+ endif(HAVE_SPOTIFY)
  
  if(HAVE_SPOTIFY_DOWNLOADER)
 +  add_definitions(${CRYPTOPP_CFLAGS_OTHER})
    target_link_libraries(clementine_lib
      ${CRYPTOPP_LIBRARIES}
    )
-@@ -1380,6 +1381,7 @@ add_executable(clementine
+@@ -1407,6 +1408,7 @@ add_executable(clementine
  
- if (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+ if (FREEBSD)
    target_link_libraries(clementine execinfo)
 +  set_target_properties(clementine PROPERTIES OUTPUT_NAME clementine-player)
- endif (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+ endif (FREEBSD)
  
  target_link_libraries(clementine
