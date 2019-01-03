@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	vlc
-DISTVERSION=	2.2.8
-PORTREVISION=	16
+DISTVERSION=	3.0.5
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -11,53 +11,50 @@ MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSIO
 		ftp://ftp.crans.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/
 
 MAINTAINER=	multimedia@FreeBSD.org
-COMMENT?=	Qt based multimedia player and streaming server
+COMMENT=	Qt based multimedia player and streaming server
 
 LICENSE=	GPLv2
-
-DEPRECATED=	vlc 2.x and vlc-qt4 is EOL upstream
-EXPIRATION_DATE=	2018-12-31
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libdvbpsi.so:multimedia/libdvbpsi \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libidn.so:dns/libidn
+		libidn.so:dns/libidn \
+		libmatroska.so:multimedia/libmatroska
 BUILD_DEPENDS=	ffmpeg>=3.4.1,1:multimedia/ffmpeg \
 		yasm:devel/yasm
 RUN_DEPENDS=	ffmpeg>=3.4.1,1:multimedia/ffmpeg
 
+USES=		compiler:c++11-lib desktop-file-utils gettext-tools gmake gnome \
+		iconv libtool pathfix pkgconfig tar:xz
+
 # VLC git (post 2.2.4) requires C++11 support and passes the appropriate flag
 # to the compiler. Until the port is updated, we explicitly pass -std=c++11 to
-# the compiler because Qt 5.7+ requires C++11 support, and FreeBSD 10.3's clang
+# the compiler because Qt 5.7+ requires C++11 support, and FreeBSD 10's clang
 # does not default to C++11 mode.
 USE_CXXSTD=	c++11
 
-USES=		compiler:c++11-lib desktop-file-utils gmake iconv libtool pathfix \
-		pkgconfig tar:xz
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-
-CONFLICTS?=	vlc-qt4-* \
-		vlc3-*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-avcodec --enable-avformat --enable-dvbpsi \
 		--enable-fontconfig --enable-freetype --enable-libgcrypt \
 		--enable-libxml2 --enable-oss --enable-postproc \
 		--enable-swscale --enable-vlc \
-		--disable-alsa --disable-chromaprint --disable-crystalhd \
-		--disable-dc1394 --disable-decklink --disable-directfb \
+		--disable-alsa --disable-archive --disable-chromaprint --disable-crystalhd \
+		--disable-dc1394 --disable-decklink --disable-dsm \
 		--disable-dv1394 --disable-fdkaac \
-		--disable-gles1 --disable-gles2 --disable-kai --disable-kva \
+		--disable-gles2 --disable-kai --disable-kva \
 		--disable-vnc --disable-opencv --disable-projectm \
-		--disable-telx \
+		--disable-secret --disable-soxr --disable-telx \
 		--disable-tiger --disable-tremor --disable-udev \
-		--disable-update-check --disable-vcdx --disable-vsxu \
+		--disable-update-check --disable-vsxu \
 		--disable-wasapi --disable-x26410b \
-		--with-kde-solid=${PREFIX}/share/apps/solid/actions \
-		ac_cv_search_pthread_rwlock_init=-pthread
+		--with-kde-solid=${PREFIX}/share/solid/actions \
+		ac_cv_search_pthread_rwlock_init=-pthread \
+		BUILDCC="${CC}"
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
 .endif
@@ -65,27 +62,31 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS_i386=	-fomit-frame-pointer
 LIBS+=		-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	A52 AALIB ASS AVAHI CACA DBUS DCA DOCS DVDREAD \
-		DVDNAV FAAD FLAC FLUID FREERDP FRIBIDI GME GNOMEVFS2 GNUTLS \
-		GOOM HTTPD JACK KATE LIBBLURAY LIBRSVG2 LIBSSH2 LIRC \
-		LIVEMEDIA LUA MAD MATROSKA MODPLUG MPEG2 MTP MUSEPACK \
-		NCURSES NLS NOTIFY OGG OPTIMIZED_CFLAGS OPUS PNG PULSEAUDIO \
-		QT4 QT5 REALRTSP RUNROOT SAMPLERATE SIDPLAY SCHROEDINGER \
+OPTIONS_DEFINE=	A52 AALIB AOM ASS AVAHI CACA CHROMECAST DAV1D DBUS DCA DOCS DVDREAD \
+		DVDNAV FAAD FLAC FLUID FREERDP FRIBIDI GME GNUTLS \
+		GOOM HARFBUZZ JACK KATE LIBBLURAY LIBRSVG2 LIBSSH2 LIRC \
+		LIVEMEDIA LUA MAD MODPLUG MPEG2 MTP MUSEPACK \
+		NCURSES NFS NLS NOTIFY OGG OPTIMIZED_CFLAGS OPUS PNG PULSEAUDIO \
+		QT5 REALRTSP RUNROOT SAMPLERATE SIDPLAY SCHROEDINGER \
 		SDL SHOUTCAST SKINS SMB SNDIO STREAM SPEEX TAGLIB THEORA \
-		TWOLAME UPNP V4L VAAPI VCD VDPAU VORBIS X11 X264 X265 ZVBI
+		TWOLAME UPNP V4L VAAPI VCD VDPAU VPX VORBIS WAYLAND X11 X264 X265 ZVBI
 OPTIONS_DEFAULT=A52 AVAHI DBUS DCA DVDREAD DVDNAV FAAD FLAC GNUTLS \
-		HTTPD LIVEMEDIA LUA MAD MATROSKA MPEG2 OGG OPTIMIZED_CFLAGS \
-		OPUS PNG QT5 SAMPLERATE STREAM SPEEX TAGLIB THEORA TWOLAME V4L \
-		VAAPI VCD VDPAU VORBIS X11
+		LIVEMEDIA LUA MAD MPEG2 OGG OPTIMIZED_CFLAGS \
+		OPUS PNG QT5 SAMPLERATE STREAM SPEEX TAGLIB THEORA TWOLAME \
+		V4L VAAPI VCD VDPAU VORBIS WAYLAND X11
 OPTIONS_SUB=	yes
 
+AOM_DESC=	AV1 video encoding/decoding via libaom
 ASS_DESC=	ASS/SSA subtitle rendering
+CHROMECAST_DESC=Streaming to Chromecast devices
+DAV1D_DESC=	AV1 video decoding via libdav1d
 DVDREAD_DESC=	DVD Playback support
 DVDNAV_DESC=	DVD menu navigation
 FLUID_DESC=	Fluidsynth MIDI support
 FREERDP_DESC=	RDP support
 GME_DESC=	Game Music Emu (libgme) support
 GOOM_DESC=	Goom visualisation plugin
+HARFBUZZ_DESC=	OpenType text shaping engine
 KATE_DESC=	Kate codec support
 LIBSSH2_DESC=	SCP/SFTP support via libssh2
 REALRTSP_DESC=	Real RTSP access module
@@ -107,11 +108,20 @@ AALIB_CONFIGURE_ENABLE=	aa
 ASS_LIB_DEPENDS=	libass.so:multimedia/libass
 ASS_CONFIGURE_ENABLE=	libass
 
+AOM_LIB_DEPENDS=	libaom.so:multimedia/aom
+AOM_CONFIGURE_ENABLE=	aom
+
 AVAHI_LIB_DEPENDS=	libavahi-common.so:net/avahi-app
-AVAHI_CONFIGURE_ENABLE=	bonjour
+AVAHI_CONFIGURE_ENABLE=	avahi
 
 CACA_LIB_DEPENDS=	libcaca.so:graphics/libcaca
 CACA_CONFIGURE_ENABLE=	caca
+
+CHROMECAST_LIB_DEPENDS=	libprotobuf-lite.so:devel/protobuf
+CHROMECASE_CONFIGURE_ENABLE=	chromecast
+
+DAV1D_LIB_DEPENDS=	libdav1d.so:multimedia/dav1d
+DAV1D_CONFIGURE_ENABLE=	dav1d
 
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_ENABLE=	dbus
@@ -149,16 +159,14 @@ GME_LIB_DEPENDS=	libgme.so:audio/libgme
 GME_CONFIGURE_ENABLE=	gme
 GME_CONFIGURE_ENV=	LIBS_gme="-L${LOCALBASE}/lib -lgme"
 
-GNOMEVFS2_USE=			GNOME=gnomevfs2
-GNOMEVFS2_CONFIGURE_ENABLE=	gnomevfs
-
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_ENABLE=gnutls
 
 GOOM_LIB_DEPENDS=	libgoom2.so:graphics/goom
 GOOM_CONFIGURE_ENABLE=	goom
 
-HTTPD_CONFIGURE_ENABLE=	httpd
+HARFBUZZ_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
+HARFBUZZ_CONFIGURE_ENABLE=	harfbuzz
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_ENABLE=	jack
@@ -199,9 +207,6 @@ MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 MAD_CONFIGURE_ENABLE=	mad
 MAD_CONFIGURE_ON=	--with-mad=${LOCALBASE}
 
-MATROSKA_LIB_DEPENDS=	libmatroska.so:multimedia/libmatroska
-MATROSKA_CONFIGURE_ENABLE=	mkv
-
 MODPLUG_LIB_DEPENDS=	libmodplug.so:audio/libmodplug
 MODPLUG_CONFIGURE_ENABLE=	mod
 
@@ -220,11 +225,14 @@ NCURSES_CONFIGURE_ENV=		NCURSES_CFLAGS="-I${NCURSESINC}" \
 				NCURSES_LIBS="-L${NCURSESLIB} -lncursesw"
 NCURSES_CONFIGURE_ENABLE=	ncurses
 
+NFS_LIB_DEPENDS=	libnfs.so:net/libnfs
+NFS_CONFIGURE_ENABLE=	nfs
+
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
-NOTIFY_USE=		GNOME=gtk20
+NOTIFY_USE=		GNOME=gtk30
 NOTIFY_CONFIGURE_ENABLE=notify
 
 OGG_LIB_DEPENDS=	libogg.so:audio/libogg
@@ -241,15 +249,10 @@ PNG_CONFIGURE_ENABLE=	png
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 
-QT4_USES=	qt:4
-QT4_USE=		QT=gui,corelib,moc_build,rcc_build,uic_build
-# QT_CFLAGS:	pkg-config --cflags "QtCore QtGui >= 4.6.0"
-# QT_LIBS:	pkg-config --libs "QtCore QtGui >= 4.6.0"
-QT4_CONFIGURE_ENV=	QT_CFLAGS="-I${QT_INCDIR}/QtGui -DQT_SHARED -I${QT_INCDIR} -I${QT_INCDIR}/QtCore" \
-			QT_LIBS="-lQtGui -L${QT_LIBDIR} -lQtCore"
-
 QT5_USES=	qt:5
-QT5_USE=		QT=gui,core,widgets,x11extras,buildtools_build
+QT5_USE=	QT=gui,core,svg,widgets,x11extras,buildtools_build
+QT5_CONFIGURE_ENABLE=	qt
+QT5_IMPLIES=	X11
 
 REALRTSP_CONFIGURE_ENABLE=	realrtsp
 
@@ -262,12 +265,18 @@ SCHROEDINGER_LIB_DEPENDS=	libschroedinger-1.0.so:multimedia/schroedinger
 SCHROEDINGER_CONFIGURE_ENABLE=	schroedinger
 
 SDL_USE=		SDL=image
-SDL_CONFIGURE_ENABLE=	sdl sdl-image
+SDL_CONFIGURE_ENABLE=	sdl-image
 
 SIDPLAY_LIB_DEPENDS=	libsidplay2.so:audio/libsidplay2
 SIDPLAY_LDFLAGS=	-L${LOCALBASE}/lib/sidplay/builders
 SIDPLAY_CONFIGURE_ENABLE=	sid
 CONFIGURE_ARGS+=	--disable-sid
+
+SKINS_USE=		XORG=xext,xinerama,xpm
+SKINS_LIB_DEPENDS=	libminizip.so:archivers/minizip \
+			libtar.so:devel/libtar
+SKINS_CONFIGURE_ENABLE=	skins2 libtar
+SKINS_IMPLIES=		QT5
 
 SHOUTCAST_LIB_DEPENDS=	libshout.so:audio/libshout
 SHOUTCAST_CONFIGURE_ENABLE=	shout
@@ -307,11 +316,20 @@ VCD_CONFIGURE_ENABLE=	vcd libcddb
 
 VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 VDPAU_CONFIGURE_ENABLE=	vdpau
+VDPAU_IMPLIES=		X11
+
+VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
+VPX_CONFIGURE_ENABLE=	vpx
 
 VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 VORBIS_CONFIGURE_ENABLE=vorbis
 
+WAYLAND_BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols
+WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
+WAYLAND_CONFIGURE_ENABLE=	wayland
+
 X11_USE=		GL=gl XORG=xcb,xorgproto
+X11_USES=		gl
 X11_LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms
 X11_CONFIGURE_ENABLE=	xcb xvideo
 X11_CONFIGURE_WITH=	x
@@ -337,29 +355,6 @@ WITH_DVD_DEVICE?=/dev/cd0
 INSTALLS_ICONS=	yes
 .endif
 
-.if ${PORT_OPTIONS:MQT5} || ${PORT_OPTIONS:MQT4}
-CONFIGURE_ARGS+=	--enable-qt
-.else
-CONFIGURE_ARGS+=	--disable-qt
-.endif
-
-.if ${PORT_OPTIONS:MQT5} && ${PORT_OPTIONS:MQT4}
-IGNORE=	please choose one of QT4 or QT5
-.endif
-
-.if ${PORT_OPTIONS:MSKINS}
-.if ${PORT_OPTIONS:MQT5} || ${PORT_OPTIONS:MQT4}
-LIB_DEPENDS+=	libminizip.so:archivers/minizip \
-		libtar.so:devel/libtar
-USE_XORG+=	xext xinerama xpm
-CONFIGURE_ARGS+=--enable-skins2 --enable-libtar
-.else
-IGNORE=	SKINS option requires QT4 or QT5 option
-.endif
-.else
-CONFIGURE_ARGS+=--disable-skins2 --disable-libtar
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} \
 		-e '\|LIBS|s|-lrt||' \
@@ -371,15 +366,12 @@ post-patch:
 	@${RM} -r ${WRKSRC}/modules/access/v4l2/linux
 # XXX FreeBSD doesn't have strerror_l() - use the android version of error.c
 	@${CP} ${WRKSRC}/src/android/error.c ${WRKSRC}/src/posix
-.if ${PORT_OPTIONS:MQT4}
-# XXX no sane way to tell configure not to pick up Qt5X11Extras with qt4
-	@${REINPLACE_CMD} s/Qt5X11Extras/Qt5X11Extras-not/ \
-		${WRKSRC}/configure
-.endif
 
 post-install:
 	@(cd ${STAGEDIR}${PREFIX} && ${FIND} -s lib/vlc -not -name '*.la' \
 		-type f -o -type l >> ${TMPPLIST})
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/vlc/plugins/*/*.so
+	# plugin cache becomes stale after strip. Regenerate it:
+	${WRKSRC}/bin/vlc-cache-gen ${STAGEDIR}${PREFIX}/lib/vlc/plugins
 
 .include <bsd.port.mk>
