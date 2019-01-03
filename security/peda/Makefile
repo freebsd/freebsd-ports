@@ -17,7 +17,7 @@ RUN_DEPENDS=	gdb>7.0:devel/gdb \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
 
-USES=		python:2.6+,run
+USES=		python:run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	longld
