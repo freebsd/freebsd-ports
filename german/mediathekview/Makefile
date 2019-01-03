@@ -3,6 +3,7 @@
 
 PORTNAME=	mediathekview
 PORTVERSION=	13.2.1
+PORTREVISION=	1
 CATEGORIES=	german java
 MASTER_SITES=	https://download.mediathekview.de/stabil/
 DISTNAME=	MediathekView-${PORTVERSION}

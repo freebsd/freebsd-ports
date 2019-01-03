@@ -2,7 +2,7 @@
 
 PORTNAME=	phonon
 DISTVERSION=	0.10.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTNAME}-backend-${PHONON_PLUGIN}/${DISTVERSION}
 PKGNAMESUFFIX=	-${PHONON_PLUGIN}
@@ -15,7 +15,7 @@ COMMENT=	VLC backend for Phonon
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libvlc.so:multimedia/vlc3
+LIB_DEPENDS=	libvlc.so:multimedia/vlc
 
 USES=		cmake pkgconfig tar:xz
 
