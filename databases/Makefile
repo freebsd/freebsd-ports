@@ -612,8 +612,8 @@
     SUBDIR += pguri
     SUBDIR += pgworksheet
     SUBDIR += php-memcache
+    SUBDIR += php-tarantool
     SUBDIR += php-xapian
-    SUBDIR += php7-tarantool
     SUBDIR += php71-dba
     SUBDIR += php71-interbase
     SUBDIR += php71-mysqli
