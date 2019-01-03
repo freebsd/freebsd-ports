@@ -3,8 +3,8 @@
 
 PORTNAME=	opencc
 PORTVERSION=	1.0.5
-PORTREVISION=	2
 DISTVERSIONPREFIX=	ver.
+PORTREVISION=	2
 CATEGORIES=	chinese converters
 
 MAINTAINER=	lichray@gmail.com
@@ -24,6 +24,7 @@ OPTIONS_DEFINE=	TESTS
 TESTS_DESC=	Build the unit testing
 TESTS_CMAKE_ON=	-DENABLE_GTEST=ON
 
+MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	test
 
 post-patch:
