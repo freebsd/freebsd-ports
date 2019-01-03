@@ -18,7 +18,7 @@ LICENSE_COMB=	multi
 LICENSE_NAME_TRIO=	Trio License
 LICENSE_FILE_MIT=	${WRKSRC}/COPYING
 LICENSE_FILE_TRIO=	${FILESDIR}/LICENSE.TRIO
-LICENSE_PERMS_TRIO=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_PERMS_TRIO=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
 USES+=		cpe gmake iconv libtool pathfix pkgconfig shebangfix
