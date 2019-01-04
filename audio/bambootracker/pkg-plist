@@ -1,0 +1,5 @@
+bin/BambooTracker
+%%NLS%%man/fr.UTF-8/man1/BambooTracker.fr.1.gz
+man/man1/BambooTracker.1.gz
+share/applications/BambooTracker.desktop
+share/icons/BambooTracker.png
