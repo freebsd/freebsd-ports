@@ -15,6 +15,8 @@ COMMENT=	OpenGL binding for Gauche
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to stage
+
 BUILD_DEPENDS=	gosh:lang/gauche
 RUN_DEPENDS=	gosh:lang/gauche
 
