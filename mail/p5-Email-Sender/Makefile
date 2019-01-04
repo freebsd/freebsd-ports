@@ -3,7 +3,7 @@
 
 PORTNAME=	Email-Sender
 PORTVERSION=	1.300031
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
@@ -17,7 +17,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Email-Abstract>=3.006:mail/p5-Email-Abstract \
-		p5-Email-Address-XS>=0:mail/p5-Email-Address-XS \
+		p5-Email-Address>=0:mail/p5-Email-Address \
 		p5-Email-Simple>=1.998:mail/p5-Email-Simple \
 		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-Module-Runtime>=0:devel/p5-Module-Runtime \
