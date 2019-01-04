@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	loook
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	textproc
 MASTER_SITES=	http://mechtilde.de/Loook/Downloads/
 DIST_SUBDIR=	python
@@ -21,13 +21,13 @@ PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/loook.1.gz \
 		man/de/man1/loook.1.gz \
 		share/applications/loook.desktop \
-		share/locale/cs/LC_MESSAGES/loook-0.8.5.mo \
-		share/locale/de/LC_MESSAGES/loook-0.8.5.mo \
-		share/locale/en/LC_MESSAGES/loook-0.8.5.mo \
-		share/locale/es/LC_MESSAGES/loook-0.8.5.mo \
-		share/locale/fr/LC_MESSAGES/loook-0.8.5.mo \
-		share/locale/it/LC_MESSAGES/loook-0.8.5.mo \
-		share/locale/nl/LC_MESSAGES/loook-0.8.5.mo \
+		share/locale/cs/LC_MESSAGES/loook-${PORTVERSION}.mo \
+		share/locale/de/LC_MESSAGES/loook-${PORTVERSION}.mo \
+		share/locale/en/LC_MESSAGES/loook-${PORTVERSION}.mo \
+		share/locale/es/LC_MESSAGES/loook-${PORTVERSION}.mo \
+		share/locale/fr/LC_MESSAGES/loook-${PORTVERSION}.mo \
+		share/locale/it/LC_MESSAGES/loook-${PORTVERSION}.mo \
+		share/locale/nl/LC_MESSAGES/loook-${PORTVERSION}.mo \
 		share/pixmaps/loook.png \
 
 LCMESSAGES=	cs de en es fr it nl
@@ -50,7 +50,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/loook.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 .for i in ${LCMESSAGES}
-	${INSTALL_DATA} ${WRKSRC}/locale/${i}/LC_MESSAGES/loook-0.8.5.mo \
+	${INSTALL_DATA} \
+		${WRKSRC}/locale/${i}/LC_MESSAGES/loook-${PORTVERSION}.mo \
 		${STAGEDIR}${PREFIX}/share/locale/${i}/LC_MESSAGES/
 .endfor
 
