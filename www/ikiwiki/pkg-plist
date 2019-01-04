@@ -458,12 +458,7 @@ sbin/ikiwiki-mass-rebuild
 %%PO4A%%%%DATADIR%%/locale/fr/directives/ikiwiki/directive/toggle.mdwn
 %%PO4A%%%%DATADIR%%/locale/fr/directives/ikiwiki/directive/version.mdwn
 %%PO4A%%%%DATADIR%%/locale/fr/smiley/smileys.mdwn
-%%DATADIR%%/login-selector/ikiwiki/login-selector/aol.png
-%%DATADIR%%/login-selector/ikiwiki/login-selector/goa-account-flickr.png
-%%DATADIR%%/login-selector/ikiwiki/login-selector/goa-account-yahoo.png
 %%DATADIR%%/login-selector/ikiwiki/login-selector/login-selector.js
-%%DATADIR%%/login-selector/ikiwiki/login-selector/verisign.png
-%%DATADIR%%/login-selector/ikiwiki/login-selector/wordpress.png
 %%DATADIR%%/osm/ikiwiki/images/osm.png
 %%DATADIR%%/osm/ikiwiki/osm.js
 %%DATADIR%%/po/cs/basewiki/ikiwiki.cs.po
