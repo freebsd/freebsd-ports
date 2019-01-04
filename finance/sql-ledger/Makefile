@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sql-ledger
-PORTVERSION=	3.2.6
-PORTREVISION=	1
+PORTVERSION=	3.2.7
 CATEGORIES=	finance perl5
 MASTER_SITES=	http://www.sql-ledger.com/source/
 
@@ -15,10 +14,11 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+USES=		apache:run,2.2+ perl5 pgsql shebangfix
+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message sql-ledger-httpd.conf
-USES=		apache:run,2.2+ perl5 pgsql shebangfix
 SHEBANG_FILES=	*.pl locale/*/*.pl bin/*/*.pl
 NO_ARCH=	yes
 
