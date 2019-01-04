@@ -9,6 +9,7 @@ include/SPIRV/GlslangToSpv.h
 include/SPIRV/Logger.h
 include/SPIRV/SPVRemapper.h
 include/SPIRV/SpvBuilder.h
+include/SPIRV/SpvTools.h
 include/SPIRV/bitutils.h
 include/SPIRV/disassemble.h
 include/SPIRV/doc.h
