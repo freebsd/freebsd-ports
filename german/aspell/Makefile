@@ -13,6 +13,8 @@ COMMENT=	Aspell German dictionary
 
 USES=		gmake tar:bzip2
 ALL_TARGET=	aspell/de_DE.rws aspell/de_AT.rws aspell/de_CH.rws
+BUILD_DEPENDS=	aspell:textproc/aspell
+RUN_DEPENDS=	aspell:textproc/aspell
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/aspell \
