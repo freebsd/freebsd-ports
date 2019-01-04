@@ -339,8 +339,7 @@ post-patch-SNDIO-on:
 .endif
 
 .if ${PORT_OPTIONS:MRUST} || ${MOZILLA_VER:R:R} >= 54
-BUILD_DEPENDS+=	${RUST_PORT:T}>=1.29:${RUST_PORT}
-RUST_PORT?=		lang/rust
+BUILD_DEPENDS+=	${RUST_DEFAULT}>=1.29:lang/${RUST_DEFAULT}
 . if ${MOZILLA_VER:R:R} < 54
 MOZ_OPTIONS+=	--enable-rust
 . endif

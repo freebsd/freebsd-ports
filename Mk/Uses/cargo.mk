@@ -46,7 +46,7 @@ DISTFILES+=	${CARGO_DIST_SUBDIR}/${_crate}.tar.gz:cargo_${_crate:S/-//g:S/.//g}
 
 CARGO_BUILDDEP?=	yes
 .if ${CARGO_BUILDDEP:tl} == "yes"
-BUILD_DEPENDS+=	 rust>=1.31.0:lang/rust
+BUILD_DEPENDS+=	${RUST_DEFAULT}>=1.31.0:lang/${RUST_DEFAULT}
 .endif
 
 # Location of cargo binary (default to lang/rust's Cargo binary)

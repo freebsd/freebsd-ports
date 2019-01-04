@@ -13,7 +13,7 @@ BROKEN=		fails to build
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	Uses 64bit types
 
-BUILD_DEPENDS=	rust>=1.19.0_2:lang/rust \
+BUILD_DEPENDS=	${RUST_DEFAULT}>=1.19.0_2:lang/${RUST_DEFAULT} \
 		bash>0:shells/bash
 
 USES=		gmake go shebangfix
