@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	diffstat
-PORTVERSION=	1.61
+PORTVERSION=	1.62
 CATEGORIES=	textproc devel
-MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/
+MASTER_SITES=	https://invisible-mirror.net/archives/${PORTNAME}/ \
+		ftp://ftp.invisible-island.net/${PORTNAME}/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Makes a histogram summarizing "diff" output
