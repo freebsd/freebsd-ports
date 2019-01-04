@@ -88,6 +88,8 @@ PYTHON2_DEFAULT?=	2.7
 PYTHON3_DEFAULT?=	3.6
 # Possible values: 2.3, 2.4, 2.5
 RUBY_DEFAULT?=		2.4
+# Possible values: rust, rust-nightly
+RUST_DEFAULT?=		rust
 # Possible values: 4.6, 4.7, 4.8
 SAMBA_DEFAULT?=		4.7
 # Possible values: base, openssl, openssl111, libressl, libressl-devel

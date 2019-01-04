@@ -12,7 +12,7 @@ COMMENT=	Generate C bindings from Rust code
 
 LICENSE=	MPL20
 
-RUN_DEPENDS=	cargo:lang/rust
+RUN_DEPENDS=	cargo:lang/${RUST_DEFAULT}
 
 USES=		cargo
 USE_GITHUB=	yes

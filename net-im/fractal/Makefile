@@ -13,7 +13,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 # gmake for the backtrace-sys crate
-BUILD_DEPENDS=	cargo:lang/rust \
+BUILD_DEPENDS=	cargo:lang/${RUST_DEFAULT} \
 		gmake:devel/gmake
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libgmp.so:math/gmp \

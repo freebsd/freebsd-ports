@@ -44,7 +44,7 @@ BUILD_DEPENDS=	autoconf-2.13:devel/autoconf213 \
 		png>=1.6.34:graphics/png \
 		${LOCALBASE}/include/pulse/pulseaudio.h:audio/pulseaudio \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
-		rust>=1.28:lang/rust \
+		${RUST_DEFAULT}>=1.28:lang/${RUST_DEFAULT} \
 		rust-cbindgen>=0.6.2:devel/rust-cbindgen \
 		sqlite3>=3.24.0:databases/sqlite3 \
 		v4l_compat>0:multimedia/v4l_compat \
