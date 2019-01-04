@@ -4,6 +4,7 @@
 PORTNAME=	bambootracker
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	LOCAL/ehaupt:extras
 DISTFILES=	${PORTNAME}-extras-${EXTRASVERSION}${EXTRACT_SUFX}:extras
@@ -27,18 +28,20 @@ BUILD_WRKSRC=		${WRKSRC}/BambooTracker
 
 EXTRASVERSION=	1
 
-OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFINE=	EXAMPLES NLS
+OPTIONS_SUB=	yes
 
-PLIST_FILES=	bin/BambooTracker man/man1/BambooTracker.1.gz \
-		share/applications/BambooTracker.desktop \
-		share/icons/BambooTracker.png
 PORTEXAMPLES=	*
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons \
+		${STAGEDIR}${MANPREFIX}/man/fr.UTF-8/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/BambooTracker/BambooTracker \
 		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/BambooTracker.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/BambooTracker.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/BambooTracker.fr.1 \
+		${STAGEDIR}${MANPREFIX}/man/fr.UTF-8/man1
 	${INSTALL_DATA} ${WRKSRC}/BambooTracker.desktop ${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} \
 		${WRKDIR}/${PORTNAME}-extras-${EXTRASVERSION}/BambooTracker.png \
