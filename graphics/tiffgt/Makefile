@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tiffgt
-DISTVERSION=	4.0.9
+DISTVERSION=	4.0.10
 CATEGORIES=	graphics
 MASTER_SITES=	https://download.osgeo.org/libtiff/
 DISTNAME=	tiff-${DISTVERSION}
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libjbig.so:graphics/jbigkit \
 		libtiff.so:graphics/tiff
 
 USES=		cpe jpeg libtool pathfix
+
 CPE_PRODUCT=	libtiff
 CPE_VERSION=	${DISTVERSION:C/[a-z]+//}
 CPE_UPDATE=	${DISTVERSION:C/[0-9.]+//}
