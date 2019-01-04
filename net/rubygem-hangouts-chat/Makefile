@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hangouts-chat
-PORTVERSION=	0.0.5
+PORTVERSION=	0.0.6
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
