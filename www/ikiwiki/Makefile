@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	3.20171001
-PORTREVISION=	1
+DISTVERSION=	3.20180311
 CATEGORIES=	www
 MASTER_SITES=	DEBIAN_POOL \
 		LOCAL/mat/${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${DISTVERSION}
+EXTRACT_SUFX=	.orig.tar.xz
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Wiki compiler
@@ -33,15 +33,14 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		p5-XML-Feed>=0:textproc/p5-XML-Feed \
 		p5-Authen-Passphrase>=0:security/p5-Authen-Passphrase
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-USES=		gettext perl5 gmake cpe tar:xz python shebangfix
+USES=		gettext perl5 gmake cpe python shebangfix
 USE_PERL5=	configure
-NO_ARCH=	yes
 
+NO_ARCH=	yes
 CONFIGURE_ARGS=	PERL=${PERL} FULLPERL=${PERL}
 MAKE_ENV=	SYSCONFDIR=${ETCDIR} \
 		W3M_CGI_BIN=${PREFIX}/libexec/w3m/cgi-bin
+WRKSRC=		${WRKDIR}/IkiWiki-${PORTVERSION}
 
 OPTIONS_DEFINE=	PO4A SEARCH W3M DOCS EXAMPLES MULTI
 OPTIONS_DEFAULT=	PO4A SEARCH MULTI
@@ -100,5 +99,7 @@ post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/ikiwiki.setup ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/wikilist ${STAGEDIR}${EXAMPLESDIR}
+	@${RMDIR} ${STAGEDIR}${EXAMPLESDIR}/doc/examples
+	@${RMDIR} ${STAGEDIR}${EXAMPLESDIR}/doc
 
 .include <bsd.port.mk>
