@@ -3,11 +3,11 @@
 
 PORTNAME=	fusefs
 DISTVERSIONPREFIX=	fuse-
-DISTVERSION=	2.9.7
+DISTVERSION=	2.9.9
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-libs
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	se@FreeBSD.org
 COMMENT=	FUSE allows filesystem implementation in userspace
 
 LICENSE=	LGPL21
