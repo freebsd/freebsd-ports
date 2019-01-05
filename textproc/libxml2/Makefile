@@ -65,6 +65,9 @@ post-patch:
 		 s|/etc/sgml/catalog|${LOCALBASE}/share/sgml/catalog|g' \
 		${WRKSRC}/${f}
 .endfor
+.if exists(/usr/lib/libstdc++.so)
+	@${REINPLACE_CMD} -e 's/ -Wno-array-bounds//' ${WRKSRC}/configure
+.endif
 
 .if !defined(MASTERDIR)
 post-install:
