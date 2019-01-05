@@ -1178,7 +1178,6 @@ lib/calibre/calibre/linux.py
 lib/calibre/calibre/plugins/_patiencediff_c.so
 lib/calibre/calibre/plugins/bzzdec.so
 lib/calibre/calibre/plugins/certgen.so
-lib/calibre/calibre/plugins/chm_extra.so
 lib/calibre/calibre/plugins/chmlib.so
 lib/calibre/calibre/plugins/cPalmdoc.so
 lib/calibre/calibre/plugins/freetype.so
@@ -1265,7 +1264,6 @@ lib/calibre/calibre/utils/browser.py
 lib/calibre/calibre/utils/certgen.py
 lib/calibre/calibre/utils/chm/__init__.py
 lib/calibre/calibre/utils/chm/chm.py
-lib/calibre/calibre/utils/chm/chmlib.py
 lib/calibre/calibre/utils/cleantext.py
 lib/calibre/calibre/utils/complete.py
 lib/calibre/calibre/utils/config_base.py
