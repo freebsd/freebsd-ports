@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mkdesktop
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	bourne.identity@hotmail.com
