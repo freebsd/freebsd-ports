@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	quazip
-DISTVERSION=	0.7.3
-PORTREVISION=	3
+DISTVERSION=	0.7.6
 CATEGORIES=	archivers
-MASTER_SITES=	SF
 PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	kde@FreeBSD.org
@@ -17,6 +15,8 @@ FLAVORS=	qt5 qt4
 FLAVOR?=	${FLAVORS:[1]}
 
 USES=		cmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	stachenov
 USE_LDCONFIG=	yes
 
 .  if ${FLAVOR} == qt4
