@@ -3,6 +3,8 @@
 share/accounts/services/kde/google-drive.service
 share/doc/HTML/ca/kioslave5/gdrive/index.cache.bz2
 share/doc/HTML/ca/kioslave5/gdrive/index.docbook
+share/doc/HTML/de/kioslave5/gdrive/index.cache.bz2
+share/doc/HTML/de/kioslave5/gdrive/index.docbook
 share/doc/HTML/en/kioslave5/gdrive/index.cache.bz2
 share/doc/HTML/en/kioslave5/gdrive/index.docbook
 share/doc/HTML/es/kioslave5/gdrive/index.cache.bz2
@@ -31,6 +33,7 @@ share/locale/en_GB/LC_MESSAGES/kio5_gdrive.mo
 share/locale/es/LC_MESSAGES/kio5_gdrive.mo
 share/locale/et/LC_MESSAGES/kio5_gdrive.mo
 share/locale/fr/LC_MESSAGES/kio5_gdrive.mo
+share/locale/gl/LC_MESSAGES/kio5_gdrive.mo
 share/locale/it/LC_MESSAGES/kio5_gdrive.mo
 share/locale/ja/LC_MESSAGES/kio5_gdrive.mo
 share/locale/ko/LC_MESSAGES/kio5_gdrive.mo
@@ -38,6 +41,7 @@ share/locale/nl/LC_MESSAGES/kio5_gdrive.mo
 share/locale/pl/LC_MESSAGES/kio5_gdrive.mo
 share/locale/pt/LC_MESSAGES/kio5_gdrive.mo
 share/locale/pt_BR/LC_MESSAGES/kio5_gdrive.mo
+share/locale/ru/LC_MESSAGES/kio5_gdrive.mo
 share/locale/sk/LC_MESSAGES/kio5_gdrive.mo
 share/locale/sl/LC_MESSAGES/kio5_gdrive.mo
 share/locale/sv/LC_MESSAGES/kio5_gdrive.mo
