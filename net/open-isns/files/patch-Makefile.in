@@ -1,6 +1,6 @@
---- Makefile.in.orig	2017-04-08 09:26:35 UTC
+--- Makefile.in.orig	2018-10-27 08:58:20 UTC
 +++ Makefile.in
-@@ -3,7 +3,7 @@ exec_prefix = @exec_prefix@
+@@ -4,7 +4,7 @@ exec_prefix = @exec_prefix@
  sbindir	= @sbindir@
  mandir	= @mandir@
  libdir  = @libdir@
@@ -9,7 +9,7 @@
  vardir	= /var/lib/isns
  systemddir = $(prefix)/lib/systemd/system
  datarootdir = @datarootdir@
-@@ -107,18 +107,16 @@ all: $(LIB) $(SOLIB) isnsd isnsadm isnsd
+@@ -109,18 +109,16 @@ all: $(LIB) $(SOLIB) isnsd isnsadm isnsd
  
  install:
  	@echo "*** Installing Open-iSNS ***"
@@ -17,18 +17,18 @@
 +	$(INSTALL) -m 755 -d $(CFGDIR) $(MANDIR)/man8 $(MANDIR)/man5 $(SBINDIR)
  	$(INSTALL) -m 700 -d $(VARDIR)
  	$(INSTALL) -m 555 isnsd isnsadm isnsdd $(SBINDIR)
--	$(INSTALL) -m 644 etc/isnsd.conf $(CFGDIR)
--	$(INSTALL) -m 644 etc/isnsdd.conf $(CFGDIR)
--	$(INSTALL) -m 644 etc/isnsadm.conf $(CFGDIR)
-+	$(INSTALL) -m 644 etc/isnsd.conf $(CFGDIR)/isnsd.conf.sample
-+	$(INSTALL) -m 644 etc/isnsdd.conf $(CFGDIR)/isnsdd.conf.sample
-+	$(INSTALL) -m 644 etc/isnsadm.conf $(CFGDIR)/isnsadm.conf.sample
- 	$(INSTALL) -m 644 doc/isnsd.8 $(MANDIR)/man8
- 	$(INSTALL) -m 644 doc/isnsdd.8 $(MANDIR)/man8
- 	$(INSTALL) -m 644 doc/isnsadm.8 $(MANDIR)/man8
- 	$(INSTALL) -m 644 doc/isns_config.5 $(MANDIR)/man5
--	$(INSTALL) -m 644 isnsd.service $(SYSTEMDDIR)
--	$(INSTALL) -m 644 isnsd.socket $(SYSTEMDDIR)
+-	$(INSTALL) -m 644 $(srcdir)/etc/isnsd.conf $(CFGDIR)
+-	$(INSTALL) -m 644 $(srcdir)/etc/isnsdd.conf $(CFGDIR)
+-	$(INSTALL) -m 644 $(srcdir)/etc/isnsadm.conf $(CFGDIR)
++	$(INSTALL) -m 644 $(srcdir)/etc/isnsd.conf $(CFGDIR)/isnsd.conf.sample
++	$(INSTALL) -m 644 $(srcdir)/etc/isnsdd.conf $(CFGDIR)/isnsdd.conf.sample
++	$(INSTALL) -m 644 $(srcdir)/etc/isnsadm.conf $(CFGDIR)/isnsadm.conf.sample
+ 	$(INSTALL) -m 644 $(srcdir)/doc/isnsd.8 $(MANDIR)/man8
+ 	$(INSTALL) -m 644 $(srcdir)/doc/isnsdd.8 $(MANDIR)/man8
+ 	$(INSTALL) -m 644 $(srcdir)/doc/isnsadm.8 $(MANDIR)/man8
+ 	$(INSTALL) -m 644 $(srcdir)/doc/isns_config.5 $(MANDIR)/man5
+-	$(INSTALL) -m 644 $(srcdir)/isnsd.service $(SYSTEMDDIR)
+-	$(INSTALL) -m 644 $(srcdir)/isnsd.socket $(SYSTEMDDIR)
  
  install_hdrs: 
  	@echo '*** Installing Open-iSNS header files ***'

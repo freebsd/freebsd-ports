@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	open-isns
-PORTVERSION=	0.97
+PORTVERSION=	0.99
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -10,13 +10,14 @@ COMMENT=	Internet Storage Name Service (iSNS)
 
 LICENSE=	LGPL21
 
+USES=		autoreconf gmake pathfix
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	open-iscsi
-GH_TAGNAME=	94e3bc9
+GH_TAGNAME=	cfdbcff
 
-USES=		autoreconf gmake pathfix
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-shared
 INSTALL_TARGET=	install install_lib
 USE_RC_SUBR=	isnsd
@@ -37,6 +38,8 @@ SECURITY_USES=	ssl
 SLP_DESC=	Enable SLP for server discovery
 SLP_CONFIGURE_WITH=	slp
 SLP_LIB_DEPENDS=	libslp.so:net/openslp
+SLP_CPPFLAGS=	-I${PREFIX}/include
+SLP_LDFLAGS=	-L${PREFIX}/lib
 
 .include <bsd.port.options.mk>
 
