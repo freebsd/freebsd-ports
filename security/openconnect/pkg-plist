@@ -2,6 +2,10 @@ sbin/openconnect
 include/openconnect.h
 lib/libopenconnect.so
 lib/libopenconnect.so.5
-lib/libopenconnect.so.5.4.0
+lib/libopenconnect.so.5.5.0
 libdata/pkgconfig/openconnect.pc
+libexec/openconnect/csd-post.sh
+libexec/openconnect/csd-wrapper.sh
+libexec/openconnect/hipreport.sh
+libexec/openconnect/tncc-wrapper.py
 man/man8/openconnect.8.gz
