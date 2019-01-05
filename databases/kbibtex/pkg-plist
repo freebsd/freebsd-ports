@@ -126,7 +126,7 @@ share/icons/hicolor/64x64/apps/kbibtex.png
 %%DATADIR%%/biblatex.kbstyle
 %%DATADIR%%/bibtex.kbstyle
 %%DATADIR%%/fancy.xsl
-%%DATADIR%%/ieeexplore2bibtex.xsl
+%%DATADIR%%/ieeexploreapiv1-to-bibtex.xsl
 %%DATADIR%%/isbndb2bibtex.xsl
 %%DATADIR%%/jabref_journalabbrevlist.txt
 %%DATADIR%%/pam2bibtex.xsl
