@@ -1,0 +1,3 @@
+bin/plagiarism_check.pl
+%%SITE_PERL%%/Text/Distill.pm
+%%PERL5_MAN3%%/Text::Distill.3.gz
