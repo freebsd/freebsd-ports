@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Proc-ProcessTable-Colorizer
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
