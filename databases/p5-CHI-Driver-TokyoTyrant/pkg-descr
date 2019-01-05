@@ -1,0 +1,5 @@
+This implements a driver for the generic cache handling interface (CHI)
+that uses TokyoTyrant to store data in the specified memcached
+server(s).
+
+WWW: https://metacpan.org/release/CHI-Driver-TokyoTyrant

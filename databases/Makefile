@@ -274,6 +274,7 @@
     SUBDIR += p5-CGI-Session-Driver-memcached
     SUBDIR += p5-CHI-Driver-Memcached
     SUBDIR += p5-CHI-Driver-Redis
+    SUBDIR += p5-CHI-Driver-TokyoTyrant
     SUBDIR += p5-Cache-BDB
     SUBDIR += p5-Cache-Memcached
     SUBDIR += p5-Cache-Memcached-Fast
