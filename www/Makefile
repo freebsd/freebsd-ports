@@ -805,6 +805,7 @@
     SUBDIR += p5-Corona
     SUBDIR += p5-Dancer
     SUBDIR += p5-Dancer-Logger-Log4perl
+    SUBDIR += p5-Dancer-Plugin-CORS
     SUBDIR += p5-Dancer-Plugin-ExtDirect
     SUBDIR += p5-Dancer-Plugin-Feed
     SUBDIR += p5-Dancer-Plugin-FlashMessage

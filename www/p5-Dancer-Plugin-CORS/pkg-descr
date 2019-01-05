@@ -1,0 +1,6 @@
+Cross origin resource sharing is a feature used by modern web browser to bypass
+cross site scripting restrictions. A webservice can provide those rules from
+which origin a client is allowed to make cross-site requests. This module helps
+you to setup such rules.
+
+WWW: http://search.cpan.org/dist/Dancer-Plugin-CORS/
