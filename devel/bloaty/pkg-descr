@@ -1,0 +1,4 @@
+Ever wondered what's making your binary big? Bloaty McBloatface will show you a
+size profile of the binary so you can understand what's taking up space inside.
+
+WWW: https://github.com/google/bloaty
