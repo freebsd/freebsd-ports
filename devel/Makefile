@@ -1269,6 +1269,7 @@
     SUBDIR += jenkins-lts
     SUBDIR += jfrog-cli
     SUBDIR += jiic
+    SUBDIR += jiri
     SUBDIR += jline
     SUBDIR += jna
     SUBDIR += jrtplib
