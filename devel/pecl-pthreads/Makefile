@@ -13,7 +13,7 @@ LICENSE=	PHP301
 CFLAGS+=	-I${LOCALBASE}/include
 
 USES=		php:pecl
-IGNORE_WITH_PHP=56 71
+IGNORE_WITH_PHP=	71
 
 .include <bsd.port.options.mk>
 
