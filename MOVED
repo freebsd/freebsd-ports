@@ -9107,7 +9107,6 @@ x11-toolkits/libgtksourceviewmm||2017-04-03|Obsolete and not depend on anymore
 graphics/goocanvasmm||2017-04-03|Obsolete and not depend on anymore
 x11-themes/kde4-icons-oxygen|x11-themes/kf5-oxygen-icons5|2017-04-03|Replaced by x11-themes/kf5-oxygen-icons5
 devel/php5-geshi|devel/php-geshi|2017-04-04|Update PKGNAMEPREFIX: it builds fine with PHP 7.x
-databases/p5-Search-Xapian|databases/p5-Search-Xapian12|2017-04-04|Rename to match Xapian PKGNAMESUFFIX
 archivers/pecl-snappy|archivers/php-snappy|2017-04-04|Update PKGNAMEPREFIX: it builds fine with PHP 7.x
 textproc/kibana50|textproc/kibana5|2017-04-05|Rename port to match the rest of the 5.X line of the elastic stack
 textproc/kibana50-x-pack|textproc/kibana5-x-pack|2017-04-05|Rename port to match the rest of the 5.X line of the elastic stack

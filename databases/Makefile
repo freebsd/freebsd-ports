@@ -502,6 +502,7 @@
     SUBDIR += p5-Scope-Container-DBI
     SUBDIR += p5-Search-InvertedIndex
     SUBDIR += p5-Search-Namazu
+    SUBDIR += p5-Search-Xapian
     SUBDIR += p5-Search-Xapian10
     SUBDIR += p5-Search-Xapian12
     SUBDIR += p5-Store-CouchDB
