@@ -14,6 +14,7 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_curve448.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_curve448_libdecaf.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_curve448_unsupported.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json.beam
+lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json_jason.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json_jiffy.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json_jsone.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_json_jsx.beam
@@ -89,6 +90,7 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sha3_libdecaf.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sha3_unsupported.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/ebin/jose_sup.beam
 lib/erlang/lib/erlang-jose-%%VERSION%%/include/jose.hrl
+lib/erlang/lib/erlang-jose-%%VERSION%%/include/jose_compat.hrl
 lib/erlang/lib/erlang-jose-%%VERSION%%/include/jose_jwe.hrl
 lib/erlang/lib/erlang-jose-%%VERSION%%/include/jose_jwk.hrl
 lib/erlang/lib/erlang-jose-%%VERSION%%/include/jose_jws.hrl
@@ -111,6 +113,7 @@ lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_curve448.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_curve448_libdecaf.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_curve448_unsupported.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json.erl
+lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json_jason.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json_jiffy.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json_jsone.erl
 lib/erlang/lib/erlang-jose-%%VERSION%%/src/jose_json_jsx.erl
