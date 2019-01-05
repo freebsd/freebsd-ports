@@ -15,6 +15,9 @@ LICENSE=	GPLv2+
 BROKEN_armv6=	fails to build: gmake: install-recursive: Error 1
 BROKEN_armv7=	fails to build: gmake: install-recursive: Error 1
 
+TEST_DEPENDS=	runtest:misc/dejagnu \
+		${LOCALBASE}/lib/tcllib/cmdline/cmdline.tcl:devel/tcllib
+
 PORTSCOUT=	limit:^[0-9\.]*$$
 
 OPTIONS_DEFINE=	CMAKE_MODULES DOCS FREEBSD
@@ -69,5 +72,10 @@ post-install-DOCS-on:
 
 post-install-FREEBSD-on:
 	cd ${WRKSRC}/freebsd/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS}
+
+do-test:
+.for test in runCompletion runInstall runUnit
+	-cd ${WRKSRC}/test && bash ${test}
+.endfor
 
 .include <bsd.port.mk>
