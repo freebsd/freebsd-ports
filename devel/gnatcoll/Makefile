@@ -23,7 +23,7 @@ GH_ACCOUNT=	AdaCore
 GH_PROJECT=	gprbuild:libgpr
 GH_TAGNAME=	858f72c a2e9066:libgpr
 
-USES=		ada gmake pkgconfig python shebangfix
+USES=		ada gmake pkgconfig python:2.7 shebangfix
 SHEBANG_FILES=	src/dborm.py
 USE_GNOME=	pygobject3
 
@@ -40,7 +40,8 @@ OPTIONS_DEFINE=		READLINE SYSLOG PGSQL DOCS EXAMPLES
 OPTIONS_DEFAULT=	READLINE SYSLOG
 OPTIONS_SUB=		yes
 
-DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+DOCS_BUILD_DEPENDS=	sphinx-build-${PYTHON_VER}:textproc/py-sphinx@${PY_FLAVOR}
+DOCS_BINARY_ALIAS=	sphinx-build=sphinx-build-${PYTHON_VER}
 DOCS_ALL_TARGET=	docs
 SYSLOG_CONFIGURE_ENABLE=	syslog
 
