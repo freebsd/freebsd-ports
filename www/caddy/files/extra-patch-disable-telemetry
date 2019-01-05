@@ -1,8 +1,8 @@
---- caddy/caddymain/run.go.orig	2018-05-11 13:10:27 UTC
-+++ caddy/caddymain/run.go
-@@ -434,4 +434,4 @@ var (
- 	gitFilesModified string // git diff-index --name-only HEAD
+--- caddy/caddymain/run.go.orig	2019-01-05 07:28:19.184836000 +0100
++++ caddy/caddymain/run.go	2019-01-05 07:30:01.801606000 +0100
+@@ -525,4 +525,4 @@
  )
  
--const enableTelemetry = true
-+const enableTelemetry = false
+ // This variable defines whether telemetry is enabled in Run.
+-var EnableTelemetry = true
++var EnableTelemetry = false
