@@ -3,6 +3,7 @@
 %%SITE_PERL%%/WWW/Contact/Plaxo.pm
 %%SITE_PERL%%/WWW/Contact/Rediffmail.pm
 %%SITE_PERL%%/WWW/Contact/GoogleContactsAPI.pm
+%%SITE_PERL%%/WWW/Contact/GoogleContactsAPIOAuth2.pm
 %%SITE_PERL%%/WWW/Contact/Lycos.pm
 %%SITE_PERL%%/WWW/Contact/Yahoo.pm
 %%SITE_PERL%%/WWW/Contact/Indiatimes.pm
@@ -20,6 +21,7 @@
 %%PERL5_MAN3%%/WWW::Contact::Base.3.gz
 %%PERL5_MAN3%%/WWW::Contact::CN::163.3.gz
 %%PERL5_MAN3%%/WWW::Contact::Gmail.3.gz
+%%PERL5_MAN3%%/WWW::Contact::GoogleContactsAPIOAuth2.3.gz
 %%PERL5_MAN3%%/WWW::Contact::GoogleContactsAPI.3.gz
 %%PERL5_MAN3%%/WWW::Contact::Hotmail.3.gz
 %%PERL5_MAN3%%/WWW::Contact::Indiatimes.3.gz
