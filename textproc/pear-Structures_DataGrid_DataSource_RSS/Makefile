@@ -10,8 +10,6 @@ COMMENT=	DataSource driver using RSS files
 
 LICENSE=	BSD2CLAUSE
 
-IGNORE_WITH_PHP=	56
-
 BUILD_DEPENDS=	${PEARDIR}/Structures/DataGrid/DataSource/Array.php:databases/pear-Structures_DataGrid_DataSource_Array@${PHP_FLAVOR}
 RUN_DEPENDS=	${PEARDIR}/Structures/DataGrid/DataSource/Array.php:databases/pear-Structures_DataGrid_DataSource_Array@${PHP_FLAVOR}
 
