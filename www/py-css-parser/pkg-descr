@@ -1,0 +1,5 @@
+A fork of the cssutils project based on version 1.0.2. This fork
+includes general bug fixes and extensions specific to editing and
+working with ebooks.
+
+WWW: https://github.com/ebook-utils/css-parser
