@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xgalaga++
-PORTVERSION=	0.8.4
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	games
 MASTER_SITES=	http://marc.mongenet.ch/OSS/XGalaga/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -11,16 +10,16 @@ DISTFILES=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Classic single screen vertical shoot em up
 
 LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 USES=		gmake
-ALL_TARGET=	${PORTNAME}
 USE_XORG=	x11 xpm
+
+ALL_TARGET=	${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man6/${PORTNAME}.6.gz \
