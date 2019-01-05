@@ -1,0 +1,16 @@
+docx2txt is a perl based command line utility to convert Microsoft Office(Tm)
+Docx documents to equivalent Text documents. Latest version supports
+following features during text extraction.
+
+*	Character conversions (" ' < & > - ... fraction and some mathematical
+	symbols etc.); currency characters are converted to respective names
+	like Euro.
+*	Capitalisation of text blocks.
+*	Center and right justification of text fitting in a line of
+	(configurable) 80 columns.
+*	Horizontal ruler, line breaks, paragraphs separation, tabs
+*	Indicating hyperlinked text along with the hyperlink. (configurable)
+*	Handling (bullet, decimal, letter, roman) lists along with (attempt at)
+	indentation.
+
+WWW: https://sourceforge.net/projects/docx2txt/
