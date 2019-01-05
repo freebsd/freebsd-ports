@@ -167,7 +167,7 @@ include/libxsmm/template/libxsmm_bgemm_convert_b_to_a.tpl.c
 include/libxsmm/template/libxsmm_bgemm_copyin_a.tpl.c
 include/libxsmm/template/libxsmm_bgemm_copyin_b.tpl.c
 include/libxsmm/template/libxsmm_bgemm_copyin_c.tpl.c
-include/libxsmm/template/libxsmm_bgemm_co%%PYTHON_PYOEXTENSION%%ut_c.tpl.c
+include/libxsmm/template/libxsmm_bgemm_copyout_c.tpl.c
 include/libxsmm/template/libxsmm_bgemm_transpose_b.tpl.c
 include/libxsmm/template/libxsmm_config.h
 include/libxsmm/template/libxsmm_dnn_bwd_custom_custom_padding.tpl.c
