@@ -1,0 +1,8 @@
+%%SITE_PERL%%/DBIx/Class/InflateColumn/Serializer.pm
+%%SITE_PERL%%/DBIx/Class/InflateColumn/Serializer/JSON.pm
+%%SITE_PERL%%/DBIx/Class/InflateColumn/Serializer/Storable.pm
+%%SITE_PERL%%/DBIx/Class/InflateColumn/Serializer/YAML.pm
+%%PERL5_MAN3%%/DBIx::Class::InflateColumn::Serializer.3.gz
+%%PERL5_MAN3%%/DBIx::Class::InflateColumn::Serializer::JSON.3.gz
+%%PERL5_MAN3%%/DBIx::Class::InflateColumn::Serializer::Storable.3.gz
+%%PERL5_MAN3%%/DBIx::Class::InflateColumn::Serializer::YAML.3.gz

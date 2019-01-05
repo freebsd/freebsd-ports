@@ -1,0 +1,4 @@
+These modules help you store and access serialized data structures
+in the columns of your DB from your DBIx::Classes.
+
+WWW: https://metacpan.org/release/DBIx-Class-InflateColumn-Serializer
