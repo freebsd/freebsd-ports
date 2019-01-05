@@ -214,6 +214,7 @@
     SUBDIR += binutils
     SUBDIR += bison
     SUBDIR += blame
+    SUBDIR += bloaty
     SUBDIR += blitz
     SUBDIR += bmake
     SUBDIR += bmkdep
