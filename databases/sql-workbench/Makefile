@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.sql-workbench.net/ \
 	http://www.sql-workbench.net/archive/
 DISTNAME=	Workbench-Build${PORTVERSION}
 
-MAINTAINER=	graudeejs@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DBMS-independent, cross-platform SQL query tool
 
 LICENSE=	APACHE20

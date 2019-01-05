@@ -6,7 +6,7 @@ PORTVERSION=	1.73.02
 CATEGORIES=	lang devel
 MASTER_SITES=	http://flatassembler.net/
 
-MAINTAINER=	graudeejs@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flat, multiple-pass assembler for IA-32 & x86-64 architectures
 
 LICENSE=	BSD2CLAUSE

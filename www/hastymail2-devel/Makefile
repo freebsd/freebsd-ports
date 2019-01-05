@@ -8,7 +8,7 @@ MASTER_SITES=	http://files.bsdroot.lv/my/FreeBSD/distfiles/hastymail2-devel/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-devel-${HASTYMAIL_REV}
 
-MAINTAINER=	graudeejs@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, fast and secure yet powerful IMAP webmail
 
 LICENSE=	GPLv2+
