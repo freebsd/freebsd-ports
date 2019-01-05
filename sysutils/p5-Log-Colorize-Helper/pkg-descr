@@ -1,0 +1,10 @@
+Interfaces with colorize, head, tail, less, grep,
+bunzip2, and gunzip.
+
+The purpose of this is to make it easy to colorize and
+view log files by drastically reducing the amount of
+typing involved.
+
+bin/clog - Searches, displays, and colorizes log files.
+
+WWW: http://search.cpan.org/dist/Log-Colorize-Helper/
