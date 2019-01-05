@@ -670,6 +670,7 @@
     SUBDIR += p5-Graphics-Color
     SUBDIR += p5-Graphics-ColorNames
     SUBDIR += p5-Graphics-ColorNames-WWW
+    SUBDIR += p5-Graphics-ColorUtils
     SUBDIR += p5-Graphics-GnuplotIF
     SUBDIR += p5-Graphics-Primitive
     SUBDIR += p5-Graphics-Primitive-Driver-Cairo
