@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-resources
-DISTVERSION=	2.11.198
+DISTVERSION=	2.11.199
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
