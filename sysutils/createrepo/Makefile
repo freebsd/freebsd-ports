@@ -11,6 +11,9 @@ COMMENT=	Utility to create and manage RPM metadata repositories
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandoned upstream, does not work with python3
+EXPIRATION_DATE=	2018-02-06
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sqlitecachec.py:devel/py-yum-metadata-parser@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/urlgrabber/__init__.py:www/py-urlgrabber@${PY_FLAVOR} \
