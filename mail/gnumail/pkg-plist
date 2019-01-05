@@ -1,4 +1,4 @@
-@dir GNUstep/System/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%/Headers
+@dir GNUstep/System/Library/Frameworks/GNUMail.framework/Versions/1/Headers
 GNUstep/System/Applications/GNUMail.app/GNUMail
 GNUstep/System/Applications/GNUMail.app/Resources/AddressBook_32.tiff
 GNUstep/System/Applications/GNUMail.app/Resources/AddressManager_32.tiff
@@ -168,6 +168,9 @@ GNUstep/System/Applications/GNUMail.app/Resources/English.lproj/ConsoleWindow.go
 GNUstep/System/Applications/GNUMail.app/Resources/English.lproj/EditWindow.gorm/data.classes
 GNUstep/System/Applications/GNUMail.app/Resources/English.lproj/EditWindow.gorm/data.info
 GNUstep/System/Applications/GNUMail.app/Resources/English.lproj/EditWindow.gorm/objects.gorm
+GNUstep/System/Applications/GNUMail.app/Resources/English.lproj/FindWindow.gorm/data.classes
+GNUstep/System/Applications/GNUMail.app/Resources/English.lproj/FindWindow.gorm/data.info
+GNUstep/System/Applications/GNUMail.app/Resources/English.lproj/FindWindow.gorm/objects.gorm
 GNUstep/System/Applications/GNUMail.app/Resources/English.lproj/PasswordPanel.gorm/data.classes
 GNUstep/System/Applications/GNUMail.app/Resources/English.lproj/PasswordPanel.gorm/data.info
 GNUstep/System/Applications/GNUMail.app/Resources/English.lproj/PasswordPanel.gorm/objects.gorm
@@ -261,15 +264,15 @@ GNUstep/System/Library/ApplicationSupport/GNUMail/Viewing.prefs/stamp.make
 GNUstep/System/Library/Frameworks/GNUMail.framework/GNUMail
 GNUstep/System/Library/Frameworks/GNUMail.framework/Headers
 GNUstep/System/Library/Frameworks/GNUMail.framework/Resources
-GNUstep/System/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%/GNUMail
-GNUstep/System/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
-GNUstep/System/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%/libGNUMail.so
-GNUstep/System/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%/libGNUMail.so.%%MAJORVERSION%%
-GNUstep/System/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%/libGNUMail.so.%%VERSION%%
+GNUstep/System/Library/Frameworks/GNUMail.framework/Versions/1/GNUMail
+GNUstep/System/Library/Frameworks/GNUMail.framework/Versions/1/Resources/Info-gnustep.plist
+GNUstep/System/Library/Frameworks/GNUMail.framework/Versions/1/libGNUMail.so
+GNUstep/System/Library/Frameworks/GNUMail.framework/Versions/1/libGNUMail.so.1
+GNUstep/System/Library/Frameworks/GNUMail.framework/Versions/1/libGNUMail.so.1.2.3
 GNUstep/System/Library/Frameworks/GNUMail.framework/Versions/Current
 GNUstep/System/Library/Frameworks/GNUMail.framework/libGNUMail.so
 GNUstep/System/Library/Headers/GNUMail
 GNUstep/System/Library/Libraries/libGNUMail.so
-GNUstep/System/Library/Libraries/libGNUMail.so.%%MAJORVERSION%%
-GNUstep/System/Library/Libraries/libGNUMail.so.%%VERSION%%
+GNUstep/System/Library/Libraries/libGNUMail.so.1
+GNUstep/System/Library/Libraries/libGNUMail.so.1.2.3
 GNUstep/System/Tools/GNUMail
