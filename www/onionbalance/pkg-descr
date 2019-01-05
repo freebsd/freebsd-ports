@@ -1,0 +1,6 @@
+The OnionBalance software allows for Tor onion service requests to be
+distributed across multiple backend Tor instances. OnionBalance provides
+load-balancing while also making onion services more resilient and
+reliable by eliminating single points-of-failure.
+
+WWW: https://onionbalance.readthedocs.io/
