@@ -1351,6 +1351,7 @@
     SUBDIR += p5-WebService-Simple
     SUBDIR += p5-WebService-Technorati
     SUBDIR += p5-WebService-YouTube
+    SUBDIR += p5-Woothee
     SUBDIR += p5-WordPress-XMLRPC
     SUBDIR += p5-Yahoo-Search
     SUBDIR += p5-chklinks

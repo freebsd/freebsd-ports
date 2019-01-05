@@ -1,0 +1,7 @@
+'Woothee' is user-agent string parser, returns just same result over
+multi-language by sharing same datasets and testsets over implementations of
+each languages.
+
+This is the Perl implementation version.
+
+WWW: http://woothee.github.io/
