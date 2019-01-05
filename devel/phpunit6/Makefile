@@ -13,8 +13,6 @@ COMMENT=	Testing framework for unit tests
 
 LICENSE=	BSD3CLAUSE
 
-IGNORE_WITH_PHP=	56
-
 CONFLICTS_INSTALL=	phpunit
 
 USES=		cpe php:flavors
