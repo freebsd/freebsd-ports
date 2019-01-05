@@ -1,6 +1,6 @@
 --- source/CMakeLists.txt.orig	2018-09-07 13:02:18 UTC
 +++ source/CMakeLists.txt
-@@ -2,14 +2,17 @@ set(SHAREDSRCS acbuf.cc acfg.cc acfg_defaults.cc aclog
+@@ -2,15 +2,18 @@ set(SHAREDSRCS acbuf.cc acfg.cc acfg_def
  set(ACNG_SRCS apt-cacher.cc bgtask.cc cacheman.cc cleaner.cc conn.cc conserver.cc expiration.cc job.cc lockable.cc maintenance.cc mirror.cc pkgimport.cc rfc2553emu.cc showinfo.cc)
  
  ADD_LIBRARY(acngstuff OBJECT ${SHAREDSRCS})
@@ -17,4 +17,6 @@
 +target_compile_features(acngtool PRIVATE cxx_auto_type)
  SET_TARGET_PROPERTIES(acngtool PROPERTIES COMPILE_FLAGS "${ACNG_COMPFLAGS} ${ACNG_CXXFLAGS} ${CFLAGS_PTHREAD}")
  TARGET_LINK_LIBRARIES(acngtool ${BaseNetworkLibs} ${CompLibs} ${SSL_LIB_LIST} ${CMAKE_THREAD_LIBS_INIT} ${EXTRA_LIBS_ACNGTOOL})
- INSTALL(TARGETS acngtool DESTINATION ${LIBDIR})
+-INSTALL(TARGETS acngtool DESTINATION ${LIBDIR})
++INSTALL(TARGETS acngtool DESTINATION ${SBINDIR})
+ 

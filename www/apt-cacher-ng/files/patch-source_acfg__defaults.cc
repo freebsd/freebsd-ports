@@ -1,6 +1,6 @@
 --- source/acfg_defaults.cc.orig	2018-09-07 13:02:18 UTC
 +++ source/acfg_defaults.cc
-@@ -40,6 +40,9 @@ string pfilepat(".*(\\.(u|d)?deb|\\.rpm|\\.drpm|\\.dsc
+@@ -40,6 +40,9 @@ string pfilepat(".*(\\.(u|d)?deb|\\.rpm|
      "|\\.asc$" // all remaining PGP signatures. Assuming that volatile ones are matched below.
      "|changelogs/pool/.*/changelog.txt$" // packages.ultimediaos.com
      "|/objects/.*/.*\\.(dirtree|filez|commit|commitmeta)|/repo/deltas/.*" // FlatPak
