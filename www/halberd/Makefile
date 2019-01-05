@@ -11,7 +11,7 @@ COMMENT=	HTTP load balancer detection tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
+USES=		python:2.7
 USE_PYTHON=	distutils noflavors autoplist
 NO_ARCH=	yes
 
