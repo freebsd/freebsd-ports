@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	Abandoned upstream, does not work with python3
-EXPIRATION_DATE=	2018-02-06
+EXPIRATION_DATE=	2019-02-06
 
 BUILD_DEPENDS=	bash:shells/bash \
 		intltool-update:textproc/intltool
