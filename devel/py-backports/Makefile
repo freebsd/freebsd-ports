@@ -22,7 +22,7 @@ USE_PYTHON=	flavors
 .if ${PYTHON_MAJOR_VER} == 2
 PLIST_FILES=	${PYTHON_SITELIBDIR}/backports/__init__.py \
 		${PYTHON_SITELIBDIR}/backports/__init__.pyc \
-		${PYTHON_SITELIBDIR}/backports/__init__.${PYTHON_PYOEXTENSION}
+		${PYTHON_SITELIBDIR}/backports/__init__.pyo
 .else
 PLIST_FILES=	${PYTHON_SITELIBDIR}/backports/__init__.py \
 		${PYTHON_SITELIBDIR}/backports/__pycache__/__init__.cpython-${PYTHON_SUFFIX}.pyc \
