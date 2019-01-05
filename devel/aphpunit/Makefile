@@ -12,8 +12,6 @@ COMMENT=	Testing framework for unit tests
 
 LICENSE=	BSD2CLAUSE
 
-IGNORE_WITH_PHP=	56
-
 USES=		php:flavors
 USE_PHP=	mbstring pcntl phar posix sysvmsg
 

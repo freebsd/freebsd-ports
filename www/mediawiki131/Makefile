@@ -15,8 +15,6 @@ LICENSE=	GPLv2
 
 CONFLICTS=	mediawiki12[79]-[0-9]* mediawiki130-[0-9]*
 
-IGNORE_WITH_PHP=56
-
 USES=		php:flavors shebangfix
 SHEBANG_FILES=	maintenance/dev/*.sh \
 		maintenance/postgres/*.pl \

@@ -11,6 +11,5 @@ COMMENT=	PHP extension for minifying JavaScript
 LICENSE=	PHP301
 
 USES=		php:pecl
-IGNORE_WITH_PHP=56
 
 .include <bsd.port.mk>

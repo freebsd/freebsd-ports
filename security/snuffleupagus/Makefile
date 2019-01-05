@@ -12,8 +12,6 @@ COMMENT=	Security module for PHP 7+
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-IGNORE_WITH_PHP=	56
-
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 TEST_TARGET=	test

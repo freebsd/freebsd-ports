@@ -18,8 +18,6 @@ EXPIRATION_DATE=2019-03-03
 CONFLICTS=	moodle31-3.1.[0-9]* moodle33-3.3.[0-9]* moodle35-3.5.[0-9]* \
 		moodle36-3.6.[0-9]*
 
-IGNORE_WITH_PHP=	56
-
 USES=		cpe php:flavors tar:tgz
 USE_PHP=	ctype curl dom fileinfo gd hash iconv intl json mbstring \
 		opcache openssl pcre session simplexml soap spl tokenizer \

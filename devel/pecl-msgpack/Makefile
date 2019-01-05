@@ -10,8 +10,6 @@ COMMENT=	Provides API for communicating with MessagePack serialization
 
 LICENSE=	BSD3CLAUSE
 
-IGNORE_WITH_PHP=	56
-
 USES=		php:pecl
 
 .include <bsd.port.mk>
