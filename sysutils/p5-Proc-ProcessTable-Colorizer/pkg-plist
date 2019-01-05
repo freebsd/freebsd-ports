@@ -1,0 +1,3 @@
+bin/cps
+%%SITE_PERL%%/Proc/ProcessTable/Colorizer.pm
+%%PERL5_MAN3%%/Proc::ProcessTable::Colorizer.3.gz
