@@ -39,7 +39,7 @@ OPTIONS_SUB=	yes
 
 PYTHON_DESC=	Python scripting support
 PYTHON_USES=	pyqt:5 python
-PYTHON_USE=	pyqt=core,gui,printsupport,sip,widgets
+PYTHON_USE=	pyqt=core,gui,printsupport,sip,widgets python=py3kplist
 PYTHON_QMAKE_ON=	PYTHON=${PYTHON_CMD} CONFIG+=python \
 			PYQT_SIPDIR=${LOCALBASE}/${_SIPDIR_REL}
 
@@ -55,10 +55,23 @@ post-install-NLS-on:
 	${INSTALL_DATA} ${WRKSRC}/scidavis/translations/*.qm \
 		${STAGEDIR}${DATADIR}/translations
 
+.include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MPYTHON}
+.if ${PYTHON_REL} < 3200
+PYCACHE_DIR=	# none
+PYCACHE_FILE=	scidavisUtil.pyc
+.else
+PYCACHE_DIR=	__pycache__/
+PYCACHE_FILE=	scidavisUtil.cpython-${PYTHON_SUFFIX}.pyc
+.endif
+.endif
+
 post-install-PYTHON-on:
 	${MV} ${STAGEDIR}${PREFIX}/etc/scidavisrc.py \
 		${STAGEDIR}${PREFIX}/etc/scidavisrc.py.sample
-	${INSTALL_DATA} ${WRKSRC}/scidavis/scidavisUtil.pyc \
-		${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}/${PYCACHE_DIR}
+	${INSTALL_DATA} ${WRKSRC}/scidavis/${PYCACHE_DIR}${PYCACHE_FILE} \
+		${STAGEDIR}${DATADIR}/${PYCACHE_DIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
