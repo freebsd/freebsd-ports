@@ -1,0 +1,5 @@
+This role provides convenience methods to return a new Time::Moment object
+adjusted according to a DateTime::TimeZone/DateTime::TimeZone::Tzfile
+compatible time zone object, as in "TIME ZONES" in Time::Moment.
+
+WWW: https://metacpan.org/release/Time-Moment-Role-TimeZone
