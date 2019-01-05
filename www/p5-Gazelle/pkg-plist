@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/Gazelle.pm
+%%SITE_ARCH%%/Plack/Handler/Gazelle.pm
+%%SITE_ARCH%%/auto/Plack/Handler/Gazelle/Gazelle.so
+%%PERL5_MAN3%%/Gazelle.3.gz

@@ -844,6 +844,7 @@
     SUBDIR += p5-Furl
     SUBDIR += p5-FurlX-Coro
     SUBDIR += p5-Gantry
+    SUBDIR += p5-Gazelle
     SUBDIR += p5-Geo-Caching
     SUBDIR += p5-Google-Search
     SUBDIR += p5-Gtk2-WebKit
