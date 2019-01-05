@@ -15,7 +15,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libomp.so:devel/openmp
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		fortran gmake python shebangfix
+USES=		fortran gmake python:2.7 shebangfix
 SHEBANG_FILES=	tools/dptools/bin/* tools/misc/* utils/srcmanip/* utils/build/* external/fypp/bin/* utils/get_opt_externals \
 		external/fypp/bin/fypp utils/test/testlist_to_fypp test/prog/dftb+/bin/tagdiff
 SHEBANG_GLOB=	*.py
