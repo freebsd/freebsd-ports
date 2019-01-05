@@ -9,8 +9,6 @@ CATEGORIES=	devel pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR class to find out the minimum version and extensions required
 
-IGNORE_WITH_PHP=	56
-
 RUN_DEPENDS=	${PEARDIR}/Console/Table.php:devel/pear-Console_Table@${PHP_FLAVOR} \
 		${PEARDIR}/Console/Getargs.php:devel/pear-Console_Getargs@${PHP_FLAVOR} \
 		${PEARDIR}/File/Find.php:sysutils/pear-File_Find@${PHP_FLAVOR} \
