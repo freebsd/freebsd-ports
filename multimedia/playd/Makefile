@@ -8,7 +8,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://files.bsdroot.lv/my/FreeBSD/distfiles/
 DISTNAME=	playd.sh-${PORTVERSION}
 
-MAINTAINER=	graudeejs@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very easy-to-use mplayer sh wrapper script (supports playlists)
 
 LICENSE=	BSD3CLAUSE

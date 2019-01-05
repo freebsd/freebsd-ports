@@ -6,7 +6,7 @@ PORTVERSION=	1.4
 CATEGORIES=	security
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	graudeejs@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl script to generate Diceware dictionaries for passwords
 
 USE_GITHUB=	yes
