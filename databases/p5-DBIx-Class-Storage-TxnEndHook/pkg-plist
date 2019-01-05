@@ -1,0 +1,4 @@
+%%SITE_PERL%%/DBIx/Class/Schema/TxnEndHook.pm
+%%SITE_PERL%%/DBIx/Class/Storage/TxnEndHook.pm
+%%PERL5_MAN3%%/DBIx::Class::Schema::TxnEndHook.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Storage::TxnEndHook.3.gz

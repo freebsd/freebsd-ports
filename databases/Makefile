@@ -378,6 +378,7 @@
     SUBDIR += p5-DBIx-Class-Schema-Config
     SUBDIR += p5-DBIx-Class-Schema-Loader
     SUBDIR += p5-DBIx-Class-Schema-PopulateMore
+    SUBDIR += p5-DBIx-Class-Storage-TxnEndHook
     SUBDIR += p5-DBIx-Class-TimeStamp
     SUBDIR += p5-DBIx-Class-Tree
     SUBDIR += p5-DBIx-Class-Tree-NestedSet
