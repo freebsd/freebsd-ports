@@ -4751,6 +4751,7 @@
     SUBDIR += py-orbit
     SUBDIR += py-ordered-set
     SUBDIR += py-ordereddict
+    SUBDIR += py-orderedmultidict
     SUBDIR += py-os-brick
     SUBDIR += py-os-client-config
     SUBDIR += py-os-service-types
