@@ -1,7 +1,0 @@
-@unexec if cmp -s %D/%%ETCDIR%%/users %D/%%ETCDIR%%/users.sample; then rm -f %D/%%ETCDIR%%/users; fi
-@sample %%ETCDIR%%/tunnel.conf.sample
-%%ETCDIR%%/users.sample
-libexec/pppserver
-sbin/pppwho
-%%PORTDOCS%%%%DOCSDIR%%/server.LISEZ-MOI
-%%PORTDOCS%%%%DOCSDIR%%/server.README

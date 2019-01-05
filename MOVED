@@ -11553,3 +11553,6 @@ multimedia/phonon-vlc@qt4||2019-01-02|vlc-qt4 has been removed, vlc now always u
 multimedia/phonon-vlc@qt5|multimedia/phonon-vlc|2019-01-02|vlc-qt4 has been removed, vlc now always uses qt5
 multimedia/vlc3|multimedia/vlc|2019-01-03|multimedia/vlc updated to supported upstream branch (previously vlc3)
 databases/php7-tarantool|databases/php-tarantool|2019-01-03|Rename php7-tarantool to php-tarantool after php5-tarantool removal
+net/ssltunnel-server||2019-01-05|Has expired: Does not build, upstream disappeared
+lang/cilkplus||2019-01-05|Has expired: Cilk Plus is on its way out (both in GCC and the Intel compilers)
+net/ssltunnel-client||2019-01-05|Removed, client part of expired net/ssltunnel-server
