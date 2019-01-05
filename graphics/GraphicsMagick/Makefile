@@ -3,7 +3,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.3.31
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
@@ -16,10 +16,11 @@ LICENSE=	MIT
 
 USES=		libtool localbase pathfix tar:bzip2
 
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static \
-		--with-windows-font-dir=${WINDOWS_FONT_DIR} --without-perl
+		--with-windows-font-dir=${WINDOWS_FONT_DIR} \
+		--without-perl --without-trio
 CONFIGURE_ENV=	PTHREAD_LIBS=-lpthread
+GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
@@ -27,10 +28,9 @@ USE_LDCONFIG=	yes
 # Use fonts installed by x11-fonts/webfonts by default
 WINDOWS_FONT_DIR?=	${LOCALBASE}/share/fonts/webfonts
 
-OPTIONS_DEFINE=	BZIP2 DOCS FPX FREETYPE JASPER JBIG JPEG LCMS2 LZMA OPENMP Q8BIT PNG SSE TEST TIFF TRIO UMEM WEBP WMF X11 XML ZLIB ZSTD
+OPTIONS_DEFINE=	BZIP2 DOCS FPX FREETYPE JASPER JBIG JPEG LCMS2 LZMA OPENMP Q8BIT PNG SSE TEST TIFF UMEM WEBP WMF X11 XML ZLIB ZSTD
 OPTIONS_DEFAULT=BZIP2 FREETYPE JASPER JBIG JPEG LCMS2 LZMA OPENMP PNG TIFF WEBP WMF X11 XML ZLIB
 Q8BIT_DESC=	Use 8-bit pixels (speed) instead of 16-bit (quality)
-TRIO_DESC=	TRIO support
 UMEM_DESC=	UMEM memory allocation library support
 TEST_DESC=	Run bundled self-tests after build
 
@@ -61,8 +61,6 @@ TEST_BUILD_DEPENDS=	webfonts>=0:x11-fonts/webfonts
 TEST_RUN_DEPENDS=	webfonts>=0:x11-fonts/webfonts
 TIFF_CONFIGURE_WITH=	tiff
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
-TRIO_CONFIGURE_WITH=	trio
-TRIO_LIB_DEPENDS=	libtrio.so:devel/trio
 UMEM_CONFIGURE_WITH=	umem
 WEBP_CONFIGURE_WITH=	webp
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
