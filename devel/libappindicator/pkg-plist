@@ -22,3 +22,5 @@ share/gtk-doc/html/libappindicator/object-tree.html
 share/gtk-doc/html/libappindicator/right.png
 share/gtk-doc/html/libappindicator/style.css
 share/gtk-doc/html/libappindicator/up.png
+%%VAPI%%share/vala/vapi/appindicator3-0.1.deps
+%%VAPI%%share/vala/vapi/appindicator3-0.1.vapi
