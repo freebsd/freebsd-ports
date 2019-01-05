@@ -1,0 +1,15 @@
+Agar is a cross-platform GUI toolkit. Agar provides a base
+framework and a collection of GUI widgets from which GUI
+applications can be built.
+
+Agar applications function seamlessly under X11 (with OpenGL),
+Windows, MacOS X and SDL 1.2. Agar can also attach an existing
+OpenGL or SDL context and operate as window manager for the
+application. Agar is compact, efficient, and fully thread-safe.
+
+Agar's functionality can be extended using simple C/C++ class
+registration interfaces. Separate libraries which also extend
+Agar's capabilities include FreeSG (http://FreeSG.org) and
+Edacious (http://edacious.org).
+
+WWW: http://libagar.org/
