@@ -1,0 +1,68 @@
+commit 15caa201694821770e1355f989a716afd3ea650b
+Author: Dmitry Marakasov <amdmi3@amdmi3.ru>
+Date:   Wed Dec 26 22:14:17 2018 +0300
+
+    Add CMake-based installation support
+    
+    - Provide script to run wyrmsun from command line
+    - Fix hardcoded path to /usr/share/wyrmsun
+    - Install data, documentation, script, desktop and appdata files as well
+      as icons into designated locations
+
+diff --git CMakeLists.txt CMakeLists.txt
+new file mode 100644
+index 00000000..91ef748a
+--- /dev/null
++++ CMakeLists.txt
+@@ -0,0 +1,30 @@
++project(wyrmsun)
++cmake_minimum_required(VERSION 3.0)
++
++set(DATADIR share/wyrmsun CACHE STRING "Where to install Wyrmsun data files")
++set(DOCSDIR share/doc/wyrmsun CACHE STRING "Where to install Wyrmsun documentation")
++
++configure_file(linux/wyrmsun.sh.in linux/wyrmsun.sh @ONLY)
++
++install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/linux/wyrmsun.sh DESTINATION bin RENAME wyrmsun)
++install(FILES linux/wyrmsun.desktop DESTINATION share/applications)
++install(FILES linux/wyrmsun.appdata.xml DESTINATION share/appdata)
++install(FILES graphics/ui/icons/wyrmsun_icon_32.png DESTINATION share/icons/hicolor/32x32/apps RENAME wyrmsun.png)
++install(FILES graphics/ui/icons/wyrmsun_icon_64.png DESTINATION share/icons/hicolor/64x64/apps RENAME wyrmsun.png)
++install(FILES graphics/ui/icons/wyrmsun_icon_128.png DESTINATION share/icons/hicolor/128x128/apps RENAME wyrmsun.png)
++
++install(FILES oaml.defs DESTINATION ${DATADIR})
++
++install(DIRECTORY
++	data
++	graphics
++	maps
++	music
++	scripts
++	sounds
++	translations
++	DESTINATION ${DATADIR}
++)
++
++install(FILES readme.txt DESTINATION ${DOCSDIR})
++install(DIRECTORY documents DESTINATION ${DOCSDIR})
+diff --git linux/wyrmsun.desktop linux/wyrmsun.desktop
+index b779fa63..cad9ea6b 100644
+--- linux/wyrmsun.desktop
++++ linux/wyrmsun.desktop
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Categories=Game;StrategyGame;
+-Exec=wyrmgus -d /usr/share/wyrmsun
++Exec=wyrmsun
+ GenericName=Mythologic realtime-strategy game
+ GenericName[de]=Mythologisches Echtzeitstrategiespiel
+ Icon=wyrmsun
+diff --git linux/wyrmsun.sh.in linux/wyrmsun.sh.in
+new file mode 100644
+index 00000000..6bcb0675
+--- /dev/null
++++ linux/wyrmsun.sh.in
+@@ -0,0 +1,3 @@
++#!/bin/sh
++
++exec wyrmgus -d @CMAKE_INSTALL_PREFIX@/@DATADIR@ "$@"
