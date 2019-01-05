@@ -2,43 +2,52 @@
 # $FreeBSD$
 
 PORTNAME=	mandelbulber
-DISTVERSION=	1.13-1
-PORTREVISION=	1
+PORTVERSION=	2.16
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}
-DISTNAME=	${PORTNAME}${DISTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	3D Mandelbrot fractal renderer
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to build
+LIB_DEPENDS=	libgsl.so:math/gsl \
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		liblzo2.so:archivers/lzo2
 
-USES=		desktop-file-utils gmake pkgconfig
-USE_GNOME=	glib20 gtk20
-BUILD_WRKSRC=	${WRKSRC}/makefiles
-MAKEFILE=	makefile
-CXXFLAGS+=	-DSHARED_DIR=\\\"${DATADIR}\\\"
+USE_GITHUB=	yes
+GH_ACCOUNT=	buddhi1980
+GH_PROJECT=	${PORTNAME}2
 
-PLIST_FILES=	bin/${PORTNAME} share/applications/${PORTNAME}.desktop
+USES=		cmake gnome jpeg localbase:ldflags pkgconfig qt:5
+USE_QT=		core widgets network gui multimedia testlib \
+		qmake_build buildtools_build uitools_build
+INSTALLS_ICONS=	yes
 
-PORTDOCS=	README NEWS
+CMAKE_SOURCE_PATH=	${WRKSRC}/mandelbulber2/cmake
+
+PORTDOCS=	CONTRIBUTING.md README.md RESOURCES.md
 PORTDATA=	*
+DATADIR=	${PREFIX}/share/${PORTNAME}2
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	OPENCL OPENMP DOCS
+OPTIONS_EXCLUDE=	OPENMP  # not properly supported yet
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/mandelbulber|${DATADIR}|' \
-		${WRKSRC}/${PORTNAME}.desktop
+OPENCL_BUILD_DEPENDS=	opencl>=0:devel/opencl
 
-do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC}/usr/share && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+OPENMP_LIB_DEPENDS=	libomp.so:devel/openmp
+
+post-patch-OPENMP-off:
+	@${REINPLACE_CMD} -e 's|-fopenmp||' \
+		${CMAKE_SOURCE_PATH}/CMakeLists.txt
+
+post-patch-OPENCL-off:
+	@${REINPLACE_CMD} -e '/find_package.*OpenCL/ d' \
+		${CMAKE_SOURCE_PATH}/CMakeLists.txt
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
