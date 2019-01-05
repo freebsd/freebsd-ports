@@ -112,7 +112,7 @@ REDIS_CONFIGURE_ON=		--enable-hiredis \
 				--with-libhiredis-includes=${LOCALBASE}/include \
 				--with-libhiredis-libraries=${LOCALBASE}/lib
 
-RUST_BUILD_DEPENDS=		rustc:lang/rust
+RUST_BUILD_DEPENDS=		rustc:lang/${RUST_DEFAULT}
 RUST_CONFIGURE_ENABLE=		rust
 
 TESTS_CONFIGURE_ENABLE=		unittests
