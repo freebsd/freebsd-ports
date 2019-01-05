@@ -1,0 +1,8 @@
+PDF::Reuse - Reuse and mass produce PDF documents
+
+This module could be used when you want to mass produce similar (but not
+identical) PDF documents and reuse templates, JavaScripts and some other
+components. It is functional to be fast, and to give your programs capacity to
+produce many pages per second and very big PDF documents if necessary.
+
+WWW: http://search.cpan.org/dist/PDF-Reuse/

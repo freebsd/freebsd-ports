@@ -685,6 +685,7 @@
     SUBDIR += p5-PDF-API3
     SUBDIR += p5-PDF-Create
     SUBDIR += p5-PDF-FromHTML
+    SUBDIR += p5-PDF-Reuse
     SUBDIR += p5-PDF-Table
     SUBDIR += p5-PDF-Tiny
     SUBDIR += p5-PDF-WebKit
