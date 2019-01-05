@@ -15,6 +15,7 @@ etc/mattermost/config.json.sample
 %%WWWDIR%%/i18n/ro.json
 %%WWWDIR%%/i18n/ru.json
 %%WWWDIR%%/i18n/tr.json
+%%WWWDIR%%/i18n/uk.json
 %%WWWDIR%%/i18n/zh-CN.json
 %%WWWDIR%%/i18n/zh-TW.json
 %%WWWDIR%%/templates/complete_saml_extension_body.html
@@ -36,9 +37,6 @@ etc/mattermost/config.json.sample
 %%WWWDIR%%/templates/post_body_generic.html
 %%WWWDIR%%/templates/reset_body.html
 %%WWWDIR%%/templates/signin_change_body.html
-%%WWWDIR%%/templates/signup_team_body.html
 %%WWWDIR%%/templates/unsupported_browser.html
-%%WWWDIR%%/templates/upgrade_30_body.html
-%%WWWDIR%%/templates/username_change_body.html
 %%WWWDIR%%/templates/verify_body.html
 %%WWWDIR%%/templates/welcome_body.html
