@@ -1,6 +1,6 @@
 include/quazip%%QTVER_SUFFIX%%/JlCompress.h
-include/quazip%%QTVER_SUFFIX%%/crypt.h
 include/quazip%%QTVER_SUFFIX%%/ioapi.h
+include/quazip%%QTVER_SUFFIX%%/minizip_crypt.h
 include/quazip%%QTVER_SUFFIX%%/quaadler32.h
 include/quazip%%QTVER_SUFFIX%%/quachecksum32.h
 include/quazip%%QTVER_SUFFIX%%/quacrc32.h
