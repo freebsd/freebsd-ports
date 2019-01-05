@@ -2,13 +2,8 @@
 @sample %%ETCDIR%%/backends_debian.sample
 @sample %%ETCDIR%%/backends_freebsd.sample
 @sample %%ETCDIR%%/backends_ubuntu.sample
-@sample %%ETCDIR%%/security.conf.sample
+@sample(proxy,proxy,400) %%ETCDIR%%/security.conf.sample
 etc/avahi/services/apt-cacher-ng.service
-%%FUSE%%man/man8/acngfs.8.gz
-man/man8/apt-cacher-ng.8.gz
-sbin/apt-cacher-ng
-%%FUSE%%%%DATADIR%%/acngfs
-%%DATADIR%%/acngtool
 %%DATADIR%%/archlx_mirrors
 %%DATADIR%%/backends_debian.default
 %%DATADIR%%/backends_gentoo.default
@@ -29,6 +24,9 @@ sbin/apt-cacher-ng
 %%DATADIR%%/style.css
 %%DATADIR%%/ubuntu_mirrors
 %%DATADIR%%/userinfo.html
+sbin/apt-cacher-ng
+sbin/acngtool
+%%FUSE%%sbin/acngfs
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
@@ -45,5 +43,7 @@ sbin/apt-cacher-ng
 %%PORTDOCS%%%%DOCSDIR%%/html/secure.html
 %%PORTDOCS%%%%DOCSDIR%%/html/troublefaq.html
 %%PORTDOCS%%%%DOCSDIR%%/html/usage.html
+man/man8/apt-cacher-ng.8.gz
+%%FUSE%%man/man8/acngfs.8.gz
 @dir(proxy,proxy,755) /var/cache/apt-cacher-ng
 @dir(proxy,proxy,755) /var/log/apt-cacher-ng

@@ -11,14 +11,16 @@
  pkg_check_modules(fuse fuse)
  
  _append(acngfs_cflags -DMINIBUILD ${fuse_CFLAGS} ${CFLAGS_PTHREAD})
-@@ -22,6 +26,7 @@ if(fuse_FOUND AND HAVE_FUSE_25)
+@@ -22,7 +26,8 @@ if(fuse_FOUND AND HAVE_FUSE_25)
  
          ADD_EXECUTABLE(acngfs ${fsSRCS} $<TARGET_OBJECTS:osslcompat>)
          SET_TARGET_PROPERTIES(acngfs PROPERTIES COMPILE_FLAGS "${ACNG_COMPFLAGS} ${ACNG_CXXFLAGS} ${acngfs_cflags}")
+-        INSTALL(TARGETS acngfs DESTINATION ${LIBDIR})
 +	target_compile_features(acngfs PRIVATE cxx_auto_type)
-         INSTALL(TARGETS acngfs DESTINATION ${LIBDIR})
++        INSTALL(TARGETS acngfs DESTINATION ${SBINDIR})
          if(HAVE_DLOPEN)
                  _append(EXTRA_LIBS_ACNGFS dl)
+         endif()
 @@ -32,4 +37,4 @@ else(fuse_FOUND AND HAVE_FUSE_25)
          message("- FUSE not found or not compatible, not building acngfs")
  endif(fuse_FOUND AND HAVE_FUSE_25)

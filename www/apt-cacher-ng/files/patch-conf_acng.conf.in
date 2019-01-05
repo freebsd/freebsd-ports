@@ -1,6 +1,6 @@
 --- conf/acng.conf.in.orig	2018-09-07 13:02:18 UTC
 +++ conf/acng.conf.in
-@@ -69,6 +69,7 @@ Remap-epel:   file:epel_mirrors # Fedora EPEL
+@@ -69,6 +69,7 @@ Remap-epel:   file:epel_mirrors # Fedora
  Remap-slrep:  file:sl_mirrors # Scientific Linux
  Remap-gentoo: file:gentoo_mirrors.gz /gentoo ; file:backends_gentoo # Gentoo Archives
  Remap-secdeb: security.debian.org ; security.debian.org deb.debian.org/debian-security
