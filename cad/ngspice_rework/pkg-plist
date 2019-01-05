@@ -11,14 +11,10 @@ lib/ngspice/table.cm
 lib/ngspice/xtradev.cm
 lib/ngspice/xtraevt.cm
 man/man1/cmpp.1.gz
-man/man1/ngmakeidx.1.gz
-man/man1/ngmultidec.1.gz
-man/man1/ngnutmeg.1.gz
-man/man1/ngproc2mod.1.gz
-man/man1/ngsconvert.1.gz
-man/man1/ngspice.1.gz
+%%X11%%man/man1/ngspice.1.gz
 share/ngspice/dlmain.c
 include/ngspice/enhtypes.h
+include/ngspice/evtshared.h
 include/ngspice/evttypes.h
 include/ngspice/randnumb.h
 include/ngspice/stringskip.h

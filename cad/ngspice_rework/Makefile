@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ngspice_rework
-PORTVERSION=	28
+PORTVERSION=	30
 CATEGORIES=	cad
 MASTER_SITES=	SF/ngspice/ng-spice-rework/${PORTVERSION}
 DISTNAME=	ngspice-${PORTVERSION}
