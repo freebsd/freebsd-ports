@@ -1,0 +1,9 @@
+--- requirements.txt.orig	2018-08-17 17:52:37 UTC
++++ requirements.txt
+@@ -1,5 +1,5 @@
+ setuptools>0.6
+ paramiko>=1.15.0
+ lxml>=3.3.0
+-selectors2>=2.0.1
++selectors2>=2.0.1; python_version <= '3.4'
+ six
