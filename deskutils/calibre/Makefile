@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calibre
-PORTVERSION=	3.36.0
+PORTVERSION=	3.37.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 
@@ -23,13 +23,13 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cssutils>=1.0.1,1:www/py-cssutils@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}css-parser>=1.0.4:www/py-css-parser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}apsw>=0:databases/py-apsw@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=0.3:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}regex>=0:textproc/py-regex@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html5-parser>=0.4.3:www/py-html5-parser@${PY_FLAVOR}
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
-		${PYTHON_PKGNAMEPREFIX}cssutils>=1.0.1,1:www/py-cssutils@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}css-parser>=1.0.4:www/py-css-parser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dnspython>=0:dns/py-dnspython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup32>=0:www/py-beautifulsoup32@${PY_FLAVOR} \
@@ -47,17 +47,18 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}html5-parser>=0.4.3:www/py-html5-parser@${PY_FLAVOR} \
 		pdftohtml:graphics/poppler-utils
 
-USES=		desktop-file-utils gettext-runtime gnome localbase:ldflags pkgconfig \
+USES=		desktop-file-utils gettext-runtime gl gnome localbase:ldflags pkgconfig \
 		python:2.7 pyqt:5 qt:5 shared-mime-info shebangfix ssl tar:xz
 USE_RC_SUBR=	calibre
-EXTRACT_BEFORE_ARGS=	-x -s '/^calibre/~-src/' -f
-SHEBANG_GLOB=	*.sh *.py
-python_OLD_CMD=	"/usr/bin/env python2" /bin/python2 /usr/bin/python2 /usr/local/bin/python2
 USE_PYQT=	core gui network sip svg webkit widgets webkitwidgets xmlpatterns
 USE_QT=		buildtools_build core dbus gui qmake_build widgets
 USE_GL=		egl gl
 USE_GNOME=	glib20
 USE_XORG=	xrender xext x11
+
+EXTRACT_BEFORE_ARGS=	-x -s '/^calibre/~-src/' -f
+SHEBANG_GLOB=	*.sh *.py
+python_OLD_CMD=	"/usr/bin/env python2" /bin/python2 /usr/bin/python2 /usr/local/bin/python2
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 MAKE_ENV+=	FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
 		FC_LIB_DIR="${LOCALBASE}/lib" \
