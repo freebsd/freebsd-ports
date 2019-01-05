@@ -2,34 +2,36 @@
 # $FreeBSD$
 
 PORTNAME=	groovy
-DISTVERSION=	2.4.14
+DISTVERSION=	2.4.15
 CATEGORIES=	lang java
 MASTER_SITES=	http://dl.bintray.com/groovy/maven/
 DISTFILES=	apache-groovy-binary-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Agile dynamic language for the JVM
 
 LICENSE=	APACHE20
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:tu}
-
 USES=		zip
 USE_JAVA=	yes
+
 JAVA_VERSION=	1.7+
+
 NO_ARCH=	yes
 NO_BUILD=	yes
-DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+
 DATAFILES=	conf lib
-SCRIPTFILES=	groovy groovyConsole groovyc groovysh java2groovy startGroovy
+PLIST_FILES=	${SCRIPTFILES:S,^,bin/,} ${JAVAJARDIR}/${PORTNAME}.jar
 PORTDOCS=	html
+SCRIPTFILES=	groovy groovyConsole groovyc groovysh java2groovy startGroovy
+SUB_FILES=	set-groovy_home.sed
+
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:tu}
 
 OPTIONS_DEFINE=	DOCS
 
 DOCS_DISTFILES=	apache-groovy-docs-${PORTVERSION}${EXTRACT_SUFX}
-
-PLIST_FILES=	${SCRIPTFILES:S,^,bin/,} %%JAVAJARDIR%%/${PORTNAME}.jar
-SUB_FILES=	set-groovy_home.sed
 
 do-install:
 	@${ECHO_MSG} -n ">> Staging JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
