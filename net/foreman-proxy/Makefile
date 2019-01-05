@@ -4,7 +4,7 @@
 PORTNAME=	foreman-proxy
 PORTVERSION=	1.15.1
 CATEGORIES=	net
-MASTER_SITES=	http://downloads.theforeman.org/foreman-proxy/
+MASTER_SITES=	https://downloads.theforeman.org/foreman-proxy/
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Foreman Proxy Agent
