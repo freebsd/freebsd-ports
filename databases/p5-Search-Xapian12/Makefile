@@ -23,10 +23,11 @@ TEST_DEPENDS=	p5-Devel-Leak>=0:devel/p5-Devel-Leak \
 
 PORTSCOUT=	limit:^1\.2\.
 
+USES=		perl5
+USE_PERL5=	configure
+
 CC=		${CXX}
 CONFIGURE_ARGS=	XAPIAN_CONFIG=${LOCALBASE}/bin/xapian-config
-USE_PERL5=	configure
-USES=		perl5
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^if (defined $$builddir) {|if (0) {|' ${WRKSRC}/Makefile.PL
