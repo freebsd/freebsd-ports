@@ -5,6 +5,9 @@ PORTVERSION=	1.33.0.${NIGHTLY_DATE:C,-,,g}
 PKGNAMESUFFIX=	-nightly
 DISTNAME=	rustc-nightly-src
 
+PATCH_SITES=	https://github.com/rust-lang/${PORTNAME}/commit/
+PATCHFILES=	49337938cb78.patch:-p1
+
 MASTERDIR=	${.CURDIR}/../rust
 PATCHDIR=	${.CURDIR}/files
 DISTINFO_FILE=	${.CURDIR}/distinfo
@@ -14,7 +17,7 @@ CONFLICTS_INSTALL=	rust
 # Which source to pull:
 #   https://static.rust-lang.org/dist/${NIGHTLY_DATE}/rustc-nightly-src.tar.gz
 #   https://static.rust-lang.org/dist/channel-rust-nightly.toml
-NIGHTLY_DATE=			2019-01-03
+NIGHTLY_DATE=			2019-01-05
 NIGHTLY_SUBDIR=			${NIGHTLY_DATE}/
 
 # See WRKSRC/src/stage0.txt for this date
