@@ -11,7 +11,6 @@ COMMENT=	Facility to manage extension object properties
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_WITH_PHP=	56
 PORTSCOUT=	limit:^2.*
 
 USES=		gmake php:pecl
