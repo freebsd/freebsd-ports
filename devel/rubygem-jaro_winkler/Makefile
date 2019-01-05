@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jaro_winkler
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Jaro-Winkler distance algorithm implementation
 
 LICENSE=	MIT
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 .include <bsd.port.mk>
