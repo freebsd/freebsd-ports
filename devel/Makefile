@@ -95,6 +95,7 @@
     SUBDIR += adacurses
     SUBDIR += adaid
     SUBDIR += aegis
+    SUBDIR += agar
     SUBDIR += ahven
     SUBDIR += aifad
     SUBDIR += ald
