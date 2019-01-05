@@ -1,0 +1,20 @@
+This colorizes the output from Proc::ProcessTable.
+
+This is largely meant to be used from the command line instead of
+as a module via the included bin script.
+
+Among other fun things, it allows searching of the process table.
+
+Searching is currently possible against the following criteria.
+
+ zombie
+ swapped out
+ regex command line matching
+ CPU seconds used by a process
+ percent of memory usage
+ percent of CPU usage
+ wait channel in use
+
+bin/cps - A colorized version of ps with various extra useful options
+
+WWW: http://search.cpan.org/dist/Proc-ProcessTable-Colorizer/
