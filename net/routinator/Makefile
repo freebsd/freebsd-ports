@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	routinator
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -18,32 +18,33 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	NLnetLabs
 
 CARGO_CRATES=	ansi_term-0.11.0 \
-		arc-swap-0.3.6 \
+		arc-swap-0.3.7 \
 		argon2rs-0.2.5 \
-		arrayvec-0.4.8 \
+		arrayvec-0.4.10 \
 		atty-0.2.11 \
-		backtrace-0.3.11 \
-		backtrace-sys-0.1.24 \
+		autocfg-0.1.1 \
+		backtrace-0.3.13 \
+		backtrace-sys-0.1.28 \
 		base64-0.9.3 \
 		bcder-0.1.0 \
 		bitflags-1.0.4 \
 		blake2-rfc-0.2.18 \
 		byteorder-1.2.7 \
 		bytes-0.4.11 \
-		cc-1.0.25 \
+		cc-1.0.28 \
 		cfg-if-0.1.6 \
 		chrono-0.4.6 \
 		clap-2.32.0 \
 		cloudabi-0.0.3 \
 		constant_time_eq-0.1.3 \
-		crossbeam-deque-0.6.2 \
-		crossbeam-epoch-0.6.1 \
+		crossbeam-deque-0.6.3 \
+		crossbeam-epoch-0.7.0 \
 		crossbeam-utils-0.6.3 \
 		daemonize-0.3.0 \
 		dirs-1.0.4 \
 		error-chain-0.11.0 \
-		failure-0.1.3 \
-		failure_derive-0.1.3 \
+		failure-0.1.5 \
+		failure_derive-0.1.5 \
 		fern-0.5.7 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
@@ -55,7 +56,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.2.0 \
 		lazycell-1.2.1 \
-		libc-0.2.45 \
+		libc-0.2.46 \
 		lock_api-0.1.5 \
 		log-0.4.6 \
 		memoffset-0.2.1 \
@@ -84,33 +85,33 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		rand_isaac-0.1.1 \
 		rand_pcg-0.1.1 \
 		rand_xorshift-0.1.0 \
-		redox_syscall-0.1.44 \
+		redox_syscall-0.1.50 \
 		redox_termios-0.1.1 \
 		redox_users-0.2.0 \
 		remove_dir_all-0.5.1 \
 		ring-0.13.5 \
 		rpki-0.2.0 \
-		rustc-demangle-0.1.9 \
+		rustc-demangle-0.1.13 \
 		rustc_version-0.2.3 \
 		safemem-0.3.0 \
 		scoped_threadpool-0.1.9 \
 		scopeguard-0.3.3 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.82 \
-		signal-hook-0.1.6 \
+		serde-1.0.84 \
+		signal-hook-0.1.7 \
 		slab-0.4.1 \
 		smallvec-0.6.7 \
 		socket2-0.3.8 \
 		stable_deref_trait-1.1.1 \
 		strsim-0.7.0 \
-		syn-0.15.22 \
+		syn-0.15.23 \
 		synstructure-0.10.1 \
 		syslog-4.0.1 \
 		tempfile-3.0.5 \
 		termion-1.5.1 \
 		textwrap-0.10.0 \
-		time-0.1.40 \
+		time-0.1.41 \
 		tokio-0.1.13 \
 		tokio-codec-0.1.1 \
 		tokio-current-thread-0.1.4 \
