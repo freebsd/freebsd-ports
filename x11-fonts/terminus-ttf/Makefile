@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	terminus-ttf
-PORTVERSION=	4.46.0
+PORTVERSION=	4.47.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://files.ax86.net/terminus-ttf/files/${PORTVERSION}/
 
