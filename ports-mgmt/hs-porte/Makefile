@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 DEPRECATED=	No updates since 2010
 BROKEN=		Doesn't build with newest GHC
-EXPIRATION_DATE=31.01.2019
+EXPIRATION_DATE=	2019-01-31
 
 USE_CABAL=	extensible-exceptions stringsearch
 

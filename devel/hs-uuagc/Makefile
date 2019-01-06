@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 DEPRECATED=	No release since 2015
 BROKEN=		Doesn't build with recent Haskell libraries
-EXPIRATION_DATE=31.01.2019
+EXPIRATION_DATE=	2019-01-31
 
 USE_CABAL=	haskell-src-exts>=1.11.1 mtl>=1.1.1.1 uuagc-cabal>=1.0.2.0 \
 		uulib>=0.9.14
