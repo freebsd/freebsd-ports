@@ -21,7 +21,6 @@ OPTIONS_SUB=	yes
 GH_ACCOUNT=	mikebrady
 
 OPTIONS_DEFINE=	CONVERTER
-OPTIONS_DEFINE=	CONVERTER
 CONVERTER_DESC=	Build with command-line utility to read and write audio data
 OPTIONS_DEFAULT=CONVERTER
 
