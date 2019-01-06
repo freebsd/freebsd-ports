@@ -7093,7 +7093,6 @@ sysutils/pessulus||2014-11-19|Abandonware, depends on non existing USE_GNOME com
 x11-toolkits/libzvt||2014-11-19|Abandonware, not depended on anymore
 net-p2p/gtkhx||2014-11-19|Does not work anymore
 korean/ami||2014-11-19|Does not work anymore
-graphics/xzgv||2014-11-19|Abandonware since at least 2008
 deskutils/gtkjournal||2014-11-19|Abandonware, not working anymore
 deskutils/splashsetter||2014-11-19|Abandonware, useless without gnome2
 editors/emacs23|editors/emacs|2014-11-19|Has expired: Unmaintained upstream, use editors/emacs

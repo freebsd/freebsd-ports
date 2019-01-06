@@ -1,0 +1,17 @@
+--- doc/Makefile.orig	2007-12-23 20:49:03 UTC
++++ doc/Makefile
+@@ -36,10 +36,10 @@ xzgv.1: xzgv.texi makeman.awk
+ installdirs:
+ 	/bin/sh ../mkinstalldirs $(INFODIR) $(MANDIR)
+ 
+-install: installdirs
+-	install xzgv.1 $(MANDIR)
+-	install -m 644 xzgv.info.gz $(INFODIR)
+-	install-info --infodir=$(INFODIR) xzgv.info.gz
++install:
++#	install xzgv.1 $(MANDIR)
++#	install -m 644 xzgv.info.gz $(INFODIR)
++#	install-info --infodir=$(INFODIR) xzgv.info.gz
+ 
+ uninstall:
+ 	$(RM) $(MANDIR)/xzgv.1
