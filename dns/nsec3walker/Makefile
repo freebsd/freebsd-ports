@@ -12,7 +12,7 @@ COMMENT=	Walk NSEC3 secured DNSSEC zones
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:databases/py-bsddb@${PY_FLAVOR} \
 		dig:dns/bind-tools
 
-USES=		python shebangfix ssl
+USES=		python:2.7 shebangfix ssl
 
 SHEBANG_FILES=	${WRKSRC}/collect ${WRKSRC}/unhash
 PLIST_FILES=	bin/collect \
