@@ -2,38 +2,36 @@
 # $FreeBSD$
 
 PORTNAME=	webfwlog
-PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTVERSION=	1.1.1
 CATEGORIES=	security
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/
+MASTER_SITES=	http://devel.webfwlog.net/download/v1.1.x/
 
 MAINTAINER=	zeus@ix.netcom.com
 COMMENT=	Web-based firewall log analyzer
 
 LICENSE=	GPLv2
 
+USES=			php:web
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-syslog \
 			--sysconfdir=${ETCDIR} \
 			--disable-dependency-tracking
 
-USE_PHP=	session
+USE_PHP=		session
 
-OPTIONS_DEFINE=		MODPHP DOCS
+OPTIONS_DEFINE=		DOCS
 
 OPTIONS_MULTI=		BACKENDS
 OPTIONS_MULTI_BACKENDS=	MYSQLIPV6 MYSQL PGSQL
 BACKENDS_DESC=		Database backends, choose at least one
 
 OPTIONS_GROUP=		GEOIPV2
-OPTIONS_GROUP_GEOIPV2=	LIBMAXMINDDB BDB
-GEOIPV2_DESC=		GEOIPv2 support, LIBMAXMINDDB required, BDB optional
+OPTIONS_GROUP_GEOIPV2=	LIBMAXMINDDB MAXMINDDB BDB
+GEOIPV2_DESC=		GEOIPv2 support
 
 OPTIONS_DEFAULT=	MYSQLIPV6 MYSQL
-
-MODPHP_DESC=		Require mod_php (adds apache dependency)
-MODPHP_USES=		php:mod
-MODPHP_USES_OFF=	php:web
 
 MYSQL_CONFIGURE_WITH=	mysql
 MYSQL_USE=		php=mysqli
@@ -44,6 +42,7 @@ MYSQLIPV6_CONFIGURE_ENABLE=	mysql-ipv6
 MYSQLIPV6_PLUGIN_DIR_REL=	lib/mysql/plugin
 MYSQLIPV6_PLUGIN_DIR=		${LOCALBASE}/${MYSQLIPV6_PLUGIN_DIR_REL}
 MYSQLIPV6_CONFIGURE_ON=		--libdir=${MYSQLIPV6_PLUGIN_DIR}
+MYSQLIPV6_USES=			libtool
 MYSQLIPV6_USE=			ldconfig=${MYSQLIPV6_PLUGIN_DIR}
 MYSQLIPV6_PLIST_FILES=		${MYSQLIPV6_PLUGIN_DIR_REL}/libwebfwlog_udf.so \
 				${MYSQLIPV6_PLUGIN_DIR_REL}/libwebfwlog_udf.so.0 \
@@ -52,21 +51,26 @@ MYSQLIPV6_PLIST_FILES=		${MYSQLIPV6_PLUGIN_DIR_REL}/libwebfwlog_udf.so \
 PGSQL_CONFIGURE_WITH=	pgsql
 PGSQL_USE=		php=pgsql
 PGSQL_USES=		pgsql
-PGSQL_ARGS=		want_pgsql=client
 
-LIBMAXMINDDB_DESC=		Libmaxminddb support for geoipv2 (.mmdb extension)
+LIBMAXMINDDB_DESC=		Full geoipv2 support for file logs, and lookup only
 LIBMAXMINDDB_CONFIGURE_WITH=	libmaxminddb
-LIBMAXMINDDB_CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
+LIBMAXMINDDB_CPPFLAGS=		-I${LOCALBASE}/include
+LIBMAXMINDDB_LDFLAGS=		-L${LOCALBASE}/lib
 LIBMAXMINDDB_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 
-BDB_DESC=			Berkeley DB support (implies LIBMAXMINDDB)
+MAXMINDDB_DESC=			PHP extension for geoipv2 speed (implies LIBMAXMINDDB)
+MAXMINDDB_IMPLIES=		LIBMAXMINDDB
+MAXMINDDB_RUN_DEPENDS=		${PHPBASE}/lib/php/${PHP_EXT_DIR}/maxminddb.so:devel/php-maxminddb
+
+BDB_DESC=			Use berkeley DB for file log speed (implies LIBMAXMINDDB)
 BDB_IMPLIES=			LIBMAXMINDDB
-BDB_CONFIGURE_WITH=		libdb
-BDB_CONFIGURE_ENV=		CPPFLAGS="-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include" LDFLAGS=-L${LOCALBASE}/lib LIBS=-l${BDB_LIB_NAME}
+BDB_CONFIGURE_WITH=		libdb=${BDB_LIB_NAME}
+BDB_CPPFLAGS=			-I${BDB_INCLUDE_DIR}
+BDB_LDFLAGS=			-L${BDB_LIB_DIR}
 BDB_USES=			bdb
 
 PORTDOCS=	AUTHORS COPYING CREDITS ChangeLog INSTALL \
-		README ReleaseNotes
+		README README.geoip README.pdf ReleaseNotes
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	VERSION=${PORTVERSION}
@@ -86,6 +90,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/webfwlog/style.css ${STAGEDIR}${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/webfwlog/index.php ${STAGEDIR}${WWWDIR}
 	@(cd ${WRKSRC}/webfwlog/include/ && ${COPYTREE_SHARE} \*.php ${STAGEDIR}${WWWDIR}/include/)
+	@${MKDIR} ${STAGEDIR}${WWWDIR}-vendor
+	@(cd ${WRKSRC}/webfwlog-vendor/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}-vendor)
+	@${RM} -r ${STAGEDIR}${WWWDIR}-vendor/maxmind-db/reader/ext
 	@${ECHO} "Installed web files in ${WWWDIR}"
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/webfwlog.conf ${STAGEDIR}${ETCDIR}/webfwlog.conf.sample
