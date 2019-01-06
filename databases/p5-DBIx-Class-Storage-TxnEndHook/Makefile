@@ -13,7 +13,6 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Module-Build>=0.38:devel/p5-Module-Build
 RUN_DEPENDS=	p5-DBIx-Class>=0:databases/p5-DBIx-Class \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 TEST_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \

@@ -14,8 +14,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Devel-CheckCompiler>=0.04:devel/p5-Devel-CheckCompiler \
-		p5-Module-Build>=0.4005:devel/p5-Module-Build
+BUILD_DEPENDS=	p5-Devel-CheckCompiler>=0.04:devel/p5-Devel-CheckCompiler
 RUN_DEPENDS=	p5-Guard>=0:devel/p5-Guard \
 		p5-Parallel-Prefork>=0.18:devel/p5-Parallel-Prefork \
 		p5-Plack>=1.0037:www/p5-Plack \
