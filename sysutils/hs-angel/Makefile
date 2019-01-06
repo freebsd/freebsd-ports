@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 
 DEPRECATED=	No releases since 2016
 BROKEN=		Doesn't build with recent GHC
-EXPIRATION_DATE=31.01.2019
+EXPIRATION_DATE=	2019-01-31
 
 USE_CABAL=	configurator>=0.1 mtl old-locale optparse-applicative \
 		unordered-containers>=0.1.4

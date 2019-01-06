@@ -11,7 +11,7 @@ COMMENT=	JSON encoding of ekg metrics
 LICENSE=	BSD3CLAUSE
 
 BROKEN=		Doesn't build with newest Haskell libraries
-EXPIRATION_DATE=31.01.2018
+EXPIRATION_DATE=	2019-01-31
 
 USE_CABAL=	aeson ekg-core>=0.1 unordered-containers
 
