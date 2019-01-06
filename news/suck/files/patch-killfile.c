@@ -1,6 +1,6 @@
---- killfile.c.orig	Tue Aug 28 01:55:03 2001
-+++ killfile.c	Sun Oct 14 20:03:03 2001
-@@ -55,7 +55,6 @@
+--- killfile.c.orig	2018-08-01 13:54:24 UTC
++++ killfile.c
+@@ -55,7 +55,6 @@ int check_a_group(PMaster, POneKill, cha
  void print_debug(PKillStruct, const char *);
  void debug_one_kill(POneKill);
  void add_to_linkedlist(pmy_regex *, pmy_regex);
