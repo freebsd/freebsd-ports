@@ -1,9 +1,0 @@
---- CMakeLists.txt.orig	2018-09-20 09:45:39 UTC
-+++ CMakeLists.txt
-@@ -15,6 +15,5 @@ find_package(X11 REQUIRED)
- include_directories(${X11_INCLUDE_DIR})
- target_link_libraries(WMmp ${X11_LIBRARIES} ${X11_Xpm_LIB})
- 
--set(CMAKE_C_FLAGS "-Oz")
- INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/doc/WMmp.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)
- INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/bin/WMmp DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)

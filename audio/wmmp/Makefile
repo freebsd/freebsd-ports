@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wmmp
-PORTVERSION=	0.12.4
+PORTVERSION=	0.12.6
 CATEGORIES=	audio windowmaker
 
 MAINTAINER=	nicolasherry@gmail.com
@@ -11,7 +11,7 @@ COMMENT=	Dockable musicpd client applet for Window Maker
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:insource
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	yogsothoth
 USE_XORG=	xpm x11 xext
