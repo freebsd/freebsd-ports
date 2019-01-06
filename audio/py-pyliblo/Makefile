@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblo.so:audio/liblo
 
-USES=		localbase:ldflags python
 USES=		python
 USE_PYTHON=	distutils cython
 MAKE_ENV+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
