@@ -1,0 +1,74 @@
+--- tests/Makefile.am.orig	2018-10-21 19:17:00 UTC
++++ tests/Makefile.am
+@@ -21,7 +21,7 @@ cmucl-test.sh: test.sh.in
+ 	  -e 's#!LOCAL_MAXIMA!#$(MAXIMA)#'                       \
+ 	  -e 's#!LISPNAME!#cmucl#'                               \
+ 	  -e 's#!OUTPUT_LOG!#$(top_builddir)/tests/cmucl.log#'   \
+-	  -e 's#!OUTPUT_LOG!#$(top_builddir)/tests/cmucl_share.log#'
++	  -e 's#!OUTPUT_SHARE_LOG!#$(top_builddir)/tests/cmucl_share.log#'
+ 	chmod a+x "$@"
+ endif
+ 
+@@ -32,7 +32,7 @@ scl-test.sh: test.sh.in
+ 	  -e 's#!LOCAL_MAXIMA!#$(MAXIMA)#'                       \
+ 	  -e 's#!LISPNAME!#scl#'                                 \
+ 	  -e 's#!OUTPUT_LOG!#$(top_builddir)/tests/scl.log#'     \
+-	  -e 's#!OUTPUT_LOG!#$(top_builddir)/tests/scl_share.log#'
++	  -e 's#!OUTPUT_SHARE_LOG!#$(top_builddir)/tests/scl_share.log#'
+ 	chmod a+x "$@"
+ endif
+ 
+@@ -43,7 +43,7 @@ sbcl-test.sh: test.sh.in
+ 	  -e 's#!LOCAL_MAXIMA!#$(MAXIMA)#'                       \
+ 	  -e 's#!LISPNAME!#sbcl#'                                \
+ 	  -e 's#!OUTPUT_LOG!#$(top_builddir)/tests/sbcl.log#'    \
+-	  -e 's#!OUTPUT_LOG!#$(top_builddir)/tests/sbcl_share.log#'
++	  -e 's#!OUTPUT_SHARE_LOG!#$(top_builddir)/tests/sbcl_share.log#'
+ 	chmod a+x "$@"
+ endif
+ 
+@@ -54,7 +54,7 @@ gcl-test.sh: test.sh.in
+ 	  -e 's#!LOCAL_MAXIMA!#$(MAXIMA)#'                       \
+ 	  -e 's#!LISPNAME!#gcl#'                                 \
+ 	  -e 's#!OUTPUT_LOG!#$(top_builddir)/tests/gcl.log#'     \
+-	  -e 's#!OUTPUT_LOG!#$(top_builddir)/tests/gcl_share.log#'
++	  -e 's#!OUTPUT_SHARE_LOG!#$(top_builddir)/tests/gcl_share.log#'
+ 	chmod a+x "$@"
+ endif
+ 
+@@ -65,7 +65,7 @@ acl-test.sh: test.sh.in
+ 	  -e 's#!LOCAL_MAXIMA!#$(MAXIMA)#'                       \
+ 	  -e 's#!LISPNAME!#acl#'                                 \
+ 	  -e 's#!OUTPUT_LOG!#$(top_builddir)/tests/acl.log#'     \
+-	  -e 's#!OUTPUT_LOG!#$(top_builddir)/tests/acl_share.log#'
++	  -e 's#!OUTPUT_SHARE_LOG!#$(top_builddir)/tests/acl_share.log#'
+ 	chmod a+x "$@"
+ endif
+ 
+@@ -76,7 +76,7 @@ openmcl-test.sh: test.sh.in
+ 	  -e 's#!LOCAL_MAXIMA!#$(MAXIMA)#'                       \
+ 	  -e 's#!LISPNAME!#openmcl#'                             \
+ 	  -e 's#!OUTPUT_LOG!#$(top_builddir)/tests/openmcl.log#' \
+-	  -e 's#!OUTPUT_LOG!#$(top_builddir)/tests/openmcl_share.log#'
++	  -e 's#!OUTPUT_SHARE_LOG!#$(top_builddir)/tests/openmcl_share.log#'
+ 	chmod a+x "$@"
+ endif
+ 
+@@ -87,7 +87,7 @@ ccl64-test.sh: test.sh.in
+ 	  -e 's#!LOCAL_MAXIMA!#$(MAXIMA)#'                       \
+ 	  -e 's#!LISPNAME!#ccl64#'                               \
+ 	  -e 's#!OUTPUT_LOG!#$(top_builddir)/tests/ccl64.log#'   \
+-	  -e 's#!OUTPUT_LOG!#$(top_builddir)/tests/ccl64_share.log#'
++	  -e 's#!OUTPUT_SHARE_LOG!#$(top_builddir)/tests/ccl64_share.log#'
+ 	chmod a+x "$@"
+ endif
+ 
+@@ -98,7 +98,7 @@ ecl-test.sh: test.sh.in
+ 	  -e 's#!LOCAL_MAXIMA!#$(MAXIMA)#'                       \
+ 	  -e 's#!LISPNAME!#ecl#'                                 \
+ 	  -e 's#!OUTPUT_LOG!#$(top_builddir)/tests/ecl.log#'     \
+-	  -e 's#!OUTPUT_LOG!#$(top_builddir)/tests/ecl_share.log#'
++	  -e 's#!OUTPUT_SHARE_LOG!#$(top_builddir)/tests/ecl_share.log#'
+ 	chmod a+x "$@"
+ endif
+ 

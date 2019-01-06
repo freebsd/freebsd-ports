@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2018-09-28 06:01:29 UTC
++++ Makefile.am
+@@ -6,7 +6,7 @@ if ENABLE_GETTEXT
+    LOCALE_DIR = locale
+ endif
+ 
+-SUBDIRS = admin crosscompile-windows src lisp-utils tests doc interfaces share demo plotting desktopintegration $(LOCALE_DIR)
++SUBDIRS = admin crosscompile-windows src lisp-utils tests interfaces share plotting desktopintegration $(LOCALE_DIR)
+ 
+ EXTRA_DIST = \
+   common.mk maxima.iss.in \
