@@ -13,7 +13,6 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	p5-Module-Build>=0.28:devel/p5-Module-Build
 RUN_DEPENDS=	p5-Class-C3-Componentised>=0:devel/p5-Class-C3-Componentised \
 		p5-DBIx-Class>=0:databases/p5-DBIx-Class \
 		p5-DBIx-Class-TimeStamp>=0:databases/p5-DBIx-Class-TimeStamp
