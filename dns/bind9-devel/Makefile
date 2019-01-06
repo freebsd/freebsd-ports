@@ -9,7 +9,7 @@ PORTREVISION=	1
 .else
 # XXX: correct version
 # dns/bind9xx here
-PORTREVISION=	2
+PORTREVISION=	3
 .endif
 CATEGORIES=	dns net ipv6
 # XXX: put the ISC master_site

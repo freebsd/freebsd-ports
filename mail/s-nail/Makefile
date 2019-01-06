@@ -2,6 +2,7 @@
 
 PORTNAME=	s-nail
 PORTVERSION=	14.9.11
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://www.sdaoden.eu/downloads/
 

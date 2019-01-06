@@ -3,6 +3,7 @@
 
 PORTNAME=	msmtp
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	https://marlam.de/msmtp/releases/
 
