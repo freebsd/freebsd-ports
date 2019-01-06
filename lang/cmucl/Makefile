@@ -2,40 +2,43 @@
 # $FreeBSD$
 
 PORTNAME=	cmucl
-PORTVERSION=	19f
-PORTREVISION=	2
+DISTVERSION=	21b
 CATEGORIES=	lang lisp
-MASTER_SITES=	http://common-lisp.net/pub/project/cmucl/release/${PORTVERSION}/ \
-		http://www.pmsf.de/pub/cmucl/release/${PORTVERSION}/ \
-		ftp://ftp.averillpark.net/cmucl/release/${PORTVERSION}/ \
-		ftp://ftp.linux.org.uk/pub/lisp/cmucl/release/${PORTVERSION}/ \
-		ftp://ftp.tepus.com/pub/project/cmucl/release/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-x86-freebsd_6.3-release
+MASTER_SITES=	https://common-lisp.net/project/cmucl/downloads/release/${DISTVERSION}/ \
+		http://cmucl.org/downloads/release/${DISTVERSION}/ \
+		https://pmsf.eu/pub/cmucl/release/${DISTVERSION}/ \
+		http://www.rgrjr.com/cmucl/downloads/release/${DISTVERSION}/
+DISTNAME=	${PORTNAME}-${DISTVERSION}-x86-FreeBSD
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The CMU implementation of Common Lisp
+MAINTAINER=	phascolarctos@FreeBSD.org
+COMMENT=	CMU implementation of Common Lisp
 
-LIB_DEPENDS=	libc.so.6:misc/compat6x
+LICENSE=	PD
+
+USES=		tar:bzip2
 
 # To make available on other archs, has to be cross-compiled (there is a
 # script for this, but a configuration file has to be written).
 IA32_BINARY_PORT=	yes
-USES=		tar:bzip2
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-PLIST_SUB=	VER=${PORTVERSION}
+PLIST_SUB=	VER=${DISTVERSION}
 
 OPTIONS_DEFINE=	DOCS
+
+INFO=	asdf
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/lisp ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_MAN} ${WRKSRC}/man/man1/cmucl.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/man1/lisp.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${MV} ${STAGEDIR}${PREFIX}/lib/cmucl/lib/contrib/asdf/doc/asdf.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
 
 do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/cmucl/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
