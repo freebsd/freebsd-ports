@@ -1,15 +1,4 @@
 bin/x11vnc
+bin/Xdummy
 man/man1/x11vnc.1.gz
-%%DATADIR%%/classes/ssl/README
-%%DATADIR%%/classes/ssl/SignedUltraViewerSSL.jar
-%%DATADIR%%/classes/ssl/SignedVncViewer.jar
-%%DATADIR%%/classes/ssl/UltraViewerSSL.jar
-%%DATADIR%%/classes/ssl/VncViewer.jar
-%%DATADIR%%/classes/ssl/index.vnc
-%%DATADIR%%/classes/ssl/proxy.vnc
-%%DATADIR%%/classes/ssl/ss_vncviewer
-%%DATADIR%%/classes/ssl/ultra.vnc
-%%DATADIR%%/classes/ssl/ultrasigned.vnc
-%%DATADIR%%/classes/VncViewer.jar
-%%DATADIR%%/classes/index.vnc
 share/applications/x11vnc.desktop
