@@ -7,8 +7,8 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://cfengine-package-repos.s3.amazonaws.com/tarballs/
 PKGNAMESUFFIX=	-devel
-HASH=		35a8a0b
-CFENGINE_COMMIT_DATE=	2018.12.19
+HASH=		bb3ee5a
+CFENGINE_COMMIT_DATE=	2019.01.06
 
 MAINTAINER=	cy@FreeBSD.org
 #		gjb@FreeBSD.org is also committer for this port
