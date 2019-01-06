@@ -1,29 +1,28 @@
 # $FreeBSD$
 
 PORTNAME=	bibutils
-PORTVERSION=	5.0
+PORTVERSION=	6.6
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/
-DISTNAME=	${PORTNAME}_${PORTVERSION}_src
+DISTNAME=	${PORTNAME}_${PORTVERSION}
+EXTRACT_SUFX=	_src.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program set interconverts between various bibliography formats
 
 LICENSE=	GPLv2
 
-USES=	gmake tar:tgz
-
-WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
+USES=		gmake
 
 HAS_CONFIGURE=	yes
+TEST_TARGET=	test
 
-test: all
-	cd ${WRKSRC}/test && ${MAKE_CMD} all test
-
-BINARIES=	bib2xml biblatex2xml copac2xml ebi2xml end2xml endx2xml \
-		isi2xml med2xml modsclean ris2xml wordbib2xml xml2ads \
-		xml2bib xml2end xml2isi xml2ris xml2wordbib
-
+BINARIES=	bib2xml bibdiff biblatex2xml copac2xml ebi2xml end2xml endx2xml \
+		isi2xml med2xml modsclean nbib2xml ris2xml wordbib2xml xml2ads \
+		xml2bib xml2end xml2isi xml2nbib xml2ris xml2wordbib
 PLIST_FILES=	${BINARIES:S,^,bin/,}
+
+post-install:
+	cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} ${BINARIES}
 
 .include <bsd.port.mk>
