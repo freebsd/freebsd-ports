@@ -27,6 +27,4 @@ do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
 
-OPTIONS_DEFINE=	DOCS
-
 .include <bsd.port.mk>
