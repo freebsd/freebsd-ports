@@ -5,7 +5,6 @@ PORTNAME=	qpage
 PORTVERSION=	3.3
 PORTREVISION=	8
 CATEGORIES=	comms
-MASTER_SITES=	http://www.qpage.org/download/
 MASTER_SITES=	http://tomiii.com/qpage/qpage.org/download/
 
 MAINTAINER=	rand@iteris.com

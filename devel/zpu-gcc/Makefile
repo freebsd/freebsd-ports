@@ -4,7 +4,6 @@ PORTNAME=	zpu-gcc
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://opensource.zylin.com/zpudownload.html/
 MASTER_SITES=	LOCAL/db
 DISTNAME=	zpu-toolchain-${PORTVERSION}
 
