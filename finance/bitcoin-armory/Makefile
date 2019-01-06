@@ -21,7 +21,7 @@ BROKEN_armv6=		fails to compile: c++: language not recognized: 'ar'
 BROKEN_armv7=		fails to compile: c++: language not recognized: 'ar'
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig3.0:devel/swig30 \
-		${LOCALBASE}/bin/pyrcc4:textproc/py-qt4-xml@${PY_FLAVOR} \
+		${LOCALBASE}/bin/pyrcc4-${PYTHON_VER}:textproc/py-qt4-xml@${PY_FLAVOR} \
 		${LOCALBASE}/bin/rsync:net/rsync
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=14.0.0:devel/py-twisted@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>1.2.1:sysutils/py-psutil@${PY_FLAVOR} \
@@ -37,6 +37,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CXXFLAGS+=	-DCRYPTOPP_DISABLE_ASM -fPIC
 MAKE_ENV+=	PYTHON_CONFIG=${PYTHON_CMD}-config
+BINARY_ALIAS=	pyrcc4=pyrcc4-${PYTHON_VER}
 
 MAKE_ARGS+=	CXXFLAGS="${CXXFLAGS}"
 INSTALLS_ICONS=	yes
