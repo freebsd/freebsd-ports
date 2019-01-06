@@ -2,7 +2,7 @@
 
 PORTNAME=	data-default-instances-containers
 PORTVERSION=	0.0.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

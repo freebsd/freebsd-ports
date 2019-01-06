@@ -1,3 +1,3 @@
-TIMESTAMP = 1523694433
-SHA256 (cabal/concurrent-output-1.10.5.tar.gz) = 98c096228664d591eb2c352080955a202e883cdab8452efae3cae407e30fa5c3
-SIZE (cabal/concurrent-output-1.10.5.tar.gz) = 21970
+TIMESTAMP = 1545835357
+SHA256 (cabal/concurrent-output-1.10.9.tar.gz) = 8cc49408e957c65359182fbfcda80717b931915d101e4be55ccb26c44b098e57
+SIZE (cabal/concurrent-output-1.10.9.tar.gz) = 22177

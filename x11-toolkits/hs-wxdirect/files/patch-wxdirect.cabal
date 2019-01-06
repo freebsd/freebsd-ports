@@ -1,6 +1,6 @@
---- wxdirect.cabal.orig 2018-04-16 18:38:04 UTC
+--- wxdirect.cabal.orig	2018-12-23 10:54:50 UTC
 +++ wxdirect.cabal
-@@ -53,7 +53,7 @@ executable wxdirect
+@@ -53,12 +53,12 @@ executable wxdirect
      strict,
      time       >= 1.0,
      filepath   <  1.5,
@@ -9,3 +9,9 @@
  
    if flag(splitBase)
      build-depends:
+         base       >= 4     && < 5,
+-        containers >= 0.2   && < 0.6
++        containers >= 0.2   && < 0.7
+   else
+     build-depends:
+         base       >= 3     && < 4,

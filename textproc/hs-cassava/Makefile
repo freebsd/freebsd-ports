@@ -2,7 +2,7 @@
 
 PORTNAME=	cassava
 PORTVERSION=	0.5.1.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

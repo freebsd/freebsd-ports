@@ -2,7 +2,7 @@
 
 PORTNAME=	io-streams-haproxy
 PORTVERSION=	1.0.0.2
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

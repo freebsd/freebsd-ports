@@ -2,7 +2,7 @@
 
 PORTNAME=	css-text
 PORTVERSION=	0.1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

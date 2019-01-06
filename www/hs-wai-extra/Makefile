@@ -2,7 +2,7 @@
 
 PORTNAME=	wai-extra
 PORTVERSION=	3.0.22.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -14,8 +14,8 @@ index 37057a8..52aa83a 100644
 @@ -31,5 +31,5 @@ Library
      exposed-modules:
          System.Locale
- 
+
 -    build-depends: base >= 4.2 && < 4.9
-+    build-depends: base >= 4.2 && < 4.12
++    build-depends: base >= 4.2 && < 4.13
      ghc-options: -Wall
 

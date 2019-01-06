@@ -3,13 +3,15 @@
 
 PORTNAME=	darcs
 PORTVERSION=	2.14.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Distributed, interactive, smart revision control system
 
 LICENSE=	GPLv2
+
+BROKEN=		Doesn't build with recent GHC
 
 USE_CABAL=	async attoparsec base16-bytestring cryptohash \
 		data-ordlist fgl graphviz hashable html HTTP \

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	skylighting
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.5
 PORTREVISION=	1
 CATEGORIES=	textproc haskell
 

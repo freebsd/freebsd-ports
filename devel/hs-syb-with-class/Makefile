@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	syb-with-class
-PORTVERSION=	0.6.1.9
+PORTVERSION=	0.6.1.10
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 

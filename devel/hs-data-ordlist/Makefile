@@ -2,7 +2,7 @@
 
 PORTNAME=	data-ordlist
 PORTVERSION=	0.4.7.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	cipher-aes128
-PORTVERSION=	0.7.0.3
-PORTREVISION=	3
+PORTVERSION=	0.7.0.4
+PORTREVISION=	1
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

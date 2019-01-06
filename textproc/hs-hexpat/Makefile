@@ -2,7 +2,7 @@
 
 PORTNAME=	hexpat
 PORTVERSION=	0.20.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

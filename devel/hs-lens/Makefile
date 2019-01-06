@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lens
-PORTVERSION=	4.16.1
+PORTVERSION=	4.17
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 
@@ -10,8 +10,10 @@ COMMENT=	Lenses, Folds and Traversals
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Doesn't build with recent GHC
+
 USE_CABAL=	base-orphans>=0.3 bifunctors>=5 call-stack comonad>=4 \
-		contravariant>=0.3 distributive>=0.3 exceptions>=0.1.1 \
+		contravariant distributive>=0.3 exceptions>=0.1.1 \
 		free>=4 hashable>=1.1.2.3 kan-extensions>=4.2.1 mtl>=2.0.1 \
 		parallel>=3.1.0.1 profunctors>=5 reflection>=2 \
 		semigroupoids>=5 semigroups>=0.8.4 tagged>=0.4.4 \

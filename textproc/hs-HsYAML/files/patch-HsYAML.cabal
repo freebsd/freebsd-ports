@@ -1,0 +1,15 @@
+--- HsYAML.cabal.orig	2018-06-30 12:49:02 UTC
++++ HsYAML.cabal
+@@ -65,10 +65,10 @@ library
+                        Trustworthy
+                        TypeSynonymInstances
+ 
+-  build-depends:       base         >=4.5   && <4.12
++  build-depends:       base         >=4.5   && <4.13
+                      , bytestring   >=0.9   && <0.11
+                      , dlist        >=0.8   && <0.9
+-                     , containers   >=0.4.2 && <0.6
++                     , containers   >=0.4.2 && <0.7
+                      , text         >=1.2.3 && <1.3
+                      , mtl          >=2.2.1 && <2.3
+                      , parsec       >=3.1.13.0 && < 3.2

@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	cabal-install
-PORTVERSION=	2.2.0.0
-PORTREVISION=	2
+PORTVERSION=	2.4.0.0
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 USE_CABAL=	async base16-bytestring base64-bytestring \
 		cryptohash-sha256 echo ed25519 edit-distance \
 		hackage-security hashable HTTP mtl network network-uri \
-		random resolv tar zlib
+		random resolv tar zip-archive zlib
 
 STANDALONE=	yes
 EXECUTABLE=	cabal

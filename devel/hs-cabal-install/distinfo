@@ -1,3 +1,3 @@
-TIMESTAMP = 1523277454
-SHA256 (cabal/cabal-install-2.2.0.0.tar.gz) = c856a2dd93c5a7b909597c066b9f9ca27fbda1a502b3f96077b7918c0f64a3d9
-SIZE (cabal/cabal-install-2.2.0.0.tar.gz) = 662421
+TIMESTAMP = 1546095159
+SHA256 (cabal/cabal-install-2.4.0.0.tar.gz) = 1329e9564b736b0cfba76d396204d95569f080e7c54fe355b6d9618e3aa0bef6
+SIZE (cabal/cabal-install-2.4.0.0.tar.gz) = 614491

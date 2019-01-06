@@ -1,3 +1,3 @@
-TIMESTAMP = 1524402297
-SHA256 (cabal/yaml-0.8.29.tar.gz) = 1a5e5fe9d55273c286f177681c2cecb4cff77633af877756317120cc00d20f74
-SIZE (cabal/yaml-0.8.29.tar.gz) = 82660
+TIMESTAMP = 1546184008
+SHA256 (cabal/yaml-0.11.0.0.tar.gz) = e66466cd29a4d256c3dd4dd4ab366033dbc5fa1fb67fdc6f7ac7aa3f161527bf
+SIZE (cabal/yaml-0.11.0.0.tar.gz) = 26529

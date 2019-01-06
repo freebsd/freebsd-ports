@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	filestore
-PORTVERSION=	0.6.3.2
+PORTVERSION=	0.6.3.4
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 

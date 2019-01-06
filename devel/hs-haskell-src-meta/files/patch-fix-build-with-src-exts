@@ -1,0 +1,28 @@
+From 109ee29d5fd0f4e23fdd2f80eb122d66341b64a9 Mon Sep 17 00:00:00 2001
+From: Galen Huntington <galen@alumni.reed.edu>
+Date: Sun, 23 Dec 2018 22:57:21 -0800
+Subject: [PATCH] Support haskell-src-exts 1.21.
+
+---
+ haskell-src-meta.cabal                        | 2 +-
+ src/Language/Haskell/Meta/Syntax/Translate.hs | 2 ++
+ 2 files changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/src/Language/Haskell/Meta/Syntax/Translate.hs b/src/Language/Haskell/Meta/Syntax/Translate.hs
+index 0dba4f5..aa95cff 100644
+--- src/Language/Haskell/Meta/Syntax/Translate.hs
++++ src/Language/Haskell/Meta/Syntax/Translate.hs
+@@ -314,11 +314,13 @@ instance ToName TyVarBndr where
+   toName (PlainTV n) = n
+   toName (KindedTV n _) = n
+
++#if !MIN_VERSION_haskell_src_exts(1,21,0)
+ instance ToType (Hs.Kind l) where
+   toType (Hs.KindStar _) = StarT
+   toType (Hs.KindFn _ k1 k2) = toType k1 .->. toType k2
+   toType (Hs.KindParen _ kp) = toType kp
+   toType (Hs.KindVar _ n) = VarT (toName n)
++#endif
+
+ toKind :: Hs.Kind l -> Kind
+ toKind = toType

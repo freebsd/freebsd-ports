@@ -2,7 +2,7 @@
 
 PORTNAME=	logict
 PORTVERSION=	0.6.0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

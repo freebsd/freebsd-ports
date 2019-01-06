@@ -3,7 +3,7 @@
 
 PORTNAME=	ghc-mtl
 PORTVERSION=	1.2.1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

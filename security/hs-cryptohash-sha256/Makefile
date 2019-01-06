@@ -2,7 +2,7 @@
 
 PORTNAME=      cryptohash-sha256
 PORTVERSION=   0.11.101.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=    security haskell
 
 MAINTAINER=    haskell@FreeBSD.org

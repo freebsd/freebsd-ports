@@ -1,0 +1,11 @@
+--- graphviz.cabal.orig	2018-05-25 10:40:58 UTC
++++ graphviz.cabal
+@@ -64,7 +64,7 @@ Library {
+                            process,
+                            directory,
+                            temporary >=1.1 && <1.4,
+-                           fgl >= 5.4 && < 5.7,
++                           fgl >= 5.4 && < 5.8,
+                            filepath,
+                            polyparse >=1.9 && <1.13,
+                            bytestring >= 0.9 && < 0.11,

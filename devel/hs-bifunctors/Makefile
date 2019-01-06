@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bifunctors
-PORTVERSION=	5.5.2
+PORTVERSION=	5.5.3
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 

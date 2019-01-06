@@ -1,3 +1,3 @@
-TIMESTAMP = 1523449230
-SHA256 (cabal/language-c-0.7.2.tar.gz) = 63ad22ddd8e51747c8d64239029cf4afd3e7d4060c9b9478145479f5d4d549e5
-SIZE (cabal/language-c-0.7.2.tar.gz) = 121429
+TIMESTAMP = 1545654745
+SHA256 (cabal/language-c-0.8.2.tar.gz) = b729d3b2263b0f029a66c37ae1c05b86b68bad1cde6c0b407bfd5201b91fce15
+SIZE (cabal/language-c-0.8.2.tar.gz) = 193533

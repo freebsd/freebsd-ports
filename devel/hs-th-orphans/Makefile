@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	th-orphans
-PORTVERSION=	0.13.5
+PORTVERSION=	0.13.6
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 

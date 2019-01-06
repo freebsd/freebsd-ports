@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	uri-bytestring-aeson
-PORTVERSION=	0.1.0.6
+PORTVERSION=	0.1.0.7
 PORTREVISION=	1
 CATEGORIES=	textproc haskell
 

@@ -1,0 +1,11 @@
+--- yesod-bin.cabal.orig	2018-05-13 12:13:32 UTC
++++ yesod-bin.cabal
+@@ -43,7 +43,7 @@ executable             yesod
+                      , zlib               >= 0.5
+                      , tar                >= 0.4          && < 0.6
+                      , unordered-containers
+-                     , yaml               >= 0.8          && < 0.9
++                     , yaml               >= 0.8          && < 0.12
+                      , optparse-applicative >= 0.11
+                      , fsnotify           >= 0.0          && < 0.3
+                      , split              >= 0.2          && < 0.3

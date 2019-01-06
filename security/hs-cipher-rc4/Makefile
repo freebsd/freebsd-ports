@@ -2,7 +2,7 @@
 
 PORTNAME=	cipher-rc4
 PORTVERSION=	0.1.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

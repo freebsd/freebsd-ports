@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	regex-tdfa
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.3.1
 PORTREVISION=	1
 CATEGORIES=	textproc haskell
 

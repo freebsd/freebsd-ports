@@ -2,7 +2,7 @@
 
 PORTNAME=	data-pprint
 PORTVERSION=	0.2.4.1
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

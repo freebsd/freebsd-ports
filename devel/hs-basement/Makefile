@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	basement
-PORTVERSION=	0.0.7
+PORTVERSION=	0.0.8
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 

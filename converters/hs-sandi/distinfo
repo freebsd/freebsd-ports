@@ -1,3 +1,3 @@
-TIMESTAMP = 1524431120
-SHA256 (cabal/sandi-0.4.2.tar.gz) = 2bc1fc4f8e71009adc9f38304f63684f2795c31077670214147f261bd2bc7337
-SIZE (cabal/sandi-0.4.2.tar.gz) = 19198
+TIMESTAMP = 1545835387
+SHA256 (cabal/sandi-0.4.3.tar.gz) = 76dc1332023b49635d9ae2fa7f3d0618f05fbe6dfdfe54416d19c16993fd214a
+SIZE (cabal/sandi-0.4.3.tar.gz) = 19237

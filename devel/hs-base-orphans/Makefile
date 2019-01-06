@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	base-orphans
-PORTVERSION=	0.6
-PORTREVISION=	3
+PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	microlens-th
-PORTVERSION=	0.4.2.1
+PORTVERSION=	0.4.2.3
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 

@@ -2,15 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	Agda
-PORTVERSION=	2.5.4
+PORTVERSION=	2.5.4.2
+PORTREVISION=	1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Dependently typed functional programming language and proof assistant
 
+BROKEN=		Doesn't build with recent GHC
+
 USE_CABAL=	async EdisonCore blaze-html boxes data-hash edit-distance \
-		equivalence geniplate-mirror gitrev hashable hashtables ieee754 \
-		mtl murmur-hash parallel regex-tdfa strict \
+		equivalence filemanip geniplate-mirror gitrev hashable \
+		hashtables ieee754 mtl murmur-hash parallel regex-tdfa strict \
 		unordered-containers uri-encode zlib
 
 USE_ALEX=	yes

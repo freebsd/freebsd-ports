@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vector-binary-instances
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5.1
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 

@@ -253,6 +253,7 @@
     SUBDIR += hr-aspell
     SUBDIR += hs-Diff
     SUBDIR += hs-HStringTemplate
+    SUBDIR += hs-HsYAML
     SUBDIR += hs-appar
     SUBDIR += hs-attoparsec
     SUBDIR += hs-attoparsec-iso8601
@@ -280,6 +281,7 @@
     SUBDIR += hs-lhs2tex
     SUBDIR += hs-libxml
     SUBDIR += hs-libxml-sax
+    SUBDIR += hs-libyaml
     SUBDIR += hs-magic
     SUBDIR += hs-pandoc
     SUBDIR += hs-pandoc-citeproc
@@ -303,6 +305,7 @@
     SUBDIR += hs-tagsoup
     SUBDIR += hs-tagstream-conduit
     SUBDIR += hs-texmath
+    SUBDIR += hs-unicode-transforms
     SUBDIR += hs-uri
     SUBDIR += hs-uri-bytestring
     SUBDIR += hs-uri-bytestring-aeson

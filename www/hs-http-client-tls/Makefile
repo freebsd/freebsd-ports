@@ -2,7 +2,7 @@
 
 PORTNAME=	http-client-tls
 PORTVERSION=	0.3.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,3 +1,3 @@
-TIMESTAMP = 1499623377
-SHA256 (cabal/pointed-5.tar.gz) = 8906b8af5125ab3376794a290c5484dbec5a35d0bd0a57e94392ec0e12535d17
-SIZE (cabal/pointed-5.tar.gz) = 4873
+TIMESTAMP = 1545753017
+SHA256 (cabal/pointed-5.0.1.tar.gz) = b94635a5c8779238501a9156015422ce2fb4d5efd45d68999e8cbe2ecc5121dd
+SIZE (cabal/pointed-5.0.1.tar.gz) = 7020

@@ -1,0 +1,11 @@
+--- exceptions.cabal.orig	2018-03-11 14:52:28 UTC
++++ exceptions.cabal
+@@ -35,7 +35,7 @@ library
+   build-depends:
+     base                       >= 4.3      && < 5,
+     stm                        >= 2.2      && < 3,
+-    template-haskell           >= 2.2      && < 2.14,
++    template-haskell           >= 2.2      && < 2.15,
+     transformers               >= 0.2      && < 0.6,
+     transformers-compat        >= 0.3      && < 0.7,
+     mtl                        >= 2.0      && < 2.3

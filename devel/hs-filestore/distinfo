@@ -1,3 +1,3 @@
-TIMESTAMP = 1523961106
-SHA256 (cabal/filestore-0.6.3.2.tar.gz) = 1b8090d20c940ac3444dd9649ed71e934601dba9f2fb9579e67fff6dcd32a15b
-SIZE (cabal/filestore-0.6.3.2.tar.gz) = 31870
+TIMESTAMP = 1545674897
+SHA256 (cabal/filestore-0.6.3.4.tar.gz) = a06b24a0c522ecec62e6b5bcc2d0c014ced0aa86821b3a522ebd33aa25b63e60
+SIZE (cabal/filestore-0.6.3.4.tar.gz) = 32070

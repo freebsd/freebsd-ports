@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yesod-auth-hashdb
-PORTVERSION=	1.7
+PORTVERSION=	1.7.1
 PORTREVISION=	1
 CATEGORIES=	www haskell
 

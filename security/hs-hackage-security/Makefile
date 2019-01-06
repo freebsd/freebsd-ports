@@ -2,7 +2,7 @@
 
 PORTNAME=	hackage-security
 PORTVERSION=	0.5.3.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

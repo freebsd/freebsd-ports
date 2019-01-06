@@ -2,7 +2,7 @@
 
 PORTNAME=      deepseq-generics
 PORTVERSION=   0.2.0.0
-PORTREVISION=  3
+PORTREVISION=  5
 CATEGORIES=    devel haskell
 
 MAINTAINER=    haskell@FreeBSD.org

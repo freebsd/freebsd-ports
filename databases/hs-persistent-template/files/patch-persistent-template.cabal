@@ -1,6 +1,6 @@
---- persistent-template.cabal.orig      2018-05-01 13:03:22 UTC
+--- persistent-template.cabal.orig	2018-03-08 15:56:53 UTC
 +++ persistent-template.cabal
-@@ -23,7 +23,7 @@ library
+@@ -23,13 +23,13 @@ library
                     , text                     >= 0.5
                     , transformers             >= 0.2       && < 0.6
                     , containers
@@ -9,3 +9,10 @@
                     , aeson-compat             >= 0.3.2.0   && < 0.4
                     , monad-logger
                     , unordered-containers
+                    , tagged
+                    , path-pieces
+-                   , http-api-data            >= 0.2       && < 0.4
++                   , http-api-data            >= 0.2       && < 0.5
+                    , ghc-prim
+     exposed-modules: Database.Persist.TH
+     ghc-options:     -Wall

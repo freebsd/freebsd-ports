@@ -5,6 +5,6 @@
  
    Build-Depends:
 -    base >= 4.0 && < 4.10,
-+    base >= 4.0 && < 4.12,
++    base >= 4.0 && < 4.13,
      deepseq >= 1.1 && < 1.5
  

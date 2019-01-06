@@ -5,7 +5,7 @@
      data-lens        >= 2.0 && < 2.12,
      base             >= 1.0 && < 5,
 -    template-haskell >= 2.11 && < 2.12
-+    template-haskell >= 2.11 && < 2.14
++    template-haskell >= 2.11 && < 2.15
  
    exposed-modules:
      Data.Lens.Template
