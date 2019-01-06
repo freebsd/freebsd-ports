@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libidn2
-PORTVERSION=	2.0.5
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	dns
 MASTER_SITES=	GNU/libidn
 
@@ -15,13 +14,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libunistring.so:devel/libunistring
 
+USES=		charsetfix gmake iconv libtool localbase pathfix
+
 CONFIGURE_ARGS=	--disable-nls \
 		--with-libunistring-prefix=${LOCALBASE} \
 		ac_cv_prog_RONN=${TRUE}
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		charsetfix gmake iconv libtool localbase pathfix
 
 INFO=		libidn2
 
