@@ -1,5 +1,0 @@
-When built with sbcl, maxima imposes a default memory limit of 512 MiB on i386,
-and 1 GiB on amd64.  The limit can be changed by defining DYNAMIC_SPACE_SIZE
-in the build environment.  The limit can be overridden later, at run-time,
-via the -X or --lisp-options options, or by defining the environment variable
-MAXIMA_LISP_OPTIONS.
