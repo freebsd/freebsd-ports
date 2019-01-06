@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hslua-module-text
-PORTVERSION=	0.1.2.1
+PORTVERSION=	0.2.0
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 

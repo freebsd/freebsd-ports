@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	haddock-library
-PORTVERSION=	1.5.0.1
+PORTVERSION=	1.7.0
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 

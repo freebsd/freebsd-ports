@@ -1,3 +1,3 @@
-TIMESTAMP = 1524407577
-SHA256 (cabal/lens-4.16.1.tar.gz) = f5bec97b1d5cf3d6487afebc79b927bd5a18f1fd594b104de36a35bf606ea4c6
-SIZE (cabal/lens-4.16.1.tar.gz) = 991132
+TIMESTAMP = 1545677566
+SHA256 (cabal/lens-4.17.tar.gz) = 473664de541023bef44aa29105abbb1e35542e9254cdc846963183e0dd3f08cc
+SIZE (cabal/lens-4.17.tar.gz) = 991660

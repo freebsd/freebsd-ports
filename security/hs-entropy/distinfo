@@ -1,3 +1,3 @@
-TIMESTAMP = 1499538619
-SHA256 (cabal/entropy-0.3.8.tar.gz) = 743a49d5e17ae9d6118ff077f2cd2d5944c0ea6cff501efeec95b68d5f7474d0
-SIZE (cabal/entropy-0.3.8.tar.gz) = 6573
+TIMESTAMP = 1545494256
+SHA256 (cabal/entropy-0.4.1.4.tar.gz) = 2e3f6a65c8fde3551a8fb03b0a519b718762fc3278b1a5750f96d399e821eeb9
+SIZE (cabal/entropy-0.4.1.4.tar.gz) = 7361

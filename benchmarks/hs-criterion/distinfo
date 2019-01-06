@@ -1,3 +1,3 @@
-TIMESTAMP = 1525009665
-SHA256 (cabal/criterion-1.4.1.0.tar.gz) = c49306676aa7927c3ca3c1807b081d1e86771eb8da99c8391f9c4dacb24a826c
-SIZE (cabal/criterion-1.4.1.0.tar.gz) = 130976
+TIMESTAMP = 1546158685
+SHA256 (cabal/criterion-1.5.3.0.tar.gz) = b602a99439de710778b8d8ad4a3799caf872db4c8c793bfd13b725aa936c049f
+SIZE (cabal/criterion-1.5.3.0.tar.gz) = 118552

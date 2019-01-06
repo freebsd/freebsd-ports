@@ -2,7 +2,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

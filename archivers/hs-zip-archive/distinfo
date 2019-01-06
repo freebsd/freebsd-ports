@@ -1,3 +1,3 @@
-TIMESTAMP = 1523638345
-SHA256 (cabal/zip-archive-0.3.2.4.tar.gz) = 20612ed34d8d14deef120440c75f951a5c92c9f39f0de1b82ebac6d5923b3785
-SIZE (cabal/zip-archive-0.3.2.4.tar.gz) = 18370
+TIMESTAMP = 1546094995
+SHA256 (cabal/zip-archive-0.4.tar.gz) = 5fbea91d95ae1b1ec73aed8a8c67c8bae89bc3b6f7d9da898f07209e4a4ada19
+SIZE (cabal/zip-archive-0.4.tar.gz) = 20859

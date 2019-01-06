@@ -2,6 +2,7 @@
 
 PORTNAME=	GenericPretty
 DISTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	hello@blubee.me

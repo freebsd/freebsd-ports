@@ -2,7 +2,7 @@
 
 PORTNAME=	xss-sanitize
 PORTVERSION=	0.3.5.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org

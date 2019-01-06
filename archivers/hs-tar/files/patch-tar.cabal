@@ -1,0 +1,11 @@
+--- tar.cabal.orig	2018-03-09 15:46:26 UTC
++++ tar.cabal
+@@ -41,7 +41,7 @@ library
+   build-depends: base       == 4.*,
+                  filepath             < 1.5,
+                  array                < 0.6,
+-                 containers >= 0.2 && < 0.6,
++                 containers >= 0.2 && < 0.7,
+                  deepseq    >= 1.1 && < 1.5
+ 
+   if flag(old-time)

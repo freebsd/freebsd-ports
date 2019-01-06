@@ -1,3 +1,3 @@
-TIMESTAMP = 1523785768
-SHA256 (cabal/lifted-async-0.10.0.1.tar.gz) = 0d925b16fffe6fb3db994165401aeb0752595d1feec3011eba5b8b2c8524c4b1
-SIZE (cabal/lifted-async-0.10.0.1.tar.gz) = 10129
+TIMESTAMP = 1545833386
+SHA256 (cabal/lifted-async-0.10.0.3.tar.gz) = 83d09c355cf7c5d35f179f6f084524f451966ed29beac721f0500ee607822b8c
+SIZE (cabal/lifted-async-0.10.0.3.tar.gz) = 10217

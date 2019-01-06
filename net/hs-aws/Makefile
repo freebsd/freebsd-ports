@@ -2,6 +2,7 @@
 
 PORTNAME=	aws
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org

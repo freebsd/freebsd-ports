@@ -1,11 +1,16 @@
---- resolv.cabal.orig   2018-04-09 19:24:44 UTC
+--- resolv.cabal.orig	2017-10-26 22:24:39 UTC
 +++ resolv.cabal
-@@ -78,7 +78,7 @@ library
+@@ -78,11 +78,11 @@ library
                       Network.DNS.FFI
                       Compat
  
 -  build-depends:     base              >= 4.5 && <4.11
-+  build-depends:     base              >= 4.5 && <4.12
++  build-depends:     base              >= 4.5 && <4.13
                     , base16-bytestring == 0.1.*
                     , binary            >= 0.7.3 && < 0.9
                     , bytestring        >= 0.9.2 && < 0.11
+-                   , containers        >= 0.4.2.1 && < 0.6
++                   , containers        >= 0.4.2.1 && < 0.7
+ 
+   ghc-options:       -Wall
+   include-dirs:      cbits

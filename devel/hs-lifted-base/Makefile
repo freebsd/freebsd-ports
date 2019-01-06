@@ -2,7 +2,7 @@
 
 PORTNAME=	lifted-base
 PORTVERSION=	0.2.3.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

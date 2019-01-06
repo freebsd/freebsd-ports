@@ -1,3 +1,3 @@
-TIMESTAMP = 1523451213
-SHA256 (cabal/vector-binary-instances-0.2.4.tar.gz) = 2b2f783e414dcf2e7dc34ad14264e5af83e5cd4784d5a0a64e4b4571963443f8
-SIZE (cabal/vector-binary-instances-0.2.4.tar.gz) = 4146
+TIMESTAMP = 1545833565
+SHA256 (cabal/vector-binary-instances-0.2.5.1.tar.gz) = 3945b99f8efd319c837700b7cef5163ee23e656e89227357e0b7a41d2a66c512
+SIZE (cabal/vector-binary-instances-0.2.5.1.tar.gz) = 4067

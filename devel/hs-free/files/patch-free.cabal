@@ -1,11 +1,13 @@
---- free.cabal.orig     2018-04-15 20:31:19 UTC
+--- free.cabal.orig	2018-03-08 00:33:22 UTC
 +++ free.cabal
-@@ -84,7 +84,7 @@ library
+@@ -84,8 +84,8 @@ library
      transformers-base    < 0.5,
      transformers-compat  >= 0.3     && < 1,
      template-haskell     >= 2.7.0.0 && < 3,
 -    exceptions           >= 0.6 && < 0.10,
+-    containers           < 0.6
 +    exceptions           >= 0.6 && < 0.11,
-     containers           < 0.6
++    containers           < 0.7
  
    exposed-modules:
+     Control.Applicative.Free

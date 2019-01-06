@@ -1,3 +1,3 @@
-TIMESTAMP = 1524848800
-SHA256 (cabal/skylighting-core-0.7.1.tar.gz) = 4ffe223554db53cedfce5af92a7f22a907904c40bf498777dfdfe3c5ccd8723e
-SIZE (cabal/skylighting-core-0.7.1.tar.gz) = 545965
+TIMESTAMP = 1546103880
+SHA256 (cabal/skylighting-core-0.7.5.tar.gz) = f706a2eb5d37d1323525d9c4944da2ad8d29c1ccf7d0ae7b433695d981413889
+SIZE (cabal/skylighting-core-0.7.5.tar.gz) = 599065

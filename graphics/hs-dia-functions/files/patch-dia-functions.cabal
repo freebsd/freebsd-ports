@@ -1,11 +1,22 @@
---- dia-functions.cabal.orig	2017-07-11 15:29:54 UTC
+--- dia-functions.cabal.orig	2016-05-24 15:37:59 UTC
 +++ dia-functions.cabal
-@@ -30,7 +30,7 @@ library
+@@ -19,7 +19,7 @@ cabal-version:       >=1.2
+ build-type:          Simple
+ 
+ library
+-  GHC-Options: -Wall -fwarn-tabs -fno-warn-unused-matches -fno-warn-name-shadowing 
++  GHC-Options: -Wall -fwarn-tabs -fno-warn-unused-matches -fno-warn-name-shadowing
+ 
+   Exposed-Modules:
+     Graphics.Diagrams.Colors,
+@@ -30,8 +30,8 @@ library
    Build-Depends:
      data-pprint >= 0.2 && < 0.3,
      dia-base >= 0.1 && < 0.2,
--    base >= 4.0 && < 4.9,
-+    base >= 4.0 && < 5,
-     containers >= 0.4 && < 0.6,
+-    base >= 4.0 && < 4.10,
+-    containers >= 0.4 && < 0.6,
++    base >= 4.0 && < 4.13,
++    containers >= 0.4 && < 0.7,
      xhtml >= 3000.2 && < 3000.3,
      mtl >= 2.0 && < 2.3,
+     deepseq >= 1.1 && < 1.5

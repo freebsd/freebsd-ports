@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	constraints
-PORTVERSION=	0.10
+PORTVERSION=	0.10.1
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 

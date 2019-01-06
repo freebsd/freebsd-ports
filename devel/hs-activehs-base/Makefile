@@ -2,7 +2,7 @@
 
 PORTNAME=	activehs-base
 PORTVERSION=	0.3.0.4
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

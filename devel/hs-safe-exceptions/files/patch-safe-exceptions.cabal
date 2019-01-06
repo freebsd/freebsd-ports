@@ -5,7 +5,7 @@
    hs-source-dirs:      src
    exposed-modules:     Control.Exception.Safe
 -  build-depends:       base >= 4.7 && < 4.11
-+  build-depends:       base >= 4.7 && < 4.12
++  build-depends:       base >= 4.7 && < 4.13
                       , deepseq >= 1.2 && < 1.5
 -                     , exceptions >= 0.8 && < 0.9
 +                     , exceptions >= 0.8 && < 0.11

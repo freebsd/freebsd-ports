@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	persistent
-PORTVERSION=	2.8.2
+PORTVERSION=	2.9.0
 PORTREVISION=	1
 CATEGORIES=	databases haskell
 

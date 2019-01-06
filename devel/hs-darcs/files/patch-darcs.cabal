@@ -1,0 +1,67 @@
+--- darcs.cabal.orig	2018-06-24 18:17:58 UTC
++++ darcs.cabal
+@@ -74,7 +74,7 @@ flag curl
+   description: Use libcurl for HTTP support.
+ 
+ -- in future this could extend to any other external libraries,
+--- e.g. libiconv 
++-- e.g. libiconv
+ flag pkgconfig
+   description: Use pkgconfig to configure libcurl
+   default: False
+@@ -112,7 +112,7 @@ flag warn-as-error
+ -- ----------------------------------------------------------------------
+ 
+ custom-setup
+-    setup-depends: base      >= 4.9 && < 4.12,
++    setup-depends: base      >= 4.9 && < 4.13,
+                    Cabal     >= 1.24,
+                    process   >= 1.2.3.0 && < 1.7,
+                    filepath  >= 1.4.1 && < 1.5.0.0,
+@@ -380,8 +380,8 @@ Library
+     else
+       build-depends:  unix >= 2.7.1.0 && < 2.8
+ 
+-    build-depends:    base              >= 4.9 && < 4.12,
+-                      stm               >= 2.1 && < 2.5,
++    build-depends:    base              >= 4.9 && < 4.13,
++                      stm               >= 2.1 && < 2.6,
+                       binary            >= 0.5 && < 0.10,
+                       containers        >= 0.5.6.2 && < 0.7,
+                       regex-compat-tdfa >= 0.95.1 && < 0.96,
+@@ -389,7 +389,7 @@ Library
+                       mtl               >= 2.2.1 && < 2.3,
+                       transformers      >= 0.4.2.0 && < 0.6,
+                       parsec            >= 3.1.9 && < 3.2,
+-                      fgl               >= 5.5.2.3 && < 5.7,
++                      fgl               >= 5.5.2.3 && < 5.8,
+                       graphviz          >= 2999.18.1 && < 2999.20.1,
+                       html              >= 1.0.1.2 && < 1.1,
+                       filepath          >= 1.4.1 && < 1.5.0.0,
+@@ -401,7 +401,7 @@ Library
+                       tar               >= 0.5 && < 0.6,
+                       data-ordlist      == 0.4.*,
+                       attoparsec        >= 0.13.0.1 && < 0.14,
+-                      zip-archive       >= 0.3 && < 0.4,
++                      zip-archive       >= 0.3 && < 0.5,
+                       async             >= 2.0.2 && < 2.3,
+                       sandi             >= 0.4 && < 0.5,
+                       unix-compat       >= 0.4.2 && < 0.6,
+@@ -499,7 +499,7 @@ Executable          darcs
+   cc-options:       -D_REENTRANT
+ 
+   build-depends:    darcs,
+-                    base              >= 4.9 && < 4.12
++                    base              >= 4.9 && < 4.13
+ 
+ -- ----------------------------------------------------------------------
+ -- unit test driver
+@@ -534,7 +534,7 @@ test-suite darcs-test
+                     test-framework             >= 0.8.1.1 && < 0.9,
+                     test-framework-hunit       >= 0.3.0.2 && < 0.4,
+                     test-framework-quickcheck2 >= 0.3.0.3 && < 0.4,
+-                    zip-archive  >= 0.3 && < 0.4
++                    zip-archive  >= 0.3 && < 0.5
+ 
+   -- https://github.com/yesodweb/Shelly.hs/issues/177
+   if os(windows)

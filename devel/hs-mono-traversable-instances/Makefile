@@ -2,7 +2,7 @@
 
 PORTNAME=	mono-traversable-instances
 PORTVERSION=	0.1.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

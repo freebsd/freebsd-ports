@@ -1,0 +1,11 @@
+--- stringsearch.cabal.orig	2015-03-28 23:03:58 UTC
++++ stringsearch.cabal
+@@ -83,7 +83,7 @@ Library
+   -- Packages needed in order to build this package.
+   if flag(base4)
+     Build-depends:   base >= 4 && < 5, array >= 0.3 && < 0.6,
+-                     bytestring >= 0.9 && < 1, containers >= 0.3 && < 0.6
++                     bytestring >= 0.9 && < 1, containers >= 0.3 && < 0.7
+   else
+     if flag(base3)
+       Build-depends: base >= 3 && < 4, array >= 0.1 && < 0.4,

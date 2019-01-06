@@ -1,0 +1,11 @@
+--- ListLike.cabal.orig	2018-01-17 03:21:02 UTC
++++ ListLike.cabal
+@@ -50,7 +50,7 @@ Library
+           Data.ListLike.FMList
+   -- Other-Modules: Data.ConfigFile.Lexer
+   Build-Depends: base       >= 4.6   && < 5
+-                ,containers >= 0.3   && < 0.6
++                ,containers >= 0.3   && < 0.7
+                 ,bytestring >= 0.9.1 && < 0.11
+                 ,array      >= 0.3   && < 0.6
+                 ,text       >= 0.11  && < 1.3

@@ -2,6 +2,7 @@
 
 PORTNAME=	preprocessor-tools
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

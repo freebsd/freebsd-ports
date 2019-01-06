@@ -1,0 +1,11 @@
+--- test-framework.cabal.orig	2017-12-30 17:49:37 UTC
++++ test-framework.cabal
+@@ -48,7 +48,7 @@ Library
+                               , ansi-terminal  >= 0.4.0  && < 0.9
+                               , ansi-wl-pprint >= 0.5.1  && < 0.7
+                               , random         >= 1.0    && < 1.2
+-                              , containers     >= 0.1    && < 0.6
++                              , containers     >= 0.1    && < 0.7
+                               , regex-posix    >= 0.72   && < 0.96
+                               , old-locale     >= 1.0    && < 1.1
+                               , time           >= 1.1.2  && < 1.9

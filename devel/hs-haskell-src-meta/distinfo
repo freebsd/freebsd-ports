@@ -1,3 +1,3 @@
-TIMESTAMP = 1524930351
-SHA256 (cabal/haskell-src-meta-0.8.0.2.tar.gz) = 4b7b143b94fcf147b96bb34822c2feeae29daadd3a22796ee36cadd5ca262c8b
-SIZE (cabal/haskell-src-meta-0.8.0.2.tar.gz) = 20217
+TIMESTAMP = 1545757485
+SHA256 (cabal/haskell-src-meta-0.8.0.3.tar.gz) = 8473e3555080860c2043581b398dbab67319584a568463b074a092fd4d095822
+SIZE (cabal/haskell-src-meta-0.8.0.3.tar.gz) = 20473

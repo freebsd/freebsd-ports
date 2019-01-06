@@ -3,7 +3,7 @@
 
 PORTNAME=	bytestring-csv
 PORTVERSION=	0.1.2
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsb-http-chunked
-PORTVERSION=	0.0.0.2
+PORTVERSION=	0.0.0.4
 PORTREVISION=	1
 CATEGORIES=	net haskell
 

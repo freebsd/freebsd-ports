@@ -974,6 +974,7 @@
     SUBDIR += hs-basement
     SUBDIR += hs-basic-prelude
     SUBDIR += hs-bifunctors
+    SUBDIR += hs-bitarrays
     SUBDIR += hs-bits-atomic
     SUBDIR += hs-blaze-builder
     SUBDIR += hs-blaze-textual

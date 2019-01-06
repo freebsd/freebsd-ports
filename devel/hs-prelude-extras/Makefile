@@ -2,7 +2,7 @@
 
 PORTNAME=	prelude-extras
 PORTVERSION=	0.4.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

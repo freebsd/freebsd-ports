@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vault
-PORTVERSION=	0.3.1.0
+PORTVERSION=	0.3.1.2
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 

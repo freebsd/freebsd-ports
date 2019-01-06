@@ -1,3 +1,3 @@
-TIMESTAMP = 1499444913
-SHA256 (cabal/parallel-3.2.1.1.tar.gz) = 323bb9bc9e36fb9bfb08e68a772411302b1599bfffbc6de20fa3437ce1473c17
-SIZE (cabal/parallel-3.2.1.1.tar.gz) = 13367
+TIMESTAMP = 1545498989
+SHA256 (cabal/parallel-3.2.2.0.tar.gz) = 170453a71a2a8b31cca63125533f7771d7debeb639700bdabdd779c34d8a6ef6
+SIZE (cabal/parallel-3.2.2.0.tar.gz) = 14681

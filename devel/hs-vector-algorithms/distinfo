@@ -1,3 +1,3 @@
-TIMESTAMP = 1499627863
-SHA256 (cabal/vector-algorithms-0.7.0.1.tar.gz) = ed460a41ca068f568bc2027579ab14185fbb72c7ac469b5179ae5f8a52719070
-SIZE (cabal/vector-algorithms-0.7.0.1.tar.gz) = 25435
+TIMESTAMP = 1545678245
+SHA256 (cabal/vector-algorithms-0.8.0.1.tar.gz) = 15bcde786dcf03861946885e030d3dbe3b683e1a6fc12d7317e115084f4637fe
+SIZE (cabal/vector-algorithms-0.8.0.1.tar.gz) = 26071

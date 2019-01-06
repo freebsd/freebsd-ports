@@ -1,3 +1,3 @@
-TIMESTAMP = 1524639224
-SHA256 (cabal/lhs2tex-1.20.tar.gz) = ae851e7f7d25ff822e1fec2f48aec7802d62e06458096de28069201562dfb03a
-SIZE (cabal/lhs2tex-1.20.tar.gz) = 674326
+TIMESTAMP = 1545563352
+SHA256 (cabal/lhs2tex-1.22.tar.gz) = 7eea3b5b4bae019aa9acb6036e6c2606c62a0d9969a081d4b9b9f04baa3129bd
+SIZE (cabal/lhs2tex-1.22.tar.gz) = 679988

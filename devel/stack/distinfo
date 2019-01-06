@@ -1,5 +1,5 @@
-TIMESTAMP = 1524999031
-SHA256 (stack-dependencies-1.7.1.tar.gz) = 4320a4803c889603fd13469d6ce795642f218e5ae65c46616ed8ec3418d13240
-SIZE (stack-dependencies-1.7.1.tar.gz) = 155869633
-SHA256 (arrowd-stack-dependencies-v1.7.1_GH0.tar.gz) = 8487fb66e17df5960d7fea96e80eb33a7e9e08a839f80926a2144afc6bc4159e
-SIZE (arrowd-stack-dependencies-v1.7.1_GH0.tar.gz) = 997
+TIMESTAMP = 1546458683
+SHA256 (stack-dependencies-1.9.3.tar.gz) = be9c9394f9c519bf38a597e284148ac372f7f697df84617e0c73e56cef1bd60f
+SIZE (stack-dependencies-1.9.3.tar.gz) = 164677793
+SHA256 (arrowd-stack-dependencies-v1.9.3_GH0.tar.gz) = c9b26a87d62a482307f7640d79214263e48f697ee323110c3bc8112fee36e9dc
+SIZE (arrowd-stack-dependencies-v1.9.3_GH0.tar.gz) = 999

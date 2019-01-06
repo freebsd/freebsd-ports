@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lifted-async
-PORTVERSION=	0.10.0.1
+PORTVERSION=	0.10.0.3
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 

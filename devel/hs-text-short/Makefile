@@ -2,7 +2,7 @@
 
 PORTNAME=	text-short
 PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

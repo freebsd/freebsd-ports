@@ -1,3 +1,3 @@
-TIMESTAMP = 1531821668
-SHA256 (cabal/hlint-2.1.8.tar.gz) = 9713ebf3d0ae16c169d0e02486ba93bfdc6349d9b82dccf8a19a58c1177e75ce
-SIZE (cabal/hlint-2.1.8.tar.gz) = 111934
+TIMESTAMP = 1545836418
+SHA256 (cabal/hlint-2.1.12.tar.gz) = 7de5c4a21cb3d957579398a5fe7c8bc2f56279616309b91cb1e9fda3e55e6fb4
+SIZE (cabal/hlint-2.1.12.tar.gz) = 114373

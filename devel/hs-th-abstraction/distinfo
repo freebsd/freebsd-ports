@@ -1,3 +1,3 @@
-TIMESTAMP = 1523446140
-SHA256 (cabal/th-abstraction-0.2.6.0.tar.gz) = e52e289a547d68f203d65f2e63ec2d87a3c613007d2fe873615c0969b981823c
-SIZE (cabal/th-abstraction-0.2.6.0.tar.gz) = 23406
+TIMESTAMP = 1545494086
+SHA256 (cabal/th-abstraction-0.2.10.0.tar.gz) = c9dbffcaa4ed04f257427e61da135797190b572d4e37662f7821844cbd2114af
+SIZE (cabal/th-abstraction-0.2.10.0.tar.gz) = 29620

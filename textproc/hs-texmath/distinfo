@@ -1,3 +1,3 @@
-TIMESTAMP = 1524845873
-SHA256 (cabal/texmath-0.10.1.2.tar.gz) = fda230b0ce48efb1f45f14c47d3db255466b973f42699507d53f8a7ca8a5d821
-SIZE (cabal/texmath-0.10.1.2.tar.gz) = 1716634
+TIMESTAMP = 1545834044
+SHA256 (cabal/texmath-0.11.1.2.tar.gz) = 373f1281832c0f397976eec8f94117d2e298443ae2591f64a92e734631224cf1
+SIZE (cabal/texmath-0.11.1.2.tar.gz) = 1707310

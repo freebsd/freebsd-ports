@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	feed
-PORTVERSION=	1.0.0.0
+PORTVERSION=	1.0.1.0
 PORTREVISION=	1
 CATEGORIES=	textproc haskell
 

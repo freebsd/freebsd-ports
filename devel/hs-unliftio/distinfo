@@ -1,3 +1,3 @@
-TIMESTAMP = 1523902179
-SHA256 (cabal/unliftio-0.2.6.0.tar.gz) = f87d5b6fa7f1bdb2d47e91c30411a3a878bc281a1259fc23abe146d1c4a4b366
-SIZE (cabal/unliftio-0.2.6.0.tar.gz) = 28311
+TIMESTAMP = 1545757713
+SHA256 (cabal/unliftio-0.2.9.0.tar.gz) = ff6596a932d1b52b409739fd7bbc07234b484cc72f459f2515b27c2b55cd39b8
+SIZE (cabal/unliftio-0.2.9.0.tar.gz) = 38909

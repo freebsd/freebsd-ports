@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	concurrent-output
-PORTVERSION=	1.10.5
-PORTREVISION=	2
+PORTVERSION=	1.10.9
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

@@ -2,7 +2,7 @@
 
 PORTNAME=	cprng-aes
 PORTVERSION=	0.6.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

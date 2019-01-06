@@ -1,3 +1,3 @@
-TIMESTAMP = 1524930811
-SHA256 (cabal/th-orphans-0.13.5.tar.gz) = 95644d4b7914317e1dd31095947b8371f1a18be0c09e75f0e29203eb774a25ad
-SIZE (cabal/th-orphans-0.13.5.tar.gz) = 6675
+TIMESTAMP = 1545681019
+SHA256 (cabal/th-orphans-0.13.6.tar.gz) = 7745e6b93a73cbc0a6aa0da0a7b7377f0be4fffb4fd311e5502de199ec1dd469
+SIZE (cabal/th-orphans-0.13.6.tar.gz) = 6773

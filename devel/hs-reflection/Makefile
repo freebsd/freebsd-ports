@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	reflection
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 

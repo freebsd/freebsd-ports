@@ -2,7 +2,7 @@
 
 PORTNAME=	network-uri
 PORTVERSION=	2.6.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org

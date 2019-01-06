@@ -2,7 +2,7 @@
 
 PORTNAME=	th-reify-many
 PORTVERSION=	0.1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
