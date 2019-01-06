@@ -1,0 +1,13 @@
+Snap7, through three specialized components: Client and the inedited Server
+and Partner, allows you to definitively integrate your PC based systems into
+a PLC automation chain.
+
+Designed to transfer large amounts of hi-speed data in industrial facilities,
+it scales easily, down to small Linux Arm boards such as Raspberry PI.
+
+Hi level object oriented wrappers are provided, currently C/C++, .NET/Mono,
+Pascal, LabVIEW, Python with many source code examples.
+
+Very detailed documentation provided.
+
+WWW: http://sourceforge.net/projects/snap7/

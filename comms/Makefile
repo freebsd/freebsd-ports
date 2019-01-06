@@ -164,6 +164,7 @@
     SUBDIR += seyon
     SUBDIR += sms_client
     SUBDIR += smstools3
+    SUBDIR += snap7
     SUBDIR += spandsp
     SUBDIR += splat
     SUBDIR += sredird
