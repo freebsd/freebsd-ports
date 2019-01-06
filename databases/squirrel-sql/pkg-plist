@@ -15,7 +15,7 @@ bin/squirrel-sql
 %%DATADIR%%/lib/axis.jar
 %%DATADIR%%/lib/cglib.jar
 %%DATADIR%%/lib/common.jar
-%%DATADIR%%/lib/commons-cli.jar
+%%DATADIR%%/lib/commons-cli-1.4.jar
 %%DATADIR%%/lib/commons-codec.jar
 %%DATADIR%%/lib/commons-collections-3.2.1.jar
 %%DATADIR%%/lib/commons-discovery.jar
@@ -61,7 +61,6 @@ bin/squirrel-sql
 %%DATADIR%%/lib/xml-apis.jar
 %%DATADIR%%/lib/xmlbeans.jar
 %%DATADIR%%/log4j.properties
-%%DATADIR%%/mac/squirrel-sql.sh
 %%DATADIR%%/plugins/codecompletion.jar
 %%DATADIR%%/plugins/codecompletion/doc/changes.txt
 %%DATADIR%%/plugins/codecompletion/doc/completionpopup.jpg
@@ -438,6 +437,7 @@ bin/squirrel-sql
 %%DATADIR%%/plugins/sqlreplace.jar
 %%DATADIR%%/plugins/sqlreplace/doc/changes.txt
 %%DATADIR%%/plugins/sqlreplace/doc/licence.txt
+%%DATADIR%%/plugins/sqlreplace/doc/readme.html
 %%DATADIR%%/plugins/sqlreplace/doc/readme.txt
 %%DATADIR%%/plugins/sqlscript.jar
 %%DATADIR%%/plugins/sqlscript/doc/changes.txt
