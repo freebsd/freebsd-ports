@@ -4,7 +4,7 @@
 PORTNAME=	xzgv
 PORTVERSION=	0.9.2
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	SF
 
 MAINTAINER=	m.ne@gmx.net
 COMMENT=	Image viewer with thumbnail-based file selector for X
@@ -19,7 +19,6 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 
 USES=		gmake gnome pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk20
-USE_IMLIB=	yes
 USE_XORG=	x11
 
 LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lm
