@@ -1,13 +1,22 @@
 '\" t
 .\"     Title: tinyproxy
 .\"    Author: [see the "AUTHOR" section]
-.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
-.\"      Date: 07/16/2011
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 01/06/2019
 .\"    Manual: Tinyproxy manual
-.\"    Source: Version 1.8.3
+.\"    Source: Version 1.10.0
 .\"  Language: English
 .\"
-.TH "TINYPROXY" "8" "07/16/2011" "Version 1\&.8\&.3" "Tinyproxy manual"
+.TH "TINYPROXY" "8" "01/06/2019" "Version 1\&.10\&.0" "Tinyproxy manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
 .\" -----------------------------------------------------------------
 .\" * set default formatting
 .\" -----------------------------------------------------------------
@@ -43,11 +52,6 @@ Don\(cqt daemonize and stay in the foreground\&. Useful for debugging purposes\&
 \fB\-h\fR
 .RS 4
 Display a short help screen of command line arguments and exit\&.
-.RE
-.PP
-\fB\-l\fR
-.RS 4
-Display the licensing agreement\&.
 .RE
 .PP
 \fB\-v\fR
@@ -147,15 +151,15 @@ The stat file template can be changed at runtime through the configuration varia
 /usr/local/etc/tinyproxy\&.conf, /var/run/tinyproxy\&.pid, /var/log/tinyproxy\&.log
 .SH "BUGS"
 .sp
-To report bugs in Tinyproxy, please visit <https://www\&.banu\&.com/tinyproxy/>\&.
+To report bugs in Tinyproxy, please visit <https://tinyproxy\&.github\&.io/>\&.
 .SH "SEE ALSO"
 .sp
 tinyproxy\&.conf(5)
 .SH "AUTHOR"
 .sp
-Written by the Tinyproxy project team\&.
+This manpage was written by the Tinyproxy project team\&.
 .SH "COPYRIGHT"
 .sp
-Copyright (c) 1998\-2000 Steven Young; Copyright (c) 2000\-2001 Robert James Kaes; Copyright (c) 2009\-2010 Mukund Sivaraman; Copyright (c) 2009\-2010 Michael Adam\&.
+Copyright (c) 1998\-2018 the Tinyproxy authors\&.
 .sp
 This program is distributed under the terms of the GNU General Public License version 2 or above\&. See the COPYING file for additional information\&.
