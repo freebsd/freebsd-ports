@@ -2,23 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	suck
-PORTVERSION=	4.3.2
-PORTREVISION=	5
-CATEGORIES=	news
-#MASTER_SITES=	http://www.sucknews.org/
-MASTER_SITES=	http://home.comcast.net/~bobyetman/ \
-		LOCAL/dinoex
+PORTVERSION=	4.3.4
+CATEGORIES=	news ipv6
 PKGNAMESUFFIX?=	${CNEWS_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Receives/sends news to/from localhost via NNTP
 
+LICENSE=	PD
+
 CONFLICTS?=	suckblow-1.*
 
-USES=		gmake shebangfix
+USES=		autoreconf gmake shebangfix
 SHEBANG_FILES=	sample/post_filter.pl
 GNU_CONFIGURE=	yes
 MAKE_ENV=	CHKHISTORY=chkhistory_db.o
+USE_GITHUB=	yes
+GH_ACCOUNT=	lazarus-pkgs
 
 EX_SCRIPTS=	get.news.generic get.news.inn perl_kill.pl perl_xover.pl \
 		post_filter.pl put.news put.news.pl put.news.sm put.news.sm.pl

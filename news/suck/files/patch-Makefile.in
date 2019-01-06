@@ -1,6 +1,6 @@
---- Makefile.in.orig	2003-03-28 20:22:38.000000000 +0100
-+++ Makefile.in	2013-12-19 08:04:14.000000000 +0100
-@@ -6,7 +6,7 @@
+--- Makefile.in.orig	2018-08-01 13:54:24 UTC
++++ Makefile.in
+@@ -6,7 +6,7 @@ SHELL=/bin/sh
  ############################################################################
  
  # Step 1: Define ONE of the CHKHISTORY 
@@ -9,7 +9,7 @@
  #CHKHISTORY=chkhistory.o	# use flat file history routine
  #CHKHISTORY=chkhistory_db.o	# use DB history routine, if you use 
                                  # DBM, GDBM, NDBM, or DBZ
-@@ -17,7 +17,7 @@
+@@ -17,7 +17,7 @@ CHKHISTORY=@HISTORY@
  # If you are using flat file, you can skip the rest, they don't matter
  
  # Step 2: Define ONE of the Database Types
@@ -18,7 +18,7 @@
  #DB_TYPE=-DUSE_DBM
  #DB_TYPE=-DUSE_GDBM	
  #DB_TYPE=-DUSE_NDBM
-@@ -29,18 +29,20 @@
+@@ -29,18 +29,20 @@ DB_TYPE=@DB_TYPE@
  # If you are using INN-2.X, and the compiler complains 
  # about Undefined Symbols QIOclose QIOopen QIOread
  # Use the DB_LIB that includes -lstorage
@@ -40,7 +40,7 @@
  
  # Step 5: If you want to use embedded PERL functions as kill routines
  # define these. 
-@@ -67,8 +69,8 @@
+@@ -67,8 +69,8 @@ PERL_DEFS=-D_REENTRANT -D_GNU_SOURCE
  #OS2_DEFS=-DEMX
  
  # Step 7: If compiling with SSL uncomment the following
@@ -51,7 +51,7 @@
  #SSL_LIB=-lssl -lcrypto
  #SSL_DEFS=-I/usr/local/ssl/include -DHAVE_LIBSSL
  #SSL_LIB_LOC=-L/usr/local/ssl/lib
-@@ -110,16 +112,16 @@
+@@ -110,7 +112,7 @@ CC = @CC@
  @SET_MAKE@
  
  CFLAGS = @CFLAGS@
@@ -60,36 +60,7 @@
  LDFLAGS = @LDFLAGS@ $(DMALLOC_LD) $(OS2_LD)
  DEFS = @DEFS@ -DSUCK_VERSION=\"$(VERSION)\" $(DMALLOC_DEFS) $(OS2_DEFS) $(DMALLOC_INC)
  LIBS = @LIBS@ $(DMALLOC_LIB)
- 
- prefix = @prefix@
- exec_prefix = @exec_prefix@
--bindir = @bindir@
-+bindir = ${DESTDIR}@bindir@
- manext = 1
--mandir = @mandir@/man$(manext)
-+mandir = ${DESTDIR}@mandir@/man$(manext)
- srcdir = @srcdir@
- MAN = $(srcdir)/man
- SMAN= $(srcdir)/Spanish.docs
-@@ -177,7 +179,7 @@
- 
- install_bin: suck rpost testhost lmove
- 	- mkdir -p $(bindir)
--	- strip -s suck rpost testhost lmove
-+	- strip -x suck rpost testhost lmove
- 	$(INSTALL_PROGRAM) suck $(bindir)/suck
- 	$(INSTALL_PROGRAM) rpost $(bindir)/rpost
- 	$(INSTALL_PROGRAM) testhost $(bindir)/testhost
-@@ -195,7 +197,7 @@
- #	$(MAKE) -C $(SMAN)
- 
- install_lpost: lpost $(MAN)/lpost.1
--	- strip -s lpost
-+	- strip -x lpost
- 	$(INSTALL_PROGRAM) lpost $(bindir)/lpost
- 	$(INSTALL_DATA) $(MAN)/lpost.1 $(mandir)/lpost.$(manext)
- 
-@@ -295,3 +297,6 @@
+@@ -293,3 +295,6 @@ makerpm: maketar
  	rm -rf /tmp/suck*
  # now generate the .sig files
  	#pgps -b ~/suck*.rpm ~/suck*.tar.gz

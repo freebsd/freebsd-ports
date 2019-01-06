@@ -6,3 +6,5 @@ bring it to your local machine, without the remote server doing
 anything special. If you have read permission on the server, you can
 use suck. Suck does NOT use the NEWNEWS command, hated by many
 administrators.
+
+WWW: https://github.com/lazarus-pkgs/suck
