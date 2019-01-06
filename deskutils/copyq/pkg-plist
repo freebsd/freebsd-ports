@@ -1,5 +1,4 @@
 bin/copyq
-%%PLUGINS%%lib/copyq/plugins/libitemdata.so
 %%PLUGINS%%lib/copyq/plugins/libitemencrypted.so
 %%PLUGINS%%lib/copyq/plugins/libitemfakevim.so
 %%PLUGINS%%lib/copyq/plugins/libitemimage.so
