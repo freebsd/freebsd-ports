@@ -1,12 +1,10 @@
---- src/gdal/CMakeLists.txt.orig	2018-08-11 08:14:55 UTC
+--- src/gdal/CMakeLists.txt.orig	2018-12-23 20:55:50 UTC
 +++ src/gdal/CMakeLists.txt
-@@ -34,8 +34,10 @@ set(MAPPER_GDAL_SOURCES
-   ogr_template.cpp
+@@ -35,7 +35,9 @@ set(MAPPER_GDAL_SOURCES
    mapper-osmconf.ini
  )
--	
+ 	
 -mapper_translations_sources(${MAPPER_GDAL_HEADERS} ${MAPPER_GDAL_SOURCES})
-+
 +if(Mapper_WITH_NLS)
 +	mapper_translations_sources(${MAPPER_GDAL_HEADERS} ${MAPPER_GDAL_SOURCES})
 +endif()

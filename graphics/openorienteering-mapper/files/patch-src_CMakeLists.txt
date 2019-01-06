@@ -1,14 +1,13 @@
---- src/CMakeLists.txt.orig	2018-08-11 08:14:55 UTC
+--- src/CMakeLists.txt.orig	2018-12-23 20:55:50 UTC
 +++ src/CMakeLists.txt
-@@ -286,8 +286,9 @@ target_compile_definitions(Mapper_Common
+@@ -286,7 +286,9 @@ target_compile_definitions(Mapper_Common PRIVATE
    # MAPPER_ENABLE_COMPATIBILITY
  )
  
 -mapper_translations_sources(${Mapper_Common_SRCS} ${Mapper_Common_HEADERS})
--
 +if(Mapper_WITH_NLS)
 +	mapper_translations_sources(${Mapper_Common_SRCS} ${Mapper_Common_HEADERS})
 +endif()
  
- # Mapper executable
  
+ # Mapper executable
