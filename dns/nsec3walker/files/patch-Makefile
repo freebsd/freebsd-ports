@@ -1,0 +1,12 @@
+--- Makefile.orig	2010-12-24 09:49:40 UTC
++++ Makefile
+@@ -1,7 +1,7 @@
+ all: dicthashes randomhashes
+ 
+ dicthashes: dicthashes.c
+-	gcc -O3 -o dicthashes dicthashes.c -lcrypto -lm
++	cc -O3 -o dicthashes dicthashes.c -lcrypto -lm
+ 
+ randomhashes: randomhashes.c
+-	gcc -O3 -o randomhashes randomhashes.c -lcrypto -lm
++	cc -O3 -o randomhashes randomhashes.c -lcrypto -lm

@@ -1,0 +1,20 @@
+--- collect.orig	2010-12-24 09:49:40 UTC
++++ collect
+@@ -71,7 +71,7 @@ while len(todo) > 0 or len(nexthash) == 
+     print "querying",guess,h
+     numqueries += 1
+     server = servers[r.randrange(len(servers))]
+-    query = subprocess.Popen(["./query",guess,server],stdout=subprocess.PIPE).stdout
++    query = subprocess.Popen(["query",guess,server],stdout=subprocess.PIPE).stdout
+     for x in query:
+       y = x.strip().split(' ')
+       if y[0] == "ns":
+@@ -84,7 +84,7 @@ while len(todo) > 0 or len(nexthash) == 
+           print "iterations",y[4]
+           salt = binascii.a2b_hex(y[3])
+           iterations = int(y[4])
+-	  hashprocess = subprocess.Popen(["./randomhashes",domain,y[4],y[3]],stdout=subprocess.PIPE)
++	  hashprocess = subprocess.Popen(["randomhashes",domain,y[4],y[3]],stdout=subprocess.PIPE)
+ 	  hashes = hashprocess.stdout
+ 	if salt != binascii.a2b_hex(y[3]):
+ 	  print "newsalt",binascii.a2b_hex(y[3])
