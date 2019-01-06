@@ -1,0 +1,5 @@
+MooX::Locale::Passthrough is made to allow CPAN modules use translator API
+without adding heavy dependencies (external software) or requirements
+(operating resulting solution).
+
+WWW: https://metacpan.org/release/MooX-Locale-Passthrough

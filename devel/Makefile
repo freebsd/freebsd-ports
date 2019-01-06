@@ -2993,6 +2993,7 @@
     SUBDIR += p5-MooX-ConfigFromFile
     SUBDIR += p5-MooX-File-ConfigDir
     SUBDIR += p5-MooX-HandlesVia
+    SUBDIR += p5-MooX-Locale-Passthrough
     SUBDIR += p5-MooX-Options
     SUBDIR += p5-MooX-StrictConstructor
     SUBDIR += p5-MooX-Thunking
