@@ -174,9 +174,9 @@ include/agar/agar/config/release.h
 %%SDL%%include/agar/agar/config/sdl_cflags.h
 %%SDL%%include/agar/agar/config/sdl_libs.h
 include/agar/agar/config/single_precision.h
-include/agar/agar/config/sse2_cflags.h
-include/agar/agar/config/sse3_cflags.h
-include/agar/agar/config/sse_cflags.h
+%%SSE%%include/agar/agar/config/sse2_cflags.h
+%%SSE%%include/agar/agar/config/sse3_cflags.h
+%%SSE%%include/agar/agar/config/sse_cflags.h
 include/agar/agar/config/statedir.h
 include/agar/agar/config/sysconfdir.h
 include/agar/agar/config/ttfdir.h
