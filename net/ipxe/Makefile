@@ -3,7 +3,7 @@
 
 PORTNAME=	ipxe
 PORTVERSION=	20180825
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -30,6 +30,8 @@ GH_TAGNAME=	133f4c47baef6002b2ccb4904a035cda2303c6e5
 USE_PERL5=	build
 
 ALL_TARGET=	bin/ipxe.dsk bin/ipxe.lkrn bin/ipxe.pxe bin/ipxe.usb bin/undionly.kpxe
+# VMware ROMs
+ALL_TARGET+=	bin/8086100f.mrom bin/808610d3.mrom bin/10222000.rom bin/15ad07b0.rom
 MAKE_ARGS=	HOST_CC=${CC} \
 		PERL=${PERL} \
 		CC=${CC} \
