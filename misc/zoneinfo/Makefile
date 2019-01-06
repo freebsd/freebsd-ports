@@ -4,8 +4,8 @@
 PORTNAME=	zoneinfo
 DISTVERSION=	2018i
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.iana.org/tz/releases/ \
-		ftp://munnari.oz.au/pub/
+MASTER_SITES=	https://data.iana.org/time-zones/releases/ \
+		ftp://ftp.iana.org/tz/releases/
 DISTNAME=	tzdata${DISTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
