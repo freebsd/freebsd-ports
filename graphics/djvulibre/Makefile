@@ -3,11 +3,11 @@
 
 PORTNAME=	djvulibre
 PORTVERSION=	3.5.27
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics www
 MASTER_SITES=	SF/djvu/DjVuLibre/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	phascolarctos@protonmail.ch
 COMMENT=	DjVu base libraries and utilities
 
 LICENSE=	GPLv2+
@@ -15,20 +15,20 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff
 
+USES=		cpe gmake iconv jpeg libtool
+USE_LDCONFIG=	yes
+
+CPE_VENDOR=	djvulibre_project
+
+PORTDOCS=	*.djvu *.pdf *.txt
+
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 CONFIGURE_ENV=	JPEG_CFLAGS="-I${LOCALBASE}/include" \
 		JPEG_LIBS="-L${LOCALBASE}/lib -ljpeg" \
 		TIFF_CFLAGS="-I${LOCALBASE}/include" \
 		TIFF_LIBS="-L${LOCALBASE}/lib -ltiff"
-LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
-USES=		cpe gmake iconv jpeg libtool
-CPE_VENDOR=	djvulibre_project
-USE_LDCONFIG=	yes
-CONFLICTS=	djvulibre-nox11-3*
-
-PORTDOCS=	*.djvu *.pdf *.txt
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		DESKTOPFILES DOCS ANY2DJVU
 OPTIONS_DEFAULT=	DESKTOPFILES
@@ -38,7 +38,7 @@ ANY2DJVU_DESC=		Install any2djvu script (requires curl)
 ANY2DJVU_RUN_DEPENDS=	curl:ftp/curl
 DESKTOPFILES_DESC=	Install icons and mime types
 DESKTOPFILES_CONFIGURE_ENABLE=	desktopfiles
-DESKTOPFILES_USES=	shared-mime-info
+DESKTOPFILES_USES=	gnome shared-mime-info
 DESKTOPFILES_VARS=	INSTALLS_ICONS=yes
 
 post-patch:
