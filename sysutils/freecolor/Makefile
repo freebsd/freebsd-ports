@@ -17,6 +17,5 @@ MAKE_ENV+=	INSTALL="${INSTALL}" INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 USES=		pkgconfig
 
 PLIST_FILES=	bin/freecolor man/man1/freecolor.1.gz
-USES=		pkgconfig
 
 .include <bsd.port.mk>
