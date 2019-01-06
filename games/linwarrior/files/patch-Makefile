@@ -14,7 +14,7 @@
  	CFLAGS+= -static-libgcc
  else
 -	LIBRARIES= -lGL -lGLU -lSDL -lopenal -lalut
-+	LIBRARIES= -lGL -lGLU `${SDL_CONFIG} --libs` -lopenal -lalut
++	LIBRARIES= ${LDFLAGS} -lGL -lGLU `${SDL_CONFIG} --libs` -lopenal -lalut
  	TARGET=dist/linwarrior
  	MKDIR=mkdir
  	RM=rm -f
