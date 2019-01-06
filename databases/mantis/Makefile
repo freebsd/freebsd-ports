@@ -3,6 +3,7 @@
 
 PORTNAME=	mantis
 PORTVERSION=	2.19.0
+PORTREVSION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases www
 MASTER_SITES=	SF/mantisbt/mantis-stable/${PORTVERSION}
@@ -17,7 +18,7 @@ LICENSE=	GPLv2
 
 USES=		php:flavors
 USE_GITHUB=	nodefault
-USE_PHP=	fileinfo filter hash pcre session xml
+USE_PHP=	fileinfo filter hash json mbstring pcre session xml
 
 NO_ARCH=	yes
 NO_BUILD=	yes
