@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooX-Options
-PORTVERSION=	4.010
+PORTVERSION=	4.103
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +22,9 @@ RUN_DEPENDS=	p5-Data-Record>=0:devel/p5-Data-Record \
 		p5-Path-Class>=0.32:devel/p5-Path-Class \
 		p5-Regexp-Common>=0:textproc/p5-Regexp-Common \
 		p5-Term-Size-Any>=0:devel/p5-Term-Size-Any \
-		p5-Unicode-LineBreak>=0:textproc/p5-Unicode-LineBreak
+		p5-Unicode-LineBreak>=0:textproc/p5-Unicode-LineBreak \
+		p5-strictures>=0:devel/p5-strictures \
+		p5-MooX-Locale-Passthrough>=0:devel/p5-MooX-Locale-Passthrough
 TEST_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-Mo>=0:devel/p5-Mo \
 		p5-Moose>=0:devel/p5-Moose \
@@ -32,8 +34,9 @@ TEST_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny \
 		p5-namespace-clean>=0:devel/p5-namespace-clean
 
-NO_ARCH=	yes
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
