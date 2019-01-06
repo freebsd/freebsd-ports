@@ -17,7 +17,7 @@
 -LDFLAGS := $(shell sdl-config --libs) -lGL -lGLU -lopenal -lalut # -framework QuickTime
 +CFLAGS += -Wall `${SDL_CONFIG} --cflags` -I$(SRCDIR) -I$(NET_SRCDIR) -include Source/Support.h
 +CXXFLAGS += -Wall `${SDL_CONFIG} --cflags` -I$(SRCDIR) -I$(NET_SRCDIR) -include Source/Support.h
-+LDFLAGS := `${SDL_CONFIG} --libs` -lGL -lGLU -lopenal -lalut # -framework QuickTime
++LDFLAGS += `${SDL_CONFIG} --libs` -lGL -lGLU -lopenal -lalut # -framework QuickTime
  
  # Don't want ogg?
  #CFLAGS += -DNOOGG
