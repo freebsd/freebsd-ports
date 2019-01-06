@@ -1,4 +1,4 @@
---- translations/translate_text_files.sh.orig	2018-08-11 08:14:55 UTC
+--- translations/translate_text_files.sh.orig	2018-12-23 20:55:50 UTC
 +++ translations/translate_text_files.sh
 @@ -21,8 +21,8 @@ set -e
  

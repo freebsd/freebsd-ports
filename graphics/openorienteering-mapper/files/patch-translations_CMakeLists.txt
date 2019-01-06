@@ -1,4 +1,4 @@
---- translations/CMakeLists.txt.orig	2018-08-11 08:14:55 UTC
+--- translations/CMakeLists.txt.orig	2018-12-23 20:55:50 UTC
 +++ translations/CMakeLists.txt
 @@ -223,24 +223,24 @@ else()
  		
