@@ -1,6 +1,6 @@
---- irio.c-orig	Sat Mar 29 20:26:57 2003
-+++ irio.c	Sat Mar 29 20:27:12 2003
-@@ -91,14 +91,6 @@
+--- irio.c.orig	2018-08-12 05:33:43 UTC
++++ irio.c
+@@ -97,14 +97,6 @@ int ir_open_port(char *filename)
      return -1;
    }
  
