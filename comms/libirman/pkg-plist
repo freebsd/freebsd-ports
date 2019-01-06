@@ -1,3 +1,6 @@
+bin/test_func
+bin/test_io
+bin/test_name
 bin/workmanir
 @sample etc/irman.conf.sample
 include/irman.h
@@ -6,3 +9,8 @@ lib/libirman.so
 lib/libirman.so.0
 lib/libirman.so.0.0.0
 libdata/pkgconfig/libirman.pc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TECHNICAL
+%%PORTDOCS%%%%DOCSDIR%%/TODO
