@@ -1,0 +1,5 @@
+Installing current DNSSEC (NSEC3) exposes private DNS data to low-cost
+DNS database espionage. The nsec3walker tool allows administrators and users
+to see how much private information is being given away by DNSSEC.
+
+WWW: https://dnscurve.org/nsec3walker.html

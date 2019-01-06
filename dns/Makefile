@@ -113,6 +113,7 @@
     SUBDIR += namesilo_ddns
     SUBDIR += noip
     SUBDIR += nsd
+    SUBDIR += nsec3walker
     SUBDIR += nslint
     SUBDIR += nsnotifyd
     SUBDIR += nsping
