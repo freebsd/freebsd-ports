@@ -14,23 +14,15 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libsnappy.so:archivers/snappy
 
+USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	zloidemon
 GH_TAGNAME=	72c81bf
-
-USES=		cmake compiler:c++11-lang
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-PLIST_SUB+=	EXAMPLES=""
-CMAKE_ARGS=	-DENABLE_EXAMPLES=ON
-.else
-CMAKE_ARGS=	-DENABLE_EXAMPLES=OFF
-PLIST_SUB+=	EXAMPLES="@comment "
-.endif
+EXAMPLES_CMAKE_BOOL=	ENABLE_EXAMPLES
 
 .include <bsd.port.mk>
