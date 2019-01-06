@@ -270,7 +270,7 @@
     SUBDIR += hs-contravariant
     SUBDIR += hs-data-lens
     SUBDIR += hs-data-lens-template
-    SUBDIR += hs-dense-algebra
+    SUBDIR += hs-dense-linear-algebra
     SUBDIR += hs-distributive
     SUBDIR += hs-erf
     SUBDIR += hs-fixed
