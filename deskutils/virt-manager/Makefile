@@ -29,7 +29,7 @@ PYDISTUTILS_CONFIGURE_TARGET=	configure
 PYDISTUTILS_CONFIGUREARGS=	--prefix=${PREFIX}
 INSTALLS_ICONS=	yes
 USES=		python:3.3+ gettext shebangfix
-USE_PYTHON=	noegginfo autoplist distutils
+USE_PYTHON=	noegginfo autoplist distutils noflavors
 
 NO_ARCH=	yes
 
