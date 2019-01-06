@@ -23,6 +23,6 @@ RUN_DEPENDS=	beancount>=2.1.2:finance/beancount \
 		${PYTHON_PKGNAMEPREFIX}simplejson>0:devel/py-simplejson@${PY_FLAVOR}
 
 USES=		python:3.5+  # same as finance/beancount
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils noflavors
 
 .include <bsd.port.mk>
