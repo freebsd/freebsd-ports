@@ -3,9 +3,9 @@
 
 PORTNAME=	snap7
 PORTVERSION=	1.4.2
+DISTVERSIONPREFIX=	full-
 CATEGORIES=	comms
 MASTER_SITES=	SF/snap7/${PORTVERSION}
-DISTNAME=	${PORTNAME}-full-${PORTVERSION}
 EXTRACT_SUFX=	.7z
 
 MAINTAINER=	vova@fbsd.ru
@@ -18,7 +18,6 @@ ONLY_FOR_ARCHS=	amd64 armv6 i386 mips
 USES=		gmake
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-full-${PORTVERSION}
 WRKSRC_SUBDIR=	build/unix
 
 MAKE_ARGS=	CC=${CC} CXX=${CXX} LinkerName=${CXX} SharedObjectLinkerName="${CXX} -shared -fPIC"
