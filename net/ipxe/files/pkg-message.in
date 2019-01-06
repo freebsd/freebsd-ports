@@ -8,3 +8,6 @@ The following files have been installed in %%DATADIR%%:
 - ipxe.usb for creating a bootable USB key
 - undionly.kpxe for chainloading from a PXE ROM; contains only
   the UNDI drivers
+- {8086100f,808610d3,10222000,15ad07b0}.rom for replacing the
+  VMware PXE ROM.  See http://ipxe.org/howto/vmware for more
+  information.
