@@ -1,11 +1,11 @@
---- poller_maintenance.php.orig	2018-02-26 01:12:04 UTC
+--- poller_maintenance.php.orig	2019-01-03 02:14:26 UTC
 +++ poller_maintenance.php
-@@ -223,7 +223,7 @@ function logrotate_rotatenow () {
- 
+@@ -227,7 +227,7 @@ function logrotate_rotatenow() {
+ 	$logs = array();
  	$log = read_config_option('path_cactilog');
- 	if ($log == '') {
+ 	if (empty($log)) {
 -		$log = $config['base_path'] . '/log/cacti.log';
 +		$log = '/var/log/cacti/log';
  	}
+ 	$logs['Cacti'] = $log;
  
- 	$run_time = time();
