@@ -5,7 +5,6 @@ PORTNAME=	aster
 DISTVERSION=	${ASTER_DISTVERSION}
 PORTREVISION=	1
 CATEGORIES=	french cad
-CATEGORIES=	french cad
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Aster finite element method solver
