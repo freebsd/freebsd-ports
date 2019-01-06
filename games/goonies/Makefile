@@ -17,6 +17,7 @@ LICENSE=	NONE
 USES=		gmake tar:tgz
 USE_SDL=	sdl mixer image
 USE_GL=		gl glu
+USE_CXXSTD=	c++98
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
