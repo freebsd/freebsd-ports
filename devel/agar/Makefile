@@ -74,8 +74,6 @@ CONFIGURE_ARGS+=	--without-sse
 PLIST_SUB+=		SSE="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libag_*.so.*
 
@@ -83,4 +81,4 @@ post-patch-GUI-off:
 	@${REINPLACE_CMD} -e 's|^LIBS=.*|LIBS=|' ${WRKSRC}/au/Makefile
 	@${REINPLACE_CMD} -e 's|^LIBS=.*|LIBS=|' ${WRKSRC}/math/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
