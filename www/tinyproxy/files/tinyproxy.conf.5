@@ -1,13 +1,22 @@
 '\" t
 .\"     Title: tinyproxy.conf
 .\"    Author: [see the "AUTHOR" section]
-.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
-.\"      Date: 07/16/2011
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 01/06/2019
 .\"    Manual: Tinyproxy manual
-.\"    Source: Version 1.8.3
+.\"    Source: Version 1.10.0
 .\"  Language: English
 .\"
-.TH "TINYPROXY\&.CONF" "5" "07/16/2011" "Version 1\&.8\&.3" "Tinyproxy manual"
+.TH "TINYPROXY\&.CONF" "5" "01/06/2019" "Version 1\&.10\&.0" "Tinyproxy manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
 .\" -----------------------------------------------------------------
 .\" * set default formatting
 .\" -----------------------------------------------------------------
@@ -203,9 +212,9 @@ X\-Tinyproxy
 containing the client\(cqs IP address to the request\&.
 .RE
 .PP
-\fBUpstream\fR, \fBNo Upstream\fR
+\fBUpstream\fR
 .RS 4
-This option allows you to set up a set of rules for deciding whether an upstream proxy server is to be used, based on the host or domain of the site being accessed\&. The rules are stored in the order encountered in the configuration file and the LAST matching rule wins\&. There are three possible forms for specifying upstream rules:
+This option allows you to set up a set of rules for deciding whether an upstream proxy server is to be used, based on the host or domain of the site being accessed\&. The rules are stored in the order encountered in the configuration file and the LAST matching rule wins\&. The following forms for specifying upstream rules exist:
 .sp
 .RS 4
 .ie n \{\
@@ -215,8 +224,7 @@ This option allows you to set up a set of rules for deciding whether an upstream
 .sp -1
 .IP \(bu 2.3
 .\}
-
-\fIupstream host:port\fR
+\fIupstream type host:port\fR
 turns proxy upstream support on generally\&.
 .RE
 .sp
@@ -228,10 +236,8 @@ turns proxy upstream support on generally\&.
 .sp -1
 .IP \(bu 2.3
 .\}
-
-\fIupstream host:port "site_spec"\fR
-turns on the upstream proxy for the sites matching
-site_spec\&.
+\fIupstream type user:pass@host:port\fR
+does the same, but uses the supplied credentials for authentication\&.
 .RE
 .sp
 .RS 4
@@ -242,8 +248,30 @@ site_spec\&.
 .sp -1
 .IP \(bu 2.3
 .\}
-
-\fIno upstream "site_spec"\fR
+\fIupstream type host:port "site_spec"\fR
+turns on the upstream proxy for the sites matching
+site_spec\&.
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+`type` can be one of `http`, `socks4`, `socks5`, `none`\&.
+.fi
+.if n \{\
+.RE
+.\}
+.RE
+.sp
+.RS 4
+.ie n \{\
+\h'-04'\(bu\h'+03'\c
+.\}
+.el \{\
+.sp -1
+.IP \(bu 2.3
+.\}
+\fIupstream none "site_spec"\fR
 turns off upstream support for sites matching
 site_spec\&.
 .sp
@@ -267,7 +295,6 @@ name or as an IP range:
 .sp -1
 .IP \(bu 2.3
 .\}
-
 \fIname\fR
 matches host exactly
 .RE
@@ -280,7 +307,6 @@ matches host exactly
 .sp -1
 .IP \(bu 2.3
 .\}
-
 \fI\&.name\fR
 matches any host in domain "name"
 .RE
@@ -293,7 +319,6 @@ matches any host in domain "name"
 .sp -1
 .IP \(bu 2.3
 .\}
-
 \fI\&.\fR
 matches any host with no domain (in
 \fIempty\fR
@@ -308,7 +333,6 @@ domain)
 .sp -1
 .IP \(bu 2.3
 .\}
-
 \fIIP/bits\fR
 matches network/mask
 .RE
@@ -321,7 +345,6 @@ matches network/mask
 .sp -1
 .IP \(bu 2.3
 .\}
-
 \fIIP/mask\fR
 matches network/mask
 .RE
@@ -526,15 +549,15 @@ The URL that is used to access this reverse proxy\&. The URL is used to rewrite 
 .RE
 .SH "BUGS"
 .sp
-To report bugs in Tinyproxy, please visit <https://www\&.banu\&.com/tinyproxy/>\&.
+To report bugs in Tinyproxy, please visit <https://tinyproxy\&.github\&.io/>\&.
 .SH "SEE ALSO"
 .sp
 tinyproxy(8)
 .SH "AUTHOR"
 .sp
-Written by the Tinyproxy project team\&.
+This manpage was written by the Tinyproxy project team\&.
 .SH "COPYRIGHT"
 .sp
-Copyright (c) 1998\-2000 Steven Young; Copyright (c) 2000\-2001 Robert James Kaes; Copyright (c) 2009\-2010 Mukund Sivaraman; Copyright (c) 2009\-2010 Michael Adam\&.
+Copyright (c) 1998\-2018 the Tinyproxy authors\&.
 .sp
 This program is distributed under the terms of the GNU General Public License version 2 or above\&. See the COPYING file for additional information\&.
