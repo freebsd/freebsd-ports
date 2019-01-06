@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libfwnt
-PORTVERSION=	20181215
+PORTVERSION=	20181227
 DISTVERSIONPREFIX=	alpha-
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libfwnt/releases/download/${PORTVERSION}/ \
