@@ -4,8 +4,8 @@
 PORTNAME=	webfwlog
 PORTVERSION=	1.1.1
 CATEGORIES=	security
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/
-MASTER_SITES=	http://devel.webfwlog.net/download/v1.1.x/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ \
+		http://devel.webfwlog.net/download/v1.1.x/
 
 MAINTAINER=	zeus@ix.netcom.com
 COMMENT=	Web-based firewall log analyzer
