@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	net multimedia www
 MASTER_SITES=	SF
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	Media-server compatible with "Digital Life Network Alliance"
 
 LICENSE=	GPLv2
