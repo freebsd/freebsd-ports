@@ -41,7 +41,7 @@ LIB_DEPENDS=	libavahi-common.so:net/avahi-app \
 RUN_DEPENDS=	roboto-fonts-ttf>0:x11-fonts/roboto-fonts-ttf
 
 USES=		eigen:3 libarchive localbase:ldflags pkgconfig \
-		python:build readline waf tar:xz
+		python:2.7,build readline waf tar:xz
 USE_GNOME=	atkmm cairo gtk20 gtkmm24 pangomm
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
