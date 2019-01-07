@@ -48,7 +48,6 @@ OPTIMFROG_RUN_DEPENDS=	ofr:audio/optimfrog
 OPUS_DESC=		Ogg Opus audio codec support
 OPUS_RUN_DEPENDS=	opusenc:audio/opus-tools
 SNDFILE_RUN_DEPENDS=	sndfile-convert:audio/libsndfile
-VORBIS_RUN_DEPENDS=	oggenc:audio/vorbis-tools
 SHORTEN_DESC=		Shorten audio support
 SHORTEN_RUN_DEPENDS=	shorten:audio/shorten
 SOX_DESC=		Audio conversion support via SoX
