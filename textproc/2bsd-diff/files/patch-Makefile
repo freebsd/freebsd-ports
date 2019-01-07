@@ -1,20 +1,26 @@
---- ./Makefile.orig	1996-10-22 04:29:46.000000000 +0000
-+++ ./Makefile	2014-02-17 13:43:18.000000000 +0000
-@@ -1,9 +1,9 @@
+--- Makefile.orig	1996-10-22 04:29:46 UTC
++++ Makefile
+@@ -1,10 +1,14 @@
  #	@(#)Makefile	4.1.1	1996/10/21
  #
 -DIFF=	/bin/diff
 -DIFFH=	/usr/libexec/diffh
 -PR=	/bin/pr
 -CFLAGS=	-O -DDIFF='"${DIFF}"' -DDIFFH='"${DIFFH}"' -DPR='"${PR}"'
+-SEPFLAG=-i
 +DIFF=	${PREFIX}/bin/2diff
 +DIFFH=	${PREFIX}/libexec/2diffh
 +PR=	/usr/bin/pr
 +CFLAGS+=-DDIFF='"${DIFF}"' -DDIFFH='"${DIFFH}"' -DPR='"${PR}"'
- SEPFLAG=-i
++# SEPFLAG should be:
++#	not on a PDP-11:		SEPFLAG =
++#	PDP-11 with separate I&D:	SEPFLAG = -i
++#	PDP-11 without separate I&D:	SEPFLAG = -n
++SEPFLAG=
  DESTDIR=
  
-@@ -14,14 +14,15 @@
+ SRCS=	diff.c diffdir.c diffreg.c
+@@ -14,14 +18,15 @@ OBJS=	diff.o diffdir.o diffreg.o
  all: diff diffh
  
  diff: ${OBJS}
