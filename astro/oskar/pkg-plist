@@ -530,10 +530,10 @@ include/oskar/vis/oskar_vis_header_write_ms.h
 include/oskar/vis/oskar_vis_read.h
 include/oskar/vis/oskar_vis_write.h
 lib/liboskar.so
-lib/liboskar.so.%%PYTHON_VER%%.0
+lib/liboskar.so.2.7.0
 lib/liboskar_apps.so
-lib/liboskar_apps.so.%%PYTHON_VER%%.0
+lib/liboskar_apps.so.2.7.0
 lib/liboskar_binary.so
 lib/liboskar_binary.so.2
 lib/liboskar_settings.so
-lib/liboskar_settings.so.%%PYTHON_VER%%.0
+lib/liboskar_settings.so.2.7.0
