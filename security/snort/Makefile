@@ -3,6 +3,7 @@
 
 PORTNAME=	snort
 PORTVERSION=	2.9.12
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://snort.org/downloads/snort/ \
 		ZI
@@ -15,12 +16,26 @@ COMMENT=	Lightweight network intrusion detection system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	daq>=2.0.0:net/daq
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libdnet.so:net/libdnet \
 		libpcap.so:net/libpcap
-
-BUILD_DEPENDS=	daq>=2.0.0:net/daq
 RUN_DEPENDS=	daq>=2.0.0:net/daq
+
+USES=			cpe libtool pathfix shebangfix ssl
+USE_RC_SUBR=		snort
+USE_LDCONFIG=		yes
+
+SUB_FILES=		pkg-message
+SHEBANG_FILES=		tools/appid_detector_builder.sh
+GNU_CONFIGURE=		yes
+MAKE_JOBS_UNSAFE=	yes
+
+RULES_DIR=		${ETCDIR}/rules
+PREPROC_RULE_DIR=	${ETCDIR}/preproc_rules
+LOGS_DIR=		/var/log/snort
+
+CONFLICTS_INSTALL=	snort3-3.*
 
 OPTIONS_DEFINE=		IPV6 GRE HA NORMALIZER DOCS APPID \
 			PERFPROFILE LRGPCAP SOURCEFIRE NONETHER \
@@ -69,19 +84,6 @@ APPID_CONFIGURE_ENV+=	luajit_CFLAGS="-I${LOCALBASE}/include/luajit-2.0" \
 			luajit_LIBS="-L${LOCALBASE}/lib -lluajit-5.1"
 
 .include <bsd.port.options.mk>
-
-USE_RC_SUBR=	snort
-SUB_FILES=	pkg-message
-
-USES=		cpe libtool pathfix shebangfix ssl
-SHEBANG_FILES=	tools/appid_detector_builder.sh
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-MAKE_JOBS_UNSAFE=	yes
-
-RULES_DIR=		${ETCDIR}/rules
-PREPROC_RULE_DIR=	${ETCDIR}/preproc_rules
-LOGS_DIR=		/var/log/snort
 
 CONFIG_FILES=	classification.config gen-msg.map reference.config \
 		snort.conf threshold.conf unicode.map file_magic.conf
