@@ -60,7 +60,7 @@ QT4_USE=		qt=moc_build,qmake_build,rcc_build,uic_build \
 QT4_CONFIGURE_ENABLE=	qtgui
 QT4_CONFIGURE_ENV=	QMAKE="${QMAKE}" QMAKESPEC="${QMAKESPEC}" \
 			QTDIR="${PREFIX}"
-SOUND_RUN_DEPENDS=	mutagen-pony:audio/py-mutagen@${PY_FLAVOR} \
+SOUND_RUN_DEPENDS=	mutagen-pony-${PYTHON_VER}:audio/py-mutagen@${PY_FLAVOR} \
 			pykaraoke:audio/py-karaoke@${PY_FLAVOR}
 X11MON_DESC=		X11 session monitoring support
 X11MON_USES=		fam
