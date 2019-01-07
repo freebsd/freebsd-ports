@@ -8,3 +8,9 @@
    LIBS="-ljpeg $LIBS"
  
  else
+@@ -21736,4 +21737,5 @@
+ fi
+    MAGICK_VERSION=`$PKG_CONFIG MagickWand --modversion`
++   MAGICK_CFLAGS="$MAGICK_CFLAGS -DMAGICK_MAJOR=${MAGICK_VERSION%%.*}"
+    { $as_echo "$as_me:$LINENO: using ImageMagick version $MAGICK_VERSION" >&5
+ $as_echo "$as_me: using ImageMagick version $MAGICK_VERSION" >&6;}
