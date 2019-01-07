@@ -1,19 +1,27 @@
 # $FreeBSD$
 
 PORTNAME=	icq
-PORTVERSION=	1.8.2
-PORTREVISION=	9
+PORTVERSION=	1.9.0
+PORTREVISION=	0
 CATEGORIES=	net-im
+PKGNAMEPREFIX=	licq-
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	ICQ plugin for Licq
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	licq:${LICQ_PORT}
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
+RUN_DEPENDS=	licq:${LICQ_PORT}
 
 USES=		cmake
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+USE_GITHUB=	yes
+GH_ACCOUNT=	licq-im
+GH_PROJECT=	licq
+GH_TAGNAME=	f271d55
+WRKSRC=		${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME}/${PORTNAME}
 
 DOCFILES=	README
 PLIST_FILES=	lib/licq/protocol_icq.so \
@@ -23,14 +31,8 @@ LICQ_PORT?=	net-im/licq
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.include "${PORTSDIR}/${LICQ_PORT}/Makefile.inc"
-
-.if ${PORT_OPTIONS:MDOCS}
-post-install:
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>
