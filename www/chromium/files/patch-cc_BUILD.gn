@@ -1,22 +1,21 @@
---- cc/BUILD.gn.orig	2017-12-30 06:26:13.722587000 +0100
-+++ cc/BUILD.gn	2017-12-30 06:26:46.042197000 +0100
-@@ -541,7 +541,7 @@
+--- cc/BUILD.gn.orig	2018-11-19 19:55:02.000000000 +0100
++++ cc/BUILD.gn	2018-12-04 13:07:27.981323000 +0100
+@@ -551,7 +551,7 @@
      "//ui/gl:test_support",
      "//ui/latency",
    ]
 -  if (!is_android) {
 +  if (!is_android && !is_bsd) {
      data_deps = [
-       "//third_party/mesa:osmesa",
+       "//third_party/mesa_headers",
      ]
-@@ -717,10 +717,6 @@
+@@ -751,9 +751,6 @@
      "//ui/gfx/geometry",
      "//ui/gl",
      "//ui/gl:test_support",
 -  ]
--
 -  data_deps = [
--    "//third_party/mesa:osmesa",
+-    "//third_party/mesa_headers",
    ]
  }
  

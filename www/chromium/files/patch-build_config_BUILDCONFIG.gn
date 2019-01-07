@@ -1,5 +1,5 @@
---- build/config/BUILDCONFIG.gn.orig	2018-08-01 00:08:26.000000000 +0200
-+++ build/config/BUILDCONFIG.gn	2018-08-04 13:56:21.383564000 +0200
+--- build/config/BUILDCONFIG.gn.orig	2018-12-12 22:56:02.000000000 +0100
++++ build/config/BUILDCONFIG.gn	2018-12-15 22:33:58.610110000 +0100
 @@ -131,10 +131,10 @@
    is_official_build = false
  
@@ -33,31 +33,31 @@
    # See comments in build/toolchain/cros/BUILD.gn about board compiles.
    if (is_clang) {
      _default_toolchain = "//build/toolchain/linux:clang_$target_cpu"
-@@ -300,6 +300,7 @@
+@@ -301,6 +301,7 @@
    is_nacl = false
    is_posix = false
    is_win = true
 +  is_bsd = false
  } else if (current_os == "mac") {
+   is_aix = false
    is_android = false
-   is_chromeos = false
-@@ -310,6 +311,7 @@
+@@ -312,6 +313,7 @@
    is_nacl = false
    is_posix = true
    is_win = false
 +  is_bsd = false
  } else if (current_os == "android") {
+   is_aix = false
    is_android = true
-   is_chromeos = false
-@@ -320,6 +322,7 @@
+@@ -323,6 +325,7 @@
    is_nacl = false
    is_posix = true
    is_win = false
 +  is_bsd = false
  } else if (current_os == "chromeos") {
+   is_aix = false
    is_android = false
-   is_chromeos = true
-@@ -330,6 +333,7 @@
+@@ -334,6 +337,7 @@
    is_nacl = false
    is_posix = true
    is_win = false
@@ -65,44 +65,45 @@
  } else if (current_os == "nacl") {
    # current_os == "nacl" will be passed by the nacl toolchain definition.
    # It is not set by default or on the command line. We treat is as a
-@@ -343,6 +347,7 @@
+@@ -348,6 +352,7 @@
    is_nacl = true
    is_posix = true
    is_win = false
 +  is_bsd = false
  } else if (current_os == "fuchsia") {
+   is_aix = false
    is_android = false
-   is_chromeos = false
-@@ -353,6 +358,7 @@
+@@ -359,6 +364,7 @@
    is_nacl = false
    is_posix = false
    is_win = false
 +  is_bsd = false
  } else if (current_os == "ios") {
+   is_aix = false
    is_android = false
-   is_chromeos = false
-@@ -363,6 +369,7 @@
+@@ -370,6 +376,7 @@
    is_nacl = false
    is_posix = true
    is_win = false
 +  is_bsd = false
  } else if (current_os == "linux") {
+   is_aix = false
    is_android = false
-   is_chromeos = false
-@@ -373,6 +380,7 @@
+@@ -381,6 +388,7 @@
    is_nacl = false
    is_posix = true
    is_win = false
 +  is_bsd = false
  } else if (current_os == "aix") {
+   is_aix = true
    is_android = false
-   is_chromeos = false
-@@ -383,6 +391,18 @@
+@@ -392,6 +400,19 @@
    is_nacl = false
    is_posix = true
    is_win = false
 +  is_bsd = false
 +} else if (current_os == "bsd") {
++  is_aix = false
 +  is_android = false
 +  is_chromeos = false
 +  is_fuchsia = false

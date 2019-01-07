@@ -1,11 +1,11 @@
---- base/allocator/partition_allocator/partition_alloc_unittest.cc.orig	2018-08-23 19:18:25.616099000 +0200
-+++ base/allocator/partition_allocator/partition_alloc_unittest.cc	2018-08-23 19:34:45.738651000 +0200
-@@ -1297,7 +1297,7 @@
- // not provide a working setrlimit().
- #if !defined(ARCH_CPU_64_BITS) || \
-     (defined(OS_POSIX) &&         \
--     !(defined(OS_FUCHSIA) || defined(OS_MACOSX) || defined(OS_ANDROID)))
-+     !(defined(OS_FUCHSIA) || defined(OS_MACOSX) || defined(OS_ANDROID) || defined(OS_BSD)))
+--- base/allocator/partition_allocator/partition_alloc_unittest.cc.orig	2018-12-04 10:27:52.648233000 +0100
++++ base/allocator/partition_allocator/partition_alloc_unittest.cc	2018-12-04 10:31:38.008927000 +0100
+@@ -1324,7 +1324,7 @@
+ #if !defined(OS_WIN) &&            \
+     (!defined(ARCH_CPU_64_BITS) || \
+      (defined(OS_POSIX) &&         \
+-      !(defined(OS_FUCHSIA) || defined(OS_MACOSX) || defined(OS_ANDROID))))
++      !(defined(OS_FUCHSIA) || defined(OS_MACOSX) || defined(OS_ANDROID) || defined(OS_BSD))))
  
- // This is defined as a separate test class because RepeatedReturnNull
- // test exhausts the process memory, and breaks any test in the same
+ // The following four tests wrap a called function in an expect death statement
+ // to perform their test, because they are non-hermetic. Specifically they are

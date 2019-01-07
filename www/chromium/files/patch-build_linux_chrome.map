@@ -1,0 +1,29 @@
+--- build/linux/chrome.map.orig	2018-08-08 19:10:32 UTC
++++ build/linux/chrome.map
+@@ -1,4 +1,7 @@
+ {
++local:
++  *;
++
+ global:
+   __bss_start;
+   __data_start;
+@@ -20,6 +23,10 @@ global:
+   # Program entry point.
+   _start;
+ 
++  # FreeBSD specific variables.
++  __progname;
++  environ;
++
+   # Memory allocation symbols.  We want chrome and any libraries to
+   # share the same heap, so it is correct to export these symbols.
+   calloc;
+@@ -81,7 +88,4 @@ global:
+   localtime64;
+   localtime64_r;
+   localtime_r;
+-
+-local:
+-  *;
+ };

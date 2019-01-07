@@ -1,24 +1,24 @@
---- chrome/app/generated_resources.grd.orig	2018-02-24 16:25:09.000000000 +0100
-+++ chrome/app/generated_resources.grd	2018-03-03 20:22:12.855371000 +0100
-@@ -6919,7 +6919,7 @@
-         Google Payments
+--- chrome/app/generated_resources.grd.orig	2018-11-19 19:55:02.000000000 +0100
++++ chrome/app/generated_resources.grd	2018-12-04 14:09:27.327735000 +0100
+@@ -5265,7 +5265,7 @@
+         </message>
+       </if>
+ 
+-      <if expr="is_win or (is_linux and not chromeos)">
++      <if expr="is_win or (is_posix and not chromeos)">
+         <message name="IDS_QUIT_ACCELERATOR_TUTORIAL" desc="Instructions for how the user should quit using keyboard shortcuts.">
+           Press |<ph name="ACCELERATOR1">$1<ex>Ctrl</ex></ph>|+|<ph name="ACCELERATOR2">$2<ex>Shift</ex></ph>| followed by |<ph name="ACCELERATOR3">$3<ex>Q</ex></ph>| to exit
+         </message>
+@@ -6117,7 +6117,7 @@
+         Google Pay
        </message>
  
--      <if expr="not is_linux or chromeos">
-+      <if expr="not is_posix or chromeos">
-         <message name="IDS_THEMES_GROUP_NAME" desc="The title of the themes group">
-           Themes
-         </message>
-@@ -6927,7 +6927,7 @@
-       <message name="IDS_THEMES_RESET_BUTTON" desc="The button to reset your theme">
-         Reset to default theme
-       </message>
 -      <if expr="is_linux and not chromeos">
 +      <if expr="is_posix and not chromeos">
-         <message name="IDS_THEMES_GTK_BUTTON" desc="The button to choose GTK colors and icons as the current theme.">
-           Use GTK+ theme
+         <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
+           Use system title bar and borders
          </message>
-@@ -8076,7 +8076,7 @@
+@@ -6942,7 +6942,7 @@
          Set as default
        </message>
  

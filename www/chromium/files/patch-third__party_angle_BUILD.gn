@@ -1,6 +1,6 @@
---- third_party/angle/BUILD.gn.orig	2018-08-01 00:10:50.000000000 +0200
-+++ third_party/angle/BUILD.gn	2018-08-04 20:58:43.991734000 +0200
-@@ -271,6 +271,7 @@
+--- third_party/angle/BUILD.gn.orig	2018-12-03 21:20:20.000000000 +0100
++++ third_party/angle/BUILD.gn	2018-12-15 15:01:55.525312000 +0100
+@@ -283,6 +283,7 @@
          "X11",
          "Xi",
          "Xext",
@@ -8,10 +8,10 @@
        ]
      }
    }
-@@ -844,10 +845,6 @@
+@@ -822,10 +823,6 @@
      libs = []
      if (is_linux) {
-       sources += rebase_path(util_gypi.util_linux_sources, ".", "util")
+       sources += util_linux_sources
 -      libs += [
 -        "rt",
 -        "dl",

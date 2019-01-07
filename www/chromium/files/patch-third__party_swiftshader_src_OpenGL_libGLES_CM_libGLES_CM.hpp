@@ -1,9 +1,9 @@
---- third_party/swiftshader/src/OpenGL/libGLES_CM/libGLES_CM.hpp.orig	2017-06-26 22:23:31.609734000 +0200
-+++ third_party/swiftshader/src/OpenGL/libGLES_CM/libGLES_CM.hpp	2017-06-26 22:23:56.904096000 +0200
-@@ -267,7 +267,7 @@
- 				#else
- 					const char *libGLES_CM_lib[] = {"/vendor/lib/egl/libGLESv1_CM_swiftshader.so"};
+--- third_party/swiftshader/src/OpenGL/libGLES_CM/libGLES_CM.hpp.orig	2018-12-03 21:20:24.000000000 +0100
++++ third_party/swiftshader/src/OpenGL/libGLES_CM/libGLES_CM.hpp	2018-12-15 16:45:47.909334000 +0100
+@@ -261,7 +261,7 @@
  				#endif
+ 			#elif defined(__ANDROID__)
+ 				const char *libGLES_CM_lib[] = {"libGLESv1_CM_swiftshader.so", "libGLESv1_CM_swiftshader.so"};
 -			#elif defined(__linux__)
 +			#elif defined(__linux__) || defined(__FreeBSD__)
  				#if defined(__LP64__)

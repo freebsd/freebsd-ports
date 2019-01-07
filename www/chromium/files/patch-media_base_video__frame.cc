@@ -1,6 +1,6 @@
---- media/base/video_frame.cc.orig	2017-06-05 19:03:08 UTC
-+++ media/base/video_frame.cc
-@@ -53,7 +53,7 @@ static std::string StorageTypeToString(
+--- media/base/video_frame.cc.orig	2018-12-03 21:17:03.000000000 +0100
++++ media/base/video_frame.cc	2018-12-13 23:34:19.884280000 +0100
+@@ -66,7 +66,7 @@
        return "OWNED_MEMORY";
      case VideoFrame::STORAGE_SHMEM:
        return "SHMEM";
@@ -9,7 +9,7 @@
      case VideoFrame::STORAGE_DMABUFS:
        return "DMABUFS";
  #endif
-@@ -69,7 +69,7 @@ static std::string StorageTypeToString(
+@@ -82,7 +82,7 @@
  // static
  static bool IsStorageTypeMappable(VideoFrame::StorageType storage_type) {
    return
@@ -18,7 +18,7 @@
        // This is not strictly needed but makes explicit that, at VideoFrame
        // level, DmaBufs are not mappable from userspace.
        storage_type != VideoFrame::STORAGE_DMABUFS &&
-@@ -324,7 +324,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalYuva
+@@ -379,7 +379,7 @@
    return frame;
  }
  
@@ -26,8 +26,8 @@
 +#if defined(OS_LINUX) || defined(OS_BSD)
  // static
  scoped_refptr<VideoFrame> VideoFrame::WrapExternalDmabufs(
-     VideoPixelFormat format,
-@@ -436,7 +436,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
+     const VideoFrameLayout& layout,
+@@ -502,7 +502,7 @@
      wrapping_frame->data_[i] = frame->data(i);
    }
  
@@ -35,13 +35,13 @@
 +#if defined(OS_LINUX) || defined(OS_BSD)
    // If there are any |dmabuf_fds_| plugged in, we should duplicate them.
    if (frame->storage_type() == STORAGE_DMABUFS) {
-     std::vector<int> original_fds;
-@@ -722,7 +722,7 @@ size_t VideoFrame::shared_memory_offset() const {
+     wrapping_frame->dmabuf_fds_ = DuplicateFDs(frame->dmabuf_fds_);
+@@ -839,7 +839,7 @@
    return shared_memory_offset_;
  }
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
- int VideoFrame::DmabufFd(size_t plane) const {
+ const std::vector<base::ScopedFD>& VideoFrame::DmabufFds() const {
    DCHECK_EQ(storage_type_, STORAGE_DMABUFS);
-   DCHECK(IsValidPlane(plane, format_));
+ 

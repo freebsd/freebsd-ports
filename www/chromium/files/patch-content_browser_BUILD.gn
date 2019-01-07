@@ -1,9 +1,9 @@
---- content/browser/BUILD.gn.orig	2018-08-01 00:08:43.000000000 +0200
-+++ content/browser/BUILD.gn	2018-08-04 21:53:48.299617000 +0200
-@@ -1802,11 +1802,6 @@
-       "tracing/cros_tracing_agent.cc",
+--- content/browser/BUILD.gn.orig	2018-12-13 20:37:36.820277000 +0100
++++ content/browser/BUILD.gn	2018-12-13 20:38:05.546755000 +0100
+@@ -1889,11 +1889,6 @@
        "tracing/cros_tracing_agent.h",
      ]
+     deps += [ "//chromeos/resources" ]
 -  } else {
 -    sources += [
 -      "memory/memory_monitor_linux.cc",

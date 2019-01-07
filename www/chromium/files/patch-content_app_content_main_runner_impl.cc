@@ -1,6 +1,6 @@
---- content/app/content_main_runner_impl.cc.orig	2018-08-01 00:08:43.000000000 +0200
-+++ content/app/content_main_runner_impl.cc	2018-08-04 18:50:49.262605000 +0200
-@@ -83,10 +83,10 @@
+--- content/app/content_main_runner_impl.cc.orig	2018-12-03 21:16:54.000000000 +0100
++++ content/app/content_main_runner_impl.cc	2018-12-13 20:19:01.539883000 +0100
+@@ -90,10 +90,10 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -13,16 +13,7 @@
  #include "sandbox/linux/services/libc_interceptor.h"
  #include "services/service_manager/zygote/zygote_main.h"
  #endif
-@@ -150,7 +150,7 @@
- namespace content {
- extern int GpuMain(const content::MainFunctionParams&);
- #if BUILDFLAG(ENABLE_PLUGINS)
--#if !defined(OS_LINUX)
-+#if !defined(OS_LINUX) && !defined(OS_BSD)
- extern int PluginMain(const content::MainFunctionParams&);
- #endif
- extern int PpapiPluginMain(const MainFunctionParams&);
-@@ -722,11 +722,11 @@
+@@ -627,11 +627,11 @@
                     base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !OS_ANDROID
  
