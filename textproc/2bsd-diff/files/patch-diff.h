@@ -1,6 +1,6 @@
---- diff.h.orig	Thu Aug 29 06:44:35 1985
-+++ diff.h	Wed Mar 19 01:35:49 2003
-@@ -5,10 +5,11 @@
+--- diff.h.orig	1985-08-28 21:44:35 UTC
++++ diff.h
+@@ -5,11 +5,17 @@
   */
  
  #include <stdio.h>
@@ -11,9 +11,15 @@
 -#include <sys/dir.h>
 +#include <dirent.h>
  #include <signal.h>
++#include <string.h>
++#include <unistd.h>
++#include <fcntl.h>
++#include <sys/wait.h>
++#include <arpa/inet.h>
  
  /*
-@@ -61,7 +62,7 @@
+  * Output format options
+@@ -61,7 +67,7 @@ int	context;		/* lines of context to be printed */
   */
  int	status;
  int	anychange;
@@ -22,7 +28,7 @@
  
  /*
   * Variables for diffdir.
-@@ -77,9 +78,9 @@
+@@ -77,9 +83,20 @@ char	**diffargv;		/* option list to pass to recursive 
  char	*file1, *file2, *efile1, *efile2;
  struct	stat stb1, stb2;
  
@@ -35,3 +41,14 @@
 +sig_t	done();
  
  extern	char diffh[], diff[], pr[];
++
++/* declarations */
++void diffdir(char **argv);
++void diffreg();
++void noroom();
++void setfile(char **fpp, char **epp, char *file);
++int useless(register char *cp);
++int min(int, int);
++int max(int, int);
++void prune();
++int skipline(int);

@@ -1,7 +1,5 @@
-This is the original diff program from 2.11BSD.  It works better
-with very large files on systems with datasize limits.
+2.11BSD's original diff works significantly better with very large
+files with default datasize limits.
 
-Default FreeBSD limits datasize to 524288 kbytes.  This means that
-GNU diff processes that require more than this much ram will fail.
-The 2.11BSD diff did not load the files in core and could operate
-on considerably less ram.
+GNU diff fails with out of memmory when operating on files at or
+above the default limit to datasize.
