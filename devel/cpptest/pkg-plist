@@ -10,6 +10,6 @@ include/cpptest-time.h
 include/cpptest.h
 lib/libcpptest.a
 lib/libcpptest.so
-lib/libcpptest.so.0
-lib/libcpptest.so.0.0.7
+lib/libcpptest.so.1
+lib/libcpptest.so.1.0.8
 libdata/pkgconfig/libcpptest.pc
