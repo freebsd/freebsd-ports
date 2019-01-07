@@ -20,6 +20,7 @@ LIB_DEPENDS=	libapron.so:math/apron \
 		libppl.so:devel/ppl
 
 USES=		cmake ncurses python sqlite
+USE_PYTHON=	py3kplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	NASA-SW-VnV
 
