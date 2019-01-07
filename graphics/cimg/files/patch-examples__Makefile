@@ -1,6 +1,6 @@
---- examples/Makefile.orig	2018-11-30 12:37:36 UTC
+--- examples/Makefile.orig	2019-01-07 12:08:23 UTC
 +++ examples/Makefile
-@@ -89,7 +89,7 @@ VERSION2 = $(shell grep 'cimg_version\ '
+@@ -89,7 +89,7 @@ VERSION2 = $(shell grep 'cimg_version\ ' ../CImg.h | t
  VERSION3 = $(shell grep 'cimg_version\ ' ../CImg.h | tail -c2 | head -c1)
  SVERSION=$(VERSION1).$(VERSION2).$(VERSION3)
  
@@ -13,12 +13,12 @@
  endif
  
  CXXVER = $(CXX)
--CFLAGS = -I.. -Wall -Wextra -Wfatal-errors
+-CFLAGS = -I.. -Wall -Wextra -Wfatal-errors -Werror=unknown-pragmas -Werror=unused-label
 +CFLAGS = -I.. -Wall -Wextra $(CPPFLAGS)
  LIBS = -lm
  ifdef IS_GCC
  CXXVER = $(shell $(CXX) -v 2>&1 | tail -n 1)
-@@ -144,9 +144,9 @@ DEBUG_CFLAGS = -Dcimg_verbosity=3 -Dcimg
+@@ -144,9 +144,9 @@ DEBUG_CFLAGS = -Dcimg_verbosity=3 -Dcimg_strict_warnin
  VT100_CFLAGS = -Dcimg_use_vt100
  
  # Flags to enable code optimization by the compiler.
@@ -39,7 +39,7 @@
  
  # Flags to enable native support for MINC2 image files, using the MINC2 library.
  # ( http://en.wikibooks.org/wiki/MINC/Reference/MINC2.0_Users_Guide )
-@@ -229,16 +229,16 @@ MINC2_LIBS = -lminc_io -lvolume_io2 -lmi
+@@ -229,16 +229,16 @@ MINC2_LIBS = -lminc_io -lvolume_io2 -lminc2 -lnetcdf -
  # Flags to enable native support for EXR image files, using the OpenEXR library.
  # ( http://www.openexr.com/ )
  OPENEXR_DEFINE = -Dcimg_use_openexr
