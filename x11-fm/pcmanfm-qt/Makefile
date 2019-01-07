@@ -13,7 +13,7 @@ COMMENT=	LXQt file manager
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libmenu-cache.so:x11/menu-cache \
-		libfm.so:x11/libfm \
+		libfm.so:x11/libfm@gtk2 \
 		libexif.so:graphics/libexif
 
 USES=		cmake compiler:c++11-lib desktop-file-utils \

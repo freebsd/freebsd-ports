@@ -1,6 +1,7 @@
 bin/libfm-pref-apps
 bin/lxshortcut
 @sample etc/xdg/libfm/libfm.conf.sample
+include/libfm/fm-action.h
 include/libfm/fm-actions.h
 include/libfm/fm-app-chooser-combo-box.h
 include/libfm/fm-app-chooser-dlg.h
@@ -67,19 +68,19 @@ include/libfm/fm-thumbnail.h
 include/libfm/fm-thumbnailer.h
 include/libfm/fm-utils.h
 include/libfm/fm.h
-lib/libfm-gtk.so
-lib/libfm-gtk.so.4
-lib/libfm-gtk.so.4.0.5
+lib/libfm-%%GTKVERSION%%.so
+lib/libfm-%%GTKVERSION%%.so.4
+lib/libfm-%%GTKVERSION%%.so.4.1.2
 lib/libfm.so
 lib/libfm.so.4
-lib/libfm.so.4.0.5
+lib/libfm.so.4.1.2
 lib/libfm/modules/gtk-fileprop-x-desktop.so
 lib/libfm/modules/gtk-fileprop-x-shortcut.so
 lib/libfm/modules/gtk-menu-actions.so
 lib/libfm/modules/gtk-menu-trash.so
 lib/libfm/modules/vfs-menu.so
 lib/libfm/modules/vfs-search.so
-libdata/pkgconfig/libfm-gtk.pc
+libdata/pkgconfig/libfm-%%GTKVERSION%%.pc
 libdata/pkgconfig/libfm.pc
 man/man1/libfm-pref-apps.1.gz
 man/man1/lxshortcut.1.gz
