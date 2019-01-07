@@ -17,7 +17,4 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 MAKE_ARGS=	CC=${CC} CCC=${CXX}
 
-#pre-configure:
-#	@cd ${WRKSRC} && ./autogen.sh
-
 .include <bsd.port.mk>
