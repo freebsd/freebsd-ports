@@ -34,7 +34,6 @@ GDCM_PATCH=	8
 # Change this whenever VTK is updated
 VTK6_VERSION=	6.2
 
-USES=		alias cmake tar:bzip2 ssl
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 CMAKE_ARGS=	-DGDCM_USE_SYSTEM_OPENSSL:BOOL=ON \
