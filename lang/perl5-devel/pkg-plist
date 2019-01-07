@@ -2278,7 +2278,9 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/unicore/lib/Perl/_PerlFol.pl
 %%PRIV_LIB%%/unicore/lib/Perl/_PerlIDC.pl
 %%PRIV_LIB%%/unicore/lib/Perl/_PerlIDS.pl
+%%PRIV_LIB%%/unicore/lib/Perl/_PerlIsI.pl
 %%PRIV_LIB%%/unicore/lib/Perl/_PerlNch.pl
+%%PRIV_LIB%%/unicore/lib/Perl/_PerlNon.pl
 %%PRIV_LIB%%/unicore/lib/Perl/_PerlPat.pl
 %%PRIV_LIB%%/unicore/lib/Perl/_PerlPr2.pl
 %%PRIV_LIB%%/unicore/lib/Perl/_PerlPro.pl
