@@ -1,6 +1,6 @@
---- build/config/compiler/BUILD.gn.orig	2018-08-01 00:08:26.000000000 +0200
-+++ build/config/compiler/BUILD.gn	2018-08-05 04:12:50.165240000 +0200
-@@ -51,7 +51,7 @@
+--- build/config/compiler/BUILD.gn.orig	2018-12-12 22:56:02.000000000 +0100
++++ build/config/compiler/BUILD.gn	2018-12-16 01:04:15.942884000 +0100
+@@ -53,7 +53,7 @@
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
    linux_use_bundled_binutils =
@@ -9,7 +9,7 @@
        (current_cpu == "x64" || current_cpu == "x86")
    binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
                                root_build_dir)
-@@ -266,7 +266,7 @@
+@@ -274,7 +274,7 @@
      # Linker warnings.
      if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
          !(is_android && use_order_profiling) && !is_mac && !is_ios &&
@@ -18,11 +18,14 @@
        # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
        # TODO(lizeb,pasko): Fix link errors when linking with order_profiling=1
        # crbug.com/485542
-@@ -380,12 +380,6 @@
+@@ -391,15 +391,6 @@
        "-Wl,-z,now",
        "-Wl,-z,relro",
      ]
--    if (!using_sanitizer) {
+-
+-    # Compiler instrumentation can introduce dependencies in DSOs to symbols in
+-    # the executable they are loaded into, so they are unresolved at link-time.
+-    if (!using_sanitizer && !is_safestack) {
 -      ldflags += [
 -        "-Wl,-z,defs",
 -        "-Wl,--as-needed",
@@ -31,16 +34,16 @@
    }
  
    # Linux-specific compiler flags setup.
-@@ -489,7 +483,7 @@
+@@ -502,7 +493,7 @@
+     }
    }
  
-   if (is_clang && !is_nacl && current_toolchain == host_toolchain &&
--      target_os != "chromeos") {
-+      target_os != "chromeos" && !is_bsd) {
+-  if (is_clang && !is_nacl && !use_xcode_clang) {
++  if (is_clang && !is_nacl && !use_xcode_clang && !is_bsd) {
      cflags += [
        # TODO(hans): Remove this once Clang generates better optimized debug info
        # by default. https://crbug.com/765793
-@@ -734,7 +728,7 @@
+@@ -793,7 +784,7 @@
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -49,18 +52,21 @@
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1415,10 +1409,6 @@
- 
-         # TODO(hans): https://crbug.com/766891
-         "-Wno-null-pointer-arithmetic",
+@@ -1498,13 +1489,6 @@
+         cflags += [
+           # TODO(thakis): https://crbug.com/753973
+           "-Wno-enum-compare-switch",
 -
--        # Ignore warnings about MSVC optimization pragmas.
--        # TODO(thakis): Only for no_chromium_code? http://crbug.com/505314
--        "-Wno-ignored-pragma-optimize",
-       ]
-     } else if (use_xcode_clang) {
-       cflags += [
-@@ -1594,7 +1584,7 @@
+-          # Ignore warnings about MSVC optimization pragmas.
+-          # TODO(thakis): Only for no_chromium_code? http://crbug.com/505314
+-          "-Wno-ignored-pragma-optimize",
+-
+-          # TODO(hans): https://crbug.com/890307
+-          "-Wno-defaulted-function-deleted",
+         ]
+       }
+     }
+@@ -1691,7 +1675,7 @@
    # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
    # have a "thin archive" mode (it does accept -T, but it means truncating
    # archive names to 16 characters, which is not what we want).
@@ -69,7 +75,7 @@
      arflags = [ "-T" ]
    }
  }
-@@ -2119,7 +2109,7 @@
+@@ -2264,7 +2248,7 @@
          # [1] crrev.com/a81d5ade0b043208e06ad71a38bcf9c348a1a52f
          cflags += [ "-gdwarf-3" ]
        }
@@ -78,10 +84,10 @@
      }
      if (use_debug_fission && !is_nacl && !is_android) {
        # NOTE: Some Chrome OS builds globally set |use_debug_fission| to true,
-@@ -2139,7 +2129,7 @@
+@@ -2284,7 +2268,7 @@
      # DWARF info may be corrupt; offsets in a range list entry are in different
      # sections" there.  Maybe just a bug in nacl_switch_32.S.
-     if (!is_mac && !is_ios && !is_nacl && target_cpu != "x86" &&
+     if (!is_mac && !is_ios && !is_nacl && current_cpu != "x86" &&
 -        (use_gold || use_lld)) {
 +        (use_gold || use_lld) && !is_bsd) {
        if (is_clang) {

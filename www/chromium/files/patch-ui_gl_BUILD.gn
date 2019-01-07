@@ -1,7 +1,7 @@
---- ui/gl/BUILD.gn.orig	2018-08-01 00:09:48.000000000 +0200
-+++ ui/gl/BUILD.gn	2018-08-04 23:32:57.498139000 +0200
-@@ -214,7 +214,7 @@
-       }
+--- ui/gl/BUILD.gn.orig	2018-12-03 21:18:06.000000000 +0100
++++ ui/gl/BUILD.gn	2018-12-15 20:36:26.132070000 +0100
+@@ -203,7 +203,7 @@
+       ]
      }
  
 -    if (is_posix && !is_fuchsia && !is_mac) {
@@ -9,22 +9,3 @@
        # Windows has USE_EGL but doesn't support base::FileDescriptor.
        # libsync isn't supported or needed on MacOSX.
        # Fuchsia is excluded due to a libsync dependency and because it's
-@@ -311,7 +311,6 @@
-     data_deps += [
-       "//third_party/angle:libEGL",
-       "//third_party/angle:libGLESv2",
--      "//third_party/mesa:osmesa",
-       "//third_party/swiftshader",
-     ]
-   }
-@@ -545,10 +544,6 @@
-     "//ui/gl/init",
-     "//ui/platform_window",
-     "//ui/platform_window:platform_impls",
--  ]
--
--  data_deps = [
--    "//third_party/mesa:osmesa",
-   ]
- 
-   if (use_x11) {

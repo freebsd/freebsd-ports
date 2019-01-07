@@ -1,5 +1,5 @@
---- components/download/quarantine/quarantine_linux.cc.orig	2018-07-19 22:21:43.332341000 +0200
-+++ components/download/quarantine/quarantine_linux.cc	2018-07-19 22:24:04.361819000 +0200
+--- components/download/quarantine/quarantine_linux.cc.orig	2018-12-03 21:16:48.000000000 +0100
++++ components/download/quarantine/quarantine_linux.cc	2018-12-13 18:59:24.718194000 +0100
 @@ -2,11 +2,15 @@
  // Use of this source code is governed by a BSD-style license that can be
  // found in the LICENSE file.
@@ -15,11 +15,11 @@
 +#endif
  
  #include "base/files/file_path.h"
- #include "base/files/file_util.h"
-@@ -29,17 +33,20 @@
+ #include "base/logging.h"
+@@ -24,12 +28,14 @@
                                size_t value_size,
                                int flags) {
-   base::AssertBlockingAllowed();
+   base::ScopedBlockingCall scoped_blocking_call(base::BlockingType::MAY_BLOCK);
 +#if !defined(OS_BSD)
    int result = setxattr(path, name, value, value_size, flags);
    if (result) {
@@ -27,23 +27,7 @@
                   << path;
      return false;
    }
-+#endif
++#endif // defined(OS_BSD)
    return true;
  }
  
- std::string GetExtendedFileAttribute(const char* path, const char* name) {
-   base::AssertBlockingAllowed();
-+#if !defined(OS_BSD)
-   ssize_t len = getxattr(path, name, nullptr, 0);
-   if (len <= 0)
-     return std::string();
-@@ -49,6 +56,9 @@
-   if (len < static_cast<ssize_t>(buffer.size()))
-     return std::string();
-   return std::string(buffer.begin(), buffer.end());
-+#else
-+  return std::string();
-+#endif
- }
- 
- }  // namespace

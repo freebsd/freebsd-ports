@@ -1,6 +1,6 @@
---- net/base/address_tracker_linux.cc.orig	2018-08-01 00:08:53.000000000 +0200
-+++ net/base/address_tracker_linux.cc	2018-08-04 20:12:48.684622000 +0200
-@@ -20,96 +20,10 @@
+--- net/base/address_tracker_linux.cc.orig	2018-12-03 21:17:06.000000000 +0100
++++ net/base/address_tracker_linux.cc	2018-12-14 00:19:15.361979000 +0100
+@@ -22,96 +22,10 @@
  namespace net {
  namespace internal {
  
@@ -99,7 +99,7 @@
  }
  
  AddressTrackerLinux::AddressTrackerLinux()
-@@ -152,93 +66,8 @@
+@@ -154,93 +68,8 @@
  }
  
  void AddressTrackerLinux::Init() {
@@ -195,7 +195,7 @@
  }
  
  void AddressTrackerLinux::AbortAndForceOnline() {
-@@ -249,25 +78,6 @@
+@@ -251,25 +80,6 @@
    connection_type_initialized_cv_.Broadcast();
  }
  
@@ -221,7 +221,7 @@
  NetworkChangeNotifier::ConnectionType
  AddressTrackerLinux::GetCurrentConnectionType() {
    // http://crbug.com/125097
-@@ -318,102 +128,7 @@
+@@ -328,102 +138,7 @@
                                          bool* address_changed,
                                          bool* link_changed,
                                          bool* tunnel_changed) {
@@ -257,7 +257,7 @@
 -            msg->ifa_flags |= IFA_F_DEPRECATED;
 -          // Only indicate change if the address is new or ifaddrmsg info has
 -          // changed.
--          AddressMap::iterator it = address_map_.find(address);
+-          auto it = address_map_.find(address);
 -          if (it == address_map_.end()) {
 -            address_map_.insert(it, std::make_pair(address, *msg));
 -            *address_changed = true;
@@ -325,7 +325,7 @@
  }
  
  void AddressTrackerLinux::OnFileCanReadWithoutBlocking(int fd) {
-@@ -450,34 +165,7 @@
+@@ -460,31 +175,7 @@
  }
  
  void AddressTrackerLinux::UpdateCurrentConnectionType() {
@@ -333,12 +333,9 @@
 -  std::unordered_set<int> online_links = GetOnlineLinks();
 -
 -  // Strip out tunnel interfaces from online_links
--  for (std::unordered_set<int>::const_iterator it = online_links.begin();
--       it != online_links.end();) {
+-  for (auto it = online_links.cbegin(); it != online_links.cend();) {
 -    if (IsTunnelInterface(*it)) {
--      std::unordered_set<int>::const_iterator tunnel_it = it;
--      ++it;
--      online_links.erase(*tunnel_it);
+-      it = online_links.erase(it);
 -    } else {
 -      ++it;
 -    }

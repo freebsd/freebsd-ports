@@ -1,6 +1,6 @@
---- services/device/hid/hid_connection_freebsd.cc.orig	2018-07-20 13:47:11.556393000 +0200
-+++ services/device/hid/hid_connection_freebsd.cc	2018-07-20 15:22:57.210103000 +0200
-@@ -0,0 +1,277 @@
+--- services/device/hid/hid_connection_freebsd.cc.orig	2018-12-27 21:14:54.188404000 +0100
++++ services/device/hid/hid_connection_freebsd.cc	2018-12-29 17:34:19.982594000 +0100
+@@ -0,0 +1,191 @@
 +// Copyright (c) 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -17,7 +17,7 @@
 +#include "base/posix/eintr_wrapper.h"
 +#include "base/single_thread_task_runner.h"
 +#include "base/strings/stringprintf.h"
-+#include "base/task_scheduler/post_task.h"
++#include "base/task/post_task.h"
 +#include "base/threading/thread_restrictions.h"
 +#include "base/threading/thread_task_runner_handle.h"
 +#include "components/device_event_log/device_event_log.h"
@@ -46,10 +46,6 @@
 +  void Start() {
 +    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
 +    base::AssertBlockingAllowed();
-+
-+    file_watcher_ = base::FileDescriptorWatcher::WatchReadable(
-+        fd_.get(), base::Bind(&BlockingTaskHelper::OnFileCanReadWithoutBlocking,
-+                              base::Unretained(this)));
 +  }
 +
 +  void Write(scoped_refptr<base::RefCountedBytes> buffer,
@@ -126,49 +122,12 @@
 +  }
 +
 + private:
-+  void OnFileCanReadWithoutBlocking() {
-+    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
-+
-+    scoped_refptr<base::RefCountedBytes> buffer(new base::RefCountedBytes(report_buffer_size_));
-+    unsigned char* data = buffer->front();
-+    size_t length = report_buffer_size_;
-+    if (!has_report_id_) {
-+      // FreeBSD will not prefix the buffer with a report ID if report IDs are not
-+      // used by the device. Prefix the buffer with 0.
-+      *data++ = 0;
-+      length--;
-+    }
-+
-+    ssize_t bytes_read = HANDLE_EINTR(read(fd_.get(), data, length));
-+    if (bytes_read < 0) {
-+      if (errno != EAGAIN) {
-+        HID_PLOG(EVENT) << "Read failed";
-+        // This assumes that the error is unrecoverable and disables reading
-+        // from the device until it has been re-opened.
-+        // TODO(reillyg): Investigate starting and stopping the file descriptor
-+        // watcher in response to pending read requests so that per-request
-+        // errors can be returned to the client.
-+        file_watcher_.reset();
-+      }
-+      return;
-+    }
-+    if (!has_report_id_) {
-+      // Behave as if the byte prefixed above as the the report ID was read.
-+      bytes_read++;
-+    }
-+
-+    origin_task_runner_->PostTask(
-+        FROM_HERE, base::BindOnce(&HidConnectionFreeBSD::ProcessInputReport,
-+                              connection_, buffer, bytes_read));
-+  }
-+
 +  SEQUENCE_CHECKER(sequence_checker_);
 +  base::ScopedFD fd_;
 +  size_t report_buffer_size_;
 +  bool has_report_id_;
 +  base::WeakPtr<HidConnectionFreeBSD> connection_;
 +  const scoped_refptr<base::SequencedTaskRunner> origin_task_runner_;
-+  std::unique_ptr<base::FileDescriptorWatcher::Controller> file_watcher_;
 +
 +  DISALLOW_COPY_AND_ASSIGN(BlockingTaskHelper);
 +};
@@ -195,18 +154,6 @@
 +  // and 2) any tasks posted to this task runner that refer to this file will
 +  // complete before it is closed.
 +  blocking_task_runner_->DeleteSoon(FROM_HERE, helper_.release());
-+
-+  while (!pending_reads_.empty()) {
-+    std::move(pending_reads_.front().callback).Run(false, NULL, 0);
-+    pending_reads_.pop();
-+  }
-+}
-+
-+void HidConnectionFreeBSD::PlatformRead(ReadCallback callback) {
-+  PendingHidRead pending_read;
-+  pending_read.callback = std::move(callback);
-+  pending_reads_.push(std::move(pending_read));
-+  ProcessReadQueue();
 +}
 +
 +void HidConnectionFreeBSD::PlatformWrite(scoped_refptr<base::RefCountedBytes> buffer,
@@ -242,39 +189,6 @@
 +      FROM_HERE,
 +      base::BindOnce(&BlockingTaskHelper::SendFeatureReport,
 +                 base::Unretained(helper_.get()), buffer, std::move(callback)));
-+}
-+
-+void HidConnectionFreeBSD::ProcessInputReport(
-+    scoped_refptr<base::RefCountedBytes> buffer,
-+    size_t size) {
-+  DCHECK(thread_checker().CalledOnValidThread());
-+  DCHECK_GE(size, 1u);
-+
-+  uint8_t report_id = buffer->data()[0];
-+  if (IsReportIdProtected(report_id))
-+    return;
-+
-+  PendingHidReport report;
-+  report.buffer = buffer;
-+  report.size = size;
-+  pending_reports_.push(report);
-+  ProcessReadQueue();
-+}
-+
-+void HidConnectionFreeBSD::ProcessReadQueue() {
-+  DCHECK(thread_checker().CalledOnValidThread());
-+
-+  // Hold a reference to |this| to prevent a callback from freeing this object
-+  // during the loop.
-+  scoped_refptr<HidConnectionFreeBSD> self(this);
-+  while (pending_reads_.size() && pending_reports_.size()) {
-+    PendingHidRead read = std::move(pending_reads_.front());
-+    PendingHidReport report = std::move(pending_reports_.front());
-+
-+    pending_reads_.pop();
-+    pending_reports_.pop();
-+    std::move(read.callback).Run(true, std::move(report.buffer), report.size);
-+  }
 +}
 +
 +}  // namespace device

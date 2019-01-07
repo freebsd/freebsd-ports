@@ -1,5 +1,5 @@
---- services/device/hid/hid_service_freebsd.cc.orig	2018-07-20 13:47:11.569682000 +0200
-+++ services/device/hid/hid_service_freebsd.cc	2018-07-20 15:20:19.980971000 +0200
+--- services/device/hid/hid_service_freebsd.cc.orig	2018-12-27 21:14:54.193271000 +0100
++++ services/device/hid/hid_service_freebsd.cc	2018-12-28 15:20:01.597855000 +0100
 @@ -0,0 +1,371 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
@@ -29,7 +29,7 @@
 +#include "base/strings/sys_string_conversions.h"
 +#include "base/strings/string_util.h"
 +#include "base/strings/string_split.h"
-+#include "base/task_scheduler/post_task.h"
++#include "base/task/post_task.h"
 +#include "base/threading/thread_restrictions.h"
 +#include "base/threading/thread_task_runner_handle.h"
 +#include "components/device_event_log/device_event_log.h"

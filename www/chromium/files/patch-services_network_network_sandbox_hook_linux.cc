@@ -1,5 +1,5 @@
---- services/network/network_sandbox_hook_linux.cc.orig	2018-07-20 00:26:50.262722000 +0200
-+++ services/network/network_sandbox_hook_linux.cc	2018-07-20 00:17:37.945110000 +0200
+--- services/network/network_sandbox_hook_linux.cc.orig	2018-12-03 21:17:09.000000000 +0100
++++ services/network/network_sandbox_hook_linux.cc	2018-12-14 00:53:22.847706000 +0100
 @@ -14,6 +14,7 @@
  namespace network {
  
@@ -11,8 +11,8 @@
 @@ -32,6 +33,7 @@
        service_manager::SandboxLinux::PreSandboxHook(), options);
  
-   instance->EngageNamespaceSandbox(false /* from_zygote */);
-+#endif
+   instance->EngageNamespaceSandboxIfPossible();
++#endif // defined(OS_BSD)
    return true;
  }
  

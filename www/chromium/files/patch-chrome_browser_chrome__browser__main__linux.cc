@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_main_linux.cc.orig	2017-06-05 19:03:02 UTC
-+++ chrome/browser/chrome_browser_main_linux.cc
-@@ -77,12 +77,14 @@ void ChromeBrowserMainPartsLinux::PreProfileInit() {
+--- chrome/browser/chrome_browser_main_linux.cc.orig	2018-12-03 21:16:38.000000000 +0100
++++ chrome/browser/chrome_browser_main_linux.cc	2018-12-05 14:26:26.555958000 +0100
+@@ -90,12 +90,14 @@
  void ChromeBrowserMainPartsLinux::PostProfileInit() {
    ChromeBrowserMainPartsPosix::PostProfileInit();
  
@@ -13,15 +13,15 @@
  void ChromeBrowserMainPartsLinux::PostMainMessageLoopStart() {
 -#if !defined(OS_CHROMEOS)
 +#if !defined(OS_CHROMEOS) && !defined(OS_BSD)
-   bluez::DBusThreadManagerLinux::Initialize();
-   bluez::BluezDBusManager::Initialize(
-       bluez::DBusThreadManagerLinux::Get()->GetSystemBus(), false);
-@@ -92,7 +94,7 @@ void ChromeBrowserMainPartsLinux::PostMainMessageLoopS
+   bluez::BluezDBusThreadManager::Initialize();
+   bluez::BluezDBusManager::Initialize();
+ #endif
+@@ -104,7 +106,7 @@
  }
  
  void ChromeBrowserMainPartsLinux::PostDestroyThreads() {
 -#if !defined(OS_CHROMEOS)
 +#if !defined(OS_CHROMEOS) && !defined(OS_BSD)
    bluez::BluezDBusManager::Shutdown();
-   bluez::DBusThreadManagerLinux::Shutdown();
+   bluez::BluezDBusThreadManager::Shutdown();
  #endif
