@@ -2,7 +2,7 @@
 
 PORTNAME=	wlroots
 DISTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -38,16 +38,12 @@ OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
 OPTIONS_SUB=	yes
 
-X11_LIB_DEPENDS=libxcb-icccm.so:x11/xcb-util-wm
+X11_LIB_DEPENDS=libxcb-errors.so:x11/xcb-util-errors \
+		libxcb-icccm.so:x11/xcb-util-wm
 X11_RUN_DEPENDS=Xwayland:x11-servers/xwayland
 X11_USE=	XORG=x11,xcb
 X11_MESON_ON=	-Dx11-backend=enabled  -Dxcb-icccm=enabled  -Dxwayland=enabled
 X11_MESON_OFF=	-Dx11-backend=disabled -Dxcb-icccm=disabled -Dxwayland=disabled
-
-# https://github.com/swaywm/wlroots/commit/f8428d1063c6
-.if exists(${.CURDIR:H:H}/x11/xcb-util-errors)
-X11_LIB_DEPENDS+=	libxcb-errors.so:x11/xcb-util-errors
-.endif
 
 post-patch:
 # Ignore unused dependencies
