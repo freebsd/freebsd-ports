@@ -46,7 +46,6 @@ APACHE_DESC=	Apache as HTTP/HTTPS server
 LIGHTTPD_DESC=	Lighttpd as HTTP/HTTPS server
 NGINX_DESC=	Nginx as HTTP/HTTPS server
 MYSQLC_DESC=	MySQL database client only
-MYSQLS_DESC=	MySQL database server and client
 POSTFIX_DESC=	Postfix as SMTP server
 EXIM_DESC=	Exim as SMTP server
 DKIM_DESC=	OpenDKIM for DomainKeys Identified Mail
@@ -64,7 +63,7 @@ LOGROTATE_DESC=	Logrotate for log rotation
 MYSQLS_DESC=	Depend on MySQL server
 NLS_DESC=	Enable NLS support (required for webFTP frontend)
 
-OPTIONS_DEFAULT=	APACHE MYSQLS POSTFIX DOVECOT2 PROFTPD WEBALIZER MYSQLS PCNTL
+OPTIONS_DEFAULT=	APACHE POSTFIX DOVECOT2 PROFTPD WEBALIZER MYSQLS PCNTL
 
 POSTFIX_RUN_DEPENDS=	postfix:mail/postfix
 

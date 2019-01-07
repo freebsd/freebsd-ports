@@ -40,7 +40,6 @@ AVX_CMAKE_BOOL=		WITH_AVX
 UPNP_DESC=		Include support for UPnP client
 UPNP_CMAKE_BOOL=	WITH_UPNP
 UPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
-UPNP_DESC=		Include support for UPnP client
 HARDENING_CMAKE_BOOL=	WITH_HARDENING
 HARDENING_DESC=		Use hardening compiler flags
 
