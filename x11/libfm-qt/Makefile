@@ -12,7 +12,7 @@ COMMENT=	Qt port of libfm
 
 LICENSE=	LGPL21+
 
-LIB_DEPENDS=	libfm.so:x11/libfm \
+LIB_DEPENDS=	libfm.so:x11/libfm@gtk2 \
 	libmenu-cache.so:x11/menu-cache \
 	libexif.so:graphics/libexif
 

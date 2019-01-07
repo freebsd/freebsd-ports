@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libfm
-PORTVERSION=	1.2.5
+DISTVERSION=	1.3.1
 CATEGORIES=	x11
 MASTER_SITES=	SF/pcmanfm/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/LibFM/
 
@@ -19,35 +19,53 @@ LIB_DEPENDS=	libmenu-cache.so:x11/menu-cache \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libfm-extra.so:x11/libfm-extra
+
+FLAVORS=	gtk2 gtk3
+FLAVOR?=	${FLAVORS:[1]}
+
+gtk3_PKGNAMESUFFIX=	-gtk3
+
+gtk2_CONFLICTS_INSTALL=	libfm-gtk3
+gtk3_CONFLICTS_INSTALL=	libfm
 .endif
 
 SLAVEDIRS=	${CATEGORIES}/${PORTNAME}-extra
 
-USES=		gettext-tools gmake libtool localbase pathfix pkgconfig tar:xz
-USE_GNOME=	glib20 intltool
+USES=		gettext-tools gmake gnome libtool localbase \
+		pkgconfig tar:xz
+USE_GNOME=	intltool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --disable-static
-INSTALL_TARGET=	install-strip
 
 .if ! defined(EXTRA_ONLY)
+.  if ${FLAVOR:Mgtk2}
 USES+=		desktop-file-utils shared-mime-info
 USE_GNOME+=	gtk20 cairo gdkpixbuf2
-CONFIGURE_ARGS+=--with-gtk=2
+CONFIGURE_ARGS+=	--with-gtk=2
+PLIST_SUB=	GTKVERSION=gtk
+.  elif ${FLAVOR:Mgtk3}
+USES+=		desktop-file-utils shared-mime-info
+USE_GNOME+=	gtk30 cairo gdkpixbuf2
+CONFIGURE_ARGS+=	--with-gtk=3
+PLIST_SUB=	GTKVERSION=gtk3
+.  endif
 .else
-USE_GNOME+=	intltool intlhack
-CONFIGURE_ARGS+=--with-extra-only
+USE_GNOME+=	glib20
+CONFIGURE_ARGS+=	--with-extra-only
 .endif
+
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext-runtime
+NLS_USES=	gettext-runtime:build
 NLS_CONFIGURE_ENABLE=	nls
 
 post-extract:
-.if !defined(EXTRA_ONLY)
-	${MV} ${WRKSRC}/data/libfm.conf \
+.if ! defined(EXTRA_ONLY)
+	@${MV} ${WRKSRC}/data/libfm.conf \
 		${WRKSRC}/data/libfm.conf.sample
 .endif
 
@@ -56,10 +74,9 @@ post-patch:
 		${WRKSRC}/configure
 
 	${REINPLACE_CMD} -e '/^pkgincludedir/s|-@FMLIBVER@||; \
-		/@LN_S@ @PACKAGE@-@FMLIBVER@/d' \
-		${WRKSRC}/src/Makefile.in
+		/@LN_S@ @PACKAGE@-@FMLIBVER@/d' ${WRKSRC}/src/Makefile.in
 
-.if !defined(EXTRA_ONLY)
+.if ! defined(EXTRA_ONLY)
 	${REINPLACE_CMD} -e 's|DATA = libfm-extra.pc|DATA =|' \
 		${WRKSRC}/Makefile.in
 

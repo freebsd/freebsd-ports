@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libfm-extra.so:x11/libfm-extra \
-	libfm.so:x11/libfm \
+	libfm.so:x11/libfm@gtk2 \
 	libfontconfig.so:x11-fonts/fontconfig \
 	libfreetype.so:print/freetype2 \
 	libunistring.so:devel/libunistring

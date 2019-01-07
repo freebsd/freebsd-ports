@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmenu-cache.so:x11/menu-cache \
 		libkeybinder.so:x11/keybinder \
-		libfm-gtk.so:x11/libfm \
+		libfm-gtk.so:x11/libfm@gtk2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/etc/xdg/menus/lxde-applications.menu:x11/lxmenu-data
