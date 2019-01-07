@@ -10,7 +10,7 @@ MASTER_SITES=	https://common-lisp.net/project/cmucl/downloads/release/${DISTVERS
 		http://www.rgrjr.com/cmucl/downloads/release/${DISTVERSION}/
 DISTNAME=	cmucl-${DISTVERSION}-x86-FreeBSD.extra
 
-MAINTAINER=	phascolarctos@FreeBSD.org
+MAINTAINER=	phascolarctos@protonmail.ch
 COMMENT=	Optional extras for the CMU implementation of Common Lisp
 
 LICENSE=	PD
