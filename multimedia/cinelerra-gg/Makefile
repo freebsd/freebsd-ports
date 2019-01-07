@@ -49,7 +49,7 @@ EXTRA_PATCHES=	${BUILD_WRKSRC}/blds/bsd.patch:-p1
 
 REV=		502b6f3b6fd04f6b01c6d70dcb81aa304dd0db1c # git revision
 
-USES=		autoreconf gettext-runtime gettext-tools gmake iconv:wchar_t jpeg localbase makeinfo shebangfix
+USES=		autoreconf gettext-runtime gettext-tools gmake iconv:wchar_t jpeg localbase makeinfo python:2.7,build shebangfix
 SHEBANG_GLOB=	*.sh *.bld
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xau xdmcp xext xfixes xft xinerama xv
