@@ -372,7 +372,7 @@ bin/idea
 %%IDEA_HOME%%/plugins/Docker/lib/Docker.jar
 %%IDEA_HOME%%/plugins/Docker/lib/commons-cli-1.2.jar
 %%IDEA_HOME%%/plugins/Docker/lib/commons-io-2.3.jar
-%%IDEA_HOME%%/plugins/Docker/lib/jackson-dataformat-yaml-%%PYTHON_VER%%.3.jar
+%%IDEA_HOME%%/plugins/Docker/lib/jackson-dataformat-yaml-2.7.3.jar
 %%IDEA_HOME%%/plugins/Docker/lib/rt/annotations-3.0.1u2.jar
 %%IDEA_HOME%%/plugins/Docker/lib/rt/aopalliance-repackaged-2.5.0-b42.jar
 %%IDEA_HOME%%/plugins/Docker/lib/rt/bcpkix-jdk15on-1.60.jar
