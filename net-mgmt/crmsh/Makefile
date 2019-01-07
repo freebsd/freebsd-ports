@@ -25,8 +25,6 @@ USE_GITHUB=		yes
 GH_ACCOUNT=		ClusterLabs
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-ocf-root=${PREFIX}/lib/ocf
-USE_GITHUB=		yes
-GH_ACCOUNT=		ClusterLabs
 
 NO_ARCH=		yes
 
