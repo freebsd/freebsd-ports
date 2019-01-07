@@ -138,7 +138,6 @@ THEMES_DESC=			Additional themes for xfwm4
 VALA_DESC=			Vala binding for the Xfce core libraries
 VFS_DESC=			The virtual filesystem for Thunar
 VOLUMED_DESC=			Volume management daemon for the Xfce desktop
-VOLUMEDPULSE_DESC=		Volume management daemon for Xfce using PulseAudio
 
 BSDCPUFREQ_RUN_DEPENDS=		xfce4-bsdcpufreq-plugin>=0:sysutils/xfce4-bsdcpufreq-plugin
 EQUAKE_RUN_DEPENDS=		xfce4-equake-plugin>=0:science/xfce4-equake-plugin

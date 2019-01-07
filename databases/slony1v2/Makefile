@@ -32,7 +32,6 @@ CONFLICTS?=	slony1-1*
 
 CONFIGURE_ENV+=	FLEX=${LOCALBASE}/bin/flex
 
-PERLTOOLS_DESC=	Install perl configuration tools
 PERLTOOLS_USES=	perl5
 PERLTOOLS_CONFIGURE_ENV=	PERL=${PERL}
 PERLTOOLS_CONFIGURE_ON=		--with-perltools=${LOCALBASE}/sbin
