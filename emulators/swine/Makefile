@@ -30,6 +30,9 @@ SHEBANG_FILES=	*.py
 NO_BUILD=	yes
 USE_PYQT=	gui_run xml_build
 USE_QT=		linguist_build
+BINARY_ALIAS=	pyrcc4=pyrcc4-${PYTHON_VER} \
+		pyuic4=pyuic4-${PYTHON_VER} \
+		pylupdate4=pylupdate4-${PYTHON_VER}
 ONLY_FOR_ARCHS=	i386 amd64
 NO_ARCH=	yes
 
