@@ -16,4 +16,4 @@ or space), it has a well defined recovery mechanism for dealing with corrupted
 streams (e.g. where two processes write to the same stream concurrently, or
 where the stream generator suffers a bug).
 
-WWW: http://launchpad.net/subunit
+WWW: https://launchpad.net/subunit
