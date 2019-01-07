@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unifi
-PORTVERSION=	5.9.26
+PORTVERSION=	5.9.32
 PORTREVISION=	0
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/${PORTVERSION}-${UNIFI_BUILD}/
@@ -14,17 +14,24 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	bryce@bryce.net
 COMMENT=	UniFi Controller development release
 
-RUN_DEPENDS=	mongodb34>0:databases/mongodb34 \
+LICENSE=	EULA
+LICENSE_NAME=	End User License Agreement
+LICENSE_TEXT=	${RESTRICTED}
+LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell no-auto-accept
+
+RESTRICTED=	License restrictions, see https://www.ubnt.com/eula/
+
+RUN_DEPENDS=	mongodb36>0:databases/mongodb36 \
 		snappyjava>0:archivers/snappy-java
 
 SUB_LIST+=	USERS=${USERS} GROUPS=${GROUPS} JAVASHAREDIR=${JAVASHAREDIR} \
 		JAVA=${JAVA}
 
-EXTRACT_CMD=	/usr/bin/ar
+EXTRACT_CMD=	${AR}
 EXTRACT_BEFORE_ARGS=	-p
 EXTRACT_AFTER_ARGS=	data.tar.xz | ${TAR} -xf -
 
-UNIFI_BUILD=	25460f7409
+UNIFI_BUILD=	016da0b7c1
 
 USES=		cpe
 CPE_VENDOR=	ubnt
