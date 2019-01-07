@@ -1,0 +1,7 @@
+xcb-util-errors is a utility library that gives human readable
+names to error codes and event codes and also to major and minor
+numbers. The necessary information is drawn from xcb-proto's protocol
+descriptions. This library is especially useful when working with
+extensions and is mostly useful for debugging.
+
+WWW: http://xcb.freedesktop.org/
