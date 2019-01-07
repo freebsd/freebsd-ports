@@ -1,5 +1,5 @@
---- milter-regex.8.orig	2011-11-21 13:13:47.000000000 +0100
-+++ milter-regex.8	2011-12-10 07:52:00.000000000 +0100
+--- milter-regex.8.orig	2018-09-25 20:51:47 UTC
++++ milter-regex.8
 @@ -36,7 +36,9 @@
  .Sh SYNOPSIS
  .Nm
@@ -8,9 +8,9 @@
  .Op Fl c Ar config
 +.Op Fl r Ar pid-file
  .Op Fl j Ar dirname
- .Op Fl p Ar pipe
- .Op Fl u Ar user
-@@ -53,9 +55,14 @@
+ .Op Fl l Ar loglevel
+ .Op Fl m Ar number
+@@ -58,9 +60,14 @@ The options are as follows:
  .It Fl d
  Don't detach from controlling terminal and produce verbose debug
  output on stdout.
@@ -24,4 +24,4 @@
 +/var/spool/milter-regex/milter-regex.pid
  .It Fl j Ar dirname
  Change root to the specified directory.
- .It Fl p Ar pipe
+ .It Fl l Ar loglevel
