@@ -52,7 +52,6 @@ GROUPS=	frr frrvty
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-INSTALL_TARGET=	install-strip
 
 # PIM compile but didn't work on FreeBSD
 CONFIGURE_ARGS=	--enable-user=frr \
