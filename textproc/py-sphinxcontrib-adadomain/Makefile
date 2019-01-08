@@ -5,11 +5,10 @@ PORTNAME=	sphinxcontrib-adadomain
 PORTVERSION=	0.1
 PORTREVISION=	3
 CATEGORIES=	textproc
-MASTER_SITES=	https://pypi.python.org/packages/source/s/${PORTNAME}/ \
-		LOCAL/marino
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sphinx Adadomain Extension
 
 LICENSE=	BSD2CLAUSE
