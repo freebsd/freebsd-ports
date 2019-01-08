@@ -11,9 +11,11 @@ PKGNAMEPREFIX=	licq-
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	OnScreenDisplay messages in licq
 
+BUILD_DEPENDS=	licq:${LICQ_PORT}
 LIB_DEPENDS=	libxosd.so:misc/xosd \
 		libboost_regex.so:devel/boost-libs
-RUN_DEPENDS=	${LOCALBASE}/lib/licq/licq_qt-gui.so:${LICQ_PORT}-qt-gui
+RUN_DEPENDS=	licq:${LICQ_PORT} \
+		${LOCALBASE}/lib/licq/licq_qt-gui.so:${LICQ_PORT}-qt-gui
 
 USES=		cmake gettext-tools iconv
 USE_GITHUB=	yes
