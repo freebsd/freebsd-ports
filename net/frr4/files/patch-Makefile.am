@@ -1,6 +1,6 @@
---- Makefile.am.orig	2018-03-13 22:21:12 UTC
+--- Makefile.am.orig	2019-01-08 09:30:08 UTC
 +++ Makefile.am
-@@ -41,7 +41,7 @@ include zebra/subdir.am
+@@ -42,7 +42,7 @@ include zebra/subdir.am
  include watchfrr/subdir.am
  include qpb/subdir.am
  include fpm/subdir.am
