@@ -11554,3 +11554,4 @@ databases/php7-tarantool|databases/php-tarantool|2019-01-03|Rename php7-tarantoo
 net/ssltunnel-server||2019-01-05|Has expired: Does not build, upstream disappeared
 lang/cilkplus||2019-01-05|Has expired: Cilk Plus is on its way out (both in GCC and the Intel compilers)
 net/ssltunnel-client||2019-01-05|Removed, client part of expired net/ssltunnel-server
+devel/py-mongoengine|databases/py-mongoengine|2019-01-08|Move to a better category
