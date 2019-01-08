@@ -112,8 +112,6 @@ _CRTLIBDIR=	${LLVM_PREFIX:S|${PREFIX}/||}/lib/clang/${LLVM_RELEASE}/lib/freebsd
 WRKSRC_${option:tl}=		${WRKDIR}/${${option}_DISTFILES:S/${EXTRACT_SUFX}//}
 .endfor
 
-OPTIONS_SUB=	yes
-
 PLIST_SUB+=	LLVM_LIB_VER=${LLVM_LIB_VER} \
 		LLVM_MAJOR=${LLVM_MAJOR} \
 		LLVM_RELEASE=${LLVM_RELEASE} \
