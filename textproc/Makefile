@@ -1280,6 +1280,7 @@
     SUBDIR += py-colorclass
     SUBDIR += py-creole
     SUBDIR += py-csvkit
+    SUBDIR += py-custom_inherit
     SUBDIR += py-dbfread
     SUBDIR += py-diff-match-patch
     SUBDIR += py-docutils
