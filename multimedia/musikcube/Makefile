@@ -23,7 +23,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libtag.so:audio/taglib \
 		libvorbis.so:audio/libvorbis
 
-USES=		cmake:outsource,noninja compiler:c++14-lang ncurses ssl
+USES=		cmake:noninja compiler:c++14-lang ncurses ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	clangen
 USE_LDCONFIG=	yes
