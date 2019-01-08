@@ -2,8 +2,8 @@
 
 PORTNAME=	ikos
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1
-PORTREVISION=	1
+DISTVERSION=	2.1-49
+DISTVERSIONSUFFIX=	-g704adae
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,13 +19,14 @@ LIB_DEPENDS=	libapron.so:math/apron \
 		libgmp.so:math/gmp \
 		libppl.so:devel/ppl
 
-USES=		cmake ncurses python sqlite
+USES=		cmake:outsource ncurses python sqlite
 USE_PYTHON=	py3kplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	NASA-SW-VnV
 
 CXXFLAGS+=	-DNDEBUG # https://github.com/NASA-SW-VnV/ikos/issues/36, it also breaks with assert without NDEBUG
 
+CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_ARGS=	-DLLVM_CONFIG_EXECUTABLE:PATH=${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT} \
 		-DPYTHON_EXECUTABLE:STRING=${PYTHON_CMD}
 
