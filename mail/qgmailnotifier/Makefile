@@ -4,7 +4,6 @@
 PORTNAME=	qgmailnotifier
 DISTVERSION=	2014.2
 CATEGORIES=	mail
-MASTER_SITES=	GH
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Portable Qt 4 based GMail notifier

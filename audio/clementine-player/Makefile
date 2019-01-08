@@ -6,8 +6,6 @@ DISTVERSION=	1.3.1.g20190103
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-player
 
-MASTER_SITES=	GH
-
 MAINTAINER=	sbruno@FreeBSD.org
 COMMENT=	Cross-platform music player based on Amarok 1.4
 

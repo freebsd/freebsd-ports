@@ -3,7 +3,6 @@
 PORTNAME=	rdapper
 PORTVERSION=	20150326
 CATEGORIES=	net
-MASTER_SITES=	GH
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Command-line Registration Data Access Protocol (RDAP) client

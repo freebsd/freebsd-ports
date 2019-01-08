@@ -6,7 +6,6 @@ PORTVERSION=	1.2.1
 PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	net multimedia www
-MASTER_SITES=	GH
 
 MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	Media-server compatible with "Digital Life Network Alliance"

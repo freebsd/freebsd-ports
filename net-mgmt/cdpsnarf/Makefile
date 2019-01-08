@@ -5,7 +5,6 @@ PORTVERSION=	0.1.6
 PORTREVISION=	1
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
-MASTER_SITES=	GH
 
 MAINTAINER=	rihaz.jerrin@gmail.com
 COMMENT=	Tool to extract information from CDP packets

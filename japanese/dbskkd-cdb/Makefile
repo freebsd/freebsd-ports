@@ -5,7 +5,6 @@ PORTNAME=	dbskkd-cdb
 PORTVERSION=	3.00
 #PORTREVISION=	0
 CATEGORIES=	japanese
-MASTER_SITES=	GH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SKK dictionary server based on cdb
