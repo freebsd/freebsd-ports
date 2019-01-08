@@ -104,8 +104,6 @@ _CRTLIBDIR=    ${LLVM_PREFIX:S|${PREFIX}/||}/lib/clang/${LLVM_RELEASE}/lib/freeb
 WRKSRC_${option:tl}=		${WRKDIR}/${${option}_DISTFILES:S/${EXTRACT_SUFX}//}
 .endfor
 
-OPTIONS_SUB=	yes
-
 DOCS_BUILD_DEPENDS=		sphinx-build:textproc/py-sphinx
 
 PLIST_SUB+=	LLVM_RELEASE=${LLVM_RELEASE}

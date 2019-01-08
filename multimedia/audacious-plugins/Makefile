@@ -117,7 +117,6 @@ VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 VORBIS_CONFIGURE_ENABLE=vorbis
 WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
 WAVPACK_CONFIGURE_ENABLE=	wavpack
-OPTIONS_SUB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| $${MFLAGS}||g' \
