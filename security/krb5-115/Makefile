@@ -15,9 +15,12 @@ PATCH_DIST_STRIP=	-p2
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		MIT implementation of RFC 4120 network authentication service
 
+DEPRECATED=		EOL one year after the release of krb5 1.17
+EXPIRATION_DATE=	2020-01-31
+
 LICENSE=		MIT
 
-CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[346]-[0-9]* \
+CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[3467]-[0-9]* \
 			krb5-1.[0-9]* krb5-devel-*
 CONFLICTS_BUILD=	boringssl-*
 

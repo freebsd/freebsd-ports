@@ -314,6 +314,7 @@
     SUBDIR += krb5
     SUBDIR += krb5-115
     SUBDIR += krb5-116
+    SUBDIR += krb5-117
     SUBDIR += krb5-appl
     SUBDIR += krb5-devel
     SUBDIR += kripp
