@@ -95,15 +95,15 @@ sbin/ripd
 sbin/ripngd
 sbin/watchquagga
 sbin/zebra
-%%EXAMPLESDIR%%/bgpd.conf.sample
-%%EXAMPLESDIR%%/bgpd.conf.sample2
-%%ISISD%%%%EXAMPLESDIR%%/isisd.conf.sample
-%%EXAMPLESDIR%%/ospf6d.conf.sample
-%%EXAMPLESDIR%%/ospfd.conf.sample
-%%PIMD%%%%EXAMPLESDIR%%/pimd.conf.sample
-%%EXAMPLESDIR%%/ripd.conf.sample
-%%EXAMPLESDIR%%/ripngd.conf.sample
-%%EXAMPLESDIR%%/vtysh.conf.sample
-%%EXAMPLESDIR%%/zebra.conf.sample
+%%EXAMPLES%%%%EXAMPLESDIR%%/bgpd.conf.sample
+%%EXAMPLES%%%%EXAMPLESDIR%%/bgpd.conf.sample2
+%%EXAMPLES%%%%ISISD%%%%EXAMPLESDIR%%/isisd.conf.sample
+%%EXAMPLES%%%%EXAMPLESDIR%%/ospf6d.conf.sample
+%%EXAMPLES%%%%EXAMPLESDIR%%/ospfd.conf.sample
+%%EXAMPLES%%%%PIMD%%%%EXAMPLESDIR%%/pimd.conf.sample
+%%EXAMPLES%%%%EXAMPLESDIR%%/ripd.conf.sample
+%%EXAMPLES%%%%EXAMPLESDIR%%/ripngd.conf.sample
+%%EXAMPLES%%%%EXAMPLESDIR%%/vtysh.conf.sample
+%%EXAMPLES%%%%EXAMPLESDIR%%/zebra.conf.sample
 @dir(%%ENABLE_USER%%,%%ENABLE_GROUP%%,750) %%LOCALSTATE_DIR%%
 @dir(%%ENABLE_USER%%,%%ENABLE_GROUP%%,750) %%SYSCONF_DIR%%
