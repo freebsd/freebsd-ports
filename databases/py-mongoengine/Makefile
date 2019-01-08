@@ -19,15 +19,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymongo>=2.7.1:databases/pymongo@${PY_FLAVOR
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}blinker>0:devel/py-blinker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=2.0.0:graphics/py-pillow@${PY_FLAVOR}
+py27_TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
-
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_VER} == 2.7
-py27_TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR}
-.endif
 
 # bson is provided by pymongo
 post-patch:
@@ -36,4 +31,4 @@ post-patch:
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
