@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	Andika
-PORTVERSION=	1.004
+#PORTVERSION=	1.004
+PORTVERSION=	5.000
 PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?format=file&media_id=${MEDIA_ID}&filename=/
