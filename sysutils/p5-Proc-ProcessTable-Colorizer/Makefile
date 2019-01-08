@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Proc-ProcessTable-Colorizer
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.0
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,8 +17,7 @@ RUN_DEPENDS=	p5-Error-Helper>=1.0.0:devel/p5-Error-Helper \
 		p5-Proc-ProcessTable>=0.53:devel/p5-Proc-ProcessTable \
 		p5-Term-ANSIColor>=4.06:devel/p5-Term-ANSIColor \
 		p5-Term-Size>=0:devel/p5-Term-Size \
-		p5-Text-Table>=1.133:textproc/p5-Text-Table \
-		p5-BSD-Process>=0.07:sysutils/p5-BSD-Process
+		p5-Text-Table>=1.133:textproc/p5-Text-Table
 TEST_DEPENDS=	p5-Test-Pod>=1.22:devel/p5-Test-Pod \
 		p5-Test-Pod-Coverage>=1.08:devel/p5-Test-Pod-Coverage
 
