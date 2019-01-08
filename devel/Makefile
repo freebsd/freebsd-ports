@@ -5518,6 +5518,7 @@
     SUBDIR += rubygem-clio
     SUBDIR += rubygem-cliprompt
     SUBDIR += rubygem-cloudfiles
+    SUBDIR += rubygem-cms_scanner
     SUBDIR += rubygem-cocaine
     SUBDIR += rubygem-coercible
     SUBDIR += rubygem-coffee-rails-rails5
