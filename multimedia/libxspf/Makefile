@@ -20,7 +20,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-expat=${LOCALBASE} --disable-test
 
 USES=		libtool pkgconfig tar:bzip2
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 LIBS+=		-L${LOCALBASE}/lib -luriparser
 
