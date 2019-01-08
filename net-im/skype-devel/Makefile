@@ -12,8 +12,6 @@ DISTNAME=	skype_static-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	P2P VoIP software, development version
 
-CONFLICTS=	skype-[0-9]*
-
 OPTIONS_DEFINE=	DOCS VIDEO
 OPTIONS_DEFAULT=VIDEO
 VIDEO_DESC=	[broken] Video support
