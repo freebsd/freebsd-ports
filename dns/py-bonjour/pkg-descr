@@ -1,0 +1,7 @@
+pybonjour provides a pure-Python interface (via ctypes) to Apple
+Bonjour and compatible DNS-SD libraries (such as Avahi).  It allows
+Python scripts to take advantage of Zero Configuration Networking
+(Zeroconf) to register, discover, and resolve services on both local
+and wide-area networks.
+
+WWW: https://github.com/depl0y/pybonjour-python3
