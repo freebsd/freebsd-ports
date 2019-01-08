@@ -43,7 +43,6 @@ CPPFLAGS+=	-Wno-error=format-nonliteral
 CFLAGS+=	-Wno-error=format-nonliteral
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-SHEBANG_FILES=	plugins/externaltools/data/send-to-fpaste.tool.in
 PLIST_SUB=	VERSION="3.14"
 INSTALL_TARGET=	install-strip
 

@@ -36,7 +36,6 @@ INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	plugins/telepathy-gabble-xmpp-console
 
 PLIST_SUB=	PVERSION=${PORTVERSION}
-SHEBANG_FILES=	plugins/telepathy-gabble-xmpp-console
 
 .include <bsd.port.pre.mk>
 
