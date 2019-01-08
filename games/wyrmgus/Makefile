@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wyrmgus
-PORTVERSION=	3.5.1
+PORTVERSION=	3.5.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games devel
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libtolua++-${LUA_VER}.so:lang/tolua++ \
 		libogg.so:audio/libogg \
 		liboaml.so:audio/oaml
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/tokenizer.hpp:devel/boost-libs
 
 USE_GITHUB=     yes
 GH_ACCOUNT=     Andrettin
