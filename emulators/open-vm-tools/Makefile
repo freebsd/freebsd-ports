@@ -64,9 +64,9 @@ INSTALL_TARGET=		install-strip
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
-CONFLICTS=		open-vm-tools-nox11-[0-9]*
+CONFLICTS+=		open-vm-tools-nox11-[0-9]*
 .else
-CONFLICTS=		open-vm-tools-[0-9]*
+CONFLICTS+=		open-vm-tools-[0-9]*
 .endif
 
 CONFIGURE_ENV+=		SYSDIR=${SRC_BASE}/sys

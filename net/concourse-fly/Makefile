@@ -11,8 +11,6 @@ COMMENT=	CLI for Concourse
 
 LICENSE=	APACHE20
 
-CONFLICTS_INSTALL=	fly
-
 GO_CMD=		${LOCALBASE}/bin/go
 GO_PKGNAME=	github.com/concourse/fly
 
