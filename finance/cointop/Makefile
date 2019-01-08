@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cointop
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	finance
 
 MAINTAINER=	ndowens@yahoo.com
