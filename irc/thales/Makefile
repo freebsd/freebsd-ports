@@ -3,7 +3,7 @@
 
 PORTNAME=	thales
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc
 MASTER_SITES=	GNU
 
@@ -13,11 +13,15 @@ COMMENT=	GNU Thales -- An IRC to MySQL gateway
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
-USES=		gmake shebangfix
+USES=		gmake mysql shebangfix
 SHEBANG_FILES=	examples/MRTG/thalesinfo.pl
-USE_MYSQL=	yes
 USE_RC_SUBR=	thales
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-ircd=${_IRCD} \
+		--prefix=${PREFIX}/sbin/thales \
+		--with-mysql=${LOCALBASE} \
+		--with-mysql-libraries=${LOCALBASE}/lib/mysql
 
 OPTIONS_DEFINE=	MODES DOCS EXAMPLES
 OPTIONS_RADIO=	IRCD
@@ -28,31 +32,13 @@ HYBRID_DESC=	Build for ircd-hybrid
 IRCDRU_DESC=	Build for ircd-ru
 UNREAL_DESC=	Build for unreal ircd
 
-HYBRID_RUN_DEPENDS=	${LOCALBASE}/bin/ircd:irc/ircd-hybrid
-IRCDRU_RUN_DEPENDS=	${LOCALBASE}/sbin/ircd:irc/ircd-ru
-UNREAL_RUN_DEPENDS=	${LOCALBASE}/libexec/ircd:irc/unreal
-
-# Currently, not all supported IRCDs are handled here, only the ones
-# I could find corresponding RUN_DEPENDS in our Ports Collection.
-.include <bsd.port.options.mk>
-.if ${PORT_OPTIONS:MHYBRID}
-_IRCD=	hybrid
-IS_INTERACTIVE=	yes
-.elif ${PORT_OPTIONS:MIRCDRU}
-_IRCD=	ircdru
-IS_INTERACTIVE=	yes
-.else
-_IRCD=	unreal
-.endif
-
-# ``Assign with expansion'' is needed here, otherwise we cannot override
-# WITH_IRCD value supplied as make(1) argument (which can be bogus).
-CONFIGURE_ARGS:=	--with-ircd=${_IRCD} \
-			--prefix=${PREFIX}/sbin/thales \
-			--with-mysql=${LOCALBASE} \
-			--with-mysql-libraries=${LOCALBASE}/lib/mysql
-
 MODES_CONFIGURE_OFF=	--enable-no-modes
+HYBRID_RUN_DEPENDS=	${LOCALBASE}/bin/ircd:irc/ircd-hybrid
+HYBRID_VARS=		_IRCD=hybrid IS_INTERACTIVE=yes
+IRCDRU_RUN_DEPENDS=	${LOCALBASE}/sbin/ircd:irc/ircd-ru
+IRCDRU_VARS=		_IRCD=ircdru IS_INTERACTIVE=yes
+UNREAL_RUN_DEPENDS=	${LOCALBASE}/libexec/ircd:irc/unreal
+UNREAL_VARS=		_IRCD=unreal
 
 post-patch: .SILENT
 	${FIND} -d ${WRKSRC} -type d -name CVS -exec ${RM} -r {} \;
