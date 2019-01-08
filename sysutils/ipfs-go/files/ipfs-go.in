@@ -17,6 +17,9 @@
 #                           Default: %%IPFS_USER%%
 # ipfs_go_group (str):      ipfs_go daemon group
 #                           Default: %%IPFS_GROUP%%
+# ipfs_go_path (str): 	    ipfs_go ipfs repo path
+#                           Default: %%IPFS_HOME%%
+
 
 . /etc/rc.subr
 
@@ -27,6 +30,7 @@ load_rc_config $name
 : ${ipfs_go_enable:="NO"}
 : ${ipfs_go_user:="%%IPFS_USER%%"}
 : ${ipfs_go_group:="%%IPFS_GROUP%%"}
+: ${ipfs_go_path:="%%IPFS_HOME%%"}
 
 logfile="%%IPFS_LOGDIR%%/${name}.log"
 pidfile="/var/run/${name}.pid"
@@ -36,13 +40,14 @@ start_cmd="ipfs_go_start"
 
 ipfs_go_prestart() {
   install -d -o ${ipfs_go_user} -g ${ipfs_go_group} -m750 %%IPFS_LOGDIR%%
-  [ -d ~%%IPFS_USER%%/.ipfs ] || /usr/bin/su - ${ipfs_go_user} -c "${command} init"
+  [ -d ${ipfs_go_path} ] || /usr/bin/su - ${ipfs_go_user} -c "env IPFS_PATH=${ipfs_go_path} ${command} init"
 }
 
 ipfs_go_start() {
   echo running ${command} daemon
   export USER=${ipfs_go_user}
   export HOME=$(echo ~%%IPFS_USER%%)
+  export IPFS_PATH=${ipfs_go_path}
   /usr/sbin/daemon -p ${pidfile} -u ${ipfs_go_user} ${command} daemon >> ${logfile} 2>&1
 }
 
