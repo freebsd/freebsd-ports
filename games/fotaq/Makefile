@@ -13,6 +13,11 @@ COMMENT=	Flight of the Amazon Queen: a classic graphical adventure
 
 RUN_DEPENDS=	scummvm:games/scummvm
 
+LICENSE=	FOTAQ
+LICENSE_TEXT=	See ${DOCSDIR}/readme.txt
+LICENSE_NAME=	Flight of the Amazon Queen license
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 USES=		zip
 NO_BUILD=	yes
 NO_ARCH=	yes
