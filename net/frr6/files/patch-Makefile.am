@@ -1,11 +1,11 @@
---- Makefile.am.orig	2018-10-08 12:32:57 UTC
-+++ Makefile.am
-@@ -40,7 +40,7 @@ include zebra/subdir.am
+--- Makefile.am.orig	2019-01-08 14:24:52.207825000 +0100
++++ Makefile.am	2019-01-08 14:25:02.214572000 +0100
+@@ -117,7 +117,7 @@
  include watchfrr/subdir.am
  include qpb/subdir.am
  include fpm/subdir.am
 -include tools/subdir.am
 +#include tools/subdir.am
+ include solaris/subdir.am
  
- include ripd/subdir.am
- include ripngd/subdir.am
+ include bgpd/subdir.am

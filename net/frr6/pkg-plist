@@ -1,4 +1,3 @@
-bin/bgp_btoa
 %%VTYSH%%bin/vtysh
 include/frr/bfd.h
 include/frr/bitfield.h
@@ -77,6 +76,7 @@ include/frr/routemap.h
 include/frr/sbuf.h
 include/frr/sha256.h
 include/frr/sigevent.h
+include/frr/smux.h
 include/frr/spf_backoff.h
 include/frr/skiplist.h
 include/frr/sockopt.h
@@ -113,10 +113,6 @@ lib/libfrrospfapiclient.so.0.0.0
 %%SNMP%%lib/frr/modules/ripd_snmp.so
 %%SNMP%%lib/frr/modules/zebra_snmp.so
 %%FPM%%lib/frr/modules/zebra_fpm.so
-%%FPM%%lib/libfrrfpm_pb.a
-%%FPM%%lib/libfrrfpm_pb.so
-%%FPM%%lib/libfrrfpm_pb.so.0
-%%FPM%%lib/libfrrfpm_pb.so.0.0.0
 %%SNMP%%lib/libfrrsnmp.a
 %%SNMP%%lib/libfrrsnmp.so
 %%SNMP%%lib/libfrrsnmp.so.0
@@ -144,7 +140,6 @@ sbin/bgpd
 %%LDPD%%sbin/ldpd
 sbin/eigrpd
 sbin/ospf6d
-sbin/ospfclient
 sbin/ospfd
 sbin/pbrd
 sbin/ripd
@@ -152,7 +147,6 @@ sbin/ripngd
 sbin/staticd
 sbin/zebra
 sbin/isisd
-sbin/rfptest
 sbin/watchfrr
 %%ETCDIR%%/babeld.conf.sample
 %%ETCDIR%%/bfdd.conf.sample
