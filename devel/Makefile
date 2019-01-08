@@ -1400,6 +1400,7 @@
     SUBDIR += libddoc
     SUBDIR += libdevq
     SUBDIR += libdfui
+    SUBDIR += libdill
     SUBDIR += libdisasm
     SUBDIR += libdisorder
     SUBDIR += libdispatch

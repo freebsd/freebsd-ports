@@ -1,0 +1,12 @@
+Libdill is a C library that makes writing structured concurrent programs easy.
+
+Concurrency allows multiple functions to run independent of one another.
+
+Structured concurrency means that lifetimes of concurrent functions are cleanly
+nested. If coroutine foo launches coroutine bar, then bar must finish before foo
+finishes.
+
+Please note that concurrency isn't the same as parallelism. libdill provides
+concurrency, but not parallelism.
+
+WWW: http://libdill.org
