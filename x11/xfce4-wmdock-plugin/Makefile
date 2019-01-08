@@ -12,8 +12,7 @@ MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	WMdock plugin for Xfce
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake libtool pkgconfig xfce tar:bzip2
-INSTALLS_ICONS=	yes
+USES=		gettext gmake gnome libtool pkgconfig xfce tar:bzip2
 USE_GNOME=	gtk20 intltool intlhack libwnck
 USE_XFCE=	libgui panel
 INSTALLS_ICONS=	yes
