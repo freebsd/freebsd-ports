@@ -2,8 +2,7 @@
 
 PORTNAME=	cbindgen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.7
-PORTREVISION=	1
+DISTVERSION=	0.6.8
 CATEGORIES=	devel
 PKGNAMEPREFIX=	rust-
 
@@ -45,7 +44,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		serde_json-1.0.19 \
 		strsim-0.7.0 \
 		syn-0.13.11 \
-		syn-0.14.1 \
+		syn-0.15.23 \
 		tempfile-3.0.3 \
 		termion-1.5.1 \
 		textwrap-0.9.0 \
