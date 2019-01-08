@@ -1,4 +1,4 @@
---- Makefile.am.orig	2018-06-08 01:39:07 UTC
+--- Makefile.am.orig	2019-01-08 08:53:23 UTC
 +++ Makefile.am
 @@ -42,7 +42,7 @@ include zebra/subdir.am
  include watchfrr/subdir.am
