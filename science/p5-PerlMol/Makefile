@@ -3,7 +3,7 @@
 
 PORTNAME=	PerlMol
 PORTVERSION=	0.3500
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ITUB
@@ -35,7 +35,7 @@ BUILD_DEPENDS=	p5-Chemistry-Mol>=0:science/p5-Chemistry-Mol \
 		p5-Chemistry-MidasPattern>=0:science/p5-Chemistry-MidasPattern \
 		p5-Chemistry-Mok>=0:science/p5-Chemistry-Mok \
 		p5-Statistics-Regression>=0:math/p5-Statistics-Regression
-BUILD_DEPENDS=	p5-Chemistry-Mol>=0:science/p5-Chemistry-Mol \
+RUN_DEPENDS=	p5-Chemistry-Mol>=0:science/p5-Chemistry-Mol \
 		p5-Chemistry-MacroMol>=0:science/p5-Chemistry-MacroMol \
 		p5-Parse-Yapp>=0:devel/p5-Parse-Yapp \
 		p5-Chemistry-File-SMILES>=0:science/p5-Chemistry-File-SMILES \
