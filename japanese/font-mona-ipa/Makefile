@@ -22,7 +22,6 @@ DATADIR=	${PREFIX}/share/font-${PORTNAME}
 PORTDOCS=	COPYING.font.ja README_ipamona.txt
 
 OPTIONS_DEFINE=	DOCS
-FONTNAME=	TTF
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
