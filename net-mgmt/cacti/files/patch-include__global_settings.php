@@ -9,7 +9,7 @@
  			'method' => 'filepath',
  			'file_type' => 'ascii',
 -			'default' => $config['base_path'] . '/log/cacti.log',
-+			'default' => /var/log/cacti/log',
++			'default' => '/var/log/cacti/log',
  			'max_length' => '255',
  			'install_check' => 'writable'
  			),
