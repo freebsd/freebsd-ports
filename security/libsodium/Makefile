@@ -13,7 +13,6 @@ LICENSE=	ISCL
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-TEST_TARGET=	check
 
 CONFIGURE_ARGS+=	--enable-blocking-random
 INSTALL_TARGET?=	install-strip
