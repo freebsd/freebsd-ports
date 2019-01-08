@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	opt_parse_validator
-PORTVERSION=	0.0.16.1
+PORTVERSION=	0.0.16.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
