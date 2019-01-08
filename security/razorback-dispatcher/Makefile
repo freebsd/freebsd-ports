@@ -33,22 +33,17 @@ GROUPS?=	razorback
 
 OPTIONS_DEFINE=	DEBUG ASSERT ACTIVEMQ
 
-ASSERT_DESC=	Enable Asserts
-ASSERT_CONFIGURE_ENABLE=	assert
 ACTIVEMQ_DESC=	ActiveMQ runs locally
+ASSERT_DESC=	Enable Asserts
+
+ACTIVEMQ_RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/activemq:net/activemq
+ACTIVEMQ_SUB_LIST=	ACTIVEMQ="activemq " ACTIVEMQ_LOC="local" \
+			ACTIVEMQ_LOCATION="in the ActiveMQ configuration directory:" \
+			ACTIVEMQ_CONFIG="${LOCALBASE}/etc/activemq/"
+ACTIVEMQ_SUB_LIST_OFF=	ACTIVEMQ="" ACTIVEMQ_LOC="remote" \
+			ACTIVEMQ_LOCATION="on the remote ActiveMQ host." \
+			ACTIVEMQ_CONFIG=""
+ASSERT_CONFIGURE_ENABLE=	assert
 DEBUG_CONFIGURE_ENABLE=	debug
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MACTIVEMQ}
-RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/activemq:net/activemq
-SUB_LIST=	ACTIVEMQ="activemq " ACTIVEMQ_LOC="local" \
-		ACTIVEMQ_LOCATION="in the ActiveMQ configuration directory:" \
-		ACTIVEMQ_CONFIG="${LOCALBASE}/etc/activemq/"
-.else
-SUB_LIST=	ACTIVEMQ="" ACTIVEMQ_LOC="remote" \
-		ACTIVEMQ_LOCATION="on the remote ActiveMQ host." \
-		ACTIVEMQ_CONFIG=""
-.endif
 
 .include <bsd.port.mk>
