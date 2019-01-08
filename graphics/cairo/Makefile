@@ -22,16 +22,13 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 
 PORTSCOUT=	skipv:5c-1.1,5c-1.2,5c-1.5
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
-		--disable-directfb \
-		--enable-tee
 USES=		cpe gnome libtool pathfix pkgconfig tar:xz
 CPE_VENDOR=	cairographics
 USE_XORG=	pixman
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--disable-directfb \
 		--disable-gallium \
