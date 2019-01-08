@@ -21,6 +21,8 @@ USE_PERL5=	build
 USE_XORG=	x11 xext xxf86vm
 SUB_FILES=	eaglemode.sh
 
+LLD_UNSAFE=	yes
+
 BUILD_ARGS=	continue=no
 
 .for lib in X11 jpeg png tiff
