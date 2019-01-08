@@ -284,6 +284,7 @@
     SUBDIR += msdl
     SUBDIR += msopenh264
     SUBDIR += mswebrtc
+    SUBDIR += musikcube
     SUBDIR += mxflib
     SUBDIR += mythtv
     SUBDIR += mythtv-frontend

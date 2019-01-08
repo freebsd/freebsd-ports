@@ -1,0 +1,6 @@
+musikcube is a fully functional terminal-based music player, library, and
+streaming audio server that runs natively on Windows, macOS, and Linux. It also
+runs well on a Raspberry Pi with a custom DAC (e.g. IQaudIO DAC+, HiFiBerry DAC+
+and others), and can output 24bit/192k audio comfortably.
+
+WWW: https://musikcube.com/
