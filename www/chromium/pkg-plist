@@ -3,10 +3,8 @@ bin/chrome
 %%DATADIR%%/chrome-wrapper
 %%DATADIR%%/chrome_100_percent.pak
 %%DATADIR%%/chrome_200_percent.pak
-%%DATADIR%%/font_service.service
 %%DATADIR%%/headless_lib.pak
 %%DATADIR%%/icudtl.dat
-%%DATADIR%%/keyboard_resources.pak
 %%DATADIR%%/libEGL.so
 %%DATADIR%%/libGLESv2.so
 %%DATADIR%%/locales/am.pak
@@ -120,6 +118,7 @@ bin/chrome
 %%DATADIR%%/product_logo_48.png
 %%DATADIR%%/protoc
 %%DATADIR%%/resources.pak
+%%DATADIR%%/resources/inspector/.htaccess
 %%DATADIR%%/resources/inspector/Images/accelerometer-back.png
 %%DATADIR%%/resources/inspector/Images/accelerometer-bottom.png
 %%DATADIR%%/resources/inspector/Images/accelerometer-front.png
@@ -318,6 +317,8 @@ bin/chrome
 %%DATADIR%%/v8_context_snapshot.bin
 %%DATADIR%%/views_mus_resources.pak
 %%DEBUG%%%%DATADIR%%/character_data_generator
+%%DEBUG%%%%DATADIR%%/libmalloc_wrapper.so
+%%DEBUG%%%%DATADIR%%/libtest_shared_library.so
 %%DEBUG%%%%DATADIR%%/libVkICD_mock_icd.so
 %%DEBUG%%%%DATADIR%%/libVkLayer_core_validation.so
 %%DEBUG%%%%DATADIR%%/libVkLayer_object_tracker.so

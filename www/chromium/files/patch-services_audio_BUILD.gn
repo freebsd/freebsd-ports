@@ -1,0 +1,11 @@
+--- services/audio/BUILD.gn.orig	2018-12-12 22:56:10.000000000 +0100
++++ services/audio/BUILD.gn	2018-12-29 17:36:28.236514000 +0100
+@@ -104,7 +104,7 @@
+     "//services/service_manager/sandbox:sandbox",
+   ]
+ 
+-  if (is_linux) {
++  if ((is_linux) && (!is_bsd)) {
+     sources += [
+       "audio_sandbox_hook_linux.cc",
+       "audio_sandbox_hook_linux.h",

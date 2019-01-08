@@ -1,0 +1,11 @@
+--- chrome/common/extensions/api/api_sources.gni.orig	2018-12-05 16:27:03.671155000 +0100
++++ chrome/common/extensions/api/api_sources.gni	2018-12-05 16:27:49.125255000 +0100
+@@ -113,7 +113,7 @@
+     "wallpaper.json",
+     "wallpaper_private.json",
+   ]
+-} else if (is_linux || is_win) {
++} else if (is_linux || is_bsd || is_win) {
+   schema_sources_ += [ "input_ime.json" ]
+ }
+ 
