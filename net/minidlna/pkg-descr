@@ -4,4 +4,7 @@ fully compliant with DLNA/UPnP-AV clients.
 The media files are listed in an SQLite database allowing prompt
 restarts.
 
+This is Gleb Smirnoff's fork of original project by Justin Maggard,
+created [temporarily] due to low activity of main project. 
+
 WWW: http://minidlna.sourceforge.net
