@@ -11,7 +11,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Sphinx-${PORTVERSION}
 DIST_SUBDIR=	python
 
-MAINTAINER=	ports@FreeBSD.org
+# NOTE: before committing to this port, contact portmgr to arrange for an
+# experimental ports run.  Untested commits may be backed out at portmgr's
+# discretion.
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python documentation generator
 
 LICENSE=	BSD2CLAUSE
