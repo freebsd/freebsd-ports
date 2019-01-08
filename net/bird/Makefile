@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bird
-PORTVERSION=	1.6.4
-PORTREVISION=	2
+PORTVERSION=	1.6.5
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
 
