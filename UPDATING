@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190108:
+  AFFECTS: users of databases/mysql-connector-java
+  AUTHOR: matthew@FreeBSD.org
+
+  The databases/mysql-connector-java port has been updated to 8.0.13,
+  which requires a minimum of Java 1.8, so dropping support for Java
+  1.6 and 1.7.  Users of those versions of Java should substitute the
+  databases/mysql-connector-java51 port which remains at version
+  5.1.47
+
 20190103:
   AFFECTS: users of multimedia/vlc*
   AUTHOR: riggs@FreeBSD.org
