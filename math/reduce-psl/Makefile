@@ -20,8 +20,6 @@ USES=		autoreconf:build libtool gmake ncurses
 SFSUBDIR=	snapshot_2018-11-23
 
 TARGET_SDIR=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
-CONFIGURE_ARGS=	--build=${TARGET_SDIR}
-WRKSRC=		${WRKDIR}/${DISTNAME}
 CPPFLAGS+=	-I${NCURSESINC}
 
 # Avoid GNU_CONFIGURE as it breaks staging
