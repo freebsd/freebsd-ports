@@ -11,8 +11,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bbp2006@columbia.edu
 COMMENT=	Net::HL7 - A simple yet flexible API for non-XML HL7 applications
 
-PORTDOCS=	README
-
 USES=		perl5
 USE_PERL5=	configure
 
