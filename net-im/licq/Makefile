@@ -20,7 +20,6 @@ BROKEN_sparc64=		Does not build: fails to link
 
 USES=		cmake:noninja iconv ssl
 USE_CXXSTD=	c++98
-WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	licq-im
 GH_PROJECT=	licq
