@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bird
-DISTVERSION=	2.0.2
-PORTREVISION=	3
+DISTVERSION=	2.0.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
 PKGNAMESUFFIX=	2
@@ -23,6 +22,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 USE_RC_SUBR=	bird
 SUB_FILES=	pkg-message
+
+GROUPS=		birdvty
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -55,7 +56,7 @@ CONFIGURE_ARGS+=--with-protocols="${RT_PROT}"
 RPKI_LIB_DEPENDS=	libssh.so:security/libssh
 
 post-patch:
-	${REINPLACE_CMD} -e 's|\.example|\.sample|g' ${WRKSRC}/Makefile.in
-	${MV} ${WRKSRC}/doc/bird.conf.example ${WRKSRC}/doc/bird.conf.sample
+	#${REINPLACE_CMD} -e 's|\.example|\.sample|g' ${WRKSRC}/Makefile.in
+	#${MV} ${WRKSRC}/doc/bird.conf ${WRKSRC}/doc/bird.conf.sample
 
 .include <bsd.port.mk>
