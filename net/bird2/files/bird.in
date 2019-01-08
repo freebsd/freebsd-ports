@@ -26,7 +26,8 @@ load_rc_config $name
 
 : ${bird_enable="NO"}
 : ${bird_config="%%PREFIX%%/etc/bird.conf"}
+: ${bird_group="birdvty"}
 
-command_args="-c $bird_config"
+command_args="-c $bird_config -g $bird_group"
 
 run_rc_command "$1"
