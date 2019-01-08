@@ -31,6 +31,7 @@ CONFIGURE_ENV=	UNAME_m=${ARCH} # XXX cpu_family()
 CFLAGS_aarch64=	-no-integrated-as
 CFLAGS_armv6=	-no-integrated-as -B${LOCALBASE}/bin
 CFLAGS_armv7=	-no-integrated-as -B${LOCALBASE}/bin
+LDFLAGS_i386=	-Wl,-z,notext
 
 OPTIONS_DEFINE=	TEST
 
