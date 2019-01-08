@@ -3,6 +3,7 @@
 
 PORTNAME=	libdvdread
 PORTVERSION=	6.0.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/libdvdread/${PORTVERSION}/ \
 		http://dvdnav.mplayerhq.hu/releases/ \
