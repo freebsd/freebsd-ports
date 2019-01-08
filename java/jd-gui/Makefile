@@ -5,10 +5,8 @@ PORTNAME=	jd-gui
 PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	java devel
-MASTER_SITES=	GH:src \
-		https://github.com/java-decompiler/jd-gui/releases/download/v${PORTVERSION}/:jar
-DISTFILES=	${DISTNAME}.tar.gz:src \
-		jd-gui-${PORTVERSION}.jar:jar
+MASTER_SITES=	https://github.com/java-decompiler/jd-gui/releases/download/v${PORTVERSION}/:jar
+DISTFILES=	jd-gui-${PORTVERSION}.jar:jar
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	tobik@FreeBSD.org

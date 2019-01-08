@@ -4,7 +4,6 @@
 PORTNAME=	yersinia
 PORTVERSION=	0.8.2
 CATEGORIES=	security
-MASTER_SITES=	GH
 # MASTER_SITES=	http://www.yersinia.net/download/
 
 MAINTAINER=	ayu@commun.jp

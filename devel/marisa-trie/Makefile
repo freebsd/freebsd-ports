@@ -5,7 +5,6 @@ PORTNAME=	marisa-tire
 PORTVERSION=	0.24
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	GH
 
 MAINTAINER=	iblis@hs.ntnu.edu.tw
 COMMENT=	MARISA: Matching Algorithm with Recursively Implemented StorAge

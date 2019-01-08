@@ -5,7 +5,6 @@ PORTNAME=	openlibm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.0
 CATEGORIES=	math
-MASTER_SITES=	GH
 
 MAINTAINER=	iblis@hs.ntnu.edu.tw
 COMMENT=	High quality system independent, portable, open source libm

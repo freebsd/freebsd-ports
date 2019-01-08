@@ -4,7 +4,6 @@ PORTNAME=	atf-allwinner
 PORTVERSION=	2.0.20181123
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	GH
 
 MAINTAINER=	manu@FreeBSD.org
 COMMENT=	Arm Trusted Framework for Allwinner SoCs
