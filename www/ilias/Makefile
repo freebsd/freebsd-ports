@@ -27,7 +27,6 @@ GH_PROJECT=	ILIAS
 USES=		cpe jpeg php
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
-SUB_FILES=	pkg-message
 USE_PHP=	pdo_mysql session zlib gd pdf dom xsl pcre simplexml
 ILIASDIR=	www/ilias
 ILIASDATADIR=	www/iliasdata

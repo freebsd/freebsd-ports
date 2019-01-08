@@ -21,7 +21,6 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-SUB_FILES=	geogebra.desktop
 CONFLICTS=	math/geogebra-i18n-[0-9]*
 NO_BUILD=	yes
 NO_ARCH=	yes
