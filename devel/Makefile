@@ -4703,7 +4703,6 @@
     SUBDIR += py-mock
     SUBDIR += py-molecule
     SUBDIR += py-mondrian
-    SUBDIR += py-mongoengine
     SUBDIR += py-mongokit
     SUBDIR += py-monotonic
     SUBDIR += py-monty
