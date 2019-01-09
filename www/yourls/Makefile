@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	yourls
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.3
 CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Your Own URL Shortener
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.md
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cpe php
+USE_PHP=	bcmath curl json mysqli pcre xml
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_PHP=	bcmath curl json mysqli pcre xml
-USES=		cpe php
 
 SUB_FILES=	pkg-message
 
