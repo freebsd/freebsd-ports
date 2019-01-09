@@ -1,6 +1,6 @@
---- plugins/qFacets/CMakeLists.txt.orig	2018-03-16 21:26:02 UTC
-+++ plugins/qFacets/CMakeLists.txt
-@@ -4,7 +4,7 @@ option( INSTALL_QFACETS_PLUGIN "Check to
+--- ./plugins/core/qFacets/CMakeLists.txt.orig	2019-01-07 13:50:00.290346000 -0500
++++ ./plugins/core/qFacets/CMakeLists.txt	2019-01-07 13:50:27.770300000 -0500
+@@ -4,7 +4,7 @@
  
  # CloudCompare 'FACETS' plugin
  if (INSTALL_QFACETS_PLUGIN)
@@ -9,7 +9,7 @@
  		message( SEND_ERROR "ShapeLib is required to compile this plugin (enable OPTION_USE_SHAPE_LIB)" )
  	endif()
  
-@@ -27,7 +27,7 @@ if (INSTALL_QFACETS_PLUGIN)
+@@ -31,7 +31,7 @@
  	target_link_libraries( ${PROJECT_NAME} QCC_IO_LIB )
  	
  	#add shapelib support

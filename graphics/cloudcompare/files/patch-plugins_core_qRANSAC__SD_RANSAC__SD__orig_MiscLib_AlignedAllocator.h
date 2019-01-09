@@ -1,5 +1,5 @@
---- plugins/qRANSAC_SD/RANSAC_SD_orig/MiscLib/AlignedAllocator.h.orig	2018-04-14 01:44:24 UTC
-+++ plugins/qRANSAC_SD/RANSAC_SD_orig/MiscLib/AlignedAllocator.h
+--- ./plugins/core/qRANSAC_SD/RANSAC_SD_orig/MiscLib/AlignedAllocator.h.orig	2019-01-07 13:59:17.670295000 -0500
++++ ./plugins/core/qRANSAC_SD/RANSAC_SD_orig/MiscLib/AlignedAllocator.h	2019-01-07 13:59:38.242600000 -0500
 @@ -1,7 +1,7 @@
  #ifndef MiscLib__ALIGNEDALLOCATOR_HEADER__
  #define MiscLib__ALIGNEDALLOCATOR_HEADER__
