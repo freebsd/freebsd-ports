@@ -19,7 +19,7 @@ EXPIRATION_DATE=	2021-09-30
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
-CONFLICTS=	cfengine-2* cfengine-3.[124-9]* cfengine-devel-* \
+CONFLICTS=	cfengine-3.[124-9]* cfengine-devel-* \
 		cfengine3[0124-9]-* cfengine31[0-9]-*
 
 USE_RC_SUBR=	cf-execd cf-serverd

@@ -16,15 +16,13 @@ CPE_VENDOR=	gnu
 DEPRECATED=		OpenSSL 1.1.X is not supported.
 EXPIRATION_DATE=	2021-09-30
 
-CONFLICTS=	cfengine-2* cfengine3[0-35-9]-* cfengine31[0-9]-*
+CONFLICTS=	cfengine3[0-35-9]-* cfengine31[0-9]-* cfengine-devel-*
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	34
 CONFLICTS+=	cfengine-3.*
 .endif
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
-
-CONFLICTS=	cfengine-2* cfengine-3.[1235-9]* cfengine-devel-*
 
 USE_RC_SUBR=	cf-execd cf-serverd
 
