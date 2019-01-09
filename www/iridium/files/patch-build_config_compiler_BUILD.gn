@@ -1,50 +1,5 @@
---- build/toolchain/gcc_toolchain.gni.orig	2018-03-20 23:05:14.000000000 +0100
-+++ build/toolchain/gcc_toolchain.gni	2018-06-18 20:55:17.080248000 +0200
-@@ -25,6 +25,11 @@
-     rebase_path("//build/toolchain/clang_static_analyzer_wrapper.py",
-                 root_build_dir) + " --mode=clang"
- 
-+declare_args() {
-+  extra_cxxflags = ""
-+  extra_ldflags = ""
-+}
-+
- # This template defines a toolchain for something that works like gcc
- # (including clang).
- #
-@@ -596,13 +601,23 @@
-   }
- 
-   gcc_toolchain(target_name) {
--    prefix = rebase_path("$clang_base_path/bin", root_build_dir)
--    cc = "$prefix/clang"
--    cxx = "$prefix/clang++"
--    ld = cxx
--    readelf = "${toolprefix}readelf"
--    ar = "${prefix}/llvm-ar"
--    nm = "${toolprefix}nm"
-+    if (is_bsd) {
-+      prefix = "/usr/local/bin"
-+      cc = "cc"
-+      cxx = "c++"
-+      ld = cxx
-+      readelf = "readelf"
-+      ar = "${prefix}/ar"
-+      nm = "${toolprefix}nm"
-+    } else {
-+      prefix = rebase_path("$clang_base_path/bin", root_build_dir)
-+      cc = "$prefix/clang"
-+      cxx = "$prefix/clang++"
-+      ld = cxx
-+      readelf = "${toolprefix}readelf"
-+      ar = "${prefix}/llvm-ar"
-+      nm = "${toolprefix}nm"
-+    }
- 
-     forward_variables_from(invoker,
-                            [
---- build/config/compiler/BUILD.gn.orig	2018-06-13 00:10:02.000000000 +0200
-+++ build/config/compiler/BUILD.gn	2018-07-21 13:05:54.418405000 +0200
+--- build/config/compiler/BUILD.gn.orig	2018-05-09 21:05:34.000000000 +0200
++++ build/config/compiler/BUILD.gn	2019-01-07 22:08:08.301170000 +0100
 @@ -51,7 +51,7 @@
    # only two architectures that are currently checked in). Turn this off when
    # you are using a custom toolchain and need to control -B in cflags.
