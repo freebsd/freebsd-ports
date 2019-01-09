@@ -12136,6 +12136,7 @@
 %%WWWDIR%%/spec/graphql/types/query_type_spec.rb
 %%WWWDIR%%/spec/graphql/types/time_type_spec.rb
 %%WWWDIR%%/spec/helpers/application_helper_spec.rb
+%%WWWDIR%%/spec/helpers/application_settings_helper_spec.rb
 %%WWWDIR%%/spec/helpers/auth_helper_spec.rb
 %%WWWDIR%%/spec/helpers/auto_devops_helper_spec.rb
 %%WWWDIR%%/spec/helpers/avatars_helper_spec.rb
