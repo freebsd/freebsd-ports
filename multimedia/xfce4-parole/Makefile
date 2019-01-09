@@ -3,6 +3,7 @@
 
 PORTNAME=	parole
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}/
 DIST_SUBDIR=	xfce4
@@ -19,21 +20,20 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libtag.so:audio/taglib
 RUN_DEPENDS=	xdg-screensaver:devel/xdg-utils
 
+USES=		compiler:c++11-lang desktop-file-utils gettext-tools \
+		gmake gnome libtool pkgconfig tar:bzip2 xfce:gtk3
+USE_GNOME=	cairo gtk30 glib20 intltool intlhack
+USE_GSTREAMER1=	core faad flac wavpack rtmp x
+USE_XFCE=	panel
+USE_XORG=	ice sm x11
+
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-notify-plugin \
 		--enable-tray-plugin \
 		--enable-taglib \
-		--disable-mpris2-plugin \
-		--without-html-dir \
-		--with-gstreamer=1.0
-USES=		compiler:c++11-lang desktop-file-utils gettext-tools \
-		gmake libtool pkgconfig tar:bzip2 xfce:gtk3
-USE_GNOME=	cairo gtk30 glib20 intltool intlhack
-USE_GSTREAMER1=	core faad flac wavpack rtmp x
-USE_XFCE=	panel
-USE_XORG=	ice sm x11
-USE_LDCONFIG=	yes
+		--enable-mpris2-plugin \
+		--without-html-dir
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		NLS

@@ -1,6 +1,6 @@
---- ./configure.orig	2013-01-07 10:17:14.000000000 +0000
-+++ ./configure	2013-01-08 20:20:14.000000000 +0000
-@@ -18772,7 +18772,7 @@
+--- configure.orig	2018-04-12 00:49:30 UTC
++++ configure
+@@ -19422,7 +19422,7 @@ $as_echo "#define HAVE_LC_MESSAGES 1" >>confdefs.h
  
      fi
    fi
@@ -9,7 +9,7 @@
  
  
      gt_cv_have_gettext=no
-@@ -23621,10 +23621,10 @@
+@@ -23916,10 +23916,10 @@ _ACEOF
  else
  
  cat >>confdefs.h <<_ACEOF

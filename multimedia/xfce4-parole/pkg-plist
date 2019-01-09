@@ -7,6 +7,7 @@ include/parole/parole-provider-player.h
 include/parole/parole-provider-plugin.h
 include/parole/parole-stream.h
 include/parole/parole.h
+lib/parole-0/parole-mpris2.so
 lib/parole-0/parole-notify.so
 lib/parole-0/tray-icon.so
 share/appdata/parole.appdata.xml
@@ -67,6 +68,7 @@ share/icons/hicolor/scalable/apps/parole.svg
 %%NLS%%share/locale/uk/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/parole.mo
+%%DATADIR%%/parole-plugins-0/mpris2.desktop
 %%DATADIR%%/parole-plugins-0/notify.desktop
 %%DATADIR%%/parole-plugins-0/system-tray.desktop
 share/pixmaps/no-cover.png
