@@ -2,9 +2,7 @@
 
 PORTNAME=	cloudcompare
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.1-288
-DISTVERSIONSUFFIX=	-gb4d51361
-PORTREVISION=	7
+DISTVERSION=	2.10
 CATEGORIES=	graphics
 
 MAINTAINER=	neel@neelc.org
@@ -19,8 +17,7 @@ USES=		cmake localbase:ldflags qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	CloudCompare
 GH_PROJECT=	${GH_ACCOUNT}
-GH_TAGNAME=	5d41227deb30c445ccbaa2d789a4363b57948a5d
-USE_QT=		concurrent core gui opengl printsupport widgets buildtools_build qmake_build
+USE_QT=		concurrent core gui opengl printsupport widgets buildtools_build qmake_build svg linguisttools
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DXFLIB GAMEPAD GDAL PDAL SHAPELIB PLUGINS

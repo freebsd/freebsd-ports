@@ -1,6 +1,6 @@
---- plugins/qPCL/PclUtils/filters/MLSSmoothingUpsampling.cpp.orig	2018-04-14 06:09:41 UTC
-+++ plugins/qPCL/PclUtils/filters/MLSSmoothingUpsampling.cpp
-@@ -51,7 +51,7 @@ int smooth_mls(const typename pcl::Point
+--- ./plugins/core/qPCL/PclUtils/filters/MLSSmoothingUpsampling.cpp.orig	2019-01-06 17:02:13.000000000 -0500
++++ ./plugins/core/qPCL/PclUtils/filters/MLSSmoothingUpsampling.cpp	2019-01-07 13:52:41.029660000 -0500
+@@ -51,7 +51,7 @@
  {
  	typename pcl::search::KdTree<PointInT>::Ptr tree (new pcl::search::KdTree<PointInT>);
  
