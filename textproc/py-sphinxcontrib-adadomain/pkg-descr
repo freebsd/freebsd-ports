@@ -1,4 +1,3 @@
-This module contains the AdaDomain Sphinx extension which was created by
-Tero Koskinen.
+This extension adds Ada domain support to Sphinx.
 
-WWW: https://pypi.org/project/sphinxcontrib-adadomain/
+WWW: https://bitbucket.org/tkoskine/sphinxcontrib-adadomain
