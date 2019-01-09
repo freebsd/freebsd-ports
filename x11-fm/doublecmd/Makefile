@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	doublecmd
-PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTVERSION=	0.8.4
 CATEGORIES=	x11-fm
-PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 MASTER_SITES=	SF/${PORTNAME}/Double%20Commander%20Source
+PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}.tar.gz ${PORTNAME}-help-${HELPVERSION}-src.tar.gz
 
@@ -17,9 +16,10 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	amd64 i386
 
+USES=		dos2unix desktop-file-utils fpc gnome lazarus:flavors
+
 PORTDOCS=	*
 
-USES=		dos2unix desktop-file-utils fpc lazarus:flavors
 USE_FPC=	cairo chm fcl-base fcl-db fcl-image fcl-json fcl-registry \
 		fcl-xml iconvenc pasjpeg rtl-extra x11 regexpr
 USE_GNOME=	cairo glib20
@@ -41,6 +41,7 @@ LAZARUS_PROJECT_FILES+=	components/synunihighlighter/synuni.lpk
 LAZARUS_NO_FLAVORS=qt5
 LAZBUILD_ARGS=	-d --pcp=${WRKSRC}/tmppcp
 MAKE_ENV+=	LDVER=ld.bfd # for DragonFly
+LLD_UNSAFE=	yes
 
 HELPVERSION=	0.6.0
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -176,7 +177,7 @@ LAZARUS_PROJECT_FILES+=		plugins/wdx/textline/src/TextLine.lpi
 .endif
 
 .if ${PORT_OPTIONS:MWFX_SAMBA}
-LAZARUS_PROJECT_FILES+= 	plugins/wfx/samba/src/samba.lpi
+LAZARUS_PROJECT_FILES+=		plugins/wfx/samba/src/samba.lpi
 .endif
 
 .if ${PORT_OPTIONS:MWLX_MPLAYER}
