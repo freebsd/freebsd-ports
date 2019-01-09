@@ -476,6 +476,7 @@
     SUBDIR += heirloom
     SUBDIR += helm
     SUBDIR += hextools
+    SUBDIR += hexyl
     SUBDIR += hfm
     SUBDIR += hfsexplorer
     SUBDIR += hfsutils
