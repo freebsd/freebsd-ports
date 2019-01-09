@@ -96,7 +96,7 @@ lib/libkrb5support.so
 lib/libkrb5support.so.0
 lib/libkrb5support.so.0.1
 lib/krb5/plugins/kdb/db2.so
-lib/krb5/plugins/kdb/klmdb.so
+%%LMDB%%lib/krb5/plugins/kdb/klmdb.so
 lib/krb5/plugins/tls/k5tls.so
 %%LDAP%%lib/krb5/plugins/kdb/kldap.so
 lib/krb5/plugins/preauth/otp.so
