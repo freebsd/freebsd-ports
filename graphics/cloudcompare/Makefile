@@ -3,6 +3,7 @@
 PORTNAME=	cloudcompare
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	neel@neelc.org
@@ -17,7 +18,7 @@ USES=		cmake localbase:ldflags qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	CloudCompare
 GH_PROJECT=	${GH_ACCOUNT}
-USE_QT=		concurrent core gui opengl printsupport widgets buildtools_build qmake_build svg linguisttools
+USE_QT=		concurrent core gui opengl printsupport widgets buildtools_build qmake_build svg linguisttools_build
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DXFLIB GAMEPAD GDAL PDAL SHAPELIB PLUGINS
@@ -32,7 +33,6 @@ SHAPELIB_DESC=	Enable shape file support
 
 DXFLIB_CMAKE_BOOL=	OPTION_USE_DXF_LIB
 
-GAMEPAD_USES=	qt:5
 GAMEPAD_USE=		QT=gamepad
 GAMEPAD_CMAKE_BOOL=	OPTION_SUPPORT_GAMEPADS
 
