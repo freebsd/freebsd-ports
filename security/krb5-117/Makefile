@@ -54,6 +54,7 @@ LDAP_CONFIGURE_WITH=	ldap
 LMDB_DESC=		OpenLDAP Lightning Memory-Mapped Database support
 LMDB_CONFIGURE_WITH=	lmdb
 LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
+LMDB_IMPLIES=		LDAP
 NLS_USES=		gettext
 READLINE_USES=		readline
 READLINE_PORT_DESC=	Command line editing via devel/readline
