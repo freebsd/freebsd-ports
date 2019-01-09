@@ -157,7 +157,8 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/javadoc/script.js
 %%DATADIR%%/javadoc/serialized-form.html
 %%DATADIR%%/javadoc/stylesheet.css
-%%DATADIR%%/libs/codesize-1.1.jar
+%%DATADIR%%/libs/bcel-6.2.jar
+%%DATADIR%%/libs/codesize-1.2.jar
 %%DATADIR%%/libs/picocontainer-2.14.2.jar
 %%DATADIR%%/libs/robocode.battle-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/robocode.core-%%PORTVERSION%%.jar
