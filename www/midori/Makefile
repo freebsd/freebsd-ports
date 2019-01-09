@@ -2,11 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	midori
-PORTVERSION=	0.5.11
+PORTVERSION=	0.7.0
 CATEGORIES=	www xfce
-MASTER_SITES=	https://launchpadlibrarian.net/215909491/ \
-		https://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
-DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Lightweight web browser using WebKit browser engine
@@ -17,39 +14,39 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	rsvg-convert:graphics/librsvg2 \
 		valac:lang/vala
 LIB_DEPENDS=	libnotify.so:devel/libnotify \
+		libsoup-2.4.so:devel/libsoup \
 		libsoup-gnome-2.4.so:devel/libsoup-gnome \
-		libgcr-3.so:security/gcr
+		libp11-kit.so:security/p11-kit \
+		libgcr-3.so:security/gcr \
+		libpeas-1.0.so:devel/libpeas \
+		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-CFLAGS+=	-Wno-return-type
-CMAKE_ARGS=	-DUSE_APIDOCS:BOOL=OFF \
-		-DUSE_GRANITE:BOOL=OFF
-
-USES=		cmake desktop-file-utils gettext localbase:ldflags pkgconfig \
-		sqlite tar:bzip2
-USE_GNOME=	glib20 intltool libxml2
+USES=		cmake desktop-file-utils gettext gnome localbase:ldflags \
+		pkgconfig sqlite tar:bzip2
+USE_GNOME=	cairo glib20 gtk30 intltool introspection libxml2
 USE_XORG=	xscrnsaver
+
+CFLAGS+=	-Wno-return-type
+CMAKE_ARGS=	-DUSE_APIDOCS:BOOL=OFF
+
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
-OPTIONS_DEFINE=	GIR GTK3 ZEITGEIST
-OPTIONS_SUB=	yes
-GIR_PREVENTS=	GTK3
-GIR_USE=	gnome=introspection:build
-GIR_CMAKE_ON=	-DUSE_GIR:BOOL=ON
-GTK3_LIB_DEPENDS=	libwebkitgtk-3.0.so:www/webkit-gtk3
-GTK3_USE=	gnome=gtk30
-GTK3_CMAKE_ON=	-DUSE_GTK3:BOOL=ON \
-	-DHALF_BRO_INCOM_WEBKIT2:BOOL=OFF
-GTK3_LIB_DEPENDS_OFF=	libwebkitgtk-1.0.so:www/webkit-gtk2
-GTK3_USE_OFF=	gnome=gtk20
-GTK3_CMAKE_OFF=	-DUSE_GTK3:BOOL=OFF
+USE_GITHUB=	yes
+GH_ACCOUNT=	midori-browser
+GH_PROJECT=	core
+GH_TAGNAME=	v7
+
+OPTIONS_DEFINE=		ZEITGEIST
+OPTIONS_SUB=		yes
+
+ZEITGEIST_DESC=		User logs activities
+
 ZEITGEIST_LIB_DEPENDS=	libzeitgeist-2.0.so:sysutils/zeitgeist
 ZEITGEIST_CMAKE_OFF=	-DUSE_ZEITGEIST:BOOL=OFF
-GIR_DESC=	Install GObject Introspection Reference manual
-ZEITGEIST_DESC=	User logs activities
 
 post-patch:
 # Avoid errors with CMake
