@@ -654,6 +654,7 @@
     SUBDIR += smtpfeed
     SUBDIR += smtpmail
     SUBDIR += smtprc
+    SUBDIR += smtprelay
     SUBDIR += smtptrapd
     SUBDIR += sortmail
     SUBDIR += spamass-ixhash

@@ -1,0 +1,6 @@
+Simple Golang SMTP relay/proxy server that accepts mail via SMTP
+and forwards it directly to another SMTP server. It supports TLS,
+STARTTLS, plain SMTP, can do authentication and various sender
+and receiver checks.
+
+WWW: https://code.bluelife.at/decke/smtprelay
