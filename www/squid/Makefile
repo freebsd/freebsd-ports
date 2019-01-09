@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	4.4
-PORTREVISION=	1
+PORTVERSION=	4.5
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v4/ \
 		http://www2.us.squid-cache.org/Versions/v4/ \
@@ -18,8 +17,6 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://master.squid-cache.org/~amosjeffries/patches/:nosid
 PATCH_SITE_SUBDIR=	Versions/v4/changesets
-PATCHFILES=	squid-4-bc54d7a6f7ec510a25966f2f800d3ea874657546.patch:-p1\
-		squid-4-0022167d80725513d95b38aaebc90086fc0b6938.patch:-p1
 
 MAINTAINER=	timp87@gmail.com
 COMMENT=	HTTP Caching Proxy
