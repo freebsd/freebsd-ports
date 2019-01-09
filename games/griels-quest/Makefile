@@ -21,6 +21,6 @@ USE_SDL=	sdl mixer image ttf gfx
 DATADIR=	${PREFIX}/share/griels
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/griels
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/griels
 
 .include <bsd.port.mk>
