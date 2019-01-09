@@ -8,6 +8,10 @@ CATEGORIES=	devel security
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Tor pluggable transports utility library
 
+LICENSE=	BSD2CLAUSE BSD3CLAUSE PD
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Yawning
 GH_TAGNAME=	0c9b50f
