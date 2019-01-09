@@ -2,6 +2,7 @@
 
 PORTNAME=	kdevelop
 DISTVERSION=	5.3.1
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/kdevelop/${DISTVERSION}/src
 DIST_SUBDIR=	KDE/kdevelop
@@ -12,14 +13,15 @@ COMMENT=	Plugin extensible IDE for KDE
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	kdev-pg-qt:devel/kdevelop-pg-qt
+BUILD_DEPENDS=	kdev-pg-qt:devel/kdevelop-pg-qt \
+		llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 LIB_DEPENDS=	libkasten3controllers.so:devel/okteta \
 		libapr-1.so:devel/apr1 \
 		libsvn_client-1.so:devel/subversion \
 		libboost_thread.so:devel/boost-libs \
-		libkomparediff2.so:textproc/libkomparediff2 \
-		libclang.so.${LLVM_VERSION:C/([1-9])([0-9])/\1/}:devel/llvm${LLVM_VERSION}
-RUN_DEPENDS=	gmake:devel/gmake
+		libkomparediff2.so:textproc/libkomparediff2
+RUN_DEPENDS=	gmake:devel/gmake \
+		llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 
 USES=		cmake compiler:c++11-lib desktop-file-utils \
 		gettext grantlee:5 kde:5 qt:5 shared-mime-info shebangfix tar:xz
@@ -36,7 +38,7 @@ CONFLICTS=	kdevelop-kde4-4* kdevelop-4* kdevplatform-kde4-4* kdevplatform-4*
 SHEBANG_FILES=	kdevplatform/util/kdevplatform_shell_environment.sh \
 		kdevplatform/util/.zshrc
 
-CMAKE_ARGS=	-DCMAKE_POLICY_DEFAULT_CMP0074=NEW -DLLVM_ROOT=${LOCALBASE}/llvm${LLVM_VERSION}
+CMAKE_ARGS=	-DCMAKE_POLICY_DEFAULT_CMP0074=NEW -DLLVM_ROOT=${LOCALBASE}/llvm${LLVM_DEFAULT}
 
 OPTIONS_DEFINE=	WEBENGINE
 WEBENGINE_DESC=	Use WebEngine as help reader
@@ -44,8 +46,6 @@ WEBENGINE_USES=	qt:5
 WEBENGINE_USE=	QT=location,webchannel,webengine
 WEBENGINE_USE_OFF=	QT=webkit
 WEBENGINE_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngineWidgets:BOOL=TRUE
-
-LLVM_VERSION?=	60
 
 SHEBANG_LANG=	zsh
 zsh_OLD_CMD=	/bin/zsh
