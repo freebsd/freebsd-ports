@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	waylandpp
-DISTVERSION=	0.2.3
-PORTREVISION=	1
+DISTVERSION=	0.2.4
 CATEGORIES=	graphics
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -13,10 +12,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libwayland-egl.so:graphics/wayland
 
-USES=		cmake localbase pkgconfig
+USES=		cmake compiler:c++11-lang gl pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	NilsBrause
 USE_GL=		egl
+USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_DOCUMENTATION BUILD_EXAMPLES
 
