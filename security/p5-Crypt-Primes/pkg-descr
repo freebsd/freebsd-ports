@@ -10,3 +10,5 @@ Crypt::Primes is a pure perl implementation. It uses Math::Pari for
 multiple precision integer arithmetic and number theoretic functions.
 Random numbers are gathered with Crypt::Random, a perl interface to
 /dev/u?random devices found on modern Unix operating systems.
+
+WWW: https://metacpan.org/release/Crypt-Primes
