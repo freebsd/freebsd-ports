@@ -24,6 +24,7 @@ share/locale/fi/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_browsertabs.mo
 share/locale/fr/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_browsertabs.mo
+share/locale/gl/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_browsertabs.mo
 share/locale/id/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/id/LC_MESSAGES/plasma_runner_browsertabs.mo
@@ -59,3 +60,5 @@ share/locale/uk/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_browsertabs.mo
 share/locale/zh_CN/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_browsertabs.mo
+share/locale/zh_TW/LC_MESSAGES/plasma-browser-integration-reminder.mo
+share/locale/zh_TW/LC_MESSAGES/plasma_runner_browsertabs.mo

@@ -1638,6 +1638,7 @@ share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.comic.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.diskquota.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.fifteenpuzzle.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.fuzzyclock.mo
+share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardindicator.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.konsoleprofiles.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.mediaframe.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.minimizeall.mo
@@ -1650,11 +1651,14 @@ share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.systemloadviewer.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.timer.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.userswitcher.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.weather.mo
+share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
+share/locale/zh_TW/LC_MESSAGES/plasma_calendar_astronomicalevents.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_packagestructure_comic.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_CharacterRunner.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_converterrunner.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_katesessions.mo
+share/locale/zh_TW/LC_MESSAGES/plasma_runner_konsoleprofiles.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_mediawiki.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_spellcheckrunner.mo

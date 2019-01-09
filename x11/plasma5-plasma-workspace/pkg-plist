@@ -4373,6 +4373,7 @@ share/locale/zh_CN/LC_MESSAGES/systemmonitor.mo
 share/locale/zh_TW/LC_MESSAGES/freespacenotifier.mo
 share/locale/zh_TW/LC_MESSAGES/kcminit.mo
 share/locale/zh_TW/LC_MESSAGES/kholidays_calendar_plugin.mo
+share/locale/zh_TW/LC_MESSAGES/kio_desktop.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_applications.mo
 share/locale/zh_TW/LC_MESSAGES/klipper.mo
 share/locale/zh_TW/LC_MESSAGES/krunner.mo
@@ -4398,10 +4399,12 @@ share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.systemmonitor.diskac
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.systemmonitor.diskusage.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.systemmonitor.memory.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.systemmonitor.net.mo
+share/locale/zh_TW/LC_MESSAGES/plasma_containmentactions_applauncher.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_containmentactions_contextmenu.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_applicationjobs.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_devicenotifications.mo
+share/locale/zh_TW/LC_MESSAGES/plasma_engine_dict.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_engine_notifications.mo
@@ -4413,6 +4416,7 @@ share/locale/zh_TW/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_package_plasmashell.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_activities.mo
+share/locale/zh_TW/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_baloosearch5.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_calculatorrunner.mo
