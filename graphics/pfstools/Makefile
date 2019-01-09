@@ -83,12 +83,12 @@ ALIGN_LIB_DEPENDS=	libopencv_nonfree.so:graphics/opencv \
 
 GLVIEW_CMAKE_BOOL=	WITH_pfsglview
 GLVIEW_CMAKE_ON=	-DGLUT_INCLUDE_DIRS=${LOCALBASE}/include
+GLVIEW_USES=		gl
 GLVIEW_USE=		GL=glut GL=gl,glu
 
 VIEW_CMAKE_BOOL=	WITH_QT
-VIEW_USES=		qt:5
-VIEW_USE=		QT=buildtools_build,qmake_build,widgets
-VIEW_USE=		GL=glut GL=gl,glu QT=core,gui,widgets
+VIEW_USES=		gl qt:5
+VIEW_USE=		GL=glut GL=gl,glu QT=core,gui,widgets,buildtools_build,qmake_build
 
 OPENMP_USES=		compiler:openmp
 
