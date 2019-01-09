@@ -11555,3 +11555,11 @@ net/ssltunnel-server||2019-01-05|Has expired: Does not build, upstream disappear
 lang/cilkplus||2019-01-05|Has expired: Cilk Plus is on its way out (both in GCC and the Intel compilers)
 net/ssltunnel-client||2019-01-05|Removed, client part of expired net/ssltunnel-server
 devel/py-mongoengine|databases/py-mongoengine|2019-01-08|Move to a better category
+databases/postgresql93-client|databases/postgresql94-client|2019-01-09|Has expired: PostgreSQL-9.3 has reached end-of-life
+databases/postgresql93-docs|databases/postgresql94-docs|2019-01-09|Has expired: PostgreSQL-9.3 has reached end-of-life
+databases/postgresql93-contrib|databases/postgresql94-contrib|2019-01-09|Has expired: PostgreSQL-9.3 has reached end-of-life
+databases/postgresql93-pltcl|databases/postgresql94-pltcl|2019-01-09|Has expired: PostgreSQL-9.3 has reached end-of-life
+databases/postgresql93-pgtcl|databases/postgresql94-pgtcl|2019-01-09|Removed, part of expired PostgreQSL 9.3
+databases/postgresql93-plperl|databases/postgresql94-plperl|2019-01-09|Has expired: PostgreSQL-9.3 has reached end-of-life
+databases/postgresql93-plpython|databases/postgresql94-plpython|2019-01-09|Has expired: PostgreSQL-9.3 has reached end-of-life
+databases/postgresql93-server|databases/postgresql94-server|2019-01-09|Has expired: PostgreSQL-9.3 has reached end-of-life
