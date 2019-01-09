@@ -16,7 +16,7 @@ COMMENT=	Systems administration tool for networks
 DEPRECATED=		OpenSSL 1.1.X is not supported.
 EXPIRATION_DATE=	2021-09-30
 
-CONFLICTS=	cfengine-2* cfengine3[0-57-9]-* cfengine31[0-9]-*
+CONFLICTS=	cfengine3[0-57-9]-* cfengine31[0-9]-*
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	36
 PORTEPOCH?=	2
@@ -28,8 +28,6 @@ LICENSE=	GPLv3
 CPE_VENDOR=	gnu
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
-
-CONFLICTS=	cfengine-[12-57-9]*
 
 USE_RC_SUBR=	cf-execd cf-serverd cf-monitord
 
