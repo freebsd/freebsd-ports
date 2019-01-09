@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# PROVIDE: smtprelay
+# REQUIRE: networking
+
+. /etc/rc.subr
+
+name="smtprelay"
+rcvar="smtprelay_enable"
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -r -f %%LOCALBASE%%/bin/smtprelay -config %%ETCDIR%%/smtprelay.ini"
+
+load_rc_config $name
+: ${smtprelay_enable:=no}
+
+run_rc_command "$1"
