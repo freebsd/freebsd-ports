@@ -19,7 +19,8 @@ BROKEN_sparc64=	fails to build
 LIB_DEPENDS=	libjansson.so:devel/jansson \
 		libsnappy.so:archivers/snappy
 
-USES=		cmake pkgconfig
+USES=		cmake compiler:c++11-lang pkgconfig
+
 USE_LDCONFIG=	yes
 WRKSRC_SUBDIR=	lang/c
 
