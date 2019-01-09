@@ -5,6 +5,6 @@
  # if defined(__x86_64__)
    fprintf (f,
 -	     "CFLAGS += -O3 -fno-common  -mcmodel=kernel -mno-red-zone  -fno-asynchronous-unwind-tables -ffreestanding\n");
-+	     "CFLAGS += -O3 -fno-common  -mcmodel=kernel -mno-red-zone  -fno-asynchronous-unwind-tables -ffreestanding -mno-sse\n");
++	     "CFLAGS += -O3 -fno-common  -DKLD_MODULE -mcmodel=kernel -mno-red-zone  -fno-asynchronous-unwind-tables -ffreestanding -mno-sse\n");
  # endif
  }
