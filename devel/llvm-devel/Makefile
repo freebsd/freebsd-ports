@@ -3,7 +3,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-devel
 
@@ -31,14 +31,18 @@ SHEBANG_FILES=	utils/lit/lit.py utils/llvm-lit/llvm-lit.in \
 		tools/clang/tools/clang-format/clang-format-diff.py \
 		tools/clang/tools/extra/clang-tidy/tool/clang-tidy-diff.py \
 		tools/clang/tools/extra/clang-tidy/tool/run-clang-tidy.py \
-		tools/clang/tools/extra/include-fixer/find-all-symbols/tool/run-find-all-symbols.py
+		tools/clang/tools/extra/include-fixer/find-all-symbols/tool/run-find-all-symbols.py \
+		tools/opt-viewer/optrecord.py \
+		tools/opt-viewer/opt-diff.py \
+		tools/opt-viewer/opt-stats.py \
+		tools/opt-viewer/opt-viewer.py
 
 SUB_FILES=	llvm-wrapper.sh
 SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
 
 CMAKE_INSTALL_PREFIX=	${LLVM_PREFIX}
 CMAKE_ARGS=	-DLLVM_BUILD_LLVM_DYLIB=ON
-CMAKE_ARGS=	-DCMAKE_BUILD_WITH_INSTALL_RPATH=ON
+CMAKE_ARGS+=	-DCMAKE_BUILD_WITH_INSTALL_RPATH=ON
 CMAKE_ARGS+=	-DLLVM_ENABLE_RTTI=ON
 CMAKE_ARGS+=	-DLLVM_DEFAULT_TARGET_TRIPLE=${CONFIGURE_TARGET}
 CMAKE_ARGS+=	-DLLVM_HOST_TRIPLE=${CONFIGURE_TARGET}
@@ -135,6 +139,7 @@ COMMANDS=	bugpoint \
 		llvm-dlltool \
 		llvm-dwarfdump \
 		llvm-dwp \
+		llvm-elfabi \
 		llvm-exegesis \
 		llvm-extract \
 		llvm-link \
