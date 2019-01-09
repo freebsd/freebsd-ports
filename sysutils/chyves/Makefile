@@ -16,6 +16,8 @@ USE_GITHUB=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
 
+MAKE_ARGS+=	-e
+
 do-patch:
 	${REINPLACE_CMD} 's%\$$(PREFIX)%${STAGEDIR}/$$(PREFIX)%g' ${WRKSRC}/Makefile
 
