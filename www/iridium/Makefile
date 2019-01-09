@@ -3,7 +3,7 @@
 
 PORTNAME=	iridium
 PORTVERSION=	2018.5.67
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	gperf:devel/gperf \
 		bash:shells/bash \
 		flock:sysutils/flock \
 		node:www/node \
+		${LOCALBASE}/bin/ar:devel/binutils \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		${LOCALBASE}/share/usbids/usb.ids:misc/usbids \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
@@ -61,7 +62,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		bison desktop-file-utils gnome jpeg localbase:ldflags ninja \
+USES=		bison desktop-file-utils gl gnome jpeg localbase:ldflags ninja \
 		perl5 pkgconfig python:2.7,build shebangfix tar:xz
 USE_GL=		gl
 USE_LDCONFIG=	${DATADIR}
@@ -86,6 +87,7 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		enable_remoting=false \
 		fieldtrial_testing_like_official_build=true \
 		is_clang=true \
+		jumbo_file_merge_limit=8 \
 		toolkit_views=true \
 		treat_warnings_as_errors=false \
 		use_allocator="none" \
@@ -94,6 +96,7 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		use_bundled_fontconfig=false \
 		use_custom_libcxx=false \
 		use_gnome_keyring=false \
+		use_jumbo_build=true \
 		use_gtk3=true \
 		use_lld=true \
 		use_sysroot=false \
@@ -162,8 +165,8 @@ SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 SNDIO_VARS=		GN_ARGS+=use_sndio=true
 SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 
-BUILD_DEPENDS+=	${LOCALBASE}/bin/ar:devel/binutils
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-llvm-base
+# Allow relocations against read-only segments (override lld default)
+LDFLAGS_i386=	-Wl,-znotext
 
 # TODO: -isystem, would be just as ugly as this approach, but more reliably
 # build would fail without C_INCLUDE_PATH/CPLUS_INCLUDE_PATH env var set.
