@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	clementine
-DISTVERSION=	1.3.1.g20190103
+DISTVERSION=	1.3.1-661
+DISTVERSIONSUFFIX=	-g4ff370ce1
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-player
 
@@ -25,7 +26,8 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 BROKEN_powerpc64=	fails to compile: tagreader.cpp: undefined reference to TagLib::String::String
 
 USE_GITHUB=	yes
-GH_TUPLE=       clementine-player:Clementine:4ff370c
+GH_ACCOUNT=	clementine-player
+GH_PROJECT=	Clementine
 
 USES=		cmake \
 		compiler:c++11-lib \
@@ -41,7 +43,7 @@ USE_CXXSTD=	c++11
 USE_GL=		gl glew glu
 USE_XORG=	x11
 
-USE_QT=		buildtools \
+USE_QT=		buildtools_build \
 		concurrent \
 		core \
 		dbus \
@@ -51,7 +53,7 @@ USE_QT=		buildtools \
 		network \
 		opengl \
 		qmake_build \
-		testlib \
+		testlib_build \
 		sql \
 		widgets \
 		x11extras \
