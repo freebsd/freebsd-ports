@@ -22,6 +22,7 @@ SHEBANG_FILES=	${PORTNAME}
 OPTIONS_DEFINE=	ADNS IPY PYPERCLIP
 OPTIONS_DEFAULT=	ADNS IPY PYPERCLIP
 
+ADNS_DESC=	Resolve IPs to host names
 IPY_DESC=	Extract ipv4 from ipv6 addresses
 PYPERCLIP_DESC=	Copy magnet links to the system clipboard
 
