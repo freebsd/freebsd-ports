@@ -33,7 +33,8 @@
 #
 # # optional:
 # NAME_config="%%PREFIX%%/etc/knot/NAME.conf"  # (-c)onfig file
-# NAME_diruser="%%USERS%%"   # /var/db/NAME and /var/run/NAME are created if they
+# NAME_config="db:/var/db/knot/confdb"         # (-C)onfig database
+# NAME_diruser="%%USERS%%"    # /var/db/NAME and /var/run/NAME are created if they
 # NAME_dirgroup="%%GROUPS%%"  # don't exist. These don't control the user/group knot
 #                       # runs as, the config file has a setting for that.
 #
@@ -72,11 +73,26 @@ diruser="$(eval echo \${${name}_diruser})"
 dirgroup="$(eval echo \${${name}_dirgroup})"
 
 command=%%PREFIX%%/sbin/knotd
-command_args="-c ${configfile} -d"
-control=%%PREFIX%%/sbin/knotc
-pidfile=/var/run/${name}/knot.pid
+case "$configfile" in
+db:*)
+	config_args="-C ${configfile#db:}"
+	;;
+*)
+	config_args="-c ${configfile}"
+	;;
+esac
+command_args="${config_args} -d"
+control="%%PREFIX%%/sbin/knotc"
+pidfile="/var/run/${name}/knot.pid"
 
-required_files=${configfile}
+case "$configfile" in
+db:*)
+	required_files=${configfile#db:}/data.mdb
+	;;
+*)
+	required_files=${configfile}
+	;;
+esac
 
 extra_commands=reload
 reload_cmd="knot_reload"
@@ -90,13 +106,13 @@ knot_prestart()
 	if [ ! -d /var/db/${name} ]; then
 		install -d -o ${diruser} -g ${dirgroup} /var/db/${name}
 	fi
-	${control} -c ${configfile} conf-check
+	${control} ${config_args} conf-check
 }
 
 knot_reload()
 {
 	echo "Reloading ${name}."
-	${control} -c ${configfile} reload
+	${control} ${config_args} reload
 }
 
 run_rc_command "$1"
