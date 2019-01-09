@@ -1,0 +1,32 @@
+diff --git a/src/lib/marble/CMakeLists.txt b/src/lib/marble/CMakeLists.txt
+index 155c0fc51..1ce5f5f52 100644
+--- src/lib/marble/CMakeLists.txt
++++ src/lib/marble/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-PROJECT(marblewidget)
++# PROJECT(marblewidget)
+ 
+ macro_optional_find_package(Phonon4Qt5 QUIET)
+ marble_set_package_properties( Phonon4Qt5 PROPERTIES
+@@ -13,6 +13,10 @@ endif()
+ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/config-phonon.h.cmake
+                ${CMAKE_CURRENT_BINARY_DIR}/config-phonon.h)
+ 
++if(MARBLE_NO_WEBKITWIDGETS)
++    add_definitions(-DMARBLE_NO_WEBKITWIDGETS)
++endif()
++
+ INCLUDE_DIRECTORIES(
+  ${CMAKE_CURRENT_SOURCE_DIR}
+  ${CMAKE_CURRENT_BINARY_DIR}
+@@ -47,10 +51,6 @@ set(MARBLE_ABI_VERSION "28")
+ 
+ ########### next target ###############
+ 
+-if(MARBLE_NO_WEBKITWIDGETS)
+-add_definitions(-DMARBLE_NO_WEBKITWIDGETS)
+-endif()
+-
+ set(marblewidget_SRCS
+     ${geodata_SRCS}
+     ${graphicsview_SRCS}
