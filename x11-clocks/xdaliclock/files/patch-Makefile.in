@@ -1,5 +1,5 @@
---- Makefile.in.orig	2014-01-11 19:17:22.000000000 +0800
-+++ Makefile.in	2014-01-11 19:17:41.000000000 +0800
+--- Makefile.in.orig	2018-12-26 10:10:53 UTC
++++ Makefile.in
 @@ -79,10 +79,10 @@ install-strip:
  		install
  
