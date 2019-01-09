@@ -33,6 +33,9 @@ OPENMP_LIB_DEPENDS=	libomp.so:devel/openmp
 
 PYTHON_CMAKE_BOOL=	BUILD_PYTHON
 PYTHON_USES=		python
+PYTHON_VARS=		PYTHON_VER_MAJ=${PYTHON_VER:R}
+
+PLIST_SUB+=		PYTHON_VER_MAJ=${PYTHON_VER_MAJ}
 
 # use clang from ports because cmake can't find OpenMP with base clang, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=223678
 BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
