@@ -1331,11 +1331,6 @@ share/locale/uz@cyrillic/LC_MESSAGES/kcmkwinrules.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kcmkwm.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kwin.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kwin_clients.mo
-share/locale/vi/LC_MESSAGES/kcmkwindecoration.mo
-share/locale/vi/LC_MESSAGES/kcmkwinrules.mo
-share/locale/vi/LC_MESSAGES/kcmkwm.mo
-share/locale/vi/LC_MESSAGES/kwin.mo
-share/locale/vi/LC_MESSAGES/kwin_clients.mo
 share/locale/wa/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/wa/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/wa/LC_MESSAGES/kcmkwincompositing.mo

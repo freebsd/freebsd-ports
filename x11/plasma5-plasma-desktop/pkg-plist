@@ -2398,6 +2398,7 @@ share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.kimpanel.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.kicker.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.kickoff.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.pager.mo
+share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.showActivityManager.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
@@ -4978,6 +4979,7 @@ share/locale/zh_TW/LC_MESSAGES/kcm_desktoptheme.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_fonts.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_launchfeedback.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_lookandfeel.mo
+share/locale/zh_TW/LC_MESSAGES/kcm_nightcolor.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_search.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_splashscreen.mo
@@ -4992,6 +4994,7 @@ share/locale/zh_TW/LC_MESSAGES/kcmkclock.mo
 share/locale/zh_TW/LC_MESSAGES/kcmkeyboard.mo
 share/locale/zh_TW/LC_MESSAGES/kcmkeys.mo
 share/locale/zh_TW/LC_MESSAGES/kcmmouse.mo
+share/locale/zh_TW/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/zh_TW/LC_MESSAGES/kcmsmserver.mo
 share/locale/zh_TW/LC_MESSAGES/kcmstyle.mo
 share/locale/zh_TW/LC_MESSAGES/kfontinst.mo
@@ -5002,6 +5005,7 @@ share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.kimpanel.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.kicker.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.kickoff.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.pager.mo
+share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.showActivityManager.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
