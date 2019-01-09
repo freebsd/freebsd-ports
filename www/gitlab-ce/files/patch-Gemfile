@@ -1,4 +1,4 @@
---- Gemfile.orig	2018-12-21 14:23:37 UTC
+--- Gemfile.orig	2019-01-04 23:19:12 UTC
 +++ Gemfile
 @@ -5,7 +5,7 @@ end
  
@@ -18,14 +18,7 @@
  gem 'pg', '~> 0.18.2', group: :postgres
  
  gem 'rugged', '~> 0.27'
-@@ -181,13 +181,13 @@ gem 'acts-as-taggable-on', '~> 5.0'
- gem 'sidekiq', '~> 5.2.1'
- gem 'sidekiq-cron', '~> 0.6.0'
- gem 'redis-namespace', '~> 1.6.0'
--gem 'gitlab-sidekiq-fetcher', '~> 0.1.0', require: 'sidekiq-reliable-fetch'
-+gem 'gitlab-sidekiq-fetcher', '~> 0.4.0', require: 'sidekiq-reliable-fetch'
- 
- # Cron Parser
+@@ -187,7 +187,7 @@ gem 'gitlab-sidekiq-fetcher', '~> 0.4.0', require: 'si
  gem 'rufus-scheduler', '~> 3.4'
  
  # HTTP requests
