@@ -44,7 +44,7 @@ lib/postgresql/pgxml.so
 lib/postgresql/postgres_fdw.so
 lib/postgresql/refint.so
 lib/postgresql/seg.so
-lib/postgresql/sslinfo.so
+%%OPENSSL%%lib/postgresql/sslinfo.so
 lib/postgresql/tablefunc.so
 lib/postgresql/tcn.so
 lib/postgresql/test_decoding.so
@@ -233,11 +233,11 @@ lib/postgresql/uuid-ossp.so
 %%DATADIR%%/extension/seg--1.2--1.3.sql
 %%DATADIR%%/extension/seg--unpackaged--1.0.sql
 %%DATADIR%%/extension/seg.control
-%%DATADIR%%/extension/sslinfo--1.0--1.1.sql
-%%DATADIR%%/extension/sslinfo--1.1--1.2.sql
-%%DATADIR%%/extension/sslinfo--1.2.sql
-%%DATADIR%%/extension/sslinfo--unpackaged--1.0.sql
-%%DATADIR%%/extension/sslinfo.control
+%%OPENSSL%%%%DATADIR%%/extension/sslinfo--1.0--1.1.sql
+%%OPENSSL%%%%DATADIR%%/extension/sslinfo--1.1--1.2.sql
+%%OPENSSL%%%%DATADIR%%/extension/sslinfo--1.2.sql
+%%OPENSSL%%%%DATADIR%%/extension/sslinfo--unpackaged--1.0.sql
+%%OPENSSL%%%%DATADIR%%/extension/sslinfo.control
 %%DATADIR%%/extension/tablefunc--1.0.sql
 %%DATADIR%%/extension/tablefunc--unpackaged--1.0.sql
 %%DATADIR%%/extension/tablefunc.control
