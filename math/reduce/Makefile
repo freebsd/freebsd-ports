@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	reduce
-PORTVERSION=	20180117
-PORTREVISION=	2
+PORTVERSION=	20181123
 CATEGORIES=	math lang
 MASTER_SITES=	SF/${PORTNAME}-algebra/${SFSUBDIR}/
-DISTNAME=	Reduce-svn4372-src
+DISTNAME=	Reduce-svn4829-src
 
 MAINTAINER=	pfg@FreeBSD.org
 COMMENT=	REDUCE Codemist Standard Lisp general-purpose computer system
@@ -17,16 +16,16 @@ BROKEN_aarch64=		fails to install: Reduce-svn4372-src/cslbuild/aarch64-unknown-f
 BROKEN_armv6=		fails to compile: redfront.h:118:12: conflicting types for '__wcwidth'
 BROKEN_powerpc64=	fails to compile: arith01.cpp: 'statuc' does not name a type
 
-RUN_DEPENDS=	gnuplot:math/gnuplot
+BUILD_DEPENDS=	gnuplot:math/gnuplot
 
-LIB_DEPENDS+=	libpng.so:graphics/png \
+LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-MAKE_JOBS_UNSAFE=	yes
+USES=		autoreconf:build libtool gmake ncurses jpeg
+USE_XORG=	x11 xext xorgproto xft
 
-SFSUBDIR=	snapshot_2018-01-17
+SFSUBDIR=	snapshot_2018-11-23
 
-USES=		autoreconf:build libtool gmake ncurses
 TARGET_SDIR=	${ARCH:S/amd64/x86_64/}-unknown-${OPSYS:tl}${OSREL}
 CPPFLAGS+=	-I${NCURSESINC}
 
@@ -34,8 +33,8 @@ CPPFLAGS+=	-I${NCURSESINC}
 HAS_CONFIGURE=	yes
 ALL_TARGET=
 
-USE_XORG=	x11 xext xorgproto xft
-USES+=		jpeg
+MAKE_JOBS_UNSAFE=	yes
+
 CONFIGURE_ARGS=	--with-csl
 CPPFLAGS+=	`freetype-config --cflags`
 LDFLAGS+=	`freetype-config --libs`
