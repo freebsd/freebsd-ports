@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	celluloid
-PORTVERSION=	0.17.3
+PORTVERSION=	0.17.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Build concurrent programs out of concurrent objects
 
 LICENSE=	MIT
@@ -19,8 +19,9 @@ RUN_DEPENDS=	rubygem-celluloid-essentials>=0:devel/rubygem-celluloid-essentials 
 		rubygem-celluloid-supervision>=0:devel/rubygem-celluloid-supervision \
 		rubygem-timers>=4.1.1:devel/rubygem-timers
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
