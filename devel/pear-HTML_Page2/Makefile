@@ -9,6 +9,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}beta
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR base class for XHTML page generation
 
+LICENSE=	PHP30
+
 BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common@${PHP_FLAVOR}
 RUN_DEPENDS=	${PEARDIR}/HTML/Common.php:devel/pear-HTML_Common@${PHP_FLAVOR}
 
