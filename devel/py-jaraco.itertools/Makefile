@@ -28,8 +28,10 @@ POST_PLIST=	trim-jaraco-namespace
 
 post-install:
 	@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/jaraco/__init__.py*
+	-@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/jaraco/__pycache__/__init__.*
+	-@${RMDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/jaraco/__pycache__
 
 trim-jaraco-namespace:
-	@${REINPLACE_CMD} '/jaraco\/__init__.py/d' ${TMPPLIST}
+	@${REINPLACE_CMD} '/jaraco\/__init__\./d; /jaraco\/__pycache__\/__init__\./d' ${TMPPLIST}
 
 .include <bsd.port.mk>
