@@ -26,9 +26,7 @@ INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/Gradio-${PORTVERSION}
 GLIB_SCHEMAS=	de.haeckerfelix.gradio.gschema.xml
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e "s,python3,${PYTHON_CMD}," ${WRKSRC}/meson_post_install.sh
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
