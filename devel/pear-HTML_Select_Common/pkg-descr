@@ -3,5 +3,9 @@ o Country
 o UK counties
 o US States
 o FR Departments
+o FR Departements
+o NO Fylke
+o NO Kommuner
+o ptBR
 
 WWW: https://pear.php.net/package-info.php?package=HTML_Select_Common
