@@ -1,0 +1,180 @@
+https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/b2ea757f68
+https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/d12d4d4515
+https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/b87063c06d
+https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/2ddaaaf595
+
+--- doc/encoders.texi.orig	2018-11-05 23:22:25 UTC
++++ doc/encoders.texi
+@@ -1370,6 +1370,118 @@ makes it possible to store non-rgb pix_fmts.
+ 
+ @end table
+ 
++@section libaom-av1
++
++libaom AV1 encoder wrapper.
++
++Requires the presence of the libaom headers and library during
++configuration.  You need to explicitly configure the build with
++@code{--enable-libaom}.
++
++@subsection Options
++
++The wrapper supports the following standard libavcodec options:
++
++@table @option
++
++@item b
++Set bitrate target in bits/second.  By default this will use
++variable-bitrate mode.  If @option{maxrate} and @option{minrate} are
++also set to the same value then it will use constant-bitrate mode,
++otherwise if @option{crf} is set as well then it will use
++constrained-quality mode.
++
++@item g keyint_min
++Set key frame placement.  The GOP size sets the maximum distance between
++key frames; if zero the output stream will be intra-only.  The minimum
++distance is ignored unless it is the same as the GOP size, in which case
++key frames will always appear at a fixed interval.  Not set by default,
++so without this option the library has completely free choice about
++where to place key frames.
++
++@item qmin qmax
++Set minimum/maximum quantisation values.  Valid range is from 0 to 63
++(warning: this does not match the quantiser values actually used by AV1
++- divide by four to map real quantiser values to this range).  Defaults
++to min/max (no constraint).
++
++@item minrate maxrate bufsize rc_init_occupancy
++Set rate control buffering parameters.  Not used if not set - defaults
++to unconstrained variable bitrate.
++
++@item threads
++Set the number of threads to use while encoding.  This may require the
++@option{tiles} or @option{row-mt} options to also be set to actually
++use the specified number of threads fully. Defaults to the number of
++hardware threads supported by the host machine.
++
++@item profile
++Set the encoding profile.  Defaults to using the profile which matches
++the bit depth and chroma subsampling of the input.
++
++@end table
++
++The wrapper also has some specific options:
++
++@table @option
++
++@item cpu-used
++Set the quality/encoding speed tradeoff.  Valid range is from 0 to 8,
++higher numbers indicating greater speed and lower quality.  The default
++value is 1, which will be slow and high quality.
++
++@item auto-alt-ref
++Enable use of alternate reference frames.  Defaults to the internal
++default of the library.
++
++@item lag-in-frames
++Set the maximum number of frames which the encoder may keep in flight
++at any one time for lookahead purposes.  Defaults to the internal
++default of the library.
++
++@item error-resilience
++Enable error resilience features:
++@table @option
++@item default
++Improve resilience against losses of whole frames.
++@end table
++Not enabled by default.
++
++@item crf
++Set the quality/size tradeoff for constant-quality (no bitrate target)
++and constrained-quality (with maximum bitrate target) modes. Valid
++range is 0 to 63, higher numbers indicating lower quality and smaller
++output size.  Only used if set; by default only the bitrate target is
++used.
++
++@item static-thresh
++Set a change threshold on blocks below which they will be skipped by
++the encoder.  Defined in arbitrary units as a nonnegative integer,
++defaulting to zero (no blocks are skipped).
++
++@item drop-threshold
++Set a threshold for dropping frames when close to rate control bounds.
++Defined as a percentage of the target buffer - when the rate control
++buffer falls below this percentage, frames will be dropped until it
++has refilled above the threshold.  Defaults to zero (no frames are
++dropped).
++
++@item tiles
++Set the number of tiles to encode the input video with, as colums x
++rows.  Larger numbers allow greater parallelism in both encoding and
++decoding, but may decrease coding efficiency.  Defaults to the minimum
++number of tiles required by the size of the input video (this is 1x1
++(that is, a single tile) for sizes up to and including 4K).
++
++@item tile-columns tile-rows
++Set the number of tiles as log2 of the number of tile rows and columns.
++Provided for compatibility with libvpx/VP9.
++
++@item row-mt (Requires libaom >= 1.0.0-759-g90a15f4f2)
++Enable row based multi-threading. Disabled by default.
++
++@end table
++
+ @section libkvazaar
+ 
+ Kvazaar H.265/HEVC encoder.
+--- libavcodec/libaomenc.c.orig	2018-11-05 23:22:26 UTC
++++ libavcodec/libaomenc.c
+@@ -79,6 +79,7 @@ typedef struct AOMEncoderContext {
+     int tile_cols_log2, tile_rows_log2;
+     aom_superblock_size_t superblock_size;
+     int uniform_tiles;
++    int row_mt;
+ } AOMContext;
+ 
+ static const char *const ctlidstr[] = {
+@@ -93,6 +94,9 @@ static const char *const ctlidstr[] = {
+     [AV1E_SET_SUPERBLOCK_SIZE]  = "AV1E_SET_SUPERBLOCK_SIZE",
+     [AV1E_SET_TILE_COLUMNS]     = "AV1E_SET_TILE_COLUMNS",
+     [AV1E_SET_TILE_ROWS]        = "AV1E_SET_TILE_ROWS",
++#ifdef AOM_CTRL_AV1E_SET_ROW_MT
++    [AV1E_SET_ROW_MT]           = "AV1E_SET_ROW_MT",
++#endif
+ };
+ 
+ static av_cold void log_encoder_error(AVCodecContext *avctx, const char *desc)
+@@ -505,7 +509,8 @@ static av_cold int aom_init(AVCodecContext *avctx,
+     enccfg.g_h            = avctx->height;
+     enccfg.g_timebase.num = avctx->time_base.num;
+     enccfg.g_timebase.den = avctx->time_base.den;
+-    enccfg.g_threads      = avctx->thread_count ? avctx->thread_count : av_cpu_count();
++    enccfg.g_threads      =
++        FFMIN(avctx->thread_count ? avctx->thread_count : av_cpu_count(), 64);
+ 
+     if (ctx->lag_in_frames >= 0)
+         enccfg.g_lag_in_frames = ctx->lag_in_frames;
+@@ -650,6 +655,10 @@ static av_cold int aom_init(AVCodecContext *avctx,
+         codecctl_int(avctx, AV1E_SET_TILE_ROWS,    ctx->tile_rows_log2);
+     }
+ 
++#ifdef AOM_CTRL_AV1E_SET_ROW_MT
++    codecctl_int(avctx, AV1E_SET_ROW_MT, ctx->row_mt);
++#endif
++
+     // provide dummy value to initialize wrapper, values will be updated each _encode()
+     aom_img_wrap(&ctx->rawimg, img_fmt, avctx->width, avctx->height, 1,
+                  (unsigned char*)1);
+@@ -984,10 +993,12 @@ static const AVOption options[] = {
+     { "tiles",            "Tile columns x rows", OFFSET(tile_cols), AV_OPT_TYPE_IMAGE_SIZE, { .str = NULL }, 0, 0, VE },
+     { "tile-columns",     "Log2 of number of tile columns to use", OFFSET(tile_cols_log2), AV_OPT_TYPE_INT, {.i64 = -1}, -1, 6, VE},
+     { "tile-rows",        "Log2 of number of tile rows to use",    OFFSET(tile_rows_log2), AV_OPT_TYPE_INT, {.i64 = -1}, -1, 6, VE},
++    { "row-mt",           "Enable row based multi-threading",      OFFSET(row_mt),         AV_OPT_TYPE_BOOL, {.i64 = 0},  0, 1, VE},
+     { NULL }
+ };
+ 
+ static const AVCodecDefault defaults[] = {
++    { "b",          "256*1000" },
+     { "qmin",             "-1" },
+     { "qmax",             "-1" },
+     { "g",                "-1" },
