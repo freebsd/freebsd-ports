@@ -4,10 +4,10 @@ include/audiocdplugins_export.h
 lib/libaudiocdplugins.so
 lib/libaudiocdplugins.so.5
 lib/libaudiocdplugins.so.5.0.0
+%%QT_PLUGINDIR%%/kcm_audiocd.so
 %%QT_PLUGINDIR%%/libaudiocd_encoder_flac.so
 %%QT_PLUGINDIR%%/libaudiocd_encoder_lame.so
 %%QT_PLUGINDIR%%/libaudiocd_encoder_wav.so
-%%QT_PLUGINDIR%%/libkcm_audiocd.so
 %%QT_PLUGINDIR%%/libkio_audiocd.so
 share/config.kcfg/audiocd_flac_encoder.kcfg
 share/config.kcfg/audiocd_lame_encoder.kcfg

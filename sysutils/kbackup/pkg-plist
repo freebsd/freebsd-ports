@@ -32,5 +32,6 @@ share/locale/sk/LC_MESSAGES/kbackup.mo
 share/locale/sv/LC_MESSAGES/kbackup.mo
 share/locale/uk/LC_MESSAGES/kbackup.mo
 share/locale/zh_CN/LC_MESSAGES/kbackup.mo
+share/locale/zh_TW/LC_MESSAGES/kbackup.mo
 share/metainfo/org.kde.kbackup.appdata.xml
 share/mime/packages/kbackup.xml
