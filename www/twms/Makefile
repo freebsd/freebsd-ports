@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyproj>0:graphics/py-pyproj@${PY_FLAVOR} \
 USE_GITHUB=	yes
 GH_ACCOUNT=	Komzpa
 
-USES=		python:2.7
+USES=		python:2.7  # 2.7 only because of webpy dependency
 USE_PYTHON=	distutils py3kplist optsuffix
 NO_ARCH=	yes
 
