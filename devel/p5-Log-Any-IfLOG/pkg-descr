@@ -5,4 +5,4 @@ be returned instead that will accept any method but return false.
 This is a quick-hack solution to avoid the cost of loading Log::Any under
 "normal condition" (when LOG is not set to true).
 
-WWW: https://metacpan.org/release/PERLANCAR/Log-Any-IfLOG-0.08
+WWW: https://metacpan.org/release/Log-Any-IfLOG
