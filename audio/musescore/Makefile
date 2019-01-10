@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	musescore
-PORTVERSION=	2.1
-PORTREVISION=	4
+DISTVERSION=	3.0.0
 CATEGORIES=	audio
-MASTER_SITES=	http://ftp.osuosl.org/pub/musescore/releases/MuseScore-${PORTVERSION}/
-DISTNAME=	MuseScore-${PORTVERSION}
+MASTER_SITES=	http://ftp.osuosl.org/pub/musescore/releases/MuseScore-${DISTVERSION}/
+DISTNAME=	MuseScore-${DISTVERSION}
+NO_WRKSUBDIR=	yes
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Free music composition & notation software
@@ -14,7 +14,8 @@ COMMENT=	Free music composition & notation software
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
-BROKEN_aarch64=		Fails to compile: error: constant expression evaluates to -1
+# Because of webengine
+ONLY_FOR_ARCHS=	i386 amd64
 
 LIB_DEPENDS=	libmp3lame.so:audio/lame \
 		libsndfile.so:audio/libsndfile \
@@ -25,14 +26,14 @@ LIB_DEPENDS=	libmp3lame.so:audio/lame \
 USES=		cmake compiler:c++11-lib desktop-file-utils \
 		pkgconfig qt:5 shared-mime-info zip
 USE_QT=		core declarative gui widgets opengl concurrent designer help network \
-		scripttools svg sql printsupport testlib webkit \
+		scripttools svg sql printsupport testlib webengine \
 		xml xmlpatterns \
 		buildtools_build linguisttools_build qmake_build uitools_build
 ALL_TARGET=	lrelease manpages all
 INSTALLS_ICONS=	yes
-CMAKE_ARGS+=	-DUSE_SYSTEM_FREETYPE="ON"
+CMAKE_ARGS+=	-DUSE_SYSTEM_FREETYPE="ON" -DBUILD_PORTMIDI=OFF
 
-DATADIR=	${PREFIX}/share/mscore-${PORTVERSION}
+DATADIR=	${PREFIX}/share/mscore-${PORTVERSION:R}
 
 OPTIONS_DEFINE=		ALSA JACK PORTAUDIO PULSEAUDIO OCR
 OPTIONS_DEFAULT=	PORTAUDIO
