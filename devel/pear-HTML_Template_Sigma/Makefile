@@ -8,7 +8,9 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR template API
 
-USE_PHP=	ctype
+LICENSE=	PHP301
+
 USES=		pear php
+USE_PHP=	ctype
 
 .include <bsd.port.mk>
