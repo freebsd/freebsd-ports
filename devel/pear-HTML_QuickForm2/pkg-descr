@@ -1,4 +1,22 @@
 This package is expected to offer at least the same functionality as
 HTML_QuickForm and work with PHP5 E_STRICT setting.
 
+Features:
+* Supports all form elements defined by HTML standard, provides several
+custom elements
+* Server-side and client-side validation, several common rules provided
+* Multipage forms (tabbed forms and wizards)
+* Pluggable elements, rules, renderers and renderer plugins
+
+Major advantages over PHP4 version:
+* Most of the package's functionality is covered by unit tests
+* DOM-like API for building the form structure, new streamlined API for
+elements' values handling
+* Default rendering without tables (inspired by
+HTML_QuickForm_Renderer_Tableless)
+* Renderer plugins for elements with complex rendering needs
+* Ability to chain validation rules with 'and' and 'or'
+* Client-side validation can run "live" on changing the form fields,
+validation errors are displayed near the fields instead of in alert()
+
 WWW: https://pear.php.net/package/HTML_QuickForm2
