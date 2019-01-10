@@ -1,21 +1,15 @@
-HTML_Template_IT:
-Simple template API.
-The Isotemplate API is somewhat tricky for a beginner although it is the best
-one you can build. template::parse() [phplib template = Isotemplate] requests
-you to name a source and a target where the current block gets parsed into.
-Source and target can be block names or even handler names.
+HTML_Template_IT is a templating engine designed to allow easy separation of
+concerns. It does this by clearly separating the presentational code from
+the PHP code. The presentation code may be of any format, however generally
+XML or HTML is used.
 
-Features :
-  * Nested blocks
-  * Include external file
-  * Custom tags format (default {mytag})
+This engine works on the foundation of blocks and placeholders.
+It uses the hierarchy of blocks to determine which presentational code is
+instantiated when blocks are parsed. The placeholders allow the insertion
+of "dynamic" information.
 
-HTML_Template_ITX :
-With this class you get the full power of the phplib template class.
-You may have one file with blocks in it but you have as well one main file
-and multiple files one for each block. This is quite useful when you have
-user configurable websites. Using blocks not in the main template allows
-you to modify some parts of your layout easily.
-
+There are two classes to use for templating. HTML_Template_IT is used for basic
+templating needs. HTML_Template_ITX gives you full power over the templating
+engine, allowing blocks to be added, and function callbacks to be used.
 
 WWW: https://pear.php.net/package/html_template_it

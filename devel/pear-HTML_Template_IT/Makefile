@@ -9,6 +9,9 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	PEAR Integrated template API
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		pear
 
 .include <bsd.port.mk>
