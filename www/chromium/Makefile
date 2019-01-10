@@ -70,7 +70,7 @@ ONLY_FOR_ARCHS=			aarch64 amd64 i386
 .endif
 
 .if defined(GN_ONLY)
-USES=		compiler:c++14-lang localbase:ldflags ninja pkgconfig \
+USES=		compiler:c++14-lang dos2unix localbase:ldflags ninja pkgconfig \
 		python:2.7,build shebangfix tar:xz
 .else
 USES=		bison cpe desktop-file-utils dos2unix gl gnome jpeg localbase:ldflags \
