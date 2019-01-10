@@ -9,6 +9,8 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Show Information about your PEAR install and its packages
 
+LICENSE=	PHP301
+
 BUILD_DEPENDS=	${PEARDIR}/Console/Getargs.php:devel/pear-Console_Getargs@${PHP_FLAVOR}
 RUN_DEPENDS=	${PEARDIR}/Console/Getargs.php:devel/pear-Console_Getargs@${PHP_FLAVOR}
 
