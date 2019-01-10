@@ -8,6 +8,8 @@ CATEGORIES=	devel www pear
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Classes that represent and manipulate fractions
 
+LICENSE=	PHP30
+
 USES=		pear
 
 .include <bsd.port.mk>
