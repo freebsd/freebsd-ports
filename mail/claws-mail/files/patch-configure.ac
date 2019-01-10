@@ -1,0 +1,20 @@
+--- configure.ac.orig	2019-01-08 23:08:21 UTC
++++ configure.ac
+@@ -1268,7 +1268,7 @@ fi
+ 
+ dnl Python *********************************************************************
+ AM_PATH_PYTHON([2.5], [
+-	AC_PATH_PROG(PYTHON_CONFIG, python$PYTHON_VERSION-config)
++	AC_PATH_PROG(PYTHON_CONFIG, python"$PYTHON_VERSION"m-config)
+ 	if test x"$PYTHON_CONFIG" = x"" ; then
+ 		AC_PATH_PROG(PYTHON_CONFIG, python-config)
+ 	fi
+@@ -1286,7 +1286,7 @@ AM_PATH_PYTHON([2.5], [
+ 		_save_libs="$LIBS"
+ 		if test x"$platform_win32" = xno; then
+ 			# libpython.so
+-			PYTHON_SHARED_LIB="libpython${PYTHON_VERSION}.so"
++			PYTHON_SHARED_LIB="libpython${PYTHON_VERSION}m.so"
+ 			AC_CHECK_LIB(dl, dlopen, [LIBS="-ldl"])
+ 			AC_MSG_CHECKING([whether to dlopen $PYTHON_SHARED_LIB works])
+ 			AC_RUN_IFELSE(

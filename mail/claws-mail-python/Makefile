@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	python
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	Python scripting plugin for Claws Mail
-
-BROKEN=		fails to stage
 
 USE_GNOME=	pygtk2
 

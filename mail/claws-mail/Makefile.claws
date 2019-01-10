@@ -8,7 +8,7 @@ MAINTAINER=	joneum@FreeBSD.org
 
 LICENSE=	GPLv3
 
-USES+=		gettext-runtime gmake iconv libtool pkgconfig tar:xz
+USES+=		autoreconf gettext-tools gmake iconv libtool pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} --disable-dbus --disable-static
