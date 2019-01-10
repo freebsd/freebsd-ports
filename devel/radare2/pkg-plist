@@ -55,6 +55,7 @@ include/libr/r_types.h
 include/libr/r_types_base.h
 include/libr/r_userconf.h
 include/libr/r_util.h
+include/libr/r_util/pj.h
 include/libr/r_util/r_ascii_table.h
 include/libr/r_util/r_asn1.h
 include/libr/r_util/r_assert.h
