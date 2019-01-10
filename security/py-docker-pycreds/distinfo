@@ -1,3 +1,3 @@
-TIMESTAMP = 1491855655
-SHA256 (docker-pycreds-0.2.1.tar.gz) = 93833a2cf280b7d8abbe1b8121530413250c6cd4ffed2c1cf085f335262f7348
-SIZE (docker-pycreds-0.2.1.tar.gz) = 7555
+TIMESTAMP = 1547154029
+SHA256 (docker-pycreds-0.4.0.tar.gz) = 6ce3270bcaf404cc4c3e27e4b6c70d3521deae82fb508767870fdbf772d584d4
+SIZE (docker-pycreds-0.4.0.tar.gz) = 8754
