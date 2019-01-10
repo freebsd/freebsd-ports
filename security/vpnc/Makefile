@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Client for Cisco 3000 VPN Concentrator
 
-LICENSE=	GPLv2 BSD2CLAUSE
+LICENSE=	GPLv2+ BSD2CLAUSE
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
@@ -29,36 +29,22 @@ ALL_TARGET=	all
 SHEBANG_FILES=	makeman.pl
 
 PORTDOCS=	README TODO
-MANPAGE8=	vpnc.8
 
-MAKE_ENV+=	BINS="${EXTRABUILDS}"
+MAKE_ENV=	BINS="${EXTRABUILDS}"
 
 OPTIONS_DEFINE=	DECRYPT SSL CISCOVERSION DOCS
-
-DECRYPT_DESC=		cisco-decypt password decrypt utility
-CISCOVERSION_DESC=	Mask linux presentation string
-
 OPTIONS_DEFAULT=DECRYPT
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
+CISCOVERSION_DESC=	Mask linux presentation string
+CISCOVERSION_CFLAGS=	-DCISCO_PATCH_VERSION
 
-.if ${PORT_OPTIONS:MDECRYPT}
-MANPAGE1=	cisco-decrypt.1
-EXTRABUILDS+=	cisco-decrypt
-PLIST_SUB+=	DECRYPT=""
-.else
-PLIST_SUB+=	DECRYPT="@comment "
-.endif
+DECRYPT_DESC=	cisco-decypt password decrypt utility
+DECRYPT_VARS=	EXTRABUILDS+=cisco-decrypt
 
-.if ${PORT_OPTIONS:MSSL}
-NO_PACKAGE=	binary linked against OpenSSL must not be redistributed
-CFLAGS+=	-DOPENSSL_GPL_VIOLATION
-LDFLAGS+=	-lcrypto
-.endif
-
-.if ${PORT_OPTIONS:MCISCOVERSION}
-CFLAGS+=	-DCISCO_PATCH_VERSION
-.endif
+SSL_VARS=	NO_PACKAGE="binary linked against OpenSSL must not be redistributed"
+SSL_CFLAGS=	-DOPENSSL_GPL_VIOLATION
+SSL_LDFLAGS=	-lcrypto
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -66,23 +52,22 @@ post-patch:
 		${WRKSRC}/sysdep.h
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/config.c
 	@${REINPLACE_CMD} -e 's|\(/etc/vpnc\)|${PREFIX}\1|' \
-		${WRKSRC}/${MANPAGE8}.template
+		${WRKSRC}/vpnc.8.template
 
 do-install:
-	${INSTALL_PROGRAM} -m 751 ${WRKSRC}/vpnc ${STAGEDIR}${PREFIX}/sbin/vpnc
-.if ${PORT_OPTIONS:MDECRYPT}
-	${INSTALL_PROGRAM} ${WRKSRC}/cisco-decrypt ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MANPAGE1} ${STAGEDIR}${MANPREFIX}/man/man1
-.endif
-	${INSTALL_SCRIPT} -m 751 ${WRKSRC}/vpnc-disconnect \
+	${INSTALL_PROGRAM} ${WRKSRC}/vpnc ${STAGEDIR}${PREFIX}/sbin/vpnc
+	${INSTALL_SCRIPT} ${WRKSRC}/vpnc-disconnect \
 		${STAGEDIR}${PREFIX}/sbin/vpnc-disconnect
-	${INSTALL_DATA} -m 600 ${WRKSRC}/vpnc.conf \
+	${INSTALL_DATA} ${WRKSRC}/vpnc.conf \
 		${STAGEDIR}${PREFIX}/etc/vpnc.conf.sample
-.if !exists(${STAGEDIR}${PREFIX}/etc/vpnc.conf)
-	${INSTALL_DATA} -m 600 ${WRKSRC}/vpnc.conf ${STAGEDIR}${PREFIX}/etc
-.endif
-	${INSTALL_MAN} ${WRKSRC}/${MANPAGE8} ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/vpnc.8 ${STAGEDIR}${MANPREFIX}/man/man8
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+do-install-DECRYPT-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/cisco-decrypt ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/cisco-decrypt.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
