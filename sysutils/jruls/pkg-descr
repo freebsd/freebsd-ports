@@ -1,0 +1,4 @@
+A top-alike utility to display and update FreeBSD jails resource usage,
+given RACCT/RCTL is enabled with kern.racct.enable=1 loader tunable.
+
+WWW: https://github.com/606u/jruls
