@@ -1,0 +1,10 @@
+Midpoint is a comprehensive identity management and identity
+governance system. It is basically an complex integration tool
+that can replicate and transform user records between numerous user
+databases, management of the records, reporting, auditing and so
+on. It allows very complex transformation and replication rules
+including support for advanced RBAC and scripting. Its internal
+mechanisms are based on state-of-the art concepts that are still
+not yet widely used in the fieldof Identity Management.
+
+WWW: https://evolveum.com/midpoint/

@@ -126,6 +126,7 @@
     SUBDIR += mbrowse
     SUBDIR += mdata-client
     SUBDIR += metronome
+    SUBDIR += midpoint
     SUBDIR += mk-livestatus
     SUBDIR += monitoring-plugins
     SUBDIR += mrtg
