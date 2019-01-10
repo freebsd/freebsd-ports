@@ -1,0 +1,4 @@
+This port is the shared namespace shim for py-jaraco.* ports.
+
+py-jaraco provides a common jaraco/__init__.py, which is shared among all
+py-jaraco.* ports.
