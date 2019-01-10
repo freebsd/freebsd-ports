@@ -2,7 +2,7 @@
 
 PORTNAME=	kdevelop
 DISTVERSION=	5.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/kdevelop/${DISTVERSION}/src
 DIST_SUBDIR=	KDE/kdevelop
@@ -28,7 +28,7 @@ USES=		cmake compiler:c++11-lib desktop-file-utils \
 USE_KDE=	archive attica auth bookmarks codecs completion config configwidgets \
 		coreaddons crash guiaddons emoticons i18n iconthemes init \
 		itemmodels itemviews jobwidgets kcmutils kdeclarative \
-		kdelibs4support kio libksysguard newstuff notifications \
+		kio libksysguard newstuff notifications \
 		notifyconfig package parts plasma-framework \
 		runner service solid sonnet texteditor textwidgets threadweaver \
 		widgetsaddons windowsystem xmlgui
