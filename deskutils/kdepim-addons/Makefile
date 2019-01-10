@@ -9,6 +9,8 @@ COMMENT=	KDE PIM addons
 
 LICENSE=	LGPL21
 
+BUILD_DEPENDS=	markdown:textproc/discount
+RUN_DEPENDS=	markdown:textproc/discount
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme \

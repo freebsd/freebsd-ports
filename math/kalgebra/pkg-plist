@@ -140,6 +140,7 @@ share/locale/zh_CN/LC_MESSAGES/kalgebra.mo
 share/locale/zh_CN/LC_MESSAGES/kalgebramobile.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/zh_TW/LC_MESSAGES/kalgebra.mo
+share/locale/zh_TW/LC_MESSAGES/kalgebramobile.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 %%WEBENGINE%%share/metainfo/org.kde.kalgebra.appdata.xml
 share/metainfo/org.kde.kalgebramobile.appdata.xml

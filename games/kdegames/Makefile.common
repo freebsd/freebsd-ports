@@ -22,6 +22,7 @@ KDE_GAMES_ALL=	bomber \
 		kmines \
 		knavalbattle \
 		knetwalk \
+		knights \
 		kolf \
 		kollision \
 		kpat \
@@ -54,6 +55,7 @@ kmahjongg_DESC=	Mahjongg Solitaire
 kmines_DESC=	Minesweeper-like game
 knavalbattle_DESC=	Ship Sinking game
 knetwalk_DESC=	Network Construction game
+knights_DESC=	Chess game
 kolf_DESC=	Miniature Golf
 kollision_DESC=	Simple ball dodging game
 konquest_DESC=	Galactic Strategy game
