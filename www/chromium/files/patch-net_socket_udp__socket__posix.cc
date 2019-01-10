@@ -1,5 +1,5 @@
---- net/socket/udp_socket_posix.cc.orig	2018-12-03 21:17:07.000000000 +0100
-+++ net/socket/udp_socket_posix.cc	2018-12-14 00:43:45.072257000 +0100
+--- net/socket/udp_socket_posix.cc.orig	2018-12-12 22:56:10.000000000 +0100
++++ net/socket/udp_socket_posix.cc	2019-01-09 23:47:20.865195000 +0100
 @@ -68,7 +68,7 @@
  const base::TimeDelta kActivityMonitorMsThreshold =
      base::TimeDelta::FromMilliseconds(100);
@@ -94,3 +94,22 @@
        ip_mreq mreq = {};
        int error = GetIPv4AddressFromIndex(socket_, multicast_interface_,
                                            &mreq.imr_interface.s_addr);
+@@ -1023,9 +1031,18 @@
+     case IPAddress::kIPv4AddressSize: {
+       if (addr_family_ != AF_INET)
+         return ERR_ADDRESS_INVALID;
++#if defined(OS_BSD)
++      ip_mreq mreq = {};
++      int error = GetIPv4AddressFromIndex(socket_, multicast_interface_,
++                                          &mreq.imr_interface.s_addr);
++
++      if (error != OK)
++        return error;
++#else
+       ip_mreqn mreq = {};
+       mreq.imr_ifindex = multicast_interface_;
+       mreq.imr_address.s_addr = INADDR_ANY;
++#endif
+       memcpy(&mreq.imr_multiaddr, group_address.bytes().data(),
+              IPAddress::kIPv4AddressSize);
+       int rv = setsockopt(socket_, IPPROTO_IP, IP_DROP_MEMBERSHIP,

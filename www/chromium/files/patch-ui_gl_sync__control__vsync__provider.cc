@@ -1,5 +1,5 @@
---- ui/gl/sync_control_vsync_provider.cc.orig	2018-03-20 23:05:56.000000000 +0100
-+++ ui/gl/sync_control_vsync_provider.cc	2018-03-24 19:15:24.360217000 +0100
+--- ui/gl/sync_control_vsync_provider.cc.orig	2018-12-12 22:56:28.000000000 +0100
++++ ui/gl/sync_control_vsync_provider.cc	2019-01-09 23:55:37.488409000 +0100
 @@ -11,7 +11,7 @@
  #include "base/trace_event/trace_event.h"
  #include "build/build_config.h"
@@ -27,7 +27,7 @@
    // The actual clock used for the system time returned by glXGetSyncValuesOML
    // is unspecified. In practice, the clock used is likely to be either
    // CLOCK_REALTIME or CLOCK_MONOTONIC, so we compare the returned time to the
-@@ -161,7 +161,7 @@
+@@ -157,11 +157,11 @@
    return true;
  #else
    return false;
@@ -35,4 +35,9 @@
 +#endif  // defined(OS_LINUX) || defined(OS_BSD)
  }
  
- bool SyncControlVSyncProvider::SupportGetVSyncParametersIfAvailable() {
+ bool SyncControlVSyncProvider::SupportGetVSyncParametersIfAvailable() const {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   return true;
+ #else
+   return false;
