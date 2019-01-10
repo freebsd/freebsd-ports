@@ -12,4 +12,4 @@ Logging to an in-process array can be useful when debugging/testing, or when you
 want to let users of your program connect to your program to request viewing the
 ogs being produced.
 
-WWW: https://metacpan.org/release/PERLANCAR/Log-Dispatch-ArrayWithLimits-0.04
+WWW: https://metacpan.org/release/Log-Dispatch-ArrayWithLimits
