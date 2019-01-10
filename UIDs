@@ -828,7 +828,7 @@ archiva:*:871:871::0:0:Apache Archiva Daemon:/nonexistent:/usr/sbin/nologin
 # free: 879
 # free: 880
 # free: 881
-# free: 882
+midpoint:*:882:882::0:0:midPoint user:/var/db/midpoint:/usr/sbin/nologin
 ipfs-go:*:883:883::0:0:ipfs-go user:/var/db/ipfs-go:/bin/sh
 telegraf:*:884:884::0:0:telegraf user:/nonexistent:/usr/sbin/nologin
 tcpdump:*:885:885::0:0:tcpdump user:/nonexistent:/usr/sbin/nologin

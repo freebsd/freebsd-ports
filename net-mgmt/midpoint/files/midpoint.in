@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: midpoint
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# midpoint_enable (bool):	Set to NO by default.
+#				Set it to YES to enable midpoint.
+# midpoint_home (path):		Set to /var/db/midpoint by default.
+#
+
+. /etc/rc.subr
+
+name=midpoint
+rcvar=midpoint_enable
+desc="Identity management and identity governance system"
+
+load_rc_config $name
+
+: ${midpoint_enable:=NO}
+: ${midpoint_user:=%%USERS%%}
+: ${midpoint_group:=%%GROUPS%%}
+: ${midpoint_home:=/var/db/%%PORTNAME%%}
+: ${midpoint_javaopts="-Djava.awt.headless=true -Xms2048M -Xmx2048M"}
+: ${midpoint_loggingmanager:=org.apache.juli.ClassLoaderLogManager}
+
+javaopts="-Djava.util.logging.manager=${midpoint_loggingmanager} ${midpoint_javaopts} -Dpython.cachedir=${midpoint_home}/tmp -Djavax.net.ssl.trustStore=${midpoint_home}/keystore.jceks -Djavax.net.ssl.trustStoreType=jceks -Dmidpoint.home=${midpoint_home}"
+
+pidfile=/var/run/%%PORTNAME%%/%%PORTNAME%%.pid
+procname=%%JAVA%%
+command=/usr/sbin/daemon
+command_args="-f -p ${pidfile} -o /var/log/%%PORTNAME%%/%%PORTNAME%%.out -t %%PORTNAME%% %%JAVA%% ${javaopts} -jar %%JAVASHAREDIR%%/%%PORTNAME%%/midpoint.war"
+
+run_rc_command "$1"

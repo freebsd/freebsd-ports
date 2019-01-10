@@ -822,7 +822,7 @@ _geodns:*:853:
 # free: 879
 # free: 880
 # free: 881
-# free: 882
+midpoint:*:882:
 ipfs-go:*:883:
 telegraf:*:884:
 tcpdump:*:885:
