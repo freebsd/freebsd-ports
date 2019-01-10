@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moreutils
-PORTVERSION=	0.62
-PORTREVISION=	1
+PORTVERSION=	0.63
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.joeyh.name/index.cgi/moreutils.git/snapshot/ \
 		LOCAL/sunpoet
