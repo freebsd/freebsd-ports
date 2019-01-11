@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Name=PhpStorm
+GenericName=PhpStorm
+Comment=PhpStorm Integrated Development Environment
+Icon=%%DATADIR%%/bin/phpstorm.png
+Exec=%%DATADIR%%/bin/phpstorm.sh
+Terminal=false
+StartupNotify=true
+Categories=Application;Development;
