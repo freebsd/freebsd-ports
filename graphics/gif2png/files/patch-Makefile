@@ -1,0 +1,19 @@
+--- Makefile.orig	2015-07-15 00:06:28 UTC
++++ Makefile
+@@ -38,13 +38,13 @@ prefix?=/usr
+ 
+ install: gif2png gif2png.1 web2png.1
+ 	mkdir -p $(prefix)/bin
+-	mkdir -p $(prefix)/share/man/man1
++	mkdir -p $(prefix)/man/man1
+ 	cp gif2png web2png $(prefix)/bin/
+-	cp gif2png.1 web2png.1 $(prefix)/share/man/man1/
++	cp gif2png.1 web2png.1 $(prefix)/man/man1/
+ 
+ uninstall:
+ 	rm $(prefix)/bin/gif2png $(prefix)/bin/web2png
+-	rm $(prefix)/share/man/man1/gif2png.1 $(prefix)/share/man/man1/web2png.1
++	rm $(prefix)/man/man1/gif2png.1 $(prefix)/man/man1/web2png.1
+ 
+ PYLINTOPTS = --rcfile=/dev/null --reports=n \
+ 	--msg-template="{path}:{line}: [{msg_id}({symbol}), {obj}] {msg}" \
