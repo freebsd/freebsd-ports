@@ -50,13 +50,12 @@ post-patch:
 	    ${WRKSRC}/programs/dtmail/libDtMail/Common/Session.C \
 	    ${WRKSRC}/programs/dtmail/libDtMail/RFC/RFCBodyPart.C; \
 	fi
+
 # From shells/ksh93
-.if ${OSVERSION} >= 1100093
 	@${REINPLACE_CMD} -e 's|SF_FLAGS|SFIO_FLAGS|g' \
 		${WRKSRC}/programs/dtksh/ksh93/src/lib/libast/include/sfio*.h  \
 		${WRKSRC}/programs/dtksh/ksh93/src/lib/libast/sfio/*.c \
 		${WRKSRC}/programs/dtksh/ksh93/src/lib/libast/sfio/*.h
-.endif
 
 # Speed up poudriere + qemu + native-xtools
 	@${REINPLACE_CMD} \
