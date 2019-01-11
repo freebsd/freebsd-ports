@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gdal
-PORTVERSION=	2.2.4
-PORTREVISION=	2
+PORTVERSION=	2.4.0
 CATEGORIES=	graphics python
 MASTER_SITES=	https://download.osgeo.org/gdal/${PORTVERSION}/ \
-		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
 		LOCAL/sunpoet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,9 +19,10 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal
 OPTIONS_DEFINE=	NUMPY
 NUMPY_DESC=	Enable array support via NumPy
 
+USES=		compiler:c++11-lang python shebangfix tar:xz
 USE_PYTHON=	autoplist concurrent distutils
-USES=		python shebangfix tar:xz
 
+USE_CXXSTD=	c++11
 WRKSRC_SUBDIR=	swig/python
 
 SHEBANG_FILES=	scripts/*.py
@@ -33,7 +32,6 @@ NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.0.0,1:math/py-numpy@${PY_FLAV
 NUMPY_USES=		fortran
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/*.py ${STAGEDIR}${PREFIX}/bin/
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/osgeo/*.so
 
 .include <bsd.port.mk>
