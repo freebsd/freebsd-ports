@@ -1,3 +1,4 @@
-Windows / Hyper-V library for OpenStack projects.
+The library contains Windows / Hyper-V specific code commonly used in OpenStack
+projects and can be used in any other OpenStack projects where it is needed.
 
 WWW: https://pypi.org/project/os-win/
