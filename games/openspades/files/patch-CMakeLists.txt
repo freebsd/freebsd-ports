@@ -1,8 +1,0 @@
---- CMakeLists.txt.orig	2014-06-23 11:55:03 UTC
-+++ CMakeLists.txt
-@@ -1,5 +1,4 @@
- cmake_minimum_required(VERSION 2.8)
--set(CMAKE_INSTALL_PREFIX "/usr/local")
- project(OpenSpades)
- 
- set(OpenSpades_VERSION_MAJOR 0)
