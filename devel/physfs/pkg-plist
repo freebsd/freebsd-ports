@@ -1,6 +1,7 @@
 bin/test_physfs
 include/physfs.h
 lib/libphysfs.so.1
-lib/libphysfs.so.2.0.3
+lib/libphysfs.so.3.0.1
 lib/libphysfs.a
 lib/libphysfs.so
+libdata/pkgconfig/physfs.pc
