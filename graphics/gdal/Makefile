@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gdal
-PORTVERSION=	2.2.4
-PORTREVISION=	2
+PORTVERSION=	2.4.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/gdal/${PORTVERSION}/ \
-		ftp://ftp.remotesensing.org/pub/gdal/${PORTVERSION}/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -24,12 +22,14 @@ LIB_DEPENDS=	libgeotiff.so:graphics/libgeotiff \
 
 OPTIONS_DEFINE=	ARMADILLO CFITSIO CURL ECW EXPAT FREEXL GEOS GTA HDF5 JASPER \
 		KML LIBXML2 MYSQL NETCDF ODBC OPENJPEG PCRE PGSQL SFCGAL \
-		SPATIALITE SQLITE WEBP XERCES
+		SPATIALITE SQLITE WEBP XERCES ZSTD
 OPTIONS_DEFAULT=JASPER
 OPTIONS_RADIO=	PDF
 OPTIONS_RADIO_PDF=	PODOFO POPPLER
 OPTIONS_SUB=	yes
 PCRE_DESC=	Regular expression support for SQLite
+
+USES=		compiler:c++11-lang gmake iconv jpeg localbase pkgconfig ssl tar:xz
 
 CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
@@ -43,7 +43,7 @@ CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--with-libtiff=yes \
 		--with-libz=/usr \
 		--with-png=yes \
-		--with-static-proj4=no \
+		--with-proj=yes \
 		--with-threads=yes \
 		--without-libtool \
 		${ICONV_CONFIGURE_ARG}
@@ -51,12 +51,28 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	${ICONV_LIB}
 MAKE_JOBS_UNSAFE=	yes
 MAKEFILE=	GNUmakefile
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
-USES=		gmake iconv jpeg localbase tar:xz
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 SLAVEDIRS=	graphics/p5-Geo-GDAL graphics/py-gdal
+
+HEADER_FILES=	alg/gdalwarpkernel_opencl.h \
+		alg/gvgcpfit.h \
+		alg/internal_qhull_headers.h \
+		alg/thinplatespline.h\
+		gcore/gdalexif.h \
+		gcore/gdaljp2metadatagenerator.h \
+		gcore/gdalsse_priv.h \
+		gnm/gnm_priv.h \
+		port/cpl_aws.h \
+		port/cpl_cpu_features.h \
+		port/cpl_google_cloud.h \
+		port/cpl_sha1.h \
+		port/cpl_sha256.h \
+		port/cpl_vsil_curl_priv.h \
+		port/cpl_worker_thread_pool.h
 
 ARMADILLO_CONFIGURE_WITH=	armadillo
 ARMADILLO_LIB_DEPENDS=	libarmadillo.so:math/armadillo
@@ -114,6 +130,8 @@ WEBP_CONFIGURE_WITH=	webp
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 XERCES_CONFIGURE_WITH=	xerces
 XERCES_LIB_DEPENDS=	libxerces-c.so:textproc/xerces-c3
+ZSTD_CONFIGURE_WITH=	zstd
+ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^#GDAL_SLIB_SONAME/ s|^#||' ${WRKSRC}/GDALmake.opt.in
@@ -130,7 +148,7 @@ post-patch:
 	@${RM} -r ${WRKSRC}/ogr/ogrsf_frmts/geojson/libjson/
 
 post-install:
-	cd ${WRKSRC}/gnm/ && ${INSTALL_DATA} gnm.h gnm_api.h gnm_priv.h gnmgraph.h ${STAGEDIR}${PREFIX}/include/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${HEADER_FILES} ${STAGEDIR}${PREFIX}/include/
 	${INSTALL_DATA} ${WRKSRC}/libgdal.a ${STAGEDIR}${PREFIX}/lib/
 	${TOUCH} ${STAGEDIR}${PREFIX}/lib/gdalplugins/.keepme
 	${INSTALL_DATA} ${WRKSRC}/GDALmake.opt ${STAGEDIR}${DATADIR}/
