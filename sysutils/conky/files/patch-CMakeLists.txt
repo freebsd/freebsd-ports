@@ -1,12 +1,12 @@
---- CMakeLists.txt.orig	2018-12-02 18:26:02 UTC
+--- CMakeLists.txt.orig	2019-01-08 01:26:24 UTC
 +++ CMakeLists.txt
-@@ -54,26 +54,27 @@ add_subdirectory(doc)
- add_subdirectory(src)
+@@ -72,9 +72,12 @@ if(BUILD_TESTS)
+ endif()
  
- IF(NOT DEFINED DOC_PATH)
+ if(NOT DEFINED DOC_PATH)
 -  set(DOC_PATH "share/doc/${CPACK_PACKAGE_NAME}-${VERSION}")
 +  set(DOC_PATH "share/doc/${CPACK_PACKAGE_NAME}")
- ENDIF(NOT DEFINED DOC_PATH)
+ endif(NOT DEFINED DOC_PATH)
 -set(DOC_FILES extras/convert.lua data/conky_no_x11.conf data/conky.conf)
 +IF(NOT DEFINED SAMPLE_PATH)
 +  set(SAMPLE_PATH "share/examples/${CPACK_PACKAGE_NAME}")
@@ -14,28 +14,25 @@
 +set(SAMPLE_FILES extras/convert.lua data/conky_no_x11.conf data/conky.conf)
  
  set(HTML_PATH "${DOC_PATH}/html")
- set(HTML_FILES doc/config_settings.html doc/docs.html doc/lua.html doc/variables.html)
+ set(HTML_FILES
+@@ -83,16 +86,14 @@ set(HTML_FILES
+     doc/lua.html
+     doc/variables.html)
  
 -set(MAN_PATH "share/man/man1")
 +set(MAN_PATH "man/man1")
  set(MAN_FILES doc/conky.1)
  
--install(FILES ${DOC_FILES}
--  DESTINATION ${DOC_PATH})
-+install(FILES ${SAMPLE_FILES}
-+  DESTINATION ${SAMPLE_PATH})
+-install(FILES ${DOC_FILES} DESTINATION ${DOC_PATH})
++install(FILES ${SAMPLE_FILES} DESTINATION ${SAMPLE_PATH})
  
 -if(MAINTAINER_MODE)
--  install(FILES ${HTML_FILES}
--    DESTINATION ${HTML_PATH})
-+install(FILES ${HTML_FILES}
-+  DESTINATION ${HTML_PATH})
+-  install(FILES ${HTML_FILES} DESTINATION ${HTML_PATH})
++install(FILES ${HTML_FILES} DESTINATION ${HTML_PATH})
  
--  install(FILES ${MAN_FILES}
--    DESTINATION ${MAN_PATH})
+-  install(FILES ${MAN_FILES} DESTINATION ${MAN_PATH})
 -endif(MAINTAINER_MODE)
-+install(FILES ${MAN_FILES}
-+  DESTINATION ${MAN_PATH})
++install(FILES ${MAN_FILES} DESTINATION ${MAN_PATH})
  
  if(CHECK_CODE_QUALITY)
    # Set up clang-tidy
