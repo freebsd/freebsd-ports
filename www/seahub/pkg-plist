@@ -383,11 +383,11 @@
 %%SEAHUBDIR%%/media/assets/scripts/dist/i18n/zh-tw/djangojs.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/require.ac5ad85d01a3.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/lib/require.js
-%%SEAHUBDIR%%/media/assets/scripts/dist/main.700b157cf256.js
+%%SEAHUBDIR%%/media/assets/scripts/dist/main.9b8434ff606d.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/main.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/orgadmin-main.706c264cbe87.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/orgadmin-main.js
-%%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.1ed2dc2065d5.js
+%%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.f2eb21ad4153.js
 %%SEAHUBDIR%%/media/assets/scripts/dist/sysadmin-main.js
 %%SEAHUBDIR%%/media/assets/scripts/file-tree.ef19875b8f54.js
 %%SEAHUBDIR%%/media/assets/scripts/file-tree.js
@@ -1768,6 +1768,7 @@
 %%SEAHUBDIR%%/tests/api/endpoints/admin/test_logs.py
 %%SEAHUBDIR%%/tests/api/endpoints/admin/test_org_stats.py
 %%SEAHUBDIR%%/tests/api/endpoints/admin/test_org_users.py
+%%SEAHUBDIR%%/tests/api/endpoints/admin/test_orgs.py
 %%SEAHUBDIR%%/tests/api/endpoints/admin/test_perm_audit_log.py
 %%SEAHUBDIR%%/tests/api/endpoints/admin/test_revision_tag.py
 %%SEAHUBDIR%%/tests/api/endpoints/admin/test_share_links.py
@@ -1920,6 +1921,7 @@
 %%SEAHUBDIR%%/tests/seahub/utils/__init__.py
 %%SEAHUBDIR%%/tests/seahub/utils/%%USERS%%-license.txt
 %%SEAHUBDIR%%/tests/seahub/utils/test_file_size.py
+%%SEAHUBDIR%%/tests/seahub/utils/test_generate_file_audit_event_type.py
 %%SEAHUBDIR%%/tests/seahub/utils/test_get_conf_test_ext.py
 %%SEAHUBDIR%%/tests/seahub/utils/test_license_parse.py
 %%SEAHUBDIR%%/tests/seahub/utils/test_normalize_dir_path.py
