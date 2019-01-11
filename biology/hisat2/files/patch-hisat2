@@ -1,0 +1,11 @@
+--- hisat2.orig	2018-11-07 21:43:32 UTC
++++ hisat2
+@@ -45,7 +45,7 @@ while (-f $prog && -l $prog){
+ 
+ ($vol,$script_path,$prog) 
+                 = File::Spec->splitpath($prog);
+-my $os_is_nix   = ($^O eq "linux") || ($^O eq "darwin");
++my $os_is_nix   = ($^O ne "MSWin32") && ($^O ne "MSWin64");
+ my $align_bin_s = $os_is_nix ? 'hisat2-align-s' : 'hisat2-align-s.exe'; 
+ my $build_bin   = $os_is_nix ? 'hisat2-build' : 'hisat2-build.exe';               
+ my $align_bin_l = $os_is_nix ? 'hisat2-align-l' : 'hisat2-align-l.exe'; 

@@ -45,6 +45,7 @@
     SUBDIR += grappa
     SUBDIR += groopm
     SUBDIR += hmmer
+    SUBDIR += hisat2
     SUBDIR += htslib
     SUBDIR += hyphy
     SUBDIR += igv
