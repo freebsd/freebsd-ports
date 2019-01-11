@@ -3,6 +3,7 @@
 
 PORTNAME=	tlf
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.hs-mittweida.de/tb/ \
 		LOCAL/shurd
@@ -32,7 +33,5 @@ HAMLIB_LIB_DEPENDS=	libhamlib.so:comms/hamlib
 HAMLIB_CONFIGURE_ENABLE=hamlib
 FLDIGI_LIB_DEPENDS=	libxmlrpc.so:net/xmlrpc-c
 FLDIGI_CONFIGURE_ENABLE=fldigi-xmlrpc
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

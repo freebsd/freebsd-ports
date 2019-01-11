@@ -25,8 +25,6 @@ SHEBANG_GLOB=	*.py
 
 OPTIONS_DEFINE=	DOCS
 
-OPTIONS_DEFINE=	DOCS
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/pg_partman_bgw.so
 
