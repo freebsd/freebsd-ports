@@ -10,3 +10,4 @@ net/libmaxminddb), please switch to that and use geoipupdate
 (net/geoipupdate) to fetch the GeoIP 2 databases.
 ===============================================================
 MSG
+exit 1

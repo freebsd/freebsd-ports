@@ -3,7 +3,7 @@
 
 PORTNAME=	GeoIP
 PORTVERSION=	1.6.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net geography
 MASTER_SITES=	https://github.com/maxmind/geoip-api-c/releases/download/v${PORTVERSION}/
 
