@@ -18,7 +18,6 @@ include/ikos/ar/pass/name_values.hpp
 include/ikos/ar/pass/pass.hpp
 include/ikos/ar/pass/simplify_cfg.hpp
 include/ikos/ar/pass/simplify_upcast_comparison.hpp
-include/ikos/ar/pass/unify_exit_nodes.hpp
 include/ikos/ar/semantic.hpp
 include/ikos/ar/semantic/bundle.hpp
 include/ikos/ar/semantic/code.hpp
