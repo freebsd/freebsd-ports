@@ -8,9 +8,13 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	The core class for representing a single MARC record
+COMMENT=	Core class for representing a single MARC record
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
