@@ -1082,6 +1082,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/r.li.shape.html
 %%GRASS_INST_DIR%%/docs/html/r.li.simpson.html
 %%GRASS_INST_DIR%%/docs/html/r.mapcalc.html
+%%GRASS_INST_DIR%%/docs/html/r.mapcalc.simple.html
 %%GRASS_INST_DIR%%/docs/html/r.mask.html
 %%GRASS_INST_DIR%%/docs/html/r.mfilter.html
 %%GRASS_INST_DIR%%/docs/html/r.mode.html
@@ -1985,6 +1986,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/man/man1/r.li.shape.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.li.simpson.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.mapcalc.1.gz
+%%GRASS_INST_DIR%%/docs/man/man1/r.mapcalc.simple.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.mask.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.mfilter.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.mode.1.gz
@@ -4093,6 +4095,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/scripts/r.in.aster
 %%GRASS_INST_DIR%%/scripts/r.in.srtm
 %%GRASS_INST_DIR%%/scripts/r.in.wms
+%%GRASS_INST_DIR%%/scripts/r.mapcalc.simple
 %%GRASS_INST_DIR%%/scripts/r.mask
 %%GRASS_INST_DIR%%/scripts/r.out.xyz
 %%GRASS_INST_DIR%%/scripts/r.pack

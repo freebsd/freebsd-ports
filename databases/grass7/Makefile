@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grass
-PORTVERSION=	7.4.3
-PORTREVISION=	2
+PORTVERSION=	7.4.4
 CATEGORIES=	databases geography
 MASTER_SITES=	http://grass.osgeo.org/%SUBDIR%/ \
 		http://grass.cict.fr/%SUBDIR%/ \
@@ -38,7 +37,7 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libgeos.so:graphics/geos
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		blaslapack compiler:openmp fortran gettext gmake iconv \
+USES=		blaslapack compiler:openmp fortran gettext gmake gl iconv \
 		jpeg perl5 pkgconfig python:2.7 readline shebangfix tk
 SHEBANG_LANG=	nviz
 nviz_OLD_CMD=	nviz
@@ -83,7 +82,7 @@ OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	MYSQL ODBC PGSQL SQLITE
 #OPTIONS_SINGLE=		BLAS
 #OPTIONS_SINGLE_BLAS=	ATLAS NETLIB GOTOBLAS OPENBLAS
-OPTIONS_DEFAULT=	LAS PDAL PGSQL SQLITE NETLIB
+OPTIONS_DEFAULT=	LAS PDAL PGSQL SQLITE NETLIB MOTIF NETCDF MYSQL ODBC
 OPTIONS_SUB=		yes
 
 #BLAS_DESC=		BLAS/LAPACK support
