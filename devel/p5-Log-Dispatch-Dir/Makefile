@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Dispatch-Dir
-PORTVERSION=	0.15
+PORTVERSION=	0.160
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,8 +22,9 @@ RUN_DEPENDS=	p5-File-Slurper>=0:devel/p5-File-Slurper \
 TEST_DEPENDS=	p5-File-LibMagic>=0:devel/p5-File-LibMagic \
 		p5-Media-Type-Simple>=0:devel/p5-Media-Type-Simple
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

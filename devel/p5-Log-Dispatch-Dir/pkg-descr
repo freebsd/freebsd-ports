@@ -5,4 +5,4 @@ constraints. Each message will be logged to a separate file the directory.
 Logging to separate files can be useful for example when dumping whole network
 responses (like HTTP::Response content).
 
-WWW: https://metacpan.org/release/PERLANCAR/Log-Dispatch-Dir-0.15
+WWW: https://metacpan.org/release/Log-Dispatch-Dir
