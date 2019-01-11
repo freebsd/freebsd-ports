@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vagrant_cloud
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	sysutils rubygems devel
 MASTER_SITES=	RG
 
