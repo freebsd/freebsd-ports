@@ -20,7 +20,7 @@ USES=		desktop-file-utils python:3.2+
 USE_GITHUB=	yes
 GH_ACCOUNT=	otsaloma
 USE_GNOME=	gtk30 pygobject3 intltool
-USE_PYTHON=	distutils autoplist py3kplist
+USE_PYTHON=	distutils autoplist py3kplist noflavors
 INSTALLS_ICONS=	yes
 NO_ARCH=	yes
 

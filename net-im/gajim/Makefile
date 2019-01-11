@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nbxmpp>=0.6.5:net-im/py-nbxmpp@${PY_FLAVOR} 
 
 NO_ARCH=	yes
 USES=		cpe dos2unix python:3.5+ tar:bzip2
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils noflavors
 USE_GNOME=	intltool pygobject3
 USE_XORG=	x11 xext xscrnsaver
 
