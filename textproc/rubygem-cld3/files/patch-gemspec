@@ -1,0 +1,11 @@
+--- cld3.gemspec.orig	2019-01-11 17:38:08 UTC
++++ cld3.gemspec
+@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+     s.specification_version = 4
+ 
+     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+-      s.add_runtime_dependency(%q<ffi>.freeze, [">= 1.1.0", "< 1.10.0"])
++      s.add_runtime_dependency(%q<ffi>.freeze, [">= 1.1.0", "< 1.11.0"])
+       s.add_development_dependency(%q<rspec>.freeze, [">= 3.0.0", "< 3.8.0"])
+     else
+       s.add_dependency(%q<ffi>.freeze, [">= 1.1.0", "< 1.10.0"])
