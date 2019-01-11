@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bumprace
-PORTVERSION=	1.5.6
+PORTVERSION=	1.5.8
 CATEGORIES=	games
 MASTER_SITES=	https://bitbucket.org/karlb/bumprace/get/ \
 		http://mirror.amdmi3.ru/distfiles/${DIST_SUBDIR}/
@@ -12,9 +12,13 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Simple arcade racing game
 
-WRKSRC=		${WRKDIR}/karlb-bumprace-047c7a593bcc
+LICENSE=	GPLv2+ CC-BY-2.0 CC-BY-3.0
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 
-USES=		gmake jpeg localbase tar:bz2
+WRKSRC=		${WRKDIR}/karlb-bumprace-e73baa9e7465
+
+USES=		autoreconf gmake jpeg localbase tar:bz2
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl mixer image
 
@@ -37,6 +41,6 @@ post-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/FAQ ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${WRKSRC}/FAQ ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
