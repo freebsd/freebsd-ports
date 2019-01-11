@@ -63,7 +63,6 @@ share/gir-1.0/Graphene-1.0.gir
 %%GTKDOC%%share/gtk-doc/html/graphene/ix06.html
 %%GTKDOC%%share/gtk-doc/html/graphene/left-insensitive.png
 %%GTKDOC%%share/gtk-doc/html/graphene/left.png
-%%GTKDOC%%share/gtk-doc/html/graphene/object-tree.html
 %%GTKDOC%%share/gtk-doc/html/graphene/rectangle-intersection.png
 %%GTKDOC%%share/gtk-doc/html/graphene/rectangle-union.png
 %%GTKDOC%%share/gtk-doc/html/graphene/rectangle.png
