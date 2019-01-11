@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	openspades
-PORTVERSION=	0.0.12
+PORTVERSION=	0.1.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	8
 CATEGORIES=	games
-MASTER_SITES=	http://yvt.jp/files/programs/osppaks/:data
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} DevPaks27.zip:data
+MASTER_SITES=	https://github.com/yvt/openspades-paks/releases/download/r33/:data
+DISTFILES=	OpenSpadesDevPackage-r33.zip:data
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Compatible client of Ace of Spades
@@ -15,16 +14,17 @@ COMMENT=	Compatible client of Ace of Spades
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	convert:graphics/ImageMagick6 # for building icons
-LIB_DEPENDS=	libcurl.so:ftp/curl
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	bundles non-portable AngelScript
 
-BROKEN_aarch64=		fails to compile: uses x86 assembly
-BROKEN_powerpc64=	fails to compile: uses x86 assembly
+BUILD_DEPENDS=	convert:graphics/ImageMagick6 # for building icons
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libopusfile.so:audio/opusfile
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yvt
 
-USES=		cmake:insource compiler:c++11-lib desktop-file-utils
+USES=		cmake:insource compiler:c++11-lib desktop-file-utils gl gnome openal
 CMAKE_ARGS=	-DOPENSPADES_RESOURCES=OFF \
 		-DOPENSPADES_INSTALL_MAN="man/man6" \
 		-DOPENSPADES_INSTALL_BINARY="bin" \
@@ -39,10 +39,13 @@ PORTDATA=	*
 OPTIONS_DEFINE=	DOCS
 
 post-extract:
-	@${MKDIR} ${WRKSRC}/Resources/DevPak
-	@${MV} ${WRKDIR}/*.pak ${WRKSRC}/Resources/DevPak/
+	@${MV} ${WRKDIR}/Nonfree/*.pak ${WRKDIR}/OfficialMods/*.pak \
+	    ${WRKSRC}/Resources/
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|Xext|${LOCALBASE}/lib/lib&.so|' ${WRKSRC}/Sources/CMakeLists.txt
+
+post-install:
+	cd ${WRKSRC}/Resources/ && ${COPYTREE_SHARE} "Gfx Locales Maps Models PackageInfo.json Scripts Shaders Sounds Textures *.pak" ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
