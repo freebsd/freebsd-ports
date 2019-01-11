@@ -2,7 +2,7 @@
 
 PORTNAME=	vegeta
 DISTVERSIONPREFIX=	cli/v
-DISTVERSION=	12.1.0
+DISTVERSION=	12.2.0
 CATEGORIES=	benchmarks www
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -39,8 +39,7 @@ do-build:
 	@cd ${WRKSRC} && \
 	  ${SETENV} ${MAKE_ENV} ${GO_ENV} CGO_ENABLED=0 GOPATH=${WRKSRC} \
 	  ${GO_CMD} build -v -a -tags=netgo -ldflags \
-	  '-s -w -extldflags "-static" -X main.Version=${DISTVERSION} -X main.Date=20180818' \
-	  -o bin/${PORTNAME}
+	  '-s -w -extldflags "-static" -X main.Version=${DISTVERSION}' -o bin/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}/${LOCALBASE}/bin
