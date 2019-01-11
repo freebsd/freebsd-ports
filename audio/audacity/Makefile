@@ -83,11 +83,11 @@ DEBUG_CONFIGURE_WITH=	debug
 DOCS_BUILD_DEPENDS=	docbook-to-man:textproc/docbook-to-man \
 			docbook2man:textproc/docbook-utils
 
-DYNLOAD_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libavcodec.pc:multimedia/ffmpeg
-DYNLOAD_BUILD_DEPENDS=	${LOCALBASE}/include/lame/lame.h:audio/lame
+DYNLOAD_BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libavcodec.pc:multimedia/ffmpeg \
+			${LOCALBASE}/include/lame/lame.h:audio/lame
 DYNLOAD_CONFIGURE_ENABLE=	dynamic-loading
-DYNLOAD_CPPFLAGS=		-I${LOCALBASE}/include	# for audio/lame using
-DYNLOAD_LDFLAGS=		-L${LOCALBASE}/lib	# for audio/lame using
+DYNLOAD_CPPFLAGS=		-I${LOCALBASE}/include	# for audio/lame
+DYNLOAD_LDFLAGS=		-L${LOCALBASE}/lib	# for audio/lame
 
 FFMPEG_CONFIGURE_WITH=	ffmpeg=system
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
