@@ -3,7 +3,7 @@
 
 PORTNAME=	libquicktime
 PORTVERSION=	1.2.4
-PORTREVISION?=	23
+PORTREVISION?=	24
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=	--without-gtk
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS=	libasound.so:audio/alsa-lib
+LIB_DEPENDS+=	libasound.so:audio/alsa-lib
 .else
 CONFIGURE_ARGS+=	--without-alsa
 .endif
