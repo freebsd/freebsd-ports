@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elementary
-PORTVERSION=	4.1.0
+PORTVERSION=	4.3.1
 CATEGORIES=	x11-themes gnome
 PKGNAMEPREFIX=	gnome-icons-
 
@@ -22,7 +22,7 @@ INSTALLS_ICONS=	yes
 do-install:
 	cd ${WRKSRC} && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/icons/elementary \
-		"! -name *\.VolumeIcon* ! -name pre-commit"
+		"! -name *\.VolumeIcon* ! -name pre-commit ! -name CMakeLists.txt"
 	${FIND} ${STAGEDIR}${PREFIX}/share/icons/elementary/ \
 		-type d -empty | ${XARGS} ${RMDIR}
 
