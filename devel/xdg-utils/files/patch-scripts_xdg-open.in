@@ -1,5 +1,5 @@
---- scripts/xdg-open.in.orig	2016-01-27 22:52:37.829535000 +0100
-+++ scripts/xdg-open.in	2016-01-28 11:10:29.639949000 +0100
+--- scripts/xdg-open.in.orig	2019-01-08 19:02:17 UTC
++++ scripts/xdg-open.in
 @@ -15,6 +15,12 @@
  #
  #---------------------------------------------
@@ -13,7 +13,7 @@
  manualpage()
  {
  cat << _MANUALPAGE
-@@ -92,7 +98,7 @@
+@@ -92,7 +98,7 @@ file_url_to_path()
          if [ -x /usr/bin/printf ]; then
              printf=/usr/bin/printf
          fi
@@ -22,7 +22,7 @@
      fi
      echo "$file"
  }
-@@ -211,6 +217,17 @@
+@@ -193,6 +199,17 @@ open_gnome()
      fi
  }
  
@@ -37,26 +37,36 @@
 +  fi
 +}
 +
- #-----------------------------------------
- # Recursively search .desktop file
+ open_mate()
+ {
+     if gio help open 2>/dev/null 1>&2; then
+@@ -342,8 +359,7 @@ open_generic_xdg_mime()
+         [ -n "$xdg_user_dir" ] || xdg_user_dir="$HOME/.local/share"
  
-@@ -380,7 +397,7 @@
+         xdg_system_dirs="$XDG_DATA_DIRS"
+-        [ -n "$xdg_system_dirs" ] || xdg_system_dirs=/usr/local/share/:/usr/share/
+-
++        [ -n "$xdg_system_dirs" ] || xdg_system_dirs=%%LOCALBASE%%/share/:/usr/share/
+ DEBUG 3 "$xdg_user_dir:$xdg_system_dirs"
+         for x in `echo "$xdg_user_dir:$xdg_system_dirs" | sed 's/:/ /g'`; do
+             search_desktop_file "$default" "$x/applications/" "$1"
+@@ -438,7 +454,7 @@ open_generic()
      if [ x"$BROWSER" = x"" ]; then
          BROWSER=www-browser:links2:elinks:links:lynx:w3m
-         if [ -n "$DISPLAY" ]; then
--            BROWSER=x-www-browser:firefox:iceweasel:seamonkey:mozilla:epiphany:konqueror:chromium-browser:google-chrome:$BROWSER
+         if has_display; then
+-            BROWSER=x-www-browser:firefox:iceweasel:seamonkey:mozilla:epiphany:konqueror:chromium:chromium-browser:google-chrome:$BROWSER
 +            BROWSER=x-www-browser:firefox:iceweasel:seamonkey:mozilla:epiphany:konqueror:chrome:chromium-browser:google-chrome:$BROWSER
          fi
      fi
  
-@@ -472,6 +489,10 @@
-     open_mate "$url"
-     ;;
+@@ -534,6 +550,10 @@ case "$DE" in
  
-+    lumina)
-+    open_lumina "$url"
+     gnome)
+     open_gnome "$url"
 +    ;;
 +
-     xfce)
-     open_xfce "$url"
++    lumina)
++    open_lumina "$url"
      ;;
+ 
+     mate)

@@ -1,6 +1,6 @@
---- scripts/xdg-icon-resource.in.orig	2016-01-27 22:13:25.171381000 +0100
-+++ scripts/xdg-icon-resource.in	2016-01-27 22:13:51.264266000 +0100
-@@ -222,7 +222,7 @@
+--- scripts/xdg-icon-resource.in.orig	2019-01-08 19:02:17 UTC
++++ scripts/xdg-icon-resource.in
+@@ -222,7 +222,7 @@ xdg_user_dir="$xdg_user_dir/$xdg_dir_name"
  xdg_global_dir=
  xdg_global_prefix=
  xdg_system_dirs="$XDG_DATA_DIRS"

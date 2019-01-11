@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xdg-utils
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.3
 CATEGORIES=	devel
 MASTER_SITES=	http://portland.freedesktop.org/download/
 
@@ -18,6 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-them
 		xset:x11/xset
 
 USES=		gmake
+
 CONFIGURE_ENV=	XMLTO=${LOCALBASE}/bin/minixmlto
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
