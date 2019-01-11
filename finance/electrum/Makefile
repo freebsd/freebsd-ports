@@ -30,7 +30,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp-socks>=0.2:net/py-aiohttp-socks@${PY
 
 CONFLICTS_INSTALL=	electrum2-*
 
-USES=		desktop-file-utils pyqt:5 python:3.4+
+# Supports 3.4+ but aiorpcX is 3.6+
+USES=		desktop-file-utils pyqt:5 python:3.6+
 USE_PYQT=	gui_run sip widgets
 USE_PYTHON=	autoplist distutils optsuffix
 PYDISTUTILS_PKGNAME=	Electrum
