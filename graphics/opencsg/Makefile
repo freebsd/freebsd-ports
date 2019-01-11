@@ -14,10 +14,7 @@ COMMENT=	Constructive Solid Geometry rendering library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../license.txt
 
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-
-USES=		compiler:c++11-lang qmake qt:4
+USES=		compiler:c++11-lang qmake qt:5
 USE_GL=		gl glew
 USE_QT=		qmake_build
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
