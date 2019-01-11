@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RDF-Simple
-PORTVERSION=	0.415
+PORTVERSION=	0.417
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Class-MakeMethods>=0:devel/p5-Class-MakeMethods \
+RUN_DEPENDS=	p5-Class-MethodMaker>=0:devel/p5-Class-MethodMaker \
 		p5-File-Slurp>=0:devel/p5-File-Slurp \
 		p5-Regexp-Common>=0:textproc/p5-Regexp-Common \
 		p5-URI>=0:net/p5-URI \
