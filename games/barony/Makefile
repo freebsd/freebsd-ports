@@ -3,7 +3,7 @@
 PORTNAME=	barony
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	devnexen@gmail.com
@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/GPL.3.0.txt
 
 LIB_DEPENDS=	libogg.so:audio/libogg \
-		libphysfs.so:devel/physfs-devel \
+		libphysfs.so:devel/physfs \
 		libpng.so:graphics/png \
 		libvorbisfile.so:audio/libvorbis
 
