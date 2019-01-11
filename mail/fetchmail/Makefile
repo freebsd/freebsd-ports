@@ -3,15 +3,13 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.3.26
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/${PORTNAME}/branch_6.3/ \
 		http://mandree.home.pages.de/${PORTNAME}/
 
-PATCH_SITES=	https://gitlab.com/fetchmail/fetchmail/commit/:gitlab
-PATCH_SITES+=   https://src.fedoraproject.org/rpms/fetchmail/raw/master/f/:fedora
-PATCHFILES=	9b8b634.patch:-p1:gitlab  # SNI fix
-PATCHFILES+=    fetchmail-6.3.26-ssl-backport.patch:-p1:fedora
+PATCH_SITES=   https://src.fedoraproject.org/rpms/fetchmail/raw/master/f/:fedora
+PATCHFILES=    fetchmail-6.3.26-ssl-backport.patch:-p1:fedora
 
 
 MAINTAINER=	chalpin@cs.wisc.edu
@@ -25,7 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
 
-USES=		cpe gmake python shebangfix tar:xz ssl
+USES=		autoreconf:build cpe gmake python shebangfix tar:xz ssl
 SHEBANG_FILES=	fetchmailconf.py
 
 USE_RC_SUBR=	fetchmail
@@ -79,6 +77,22 @@ post-patch:
 .if !exists(/usr/lib/libcom_err.so)
 	@${REINPLACE_CMD} -e "s,-lcom_err,,g" ${WRKSRC}/configure
 .endif
+
+# This is a workaround for a ports framework bug:
+# As of r489889 on 2019-01-10, 
+# USES=autoreconf does not seem to get along with disabling the NLS option,
+# because this would not install gettext-tools, omitting autopoint,
+# however the configure.ac requests GETTEXT, so autoreconf will barf.
+# Pulling in gettext-tools unconditionally (even with NLS off) would 
+# be excess and confuse users, so is not an option.
+# Thus we set USES=autoreconf:build and run autoreconf by ourselves,
+# overriding AUTOPOINT=true.
+#
+pre-configure-NLS-on:
+	(cd ${WRKSRC} && ${LOCALBASE}/bin/autoreconf -f -i)
+#
+pre-configure-NLS-off:
+	(cd ${WRKSRC} && ${SETENV} AUTOPOINT=${TRUE} ${LOCALBASE}/bin/autoreconf -f -i)
 
 post-build:
 	@${MAKE_CMD} -C ${WRKSRC} check
