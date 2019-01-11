@@ -49,7 +49,6 @@ CFLOGGER_DESC=		SQLite logging plugin
 CFLOGGER_USES=		sqlite:3
 CFLOGGER_CONFIGURE_ON=	--enable-logger=yes
 CFNEWSPAPER_DESC=	Newspaper plugin
-CFLOGGER_USES=		sqlite:3
 CFNEWSPAPER_CONFIGURE_ON=	--enable-newspaper=yes
 CFRHG_DESC=		Random house genetor plugin
 CFRHG_CONFIGURE_ON=	--enable-cfrhg=yes
