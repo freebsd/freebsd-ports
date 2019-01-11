@@ -13,6 +13,10 @@ COMMENT=	Library to provide abstract access to various archives
 
 CONFLICTS_INSTALL=	physfs-[0-9]*
 
+IGNORE=		use devel/physfs
+DEPRECATED=	is the same as devel/physfs, serving no purpose
+EXPIRATION_DATE=2019-03-12
+
 USES=		cmake:insource readline tar:bzip2
 USE_LDCONFIG=	yes
 
