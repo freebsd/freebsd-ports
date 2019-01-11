@@ -25,6 +25,7 @@ bin/ogrtindex
 bin/testepsg
 etc/bash_completion.d/gdal-bash-completion.sh
 include/cpl_atomic_ops.h
+include/cpl_auto_close.h
 include/cpl_aws.h
 include/cpl_config.h
 include/cpl_config_extras.h
@@ -35,6 +36,7 @@ include/cpl_error.h
 include/cpl_google_cloud.h
 include/cpl_hash_set.h
 include/cpl_http.h
+include/cpl_json.h
 include/cpl_list.h
 include/cpl_minixml.h
 include/cpl_minizip_ioapi.h
@@ -112,16 +114,19 @@ libdata/pkgconfig/gdal.pc
 %%DATADIR%%/GDALLogoColor.svg
 %%DATADIR%%/GDALLogoGS.svg
 %%DATADIR%%/GDALmake.opt
+%%DATADIR%%/bag_template.xml
 %%DATADIR%%/compdcs.csv
 %%DATADIR%%/coordinate_axis.csv
 %%DATADIR%%/cubewerx_extra.wkt
 %%DATADIR%%/datum_shift.csv
 %%DATADIR%%/default.rsc
 %%DATADIR%%/ecw_cs.wkt
+%%DATADIR%%/eedaconf.json
 %%DATADIR%%/ellipsoid.csv
 %%DATADIR%%/epsg.wkt
 %%DATADIR%%/esri_StatePlane_extra.wkt
 %%DATADIR%%/esri_Wisconsin_extra.wkt
+%%DATADIR%%/esri_epsg.wkt
 %%DATADIR%%/esri_extra.wkt
 %%DATADIR%%/gcs.csv
 %%DATADIR%%/gcs.override.csv
@@ -177,6 +182,7 @@ libdata/pkgconfig/gdal.pc
 %%DATADIR%%/pci_ellips.txt
 %%DATADIR%%/pcs.csv
 %%DATADIR%%/pcs.override.csv
+%%DATADIR%%/pds4_template.xml
 %%DATADIR%%/plscenesconf.json
 %%DATADIR%%/prime_meridian.csv
 %%DATADIR%%/projop_wparm.csv

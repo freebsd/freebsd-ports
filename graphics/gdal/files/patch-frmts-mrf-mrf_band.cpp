@@ -1,11 +1,11 @@
---- frmts/mrf/mrf_band.cpp.orig	2016-04-25 17:35:55 UTC
+--- frmts/mrf/mrf_band.cpp.orig	2018-12-14 21:36:28 UTC
 +++ frmts/mrf/mrf_band.cpp
-@@ -57,7 +57,7 @@
+@@ -49,7 +49,7 @@
  
  #include <vector>
  #include <assert.h>
 -#include "../zlib/zlib.h"
 +#include <zlib.h>
  
- using std::vector;
- using std::string;
+ CPL_CVSID("$Id: mrf_band.cpp 959843c9331689918199b9a8667b8196c8b38c2f 2018-05-04 15:50:28 -0700 Lucian Plesea $")
+ 
