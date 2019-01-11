@@ -654,7 +654,7 @@ proxydeps() {
 				# If we don't already depend on it, and we don't provide it
 				if ! listcontains ${dep_file_pkg} "${LIB_RUN_DEPENDS} ${PKGORIGIN}"; then
 					# If the package has a flavor, check that the dependency is not on that particular flavor.
-					flavor=$(pkg annotate -q -S "${dep_file_pkg}" flavor)
+					flavor=$(pkg annotate -q -S "$(pkg which -q "${dep_file}")" flavor)
 					if [ -n "${flavor}" ]; then
 						if listcontains ${dep_file_pkg}@${flavor} "${LIB_RUN_DEPENDS} ${PKGORIGIN}"; then
 							continue
