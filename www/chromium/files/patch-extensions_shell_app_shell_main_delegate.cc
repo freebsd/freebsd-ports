@@ -1,6 +1,6 @@
---- extensions/shell/app/shell_main_delegate.cc.orig	2019-01-09 22:03:40.116892000 +0100
-+++ extensions/shell/app/shell_main_delegate.cc	2019-01-09 22:04:39.261286000 +0100
-@@ -38,13 +38,13 @@
+--- extensions/shell/app/shell_main_delegate.cc.orig	2019-01-11 19:10:53.125547000 +0100
++++ extensions/shell/app/shell_main_delegate.cc	2019-01-11 19:11:57.764029000 +0100
+@@ -38,7 +38,7 @@
  
  #if defined(OS_WIN)
  #include "base/base_paths_win.h"
@@ -9,13 +9,15 @@
  #include "base/nix/xdg_util.h"
  #elif defined(OS_MACOSX)
  #include "base/base_paths_mac.h"
- #endif
+@@ -52,7 +52,7 @@
+ 
+ namespace {
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
- #include "components/crash/content/app/breakpad_linux.h"         // nogncheck
- #include "components/crash/content/app/crash_reporter_client.h"  // nogncheck
- #include "extensions/shell/app/shell_crash_reporter_client.h"
+ extensions::ShellCrashReporterClient* GetCrashReporterClient() {
+   static base::NoDestructor<extensions::ShellCrashReporterClient> instance;
+   return instance.get();
 @@ -70,7 +70,7 @@
      return cmd_line->GetSwitchValuePath(switches::kContentShellDataPath);
  
