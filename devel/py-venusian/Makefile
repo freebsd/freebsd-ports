@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	venusian
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
@@ -15,6 +15,7 @@ LICENSE=	BSD4CLAUSE
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
