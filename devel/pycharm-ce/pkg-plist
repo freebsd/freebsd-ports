@@ -1467,8 +1467,8 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/markdown4j-2.2-cj-1.1.jar
 %%DATADIR%%/lib/markdownj-core-0.4.2-SNAPSHOT.jar
 %%DATADIR%%/lib/microba.jar
-%%DATADIR%%/lib/miglayout-core-5.1.jar
-%%DATADIR%%/lib/miglayout-swing-5.1.jar
+%%DATADIR%%/lib/miglayout-core-5.2.jar
+%%DATADIR%%/lib/miglayout-swing-5.2.jar
 %%DATADIR%%/lib/mutability-annotations-compat.jar
 %%DATADIR%%/lib/nanoxml-2.2.3.jar
 %%DATADIR%%/lib/netty-buffer-4.1.30.Final.jar

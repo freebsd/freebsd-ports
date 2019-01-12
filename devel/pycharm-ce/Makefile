@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pycharm-ce
-PORTVERSION=	2018.3.2
+PORTVERSION=	2018.3.3
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/
@@ -36,7 +36,7 @@ do-install:
 	@${RM} ${STAGEDIR}${DATADIR}/bin/*fsnotifier*
 # Remove the bundled native Pty4J support libraries, they are replaced
 # by java/intellij-pty4j
-	@${RM} -r ${STAGEDIR}${DATADIR}/lib/libpty
+	@${RM} -r ${STAGEDIR}${DATADIR}/lib/pty4j-native
 # Remove bundled linux-only JRE
 	@${RM} -r ${STAGEDIR}${DATADIR}/jre64
 	@${RM} -r ${STAGEDIR}${DATADIR}/helpers/pydev/pydevd_attach_to_process
