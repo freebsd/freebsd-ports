@@ -1,19 +1,20 @@
---- bootloader/wscript.orig	2013-09-15 20:27:11 UTC
+--- bootloader/wscript.orig	2018-09-22 05:02:42 UTC
 +++ bootloader/wscript
-@@ -229,7 +229,6 @@ def configure(conf):
-         conf.check_cc(lib='ws2_32', mandatory=True)
- 
-     else:
--        conf.check_cc(lib='dl', mandatory=True)
-         conf.check_cc(lib='z', mandatory=True)
-         if conf.check_cc(function_name='readlink', header_name='unistd.h'):
-             conf.env.append_value('CCFLAGS', '-DHAVE_READLINK')
-@@ -468,7 +467,7 @@ def build(bld):
- 
-     else: # linux, darwin (MacOSX)
- 
--        libs = ['dl', 'z', 'm']  # 'z' - zlib, 'm' - math,
-+        libs = ['z', 'm']  # 'z' - zlib, 'm' - math,
-         if opt.boehmgc:
-             libs.append('gc')
- 
+@@ -361,7 +361,7 @@ def set_arch_flags(ctx):
+         # or vice versa or with manually choosen --target-arch.
+         # Option -m32/-m64 has to be passed to cflags and linkflages.
+         elif ctx.env.PYI_ARCH == '32bit':
+-            if machine() in ('arm', 'aarch') and ctx.env.DEST_OS == 'linux':
++            if ctx.env.CC_NAME == "gcc":
+                 # It was reported that flag '-m32' does not work with gcc
+                 # on 32-bit arm Linux. So skip the -m32 flag.
+                 pass
+@@ -377,7 +377,7 @@ def set_arch_flags(ctx):
+             if ctx.env.DEST_OS == 'win32':
+                 ctx.env.append_value('LINKFLAGS', '-Wl,--large-address-aware')
+         elif ctx.env.PYI_ARCH == '64bit':
+-            if machine() in ('arm', 'aarch') and ctx.env.DEST_OS == 'linux':
++            if ctx.env.CC_NAME == 'gcc':
+                 # flag '-m64' does not work with gcc on 64-bit arm/aarch Linux.
+                 pass
+             else:
