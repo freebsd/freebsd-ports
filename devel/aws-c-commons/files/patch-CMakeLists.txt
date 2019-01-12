@@ -1,8 +1,16 @@
---- CMakeLists.txt.orig	2018-12-05 21:54:26 UTC
+--- CMakeLists.txt.orig	2019-01-09 19:56:14 UTC
 +++ CMakeLists.txt
-@@ -182,7 +182,7 @@ list(APPEND EXPORT_MODULES
+@@ -104,7 +104,6 @@ if (PERFORM_HEADER_CHECK)
+ endif()
  
- install(FILES ${EXPORT_MODULES} DESTINATION "lib/cmake/")
+ add_library(${CMAKE_PROJECT_NAME} ${COMMON_SRC})
+-aws_set_common_properties(${CMAKE_PROJECT_NAME} NO_WEXTRA)
+ aws_prepare_symbol_visibility_args(${CMAKE_PROJECT_NAME} "AWS_COMMON")
+ 
+ #apple source already includes the definitions we want, and setting this posix source
+@@ -205,7 +204,7 @@ install(FILES ${EXPORT_MODULES}
+         DESTINATION "${LIBRARY_DIRECTORY}/cmake"
+         COMPONENT Development)
  
 -if (NOT CMAKE_CROSSCOMPILING)
 +if (NOT CMAKE_CROSSCOMPILING AND BUILD_TESTING)
