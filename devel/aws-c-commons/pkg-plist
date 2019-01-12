@@ -39,9 +39,11 @@ lib/aws-c-common/cmake/aws-c-common-config.cmake
 lib/aws-c-common/cmake/aws-c-common-targets-release.cmake
 lib/aws-c-common/cmake/aws-c-common-targets.cmake
 lib/cmake/AwsCFlags.cmake
+lib/cmake/AwsLibFuzzer.cmake
+lib/cmake/AwsSIMD.cmake
+lib/cmake/AwsSanitizers.cmake
+lib/cmake/AwsSharedLibSetup.cmake
 lib/cmake/AwsTestHarness.cmake
-lib/cmake/LibFuzzer.cmake
-lib/cmake/SIMD.cmake
-lib/cmake/Sanitizers.cmake
 lib/libaws-c-common.so
 lib/libaws-c-common.so.0unstable
+lib/libaws-c-common.so.1.0.0
