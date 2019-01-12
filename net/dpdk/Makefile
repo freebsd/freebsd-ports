@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dpdk
-PORTVERSION=	18.05
-PORTREVISION=	1
+PORTVERSION=	18.05.1
 CATEGORIES=	net
 MASTER_SITES=	http://fast.dpdk.org/rel/
 
@@ -18,6 +17,7 @@ USES=		gmake kmod shebangfix
 SHEBANG_FILES=	usertools/dpdk-pmdinfo.py
 MAKEFILE=	GNUmakefile
 NO_PACKAGE=	ignores cflags
+WRKSRC=		${WRKDIR}/${PORTNAME}-stable-${PORTVERSION}
 RTE_TARGET=	x86_64-native-bsdapp-clang
 WRKBUILD=	${WRKSRC}/${RTE_TARGET}
 MAKE_ENV=	V=1

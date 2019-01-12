@@ -1,3 +1,3 @@
-TIMESTAMP = 1531832788
-SHA256 (dpdk-18.05.tar.gz) = 75bab8c79acca989b04bc989bdcaf66ef6f737f2ef9a8f5bcbfddc0ad2209834
-SIZE (dpdk-18.05.tar.gz) = 13904476
+TIMESTAMP = 1547152584
+SHA256 (dpdk-18.05.1.tar.gz) = be0da492290a303b0b09b79b8c9f6976ea7703ecf9f04d50aeead021c82b94b0
+SIZE (dpdk-18.05.1.tar.gz) = 13919248
