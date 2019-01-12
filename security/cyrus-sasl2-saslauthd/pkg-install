@@ -18,5 +18,6 @@ POST-INSTALL)
 	if [ "${PKG_BATCH}" = "NO" ]; then
 		sendmail_conf
 	fi
+	/usr/sbin/chown cyrus:mail /var/run/saslauthd
 	;;
 esac
