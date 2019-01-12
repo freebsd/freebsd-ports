@@ -28,6 +28,7 @@ do-install:
 	${FIND} ${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR} -type f \
 		\( -name mkmf.log -or -name gem_make.out \) -delete
 	${RM} -r ${STAGEDIR}${PREFIX}/${CACHE_DIR} 2> /dev/null || ${TRUE}
+	${RMDIR} ${STAGEDIR}${PREFIX}/${DOC_DIR} 2> /dev/null || ${TRUE}
 	${RMDIR} ${STAGEDIR}${PREFIX}/${EXT_DIR} 2> /dev/null || ${TRUE}
 
 .include <bsd.port.mk>
