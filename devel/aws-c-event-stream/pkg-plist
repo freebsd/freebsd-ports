@@ -4,3 +4,5 @@ lib/aws-c-event-stream/cmake/aws-c-event-stream-config.cmake
 lib/aws-c-event-stream/cmake/aws-c-event-stream-targets-release.cmake
 lib/aws-c-event-stream/cmake/aws-c-event-stream-targets.cmake
 lib/libaws-c-event-stream.so
+lib/libaws-c-event-stream.so.0unstable
+lib/libaws-c-event-stream.so.1.0.0
