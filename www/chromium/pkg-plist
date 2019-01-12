@@ -317,8 +317,6 @@ bin/chrome
 %%DATADIR%%/v8_context_snapshot.bin
 %%DATADIR%%/views_mus_resources.pak
 %%DEBUG%%%%DATADIR%%/character_data_generator
-%%DEBUG%%%%DATADIR%%/libmalloc_wrapper.so
-%%DEBUG%%%%DATADIR%%/libtest_shared_library.so
 %%DEBUG%%%%DATADIR%%/libVkICD_mock_icd.so
 %%DEBUG%%%%DATADIR%%/libVkLayer_core_validation.so
 %%DEBUG%%%%DATADIR%%/libVkLayer_object_tracker.so
