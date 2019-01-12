@@ -1,5 +1,5 @@
-TIMESTAMP = 1547043219
+TIMESTAMP = 1547271876
 SHA256 (MaskRay-ccls.wiki-20181210.tar.gz) = fedd812479e504ae7b6df9f5e6fe4d3f89dabacec05184ce6dc4f991c230d971
 SIZE (MaskRay-ccls.wiki-20181210.tar.gz) = 25372
-SHA256 (MaskRay-ccls-0.20181225.4_GH0.tar.gz) = ae25175acce9934692b2fc0b96000d8f60eb3ca9848690741caf0e614d345f44
-SIZE (MaskRay-ccls-0.20181225.4_GH0.tar.gz) = 158158
+SHA256 (MaskRay-ccls-0.20181225.5_GH0.tar.gz) = da99f2c482dffaa9129c328552ae0e2ab1a93ec1cb67c9106ce7bacf26bd0c0e
+SIZE (MaskRay-ccls-0.20181225.5_GH0.tar.gz) = 158111
