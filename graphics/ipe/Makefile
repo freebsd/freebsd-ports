@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipe
-PORTVERSION=	7.2.7
-PORTREVISION=	4
+PORTVERSION=	7.2.8
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
 MASTER_SITES=	https://dl.bintray.com/otfried/generic/ipe/${PORTVERSION:R}/
@@ -17,12 +16,13 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
-
-USES=		compiler:c++11-lib gmake jpeg lua:52 pkgconfig qt:5
+USES=		compiler:c++11-lib gmake gnome jpeg lua:52 pkgconfig qt:5
 USE_GNOME=	cairo
 USE_QT=		buildtools_build core gui qmake_build widgets
 USE_TEX=	pdftex
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+
 MAKE_ENV=	DL_LIBS="" \
 		INSTALL_DIR="${MKDIR}" \
 		INSTALL_FILES="${INSTALL_DATA}" \
