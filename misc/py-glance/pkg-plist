@@ -10,6 +10,12 @@
 @sample %%ETCDIR%%/glance-manage.conf.sample
 @sample %%ETCDIR%%/glance-registry.conf.sample
 @sample %%ETCDIR%%/glance-scrubber.conf.sample
+%%ETCDIR%%/oslo-config-generator/glance-api.conf
+%%ETCDIR%%/oslo-config-generator/glance-cache.conf
+%%ETCDIR%%/oslo-config-generator/glance-glare.conf
+%%ETCDIR%%/oslo-config-generator/glance-manage.conf
+%%ETCDIR%%/oslo-config-generator/glance-registry.conf
+%%ETCDIR%%/oslo-config-generator/glance-scrubber.conf
 %%ETCDIR%%/policy.json
 %%ETCDIR%%/schema-image.json
 %%ETCDIR%%/glance-api-paste.ini
