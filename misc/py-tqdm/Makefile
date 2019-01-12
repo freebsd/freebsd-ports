@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	tqdm
-DISTVERSIONPREFIX=	v
-DISTVERSION=	4.29.0
+DISTVERSION=	4.29.1
 CATEGORIES=	misc
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	neel@neelc.org
@@ -14,8 +14,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/LICENCE
 
 USES=		python
-USE_GITHUB=	yes
 USE_PYTHON=	distutils autoplist concurrent
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
