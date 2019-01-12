@@ -227,16 +227,17 @@ NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 NJS_GH_TUPLE=		nginx:njs:21572a0:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 
-PASSENGER_NGINX_VER=	6.0.0
+PASSENGER_NGINX_VER=	6.0.1
 PASSENGER_CATEGORIES=	ruby
 PASSENGER_USE=		ruby=yes
-PASSENGER_BUILD_DEPENDS=	${LOCALBASE}/bin/rake:devel/rubygem-rake
-PASSENGER_RAKE_BIN=		${LOCALBASE}/bin/rake
+PASSENGER_BUILD_DEPENDS=${LOCALBASE}/bin/rake:devel/rubygem-rake
+PASSENGER_RAKE_BIN=	${LOCALBASE}/bin/rake
 PASSENGER_MASTER_SITES=	http://s3.amazonaws.com/phusion-passenger/releases/:passenger
 PASSENGER_DISTFILES=	passenger-${PASSENGER_NGINX_VER}.tar.gz:passenger
 PASSENGER_VARS=		WRKSRC_passenger=${WRKDIR}/passenger-${PASSENGER_NGINX_VER} \
 			DSO_EXTDIRS+=passenger-${PASSENGER_NGINX_VER}/src/nginx_module
-PASSENGER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-passenger-build-nginx.rb
+PASSENGER_EXTRA_PATCHES=${PATCHDIR}/extra-patch-passenger-build-nginx.rb \
+			${PATCHDIR}/extra-patch-passenger-disable-telemetry
 
 POSTGRES_USES=		pgsql
 POSTGRES_GH_TUPLE=	FRiCKLE:ngx_postgres:1.0rc7:postgres
@@ -285,7 +286,7 @@ VOD_GH_TUPLE=		kaltura:nginx-vod-module:1.23:vod
 VOD_USE=		GNOME=libxml2
 VOD_VARS=		DSO_EXTMODS+=vod
 VOD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-vod-module-config \
-			${PATCHDIR}/extra-patch-vod-filters-audio_encoder.c    
+			${PATCHDIR}/extra-patch-vod-filters-audio_encoder.c
 
 VTS_GH_TUPLE=		vozlt:nginx-module-vts:v0.1.18:vts
 VTS_CONFIGURE_ON=	--add-module=${WRKSRC_vts}
