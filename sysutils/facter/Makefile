@@ -53,7 +53,7 @@ post-install:
 
 test: build
 	cd ${WRKSRC}/lib && bundle install --path vendor
-	cd ${WRKSRC} && ${MAKE_CMD} test
+	cd ${CONFIGURE_WRKSRC} && ${MAKE_CMD} test
 
 .include <bsd.port.pre.mk>
 
