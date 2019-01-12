@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyinstaller
-PORTVERSION=	2.1
-PORTREVISION=	3
+PORTVERSION=	3.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,34 +12,50 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Program to create standalone executables from Python scripts
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-BROKEN_mips64=		Does not compile: cc1: error: unrecognized command line option "-m64
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dis3>0:devel/py-dis3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}altgraph>0:math/py-altgraph@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}macholib>=1.8:devel/py-macholib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pefile>=2017.8.1:devel/py-pefile@${PY_FLAVOR}
 
-OPTIONS_DEFINE=	DOCS
-
-EXTRACT_AFTER_ARGS=	--exclude doc/source --no-same-owner --no-same-permissions
 USES=		python:2.7
 USE_PYTHON=	autoplist distutils
 
+EXTRACT_AFTER_ARGS=	--exclude doc/source --no-same-owner --no-same-permissions
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
-PORTDOCS=	*
+PORTDOCS=	*.txt
+
+OPTIONS_DEFINE=		DOCS MANPAGES
+OPTIONS_DEFAULT=	MANPAGES
+OPTIONS_SUB=		yes
+
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}dis3>0:devel/py-dis3@${PY_FLAVOR}
+DOCS_USES=		gmake
+MANPAGES_BUILD_DEPENDS=	${DOCS_BUILD_DEPENDS}
+MANPAGES_USES=		gmake
 
 post-patch:
 	@${REINPLACE_CMD} -e '/install_requires/s,distribute,setuptools,' \
 		${WRKSRC}/${PYSETUP}
 	@${REINPLACE_CMD} -e '/\/sbin\/ldconfig/s,-p,-r,' \
-		${WRKSRC}/PyInstaller/bindepend.py \
 		${WRKSRC}/PyInstaller/depend/utils.py
-	@${REINPLACE_CMD} -e '/libpython/s,\.so\.1\.0,.so.1,' \
-		${WRKSRC}/PyInstaller/bindepend.py
-	@${REINPLACE_CMD} -e '/defined(__x86_64__)/s,$$, || defined(__aarch64__) || defined(__powerpc64__) || defined(__sparc64__),' \
-		${WRKSRC}/bootloader/common/stb.h
+	${INSTALL_DATA} ${WRKSRC}/PyInstaller/utils/cliutils/makespec.py ${WRKSRC}/makespec.py
 
 pre-build:
-	cd ${WRKSRC}/bootloader && ${PYTHON_CMD} waf configure build install
+	cd ${WRKSRC}/bootloader && \
+		${PYTHON_CMD} waf all
 
-post-install-DOCS-on:
+do-install-MANPAGES-on:
+	@${MKDIR} ${STAGEDIR}${MANDIRS}/man1
+	( cd ${WRKSRC}/doc; ${GMAKE} man )
+	( cd ${WRKSRC}/doc/_build/man ; ${INSTALL_MAN} pyi-makespec.1 pyinstaller.1 \
+		${STAGEDIR}${MANDIRS}/man1 )
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc ; ${GMAKE} text )
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/_build/text/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
