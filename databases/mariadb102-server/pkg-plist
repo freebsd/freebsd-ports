@@ -60,6 +60,7 @@ lib/mysql/plugin/auth_ed25519.so
 lib/mysql/plugin/auth_pam.so
 lib/mysql/plugin/auth_socket.so
 lib/mysql/plugin/auth_test_plugin.so
+@comment lib/mysql/plugin/caching_sha2_password.so
 @comment lib/mysql/plugin/daemon_example.ini
 lib/mysql/plugin/debug_key_management.so
 @comment lib/mysql/plugin/dialog.so
