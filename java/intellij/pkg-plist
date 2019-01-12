@@ -192,8 +192,8 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/lib/maven-model-builder-3.3.9.jar
 %%IDEA_HOME%%/lib/maven-repository-metadata-3.3.9.jar
 %%IDEA_HOME%%/lib/microba.jar
-%%IDEA_HOME%%/lib/miglayout-core-5.1.jar
-%%IDEA_HOME%%/lib/miglayout-swing-5.1.jar
+%%IDEA_HOME%%/lib/miglayout-core-5.2.jar
+%%IDEA_HOME%%/lib/miglayout-swing-5.2.jar
 %%IDEA_HOME%%/lib/mutability-annotations-compat.jar
 %%IDEA_HOME%%/lib/nanoxml-2.2.3.jar
 %%IDEA_HOME%%/lib/nekohtml-1.9.22.jar
@@ -10240,8 +10240,8 @@ share/applications/idea.desktop
 %%IDEA_HOME%%/plugins/xslt-debugger/lib/rmi-stubs.jar
 %%IDEA_HOME%%/plugins/xslt-debugger/lib/rt/saxon.jar
 %%IDEA_HOME%%/plugins/xslt-debugger/lib/rt/saxon9he.jar
-%%IDEA_HOME%%/plugins/xslt-debugger/lib/rt/serializer.jar
-%%IDEA_HOME%%/plugins/xslt-debugger/lib/rt/xalan.jar
+%%IDEA_HOME%%/plugins/xslt-debugger/lib/rt/serializer-%%PYTHON_VER%%.2.jar
+%%IDEA_HOME%%/plugins/xslt-debugger/lib/rt/xalan-%%PYTHON_VER%%.2.jar
 %%IDEA_HOME%%/plugins/xslt-debugger/lib/rt/xslt-debugger-engine-impl.jar
 %%IDEA_HOME%%/plugins/xslt-debugger/lib/xslt-debugger-engine.jar
 %%IDEA_HOME%%/plugins/xslt-debugger/lib/xslt-debugger.jar

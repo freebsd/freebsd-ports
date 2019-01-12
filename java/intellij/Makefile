@@ -5,7 +5,7 @@
 # Vadim Zhukov <zhuk@openbsd.org>
 
 PORTNAME=	intellij
-PORTVERSION=	2018.3.2
+PORTVERSION=	2018.3.3
 CATEGORIES=	java devel
 MASTER_SITES=	https://download.jetbrains.com/idea/ \
 		http://download.jetbrains.com/idea/
@@ -28,7 +28,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 INSTALL_TARGET=	install-strip
 
-WRKSRC=		${WRKDIR}/idea-IC-183.4886.37
+WRKSRC=		${WRKDIR}/idea-IC-183.5153.38
 
 .include "common.mk"
 
@@ -48,7 +48,7 @@ do-install:
 		${STAGEDIR}${IDEA_HOME}/plugins/gradle/lib/native-platform-windows-*.jar
 # Remove the bundled native Pty4J support libraries, they are replaced
 # by java/intellij-pty4j
-	@${RM} -r ${STAGEDIR}${IDEA_HOME}/lib/libpty
+	@${RM} -r ${STAGEDIR}${IDEA_HOME}/lib/pty4j-native
 	${INSTALL_SCRIPT} ${WRKDIR}/idea ${STAGEDIR}${PREFIX}/bin/idea
 	${INSTALL_MAN} ${FILESDIR}/idea.1 ${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKDIR}/idea.desktop ${STAGEDIR}${PREFIX}/share/applications/
