@@ -2,11 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	mod_md
-PORTVERSION=	1.1.16
+PORTVERSION=	1.1.17
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-devel
+
+DEPRECATED=	Use the module that is shipped with Apache 2.4
+EXPIRATION_DATE=2019-03-24
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Early experience LetsEncrypt module for Apache httpd
