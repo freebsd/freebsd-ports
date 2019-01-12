@@ -23,7 +23,7 @@ CLIENT_ONLY=	yes
 post-configure:
 	${REINPLACE_CMD} -Ee 's|(#define INCLUDE.*)"$$|\1 -I${PREFIX}/include"|' \
 		-e 's|(#define LIBS .*)"$$|\1 -L${PREFIX}/lib"|' \
-		${WRKSRC}/libmariadb/mariadb_config/mariadb_config.c
+		${WRKDIR}/.build/libmariadb/mariadb_config/mariadb_config.c
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/share/aclocal/mysql.m4 \
