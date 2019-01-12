@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openspades
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/yvt/openspades-paks/releases/download/r33/:data

@@ -1,5 +1,5 @@
-TIMESTAMP = 1521997974
-SHA256 (yvt-openspades-v0.1.2_GH0.tar.gz) = f4947232eded073469d07935783786efd70e7d73e615326dbb66676c4e8724a8
-SIZE (yvt-openspades-v0.1.2_GH0.tar.gz) = 7474808
+TIMESTAMP = 1547295619
 SHA256 (OpenSpadesDevPackage-r33.zip) = 0927dc323a0b3aba0ee8d1d68d6b544b00fe654740fead6d1faad37aac77a2ad
 SIZE (OpenSpadesDevPackage-r33.zip) = 4036321
+SHA256 (yvt-openspades-v0.1.3_GH0.tar.gz) = ecd7aaf568f80712d981ecdd7bf9e380221dc2c16e86d2e56a0ddda87432bea3
+SIZE (yvt-openspades-v0.1.3_GH0.tar.gz) = 7507842
