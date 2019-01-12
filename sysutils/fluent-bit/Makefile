@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fluent-bit
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 CATEGORIES=	sysutils
 MASTER_SITES=   http://fluentbit.io/releases/${DISTVERSION:R}/
 
