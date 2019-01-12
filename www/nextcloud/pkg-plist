@@ -3753,6 +3753,7 @@
 %%WWWDIR%%/3rdparty/symfony/translation/phpunit.xml.dist
 %%WWWDIR%%/AUTHORS
 %%WWWDIR%%/COPYING
+%%WWWDIR%%/apps-pkg/accessibility/.babelrc.js
 %%WWWDIR%%/apps-pkg/accessibility/appinfo/app.php
 %%WWWDIR%%/apps-pkg/accessibility/appinfo/info.xml
 %%WWWDIR%%/apps-pkg/accessibility/appinfo/routes.php
@@ -4622,6 +4623,7 @@
 %%WWWDIR%%/apps-pkg/dav/lib/Migration/CalDAVRemoveEmptyValue.php
 %%WWWDIR%%/apps-pkg/dav/lib/Migration/FixBirthdayCalendarComponent.php
 %%WWWDIR%%/apps-pkg/dav/lib/Migration/RefreshWebcalJobRegistrar.php
+%%WWWDIR%%/apps-pkg/dav/lib/Migration/RemoveClassifiedEventActivity.php
 %%WWWDIR%%/apps-pkg/dav/lib/Migration/Version1004Date20170825134824.php
 %%WWWDIR%%/apps-pkg/dav/lib/Migration/Version1004Date20170919104507.php
 %%WWWDIR%%/apps-pkg/dav/lib/Migration/Version1004Date20170924124212.php
@@ -5086,6 +5088,8 @@
 %%WWWDIR%%/apps-pkg/federation/l10n/ar.json
 %%WWWDIR%%/apps-pkg/federation/l10n/ast.js
 %%WWWDIR%%/apps-pkg/federation/l10n/ast.json
+%%WWWDIR%%/apps-pkg/federation/l10n/bg.js
+%%WWWDIR%%/apps-pkg/federation/l10n/bg.json
 %%WWWDIR%%/apps-pkg/federation/l10n/bg_BG.js
 %%WWWDIR%%/apps-pkg/federation/l10n/bg_BG.json
 %%WWWDIR%%/apps-pkg/federation/l10n/ca.js
@@ -7758,10 +7762,14 @@
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/es_UY.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/et_EE.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/et_EE.json
+%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/eu.js
+%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/eu.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/fi.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/fi.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/fr.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/fr.json
+%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/gl.js
+%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/gl.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/he.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/he.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/hu.js
@@ -7789,8 +7797,6 @@
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/pl.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/pt_BR.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/pt_BR.json
-%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/pt_PT.js
-%%WWWDIR%%/apps-pkg/firstrunwizard/l10n/pt_PT.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/ru.js
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/ru.json
 %%WWWDIR%%/apps-pkg/firstrunwizard/l10n/si_LK.php
@@ -7989,6 +7995,8 @@
 %%WWWDIR%%/apps-pkg/gallery/l10n/fi.json
 %%WWWDIR%%/apps-pkg/gallery/l10n/fr.js
 %%WWWDIR%%/apps-pkg/gallery/l10n/fr.json
+%%WWWDIR%%/apps-pkg/gallery/l10n/gl.js
+%%WWWDIR%%/apps-pkg/gallery/l10n/gl.json
 %%WWWDIR%%/apps-pkg/gallery/l10n/he.js
 %%WWWDIR%%/apps-pkg/gallery/l10n/he.json
 %%WWWDIR%%/apps-pkg/gallery/l10n/hr.js
@@ -8266,6 +8274,8 @@
 %%WWWDIR%%/apps-pkg/logreader/l10n/fi.json
 %%WWWDIR%%/apps-pkg/logreader/l10n/fr.js
 %%WWWDIR%%/apps-pkg/logreader/l10n/fr.json
+%%WWWDIR%%/apps-pkg/logreader/l10n/gl.js
+%%WWWDIR%%/apps-pkg/logreader/l10n/gl.json
 %%WWWDIR%%/apps-pkg/logreader/l10n/he.js
 %%WWWDIR%%/apps-pkg/logreader/l10n/he.json
 %%WWWDIR%%/apps-pkg/logreader/l10n/hu.js
@@ -8433,8 +8443,6 @@
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/ka_GE.json
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/ko.js
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/ko.json
-%%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/lt_LT.js
-%%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/lt_LT.json
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/lv.js
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/lv.json
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/nb.js
@@ -9287,10 +9295,16 @@
 %%WWWDIR%%/apps-pkg/support/l10n/de_DE.json
 %%WWWDIR%%/apps-pkg/support/l10n/es.js
 %%WWWDIR%%/apps-pkg/support/l10n/es.json
+%%WWWDIR%%/apps-pkg/support/l10n/es_AR.js
+%%WWWDIR%%/apps-pkg/support/l10n/es_AR.json
+%%WWWDIR%%/apps-pkg/support/l10n/eu.js
+%%WWWDIR%%/apps-pkg/support/l10n/eu.json
 %%WWWDIR%%/apps-pkg/support/l10n/fi.js
 %%WWWDIR%%/apps-pkg/support/l10n/fi.json
 %%WWWDIR%%/apps-pkg/support/l10n/fr.js
 %%WWWDIR%%/apps-pkg/support/l10n/fr.json
+%%WWWDIR%%/apps-pkg/support/l10n/gl.js
+%%WWWDIR%%/apps-pkg/support/l10n/gl.json
 %%WWWDIR%%/apps-pkg/support/l10n/he.js
 %%WWWDIR%%/apps-pkg/support/l10n/he.json
 %%WWWDIR%%/apps-pkg/support/l10n/hu.js
@@ -9299,8 +9313,12 @@
 %%WWWDIR%%/apps-pkg/support/l10n/is.json
 %%WWWDIR%%/apps-pkg/support/l10n/it.js
 %%WWWDIR%%/apps-pkg/support/l10n/it.json
+%%WWWDIR%%/apps-pkg/support/l10n/ja.js
+%%WWWDIR%%/apps-pkg/support/l10n/ja.json
 %%WWWDIR%%/apps-pkg/support/l10n/lt_LT.js
 %%WWWDIR%%/apps-pkg/support/l10n/lt_LT.json
+%%WWWDIR%%/apps-pkg/support/l10n/nb.js
+%%WWWDIR%%/apps-pkg/support/l10n/nb.json
 %%WWWDIR%%/apps-pkg/support/l10n/nl.js
 %%WWWDIR%%/apps-pkg/support/l10n/nl.json
 %%WWWDIR%%/apps-pkg/support/l10n/nn_NO.js
@@ -9311,12 +9329,16 @@
 %%WWWDIR%%/apps-pkg/support/l10n/pt_BR.json
 %%WWWDIR%%/apps-pkg/support/l10n/ru.js
 %%WWWDIR%%/apps-pkg/support/l10n/ru.json
+%%WWWDIR%%/apps-pkg/support/l10n/sk.js
+%%WWWDIR%%/apps-pkg/support/l10n/sk.json
 %%WWWDIR%%/apps-pkg/support/l10n/sr.js
 %%WWWDIR%%/apps-pkg/support/l10n/sr.json
 %%WWWDIR%%/apps-pkg/support/l10n/tr.js
 %%WWWDIR%%/apps-pkg/support/l10n/tr.json
 %%WWWDIR%%/apps-pkg/support/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/support/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/support/l10n/zh_TW.js
+%%WWWDIR%%/apps-pkg/support/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/support/lib/AppInfo/Application.php
 %%WWWDIR%%/apps-pkg/support/lib/BackgroundJobs/CheckSubscription.php
 %%WWWDIR%%/apps-pkg/support/lib/Controller/ApiController.php
@@ -9403,6 +9425,8 @@
 %%WWWDIR%%/apps-pkg/survey_client/l10n/fi.json
 %%WWWDIR%%/apps-pkg/survey_client/l10n/fr.js
 %%WWWDIR%%/apps-pkg/survey_client/l10n/fr.json
+%%WWWDIR%%/apps-pkg/survey_client/l10n/gl.js
+%%WWWDIR%%/apps-pkg/survey_client/l10n/gl.json
 %%WWWDIR%%/apps-pkg/survey_client/l10n/he.js
 %%WWWDIR%%/apps-pkg/survey_client/l10n/he.json
 %%WWWDIR%%/apps-pkg/survey_client/l10n/hu.js
@@ -9851,6 +9875,8 @@
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/af.json
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/ast.js
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/ast.json
+%%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/bg.js
+%%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/bg.json
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/ca.js
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/ca.json
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/cs.js
@@ -9980,6 +10006,7 @@
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/lib/Settings/Personal.php
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/templates/challenge.php
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/templates/personal.php
+%%WWWDIR%%/apps-pkg/updatenotification/.babelrc.js
 %%WWWDIR%%/apps-pkg/updatenotification/appinfo/app.php
 %%WWWDIR%%/apps-pkg/updatenotification/appinfo/info.xml
 %%WWWDIR%%/apps-pkg/updatenotification/appinfo/routes.php
@@ -11234,6 +11261,8 @@
 %%WWWDIR%%/core/l10n/fi.json
 %%WWWDIR%%/core/l10n/fr.js
 %%WWWDIR%%/core/l10n/fr.json
+%%WWWDIR%%/core/l10n/gl.js
+%%WWWDIR%%/core/l10n/gl.json
 %%WWWDIR%%/core/l10n/he.js
 %%WWWDIR%%/core/l10n/he.json
 %%WWWDIR%%/core/l10n/hr.js
@@ -11284,8 +11313,6 @@
 %%WWWDIR%%/core/l10n/tr.json
 %%WWWDIR%%/core/l10n/uk.js
 %%WWWDIR%%/core/l10n/uk.json
-%%WWWDIR%%/core/l10n/uz.js
-%%WWWDIR%%/core/l10n/uz.json
 %%WWWDIR%%/core/l10n/vi.js
 %%WWWDIR%%/core/l10n/vi.json
 %%WWWDIR%%/core/l10n/zh_CN.js
@@ -12679,6 +12706,8 @@
 %%WWWDIR%%/settings/l10n/el.json
 %%WWWDIR%%/settings/l10n/en_GB.js
 %%WWWDIR%%/settings/l10n/en_GB.json
+%%WWWDIR%%/settings/l10n/eo.js
+%%WWWDIR%%/settings/l10n/eo.json
 %%WWWDIR%%/settings/l10n/es.js
 %%WWWDIR%%/settings/l10n/es.json
 %%WWWDIR%%/settings/l10n/es_419.js
