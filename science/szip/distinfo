@@ -1,4 +1,3 @@
+TIMESTAMP = 1547411166
 SHA256 (szip-2.1.tar.gz) = a816d95d5662e8279625abdbea7d0e62157d7d1f028020b1075500bf483ed5ef
 SIZE (szip-2.1.tar.gz) = 383968
-SHA256 (Release_notes_2_0.pdf) = d620c17130464f235c34cca4c576920ffbb96d4b8656c1fc04f7ac0671db8914
-SIZE (Release_notes_2_0.pdf) = 215119
