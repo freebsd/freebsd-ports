@@ -11,9 +11,7 @@ COMMENT=	Bash and Zsh shell history suggest box
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	pkg-config:devel/pkgconf
-
-USES=	autoreconf ncurses readline
+USES=		autoreconf ncurses pkgconfig readline
 USE_GITHUB=	yes
 GH_ACCOUNT=	dvorka
 GH_PROJECT=	hstr
