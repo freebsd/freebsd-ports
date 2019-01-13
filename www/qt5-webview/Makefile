@@ -8,8 +8,9 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt component for displaying web content
 
-USES=		compiler:c++11-lang qmake:norecursive qt-dist:5
-USE_QT=		core declarative gui network webengine \
+USES=		compiler:c++11-lang gl qmake:norecursive qt-dist:5
+USE_GL=		gl
+USE_QT=		core declarative gui location network webchannel webengine \
 		buildtools_build
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
