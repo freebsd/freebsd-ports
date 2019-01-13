@@ -18,6 +18,7 @@ lib/mariadb/libmariadb.so
 lib/mariadb/libmariadb.so.3
 lib/mariadb/libmariadbclient.a
 lib/mariadb/plugin/auth_gssapi_client.so
+lib/mariadb/plugin/caching_sha2_password.so
 lib/mariadb/plugin/dialog.so
 lib/mariadb/plugin/mysql_clear_password.so
 lib/mariadb/plugin/remote_io.so
