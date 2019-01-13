@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
-USES=		desktop-file-utils gl gmake qmake qt:5 shared-mime-info
+USES=		compiler:c++11-lang desktop-file-utils gl gmake qmake qt:5 \
+		shared-mime-info
 USE_GITHUB=	yes
 USE_QT=		core gui multimedia network svg widgets xml buildtools_build
 USE_GL=		gl
