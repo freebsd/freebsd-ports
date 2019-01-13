@@ -60,6 +60,7 @@
 %%SITE_ARCH%%/Imager/include/imconfig.h
 %%SITE_ARCH%%/Imager/include/imdatatypes.h
 %%SITE_ARCH%%/Imager/include/imerror.h
+%%SITE_ARCH%%/Imager/include/imexif.h
 %%SITE_ARCH%%/Imager/include/imext.h
 %%SITE_ARCH%%/Imager/include/imextdef.h
 %%SITE_ARCH%%/Imager/include/imextpl.h
