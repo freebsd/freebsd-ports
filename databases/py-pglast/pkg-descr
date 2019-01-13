@@ -1,0 +1,7 @@
+PostgreSQL Languages AST and statements prettifier
+
+Exposes the parse tree of a PostgreSQL statement (extracted by the almost
+standard PG parser repackaged as a standalone static library by libpg_query)
+as set of interconnected nodes, usually called an abstract syntax tree.
+
+WWW: https://github.com/lelit/pglast
