@@ -154,7 +154,7 @@ _USE_QT5_ONLY=		3d buildtools canvas3d charts concurrent connectivity \
 			core datavis3d diag examples gamepad \
 			graphicaleffects location networkauth paths phonon4 plugininfo printsupport \
 			qdbus qdoc qdoc-data qev quickcontrols \
-			quickcontrols2 scxml sensors serialbus serialport speech \
+			quickcontrols2 remoteobjects scxml sensors serialbus serialport speech \
 			sql-tds uiplugin uitools virtualkeyboard wayland webchannel \
 			webengine websockets websockets-qml webview widgets x11extras
 
@@ -363,6 +363,9 @@ qvfb_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/qvfb
 
 rcc_PORT=		devel/${_QT_RELNAME}-rcc
 rcc_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/rcc
+
+remoteobjects_PORT=	x11-toolkits/${_QT_RELNAME}-remoteobjects
+remoteobjects_LIB=	libQt${_QT_LIBVER}RemoteObjects.so
 
 sensors_PORT=		comms/${_QT_RELNAME}-sensors
 sensors_LIB=		libQt${_QT_LIBVER}Sensors.so

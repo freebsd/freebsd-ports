@@ -5373,6 +5373,7 @@
     SUBDIR += qt5-qdoc
     SUBDIR += qt5-qdoc-data
     SUBDIR += qt5-qmake
+    SUBDIR += qt5-remoteobjects
     SUBDIR += qt5-script
     SUBDIR += qt5-scripttools
     SUBDIR += qt5-scxml
