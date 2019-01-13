@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.3.11
-PORTREVISION?=	2
+PORTVERSION=	10.3.12
+PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
 		http://mirror2.hs-esslingen.de/pub/Mirrors/${SITESDIR}/ \
@@ -29,7 +29,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SLAVEDIRS=	databases/mariadb102-client
 USES=		bison:build cmake:insource,noninja compiler:c++11-lib cpe iconv:translit libedit ncurses shebangfix ssl
 USE_LDCONFIG=	${PREFIX}/lib/mysql
-SHEBANG_FILES=	scripts/*.sh storage/rocksdb/myrocks_hotbackup
+SHEBANG_FILES=	scripts/*.sh
 SITESDIR=	mariadb/mariadb-${PORTVERSION}/source
 DOCSDIR=	${PREFIX}/share/doc/mysql
 
@@ -87,6 +87,7 @@ CMAKE_ARGS+=	-DINSTALL_DOCDIR="share/doc/mysql" \
 		-DDEFAULT_SYSCONFDIR="${PREFIX}/etc" \
 		-DWITH_JEMALLOC="system" \
 		-DWITH_LIBWRAP=1 \
+		-DWITH_CONNECT_WITH_MONGO="OFF" \
 		-DWITH_SSL="${OPENSSLBASE}" \
 		-DWITH_UNIT_TESTS=0 \
 		-DWITHOUT_DOCS=1 \
@@ -192,6 +193,7 @@ CMAKE_ARGS+=	-DWITHOUT_TOKUDB
 .endif
 
 post-patch:
+	${REINPLACE_CMD} 's|/usr/bin/env python|${PYTHON_CMD}|' ${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/mysys/my_default.c
 	${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/scripts/mysql_config.sh \
 		${WRKSRC}/storage/tokudb/PerconaFT/cmake_modules/TokuThirdParty.cmake

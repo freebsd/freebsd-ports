@@ -49,8 +49,6 @@ bin/resolveip
 %%WSREP%%bin/wsrep_sst_mysqldump
 %%WSREP%%bin/wsrep_sst_rsync
 %%WSREP%%bin/wsrep_sst_rsync_wan
-%%WSREP%%bin/wsrep_sst_xtrabackup
-%%WSREP%%bin/wsrep_sst_xtrabackup-v2
 @comment data/test/db.opt
 @comment include/mysql/my_config.h
 @comment include/mysql/my_global.h
@@ -164,6 +162,7 @@ lib/mysql/plugin/auth_ed25519.so
 lib/mysql/plugin/auth_pam.so
 lib/mysql/plugin/auth_socket.so
 lib/mysql/plugin/auth_test_plugin.so
+lib/mysql/plugin/caching_sha2_password.so
 @comment lib/mysql/plugin/daemon_example.ini
 lib/mysql/plugin/debug_key_management.so
 @comment lib/mysql/plugin/dialog.so
