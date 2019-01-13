@@ -3,4 +3,4 @@ about itself and its environment as possible.  It can be used as a test
 tool, to understand the type of environment a process runs in, and for
 comparing system environments.
 
-WWW: https://code.launchpad.net/procenv/
+WWW: https://github.com/jamesodhunt/procenv
