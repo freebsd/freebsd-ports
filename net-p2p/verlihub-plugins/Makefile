@@ -20,6 +20,9 @@ RUN_DEPENDS=	\
 		${LOCALBASE}/lib/libmessanger_pi.so:net-p2p/verlihub-plugins-messanger \
 		${LOCALBASE}/lib/libstats_pi.so:net-p2p/verlihub-plugins-stats
 
+DEPRECATED=     Verlihub uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
+EXPIRATION_DATE=2019-02-15
+
 USES=		metaport
 
 .include <bsd.port.mk>

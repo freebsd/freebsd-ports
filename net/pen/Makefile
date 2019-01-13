@@ -13,6 +13,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
+DEPRECATED=     Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
+EXPIRATION_DATE=2019-02-15
+
 GNU_CONFIGURE=	yes
 USES=		ssl
 USE_RC_SUBR=	pen

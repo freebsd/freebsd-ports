@@ -13,6 +13,9 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	GeoIP>=1.4.4:net/GeoIP
 RUN_DEPENDS=	GeoIP>=1.4.4:net/GeoIP
 
+DEPRECATED=     Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
+EXPIRATION_DATE=2019-02-15
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
 GH_PROJECT=	geoip-api-mod_geoip2

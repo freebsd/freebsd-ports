@@ -14,6 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
+DEPRECATED=     Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
+EXPIRATION_DATE=2019-02-15
+
 USES=		cmake
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR:PATH="man"
 

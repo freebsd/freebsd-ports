@@ -14,6 +14,9 @@ COMMENT=	Intrusion detection and prevention engine
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=     Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
+EXPIRATION_DATE=2019-02-15
+
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre.so:devel/pcre \
 		libyajl.so:devel/yajl \
