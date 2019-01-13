@@ -27,12 +27,10 @@ EXPIRATION_DATE=	2019-03-15
 USES+=		qt:4
 USE_QT=		corelib moc_build qmake_build rcc_build uic_build
 CMAKE_ON=	QT4_BUILD
-PLIST_SUB=	QT5="@comment " NO_QT5=""
 .  else
 USES+=		compiler:c++11-lang qt:5
 USE_QT=		core buildtools_build qmake_build
 CMAKE_OFF=	QT4_BUILD
-PLIST_SUB=	QT5="" NO_QT5="@comment "
 QT_SUFFIX=	-qt5
 .  endif
 
