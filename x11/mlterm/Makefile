@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
 
-USES=		gettext libtool perl5 pkgconfig
+USES=		gettext gnome libtool perl5 pkgconfig
 USE_XORG=	sm x11 xft
 USE_GNOME=	cairo gdkpixbuf2 gtk20 vte
 USE_LDCONFIG=	yes
@@ -65,9 +65,8 @@ CAIRO_CONFIGURE_OFF=	--with-type-engines="xcore,xft"
 
 SIXEL_CONFIGURE_ENABLE=	sixel
 
-REGIS_LIB_DEPENDS=	libSDL.so:devel/sdl12 \
-			libSDL_ttf.so:graphics/sdl_ttf \
-			libfontconfig.so:x11-fonts/fontconfig
+REGIS_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
+REGIS_USE=		SDL=ttf
 
 .include <bsd.port.options.mk>
 
