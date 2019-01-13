@@ -12,4 +12,7 @@ member of the wheel group, you can use sudo(8).  Add
 
 to ${PREFIX}/etc/sudoers.
 
+NOTE: On FreeBSD >= 12, members of the operator group are allowed to
+      suspend the system via acpiconf(8). Using sudo(8) is not necessary.
+
 **************************************************************************
