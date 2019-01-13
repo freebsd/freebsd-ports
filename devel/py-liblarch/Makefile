@@ -17,6 +17,8 @@ USES=		python:2.7
 USE_GITHUB=	yes
 USE_GNOME=	pygobject
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
+PORTSCOUT=	ignore:v3.0
 
 .include <bsd.port.mk>
