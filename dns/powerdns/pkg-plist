@@ -21,7 +21,6 @@ sbin/pdns_server
 %%TOOLS%%bin/stubquery
 lib/pdns/libbindbackend.so
 lib/pdns/libpipebackend.so
-%%GEOIP%%lib/pdns/libgeoipbackend.so
 %%LUABACKEND%%lib/pdns/libluabackend.so
 %%MYDNS%%lib/pdns/libmydnsbackend.so
 %%MYSQL%%lib/pdns/libgmysqlbackend.so

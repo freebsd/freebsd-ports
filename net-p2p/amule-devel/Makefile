@@ -3,7 +3,7 @@
 
 PORTNAME=	amule
 PORTVERSION=	10998
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://amule.sourceforge.net/tarballs/
 PKGNAMESUFFIX=	-devel
@@ -36,7 +36,7 @@ CXXFLAGS+=	`pkgconf --cflags-only-other libcryptopp`
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	ALC ALCC AMULECMD AMULEDAEMON AMULEGUI CAS DEBUG DOCS ED2K \
-	FILEVIEW GEOIP MMAP MONOLITHIC NLS OPTIMIZED_CFLAGS UPNP \
+	FILEVIEW MMAP MONOLITHIC NLS OPTIMIZED_CFLAGS UPNP \
 	WEBSERVER WXCAS XAS
 ALC_DESC=		Compile aMule Link Creator for GUI
 ALCC_DESC=		Compile aMule Link Creator for console
@@ -81,9 +81,6 @@ CAS_LIB_DEPENDS=	libgd.so:graphics/gd
 ED2K_CONFIGURE_OFF=	--disable-ed2k
 
 FILEVIEW_CONFIGURE_ON=	--enable-fileview
-
-GEOIP_CONFIGURE_ON=	--enable-geoip
-GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
 MMAP_CONFIGURE_ON=	--enable-mmap
 

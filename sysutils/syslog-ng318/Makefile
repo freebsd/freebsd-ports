@@ -3,7 +3,7 @@
 
 PORTNAME=	syslog-ng
 DISTVERSION=	3.18.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
@@ -25,14 +25,13 @@ CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAKE_JOBS_UNSAFE=	yes
-OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP GEOIP2 DOCS REDIS JAVA PYTHON MONGO CURL JAVA_MOD AMQP
+OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP2 DOCS REDIS JAVA PYTHON MONGO CURL JAVA_MOD AMQP
 OPTIONS_DEFAULT=	CURL JSON
 TCP_WRAPPERS_DESC=	Build with TCP Wrappers
 SQL_DESC=		Build with database (libdbi) support
 SPOOF_DESC=		Build with spoof source support
 SMTP_DESC=		Build with SMTP support
 JSON_DESC=		Build with JSON-C support
-GEOIP_DESC=		Build with GeoIP support (deprecated)
 GEOIP2_DESC=		Build with geoip2 (MaxMindDB) support
 REDIS_DESC=		Build with Redis support
 JAVA_DESC=		Build with Java support (no modules)
@@ -73,11 +72,6 @@ IPV6_CONFIGURE_ENABLE=		ipv6
 AMQP_CONFIGURE_ENABLE=		amqp
 AMQP_PLIST_FILES=		lib/syslog-ng/libafamqp.so
 AMQP_LIB_DEPENDS=		librabbitmq.so:net/rabbitmq-c
-
-GEOIP_CONFIGURE_ENABLE=		geoip
-GEOIP_LIB_DEPENDS=		libGeoIP.so:net/GeoIP
-GEOIP_CONFIGURE_ENV=		GEOIP_LIBS="-L${LOCALBASE}/lib -lGeoIP"
-GEOIP_PLIST_FILES=		lib/syslog-ng/libgeoip-plugin.so
 
 GEOIP2_CONFIGURE_ENABLE=	geoip2
 GEOIP2_LIB_DEPENDS=		libmaxminddb.so:net/libmaxminddb                                

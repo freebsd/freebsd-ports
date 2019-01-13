@@ -43,7 +43,6 @@ lib/lighttpd/mod_expire.so
 lib/lighttpd/mod_extforward.so
 lib/lighttpd/mod_fastcgi.so
 lib/lighttpd/mod_flv_streaming.so
-%%GEOIP%%lib/lighttpd/mod_geoip.so
 lib/lighttpd/mod_indexfile.so
 %%LUA%%lib/lighttpd/mod_magnet.so
 %%MYSQL%%lib/lighttpd/mod_mysql_vhost.so

@@ -3,7 +3,7 @@
 
 PORTNAME=	gdnsd
 PORTVERSION=	1.11.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/blblack/gdnsd/releases/download/v${PORTVERSION}/ \
 		http://gdnsd.scaleengine.net/gdnsd/
@@ -30,11 +30,7 @@ USE_RC_SUBR=	gdnsd
 USERS?=		gdnsd
 GROUPS?=	gdnsd
 
-OPTIONS_DEFINE=	DOCS GEOIP URCU
-OPTIONS_DEFAULT=	GEOIP
-
-GEOIP_DESC=		Enable GeoIP Support
-GEOIP_RUN_DEPENDS=	GeoIP>=0:net/GeoIP
+OPTIONS_DEFINE=	DOCS URCU
 
 URCU_DESC=		Read-Copy-Update Support (Faster Zone Parsing)
 URCU_CONFIGURE_WITH=	urcu

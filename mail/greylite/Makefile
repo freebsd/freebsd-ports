@@ -3,7 +3,7 @@
 
 PORTNAME=	greylite
 PORTVERSION=	2.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	LOCAL/oliver
 
@@ -22,18 +22,12 @@ PLIST_FILES=	bin/greylite \
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		GEOIP DNSBLENV UCSPI2SOCKET
-OPTIONS_DEFAULT=	GEOIP DNSBLENV UCSPI2SOCKET
-GEOIP_DESC=		Support for GeoIP in suspicion rules
+OPTIONS_DEFINE=		DNSBLENV UCSPI2SOCKET
+OPTIONS_DEFAULT=	DNSBLENV UCSPI2SOCKET
 DNSBLENV_DESC=		Module for interfacing with DNS blacklists
 UCSPI2SOCKET_DESC=	Module for using greylite as SMTP proxy
 
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MGEOIP}
-LIB_DEPENDS+=	libGeoIP.so:net/GeoIP
-MAKE_ARGS+=	WITH_GEOIP=yep
-.endif
 
 .if ${PORT_OPTIONS:MDNSBLENV}
 LIB_DEPENDS+=	libcares.so:dns/c-ares

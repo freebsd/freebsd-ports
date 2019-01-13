@@ -3,7 +3,7 @@
 
 PORTNAME=	syslog-ng
 DISTVERSION=	3.9.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
@@ -30,14 +30,13 @@ CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]* \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MAKE_JOBS_UNSAFE=	yes
-OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP DOCS REDIS JAVA PYTHON MONGO CURL JAVA_MOD
+OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON DOCS REDIS JAVA PYTHON MONGO CURL JAVA_MOD
 OPTIONS_DEFAULT=	CURL JSON
 TCP_WRAPPERS_DESC=	Build with TCP Wrappers
 SQL_DESC=		Build with database (libdbi) support
 SPOOF_DESC=		Build with spoof source support
 SMTP_DESC=		Build with SMTP support
 JSON_DESC=		Build with JSON-C support
-GEOIP_DESC=		Build with GeoIP support
 REDIS_DESC=		Build with Redis support
 JAVA_DESC=		Build with Java support (no modules)
 JAVA_MOD_DESC=		Build with Java modules (needs Maven / Internet access)
@@ -67,11 +66,6 @@ SPOOF_LIB_DEPENDS=		libnet.so:net/libnet
 SPOOF_CONFIGURE_ENABLE=		spoof-source
 
 IPV6_CONFIGURE_ENABLE=		ipv6
-
-GEOIP_CONFIGURE_ENABLE=		geoip
-GEOIP_LIB_DEPENDS=		libGeoIP.so:net/GeoIP
-GEOIP_CONFIGURE_ENV=		GEOIP_LIBS="-L${LOCALBASE}/lib -lGeoIP"
-GEOIP_PLIST_FILES=		lib/syslog-ng/libgeoip-plugin.so
 
 REDIS_CONFIGURE_ENABLE=		redis
 REDIS_LIB_DEPENDS=		libhiredis.so:databases/hiredis

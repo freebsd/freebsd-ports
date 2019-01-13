@@ -3,7 +3,7 @@
 
 PORTNAME=	ppolicy
 PORTVERSION=	2.6.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail python
 MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~vokac/activities/ppolicy/download/%SUBDIR%/ \
 		http://www.chifeng.name/dist/ppolicy/%SUBDIR%/
@@ -24,10 +24,9 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	GEOIP LDAP MYSQL DOCS
-OPTIONS_DEFAULT=	GEOIP LDAP
+OPTIONS_DEFINE=	LDAP MYSQL DOCS
+OPTIONS_DEFAULT=	LDAP
 
-GEOIP_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/GeoIP.so:net/py-GeoIP@${PY_FLAVOR}
 MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:databases/py-MySQLdb@${PY_FLAVOR}
 LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ldap>=2.3.1:net/py-ldap@${PY_FLAVOR}
 

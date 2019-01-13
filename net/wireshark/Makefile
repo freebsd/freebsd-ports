@@ -3,7 +3,7 @@
 
 PORTNAME?=	wireshark
 PORTVERSION=	2.6.5
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \
@@ -57,7 +57,7 @@ PLIST_SUB+=		${x:tu}="@comment $x not installed" \
 			${x:tu}_LIB="@comment $x not installed " \
 			${x:tu}_MAN="@comment $x not installed "
 CONFIGURE_ARGS+=	--enable-$x=no
-OPTIONS_EXCLUDE+=	RTP SNMP GEOIP LUA CARES ANDROIDDUMP SSHDUMP
+OPTIONS_EXCLUDE+=	RTP SNMP LUA CARES ANDROIDDUMP SSHDUMP
 .else
 PLIST_SUB+=		${x:tu}=bin/$x \
 			${x:tu}_MAN="" \
@@ -65,7 +65,7 @@ PLIST_SUB+=		${x:tu}=bin/$x \
 .endif
 .endfor
 
-OPTIONS_DEFINE=		RTP SNMP GEOIP LUA DECRYPT ANDROIDDUMP CARES SSHDUMP CISCODUMP
+OPTIONS_DEFINE=		RTP SNMP LUA DECRYPT ANDROIDDUMP CARES SSHDUMP CISCODUMP
 
 OPTIONS_RADIO=		GUI
 OPTIONS_SINGLE=		KERBEROS
@@ -73,7 +73,7 @@ OPTIONS_SINGLE=		KERBEROS
 OPTIONS_RADIO_GUI=	GTK2 GTK3 QT5
 OPTIONS_SINGLE_KERBEROS=KRB_BASE KRB_HEIMDAL KRB_MIT KRB_NONE
 
-OPTIONS_DEFAULT?=	SNMP GEOIP KRB_BASE GTK3 DECRYPT
+OPTIONS_DEFAULT?=	SNMP KRB_BASE GTK3 DECRYPT
 
 RTP_DESC=		Enable support for playing back RTP streams
 DECRYPT_DESC=		Decryption support for SSL and IPSec
@@ -102,7 +102,6 @@ RTP_LIB_DEPENDS=	libportaudio.so:audio/portaudio \
 RTP_CPPFLAGS=		-I${LOCALBASE}/include
 SNMP_LIB_DEPENDS=	libsmi.so:net-mgmt/libsmi
 CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
-GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 DECRYPT_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 			libgcrypt.so:security/libgcrypt
 SSHDUMP_LIB_DEPENDS=	libssh.so:security/libssh
@@ -119,7 +118,6 @@ LUA_CONFIGURE_WITH=	lua
 RTP_CONFIGURE_WITH=	portaudio spandsp
 SNMP_CONFIGURE_WITH=	libsmi
 CARES_CONFIGURE_WITH=	c-ares
-GEOIP_CONFIGURE_WITH=	geoip
 DECRYPT_CONFIGURE_WITH=	gnutls
 ANDROIDDUMP_CONFIGURE_ON=--enable-androiddump=yes
 ANDROIDDUMP_CONFIGURE_OFF=--enable-androiddump=no

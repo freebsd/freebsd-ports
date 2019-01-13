@@ -3,7 +3,7 @@
 
 PORTNAME=		opensips
 DISTVERSION=		2.2.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=		net
 MASTER_SITES=		http://opensips.org/pub/opensips/${PORTVERSION}/
 
@@ -43,12 +43,11 @@ USE_GCC=		yes
 
 NOPRECIOUSMAKEVARS=	yes
 
-OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES GEOIP HTTP LDAP MEMCACHED MYSQL \
+OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES HTTP LDAP MEMCACHED MYSQL \
 			PGSQL RADIUS TESTS TLS UNIXODBC SQLITE
-OPTIONS_DEFAULT=	GEOIP HTTP LDAP MEMCACHED PGSQL RADIUS TLS
+OPTIONS_DEFAULT=	HTTP LDAP MEMCACHED PGSQL RADIUS TLS
 OPTIONS_SUB=		yes
 
-GEOIP_DESC=		Build with GeoIP support
 HTTP_DESC=		Enable HTTP transport via libmicrohttpd
 MEMCACHED_DESC=		Build with memcached support
 TESTS_DESC=		Install smoke tests
@@ -60,7 +59,6 @@ PGSQL_USES=		pgsql
 PGSQL_BUILD_DEPENDS=	p5-DBD-Pg>=3.4:databases/p5-DBD-Pg
 RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:net/radiusclient
 HTTP_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
-GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 UNIXODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
@@ -146,10 +144,6 @@ SHEBANG_FILES=		ccopts.sh \
 python_CMD=	${LOCALBASE}/bin/python2.7
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGEOIP}
-EXTRA_MODULES+=		mmgeoip
-.endif
 
 .if ${PORT_OPTIONS:MHTTP}
 EXTRA_MODULES+=		httpd
