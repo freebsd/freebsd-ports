@@ -11,16 +11,15 @@ COMMENT=	Generic command line non-JVM Apache Kafka producer and consumer
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	bash:shells/bash \
-		pkg-config:devel/pkgconf
+BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	librdkafka.so:net/librdkafka
 
+USES=		gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	edenhill
 
 PLIST_FILES=	bin/kafkacat
 
-USES=	gmake
 GNU_CONFIGURE=	yes
 
 post-install:
