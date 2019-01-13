@@ -1,4 +1,4 @@
---- sensor/pcap_agent.tcl.orig	2014-03-29 00:41:36 UTC
+--- sensor/pcap_agent.tcl.orig	2018-03-31 21:41:21 UTC
 +++ sensor/pcap_agent.tcl
 @@ -1,6 +1,4 @@
  #!/bin/sh
@@ -7,8 +7,8 @@
  
  # $Id: pcap_agent.tcl,v 1.13 2011/03/10 22:03:33 bamm Exp $ #
  
-@@ -771,13 +769,13 @@ foreach arg $argv {
- }
+@@ -779,13 +777,13 @@ set BACK_SECONDS 0
+ set FWD_SECONDS 0
  
  # Parse the config file here
 -# Default location is /etc/pcap_agent.conf or pwd
@@ -24,7 +24,7 @@
  
      } elseif { [file exists ./pcap_agent.conf] } {
  
-@@ -786,7 +784,7 @@ if { ![info exists CONF_FILE] } {
+@@ -794,7 +792,7 @@ if { ![info exists CONF_FILE] } {
      } else {
  
          puts "Couldn't determine where the pcap_agent.tcl config file is"

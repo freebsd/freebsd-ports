@@ -1,4 +1,4 @@
---- server/sguild.orig	2014-03-29 00:41:36 UTC
+--- server/sguild.orig	2018-03-31 21:41:21 UTC
 +++ server/sguild
 @@ -1,6 +1,4 @@
  #!/bin/sh
@@ -7,7 +7,26 @@
  
  # $Id: sguild,v 1.194 2013/09/05 00:38:45 bamm Exp $ #
  
-@@ -221,7 +219,7 @@ foreach arg $argv {
+@@ -35,13 +33,13 @@ proc DisplayUsage { cmdName } {
+   puts "  -D Runs sguild in daemon mode"
+   puts "  -d <0|1|2>: Set DEBUG level"
+   puts "  -P <filename>: PATH to write PID file (def: /var/run/sguild.pid)"
+-  puts "  -c <filename>: PATH to sguild config file (def: /etc/sguild/sguild.conf or .)"
+-  puts "  -a <filename>: PATH to autocat config file (def: /etc/sguild/autocat.conf)"
+-  puts "  -g <filename>: PATH to global queries file (def: /etc/sguild/sguild.queries)"
+-  puts "  -A <filename>: PATH to user access file (def: /etc/sguild/sguild.access)"
++  puts "  -c <filename>: PATH to sguild config file (def: /usr/local/etc/sguild/sguild.conf or .)"
++  puts "  -a <filename>: PATH to autocat config file (def: /usr/local/etc/sguild/autocat.conf)"
++  puts "  -g <filename>: PATH to global queries file (def: /usr/local/etc/sguild/sguild.queries)"
++  puts "  -A <filename>: PATH to user access file (def: /usr/local/etc/sguild/sguild.access)"
+   puts "  -l <filepath>: PATH to sguild libraries (def: ./lib)"
+   puts "  -O <filepath>: PATH to tls library, libtls1.*.so (def: \$LIBPATH)"
+-  puts "  -C <directory>: Directory with certificate files chain.pem, cert.pem, and privkey.pem files (def: /etc/sguild/certs)"
++  puts "  -C <directory>: Directory with certificate files chain.pem, cert.pem, and privkey.pem files (def: /usr/local/etc/sguild/certs)"
+   puts "  -L <directory>: Directory to write logfiles (def: /var/log/sguild)"
+   puts "  -U <userid>:   User id to write logfiles"
+   puts "  -G <groupid>:  Group id to write logfiles"
+@@ -232,7 +230,7 @@ foreach arg $argv {
  ##################################
  
  # Do all priv account actions here.
@@ -16,16 +35,7 @@
  
  if { ![info exists LOG_PATH] } { set LOG_PATH /var/log/sguild }
  
-@@ -321,7 +319,7 @@ if { [catch {package require tls} tlsErr
- # Check for certs
- if {![info exists CERTS_PATH]} {
- 
--    set CERTS_PATH /etc/sguild/certs
-+    set CERTS_PATH /usr/local/etc/sguild/certs
- 
- }
- 
-@@ -351,13 +349,13 @@ if {![file exists $KEY] || ![file readab
+@@ -310,8 +308,8 @@ if { [info exists GROUP] } { 
  
  if { ![info exists CONF_FILE] } {
    # No conf file specified check the defaults
@@ -36,13 +46,16 @@
    } elseif { [file exists ./sguild.conf] } {
      set CONF_FILE ./sguild.conf
    } else {
-     puts "Couldn't determine where the sguil config file is"
--    puts "Looked for ./sguild.conf and /etc/sguild/sguild.conf."
-+    puts "Looked for ./sguild.conf and /usr/local/etc/sguild/sguild.conf."
-     DisplayUsage $argv0
-   }
+@@ -452,7 +450,7 @@ if { [catch {package require tls} tlsError] } {
+ # Check for certs
+ if {![info exists CERTS_PATH]} {
+ 
+-    set CERTS_PATH /etc/sguild/certs
++    set CERTS_PATH /usr/local/etc/sguild/certs
+ 
  }
-@@ -484,8 +482,8 @@ if { [info exists DISABLEUSER] && $DISAB
+ 
+@@ -508,8 +506,8 @@ if { [info exists DISABLEUSER] && $DISABLEUSER} {
  # Load accessfile
  if { ![info exists ACCESS_FILE] } {
    # Check the defaults
@@ -53,7 +66,7 @@
    } elseif { [file exists ./sguild.access] } {
      set ACCESS_FILE "./sguild.access"
    } else {
-@@ -511,8 +509,8 @@ if { [file exists $ACCESS_FILE] } {
+@@ -535,8 +533,8 @@ if { [file exists $ACCESS_FILE] } {
  #}
  # Load email config file
  if { ![info exists EMAIL_FILE] } {
@@ -64,7 +77,7 @@
    } else {
      set EMAIL_FILE "./sguild.email"
    }
-@@ -524,8 +522,8 @@ if { [file exists $EMAIL_FILE] } {
+@@ -548,8 +546,8 @@ if { [file exists $EMAIL_FILE] } {
  }
  # Load global queries.
  if { ![info exists GLOBAL_QRY_FILE] } {
@@ -75,7 +88,7 @@
    } else {
      set GLOBAL_QRY_FILE "./sguild.queries"
    }
-@@ -537,8 +535,8 @@ if { [file exists $GLOBAL_QRY_FILE] } {
+@@ -561,8 +559,8 @@ if { [file exists $GLOBAL_QRY_FILE] } {
  }
  # Load report queries.
  if { ![info exists REPORT_QRY_FILE] } {
