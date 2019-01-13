@@ -5,4 +5,4 @@ For documentation about the various data that you can retrieve from these
 classes, please see Spreadsheet::ParseExcel, Spreadsheet::ParseExcel::Workbook,
 Spreadsheet::ParseExcel::Worksheet, and Spreadsheet::ParseExcel::Cell.
 
-WWW: http://search.cpan.org/dist/Spreadsheet-ParseXLSX/
+WWW: https://metacpan.org/release/Spreadsheet-ParseXLSX
