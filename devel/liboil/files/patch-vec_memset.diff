@@ -28,8 +28,7 @@
  #ifdef LIBMOTOVEC
  	b	memset     
  #else
--	b	_vec_memset     
-+	b	_vec_memset@plt
+	b	_vec_memset     
  #endif
 +	.size	vec_bzero, . - vec_bzero
  
