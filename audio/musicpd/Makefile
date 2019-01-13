@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	musicpd
-PORTVERSION=	0.21.3
-PORTREVISION=	3
+PORTVERSION=	0.21.4
 CATEGORIES=	audio ipv6
 MASTER_SITES=	https://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -141,7 +140,6 @@ JACK_MESON_ON=		-Djack=enabled
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 OPENAL_MESON_ON=	-Dopenal=enabled
 OPENAL_USES=		openal
-OPENAL_VARS=		LLD_UNSAFE=yes # cf. PR 226980
 PULSEAUDIO_MESON_ON=	-Dpulse=enabled
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 SHOUTCAST_MESON_ON=	-Dshout=enabled
