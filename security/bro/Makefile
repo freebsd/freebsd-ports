@@ -16,6 +16,9 @@ BROKEN_powerpc64=	Does not build: error: zero-size array 'names'
 
 LIB_DEPENDS=	libGeoIP.so:net/GeoIP
 
+DEPRECATED=     Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
+EXPIRATION_DATE=2019-02-15
+
 USES=		bison cmake compiler:c++11-lang gettext-runtime ninja perl5 python shebangfix ssl
 
 CMAKE_ARGS+=	-DPYTHON_EXECUTABLE:PATH=${PYTHON_CMD}

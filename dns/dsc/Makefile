@@ -19,6 +19,9 @@ RUN_DEPENDS=	libpcap>=1.8.1:net/libpcap			\
 		p5-XML-Simple>=2.24:textproc/p5-XML-Simple	\
 		dsp>=2.0.0:dns/dsp
 
+DEPRECATED=     Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
+EXPIRATION_DATE=2019-02-15
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-extra-cflags=-I${LOCALBASE}/include
 USES=		gmake perl5 shebangfix

@@ -93,6 +93,9 @@ SUB_FILES=	pkg-message-server
 .endif
 
 .if ${PORT_OPTIONS:MSENSOR}
+DEPRECATED=     Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
+EXPIRATION_DATE=2019-02-15
+
 USE_RC_SUBR+=	pcap_agent snort_agent
 SUB_FILES=	pkg-message-sensor
 WITH_PCRE=	true

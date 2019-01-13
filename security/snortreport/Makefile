@@ -29,6 +29,12 @@ USES=		php:web
 MYSQL_USE=	php=mysql
 PGSQL_USE=	php=pgsql
 
+.include <bsd.port.options.mk>
+.if ${PORT_OPTIONS:MBARNYARD}
+DEPRECATED=     Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
+EXPIRATION_DATE=2019-02-15
+.endif
+
 pre-everything::
 	@${ECHO} ""
 	@${ECHO} "You have to configure PHP either with MySQL or PostgreSQL"

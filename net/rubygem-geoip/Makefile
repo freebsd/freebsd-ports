@@ -13,6 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	geoiplookup:net/GeoIP
 
+DEPRECATED=     Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
+EXPIRATION_DATE=2019-02-15
+
 REINPLACE_ARGS=	-i ''
 NO_ARCH=	yes
 USE_RUBY=	yes

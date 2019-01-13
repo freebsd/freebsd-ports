@@ -14,6 +14,9 @@ COMMENT?=	${PLUGIN_DESC} plugin for VerliHub - a Direct Connect protocol server
 BUILD_DEPENDS+=	${LOCALBASE}/bin/verlihub:net-p2p/verlihub
 RUN_DEPENDS+=	${LOCALBASE}/bin/verlihub:net-p2p/verlihub
 
+DEPRECATED=     Verlihub uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
+EXPIRATION_DATE=2019-02-15
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES+=		libtool

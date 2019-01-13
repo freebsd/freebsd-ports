@@ -28,6 +28,9 @@ CONFIGURE_ARGS=		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 DESTDIRNAME=		INSTALL_ROOT
 
 .if ${FLAVOR} == default
+DEPRECATED=     Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
+EXPIRATION_DATE=2019-02-15
+
 USES+=			desktop-file-utils gl
 USE_QT+=		concurrent gui svg widgets
 USE_GL=			gl

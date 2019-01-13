@@ -18,6 +18,9 @@ LIB_DEPENDS=	libGeoIP.so:net/GeoIP \
 		libpcre.so:devel/pcre
 RUN_DEPENDS=	bash:shells/bash
 
+DEPRECATED=     Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
+EXPIRATION_DATE=2019-02-15
+
 LIBS+=		-L${LOCALBASE}/lib
 USE_RC_SUBR=	verlihub
 USES=		libtool ssl
