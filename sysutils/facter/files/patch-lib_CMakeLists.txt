@@ -1,10 +1,14 @@
 --- lib/CMakeLists.txt.orig	2018-12-17 18:05:06 UTC
 +++ lib/CMakeLists.txt
-@@ -307,11 +307,11 @@ endif()
+@@ -306,12 +306,15 @@ endif()
+ 
  # Set include directories
  include_directories(
-     inc
++    BEFORE
 +    ${LEATHERMAN_INCLUDE_DIRS}
++)
++include_directories(
+     inc
      ${Boost_INCLUDE_DIRS}
      ${OPENSSL_INCLUDE_DIRS}
      ${YAMLCPP_INCLUDE_DIRS}
