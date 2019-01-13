@@ -38,8 +38,6 @@ libdata/pkgconfig/QJson%%QT_SUFFIX%%.pc
 %%DOXYGEN%%%%DOCSDIR%%/closed.png
 %%DOXYGEN%%%%DOCSDIR%%/deprecated.html
 %%DOXYGEN%%%%DOCSDIR%%/dir_68267d1309a1af8e8297ef4c3efbcdba.html
-%%QT5%%%%DOXYGEN%%%%DOCSDIR%%/dir_895027ca4f9d4058e881d4f0ac2cb7ea.html
-%%QT5%%%%DOXYGEN%%%%DOCSDIR%%/dir_9bd286a0f2175d29a28acdf988d5722e.html
 %%DOXYGEN%%%%DOCSDIR%%/doc.png
 %%DOXYGEN%%%%DOCSDIR%%/doxygen.css
 %%DOXYGEN%%%%DOCSDIR%%/doxygen.png
@@ -63,12 +61,6 @@ libdata/pkgconfig/QJson%%QT_SUFFIX%%.pc
 %%DOXYGEN%%%%DOCSDIR%%/location_8hh_source.html
 %%DOXYGEN%%%%DOCSDIR%%/menu.js
 %%DOXYGEN%%%%DOCSDIR%%/menudata.js
-%%QT5%%%%DOXYGEN%%%%DOCSDIR%%/moc__parserrunnable_8cpp_source.html
-%%NO_QT5%%%%DOXYGEN%%%%DOCSDIR%%/moc__parserrunnable_8cxx_source.html
-%%QT5%%%%DOXYGEN%%%%DOCSDIR%%/moc__qobjecthelper_8cpp_source.html
-%%QT5%%%%DOXYGEN%%%%DOCSDIR%%/moc__serializerrunnable_8cpp_source.html
-%%NO_QT5%%%%DOXYGEN%%%%DOCSDIR%%/moc__serializerrunnable_8cxx_source.html
-%%QT5%%%%DOXYGEN%%%%DOCSDIR%%/mocs__compilation_8cpp_source.html
 %%DOXYGEN%%%%DOCSDIR%%/namespaceQJson.html
 %%DOXYGEN%%%%DOCSDIR%%/namespacemembers.html
 %%DOXYGEN%%%%DOCSDIR%%/namespacemembers_enum.html
