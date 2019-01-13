@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsbbatmon
-DISTVERSION=	1.0.2
+DISTVERSION=	1.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freeshell.de/~mk/download/
 
