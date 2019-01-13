@@ -4,7 +4,7 @@
 PORTNAME=	aegis
 PORTVERSION=	4.25
 DISTVERSIONSUFFIX=	.D510
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -18,7 +18,6 @@ RUN_DEPENDS=	tkdiff:textproc/tkdiff
 
 USES=		gettext ghostscript groff perl5 tk
 USE_GNOME=	libxml2
-USE_GCC=	any
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--with-nlsdir="${PREFIX}/share/locale"
