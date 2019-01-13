@@ -65,7 +65,6 @@ CAIRO_CONFIGURE_OFF=	--with-type-engines="xcore,xft"
 
 SIXEL_CONFIGURE_ENABLE=	sixel
 
-REGIS_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 REGIS_USE=		SDL=ttf
 
 .include <bsd.port.options.mk>
