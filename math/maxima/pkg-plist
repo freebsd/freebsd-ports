@@ -1,7 +1,6 @@
 bin/maxima
 bin/rmaxima
 bin/xmaxima
-info/maxima-index.lisp
 lib/maxima/%%PORTVERSION%%/%%BINDIR%%/%%BINNAME%%
 %%CMUCL%%lib/maxima/%%PORTVERSION%%/%%BINDIR%%/lisp
 libexec/maxima/%%PORTVERSION%%/mgnuplot
@@ -10,6 +9,7 @@ share/applications/xmaxima.desktop
 share/bash-completion/completions/maxima
 share/bash-completion/completions/rmaxima
 share/bash-completion/completions/xmaxima
+share/info/maxima-index.lisp
 %%PORTDOCS%%%%DOCSDIR%%/de.utf8/maxima.html
 %%PORTDOCS%%%%DOCSDIR%%/de.utf8/maxima_1.html
 %%PORTDOCS%%%%DOCSDIR%%/de.utf8/maxima_10.html
