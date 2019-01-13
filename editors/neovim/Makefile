@@ -3,7 +3,7 @@
 
 PORTNAME=	neovim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.3
+DISTVERSION=	0.3.4
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -20,6 +20,10 @@ LIB_DEPENDS=	libluajit-5.1.so:lang/luajit \
 		libunibilium.so:devel/unibilium \
 		libuv.so:devel/libuv \
 		libvterm.so:devel/libvterm
+TEST_DEPENDS=	autoconf>=0:devel/autoconf \
+		aclocal:devel/automake \
+		gmake:devel/gmake \
+		libtool:devel/libtool
 
 USES=		cmake iconv lua:build pathfix pkgconfig
 USE_GITHUB=	yes
