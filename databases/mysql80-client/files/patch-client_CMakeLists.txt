@@ -9,20 +9,20 @@
    MYSQL_ADD_EXECUTABLE(mysql_upgrade
      upgrade/program.cc
 @@ -57,11 +58,14 @@ ADD_COMPILE_FLAGS(
- TARGET_LINK_LIBRARIES(mysql_upgrade mysqlclient client_base mysqlcheck_core)
- ADD_DEPENDENCIES(mysql_upgrade GenFixPrivs GenSysSchema)
+   TARGET_LINK_LIBRARIES(mysql_upgrade mysqlclient client_base mysqlcheck_core)
+   ADD_DEPENDENCIES(mysql_upgrade GenFixPrivs GenSysSchema GenBootstrapPriv)
  ENDIF()
 +ENDIF()
  
+ SET(MYSQLTEST_SRC
+   mysqltest/mysqltest_expected_error.cc
+ )
+ 
 +IF(FALSE)
- MYSQL_ADD_EXECUTABLE(mysqltest mysqltest.cc COMPONENT Test)
- SET_SOURCE_FILES_PROPERTIES(mysqltest.cc PROPERTIES COMPILE_FLAGS "-DTHREADS")
+ MYSQL_ADD_EXECUTABLE(mysqltest mysqltest.cc ${MYSQLTEST_SRC} COMPONENT Test)
  TARGET_LINK_LIBRARIES(mysqltest mysqlclient regex)
  ADD_DEPENDENCIES(mysqltest GenError GenClientError)
 +ENDIF()
- 
- ADD_CONVENIENCE_LIBRARY(mysqlcheck_core check/mysqlcheck_core.cc)
- TARGET_LINK_LIBRARIES(mysqlcheck_core mysqlclient)
 @@ -113,8 +117,10 @@ TARGET_LINK_LIBRARIES(mysqlslap mysqlcli
  MYSQL_ADD_EXECUTABLE(mysql_config_editor mysql_config_editor.cc)
  TARGET_LINK_LIBRARIES(mysql_config_editor mysqlclient)

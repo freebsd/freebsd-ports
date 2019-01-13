@@ -1,0 +1,11 @@
+--- router/src/harness/CMakeLists.txt.orig	2018-11-04 22:41:07 UTC
++++ router/src/harness/CMakeLists.txt
+@@ -128,7 +128,7 @@ IF(WIN32)
+     COMPILE_FLAGS -DHARNESS_STATIC_DEFINE)
+ ENDIF()
+ IF(THREADS_HAVE_PTHREAD_ARG)
+-  target_compile_options(PUBLIC harness-archive "-pthread")
++  target_compile_options(harness-archive PUBLIC "-pthread")
+ ENDIF()
+ 
+ # create harness library - dynamic version
