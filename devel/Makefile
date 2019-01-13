@@ -5418,6 +5418,7 @@
     SUBDIR += root-doc
     SUBDIR += rote
     SUBDIR += rpc2
+    SUBDIR += rpclib
     SUBDIR += rpm-spec-mode.el
     SUBDIR += rsvndump
     SUBDIR += rth
