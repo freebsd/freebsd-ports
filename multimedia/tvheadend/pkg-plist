@@ -1222,6 +1222,7 @@ man/man1/tvheadend.1.gz
 %%DATADIR%%/src/webui/static/intl/tvh.ach.js.gz
 %%DATADIR%%/src/webui/static/intl/tvh.ady.js.gz
 %%DATADIR%%/src/webui/static/intl/tvh.ar.js.gz
+%%DATADIR%%/src/webui/static/intl/tvh.az.js.gz
 %%DATADIR%%/src/webui/static/intl/tvh.bg.js.gz
 %%DATADIR%%/src/webui/static/intl/tvh.cs.js.gz
 %%DATADIR%%/src/webui/static/intl/tvh.da.js.gz
