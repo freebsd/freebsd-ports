@@ -4,21 +4,21 @@
  ADD_SUBDIRECTORY(authentication_ldap)
  
  # Merge several convenience libraries into one big mysqlclient
--MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS} COMPONENT Development)
-+MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS} COMPONENT Development SKIP_INSTALL)
+-MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERGE} COMPONENT Development)
++MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERGE} COMPONENT Development SKIP_INSTALL)
+ TARGET_LINK_LIBRARIES(mysqlclient ${LIBS_TO_LINK})
  
- # Visual Studio users need debug  static library for debug projects
  IF(MSVC)
 @@ -257,7 +257,8 @@ IF(NOT DISABLE_SHARED)
    # and link them together into shared library.
-   MERGE_LIBRARIES(libmysql SHARED ${LIBS}
+   MERGE_LIBRARIES_SHARED(libmysql ${LIBS_TO_MERGE}
      EXPORTS ${CLIENT_API_FUNCTIONS} ${CLIENT_API_FUNCTIONS_UNDOCUMENTED}
 -    COMPONENT SharedLibraries)
 +    COMPONENT SharedLibraries SKIP_INSTALL)
+   TARGET_LINK_LIBRARIES(libmysql ${LIBS_TO_LINK})
+ 
 +IF(FALSE)
-   IF(UNIX)
-     # libtool compatability
-     IF(CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR APPLE)
+   IF(WIN32)
 @@ -313,6 +314,7 @@ ENDIF()
  # to initialize api_calls[] array in api_test.c
  #
