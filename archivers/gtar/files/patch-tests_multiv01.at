@@ -1,0 +1,14 @@
+cmp(1) Capsicum error if stdin closed
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=234885
+
+--- tests/multiv01.at.orig	2019-01-11 20:11:26 UTC
++++ tests/multiv01.at
+@@ -28,7 +28,7 @@ AT_KEYWORDS([multivolume multiv multiv01 chdir])
+ #  TRUSS=strace
+ 
+ AT_TAR_CHECK([
+-exec <&-
++#exec <&-
+ genfile --length 7168 --file file1
+ 
+ for block in " 1" " 2" " 3" " 4" " 5" " 6" " 7" " 8" \

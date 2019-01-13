@@ -1,0 +1,14 @@
+cmp(1) Capsicum error if stdin closed
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=234885
+
+--- tests/multiv05.at.orig	2019-01-11 20:11:26 UTC
++++ tests/multiv05.at
+@@ -28,7 +28,7 @@ AT_KEYWORDS([multivolume multiv multiv05 sync])
+ m4_pushdef([FILELIST],[jeden,dwa,trzy,cztery,piec,szesc])
+ 
+ AT_TAR_CHECK([
+-exec <&-
++#exec <&-
+ 
+ m4_foreach([f],
+   [FILELIST],
