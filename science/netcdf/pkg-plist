@@ -3,8 +3,8 @@ bin/nccopy
 bin/ncdump
 bin/ncgen
 bin/ncgen3
-%%DAP%%bin/ocprint
 include/netcdf.h
+include/netcdf_aux.h
 include/netcdf_mem.h
 include/netcdf_meta.h
 lib/libnetcdf.a
