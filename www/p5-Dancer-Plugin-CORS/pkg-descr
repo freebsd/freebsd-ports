@@ -3,4 +3,4 @@ cross site scripting restrictions. A webservice can provide those rules from
 which origin a client is allowed to make cross-site requests. This module helps
 you to setup such rules.
 
-WWW: http://search.cpan.org/dist/Dancer-Plugin-CORS/
+WWW: https://metacpan.org/release/Dancer-Plugin-CORS
