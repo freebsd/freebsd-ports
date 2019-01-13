@@ -77,7 +77,6 @@ lib/cherokee/libplugin_fcgi.so
 lib/cherokee/libplugin_file.so
 lib/cherokee/libplugin_from.so
 lib/cherokee/libplugin_fullpath.so
-%%GEOIP%%lib/cherokee/libplugin_geoip.so
 lib/cherokee/libplugin_gzip.so
 lib/cherokee/libplugin_header.so
 lib/cherokee/libplugin_htdigest.so

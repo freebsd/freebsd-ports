@@ -3,7 +3,7 @@
 
 PORTNAME=	pmacct
 DISTVERSION=	1.7.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.pmacct.net/
 
@@ -20,11 +20,12 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 
-OPTIONS_DEFINE=	MYSQL PGSQL SQLITE3 THREADS LAYER2 IPV6 DEBUG \
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE3 THREADS LAYER2 IPV6 DEBUG GEOIP2 \
 		DOCS PLABEL RABBITMQ KAFKA JANSSON AVRO EXAMPLES
 OPTIONS_DEFAULT=MMAP LAYER2 THREADS SHARED
 
 AVRO_DESC=	Enable avro support
+GEOIP2_DESC=	Enable GeoIPv2 (libmaxminddb) support
 JANSSON_DESC=	Enable Jansson support
 KAFKA_DESC=	Enable Kafka support
 LAYER2_DESC=	Enable Layer-2 support: MAC addresses and VLANs
@@ -35,12 +36,6 @@ LAYER2_DESC=	Enable Layer-2 support: MAC addresses and VLANs
 PLABEL_DESC=	Enable IP prefix labels
 RABBITMQ_DESC=	Enable RabbitMQ/AMQP support
 SQLITE3_DESC=	Enable SQLite3 support
-
-OPTIONS_RADIO=	GEOLOC
-OPTIONS_RADIO_GEOLOC=GEOIP GEOIP2
-GEOLOC_DESC=	Geolocation support
-GEOIP_DESC=	Enable legacy GeoIP support
-GEOIP2_DESC=	Enable GeoIPv2 (libmaxminddb) support
 
 .include <bsd.port.options.mk>
 
@@ -143,12 +138,6 @@ CONFIGURE_ARGS+=--enable-avro
 .else
 CONFIGURE_ARGS+=--disable-nflog
 PLIST_SUB+=WITH_NFLOG="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGEOIP}
-USES+=		pkgconfig
-LIB_DEPENDS+=	libGeoIP.so:net/GeoIP
-CONFIGURE_ARGS+=--enable-geoip
 .endif
 
 .if ${PORT_OPTIONS:MGEOIP2}

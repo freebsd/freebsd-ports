@@ -76,7 +76,6 @@ lib/opensips/modules/mi_fifo.so
 lib/opensips/modules/mi_http.so
 lib/opensips/modules/mi_json.so
 lib/opensips/modules/mi_xmlrpc_ng.so
-%%GEOIP%%lib/opensips/modules/mmgeoip.so
 lib/opensips/modules/msilo.so
 lib/opensips/modules/nat_traversal.so
 lib/opensips/modules/nathelper.so
@@ -256,7 +255,6 @@ sbin/osipsconsole
 %%PORTDOCS%%%%DOCSDIR%%/README.mi_http
 %%PORTDOCS%%%%DOCSDIR%%/README.mi_json
 %%PORTDOCS%%%%DOCSDIR%%/README.mi_xmlrpc_ng
-%%GEOIP%%%%PORTDOCS%%%%DOCSDIR%%/README.mmgeoip
 %%PORTDOCS%%%%DOCSDIR%%/README.msilo
 %%PORTDOCS%%%%DOCSDIR%%/README.nat_traversal
 %%PORTDOCS%%%%DOCSDIR%%/README.nathelper

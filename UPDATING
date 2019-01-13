@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190113:
+  AFFECTS: users of net/GeoIP
+  AUTHOR: adamw@FreeBSD.org
+
+  Maxmind no longer provides geolocation data in the legacy format used
+  by net/GeoIP. All GEOIP-related OPTIONS have been removed, and all
+  GeoIP-dependent ports will be removed soon.
+
+  Where possible, you must switch to net/libmaxminddb, which uses the
+  newer (and fully supported) GeoIP 2 format. Unfortunately, this is
+  not a drop-in replacement.
+
+  The legacy database is no longer available, and we cannot distribute
+  it by the Maxmind license, so the legacy GeoIP format is essentially
+  dead.
+
 20190108:
   AFFECTS: users of databases/mysql-connector-java
   AUTHOR: matthew@FreeBSD.org

@@ -3,7 +3,7 @@
 
 PORTNAME=	argus-clients
 PORTVERSION=	3.0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
@@ -15,14 +15,12 @@ LICENSE=	GPLv3
 
 CONFLICTS=	argus-clients-2* argus-clients-sasl-2*
 
-OPTIONS_DEFINE=	GEOIP MYSQL SASL DOCS EXAMPLES
+OPTIONS_DEFINE=	MYSQL SASL DOCS EXAMPLES
 OPTIONS_DEFAULT=MYSQL SASL
 OPTIONS_SUB=	yes
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_CONFIGURE_ON=	--with-sasl=${LOCALBASE}
 MYSQL_USES=	mysql
-GEOIP_LIB_DEPENDS=	libGeoIP.so:net/GeoIP
-GEOIP_CONFIGURE_ON=	--with-GeoIP=${LOCALBASE}
 
 USES=		bison ncurses perl5 readline
 USE_CSTD=	gnu89

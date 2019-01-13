@@ -199,7 +199,6 @@ libexec/inspircd/modules/m_silence.so
 libexec/inspircd/modules/m_spanningtree.so
 libexec/inspircd/modules/m_sqlauth.so
 libexec/inspircd/modules/m_sqloper.so
-%%GEOIP%%libexec/inspircd/modules/m_geoip.so
 %%GNUTLS%%libexec/inspircd/modules/m_ssl_gnutls.so
 %%LDAPAUTH%%libexec/inspircd/modules/m_ldapauth.so
 %%LDAPOPER%%libexec/inspircd/modules/m_ldapoper.so
