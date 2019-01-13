@@ -3,6 +3,7 @@
 
 PORTNAME=	omniorb
 DISTVERSION=	4.2.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/omniORBpy/omniORBpy-${DISTVERSION:S/-2//}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,11 +20,18 @@ RUN_DEPENDS=	omniidl:devel/omniORB
 # see also the "post-extract" target below.
 BUILD_DEPENDS=	${NONEXISTENT}:devel/omniORB:patch
 
-USES=		gmake python shebangfix ssl tar:bzip2
+USES=		gmake shebangfix ssl tar:bzip2
+USE_PYTHON=	py3kplist
 
 CONFLICTS=	py*-orbit-2* ${PYTHON_PKGNAMEPREFIX}omniorb3-3*
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES PYTHON2 PYTHON3
+OPTIONS_DEFAULT=PYTHON3
+OPTIONS_SUB=	yes
+PYTHON2_DESC=	Build and install Python 2.X packages
+PYTHON3_DESC=	Build and install Python 3.X packages
+PYTHON2_USES=	python:2.7
+PYTHON3_USES=	python:3.6+
 
 PLIST_SUB=	SONUM=2
 
@@ -51,11 +59,6 @@ post-install:
 	cd ${STAGEDIR}${PYTHON_SITELIBDIR} && ${PYTHON_CMD} -c "import py_compile;py_compile.compile('CosNaming__POA/__init__.py',None,'CosNaming__POA/__init__.pyc',True)"
 	cd ${STAGEDIR}${PYTHON_SITELIBDIR} && ${PYTHON_CMD} -c "import py_compile;py_compile.compile('omniidl_be/python.py',None,'omniidl_be/python.pyc',True)"
 	@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/omniidl_be/__init__.py
-	@${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/_omnipymodule.so.4.2
-	@${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/_omniZIOPmodule.so.4.2
-	@${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/_omniConnMgmtmodule.so.4.2
-	@${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/_omnicodesetsmodule.so.4.2
-	@${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/_omnisslTPmodule.so.4.2
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
