@@ -1,0 +1,17 @@
+--- griffith.orig	2019-01-10 08:50:33 UTC
++++ griffith
+@@ -1289,11 +1289,11 @@ class Griffith(object):
+             gutils.run_browser(self._trailer_url)
+ 
+     def on_goto_homepage_activate(site, *args):
+-        gutils.run_browser('https://github.com/Strit/griffith')
++        gutils.run_browser('https://gitlab.com/Strit/griffith')
+     def on_goto_forum_activate(site, *args):
+-        gutils.run_browser('https://github.com/Strit/griffith')
++        gutils.run_browser('https://gitlab.com/Strit/griffith')
+     def on_goto_report_bug_activate(site, *args):
+-        gutils.run_browser('https://github.com/Strit/griffith/issues')
++        gutils.run_browser('https://gitlab.com/Strit/griffith/issues')
+ 
+     # toolbar -------------------------------------------------------------
+     def toggle_toolbar(self, *args):
