@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	sguil
-PORTVERSION=	0.9.0
+PORTVERSION=	1.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -54,6 +53,7 @@ PADS_SENSOR_RUN_DEPENDS=	pads:net-mgmt/pads
 SANCP_SENSOR_RUN_DEPENDS=	sancp:security/sancp
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 TCL_VER=	8.5
 TCLSH=		tclsh${TCL_VER}
 SERVER_SGUILDIR?=	sguild
@@ -110,29 +110,26 @@ USE_RC_SUBR+=	pads_agent
 .  endif
 .endif
 
-post-patch:
-.if ${PORT_OPTIONS:MSERVER}
+post-patch-SERVER-on:
 	@${REINPLACE_CMD} 's|/bin/sh|${TCLSH}|' \
 		${WRKSRC}/server/sguild
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/${SERVER_SGUILDIR} \
 		${STAGEDIR}${PREFIX}/lib/${SERVER_SGUILDIR} \
 		${STAGEDIR}${PREFIX}/share/${SERVER_SGUILDIR} \
 		${STAGEDIR}${PREFIX}/share/${SERVER_SGUILDIR}/contrib
-.endif
-.if ${PORT_OPTIONS:MCLIENT}
+
+post-patch-CLIENT-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/bin/${CLIENT_SGUILDIR} \
 		${STAGEDIR}${PREFIX}/bin/${CLIENT_SGUILDIR}/lib \
 		${STAGEDIR}${PREFIX}/bin/${CLIENT_SGUILDIR}/images
-.endif
-.if ${PORT_OPTIONS:MSENSOR}
-.  for f in ${SENSOR_AGENTS}
+
+post-patch-SENSOR-on:
+.for f in ${SENSOR_AGENTS}
 	@${REINPLACE_CMD} 's|/bin/sh|${PREFIX}/bin/${TCLSH}|' \
 		${WRKSRC}/sensor/${f}
-.  endfor
-.endif
+.endfor
 
-do-install:
-.if ${PORT_OPTIONS:MSERVER}
+do-install-SERVER-on:
 	(cd ${WRKSRC}/server/lib && \
 		${COPYTREE_BIN} \* ${STAGEDIR}${PREFIX}/lib/${SERVER_SGUILDIR})
 	(cd ${WRKSRC}/server/sql_scripts && \
@@ -142,13 +139,12 @@ do-install:
 		${COPYTREE_SHARE} \* \
 		${STAGEDIR}${PREFIX}/share/${SERVER_SGUILDIR}/contrib)
 	${INSTALL_SCRIPT} ${WRKSRC}/server/sguild ${STAGEDIR}${PREFIX}/bin
-.  for f in ${SERVER_CONFS}
+.for f in ${SERVER_CONFS}
 	${INSTALL_DATA} ${WRKSRC}/server/${f} \
 		${STAGEDIR}${PREFIX}/etc/${SERVER_SGUILDIR}/${f}-sample
-.  endfor
-.endif
+.endfor
 
-.if ${PORT_OPTIONS:MCLIENT}
+do-install-CLIENT-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/client/sguil.tk \
 		${STAGEDIR}${PREFIX}/bin/${CLIENT_SGUILDIR}/sguil.tk
 	${INSTALL_DATA} ${WRKSRC}/client/sguil.conf \
@@ -158,11 +154,10 @@ do-install:
 	(cd ${WRKSRC}/client/lib/images && \
 		${INSTALL_DATA} sguil_logo_h.gif checked.gif unchecked.gif \
 		${STAGEDIR}${PREFIX}/bin/${CLIENT_SGUILDIR}/images)
-	(cd ${WRKSRC}/client/lib/tablelist5.11 && ${COPYTREE_SHARE} \* \
-		${STAGEDIR}${PREFIX}/bin/${CLIENT_SGUILDIR}/lib/tablelist5.11)
-.endif
+	(cd ${WRKSRC}/client/lib/tablelist5.14 && ${COPYTREE_SHARE} \* \
+		${STAGEDIR}${PREFIX}/bin/${CLIENT_SGUILDIR}/lib/tablelist5.14)
 
-.if ${PORT_OPTIONS:MSENSOR}
+do-install-SENSOR-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/bin/${SENSOR_SGUILDIR} \
 		${STAGEDIR}${PREFIX}/etc/${SENSOR_SGUILDIR} \
 		${STAGEDIR}${PREFIX}/share/${SENSOR_SGUILDIR} \
@@ -181,19 +176,18 @@ do-install:
 	(cd ${WRKSRC}/sensor && \
 		${INSTALL_SCRIPT} ${LOG_SCRIPTS} \
 		${STAGEDIR}${PREFIX}/bin/${SENSOR_SGUILDIR})
-.  for f in ${SENSOR_CONFS}
+.for f in ${SENSOR_CONFS}
 	${INSTALL_DATA} ${WRKSRC}/sensor/${f} \
 		${STAGEDIR}${PREFIX}/etc/${SENSOR_SGUILDIR}/${f}-sample
-.  endfor
-
-.  if ${PORT_OPTIONS:MSANCP_SENSOR}
+.endfor
+.if ${PORT_OPTIONS:MSANCP_SENSOR}
 	${INSTALL_SCRIPT} ${WRKSRC}/sensor/log_packets-sancp.sh \
 		${STAGEDIR}${PREFIX}/bin/${SENSOR_SGUILDIR}
 	${INSTALL_DATA} ${WRKSRC}/sensor/sancp/sancp.conf \
 		${STAGEDIR}${PREFIX}/etc/${SENSOR_SGUILDIR}/sancp.conf-sample
-.  endif
 .endif
 
+do-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${COMMON_DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
