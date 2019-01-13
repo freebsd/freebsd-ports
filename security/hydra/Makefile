@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	hydra
-PORTVERSION=	8.5
+DISTVERSIONPREFIX=v
+DISTVERSION=	8.8
 CATEGORIES=	security
-MASTER_SITES=	https://www.thc.org/releases/ \
-		PACKETSTORM/groups/thc/
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Brute force attack utility working on multiple network services
@@ -17,12 +16,17 @@ LIB_DEPENDS=	libidn.so:dns/libidn \
 		libpcre.so:devel/pcre \
 		libsasl2.so:security/cyrus-sasl2
 
-PLIST_FILES=	bin/hydra bin/pw-inspector bin/dpl4hydra.sh bin/hydra-wizard.sh \
-		man/man1/hydra.1.gz man/man1/pw-inspector.1.gz
-GNU_CONFIGURE=	yes
 USES=		gmake localbase ssl
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	vanhauser-thc
+GH_PROJECT=	thc-hydra
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLINC} \
 		--with-ssl-lib=${OPENSSLLIB}
+PLIST_FILES=	bin/hydra bin/pw-inspector bin/dpl4hydra.sh bin/hydra-wizard.sh \
+		man/man1/hydra.1.gz man/man1/pw-inspector.1.gz
 
 OPTIONS_DEFINE=	FIREBIRD SSH SVN X11
 OPTIONS_DEFAULT=SSH
@@ -30,7 +34,7 @@ OPTIONS_EXCLUDE=NLS DOCS
 FIREBIRD_USES=	firebird
 SVN_LIB_DEPENDS=	libsvn_client-1.so:devel/subversion
 SSH_LIB_DEPENDS=	libssh.so.4:security/libssh
-X11_USES=		gettext pkgconfig
+X11_USES=		gettext gnome pkgconfig
 X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2
 X11_USE=		gnome=atk,cairo,gdkpixbuf2,glib20,gtk20,pango
@@ -39,7 +43,7 @@ X11_PLIST_FILES=	bin/xhydra man/man1/xhydra.1.gz
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT:Mlibressl*}
-IGNORE=	Detected LibreSSL (missing RSA_get0_key and others)
+IGNORE=	detected LibreSSL (missing RSA_get0_key and others)
 .endif
 
 post-patch:
