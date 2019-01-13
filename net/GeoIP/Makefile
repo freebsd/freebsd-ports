@@ -14,8 +14,8 @@ LICENSE=	GPLv2
 
 USES=		libtool pathfix
 
-DEPRECATED=	Legacy databases no longer available. Switch to GeoIP2 instead
-EXPIRATION_DATE=2019-02-01
+DEPRECATED=	Legacy databases no longer available. Switch to net/libmaxminddb instead
+EXPIRATION_DATE=2019-02-15
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
