@@ -364,7 +364,7 @@ qvfb_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/qvfb
 rcc_PORT=		devel/${_QT_RELNAME}-rcc
 rcc_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/rcc
 
-remoteobjects_PORT=	x11-toolkits/${_QT_RELNAME}-remoteobjects
+remoteobjects_PORT=	devel/${_QT_RELNAME}-remoteobjects
 remoteobjects_LIB=	libQt${_QT_LIBVER}RemoteObjects.so
 
 sensors_PORT=		comms/${_QT_RELNAME}-sensors
