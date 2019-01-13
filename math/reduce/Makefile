@@ -18,11 +18,13 @@ BROKEN_powerpc64=	fails to compile: arith01.cpp: 'statuc' does not name a type
 
 BUILD_DEPENDS=	gnuplot:math/gnuplot
 
-LIB_DEPENDS=	libpng.so:graphics/png \
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
 USES=		autoreconf:build libtool gmake ncurses jpeg
-USE_XORG=	x11 xext xorgproto xft
+USE_XORG=	x11 xcursor xext xorgproto xft xrandr xrender
 
 SFSUBDIR=	snapshot_2018-11-23
 
