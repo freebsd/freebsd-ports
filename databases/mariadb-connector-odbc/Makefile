@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mariadb
-DISTVERSION=	3.0.7
+DISTVERSION=	3.0.8
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
