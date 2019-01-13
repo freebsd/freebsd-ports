@@ -6,7 +6,7 @@ DISTVERSION=	4.0-rc5
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
-		http://mirrors.ibiblio.org/wine/source/3.x/
+		http://mirrors.ibiblio.org/wine/source/4.0/
 PKGNAMESUFFIX?=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
