@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	netcdf
-PORTVERSION=	4.6.1
-PORTREVISION=	2
+PORTVERSION=	4.6.2
+DISTVERSIONPREFIX=	c-
 CATEGORIES=	science
 MASTER_SITES=	https://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
@@ -23,9 +23,10 @@ CONFLICTS_INSTALL=	hdf-4.[0-9]* netcdf-3.[0-9]* netcdf3-3.[0-9]*
 
 OPTIONS_DEFINE=	DAP DOCS DOXYGEN SZIP
 OPTIONS_DEFAULT=DAP SZIP
-OPTIONS_SUB=	yes
 DAP_DESC=	Build DAP client and remote testing
 SZIP_DESC=	SZIP support (required if HDF5 was built with SZIP)
+
+USES=		gmake libtool localbase ncurses pathfix pkgconfig:run
 
 CONFIGURE_ARGS=	--disable-filter-testing --enable-netcdf-4
 CPPFLAGS+=	-fPIC -DPIC
@@ -33,7 +34,6 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-USES=		libtool localbase ncurses pathfix pkgconfig:run
 
 DAP_CONFIGURE_ENABLE=	dap
 DAP_LIB_DEPENDS=	libcurl.so:ftp/curl
