@@ -3,4 +3,4 @@ cross platform timezone calculations. It also solves the issue of ambiguous
 times at the end of daylight savings, which you can read more about in the
 Python Library Reference (datetime.tzinfo).
 
-WWW: http://pythonhosted.org/pytz/
+WWW: https://pythonhosted.org/pytz/
