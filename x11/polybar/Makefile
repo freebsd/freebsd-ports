@@ -20,7 +20,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libxcb-util.so:x11/xcb-util \
 		libxcb-xrm.so:x11/xcb-util-xrm
 
-USES=		cmake compiler:c++11-lang localbase:ldflags \
+# compiler:c++11-lang is needed for powerpc64
+USES=		cmake compiler:c++11-lang gnome localbase:ldflags \
 		pkgconfig python:2.7,build
 USE_GITHUB=	yes
 GH_ACCOUNT=	jaagr
