@@ -1,5 +1,6 @@
 lib/postgresql/pgroonga.so
 lib/postgresql/pgroonga_check.so
+lib/postgresql/pgroonga_database.so
 share/postgresql/extension/pgroonga--1.0.0--1.0.1.sql
 share/postgresql/extension/pgroonga--1.0.1--1.0.2.sql
 share/postgresql/extension/pgroonga--1.0.2--1.0.3.sql
@@ -41,5 +42,9 @@ share/postgresql/extension/pgroonga--2.1.3--2.1.4.sql
 share/postgresql/extension/pgroonga--2.1.4--2.1.5.sql
 share/postgresql/extension/pgroonga--2.1.5--2.1.6.sql
 share/postgresql/extension/pgroonga--2.1.6--2.1.7.sql
-share/postgresql/extension/pgroonga--2.1.7.sql
+share/postgresql/extension/pgroonga--2.1.7--2.1.8.sql
+share/postgresql/extension/pgroonga--2.1.8.sql
+share/postgresql/extension/pgroonga_database--2.1.8.sql
+share/postgresql/extension/pgroonga_database.control
 share/postgresql/extension/pgroonga.control
+
