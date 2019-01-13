@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		autoreconf ncurses pkgconfig readline
 USE_GITHUB=	yes
 GH_ACCOUNT=	dvorka
-GH_PROJECT=	hstr
 
 GNU_CONFIGURE=	yes
 
