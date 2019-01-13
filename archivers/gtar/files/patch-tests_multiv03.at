@@ -1,0 +1,14 @@
+cmp(1) Capsicum error if stdin closed
+https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=234885
+
+--- tests/multiv03.at.orig	2019-01-11 20:11:26 UTC
++++ tests/multiv03.at
+@@ -47,7 +47,7 @@ EOF
+ 
+ genfile --length 15360 --file $AFILE
+ 
+-exec <&-
++#exec <&-
+ 
+ tar -M -L 10 -c -f arch.1 -f arch.2 $AFILE || exit 1
+ tar -tM -f arch.1 -f arch.2 || exit 1
