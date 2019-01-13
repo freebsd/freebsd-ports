@@ -16,9 +16,8 @@ LIB_DEPENDS=	libcmocka.so:sysutils/cmocka \
 		libfreetype.so:print/freetype2 \
 		libsoup-2.4.so:devel/libsoup \
 		libwebkitgtk-1.0.so:www/webkit-gtk2
-BUILD_DEPENDS=	pkg-config:devel/pkgconf
 
-USES=		cmake gnome
+USES=		cmake gnome pkgconfig
 USE_GNOME=	gdkpixbuf2 gtk20 cairo
 
 CMAKE_ON=	XTRKCAD_USE_GTK
