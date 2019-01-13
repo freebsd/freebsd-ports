@@ -1,4 +1,4 @@
-TIMESTAMP = 1547320949
+TIMESTAMP = 1547397238
 SHA256 (nginx-1.15.8.tar.gz) = a8bdafbca87eb99813ae4fcac1ad0875bf725ce19eb265d28268c309b2b40787
 SIZE (nginx-1.15.8.tar.gz) = 1027862
 SHA256 (ngx_cache_purge-2.3.tar.gz) = 279e0d8a46d3b1521fd43b3f78bc1c08b263899142a7cc5058c1c0361a92c89c
@@ -79,8 +79,8 @@ SHA256 (wandenberg-nginx-push-stream-module-0.5.4_GH0.tar.gz) = 5253bb8a804ea679
 SIZE (wandenberg-nginx-push-stream-module-0.5.4_GH0.tar.gz) = 183493
 SHA256 (yaoweibin-ngx_http_substitutions_filter_module-v0.6.4_GH0.tar.gz) = ed4ddbcf0c434f4a1e97b61251a63ace759792764bd5cb79ff20efe348db8db3
 SIZE (yaoweibin-ngx_http_substitutions_filter_module-v0.6.4_GH0.tar.gz) = 92230
-SHA256 (tarantool-nginx_upstream_module-4ca8684_GH0.tar.gz) = e1ce39052f2df4972dc7ce827a3ff774660586955c5894cf38997c6f687d8fa4
-SIZE (tarantool-nginx_upstream_module-4ca8684_GH0.tar.gz) = 59005
+SHA256 (tarantool-nginx_upstream_module-27836e4_GH0.tar.gz) = c098747380444ddc9cf428010578bc6ef70b8c3a77a801c9e01617b05462e57b
+SIZE (tarantool-nginx_upstream_module-27836e4_GH0.tar.gz) = 74010
 SHA256 (Austinb-nginx-upload-module-72ec037_GH0.tar.gz) = c6d4e38ad0712c898cc53721f492f8f73acf2753cc0a0769fa34d4d6ba4e8efd
 SIZE (Austinb-nginx-upload-module-72ec037_GH0.tar.gz) = 28303
 SHA256 (masterzen-nginx-upload-progress-module-afb2d31_GH0.tar.gz) = 6318851cc3a624aaad3b1f4cd9f51f79c86575c53dfe0c28bbdcf9470b6a33e6

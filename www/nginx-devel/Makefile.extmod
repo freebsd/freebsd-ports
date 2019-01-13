@@ -144,7 +144,7 @@ HTTP_SUBS_FILTER_CONFIGURE_ON=	--add-module=${WRKSRC_subs_filter}
 
 HTTP_TARANTOOL_LIB_DEPENDS=	libmsgpuck.so:devel/msgpuck \
 				libyajl.so:devel/yajl
-HTTP_TARANTOOL_GH_TUPLE=	tarantool:nginx_upstream_module:4ca8684:nginx_tarantool
+HTTP_TARANTOOL_GH_TUPLE=	tarantool:nginx_upstream_module:27836e4:nginx_tarantool
 HTTP_TARANTOOL_VARS=		DSO_EXTMODS+=nginx_tarantool
 HTTP_TARANTOOL_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_tarantool-config
 
