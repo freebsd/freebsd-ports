@@ -35,8 +35,7 @@
  #ifdef LIBMOTOVEC
  	b	memcpy		// b to memcpy with correct args in r3 and r4	
  #else
--	b	_vec_memcpy	// b to vec_memcpy with correct args in r3 and r4	
-+	b	_vec_memcpy@plt	// b to vec_memcpy with correct args in r3 and r4	
+	b	_vec_memcpy	// b to vec_memcpy with correct args in r3 and r4	
  #endif
 +	.size	vec_bcopy, . - vec_bcopy
  // End of bcopy in AltiVec
