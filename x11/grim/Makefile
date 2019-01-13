@@ -1,0 +1,33 @@
+# $FreeBSD$
+
+PORTNAME=	grim
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0
+CATEGORIES=	x11
+
+MAINTAINER=	jbeich@FreeBSD.org
+COMMENT=	Grab images from a Wayland compositor
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	wayland-protocols>=1.14:graphics/wayland-protocols
+LIB_DEPENDS=	libwayland-client.so:graphics/wayland
+
+USES=		compiler:c11 gnome jpeg meson pkgconfig
+USE_GITHUB=	yes
+USE_GNOME=	cairo
+GH_ACCOUNT=	emersion
+MESON_ARGS=	-Dwerror=false # https://github.com/emersion/grim/issues/37
+PLIST_FILES=	bin/${PORTNAME}
+
+OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFAULT=MANPAGES
+
+MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
+MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
+
+post-patch-MANPAGES-off:
+	@${REINPLACE_CMD} -i '' "s/'scdoc/&-disabled/" ${WRKSRC}/meson.build
+
+.include <bsd.port.mk>

@@ -85,6 +85,7 @@
     SUBDIR += gnustep-app
     SUBDIR += gpctool
     SUBDIR += grabc
+    SUBDIR += grim
     SUBDIR += gromit
     SUBDIR += gskrab
     SUBDIR += gstreamer1-plugins-x
@@ -303,6 +304,7 @@
     SUBDIR += slim
     SUBDIR += slock
     SUBDIR += slop
+    SUBDIR += slurp
     SUBDIR += smproxy
     SUBDIR += sselp
     SUBDIR += stalonetray
