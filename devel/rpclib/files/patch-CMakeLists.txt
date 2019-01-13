@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2019-01-11 12:07:42 UTC
++++ CMakeLists.txt
+@@ -126,7 +126,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
+     set(UNUSED_LAMBDA_CAPTURE_WARN_SUPPORTED)
+     check_warning_flag("unused-lambda-capture" UNUSED_LAMBDA_CAPTURE_WARN_SUPPORTED)
+     if(${UNUSED_LAMBDA_CAPTURE_WARN_SUPPORTED})
+-      list(APPEND RPCLIB_BUILD_FLAGS -Wno-no-unused-lambda-capture)
++      list(APPEND RPCLIB_BUILD_FLAGS -Wno-unused-lambda-capture)
+     endif()
+ 
+     check_warning_flag("zero-as-null-pointer-constant" ZERO_AS_NULL_POINTER_CONSTANT_WARN_SUPPORTED)
+@@ -251,6 +251,7 @@ if(NOT MSVC)  # Don't install pkg-config files when bu
+   set(libdir "${CMAKE_INSTALL_PREFIX}/lib")
+   set(includedir "${CMAKE_INSTALL_PREFIX}/include")
+   set(rpclib_version ${PROJECT_VERSION})
++  set(OUTPUT_LIBRARY_NAME ${PROJECT_NAME})
+   get_target_property(rpclib_cflags ${PROJECT_NAME} COMPILE_OPTIONS)
+   string(REPLACE ";" " " rpclib_cflags "${rpclib_cflags}") # Convert list to string
+ 
