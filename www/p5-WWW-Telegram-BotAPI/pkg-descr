@@ -2,4 +2,4 @@ This module provides an easy to use interface for the Telegram Bot API. It also
 supports async requests out of the box using Mojo::UserAgent, which makes this
 module easy to integrate with an existing Mojolicious application.
 
-WWW: http://search.cpan.org/dist/WWW-Telegram-BotAPI/
+WWW: https://metacpan.org/release/WWW-Telegram-BotAPI
