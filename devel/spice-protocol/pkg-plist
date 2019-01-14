@@ -2,7 +2,6 @@ include/spice-1/spice/barrier.h
 include/spice-1/spice/controller_prot.h
 include/spice-1/spice/end-packed.h
 include/spice-1/spice/enums.h
-include/spice-1/spice/error_codes.h
 include/spice-1/spice/foreign_menu_prot.h
 include/spice-1/spice/ipc_ring.h
 include/spice-1/spice/macros.h
