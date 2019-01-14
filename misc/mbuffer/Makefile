@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mbuffer
-PORTVERSION=	20180505
+PORTVERSION=	20190113
 CATEGORIES=	misc
 MASTER_SITES=	http://www.maier-komor.de/software/mbuffer/
 
@@ -16,23 +16,19 @@ TEST_DEPENDS=	gtar:archivers/gtar
 
 USES=		gmake localbase ssl tar:tgz
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	ac_cv_header_gcrypt_h=no \
-		ac_cv_search_gcry_cipher_algo_name=no
 TEST_ARGS=	TAR=gtar # for --ignore-failed-read
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=	MHASH
+OPTIONS_DEFINE=	GCRYPT MHASH RHASH
 OPTIONS_DEFAULT=	MHASH
 
+GCRYPT_DESC=	Use gcrypt for hash generation
 MHASH_DESC=	Use mhash for hash generation
+RHASH_DESC=	Use rhash for hash generation
 
-MHASH_LIB_DEPENDS=	libmhash.so:security/mhash
-MHASH_CONFIGURE_OFF=	ac_cv_search_mhash_init=no
-
-post-configure:
-	# Rename variables to make sure they aren't redefined through mhash.h
-	@${REINPLACE_CMD} -E -e 's@(PACKAGE|VERSION)@MBUFFER_\1@' \
-		${WRKSRC}/config.h ${WRKSRC}/settings.c
+GCRYPT_RUN_DEPENDS=	libgcrypt>=1.8.4_1:security/libgcrypt
+MHASH_RUN_DEPENDS=	mhash>=0.9.9.9_5:security/mhash
+RHASH_RUN_DEPENDS=	rhash>=1.3.5:security/rhash
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mbuffer
