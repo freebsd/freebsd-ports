@@ -15,6 +15,7 @@ BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake python shebangfix
+
 SHEBANG_FILES=	lib/term-highlight.py
 GNU_CONFIGURE=	yes
 NO_BUILD=	yes
