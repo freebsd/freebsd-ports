@@ -1,3 +1,12 @@
+%%PERL5_MAN3%%/DateTime::TimeZone.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::Catalog.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::Floating.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::Local.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::Local::Unix.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::Local::VMS.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::OffsetOnly.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::OlsonDB.3.gz
+%%PERL5_MAN3%%/DateTime::TimeZone::UTC.3.gz
 %%SITE_PERL%%/DateTime/TimeZone.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Abidjan.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Accra.pm
@@ -212,6 +221,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Pontianak.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Pyongyang.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Qatar.pm
+%%SITE_PERL%%/DateTime/TimeZone/Asia/Qostanay.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Qyzylorda.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Riyadh.pm
 %%SITE_PERL%%/DateTime/TimeZone/Asia/Sakhalin.pm
@@ -370,12 +380,3 @@
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Wallis.pm
 %%SITE_PERL%%/DateTime/TimeZone/UTC.pm
 %%SITE_PERL%%/DateTime/TimeZone/WET.pm
-%%PERL5_MAN3%%/DateTime::TimeZone.3.gz
-%%PERL5_MAN3%%/DateTime::TimeZone::Catalog.3.gz
-%%PERL5_MAN3%%/DateTime::TimeZone::Floating.3.gz
-%%PERL5_MAN3%%/DateTime::TimeZone::Local.3.gz
-%%PERL5_MAN3%%/DateTime::TimeZone::Local::Unix.3.gz
-%%PERL5_MAN3%%/DateTime::TimeZone::Local::VMS.3.gz
-%%PERL5_MAN3%%/DateTime::TimeZone::OffsetOnly.3.gz
-%%PERL5_MAN3%%/DateTime::TimeZone::OlsonDB.3.gz
-%%PERL5_MAN3%%/DateTime::TimeZone::UTC.3.gz
