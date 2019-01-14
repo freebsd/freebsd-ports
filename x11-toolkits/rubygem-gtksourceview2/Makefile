@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtksourceview2
-PORTVERSION=	3.3.0
+PORTVERSION=	3.3.1
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
