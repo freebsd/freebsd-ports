@@ -3,7 +3,7 @@
 
 PORTNAME=	omniorb
 DISTVERSION=	4.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/omniORBpy/omniORBpy-${DISTVERSION:S/-2//}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,20 +20,12 @@ RUN_DEPENDS=	omniidl:devel/omniORB
 # see also the "post-extract" target below.
 BUILD_DEPENDS=	${NONEXISTENT}:devel/omniORB:patch
 
-USES=		gmake shebangfix ssl tar:bzip2
+USES=		gmake python shebangfix ssl tar:bzip2
 USE_PYTHON=	py3kplist
 
 CONFLICTS=	py*-orbit-2* ${PYTHON_PKGNAMEPREFIX}omniorb3-3*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-OPTIONS_SINGLE=		PYTHON
-OPTIONS_SINGLE_PYTHON=	PYTHON2 PYTHON3
-OPTIONS_DEFAULT=PYTHON3
-OPTIONS_SUB=	yes
-PYTHON2_DESC=	Build and install Python 2.X packages
-PYTHON3_DESC=	Build and install Python 3.X packages
-PYTHON2_USES=	python:2.7
-PYTHON3_USES=	python:3.6+
 
 PLIST_SUB=	SONUM=2
 
