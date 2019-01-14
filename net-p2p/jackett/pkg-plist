@@ -139,6 +139,7 @@
 %%DATADIR%%/Definitions/hdtorrentsit.yml
 %%DATADIR%%/Definitions/hon3yhd.yml
 %%DATADIR%%/Definitions/hqsource.yml
+%%DATADIR%%/Definitions/hush.yml
 %%DATADIR%%/Definitions/hyperay.yml
 %%DATADIR%%/Definitions/icetorrent.yml
 %%DATADIR%%/Definitions/idopeclone.yml
@@ -404,6 +405,7 @@
 %%DATADIR%%/System.Globalization.dll
 %%DATADIR%%/System.IO.Compression.ZipFile.dll
 %%DATADIR%%/System.IO.Compression.dll
+%%DATADIR%%/System.IO.FileSystem.AccessControl.dll
 %%DATADIR%%/System.IO.FileSystem.DriveInfo.dll
 %%DATADIR%%/System.IO.FileSystem.Primitives.dll
 %%DATADIR%%/System.IO.FileSystem.Watcher.dll
@@ -434,7 +436,6 @@
 %%DATADIR%%/System.Reflection.Extensions.dll
 %%DATADIR%%/System.Reflection.Metadata.dll
 %%DATADIR%%/System.Reflection.Primitives.dll
-%%DATADIR%%/System.Reflection.TypeExtensions.dll
 %%DATADIR%%/System.Reflection.dll
 %%DATADIR%%/System.Resources.Reader.dll
 %%DATADIR%%/System.Resources.ResourceManager.dll
@@ -481,6 +482,7 @@
 %%DATADIR%%/System.Xml.ReaderWriter.dll
 %%DATADIR%%/System.Xml.XDocument.dll
 %%DATADIR%%/System.Xml.XPath.XDocument.dll
+%%DATADIR%%/System.Xml.XPath.XmlDocument.dll
 %%DATADIR%%/System.Xml.XPath.dll
 %%DATADIR%%/System.Xml.XmlDocument.dll
 %%DATADIR%%/System.Xml.XmlSerializer.dll
