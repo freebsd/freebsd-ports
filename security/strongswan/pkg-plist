@@ -1,319 +1,5 @@
-lib/ipsec/libcharon.la
-lib/ipsec/libcharon.so
-lib/ipsec/libcharon.so.0
-%%TPM%%lib/ipsec/libtpmtss.la
-%%TPM%%lib/ipsec/libtpmtss.so
-%%TPM%%lib/ipsec/libtpmtss.so.0
-%%TPM%%lib/ipsec/libtpmtss.so.0.0.0
-lib/ipsec/libstrongswan.la
-lib/ipsec/libstrongswan.so
-lib/ipsec/libstrongswan.so.0
-lib/ipsec/libtls.la
-lib/ipsec/libtls.so
-lib/ipsec/libtls.so.0
-lib/ipsec/plugins/libstrongswan-addrblock.la
-lib/ipsec/plugins/libstrongswan-addrblock.so
-lib/ipsec/plugins/libstrongswan-aes.la
-lib/ipsec/plugins/libstrongswan-aes.so
-lib/ipsec/plugins/libstrongswan-attr.la
-lib/ipsec/plugins/libstrongswan-attr.so
-lib/ipsec/plugins/libstrongswan-blowfish.la
-lib/ipsec/plugins/libstrongswan-blowfish.so
-lib/ipsec/plugins/libstrongswan-cmac.la
-lib/ipsec/plugins/libstrongswan-cmac.so
-lib/ipsec/plugins/libstrongswan-constraints.la
-lib/ipsec/plugins/libstrongswan-constraints.so
-lib/ipsec/plugins/libstrongswan-counters.la
-lib/ipsec/plugins/libstrongswan-counters.so
-lib/ipsec/plugins/libstrongswan-curve25519.la
-lib/ipsec/plugins/libstrongswan-curve25519.so
-lib/ipsec/plugins/libstrongswan-des.la
-lib/ipsec/plugins/libstrongswan-des.so
-lib/ipsec/plugins/libstrongswan-dnskey.la
-lib/ipsec/plugins/libstrongswan-dnskey.so
-lib/ipsec/plugins/libstrongswan-eap-identity.la
-lib/ipsec/plugins/libstrongswan-eap-identity.so
-lib/ipsec/plugins/libstrongswan-eap-md5.la
-lib/ipsec/plugins/libstrongswan-eap-md5.so
-lib/ipsec/plugins/libstrongswan-eap-mschapv2.la
-lib/ipsec/plugins/libstrongswan-eap-mschapv2.so
-lib/ipsec/plugins/libstrongswan-eap-peap.la
-lib/ipsec/plugins/libstrongswan-eap-peap.so
-lib/ipsec/plugins/libstrongswan-eap-tls.la
-lib/ipsec/plugins/libstrongswan-eap-tls.so
-lib/ipsec/plugins/libstrongswan-eap-ttls.la
-lib/ipsec/plugins/libstrongswan-eap-ttls.so
-lib/ipsec/plugins/libstrongswan-fips-prf.la
-lib/ipsec/plugins/libstrongswan-fips-prf.so
-lib/ipsec/plugins/libstrongswan-hmac.la
-lib/ipsec/plugins/libstrongswan-hmac.so
-lib/ipsec/plugins/libstrongswan-kernel-pfkey.la
-lib/ipsec/plugins/libstrongswan-kernel-pfkey.so
-lib/ipsec/plugins/libstrongswan-kernel-pfroute.la
-lib/ipsec/plugins/libstrongswan-kernel-pfroute.so
-lib/ipsec/plugins/libstrongswan-md4.la
-lib/ipsec/plugins/libstrongswan-md4.so
-lib/ipsec/plugins/libstrongswan-md5.la
-lib/ipsec/plugins/libstrongswan-md5.so
-lib/ipsec/plugins/libstrongswan-nonce.la
-lib/ipsec/plugins/libstrongswan-nonce.so
-lib/ipsec/plugins/libstrongswan-openssl.la
-lib/ipsec/plugins/libstrongswan-openssl.so
-lib/ipsec/plugins/libstrongswan-pem.la
-lib/ipsec/plugins/libstrongswan-pem.so
-lib/ipsec/plugins/libstrongswan-pgp.la
-lib/ipsec/plugins/libstrongswan-pgp.so
-lib/ipsec/plugins/libstrongswan-pkcs1.la
-lib/ipsec/plugins/libstrongswan-pkcs1.so
-lib/ipsec/plugins/libstrongswan-pkcs7.la
-lib/ipsec/plugins/libstrongswan-pkcs7.so
-lib/ipsec/plugins/libstrongswan-pkcs8.la
-lib/ipsec/plugins/libstrongswan-pkcs8.so
-lib/ipsec/plugins/libstrongswan-pkcs12.la
-lib/ipsec/plugins/libstrongswan-pkcs12.so
-lib/ipsec/plugins/libstrongswan-pubkey.la
-lib/ipsec/plugins/libstrongswan-pubkey.so
-lib/ipsec/plugins/libstrongswan-random.la
-lib/ipsec/plugins/libstrongswan-random.so
-lib/ipsec/plugins/libstrongswan-rc2.la
-lib/ipsec/plugins/libstrongswan-rc2.so
-lib/ipsec/plugins/libstrongswan-resolve.la
-lib/ipsec/plugins/libstrongswan-resolve.so
-lib/ipsec/plugins/libstrongswan-revocation.la
-lib/ipsec/plugins/libstrongswan-revocation.so
-lib/ipsec/plugins/libstrongswan-sha1.la
-lib/ipsec/plugins/libstrongswan-sha1.so
-lib/ipsec/plugins/libstrongswan-sha2.la
-lib/ipsec/plugins/libstrongswan-sha2.so
-lib/ipsec/plugins/libstrongswan-socket-default.la
-lib/ipsec/plugins/libstrongswan-socket-default.so
-lib/ipsec/plugins/libstrongswan-sshkey.la
-lib/ipsec/plugins/libstrongswan-sshkey.so
-lib/ipsec/plugins/libstrongswan-stroke.la
-lib/ipsec/plugins/libstrongswan-stroke.so
-lib/ipsec/plugins/libstrongswan-updown.la
-lib/ipsec/plugins/libstrongswan-updown.so
-lib/ipsec/plugins/libstrongswan-whitelist.la
-lib/ipsec/plugins/libstrongswan-whitelist.so
-lib/ipsec/plugins/libstrongswan-x509.la
-lib/ipsec/plugins/libstrongswan-x509.so
-lib/ipsec/plugins/libstrongswan-xcbc.la
-lib/ipsec/plugins/libstrongswan-xcbc.so
-libexec/ipsec/_copyright
-libexec/ipsec/_updown
-libexec/ipsec/charon
-libexec/ipsec/starter
-libexec/ipsec/stroke
-libexec/ipsec/whitelist
-sbin/ipsec
-sbin/charon-cmd
-%%DATADIR%%/templates/config/plugins/addrblock.conf
-%%DATADIR%%/templates/config/plugins/aes.conf
-%%DATADIR%%/templates/config/plugins/attr.conf
-%%DATADIR%%/templates/config/plugins/blowfish.conf
-%%DATADIR%%/templates/config/plugins/cmac.conf
-%%DATADIR%%/templates/config/plugins/constraints.conf
-%%DATADIR%%/templates/config/plugins/counters.conf
-%%DATADIR%%/templates/config/plugins/curve25519.conf
-%%DATADIR%%/templates/config/plugins/des.conf
-%%DATADIR%%/templates/config/plugins/dnskey.conf
-%%DATADIR%%/templates/config/plugins/eap-identity.conf
-%%DATADIR%%/templates/config/plugins/eap-md5.conf
-%%DATADIR%%/templates/config/plugins/eap-mschapv2.conf
-%%DATADIR%%/templates/config/plugins/eap-peap.conf
-%%DATADIR%%/templates/config/plugins/eap-tls.conf
-%%DATADIR%%/templates/config/plugins/eap-ttls.conf
-%%DATADIR%%/templates/config/plugins/fips-prf.conf
-%%DATADIR%%/templates/config/plugins/hmac.conf
-%%DATADIR%%/templates/config/plugins/kernel-pfkey.conf
-%%DATADIR%%/templates/config/plugins/kernel-pfroute.conf
-%%DATADIR%%/templates/config/plugins/md4.conf
-%%DATADIR%%/templates/config/plugins/md5.conf
-%%DATADIR%%/templates/config/plugins/nonce.conf
-%%DATADIR%%/templates/config/plugins/openssl.conf
-%%DATADIR%%/templates/config/plugins/pem.conf
-%%DATADIR%%/templates/config/plugins/pgp.conf
-%%DATADIR%%/templates/config/plugins/pkcs1.conf
-%%DATADIR%%/templates/config/plugins/pkcs12.conf
-%%DATADIR%%/templates/config/plugins/pkcs7.conf
-%%DATADIR%%/templates/config/plugins/pkcs8.conf
-%%DATADIR%%/templates/config/plugins/pubkey.conf
-%%DATADIR%%/templates/config/plugins/random.conf
-%%DATADIR%%/templates/config/plugins/rc2.conf
-%%DATADIR%%/templates/config/plugins/resolve.conf
-%%DATADIR%%/templates/config/plugins/revocation.conf
-%%DATADIR%%/templates/config/plugins/sha1.conf
-%%DATADIR%%/templates/config/plugins/sha2.conf
-%%DATADIR%%/templates/config/plugins/socket-default.conf
-%%DATADIR%%/templates/config/plugins/sshkey.conf
-%%DATADIR%%/templates/config/plugins/stroke.conf
-%%DATADIR%%/templates/config/plugins/updown.conf
-%%DATADIR%%/templates/config/plugins/whitelist.conf
-%%DATADIR%%/templates/config/plugins/x509.conf
-%%DATADIR%%/templates/config/plugins/xcbc.conf
-%%DATADIR%%/templates/config/strongswan.conf
-%%DATADIR%%/templates/config/strongswan.d/charon-logging.conf
-%%DATADIR%%/templates/config/strongswan.d/charon.conf
-%%DATADIR%%/templates/config/strongswan.d/starter.conf
-man/man5/strongswan.conf.5.gz
-man/man5/ipsec.conf.5.gz
-man/man5/ipsec.secrets.5.gz
-man/man8/ipsec.8.gz
-man/man8/charon-cmd.8.gz
-%%EAPRADIUS%%lib/ipsec/libradius.la
-%%EAPRADIUS%%lib/ipsec/libradius.so
-%%EAPRADIUS%%lib/ipsec/libradius.so.0
-%%EAPRADIUS%%lib/ipsec/libradius.so.0.0.0
-%%SIMAKA%%lib/ipsec/libsimaka.la
-%%SIMAKA%%lib/ipsec/libsimaka.so
-%%SIMAKA%%lib/ipsec/libsimaka.so.0
-%%SIMAKA%%lib/ipsec/libsimaka.so.0.0.0
-%%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-eap-aka.la
-%%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-eap-aka.so
-%%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-eap-aka-3gpp2.la
-%%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-eap-aka-3gpp2.so
-%%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-gmp.la
-%%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-gmp.so
-%%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-mgf1.la
-%%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-mgf1.so
-%%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/eap-aka-3gpp2.conf
-%%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/eap-aka-3gpp2.conf.sample
-%%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/eap-aka.conf
-%%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/eap-aka.conf.sample
-%%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/gmp.conf
-%%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/gmp.conf.sample
-%%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/mgf1.conf
-%%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/mgf1.conf.sample
-%%EAPDYNAMIC%%lib/ipsec/plugins/libstrongswan-eap-dynamic.la
-%%EAPDYNAMIC%%lib/ipsec/plugins/libstrongswan-eap-dynamic.so
-%%EAPDYNAMIC%%%%DATADIR%%/templates/config/plugins/eap-dynamic.conf
-%%EAPDYNAMIC%%@sample %%ETCDIR%%.d/charon/eap-dynamic.conf.sample
-%%EAPRADIUS%%lib/ipsec/plugins/libstrongswan-eap-radius.la
-%%EAPRADIUS%%lib/ipsec/plugins/libstrongswan-eap-radius.so
-%%EAPRADIUS%%%%DATADIR%%/templates/config/plugins/eap-radius.conf
-%%EAPRADIUS%%@sample %%ETCDIR%%.d/charon/eap-radius.conf.sample
-%%EAPSIMFILE%%lib/ipsec/plugins/libstrongswan-eap-sim.la
-%%EAPSIMFILE%%lib/ipsec/plugins/libstrongswan-eap-sim.so
-%%EAPSIMFILE%%lib/ipsec/plugins/libstrongswan-eap-sim-file.la
-%%EAPSIMFILE%%lib/ipsec/plugins/libstrongswan-eap-sim-file.so
-%%EAPSIMFILE%%%%DATADIR%%/templates/config/plugins/eap-sim-file.conf
-%%EAPSIMFILE%%@sample %%ETCDIR%%.d/charon/eap-sim-file.conf.sample
-%%EAPSIMFILE%%%%DATADIR%%/templates/config/plugins/eap-sim.conf
-%%EAPSIMFILE%%@sample %%ETCDIR%%.d/charon/eap-sim.conf.sample
-%%CURL%%lib/ipsec/plugins/libstrongswan-curl.la
-%%CURL%%lib/ipsec/plugins/libstrongswan-curl.so
-%%CURL%%%%DATADIR%%/templates/config/plugins/curl.conf
-%%CURL%%@sample %%ETCDIR%%.d/charon/curl.conf.sample
-%%GCM%%%%DATADIR%%/templates/config/plugins/gcm.conf
-%%GCM%%lib/ipsec/plugins/libstrongswan-gcm.la
-%%GCM%%lib/ipsec/plugins/libstrongswan-gcm.so
-%%GCM%%@sample %%ETCDIR%%.d/charon/gcm.conf.sample
-%%IKEV1%%lib/ipsec/plugins/libstrongswan-xauth-generic.la
-%%IKEV1%%lib/ipsec/plugins/libstrongswan-xauth-generic.so
-%%IPSECKEY%%lib/ipsec/plugins/libstrongswan-ipseckey.la
-%%IPSECKEY%%lib/ipsec/plugins/libstrongswan-ipseckey.so
-%%IPSECKEY%%%%DATADIR%%/templates/config/plugins/ipseckey.conf
-%%IPSECKEY%%@sample %%ETCDIR%%.d/charon/ipseckey.conf.sample
-%%KERNELLIBIPSEC%%lib/ipsec/libipsec.la
-%%KERNELLIBIPSEC%%lib/ipsec/libipsec.so
-%%KERNELLIBIPSEC%%lib/ipsec/libipsec.so.0
-%%KERNELLIBIPSEC%%lib/ipsec/libipsec.so.0.0.0
-%%KERNELLIBIPSEC%%lib/ipsec/plugins/libstrongswan-kernel-libipsec.la
-%%KERNELLIBIPSEC%%lib/ipsec/plugins/libstrongswan-kernel-libipsec.so
-%%KERNELLIBIPSEC%%%%DATADIR%%/templates/config/plugins/kernel-libipsec.conf
-%%KERNELLIBIPSEC%%@sample %%ETCDIR%%.d/charon/kernel-libipsec.conf.sample
-%%LOADTESTER%%lib/ipsec/plugins/libstrongswan-load-tester.la
-%%LOADTESTER%%lib/ipsec/plugins/libstrongswan-load-tester.so
-%%LOADTESTER%%libexec/ipsec/load-tester
-%%LOADTESTER%%%%DATADIR%%/templates/config/plugins/load-tester.conf
-%%LOADTESTER%%@sample %%ETCDIR%%.d/charon/load-tester.conf.sample
-%%LDAP%%lib/ipsec/plugins/libstrongswan-ldap.la
-%%LDAP%%lib/ipsec/plugins/libstrongswan-ldap.so
-%%LDAP%%%%DATADIR%%/templates/config/plugins/ldap.conf
-%%LDAP%%@sample %%ETCDIR%%.d/charon/ldap.conf.sample
-%%MYSQL%%lib/ipsec/plugins/libstrongswan-mysql.la
-%%MYSQL%%lib/ipsec/plugins/libstrongswan-mysql.so
-%%MYSQL%%%%DATADIR%%/templates/config/plugins/mysql.conf
-%%MYSQL%%@sample %%ETCDIR%%.d/charon/mysql.conf.sample
-%%SQL%%lib/ipsec/plugins/libstrongswan-attr-sql.la
-%%SQL%%lib/ipsec/plugins/libstrongswan-attr-sql.so
-%%SQL%%%%DATADIR%%/templates/config/plugins/attr-sql.conf
-%%SQL%%@sample %%ETCDIR%%.d/charon/attr-sql.conf.sample
-%%SQL%%lib/ipsec/plugins/libstrongswan-sql.la
-%%SQL%%lib/ipsec/plugins/libstrongswan-sql.so
-%%SQL%%%%DATADIR%%/templates/config/plugins/sql.conf
-%%SQL%%@sample %%ETCDIR%%.d/charon/sql.conf.sample
-%%SQL%%libexec/ipsec/pool
-%%SQL%%%%DATADIR%%/templates/config/strongswan.d/pool.conf
-%%SQL%%@sample %%ETCDIR%%.d/pool.conf.sample
-%%SQL%%%%DATADIR%%/templates/database/sql/mysql.sql
-%%SQL%%%%DATADIR%%/templates/database/sql/sqlite.sql
-%%SQLITE%%lib/ipsec/plugins/libstrongswan-sqlite.la
-%%SQLITE%%lib/ipsec/plugins/libstrongswan-sqlite.so
-%%SQLITE%%%%DATADIR%%/templates/config/plugins/sqlite.conf
-%%SQLITE%%@sample %%ETCDIR%%.d/charon/sqlite.conf.sample
-%%TESTVECTOR%%lib/ipsec/plugins/libstrongswan-test-vectors.la
-%%TESTVECTOR%%lib/ipsec/plugins/libstrongswan-test-vectors.so
-%%TESTVECTOR%%%%DATADIR%%/templates/config/plugins/test-vectors.conf
-%%TESTVECTOR%%@sample %%ETCDIR%%.d/charon/test-vectors.conf.sample
 %%PKI%%bin/pki
-%%PKI%%man/man1/pki---acert.1.gz
-%%PKI%%man/man1/pki---dn.1.gz
-%%PKI%%man/man1/pki---gen.1.gz
-%%PKI%%man/man1/pki---issue.1.gz
-%%PKI%%man/man1/pki---keyid.1.gz
-%%PKI%%man/man1/pki---pkcs7.1.gz
-%%PKI%%man/man1/pki---print.1.gz
-%%PKI%%man/man1/pki---pub.1.gz
-%%PKI%%man/man1/pki---req.1.gz
-%%PKI%%man/man1/pki---self.1.gz
-%%PKI%%man/man1/pki---signcrl.1.gz
-%%PKI%%man/man1/pki---verify.1.gz
-%%PKI%%man/man1/pki.1.gz
-%%PKI%%%%DATADIR%%/templates/config/strongswan.d/pki.conf
-%%PKI%%@sample %%ETCDIR%%.d/pki.conf.sample
-%%SCEP%%libexec/ipsec/scepclient
-%%SCEP%%man/man8/scepclient.8.gz
-%%SCEP%%%%DATADIR%%/templates/config/strongswan.d/scepclient.conf
-%%SCEP%%@sample %%ETCDIR%%.d/scepclient.conf.sample
-%%SMP%%%%DATADIR%%/templates/config/plugins/smp.conf
-%%SMP%%lib/ipsec/plugins/libstrongswan-smp.la
-%%SMP%%lib/ipsec/plugins/libstrongswan-smp.so
-%%SMP%%@sample %%ETCDIR%%.d/charon/smp.conf.sample
-%%SWANCTL%%%%DATADIR%%/templates/config/strongswan.d/swanctl.conf
-%%SWANCTL%%sbin/swanctl
-%%SWANCTL%%man/man5/swanctl.conf.5.gz
-%%SWANCTL%%man/man8/swanctl.8.gz
-%%SWANCTL%%@sample %%ETCDIR%%.d/swanctl.conf.sample
-%%SWANCTL%%@sample etc/swanctl/swanctl.conf.sample
 %%TPM%%bin/tpm_extendpcr
-%%TPM%%@sample %%ETCDIR%%.d/charon/tpm.conf.sample
-%%TPM%%lib/ipsec/plugins/libstrongswan-tpm.la
-%%TPM%%lib/ipsec/plugins/libstrongswan-tpm.so
-%%TPM%%%%DATADIR%%/templates/config/plugins/tpm.conf
-%%UNBOUND%%lib/ipsec/plugins/libstrongswan-unbound.la
-%%UNBOUND%%lib/ipsec/plugins/libstrongswan-unbound.so
-%%UNBOUND%%%%DATADIR%%/templates/config/plugins/unbound.conf
-%%UNBOUND%%@sample %%ETCDIR%%.d/charon/unbound.conf.sample
-%%UNITY%%%%DATADIR%%/templates/config/plugins/unity.conf
-%%UNITY%%lib/ipsec/plugins/libstrongswan-unity.la
-%%UNITY%%lib/ipsec/plugins/libstrongswan-unity.so
-%%UNITY%%@sample %%ETCDIR%%.d/charon/unity.conf.sample
-%%VICI%%%%DATADIR%%/templates/config/plugins/vici.conf
-%%VICI%%lib/ipsec/libvici.la
-%%VICI%%lib/ipsec/libvici.so
-%%VICI%%lib/ipsec/libvici.so.0
-%%VICI%%lib/ipsec/libvici.so.0.0.0
-%%VICI%%lib/ipsec/plugins/libstrongswan-vici.la
-%%VICI%%lib/ipsec/plugins/libstrongswan-vici.so
-%%VICI%%@sample %%ETCDIR%%.d/charon/vici.conf.sample
-%%VICI%%include/libvici.h
-%%XAUTH%%lib/ipsec/plugins/libstrongswan-xauth-eap.la
-%%XAUTH%%lib/ipsec/plugins/libstrongswan-xauth-eap.so
-%%XAUTH%%%%DATADIR%%/templates/config/plugins/xauth-eap.conf
-%%XAUTH%%@sample %%ETCDIR%%.d/charon/xauth-eap.conf.sample
-%%XAUTHGEN%%%%DATADIR%%/templates/config/plugins/xauth-generic.conf
-%%XAUTHGEN%%@sample %%ETCDIR%%.d/charon/xauth-generic.conf.sample
 @sample etc/ipsec.conf.sample
 @sample etc/ipsec.secrets.sample
 @sample %%ETCDIR%%.conf.sample
@@ -321,26 +7,42 @@ man/man8/charon-cmd.8.gz
 @sample %%ETCDIR%%.d/charon.conf.sample
 @sample %%ETCDIR%%.d/charon/addrblock.conf.sample
 @sample %%ETCDIR%%.d/charon/aes.conf.sample
+%%SQL%%@sample %%ETCDIR%%.d/charon/attr-sql.conf.sample
 @sample %%ETCDIR%%.d/charon/attr.conf.sample
 @sample %%ETCDIR%%.d/charon/blowfish.conf.sample
 @sample %%ETCDIR%%.d/charon/cmac.conf.sample
 @sample %%ETCDIR%%.d/charon/constraints.conf.sample
 @sample %%ETCDIR%%.d/charon/counters.conf.sample
+%%CURL%%@sample %%ETCDIR%%.d/charon/curl.conf.sample
 @sample %%ETCDIR%%.d/charon/curve25519.conf.sample
 @sample %%ETCDIR%%.d/charon/des.conf.sample
 @sample %%ETCDIR%%.d/charon/dnskey.conf.sample
+%%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/eap-aka-3gpp2.conf.sample
+%%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/eap-aka.conf.sample
+%%EAPDYNAMIC%%@sample %%ETCDIR%%.d/charon/eap-dynamic.conf.sample
 @sample %%ETCDIR%%.d/charon/eap-identity.conf.sample
 @sample %%ETCDIR%%.d/charon/eap-md5.conf.sample
 @sample %%ETCDIR%%.d/charon/eap-mschapv2.conf.sample
 @sample %%ETCDIR%%.d/charon/eap-peap.conf.sample
+%%EAPRADIUS%%@sample %%ETCDIR%%.d/charon/eap-radius.conf.sample
+%%EAPSIMFILE%%@sample %%ETCDIR%%.d/charon/eap-sim-file.conf.sample
+%%EAPSIMFILE%%@sample %%ETCDIR%%.d/charon/eap-sim.conf.sample
 @sample %%ETCDIR%%.d/charon/eap-tls.conf.sample
 @sample %%ETCDIR%%.d/charon/eap-ttls.conf.sample
 @sample %%ETCDIR%%.d/charon/fips-prf.conf.sample
+%%GCM%%@sample %%ETCDIR%%.d/charon/gcm.conf.sample
+%%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/gmp.conf.sample
 @sample %%ETCDIR%%.d/charon/hmac.conf.sample
+%%IPSECKEY%%@sample %%ETCDIR%%.d/charon/ipseckey.conf.sample
+%%KERNELLIBIPSEC%%@sample %%ETCDIR%%.d/charon/kernel-libipsec.conf.sample
 @sample %%ETCDIR%%.d/charon/kernel-pfkey.conf.sample
 @sample %%ETCDIR%%.d/charon/kernel-pfroute.conf.sample
+%%LDAP%%@sample %%ETCDIR%%.d/charon/ldap.conf.sample
+%%LOADTESTER%%@sample %%ETCDIR%%.d/charon/load-tester.conf.sample
 @sample %%ETCDIR%%.d/charon/md4.conf.sample
 @sample %%ETCDIR%%.d/charon/md5.conf.sample
+%%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/mgf1.conf.sample
+%%MYSQL%%@sample %%ETCDIR%%.d/charon/mysql.conf.sample
 @sample %%ETCDIR%%.d/charon/nonce.conf.sample
 @sample %%ETCDIR%%.d/charon/openssl.conf.sample
 @sample %%ETCDIR%%.d/charon/pem.conf.sample
@@ -356,17 +58,315 @@ man/man8/charon-cmd.8.gz
 @sample %%ETCDIR%%.d/charon/revocation.conf.sample
 @sample %%ETCDIR%%.d/charon/sha1.conf.sample
 @sample %%ETCDIR%%.d/charon/sha2.conf.sample
+%%SMP%%@sample %%ETCDIR%%.d/charon/smp.conf.sample
 @sample %%ETCDIR%%.d/charon/socket-default.conf.sample
+%%SQL%%@sample %%ETCDIR%%.d/charon/sql.conf.sample
+%%SQLITE%%@sample %%ETCDIR%%.d/charon/sqlite.conf.sample
 @sample %%ETCDIR%%.d/charon/sshkey.conf.sample
 @sample %%ETCDIR%%.d/charon/stroke.conf.sample
+%%TESTVECTOR%%@sample %%ETCDIR%%.d/charon/test-vectors.conf.sample
+%%TPM%%@sample %%ETCDIR%%.d/charon/tpm.conf.sample
+%%UNBOUND%%@sample %%ETCDIR%%.d/charon/unbound.conf.sample
+%%UNITY%%@sample %%ETCDIR%%.d/charon/unity.conf.sample
 @sample %%ETCDIR%%.d/charon/updown.conf.sample
+%%VICI%%@sample %%ETCDIR%%.d/charon/vici.conf.sample
 @sample %%ETCDIR%%.d/charon/whitelist.conf.sample
 @sample %%ETCDIR%%.d/charon/x509.conf.sample
+%%XAUTH%%@sample %%ETCDIR%%.d/charon/xauth-eap.conf.sample
+%%XAUTHGEN%%@sample %%ETCDIR%%.d/charon/xauth-generic.conf.sample
 @sample %%ETCDIR%%.d/charon/xcbc.conf.sample
+%%PKI%%@sample %%ETCDIR%%.d/pki.conf.sample
+%%SQL%%@sample %%ETCDIR%%.d/pool.conf.sample
+%%SCEP%%@sample %%ETCDIR%%.d/scepclient.conf.sample
 @sample %%ETCDIR%%.d/starter.conf.sample
+%%SWANCTL%%@sample %%ETCDIR%%.d/swanctl.conf.sample
+%%SWANCTL%%@sample etc/swanctl/swanctl.conf.sample
+%%VICI%%include/libvici.h
+lib/ipsec/libcharon.la
+lib/ipsec/libcharon.so
+lib/ipsec/libcharon.so.0
 lib/ipsec/libcharon.so.0.0.0
+%%KERNELLIBIPSEC%%lib/ipsec/libipsec.la
+%%KERNELLIBIPSEC%%lib/ipsec/libipsec.so
+%%KERNELLIBIPSEC%%lib/ipsec/libipsec.so.0
+%%KERNELLIBIPSEC%%lib/ipsec/libipsec.so.0.0.0
+%%EAPRADIUS%%lib/ipsec/libradius.la
+%%EAPRADIUS%%lib/ipsec/libradius.so
+%%EAPRADIUS%%lib/ipsec/libradius.so.0
+%%EAPRADIUS%%lib/ipsec/libradius.so.0.0.0
+%%SIMAKA%%lib/ipsec/libsimaka.la
+%%SIMAKA%%lib/ipsec/libsimaka.so
+%%SIMAKA%%lib/ipsec/libsimaka.so.0
+%%SIMAKA%%lib/ipsec/libsimaka.so.0.0.0
+lib/ipsec/libstrongswan.la
+lib/ipsec/libstrongswan.so
+lib/ipsec/libstrongswan.so.0
 lib/ipsec/libstrongswan.so.0.0.0
+lib/ipsec/libtls.la
+lib/ipsec/libtls.so
+lib/ipsec/libtls.so.0
 lib/ipsec/libtls.so.0.0.0
+%%TPM%%lib/ipsec/libtpmtss.la
+%%TPM%%lib/ipsec/libtpmtss.so
+%%TPM%%lib/ipsec/libtpmtss.so.0
+%%TPM%%lib/ipsec/libtpmtss.so.0.0.0
+%%VICI%%lib/ipsec/libvici.la
+%%VICI%%lib/ipsec/libvici.so
+%%VICI%%lib/ipsec/libvici.so.0
+%%VICI%%lib/ipsec/libvici.so.0.0.0
+lib/ipsec/plugins/libstrongswan-addrblock.la
+lib/ipsec/plugins/libstrongswan-addrblock.so
+lib/ipsec/plugins/libstrongswan-aes.la
+lib/ipsec/plugins/libstrongswan-aes.so
+%%SQL%%lib/ipsec/plugins/libstrongswan-attr-sql.la
+%%SQL%%lib/ipsec/plugins/libstrongswan-attr-sql.so
+lib/ipsec/plugins/libstrongswan-attr.la
+lib/ipsec/plugins/libstrongswan-attr.so
+lib/ipsec/plugins/libstrongswan-blowfish.la
+lib/ipsec/plugins/libstrongswan-blowfish.so
+lib/ipsec/plugins/libstrongswan-cmac.la
+lib/ipsec/plugins/libstrongswan-cmac.so
+lib/ipsec/plugins/libstrongswan-constraints.la
+lib/ipsec/plugins/libstrongswan-constraints.so
+lib/ipsec/plugins/libstrongswan-counters.la
+lib/ipsec/plugins/libstrongswan-counters.so
+%%CURL%%lib/ipsec/plugins/libstrongswan-curl.la
+%%CURL%%lib/ipsec/plugins/libstrongswan-curl.so
+lib/ipsec/plugins/libstrongswan-curve25519.la
+lib/ipsec/plugins/libstrongswan-curve25519.so
+lib/ipsec/plugins/libstrongswan-des.la
+lib/ipsec/plugins/libstrongswan-des.so
+lib/ipsec/plugins/libstrongswan-dnskey.la
+lib/ipsec/plugins/libstrongswan-dnskey.so
+%%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-eap-aka-3gpp2.la
+%%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-eap-aka-3gpp2.so
+%%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-eap-aka.la
+%%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-eap-aka.so
+%%EAPDYNAMIC%%lib/ipsec/plugins/libstrongswan-eap-dynamic.la
+%%EAPDYNAMIC%%lib/ipsec/plugins/libstrongswan-eap-dynamic.so
+lib/ipsec/plugins/libstrongswan-eap-identity.la
+lib/ipsec/plugins/libstrongswan-eap-identity.so
+lib/ipsec/plugins/libstrongswan-eap-md5.la
+lib/ipsec/plugins/libstrongswan-eap-md5.so
+lib/ipsec/plugins/libstrongswan-eap-mschapv2.la
+lib/ipsec/plugins/libstrongswan-eap-mschapv2.so
+lib/ipsec/plugins/libstrongswan-eap-peap.la
+lib/ipsec/plugins/libstrongswan-eap-peap.so
+%%EAPRADIUS%%lib/ipsec/plugins/libstrongswan-eap-radius.la
+%%EAPRADIUS%%lib/ipsec/plugins/libstrongswan-eap-radius.so
+%%EAPSIMFILE%%lib/ipsec/plugins/libstrongswan-eap-sim-file.la
+%%EAPSIMFILE%%lib/ipsec/plugins/libstrongswan-eap-sim-file.so
+%%EAPSIMFILE%%lib/ipsec/plugins/libstrongswan-eap-sim.la
+%%EAPSIMFILE%%lib/ipsec/plugins/libstrongswan-eap-sim.so
+lib/ipsec/plugins/libstrongswan-eap-tls.la
+lib/ipsec/plugins/libstrongswan-eap-tls.so
+lib/ipsec/plugins/libstrongswan-eap-ttls.la
+lib/ipsec/plugins/libstrongswan-eap-ttls.so
+lib/ipsec/plugins/libstrongswan-fips-prf.la
+lib/ipsec/plugins/libstrongswan-fips-prf.so
+%%GCM%%lib/ipsec/plugins/libstrongswan-gcm.la
+%%GCM%%lib/ipsec/plugins/libstrongswan-gcm.so
+%%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-gmp.la
+%%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-gmp.so
+lib/ipsec/plugins/libstrongswan-hmac.la
+lib/ipsec/plugins/libstrongswan-hmac.so
+%%IPSECKEY%%lib/ipsec/plugins/libstrongswan-ipseckey.la
+%%IPSECKEY%%lib/ipsec/plugins/libstrongswan-ipseckey.so
+%%KERNELLIBIPSEC%%lib/ipsec/plugins/libstrongswan-kernel-libipsec.la
+%%KERNELLIBIPSEC%%lib/ipsec/plugins/libstrongswan-kernel-libipsec.so
+lib/ipsec/plugins/libstrongswan-kernel-pfkey.la
+lib/ipsec/plugins/libstrongswan-kernel-pfkey.so
+lib/ipsec/plugins/libstrongswan-kernel-pfroute.la
+lib/ipsec/plugins/libstrongswan-kernel-pfroute.so
+%%LDAP%%lib/ipsec/plugins/libstrongswan-ldap.la
+%%LDAP%%lib/ipsec/plugins/libstrongswan-ldap.so
+%%LOADTESTER%%lib/ipsec/plugins/libstrongswan-load-tester.la
+%%LOADTESTER%%lib/ipsec/plugins/libstrongswan-load-tester.so
+lib/ipsec/plugins/libstrongswan-md4.la
+lib/ipsec/plugins/libstrongswan-md4.so
+lib/ipsec/plugins/libstrongswan-md5.la
+lib/ipsec/plugins/libstrongswan-md5.so
+%%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-mgf1.la
+%%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-mgf1.so
+%%MYSQL%%lib/ipsec/plugins/libstrongswan-mysql.la
+%%MYSQL%%lib/ipsec/plugins/libstrongswan-mysql.so
+lib/ipsec/plugins/libstrongswan-nonce.la
+lib/ipsec/plugins/libstrongswan-nonce.so
+lib/ipsec/plugins/libstrongswan-openssl.la
+lib/ipsec/plugins/libstrongswan-openssl.so
+lib/ipsec/plugins/libstrongswan-pem.la
+lib/ipsec/plugins/libstrongswan-pem.so
+lib/ipsec/plugins/libstrongswan-pgp.la
+lib/ipsec/plugins/libstrongswan-pgp.so
+lib/ipsec/plugins/libstrongswan-pkcs1.la
+lib/ipsec/plugins/libstrongswan-pkcs1.so
+lib/ipsec/plugins/libstrongswan-pkcs12.la
+lib/ipsec/plugins/libstrongswan-pkcs12.so
+lib/ipsec/plugins/libstrongswan-pkcs7.la
+lib/ipsec/plugins/libstrongswan-pkcs7.so
+lib/ipsec/plugins/libstrongswan-pkcs8.la
+lib/ipsec/plugins/libstrongswan-pkcs8.so
+lib/ipsec/plugins/libstrongswan-pubkey.la
+lib/ipsec/plugins/libstrongswan-pubkey.so
+lib/ipsec/plugins/libstrongswan-random.la
+lib/ipsec/plugins/libstrongswan-random.so
+lib/ipsec/plugins/libstrongswan-rc2.la
+lib/ipsec/plugins/libstrongswan-rc2.so
+lib/ipsec/plugins/libstrongswan-resolve.la
+lib/ipsec/plugins/libstrongswan-resolve.so
+lib/ipsec/plugins/libstrongswan-revocation.la
+lib/ipsec/plugins/libstrongswan-revocation.so
+lib/ipsec/plugins/libstrongswan-sha1.la
+lib/ipsec/plugins/libstrongswan-sha1.so
+lib/ipsec/plugins/libstrongswan-sha2.la
+lib/ipsec/plugins/libstrongswan-sha2.so
+%%SMP%%lib/ipsec/plugins/libstrongswan-smp.la
+%%SMP%%lib/ipsec/plugins/libstrongswan-smp.so
+lib/ipsec/plugins/libstrongswan-socket-default.la
+lib/ipsec/plugins/libstrongswan-socket-default.so
+%%SQL%%lib/ipsec/plugins/libstrongswan-sql.la
+%%SQL%%lib/ipsec/plugins/libstrongswan-sql.so
+%%SQLITE%%lib/ipsec/plugins/libstrongswan-sqlite.la
+%%SQLITE%%lib/ipsec/plugins/libstrongswan-sqlite.so
+lib/ipsec/plugins/libstrongswan-sshkey.la
+lib/ipsec/plugins/libstrongswan-sshkey.so
+lib/ipsec/plugins/libstrongswan-stroke.la
+lib/ipsec/plugins/libstrongswan-stroke.so
+%%TESTVECTOR%%lib/ipsec/plugins/libstrongswan-test-vectors.la
+%%TESTVECTOR%%lib/ipsec/plugins/libstrongswan-test-vectors.so
+%%TPM%%lib/ipsec/plugins/libstrongswan-tpm.la
+%%TPM%%lib/ipsec/plugins/libstrongswan-tpm.so
+%%UNBOUND%%lib/ipsec/plugins/libstrongswan-unbound.la
+%%UNBOUND%%lib/ipsec/plugins/libstrongswan-unbound.so
+%%UNITY%%lib/ipsec/plugins/libstrongswan-unity.la
+%%UNITY%%lib/ipsec/plugins/libstrongswan-unity.so
+lib/ipsec/plugins/libstrongswan-updown.la
+lib/ipsec/plugins/libstrongswan-updown.so
+%%VICI%%lib/ipsec/plugins/libstrongswan-vici.la
+%%VICI%%lib/ipsec/plugins/libstrongswan-vici.so
+lib/ipsec/plugins/libstrongswan-whitelist.la
+lib/ipsec/plugins/libstrongswan-whitelist.so
+lib/ipsec/plugins/libstrongswan-x509.la
+lib/ipsec/plugins/libstrongswan-x509.so
+%%XAUTH%%lib/ipsec/plugins/libstrongswan-xauth-eap.la
+%%XAUTH%%lib/ipsec/plugins/libstrongswan-xauth-eap.so
+%%IKEV1%%lib/ipsec/plugins/libstrongswan-xauth-generic.la
+%%IKEV1%%lib/ipsec/plugins/libstrongswan-xauth-generic.so
+lib/ipsec/plugins/libstrongswan-xcbc.la
+lib/ipsec/plugins/libstrongswan-xcbc.so
+libexec/ipsec/_copyright
+libexec/ipsec/_updown
+libexec/ipsec/charon
+%%LOADTESTER%%libexec/ipsec/load-tester
+%%SQL%%libexec/ipsec/pool
+%%SCEP%%libexec/ipsec/scepclient
+libexec/ipsec/starter
+libexec/ipsec/stroke
+libexec/ipsec/whitelist
+%%PKI%%man/man1/pki---acert.1.gz
+%%PKI%%man/man1/pki---dn.1.gz
+%%PKI%%man/man1/pki---gen.1.gz
+%%PKI%%man/man1/pki---issue.1.gz
+%%PKI%%man/man1/pki---keyid.1.gz
+%%PKI%%man/man1/pki---pkcs7.1.gz
+%%PKI%%man/man1/pki---print.1.gz
+%%PKI%%man/man1/pki---pub.1.gz
+%%PKI%%man/man1/pki---req.1.gz
+%%PKI%%man/man1/pki---self.1.gz
+%%PKI%%man/man1/pki---signcrl.1.gz
+%%PKI%%man/man1/pki---verify.1.gz
+%%PKI%%man/man1/pki.1.gz
+man/man5/ipsec.conf.5.gz
+man/man5/ipsec.secrets.5.gz
+man/man5/strongswan.conf.5.gz
+%%SWANCTL%%man/man5/swanctl.conf.5.gz
+man/man8/charon-cmd.8.gz
+man/man8/ipsec.8.gz
+%%SCEP%%man/man8/scepclient.8.gz
+%%SWANCTL%%man/man8/swanctl.8.gz
+sbin/charon-cmd
+sbin/ipsec
+%%SWANCTL%%sbin/swanctl
+%%DATADIR%%/templates/config/plugins/addrblock.conf
+%%DATADIR%%/templates/config/plugins/aes.conf
+%%SQL%%%%DATADIR%%/templates/config/plugins/attr-sql.conf
+%%DATADIR%%/templates/config/plugins/attr.conf
+%%DATADIR%%/templates/config/plugins/blowfish.conf
+%%DATADIR%%/templates/config/plugins/cmac.conf
+%%DATADIR%%/templates/config/plugins/constraints.conf
+%%DATADIR%%/templates/config/plugins/counters.conf
+%%CURL%%%%DATADIR%%/templates/config/plugins/curl.conf
+%%DATADIR%%/templates/config/plugins/curve25519.conf
+%%DATADIR%%/templates/config/plugins/des.conf
+%%DATADIR%%/templates/config/plugins/dnskey.conf
+%%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/eap-aka-3gpp2.conf
+%%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/eap-aka.conf
+%%EAPDYNAMIC%%%%DATADIR%%/templates/config/plugins/eap-dynamic.conf
+%%DATADIR%%/templates/config/plugins/eap-identity.conf
+%%DATADIR%%/templates/config/plugins/eap-md5.conf
+%%DATADIR%%/templates/config/plugins/eap-mschapv2.conf
+%%DATADIR%%/templates/config/plugins/eap-peap.conf
+%%EAPRADIUS%%%%DATADIR%%/templates/config/plugins/eap-radius.conf
+%%EAPSIMFILE%%%%DATADIR%%/templates/config/plugins/eap-sim-file.conf
+%%EAPSIMFILE%%%%DATADIR%%/templates/config/plugins/eap-sim.conf
+%%DATADIR%%/templates/config/plugins/eap-tls.conf
+%%DATADIR%%/templates/config/plugins/eap-ttls.conf
+%%DATADIR%%/templates/config/plugins/fips-prf.conf
+%%GCM%%%%DATADIR%%/templates/config/plugins/gcm.conf
+%%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/gmp.conf
+%%DATADIR%%/templates/config/plugins/hmac.conf
+%%IPSECKEY%%%%DATADIR%%/templates/config/plugins/ipseckey.conf
+%%KERNELLIBIPSEC%%%%DATADIR%%/templates/config/plugins/kernel-libipsec.conf
+%%DATADIR%%/templates/config/plugins/kernel-pfkey.conf
+%%DATADIR%%/templates/config/plugins/kernel-pfroute.conf
+%%LDAP%%%%DATADIR%%/templates/config/plugins/ldap.conf
+%%LOADTESTER%%%%DATADIR%%/templates/config/plugins/load-tester.conf
+%%DATADIR%%/templates/config/plugins/md4.conf
+%%DATADIR%%/templates/config/plugins/md5.conf
+%%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/mgf1.conf
+%%MYSQL%%%%DATADIR%%/templates/config/plugins/mysql.conf
+%%DATADIR%%/templates/config/plugins/nonce.conf
+%%DATADIR%%/templates/config/plugins/openssl.conf
+%%DATADIR%%/templates/config/plugins/pem.conf
+%%DATADIR%%/templates/config/plugins/pgp.conf
+%%DATADIR%%/templates/config/plugins/pkcs1.conf
+%%DATADIR%%/templates/config/plugins/pkcs12.conf
+%%DATADIR%%/templates/config/plugins/pkcs7.conf
+%%DATADIR%%/templates/config/plugins/pkcs8.conf
+%%DATADIR%%/templates/config/plugins/pubkey.conf
+%%DATADIR%%/templates/config/plugins/random.conf
+%%DATADIR%%/templates/config/plugins/rc2.conf
+%%DATADIR%%/templates/config/plugins/resolve.conf
+%%DATADIR%%/templates/config/plugins/revocation.conf
+%%DATADIR%%/templates/config/plugins/sha1.conf
+%%DATADIR%%/templates/config/plugins/sha2.conf
+%%SMP%%%%DATADIR%%/templates/config/plugins/smp.conf
+%%DATADIR%%/templates/config/plugins/socket-default.conf
+%%SQL%%%%DATADIR%%/templates/config/plugins/sql.conf
+%%SQLITE%%%%DATADIR%%/templates/config/plugins/sqlite.conf
+%%DATADIR%%/templates/config/plugins/sshkey.conf
+%%DATADIR%%/templates/config/plugins/stroke.conf
+%%TESTVECTOR%%%%DATADIR%%/templates/config/plugins/test-vectors.conf
+%%TPM%%%%DATADIR%%/templates/config/plugins/tpm.conf
+%%UNBOUND%%%%DATADIR%%/templates/config/plugins/unbound.conf
+%%UNITY%%%%DATADIR%%/templates/config/plugins/unity.conf
+%%DATADIR%%/templates/config/plugins/updown.conf
+%%VICI%%%%DATADIR%%/templates/config/plugins/vici.conf
+%%DATADIR%%/templates/config/plugins/whitelist.conf
+%%DATADIR%%/templates/config/plugins/x509.conf
+%%XAUTH%%%%DATADIR%%/templates/config/plugins/xauth-eap.conf
+%%XAUTHGEN%%%%DATADIR%%/templates/config/plugins/xauth-generic.conf
+%%DATADIR%%/templates/config/plugins/xcbc.conf
+%%DATADIR%%/templates/config/strongswan.conf
+%%DATADIR%%/templates/config/strongswan.d/charon-logging.conf
+%%DATADIR%%/templates/config/strongswan.d/charon.conf
+%%PKI%%%%DATADIR%%/templates/config/strongswan.d/pki.conf
+%%SQL%%%%DATADIR%%/templates/config/strongswan.d/pool.conf
+%%SCEP%%%%DATADIR%%/templates/config/strongswan.d/scepclient.conf
+%%DATADIR%%/templates/config/strongswan.d/starter.conf
+%%SWANCTL%%%%DATADIR%%/templates/config/strongswan.d/swanctl.conf
+%%SQL%%%%DATADIR%%/templates/database/sql/mysql.sql
+%%SQL%%%%DATADIR%%/templates/database/sql/sqlite.sql
 @dir etc/ipsec.d/aacerts
 @dir etc/ipsec.d/acerts
 @dir etc/ipsec.d/cacerts

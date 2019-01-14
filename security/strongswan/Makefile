@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	strongswan
-PORTVERSION=	5.7.1
+PORTVERSION=	5.7.2
 CATEGORIES=	security
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
@@ -15,8 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe libtool:keepla pkgconfig tar:bzip2 ssl
 USE_RC_SUBR=	strongswan
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/ipsec
+
+GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--enable-kernel-pfkey \
