@@ -637,10 +637,10 @@ include/wireshark/wsutil/wspcap.h
 include/wireshark/wsutil/xtea.h
 lib/libwireshark.so
 lib/libwireshark.so.10
-lib/libwireshark.so.10.1.5
+lib/libwireshark.so.10.1.6
 lib/libwiretap.so
 lib/libwiretap.so.8
-lib/libwiretap.so.8.0.5
+lib/libwiretap.so.8.0.6
 %%GUI%%lib/libwscodecs.so
 %%GUI%%lib/libwscodecs.so.2
 %%GUI%%lib/libwscodecs.so.2.0.0
