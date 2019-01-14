@@ -14,25 +14,21 @@ COMMENT=	Legendary Open Cubic Player
 
 LICENSE=	GPLv2
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 LIB_DEPENDS=	libid3tag.so:audio/libid3tag \
 		libmad.so:audio/libmad \
 		libvorbis.so:audio/libvorbis \
 		libsidplay.so:audio/libsidplay \
 		libogg.so:audio/libogg
 
-ONLY_FOR_ARCHS=	i386 amd64
+USES=		gmake iconv localbase:ldflags makeinfo ncurses pkgconfig tar:xz
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-USES=		ncurses gmake pkgconfig makeinfo tar:xz iconv
-USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
 MAKE_JOBS_UNSAFE=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-L${LOCALBASE}/lib ${CPPFLAGS}
-CXXFLAGS+=	-L${LOCALBASE}/lib ${CPPFLAGS}
 
 CONFIGURE_ARGS=	--with-dir-suffix="" \
 		--without-alsa \
@@ -43,70 +39,34 @@ INFO=		ocp
 TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg
 
 OPTIONS_DEFINE=	ADPLUG FLAC MIDI X11 SDL DOCS
+OPTIONS_DEFAULT=ADPLUG FLAC MIDI X11 SDL
+OPTIONS_SUB=	yes
 
 ADPLUG_DESC=	adplug support
 MIDI_DESC=	timidity support
 
-OPTIONS_DEFAULT=ADPLUG FLAC MIDI X11 SDL
-
+ADPLUG_CONFIGURE_WITH=	adplug
 ADPLUG_LIB_DEPENDS=	libbinio.so:devel/libbinio \
 			libadplug.so:audio/libadplug
 
+FLAC_CONFIGURE_WITH=	flac
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 
+MIDI_RUN_DEPENDS=	eawpats>0:audio/eawpats
+
+SDL_CONFIGURE_WITH=	sdl
+SDL_PLIST_SUB=		DESKTOP=''
+SDL_PLIST_SUB_OFF=	DESKTOP='@comment '
+SDL_USE=		SDL=sdl
+
+X11_CONFIGURE_WITH=	x11
+X11_PLIST_SUB=		XORG='' DESKTOP=''
+X11_PLIST_SUB_OFF=	XORG='@comment ' DESKTOP='@comment '
+X11_USE=		XORG=xxf86dga,xxf86vm,xpm,xext,x11
+
 # needed despite stage-qa's warning
-X11_USES=	desktop-file-utils
 SDL_USES=	desktop-file-utils
-
-.include <bsd.port.options.mk>
-
-.if exists(${TIMIDITY_CFG}) || ${PORT_OPTIONS:MMIDI}
-RUN_DEPENDS+=	eawpats>0:audio/eawpats
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=		xxf86dga xxf86vm xpm xext x11
-CONFIGURE_ARGS+=	--with-x11=yes
-PLIST_SUB+=		XORG=""
-.else
-CONFIGURE_ARGS+=	--without-x11
-PLIST_SUB+=		XORG="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MADPLUG}
-CONFIGURE_ARGS+=	--with-adplug
-PLIST_SUB+=		ADPLUG=""
-.else
-PLIST_SUB+=		ADPLUG="@comment "
-CONFIGURE_ARGS+=	--without-adplug
-.endif
-
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL=		sdl
-CONFIGURE_ARGS+=	--with-sdl=yes
-PLIST_SUB+=		SDL=""
-.else
-CONFIGURE_ARGS+=	--with-sdl=no
-PLIST_SUB+=		SDL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSDL} || ${PORT_OPTIONS:MX11}
-PLIST_SUB+=		DESKTOP=""
-.else
-PLIST_SUB+=		DESKTOP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MFLAC}
-CONFIGURE_ARGS+=	--with-flac
-PLIST_SUB+=		FLAC=""
-.else
-PLIST_SUB+=		FLAC="@comment "
-CONFIGURE_ARGS+=	--without-flac
-.endif
-
-.if empty(PORT_OPTIONS:MDOCS)
-MAKE_ENV+=	DOCS="\#"
-.endif
+X11_USES=	desktop-file-utils
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/.*\.cfg|${TIMIDITY_CFG}|' \
