@@ -1,5 +1,6 @@
 %%SITE_ARCH%%/HTML5/DOM.pm
 %%SITE_ARCH%%/HTML5/DOM.pod
+%%SITE_ARCH%%/HTML5/DOM/AsyncResult.pm
 %%SITE_ARCH%%/HTML5/DOM/CSS.pm
 %%SITE_ARCH%%/HTML5/DOM/CSS/Selector.pm
 %%SITE_ARCH%%/HTML5/DOM/CSS/Selector/Entry.pm
