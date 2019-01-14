@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	percona
-DISTVERSION=	5.6.41-84.1
-PORTREVISION?=	1
+DISTVERSION=	5.6.42-84.2
+PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.6/Percona-Server-${DISTVERSION}/source/tarball/
 PKGNAMESUFFIX?=	56-server
