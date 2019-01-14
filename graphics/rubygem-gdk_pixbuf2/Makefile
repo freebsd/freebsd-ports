@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdk_pixbuf2
-PORTVERSION=	3.3.0
+PORTVERSION=	3.3.1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
