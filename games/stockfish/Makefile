@@ -61,6 +61,8 @@ ALL_TARGET=	${TGTBLD} ARCH=${MYARCH} COMP=${MYCC}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s/^PREFIX =/PREFIX ?=/" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s/CXX=g++/CXX=g++${GCC_DEFAULT}/" \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stockfish ${STAGEDIR}${PREFIX}/bin
