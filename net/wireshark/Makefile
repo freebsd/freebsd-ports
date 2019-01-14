@@ -101,7 +101,7 @@ KRB_MIT_USES=		gssapi:mit
 RTP_LIB_DEPENDS=	libportaudio.so:audio/portaudio \
     			libspandsp.so:comms/spandsp
 RTP_CPPFLAGS=		-I${LOCALBASE}/include
-MAXMIND_LIBS=		libmaxminddb.so:net/libmaxminddb
+MAXMIND_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 SNMP_LIB_DEPENDS=	libsmi.so:net-mgmt/libsmi
 CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
 DECRYPT_LIB_DEPENDS=	libgnutls.so:security/gnutls \
