@@ -1,4 +1,4 @@
---- src/libstrongswan/utils/utils/byteorder.h.orig	2016-08-16 15:24:34 UTC
+--- src/libstrongswan/utils/utils/byteorder.h.orig	2018-10-03 21:35:17 UTC
 +++ src/libstrongswan/utils/utils/byteorder.h
 @@ -22,6 +22,10 @@
  #ifndef BYTEORDER_H_
