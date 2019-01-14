@@ -26,6 +26,10 @@ GEANY_PLUGIN=	po
 po_SWITCH=	--enable-nls
 USES+=		localbase
 .else
+.if ${PORTNAME} == "geany-plugin-markdown"
+# required by this plugin on GCC only archs
+USES+=		compiler:c++11-lang
+.endif
 INSTALL_TARGET=	install-strip
 USE_GNOME+=	cairo gdkpixbuf2
 
