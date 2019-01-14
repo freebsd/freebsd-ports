@@ -301,6 +301,12 @@ create-bootstrap:
 # Much like create-bootstrap, just different naming and output format
 .PHONY: create-stack-bindist
 create-stack-bindist:
+	${REINPLACE_CMD} -e '/^mandir/d' \
+			-e '/^infodir/d' \
+			-e '/^docdir/d' \
+			-e '/^htmldir/d' \
+		${WRKSRC}/mk/build.mk
+
 	cd ${WRKSRC} \
 		&& gmake binary-dist TAR_COMP=xz \
 		&& ${MV} ${WRKSRC}/ghc-${GHC_VERSION}-${GHC_ARCH}-portbld-freebsd.tar.xz /tmp/
