@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	kodi
-CATEGORIES=	multimedia
 DISTVERSION=	18.0rc5.2
 DISTVERSIONSUFFIX=	-Leia
+CATEGORIES=	multimedia
 PKGNAMESUFFIX?=	-devel
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -107,9 +107,9 @@ DBUS_CMAKE_BOOL=	ENABLE_DBUS
 
 GBM_CMAKE_ON=		-DCORE_PLATFORM_NAME:STRING="gbm" \
 			-DGBM_RENDER_SYSTEM:STRING="gl"
-GBM_CFLAGS=		-I${LOCALBASE}/include/libepoll-shim \
-			-I${WRKDIR}/evdev-proto
+GBM_CFLAGS=		-I${LOCALBASE}/include/libepoll-shim
 GBM_LDFLAGS=		-L${LOCALBASE}/lib -lepoll-shim -lpthread -lrt
+GBM_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 GBM_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 			libinput.so:x11/libinput \
 			libxkbcommon.so:x11/libxkbcommon
@@ -163,10 +163,10 @@ VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
 VDPAU_CMAKE_BOOL=	ENABLE_VDPAU
 VDPAU_LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau
 
-WAYLAND_BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols
-WAYLAND_CFLAGS=		-I${WRKDIR}/evdev-proto
 WAYLAND_CMAKE_ON=	-DCORE_PLATFORM_NAME:STRING="wayland" \
 			-DWAYLAND_RENDER_SYSTEM:STRING="gl"
+WAYLAND_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+			wayland-protocols>=0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libinput.so:x11/libinput \
 			libwayland-client++.so:graphics/waylandpp \
 			libwayland-client.so:graphics/wayland \
@@ -183,15 +183,6 @@ X11_USE=		XORG=x11,xext,xrandr
 .if ${SLAVE_PORT} == no
 PORTDATA=	*
 .endif
-
-# Avoid patching evdev header locations (too much pointless churn)
-post-extract-GBM-on:
-	@${MKDIR} ${WRKDIR}/evdev-proto/linux
-	@${CP} /usr/include/dev/evdev/* ${WRKDIR}/evdev-proto/linux
-
-post-extract-WAYLAND-on:
-	@${MKDIR} ${WRKDIR}/evdev-proto/linux
-	@${CP} /usr/include/dev/evdev/* ${WRKDIR}/evdev-proto/linux
 
 post-patch:
 # Do not try to download dvdnav/dvdread during the build, instead
