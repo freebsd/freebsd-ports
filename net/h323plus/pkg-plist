@@ -112,8 +112,8 @@ include/openh323/t38proto.h
 include/openh323/transports.h
 include/openh323/x224.h
 include/openh323/x880.h
-lib/libh323.so.1.26.8
-lib/libh323.so.1.26
+lib/libh323.so.1.27.0
+lib/libh323.so.1.27
 lib/libh323.so.1
 lib/libh323.so
 lib/libopenh323.so
