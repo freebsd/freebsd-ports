@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	texstudio
-DISTVERSION=	2.12.10
+DISTVERSION=	2.12.14
 CATEGORIES=	editors
 
 MAINTAINER=	abiliojr@gmail.com
