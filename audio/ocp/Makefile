@@ -3,7 +3,7 @@
 
 PORTNAME=	ocp
 PORTVERSION=	0.1.21
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/opencubicplayer/${DISTNAME} \
@@ -33,6 +33,7 @@ MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS=	--with-dir-suffix="" \
 		--without-alsa \
 		--libdir=${PREFIX}/lib
+CONFIGURE_ENV=	SHARED_FLAGS="${LDFLAGS} -shared"
 
 INFO=		ocp
 
@@ -67,6 +68,8 @@ X11_USE=		XORG=xxf86dga,xxf86vm,xpm,xext,x11
 # needed despite stage-qa's warning
 SDL_USES=	desktop-file-utils
 X11_USES=	desktop-file-utils
+
+LDFLAGS_i386=	-Wl,-z,notext
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/.*\.cfg|${TIMIDITY_CFG}|' \
