@@ -3,6 +3,7 @@
 
 PORTNAME=	bro
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.bro.org/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -13,11 +14,6 @@ COMMENT=	System for detecting network intruders in real-time
 LICENSE=	BSD3CLAUSE
 
 BROKEN_powerpc64=	Does not build: error: zero-size array 'names'
-
-LIB_DEPENDS=	libGeoIP.so:net/GeoIP
-
-DEPRECATED=     Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
-EXPIRATION_DATE=2019-02-15
 
 USES=		bison cmake compiler:c++11-lang gettext-runtime ninja perl5 python shebangfix ssl
 
