@@ -3,7 +3,7 @@
 
 PORTNAME=	GeoIP
 PORTVERSION=	1.6.12
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net geography
 MASTER_SITES=	https://github.com/maxmind/geoip-api-c/releases/download/v${PORTVERSION}/
 
@@ -13,6 +13,9 @@ COMMENT=	Find the country that any IP address or hostname originates from
 LICENSE=	GPLv2
 
 USES=		libtool pathfix
+
+DEPRECATED=	Legacy databases no longer available. Switch to net/libmaxminddb instead
+EXPIRATION_DATE=2019-02-15
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
