@@ -81,10 +81,10 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC} && ${TAR} --exclude '*.orig' -cf - . ) | \
 		(cd ${STAGEDIR}${DATADIR}/ && ${TAR} xvf -)
-	${RLN} -s ${STAGEDIR}${DATADIR}/hotkernel ${STAGEDIR}${PREFIX}/bin/hotkernel
-	${RLN} -s ${STAGEDIR}${DATADIR}/procsystime ${STAGEDIR}${PREFIX}/bin/procsystime
-	${RLN} -s ${STAGEDIR}${DATADIR}/opensnoop ${STAGEDIR}${PREFIX}/bin/opensnoop
-	${RLN} -s ${STAGEDIR}${DATADIR}/Apps/shellsnoop ${STAGEDIR}${PREFIX}/bin/shellsnoop
+	${RLN} ${STAGEDIR}${DATADIR}/hotkernel ${STAGEDIR}${PREFIX}/bin/hotkernel
+	${RLN} ${STAGEDIR}${DATADIR}/procsystime ${STAGEDIR}${PREFIX}/bin/procsystime
+	${RLN} ${STAGEDIR}${DATADIR}/opensnoop ${STAGEDIR}${PREFIX}/bin/opensnoop
+	${RLN} ${STAGEDIR}${DATADIR}/Apps/shellsnoop ${STAGEDIR}${PREFIX}/bin/shellsnoop
 
 .for MANPAGE in hotkernel procsystime opensnoop shellsnoop
 	${INSTALL_MAN} ${WRKSRC}/Man/man1m/${MANPAGE}.1m \
