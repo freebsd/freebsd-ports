@@ -2,7 +2,7 @@
 
 PORTNAME=	kak-lsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.0.0
+DISTVERSION=	6.0.1
 CATEGORIES=	editors
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -29,7 +29,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		bitflags-1.0.4 \
 		blake2-rfc-0.2.18 \
 		byteorder-1.2.7 \
-		cc-1.0.26 \
+		cc-1.0.27 \
 		cfg-if-0.1.6 \
 		chrono-0.4.6 \
 		clap-2.32.0 \
@@ -56,13 +56,12 @@ CARGO_CRATES=	adler32-1.0.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		futures-0.1.25 \
 		glob-0.2.11 \
-		handlebars-0.32.4 \
 		idna-0.1.5 \
 		isatty-0.1.9 \
 		itertools-0.8.0 \
 		itoa-0.4.3 \
 		jsonrpc-core-8.0.1 \
-		languageserver-types-0.51.1 \
+		languageserver-types-0.53.0 \
 		lazy_static-1.2.0 \
 		libc-0.2.45 \
 		libflate-0.1.19 \
@@ -84,11 +83,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		parking_lot_core-0.3.1 \
 		parking_lot_core-0.4.0 \
 		percent-encoding-1.0.1 \
-		pest-1.0.6 \
-		pest_derive-1.0.8 \
 		proc-macro2-0.4.24 \
-		quick-error-1.2.2 \
-		quote-0.3.15 \
 		quote-0.6.10 \
 		rand-0.4.3 \
 		rand-0.5.5 \
@@ -127,9 +122,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		smallvec-0.6.7 \
 		stable_deref_trait-1.1.1 \
 		strsim-0.7.0 \
-		syn-0.11.11 \
 		syn-0.15.23 \
-		synom-0.11.3 \
 		synstructure-0.10.1 \
 		take_mut-0.2.2 \
 		term-0.5.1 \
@@ -144,7 +137,6 @@ CARGO_CRATES=	adler32-1.0.3 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.7 \
 		unicode-width-0.1.5 \
-		unicode-xid-0.0.4 \
 		unicode-xid-0.1.0 \
 		unreachable-1.0.0 \
 		url-1.7.2 \
