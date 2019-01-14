@@ -1,13 +1,13 @@
---- src/main.cc.orig	2019-01-08 01:26:24 UTC
+--- src/main.cc.orig	2019-01-10 17:32:50 UTC
 +++ src/main.cc
-@@ -359,10 +359,6 @@ int main(int argc, char **argv) {
-     return EXIT_FAILURE;
-   }
+@@ -43,6 +43,10 @@
+ #include "ccurl_thread.h"
+ #endif /* BUILD_CURL */
  
--#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
--  kvm_close(kd);
--#endif
--
- #ifdef LEAKFREE_NCURSES
-   _nc_free_and_exit(0);  // hide false memleaks
- #endif
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
++#include "freebsd.h"
++#endif /* FreeBSD */
++
+ #ifdef BUILD_BUILTIN_CONFIG
+ #include "defconfig.h"
+ 
