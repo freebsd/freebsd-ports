@@ -23,7 +23,7 @@ MCEXECS=	mcstas mcformat
 post-install:
 .for e in ${MCEXECS}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${PORTNAME}/${PORTVERSION}/bin/${e}
-	${RLN} -s ${STAGEDIR}/${PREFIX}/${PORTNAME}/${PORTVERSION}/bin/${e} ${STAGEDIR}${PREFIX}/bin/${e}
+	${RLN} ${STAGEDIR}/${PREFIX}/${PORTNAME}/${PORTVERSION}/bin/${e} ${STAGEDIR}${PREFIX}/bin/${e}
 .endfor
 
 .include <bsd.port.mk>
