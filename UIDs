@@ -466,7 +466,7 @@ pwhois:*:512:512::0:0:pwhoisd User:/nonexistent:/usr/sbin/nologin
 # free: 517
 # free: 518
 # free: 519
-# free: 520
+libvirtdbus:*:520:520::0:0:Libvirt D-Bus bridge:/nonexistent:/usr/sbin/nologin
 davmail:*:521:521::0:0:Davmail Exchange Gateway:/nonexistent:/usr/sbin/nologin
 nullmail:*:522:522::0:0:Nullmailer Mail System:/var/spool/nullmailer:/bin/sh
 freevo:*:523:523::0:0:Freevo User:/var/db/freevo:/bin/sh

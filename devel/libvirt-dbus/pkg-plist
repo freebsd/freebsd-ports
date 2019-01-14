@@ -1,0 +1,14 @@
+bin/libvirt-dbus
+man/man8/libvirt-dbus.8.gz
+share/dbus-1/interfaces/org.libvirt.Connect.xml
+share/dbus-1/interfaces/org.libvirt.Domain.xml
+share/dbus-1/interfaces/org.libvirt.NWFilter.xml
+share/dbus-1/interfaces/org.libvirt.Network.xml
+share/dbus-1/interfaces/org.libvirt.NodeDevice.xml
+share/dbus-1/interfaces/org.libvirt.Secret.xml
+share/dbus-1/interfaces/org.libvirt.StoragePool.xml
+share/dbus-1/interfaces/org.libvirt.StorageVol.xml
+share/dbus-1/services/org.libvirt.service
+share/dbus-1/system-services/org.libvirt.service
+share/dbus-1/system.d/org.libvirt.conf
+share/polkit-1/rules.d/libvirt-dbus.rules

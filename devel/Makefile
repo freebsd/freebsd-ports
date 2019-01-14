@@ -1625,6 +1625,7 @@
     SUBDIR += libversion
     SUBDIR += libvhdi
     SUBDIR += libvirt
+    SUBDIR += libvirt-dbus
     SUBDIR += libvirt-glib
     SUBDIR += libvirt-java
     SUBDIR += libvmdk
