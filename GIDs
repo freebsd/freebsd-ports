@@ -460,7 +460,7 @@ pwhois:*:512:
 # free: 517
 # free: 518
 # free: 519
-# free: 520
+libvirtdbus:*:520:
 davmail:*:521:
 nullmail:*:522:
 freevo:*:523:
