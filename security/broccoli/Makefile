@@ -3,6 +3,7 @@
 
 PORTNAME=	broccoli
 PORTVERSION=	1.97
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.bro.org/downloads/release/
@@ -14,15 +15,11 @@ COMMENT=	Bro Client Communications Library
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	swig3.0:devel/swig30
-LIB_DEPENDS=	libGeoIP.so:net/GeoIP
-
-DEPRECATED=     Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
-EXPIRATION_DATE=2019-02-15
-
-EXTRACT_AFTER_ARGS=	${DISTNAME}/aux/broccoli
 
 USES=		cmake ssl bison
 USE_LDCONFIG=	yes
+
+EXTRACT_AFTER_ARGS=	${DISTNAME}/aux/broccoli
 CMAKE_SOURCE_PATH=	${WRKSRC}/aux/broccoli
 BINARY_ALIAS=	swig=swig3.0
 
