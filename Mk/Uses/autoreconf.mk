@@ -3,46 +3,48 @@
 # Run autoreconf in AUTORECONF_WRKSRC to update configure, Makefile.in and
 # other build scripts.
 #
-# Autoreconf encapsulates the following commands.  Each command applies to a
-# single configure.ac or configure.in (old name).  If configure.ac defines
-# subdirectories with their own configure.ac (using AC_CONFIG_SUBDIRS),
-# autoreconf will recursively update those as well.
+# Autoreconf runs the following commands provided by devel/autoconf and
+# devel/automake.  Each command applies to a single configure.ac or
+# configure.in (old name).  If configure.ac defines subdirectories with their
+# own configure.ac (using AC_CONFIG_SUBDIRS), autoreconf will recursively
+# update those as well.
 #
 # aclocal	Looks up definitions of m4 macros used in configure.ac that are
 #		not provided by autoconf and copies them from their source *.m4
 #		file to aclocal.m4.  Local *.m4 files included with the source
 #		code take precedence over systemwide *.m4 files.
-#		Must be run whenever configure.ac or *.m4 files with macros
-#		used in configure.ac have been modified.
-#		Must also be run whenever automake must be run because the
-#		automake macros in aclocal.m4 must have the same version as the
-#		automake command.
 # autoconf	Generates configure from configure.ac using macro definitions
 #		provided by autoconf itself and aclocal.m4.
-#		Must be run whenever configure.ac or aclocal.m4 has been
-#		modified.
 # autoheader	Generates a configuration header (typically config.h.in) from
-#		configure.ac and the macro definitions in aclocal.m4.
-#		Must be run whenever configure.ac or aclocal.m4 has been
-#		modified and configure.ac (or one of the macros it uses)
-#		contains AC_CONFIG_HEADERS, AC_CONFIG_HEADER (undocumented) or
+#		configure.ac and the macro definitions in aclocal.m4.  Run by
+#		autoreconf if configure.ac (or one of the macros it uses)
+#		contains AC_CONFIG_HEADERS, AC_CONFIG_HEADER (undocumented), or
 #		AM_CONFIG_HEADER (obsolete).
 # automake	Generates Makefile.in from Makefile.am for each Makefile
-#		specified in configure.ac.  Also updates build scripts like
-#		compile, depcomp, install-sh, ylwrap,...
-#		Must be run whenever Makefile.am, configure.ac or aclocal.m4
-#		has been modified and configure.ac (or one of the macros it
+#		listed in configure.ac (using AC_CONFIG_FILES).  Also updates
+#		build scripts like compile, depcomp, install-sh, ylwrap,...
+#		Run by autoreconf if configure.ac (or one of the macros it
 #		uses) contains AM_INIT_AUTOMAKE.
-# autopoint	Updates gettext related *.m4 files and build scripts such as
-#		config.rpath.
-#		If a port uses gettext, this command must be run whenever
-#		aclocal must be run such that the gettext macros in aclocal.m4
-#		have the same version as the gettext build scripts.
-# libtoolize	Updates libtool related *.m4 files and build scripts such as
-#		ltmain.sh.
-#		If a port uses libtool, this command must be run whenever
-#		aclocal must be run such that the libtool macros in aclocal.m4
-#		have the same version as the libtool build scripts.
+#
+# Autoreconf may also run these additional commands provided by other ports.
+# A port needs to have a build depdendency on these ports when that's the case.
+#
+# autopoint	Provided by devel/gettext-tools.  Updates gettext related *.m4
+#		files included with the source code and build scripts such as
+#		config.rpath.  Run by autoreconf if configure.ac (or one of the
+#		macros it uses) contains AM_GNU_GETTEXT.  A build dependency on
+#		devel/gettext-tools can be added with USES+=gettext-tools.
+#		Note that autoreconf runs autopoint even if a port has an NLS
+#		option and the option is disabled.  The build dependency on
+#		gettext-tools is not optional.  If the run dependency on
+#		gettext is optional this can be specified with
+#		NLS_USES=gettext-runtime.
+# libtoolize	Provided by devel/libtool.  Updates libtool related *.m4 files
+#		included with the source code and build scripts such as
+#		ltmain.sh.  Run by autoreconf if configure.ac  (or one of the
+#		macros it uses) contains AC_PROG_LIBTOOL or LT_INIT.  A build
+#		dependency on devel/libtool is added implicitly when USES
+#		contains both autoreconf and libtool.
 #
 # Feature:	autoreconf
 # Usage:	USES=autoreconf or USES=autoreconf:args
