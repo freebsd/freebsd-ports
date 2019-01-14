@@ -1,4 +1,4 @@
---- amavisd.orig	2016-12-10 16:31:50 UTC
+--- amavisd.orig	2019-01-14 21:47:08 UTC
 +++ amavisd
 @@ -22814,6 +22814,7 @@ sub process_smtp_request($$$$) {
          }
@@ -8,6 +8,15 @@
  
          $msginfo->client_addr($cl_ip);      # ADDR
          $msginfo->client_port($cl_port);    # PORT
+@@ -28857,7 +28857,7 @@ sub run_av(@) {
+         my $f = $bare_fnames->[$k];  my $multi = 0;
+         if ($one_at_a_time) {  # glob templates may be substrings anywhere
+           local($1);  @query_expanded = @query_template;  # start afresh
+-          s{ ( {} (?: / \* )? | \* ) }
++          s{ ( \{\} (?: / \* )? | \* ) }
+            { $1 eq '{}'   ? "$tempdir/parts"
+            : $1 eq '{}/*' ? ($multi=1,"$tempdir/parts/$f")
+            : $1 eq '*'    ? ($multi=1,$f)  : $1
 @@ -34357,6 +34358,7 @@ sub collect_some_dkim_info($) {
      $sig_ind++;
    }
