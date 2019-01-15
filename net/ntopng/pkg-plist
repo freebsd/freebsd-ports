@@ -1,4 +1,5 @@
 bin/ntopng
+bin/ntopng-geoip2update.sh
 man/man8/ntopng.8.gz
 %%DATADIR%%/httpdocs/bootstrap/css/bootstrap-theme.css
 %%DATADIR%%/httpdocs/bootstrap/css/bootstrap-theme.css.map

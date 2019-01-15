@@ -4,8 +4,6 @@
 
 [ "$2" != "DEINSTALL" ] && exit 0
 
-[ -f "%%DATADIR%%/httpdocs/geoip/GeoLiteCity.dat" ] && /bin/rm "%%DATADIR%%/httpdocs/geoip/GeoLiteCity.dat"
-[ -f "%%DATADIR%%/httpdocs/geoip/GeoLiteCityv6.dat" ] && /bin/rm "%%DATADIR%%/httpdocs/geoip/GeoLiteCityv6.dat"
-[ -f "%%DATADIR%%/httpdocs/geoip/GeoIPASNum.dat.gz" ] && /bin/rm "%%DATADIR%%/httpdocs/geoip/GeoIPASNum.dat.gz"
-[ -f "%%DATADIR%%/httpdocs/geoip/GeoIPASNumv6.dat.gz" ] && /bin/rm "%%DATADIR%%/httpdocs/geoip/GeoIPASNumv6.dat.gz"
+[ -f "%%DATADIR%%/httpdocs/geoip/GeoLite2-City.mmdb" ] && /bin/rm "%%DATADIR%%/httpdocs/geoip/GeoLite2-City.mmdb"
+[ -f "%%DATADIR%%/httpdocs/geoip/GeoLite2-ASN.mmdb" ] && /bin/rm "%%DATADIR%%/httpdocs/geoip/GeoLite2-ASN.mmdb"
 [ -d "%%DATADIR%%/httpdocs/geoip" ] && /usr/bin/find "%%DATADIR%%/httpdocs/geoip" -type d -empty -delete
