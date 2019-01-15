@@ -3,8 +3,7 @@
 
 PORTNAME=	mixxx
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	2.1.5
-PORTREVISION=	3
+DISTVERSION=	2.1.6
 CATEGORIES=	audio
 PKGNAMESUFFIX=  21
 
@@ -44,7 +43,7 @@ USE_QT=		buildtools concurrent core dbus gui network opengl script scripttools \
 		sql sql-sqlite3 svg testlib xml xmlpatterns linguisttools_build \
 		qmake_build widgets
 
-CONFLICTS=	mixxx20*
+CONFLICTS=	mixxx20* mixxx
 
 MAKE_ARGS=	qtdir="${PREFIX}" install_root="${PREFIX}" \
 		build=release optimize=native ${GUI} battery=0 vamp=1 modplug=1
