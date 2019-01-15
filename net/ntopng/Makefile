@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ntopng
-PORTVERSION=	3.8.d20181221
-PORTREVISION=	2
+PORTVERSION=	3.8.d20190111
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -25,7 +24,7 @@ BUILD_DEPENDS=  bash:shells/bash
 USES=		autoreconf compiler:c++11-lang cpe gmake libtool localbase \
 		mysql pathfix pkgconfig shebangfix sqlite ssl
 
-SUB_FILES=	pkg-deinstall
+SUB_FILES=	ntopng-geoip2update.sh pkg-deinstall
 SHEBANG_FILES=	httpdocs/misc/ntopng-add-user.sh \
 		httpdocs/misc/ntopng-utils-manage-config.in
 GNU_CONFIGURE=	yes
@@ -37,11 +36,11 @@ PLIST_SUB=	NTOPNGUSER="${USERS}" NTOPNGROUP="${GROUPS}"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ntop
-GH_TAGNAME=	e7503c7
+GH_TAGNAME=	3c2d3bf
 
 CPE_VENDOR=	ntop
 
-OPTIONS_DEFINE=		NLS
+OPTIONS_DEFINE=	NLS
 
 OPTIONS_SUB=	yes
 
@@ -57,5 +56,6 @@ post-patch:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ntopng
 	${MKDIR} ${STAGEDIR}/var/db/ntopng
+	${INSTALL_SCRIPT} ${WRKDIR}/ntopng-geoip2update.sh ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

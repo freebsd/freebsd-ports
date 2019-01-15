@@ -8,8 +8,9 @@ ntopng requires to connect to a redis server to work. Please install redis
 server from databases/redis or use -r option via ntopng_flags to specify a
 remote one.
 
-If you enabled GeoIP support(the default), please use ntopng-geoipupdate.sh
-to update GeoIP database to the latest available data.
+ntopng supports IP geolocation, to enable this you should use the
+ntopng-geoip2update.sh script to update the maxminddb geolocation
+data to the latest version.
 
 To pass a configuration file to ntopng, which overrides any command
 line arguments, add something like the following to rc.conf:
