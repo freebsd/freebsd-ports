@@ -35,7 +35,7 @@ OPTIONS_SUB=	yes
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 
-SUID_DESC=		Install with setuid bit set
+SUID_DESC=		setuid bit on "sway" binary (required for DRM session)
 SUID_PLIST_SUB=		MAYBE_SUID="@(,,4755) "
 SUID_PLIST_SUB_OFF=	MAYBE_SUID=""
 
