@@ -3,7 +3,7 @@
 
 PORTNAME=	metis
 PORTVERSION=	5.1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
 
@@ -12,9 +12,9 @@ COMMENT=	Package for unstructured graph partitioning
 
 LICENSE=	APACHE20
 
-CONFLICTS=	metis4-4* metis-edf-[0-9]*
-
 USES=		cmake:noninja compiler:c11
+
+CONFLICTS=	metis4-4* metis-edf-[0-9]*
 
 OPTIONS_DEFINE=	OPENMP SHARED STATIC DOCS
 
@@ -30,8 +30,8 @@ BINS=	cmpfillin gpmetis graphchk m2gmetis mpmetis ndmetis
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENMP}
+USES+=		compiler:openmp
 CMAKE_ARGS+=	-DOPENMP=1
-USE_GCC=	any
 .endif
 
 .if ${PORT_OPTIONS:MSHARED}
@@ -67,6 +67,11 @@ pre-configure:
 	${WRKSRC}/GKlib/GKlibSystem.cmake
 	@${REINPLACE_CMD} -e "\|/home/karypis/|d" \
 	${WRKSRC}/programs/CMakeLists.txt
+.if ((${ARCH}=="amd64") || (${ARCH}=="aarch64") || (${ARCH}=="sparc64") || (${ARCH}=="ppc64") || (${ARCH}=="ia64"))
+	@${REINPLACE_CMD}-e \
+		's|IDXTYPEWIDTH 32|IDXTYPEWIDTH 64|' \
+		${WRKSRC}/include/metis.h
+.endif
 .for o in SHARED #PROFILE
 .if ${PORT_OPTIONS:M${o}}
 	@${CP} -R ${WRKSRC} ${WRKSRC_${o}}
