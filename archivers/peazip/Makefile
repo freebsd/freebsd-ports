@@ -22,6 +22,7 @@ DOS2UNIX_REGEX=		.*\.([txt]|pas|lpi|txt)
 
 LAZARUS_PROJECT_FILES=	project_pea.lpi project_peach.lpi project_gwrap.lpi
 LAZBUILD_ARGS=		-d
+LLD_UNSAFE=		yes
 
 gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt4 ${PORTNAME}-qt5
 qt4_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt5
