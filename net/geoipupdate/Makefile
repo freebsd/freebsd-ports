@@ -21,7 +21,9 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
 
-MAKE_ENV+=	GOPATH=${WRKSRC}
+MAKE_ENV+=	GOPATH=${WRKSRC} \
+		CONFFILE=${PREFIX}/etc/GeoIP.conf \
+		DATADIR=${PREFIX}/share/GeoIP
 
 OPTIONS_DEFINE=	DOCS
 
@@ -29,9 +31,6 @@ PLIST_FILES=	bin/geoipupdate \
 		'@sample etc/GeoIP.conf.sample' \
 		'@dir share/GeoIP'
 PORTDOCS=	GeoIP.conf.md geoipupdate.md
-
-post-patch:
-	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/Makefile
 
 do-build:
 	${MV} ${WRKSRC}/vendor ${WRKSRC}/src
