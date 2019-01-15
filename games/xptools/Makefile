@@ -33,11 +33,9 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libshp.so:devel/shapelib \
 		libsquish.so:graphics/squish \
 		libtiff.so:graphics/tiff \
-		lib3ds.so:graphics/lib3ds \
-		libGLw.so:graphics/libGLw \
-		libGLU.so:graphics/libGLU
+		lib3ds.so:graphics/lib3ds
 
-USES=		eigen:3 gmake jpeg qt:4 sqlite ssl
+USES=		eigen:3 gl gmake jpeg qt:4 sqlite ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	X-Plane
@@ -46,8 +44,8 @@ GH_TAGNAME=	982173e:xptools_libs
 
 USE_CXXSTD=	c++11
 USE_BINUTILS=	yes
+USE_GL=		gl glu glw
 USE_QT=		corelib gui moc opengl
-USE_GL+=	gl
 
 BINARIES=	DDSTool DSFTool MeshTool ObjConverter ObjView RenderFarm RenderFarmUI WED XGrinder XPlaneSupportLin.p
 
