@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.5-7714 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g022550a43
+DISTVERSION=	0.0.5-7729 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-gf19fd2322
 CATEGORIES=	emulators
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
