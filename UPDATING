@@ -6,6 +6,32 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20190114:
+  AFFECTS: users of graphics/qgis
+  AUTHOR: rhurlin@gwdg.de
+
+  GIS 3.4 LTR, the first long-term release (LTR) of QGIS 3, has landed
+  in the FreeBSD ports tree. It will also replace the previous 2.18 LTR
+  in the QGIS package repositories in February 2019 [1].
+
+  Beside, the latest QT4 version 4.8.7 has been EOL since December 2015
+  and its expiration date on FreeBSD is set to March, 15th 2019.
+  Because QGIS 2 is based on QT4 and Python2, it was decided to not create
+  a legacy port for QGIS 2, after graphics/qgis changed to QGIS 3.
+
+  For users moving over from the 2.18 LTR there is a huge list of new
+  features and impactful changes in this new 3.4 LTR version. Most notably
+  3.x plugins are incompatible with 2.x plugins, so please review your
+  plugin usage carefully. Before moving over, if you have not already
+  done so, take a look at the changelogs from versions 3.0, 3.2, and
+  3.4 [2][3][4] to understand the full scope of changes in the 3.x release.
+
+
+  [1] https://qgis.org/en/site/getinvolved/development/roadmap.html#release-schedule
+  [2] http://changelog.qgis.org/en/qgis/version/3.0.0/
+  [3] http://changelog.qgis.org/en/qgis/version/3.2.0/
+  [4] http://changelog.qgis.org/en/qgis/version/3.4-LTR/
+
+20190114:
   AFFECTS: x11-wm/sway
   AUTHOR: jbeich@FreeBSD.org
 
