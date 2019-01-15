@@ -1,0 +1,7 @@
+Perl API for check_mk livestatus to access runtime data from Nagios and Icinga
+
+This module connects via socket/tcp to the livestatus addon for Naemon, Nagios,
+Icinga and Shinken. You first have to install and activate the livestatus
+addon in your monitoring installation.
+
+WWW: https://metacpan.org/release/Monitoring-Livestatus
