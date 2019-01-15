@@ -2252,6 +2252,7 @@
     SUBDIR += p5-Data-ACL
     SUBDIR += p5-Data-Alias
     SUBDIR += p5-Data-Average
+    SUBDIR += p5-Data-Binary
     SUBDIR += p5-Data-Bind
     SUBDIR += p5-Data-Capture
     SUBDIR += p5-Data-ClearSilver-HDF
