@@ -1,0 +1,4 @@
+swayidle is an idle management daemon, compatible with any Wayland
+compositor which implements the KDE idle protocol.
+
+WWW: https://github.com/swaywm/swayidle
