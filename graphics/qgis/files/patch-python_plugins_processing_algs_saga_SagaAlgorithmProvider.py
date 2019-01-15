@@ -1,11 +1,11 @@
---- python/plugins/processing/algs/saga/SagaAlgorithmProvider.py.orig	2017-10-27 12:00:21 UTC
+--- python/plugins/processing/algs/saga/SagaAlgorithmProvider.py.orig	2018-11-23 12:08:36 UTC
 +++ python/plugins/processing/algs/saga/SagaAlgorithmProvider.py
-@@ -73,7 +73,7 @@ class SagaAlgorithmProvider(AlgorithmProvider):
-                                    self.tr('Problem with SAGA installation: SAGA was not found or is not correctly installed'))
+@@ -93,7 +93,7 @@ class SagaAlgorithmProvider(QgsProcessingProvider):
+                                      self.tr('Processing'), Qgis.Critical)
              return
  
--        if not version.startswith('2.3.'):
-+        if version < '2.3.':
-             ProcessingLog.addToLog(ProcessingLog.LOG_ERROR,
-                                    self.tr('Problem with SAGA installation: unsupported SAGA version found.'))
-             return
+-        if not version.startswith(REQUIRED_VERSION):
++        if version < '2.3':
+             QgsMessageLog.logMessage(self.tr('Problem with SAGA installation: unsupported SAGA version (found: {}, required: {}).').format(version, REQUIRED_VERSION),
+                                      self.tr('Processing'),
+                                      Qgis.Critical)
