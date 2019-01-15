@@ -312,6 +312,8 @@
     SUBDIR += sterm
     SUBDIR += stjerm
     SUBDIR += swarp
+    SUBDIR += swayidle
+    SUBDIR += swaylock
     SUBDIR += sxhkd
     SUBDIR += sxpc
     SUBDIR += tabbed

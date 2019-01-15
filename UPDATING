@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190114:
+  AFFECTS: x11-wm/sway
+  AUTHOR: jbeich@FreeBSD.org
+
+  swayidle and swaylock split out into x11/swayidle and x11/swaylock.
+  Check your sway config and install those if required.
+
 20190113:
   AFFECTS: users of net/GeoIP
   AUTHOR: adamw@FreeBSD.org

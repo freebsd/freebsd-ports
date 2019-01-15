@@ -1,11 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	sway
-DISTVERSION=	1.0-beta.2
+DISTVERSION=	1.0-beta.2-189
+DISTVERSIONSUFFIX=	-g2573606b
 CATEGORIES=	x11-wm
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	4a11d0e470bc.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	i3-compatible Wayland compositor
@@ -14,8 +12,10 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		wayland-protocols>=1.14:graphics/wayland-protocols
+		wayland-protocols>=1.14:graphics/wayland-protocols \
+		wlroots>=0.2.65:x11-toolkits/wlroots
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
+		libevdev.so:devel/libevdev \
 		libpcre.so:devel/pcre \
 		libwayland-egl.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
