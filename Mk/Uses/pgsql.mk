@@ -5,8 +5,16 @@
 # Feature:	pgsql
 # Usage:	USES=		pgsql[:version]
 #
-#		Maintainer can set version required.  Minimum and maximum
-#		versions can be specified; e.g. 9.0-, 9.2+
+# version 	Maintainer can set versions required. You can set this to
+#		[min]-[max] or min+ or -max or as an explicit version
+#		(eg. 9.3-9.6 for [min]-[max], 9.5+ or 9.6-
+#		for min+ and max-, 9.4 for an explicit version). Example:
+#
+#		    USES=pgsql:9.4		# Only use PostgreSQL 9.4
+#		    USES=pgsql:9.3+		# Use PostgreSQL 9.3 or newer
+#		    USES=pgsql:9.3-9.6	# Use PostgreSQL between 9.3 & 9.6
+#		    USES=pgsql:9.6-		# Use any PostgreSQL up to 9.6
+#		    USES=pgsql		# Use the default PostgreSQL
 #
 #		WANT_PGSQL=	server[:fetch] plperl plpython pltcl
 #
@@ -78,6 +86,17 @@ _WANT_PGSQL_VER+=${version}
 .      for version in ${VALID_PGSQL_VER}
 .        if ${pgsql_ARGS:S/-//} >= ${version}
 _WANT_PGSQL_VER+=${version}
+.        endif
+.      endfor
+.    elif ${pgsql_ARGS:M*-*}
+_MIN=${pgsql_ARGS:M?*-?*:C,-.*,,}
+_MAX=${pgsql_ARGS:M?*-?*:C,.*-,,}
+.      if ${_MIN} > ${_MAX}
+IGNORE= The minimum version must be higher than the maximum version wanted
+.      endif
+.      for version in ${VALID_PGSQL_VER}
+.        if ${_MIN} <= ${version} && ${_MAX} >= ${version}
+_WANT_PGSQL_VER+=       ${version}
 .        endif
 .      endfor
 .    endif
