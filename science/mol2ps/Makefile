@@ -26,6 +26,8 @@ USE_FPC=	rtl-objpas
 
 PLIST_FILES=	bin/mol2eps bin/mol2ps bin/mol2svg %%DATADIR%%/color.conf
 
+LLD_UNSAFE=	yes
+
 do-build:
 	(cd ${WRKSRC} && ${LOCALBASE}/bin/fpc mol2ps -S2 -O3)
 
