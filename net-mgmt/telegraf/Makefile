@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telegraf
-DISTVERSION=	1.9.0
+DISTVERSION=	1.9.2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -10,7 +10,7 @@ COMMENT=	Time-series data collection
 
 LICENSE=	MIT
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 armv6 armv7
 
 BUILD_DEPENDS=	go>=1.9:lang/go
 
@@ -74,16 +74,17 @@ GH_TUPLE=	GoogleCloudPlatform:google-cloud-go:v0.27.0:go/src/cloud.google.com/go
 		hashicorp:go-cleanhttp:d5fe4b5:go_cleanhttp/src/github.com/hashicorp/go-cleanhttp \
 		hashicorp:go-rootcerts:6bb64b3:go_rootcerts/src/github.com/hashicorp/go-rootcerts \
 		hashicorp:serf:v0.8.1:serf/src/github.com/hashicorp/serf \
-		influxdata:go-syslog:v1.0.1:go_syslog/src/github.com/influxdata/go-syslog \
+		influxdata:go-syslog:v2.0.0:go_syslog/src/github.com/influxdata/go-syslog \
 		influxdata:tail:c434825:tail/src/github.com/influxdata/tail \
 		influxdata:toml:2a2e301:toml/src/github.com/influxdata/toml \
 		influxdata:wlog:7c63b0a:wlog/src/github.com/influxdata/wlog \
-		jackc:pgx:v3.1.0:pgx/src/github.com/jackc/pgx \
+		jackc:pgx:v3.2.0:pgx/src/github.com/jackc/pgx \
 		jmespath:go-jmespath:0b12d6b:go_jmespath/src/github.com/jmespath/go-jmespath \
 		kardianos:osext:ae77be6:osext/src/github.com/kardianos/osext \
 		kardianos:service:615a14e:service/src/github.com/kardianos/service \
 		kballard:go-shellquote:95032a8:go_shellquote/src/github.com/kballard/go-shellquote \
 		kr:logfmt:b84e30a:logfmt/src/github.com/kr/logfmt \
+		leodido:ragel-machinery:299bdde:ragel_machinery/src/github.com/leodido/ragel-machinery \
 		mailru:easyjson:efc7eb8:easyjson/src/github.com/mailru/easyjson \
 		matttproud:golang_protobuf_extensions:v1.0.1:golang_protobuf_extensions/src/github.com/matttproud/golang_protobuf_extensions \
 		miekg:dns:v1.0.8:dns/src/github.com/miekg/dns \
@@ -165,6 +166,8 @@ TELEGRAF_LOGDIR=/var/log/${PORTNAME}
 
 do-build:
 	@cd ${WRKSRC}/${GH_SUBDIR} && \
+		${CP} src/github.com/shirou/gopsutil/disk/disk_freebsd_386.go src/github.com/shirou/gopsutil/disk/disk_freebsd_arm.go && \
+		${CP} src/github.com/shirou/gopsutil/cpu/cpu_freebsd_386.go src/github.com/shirou/gopsutil/cpu/cpu_freebsd_arm.go && \
 		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go install -ldflags "-X main.version=${DISTVERSION}" ./cmd/telegraf
 
 do-install:
