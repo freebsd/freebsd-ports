@@ -1,6 +1,6 @@
---- doc/Makefile.orig	2014-10-07 19:28:38.000000000 -0700
-+++ doc/Makefile	2014-10-07 19:29:45.000000000 -0700
-@@ -35,13 +35,13 @@
+--- doc/Makefile.orig	2018-12-14 22:54:16 UTC
++++ doc/Makefile
+@@ -35,13 +35,13 @@ slime.ps: slime.dvi
  	dvips -o $@ $<
  
  slime.info: $(TEXI)
