@@ -52,6 +52,11 @@ CMAKE_ARGS+=	-DLLVM_HOST_TRIPLE=${CONFIGURE_TARGET}
 CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH="share/man"
 CMAKE_ARGS+=	-DLLVM_PARALLEL_LINK_JOBS=1
 
+# Disable assertions.  They should be disabled by cmake, but USES=cmake
+# overrides -DCMAKE_*_FLAGS_RELEASE.
+CFLAGS+=	-DNDEBUG
+CXXFLAGS+=	-DNDEBUG
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	llvm-mirror
 GH_TAGNAME=	${LLVM_COMMIT}
@@ -255,8 +260,8 @@ COMMANDS+=	c-index-test \
 		clang++ \
 		clang-check \
 		clang-cpp \
+		clang-extdef-mapping \
 		clang-format \
-		clang-func-mapping \
 		clang-import-test \
 		clang-offload-bundler \
 		clangd \
