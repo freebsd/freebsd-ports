@@ -1,8 +1,0 @@
-bin/geoipupdate
-@sample etc/GeoIP.conf.sample
-man/man1/geoipupdate.1.gz
-man/man5/GeoIP.conf.5.gz
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.md
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README.md
-@dir share/GeoIP
