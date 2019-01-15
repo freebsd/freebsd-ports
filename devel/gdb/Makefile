@@ -20,7 +20,7 @@ LIB_DEPENDS=	libmpfr.so:math/mpfr
 TEST_DEPENDS=	runtest:misc/dejagnu
 
 USES=		compiler:c++11-lang cpe gmake libtool tar:xz
-USE_PYTHON=	py3kplist
+USE_PYTHON=	flavors py3kplist
 
 TEST_TARGET=	check
 
@@ -84,6 +84,12 @@ SYSTEM_ZLIB_WITH=	system-zlib
 TUI_CONFIGURE_ENABLE=	tui
 
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MPYTHON}
+.if ${PYTHON_VER} != ${PYTHON_DEFAULT}
+PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
+.endif
+.endif
 
 .if ! ${PORT_OPTIONS:MBUNDLED_READLINE}
 EXCLUDE+=	readline
