@@ -1,5 +1,6 @@
 sbin/pcm-core.x
 sbin/pcm-iio.x
+sbin/pcm-latency.x
 sbin/pcm-lspci.x
 sbin/pcm-memory.x
 sbin/pcm-msr.x
