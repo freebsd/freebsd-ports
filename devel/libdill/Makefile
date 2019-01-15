@@ -10,6 +10,8 @@ COMMENT=	Structured concurrency library in C
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_i386=	error: this directive must appear between .cfi_startproc and .cfi_endproc directives
+
 USES=		autoreconf gmake libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
