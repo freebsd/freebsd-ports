@@ -24,34 +24,40 @@ pidfile=/var/run/${name}/${name}.pid
 
 required_files=${exabgp_conf}
 
-command="%%PYTHON_SITELIBDIR%%/${name}/application/bgp.py"
-procname="%%PYTHON_CMD%%"
+command="%%PYTHON_CMD%%"
+command_args="-m exabgp --folder /usr/local/etc/exabgp ${exabgp_conf}"
 
-start_cmd="exabgp_start"
+configtest_cmd="exabgp_configtest"
+start_precmd="exabgp_precmd"
+reload_precmd="exabgp_configtest"
+restart_precmd="exabgp_configtest"
 reload_all_cmd="exabgp_reload_all"
-extra_commands="reload reload_all"
+reload_all_precmd="exabgp_configtest"
+extra_commands="configtest reload reload_all"
 sig_reload="USR1"
-
-exabgp_start()
-{
-	if [ -z "$rc_fast" -a -n "$rc_pid" ]; then
-		echo 1>&2 "${name} already running? (pid=$rc_pid)."
-		return 1
-	fi
-
-	echo "Starting ${name}."
-
-	install -d -o _bgpd -g _bgpd -m 755 /var/run/${name}
-	install -d -o _bgpd -g _bgpd -m 755 /var/log/${name}
-	rm -f ${pidfile}
-
-	${procname} ${command} --folder %%ETCDIR%% ${exabgp_conf}
-}
 
 exabgp_reload_all()
 {
     	echo "Reloading exabgp configuration and processes."
 	kill -USR2 $rc_pid
+}
+
+exabgp_configtest()
+{
+	echo "Performing sanity check on ${name} configuration."
+	result=$(env exabgp.log.configuration=true exabgp.daemon.daemonize=false exabgp.log.level=ERR exabgp.log.destination=stdout ${command} -m ${name} --folder /usr/local/etc/exabgp -t ${exabgp_conf} 2>&1)
+	if [ ! -z "${result}" ]; then
+		echo "${result}"
+		err 1 "Failed to validate configuration file, aborting."
+	fi
+}
+
+exabgp_precmd()
+{
+	exabgp_configtest
+	install -d -o _bgpd -g _bgpd -m 755 /var/run/${name}
+	install -d -o _bgpd -g _bgpd -m 755 /var/log/${name}
+	rm -f ${pidfile}
 }
 
 run_rc_command "$1"
