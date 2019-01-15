@@ -1,3 +1,4 @@
+etc/xdg/kemoticons.categories
 include/KF5/KEmoticons/KEmoticons
 include/KF5/KEmoticons/KEmoticonsProvider
 include/KF5/KEmoticons/KEmoticonsTheme

@@ -1024,6 +1024,8 @@ share/dbus-1/interfaces/kf5_org.freedesktop.PowerManagement.Inhibit.xml
 share/dbus-1/interfaces/kf5_org.freedesktop.PowerManagement.xml
 share/dbus-1/interfaces/kf5_org.kde.Solid.Networking.Client.xml
 share/dbus-1/interfaces/kf5_org.kde.Solid.PowerManagement.PolicyAgent.xml
+share/doc/HTML/ca/kcontrol5/kcm_ssl/details.png
+share/doc/HTML/ca/kcontrol5/kcm_ssl/module.png
 share/doc/HTML/ca/kcontrol5/kcm_ssl/index.cache.bz2
 share/doc/HTML/ca/kcontrol5/kcm_ssl/index.docbook
 share/doc/HTML/ca/kdebugdialog5/index.cache.bz2
