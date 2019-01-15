@@ -5,8 +5,8 @@ PORTNAME=	WinFF
 PORTVERSION=	1.5.5
 PORTREVISION=	11
 CATEGORIES=	multimedia
-PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 MASTER_SITES=	http://winff.org/docs/source/
+PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 DISTNAME=	${_PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -16,10 +16,12 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg
 
-NO_WRKSUBDIR=	yes
 USE_XORG=	x11
 USES=		fpc lazarus:flavors
 USE_FPC=	chm fcl-base fcl-image fcl-json fcl-xml pasjpeg regexpr x11
+
+NO_WRKSUBDIR=	yes
+LLD_UNSAFE=	yes
 _PORTNAME=	${PORTNAME:tl}
 DATADIR=	${PREFIX}/share/${_PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${_PORTNAME}
