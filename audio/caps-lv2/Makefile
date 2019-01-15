@@ -26,6 +26,11 @@ CPP=		clang-cpp${LLVM_VER}
 CC=		clang${LLVM_VER}
 CXX=		clang++${LLVM_VER}
 
+.if exists(/usr/lib/libstdc++.so)
+CXXFLAGS+=	-stdlib=libstdc++
+LDFLAGS+=	-stdlib=libstdc++
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|__APPLE__|__FreeBSD__|" \
 		${WRKSRC}/dsp/v4f_IIR2.h
