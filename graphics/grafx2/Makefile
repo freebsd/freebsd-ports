@@ -2,9 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	grafx2
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
+MASTER_SITES=	SF/recoil/recoil/${RECOIL_VERSION}/:recoil
+DISTFILES=	recoil-${RECOIL_VERSION}${EXTRACT_SUFX}:recoil
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Pixelart-oriented bitmap painting program
@@ -12,47 +14,40 @@ COMMENT=	Pixelart-oriented bitmap painting program
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libX11.so:x11/libX11 \
-		libpng.so:graphics/png
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff
 
-USES=		gmake pkgconfig tar:tgz iconv:wchar_t
+USES=		desktop-file-utils gmake iconv:wchar_t pkgconfig
 USE_SDL=	sdl image
 USE_GITLAB=	yes
+
 GL_ACCOUNT=	GrafX2
 GL_PROJECT=	grafX2
-GL_COMMIT=	60b5e5fd50acb01cbdc59f50e2c8f4b8786635c0
+GL_COMMIT=	5d8c61e41011a8106359343243e1050af4e7fd1f
+
+INSTALLS_ICONS=	yes
+
+RECOIL_VERSION=	4.3.1
 
 WRKSRC_SUBDIR=	src
 CFLAGS+=	-DHAVE_SYS_PARAM_H -DHAVE_SYS_UCRED_H -DHAVE_SYS_MOUNT_H
 
-OPTIONS_DEFINE=	TTF LUA
-TTF_DESC=	True Type font support
+OPTIONS_DEFINE=	LUA TTF
 OPTIONS_DEFAULT=TTF
+OPTIONS_SUB=	yes
+TTF_DESC=	True Type font support
+
+LUA_USES=		lua:51
+LUA_MAKE_ARGS_OFF=	NOLUA=1
 
 TTF_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
+TTF_USE=		SDL=ttf
+TTF_MAKE_ARGS_OFF=	NOTTF=1
 
-# disable recoil support until we have a librecoil port
-MAKE_ENV+=	NORECOIL=1
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTTF}
-USE_SDL+=	ttf
-.else
-MAKE_ARGS+=	NOTTF=1
-.endif
-
-.if ${PORT_OPTIONS:MLUA}
-USES+=		lua:51 pkgconfig
-.else
-MAKE_ARGS+=	NOLUA=1
-.endif
+post-extract:
+	@${MV} ${WRKDIR}/recoil-${RECOIL_VERSION} ${WRKSRC}/../3rdparty/
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|^  prefix = .*$$|  prefix = ${PREFIX}|' \
-		-e '/scripts\/libs/d' \
-		-e 's/CC = gcc/CC ?= gcc/' \
-		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} \
 		-e 's|macosx|FreeBSD|g' \
 		${WRKSRC}/mountlist.c ${WRKSRC}/init.c
@@ -61,6 +56,8 @@ post-patch:
 		${WRKSRC}/setup.c
 
 post-install:
+	@${MV} ${STAGEDIR}${PREFIX}/bin/grafx2-sdl \
+		${STAGEDIR}${PREFIX}/bin/grafx2
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/grafx2
 
 .include <bsd.port.mk>

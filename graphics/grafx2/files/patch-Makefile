@@ -1,36 +1,53 @@
---- Makefile.orig	2018-05-06 15:36:46 UTC
+--- Makefile.orig	2019-01-10 08:40:57 UTC
 +++ Makefile
-@@ -35,7 +35,11 @@
+@@ -33,25 +33,8 @@
+ # Compile with OPTIM=0 to disable gcc optimizations, to enable debug.
+   STRIP = strip
  
- # Detect GIT revision
-   GIT_REVISION = $(shell git rev-list --count 1af8c74f53110e349d8f0d19b14599281913f71f..)
--  GIT_BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
-+  ifneq (,$(CI_COMMIT_REF_NAME))
-+    GIT_BRANCH = $(CI_COMMIT_REF_NAME)
-+  else
-+    GIT_BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
-+  endif
-   ifneq (master,$(GIT_BRANCH))
-     GIT_REVISION := "$(GIT_REVISION)-$(GIT_BRANCH)"
-   endif
-@@ -384,7 +388,9 @@ endif
-       COPT += $(LUACOPT)
-       LOPT += $(LUALOPT)
-       OBJDIR = ../obj/win32
-+      WINDRES ?= $(shell which i686-w64-mingw32-windres || which mingw32-windres)
-       PLATFORM = win32
-+      PLATFORMOBJ = winres.o
-       PLATFORMFILES = bin/SDL.dll bin/SDL_image.dll $(wildcard ../bin/libpng*.dll) $(wildcard ../bin/libjpeg*.dll) bin/zlib1.dll $(TTFLIBS)
-     else
-       ifdef GP2XCROSS
-@@ -789,6 +795,10 @@ install : $(BIN)
- 	test -d $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/libs || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/libs
- 	test -d $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/palette || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/palette
- 	test -d $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/picture || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/picture
-+	test -d $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/picture/thomson || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/picture/thomson
-+	test -d $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/picture/thomson/lib || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/picture/thomson/lib
-+	test -d $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/picture/others-8bit || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/picture/others-8bit
-+	test -d $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/picture/others-8bit/lib || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts/samples_2.4/picture/others-8bit/lib
+-# Detect GIT revision
+-ifeq (true,$(shell git rev-parse --is-inside-work-tree))
+-  GIT_REVISION = $(shell git rev-list --count 1af8c74f53110e349d8f0d19b14599281913f71f..)
+-  ifneq (,$(CI_COMMIT_REF_NAME))
+-    GIT_BRANCH = $(CI_COMMIT_REF_NAME)
+-  else
+-  ifneq (,$(TRAVIS_BRANCH))
+-    GIT_BRANCH = $(TRAVIS_BRANCH)
+-  else
+-    GIT_BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
+-  endif
+-  endif
+-  ifneq (master,$(GIT_BRANCH))
+-    GIT_REVISION := $(GIT_REVISION)-$(GIT_BRANCH)
+-  endif
+-else
+   # outside git repository : get version stored in version.c
+   GIT_REVISION := $(shell cat version.c | cut -f 2 -d '"')
+-endif
+ 
+   REVISION_CACHE = .revision.cache
+   RES := $(shell if [ ! -f $(REVISION_CACHE) ] || [ "`cat $(REVISION_CACHE)`" != "$(GIT_REVISION)" ] ; then echo "$(GIT_REVISION)" > $(REVISION_CACHE) ; fi )
+@@ -88,7 +71,7 @@ TARTRANSFORM = --strip=1 --transform 's,^,grafx2/,g'
+ 
+ # default to gcc compiler
+ ifeq (default,$(origin CC))
+-  CC = gcc
++  CC ?= gcc
+ endif
+ PKG_CONFIG ?= pkg-config
+ 
+@@ -973,7 +956,6 @@ install : $(BIN)
+ 	test -d $(DESTDIR)$(datadir)/grafx2/fonts || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/fonts
+ 	test -d $(DESTDIR)$(datadir)/grafx2/skins || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/skins
+ 	test -d $(DESTDIR)$(datadir)/grafx2/scripts || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts
+-	test -d $(DESTDIR)$(datadir)/grafx2/scripts/libs || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts/libs
  	test -d $(DESTDIR)$(datadir)/applications || $(MKDIR) $(DESTDIR)$(datadir)/applications
+ 	test -d $(DESTDIR)$(datadir)/metainfo || $(MKDIR) $(DESTDIR)$(datadir)/metainfo
  	test -d $(DESTDIR)$(pixmapdir) || $(MKDIR) $(DESTDIR)$(pixmapdir)
- 	
+@@ -1012,7 +994,6 @@ uninstall :
+ 	$(if $(wildcard $(DESTDIR)$(datadir)/grafx2/scripts/samples/demo),$(RMDIR) $(DESTDIR)$(datadir)/grafx2/scripts/samples/demo,)
+ 	$(if $(wildcard $(DESTDIR)$(datadir)/grafx2/scripts/samples/brush),$(RMDIR) $(DESTDIR)$(datadir)/grafx2/scripts/samples/brush,)
+ 	$(if $(wildcard $(DESTDIR)$(datadir)/grafx2/scripts/samples),$(RMDIR) $(DESTDIR)$(datadir)/grafx2/scripts/samples,)
+-	$(if $(wildcard $(DESTDIR)$(datadir)/grafx2/scripts/libs),$(RMDIR) $(DESTDIR)$(datadir)/grafx2/scripts/libs,)
+ 	$(if $(wildcard $(DESTDIR)$(datadir)/grafx2/scripts),$(RMDIR) $(DESTDIR)$(datadir)/grafx2/scripts,)
+ 	$(if $(wildcard $(DESTDIR)$(datadir)/grafx2),$(RMDIR) $(DESTDIR)$(datadir)/grafx2,)
+ 	# Icon and desktop file for debian
