@@ -5,7 +5,7 @@ DISTVERSION=	1.1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Sway's idle management daemon #'
+COMMENT=	Idle management daemon for Wayland
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
