@@ -62,11 +62,13 @@ NO_CCACHE_DEPEND=	yes
 
 OPTIONS_SUB=	yes
 
-STATIC_LDFLAGS=	-static
+STATIC_LDFLAGS+=	-static
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMEMCACHED}
+# Hack for libsasl2.a requiring HMAC_CTX_reset from hidden libntlm.a.
+STATIC_LDFLAGS+= -L${LOCALBASE}/lib/sasl2
 PORTVERSION=	3.5.dev.20180926
 USE_GITHUB=	yes
 GH_TAGNAME=	f7712082106bef085515f86ae47e7dbbd2a48b57
