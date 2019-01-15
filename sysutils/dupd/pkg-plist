@@ -1,0 +1,7 @@
+bin/dupd
+man/man1/dupd.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
+%%PORTDOCS%%%%DOCSDIR%%/design.md
+%%PORTDOCS%%%%DOCSDIR%%/examples.md
+%%PORTDOCS%%%%DOCSDIR%%/index.md
+%%PORTDOCS%%%%DOCSDIR%%/performance.md
