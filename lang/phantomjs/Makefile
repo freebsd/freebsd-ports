@@ -5,7 +5,7 @@ PORTVERSION=	2.1.1
 PORTREVISION=	12
 CATEGORIES=	lang
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minimalistic, headless, WebKit-based, JavaScript-driven tool
 
 LICENSE=	BSD3CLAUSE
