@@ -1,6 +1,6 @@
 --- programs/CMakeLists.txt.orig	2013-03-30 16:24:45 UTC
 +++ programs/CMakeLists.txt
-@@ -13,9 +13,14 @@ foreach(prog gpmetis ndmetis mpmetis m2g
+@@ -13,9 +13,14 @@ foreach(prog gpmetis ndmetis mpmetis m2gmetis graphchk
  #  target_link_libraries(${prog} metis profiler)
  endforeach(prog)
  
