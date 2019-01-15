@@ -1,11 +1,13 @@
 bin/pmat
 bin/pmat-cat-svpv
+bin/pmat-counts
 bin/pmat-diff
 bin/pmat-leakreport
 bin/pmat-list-dangling-ptrs
 bin/pmat-list-orphans
 %%SITE_ARCH%%/Devel/MAT.pm
 %%SITE_ARCH%%/Devel/MAT/Cmd.pod
+%%SITE_ARCH%%/Devel/MAT/Cmd/Terminal.pm
 %%SITE_ARCH%%/Devel/MAT/Context.pm
 %%SITE_ARCH%%/Devel/MAT/Dumpfile.pm
 %%SITE_ARCH%%/Devel/MAT/Graph.pm
@@ -23,6 +25,7 @@ bin/pmat-list-orphans
 %%SITE_ARCH%%/Devel/MAT/Tool/Roots.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Show.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Sizes.pm
+%%SITE_ARCH%%/Devel/MAT/Tool/Stack.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Summary.pm
 %%SITE_ARCH%%/Devel/MAT/Tool/Symbols.pm
 %%SITE_ARCH%%/Devel/MAT/UI.pod
@@ -64,6 +67,7 @@ bin/pmat-list-orphans
 %%SITE_ARCH%%/auto/share/module/Devel-MAT-UI/icons/type-UNDEF.svg
 %%PERL5_MAN3%%/Devel::MAT.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Cmd.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Cmd::Terminal.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Context.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Dumpfile.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Graph.3.gz
@@ -79,6 +83,7 @@ bin/pmat-list-orphans
 %%PERL5_MAN3%%/Devel::MAT::Tool::Roots.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Show.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Sizes.3.gz
+%%PERL5_MAN3%%/Devel::MAT::Tool::Stack.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Summary.3.gz
 %%PERL5_MAN3%%/Devel::MAT::Tool::Symbols.3.gz
 %%PERL5_MAN3%%/Devel::MAT::UI.3.gz
