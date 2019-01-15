@@ -53,8 +53,8 @@ bin/sancov-devel
 %%CLANG%%bin/clang++-devel
 %%CLANG%%bin/clang-check-devel
 %%CLANG%%bin/clang-cpp-devel
+%%CLANG%%bin/clang-extdef-mapping-devel
 %%CLANG%%bin/clang-format-devel
-%%CLANG%%bin/clang-func-mapping-devel
 %%CLANG%%bin/clang-import-test-devel
 %%CLANG%%bin/clang-offload-bundler-devel
 %%CLANG%%bin/clangd-devel
@@ -116,8 +116,8 @@ llvm-devel/bin/bugpoint
 %%CLANG%%llvm-devel/bin/clang-check
 %%CLANG%%llvm-devel/bin/clang-cl
 %%CLANG%%llvm-devel/bin/clang-cpp
+%%CLANG%%llvm-devel/bin/clang-extdef-mapping
 %%CLANG%%llvm-devel/bin/clang-format
-%%CLANG%%llvm-devel/bin/clang-func-mapping
 %%CLANG%%llvm-devel/bin/clang-import-test
 %%EXTRAS%%llvm-devel/bin/clang-include-fixer
 %%CLANG%%llvm-devel/bin/clang-offload-bundler
@@ -216,6 +216,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/AST/AST.h
 %%CLANG%%llvm-devel/include/clang/AST/ASTConsumer.h
 %%CLANG%%llvm-devel/include/clang/AST/ASTContext.h
+%%CLANG%%llvm-devel/include/clang/AST/ASTContextAllocate.h
 %%CLANG%%llvm-devel/include/clang/AST/ASTDiagnostic.h
 %%CLANG%%llvm-devel/include/clang/AST/ASTDumperUtils.h
 %%CLANG%%llvm-devel/include/clang/AST/ASTFwd.h
@@ -228,9 +229,11 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/AST/ASTUnresolvedSet.h
 %%CLANG%%llvm-devel/include/clang/AST/ASTVector.h
 %%CLANG%%llvm-devel/include/clang/AST/Attr.h
-%%CLANG%%llvm-devel/include/clang/AST/AttrDump.inc
 %%CLANG%%llvm-devel/include/clang/AST/AttrImpl.inc
 %%CLANG%%llvm-devel/include/clang/AST/AttrIterator.h
+%%CLANG%%llvm-devel/include/clang/AST/AttrNodeTraverse.inc
+%%CLANG%%llvm-devel/include/clang/AST/AttrTextNodeDump.inc
+%%CLANG%%llvm-devel/include/clang/AST/AttrVisitor.h
 %%CLANG%%llvm-devel/include/clang/AST/AttrVisitor.inc
 %%CLANG%%llvm-devel/include/clang/AST/Attrs.inc
 %%CLANG%%llvm-devel/include/clang/AST/Availability.h
@@ -310,6 +313,7 @@ llvm-devel/bin/yaml2obj
 %%CLANG%%llvm-devel/include/clang/AST/StmtObjC.h
 %%CLANG%%llvm-devel/include/clang/AST/StmtOpenMP.h
 %%CLANG%%llvm-devel/include/clang/AST/StmtVisitor.h
+%%CLANG%%llvm-devel/include/clang/AST/TemplateArgumentVisitor.h
 %%CLANG%%llvm-devel/include/clang/AST/TemplateBase.h
 %%CLANG%%llvm-devel/include/clang/AST/TemplateName.h
 %%CLANG%%llvm-devel/include/clang/AST/TextNodeDumper.h
@@ -1629,7 +1633,6 @@ llvm-devel/include/llvm/CodeGen/MachineOperand.h
 llvm-devel/include/llvm/CodeGen/MachineOptimizationRemarkEmitter.h
 llvm-devel/include/llvm/CodeGen/MachineOutliner.h
 llvm-devel/include/llvm/CodeGen/MachinePassRegistry.h
-llvm-devel/include/llvm/CodeGen/MachinePipeliner.h
 llvm-devel/include/llvm/CodeGen/MachinePostDominators.h
 llvm-devel/include/llvm/CodeGen/MachineRegionInfo.h
 llvm-devel/include/llvm/CodeGen/MachineRegisterInfo.h
@@ -2059,7 +2062,6 @@ llvm-devel/include/llvm/IR/Statepoint.h
 llvm-devel/include/llvm/IR/SymbolTableListTraits.h
 llvm-devel/include/llvm/IR/TrackingMDRef.h
 llvm-devel/include/llvm/IR/Type.h
-llvm-devel/include/llvm/IR/TypeBuilder.h
 llvm-devel/include/llvm/IR/TypeFinder.h
 llvm-devel/include/llvm/IR/Use.h
 llvm-devel/include/llvm/IR/UseListOrder.h
@@ -3088,6 +3090,7 @@ llvm-devel/lib/libOptRemarks.so.%%LLVM_MAJOR%%svn
 %%LLDB%%llvm-devel/lib/liblldbPluginScriptInterpreterNone.a
 %%LLDB%%llvm-devel/lib/liblldbPluginScriptInterpreterPython.a
 %%LLDB%%llvm-devel/lib/liblldbPluginStructuredDataDarwinLog.a
+%%LLDB%%llvm-devel/lib/liblldbPluginSymbolFileBreakpad.a
 %%LLDB%%llvm-devel/lib/liblldbPluginSymbolFileDWARF.a
 %%LLDB%%llvm-devel/lib/liblldbPluginSymbolFileNativePDB.a
 %%LLDB%%llvm-devel/lib/liblldbPluginSymbolFilePDB.a
