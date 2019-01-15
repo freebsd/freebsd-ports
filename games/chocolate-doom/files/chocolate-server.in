@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# PROVIDE: chocolate_server
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="chocolate_server"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${chocolate_server_enable:="NO"}
+: ${chocolate_server_commandline:=""}
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/chocolate-server"
+command_args="-f -p ${pidfile} -u nobody %%PREFIX%%/bin/chocolate-server $chocolate_server_commandline"
+
+run_rc_command "$1"

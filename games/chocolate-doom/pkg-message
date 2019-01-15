@@ -1,10 +1,44 @@
 ******************************************************
 
-To switch on OPL (Adlib/SB) or GUS emulation you need
-to run chocolate-doom-setup, default Native MIDI is
-very similar to Roland SC-55.
+The default location for a configuration files and
+saves is no longer ~/.chocolate-doom, current one is
+~/.local/share/chocolate-doom/.
 
-GUS emulation needs setting "gus_patch_path" in *.cfg
-to GUS patch set (dgguspat.zip).
+You can recreate the sound of the historical vanilla
+game according to your own experience.
+
+The default is an emulation of OPL2 Chip (Adlib/
+Soundblaster) for MIDI music output. OPL3 is also
+available.
+
+If you prefer Gravis Ultrasound, ensure that
+audio/guspat is installed, run chocolate-doom-setup,
+select "Configure Sound", choose "GUS (emulated)",
+and enter the path:
+
+/usr/local/share/guspat/inst/GUS
+
+into the "Path to patch files:" field.
+
+If you wish to enable native MIDI, ensure that a
+suitable set of patches is installed such as
+audio/eawpats, audio/eawplus, audio/freepats, or
+audio/guspat, enter chocolate-doom-setup, select
+"Configure Sound", choose "Native MIDI", and enter
+the path to the Timidity configuration file.
+
+Examples:
+
+/usr/local/share/timidity/timidity.cfg-eawpats
+
+/usr/local/share/timidity/timidity.cfg-eawplus
+
+/usr/local/share/freepats/freepats.cfg
+
+/usr/local/share/timidity/timidity.cfg-guspat
+
+If you choose either Gravis Ultrasound emulation or
+native MIDI and provide no path, there will be no
+music.
 
 ******************************************************
