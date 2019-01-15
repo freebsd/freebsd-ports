@@ -10,6 +10,8 @@
 #                               Set it to "YES" to enable minio
 # minio_config (path):          Set to "%%PREFIX%%/etc/minio" by default
 #                               Set to directory to store minio config
+# minio_certs (path):           Set to "/var/tmp/minio" by default
+#                               Set to directory to certs dir
 # minio_disks (path):           Set to "/var/db/minio" by default.
 #                               Set it to directory to store minio data
 # minio_address (str):          Set to ":9000" by default.
@@ -31,6 +33,7 @@ load_rc_config ${name}
 
 : ${minio_enable:="NO"}
 : ${minio_config="%%PREFIX%%/etc/minio"}
+: ${minio_certs="/var/tmp/minio"}
 : ${minio_disks="/var/db/minio"}
 : ${minio_address=":9000"}
 : ${minio_user:="%%USER%%"}
@@ -40,7 +43,7 @@ load_rc_config ${name}
 pidfile="/var/run/${name}.pid"
 procname="%%PREFIX%%/bin/minio"
 command="/usr/sbin/daemon"
-command_args="-c -p ${pidfile} /usr/bin/env ${minio_env} ${procname} -C \"${minio_config}\" server --address=\"${minio_address}\" --quiet ${minio_disks} < /dev/null > ${minio_logfile} 2>&1"
+command_args="-c -p ${pidfile} /usr/bin/env ${minio_env} ${procname} -C \"${minio_config}\" -S \"${minio_certs}\" server --address=\"${minio_address}\" --quiet ${minio_disks} < /dev/null > ${minio_logfile} 2>&1"
 
 start_precmd="minio_startprecmd"
 
