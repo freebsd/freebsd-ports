@@ -39,6 +39,7 @@ USE_GNOME+=	${USE_GNOME_${FLAVOR}}
 
 LAZARUS_PROJECT_FILES=	Source/PicPas.lpi
 LAZBUILD_ARGS=		-d
+LLD_UNSAFE=	yes
 
 post-patch:
 	${REINPLACE_CMD} 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/Source/Globales.pas
