@@ -6,3 +6,5 @@ man/man1/msmtp.1.gz
 %%MSMTPQ%%bin/msmtpq
 %%NLS%%share/locale/de/LC_MESSAGES/msmtp.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/msmtp.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/msmtp.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/msmtp.mo
