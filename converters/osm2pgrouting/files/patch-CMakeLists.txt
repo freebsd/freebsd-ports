@@ -1,15 +1,15 @@
---- CMakeLists.txt.orig	2017-12-18 15:44:24 UTC
+--- CMakeLists.txt.orig	2019-01-11 07:48:53 UTC
 +++ CMakeLists.txt
-@@ -106,7 +106,7 @@ TARGET_LINK_LIBRARIES(osm2pgrouting
-     )
+@@ -8,7 +8,7 @@ if ( ${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR} 
+ endif()
  
- INSTALL(TARGETS osm2pgrouting
--    RUNTIME DESTINATION "/usr/bin"
-+    RUNTIME DESTINATION "${CMAKE_INSTALL_PREFIX}/bin"
-     )
+ LIST(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+-SET(SHARE_DIR "${CMAKE_INSTALL_PREFIX}/share/osm2pgrouting")
++SET(SHARE_DIR "${CMAKE_INSTALL_PREFIX}/etc/osm2pgrouting")
  
- if(WIN32)
-@@ -114,13 +114,15 @@ if(WIN32)
+ FIND_PACKAGE(PostgreSQL REQUIRED)
+ find_package(LibPQXX REQUIRED)
+@@ -114,8 +114,10 @@ if(WIN32)
  endif()
  
  INSTALL(FILES
@@ -21,9 +21,3 @@
      "${CMAKE_SOURCE_DIR}/mapconfig.xml"
      "${CMAKE_SOURCE_DIR}/mapconfig_for_cars.xml"
      "${CMAKE_SOURCE_DIR}/mapconfig_for_bicycles.xml"
-     "${CMAKE_SOURCE_DIR}/mapconfig_for_pedestrian.xml"
--    DESTINATION "${SHARE_DIR}")
-+    DESTINATION "${CMAKE_INSTALL_PREFIX}/etc")
- 
- 
- #INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR} )

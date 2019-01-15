@@ -1,5 +1,5 @@
 bin/osm2pgrouting
-@sample etc/mapconfig.xml.sample
-@sample etc/mapconfig_for_bicycles.xml.sample
-@sample etc/mapconfig_for_cars.xml.sample
-@sample etc/mapconfig_for_pedestrian.xml.sample
+@sample %%ETCDIR%%/mapconfig.xml.sample
+@sample %%ETCDIR%%/mapconfig_for_bicycles.xml.sample
+@sample %%ETCDIR%%/mapconfig_for_cars.xml.sample
+@sample %%ETCDIR%%/mapconfig_for_pedestrian.xml.sample

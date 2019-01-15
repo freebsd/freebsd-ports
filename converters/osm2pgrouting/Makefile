@@ -2,8 +2,7 @@
 
 PORTNAME=	osm2pgrouting
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.3
-PORTREVISION=	6
+DISTVERSION=	2.3.6
 CATEGORIES=	converters databases geography
 
 MAINTAINER=	lbartoletti@tuxfamily.org
@@ -19,6 +18,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 USES=		cmake compiler:c++11-lang pgsql
 USE_GITHUB=	yes
 GH_ACCOUNT=	pgRouting
+
 WANT_PGSQL=	client
 
 OPTIONS_DEFINE=	DOCS
@@ -26,12 +26,12 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	Readme.md
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/osm2pgrouting/mapconfig.xml|${PREFIX}/etc/mapconfig.xml|' \
+	@${REINPLACE_CMD} -e 's|/usr/share/osm2pgrouting/mapconfig.xml|${PREFIX}/etc/${PORTNAME}/mapconfig.xml|' \
 		${WRKSRC}/src/utilities/prog_options.cpp \
 		${WRKSRC}/Readme.md
 
 post-install:
-	@for cf in ${STAGEDIR}${PREFIX}/etc/*.xml; do \
+	@for cf in ${STAGEDIR}${PREFIX}/etc/${PORTNAME}/*.xml; do \
 		${MV} $${cf} $${cf}.sample; \
 	done
 
