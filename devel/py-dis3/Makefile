@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dis3
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,9 +12,11 @@ COMMENT=	Python 2.7 backport of the "dis" module from Python 3.5+
 
 LICENSE=	MIT PSFL
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		python:2.7
+USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
-USE_PYTHON=	autoplist distutils
-USES=		python:2.7
 
 .include <bsd.port.mk>
