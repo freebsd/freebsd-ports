@@ -32,9 +32,8 @@ PLIST_FILES=	bin/geoipupdate \
 		'@dir share/GeoIP'
 PORTDOCS=	GeoIP.conf.md geoipupdate.md
 
-do-build:
+post-extract:
 	${MV} ${WRKSRC}/vendor ${WRKSRC}/src
-	${DO_MAKE_BUILD} -C ${WRKSRC}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/GeoIP
