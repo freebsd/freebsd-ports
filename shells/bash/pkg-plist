@@ -62,10 +62,12 @@ bin/bashbug
 %%NO_STATIC%%lib/bash/Makefile.inc
 %%NO_STATIC%%lib/bash/basename
 %%NO_STATIC%%lib/bash/dirname
+%%NO_STATIC%%lib/bash/fdflags
 %%NO_STATIC%%lib/bash/finfo
 %%NO_STATIC%%lib/bash/head
 %%NO_STATIC%%lib/bash/id
 %%NO_STATIC%%lib/bash/ln
+%%NO_STATIC%%lib/bash/loadables.h
 %%NO_STATIC%%lib/bash/logname
 %%NO_STATIC%%lib/bash/mkdir
 %%NO_STATIC%%lib/bash/mypid
@@ -75,6 +77,7 @@ bin/bashbug
 %%NO_STATIC%%lib/bash/push
 %%NO_STATIC%%lib/bash/realpath
 %%NO_STATIC%%lib/bash/rmdir
+%%NO_STATIC%%lib/bash/seq
 %%NO_STATIC%%lib/bash/setpgid
 %%NO_STATIC%%lib/bash/sleep
 %%NO_STATIC%%lib/bash/strftime
@@ -113,6 +116,7 @@ man/man1/bashbug.1.gz
 %%NLS%%share/locale/nb/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/bash.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/bash.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/bash.mo
