@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mosquitto
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 CATEGORIES=	net
 MASTER_SITES=	http://mosquitto.org/files/source/
 
@@ -26,11 +26,11 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	WS
 
+CMAKE_ARGS+=	-DCMAKE_LIBDATADIR="${PREFIX}/libdata"
+
 WS_DESC=	MQTT over Websockets support
 WS_LIB_DEPENDS=	libwebsockets.so:net/libwebsockets
 WS_CMAKE_ON=	-DWITH_WEBSOCKETS=ON
-
-CMAKE_ARGS+=	-DCMAKE_LIBDATADIR="${PREFIX}/libdata"
 
 post-patch:
 # do not run ldconfig in stage dir
