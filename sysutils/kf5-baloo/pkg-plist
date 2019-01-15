@@ -486,6 +486,8 @@ share/locale/zh_CN/LC_MESSAGES/kio5_timeline.mo
 share/locale/zh_TW/LC_MESSAGES/baloo_file5.mo
 share/locale/zh_TW/LC_MESSAGES/baloo_file_extractor5.mo
 share/locale/zh_TW/LC_MESSAGES/balooctl5.mo
+share/locale/zh_TW/LC_MESSAGES/baloodb5.mo
+share/locale/zh_TW/LC_MESSAGES/balooengine5.mo
 share/locale/zh_TW/LC_MESSAGES/baloomonitorplugin.mo
 share/locale/zh_TW/LC_MESSAGES/baloosearch5.mo
 share/locale/zh_TW/LC_MESSAGES/balooshow5.mo

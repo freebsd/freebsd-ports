@@ -44,7 +44,9 @@ include/KF5/KWayland/Client/subsurface.h
 include/KF5/KWayland/Client/surface.h
 include/KF5/KWayland/Client/textinput.h
 include/KF5/KWayland/Client/touch.h
-include/KF5/KWayland/Client/xdgforeign_v2.h
+include/KF5/KWayland/Client/xdgdecoration.h
+include/KF5/KWayland/Client/xdgforeign.h
+include/KF5/KWayland/Server/xdgdecoration_interface.h
 include/KF5/KWayland/Client/xdgoutput.h
 include/KF5/KWayland/Client/xdgshell.h
 include/KF5/KWayland/Server/appmenu_interface.h
