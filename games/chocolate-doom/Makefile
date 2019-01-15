@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	chocolate-doom
-PORTVERSION=	2.3.0
+PORTVERSION=	3.0.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.chocolate-doom.org/downloads/${PORTVERSION}/
 
@@ -12,8 +12,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gmake python:build
-USE_SDL=	mixer net sdl
+USES=		gmake python:build pkgconfig
+USE_SDL=	mixer2 net2 sdl2
 GNU_CONFIGURE=	yes
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -21,6 +21,7 @@ PORTDOCS=	CMDLINE.doom ChangeLog INSTALL.doom NEWS.md NOT-BUGS.md PHILOSOPHY.md 
 		README.md README.Music.md
 
 OPTIONS_DEFINE=	DOCS
+USE_RC_SUBR=	chocolate-server
 
 .include "${.CURDIR}/../doom-data/Makefile.include"
 
