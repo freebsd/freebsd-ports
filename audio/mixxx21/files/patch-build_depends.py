@@ -1,5 +1,5 @@
---- build/depends.py	2018-09-05 15:20:52.000000000 -0500
-+++ build/depends.py	2018-10-30 14:47:39.928944000 -0500
+--- build/depends.py	2018-12-27 02:36:10.000000000 -0500
++++ build/depends.py	2019-01-05 23:40:05.463593000 -0500
 @@ -12,7 +12,7 @@
          if not conf.CheckLib('portaudio'):
              raise Exception(
@@ -33,41 +33,43 @@
  class Qt(Dependence):
      DEFAULT_QT4DIRS = {'linux': '/usr/share/qt4',
 -                       'bsd': '/usr/local/lib/qt4',
-+                       'bsd': '%%LOCALBASE%%/share/qt4',
++		       'bsd': '%%LOCALBASE%%/share/qt4',
                         'osx': '/Library/Frameworks',
                         'windows': 'C:\\qt\\4.6.0'}
  
      DEFAULT_QT5DIRS64 = {'linux': '/usr/lib/x86_64-linux-gnu/qt5',
-+                         'bsd': '%%LOCALBASE%%/lib/qt5',
++			 'bsd': '%%LOCALBASE%%/lib/qt5',
                           'osx': '/Library/Frameworks',
                           'windows': 'C:\\qt\\5.0.1'}
  
      DEFAULT_QT5DIRS32 = {'linux': '/usr/lib/i386-linux-gnu/qt5',
-+                         'bsd': '%%LOCALBASE%%/lib/qt5',
++			 'bsd': '%%LOCALBASE%%/lib/qt5',
                           'osx': '/Library/Frameworks',
                           'windows': 'C:\\qt\\5.0.1'}
  
-@@ -319,9 +322,17 @@
+@@ -319,10 +322,18 @@
                  build.env.Append(CCFLAGS='-fPIC')
  
          elif build.platform_is_bsd:
 -            build.env.Append(LIBS=qt_modules)
 -            include_paths = ['$QTDIR/include/%s' % module
 -                             for module in qt_modules]
-+	    qt_modules.extend(['QtDBus'])
-+	    if qt5:
-+		qt5_modules = [w.replace('Qt', 'Qt5') for w in qt_modules]
-+		build.env.Append(LIBS = qt5_modules)
-+		build.env.Append(CCFLAGS='-fPIC')
-+                include_paths = ['%%LOCALBASE%%/include/qt5/%s' % module
+-            build.env.Append(CPPPATH=include_paths)
++           qt_modules.extend(['QtDBus'])
++           if qt5:
++               qt5_modules = [w.replace('Qt', 'Qt5') for w in qt_modules]
++               build.env.Append(LIBS = qt5_modules)
++               build.env.Append(CCFLAGS='-fPIC')
++               include_paths = ['%%LOCALBASE%%/include/qt5/%s' % module
 +                                for module in qt_modules]
-+            else:
-+		build.env.Append(LIBS = qt_modules)
-+                include_paths = ['%%LOCALBASE%%/include/qt4/%s' % module
++           else:
++               build.env.Append(LIBS = qt_modules)
++               include_paths = ['%%LOCALBASE%%/include/qt4/%s' % module
 +                                for module in qt_modules]
-             build.env.Append(CPPPATH=include_paths)
++           build.env.Append(CPPPATH=include_paths)
          elif build.platform_is_osx:
              qtdir = build.env['QTDIR']
+             build.env.Append(
 @@ -487,7 +498,7 @@
          if not build.platform_is_windows and not (using_104_sdk or compiling_on_104):
              qtdir = build.env['QTDIR']
@@ -91,7 +93,7 @@
          # it, though might cause issues. This is safe to remove once we
          # deprecate Karmic support. rryan 2/2011
 -        build.env.Append(CPPPATH='/usr/include/taglib/')
-+        build.env.Append(CPPPATH='%%LOCALBASE%%/include/taglib/')
++	build.env.Append(CPPPATH='%%LOCALBASE%%/include/taglib/')
  
          if build.platform_is_windows and build.static_dependencies:
              build.env.Append(CPPDEFINES='TAGLIB_STATIC')
@@ -103,29 +105,33 @@
              build.env.Append(CCFLAGS='-Wall')
              if build.compiler_is_clang:
                  # Quiet down Clang warnings about inconsistent use of override
-@@ -1445,9 +1455,9 @@
+@@ -1445,12 +1455,13 @@
  
          elif build.platform_is_osx:
              # Stuff you may have compiled by hand
 -            if os.path.isdir('/usr/local/include'):
 -                build.env.Append(LIBPATH=['/usr/local/lib'])
--                build.env.Append(CPPPATH=['/usr/local/include'])
 +            if os.path.isdir('%%LOCALBASE%%/include'):
 +                build.env.Append(LIBPATH=['%%LOCALBASE%%/lib'])
+                 # Use -isystem instead of -I to avoid compiler warnings from
+                 # system libraries. This cuts down on Mixxx's compilation output
+                 # significantly when using Homebrew installed to /usr/local.
+-                build.env.Append(CCFLAGS=['-isystem', '/usr/local/include'])
 +                build.env.Append(CPPPATH=['%%LOCALBASE%%/include'])
++                build.env.Append(CCFLAGS=['-isystem', '%%LOCALBASE%%/include'])
  
              # Non-standard libpaths for fink and certain (most?) darwin ports
              if os.path.isdir('/sw/include'):
-@@ -1460,17 +1470,24 @@
+@@ -1463,17 +1474,24 @@
                  build.env.Append(CPPPATH=['/opt/local/include'])
  
          elif build.platform_is_bsd:
-+	    qt5 = Qt.qt5_enabled(build)
++            qt5 = Qt.qt5_enabled(build)
 +
-+	    if qt5:
-+	      qtdirectory = 'qt5'
++            if qt5:
++              qtdirectory = 'qt5'
 +            else:
-+	      qtdirectory = 'qt4'
++              qtdirectory = 'qt4'
 +
              build.env.Append(CPPDEFINES='__BSD__')
              build.env.Append(CPPPATH=['/usr/include',
@@ -146,7 +152,7 @@
  
          # Define for things that would like to special case UNIX (Linux or BSD)
          if build.platform_is_bsd or build.platform_is_linux:
-@@ -1503,7 +1520,7 @@
+@@ -1506,7 +1524,7 @@
          # Say where to find resources on Unix. TODO(XXX) replace this with a
          # RESOURCE_PATH that covers Win and OSX too:
          if build.platform_is_linux or build.platform_is_bsd:
@@ -155,7 +161,7 @@
              share_path = os.path.join (prefix, build.env.get(
                  'SHAREDIR', default='share'), 'mixxx')
              build.env.Append(
-@@ -1514,7 +1531,7 @@
+@@ -1517,7 +1535,7 @@
                  CPPDEFINES=('UNIX_LIB_PATH', r'\"%s\"' % lib_path))
  
      def depends(self, build):
