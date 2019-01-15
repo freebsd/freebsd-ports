@@ -1,20 +1,24 @@
 # Created by: Oliver Eikemeier
 # $FreeBSD$
 
+# Please keep commented out variables. They will be needed once patches are
+# released.
+
 PORTNAME=		bash
-PATCHLEVEL=		23
-PORTVERSION=		4.4.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		1
+#PATCHLEVEL=		0
+#PORTVERSION=		5.0.${PATCHLEVEL:S/^0//g}
+PORTVERSION=		5.0
+PORTREVISION?=		0
 CATEGORIES=		shells
 MASTER_SITES=		GNU
-DISTNAME=		${PORTNAME}-${PORTVERSION:R}
+#DISTNAME=		${PORTNAME}-${PORTVERSION:R}
 DIST_SUBDIR=		${PORTNAME}
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=		GNU/${PORTNAME}/${DISTNAME}-patches/
-PATCHFILES!=		/usr/bin/jot -s " " -w \
-			${PORTNAME}${PORTVERSION:R:S/.//g}-%03d \
-			${PATCHLEVEL} 1 ${PATCHLEVEL}
+#PATCH_SITES=		GNU/${PORTNAME}/${DISTNAME}-patches/
+#PATCHFILES!=		/usr/bin/jot -s " " -w \
+#			${PORTNAME}${PORTVERSION:R:S/.//g}-%03d \
+#			${PATCHLEVEL} 1 ${PATCHLEVEL}
 
 MAINTAINER=		ehaupt@FreeBSD.org
 COMMENT=		GNU Project's Bourne Again SHell
@@ -22,20 +26,17 @@ COMMENT=		GNU Project's Bourne Again SHell
 LICENSE=		GPLv3+
 LICENSE_FILE=		${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=		COLONBREAKSWORDS FDESCFS HELP NLS STATIC SYSBASHRC SYSLOG DOCS
-COLONBREAKSWORDS_DESC=	Colons break words
+OPTIONS_DEFINE=		FDESCFS HELP NLS STATIC SYSBASHRC SYSLOG DOCS
 FDESCFS_DESC=		Enable use of /dev/fd
 HELP_DESC=		Enable builtin help
 SYSBASHRC_DESC=		Enable system-wide rc files
 
-OPTIONS_DEFAULT=	COLONBREAKSWORDS HELP
+OPTIONS_DEFAULT=	HELP
 
-USES=			bison cpe iconv makeinfo pathfix
+USES=			bison cpe iconv makeinfo pathfix localbase
 GNU_CONFIGURE=		yes
 OPTIONS_SUB=		yes
 CPE_VENDOR=		gnu
-
-COLONBREAKSWORDS_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-colonbreakswords
 
 FDESCFS_CONFIGURE_ENV_OFF=	bash_cv_dev_fd=absent
 FDESCFS_SUB_FILES=	pkg-message
@@ -83,6 +84,7 @@ post-patch:
 .if ${PORT_OPTIONS:MSYSLOG}
 	@${REINPLACE_CMD} \
 	    -e "s|/\*.*#define SYSLOG_HISTORY .*\*/|#define SYSLOG_HISTORY|g" \
+	    -e "s|/\*.*#define SYSLOG_SHOPT .*\*/|#define SYSLOG_SHOPT 1|g" \
 	    ${WRKSRC}/config-top.h
 .endif
 

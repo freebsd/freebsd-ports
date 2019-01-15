@@ -1,9 +1,9 @@
---- lib/readline/display.c.orig	2016-07-28 18:49:33 UTC
+--- lib/readline/display.c.orig	2018-10-01 01:37:48 UTC
 +++ lib/readline/display.c
-@@ -743,7 +743,10 @@ rl_redisplay ()
-   inv_lbreaks[newlines = 0] = 0;
-   /* lpos is a physical cursor position, so it needs to be adjusted by the
-      number of invisible characters in the prompt, per line */
+@@ -837,7 +837,10 @@ rl_redisplay (void)
+      the line breaks in the prompt string in expand_prompt, taking invisible
+      characters into account, and if lpos exceeds the screen width, we copy
+      the data in the loop below. */
 +  if (local_prompt)
    lpos = prompt_physical_chars + modmark;
 +  else
