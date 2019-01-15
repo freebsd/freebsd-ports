@@ -32,18 +32,18 @@
 -    ])
 +    if test x${enable_static} = xyes; then
 +      AC_CHECK_LIB(sasl2, sasl_version, ac_cv_have_libsasl2=yes,
-+                   ac_cv_have_libsasl2=no, -lcrypto -lopie -lmd)
++                   ac_cv_have_libsasl2=no, -lntlm -lcrypto -lopie -lmd)
 +    fi
 +    if test x$ac_cv_have_libsasl2 = xyes; then
 +      AC_CHECK_LIB(memcached, memcached,[
-+        LIBS="${LIBS} -lmemcached -lsasl2 -lcrypto -lopie -lmd"
++        LIBS="${LIBS} -lmemcached -lsasl2 -lntlm -lcrypto -lopie -lmd"
 +        AC_DEFINE(HAVE_LIBMEMCACHED, 1)
 +      ]
 +      ,[
 +      echo '  WARNING: recent version libmemcached not found'
 +      echo '  please install libmemcached > 1.0 with development files'
 +      exit 1
-+      ], -lsasl2 -lcrypto -lopie -lmd)
++      ], -lsasl2 -lntlm -lcrypto -lopie -lmd)
 +    else
 +      AC_CHECK_LIB(memcached, memcached,[],[
 +      echo '  WARNING: recent version libmemcached not found'
