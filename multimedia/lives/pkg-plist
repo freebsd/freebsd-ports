@@ -41,19 +41,19 @@ lib/libOSC_client.so.0
 lib/libOSC_client.so.0.0.0
 lib/libweed-utils.so
 lib/libweed-utils.so.0
-lib/libweed-utils.so.0.0.8
+lib/libweed-utils.so.0.0.9
 lib/libweed-utils_scripting.so
 lib/libweed-utils_scripting.so.0
-lib/libweed-utils_scripting.so.0.0.8
+lib/libweed-utils_scripting.so.0.0.9
 lib/libweed.so
 lib/libweed.so.0
-lib/libweed.so.0.0.8
+lib/libweed.so.0.0.9
 lib/libweed_slice.so
 lib/libweed_slice.so.0
-lib/libweed_slice.so.0.0.8
+lib/libweed_slice.so.0.0.9
 lib/libweed_slice_scripting.so
 lib/libweed_slice_scripting.so.0
-lib/libweed_slice_scripting.so.0.0.8
+lib/libweed_slice_scripting.so.0.0.9
 lib/lives/plugins/decoders/asf_decoder.so
 lib/lives/plugins/decoders/dv_decoder.so
 lib/lives/plugins/decoders/flv_decoder.so
@@ -201,6 +201,7 @@ lib/lives/plugins/playback/audiostream/audiostreamer.pl
 lib/lives/plugins/playback/video/SDL.so
 lib/lives/plugins/playback/video/icecast_output.so
 lib/lives/plugins/playback/video/lives2lives_stream.so
+lib/lives/plugins/playback/video/libav_stream.so
 lib/lives/plugins/playback/video/oggstream.so
 lib/lives/plugins/playback/video/openGL.so
 lib/lives/plugins/playback/video/vloopback.so
@@ -211,7 +212,15 @@ libdata/pkgconfig/libweed-plugin.pc
 libdata/pkgconfig/libweed-utils.pc
 libdata/pkgconfig/libweed.pc
 libdata/pkgconfig/libweed_slice.pc
+share/app-install/icons/lives.png
 share/applications/LiVES.desktop
+share/icons/hicolor/128x128/apps/lives.png
+share/icons/hicolor/16x16/apps/lives.png
+share/icons/hicolor/22x22/apps/lives.png
+share/icons/hicolor/256x256/apps/lives.png
+share/icons/hicolor/32x32/apps/lives.png
+share/icons/hicolor/64x64/apps/lives.png
+share/pixmaps/lives.png
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -250,6 +259,7 @@ share/icons/hicolor/48x48/apps/lives.png
 %%DATADIR%%/icons/volume_mute.png
 %%DATADIR%%/icons/zoom-in.png
 %%DATADIR%%/icons/zoom-out.png
+%%DATADIR%%/mixxx.map
 %%DATADIR%%/plugins/effects/RFXscripts/blank_frames.script
 %%DATADIR%%/plugins/effects/RFXscripts/blur.script
 %%DATADIR%%/plugins/effects/RFXscripts/brightness_change.script
@@ -363,4 +373,5 @@ share/icons/hicolor/48x48/apps/lives.png
 %%NLS%%share/locale/uz/LC_MESSAGES/lives.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lives.mo
 share/pixmaps/lives.xpm
+@dir %%DATADIR%%/devicemaps
 @dir lib/lives/plugins/effects/realtime/weed/icons
