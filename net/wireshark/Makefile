@@ -3,7 +3,7 @@
 
 PORTNAME?=	wireshark
 PORTVERSION=	2.6.6
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \
@@ -78,7 +78,7 @@ OPTIONS_DEFAULT?=	SNMP MAXMIND KRB_BASE GTK3 DECRYPT
 RTP_DESC=		Enable support for playing back RTP streams
 DECRYPT_DESC=		Decryption support for SSL and IPSec
 ANDROIDDUMP_DESC=	Build androiddump extcap tool
-MAXMIND_DESC=		Enable MaxMindDB geolocation support
+MAXMIND_DESC=		Enable MaxMindDB-based GeoIP geolocation support
 CARES_DESC=		Enable support for asynchronous DNS via c-ares
 KERBEROS_DESC=		Kerberos dissection support
 KRB_BASE_DESC=		Kerberos support via base system

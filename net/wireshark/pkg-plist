@@ -13,6 +13,7 @@ bin/idl2wrs
 %%REORDERCAP%%
 %%SHARKD%%
 %%TEXT2PCAP%%
+%%MAXMIND%%bin/mmdbresolve
 bin/tshark
 %%GUI%%bin/wireshark
 include/wireshark/cfile.h
@@ -675,6 +676,7 @@ libdata/pkgconfig/wireshark.pc
 %%DUMPCAP_MAN%%man/man1/dumpcap.1.gz
 %%EDITCAP_MAN%%man/man1/editcap.1.gz
 %%MERGECAP_MAN%%man/man1/mergecap.1.gz
+%%MAXMIND%%man/man1/mmdbresolve.1.gz
 %%RANDPKT_MAN%%man/man1/randpkt.1.gz
 %%RANDPKTDUMP_MAN%%man/man1/randpktdump.1.gz
 %%RAWSHARK_MAN%%man/man1/rawshark.1.gz
