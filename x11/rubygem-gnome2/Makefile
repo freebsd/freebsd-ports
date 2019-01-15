@@ -36,6 +36,5 @@ RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}:accessibility/rubygem-atk \
 		rubygem-webkit-gtk2>=${PORTVERSION}:www/rubygem-webkit-gtk2
 
 USES=		metaport
-USE_RUBY=	yes
 
 .include <bsd.port.mk>
