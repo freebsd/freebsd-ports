@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	chkascii
-DISTVERSION=	1.2
+DISTVERSION=	1.3
 CATEGORIES=	textproc
 
 MAINTAINER=	bourne.identity@hotmail.com
