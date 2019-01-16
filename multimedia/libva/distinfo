@@ -3,3 +3,5 @@ SHA256 (intel-libva-2.3.0_GH0.tar.gz) = 8d95e65c4d84d0f82097581e163d3770694c600c
 SIZE (intel-libva-2.3.0_GH0.tar.gz) = 222152
 SHA256 (cf11abe5e1b9.patch) = 1df514db32ae2bb49d556c561005315566e232e3ad0dbc82176f76285ef23c2b
 SIZE (cf11abe5e1b9.patch) = 3301
+SHA256 (62bad1239d8e.patch) = 603586a9b72394be0a729a160f78f0250ce8c7fa63766971bff50cb751fdb924
+SIZE (62bad1239d8e.patch) = 2291
