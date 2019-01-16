@@ -10,16 +10,16 @@ MASTER_SITES=	https://github.com/cyrusimap/cyrus-imapd/releases/download/${PORTN
 PKGNAMESUFFIX=	25
 
 MAINTAINER=	ume@FreeBSD.org
-COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
+COMMENT=	Cyrus mail server, supporting POP3 and IMAP4 protocols
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
-		libpcre.so:devel/pcre
-
 BROKEN_armv6=		fails to build: ./tools/config2header: Error code 1
 BROKEN_armv7=		fails to build: ./tools/config2header: Error code 1
+
+LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
+		libpcre.so:devel/pcre
 
 CONFLICTS_INSTALL=	cyrus-imapd-2.[^5].* cyrus-imapd2[^5]-2.[^5].* \
 			cyrus-imapd3*
@@ -48,7 +48,6 @@ CPE_PRODUCT=	cyrus_imap_server
 OPTIONS_DEFINE=		AUTOCREATE BDB CLAMAV HTTP IDLED LDAP MURDER MYSQL \
 			NETSCAPEHACK NNTP PGSQL REPLICATION SNMP SQLITE DOCS \
 			EXAMPLES
-#OPTIONS_DEFINE+=	DRAC
 OPTIONS_DEFAULT=	BDB IDLED
 OPTIONS_SUB=		yes
 AUTOCREATE_DESC=	Enable autocreate support
@@ -59,9 +58,6 @@ BDB_CONFIGURE_ON=	--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 CLAMAV_DESC=		Use ClamAV
 CLAMAV_CONFIGURE_WITH=	clamav
 CLAMAV_LIB_DEPENDS=	libclamav.so:security/clamav
-DRAC_DESC=		Enable DRAC support
-DRAC_CONFIGURE_ON=	--with-drac=${LOCALBASE}
-DRAC_BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:mail/drac
 HTTP_DESC=		Enable HTTP (beta quality)
 HTTP_CONFIGURE_ENABLE=	http
 HTTP_LIB_DEPENDS=	libjansson.so:devel/jansson \
@@ -93,16 +89,11 @@ SNMP_CONFIGURE_ON=	--with-snmp=${LOCALBASE}
 SNMP_CONFIGURE_OFF=	--with-snmp=no
 SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
 
-UNAMER!=	uname -r
-OSMAJOR=	${UNAMER:C/[.-].*//}
-
 OPTIONS_RADIO=			GSSAPI
 OPTIONS_RADIO_GSSAPI=		GSSAPI_HEIMDAL GSSAPI_MIT
 .if exists(/usr/lib/libkrb5.a)
 OPTIONS_RADIO_GSSAPI+=		GSSAPI_BASE
-.if ${OSMAJOR} >= 9
 OPTIONS_DEFAULT+=		GSSAPI_BASE
-.endif
 .endif
 GSSAPI_BASE_USES=		gssapi
 GSSAPI_BASE_CONFIGURE_ON=	--enable-gssapi="${GSSAPIBASEDIR}" \
@@ -155,11 +146,6 @@ BDB_LIB_NAME=	no
 
 PLIST_SUB+=	CLAMAV="@comment "
 
-.if ${PORT_OPTIONS:MDRAC}
-IGNORE=		DRAC is not available
-# EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmulocal__sasl2.m4
-.endif
-
 .if ${PORT_OPTIONS:MHTTP} || ${PORT_OPTIONS:MSQLITE}
 USES+=	sqlite
 .endif
@@ -176,12 +162,6 @@ CYRUS_MAN8+=	ctl_zoneinfo httpd
 CYRUS_MAN8+=	fetchnews nntpd
 .endif
 
-.if ${PORT_OPTIONS:MDRAC}
-pre-patch:
-	${PATCH} -d ${PATCH_WRKSRC} --forward --quiet -E -p1 \
-		< ${WRKSRC}/contrib/drac_auth.patch
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" \
 			  -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
@@ -194,9 +174,6 @@ post-patch:
 		-e 's|$$(libdir)/\(pkgconfig\)|${PREFIX}/libdata/\1|g' \
 		-e 's|$$(mandir)/\(man[8]\)|${PREFIX}/cyrus/man/\1|g' \
 		${WRKSRC}/Makefile.in
-
-post-patch-DRAC-on:
-	@${RM} -r ${WRKSRC}/autom4te.cache
 
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
@@ -232,7 +209,7 @@ post-install-DOCS-on:
 # need to create it.
 post-install-EXAMPLES-on:
 .for f in ${CONFS:Nnormal.conf}
-	@${INSTALL_DATA} ${WRKSRC}/master/conf/${f} \
+	${INSTALL_DATA} ${WRKSRC}/master/conf/${f} \
 		${STAGEDIR}${EXAMPLESDIR}
 	@${ECHO_CMD} ${EXAMPLESDIR:S,^${PREFIX}/,,}/${f} >>${TMPPLIST}
 .endfor
