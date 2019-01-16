@@ -14,8 +14,6 @@ COMMENT=	Free C++ class library of Cryptographic Primitives
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-BROKEN_powerpc=	does not compile; unrecognized C++ options
-
 USES=		cpe compiler:c++11-lang gmake zip
 USE_LDCONFIG=	yes
 CPE_PRODUCT=	crypto++
@@ -35,6 +33,8 @@ PLIST_SUB+=	SOVERSION=${SOVERSION} \
 OPTIONS_DEFINE=		DEBUG DOCS FULL_DEBUG THREADS TOOLS
 OPTIONS_DEFINE_amd64=	SIMD
 OPTIONS_DEFINE_i386=	SIMD
+OPTIONS_DEFINE_powerpc=	SIMD
+OPTIONS_DEFINE_powerpc64=	SIMD
 OPTIONS_DEFAULT=	THREADS TOOLS
 OPTIONS_SUB=		yes
 
@@ -57,18 +57,23 @@ THREADS_LDFLAGS=	-lpthread
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSIMD}
-.  if !${MACHINE_CPU:Msse2}
+.  if ${ARCH} == i386 || ${ARCH} == amd64
+.    if !${MACHINE_CPU:Msse2}
 CXXFLAGS+=	-DCRYPTOPP_DISABLE_ASM -DCRYPTOPP_DISABLE_SSE2
-.  endif
-.  if !${MACHINE_CPU:Mssse3}
+.    endif
+.    if !${MACHINE_CPU:Mssse3}
 CXXFLAGS+=	-DCRYPTOPP_DISABLE_SSSE3
-.  endif
-.  if !${MACHINE_CPU:Msse41}
+.    endif
+.    if !${MACHINE_CPU:Msse41}
 CXXFLAGS+=	-DCRYPTOPP_DISABLE_SSE4
+.    endif
+.  elif ${ARCH} == powerpc || ${ARCH} == powerpc64
+CXXFLAGS+=	-DCRYPTOPP_ALTIVEC_AVAILABLE -maltivec -mcrypto -mvsx
 .  endif
 .else
 CXXFLAGS+=	-DCRYPTOPP_DISABLE_ASM -DCRYPTOPP_DISABLE_SSE2 \
-		-DCRYPTOPP_DISABLE_SSSE3 -DCRYPTOPP_DISABLE_SSE4
+		-DCRYPTOPP_DISABLE_SSSE3 -DCRYPTOPP_DISABLE_SSE4 \
+		-DCRYPTOPP_DISABLE_ALTIVEC
 .endif
 
 pre-configure-FULL_DEBUG-on:
