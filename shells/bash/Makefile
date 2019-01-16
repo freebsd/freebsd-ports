@@ -8,7 +8,7 @@ PORTNAME=		bash
 #PATCHLEVEL=		0
 #PORTVERSION=		5.0.${PATCHLEVEL:S/^0//g}
 PORTVERSION=		5.0
-PORTREVISION?=		1
+PORTREVISION?=		2
 CATEGORIES=		shells
 MASTER_SITES=		GNU
 #DISTNAME=		${PORTNAME}-${PORTVERSION:R}
@@ -87,10 +87,6 @@ post-patch:
 	    -e "s|/\*.*#define SYSLOG_SHOPT .*\*/|#define SYSLOG_SHOPT 1|g" \
 	    ${WRKSRC}/config-top.h
 .endif
-.for f in bash bashbug
-	@mandoc -T man ${WRKSRC}/doc/${f}.1 > ${WRKSRC}/doc/${f}.1.mandoc
-	@${MV} ${WRKSRC}/doc/${f}.1.mandoc ${WRKSRC}/doc/${f}.1
-.endfor
 
 post-patch-SYSBASHRC-on:
 	@${REINPLACE_CMD} \
