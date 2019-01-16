@@ -1,6 +1,6 @@
---- Config.kmk.orig	2017-10-18 07:06:30 UTC
+--- Config.kmk.orig	2019-01-14 14:53:56 UTC
 +++ Config.kmk
-@@ -424,11 +424,11 @@ ifn1of ($(KBUILD_TARGET), win darwin)
+@@ -445,11 +445,11 @@ ifn1of ($(KBUILD_TARGET), win darwin)
   # Enable OSS audio support.
   VBOX_WITH_AUDIO_OSS = 1
  endif
@@ -14,7 +14,7 @@
   # Enable PulseAudio audio support.
   VBOX_WITH_AUDIO_PULSE = 1
  endif
-@@ -440,11 +440,11 @@ VBOX_WITH_AUDIO_MMNOTIFICATION_CLIENT = 1
+@@ -464,11 +464,11 @@ VBOX_WITH_AUDIO_MMNOTIFICATION_CLIENT = 1
  # Enable PCI passthrough support.
  VBOX_WITH_PCI_PASSTHROUGH = 1
  # Enable statically linked dbus support.
@@ -28,7 +28,7 @@
   VBOX_WITH_PAM = 1
  endif
  # Enable internal networking.
-@@ -648,7 +648,7 @@ VBOX_WITH_TESTCASES = 1
+@@ -664,7 +664,7 @@ VBOX_WITH_TESTCASES = 1
  VBOX_WITH_VDITOOL =
  # Enable this to build vbox-img even if VBOX_WITH_TESTCASES is disabled
  VBOX_WITH_VBOX_IMG =
@@ -37,7 +37,7 @@
   # Enables the video capturing support.
   VBOX_WITH_VIDEOREC = 1
   # Enable VPX (VP8 / VP9 codec), used for video capturing.
-@@ -978,10 +978,6 @@ ifeq ($(KBUILD_TARGET),darwin)
+@@ -992,10 +992,6 @@ ifeq ($(KBUILD_TARGET),darwin)
   VBOX_WITH_VBOXSDL=
  endif
  
@@ -48,7 +48,7 @@
  ifeq ($(KBUILD_TARGET),haiku)
   # Don't bother with SDL ttf for now.
   VBOX_WITH_SECURELABEL=
-@@ -1141,7 +1137,7 @@ ifdef VBOX_OSE
+@@ -1155,7 +1151,7 @@ ifdef VBOX_OSE
   VBOX_WITH_KCHMVIEWER=
   VBOX_WITH_PLUGIN_CRYPT=
   VBOX_WITH_DRAG_AND_DROP_PROMISES=
@@ -57,7 +57,25 @@
    VBOX_WITH_DOCS=
    VBOX_WITH_DOCS_PACKING=
   endif
-@@ -4360,7 +4356,7 @@ TEMPLATE_VBOXR0DRV_CFLAGS              =  \
+@@ -1176,13 +1172,13 @@ ifdef VBOX_OSE
+  ifn1of ($(KBUILD_TARGET), darwin linux solaris win)
+   VBOX_WITH_INSTALLER=
+  endif
++ # Undefine codec libraries which are not needed.
++ VBOX_WITH_LIBOPUS=
++ # Disable video recording (with audio support).
++ VBOX_WITH_AUDIO_VIDEOREC=
+  if1of ($(KBUILD_TARGET), win)
+-  # Undefine codec libraries which are not needed.
+   VBOX_WITH_LIBVPX=
+-  VBOX_WITH_LIBOPUS=
+-  # Disable video recording (with audio support).
+   VBOX_WITH_VIDEOREC=
+-  VBOX_WITH_AUDIO_VIDEOREC=
+  endif
+  # branding
+  VBOX_BRAND_LICENSE_HTML             := $(PATH_ROOT)/doc/License-gpl-2.0.html
+@@ -4541,7 +4537,7 @@ TEMPLATE_VBOXR0DRV_CFLAGS              =  \
  	-O2 -ffreestanding -fno-strict-aliasing -fno-common -finline-limit=8000 \
  	$(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_R0_OPT) $(VBOX_GCC_R0_FP) \
  	-nostdinc -std=c99
@@ -66,7 +84,7 @@
  TEMPLATE_VBOXR0DRV_CFLAGS.amd64        = -m64 --param inline-unit-growth=100 --param large-function-growth=1000 \
  	-fno-omit-frame-pointer -mcmodel=kernel -mno-red-zone -mfpmath=387 -mno-sse -mno-sse2 -mno-mmx \
  	-mno-3dnow -msoft-float -fno-asynchronous-unwind-tables -Wundef
-@@ -4689,12 +4685,8 @@ TEMPLATE_VBOXR3EXE_LDFLAGS            += -fno-pic
+@@ -4878,12 +4874,8 @@ TEMPLATE_VBOXR3EXE_LDFLAGS            += -fno-pic
  TEMPLATE_VBOXR3EXE_TOOL                = GXX3
  TEMPLATE_VBOXR3EXE_LIBS                = pthread
  TEMPLATE_VBOXR3EXE_INCS               += \
@@ -79,7 +97,7 @@
  	/usr/local/lib
   else ifeq ($(KBUILD_TARGET),netbsd)
  TEMPLATE_VBOXR3EXE_TOOL                = GXX3
-@@ -4984,7 +4976,7 @@ ifeq ($(KBUILD_TARGET),win) # No CRT!
+@@ -5168,7 +5160,7 @@ ifeq ($(KBUILD_TARGET),win) # No CRT!
   TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS.win.amd64 = $(TEMPLATE_VBOXR3EXE_LDFLAGS.win.amd64) /entry:suplibHardenedWindowsMain
   TEMPLATE_VBOXR3HARDENEDEXE_LIBS.x86       = $(NOT_SUCH_VARIABLE)
   TEMPLATE_VBOXR3HARDENEDEXE_LIBS.amd64     = $(NOT_SUCH_VARIABLE)
@@ -88,7 +106,7 @@
   # We want to keep the RPATH on Solaris to be able to find libgcc_1/libstdc++ within $(VBOX_WITH_RUNPATH)
   TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS       = $(filter-out '$(VBOX_GCC_RPATH_OPT)%,$(TEMPLATE_VBOXR3EXE_LDFLAGS))
   TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS.linux = $(filter-out $(VBOX_GCC_ORIGIN_OPT),$(TEMPLATE_VBOXR3EXE_LDFLAGS.linux))
-@@ -5515,12 +5507,8 @@ TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTI
+@@ -5699,12 +5691,8 @@ TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTI
  TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
  TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTIME)
  TEMPLATE_VBOXMAINEXE_INCS               += \
@@ -101,7 +119,7 @@
  	/usr/local/lib
   else ifeq ($(KBUILD_TARGET),netbsd)
  TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
-@@ -6054,12 +6042,8 @@ ifdef VBOX_WITH_QTGUI
+@@ -6238,12 +6226,8 @@ ifdef VBOX_WITH_QTGUI
  	$(VBOX_LIBPATH_X11)
     ifeq ($(KBUILD_TARGET),freebsd)
      TEMPLATE_VBOXQTGUIEXE_INCS += \
@@ -114,7 +132,7 @@
  	/usr/local/lib
     endif
     ifeq ($(KBUILD_TARGET),solaris)
-@@ -6282,12 +6266,8 @@ TEMPLATE_VBoxBldProg_LIBPATH            += \
+@@ -6466,12 +6450,8 @@ TEMPLATE_VBoxBldProg_LIBPATH            += \
  TEMPLATE_VBoxBldProg_TOOL                = GXX3
  TEMPLATE_VBoxBldProg_LIBS                = pthread
  TEMPLATE_VBoxBldProg_INCS               += \
@@ -127,7 +145,7 @@
  	/usr/local/lib
   else ifeq ($(KBUILD_HOST),netbsd)
  TEMPLATE_VBoxBldProg_TOOL                = GXX3
-@@ -6707,6 +6687,7 @@ TEMPLATE_VBOXCROGLR3HOSTDLL_LDFLAGS.darwin  += \
+@@ -6872,6 +6852,7 @@ TEMPLATE_VBOXCROGLR3HOSTDLL_LDFLAGS.darwin  += \
  	-current_version $(VBOX_VERSION_MAJOR).$(VBOX_VERSION_MINOR).$(VBOX_VERSION_BUILD) \
  	-compatibility_version $(VBOX_VERSION_MAJOR).$(VBOX_VERSION_MINOR).$(VBOX_VERSION_BUILD)
  TEMPLATE_VBOXCROGLR3HOSTDLL_LDFLAGS.linux    = -Wl,--no-as-needed
