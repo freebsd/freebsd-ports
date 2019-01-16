@@ -3,9 +3,13 @@
 
 PORTNAME=	libva-intel-driver
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
-MAINTAINER=	madpilot@FreeBSD.org
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	f139dafa5917.patch:-p1 # for mesa-libs 18.3+
+
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	VAAPI driver for Intel GMA 4500 (Gen4) or newer
 
 LICENSE=	MIT
@@ -38,7 +42,9 @@ HYBRID_CONFIGURE_ENABLE=	hybrid-codec
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's/-ldl//' \
 		${WRKSRC}/src/Makefile.am
+# XXX Remove va_api_version hack after 2.4.0 update
 	${REINPLACE_CMD} -e 's|driverdir|& --define-variable prefix=${PREFIX}|' \
+		-e '/va_api_version/s/1\.4\.0/1.1.0/' \
 		${WRKSRC}/configure.ac
 
 post-install:
