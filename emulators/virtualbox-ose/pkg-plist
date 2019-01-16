@@ -377,8 +377,6 @@ lib/virtualbox/VBoxBalloonCtrl
 lib/virtualbox/VBoxBugReport
 lib/virtualbox/VBoxDD.so
 lib/virtualbox/VBoxDD2.so
-lib/virtualbox/VBoxDD2R0.r0
-lib/virtualbox/VBoxDD2RC.rc
 lib/virtualbox/VBoxDDR0.r0
 lib/virtualbox/VBoxDDRC.rc
 lib/virtualbox/VBoxDDU.so

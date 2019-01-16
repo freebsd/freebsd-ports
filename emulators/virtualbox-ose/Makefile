@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-PORTVERSION=	5.2.22
-PORTREVISION=	3
+PORTVERSION=	5.2.24
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
@@ -29,7 +28,7 @@ CPE_PRODUCT=	vm_virtualbox
 
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		compiler:c++14-lang cpe iconv pkgconfig ssl tar:bzip2
+USES=		compiler:c++14-lang cpe gnome iconv pkgconfig ssl tar:bzip2
 USE_GNOME=	libidl libxml2
 
 HAS_CONFIGURE=	yes
@@ -62,12 +61,13 @@ OPTIONS_SUB=	yes
 DEBUG_DESC=	Debug symbols, additional logs and assertions
 GUESTADDITIONS_DESC=	Build with Guest Additions
 MANUAL_DESC=	Build with user manual
-QT5_DESC=	Build with QT5 Frontend
-R0LOGGING_DESC=	Enable R0 logging
+NLS_DESC=	Native language support (requires QT5)
+QT5_DESC=	Build with QT5 frontend (requires X11)
+R0LOGGING_DESC=	Enable R0 logging (requires DEBUG)
 UDPTUNNEL_DESC=	Build with UDP tunnel support
 VDE_DESC=	Build with VDE support
 VNC_DESC=	Build with VNC support
-VPX_DESC=	Use vpx for video capturing
+VPX_DESC=	Use libvpx for video recording
 WEBSERVICE_DESC=	Build Webservice
 
 ALSA_CONFIGURE_OFF=	--disable-alsa
@@ -77,9 +77,12 @@ DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DEBUG_CONFIGURE_ON=	--build-debug
 MANUAL_BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.4/docbookx.dtd:textproc/docbook-xml
 MANUAL_CONFIGURE_OFF=	--disable-docs
+NLS_IMPLIES=		QT5
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PYTHON_CONFIGURE_OFF=	--disable-python
+QT5_IMPLIES=		X11
+R0LOGGING_IMPLIES=	DEBUG
 UDPTUNNEL_CONFIGURE_OFF=	--disable-udptunnel
 VDE_CONFIGURE_ON=	--enable-vde
 VDE_RUN_DEPENDS=	vde_switch:net/vde2
@@ -114,23 +117,11 @@ CONFLICTS_INSTALL+=	virtualbox-ose-[0-9]*
 _ELF32!=	kldstat -q -m elf32 && echo yes || echo no
 .endif
 
-.if ${PORT_OPTIONS:MNLS} && empty(PORT_OPTIONS:MQT5)
-BROKEN=		NLS support requires QT frontend. Run 'make config' again!
-.endif
-
-.if ${PORT_OPTIONS:MQT[45]} && empty(PORT_OPTIONS:MX11)
-BROKEN=		QT frontend requires X11 support. Run 'make config' again!
-.endif
-
 .if ${PORT_OPTIONS:MDEBUG}
 KMK_BUILDTYPE=	debug
 KMK_FLAGS+=	BUILD_TYPE=debug
 .else
 KMK_BUILDTYPE=	release
-.endif
-
-.if ${PORT_OPTIONS:MR0LOGGING} && empty(PORT_OPTIONS:MDEBUG)
-BROKEN=		R0 logging requires debug build
 .endif
 
 .if ${PORT_OPTIONS:MGUESTADDITIONS}
@@ -157,8 +148,8 @@ USES+=		python:2.7,build
 .if ${PORT_OPTIONS:MQT5}
 CONFIGURE_ARGS+=	--enable-qt5
 PLIST_SUB+=	QT=""
+USES+=		gl qmake:no_env qt:5
 USE_GL=		gl
-USES+=		qmake:no_env qt:5
 USE_QT=		buildtools_build core dbus gui linguisttools_build opengl
 USE_QT+=	printsupport widgets x11extras
 USE_XORG=	xcb
