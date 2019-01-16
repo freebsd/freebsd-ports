@@ -4,17 +4,19 @@
 PORTNAME=	aspell
 MASTER_SITES=	https://j3e.de/ispell/igerman98/dict/
 PORTVERSION=	20161207
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	german textproc
 DISTNAME=	igerman98-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell German dictionary
 
-USES=		gmake tar:bzip2
+USES=		gmake tar:bzip2 perl5 shebangfix
 ALL_TARGET=	aspell/de_DE.rws aspell/de_AT.rws aspell/de_CH.rws
 BUILD_DEPENDS=	aspell:textproc/aspell
 RUN_DEPENDS=	aspell:textproc/aspell
+USE_PERL5=	build
+SHEBANG_FILES=	bin/myspellfixprefix.pl
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/aspell \
@@ -30,5 +32,6 @@ do-install:
 	${ECHO} "add de_DE.multi" > ${STAGEDIR}${PREFIX}/share/aspell/deutsch.alias
 	${ECHO} "add de_DE.multi" > ${STAGEDIR}${PREFIX}/share/aspell/german.alias
 	${ECHO} "add de_CH.multi" > ${STAGEDIR}${PREFIX}/share/aspell/swiss.alias
+	${ECHO} "add de_DE.multi" > ${STAGEDIR}${PREFIX}/share/aspell/de.alias
 
 .include <bsd.port.mk>
