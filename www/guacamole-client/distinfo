@@ -1,5 +1,5 @@
-TIMESTAMP = 1516328642
-SHA256 (guacamole-client/repository-0.9.14.tar.xz) = e43889aec0a36c799283d935f4dc3889a62862c9cd68ef25f9ca930c0a113d5d
-SIZE (guacamole-client/repository-0.9.14.tar.xz) = 48252548
-SHA256 (guacamole-client/apache-guacamole-client-0.9.14_GH0.tar.gz) = 2b2df9ee951696c29a2c1d9b0415c7d5742f3dee33da6dea4b52082bd8e04db0
-SIZE (guacamole-client/apache-guacamole-client-0.9.14_GH0.tar.gz) = 5821042
+TIMESTAMP = 1547351778
+SHA256 (guacamole-client/repository-1.0.0.tar.xz) = b2a6d480ddbe40dec2c9af67730574c957dee7c037f21e82538174528b344daa
+SIZE (guacamole-client/repository-1.0.0.tar.xz) = 56084152
+SHA256 (guacamole-client/apache-guacamole-client-1.0.0_GH0.tar.gz) = 6c44a41bbeec50301462f3bef23a479d207e754b604f61044400402f6b2b85ca
+SIZE (guacamole-client/apache-guacamole-client-1.0.0_GH0.tar.gz) = 5978548

@@ -1,6 +1,11 @@
+For a quick Guacamole setup and test:
 	Guacamole-client requires authentication to start.
 	cp %%ETCDIR%%/user-mapping.xml.sample \
 	%%ETCDIR%%/user-mapping.xml
 
 	Once tomcat8 and guacd are running
 	http://localhost:8080/guacamole
+
+For upgrading guacamole, this is a reminder to upgrade
+the auth-extensions. (and database if jdbc is used)
+https://guacamole.apache.org/doc/gug/jdbc-auth.html
