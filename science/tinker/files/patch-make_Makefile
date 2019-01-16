@@ -1,4 +1,4 @@
---- make/Makefile.orig	2018-05-01 03:12:05 UTC
+--- make/Makefile.orig	2019-01-16 04:21:45 UTC
 +++ make/Makefile
 @@ -84,7 +84,7 @@ APBS_LIBS = -lapbsmainroutines -lapbs -l
  
@@ -6,10 +6,10 @@
  F77FLAGS = -c
 -OPTFLAGS = -Ofast -mssse3 -fopenmp
 +OPTFLAGS = -Ofast $(PORT_SIMD_FLAGS) -fopenmp
+ #OPTFLAGS = -Og -fbacktrace -fcheck=bounds -Wunused -Wmaybe-uninitialized
  LIBDIR = -L. -L$(TINKER_LIBDIR)/macos
  LIBS = 
- LIBFLAGS = -crusv
-@@ -754,130 +754,130 @@ listing:
+@@ -787,132 +787,132 @@ listing:
  	cat *.f *.c > tinker.txt
  
  rename_bin:
@@ -61,6 +61,7 @@
 -	mv  testpair.x   $(BINDIR)/testpair
 -	mv  testpol.x    $(BINDIR)/testpol
 -	mv  testrot.x    $(BINDIR)/testrot
+-	mv  testvir.x    $(BINDIR)/testvir
 -	mv  timer.x      $(BINDIR)/timer
 -	mv  timerot.x    $(BINDIR)/timerot
 -	mv  torsfit.x    $(BINDIR)/torsfit
@@ -122,6 +123,7 @@
 +	${BSD_INSTALL_PROGRAM}  testpair.x   $(BINDIR)/testpair
 +	${BSD_INSTALL_PROGRAM}  testpol.x    $(BINDIR)/testpol
 +	${BSD_INSTALL_PROGRAM}  testrot.x    $(BINDIR)/testrot
++	${BSD_INSTALL_PROGRAM}  testvir.x    $(BINDIR)/testvir
 +	${BSD_INSTALL_PROGRAM}  timer.x      $(BINDIR)/timer
 +	${BSD_INSTALL_PROGRAM}  timerot.x    $(BINDIR)/timerot
 +	${BSD_INSTALL_PROGRAM}  torsfit.x    $(BINDIR)/torsfit
@@ -185,6 +187,7 @@
 -	mv  testpair.x   $(BINDIR)/testpair.exe
 -	mv  testpol.x    $(BINDIR)/testpol.exe
 -	mv  testrot.x    $(BINDIR)/testrot.exe
+-	mv  testvir.x    $(BINDIR)/testvir.exe
 -	mv  timer.x      $(BINDIR)/timer.exe
 -	mv  timerot.x    $(BINDIR)/timerot.exe
 -	mv  torsfit.x    $(BINDIR)/torsfit.exe
@@ -246,6 +249,7 @@
 +	${BSD_INSTALL_PROGRAM}  testpair.x   $(BINDIR)/testpair.exe
 +	${BSD_INSTALL_PROGRAM}  testpol.x    $(BINDIR)/testpol.exe
 +	${BSD_INSTALL_PROGRAM}  testrot.x    $(BINDIR)/testrot.exe
++	${BSD_INSTALL_PROGRAM}  testvir.x    $(BINDIR)/testvir.exe
 +	${BSD_INSTALL_PROGRAM}  timer.x      $(BINDIR)/timer.exe
 +	${BSD_INSTALL_PROGRAM}  timerot.x    $(BINDIR)/timerot.exe
 +	${BSD_INSTALL_PROGRAM}  torsfit.x    $(BINDIR)/torsfit.exe

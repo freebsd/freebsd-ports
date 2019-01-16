@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinker
-DISTVERSION=	8.4.4
-PORTREVISION=	2
+DISTVERSION=	8.5.3
 CATEGORIES=	science
 MASTER_SITES=	https://dasher.wustl.edu/tinker/downloads/
 
