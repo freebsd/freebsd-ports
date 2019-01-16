@@ -22,7 +22,7 @@ CONFIGURE_ARGS=	--enable-auth-other \
 		--with-openssl-root=${OPENSSLBASE} \
 		--with-mailspool-directory=/var/mail
 
-OPTIONS_DEFINE=	LDAP PERLAUTH PASSWDAUTH FLATAUTH GDBMAUTH MAILDIR MBOXINDICES DRAC FIX_PERLAUTH DOCS
+OPTIONS_DEFINE=	LDAP PERLAUTH PASSWDAUTH FLATAUTH GDBMAUTH MAILDIR MBOXINDICES FIX_PERLAUTH DOCS
 OPTIONS_RADIO=	DB
 OPTIONS_RADIO_DB=	MYSQL PGSQL
 DB_DESC=		Authentication database
@@ -32,10 +32,8 @@ FLATAUTH_DESC=		Use /etc/passwd-style flat file authentication
 GDBMAUTH_DESC=		Use authentication against GNU dbm files
 MAILDIR_DESC=		Compile Maildir support
 MBOXINDICES_DESC=	Save Mbox indices
-DRAC_DESC=		DRAC RFC for POP-before-SMTP relaying
 FIX_PERLAUTH_DESC=	Only try it if perl-auth coredumps
 
-DRAC_CONFIGURE_ENABLE=		drac
 MAILDIR_CONFIGURE_ENABLE=	mbox-maildir
 PERLAUTH_CONFIGURE_ENABLE=	auth-perl
 FLATAUTH_CONFIGURE_ENABLE=	auth-flatfile
@@ -43,7 +41,6 @@ GDBMAUTH_CONFIGURE_ENABLE=	auth-gdbm
 PASSWDAUTH_CONFIGURE_ENABLE=	auth-passwd
 MBOXINDICES_CONFIGURE_ENABLE=	mbox-bsd-save-indices
 
-DRAC_BUILD_DEPENDS=		${LOCALBASE}/lib/libdrac.a:mail/drac
 GDBMAUTH_CPPFLAGS=		-I${LOCALBASE}/include
 GDBMAUTH_LIB_DEPENDS=		libgdbm.so:databases/gdbm
 MYSQL_USE=		MYSQL=yes

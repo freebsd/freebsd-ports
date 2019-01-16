@@ -64,10 +64,6 @@ mailbox: bsd:/var/mail/$(user)
 # Selects the `daemon name' used by tpop3d with TCP Wrappers [default: tpop3d]
 #tcp-wrappers-name: tpop3d
 
-# drac-server: hostname
-# Gives the name of a server to which tpop3d should send DRAC notifications
-#drac-server: localhost
-
 # whoson-enable: (yes|true)
 # Enable notification of successful logins to a WHOSON server as defined
 # in /etc/whoson.conf. [default: no]
