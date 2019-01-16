@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmrig
-PORTVERSION=	2.8.3
+PORTVERSION=	2.9.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p
 
@@ -35,7 +35,7 @@ MICROHTTPD_LIB_DEPENDS+=	libmicrohttpd.so:www/libmicrohttpd \
 STATIC_BUILD_DEPENDS+=	${LOCALBASE}/lib/libuv.a:devel/libuv
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\(set.*EXTRA_LIBS.*\) dl|\1|' \
+	@${REINPLACE_CMD} -e 's|\(EXTRA_LIBS kvm\)|\1 pthread|' \
 		${WRKSRC}/CMakeLists.txt
 
 post-patch-MICROHTTPD-off:
