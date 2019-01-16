@@ -11,6 +11,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library for parsing and rendering SVG vector-graphic files
 
+CONFLICTS_INSTALL=	librsvg2-rust
 # librsvg2 2.42+ needs rust to build, which is not available on all
 # FreeBSD archs. So limit pure C version 2.40.x.
 PORTSCOUT=	limit:^2\.40\.

@@ -1,0 +1,11 @@
+--- configure.orig	2019-01-15 22:59:02 UTC
++++ configure
+@@ -16420,7 +16420,7 @@ fi
+ MINIMUM_RUST_MAJOR=1
+ MINIMUM_RUST_MINOR=27
+ 
+-rust_version=`rustc --version`
++rust_version=`$RUSTC --version`
+ version=`echo "$rust_version" | sed -e 's/^rustc //g'`
+ major=`echo "$version" | cut -d. -f1`
+ minor=`echo "$version" | cut -d. -f2`

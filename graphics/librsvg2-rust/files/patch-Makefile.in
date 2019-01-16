@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2019-01-15 23:06:06 UTC
++++ Makefile.in
+@@ -1954,7 +1954,7 @@ $(RUST_LIB): $(RUST_SRC)
+ 	PKG_CONFIG_ALLOW_CROSS=1						\
+ 	PKG_CONFIG='$(PKG_CONFIG)'						\
+ 	CARGO_TARGET_DIR=$(CARGO_TARGET_DIR)					\
+-	cargo build $(CARGO_VERBOSE) $(CARGO_TARGET_ARGS) $(CARGO_RELEASE_ARGS)
++	$(CARGO) build $(CARGO_VERBOSE) $(CARGO_TARGET_ARGS) $(CARGO_RELEASE_ARGS)
+ 
+ librsvg/librsvg-enum-types.h: librsvg/s-enum-types-h
+ 	@true
