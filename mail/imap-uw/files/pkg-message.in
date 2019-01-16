@@ -31,12 +31,7 @@ dir accessed.
 WITHOUT_SSL - build without SSL/encryption support.
 WITH_SSL_AND_PLAINTEXT - build with SSL/encryption support, but allow
 non-encrypted logins.
-%%DRAC%%================================================================================
-%%DRAC%%To have DRAC working, you must create ${PREFIX}/etc/dracd.host, containing
-%%DRAC%%the hostname of the DRAC server:
-%%DRAC%%
-%%DRAC%%localhost
-%%DRAC%%================================================================================
+%%SSL%%================================================================================
 %%SSL%%
 %%SSL%%To create and install a new SSL certificate for imapd and ipop3d, type \"make
 %%SSL%%cert\". Or install manually in ${PREFIX}/certs.

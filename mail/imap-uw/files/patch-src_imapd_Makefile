@@ -55,7 +55,7 @@
   
   clean:
   	rm -f *.o imapd || true
---- 37,63 ----
+--- 37,59 ----
   # causes the "Manage Mail" menu item to open the given URL, e.g. to point to
   # an alternative IMAP client (e.g. Pine) or perhaps to a homebrew mail
   # account management page.
@@ -71,10 +71,6 @@
   	-DALERTFILE=\"$(ALERT)\" -DNNTPFILE=\"$(NNTP)\" \
   	-DUSERALERTFILE=\"$(USERALERT)\" -DSHUTDOWNFILE=\"$(SHUTDOWN)\"
 ! LDFLAGS+=	$(EXTRALDFLAGS) -L$(LOCALBASE)/lib -lc-client4
-! .if defined(WITH_DRAC)
-! CFLAGS+=	-DETC_DIR=\"$(PREFIX)/etc\" -DDRAC_AUTH
-! LDFLAGS+=	-ldrac
-! .endif
   
   all:	imapd
   
