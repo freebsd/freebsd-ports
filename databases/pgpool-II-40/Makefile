@@ -2,7 +2,7 @@
 
 PORTNAME=	pgpool-II
 PORTVERSION=	4.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 PKGNAMESUFFIX=	40
@@ -31,20 +31,13 @@ MEMCACHED_DESC =	Use memcached for in memory query cache
 OPTIONS_DEFINE=	DOCS SSL PAM MEMCACHED
 OPTIONS_DEFAULT=	SSL
 
+MEMCACHED_CONFIGURE_ON=	--with-memcached=${LOCALBASE}/include
+MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
+
+PAM_CONFIGURE_WITH=	pam
+
 SSL_CONFIGURE_WITH=	openssl
 SSL_USES=		ssl
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPAM}
-#CONFIGURE_ARGS+=	--with-pam
-SSL_CONFIGURE_WITH=	pam
-.endif
-
-.if ${PORT_OPTIONS:MMEMCACHED}
-CONFIGURE_ARGS+=--with-memcached=${LOCALBASE}/include
-LIB_DEPENDS+=	libmemcached.so:databases/libmemcached
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/pgpool
