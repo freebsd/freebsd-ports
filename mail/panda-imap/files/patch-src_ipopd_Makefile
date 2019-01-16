@@ -1,6 +1,6 @@
 --- src/ipopd/Makefile.orig	Wed Oct 25 01:55:07 2000
 +++ src/ipopd/Makefile	Mon Oct  1 03:44:26 2001
-@@ -19,29 +19,25 @@
+@@ -19,29 +19,21 @@
  
  
  C = ../c-client
@@ -15,10 +15,6 @@
 -LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
 +CFLAGS+=	-DNFSKLUDGE -I$(LOCALBASE)/include/c-client
 +LDFLAGS+=	-L$(LOCALBASE)/lib -lc-client4
-+.if defined(WITH_DRAC)
-+CFLAGS+=	-DDRAC_AUTH -DETC_DIR=\"$(PREFIX)/etc\"
-+LDFLAGS+=	-ldrac
-+.endif
  
  ipopd: ipop2d ipop3d
  
