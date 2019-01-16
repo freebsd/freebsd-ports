@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	irssi-xmpp
-PORTVERSION=	0.53
-PORTREVISION=	3
+PORTVERSION=	0.54
 CATEGORIES=	irc
 MASTER_SITES=	http://cybione.org/~irssi-xmpp/files/
 
