@@ -3,7 +3,7 @@
 
 PORTNAME=	openbox
 PORTVERSION=	3.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://openbox.org/dist/openbox/
 
@@ -23,6 +23,7 @@ USE_XORG=	ice sm x11 xcursor xext xft xinerama xrandr \
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	data/autostart/openbox-xdg-autostart
+ETCDIR=		${PREFIX}/etc/xdg/${PORTNAME}
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lXext
@@ -56,5 +57,11 @@ PATCHES_EXTRA_PATCHES=	${PATCHDIR}/openbox-3.5.0-title-matching.patch:-p1 \
 
 post-configure:
 	@${CHMOD} +x ${WRKSRC}/install-sh
+
+post-install:
+.for config_file in autostart environment menu.xml rc.xml
+	@${MV} ${STAGEDIR}${ETCDIR}/${config_file} \
+		${STAGEDIR}${ETCDIR}/${config_file}.sample
+.endfor
 
 .include <bsd.port.mk>
