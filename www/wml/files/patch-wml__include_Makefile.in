@@ -1,0 +1,16 @@
+--- wml_include/Makefile.in.orig        2018-12-24 13:25:15 UTC
++++ wml_include/Makefile.in
+@@ -21,10 +21,10 @@ MKDIR           = $(top_srcdir)/etc/shtool mkdir -f -p
+
+ prefix          = @prefix@
+ exec_prefix     = $(prefix)
+-bindir          = $(prefix)/bin
++bindir          = $(DESTDIR)$(prefix)/bin
+ libsubdir       = @libsubdir@
+-libdir          = $(prefix)/lib$(libsubdir)
+-mandir          = $(prefix)/man
++libdir          = $(DESTDIR)$(prefix)/lib$(libsubdir)
++mandir          = $(DESTDIR)$(prefix)/man
+
+ INSTALLPRIVLIB  = @INSTALLPRIVLIB@
+ INSTALLARCHLIB  = @INSTALLARCHLIB@

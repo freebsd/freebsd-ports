@@ -1,0 +1,13 @@
+WML is a free and extensible Webdesigner's off-line HTML generation toolkit
+for Unix, distributed under the GNU General Public License (GPL v2). It is
+written in ANSI C and Perl 5, build via a GNU Autoconf based source tree
+and runs out-of-the-box on all major Unix derivates.  It can be used
+free of charge both in educational and commercial environments.
+
+WML consists of a control frontend driving up to nine backends in a
+sequential pass-oriented filtering scheme. Each backend provides one
+particular core language. For maximum power WML additionally ships with a
+well-suited set of include files which provide higher-level features build
+on top of the backends core languages.
+
+WWW: https://thewml.github.io/

@@ -1,0 +1,11 @@
+--- wml_backend/p2_mp4h/configure.ac.orig	2018-12-24 17:14:48 UTC
++++ wml_backend/p2_mp4h/configure.ac
+@@ -6,7 +6,7 @@
+ 
+ AM_INIT_AUTOMAKE([$PACKAGE_NAME], [$PACKAGE_VERSION])
+ AM_CONFIG_HEADER([config.h])
+-AM_C_PROTOTYPES
++# AM_C_PROTOTYPES
+ ALL_LINGUAS=""
+ AM_GNU_GETTEXT([external])
+ IT_PROG_INTLTOOL

@@ -1,0 +1,10 @@
+--- wml_backend/p2_mp4h/doc/mp4h.mp4h.orig	2014-12-21 21:59:33 UTC
++++ wml_backend/p2_mp4h/doc/mp4h.mp4h
+@@ -2,6 +2,7 @@
+ ;;;  mp4h.mp4h -- Documentation for mp4h
+ ;;;  Copyright 2000-2002, Denis Barbier   <barbier@imacs.polytechnique.fr>
+ ;;;
++=encoding Latin1
+ 
+ <set-var package=mp4h />
+ <set-var title="mp4h - Macro Processor for HTML Documents" />
