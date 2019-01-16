@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 PKGNAMESUFFIX=	30
 
 MAINTAINER=	ume@FreeBSD.org
-COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
+COMMENT=	Cyrus mail server, supporting POP3 and IMAP4 protocols
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -49,7 +49,6 @@ CPE_PRODUCT=	cyrus_imap_server
 OPTIONS_DEFINE=		AUTOCREATE BACKUP CLAMAV HTTP IDLED LDAP LMDB MURDER \
 			MYSQL NNTP PGSQL REPLICATION SNMP SQLITE SQUAT XAPIAN \
 			DOCS
-#OPTIONS_DEFINE+=	DRAC
 OPTIONS_DEFAULT=	AUTOCREATE IDLED SQLITE SQUAT
 OPTIONS_SUB=		yes
 AUTOCREATE_DESC=	Enable autocreate support
@@ -59,9 +58,6 @@ BACKUP_CONFIGURE_ENABLE=backup
 CLAMAV_DESC=		Use ClamAV
 CLAMAV_CONFIGURE_WITH=	clamav
 CLAMAV_LIB_DEPENDS=	libclamav.so:security/clamav
-DRAC_DESC=		Enable DRAC support
-DRAC_CONFIGURE_ON=	--with-drac=${LOCALBASE}
-DRAC_BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:mail/drac
 HTTP_DESC=		Enable HTTP support
 HTTP_CONFIGURE_ENABLE=	http
 HTTP_LIB_DEPENDS=	libical.so:devel/libical \
@@ -153,11 +149,6 @@ CYRUS_PERL_MAN3=Cyrus::Annotator::Daemon Cyrus::Annotator::Message \
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDRAC}
-IGNORE=		DRAC is not available
-# EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmulocal__sasl2.m4
-.endif
-
 .if ${PORT_OPTIONS:MHTTP} || ${PORT_OPTIONS:MSQLITE}
 USES+=	sqlite
 .endif
@@ -183,12 +174,6 @@ PLIST_SUB+=	SQUATTER=""
 PLIST_SUB+=	SQUATTER="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MDRAC}
-pre-patch:
-	${PATCH} -d ${PATCH_WRKSRC} --forward --quiet -E -p1 \
-		< ${WRKSRC}/contrib/drac_auth.patch
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" \
 			  -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
@@ -201,9 +186,6 @@ post-patch:
 		-e 's|$$(libdir)/\(pkgconfig\)|${PREFIX}/libdata/\1|g' \
 		-e 's|$$(mandir)/\(man[8]\)|${PREFIX}/cyrus/man/\1|g' \
 		${WRKSRC}/Makefile.in
-
-post-patch-DRAC-on:
-	@${RM} -r ${WRKSRC}/autom4te.cache
 
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
