@@ -2,6 +2,7 @@
 
 PORTNAME=	gitlab-runner
 PORTVERSION=	11.6.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	\
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \

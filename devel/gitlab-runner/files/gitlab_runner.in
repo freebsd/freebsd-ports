@@ -36,7 +36,7 @@ export PATH=${PATH}:%%PREFIX%%/bin
 
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} %%PREFIX%%/bin/gitlab-runner run --syslog --service ${gitlab_runner_syslogtag}"
+command_args="-f -p ${pidfile} env HOME=${gitlab_runner_dir} ${gitlab_runner_env} %%PREFIX%%/bin/gitlab-runner run --syslog --service ${gitlab_runner_syslogtag}"
 gitlab_runner_chdir="${gitlab_runner_dir}"
 
 procname=%%PREFIX%%/bin/gitlab-runner
@@ -47,12 +47,12 @@ register_cmd="registerfunc"
 
 listfunc()
 {
-        su -m ${gitlab_runner_user} -c "env HOME=${gitlab_runner_dir} %%PREFIX%%/bin/gitlab-runner list"
+        su -m ${gitlab_runner_user} -c "env HOME=${gitlab_runner_dir} ${gitlab_runner_env} %%PREFIX%%/bin/gitlab-runner list"
 }
 
 registerfunc()
 {
-        su -m ${gitlab_runner_user} -c "env HOME=${gitlab_runner_dir} %%PREFIX%%/bin/gitlab-runner register"
+        su -m ${gitlab_runner_user} -c "env HOME=${gitlab_runner_dir} ${gitlab_runner_env} %%PREFIX%%/bin/gitlab-runner register"
 }
 
 gitlab_runner_startprecmd()
