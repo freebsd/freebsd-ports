@@ -1,0 +1,16 @@
+--- Makefile.in.orig    2018-12-24 13:19:12 UTC
++++ Makefile.in
+@@ -25,10 +25,10 @@ TARBALL         = $(SHTOOL) tarball -t
+
+ prefix          = @prefix@
+ exec_prefix     = $(prefix)
+-bindir          = $(prefix)/bin
++bindir          = $(DESTDIR)$(prefix)/bin
+ libsubdir       = @libsubdir@
+-libdir          = $(prefix)/lib$(libsubdir)
+-mandir          = $(prefix)/man
++libdir          = $(DESTDIR)$(prefix)/lib$(libsubdir)
++mandir          = $(DESTDIR)$(prefix)/man
+ catdir          = @catdir@
+ tmpdir          = @tmpdir@
+

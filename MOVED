@@ -9056,7 +9056,6 @@ net/samba36|net/samba43|2017-03-21|Obsolete
 multimedia/mplayer2|multimedia/mpv|2017-03-25|Has expired: Development ceased in favour of mpv, last release from 2013
 devel/buildbot-slave|devel/buildbot-worker|2017-03-27|Renamed to match new upstream package name/terminology
 print/musixtex||2017-03-27|Has expired: Broken for more than 6 months
-www/wml||2017-03-27|Has expired: Broken for more than 6 months
 www/offline-npm||2017-03-27|Has expired: Broken for more than 6 months
 x11-themes/kde-icons-cezanne||2017-03-27|Has expired: Broken for more than 6 months
 x11-themes/kde-icons-sky||2017-03-27|Has expired: Broken for more than 6 months
