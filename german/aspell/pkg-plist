@@ -4,6 +4,7 @@ lib/aspell-0.60/de_CH.dat
 lib/aspell-0.60/de_CH_affix.dat
 lib/aspell-0.60/de_DE.dat
 lib/aspell-0.60/de_DE_affix.dat
+%%DATADIR%%/de.alias
 %%DATADIR%%/de_AT.multi
 %%DATADIR%%/de_AT.rws
 %%DATADIR%%/de_CH.multi
