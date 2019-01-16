@@ -226,7 +226,7 @@ post-install:
 	        -e 's|(man/man[1-9]/.*\.[0-9])|\1.gz|' \
 	        ${STAGEDIR}${PREFIX}/$$f; \
 	    ${RM} ${STAGEDIR}${PREFIX}/$$f.bak; \
-	    ${ECHO} "${PREFIX}/$$f" >> ${TMPPLIST}; \
+	    ${ECHO_CMD} "${PREFIX}/$$f" >> ${TMPPLIST}; \
 	    ${AWK} '\
 	        /^file:/ { \
 	            file=$$0; \
