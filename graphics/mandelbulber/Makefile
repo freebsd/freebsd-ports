@@ -20,7 +20,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	buddhi1980
 GH_PROJECT=	${PORTNAME}2
 
-USES=		cmake gnome jpeg localbase:ldflags pkgconfig qt:5
+USES=		cmake compiler:c++11-lang gnome jpeg localbase:ldflags \
+		pkgconfig qt:5
 USE_QT=		core widgets network gui multimedia testlib \
 		qmake_build buildtools_build uitools_build
 INSTALLS_ICONS=	yes
