@@ -10,6 +10,7 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Multimedia communication library written in C language
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
