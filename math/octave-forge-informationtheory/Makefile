@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-informationtheory
 PORTVERSION=	0.1.8
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

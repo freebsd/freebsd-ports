@@ -1,6 +1,7 @@
 # Created by: Daichi GOTO <daichi@FreeBSD.org>
 # $FreeBSD$
 
+PORTREVISION=	15
 PKGNAMESUFFIX=	-tool
 
 COMMENT=	Mozc tool for IBus, SCIM, and others

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qtcurve
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	QtCurve KDE Frameworks 5 widget style and window decoration
 

@@ -2,6 +2,7 @@
 
 PORTNAME=	dsblogoutmgr
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freeshell.de/~mk/download/
 

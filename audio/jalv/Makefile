@@ -3,7 +3,7 @@
 
 PORTNAME=	jalv
 PORTVERSION=	1.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 

@@ -1,7 +1,7 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-${SLAVEPORT}
 
 MAINTAINER=	ports@FreeBSD.org

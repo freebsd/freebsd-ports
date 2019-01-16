@@ -3,6 +3,7 @@
 
 PORTNAME=	fuel
 DISTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://fuel-scm.org/files/releases/
 

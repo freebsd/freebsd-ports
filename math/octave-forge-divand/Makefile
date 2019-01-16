@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-divand
 PORTVERSION=	1.1.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

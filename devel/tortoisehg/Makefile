@@ -2,6 +2,7 @@
 
 PORTNAME=	tortoisehg
 DISTVERSION=	4.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/tortoisehg/targz/downloads/
 

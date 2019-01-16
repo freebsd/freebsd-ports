@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-gnuplot
 PORTVERSION=	1.0.1
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

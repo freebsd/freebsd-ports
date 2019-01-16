@@ -3,7 +3,7 @@
 
 PORTNAME=	qtawesome
 PORTVERSION=	20150319
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 
 MAINTAINER=	mi@aldan.algebra.com

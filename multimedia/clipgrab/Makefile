@@ -3,6 +3,7 @@
 
 PORTNAME=	clipgrab
 PORTVERSION=	3.7.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://download.clipgrab.org/
 

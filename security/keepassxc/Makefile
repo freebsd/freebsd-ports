@@ -2,7 +2,7 @@
 
 PORTNAME=	keepassxc
 DISTVERSION=	2.3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/keepassxreboot/keepassxc/releases/download/${DISTVERSION}/${PORTNAME}-${DISTVERSION}-src.tar.xz?dummy=/
 

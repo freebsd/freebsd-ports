@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-dicom
 PORTVERSION=	0.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

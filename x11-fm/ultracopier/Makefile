@@ -3,6 +3,7 @@
 
 PORTNAME=	ultracopier
 PORTVERSION=	1.2.1.0
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://files.first-world.info/ultracopier/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}

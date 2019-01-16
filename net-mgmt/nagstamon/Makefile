@@ -3,6 +3,7 @@
 
 PORTNAME=	nagstamon
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	https://nagstamon.ifw-dresden.de/files/stable/ \
 		LOCAL/ehaupt

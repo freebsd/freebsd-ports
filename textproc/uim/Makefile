@@ -3,6 +3,7 @@
 
 PORTNAME=	uim
 PORTVERSION=	1.8.8
+PORTREVISION?=	0
 CATEGORIES?=	textproc
 MASTER_SITES=	https://github.com/uim/uim/releases/download/${PORTVERSION}/
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)

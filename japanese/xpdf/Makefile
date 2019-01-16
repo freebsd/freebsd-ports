@@ -3,7 +3,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.03
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 PKGNAMESUFFIX=	-jafont

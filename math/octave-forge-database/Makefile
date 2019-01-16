@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-database
 PORTVERSION=	2.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

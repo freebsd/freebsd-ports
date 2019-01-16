@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgsql
+PORTREVISION=	1
 
 DB=		PSQL
 DB_DESC=	PostgreSQL

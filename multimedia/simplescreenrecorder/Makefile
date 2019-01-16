@@ -2,7 +2,7 @@
 
 PORTNAME=	simplescreenrecorder
 DISTVERSION=	0.3.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org

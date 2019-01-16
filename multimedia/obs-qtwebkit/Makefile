@@ -2,6 +2,7 @@
 
 PORTNAME=	obs-qtwebkit
 PORTVERSION=	g2018090201
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	swills@FreeBSD.org

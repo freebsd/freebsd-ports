@@ -3,6 +3,7 @@
 PORTNAME=	kde-thumbnailer-epub
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.9b
+PORTREVISION=	1
 CATEGORIES=	misc kde
 
 MAINTAINER=	makc@FreeBSD.org

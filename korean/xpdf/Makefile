@@ -3,7 +3,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.03
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	korean
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 PKGNAMESUFFIX=	-kofont

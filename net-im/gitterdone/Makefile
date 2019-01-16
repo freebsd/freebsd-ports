@@ -2,6 +2,7 @@
 
 PORTNAME=	gitterdone
 PORTVERSION=	201710031257
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	jt@ixsystems.com

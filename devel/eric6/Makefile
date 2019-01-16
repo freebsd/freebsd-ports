@@ -1,6 +1,7 @@
 # Created by: Boris Samorodov <bsam@FreeBSD.org>
 # $FreeBSD$
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-${FLAVOR:U:S/_/-/}
 DISTNAME=	${PORTNAME}-nolang-${DISTVERSION}
 CATEGORIES=	devel python

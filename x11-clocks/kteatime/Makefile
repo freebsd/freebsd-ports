@@ -2,6 +2,7 @@
 
 PORTNAME=	kteatime
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-clocks kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org

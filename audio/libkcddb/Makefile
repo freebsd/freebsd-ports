@@ -2,6 +2,7 @@
 
 PORTNAME=	libkcddb
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	audio kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org

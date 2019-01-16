@@ -1,5 +1,7 @@
 # $FreeBSD$
 
+PORTREVISION=	2
+
 MASTERDIR=	${.CURDIR}/../wireshark
 COMMENT=	Powerful network analyzer/capture tool (QT package)
 

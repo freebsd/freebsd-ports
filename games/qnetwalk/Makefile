@@ -3,6 +3,7 @@
 
 PORTNAME=	qnetwalk
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org

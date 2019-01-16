@@ -4,6 +4,7 @@
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
 DISTVERSION=	3_4_3
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@gwdg.de

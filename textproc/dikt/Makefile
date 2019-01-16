@@ -3,6 +3,7 @@
 
 PORTNAME=	dikt
 PORTVERSION=	2s1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc net kde
 MASTER_SITES=	https://bitbucket.org/dikt/code/downloads/

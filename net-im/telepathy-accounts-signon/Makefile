@@ -2,6 +2,7 @@
 
 PORTNAME=	telepathy-accounts-signon
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
