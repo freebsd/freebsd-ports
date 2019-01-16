@@ -28,7 +28,7 @@ USE_QT=		corelib dbus network sql xml \
 		moc_build qmake_build rcc_build
 CMAKE_ON+=	BUILD_WITH_QT4
 .else
-USES+=		qt:5
+USES+=		compiler:c++11-lang qt:5
 USE_QT=		core dbus network sql xml \
 		buildtools_build qmake_build
 CMAKE_OFF+=	BUILD_WITH_QT4
