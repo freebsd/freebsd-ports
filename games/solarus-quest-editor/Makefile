@@ -4,6 +4,7 @@
 PORTNAME=	solarus-quest-editor
 PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	danilo@FreeBSD.org

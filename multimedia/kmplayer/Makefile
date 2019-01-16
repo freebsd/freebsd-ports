@@ -3,6 +3,7 @@
 
 PORTNAME=	kmplayer
 PORTVERSION=	0.12.0b
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio kde
 

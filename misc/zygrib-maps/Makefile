@@ -2,6 +2,7 @@
 
 PORTNAME=	zygrib-maps
 DISTVERSION=	2.4
+PORTREVISION=	1
 MASTER_SITES=	http://www.zygrib.org/getfile.php?file=
 CATEGORIES=	misc
 DISTNAME=	zyGrib_maps${DISTVERSION}

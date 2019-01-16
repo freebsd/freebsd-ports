@@ -3,6 +3,7 @@
 
 PORTNAME=	showimage
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	https://dl.opendesktop.org/api/files/download/id/1482097460/ \
 		LOCAL/tcberner/showimage-0.10/

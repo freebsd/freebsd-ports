@@ -3,6 +3,7 @@
 
 PORTNAME=	pcbsd-syscache
 PORTVERSION=	1439494375
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	kmoore@FreeBSD.org

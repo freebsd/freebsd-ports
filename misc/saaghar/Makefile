@@ -2,7 +2,7 @@
 
 PORTNAME=	saaghar
 PORTVERSION=	2.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	SF/saaghar/Source%20Code/:saaghar \
 		SF/ganjoor/s3db:ganjoor

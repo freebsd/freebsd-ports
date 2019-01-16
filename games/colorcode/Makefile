@@ -2,6 +2,7 @@
 
 PORTNAME=	colorcode
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://colorcode.laebisch.com/download/
 DISTNAME=	ColorCode-${PORTVERSION}

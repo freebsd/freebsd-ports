@@ -2,6 +2,7 @@
 
 PORTNAME=	trueos-libqt5
 PORTVERSION=	20171003
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jt@ixsystems.com

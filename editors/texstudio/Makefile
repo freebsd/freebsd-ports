@@ -2,6 +2,7 @@
 
 PORTNAME=	texstudio
 DISTVERSION=	2.12.14
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	abiliojr@gmail.com

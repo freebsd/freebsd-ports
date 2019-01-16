@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-tsa
 PORTVERSION=	4.4.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

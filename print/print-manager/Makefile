@@ -2,6 +2,7 @@
 
 PORTNAME=	print-manager
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	print kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org

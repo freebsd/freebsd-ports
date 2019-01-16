@@ -5,6 +5,7 @@
 
 PORTNAME?=	unixcw
 PORTVERSION=	3.5.1
+PORTREVISION?=	0
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/unixcw/unixcw-${PORTVERSION}
 DISTNAME=	unixcw_${PORTVERSION}.orig

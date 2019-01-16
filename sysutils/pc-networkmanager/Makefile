@@ -2,7 +2,7 @@
 
 PORTNAME=	pc-networkmanager
 PORTVERSION=	201710031301
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	jt@ixsystems.com

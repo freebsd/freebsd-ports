@@ -2,6 +2,7 @@
 
 PORTNAME=	yubikey-piv-manager
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 #PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	https://developers.yubico.com/yubikey-piv-manager/Releases/

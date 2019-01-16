@@ -1,5 +1,7 @@
 # $FreeBSD$
 
+PORTREVISION=	1
+
 DB=		MYSQL
 DB_DESC=	MySQL
 

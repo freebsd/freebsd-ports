@@ -1,6 +1,7 @@
 # Created by: Daichi GOTO <daichi@FreeBSD.org>
 # $FreeBSD$
 
+PORTREVISION=	15
 PKGNAMEPREFIX=	ja-fcitx-
 
 COMMENT=	Mozc engine for Fcitx

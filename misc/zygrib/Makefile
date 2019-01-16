@@ -2,6 +2,7 @@
 
 PORTNAME=	zygrib
 DISTVERSION=	8.0.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.zygrib.org/getfile.php?file=
 DISTNAME=	zyGrib-${DISTVERSION}

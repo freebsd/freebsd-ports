@@ -3,6 +3,7 @@
 
 PORTNAME=	zint
 DISTVERSION=	2.6.3_rc2	# NOT a "release candidate", fixup for 2.6.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.6.3
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src

@@ -3,6 +3,7 @@
 
 PORTNAME=	pcbsd-appweb
 PORTVERSION=	1441129621
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	kmoore@FreeBSD.org

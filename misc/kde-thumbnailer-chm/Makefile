@@ -3,6 +3,7 @@
 PORTNAME=	kde-thumbnailer-chm
 PORTVERSION=	0.2.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	misc kde
 
 MAINTAINER=	makc@FreeBSD.org

@@ -1,5 +1,6 @@
 # $FreeBSD$
 
+PORTREVISION=	2
 PKGNAMESUFFIX=	-qt5
 
 CONFLICTS=	qxmpp-[0-9]*
