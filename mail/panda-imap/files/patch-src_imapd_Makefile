@@ -27,7 +27,7 @@
  
  # Un-comment to enable the ESEARCH command.  Unfortunately, the iOS4 Mail
  # client misinterprets the ESEARCH results due to an ambiguity in RFC 4731.
-@@ -46,23 +48,21 @@
+@@ -46,23 +44,21 @@
  
  # Get local definitions from c-client directory
  
@@ -41,10 +41,6 @@
  	-DUSERALERTFILE=\"$(USERALERT)\" -DSHUTDOWNFILE=\"$(SHUTDOWN)\"
 -LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
 +LDFLAGS+=	$(EXTRALDFLAGS) -L$(LOCALBASE)/lib -lc-client4
-+.if defined(WITH_DRAC)
-+CFLAGS+=	-DETC_DIR=\"$(PREFIX)/etc\" -DDRAC_AUTH
-+LDFLAGS+=	-ldrac
-+.endif
  
  all:	imapd
  
