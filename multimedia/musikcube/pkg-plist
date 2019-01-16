@@ -47,6 +47,7 @@ include/musikcube/core/sdk/constants.h
 %%DATADIR%%/musikcube
 %%DATADIR%%/musikcubed
 %%DATADIR%%/plugins/libffmpegdecoder.so
+%%DATADIR%%/plugins/libgmedecoder.so
 %%DATADIR%%/plugins/libhttpdatastream.so
 %%DATADIR%%/plugins/libnullout.so
 %%DATADIR%%/plugins/libserver.so
