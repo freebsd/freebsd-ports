@@ -17,7 +17,8 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		cmake jpeg
+USES=		cmake gl jpeg localbase:ldflags
+USE_CXXSTD=	c++98
 USE_XORG=	xft
 USE_GL=		glu
 USE_LDCONFIG=	${PREFIX}/lib/fltk-devel
@@ -27,9 +28,6 @@ CMAKE_ARGS=	-DOPTION_BUILD_SHARED_LIBS:BOOL=ON \
 		-DPREFIX_DOC:PATH=${PREFIX}/share/examples/fltk-devel \
 		-DPREFIX_INCLUDE:PATH=${PREFIX}/include/fltk-devel \
 		-DPREFIX_LIB:PATH=${PREFIX}/lib/fltk-devel
-
-CXXFLAGS+=	-Wno-c++11-narrowing
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 SNAPSHOT_VERS=	10370
 PORTEXAMPLES=	*
