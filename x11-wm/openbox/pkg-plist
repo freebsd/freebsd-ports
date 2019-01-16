@@ -25,10 +25,10 @@ bin/openbox
 bin/openbox-gnome-session
 bin/openbox-kde-session
 bin/openbox-session
-etc/xdg/openbox/autostart
-etc/xdg/openbox/environment
-etc/xdg/openbox/menu.xml
-etc/xdg/openbox/rc.xml
+@sample %%ETCDIR%%/autostart.sample
+@sample %%ETCDIR%%/environment.sample
+@sample %%ETCDIR%%/menu.xml.sample
+@sample %%ETCDIR%%/rc.xml.sample
 lib/libobrender.a
 lib/libobrender.so
 lib/libobrender.so.29
