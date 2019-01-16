@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/
 PKGNAMESUFFIX=	23
 
 MAINTAINER=	ume@FreeBSD.org
-COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
+COMMENT=	Cyrus mail server, supporting POP3 and IMAP4 protocols
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
@@ -40,7 +40,7 @@ MAKE_JOBS_UNSAFE=	yes
 CPE_VENDOR=	cmu
 CPE_PRODUCT=	cyrus_imap_server
 
-OPTIONS_DEFINE=		AUTOCREATE AUTOSIEVE BDB DRAC IDLED \
+OPTIONS_DEFINE=		AUTOCREATE AUTOSIEVE BDB IDLED \
 			LDAP_PTLOADER LISTEXT MURDER MYSQL \
 			NETSCAPEHACK NNTP PGSQL REPLICATION SNMP_5 \
 			SQLITE DOCS EXAMPLES
@@ -51,10 +51,6 @@ AUTOSIEVE_DESC=		Use autosievefolder patch (UoA)
 BDB_USES=		bdb
 BDB_CONFIGURE_ON=	--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 			--with-bdb-libdir=${LOCALBASE}/lib
-DRAC_DESC=		Enable DRAC support
-DRAC_CONFIGURE_ON=	--with-drac=${LOCALBASE}
-DRAC_BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:mail/drac
-DRAC_USES=		autoreconf
 IDLED_DESC=		Enable IMAP idled support
 IDLED_CONFIGURE_ENABLE=	idled
 LDAP_PTLOADER_DESC=	Enable LDAP ptloader
@@ -97,11 +93,6 @@ AUTOSIEVE_VERSION=	0.6.0
 AUTOSIETE_PATCH_SITES=	http://email.uoa.gr/download/cyrus/${PORTNAME}-2.3.16/:autosieve
 AUTOSIEVE_PATCHFILES=	${PORTNAME}-2.3.16-autosieve-${AUTOSIEVE_VERSION}.diff
 AUTOSIEVE_BROKEN=	Not buildable with autosieve patch
-
-DRAC_EXTRA_PATCHES=	${WRKSRC}/contrib/drac_auth.patch \
-			${FILESDIR}/extra-patch-configure.in \
-			${FILESDIR}/extra-patch-cmulocal_ucdsnmp.m4 \
-			${FILESDIR}/extra-patch-cmulocal_sasl2.m4
 
 MANDIRS=	${CYRUS_PREFIX}/man
 
@@ -154,9 +145,6 @@ post-patch:
 			  -e "s|/usr/sieve|/var/imap/sieve|g" \
 		${WRKSRC}/tools/masssievec
 
-post-patch-DRAC-on:
-	@${RM} -r ${WRKSRC}/autom4te.cache
-
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/imapd.conf \
@@ -193,7 +181,7 @@ post-install-DOCS-on:
 # need to create it.
 post-install-EXAMPLES-on:
 .for f in ${CONFS:Nnormal.conf}
-	@${INSTALL_DATA} ${WRKSRC}/master/conf/${f} \
+	${INSTALL_DATA} ${WRKSRC}/master/conf/${f} \
 		${STAGEDIR}${EXAMPLESDIR}
 	@${ECHO_CMD} ${EXAMPLESDIR:S,^${PREFIX}/,,}/${f} >>${TMPPLIST}
 .endfor
