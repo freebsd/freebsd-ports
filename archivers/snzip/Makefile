@@ -17,7 +17,7 @@ OPTIONS_DEFINE=	DOCS
 USE_GITHUB=	yes
 GH_ACCOUNT=	kubo
 
-USES=		autoreconf
+USES=		autoreconf compiler:c++11-lang
 CONFIGURE_ARGS=	--with-snappy=${LOCALBASE}
 GNU_CONFIGURE=	yes
 
