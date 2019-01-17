@@ -1,0 +1,8 @@
+bin/cubehash
+bin/redo
+bin/redo-ifchange
+bin/redo-ifcreate
+%%MANPAGES%%man/man1/cubehash.1.gz
+%%MANPAGES%%man/man1/redo-ifchange.1.gz
+%%MANPAGES%%man/man1/redo-ifcreate.1.gz
+%%MANPAGES%%man/man1/redo.1.gz

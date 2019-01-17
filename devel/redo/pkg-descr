@@ -1,0 +1,20 @@
+Daniel J. Bernstein's redo idea is a system for building target
+files from source files.  Its purpose is to provide a build system
+for software packages that does incremental builds, i.e. if the
+package is built and then some of its source files are changed, the
+build system will only rerun that part of the build procedure that
+is necessary to rebuild the changed parts of the package.
+
+This is the redo implementation by Jonathan de Boyne Pollard written
+in C++.  It comprises:
+
+- redo - the main utility for rebuilding
+- redo-ifchange - a secondary utility for rebuilding targets if
+  existing sources change
+- redo-ifcreate - a secondary utility for rebuilding targets if
+  non-existent sources manifest
+- cubehash - a utility program that generates hashes of file contents
+  using the same parameterization of Bernstein CubeHash as is used
+  by the redo tools to check for changes to source and target files
+
+WWW: https://jdebp.eu/Softwares/redo/
