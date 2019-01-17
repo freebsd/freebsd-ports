@@ -1,0 +1,3 @@
+Transparent bidirectional bridge between Git and Mercurial for Git.
+
+WWW: https://github.com/mnauw/git-remote-hg

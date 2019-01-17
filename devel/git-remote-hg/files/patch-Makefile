@@ -1,0 +1,12 @@
+--- Makefile.orig	2018-10-14 14:27:51 UTC
++++ Makefile
+@@ -1,7 +1,7 @@
+-prefix := $(HOME)
++prefix ?= $(HOME)
+ 
+ bindir := $(prefix)/bin
+-mandir := $(prefix)/share/man/man1
++mandir := $(prefix)/man/man1
+ 
+ all: doc
+ 
