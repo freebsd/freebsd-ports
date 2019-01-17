@@ -1,0 +1,23 @@
+--- CMakeLists.txt.orig	2018-12-26 07:13:37 UTC
++++ CMakeLists.txt
+@@ -44,8 +44,6 @@ add_compile_options(-Wall -W -Wwrite-str
+ 
+ configure_file(config.h.in config.h @ONLY)
+ configure_file(fntsample.1.in fntsample.1 @ONLY)
+-configure_file(pdfoutline.1.in pdfoutline.1 @ONLY)
+-configure_file(pdfoutline.pl pdfoutline @ONLY)
+ 
+ include_directories(fntsample
+   ${CMAKE_CURRENT_BINARY_DIR}
+@@ -81,11 +79,7 @@ target_link_libraries(fntsample
+ 
+ install(TARGETS fntsample DESTINATION ${CMAKE_INSTALL_BINDIR})
+ 
+-install(PROGRAMS "${CMAKE_CURRENT_BINARY_DIR}/pdfoutline"
+-        DESTINATION ${CMAKE_INSTALL_BINDIR})
+-
+ install(FILES "${PROJECT_BINARY_DIR}/fntsample.1"
+-              "${PROJECT_BINARY_DIR}/pdfoutline.1"
+         DESTINATION "${CMAKE_INSTALL_MANDIR}/man1")
+ 
+ add_subdirectory(po)
