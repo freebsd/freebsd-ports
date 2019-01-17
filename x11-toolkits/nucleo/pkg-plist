@@ -91,9 +91,6 @@ include/nucleo/network/udp/UdpSender.H
 include/nucleo/network/udp/UdpSocket.H
 include/nucleo/network/xmpp/XmppConnection.H
 include/nucleo/nucleo.H
-%%QT4%%include/nucleo/plugins/qt/qtFileKeeper.H
-%%QT4%%include/nucleo/plugins/qt/qtReactiveEngine.H
-%%QT4%%include/nucleo/plugins/qt/qtTimeKeeper.H
 include/nucleo/utils/AppUtils.H
 include/nucleo/utils/Base64.H
 include/nucleo/utils/ByteOrder.H
@@ -111,7 +108,6 @@ lib/libNucleo.so.0
 lib/libNucleo.so.0.0.0
 %%FFMPEG%%lib/nucleo/nPffmpeg.so
 %%GD%%lib/nucleo/nPgd.so
-%%QT4%%lib/nucleo/nPqt.so
 libdata/pkgconfig/nucleo.pc
 %%DATADIR%%/Info.plist.tmpl
 %%DATADIR%%/fonts/Vera.ttf
