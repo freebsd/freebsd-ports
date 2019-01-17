@@ -1,0 +1,42 @@
+#!/bin/sh
+# PROVIDE: matterbridge
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable matterbridge:
+#
+# matterbridge_enable (bool):  Set to "NO" by default.
+#                               Set it to "YES" to enable matterbridge
+# matterbridge_config (str):    Set to "%%PREFIX%%/etc/matterbridge.toml" by default.
+#                               Set it to path to mattermost config file
+# matterbridge_user (str):     Set to "%%MATTERBRIDGE_USER%%" by default.
+#                               Set it to user to run matterbridge under
+# matterbridge_group (str):    Set to "%%MATTERBRIDGE_GROUP%%" by default.
+#                               Set it to group to run matterbridge under
+# matterbridge_syslogtag (str):Set to "matterbridge" by default.
+#                               Set it to tag to be used by syslog
+#
+
+. /etc/rc.subr
+
+name="matterbridge"
+rcvar="matterbridge_enable"
+
+load_rc_config $name
+
+: ${matterbridge_enable:="NO"}
+: ${matterbridge_config:="%%PREFIX%%/etc/matterbridge.toml"}
+: ${matterbridge_user:="%%MATTERBRIDGE_USER%%"}
+: ${matterbridge_group:="%%MATTERBRIDGE_GROUP%%"}
+: ${matterbridge_syslogtag:="matterbridge"}
+
+pidfile="/var/run/matterbridge/${name}.pid"
+
+command="/usr/sbin/daemon"
+command_args="-S -T ${matterbridge_syslogtag} -m 3 -c -p ${pidfile} env ${matterbridge_env} %%PREFIX%%/bin/matterbridge -conf ${matterbridge_config} ${matterbridge_args}"
+procname=%%PREFIX%%/bin/matterbridge
+
+start_precmd="install -d -m 775 -o ${matterbridge_user} -g ${matterbridge_group} /var/run/matterbridge"
+
+run_rc_command $1

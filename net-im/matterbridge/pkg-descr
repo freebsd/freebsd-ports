@@ -1,0 +1,5 @@
+Bridge between mattermost, IRC, gitter, xmpp, slack, discord, telegram,
+rocket.chat,hipchat (via xmpp), steam, twitch, ssh-chat, zulip and matrix with
+REST API (mattermost not required!)
+
+WWW: https://github.com/42wim/matterbridge
