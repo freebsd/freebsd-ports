@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2018-09-25 21:03:16 UTC
++++ Makefile.in
+@@ -3,7 +3,7 @@ DESTDIR=
+ 
+ SUBDIRS := svgtopng
+ 
+-all: $(SUBDIRS) build
++all: build
+ 
+ $(SUBDIRS):
+ 	$(MAKE) -C $@
+@@ -29,7 +29,7 @@ icon-caches:
+ 	gtk-update-icon-cache -f $(DESTDIR)/$(PREFIX)/share/icons/elementary-xfce-darker
+ 	gtk-update-icon-cache -f $(DESTDIR)/$(PREFIX)/share/icons/elementary-xfce-darkest
+ 
+-build: builddir
++build: builddir $(SUBDIRS)
+ 	chmod +x ./svgtopng/pngtheme.sh
+ 	@./svgtopng/pngtheme.sh build/elementary-xfce
+ 	@./svgtopng/pngtheme.sh build/elementary-xfce-dark
