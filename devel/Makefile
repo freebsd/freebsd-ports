@@ -5406,6 +5406,7 @@
     SUBDIR += readline
     SUBDIR += rebar
     SUBDIR += rebar3
+    SUBDIR += redo
     SUBDIR += regexx
     SUBDIR += regexxer
     SUBDIR += relx
