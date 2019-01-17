@@ -71,6 +71,7 @@
     SUBDIR += licq-qt-gui
     SUBDIR += linux-telegram-desktop
     SUBDIR += loudmouth
+    SUBDIR += matterbridge
     SUBDIR += matterircd
     SUBDIR += mbpurple
     SUBDIR += mcabber
