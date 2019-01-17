@@ -34,7 +34,7 @@ OPTIONS_DEFAULT=	SSL
 MEMCACHED_CONFIGURE_ON=	--with-memcached=${LOCALBASE}/include
 MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 
-PAM_CONFIGURE_WITH=	pam
+PAM_CONFIGURE_ON=	--with-pam
 
 SSL_CONFIGURE_WITH=	openssl
 SSL_USES=		ssl
