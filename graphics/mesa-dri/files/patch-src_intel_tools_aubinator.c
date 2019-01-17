@@ -1,14 +1,34 @@
-# We don't have MAP_NORESERVE so use MAP_NOSYNC | MAP_NOCORE and
-# hope for the best (this alloc is too big but it's only a test)
-#
---- src/intel/tools/aubinator.c.orig	2017-10-02 15:49:02 UTC
+- Partially implement memfd_create() via mkostemp()
+
+--- src/intel/tools/aubinator.c.orig	2018-08-02 15:41:20 UTC
 +++ src/intel/tools/aubinator.c
-@@ -637,7 +637,7 @@ int main(int argc, char *argv[])
-    /* mmap a terabyte for our gtt space. */
-    gtt_size = 1ull << 40;
-    gtt = mmap(NULL, gtt_size, PROT_READ | PROT_WRITE,
--              MAP_PRIVATE | MAP_ANONYMOUS |  MAP_NORESERVE, -1, 0);
-+              MAP_PRIVATE | MAP_ANONYMOUS | MAP_NOSYNC | MAP_NOCORE, -1, 0);
-    if (gtt == MAP_FAILED) {
-       fprintf(stderr, "failed to alloc gtt space: %s\n", strerror(errno));
-       exit(EXIT_FAILURE);
+@@ -52,7 +52,29 @@
+ static inline int
+ memfd_create(const char *name, unsigned int flags)
+ {
++#if defined(__linux__)
+    return syscall(SYS_memfd_create, name, flags);
++#elif defined(__FreeBSD__)
++   return shm_open(SHM_ANON, flags | O_RDWR | O_CREAT, 0600);
++#else /* DragonFly, NetBSD, OpenBSD, Solaris */
++   char template[] = "/tmp/shmfd-XXXXXX";
++#ifdef HAVE_MKOSTEMP
++   int fd = mkostemp(template, flags);
++#else
++   int fd = mkstemp(template);
++   if (flags & O_CLOEXEC) {
++     int flags = fcntl(fd, F_GETFD);
++     if (flags != -1) {
++       flags |= FD_CLOEXEC;
++       (void) fcntl(fd, F_SETFD, &flags);
++     }
++   }
++#endif /* HAVE_MKOSTEMP */
++   if (fd >= 0)
++     unlink(template);
++
++   return fd;
++#endif /* __linux__ */
+ }
+ #endif
+ 

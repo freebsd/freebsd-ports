@@ -51,6 +51,74 @@
      dri3_default=yes
      ;;
  *)
+@@ -26000,31 +26000,11 @@ fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$XCB_RANDR_PKG_ERRORS" >&5
+ 
+-	as_fn_error $? "Package requirements ($randr_modules) were not met:
+-
+-$XCB_RANDR_PKG_ERRORS
+-
+-Consider adjusting the PKG_CONFIG_PATH environment variable if you
+-installed software in a non-standard prefix.
+-
+-Alternatively, you may set the environment variables XCB_RANDR_CFLAGS
+-and XCB_RANDR_LIBS to avoid the need to call pkg-config.
+-See the pkg-config man page for more details." "$LINENO" 5
++	have_xlease=no
+ elif test $pkg_failed = untried; then
+      	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
+-	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+-$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+-as_fn_error $? "The pkg-config script could not be found or is too old.  Make sure it
+-is in your PATH or set the PKG_CONFIG environment variable to the full
+-path to pkg-config.
+-
+-Alternatively, you may set the environment variables XCB_RANDR_CFLAGS
+-and XCB_RANDR_LIBS to avoid the need to call pkg-config.
+-See the pkg-config man page for more details.
+-
+-To get pkg-config, see <http://pkg-config.freedesktop.org/>.
+-See \`config.log' for more details" "$LINENO" 5; }
++	have_xlease=no
+ else
+ 	XCB_RANDR_CFLAGS=$pkg_cv_XCB_RANDR_CFLAGS
+ 	XCB_RANDR_LIBS=$pkg_cv_XCB_RANDR_LIBS
+@@ -26092,31 +26072,11 @@ fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$XLIB_RANDR_PKG_ERRORS" >&5
+ 
+-	as_fn_error $? "Package requirements ($xlib_randr_modules) were not met:
+-
+-$XLIB_RANDR_PKG_ERRORS
+-
+-Consider adjusting the PKG_CONFIG_PATH environment variable if you
+-installed software in a non-standard prefix.
+-
+-Alternatively, you may set the environment variables XLIB_RANDR_CFLAGS
+-and XLIB_RANDR_LIBS to avoid the need to call pkg-config.
+-See the pkg-config man page for more details." "$LINENO" 5
++	have_xlease=no
+ elif test $pkg_failed = untried; then
+      	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
+-	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+-$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+-as_fn_error $? "The pkg-config script could not be found or is too old.  Make sure it
+-is in your PATH or set the PKG_CONFIG environment variable to the full
+-path to pkg-config.
+-
+-Alternatively, you may set the environment variables XLIB_RANDR_CFLAGS
+-and XLIB_RANDR_LIBS to avoid the need to call pkg-config.
+-See the pkg-config man page for more details.
+-
+-To get pkg-config, see <http://pkg-config.freedesktop.org/>.
+-See \`config.log' for more details" "$LINENO" 5; }
++	have_xlease=no
+ else
+ 	XLIB_RANDR_CFLAGS=$pkg_cv_XLIB_RANDR_CFLAGS
+ 	XLIB_RANDR_LIBS=$pkg_cv_XLIB_RANDR_LIBS
 @@ -27096,9 +27106,6 @@ rm -f core conftest.err conftest.$ac_obj
          CLANG_LIBDIR=${LLVM_LIBDIR}
      fi
