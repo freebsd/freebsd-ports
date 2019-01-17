@@ -253,8 +253,8 @@ post-extract:
 	@${FIND} ${WRKSRC} -name '*.d' -delete
 
 post-extract-G729-on:
-	${CP} ${DISTDIR}/${ASTERISK_CORE_G729_SOUNDS} ${WRKSRC}/sounds
-	${CP} ${DISTDIR}/${ASTERISK_MOH_G729_SOUNDS} ${WRKSRC}/sounds
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${ASTERISK_CORE_G729_SOUNDS} ${WRKSRC}/sounds
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${ASTERISK_MOH_G729_SOUNDS} ${WRKSRC}/sounds
 
 post-extract-OPUS-on:
 	${CP} ${WRKDIR}/${OPUS_SRC}/include/asterisk/* ${WRKSRC}/include/asterisk
