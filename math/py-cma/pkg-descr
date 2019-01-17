@@ -1,0 +1,9 @@
+pycma is a Python implementation of CMA-ES and a few related numerical
+optimization tools.
+
+The Covariance Matrix Adaptation Evolution Strategy (CMA-ES) is a stochastic
+derivative-free numerical optimization algorithm for difficult (non-convex,
+ill-conditioned, multi-modal, rugged, noisy) optimization problems in continuous
+search spaces.
+
+WWW: https://github.com/CMA-ES/pycma
