@@ -72,6 +72,7 @@
     SUBDIR += epte
     SUBDIR += erd
     SUBDIR += erkale
+    SUBDIR += erkale-pseudopotentials
     SUBDIR += esys-particle
     SUBDIR += fastcap
     SUBDIR += fasthenry
