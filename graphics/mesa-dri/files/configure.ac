@@ -30,6 +30,18 @@
      dri3_default=yes
      ;;
  *)
+@@ -1884,9 +1884,9 @@ fi
+ 
+ if test x"$have_xlease" = xyes; then
+     randr_modules="x11-xcb xcb-randr"
+-    PKG_CHECK_MODULES([XCB_RANDR], [$randr_modules])
++    PKG_CHECK_MODULES([XCB_RANDR], [$randr_modules],, [have_xlease=no])
+     xlib_randr_modules="xrandr"
+-    PKG_CHECK_MODULES([XLIB_RANDR], [$xlib_randr_modules])
++    PKG_CHECK_MODULES([XLIB_RANDR], [$xlib_randr_modules],, [have_xlease=no])
+ fi
+ 
+ AM_CONDITIONAL(HAVE_PLATFORM_X11, echo "$platforms" | grep -q 'x11')
 @@ -2061,8 +2070,6 @@ if test "x$enable_opencl" = xyes; then
          CLANG_LIBDIR=${LLVM_LIBDIR}
      fi

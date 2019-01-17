@@ -3,19 +3,15 @@
 
 PORTNAME=	mesa-dri
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	3
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
 
 USE_XORG=	xorgproto x11 xdamage xext xfixes xshmfence xv xvmc
 
-OPTIONS_DEFINE=	TEXTURE VAAPI VDPAU WAYLAND
-OPTIONS_DEFAULT=TEXTURE WAYLAND
+OPTIONS_DEFINE=	VAAPI VDPAU WAYLAND
+OPTIONS_DEFAULT=WAYLAND
 OPTIONS_SUB=	yes
-
-TEXTURE_DESC=	Enable texture-float support (patent encumbered)
-TEXTURE_CONFIGURE_ENABLE=	texture-float
 
 VAAPI_CONFIGURE_ENABLE=	va
 VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
@@ -72,6 +68,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-src_gallium_drivers_vc4_Makefile.in
 
 .if ${VULKAN_DRIVERS}
 BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
+USE_XORG+=		xcb xrandr
 .endif
 
 LDFLAGS_i386=		-Wl,-znotext

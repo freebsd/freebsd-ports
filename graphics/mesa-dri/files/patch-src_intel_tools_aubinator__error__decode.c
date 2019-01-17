@@ -6,7 +6,7 @@
   *
   */
  
-+#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && __FreeBSD__ < 12
 +#define _WITH_GETLINE
 +#endif
  #include <stdbool.h>

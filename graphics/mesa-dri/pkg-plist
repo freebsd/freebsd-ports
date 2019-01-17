@@ -83,15 +83,11 @@ include/GL/internal/dri_interface.h
 %%VDPAU%%%%RADEONSI_GDRIVER%%lib/vdpau/libvdpau_radeonsi.so.1.0.0
 %%INTEL_VDRIVER%%lib/libvulkan_intel.so
 %%RADEON_VDRIVER%%lib/libvulkan_radeon.so
-@comment lib/libwayland-egl.so
-@comment lib/libwayland-egl.so.1
-@comment lib/libwayland-egl.so.1.0.0
 libdata/pkgconfig/dri.pc
 @comment libdata/pkgconfig/egl.pc
 @comment libdata/pkgconfig/gbm.pc
 @comment libdata/pkgconfig/gl.pc
 @comment libdata/pkgconfig/glesv2.pc
 @comment libdata/pkgconfig/osmesa.pc
-@comment libdata/pkgconfig/wayland-egl.pc
 %%INTEL_VDRIVER%%share/vulkan/icd.d/intel_icd.%%ARCH%%.json
 %%RADEON_VDRIVER%%share/vulkan/icd.d/radeon_icd.%%ARCH%%.json
