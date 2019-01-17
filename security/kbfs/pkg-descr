@@ -7,4 +7,4 @@ Keybase service, and remotely with three types of KBFS servers (block servers,
 metadata servers, and key servers).
 
 WWW: https://keybase.io/docs/kbfs
-WWW: https://github.com/keybase/kbfs
+WWW: https://github.com/keybase/client/tree/master/go/kbfs
