@@ -18,6 +18,7 @@ bin/cpu-x
 %%X11%%share/icons/hicolor/512x512/apps/cpu-x.png
 share/locale/cs_CZ/LC_MESSAGES/cpu-x.mo
 share/locale/fr/LC_MESSAGES/cpu-x.mo
+share/locale/id/LC_MESSAGES/cpu-x.mo
 share/locale/pl/LC_MESSAGES/cpu-x.mo
 share/locale/pt_BR/LC_MESSAGES/cpu-x.mo
 share/locale/ru/LC_MESSAGES/cpu-x.mo
