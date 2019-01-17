@@ -1,8 +1,13 @@
 - Partially implement memfd_create() via mkostemp()
 
---- src/intel/tools/aubinator.c.orig	2018-08-02 15:41:20 UTC
-+++ src/intel/tools/aubinator.c
-@@ -52,7 +52,29 @@
+--- src/intel/tools/aub_mem.c.orig	2018-11-06 16:16:02 UTC
++++ src/intel/tools/aub_mem.c
+@@ -30,11 +30,34 @@
+ 
+ #ifndef HAVE_MEMFD_CREATE
+ #include <sys/syscall.h>
++#include <fcntl.h>
+ 
  static inline int
  memfd_create(const char *name, unsigned int flags)
  {

@@ -1,7 +1,8 @@
 - Without sysinfo() fall back to sysconf()
 - Define ETIME if missing
+- Define CLOCK_MONOTONIC_RAW if missing
 
---- src/intel/vulkan/anv_device.c.orig	2018-01-23 18:08:50 UTC
+--- src/intel/vulkan/anv_device.c.orig	2018-11-06 16:16:02 UTC
 +++ src/intel/vulkan/anv_device.c
 @@ -25,7 +25,9 @@
  #include <stdbool.h>
@@ -13,20 +14,27 @@
  #include <unistd.h>
  #include <fcntl.h>
  #include <xf86drm.h>
-@@ -40,6 +42,10 @@
+@@ -44,6 +46,17 @@
  
  #include "genxml/gen7_pack.h"
  
 +#ifndef ETIME
 +#define ETIME ETIMEDOUT
 +#endif
++#ifndef CLOCK_MONOTONIC_RAW
++# ifdef CLOCK_MONOTONIC_FAST
++#  define CLOCK_MONOTONIC_RAW CLOCK_MONOTONIC_FAST
++# else
++#  define CLOCK_MONOTONIC_RAW CLOCK_MONOTONIC
++# endif
++#endif
 +
  static void
  compiler_debug_log(void *data, const char *fmt, ...)
  { }
-@@ -75,10 +81,15 @@ anv_compute_heap_size(int fd, uint64_t *heap_size)
-    }
- 
+@@ -64,10 +73,15 @@ static VkResult
+ anv_compute_heap_size(int fd, uint64_t gtt_size, uint64_t *heap_size)
+ {
     /* Query the total ram from the system */
 +#ifdef __GLIBC__
     struct sysinfo info;

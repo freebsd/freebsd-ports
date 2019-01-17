@@ -1,4 +1,3 @@
-etc/drirc
 @comment include/EGL/egl.h
 @comment include/EGL/eglext.h
 @comment include/EGL/eglextchromium.h
@@ -89,5 +88,6 @@ libdata/pkgconfig/dri.pc
 @comment libdata/pkgconfig/gl.pc
 @comment libdata/pkgconfig/glesv2.pc
 @comment libdata/pkgconfig/osmesa.pc
+share/drirc.d/00-mesa-defaults.conf
 %%INTEL_VDRIVER%%share/vulkan/icd.d/intel_icd.%%ARCH%%.json
 %%RADEON_VDRIVER%%share/vulkan/icd.d/radeon_icd.%%ARCH%%.json
