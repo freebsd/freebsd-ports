@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION?=	1.31.1
+PORTVERSION?=	1.32.0
 PORTREVISION?=	0
 CATEGORIES=	lang
-MASTER_SITES=	http://static.rust-lang.org/dist/:src \
+MASTER_SITES=	http://dev-static.rust-lang.org/dist/:src \
 		LOCAL/dumbbell/rust:rust_bootstrap \
 		https://static.rust-lang.org/dist/:rust_bootstrap \
 		LOCAL/dumbbell/rust:cargo_bootstrap \
@@ -42,16 +42,16 @@ BROKEN_aarch64=		fails to build: bootstrap compiler crashes
 CONFLICTS_INSTALL?=	rust-nightly
 
 # See WRKSRC/src/stage0.txt for this date and version values.
-BOOTSTRAPS_DATE?=		2018-10-25
+BOOTSTRAPS_DATE?=		2018-12-20
 
-RUST_BOOTSTRAP_VERSION?=	1.30.0
+RUST_BOOTSTRAP_VERSION?=	1.31.1
 RUSTC_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rustc-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
 RUST_STD_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/rust-std-${RUST_BOOTSTRAP_VERSION_${ARCH}:U${RUST_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
 
-CARGO_BOOTSTRAP_VERSION?=	0.31.0
+CARGO_BOOTSTRAP_VERSION?=	0.32.0
 CARGO_BOOTSTRAP=		${BOOTSTRAPS_DATE_${ARCH}:U${BOOTSTRAPS_DATE}}/cargo-${CARGO_BOOTSTRAP_VERSION_${ARCH}:U${CARGO_BOOTSTRAP_VERSION}}-${RUST_TARGET}.tar.gz
 
-CARGO_VENDOR_DIR?=		${WRKSRC}/src/vendor
+CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
 RUST_CHANNEL=	${PKGNAMESUFFIX:Ustable:S/^-//}
 
