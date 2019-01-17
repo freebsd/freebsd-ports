@@ -4,7 +4,6 @@ The amdgpu driver supports AMD Radeon chipsets: OLAND, HAINAN, TAHITI, PITCAIRN,
 VERDE, BONAIRE, KABINI, MULLINS, KAVERI, HAWAII, TOPAZ, TONGA, CARRIZO, FIJI,
 STONEY, POLARIS11, POLARIS10 
 
-Requires amdgpu KMS driver from either graphics/drm-stable-kmod,
-graphics/drm-next-kmod or FreeBSDDesktop kernel fork.
+On FreeBSD requires amdgpu KMS driver from graphics/drm-kmod.
 
 WWW: https://www.x.org/wiki/RadeonFeature/
