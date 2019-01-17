@@ -2,7 +2,7 @@
 
 PORTNAME=	libva
 PORTVERSION=	2.3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -17,13 +17,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdrm.so:graphics/libdrm
 
-USES=		autoreconf gmake libtool pkgconfig tar:bzip2
+USES=		meson pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
-GNU_CONFIGURE=	yes
 LDFLAGS+=	-lpthread # for pthread_getthreadid_np
-INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DEBUG WAYLAND X11
 OPTIONS_DEFAULT=WAYLAND X11
@@ -32,17 +30,14 @@ OPTIONS_SUB=	yes
 DEBUG_CFLAGS=		-D_DEBUG
 DEBUG_CFLAGS_OFF=	-DNDEBUG
 
-WAYLAND_CONFIGURE_ENABLE=	wayland
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
+WAYLAND_MESON_YES=	with_wayland
 
-X11_CONFIGURE_ENABLE=	x11 glx
 X11_USES=		gl
 X11_USE=		GL=gl XORG=x11,xorgproto,xext,xfixes
+X11_MESON_YES=		with_x11 with_glx
 
 post-patch:	.SILENT
-	${REINPLACE_CMD} -e 's|$${libdir}/\(pkgconfig\)|${PREFIX}/libdata/\1|' \
-		-e 's/"$$USE_X11:$$enable_glx" != "yes:no"/"$$USE_X11" != "no"/' \
-		${WRKSRC}/configure.ac
 # V4L2 is unused since http://github.com/intel/libva/commit/70074679333c
 	${REINPLACE_CMD} '/videodev2\.h/d' ${WRKSRC}/va/va_backend.h
 
