@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	11.6.1
+PORTVERSION=	11.6.4
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -113,7 +113,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-sidekiq>=5.2.1:devel/rubygem-sidekiq \
 	rubygem-sidekiq-cron0>=0.6.0:devel/rubygem-sidekiq-cron0 \
 	rubygem-redis-namespace>=1.6.0:databases/rubygem-redis-namespace \
-	rubygem-gitlab-sidekiq-fetcher>0.1.0:devel/rubygem-gitlab-sidekiq-fetcher \
+	rubygem-gitlab-sidekiq-fetcher>=0.4.0:devel/rubygem-gitlab-sidekiq-fetcher \
 	rubygem-rufus-scheduler342>=3.4.0:devel/rubygem-rufus-scheduler342 \
 	rubygem-httparty>=0.13.3:www/rubygem-httparty \
 	rubygem-rainbow>=3.0:devel/rubygem-rainbow \
@@ -219,7 +219,7 @@ USE_RC_SUBR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-ce/tags
-GL_COMMIT=	598c5a7b9ddc0afbd0890d79c82088b80d706483
+GL_COMMIT=	300fef12295e24e33b7d180679d0f7c4333d91b7
 
 USERS=	git
 GROUPS=	git
