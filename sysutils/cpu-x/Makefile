@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cpu-x
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -22,6 +22,7 @@ GH_ACCOUNT=	X0rg
 GH_PROJECT=	${PORTNAME:tu}
 
 USES=		cmake gettext ncurses pkgconfig
+CMAKE_ARGS=	-DWITH_LIBJSONC:BOOL=OFF
 
 PORTDOCS=	ChangeLog README.md
 
