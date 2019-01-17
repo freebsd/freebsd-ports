@@ -5,7 +5,7 @@ DISTVERSION=	2.12.14
 PORTREVISION=	1
 CATEGORIES=	editors
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Integrated writing environment for LaTeX documents
 
 LICENSE=	GPLv2
