@@ -3,7 +3,7 @@
 PORTNAME=	jiri
 PORTVERSION=	g2019.01.03.01
 CATEGORIES=	devel
-MASTER_SITES=	https://fuchsia.googlesource.com/jiri/+archive/
+MASTER_SITES=	LOCAL/swills
 DISTNAME=	${GITHASH}
 DIST_SUBDIR=	jiri
 
