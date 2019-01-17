@@ -4,6 +4,7 @@
 PORTNAME=	grafx2
 PORTVERSION=	2.6
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/recoil/recoil/${RECOIL_VERSION}/:recoil
 DISTFILES=	recoil-${RECOIL_VERSION}${EXTRACT_SUFX}:recoil
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libX11.so:x11/libX11 \
 		libtiff.so:graphics/tiff
 
 USES=		desktop-file-utils gmake iconv:wchar_t pkgconfig
-USE_SDL=	sdl image
+USE_SDL=	sdl2 image2
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	GrafX2
@@ -27,21 +28,23 @@ GL_COMMIT=	5d8c61e41011a8106359343243e1050af4e7fd1f
 
 INSTALLS_ICONS=	yes
 
+GRAFX2_API=	sdl2
 RECOIL_VERSION=	4.3.1
 
 WRKSRC_SUBDIR=	src
 CFLAGS+=	-DHAVE_SYS_PARAM_H -DHAVE_SYS_UCRED_H -DHAVE_SYS_MOUNT_H
+MAKE_ENV+=	API=${GRAFX2_API}
 
 OPTIONS_DEFINE=	LUA TTF
 OPTIONS_DEFAULT=TTF
 OPTIONS_SUB=	yes
 TTF_DESC=	True Type font support
 
-LUA_USES=		lua:51
+LUA_USES=		lua
 LUA_MAKE_ARGS_OFF=	NOLUA=1
 
 TTF_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
-TTF_USE=		SDL=ttf
+TTF_USE=		SDL=ttf2
 TTF_MAKE_ARGS_OFF=	NOTTF=1
 
 post-extract:
@@ -56,7 +59,7 @@ post-patch:
 		${WRKSRC}/setup.c
 
 post-install:
-	@${MV} ${STAGEDIR}${PREFIX}/bin/grafx2-sdl \
+	@${MV} ${STAGEDIR}${PREFIX}/bin/grafx2-${GRAFX2_API} \
 		${STAGEDIR}${PREFIX}/bin/grafx2
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/grafx2
 
