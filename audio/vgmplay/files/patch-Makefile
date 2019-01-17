@@ -1,0 +1,12 @@
+--- Makefile.orig	2019-01-11 06:06:08 UTC
++++ Makefile
+@@ -58,7 +58,9 @@ endif
+ 
+ 
+ 
++ifndef CC
+ CC = gcc
++endif
+ ifndef PREFIX
+ PREFIX = /usr/local
+ #PREFIX = $(HOME)/.local
