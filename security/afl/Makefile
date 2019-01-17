@@ -30,11 +30,6 @@ OPTIONS_SUB=	yes
 
 LLVM_DESC=	LLVM-based instrumentation
 
-# You have implicit approval to bump the LLVM version here as long as
-# it builds WITH=LLVM and `make test` passes on all supported
-# releases.
-LLVM_DEFAULT?= 70
-
 LLVM_ALL_TARGET=	llvm_mode
 LLVM_BUILD_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 LLVM_RUN_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}

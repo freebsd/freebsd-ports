@@ -27,8 +27,6 @@ GH_TUPLE=	miloyip:rapidjson:daabb88:rapidjson/third_party/rapidjson \
 		emilk:loguru:6bf94c:loguru/third_party/loguru \
 		zeux:pugixml:24a7064:pugixml/third_party/pugixml
 
-LLVM_DEFAULT?=	60
-
 PLIST_FILES=	bin/cquery
 
 CONFIGURE_ARGS=	--variant=system --llvm-config=${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT}
