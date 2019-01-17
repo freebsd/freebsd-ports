@@ -9958,6 +9958,7 @@
 %%WWWDIR%%/lib/gitlab/git/blame.rb
 %%WWWDIR%%/lib/gitlab/git/blob.rb
 %%WWWDIR%%/lib/gitlab/git/branch.rb
+%%WWWDIR%%/lib/gitlab/git/bundle_file.rb
 %%WWWDIR%%/lib/gitlab/git/commit.rb
 %%WWWDIR%%/lib/gitlab/git/commit_stats.rb
 %%WWWDIR%%/lib/gitlab/git/compare.rb
@@ -12072,6 +12073,7 @@
 %%WWWDIR%%/spec/fixtures/junit/junit_with_three_testsuites_2.xml
 %%WWWDIR%%/spec/fixtures/junit/junit_with_three_testsuites_3.xml
 %%WWWDIR%%/spec/fixtures/logo_sample.svg
+%%WWWDIR%%/spec/fixtures/malicious.bundle
 %%WWWDIR%%/spec/fixtures/markdown.md.erb
 %%WWWDIR%%/spec/fixtures/metrics.json
 %%WWWDIR%%/spec/fixtures/missing_metadata.po
@@ -13379,6 +13381,7 @@
 %%WWWDIR%%/spec/lib/gitlab/git/blame_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/git/blob_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/git/branch_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/git/bundle_file_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/git/commit_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/git/compare_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/git/conflict/file_spec.rb
