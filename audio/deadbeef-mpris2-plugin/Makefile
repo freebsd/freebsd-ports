@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	deadbeef-mpris2-plugin
+PORTVERSION=	1.12
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11
 CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
