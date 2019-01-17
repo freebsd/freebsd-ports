@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	erkale
-DISTVERSION=	g20181121
-PORTREVISION=	4
+DISTVERSION=	g20190114
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,12 +28,13 @@ serial_PKGNAMESUFFIX=	-serial
 USES=		cmake:noninja fortran pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	susilehtola
-GH_TAGNAME=	0927d8c
+GH_TAGNAME=	0c285c1
 USE_LDCONFIG=	yes
 
 TEST_TARGET=	test
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ARGS=	-DERKALE_SYSTEM_LIBRARY=${DATADIR}/basis
 
 PLIST_SUB=	SUFFIX="${SUFFIX}"
 
@@ -58,7 +58,7 @@ NETLIB_LIB_DEPENDS=	libcblas.so:math/cblas
 
 OPENBLAS_USES=		blaslapack:openblas
 OPENBLAS_CMAKE_ON=	-DLAPACK_LIBRARIES:STRING=-lopenblas -DBLAS_LIBRARIES:STRING=-lopenblasp
-xOPENBLAS_BROKEN=	hits the number of threads limit: https://github.com/xianyi/OpenBLAS/issues/1882
+OPENBLAS_BROKEN=	hits the number of threads limit: https://github.com/xianyi/OpenBLAS/issues/1882
 
 # use clang from ports because cmake can't find OpenMP with base clang, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=223678
 # have the same compiler for both serial and parallel flavors so that performance numbers can be compared

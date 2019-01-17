@@ -1,0 +1,7 @@
+======================================================================
+You installed Erkale: a quantum chemistry program used to solve the
+electronic structure of atoms.
+
+Most likely you also need to install erkale-pseudopotentials, a set of
+pseudopotential files needed for almost every Erkale operation.
+======================================================================
