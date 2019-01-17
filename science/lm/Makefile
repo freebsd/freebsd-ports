@@ -44,9 +44,8 @@ PYTHON_CXXFLAGS=	-I${PYTHON_SITELIBDIR}/numpy/core/include
 PYTHON_BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy/core/include/numpy/arrayobject.h:math/py-numpy@${PY_FLAVOR}
 
 VMD_DESC=		Build the VMD plugin
-VMD_VARS=		XUSE_VMD=1
 VMD_VARS_OFF=		XUSE_VMD=0
-VMD_VARS=		VMD_ARCH=${ARCH:S/amd64/FREEBSDAMD64/:S/${ARCH}/FREEBSD/}
+VMD_VARS=		XUSE_VMD=1 VMD_ARCH=${ARCH:S/amd64/FREEBSDAMD64/:S/${ARCH}/FREEBSD/}
 VMD_BUILD_DEPENDS=	${LOCALBASE}/vmd/plugins/${VMD_ARCH}/molfile/libmolfile_plugin.h:science/vmd
 VMD_PLIST_SUB=		VMD_ARCH=${VMD_ARCH}
 
