@@ -58,7 +58,6 @@ BACKUP_CONFIGURE_ENABLE=backup
 CLAMAV_DESC=		Use ClamAV
 CLAMAV_CONFIGURE_WITH=	clamav
 CLAMAV_LIB_DEPENDS=	libclamav.so:security/clamav
-CLAMAV_BROKEN=		Not buildable with latest clamav
 HTTP_DESC=		Enable HTTP support
 HTTP_CONFIGURE_ENABLE=	http
 HTTP_LIB_DEPENDS=	libical.so:devel/libical \
