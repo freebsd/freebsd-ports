@@ -1,0 +1,11 @@
+--- po/CMakeLists.txt.orig	2018-12-26 07:13:37 UTC
++++ po/CMakeLists.txt
+@@ -6,7 +6,7 @@ function(process_po_files _langs)
+   foreach(_lang ${_langs})
+     set(_po_file "${CMAKE_CURRENT_SOURCE_DIR}/${_lang}.po")
+     set(_gmo_file "${CMAKE_CURRENT_BINARY_DIR}/${_lang}.gmo")
+-    set(_gmo_file_tgt "${_lang}.gmo")
++    set(_gmo_file_tgt "${_lang}_gmo")
+ 
+     add_custom_command(OUTPUT ${_gmo_file}
+       COMMAND ${GETTEXT_MSGFMT_EXECUTABLE} ${_po_file} -o ${_gmo_file}

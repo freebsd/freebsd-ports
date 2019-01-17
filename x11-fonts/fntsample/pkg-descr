@@ -2,4 +2,4 @@ A program for making font samples that show Unicode coverage of the font and are
 similar in appearance to Unicode charts. Samples can be saved as PDF or
 PostScript files.
 
-WWW: http://fntsample.sourceforge.net/
+WWW: https://github.com/eugmes/fntsample
