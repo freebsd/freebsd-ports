@@ -18,16 +18,14 @@ ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Only Intel GPUs on x86 are supported
 
 BUILD_DEPENDS=	libva>=2.3.0_3:multimedia/libva
-LIB_DEPENDS=	libva.so:multimedia/libva \
-		libdrm_intel.so:graphics/libdrm
+LIB_DEPENDS=	libdrm_intel.so:graphics/libdrm \
+		libva.so:multimedia/libva
 
-GNU_CONFIGURE=	yes
 USES=		autoreconf compiler:c11 gmake libtool pkgconfig tar:bzip2
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
 GH_PROJECT=	intel-vaapi-driver
-
+GNU_CONFIGURE=	yes
 PLIST_FILES=	lib/dri/i915_drv_video.so lib/dri/i965_drv_video.so
 
 OPTIONS_DEFINE=	HYBRID
