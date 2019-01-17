@@ -1,0 +1,15 @@
+The Advanced Scientific Data Format (ASDF) is a next-generation interchange
+format for scientific data. This package contains the Python implementation of
+the ASDF Standard.
+
+The ASDF format has the following features:
+- A hierarchical, human-readable metadata format (implemented using YAML)
+- Numerical arrays are stored as binary data blocks which can be memory mapped.
+  Data blocks can optionally be compressed.
+- The structure of the data can be automatically validated using schemas
+  (implemented using JSON Schema)
+- Native Python data types (numerical types, strings, dicts, lists) are
+  serialized automatically
+- ASDF can be extended to serialize custom data types
+
+WWW: https://github.com/spacetelescope/asdf
