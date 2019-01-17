@@ -5,7 +5,7 @@ PORTNAME=	rust
 PORTVERSION?=	1.32.0
 PORTREVISION?=	0
 CATEGORIES=	lang
-MASTER_SITES=	http://dev-static.rust-lang.org/dist/:src \
+MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		LOCAL/dumbbell/rust:rust_bootstrap \
 		https://static.rust-lang.org/dist/:rust_bootstrap \
 		LOCAL/dumbbell/rust:cargo_bootstrap \
