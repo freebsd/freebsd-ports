@@ -5,7 +5,7 @@ DISTVERSION=	2.12.14
 PORTREVISION=	1
 CATEGORIES=	editors
 
-MAINTAINER=	abiliojr@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integrated writing environment for LaTeX documents
 
 LICENSE=	GPLv2
