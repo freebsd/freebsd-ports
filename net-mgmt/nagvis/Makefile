@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	nagvis
-PORTVERSION=	1.9.10
+PORTVERSION=	1.9.11
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.nagvis.org/share/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Visualization addon for Nagios
 
 LICENSE=	GPLv2
