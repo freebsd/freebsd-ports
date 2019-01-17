@@ -19,14 +19,11 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm
 
 USES=		autoreconf gmake libtool pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
-
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
-
+GNU_CONFIGURE=	yes
 LDFLAGS+=	-lpthread # for pthread_getthreadid_np
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DEBUG WAYLAND X11
 OPTIONS_DEFAULT=WAYLAND X11
