@@ -1,8 +1,8 @@
 https://github.com/sfackler/rust-openssl/commit/9fd7584a8416
 https://github.com/sfackler/rust-openssl/commit/e75793e8962d
 
---- src/vendor/openssl-sys/build/main.rs.orig	2018-12-05 01:24:32 UTC
-+++ src/vendor/openssl-sys/build/main.rs
+--- vendor/openssl-sys/build/main.rs.orig	2018-12-05 01:24:32 UTC
++++ vendor/openssl-sys/build/main.rs
 @@ -1,9 +1,9 @@
  extern crate cc;
 +#[cfg(feature = "vendored")]

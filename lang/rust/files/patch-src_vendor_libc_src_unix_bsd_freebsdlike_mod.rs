@@ -1,5 +1,5 @@
---- src/vendor/libc/src/unix/bsd/freebsdlike/mod.rs.orig	2018-06-19 05:52:22 UTC
-+++ src/vendor/libc/src/unix/bsd/freebsdlike/mod.rs
+--- vendor/libc/src/unix/bsd/freebsdlike/mod.rs.orig	2018-06-19 05:52:22 UTC
++++ vendor/libc/src/unix/bsd/freebsdlike/mod.rs
 @@ -1,4 +1,3 @@
 -pub type c_char = i8;
  pub type dev_t = u32;
