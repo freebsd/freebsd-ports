@@ -2,13 +2,16 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	13.24.1
+PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
+MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729 \
+		https://github.com/traud/asterisk-opus/archive/:opus
 MASTER_SITE_SUBDIR=	asterisk/ \
 			asterisk/old-releases/ \
 			sounds/releases/:g729
 PKGNAMESUFFIX=	13
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Open Source PBX and telephony toolkit
@@ -74,7 +77,7 @@ OPTIONS_DEFAULT_armv6=		BASE
 OPTIONS_DEFAULT_armv7=		BASE
 
 OPTIONS_GROUP=			CODECS
-OPTIONS_GROUP_CODECS=		GSM NEWG711 SPEEX VORBIS
+OPTIONS_GROUP_CODECS=		GSM NEWG711 OPUS SPEEX VORBIS
 CODECS_DESC=			Encoder/Decoder (Codec) Support
 
 OPTIONS_SINGLE=			COMPILER
@@ -108,6 +111,7 @@ EXCHANGE_DESC?=	Exchange calendar support
 MP3PLAYER_DESC=	Install MP3 Player for Music-On-Hold (mpg123)
 NEWG711_DESC?=	New G711 Codec
 OOH323_DESC?=	ooh323 support
+OPUS_DESC?=	Opus Codec
 PJSIP_DESC?=	Build the PJSIP based SIP channel
 SRTP_DESC?=	SecureRTP support
 SYSINFO_DESC?=	Use devel/libsysinfo to get system information
@@ -165,6 +169,12 @@ ODBC_CONFIGURE_WITH=	unixodbc
 ODBC_CONFIGURE_ON=	--with-ltdl
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC \
 			libltdl.so:devel/libltdl
+
+OPUS_LIB_DEPENDS=	libopus.so:audio/opus
+OPUS_COMMIT=		83e1b458c77e0e287adeca494eeb79edb077b0ff
+OPUS_SRC=		asterisk-opus-${OPUS_COMMIT}
+OPUS_EXTRACT_ONLY=	${OPUS_COMMIT}${EXTRACT_SUFX}
+OPUS_DISTFILES=		${OPUS_COMMIT}${EXTRACT_SUFX}:opus
 
 PGSQL_CONFIGURE_WITH=	postgres
 PGSQL_USES=		pgsql
@@ -245,6 +255,11 @@ post-extract:
 post-extract-G729-on:
 	${CP} ${DISTDIR}/${ASTERISK_CORE_G729_SOUNDS} ${WRKSRC}/sounds
 	${CP} ${DISTDIR}/${ASTERISK_MOH_G729_SOUNDS} ${WRKSRC}/sounds
+
+post-extract-OPUS-on:
+	${CP} ${WRKDIR}/${OPUS_SRC}/include/asterisk/* ${WRKSRC}/include/asterisk
+	${CP} ${WRKDIR}/${OPUS_SRC}/codecs/* ${WRKSRC}/codecs
+	${CP} ${WRKDIR}/${OPUS_SRC}/res/* ${WRKSRC}/res
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/samples/musiconhold.conf.sample
