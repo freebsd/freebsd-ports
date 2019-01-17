@@ -4,7 +4,7 @@
 # Based on the java/intellij port
 
 PORTNAME=	intellij-ultimate
-PORTVERSION=	2018.3.2
+PORTVERSION=	2018.3.3
 CATEGORIES=	java devel
 MASTER_SITES=	https://download.jetbrains.com/idea/ \
 		http://download.jetbrains.com/idea/
@@ -33,7 +33,7 @@ NO_BUILD=	yes
 USE_LDCONFIG=	${IDEA_HOME}/plugins/tfsIntegration/lib/native/freebsd/x86_64/
 USE_LDCONFIG32=	${IDEA_HOME}/plugins/tfsIntegration/lib/native/freebsd/x86/
 
-WRKSRC=	${WRKDIR}/idea-IU-183.4886.37
+WRKSRC=	${WRKDIR}/idea-IU-183.5153.38
 
 .include "${.CURDIR}/../intellij/common.mk"
 
@@ -55,6 +55,7 @@ do-install:
 		${STAGEDIR}${IDEA_HOME}/plugins/performanceTesting/lib/libasyncProfiler-linux.so \
 		${STAGEDIR}${IDEA_HOME}/plugins/performanceTesting/lib/libasyncProfiler-macos.so
 	@${RM} -rf ${STAGEDIR}${IDEA_HOME}/jre/jre/ \
+		${STAGEDIR}${IDEA_HOME}/lib/pty4j-native/ \
 		${STAGEDIR}${IDEA_HOME}/plugins/android/lib/libwebp/ \
 		${STAGEDIR}${IDEA_HOME}/plugins/tfsIntegration/lib/native/aix/ \
 		${STAGEDIR}${IDEA_HOME}/plugins/tfsIntegration/lib/native/hpux/ \
