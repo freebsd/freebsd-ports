@@ -4,7 +4,7 @@
 PORTNAME=	libpst
 PORTVERSION=	0.6.72
 CATEGORIES=	mail converters
-MASTER_SITES=	http://www.five-ten-sg.com/libpst/packages/ \
+MASTER_SITES=	https://www.five-ten-sg.com/libpst/packages/ \
 		https://fossies.org/unix/privat/ \
 		LOCAL/sunpoet
 
