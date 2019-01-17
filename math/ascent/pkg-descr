@@ -1,0 +1,20 @@
+An extremely fast and flexible C++ simulation engine and differential equation
+solver.
+
+Ascent's integration algorithms are designed for speed, and outperform boost's
+odeint in both Debug and Release.
+
+Features:
+* Header Only
+* Automatic Vectorization: Ascent conforms to vectorization standards
+  (such as Intel's)
+* Modular (Optional): solve systems in an object-oriented manner
+* Variable Tracking: Optimized recording of variable time history
+* Asynchronous Sampling and Event Scheduling
+* Multiple Integration Algorithms (In Progress): adaptive steppers,
+  predictor-correctors, etc.
+* Use boost's odeint library as the numerical integration engine
+* Scripting Interface: Optional ChaiScript interface to easily script
+  simulations
+
+WWW: https://github.com/AnyarInc/Ascent

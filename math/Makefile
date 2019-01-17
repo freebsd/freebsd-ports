@@ -130,6 +130,7 @@
     SUBDIR += armadillo
     SUBDIR += arpack++
     SUBDIR += arpack-ng
+    SUBDIR += ascent
     SUBDIR += aspcud
     SUBDIR += asymptote
     SUBDIR += atlas
