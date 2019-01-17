@@ -22,12 +22,12 @@ USES=		gl gmake jpeg libtool localbase:ldflags \
 		pathfix pkgconfig python:run shebangfix tar:bzip2
 USE_GL=		gl glu
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-opencv
+CONFIGURE_ARGS=	--without-opencv --without-qt
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 SHEBANG_FILES=	docs/MacOSX/nBundle.in
 
-OPTIONS_DEFINE=	FFMPEG GD GNUTLS QT4
+OPTIONS_DEFINE=	FFMPEG GD GNUTLS
 OPTIONS_RADIO=	DNSSD
 OPTIONS_RADIO_DNSSD=	AVAHI MDNSRESPONDER
 OPTIONS_SUB=	yes
@@ -42,8 +42,6 @@ FFMPEG_CONFIGURE_OFF=	--without-ffmpeg
 
 GD_DESC=		Build GD plugin
 GD_LIB_DEPENDS=		libgd.so:graphics/gd
-
-QT4_DESC=		Build Qt 4 plugin
 GD_CONFIGURE_OFF=	--without-gd
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
@@ -51,20 +49,10 @@ GNUTLS_CONFIGURE_OFF=	--without-gnutls
 
 MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 
-QT4_USE=		QT=moc_build,corelib
-QT4_USES=		qmake:no_env qt:4
-QT4_CONFIGURE_OFF=	--without-qt
-QT4_MAKE_ARGS=		QT4MOC="${MOC}"
-
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MAVAHI} && ! ${PORT_OPTIONS:MMDNSRESPONDER}
 CONFIGURE_ARGS+=	--without-dns-sd
-.endif
-
-.if ${PORT_OPTIONS:MQT4}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
 .endif
 
 post-install:
