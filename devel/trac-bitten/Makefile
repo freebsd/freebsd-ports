@@ -10,7 +10,7 @@ MASTER_SITES=	http://ftp.edgewall.com/pub/bitten/ \
 PKGNAMEPREFIX=	trac-
 DISTNAME=	Bitten-${PORTVERSION}
 
-MAINTAINER=	tim@niemueller.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Continuous integration for Trac
 
 LICENSE=	BSD3CLAUSE
