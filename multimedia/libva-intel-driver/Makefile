@@ -1,16 +1,15 @@
-# Created by: Manuel Creach <manuel.creach@me.com>
 # $FreeBSD$
 
 PORTNAME=	libva-intel-driver
 PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	f139dafa5917.patch:-p1 # for mesa-libs 18.3+
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	VAAPI driver for Intel GMA 4500 (Gen4) or newer
+COMMENT=	VAAPI legacy driver for Intel GMA 4500 (Gen4) or newer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -18,14 +17,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Only Intel GPUs on x86 are supported
 
+BUILD_DEPENDS=	libva>=2.3.0_3:multimedia/libva
 LIB_DEPENDS=	libva.so:multimedia/libva \
-		libdrm.so:graphics/libdrm
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
+		libdrm_intel.so:graphics/libdrm
 
 GNU_CONFIGURE=	yes
-USES=		alias autoreconf compiler:c11 gmake libtool localbase \
-		pkgconfig tar:bzip2
-USE_GL=		gl
+USES=		autoreconf compiler:c11 gmake libtool pkgconfig tar:bzip2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
@@ -40,8 +37,6 @@ HYBRID_RUN_DEPENDS=	${LOCALBASE}/lib/dri/hybrid_drv_video.so:multimedia/libva-in
 HYBRID_CONFIGURE_ENABLE=	hybrid-codec
 
 post-patch:	.SILENT
-	${REINPLACE_CMD} -e 's/-ldl//' \
-		${WRKSRC}/src/Makefile.am
 # XXX Remove va_api_version hack after 2.4.0 update
 	${REINPLACE_CMD} -e 's|driverdir|& --define-variable prefix=${PREFIX}|' \
 		-e '/va_api_version/s/1\.4\.0/1.1.0/' \
