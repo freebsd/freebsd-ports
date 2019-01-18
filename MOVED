@@ -11563,3 +11563,4 @@ databases/postgresql93-plperl|databases/postgresql94-plperl|2019-01-09|Has expir
 databases/postgresql93-plpython|databases/postgresql94-plpython|2019-01-09|Has expired: PostgreSQL-9.3 has reached end-of-life
 databases/postgresql93-server|databases/postgresql94-server|2019-01-09|Has expired: PostgreSQL-9.3 has reached end-of-life
 mail/drac||2019-01-16|Has expired: Unmaintained upstream since 2003
+lang/clang35|devel/llvm70|2019-01-18|Removed, unmaintained and not depended on
