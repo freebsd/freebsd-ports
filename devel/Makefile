@@ -4759,6 +4759,7 @@
     SUBDIR += py-openapi-codec
     SUBDIR += py-opendht
     SUBDIR += py-openstacksdk
+    SUBDIR += py-opentracing
     SUBDIR += py-opster
     SUBDIR += py-optik
     SUBDIR += py-option_merge
