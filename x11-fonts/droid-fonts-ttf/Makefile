@@ -3,7 +3,7 @@
 
 PORTNAME=	droid-fonts-ttf
 PORTVERSION=	20131024
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -17,7 +17,6 @@ NO_BUILD=	yes
 USES=		fonts tar:xz
 
 FONTNAME=	Droid
-SUB_FILES=	pkg-message
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}/

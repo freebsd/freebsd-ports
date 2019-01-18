@@ -1,8 +1,0 @@
-
-You can start using the fonts by following these instructions:
-
-Add the following line to the "Files" section of your X.org configuration
-file:
-
-	FontPath	"%%FONTSDIR%%/"
-
