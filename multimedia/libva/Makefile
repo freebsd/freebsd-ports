@@ -18,8 +18,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libdrm.so:graphics/libdrm
 
 USES=		meson pkgconfig
-USE_LDCONFIG=	yes
 USE_GITHUB=	yes
+USE_LDCONFIG=	yes
 GH_ACCOUNT=	intel
 LDFLAGS+=	-lpthread # for pthread_getthreadid_np
 
