@@ -1,0 +1,4 @@
+nose-timer is a timer plugin for nosetests that answers the question: how much
+time does every test take?
+
+WWW: https://github.com/mahmoudimus/nose-timer
