@@ -4555,6 +4555,7 @@
     SUBDIR += py-gdbgui
     SUBDIR += py-gearman
     SUBDIR += py-generate
+    SUBDIR += py-genty
     SUBDIR += py-geojson
     SUBDIR += py-geotypes
     SUBDIR += py-gevent
