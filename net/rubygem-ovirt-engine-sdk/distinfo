@@ -1,3 +1,3 @@
-TIMESTAMP = 1538814826
-SHA256 (rubygem/ovirt-engine-sdk-4.2.5.gem) = d1ddc391191bbc05ef1e727a797e9ce1cad329585a6767504dda8c27f6c521dd
-SIZE (rubygem/ovirt-engine-sdk-4.2.5.gem) = 322560
+TIMESTAMP = 1547833054
+SHA256 (rubygem/ovirt-engine-sdk-4.3.0.gem) = 47109b1c374a22eb4b58bce05596d3d32c4676887414a7a421e960e293028b26
+SIZE (rubygem/ovirt-engine-sdk-4.3.0.gem) = 327680
