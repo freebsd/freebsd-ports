@@ -17,10 +17,12 @@ include/spdlog/details/registry.h
 include/spdlog/details/thread_pool.h
 include/spdlog/fmt/bin_to_hex.h
 include/spdlog/fmt/bundled/LICENSE.rst
-include/spdlog/fmt/bundled/colors.h
+include/spdlog/fmt/bundled/chrono.h
 include/spdlog/fmt/bundled/core.h
+include/spdlog/fmt/bundled/color.h
 include/spdlog/fmt/bundled/format-inl.h
 include/spdlog/fmt/bundled/format.h
+include/spdlog/fmt/bundled/locale.h
 include/spdlog/fmt/bundled/ostream.h
 include/spdlog/fmt/bundled/posix.h
 include/spdlog/fmt/bundled/printf.h
@@ -50,4 +52,5 @@ include/spdlog/tweakme.h
 include/spdlog/version.h
 lib/cmake/spdlog/spdlogConfig.cmake
 lib/cmake/spdlog/spdlogConfigVersion.cmake
+lib/cmake/spdlog/spdlogTargets.cmake
 libdata/pkgconfig/spdlog.pc
