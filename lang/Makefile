@@ -37,7 +37,6 @@
     SUBDIR += cint
     SUBDIR += cjs
     SUBDIR += clang-devel
-    SUBDIR += clang35
     SUBDIR += cling
     SUBDIR += clojure
     SUBDIR += clojure-mode.el
