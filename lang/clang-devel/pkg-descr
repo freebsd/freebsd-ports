@@ -1,7 +1,0 @@
-The goal of the Clang project is to create a new C, C++, Objective C and
-Objective C++ front-end for the LLVM compiler.
-
-This is a meta port. The Clang compiler is installed by the
-devel/llvm-devel port.
-
-WWW: http://clang.llvm.org/
