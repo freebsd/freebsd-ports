@@ -33,7 +33,6 @@ MANPAGES_PLIST_FILES=	man/man1/geoipupdate.1.gz \
 			man/man5/GeoIP.conf.5.gz
 MANPAGES_USES=		perl5
 MANPAGES_USE=		perl5:build
-MANPAGES_VARS=		MAKE_JOBS_UNSAFE=yes
 
 PLIST_FILES=	bin/geoipupdate \
 		'@sample etc/GeoIP.conf.sample' \
