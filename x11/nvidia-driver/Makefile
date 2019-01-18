@@ -12,7 +12,7 @@
 PORTNAME=	nvidia-driver
 DISTVERSION?=	390.87
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	x11
 MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${DISTVERSION}
 DISTNAME=	NVIDIA-FreeBSD-${ARCH_SUFX}-${DISTVERSION}
@@ -546,20 +546,24 @@ post-install: .SILENT
 		/libEGL_nvidia\.so\.${PORTVERSION}/d;}' ${TMPPLIST}
 .endif
 	${REINPLACE_CMD} -E ${PLIST_RE:S/^/-e /} ${TMPPLIST}
-# rename libGL.so, libEGL.so and libGLESv2.so
-	${MV} -f ${STAGEDIR}${PREFIX}/lib/libGL.so \
+# Rename some libraries and install a libmap file to resolve conflict with
+# Mesa libraries.
+	${LN} -sf libGL-NVIDIA.so.1 \
 		${STAGEDIR}${PREFIX}/lib/libGL-NVIDIA.so
 	${MV} -f ${STAGEDIR}${PREFIX}/lib/libGL.so.1 \
 		${STAGEDIR}${PREFIX}/lib/libGL-NVIDIA.so.1
+	${RM} -f ${STAGEDIR}${PREFIX}/lib/libGL.so
 .if ${NVVERSION} >= 331.013
-	${MV} -f ${STAGEDIR}${PREFIX}/lib/libEGL.so \
+	${LN} -sf libEGL-NVIDIA.so.1 \
 		${STAGEDIR}${PREFIX}/lib/libEGL-NVIDIA.so
 	${MV} -f ${STAGEDIR}${PREFIX}/lib/libEGL.so.1 \
 		${STAGEDIR}${PREFIX}/lib/libEGL-NVIDIA.so.1
-	${MV} -f ${STAGEDIR}${PREFIX}/lib/libGLESv2.so \
+	${RM} -f ${STAGEDIR}${PREFIX}/lib/libEGL.so
+	${LN} -sf libGLESv2-NVIDIA.so.2 \
 		${STAGEDIR}${PREFIX}/lib/libGLESv2-NVIDIA.so
 	${MV} -f ${STAGEDIR}${PREFIX}/lib/libGLESv2.so.2 \
 		${STAGEDIR}${PREFIX}/lib/libGLESv2-NVIDIA.so.2
+	${RM} -f ${STAGEDIR}${PREFIX}/lib/libGLESv2.so
 .endif
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/libmap.d/
 	${INSTALL_DATA} ${WRKDIR}/nvidia.conf \
