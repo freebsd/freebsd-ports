@@ -4,7 +4,7 @@
 PORTNAME=	texworks
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	0.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	hunspell:textproc/hunspell
-LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell \
+LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell \
 		libpoppler.so:graphics/poppler \
 		libpoppler-qt5.so:graphics/poppler-qt5
 

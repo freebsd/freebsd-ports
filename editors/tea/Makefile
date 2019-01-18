@@ -3,7 +3,7 @@
 
 PORTNAME=	tea
 PORTVERSION=	47.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -36,7 +36,7 @@ DESKTOP_ENTRIES="TEA" "" "${PREFIX}/share/pixmaps/tea_icon_v2.png" \
 ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
 ASPELL_QMAKE_OFF=	CONFIG+=noaspell
 
-HUNSPELL_LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell
+HUNSPELL_LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 HUNSPELL_QMAKE_OFF=	CONFIG+=nohunspell
 
 do-install:

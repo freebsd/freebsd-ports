@@ -3,7 +3,7 @@
 PORTNAME=	otter-browser
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,7 +12,7 @@ COMMENT=	Browser based on Qt 5
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell
+LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 
 USES=		cmake compiler:c++11-lib desktop-file-utils qt:5
 USE_QT=		concurrent core dbus declarative gui multimedia network printsupport \

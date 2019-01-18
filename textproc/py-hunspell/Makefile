@@ -3,6 +3,7 @@
 
 PORTNAME=	hunspell
 PORTVERSION=	0.5.5
+PORTREVISION=	1
 CATEGORIES=	textproc devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ USES=		python
 USES+=		localbase
 USE_PYTHON=	distutils
 
-HSPLVER=	1.6
+HSPLVER=	1.7
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/hunspell.so
 
 pre-configure:
