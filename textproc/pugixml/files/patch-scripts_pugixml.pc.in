@@ -1,5 +1,5 @@
---- scripts/pugixml.pc.in.orig	2017-09-14 18:05:00.281262000 -0400
-+++ scripts/pugixml.pc.in	2017-09-14 18:05:14.312398000 -0400
+--- scripts/pugixml.pc.in.orig	2019-01-09 09:56:58 UTC
++++ scripts/pugixml.pc.in
 @@ -1,11 +1,11 @@
  prefix=@CMAKE_INSTALL_PREFIX@
  exec_prefix=${prefix}

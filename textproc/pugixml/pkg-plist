@@ -5,5 +5,5 @@ lib/cmake/pugixml/pugixml-config.cmake
 lib/libpugixml.a
 lib/libpugixml.so
 lib/libpugixml.so.1
-lib/libpugixml.so.1.8
+lib/libpugixml.so.1.9
 libdata/pkgconfig/pugixml.pc

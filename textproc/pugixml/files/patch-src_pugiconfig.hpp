@@ -1,6 +1,6 @@
---- src/pugiconfig.hpp.orig	2015-08-18 17:07:06 UTC
+--- src/pugiconfig.hpp.orig	2018-04-04 14:53:16 UTC
 +++ src/pugiconfig.hpp
-@@ -41,7 +41,7 @@
+@@ -44,7 +44,7 @@
  // #define PUGIXML_HEADER_ONLY
  
  // Uncomment this to enable long long support
