@@ -210,8 +210,12 @@ share/locale/es/LC_MESSAGES/kchart_qt.qm
 share/locale/es/LC_MESSAGES/kgantt_qt.qm
 share/locale/fi/LC_MESSAGES/kchart_qt.qm
 share/locale/fi/LC_MESSAGES/kgantt_qt.qm
+share/locale/fr/LC_MESSAGES/kchart_qt.qm
+share/locale/fr/LC_MESSAGES/kgantt_qt.qm
 share/locale/gl/LC_MESSAGES/kchart_qt.qm
 share/locale/gl/LC_MESSAGES/kgantt_qt.qm
+share/locale/it/LC_MESSAGES/kchart_qt.qm
+share/locale/it/LC_MESSAGES/kgantt_qt.qm
 share/locale/ja/LC_MESSAGES/kchart_qt.qm
 share/locale/ja/LC_MESSAGES/kgantt_qt.qm
 share/locale/ko/LC_MESSAGES/kchart_qt.qm
