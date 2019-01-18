@@ -4453,6 +4453,7 @@
     SUBDIR += py-datrie
     SUBDIR += py-dbus
     SUBDIR += py-ddt
+    SUBDIR += py-ddtrace
     SUBDIR += py-debtcollector
     SUBDIR += py-decorator
     SUBDIR += py-decoratortools
