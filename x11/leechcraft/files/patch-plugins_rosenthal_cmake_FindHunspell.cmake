@@ -5,7 +5,7 @@
  endif ()
  
 -find_library (HUNSPELL_LIBRARIES NAMES hunspell-1.3 hunspell-1.2 libhunspell HINTS ${HUNSPELL_DIR} ${PROBE_DIR})
-+find_library (HUNSPELL_LIBRARIES NAMES hunspell-1.6 hunspell-1.5 hunspell-1.4
++find_library (HUNSPELL_LIBRARIES NAMES hunspell-1.7 hunspell-1.6 hunspell-1.5 hunspell-1.4
 +	hunspell-1.3 hunspell-1.2 libhunspell HINTS ${HUNSPELL_DIR} ${PROBE_DIR})
  find_path (HUNSPELL_INCLUDE_DIR hunspell/hunspell.hxx HINTS ${HUNSPELL_DIR} ${HUNSPELL_INCLUDE_WIN32})
  

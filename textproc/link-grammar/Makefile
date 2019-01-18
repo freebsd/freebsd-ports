@@ -2,7 +2,7 @@
 
 PORTNAME=	link-grammar
 DISTVERSION=	5.4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 
@@ -39,7 +39,7 @@ EDITLINE_DESC=			Command line editing
 EDITLINE_USES=			libedit
 
 HUNSPELL_CONFIGURE_ENABLE=	hunspell
-HUNSPELL_LIB_DEPENDS=		libhunspell-1.6.so:textproc/hunspell
+HUNSPELL_LIB_DEPENDS=		libhunspell-1.7.so:textproc/hunspell
 
 JAVA_CONFIGURE_ENABLE=		java-bindings
 JAVA_USE=			JAVA

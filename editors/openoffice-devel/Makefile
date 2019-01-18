@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
@@ -83,7 +83,7 @@ LIB_DEPENDS=								\
 		libfreetype.so:print/freetype2				\
 		libnss3.so:security/nss					\
 		libexpat.so:textproc/expat2				\
-		libhunspell-1.6.so:textproc/hunspell			\
+		libhunspell-1.7.so:textproc/hunspell			\
 		libhyphen.so:textproc/hyphen				\
 		libtextcat.so:textproc/libtextcat			\
 		libmythes-1.2.so:textproc/mythes			\

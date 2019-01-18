@@ -2,13 +2,13 @@
 
 PORTNAME=	lokalize
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Computer-aided translation system
 
-LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell
+LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext \
 		kde:5 qt:5 tar:xz

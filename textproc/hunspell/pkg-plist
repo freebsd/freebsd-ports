@@ -11,8 +11,6 @@ bin/unmunch
 bin/wordforms
 bin/wordlist2hunspell
 include/hunspell/atypes.hxx
-include/hunspell/csutil.hxx
-include/hunspell/htypes.hxx
 include/hunspell/hunspell.h
 include/hunspell/hunspell.hxx
 include/hunspell/hunvisapi.h

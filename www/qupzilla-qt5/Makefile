@@ -2,7 +2,7 @@
 
 PORTNAME=	qupzilla
 PORTVERSION=	1.8.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/QupZilla/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	-qt5
@@ -13,7 +13,7 @@ COMMENT=	Web browser based on WebKit engine and Qt Framework
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libhunspell-1.6.so:textproc/hunspell
+LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 
 CONFLICTS_INSTALL=	${PORTNAME}-qt4*
 

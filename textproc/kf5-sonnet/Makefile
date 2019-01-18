@@ -2,14 +2,14 @@
 
 PORTNAME=	sonnet
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 plugin-based spell checking library
 
 LIB_DEPENDS=	libaspell.so:textproc/aspell \
-		libhunspell-1.6.so:textproc/hunspell
+		libhunspell-1.7.so:textproc/hunspell
 
 USES=		cmake compiler:c++11-lib kde:5 qt:5 tar:xz
 USE_KDE=	ecm

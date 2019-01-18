@@ -3,7 +3,7 @@
 
 PORTNAME=	codeblocks
 PORTVERSION=	17.12
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/Sources/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libhunspell-1.6.so:textproc/hunspell \
+		libhunspell-1.7.so:textproc/hunspell \
 		libtinyxml.so:textproc/tinyxml
 
 USES=		autoreconf compiler:c++11-lang desktop-file-utils \
