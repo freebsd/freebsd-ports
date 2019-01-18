@@ -12,6 +12,7 @@ MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	EditorConfig File Locator and Interpreter for Python
 
 LICENSE=	PSFL
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES?=		python
 USE_PYTHON=	distutils autoplist
