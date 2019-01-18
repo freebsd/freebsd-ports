@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fugit
-PORTVERSION=	1.1.7
+PORTVERSION=	1.1.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
