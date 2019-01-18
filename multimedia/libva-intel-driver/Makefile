@@ -21,7 +21,7 @@ BUILD_DEPENDS=	libva>=2.3.0_3:multimedia/libva
 LIB_DEPENDS=	libdrm_intel.so:graphics/libdrm \
 		libva.so:multimedia/libva
 
-USES=		compiler:c11 meson pkgconfig tar:bzip2
+USES=		compiler:c11 meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
 GH_PROJECT=	intel-vaapi-driver

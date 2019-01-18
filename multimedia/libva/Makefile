@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdrm.so:graphics/libdrm
 
-USES=		meson pkgconfig tar:bzip2
+USES=		meson pkgconfig
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
