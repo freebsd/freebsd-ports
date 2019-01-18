@@ -4,8 +4,7 @@ PORTNAME=	asterisk
 PORTVERSION=	15.7.1
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729  \
-		https://github.com/traud/asterisk-opus/archive/:opus
+MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
 			asterisk/old-releases/ \
 			sounds/releases/:g729
@@ -35,6 +34,7 @@ USE_CSTD=	gnu89
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	asterisk
+USE_GITHUB=	nodefault
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--datarootdir=${DATADIR} \
@@ -175,10 +175,8 @@ ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC \
 			libltdl.so:devel/libltdl
 
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
-OPUS_COMMIT=	83e1b458c77e0e287adeca494eeb79edb077b0ff
-OPUS_SRC=	asterisk-opus-${OPUS_COMMIT}
-OPUS_EXTRACT_ONLY=	${OPUS_COMMIT}${EXTRACT_SUFX}
-OPUS_DISTFILES=	${OPUS_COMMIT}${EXTRACT_SUFX}:opus
+OPUS_EXTRACT_ONLY=	${DISTFILE_opus}
+OPUS_GH_TUPLE=		traud:asterisk-opus:83e1b458c77e0e287adeca494eeb79edb077b0ff:opus
 
 PGSQL_CONFIGURE_WITH=	postgres
 PGSQL_USES=		pgsql
@@ -261,9 +259,9 @@ post-extract-G729-on:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${ASTERISK_MOH_G729_SOUNDS} ${WRKSRC}/sounds
 
 post-extract-OPUS-on:
-	${CP} ${WRKDIR}/${OPUS_SRC}/include/asterisk/* ${WRKSRC}/include/asterisk
-	${CP} ${WRKDIR}/${OPUS_SRC}/codecs/* ${WRKSRC}/codecs
-	${CP} ${WRKDIR}/${OPUS_SRC}/res/* ${WRKSRC}/res
+	${CP} ${WRKSRC_opus}/include/asterisk/* ${WRKSRC}/include/asterisk
+	${CP} ${WRKSRC_opus}/codecs/* ${WRKSRC}/codecs
+	${CP} ${WRKSRC_opus}/res/* ${WRKSRC}/res
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/samples/musiconhold.conf.sample
