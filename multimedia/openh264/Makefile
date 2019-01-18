@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	cisco
 
-USES=		compiler cpe gmake
+USES=		cpe gmake
 CPE_VENDOR=	cisco
 USE_LDCONFIG=	yes
 MAKE_ARGS=	PREFIX="${PREFIX}" \
