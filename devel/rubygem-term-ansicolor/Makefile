@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	term-ansicolor
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
