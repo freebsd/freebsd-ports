@@ -14,6 +14,8 @@ COMMENT=	Perl extension for the clamav virus scanner
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Inline>=0:devel/p5-Inline \
 		p5-Inline-C>=0:devel/p5-Inline-C \
