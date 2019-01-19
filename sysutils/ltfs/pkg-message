@@ -1,0 +1,9 @@
+This only works with IBM-branded LTO-5 or newer tape drives, although there is
+a file backend for simulation purposes.
+
+You will only be able to read and write tapes with a blocksize <= MAXPHYS,
+which is 128KB by default. Put the following in your kernel config file and
+recompile/reinstall to allow reading and writing tapes up to the maximum LTFS
+blocksize of 1MB:
+
+options MAXPHYS=(1024*1056)

@@ -1,0 +1,12 @@
+--- src/tape_drivers/freebsd/cam/Makefile.am.orig	2019-01-10 03:47:31 UTC
++++ src/tape_drivers/freebsd/cam/Makefile.am
+@@ -56,6 +56,6 @@ libtape_cam_la-ibm_tape.lo: ../../ibm_tape.c
+ 	$(LIBTOOL)  --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libtape_cam_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) $(CRC_OPTIMIZE) -MT libtape_cam_la-ibm_tape.lo -MD -MP -c -o libtape_cam_la-ibm_tape.lo ../../ibm_tape.c
+ 
+ install-exec-hook:
+-	mkdir -p $(libdir)/ltfs
+-	for f in $(lib_LTLIBRARIES); do rm -f $(libdir)/$$f; done
+-	for f in $(BASENAMES); do mv $(libdir)/$$f* $(libdir)/ltfs; done
++	mkdir -p $(DESTDIR)$(libdir)/ltfs
++	for f in $(lib_LTLIBRARIES); do rm -f $(DESTDIR)$(libdir)/$$f; done
++	for f in $(BASENAMES); do mv $(DESTDIR)$(libdir)/$$f* $(DESTDIR)$(libdir)/ltfs; done
