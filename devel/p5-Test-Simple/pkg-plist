@@ -43,6 +43,7 @@
 %%SITE_PERL%%/Test2/EventFacet/Error.pm
 %%SITE_PERL%%/Test2/EventFacet/Hub.pm
 %%SITE_PERL%%/Test2/EventFacet/Info.pm
+%%SITE_PERL%%/Test2/EventFacet/Info/Table.pm
 %%SITE_PERL%%/Test2/EventFacet/Meta.pm
 %%SITE_PERL%%/Test2/EventFacet/Parent.pm
 %%SITE_PERL%%/Test2/EventFacet/Plan.pm
@@ -95,6 +96,7 @@
 %%PERL5_MAN3%%/Test2::EventFacet::Error.3.gz
 %%PERL5_MAN3%%/Test2::EventFacet::Hub.3.gz
 %%PERL5_MAN3%%/Test2::EventFacet::Info.3.gz
+%%PERL5_MAN3%%/Test2::EventFacet::Info::Table.3.gz
 %%PERL5_MAN3%%/Test2::EventFacet::Meta.3.gz
 %%PERL5_MAN3%%/Test2::EventFacet::Parent.3.gz
 %%PERL5_MAN3%%/Test2::EventFacet::Plan.3.gz
