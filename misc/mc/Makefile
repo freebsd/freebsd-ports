@@ -5,7 +5,7 @@ PORTNAME=	mc
 PORTVERSION=	4.8.22
 CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
-		http://ftp.osuosl.org/pub/midnightcommander/
+		https://ftp.osuosl.org/pub/midnightcommander/
 
 MAINTAINER=	woodsb02@FreeBSD.org
 COMMENT=	Midnight Commander, a free Norton Commander Clone
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	mc-light-4*
 
-USES=		gmake shebangfix perl5 pkgconfig python:2.7,run tar:xz libtool
+USES=		gmake gnome libtool perl5 pkgconfig python:2.7,run shebangfix tar:xz
 SHEBANG_FILES=	${WRKSRC}/src/vfs/extfs/helpers/s3+.in \
 		${WRKSRC}/src/vfs/extfs/helpers/uc1541.in
 python_OLD_CMD=	@PYTHON@
@@ -24,17 +24,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ZIP=${ZIP_CMD} UNZIP=${UNZIP_CMD}
 
 OPTIONS_DEFINE=	DOCS EDITOR ICONV NLS SFTP SMB SUBSHELL X11
-
+OPTIONS_DEFAULT=EDITOR ICONV SFTP SLANG SMB SUBSHELL X11
 OPTIONS_SINGLE=	SCREEN
 OPTIONS_SINGLE_SCREEN=	SLANG NCURSES
-
-OPTIONS_DEFAULT=EDITOR ICONV SFTP SLANG SMB SUBSHELL X11
+OPTIONS_SUB=	yes
 
 EDITOR_DESC=	Build with internal editor
 SFTP_DESC=	Support for SFTP (via libssh)
 SUBSHELL_DESC=	Build with subshell support
-
-OPTIONS_SUB=	yes
 
 EDITOR_CONFIGURE_WITH=	internal-edit
 
