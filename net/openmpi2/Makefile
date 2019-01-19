@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openmpi
-PORTVERSION=	2.1.5
-PORTREVISION=	2
+PORTVERSION=	2.1.6
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 PKGNAMESUFFIX=	2

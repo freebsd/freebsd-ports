@@ -103,11 +103,11 @@
 %%MPIDIR%%/lib/libopen-pal.la
 %%MPIDIR%%/lib/libopen-pal.so
 %%MPIDIR%%/lib/libopen-pal.so.20
-%%MPIDIR%%/lib/libopen-pal.so.20.10.4
+%%MPIDIR%%/lib/libopen-pal.so.20.10.5
 %%MPIDIR%%/lib/libopen-rte.la
 %%MPIDIR%%/lib/libopen-rte.so
 %%MPIDIR%%/lib/libopen-rte.so.20
-%%MPIDIR%%/lib/libopen-rte.so.20.10.4
+%%MPIDIR%%/lib/libopen-rte.so.20.10.5
 %%MPIDIR%%/lib/mpi.mod
 %%MPIDIR%%/lib/openmpi/libompi_dbg_msgq.la
 %%MPIDIR%%/lib/openmpi/libompi_dbg_msgq.so
