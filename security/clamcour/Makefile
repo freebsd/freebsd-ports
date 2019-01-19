@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.becrux.com/pages/projects/clamcour/
 MAINTAINER=	bsd@dino.sk
 COMMENT=	ClamAV courier filter
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	courier-config:mail/courier
 LIB_DEPENDS=	libclamav.so:security/clamav
 
