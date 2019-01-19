@@ -2260,6 +2260,7 @@
 %%WWWDIR%%/core/lib/Drupal/Core/Routing/UrlGeneratorTrait.php
 %%WWWDIR%%/core/lib/Drupal/Core/Routing/UrlMatcher.php
 %%WWWDIR%%/core/lib/Drupal/Core/Routing/routing.api.php
+%%WWWDIR%%/core/lib/Drupal/Core/Security/PharExtensionInterceptor.php
 %%WWWDIR%%/core/lib/Drupal/Core/Security/RequestSanitizer.php
 %%WWWDIR%%/core/lib/Drupal/Core/Serialization/Yaml.php
 %%WWWDIR%%/core/lib/Drupal/Core/Session/AccountInterface.php
@@ -7730,6 +7731,7 @@
 %%WWWDIR%%/core/modules/simpletest/files/invalid-img-zero-size.png
 %%WWWDIR%%/core/modules/simpletest/files/javascript-1.txt
 %%WWWDIR%%/core/modules/simpletest/files/javascript-2.script
+%%WWWDIR%%/core/modules/simpletest/files/phar-1.phar
 %%WWWDIR%%/core/modules/simpletest/files/php-1.txt
 %%WWWDIR%%/core/modules/simpletest/files/php-2.php
 %%WWWDIR%%/core/modules/simpletest/files/sql-1.txt
@@ -12011,6 +12013,7 @@
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/HtaccessTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/MimeTypeTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/NameMungingTest.php
+%%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/PharWrapperTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/ReadOnlyStreamWrapperTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/RemoteFileDirectoryTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/RemoteFileScanDirectoryTest.php
@@ -15446,6 +15449,17 @@
 %%WWWDIR%%/vendor/twig/twig/src/TwigTest.php
 %%WWWDIR%%/vendor/twig/twig/src/Util/DeprecationCollector.php
 %%WWWDIR%%/vendor/twig/twig/src/Util/TemplateDirIterator.php
+%%WWWDIR%%/vendor/typo3/phar-stream-wrapper/.gitignore
+%%WWWDIR%%/vendor/typo3/phar-stream-wrapper/LICENSE
+%%WWWDIR%%/vendor/typo3/phar-stream-wrapper/README.md
+%%WWWDIR%%/vendor/typo3/phar-stream-wrapper/composer.json
+%%WWWDIR%%/vendor/typo3/phar-stream-wrapper/src/Assertable.php
+%%WWWDIR%%/vendor/typo3/phar-stream-wrapper/src/Behavior.php
+%%WWWDIR%%/vendor/typo3/phar-stream-wrapper/src/Exception.php
+%%WWWDIR%%/vendor/typo3/phar-stream-wrapper/src/Helper.php
+%%WWWDIR%%/vendor/typo3/phar-stream-wrapper/src/Interceptor/PharExtensionInterceptor.php
+%%WWWDIR%%/vendor/typo3/phar-stream-wrapper/src/Manager.php
+%%WWWDIR%%/vendor/typo3/phar-stream-wrapper/src/PharStreamWrapper.php
 %%WWWDIR%%/vendor/web.config
 %%WWWDIR%%/vendor/wikimedia/composer-merge-plugin/LICENSE
 %%WWWDIR%%/vendor/wikimedia/composer-merge-plugin/README.md
