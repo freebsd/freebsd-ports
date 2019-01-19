@@ -1,24 +1,20 @@
 # Created by: Oliver Eikemeier
 # $FreeBSD$
 
-# Please keep commented out variables. They will be needed once patches are
-# released.
-
 PORTNAME=		bash
-#PATCHLEVEL=		0
-#PORTVERSION=		5.0.${PATCHLEVEL:S/^0//g}
-PORTVERSION=		5.0
-PORTREVISION?=		2
+PATCHLEVEL=		2
+PORTVERSION=		5.0.${PATCHLEVEL:S/^0//g}
+PORTREVISION?=		0
 CATEGORIES=		shells
 MASTER_SITES=		GNU
-#DISTNAME=		${PORTNAME}-${PORTVERSION:R}
+DISTNAME=		${PORTNAME}-${PORTVERSION:R}
 DIST_SUBDIR=		${PORTNAME}
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
-#PATCH_SITES=		GNU/${PORTNAME}/${DISTNAME}-patches/
-#PATCHFILES!=		/usr/bin/jot -s " " -w \
-#			${PORTNAME}${PORTVERSION:R:S/.//g}-%03d \
-#			${PATCHLEVEL} 1 ${PATCHLEVEL}
+PATCH_SITES=		GNU/${PORTNAME}/${DISTNAME}-patches/
+PATCHFILES!=		/usr/bin/jot -s " " -w \
+			${PORTNAME}${PORTVERSION:R:S/.//g}-%03d \
+			${PATCHLEVEL} 1 ${PATCHLEVEL}
 
 MAINTAINER=		ehaupt@FreeBSD.org
 COMMENT=		GNU Project's Bourne Again SHell
