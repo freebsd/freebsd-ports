@@ -2,24 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	tmpreaper
-PORTVERSION=	1.6.13
+PORTVERSION=	1.6.14
 CATEGORIES=	sysutils
-MASTER_SITES=	LOCAL/ehaupt
+MASTER_SITES=	DEBIAN_POOL
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Cleans up files in directories based on their age
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USES=		gmake
 
 PLIST_FILES=	sbin/tmpreaper man/man8/tmpreaper.8.gz
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
