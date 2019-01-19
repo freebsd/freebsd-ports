@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.server-side.de/download/ \
 MAINTAINER=	ayu@commun.jp
 COMMENT=	HTTP Antivirus Proxy
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libclamav.so:security/clamav
 
 USES=		gmake perl5
