@@ -205,6 +205,7 @@
     SUBDIR += urwfonts-ttf
     SUBDIR += uw-ttyp0
     SUBDIR += vollkorn-ttf
+    SUBDIR += vtfontcvt-ng
     SUBDIR += webfonts
     SUBDIR += wqy
     SUBDIR += xfontsel
