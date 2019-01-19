@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to tidy-lib
 
 LICENSE=	MIT
