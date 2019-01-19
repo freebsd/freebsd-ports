@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.modsecurity.org/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/_//:S/2//}-${PORTVERSION}
 
-MAINTAINER=	walter@lifeforms.nl
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Intrusion detection and prevention engine
 
 LICENSE=	APACHE20
