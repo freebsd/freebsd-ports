@@ -1,0 +1,13 @@
+Obtained from:	https://github.com/bobosch/gallery2/commit/4fc50203a12b78217999df00759d70d283efce2f
+
+--- modules/core/classes/GalleryStorage/GalleryStorageExtras.class.orig
++++ modules/core/classes/GalleryStorage/GalleryStorageExtras.class
+@@ -190,7 +190,7 @@ class GalleryStorageExtras /* the other half of GalleryStorage */ {
+ 			$value = $this->_gs->_normalizeValue($row[$i], $memberData[$i], true);
+ 
+ 			/* Store the value in the object */
+-			$entity->$callbacks[$i] = $value;
++			$entity->{$callbacks[$i]} = $value;
+ 			$entity->_persistentStatus['originalValue'][$callbacks[$i]] = $value;
+ 		    }
+ 
