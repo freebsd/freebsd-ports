@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190119:
+  AFFECTS: users of german/webalizer2, japanese/webalizer, polish/webalizer2, portuguese/webalizer-pt_BR, portuguese/webalizer-pt_PT, ukrainian/webalizer, www/geolizer, www/webalizer
+  AUTHOR: dinoex@FreeBSD.org
+
+  The option GEOIP has beeen changed to used the new datebase.
+  Either copy GeoLite2-Country.mmdb in the working directory,
+  or set the GeoIPDatabase option to the location of the file.
+
 20190114:
   AFFECTS: users of graphics/qgis
   AUTHOR: rhurlin@gwdg.de
