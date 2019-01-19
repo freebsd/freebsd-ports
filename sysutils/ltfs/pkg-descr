@@ -1,0 +1,5 @@
+Linear Tape File System (LTFS) is a filesystem to mount a LTFS formatted tape
+in a tape drive. Once LTFS mounts a LTFS formatted tape as filesystem, users
+can access to the tape via filesystem API.
+
+WWW: https://github.com/LinearTapeFileSystem/ltfs
