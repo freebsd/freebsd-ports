@@ -3,7 +3,7 @@
 
 PORTNAME=	qt-gui
 PORTVERSION=	1.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 PKGNAMEPREFIX=	licq-
 PKGNAMESUFFIX?=	${KDE_SUFFIX}${PKGNAMESUFFIX2}
@@ -20,7 +20,7 @@ RUN_DEPENDS=	licq:${LICQ_PORT} \
 
 USE_XORG=	x11 xext ice xscrnsaver sm
 USES=		cmake qt:5
-USE_QT=		buildtools qmake_build linguisttools_build core \
+USE_QT=		buildtools_build qmake_build linguisttools_build core \
 		xml gui network dbus svg widgets
 USE_GITHUB=	yes
 GH_ACCOUNT=	licq-im
