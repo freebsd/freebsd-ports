@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 BROKEN=		missing RUN_DEPENDS
 
-RUN_DEPENDS=	${LOCALBASE}/mcstas/${PORTVERSION}/bin/mcstas:science/mcstas
+RUN_DEPENDS=	mcstas:science/mcstas
 
 USES=		cmake
 # Apparently cmake does not generate an install/strip target if nothing
