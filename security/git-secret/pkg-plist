@@ -1,0 +1,15 @@
+@(root,root,555) bin/git-secret
+@(root,root,444) man/man1/git-secret-add.1.gz
+@(root,root,444) man/man1/git-secret-cat.1.gz
+@(root,root,444) man/man1/git-secret-changes.1.gz
+@(root,root,444) man/man1/git-secret-clean.1.gz
+@(root,root,444) man/man1/git-secret-hide.1.gz
+@(root,root,444) man/man1/git-secret-init.1.gz
+@(root,root,444) man/man1/git-secret-killperson.1.gz
+@(root,root,444) man/man1/git-secret-list.1.gz
+@(root,root,444) man/man1/git-secret-remove.1.gz
+@(root,root,444) man/man1/git-secret-reveal.1.gz
+@(root,root,444) man/man1/git-secret-tell.1.gz
+@(root,root,444) man/man1/git-secret-usage.1.gz
+@(root,root,444) man/man1/git-secret-whoknows.1.gz
+@(root,root,444) man/man7/git-secret.7.gz
