@@ -421,6 +421,10 @@ post-patch-CLANG-on:
 	    ${PATCH_WRKSRC}/tools/clang/tools/clang-format/clang-format-sublime.py \
 	    ${PATCH_WRKSRC}/tools/clang/tools/clang-format/git-clang-format
 
+post-patch-COMPILER_RT-on:
+	cd ${WRKSRC_compiler_rt} && \
+	${PATCH} -p0 < ${PATCHDIR}/compiler-rt-safestack_platform.h
+
 post-build-COMPILER_RT-on:
 	${MKDIR} ${WRKDIR}/compiler-rt-build
 	cd ${WRKDIR}/compiler-rt-build && \
