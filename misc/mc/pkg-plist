@@ -283,6 +283,7 @@ man/man1/mcview.1.gz
 %%EDITOR%%%%DATADIR%%/syntax/mail.syntax
 %%EDITOR%%%%DATADIR%%/syntax/makefile.syntax
 %%EDITOR%%%%DATADIR%%/syntax/markdown.syntax
+%%EDITOR%%%%DATADIR%%/syntax/meson.syntax
 %%EDITOR%%%%DATADIR%%/syntax/ml.syntax
 %%EDITOR%%%%DATADIR%%/syntax/named.syntax
 %%EDITOR%%%%DATADIR%%/syntax/nemerle.syntax
