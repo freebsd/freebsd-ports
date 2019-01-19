@@ -6,7 +6,7 @@ PORTVERSION=	0.1.14
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functional dialect of Scheme
 
 LICENSE=	MIT
