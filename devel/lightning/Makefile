@@ -13,7 +13,7 @@ COMMENT=	Generates assembly language code at run-time
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 armv7 i386 mips powerpc powerpc64 sparc64
+ONLY_FOR_ARCHS=	aarch64 amd64 arm armv6 armv7 i386 mips powerpc powerpc64 powerpcspec sparc64
 BROKEN_armv6=	fails to link: ../lib/.libs/liblightning.so: undefined reference to `__addsf3'
 BROKEN_armv7=	fails to link: ../lib/.libs/liblightning.so: undefined reference to `__addsf3'
 
@@ -23,7 +23,7 @@ CONFIGURE_ARGS=	--enable-disassembler=no
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	JIT_ARCH=${ARCH:S/i386/x86/:S/amd64/x86/:S/x86_64/x86/:S/sparc64/sparc/:S/powerpc/ppc/}
+PLIST_SUB=	JIT_ARCH=${ARCH:S/i386/x86/:S/amd64/x86/:S/x86_64/x86/:S/sparc64/sparc/:C/powerpc.*/ppc/}
 
 INFO=		lightning
 
