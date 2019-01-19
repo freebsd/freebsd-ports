@@ -14,6 +14,8 @@ COMMENT=	Constructive Solid Geometry rendering library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../license.txt
 
+BROKEN=		fails to configure
+
 USES=		compiler:c++11-lang qmake qt:5
 USE_GL=		gl glesv2 glew
 USE_QT=		qmake_build
