@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	helm
-PORTVERSION=	2.12.1
+PORTVERSION=	2.12.2
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/danilo
 
@@ -30,7 +30,7 @@ do-build:
 	cd ${WRKDIR}/src/k8s.io/helm/cmd/${cmd} ; \
 		GOPATH=${WRKDIR} go build \
 		-ldflags="-X k8s.io/helm/pkg/version.Version=v${PORTVERSION} \
-		-X k8s.io/helm/pkg/version.GitCommit=d325d2a9c179b33af1a024cdb5a4472b6288016a \
+		-X k8s.io/helm/pkg/version.GitCommit=7d2b0c73d734f6586ed222a567c5d103fed435be \
 		-X k8s.io/helm/pkg/version.BuildMetadata="
 .endfor
 
