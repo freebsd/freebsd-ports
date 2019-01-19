@@ -113,6 +113,8 @@ V4L_CONFIGURE_ENABLE=		v4l
 
 .include <bsd.port.pre.mk>
 
+LDFLAGS_i386+=	-Wl,-z,notext
+
 .if empty(ICONV_LIB)
 CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv_open=no \
 		ac_cv_lib_iconv_libiconv_open=no
