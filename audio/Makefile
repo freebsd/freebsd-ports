@@ -790,6 +790,7 @@
     SUBDIR += spiralsynthmodular
     SUBDIR += splay
     SUBDIR += splaytk
+    SUBDIR += spotifyd
     SUBDIR += squash
     SUBDIR += sratom
     SUBDIR += stk
