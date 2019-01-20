@@ -1,15 +1,24 @@
 --- UTC
 Index: gcc/config.gcc
 ===================================================================
---- gcc/config.gcc.old	2017-04-05 17:48:03.045750000 -0500
-+++ gcc/config.gcc	2017-04-05 17:49:22.143572000 -0500
-@@ -2383,6 +2383,9 @@
+--- gcc/config.gcc.orig 2018-06-25 19:34:01.000000000 +0000
++++ gcc/config.gcc      2018-12-14 04:14:25.044026000 +0000
+@@ -455,7 +455,7 @@
+ nvptx-*-*)
+ 	cpu_type=nvptx
+ 	;;
+-powerpc*-*-*spe*)
++powerpcspe-*-*|powerpc*-*-*spe*)
+ 	cpu_type=powerpcspe
+ 	extra_headers="ppc-asm.h altivec.h spe.h ppu_intrinsics.h paired.h spu2vmx.h vec_types.h si2vmx.h htmintrin.h htmxlintrin.h"
+ 	case x$with_cpu in
+@@ -2413,6 +2413,9 @@
+ 		tm_file="${tm_file} rs6000/default64.h rs6000/freebsd64.h"
  		tmake_file="${tmake_file} rs6000/t-freebsd64"
  		extra_options="${extra_options} rs6000/linux64.opt"
- 		;;
-+	    powerpcspe-*)
-+		tm_file="${tm_file} powerpcspe/freebsd.h powerpcspe/linuxspe.h powerpcspe/e500.h"
 +		;;
- 	     *)
- 	        tm_file="${tm_file} rs6000/freebsd.h"
++	     powerpcspe-*)
++		tm_file="${tm_file} powerpcspe/freebsd.h powerpcspe/linuxspe.h powerpcspe/e500.h"
  		;;
+ 	     *)
+ 		tm_file="${tm_file} rs6000/freebsd.h"
