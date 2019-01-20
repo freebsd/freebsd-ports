@@ -1,4 +1,4 @@
---- configure.orig	2018-02-14 03:55:48 UTC
+--- configure.orig	2019-01-20 01:00:30 UTC
 +++ configure
 @@ -633,6 +633,9 @@ ac_includes_default="\
  #endif
@@ -10,12 +10,3 @@
  #endif"
  
  ac_header_list=
-@@ -14496,7 +14499,7 @@ $as_echo "#define HAVE_LC_MESSAGES 1" >>confdefs.h
- 
-     fi
-   fi
--     USE_NLS=yes
-+#     USE_NLS=yes
- 
- 
-     gt_cv_have_gettext=no
