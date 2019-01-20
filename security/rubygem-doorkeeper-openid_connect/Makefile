@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	doorkeeper-openid_connect
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.3
 PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
