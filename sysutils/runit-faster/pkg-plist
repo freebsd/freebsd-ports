@@ -1,4 +1,5 @@
 bin/svclone
+bin/svmod
 %%ROOT%%@dir %%RUNITDIR%%
 %%ROOT%%@dir %%RUNITDIR%%/core-services
 %%RUNITDIR%%/1
@@ -51,6 +52,7 @@ man/man8/runsvchdir.8.gz
 man/man8/runsvdir.8.gz
 man/man8/sv.8.gz
 man/man8/svclone.8.gz
+man/man8/svmod.8.gz
 man/man8/svlogd.8.gz
 man/man8/utmpset.8.gz
 sbin/chpst
