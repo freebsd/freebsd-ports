@@ -2,6 +2,7 @@
 @group %%WWWGRP%%
 %%WWWDIR%%/README.txt
 %%WWWDIR%%/administrator/cache/index.html
+%%WWWDIR%%/administrator/components/com_actionlogs/models/fields/plugininfo.php
 %%WWWDIR%%/administrator/components/com_admin/admin.php
 %%WWWDIR%%/administrator/components/com_admin/admin.xml
 %%WWWDIR%%/administrator/components/com_admin/controller.php
@@ -5749,6 +5750,7 @@
 %%WWWDIR%%/plugins/search/newsfeeds/newsfeeds.xml
 %%WWWDIR%%/plugins/search/tags/tags.php
 %%WWWDIR%%/plugins/search/tags/tags.xml
+%%WWWDIR%%/plugins/system/actionlogs/forms/information.xml
 %%WWWDIR%%/plugins/system/cache/cache.php
 %%WWWDIR%%/plugins/system/cache/cache.xml
 %%WWWDIR%%/plugins/system/debug/debug.php
