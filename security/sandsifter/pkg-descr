@@ -6,4 +6,7 @@ every major vendor; ubiquitous software bugs in disassemblers,
 assemblers, and emulators; flaws in enterprise hypervisors; and both
 benign and security-critical hardware bugs in x86 chips.
 
-WWW: https://github.com/xoreaxeaxeax/sandsifter
+Run this program under sudo so that it will use the correct directories
+to store its data.
+
+WWW: https://github.com/rigred/sandsifter
