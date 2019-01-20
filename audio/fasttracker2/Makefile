@@ -3,6 +3,7 @@
 
 PORTNAME=	fasttracker2
 DISTVERSION=	0.1-b130
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://16-bits.org/ \
 		LOCAL/ehaupt
