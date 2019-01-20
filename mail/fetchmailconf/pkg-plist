@@ -1,0 +1,6 @@
+bin/fetchmailconf
+libexec/fetchmailconf.py
+man/man1/fetchmailconf.1.gz
+%%PYTHON_SITELIBDIR%%/fetchmailconf.py
+%%PYTHON_SITELIBDIR%%/fetchmailconf.pyc
+%%PYTHON_SITELIBDIR%%/fetchmailconf.pyo
