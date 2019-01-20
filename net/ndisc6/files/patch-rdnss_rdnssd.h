@@ -1,6 +1,6 @@
---- rdnssd/rdnssd.h.orig	2011-10-17 15:35:11 UTC
-+++ rdnssd/rdnssd.h
-@@ -32,24 +32,6 @@ extern const rdnss_src_t rdnss_netlink, 
+--- rdnss/rdnssd.h.orig	2016-12-07 18:11:55 UTC
++++ rdnss/rdnssd.h
+@@ -32,24 +32,6 @@ extern const rdnss_src_t rdnss_netlink, rdnss_icmp;
  #define ND_OPT_RDNSS 25
  #define ND_OPT_DNSSL 31
  
