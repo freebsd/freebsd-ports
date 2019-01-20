@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	joomla
-DISTVERSION=	3-9-1
+DISTVERSION=	3-9-2
 CATEGORIES=	www
 MASTER_SITES=	https://downloads.joomla.org/cms/joomla3/${DISTVERSION}/
 PKGNAMESUFFIX=	3
-DISTNAME=	Joomla_${DISTVERSION}-Stable-Full_Package-tar-bz2?format=bz2
+DISTNAME=	Joomla_${DISTVERSION}-Stable-Full_Package.tar.bz2?format=bz2
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Dynamic web content management system (CMS)
