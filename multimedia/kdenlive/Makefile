@@ -11,7 +11,8 @@ COMMENT=	KDE professional quality non-linear video editing suite
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libmlt.so:multimedia/mlt
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
+		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:multimedia/ffmpeg${FFMPEG_SUFX} \
 		${LOCALBASE}/lib/mlt/libmltqt.so:multimedia/mlt-qt5
 
