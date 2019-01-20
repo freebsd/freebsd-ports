@@ -1,6 +1,6 @@
-bin/injector
 bin/sifter
-bin/summarize
+bin/sifter-summarize
+sbin/sifter-injector
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/domas_breaking_the_x86_isa.pdf
 %%PORTDOCS%%%%DOCSDIR%%/domas_breaking_the_x86_isa_wp.pdf
@@ -13,4 +13,4 @@ bin/summarize
 %%DATADIR%%/pyutil/colors.py
 %%DATADIR%%/pyutil/progress.py
 %%DATADIR%%/sifter.py
-%%DATADIR%%/summarize.py
+%%DATADIR%%/sifter-summarize.py
