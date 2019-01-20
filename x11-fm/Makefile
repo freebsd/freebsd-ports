@@ -11,6 +11,7 @@
     SUBDIR += emelfm2
     SUBDIR += ezfm
     SUBDIR += filerunner
+    SUBDIR += fsv2
     SUBDIR += gentoo
     SUBDIR += gprename
     SUBDIR += konqueror

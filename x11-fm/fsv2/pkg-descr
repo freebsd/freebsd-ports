@@ -1,0 +1,5 @@
+fsv2 is a file system visualizer in cyberspace. It lays out files and
+directories in three dimensions, geometrically representing the file system
+hierarchy to allow visual overview and analysis.
+
+WWW: http://fedorchenko.net/fsv2.php
