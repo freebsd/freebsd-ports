@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190120:
+  AFFECTS: users of mail/fetchmail
+  AUTHOR: mandree@FreeBSD.org
+
+  The fetchmail port no longer offers the X11 option and no longer
+  depends on Python.  The corresponding fetchmailconf Python program has now
+  been split out into a separate port or package, so that fetchmail itself
+  will no longer require Python.
+
+  Users who wish to use fetchmailconf should install the new fetchmailconf
+  port or package.
+
 20190119:
   AFFECTS: users of german/webalizer2, japanese/webalizer, polish/webalizer2, portuguese/webalizer-pt_BR, portuguese/webalizer-pt_PT, ukrainian/webalizer, www/geolizer, www/webalizer
   AUTHOR: dinoex@FreeBSD.org

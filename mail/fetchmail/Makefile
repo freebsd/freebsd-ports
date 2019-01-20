@@ -1,43 +1,48 @@
 # Created by: Ville Eerola <ve@sci.fi>
 # $FreeBSD$
 
-PORTNAME=	fetchmail
+PORTNAME?=	fetchmail
 PORTVERSION=	6.3.26
-PORTREVISION=	10
+PORTREVISION?=	11
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/${PORTNAME}/branch_6.3/ \
 		http://mandree.home.pages.de/${PORTNAME}/
 
-PATCH_SITES=   https://src.fedoraproject.org/rpms/fetchmail/raw/master/f/:fedora
-PATCHFILES=    fetchmail-6.3.26-ssl-backport.patch:-p1:fedora
-
+PATCH_SITES=	https://src.fedoraproject.org/rpms/fetchmail/raw/master/f/:fedora
+PATCHFILES=	fetchmail-6.3.26-ssl-backport.patch:-p1:fedora
 
 MAINTAINER=	chalpin@cs.wisc.edu
-COMMENT=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR
+COMMENT?=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
+.if empty(MASTERDIR)
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
 
-USES=		autoreconf:build cpe gmake python shebangfix tar:xz ssl
-SHEBANG_FILES=	fetchmailconf.py
+USES=		cpe gmake tar:xz ssl
 
 USE_RC_SUBR=	fetchmail
 SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
+
+# the added PYTHON=: suppresses python builds,
+# see ../../mail/fetchmailconf/ for the configuration tool
 CONFIGURE_ARGS=	--enable-opie --enable-RPA --enable-SDPS \
 		--without-hesiod --enable-fallback=no \
-		--with-ssl=${OPENSSLBASE}
+		--with-ssl=${OPENSSLBASE} PYTHON=:
+# In case the user had an SSL-v2-capable SSL build, disable it:
 CONFIGURE_ENV=	ac_cv_have_decl_SSLv2_client_method=no
 
-LDFLAGS+=	-L${LOCALBASE}/lib
+# -Wl,--as-needed suppresses unneeded library references,
+# for instance, libcom_err.so on GSSAPI_NONE builds:
+LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--as-needed
 
-OPTIONS_DEFINE=	X11 NLS NTLM POP2 DOCS
+OPTIONS_DEFINE=	NLS NTLM POP2 DOCS
 OPTIONS_SINGLE=	GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 OPTIONS_DEFAULT=	GSSAPI_BASE
@@ -51,8 +56,7 @@ GSSAPI_MIT_USES=	gssapi:mit
 GSSAPI_MIT_CONFIGURE_ON=	--with-kerberos5=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
 GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
 
-X11_DESC=	Python/Tkinter dependencies for ``fetchmailconf''
-POP2_DESC=	POP2 Protocol support[obsolete]
+POP2_DESC=	POP2 Protocol support [obsolete]
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
@@ -63,51 +67,37 @@ NTLM_PORTDOCS=		README.NTLM
 # POP2 is obsolete
 POP2_CONFIGURE_ENABLE=	POP2
 
-X11_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter@${PY_FLAVOR}
-X11_CONFIGURE_OFF=	PYTHON=:
-X11_SUB_FILES_OFF=	fetchmailconf
-
 PORTDOCS=	FAQ FEATURES NEWS NOTES README README.SSL \
 		design-notes.html fetchmail-FAQ.html fetchmail-features.html \
 		esrs-design-notes.html
-
-#.include <bsd.port.options.mk>
 
 post-patch:
 .if !exists(/usr/lib/libcom_err.so)
 	@${REINPLACE_CMD} -e "s,-lcom_err,,g" ${WRKSRC}/configure
 .endif
 
-# This is a workaround for a ports framework bug:
-# As of r489889 on 2019-01-10, 
-# USES=autoreconf does not seem to get along with disabling the NLS option,
-# because this would not install gettext-tools, omitting autopoint,
-# however the configure.ac requests GETTEXT, so autoreconf will barf.
-# Pulling in gettext-tools unconditionally (even with NLS off) would 
-# be excess and confuse users, so is not an option.
-# Thus we set USES=autoreconf:build and run autoreconf by ourselves,
-# overriding AUTOPOINT=true.
-#
-pre-configure-NLS-on:
-	(cd ${WRKSRC} && ${LOCALBASE}/bin/autoreconf -f -i)
-#
-pre-configure-NLS-off:
-	(cd ${WRKSRC} && ${SETENV} AUTOPOINT=${TRUE} ${LOCALBASE}/bin/autoreconf -f -i)
+.endif
 
+# this avoids rebuilding the autotools rigs, i. e. USES+=autoreconf.
+# It will clobber the AC_CHECK_DECLS([SSLv3_client_method],,,[#include <openssl/ssl.h>])
+# so we've put that into files/patch-configure as well:
+pre-configure:
+	@${TOUCH} -d 2010-01-01T00:00:00 ${WRKSRC}/configure.ac
+
+.if empty(MASTERDIR)
 post-build:
-	@${MAKE_CMD} -C ${WRKSRC} check
+	${MAKE_CMD} -C ${WRKSRC} check
 
 post-install:
 	${INSTALL} -d ${STAGEDIR}/var/run/fetchmail
 	${INSTALL_DATA} ${FILESDIR}/fetchmailrc.sample \
 		${STAGEDIR}${PREFIX}/etc/fetchmailrc.sample
+	${RM} ${STAGEDIR}${PREFIX}/bin/fetchmailconf
+	${RM} ${STAGEDIR}${PREFIX}/man/man1/fetchmailconf.1*
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-post-install-X11-off:
-	${INSTALL_SCRIPT} ${WRKDIR}/fetchmailconf ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/fetchmailconf.py ${STAGEDIR}${PREFIX}/libexec
-
+.endif
 .include <bsd.port.mk>

@@ -1,8 +1,5 @@
 bin/fetchmail
-bin/fetchmailconf
 man/man1/fetchmail.1.gz
-man/man1/fetchmailconf.1.gz
-%%NO_X11%%libexec/fetchmailconf.py
 %%NLS%%share/locale/ca/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/da/LC_MESSAGES/fetchmail.mo
@@ -27,8 +24,5 @@ man/man1/fetchmailconf.1.gz
 %%NLS%%share/locale/tr/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/fetchmail.mo
-%%X11%%%%PYTHON_SITELIBDIR%%/fetchmailconf.py
-%%X11%%%%PYTHON_SITELIBDIR%%/fetchmailconf.pyc
-%%X11%%%%PYTHON_SITELIBDIR%%/fetchmailconf.pyo
 @sample(fetchmail,fetchmail,600) etc/fetchmailrc.sample
 @dir(fetchmail,fetchmail,755) /var/run/fetchmail
