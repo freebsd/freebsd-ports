@@ -11,6 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for simple DBI wrapper/ORMapper
 
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
 	p5-DBI>0:databases/p5-DBI \
@@ -22,5 +26,6 @@ RUN_DEPENDS=	\
 
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
