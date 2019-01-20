@@ -1,0 +1,18 @@
+Avoid a warning and potential future error that USES=cargo does not
+correctly patch away when changing the `git` key to `path` via the
+CARGO_USE_GITHUB machinery.
+
+warning: key `branch` is ignored for dependency (rust-crypto). This
+will be considered an error in future versions
+
+--- Cargo.toml.orig	2019-01-19 21:21:47 UTC
++++ Cargo.toml
+@@ -25,7 +25,7 @@ chrono = "0.4"
+ alsa = { version = "0.2", optional = true }
+ 
+ [replace]
+-"rust-crypto:0.2.36" = { git = "https://github.com/awmath/rust-crypto.git", branch = "avx2" }
++"rust-crypto:0.2.36" = { git = "https://github.com/awmath/rust-crypto.git" }
+ 
+ [dependencies.librespot]
+ git = "https://github.com/librespot-org/librespot.git"
