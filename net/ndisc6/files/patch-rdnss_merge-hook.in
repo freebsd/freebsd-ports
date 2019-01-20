@@ -1,5 +1,5 @@
---- rdnssd/merge-hook.in.orig	2014-12-14 10:13:57 UTC
-+++ rdnssd/merge-hook.in
+--- rdnss/merge-hook.in.orig	2014-12-14 10:13:57 UTC
++++ rdnss/merge-hook.in
 @@ -19,7 +19,7 @@
  
  set -e
