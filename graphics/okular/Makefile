@@ -2,7 +2,7 @@
 
 PORTNAME=	okular
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -30,13 +30,18 @@ USES=		cmake compiler:c++11-lib desktop-file-utils \
 USE_KDE=	activities archive auth bookmarks codecs completion config \
 		configwidgets coreaddons dbusaddons ecm emoticons i18n \
 		iconthemes init itemmodels itemviews jobwidgets js \
-		kdelibs4support khtml kio libkexiv2 parts pty purpose \
+		kdelibs4support khtml kio libkexiv2 parts pty \
 		service solid sonnet textwidgets threadweaver wallet \
 		widgetsaddons windowsystem xmlgui
 USE_QT=		core dbus declarative gui network phonon4 printsupport speech \
 		svg widgets xml \
 		buildtools_build qmake_build
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS PURPOSE
+OPTIONS_DEFAULT=	PURPOSE
+
+PURPOSE_DESC=	Enable 'Share' menu
+PURPOSE_USE=	KDE=purpose
+PURPOSE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_KDEExperimentalPurpose
 
 .include <bsd.port.mk>
