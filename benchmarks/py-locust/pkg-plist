@@ -1,0 +1,9 @@
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/extra-EXAMPLES-basic.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/extra-EXAMPLES-browse_docs_sequence_test.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/extra-EXAMPLES-browse_docs_test.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/extra-EXAMPLES-custom_wait_function.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/extra-EXAMPLES-custom_xmlrpc_client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/extra-EXAMPLES-dynamice_user_credentials.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/extra-EXAMPLES-events.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/extra-EXAMPLES-multiple_hosts.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/extra-EXAMPLES-semaphore_wait.py

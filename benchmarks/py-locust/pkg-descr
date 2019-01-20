@@ -1,0 +1,9 @@
+Locust is an easy-to-use, distributed, user load testing tool. It is intended
+for load-testing web sites (or other systems) and figuring out how many
+concurrent users a system can handle.
+
+The behavior of each locust (or test user if you will) is defined by you and the
+swarming process is monitored from a web UI in real-time. This will help you
+battle test and identify bottlenecks in your code before letting real users in.
+
+WWW: https://locust.io/

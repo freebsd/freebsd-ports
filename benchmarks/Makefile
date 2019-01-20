@@ -65,6 +65,7 @@
     SUBDIR += polygraph
     SUBDIR += postal
     SUBDIR += postmark
+    SUBDIR += py-locust
     SUBDIR += py-naarad
     SUBDIR += py-throughpy
     SUBDIR += py-zopkio
