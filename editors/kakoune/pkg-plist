@@ -59,6 +59,7 @@ man/man1/kak.1.gz
 %%DATADIR%%/rc/base/mail.kak
 %%DATADIR%%/rc/base/markdown.kak
 %%DATADIR%%/rc/base/mercurial.kak
+%%DATADIR%%/rc/base/new-client.kak
 %%DATADIR%%/rc/base/ocaml.kak
 %%DATADIR%%/rc/base/perl.kak
 %%DATADIR%%/rc/base/restructuredtext.kak
