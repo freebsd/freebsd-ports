@@ -1,20 +1,16 @@
---- ./Makefile.orig	2011-02-12 17:24:02.000000000 +0100
-+++ ./Makefile	2011-02-14 10:11:00.000000000 +0100
-@@ -1,7 +1,7 @@
+--- Makefile.orig	2019-01-19 16:17:37 UTC
++++ Makefile
+@@ -1,11 +1,6 @@
 -CC=		gcc
 -LDFLAGS=	-L/usr/lib	-L/usr/local/lib  	-L/usr/lib/ncurses	-L/usr/local/lib/ncurses
 -CPPFLAGS=	-I/usr/include	-I/usr/local/include	-I/usr/include/ncurses	-I/usr/local/include/ncurses
--CFLAGS=		-O3 -Wall -std=c99 
+-CFLAGS=		-O3 -Wall #-std=c99 
+-#CFLAGS+= -ffunction-sections -fdata-sections
+-#LDFLAGS+= --gc-sections 
 +CC?=		gcc
-+#LDFLAGS+=	-L/usr/lib	-L/usr/local/lib  	-L/usr/lib/ncurses	-L/usr/local/lib/ncurses
-+#CPPFLAGS+=	-I/usr/include	-I/usr/local/include	-I/usr/include/ncurses	-I/usr/local/include/ncurses
-+CFLAGS+=	-std=c99 
- #CFLAGS+= -ffunction-sections -fdata-sections
- #LDFLAGS+= --gc-sections 
  LIBS=		-lncurses
-@@ -41,5 +41,3 @@
+-DESTDIR=	/usr/local/
++DESTDIR?=	/usr/local/
  
- clean:
- 	rm -f dhex $(OFILES)
--
--
+ OFILES=buffers.o \
+ 	configfile.o \
