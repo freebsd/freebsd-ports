@@ -1,5 +1,5 @@
-TIMESTAMP = 1545020482
+TIMESTAMP = 1547967241
 SHA256 (runit-2.1.2.tar.gz) = 6fd0160cb0cf1207de4e66754b6d39750cff14bb0aa66ab49490992c0c47ba18
 SIZE (runit-2.1.2.tar.gz) = 110916
-SHA256 (freebsd-runit-0.1.31.tar.gz) = 0c9f3123c1b5511052552b2960074e4ff2469b30e97a167b60989b1d3b1e3505
-SIZE (freebsd-runit-0.1.31.tar.gz) = 32768
+SHA256 (freebsd-runit-0.1.32.tar.gz) = 5a293aa2cb32777dd36a2b647003680b52535529b2801a13dd1bb89bb9b8b076
+SIZE (freebsd-runit-0.1.32.tar.gz) = 34121
