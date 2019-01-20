@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTREVISION=	5
+PORTREVISION=	6
 PKGNAMESUFFIX=	-${FLAVOR}
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
