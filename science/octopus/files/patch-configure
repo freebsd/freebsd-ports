@@ -1,0 +1,11 @@
+--- configure.orig	2019-01-19 22:21:03 UTC
++++ configure
+@@ -900,7 +900,7 @@ CPP
+ FC
+ FCFLAGS
+ FCCPP'
+-ac_subdirs_all='external_libs/spglib-1.9.9'
++ac_subdirs_all=''
+ 
+ # Initialize some variables set by options.
+ ac_init_help=

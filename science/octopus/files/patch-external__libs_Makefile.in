@@ -1,0 +1,10 @@
+--- external_libs/Makefile.in.orig	2019-01-19 22:16:26 UTC
++++ external_libs/Makefile.in
+@@ -392,7 +392,6 @@ top_srcdir = @top_srcdir@
+ SUBDIRS = \
+ 	metis-5.1       \
+ 	qshep           \
+-	spglib-1.9.9    \
+ 	fortrancl       \
+ 	bpdn            \
+ 	yaml-0.1.4      \
