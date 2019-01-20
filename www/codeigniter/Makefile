@@ -5,7 +5,7 @@ PORTNAME=	codeigniter
 PORTVERSION=	3.1.6
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Framework for developing PHP web applications
 
 LICENSE=	MIT
