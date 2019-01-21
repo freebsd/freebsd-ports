@@ -10193,16 +10193,6 @@
 %%WWWDIR%%/apps-pkg/updatenotification/lib/Settings/Admin.php
 %%WWWDIR%%/apps-pkg/updatenotification/lib/UpdateChecker.php
 %%WWWDIR%%/apps-pkg/updatenotification/templates/admin.php
-%%WWWDIR%%/apps-pkg/user_external/appinfo/app.php
-%%WWWDIR%%/apps-pkg/user_external/appinfo/database.xml
-%%WWWDIR%%/apps-pkg/user_external/appinfo/info.xml
-%%WWWDIR%%/apps-pkg/user_external/appinfo/signature.json
-%%WWWDIR%%/apps-pkg/user_external/img/app.svg
-%%WWWDIR%%/apps-pkg/user_external/lib/base.php
-%%WWWDIR%%/apps-pkg/user_external/lib/ftp.php
-%%WWWDIR%%/apps-pkg/user_external/lib/imap.php
-%%WWWDIR%%/apps-pkg/user_external/lib/smb.php
-%%WWWDIR%%/apps-pkg/user_external/lib/webdavauth.php
 %%WWWDIR%%/apps-pkg/user_ldap/ajax/clearMappings.php
 %%WWWDIR%%/apps-pkg/user_ldap/ajax/deleteConfiguration.php
 %%WWWDIR%%/apps-pkg/user_ldap/ajax/getConfiguration.php
