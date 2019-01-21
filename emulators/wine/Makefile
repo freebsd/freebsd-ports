@@ -3,7 +3,7 @@
 
 PORTNAME=	wine
 DISTVERSION=	3.0.4
-PORTREVISION=	2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -20,8 +20,6 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 LIB_DEPENDS=	libxml2.so:textproc/libxml2
-
-USES=		bison desktop-file-utils gmake localbase shebangfix tar:xz
 
 CONFLICTS_INSTALL=	wine-staging-[0-9]* wine-devel-[0-9]* i386-wine-[0-9]* \
 			i386-wine-staging-[0-9]* i386-wine-devel-[0-9]*
@@ -43,6 +41,7 @@ CONFIGURE_ARGS+=--verbose \
 		--without-udev
 CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
+USES=		bison compiler:c11 desktop-file-utils gmake localbase shebangfix tar:xz
 .if !defined(USE_LDCONFIG32)
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
 .endif
@@ -53,8 +52,8 @@ SUB_FILES=	pkg-message
 
 PORTDATA=	l_intl.nls wine.inf
 
-OPTIONS_DEFINE=	CUPS DOCS DOSBOX GCC GNUTLS HAL LDAP LIBXSLT MPG123 OPENAL V4L WINEMAKER X11 GECKO MONO
-OPTIONS_DEFAULT=GCC GNUTLS X11
+OPTIONS_DEFINE=	CUPS DOCS DOSBOX GNUTLS HAL LDAP LIBXSLT MPG123 OPENAL V4L WINEMAKER X11 GECKO MONO
+OPTIONS_DEFAULT=GNUTLS X11
 OPTIONS_SUB=	yes
 
 DOSBOX_DESC=	Use DOSBox to run MS-DOS programs
@@ -107,12 +106,6 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libpng.so:graphics/png
 
 .include <bsd.port.pre.mk>
-
-.if empty(PORT_OPTIONS:MGCC)
-USES+=		compiler:c11
-.else
-USE_GCC=	yes
-.endif
 
 .if ${ARCH} == amd64
 # Wine is composed of three parts:
