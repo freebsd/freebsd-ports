@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xlog
-PORTVERSION=	2.0.15
+PORTVERSION=	2.0.17
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SAVANNAH
 
@@ -16,7 +16,8 @@ LIB_DEPENDS=	libhamlib.so:comms/hamlib \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		pkgconfig shared-mime-info
+USES=		gnome pkgconfig shared-mime-info
+
 USE_GNOME=	cairo gdkpixbuf2 gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-mime-update
