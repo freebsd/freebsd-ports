@@ -7,12 +7,15 @@ PORTREVISION=	7
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
-MAINTAINER=	freebsd-ports@dan.me.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python/GTK based settings manager for CompizConfig
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compizconfig-python.pc:x11-wm/compizconfig-python
 
-USES=		gettext gmake python:2.7 tar:bzip2
+USES=		gettext gmake gnome python:2.7 tar:bzip2
 USE_GNOME=	intltool pygtk2
 
 INSTALLS_ICONS=	yes
