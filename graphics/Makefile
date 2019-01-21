@@ -846,6 +846,7 @@
     SUBDIR += py-mayavi
     SUBDIR += py-mcomix
     SUBDIR += py-ming
+    SUBDIR += py-mpl-scatter-density
     SUBDIR += py-nwdiag
     SUBDIR += py-open3d-python
     SUBDIR += py-opencolorio
