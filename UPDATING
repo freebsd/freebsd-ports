@@ -68,7 +68,9 @@ you update your ports collection, before attempting any port upgrades.
 
   Where possible, you must switch to net/libmaxminddb, which uses the
   newer (and fully supported) GeoIP 2 format. Unfortunately, this is
-  not a drop-in replacement.
+  not a drop-in replacement. To fetch the GeoIP 2 geolocation databases,
+  whether the free or paid versions, you must use net/geoipupdate
+  (pkg install geoipupdate).
 
   The legacy database is no longer available, and we cannot distribute
   it by the Maxmind license, so the legacy GeoIP format is essentially
