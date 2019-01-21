@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-mpv
-PORTVERSION=	0.15
-PORTREVISION=	1
+PORTVERSION=	0.16
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
 
