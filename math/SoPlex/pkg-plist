@@ -77,6 +77,7 @@ include/soplex/spxweightpr.h
 include/soplex/spxweightst.h
 include/soplex/ssvector.h
 include/soplex/ssvectorbase.h
+include/soplex/stablesum.h
 include/soplex/statistics.h
 include/soplex/svector.h
 include/soplex/svectorbase.h
