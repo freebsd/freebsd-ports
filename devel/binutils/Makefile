@@ -13,8 +13,6 @@ COMMENT?=	GNU binary tools
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-USE_CXXSTD=	c++14
-
 .if !defined(CROSS_TOOLCHAIN)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:math/gmp \
 		${LOCALBASE}/lib/libmpfr.so:math/mpfr
