@@ -77,6 +77,7 @@ include/scip/compr_weakcompr.h
 include/scip/concsolver.h
 include/scip/concsolver_scip.h
 include/scip/concurrent.h
+include/scip/config.h
 include/scip/conflict.h
 include/scip/conflictstore.h
 include/scip/cons.h
