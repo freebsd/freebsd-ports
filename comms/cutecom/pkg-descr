@@ -3,4 +3,4 @@ programming and robotics. It features line-oriented interface instead of
 character-oriented, xmodem, ymodem, zmodem support (requires the lrzsz package)
 and hexadecimal input and output among other things.
 
-WWW: https://github.com/neundorf/CuteCom
+WWW: https://gitlab.com/cutecom/cutecom
