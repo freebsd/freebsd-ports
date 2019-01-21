@@ -22,7 +22,6 @@ man/man1/%%BUTARGET%%-dlltool.1.gz
 man/man1/%%BUTARGET%%-elfedit.1.gz
 man/man1/%%BUTARGET%%-gprof.1.gz
 man/man1/%%BUTARGET%%-ld.1.gz
-man/man1/%%BUTARGET%%-nlmconv.1.gz
 man/man1/%%BUTARGET%%-nm.1.gz
 man/man1/%%BUTARGET%%-objcopy.1.gz
 man/man1/%%BUTARGET%%-objdump.1.gz
