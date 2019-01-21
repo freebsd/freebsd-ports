@@ -266,6 +266,7 @@
     SUBDIR += gkrellkam2
     SUBDIR += gle
     SUBDIR += gle-graphics
+    SUBDIR += glee
     SUBDIR += glew
     SUBDIR += glexcess
     SUBDIR += glfw

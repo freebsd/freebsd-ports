@@ -1,0 +1,24 @@
+--- Makefile.in.orig	2009-02-07 20:45:53 UTC
++++ Makefile.in
+@@ -38,14 +38,15 @@ BINDISTFILES=glee/${LIBNAME} glee/${READ
+ 
+ all:
+ 	${CXX} ${SRCDIR}/${SOURCE} -shared -I${SRCDIR} -I${INCLUDEDIR} ${LIBS} \
+-		${CXXFLAGS} ${DEFS} -o ${SRCDIR}/${LIBNAME}
++		${CXXFLAGS} ${LDFLAGS} ${DEFS} -Wl,-soname,libGLee.so.5 -o ${SRCDIR}/${LIBNAME}
+ 
+ install:
+-	${INSTALLD} ${HEADER} ${INCLUDEDIR}/GL
+-	${INSTALLP} ${LIBNAME} ${LIBDIR}
+-	${MKDIR} -p ${DATADIR}/doc/GLee
+-	${INSTALLD} ${README} ${DATADIR}/doc/GLee
+-	${LDCONFIG}
++	${MKDIR} -p ${DESTDIR}${INCLUDEDIR}/GL
++	${INSTALLD} ${HEADER} ${DESTDIR}${INCLUDEDIR}/GL
++	${INSTALLP} ${LIBNAME} ${DESTDIR}${LIBDIR}
++	#${MKDIR} -p ${DATADIR}/doc/GLee
++	#${INSTALLD} ${README} ${DATADIR}/doc/GLee
++	#${LDCONFIG}
+ 
+ dists: dist bindist redist
+ 
