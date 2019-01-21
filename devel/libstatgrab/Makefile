@@ -3,6 +3,7 @@
 
 PORTNAME=	libstatgrab
 PORTVERSION=	0.91
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.mirrorservice.org/pub/i-scream/libstatgrab/ \
 		http://dl.ambiweb.de/mirrors/ftp.i-scream.org/libstatgrab/ \
@@ -13,10 +14,10 @@ COMMENT=	Provides a useful interface to system statistics
 
 LICENSE=	LGPL21
 
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
 USES=		pathfix pkgconfig libtool
+USE_LDCONFIG=	yes
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 
 OPTIONS_DEFINE=	TOOLS DOCS
@@ -30,5 +31,11 @@ TOOLS_VARS=	SHEBANG_FILES+="src/statgrab/statgrab-make-mrtg-config.in \
 		LICENSE+=GPLv2 LICENSE_COMB=multi
 
 OPTIONS_SUB=	yes
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200016
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_libstatgrab_memory__stats.c
+.endif
 
 .include <bsd.port.mk>
