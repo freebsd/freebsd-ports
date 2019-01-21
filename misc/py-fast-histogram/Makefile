@@ -1,0 +1,21 @@
+# $FreeBSD$
+
+PORTNAME=	fast-histogram
+DISTVERSION=	0.7
+CATEGORIES=	misc
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Fast simple 1D and 2D histograms
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYNUMPY}
+
+USES=		python
+USE_PYTHON=	distutils autoplist
+
+.include <bsd.port.mk>

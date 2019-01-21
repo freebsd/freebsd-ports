@@ -1,0 +1,9 @@
+The fast-histogram mini-package aims to provide simple and fast histogram
+functions for regular bins that don't compromise on performance. It doesn't do
+anything complicated - it just implements a simple histogram algorithm in C and
+keeps it simple. The aim is to have functions that are fast but also robust and
+reliable. The result is a 1D histogram function here that is 7-15x faster than
+numpy.histogram, and a 2D histogram function that is 20-25x faster than
+numpy.histogram2d.
+
+WWW: https://github.com/astrofrog/fast-histogram
