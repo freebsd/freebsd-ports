@@ -38,13 +38,13 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2
 # XXX: remove tar:bz2
 USES=	compiler:c11 cpe libedit ssl tar:bz2
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.13.4a0.2019.01.13
+ISCVERSION=	9.13.4a0.2019.01.21
 # XXX: Remove gitlab
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.isc.org
 GL_ACCOUNT=	isc-projects
 GL_PROJECT=	bind9
-GL_COMMIT=	3b1a914395f32ae31f08379e95d174a7d14cd8df
+GL_COMMIT=	914e8ddd6126200a698d1a52dce800eaeb088730
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
