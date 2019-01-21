@@ -267,7 +267,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Math/BigFloat/Trace.pm
 %%PRIV_LIB%%/Math/BigInt.pm
 %%PRIV_LIB%%/Math/BigInt/Calc.pm
-%%PRIV_LIB%%/Math/BigInt/CalcEmu.pm
 %%PRIV_LIB%%/Math/BigInt/Lib.pm
 %%PRIV_LIB%%/Math/BigInt/Trace.pm
 %%PRIV_LIB%%/Math/BigRat.pm
@@ -474,6 +473,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Test2/EventFacet/Error.pm
 %%PRIV_LIB%%/Test2/EventFacet/Hub.pm
 %%PRIV_LIB%%/Test2/EventFacet/Info.pm
+%%PRIV_LIB%%/Test2/EventFacet/Info/Table.pm
 %%PRIV_LIB%%/Test2/EventFacet/Meta.pm
 %%PRIV_LIB%%/Test2/EventFacet/Parent.pm
 %%PRIV_LIB%%/Test2/EventFacet/Plan.pm
@@ -532,6 +532,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Unicode/Collate/Locale/bn.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/ca.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/cs.pl
+%%PRIV_LIB%%/Unicode/Collate/Locale/cu.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/cy.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/da.pl
 %%PRIV_LIB%%/Unicode/Collate/Locale/de_at_ph.pl
@@ -966,6 +967,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5295delta.1.gz
 %%MAN1%%/perl5296delta.1.gz
 %%MAN1%%/perl5297delta.1.gz
+%%MAN1%%/perl5298delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -1388,7 +1390,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Math::BigFloat.3.gz
 %%MAN3%%/Math::BigInt.3.gz
 %%MAN3%%/Math::BigInt::Calc.3.gz
-%%MAN3%%/Math::BigInt::CalcEmu.3.gz
 %%MAN3%%/Math::BigInt::FastCalc.3.gz
 %%MAN3%%/Math::BigInt::Lib.3.gz
 %%MAN3%%/Math::BigRat.3.gz
@@ -1579,6 +1580,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Test2::EventFacet::Error.3.gz
 %%MAN3%%/Test2::EventFacet::Hub.3.gz
 %%MAN3%%/Test2::EventFacet::Info.3.gz
+%%MAN3%%/Test2::EventFacet::Info::Table.3.gz
 %%MAN3%%/Test2::EventFacet::Meta.3.gz
 %%MAN3%%/Test2::EventFacet::Parent.3.gz
 %%MAN3%%/Test2::EventFacet::Plan.3.gz
@@ -1761,6 +1763,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5295delta.pod
 %%PRIV_LIB%%/pod/perl5296delta.pod
 %%PRIV_LIB%%/pod/perl5297delta.pod
+%%PRIV_LIB%%/pod/perl5298delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
