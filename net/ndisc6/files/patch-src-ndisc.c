@@ -1,6 +1,6 @@
---- src/ndisc.c.orig	2014-12-14 10:39:28 UTC
+--- src/ndisc.c.orig	2016-12-07 16:43:04 UTC
 +++ src/ndisc.c
-@@ -532,7 +532,7 @@ parseadv (const uint8_t *buf, size_t len
+@@ -532,7 +532,7 @@ parseadv (const uint8_t *buf, size_t len, const struct
  		printf (_("Stateful other conf.      :          %3s\n"),
  		        gettext ((v & ND_RA_FLAG_OTHER) ? N_ ("Yes") : N_("No")));
  		printf (_("Mobile home agent         :          %3s\n"),

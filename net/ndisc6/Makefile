@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ndisc6
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.remlab.net/files/ndisc6/ \
 		http://people.via.ecp.fr/~rem/www.remlab.net/files/ndisc6/
@@ -13,8 +12,7 @@ COMMENT=	IPv6 network diagnostic tools
 
 LICENSE=	GPLv2
 
-USES=		tar:bzip2 perl5
-USE_GCC=	any
+USES=		compiler:c11 perl5 tar:bzip2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-suid-install --localstatedir="${PREFIX}/var"
