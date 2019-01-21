@@ -141,7 +141,6 @@ man/man1/avr-dlltool.1.gz
 man/man1/avr-elfedit.1.gz
 man/man1/avr-gprof.1.gz
 man/man1/avr-ld.1.gz
-man/man1/avr-nlmconv.1.gz
 man/man1/avr-nm.1.gz
 man/man1/avr-objcopy.1.gz
 man/man1/avr-objdump.1.gz
