@@ -8,8 +8,10 @@ CATEGORIES=	astro kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE library for browsing photos on a map
 
-LICENSE=	GPLv2+ LGPL20+
+LICENSE=	GPLv2+ BSD3CLAUSE
 LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
+LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/COPYING-CMAKE-SCRIPTS
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/buffer_concepts.hpp:devel/boost-libs
 LIB_DEPENDS=	libopencv_video.so:graphics/opencv
