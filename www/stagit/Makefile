@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stagit
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	www
 MASTER_SITES=	http://dl.2f30.org/releases/
 
@@ -19,12 +19,10 @@ USE_CSTD=	c99
 
 MAKE_ARGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS}" \
+		COMPATOBJ="" \
 		LDFLAGS="${LDFLAGS} -lgit2"
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-post-patch:
-	@${REINPLACE_CMD} '/strlcat\.o/d; /strlcpy\.o/d' ${WRKSRC}/Makefile
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${PREFIX}/man/man1
