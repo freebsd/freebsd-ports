@@ -1,11 +1,8 @@
 bin/gsed
 man/man1/gsed.1.gz
-%%EXAMPLESDIR%%/binary.sed
-%%EXAMPLESDIR%%/binary2.sed
-%%EXAMPLESDIR%%/binary3.sed
-%%EXAMPLESDIR%%/dc.sed
 %%NLS%%share/locale/af/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/sed.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/sed.mo
 %%NLS%%share/locale/da/LC_MESSAGES/sed.mo
