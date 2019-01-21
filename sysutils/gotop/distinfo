@@ -1,6 +1,6 @@
-TIMESTAMP = 1544860995
-SHA256 (cjbassi-gotop-1.7.1_GH0.tar.gz) = 0041d36e664870d0b461b80bba4a2fb5120af1030230f09e3e9887a67c117363
-SIZE (cjbassi-gotop-1.7.1_GH0.tar.gz) = 387390
+TIMESTAMP = 1548046293
+SHA256 (cjbassi-gotop-2.0.0_GH0.tar.gz) = 50c823b6f774a73bea284172cd1dacc776fe64db6e5b7d20a9f4c0f2456f1dd3
+SIZE (cjbassi-gotop-2.0.0_GH0.tar.gz) = 1499494
 SHA256 (cjbassi-termui-e8dd23f_GH0.tar.gz) = 1a26a894587fd9f533d25ff60128c3234ee6a64eb643d21c7983314984ab38e6
 SIZE (cjbassi-termui-e8dd23f_GH0.tar.gz) = 78782
 SHA256 (docopt-docopt.go-ee0de3b_GH0.tar.gz) = 6eb951df9aa0503060e3912fd10f5f592b4453a5f1d5130995db02aa4697374d
