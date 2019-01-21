@@ -824,7 +824,6 @@ audio/gmpc-autoplaylist||2009-09-24|Unmaintained upstream
 audio/gmpc-stopbutton||2009-09-24|Unmaintained upstream
 sysutils/zccron|sysutils/p5-ZConf-Cron|2009-09-27|Please use sysutils/p5-ZConf-Cron
 devel/p5-Cwd|devel/p5-PathTools|2009-09-30|Please use devel/p5-PathTools
-x11/electricsheep||2009-10-02|No source tarball, Unix code unmaintained
 sysutils/fusefs-gphotofs||2009-10-05|Removed
 x11/kxgenerator||2009-10-07|Has expired: Project abandoned, master site disappeared
 hebrew/geresh||2009-10-08|No longer maintained upstream

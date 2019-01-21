@@ -1,0 +1,29 @@
+--- configure.ac.orig	2018-07-14 21:10:29 UTC
++++ configure.ac
+@@ -37,7 +37,7 @@ AC_SYS_LARGEFILE
+ 
+ AM_PROG_AS
+ 
+-ACX_PTHREAD(PTHREAD_OK=true,PTHREAD_OK=false)
++PTHREAD_OK=true
+ 
+ IS_LINUX_GNU="false"
+ 
+@@ -74,7 +74,7 @@ changequote([,])dnl
+ dnl Check for WXWidgets
+ WX_VER_291=""
+ 
+-AC_PATH_PROGS(WX_CONFIG, [wx-config-2.9 wx-config], no)
++#AC_PATH_PROGS(WX_CONFIG, [wx-config-2.9 wx-config], no)
+ 
+ if test x$WX_CONFIG != xno; then
+    WX_VERSION=`$WX_CONFIG --version`
+@@ -164,7 +164,7 @@ AC_SUBST(AVUTIL_LIBS)
+ 
+ dnl Check for lua
+ 
+-PKG_CHECK_MODULES([LUA], [lua5.1],, 
++PKG_CHECK_MODULES([LUA], [lua-5.1],, 
+ 	[PKG_CHECK_MODULES([LUA], [lua >= 5.1])
+ ])
+ 
