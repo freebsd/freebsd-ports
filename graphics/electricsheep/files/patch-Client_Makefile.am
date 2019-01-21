@@ -1,0 +1,11 @@
+Recommended in https://github.com/scottdraves/electricsheep/issues/72#issuecomment-455900619
+--- Client/Makefile.am.orig	2019-01-20 20:50:29 UTC
++++ Client/Makefile.am
+@@ -12,6 +12,7 @@ endif
+ AM_CPPFLAGS = \
+ 	-DPACKAGE_DATA_DIR=\""$(datadir)"\" \
+ 	-DPACKAGE_LOCALE_DIR=\""$(datadir)/locale"\" \
++	-DGL_GLEXT_PROTOTYPES \
+ 	-I $(top_srcdir) \
+ 	-iquote ../DisplayOutput/OpenGL \
+ 	-I ../Common \

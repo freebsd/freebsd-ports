@@ -155,6 +155,7 @@
     SUBDIR += dynamechs
     SUBDIR += easypaint
     SUBDIR += edje_viewer
+    SUBDIR += electricsheep
     SUBDIR += electrix
     SUBDIR += embree
     SUBDIR += enblend

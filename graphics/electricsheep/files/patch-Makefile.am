@@ -1,0 +1,22 @@
+--- Makefile.am.orig	2018-07-14 21:10:29 UTC
++++ Makefile.am
+@@ -10,7 +10,7 @@ SUBDIRS = Client MSVC/SettingsGUI
+ docdir = $(prefix)/share/doc/$(PACKAGE)-$(VERSION)
+ sharedir = $(prefix)/share
+ 
+-gnome_screensaver_dir = /usr/lib/gnome-screensaver
++gnome_screensaver_dir = $(prefix)/lib/gnome-screensaver
+ 
+ # add documentation files here
+ doc_DATA = AUTHORS README NEWS ChangeLog Runtime/Instructions.rtf Runtime/License.rtf
+@@ -72,8 +72,8 @@ install-data-local:
+ 	cp -f $(srcdir)/Runtime/TrebuchetMS-24.glf $(DESTDIR)$(sharedir)/electricsheep/
+ 	mkdir -p $(DESTDIR)$(bindir)
+ 	cp -f $(srcdir)/electricsheep-saver $(DESTDIR)$(bindir) && chmod a+rx $(DESTDIR)$(bindir)/electricsheep-saver
+-	mkdir -p $(DESTDIR)/usr/share/applications/screensavers/
+-	cp -f $(srcdir)/menu-entries/electricsheep-saver.desktop $(DESTDIR)/usr/share/applications/screensavers/electricsheep.desktop
++	mkdir -p $(DESTDIR)$(prefix)/share/applications/screensavers/
++	cp -f $(srcdir)/menu-entries/electricsheep-saver.desktop $(DESTDIR)$(prefix)/share/applications/screensavers/electricsheep.desktop
+ 	mkdir -p $(DESTDIR)$(gnome_screensaver_dir)
+ 	cp -f $(srcdir)/electricsheep-saver-gnome $(DESTDIR)$(gnome_screensaver_dir)/electricsheep-saver && chmod a+rx $(DESTDIR)$(gnome_screensaver_dir)/electricsheep-saver
+ 
