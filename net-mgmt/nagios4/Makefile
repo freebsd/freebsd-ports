@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nagios
-PORTVERSION=	4.4.2
+PORTVERSION=	4.4.3
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://assets.nagios.com/downloads/nagioscore/releases/ \
@@ -18,9 +18,9 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libpng.so:graphics/png \
 		libgd.so:graphics/gd
 
-USES=		cpe gmake jpeg perl5
+USES=		cpe gmake jpeg perl5 php
 USE_PERL5=	build
-USE_PHP=	xml
+USE_PHP=	xml filter
 USE_RC_SUBR=	nagios
 
 CONFLICTS=	nagios-[123].* nagios-devel-*
@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--with-htmurl=${NAGIOSHTMURL} \
 		--with-cgiurl=${NAGIOSCGIURL} \
 		--with-lockfile=${NAGIOSDIR}/nagios.lock \
-		--sbindir=${WWWDIR}/cgi-bin \
+		--with-cgibindir=${WWWDIR}/cgi-bin \
 		--libexecdir=${PREFIX}/libexec/nagios \
 		--datadir=${WWWDIR} \
 		--sysconfdir=${PREFIX}/etc/nagios \
