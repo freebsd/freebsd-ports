@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	dfu-programmer
-PORTVERSION=	0.5.5
+PORTVERSION=	0.7.2
 CATEGORIES=	comms
 MASTER_SITES=	SF
 
-MAINTAINER=	byu17@uclive.ac.nz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Device Firmware Update based USB programmer for Atmel chips
 
 LICENSE=	GPLv2
