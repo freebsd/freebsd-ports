@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cvxpy
-DISTVERSION=	1.0.11
+DISTVERSION=	1.0.12
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,8 +20,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}osqp>0:math/py-osqp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.19:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scs>=1.1.3:math/py-scs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}toolz>0:devel/py-toolz@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
