@@ -6,6 +6,11 @@ share/aspell/american-variant_1.alias
 share/aspell/american-w_accents.alias
 share/aspell/american-wo_accents.alias
 share/aspell/american.alias
+share/aspell/australian-variant_0.alias
+share/aspell/australian-variant_1.alias
+share/aspell/australian-w_accents.alias
+share/aspell/australian-wo_accents.alias
+share/aspell/australian.alias
 share/aspell/british-ise-w_accents.alias
 share/aspell/british-ise-wo_accents.alias
 share/aspell/british-ise.alias
@@ -34,6 +39,15 @@ share/aspell/en-w_accents.multi
 share/aspell/en-wo_accents-only.rws
 share/aspell/en-wo_accents.multi
 share/aspell/en.multi
+share/aspell/en_AU-variant_0.multi
+share/aspell/en_AU-variant_0.rws
+share/aspell/en_AU-variant_1.multi
+share/aspell/en_AU-variant_1.rws
+share/aspell/en_AU-w_accents-only.rws
+share/aspell/en_AU-w_accents.multi
+share/aspell/en_AU-wo_accents-only.rws
+share/aspell/en_AU-wo_accents.multi
+share/aspell/en_AU.multi
 share/aspell/en_CA-variant_0.multi
 share/aspell/en_CA-variant_0.rws
 share/aspell/en_CA-variant_1.multi
