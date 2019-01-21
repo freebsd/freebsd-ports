@@ -34,8 +34,8 @@ USE_GNOME=	libxml2
 # PR230207 Allow relocations against read-only segments (override lld default)
 LDFLAGS_i386=	-Wl,-z,notext
 
-OPTIONS_DEFINE+=CLI CGI FPM EMBED PHPDBG DEBUG DTRACE IPV6 MAILHEAD MYSQL LINKTHR ZTS
-OPTIONS_DEFAULT=CLI CGI FPM EMBED MYSQL LINKTHR DTRACE
+OPTIONS_DEFINE+=CLI CGI FPM EMBED PHPDBG DEBUG DTRACE IPV6 MAILHEAD MYSQLND LINKTHR ZTS
+OPTIONS_DEFAULT=CLI CGI FPM EMBED MYSQLND LINKTHR DTRACE
 OPTIONS_EXCLUDE_DragonFly=	DTRACE
 # ld(1) fails to link probes: Relocations in generic ELF (EM: 0)
 OPTIONS_EXCLUDE_aarch64=	DTRACE
@@ -54,7 +54,7 @@ FPM_DESC=	Build FPM version
 EMBED_DESC=	Build embedded library
 PHPDBG_DESC=	Interactive PHP debugger
 MAILHEAD_DESC=	Enable mail header patch
-MYSQL_DESC=	Build with MySQL Native Driver
+MYSQLND_DESC=	Build with MySQL Native Driver
 LINKTHR_DESC=	Link thread lib (for threaded extensions)
 ZTS_DESC=	Force Zend Thread Safety (ZTS) build
 
@@ -71,7 +71,7 @@ PATCHFILES+=	php-7.1.x-mail-header.patch:mail
 PATCH_SITES+=	http://choon.net/opensource/php/:mail
 .endif
 
-.if ${PORT_OPTIONS:MMYSQL}
+.if ${PORT_OPTIONS:MMYSQLND}
 CONFIGURE_ARGS+=--enable-mysqlnd
 .endif
 
