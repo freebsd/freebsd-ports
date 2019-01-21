@@ -1,0 +1,7 @@
+The mpl-scatter-density mini-package provides functionality to make it easy to
+make your own scatter density maps, both for interactive and non-interactive
+use. Fast. The following animation shows real-time interactive use with 10
+million points, but interactive performance is still good even with 100 million
+points (and more if you have enough RAM).
+
+WWW: https://github.com/astrofrog/mpl-scatter-density
