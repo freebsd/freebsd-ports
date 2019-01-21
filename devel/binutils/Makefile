@@ -14,7 +14,7 @@ COMMENT?=	GNU binary tools
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-EXTRA_PATCHES=	files/binutils-do-not-provide-shared-section-symbols.patch:-p1
+EXTRA_PATCHES=	${FILESDIR}/binutils-do-not-provide-shared-section-symbols.patch:-p1
 .if !defined(CROSS_TOOLCHAIN)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:math/gmp \
 		${LOCALBASE}/lib/libmpfr.so:math/mpfr
