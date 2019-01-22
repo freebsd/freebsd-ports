@@ -3,6 +3,7 @@
 
 PORTNAME=	portlint
 PORTVERSION=	2.18.8
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
