@@ -3,13 +3,15 @@
 PORTNAME=	barnyard2
 PORTVERSION=	1.13
 DISTVERSIONPREFIX=	v2-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Interpreter for Snort unified2 binary output files
 
 LICENSE=	GPLv2
+
+USES=		autoreconf libtool
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	firnsy
@@ -32,7 +34,6 @@ OPTIONS_DESC=	Enable tcl support for sguil
 OPTIONS_DEFAULT+=	TCL
 .endif
 
-USES=		autoreconf libtool
 USE_RC_SUBR=	barnyard2
 GNU_CONFIGURE=	yes
 
@@ -71,7 +72,7 @@ PORT_PCAP_CONFIGURE_ON=	--with-libpcap-includes=${LOCALBASE}/include \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBRO}
-DEPRECATED=     Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
+DEPRECATED=	Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
 EXPIRATION_DATE=2019-02-15
 .endif
 
