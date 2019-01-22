@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansilove
-PORTVERSION=	3.0.9
+PORTVERSION=	4.0.0
 CATEGORIES=	graphics textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	ANSi / ASCII art to PNG converter
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libgd.so:graphics/gd
+LIB_DEPENDS=	libansilove.so:graphics/libansilove
 
 USE_GITHUB=	yes
 
