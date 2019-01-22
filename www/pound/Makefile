@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.apsis.ch/pound/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 DISTNAME=	Pound-${PORTVERSION}
 
-MAINTAINER=	ncrogers@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reverse proxy, load balancer and HTTP(S) frontend for web servers
 
 LICENSE=	GPLv3
