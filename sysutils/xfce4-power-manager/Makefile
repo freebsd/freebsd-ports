@@ -18,7 +18,7 @@ LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libpolkit-gobject-1.so:sysutils/polkit \
 		libupower-glib.so:sysutils/upower
 
-USES=		gettext gmake gnome libtool pkgconfig tar:bzip2 xfce:gtk3
+USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce:gtk3
 USE_GNOME=	cairo glib20 gtk30 intlhack intltool
 USE_XFCE=	panel
 USE_XORG=	ice sm xrandr x11 xext xtst xscrnsaver
