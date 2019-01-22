@@ -2,6 +2,7 @@
 
 PORTNAME=	ldap-account-manager
 DISTVERSION=	6.3
+PORTREVISION=	1
 CATEGORIES=	sysutils www
 MASTER_SITES=	SF/${SHORTNAME}/LAM/${PORTVERSION}
 
@@ -15,7 +16,8 @@ RUN_DEPENDS=	p5-Quota>=0:sysutils/p5-Quota \
 		p5-perl-ldap>=0:net/p5-perl-ldap
 
 USES=		perl5 php:web tar:bzip2
-USE_PHP=	gettext hash iconv ldap pcre session simplexml xml json zip openssl curl gd
+USE_PHP=	curl gd gettext hash iconv json ldap openssl pcre session \
+		simplexml xml xmlreader zip
 NO_BUILD=	yes
 NO_ARCH=	yes
 
