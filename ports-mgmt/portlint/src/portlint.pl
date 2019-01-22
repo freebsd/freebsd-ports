@@ -494,6 +494,7 @@ sub checkdescr {
 		if ($_ =~ /[ \t]+\n?$/) {
 			&perror("WARN", $file, $., "whitespace before end ".
 				"of line.");
+		}
 		$tmp .= $_;
 		chomp || &perror("WARN", $file, -1, "lines should terminate with a ".
 			"newline (i.e. '\\n').");
