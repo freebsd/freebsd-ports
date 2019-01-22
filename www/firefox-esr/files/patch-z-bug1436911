@@ -38,10 +38,10 @@ diff --git dom/ipc/ContentChild.cpp dom/ipc/ContentChild.cpp
 index f61ab07b81e2..af1ef9cf4c7e 100644
 --- dom/ipc/ContentChild.cpp
 +++ dom/ipc/ContentChild.cpp
-@@ -1185,8 +1185,6 @@ void
- ContentChild::InitXPCOM(const XPCOMInitData& aXPCOMInit,
-                         const mozilla::dom::ipc::StructuredCloneData& aInitialData)
- {
+@@ -1094,8 +1094,6 @@ void ContentChild::InitGraphicsDeviceData(const Conten
+ void ContentChild::InitXPCOM(
+     const XPCOMInitData& aXPCOMInit,
+     const mozilla::dom::ipc::StructuredCloneData& aInitialData) {
 -  Preferences::SetLatePreferences(&aXPCOMInit.prefs());
 -
    // Do this as early as possible to get the parent process to initialize the
@@ -59,7 +59,7 @@ index 208bb47a970b..4ce5c6bf23d5 100644
  #include "mozilla/Sprintf.h"
  
  #ifdef MOZ_WEBRTC
-@@ -2009,7 +2008,7 @@ ContentParent::LaunchSubprocess(ProcessPriority aInitialPriority /* = PROCESS_PR
+@@ -1863,7 +1862,7 @@ bool ContentParent::LaunchSubprocess(
  
    // Serialize the early prefs.
    nsAutoCStringN<1024> prefs;
@@ -68,7 +68,7 @@ index 208bb47a970b..4ce5c6bf23d5 100644
  
    // Set up the shared memory.
    base::SharedMemory shm;
-@@ -2228,7 +2227,6 @@ ContentParent::InitInternal(ProcessPriority aInitialPriority)
+@@ -2034,7 +2033,6 @@ void ContentParent::InitInternal(ProcessPriority aInit
  
    XPCOMInitData xpcomInit;
  
@@ -81,7 +81,7 @@ deleted file mode 100644
 index 808b797d9bee..000000000000
 --- dom/ipc/ContentPrefs.cpp
 +++ /dev/null
-@@ -1,362 +0,0 @@
+@@ -1,360 +0,0 @@
 -/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
 -/* vim: set ts=8 sts=2 et sw=2 tw=80: */
 -/* This Source Code Form is subject to the terms of the Mozilla Public
@@ -103,344 +103,342 @@ index 808b797d9bee..000000000000
 - ******************************************************************************/
 -
 -const char* mozilla::dom::ContentPrefs::gEarlyPrefs[] = {
--  "accessibility.monoaudio.enable",
--  "accessibility.mouse_focuses_formcontrol",
--  "accessibility.tabfocus_applies_to_xul",
--  "app.update.channel",
--  "browser.autofocus",
--  "browser.dom.window.dump.enabled",
--  "browser.sessionhistory.max_entries",
--  "browser.sessionhistory.max_total_viewers",
+-    "accessibility.monoaudio.enable",
+-    "accessibility.mouse_focuses_formcontrol",
+-    "accessibility.tabfocus_applies_to_xul",
+-    "app.update.channel",
+-    "browser.autofocus",
+-    "browser.dom.window.dump.enabled",
+-    "browser.sessionhistory.max_entries",
+-    "browser.sessionhistory.max_total_viewers",
 -#if defined(NIGHTLY_BUILD) || defined(DEBUG)
--  "browser.startup.record",
+-    "browser.startup.record",
 -#endif
 -#if defined(ANDROID)
--  "consoleservice.logcat",
+-    "consoleservice.logcat",
 -#endif
--  "content.cors.disable",
--  "content.cors.no_private_data",
--  "content.notify.backoffcount",
--  "content.notify.interval",
--  "content.notify.ontimer",
--  "content.sink.enable_perf_mode",
--  "content.sink.event_probe_rate",
--  "content.sink.initial_perf_time",
--  "content.sink.interactive_deflect_count",
--  "content.sink.interactive_parse_time",
--  "content.sink.interactive_time",
--  "content.sink.pending_event_mode",
--  "content.sink.perf_deflect_count",
--  "content.sink.perf_parse_time",
--  "device.storage.prompt.testing",
--  "device.storage.writable.name",
--  "devtools.enabled",
--  "dom.allow_XUL_XBL_for_file",
--  "dom.allow_cut_copy",
--  "dom.animations-api.core.enabled",
--  "dom.animations-api.element-animate.enabled",
--  "dom.animations-api.pending-member.enabled",
--  "dom.enable_frame_timing",
--  "dom.enable_performance",
--  "dom.enable_performance_navigation_timing",
--  "dom.enable_resource_timing",
--  "dom.event.handling-user-input-time-limit",
--  "dom.event.touch.coalescing.enabled",
--  "dom.forms.autocomplete.formautofill",
--  "dom.forms.inputmode",
--  "dom.input.skip_cursor_move_for_same_value_set",
--  "dom.ipc.processPriorityManager.backgroundGracePeriodMS",
--  "dom.ipc.processPriorityManager.backgroundPerceivableGracePeriodMS",
--  "dom.ipc.useNativeEventProcessing.content",
--  "dom.max_chrome_script_run_time",
--  "dom.max_ext_content_script_run_time",
--  "dom.max_script_run_time",
--  "dom.mozBrowserFramesEnabled",
--  "dom.performance.enable_notify_performance_timing",
--  "dom.performance.enable_user_timing_logging",
--  "dom.placeholder.show_on_focus",
--  "dom.requestIdleCallback.enabled",
--  "dom.script_loader.bytecode_cache.enabled",
--  "dom.script_loader.bytecode_cache.strategy",
--  "dom.storage.testing",
--  "dom.url.encode_decode_hash",
--  "dom.url.getters_decode_hash",
--  "dom.use_watchdog",
--  "dom.vibrator.enabled",
--  "dom.vibrator.max_vibrate_list_len",
--  "dom.vibrator.max_vibrate_ms",
--  "dom.webcomponents.customelements.enabled",
--  "dom.webcomponents.shadowdom.enabled",
--  "focusmanager.testmode",
--  "font.size.inflation.disabledInMasterProcess",
--  "font.size.inflation.emPerLine",
--  "font.size.inflation.forceEnabled",
--  "font.size.inflation.lineThreshold",
--  "font.size.inflation.mappingIntercept",
--  "font.size.inflation.maxRatio",
--  "font.size.inflation.minTwips",
--  "font.size.systemFontScale",
--  "full-screen-api.allow-trusted-requests-only",
--  "full-screen-api.enabled",
--  "full-screen-api.unprefix.enabled",
+-    "content.cors.disable",
+-    "content.cors.no_private_data",
+-    "content.notify.backoffcount",
+-    "content.notify.interval",
+-    "content.notify.ontimer",
+-    "content.sink.enable_perf_mode",
+-    "content.sink.event_probe_rate",
+-    "content.sink.initial_perf_time",
+-    "content.sink.interactive_deflect_count",
+-    "content.sink.interactive_parse_time",
+-    "content.sink.interactive_time",
+-    "content.sink.pending_event_mode",
+-    "content.sink.perf_deflect_count",
+-    "content.sink.perf_parse_time",
+-    "device.storage.prompt.testing",
+-    "device.storage.writable.name",
+-    "devtools.enabled",
+-    "dom.allow_XUL_XBL_for_file",
+-    "dom.allow_cut_copy",
+-    "dom.animations-api.core.enabled",
+-    "dom.animations-api.element-animate.enabled",
+-    "dom.animations-api.pending-member.enabled",
+-    "dom.enable_frame_timing",
+-    "dom.enable_performance",
+-    "dom.enable_performance_navigation_timing",
+-    "dom.enable_resource_timing",
+-    "dom.event.handling-user-input-time-limit",
+-    "dom.event.touch.coalescing.enabled",
+-    "dom.forms.autocomplete.formautofill",
+-    "dom.forms.inputmode",
+-    "dom.input.skip_cursor_move_for_same_value_set",
+-    "dom.ipc.processPriorityManager.backgroundGracePeriodMS",
+-    "dom.ipc.processPriorityManager.backgroundPerceivableGracePeriodMS",
+-    "dom.ipc.useNativeEventProcessing.content",
+-    "dom.max_chrome_script_run_time",
+-    "dom.max_ext_content_script_run_time",
+-    "dom.max_script_run_time",
+-    "dom.mozBrowserFramesEnabled",
+-    "dom.performance.enable_notify_performance_timing",
+-    "dom.performance.enable_user_timing_logging",
+-    "dom.placeholder.show_on_focus",
+-    "dom.requestIdleCallback.enabled",
+-    "dom.script_loader.bytecode_cache.enabled",
+-    "dom.script_loader.bytecode_cache.strategy",
+-    "dom.storage.testing",
+-    "dom.url.encode_decode_hash",
+-    "dom.url.getters_decode_hash",
+-    "dom.use_watchdog",
+-    "dom.vibrator.enabled",
+-    "dom.vibrator.max_vibrate_list_len",
+-    "dom.vibrator.max_vibrate_ms",
+-    "dom.webcomponents.customelements.enabled",
+-    "dom.webcomponents.shadowdom.enabled",
+-    "focusmanager.testmode",
+-    "font.size.inflation.disabledInMasterProcess",
+-    "font.size.inflation.emPerLine",
+-    "font.size.inflation.forceEnabled",
+-    "font.size.inflation.lineThreshold",
+-    "font.size.inflation.mappingIntercept",
+-    "font.size.inflation.maxRatio",
+-    "font.size.inflation.minTwips",
+-    "font.size.systemFontScale",
+-    "full-screen-api.allow-trusted-requests-only",
+-    "full-screen-api.enabled",
+-    "full-screen-api.unprefix.enabled",
 -#ifdef FUZZING
--  "fuzzing.enabled",
+-    "fuzzing.enabled",
 -#endif
--  "gfx.font_rendering.opentype_svg.enabled",
--  "hangmonitor.timeout",
--  "html5.flushtimer.initialdelay",
--  "html5.flushtimer.subsequentdelay",
--  "html5.offmainthread",
--  "intl.charset.fallback.tld",
--  "intl.charset.fallback.utf8_for_file",
--  "intl.ime.hack.on_ime_unaware_apps.fire_key_events_for_composition",
--  "javascript.enabled",
--  "javascript.options.array_prototype_values",
--  "javascript.options.asmjs",
--  "javascript.options.asyncstack",
--  "javascript.options.baselinejit",
--  "javascript.options.baselinejit.threshold",
--  "javascript.options.baselinejit.unsafe_eager_compilation",
--  "javascript.options.discardSystemSource",
--  "javascript.options.dump_stack_on_debuggee_would_run",
--  "javascript.options.gczeal",
--  "javascript.options.gczeal.frequency",
--  "javascript.options.ion",
--  "javascript.options.ion.offthread_compilation",
--  "javascript.options.ion.threshold",
--  "javascript.options.ion.unsafe_eager_compilation",
--  "javascript.options.jit.full_debug_checks",
--  "javascript.options.native_regexp",
--  "javascript.options.parallel_parsing",
--  "javascript.options.shared_memory",
--  "javascript.options.spectre.index_masking",
--  "javascript.options.spectre.jit_to_C++_calls",
--  "javascript.options.spectre.object_mitigations.barriers",
--  "javascript.options.spectre.object_mitigations.misc",
--  "javascript.options.spectre.string_mitigations",
--  "javascript.options.spectre.value_masking",
--  "javascript.options.streams",
--  "javascript.options.strict",
--  "javascript.options.strict.debug",
--  "javascript.options.throw_on_asmjs_validation_failure",
--  "javascript.options.throw_on_debuggee_would_run",
--  "javascript.options.wasm",
--  "javascript.options.wasm_baselinejit",
--  "javascript.options.wasm_ionjit",
--  "javascript.options.werror",
--  "javascript.use_us_english_locale",
--  "jsloader.shareGlobal",
--  "layout.css.all-shorthand.enabled",
--  "layout.css.background-blend-mode.enabled",
--  "layout.css.box-decoration-break.enabled",
--  "layout.css.color-adjust.enabled",
--  "layout.css.column-span.enabled",
--  "layout.css.contain.enabled",
--  "layout.css.control-characters.visible",
--  "layout.css.emulate-moz-box-with-flex",
--  "layout.css.expensive-style-struct-assertions.enabled",
--  "layout.css.float-logical-values.enabled",
--  "layout.css.font-display.enabled",
--  "layout.css.font-variations.enabled",
--  "layout.css.frames-timing.enabled",
--  "layout.css.getBoxQuads.enabled",
--  "layout.css.grid-template-subgrid-value.enabled",
--  "layout.css.grid.enabled",
--  "layout.css.image-orientation.enabled",
--  "layout.css.individual-transform.enabled",
--  "layout.css.initial-letter.enabled",
--  "layout.css.isolation.enabled",
--  "layout.css.mix-blend-mode.enabled",
--  "layout.css.moz-document.content.enabled",
--  "layout.css.osx-font-smoothing.enabled",
--  "layout.css.overflow-clip-box.enabled",
--  "layout.css.overscroll-behavior.enabled",
--  "layout.css.prefixes.animations",
--  "layout.css.prefixes.border-image",
--  "layout.css.prefixes.box-sizing",
--  "layout.css.prefixes.device-pixel-ratio-webkit",
--  "layout.css.prefixes.font-features",
--  "layout.css.prefixes.gradients",
--  "layout.css.prefixes.transforms",
--  "layout.css.prefixes.transitions",
--  "layout.css.prefixes.webkit",
--  "layout.css.scope-pseudo.enabled",
--  "layout.css.scoped-style.enabled",
--  "layout.css.scroll-behavior.property-enabled",
--  "layout.css.scroll-snap.enabled",
+-    "gfx.font_rendering.opentype_svg.enabled",
+-    "hangmonitor.timeout",
+-    "html5.flushtimer.initialdelay",
+-    "html5.flushtimer.subsequentdelay",
+-    "html5.offmainthread",
+-    "intl.charset.fallback.tld",
+-    "intl.charset.fallback.utf8_for_file",
+-    "intl.ime.hack.on_ime_unaware_apps.fire_key_events_for_composition",
+-    "javascript.enabled",
+-    "javascript.options.array_prototype_values",
+-    "javascript.options.asmjs",
+-    "javascript.options.asyncstack",
+-    "javascript.options.baselinejit",
+-    "javascript.options.baselinejit.threshold",
+-    "javascript.options.baselinejit.unsafe_eager_compilation",
+-    "javascript.options.discardSystemSource",
+-    "javascript.options.dump_stack_on_debuggee_would_run",
+-    "javascript.options.gczeal",
+-    "javascript.options.gczeal.frequency",
+-    "javascript.options.ion",
+-    "javascript.options.ion.offthread_compilation",
+-    "javascript.options.ion.threshold",
+-    "javascript.options.ion.unsafe_eager_compilation",
+-    "javascript.options.jit.full_debug_checks",
+-    "javascript.options.native_regexp",
+-    "javascript.options.parallel_parsing",
+-    "javascript.options.shared_memory",
+-    "javascript.options.spectre.index_masking",
+-    "javascript.options.spectre.jit_to_C++_calls",
+-    "javascript.options.spectre.object_mitigations.barriers",
+-    "javascript.options.spectre.object_mitigations.misc",
+-    "javascript.options.spectre.string_mitigations",
+-    "javascript.options.spectre.value_masking",
+-    "javascript.options.streams",
+-    "javascript.options.strict",
+-    "javascript.options.strict.debug",
+-    "javascript.options.throw_on_asmjs_validation_failure",
+-    "javascript.options.throw_on_debuggee_would_run",
+-    "javascript.options.wasm",
+-    "javascript.options.wasm_baselinejit",
+-    "javascript.options.wasm_ionjit",
+-    "javascript.options.werror",
+-    "javascript.use_us_english_locale",
+-    "jsloader.shareGlobal",
+-    "layout.css.all-shorthand.enabled",
+-    "layout.css.background-blend-mode.enabled",
+-    "layout.css.box-decoration-break.enabled",
+-    "layout.css.color-adjust.enabled",
+-    "layout.css.column-span.enabled",
+-    "layout.css.contain.enabled",
+-    "layout.css.control-characters.visible",
+-    "layout.css.emulate-moz-box-with-flex",
+-    "layout.css.expensive-style-struct-assertions.enabled",
+-    "layout.css.float-logical-values.enabled",
+-    "layout.css.font-display.enabled",
+-    "layout.css.font-variations.enabled",
+-    "layout.css.frames-timing.enabled",
+-    "layout.css.getBoxQuads.enabled",
+-    "layout.css.grid-template-subgrid-value.enabled",
+-    "layout.css.grid.enabled",
+-    "layout.css.image-orientation.enabled",
+-    "layout.css.individual-transform.enabled",
+-    "layout.css.initial-letter.enabled",
+-    "layout.css.isolation.enabled",
+-    "layout.css.mix-blend-mode.enabled",
+-    "layout.css.moz-document.content.enabled",
+-    "layout.css.osx-font-smoothing.enabled",
+-    "layout.css.overflow-clip-box.enabled",
+-    "layout.css.overscroll-behavior.enabled",
+-    "layout.css.prefixes.animations",
+-    "layout.css.prefixes.border-image",
+-    "layout.css.prefixes.box-sizing",
+-    "layout.css.prefixes.device-pixel-ratio-webkit",
+-    "layout.css.prefixes.font-features",
+-    "layout.css.prefixes.gradients",
+-    "layout.css.prefixes.transforms",
+-    "layout.css.prefixes.transitions",
+-    "layout.css.prefixes.webkit",
+-    "layout.css.scope-pseudo.enabled",
+-    "layout.css.scoped-style.enabled",
+-    "layout.css.scroll-behavior.property-enabled",
+-    "layout.css.scroll-snap.enabled",
 -#ifdef MOZ_STYLO
--  "layout.css.servo.chrome.enabled",
--  "layout.css.servo.enabled",
+-    "layout.css.servo.chrome.enabled",
+-    "layout.css.servo.enabled",
 -#endif
--  "layout.css.shape-outside.enabled",
--  "layout.css.text-align-unsafe-value.enabled",
--  "layout.css.text-combine-upright-digits.enabled",
--  "layout.css.text-combine-upright.enabled",
--  "layout.css.text-justify.enabled",
--  "layout.css.touch_action.enabled",
--  "layout.css.visited_links_enabled",
--  "layout.idle_period.required_quiescent_frames",
--  "layout.idle_period.time_limit",
--  "layout.interruptible-reflow.enabled",
--  "mathml.disabled",
--  "media.audio-max-decode-error",
--  "media.cache_readahead_limit",
--  "media.cache_resume_threshold",
--  "media.cache_size",
--  "media.clearkey.persistent-license.enabled",
--  "media.cubeb.backend",
--  "media.cubeb.sandbox",
--  "media.cubeb_latency_msg_frames",
--  "media.cubeb_latency_playback_ms",
--  "media.decoder-doctor.wmf-disabled-is-failure",
--  "media.decoder.recycle.enabled",
--  "media.decoder.skip-to-next-key-frame.enabled",
--  "media.dormant-on-pause-timeout-ms",
--  "media.eme.audio.blank",
--  "media.eme.chromium-api.video-shmems",
--  "media.eme.enabled",
--  "media.eme.video.blank",
--  "media.ffmpeg.enabled",
--  "media.ffmpeg.low-latency.enabled",
--  "media.ffvpx.enabled",
--  "media.ffvpx.low-latency.enabled",
--  "media.flac.enabled",
--  "media.forcestereo.enabled",
--  "media.gmp.decoder.enabled",
--  "media.gmp.insecure.allow",
--  "media.gpu-process-decoder",
--  "media.hls.enabled",
--  "media.libavcodec.allow-obsolete",
--  "media.memory_cache_max_size",
--  "media.memory_caches_combined_limit_kb",
--  "media.memory_caches_combined_limit_pc_sysmem",
--  "media.mp4.enabled",
--  "media.navigator.mediadatadecoder_enabled",
--  "media.ogg.enabled",
--  "media.ogg.flac.enabled",
--  "media.playback.warnings-as-errors",
--  "media.playback.warnings-as-errors.stagefright-vs-rust",
--  "media.resampling.enabled",
--  "media.resume-bkgnd-video-on-tabhover",
--  "media.ruin-av-sync.enabled",
--  "media.rust.mp4parser",
--  "media.rust.test_mode",
--  "media.seamless-looping",
--  "media.suspend-bkgnd-video.delay-ms",
--  "media.suspend-bkgnd-video.enabled",
--  "media.use-blank-decoder",
--  "media.video-max-decode-error",
--  "media.video_stats.enabled",
--  "media.videocontrols.lock-video-orientation",
--  "media.volume_scale",
--  "media.webspeech.recognition.enable",
--  "media.webspeech.recognition.force_enable",
--  "media.webspeech.synth.force_global_queue",
--  "media.webspeech.test.enable",
--  "media.webspeech.test.fake_fsm_events",
--  "media.webspeech.test.fake_recognition_service",
--  "media.wmf.allow-unsupported-resolutions",
--  "media.wmf.enabled",
--  "media.wmf.skip-blacklist",
--  "media.wmf.vp9.enabled",
--  "network.IDN.blacklist_chars",
--  "network.IDN.restriction_profile",
--  "network.IDN.use_whitelist",
--  "network.IDN_show_punycode",
--  "network.buffer.cache.count",
--  "network.buffer.cache.size",
--  "network.captive-portal-service.enabled",
--  "network.cookie.cookieBehavior",
--  "network.cookie.lifetimePolicy",
--  "network.dns.disablePrefetch",
--  "network.dns.disablePrefetchFromHTTPS",
--  "network.file.disable_unc_paths",
--  "network.file.path_blacklist",
--  "network.http.tailing.enabled",
--  "network.jar.block-remote-files",
--  "network.loadinfo.skip_type_assertion",
--  "network.notify.changed",
--  "network.offline-mirrors-connectivity",
--  "network.protocol-handler.external.jar",
--  "network.proxy.type",
--  "network.security.ports.banned",
--  "network.security.ports.banned.override",
--  "network.standard-url.enable-rust",
--  "network.standard-url.max-length",
--  "network.standard-url.punycode-host",
--  "network.sts.max_time_for_events_between_two_polls",
--  "network.sts.max_time_for_pr_close_during_shutdown",
--  "network.tcp.keepalive.enabled",
--  "network.tcp.keepalive.idle_time",
--  "network.tcp.keepalive.probe_count",
--  "network.tcp.keepalive.retry_interval",
--  "network.tcp.sendbuffer",
--  "nglayout.debug.invalidation",
--  "privacy.donottrackheader.enabled",
--  "privacy.firstparty.isolate",
--  "privacy.firstparty.isolate.restrict_opener_access",
--  "privacy.reduceTimerPrecision",
--  "privacy.resistFingerprinting",
--  "privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts",
--  "privacy.resistFingerprinting.reduceTimerPrecision.jitter",
--  "privacy.resistFingerprinting.reduceTimerPrecision.microseconds",
--  "privacy.resistFingerprinting.target_video_res",
--  "privacy.resistFingerprinting.video_dropped_ratio",
--  "privacy.resistFingerprinting.video_frames_per_sec",
--  "privacy.trackingprotection.lower_network_priority",
--  "privacy.window.maxInnerHeight",
--  "privacy.window.maxInnerWidth",
--  "security.csp.enable",
--  "security.data_uri.block_toplevel_data_uri_navigations",
--  "security.data_uri.unique_opaque_origin",
--  "security.fileuri.strict_origin_policy",
--  "security.mixed_content.block_active_content",
--  "security.mixed_content.block_display_content",
--  "security.mixed_content.block_object_subrequest",
--  "security.mixed_content.hsts_priming_cache_timeout",
--  "security.mixed_content.send_hsts_priming",
--  "security.mixed_content.upgrade_display_content",
--  "security.mixed_content.use_hsts",
--  "security.sandbox.content.level",
--  "security.sandbox.content.tempDirSuffix",
--  "security.sandbox.logging.enabled",
--  "security.sandbox.mac.track.violations",
--  "security.sandbox.windows.log.stackTraceDepth",
--  "svg.disabled",
--  "svg.display-lists.hit-testing.enabled",
--  "svg.display-lists.painting.enabled",
--  "svg.new-getBBox.enabled",
--  "svg.path-caching.enabled",
--  "svg.transform-box.enabled",
--  "toolkit.asyncshutdown.crash_timeout",
--  "toolkit.asyncshutdown.log",
--  "toolkit.osfile.log",
--  "toolkit.osfile.log.redirect",
--  "toolkit.telemetry.enabled",
--  "toolkit.telemetry.idleTimeout",
--  "toolkit.telemetry.initDelay",
--  "toolkit.telemetry.log.dump",
--  "toolkit.telemetry.log.level",
--  "toolkit.telemetry.minSubsessionLength",
--  "toolkit.telemetry.scheduler.idleTickInterval",
--  "toolkit.telemetry.scheduler.tickInterval",
--  "toolkit.telemetry.testing.overridePreRelease",
--  "toolkit.telemetry.unified",
--  "ui.key.menuAccessKeyFocuses",
--  "ui.popup.disable_autohide",
--  "ui.use_activity_cursor",
--  "view_source.editor.external",
--  "zoom.maxPercent",
--  "zoom.minPercent"
--};
+-    "layout.css.shape-outside.enabled",
+-    "layout.css.text-align-unsafe-value.enabled",
+-    "layout.css.text-combine-upright-digits.enabled",
+-    "layout.css.text-combine-upright.enabled",
+-    "layout.css.text-justify.enabled",
+-    "layout.css.touch_action.enabled",
+-    "layout.css.visited_links_enabled",
+-    "layout.idle_period.required_quiescent_frames",
+-    "layout.idle_period.time_limit",
+-    "layout.interruptible-reflow.enabled",
+-    "mathml.disabled",
+-    "media.audio-max-decode-error",
+-    "media.cache_readahead_limit",
+-    "media.cache_resume_threshold",
+-    "media.cache_size",
+-    "media.clearkey.persistent-license.enabled",
+-    "media.cubeb.backend",
+-    "media.cubeb.sandbox",
+-    "media.cubeb_latency_msg_frames",
+-    "media.cubeb_latency_playback_ms",
+-    "media.decoder-doctor.wmf-disabled-is-failure",
+-    "media.decoder.recycle.enabled",
+-    "media.decoder.skip-to-next-key-frame.enabled",
+-    "media.dormant-on-pause-timeout-ms",
+-    "media.eme.audio.blank",
+-    "media.eme.chromium-api.video-shmems",
+-    "media.eme.enabled",
+-    "media.eme.video.blank",
+-    "media.ffmpeg.enabled",
+-    "media.ffmpeg.low-latency.enabled",
+-    "media.ffvpx.enabled",
+-    "media.ffvpx.low-latency.enabled",
+-    "media.flac.enabled",
+-    "media.forcestereo.enabled",
+-    "media.gmp.decoder.enabled",
+-    "media.gmp.insecure.allow",
+-    "media.gpu-process-decoder",
+-    "media.hls.enabled",
+-    "media.libavcodec.allow-obsolete",
+-    "media.memory_cache_max_size",
+-    "media.memory_caches_combined_limit_kb",
+-    "media.memory_caches_combined_limit_pc_sysmem",
+-    "media.mp4.enabled",
+-    "media.navigator.mediadatadecoder_enabled",
+-    "media.ogg.enabled",
+-    "media.ogg.flac.enabled",
+-    "media.playback.warnings-as-errors",
+-    "media.playback.warnings-as-errors.stagefright-vs-rust",
+-    "media.resampling.enabled",
+-    "media.resume-bkgnd-video-on-tabhover",
+-    "media.ruin-av-sync.enabled",
+-    "media.rust.mp4parser",
+-    "media.rust.test_mode",
+-    "media.seamless-looping",
+-    "media.suspend-bkgnd-video.delay-ms",
+-    "media.suspend-bkgnd-video.enabled",
+-    "media.use-blank-decoder",
+-    "media.video-max-decode-error",
+-    "media.video_stats.enabled",
+-    "media.videocontrols.lock-video-orientation",
+-    "media.volume_scale",
+-    "media.webspeech.recognition.enable",
+-    "media.webspeech.recognition.force_enable",
+-    "media.webspeech.synth.force_global_queue",
+-    "media.webspeech.test.enable",
+-    "media.webspeech.test.fake_fsm_events",
+-    "media.webspeech.test.fake_recognition_service",
+-    "media.wmf.allow-unsupported-resolutions",
+-    "media.wmf.enabled",
+-    "media.wmf.skip-blacklist",
+-    "media.wmf.vp9.enabled",
+-    "network.IDN.blacklist_chars",
+-    "network.IDN.restriction_profile",
+-    "network.IDN.use_whitelist",
+-    "network.IDN_show_punycode",
+-    "network.buffer.cache.count",
+-    "network.buffer.cache.size",
+-    "network.captive-portal-service.enabled",
+-    "network.cookie.cookieBehavior",
+-    "network.cookie.lifetimePolicy",
+-    "network.dns.disablePrefetch",
+-    "network.dns.disablePrefetchFromHTTPS",
+-    "network.file.disable_unc_paths",
+-    "network.file.path_blacklist",
+-    "network.http.tailing.enabled",
+-    "network.jar.block-remote-files",
+-    "network.loadinfo.skip_type_assertion",
+-    "network.notify.changed",
+-    "network.offline-mirrors-connectivity",
+-    "network.protocol-handler.external.jar",
+-    "network.proxy.type",
+-    "network.security.ports.banned",
+-    "network.security.ports.banned.override",
+-    "network.standard-url.enable-rust",
+-    "network.standard-url.max-length",
+-    "network.standard-url.punycode-host",
+-    "network.sts.max_time_for_events_between_two_polls",
+-    "network.sts.max_time_for_pr_close_during_shutdown",
+-    "network.tcp.keepalive.enabled",
+-    "network.tcp.keepalive.idle_time",
+-    "network.tcp.keepalive.probe_count",
+-    "network.tcp.keepalive.retry_interval",
+-    "network.tcp.sendbuffer",
+-    "nglayout.debug.invalidation",
+-    "privacy.donottrackheader.enabled",
+-    "privacy.firstparty.isolate",
+-    "privacy.firstparty.isolate.restrict_opener_access",
+-    "privacy.reduceTimerPrecision",
+-    "privacy.resistFingerprinting",
+-    "privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts",
+-    "privacy.resistFingerprinting.reduceTimerPrecision.jitter",
+-    "privacy.resistFingerprinting.reduceTimerPrecision.microseconds",
+-    "privacy.resistFingerprinting.target_video_res",
+-    "privacy.resistFingerprinting.video_dropped_ratio",
+-    "privacy.resistFingerprinting.video_frames_per_sec",
+-    "privacy.spoof_english",
+-    "privacy.trackingprotection.lower_network_priority",
+-    "privacy.window.maxInnerHeight",
+-    "privacy.window.maxInnerWidth",
+-    "security.csp.enable",
+-    "security.data_uri.block_toplevel_data_uri_navigations",
+-    "security.data_uri.unique_opaque_origin",
+-    "security.fileuri.strict_origin_policy",
+-    "security.mixed_content.block_active_content",
+-    "security.mixed_content.block_display_content",
+-    "security.mixed_content.block_object_subrequest",
+-    "security.mixed_content.hsts_priming_cache_timeout",
+-    "security.mixed_content.send_hsts_priming",
+-    "security.mixed_content.upgrade_display_content",
+-    "security.mixed_content.use_hsts",
+-    "security.sandbox.content.level",
+-    "security.sandbox.content.tempDirSuffix",
+-    "security.sandbox.logging.enabled",
+-    "security.sandbox.mac.track.violations",
+-    "security.sandbox.windows.log.stackTraceDepth",
+-    "svg.disabled",
+-    "svg.display-lists.hit-testing.enabled",
+-    "svg.display-lists.painting.enabled",
+-    "svg.new-getBBox.enabled",
+-    "svg.path-caching.enabled",
+-    "svg.transform-box.enabled",
+-    "toolkit.asyncshutdown.crash_timeout",
+-    "toolkit.asyncshutdown.log",
+-    "toolkit.osfile.log",
+-    "toolkit.osfile.log.redirect",
+-    "toolkit.telemetry.enabled",
+-    "toolkit.telemetry.idleTimeout",
+-    "toolkit.telemetry.initDelay",
+-    "toolkit.telemetry.log.dump",
+-    "toolkit.telemetry.log.level",
+-    "toolkit.telemetry.minSubsessionLength",
+-    "toolkit.telemetry.scheduler.idleTickInterval",
+-    "toolkit.telemetry.scheduler.tickInterval",
+-    "toolkit.telemetry.testing.overridePreRelease",
+-    "toolkit.telemetry.unified",
+-    "ui.key.menuAccessKeyFocuses",
+-    "ui.popup.disable_autohide",
+-    "ui.use_activity_cursor",
+-    "view_source.editor.external",
+-    "zoom.maxPercent",
+-    "zoom.minPercent"};
 -
--const char** mozilla::dom::ContentPrefs::GetEarlyPrefs(size_t* aCount)
--{
+-const char** mozilla::dom::ContentPrefs::GetEarlyPrefs(size_t* aCount) {
 -  *aCount = ArrayLength(ContentPrefs::gEarlyPrefs);
 -  return gEarlyPrefs;
 -}
 -
--const char* mozilla::dom::ContentPrefs::GetEarlyPref(size_t aIndex)
--{
+-const char* mozilla::dom::ContentPrefs::GetEarlyPref(size_t aIndex) {
 -  MOZ_ASSERT(aIndex < ArrayLength(ContentPrefs::gEarlyPrefs));
 -  return gEarlyPrefs[aIndex];
 -}
@@ -465,16 +463,16 @@ index 72ce8d236c11..000000000000
 -namespace dom {
 -
 -class ContentPrefs {
--public:
+- public:
 -  static const char** GetEarlyPrefs(size_t* aCount);
 -  static const char* GetEarlyPref(size_t aIndex);
 -
--private:
+- private:
 -  static const char* gEarlyPrefs[];
 -};
 -
--}
--}
+-}  // namespace dom
+-}  // namespace mozilla
 -
 -#endif
 diff --git dom/ipc/ContentProcess.cpp dom/ipc/ContentProcess.cpp
@@ -489,7 +487,7 @@ index 2441c8cb9224..c00283dc5084 100644
  #include "base/shared_memory.h"
  #include "mozilla/Preferences.h"
  #include "mozilla/Scheduler.h"
-@@ -226,8 +225,8 @@ ContentProcess::Init(int aArgc, char* aArgv[])
+@@ -212,8 +211,8 @@ bool ContentProcess::Init(int aArgc, char* aArgv[]) {
      NS_ERROR("failed to map shared memory in the child");
      return false;
    }
@@ -499,7 +497,7 @@ index 2441c8cb9224..c00283dc5084 100644
 +                                      prefsLen);
  
    Scheduler::SetPrefs(schedulerPrefs);
-   mContent.Init(IOThreadChild::message_loop(),
+   mContent.Init(IOThreadChild::message_loop(), ParentPid(),
 diff --git dom/ipc/PContent.ipdl dom/ipc/PContent.ipdl
 index 5d077976569a..fb967ffc53a9 100644
 --- dom/ipc/PContent.ipdl
@@ -549,7 +547,7 @@ diff --git layout/style/nsCSSProps.h layout/style/nsCSSProps.h
 index dce44bf61b35..80288336a08b 100644
 --- layout/style/nsCSSProps.h
 +++ layout/style/nsCSSProps.h
-@@ -645,7 +645,7 @@ public:
+@@ -640,7 +640,7 @@ class nsCSSProps {
      // In the child process, assert that we're not trying to parse stylesheets
      // before we've gotten all our prefs.
      MOZ_ASSERT_IF(!XRE_IsParentProcess(),
@@ -570,43 +568,38 @@ index fe780686f2eb..488095f49236 100644
  #include "mozilla/dom/PContent.h"
  #include "mozilla/HashFunctions.h"
  #include "mozilla/Logging.h"
-@@ -131,6 +130,29 @@ enum class PrefType : uint8_t
+@@ -129,6 +128,25 @@ enum class PrefType : uint8_t {
    Bool = 3,
  };
  
 +// This is used for pref names and string pref values. We encode the string
 +// length, then a '/', then the string chars. This encoding means there are no
 +// special chars that are forbidden or require escaping.
-+static void
-+SerializeAndAppendString(const char* aChars, nsCString& aStr)
-+{
++static void SerializeAndAppendString(const char* aChars, nsCString& aStr) {
 +  aStr.AppendInt(uint32_t(strlen(aChars)));
 +  aStr.Append('/');
 +  aStr.Append(aChars);
 +}
 +
-+static char*
-+DeserializeString(char* aChars, nsCString& aStr)
-+{
++static char* DeserializeString(char* aChars, nsCString& aStr) {
 +  char* p = aChars;
 +  uint32_t length = strtol(p, &p, 10);
 +  MOZ_ASSERT(p[0] == '/');
-+  p++; // move past the '/'
++  p++;  // move past the '/'
 +  aStr.Assign(p, length);
-+  p += length; // move past the string itself
++  p += length;  // move past the string itself
 +  return p;
 +}
 +
  // Keep this in sync with PrefValue in prefs_parser/src/lib.rs.
  union PrefValue {
    const char* mStringVal;
-@@ -223,6 +245,64 @@ union PrefValue {
+@@ -215,6 +233,61 @@ union PrefValue {
          MOZ_CRASH();
      }
    }
 +
-+  void SerializeAndAppend(PrefType aType, nsCString& aStr)
-+  {
++  void SerializeAndAppend(PrefType aType, nsCString& aStr) {
 +    switch (aType) {
 +      case PrefType::Bool:
 +        aStr.Append(mBoolVal ? 'T' : 'F');
@@ -627,10 +620,8 @@ index fe780686f2eb..488095f49236 100644
 +    }
 +  }
 +
-+  static char* Deserialize(PrefType aType,
-+                           char* aStr,
-+                           dom::MaybePrefValue* aDomValue)
-+  {
++  static char* Deserialize(PrefType aType, char* aStr,
++                           dom::MaybePrefValue* aDomValue) {
 +    char* p = aStr;
 +
 +    switch (aType) {
@@ -665,7 +656,7 @@ index fe780686f2eb..488095f49236 100644
  };
  
  #ifdef DEBUG
-@@ -694,6 +774,159 @@ public:
+@@ -656,6 +729,157 @@ class Pref {
      return false;
    }
  
@@ -721,8 +712,7 @@ index fe780686f2eb..488095f49236 100644
 +  // - "S-:10/my.string2:5/1.234:\n"
 +  // - "S-:10/my.string3::7/string!\n"
 +
-+  void SerializeAndAppend(nsCString& aStr)
-+  {
++  void SerializeAndAppend(nsCString& aStr) {
 +    switch (Type()) {
 +      case PrefType::Bool:
 +        aStr.Append('B');
@@ -759,8 +749,7 @@ index fe780686f2eb..488095f49236 100644
 +    aStr.Append('\n');
 +  }
 +
-+  static char* Deserialize(char* aStr, dom::Pref* aDomPref)
-+  {
++  static char* Deserialize(char* aStr, dom::Pref* aDomPref) {
 +    char* p = aStr;
 +
 +    // The type.
@@ -775,7 +764,7 @@ index fe780686f2eb..488095f49236 100644
 +      NS_ERROR("bad pref type");
 +      type = PrefType::None;
 +    }
-+    p++; // move past the type char
++    p++;  // move past the type char
 +
 +    // Locked?
 +    bool isLocked;
@@ -787,17 +776,17 @@ index fe780686f2eb..488095f49236 100644
 +      NS_ERROR("bad pref locked status");
 +      isLocked = false;
 +    }
-+    p++; // move past the isLocked char
++    p++;  // move past the isLocked char
 +
 +    MOZ_ASSERT(*p == ':');
-+    p++; // move past the ':'
++    p++;  // move past the ':'
 +
 +    // The pref name.
 +    nsCString name;
 +    p = DeserializeString(p, name);
 +
 +    MOZ_ASSERT(*p == ':');
-+    p++; // move past the ':' preceding the default value
++    p++;  // move past the ':' preceding the default value
 +
 +    dom::MaybePrefValue maybeDefaultValue;
 +    if (*p != ':') {
@@ -806,7 +795,7 @@ index fe780686f2eb..488095f49236 100644
 +    }
 +
 +    MOZ_ASSERT(*p == ':');
-+    p++; // move past the ':' between the default and user values
++    p++;  // move past the ':' between the default and user values
 +
 +    dom::MaybePrefValue maybeUserValue;
 +    if (*p != '\n') {
@@ -815,23 +804,22 @@ index fe780686f2eb..488095f49236 100644
 +    }
 +
 +    MOZ_ASSERT(*p == '\n');
-+    p++; // move past the '\n' following the user value
++    p++;  // move past the '\n' following the user value
 +
 +    *aDomPref = dom::Pref(name, isLocked, maybeDefaultValue, maybeUserValue);
 +
 +    return p;
 +  }
 +
-   void AddSizeOfIncludingThis(MallocSizeOf aMallocSizeOf, PrefsSizes& aSizes)
-   {
+   void AddSizeOfIncludingThis(MallocSizeOf aMallocSizeOf, PrefsSizes& aSizes) {
      // Note: mName is allocated in gPrefNameArena, measured elsewhere.
-@@ -880,41 +1113,9 @@ pref_savePrefs()
+     aSizes.mPrefValues += aMallocSizeOf(this);
+@@ -817,57 +1041,17 @@ static PrefSaveData pref_savePrefs() {
  
  #ifdef DEBUG
  
 -// For content processes, what prefs have been initialized?
--enum class ContentProcessPhase
--{
+-enum class ContentProcessPhase {
 -  eNoPrefsSet,
 -  eEarlyPrefsSet,
 -  eEarlyAndLatePrefsSet,
@@ -840,36 +828,28 @@ index fe780686f2eb..488095f49236 100644
  // Note that this never changes in the parent process, and is only read in
  // content processes.
 -static ContentProcessPhase gPhase = ContentProcessPhase::eNoPrefsSet;
--
--struct StringComparator
--{
++static bool gContentProcessPrefsAreInited = false;
+ 
+-struct StringComparator {
 -  const char* mPrefName;
 -
--  explicit StringComparator(const char* aPrefName)
--    : mPrefName(aPrefName)
--  {
--  }
+-  explicit StringComparator(const char* aPrefName) : mPrefName(aPrefName) {}
 -
--  int operator()(const char* aPrefName) const
--  {
+-  int operator()(const char* aPrefName) const {
 -    return strcmp(mPrefName, aPrefName);
 -  }
 -};
 -
--static bool
--IsEarlyPref(const char* aPrefName)
--{
+-static bool IsEarlyPref(const char* aPrefName) {
 -  size_t prefsLen;
 -  size_t found;
 -  const char** list = mozilla::dom::ContentPrefs::GetEarlyPrefs(&prefsLen);
 -  return BinarySearchIf(list, 0, prefsLen, StringComparator(aPrefName), &found);
 -}
-+static bool gContentProcessPrefsAreInited = false;
+-
+ #endif  // DEBUG
  
- #endif // DEBUG
- 
-@@ -923,23 +1124,7 @@ pref_HashTableLookupInner(const char* aPrefName)
- {
+ static PrefEntry* pref_HashTableLookupInner(const char* aPrefName) {
    MOZ_ASSERT(NS_IsMainThread() || mozilla::ServoStyleSet::IsInServoTraversal());
  
 -#ifdef DEBUG
@@ -878,33 +858,34 @@ index fe780686f2eb..488095f49236 100644
 -      MOZ_CRASH_UNSAFE_PRINTF("accessing pref %s before early prefs are set",
 -                              aPrefName);
 -    }
--
++  MOZ_ASSERT_IF(!XRE_IsParentProcess(), gContentProcessPrefsAreInited);
+ 
 -    if (gPhase == ContentProcessPhase::eEarlyPrefsSet &&
 -        !IsEarlyPref(aPrefName)) {
 -      // If you hit this crash, you have an early access of a non-early pref.
 -      // Consider moving the access later or add the pref to the whitelist of
 -      // early prefs in ContentPrefs.cpp and get review from a DOM peer.
 -      MOZ_CRASH_UNSAFE_PRINTF(
--        "accessing non-early pref %s before late prefs are set", aPrefName);
+-          "accessing non-early pref %s before late prefs are set", aPrefName);
 -    }
 -  }
 -#endif
-+  MOZ_ASSERT_IF(!XRE_IsParentProcess(), gContentProcessPrefsAreInited);
- 
+-
    return static_cast<PrefEntry*>(gHashTable->Search(aPrefName));
  }
-@@ -2932,8 +3117,8 @@ public:
  
- } // namespace
+@@ -2637,8 +2821,8 @@ class AddPreferencesMemoryReporterRunnable : public Ru
+ 
+ }  // namespace
  
 -// A list of prefs sent early from the parent, via shared memory.
 -static InfallibleTArray<dom::Pref>* gEarlyDomPrefs;
 +// A list of changed prefs sent from the parent via shared memory.
 +static InfallibleTArray<dom::Pref>* gChangedDomPrefs;
  
- static const char kTelemetryPref[] = "toolkit.telemetry.enabled";
- static const char kChannelPref[] = "app.update.channel";
-@@ -3050,12 +3235,12 @@ Preferences::GetInstanceForService()
+ /* static */ already_AddRefed<Preferences>
+ Preferences::GetInstanceForService() {
+@@ -2668,12 +2852,12 @@ Preferences::GetInstanceForService() {
    }
  
    if (!XRE_IsParentProcess()) {
@@ -922,19 +903,19 @@ index fe780686f2eb..488095f49236 100644
  
    } else {
      // Check if there is a deployment configuration file. If so, set up the
-@@ -3179,149 +3364,44 @@ NS_IMPL_ISUPPORTS(Preferences,
+@@ -2782,143 +2966,45 @@ Preferences::~Preferences() {
+ NS_IMPL_ISUPPORTS(Preferences, nsIPrefService, nsIObserver, nsIPrefBranch,
                    nsISupportsWeakReference)
  
- /* static */ void
--Preferences::SerializeEarlyPreferences(nsCString& aStr)
-+Preferences::SerializePreferences(nsCString& aStr)
- {
+-/* static */ void Preferences::SerializeEarlyPreferences(nsCString& aStr) {
++/* static */ void Preferences::SerializePreferences(nsCString& aStr) {
    MOZ_RELEASE_ASSERT(InitStaticMembers());
  
 -  nsAutoCStringN<256> boolPrefs, intPrefs, stringPrefs;
 -  size_t numEarlyPrefs;
 -  dom::ContentPrefs::GetEarlyPrefs(&numEarlyPrefs);
--
++  aStr.Truncate();
+ 
 -  for (unsigned int i = 0; i < numEarlyPrefs; i++) {
 -    const char* prefName = dom::ContentPrefs::GetEarlyPref(i);
 -    MOZ_ASSERT_IF(i > 0,
@@ -943,34 +924,33 @@ index fe780686f2eb..488095f49236 100644
 -    Pref* pref = pref_HashTableLookup(prefName);
 -    if (!pref || !pref->MustSendToContentProcesses()) {
 -      continue;
--    }
-+  aStr.Truncate();
- 
++  for (auto iter = gHashTable->Iter(); !iter.Done(); iter.Next()) {
++    Pref* pref = static_cast<PrefEntry*>(iter.Get())->mPref;
++    if (pref->MustSendToContentProcesses() && pref->HasAdvisablySizedValues()) {
++      pref->SerializeAndAppend(aStr);
+     }
+-
 -    switch (pref->Type()) {
 -      case PrefType::Bool:
 -        boolPrefs.Append(
--          nsPrintfCString("%u:%d|", i, Preferences::GetBool(prefName)));
+-            nsPrintfCString("%u:%d|", i, Preferences::GetBool(prefName)));
 -        break;
 -      case PrefType::Int:
 -        intPrefs.Append(
--          nsPrintfCString("%u:%d|", i, Preferences::GetInt(prefName)));
+-            nsPrintfCString("%u:%d|", i, Preferences::GetInt(prefName)));
 -        break;
 -      case PrefType::String: {
 -        nsAutoCString value;
 -        Preferences::GetCString(prefName, value);
 -        stringPrefs.Append(
--          nsPrintfCString("%u:%d;%s|", i, value.Length(), value.get()));
+-            nsPrintfCString("%u:%d;%s|", i, value.Length(), value.get()));
 -      } break;
 -      case PrefType::None:
 -        break;
 -      default:
 -        printf_stderr("preference type: %d\n", int(pref->Type()));
 -        MOZ_CRASH();
-+  for (auto iter = gHashTable->Iter(); !iter.Done(); iter.Next()) {
-+    Pref* pref = static_cast<PrefEntry*>(iter.Get())->mPref;
-+    if (pref->MustSendToContentProcesses() && pref->HasAdvisablySizedValues()) {
-+      pref->SerializeAndAppend(aStr);
-     }
+-    }
    }
  
 -  aStr.Truncate();
@@ -983,10 +963,10 @@ index fe780686f2eb..488095f49236 100644
    aStr.Append('\0');
  }
  
- /* static */ void
--Preferences::DeserializeEarlyPreferences(char* aStr, size_t aStrLen)
-+Preferences::DeserializePreferences(char* aStr, size_t aPrefsLen)
- {
+-/* static */ void Preferences::DeserializeEarlyPreferences(char* aStr,
+-                                                           size_t aStrLen) {
++/* static */ void Preferences::DeserializePreferences(char* aStr,
++                                                      size_t aPrefsLen) {
    MOZ_ASSERT(!XRE_IsParentProcess());
  
 -  MOZ_ASSERT(!gEarlyDomPrefs);
@@ -1011,26 +991,26 @@ index fe780686f2eb..488095f49236 100644
 -    MOZ_ASSERT(p[0] == '|');
 -    p++;
 -    dom::Pref pref(nsCString(dom::ContentPrefs::GetEarlyPref(index)),
--                   /* isLocked */ false,
--                   value,
--                   dom::MaybePrefValue());
+-                   /* isLocked */ false, value, dom::MaybePrefValue());
 -    gEarlyDomPrefs->AppendElement(pref);
--  }
++  while (*p != '\0') {
++    dom::Pref pref;
++    p = Pref::Deserialize(p, &pref);
++    gChangedDomPrefs->AppendElement(pref);
+   }
 -  p++;
--
+ 
 -  // Get the int prefs.
 -  while (*p != '\n') {
 -    int32_t index = strtol(p, &p, 10);
 -    MOZ_ASSERT(p[0] == ':');
 -    p++;
 -    dom::MaybePrefValue value(
--      dom::PrefValue(static_cast<int32_t>(strtol(p, &p, 10))));
+-        dom::PrefValue(static_cast<int32_t>(strtol(p, &p, 10))));
 -    MOZ_ASSERT(p[0] == '|');
 -    p++;
 -    dom::Pref pref(nsCString(dom::ContentPrefs::GetEarlyPref(index)),
--                   /* isLocked */ false,
--                   value,
--                   dom::MaybePrefValue());
+-                   /* isLocked */ false, value, dom::MaybePrefValue());
 -    gEarlyDomPrefs->AppendElement(pref);
 -  }
 -  p++;
@@ -1045,9 +1025,7 @@ index fe780686f2eb..488095f49236 100644
 -    p++;
 -    dom::MaybePrefValue value(dom::PrefValue(nsCString(p, length)));
 -    dom::Pref pref(nsCString(dom::ContentPrefs::GetEarlyPref(index)),
--                   /* isLocked */ false,
--                   value,
--                   dom::MaybePrefValue());
+-                   /* isLocked */ false, value, dom::MaybePrefValue());
 -    gEarlyDomPrefs->AppendElement(pref);
 -    p += length + 1;
 -    MOZ_ASSERT(*(p - 1) == '|');
@@ -1055,48 +1033,43 @@ index fe780686f2eb..488095f49236 100644
 -  p++;
 -
 -  MOZ_ASSERT(*p == '\0');
-+  while (*p != '\0') {
-+    dom::Pref pref;
-+    p = Pref::Deserialize(p, &pref);
-+    gChangedDomPrefs->AppendElement(pref);
-+  }
- 
+-
    // We finished parsing on a '\0'. That should be the last char in the shared
 -  // memory.
 -  MOZ_ASSERT(aStr + aStrLen - 1 == p);
--
--#ifdef DEBUG
--  MOZ_ASSERT(gPhase == ContentProcessPhase::eNoPrefsSet);
--  gPhase = ContentProcessPhase::eEarlyPrefsSet;
--#endif
--}
--
--/* static */ void
--Preferences::SetLatePreferences(const nsTArray<dom::Pref>* aDomPrefs)
--{
--  MOZ_ASSERT(!XRE_IsParentProcess());
--
--  for (unsigned int i = 0; i < aDomPrefs->Length(); i++) {
--    Preferences::SetPreference(aDomPrefs->ElementAt(i));
--  }
 +  // memory. (aPrefsLen includes the '\0'.)
 +  MOZ_ASSERT(p == aStr + aPrefsLen - 1);
  
  #ifdef DEBUG
--  MOZ_ASSERT(gPhase == ContentProcessPhase::eEarlyPrefsSet);
--  gPhase = ContentProcessPhase::eEarlyAndLatePrefsSet;
+-  MOZ_ASSERT(gPhase == ContentProcessPhase::eNoPrefsSet);
+-  gPhase = ContentProcessPhase::eEarlyPrefsSet;
 +  MOZ_ASSERT(!gContentProcessPrefsAreInited);
 +  gContentProcessPrefsAreInited = true;
  #endif
  }
  
-@@ -3558,36 +3638,12 @@ Preferences::GetPreference(dom::Pref* aDomPref)
+-/* static */ void Preferences::SetLatePreferences(
+-    const nsTArray<dom::Pref>* aDomPrefs) {
+-  MOZ_ASSERT(!XRE_IsParentProcess());
+-
+-  for (unsigned int i = 0; i < aDomPrefs->Length(); i++) {
+-    Preferences::SetPreference(aDomPrefs->ElementAt(i));
+-  }
+-
+-#ifdef DEBUG
+-  MOZ_ASSERT(gPhase == ContentProcessPhase::eEarlyPrefsSet);
+-  gPhase = ContentProcessPhase::eEarlyAndLatePrefsSet;
+-#endif
+-}
+-
+ /* static */ void Preferences::InitializeUserPrefs() {
+   MOZ_ASSERT(XRE_IsParentProcess());
+   MOZ_ASSERT(!sPreferences->mCurrentFile, "Should only initialize prefs once");
+@@ -3133,32 +3219,10 @@ Preferences::SavePrefFile(nsIFile* aFile) {
    }
  }
  
--void
--Preferences::GetPreferences(InfallibleTArray<dom::Pref>* aDomPrefs)
--{
+-void Preferences::GetPreferences(InfallibleTArray<dom::Pref>* aDomPrefs) {
 -  MOZ_ASSERT(XRE_IsParentProcess());
 -  MOZ_ASSERT(NS_IsMainThread());
 -
@@ -1119,10 +1092,8 @@ index fe780686f2eb..488095f49236 100644
 -}
 -
  #ifdef DEBUG
- bool
--Preferences::AreAllPrefsSetInContentProcess()
-+Preferences::ArePrefsInitedInContentProcess()
- {
+-bool Preferences::AreAllPrefsSetInContentProcess() {
++bool Preferences::ArePrefsInitedInContentProcess() {
    MOZ_ASSERT(!XRE_IsParentProcess());
 -  return gPhase == ContentProcessPhase::eEarlyAndLatePrefsSet;
 +  return gContentProcessPrefsAreInited;
@@ -1133,8 +1104,8 @@ diff --git modules/libpref/Preferences.h modules/libpref/Preferences.h
 index 0d976483daae..901425b5b663 100644
 --- modules/libpref/Preferences.h
 +++ modules/libpref/Preferences.h
-@@ -328,15 +328,10 @@ public:
-                                    const char* aPref,
+@@ -277,15 +277,10 @@ class Preferences final : public nsIPrefService,
+   static nsresult AddFloatVarCache(float* aVariable, const char* aPref,
                                     float aDefault = 0.0f);
  
 -  // When a content process is created these methods are used to pass prefs in
@@ -1153,7 +1124,7 @@ index 0d976483daae..901425b5b663 100644
  
    // When a single pref is changed in the parent process, these methods are
    // used to pass the update to content processes.
-@@ -344,7 +339,7 @@ public:
+@@ -293,7 +288,7 @@ class Preferences final : public nsIPrefService,
    static void SetPreference(const dom::Pref& aPref);
  
  #ifdef DEBUG
