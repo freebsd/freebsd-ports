@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	${DICT}-aspell
-SPELLVERSION=	6-ml-0.03-1
-PORTREVISION=	1
+MASTER_SITES=	http://gnu.mirrors.pair.com/savannah/savannah/smc/Spellchecker/
+SPELLVERSION=	6-ml-0.04-1
 CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
