@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	requests
-PORTVERSION=	2.18.4
-PORTREVISION=	1
+PORTVERSION=	2.21.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,16 +21,13 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=2.8.0:devel/py-pytest@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR}
 
-# Actually 2.6-2.7,3.3+
+# Actually 2.6-2.7,3.4+
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 CONFLICTS_INSTALL=	py*-requests1-*
 
 NO_ARCH=	yes
-
-# Automated tests failinng due to httpbin issue
-# https://github.com/kennethreitz/httpbin/issues/403
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
