@@ -46,12 +46,12 @@
     SUBDIR += easystroke
     SUBDIR += egroupware
     SUBDIR += everygui
+    SUBDIR += fasd
     SUBDIR += fbreader
     SUBDIR += fet
     SUBDIR += flameshot
     SUBDIR += freemind
     SUBDIR += freeplane
-    SUBDIR += fasd
     SUBDIR += fusenshi
     SUBDIR += ganttproject
     SUBDIR += ganyremote
