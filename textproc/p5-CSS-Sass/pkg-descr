@@ -1,0 +1,5 @@
+CSS::Sass provides a perl interface to LibSass, a nearly complete Sass compiler
+written in C++. It is currently at ruby sass 3.4 feature parity and heading
+towards 3.5 compatibility. It can compile .scss and .sass files.
+
+WWW: https://metacpan.org/release/CSS-Sass

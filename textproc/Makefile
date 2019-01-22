@@ -560,6 +560,7 @@
     SUBDIR += p5-CSS-Minifier-XS
     SUBDIR += p5-CSS-Packer
     SUBDIR += p5-CSS-SAC
+    SUBDIR += p5-CSS-Sass
     SUBDIR += p5-CSS-Simple
     SUBDIR += p5-CSS-Squish
     SUBDIR += p5-CSS-Tiny
