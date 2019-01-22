@@ -33,8 +33,8 @@
     SUBDIR += avogadro2
     SUBDIR += avogadrolibs
     SUBDIR += bagel
-    SUBDIR += berkeleygw
     SUBDIR += bddsolve
+    SUBDIR += berkeleygw
     SUBDIR += bodr
     SUBDIR += brian
     SUBDIR += buddy
@@ -209,11 +209,10 @@
     SUBDIR += py-DendroPy
     SUBDIR += py-GPy
     SUBDIR += py-GPyOpt
-    SUBDIR += py-PyFR
-    SUBDIR += py-lifelines
     SUBDIR += py-MDAnalysis
     SUBDIR += py-MDAnalysisTests
     SUBDIR += py-OpenFermion
+    SUBDIR += py-PyFR
     SUBDIR += py-PyQuante
     SUBDIR += py-ScientificPython
     SUBDIR += py-SimpleSpectral
@@ -230,6 +229,7 @@
     SUBDIR += py-h5py
     SUBDIR += py-hcluster
     SUBDIR += py-kinematics
+    SUBDIR += py-lifelines
     SUBDIR += py-mdp
     SUBDIR += py-mlpy
     SUBDIR += py-mmtf-python

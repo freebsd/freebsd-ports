@@ -287,8 +287,8 @@
     SUBDIR += hs-semigroups
     SUBDIR += hs-statistics
     SUBDIR += hs-vector-space
-    SUBDIR += igraph
     SUBDIR += ignition-math
+    SUBDIR += igraph
     SUBDIR += intervaltree
     SUBDIR += ipopt
     SUBDIR += ised
@@ -308,13 +308,13 @@
     SUBDIR += kktdirect
     SUBDIR += kmplot
     SUBDIR += labplot
-    SUBDIR += latte-integrale
     SUBDIR += lambda
     SUBDIR += lapack
     SUBDIR += lapack++
     SUBDIR += lapack95
     SUBDIR += lapacke
     SUBDIR += laspack
+    SUBDIR += latte-integrale
     SUBDIR += ldouble
     SUBDIR += lean
     SUBDIR += lemon

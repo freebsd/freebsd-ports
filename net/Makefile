@@ -818,7 +818,6 @@
     SUBDIR += p5-OAI-Harvester
     SUBDIR += p5-OurNet-BBS
     SUBDIR += p5-OurNet-BBSAgent
-    SUBDIR += p5-Parse-Netstat
     SUBDIR += p5-POE-Component-Client-Ident
     SUBDIR += p5-POE-Component-Client-Keepalive
     SUBDIR += p5-POE-Component-Client-Ping
@@ -836,6 +835,7 @@
     SUBDIR += p5-POSIX-Socket
     SUBDIR += p5-POSIX-getpeername
     SUBDIR += p5-Parallel-Pvm
+    SUBDIR += p5-Parse-Netstat
     SUBDIR += p5-Phone-Info
     SUBDIR += p5-PlRPC
     SUBDIR += p5-Queue-Beanstalk
