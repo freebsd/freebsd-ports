@@ -84,6 +84,10 @@ PLIST_SUB+=	USB=""
 PLIST_SUB+=	USB="@comment "
 .endif
 
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--enable-debug --enable-debug-printfs
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if empty(ICONV_LIB)
