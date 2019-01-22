@@ -822,11 +822,14 @@ include/wine/windows/virtdisk.h
 include/wine/windows/vmr9.h
 include/wine/windows/vmr9.idl
 include/wine/windows/vmrender.idl
+%%STAGING%%include/wine/windows/vsbackup.h
+%%STAGING%%include/wine/windows/vsbackup.idl
 include/wine/windows/vss.h
 include/wine/windows/vss.idl
 include/wine/windows/vsstyle.h
 include/wine/windows/vssym32.h
 include/wine/windows/vswriter.h
+%%STAGING%%include/wine/windows/vswriter.idl
 include/wine/windows/wbemcli.h
 include/wine/windows/wbemcli.idl
 include/wine/windows/wbemdisp.h
