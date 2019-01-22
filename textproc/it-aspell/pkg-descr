@@ -3,4 +3,4 @@ Aspell Italian dictionary.
 Note: if you build from ports, prefer textproc/aspell, it will let you
       select dictionaries for several languages.
 
-WWW: http://aspell.sourceforge.net/
+WWW: http://linguistico.sourceforge.net/
