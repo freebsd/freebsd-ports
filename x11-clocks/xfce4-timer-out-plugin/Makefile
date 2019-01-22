@@ -13,7 +13,7 @@ COMMENT=	Timer out plugin for Xfce
 
 LICENSE=	GPLv2
 
-LIB_DEPNDS=	libfontconfig.so:x11-fonts/fontconfig \
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce
