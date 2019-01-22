@@ -114,4 +114,7 @@ share/applications/worker.desktop
 %%DATADIR%%/config-updates/update-3.14.0.conf
 %%DATADIR%%/config-updates/update-3.15.0-utf8.conf
 %%DATADIR%%/config-updates/update-3.15.0.conf
+%%DATADIR%%/config-updates/update-3.15.3-utf8.conf
+%%DATADIR%%/config-updates/update-3.15.3.conf
 %%DATADIR%%/scripts/git_modified_files.sh
+%%DATADIR%%/scripts/git_untracked_files.sh
