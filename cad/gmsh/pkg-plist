@@ -1,3 +1,6 @@
+bin/gmsh
+bin/onelab.py
+man/man1/gmsh.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
@@ -9,6 +12,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/boolean.cpp
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/boolean.py
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/crack.py
+%%PORTDOCS%%%%DOCSDIR%%/demos/api/custom_gui.cpp
+%%PORTDOCS%%%%DOCSDIR%%/demos/api/custom_gui.py
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/discrete.cpp
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/discrete.jl
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/discrete.py
@@ -22,6 +27,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/onelab_data.c
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/onelab_data.cpp
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/onelab_data.py
+%%PORTDOCS%%%%DOCSDIR%%/demos/api/onelab_test.jl
+%%PORTDOCS%%%%DOCSDIR%%/demos/api/onelab_test.py
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/open.cpp
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/open.py
 %%PORTDOCS%%%%DOCSDIR%%/demos/api/perf.cpp
@@ -174,15 +181,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/view3.pos
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/view4.pos
 %%PORTDOCS%%%%DOCSDIR%%/tutorial/view5.msh
-%%SHARED%%include/gmsh.h
-%%SHARED%%include/gmsh.h_cwrap
-%%SHARED%%include/gmshc.h
-%%SHARED%%lib/gmsh.jl
-%%SHARED%%lib/gmsh.py
-%%SHARED%%lib/libgmsh.so
-%%SHARED%%lib/libgmsh.so.%%VE%%
-%%SHARED%%lib/libgmsh.so.%%VER%%
-%%STATIC%%lib/libgmsh.a
-bin/gmsh
-bin/onelab.py
-man/man1/gmsh.1.gz
