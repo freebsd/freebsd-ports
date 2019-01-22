@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.484 2018/11/19 20:03:35 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.488 2019/01/22 16:16:28 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 18;
-my $micro = 7;
+my $micro = 8;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -491,6 +491,9 @@ sub checkdescr {
 
 	open(IN, "< $file") || return 0;
 	while (<IN>) {
+		if ($_ =~ /[ \t]+\n?$/) {
+			&perror("WARN", $file, $., "whitespace before end ".
+				"of line.");
 		$tmp .= $_;
 		chomp || &perror("WARN", $file, -1, "lines should terminate with a ".
 			"newline (i.e. '\\n').");
@@ -3146,7 +3149,7 @@ MAINTAINER COMMENT
 		if ($tmp =~ /\nLICENSE_FILE_([^\s=]+)([\s=])/) {
 			my $lfn = $1;
 			my $nchar = $2;
-			if ($lfn ne $makevar{LICENSE}) {
+			if (!grep(/\b$lfn\b/, $makevar{LICENSE})) {
 				&perror("FATAL", $file, -1, "license specified is $makevar{LICENSE}, ".
 					"but LICENSE_FILE specified is for $lfn.");
 			}
