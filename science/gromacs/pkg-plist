@@ -28,6 +28,7 @@ include/gromacs/commandline/cmdlineprogramcontext.h
 include/gromacs/commandline/filenm.h
 include/gromacs/commandline/pargs.h
 include/gromacs/commandline/viewit.h
+include/gromacs/compat/make_unique.h
 include/gromacs/fft/fft.h
 include/gromacs/fileio/confio.h
 include/gromacs/fileio/enxio.h
@@ -49,8 +50,8 @@ include/gromacs/gpu_utils/hostallocator.h
 include/gromacs/linearalgebra/eigensolver.h
 include/gromacs/linearalgebra/matrix.h
 include/gromacs/linearalgebra/sparsematrix.h
-include/gromacs/listed-forces/listed-forces.h
 include/gromacs/math/3dtransforms.h
+include/gromacs/math/arrayrefwithpadding.h
 include/gromacs/math/do_fit.h
 include/gromacs/math/functions.h
 include/gromacs/math/gmxcomplex.h
@@ -59,6 +60,7 @@ include/gromacs/math/units.h
 include/gromacs/math/utilities.h
 include/gromacs/math/vec.h
 include/gromacs/math/vectypes.h
+include/gromacs/mdlib/simulationsignal.h
 include/gromacs/mdtypes/inputrec.h
 include/gromacs/mdtypes/md_enums.h
 include/gromacs/mdtypes/mdatom.h
@@ -93,6 +95,7 @@ include/gromacs/random/tabulatednormaldistribution.h
 include/gromacs/random/threefry.h
 include/gromacs/random/uniformintdistribution.h
 include/gromacs/random/uniformrealdistribution.h
+include/gromacs/restraint/restraintpotential.h
 include/gromacs/selection.h
 include/gromacs/selection/indexutil.h
 include/gromacs/selection/nbsearch.h
@@ -108,17 +111,20 @@ include/gromacs/timing/walltime_accounting.h
 include/gromacs/topology/atomprop.h
 include/gromacs/topology/atoms.h
 include/gromacs/topology/block.h
+include/gromacs/topology/forcefieldparameters.h
 include/gromacs/topology/idef.h
+include/gromacs/topology/ifunc.h
 include/gromacs/topology/index.h
 include/gromacs/topology/mtop_util.h
 include/gromacs/topology/symtab.h
 include/gromacs/topology/topology.h
-include/gromacs/trajectory/energy.h
+include/gromacs/trajectory/energyframe.h
 include/gromacs/trajectory/trajectoryframe.h
 include/gromacs/trajectoryanalysis.h
 include/gromacs/trajectoryanalysis/analysismodule.h
 include/gromacs/trajectoryanalysis/analysissettings.h
 include/gromacs/trajectoryanalysis/cmdlinerunner.h
+include/gromacs/trajectoryanalysis/topologyinformation.h
 include/gromacs/utility.h
 include/gromacs/utility/alignedallocator.h
 include/gromacs/utility/allocator.h
@@ -133,6 +139,7 @@ include/gromacs/utility/datafilefinder.h
 include/gromacs/utility/errorcodes.h
 include/gromacs/utility/exceptions.h
 include/gromacs/utility/fatalerror.h
+include/gromacs/utility/fileptr.h
 include/gromacs/utility/flags.h
 include/gromacs/utility/futil.h
 include/gromacs/utility/gmxassert.h
@@ -141,10 +148,11 @@ include/gromacs/utility/programcontext.h
 include/gromacs/utility/real.h
 include/gromacs/utility/smalloc.h
 include/gromacs/utility/stringutil.h
+include/gromacs/utility/unique_cptr.h
 include/gromacs/version.h
 lib/libgromacs%%SUFFIX_MPI%%%%SUFFIX_D%%.so
-lib/libgromacs%%SUFFIX_MPI%%%%SUFFIX_D%%.so.3
-lib/libgromacs%%SUFFIX_MPI%%%%SUFFIX_D%%.so.3.4.0
+lib/libgromacs%%SUFFIX_MPI%%%%SUFFIX_D%%.so.4
+lib/libgromacs%%SUFFIX_MPI%%%%SUFFIX_D%%.so.4.0.0
 libdata/pkgconfig/libgromacs%%SUFFIX_MPI%%%%SUFFIX_D%%.pc
 man/man1/gmx-anadock.1.gz
 man/man1/gmx-anaeig.1.gz
@@ -214,6 +222,7 @@ man/man1/gmx-potential.1.gz
 man/man1/gmx-principal.1.gz
 man/man1/gmx-rama.1.gz
 man/man1/gmx-rdf.1.gz
+man/man1/gmx-report-methods.1.gz
 man/man1/gmx-rms.1.gz
 man/man1/gmx-rmsdist.1.gz
 man/man1/gmx-rmsf.1.gz
@@ -284,7 +293,6 @@ share/cmake/gromacs%%SUFFIX_MPI%%%%SUFFIX_D%%/libgromacs.cmake
 %%DATADIR%%/top/amber03.ff/ffnonbonded.itp
 %%DATADIR%%/top/amber03.ff/forcefield.doc
 %%DATADIR%%/top/amber03.ff/forcefield.itp
-%%DATADIR%%/top/amber03.ff/gbsa.itp
 %%DATADIR%%/top/amber03.ff/ions.itp
 %%DATADIR%%/top/amber03.ff/rna.arn
 %%DATADIR%%/top/amber03.ff/rna.hdb
@@ -314,7 +322,6 @@ share/cmake/gromacs%%SUFFIX_MPI%%%%SUFFIX_D%%/libgromacs.cmake
 %%DATADIR%%/top/amber94.ff/ffnonbonded.itp
 %%DATADIR%%/top/amber94.ff/forcefield.doc
 %%DATADIR%%/top/amber94.ff/forcefield.itp
-%%DATADIR%%/top/amber94.ff/gbsa.itp
 %%DATADIR%%/top/amber94.ff/ions.itp
 %%DATADIR%%/top/amber94.ff/rna.arn
 %%DATADIR%%/top/amber94.ff/rna.hdb
@@ -344,7 +351,6 @@ share/cmake/gromacs%%SUFFIX_MPI%%%%SUFFIX_D%%/libgromacs.cmake
 %%DATADIR%%/top/amber96.ff/ffnonbonded.itp
 %%DATADIR%%/top/amber96.ff/forcefield.doc
 %%DATADIR%%/top/amber96.ff/forcefield.itp
-%%DATADIR%%/top/amber96.ff/gbsa.itp
 %%DATADIR%%/top/amber96.ff/ions.itp
 %%DATADIR%%/top/amber96.ff/rna.arn
 %%DATADIR%%/top/amber96.ff/rna.hdb
@@ -374,7 +380,6 @@ share/cmake/gromacs%%SUFFIX_MPI%%%%SUFFIX_D%%/libgromacs.cmake
 %%DATADIR%%/top/amber99.ff/ffnonbonded.itp
 %%DATADIR%%/top/amber99.ff/forcefield.doc
 %%DATADIR%%/top/amber99.ff/forcefield.itp
-%%DATADIR%%/top/amber99.ff/gbsa.itp
 %%DATADIR%%/top/amber99.ff/ions.itp
 %%DATADIR%%/top/amber99.ff/rna.arn
 %%DATADIR%%/top/amber99.ff/rna.hdb
@@ -404,7 +409,6 @@ share/cmake/gromacs%%SUFFIX_MPI%%%%SUFFIX_D%%/libgromacs.cmake
 %%DATADIR%%/top/amber99sb-ildn.ff/ffnonbonded.itp
 %%DATADIR%%/top/amber99sb-ildn.ff/forcefield.doc
 %%DATADIR%%/top/amber99sb-ildn.ff/forcefield.itp
-%%DATADIR%%/top/amber99sb-ildn.ff/gbsa.itp
 %%DATADIR%%/top/amber99sb-ildn.ff/ions.itp
 %%DATADIR%%/top/amber99sb-ildn.ff/rna.arn
 %%DATADIR%%/top/amber99sb-ildn.ff/rna.hdb
@@ -434,7 +438,6 @@ share/cmake/gromacs%%SUFFIX_MPI%%%%SUFFIX_D%%/libgromacs.cmake
 %%DATADIR%%/top/amber99sb.ff/ffnonbonded.itp
 %%DATADIR%%/top/amber99sb.ff/forcefield.doc
 %%DATADIR%%/top/amber99sb.ff/forcefield.itp
-%%DATADIR%%/top/amber99sb.ff/gbsa.itp
 %%DATADIR%%/top/amber99sb.ff/ions.itp
 %%DATADIR%%/top/amber99sb.ff/rna.arn
 %%DATADIR%%/top/amber99sb.ff/rna.hdb
@@ -464,7 +467,6 @@ share/cmake/gromacs%%SUFFIX_MPI%%%%SUFFIX_D%%/libgromacs.cmake
 %%DATADIR%%/top/amberGS.ff/ffnonbonded.itp
 %%DATADIR%%/top/amberGS.ff/forcefield.doc
 %%DATADIR%%/top/amberGS.ff/forcefield.itp
-%%DATADIR%%/top/amberGS.ff/gbsa.itp
 %%DATADIR%%/top/amberGS.ff/ions.itp
 %%DATADIR%%/top/amberGS.ff/rna.arn
 %%DATADIR%%/top/amberGS.ff/rna.hdb
@@ -503,7 +505,6 @@ share/cmake/gromacs%%SUFFIX_MPI%%%%SUFFIX_D%%/libgromacs.cmake
 %%DATADIR%%/top/charmm27.ff/ffnonbonded.itp
 %%DATADIR%%/top/charmm27.ff/forcefield.doc
 %%DATADIR%%/top/charmm27.ff/forcefield.itp
-%%DATADIR%%/top/charmm27.ff/gb.itp
 %%DATADIR%%/top/charmm27.ff/ions.itp
 %%DATADIR%%/top/charmm27.ff/lipids.hdb
 %%DATADIR%%/top/charmm27.ff/lipids.rtp
@@ -668,7 +669,6 @@ share/cmake/gromacs%%SUFFIX_MPI%%%%SUFFIX_D%%/libgromacs.cmake
 %%DATADIR%%/top/oplsaa.ff/ffnonbonded.itp
 %%DATADIR%%/top/oplsaa.ff/forcefield.doc
 %%DATADIR%%/top/oplsaa.ff/forcefield.itp
-%%DATADIR%%/top/oplsaa.ff/gbsa.itp
 %%DATADIR%%/top/oplsaa.ff/ions.itp
 %%DATADIR%%/top/oplsaa.ff/methanol.itp
 %%DATADIR%%/top/oplsaa.ff/spc.itp

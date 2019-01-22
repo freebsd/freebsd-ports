@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gromacs
-DISTVERSION=	2018.4
-PORTREVISION=	2
+DISTVERSION=	2019
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
