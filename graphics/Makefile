@@ -442,6 +442,7 @@
     SUBDIR += libGLw
     SUBDIR += libQGLViewer
     SUBDIR += libafterimage
+    SUBDIR += libansilove
     SUBDIR += libart_lgpl
     SUBDIR += libboard
     SUBDIR += libbpg
