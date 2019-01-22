@@ -2,4 +2,4 @@ Garcon is an implementation of the freedesktop.org menu specification
 replacing the former Xfce menu library libxfce4menu. It is based on
 GLib/GIO only and aims at covering the entire specification.
 
-WWW: http://www.xfce.org/
+WWW: https://www.xfce.org/

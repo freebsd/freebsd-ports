@@ -15,10 +15,10 @@ LICENSE=	LGPL21
 
 BUILD_DEPENDS=	valac:lang/vala
 
-GNU_CONFIGURE=	yes
-USES=	pkgconfig gmake pathfix xfce tar:bzip2
+USES=		gmake gnome pathfix pkgconfig tar:bzip2 xfce
 USE_XFCE=	panel
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-vala-api=0.40
 
 .include <bsd.port.mk>

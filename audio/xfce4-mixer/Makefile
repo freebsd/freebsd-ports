@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-mixer
 PORTVERSION=	4.11.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio xfce
 MASTER_SITES=	XFCE/src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -14,24 +14,29 @@ COMMENT=	Volume control for the Xfce desktop
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
-		libunique-1.0.so:x11-toolkits/unique
+		libdbus-1.so:devel/dbus \
+		libunique-1.0.so:x11-toolkits/unique \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
-GNU_CONFIGURE=	yes
-INSTALLS_ICONS= yes
 USES=		gmake libtool pkgconfig gettext-tools xfce tar:bzip2
-USE_GNOME=	glib20 gtk20 intltool intlhack
+USE_GNOME=	cairo glib20 gtk20 intlhack intltool libxml2
 USE_XFCE=	panel
 USE_GSTREAMER=	good
 
+GNU_CONFIGURE=	yes
+INSTALLS_ICONS= yes
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	KEYBIND NLS
-KEYBIND_DESC=	Multimedia keyboard shortcuts
+OPTIONS_DEFINE=		KEYBIND NLS
+OPTIONS_SUB=		yes
+
+KEYBIND_DESC=		Multimedia keyboard shortcuts
 KEYBIND_LIB_DEPENDS=	libkeybinder.so:x11/keybinder
 KEYBIND_CONFIGURE_ENABLE=	keybinder
-NLS_USES=	gettext-runtime
+
+NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
-OPTIONS_SUB=	yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -name 'Makefile.in' -or -name 'xfce-mixer-track.c' \

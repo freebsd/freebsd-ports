@@ -13,11 +13,18 @@ COMMENT=	Timer plugin for Xfce
 
 LICENSE=	GPLv2
 
-USES=		libtool pkgconfig gettext gmake xfce:gtk3 tar:bzip2
-INSTALLS_ICONS=	yes
-INSTALL_TARGET=	install-strip
-GNU_CONFIGURE=	yes
+USES=		gettext gmake gnome libtool pkgconfig tar:bzip2 xfce:gtk3
 USE_GNOME=	cairo gtk30 intltool
 USE_XFCE=	panel
+
+GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
+INSTALL_TARGET=	install-strip
+
+OPTIONS_DEFINE=		NLS
+OPTIONS_SUB=		yes
+
+NLS_USES=		gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.mk>

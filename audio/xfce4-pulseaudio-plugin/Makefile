@@ -18,8 +18,8 @@ LIB_DEPENDS=	libpulse-mainloop-glib.so:audio/pulseaudio \
 		libdbus-glib-1.so:devel/dbus-glib
 RUN_DEPENDS=	pavucontrol>=2.0:audio/pavucontrol
 
-USES=		gettext gmake gnome libtool pkgconfig tar:bzip2 xfce:gtk3
-USE_GNOME=	glib20 gtk30 intltool cairo libwnck3
+USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce:gtk3
+USE_GNOME=	cairo glib20 gtk30 intltool libwnck3
 USE_XFCE=	panel
 USE_XORG=	x11
 
@@ -32,10 +32,15 @@ CONFIGURE_ARGS=--with-mixer-command=${LOCALBASE}/bin/pavucontrol \
 		--enable-wnck
 CFLAGS+=	-Wno-return-type
 
-OPTIONS_DEFINE=			KEYBINDER
+OPTIONS_DEFINE=			KEYBINDER NLS
 OPTIONS_DEFAULT=		KEYBINDER
+OPTIONS_SUB=			yes
+
 KEYBINDER_DESC=			Keyboard shortcuts
 KEYBINDER_LIB_DEPENDS=		libkeybinder-3.0.so:x11/keybinder-gtk3
 KEYBINDER_CONFIGURE_ENABLE=	keybinder
+
+NLS_CONFIGURE_ENABLE=		nls
+NLS_USES=			gettext-runtime
 
 .include <bsd.port.mk>

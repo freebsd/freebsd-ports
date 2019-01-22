@@ -1,5 +1,5 @@
---- ./printing-systems/cups/cups.c.orig	2009-02-24 21:34:16.000000000 +0000
-+++ ./printing-systems/cups/cups.c	2014-06-03 18:56:42.000000000 +0000
+--- printing-systems/cups/cups.c.orig	2009-02-24 21:34:16 UTC
++++ printing-systems/cups/cups.c
 @@ -23,7 +23,9 @@
  
  #include <gmodule.h>
@@ -10,7 +10,7 @@
  #include <cups/ppd.h>
  #include <cups/cups.h>
  #include <cups/language.h>
-@@ -133,8 +135,8 @@
+@@ -133,8 +135,8 @@ cups_request_new (int operation_id)
  
    language = cupsLangDefault ();
    request = ippNew ();
@@ -21,7 +21,7 @@
  
    ippAddString (request, IPP_TAG_OPERATION, IPP_TAG_CHARSET, "attributes-charset", NULL, "utf-8");
  
-@@ -242,7 +244,7 @@
+@@ -242,7 +244,7 @@ get_printers ()
  
        if (!request)
          continue;

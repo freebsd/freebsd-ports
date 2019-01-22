@@ -3,7 +3,7 @@
 
 PORTNAME=	xfce4-cpugraph-plugin
 PORTVERSION=	1.0.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
@@ -13,16 +13,22 @@ COMMENT=	Graphical representation of the CPU load
 
 LICENSE=	GPLv2
 
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+
+USES=		gettext-tools gmake gnome libtool pkgconfig \
+		tar:bzip2 xfce
+USE_GNOME=	cairo gtk20 intlhack intltool
+USE_XFCE=	panel
+
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pkgconfig gettext-tools xfce tar:bzip2
-USE_GNOME=	gtk20 intltool intlhack
-USE_XFCE=	panel
 
-OPTIONS_DEFINE= NLS
-NLS_USES=	gettext-runtime
+OPTIONS_DEFINE=		NLS
+OPTIONS_SUB=		yes
+
 NLS_CONFIGURE_ENABLE=	nls
-OPTIONS_SUB=	yes
+NLS_USES=		gettext-runtime
 
 .include <bsd.port.mk>

@@ -18,15 +18,22 @@ LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libpolkit-gobject-1.so:sysutils/polkit \
 		libupower-glib.so:sysutils/upower
 
-GNU_CONFIGURE=	yes
-USES=		gettext gmake libtool pkgconfig tar:bzip2 xfce:gtk3
-USE_GNOME=	cairo glib20 gtk30 intltool intlhack
+USES=		gettext gmake gnome libtool pkgconfig tar:bzip2 xfce:gtk3
+USE_GNOME=	cairo glib20 gtk30 intlhack intltool
 USE_XFCE=	panel
-INSTALLS_ICONS=	yes
 USE_XORG=	ice sm xrandr x11 xext xtst xscrnsaver
+
+GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--disable-network-manager \
 		--enable-polkit \
 		--enable-xfce4panel
 INSTALL_TARGET=	install-strip
+
+OPTIONS_DEFINE=		NLS
+OPTIONS_SUB=		yes
+
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext-runtime
 
 .include <bsd.port.mk>

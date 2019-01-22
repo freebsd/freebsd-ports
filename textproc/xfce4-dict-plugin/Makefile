@@ -14,8 +14,8 @@ COMMENT=	Xfce4 plugin to query different dictionaries
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext-tools gmake libtool pkgconfig tar:bzip2 xfce:gtk3
-USE_GNOME=	glib20 gtk30 intltool cairo
+USES=		gettext-tools gmake gnome libtool pkgconfig tar:bzip2 xfce:gtk3
+USE_GNOME=	cairo glib20 gtk30 intltool
 USE_XFCE=	panel
 USE_XORG=	x11
 USE_LDCONFIG=	yes

@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-wm
 PORTVERSION=	4.12.5
+PORTREVISION=	1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	XFCE/src/xfce/xfwm4/${PORTVERSION:R}
 DISTNAME=	xfwm4-${PORTVERSION}
@@ -18,6 +19,12 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
+USES=		gettext-tools gmake gnome pkgconfig tar:bzip2 xfce
+USE_GNOME=	cairo gtk20 intltool libwnck
+USE_XFCE=	libmenu
+USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xinerama \
+		xrandr xrender
+
 CONFIGURE_ARGS=	--enable-xsync \
 		--enable-render \
 		--enable-randr \
@@ -25,22 +32,22 @@ CONFIGURE_ARGS=	--enable-xsync \
 		--disable-kde-systray
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		gettext-tools gmake pkgconfig tar:bzip2 xfce
-USE_GNOME=	gtk20 intltool libwnck cairo
-USE_XFCE=	libmenu
-USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xrandr xrender
 DATADIR=	${PREFIX}/share/xfwm4
 
 OPTIONS_DEFINE=		DRM NLS STARTUP
 OPTIONS_DEFAULT=	STARTUP
-DRM_DESC=	Direct Rendering Module service
-STARTUP_DESC=	Startup notification
-DRM_LIB_DEPENDS=	libdrm.so:graphics/libdrm
+OPTIONS_SUB=		yes
+
+DRM_DESC=		Direct Rendering Module service
+STARTUP_DESC=		Startup notification
+
 DRM_CONFIGURE_ENABLE=	libdrm
-NLS_USES=	gettext-runtime
+DRM_LIB_DEPENDS=	libdrm.so:graphics/libdrm
+
 NLS_CONFIGURE_ENABLE=	nls
-STARTUP_LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification
+NLS_USES=		gettext-runtime
+
 STARTUP_CONFIGURE_ENABLE=	startup-notification
-OPTIONS_SUB=	yes
+STARTUP_LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification
 
 .include <bsd.port.mk>

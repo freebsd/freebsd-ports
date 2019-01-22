@@ -1,6 +1,6 @@
---- ./configure.orig	2013-08-16 20:27:53.000000000 +0000
-+++ ./configure	2013-08-19 19:38:20.000000000 +0000
-@@ -2671,7 +2671,7 @@
+--- configure.orig	2013-08-16 20:27:53 UTC
++++ configure
+@@ -2671,7 +2671,7 @@ VALAGI=`$PKG_CONFIG --variable=vala_gen_introspect lib
  
  
  
@@ -9,7 +9,7 @@
  
  
  
-@@ -2684,7 +2684,7 @@
+@@ -2684,7 +2684,7 @@ else
  fi
  
  if test x"$with_default_vapidir" == xno ; then
