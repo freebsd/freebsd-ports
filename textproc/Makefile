@@ -504,6 +504,7 @@
     SUBDIR += mi-aspell
     SUBDIR += mifluz
     SUBDIR += miller
+    SUBDIR += minify
     SUBDIR += minised
     SUBDIR += minixmlto
     SUBDIR += mk-aspell
