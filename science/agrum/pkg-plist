@@ -261,7 +261,7 @@ include/agrum/PRM/elements/PRMSlotChain_tpl.h
 include/agrum/PRM/elements/PRMSystem.h
 include/agrum/PRM/elements/PRMSystem_tpl.h
 include/agrum/PRM/elements/PRMType.h
-include/agrum/PRM/elements/PRMType_tpl.h
+include/agrum/PRM/elements/PRMType_inl.h
 include/agrum/PRM/generator/PRMGenerator.h
 include/agrum/PRM/generator/PRMGenerator_tpl.h
 include/agrum/PRM/generator/clusteredLayerGenerator.h
@@ -837,10 +837,10 @@ lib/cmake/aGrUM/agrum-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/aGrUM/agrum-targets.cmake
 lib/libagrum.so
 lib/libagrum.so.0
-lib/libagrum.so.0.13.4.9
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-0.13.4.9-py%%PYTHON_VER_MAJ%%.egg-info
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-0.13.4.9.dist-info/METADATA
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-0.13.4.9.dist-info/WHEEL
+lib/libagrum.so.0.13.6
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-0.13.6-py%%PYTHON_VER_MAJ%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-0.13.6.dist-info/METADATA
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-0.13.6.dist-info/WHEEL
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/_pyAgrum.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/deprecated.py
