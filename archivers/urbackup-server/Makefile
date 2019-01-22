@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/server-license.txt
 LIB_DEPENDS=	libcryptopp.so:security/cryptopp \
 		libcurl.so:ftp/curl
 
-USES=		fakeroot pkgconfig
+USES=		compiler:c++11-lang fakeroot pkgconfig
 USE_RC_SUBR=	urbackup_server
 
 USERS=		urbackup
