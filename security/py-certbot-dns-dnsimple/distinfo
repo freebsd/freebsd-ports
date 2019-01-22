@@ -1,3 +1,3 @@
-TIMESTAMP = 1544126714
-SHA256 (certbot-dns-dnsimple-0.29.1.tar.gz) = 25912bd2c705eba28e1671b980363b30520360718a6b27038f1ea983b0b9d00c
-SIZE (certbot-dns-dnsimple-0.29.1.tar.gz) = 11402
+TIMESTAMP = 1548159922
+SHA256 (certbot-dns-dnsimple-0.30.0.tar.gz) = 0855435988992f507b2ac64a8c50504b8bd17f711bef5ab8379bb3dcb3eed0e5
+SIZE (certbot-dns-dnsimple-0.30.0.tar.gz) = 11399
