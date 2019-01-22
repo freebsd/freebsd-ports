@@ -20,7 +20,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libgamin-1.so:devel/gamin \
 		libdbus-1.so:devel/dbus
 
-USES=		desktop-file-utils gettext-tools gmake gmake jpeg libtool pathfix \
+USES=		desktop-file-utils gettext-tools gmake gnome jpeg libtool pathfix \
 		perl5 pkgconfig tar:bzip2 xfce
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 intlhack intltool
 USE_XFCE=	libexo
