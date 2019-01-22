@@ -28,8 +28,9 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:misc/gnome-icon-
 
 PORTSCOUT=	limitw:1,even
 
-USES=		bison desktop-file-utils gettext gmake gnome libtool pathfix \
-		perl5 pkgconfig:both python shared-mime-info shebangfix tar:xz
+USES=		bison compiler:c11 desktop-file-utils gettext gmake gnome \
+		libtool pathfix perl5 pkgconfig:both python shared-mime-info \
+		shebangfix tar:xz
 SHEBANG_FILES=	plugins/project-wizard/templates/js_minimal/src/main.js \
 		plugins/tools/scripts/find-fixmes.pl \
 		plugins/tools/scripts/translation-status.pl \
