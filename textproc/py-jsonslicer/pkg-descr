@@ -1,0 +1,10 @@
+JsonSlicer performs a stream or iterative, pull JSON parsing, which
+means it does not load whole JSON into memory and is able to parse
+very large JSON files or streams. The module is written in C and
+uses YAJL JSON parsing library, so it's also quite fast.
+
+JsonSlicer takes a path of JSON map keys or array indexes, and
+provides iterator interface which yields JSON data matching given
+path as complete Python objects.
+
+WWW: https://pypi.org/project/jsonslicer/
