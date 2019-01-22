@@ -16,17 +16,17 @@ LIB_DEPENDS=	libmpd.so:audio/libmpd
 RUN_DEPENDS=	musicpd:audio/musicpd
 
 USES=		gettext-tools gmake libtool pkgconfig tar:bzip2 xfce:gtk3
-USE_GNOME=	gtk30 intltool cairo gdkpixbuf2
+USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 USE_XFCE=	panel
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS+=	--with-libmpd=${LOCALBASE}
 
-OPTIONS_DEFINE=	NLS
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		NLS
+OPTIONS_SUB=		yes
 
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=	gettext-runtime
+NLS_USES=		gettext-runtime
 
 .include <bsd.port.mk>

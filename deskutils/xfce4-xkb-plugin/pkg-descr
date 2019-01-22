@@ -9,4 +9,4 @@ This plugin is used along with the XKB extension. For now the keyboard
 layouts cannot be configured from the plugin itself, they should be
 set in the Xorg file or some other way (e.g. setxkbmap).
 
-WWW: http://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin
+WWW: https://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin

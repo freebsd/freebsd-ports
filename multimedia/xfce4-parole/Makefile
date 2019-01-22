@@ -22,7 +22,7 @@ RUN_DEPENDS=	xdg-screensaver:devel/xdg-utils
 
 USES=		compiler:c++11-lang desktop-file-utils gettext-tools \
 		gmake gnome libtool pkgconfig tar:bzip2 xfce:gtk3
-USE_GNOME=	cairo gtk30 glib20 intltool intlhack
+USE_GNOME=	cairo gtk30 glib20 intlhack intltool
 USE_GSTREAMER1=	core faad flac wavpack rtmp x
 USE_XFCE=	panel
 USE_XORG=	ice sm x11
@@ -43,9 +43,12 @@ OPTIONS_DEFAULT=	HTTP
 OPTIONS_SUB=		yes
 
 CDDA_USE=		gstreamer1=cdparanoia
+
 GST_PLUG_DESC=		Additional GStreamer plugins
+
 HTTP_DESC=		HTTP streaming (libsoup)
 HTTP_USE=		gstreamer1=soup
+
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
 

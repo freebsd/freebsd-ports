@@ -17,18 +17,24 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gettext gmake libtool pkgconfig xfce:gtk3 tar:bzip2
-GNU_CONFIGURE=	yes
-USE_GNOME=	glib20 gtk30 intltool intlhack libxml2 cairo
+USES=		gettext-tools gmake gnome libtool pkgconfig xfce:gtk3 tar:bzip2
+USE_GNOME=	cairo glib20 gtk30 intlhack intltool libxml2
 USE_XFCE=	panel
-INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	UPOWER
+OPTIONS_DEFINE=	NLS UPOWER
+OPTIONS_SUB=	yes
+
 UPOWER_DESC=	Power management tasks
 
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext-runtime
+
 UPOWER_LIB_DEPENDS=	libupower-glib.so:sysutils/upower
-UPOWER_CONFIGURE_ENABLE=	upower
+UPOWER_CONFIGURE_ENABLE=upower
 
 .include <bsd.port.mk>

@@ -12,18 +12,19 @@ COMMENT=	Extension library for the Xfce desktop environment
 
 LICENSE=	GPLv2
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-USES=		gmake libtool pathfix perl5 pkgconfig gettext-tools \
-	xfce tar:bzip2
-USE_GNOME=	glib20 intltool intlhack
+USES=		gettext-tools gmake gnome libtool pathfix perl5 pkgconfig \
+		tar:bzip2 xfce
+USE_GNOME=	glib20 intlhack intltool
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS=--without-html-dir
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+CONFIGURE_ARGS=	--without-html-dir
 
-OPTIONS_DEFINE=	NLS
-OPTIONS_SUB=	yes
-NLS_USES=		gettext-runtime
+OPTIONS_DEFINE=		NLS
+OPTIONS_SUB=		yes
+
 NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext-runtime
 
 .include <bsd.port.mk>

@@ -1,14 +1,5 @@
 --- configure.orig	2018-04-12 00:49:30 UTC
 +++ configure
-@@ -19422,7 +19422,7 @@ $as_echo "#define HAVE_LC_MESSAGES 1" >>confdefs.h
- 
-     fi
-   fi
--     USE_NLS=yes
-+     #USE_NLS=yes
- 
- 
-     gt_cv_have_gettext=no
 @@ -23916,10 +23916,10 @@ _ACEOF
  else
  

@@ -3,4 +3,4 @@ a message when a limit is reached. There are two limits:
 - a warning limit where only the icon changes
 - an urgent limit that advise the user with a message
 
-WWW: http://goodies.xfce.org/projects/panel-plugins/xfce4-fsguard-plugin
+WWW: https://goodies.xfce.org/projects/panel-plugins/xfce4-fsguard-plugin

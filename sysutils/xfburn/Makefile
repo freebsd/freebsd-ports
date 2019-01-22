@@ -21,21 +21,24 @@ RUN_DEPENDS=	cdrdao:sysutils/cdrdao \
 		${LOCALBASE}/include/libburn/libburn.h:devel/libburn \
 		${LOCALBASE}/include/libisofs/libisofs.h:devel/libisofs
 
-USES=		pkgconfig gmake desktop-file-utils gettext-tools xfce tar:bzip2
-GNU_CONFIGURE=	yes
-USE_GNOME=	cairo intltool intlhack glib20 gtk20
+USES=		desktop-file-utils gettext-tools gmake gnome pkgconfig \
+		tar:bzip2 xfce
+USE_GNOME=	cairo glib20 gtk20 intlhack intltool
 USE_XFCE=	libexo
-INSTALLS_ICONS=	yes
 
-CONFIGURE_ARGS=--disable-gudev
+GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
+CONFIGURE_ARGS=	--disable-gudev
 
 OPTIONS_DEFINE=			GSTREAMER NLS
 OPTIONS_DEFAULT=		GSTREAMER
 OPTIONS_SUB=			yes
-NLS_USES=			gettext-runtime
-NLS_CONFIGURE_ENABLE=		nls
-GSTREAMER_USE=			gstreamer1=yes,faac,flac,lame,vorbis,wavpack
+
 GSTREAMER_CONFIGURE_ENABLE=	gstreamer
+GSTREAMER_USE=			gstreamer1=yes,faac,flac,lame,vorbis,wavpack
+
+NLS_CONFIGURE_ENABLE=		nls
+NLS_USES=			gettext-runtime
 
 post-patch:
 	${REINPLACE_CMD} -e 's|media-cdrom|media-optical|g' \

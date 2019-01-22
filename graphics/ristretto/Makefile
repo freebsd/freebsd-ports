@@ -19,15 +19,18 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		desktop-file-utils gettext-tools gmake pkgconfig tar:bzip2 xfce
-GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 glib20 intltool intlhack cairo
-INSTALLS_ICONS=	yes
+USES=		desktop-file-utils gettext-tools gmake gnome pkgconfig \
+		tar:bzip2 xfce
+USE_GNOME=	cairo gtk20 glib20 intlhack intltool
 USE_XFCE=	libmenu
 USE_XORG=	ice sm x11
 
+GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
+
 OPTIONS_DEFINE=		NLS
 OPTIONS_SUB=		yes
+
 NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=   nls
 

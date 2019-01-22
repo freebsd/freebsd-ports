@@ -3,4 +3,4 @@ the clipboard contents around (even after an application quits), it is able
 to handle text and images, and has a feature to execute actions on specific
 text selection by matching them against regexes.
 
-WWW: http://goodies.xfce.org/projects/panel-plugins/xfce4-clipman-plugin
+WWW: https://goodies.xfce.org/projects/panel-plugins/xfce4-clipman-plugin

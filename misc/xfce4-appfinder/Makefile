@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-appfinder
 PORTVERSION=	4.12.0
+PORTREVISION=	1
 CATEGORIES=	misc xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -12,22 +13,28 @@ COMMENT=	Application launcher and finder
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
+LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
+		libdbus-1.so:devel/dbus \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
-GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig gettext-tools tar:bzip2
-USE_GNOME=	glib20 intltool intlhack
+USES=		gettext-tools gmake gnome pkgconfig tar:bzip2 xfce
+USE_GNOME=	cairo gdkpixbuf2 glib20 intlhack intltool
 USE_XFCE=	garcon
 
-OPTIONS_DEFINE=	GTK3 NLS
-GTK3_USES=	xfce:gtk3
-GTK3_USE=	gnome=gtk30
+GNU_CONFIGURE=	yes
+
+OPTIONS_DEFINE=		GTK3 NLS
+OPTIONS_SUB=		yes
+
 GTK3_CONFIGURE_ENABLE=	gtk3
-GTK3_USES_OFF=	xfce
-GTK3_USE_OFF=	gnome=gtk20
-NLS_USES=	gettext-runtime
+GTK3_USE_OFF=		gnome=gtk20
+GTK3_USE=		gnome=gtk30
+GTK3_USES_OFF=		xfce
+GTK3_USES=		xfce:gtk3
+
 NLS_CONFIGURE_ENABLE=	nls
-OPTIONS_SUB=	yes
+NLS_USES=		gettext-runtime
 
 post-patch:
 	${REINPLACE_CMD} -e 's|=gtk-find|=system-search|' \
