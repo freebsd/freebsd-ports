@@ -1,0 +1,8 @@
+Write and manage your kitchen recipes.
+
+Kookbook is a simple application viewer based on markdown formatted recipes.
+It supports import from KRecipes databases, and keeps its own database
+as a folder full of markdown-formatted documents, which makes it easy
+to script and to build tools around.
+
+WWW: https://pusling.com/blog/?p=499
