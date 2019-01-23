@@ -9,7 +9,7 @@
  	viterbi39.o viterbi39_port.o \
  	viterbi615.o viterbi615_port.o encode_rs_char.o encode_rs_int.o encode_rs_8.o \
  	decode_rs_char.o decode_rs_int.o decode_rs_8.o \
-@@ -43,52 +43,50 @@ test: vtest27 vtest29 vtest39 vtest615 r
+@@ -43,52 +43,50 @@ test: vtest27 vtest29 vtest39 vtest615 rstest dtest su
  install: all
  	mkdir -p @libdir@ 
  	install -m 644 -p $(SHARED_LIB) libfec.a @libdir@
@@ -80,7 +80,7 @@
  # for Linux et al
  libfec.so: $(LIBS)
 -	gcc -shared -Xlinker -soname=$@ -o $@ -Wl,-whole-archive $^ -Wl,-no-whole-archive -lc
-+	${CC} -shared -Xlinker -soname=$@ -o $@ -Wl,-whole-archive $^ -Wl,-no-whole-archive -lc
++	${CC} -shared -Xlinker -soname=$@ -o $@ -Wl,-whole-archive $^ -Wl,-no-whole-archive -Wl,-z,notext -lc
  
  dotprod.o: dotprod.c fec.h
  
@@ -169,7 +169,7 @@
  
  viterbi615.o: viterbi615.c fec.h
  
-@@ -220,17 +218,15 @@ viterbi615_port.o: viterbi615_port.c fec
+@@ -220,17 +218,15 @@ viterbi615_port.o: viterbi615_port.c fec.h
  viterbi615_av.o: viterbi615_av.c fec.h
  
  viterbi615_mmx.o: viterbi615_mmx.c fec.h
@@ -182,10 +182,10 @@
  
  viterbi615_sse2.o: viterbi615_sse2.c fec.h
 -	gcc $(CFLAGS) -msse2 -c -o $@ $<
--
--cpu_mode_x86.o: cpu_mode_x86.c fec.h
 +	${CC} $(CFLAGS) -msse2 -c -o $@ $<
  
+-cpu_mode_x86.o: cpu_mode_x86.c fec.h
+-
 -cpu_mode_ppc.o: cpu_mode_ppc.c fec.h
 +cpu_mode.o: cpu_mode.c fec.h
  
