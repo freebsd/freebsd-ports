@@ -1,0 +1,4 @@
+Ruby 2.3.0 introduced #dig on Hash, Array, and Struct. With this gem, you can
+have dig on ruby pre 2.3.0, or any ruby lacking dig.
+
+WWW: https://github.com/jrochkind/dig_rb

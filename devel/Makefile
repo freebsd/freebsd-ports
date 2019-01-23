@@ -5591,6 +5591,7 @@
     SUBDIR += rubygem-devise
     SUBDIR += rubygem-devise-rails5
     SUBDIR += rubygem-devise-rails50
+    SUBDIR += rubygem-dig_rb
     SUBDIR += rubygem-directory_watcher
     SUBDIR += rubygem-ditz
     SUBDIR += rubygem-diva
@@ -6034,6 +6035,7 @@
     SUBDIR += rubygem-strings
     SUBDIR += rubygem-strings-ansi
     SUBDIR += rubygem-strong_migrations
+    SUBDIR += rubygem-strptime
     SUBDIR += rubygem-structured_warnings
     SUBDIR += rubygem-stud
     SUBDIR += rubygem-subexec
