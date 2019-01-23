@@ -30,7 +30,7 @@ EXPIRATION_DATE=2019-03-15
 USES+=		qt:4
 USE_QT=		uic_build moc_build rcc_build linguisttools_build corelib gui network xml
 . else
-USES+=		qt:5
+USES+=		compiler:c++11-lang qt:5
 USE_QT=		buildtools_build linguisttools_build core gui network printsupport widgets xml
 . endif
 
