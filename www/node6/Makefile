@@ -3,6 +3,7 @@
 PORTNAME=	node
 PORTVERSION=	6.16.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	6
@@ -13,11 +14,16 @@ COMMENT=	V8 JavaScript for client and server (6.x LTS)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_SSL=		openssl111 libressl libressl-devel
+BROKEN_SSL_REASON=	Node.js 6.x LTS requires OpenSSL 1.0.2 or the BUNDLED_SSL option enabled
 ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 powerpc64
 
-OPTIONS_DEFINE=	BUNDLED_SSL DOCS NLS DTRACE
-OPTIONS_DEFAULT=DTRACE
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		BUNDLED_SSL DOCS NLS DTRACE
+OPTIONS_DEFAULT=	DTRACE
+OPTIONS_DEFAULT_FreeBSD_12=	BUNDLED_SSL
+OPTIONS_DEFAULT_FreeBSD_13=	BUNDLED_SSL
+OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${OPSYS}_${OSREL:R}}
+OPTIONS_SUB=		yes
 
 .if !exists(/usr/sbin/dtrace)
 OPTIONS_EXCLUDE+=	DTRACE
@@ -61,12 +67,8 @@ LIB_DEPENDS+=	libcares.so:dns/c-ares\
 
 .include <bsd.port.options.mk>
 
-.if empty(PORT_OPTIONS:MBUNDLED_SSL)
-
-.if !empty(SSL_DEFAULT:Mlibressl*)
-IGNORE=		cannot build node.js with LibreSSL. You must enable BUNDLED_SSL
-.endif
-
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085
+BROKEN_SSL+=	base
 .endif
 
 .include <bsd.port.pre.mk>
