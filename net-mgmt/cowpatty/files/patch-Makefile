@@ -1,6 +1,6 @@
---- Makefile.orig	2009-06-06 02:07:08.000000000 +0800
-+++ Makefile	2014-06-20 16:53:32.501910734 +0800
-@@ -1,21 +1,11 @@
+--- Makefile.orig	2018-07-03 19:49:02 UTC
++++ Makefile
+@@ -1,22 +1,12 @@
 -##################################
 -# <jwright> Well, I may be doing stupid things with make
 -# <jwright> OK, it was Makefile stupid'ness
@@ -19,11 +19,13 @@
  PROGOBJ		= md5.o sha1.o utils.o cowpatty.o genpmk.o
  PROG		= cowpatty genpmk
 -BINDIR		= /usr/local/bin
-+PREFIX?= /usr/local
+-CC			= clang
++CC		?= clang
++PREFIX		?= /usr/local
  
  all: $(PROGOBJ) $(PROG)
  
-@@ -44,5 +34,5 @@ strip:
+@@ -45,5 +35,5 @@ strip:
  	@ls -l $(PROG)
  
  install: all
