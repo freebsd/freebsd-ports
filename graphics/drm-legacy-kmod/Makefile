@@ -22,7 +22,7 @@ CONFLICTS_INSTALL=	drm-fbsd11.2-kmod drm-fbsd12.0-kmod drm-current-kmod
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeBSDDesktop
 GH_PROJECT=	drm-legacy
-GH_TAGNAME=	3552631
+GH_TAGNAME=	50ea058
 
 .include <bsd.port.options.mk>
 
