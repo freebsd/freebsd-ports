@@ -683,8 +683,6 @@ lib/lean/library/init/meta/attribute.lean
 lib/lean/library/init/meta/attribute.olean
 lib/lean/library/init/meta/backward.lean
 lib/lean/library/init/meta/backward.olean
-lib/lean/library/init/meta/coinductive_predicates.lean
-lib/lean/library/init/meta/coinductive_predicates.olean
 lib/lean/library/init/meta/comp_value_tactics.lean
 lib/lean/library/init/meta/comp_value_tactics.olean
 lib/lean/library/init/meta/congr_lemma.lean
@@ -783,16 +781,12 @@ lib/lean/library/init/meta/tactic.lean
 lib/lean/library/init/meta/tactic.olean
 lib/lean/library/init/meta/task.lean
 lib/lean/library/init/meta/task.olean
-lib/lean/library/init/meta/transfer.lean
-lib/lean/library/init/meta/transfer.olean
 lib/lean/library/init/meta/vm.lean
 lib/lean/library/init/meta/vm.olean
 lib/lean/library/init/meta/well_founded_tactics.lean
 lib/lean/library/init/meta/well_founded_tactics.olean
 lib/lean/library/init/propext.lean
 lib/lean/library/init/propext.olean
-lib/lean/library/init/relator.lean
-lib/lean/library/init/relator.olean
 lib/lean/library/init/util.lean
 lib/lean/library/init/util.olean
 lib/lean/library/init/version.lean

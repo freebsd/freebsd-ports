@@ -2,7 +2,7 @@
 
 PORTNAME=	lean
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.1
+DISTVERSION=	3.4.2
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,6 +21,6 @@ USE_LDCONFIG=	yes
 
 WRKSRC_SUBDIR=	src
 
-PORTSCOUT=	limit:.*[0-9]*\.[0-9]*$$
+PORTSCOUT=	limit:.*[0-9]+\.[0-9]+$$
 
 .include <bsd.port.mk>
