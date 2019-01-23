@@ -42,7 +42,7 @@ PORTSCOUT=	limitw:1,even
 
 USES=		cpe gettext gmake gnome libtool pathfix pkgconfig tar:xz
 CPE_VENDOR=	gnome
-CPE_VENDOR=	gnome_display_manager
+CPE_PRODUCT=	gnome_display_manager
 USE_GNOME=	cairo dconf gtk30 intltool introspection
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xau xcb xdmcp xorgproto
