@@ -83,6 +83,7 @@
     SUBDIR += e2fsprogs-libuuid
     SUBDIR += elixir-mime
     SUBDIR += elixir-uuid
+    SUBDIR += elki
     SUBDIR += elscreen
     SUBDIR += erlang-mimerl
     SUBDIR += erlang-mimetypes
