@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yard
-PORTVERSION=	0.9.16
+PORTVERSION=	0.9.17
 CATEGORIES=	textproc devel rubygems
 MASTER_SITES=	RG
 
@@ -10,10 +10,12 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Documentation generation tool for Ruby
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 PLIST_FILES=	bin/yard \
 		bin/yardoc \
