@@ -1,6 +1,6 @@
---- Gemfile.orig	2018-06-29 08:57:36 UTC
+--- Gemfile.orig	2018-12-29 14:18:31 UTC
 +++ Gemfile
-@@ -6,40 +6,3 @@ gem 'fastimage'
+@@ -6,41 +6,3 @@ gem 'fastimage'
  gem 'emot'
  gem 'mail'
  gem 'rake'
@@ -14,6 +14,7 @@
 -  gem 'racksh', require: false
 -  gem 'redcarpet'
 -  gem 'octokit'
+-  gem 'mime-types'
 -
 -  platforms :ruby_23, :ruby_24 do
 -    gem 'ruby-debug-ide'
