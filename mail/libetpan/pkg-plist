@@ -7,6 +7,7 @@ include/libetpan/annotatemore_types.h
 include/libetpan/carray.h
 include/libetpan/charconv.h
 include/libetpan/chash.h
+include/libetpan/clientid.h
 include/libetpan/clist.h
 include/libetpan/condstore.h
 include/libetpan/condstore_types.h
@@ -166,4 +167,4 @@ include/libetpan/xlist.h
 lib/libetpan.a
 lib/libetpan.so
 lib/libetpan.so.20
-lib/libetpan.so.20.2.0
+lib/libetpan.so.20.4.0
