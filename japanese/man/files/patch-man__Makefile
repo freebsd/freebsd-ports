@@ -19,7 +19,7 @@
  LDADD+= -L/usr/lib -lxpg4
  .endif
  
-@@ -48,11 +48,18 @@
+@@ -48,16 +48,23 @@
  	${.CURDIR}/jman.man.eng | \
  	${compress} > ${EMAN1}
  
@@ -40,3 +40,10 @@
  afterinstall:
  .endif
  
+ man.o locale.o: locale.h
+ 
+-.include "../Makefile.inc"
+-
+ .include <bsd.prog.mk>
++
++.include "../Makefile.inc"

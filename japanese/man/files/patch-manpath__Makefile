@@ -1,6 +1,6 @@
 --- manpath/Makefile.orig	2001-06-11 21:25:34.000000000 +0900
 +++ manpath/Makefile	2014-08-26 12:10:04.000000000 +0900
-@@ -24,10 +24,19 @@
+@@ -24,12 +24,21 @@
  	${.CURDIR}/jmanpath.man.eng | \
  	${compress} > ${EMAN1}
  
@@ -21,4 +21,8 @@
 +afterinstall:
  .endif
  
- .include "../Makefile.inc"
+-.include "../Makefile.inc"
+-
+ .include <bsd.prog.mk>
++
++.include "../Makefile.inc"
