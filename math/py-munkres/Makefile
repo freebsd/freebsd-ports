@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	munkres
-PORTVERSION=	1.0.11
+PORTVERSION=	1.0.12
+DISTVERSIONPREFIX=	release-
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,5 +16,8 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+GH_ACCOUNT=	bmc
+USE_GITHUB=	yes
 
 .include <bsd.port.mk>
