@@ -98,7 +98,7 @@ index 051482fbabbf..a58268096a89 100644
    }
  #endif
 +
-+#ifdef MOZ_WIDGET_GTK
++#ifdef MOZ_WAYLAND
 +  UniquePtr<RenderCompositor> eglCompositor = RenderCompositorEGL::Create(aWidget);
 +  if (eglCompositor) {
 +    return eglCompositor;
@@ -371,13 +371,15 @@ diff --git widget/gtk/CompositorWidgetParent.cpp widget/gtk/CompositorWidgetPare
 index ae49ec9174bc..b4031883d3a8 100644
 --- widget/gtk/CompositorWidgetParent.cpp
 +++ widget/gtk/CompositorWidgetParent.cpp
-@@ -40,5 +40,11 @@ mozilla::ipc::IPCResult CompositorWidgetParent::RecvNotifyClientSizeChanged(
+@@ -40,5 +40,13 @@ mozilla::ipc::IPCResult CompositorWidgetParent::RecvNotifyClientSizeChanged(
    return IPC_OK();
  }
  
 +mozilla::ipc::IPCResult CompositorWidgetParent::RecvRequestsUpdatingEGLSurface()
 +{
++#ifdef MOZ_WAYLAND
 +  RequestsUpdatingEGLSurface();
++#endif
 +  return IPC_OK();
 +}
 +
@@ -400,13 +402,16 @@ diff --git widget/gtk/GtkCompositorWidget.cpp widget/gtk/GtkCompositorWidget.cpp
 index bc21d6c4d05e..f787e8c23797 100644
 --- widget/gtk/GtkCompositorWidget.cpp
 +++ widget/gtk/GtkCompositorWidget.cpp
-@@ -17,7 +17,8 @@ namespace widget {
+@@ -17,7 +17,11 @@ namespace widget {
  GtkCompositorWidget::GtkCompositorWidget(
      const GtkCompositorWidgetInitData& aInitData,
      const layers::CompositorOptions& aOptions, nsWindow* aWindow)
 -    : CompositorWidget(aOptions), mWidget(aWindow) {
-+    : CompositorWidget(aOptions), mWidget(aWindow),
-+      mWaylandRequestsUpdatingEGLSurface(false) {
++    : CompositorWidget(aOptions), mWidget(aWindow)
++#ifdef MOZ_WAYLAND
++    , mWaylandRequestsUpdatingEGLSurface(false)
++#endif
++    {
    // If we have a nsWindow, then grab the already existing display connection
    // If we don't, then use the init data to connect to the display
    if (aWindow) {
@@ -444,7 +449,7 @@ index fd0c71426c18..75e156dffb02 100644
    // CompositorWidgetDelegate Overrides
  
    PlatformCompositorWidgetDelegate* AsPlatformSpecificDelegate() override {
-@@ -62,11 +66,16 @@ class GtkCompositorWidget : public CompositorWidget,
+@@ -62,11 +66,18 @@ class GtkCompositorWidget : public CompositorWidget,
  
    void NotifyClientSizeChanged(const LayoutDeviceIntSize& aClientSize) override;
  
@@ -457,7 +462,9 @@ index fd0c71426c18..75e156dffb02 100644
  
   private:
    LayoutDeviceIntSize mClientSize;
++#ifdef MOZ_WAYLAND
 +  bool mWaylandRequestsUpdatingEGLSurface;
++#endif
  
    Display* mXDisplay;
    Window mXWindow;
