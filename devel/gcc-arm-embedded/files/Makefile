@@ -171,6 +171,7 @@ build-newlib:
 	 --enable-newlib-io-long-long \
 	 --enable-newlib-io-c99-formats \
 	 --enable-newlib-register-fini \
+	 --enable-newlib-retargetable-locking \
 	 --disable-newlib-supplied-syscalls \
 	 --disable-nls
 	@${ECHO_MSG} "=====>  Build"
@@ -211,6 +212,7 @@ build-newlib-nano:
 	 --pdfdir=${DOC_PREFIX}/pdf \
 	 --disable-newlib-supplied-syscalls    \
 	 --enable-newlib-reent-small           \
+	 --enable-newlib-retargetable-locking  \
 	 --disable-newlib-fvwrite-in-streamio  \
 	 --disable-newlib-fseek-optimization   \
 	 --disable-newlib-wide-orient          \
