@@ -1,6 +1,6 @@
-TIMESTAMP = 1547592556
-SHA256 (influxdata-telegraf-1.9.2_GH0.tar.gz) = 5992900ca2bc697727c05fb9d080783d256649099110e7415a11bf9210e2feef
-SIZE (influxdata-telegraf-1.9.2_GH0.tar.gz) = 1279918
+TIMESTAMP = 1548241330
+SHA256 (influxdata-telegraf-1.9.3_GH0.tar.gz) = 7fd81a7e3714c87d43df42955b2569797e1d2f8b8fbc36e60f8f6b2184332e4f
+SIZE (influxdata-telegraf-1.9.3_GH0.tar.gz) = 1280836
 SHA256 (GoogleCloudPlatform-google-cloud-go-v0.27.0_GH0.tar.gz) = e3a9b4bba987211eeb8afaa9703c9264dc826292a20d71dd1660b94800c05314
 SIZE (GoogleCloudPlatform-google-cloud-go-v0.27.0_GH0.tar.gz) = 1793707
 SHA256 (cloudfoundry-clock-02e53af_GH0.tar.gz) = ea86a06e72a47954fc71b4698818e50f542de799235cf1ca187d9c1a63f2649a
