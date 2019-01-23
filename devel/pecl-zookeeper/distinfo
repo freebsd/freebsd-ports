@@ -1,3 +1,3 @@
-TIMESTAMP = 1532716397
-SHA256 (PECL/zookeeper-0.6.2.tgz) = bc0e664213d5435266eaba2f2eb3a8f5d483f1a84e0544a9fd67b74db616fea8
-SIZE (PECL/zookeeper-0.6.2.tgz) = 29953
+TIMESTAMP = 1548252594
+SHA256 (PECL/zookeeper-0.6.3.tgz) = efdab2fe7ba99c9dc809f86481d5778bdc1aca8f060d55d87fd0c27f8b028b88
+SIZE (PECL/zookeeper-0.6.3.tgz) = 30415
