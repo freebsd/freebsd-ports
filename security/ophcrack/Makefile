@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ophcrack
-PORTVERSION=	3.7.0
+PORTVERSION=	3.8.0
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -20,26 +20,14 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/ophcrack
 PORTDOCS=	AUTHORS ChangeLog README.md
 
-OPTIONS_DEFINE=	X11 GRAPH DOCS
-OPTIONS_DEFAULT=	X11 GRAPH
-GRAPH_IMPLIES=	X11
+OPTIONS_DEFINE=	X11 DOCS
+OPTIONS_DEFAULT=	X11
 
-X11_DESC=	Build Qt 4 GUI frontend
-GRAPH_DESC=	Enable graph rendering via Qwt
+X11_DESC=	Build with Qt 5 GUI frontend
 
-X11_USES=	qt:4
-X11_USE=	QT=moc_build,qmake_build,rcc_build,uic_build,corelib,gui
+X11_USES=	pkgconfig qt:5
+X11_USE=	QT=buildtools_build,qmake_build,charts,core,gui,widgets
 X11_CONFIGURE_OFF=	--disable-gui
-
-GRAPH_LIB_DEPENDS=	libqwt.so:x11-toolkits/qwt5
-GRAPH_CONFIGURE_OFF=	--disable-graph
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MX11}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E '/#include <byteswap\.h>/d ; \
