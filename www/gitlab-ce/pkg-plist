@@ -10995,6 +10995,7 @@
 %%WWWDIR%%/spec/controllers/admin/identities_controller_spec.rb
 %%WWWDIR%%/spec/controllers/admin/impersonations_controller_spec.rb
 %%WWWDIR%%/spec/controllers/admin/projects_controller_spec.rb
+%%WWWDIR%%/spec/controllers/admin/requests_profiles_controller_spec.rb
 %%WWWDIR%%/spec/controllers/admin/runners_controller_spec.rb
 %%WWWDIR%%/spec/controllers/admin/services_controller_spec.rb
 %%WWWDIR%%/spec/controllers/admin/spam_logs_controller_spec.rb
