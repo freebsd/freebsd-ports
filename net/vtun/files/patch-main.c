@@ -1,5 +1,5 @@
---- main.c.orig	2013-07-07 13:31:22.000000000 -0700
-+++ main.c	2016-09-19 20:32:29.072400000 -0700
+--- main.c.orig	2013-07-07 20:31:22 UTC
++++ main.c
 @@ -39,9 +39,9 @@
  #include "lib.h"
  #include "compat.h"
@@ -12,7 +12,7 @@
  #else
  #  define SERVOPT_STRING ""
  #endif
-@@ -57,6 +57,9 @@
+@@ -57,6 +57,9 @@ static void usage(void);
  extern int optind,opterr,optopt;
  extern char *optarg;
  
@@ -22,7 +22,7 @@
  /* for the NATHack bit.  Is our UDP session connected? */
  int is_rmt_fd_connected=1; 
  
-@@ -141,6 +144,14 @@
+@@ -141,6 +144,14 @@ int main(int argc, char *argv[], char *env[])
  	    case 'q':
  		vtun.quiet = 1;
  		break;
@@ -37,7 +37,17 @@
  	    default:
  		usage();
  	        exit(1);
-@@ -250,7 +261,7 @@
+@@ -233,6 +244,9 @@ int main(int argc, char *argv[], char *env[])
+ 	
+ 	server(sock);
+      } else {	
++#ifdef HAVE_WORKING_FORK
++	write_pid();
++#endif
+         init_title(argc,argv,env,"vtund[c]: ");
+         client(host);
+      }
+@@ -250,7 +264,7 @@ static void write_pid(void)
  {
       FILE *f;
  
@@ -46,7 +56,7 @@
          vtun_syslog(LOG_ERR,"Can't write PID file");
          return;
       }
-@@ -273,12 +284,12 @@
+@@ -273,12 +287,17 @@ static void usage(void)
       printf("Usage: \n");
       printf("  Server:\n");
  #ifdef HAVE_WORKING_FORK
@@ -58,7 +68,12 @@
  #endif
       printf("  Client:\n");
       /* I don't think these work. I'm disabling the suggestion - bish 20050601*/
++#ifdef HAVE_WORKING_FORK
       printf("\tvtund [-f file] " /* [-P port] [-L local address] */
 -	    "[-q] [-p] [-m] [-t timeout] <host profile> <server address>\n");
 +	    "[-q] [-p] [-m] [-t timeout] [-e] <host profile> <server address>\n");
++#else
++     printf("\tvtund [-f file] " /* [-P port] [-L local address] */
++	    "[-q] [-p] [-m] [-t timeout] [-e] <host profile> <server address>\n");
++#endif
  }
