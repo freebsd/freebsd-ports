@@ -1,9 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	sway
-DISTVERSION=	1.0-beta.2-243
-DISTVERSIONSUFFIX=	-g410c9613
+DISTVERSION=	1.0-beta.2-270
+DISTVERSIONSUFFIX=	-g1a1133dc
 CATEGORIES=	x11-wm
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	f24c0e7b92a5.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	i3-compatible Wayland compositor
