@@ -1689,6 +1689,7 @@
     SUBDIR += llvm50
     SUBDIR += llvm60
     SUBDIR += llvm70
+    SUBDIR += llvm80
     SUBDIR += lm4tools
     SUBDIR += lmdbg
     SUBDIR += lndir
@@ -6361,6 +6362,7 @@
     SUBDIR += xtoolchain-llvm50
     SUBDIR += xtoolchain-llvm60
     SUBDIR += xtoolchain-llvm70
+    SUBDIR += xtoolchain-llvm80
     SUBDIR += xwpe
     SUBDIR += xxgdb
     SUBDIR += xxhash
