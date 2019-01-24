@@ -1,0 +1,16 @@
+--- tools/lld/docs/ld.lld.1.orig	2019-01-24 19:54:07.421128000 +0000
++++ tools/lld/docs/ld.lld.1	2019-01-24 19:53:24.321846000 +0000
+@@ -479,6 +479,13 @@
+ .Dv DYNAMIC
+ section.
+ Different loaders can decide how to handle this flag on their own.
++.It Cm ifunc-noplt
++Do not emit PLT entries for GNU ifuncs.
++Instead, preserve relocations for ifunc call sites so that they may
++be applied by a run-time loader.
++Note that this feature requires special loader support and will
++generally result in application crashes when used outside of freestanding
++environments.
+ .It Cm initfirst
+ Sets the
+ .Dv DF_1_INITFIRST

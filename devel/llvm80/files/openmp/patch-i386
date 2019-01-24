@@ -1,0 +1,11 @@
+--- projects/openmp/runtime/src/kmp_runtime.cpp.orig
++++ projects/openmp/runtime/src/kmp_runtime.cpp
+@@ -8104,7 +8104,7 @@
+ 
+ #elif KMP_ARCH_X86 || KMP_ARCH_ARM || KMP_ARCH_AARCH || KMP_ARCH_MIPS
+ 
+-#if KMP_OS_LINUX || KMP_OS_WINDOWS || KMP_OS_HURD
++#if KMP_OS_LINUX || KMP_OS_WINDOWS || KMP_OS_HURD || KMP_OS_FREEBSD
+ 
+     // basic tuning
+ 
