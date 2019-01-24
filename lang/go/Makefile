@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	go
-PORTVERSION=	1.11.4
+PORTVERSION=	1.11.5
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://golang.org/dl/
