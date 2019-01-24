@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bup
-PORTVERSION=	0.29.1
+PORTVERSION=	0.29.2
 CATEGORIES=	archivers python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,6 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylibacl>=0:security/py-pylibacl@${PY_FLAVOR
 		par2cmdline>=0.4:archivers/par2cmdline
 BUILD_DEPENDS=	bash:shells/bash git>=1.5.3.1:devel/git
 
+USES=		python:2.7 gmake
+
 PLIST_SUB=	MANDIR=${PREFIX}/man
 
 OPTIONS_DEFINE=	TORNADO DOCS
@@ -31,7 +33,6 @@ DOCS_VARS_OFF=		PANDOC=""
 
 TEST_TARGET=		test
 MAKE_ARGS=	PANDOC="${PANDOC}"
-USES=		python:2.7 gmake
 USE_GITHUB=	yes
 
 .include <bsd.port.pre.mk>
