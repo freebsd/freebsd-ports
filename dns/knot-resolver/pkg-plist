@@ -29,13 +29,16 @@ include/libkres/trie.h
 include/libkres/utils.h
 include/libkres/zonecut.h
 lib/kdns_modules/ahocorasick.so
+lib/kdns_modules/basexx.lua
 lib/kdns_modules/bogus_log.so
 lib/kdns_modules/daf.lua
 lib/kdns_modules/daf/daf.js
 lib/kdns_modules/detect_time_jump.lua
 lib/kdns_modules/detect_time_skew.lua
 lib/kdns_modules/dns64.lua
+lib/kdns_modules/edns_keepalive.so
 lib/kdns_modules/etcd.lua
+lib/kdns_modules/experimental_dot_auth.lua
 lib/kdns_modules/graphite.lua
 lib/kdns_modules/hints.so
 lib/kdns_modules/http.lua
@@ -59,8 +62,9 @@ lib/kdns_modules/http/selectize.min.css
 lib/kdns_modules/http/selectize.min.js
 lib/kdns_modules/http/topojson.js
 lib/kdns_modules/http_trace.lua
-lib/kdns_modules/kres.lua
 lib/kdns_modules/kres-gen.lua
+lib/kdns_modules/kres.lua
+lib/kdns_modules/nsid.so
 lib/kdns_modules/policy.lua
 lib/kdns_modules/predict.lua
 lib/kdns_modules/prefill.lua
@@ -77,7 +81,7 @@ lib/kdns_modules/view.lua
 lib/kdns_modules/workarounds.lua
 lib/kdns_modules/zonefile.lua
 lib/libkres.so
-lib/libkres.so.8
+lib/libkres.so.9
 libdata/pkgconfig/libkres.pc
 man/man8/kresd.8.gz
 sbin/kresc
