@@ -9,7 +9,9 @@ share/applications/featherpad.desktop
 %%DATADIR%%/translations/featherpad_es.qm
 %%DATADIR%%/translations/featherpad_fr.qm
 %%DATADIR%%/translations/featherpad_lt.qm
+%%DATADIR%%/translations/featherpad_nl.qm
 %%DATADIR%%/translations/featherpad_pl.qm
+%%DATADIR%%/translations/featherpad_pt_BR.qm
 %%DATADIR%%/translations/featherpad_ru.qm
 %%DATADIR%%/translations/featherpad_tr.qm
 %%DATADIR%%/translations/featherpad_zh_CN.qm
