@@ -10,6 +10,7 @@ MAINTAINER=	jt@ixsystems.com
 COMMENT=	Scientific calculator from the Lumina Desktop
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/../../../LICENSE
 
 LIB_DEPENDS+=	libxcb-ewmh.so:x11/xcb-util-wm \
 		libxcb-icccm.so:x11/xcb-util-wm \
