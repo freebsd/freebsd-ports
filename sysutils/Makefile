@@ -998,6 +998,7 @@
     SUBDIR += py-ranger
     SUBDIR += py-salt
     SUBDIR += py-scandir
+    SUBDIR += py-scarab
     SUBDIR += py-scriptine
     SUBDIR += py-shutilwhich
     SUBDIR += py-stdiff

@@ -1,0 +1,7 @@
+Before you can manipulate PRs with this program in FreeBSD Bugzilla
+you have to create an API key and copy it in your config file.
+
+Login -> Preferences -> API keys -> Generate a new API key
+
+The config file is probed from your home directory as ".scarabrc".
+A sample scarabrc config file is located under %%EXAMPLESDIR%%.
