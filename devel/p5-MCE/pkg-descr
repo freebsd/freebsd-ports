@@ -5,4 +5,4 @@ queuing model. Imagine the line being the data and bank-tellers the parallel
 workers. MCE enhances that model by adding the ability to chunk the next n
 elements from the input stream to the next available worker.
 
-WWW: https://metacpan.org/pod/MCE
+WWW: https://metacpan.org/release/MCE
