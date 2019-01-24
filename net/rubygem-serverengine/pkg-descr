@@ -1,0 +1,8 @@
+ServerEngine is a framework to implement robust multiprocess servers like
+Unicorn.
+
+ServerEngine also provides useful options and utilities such as logging, signal
+handlers, changing process names shown by ps command, chuser, stacktrace and
+heap dump on signal.
+
+WWW: https://github.com/treasure-data/serverengine
