@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fluentd
-PORTVERSION=	0.12.42
+PORTVERSION=	1.3.3
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -11,17 +11,21 @@ COMMENT=	Fluent event collector
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	\
-	rubygem-msgpack>=0.5.11:devel/rubygem-msgpack \
-	rubygem-json>=1.4.3:devel/rubygem-json \
+	rubygem-dig_rb>=1.0.0:devel/rubygem-dig_rb \
+	rubygem-msgpack>=0.7.0:devel/rubygem-msgpack \
 	rubygem-yajl-ruby>=1.0:devel/rubygem-yajl-ruby \
-	rubygem-cool.io>=1.2.2:devel/rubygem-cool.io \
+	rubygem-cool.io>=1.4.5:devel/rubygem-cool.io \
+	rubygem-serverengine>=2.0.4:net/rubygem-serverengine \
 	rubygem-http_parser.rb>=0.5.1:net/rubygem-http_parser.rb \
 	rubygem-sigdump>=0.2.2:devel/rubygem-sigdump \
+	rubygem-strptime>=0.2.2:devel/rubygem-strptime \
 	rubygem-tzinfo>=1.0.0:devel/rubygem-tzinfo \
 	rubygem-tzinfo-data>=1.0.0:devel/rubygem-tzinfo-data
 
 USE_RUBY=	yes
 PLIST_FILES=	bin/fluent-cat bin/fluent-debug bin/fluent-gem bin/fluentd \
+		bin/fluent-binlog-reader bin/fluent-ca-generate \
+		bin/fluent-plugin-config-format bin/fluent-plugin-generate \
 		"@sample etc/fluentd/fluent.conf.sample"
 PLIST_DIRS=	etc/fluentd/plugin
 USES=		gem
