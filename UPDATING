@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190124:
+  AFFECTS: users of sysutils/rubygem-fluentd, sysutils/fluent-bit
+  AUTHOR: girgen@FreeBSD.org
+
+  The fluentd port has been upgraded from the 0.12 line to 1.3.3.  The upgrade
+  is mostly non-disruptive since there is a backward compatibility with 0.12
+  plugins and configuration files, but care should be taken about the order of
+  server upgrades since fluentd 1.x is unable to send it's data to version 0.12
+  instances.  You should carefully read
+  https://docs.fluentd.org/v1.0/articles/update-from-v0.12 before performing
+  any upgrade activities.
+
 20190120:
   AFFECTS: users of mail/fetchmail
   AUTHOR: mandree@FreeBSD.org
