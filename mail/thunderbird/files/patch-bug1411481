@@ -15,71 +15,69 @@ diff --git dom/canvas/CanvasRenderingContext2D.cpp dom/canvas/CanvasRenderingCon
 index ef3f868bdbf7..8666564b4d0c 100644
 --- dom/canvas/CanvasRenderingContext2D.cpp
 +++ dom/canvas/CanvasRenderingContext2D.cpp
-@@ -1438,7 +1438,8 @@ CanvasRenderingContext2D::AllowOpenGLCanvas() const
+@@ -1358,7 +1358,8 @@ bool CanvasRenderingContext2D::AllowOpenGLCanvas() con
    // HTMLCanvasElement::GetCompositorBackendType would return LAYERS_NONE
    // as well, so it wouldn't help much.
  
 -  return (mCompositorBackend == LayersBackend::LAYERS_OPENGL) &&
 +  return (mCompositorBackend == LayersBackend::LAYERS_OPENGL ||
 +          mCompositorBackend == LayersBackend::LAYERS_WR) &&
-     gfxPlatform::GetPlatform()->AllowOpenGLCanvas();
+          gfxPlatform::GetPlatform()->AllowOpenGLCanvas();
  }
  
 diff --git gfx/thebes/gfxPlatform.cpp gfx/thebes/gfxPlatform.cpp
 index b9beea68d8c5..82635f9ab3ce 100644
 --- gfx/thebes/gfxPlatform.cpp
 +++ gfx/thebes/gfxPlatform.cpp
-@@ -1386,7 +1386,8 @@ bool gfxPlatform::AllowOpenGLCanvas()
-   // so we let content process always assume correct compositor backend.
+@@ -1341,7 +1341,8 @@ bool gfxPlatform::AllowOpenGLCanvas() {
    // The callers have to do the right thing.
-   bool correctBackend = !XRE_IsParentProcess() ||
--    ((mCompositorBackend == LayersBackend::LAYERS_OPENGL) &&
-+    ((mCompositorBackend == LayersBackend::LAYERS_OPENGL ||
-+      mCompositorBackend == LayersBackend::LAYERS_WR) &&
-      (GetContentBackendFor(mCompositorBackend) == BackendType::SKIA));
+   bool correctBackend =
+       !XRE_IsParentProcess() ||
+-      ((mCompositorBackend == LayersBackend::LAYERS_OPENGL) &&
++      ((mCompositorBackend == LayersBackend::LAYERS_OPENGL ||
++        mCompositorBackend == LayersBackend::LAYERS_WR) &&
+        (GetContentBackendFor(mCompositorBackend) == BackendType::SKIA));
  
    if (gfxPrefs::CanvasAzureAccelerated() && correctBackend) {
 diff --git gfx/thebes/gfxPlatform.h gfx/thebes/gfxPlatform.h
 index c988eb1168a8..3bbf2b763f26 100644
 --- gfx/thebes/gfxPlatform.h
 +++ gfx/thebes/gfxPlatform.h
-@@ -286,7 +286,7 @@ public:
-     /// asking for it, we will examine the commands in the first few seconds
-     /// of the canvas usage, and potentially change to accelerated or
-     /// non-accelerated canvas.
--    bool AllowOpenGLCanvas();
-+    virtual bool AllowOpenGLCanvas();
-     virtual void InitializeSkiaCacheLimits();
+@@ -265,7 +265,7 @@ class gfxPlatform {
+   /// asking for it, we will examine the commands in the first few seconds
+   /// of the canvas usage, and potentially change to accelerated or
+   /// non-accelerated canvas.
+-  bool AllowOpenGLCanvas();
++  virtual bool AllowOpenGLCanvas();
+   virtual void InitializeSkiaCacheLimits();
  
-     static bool AsyncPanZoomEnabled();
+   static bool AsyncPanZoomEnabled();
 diff --git gfx/thebes/gfxWindowsPlatform.cpp gfx/thebes/gfxWindowsPlatform.cpp
 index 9ba6f40c6cc0..4d65791d075f 100644
 --- gfx/thebes/gfxWindowsPlatform.cpp
 +++ gfx/thebes/gfxWindowsPlatform.cpp
-@@ -509,6 +509,13 @@ gfxWindowsPlatform::UpdateRenderMode()
+@@ -466,6 +466,11 @@ void gfxWindowsPlatform::UpdateRenderMode() {
    }
  }
  
-+bool
-+gfxWindowsPlatform::AllowOpenGLCanvas()
-+{
++bool gfxWindowsPlatform::AllowOpenGLCanvas() {
 +  // OpenGL canvas is not supported on windows
 +  return false;
 +}
 +
- mozilla::gfx::BackendType
- gfxWindowsPlatform::GetContentBackendFor(mozilla::layers::LayersBackend aLayers)
- {
+ mozilla::gfx::BackendType gfxWindowsPlatform::GetContentBackendFor(
+     mozilla::layers::LayersBackend aLayers) {
+   mozilla::gfx::BackendType defaultBackend =
 diff --git gfx/thebes/gfxWindowsPlatform.h gfx/thebes/gfxWindowsPlatform.h
 index 47048de8f5f5..47ec0e9e5547 100644
 --- gfx/thebes/gfxWindowsPlatform.h
 +++ gfx/thebes/gfxWindowsPlatform.h
-@@ -174,6 +174,8 @@ public:
-     void SchedulePaintIfDeviceReset() override;
-     void CheckForContentOnlyDeviceReset();
+@@ -171,6 +171,8 @@ class gfxWindowsPlatform : public gfxPlatform {
+   void SchedulePaintIfDeviceReset() override;
+   void CheckForContentOnlyDeviceReset();
  
-+    bool AllowOpenGLCanvas() override;
++  bool AllowOpenGLCanvas() override;
 +
-     mozilla::gfx::BackendType GetContentBackendFor(mozilla::layers::LayersBackend aLayers) override;
+   mozilla::gfx::BackendType GetContentBackendFor(
+       mozilla::layers::LayersBackend aLayers) override;
  
-     mozilla::gfx::BackendType GetPreferredCanvasBackend() override;
