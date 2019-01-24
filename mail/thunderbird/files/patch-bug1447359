@@ -15,31 +15,31 @@ diff --git js/src/jit/arm64/MacroAssembler-arm64-inl.h js/src/jit/arm64/MacroAss
 index 7061cbfd93ebb..190442f7afa0a 100644
 --- js/src/jit/arm64/MacroAssembler-arm64-inl.h
 +++ js/src/jit/arm64/MacroAssembler-arm64-inl.h
-@@ -359,6 +359,7 @@ MacroAssembler::sub32FromStackPtrWithPatch(Register dest)
- {
-     vixl::UseScratchRegisterScope temps(this);
-     const ARMRegister scratch = temps.AcquireX();
-+    AutoForbidPools afp(this, /* max number of instructions in scope = */ 3);
-     CodeOffset offs = CodeOffset(currentOffset());
-     movz(scratch, 0, 0);
-     movk(scratch, 0, 16);
+@@ -268,6 +268,7 @@ void MacroAssembler::add64(Imm64 imm, Register64 dest)
+ CodeOffset MacroAssembler::sub32FromStackPtrWithPatch(Register dest) {
+   vixl::UseScratchRegisterScope temps(this);
+   const ARMRegister scratch = temps.AcquireX();
++  AutoForbidPools afp(this, /* max number of instructions in scope = */ 3);
+   CodeOffset offs = CodeOffset(currentOffset());
+   movz(scratch, 0, 0);
+   movk(scratch, 0, 16);
 diff --git js/src/jit/arm64/MacroAssembler-arm64.cpp js/src/jit/arm64/MacroAssembler-arm64.cpp
 index 7b599b7e9d610..4e8fdb6a67019 100644
 --- js/src/jit/arm64/MacroAssembler-arm64.cpp
 +++ js/src/jit/arm64/MacroAssembler-arm64.cpp
-@@ -707,6 +707,7 @@ MacroAssembler::patchFarJump(CodeOffset farJump, uint32_t targetOffset)
- CodeOffset
- MacroAssembler::nopPatchableToCall(const wasm::CallSiteDesc& desc)
- {
-+    AutoForbidPools afp(this, /* max number of instructions in scope = */ 1);
-     CodeOffset offset(currentOffset());
-     Nop();
-     append(desc, CodeOffset(currentOffset()));
-@@ -1077,6 +1078,7 @@ MacroAssembler::comment(const char* msg)
- CodeOffset
- MacroAssembler::wasmTrapInstruction()
- {
-+    AutoForbidPools afp(this, /* max number of instructions in scope = */ 1);
-     CodeOffset offs(currentOffset());
-     Unreachable();
-     return offs;
+@@ -666,6 +666,7 @@ void MacroAssembler::patchNearJumpToNop(uint8_t* jump)
+ }
+ 
+ CodeOffset MacroAssembler::nopPatchableToCall(const wasm::CallSiteDesc& desc) {
++  AutoForbidPools afp(this, /* max number of instructions in scope = */ 1);
+   CodeOffset offset(currentOffset());
+   Nop();
+   append(desc, CodeOffset(currentOffset()));
+@@ -1002,6 +1003,7 @@ void MacroAssembler::comment(const char* msg) { Assemb
+ // wasm support
+ 
+ CodeOffset MacroAssembler::wasmTrapInstruction() {
++  AutoForbidPools afp(this, /* max number of instructions in scope = */ 1);
+   CodeOffset offs(currentOffset());
+   Unreachable();
+   return offs;

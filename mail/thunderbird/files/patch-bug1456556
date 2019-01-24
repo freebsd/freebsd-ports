@@ -11,12 +11,12 @@ diff --git dom/fetch/FetchConsumer.cpp dom/fetch/FetchConsumer.cpp
 index 134bf7f2e703a..3c3687fea1d5a 100644
 --- dom/fetch/FetchConsumer.cpp
 +++ dom/fetch/FetchConsumer.cpp
-@@ -582,7 +582,7 @@ FetchBodyConsumer<Derived>::ContinueConsumeBody(nsresult aStatus,
-   RefPtr<Promise> localPromise = mConsumePromise.forget();
+@@ -560,7 +560,7 @@ void FetchBodyConsumer<Derived>::ContinueConsumeBody(n
  
    RefPtr<FetchBodyConsumer<Derived>> self = this;
--  auto autoReleaseObject = mozilla::MakeScopeExit([&] {
-+  auto autoReleaseObject = mozilla::MakeScopeExit([self] {
-     self->ReleaseObject();
-   });
+   auto autoReleaseObject =
+-      mozilla::MakeScopeExit([&] { self->ReleaseObject(); });
++      mozilla::MakeScopeExit([self] { self->ReleaseObject(); });
  
+   if (aShuttingDown) {
+     // If shutting down, we don't want to resolve any promise.
