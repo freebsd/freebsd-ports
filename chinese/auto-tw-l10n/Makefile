@@ -2,22 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	auto-tw-l10n
-PORTVERSION=	1.15
-PORTREVISION=	2
+PORTVERSION=	1.16
 CATEGORIES=	chinese
-MASTER_SITES=	LOCAL/sunpoet
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatic localization for Traditional Chinese locale
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		tar:xz
 
 SUB_FILES=	pkg-message
 
-pre-install:
-		@${FIND} ${WRKSRC} -name "*.orig" -delete
+USE_GITHUB=	yes
+GH_ACCOUNT=	BSDTW
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/skel/zh_TW.UTF-8/
