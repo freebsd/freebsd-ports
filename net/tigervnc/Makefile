@@ -17,8 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/GL/internal/dri_interface.h:graphics/mesa-dr
 		${LOCALBASE}/libdata/pkgconfig/fontutil.pc:x11-fonts/font-util \
 		${LOCALBASE}/include/FL/Fl.H:x11-toolkits/fltk \
 		bash:shells/bash
-LIB_DEPENDS=	libunwind.so:devel/libunwind \
-		libxshmfence.so:x11/libxshmfence \
+LIB_DEPENDS=	libxshmfence.so:x11/libxshmfence \
 		libfontconfig.so:x11-fonts/fontconfig
 # almost equivalent to x11-servers/xorg-server's
 RUN_DEPENDS=	${LOCALBASE}/share/X11/xkb/rules/base:x11/xkeyboard-config \
@@ -107,6 +106,11 @@ CONFIGURE_ARGS+=	\
 		--with-fontrootdir=${LOCALBASE}/share/fonts
 
 .include <bsd.port.pre.mk>
+
+# keep in sync with all platforms where libunwind is available
+.if (${ARCH} == amd64 || ${ARCH} == i386)
+LIB_DEPENDS+=	libunwind.so:devel/libunwind
+.endif
 
 TIGERVNC_XORG_PATCH_VER=	${MAKE} -C "${PORTSDIR}/x11-servers/xorg-server" -V PORTVERSION:R:S,\.,,g
 

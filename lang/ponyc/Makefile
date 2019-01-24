@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=		aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	Undefined reference to __atomic_compare_exchange_8
 
-LIB_DEPENDS=	libunwind.so:devel/libunwind
 BUILD_DEPENDS=	llvm-link${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 RUN_DEPENDS=	llvm-link${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 
@@ -52,6 +51,11 @@ PONYARCH?=	armv8-a
 .elif "${ARCH}" == amd64
 # Can't use 'x86-64' because atomics are required
 PONYARCH?=	core2
+.endif
+
+# keep in sync with all platforms where libunwind is available
+.if (${ARCH} == amd64 || ${ARCH} == i386)
+LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200085

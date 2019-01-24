@@ -20,8 +20,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libdbus-1.so:devel/dbus \
-		libsndfile.so:audio/libsndfile \
-		libunwind.so:devel/libunwind
+		libsndfile.so:audio/libsndfile
 
 # lib/libeio.so.1
 CONFLICTS_INSTALL=	libeio
@@ -168,6 +167,11 @@ CONFIGURE_ARGS+=		--disable-ibus --with-glib=no
 
 .if empty(PORT_OPTIONS:MOPENGL) && empty(PORT_OPTIONS:MOPENGLES)
 CONFIGURE_ARGS+=		--with-opengl=none
+.endif
+
+# keep in sync with all platforms where libunwind is available
+.if (${ARCH} == amd64 || ${ARCH} == i386)
+LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
 .if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

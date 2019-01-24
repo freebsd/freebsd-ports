@@ -18,8 +18,6 @@ BROKEN_powerpc=		fails to build: assembly not supported, see PR\#94: http://code
 BROKEN_powerpc64=	fails to build: assembly not supported, see PR\#94: http://code.google.com/p/google-perftools/issues/detail?id=94&can=1
 BROKEN_sparc64=		fails to build: assembly not supported, see PR\#94: http://code.google.com/p/google-perftools/issues/detail?id=94&can=1
 
-LIB_DEPENDS=	libunwind.so:devel/libunwind
-
 DOCSDIR=	${PREFIX}/share/doc/gperftools
 
 USES=		compiler gmake libtool
@@ -62,6 +60,11 @@ CXXFLAGS+=	-fno-builtin
 
 .if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=--enable-frame-pointers
+.endif
+
+# keep in sync with all platforms where libunwind is available
+.if (${ARCH} == amd64 || ${ARCH} == i386)
+LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
 post-build:

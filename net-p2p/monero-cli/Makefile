@@ -35,7 +35,6 @@ LIB_DEPENDS=	\
 		libpgm.so:net/openpgm \
 		libsodium.so:security/libsodium \
 		libunbound.so:dns/unbound \
-		libunwind.so:devel/libunwind \
 		libzmq.so:net/libzmq4
 BUILD_DEPENDS=	${LOCALBASE}/include/rapidjson/document.h:devel/rapidjson \
 		${LOCALBASE}/include/zmq.hpp:net/cppzmq
@@ -78,6 +77,11 @@ LD_EMULATION=	elf64ppc
 
 CMAKE_ARGS+=	-DLD_RAW_FLAGS:STRING=-m${LD_EMULATION}
 
+.endif
+
+# keep in sync with all platforms where libunwind is available
+.if (${ARCH} == amd64 || ${ARCH} == i386)
+LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
 CMAKE_ARGS+=	-DMANUAL_SUBMODULES:BOOL=ON
