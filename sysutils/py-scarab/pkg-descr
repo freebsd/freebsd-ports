@@ -1,0 +1,5 @@
+scarab is a CLI tool to automate some of the Bugzilla-related workflows
+in the FreeBSD project. Common commands are fetching, attaching
+and creating PR's from the command line.
+
+WWW: https://github.com/gonzoua/scarab
