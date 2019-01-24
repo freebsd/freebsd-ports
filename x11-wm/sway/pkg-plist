@@ -3,8 +3,6 @@ bin/swaybar
 bin/swaybg
 bin/swaymsg
 bin/swaynag
-bin/swayterm
-%%ETCDIR%%/config.d/evdev
 @sample %%ETCDIR%%/config.sample
 %%ETCDIR%%/security.d/10-freebsd
 %%MANPAGES%%man/man1/sway.1.gz
