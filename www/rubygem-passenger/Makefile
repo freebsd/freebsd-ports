@@ -42,7 +42,6 @@ SHEBANG_FILES=	src/cxx_supportlib/vendor-copy/libuv/gyp_uv.py
 
 LIB_DEPENDS+=	libuv.so:devel/libuv \
 		libcurl.so:ftp/curl \
-		libunwind.so:devel/libunwind \
 		libapr-1.so:devel/apr1
 
 BUILD_DEPENDS+=	rubygem-rack>=0:www/rubygem-rack

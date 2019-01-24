@@ -47,6 +47,14 @@ OPTIONS_SUB=	yes
 
 .include "${.CURDIR}/Makefile.options"
 
+# libunwind is specific to amd64/i386
+OPTIONS_EXCLUDE_aarch64=	CAMERATRACK
+OPTIONS_EXCLUDE_armv6=		CAMERATRACK
+OPTIONS_EXCLUDE_armv7=		CAMERATRACK
+OPTIONS_EXCLUDE_powerpc=	CAMERATRACK
+OPTIONS_EXCLUDE_powerpc64=	CAMERATRACK
+OPTIONS_EXCLUDE_powerpcspe=	CAMERATRACK
+
 ALEMBIC_CMAKE_BOOL=		WITH_ALEMBIC
 ALEMBIC_LIB_DEPENDS=		libAlembic.so:graphics/alembic
 # note that this needs to be set to match alembics hdf5 option

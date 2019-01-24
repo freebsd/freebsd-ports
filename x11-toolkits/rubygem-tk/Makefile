@@ -10,8 +10,6 @@ COMMENT=	Ruby interface to TclTk-8.6
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libunwind.so:devel/libunwind
-
 CONFIGURE_ARGS=--with-tcltkversion=8.6,8.6 \
 		--with-tk-include=${LOCALBASE}/include/tk8.6 \
 		--with-tcl-include=${LOCALBASE}/include/tcl8.6
