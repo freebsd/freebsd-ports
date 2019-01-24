@@ -3,6 +3,7 @@
 PORTNAME=	sway
 DISTVERSION=	1.0-beta.2-270
 DISTVERSIONSUFFIX=	-g1a1133dc
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -56,14 +57,5 @@ post-patch:
 # Let @sample handle default files under etc/
 	@${REINPLACE_CMD} -e '/config\.in/{ N; s/@BASENAME@/&.sample/; }' \
 		${WRKSRC}/meson.build
-# Let terminal chooser pick default
-	@${REINPLACE_CMD} -e 's/urxvt/swayterm/' \
-		${WRKSRC}/config.in
-
-post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/swayterm ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${ETCDIR}/config.d
-# x11/libxkbcommon has --with-default-rules="xorg" but x11/libinput expects "evdev"
-	${ECHO_CMD} 'input * xkb_rules evdev' >${STAGEDIR}${ETCDIR}/config.d/evdev
 
 .include <bsd.port.mk>
