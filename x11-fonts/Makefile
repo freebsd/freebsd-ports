@@ -164,6 +164,7 @@
     SUBDIR += pingwi
     SUBDIR += plex-ttf
     SUBDIR += powerline-fonts
+    SUBDIR += prociono
     SUBDIR += profont
     SUBDIR += proggy_fonts
     SUBDIR += proggy_fonts-ttf
