@@ -1,0 +1,7 @@
+caesarcipher is an implementation of the traditional Caesar cipher
+encryption algorithm with an extension to all printable ASCII
+characters.  It can be run as an interactive tool on the command
+line or process input- and outputfiles that are passed to the
+ultility.
+
+WWW: http://www.olivermahmoudi.com/programming/caesarcipher
