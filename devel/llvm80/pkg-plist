@@ -56,7 +56,6 @@ bin/sancov%%LLVM_SUFFIX%%
 %%CLANG%%bin/clang-cpp%%LLVM_SUFFIX%%
 %%CLANG%%bin/clang-extdef-mapping%%LLVM_SUFFIX%%
 %%CLANG%%bin/clang-format%%LLVM_SUFFIX%%
-%%CLANG%%bin/clang-func-mapping%%LLVM_SUFFIX%%
 %%CLANG%%bin/clang-import-test%%LLVM_SUFFIX%%
 %%CLANG%%bin/clang-offload-bundler%%LLVM_SUFFIX%%
 bin/diagtool%%LLVM_SUFFIX%%
