@@ -130,6 +130,7 @@
     SUBDIR += libXft
     SUBDIR += liberation-fonts-ttf
     SUBDIR += libfontenc
+    SUBDIR += linden-hill
     SUBDIR += linux-c6-fontconfig
     SUBDIR += linux-c7-fontconfig
     SUBDIR += linuxlibertine
