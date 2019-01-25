@@ -61,6 +61,7 @@
     SUBDIR += bugs
     SUBDIR += bzrtp
     SUBDIR += ca_root_nss
+    SUBDIR += caesarcipher
     SUBDIR += calife
     SUBDIR += cardpeek
     SUBDIR += cargo-audit
