@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drupal7
-DISTVERSION=	7.61
+DISTVERSION=	7.63
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		drupal:7 php:web shebangfix
 USE_PHP=	dom filter gd hash json mbstring pcre pdo session simplexml xml
+
 SHEBANG_FILES=	scripts/password-hash.sh
 
 NO_ARCH=	yes
