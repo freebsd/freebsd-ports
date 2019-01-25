@@ -1,0 +1,5 @@
+Bitlbee plugin to allow connections to the discord chat service.
+A more lightweight alternative to using bitlbee compiled with
+libpurple support.
+
+WWW: https://github.com/sm00th/bitlbee-discord
