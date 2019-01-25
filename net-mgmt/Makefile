@@ -40,6 +40,7 @@
     SUBDIR += centreon-clib
     SUBDIR += check_ipmi_sensor
     SUBDIR += check_logfiles
+    SUBDIR += check_mk_agent
     SUBDIR += check_multi
     SUBDIR += check_mysql_health
     SUBDIR += check_ssl_cert
