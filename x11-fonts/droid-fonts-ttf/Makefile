@@ -8,13 +8,14 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	The Droid typeface family
+COMMENT=	Droid typeface family
 
 LICENSE=	APACHE20
 
+USES=		fonts tar:xz
+
 NO_ARCH=	yes
 NO_BUILD=	yes
-USES=		fonts tar:xz
 
 FONTNAME=	Droid
 
