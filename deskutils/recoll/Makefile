@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recoll
-DISTVERSION=	1.23.7
-PORTREVISION=	3
+DISTVERSION=	1.24.3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/recoll/
 
@@ -20,13 +19,16 @@ RUN_DEPENDS=	unrar:archivers/unrar \
 		wpd2html:textproc/libwpd010 \
 		unrtf:textproc/unrtf
 
-USES=		bison gmake iconv libtool localbase python:2.7 shebangfix
-SHEBANG_FILES=	filters/*.py desktop/hotrecoll.py \
-		filters/rcl7z filters/rclaudio filters/rclchm \
-		filters/rcldia filters/rclepub filters/rclepub1 \
-		filters/rclics filters/rclinfo filters/rclkar \
-		filters/rclpython filters/rclrar filters/rcltar \
-		filters/rclwar filters/rclzip
+USES=		bison gmake gnome iconv libtool localbase python:2.7 shebangfix
+
+USE_LDCONFIG=	yes
+
+SHEBANG_FILES=	filters/*.py filters/rcl7z filters/rclaudio \
+		filters/rclchm filters/rcldia filters/rclepub \
+		filters/rclepub1 filters/rclics filters/rclinfo \
+		filters/rclkar filters/rclpython filters/rclrar \
+		filters/rcltar filters/rclwar filters/rclzip \
+		desktop/hotrecoll.py
 USE_PYTHON=	py3kplist
 USE_GNOME=	libxslt:run
 GNU_CONFIGURE=	yes
@@ -39,7 +41,7 @@ PLIST_SUB=		VERSION="${PORTVERSION}" \
 			PYDISTUTILS_EGGINFO="${PYDISTUTILS_EGGINFO}"
 
 OPTIONS_DEFINE=		ASPELL CHM DJVU LATEX IMAGE PDF PS \
-			SOUND QT4 X11MON
+			SOUND QT5 X11MON
 OPTIONS_DEFAULT=	ASPELL IMAGE PDF PS SOUND
 OPTIONS_SUB=		yes
 
@@ -53,12 +55,10 @@ IMAGE_RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 LATEX_USE=		tex=dvipsk:run,latex:run
 PDF_RUN_DEPENDS=	pdftotext:graphics/poppler-utils
 PS_RUN_DEPENDS=		pstotext:print/pstotext
-QT4_USES=		qmake:no_env qt:4
-QT4_USE=		qt=moc_build,qmake_build,rcc_build,uic_build \
-			qt=iconengines_run,imageformats_run \
-			qt=corelib,gui,xml,webkit
-QT4_CONFIGURE_ENABLE=	qtgui
-QT4_CONFIGURE_ENV=	QMAKE="${QMAKE}" QMAKESPEC="${QMAKESPEC}" \
+USE_QT=			core gui network printsupport widgets webkit xml
+QT5_USES=		qt:5 gl
+QT5_CONFIGURE_ENABLE=	qtgui
+QT5_CONFIGURE_ENV=	QMAKE="${QMAKE}" QMAKESPEC="${QMAKESPEC}" \
 			QTDIR="${PREFIX}"
 SOUND_RUN_DEPENDS=	mutagen-pony-${PYTHON_VER}:audio/py-mutagen@${PY_FLAVOR} \
 			pykaraoke:audio/py-karaoke@${PY_FLAVOR}
@@ -70,9 +70,9 @@ X11MON_CONFIGURE_WITH=	fam
 X11MON_BROKEN=		does not build: index/rclmonrcv.cpp:(.text+0x1f13): undefined reference to `FAMOpen2'
 
 .include <bsd.port.options.mk>
-.if ${PORT_OPTIONS:MQT4}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
+
+.if ${PORT_OPTIONS:MQT5}
+USE_GL+=gl
 .endif
 
 post-patch:
@@ -89,7 +89,7 @@ post-patch:
 		's|python setup.py|${PYTHON_CMD} setup.py|' \
 		${WRKSRC}/Makefile.in
 
-pre-build-QT4-on:
+pre-build-QT5-on:
 	@(cd ${WRKSRC}/qtgui && ${SETENV} ${QMAKE_ENV} ${QMAKE} \
 		${QMAKE_ARGS} recoll.pro)
 
