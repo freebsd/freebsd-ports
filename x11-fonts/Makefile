@@ -121,6 +121,7 @@
     SUBDIR += kaputa
     SUBDIR += khmeros
     SUBDIR += league-gothic
+    SUBDIR += league-spartan
     SUBDIR += lfpfonts-fix
     SUBDIR += lfpfonts-var
     SUBDIR += libFS
