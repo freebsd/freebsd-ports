@@ -2,21 +2,22 @@
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=233909
 # TODO: Upstream
 
---- certbot/compat.py.orig	2018-12-05 23:47:58 UTC
+--- certbot/compat.py.orig	2019-01-24 22:07:15 UTC
 +++ certbot/compat.py
-@@ -183,6 +183,11 @@ LINUX_DEFAULT_FOLDERS = {
-     'work': '/var/lib/letsencrypt',
+@@ -184,6 +184,12 @@ LINUX_DEFAULT_FOLDERS = {
      'logs': '/var/log/letsencrypt',
  }
+ 
 +FREEBSD_DEFAULT_FOLDERS = {
-+    'config': '%%LOCALBASE%%/etc/letsencrypt',
++    'config': '/usr/local/etc/letsencrypt',
 +    'work': '/var/db/letsencrypt',
 +    'logs': '/var/log/letsencrypt',
 +}
- 
++
  def get_default_folder(folder_type):
      """
-@@ -195,7 +200,13 @@ def get_default_folder(folder_type):
+     Return the relevant default folder for the current OS
+@@ -195,7 +201,13 @@ def get_default_folder(folder_type):
  
      """
      if 'fcntl' in sys.modules:
