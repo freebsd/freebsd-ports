@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	purple-hangouts
-PORTVERSION=	20180419
+PORTVERSION=	20181202
 CATEGORIES=	net-im
 MASTER_SITES=	https://bitbucket.org/EionRobb/${PORTNAME}/get/
 # Commit tag. Must be changed according with PORTVERSION.
-DISTNAME=	9d008f2ebe32
+DISTNAME=	cccf2f62d439
 
 MAINTAINER=	jjuanino@gmail.com
 COMMENT=	Hangouts plugin for libpurple
@@ -18,13 +18,14 @@ LIB_DEPENDS=	libpurple.so:net-im/libpurple \
 		libjson-glib-1.0.so:devel/json-glib \
 		libprotobuf-c.so:devel/protobuf-c
 
+USES=		gmake gnome pkgconfig zip
+USE_GNOME=	glib20
+
 WRKSRC=		${WRKDIR}/EionRobb-${PORTNAME}-${DISTNAME}
 
 OPTIONS_DEFINE=	NLS
 
-USES=		gmake pkgconfig zip
 NLS_USES=	gettext
-USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/purple-2/libhangouts.so \
