@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postsrsd
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	mail
 
 MAINTAINER=	ports@bsdserwis.com
@@ -14,10 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	help2man:misc/help2man
 
+USES=		cmake pkgconfig
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	roehling
 
-USES=		cmake pkgconfig
 CMAKE_ARGS=	--no-warn-unused-cli \
 		-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
 		-DCMAKE_LIBRARY_PATH="${LOCALBASE}/lib"

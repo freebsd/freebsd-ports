@@ -1,10 +1,11 @@
---- CMakeLists.txt.orig	2015-12-13 08:56:05 UTC
+--- CMakeLists.txt.orig	2019-01-11 15:10:33 UTC
 +++ CMakeLists.txt
-@@ -4,11 +4,14 @@ include(CheckIncludeFile)
+@@ -9,12 +9,15 @@ include(CheckIncludeFile)
  
  option(GENERATE_SRS_SECRET "Generate a random SRS secret if none exists during install" ON)
  option(USE_APPARMOR "Enable AppArmor profile" OFF)
 +option(MK_CHROOT_DIR "Chroot jail for daemon" OFF)
+ option(USE_SELINUX "Enable SELinux policy module" OFF)
  
 +if(MK_CHROOT_DIR)
  set(CHROOT_DIR "${CMAKE_INSTALL_PREFIX}/lib/${PROJECT_NAME}" CACHE PATH "Chroot jail for daemon")
@@ -16,7 +17,7 @@
  set(DOC_DIR "share/doc/${PROJECT_NAME}" CACHE PATH "Path for documentation files")
  mark_as_advanced(CHROOT_DIR SYSCONF_DIR SYSD_UNIT_DIR CONFIG_DIR DOC_DIR)
  
-@@ -16,8 +19,6 @@ find_program(HELP2MAN help2man DOC "path
+@@ -22,8 +25,6 @@ find_program(HELP2MAN help2man DOC "path
  find_program(DD dd DOC "path to dd executable")
  find_program(BASE64 base64 DOC "path to base64 executable")
  find_program(OPENSSL openssl DOC "path to OpenSSL executable")
@@ -25,7 +26,7 @@
  find_library(LIBSOCKET socket)
  find_library(LIBNSL nsl)
  
-@@ -54,26 +55,6 @@ if(HAVE_SYS_TYPES_H)
+@@ -60,26 +61,6 @@ if(HAVE_SYS_TYPES_H)
      add_definitions(-DHAVE_SYS_TYPES_H)
  endif()
  
@@ -50,9 +51,9 @@
 -endif()
 -
  add_executable(${PROJECT_NAME} postsrsd.c sha1.c srs2.c)
- 
- if(${CMAKE_SYSTEM_NAME} MATCHES "SunOS")
-@@ -82,15 +63,7 @@ endif()
+ enable_testing()
+ add_executable(${PROJECT_NAME}_tests tests.c sha1.c srs2.c)
+@@ -92,15 +73,7 @@ endif()
  
  get_target_property(POSTSRSD ${PROJECT_NAME} LOCATION)
  get_filename_component(POSTSRSD ${POSTSRSD} NAME_WE)
@@ -68,7 +69,7 @@
  configure_file(init/${PROJECT_NAME}.default.in ${PROJECT_NAME}.default @ONLY)
  
  configure_file(postinstall.cmake.in postinstall.cmake @ONLY)
-@@ -100,7 +73,7 @@ add_custom_command(TARGET ${PROJECT_NAME
+@@ -110,7 +83,7 @@ add_custom_command(TARGET ${PROJECT_NAME
  	COMMAND ${HELP2MAN} ARGS -s8 -o${PROJECT_NAME}.8 -n "Postfix Sender Rewriting Scheme daemon" -N -h-h -v-v ${CMAKE_CURRENT_BINARY_DIR}/${POSTSRSD}
  	VERBATIM
  )
@@ -77,7 +78,7 @@
  endif()
  
  if(USE_APPARMOR)
-@@ -108,6 +81,8 @@ if(USE_APPARMOR)
+@@ -127,6 +100,8 @@ if(USE_SELINUX)
  endif()
  
  install(TARGETS ${PROJECT_NAME} DESTINATION "sbin")
