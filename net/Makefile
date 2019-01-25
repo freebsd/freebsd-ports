@@ -905,6 +905,7 @@
     SUBDIR += packetdrill
     SUBDIR += packter-agent
     SUBDIR += panoptis
+    SUBDIR += parpd
     SUBDIR += passlogd
     SUBDIR += pathneck
     SUBDIR += pbnc

@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: parpd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#  parpd_enable = yes  (default: no)
+#  parpd_flags  = full_path_of_the_configuration_file
+#                 (default: %%PREFIX%%/etc/parpd.conf)
+#
+# If multiple daemons (with different configs) needs to be running:
+#  - copy this file to a different name (i.e. parpdXX)
+#  - change the "name" and "rcvar" values to the new name
+#  - set the approbriate rc.conf variables (i.e.
+#      parpdXX_enable = yes (default: no)
+#      parpdXX_flags  = %%PREFIX%%/etc/parpdXX.conf
+#    )
+
+. /etc/rc.subr
+
+name=parpd
+rcvar=parpd_enable
+
+load_rc_config $name
+
+command=%%PREFIX%%/sbin/parpd
+extra_commands="reload"
+eval ": \${${name}_enable:='NO'}"
+eval ": \${${name}_flags:=%%PREFIX%%/etc/${name}.conf}"
+eval "config_file=\$${name}_flags"
+
+[ -s "$config_file" ] ||  err 1 "Missing configuration file '$config_file'"
+
+if get_pidfile_from_conf pidfile "$config_file"; then
+  pidfile="$_pidfile_from_conf"
+else
+  err 1 "$config_file does not specify an pidfile"
+fi
+
+eval "unset ${name}_flags"
+command_args="$config_file"
+
+run_rc_command "$1"

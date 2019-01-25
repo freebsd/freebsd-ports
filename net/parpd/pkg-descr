@@ -1,0 +1,5 @@
+The parpd daemon provide the missing ARP packets in non-broadcast
+multiple-access networks with overly strict first-hop security
+filters.
+
+WWW: https://lutz.donnerhacke.de/Projekte/parpd
