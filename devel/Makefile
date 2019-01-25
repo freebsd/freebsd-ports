@@ -4062,6 +4062,7 @@
     SUBDIR += pecl-msgpack
     SUBDIR += pecl-mustache
     SUBDIR += pecl-propro2
+    SUBDIR += pecl-protobuf
     SUBDIR += pecl-psr
     SUBDIR += pecl-pthreads
     SUBDIR += pecl-raphf2
