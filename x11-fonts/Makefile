@@ -114,6 +114,7 @@
     SUBDIR += inconsolata-ttf
     SUBDIR += indic-ttf
     SUBDIR += intlfonts
+    SUBDIR += iosevka
     SUBDIR += isabella
     SUBDIR += jmk-x11-fonts
     SUBDIR += junction
