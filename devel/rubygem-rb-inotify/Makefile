@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rb-inotify
-PORTVERSION=	0.9.10
+PORTVERSION=	0.10.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,10 +12,11 @@ COMMENT=	Ruby wrapper for libinotify, using ffi
 LICENSE=	MIT
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify
-RUN_DEPENDS=	rubygem-ffi>=0.5.0:devel/rubygem-ffi
+RUN_DEPENDS=	rubygem-ffi>=1.0:devel/rubygem-ffi
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 .include <bsd.port.mk>
