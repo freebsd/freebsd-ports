@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	font-awesome
-DISTVERSION=	5.3.0
+DISTVERSION=	5.6.3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://use.fontawesome.com/releases/v${DISTVERSION}/
 DISTNAME=	fontawesome-free-${DISTVERSION}-desktop
@@ -12,9 +12,10 @@ COMMENT=	Suite of pictographic icons from Font Awesome (free version)
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+USES=		fonts zip
+
 PORTSCOUT=	site:https://github.com/FortAwesome/Font-Awesome/releases
 
-USES=		fonts zip
 NO_ARCH=	yes
 NO_BUILD=	yes
 
