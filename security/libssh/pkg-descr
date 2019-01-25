@@ -8,7 +8,7 @@ without third-party programs others than libcrypto (from openssl).
 libssh features:
 
  * Full C library functions for manipulating a client-side SSH connection
- * SSH2 and SSH1 protocol compliant
+ * SSH2 protocol compliant
  * Fully configurable sessions
  * Server support, SSH agent authentication support
  * Support for AES-128, AES-192, AES-256, Blowfish, 3DES in CBC mode
