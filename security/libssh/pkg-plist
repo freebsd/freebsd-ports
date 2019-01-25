@@ -10,5 +10,5 @@ lib/cmake/libssh/libssh/libssh-config-version.cmake
 %%STATIC%%lib/libssh.a
 lib/libssh.so
 lib/libssh.so.4
-lib/libssh.so.4.7.1
+lib/libssh.so.4.7.3
 libdata/pkgconfig/libssh.pc
