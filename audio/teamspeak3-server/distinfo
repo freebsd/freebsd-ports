@@ -1,5 +1,5 @@
-TIMESTAMP = 1545760165
-SHA256 (teamspeak3-server_freebsd_amd64-3.5.1.tar.bz2) = 6ad174633129c50019ba15145ea0b1416ac165e0c50812e7142abf799037c8e8
-SIZE (teamspeak3-server_freebsd_amd64-3.5.1.tar.bz2) = 7487154
-SHA256 (teamspeak3-server_freebsd_x86-3.5.1.tar.bz2) = 24cdcb599fcaa1246848b1d5b806fb0965126b3921bafe0d859c725a3e43b85d
-SIZE (teamspeak3-server_freebsd_x86-3.5.1.tar.bz2) = 7350940
+TIMESTAMP = 1548377660
+SHA256 (teamspeak3-server_freebsd_amd64-3.6.0.tar.bz2) = 8628b66c7048f7efd4494aa500b2e3f5a4bdfe72ad5677ae6fe80d46449ad4db
+SIZE (teamspeak3-server_freebsd_amd64-3.6.0.tar.bz2) = 7503721
+SHA256 (teamspeak3-server_freebsd_x86-3.6.0.tar.bz2) = 127692d04fb82cb3d47ec402e322256bb5ef504389ea2592e87c96c478558f43
+SIZE (teamspeak3-server_freebsd_x86-3.6.0.tar.bz2) = 7365324
