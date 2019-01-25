@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pint
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9
 CATEGORIES=	converters python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,15 @@ COMMENT=	Define, operate and manipulate physical quantities
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
-USE_PYTHON=	autoplist concurrent distutils
 USES=		python
+USE_PYTHON=	autoplist concurrent distutils
 
-.include <bsd.port.mk>
+NO_ARCH=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3000
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}funcsigs>=0:devel/py-funcsigs@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
