@@ -75,6 +75,12 @@
 %%FONTSDIR%%/AlegreyaSansSC-Regular.ttf
 %%FONTSDIR%%/AlegreyaSansSC-Thin.ttf
 %%FONTSDIR%%/AlegreyaSansSC-ThinItalic.ttf
+%%FONTSDIR%%/Aleo-Bold.ttf
+%%FONTSDIR%%/Aleo-BoldItalic.ttf
+%%FONTSDIR%%/Aleo-Italic.ttf
+%%FONTSDIR%%/Aleo-Light.ttf
+%%FONTSDIR%%/Aleo-LightItalic.ttf
+%%FONTSDIR%%/Aleo-Regular.ttf
 %%FONTSDIR%%/AlexBrush-Regular.ttf
 %%FONTSDIR%%/AlfaSlabOne-Regular.ttf
 %%FONTSDIR%%/Alice-Regular.ttf
@@ -246,6 +252,14 @@
 %%FONTSDIR%%/AveriaSerifLibre-Light.ttf
 %%FONTSDIR%%/AveriaSerifLibre-LightItalic.ttf
 %%FONTSDIR%%/AveriaSerifLibre-Regular.ttf
+%%FONTSDIR%%/B612-Bold.ttf
+%%FONTSDIR%%/B612-BoldItalic.ttf
+%%FONTSDIR%%/B612-Italic.ttf
+%%FONTSDIR%%/B612-Regular.ttf
+%%FONTSDIR%%/B612Mono-Bold.ttf
+%%FONTSDIR%%/B612Mono-BoldItalic.ttf
+%%FONTSDIR%%/B612Mono-Italic.ttf
+%%FONTSDIR%%/B612Mono-Regular.ttf
 %%FONTSDIR%%/BM-HANNA.ttf
 %%FONTSDIR%%/BadScript-Regular.ttf
 %%FONTSDIR%%/Bahiana-Regular.ttf
@@ -584,6 +598,8 @@
 %%FONTSDIR%%/CreepsterCaps-Regular.ttf
 %%FONTSDIR%%/CreteRound-Italic.ttf
 %%FONTSDIR%%/CreteRound-Regular.ttf
+%%FONTSDIR%%/CrimsonPro-ExtraLight.ttf
+%%FONTSDIR%%/CrimsonPro-ExtraLightItalic.ttf
 %%FONTSDIR%%/CrimsonText-Bold.ttf
 %%FONTSDIR%%/CrimsonText-BoldItalic.ttf
 %%FONTSDIR%%/CrimsonText-Italic.ttf
@@ -1387,6 +1403,8 @@
 %%FONTSDIR%%/Limelight-Regular.ttf
 %%FONTSDIR%%/LindenHill-Italic.ttf
 %%FONTSDIR%%/LindenHill-Regular.ttf
+%%FONTSDIR%%/Literata-Italic.ttf
+%%FONTSDIR%%/Literata-Regular.ttf
 %%FONTSDIR%%/Lobster-Regular.ttf
 %%FONTSDIR%%/LobsterTwo-Bold.ttf
 %%FONTSDIR%%/LobsterTwo-BoldItalic.ttf
@@ -1431,6 +1449,7 @@
 %%FONTSDIR%%/Maitree-Medium.ttf
 %%FONTSDIR%%/Maitree-Regular.ttf
 %%FONTSDIR%%/Maitree-SemiBold.ttf
+%%FONTSDIR%%/MajorMonoDisplay-Regular.ttf
 %%FONTSDIR%%/Mako-Regular.ttf
 %%FONTSDIR%%/Mali-Bold.ttf
 %%FONTSDIR%%/Mali-BoldItalic.ttf
@@ -2365,6 +2384,7 @@
 %%FONTSDIR%%/Sriracha-Regular.ttf
 %%FONTSDIR%%/Srisakdi-Bold.ttf
 %%FONTSDIR%%/Srisakdi-Regular.ttf
+%%FONTSDIR%%/Staatliches-Regular.ttf
 %%FONTSDIR%%/Stalemate-Regular.ttf
 %%FONTSDIR%%/StalinOne-Regular.ttf
 %%FONTSDIR%%/StalinistOne-Regular.ttf
@@ -2577,6 +2597,9 @@
 %%FONTSDIR%%/Yrsa-Medium.ttf
 %%FONTSDIR%%/Yrsa-Regular.ttf
 %%FONTSDIR%%/Yrsa-SemiBold.ttf
+%%FONTSDIR%%/ZCOOLKuaiLe-Regular.ttf
+%%FONTSDIR%%/ZCOOLQingKeHuangYou-Regular.ttf
+%%FONTSDIR%%/ZCOOLXiaoWei-Regular.ttf
 %%FONTSDIR%%/Zeyada.ttf
 %%FONTSDIR%%/ZillaSlab-Bold.ttf
 %%FONTSDIR%%/ZillaSlab-BoldItalic.ttf
@@ -2651,6 +2674,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/alegreyasc/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/alegreyasc/FONTLOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/alegreyasc/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/aleo/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/aleo/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/alexbrush/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/alexbrush/FONTLOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/alexbrush/OFL.txt
@@ -2825,6 +2850,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/averiaseriflibre/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/averiaseriflibre/FONTLOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/averiaseriflibre/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/b612/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/b612/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/b612mono/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/b612mono/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/badscript/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/badscript/FONTLOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/badscript/OFL.txt
@@ -3148,6 +3177,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/creteround/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/creteround/FONTLOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/creteround/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/crimsonpro/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/crimsonpro/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/crimsontext/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/crimsontext/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/croissantone/DESCRIPTION.en_us.html
@@ -3831,6 +3862,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/limelight/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/lindenhill/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/lindenhill/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/literata/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/literata/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/lobster/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/lobster/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/lobstertwo/DESCRIPTION.en_us.html
@@ -3887,6 +3920,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/maidenorange/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/maitree/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/maitree/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/majormonodisplay/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/majormonodisplay/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/mako/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/mako/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/mali/DESCRIPTION.en_us.html
@@ -4710,6 +4745,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/sriracha/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/srisakdi/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/srisakdi/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/staatliches/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/staatliches/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/stalemate/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/stalemate/FONTLOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/stalemate/OFL.txt
@@ -4919,6 +4956,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/yinmar/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/yrsa/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/yrsa/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/zcoolkuaile/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/zcoolkuaile/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/zcoolqingkehuangyou/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/zcoolqingkehuangyou/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/zcoolxiaowei/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/zcoolxiaowei/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/zeyada/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/zeyada/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/zillaslab/DESCRIPTION.en_us.html
