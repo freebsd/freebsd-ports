@@ -48,6 +48,7 @@
 %%DRUPAL_BASE%%/includes/errors.inc
 %%DRUPAL_BASE%%/includes/file.inc
 %%DRUPAL_BASE%%/includes/file.mimetypes.inc
+%%DRUPAL_BASE%%/includes/file.phar.inc
 %%DRUPAL_BASE%%/includes/filetransfer/filetransfer.inc
 %%DRUPAL_BASE%%/includes/filetransfer/ftp.inc
 %%DRUPAL_BASE%%/includes/filetransfer/local.inc
@@ -152,6 +153,17 @@
 %%DRUPAL_BASE%%/misc/timezone.js
 %%DRUPAL_BASE%%/misc/tree-bottom.png
 %%DRUPAL_BASE%%/misc/tree.png
+%%DRUPAL_BASE%%/misc/typo3/drupal-security/PharExtensionInterceptor.php
+%%DRUPAL_BASE%%/misc/typo3/phar-stream-wrapper/LICENSE
+%%DRUPAL_BASE%%/misc/typo3/phar-stream-wrapper/README.md
+%%DRUPAL_BASE%%/misc/typo3/phar-stream-wrapper/composer.json
+%%DRUPAL_BASE%%/misc/typo3/phar-stream-wrapper/src/Assertable.php
+%%DRUPAL_BASE%%/misc/typo3/phar-stream-wrapper/src/Behavior.php
+%%DRUPAL_BASE%%/misc/typo3/phar-stream-wrapper/src/Exception.php
+%%DRUPAL_BASE%%/misc/typo3/phar-stream-wrapper/src/Helper.php
+%%DRUPAL_BASE%%/misc/typo3/phar-stream-wrapper/src/Interceptor/PharExtensionInterceptor.php
+%%DRUPAL_BASE%%/misc/typo3/phar-stream-wrapper/src/Manager.php
+%%DRUPAL_BASE%%/misc/typo3/phar-stream-wrapper/src/PharStreamWrapper.php
 %%DRUPAL_BASE%%/misc/ui/images/ui-bg_flat_0_aaaaaa_40x100.png
 %%DRUPAL_BASE%%/misc/ui/images/ui-bg_flat_75_ffffff_40x100.png
 %%DRUPAL_BASE%%/misc/ui/images/ui-bg_glass_55_fbf9ee_1x400.png
@@ -613,6 +625,7 @@
 %%DRUPAL_BASE%%/modules/simpletest/files/image-test.png
 %%DRUPAL_BASE%%/modules/simpletest/files/javascript-1.txt
 %%DRUPAL_BASE%%/modules/simpletest/files/javascript-2.script
+%%DRUPAL_BASE%%/modules/simpletest/files/phar-1.phar
 %%DRUPAL_BASE%%/modules/simpletest/files/php-1.txt
 %%DRUPAL_BASE%%/modules/simpletest/files/php-2.php
 %%DRUPAL_BASE%%/modules/simpletest/files/sql-1.txt
