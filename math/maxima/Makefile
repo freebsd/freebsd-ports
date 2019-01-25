@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	maxima
-PORTVERSION=	5.42.1
-PORTREVISION=	1
+PORTVERSION=	5.42.2
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -19,7 +18,7 @@ LICENSE_PERMS_MAXIMAEXTRACLAUSE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-
 RUN_DEPENDS=	gnuplot:math/gnuplot \
 		rlwrap:devel/rlwrap
 
-USES=		autoreconf gmake shared-mime-info tk:85+
+USES=		autoreconf gmake makeinfo shared-mime-info tk:85+
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	PYTHON=dummy
