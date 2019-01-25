@@ -130,6 +130,9 @@ share/teamspeak/server/serverquerydocs/servertemppasswordadd.txt
 share/teamspeak/server/serverquerydocs/servertemppassworddel.txt
 share/teamspeak/server/serverquerydocs/servertemppasswordlist.txt
 share/teamspeak/server/serverquerydocs/setclientchannelgroup.txt
+share/teamspeak/server/serverquerydocs/queryloginadd.txt
+share/teamspeak/server/serverquerydocs/querylogindel.txt
+share/teamspeak/server/serverquerydocs/queryloginlist.txt
 share/teamspeak/server/serverquerydocs/tokenadd.txt
 share/teamspeak/server/serverquerydocs/tokendelete.txt
 share/teamspeak/server/serverquerydocs/tokenlist.txt
@@ -155,6 +158,8 @@ share/teamspeak/server/sql/channel_server_list_properties_bulk.sql
 share/teamspeak/server/sql/channel_update_parentid.sql
 share/teamspeak/server/sql/client_clear_traffic_stats.sql
 share/teamspeak/server/sql/client_count_by_serverid.sql
+share/teamspeak/server/sql/client_count_queries.sql
+share/teamspeak/server/sql/client_count_queries_per_server.sql
 share/teamspeak/server/sql/client_delete.sql
 share/teamspeak/server/sql/client_delete_prune.sql
 share/teamspeak/server/sql/client_get.sql
@@ -164,10 +169,14 @@ share/teamspeak/server/sql/client_get_by_serverid.sql
 share/teamspeak/server/sql/client_get_by_serverid_bulk.sql
 share/teamspeak/server/sql/client_get_by_serverid_limit.sql
 share/teamspeak/server/sql/client_get_by_uid.sql
+share/teamspeak/server/sql/client_get_queries_limit.sql
+share/teamspeak/server/sql/client_get_queries_per_server_limit.sql
 share/teamspeak/server/sql/client_insert.sql
 share/teamspeak/server/sql/client_insert_bulk.sql
 share/teamspeak/server/sql/client_insert_bulk_mapping.sql
+share/teamspeak/server/sql/client_insert_query.sql
 share/teamspeak/server/sql/client_properties_bulk_insert.sql
+share/teamspeak/server/sql/client_remove_query_login.sql
 share/teamspeak/server/sql/client_update_login_info.sql
 share/teamspeak/server/sql/client_update_name.sql
 share/teamspeak/server/sql/client_update_stats.sql
