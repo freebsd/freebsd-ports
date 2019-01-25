@@ -72,6 +72,7 @@
     SUBDIR += backuppc
     SUBDIR += backuppc-devel
     SUBDIR += backuppc4
+    SUBDIR += backupuser
     SUBDIR += bacula-bat
     SUBDIR += bacula-client
     SUBDIR += bacula-client-static
