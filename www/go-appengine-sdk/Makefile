@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	go-appengine-sdk
-DISTVERSION=	1.9.68
+DISTVERSION=	1.9.70
 CATEGORIES=	www devel
 MASTER_SITES=	https://storage.googleapis.com/appengine-sdks/featured/
 DISTNAME=	${PORTNAME:S,-,_,g}_linux_amd64-${PORTVERSION}
@@ -23,11 +23,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=${PYTHON_VER}:databases/py-sqlite3@
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6:security/py-pycrypto@${PY_FLAVOR}
 
 USES=		gettext python:2.7 shebangfix zip
+
 SHEBANG_GLOB=	*.py *.bash *.sh *.pl *.cgi goapp
 WRKSRC=		${WRKDIR}/go_appengine
 
 GAEDATADIRS=	google lib tools
-GAEGOROOTS=	goroot-1.6 goroot-1.8 goroot-1.9
+GAEGOROOTS=	goroot-1.9
 GAESCRIPTS=	appcfg.py backends_conversion.py \
 		bulkload_client.py bulkloader.py dev_appserver.py \
 		download_appstats.py endpointscfg.py run_tests.py \
@@ -38,8 +39,9 @@ PLIST_FILES=	${GAESCRIPTS:C,(.+)\.py,bin/\1-go,} \
 		bin/goapp
 PLIST_DIRS=	${GAEGOROOTS:C,(.+),${DATADIR}/\1/pkg/obj/${OPSYS:tl}_${GOARCH},}
 
-OPTIONS_DEFINE=		EXAMPLES SSE2
-OPTIONS_DEFAULT=	SSE2
+OPTIONS_DEFINE=		EXAMPLES
+OPTIONS_DEFINE_i386=	SSE2
+OPTIONS_DEFAULT_i386=	SSE2
 SSE2_DESC=		Generate code with SSE2 (check off for old x86 CPUs)
 
 SSE2_VARS_OFF=		GO386=387
