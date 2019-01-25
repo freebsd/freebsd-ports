@@ -1,0 +1,6 @@
+backupuser is a command line utility, which automates the creation
+of backups of a user's home directory.  An accompanying utility
+lets a user verify the integrity of files on another storage device.
+Special backup options exist for the root user.
+
+WWW: http://www.olivermahmoudi.com/programming/backup-strategies
