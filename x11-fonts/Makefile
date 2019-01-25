@@ -120,6 +120,7 @@
     SUBDIR += junicode
     SUBDIR += kaputa
     SUBDIR += khmeros
+    SUBDIR += league-gothic
     SUBDIR += lfpfonts-fix
     SUBDIR += lfpfonts-var
     SUBDIR += libFS
