@@ -15,4 +15,4 @@ Key features of the database:
 - authentication and access control
 - the database is just a C extension to the app server and can be turned off
 
-WWW: https://tarantool.org/
+WWW: https://tarantool.io/
