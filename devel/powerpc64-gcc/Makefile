@@ -2,7 +2,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	6.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMEPREFIX?=	powerpc64-
@@ -30,7 +30,8 @@ TARGETARCH=	${PKGNAMEPREFIX:C/-//g:S/amd64/x86_64/}
 .if empty(GCC_TARGET)
 # We are building for a FreeBSD target
 GCC_TARGET=	${PKGNAMEPREFIX:S/amd64/x86_64/}unknown-${OPSYS:tl}${OSREL}
-EXTRA_PATCHES+= ${FILESDIR}/freebsd-format-extensions
+EXTRA_PATCHES+= ${FILESDIR}/freebsd-format-extensions \
+		${FILESDIR}/freebsd-libdir
 .endif
 BU_PREFIX?=	${GCC_TARGET}
 
@@ -49,9 +50,6 @@ CONFIGURE_ARGS+=--target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
 
 ALL_TARGET?=	all-gcc
 INSTALL_TARGET?=	install-gcc
-
-# Force build of a cross compiler even if the target matches the host.
-CFLAGS+=	-DCROSS_DIRECTORY_STRUCTURE
 
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>

@@ -2,7 +2,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	6.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	base
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION} \
 		http://www.mpfr.org/mpfr-3.1.6/:mpfr \
@@ -44,6 +44,7 @@ PLIST_SUB=	TARGETARCH=${TARGETARCH} \
 		GCC_VERSION=${PORTVERSION}
 
 EXTRA_PATCHES+= ${.CURDIR}/../../devel/powerpc64-gcc/files/freebsd-format-extensions
+EXTRA_PATCHES+= ${.CURDIR}/../../devel/powerpc64-gcc/files/freebsd-libdir
 EXTRA_PATCHES+= ${.CURDIR}/../../devel/powerpc64-gcc/files/patch-gcc-freebsd-mips
 
 GNU_CONFIGURE=	yes
