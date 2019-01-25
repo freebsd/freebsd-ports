@@ -11,6 +11,9 @@ COMMENT=	PuppetDB storeconfigs backend
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Puppet 4 has reached EOL
+EXPIRATION_DATE=2019-02-28
+
 RUN_DEPENDS=	bash:shells/bash \
 		puppet:sysutils/puppet4
 
