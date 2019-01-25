@@ -11,6 +11,9 @@ COMMENT=	Puppet Server running in the JVM
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Puppet 4 has reached EOL
+EXPIRATION_DATE=2019-02-28
+
 RUN_DEPENDS=	bash>=0:shells/bash \
 		puppet4>=0:sysutils/puppet4
 BUILD_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake
