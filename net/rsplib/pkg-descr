@@ -5,4 +5,4 @@ It provides highly available pool management (that is registration
 handling and load distribution/balancing) by components called Registrar
 and a client-side/server-side API for accessing the service of a pool.
 
-WWW: http://www.iem.uni-due.de/~dreibh/rserpool/
+WWW: https://www.uni-due.de/~be0001/rserpool/

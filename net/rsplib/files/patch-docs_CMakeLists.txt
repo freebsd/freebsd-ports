@@ -1,0 +1,6 @@
+--- docs/CMakeLists.txt.orig	2019-01-25 12:34:39 UTC
++++ docs/CMakeLists.txt
+@@ -1,2 +1,2 @@
+ # ###### Documentation ######################################################
+-INSTALL(FILES Handbook.pdf DESTINATION ${CMAKE_INSTALL_DATADIR}/rsplib)
++INSTALL(FILES Handbook.pdf DESTINATION ${DOCSDIR})
