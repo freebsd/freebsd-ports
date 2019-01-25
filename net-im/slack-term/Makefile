@@ -2,7 +2,7 @@
 
 PORTNAME=	slack-term
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
+DISTVERSION=	0.4.1
 CATEGORIES=	net-im
 
 MAINTAINER=	dg@syrec.org
@@ -27,7 +27,7 @@ PLIST_FILES=	bin/slack-term
 OPTIONS_DEFINE=	DOCS
 
 do-build:
-	@cd ${WRKSRC}/${GH_SUBDIR} && \
+	cd ${WRKSRC}/${GH_SUBDIR} && \
 		${SETENV} ${MAKE_ENV} GOPATH=${WRKSRC} go build -o ${PORTNAME}
 
 do-install:
