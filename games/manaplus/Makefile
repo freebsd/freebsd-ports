@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	manaplus
-DISTVERSION=	1.8.9.1
-PORTREVISION=	1
+DISTVERSION=	1.8.12.8
 CATEGORIES=	games
 MASTER_SITES=	http://download.evolonline.org/manaplus/download/${PORTVERSION}/
 
@@ -20,6 +19,7 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 USES=		autoreconf compiler:c++11-lang pkgconfig:build tar:xz
 USE_XORG=	x11
 USE_SDL=	sdl2 gfx2 image2 mixer2 net2 ttf2
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sdl2 \
 		--without-internalsdlgfx
