@@ -1,8 +1,7 @@
-# Created by: Vidar Karlsen <vidar@karlsen.tech>
 # $FreeBSD$
 
 PORTNAME=	pcapfix
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
