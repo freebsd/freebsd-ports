@@ -1,0 +1,16 @@
+================================================================================
+
+Welcome to the Azure CLI! The CLI is a tool designed to get you working quickly
+and efficiently with Azure services, with an emphasis on automation.
+
+The following article introduces features of the CLI and links out to resources
+that help you be productive.
+https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli
+
+Tutorial to create virtual machines with the Azure CLI
+https://docs.microsoft.com/en-us/cli/azure/azure-cli-vm-tutorial
+In this tutorial, you learn all of the steps involved in setting up a virtual
+machine with the Azure CLI. The tutorial also covers output queries, Azure
+resource reuse, and resource cleanup.
+
+================================================================================
