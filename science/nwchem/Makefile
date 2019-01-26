@@ -1,12 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	nwchem
-PORTVERSION=	6.8.1.20181107
-PORTREVISION=	1
+PORTVERSION=	6.8.1.20190125
 CATEGORIES=	science
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-PATCHFILES=	ce7c387b4f37c70947cb3b41a6beaf8fce628634.patch:-p2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	High-performance computational chemistry software
@@ -26,7 +22,7 @@ SHEBANG_FILES=	../contrib/distro-tools/build_* ../contrib/add_*
 SHEBANG_GLOB=	*.sh
 USE_GITHUB=	yes
 GH_ACCOUNT=	nwchemgit
-GH_TAGNAME=	master-oct22_2018-21-gd3913ef8b
+GH_TAGNAME=	master-oct22_2018-71-g3d310890e
 USE_PERL5=	build
 
 MAKEFILE=	GNUmakefile

@@ -1397,6 +1397,7 @@ etc/nwchemrc
 %%DATADIR%%/libraryps/pspw_default/Pd
 %%DATADIR%%/libraryps/pspw_default/Po
 %%DATADIR%%/libraryps/pspw_default/Pt
+%%DATADIR%%/libraryps/pspw_default/Pt.old
 %%DATADIR%%/libraryps/pspw_default/Pu
 %%DATADIR%%/libraryps/pspw_default/Pu.old
 %%DATADIR%%/libraryps/pspw_default/Qm
