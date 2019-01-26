@@ -10,7 +10,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Python bindings for ZeroMQ
 
-LICENSE=	LGPL3
+LICENSE=			BSD3CLAUSE LGPL3
+LICENSE_COMB=			multi
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/COPYING.BSD
+LICENSE_FILE_LGPL3=		${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libzmq.so:net/libzmq4
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
@@ -29,5 +32,9 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}asyncio>0:devel/py-asyncio@${PY_FLAVOR}
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} build_ext --inplace
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/zmq/backend/cython/*.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/zmq/devices/*.so
 
 .include <bsd.port.post.mk>
