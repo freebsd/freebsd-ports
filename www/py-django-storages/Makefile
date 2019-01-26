@@ -1,8 +1,7 @@
-# Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	django-storages
-PORTVERSION=	1.5.1
+PORTVERSION=	1.7.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
