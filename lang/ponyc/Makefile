@@ -63,6 +63,10 @@ MAKE_ENV+=	default_ssl=openssl_1.1.0
 .endif
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
+# Building the bitcode with clang70 and linking with llvm50 fails,
+# so let's use the clang from the LLVM version that will be used by ponyc
+CC=		${LOCALBASE}/bin/clang${LLVM_VERSION}
+CXX=		${LOCALBASE}/bin/clang++${LLVM_VERSION}
 MAKE_ENV+=	runtime-bitcode=yes
 PLIST_SUB+=	BITCODE=""
 .else
