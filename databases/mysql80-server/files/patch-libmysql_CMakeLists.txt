@@ -1,25 +1,27 @@
---- libmysql/CMakeLists.txt.orig	2016-03-28 18:06:12 UTC
+--- libmysql/CMakeLists.txt.orig	2018-12-20 20:14:03 UTC
 +++ libmysql/CMakeLists.txt
-@@ -215,7 +215,7 @@ IF(WIN32)
+@@ -239,7 +239,7 @@ MESSAGE(STATUS "Creating LDAP authentica
  ADD_SUBDIRECTORY(authentication_ldap)
- 
+   
  # Merge several convenience libraries into one big mysqlclient
 -MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERGE} COMPONENT Development)
 +MERGE_CONVENIENCE_LIBRARIES(mysqlclient ${LIBS_TO_MERGE} COMPONENT Development SKIP_INSTALL)
- TARGET_LINK_LIBRARIES(mysqlclient ${LIBS_TO_LINK})
+ TARGET_LINK_LIBRARIES(mysqlclient PRIVATE ${LIBS_TO_LINK})
  
- IF(MSVC)
-@@ -257,7 +257,8 @@ IF(NOT DISABLE_SHARED)
+ # Visual Studio users need debug  static library for debug projects
+@@ -280,9 +280,10 @@ IF(NOT DISABLE_SHARED)
    # and link them together into shared library.
    MERGE_LIBRARIES_SHARED(libmysql ${LIBS_TO_MERGE}
      EXPORTS ${CLIENT_API_FUNCTIONS} ${CLIENT_API_FUNCTIONS_UNDOCUMENTED}
 -    COMPONENT SharedLibraries)
 +    COMPONENT SharedLibraries SKIP_INSTALL)
-   TARGET_LINK_LIBRARIES(libmysql ${LIBS_TO_LINK})
+   TARGET_LINK_LIBRARIES(libmysql PRIVATE ${LIBS_TO_LINK})
  
 +IF(FALSE)
    IF(WIN32)
-@@ -313,6 +314,7 @@ ENDIF()
+     # So that libmysql_api_test below can find the .dll
+     ADD_CUSTOM_COMMAND(TARGET libmysql POST_BUILD
+@@ -338,6 +339,7 @@ ENDIF()
  # to initialize api_calls[] array in api_test.c
  #
  SET(CLIENT_API_FUNCTION_LIST "")

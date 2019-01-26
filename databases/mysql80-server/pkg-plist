@@ -18,8 +18,6 @@ bin/mysqlrouter_plugin_info
 bin/mysqltest
 bin/mysqlxtest
 bin/perror
-bin/resolve_stack_dump
-bin/resolveip
 bin/zlib_decompress
 lib/mysql/libmysqlharness.a
 lib/mysql/libmysqlharness.so
@@ -34,6 +32,7 @@ lib/mysql/mysqlrouter/syslog.so
 lib/mysql/plugin/adt_null.so
 lib/mysql/plugin/auth.so
 lib/mysql/plugin/auth_test_plugin.so
+lib/mysql/plugin/component_audit_api_message_emit.so
 lib/mysql/plugin/component_example_component1.so
 lib/mysql/plugin/component_example_component2.so
 lib/mysql/plugin/component_example_component3.so
@@ -44,7 +43,9 @@ lib/mysql/plugin/component_log_sink_test.so
 lib/mysql/plugin/component_mysqlx_global_reset.so
 lib/mysql/plugin/component_pfs_example.so
 lib/mysql/plugin/component_pfs_example_component_population.so
+lib/mysql/plugin/component_test_audit_api_message.so
 lib/mysql/plugin/component_test_backup_lock_service.so
+lib/mysql/plugin/component_test_host_application_signal.so
 lib/mysql/plugin/component_test_pfs_notification.so
 lib/mysql/plugin/component_test_pfs_resource_group.so
 lib/mysql/plugin/component_test_status_var_service.so
@@ -114,6 +115,7 @@ lib/mysql/plugin/rewriter.so
 lib/mysql/plugin/semisync_master.so
 lib/mysql/plugin/semisync_slave.so
 lib/mysql/plugin/test_security_context.so
+lib/mysql/plugin/test_services_host_application_signal.so
 lib/mysql/plugin/test_services_plugin_registry.so
 lib/mysql/plugin/udf_example.so
 lib/mysql/plugin/keyring_udf.so
@@ -136,8 +138,6 @@ man/man1/mysqld_safe.1.gz
 man/man1/mysqldumpslow.1.gz
 man/man1/mysqlman.1.gz
 man/man1/perror.1.gz
-man/man1/resolve_stack_dump.1.gz
-man/man1/resolveip.1.gz
 man/man8/mysqld.8.gz
 %%DATADIR%%/bulgarian/errmsg.sys
 %%DATADIR%%/charsets/Index.xml
