@@ -1,0 +1,41 @@
+--- CMakeLists.txt.orig	2018-12-17 15:06:15 UTC
++++ CMakeLists.txt
+@@ -56,7 +56,7 @@ message(STATUS "gau2grid install: ${CMAK
+ 
+ #  <<  Python  >>
+ set(Python_ADDITIONAL_VERSIONS 3.7 3.6 3.5)  # adjust with CMake minimum FindPythonInterp
+-find_package(PythonLibsNew 2.7 REQUIRED)
++find_package(PythonLibsNew ${FREEBSD_PYTHON_VER} REQUIRED)
+ message(STATUS "${Cyan}Found Python ${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}${ColourReset}: ${PYTHON_EXECUTABLE} (found version ${PYTHON_VERSION_STRING})")
+ 
+ 
+@@ -112,6 +112,7 @@ target_include_directories(gg INTERFACE
+                            $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
+ 
+ # GNUInstallDirs "DATADIR" wrong here; CMake search path wants "share".
++if (FALSE) # see https://github.com/dgasmith/gau2grid/issues/39#issuecomment-457856365
+ set(CMAKECONFIG_INSTALL_DIR "share/cmake/${PN}")
+ configure_package_config_file(cmake/${PN}Config.cmake.in
+                               "${CMAKE_CURRENT_BINARY_DIR}/${PN}Config.cmake"
+@@ -138,6 +139,7 @@ if(NOT(${INSTALL_PYMOD} AND ${NATIVE_PYT
+             NAMESPACE "${PN}::"
+             DESTINATION ${CMAKECONFIG_INSTALL_DIR})
+ endif()
++endif()
+ 
+ if(${INSTALL_PYMOD})
+     if(${NATIVE_PYTHON_INSTALL})
+@@ -161,11 +163,11 @@ if(${INSTALL_PYMOD})
+                     OUTPUT_STRIP_TRAILING_WHITESPACE)
+ 
+     install(DIRECTORY gau2grid
+-            DESTINATION ${CMAKE_INSTALL_LIBDIR}${PYMOD_INSTALL_LIBDIR}
++            DESTINATION ${PYMOD_INSTALL_LIBDIR}
+             USE_SOURCE_PERMISSIONS
+             FILES_MATCHING PATTERN "*.py")
+ 
+     install(FILES $<TARGET_FILE:gg>
+-            DESTINATION ${CMAKE_INSTALL_LIBDIR}${PYMOD_INSTALL_LIBDIR}/gau2grid
++            DESTINATION ${PYMOD_INSTALL_LIBDIR}/gau2grid
+             RENAME "gg${PYLIB_EXTENSION}")
+ endif()
