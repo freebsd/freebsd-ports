@@ -3,7 +3,7 @@
 
 PORTNAME=	groupoffice
 DISTVERSIONPREFIX=	com-
-DISTVERSION=	6.3.58
+DISTVERSION=	6.3.59
 CATEGORIES=	www
 MASTER_SITES=	SF/group-office/${DISTVERSION:R}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-php-71
@@ -50,9 +50,9 @@ post-patch:
 		${WRKSRC}/go/base/Config.php
 	@${REINPLACE_CMD} 's|/etc/groupoffice|${PREFIX}&|g' \
 		${WRKSRC}/go/base/Config.php \
+		${WRKSRC}/go/modules/community/serverclient/model/HttpClient.php \
+		${WRKSRC}/go/modules/community/serverclient/controller/Serverclient.php \
 		${WRKSRC}/install/configfile.php \
-		${WRKSRC}/modules/serverclient/HttpClient.php \
-		${WRKSRC}/modules/serverclient/ServerclientModule.php \
 		${WRKSRC}/modules/site/index.php
 
 do-install:
