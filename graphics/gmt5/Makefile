@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmt5
-DISTVERSION=	5.4.4
+DISTVERSION=	5.4.5
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.soest.hawaii.edu/%SUBDIR%/ \
@@ -30,19 +30,18 @@ RUN_DEPENDS=	bash:shells/bash
 BUILD_DEPENDS=	${LOCALBASE}/share/dcw-gmt/dcw-gmt.nc:graphics/gmt5-dcw \
 		${LOCALBASE}/share/gshhg-gmt/binned_GSHHS_c.nc:graphics/gmt5-gshhg
 
-WRKSRC=		${WRKDIR}/gmt-${PORTVERSION}
-
 USES=		shebangfix cmake
+USE_LDCONFIG=	yes
+
 SHEBANG_GLOB=	*.sh *.in
 SHEBANG_FILES=	share/tools/ncdeflate src/img/img2google src/gmtswitch
-
-USE_LDCONFIG=	yes
+WRKSRC=		${WRKDIR}/gmt-${PORTVERSION}
 
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 		-DCMAKE_C_FLAGS=-fstrict-aliasing \
 		-DCMAKE_INSTALL_PREFIX=${PREFIX} \
-		-DDCW_ROOT=${LOCALBASE}/share/gmt5-dcw \
-		-DGSHHG_ROOT=${LOCALBASE}/share/gmt5-gshhg \
+		-DDCW_ROOT=${LOCALBASE}/share/dcw-gmt \
+		-DGSHHG_ROOT=${LOCALBASE}/share/gshhg-gmt \
 		-DGMT_INSTALL_MODULE_LINKS=off \
 		-DGMT_INSTALL_TRADITIONAL_FOLDERNAMES=off \
 		-DGMT_DATADIR=share/${PORTNAME} \
