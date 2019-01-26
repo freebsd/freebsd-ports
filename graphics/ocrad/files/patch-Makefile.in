@@ -1,4 +1,4 @@
---- Makefile.in.orig	2018-05-22 03:44:46 UTC
+--- Makefile.in.orig	2019-01-26 06:20:29 UTC
 +++ Makefile.in
 @@ -23,16 +23,16 @@ objs     = arg_parser.o main.o
           uninstall uninstall-bin uninstall-info uninstall-man \
@@ -8,7 +8,7 @@
 +all : $(progname) lib$(libname).so
  
 -lib$(libname).a: $(ocr_objs) $(lib_objs)
--	$(AR) -rcs $@ $(ocr_objs) $(lib_objs)
+-	$(AR) -crs $@ $(ocr_objs) $(lib_objs)
 +lib$(libname).so: $(ocr_objs) $(lib_objs)
 +	$(CXX) -shared -fPIC -o $@ $(ocr_objs) $(lib_objs)
  
