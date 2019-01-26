@@ -4,7 +4,7 @@
 PORTNAME=	recoll
 DISTVERSION=	1.24.3
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.lesbonscomptes.com/recoll/
+MASTER_SITES=	https://www.lesbonscomptes.com/recoll/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Personal full text search package, based on Xapian
@@ -20,9 +20,7 @@ RUN_DEPENDS=	unrar:archivers/unrar \
 		unrtf:textproc/unrtf
 
 USES=		bison gmake gnome iconv libtool localbase python:2.7 shebangfix
-
 USE_LDCONFIG=	yes
-
 SHEBANG_FILES=	filters/*.py filters/rcl7z filters/rclaudio \
 		filters/rclchm filters/rcldia filters/rclepub \
 		filters/rclepub1 filters/rclics filters/rclinfo \
@@ -55,8 +53,9 @@ IMAGE_RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 LATEX_USE=		tex=dvipsk:run,latex:run
 PDF_RUN_DEPENDS=	pdftotext:graphics/poppler-utils
 PS_RUN_DEPENDS=		pstotext:print/pstotext
-USE_QT=			core gui network printsupport widgets webkit xml
+USE_QT=			core gui network printsupport widgets webkit xml buildtools_build qmake_build
 QT5_USES=		qt:5 gl
+QT5_USE=		GL=gl
 QT5_CONFIGURE_ENABLE=	qtgui
 QT5_CONFIGURE_ENV=	QMAKE="${QMAKE}" QMAKESPEC="${QMAKESPEC}" \
 			QTDIR="${PREFIX}"
@@ -65,15 +64,9 @@ SOUND_RUN_DEPENDS=	mutagen-pony-${PYTHON_VER}:audio/py-mutagen@${PY_FLAVOR} \
 X11MON_DESC=		X11 session monitoring support
 X11MON_USES=		fam
 X11MON_USE=		xorg=ice,sm,x11
-X11MON_CONFIGURE_ENABLE=x11mon
+X11MON_CONFIGURE_ENABLE=	x11mon
 X11MON_CONFIGURE_WITH=	fam
 X11MON_BROKEN=		does not build: index/rclmonrcv.cpp:(.text+0x1f13): undefined reference to `FAMOpen2'
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MQT5}
-USE_GL+=gl
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -90,8 +83,8 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 pre-build-QT5-on:
-	@(cd ${WRKSRC}/qtgui && ${SETENV} ${QMAKE_ENV} ${QMAKE} \
-		${QMAKE_ARGS} recoll.pro)
+	@cd ${WRKSRC}/qtgui && ${SETENV} ${QMAKE_ENV} ${QMAKE} \
+		${QMAKE_ARGS} recoll.pro
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/recoll/*.so \
