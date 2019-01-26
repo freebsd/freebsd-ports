@@ -207,6 +207,7 @@
     SUBDIR += p5-Proc-InvokeEditor
     SUBDIR += p5-Vimana
     SUBDIR += paredit-mode.el
+    SUBDIR += parinfer-rust
     SUBDIR += pdfedit
     SUBDIR += pico-alpine
     SUBDIR += picpas
