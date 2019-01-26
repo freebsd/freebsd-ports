@@ -1,0 +1,18 @@
+A full-featured, super fast implementation of Shaun Lebron's parinfer.
+
+Parinfer is a proof-of-concept editor mode for Lisp programming
+languages.  It simplifies the way we write Lisp by auto-adjusting
+parens when indentation changes and vice versa.  The hope is to
+make basic Lisp-editing easier for newcomers and experts alike,
+while still allowing existing plugins like Paredit to satisfy the
+need for more advanced operations.
+
+Parinfer-rust comes with plugins for Kakoune, Vim8, and Neovim.
+The Rust library can be called from other editors that can load
+dynamic libraries.
+
+This plugin implements "smart" mode.  Rather than switching between
+"paren" mode and "indent" mode, parinfer uses information about how
+the user is changing the file to decide what to do.
+
+WWW: https://github.com/eraserhd/parinfer-rust
