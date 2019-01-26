@@ -954,6 +954,7 @@
     SUBDIR += py-analyzemft
     SUBDIR += py-ansible-lint
     SUBDIR += py-ansible-runner
+    SUBDIR += py-azure-cli-base
     SUBDIR += py-bcfg2
     SUBDIR += py-cdmi
     SUBDIR += py-consul
