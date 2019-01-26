@@ -1,0 +1,5 @@
+The PRECIS framework makes internationalized user names and passwords safer
+for use by applications. PRECIS profiles transform unicode strings into a
+canonical form, suitable for comparison.
+
+WWW: https://github.com/byllyfish/precis_i18n
