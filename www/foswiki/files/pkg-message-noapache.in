@@ -2,6 +2,12 @@
 You have just installed Foswiki without configuring it for a specific
 web server.
 
+Path to foswiki: %%FWDIR%%
+
 To complete the installation, please visit:
 http://foswiki.org/System/InstallationGuide
 
+Notes for Apache 2.4 users:
+* Generate a new foswiki.conf for Apache 2.4:
+    https://foswiki.org/Support.ApacheConfigGenerator
+* Enable these DSO modules in httpd.conf: cgi_module, rewrite_module

@@ -39,6 +39,7 @@ PLIST_SUB+=	FWDIR=${FWDIR:S|^${PREFIX}/||}
 SUB_LIST+=	FWDIR=${FWDIR} FIND=${FIND} CHMOD=${CHMOD} CHOWN=${CHOWN} \
 		TOUCH=${TOUCH} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} \
 		CONFDIR=${CONFDIR}
+SUB_FILES+=	pkg-install
 MAINTAINER?=	glarkin@FreeBSD.org
 RUN_DEPENDS+=	${FWDEP:C/([^=<>]*)([=<>]*)(.*)/foswiki-\1\20.0.\3:www\/foswiki-\1/}
 
