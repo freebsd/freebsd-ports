@@ -1,9 +1,9 @@
---- plugin/Makefile.in.orig	2018-12-19 22:40:54 UTC
+--- plugin/Makefile.in.orig	2019-01-26 04:17:48 UTC
 +++ plugin/Makefile.in
-@@ -391,13 +391,13 @@ $(GRETLLIB):
- .PHONY: 
+@@ -396,13 +396,13 @@ $(GRETLLIB):
+ .PHONY:
  
- install: $(GRETLLIB) $(PLUGINS) $(URCDATA) $(DWDATA) installdirs 
+ install: $(GRETLLIB) $(PLUGINS) $(URCDATA) $(DWDATA) installdirs
 -	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) \
 +	$(LIBTOOL) --mode=install $(INSTALL_DATA) \
  	$(PLUGINS) $(DESTDIR)$(plugindir)
