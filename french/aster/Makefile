@@ -14,8 +14,8 @@ LICENSE=	GPLv2
 DEPRECATED=		Qt4 has been EOL since december 2015
 EXPIRATION_DATE=	2019-03-15
 
-#BROKEN_FreeBSD_12=	does not build (conflicting types for 'WritePermutation' ibc/renum/onmetl.c vs /usr/local/include/programs/proto.h)
-#BROKEN_FreeBSD_13=	does not build (conflicting types for 'WritePermutation' ibc/renum/onmetl.c vs /usr/local/include/programs/proto.h)
+BROKEN_FreeBSD_12=	does not build (conflicting types for 'WritePermutation' ibc/renum/onmetl.c vs /usr/local/include/programs/proto.h)
+BROKEN_FreeBSD_13=	does not build (conflicting types for 'WritePermutation' ibc/renum/onmetl.c vs /usr/local/include/programs/proto.h)
 
 #-----------------------------------------------------------------------
 # You may define these options:
