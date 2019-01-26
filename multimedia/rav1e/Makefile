@@ -1,8 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190122
+PORTVERSION=	s20190125
 CATEGORIES=	multimedia
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	2c2777dc462e.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Fast and safe AV1 encoder
@@ -16,7 +19,7 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	525f981
+GH_TAGNAME=	c524d3a
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	aho-corasick-0.6.9 \
@@ -30,7 +33,7 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		bitflags-0.4.0 \
 		bitflags-1.0.4 \
 		bitstream-io-0.8.2 \
-		byteorder-1.3.0 \
+		byteorder-1.3.1 \
 		cast-0.2.2 \
 		cc-1.0.28 \
 		cexpr-0.3.4 \
@@ -39,7 +42,7 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		clap-2.32.0 \
 		cloudabi-0.0.3 \
 		cmake-0.1.35 \
-		criterion-0.2.8 \
+		criterion-0.2.9 \
 		criterion-plot-0.3.0 \
 		crossbeam-deque-0.2.0 \
 		crossbeam-epoch-0.3.1 \
@@ -62,7 +65,7 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		itoa-0.4.3 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.2.0 \
-		libc-0.2.47 \
+		libc-0.2.48 \
 		libloading-0.5.0 \
 		log-0.4.6 \
 		memchr-2.1.3 \
@@ -85,7 +88,8 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		quote-0.6.11 \
 		rand-0.5.5 \
 		rand_core-0.2.2 \
-		rand_core-0.3.0 \
+		rand_core-0.3.1 \
+		rand_core-0.4.0 \
 		rand_os-0.1.1 \
 		rand_xoshiro-0.1.0 \
 		rayon-1.0.3 \
@@ -102,7 +106,7 @@ CARGO_CRATES=	aho-corasick-0.6.9 \
 		scopeguard-0.3.3 \
 		serde-1.0.85 \
 		serde_derive-1.0.85 \
-		serde_json-1.0.36 \
+		serde_json-1.0.37 \
 		strsim-0.7.0 \
 		syn-0.15.26 \
 		termcolor-1.0.4 \
