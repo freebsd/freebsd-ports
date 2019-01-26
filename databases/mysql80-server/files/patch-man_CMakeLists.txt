@@ -1,11 +1,10 @@
---- man/CMakeLists.txt.orig	2015-11-29 19:16:24 UTC
+--- man/CMakeLists.txt.orig	2018-12-20 20:14:03 UTC
 +++ man/CMakeLists.txt
-@@ -15,8 +15,6 @@
+@@ -22,7 +22,6 @@
  
  # Copy man pages
- FILE(GLOB MAN1_FILES *.1)
--FILE(GLOB MAN1_EXCLUDE make_win_bin_dist.1)
+ FILE(GLOB MAN1 *.1)
 -FILE(GLOB MAN1_NDB ndb*.1)
- FILE(GLOB MAN8_FILES *.8)
+ FILE(GLOB MAN8 *.8)
  FILE(GLOB MAN8_NDB ndb*.8)
- IF(MAN1_FILES)
+ IF(MAN1_NDB AND NOT WITH_NDBCLUSTER)
