@@ -24,7 +24,7 @@ RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base \
 
 CONFLICTS=	courier-imap-2.* couriermlm-0.* \
 		exim-4.* maildrop-1.* \
-		postfix-1.* postfix-2.* \
+		panda-imap-201* postfix-1.* postfix-2.* \
 		qmail-*-1.* qmail-1.* \
 		sendmail-*-8.* sendmail-8.* \
 		smail-3.* sqwebmail-3.* \
