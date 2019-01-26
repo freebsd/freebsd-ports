@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	datawarrior
-DISTVERSION=	4.7.2
+DISTVERSION=	5.0.0
 CATEGORIES=	science java
 MASTER_SITES=	https://www.dropbox.com/s/n3sjyh2ets71wo9/${DISTNAME}${EXTRACT_SUFX}?dl=1&dummy=/
 DISTNAME=	datawarrior${DISTVERSION:S/.//g}Source
