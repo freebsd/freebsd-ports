@@ -2,7 +2,7 @@
 
 PORTNAME=	cp2k
 DISTVERSION=	6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -54,7 +54,10 @@ OPENMP_MPI_VARS=	VERSION=psmp
 OPENMP_MPI_LIB_DEPENDS=	${MPI_LIB_DEPENDS}
 OPENMP_MPI_LDFLAGS=	${MPI_LDFLAGS}
 
-PLIST_FILES=		bin/${PORTNAME}
+
+EXECUTABLES=		cp2k graph cp2k_shell dbcsr_performance_driver
+
+PLIST_FILES=		${EXECUTABLES:C/(.*)/bin\/\1.${VERSION}/}
 
 .include <bsd.port.options.mk>
 
@@ -74,6 +77,8 @@ pre-build:
 	@${MKDIR} ${BUILD_WRKSRC}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/exe/*/${PORTNAME}.* ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+.for e in ${EXECUTABLES}
+	${INSTALL_PROGRAM} ${WRKSRC}/exe/*/${e}.${VERSION} ${STAGEDIR}${PREFIX}/bin
+.endfor
 
 .include <bsd.port.mk>
