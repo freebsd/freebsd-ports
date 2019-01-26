@@ -1,0 +1,179 @@
+From 4147957a5eec57ec7a2a416dca74c3c0299a3432 Mon Sep 17 00:00:00 2001
+From: Luca Boccassi <bluca@debian.org>
+Date: Sun, 13 Jan 2019 13:08:10 +0000
+Subject: [PATCH 1/2] Problem: test_security_zap fails on architectures that
+ disallow unaligned pointer access
+
+Solution: use memcpy instead of doing pointer arithmetics with casting
+and dereferencing to fix the error on sparc64
+---
+ tests/testutil_security.hpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git tests/testutil_security.hpp tests/testutil_security.hpp
+index 90999118c..437bfb298 100644
+--- tests/testutil_security.hpp
++++ tests/testutil_security.hpp
+@@ -345,7 +345,7 @@ static int get_monitor_event_internal (void *monitor_,
+     uint8_t *data = (uint8_t *) zmq_msg_data (&msg);
+     uint16_t event = *(uint16_t *) (data);
+     if (value_)
+-        *value_ = *(uint32_t *) (data + 2);
++        memcpy (value_, data + 2, sizeof (uint32_t));
+ 
+     //  Second frame in message contains event address
+     zmq_msg_init (&msg);
+
+From f64b697095c6d8862bdfd2a159857e915bbf20ee Mon Sep 17 00:00:00 2001
+From: Luca Boccassi <bluca@debian.org>
+Date: Sun, 13 Jan 2019 14:50:07 +0000
+Subject: [PATCH 2/2] Problem: tests use hard-coded fixed IPC file path
+
+Solution: use wildcards or random directories to avoid races when
+multiple users are running the same test on the same machine
+---
+ tests/test_pair_ipc.cpp      |  9 +++++++--
+ tests/test_rebind_ipc.cpp    | 13 ++++++++-----
+ tests/test_reconnect_ivl.cpp | 10 +++++++---
+ tests/test_use_fd.cpp        | 24 +++++++++++++++++++-----
+ 4 files changed, 41 insertions(+), 15 deletions(-)
+
+diff --git tests/test_pair_ipc.cpp tests/test_pair_ipc.cpp
+index c9a216dd2..ab4dde350 100644
+--- tests/test_pair_ipc.cpp
++++ tests/test_pair_ipc.cpp
+@@ -44,11 +44,16 @@ void tearDown ()
+ 
+ void test_roundtrip ()
+ {
++    char my_endpoint[256];
++    size_t len = sizeof (my_endpoint);
++
+     void *sb = test_context_socket (ZMQ_PAIR);
+-    TEST_ASSERT_SUCCESS_ERRNO (zmq_bind (sb, "ipc:///tmp/test_pair_ipc"));
++    TEST_ASSERT_SUCCESS_ERRNO (zmq_bind (sb, "ipc://*"));
++    TEST_ASSERT_SUCCESS_ERRNO (
++      zmq_getsockopt (sb, ZMQ_LAST_ENDPOINT, my_endpoint, &len));
+ 
+     void *sc = test_context_socket (ZMQ_PAIR);
+-    TEST_ASSERT_SUCCESS_ERRNO (zmq_connect (sc, "ipc:///tmp/test_pair_ipc"));
++    TEST_ASSERT_SUCCESS_ERRNO (zmq_connect (sc, my_endpoint));
+ 
+     bounce (sb, sc);
+ 
+diff --git tests/test_rebind_ipc.cpp tests/test_rebind_ipc.cpp
+index 830d18030..784641270 100644
+--- tests/test_rebind_ipc.cpp
++++ tests/test_rebind_ipc.cpp
+@@ -42,24 +42,27 @@ void tearDown ()
+     teardown_test_context ();
+ }
+ 
+-static const char *SOCKET_ADDR = "ipc:///tmp/test_rebind_ipc";
+-
+ void test_rebind_ipc ()
+ {
++    char my_endpoint[256];
++    size_t len = sizeof (my_endpoint);
++
+     void *sb0 = test_context_socket (ZMQ_PUSH);
+     void *sb1 = test_context_socket (ZMQ_PUSH);
+ 
+-    TEST_ASSERT_SUCCESS_ERRNO (zmq_bind (sb0, SOCKET_ADDR));
++    TEST_ASSERT_SUCCESS_ERRNO (zmq_bind (sb0, "ipc://*"));
++    TEST_ASSERT_SUCCESS_ERRNO (
++      zmq_getsockopt (sb0, ZMQ_LAST_ENDPOINT, my_endpoint, &len));
+ 
+     void *sc = test_context_socket (ZMQ_PULL);
+-    TEST_ASSERT_SUCCESS_ERRNO (zmq_connect (sc, SOCKET_ADDR));
++    TEST_ASSERT_SUCCESS_ERRNO (zmq_connect (sc, my_endpoint));
+ 
+     send_string_expect_success (sb0, "42", 0);
+     recv_string_expect_success (sc, "42", 0);
+ 
+     test_context_socket_close (sb0);
+ 
+-    TEST_ASSERT_SUCCESS_ERRNO (zmq_bind (sb1, SOCKET_ADDR));
++    TEST_ASSERT_SUCCESS_ERRNO (zmq_bind (sb1, my_endpoint));
+ 
+     send_string_expect_success (sb1, "42", 0);
+     recv_string_expect_success (sc, "42", 0);
+diff --git tests/test_reconnect_ivl.cpp tests/test_reconnect_ivl.cpp
+index b67b40e5f..6dd0e4cd2 100644
+--- tests/test_reconnect_ivl.cpp
++++ tests/test_reconnect_ivl.cpp
+@@ -71,11 +71,15 @@ void test_reconnect_ivl_against_pair_socket (const char *my_endpoint_,
+ #if !defined(ZMQ_HAVE_WINDOWS) && !defined(ZMQ_HAVE_GNU)
+ void test_reconnect_ivl_ipc (void)
+ {
+-    const char *ipc_endpoint = "ipc:///tmp/test_reconnect_ivl";
++    char my_endpoint[256];
++    size_t len = sizeof (my_endpoint);
++
+     void *sb = test_context_socket (ZMQ_PAIR);
+-    TEST_ASSERT_SUCCESS_ERRNO (zmq_bind (sb, ipc_endpoint));
++    TEST_ASSERT_SUCCESS_ERRNO (zmq_bind (sb, "ipc://*"));
++    TEST_ASSERT_SUCCESS_ERRNO (
++      zmq_getsockopt (sb, ZMQ_LAST_ENDPOINT, my_endpoint, &len));
+ 
+-    test_reconnect_ivl_against_pair_socket (ipc_endpoint, sb);
++    test_reconnect_ivl_against_pair_socket (my_endpoint, sb);
+     test_context_socket_close (sb);
+ }
+ #endif
+diff --git tests/test_use_fd.cpp tests/test_use_fd.cpp
+index 67414f5bf..e9852b13d 100644
+--- tests/test_use_fd.cpp
++++ tests/test_use_fd.cpp
+@@ -237,24 +237,38 @@ void pre_allocate_sock_ipc_int (void *zmq_socket_, const char *path_)
+                              sizeof (struct sockaddr_un));
+ }
+ 
++char ipc_endpoint[16];
++
+ void pre_allocate_sock_ipc (void *sb_, char *my_endpoint_)
+ {
+-    pre_allocate_sock_ipc_int (sb_, "/tmp/test_use_fd_ipc");
+-    strcpy (my_endpoint_, "ipc:///tmp/test_use_fd_ipc");
++    strcpy (ipc_endpoint, "tmpXXXXXX");
++
++#ifdef HAVE_MKDTEMP
++    TEST_ASSERT_TRUE (mkdtemp (ipc_endpoint));
++    strcat (ipc_endpoint, "/ipc");
++#else
++    int fd = mkstemp (ipc_endpoint);
++    TEST_ASSERT_TRUE (fd != -1);
++    close (fd);
++#endif
++
++    pre_allocate_sock_ipc_int (sb_, ipc_endpoint);
++    strcpy (my_endpoint_, "ipc://");
++    strcat (my_endpoint_, ipc_endpoint);
+ }
+ 
+ void test_req_rep_ipc ()
+ {
+     test_req_rep (pre_allocate_sock_ipc);
+ 
+-    TEST_ASSERT_SUCCESS_ERRNO (unlink ("/tmp/test_use_fd_ipc"));
++    TEST_ASSERT_SUCCESS_ERRNO (unlink (ipc_endpoint));
+ }
+ 
+ void test_pair_ipc ()
+ {
+     test_pair (pre_allocate_sock_ipc);
+ 
+-    TEST_ASSERT_SUCCESS_ERRNO (unlink ("/tmp/test_use_fd_ipc"));
++    TEST_ASSERT_SUCCESS_ERRNO (unlink (ipc_endpoint));
+ }
+ 
+ void test_client_server_ipc ()
+@@ -262,7 +276,7 @@ void test_client_server_ipc ()
+ #if defined(ZMQ_SERVER) && defined(ZMQ_CLIENT)
+     test_client_server (pre_allocate_sock_ipc);
+ 
+-    TEST_ASSERT_SUCCESS_ERRNO (unlink ("/tmp/test_use_fd_ipc"));
++    TEST_ASSERT_SUCCESS_ERRNO (unlink (ipc_endpoint));
+ #endif
+ }
+ 

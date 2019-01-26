@@ -1,3 +1,5 @@
-TIMESTAMP = 1513839554
-SHA256 (zeromq-4.2.3.tar.gz) = 8f1e2b2aade4dbfde98d82366d61baef2f62e812530160d2e6d0a5bb24e40bc0
-SIZE (zeromq-4.2.3.tar.gz) = 1326780
+TIMESTAMP = 1548469918
+SHA256 (zeromq-4.3.1.tar.gz) = bcbabe1e2c7d0eec4ed612e10b94b112dd5f06fcefa994a0c79a45d835cd21eb
+SIZE (zeromq-4.3.1.tar.gz) = 1490122
+SHA256 (/usr/home/koobs/repos/freebsd/ports/net/libzmq4/files/PR3358) = 63572ed3a8fa7e1d0f3d251b0aab32a94d1b9b841a53a0a715a8cafccca3289d
+SIZE (/usr/home/koobs/repos/freebsd/ports/net/libzmq4/files/PR3358) = 6240
