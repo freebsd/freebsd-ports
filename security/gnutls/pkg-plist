@@ -32,7 +32,7 @@ include/gnutls/x509.h
 %%DANE%%lib/libgnutls-dane.so.0.4.1
 lib/libgnutls.so
 lib/libgnutls.so.30
-lib/libgnutls.so.30.23.0
+lib/libgnutls.so.30.23.1
 lib/libgnutlsxx.so
 lib/libgnutlsxx.so.28
 lib/libgnutlsxx.so.28.1.0
@@ -131,6 +131,8 @@ man/man3/gnutls_certificate_set_ocsp_status_request_function2.3.gz
 man/man3/gnutls_certificate_set_ocsp_status_request_mem.3.gz
 man/man3/gnutls_certificate_set_params_function.3.gz
 man/man3/gnutls_certificate_set_pin_function.3.gz
+man/man3/gnutls_certificate_set_rawpk_key_file.3.gz
+man/man3/gnutls_certificate_set_rawpk_key_mem.3.gz
 man/man3/gnutls_certificate_set_retrieve_function.3.gz
 man/man3/gnutls_certificate_set_retrieve_function2.3.gz
 man/man3/gnutls_certificate_set_retrieve_function3.3.gz
@@ -382,6 +384,8 @@ man/man3/gnutls_pcert_export_openpgp.3.gz
 man/man3/gnutls_pcert_export_x509.3.gz
 man/man3/gnutls_pcert_import_openpgp.3.gz
 man/man3/gnutls_pcert_import_openpgp_raw.3.gz
+man/man3/gnutls_pcert_import_rawpk.3.gz
+man/man3/gnutls_pcert_import_rawpk_raw.3.gz
 man/man3/gnutls_pcert_import_x509.3.gz
 man/man3/gnutls_pcert_import_x509_list.3.gz
 man/man3/gnutls_pcert_import_x509_raw.3.gz
