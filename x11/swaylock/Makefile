@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	swaylock
-DISTVERSION=	1.2-38
-DISTVERSIONSUFFIX=	-g3d94a60
+DISTVERSION=	1.2-41
+DISTVERSIONSUFFIX=	-g368f53e
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -30,13 +30,12 @@ OPTIONS_DEFINE=	MANPAGES PIXBUF
 OPTIONS_DEFAULT=MANPAGES PIXBUF
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
+MANPAGES_MESON_ON=	-Dman-pages=enabled
+MANPAGES_MESON_OFF=	-Dman-pages=disabled
 MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
 
 PIXBUF_USE=		GNOME=gdkpixbuf2
 PIXBUF_MESON_ON=	-Dgdk-pixbuf=enabled
 PIXBUF_MESON_OFF=	-Dgdk-pixbuf=disabled
-
-post-patch-MANPAGES-off:
-	@${REINPLACE_CMD} -i '' "s/'scdoc/&-disabled/" ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
