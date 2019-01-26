@@ -1,0 +1,6 @@
+The data package for NWChem, the quantum chemistry software.
+
+Data contains basis sets descriptions, pseudopotentials, various related
+data libraries needed for NWChem operation.
+
+WWW: http://www.nwchem-sw.org/index.php/Main_Page
