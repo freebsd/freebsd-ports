@@ -1,0 +1,15 @@
+%%SITE_ARCH%%/Net/Curl.pm
+%%SITE_ARCH%%/Net/Curl/Compat.pm
+%%SITE_ARCH%%/Net/Curl/Easy.pm
+%%SITE_ARCH%%/Net/Curl/Form.pm
+%%SITE_ARCH%%/Net/Curl/Multi.pm
+%%SITE_ARCH%%/Net/Curl/Share.pm
+%%SITE_ARCH%%/Net/Curl/examples.pod
+%%SITE_ARCH%%/auto/Net/Curl/Curl.so
+%%PERL5_MAN3%%/Net::Curl.3.gz
+%%PERL5_MAN3%%/Net::Curl::Compat.3.gz
+%%PERL5_MAN3%%/Net::Curl::Easy.3.gz
+%%PERL5_MAN3%%/Net::Curl::Form.3.gz
+%%PERL5_MAN3%%/Net::Curl::Multi.3.gz
+%%PERL5_MAN3%%/Net::Curl::Share.3.gz
+%%PERL5_MAN3%%/Net::Curl::examples.3.gz
