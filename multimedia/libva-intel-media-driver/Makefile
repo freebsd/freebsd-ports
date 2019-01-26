@@ -18,7 +18,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	Only Intel GPUs on x86 are supported
 
 BUILD_DEPENDS=	gmmlib>=${PORTVERSION:C/([^.]*\.[^.]).*/\1/}:multimedia/gmmlib \
-		libva>=2.3.0_3:multimedia/libva
+		libva>=2.4.0:multimedia/libva
 LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess \
 		libigdgmm.so:multimedia/gmmlib \
 		libva.so:multimedia/libva
