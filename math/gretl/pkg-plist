@@ -118,6 +118,7 @@ lib/gretl-gtk2/spss_import.so
 lib/gretl-gtk2/stata_export.so
 lib/gretl-gtk2/stata_import.so
 lib/gretl-gtk2/stats_tables.so
+lib/gretl-gtk2/svm.so
 lib/gretl-gtk2/sysest.so
 %%GUI%%lib/gretl-gtk2/tramo-x12a.so
 lib/gretl-gtk2/urcdist.so
@@ -125,8 +126,8 @@ lib/gretl-gtk2/vif.so
 %%GUI%%lib/gretl-gtk2/xlsx_import.so
 %%GUI%%lib/gretl-gtk2/xml_get.so
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.27
-lib/libgretl-1.0.so.27.0.0
+lib/libgretl-1.0.so.28
+lib/libgretl-1.0.so.28.0.0
 libdata/pkgconfig/gretl.pc
 man/man1/gretl.1.gz
 %%GUI%%share/appdata/gretl.appdata.xml
