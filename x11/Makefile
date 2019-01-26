@@ -493,6 +493,7 @@
     SUBDIR += xsetmode
     SUBDIR += xsetpointer
     SUBDIR += xsetroot
+    SUBDIR += xsettingsd
     SUBDIR += xskyroot
     SUBDIR += xsm
     SUBDIR += xsnow

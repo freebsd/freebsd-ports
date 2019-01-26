@@ -1,0 +1,9 @@
+xsettingsd is a daemon that implements the XSETTINGS specification.
+
+It is intended to be small, fast, and minimally dependent on other
+libraries.  It can serve as an alternative to gnome-settings-daemon
+for users who are not using the GNOME desktop environment but who
+still run GTK+ applications and want to configure things such as
+themes, font antialiasing/hinting, and UI sound effects.
+
+WWW: https://github.com/derat/xsettingsd
