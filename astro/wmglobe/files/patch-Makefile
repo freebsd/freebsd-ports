@@ -1,0 +1,31 @@
+--- Makefile.orig	1999-02-06 12:17:06 UTC
++++ Makefile
+@@ -1,12 +1,11 @@
+-INC	=	-I/usr/X11R6/include
+-LIBS	=	-lXext -lX11 -lm -L/usr/X11R6/lib \
+-		-ltiff  -lXpm -lpng -lz -ljpeg -lungif -lwraster
++INC	=	`pkg-config wrlib --cflags`
++LIBS	=	-lm `pkg-config wrlib xpm xext --libs`
+ OBJS	=	src/wmglobe.o src/rend.o src/wmgutil.o \
+ 		src/sunpos.o src/myconvert.o src/mycontext.o 
+ 
+ 
+ .c.o :
+-	gcc -c -O2 -Wall $(INC) $< -o $*.o
++	${CC} -c ${CFLAGS} $(INC) $< -o $@
+ 
+ all:  wmglobe
+ 
+@@ -14,9 +13,8 @@ clean:
+ 	rm -f src/*.o wmglobe
+ 	
+ wmglobe :	$(OBJS)
+-		gcc -O2 -Wall $(OBJS) -o wmglobe $(LIBS)
+-		strip wmglobe 
++		${CC} ${CFLAGS} $(OBJS) -o wmglobe $(LIBS)
+ 
+ install :	
+-		install wmglobe /usr/local/bin
+-		install wmglobe.1 /usr/local/man/man1
++		${BSD_INSTALL_PROGRAM} wmglobe ${PREFIX}/bin
++		${BSD_INSTALL_MAN} wmglobe.1 ${PREFIX}/man/man1

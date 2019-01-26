@@ -116,6 +116,7 @@
     SUBDIR += wcslib
     SUBDIR += weather
     SUBDIR += weatherspect
+    SUBDIR += wmglobe
     SUBDIR += wmjupiter
     SUBDIR += wmmoonclock
     SUBDIR += wmsolar
