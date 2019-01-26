@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mechanize
-PORTVERSION=	0.3.7
+PORTVERSION=	0.4.0
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP \
-		http://wwwsearch.sourceforge.net/mechanize/src/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -13,7 +12,7 @@ COMMENT=	Stateful programmatic web browsing in Python
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:2.7
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
