@@ -1,5 +1,3 @@
-bin/nwchem
-etc/nwchemrc
 %%DATADIR%%/data/amber_q/ABE.frg
 %%DATADIR%%/data/amber_q/BNZ.frg
 %%DATADIR%%/data/amber_q/BTH.frg

@@ -163,6 +163,7 @@
     SUBDIR += netcdf-fortran
     SUBDIR += nifticlib
     SUBDIR += nwchem
+    SUBDIR += nwchem-data
     SUBDIR += octopus
     SUBDIR += openbabel
     SUBDIR += openkim
