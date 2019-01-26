@@ -92,6 +92,7 @@
     SUBDIR += gnome-mplayer
     SUBDIR += gnome-mpv
     SUBDIR += gnome-subtitles
+    SUBDIR += gnome-twitch
     SUBDIR += gpac-libgpac
     SUBDIR += gpac-mp4box
     SUBDIR += gpodder
