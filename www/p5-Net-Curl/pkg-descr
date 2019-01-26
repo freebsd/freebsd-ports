@@ -1,0 +1,6 @@
+Perl interface to libcurl created with object-oriented implementations
+in mind. This documentation contains Perl-specific details and
+quirks. For more information consult libcurl man pages and documentation
+at http://curl.haxx.se.
+
+WWW: https://search.cpan.org/dist/Net-Curl/
