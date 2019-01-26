@@ -128,6 +128,7 @@ include/dpkg/version.h
 %%SITE_PERL%%/Dpkg/Shlibs/SymbolFile.pm
 %%SITE_PERL%%/Dpkg/Source/Archive.pm
 %%SITE_PERL%%/Dpkg/Source/BinaryFiles.pm
+%%SITE_PERL%%/Dpkg/Source/Format.pm
 %%SITE_PERL%%/Dpkg/Source/Functions.pm
 %%SITE_PERL%%/Dpkg/Source/Package.pm
 %%SITE_PERL%%/Dpkg/Source/Package/V1.pm
@@ -240,7 +241,7 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/fr/man5/deb-old.5.gz
 %%NLS%%man/fr/man5/deb-override.5.gz
 %%NLS%%man/fr/man5/deb-split.5.gz
-%%NLS%%man/fr/man8/start-stop-daemon.8.gz
+%%NLS%%@dir man/fr/man8
 %%NLS%%man/it/man1/dpkg-maintscript-helper.1.gz
 %%NLS%%man/it/man1/dpkg-split.1.gz
 %%NLS%%man/it/man1/update-alternatives.1.gz
@@ -248,7 +249,7 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/it/man5/deb-old.5.gz
 %%NLS%%man/it/man5/deb-override.5.gz
 %%NLS%%man/it/man5/deb-split.5.gz
-%%NLS%%man/it/man8/start-stop-daemon.8.gz
+%%NLS%%@dir man/it/man8
 %%NLS%%man/ja/man1/dpkg-split.1.gz
 %%NLS%%man/ja/man1/update-alternatives.1.gz
 %%NLS%%man/ja/man5/deb-extra-override.5.gz
@@ -323,6 +324,7 @@ man/man3/Dpkg::IPC.3perl.gz
 man/man3/Dpkg::Index.3perl.gz
 man/man3/Dpkg::Interface::Storable.3perl.gz
 man/man3/Dpkg::Path.3perl.gz
+man/man3/Dpkg::Source::Format.3perl.gz
 man/man3/Dpkg::Source::Package.3perl.gz
 man/man3/Dpkg::Substvars.3perl.gz
 man/man3/Dpkg::Vendor.3perl.gz
@@ -429,7 +431,7 @@ man/man8/start-stop-daemon.8.gz
 %%NLS%%man/sv/man5/deb-old.5.gz
 %%NLS%%man/sv/man5/deb-override.5.gz
 %%NLS%%man/sv/man5/deb-split.5.gz
-%%NLS%%man/sv/man8/start-stop-daemon.8.gz
+%%NLS%%@dir man/sv/man8
 sbin/start-stop-daemon
 %%DATADIR%%/abitable
 %%DATADIR%%/architecture.mk
