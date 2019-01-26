@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+FWDIR=%%FWDIR%%
+WWWDIR=%%WWWDIR%%
+WWWOWN=%%WWWOWN%%
+WWWGRP=%%WWWGRP%%
+
+case $2 in
+	PRE-INSTALL)
+		;;
+	POST-INSTALL)
+		chown -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/
+
+		cd ${WWWDIR}
+		sh tools/fix_file_permissions.sh > /dev/null 2>&1
+		;;
+	*)
+		echo "Unexpected Argument $2!!!"
+		exit 1
+		;;
+esac
+exit 0
