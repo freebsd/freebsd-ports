@@ -2,7 +2,7 @@ include/zmq_utils.h
 include/zmq.h
 lib/libzmq.so
 lib/libzmq.so.5
-lib/libzmq.so.5.1.3
+lib/libzmq.so.5.2.1
 libdata/pkgconfig/libzmq.pc
 %%MANPAGES%%man/man3/zmq_atomic_counter_dec.3.gz
 %%MANPAGES%%man/man3/zmq_atomic_counter_destroy.3.gz
@@ -42,6 +42,7 @@ libdata/pkgconfig/libzmq.pc
 %%MANPAGES%%man/man3/zmq_msg_set_routing_id.3.gz
 %%MANPAGES%%man/man3/zmq_msg_size.3.gz
 %%MANPAGES%%man/man3/zmq_poll.3.gz
+%%MANPAGES%%man/man3/zmq_poller.3.gz
 %%MANPAGES%%man/man3/zmq_proxy.3.gz
 %%MANPAGES%%man/man3/zmq_proxy_steerable.3.gz
 %%MANPAGES%%man/man3/zmq_recv.3.gz
@@ -53,6 +54,7 @@ libdata/pkgconfig/libzmq.pc
 %%MANPAGES%%man/man3/zmq_socket.3.gz
 %%MANPAGES%%man/man3/zmq_socket_monitor.3.gz
 %%MANPAGES%%man/man3/zmq_strerror.3.gz
+%%MANPAGES%%man/man3/zmq_timers.3.gz
 %%MANPAGES%%man/man3/zmq_unbind.3.gz
 %%MANPAGES%%man/man3/zmq_version.3.gz
 %%MANPAGES%%man/man3/zmq_z85_decode.3.gz

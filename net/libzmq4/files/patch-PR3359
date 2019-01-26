@@ -1,0 +1,45 @@
+From d55956574d3b98268ec31045b012029ffc4b1a8c Mon Sep 17 00:00:00 2001
+From: Luca Boccassi <bluca@debian.org>
+Date: Mon, 14 Jan 2019 00:10:08 +0000
+Subject: [PATCH] Problem: test_rebind_ipc still fails
+
+Solution: create manually the random IPC file to reuse
+---
+ tests/test_rebind_ipc.cpp | 20 +++++++++++++++-----
+ 1 file changed, 15 insertions(+), 5 deletions(-)
+
+diff --git tests/test_rebind_ipc.cpp tests/test_rebind_ipc.cpp
+index 784641270..b14cb81d9 100644
+--- tests/test_rebind_ipc.cpp
++++ tests/test_rebind_ipc.cpp
+@@ -44,15 +44,25 @@ void tearDown ()
+ 
+ void test_rebind_ipc ()
+ {
+-    char my_endpoint[256];
+-    size_t len = sizeof (my_endpoint);
++    char my_endpoint[32], random_file[16];
++    strcpy (random_file, "tmpXXXXXX");
++
++#ifdef HAVE_MKDTEMP
++    TEST_ASSERT_TRUE (mkdtemp (random_file));
++    strcat (random_file, "/ipc");
++#else
++    int fd = mkstemp (random_file);
++    TEST_ASSERT_TRUE (fd != -1);
++    close (fd);
++#endif
++
++    strcpy (my_endpoint, "ipc://");
++    strcat (my_endpoint, random_file);
+ 
+     void *sb0 = test_context_socket (ZMQ_PUSH);
+     void *sb1 = test_context_socket (ZMQ_PUSH);
+ 
+-    TEST_ASSERT_SUCCESS_ERRNO (zmq_bind (sb0, "ipc://*"));
+-    TEST_ASSERT_SUCCESS_ERRNO (
+-      zmq_getsockopt (sb0, ZMQ_LAST_ENDPOINT, my_endpoint, &len));
++    TEST_ASSERT_SUCCESS_ERRNO (zmq_bind (sb0, my_endpoint));
+ 
+     void *sc = test_context_socket (ZMQ_PULL);
+     TEST_ASSERT_SUCCESS_ERRNO (zmq_connect (sc, my_endpoint));
