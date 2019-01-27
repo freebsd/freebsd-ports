@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	greybird
-PORTVERSION=	3.18.0
+PORTVERSION=	3.22.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-themes xfce
 PKGNAMESUFFIX=	-theme
@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	gtk-murrine-engine>=0.98.1:x11-themes/gtk-murrine-engine
 
-PORTSCOUT=	limit:^3\.18\.
+PORTSCOUT=	limit:^3\.22\.
 
 GH_ACCOUNT=	shimmerproject
 GH_PROJECT=	Greybird
@@ -35,7 +35,7 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/themes/Greybird
-.for dir in gtk-2.0 gtk-3.0 xfwm4
+.for dir in gtk-2.0 gtk-3.0 plank xfwm4
 	@cd ${WRKSRC} && \
 		${COPYTREE_SHARE} ${dir} ${STAGEDIR}${PREFIX}/share/themes/Greybird
 .endfor
