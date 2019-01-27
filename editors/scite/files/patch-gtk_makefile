@@ -1,23 +1,17 @@
---- makefile.orig	2016-08-30 04:39:12 UTC
-+++ makefile
-@@ -7,16 +7,6 @@
- srcdir ?= .
- 
- .SUFFIXES: .cxx .o .h .a .c
--ifdef CLANG
--# Can choose aspect to sanitize: address and undefined can simply change SANITIZE but for
--# thread also need to create Position Independent Executable -> search online documentation
--SANITIZE = address
--#SANITIZE = undefined
+--- gtk/makefile.orig	2018-05-06 22:32:10 UTC
++++ gtk/makefile
+@@ -12,8 +12,8 @@ ifdef CLANG
+ # thread also need to create Position Independent Executable -> search online documentation
+ SANITIZE = address
+ #SANITIZE = undefined
 -CXX = clang++ -fsanitize=$(SANITIZE) -Wno-deprecated-register
 -CC = clang -fsanitize=$(SANITIZE) -Wno-empty-body
--else
--MISLEADING=-Wno-misleading-indentation
--endif
- 
- ifdef GTK3
- GTKVERSION=gtk+-3.0
-@@ -28,7 +18,7 @@ endif
++CXX = $(CXX) -fsanitize=$(SANITIZE) -Wno-deprecated-register
++CC = $(CC) -fsanitize=$(SANITIZE) -Wno-empty-body
+ else
+ MISLEADING=-Wno-misleading-indentation
+ endif
+@@ -28,7 +28,7 @@ endif
  CONFIGFLAGS:=$(shell pkg-config --cflags $(GTKVERSION))
  CONFIGLIB:=$(shell pkg-config --libs $(GTKVERSION) gthread-2.0 gmodule-no-export-2.0)
  CONFIGTHREADS:=
@@ -26,12 +20,12 @@
  ifndef prefix
  ifdef gnomeprefix
    prefix=$(gnomeprefix)
-@@ -119,8 +109,9 @@ FilePath.o SciTEBase.o FileWorker.o Cook
+@@ -122,8 +122,9 @@ FilePath.o EditorConfig.o SciTEBase.o Fi
  ExportHTML.o ExportPDF.o ExportRTF.o ExportTEX.o ExportXML.o \
  MatchMarker.o StringHelpers.o \
  PropSetFile.o MultiplexExtension.o DirectorExtension.o SciTEProps.o StyleDefinition.o StyleWriter.o Utf8_16.o \
 -	JobQueue.o GTKMutex.o IFaceTable.o $(COMPLIB) $(LUA_OBJS)
--	$(CXX) `$(CONFIGTHREADS)` -rdynamic -Wl,--as-needed -Wl,--version-script $(srcdir)/lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) -lm -lstdc++
+-	$(CXX) `$(CONFIGTHREADS)` -rdynamic -Wl,--as-needed -Wl,--version-script $(srcdir)/lua.vers -DGTK $^ -o $@ $(CONFIGLIB) $(LIBDL) $(LDLIBS) -lm -lstdc++
 +	JobQueue.o GTKMutex.o IFaceTable.o $(LUA_OBJS)
 +	$(CXX) -rdynamic -Wl,--version-script $(srcdir)/lua.vers -DGTK $(CXXFLAGS) $^ -o $@ \
 +	$(LDFLAGS) -lscintilla -lscintilla_lexers -Wl,--as-needed $(CONFIGLIB)
