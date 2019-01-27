@@ -42,6 +42,7 @@
     SUBDIR += encodings
     SUBDIR += exo
     SUBDIR += fantasque-sans-mono
+    SUBDIR += fanwood
     SUBDIR += farsifonts
     SUBDIR += fifteen
     SUBDIR += fira
