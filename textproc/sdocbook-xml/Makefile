@@ -12,6 +12,11 @@ DISTNAME=	docbook-simple-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	"Simplified" DocBook XML DTD
 
+LICENSE=	OASIS
+LICENSE_NAME=	OASIS License
+LICENSE_TEXT=	License text is available in all files installed by this port
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 RUN_DEPENDS+=	xmlcatmgr:textproc/xmlcatmgr
 
 USES=		zip
