@@ -3,6 +3,7 @@
 
 PORTNAME=	libhoard
 PORTVERSION=	3.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/emeryberger/Hoard/releases/download/${PORTVERSION}/
 DISTNAME=	Hoard-${PORTVERSION}-source
@@ -19,6 +20,7 @@ BROKEN_mips64=		no spin lock implementation is available for this platform
 BROKEN_powerpc64=	Does not build: Error: instruction address is not a multiple of 4
 BROKEN_sparc64=		Does not build
 
+USE_CXXSTD=	gnu++98
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/Hoard/src
 
@@ -26,12 +28,8 @@ ALL_TARGET=	freebsd
 
 PLIST_FILES=	lib/libhoard.so lib/libhoard.so.1
 
-post-patch:
-	${REINPLACE_CMD} 's!g++!${CXX}!; s!-O2!${CFLAGS}!' ${WRKSRC}/Makefile
-
 do-install:
-	${STRIP_CMD} ${WRKSRC}/libhoard.so
-	${INSTALL_DATA} ${WRKSRC}/libhoard.so ${STAGEDIR}${PREFIX}/lib/libhoard.so.1
+	${INSTALL_LIB} ${WRKSRC}/libhoard.so ${STAGEDIR}${PREFIX}/lib/libhoard.so.1
 	${LN} -sf libhoard.so.1 ${STAGEDIR}${PREFIX}/lib/libhoard.so
 
 .include <bsd.port.mk>
