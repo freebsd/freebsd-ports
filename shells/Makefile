@@ -51,6 +51,7 @@
     SUBDIR += xonsh
     SUBDIR += zsh
     SUBDIR += zsh-antigen
+    SUBDIR += zsh-completions
     SUBDIR += zsh-navigation-tools
 
 .include <bsd.port.subdir.mk>
