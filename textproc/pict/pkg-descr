@@ -1,0 +1,4 @@
+A tool for generating test cases using the PICT (Pairwise Independent
+Combinatorial Testing) method, based on a simple plain text format.
+
+WWW: https://github.com/Microsoft/pict
