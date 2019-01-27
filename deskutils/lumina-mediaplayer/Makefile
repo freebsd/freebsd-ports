@@ -10,6 +10,7 @@ MAINTAINER=	jt@ixsystems.com
 COMMENT=	Streaming media player from the Lumina Desktop
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/../../../LICENSE
 
 RUN_DEPENDS=	gstreamer1-qt5>=0:multimedia/gstreamer1-qt@qt5 \
 		gstreamer1-plugins-gl>=0:graphics/gstreamer1-plugins-gl
