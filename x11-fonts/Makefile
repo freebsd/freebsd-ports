@@ -46,6 +46,7 @@
     SUBDIR += fifteen
     SUBDIR += fira
     SUBDIR += firacode
+    SUBDIR += firago
     SUBDIR += fntsample
     SUBDIR += font-adobe-100dpi
     SUBDIR += font-adobe-75dpi
