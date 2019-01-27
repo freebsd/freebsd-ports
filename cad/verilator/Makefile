@@ -2,6 +2,7 @@
 
 PORTNAME=	verilator
 PORTVERSION=	4.008
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	https://www.veripool.org/ftp/
 
@@ -10,8 +11,6 @@ COMMENT=	Synthesizable Verilog to C++ compiler
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BUILD_DEPENDS=	flex:textproc/flex
 
 USES=		bison gmake pathfix perl5 tar:tgz
 
