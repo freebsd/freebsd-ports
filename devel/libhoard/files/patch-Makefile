@@ -1,0 +1,11 @@
+--- Makefile.orig	2019-01-27 10:26:30 UTC
++++ Makefile
+@@ -47,7 +47,7 @@ WIN_INCLUDES = /I. /Iinclude /Iinclude/util /Iinclude/
+ # Compile commands for individual targets.
+ #
+ 
+-FREEBSD_COMPILE = g++ -g $(CPPFLAGS) -DNDEBUG  -DNDEBUG  $(INCLUDES) -D_REENTRANT=1 -shared $(UNIX_SRC) -Bsymbolic -o libhoard.so -pthread -fPIC
++FREEBSD_COMPILE = $(CXX) $(CXXFLAGS) -DNDEBUG  -DNDEBUG  $(INCLUDES) -D_REENTRANT=1 -shared $(UNIX_SRC) -Bsymbolic -Wl,-soname=libhoard.so.1 $(LDFLAGS) -o libhoard.so -pthread -fPIC
+ 
+ MACOS_COMPILE = clang++ -ftemplate-depth=1024 -arch i386 -arch x86_64 -pipe -g $(CPPFLAGS) -DNDEBUG $(INCLUDES) -D_REENTRANT=1 -compatibility_version 1 -current_version 1 -dynamiclib -D'CUSTOM_PREFIX(x)=xx\#\#x' $(MACOS_SRC) -o libhoard.dylib -ldl -lpthread 
+ 
