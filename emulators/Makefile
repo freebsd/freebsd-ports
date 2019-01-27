@@ -33,6 +33,7 @@
     SUBDIR += dynagui
     SUBDIR += dynamips-community
     SUBDIR += e-uae
+    SUBDIR += emulationstation
     SUBDIR += fceux
     SUBDIR += fmsx
     SUBDIR += frodo
