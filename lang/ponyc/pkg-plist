@@ -62,6 +62,7 @@ lib/pony/%%VERSION%%/packages/cli/env_vars.pony
 lib/pony/%%VERSION%%/packages/collections/_test.pony
 lib/pony/%%VERSION%%/packages/collections/flag.pony
 lib/pony/%%VERSION%%/packages/collections/hashable.pony
+lib/pony/%%VERSION%%/packages/collections/heap.pony
 lib/pony/%%VERSION%%/packages/collections/list.pony
 lib/pony/%%VERSION%%/packages/collections/list_node.pony
 lib/pony/%%VERSION%%/packages/collections/map.pony
