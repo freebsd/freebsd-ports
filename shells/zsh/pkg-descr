@@ -12,4 +12,4 @@ To fire up the zsh completion system, type the following commands:
 	$ autoload -U compinstall
 	$ compinstall
 
-WWW: http://www.zsh.org/
+WWW: https://www.zsh.org/
