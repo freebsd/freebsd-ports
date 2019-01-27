@@ -16,7 +16,8 @@ BUILD_DEPENDS=	mk-configure>=0.29.1:devel/mk-configure
 
 OPTIONS_DEFINE=	DOCS
 
-MAKE_ARGS=	-m ${LOCALBASE}/share/mkc-mk DOCDIR=${DOCSDIR} LIBDIR=${PREFIX}/lib
+MAKE_ARGS=	DOCDIR=${DOCSDIR}
+MAKE_CMD=	mkcmake
 NO_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -24,7 +25,6 @@ GH_ACCOUNT=	cheusov
 USE_GITHUB=	yes
 
 post-patch:
-	@${AWK} -f ${WRKSRC}/maa/arggram2c < ${WRKSRC}/maa/arggram.txt > ${WRKSRC}/maa/arggram.c
 	@${REINPLACE_CMD} -e '/^FILES *=/ s|LICENSE||' ${WRKSRC}/doc/Makefile
 	@${REINPLACE_CMD} -e '/^#SHLIB_TEENY *=/ s|#||' ${WRKSRC}/maa/Makefile
 
