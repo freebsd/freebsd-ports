@@ -185,6 +185,7 @@ share/locale/zh_TW/LC_MESSAGES/plasma_applet_audoban.applet.separator.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.latte.containment.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.latte.plasmoid.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.latte.spacer.mo
+share/locale/zh_TW/LC_MESSAGES/plasma_containmentactions_lattecontextmenu.mo
 share/metainfo/audoban.applet.separator.appdata.xml
 share/metainfo/org.kde.latte-dock.appdata.xml
 share/metainfo/org.kde.latte.plasmoid.appdata.xml
