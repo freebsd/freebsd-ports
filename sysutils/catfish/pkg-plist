@@ -38,7 +38,7 @@ bin/catfish
 %%PYTHON_SITELIBDIR%%/catfish_lib/helpers.py
 %%PYTHON_SITELIBDIR%%/catfish_lib/helpers.pyc
 %%PYTHON_SITELIBDIR%%/catfish_lib/helpers.pyo
-share/applications/catfish.desktop
+share/applications/org.xfce.Catfish.desktop
 %%DATADIR%%/ui/AboutCatfishDialog.ui
 %%DATADIR%%/ui/CatfishWindow.ui
 %%DATADIR%%/ui/about_catfish_dialog.xml
@@ -73,8 +73,10 @@ share/locale/ku/LC_MESSAGES/catfish.mo
 share/locale/lt/LC_MESSAGES/catfish.mo
 share/locale/lv/LC_MESSAGES/catfish.mo
 share/locale/ml/LC_MESSAGES/catfish.mo
+share/locale/ms/LC_MESSAGES/catfish.mo
 share/locale/nb/LC_MESSAGES/catfish.mo
 share/locale/nl/LC_MESSAGES/catfish.mo
+share/locale/nn/LC_MESSAGES/catfish.mo
 share/locale/pl/LC_MESSAGES/catfish.mo
 share/locale/pt/LC_MESSAGES/catfish.mo
 share/locale/pt_BR/LC_MESSAGES/catfish.mo
@@ -84,6 +86,7 @@ share/locale/sk/LC_MESSAGES/catfish.mo
 share/locale/sq/LC_MESSAGES/catfish.mo
 share/locale/sr/LC_MESSAGES/catfish.mo
 share/locale/sv/LC_MESSAGES/catfish.mo
+share/locale/th/LC_MESSAGES/catfish.mo
 share/locale/tr/LC_MESSAGES/catfish.mo
 share/locale/uk/LC_MESSAGES/catfish.mo
 share/locale/zh_CN/LC_MESSAGES/catfish.mo
