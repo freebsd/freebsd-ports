@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ordered-set
-PORTVERSION=	3.0.2
+PORTVERSION=	3.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,6 @@ COMMENT=	MutableSet that remembers its order, so that every entry has an index
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
 NO_ARCH=	yes
