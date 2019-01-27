@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	searx
-DISTVERSION=	0.14.0
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.15.0
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	loic.blot@unix-experience.fr
 COMMENT=	Privacy-respecting, hackable metasearch engine
@@ -27,9 +26,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug@${PY_FLAVOR}
 
 USES=		python:2.7
+USE_GITHUB=	yes
+GH_ACCOUNT=	asciimoo
 USE_PYTHON=	distutils autoplist noflavors
-NO_ARCH=	yes
 USE_RC_SUBR=	searx
+
+NO_ARCH=	yes
 
 SUB_FILES=	searx pkg-message
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
