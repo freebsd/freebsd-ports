@@ -10,6 +10,8 @@ COMMENT=	Supports using pandoc with citeproc
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN=		Fails to build after r490955; fix coming with Haskell ports overhaul
+
 USE_CABAL=	aeson>=0.7 aeson-pretty attoparsec data-default \
 		mtl pandoc>=1.13 pandoc-types>=1.12.3 rfc5051 \
 		setenv>=0.1 split syb tagsoup vector xml-conduit>=1.2 \
@@ -20,7 +22,7 @@ EXECUTABLE=	pandoc-citeproc
 FLAGS_DEFINE=	BIBUTILS EMBED_DATA UNICODE_COLLATION
 FLAGS_DEFAULT=	BIBUTILS
 
-BIBUTILS_DESC=		Use Chris Putnam's Bibutils
+BIBUTILS_DESC=		Use Chris Putnam's Bibutils #'
 BIBUTILS_FLAG_ENABLE=	bibutils
 BIBUTILS_FLAG_CABAL=	hs-bibutils>=0.3
 
