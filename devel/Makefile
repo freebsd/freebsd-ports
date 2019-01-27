@@ -4820,6 +4820,7 @@
     SUBDIR += py-omniorb-3
     SUBDIR += py-openapi-codec
     SUBDIR += py-opendht
+    SUBDIR += py-opengrok-tools
     SUBDIR += py-openstacksdk
     SUBDIR += py-opentracing
     SUBDIR += py-opster
