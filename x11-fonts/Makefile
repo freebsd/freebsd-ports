@@ -28,6 +28,7 @@
     SUBDIR += comfortaa-ttf
     SUBDIR += comic-neue
     SUBDIR += consolamono-ttf
+    SUBDIR += courier-prime
     SUBDIR += croscorefonts-fonts-ttf
     SUBDIR += crosextrafonts-caladea-ttf
     SUBDIR += crosextrafonts-carlito-ttf
