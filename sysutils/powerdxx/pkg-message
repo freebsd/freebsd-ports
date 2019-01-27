@@ -1,0 +1,9 @@
+*********************************************************************
+
+To run this service from startup, run
+
+      sysrc powerdxx_enable="YES"
+
+Command line arguments can be set via powerdxx_flags. See powerd++(8)
+
+*********************************************************************
