@@ -20,6 +20,6 @@ command=%%PREFIX%%/bin/mDNSResponder
 
 load_rc_config ${name}
 
-mdnsresponder_enable=${mdnsresponder_enable-"NO"}
+mdnsresponder_enable=${mdnsresponder_enable:-"NO"}
 
 run_rc_command "$1"
