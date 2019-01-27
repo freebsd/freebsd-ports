@@ -5077,6 +5077,7 @@
     SUBDIR += py-represent
     SUBDIR += py-requestsexceptions
     SUBDIR += py-resolver
+    SUBDIR += py-resource
     SUBDIR += py-resourcepackage
     SUBDIR += py-responses
     SUBDIR += py-retrying
