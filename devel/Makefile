@@ -4541,6 +4541,7 @@
     SUBDIR += py-dtfabric
     SUBDIR += py-durus
     SUBDIR += py-dynrules
+    SUBDIR += py-easyconfig
     SUBDIR += py-easyprocess
     SUBDIR += py-editdistance
     SUBDIR += py-efilter
