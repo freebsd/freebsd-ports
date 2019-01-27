@@ -1,0 +1,4 @@
+zsh-autosuggestions enables fast and unobtrusive fish-like autosuggestions
+for Zsh.  It suggests commands as you type, based on command history.
+
+WWW: https://github.com/zsh-users/zsh-autosuggestions

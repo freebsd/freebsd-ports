@@ -1,0 +1,5 @@
+================================================================================
+Add the line below to your .zshrc to enable auto suggestions.
+
+source %%DATADIR%%/zsh-autosuggestions.zsh
+================================================================================
