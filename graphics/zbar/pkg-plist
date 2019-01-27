@@ -1,5 +1,6 @@
 %%V4L%%bin/zbarcam
-%%IMAGEMAGICK%%bin/zbarimg
+%%V6%%bin/zbarimg
+%%V7%%bin/zbarimg
 include/zbar.h
 include/zbar/Decoder.h
 include/zbar/Exception.h
@@ -29,7 +30,8 @@ lib/libzbar.so.0.2.0
 %%QT4%%libdata/pkgconfig/zbar-qt.pc
 libdata/pkgconfig/zbar.pc
 %%V4L%%man/man1/zbarcam.1.gz
-%%IMAGEMAGICK%%man/man1/zbarimg.1.gz
+%%V6%%man/man1/zbarimg.1.gz
+%%V7%%man/man1/zbarimg.1.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/zbar.so
 %%PYTHON%%%%GTK2%%%%PYTHON_SITELIBDIR%%/zbarpygtk.so
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
