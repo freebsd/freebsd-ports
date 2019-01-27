@@ -123,6 +123,7 @@
     SUBDIR += junicode
     SUBDIR += kaputa
     SUBDIR += khmeros
+    SUBDIR += lato
     SUBDIR += league-gothic
     SUBDIR += league-spartan
     SUBDIR += lfpfonts-fix
