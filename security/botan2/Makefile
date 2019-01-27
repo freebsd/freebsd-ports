@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	botan
-DISTVERSION=	2.8.0
-PORTREVISION=	2
+DISTVERSION=	2.9.0
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	2
@@ -27,7 +26,8 @@ USE_LDCONFIG=	yes
 CONFIGURE_SCRIPT=	configure.py
 CONFIGURE_ARGS=	--with-external-includedir=${PREFIX}/include \
 		--with-external-libdir=${PREFIX}/lib \
-		--with-boost --with-bzip2 --with-lzma --with-zlib
+		--with-boost --with-bzip2 --with-lzma --with-zlib \
+		--cc=${COMPILER_TYPE}
 LDFLAGS+=	-pthread
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
@@ -60,6 +60,6 @@ post-patch:
 		${WRKSRC}/src/build-data/cc/clang.txt
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/botan ${STAGEDIR}${PREFIX}/lib/libbotan-2.so.8.8.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/botan ${STAGEDIR}${PREFIX}/lib/libbotan-2.so.9.9.0
 
 .include <bsd.port.mk>
