@@ -4,18 +4,17 @@
 PORTNAME=	teamwords
 PORTVERSION=	0.2.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-im
 
-MAINTAINER=	kmoore@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unofficial Qt Slack client
 
 LICENSE=	LGPL3
 
-USES=		compiler:c++11-lang qmake qt:5
+USES=		compiler:c++11-lang gl qmake qt:5
 USE_LDCONFIG=	yes
-USE_QT=		core gui widgets network svg linguist \
-		webkit buildtools x11extras
+USE_QT=		core gui network webkit widgets buildtools_build
 USE_GL=		gl
 
 QMAKE_ARGS=	CONFIG+="configure"
@@ -26,7 +25,15 @@ GH_PROJECT=	TeamWords
 PLIST_FILES=	bin/teamwords \
 		share/applications/teamwords.desktop \
 		share/icons/teamwords.png
-SUB_FILES=      teamwords.desktop
+SUB_FILES=	teamwords.desktop
+
+OPTIONS_DEFINE=	WEBKITNOTIFY
+
+WEBKITNOTIFY_DESC=	Use QtWebkit for notifications
+
+post-patch-WEBKITNOTIFY-on:
+	@${REINPLACE_CMD} 's|linux|unix|' \
+		${WRKSRC}/plugins/qtwebkit/qtwebkit-plugins.pri
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/teamwords ${STAGEDIR}${PREFIX}/bin
