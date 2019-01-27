@@ -12,6 +12,7 @@ sbin/gitea
 %%DATADIR%%/options/gitignore/ArchLinuxPackages
 %%DATADIR%%/options/gitignore/Archives
 %%DATADIR%%/options/gitignore/Autotools
+%%DATADIR%%/options/gitignore/Backup
 %%DATADIR%%/options/gitignore/Bazaar
 %%DATADIR%%/options/gitignore/BricxCC
 %%DATADIR%%/options/gitignore/C
@@ -37,6 +38,7 @@ sbin/gitea
 %%DATADIR%%/options/gitignore/Dart
 %%DATADIR%%/options/gitignore/DartEditor
 %%DATADIR%%/options/gitignore/Delphi
+%%DATADIR%%/options/gitignore/Diff
 %%DATADIR%%/options/gitignore/Dreamweaver
 %%DATADIR%%/options/gitignore/Dropbox
 %%DATADIR%%/options/gitignore/Drupal
@@ -64,12 +66,15 @@ sbin/gitea
 %%DATADIR%%/options/gitignore/Gcov
 %%DATADIR%%/options/gitignore/GitBook
 %%DATADIR%%/options/gitignore/Go
+%%DATADIR%%/options/gitignore/Godot
 %%DATADIR%%/options/gitignore/Gradle
 %%DATADIR%%/options/gitignore/Grails
 %%DATADIR%%/options/gitignore/Haskell
 %%DATADIR%%/options/gitignore/IGORPro
 %%DATADIR%%/options/gitignore/Idris
+%%DATADIR%%/options/gitignore/Images
 %%DATADIR%%/options/gitignore/JDeveloper
+%%DATADIR%%/options/gitignore/JEnv
 %%DATADIR%%/options/gitignore/Java
 %%DATADIR%%/options/gitignore/Jboss
 %%DATADIR%%/options/gitignore/Jekyll
@@ -78,8 +83,9 @@ sbin/gitea
 %%DATADIR%%/options/gitignore/Julia
 %%DATADIR%%/options/gitignore/KDevelop4
 %%DATADIR%%/options/gitignore/Kate
-%%DATADIR%%/options/gitignore/KiCAD
+%%DATADIR%%/options/gitignore/KiCad
 %%DATADIR%%/options/gitignore/Kohana
+%%DATADIR%%/options/gitignore/Kotlin
 %%DATADIR%%/options/gitignore/LabVIEW
 %%DATADIR%%/options/gitignore/Laravel
 %%DATADIR%%/options/gitignore/Lazarus
@@ -113,8 +119,11 @@ sbin/gitea
 %%DATADIR%%/options/gitignore/OpenCart
 %%DATADIR%%/options/gitignore/OracleForms
 %%DATADIR%%/options/gitignore/Otto
+%%DATADIR%%/options/gitignore/PSoCCreator
 %%DATADIR%%/options/gitignore/Packer
+%%DATADIR%%/options/gitignore/Patch
 %%DATADIR%%/options/gitignore/Perl
+%%DATADIR%%/options/gitignore/Perl6
 %%DATADIR%%/options/gitignore/Phalcon
 %%DATADIR%%/options/gitignore/PlayFramework
 %%DATADIR%%/options/gitignore/Plone
@@ -589,6 +598,8 @@ sbin/gitea
 %%DATADIR%%/public/img/discord.png
 %%DATADIR%%/public/img/favicon.ico
 %%DATADIR%%/public/img/favicon.png
+%%DATADIR%%/public/img/gitea-192.png
+%%DATADIR%%/public/img/gitea-512.png
 %%DATADIR%%/public/img/gitea-lg.png
 %%DATADIR%%/public/img/gitea-safari.svg
 %%DATADIR%%/public/img/gitea-sm.png
@@ -1862,6 +1873,7 @@ sbin/gitea
 %%DATADIR%%/public/vendor/plugins/jquery.minicolors/jquery.minicolors.png
 %%DATADIR%%/public/vendor/plugins/jquery/LICENSE
 %%DATADIR%%/public/vendor/plugins/jquery/jquery.min.js
+%%DATADIR%%/public/vendor/plugins/moment/moment.min.js
 %%DATADIR%%/public/vendor/plugins/pdfjs/LICENSE
 %%DATADIR%%/public/vendor/plugins/pdfjs/build/pdf.js
 %%DATADIR%%/public/vendor/plugins/pdfjs/build/pdf.worker.js
@@ -1993,6 +2005,8 @@ sbin/gitea
 %%DATADIR%%/public/vendor/plugins/tribute/tribute.css
 %%DATADIR%%/public/vendor/plugins/tribute/tribute.min.js
 %%DATADIR%%/public/vendor/plugins/u2f/index.js
+%%DATADIR%%/public/vendor/plugins/vue-calendar-heatmap/vue-calendar-heatmap.browser.js
+%%DATADIR%%/public/vendor/plugins/vue-calendar-heatmap/vue-calendar-heatmap.css
 %%DATADIR%%/public/vendor/plugins/vue/LICENSE
 %%DATADIR%%/public/vendor/plugins/vue/vue.min.js
 %%DATADIR%%/templates/admin/auth/edit.tmpl
@@ -2056,10 +2070,13 @@ sbin/gitea
 %%DATADIR%%/templates/org/settings/navbar.tmpl
 %%DATADIR%%/templates/org/settings/options.tmpl
 %%DATADIR%%/templates/org/team/members.tmpl
+%%DATADIR%%/templates/org/team/navbar.tmpl
 %%DATADIR%%/templates/org/team/new.tmpl
 %%DATADIR%%/templates/org/team/repositories.tmpl
 %%DATADIR%%/templates/org/team/sidebar.tmpl
 %%DATADIR%%/templates/org/team/teams.tmpl
+%%DATADIR%%/templates/pwa/manifest_json.tmpl
+%%DATADIR%%/templates/pwa/serviceworker_js.tmpl
 %%DATADIR%%/templates/repo/activity.tmpl
 %%DATADIR%%/templates/repo/bare.tmpl
 %%DATADIR%%/templates/repo/branch/list.tmpl
@@ -2091,6 +2108,7 @@ sbin/gitea
 %%DATADIR%%/templates/repo/issue/label_precolors.tmpl
 %%DATADIR%%/templates/repo/issue/labels.tmpl
 %%DATADIR%%/templates/repo/issue/list.tmpl
+%%DATADIR%%/templates/repo/issue/milestone_issues.tmpl
 %%DATADIR%%/templates/repo/issue/milestone_new.tmpl
 %%DATADIR%%/templates/repo/issue/milestones.tmpl
 %%DATADIR%%/templates/repo/issue/navbar.tmpl
