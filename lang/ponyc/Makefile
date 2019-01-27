@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ponyc
-DISTVERSION=	0.25.0
-PORTREVISION=	1
+DISTVERSION=	0.26.0
 CATEGORIES=	lang
 
 MAINTAINER=	greg@unrelenting.technology
@@ -54,7 +53,7 @@ PONYARCH?=	core2
 .endif
 
 # keep in sync with all platforms where libunwind is available
-.if (${ARCH} == amd64 || ${ARCH} == i386)
+.if (${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == aarch64)
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
