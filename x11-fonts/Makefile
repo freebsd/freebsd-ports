@@ -143,6 +143,7 @@
     SUBDIR += lohit
     SUBDIR += manu-gothica
     SUBDIR += materialdesign-ttf
+    SUBDIR += material-icons-ttf
     SUBDIR += meslo
     SUBDIR += mgopen
     SUBDIR += mkbold
