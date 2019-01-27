@@ -13,19 +13,20 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	mk-configure>=0.26.0:devel/mk-configure
 
-MAKE_ENV=	DESTDIR="${STAGEDIR}" EGDIR="${EXAMPLESDIR}"
-INSTALL_TARGET=	install install-doc install-examples
+USES=		localbase
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_ENV=	DESTDIR="${STAGEDIR}" EGDIR="${EXAMPLESDIR}"
+INSTALL_TARGET=	install
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+DOCS_INSTALL_TARGET=	install-doc
+EXAMPLES_INSTALL_TARGET=install-examples
 
 do-build:
 	@${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/mkcmake -C ${WRKSRC}
 
 do-install:
-	@${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/mkcmake -C ${WRKSRC} \
-		${INSTALL_TARGET}
+	@${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/mkcmake -C ${WRKSRC} ${INSTALL_TARGET}
 
 .include <bsd.port.mk>
