@@ -3,6 +3,7 @@
 
 PORTNAME=	tomcat
 PORTVERSION=	9.0.13
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/([0-9])(.*)/\1/}/v${PORTVERSION}/bin
 PKGNAMESUFFIX=	9
@@ -45,6 +46,8 @@ TOMCAT_HOME=	${PREFIX}/${TOMCAT_SUBDIR}
 
 post-patch:
 	@${RM} ${WRKSRC}/bin/commons-daemon-native.tar.gz ${WRKSRC}/bin/commons-daemon.jar ${WRKSRC}/bin/tomcat-native.tar.gz
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g; s|%%JAVAJARDIR%%|${JAVAJARDIR}|g' ${WRKSRC}/bin/daemon.sh
+	@${FIND} ${WRKSRC} -name '*.bak' -delete -o -name '*.orig' -delete
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${TOMCAT_HOME}/logs
