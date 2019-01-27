@@ -3,6 +3,7 @@
 
 PORTNAME=	maxima
 PORTVERSION=	5.42.2
+PORTREVISION=	1
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -27,11 +28,11 @@ INFO=		imaxima maxima xmaxima abs_integrate drawutils kovacicODE logic
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=		EXAMPLES DOCS MANPAGES TEST
+OPTIONS_DEFINE=		EXAMPLES DOCS NOUSERINIT MANPAGES TEST
 OPTIONS_SINGLE=		LISP
 OPTIONS_SINGLE_LISP=	CCL CMUCL SBCL
 
-OPTIONS_DEFAULT=	MANPAGES SBCL
+OPTIONS_DEFAULT=	NOUSERINIT MANPAGES SBCL
 OPTIONS_SUB=		yes
 
 CCL_DESC=		Build with Clozure Common Lisp
@@ -45,6 +46,8 @@ CMUCL_BUILD_DEPENDS=	lisp:lang/cmucl
 CMUCL_RUN_DEPENDS=	lisp:lang/cmucl
 CMUCL_CONFIGURE_ON=	--enable-cmucl
 CMUCL_PLIST_SUB=	BINDIR=binary-cmucl BINNAME=maxima_core
+
+NOUSERINIT_DESC=	Do not load user init file for lisp (only for sbcl)
 
 SBCL_DESC=		Build with Steel Bank Common Lisp
 SBCL_BUILD_DEPENDS=	sbcl:lang/sbcl
@@ -87,5 +90,8 @@ post-install-EXAMPLES-on:
 
 post-install-MANPAGES-on:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/maxima.1.gz ${STAGEDIR}${PREFIX}/man/man1
+
+post-install-NOUSERINIT-on:
+	${REINPLACE_CMD} 's;--end-runtime-options;--end-runtime-options --no-userinit;' ${STAGEDIR}${PREFIX}/bin/maxima
 
 .include <bsd.port.mk>
