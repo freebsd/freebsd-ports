@@ -1,0 +1,44 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: qbittorrent
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable this service:
+#
+# qbittorrent_enable:	     Set to NO by default. Set it to YES to enable it.
+# qbittorrent_conf_dir:	     Directory where qbittorrent configuration
+#			     data is stored.
+#			     Default: /var/db/qbittorrent/conf
+# qbittorrent_download_dir:  Directory to store downloaded data.
+#			     Default: /var/db/qbittorrent/Downloads
+# qbittorrent_user:	     The user account transmission daemon runs as.
+#			     Default is 'qbittorrent'
+# qbittorrent_group:	     The group associated with username qbittorrent
+#			     daemon runs as. Default is 'qbittorrent'
+#
+
+. /etc/rc.subr
+
+name=qbittorrent
+rcvar=qbittorrent_enable
+
+load_rc_config $name
+
+: ${qbittorrent_enable="NO"}
+: ${qbittorrent_conf_dir="/var/db/qbittorrent/conf"}
+: ${qbittorrent_download_dir="/var/db/qbittorrent/Downloads"}
+: ${qbittorrent_user=%%USER%%}
+: ${qbittorrent_group=%%GROUP%%}
+
+command="%%PREFIX%%/bin/qbittorrent-nox"
+command_args="--daemon"
+
+qbittorrent_flags=" \
+	${qbittorrent_conf_dir:+--profile=${qbittorrent_conf_dir}} \
+	${qbittorrent_download_dir:+--save-path=${qbittorrent_download_dir}} \
+	${qbittorrent_flags}"
+
+run_rc_command $1
