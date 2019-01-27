@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure-cli-appservice
-PORTVERSION=	0.2.10
+PORTVERSION=	0.2.11
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,9 +11,9 @@ COMMENT=	Microsoft Azure Command-Line Tools AppService Command Module
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-mgmt-storage>=3.1.0:devel/py-azure-mgmt-storage@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-mgmt-storage>=3.1.1:devel/py-azure-mgmt-storage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-web>=0.40.0:devel/py-azure-mgmt-web@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-containerregistry>=2.4.0:devel/py-azure-mgmt-containerregistry@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-containerregistry>=2.6.0:devel/py-azure-mgmt-containerregistry@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-cli-core>=0:sysutils/py-azure-cli-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.18.0:net/py-urllib3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xmltodict>=0:devel/py-xmltodict@${PY_FLAVOR} \
