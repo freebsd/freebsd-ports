@@ -1,24 +1,16 @@
---- makefile.orig	2017-08-16 07:34:01 UTC
+--- makefile.orig	2018-04-10 01:38:39 UTC
 +++ makefile
-@@ -9,17 +9,7 @@
+@@ -11,9 +11,7 @@
  srcdir ?= .
  
- .SUFFIXES: .cxx .c .o .h .a .list
--ifdef CLANG
+ ifdef CLANG
 -CXX = clang++
  CXXWARNFLAGS = -Wall -pedantic -Wno-deprecated-register -Wno-missing-braces
 -CC = clang
--# Can choose aspect to sanitize: address and undefined can simply change SANITIZE but for
--# thread also need to create Position Independent Executable -> search online documentation
--SANITIZE = address
--#SANITIZE = undefined
--else
--CXXWARNFLAGS = -Wall -pedantic
--endif
- ARFLAGS = rc
- RANLIB = touch
- 
-@@ -48,7 +38,12 @@ DEL = del /q
+ # Can choose aspect to sanitize: address and undefined can simply change SANITIZE but for
+ # thread also need to create Position Independent Executable -> search online documentation
+ SANITIZE = address
+@@ -49,7 +47,12 @@ DEL = del /q
  COMPLIB=$(srcdir)\..\bin\scintilla.a
  else
  DEL = rm -f
@@ -32,16 +24,16 @@
  endif
  
  vpath %.h $(srcdir) $(srcdir)/../src $(srcdir)/../include $(srcdir)/../lexlib
-@@ -101,7 +96,7 @@ GLIB_GENMARSHAL_FLAGS = --prefix=scintil
- 
- LEXOBJS:=$(addsuffix .o,$(basename $(sort $(notdir $(wildcard $(srcdir)/../lexers/Lex*.cxx)))))
+@@ -87,7 +90,7 @@ CXXTFLAGS:=--std=gnu++17 $(CTFLAGS) $(RE
+ CONFIGFLAGS:=$(shell pkg-config --cflags $(GTKVERSION))
+ MARSHALLER=scintilla-marshal.o
  
 -all: $(COMPLIB)
 +all: $(COMPLIB) $(LEXRLIB)
  
  clean:
  	$(DEL) *.o $(COMPLIB) *.plist
-@@ -122,9 +117,11 @@ $(COMPLIB): Accessor.o CharacterSet.o De
+@@ -123,9 +126,11 @@ $(COMPLIB): Accessor.o CharacterSet.o De
  	PropSetSimple.o PlatGTK.o \
  	KeyMap.o LineMarker.o PositionCache.o ScintillaGTK.o ScintillaGTKAccessible.o CellBuffer.o CharacterCategory.o ViewStyle.o \
  	RESearch.o RunStyles.o Selection.o Style.o Indicator.o AutoComplete.o UniConversion.o XPM.o \
