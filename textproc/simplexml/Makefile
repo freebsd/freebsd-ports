@@ -21,10 +21,6 @@ CMAKE_ARGS=	-DIconv_LIBRARY=${ICONV_LIB_PATH}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.if defined(WITH_DEBUG)
-CMAKE_ARGS+=	-DDEBUG_MODE:BOOL=ON
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|; \
 		/set.*CMAKE_BUILD_TYPE/d' ${WRKSRC}/CMakeLists.txt
