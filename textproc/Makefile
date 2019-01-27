@@ -1216,6 +1216,7 @@
     SUBDIR += peco
     SUBDIR += perl2html
     SUBDIR += permute
+    SUBDIR += pict
     SUBDIR += php-mecab
     SUBDIR += php71-ctype
     SUBDIR += php71-dom
