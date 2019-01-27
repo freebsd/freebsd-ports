@@ -1,0 +1,4 @@
+Scrcpy provides display and control of Android devices connected on
+USB (or over TCP/IP). It does not require any root access.
+
+WWW: https://github.com/Genymobile/scrcpy
