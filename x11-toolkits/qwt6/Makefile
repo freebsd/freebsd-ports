@@ -31,6 +31,7 @@ USE_QT=		corelib designer gui opengl svg xml moc_build rcc_build script
 .else
 USES+=		compiler:c++11-lang qt:5
 USE_QT=		buildtools_build widgets gui core designer gui opengl svg xml printsupport concurrent
+PLIST_FILES=	${PREFIX}/${QT_PLUGINDIR_REL}/designer/libqwt6_designer_plugin.so
 .endif
 
 OPTIONS_DEFINE=	DOCS

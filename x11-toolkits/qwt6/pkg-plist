@@ -109,4 +109,3 @@
 %%QT_MKSPECDIR%%/features/qwtconfig.pri
 %%QT_MKSPECDIR%%/features/qwtfunctions.pri
 %%QT_MKSPECDIR%%/features/qwtmathml.prf
-%%QT_PLUGINDIR%%/designer/libqwt6_designer_plugin.so
