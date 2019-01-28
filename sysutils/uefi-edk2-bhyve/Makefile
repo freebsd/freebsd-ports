@@ -3,6 +3,7 @@
 PORTNAME=	uefi-edk2-bhyve
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 
@@ -10,6 +11,8 @@ MAINTAINER=	araujo@FreeBSD.org
 COMMENT?=	UEFI-EDK2 firmware for bhyve
 
 LICENSE=	BSD2CLAUSE
+
+ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	bash:shells/bash \
 		nasm:devel/nasm \
@@ -21,10 +24,9 @@ USE_GCC=	4.8
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	uefi-edk2
+GH_TAGNAME=	aa8d718
 
 PLIST_FILES=	${PREFIX}/share/uefi-firmware/BHYVE_UEFI${PLIST_SUFFIX}.fd
-
-ONLY_FOR_ARCHS=	amd64
 
 OPTIONS_DEFINE=	DEBUG
 
