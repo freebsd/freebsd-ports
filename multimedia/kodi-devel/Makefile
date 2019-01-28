@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	kodi
-DISTVERSION=	18.0rc5.2
+DISTVERSION=	18.0
 DISTVERSIONSUFFIX=	-Leia
-PORTREVISION=	1
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-devel
 
@@ -46,7 +45,6 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libtinyxml.so:textproc/tinyxml \
 		libudev.so:devel/libudev-devd \
 		libuuid.so:misc/e2fsprogs-libuuid
-RUN_DEPENDS=	xkeyboard-config>=2.24:x11/xkeyboard-config
 
 # Building libcpluff.a requires autoreconf and gmake.  Using ninja
 # leads to dependency problems where libcpluff.a is not yet finished
