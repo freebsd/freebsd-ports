@@ -1,0 +1,6 @@
+Confluent-kafka-python is a lightweight wrapper around librdkafka,
+a finely tuned C client.  The Python bindings provides a high-level
+Producer and Consumer with support for the balanced consumer groups
+of Apache Kafka.
+
+WWW: https://github.com/confluentinc/confluent-kafka-python
