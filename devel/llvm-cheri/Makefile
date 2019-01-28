@@ -53,6 +53,7 @@ CLANG_GH_PROJECT=	clang:clang
 CLANG_GH_SUBDIR=	tools/clang:clang
 CLANG_GH_TAGNAME=	${CLANG_COMMIT}:clang
 CLANG_PORTDOCS=		clang
+CLANG_USE=		GNOME=libxml2
 DOCS_PORTDOCS=		llvm
 DOCS_CMAKE_ON=		-DLLVM_ENABLE_SPHINX=ON \
 			-DSPHINX_WARNINGS_AS_ERRORS=OFF \
@@ -90,6 +91,7 @@ COMMANDS=	bugpoint \
 		llvm-config \
 		llvm-cov \
 		llvm-cvtres \
+		llvm-cxxmap \
 		llvm-cxxdump \
 		llvm-cxx-filt \
 		llvm-diff \
@@ -124,6 +126,7 @@ COMMANDS=	bugpoint \
 		llvm-strings \
 		llvm-symbolizer \
 		llvm-tblgen \
+		llvm-undname \
 		llvm-xray \
 		opt \
 		sancov \
@@ -184,9 +187,11 @@ USES+=		${_USES_PYTHON}
 
 MAN1SRCS+=	bugpoint.1 dsymutil.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
 		llvm-bcanalyzer.1 llvm-build.1 llvm-config.1 llvm-cov.1 \
+		llvm-cxxmap.1 \
 		llvm-diff.1 llvm-dis.1 llvm-dwarfdump.1 \
 		llvm-exegesis.1 \
 		llvm-extract.1 llvm-lib.1 llvm-link.1 llvm-mca.1 llvm-nm.1 \
+		llvm-objdump.1 \
 		llvm-pdbutil.1 \
 		llvm-profdata.1 llvm-readobj.1 llvm-stress.1 llvm-symbolizer.1 \
 		opt.1 tblgen.1
