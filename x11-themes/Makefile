@@ -51,6 +51,7 @@
     SUBDIR += gnome-icons-iris
     SUBDIR += gnome-icons-jini
     SUBDIR += gnome-icons-lila
+    SUBDIR += gnome-icons-luv
     SUBDIR += gnome-icons-noia-full
     SUBDIR += gnome-icons-noia-warm
     SUBDIR += gnome-icons-refined
