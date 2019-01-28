@@ -16,11 +16,11 @@ RUN_DEPENDS=	bash>0:shells/bash
 
 USES=	shebangfix
 
-SHEBANG_FILE=	bin/${PORTNAME}
+SHEBANG_FILES=	agents/${PORTNAME}.freebsd
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-NO_TESTS=	yes
+NO_TEST=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 SUB_FILES=	pkg-message
