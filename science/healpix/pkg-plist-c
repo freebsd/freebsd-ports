@@ -1,0 +1,5 @@
+include/chealpix.h
+lib/libchealpix.so
+lib/libchealpix.so.0
+lib/libchealpix.so.0.0.0
+libdata/pkgconfig/chealpix.pc
