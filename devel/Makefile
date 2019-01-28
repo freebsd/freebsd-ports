@@ -1334,6 +1334,7 @@
     SUBDIR += kf5-threadweaver
     SUBDIR += kimwitu
     SUBDIR += kio-extras
+    SUBDIR += kiwix-lib
     SUBDIR += kodi-platform
     SUBDIR += kore
     SUBDIR += kronosnet

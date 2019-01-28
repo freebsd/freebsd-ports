@@ -1,0 +1,7 @@
+Kiwix is an offline reader for web content archived in ZIM format. It is
+particularly tailored towards Wikipedia and other wikis.
+
+The Kiwix library contains the code shared by Kiwix ports on all supported
+platforms.
+
+WWW: http://www.kiwix.org/
