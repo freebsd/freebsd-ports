@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: kiwix_serve
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# kiwix_serve_enable (bool):	Set to NO by default.
+#				Set it to YES to enable kiwix_serve.
+# kiwix_serve_port (int):	Port on which the daemon will handle HTTP
+#				requests. Set to 80 by default.
+# kiwix_serve_library (path):	XML file listing ZIM files for the daemon
+#				to serve. Use kiwix-manage to create one,
+#				and to add ZIM files to it. Set to
+#				%%PREFIX%%/share/kiwix/library.xml by default.
+
+. /etc/rc.subr
+
+name=kiwix_serve
+rcvar=kiwix_serve_enable
+
+load_rc_config $name
+
+: ${kiwix_serve_enable:=NO}
+: ${kiwix_serve_port=80}
+: ${kiwix_serve_library="%%PREFIX%%/share/kiwix/library.xml"}
+
+command=%%PREFIX%%/bin/kiwix-serve
+command_args="--daemon --port $kiwix_serve_port --library $kiwix_serve_library"
+
+run_rc_command "$1"

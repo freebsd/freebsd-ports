@@ -1,0 +1,7 @@
+Kiwix is an offline reader for web content archived in ZIM format. It is
+particularly tailored towards Wikipedia and other wikis.
+
+This package contains command-line Kiwix tools: a local HTTP server to serve
+content, and a set of tools to manage ZIM files.
+
+WWW: http://www.kiwix.org/
