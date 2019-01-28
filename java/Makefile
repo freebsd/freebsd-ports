@@ -128,6 +128,7 @@
     SUBDIR += wildfly12
     SUBDIR += wildfly13
     SUBDIR += wildfly14
+    SUBDIR += wildfly15
     SUBDIR += wildfly90
     SUBDIR += xdoclet
 
