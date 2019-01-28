@@ -1,0 +1,11 @@
+--- bin/cassandra.orig	2018-09-07 13:43:49 UTC
++++ bin/cassandra
+@@ -189,7 +189,7 @@ launch_service()
+     props="$3"
+     class="$4"
+     cassandra_parms="-Dlogback.configurationFile=logback.xml"
+-    cassandra_parms="$cassandra_parms -Dcassandra.logdir=$CASSANDRA_HOME/logs"
++    cassandra_parms="$cassandra_parms -Dcassandra.logdir=/var/log/cassandra"
+     cassandra_parms="$cassandra_parms -Dcassandra.storagedir=$cassandra_storagedir"
+ 
+     if [ "x$pidpath" != "x" ]; then

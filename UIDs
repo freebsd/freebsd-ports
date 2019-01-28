@@ -797,7 +797,7 @@ domoticz:*:847:847::0:0:domoticz user:/nonexistent:/usr/sbin/nologin
 graylog:*:848:848::0:0:Graylog user:/nonexistent:/usr/sbin/nologin
 chronyd:*:849:849::0:0:chronyd user:/nonexistent:/usr/sbin/nologin
 qbittorrent:*:850:850::0:0:qBittorrent Daemon User:/var/db/qbittorrent/conf:/usr/sbin/nologin
-# free: 851
+cassandra:*:851:851::0:0:Cassandra DB Daemon User:/var/db/cassandra:/usr/sbin/nologin
 # free: 852
 _geodns:*:853:853::0:0:GeoDNS User:/var/empty:/usr/sbin/nologin
 # free: 854
