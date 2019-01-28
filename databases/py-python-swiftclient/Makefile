@@ -11,6 +11,7 @@ MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	Python client library for OpenStack Object Storage (Swift)
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=0.5.21:devel/py-pbr@${PY_FLAVOR}
 
@@ -21,6 +22,7 @@ RUN_DEPENDS+=	${PY_FUTURES} \
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+NO_ARCH=	yes
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/manpages/swift.1 \
