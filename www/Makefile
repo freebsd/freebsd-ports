@@ -333,6 +333,7 @@
     SUBDIR += kf5-khtml
     SUBDIR += kf5-kjs
     SUBDIR += kf5-kjsembed
+    SUBDIR += kiwix-tools
     SUBDIR += kohana
     SUBDIR += kurly
     SUBDIR += larbin

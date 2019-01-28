@@ -1,0 +1,9 @@
+bin/kiwix-manage
+bin/kiwix-read
+bin/kiwix-search
+bin/kiwix-serve
+man/fr/man1/kiwix-manage.1.gz
+man/fr/man1/kiwix-serve.1.gz
+man/man1/kiwix-manage.1.gz
+man/man1/kiwix-serve.1.gz
+share/kiwix/library.xml
