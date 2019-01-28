@@ -1,0 +1,3 @@
+The `storage.tsdb.retention` flag has been deprecated in Prometheus 2.7.0.
+Users of this flag will want to update their configuration to use the newer
+`storage.tsdb.retention.time` flag.
