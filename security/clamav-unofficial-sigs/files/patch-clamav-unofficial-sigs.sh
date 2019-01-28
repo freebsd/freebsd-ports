@@ -1,4 +1,4 @@
---- clamav-unofficial-sigs.sh.orig	2018-03-27 15:43:43 UTC
+--- clamav-unofficial-sigs.sh.orig	2018-11-24 16:35:07 UTC
 +++ clamav-unofficial-sigs.sh
 @@ -1290,7 +1290,7 @@ minimum_required_config_version="72"
  minimum_yara_clamav_version="0.99"
@@ -18,6 +18,24 @@
  
  # Solaris which function returns garbage when the program is not found
  # only define the new which function if running under Solaris
+@@ -1455,7 +1457,7 @@ for config_file in "${config_files[@]}" 
+       # Delete both trailing and leading whitespace
+       # Delete all trailing whitespace
+       # Delete all empty lines
+-      clean_config="$(command sed -e '/^#.*/d' -e 's/[[:space:]]#.*//' -e 's/#[[:space:]].*//' -e 's/^[ \t]*//;s/[ \t]*$//' -e '/^\s*$/d' "$config_file")"
++      clean_config="$(command sed -e '/^#.*/d' -e 's/[[:space:]]#.*//' -e 's/#[[:space:]].*//' -e 's/^[[:blank:]]*//;s/[[:blank:]]*$//' -e '/^[[:space:]]*$/d' "$config_file")"
+     fi
+ 
+     #fix eval of |
+@@ -1470,7 +1472,7 @@ for config_file in "${config_files[@]}" 
+     fi
+ 
+     # Check there is an = for every set of "" optional whitespace \s* between = and "
+-    config_check_vars="$(echo "$clean_config" | $grep_bin -c '=\s*\"' )"
++    config_check_vars="$(echo "$clean_config" | $grep_bin -c '=[[:space:]]*\"' )"
+ 
+     if [ $(( ${#config_check} / 2 )) -ne "$config_check_vars" ] ; then
+       xshok_pretty_echo_and_log "ERROR: Your configuration has errors, every = requires a pair of \"\"" "="
 @@ -2131,20 +2133,11 @@ if [ "$sanesecurity_enabled" == "yes" ] 
          xshok_pretty_echo_and_log "Sanesecurity Database & GPG Signature File Updates" "="
          xshok_pretty_echo_and_log "Checking for Sanesecurity updates..."
