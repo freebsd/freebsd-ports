@@ -1,0 +1,6 @@
+This is a Prometheus Exporter for exporting NVIDIA GPU metrics. It uses the Go
+bindings for NVIDIA Management Library (NVML) which is a C-based API that can
+be used for monitoring NVIDIA GPU devices. Unlike some other similar exporters,
+it does not call the nvidia-smi binary.
+
+WWW: https://github.com/mindprince/nvidia_gpu_prometheus_exporter
