@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	nsq
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 DISTVERSIONPREFIX=	v
-DISTVERSIONSUFFIX=	-compat
 CATEGORIES=	net
 
 MAINTAINER=	jhixson@FreeBSD.org
@@ -11,32 +10,31 @@ COMMENT=	Realtime distributed messaging platform
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	go>=1.7:lang/go
-
 ONLY_FOR_ARCHS=	amd64
 
-USE_RC_SUBR=	nsqd nsqlookupd nsqadmin
+BUILD_DEPENDS=	go>=1.7:lang/go
 
 USES=	compiler go
+
+USE_RC_SUBR=	nsqd nsqlookupd nsqadmin
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nsqio
 GH_SUBDIR=	src/github.com/nsqio/nsq
-GH_TUPLE=	BurntSushi:toml:v0.2.0:toml/src/github.com/BurntSushi/toml \
-	judwhite:go-svc:v1.0.0:go_svc/src/github.com/judwhite/go-svc \
-	mreiferson:go-options:77551d2:go_options/src/github.com/mreiferson/go-options \
-	mreiferson:go-snappystream:v0.2.3:go_snappystream/src/github.com/mreiferson/go-snappystream\
-	bitly:go-hostpool:d0e59c2:go_hostpool/src/github.com/bitly/go-hostpool \
-	bitly:go-simplejson:v0.5.0:go_simplejson/src/github.com/bitly/go-simplejson\
-	bitly:timer_metrics:afad179:timer_metrics/src/github.com/bitly/timer_metrics \
-	blang:semver:v3.3.0:semver/src/github.com/blang/semver \
-	bmizerany:perks:d9a9656:perks/src/github.com/bmizerany/perks \
-	julienschmidt:httprouter:8a45e95:httprouter/src/github.com/julienschmidt/httprouter \
-	golang:snappy:553a641:snappy/src/github.com/golang/snappy \
-	nsqio:go-diskqueue:d7805f8:go_diskqueue/src/github.com/nsqio/go-diskqueue \
-	nsqio:go-nsq:v1.0.6:go_nsq/src/github.com/nsqio/go-nsq
 
-TARGETS=	nsqd nsqlookupd nsqadmin nsq_pubsub nsq_to_nsq nsq_to_file \
+GH_TUPLE=	BurntSushi:toml:2dff111:toml/src/github.com/BurntSushi/toml \
+	bitly:go-hostpool:a3a6125:go_hostpool/src/github.com/bitly/go-hostpool \
+	bitly:timer_metrics:afad179:timer_metrics/src/github.com/bitly/timer_metrics \
+	blang:semver:9bf7bff:semver/src/github.com/blang/semver \
+	bmizerany:perks:6cb9d9d:perks/src/github.com/bmizerany/perks \
+	golang:snappy:d9eb7a3:snappy/src/github.com/golang/snappy \
+	judwhite:go-svc:63c1240:go_svc/src/github.com/judwhite/go-svc \
+	julienschmidt:httprouter:6aacfd5:httprouter/src/github.com/julienschmidt/httprouter \
+	mreiferson:go-options:77551d2:go_options/src/github.com/mreiferson/go-options \
+	nsqio:go-diskqueue:0681a1a:go_diskqueue/src/github.com/nsqio/go-diskqueue \
+	nsqio:go-nsq:a53d495:go_nsq/src/github.com/nsqio/go-nsq
+
+TARGETS=	nsqd nsqlookupd nsqadmin nsq_to_nsq nsq_to_file \
 	nsq_to_http nsq_tail nsq_stat to_nsq
 
 .for _t in ${TARGETS}

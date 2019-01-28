@@ -1,4 +1,3 @@
-bin/%%GO_PKGNAME%%_pubsub
 bin/%%GO_PKGNAME%%_stat
 bin/%%GO_PKGNAME%%_tail
 bin/%%GO_PKGNAME%%_to_file
