@@ -10,6 +10,8 @@ COMMENT?=	QEMU emulator with CHERI CPU support
 
 # XXX: disabling gnutls doesn't work so depend on it to avoid breakage.
 LIB_DEPENDS=	libcapstone.so:devel/capstone3 \
+		libdrm.so:graphics/libdrm \
+		libepoxy.so:graphics/libepoxy \
 		libgnutls.so:security/gnutls \
 		libnettle.so:security/nettle
 RUN_DEPENDS=	qemu-system-i386:emulators/qemu
@@ -25,6 +27,7 @@ HAS_CONFIGURE=	yes
 USES=	gettext-runtime gmake gnome libtool makeinfo pkgconfig python:2.7,build
 USE_XORG=	pixman
 USE_GNOME+=	glib20 libxml2
+USE_GL+=	gbm
 ONLY_FOR_ARCHS=	amd64 powerpc64
 
 OPTIONS_DEFINE=	DOCS
