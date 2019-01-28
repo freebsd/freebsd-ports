@@ -13,6 +13,7 @@ lib/tiled/plugins/libdroidcraft.so
 lib/tiled/plugins/libflare.so
 lib/tiled/plugins/libgmx.so
 lib/tiled/plugins/libjson.so
+lib/tiled/plugins/libjson1.so
 lib/tiled/plugins/liblua.so
 %%PYTHON%%lib/tiled/plugins/libpython.so
 lib/tiled/plugins/libreplicaisland.so
