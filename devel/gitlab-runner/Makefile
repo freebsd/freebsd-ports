@@ -27,13 +27,11 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_COMMIT=	8bb608ff3a677132022502b07dae8a3ea679f3d1
-GITREV=		8d829975
-GITREV=		8bb608ff
 GITBRANCH=	11-7-stable
 BUILT=		2019-01-15T15:24:23+0000
 
 GO_LDFLAGS=	-X gitlab.com/gitlab-org/gitlab-runner/common.VERSION=${PORTVERSION} \
-		-X gitlab.com/gitlab-org/gitlab-runner/common.REVISION=${GITREV} \
+		-X gitlab.com/gitlab-org/gitlab-runner/common.REVISION=${GL_COMMIT:C/^(........).*/\1/} \
 		-X gitlab.com/gitlab-org/gitlab-runner/common.BUILT=${BUILT} \
 		-X gitlab.com/gitlab-org/gitlab-runner/common.BRANCH=${GITBRANCH} \
 		-s -w
