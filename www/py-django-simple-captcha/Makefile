@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-simple-captcha
-PORTVERSION=	0.5.7
+PORTVERSION=	0.5.10
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=1.7.0:www/py-django111@${PY_FLAVO
 
 USES=		python zip
 USE_PYTHON=	autoplist concurrent distutils
+
 NO_ARCH=	yes
 
 PORTDOCS=	*
