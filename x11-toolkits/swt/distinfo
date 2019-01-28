@@ -1,4 +1,3 @@
-SHA256 (swt-3.5.2-gtk-linux-x86.zip) = 00477e6fc3c913916cd980a1ec29629c5250afc52dc0fcee74b035af0360eef7
-SIZE (swt-3.5.2-gtk-linux-x86.zip) = 4881316
-SHA256 (swt-3.5.2-gtk-linux-x86_64.zip) = 91f9e2d4f6ca3926252d33895aafe82ba1b72bcdb77ec71dafa20d154f5d5bc7
-SIZE (swt-3.5.2-gtk-linux-x86_64.zip) = 5068674
+TIMESTAMP = 1530093075
+SHA256 (swt-4.7.3a-gtk-linux-x86_64.zip) = 856005feff25de55f7d7b304d2cbed9dd24938c7b6d07ffd7413b8361a4753e3
+SIZE (swt-4.7.3a-gtk-linux-x86_64.zip) = 6360885

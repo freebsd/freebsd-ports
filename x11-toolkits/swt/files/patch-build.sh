@@ -1,7 +1,7 @@
---- build.sh.orig	2010-02-12 17:49:56 UTC
-+++ build.sh
-@@ -41,9 +41,19 @@ case $OS in
- 			MAKE_TYPE=gmake
+--- build.sh.orig	2018-03-01 07:35:22.000000000 +0100
++++ build.sh	2018-06-27 11:24:43.371971000 +0200
+@@ -115,9 +115,19 @@
+ 			fi
  		fi
  		;;
 +	"DragonFly")
@@ -18,44 +18,36 @@
 +			MODEL=`uname -p`
 +		fi
  		;;
- 	*)
- 		SWT_OS=`uname -s | tr -s '[:upper:]' '[:lower:]'`
-@@ -75,15 +85,16 @@ case $MODEL in
- esac
+ 	"Windows_NT")
+ 		SWT_OS=win32
+@@ -469,10 +479,10 @@
+ 
  
  # For 64-bit CPUs, we have a switch
--if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ppc64' -o ${MODEL} = 'ia64' -o ${MODEL} = 's390x' ]; then
-+if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ppc64' -o ${MODEL} = 'ia64' -o ${MODEL} = 's390x' -o ${MODEL} = 'amd64' ]; then
+-if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ppc64' -o ${MODEL} = 'ia64' -o ${MODEL} = 'sparcv9'  -o ${MODEL} = 's390x' -o ${MODEL} = 'ppc64le' -o ${MODEL} = 'aarch64' ]; then
++if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ppc64' -o ${MODEL} = 'ia64' -o ${MODEL} = 'sparcv9'  -o ${MODEL} = 's390x' -o ${MODEL} = 'ppc64le' -o ${MODEL} = 'aarch64'  -o ${MODEL} = 'amd64' ]; then
  	SWT_PTR_CFLAGS=-DJNI64
- 	export SWT_PTR_CFLAGS
  	if [ -d /lib64 ]; then
 -		XLIB64=-L/usr/X11R6/lib64
 +		XLIB64=-L${LOCALBASE}/lib64
  		export XLIB64
  	fi
+ 	if [ ${MODEL} = 'ppc64' -o ${MODEL} = 'ppc64le' ]; then
+@@ -517,37 +527,24 @@
+ 	export SWT_LFLAGS SWT_PTR_CFLAGS
  fi
  
-+if [ x${MAKE_GNOME} = "xmake_gnome" ]; then
- if [ x`pkg-config --exists gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0 && echo YES` = "xYES" ]; then
- 	echo "libgnomeui-2.0 found, compiling SWT program support using GNOME"
- 	MAKE_GNOME=make_gnome
-@@ -91,7 +102,9 @@ else
- 	echo "libgnome-2.0 and libgnomeui-2.0 not found:"
- 	echo "    *** SWT Program support for GNOME will not be compiled."
- fi
-+fi
- 
+-
 +if [ x${MAKE_CAIRO} = "xmake_cairo" ]; then
  if [ x`pkg-config --exists cairo && echo YES` = "xYES" ]; then
- 	echo "Cairo found, compiling SWT support for the cairo graphics library."
+ 	func_echo_plus "Cairo found, compiling SWT support for the cairo graphics library."
  	MAKE_CAIRO=make_cairo
-@@ -99,30 +112,17 @@ else
- 	echo "Cairo not found:"
- 	echo "    *** Advanced graphics support using cairo will not be compiled."
+ else
+ 	func_echo_error "Cairo not found: Advanced graphics support using cairo will not be compiled."
  fi
 +fi
  
--if [ -z "${MOZILLA_INCLUDES}" -a -z "${MOZILLA_LIBS}" ]; then
+-if [ -z "${MOZILLA_INCLUDES}" -a -z "${MOZILLA_LIBS}" -a ${SWT_OS} != 'solaris' ]; then
 -	if [ x`pkg-config --exists mozilla-xpcom && echo YES` = "xYES" ]; then
 -		MOZILLA_INCLUDES=`pkg-config --cflags mozilla-xpcom`
 -		MOZILLA_LIBS=`pkg-config --libs mozilla-xpcom`
@@ -75,8 +67,8 @@
 -		export XULRUNNER_LIBS
 -		MAKE_MOZILLA=make_xulrunner
 -	else
--		echo "None of the following libraries were found:  Mozilla/XPCOM, Firefox/XPCOM, or XULRunner/XPCOM"
--		echo "    *** Mozilla embedding support will not be compiled."
+-		func_echo_error "None of the following libraries were found:  Mozilla/XPCOM, Firefox/XPCOM, or XULRunner/XPCOM:"
+-		func_echo_error "   >> Mozilla embedding support will not be compiled."
 -	fi
 +if [ x${MAKE_MOZILLA} = "xmake_xulrunner" ]; then
 +	echo "Using libxul for gecko support"
