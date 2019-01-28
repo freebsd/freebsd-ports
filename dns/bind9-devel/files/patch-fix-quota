@@ -1,0 +1,68 @@
+--- lib/isc/include/isc/quota.h.orig	2019-01-25 09:45:27 UTC
++++ lib/isc/include/isc/quota.h
+@@ -44,7 +44,7 @@ ISC_LANG_BEGINDECLS
+ /*% isc_quota structure */
+ struct isc_quota {
+ 	atomic_uint_fast32_t 		__max;
+-	atomic_uint_fast32_t 		__used;
++	atomic_uint_fast32_t 		_used;
+ 	atomic_uint_fast32_t		__soft;
+ };
+ 
+--- lib/isc/quota.c.orig	2019-01-25 09:45:27 UTC
++++ lib/isc/quota.c
+@@ -24,15 +24,15 @@
+ void
+ isc_quota_init(isc_quota_t *quota, unsigned int max) {
+ 	atomic_store(&quota->__max, max);
+-	atomic_store(&quota->__used, 0);
++	atomic_store(&quota->_used, 0);
+ 	atomic_store(&quota->__soft, 0);
+ }
+ 
+ void
+ isc_quota_destroy(isc_quota_t *quota) {
+-	INSIST(atomic_load(&quota->__used) == 0);
++	INSIST(atomic_load(&quota->_used) == 0);
+ 	atomic_store(&quota->__max, 0);
+-	atomic_store(&quota->__used, 0);
++	atomic_store(&quota->_used, 0);
+ 	atomic_store(&quota->__soft, 0);
+ }
+ 
+@@ -58,7 +58,7 @@ isc_quota_getsoft(isc_quota_t *quota) {
+ 
+ unsigned int
+ isc_quota_getused(isc_quota_t *quota) {
+-	return (atomic_load_relaxed(&quota->__used));
++	return (atomic_load_relaxed(&quota->_used));
+ }
+ 
+ isc_result_t
+@@ -66,7 +66,7 @@ isc_quota_reserve(isc_quota_t *quota) {
+ 	isc_result_t result;
+ 	uint32_t max = atomic_load(&quota->__max);
+ 	uint32_t soft = atomic_load(&quota->__soft);
+-	uint32_t used = atomic_fetch_add(&quota->__used, 1);
++	uint32_t used = atomic_fetch_add(&quota->_used, 1);
+ 	if (max == 0 || used < max) {
+ 		if (soft == 0 || used < soft) {
+ 			result = ISC_R_SUCCESS;
+@@ -74,7 +74,7 @@ isc_quota_reserve(isc_quota_t *quota) {
+ 			result = ISC_R_SOFTQUOTA;
+ 		}
+ 	} else {
+-		INSIST(atomic_fetch_sub(&quota->__used, 1) > 0);
++		INSIST(atomic_fetch_sub(&quota->_used, 1) > 0);
+ 		result = ISC_R_QUOTA;
+ 	}
+ 	return (result);
+@@ -82,7 +82,7 @@ isc_quota_reserve(isc_quota_t *quota) {
+ 
+ void
+ isc_quota_release(isc_quota_t *quota) {
+-	INSIST(atomic_fetch_sub(&quota->__used, 1) > 0);
++	INSIST(atomic_fetch_sub(&quota->_used, 1) > 0);
+ }
+ 
+ isc_result_t
