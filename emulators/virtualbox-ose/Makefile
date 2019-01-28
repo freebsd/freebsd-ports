@@ -3,6 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.2.24
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
