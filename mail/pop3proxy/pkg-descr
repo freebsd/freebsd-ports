@@ -1,2 +1,4 @@
-This is a POP3 proxycache server useful for use with webmail clients.
+This is a POP3 proxycache server, derived from up-imapproxy and is
+useful for use with webmail clients.
+
 It keeps track of existing connections and caches them.
