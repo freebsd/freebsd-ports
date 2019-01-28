@@ -3,7 +3,7 @@
 
 PORTNAME=	msktutil
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME} \
 		ZI
@@ -13,6 +13,8 @@ COMMENT=	Utility to manage Active Directory interoperability
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libudns.so:dns/udns
 
 USES=		gmake ssl tar:bzip2
 USE_OPENLDAP=	yes
