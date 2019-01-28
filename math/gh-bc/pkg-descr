@@ -1,0 +1,16 @@
+This is an implementation of POSIX bc that implements GNU bc extensions, as
+well as the period (".") extension for the BSD flavor of bc.
+
+bc is an arbitrary precision numeric processing language.  Its syntax is
+similar to C but differs in many substantial areas.  It supports interactive
+execution of statements.  The bc utility is included in the POSIX 1003.1-2008
+standard.
+
+This bc also includes an implementation of dc in the same binary, accessible
+via a symbolic link, which implements all FreeBSD and GNU extensions.  If a
+single dc binary is desired, bc can be copied and renamed to dc.
+
+The "!" command is omitted; I believe that it poses security concerns and
+that such functionality is unnecessary.
+
+WWW: https://github.com/gavinhoward/bc

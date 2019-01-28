@@ -32,6 +32,8 @@ PORTEXAMPLES=	ckbook.b \
 
 OPTIONS_DEFINE=	EXAMPLES
 
+CONFLICTS_INSTALL=	gh-bc-[0-9]*
+
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
