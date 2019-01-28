@@ -2,6 +2,7 @@
 
 PORTNAME=	luv
 DISTVERSION=	0.4.9.12
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 PKGNAMEPREFIX=	gnome-icons-
 
@@ -15,7 +16,6 @@ USES=		gnome
 USE_GITHUB=	yes
 GH_ACCOUNT=	NitruxSA
 GH_PROJECT=	luv-icon-theme
-GH_TAGNAME=	fbeb3ed
 
 DATADIR=	${PREFIX}/share/icons/Luv
 INSTALLS_ICONS=	yes
