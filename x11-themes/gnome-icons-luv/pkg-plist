@@ -514,7 +514,7 @@
 %%DATADIR%%/emblems/8/emblem-symbolic-link.svg
 %%DATADIR%%/emblems/8/emblem-unmounted.svg
 %%DATADIR%%/emotes/32/face-smile.svg
-%%DATADIR%%/icon-theme.cache
+@comment %%DATADIR%%/icon-theme.cache
 %%DATADIR%%/index.theme
 @comment %%DATADIR%%/mimetypes/128/dummy.txt
 %%DATADIR%%/mimetypes/16/application-x-cd-image.svg
