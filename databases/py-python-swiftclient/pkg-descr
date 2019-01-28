@@ -5,4 +5,4 @@ This code is based on the original client previously included with
 OpenStack's swift -- a highly available, distributed, eventually
 consistent object/blob store.
 
-WWW: http://launchpad.net/python-swiftclient
+WWW: https://launchpad.net/python-swiftclient
