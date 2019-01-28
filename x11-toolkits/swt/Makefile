@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	swt
-DISTVERSION=	3.5.2
-PORTREVISION=	5
+DISTVERSION=	4.7.3a
 CATEGORIES=	x11-toolkits devel java
-#MASTER_SITES=	ECLIPSE/R-${DISTVERSION}-201002111343
-MASTER_SITES=	http://archive.eclipse.org/eclipse/downloads/drops/R-${DISTVERSION}-201002111343/
+MASTER_SITES=	http://archive.eclipse.org/eclipse/downloads/drops4/R-${DISTVERSION}-201803300640/
 DISTNAME=	swt-${DISTVERSION}-${DIST_EXT}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,17 +12,17 @@ COMMENT=	Standard Widget Toolkit for Java
 
 LICENSE=	EPL
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64 i386
 
-CONFLICTS=	swt-3.1*
+USES=		gl gnome pkgconfig zip:infozip
 
-SWT_VERSION=	3557
+SWT_VERSION=	4763
 OUTPUT_JAR=	swt.jar
 
-USE_GL=		yes
-USES=		pkgconfig zip:infozip
+USE_GL=		glu gl
 USE_GNOME=	gtk20
 USE_JAVA=	yes
+USE_XORG=	xtst
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
 USE_ANT=	yes
@@ -32,43 +30,27 @@ MAKE_ARGS+=	-Doutput.jar=${OUTPUT_JAR}
 MAKEFILE=	make_freebsd.mak
 USE_LDCONFIG=	yes
 PLIST_SUB=	BUILD=${SWT_VERSION}
-PLIST_FILES=	%%JAVAJARDIR%%/${OUTPUT_JAR} \
-		lib/libswt-atk-gtk-%%BUILD%%.so \
-		lib/libswt-awt-gtk-%%BUILD%%.so \
-		lib/libswt-gtk-%%BUILD%%.so \
-		lib/libswt-glx-gtk-%%BUILD%%.so \
-		lib/libswt-pi-gtk-%%BUILD%%.so
+PLIST_FILES=	${JAVAJARDIR}/${OUTPUT_JAR} \
+		lib/libswt-atk-gtk-${SWT_VERSION}.so \
+		lib/libswt-awt-gtk-${SWT_VERSION}.so \
+		lib/libswt-gtk-${SWT_VERSION}.so \
+		lib/libswt-glx-gtk-${SWT_VERSION}.so \
+		lib/libswt-pi-gtk-${SWT_VERSION}.so
 
 NO_WRKSUBDIR=	yes
 
-OPTIONS_DEFINE=	CAIRO GNOMEVFS BROWSER
-OPTIONS_DEFAULT=	CAIRO GNOMEVFS
-GNOMEVFS_DESC=	Gnome VFS Support
-BROWSER_DESC=	Gecko Browser Support
+OPTIONS_DEFINE=	CAIRO
+OPTIONS_DEFAULT=	CAIRO
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCAIRO}
 LIB_DEPENDS+=	libcairo.so:graphics/cairo
-PLIST_FILES+=	lib/libswt-cairo-gtk-%%BUILD%%.so
+PLIST_FILES+=	lib/libswt-cairo-gtk-${SWT_VERSION}.so
 MAKE_CAIRO=	make_cairo
 .endif
 
-.if ${PORT_OPTIONS:MGNOMEVFS}
-USE_GNOME+=	gnomevfs2 libgnome libgnomeui
-PLIST_FILES+=	lib/libswt-gnome-gtk-%%BUILD%%.so
-MAKE_GNOME=	make_gnome
-.endif
-
-.if ${PORT_OPTIONS:MBROWSER}
-USES=		gecko
-BROKEN=		Does not build with newer libxul
-PLIST_FILES+=	lib/libswt-xulrunner-gtk-%%BUILD%%.so
-MAKE_MOZILLA=	make_xulrunner
-.endif
-
 MAKE_ENV+=	MAKE_CAIRO=${MAKE_CAIRO} \
-		MAKE_GNOME=${MAKE_GNOME} \
 		MAKE_MOZILLA=${MAKE_MOZILLA} \
 		JAVA_HOME=${JAVA_HOME}
 
@@ -81,6 +63,7 @@ DIST_EXT=	gtk-linux-x86
 post-extract:
 	@(cd ${WRKSRC} && ${UNZIP_CMD} -qo "*.zip")
 	@${RM} ${WRKSRC}/*.o ${WRKSRC}/*.so ${WRKSRC}/*.jar
+	@${CP} ${FILESDIR}/build.xml ${WRKSRC}/build.xml
 
 post-patch:
 	${SED} -e 's|freebsd|dragonfly|g' ${WRKSRC}/make_freebsd.mak \

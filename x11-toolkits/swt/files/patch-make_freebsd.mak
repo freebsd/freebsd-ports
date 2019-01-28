@@ -1,12 +1,5 @@
---- make_freebsd.mak.orig	2009-06-11 16:10:54.000000000 -0500
-+++ make_freebsd.mak	2009-07-11 08:37:19.000000000 -0500
-@@ -1,5 +1,5 @@
- #*******************************************************************************
--# Copyright (c) 2000, 2007 IBM Corporation and others.
-+# Copyright (c) 2000, 2009 IBM Corporation and others.
- # All rights reserved. This program and the accompanying materials
- # are made available under the terms of the Eclipse Public License v1.0
- # which accompanies this distribution, and is available at
+--- make_freebsd.mak.orig	2018-03-01 07:35:22.000000000 +0100
++++ make_freebsd.mak	2018-06-27 11:33:21.105457000 +0200
 @@ -9,7 +9,7 @@
  #     IBM Corporation - initial API and implementation
  #*******************************************************************************
@@ -16,30 +9,29 @@
  
  include make_common.mak
  
-@@ -46,7 +46,7 @@
+@@ -43,7 +43,7 @@
  
  # Do not use pkg-config to get libs because it includes unnecessary dependencies (i.e. pangoxft-1.0)
- GTKCFLAGS = `pkg-config --cflags gtk+-2.0`
+ GTKCFLAGS = `pkg-config --cflags gtk+-2.0 gtk+-unix-print-$(GTK_VERSION)`
 -GTKLIBS = `pkg-config --libs-only-L gtk+-2.0 gthread-2.0` -lgtk-x11-2.0 -lgthread-2.0 -L/usr/X11R6/lib $(XLIB64) -lXtst
 +GTKLIBS = `pkg-config --libs-only-L gtk+-2.0 gthread-2.0` -lgtk-x11-2.0 -lgthread-2.0 -L$(LOCALBASE)/lib $(XLIB64) -lXtst
  
- CDE_LIBS = -L$(CDE_HOME)/lib -R$(CDE_HOME)/lib -lXt -lX11 -lDtSvc
+ AWT_LFLAGS = -shared
+ AWT_LIBS = -L$(AWT_LIB_PATH) -ljawt
+@@ -51,7 +51,8 @@
+ ATKCFLAGS = `pkg-config --cflags atk gtk+-2.0 gtk+-unix-print-$(GTK_VERSION)`
+ ATKLIBS = `pkg-config --libs-only-L atk gtk+-2.0` -latk-1.0 -lgtk-x11-2.0
  
-@@ -58,8 +58,8 @@
- GNOMECFLAGS = `pkg-config --cflags gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0`
- GNOMELIBS = `pkg-config --libs-only-L gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0` -lgnomevfs-2 -lgnome-2 -lgnomeui-2
- 
--GLXCFLAGS = 
--GLXLIBS = -shared -fPIC -L/usr/X11R6/lib -lGL -lGLU -lm
+-GLXLIBS = -L/usr/X11R6/lib -lGL -lGLU -lm
 +GLXCFLAGS = -I$(LOCALBASE)/include
-+GLXLIBS = -shared -fPIC -L$(LOCALBASE)/lib -lGL -lGLU -lm
++GLXLIBS = -L$(LOCALBASE)/lib -lGL -lGLU -lm
  
  # Uncomment for Native Stats tool
  #NATIVE_STATS = -DNATIVE_STATS
-@@ -78,7 +78,17 @@
+@@ -70,14 +71,24 @@
  	-I$(JAVA_HOME)/include/freebsd \
  	${SWT_PTR_CFLAGS}
- MOZILLALIBS = -shared -Wl,--version-script=mozilla_exports -Bsymbolic
+ MOZILLALFLAGS = -shared -Wl,--version-script=mozilla_exports -Bsymbolic
 -	
 +MOZILLAEXCLUDES = -DNO__1XPCOMGlueShutdown \
 +	-DNO__1XPCOMGlueStartup \
@@ -53,18 +45,17 @@
 +XULRUNNEREXCLUDES = -DNO__1NS_1InitXPCOM2
 +
  SWT_OBJECTS = swt.o c.o c_stats.o callback.o
- CDE_OBJECTS = swt.o cde.o cde_structs.o cde_stats.o
  AWT_OBJECTS = swt_awt.o
-@@ -87,7 +97,7 @@
+ SWTPI_OBJECTS = swt.o os.o os_structs.o os_custom.o os_stats.o
+ CAIRO_OBJECTS = swt.o cairo.o cairo_structs.o cairo_stats.o
  ATK_OBJECTS = swt.o atk.o atk_structs.o atk_custom.o atk_stats.o
- GNOME_OBJECTS = swt.o gnome.o gnome_structs.o gnome_stats.o
  MOZILLA_OBJECTS = swt.o xpcom.o xpcom_custom.o xpcom_structs.o xpcom_stats.o
 -XULRUNNER_OBJECTS = swt.o xpcomxul.o xpcomxul_custom.o xpcomxul_structs.o xpcomxul_stats.o xpcomxulglue.o xpcomxulglue_stats.o
 +XULRUNNER_OBJECTS = swt.o xpcomxul.o xpcomxul_custom.o xpcomxul_structs.o xpcomxul_stats.o
  XPCOMINIT_OBJECTS = swt.o xpcominit.o xpcominit_structs.o xpcominit_stats.o
  GLX_OBJECTS = swt.o glx.o glx_structs.o glx_stats.o
  
-@@ -95,19 +105,20 @@
+@@ -85,17 +96,18 @@
  		-DSWT_VERSION=$(SWT_VERSION) \
  		$(NATIVE_STATS) \
  		-DFREEBSD -DGTK \
@@ -73,26 +64,23 @@
  		-I$(JAVA_HOME)/include/freebsd \
  		-fPIC \
  		${SWT_PTR_CFLAGS}
- LIBS = -shared -fPIC
+ LFLAGS = -shared -fPIC
  
 -ifndef NO_STRIP
--	AWT_LIBS := $(AWT_LIBS) -s
--	MOZILLALIBS := $(MOZILLALIBS) -s
--	LIBS := $(LIBS) -s
+-	AWT_LFLAGS := $(AWT_LFLAGS) -s
+-	MOZILLALFLAGS := $(MOZILLALFLAGS) -s
+-	LFLAGS := $(LFLAGS) -s
 -endif
 +.ifndef NO_STRIP
-+AWT_LIBS := $(AWT_LIBS) -s
-+MOZILLALIBS := $(MOZILLALIBS) -s
-+LIBS := $(LIBS) -s
++AWT_LFLAGS := $(AWT_LFLAGS) -s
++MOZILLALFLAGS := $(MOZILLALFLAGS) -s
++LFLAGS := $(LFLAGS) -s
 +.endif
  
--all: make_swt make_atk make_gnome make_glx
-+all: make_swt make_atk make_glx
+ all: make_swt make_atk make_glx
  
- #
- # SWT libs
-@@ -209,16 +220,16 @@
- 	$(CXX) -o $(MOZILLA_LIB) $(MOZILLA_OBJECTS) $(MOZILLALIBS) ${MOZILLA_LIBS}
+@@ -173,16 +185,16 @@
+ 	$(CXX) -o $(MOZILLA_LIB) $(MOZILLA_OBJECTS) $(MOZILLALFLAGS) ${MOZILLA_LIBS}
  
  xpcom.o: xpcom.cpp
 -	$(CXX) $(MOZILLACFLAGS) ${MOZILLA_INCLUDES} -c xpcom.cpp
@@ -112,8 +100,8 @@
  
  #
  # XULRunner lib
-@@ -229,22 +240,16 @@
- 	$(CXX) -o $(XULRUNNER_LIB) $(XULRUNNER_OBJECTS) $(MOZILLALIBS) ${XULRUNNER_LIBS}
+@@ -193,22 +205,16 @@
+ 	$(CXX) -o $(XULRUNNER_LIB) $(XULRUNNER_OBJECTS) $(MOZILLALFLAGS) ${XULRUNNER_LIBS}
  
  xpcomxul.o: xpcom.cpp
 -	$(CXX) -o xpcomxul.o $(MOZILLACFLAGS) ${XULRUNNER_INCLUDES} -c xpcom.cpp
