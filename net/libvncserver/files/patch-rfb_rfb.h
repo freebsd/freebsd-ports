@@ -1,4 +1,4 @@
---- rfb/rfb.h.orig	2017-07-05 07:45:47 UTC
+--- rfb/rfb.h.orig	2019-01-06 19:09:30 UTC
 +++ rfb/rfb.h
 @@ -43,7 +43,7 @@ extern "C"
  #include <string.h>
@@ -9,7 +9,7 @@
  #include <arpa/inet.h>
  #include <sys/select.h>
  #endif
-@@ -265,6 +265,8 @@ typedef struct _rfbScreenInfo
+@@ -266,6 +266,8 @@ typedef struct _rfbScreenInfo
      rfbBool autoPort;
      int port;
      SOCKET listenSock;
