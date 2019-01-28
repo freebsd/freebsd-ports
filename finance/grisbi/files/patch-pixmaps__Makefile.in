@@ -1,11 +1,11 @@
---- pixmaps/Makefile.in.orig	2010-05-04 20:15:57.000000000 +0200
-+++ pixmaps/Makefile.in	2010-06-07 18:47:32.000000000 +0200
-@@ -288,7 +288,7 @@
+--- pixmaps/Makefile.in.orig	2019-01-26 06:00:37 UTC
++++ pixmaps/Makefile.in
+@@ -403,7 +403,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  SUBDIRS = flags
 -grisbi_pixmapsdir = $(datadir)/pixmaps/$(PACKAGE)
 +grisbi_pixmapsdir = $(pkgdatadir)/pixmaps
  grisbi_pixmaps_DATA = \
- 	ac_asset.png \
- 	ac_bank.png \
+ 	grisbi-logo.png \
+ 	grisbi-32.png \

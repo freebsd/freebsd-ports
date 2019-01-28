@@ -1,6 +1,6 @@
---- pixmaps/flags/Makefile.in.orig	2011-05-22 08:57:12.000000000 +0200
-+++ pixmaps/flags/Makefile.in	2012-04-15 21:52:02.000000000 +0200
-@@ -237,7 +237,7 @@
+--- pixmaps/flags/Makefile.in.orig	2019-01-26 06:00:37 UTC
++++ pixmaps/flags/Makefile.in
+@@ -341,7 +341,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
