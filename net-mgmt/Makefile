@@ -209,6 +209,7 @@
     SUBDIR += nsca27-client
     SUBDIR += nstat
     SUBDIR += nstreams
+    SUBDIR += nvidia_gpu_prometheus_exporter
     SUBDIR += observium
     SUBDIR += ocsinventory-agent
     SUBDIR += ocsinventory-ocsreports
