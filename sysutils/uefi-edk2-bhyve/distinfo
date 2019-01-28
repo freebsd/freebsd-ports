@@ -1,3 +1,3 @@
-TIMESTAMP = 1541047623
-SHA256 (freebsd-uefi-edk2-v0.2_GH0.tar.gz) = 886c443f9d2deacdfee33c2794d8692c10e65960cdefe0e523babdcb04c386f2
-SIZE (freebsd-uefi-edk2-v0.2_GH0.tar.gz) = 30981874
+TIMESTAMP = 1548651484
+SHA256 (freebsd-uefi-edk2-v0.2-aa8d718_GH0.tar.gz) = 749ef1ec3fdb37434745a7ecf7f3d41e6c84aeb906d52e5f8ce85527a06a472e
+SIZE (freebsd-uefi-edk2-v0.2-aa8d718_GH0.tar.gz) = 30986800
