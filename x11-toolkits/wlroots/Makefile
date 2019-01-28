@@ -18,7 +18,6 @@ LIB_DEPENDS=	libudev.so:devel/libudev-devd \
 		libwayland-egl.so:graphics/wayland \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
-RUN_DEPENDS=	xkeyboard-config>0:x11/xkeyboard-config
 
 USES=		compiler:c11 gl meson pkgconfig
 USE_GITHUB=	yes
