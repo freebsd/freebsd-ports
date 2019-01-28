@@ -791,7 +791,7 @@ domoticz:*:847:
 graylog:*:848:
 chronyd:*:849:
 qbittorrent:*:850:
-# free: 851
+cassandra:*:851:
 # free: 852
 _geodns:*:853:
 # free: 854
