@@ -11563,3 +11563,4 @@ databases/postgresql93-server|databases/postgresql94-server|2019-01-09|Has expir
 mail/drac||2019-01-16|Has expired: Unmaintained upstream since 2003
 lang/clang35|devel/llvm70|2019-01-18|Removed, unmaintained and not depended on
 lang/clang-devel|devel/llvm-devel|2019-01-18|Unneeded metaport
+devel/py-easyconfig|devel/py-python-easyconfig|2019-01-28|Rename to reflect official Python modules naming scheme
