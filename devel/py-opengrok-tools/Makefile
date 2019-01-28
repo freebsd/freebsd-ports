@@ -5,7 +5,7 @@ PORTVERSION=	1.1.2
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	python@FreeBSD.org
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	OpenGrok tools for synchronization and mirroring
 
 LICENSE=	CDDL
