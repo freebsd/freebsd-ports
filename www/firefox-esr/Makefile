@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	60.4.0
+DISTVERSION=	60.5.0
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
@@ -15,7 +15,7 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.19:devel/nspr \
-		nss>=3.36.1:security/nss \
+		nss>=3.36.7:security/nss \
 		icu>=59.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
 		harfbuzz>=1.7.6:print/harfbuzz \

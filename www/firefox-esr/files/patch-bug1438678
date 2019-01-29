@@ -82,7 +82,7 @@ index e27f3eedc1b1..60be7005354b 100644
  
  #include "ContentParent.h"
  #include "TabParent.h"
-@@ -1998,61 +1999,56 @@ ContentParent::LaunchSubprocess(ProcessPriority aInitialPriority /* = PROCESS_PR
+@@ -1857,64 +1858,56 @@ bool ContentParent::LaunchSubprocess(
    extraArgs.push_back(idStr);
    extraArgs.push_back(IsForBrowser() ? "-isForBrowser" : "-notForBrowser");
  
@@ -100,31 +100,34 @@ index e27f3eedc1b1..60be7005354b 100644
  
 -  for (unsigned int i = 0; i < prefsLen; i++) {
 -    const char* prefName = ContentPrefs::GetEarlyPref(i);
--    MOZ_ASSERT(i == 0 || strcmp(prefName, ContentPrefs::GetEarlyPref(i - 1)) > 0,
--               "Content process preferences should be sorted alphabetically.");
+-    MOZ_ASSERT(
+-        i == 0 || strcmp(prefName, ContentPrefs::GetEarlyPref(i - 1)) > 0,
+-        "Content process preferences should be sorted alphabetically.");
 -
 -    if (!Preferences::MustSendToContentProcesses(prefName)) {
 -      continue;
 -    }
 -
 -    switch (Preferences::GetType(prefName)) {
--    case nsIPrefBranch::PREF_INT:
--      intPrefs.Append(nsPrintfCString("%u:%d|", i, Preferences::GetInt(prefName)));
--      break;
--    case nsIPrefBranch::PREF_BOOL:
--      boolPrefs.Append(nsPrintfCString("%u:%d|", i, Preferences::GetBool(prefName)));
--      break;
--    case nsIPrefBranch::PREF_STRING: {
--      nsAutoCString value;
--      Preferences::GetCString(prefName, value);
--      stringPrefs.Append(nsPrintfCString("%u:%d;%s|", i, value.Length(), value.get()));
--      }
--      break;
--    case nsIPrefBranch::PREF_INVALID:
--      break;
--    default:
--      printf("preference type: %x\n", Preferences::GetType(prefName));
--      MOZ_CRASH();
+-      case nsIPrefBranch::PREF_INT:
+-        intPrefs.Append(
+-            nsPrintfCString("%u:%d|", i, Preferences::GetInt(prefName)));
+-        break;
+-      case nsIPrefBranch::PREF_BOOL:
+-        boolPrefs.Append(
+-            nsPrintfCString("%u:%d|", i, Preferences::GetBool(prefName)));
+-        break;
+-      case nsIPrefBranch::PREF_STRING: {
+-        nsAutoCString value;
+-        Preferences::GetCString(prefName, value);
+-        stringPrefs.Append(
+-            nsPrintfCString("%u:%d;%s|", i, value.Length(), value.get()));
+-      } break;
+-      case nsIPrefBranch::PREF_INVALID:
+-        break;
+-      default:
+-        printf("preference type: %x\n", Preferences::GetType(prefName));
+-        MOZ_CRASH();
 -    }
 +  // Set up the shared memory.
 +  base::SharedMemory shm;
@@ -133,12 +136,12 @@ index e27f3eedc1b1..60be7005354b 100644
 +    NS_ERROR("failed to create shared memory in the parent");
 +    MarkAsDead();
 +    return false;
-+  }
+   }
 +  if (!shm.Map(prefs.Length())) {
 +    NS_ERROR("failed to map shared memory in the parent");
 +    MarkAsDead();
 +    return false;
-   }
++  }
  
 -  nsCString schedulerPrefs = Scheduler::GetPrefs();
 +  // Copy the serialized prefs into the shared memory.
@@ -164,7 +167,7 @@ index e27f3eedc1b1..60be7005354b 100644
 +  mSubprocess->AddHandleToShare(prefsHandle);
 +  extraArgs.push_back("-prefsHandle");
 +  extraArgs.push_back(
-+    nsPrintfCString("%zu", reinterpret_cast<uintptr_t>(prefsHandle)).get());
++      nsPrintfCString("%zu", reinterpret_cast<uintptr_t>(prefsHandle)).get());
 +#else
 +  // In contrast, Unix fds are per-process. So remap the fd to a fixed one that
 +  // will be used in the child.
@@ -175,18 +178,18 @@ index e27f3eedc1b1..60be7005354b 100644
 +  // remapping so it doesn't get closed in the child.
 +  mSubprocess->AddFdToRemap(shm.handle().fd, kPrefsFileDescriptor);
 +#endif
-+
+ 
 +  // Pass the length via a command flag.
 +  extraArgs.push_back("-prefsLen");
 +  extraArgs.push_back(nsPrintfCString("%zu", uintptr_t(prefs.Length())).get());
- 
++
    // Scheduler prefs need to be handled differently because the scheduler needs
    // to start up in the content process before the normal preferences service.
 +  nsCString schedulerPrefs = Scheduler::GetPrefs();
    extraArgs.push_back("-schedulerPrefs");
    extraArgs.push_back(schedulerPrefs.get());
  
-@@ -2061,6 +2057,7 @@ ContentParent::LaunchSubprocess(ProcessPriority aInitialPriority /* = PROCESS_PR
+@@ -1923,6 +1916,7 @@ bool ContentParent::LaunchSubprocess(
    }
  
    if (!mSubprocess->LaunchAndWaitForProcessHandle(extraArgs)) {
@@ -215,24 +218,18 @@ index e3c1f16910c6..2441c8cb9224 100644
  #include "mozilla/SandboxSettings.h"
  #include "nsAppDirectoryServiceDefs.h"
  #include "nsDirectoryService.h"
-@@ -81,6 +82,16 @@ SetUpSandboxEnvironment()
+@@ -76,14 +77,21 @@ static void SetUpSandboxEnvironment() {
  }
  #endif
  
 +#ifdef ANDROID
 +static int gPrefsFd = -1;
 +
-+void
-+SetPrefsFd(int aFd)
-+{
-+  gPrefsFd = aFd;
-+}
++void SetPrefsFd(int aFd) { gPrefsFd = aFd; }
 +#endif
 +
- bool
- ContentProcess::Init(int aArgc, char* aArgv[])
- {
-@@ -88,9 +99,10 @@ ContentProcess::Init(int aArgc, char* aArgv[])
+ bool ContentProcess::Init(int aArgc, char* aArgv[]) {
+   // If passed in grab the application path for xpcom init
    bool foundAppdir = false;
    bool foundChildID = false;
    bool foundIsForBrowser = false;
@@ -246,7 +243,7 @@ index e3c1f16910c6..2441c8cb9224 100644
    bool foundSchedulerPrefs = false;
  
    uint64_t childID;
-@@ -103,7 +115,8 @@ ContentProcess::Init(int aArgc, char* aArgv[])
+@@ -96,7 +104,8 @@ bool ContentProcess::Init(int aArgc, char* aArgv[]) {
  #endif
  
    char* schedulerPrefs = nullptr;
@@ -256,17 +253,20 @@ index e3c1f16910c6..2441c8cb9224 100644
    for (int idx = aArgc; idx > 0; idx--) {
      if (!aArgv[idx]) {
        continue;
-@@ -134,54 +147,24 @@ ContentProcess::Init(int aArgc, char* aArgv[])
+@@ -128,55 +137,24 @@ bool ContentProcess::Init(int aArgc, char* aArgv[]) {
        }
        isForBrowser = strcmp(aArgv[idx], "-notForBrowser");
        foundIsForBrowser = true;
 -    } else if (!strcmp(aArgv[idx], "-intPrefs")) {
--      char* str = aArgv[idx + 1];
++#ifdef XP_WIN
++    } else if (!strcmp(aArgv[idx], "-prefsHandle")) {
+       char* str = aArgv[idx + 1];
 -      while (*str) {
 -        int32_t index = strtol(str, &str, 10);
 -        MOZ_ASSERT(str[0] == ':');
 -        str++;
--        MaybePrefValue value(PrefValue(static_cast<int32_t>(strtol(str, &str, 10))));
+-        MaybePrefValue value(
+-            PrefValue(static_cast<int32_t>(strtol(str, &str, 10))));
 -        MOZ_ASSERT(str[0] == '|');
 -        str++;
 -        // XXX: we assume these values as default values, which may not be
@@ -278,8 +278,14 @@ index e3c1f16910c6..2441c8cb9224 100644
 -      }
 -      foundIntPrefs = true;
 -    } else if (!strcmp(aArgv[idx], "-boolPrefs")) {
-+#ifdef XP_WIN
-+    } else if (!strcmp(aArgv[idx], "-prefsHandle")) {
++      MOZ_ASSERT(str[0] != '\0');
++      // ContentParent uses %zu to print a word-sized unsigned integer. So even
++      // though strtoull() returns a long long int, it will fit in a uintptr_t.
++      prefsHandle = reinterpret_cast<HANDLE>(strtoull(str, &str, 10));
++      MOZ_ASSERT(str[0] == '\0');
++      foundPrefsHandle = true;
++#endif
++    } else if (!strcmp(aArgv[idx], "-prefsLen")) {
        char* str = aArgv[idx + 1];
 -      while (*str) {
 -        int32_t index = strtol(str, &str, 10);
@@ -294,15 +300,7 @@ index e3c1f16910c6..2441c8cb9224 100644
 -      }
 -      foundBoolPrefs = true;
 -    } else if (!strcmp(aArgv[idx], "-stringPrefs")) {
-+      MOZ_ASSERT(str[0] != '\0');
-+      // ContentParent uses %zu to print a word-sized unsigned integer. So even
-+      // though strtoull() returns a long long int, it will fit in a uintptr_t.
-+      prefsHandle = reinterpret_cast<HANDLE>(strtoull(str, &str, 10));
-+      MOZ_ASSERT(str[0] == '\0');
-+      foundPrefsHandle = true;
-+#endif
-+    } else if (!strcmp(aArgv[idx], "-prefsLen")) {
-       char* str = aArgv[idx + 1];
+-      char* str = aArgv[idx + 1];
 -      while (*str) {
 -        int32_t index = strtol(str, &str, 10);
 -        MOZ_ASSERT(str[0] == ':');
@@ -327,25 +325,22 @@ index e3c1f16910c6..2441c8cb9224 100644
      } else if (!strcmp(aArgv[idx], "-schedulerPrefs")) {
        schedulerPrefs = aArgv[idx + 1];
        foundSchedulerPrefs = true;
-@@ -209,21 +192,43 @@ ContentProcess::Init(int aArgc, char* aArgv[])
-     bool allFound = foundAppdir
-                  && foundChildID
-                  && foundIsForBrowser
--                 && foundIntPrefs
--                 && foundBoolPrefs
--                 && foundStringPrefs
--                 && foundSchedulerPrefs;
+@@ -201,19 +179,42 @@ bool ContentProcess::Init(int aArgc, char* aArgv[]) {
+ #endif /* XP_MACOSX && MOZ_CONTENT_SANDBOX */
+ 
+     bool allFound = foundAppdir && foundChildID && foundIsForBrowser &&
+-                    foundIntPrefs && foundBoolPrefs && foundStringPrefs &&
+-                    foundSchedulerPrefs;
 -
-+                 && foundPrefsLen
-+                 && foundSchedulerPrefs
++                    foundPrefsLen && foundSchedulerPrefs
 +#ifdef XP_WIN
-+                 && foundPrefsHandle
++                    && foundPrefsHandle
 +#endif
  #if defined(XP_MACOSX) && defined(MOZ_CONTENT_SANDBOX)
 -    allFound &= foundProfile;
-+                 && foundProfile
++                    && foundProfile
  #endif
-+                 && true;
++                    && true;
  
      if (allFound) {
        break;
@@ -376,13 +371,13 @@ index e3c1f16910c6..2441c8cb9224 100644
 +                                           prefsLen);
 +
    Scheduler::SetPrefs(schedulerPrefs);
-   mContent.Init(IOThreadChild::message_loop(),
-                 ParentPid(),
+   mContent.Init(IOThreadChild::message_loop(), ParentPid(),
+                 IOThreadChild::channel(), childID, isForBrowser);
 diff --git dom/ipc/ContentProcess.h dom/ipc/ContentProcess.h
 index a3854c761e10..6582c94da496 100644
 --- dom/ipc/ContentProcess.h
 +++ dom/ipc/ContentProcess.h
-@@ -49,6 +49,11 @@ private:
+@@ -45,6 +45,11 @@ class ContentProcess : public mozilla::ipc::ProcessChi
    DISALLOW_EVIL_CONSTRUCTORS(ContentProcess);
  };
  
@@ -391,18 +386,19 @@ index a3854c761e10..6582c94da496 100644
 +void SetPrefsFd(int aFd);
 +#endif
 +
- } // namespace dom
- } // namespace mozilla
+ }  // namespace dom
+ }  // namespace mozilla
  
 diff --git ipc/chromium/src/base/process_util_win.cc ipc/chromium/src/base/process_util_win.cc
 index 3ed54cd744ac..46667985cd71 100644
 --- ipc/chromium/src/base/process_util_win.cc
 +++ ipc/chromium/src/base/process_util_win.cc
-@@ -354,6 +354,10 @@ bool LaunchApp(const std::wstring& cmdline,
+@@ -320,6 +320,11 @@ bool LaunchApp(const std::wstring& cmdline, const Laun
    LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList = NULL;
    std::vector<HANDLE> handlesToInherit;
    for (HANDLE h : options.handles_to_inherit) {
-+    if (SetHandleInformation(h, HANDLE_FLAG_INHERIT, HANDLE_FLAG_INHERIT) == 0) {
++    if (SetHandleInformation(h, HANDLE_FLAG_INHERIT, HANDLE_FLAG_INHERIT) ==
++        0) {
 +      MOZ_DIAGNOSTIC_ASSERT(false, "SetHandleInformation failed");
 +      return false;
 +    }
@@ -413,19 +409,19 @@ diff --git ipc/glue/GeckoChildProcessHost.cpp ipc/glue/GeckoChildProcessHost.cpp
 index d18ed9edd4ca..3be1c51d10bb 100644
 --- ipc/glue/GeckoChildProcessHost.cpp
 +++ ipc/glue/GeckoChildProcessHost.cpp
-@@ -1030,9 +1030,6 @@ GeckoChildProcessHost::PerformAsyncLaunchInternal(std::vector<std::string>& aExt
+@@ -1018,9 +1018,6 @@ bool GeckoChildProcessHost::PerformAsyncLaunchInternal
  
    if (!CrashReporter::IsDummy()) {
      PROsfd h = PR_FileDesc2NativeHandle(crashAnnotationWritePipe);
--# if defined(MOZ_SANDBOX)
+-#if defined(MOZ_SANDBOX)
 -    mSandboxBroker.AddHandleToShare(reinterpret_cast<HANDLE>(h));
--# endif // defined(MOZ_SANDBOX)
+-#endif  // defined(MOZ_SANDBOX)
      mLaunchOptions->handles_to_inherit.push_back(reinterpret_cast<HANDLE>(h));
      std::string hStr = std::to_string(h);
      cmdLine.AppendLooseValue(UTF8ToWide(hStr));
-@@ -1043,6 +1040,11 @@ GeckoChildProcessHost::PerformAsyncLaunchInternal(std::vector<std::string>& aExt
+@@ -1031,6 +1028,11 @@ bool GeckoChildProcessHost::PerformAsyncLaunchInternal
  
- # if defined(MOZ_SANDBOX)
+ #if defined(MOZ_SANDBOX)
    if (shouldSandboxCurrentProcess) {
 +    // Mark the handles to inherit as inheritable.
 +    for (HANDLE h : mLaunchOptions->handles_to_inherit) {
@@ -434,24 +430,25 @@ index d18ed9edd4ca..3be1c51d10bb 100644
 +
      if (mSandboxBroker.LaunchApp(cmdLine.program().c_str(),
                                   cmdLine.command_line_string().c_str(),
-                                  mLaunchOptions->env_map,
-@@ -1180,7 +1182,7 @@ GeckoChildProcessHost::LaunchAndroidService(const char* type,
-                                             const base::file_handle_mapping_vector& fds_to_remap,
-                                             ProcessHandle* process_handle)
- {
+                                  mLaunchOptions->env_map, mProcessType,
+@@ -1154,7 +1156,7 @@ void GeckoChildProcessHost::LaunchAndroidService(
+     const char* type, const std::vector<std::string>& argv,
+     const base::file_handle_mapping_vector& fds_to_remap,
+     ProcessHandle* process_handle) {
 -  MOZ_ASSERT((fds_to_remap.size() > 0) && (fds_to_remap.size() <= 3));
 +  MOZ_RELEASE_ASSERT((2 <= fds_to_remap.size()) && (fds_to_remap.size() <= 4));
    JNIEnv* const env = mozilla::jni::GetEnvForThread();
    MOZ_ASSERT(env);
  
-@@ -1189,21 +1191,25 @@ GeckoChildProcessHost::LaunchAndroidService(const char* type,
+@@ -1164,23 +1166,26 @@ void GeckoChildProcessHost::LaunchAndroidService(
    for (int ix = 0; ix < argvSize; ix++) {
      jargs->SetElement(ix, jni::StringParam(argv[ix].c_str(), env));
    }
 -  base::file_handle_mapping_vector::const_iterator it = fds_to_remap.begin();
 -  int32_t ipcFd = it->first;
 -  it++;
--  // If the Crash Reporter is disabled, there will not be a second file descriptor.
+-  // If the Crash Reporter is disabled, there will not be a second file
+-  // descriptor.
 +
 +  // XXX: this processing depends entirely on the internals of
 +  // ContentParent::LaunchSubprocess()
@@ -475,9 +472,11 @@ index d18ed9edd4ca..3be1c51d10bb 100644
 +    crashFd = fds_to_remap[2].first;
 +    crashAnnotationFd = fds_to_remap[3].first;
    }
--  int32_t handle = java::GeckoProcessManager::Start(type, jargs, ipcFd, crashFd, crashAnnotationFd);
+-  int32_t handle = java::GeckoProcessManager::Start(type, jargs, ipcFd, crashFd,
+-                                                    crashAnnotationFd);
 +
-+  int32_t handle = java::GeckoProcessManager::Start(type, jargs, prefsFd, ipcFd, crashFd, crashAnnotationFd);
++  int32_t handle = java::GeckoProcessManager::Start(type, jargs, prefsFd, ipcFd,
++                                                    crashFd, crashAnnotationFd);
  
    if (process_handle) {
      *process_handle = handle;
@@ -485,8 +484,8 @@ diff --git ipc/glue/GeckoChildProcessHost.h ipc/glue/GeckoChildProcessHost.h
 index 631c42066bc7..0345e221abcc 100644
 --- ipc/glue/GeckoChildProcessHost.h
 +++ ipc/glue/GeckoChildProcessHost.h
-@@ -103,6 +103,16 @@ public:
-   }
+@@ -94,6 +94,16 @@ class GeckoChildProcessHost : public ChildProcessHost 
+   task_t GetChildTask() { return mChildTask; }
  #endif
  
 +#ifdef XP_WIN
@@ -676,22 +675,22 @@ diff --git modules/libpref/Preferences.cpp modules/libpref/Preferences.cpp
 index 330ed4a09b54..b884591c9271 100644
 --- modules/libpref/Preferences.cpp
 +++ modules/libpref/Preferences.cpp
-@@ -2920,7 +2920,7 @@ public:
+@@ -2637,7 +2637,7 @@ class AddPreferencesMemoryReporterRunnable : public Ru
  
- } // namespace
+ }  // namespace
  
 -// A list of prefs sent early from the parent, via the command line.
 +// A list of prefs sent early from the parent, via shared memory.
  static InfallibleTArray<dom::Pref>* gEarlyDomPrefs;
  
  /* static */ already_AddRefed<Preferences>
-@@ -3081,11 +3081,130 @@ NS_IMPL_ISUPPORTS(Preferences,
+@@ -2782,12 +2782,123 @@ Preferences::~Preferences() {
+ NS_IMPL_ISUPPORTS(Preferences, nsIPrefService, nsIObserver, nsIPrefBranch,
                    nsISupportsWeakReference)
  
- /* static */ void
--Preferences::SetEarlyPreferences(const nsTArray<dom::Pref>* aDomPrefs)
-+Preferences::SerializeEarlyPreferences(nsCString& aStr)
-+{
+-/* static */ void Preferences::SetEarlyPreferences(
+-    const nsTArray<dom::Pref>* aDomPrefs) {
++/* static */ void Preferences::SerializeEarlyPreferences(nsCString& aStr) {
 +  MOZ_RELEASE_ASSERT(InitStaticMembers());
 +
 +  nsAutoCStringN<256> boolPrefs, intPrefs, stringPrefs;
@@ -711,17 +710,17 @@ index 330ed4a09b54..b884591c9271 100644
 +    switch (pref->Type()) {
 +      case PrefType::Bool:
 +        boolPrefs.Append(
-+          nsPrintfCString("%u:%d|", i, Preferences::GetBool(prefName)));
++            nsPrintfCString("%u:%d|", i, Preferences::GetBool(prefName)));
 +        break;
 +      case PrefType::Int:
 +        intPrefs.Append(
-+          nsPrintfCString("%u:%d|", i, Preferences::GetInt(prefName)));
++            nsPrintfCString("%u:%d|", i, Preferences::GetInt(prefName)));
 +        break;
 +      case PrefType::String: {
 +        nsAutoCString value;
 +        Preferences::GetCString(prefName, value);
 +        stringPrefs.Append(
-+          nsPrintfCString("%u:%d;%s|", i, value.Length(), value.get()));
++            nsPrintfCString("%u:%d;%s|", i, value.Length(), value.get()));
 +      } break;
 +      case PrefType::None:
 +        break;
@@ -741,15 +740,14 @@ index 330ed4a09b54..b884591c9271 100644
 +  aStr.Append('\0');
 +}
 +
-+/* static */ void
-+Preferences::DeserializeEarlyPreferences(char* aStr, size_t aStrLen)
- {
++/* static */ void Preferences::DeserializeEarlyPreferences(char* aStr,
++                                                           size_t aStrLen) {
    MOZ_ASSERT(!XRE_IsParentProcess());
  
 -  gEarlyDomPrefs = new InfallibleTArray<dom::Pref>(mozilla::Move(*aDomPrefs));
 +  MOZ_ASSERT(!gEarlyDomPrefs);
 +  gEarlyDomPrefs = new InfallibleTArray<dom::Pref>();
-+
+ 
 +  char* p = aStr;
 +
 +  // XXX: we assume these pref values are default values, which may not be
@@ -767,9 +765,7 @@ index 330ed4a09b54..b884591c9271 100644
 +    MOZ_ASSERT(p[0] == '|');
 +    p++;
 +    dom::Pref pref(nsCString(dom::ContentPrefs::GetEarlyPref(index)),
-+                   /* isLocked */ false,
-+                   value,
-+                   dom::MaybePrefValue());
++                   /* isLocked */ false, value, dom::MaybePrefValue());
 +    gEarlyDomPrefs->AppendElement(pref);
 +  }
 +  p++;
@@ -780,13 +776,11 @@ index 330ed4a09b54..b884591c9271 100644
 +    MOZ_ASSERT(p[0] == ':');
 +    p++;
 +    dom::MaybePrefValue value(
-+      dom::PrefValue(static_cast<int32_t>(strtol(p, &p, 10))));
++        dom::PrefValue(static_cast<int32_t>(strtol(p, &p, 10))));
 +    MOZ_ASSERT(p[0] == '|');
 +    p++;
 +    dom::Pref pref(nsCString(dom::ContentPrefs::GetEarlyPref(index)),
-+                   /* isLocked */ false,
-+                   value,
-+                   dom::MaybePrefValue());
++                   /* isLocked */ false, value, dom::MaybePrefValue());
 +    gEarlyDomPrefs->AppendElement(pref);
 +  }
 +  p++;
@@ -801,9 +795,7 @@ index 330ed4a09b54..b884591c9271 100644
 +    p++;
 +    dom::MaybePrefValue value(dom::PrefValue(nsCString(p, length)));
 +    dom::Pref pref(nsCString(dom::ContentPrefs::GetEarlyPref(index)),
-+                   /* isLocked */ false,
-+                   value,
-+                   dom::MaybePrefValue());
++                   /* isLocked */ false, value, dom::MaybePrefValue());
 +    gEarlyDomPrefs->AppendElement(pref);
 +    p += length + 1;
 +    MOZ_ASSERT(*(p - 1) == '|');
@@ -815,25 +807,25 @@ index 330ed4a09b54..b884591c9271 100644
 +  // We finished parsing on a '\0'. That should be the last char in the shared
 +  // memory.
 +  MOZ_ASSERT(aStr + aStrLen - 1 == p);
- 
++
  #ifdef DEBUG
    MOZ_ASSERT(gPhase == ContentProcessPhase::eNoPrefsSet);
-@@ -4298,15 +4417,6 @@ Preferences::HasUserValue(const char* aPrefName)
-   return pref && pref->HasUserValue();
- }
+   gPhase = ContentProcessPhase::eEarlyPrefsSet;
+@@ -3894,14 +4005,6 @@ static nsresult pref_ReadPrefFromJar(nsZipArchive* aJa
  
--/* static */ bool
--Preferences::MustSendToContentProcesses(const char* aPrefName)
--{
+   Pref* pref = pref_HashTableLookup(aPrefName);
+   return pref && pref->HasUserValue();
+-}
+-
+-/* static */ bool Preferences::MustSendToContentProcesses(
+-    const char* aPrefName) {
 -  NS_ENSURE_TRUE(InitStaticMembers(), false);
 -
 -  Pref* pref = pref_HashTableLookup(aPrefName);
 -  return pref && pref->MustSendToContentProcesses();
--}
--
- /* static */ int32_t
- Preferences::GetType(const char* aPrefName)
- {
+ }
+ 
+ /* static */ int32_t Preferences::GetType(const char* aPrefName) {
 diff --git modules/libpref/Preferences.h modules/libpref/Preferences.h
 index 1cb825ecbfe5..c149db62b525 100644
 --- modules/libpref/Preferences.h
@@ -848,9 +840,9 @@ index 1cb825ecbfe5..c149db62b525 100644
 +#endif
 +
  // Keep this in sync with PrefType in parser/src/lib.rs.
- enum class PrefValueKind : uint8_t
- {
-@@ -230,9 +235,6 @@ public:
+ enum class PrefValueKind : uint8_t { Default, User };
+ 
+@@ -191,9 +196,6 @@ class Preferences final : public nsIPrefService,
    // Whether the pref has a user value or not.
    static bool HasUserValue(const char* aPref);
  
@@ -860,7 +852,7 @@ index 1cb825ecbfe5..c149db62b525 100644
    // Adds/Removes the observer for the root pref branch. See nsIPrefBranch.idl
    // for details.
    static nsresult AddStrongObserver(nsIObserver* aObserver, const char* aPref);
-@@ -328,11 +330,12 @@ public:
+@@ -277,11 +279,12 @@ class Preferences final : public nsIPrefService,
  
    // When a content process is created these methods are used to pass prefs in
    // bulk from the parent process. "Early" preferences are ones that are needed
@@ -881,21 +873,23 @@ diff --git mozglue/android/APKOpen.cpp mozglue/android/APKOpen.cpp
 index 5f1ef55b605e..b57192488725 100644
 --- mozglue/android/APKOpen.cpp
 +++ mozglue/android/APKOpen.cpp
-@@ -392,7 +392,7 @@ FreeArgv(char** argv, int argc)
- }
- 
+@@ -378,7 +378,8 @@ static void FreeArgv(char** argv, int argc) {
  extern "C" APKOPEN_EXPORT void MOZ_JNICALL
--Java_org_mozilla_gecko_mozglue_GeckoLoader_nativeRun(JNIEnv *jenv, jclass jc, jobjectArray jargs, int ipcFd, int crashFd, int crashAnnotationFd)
-+Java_org_mozilla_gecko_mozglue_GeckoLoader_nativeRun(JNIEnv *jenv, jclass jc, jobjectArray jargs, int prefsFd, int ipcFd, int crashFd, int crashAnnotationFd)
- {
+ Java_org_mozilla_gecko_mozglue_GeckoLoader_nativeRun(JNIEnv* jenv, jclass jc,
+                                                      jobjectArray jargs,
+-                                                     int ipcFd, int crashFd,
++                                                     int prefsFd, int ipcFd,
++                                                     int crashFd,
+                                                      int crashAnnotationFd) {
    int argc = 0;
    char** argv = CreateArgvFromObjectArray(jenv, jargs, &argc);
-@@ -407,7 +407,7 @@ Java_org_mozilla_gecko_mozglue_GeckoLoader_nativeRun(JNIEnv *jenv, jclass jc, jo
+@@ -393,7 +394,8 @@ Java_org_mozilla_gecko_mozglue_GeckoLoader_nativeRun(J
      gBootstrap->GeckoStart(jenv, argv, argc, sAppData);
      ElfLoader::Singleton.ExpectShutdown(true);
    } else {
 -    gBootstrap->XRE_SetAndroidChildFds(jenv, ipcFd, crashFd, crashAnnotationFd);
-+    gBootstrap->XRE_SetAndroidChildFds(jenv, prefsFd, ipcFd, crashFd, crashAnnotationFd);
++    gBootstrap->XRE_SetAndroidChildFds(jenv, prefsFd, ipcFd, crashFd,
++                                       crashAnnotationFd);
      gBootstrap->XRE_SetProcessType(argv[argc - 1]);
  
      XREChildData childData;
@@ -903,14 +897,17 @@ diff --git toolkit/xre/Bootstrap.cpp toolkit/xre/Bootstrap.cpp
 index 5688519822a9..7e857969a4fb 100644
 --- toolkit/xre/Bootstrap.cpp
 +++ toolkit/xre/Bootstrap.cpp
-@@ -78,8 +78,8 @@ public:
+@@ -71,9 +71,11 @@ class BootstrapImpl final : public Bootstrap {
      ::GeckoStart(aEnv, argv, argc, aAppData);
    }
  
--  virtual void XRE_SetAndroidChildFds(JNIEnv* aEnv, int aIPCFd, int aCrashFd, int aCrashAnnotationFd) override {
+-  virtual void XRE_SetAndroidChildFds(JNIEnv* aEnv, int aIPCFd, int aCrashFd,
++  virtual void XRE_SetAndroidChildFds(JNIEnv* aEnv, int aPrefsFd, int aIPCFd,
++                                      int aCrashFd,
+                                       int aCrashAnnotationFd) override {
 -    ::XRE_SetAndroidChildFds(aEnv, aIPCFd, aCrashFd, aCrashAnnotationFd);
-+  virtual void XRE_SetAndroidChildFds(JNIEnv* aEnv, int aPrefsFd, int aIPCFd, int aCrashFd, int aCrashAnnotationFd) override {
-+    ::XRE_SetAndroidChildFds(aEnv, aPrefsFd, aIPCFd, aCrashFd, aCrashAnnotationFd);
++    ::XRE_SetAndroidChildFds(aEnv, aPrefsFd, aIPCFd, aCrashFd,
++                             aCrashAnnotationFd);
    }
  #endif
  
@@ -918,12 +915,14 @@ diff --git toolkit/xre/Bootstrap.h toolkit/xre/Bootstrap.h
 index 686d0a38e324..77adcef80e1f 100644
 --- toolkit/xre/Bootstrap.h
 +++ toolkit/xre/Bootstrap.h
-@@ -113,7 +113,7 @@ public:
- #ifdef MOZ_WIDGET_ANDROID
-   virtual void GeckoStart(JNIEnv* aEnv, char** argv, int argc, const StaticXREAppData& aAppData) = 0;
+@@ -112,8 +112,8 @@ class Bootstrap {
+   virtual void GeckoStart(JNIEnv* aEnv, char** argv, int argc,
+                           const StaticXREAppData& aAppData) = 0;
  
--  virtual void XRE_SetAndroidChildFds(JNIEnv* aEnv, int aIPCFd, int aCrashFd, int aCrashAnnotationFd) = 0;
-+  virtual void XRE_SetAndroidChildFds(JNIEnv* aEnv, int aPrefsFd, int aIPCFd, int aCrashFd, int aCrashAnnotationFd) = 0;
+-  virtual void XRE_SetAndroidChildFds(JNIEnv* aEnv, int aIPCFd, int aCrashFd,
+-                                      int aCrashAnnotationFd) = 0;
++  virtual void XRE_SetAndroidChildFds(JNIEnv* aEnv, int aPrefsFd, int aIPCFd,
++                                      int aCrashFd, int aCrashAnnotationFd) = 0;
  #endif
  
  #ifdef LIBFUZZER
@@ -931,13 +930,13 @@ diff --git toolkit/xre/nsEmbedFunctions.cpp toolkit/xre/nsEmbedFunctions.cpp
 index 53bd2bc2eb47..83184e97ba92 100644
 --- toolkit/xre/nsEmbedFunctions.cpp
 +++ toolkit/xre/nsEmbedFunctions.cpp
-@@ -243,9 +243,10 @@ GeckoProcessType sChildProcessType = GeckoProcessType_Default;
+@@ -226,9 +226,10 @@ GeckoProcessType sChildProcessType = GeckoProcessType_
+ }  // namespace mozilla
  
  #if defined(MOZ_WIDGET_ANDROID)
- void
--XRE_SetAndroidChildFds (JNIEnv* env, int ipcFd, int crashFd, int crashAnnotationFd)
-+XRE_SetAndroidChildFds (JNIEnv* env, int prefsFd, int ipcFd, int crashFd, int crashAnnotationFd)
- {
+-void XRE_SetAndroidChildFds(JNIEnv* env, int ipcFd, int crashFd,
++void XRE_SetAndroidChildFds(JNIEnv* env, int prefsFd, int ipcFd, int crashFd,
+                             int crashAnnotationFd) {
    mozilla::jni::SetGeckoThreadEnv(env);
 +  mozilla::dom::SetPrefsFd(prefsFd);
    IPC::Channel::SetClientChannelFd(ipcFd);
@@ -989,12 +988,13 @@ diff --git xpcom/build/nsXULAppAPI.h xpcom/build/nsXULAppAPI.h
 index 94f6daf864c9..d6ac10d51d76 100644
 --- xpcom/build/nsXULAppAPI.h
 +++ xpcom/build/nsXULAppAPI.h
-@@ -398,7 +398,7 @@ XRE_API(const char*,
+@@ -378,7 +378,8 @@ XRE_API(const char*, XRE_ChildProcessTypeToString,
  
  #if defined(MOZ_WIDGET_ANDROID)
- XRE_API(void,
--        XRE_SetAndroidChildFds, (JNIEnv* env, int ipcFd, int crashFd, int crashAnnotationFd))
-+        XRE_SetAndroidChildFds, (JNIEnv* env, int prefsFd, int ipcFd, int crashFd, int crashAnnotationFd))
- #endif // defined(MOZ_WIDGET_ANDROID)
+ XRE_API(void, XRE_SetAndroidChildFds,
+-        (JNIEnv * env, int ipcFd, int crashFd, int crashAnnotationFd))
++        (JNIEnv * env, int prefsFd, int ipcFd, int crashFd,
++         int crashAnnotationFd))
+ #endif  // defined(MOZ_WIDGET_ANDROID)
  
- XRE_API(void,
+ XRE_API(void, XRE_SetProcessType, (const char* aProcessTypeString))

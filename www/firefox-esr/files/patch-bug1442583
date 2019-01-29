@@ -21,19 +21,23 @@ index e763a9d68dc17..8a6d50b6a7845 100644
  
  #include "gc/Memory.h"
 +#ifdef JS_CODEGEN_ARM64
-+# include "jit/arm64/vixl/Cpu-vixl.h"
++#include "jit/arm64/vixl/Cpu-vixl.h"
 +#endif
  #include "threading/LockGuard.h"
  #include "threading/Mutex.h"
  #include "util/Windows.h"
-@@ -621,6 +624,10 @@ js::jit::DeallocateExecutableMemory(void* addr, size_t bytes)
- bool
- js::jit::InitProcessExecutableMemory()
- {
-+#ifdef JS_CODEGEN_ARM64
-+    // Initialize instruction cache flushing.
-+    vixl::CPU::SetUp();
-+#endif
-     return execMemory.init();
+@@ -574,7 +577,13 @@ void js::jit::DeallocateExecutableMemory(void* addr, s
+   execMemory.deallocate(addr, bytes, /* decommit = */ true);
  }
+ 
+-bool js::jit::InitProcessExecutableMemory() { return execMemory.init(); }
++bool js::jit::InitProcessExecutableMemory() {
++#ifdef JS_CODEGEN_ARM64
++  // Initialize instruction cache flushing.
++  vixl::CPU::SetUp();
++#endif
++  return execMemory.init();
++}
+ 
+ void js::jit::ReleaseProcessExecutableMemory() { execMemory.release(); }
  
