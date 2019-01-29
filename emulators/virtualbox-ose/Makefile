@@ -4,7 +4,7 @@
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.2.26
 CATEGORIES=	emulators
-MASTER_SITES=	http://download.virtualbox.org/virtualbox/${PORTVERSION}/
+MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
 EXTRACT_ONLY=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX}
 
