@@ -1,14 +1,15 @@
 # $FreeBSD$
 
-PORTNAME=	py-nomad
+PORTNAME=	python-nomad
 PORTVERSION=	0.5.0
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Python client for nomad
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.10.0:www/py-requests@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.10.0:www/py-requests@${PY_FLAVOR}
