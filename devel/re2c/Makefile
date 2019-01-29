@@ -9,6 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Compile regular expression to C (much faster final code than flex)
 
+LICENSE=	PD
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 GNU_CONFIGURE=	yes

@@ -5,4 +5,4 @@ typically almost twice as fast as a flex-based scanner with little or no
 increase in size (possibly a decrease on cisc architectures).  Indeed,
 re2c-based scanners are quite competitive with hand-crafted ones.
 
-WWW: http://re2c.sourceforge.net/
+WWW: http://re2c.org/
