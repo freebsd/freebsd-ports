@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mbuffer
-PORTVERSION=	20190119
+PORTVERSION=	20190127
 CATEGORIES=	misc
 MASTER_SITES=	http://www.maier-komor.de/software/mbuffer/
 
