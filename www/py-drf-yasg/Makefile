@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	drf-yasg
-DISTVERSION=	1.9.2
+DISTVERSION=	1.11.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Yet Another Swagger Generator
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.15.6:devel/py-setuptools_scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=3.0.6:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django111>=1.11.7:www/py-django111@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.7.7:www/py-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coreapi>=2.3.3:devel/py-coreapi@${PY_FLAVOR} \
@@ -30,9 +30,5 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
-
-post-patch:
-	# Unpin fixed versioning for py-setuptools_scm
-	@${REINPLACE_CMD} -e 's|==|>=|' ${WRKSRC}/requirements/setup.txt
 
 .include <bsd.port.mk>
