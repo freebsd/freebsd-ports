@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	sway
-DISTVERSION=	1.0-beta.2-274
-DISTVERSIONSUFFIX=	-g5f45a4bb
+DISTVERSION=	1.0-beta.2-287
+DISTVERSIONSUFFIX=	-g606f6a37
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.14:graphics/wayland-protocols \
-		wlroots>=0.2.155:x11-toolkits/wlroots
+		wlroots>=0.2.178:x11-toolkits/wlroots
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libevdev.so:devel/libevdev \
 		libpcre.so:devel/pcre \
@@ -33,7 +33,7 @@ OPTIONS_DEFINE=	MANPAGES PIXBUF SUID X11
 OPTIONS_DEFAULT=MANPAGES PIXBUF SUID X11
 OPTIONS_SUB=	yes
 
-MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
+MANPAGES_BUILD_DEPENDS=	scdoc>=1.8.0:textproc/scdoc
 MANPAGES_MESON_ON=	-Dman-pages=enabled
 MANPAGES_MESON_OFF=	-Dman-pages=disabled
 
