@@ -2555,6 +2555,7 @@
     SUBDIR += you-get
     SUBDIR += yourls
     SUBDIR += youtube_dl
+    SUBDIR += ytdl
     SUBDIR += yuicompressor
     SUBDIR += zend-framework
     SUBDIR += zend-framework1
