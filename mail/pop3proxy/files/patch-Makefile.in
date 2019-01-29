@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2004-04-21 13:30:34 UTC
++++ Makefile.in
+@@ -24,7 +24,7 @@ mandir = $(prefix)/man/man3
+ rpm_prefix = @rpm_prefix@
+ 
+ CC = @CC@
+-CPPFLAGS = @CPPFLAGS@ -DDEFAULT_CONFIG_FILE=\"/docsis/etc/pop3proxyd.conf\"
++CPPFLAGS = @CPPFLAGS@ -DDEFAULT_CONFIG_FILE=\"%%PREFIX%%/etc/pop3proxyd.conf\"
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+ DEFINES = @DEFINES@
