@@ -25,6 +25,7 @@
     SUBDIR += cytoscape
     SUBDIR += ddocent
     SUBDIR += diamond
+    SUBDIR += dsr-pdb
     SUBDIR += emboss
     SUBDIR += exonerate
     SUBDIR += fasta
