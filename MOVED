@@ -11565,3 +11565,4 @@ lang/clang35|devel/llvm70|2019-01-18|Removed, unmaintained and not depended on
 lang/clang-devel|devel/llvm-devel|2019-01-18|Unneeded metaport
 devel/py-easyconfig|devel/py-python-easyconfig|2019-01-28|Rename to reflect official Python modules naming scheme
 sysutils/py-nomad|sysutils/py-python-nomad|2019-01-25|renamed to match project name
+dns/py-bonjour|dns/py-pybonjour|2019-01-28|renamed to match project name
