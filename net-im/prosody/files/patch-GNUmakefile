@@ -1,6 +1,6 @@
---- Makefile.orig	2017-09-28 13:07:47 UTC
-+++ Makefile
-@@ -6,7 +6,7 @@ CONFIG = $(DESTDIR)$(SYSCONFDIR)
+--- GNUmakefile.orig	2018-12-01 14:51:46.042219000 +0000
++++ GNUmakefile	2018-12-01 14:52:30.212140000 +0000
+@@ -6,7 +6,7 @@
  MODULES = $(DESTDIR)$(LIBDIR)/prosody/modules
  SOURCE = $(DESTDIR)$(LIBDIR)/prosody
  DATA = $(DESTDIR)$(DATADIR)
@@ -9,7 +9,7 @@
  
  INSTALLEDSOURCE = $(LIBDIR)/prosody
  INSTALLEDCONFIG = $(SYSCONFDIR)
-@@ -53,7 +53,7 @@ install: prosody.install prosodyctl.install prosody.cf
+@@ -57,7 +57,7 @@
  	$(INSTALL_DATA) plugins/mod_mam/*.lua $(MODULES)/mod_mam
  	$(INSTALL_DATA) certs/* $(CONFIG)/certs
  	$(INSTALL_DATA) man/prosodyctl.man $(MAN)/man1/prosodyctl.1
