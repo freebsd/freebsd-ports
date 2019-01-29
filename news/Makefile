@@ -46,6 +46,7 @@
     SUBDIR += nntpcache
     SUBDIR += noffle
     SUBDIR += nzbget
+    SUBDIR += nzbhydra2
     SUBDIR += nzbperl
     SUBDIR += p5-NNTPClient
     SUBDIR += p5-News-Article
