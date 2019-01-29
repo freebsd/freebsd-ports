@@ -4,6 +4,7 @@
 %%CUE%%lib/cmus/ip/cue.so
 %%DATADIR%%/cyan.theme
 %%DATADIR%%/default.theme
+%%DATADIR%%/dracula.theme
 %%DATADIR%%/gray-88.theme
 %%DATADIR%%/green-mono-88.theme
 %%DATADIR%%/green.theme
