@@ -1,0 +1,4 @@
+ifaddr is a small Python library that allows you to find all the IP
+addresses of the computer.
+
+WWW: https://github.com/pydron/ifaddr
