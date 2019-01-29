@@ -1033,7 +1033,6 @@
     SUBDIR += py-iowait
     SUBDIR += py-mqttwarn
     SUBDIR += py-nagiosplugin
-    SUBDIR += py-nomad
     SUBDIR += py-packet-python
     SUBDIR += py-pkginfo
     SUBDIR += py-ploy
@@ -1046,6 +1045,7 @@
     SUBDIR += py-psutil
     SUBDIR += py-psutil121
     SUBDIR += py-ptyprocess
+    SUBDIR += py-python-nomad
     SUBDIR += py-pytsk
     SUBDIR += py-pywatchman
     SUBDIR += py-pyznap
