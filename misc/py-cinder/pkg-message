@@ -1,5 +1,17 @@
-Please note that this is a development version.
-Only initial NFS support was added.
+==============================================================================
 
-Enable NFS client in rc.conf
-# sysrc nfs_client_enable="YES"
+For installation instructions please refer to the related wiki page:
+
+- https://wiki.freebsd.org/Ports/misc/py-cinder
+
+Please note that this is a development version and only initial NFS support
+has been tested so far.
+
+The supplied cinder.conf file is a distilled configuration which reflects the
+required settings to setup a Cinder controller/storage node with NFS support.
+
+A extensive sample configuration file can be retrieved at:
+
+https://docs.openstack.org/cinder/queens/_static/cinder.conf.sample
+
+==============================================================================

@@ -33,7 +33,7 @@ rcvar=cinder_volume_enable
 PATH=%%PREFIX%%/bin:%%PREFIX%%/sbin:$PATH
 
 pidfile="/var/run/cinder-volume.pid"
-procname="%%PREFIX%%/bin/python2.7"
+procname="%%PREFIX%%/bin/python%%PYTHON_VER%%"
 
 start_precmd=cinder_precmd
 

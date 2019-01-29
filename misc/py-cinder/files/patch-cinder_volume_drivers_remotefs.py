@@ -1,29 +1,18 @@
-From 6c320b98634aa4d3d7b1e9f58b6ca19073cd0b32 Mon Sep 17 00:00:00 2001
-From: Alexander Nusov <alexander.nusov@nfvexpress.com>
-Date: Mon, 12 Dec 2016 13:49:04 +0300
-Subject: [PATCH] fix remotefs
-
----
- cinder/volume/drivers/remotefs.py | 11 +++++------
- 1 file changed, 5 insertions(+), 6 deletions(-)
-
-diff --git a/cinder/volume/drivers/remotefs.py b/cinder/volume/drivers/remotefs.py
-index 0160b0a..d263bf3 100644
---- a/cinder/volume/drivers/remotefs.py
-+++ b/cinder/volume/drivers/remotefs.py
-@@ -208,9 +208,9 @@ class RemoteFSDriver(driver.LocalVD, driver.TransferVD, driver.BaseVD):
+--- cinder/volume/drivers/remotefs.py.orig	2018-10-09 19:58:17 UTC
++++ cinder/volume/drivers/remotefs.py
+@@ -217,9 +217,9 @@ class RemoteFSDriver(driver.BaseVD):
          provisioned_size = 0.0
          for share in self.shares.keys():
              mount_path = self._get_mount_point_for_share(share)
--            out, _ = self._execute('du', '--bytes', mount_path,
+-            out, _ = self._execute('du', '--bytes', '-s', mount_path,
 +            out, _ = self._execute('du', '-k', mount_path,
-                                    run_as_root=True)
+                                    run_as_root=self._execute_as_root)
 -            provisioned_size += int(out.split()[0])
 +            provisioned_size += int(out.split()[0]) * 1024
          return round(provisioned_size / units.Gi, 2)
  
      def _get_mount_point_base(self):
-@@ -824,13 +824,12 @@ class RemoteFSSnapDriverBase(RemoteFSDriver, driver.SnapshotVD):
+@@ -892,13 +892,12 @@ class RemoteFSSnapDriverBase(RemoteFSDriver):
          """
          mount_point = self._get_mount_point_for_share(share)
  
@@ -40,6 +29,3 @@ index 0160b0a..d263bf3 100644
  
          return available, size
  
--- 
-2.8.1
-
