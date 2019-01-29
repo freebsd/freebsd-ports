@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	prosody
-PORTVERSION=	0.10.2
+PORTVERSION=	0.11.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://prosody.im/downloads/source/ \
 		http://redundancy.redundancy.org/mirror/
@@ -29,20 +29,23 @@ LDFLAGS+=	-L${OPENSSLLIB}
 CONFIGURE_ARGS=	--ostype=freebsd \
 		--c-compiler="${CC}" \
 		--linker="${CC}" \
-		--with-lua-include="${LUA_INCDIR}"
-CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}" \
-		PREFIX="${PREFIX}" \
-		LUA_SUFFIX="-${LUA_VER}" \
-		LUA_LIBDIR="${LUA_LIBDIR}" \
-		LUA_INCDIR="${LUA_INCDIR}"
+		--with-lua-include="${LUA_INCDIR}" \
+		--lua-suffix="${LUA_VER_STR}" \
+		--with-lua-include="${LUA_INCDIR}" \
+		--with-lua-lib="${LUA_LIBDIR}" \
+		--prefix="${PREFIX}" 
 
+MAKEFILE=       GNUmakefile
 USERS=		prosody
 GROUPS=		${USERS}
 
 USE_RC_SUBR=	prosody
 SUB_FILES=	pkg-deinstall
 SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS}
-PLIST_SUB=	PROSODY_USER=${USERS} PROSODY_GROUP=${GROUPS}
+PLIST_SUB=	PROSODY_USER=${USERS} \
+		PROSODY_USER_regex=\b${USERS}\b \
+		PROSODY_GROUP=${GROUPS} \
+		PROSODY_GROUP_regex=\b${GROUPS}\b
 
 OPTIONS_DEFINE=	LUAJIT
 LUAJIT_DESC=		Run prosody using luajit
