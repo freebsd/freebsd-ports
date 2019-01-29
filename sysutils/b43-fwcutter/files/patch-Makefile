@@ -1,14 +1,5 @@
 --- Makefile.orig	2011-08-21 20:17:01.000000000 +0800
 +++ Makefile	2014-02-21 09:40:52.782172201 +0800
-@@ -15,7 +15,7 @@
- QUIET_SPARSE	= @true
- endif
- 
--PREFIX ?= /usr/local
-+PREFIX ?= $(DESTDIR)$(PREFIX)
- CFLAGS		?= -Os -fomit-frame-pointer
- CFLAGS		+= -std=c99 -Wall -pedantic -D_BSD_SOURCE
- LDFLAGS		?=
 @@ -51,10 +51,10 @@
  	$(QUIET_CC) $(CFLAGS) -o $(BIN) $(call OBJS,$(SRCS)) $(LDFLAGS)
  
