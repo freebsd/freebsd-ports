@@ -158,6 +158,15 @@
      $cmd .= "; $::path{cat} $tmpfile $::z";
  
      # Buffer both sides if remote
+@@ -2670,7 +2688,7 @@ sub optioncheck {
+     }
+ 
+     # Flag old config file
+-    if (defined(@cfg::filesystems) or defined($cfg::mt_var_blksize)) {
++    if (@cfg::filesystems or defined($cfg::mt_var_blksize)) {
+ 	# so strict shuts up
+ 	my $junk = @cfg::filesystems;
+ 	$junk = $cfg::mt_var_blksize;
 @@ -2700,7 +2718,7 @@ sub optioncheck {
      # First check if things are defined in the config file
      # Checks exist, true/false, or one of options
@@ -186,7 +195,7 @@
 +    } elsif ($cfg::compress eq "lzma") {
 +	$::path{'lzma'} = &checkinpath($cfg::compress);
 +	push(@::remoteprogs, $::path{$cfg::compress});
-+	if ($cfg::compr_level !~ m/^[123456789]$/) {
++	if ($cfg::compr_level !~ m/^[0123456789]$/) {
 +	    push(@::errors,"\$compr_level must be set to 1-9");
 +	} else {
 +	    $::z = " | $::path{$cfg::compress} -$cfg::compr_level ";
@@ -218,6 +227,15 @@
  	# If buffering disabled, use dd or cat depending on if blocking turned off on not
  	if ($cfg::blksize eq '0') {
  	    $::buffer_cmd = "";
+@@ -3230,7 +3258,7 @@ sub optioncheck {
+ 	push(@::remoteprogs, $::path{'afio'});
+ 
+ 	# Compress flag for afio must be handled differently
+-	if ($cfg::compress =~ m/^(gzip|bzip2|lzop|compress|zip)$/) {
++	if ($cfg::compress =~ m/^(gzip|bzip2|lzop|compress|zip|lzma)$/) {
+ 
+ 	    if ($cfg::compress eq "gzip") {
+ 		$::afio_z_flag = "-P $::path{$cfg::compress} -Q -$cfg::compr_level -Z";
 @@ -3252,6 +3280,10 @@ sub optioncheck {
  		$::afio_z_flag = "-P $::path{$cfg::compress} -Q -c -Z";
  		$::afio_unz_flag = "-P $::path{$cfg::compress} -Q -d -Q -c -Z";
