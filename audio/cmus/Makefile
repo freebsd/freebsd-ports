@@ -3,14 +3,8 @@
 
 PORTNAME=	cmus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.0-rc0
-PORTREVISION=	9
+DISTVERSION=	2.8.0
 CATEGORIES=	audio
-DIST_SUBDIR=	cmus
-
-# Fixes for playback of 24-bit files with the sndio/OSS output plugins
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	6a85680.patch:-p1 0fb39d8.patch:-p1
 
 MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Console-based music player with really cool features
@@ -24,13 +18,16 @@ USE_GITHUB=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	prefix=${PREFIX} mandir=${MANPREFIX}/man \
 		exampledir=${EXAMPLESDIR}
-
 # So the build does not use gcc for compiling ttman
 CONFIGURE_ARGS+=	HOSTCC=${CC}
 
 # Verbose build makes it easier to spot problems
-MAKE_ARGS=	V=2 ${MAKE_ARGS_${ARCH:U}}
-MAKE_ARGS_powerpc=	COMPAT_LIBS="-latomic" # undefined reference to `__atomic_fetch_add_8'
+MAKE_ARGS=	ICONV_CFLAGS="-I${ICONV_INCLUDE_PATH}" \
+		ICONV_LIBS="-L${ICONV_PREFIX}/lib ${ICONV_LIB}" \
+		${MAKE_ARGS_${ARCH:U}} \
+		V=2
+# undefined reference to `__atomic_fetch_add_8'
+MAKE_ARGS_powerpc=	COMPAT_LIBS="-latomic"
 
 # Disable all configure options first.  These will be overwritten by
 # enabled port options later.  The args to cmus' configure script
@@ -38,7 +35,7 @@ MAKE_ARGS_powerpc=	COMPAT_LIBS="-latomic" # undefined reference to `__atomic_fet
 # previous assignments.  The options here appear in the same order as
 # ${WRKSRC}/configure --help.  Please keep it that way.
 _CMUS_CONFIGURE_OPTS=	AAC ALSA AO ARTS CDDB CDIO COREAUDIO CUE DISCID	\
-	FFMPEG FLAC JACK MAD MIKMOD MODPLUG MP4 MPC MPRIS OPUS OSS	\
+	FFMPEG FLAC JACK MAD MIKMOD BASS MODPLUG MP4 MPC MPRIS OPUS OSS	\
 	PULSE ROAR SAMPLERATE SNDIO SUN TREMOR VORBIS VTX WAVEOUT	\
 	WAVPACK WAV
 .for opt in ${_CMUS_CONFIGURE_OPTS}

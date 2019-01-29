@@ -1,7 +1,3 @@
-TIMESTAMP = 1490271541
-SHA256 (cmus/cmus-cmus-v2.8.0-rc0_GH0.tar.gz) = b594087f16053f4db49e89d72b1c6dbb12e221373e806e62b3e97c327de1dac9
-SIZE (cmus/cmus-cmus-v2.8.0-rc0_GH0.tar.gz) = 315613
-SHA256 (cmus/6a85680.patch) = 504c3c792be330d0f7bfda2101c4d7a24bd94aa38761def5e58f91d6fe081778
-SIZE (cmus/6a85680.patch) = 3400
-SHA256 (cmus/0fb39d8.patch) = 6b35f6e4e1a4e78598c3b125a764e2975298189467c82e868e19c6569901e3f7
-SIZE (cmus/0fb39d8.patch) = 785
+TIMESTAMP = 1548755814
+SHA256 (cmus-cmus-v2.8.0_GH0.tar.gz) = 756ce2c6241b2104dc19097488225de559ac1802a175be0233cfb6fbc02f3bd2
+SIZE (cmus-cmus-v2.8.0_GH0.tar.gz) = 317243
