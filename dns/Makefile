@@ -183,7 +183,6 @@
     SUBDIR += public_suffix_list
     SUBDIR += py-adns
     SUBDIR += py-aiodns
-    SUBDIR += py-bonjour
     SUBDIR += py-cloudflare
     SUBDIR += py-dns
     SUBDIR += py-dns-lexicon
@@ -199,6 +198,7 @@
     SUBDIR += py-publicsuffix
     SUBDIR += py-publicsuffixlist
     SUBDIR += py-py3dns
+    SUBDIR += py-pybonjour
     SUBDIR += py-pycares
     SUBDIR += py-pydnstable
     SUBDIR += py-pywdns
