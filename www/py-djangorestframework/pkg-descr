@@ -1,6 +1,6 @@
 Django REST framework is a powerful and flexible toolkit that makes
 it easy to build Web APIs.
 
-Note: This is the 3.8.x branch which supports Django 1.11 and later
+Note: This is the 3.9.x branch which supports Django 1.11 and later
 
 WWW: http://www.django-rest-framework.org/
