@@ -1,5 +1,5 @@
-The if_vether(4) interface simulates a normal Ethernet interface 
-by encapsulating standard network frames with an Ethernet header, 
+The if_vether(4) interface simulates a normal Ethernet interface
+by encapsulating standard network frames with an Ethernet header,
 specifically for use as a member of if_bridge(4).
 
 WWW: https://github.com/hmatyschok/if_vether
