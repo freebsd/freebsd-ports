@@ -3,10 +3,9 @@
 
 PORTNAME=	sane-backends
 PORTVERSION=	1.0.27
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/4146/ \
-		http://fossies.org/linux/misc/
+MASTER_SITES=	http://fossies.org/linux/misc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for access to scanners, digitals camera, frame grabbers etc
@@ -18,21 +17,19 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
 USES=		gmake jpeg libtool localbase pathfix pkgconfig
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} \
-		--disable-latex \
-		--disable-locking \
+CONFIGURE_ARGS=	--disable-locking \
 		--enable-pthread \
 		--without-systemd
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	saned
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.0.25
 
 SUB_FILES=	pkg-message
 
-USERS=	saned
-GROUPS=	saned
+USERS=		saned
+GROUPS=		saned
 
 PORTDOCS=	*
 
@@ -40,21 +37,22 @@ OPTIONS_DEFINE=		AVAHI DOCS GPHOTO IEEE1284 IPV6 NLS SNMP USB V4L
 OPTIONS_DEFAULT=	USB
 OPTIONS_SUB=		yes
 
+IEEE1284_DESC=		Parallel port support via libieee1284
+USB_DESC=		USB support
+
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 AVAHI_CONFIGURE_ENABLE=	avahi
 GPHOTO_LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
 GPHOTO_CONFIGURE_OFF=	--with-gphoto2=no
-IEEE1284_DESC=		Parallel port support via libieee1284
 IEEE1284_LIB_DEPENDS=	libieee1284.so:sysutils/libieee1284
 IEEE1284_CONFIGURE_ENV_OFF=	sane_cv_use_libieee1284=no
 IPV6_CONFIGURE_ENABLE=	ipv6
 NLS_USES=		gettext
-NLS_CONFIGURE_ENABLE=	translations
+NLS_CONFIGURE_ENABLE=	nls
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_WITH=	snmp
-USB_DESC=		USB support
-USB_CONFIGURE_ON=	--enable-libusb_1_0
-USB_CONFIGURE_OFF=	--enable-libusb=no
+USB_CONFIGURE_ON=	--with-usb
+USB_CONFIGURE_OFF=	--with-usb=no
 V4L_LIB_DEPENDS=	libv4l1.so:multimedia/libv4l
 V4L_CONFIGURE_WITH=	v4l
 

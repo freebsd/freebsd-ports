@@ -1,6 +1,6 @@
---- include/sane/sanei_backend.h.orig	2013-08-25 21:22:58 UTC
+--- include/sane/sanei_backend.h.orig	2016-10-06 00:02:58 UTC
 +++ include/sane/sanei_backend.h
-@@ -68,9 +68,11 @@
+@@ -64,9 +64,11 @@
  
  /* Just enough backwards compatibility that we get by in the backends
     without making handstands.  */
@@ -12,7 +12,7 @@
  # ifdef sigemptyset
  #  undef sigemptyset
  # endif
-@@ -96,7 +98,9 @@
+@@ -92,7 +94,9 @@
  #  undef SIG_SETMASK
  # endif
  
