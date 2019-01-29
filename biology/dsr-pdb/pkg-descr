@@ -1,0 +1,12 @@
+dsr-pdb is a simple C++ PDB reader along with a couple of programs which use it
+to manipulate pdb files (applying a rigid transform or splitting/merging). The
+are aimed at people interested in proteins from a geometric viewpoint as they
+allow easy access to the geometry and bond structure in addition of the
+biological information. The reader has two modes for reading/writing a pdb file.
+The simplest one, through the Protein class just reads and writes a single
+protein from/to a pdb file (which must have only one chain, but can have
+multiple models). The second, through the PDB class can handle pdb files with
+multiple models and herogens (although these are just passed through and not
+currently interpreted).
+
+WWW: https://graphics.stanford.edu/~drussel/pdb/

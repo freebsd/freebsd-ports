@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2019-01-29 07:52:25 UTC
++++ Makefile.in
+@@ -173,7 +173,7 @@ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = lib tools test include doc
++SUBDIRS = lib tools test include
+ dist_noinst_DATA = COPYING.txt
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
