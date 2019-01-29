@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sabnzbdplus
-PORTVERSION=	2.3.5
+PORTVERSION=	2.3.7
 CATEGORIES=	news
 
 MAINTAINER=	joshruehlig@gmail.com
@@ -14,11 +14,12 @@ RUN_DEPENDS=	cheetah:devel/py-cheetah@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:devel/py-utils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
+USES=		python:2.7 shebangfix
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	sabnzbd
 GH_PROJECT=	sabnzbd
 
-USES=		python:2.7 shebangfix
 SHEBANG_FILES=	SABnzbd.py tools/msgfmt.py
 
 NO_ARCH=	yes
