@@ -34,7 +34,7 @@ required_files=%%PREFIX%%/etc/glance/glance-scrubber.conf
 PATH=%%PREFIX%%/bin:%%PREFIX%%/sbin:$PATH
 
 pidfile="/var/run/glance-scrubber.pid"
-procname="%%PREFIX%%/bin/python2.7"
+procname="%%PREFIX%%/bin/python%%PYTHON_VER%%"
 
 start_precmd=glance_precmd
 
