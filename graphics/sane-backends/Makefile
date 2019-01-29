@@ -5,7 +5,8 @@ PORTNAME=	sane-backends
 PORTVERSION=	1.0.27
 PORTREVISION=	5
 CATEGORIES=	graphics
-MASTER_SITES=	http://fossies.org/linux/misc/
+MASTER_SITES=	https://gitlab.com/sane-project/backends/uploads/a3ba9fff29253a94e84074917bff581a/ \
+		http://fossies.org/linux/misc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for access to scanners, digitals camera, frame grabbers etc
