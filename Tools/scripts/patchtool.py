@@ -23,9 +23,14 @@
 import os, os.path, subprocess, sys, getopt, glob, errno, types
 
 # Some global variables used as constants
-True = 1
-False = 0
+#True = 1
+#False = 0
 
+def isStr(obj):
+    try:
+        return isinstance(obj, basestring)
+    except NameError:
+        return isinstance(obj, str)
 
 # Tweakable global variables. User is able to override any of these by setting
 # appropriate environment variable prefixed by `PT_', eg:
@@ -116,7 +121,7 @@ def locateportdir(path, wrkdirprefix= '', strict = False):
 def querymakevar(varname, path = 'Makefile', strict = False, cache = {}):
 	path = os.path.abspath(path)
 
-	if cache.has_key((varname, path)) == 1:
+	if (varname, path) in cache:
 		return cache[(varname, path)]
 
 	origpath = path
@@ -134,7 +139,7 @@ def querymakevar(varname, path = 'Makefile', strict = False, cache = {}):
             stdout = subprocess.PIPE, stderr = devnull, close_fds = True)
 	retval = ''
 	for line in pipe.stdout.readlines():
-		retval = retval + line.strip() + ' '
+		retval = retval + line.decode().strip() + ' '
 	retval = retval[:-1]
 	if strict == True and retval.strip() == '':
 		raise MakeVarError(path, varname)
@@ -200,7 +205,7 @@ def gendiff(path, wrksrc, outfile = ''):
 	devnull = open('/dev/null', 'a')
 	pipe = subprocess.Popen(cmdline, shell = True, stdin = subprocess.PIPE, \
             stdout = subprocess.PIPE, stderr = devnull, close_fds = True)
-	outbuf = pipe.stdout.readlines()
+	outbuf = [x.decode() for x in pipe.stdout.readlines()]
 	exitval = pipe.wait()
 	if exitval == 0:    # No differences were found
 		retval = False
@@ -241,7 +246,7 @@ def makepatchname(path, patchdir = ''):
 # Write a specified message to stderr.
 #
 def write_msg(message):
-	if type(message) == types.StringType:
+	if isStr(message):
 		message = message,
 	sys.stderr.writelines(message)
 
@@ -267,7 +272,7 @@ def query_yn(message, default = False):
 			return False
 		elif reply == '' and default in (True, False):
 			return default
-		print 'Wrong answer "%s", please try again' % reply
+		print('Wrong answer "%s", please try again' % reply)
 	return default
 
 
@@ -443,7 +448,7 @@ class PatchesCollection:
 
 	def addpatchfile(self, path, wrksrc):
 		path = os.path.abspath(path)
-		if not self.patches.has_key(path):
+		if path not in self.patches:
 			self.addpatchobj(Patch(path, wrksrc))
 
 	def addpatchobj(self, patchobj):
@@ -451,7 +456,7 @@ class PatchesCollection:
 
 	def lookupbyname(self, path):
 		path = os.path.abspath(path)
-		if self.patches.has_key(path):
+		if path in self.patches:
 			return self.patches[path]
 		return None
 
@@ -494,7 +499,7 @@ def truepath(path):
 def main():
 	try:
 		opts, args = getopt.getopt(sys.argv[1:], 'afui')
-	except getopt.GetoptError, msg:
+	except getopt.GetoptError as msg:
 		usage(2, msg)
 
 	automatic = False
@@ -678,8 +683,9 @@ def update(args, automatic, force, ignoremtime):
 if __name__ == '__main__':
 	try:
 		main()
-	except (PatchError, ECmdError, MakeVarError, LocatePDirError), msg:
+	except (PatchError, ECmdError, MakeVarError, LocatePDirError) as msg:
 		sys.exit('ERROR: ' + str(msg))
-	except IOError, (code, msg):
+	except IOError as ex:
+		code, msg = ex
 		sys.exit('ERROR: %s: %s' % (str(msg), os.strerror(code)))
 
