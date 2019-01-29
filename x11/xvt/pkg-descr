@@ -6,4 +6,4 @@ of Kent at Canterbury. With few exceptions, it does everything Xterm does.
 But also does a great deal more, with less overhead. This version will also
 leverage vt(4), FreeBSD's new console driver. Which replaces syscons(4).
 
-WWW: http://BSDforge.com/projects/x11/xvt/
+WWW: https://BSDforge.com/projects/x11/xvt/
