@@ -1,0 +1,589 @@
+commit 9b55d8d04f4b
+Author: Sotaro Ikeda <sotaro.ikeda.g@gmail.com>
+Date:   Thu Jan 3 22:36:09 2019 -0800
+
+    Bug 1514156 - Add RenderCompositorEGL for Wayland
+---
+ gfx/gl/GLContextEGL.h                          |   4 +
+ gfx/gl/GLContextProviderEGL.cpp                |  29 ++++++
+ gfx/webrender_bindings/RenderCompositor.cpp    |  12 +++
+ gfx/webrender_bindings/RenderCompositorEGL.cpp | 135 +++++++++++++++++++++++++
+ gfx/webrender_bindings/RenderCompositorEGL.h   |  54 ++++++++++
+ gfx/webrender_bindings/moz.build               |  10 ++
+ widget/gtk/CompositorWidgetChild.cpp           |   6 ++
+ widget/gtk/CompositorWidgetChild.h             |   4 +-
+ widget/gtk/CompositorWidgetParent.cpp          |   6 ++
+ widget/gtk/CompositorWidgetParent.h            |   2 +
+ widget/gtk/GtkCompositorWidget.cpp             |  15 ++-
+ widget/gtk/GtkCompositorWidget.h               |   9 ++
+ widget/gtk/PCompositorWidget.ipdl              |   1 +
+ widget/gtk/mozcontainer.cpp                    |  11 ++
+ widget/gtk/mozcontainer.h                      |   2 +
+ widget/gtk/nsWindow.cpp                        |  16 +++
+ widget/gtk/nsWindow.h                          |   1 +
+ 17 files changed, 315 insertions(+), 2 deletions(-)
+
+diff --git gfx/gl/GLContextEGL.h gfx/gl/GLContextEGL.h
+index 95d5e0c02e23..adb37e59a9f7 100644
+--- gfx/gl/GLContextEGL.h
++++ gfx/gl/GLContextEGL.h
+@@ -91,6 +91,10 @@ class GLContextEGL : public GLContext {
+       CreateContextFlags flags, const gfx::IntSize& size,
+       const SurfaceCaps& minCaps, nsACString* const out_FailureId);
+ 
++#if defined(MOZ_WAYLAND)
++  static EGLSurface CreateEGLSurfaceForCompositorWidget(
++      widget::CompositorWidget* aCompositorWidget, bool aForceAccelerated);
++#endif
+  protected:
+   friend class GLContextProviderEGL;
+   friend class GLContextEGLFactory;
+diff --git gfx/gl/GLContextProviderEGL.cpp gfx/gl/GLContextProviderEGL.cpp
+index 774eb34a8e87..25aa779a7d64 100644
+--- gfx/gl/GLContextProviderEGL.cpp
++++ gfx/gl/GLContextProviderEGL.cpp
+@@ -295,6 +295,35 @@ already_AddRefed<GLContext> GLContextEGLFactory::Create(
+   return gl.forget();
+ }
+ 
++#if defined(MOZ_WAYLAND)
++/* static */ EGLSurface GLContextEGL::CreateEGLSurfaceForCompositorWidget(
++    widget::CompositorWidget* aCompositorWidget, bool aForceAccelerated)
++{
++  nsCString discardFailureId;
++  if (!GLLibraryEGL::EnsureInitialized(false, &discardFailureId)) {
++    gfxCriticalNote << "Failed to load EGL library 6!";
++    return EGL_NO_SURFACE;
++  }
++
++  MOZ_ASSERT(aCompositorWidget);
++  EGLNativeWindowType window = GET_NATIVE_WINDOW_FROM_COMPOSITOR_WIDGET(aCompositorWidget);
++  bool useWebRender = aCompositorWidget->GetCompositorOptions().UseWebRender();
++
++  EGLConfig config;
++  if (!CreateConfig(&config, useWebRender)) {
++    gfxCriticalNote << "Failed to create EGLConfig!";
++    return EGL_NO_SURFACE;
++  }
++
++  EGLSurface surface = EGL_NO_SURFACE;
++  if (window) {
++    surface = mozilla::gl::CreateSurfaceFromNativeWindow(window, config);
++  }
++
++  return surface;
++}
++#endif
++
+ GLContextEGL::GLContextEGL(CreateContextFlags flags, const SurfaceCaps& caps,
+                            bool isOffscreen, EGLConfig config,
+                            EGLSurface surface, EGLContext context)
+diff --git gfx/webrender_bindings/RenderCompositor.cpp gfx/webrender_bindings/RenderCompositor.cpp
+index 051482fbabbf..a58268096a89 100644
+--- gfx/webrender_bindings/RenderCompositor.cpp
++++ gfx/webrender_bindings/RenderCompositor.cpp
+@@ -16,6 +16,10 @@
+ #include "mozilla/webrender/RenderCompositorANGLE.h"
+ #endif
+ 
++#ifdef MOZ_WAYLAND
++#include "mozilla/webrender/RenderCompositorEGL.h"
++#endif
++
+ namespace mozilla {
+ namespace wr {
+ 
+@@ -26,6 +30,14 @@ namespace wr {
+     return RenderCompositorANGLE::Create(std::move(aWidget));
+   }
+ #endif
++
++#ifdef MOZ_WAYLAND
++  UniquePtr<RenderCompositor> eglCompositor = RenderCompositorEGL::Create(aWidget);
++  if (eglCompositor) {
++    return eglCompositor;
++  }
++#endif
++
+   return RenderCompositorOGL::Create(std::move(aWidget));
+ }
+ 
+diff --git gfx/webrender_bindings/RenderCompositorEGL.cpp gfx/webrender_bindings/RenderCompositorEGL.cpp
+new file mode 100644
+index 000000000000..16245f59afbd
+--- /dev/null
++++ gfx/webrender_bindings/RenderCompositorEGL.cpp
+@@ -0,0 +1,135 @@
++/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
++/* vim: set ts=8 sts=2 et sw=2 tw=80: */
++/* This Source Code Form is subject to the terms of the Mozilla Public
++ * License, v. 2.0. If a copy of the MPL was not distributed with this
++ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
++
++#include "RenderCompositorEGL.h"
++
++#include "GLContext.h"
++#include "GLContextEGL.h"
++#include "GLContextProvider.h"
++#include "GLLibraryEGL.h"
++#include "mozilla/widget/CompositorWidget.h"
++#include "mozilla/widget/GtkCompositorWidget.h"
++
++#include <gdk/gdk.h>
++#include <gdk/gdkx.h>
++
++namespace mozilla {
++namespace wr {
++
++/* static */ UniquePtr<RenderCompositor> RenderCompositorEGL::Create(
++    RefPtr<widget::CompositorWidget> aWidget) {
++
++  if (GDK_IS_X11_DISPLAY(gdk_display_get_default())) {
++    return nullptr;
++  }
++
++  RefPtr<gl::GLContext> gl;
++  gl = CreateGLContext(aWidget);
++  if (!gl) {
++    return nullptr;
++  }
++  return MakeUnique<RenderCompositorEGL>(std::move(gl), std::move(aWidget));
++}
++
++/* static */ already_AddRefed<gl::GLContext>
++RenderCompositorEGL::CreateGLContext(RefPtr<widget::CompositorWidget> aWidget) {
++  nsCString discardFailureId;
++  //auto flags = gl::CreateContextFlags::PREFER_ES3;
++
++  // Create GLContext with dummy EGLSurface.
++  RefPtr<gl::GLContext> gl =
++      //gl::GLContextProviderEGL::CreateHeadless(flags, &discardFailureId); //XXX headless context did not work.
++      gl::GLContextProviderEGL::CreateForCompositorWidget(aWidget, true);
++  if (!gl) {
++    gfxCriticalNote << "Failed GL context creation for WebRender: "
++                    << gfx::hexa(gl.get());
++    return nullptr;
++  }
++
++  if (!gl->MakeCurrent()) {
++    gfxCriticalNote << "Failed GL context creation for WebRender: "
++                    << gfx::hexa(gl.get());
++    return nullptr;
++  }
++
++  return gl.forget();
++}
++
++/* static */ EGLSurface RenderCompositorEGL::CreateEGLSurface(
++    widget::CompositorWidget* aWidget) {
++  EGLSurface surface = EGL_NO_SURFACE;
++  surface = gl::GLContextEGL::CreateEGLSurfaceForCompositorWidget(
++      aWidget, /* aForceAccelerated */ true);
++  if (surface == EGL_NO_SURFACE) {
++    gfxCriticalNote << "Failed to create EGLSurface";
++  }
++  return surface;
++}
++
++RenderCompositorEGL::RenderCompositorEGL(
++    RefPtr<gl::GLContext>&& aGL, RefPtr<widget::CompositorWidget>&& aWidget)
++    : RenderCompositor(std::move(aWidget)), mGL(aGL), mEGLSurface(EGL_NO_SURFACE) {
++  MOZ_ASSERT(mGL);
++}
++
++RenderCompositorEGL::~RenderCompositorEGL() {
++  DestroyEGLSurface();
++}
++
++bool RenderCompositorEGL::BeginFrame() {
++
++  if (mWidget->AsX11() && mWidget->AsX11()->WaylandRequestsUpdatingEGLSurface()) {
++      mEGLSurface = CreateEGLSurface(mWidget);
++      printf_stderr("RenderCompositorEGL::BeginFrame() mEGLSurface %p\n", mEGLSurface);
++      gl::GLContextEGL::Cast(gl())->SetEGLSurfaceOverride(mEGLSurface);
++  }
++
++  if (!mGL->MakeCurrent()) {
++    gfxCriticalNote << "Failed to make render context current, can't draw.";
++    return false;
++  }
++
++  return true;
++}
++
++void RenderCompositorEGL::EndFrame()
++{
++  if (mEGLSurface != EGL_NO_SURFACE) {
++    mGL->SwapBuffers();
++  }
++}
++
++void RenderCompositorEGL::WaitForGPU() {}
++
++void RenderCompositorEGL::Pause() {
++}
++
++bool RenderCompositorEGL::Resume() {
++  return true;
++}
++
++bool RenderCompositorEGL::MakeCurrent() {
++  gl::GLContextEGL::Cast(gl())->SetEGLSurfaceOverride(mEGLSurface);
++  return gl()->MakeCurrent();
++}
++
++void RenderCompositorEGL::DestroyEGLSurface() {
++  auto* egl = gl::GLLibraryEGL::Get();
++
++  // Release EGLSurface of back buffer before calling ResizeBuffers().
++  if (mEGLSurface) {
++    gl::GLContextEGL::Cast(gl())->SetEGLSurfaceOverride(EGL_NO_SURFACE);
++    egl->fDestroySurface(egl->Display(), mEGLSurface);
++    mEGLSurface = nullptr;
++  }
++}
++
++LayoutDeviceIntSize RenderCompositorEGL::GetBufferSize() {
++  return mWidget->GetClientSize();
++}
++
++}  // namespace wr
++}  // namespace mozilla
+diff --git gfx/webrender_bindings/RenderCompositorEGL.h gfx/webrender_bindings/RenderCompositorEGL.h
+new file mode 100644
+index 000000000000..f12e16d974af
+--- /dev/null
++++ gfx/webrender_bindings/RenderCompositorEGL.h
+@@ -0,0 +1,54 @@
++/* -*- Mode: C++; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
++/* vim: set ts=8 sts=2 et sw=2 tw=80: */
++/* This Source Code Form is subject to the terms of the Mozilla Public
++ * License, v. 2.0. If a copy of the MPL was not distributed with this
++ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
++
++#ifndef MOZILLA_GFX_RENDERCOMPOSITOR_EGL_H
++#define MOZILLA_GFX_RENDERCOMPOSITOR_EGL_H
++
++#include "GLTypes.h"
++#include "mozilla/webrender/RenderCompositor.h"
++
++namespace mozilla {
++
++namespace wr {
++
++class RenderCompositorEGL : public RenderCompositor {
++ public:
++  static UniquePtr<RenderCompositor> Create(
++      RefPtr<widget::CompositorWidget> aWidget);
++
++  RenderCompositorEGL(RefPtr<gl::GLContext>&& aGL,
++                      RefPtr<widget::CompositorWidget>&& aWidget);
++  virtual ~RenderCompositorEGL();
++
++  bool BeginFrame() override;
++  void EndFrame() override;
++  void WaitForGPU() override;
++  void Pause() override;
++  bool Resume() override;
++
++  gl::GLContext* gl() const override { return mGL; }
++
++  bool MakeCurrent() override;
++
++  bool UseANGLE() const override { return false; }
++
++  LayoutDeviceIntSize GetBufferSize() override;
++
++ protected:
++   static already_AddRefed<gl::GLContext> CreateGLContext(
++      RefPtr<widget::CompositorWidget> aWidget);
++   static EGLSurface CreateEGLSurface(widget::CompositorWidget* aWidget);
++
++  void DestroyEGLSurface();
++
++  RefPtr<gl::GLContext> mGL;
++  EGLSurface mEGLSurface;
++};
++
++}  // namespace wr
++}  // namespace mozilla
++
++#endif  // MOZILLA_GFX_RENDERCOMPOSITOR_EGL_H
+diff --git gfx/webrender_bindings/moz.build gfx/webrender_bindings/moz.build
+index 4acdfbb817d3..f632bc5d24d9 100644
+--- gfx/webrender_bindings/moz.build
++++ gfx/webrender_bindings/moz.build
+@@ -67,6 +67,14 @@ if CONFIG['MOZ_ENABLE_D3D10_LAYER']:
+         'RenderCompositorANGLE.cpp',
+     ]
+ 
++if CONFIG['MOZ_WAYLAND']:
++    EXPORTS.mozilla.webrender += [
++        'RenderCompositorEGL.h',
++    ]
++    SOURCES += [
++        'RenderCompositorEGL.cpp',
++    ]
++
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('android', 'gtk3'):
+     CXXFLAGS += CONFIG['MOZ_CAIRO_CFLAGS']
+     CXXFLAGS += CONFIG['CAIRO_FT_CFLAGS']
+@@ -75,5 +83,7 @@ include('/ipc/chromium/chromium-config.mozbuild')
+ 
+ FINAL_LIBRARY = 'xul'
+ 
++CXXFLAGS += CONFIG['TK_CFLAGS']
++
+ if CONFIG['CC_TYPE'] == 'clang-cl':
+     AllowCompilerWarnings()  # workaround for bug 1090497
+diff --git widget/gtk/CompositorWidgetChild.cpp widget/gtk/CompositorWidgetChild.cpp
+index b746fec0a283..07847a298707 100644
+--- widget/gtk/CompositorWidgetChild.cpp
++++ widget/gtk/CompositorWidgetChild.cpp
+@@ -35,5 +35,11 @@ void CompositorWidgetChild::NotifyClientSizeChanged(
+   Unused << SendNotifyClientSizeChanged(aClientSize);
+ }
+ 
++#ifdef MOZ_WAYLAND
++void CompositorWidgetChild::RequestsUpdatingEGLSurface() {
++  Unused << SendRequestsUpdatingEGLSurface();
++}
++#endif
++
+ }  // namespace widget
+ }  // namespace mozilla
+diff --git widget/gtk/CompositorWidgetChild.h widget/gtk/CompositorWidgetChild.h
+index fe3285eb6f22..0167dbb051c6 100644
+--- widget/gtk/CompositorWidgetChild.h
++++ widget/gtk/CompositorWidgetChild.h
+@@ -24,7 +24,9 @@ class CompositorWidgetChild final : public PCompositorWidgetChild,
+   mozilla::ipc::IPCResult RecvUnobserveVsync() override;
+ 
+   void NotifyClientSizeChanged(const LayoutDeviceIntSize& aClientSize) override;
+-
++#ifdef MOZ_WAYLAND
++  void RequestsUpdatingEGLSurface() override;
++#endif
+  private:
+   RefPtr<CompositorVsyncDispatcher> mVsyncDispatcher;
+   RefPtr<CompositorWidgetVsyncObserver> mVsyncObserver;
+diff --git widget/gtk/CompositorWidgetParent.cpp widget/gtk/CompositorWidgetParent.cpp
+index ae49ec9174bc..b4031883d3a8 100644
+--- widget/gtk/CompositorWidgetParent.cpp
++++ widget/gtk/CompositorWidgetParent.cpp
+@@ -40,5 +40,13 @@ mozilla::ipc::IPCResult CompositorWidgetParent::RecvNotifyClientSizeChanged(
+   return IPC_OK();
+ }
+ 
++mozilla::ipc::IPCResult CompositorWidgetParent::RecvRequestsUpdatingEGLSurface()
++{
++#ifdef MOZ_WAYLAND
++  RequestsUpdatingEGLSurface();
++#endif
++  return IPC_OK();
++}
++
+ }  // namespace widget
+ }  // namespace mozilla
+diff --git widget/gtk/CompositorWidgetParent.h widget/gtk/CompositorWidgetParent.h
+index 5d0ccfcf50f2..8ddd58a8964f 100644
+--- widget/gtk/CompositorWidgetParent.h
++++ widget/gtk/CompositorWidgetParent.h
+@@ -27,6 +27,8 @@ class CompositorWidgetParent final : public PCompositorWidgetParent,
+   mozilla::ipc::IPCResult RecvNotifyClientSizeChanged(
+       const LayoutDeviceIntSize& aClientSize) override;
+ 
++  mozilla::ipc::IPCResult RecvRequestsUpdatingEGLSurface() override;
++
+  private:
+   RefPtr<VsyncObserver> mVsyncObserver;
+ };
+diff --git widget/gtk/GtkCompositorWidget.cpp widget/gtk/GtkCompositorWidget.cpp
+index bc21d6c4d05e..f787e8c23797 100644
+--- widget/gtk/GtkCompositorWidget.cpp
++++ widget/gtk/GtkCompositorWidget.cpp
+@@ -17,7 +17,11 @@ namespace widget {
+ GtkCompositorWidget::GtkCompositorWidget(
+     const GtkCompositorWidgetInitData& aInitData,
+     const layers::CompositorOptions& aOptions, nsWindow* aWindow)
+-    : CompositorWidget(aOptions), mWidget(aWindow) {
++    : CompositorWidget(aOptions), mWidget(aWindow)
++#ifdef MOZ_WAYLAND
++    , mWaylandRequestsUpdatingEGLSurface(false)
++#endif
++    {
+   // If we have a nsWindow, then grab the already existing display connection
+   // If we don't, then use the init data to connect to the display
+   if (aWindow) {
+@@ -85,6 +86,18 @@ void GtkCompositorWidget::NotifyClientSizeChanged(
+   mClientSize = aClientSize;
+ }
+ 
++#ifdef MOZ_WAYLAND
++void GtkCompositorWidget::RequestsUpdatingEGLSurface() {
++  mWaylandRequestsUpdatingEGLSurface = true;
++}
++
++bool GtkCompositorWidget::WaylandRequestsUpdatingEGLSurface() {
++  bool ret = mWaylandRequestsUpdatingEGLSurface;
++  mWaylandRequestsUpdatingEGLSurface = false;
++  return ret;
++}
++#endif
++
+ LayoutDeviceIntSize GtkCompositorWidget::GetClientSize() { return mClientSize; }
+ 
+ uintptr_t GtkCompositorWidget::GetWidgetKey() {
+diff --git widget/gtk/GtkCompositorWidget.h widget/gtk/GtkCompositorWidget.h
+index fd0c71426c18..75e156dffb02 100644
+--- widget/gtk/GtkCompositorWidget.h
++++ widget/gtk/GtkCompositorWidget.h
+@@ -20,6 +20,10 @@ class PlatformCompositorWidgetDelegate : public CompositorWidgetDelegate {
+   virtual void NotifyClientSizeChanged(
+       const LayoutDeviceIntSize& aClientSize) = 0;
+ 
++#ifdef MOZ_WAYLAND
++  virtual void RequestsUpdatingEGLSurface() = 0;
++#endif
++
+   // CompositorWidgetDelegate Overrides
+ 
+   PlatformCompositorWidgetDelegate* AsPlatformSpecificDelegate() override {
+@@ -62,11 +66,18 @@ class GtkCompositorWidget : public CompositorWidget,
+ 
+   void NotifyClientSizeChanged(const LayoutDeviceIntSize& aClientSize) override;
+ 
++#ifdef MOZ_WAYLAND
++  void RequestsUpdatingEGLSurface() override;
++  bool WaylandRequestsUpdatingEGLSurface();
++#endif
+  protected:
+   nsWindow* mWidget;
+ 
+  private:
+   LayoutDeviceIntSize mClientSize;
++#ifdef MOZ_WAYLAND
++  bool mWaylandRequestsUpdatingEGLSurface;
++#endif
+ 
+   Display* mXDisplay;
+   Window mXWindow;
+diff --git widget/gtk/PCompositorWidget.ipdl widget/gtk/PCompositorWidget.ipdl
+index 178fe78e4dc2..51390e400649 100644
+--- widget/gtk/PCompositorWidget.ipdl
++++ widget/gtk/PCompositorWidget.ipdl
+@@ -19,6 +19,7 @@ parent:
+   async __delete__();
+ 
+   async NotifyClientSizeChanged(LayoutDeviceIntSize aClientSize);
++  async RequestsUpdatingEGLSurface();
+ 
+ child:
+ 
+diff --git widget/gtk/mozcontainer.cpp widget/gtk/mozcontainer.cpp
+index 8be1f133d39f..8461e7b9d470 100644
+--- widget/gtk/mozcontainer.cpp
++++ widget/gtk/mozcontainer.cpp
+@@ -160,6 +160,7 @@ void moz_container_init(MozContainer *container) {
+   // We can draw to x11 window any time.
+   container->ready_to_draw = GDK_IS_X11_DISPLAY(gdk_display_get_default());
+   container->surface_needs_clear = true;
++  container->egl_surface_needs_update = false;
+ #endif
+ }
+ 
+@@ -177,6 +178,9 @@ static void frame_callback_handler(void *data, struct wl_callback *callback,
+                                    uint32_t time) {
+   MozContainer *container = MOZ_CONTAINER(data);
+   g_clear_pointer(&container->frame_callback_handler, wl_callback_destroy);
++  if (!container->ready_to_draw) {
++    container->egl_surface_needs_update = true;
++  }
+   container->ready_to_draw = true;
+ }
+ 
+@@ -210,6 +214,7 @@ static void moz_container_unmap_wayland(MozContainer *container) {
+   g_clear_pointer(&container->frame_callback_handler, wl_callback_destroy);
+ 
+   container->surface_needs_clear = true;
++  container->egl_surface_needs_update = false;
+   container->ready_to_draw = false;
+ }
+ 
+@@ -548,4 +553,10 @@ gboolean moz_container_surface_needs_clear(MozContainer *container) {
+   container->surface_needs_clear = false;
+   return state;
+ }
++
++gboolean moz_container_egl_surface_needs_update(MozContainer *container){
++  gboolean state = container->egl_surface_needs_update;
++  container->egl_surface_needs_update = false;
++  return state;
++}
+ #endif
+diff --git widget/gtk/mozcontainer.h widget/gtk/mozcontainer.h
+index e9c218c1bc3e..1ed6f439805d 100644
+--- widget/gtk/mozcontainer.h
++++ widget/gtk/mozcontainer.h
+@@ -77,6 +77,7 @@ struct _MozContainer {
+   struct wl_egl_window *eglwindow;
+   struct wl_callback *frame_callback_handler;
+   gboolean surface_needs_clear;
++  gboolean egl_surface_needs_update;
+   gboolean ready_to_draw;
+ #endif
+ };
+@@ -96,6 +97,7 @@ struct wl_egl_window *moz_container_get_wl_egl_window(
+ 
+ gboolean moz_container_has_wl_egl_window(MozContainer *container);
+ gboolean moz_container_surface_needs_clear(MozContainer *container);
++gboolean moz_container_egl_surface_needs_update(MozContainer *container);
+ #endif
+ 
+ #endif /* __MOZ_CONTAINER_H__ */
+diff --git widget/gtk/nsWindow.cpp widget/gtk/nsWindow.cpp
+index 50e6354ea374..ceabbf583a42 100644
+--- widget/gtk/nsWindow.cpp
++++ widget/gtk/nsWindow.cpp
+@@ -1885,6 +1885,11 @@ gboolean nsWindow::OnExposeEvent(cairo_t *cr) {
+   region.ScaleRoundOut(scale, scale);
+ 
+   if (GetLayerManager()->AsKnowsCompositor() && mCompositorSession) {
++#ifdef MOZ_WAYLAND
++    if(mCompositorWidgetDelegate && WaylandRequestsUpdatingEGLSurface()) {
++      mCompositorWidgetDelegate->RequestsUpdatingEGLSurface();
++    }
++#endif
+     // We need to paint to the screen even if nothing changed, since if we
+     // don't have a compositing window manager, our pixels could be stale.
+     GetLayerManager()->SetNeedsComposite(true);
+@@ -6405,6 +6410,17 @@ bool nsWindow::WaylandSurfaceNeedsClear() {
+       "nsWindow::WaylandSurfaceNeedsClear(): We don't have any mContainer!");
+   return false;
+ }
++
++bool nsWindow::WaylandRequestsUpdatingEGLSurface() {
++  if (mContainer) {
++    return moz_container_egl_surface_needs_update(MOZ_CONTAINER(mContainer));
++  }
++
++  NS_WARNING(
++      "nsWindow::WaylandSurfaceNeedsClear(): We don't have any mContainer!");
++  return false;
++}
++
+ #endif
+ 
+ #ifdef MOZ_X11
+diff --git widget/gtk/nsWindow.h widget/gtk/nsWindow.h
+index b528ebfdeccb..ea0be70d7eb2 100644
+--- widget/gtk/nsWindow.h
++++ widget/gtk/nsWindow.h
+@@ -343,6 +343,7 @@ class nsWindow final : public nsBaseWidget {
+   wl_display* GetWaylandDisplay();
+   wl_surface* GetWaylandSurface();
+   bool WaylandSurfaceNeedsClear();
++  bool WaylandRequestsUpdatingEGLSurface();
+ #endif
+   virtual void GetCompositorWidgetInitData(
+       mozilla::widget::CompositorWidgetInitData* aInitData) override;

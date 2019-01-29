@@ -30,7 +30,7 @@ BUILD_DEPENDS=	nspr>=4.19:devel/nspr \
 
 SSP_UNSAFE=	yes
 USE_GECKO=	gecko
-USE_MOZILLA=	# empty
+USE_MOZILLA=	-webp
 
 USES=		tar:xz
 

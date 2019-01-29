@@ -213,9 +213,9 @@ diff --git toolkit/library/moz.build toolkit/library/moz.build
 index 24f940e1ed7e..079a575adec3 100644
 --- toolkit/library/moz.build
 +++ toolkit/library/moz.build
-@@ -223,6 +223,12 @@ if CONFIG['MOZ_SYSTEM_JPEG']:
- if CONFIG['MOZ_SYSTEM_PNG']:
-     OS_LIBS += CONFIG['MOZ_PNG_LIBS']
+@@ -226,6 +226,12 @@ if CONFIG['MOZ_SYSTEM_PNG']:
+ if CONFIG['MOZ_SYSTEM_WEBP']:
+     OS_LIBS += CONFIG['MOZ_WEBP_LIBS']
  
 +if CONFIG['MOZ_SYSTEM_GRAPHITE2']:
 +    OS_LIBS += CONFIG['MOZ_GRAPHITE2_LIBS']
@@ -230,7 +230,7 @@ diff --git toolkit/moz.configure toolkit/moz.configure
 index 9297e4d6f501..d8e273887e4b 100644
 --- toolkit/moz.configure
 +++ toolkit/moz.configure
-@@ -883,6 +883,26 @@ add_old_configure_assignment('FT2_LIBS',
+@@ -894,6 +894,26 @@ add_old_configure_assignment('FT2_LIBS',
  add_old_configure_assignment('FT2_CFLAGS',
                               ft2_info.cflags)
  
@@ -254,6 +254,6 @@ index 9297e4d6f501..d8e273887e4b 100644
 +
 +set_config('MOZ_SYSTEM_HARFBUZZ', depends_if(system_harfbuzz)(lambda _: True))
 +
- # Mortar
+ # Marionette remote protocol
  # ==============================================================
- option('--enable-mortar', help='Enable mortar extension')
+ #

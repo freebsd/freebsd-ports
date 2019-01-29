@@ -34,7 +34,7 @@ USE_GECKO=	gecko
 CPE_PRODUCT=	${PORTNAME}_esr
 CONFLICTS_INSTALL=	firefox
 MOZ_PKGCONFIG_FILES=	# empty
-USE_MOZILLA=	# empty
+USE_MOZILLA=	-webp
 
 USES=		tar:xz
 
