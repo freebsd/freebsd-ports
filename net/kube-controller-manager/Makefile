@@ -2,11 +2,12 @@
 
 PORTNAME=	kube-controller-manager
 PORTVERSION=	1.13.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
 MAINTAINER=	loic.blot@unix-experience.fr
-COMMENT=	Kubernetes command-line tool
+COMMENT=	Kubernetes controller manager daemon
 
 LICENSE=	APACHE20
 
