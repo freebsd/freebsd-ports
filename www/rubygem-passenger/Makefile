@@ -3,6 +3,7 @@
 
 PORTNAME=	passenger
 PORTVERSION=	6.0.1
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMEPREFIX=	rubygem-
@@ -100,7 +101,7 @@ post-install:
 .if ${FLAVOR} == apache
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/buildout/apache2/mod_passenger.so
 	${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
-	${INSTALL} -lrs ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/buildout/apache2/mod_passenger.so ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_passenger.so
+	${LN} -sf ${PREFIX}/${GEM_LIB_DIR}/buildout/apache2/mod_passenger.so ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_passenger.so
 	@${ECHO} "${APACHEMODDIR}/mod_passenger.so" >> ${TMPPLIST}
 .endif
 
