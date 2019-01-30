@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	librfm
-PORTVERSION=	5.3.16.3
-PORTREVISION=	2
+PORTVERSION=	5.3.16.4
 CATEGORIES=	x11-fm
-MASTER_SITES=	SF/xffm/${PORTVERSION}
+MASTER_SITES=	SF/xffm/5.3.16.3
 DISTNAME=	${PORTNAME}5-${PORTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -17,16 +16,19 @@ BUILD_DEPENDS=	gawk:lang/gawk
 LIB_DEPENDS=	libtubo.so:x11-fm/libtubo \
 		libdbh.so:databases/dbh \
 		libzip.so:archivers/libzip \
-		librsvg-2.so:graphics/librsvg2
+		librsvg-2.so:graphics/librsvg2 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
 
 OPTIONS_DEFINE=	NLS
 
 CONFIGURE_ARGS+=--with-pkglibdata
 MAKE_JOB_UNSAFE=yes
 INSTALLS_ICONS=	yes
-USES=		gettext gmake libtool:keepla pkgconfig tar:bzip2
+USES=		autoreconf gettext gnome gmake libtool:keepla pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 intltool
+USE_GNOME=	gtk20 intltool cairo libxml2
+USE_XORG+=	x11
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
