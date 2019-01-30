@@ -3,6 +3,7 @@
 
 PORTNAME=	griels-quest
 PORTVERSION=	git20150512
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
