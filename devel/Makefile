@@ -1248,6 +1248,7 @@
     SUBDIR += iniparser
     SUBDIR += initutil
     SUBDIR += injeqt
+    SUBDIR += interactive_rebase_tool
     SUBDIR += ioncube
     SUBDIR += ipython
     SUBDIR += ipython5
