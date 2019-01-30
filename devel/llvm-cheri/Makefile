@@ -2,12 +2,14 @@
 
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang with support for the CHERI architecture
+
+.include "${.CURDIR}/../llvm-devel/Makefile.LICENSE"
 
 BROKEN_powerpc64=	Does not build
 
@@ -71,7 +73,12 @@ LLDB_BINARY_ALIAS=	swig=swig3.0
 LLDB_GH_PROJECT=	lldb:lldb
 LLDB_GH_TAGNAME=	${LLDB_COMMIT}:lldb
 
-DOCS_BUILD_DEPENDS=		sphinx-build:textproc/py-sphinx
+DOCS_BUILD_DEPENDS=	sphinx-build-${PYTHON_VER}:textproc/py-sphinx@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}recommonmark>=0.0.20180530:textproc/py-recommonmark@${PY_FLAVOR}
+DOCS_CMAKE_ON=		-DLLVM_ENABLE_SPHINX=ON \
+			-DSPHINX_EXECUTABLE=${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} \
+			-DSPHINX_WARNINGS_AS_ERRORS=OFF \
+			-DLLVM_BUILD_DOCS=ON
 
 PLIST_SUB+=	COMMAND_SUFFIX=${COMMAND_SUFFIX} \
 		LLVM_MAJOR=${LLVM_MAJOR} \
@@ -160,6 +167,7 @@ COMMANDS+=	clang \
 MAN1SRCS+=	clang.1 \
 		diagtool.1
 DOCS_PLIST_FILES+=	man/man1/scan-build${LLVM_SUFFIX}.1.gz
+USES+=		gnome
 .endif
 
 .if ${PORT_OPTIONS:MLIT}
