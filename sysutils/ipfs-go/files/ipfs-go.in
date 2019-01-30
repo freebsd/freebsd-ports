@@ -5,21 +5,22 @@
 
 # PROVIDE: ipfs_go
 # REQUIRE: DAEMON NETWORKING
-# BEFORE: LOGIN
 # KEYWORD: shutdown
 
-# Add the following lines to /etc/rc.conf to enable ipfs_go:
-# ipfs_go_enable="YES"
-#
-# ipfs_go_enable (bool):    Set to YES to enable ipfs_go
-#                           Default: NO
-# ipfs_go_user (str):       ipfs_go daemon user
-#                           Default: %%IPFS_USER%%
-# ipfs_go_group (str):      ipfs_go daemon group
-#                           Default: %%IPFS_GROUP%%
-# ipfs_go_path (str): 	    ipfs_go ipfs repo path
-#                           Default: %%IPFS_HOME%%
-
+# ipfs_go_enable (bool):         Set to NO by default
+#                                Set to YES to enable ipfs_go
+# ipfs_go_user (str):            Set to %%IPFS_USER%% by default
+#                                Set it to ipfs_go daemon user
+# ipfs_go_group (str):           Set to %%IPFS_GROUP%% by default
+#                                Set it to ipfs_go daemon group
+# ipfs_go_path (str): 	         Set to %%IPFS_HOME%%/.ipfs by default
+#                                Set it to ipfs repo path
+# ipfs_go_syslog_priority (str): Set to "info" by default.
+#                                Set it to priority to be used by syslog
+# ipfs_go_syslog_facility (str): Set to "daemon" by default.
+#                                Set it to facility to be used by syslog
+# ipfs_go_syslog_tag (str):      Set to "ipfs-go" by default.
+#                                Set it to tag to be used by syslog
 
 . /etc/rc.subr
 
@@ -30,25 +31,23 @@ load_rc_config $name
 : ${ipfs_go_enable:="NO"}
 : ${ipfs_go_user:="%%IPFS_USER%%"}
 : ${ipfs_go_group:="%%IPFS_GROUP%%"}
-: ${ipfs_go_path:="%%IPFS_HOME%%"}
+: ${ipfs_go_path:="%%IPFS_HOME%%/.ipfs"}
+: ${ipfs_go_syslog_priority:="info"}
+: ${ipfs_go_syslog_facility:="daemon"}
+: ${ipfs_go_syslog_tag:="ipfs-go"}
 
-logfile="%%IPFS_LOGDIR%%/${name}.log"
 pidfile="/var/run/${name}.pid"
-command="%%PREFIX%%/bin/ipfs-go"
-start_precmd="ipfs_go_prestart"
-start_cmd="ipfs_go_start"
 
-ipfs_go_prestart() {
-  install -d -o ${ipfs_go_user} -g ${ipfs_go_group} -m750 %%IPFS_LOGDIR%%
-  [ -d ${ipfs_go_path} ] || /usr/bin/su - ${ipfs_go_user} -c "env IPFS_PATH=${ipfs_go_path} ${command} init"
-}
+command="/usr/sbin/daemon"
+command_args="-S -m 3 -s ${ipfs_go_syslog_priority} -l ${ipfs_go_syslog_facility} -T ${ipfs_go_syslog_tag} -p ${pidfile} /usr/bin/env IPFS_PATH=${ipfs_go_path} ${ipfs_go_env} %%PREFIX%%/bin/ipfs-go daemon --init --init-profile=server --migrate=true ${ipfs_go_args}"
+procname="%%PREFIX%%/bin/ipfs-go"
 
-ipfs_go_start() {
-  echo running ${command} daemon
-  export USER=${ipfs_go_user}
-  export HOME=$(echo ~%%IPFS_USER%%)
-  export IPFS_PATH=${ipfs_go_path}
-  /usr/sbin/daemon -p ${pidfile} -u ${ipfs_go_user} ${command} daemon >> ${logfile} 2>&1
+start_precmd="ipfs_go_startprecmd"
+
+ipfs_go_startprecmd() {
+  if [ ! -e "${pidfile}" ]; then
+    install -g ${ipfs_go_group} -o ${ipfs_go_user} -- /dev/null "${pidfile}"
+  fi
 }
 
 run_rc_command "$1"
