@@ -5,6 +5,7 @@ share/applications/din.desktop
 %%DATADIR%%/factory/2600.patch.tcl
 %%DATADIR%%/factory/Makefile.am
 %%DATADIR%%/factory/Sine_Mixer
+%%DATADIR%%/factory/all_notes
 %%DATADIR%%/factory/am.crv
 %%DATADIR%%/factory/attack.crv
 %%DATADIR%%/factory/attack.ed
@@ -17,6 +18,7 @@ share/applications/din.desktop
 %%DATADIR%%/factory/blues
 %%DATADIR%%/factory/blues.drone
 %%DATADIR%%/factory/blues.intervals
+%%DATADIR%%/factory/blues.ranges
 %%DATADIR%%/factory/changer.help.tcl
 %%DATADIR%%/factory/changer.patch.tcl
 %%DATADIR%%/factory/chord.help.tcl
@@ -399,6 +401,7 @@ share/applications/din.desktop
 %%DATADIR%%/factory/p_Morpher
 %%DATADIR%%/factory/p_Number
 %%DATADIR%%/factory/p_Rose_Milker
+%%DATADIR%%/factory/p_Sine_Mixer
 %%DATADIR%%/factory/p_Spiraler
 %%DATADIR%%/factory/p_Starrer
 %%DATADIR%%/factory/p_Superformula
