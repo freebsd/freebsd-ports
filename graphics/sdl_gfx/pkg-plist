@@ -6,6 +6,6 @@ include/SDL/SDL_imageFilter.h
 include/SDL/SDL_rotozoom.h
 lib/libSDL_gfx.a
 lib/libSDL_gfx.so
-lib/libSDL_gfx.so.15
-lib/libSDL_gfx.so.15.9.1
+lib/libSDL_gfx.so.16
+lib/libSDL_gfx.so.16.9.1
 libdata/pkgconfig/SDL_gfx.pc

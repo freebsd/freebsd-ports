@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sdl_gfx
-PORTVERSION=	2.0.25
-PORTREVISION=	3
+PORTVERSION=	2.0.26
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ferzkopp.net/Software/SDL_gfx-${PORTVERSION:R}/
 DISTNAME=	SDL_gfx-${PORTVERSION}
@@ -12,16 +11,17 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	SDL graphics drawing primitives and other support functions
 
 LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		autoreconf gmake libtool pathfix
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--includedir=${PREFIX}/include
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE_i386=	MMX
 OPTIONS_DEFINE_amd64=	MMX
+OPTIONS_DEFAULT_amd64=	MMX
 
 MMX_CONFIGURE_ENABLE=	mmx
 MMX_CFLAGS=		-DUSE_MMX
@@ -33,5 +33,13 @@ MMX_CFLAGS=		-DUSE_MMX
 # MMX support explicitly
 CONFIGURE_ARGS+=	--disable-mmx
 .endif
+
+post-patch:
+#	angled includes changed in 2.0.26 break some of dependent ports:
+#	- multimedia/mjpegtools
+#	- games/qonk
+#	- games/hyperrogue
+	@${REINPLACE_CMD} -e 's|<SDL.h>|"SDL.h"|; s|<SDL_video.h>|"SDL_video.h"|' \
+		${WRKSRC}/*.h
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	warmux
 DISTVERSION=	11.04.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/${PORTNAME}/ \
 		http://download.gna.org/${PORTNAME}/archive/
