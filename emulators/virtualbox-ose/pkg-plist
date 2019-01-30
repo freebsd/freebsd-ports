@@ -422,7 +422,7 @@ lib/virtualbox/VMMR0.r0
 lib/virtualbox/VMMRC.rc
 %%QT%%@(root,%%VBOXGROUP%%,4510) lib/virtualbox/VirtualBox
 %%QT%%lib/virtualbox/VirtualBox.so
-lib/virtualbox/sdk
+%%SDK%%lib/virtualbox/sdk
 %%WEBSERVICE%%lib/virtualbox/vboxwebsrv
 %%WEBSERVICE%%lib/virtualbox/webtest
 %%VNC%%lib/virtualbox/ExtensionPacks/VNC/ExtPack-license.html
