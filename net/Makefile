@@ -344,6 +344,7 @@
     SUBDIR += krfb
     SUBDIR += ksmtp
     SUBDIR += ktnef
+    SUBDIR += kube-controller-manager
     SUBDIR += l2tpd
     SUBDIR += ladvd
     SUBDIR += lambdamoo
