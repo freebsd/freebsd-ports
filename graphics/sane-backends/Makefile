@@ -22,6 +22,7 @@ USES=		gmake jpeg libtool localbase pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-locking \
 		--enable-pthread \
+		--without-api-spec \
 		--without-systemd
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
