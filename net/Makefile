@@ -1440,6 +1440,7 @@
     SUBDIR += throttled
     SUBDIR += tigervnc
     SUBDIR += tightvnc
+    SUBDIR += timed
     SUBDIR += tintin++
     SUBDIR += tiny-network-utilities
     SUBDIR += tinyfugue

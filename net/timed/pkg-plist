@@ -1,0 +1,6 @@
+etc/rc.d/timed
+man/man8/timed.8.gz
+man/man8/timedc.8.gz
+sbin/timed
+@mode 4555
+sbin/timedc
