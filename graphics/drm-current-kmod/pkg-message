@@ -1,4 +1,4 @@
-The experimental drm-devel-kmod port can be enabled for amdgpu (for AMD
+The experimental drm-current-kmod port can be enabled for amdgpu (for AMD
 GPUs starting with the HD7000 series / Tahiti) or i915kms (for Intel
 APUs starting with HD3000 / Sandy Bridge) through kld_list in
 /etc/rc.conf. radeonkms for older AMD GPUs can be loaded and there are
