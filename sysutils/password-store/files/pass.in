@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cd %%PREFIX%%/libexec
-exec %%PREFIX%%/libexec/pass "$@"
+cd %%PREFIX%%/libexec/password-store
+exec %%PREFIX%%/libexec/password-store/pass "$@"

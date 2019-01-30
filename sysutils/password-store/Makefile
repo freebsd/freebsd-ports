@@ -2,6 +2,7 @@
 
 PORTNAME=	password-store
 PORTVERSION=	1.7.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.zx2c4.com/password-store/snapshot/
 
@@ -42,14 +43,15 @@ SUB_FILES=		pass
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/src/platform/freebsd.sh
-	@${REINPLACE_CMD} -Ee 's|^SYSTEM_EXTENSION_DIR=""|SYSTEM_EXTENSION_DIR="${PREFIX}/lib/password-store/extensions"|g' \
+	@${REINPLACE_CMD} -Ee 's|^SYSTEM_EXTENSION_DIR=""|SYSTEM_EXTENSION_DIR="${PREFIX}/libexec/password-store/extensions"|g' \
 		${WRKSRC}/src/password-store.sh
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/pass ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/src/password-store.sh ${STAGEDIR}${PREFIX}/libexec/pass
-	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/platform
-	${INSTALL_SCRIPT} ${WRKSRC}/src/platform/freebsd.sh ${STAGEDIR}${PREFIX}/libexec/platform/
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/password-store/extensions
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/password-store/platform
+	${INSTALL_SCRIPT} ${WRKSRC}/src/password-store.sh ${STAGEDIR}${PREFIX}/libexec/password-store/pass
+	${INSTALL_SCRIPT} ${WRKSRC}/src/platform/freebsd.sh ${STAGEDIR}${PREFIX}/libexec/password-store/platform/
 	${INSTALL_MAN} ${WRKSRC}/man/pass.1 ${STAGEDIR}${MANPREFIX}/man/man1/pass.1
 
 do-install-CONTRIB-on:

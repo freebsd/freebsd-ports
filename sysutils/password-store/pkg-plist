@@ -1,6 +1,6 @@
 bin/pass
-libexec/pass
-libexec/platform/freebsd.sh
+libexec/password-store/pass
+libexec/password-store/platform/freebsd.sh
 man/man1/pass.1.gz
 %%CONTRIB%%%%DATADIR%%/dmenu/README.md
 %%CONTRIB%%%%DATADIR%%/dmenu/passmenu
@@ -32,3 +32,4 @@ man/man1/pass.1.gz
 %%CONTRIB%%share/fish/completions/password-store.fish
 %%CONTRIB%%share/zsh/site-functions/_pass
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-filter.sh
+@dir libexec/password-store/extensions
