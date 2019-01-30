@@ -211,6 +211,7 @@
     SUBDIR += bicyclerepair
     SUBDIR += bin86
     SUBDIR += binaryen
+    SUBDIR += bingo
     SUBDIR += bingrep
     SUBDIR += binutils
     SUBDIR += bison
