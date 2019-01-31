@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	11.6.5
+PORTVERSION=	11.7.0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -16,13 +16,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # only rubygem-pg and rubygem-mysql are defined later as RUN_DEPENDS
 # for the options
 MY_DEPENDS=	git>=2.16.2:devel/git \
-	gitlab-shell>=8.4.3:devel/gitlab-shell \
-	gitlab-workhorse>=7.6.0:www/gitlab-workhorse \
-	gitaly>=1.7.1:devel/gitaly \
+	gitlab-shell>=8.4.4:devel/gitlab-shell \
+	gitlab-workhorse>=8.0.0:www/gitlab-workhorse \
+	gitaly>=1.12.1:devel/gitaly \
 	gitlab-pages>=1.3.1:www/gitlab-pages \
 	redis>=3.2.12:databases/redis \
 	npm>=4.3.0:www/npm \
-	yarn>=0.17.0:www/yarn \
+	yarn>=1.10.0:www/yarn \
 	rubygem-rails50>=5.0.7.1:www/rubygem-rails50 \
 	rubygem-rails-deprecated_sanitizer-rails50>=1.0.3:devel/rubygem-rails-deprecated_sanitizer-rails50 \
 	rubygem-nakayoshi_fork>=0.0.4:devel/rubygem-nakayoshi_fork \
@@ -42,7 +42,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-omniauth-facebook4>=4.0.0:net/rubygem-omniauth-facebook4 \
 	rubygem-omniauth-github>=1.3.0:net/rubygem-omniauth-github \
 	rubygem-omniauth-gitlab>=1.0.2:security/rubygem-omniauth-gitlab \
-	rubygem-omniauth-google-oauth2>=0.5.3:net/rubygem-omniauth-google-oauth2 \
+	rubygem-omniauth-google-oauth2>=0.6.0:net/rubygem-omniauth-google-oauth2 \
 	rubygem-omniauth-kerberos>=0.3.0:net/rubygem-omniauth-kerberos \
 	rubygem-omniauth-oauth2-generic>=0.2.2:security/rubygem-omniauth-oauth2-generic \
 	rubygem-omniauth-saml>=1.10:security/rubygem-omniauth-saml \
@@ -51,7 +51,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-omniauth_crowd22>=2.2.0:devel/rubygem-omniauth_crowd22 \
 	rubygem-omniauth-authentiq>=0.3.3:net/rubygem-omniauth-authentiq \
 	rubygem-rack-oauth212>=1.2.1:security/rubygem-rack-oauth212 \
-	rubygem-jwt1>=1.5.6:www/rubygem-jwt1 \
+	rubygem-jwt>=2.1.0:www/rubygem-jwt \
 	rubygem-recaptcha3>=3.0:devel/rubygem-recaptcha3 \
 	rubygem-akismet>=2.0:devel/rubygem-akismet \
 	rubygem-devise-two-factor-rails50>=3.0.0:security/rubygem-devise-two-factor-rails50 \
@@ -71,7 +71,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-hashie-forbidden_attributes>=0:devel/rubygem-hashie-forbidden_attributes \
 	rubygem-kaminari-rails50>=1.0:www/rubygem-kaminari-rails50 \
 	rubygem-hamlit>=2.8.8:www/rubygem-hamlit \
-	rubygem-carrierwave>=1.2.3:www/rubygem-carrierwave \
+	rubygem-carrierwave>=1.3.0:www/rubygem-carrierwave \
 	rubygem-mini_magick>=0:graphics/rubygem-mini_magick \
 	rubygem-fog-aws2>=2.0.1:net/rubygem-fog-aws2 \
 	rubygem-fog-core1>=1.44:devel/rubygem-fog-core1 \
@@ -99,7 +99,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-rouge>=3.1:textproc/rubygem-rouge \
 	rubygem-truncato>=0.7.9:textproc/rubygem-truncato \
 	rubygem-bootstrap_form>=2.7.0:devel/rubygem-bootstrap_form \
-	rubygem-nokogiri>=1.8.2:textproc/rubygem-nokogiri \
+	rubygem-nokogiri>=1.8.5:textproc/rubygem-nokogiri \
 	rubygem-escape_utils>=1.1:textproc/rubygem-escape_utils \
 	rubygem-icalendar>=0:devel/rubygem-icalendar \
 	rubygem-diffy31>=3.1.0:textproc/rubygem-diffy31 \
@@ -149,6 +149,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-webpack-rails-rails50>=0.9.10:www/rubygem-webpack-rails-rails50 \
 	rubygem-rack-proxy>=0.6.0:www/rubygem-rack-proxy \
 	rubygem-sass-rails-rails50>=5.0.6:textproc/rubygem-sass-rails-rails50 \
+	rubygem-sass>=3.5.0:textproc/rubygem-sass \
 	rubygem-uglifier27>=2.7.2:www/rubygem-uglifier27 \
 	rubygem-addressable>=2.5.2:www/rubygem-addressable \
 	rubygem-font-awesome-rails-rails50>=4.7:devel/rubygem-font-awesome-rails-rails50 \
@@ -162,7 +163,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-sentry-raven>=2.7:devel/rubygem-sentry-raven \
 	rubygem-premailer-rails19-rails50>=1.9.7:mail/rubygem-premailer-rails19-rails50 \
 	rubygem-ruby_parser>=3.8.4:devel/rubygem-ruby_parser \
-	rubygem-rails-i18n-rails50>=4.0.9:devel/rubygem-rails-i18n-rails50 \
+	rubygem-rails-i18n-rails50>=5.1.0:devel/rubygem-rails-i18n-rails50 \
 	rubygem-gettext_i18n_rails>=1.8.0:devel/rubygem-gettext_i18n_rails \
 	rubygem-gettext_i18n_rails_js-rails50>=1.3:devel/rubygem-gettext_i18n_rails_js-rails50 \
 	rubygem-gettext>=3.2.2:devel/rubygem-gettext \
@@ -186,7 +187,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-sshkey>=1.9.0:security/rubygem-sshkey \
 	rubygem-ed25519>=1.2:security/rubygem-ed25519 \
 	rubygem-bcrypt_pbkdf>=1.0:security/rubygem-bcrypt_pbkdf \
-	rubygem-gitaly-proto>=1.3.0:net/rubygem-gitaly-proto \
+	rubygem-gitaly-proto>=1.5.0:net/rubygem-gitaly-proto \
 	rubygem-grpc>=1.15.0:net/rubygem-grpc \
 	rubygem-gitaly>=0.8.0:net/rubygem-gitaly \
 	rubygem-google-protobuf>=3.6:devel/rubygem-google-protobuf \
@@ -211,7 +212,7 @@ MYSQL_DESC=	Optional MySQL support
 PGSQL_RUN_DEPENDS=	rubygem-pg018>=0.18.2:databases/rubygem-pg018 \
 	rubygem-peek-pg-rails50>=1.3.0:databases/rubygem-peek-pg-rails50
 MYSQL_RUN_DEPENDS=	rubygem-mysql2>=0.4.5:databases/rubygem-mysql2 \
-	rubygem-peek-mysql2-rails50>=1.1.0:databases/rubygem-peek-mysql2-rails50
+	rubygem-peek-mysql2-rails50>=1.2.0:databases/rubygem-peek-mysql2-rails50
 
 USE_RUBY=	yes
 
@@ -219,7 +220,7 @@ USE_RC_SUBR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-ce/tags
-GL_COMMIT=	237bddc6a52fdc8ccb51b024a3048a3233ee43a3
+GL_COMMIT=	1d9280e16514e01f02674591634befb8f765e858
 
 USERS=	git
 GROUPS=	git
@@ -254,7 +255,6 @@ do-install:
 	${FIND} ${WRKSRC} -name '*.gitkeep' -delete
 	${FIND} ${WRKSRC} -name '*.gitignore' -delete
 	${FIND} ${WRKSRC} -name "Gemfile.lock" -delete
-	${FIND} ${WRKSRC} -name "Gemfile.rail5.lock" -delete
 	${MV} ${WRKSRC}/config/gitlab.yml.example ${WRKSRC}/config/gitlab.yml.sample
 	${MV} ${WRKSRC}/config/unicorn.rb.example ${WRKSRC}/config/unicorn.rb.sample
 	${MV} ${WRKSRC}/config/resque.yml.example ${WRKSRC}/config/resque.yml.sample
