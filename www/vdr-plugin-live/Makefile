@@ -33,7 +33,6 @@ OPTIONS_DEFINE=	DOCS
 
 .if ${COMPILER_FEATURES:Mlibc++}
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-libcxx
-EXTRA_PATCH_STRIP=	-p1
 .endif
 
 post-patch: post-patch-plugin
