@@ -1,0 +1,17 @@
+TIMESTAMP = 1531473283
+SHA256 (jonnenauha-prometheus_varnish_exporter-1.4.1_GH0.tar.gz) = 20deb875de670a196b6638e5feacaf40dcb922255392f092c5b0790928652260
+SIZE (jonnenauha-prometheus_varnish_exporter-1.4.1_GH0.tar.gz) = 197319
+SHA256 (prometheus-client_golang-v0.8.0_GH0.tar.gz) = 88b0040393276116f848de5bdd636717d339667273cfc45a4edda40b5e5682bd
+SIZE (prometheus-client_golang-v0.8.0_GH0.tar.gz) = 75593
+SHA256 (beorn7-perks-3a771d9_GH0.tar.gz) = b7a0faebca98ebd5e7546403b4cdea9dc77f865f0623d04efbad33e984297cc9
+SIZE (beorn7-perks-3a771d9_GH0.tar.gz) = 10800
+SHA256 (golang-protobuf-70b3af3_GH0.tar.gz) = fd81970d30eba8f3d49c5b27eb80728060f022bb391515e8d79724d5b39dc1f9
+SIZE (golang-protobuf-70b3af3_GH0.tar.gz) = 329777
+SHA256 (matttproud-golang_protobuf_extensions-c12348c_GH0.tar.gz) = da165c9275b77a0994b815bc7d761dcb2e4799a90fe49eec08d8bdff3a683f48
+SIZE (matttproud-golang_protobuf_extensions-c12348c_GH0.tar.gz) = 37200
+SHA256 (prometheus-client_model-5c3871d_GH0.tar.gz) = 5decfffcc4a7cfbce4214e42aaf0e3af9acdadf5d3f3ef6733868314171fd2f0
+SIZE (prometheus-client_model-5c3871d_GH0.tar.gz) = 57126
+SHA256 (prometheus-common-7600349_GH0.tar.gz) = 428d2301007b765ae36a64114b2f4806556c602dba34c011a10caaae76cbb433
+SIZE (prometheus-common-7600349_GH0.tar.gz) = 77805
+SHA256 (prometheus-procfs-ae68e2d_GH0.tar.gz) = d2ef0107607a9e0fcfccbe7d0a364ea04de741d464b244994fb579f2610dfb4f
+SIZE (prometheus-procfs-ae68e2d_GH0.tar.gz) = 57790
