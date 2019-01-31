@@ -134,6 +134,8 @@ BARRIER_DNS_CNAME=		yes
 
 PATCH_DIST_STRIP+=	-p1
 
+.include <bsd.port.options.mk>
+
 .if !defined(BARRIER_DNS_PATCH)
 # Patch necessary to cope with non-RFC >512 dns entries
 # Since AOL has been using those, the problem has skyrocketed from minor to
@@ -168,6 +170,9 @@ PATCHFILES+=	netqmail-mysql-${MYSQL_PATCH_VERSION}.patch:mysql
 PATCH_SITES+=	http://inoa.net/qmail-tls/:tls
 TLS_PATCH_NAME=	${QMAIL_PORTNAME}-${QMAIL_VERSION}-tls-${TLS_PATCH_DATE}.patch
 PATCHFILES+=	${TLS_PATCH_NAME}:tls
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000
+EXTRA_PATCHES+=	${FILESDIR}/netqmail-1.06-tls-20160918-freebsd-12.patch
+.endif
 .endif
 
 PATCH_SITES+=	LOCAL/bdrewery/qmail/:dns,sendmail_flagf,rfc2821,ldap,mysql,tls,quota,blockexec,doublebounce,spf,spf_tls,localtime,qmtpc_outgoingip
@@ -381,8 +386,6 @@ TLS_USES=		ssl
 # Port will control all PREFIX handling.
 NO_MTREE=	yes
 NO_PREFIX_RMDIR=yes
-
-.include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64" && !defined(SLAVE_LDAP) \
     && !defined(SLAVE_SPAMCONTROL)
