@@ -14,10 +14,22 @@ COMMENT=	WWW CGI script to browse CVS repository trees
 
 CONFLICTS=	cvsweb-3.*
 
-NO_BUILD=	yes
 USES=		perl5
 
+NO_BUILD=	yes
+PLIST_SUB=	CGIDIR="${CGIDIR}" ICONSDIR="${ICONSDIR}"
+SUB_FILES=	pkg-message
+
 OPTIONS_DEFINE=	DOCS
+
+CONFFILES=	cvsweb.conf \
+		cvsweb.conf-freebsd \
+		cvsweb.conf-openbsd \
+		cvsweb.conf-netbsd \
+		cvsweb.conf-ruby
+
+# Specify the title of your cvsweb site.
+TITLE?=		My CVS Repository
 
 .include <bsd.port.pre.mk>
 
@@ -27,9 +39,6 @@ OPTIONS_DEFINE=	DOCS
 CVSROOT=	/home/cvs
 .endif
 
-# Specify the title of your cvsweb site.
-TITLE?=		My CVS Repository
-
 # Specify these directories in relative paths to ${PREFIX}.
 .if !exists(${PREFIX}/www) && exists(${PREFIX}/share/apache)
 CGIDIR?=	share/apache/cgi-bin
@@ -38,17 +47,6 @@ ICONSDIR?=	share/apache/icons
 CGIDIR?=	www/cgi-bin
 ICONSDIR?=	www/icons
 .endif
-
-CONFFILES=	cvsweb.conf \
-		cvsweb.conf-freebsd \
-		cvsweb.conf-openbsd \
-		cvsweb.conf-netbsd \
-		cvsweb.conf-ruby
-
-PLIST_SUB+=	CGIDIR="${CGIDIR}" ICONSDIR="${ICONSDIR}"
-
-SUB_FILES=	pkg-message
-SUB_LIST=	PREFIX="${PREFIX}" DOCSDIR="${DOCSDIR}"
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's,!!PERL!!,${PERL},' \
