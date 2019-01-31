@@ -25,7 +25,7 @@ ALL_TARGET=	shared static
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-MAKE_ENV=	NO_ASM=y
+MAKE_ENV+=	NO_ASM=y
 .endif
 
 post-patch: .SILENT
