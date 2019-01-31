@@ -20,7 +20,7 @@ USE_PERL5=	configure
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} >= 502501
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ref.xs
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ref.xs
 .endif
 
 .include <bsd.port.post.mk>

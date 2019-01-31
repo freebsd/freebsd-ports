@@ -41,7 +41,7 @@ STRIP=	# The bazel binary is also a zip archive (extracted by the elf part), it 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-EXTRA_PATCHES=	${FILESDIR}/extra-i386_src_BUILD ${FILESDIR}/extra-i386_tools_cpp_BUILD.static.freebsd
+EXTRA_PATCHES+=	${FILESDIR}/extra-i386_src_BUILD ${FILESDIR}/extra-i386_tools_cpp_BUILD.static.freebsd
 .endif
 
 # Have the location of the system-wide rc file reside ${ETCDIR}.

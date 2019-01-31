@@ -32,7 +32,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${FLAVOR:Upy27:Mpy3*}
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-miltermodule.c
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-miltermodule.c
 .endif
 
 .include <bsd.port.post.mk>
