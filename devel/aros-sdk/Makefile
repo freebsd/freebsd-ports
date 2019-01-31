@@ -10,7 +10,15 @@ DISTNAME=	AROS-20060207-i386-all-sdk
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Software development kit (SDK) for the AROS Operating System
 
+ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	should work with a cross compiler, needs testing
+
 USES=		gmake tar:bzip2
+
+SUB_FILES=	pkg-message
+SUB_LIST=	AROS_SDK_PATH=${AROS_SDK_PATH}
+
+AROS_SDK_PATH=	${PREFIX}/aros-sdk
 
 .include <bsd.port.pre.mk>
 
@@ -22,9 +30,6 @@ OBJCOPY!=	${CC} -print-prog-name=objcopy
 OBJDUMP!=	${CC} -print-prog-name=objdump
 RANLIB!=	${CC} -print-prog-name=ranlib
 STRIP!=		${CC} -print-prog-name=strip
-LD_EMU=		elf_i386_fbsd
-AROS_SDK_PATH=	${PREFIX}/aros-sdk
-CC_INCLUDE=	/usr/include
 CC_PROGRAMS_PATH!=${CC} -print-search-dirs | ${GREP} "programs: =" | cut -c 12-
 
 CC_DIR!=dirname `which ${CC}`
@@ -35,13 +40,8 @@ CCROOT!=	${DIRNAME} `${CC} -print-libgcc-file-name`
 CC_INCLUDE:=	${CCROOT}/include
 .endif
 
-ONLY_FOR_ARCHS=	i386
-ONLY_FOR_ARCHS_REASON=	should work with a cross compiler, needs testing
-SUB_FILES=	pkg-message
-SUB_LIST=	AROS_SDK_PATH=${AROS_SDK_PATH}
-
 do-build:
-	@${REINPLACE_CMD} -e 's|@aros_sdk_path@|${AROS_SDK_PATH}|g; s|@ld_emu@|${LD_EMU}|g; s|@cc_include@|${CC_INCLUDE}|g; s|@cc_cpu@|${ARCH}|g' ${WRKSRC}/scripts/specs.in
+	@${REINPLACE_CMD} -e 's|@aros_sdk_path@|${AROS_SDK_PATH}|g; s|@ld_emu@|elf_i386_fbsd|g; s|@cc_include@|${CC_INCLUDE}|g; s|@cc_cpu@|${ARCH}|g' ${WRKSRC}/scripts/specs.in
 	@${REINPLACE_CMD} -e 's|@aros_sdk_path@|${AROS_SDK_PATH}|g; s|@ld@|${LD}|g; s|@nm@|${NM}|g; s|@cc@|${CC}|g; s|@objdump@|${OBJDUMP}|g; s|@cc_cpu@|${ARCH}|g; s|@strip@|${STRIP}|g' ${WRKSRC}/scripts/aros-gcc.in
 	@${REINPLACE_CMD} -e 's|@aros_sdk_path@|${AROS_SDK_PATH}|g; s|@ld@|${LD}|g; s|@nm@|${NM}|g; s|@cc@|${CC}|g; s|@objdump@|${OBJDUMP}|g; s|@cc_cpu@|${ARCH}|g; s|@cc_programs_path@|${CC_PROGRAMS_PATH}|g' ${WRKSRC}/scripts/aros-ld.in
 	@${REINPLACE_CMD} -e 's|@strip@|${STRIP}|g' ${WRKSRC}/scripts/aros-strip.in
