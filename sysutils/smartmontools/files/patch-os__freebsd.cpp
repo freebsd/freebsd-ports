@@ -1,32 +1,19 @@
---- os_freebsd.cpp.orig	2017-04-24 09:34:16.000000000 -0700
-+++ os_freebsd.cpp	2018-02-27 19:15:54.338861000 +0000
-@@ -16,6 +16,8 @@
+Index: os_freebsd.cpp
+===================================================================
+--- os_freebsd.cpp.orig	2018-12-05 18:30:46 UTC
++++ os_freebsd.cpp
+@@ -9,6 +9,7 @@
   */
  
- #include <stdio.h>
+ #include <sys/param.h>
 +#include <sys/endian.h>
-+#include <sys/param.h>
+ #include <stdio.h>
  #include <sys/types.h>
  #include <dirent.h>
- #include <fcntl.h>
-@@ -484,7 +486,7 @@
-   	}
-   	nsid = 0xFFFFFFFF; // broadcast id
-   }
--  else if (sscanf(dev, NVME_CTRLR_PREFIX"%d"NVME_NS_PREFIX"%d%c", 
-+  else if (sscanf(dev, NVME_CTRLR_PREFIX"%d" NVME_NS_PREFIX "%d%c", 
-   	&ctrlid, &nsid, &tmp) == 2) 
-   {
-   	if(ctrlid < 0 || nsid < 0) {
-@@ -521,16 +523,20 @@
-   struct nvme_pt_command pt;
-   memset(&pt, 0, sizeof(pt));
- 
-+#if __FreeBSD_version >= 1200058 && __FreeBSD_version < 1200081
-+  pt.cmd.opc_fuse = NVME_CMD_SET_OPC(in.opcode);
-+#else
+@@ -522,29 +523,29 @@ bool freebsd_nvme_device::nvme_pass_through(const nvme
    pt.cmd.opc = in.opcode;
-+#endif
+ #endif
+   pt.cmd.opc = in.opcode;
 -  pt.cmd.nsid = in.nsid;
 +  pt.cmd.nsid = htole32(in.nsid);
    pt.buf = in.buffer;
@@ -46,13 +33,21 @@
    pt.is_read = 1; // should we use in.direction()?
    
    int status = ioctl(get_fd(), NVME_PASSTHROUGH_CMD, &pt);
-@@ -538,6 +544,9 @@
+ 
    if (status < 0)
      return set_err(errno, "NVME_PASSTHROUGH_CMD: %s", strerror(errno));
- 
+-
 +#if __FreeBSD_version >= 1200058
 +  nvme_completion_swapbytes(&pt.cpl);
 +#endif
-   out.result=pt.cpl.cdw0; // Command specific result (DW0)
+   cp_p = &pt.cpl;
+   out.result=cp_p->cdw0; // Command specific result (DW0)
  
-   if (nvme_completion_is_error(&pt.cpl))
+   if (nvme_completion_is_error(cp_p)) {  /* ignore DNR and More bits */
+-    uint16_t nvme_status = ((cp_p->status.sct << 8) | cp_p->status.sc) & 0x3ff;
+-
+-    return set_nvme_err(out, nvme_status);
++    return set_nvme_err(out, nvme_completion_is_error(&pt.cpl));
+   }
+ 
+   return true;
