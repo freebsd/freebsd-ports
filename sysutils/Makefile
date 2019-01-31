@@ -1010,7 +1010,6 @@
     SUBDIR += py-azure-cli-vm
     SUBDIR += py-bcfg2
     SUBDIR += py-cdmi
-    SUBDIR += py-consul
     SUBDIR += py-croniter
     SUBDIR += py-crontab
     SUBDIR += py-diffoscope
@@ -1046,6 +1045,7 @@
     SUBDIR += py-psutil
     SUBDIR += py-psutil121
     SUBDIR += py-ptyprocess
+    SUBDIR += py-python-consul
     SUBDIR += py-python-nomad
     SUBDIR += py-pytsk
     SUBDIR += py-pywatchman
