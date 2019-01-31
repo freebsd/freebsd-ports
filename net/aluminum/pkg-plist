@@ -6,6 +6,7 @@ include/aluminum/mempool.hpp
 include/aluminum/mpi_impl.hpp
 include/aluminum/progress.hpp
 include/aluminum/tuning_params.hpp
+include/aluminum/utils.hpp
 lib/cmake/aluminum/AluminumConfig.cmake
 lib/cmake/aluminum/AluminumConfigVersion.cmake
 lib/cmake/aluminum/AluminumTargets-%%CMAKE_BUILD_TYPE%%.cmake
