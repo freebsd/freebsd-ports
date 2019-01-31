@@ -5,6 +5,9 @@ DISTVERSION=	1.0-beta.2-291
 DISTVERSIONSUFFIX=	-g5cb3d476
 CATEGORIES=	x11-wm
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	82461c4165ce.patch:-p1
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	i3-compatible Wayland compositor
 
@@ -33,7 +36,7 @@ OPTIONS_DEFINE=	MANPAGES PIXBUF SUID X11
 OPTIONS_DEFAULT=MANPAGES PIXBUF SUID X11
 OPTIONS_SUB=	yes
 
-MANPAGES_BUILD_DEPENDS=	scdoc>=1.8.0:textproc/scdoc
+MANPAGES_BUILD_DEPENDS=	scdoc>=1.8.1:textproc/scdoc
 MANPAGES_MESON_ON=	-Dman-pages=enabled
 MANPAGES_MESON_OFF=	-Dman-pages=disabled
 

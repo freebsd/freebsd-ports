@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	scdoc
-DISTVERSION=	1.8.0
+DISTVERSION=	1.8.1
 CATEGORIES=	textproc
 MASTER_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/archive/
 DISTFILES=	${DISTVERSIONFULL}${EXTRACT_SUFX}
@@ -18,8 +18,6 @@ TEST_TARGET=	check
 PLIST_FILES=	bin/scdoc \
 		man/man1/scdoc.1.gz \
 		man/man5/scdoc.5.gz
-
-PORTSCOUT=	skipv:1.8.1 # https://github.com/swaywm/sway/issues/3544
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,share/man,man,' \
