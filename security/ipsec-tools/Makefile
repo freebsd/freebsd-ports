@@ -86,7 +86,7 @@ NATT_EXTRA_PATCHES=		${FILESDIR}/natt.diff
 # Need to be patched for openssl-1.1.1 (default after 1200080)
 .if ${OPSYS} == FreeBSD
 .  if ${OSVERSION} >= 1200085 && ${SSL_DEFAULT} == base
-BUILD_DEPENDS=	automake>=0:devel/automake
+BUILD_DEPENDS+=	automake>=0:devel/automake
 .  endif
 .endif
 
