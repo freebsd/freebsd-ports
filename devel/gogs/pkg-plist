@@ -5,6 +5,7 @@ bin/gogs-rm-data
 @sample(%%GOGS_USER%%,%%GOGS_GROUP%%,640) %%ETCDIR%%/conf/app.ini.sample
 etc/rc.d/gogs
 libexec/gogs/conf/app.ini
+libexec/gogs/conf/auth.d/github.conf.example
 libexec/gogs/conf/auth.d/ldap_bind_dn.conf.example
 libexec/gogs/conf/auth.d/ldap_simple_auth.conf.example
 libexec/gogs/conf/auth.d/pam.conf.example
@@ -230,6 +231,7 @@ libexec/gogs/conf/locale/locale_lv-LV.ini
 libexec/gogs/conf/locale/locale_nl-NL.ini
 libexec/gogs/conf/locale/locale_pl-PL.ini
 libexec/gogs/conf/locale/locale_pt-BR.ini
+libexec/gogs/conf/locale/locale_pt-PT.ini
 libexec/gogs/conf/locale/locale_ru-RU.ini
 libexec/gogs/conf/locale/locale_sk-SK.ini
 libexec/gogs/conf/locale/locale_sr-SP.ini
