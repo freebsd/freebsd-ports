@@ -3715,7 +3715,6 @@
 %%WWWDIR%%/app/helpers/environments_helper.rb
 %%WWWDIR%%/app/helpers/events_helper.rb
 %%WWWDIR%%/app/helpers/explore_helper.rb
-%%WWWDIR%%/app/helpers/external_wiki_helper.rb
 %%WWWDIR%%/app/helpers/favicon_helper.rb
 %%WWWDIR%%/app/helpers/form_helper.rb
 %%WWWDIR%%/app/helpers/git_helper.rb
@@ -4069,6 +4068,7 @@
 %%WWWDIR%%/app/models/label_priority.rb
 %%WWWDIR%%/app/models/legacy_diff_discussion.rb
 %%WWWDIR%%/app/models/legacy_diff_note.rb
+%%WWWDIR%%/app/models/lfs_download_object.rb
 %%WWWDIR%%/app/models/lfs_file_lock.rb
 %%WWWDIR%%/app/models/lfs_object.rb
 %%WWWDIR%%/app/models/lfs_objects_project.rb
@@ -4265,9 +4265,11 @@
 %%WWWDIR%%/app/presenters/ci/build_runner_presenter.rb
 %%WWWDIR%%/app/presenters/ci/group_variable_presenter.rb
 %%WWWDIR%%/app/presenters/ci/pipeline_presenter.rb
+%%WWWDIR%%/app/presenters/ci/trigger_presenter.rb
 %%WWWDIR%%/app/presenters/ci/variable_presenter.rb
 %%WWWDIR%%/app/presenters/clusterable_presenter.rb
 %%WWWDIR%%/app/presenters/clusters/cluster_presenter.rb
+%%WWWDIR%%/app/presenters/commit_presenter.rb
 %%WWWDIR%%/app/presenters/commit_status_presenter.rb
 %%WWWDIR%%/app/presenters/conversational_development_index/metric_presenter.rb
 %%WWWDIR%%/app/presenters/generic_commit_status_presenter.rb
@@ -4637,6 +4639,7 @@
 %%WWWDIR%%/app/services/projects/hashed_storage/migrate_repository_service.rb
 %%WWWDIR%%/app/services/projects/hashed_storage_migration_service.rb
 %%WWWDIR%%/app/services/projects/housekeeping_service.rb
+%%WWWDIR%%/app/services/projects/import_error_filter.rb
 %%WWWDIR%%/app/services/projects/import_export/export_service.rb
 %%WWWDIR%%/app/services/projects/import_service.rb
 %%WWWDIR%%/app/services/projects/lfs_pointers/lfs_download_link_list_service.rb
@@ -7577,6 +7580,7 @@
 %%WWWDIR%%/db/post_migrate/20181123042307_drop_site_statistics.rb
 %%WWWDIR%%/db/post_migrate/20181130102132_backfill_hashed_project_repositories.rb
 %%WWWDIR%%/db/post_migrate/20181204154019_populate_mr_metrics_with_events_data.rb
+%%WWWDIR%%/db/post_migrate/20181219130552_update_project_import_visibility_level.rb
 %%WWWDIR%%/db/post_migrate/20181219145520_migrate_cluster_configure_worker_sidekiq_queue.rb
 @(git,,) %%WWWDIR%%/db/schema.rb
 %%WWWDIR%%/db/seeds.rb
@@ -9333,6 +9337,7 @@
 %%WWWDIR%%/lib/api/helpers/members_helpers.rb
 %%WWWDIR%%/lib/api/helpers/notes_helpers.rb
 %%WWWDIR%%/lib/api/helpers/pagination.rb
+%%WWWDIR%%/lib/api/helpers/presentable.rb
 %%WWWDIR%%/lib/api/helpers/project_snapshots_helpers.rb
 %%WWWDIR%%/lib/api/helpers/projects_helpers.rb
 %%WWWDIR%%/lib/api/helpers/related_resources_helpers.rb
@@ -10579,6 +10584,9 @@
 %%WWWDIR%%/lib/rspec_flaky/flaky_examples_collection.rb
 %%WWWDIR%%/lib/rspec_flaky/listener.rb
 %%WWWDIR%%/lib/rspec_flaky/report.rb
+%%WWWDIR%%/lib/safe_zip/entry.rb
+%%WWWDIR%%/lib/safe_zip/extract.rb
+%%WWWDIR%%/lib/safe_zip/extract_params.rb
 %%WWWDIR%%/lib/sentry/client.rb
 %%WWWDIR%%/lib/serializers/json.rb
 %%WWWDIR%%/lib/static_model.rb
@@ -12221,12 +12229,18 @@
 %%WWWDIR%%/spec/fixtures/pages_empty.tar.gz
 %%WWWDIR%%/spec/fixtures/pages_empty.zip
 %%WWWDIR%%/spec/fixtures/pages_empty.zip.meta
+%%WWWDIR%%/spec/fixtures/pages_non_writeable.zip
 %%WWWDIR%%/spec/fixtures/patchfiles/0001-A-commit-from-a-patch.patch
 %%WWWDIR%%/spec/fixtures/patchfiles/0001-This-does-not-apply-to-the-feature-branch.patch
 %%WWWDIR%%/spec/fixtures/project_export.tar.gz
 %%WWWDIR%%/spec/fixtures/project_services/campfire/rooms.json
 %%WWWDIR%%/spec/fixtures/project_services/campfire/rooms2.json
 %%WWWDIR%%/spec/fixtures/rails_sample.jpg
+%%WWWDIR%%/spec/fixtures/safe_zip/invalid-symlink-does-not-exist.zip
+%%WWWDIR%%/spec/fixtures/safe_zip/invalid-symlinks-outside.zip
+%%WWWDIR%%/spec/fixtures/safe_zip/valid-non-writeable.zip
+%%WWWDIR%%/spec/fixtures/safe_zip/valid-simple.zip
+%%WWWDIR%%/spec/fixtures/safe_zip/valid-symlinks-first.zip
 %%WWWDIR%%/spec/fixtures/sanitized.svg
 %%WWWDIR%%/spec/fixtures/security-reports/deprecated/gl-dependency-scanning-report.json
 %%WWWDIR%%/spec/fixtures/security-reports/deprecated/gl-sast-report.json
@@ -13704,6 +13718,7 @@
 %%WWWDIR%%/spec/lib/gitlab/import_export/repo_saver_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/import_export/safe_model_attributes.yml
 %%WWWDIR%%/spec/lib/gitlab/import_export/saver_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/import_export/shared_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/import_export/uploads_manager_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/import_export/uploads_restorer_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/import_export/uploads_saver_spec.rb
@@ -13941,6 +13956,9 @@
 %%WWWDIR%%/spec/lib/rspec_flaky/flaky_examples_collection_spec.rb
 %%WWWDIR%%/spec/lib/rspec_flaky/listener_spec.rb
 %%WWWDIR%%/spec/lib/rspec_flaky/report_spec.rb
+%%WWWDIR%%/spec/lib/safe_zip/entry_spec.rb
+%%WWWDIR%%/spec/lib/safe_zip/extract_params_spec.rb
+%%WWWDIR%%/spec/lib/safe_zip/extract_spec.rb
 %%WWWDIR%%/spec/lib/sentry/client_spec.rb
 %%WWWDIR%%/spec/lib/serializers/json_spec.rb
 %%WWWDIR%%/spec/lib/system_check/app/git_user_default_ssh_config_check_spec.rb
@@ -14057,6 +14075,7 @@
 %%WWWDIR%%/spec/migrations/turn_nested_groups_into_regular_groups_for_mysql_spec.rb
 %%WWWDIR%%/spec/migrations/update_legacy_diff_notes_type_for_import_spec.rb
 %%WWWDIR%%/spec/migrations/update_notes_type_for_import_spec.rb
+%%WWWDIR%%/spec/migrations/update_project_import_visibility_level_spec.rb
 %%WWWDIR%%/spec/migrations/update_retried_for_ci_build_spec.rb
 %%WWWDIR%%/spec/migrations/update_upload_paths_to_system_spec.rb
 %%WWWDIR%%/spec/models/ability_spec.rb
@@ -14240,6 +14259,7 @@
 %%WWWDIR%%/spec/models/label_priority_spec.rb
 %%WWWDIR%%/spec/models/label_spec.rb
 %%WWWDIR%%/spec/models/legacy_diff_discussion_spec.rb
+%%WWWDIR%%/spec/models/lfs_download_object_spec.rb
 %%WWWDIR%%/spec/models/lfs_file_lock_spec.rb
 %%WWWDIR%%/spec/models/lfs_object_spec.rb
 %%WWWDIR%%/spec/models/lfs_objects_project_spec.rb
@@ -14390,9 +14410,11 @@
 %%WWWDIR%%/spec/presenters/ci/build_runner_presenter_spec.rb
 %%WWWDIR%%/spec/presenters/ci/group_variable_presenter_spec.rb
 %%WWWDIR%%/spec/presenters/ci/pipeline_presenter_spec.rb
+%%WWWDIR%%/spec/presenters/ci/trigger_presenter_spec.rb
 %%WWWDIR%%/spec/presenters/ci/variable_presenter_spec.rb
 %%WWWDIR%%/spec/presenters/clusterable_presenter_spec.rb
 %%WWWDIR%%/spec/presenters/clusters/cluster_presenter_spec.rb
+%%WWWDIR%%/spec/presenters/commit_presenter_spec.rb
 %%WWWDIR%%/spec/presenters/commit_status_presenter_spec.rb
 %%WWWDIR%%/spec/presenters/conversational_development_index/metric_presenter_spec.rb
 %%WWWDIR%%/spec/presenters/group_clusterable_presenter_spec.rb
@@ -14799,6 +14821,7 @@
 %%WWWDIR%%/spec/services/projects/hashed_storage/migrate_repository_service_spec.rb
 %%WWWDIR%%/spec/services/projects/hashed_storage_migration_service_spec.rb
 %%WWWDIR%%/spec/services/projects/housekeeping_service_spec.rb
+%%WWWDIR%%/spec/services/projects/import_error_filter_spec.rb
 %%WWWDIR%%/spec/services/projects/import_export/export_service_spec.rb
 %%WWWDIR%%/spec/services/projects/import_service_spec.rb
 %%WWWDIR%%/spec/services/projects/lfs_pointers/lfs_download_link_list_service_spec.rb

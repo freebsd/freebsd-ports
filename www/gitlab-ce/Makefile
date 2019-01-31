@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	11.7.0
+PORTVERSION=	11.7.3
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -17,8 +17,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # for the options
 MY_DEPENDS=	git>=2.16.2:devel/git \
 	gitlab-shell>=8.4.4:devel/gitlab-shell \
-	gitlab-workhorse>=8.0.0:www/gitlab-workhorse \
-	gitaly>=1.12.1:devel/gitaly \
+	gitlab-workhorse>=8.0.1:www/gitlab-workhorse \
+	gitaly>=1.12.2:devel/gitaly \
 	gitlab-pages>=1.3.1:www/gitlab-pages \
 	redis>=3.2.12:databases/redis \
 	npm>=4.3.0:www/npm \
@@ -59,6 +59,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-attr_encrypted>=3.1.0:security/rubygem-attr_encrypted \
 	rubygem-u2f0>=0.2.1:net/rubygem-u2f0 \
 	rubygem-validates_hostname>=1.0.6:dns/rubygem-validates_hostname \
+	rubygem-rubyzip>=1.2.2:archivers/rubygem-rubyzip \
 	rubygem-browser>=2.5:www/rubygem-browser \
 	rubygem-gpgme>=2.0.18:security/rubygem-gpgme \
 	rubygem-gitlab_omniauth-ldap20>=2.0.4:net/rubygem-gitlab_omniauth-ldap20 \
@@ -220,7 +221,7 @@ USE_RC_SUBR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-ce/tags
-GL_COMMIT=	1d9280e16514e01f02674591634befb8f765e858
+GL_COMMIT=	3424476b4c9f17c11b969ab00e9be80f8c635c02
 
 USERS=	git
 GROUPS=	git
