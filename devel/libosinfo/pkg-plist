@@ -18,6 +18,8 @@ include/libosinfo-1.0/osinfo/osinfo_devicelist.h
 include/libosinfo-1.0/osinfo/osinfo_entity.h
 include/libosinfo-1.0/osinfo/osinfo_enum_types.h
 include/libosinfo-1.0/osinfo/osinfo_filter.h
+include/libosinfo-1.0/osinfo/osinfo_image.h
+include/libosinfo-1.0/osinfo/osinfo_imagelist.h
 include/libosinfo-1.0/osinfo/osinfo_install_config.h
 include/libosinfo-1.0/osinfo/osinfo_install_config_param.h
 include/libosinfo-1.0/osinfo/osinfo_install_config_paramlist.h
