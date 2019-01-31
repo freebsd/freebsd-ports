@@ -1,6 +1,6 @@
---- src/waterfall/raster.cxx.orig	2018-08-11 23:26:43 UTC
+--- src/waterfall/raster.cxx.orig	2018-02-24 13:42:49 UTC
 +++ src/waterfall/raster.cxx
-@@ -169,6 +169,10 @@ void Raster::resize(int x, int y, int w,
+@@ -169,6 +169,10 @@ void Raster::resize(int x, int y, int w, int h)
  	while ((Ndest * rhs) < Hdest) Ndest++;
  	Ndest--;
  
