@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opam
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.3
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ocaml/opam/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	ocaml-
