@@ -15,4 +15,4 @@ The program will do the following without user intervention:
  * optionally creating md5sum files for all tracks
  * running several encoder processes at the same time and same run
 
-WWW: http://www.suwald.com/ripit/news.php
+WWW: https://github.com/blabber/ripit
