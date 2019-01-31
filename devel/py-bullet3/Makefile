@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bullet3
-DISTVERSION=	2.87
-PORTREVISION=	3
+DISTVERSION=	2.88
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +11,7 @@ COMMENT=	Python version of 3D collision detection library Bullet
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		compiler:c++11-lang localbase python
+USES=		compiler:c++11-lang gl localbase python
 USE_GITHUB=	yes
 GH_ACCOUNT=	bulletphysics
 USE_PYTHON=	autoplist distutils
