@@ -19,6 +19,8 @@ PLIST_FILES=	bin/scdoc \
 		man/man1/scdoc.1.gz \
 		man/man5/scdoc.5.gz
 
+PORTSCOUT=	skipv:1.8.1 # https://github.com/swaywm/sway/issues/3544
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,share/man,man,' \
 		-e '/BIN/s,install -Dm755,${INSTALL_PROGRAM},' \
