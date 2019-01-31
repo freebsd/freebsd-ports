@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpxsee
-DISTVERSION=	7.1
-PORTREVISION=	1
+DISTVERSION=	7.2
 CATEGORIES=	graphics geography
 
 MAINTAINER=	sikmir@gmail.com
@@ -21,9 +20,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tumic0
 GH_PROJECT=	GPXSee
 
-OPTIONS_DEFINE=	NLS PBF TIFF
-OPTIONS_DEFAULT=	PBF TIFF
+OPTIONS_DEFINE=	MAPS NLS PBF TIFF
+OPTIONS_DEFAULT=	MAPS PBF TIFF
 OPTIONS_SUB=	yes
+MAPS_DESC=	Install map definitions of some well known global map services
 NLS_USE=	QT=linguisttools_build
 NLS_USES=	gettext-runtime
 PBF_DESC=	Support for PBF vector maps
@@ -35,9 +35,7 @@ pre-build-NLS-on:
 	${LRELEASE} ${WRKSRC}/${PORTNAME}.pro
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/GPXSee ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	@${MKDIR} ${STAGEDIR}${DATADIR}/maps
-	${INSTALL_DATA} ${WRKSRC}/pkg/maps/* ${STAGEDIR}${DATADIR}/maps
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/gpxsee ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/csv
 	${INSTALL_DATA} ${WRKSRC}/pkg/csv/* ${STAGEDIR}${DATADIR}/csv
 	${INSTALL_DATA} ${WRKSRC}/icons/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps
@@ -46,6 +44,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/pkg/${PORTNAME}.xml ${STAGEDIR}${PREFIX}/share/mime/packages
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/metainfo
 	${INSTALL_DATA} ${WRKSRC}/pkg/appdata.xml ${STAGEDIR}${PREFIX}/share/metainfo/${PORTNAME}.appdata.xml
+
+do-install-MAPS-on:
+	@${MKDIR} ${STAGEDIR}${DATADIR}/maps
+	${INSTALL_DATA} ${WRKSRC}/pkg/maps/* ${STAGEDIR}${DATADIR}/maps
 
 do-install-NLS-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/translations
