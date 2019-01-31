@@ -1,0 +1,7 @@
+#!/bin/sh
+
+exec /usr/bin/env \
+    LITEIDE_PLUGIN_PATH=%%PREFIX%%/lib/liteide/plugins \
+    LITEIDE_RES_PATH=%%PREFIX%%/share/liteide \
+    LITEIDE_TOOL_PATH=%%PREFIX%%/libexec/liteide \
+    %%PREFIX%%/libexec/liteide/liteide

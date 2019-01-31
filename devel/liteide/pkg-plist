@@ -1,5 +1,7 @@
-bin/gotools
 bin/liteide
+libexec/liteide/gocode
+libexec/liteide/gotools
+libexec/liteide/liteide
 lib/liteide/libliteapp.so
 lib/liteide/libliteapp.so.1
 lib/liteide/libliteapp.so.1.0
@@ -27,7 +29,6 @@ lib/liteide/plugins/liblitetty.so
 lib/liteide/plugins/libmarkdown.so
 lib/liteide/plugins/libquickopen.so
 lib/liteide/plugins/librustedit.so
-%%QT4%%lib/liteide/plugins/libwebkithtmlwidget.so
 lib/liteide/plugins/libwelcome.so
 share/applications/liteide.desktop
 share/icons/hicolor/128x128/apps/liteide.png
@@ -91,6 +92,7 @@ share/icons/hicolor/64x64/apps/liteide.png
 %%DATADIR%%/liteeditor/color/cobalt black.xml
 %%DATADIR%%/liteeditor/color/cobalt blue.xml
 %%DATADIR%%/liteeditor/color/colorhelp.md
+%%DATADIR%%/liteeditor/color/dark.xml
 %%DATADIR%%/liteeditor/color/darktango.xml
 %%DATADIR%%/liteeditor/color/darkvim.xml
 %%DATADIR%%/liteeditor/color/default-func.xml
