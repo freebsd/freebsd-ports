@@ -1263,6 +1263,7 @@
     SUBDIR += py-Chameleon
     SUBDIR += py-CommonMark
     SUBDIR += py-MarkupSafe
+    SUBDIR += py-QDarkStyle
     SUBDIR += py-Tempita
     SUBDIR += py-acora
     SUBDIR += py-agate
