@@ -21,7 +21,7 @@ USE_LDCONFIG=	${TARGET_DIR}
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1100000
-RUN_DEPENDS=	compat10x-${ARCH}>=0:misc/compat10x
+RUN_DEPENDS+=	compat10x-${ARCH}>=0:misc/compat10x
 .endif
 
 .if ${ARCH} == amd64

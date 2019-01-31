@@ -21,7 +21,7 @@ USE_LDCONFIG=	${TARGET_DIR}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1000000
-RUN_DEPENDS=	compat9x-${ARCH}>=0:misc/compat9x
+RUN_DEPENDS+=	compat9x-${ARCH}>=0:misc/compat9x
 .endif
 
 .if ${ARCH} == amd64
