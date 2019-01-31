@@ -10,6 +10,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GTK+ Integration library for Clutter
 
+DEPRECATED=	0.10.x is unmaintained upstream and unused in the ports tree
+EXPIRATION_DATE=	2019-02-28
+
 LIB_DEPENDS=	libclutter-glx-1.0.so:graphics/clutter
 
 PORTSCOUT=	ignore:1
