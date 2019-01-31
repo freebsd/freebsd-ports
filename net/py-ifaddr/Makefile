@@ -10,18 +10,15 @@ MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	Python Library to enumerate all network interfaces
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:2.7+
+RUN_DEPENDS=	${PY_IPADDRESS}
+
+USES=		python
 
 USE_PYTHON=	autoplist distutils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pydron
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_MAJOR_VER} < 3
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipaddress>0:net/py-ipaddress
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
