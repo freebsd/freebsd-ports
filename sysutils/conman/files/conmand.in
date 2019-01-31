@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: conmand
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable conman:
+# conman_enable="YES"
+# conman_args="<set as needed>"
+
+. /etc/rc.subr
+
+name=conmand
+rcvar=conmand_enable
+
+load_rc_config $name
+
+pidfile=/var/run/conmand.pid
+procname="%%PREFIX%%/sbin/conmand"
+
+: ${conmand_enable:="NO"}
+: ${conmand_args:="-P ${pidfile}"}
+
+command="${procname}"
+command_args="${conmand_args}"
+
+run_rc_command "$1"

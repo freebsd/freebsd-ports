@@ -1,0 +1,32 @@
+bin/conman
+bin/conmen
+%%ETCDIR%%/default/conman
+%%ETCDIR%%/init.d/conman
+@sample %%ETCDIR%%/conman.conf.sample
+@sample %%ETCDIR%%/logrotate.d/conman.sample
+lib/conman/alpha.exp
+lib/conman/conman.exp
+lib/conman/examples/README
+lib/conman/examples/boot_alpha.exp
+lib/conman/examples/mac.exp
+lib/conman/examples/rmc.exp
+lib/conman/examples/shell_cmd_1.exp
+lib/conman/examples/shell_cmd_n.exp
+lib/conman/examples/srm.exp
+lib/conman/examples/wtf.exp
+lib/conman/exec/README
+lib/conman/exec/cyclades-ssh.exp
+lib/conman/exec/cyclades-telnet.exp
+lib/conman/exec/hp-ilo.exp
+lib/conman/exec/hp-lo100.exp
+lib/conman/exec/ibm-bc.exp
+lib/conman/exec/ipmiconsole.exp
+lib/conman/exec/ipmitool.exp
+lib/conman/exec/ssh.exp
+lib/conman/exec/sun-elom.exp
+lib/conman/exec/sun-ilom.exp
+lib/conman/exec/sun-v20z-v40z.exp
+man/man1/conman.1.gz
+man/man5/conman.conf.5.gz
+man/man8/conmand.8.gz
+sbin/conmand

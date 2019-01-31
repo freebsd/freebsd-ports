@@ -1,0 +1,12 @@
+ConMan is a serial console management program designed to support a
+large number of console devices and simultaneous users.
+
+Supported console types:
+
+ - Local serial devices
+ - Remote terminal servers (via the telnet protocol)
+ - IPMI Serial-Over-LAN (via FreeIPMI's libipmiconsole)
+ - External processes (e.g., Expect)
+ - Unix domain sockets
+
+WWW: https://dun.github.io/conman/
