@@ -163,3 +163,4 @@ share/gtk-doc/html/harfbuzz/what-harfbuzz-doesnt-do.html
 share/gtk-doc/html/harfbuzz/what-is-harfbuzz.html
 share/gtk-doc/html/harfbuzz/why-do-i-need-a-shaping-engine.html
 share/gtk-doc/html/harfbuzz/why-is-it-called-harfbuzz.html
+share/gtk-doc/html/harfbuzz/working-with-harfbuzz-clusters.html
