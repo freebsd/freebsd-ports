@@ -1,0 +1,4 @@
+Varnish exporter for Prometheus. Scrapes the varnishstat -j JSON output on each
+Prometheus collect and exposes all reported metrics.
+
+WWW: https://github.com/jonnenauha/prometheus_varnish_exporter
