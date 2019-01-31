@@ -1,6 +1,6 @@
 Diofant is a Python library for symbolic mathematics.
 It is able to symbolically differentiate, integrate functions, solve
-algebraoc equations and a lot more.
+algebraic equations and a lot more.
 
 It can present results in a very cool pseudographics in your terminal.
 
