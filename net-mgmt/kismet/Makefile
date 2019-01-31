@@ -67,7 +67,7 @@ PLIST_SUB+=	PLUGINS="@comment "
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000
-EXTRA_PATCHES=${FILESDIR}/extra-patch-restricted-plugin-ptw_aircrack-crypto.cc
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-restricted-plugin-ptw_aircrack-crypto.cc
 .endif
 
 post-patch:

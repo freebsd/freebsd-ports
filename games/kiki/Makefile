@@ -40,7 +40,7 @@ CXXFLAGS+=	-Werror=tautological-constant-out-of-range-compare
 .endif
 
 .if ${OSVERSION} > 1200031
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-ino64
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ino64
 .endif
 
 post-patch:

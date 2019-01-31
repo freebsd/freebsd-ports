@@ -202,7 +202,7 @@ PLIST_SUB+=	ARM="@comment "
 PLIST_SUB+=	X86=""
 .else
 # armv6 || armv7 (rpi1 and rpi2 only)
-EXTRA_PATCHES=	${FILESDIR}/extra-armv6_hal
+EXTRA_PATCHES+=	${FILESDIR}/extra-armv6_hal
 CONFIGURE_ARGS+=	--enable-player=omxplayer
 LIB_DEPENDS+=	libEGL.so:misc/raspberrypi-userland \
 		libhal.so:sysutils/hal \

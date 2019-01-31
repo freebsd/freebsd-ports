@@ -22,7 +22,7 @@ USE_PYTHON=	autoplist distutils
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_MAJOR_VER} == "3"
-EXTRA_PATCHES=      ${FILESDIR}/extra-patch-____pkginfo____.py
+EXTRA_PATCHES+=      ${FILESDIR}/extra-patch-____pkginfo____.py
 .else
 MY_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.shutil_get_terminal_size>=1.0:devel/py-backports.shutil_get_terminal_size@${PY_FLAVOR}
 .endif
