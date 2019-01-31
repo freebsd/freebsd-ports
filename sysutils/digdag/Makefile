@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	digdag
-DISTVERSION=	0.9.31
+DISTVERSION=	0.9.32
 CATEGORIES=	sysutils java
-MASTER_SITES=	https://dl.bintray.com/digdag/maven/
+MASTER_SITES=	https://dl.bintray.com/digdag/maven/ \
+		LOCAL/ehaupt
 EXTRACT_SUFX=	.jar
 
 MAINTAINER=	ehaupt@FreeBSD.org
