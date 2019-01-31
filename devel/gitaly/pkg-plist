@@ -62,6 +62,7 @@
 %%DATADIR%%/ruby/lib/gitlab/git_logger.rb
 %%DATADIR%%/ruby/lib/gitlab/gollum.rb
 %%DATADIR%%/ruby/lib/gitlab/rails_logger.rb
+%%DATADIR%%/ruby/lib/gitlab/ref_matcher.rb
 %%DATADIR%%/ruby/lib/gitlab/utils/strong_memoize.rb
 %%DATADIR%%/ruby/lib/gitlab/version_info.rb
 %%DATADIR%%/ruby/spec/factories/gitaly/commit.rb
@@ -96,9 +97,12 @@
 %%DATADIR%%/ruby/spec/lib/gitlab/git/submodule_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/testdata/certs/gitalycert.pem
 %%DATADIR%%/ruby/spec/lib/gitlab/git/testdata/certs/gitalycert2.pem
+%%DATADIR%%/ruby/spec/lib/gitlab/git/testdata/certs/gitalycert3.pem
+%%DATADIR%%/ruby/spec/lib/gitlab/git/testdata/certs/gitalycertdup.pem
 %%DATADIR%%/ruby/spec/lib/gitlab/git/testdata/gitalycert.pem
 %%DATADIR%%/ruby/spec/lib/gitlab/git/user_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/wiki_spec.rb
+%%DATADIR%%/ruby/spec/lib/gitlab/ref_matcher_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/version_info_spec.rb
 %%DATADIR%%/ruby/spec/spec_helper.rb
 %%DATADIR%%/ruby/spec/support/generate-seed-repo-rb
