@@ -194,6 +194,7 @@
     SUBDIR += confman
     SUBDIR += conky
     SUBDIR += conky-awesome
+    SUBDIR += conman
     SUBDIR += consolehm
     SUBDIR += consolekit2
     SUBDIR += consul
