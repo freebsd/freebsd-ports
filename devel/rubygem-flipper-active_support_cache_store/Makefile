@@ -3,6 +3,7 @@
 
 PORTNAME=	flipper-active_support_cache_store
 PORTVERSION=	0.16.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,11 +12,12 @@ COMMENT=	ActiveSupport::Cache store adapter for Flipper
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activesupport4>=3.2:devel/rubygem-activesupport4 \
+RUN_DEPENDS=	rubygem-activesupport50>=3.2:devel/rubygem-activesupport50 \
 		rubygem-flipper>=${PORTVERSION}:devel/rubygem-flipper
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

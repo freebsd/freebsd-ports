@@ -3,6 +3,7 @@
 
 PORTNAME=	state_machines-activemodel
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -12,11 +13,12 @@ COMMENT=	Support for creating state machines for attributes on ActiveModel
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-activemodel4>=4.1:databases/rubygem-activemodel4 \
+RUN_DEPENDS=	rubygem-activemodel50>=4.1:databases/rubygem-activemodel50 \
 		rubygem-state_machines>=0.5.0:devel/rubygem-state_machines
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
