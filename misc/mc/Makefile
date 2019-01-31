@@ -3,6 +3,7 @@
 
 PORTNAME=	mc
 PORTVERSION=	4.8.22
+PORTREVISION=	1
 CATEGORIES=	misc shells
 MASTER_SITES=	http://ftp.midnight-commander.org/ \
 		https://ftp.osuosl.org/pub/midnightcommander/
@@ -89,8 +90,8 @@ post-install-X11-on:
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200030
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_diffviewer_ydiff.c
-RUN_DEPENDS=	gdiff:textproc/diffutils
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_diffviewer_ydiff.c
+RUN_DEPENDS+=	gdiff:textproc/diffutils
 .endif
 
 .include <bsd.port.post.mk>
