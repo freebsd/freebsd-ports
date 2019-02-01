@@ -10,6 +10,7 @@ MAINTAINER=	jt@ixsystems.com
 COMMENT=	Lumina Desktop Environment
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
 RUN_DEPENDS=	xrandr:x11/xrandr
 
