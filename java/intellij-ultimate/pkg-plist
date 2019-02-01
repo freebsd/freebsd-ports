@@ -108,7 +108,7 @@ bin/idea
 %%IDEA_HOME%%/lib/commons-net-3.6.jar
 %%IDEA_HOME%%/lib/constraint-layout.jar
 %%IDEA_HOME%%/lib/cucumber-java-1.2.5.jar
-%%IDEA_HOME%%/lib/delight-nashorn-sandbox-0.1.16.jar
+%%IDEA_HOME%%/lib/delight-rhino-sandbox-0.0.9.jar
 %%IDEA_HOME%%/lib/dexlib2-2.2.1.jar
 %%IDEA_HOME%%/lib/ecj-4.7.2.jar
 %%IDEA_HOME%%/lib/eddsa-0.2.0.jar
@@ -230,7 +230,7 @@ bin/idea
 %%IDEA_HOME%%/lib/plexus-interpolation-1.21.jar
 %%IDEA_HOME%%/lib/plexus-utils-3.0.22.jar
 %%IDEA_HOME%%/lib/protobuf-java-3.4.0.jar
-%%IDEA_HOME%%/lib/proxy-vole-1.0.5.jar
+%%IDEA_HOME%%/lib/proxy-vole-1.0.6.jar
 %%IDEA_HOME%%/lib/pty4j-0.8.6.jar
 %%IDEA_HOME%%/lib/purejavacomm-0.0.11.1.jar
 %%IDEA_HOME%%/lib/rd-core-0.183.68.jar
@@ -360,7 +360,7 @@ bin/idea
 %%IDEA_HOME%%/plugins/CSS/lib/resources_en.jar
 %%IDEA_HOME%%/plugins/DatabaseTools/lib/database-impl.jar
 %%IDEA_HOME%%/plugins/DatabaseTools/lib/database-openapi.jar
-%%IDEA_HOME%%/plugins/DatabaseTools/lib/dekaf-single-2.0.0.386.jar
+%%IDEA_HOME%%/plugins/DatabaseTools/lib/dekaf-single-2.0.0.387.jar
 %%IDEA_HOME%%/plugins/DatabaseTools/lib/jdbc-console.jar
 %%IDEA_HOME%%/plugins/DatabaseTools/lib/resources_en.jar
 %%IDEA_HOME%%/plugins/DatabaseTools/lib/unidecode-0.0.7.jar
