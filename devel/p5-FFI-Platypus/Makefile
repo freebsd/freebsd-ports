@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	FFI-Platypus
-PORTVERSION=	0.74
+PORTVERSION=	0.78
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -33,5 +33,6 @@ RUN_DEPENDS+=	p5-ExtUtils-MakeMaker>=7.12:devel/p5-ExtUtils-MakeMaker \
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/FFI/Platypus/Platypus.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/share/dist/FFI-Platypus/lib/libplfill.so
 
 .include <bsd.port.post.mk>
