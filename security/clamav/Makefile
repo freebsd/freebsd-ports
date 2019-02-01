@@ -4,7 +4,7 @@ PORTNAME=	clamav
 PORTVERSION=	0.101.1
 PORTEPOCH=	1
 CATEGORIES=	security
-MASTER_SITES=	http://www.clamav.net/downloads/production/
+MASTER_SITES=	https://www.clamav.net/downloads/production/
 
 MAINTAINER=	yasu@utahime.org
 COMMENT=	Command line virus scanner written entirely in C
