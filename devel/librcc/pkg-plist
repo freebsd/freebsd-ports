@@ -1,4 +1,3 @@
-%%TOOLS%%%%GTK1%%bin/rcc-gtk-config
 %%TOOLS%%%%GTK2%%bin/rcc-gtk2-config
 %%TOOLS%%%%GTK3%%bin/rcc-gtk3-config
 include/librcc.h
@@ -7,10 +6,6 @@ lib/librcc.a
 lib/librcc.so
 lib/librcc.so.0
 lib/librcc.so.0.2.12
-%%GTK1%%lib/librccgtk.a
-%%GTK1%%lib/librccgtk.so
-%%GTK1%%lib/librccgtk.so.0
-%%GTK1%%lib/librccgtk.so.0.2.12
 %%GTK2%%lib/librccgtk2.a
 %%GTK2%%lib/librccgtk2.so
 %%GTK2%%lib/librccgtk2.so.0
