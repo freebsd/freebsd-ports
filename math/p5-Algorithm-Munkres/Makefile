@@ -11,7 +11,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Extension for Munkres' Solution to Classical Assignment Problem
 
+LICENSE=	GPLv2+
+
 USES=		perl5
 USE_PERL5=	configure
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
