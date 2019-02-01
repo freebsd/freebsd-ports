@@ -10,25 +10,17 @@ COMMENT=	Portable OpenBSD Korn shell
 
 LICENSE=	PD
 
+HAS_CONFIGURE=	yes
+
 OPTIONS_DEFINE=		CURSES STATIC
 OPTIONS_DEFAULT=	CURSES
 
 CURSES_DESC=	Use ncurses for screen clearing routines
-CURSES_USES=	ncurses
 
-HAS_CONFIGURE=	yes
+CURSES_CONFIGURE_ENABLE=	curses
+CURSES_USES=			ncurses
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSTATIC}
-CONFIGURE_ARGS+=	--enable-static
-.endif
-
-.if ${PORT_OPTIONS:MCURSES}
-CONFIGURE_ARGS+=	--enable-curses
-.else
-CONFIGURE_ARGS+=	--disable-curses
-.endif
+STATIC_CONFIGURE_ENABLE=	static
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
