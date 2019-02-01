@@ -1,4 +1,4 @@
---- config/gitlab.yml.example.orig	2018-12-21 14:23:37 UTC
+--- config/gitlab.yml.example.orig	2019-01-21 20:21:36 UTC
 +++ config/gitlab.yml.example
 @@ -231,7 +231,7 @@ production: &base
      # external_http: ["1.1.1.1:80", "[2001::1]:80"] # If defined, enables custom domain support in GitLab Pages
@@ -23,9 +23,9 @@
      storages: # You must have at least a `default` storage path.
        default:
 -        path: /home/git/repositories/
--        gitaly_address: unix:/home/git/gitlab/tmp/sockets/private/gitaly.socket # TCP connections are supported too (e.g. tcp://host:port)
+-        gitaly_address: unix:/home/git/gitlab/tmp/sockets/private/gitaly.socket # TCP connections are supported too (e.g. tcp://host:port). TLS connections are also supported using the system certificate pool (eg: tls://host:port).
 +        path: /usr/home/git/repositories/
-+        gitaly_address: unix:%%PREFIX%%/www/gitlab-ce/tmp/sockets/private/gitaly.socket # TCP connections are supported too (e.g. tcp://host:port)
++        gitaly_address: unix:%%PREFIX%%/www/gitlab-ce/tmp/sockets/private/gitaly.socket # TCP connections are supported too (e.g. tcp://host:port). TLS connections are also supported using the system certificate pool (eg: tls://host:port).
          # gitaly_token: 'special token' # Optional: override global gitaly.token for this storage.
  
    ## Backup settings
