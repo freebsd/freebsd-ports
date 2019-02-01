@@ -131,7 +131,7 @@ bin/mp2bug
 %%SITE_ARCH%%/Apache2/PerlSections.pm
 %%SITE_ARCH%%/Apache2/PerlSections/Dump.pm
 %%SITE_ARCH%%/Apache2/Process.pm
-%%AP22%%%%SITE_ARCH%%/Apache2/Provider.pm
+%%SITE_ARCH%%/Apache2/Provider.pm
 %%SITE_ARCH%%/Apache2/Reload.pm
 %%SITE_ARCH%%/Apache2/RequestIO.pm
 %%SITE_ARCH%%/Apache2/RequestRec.pm
@@ -221,7 +221,7 @@ bin/mp2bug
 %%SITE_ARCH%%/auto/Apache2/MPM/MPM.so
 %%SITE_ARCH%%/auto/Apache2/Module/Module.so
 %%SITE_ARCH%%/auto/Apache2/Process/Process.so
-%%AP22%%%%SITE_ARCH%%/auto/Apache2/Provider/Provider.so
+%%SITE_ARCH%%/auto/Apache2/Provider/Provider.so
 %%SITE_ARCH%%/auto/Apache2/RequestIO/RequestIO.so
 %%SITE_ARCH%%/auto/Apache2/RequestRec/RequestRec.so
 %%SITE_ARCH%%/auto/Apache2/RequestUtil/RequestUtil.so
