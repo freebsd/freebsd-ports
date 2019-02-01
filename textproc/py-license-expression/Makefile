@@ -6,7 +6,7 @@ DISTVERSION=	0.99
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	freebsd_ports@k-worx.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Parses, normalizes and compares license expressions
 
 LICENSE=	APACHE20

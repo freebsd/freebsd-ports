@@ -6,7 +6,7 @@ DISTVERSION=	0.2.5.patch
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	freebsd_ports@k-worx.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Library for interfacing with maven
 
 LICENSE=	APACHE20

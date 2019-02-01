@@ -5,7 +5,7 @@ DISTVERSION=	0.1.4
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	freebsd_ports@k-worx.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Github-flavored Markdown for the py-markdown module
 
 LICENSE=	BSD3CLAUSE

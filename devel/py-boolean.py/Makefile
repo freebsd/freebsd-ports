@@ -6,7 +6,7 @@ DISTVERSION=	3.6
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	freebsd_ports@k-worx.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Create and parse boolean expressions and create custom boolean DSL
 
 LICENSE=	BSD2CLAUSE
