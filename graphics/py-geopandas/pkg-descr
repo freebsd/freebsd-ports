@@ -9,4 +9,4 @@ loading from a file. Objects may be transformed to new coordinate systems with
 the to_crs() method. There is currently no enforcement of like coordinates for 
 operations, but that may change in the future.
 
-WWW: https://pypi.python.org/pypi/geopandas
+WWW: https://pypi.org/project/geopandas/
