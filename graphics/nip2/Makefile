@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nip2
-PORTVERSION=	8.7.0
-PORTREVISION=	2
+PORTVERSION=	8.7.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/${PORTNAME}/releases/download/v${PORTVERSION}/
 
