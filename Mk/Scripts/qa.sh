@@ -366,11 +366,9 @@ proxydeps_suggest_uses() {
 		${pkg} = "audio/esound" -o \
 		${pkg} = "devel/gconf2" -o \
 		${pkg} = "devel/gconfmm26" -o \
-		${pkg} = "devel/glib12" -o \
 		${pkg} = "devel/glib20" -o \
 		${pkg} = "devel/glibmm" -o \
 		${pkg} = "audio/gsound" -o \
-		${pkg} = "x11-toolkits/gtk12" -o \
 		${pkg} = "x11-toolkits/gtk20" -o \
 		${pkg} = "x11-toolkits/gtk30" -o \
 		${pkg} = "www/gtkhtml3" -o \
