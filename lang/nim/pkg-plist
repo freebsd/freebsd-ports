@@ -65,15 +65,18 @@ lib/posix/posix_nintendoswitch_consts.nim
 lib/posix/posix_other.nim
 lib/posix/posix_other_consts.nim
 lib/posix/termios.nim
+lib/prelude.json
 lib/prelude.nim
 lib/pure/algorithm.nim
 lib/pure/async.nim
+lib/pure/asyncdispatch.json
 lib/pure/asyncdispatch.nim
 lib/pure/asyncdispatch.nim.cfg
 lib/pure/asyncfile.nim
 lib/pure/asyncftpclient.nim
 lib/pure/asyncfutures.nim
 lib/pure/asynchttpserver.nim
+lib/pure/asynchttpserver.nims
 lib/pure/asyncmacro.nim
 lib/pure/asyncnet.nim
 lib/pure/asyncstreams.nim
@@ -110,6 +113,7 @@ lib/pure/cstrutils.nim
 lib/pure/db_common.nim
 lib/pure/distros.nim
 lib/pure/dynlib.nim
+lib/pure/editdistance.nim
 lib/pure/encodings.nim
 lib/pure/endians.nim
 lib/pure/events.nim
@@ -192,6 +196,7 @@ lib/pure/xmldom.nim
 lib/pure/xmldomparser.nim
 lib/pure/xmlparser.nim
 lib/pure/xmltree.nim
+lib/std/adapters.nim
 lib/std/sha1.nim
 lib/std/varints.nim
 lib/stdlib.nimble
@@ -298,6 +303,7 @@ nim/compiler/idgen.nim
 nim/compiler/importer.nim
 nim/compiler/incremental.nim
 nim/compiler/installer.ini
+nim/compiler/ir.nim
 nim/compiler/jsgen.nim
 nim/compiler/jstypes.nim
 nim/compiler/lambdalifting.nim
@@ -320,7 +326,10 @@ nim/compiler/modules.nim
 nim/compiler/msgs.nim
 nim/compiler/ndi.nim
 nim/compiler/nim.cfg
+nim/compiler/nim.deps
+nim/compiler/nim.dot
 nim/compiler/nim.nim
+nim/compiler/nim.png
 nim/compiler/nimblecmd.nim
 nim/compiler/nimconf.nim
 nim/compiler/nimeval.nim
@@ -335,12 +344,14 @@ nim/compiler/options.nim
 nim/compiler/packagehandling.nim
 nim/compiler/parampatterns.nim
 nim/compiler/parser.nim
+nim/compiler/parser3.nim
 nim/compiler/passaux.nim
 nim/compiler/passes.nim
 nim/compiler/pathutils.nim
 nim/compiler/patterns.nim
 nim/compiler/platform.nim
 nim/compiler/plugins/active.nim
+nim/compiler/plugins/adapt.nim
 nim/compiler/plugins/itersgen.nim
 nim/compiler/plugins/locals.nim
 nim/compiler/pluginsupport.nim
@@ -370,6 +381,7 @@ nim/compiler/semmagic.nim
 nim/compiler/semobjconstr.nim
 nim/compiler/semparallel.nim
 nim/compiler/sempass2.nim
+nim/compiler/semprepass.nim
 nim/compiler/semstmts.nim
 nim/compiler/semtempl.nim
 nim/compiler/semtypes.nim
@@ -396,5 +408,6 @@ nim/compiler/writetracking.nim
 nim/doc/advopt.txt
 nim/doc/basicopt.txt
 %%PORTDOCS%%@dir %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/html/overview.html
 %%TOOLS%%bin/nimgrep
 %%TOOLS%%bin/nimsuggest

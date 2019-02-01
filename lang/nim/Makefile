@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nim
-PORTVERSION=	0.19.0
+PORTVERSION=	0.19.2
 CATEGORIES=	lang
 MASTER_SITES=	https://nim-lang.org/download/
 
@@ -40,7 +40,7 @@ do-build:
 	cd ${WRKSRC} && ${SETENV} CC="${CC}" LINKER="${CC}" \
 		COMP_FLAGS="${CPPFLAGS} ${CFLAGS}" LINK_FLAGS="${LDFLAGS}" \
 		${SH} build.sh
-	cd ${WRKSRC} && bin/nim c --parallelBuild=${MAKE_JOBS_NUMBER} koch
+	cd ${WRKSRC} && bin/nim c --parallelBuild=${MAKE_JOBS_NUMBER} --nimcache=${WRKSRC}/nimcache koch
 	cd ${WRKSRC} && ./koch boot --parallelBuild=${MAKE_JOBS_NUMBER} \
 		-d:release
 
