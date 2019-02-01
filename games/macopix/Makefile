@@ -3,7 +3,7 @@
 
 PORTNAME=	macopix
 PORTVERSION=	1.7.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://rosegray.sakura.ne.jp/macopix/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${RESTRICTED_FILES}
@@ -34,39 +34,22 @@ RESTRICTED_FILES=	\
 		macopix-mascot-marimite-euc-ja-2.20.tar.gz \
 		macopix-mascot-HxB-euc-ja-0.30.tar.gz
 
-USES=		gettext gmake iconv jpeg libtool pkgconfig
+USES=		gettext gmake gnome iconv jpeg libtool pkgconfig
+USE_GNOME=	gtk20
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lX11 ${ICONV_LIB}
 
-OPTIONS_DEFINE=	DOCS GNUTLS GTK1
+OPTIONS_DEFINE=	DOCS GNUTLS
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_ON=	--with-gnutls
-
-GTK1_USE=		GNOME=gtk12,gdkpixbuf
-GTK1_CONFIGURE_ON=	--with-gtk1
-
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MGNUTLS}
-USES+=	ssl
-.endif
-
-.if ${PORT_OPTIONS:MGTK1}
-PKGNAMESUFFIX=	-gtk1
-.else
-USE_GNOME+=	gtk20
-.endif
+GNUTLS_USES_OFF=	ssl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/_MAIL } MailStatus/_MAIL } MailStatus2/' ${WRKSRC}/src/main.h
-.if ${PORT_OPTIONS:MGTK1}
-	@${REINPLACE_CMD} 's|png_ptr->jmpbuf|png_jmpbuf(png_ptr)|' \
-		${WRKSRC}/src/nokkari.c
-.endif
 
 post-install:
 # install mascot file
