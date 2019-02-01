@@ -4,7 +4,6 @@ If you built it with WITH_GIMP set to yes, you can use
 xscanimage as a GIMP plug-in.  To do this, type:
 
 ln -sf %%PREFIX%%/bin/xscanimage ~/.gimp-2.0/plug-ins/xscanimage (gimp-2.x)
-ln -sf %%PREFIX%%/bin/xscanimage ~/.gimp-1.2/plug-ins/xscanimage (gimp-1.x)
 
 Then run the GIMP, and a new "xscanimage" menu item should appear in the
 "File->Acquire" menu.  Use this to access your scanner.
