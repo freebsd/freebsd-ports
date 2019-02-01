@@ -6,4 +6,4 @@ data using multi-layered GIS formats and zipped virtual file systems and
 integrates readily with other Python GIS packages such as pyproj, Rtree, 
 and Shapely. Fiona is supported only on CPython versions 2.7 and 3.4+.
 
-WWW: https://pypi.python.org/pypi/fiona
+WWW: https://pypi.org/project/Fiona/
