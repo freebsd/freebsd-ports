@@ -11,7 +11,7 @@ COMMENT=	Route path helpers for Grape
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-activesupport4>=0:devel/rubygem-activesupport4 \
+RUN_DEPENDS=	rubygem-activesupport50>=0:devel/rubygem-activesupport50 \
 		rubygem-grape>=1.0:devel/rubygem-grape \
 		rubygem-rake>=12:devel/rubygem-rake
 

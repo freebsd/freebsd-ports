@@ -11,7 +11,7 @@ COMMENT=	OAuth 2.0 Server & Client Library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport4>=0:devel/rubygem-activesupport4 \
+RUN_DEPENDS=	rubygem-activesupport50>=0:devel/rubygem-activesupport50 \
 		rubygem-attr_required>=0:devel/rubygem-attr_required \
 		rubygem-httpclient>=0:www/rubygem-httpclient \
 		rubygem-json-jwt>=1.9.0:www/rubygem-json-jwt \
