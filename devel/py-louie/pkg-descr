@@ -3,5 +3,5 @@ signals between objects in a wide variety of contexts. It is based on
 PyDispatcher, which in turn was based on a highly-rated recipe in the
 Python Cookbook.
 
-WWW: http://cheeseshop.python.org/pypi/Louie/
-WWW: http://11craft.github.com/louie/
+WWW: https://pypi.org/project/Louie/
+WWW: https://github.com/11craft/louie
