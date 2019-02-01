@@ -1,4 +1,4 @@
 Python client for the packet.net API. Full Packet API documentation is available
-at https://www.packet.net/developers/api
+at https://www.packet.com/developers/api/
 
-WWW: https://pypi.python.org/pypi/packet-python
+WWW: https://pypi.org/project/packet-python/
