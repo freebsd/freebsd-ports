@@ -12,4 +12,4 @@ This speed gain varies with the complexity of the data and the operation and
 is the range of 10-200 times for encoding operations and in the range of
 100-250 times for decoding operations.
 
-WWW: http://www.python.org/pypi/python-cjson/
+WWW: https://pypi.org/project/python-cjson/
