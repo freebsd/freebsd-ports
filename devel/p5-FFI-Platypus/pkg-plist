@@ -12,6 +12,7 @@
 %%SITE_ARCH%%/FFI/Platypus/Closure.pm
 %%SITE_ARCH%%/FFI/Platypus/DL.pm
 %%SITE_ARCH%%/FFI/Platypus/Declare.pm
+%%SITE_ARCH%%/FFI/Platypus/Function.pm
 %%SITE_ARCH%%/FFI/Platypus/Internal.pm
 %%SITE_ARCH%%/FFI/Platypus/Lang.pm
 %%SITE_ARCH%%/FFI/Platypus/Lang/ASM.pm
@@ -30,8 +31,10 @@
 %%SITE_ARCH%%/FFI/Probe/Runner/Builder.pm
 %%SITE_ARCH%%/FFI/Probe/Runner/Result.pm
 %%SITE_ARCH%%/FFI/typemap
+%%SITE_ARCH%%/auto/FFI/Platypus/Memory/Memory.txt
 %%SITE_ARCH%%/auto/FFI/Platypus/Platypus.so
 %%SITE_ARCH%%/auto/share/dist/FFI-Platypus/config.pl
+%%SITE_ARCH%%/auto/share/dist/FFI-Platypus/lib/libplfill.so
 %%SITE_ARCH%%/auto/share/dist/FFI-Platypus/probe/bin/dlrun
 %%SITE_ARCH%%/auto/share/dist/FFI-Platypus/probe/probe.pl
 %%SITE_ARCH%%/auto/share/dist/FFI-Platypus/probe/src/dlrun.c
@@ -49,6 +52,7 @@
 %%PERL5_MAN3%%/FFI::Platypus::Closure.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::DL.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::Declare.3.gz
+%%PERL5_MAN3%%/FFI::Platypus::Function.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::Internal.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::Lang.3.gz
 %%PERL5_MAN3%%/FFI::Platypus::Lang::ASM.3.gz
