@@ -2,32 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	hey
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	benchmarks
 
 MAINTAINER=	brd@FreeBSD.org
 COMMENT=	Tiny program that sends some load to a web application
 
-BUILD_DEPENDS=	go>=1.7:lang/go
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		go
+
+GO_PKGNAME=	github.com/rakyll/hey
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rakyll
 
-GH_TUPLE=	golang:net:41bba8d:net/src/golang.org/x/net
+GH_TUPLE=	golang:net:04a2e54:net/vendor/golang.org/x/net \
+		golang:text:v0.3.0:text/vendor/golang.org/x/text
 
 PLIST_FILES=	bin/hey
-
-do-build:
-	( cd ${WRKSRC}; \
-		${MKDIR} src/github.com/rakyll/hey; \
-		cd src/github.com/rakyll/hey; \
-		${LN} -s ../../../../requester . )
-	( cd ${WRKSRC}; \
-		${SETENV} ${MAKE_ENV} ${BUILD_ENV} GOPATH=${WRKSRC} CC=clang \
-		go build ${BUILD_FLAGS} )
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-${PORTVERSION} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
