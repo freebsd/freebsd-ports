@@ -1,3 +1,3 @@
-TIMESTAMP = 1540659088
-SHA256 (mariadb-5.5.62.tar.gz) = 56a365af71b8a9ec8bfee0801e2dec95011da8ee7507986ca329be11296411db
-SIZE (mariadb-5.5.62.tar.gz) = 45938380
+TIMESTAMP = 1549015056
+SHA256 (mariadb-5.5.63.tar.gz) = ef1cf79eec32ced9d1051998a8e458bb33dfbc62de297cba37ee8e9f952b21ea
+SIZE (mariadb-5.5.63.tar.gz) = 45946425
