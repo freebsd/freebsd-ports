@@ -3,7 +3,7 @@
 
 PORTNAME=	netscript
 PORTVERSION=	1.7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	SF \
 		http://fakehalo.deadpig.org/%SUBDIR%/
@@ -27,12 +27,7 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/netscript
 
-OPTIONS_DEFINE=	DOCS EXAMPLES GTK1
-
-GTK1_USE=	GNOME=gtk12
-GTK1_CFLAGS=	-DGTK
-GTK1_CPPFLAGS=	$$(gtk-config --cflags gthread)
-GTK1_LDFLAGS=	$$(gtk-config --libs gthread)
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} netscript.c \
