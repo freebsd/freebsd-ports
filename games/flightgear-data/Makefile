@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear-data
-PORTVERSION=	2018.3.1
+PORTVERSION=	2018.3.2
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 DISTNAME=	FlightGear-${PORTVERSION}-data
@@ -15,8 +15,9 @@ LICENSE=	GPLv2
 BROKEN_aarch64=		Fails to install: runaway process
 BROKEN_mips64=		Fails to install: runaway process
 
-NO_BUILD=	yes
 USES=		tar:bzip2
+
+NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/fgdata
 DATADIR=	${PREFIX}/share/flightgear
 
