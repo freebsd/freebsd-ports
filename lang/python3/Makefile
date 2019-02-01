@@ -11,9 +11,11 @@ EXTRACT_ONLY=
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	The "meta-port" for version 3 of the Python interpreter
 
-USES=			python:run
-PYTHON_VERSION=		python${PYTHON3_DEFAULT}
-NO_BUILD=		yes
+USES=		python:run
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+PYTHON_VERSION=	python${PYTHON3_DEFAULT}
 
 PLIST_FILES=	bin/2to3-${PYTHON_MAJOR_VER} \
 		bin/idle${PYTHON_MAJOR_VER} \
