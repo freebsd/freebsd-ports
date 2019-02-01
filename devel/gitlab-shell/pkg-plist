@@ -43,9 +43,9 @@
 %%DATADIR%%/lib/gitlab_net/errors.rb
 %%DATADIR%%/lib/gitlab_post_receive.rb
 %%DATADIR%%/lib/gitlab_shell.rb
+%%DATADIR%%/lib/hooks_utils.rb
 %%DATADIR%%/lib/httpunix.rb
 %%DATADIR%%/lib/http_helper.rb
-%%DATADIR%%/lib/names_helper.rb
 %%DATADIR%%/lib/object_dirs_helper.rb
 %%DATADIR%%/spec/action/custom_spec.rb
 %%DATADIR%%/spec/gitlab_access_spec.rb
@@ -60,8 +60,8 @@
 %%DATADIR%%/spec/gitlab_shell_authorized_keys_check_spec.rb
 %%DATADIR%%/spec/gitlab_shell_gitlab_shell_spec.rb
 %%DATADIR%%/spec/gitlab_shell_spec.rb
+%%DATADIR%%/spec/hooks_utils_spec.rb
 %%DATADIR%%/spec/httpunix_spec.rb
-%%DATADIR%%/spec/names_helper_spec.rb
 %%DATADIR%%/spec/object_dirs_helper_spec.rb
 %%DATADIR%%/spec/spec_helper.rb
 %%DATADIR%%/spec/support/gl_id_test_hook
