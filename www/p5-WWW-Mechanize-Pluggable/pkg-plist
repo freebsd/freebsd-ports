@@ -1,8 +1,8 @@
-%%PERL5_MAN3%%/WWW::Mechanize::Pluggable.3.gz
-%%PERL5_MAN3%%/WWW::Mechanize::Pluggable::Design.3.gz
-%%PERL5_MAN3%%/WWW::Mechanize::Plugin::Cookbook.3.gz
-%%PERL5_MAN3%%/WWW::Mechanize::Plugin::HelloWorld.3.gz
 %%SITE_PERL%%/WWW/Mechanize/Pluggable.pm
 %%SITE_PERL%%/WWW/Mechanize/Pluggable/Design.pm
 %%SITE_PERL%%/WWW/Mechanize/Plugin/Cookbook.pm
 %%SITE_PERL%%/WWW/Mechanize/Plugin/HelloWorld.pm
+%%PERL5_MAN3%%/WWW::Mechanize::Pluggable.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::Pluggable::Design.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::Plugin::Cookbook.3.gz
+%%PERL5_MAN3%%/WWW::Mechanize::Plugin::HelloWorld.3.gz
