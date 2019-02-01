@@ -1,5 +1,4 @@
 bin/stamp
-%%X11%%bin/gstamp
 share/stamp/fonts/8x10.fnt
 share/stamp/fonts/8x11snsf.fnt
 share/stamp/fonts/8x14.fnt
@@ -79,12 +78,3 @@ share/stamp/fonts/t.fnt
 share/stamp/fonts/tekton.fnt
 share/stamp/fonts/thai.fnt
 share/stamp/fonts/thin.fnt
-%%X11%%share/stamp/pixmaps/file.xpm
-%%X11%%share/stamp/pixmaps/gstmpcfg.xpm
-%%X11%%share/stamp/pixmaps/gtkstamp.xpm
-%%X11%%share/stamp/pixmaps/stamp.tif
-%%X11%%share/stamp/pixmaps/stamp.xpm
-%%X11%%share/stamp/pixmaps/stamp_not_working.xpm
-%%X11%%share/stamp/pixmaps/stamp_working.xpm
-%%X11%%share/stamp/pixmaps/transfer_not_working.xpm
-%%X11%%share/stamp/pixmaps/transfer_working.xpm
