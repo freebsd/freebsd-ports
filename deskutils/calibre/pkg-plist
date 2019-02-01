@@ -57,6 +57,7 @@ lib/calibre/calibre/db/cli/cmd_show_metadata.py
 lib/calibre/calibre/db/cli/main.py
 lib/calibre/calibre/db/cli/tests.py
 lib/calibre/calibre/db/cli/utils.py
+lib/calibre/calibre/db/copy_to_library.py
 lib/calibre/calibre/db/delete_service.py
 lib/calibre/calibre/db/errors.py
 lib/calibre/calibre/db/fields.py
