@@ -2,6 +2,7 @@
 
 PORTNAME=	cloud-print-connector
 PORTVERSION=	1.16
+PORTREVISION=	1
 CATEGORIES=	print
 
 MAINTAINER=	swills@FreeBSD.org
@@ -18,6 +19,7 @@ LIB_DEPENDS=	libcups.so:print/cups \
 
 USES=		compiler pkgconfig
 USE_GITHUB=	yes
+USE_RC_SUBR=	gcp-cups-connectord
 GH_TUPLE=	google:cloud-print-connector:7d5f127:DEFAULT/src/github.com/google/cloud-print-connector \
 		urfave:cli:8e01ec4:cli/src/github.com/urfave/cli \
 		satori:go.uuid:36e9d2e:gouuid/src/github.com/satori/go.uuid \
