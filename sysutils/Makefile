@@ -607,6 +607,7 @@
     SUBDIR += linux-crashplan
     SUBDIR += linuxfdisk
     SUBDIR += livecd
+    SUBDIR += lizardfs
     SUBDIR += lmmon
     SUBDIR += lmon
     SUBDIR += lnav

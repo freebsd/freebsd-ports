@@ -1,0 +1,30 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: mfspingserv
+# REQUIRE: DAEMON
+# KEYWORD: nostart shutdown
+#
+# Add the following lines to /etc/rc.conf to enable mfspingserv:
+#
+# mfspingserv_enable="YES"
+#
+# mfspingserv_port=""
+#
+
+. /etc/rc.subr
+
+name=mfspingserv
+rcvar=mfspingserv_enable
+
+command=%%PREFIX%%/sbin/${name}
+pid_file=/var/mfs/.${name}.lock
+command_args="${mfspingserv_port}"
+
+load_rc_config $name
+
+# set defaults
+: ${mfspingserv_enable="NO"}
+: ${mfspingserv_port="19042"}
+
+run_rc_command "$1"
