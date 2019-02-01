@@ -51,12 +51,8 @@ USE_PHP=	ctype curl fileinfo filter hash iconv mbstring mysqli openssl \
 
 GD_USE=		PHP=gd
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MOPCACHE}
-USE_PHP+=	opcache
-RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu@${PHP_FLAVOR}
-.endif
+OPCACHE_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu@${PHP_FLAVOR}
+OPCACHE_USE=		PHP=opcache
 
 USE_GITHUB=	yes
 NO_BUILD=	yes
@@ -87,4 +83,4 @@ do-install:
 		${STAGEDIR}${PREFIX}/${PHP_DESTDIR}/conf/local
 	cd ${WRKSRC} ; ${PAX} -rw * ${STAGEDIR}${PREFIX}/${PHP_DESTDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
