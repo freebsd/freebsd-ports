@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sdl2_gfx
-PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTVERSION=	1.0.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ferzkopp.net/Software/SDL2_gfx/
 DISTNAME=	SDL2_gfx-${PORTVERSION}
