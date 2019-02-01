@@ -4,4 +4,4 @@ cligj is for Python developers who create command line interfaces for
 geospatial data. cligj allows you to quickly build consistent, well-tested 
 and interoperable CLIs for handling GeoJSON.
 
-WWW: https://pypi.python.org/pypi/cliqj
+WWW: https://pypi.org/project/cligj/
