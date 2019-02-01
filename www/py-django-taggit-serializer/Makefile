@@ -6,7 +6,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	freebsd_ports@k-worx.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Django Taggit serializer for the Django REST Framework
 
 LICENSE=	BSD3CLAUSE

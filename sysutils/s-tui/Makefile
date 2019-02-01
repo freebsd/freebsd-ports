@@ -4,7 +4,7 @@ PORTNAME=	s-tui
 DISTVERSION=	0.8.2
 CATEGORIES=	sysutils python
 
-MAINTAINER=	freebsd_ports@k-worx.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Stress Terminal UI: stress test and monitoring tool
 
 LICENSE=	GPLv2

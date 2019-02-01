@@ -6,7 +6,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	freebsd_ports@k-worx.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Dynamic filtering for querysets with Django
 
 LICENSE=	BSD3CLAUSE

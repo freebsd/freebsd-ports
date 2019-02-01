@@ -6,7 +6,7 @@ CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	freebsd_ports@k-worx.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Net Automation and Progr. Abstraction Layer with Multivendor support
 
 LICENSE=	APACHE20

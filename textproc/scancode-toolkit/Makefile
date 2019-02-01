@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.9.7
 CATEGORIES=	textproc python
 
-MAINTAINER=	freebsd_ports@k-worx.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Scans code for license, copyright, package and documented dependencies
 
 LICENSE=	APACHE20 CC0-1.0

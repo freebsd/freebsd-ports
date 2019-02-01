@@ -9,7 +9,7 @@ MASTER_SITES=	http://networkx.lanl.gov/download/networkx/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	1
 
-MAINTAINER=	freebsd_ports@k-worx.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Tools for complex networks / Backported version
 
 LICENSE=	BSD3CLAUSE

@@ -9,7 +9,7 @@ MASTER_SITES=	https://apps.ankiweb.net/downloads/current/
 DISTNAME=	anki-${PORTVERSION}-source
 DIST_SUBDIR=	python
 
-MAINTAINER=	freebsd_ports@k-worx.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Flashcard trainer with spaced repetition
 
 LICENSE=	AGPLv3+

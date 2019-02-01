@@ -6,7 +6,7 @@ DISTVERSION=	1.2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://he.fi/bchunk/
 
-MAINTAINER=	freebsd_ports@k-worx.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Converts .bin/.cue files to .iso/audio
 
 LICENSE=	GPLv2

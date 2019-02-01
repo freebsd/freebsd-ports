@@ -6,7 +6,7 @@ DISTVERSION=	1.1.2-patch
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	freebsd_ports@k-worx.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Patched version of schematics that can pickle with multiprocessing
 
 LICENSE=	BSD3CLAUSE

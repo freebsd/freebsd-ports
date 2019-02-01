@@ -7,7 +7,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://remotebox.knobgoblin.org.uk/downloads/
 DISTNAME=	RemoteBox-${DISTVERSION}
 
-MAINTAINER=	freebsd_ports@k-worx.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Open Source VirtualBox Client with Remote Management
 
 LICENSE=	GPLv2

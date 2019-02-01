@@ -5,7 +5,7 @@ DISTVERSION=	g20171121
 PORTREVISION=	1
 CATEGORIES=	devel python
 
-MAINTAINER=	freebsd_ports@k-worx.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Interactive disassembler for x86/ARM/MIPS
 
 LICENSE=	GPLv3

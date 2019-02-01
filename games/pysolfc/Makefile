@@ -9,7 +9,7 @@ DISTFILES=	${PYSOLFCDIST} \
 		${CARDSETDIST}:cardsets
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	freebsd_ports@k-worx.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Solitaire game, written in Python and the successor of PySol
 
 LICENSE=	GPLv2+ GPLv3+ MIT PCW PD UCP UCJ ULG

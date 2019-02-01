@@ -6,7 +6,7 @@ CATEGORIES=	converters python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	freebsd_ports@k-worx.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Most basic port of Perl's Text::Unidecode module
 
 LICENSE=	ART10

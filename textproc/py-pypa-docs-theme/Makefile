@@ -5,7 +5,7 @@ DISTVERSION=	g20180622
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	freebsd_ports@k-worx.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Common base Sphinx theme for PyPA projects
 
 LICENSE=	PSFL
