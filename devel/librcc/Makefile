@@ -18,17 +18,19 @@ LIB_DEPENDS=	librcd.so:devel/librcd \
 		libenca.so:converters/enca \
 		libaspell.so:textproc/aspell
 
-GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lang gmake iconv libtool pathfix pkgconfig \
+USES=		compiler:c++11-lang gmake gnome iconv libtool pathfix pkgconfig \
 		tar:bzip2
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-gtk1
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	BDB TRANSLATE TOOLS GTK1 GTK2 GTK3
+OPTIONS_DEFINE=	BDB TRANSLATE TOOLS GTK2 GTK3
 OPTIONS_DEFAULT=TOOLS GTK2
 OPTIONS_SUB=	yes
 
@@ -44,9 +46,6 @@ TRANSLATE_LIB_DEPENDS=		libtranslate.so:textproc/libtranslate
 
 TOOLS_DESC=		Recode configuration utility
 TOOLS_EXTRA_PATCHES=	${FILESDIR}/extrapatch-rcc-config
-
-GTK1_CONFIGURE_ENABLE=	gtk1
-GTK1_USE=		GNOME=glib12,gtk12
 
 GTK2_CONFIGURE_ENABLE=	gtk2
 GTK2_USE=		GNOME=gtk20
