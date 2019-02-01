@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	npm
-PORTVERSION=	6.4.1
-PORTREVISION=	1
+PORTVERSION=	6.7.0
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -25,10 +24,11 @@ NODE10_DESC=	Use Node.js 10.x (www/node10) as backend
 NODE6_DESC=	Use Node.js 6.x (www/node6) as backend
 NODE8_DESC=	Use Node.js 8.x (www/node8) as backend
 
+USES=		cpe python:2.7,run shebangfix tar:xz
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ''
-USES=		cpe python:2.7,run shebangfix tar:xz
 
 CPE_VENDOR=	npmjs
 CPE_PRODUCT=	node_packaged_modules
