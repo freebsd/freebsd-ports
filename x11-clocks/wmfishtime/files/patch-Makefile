@@ -1,6 +1,6 @@
---- Makefile.orig	Sun May 27 05:49:41 2001
-+++ Makefile	Sun Jul  6 20:29:07 2003
-@@ -6,23 +6,21 @@
+--- Makefile.orig	2001-05-26 20:49:41 UTC
++++ Makefile
+@@ -6,23 +6,21 @@ PREFIX = $(DESTDIR)/usr/X11R6
  
  # no user serviceable parts below this line
  # optimization cflags
@@ -15,7 +15,7 @@
  SHELL = sh
  OBJS = fishmon.o
 -LIBS = `gtk-config --libs | sed "s/-lgtk//g"`
-+LIBS = `echo $(GTK_LIBS) | sed "s/-lgtk12//g"`
++LIBS =
  INSTALL = -m 755
  
  all: wmfishtime
