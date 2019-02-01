@@ -18,28 +18,26 @@ BUILD_DEPENDS=	xsltproc:textproc/libxslt
 USES=		cmake ssl
 USE_RC_SUBR=	mosquitto
 USE_LDCONFIG=	yes
+CMAKE_ARGS=	-DCMAKE_LIBDATADIR:PATH="${PREFIX}/libdata"
 
 USERS=		nobody
 
-NOCONFIGURE=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	WS
-
-CMAKE_ARGS+=	-DCMAKE_LIBDATADIR="${PREFIX}/libdata"
 
 WS_DESC=	MQTT over Websockets support
 WS_LIB_DEPENDS=	libwebsockets.so:net/libwebsockets
 WS_CMAKE_ON=	-DWITH_WEBSOCKETS=ON
 
 post-patch:
-# do not run ldconfig in stage dir
+	@${REINPLACE_CMD} -e '45s,^,#include <sys/socket.h>,' \
+		${WRKSRC}/src/websockets.c
 	@${REINPLACE_CMD} -e '/ldconfig/d' ${WRKSRC}/src/CMakeLists.txt \
 		${WRKSRC}/lib/CMakeLists.txt ${WRKSRC}/lib/cpp/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/CMakeLists.txt
 
 post-install:
-# Adjust configuration files
 	${MV} ${STAGEDIR}${ETCDIR}/mosquitto.conf ${STAGEDIR}${ETCDIR}/mosquitto.conf.sample
 	${MV} ${STAGEDIR}${ETCDIR}/pwfile.example ${STAGEDIR}${ETCDIR}/pwfile.sample
 	${MV} ${STAGEDIR}${ETCDIR}/pskfile.example ${STAGEDIR}${ETCDIR}/pskfile.sample
