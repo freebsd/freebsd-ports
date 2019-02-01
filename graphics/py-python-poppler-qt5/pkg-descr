@@ -7,4 +7,4 @@ Usage:
 	import popplerqt5
 	d = popplerqt5.Poppler.Document.load('file.pdf')
 
-WWW: https://pypi.python.org/pypi/python-poppler-qt5
+WWW: https://pypi.org/project/python-poppler-qt5/
