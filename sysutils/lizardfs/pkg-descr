@@ -1,0 +1,5 @@
+LizardFS is a highly reliable, scalable and efficient distributed file
+system. It spreads data over a number of physical servers, making it
+visible to an end user as a single file system.
+
+WWW: https://lizardfs.org/
