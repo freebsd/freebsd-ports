@@ -4,6 +4,7 @@ bin/emacs
 bin/emacs-%%EMACS_VER%%
 bin/emacsclient
 bin/etags
+libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/emacs.pdmp
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/hexl
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/movemail
 libexec/emacs/%%EMACS_VER%%/%%GNU_HOST%%/profile
@@ -22,7 +23,6 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/%%ETCDIR%%.service
 %%DATADIR%%/%%EMACS_VER%%/etc/AUTHORS
 %%DATADIR%%/%%EMACS_VER%%/etc/CALC-NEWS
-%%DATADIR%%/%%EMACS_VER%%/etc/CENSORSHIP
 %%DATADIR%%/%%EMACS_VER%%/etc/COPYING
 %%DATADIR%%/%%EMACS_VER%%/etc/DEBUG
 %%DATADIR%%/%%EMACS_VER%%/etc/DEVEL.HUMOR
@@ -31,16 +31,12 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/ERC-NEWS
 %%DATADIR%%/%%EMACS_VER%%/etc/ETAGS.EBNF
 %%DATADIR%%/%%EMACS_VER%%/etc/ETAGS.README
-%%DATADIR%%/%%EMACS_VER%%/etc/FTP
-%%DATADIR%%/%%EMACS_VER%%/etc/GNU
 %%DATADIR%%/%%EMACS_VER%%/etc/GNUS-NEWS
 %%DATADIR%%/%%EMACS_VER%%/etc/HELLO
 %%DATADIR%%/%%EMACS_VER%%/etc/HISTORY
 %%DATADIR%%/%%EMACS_VER%%/etc/JOKES
-%%DATADIR%%/%%EMACS_VER%%/etc/LINUX-GNU
 %%DATADIR%%/%%EMACS_VER%%/etc/MACHINES
 %%DATADIR%%/%%EMACS_VER%%/etc/MH-E-NEWS
-%%DATADIR%%/%%EMACS_VER%%/etc/MORE.STUFF
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.1-17
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.18
@@ -54,14 +50,11 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.26
 %%DATADIR%%/%%EMACS_VER%%/etc/NEXTSTEP
 %%DATADIR%%/%%EMACS_VER%%/etc/NXML-NEWS
-%%DATADIR%%/%%EMACS_VER%%/etc/ORDERS
 %%DATADIR%%/%%EMACS_VER%%/etc/ORG-NEWS
 %%DATADIR%%/%%EMACS_VER%%/etc/PROBLEMS
 %%DATADIR%%/%%EMACS_VER%%/etc/README
 %%DATADIR%%/%%EMACS_VER%%/etc/TERMS
-%%DATADIR%%/%%EMACS_VER%%/etc/THE-GNU-PROJECT
 %%DATADIR%%/%%EMACS_VER%%/etc/TODO
-%%DATADIR%%/%%EMACS_VER%%/etc/WHY-FREE
 %%DATADIR%%/%%EMACS_VER%%/etc/charsets/8859-10.map
 %%DATADIR%%/%%EMACS_VER%%/etc/charsets/8859-11.map
 %%DATADIR%%/%%EMACS_VER%%/etc/charsets/8859-13.map
@@ -3951,6 +3944,7 @@ share/metainfo/emacs.appdata.xml
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/dispextern.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/dispnew.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/disptab.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/dmpstruct.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/doc.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/doprnt.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/dosfns.c
@@ -3968,6 +3962,9 @@ share/metainfo/emacs.appdata.xml
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/eval.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/fileio.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/filelock.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/fingerprint-dummy.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/fingerprint.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/fingerprint.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/firstfile.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/floatfns.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/fns.c
@@ -4024,6 +4021,8 @@ share/metainfo/emacs.appdata.xml
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/msdos.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/nsgui.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/nsterm.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/pdumper.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/pdumper.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/print.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/process.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/process.h
