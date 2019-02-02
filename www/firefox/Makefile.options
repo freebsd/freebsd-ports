@@ -21,7 +21,6 @@ OPTIONS_EXCLUDE+=	DTRACE
 #   <arch> not implemented
 #   failed to allocate space for probe
 OPTIONS_DEFAULT_amd64+=	DTRACE
-OPTIONS_DEFAULT_i386+=	DTRACE
 
 CANBERRA_DESC?=		Sound theme alerts
 LIBPROXY_DESC?=		Proxy support via libproxy
