@@ -1,0 +1,6 @@
+bin/Nekobi
+lib/lv2/Nekobi.lv2/Nekobi_dsp.so
+lib/lv2/Nekobi.lv2/Nekobi_dsp.ttl
+lib/lv2/Nekobi.lv2/Nekobi_ui.so
+lib/lv2/Nekobi.lv2/Nekobi_ui.ttl
+lib/lv2/Nekobi.lv2/manifest.ttl

@@ -569,6 +569,7 @@
     SUBDIR += ncmpc
     SUBDIR += ncmpcpp
     SUBDIR += nekobee
+    SUBDIR += nekobi-lv2
     SUBDIR += noise-repellent-lv2
     SUBDIR += normalize
     SUBDIR += nosefart
