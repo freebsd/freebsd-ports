@@ -11567,3 +11567,4 @@ sysutils/py-nomad|sysutils/py-python-nomad|2019-01-25|renamed to match project n
 devel/py-easyconfig|devel/py-python-easyconfig|2019-01-28|Rename to reflect official Python modules naming scheme
 sysutils/py-consul|sysutils/py-python-consul|2019-01-30|renamed to match project name
 astro/weatherspect||2019-02-02|Has expired: Weather Underground does not provide free API keys anymore
+devel/rubygem-temple07|devel/rubygem-temple|2019-02-02|Obsolete, please use devel/rubygem-temple instead
