@@ -19,8 +19,6 @@ LICENSE_FILE=	${WRKSRC}/GPL.txt
 
 RUN_DEPENDS=	${PYGAME}
 
-WRKSRC=		${WRKDIR}
-
 USES=		python:2.7 shebangfix
 SHEBANG_FILES=	TuxFighter54.py
 
@@ -33,6 +31,8 @@ SUB_FILES=	${PORTNAME} pkg-message
 
 DESKTOP_ENTRIES="TuxFighter" "" "${PORTNAME}" \
 		"${PORTNAME}" "Game;ArcadeGame;" ""
+
+NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=	DOCS
 
