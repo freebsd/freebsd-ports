@@ -12,8 +12,8 @@ COMMENT=	ANSI C version of the SciMark2 benchmark
 
 USES=		zip
 
+NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/scimark2
-WRKSRC=		${WRKDIR}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scimark2 ${STAGEDIR}${PREFIX}/bin
