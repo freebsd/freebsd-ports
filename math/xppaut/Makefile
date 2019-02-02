@@ -16,8 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_XORG=	x11 xbitmaps xorgproto
 CFLAGS+=	-w -Wno-return-type
-WRKSRC=		${WRKDIR}
 ALL_TARGET=	xppaut
+
+NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
