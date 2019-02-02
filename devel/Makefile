@@ -6117,7 +6117,6 @@
     SUBDIR += rubygem-tdiff
     SUBDIR += rubygem-templater
     SUBDIR += rubygem-temple
-    SUBDIR += rubygem-temple07
     SUBDIR += rubygem-term-ansicolor
     SUBDIR += rubygem-terrapin
     SUBDIR += rubygem-test-unit
