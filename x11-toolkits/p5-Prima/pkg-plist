@@ -292,6 +292,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/rop2.gif
 %%SITE_ARCH%%/Prima/scalings.gif
 %%SITE_ARCH%%/Prima/spinner.gif
+%%SITE_ARCH%%/Prima/sys/XQuartz.pm
 %%SITE_ARCH%%/Prima/sys/gtk/FileDialog.pm
 %%SITE_ARCH%%/Prima/sys/win32/FileDialog.pm
 %%SITE_ARCH%%/Prima/sys/win32/sysimage.gif
@@ -401,6 +402,7 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::Widgets.3.gz
 %%PERL5_MAN3%%/Prima::noARGV.3.gz
 %%PERL5_MAN3%%/Prima::noX11.3.gz
+%%PERL5_MAN3%%/Prima::sys::XQuartz.3.gz
 %%PERL5_MAN3%%/Prima::sys::gtk::FileDialog.3.gz
 %%PERL5_MAN3%%/Prima::sys::win32::FileDialog.3.gz
 %%PERL5_MAN3%%/Prima::themes::color.3.gz
