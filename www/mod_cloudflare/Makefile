@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_cloudflare
-PORTVERSION=	0.0.2016.6.0
+PORTVERSION=	2016.10.0
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -14,9 +14,9 @@ CONFLICTS_INSTALL=	${PKGNAMEPREFIX}mod_remoteip-*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudflare
-GH_TAGNAME=	340fa0a
+GH_TAGNAME=	98ab38a
 
-USES=		apache:2.2+
+USES=		apache:2.4+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SHORTMODNAME=	cloudflare
