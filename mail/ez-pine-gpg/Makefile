@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://business-php.com/opensource/ez-pine-gpg/
 DISTNAME=	${PORTNAME}_v${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Set of scripts to use gpg with Pine
 
 LICENSE=	GPLv2+

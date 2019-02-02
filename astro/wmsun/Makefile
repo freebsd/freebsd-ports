@@ -7,7 +7,7 @@ CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://linux-bsd-unix.strefa.pl/
 DISTNAME=	wmSun-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Dockapp that displays the rise and set times of the Sun
 
 WRKSRC_SUBDIR=	wmSun
