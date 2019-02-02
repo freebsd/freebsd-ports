@@ -16,11 +16,12 @@ COMMENT=	KMFL keyboard for African Latin writing systems
 
 RUN_DEPENDS=	kmflcomp:textproc/kmflcomp
 
-WRKSRC=		${WRKDIR}
 USES=		dos2unix zip
 DOS2UNIX_FILES=	PanAfricaMnemonic/AfricaDeadKey.kmn \
 		PanAfricaUSlayout/AfricaUS.kmn
+
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=	DOCS
 DOCSDIR=	share/doc/kmfl/${PORTNAME}

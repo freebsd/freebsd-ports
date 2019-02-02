@@ -17,10 +17,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		perl5 shebangfix tar:tgz
 SHEBANG_FILES=	csvdiff.pl
-NO_BUILD=	yes
-NO_ARCH=	yes
 
-WRKSRC=		${WRKDIR}
+NO_ARCH=	yes
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 PORTDOCS=	CHANGES README TODO
 PLIST_FILES=	bin/csvdiff

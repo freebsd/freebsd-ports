@@ -12,9 +12,10 @@ COMMENT=	Simple XML processing using C++
 LICENSE=	GPLv3
 
 USES=		dos2unix zip
-NO_BUILD=	yes
+
 NO_ARCH=	yes
-WRKSRC=		${WRKDIR}
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 ZENINC=		${PREFIX}/include/${PORTNAME:S/xml//}
 

@@ -12,7 +12,7 @@ COMMENT=	L2a - LaTeX to ASCII converter
 
 USES=		zip
 
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/l2a \
 		man/man1/l2a.1.gz

@@ -12,9 +12,10 @@ COMMENT=	Print binary in hex format
 
 LICENSE=	PD
 
-WRKSRC=		${WRKDIR}
 USES=		python zip
 USE_PYTHON=	autoplist distutils
+
 NO_ARCH=	yes
+NO_WRKSUBDIR=	yes
 
 .include <bsd.port.mk>
