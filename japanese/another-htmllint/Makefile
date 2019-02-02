@@ -21,12 +21,13 @@ RUN_DEPENDS=	p5-CGI>=0:www/p5-CGI \
 		ja-p5-Jcode>=0:japanese/p5-Jcode
 
 USES=		dos2unix perl5 shebangfix zip
-WRKSRC=		${WRKDIR}
 DOS2UNIX_FILES=	readme.txt
 SHEBANG_FILES=	htmllint.cgi tagslist.cgi
+
+NO_ARCH=	yes
+NO_WRKSUBDIR=	yes
 SUB_FILES=	htmllint pkg-message
-SUB_LIST+=	PERL=${PERL}
-NO_ARCH=	YES
+SUB_LIST=	PERL=${PERL}
 
 OPTIONS_DEFINE=	W3M
 W3M_DESC=	Use w3m to show rendering result
