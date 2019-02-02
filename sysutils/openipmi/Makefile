@@ -3,6 +3,7 @@
 
 PORTNAME=	openipmi
 PORTVERSION=	2.0.26
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/OpenIPMI%202.0%20Library
 DISTNAME=	OpenIPMI-${PORTVERSION}
@@ -22,9 +23,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	SSL SNMP PERL PYTHON TCL TKINTER GDBM
-OPTIONS_RADIO=	GLIB
-OPTIONS_RADIO_GLIB=	GLIB12 GLIB20
+OPTIONS_DEFINE=	GDBM GLIB20 PERL PYTHON SNMP SSL TCL TKINTER
 SSL_DESC=	IPMI 2.0 RMCP+ encryption and authentication
 SNMP_DESC=	SNMP trap support for the sample programs
 PERL_DESC=	Perl interface for OpenIPMI library
@@ -32,7 +31,6 @@ PYTHON_DESC=	Python interface for OpenIPMI library
 TCL_DESC=	TCL interface for OpenIPMI library
 TKINTER_DESC=	GUI for OpenIPMI, written in Python
 GDBM_DESC=	Local SDR caching on startup
-GLIB12_DESC=	Simply OS handler for glib 1.2
 GLIB20_DESC=	Simply OS handler for glib 2.0
 
 .include <bsd.port.options.mk>
@@ -107,20 +105,9 @@ PLIST_SUB+=		TCL="@comment "
 LIB_DEPENDS+=		libgdbm.so:databases/gdbm
 .endif
 
-.if ${PORT_OPTIONS:MGLIB12}
-USE_GNOME=		glib12
-CONFIGURE_ARGS+=	--with-glib --with-glibver=1.2 \
-			--with-glibcflags=-I${LOCALBASE}/include/glib-1.2 \
-			--with-gliblibs="-L${LOCALBASE}/lib -lglib -lgthread"
-MAKE_ENV+=		GLIB_MAJOR_VERSION=1
-EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-glib_glib__os__hnd.c
-PLIST_SUB+=		GLIB=""
-.else
-PLIST_SUB+=		GLIB="@comment "
-.endif
-
 .if ${PORT_OPTIONS:MGLIB20}
-USE_GNOME=		glib20
+USES+=			gnome
+USE_GNOME+=		glib20
 CONFIGURE_ARGS+=	--with-glib --with-glibver=2.0
 PLIST_SUB+=		GLIB=""
 .else
