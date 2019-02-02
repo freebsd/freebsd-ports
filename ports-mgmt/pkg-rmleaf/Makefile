@@ -13,7 +13,7 @@ COMMENT=	Remove leaf packages
 LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	sbin/pkg-rmleaf
 
