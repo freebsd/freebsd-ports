@@ -103,17 +103,17 @@ CONSOLE_VARS=		GUI=no
 GNOME_PLIST_SUB=	GUI="" DESKTOP=""
 GNOME_IMPLIES=		NLS
 GNOME_USE=		GNOME=gdkpixbuf2,libgnomeui XORG=ice,sm,xorgproto,x11,xpm,xt
-GNOME_USES=		desktop-file-utils
+GNOME_USES=		desktop-file-utils gnome
 GNOME_VARS=		GUI=gnome2 INSTALLS_ICONS=yes
 
 GTK2_PLIST_SUB=		GUI="" DESKTOP=""
 GTK2_USE=		GNOME=gdkpixbuf2,gtk20 XORG=ice,sm,x11,xpm,xt
-GTK2_USES=		desktop-file-utils
+GTK2_USES=		desktop-file-utils gnome
 GTK2_VARS=		GUI=gtk2 INSTALLS_ICONS=yes
 
 GTK3_PLIST_SUB=		GUI="" DESKTOP=""
 GTK3_USE=		GNOME=cairo,gdkpixbuf2,gtk30 XORG=ice,sm,x11,xpm,xt
-GTK3_USES=		desktop-file-utils
+GTK3_USES=		desktop-file-utils gnome
 GTK3_VARS=		GUI=gtk3 INSTALLS_ICONS=yes
 
 MOTIF_CONFIGURE_ENV=	MOTIFHOME=${LOCALBASE}
