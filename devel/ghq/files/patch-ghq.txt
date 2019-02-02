@@ -1,0 +1,8 @@
+--- ghq.txt.orig	2019-02-02 11:26:33 UTC
++++ ghq.txt
+@@ -1,4 +1,4 @@
+-= ghq(1) image:https://travis-ci.org/motemen/ghq.svg?branch=master["Build Status", link="https://travis-ci.org/motemen/ghq"]
++= ghq(1)
+ 
+ == NAME
+ 

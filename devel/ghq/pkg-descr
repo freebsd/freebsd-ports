@@ -1,0 +1,9 @@
+ghq provides a way to organize remote repository clones, like go
+get does.  When you clone a remote repository with ghq, it creates
+a directory under a specific root directory using the remote
+repository URL's host and path.
+
+You can also list local repositories, jump into local repositories,
+and bulk get repositories by list of URLs.
+
+WWW: https://github.com/motemen/ghq
