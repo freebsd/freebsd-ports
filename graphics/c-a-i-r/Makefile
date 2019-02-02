@@ -13,9 +13,8 @@ COMMENT=	Content Aware Image Resizer is an implementation of seam carving
 USES=		dos2unix gmake zip
 DOS2UNIX_GLOB=	*.cpp
 
-MAKE_ARGS+=	CC="${CXX}"
-
-WRKSRC=		${WRKDIR}
+MAKE_ARGS=	CC="${CXX}"
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/cair
 

@@ -13,12 +13,14 @@ COMMENT=	Library for display PNG images in programs
 
 LIB_DEPENDS=	liballeg.so:devel/allegro
 
-HAS_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}
-MAKEFILE=	makefile
 USES=		gmake
+
+HAS_CONFIGURE=	yes
+MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CC}"
 CFLAGS+=	-I${LOCALBASE}/include
+
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	include/alpng.h \
 		lib/libalpng.a
