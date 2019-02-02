@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Displays the phase of the moon, plus orbital data
 
 LICENSE=	GPLv2

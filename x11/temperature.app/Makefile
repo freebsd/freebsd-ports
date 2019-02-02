@@ -8,7 +8,7 @@ CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://www.fukt.bsnet.se/~per/temperature/
 DISTNAME=	Temperature.app-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Dockable WindowMaker applet which displays the local temperature
 
 LICENSE=	GPLv2+
