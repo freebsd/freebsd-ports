@@ -18,7 +18,7 @@ COMMENT=	Easy-to-use powerful bridge between C and FORTRAN
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	include/cfortran.h
 PORTDOCS=	*
