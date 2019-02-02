@@ -12,7 +12,7 @@ COMMENT=	Code-Analyzer for PHP for Compatibility Check-UP
 
 LICENSE=	BSD2CLAUSE
 
-USES=	php:flavors
+USES=		php:flavors
 USE_PHP=	tokenizer phar hash
 
 NO_ARCH=	yes
