@@ -1,0 +1,4 @@
+Python library and command-line utilities to communciate with coldcard hardware
+wallets.
+
+WWW: https://pypi.org/project/ckcc-protocol/
