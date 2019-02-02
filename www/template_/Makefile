@@ -12,7 +12,6 @@ COMMENT=	High performance PHP compiling template engine
 
 LICENSE=	LGPL20+
 
-WRKSRC=		${WRKDIR}
 FETCH_ARGS+=	-o ${DISTNAME}.tar.gz
 
 USES=		php:web

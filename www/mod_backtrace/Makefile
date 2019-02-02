@@ -25,7 +25,7 @@ AP_EXTRAS+=	-lexecinfo
 AP_LIB+=	${LOCALBASE}/lib
 SHORTMODNAME=	backtrace
 
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 
 pre-everything::
 	@${ECHO_MSG} "*********************** PLEASE NOTE! ***********************"

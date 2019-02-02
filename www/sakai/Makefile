@@ -12,7 +12,7 @@ COMMENT=	Online Collaboration and Learning Environment
 
 LICENSE=	ECLv2
 LICENSE_NAME=	Educational Community License version 2
-LICENSE_FILE=	${WRKDIR}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	${LOCALBASE}/apache-tomcat-7.0/bin/bootstrap.jar:www/tomcat7
@@ -23,10 +23,11 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
+
 SYSTEM_DIR=	common components licenses shared webapps
 TOMCAT_DIR=	${PREFIX}/apache-tomcat-7.0
-PLIST_SUB+=	TOMCAT_DIR=${TOMCAT_DIR:S|^${PREFIX}/||} \
+PLIST_SUB=	TOMCAT_DIR=${TOMCAT_DIR:S|^${PREFIX}/||} \
 		SAKAI_VER="${PORTVERSION}"
 
 post-extract:
