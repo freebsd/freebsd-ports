@@ -14,12 +14,11 @@ COMMENT=	DBMS-independent, cross-platform SQL query tool
 LICENSE=	APACHE20
 
 USES=		desktop-file-utils zip
-
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
-NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=	DOCS MYSQL_JDBC PGSQL_JDBC
 MYSQL_JDBC_RUN_DEPENDS=	${JAVALIBDIR}/mysql-connector-java.jar:databases/mysql-connector-java
