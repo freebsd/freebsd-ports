@@ -13,6 +13,9 @@ COMMENT=	JSON Web Token implementation in Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use www/rubygem-jwt instead
+EXPIRATION_DATE=2019-02-28
+
 PORTSCOUT=	limit:^1\.
 
 NO_ARCH=	yes
