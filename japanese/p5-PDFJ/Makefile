@@ -11,9 +11,10 @@ COMMENT=	PDFJ module provides methods to generate Japanese PDF file
 
 USES=		perl5 shebangfix zip:infozip
 USE_PERL5=	configure
-WRKSRC=		${WRKDIR}
 EXTRACT_BEFORE_ARGS=	-qo -a
 SHEBANG_FILES=	util/xpdfj.pl
+
+NO_WRKSUBDIR=	yes
 
 .include <bsd.port.pre.mk>
 
