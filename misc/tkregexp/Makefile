@@ -12,12 +12,12 @@ EXTRACT_ONLY=
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Interactive regexp design tool
 
-USES+=		dos2unix tk
+USES=		dos2unix tk
 DOS2UNIX_FILES=	visual_regexp-${PORTVERSION}.tcl
-NO_BUILD=	yes
-PLIST_FILES=	bin/tkregexp
 
-WRKSRC=		${WRKDIR}
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+PLIST_FILES=	bin/tkregexp
 
 post-extract:
 	${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
