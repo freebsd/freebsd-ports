@@ -3,6 +3,7 @@
 
 PORTNAME=	courier-pythonfilter
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	http://phantom.dragonsdawn.net/~gordon/courier-patches/courier-pythonfilter/
 
@@ -56,11 +57,11 @@ QUOTA_DESC=	quota module
 
 OPTIONS_DEFAULT=	DEBUG WHITELIST_RELAY WHITELIST_AUTH
 
+CLAMAV_CLAMD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyClamd>=0:security/py-pyclamd@${PY_FLAVOR}
+
 .include <bsd.port.pre.mk>
 
 PYDISTUTILS_INSTALLARGS:=${PYDISTUTILS_INSTALLARGS} --install-scripts=${PYSCRIPTSDIR}
-
-CLAMAV_CLAMD_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyclamd.py:security/py-pyclamd@${PY_FLAVOR}
 
 post-extract:
 	${MV} ${WRKSRC}/pythonfilter.conf ${WRKSRC}/pythonfilter.conf.sample
