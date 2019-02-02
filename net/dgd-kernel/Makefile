@@ -8,15 +8,15 @@ CATEGORIES=	net games
 MASTER_SITES=	http://ftp.dworkin.nl/kernellib/ \
 		http://ftp.dworkin.nl/kernellib/patches/
 DISTNAME=	kernellib-${PORTVERSION}
+DIST_SUBDIR=	dgd
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Kernel mudlib, for use with DGD
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/dgd:net/dgd
 
-DIST_SUBDIR=	dgd
-WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
