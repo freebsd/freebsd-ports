@@ -765,6 +765,7 @@
     SUBDIR += snack
     SUBDIR += snd
     SUBDIR += sndio
+    SUBDIR += so-synth-lv2
     SUBDIR += solfege
     SUBDIR += sonata
     SUBDIR += sonic-visualiser
