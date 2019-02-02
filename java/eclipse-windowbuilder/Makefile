@@ -21,7 +21,7 @@ LICENSE=	EPL
 
 RUN_DEPENDS=	eclipse:java/eclipse
 
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 
 .include "${.CURDIR}/../eclipse/Makefile.plugins"
 
