@@ -13,7 +13,8 @@ COMMENT=	Stacks for use with Popup
 LICENSE=	GPLv2
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
+
 STACKS=		English-German.cstack German-French.cstack
 .for i in ${STACKS}
 PLIST_FILES+=	${EXAMPLESDIR}/${i}

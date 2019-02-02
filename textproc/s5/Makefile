@@ -16,9 +16,10 @@ LICENSE_COMB=	multi
 
 USES=		dos2unix zip
 DOS2UNIX_REGEX=	.*\.(css|htc|html|js|txt)
-WRKSRC=		${WRKDIR}
-NO_BUILD=	yes
+
 NO_ARCH=	yes
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 S5_DIR=		${PREFIX}/share/${PORTNAME}
 S5_SUBDIRS=	pix primer s5-blank ui
@@ -27,11 +28,11 @@ post-extract:
 	@cd ${WRKSRC} && ${TAR} -xf s5-blank.zip
 	@${SED} -e "s,/usr/local,${PREFIX}," ${FILESDIR}/s5.sh > ${WRKDIR}/s5
 	@${SED} -e "s,/usr/local,${PREFIX}," ${FILESDIR}/s5.1 > ${WRKDIR}/s5.1
-	@${FIND} ${WRKDIR} -type f -name .DS_Store -delete
+	@${FIND} ${WRKSRC} -type f -name .DS_Store -delete
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${S5_DIR}
-	@(cd ${WRKDIR} && \
+	@(cd ${WRKSRC} && \
 		${COPYTREE_SHARE} "*.html ${S5_SUBDIRS}" ${STAGEDIR}${S5_DIR})
 	${INSTALL_SCRIPT} ${WRKDIR}/s5 ${STAGEDIR}${PREFIX}/bin/s5
 	${INSTALL_MAN} ${WRKDIR}/s5.1 ${STAGEDIR}${MANPREFIX}/man/man1/s5.1

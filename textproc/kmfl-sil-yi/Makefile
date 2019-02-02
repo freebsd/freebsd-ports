@@ -15,10 +15,11 @@ COMMENT=	KMFL Unicode keyboard for standardized Yi script
 
 RUN_DEPENDS=	kmflcomp:textproc/kmflcomp
 
-WRKSRC=		${WRKDIR}
 USES=		dos2unix zip
 DOS2UNIX_FILES=	SourceFiles/Yi7.kmn
+
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 KMFL_DIR=	share/kmfl
 KMFL_ICONS_DIR=	share/kmfl/icons
