@@ -31,7 +31,7 @@ post-extract:
 
 do-install:
 .for i in ${SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/${i}.sh ${STAGEDIR}${PREFIX}/bin/${i}
+	${INSTALL_SCRIPT} ${WRKDIR}/${i}.sh ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
 
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}

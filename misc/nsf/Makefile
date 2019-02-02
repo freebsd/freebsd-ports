@@ -17,7 +17,7 @@ PLIST_FILES=	bin/nsf man/man1/nsf.1.gz
 ALL_TARGET=
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/nsf ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKDIR}/nsf.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/nsf ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/nsf.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
