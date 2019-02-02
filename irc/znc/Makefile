@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	znc
-PORTVERSION=	1.7.1
-PORTREVISION=	3
+PORTVERSION=	1.7.2
 CATEGORIES=	irc ipv6
 MASTER_SITES=	https://znc.in/releases/ \
 		https://znc.in/releases/archive/
@@ -14,21 +13,19 @@ COMMENT=	Advanced IRC bouncer
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++11-lib cpe gmake iconv pathfix pkgconfig
+USES=		compiler:c++11-lib cpe cmake:run iconv pathfix pkgconfig python:3.5+
 
 USE_RC_SUBR=	znc
 
-GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
-MAKE_ENV=	V=1
 
 PORTDOCS=	README.md
 
 USERS=		znc
 GROUPS=		znc
 
-OPTIONS_DEFINE=	CHARSET CYRUS DEBUG DOCS IPV6 OPENSSL PERL PYTHON TCL
-OPTIONS_DEFAULT=	CHARSET OPENSSL PERL
+OPTIONS_DEFINE=	CHARSET CYRUS DEBUG DOCS IPV6 NLS OPENSSL PERL PYTHON TCL
+OPTIONS_DEFAULT=	CHARSET OPENSSL PERL PYTHON
 OPTIONS_SUB=	yes
 
 CHARSET_DESC=	Character encoding support via ICU
@@ -38,47 +35,43 @@ PERL_DESC=	Perl scripting module
 PYTHON_DESC=	Python scripting module
 TCL_DESC=	Tcl scripting module
 
-CHARSET_CONFIGURE_OFF=	--disable-charset
+CHARSET_CMAKE_BOOL=	WANT_ICU
 CHARSET_LIB_DEPENDS=	libicuuc.so:devel/icu
-CYRUS_CONFIGURE_ON=	--enable-cyrus
-CYRUS_LDFLAGS=	-L${LOCALBASE}/lib
+CYRUS_CMAKE_BOOL=	WANT_CYRUS
 CYRUS_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
-DEBUG_CONFIGURE_ON=	--enable-debug
-IPV6_CONFIGURE_OFF=	--disable-ipv6
-OPENSSL_CONFIGURE_OFF=	--disable-openssl
+DEBUG_VARS=		CMAKE_BUILD_TYPE=Debug
+IPV6_CMAKE_BOOL=	WANT_IPV6
+NLS_CMAKE_BOOL=		WANT_I18N
+NLS_LIB_DEPENDS=	libboost_locale.so:devel/boost-libs
+NLS_USES=		gettext
+OPENSSL_CMAKE_BOOL=	WANT_OPENSSL
+OPENSSL_CMAKE_ON=	-DOPENSSL_ROOT_DIR=${OPENSSLBASE}
 OPENSSL_USES=	ssl
 PERL_BUILD_DEPENDS=	swig30>=3.0.0:devel/swig30
-PERL_CONFIGURE_ENABLE=	perl
-PERL_CONFIGURE_ON=	--enable-swig
+PERL_CMAKE_BOOL=	WANT_PERL WANT_SWIG
 PERL_USE=	perl5=build,run
 PERL_USES=	perl5
+PYTHON_CMAKE_BOOL=	WANT_PYTHON WANT_SWIG
+PYTHON_CMAKE_ON=	-DWANT_PYTHON_VERSION:STRING=python-${PYTHON_VER}
 PYTHON_BUILD_DEPENDS=	swig30>=3.0.0:devel/swig30
-PYTHON_CONFIGURE_ON=	--enable-python=python-${PYTHON_VER} --enable-swig
 PYTHON_IMPLIES=	CHARSET
 PYTHON_USE=	perl5=build
-PYTHON_USES=	perl5 python:3.4+
-TCL_CONFIGURE_ENABLE=	tcl
-TCL_CONFIGURE_ON=	--with-tcl=${TCL_LIBDIR}
+PYTHON_USES=	perl5
+TCL_CMAKE_BOOL=	WANT_TCL
 TCL_USES=	tcl
 
-# Instead of using bundled swig generated files, delete them to force
-# regeneration using swig 2.0.11+ (fixes port compilation using clang)
-#
-pre-configure-PERL-on:
-	@${RM} ${WRKSRC}/modules/modperl/ZNC.cpp
-
-pre-configure-PYTHON-on:
-	@${RM} ${WRKSRC}/modules/modpython/_znc_core.cpp
-
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's#/usr/local#${LOCALBASE}#' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|python3|python${PYTHON_VER}|g' \
+		${WRKSRC}/znc-buildmod.cmake.in
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+post-install-NLS-off:
+	@${RM} -r ${STAGEDIR}${DATADIR}/translations
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
