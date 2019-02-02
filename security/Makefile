@@ -960,6 +960,7 @@
     SUBDIR += py-htpasswd
     SUBDIR += py-itsdangerous
     SUBDIR += py-josepy
+    SUBDIR += py-keepkey
     SUBDIR += py-kerberos
     SUBDIR += py-keyczar
     SUBDIR += py-keyring
