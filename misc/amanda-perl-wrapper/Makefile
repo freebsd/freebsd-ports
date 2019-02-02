@@ -11,10 +11,11 @@ COMMENT=	Perl wrapper to use with Amanda (with libthr.so.* linked)
 
 USES=		perl5
 USE_PERL5=	run
+
+NO_WRKSUBDIR=	yes
 SUB_FILES=	perl-amanda.c
 SUB_LIST=	PREFIX=${LOCALBASE}
 PLIST_FILES=	bin/perl-amanda
-WRKSRC=		${WRKDIR}
 
 do-fetch:
 	@${DO_NADA}

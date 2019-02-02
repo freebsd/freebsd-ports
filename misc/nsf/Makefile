@@ -10,8 +10,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NAKAMURA's Shell Form input
 
 USES=		ncurses
-WRKSRC=		${WRKDIR}
+
 MAKE_ARGS=	LIBS="${LDFLAGS} -lncurses"
+NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/nsf man/man1/nsf.1.gz
 ALL_TARGET=
 

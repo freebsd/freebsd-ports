@@ -14,8 +14,10 @@ COMMENT=	Ini configuration file reader and manipulator package for Ada
 LICENSE=	MIT
 
 USES=		ada zip dos2unix
+
+NO_WRKSUBDIR=	yes
+
 SFPATH=		ini-files/files/ini-files/ini-files-${PORTVERSION}
-WRKSRC=		${WRKDIR}
 PORTDOCS=	ini_file_manager.txt
 PORTEXAMPLES=	example.gpr test_config.adb runme.sh
 
