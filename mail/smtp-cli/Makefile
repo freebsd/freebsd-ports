@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-Digest-HMAC>0:security/p5-Digest-HMAC \
 		p5-Term-ReadKey>0:devel/p5-Term-ReadKey
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/smtp-cli
 SHEBANG_FILES=	smtp-cli
