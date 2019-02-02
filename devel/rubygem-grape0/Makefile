@@ -12,6 +12,9 @@ COMMENT=	Framework for rapid API development with great conventions
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use devel/rubygem-grape instead
+EXPIRATION_DATE=2019-02-28
+
 RUN_DEPENDS=	rubygem-activesupport4>=0:devel/rubygem-activesupport4 \
 		rubygem-builder>=0:devel/rubygem-builder \
 		rubygem-hashie>=2.1.0:devel/rubygem-hashie \
