@@ -40,8 +40,6 @@ BUNDLE_PROCESSOR=	MAca-bundle.pl
 SUB_FILES=	MAca-bundle.pl pkg-message
 SUB_LIST=	VERSION_NSS=${VERSION_NSS}
 
-.include <bsd.port.options.mk>
-
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${TAR} -C ${WRKDIR} -xf ${DISTDIR}/nss-${VERSION_NSS}${NSS_SUFFIX}${EXTRACT_SUFX} \
@@ -58,13 +56,13 @@ do-build:	apply-slist
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${CERTDIR}
 	${INSTALL_DATA} ${WRKDIR}/ca-root-nss.crt ${STAGEDIR}${PREFIX}/${CERTDIR}
-.if ${PORT_OPTIONS:METCSYMLINK}
-	${MKDIR} ${STAGEDIR}/etc/ssl
-	${LN} -sf ${PREFIX}/${CERTDIR}/ca-root-nss.crt ${STAGEDIR}/etc/ssl/cert.pem
-.endif
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/ssl
 	${LN} -sf ${PREFIX}/${CERTDIR}/ca-root-nss.crt ${STAGEDIR}${PREFIX}/etc/ssl/cert.pem.sample
 	${MKDIR} ${STAGEDIR}${PREFIX}/openssl
 	${LN} -sf ${PREFIX}/${CERTDIR}/ca-root-nss.crt ${STAGEDIR}${PREFIX}/openssl/cert.pem.sample
+
+do-install-ETCSYMLINK-on:
+	${MKDIR} ${STAGEDIR}/etc/ssl
+	${LN} -sf ${PREFIX}/${CERTDIR}/ca-root-nss.crt ${STAGEDIR}/etc/ssl/cert.pem
 
 .include <bsd.port.mk>
