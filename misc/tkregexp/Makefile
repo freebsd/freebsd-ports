@@ -20,12 +20,12 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/tkregexp
 
 post-extract:
-	${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
+	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
 
 post-patch:
-	${REINPLACE_CMD} -e "1s|^\(.*\)|#!${WISH}|; 2d" ${WRKDIR}/visual_regexp-${PORTVERSION}.tcl
+	${REINPLACE_CMD} -e "1s|^\(.*\)|#!${WISH}|; 2d" ${WRKSRC}/visual_regexp-${PORTVERSION}.tcl
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/visual_regexp-${PORTVERSION}.tcl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/visual_regexp-${PORTVERSION}.tcl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -23,10 +23,10 @@ do-fetch:
 pre-build: apply-slist
 
 do-build:
-	cd ${WRKSRC} && ${CC} -o perl-amanda perl-amanda.c
+	cd ${WRKSRC} && ${CC} -o perl-amanda ${WRKDIR}/perl-amanda.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/perl-amanda ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/perl-amanda ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.pre.mk>
 
