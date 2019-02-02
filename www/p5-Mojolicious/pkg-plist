@@ -107,7 +107,6 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/Plugin/HeaderCondition.pm
 %%SITE_PERL%%/Mojolicious/Plugin/JSONConfig.pm
 %%SITE_PERL%%/Mojolicious/Plugin/Mount.pm
-%%SITE_PERL%%/Mojolicious/Plugin/PODRenderer.pm
 %%SITE_PERL%%/Mojolicious/Plugin/TagHelpers.pm
 %%SITE_PERL%%/Mojolicious/Plugins.pm
 %%SITE_PERL%%/Mojolicious/Renderer.pm
@@ -137,7 +136,6 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/resources/templates/mojo/debug.html.ep
 %%SITE_PERL%%/Mojolicious/resources/templates/mojo/exception.html.ep
 %%SITE_PERL%%/Mojolicious/resources/templates/mojo/not_found.html.ep
-%%SITE_PERL%%/Mojolicious/resources/templates/mojo/perldoc.html.ep
 %%SITE_PERL%%/Test/Mojo.pm
 %%SITE_PERL%%/ojo.pm
 %%PERL5_MAN1%%/hypnotoad.1.gz
@@ -247,7 +245,6 @@ bin/morbo
 %%PERL5_MAN3%%/Mojolicious::Plugin::HeaderCondition.3.gz
 %%PERL5_MAN3%%/Mojolicious::Plugin::JSONConfig.3.gz
 %%PERL5_MAN3%%/Mojolicious::Plugin::Mount.3.gz
-%%PERL5_MAN3%%/Mojolicious::Plugin::PODRenderer.3.gz
 %%PERL5_MAN3%%/Mojolicious::Plugin::TagHelpers.3.gz
 %%PERL5_MAN3%%/Mojolicious::Plugins.3.gz
 %%PERL5_MAN3%%/Mojolicious::Renderer.3.gz
