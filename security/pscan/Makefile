@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Security C code scanner for misuse of format strings
 
 ALL_TARGET=	#empty
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/pscan bin/find_formats
 

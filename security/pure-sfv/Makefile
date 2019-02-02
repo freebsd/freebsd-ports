@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 
 USES=		gmake
 
-WRKSRC=		${WRKDIR}
-
+NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/pure-sfv
 PORTDOCS=	ReadMe.txt
 

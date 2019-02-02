@@ -13,15 +13,16 @@ COMMENT=	Demo and test application for libfprint
 
 LIB_DEPENDS=	libfprint.so:security/libfprint
 
-GNU_CONFIGURE=	yes
 USES=		autoreconf pkgconfig desktop-file-utils
 USE_GNOME=	atk glib20 gtk20 pango
 INSTALLS_ICONS=	yes
 
-WRKSRC=	${WRKDIR}
+NO_WRKSUBDIR=	yes
 
-CONFIGURE_ENV+=	CRYPTO_CFLAGS=-I${OPENSSLINC} \
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CRYPTO_CFLAGS=-I${OPENSSLINC} \
 		CRYPTO_LIBS=-lcrypto
+
 CFLAGS+=	-DHAVE_MEMMEM
 
 .include <bsd.port.mk>
