@@ -40,7 +40,7 @@ MOZ_OPTIONS=	--enable-application=browser \
 		--enable-jemalloc-lib
 
 OPTIONS_DEFAULT=	GTK2
-OPTIONS_EXCLUDE=	DTRACE JACK TEST WAYLAND
+OPTIONS_EXCLUDE=	JACK TEST WAYLAND
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
 
