@@ -7,7 +7,7 @@ PORTREVISION=	6
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	multimedia
 
-MAINTAINER=	mikael.urankar@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to control Pulse-Eight's HDMI-CEC adapter
 
 LICENSE=	GPLv2

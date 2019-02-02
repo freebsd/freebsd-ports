@@ -5,7 +5,7 @@ PORTNAME=	raspberrypi-userland
 PORTVERSION=	20161026
 CATEGORIES=	misc
 
-MAINTAINER=	mikael.urankar@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Various libraries for the Raspberry Pi
 
 LICENSE=	BSD3CLAUSE
