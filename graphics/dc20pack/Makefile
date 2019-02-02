@@ -1,21 +1,22 @@
 # Created by: Maurice Castro <maurice@serc.rmit.edu.au>
 # $FreeBSD$
 
-PORTNAME=		dc20pack
-PORTVERSION=		1.0
-CATEGORIES=		graphics
-MASTER_SITES=		SUNSITE/apps/graphics/capture
+PORTNAME=	dc20pack
+PORTVERSION=	1.0
+CATEGORIES=	graphics
+MASTER_SITES=	SUNSITE/apps/graphics/capture
 
-MAINTAINER=		maurice@castro.aus.net
+MAINTAINER=	maurice@castro.aus.net
 COMMENT=	Digital camera control and download tool for Kodak DC20/25 camera
 
-WRKSRC=			${WRKDIR}
-USES=			tar:tgz
+USES=		tar:tgz
+
+NO_WRKSUBDIR=	yes
 
 post-extract:
 	for file in `${FIND} ${WRKSRC} -type f`; do \
 		${TR} -d '\015' < $${file} > $${file}.new; \
-		mv $${file}.new $${file}; \
+		${MV} $${file}.new $${file}; \
 	done
 
 do-install:
