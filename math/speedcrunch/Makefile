@@ -9,7 +9,7 @@ PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/
 
-MAINTAINER=	mikael.urankar@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keyboard-oriented desktop scientific calculator
 
 LICENSE=	GPLv2+

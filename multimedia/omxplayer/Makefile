@@ -9,7 +9,7 @@ CATEGORIES=	multimedia
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES=	96800576209b.patch:-p1
 
-MAINTAINER=	mikael.urankar@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Raspberry Pi video player
 
 LICENSE=	GPLv2
