@@ -1,3 +1,4 @@
+bin/grass%%MAJVER%%
 bin/grass%%VER%%
 %%GRASS_INST_DIR%%/AUTHORS
 %%GRASS_INST_DIR%%/CHANGES
@@ -122,6 +123,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/bin/ps.map
 %%GRASS_INST_DIR%%/bin/r.basins.fill
 %%GRASS_INST_DIR%%/bin/r.buffer
+%%GRASS_INST_DIR%%/bin/r.buildvrt
 %%GRASS_INST_DIR%%/bin/r.carve
 %%GRASS_INST_DIR%%/bin/r.category
 %%GRASS_INST_DIR%%/bin/r.circle
@@ -137,7 +139,6 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/bin/r.cross
 %%GRASS_INST_DIR%%/bin/r.describe
 %%GRASS_INST_DIR%%/bin/r.distance
-%%GRASS_INST_DIR%%/bin/r.drain
 %%GRASS_INST_DIR%%/bin/r.external
 %%GRASS_INST_DIR%%/bin/r.external.out
 %%GRASS_INST_DIR%%/bin/r.fill.dir
@@ -195,6 +196,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/bin/r.out.vtk
 %%GRASS_INST_DIR%%/bin/r.param.scale
 %%GRASS_INST_DIR%%/bin/r.patch
+%%GRASS_INST_DIR%%/bin/r.path
 %%GRASS_INST_DIR%%/bin/r.profile
 %%GRASS_INST_DIR%%/bin/r.proj
 %%GRASS_INST_DIR%%/bin/r.quant
@@ -471,10 +473,13 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/colortables/grey255.png
 %%GRASS_INST_DIR%%/docs/html/colortables/gyr.png
 %%GRASS_INST_DIR%%/docs/html/colortables/haxby.png
+%%GRASS_INST_DIR%%/docs/html/colortables/inferno.png
 %%GRASS_INST_DIR%%/docs/html/colortables/kelvin.png
+%%GRASS_INST_DIR%%/docs/html/colortables/magma.png
 %%GRASS_INST_DIR%%/docs/html/colortables/ndvi.png
 %%GRASS_INST_DIR%%/docs/html/colortables/ndwi.png
 %%GRASS_INST_DIR%%/docs/html/colortables/oranges.png
+%%GRASS_INST_DIR%%/docs/html/colortables/plasma.png
 %%GRASS_INST_DIR%%/docs/html/colortables/population.png
 %%GRASS_INST_DIR%%/docs/html/colortables/population_dens.png
 %%GRASS_INST_DIR%%/docs/html/colortables/precipitation.png
@@ -694,6 +699,8 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/g_gui_rlisetup_7.png
 %%GRASS_INST_DIR%%/docs/html/g_gui_rlisetup_8.png
 %%GRASS_INST_DIR%%/docs/html/g_gui_rlisetup_sample_areas.png
+%%GRASS_INST_DIR%%/docs/html/g_gui_tplot_export_csv.png
+%%GRASS_INST_DIR%%/docs/html/g_gui_tplot_labels.png
 %%GRASS_INST_DIR%%/docs/html/g_mapsets_gui.png
 %%GRASS_INST_DIR%%/docs/html/g_parser_test.png
 %%GRASS_INST_DIR%%/docs/html/general.html
@@ -1018,6 +1025,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/r.blend.html
 %%GRASS_INST_DIR%%/docs/html/r.buffer.html
 %%GRASS_INST_DIR%%/docs/html/r.buffer.lowmem.html
+%%GRASS_INST_DIR%%/docs/html/r.buildvrt.html
 %%GRASS_INST_DIR%%/docs/html/r.carve.html
 %%GRASS_INST_DIR%%/docs/html/r.category.html
 %%GRASS_INST_DIR%%/docs/html/r.circle.html
@@ -1104,6 +1112,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/r.pack.html
 %%GRASS_INST_DIR%%/docs/html/r.param.scale.html
 %%GRASS_INST_DIR%%/docs/html/r.patch.html
+%%GRASS_INST_DIR%%/docs/html/r.path.html
 %%GRASS_INST_DIR%%/docs/html/r.plane.html
 %%GRASS_INST_DIR%%/docs/html/r.profile.html
 %%GRASS_INST_DIR%%/docs/html/r.proj.html
@@ -1246,6 +1255,9 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/r_param_scale_morph.jpg
 %%GRASS_INST_DIR%%/docs/html/r_patch.png
 %%GRASS_INST_DIR%%/docs/html/r_patch_zeros_as_nulls.png
+%%GRASS_INST_DIR%%/docs/html/r_path.png
+%%GRASS_INST_DIR%%/docs/html/r_path_with_bitmask.png
+%%GRASS_INST_DIR%%/docs/html/r_path_with_r_watershed_direction.png
 %%GRASS_INST_DIR%%/docs/html/r_random_cells.png
 %%GRASS_INST_DIR%%/docs/html/r_relief.png
 %%GRASS_INST_DIR%%/docs/html/r_resamp_interp_new_250m.png
@@ -1281,6 +1293,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/raster_graphical.html
 %%GRASS_INST_DIR%%/docs/html/rasterintro.html
 %%GRASS_INST_DIR%%/docs/html/rcost_knightsmove.png
+%%GRASS_INST_DIR%%/docs/html/rcost_solvedir.png
 %%GRASS_INST_DIR%%/docs/html/rhorizon_polar_plot.png
 %%GRASS_INST_DIR%%/docs/html/rhorizon_shaded_dem_point.png
 %%GRASS_INST_DIR%%/docs/html/rhorizon_singlepoint_plot.png
@@ -1419,6 +1432,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/topic_measurement.html
 %%GRASS_INST_DIR%%/docs/html/topic_metadata.html
 %%GRASS_INST_DIR%%/docs/html/topic_modules.html
+%%GRASS_INST_DIR%%/docs/html/topic_mosaic.html
 %%GRASS_INST_DIR%%/docs/html/topic_multispectral.html
 %%GRASS_INST_DIR%%/docs/html/topic_network.html
 %%GRASS_INST_DIR%%/docs/html/topic_null_data.html
@@ -1592,6 +1606,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/v_buffer_line_s.png
 %%GRASS_INST_DIR%%/docs/html/v_buffer_lines.png
 %%GRASS_INST_DIR%%/docs/html/v_buffer_no_cap.png
+%%GRASS_INST_DIR%%/docs/html/v_buffer_point_s.png
 %%GRASS_INST_DIR%%/docs/html/v_buffer_points.png
 %%GRASS_INST_DIR%%/docs/html/v_buffer_rounded_cap.png
 %%GRASS_INST_DIR%%/docs/html/v_buffer_square_cap.png
@@ -1730,6 +1745,8 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/html/wxGUI_vnet.jpg
 %%GRASS_INST_DIR%%/docs/html/wxpyimgview.html
 %%GRASS_INST_DIR%%/docs/html/ximgview.html
+%%GRASS_INST_DIR%%/docs/html/zipcodes_larger2000ha.png
+%%GRASS_INST_DIR%%/docs/html/zipcodes_minor1000ha.png
 %%GRASS_INST_DIR%%/docs/man/man1/cairodriver.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/class_graphical.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/d.barscale.1.gz
@@ -1922,6 +1939,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/man/man1/r.blend.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.buffer.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.buffer.lowmem.1.gz
+%%GRASS_INST_DIR%%/docs/man/man1/r.buildvrt.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.carve.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.category.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.circle.1.gz
@@ -2008,6 +2026,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/man/man1/r.pack.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.param.scale.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.patch.1.gz
+%%GRASS_INST_DIR%%/docs/man/man1/r.path.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.plane.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.profile.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/r.proj.1.gz
@@ -2230,6 +2249,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/docs/man/man1/topic_measurement.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/topic_metadata.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/topic_modules.1.gz
+%%GRASS_INST_DIR%%/docs/man/man1/topic_mosaic.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/topic_multispectral.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/topic_network.1.gz
 %%GRASS_INST_DIR%%/docs/man/man1/topic_null_data.1.gz
@@ -2453,10 +2473,13 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/etc/colors/grey255
 %%GRASS_INST_DIR%%/etc/colors/gyr
 %%GRASS_INST_DIR%%/etc/colors/haxby
+%%GRASS_INST_DIR%%/etc/colors/inferno
 %%GRASS_INST_DIR%%/etc/colors/kelvin
+%%GRASS_INST_DIR%%/etc/colors/magma
 %%GRASS_INST_DIR%%/etc/colors/ndvi
 %%GRASS_INST_DIR%%/etc/colors/ndwi
 %%GRASS_INST_DIR%%/etc/colors/oranges
+%%GRASS_INST_DIR%%/etc/colors/plasma
 %%GRASS_INST_DIR%%/etc/colors/population
 %%GRASS_INST_DIR%%/etc/colors/population_dens
 %%GRASS_INST_DIR%%/etc/colors/precipitation
@@ -3610,8 +3633,12 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/gui/wxpython/rlisetup/wizard.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/startup/__init__.py
 %%GRASS_INST_DIR%%/gui/wxpython/startup/__init__.pyc
+%%GRASS_INST_DIR%%/gui/wxpython/startup/guiutils.py
+%%GRASS_INST_DIR%%/gui/wxpython/startup/guiutils.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/startup/locdownload.py
 %%GRASS_INST_DIR%%/gui/wxpython/startup/locdownload.pyc
+%%GRASS_INST_DIR%%/gui/wxpython/startup/utils.py
+%%GRASS_INST_DIR%%/gui/wxpython/startup/utils.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/timeline/__init__.py
 %%GRASS_INST_DIR%%/gui/wxpython/timeline/__init__.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/timeline/frame.py
@@ -4043,6 +4070,9 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/locale/zh/LC_MESSAGES/grasslibs.mo
 %%GRASS_INST_DIR%%/locale/zh/LC_MESSAGES/grassmods.mo
 %%GRASS_INST_DIR%%/locale/zh/LC_MESSAGES/grasswxpy.mo
+%%GRASS_INST_DIR%%/locale/zh_CN/LC_MESSAGES/grasslibs.mo
+%%GRASS_INST_DIR%%/locale/zh_CN/LC_MESSAGES/grassmods.mo
+%%GRASS_INST_DIR%%/locale/zh_CN/LC_MESSAGES/grasswxpy.mo
 %%GRASS_INST_DIR%%/scripts/d.correlate
 %%GRASS_INST_DIR%%/scripts/d.frame
 %%GRASS_INST_DIR%%/scripts/d.out.file
@@ -4089,6 +4119,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/scripts/r.blend
 %%GRASS_INST_DIR%%/scripts/r.buffer.lowmem
 %%GRASS_INST_DIR%%/scripts/r.colors.stddev
+%%GRASS_INST_DIR%%/scripts/r.drain
 %%GRASS_INST_DIR%%/scripts/r.fillnulls
 %%GRASS_INST_DIR%%/scripts/r.grow
 %%GRASS_INST_DIR%%/scripts/r.import
