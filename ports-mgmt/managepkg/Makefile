@@ -16,8 +16,8 @@ COMMENT=	Script for maintaining ports
 EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/${PORTNAME}
-WRKSRC=	${WRKDIR}
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 PLIST_FILES=	sbin/managepkg
 
 do-install:
