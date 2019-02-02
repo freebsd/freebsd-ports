@@ -3,6 +3,7 @@
 
 PORTNAME=	gitlab-ce
 PORTVERSION=	11.7.3
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -168,7 +169,7 @@ MY_DEPENDS=	git>=2.16.2:devel/git \
 	rubygem-gettext_i18n_rails>=1.8.0:devel/rubygem-gettext_i18n_rails \
 	rubygem-gettext_i18n_rails_js-rails50>=1.3:devel/rubygem-gettext_i18n_rails_js-rails50 \
 	rubygem-gettext>=3.2.2:devel/rubygem-gettext \
-	rubygem-batch-loader>=1.2.2:devel/rubygem-batch-loader \
+	rubygem-batch-loader12>=1.2.2:devel/rubygem-batch-loader12 \
 	rubygem-peek-rails50>=1.0.1:devel/rubygem-peek-rails50 \
 	rubygem-peek-gc-rails50>=0.0.2:devel/rubygem-peek-gc-rails50 \
 	rubygem-peek-rblineprof-rails50>=0.2.0:devel/rubygem-peek-rblineprof-rails50 \
