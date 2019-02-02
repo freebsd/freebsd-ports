@@ -1,6 +1,6 @@
 # -*- makefile-bsdmake -*-
 
-OPTIONS_DEFINE+= 	CANBERRA DBUS DEBUG DTRACE FFMPEG GCONF \
+OPTIONS_DEFINE+= 	CANBERRA DBUS DEBUG FFMPEG GCONF \
 			LIBPROXY OPTIMIZED_CFLAGS PROFILE TEST WAYLAND
 
 OPTIONS_DEFAULT+=	DBUS FFMPEG GCONF OPTIMIZED_CFLAGS PROFILE WAYLAND \
@@ -11,16 +11,6 @@ OPTIONS_MULTI_AUDIO=	ALSA JACK PULSEAUDIO SNDIO
 
 # WebRTC legacy audio library only supports ALSA and PulseAudio
 JACK_IMPLIES=		ALSA
-
-# dragonfly, sparc64, riscv
-.if !exists(/usr/sbin/dtrace)
-OPTIONS_EXCLUDE+=	DTRACE
-.endif
-
-# opensolaris/lib/libdtrace/common/dt_link.c:
-#   <arch> not implemented
-#   failed to allocate space for probe
-OPTIONS_DEFAULT_amd64+=	DTRACE
 
 CANBERRA_DESC?=		Sound theme alerts
 LIBPROXY_DESC?=		Proxy support via libproxy

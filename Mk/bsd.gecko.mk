@@ -360,14 +360,6 @@ MOZ_OPTIONS+=	--enable-rust-simd
 . endif
 .endif
 
-.if ${PORT_OPTIONS:MDTRACE}
-MOZ_OPTIONS+=	--enable-dtrace \
-		--disable-gold
-STRIP=
-.else
-MOZ_OPTIONS+=	--disable-dtrace
-.endif
-
 .if ${PORT_OPTIONS:MPROFILE}
 MOZ_OPTIONS+=	--enable-profiling
 STRIP=
