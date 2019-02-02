@@ -96,6 +96,7 @@
     SUBDIR += pear_Payment_DTA
     SUBDIR += prestashop
     SUBDIR += py-bitcoin
+    SUBDIR += py-pycoin
     SUBDIR += py-python-obelisk
     SUBDIR += py-stripe
     SUBDIR += py-ta-lib
