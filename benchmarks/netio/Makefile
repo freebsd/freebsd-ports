@@ -10,14 +10,15 @@ DISTNAME=	netio132
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Network benchmark
 
-WRKSRC=		${WRKDIR}
 USES=		dos2unix gmake zip
 DOS2UNIX_FILES=	Makefile netio.c
+
+NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/netio
 
 CFLAGS+=	-DUNIX -DSOCKLEN_T
 LIBS+=		-pthread
-MAKE_ENV+=	OUT=-o
+MAKE_ENV=	OUT=-o
 
 OPTIONS_DEFINE=	IPV6
 IPV6_PLIST_FILES=	bin/netio6
