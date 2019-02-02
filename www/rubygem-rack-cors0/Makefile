@@ -13,6 +13,9 @@ COMMENT=	Middleware that will make Rack-based apps CORS compatible
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Use www/rubygem-rack-cors instead
+EXPIRATION_DATE=2019-02-28
+
 PORTSCOUT=	limit:^0\.
 
 NO_ARCH=	yes
