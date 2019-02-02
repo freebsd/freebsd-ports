@@ -11,7 +11,7 @@ COMMENT=	Format shell scripts
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	go>=1.10:lang/go
+BUILD_DEPENDS=	go>=1.10,1:lang/go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mvdan
