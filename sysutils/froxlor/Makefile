@@ -12,18 +12,16 @@ COMMENT=	PHP-based ISP Server Management Panel
 
 LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}
-
-SUB_FILES+=	pkg-message pkg-deinstall
-SUB_LIST+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} PORTNAME=${PORTNAME}
-PLIST_SUB+=	${SUB_LIST}
-
+USES=		php:cli
 USE_PHP=	bcmath curl filter ftp json pdo_mysql posix session xml zip
 
-USES=		php:cli
+SUB_FILES=	pkg-message pkg-deinstall
+SUB_LIST=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} PORTNAME=${PORTNAME}
+PLIST_SUB=	${SUB_LIST}
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=	LIBNSS LOGROTATE MYSQLS DKIM PCNTL NLS
 
@@ -105,7 +103,7 @@ NLS_USES=	gettext-runtime:run
 NLS_USE=	PHP=gettext
 
 do-install:
-	cd ${WRKDIR}/${PORTNAME} && \
+	cd ${WRKSRC}/${PORTNAME} && \
 	${FIND} . ! -name .gitignore | \
 	${CPIO} --quiet -pdm ${STAGEDIR}${WWWDIR}
 
