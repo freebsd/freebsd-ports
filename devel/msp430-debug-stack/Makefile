@@ -24,15 +24,15 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 USES=		compiler:c++11-lib dos2unix gmake zip:infozip
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}
 DOS2UNIX_REGEX=	.*/Makefile|.*\.(cpp|h)
 
-MAKE_ARGS+=	BOOST_DIR=${LOCALBASE} \
+MAKE_ARGS=	BOOST_DIR=${LOCALBASE} \
 		HIDAPI_DIR=${LOCALBASE}
 
 MAKE_JOBS_UNSAFE=	yes
+NO_WRKSUBDIR=		yes
 
-SUB_FILES+=	pkg-message
+SUB_FILES=	pkg-message
 
 REINPLACE_ARGS=	-i ""
 

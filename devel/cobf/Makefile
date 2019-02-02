@@ -10,14 +10,16 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	C and C++ code obfuscator
 
-OPTIONS_DEFINE=	DOCS
-
 USES=		zip
-WRKSRC=		${WRKDIR}
-PORTDOCS=	COPYING README cobf.pdf
-PLIST_FILES=	bin/cobf
-MAKEFILE=	makefile
+
 BUILD_WRKSRC=	${WRKSRC}/src/cpp
+MAKEFILE=	makefile
+NO_WRKSUBDIR=	yes
+
+PLIST_FILES=	bin/cobf
+PORTDOCS=	COPYING README cobf.pdf
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/cpp/cobf ${STAGEDIR}${PREFIX}/bin/cobf
