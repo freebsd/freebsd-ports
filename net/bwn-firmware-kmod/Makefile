@@ -41,7 +41,7 @@ FIRMWARES_N=								\
 	n0initvals16 n0initvals24					\
 	n0bsinitvals16 n0bsinitvals24					\
 
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 FWNAME=		bwn_v4
 FWFILE=		broadcom-wl-${FWVERSION}.tar.bz2
 FWVERSION=	4.150.10.5

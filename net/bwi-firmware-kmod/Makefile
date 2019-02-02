@@ -24,7 +24,7 @@ FIRMWARES=	ucode ucode11 ucode2 ucode4 ucode5 \
 		b0g0bsinitvals2 b0g0bsinitvals5 b0g0initvals2 b0g0initvals5 \
 		pcm4 pcm5
 
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 FWNAME=		bwi_v3
 FWFILE=		wl_apsta-${FWVERSION}.0.o
 FWVERSION=	3.130.20
