@@ -16,17 +16,16 @@ EXTRACT_SUFX=	.tgz
 RESTRICTED=	Redistribution is not allowed
 ONLY_FOR_ARCHS=	i386 amd64
 
-WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 post-extract:
-	cd ${WRKDIR} && ${TAR} -xf hptraidconf-3.6-1.tbz && \
+	cd ${WRKSRC} && ${TAR} -xf hptraidconf-3.6-1.tbz && \
 		${TAR} -xf hptsvr-3.6-1.tbz
 
 .include <bsd.port.pre.mk>
 
 do-install:
-	#@${MKDIR} ${STAGEDIR}${PREFIX}
 	${INSTALL_MAN} ${WRKSRC}/hptraidconf.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .if ${ARCH} == "i386"
 	${INSTALL_PROGRAM} ${WRKSRC}/hptraidconf-8.0 ${STAGEDIR}${PREFIX}/bin/hptraidconf

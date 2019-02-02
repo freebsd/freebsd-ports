@@ -14,7 +14,7 @@ COMMENT=	ISC Cron, former Vixie Cron
 
 LICENSE=	ISCL
 
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 SUB_FILES=	pkg-message
 PLIST_FILES=	sbin/cron \
 		"@(root,wheel,4755) bin/crontab" \
