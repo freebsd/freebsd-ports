@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	LOCAL/adamw
 PKGNAMESUFFIX=	-devkit
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	john@essenz.com
 COMMENT=	FastCGI Development Kit
 
 LICENSE=	Open_Market_FastCGI_license
