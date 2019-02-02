@@ -5,7 +5,7 @@ PORTNAME=	mosh
 PORTVERSION=	1.3.2
 PORTREVISION=	6
 CATEGORIES=	net
-MASTER_SITES=	http://mosh.mit.edu/ \
+MASTER_SITES=	https://mosh.org/ \
 		ZI
 
 MAINTAINER=	zi@FreeBSD.org
