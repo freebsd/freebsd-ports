@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grass
-PORTVERSION=	7.4.4
+PORTVERSION=	7.6.0
 CATEGORIES=	databases geography
 MASTER_SITES=	http://grass.osgeo.org/%SUBDIR%/ \
 		http://grass.cict.fr/%SUBDIR%/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	http://grass.osgeo.org/%SUBDIR%/ \
 		http://pinus.gntech.ac.kr/grass/%SUBDIR%/ \
 		http://wgbis.ces.iisc.ernet.in/grass/%SUBDIR%/ \
 		http://wgrass.media.osaka-cu.ac.jp/grassh/%SUBDIR%/
-MASTER_SITE_SUBDIR=	grass74/source
+MASTER_SITE_SUBDIR=	grass${VER}/source
 PKGNAMESUFFIX=	7
 
 MAINTAINER=	lbartoletti@tuxfamily.org
@@ -72,10 +72,11 @@ CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 ALL_TARGET=	default
 USE_LDCONFIG=	${PREFIX}/${GRASS_INST_DIR}/lib
 MAKE_ENV+=	TARGET="${CONFIGURE_TARGET}"
+VER=		${PORTVERSION:R:C/\.//}
 
 PLIST_SUB=	GRASS_INST_DIR="${GRASS_INST_DIR}" \
 		VERSION="${PORTVERSION}" \
-		VER="${PORTVERSION:R:C/\.//}"
+		VER="${VER}" MAJVER="${PKGNAMESUFFIX}"
 
 OPTIONS_DEFINE=		LAS MOTIF NETCDF PDAL
 OPTIONS_MULTI=		DB
@@ -188,5 +189,7 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/etc/lister/*
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/lib/libgrass_*.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${GRASS_INST_DIR}/tools/g.echo
+	${LN} -sf ${PORTNAME}${VER} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
 
 .include <bsd.port.mk>
