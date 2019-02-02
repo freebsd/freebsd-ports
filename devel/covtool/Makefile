@@ -10,11 +10,12 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/rel_2.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ test coverage analyzer
 
-WRKSRC=	        ${WRKDIR}
 USES=		gmake zip
 USE_GCC=	yes
+
 MAKEFILE=	makefile
 MAKE_ARGS=	CC=${CXX} LN=${CXX} INSTALL_DIR=${STAGEDIR}${PREFIX}
+NO_WRKSUBDIR=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \

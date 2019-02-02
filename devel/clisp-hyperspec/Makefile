@@ -11,8 +11,8 @@ COMMENT=	Common Lisp reference in HTML format, from LispWorks Ltd
 
 NO_CDROM=	Commercial redistribution prohibited
 
-WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

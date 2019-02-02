@@ -13,15 +13,16 @@ COMMENT=	Adobe Flex SDK
 
 CONFLICTS=	ja-flex-sdk-2.* flex-sdk2-2.* flex-sdk-4.*
 USES=		zip
-USE_JAVA=	YES
+USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-WRKSRC=		${WRKDIR}
 SUB_FILES=	${SCRIPTS:C/\$/.sh/g}
-NO_BUILD=	YES
 PLIST_SUB=	PORTNAME=${PORTNAME}
 SUB_LIST=	PORTNAME=${PORTNAME}
 SCRIPTS=	aasdoc acompc amxmlc asdoc compc copylocale digest \
 		fcsh fdb mxmlc optimizer
+
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=	DOCS
 
