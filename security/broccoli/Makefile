@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	broccoli
-PORTVERSION=	1.97
-PORTREVISION=	1
+PORTVERSION=	1.101
 PORTEPOCH=	1
 CATEGORIES=	security
-MASTER_SITES=	https://www.bro.org/downloads/release/
-DISTNAME=	bro-2.4.1
+MASTER_SITES=	https://www.zeek.org/downloads/
+DISTNAME=	bro-2.6.1
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Bro Client Communications Library
