@@ -794,6 +794,7 @@
     SUBDIR += spotifyd
     SUBDIR += squash
     SUBDIR += sratom
+    SUBDIR += stegosaurus-lv2
     SUBDIR += stk
     SUBDIR += streamripper
     SUBDIR += streamtranscoder

@@ -1,0 +1,16 @@
+lib/lv2/stegosaurus-presets.lv2/electro1.ttl
+lib/lv2/stegosaurus-presets.lv2/electro10.ttl
+lib/lv2/stegosaurus-presets.lv2/electro2.ttl
+lib/lv2/stegosaurus-presets.lv2/electro3.ttl
+lib/lv2/stegosaurus-presets.lv2/electro4.ttl
+lib/lv2/stegosaurus-presets.lv2/electro5.ttl
+lib/lv2/stegosaurus-presets.lv2/electro6.ttl
+lib/lv2/stegosaurus-presets.lv2/electro7.ttl
+lib/lv2/stegosaurus-presets.lv2/electro8.ttl
+lib/lv2/stegosaurus-presets.lv2/electro9.ttl
+lib/lv2/stegosaurus-presets.lv2/manifest.ttl
+lib/lv2/stegosaurus.lv2/manifest.ttl
+lib/lv2/stegosaurus.lv2/stegosaurus.so
+lib/lv2/stegosaurus.lv2/stegosaurus.ttl
+lib/lv2/stegosaurus.lv2/stegosaurus_ui.so
+lib/lv2/stegosaurus.lv2/waves/sine.wav

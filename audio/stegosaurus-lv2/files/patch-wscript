@@ -1,0 +1,13 @@
+--- wscript.orig	2019-02-02 20:45:46 UTC
++++ wscript
+@@ -3,8 +3,8 @@ import waflib.Options as Options
+ import re
+ import sys
+ sys.path.append('tools')
+-from tools import autowaf as autowaf
+-from tools import lv2 as lv2
++import autowaf as autowaf
++import lv2 as lv2
+ 
+ # Variables for 'waf dist'
+ APPNAME = 'stegosaurus.lv2'
