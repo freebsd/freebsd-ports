@@ -14,4 +14,6 @@ LIB_DEPENDS=	libsodium.so:security/libsodium
 
 USES=		php:pecl
 
+PORTSCOUT=	limit:^1\.
+
 .include <bsd.port.mk>
