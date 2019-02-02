@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBD-LDAP
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +14,12 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-perl-ldap>=0.01:net/p5-perl-ldap \
-		p5-DBI>=0:databases/p5-DBI
+RUN_DEPENDS=	p5-DBI>=1.03:databases/p5-DBI \
+		p5-perl-ldap>=0.01:net/p5-perl-ldap
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
