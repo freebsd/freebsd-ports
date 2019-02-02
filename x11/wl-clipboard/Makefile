@@ -2,14 +2,14 @@
 
 PORTNAME=	wl-clipboard
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0-40
-DISTVERSIONSUFFIX=	-g46f21d2
+DISTVERSION=	1.0.0-43
+DISTVERSIONSUFFIX=	-g7f36466
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Command-line copy/paste utilities for Wayland
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	wayland-protocols>=1.12:graphics/wayland-protocols
