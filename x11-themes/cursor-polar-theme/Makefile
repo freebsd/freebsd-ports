@@ -12,10 +12,10 @@ DISTNAME=	27913-PolarCursorThemes
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Polar is a smooth and simple cursor set
 
-NO_BUILD=	yes
 USES=	tar:bzip2
 
-WRKSRC=		${WRKDIR}
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/polar/cursors
