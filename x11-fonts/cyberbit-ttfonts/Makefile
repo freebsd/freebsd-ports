@@ -17,9 +17,9 @@ COMMENT=	Bitstream Cyberbit TrueType font that covers Unicode 2.0
 RESTRICTED=	Redistribution not permitted; single user license only
 
 USES=		fonts zip
-NO_BUILD=	yes
-WRKSRC=		${WRKDIR}
 
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 SUB_FILES=	pkg-message
 
 PORTDOCS=	97CyberBase.Doc 97CyberBit.Doc 97CyberCJK.Doc \
