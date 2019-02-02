@@ -5,4 +5,4 @@ connectivity protocol. Designed as an extremely lightweight publish/subscribe
 messaging transport, it is useful for connections with remote locations where
 a small code footprint is required and/or network bandwidth is at a premium.
 
-WWW: http://eclipse.org/paho
+WWW: https://www.eclipse.org/paho/
