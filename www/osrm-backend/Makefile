@@ -2,11 +2,10 @@
 
 PORTNAME=		osrm-backend
 DISTVERSIONPREFIX=	v
-DISTVERSION=		5.17.2
-PORTREVISION=		5
+DISTVERSION=		5.22.0
 CATEGORIES=		www
 
-MAINTAINER=		a.andersson.thn@gmail.com
+MAINTAINER=		freebsd@mosedal.net
 COMMENT=		Open Source Routing Machine (Backend)
 
 LICENSE=		BSD2CLAUSE
@@ -29,14 +28,15 @@ LIB_DEPENDS=		libtbb.so:devel/tbb \
 USES=			cmake lua:53 compiler:c++14-lang
 USE_GITHUB=		yes
 GH_ACCOUNT=		Project-OSRM
-USE_LDCONFIG=		yes
+
 OPTIONS_DEFINE=		DEBUG
+
 USE_RC_SUBR=		osrm
 
 USERS=			osrm
 GROUPS=			osrm
 
-CMAKE_ON=		BUILD_SHARED_LIBS
+CMAKE_ON=		BUILD_STATIC_LIBS
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}/var/db/osrm-backend
