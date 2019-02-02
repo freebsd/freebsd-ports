@@ -72,7 +72,7 @@ Display a short help text and exit.
 No-operation mode; just display the commands without executing them.
 .It Fl T Ar template
 Specify the template directory instead of the default
-.Pa /usr/local/share/s5/s5-blank
+.Pa %%PREFIX%%/share/s5/s5-blank
 .It Fl v
 Verbose operation; display diagnostic information.
 .El

@@ -26,7 +26,7 @@
 
 set -e
 
-LOCALBASE='/usr/local'
+LOCALBASE='%%PREFIX%%'
 S5_DIR="${LOCALBASE}/share/s5"
 S5_TEMPLATE="${S5_DIR}/s5-blank"
 NOOP=''
@@ -217,7 +217,7 @@ Usage:	s5 [-hNv] [-T template] command [args...]
 The available command-line options are:
 	-h	display this help message and exit
 	-N	no-op mode, just display the commands without executing them
-	-T	template directory, default /usr/local/share/s5/s5-blank
+	-T	template directory, default %%PREFIX%%/share/s5/s5-blank
 	-v	verbose operation, display diagnostic information
 
 The available commands are:
