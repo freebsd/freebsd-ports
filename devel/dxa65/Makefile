@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dxa
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.floodgap.com/retrotech/xa/dists/
 PKGNAMESUFFIX=	65
