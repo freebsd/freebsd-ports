@@ -35,6 +35,7 @@
 %%DATADIR%%/dba/patches/1.2.9.sql
 %%DATADIR%%/dba/patches/1.3.1.sql
 %%DATADIR%%/dba/patches/1.3.2.sql
+%%DATADIR%%/dba/patches/1.3.3.sql
 %%DATADIR%%/dba/rrule_functions-8.1.sql
 %%DATADIR%%/dba/rrule_functions.sql
 %%DATADIR%%/dba/rrule_tests.sql
@@ -131,6 +132,7 @@
 %%WWWDIR%%/inc/freebusy-functions.php
 %%WWWDIR%%/inc/iSchedule-POST.php
 %%WWWDIR%%/inc/iSchedule.php
+%%WWWDIR%%/inc/instance_range.php
 %%WWWDIR%%/inc/interactive-page.php
 %%WWWDIR%%/inc/log_caldav_action.php
 %%WWWDIR%%/inc/other_translated_strings.php
