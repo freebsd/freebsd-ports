@@ -9,7 +9,7 @@ MASTER_SITES=	https://weechat.org/files/src/
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Lightweight and user friendly ncurses based IRC client
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS+=	libcurl.so:ftp/curl \
