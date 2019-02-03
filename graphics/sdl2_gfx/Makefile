@@ -12,11 +12,13 @@ COMMENT=	SDL graphics drawing primitives and other support functions
 
 LICENSE=	ZLIB
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 USES=		gmake libtool pathfix
 USE_SDL=	sdl2
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+
+PORTSCOUT=	limit:^1
 
 OPTIONS_DEFINE=	MMX
 
