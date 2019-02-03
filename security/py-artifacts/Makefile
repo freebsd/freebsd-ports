@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	artifacts
-PORTVERSION=	20181213
+PORTVERSION=	20190113
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP \
 		https://github.com/ForensicArtifacts/artifacts/releases/download/${PORTVERSION}/
@@ -26,6 +26,7 @@ DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${PYTHON_CMD}
 TEST_TARGET=	run_tests.py
 
 post-patch:
-	${REINPLACE_CMD} "s,share/artifacts,${DATADIR_REL}," ${WRKSRC}/setup.py
+	${REINPLACE_CMD} "s,share/artifacts,${DATADIR_REL}, ; \
+		s,share/doc/artifacts,${DOCSDIR_REL}," ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
