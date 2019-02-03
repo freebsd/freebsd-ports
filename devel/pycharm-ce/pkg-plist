@@ -1418,7 +1418,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/commons-imaging-1.0-RC-1.jar
 %%DATADIR%%/lib/commons-lang-2.4.jar
 %%DATADIR%%/lib/commons-logging-1.2.jar
-%%DATADIR%%/lib/delight-nashorn-sandbox-0.1.16.jar
+%%DATADIR%%/lib/delight-rhino-sandbox-0.0.9.jar
 %%DATADIR%%/lib/eddsa-0.2.0.jar
 %%DATADIR%%/lib/error_prone_annotations-2.3.1.jar
 %%DATADIR%%/lib/extensions.jar
@@ -1484,7 +1484,7 @@ share/applications/pycharm-ce.desktop
 %%DATADIR%%/lib/picocontainer-1.2.jar
 %%DATADIR%%/lib/platform-api.jar
 %%DATADIR%%/lib/platform-impl.jar
-%%DATADIR%%/lib/proxy-vole-1.0.5.jar
+%%DATADIR%%/lib/proxy-vole-1.0.6.jar
 %%DATADIR%%/lib/pty4j-0.8.6.jar
 %%DATADIR%%/lib/purejavacomm-0.0.11.1.jar
 %%DATADIR%%/lib/pycharm-pydev.jar
