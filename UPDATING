@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20190202:
+  AFFECTS: users of archivers/urbackup-server
+  AUTHOR: freebsd@coombscloud.com
+  
+  Some of the port's sources previously included absolute references to /etc/urbackup.  
+  The upgrade now changes these references to ${PREFIX}/etc/urbackup. If you have placed 
+  any configuration files within /etc/urbackup, these should be relocated to 
+  ${PREFIX}/etc/urbackup.
+
 20190124:
   AFFECTS: users of sysutils/rubygem-fluentd, sysutils/fluent-bit
   AUTHOR: girgen@FreeBSD.org
