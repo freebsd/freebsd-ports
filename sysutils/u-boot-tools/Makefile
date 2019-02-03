@@ -12,7 +12,7 @@ COMMENT=	U-boot related tools
 
 LICENSE=	GPLv2
 
-USES=	tar:bzip2 gmake python:2.7,build ssl
+USES=	bison tar:bzip2 gmake python:2.7,build ssl
 
 CONFLICTS=	uboot-mkimage
 ALL_TARGET=	tools-only
