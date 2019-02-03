@@ -1,0 +1,7 @@
+TIMESTAMP = 1549221812
+SHA256 (graphlan-v1.1.3-66ec7cfce81e.tar.gz) = 8931bb166ea46b761d3e1694ff164b82585d5d5ba751ca9cb093bc2fe91c1cb0
+SIZE (graphlan-v1.1.3-66ec7cfce81e.tar.gz) = 2608529
+SHA256 (pyphlan-eae40ebc0030.tar.gz) = 5f9d8e9d8ca5d6c458ba8ce7a7bb2e4a2e9944dc36c6b04850cdcfa4efa046c6
+SIZE (pyphlan-eae40ebc0030.tar.gz) = 27139
+SHA256 (export2graphlan-c168a100f37e.tar.gz) = 7f2738154a9c33c6ab902cc43f498b0bc9a0d038e96154ca0eadef29bc631c6b
+SIZE (export2graphlan-c168a100f37e.tar.gz) = 549743
