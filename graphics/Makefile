@@ -491,6 +491,7 @@
     SUBDIR += libpcd
     SUBDIR += libpgf
     SUBDIR += libpillowfight
+    SUBDIR += libplacebo
     SUBDIR += libpotrace
     SUBDIR += libprojectm
     SUBDIR += libpuzzle

@@ -1,0 +1,5 @@
+TIMESTAMP = 1544969285
+SHA256 (haasn-libplacebo-v1.7.0_GH0.tar.gz) = 5ee618bee614aeae9f8bb526329824468f93c740e8fd37fd46d58114fd7977eb
+SIZE (haasn-libplacebo-v1.7.0_GH0.tar.gz) = 312130
+SHA256 (95814b653b71.patch) = 0a0efeb485cd04e514aae612714e962ebb5e18662a4d89f61e2895dc8a7d959a
+SIZE (95814b653b71.patch) = 643
