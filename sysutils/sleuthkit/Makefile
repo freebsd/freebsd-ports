@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sleuthkit
-PORTVERSION=	4.6.4
-PORTREVISION=	1
+PORTVERSION=	4.6.5
 CATEGORIES=	sysutils security
 MASTER_SITES=	https://github.com/sleuthkit/sleuthkit/releases/download/sleuthkit-${PORTVERSION}/
 
