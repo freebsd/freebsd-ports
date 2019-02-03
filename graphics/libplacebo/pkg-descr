@@ -1,0 +1,14 @@
+libplacebo is essentially the core rendering algorithms and ideas of
+mpv turned into a library. This grew out of an interest to accomplish
+the following goals:
+
+- Clean up mpv's internal rendering abstraction API and make it
+  reusable for other projects.
+- Provide a standard library of useful GPU-accelerated image processing
+  primitives based on GLSL, so projects like VLC or Firefox can use them
+  without incurring a heavy dependency on libmpv.
+- Rewrite core parts of mpv's GPU-accelerated video renderer on top of
+  redesigned abstractions. (Basically, I wanted to eliminate code smell like
+  shader_cache.c and totally redesign gpu/video.c)
+
+WWW: https://code.videolan.org/videolan/libplacebo
