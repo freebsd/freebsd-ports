@@ -3,7 +3,7 @@
 
 PORTNAME=	mh
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese mail
 MASTER_SITES=	ftp://ftp.laic.u-hyogo.ac.jp/pub/net/mh/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--enable-batchmode \
 		--enable-jmandir=${MANPREFIX}/man/ja
 MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	-Wno-return-type
+LLD_UNSAFE=	yes
 
 USE_LDCONFIG=	yes
 
@@ -37,6 +38,18 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${REINPLACE_CMD} -e "s/-O /${CFLAGS} /g" ${WRKSRC}/configure
+.for i in comp dist forw mh-mail mhl ja-comp ja-dist ja-forw ja-mh-mail ja-mhl
+	@(cd ${WRKSRC}/conf/doc && \
+	${AWK} '{ \
+	if (/^\.so/) { \
+		ifile="../../support/general" substr($$2, index($$2, "/")); \
+		while((getline l < ifile > 0)) \
+			print l; \
+		close(ifile); \
+	} else \
+		print; \
+	}' ${i}.rf > ${i}.tmp && ${MV} ${i}.tmp ${i}.rf)
+.endfor
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
