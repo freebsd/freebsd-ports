@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	plaso
-PORTVERSION=	20181219
+PORTVERSION=	20190131
 CATEGORIES=	security python
 MASTER_SITES=	https://github.com/log2timeline/plaso/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -53,10 +53,7 @@ USE_PYTHON=	distutils autoplist
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3000
-RUN_DEPENDS+=	hachoir-core>=0:devel/hachoir-core@${PY_FLAVOR} \
-		hachoir-metadata>=0:sysutils/hachoir-metadata@${PY_FLAVOR} \
-		hachoir-parser>=0:devel/hachoir-parser@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}backports.lzma>=0:archivers/py-backports.lzma@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.lzma>=0:archivers/py-backports.lzma@${PY_FLAVOR}
 TEST_ENV=	${MAKE_ENV} PYTHONHTTPSVERIFY=0
 .else
 TEST_DEPENDS+=	ca_root_nss>=0:security/ca_root_nss
