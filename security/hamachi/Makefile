@@ -13,6 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast, secure, simple VPN software with NAT-traversal
 
 BROKEN=		fails to patch with upx 3.94
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-03-05
 ONLY_FOR_ARCHS=	amd64 i386
 
 PATCH_DEPENDS=	upx:archivers/upx

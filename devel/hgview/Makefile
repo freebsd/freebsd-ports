@@ -17,6 +17,8 @@ DEPRECATED=		Qt4 has been EOL since december 2015
 EXPIRATION_DATE=	2019-03-15
 
 BROKEN=		fails to configure
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-03-05
 
 RUN_DEPENDS=	hg:devel/mercurial \
 		${PYTHON_PKGNAMEPREFIX}mx-base>0:lang/py-mx-base@${PY_FLAVOR} \

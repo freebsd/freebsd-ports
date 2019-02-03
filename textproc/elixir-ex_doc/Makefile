@@ -13,6 +13,8 @@ LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-03-05
 
 USES=		elixir
 USE_GITHUB=	yes

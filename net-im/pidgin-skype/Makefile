@@ -13,6 +13,9 @@ COMMENT=	Plugin to use Skype chat from Pidgin (with Skype running)
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-03-05
+
 BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:net-im/pidgin \
     ${LOCALBASE}/bin/skype:net-im/skype
 RUN_DEPENDS=	pidgin:net-im/pidgin \

@@ -12,6 +12,8 @@ MAINTAINER=	saper@saper.info
 COMMENT=	5250 terminal emulator for the AS/400 written in Java
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-03-05
 
 BUILD_DEPENDS=	${JAVALIBDIR}/mail.jar:java/javamail \
 		${JYTHON_JAR}:lang/jython \

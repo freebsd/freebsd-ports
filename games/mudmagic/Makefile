@@ -14,6 +14,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		Does not build with recent devel/glib20
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-03-05
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre.so:devel/pcre \
