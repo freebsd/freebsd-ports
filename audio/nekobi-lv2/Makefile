@@ -2,6 +2,7 @@
 
 PORTNAME=	nekobi
 DISTVERSION=	g20180825
+PORTREVISION=	1
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -24,9 +25,9 @@ GH_TAGNAME=	840a692
 GH_TUPLE=	DISTRHO:DPF:ea7545a:dpf/dpf
 USE_GL=		gl
 USE_XORG=	x11
-USE_GCC=	any # clang prints errors: https://github.com/DISTRHO/Nekobi/issues/7
 
 CFLAGS+=	-I${FILESDIR}
+CFLAGS+=	-Wno-c++11-narrowing # clang prints errors: https://github.com/DISTRHO/Nekobi/issues/7
 
 do-install: # https://github.com/DISTRHO/Nekobi/issues/8
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/lv2
