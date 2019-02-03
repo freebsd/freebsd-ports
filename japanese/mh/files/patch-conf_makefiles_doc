@@ -1,0 +1,11 @@
+--- conf/makefiles/doc.orig	1999-02-09 11:30:00 UTC
++++ conf/makefiles/doc
+@@ -239,7 +239,7 @@ inst-jman8=	inst-ja-ap inst-ja-conflict inst-ja-dp ins
+ 
+ .me.doc:;	nroff -Tlpr -me $< > $@
+ 
+-.me.man:;	cat tmac.me $< | sed -f me2man.sed @(MHCATMAN) > $@
++.me.man:;	cat tmac.h $< | sed -f me2man.sed @(MHCATMAN) > $@
+ 
+ .cat.imp:;	catimp -i $@ $<
+ 
