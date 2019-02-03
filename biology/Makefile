@@ -102,6 +102,7 @@
     SUBDIR += plinkseq
     SUBDIR += primer3
     SUBDIR += prodigal
+    SUBDIR += prodigy-lig
     SUBDIR += protomol
     SUBDIR += psi88
     SUBDIR += py-Genesis-PyAPI
