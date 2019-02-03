@@ -29,6 +29,9 @@ post-patch:
 	@${REINPLACE_CMD} 's/ README//' ${WRKSRC}/Makefile.am
 # Don't try to download catch2 during build
 	@${REINPLACE_CMD} '/wget/d' ${WRKSRC}/tests/Makefile.am
+# Respect PREFIX != /usr/local
+	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' \
+		${WRKSRC}/src/nuspell/finder.cxx
 
 post-patch-TEST-off:
 	@${REINPLACE_CMD} -i .notest 's/ tests//' ${WRKSRC}/Makefile.am
