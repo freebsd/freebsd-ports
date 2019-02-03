@@ -1,0 +1,5 @@
+TIMESTAMP = 1538421668
+SHA256 (google-shaderc-v2018.0_GH0.tar.gz) = b96f27e7375a6df08732ebd47c18febf82bd0a87e541fd7814fd8c3aa6c8913a
+SIZE (google-shaderc-v2018.0_GH0.tar.gz) = 206013
+SHA256 (21c8be385b3f.patch) = 986a972d8b8fbfa750e92b750673108c4ae77af47acdc4dbb684358e2600a4ea
+SIZE (21c8be385b3f.patch) = 1744

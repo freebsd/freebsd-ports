@@ -47,7 +47,7 @@ OPTIONS_DEFAULT=	ARCHIVE ASS DVDREAD DVDNAV MANPAGES OPENGL UCHARDET \
 			V4L VAAPI VDPAU WAYLAND X11 YTDL
 OPTIONS_GROUP=		IN VO AO
 OPTIONS_GROUP_IN=	CDIO DVDREAD DVDNAV LIBBLURAY V4L YTDL SMB
-OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU WAYLAND X11
+OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU VULKAN WAYLAND X11
 OPTIONS_GROUP_AO=	ALSA JACK OPENAL PULSEAUDIO SDL SNDIO
 OPTIONS_SUB=		yes
 
@@ -56,6 +56,7 @@ DVDREAD_DESC=		DVD Playback support
 DVDNAV_DESC=		DVD menu navigation
 LUAJIT_DESC=		Use LuaJIT instead of Lua scripting language support
 UCHARDET_DESC=		Guess subtitle encoding via uchardet
+VULKAN_DESC=		Vulkan output support
 WAYLAND_DESC=		Wayland (graphics) support
 YTDL_DESC=		Install youtube-dl
 IN_DESC=		Input
@@ -142,6 +143,12 @@ VAAPI_CONFIGURE_OFF=		--disable-vaapi
 
 VDPAU_LIB_DEPENDS=		libvdpau.so:multimedia/libvdpau
 VDPAU_CONFIGURE_OFF=		--disable-vdpau
+
+VULKAN_BUILD_DEPENDS=		${LOCALBASE}/include/vulkan/vulkan.h:devel/vulkan-headers
+VULKAN_LIB_DEPENDS=		libvulkan.so:graphics/vulkan-loader \
+				libshaderc_shared.so:graphics/shaderc
+VULKAN_CONFIGURE_OFF=		--disable-vulkan --disable-shaderc
+VULKAN_IMPLIES=			X11
 
 WAYLAND_BUILD_DEPENDS=		wayland-protocols>=1.14:graphics/wayland-protocols \
 				${LOCALBASE}/include/linux/input.h:devel/evdev-proto
