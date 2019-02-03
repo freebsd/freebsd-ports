@@ -531,6 +531,7 @@
     SUBDIR += nn-aspell
     SUBDIR += no-hunspell
     SUBDIR += nunnimcax
+    SUBDIR += nuspell
     SUBDIR += nux
     SUBDIR += ny-aspell
     SUBDIR += ocaml-csv
