@@ -9,6 +9,8 @@ PKGNAMESUFFIX=	-ldap
 
 COMMENT=	Secure, reliable, and fast MTA for UNIX systems with LDAP support
 
+BROKEN=		fails to package
+
 RUN_DEPENDS=	${LOCALBASE}/bin/svscan:sysutils/daemontools \
 		${LOCALBASE}/bin/tcprules:sysutils/ucspi-tcp
 
