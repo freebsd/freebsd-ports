@@ -11,6 +11,8 @@ COMMENT=	Ignition transport classes and functions for robot applications
 
 LICENSE=	APACHE20
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	ignition-cmake==2:devel/ignition-cmake \
 		ignition-tools>0:devel/ignition-tools \
 		cppzmq>0:net/cppzmq
