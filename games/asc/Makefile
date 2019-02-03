@@ -17,6 +17,8 @@ COMMENT=	Turn based, multiplayer strategic game with nice graphics
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	zip:archivers/zip
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
