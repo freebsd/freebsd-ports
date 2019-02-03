@@ -17,6 +17,8 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LIB
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-03-05
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libuuid.so:misc/e2fsprogs-libuuid \

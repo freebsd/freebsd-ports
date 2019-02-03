@@ -11,6 +11,8 @@ COMMENT=	Interface to DFT codes in TRIQS
 LICENSE=	GPLv3
 
 BROKEN=		wrong LIB_DEPENDS
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-03-05
 
 BUILD_DEPENDS=	boost-libs>=1.53:devel/boost-libs \
 		googletest>0:devel/googletest # not needed: https://github.com/TRIQS/dft_tools/issues/95

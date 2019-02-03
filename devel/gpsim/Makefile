@@ -13,6 +13,9 @@ COMMENT=	Software simulator for Microchip PIC microcontrollers
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-03-05
+
 BUILD_DEPENDS=	gpasm:devel/gputils
 LIB_DEPENDS=	libpopt.so:devel/popt
 RUN_DEPENDS=	gpasm:devel/gputils

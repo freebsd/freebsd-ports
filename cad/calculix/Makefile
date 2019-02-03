@@ -16,6 +16,8 @@ COMMENT=	Three-Dimensional Structural Finite Element Program
 LICENSE=	GPLv2
 
 BROKEN=		checksum and size mismatch
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-03-05
 BROKEN_aarch64=		fails to link: shapeFunctions.c:(function attach_new): relocation R_AARCH64_CALL26 out of range
 
 RUN_DEPENDS=	ccx:cad/calculix-ccx

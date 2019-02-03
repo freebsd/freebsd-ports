@@ -12,6 +12,8 @@ MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Enlightenment websearch plugin for the "everything" module
 
 BROKEN=		Not compatible with Enlightenment 0.22
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-03-05
 
 BUILD_DEPENDS=	enlightenment:x11-wm/enlightenment
 RUN_DEPENDS=	enlightenment:x11-wm/enlightenment

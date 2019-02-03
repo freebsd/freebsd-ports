@@ -15,6 +15,8 @@ COMMENT=	SDPARA parallel version of SDPA (math/sdpa)
 LICENSE=	GPLv2 # (or later)
 
 BROKEN=		conflicting dependencies
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-03-05
 
 LIB_DEPENDS=	libblacs.so:math/blacs \
 		libscalapack.so:math/scalapack \

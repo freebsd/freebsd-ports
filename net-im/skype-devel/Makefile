@@ -24,6 +24,8 @@ USES=		cpe linux tar:bzip2
 USE_LINUX=	alsalib alsa-plugins-oss dri expat fontconfig libasyncns \
 		libsigcpp20 xorglibs
 BROKEN=		uses non existing libsigcpp20
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-03-05
 RESTRICTED=	Redistribution prohibited.
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_static-${DISTVERSION}

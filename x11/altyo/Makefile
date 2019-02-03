@@ -14,6 +14,8 @@ COMMENT=	Drop-down terminal emulator, written in Vala
 LICENSE=	GPLv3
 
 BROKEN=		Cannot convert from `unowned string' to `unowned char[]?'
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-03-05
 
 BUILD_DEPENDS=	git:devel/git \
 		valac:lang/vala

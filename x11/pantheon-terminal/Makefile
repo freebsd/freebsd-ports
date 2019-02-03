@@ -13,6 +13,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		Doesn't build with vala 0.40+
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-03-05
 
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libgnutls.so:security/gnutls \

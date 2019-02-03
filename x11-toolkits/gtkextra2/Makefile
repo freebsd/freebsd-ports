@@ -15,6 +15,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		Does not build: libgtkextra-x11-2.0.so: undefined reference to `gtkextra_BOOLEAN__BOXED_BOXED'
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2019-03-05
 
 USES=		gmake libtool pathfix pkgconfig
 USE_GNOME=	gtk20
