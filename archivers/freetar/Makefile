@@ -2,7 +2,7 @@
 
 PORTNAME=	freetar
 PORTVERSION=	0.9
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	archivers gnustep
 MASTER_SITES=	http://download.gna.org/freetar/
 DISTNAME=	FreeTar-${PORTVERSION}

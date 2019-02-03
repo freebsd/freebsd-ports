@@ -2,9 +2,13 @@
 
 PORTNAME=	gorm
 PORTVERSION=	1.2.23
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnustep
-MASTER_SITES=	GNUSTEP/dev-apps
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	gnustep
+GH_PROJECT=	apps-gorm
+GH_TAGNAME=	04554d2
 
 MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	Graphical Object Relationship Modeller

@@ -2,7 +2,7 @@
 
 PORTNAME=	localize
 PORTVERSION=	0.0.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	textproc gnustep
 MASTER_SITES=	http://www.eskimo.com/~pburns/Localize/files/
 DISTNAME=	Localize-20040424

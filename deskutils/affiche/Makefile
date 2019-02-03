@@ -2,7 +2,7 @@
 
 PORTNAME=	affiche
 PORTVERSION=	0.6.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://www.collaboration-world.com/affiche.data/releases/Stable/
 DISTNAME=	Affiche-${PORTVERSION}

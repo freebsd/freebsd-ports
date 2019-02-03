@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	cenon
-PORTVERSION=	4.0.3
-PORTREVISION=	2
+PORTVERSION=	4.0.2
+PORTREVISION=	4
+PORTEPOCH=	1
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://www.cenon.zone/download/source/
 DISTNAME=	Cenon-${MAINVERSION}
@@ -16,9 +17,10 @@ COMMENT=	Vector graphics tool for GNUstep
 
 USES=	tar:bzip2 gnustep
 USE_GNUSTEP=	gui base build
+LLD_UNSAFE=yes
 
 WRKSRC=		${WRKDIR}/Cenon
-MAINVERSION=	4.0.5
+MAINVERSION=	4.0.2
 FULLVERSION=	4.0.0
 CENON_LIB_DIR=	${GNUSTEP_SYSTEM_ROOT}/Library/Cenon
 

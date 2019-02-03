@@ -2,7 +2,7 @@
 
 PORTNAME=	gnustep-examples
 PORTVERSION=	1.4.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	misc gnustep
 MASTER_SITES=	GNUSTEP/usr-apps
 

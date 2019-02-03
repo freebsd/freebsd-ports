@@ -335,11 +335,6 @@ GNUstep/System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ReleaseNotes/ReleaseNotes.html
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ReleaseNotes/ReleaseNotes.igsdoc
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ReleaseNotes/dependencies
-%%PORTDOCS%%GNUstep/System/Library/Documentation/User/Gui/GuiUser/DefaultsSummary.html
-%%PORTDOCS%%GNUstep/System/Library/Documentation/User/Gui/GuiUser/GuiUser.igsdoc
-%%PORTDOCS%%GNUstep/System/Library/Documentation/User/Gui/GuiUser/KeyboardSetup.html
-%%PORTDOCS%%GNUstep/System/Library/Documentation/User/Gui/GuiUser/LanguageSetup.html
-%%PORTDOCS%%GNUstep/System/Library/Documentation/User/Gui/GuiUser/dependencies
 %%PORTDOCS%%GNUstep/System/Library/Documentation/info/AppKit.info
 GNUstep/System/Library/Documentation/man/man1/GSSpeechServer.1.gz
 %%PORTDOCS%%GNUstep/System/Library/Documentation/man/man1/gclose.1.gz
@@ -855,3 +850,21 @@ GNUstep/System/Tools/make_services
 GNUstep/System/Tools/say
 GNUstep/System/Tools/set_show_service
 @dir GNUstep/System/Library/Themes
+GNUstep/System/Library/Documentation/User/Gui/DefaultsSummary.html
+GNUstep/System/Library/Documentation/User/Gui/GuiUser.igsdoc
+GNUstep/System/Library/Documentation/User/Gui/KeyboardSetup.html
+GNUstep/System/Library/Documentation/User/Gui/LanguageSetup.html
+GNUstep/System/Library/Documentation/User/Gui/dependencies
+GNUstep/System/Library/Headers/AppKit/NSAccessibility.h
+GNUstep/System/Library/Headers/AppKit/NSAccessibilityConstants.h
+GNUstep/System/Library/Headers/AppKit/NSGestureRecognizer.h
+GNUstep/System/Library/Headers/AppKit/NSPasteboardItem.h
+GNUstep/System/Library/Headers/AppKit/NSRunningApplication.h
+GNUstep/System/Library/Headers/AppKit/NSSharingService.h
+GNUstep/System/Library/Headers/AppKit/NSTextAlternatives.h
+GNUstep/System/Library/Headers/AppKit/NSUserInterfaceItemIdentification.h
+GNUstep/System/Library/Headers/AppKit/NSUserInterfaceLayout.h
+GNUstep/System/Library/Headers/AppKit/NSVisualEffectView.h
+GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Japanese.lproj/Localizable.strings
+GNUstep/System/Library/Libraries/gnustep-gui/Versions/%%BASEVERSION%%/Resources/Polish.lproj/Localizable.strings
+
