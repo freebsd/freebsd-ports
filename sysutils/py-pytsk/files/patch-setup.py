@@ -1,8 +1,8 @@
 # Unbundle sleuthkit and talloc
 
---- setup.py.orig	2019-01-03 11:50:09 UTC
+--- setup.py.orig	2019-01-21 19:31:43 UTC
 +++ setup.py
-@@ -179,9 +179,9 @@ class BuildExtCommand(build_ext):
+@@ -230,9 +230,9 @@ class BuildExtCommand(build_ext):
    def run(self):
      compiler = new_compiler(compiler=self.compiler)
      # pylint: disable=attribute-defined-outside-init
@@ -14,7 +14,7 @@
  
      if not os.access("pytsk3.c", os.R_OK):
        # Generate the Python binding code (pytsk3.c).
-@@ -351,7 +351,7 @@ class ProjectBuilder(object):
+@@ -402,7 +402,7 @@ class ProjectBuilder(object):
      self._argv = argv
  
      # The path to the sleuthkit/tsk directory.
@@ -23,7 +23,7 @@
  
      # Paths under the sleuthkit/tsk directory which contain files we need
      # to compile.
-@@ -361,13 +361,13 @@ class ProjectBuilder(object):
+@@ -412,13 +412,13 @@ class ProjectBuilder(object):
      # The args for the extension builder.
      self.extension_args = {
          "define_macros": [],
