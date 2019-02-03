@@ -1,0 +1,9 @@
+pass audit is a password-store extension for auditing your password repository.
+Passwords will be checked against the Python implementation of Dropbox' zxcvbn
+algorithm and Troy Hunt's Have I Been Pwned Service. It supports safe breached
+password detection from haveibeenpwned.com using a K-anonymity method. Using
+this method, you do not need to (fully) trust the server that stores the
+breached password. You should read the security consideration section for more
+information.
+
+WWW: https://github.com/roddhjav/pass-audit
