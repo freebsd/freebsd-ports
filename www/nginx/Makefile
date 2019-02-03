@@ -14,6 +14,7 @@ MAINTAINER?=	joneum@FreeBSD.org
 COMMENT?=	Robust and small WWW server
 
 LICENSE=	BSD2CLAUSE
+LICESNE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_mips=	error ngx_spinlock() or ngx_atomic_cmp_set() are not defined
 BROKEN_mips64=	error ngx_spinlock() or ngx_atomic_cmp_set() are not defined
