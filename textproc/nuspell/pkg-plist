@@ -1,0 +1,10 @@
+bin/nuspell
+include/nuspell/aff_data.hxx
+include/nuspell/dictionary.hxx
+include/nuspell/finder.hxx
+include/nuspell/locale_utils.hxx
+include/nuspell/string_utils.hxx
+include/nuspell/structures.hxx
+lib/libnuspell.a
+libdata/pkgconfig/nuspell.pc
+man/man1/nuspell.1.gz
