@@ -36,6 +36,7 @@
     SUBDIR += fastqc
     SUBDIR += fasttree
     SUBDIR += fastx-toolkit
+    SUBDIR += figtree
     SUBDIR += fluctuate
     SUBDIR += freebayes
     SUBDIR += garlic
