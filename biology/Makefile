@@ -43,6 +43,7 @@
     SUBDIR += gff2ps
     SUBDIR += gmap
     SUBDIR += gperiodic
+    SUBDIR += graphlan
     SUBDIR += grappa
     SUBDIR += groopm
     SUBDIR += hisat2
