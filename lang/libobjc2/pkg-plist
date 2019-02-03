@@ -11,10 +11,15 @@ include/objc/message.h
 include/objc/objc-api.h
 include/objc/objc-arc.h
 include/objc/objc-auto.h
+include/objc/objc-class.h
+include/objc/objc-runtime.h
+include/objc/objc-visibility.h
 include/objc/objc.h
 include/objc/runtime.h
 include/objc/runtime-deprecated.h
 include/objc/slot.h
+include/Block.h
+include/Block_private.h
 lib/libobjc.so
 lib/libobjc.so.%%SHLIB_MAJOR%%
 lib/libobjc.so.%%SHLIB_MAJOR%%.%%SHLIB_MINOR%%

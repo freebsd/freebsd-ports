@@ -2,16 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	gnustep-gui
-PORTVERSION=	0.25.1
-PORTREVISION=	7
+PORTVERSION=	0.27.0
 CATEGORIES=	x11-toolkits gnustep
-MASTER_SITES=	GNUSTEP/core
 
 MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	GNUstep GUI library
 
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	gnustep
+GH_PROJECT=	libs-gui
+GH_TAGNAME=	gui-${PORTVERSION:S/./_/g}
 
 LIB_DEPENDS+=	libtiff.so:graphics/tiff
 LIB_DEPENDS+=	libpng.so:graphics/png
@@ -41,9 +44,6 @@ USES=		gnustep jpeg pkgconfig
 USE_GNUSTEP=	base build
 USE_XORG=	x11 xt
 
-EXTRA_PATCHES+=	${FILESDIR}/GNUmakefile.patch
-EXTRA_PATCHES+=	${FILESDIR}/GNUmakefile.speech.patch
-EXTRA_PATCHES+=	${FILESDIR}/AudioOutputSink.m.patch
 MAKE_FLAGS+=	OPTFLAG="${CFLAGS}"
 
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}

@@ -3,7 +3,7 @@
 
 PORTNAME=	openvpn-auth-ldap
 PORTVERSION=	2.0.4.0.s1379
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/mandree # figure out proper GitHub commit and use that.
 # https://github.com/threerings/openvpn-auth-ldap/

@@ -2,7 +2,7 @@
 
 PORTNAME=	biococoa
 PORTVERSION=	2.2.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	biology gnustep
 MASTER_SITES=	http://bioinformatics.org/biococoa/downloads/
 DISTNAME=	biococoa-${PORTVERSION}-src

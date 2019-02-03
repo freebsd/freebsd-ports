@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	pikopixel
-DISTVERSION=	1.0-b9c
-PORTREVISION=	1
+DISTVERSION=	1.0-b9e
 PORTEPOCH=	1
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://twilightedge.com/downloads/
-DISTNAME=	PikoPixel.Sources.1.0-b9c
+DISTNAME=	PikoPixel.Sources.${DISTVERSION}
 
 MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	Application for drawing and editing pixel-art images
