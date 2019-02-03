@@ -984,6 +984,7 @@
     SUBDIR += py-ospd
     SUBDIR += py-paramiko
     SUBDIR += py-paramiko1
+    SUBDIR += py-pass-audit
     SUBDIR += py-passlib
     SUBDIR += py-pbkdf2
     SUBDIR += py-pgpdump

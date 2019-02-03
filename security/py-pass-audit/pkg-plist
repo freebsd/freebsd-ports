@@ -1,0 +1,7 @@
+%%PYTHON_SITELIBDIR%%/__pycache__/pass_audit.cpython-%%PYTHON_SUFFIX%%.%%PYTHON_PYOEXTENSION%%
+%%PYTHON_SITELIBDIR%%/__pycache__/pass_audit.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/pass_audit.py
+libexec/password-store/extensions/audit.bash
+etc/bash_completion.d/pass-audit
+share/zsh/site-functions/_pass-audit
+man/man1/pass-audit.1.gz
