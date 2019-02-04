@@ -3,7 +3,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.31.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
@@ -90,7 +90,7 @@ STATIC_LDFLAGS+=	-all-static
 .include <bsd.port.pre.mk>
 
 # Actual earliest version may differ slightly
-.if ${ARCH} != i386 && ${ARCH} != mips && ${ARCH} != mips64 && ${ARCH} != powerpc && ${ARCH} != powerpc64 && ${ARCH} != powerpcspe && !defined(PKGNAMEPREFIX) && (${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 34 || ${COMPILER_TYPE} == gcc)
+.if ${ARCH} != mips && ${ARCH} != mips64 && ${ARCH} != powerpc && ${ARCH} != powerpc64 && ${ARCH} != powerpcspe && !defined(PKGNAMEPREFIX)
 CONFIGURE_ARGS+=	--enable-gold --enable-plugins
 CXXFLAGS+=	-Wno-c++11-narrowing
 PLIST_SUB+=	GOLD=""
