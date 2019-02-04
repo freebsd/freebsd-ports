@@ -32,7 +32,7 @@ VORBIS_LIB_DEPENDS=		libvorbisfile.so:audio/libvorbis
 VORBIS_CONFIGURE_WITH=		oggvorbis
 
 SDL_CONFIGURE_WITH=	sdl
-SDL_USE=		SDL=yes
+SDL_USE=		SDL=sdl
 
 NAS_CONFIGURE_WITH=	nas
 NAS_LIB_DEPENDS=	libaudio.so:audio/nas
