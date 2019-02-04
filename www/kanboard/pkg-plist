@@ -1,3 +1,5 @@
+@owner %%KANBOARD_USERNAME%%
+@group %%KANBOARD_GROUPNAME%%
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/ChangeLog
 %%WWWDIR%%/LICENSE
@@ -10,6 +12,7 @@
 %%WWWDIR%%/app/Action/TaskAssignCategoryColor.php
 %%WWWDIR%%/app/Action/TaskAssignCategoryLabel.php
 %%WWWDIR%%/app/Action/TaskAssignCategoryLink.php
+%%WWWDIR%%/app/Action/TaskAssignCategorySwimlaneChange.php
 %%WWWDIR%%/app/Action/TaskAssignColorCategory.php
 %%WWWDIR%%/app/Action/TaskAssignColorColumn.php
 %%WWWDIR%%/app/Action/TaskAssignColorLink.php
@@ -41,6 +44,8 @@
 %%WWWDIR%%/app/Action/TaskMoveColumnNotMovedPeriod.php
 %%WWWDIR%%/app/Action/TaskMoveColumnOnStartDate.php
 %%WWWDIR%%/app/Action/TaskMoveColumnUnAssigned.php
+%%WWWDIR%%/app/Action/TaskMoveSwimlaneAssigned.php
+%%WWWDIR%%/app/Action/TaskMoveSwimlaneCategoryChange.php
 %%WWWDIR%%/app/Action/TaskOpen.php
 %%WWWDIR%%/app/Action/TaskUpdateStartDate.php
 %%WWWDIR%%/app/Analytic/AverageLeadCycleTimeAnalytic.php
@@ -722,6 +727,7 @@
 %%WWWDIR%%/app/Template/event/task_close.php
 %%WWWDIR%%/app/Template/event/task_create.php
 %%WWWDIR%%/app/Template/event/task_file_create.php
+%%WWWDIR%%/app/Template/event/task_file_destroy.php
 %%WWWDIR%%/app/Template/event/task_internal_link_create_update.php
 %%WWWDIR%%/app/Template/event/task_internal_link_delete.php
 %%WWWDIR%%/app/Template/event/task_move_column.php
@@ -772,6 +778,7 @@
 %%WWWDIR%%/app/Template/notification/task_close.php
 %%WWWDIR%%/app/Template/notification/task_create.php
 %%WWWDIR%%/app/Template/notification/task_file_create.php
+%%WWWDIR%%/app/Template/notification/task_file_destroy.php
 %%WWWDIR%%/app/Template/notification/task_internal_link_create_update.php
 %%WWWDIR%%/app/Template/notification/task_internal_link_delete.php
 %%WWWDIR%%/app/Template/notification/task_move_column.php
