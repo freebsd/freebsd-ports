@@ -11,7 +11,7 @@
 # Licensed under the modified (= 2-clause) BSD license.
 
 # PROVIDE: uuidd
-# REQUIRE: FILESYSTEMS
+# REQUIRE: FILESYSTEMS ldconfig
 # BEFORE: DAEMON
 
 . /etc/rc.subr
