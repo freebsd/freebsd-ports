@@ -753,6 +753,7 @@
     SUBDIR += npadmin
     SUBDIR += nq
     SUBDIR += nrg2iso
+    SUBDIR += ntfy
     SUBDIR += nut
     SUBDIR += nvclock
     SUBDIR += nvme-cli
