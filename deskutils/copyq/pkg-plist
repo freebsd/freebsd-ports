@@ -54,8 +54,8 @@ share/icons/hicolor/48x48/apps/copyq-busy.png
 share/icons/hicolor/48x48/apps/copyq.png
 share/icons/hicolor/64x64/apps/copyq-busy.png
 share/icons/hicolor/64x64/apps/copyq.png
-share/icons/hicolor/scalable/apps/copyq-busy-mask.svg
 share/icons/hicolor/scalable/apps/copyq-busy.svg
-share/icons/hicolor/scalable/apps/copyq-mask.svg
 share/icons/hicolor/scalable/apps/copyq.svg
+share/icons/hicolor/scalable/apps/copyq_mask-busy.svg
+share/icons/hicolor/scalable/apps/copyq_mask.svg
 share/metainfo/com.github.hluk.copyq.appdata.xml
