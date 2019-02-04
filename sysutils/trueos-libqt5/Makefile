@@ -2,7 +2,7 @@
 
 PORTNAME=	trueos-libqt5
 PORTVERSION=	20171003
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	jt@ixsystems.com
@@ -12,11 +12,12 @@ LICENSE=	BSD2CLAUSE
 
 ONLY_FOR_ARCHS=	amd64
 
+USES=		gl qmake qt:5 shebangfix tar:xz
+
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		qmake qt:5 shebangfix tar:xz
 USE_LDCONFIG=	yes
 USE_QT=		core gui network svg linguist \
 		buildtools x11extras widgets
