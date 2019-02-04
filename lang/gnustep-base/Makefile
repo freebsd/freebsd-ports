@@ -2,14 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gnustep-base
-PORTVERSION=	1.26.0
+DISTVERSIONPREFIX=	base-
+DISTVERSION=	1_26_0
 PORTREVISION=	1
 CATEGORIES=	lang devel gnustep
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	gnustep
-GH_PROJECT=	libs-base
-GH_TAGNAME=	base-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	GNUstep Foundation library
@@ -28,6 +24,11 @@ RUN_DEPENDS+=	${LOCALBASE}/GNUstep/System/Library/Makefiles/GNUstep.sh:devel/gnu
 USES=		pkgconfig iconv gnustep
 USE_GNUSTEP=	build
 USE_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	gnustep
+GH_PROJECT=	libs-base
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-procfs --disable-mixedabi --with-installation-domain=SYSTEM
 CONFIGURE_ENV=	OBJCFLAGS='-fobjc-runtime=gnustep-2.0 -fblocks'

@@ -3,6 +3,7 @@
 
 PORTNAME=	msktutil
 PORTVERSION=	1.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	zi@FreeBSD.org
@@ -15,7 +16,6 @@ LIB_DEPENDS=	libudns.so:dns/udns
 
 USES=		autoreconf ssl
 USE_GITHUB=	yes
-GH_TAGNAME=	v${PORTVERSION}
 USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-sasldir=${LOCALBASE} --with-ldapdir=${LOCALBASE}
