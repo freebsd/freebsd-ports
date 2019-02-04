@@ -56,6 +56,7 @@ LDFLAGS+=	-L${NCURSESLIB}
 .if ${PORT_OPTIONS:MMAN}
 MAKE_ARGS+=	WITH_MAN=1
 PLIST_SUB+=	MAN=""
+USES+=		groff
 .else
 PLIST_SUB+=	MAN="@comment"
 .endif
