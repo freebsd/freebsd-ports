@@ -1,2 +1,9 @@
-For lightdm to function, it requires one of the available greeters to be
+For LightDM to function, it requires one of the available greeters to be
 installed, which are available in the ports tree at x11/lightdm-*greeter*
+
+LightDM needs the maximum amount of memory a daemon may request to be locked
+into main memory using mlock(2) to be increased above the FreeBSD default.
+Without doing this, LightDM will often crash when the service is started.
+To increase this limit, run the following commands:
+# sed -i '' -e 's/memorylocked=128M/memorylocked=256M/' /etc/login.conf
+# cap_mkdb /etc/login.conf
