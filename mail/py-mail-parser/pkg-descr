@@ -1,0 +1,16 @@
+mail-parser is not only a wrapper for email Python Standard Library. It give you
+an easy way to pass from raw mail to Python object that you can use in your
+code. It's the key module of SpamScope.
+
+mail-parser can parse Outlook email format (.msg) with msgconvert from
+mail/p5-Email-Outlook-Message.
+
+mail-parser takes as input a raw email and generates a parsed object. The
+properties of this object are the same name of RFC headers: bcc, cc, date,
+delivered_to, from_ (not from because is a keyword of Python), message_id,
+received, reply_to, subject, to.
+
+There are other properties to get: body, body html, body plain, headers,
+attachments, sender IP address, to domains, timezone.
+
+WWW: https://github.com/SpamScope/mail-parser
