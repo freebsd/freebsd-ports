@@ -1,5 +1,0 @@
-Encodes ekg metrics as JSON, using the same encoding as used by the ekg
-package, thus allowing ekg metrics to be served by other HTTP servers than
-the one used by the ekg package.
-
-WWW: https://github.com/tibbe/ekg-json

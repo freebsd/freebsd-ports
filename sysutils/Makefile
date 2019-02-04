@@ -492,9 +492,7 @@
     SUBDIR += hptcli
     SUBDIR += hs-cpu
     SUBDIR += hs-disk-free-space
-    SUBDIR += hs-ekg
     SUBDIR += hs-ekg-core
-    SUBDIR += hs-ekg-json
     SUBDIR += hs-mountpoints
     SUBDIR += hstr
     SUBDIR += htop

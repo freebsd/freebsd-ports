@@ -11580,3 +11580,10 @@ net/pdb||2019-02-04|Has expired: Depends on expired net/py-pcs
 irc/iroffer||2019-02-04|Has expired: Abandoned upstream
 sysutils/fusefs-wdfs||2019-02-04|Has expired: Abandonware, functionally incomplete, has problems with caching
 net/py-pcs||2019-02-04|Has expired: Broken for more than 6 months
+sysutils/hs-ekg||2019-02-04|Removed, depends on expired sysutils/hs-ekg-json
+sysutils/hs-ekg-json||2019-02-04|Has expired: Doesn't build with newest Haskell libraries
+net-mgmt/icinga-core||2019-02-04|Has expired: Upstream EOLed Icinga 1.x from 2018-12-31
+net-mgmt/icinga||2019-02-04|Removed, depends on expired net-mgmt/icinga-core
+net-mgmt/icli||2019-02-04|Removed, depends on expired net-mgmt/icinga-core
+net-mgmt/icinga-classicweb||2019-02-04|Has expired: Upstream EOLed Icinga 1.x from 2018-12-31
+net-mgmt/pnp-icinga||2019-02-04|Removed, depends on expired net-mgmt/icinga-classicweb
