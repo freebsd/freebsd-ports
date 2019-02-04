@@ -5,7 +5,7 @@ PORTVERSION=	0.6.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	rezny@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely fast non-cryptographic hash algorithm
 
 LICENSE=	BSD2CLAUSE
