@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	lnav
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	tom@hur.st
@@ -14,10 +13,11 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libpcrecpp.so:devel/pcre
 
+USES=		autoreconf compiler:c++14-lang gmake ncurses sqlite readline
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	tstack
 
-USES=		autoreconf compiler:c++14-lang gmake ncurses sqlite readline
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 
