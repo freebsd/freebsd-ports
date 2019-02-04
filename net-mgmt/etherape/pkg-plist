@@ -1,9 +1,8 @@
 bin/etherape
 man/man1/etherape.1.gz
 share/applications/etherape.desktop
-%%DATADIR%%/glade/etherape.glade
+%%DATADIR%%/glade/etherape.ui
 %%DATADIR%%/glade/etherape.png
-%%DATADIR%%/glade/nodes.xpm
 share/help/C/etherape/figures/all_nodes.eps
 share/help/C/etherape/figures/all_nodes.png
 share/help/C/etherape/figures/appmain.eps
