@@ -27,7 +27,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>0:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR}
 
-USES=		python shebangfix
+USES=		python:3.5+ shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	abinit
 SHEBANG_GLOB=	*.py
