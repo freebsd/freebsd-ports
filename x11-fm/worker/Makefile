@@ -46,4 +46,8 @@ LUA_USES=	lua:51
 XFT_CONFIGURE_OFF=	--disable-xft
 XFT_USE=	xorg=xft
 
+.if exists(/usr/lib/libstdc++.so)
+CXXFLAGS+=	-Wno-error=narrowing
+.endif
+
 .include <bsd.port.mk>
