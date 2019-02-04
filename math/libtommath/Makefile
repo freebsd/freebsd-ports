@@ -2,7 +2,7 @@
 
 PORTNAME=	libtommath
 DISTVERSION=	1.1.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/libtom/libtommath/releases/download/v${DISTVERSION}/
 DISTNAME=	ltm-${DISTVERSION}
@@ -10,11 +10,12 @@ DISTNAME=	ltm-${DISTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Comprehensive, modular, and portable mathematical routines
 
-LICENSE=	PD WTFPL
-LICENSE_COMB=	dual
+LICENSE=	UNLICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		gmake tar:xz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
-USES=		gmake tar:xz
 ALL_TARGET=	default
 CFLAGS+=	-fPIC
 PORTDOCS=	*
