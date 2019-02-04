@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kanboard
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -11,9 +11,11 @@ COMMENT=	Simple visual task board software
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		php
+
 NO_BUILD=	yes
 NO_ARCH=	yes
-USES=		php
+
 USE_GITHUB=	yes
 USE_PHP=	ctype curl dom gd hash filter iconv json mcrypt mbstring \
 		openssl pdo session simplexml \
