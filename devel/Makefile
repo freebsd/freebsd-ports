@@ -4786,6 +4786,7 @@
     SUBDIR += py-mox
     SUBDIR += py-mox3
     SUBDIR += py-msgpack
+    SUBDIR += py-msgpack05
     SUBDIR += py-multi_key_dict
     SUBDIR += py-multipledispatch
     SUBDIR += py-multiprocess
