@@ -3,8 +3,7 @@
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
 EXTRA_PATCHES=	${.CURDIR}/files/
-PATCHFILES+=	937869/raw	\
-		939129/raw
+PATCHFILES+=	939129/raw
 
 MODEL=		rpi3
 BOARD_CONFIG=	rpi_3_defconfig
