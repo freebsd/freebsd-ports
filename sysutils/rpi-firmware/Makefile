@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rpi-firmware
-PORTVERSION=	1.20180619
+PORTVERSION=	1.20181112
 CATEGORIES=	sysutils
 
 MAINTAINER=	uboot@FreeBSD.org
@@ -15,6 +15,7 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 BUILD_DEPENDS=	aarch64-none-elf-gcc:devel/aarch64-none-elf-gcc
 
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	raspberrypi gonzoua:pscimon
 GH_PROJECT=	firmware rpi3-psci-monitor:pscimon
 PSCI_TAG=	2b8890a
