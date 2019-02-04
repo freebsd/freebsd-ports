@@ -68,7 +68,7 @@ MAKE_ARGS+=STAGE1_CXXFLAGS=-fbracket-depth=512
 CONFIGURE_ENV+=	UNAME_m="powerpc64"
 
 .elif ${ARCH} == powerpcspe
-CONFIGURE_ARGS+=	--with-cpu=8540 --enable-e500_double --without-fp
+CONFIGURE_ARGS+=	--with-cpu=8548 --enable-e500_double --without-fp
 .endif
 
 LANGUAGES:=	c,c++,objc,fortran
