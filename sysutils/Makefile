@@ -693,6 +693,7 @@
     SUBDIR += mkntpwd
     SUBDIR += mksunbootcd
     SUBDIR += mmc-utils
+    SUBDIR += mmve
     SUBDIR += mnrpes
     SUBDIR += modman
     SUBDIR += modules
