@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-PORTSCOUT=	limit:^1
+PORTSCOUT=	limit:^1\.0\.
 
 OPTIONS_DEFINE=	MMX
 
