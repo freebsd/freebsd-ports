@@ -13,8 +13,8 @@ COMMENT=	Advanced MasterMind game and solver
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		compiler:c++11-lang qmake qt:5
 USE_QT=		core gui widgets buildtools_build
-USES=		qmake qt:5
 WRKSRC=		${WRKDIR}/ColorCode-${PORTVERSION}
 
 DESKTOP_ENTRIES=ColorCode \
