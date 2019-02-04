@@ -14,7 +14,6 @@
     SUBDIR += freebsd-bugzilla-cli
     SUBDIR += genpatch
     SUBDIR += genplist
-    SUBDIR += hs-porte
     SUBDIR += jailaudit
     SUBDIR += lsknobs
     SUBDIR += managepkg

@@ -1,6 +1,0 @@
-The Packet Debugger (pdb) is a program which allows people to work
-with packet streams as if they were working with a source code
-debugger. Users can list, inspect, modify, and retransmit any packet
-from captured files as well as work with live packet capture.
-
-WWW: http://pktdbg.sf.net/

@@ -1,9 +1,0 @@
-UUAG is the Utrecht University Attribute Grammar system.  It generates Haskell
-files from an attribute grammar specification.
-
-It is a preprocessor for Haskell which makes it easy to write catamorphisms
-(that is, functions that do to any datatype what foldr does to lists).
-You can define tree walks using the intuitive concepts of inherited and
-synthesized attributes, while keeping the full expressive power of Haskell.
-
-WWW: http://www.cs.uu.nl/wiki/HUT/AttributeGrammarSystem

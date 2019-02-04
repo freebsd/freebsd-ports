@@ -47,7 +47,6 @@
     SUBDIR += ircd-ru
     SUBDIR += ircproxy
     SUBDIR += ircservices
-    SUBDIR += iroffer
     SUBDIR += iroffer-dinoex
     SUBDIR += iroffer-lamm
     SUBDIR += irssi

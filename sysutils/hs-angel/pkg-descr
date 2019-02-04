@@ -1,6 +1,0 @@
-angel is a daemon that runs and monitors other processes. It is similar
-to djb's `daemontools` or the Ruby project `god`. It's goals are to keep
-a set of services running, and to facilitate the easy configuration and
-restart of those services.
-
-WWW: https://github.com/MichaelXavier/Angel
