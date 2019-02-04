@@ -10,6 +10,7 @@ MAINTAINER=	jt@ixsystems.com
 COMMENT=	Alarm/notification utility from the Lumina Desktop
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/../../../LICENSE
 
 OPTIONS_DEFINE=	I18N
 OPTIONS_DEFAULT=	I18N
