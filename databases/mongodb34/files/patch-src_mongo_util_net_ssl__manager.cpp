@@ -1,6 +1,6 @@
---- src/mongo/util/net/ssl_manager.cpp.orig	2017-06-08 16:11:03 UTC
-+++ src/mongo/util/net/ssl_manager.cpp
-@@ -125,7 +125,7 @@ IMPLEMENT_ASN1_ENCODE_FUNCTIONS_const_fname(ASN1_SEQUE
+--- src/mongo/util/net/ssl_manager.cpp.orig	2018-08-29 22:42:21.000000000 +0200
++++ src/mongo/util/net/ssl_manager.cpp	2018-12-23 21:05:48.170857000 +0100
+@@ -158,7 +158,7 @@
  #endif // MONGO_CONFIG_NEEDS_ASN1_ANY_DEFINITIONS
  // clang-format on
  
