@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	keepass
-PORTVERSION=	2.38
+PORTVERSION=	2.41
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/KeePass%202.x/${PORTVERSION}
 DISTNAME=	KeePass-${PORTVERSION}-Source
@@ -16,27 +16,25 @@ BUILD_DEPENDS=	icotool:graphics/icoutils
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgdiplus.so:x11-toolkits/libgdiplus
 
+USES=		cpe dos2unix gnome mono zip
+
+DOS2UNIX_GLOB=		*.csproj *.sln
 EXTRACT_AFTER_ARGS=	-d ${WRKDIR}/${DISTNAME}
+INSTALLS_ICONS=		yes
+NO_ARCH=		yes
+SUB_FILES=		${PORTNAME}.sh
+DESKTOP_ENTRIES=	"KeePass" \
+			"${COMMENT}" \
+			"${PORTNAME}" \
+			"keepass.sh" \
+			"Utility;" \
+			true
 
-USES=		cpe dos2unix mono zip
-DOS2UNIX_GLOB=	*.csproj *.sln
-INSTALLS_ICONS=	yes
-SUB_FILES=	${PORTNAME}.sh
+OPTIONS_DEFINE=		DEBUG XDOTOOL XSEL
+OPTIONS_DEFAULT=	XDOTOOL XSEL
 
-NO_ARCH=	yes
-
-DESKTOP_ENTRIES="KeePass" \
-		"${COMMENT}" \
-		"${PORTNAME}" \
-		"keepass.sh" \
-		"Utility;" \
-		true
-
-OPTIONS_DEFINE=	DEBUG XDOTOOL XSEL
 XDOTOOL_DESC=	Use the xdotool utility for auto-typing passwords
 XSEL_DESC=	Use the xsel utility for clipboard copying
-
-OPTIONS_DEFAULT=	XDOTOOL XSEL
 
 DEBUG_VARS=		config=Debug
 DEBUG_VARS_OFF=		config=Release
