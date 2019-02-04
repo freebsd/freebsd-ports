@@ -11568,3 +11568,15 @@ devel/py-easyconfig|devel/py-python-easyconfig|2019-01-28|Rename to reflect offi
 sysutils/py-consul|sysutils/py-python-consul|2019-01-30|renamed to match project name
 astro/weatherspect||2019-02-02|Has expired: Weather Underground does not provide free API keys anymore
 devel/rubygem-temple07|devel/rubygem-temple|2019-02-02|Obsolete, please use devel/rubygem-temple instead
+mail/dovecot-pigeonhole04|mail/dovecot-pigeonhole|2019-02-04|Has expired: End of Life upstream, use mail/dovecot-pigeonhole instead
+multimedia/pyjama||2019-02-04|Has expired: Unmaintained upstream
+devel/py-omniorb-3|devel/py-omniorb|2019-02-04|Has expired: Uses legacy version of omniORB, consider using devel/py-omniorb
+mail/dovecot22|mail/dovecot|2019-02-04|Has expired: End of Life upstream, use mail/dovecot instead
+devel/hs-uuagc-bootstrap||2019-02-04|Has expired: No release since 2011
+sysutils/hs-angel||2019-02-04|Has expired: No releases since 2016
+devel/hs-uuagc||2019-02-04|Has expired: No release since 2015
+ports-mgmt/hs-porte||2019-02-04|Has expired: No updates since 2010
+net/pdb||2019-02-04|Has expired: Depends on expired net/py-pcs
+irc/iroffer||2019-02-04|Has expired: Abandoned upstream
+sysutils/fusefs-wdfs||2019-02-04|Has expired: Abandonware, functionally incomplete, has problems with caching
+net/py-pcs||2019-02-04|Has expired: Broken for more than 6 months

@@ -97,8 +97,6 @@
     SUBDIR += dot-forward
     SUBDIR += dovecot
     SUBDIR += dovecot-pigeonhole
-    SUBDIR += dovecot-pigeonhole04
-    SUBDIR += dovecot22
     SUBDIR += dspam
     SUBDIR += ecartis
     SUBDIR += elm

@@ -1202,8 +1202,6 @@
     SUBDIR += hs-utf8-light
     SUBDIR += hs-utf8-string
     SUBDIR += hs-utility-ht
-    SUBDIR += hs-uuagc
-    SUBDIR += hs-uuagc-bootstrap
     SUBDIR += hs-uuagc-cabal
     SUBDIR += hs-uuid
     SUBDIR += hs-uuid-types
@@ -4823,7 +4821,6 @@
     SUBDIR += py-oletools
     SUBDIR += py-omnijson
     SUBDIR += py-omniorb
-    SUBDIR += py-omniorb-3
     SUBDIR += py-openapi-codec
     SUBDIR += py-opendht
     SUBDIR += py-opengrok-tools

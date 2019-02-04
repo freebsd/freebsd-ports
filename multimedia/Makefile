@@ -355,7 +355,6 @@
     SUBDIR += py-soco
     SUBDIR += py-subliminal
     SUBDIR += py-tvnamer
-    SUBDIR += pyjama
     SUBDIR += pymp
     SUBDIR += qmmp
     SUBDIR += qmmp-plugin-pack
