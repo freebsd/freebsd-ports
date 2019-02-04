@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sdl2_image
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/release/
 DISTNAME=	SDL2_image-${PORTVERSION}
