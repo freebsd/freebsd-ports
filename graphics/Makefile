@@ -76,6 +76,7 @@
     SUBDIR += bmp2html
     SUBDIR += box
     SUBDIR += boxer
+    SUBDIR += bsd-plotutils
     SUBDIR += bugle
     SUBDIR += burplex
     SUBDIR += c-a-i-r
