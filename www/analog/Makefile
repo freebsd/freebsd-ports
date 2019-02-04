@@ -9,7 +9,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://analog.gsp.com/ \
 		http://fossies.org/unix/www/old/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	john@essenz.com
 COMMENT=	Fast program for analysing WWW logfiles
 
 LICENSE=	GPLv2
