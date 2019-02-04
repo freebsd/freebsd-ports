@@ -1,0 +1,80 @@
+Fix build with Allegro 4.4.3 which remove the f* function aliases
+
+https://github.com/adventuregamestudio/ags/commit/44d954493bb5f3e95a11a4eddbb62bd6110b1b63.patch
+https://github.com/adventuregamestudio/ags/commit/575db9426239d37e3e6692c7e1848554cb9902f9.patch
+
+--- Common/gfx/allegrobitmap.h.orig	2018-09-10 19:17:48 UTC
++++ Common/gfx/allegrobitmap.h
+@@ -20,6 +20,7 @@
+ //=============================================================================
+ #ifndef __AGS_CN_GFX__ALLEGROBITMAP_H
+ #define __AGS_CN_GFX__ALLEGROBITMAP_H
++#define ALLEGRO_NO_FIX_ALIASES
+ 
+ #include <allegro.h>
+ #include "core/types.h"
+--- Common/libsrc/aastr-0.1.1/AAROT.c.orig	2018-09-10 19:17:48 UTC
++++ Common/libsrc/aastr-0.1.1/AAROT.c
+@@ -71,8 +71,8 @@ _aa_rotate_bitmap (BITMAP *_src, BITMAP *_dst, int _x,
+   /* Width and height of source and destination.  */
+   sw = _src->w;
+   sh = _src->h;
+-  fdw = fmul (ABS (_scalex), itofix (sw));
+-  fdh = fmul (ABS (_scaley), itofix (sh));
++  fdw = fixmul (ABS (_scalex), itofix (sw));
++  fdh = fixmul (ABS (_scaley), itofix (sh));
+   dw = fixtoi (fdw);
+   dh = fixtoi (fdh);
+   if ((dw <= 0) || (dh <= 0))
+@@ -85,14 +85,14 @@ _aa_rotate_bitmap (BITMAP *_src, BITMAP *_dst, int _x,
+   fx0 = itofix (_x);
+   fy0 = itofix (_y);
+ 
+-  fsinangle = fsin (_angle);
+-  fcosangle = fcos (_angle);
++  fsinangle = fixsin (_angle);
++  fcosangle = fixcos (_angle);
+ 
+   /* Map source (half) edges onto destination.  */
+-  fux = fmul (fdw, fcosangle);
+-  fuy = fmul (fdw, fsinangle);
+-  fvx = -fmul (fdh, fsinangle);
+-  fvy = fmul (fdh, fcosangle);
++  fux = fixmul (fdw, fcosangle);
++  fuy = fixmul (fdw, fsinangle);
++  fvx = -fixmul (fdh, fsinangle);
++  fvy = fixmul (fdh, fcosangle);
+ 
+   /* Coordinates of corners in destination.  */
+   point[0].dx = fixtoi (fx0 - fux - fvx);
+--- Common/util/wgt2allg.h.orig	2018-09-10 19:17:48 UTC
++++ Common/util/wgt2allg.h
+@@ -26,6 +26,7 @@
+ #ifdef USE_ALLEGRO3
+ #include <allegro3.h>
+ #else
++#define ALLEGRO_NO_FIX_ALIASES
+ #include "allegro.h"
+ #endif
+ 
+--- Engine/ac/route_finder.cpp.orig	2018-09-10 19:17:48 UTC
++++ Engine/ac/route_finder.cpp
+@@ -683,15 +683,15 @@ void calculate_move_stage(MoveList * mlsp, int aaa)
+     }
+   }
+ 
+-  fixed angl = fatan(fdiv(ydist, xdist));
++  fixed angl = fixatan(fixdiv(ydist, xdist));
+ 
+   // now, since new opp=hyp*sin, work out the Y step size
+   //fixed newymove = useMoveSpeed * fsin(angl);
+-  fixed newymove = fixmul(useMoveSpeed, fsin(angl));
++  fixed newymove = fixmul(useMoveSpeed, fixsin(angl));
+ 
+   // since adj=hyp*cos, work out X step size
+   //fixed newxmove = useMoveSpeed * fcos(angl);
+-  fixed newxmove = fixmul(useMoveSpeed, fcos(angl));
++  fixed newxmove = fixmul(useMoveSpeed, fixcos(angl));
+ 
+   if (destx < ourx)
+     newxmove = -newxmove;
