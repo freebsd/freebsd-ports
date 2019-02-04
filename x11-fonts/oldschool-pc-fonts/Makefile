@@ -6,7 +6,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://int10h.org/${PORTNAME}/download/
 DISTNAME=	ultimate_oldschool_pc_font_pack_v${DISTVERSION}
 
-MAINTAINER=	rezny@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultimate Oldschool PC Font Pack
 
 LICENSE=	CC-BY-SA-4.0

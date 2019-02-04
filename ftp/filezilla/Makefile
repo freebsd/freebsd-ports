@@ -7,7 +7,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	https://download.filezilla-project.org/client/
 DISTNAME=	FileZilla_${PORTVERSION}_src
 
-MAINTAINER=	rezny@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and reliable cross-platform FTP, FTPS, and SFTP client
 
 LICENSE=	GPLv2+

@@ -6,7 +6,7 @@ PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://download.filezilla-project.org/${PORTNAME}/
 
-MAINTAINER=	rezny@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for building platform-independent programs
 
 LICENSE=	GPLv2+

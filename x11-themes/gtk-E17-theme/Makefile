@@ -8,7 +8,7 @@ CATEGORIES=	x11-themes enlightenment
 PKGNAMEPREFIX=	gtk-
 PKGNAMESUFFIX=	-theme
 
-MAINTAINER=	rezny@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dark GTK theme for Enlightenment
 
 LICENSE=	GPLv3+
