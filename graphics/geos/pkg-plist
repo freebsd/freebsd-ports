@@ -24,6 +24,7 @@ include/geos/algorithm/RayCrossingCounter.h
 include/geos/algorithm/RobustDeterminant.h
 include/geos/algorithm/SIRtreePointInRing.h
 include/geos/algorithm/SimplePointInRing.h
+include/geos/algorithm/distance/DiscreteFrechetDistance.h
 include/geos/algorithm/distance/DiscreteHausdorffDistance.h
 include/geos/algorithm/distance/DistanceToPoint.h
 include/geos/algorithm/distance/PointPairDistance.h
@@ -53,7 +54,6 @@ include/geos/geom/GeometryComponentFilter.h
 include/geos/geom/GeometryFactory.h
 include/geos/geom/GeometryFactory.inl
 include/geos/geom/GeometryFilter.h
-include/geos/geom/GeometryList.h
 include/geos/geom/IntersectionMatrix.h
 include/geos/geom/LineSegment.h
 include/geos/geom/LineSegment.inl
@@ -266,6 +266,7 @@ include/geos/operation/distance/DistanceOp.h
 include/geos/operation/distance/FacetSequence.h
 include/geos/operation/distance/FacetSequenceTreeBuilder.h
 include/geos/operation/distance/GeometryLocation.h
+include/geos/operation/distance/IndexedFacetDistance.h
 include/geos/operation/intersection/Rectangle.h
 include/geos/operation/intersection/RectangleIntersection.h
 include/geos/operation/intersection/RectangleIntersectionBuilder.h
@@ -388,6 +389,6 @@ lib/libgeos.so
 lib/libgeos_c.a
 lib/libgeos_c.so
 lib/libgeos_c.so.1
-lib/libgeos_c.so.1.10.3
+lib/libgeos_c.so.1.11.1
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.a
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/geos.so
