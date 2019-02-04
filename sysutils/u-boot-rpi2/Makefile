@@ -2,8 +2,7 @@
 
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
-PATCHFILES+=	937869/raw	\
-		939129/raw
+PATCHFILES+=	939129/raw
 
 MODEL=		rpi2
 BOARD_CONFIG=	rpi_2_defconfig
