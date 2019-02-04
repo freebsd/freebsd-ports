@@ -1,4 +1,4 @@
---- main.c.orig	2016-06-14 16:25:53 UTC
+--- main.c.orig	2019-02-04 06:12:31 UTC
 +++ main.c
 @@ -38,6 +38,7 @@
  #include "main.h"
@@ -221,6 +221,18 @@
  		if (pf) {
  			save_hisc_table(hisc_table, pf);
  			save_hisc_table(hisc_table_space, pf);
+@@ -1158,9 +1212,9 @@ void draw_custom_ending(BITMAP *bmp) {
+ 
+ 	blit(data[INTRO_BG].dat, bmp, 0, 0, 0, 0, 160, 120);
+ 
+-	r = 70 + fixtoi(20 * fcos(itofix(game_count >> 1)) + 20 * fsin(itofix((int)(game_count / 2.7))) );
++	r = 70 + fixtoi(20 * fixcos(itofix(game_count >> 1)) + 20 * fixsin(itofix((int)(game_count / 2.7))) );
+ 	for(i = 0; i < 256; i += 32) 
+-		draw_sprite(bmp, head, 80 - head->w/2 + fixtoi(r * fcos(itofix(game_count + i))), 60 - head->h/2 + fixtoi(r * fsin(itofix(game_count + i))));
++		draw_sprite(bmp, head, 80 - head->w/2 + fixtoi(r * fixcos(itofix(game_count + i))), 60 - head->h/2 + fixtoi(r * fixsin(itofix(game_count + i))));
+ 
+ 	draw_sprite_h_flip(bmp, data[ALEX].dat, 60, 40);
+ 	draw_sprite(bmp, data[LOLA].dat, 84, 40);
 @@ -1289,7 +1343,7 @@ void show_cutscene(int level) {
  			// poll music machine
  			if (got_sound) al_poll_duh(dp);
@@ -230,7 +242,7 @@
  				mode = 2;
  			}
  			
-@@ -1343,7 +1397,7 @@ void show_scores(int space, Thisc *table
+@@ -1343,7 +1397,7 @@ void show_scores(int space, Thisc *table) {
  	if (space) {
  		// get space bg
  		packfile_password(init_string);
@@ -248,6 +260,15 @@
  
  	if (p->actor->status == AC_BALL) {
  		camera_type = 2;
+@@ -2485,7 +2539,7 @@ void draw_title(BITMAP *bmp, int tick) {
+ 	textout(bmp, data[THE_FONT].dat, "QUIT", x+1, y+1, 1);
+ 	textout(bmp, data[THE_FONT].dat, "QUIT", x, y, 4);
+ 
+-	draw_sprite(bmp, data[POINTER].dat, x - 25 + fixtoi(3 * fcos(itofix(tick << 2))), 44 + menu_choice * step);
++	draw_sprite(bmp, data[POINTER].dat, x - 25 + fixtoi(3 * fixcos(itofix(tick << 2))), 44 + menu_choice * step);
+ }
+ 
+ 
 @@ -2841,6 +2895,10 @@ int do_main_menu() {
  			}
  			else {
