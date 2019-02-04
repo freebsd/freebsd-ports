@@ -1,6 +1,0 @@
-bin/icli
-%%PERL5_MAN3%%/App::Icli.3.gz
-%%PERL5_MAN3%%/App::Icli::ConfigData.3.gz
-%%SITE_PERL%%/App/Icli.pm
-%%SITE_PERL%%/App/Icli/ConfigData.pm
-%%PERL5_MAN1%%/icli.1.gz

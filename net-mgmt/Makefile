@@ -83,9 +83,6 @@
     SUBDIR += gsnmp
     SUBDIR += guifi-snpservices
     SUBDIR += hastmon
-    SUBDIR += icinga
-    SUBDIR += icinga-classicweb
-    SUBDIR += icinga-core
     SUBDIR += icinga2
     SUBDIR += icingaweb2
     SUBDIR += icingaweb2-module-businessprocess
@@ -98,7 +95,6 @@
     SUBDIR += icingaweb2-module-graphite
     SUBDIR += icingaweb2-module-map
     SUBDIR += icingaweb2-module-vsphere
-    SUBDIR += icli
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery
     SUBDIR += iftop
@@ -296,7 +292,6 @@
     SUBDIR += pktstat
     SUBDIR += pmacct
     SUBDIR += pnp
-    SUBDIR += pnp-icinga
     SUBDIR += pnp-icinga2
     SUBDIR += portmon
     SUBDIR += prometheus-collectd-exporter
