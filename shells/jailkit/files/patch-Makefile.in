@@ -1,6 +1,6 @@
---- Makefile.in.orig	2009-08-20 20:46:11.000000000 -0300
-+++ Makefile.in	2009-08-20 20:46:51.000000000 -0300
-@@ -38,22 +38,22 @@
+--- Makefile.in.orig	2010-09-11 13:45:26 UTC
++++ Makefile.in
+@@ -38,22 +38,22 @@ INIFILES = jk_check.ini jk_init.ini jk_lsh.ini jk_sock
  jailkit: all
  
  all:
@@ -32,7 +32,7 @@
  
  install:
  	${INSTALL} -d -m 755 ${DESTDIR}${iniprefix}
-@@ -64,24 +64,13 @@
+@@ -64,24 +64,13 @@ install:
  			${INSTALL} -m 0644 ini/$${file} ${DESTDIR}${iniprefix} ;\
  		fi ;\
  	done
@@ -47,11 +47,11 @@
 -			echo ${prefix}/sbin/jk_chrootsh >> /etc/shells ;\
 -		fi \
 -	fi
--
 +	$(MAKE) -C src install
 +	$(MAKE) -C py install
 +	$(MAKE) -C man install
  
+-
  uninstall:
  	rm -f ${iniprefix}/*.ini
 -	@cd py/ && $(MAKE) uninstall
