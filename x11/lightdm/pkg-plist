@@ -28,8 +28,10 @@ libexec/lightdm-guest-session
 man/man1/dm-tool.1.gz
 man/man1/lightdm.1.gz
 sbin/lightdm
+share/accountsservice/interfaces/org.freedesktop.DisplayManager.AccountsService.xml
 share/bash-completion/completions/dm-tool
 share/bash-completion/completions/lightdm
+share/dbus-1/interfaces/org.freedesktop.DisplayManager.AccountsService.xml
 %%VALA%%share/gir-1.0/LightDM-1.gir
 %%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/LightDMGreeter.html
 %%PORTDOCS%%share/gtk-doc/html/lightdm-gobject-1/LightDMLanguage.html
@@ -160,6 +162,7 @@ share/bash-completion/completions/lightdm
 %%VALA%%share/locale/zh_CN/LC_MESSAGES/lightdm.mo
 %%VALA%%share/locale/zh_HK/LC_MESSAGES/lightdm.mo
 %%VALA%%share/locale/zh_TW/LC_MESSAGES/lightdm.mo
+share/polkit-1/actions/org.freedesktop.DisplayManager.AccountsService.policy
 %%VALA%%share/vala/vapi/liblightdm-gobject-1.deps
 %%VALA%%share/vala/vapi/liblightdm-gobject-1.vapi
 share/xgreeters/default.desktop
