@@ -1,0 +1,8 @@
+--- src/Makefile.am.orig	2019-02-05 01:43:55 UTC
++++ src/Makefile.am
+@@ -1,4 +1,4 @@
+-AM_CXXFLAGS =	-D_THREAD_SAFE -D_GNU_SOURCE -DVERBOSE
++AM_CXXFLAGS =	-D_THREAD_SAFE -D_GNU_SOURCE -DVERBOSE -DDATADIR='"$(datadir)"'
+ 
+ LIBS += $(BOOST_REGEX_LIB)
+ 
