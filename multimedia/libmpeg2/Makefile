@@ -20,9 +20,9 @@ PORTDOCS=	libmpeg2.txt README
 
 OPTIONS_DEFINE=	DOCS SDL X11
 
-SDL_USE=	SDL=yes
+SDL_USE=	SDL=sdl
 SDL_CONFIGURE_ENABLE=	sdl
-X11_USE=	XORG=sm,xv
+X11_USE=	XORG=x11,xext,sm,ice,xv
 X11_CONFIGURE_WITH=	x
 
 .include <bsd.port.options.mk>
@@ -37,13 +37,15 @@ post-patch:
 .endif
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/libmpeg2.txt ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/libvo/libvo.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/include/video_out.h \
 		${STAGEDIR}${PREFIX}/include/mpeg2dec
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmpeg2convert.so.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmpeg2.so.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmpeg2convert.so.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmpeg2.so.0
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/libmpeg2.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
