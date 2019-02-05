@@ -39,7 +39,6 @@ OPTIONS_EXCLUDE_armv7=	DTRACE
 OPTIONS_SUB=	yes
 
 DEBUG_CONFIGURE_ENABLE=	debug debug-symbols
-DEBUG_CONFIGURE_DISABLE=debug
 DTRACE_CONFIGURE_ENABLE=dtrace profiling
 DTRACE_LIBS=		-lelf
 GCZEAL_DESC=		Enable Zealous garbage collecting
