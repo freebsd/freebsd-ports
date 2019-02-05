@@ -56,7 +56,7 @@
     SUBDIR += asmem
     SUBDIR += asmon
     SUBDIR += asusoled
-    SUBDIR += atf-allwinner
+    SUBDIR += atf-sun50i_a64
     SUBDIR += atitvout
     SUBDIR += atop
     SUBDIR += auto-admin
