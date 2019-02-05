@@ -6,7 +6,6 @@ This port does not install GRUB on the master boot record of your hard drive.
 To do this you will need to read the info page that is installed by the port.
 
 This port includes additional patches and fixes making it work properly
-with ZFS boot-environments. Users on UFS will probably want to install the
-regular sysutils/grub2 port.
+with ZFS boot-environments.
 
 WWW: http://www.gnu.org/software/grub/
