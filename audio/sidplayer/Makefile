@@ -12,27 +12,21 @@ DISTNAME=	SIDPlayer-${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	C64 SID tune player
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_SDL=	yes
+USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-
-SDLINCLUDEDIR=	SDL
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 SUB_FILES=	pkg-message
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|SDL/SDL_endian\.h|${SDLINCLUDEDIR}/SDL_endian\.h|' \
-		${WRKSRC}/src/main_sdl.cpp
-
 do-install:
-	${INSTALL} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/PSID\ Demo/* ${STAGEDIR}${DOCSDIR}
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
