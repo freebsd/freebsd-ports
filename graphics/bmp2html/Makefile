@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	BMP to HTML converter
 
-USE_SDL=	yes
+USE_SDL=	sdl
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 SDL_FLAGS=	-I${LOCALBASE}/include/SDL -I${LOCALBASE}/include
