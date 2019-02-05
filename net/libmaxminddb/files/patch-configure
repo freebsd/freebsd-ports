@@ -1,0 +1,26 @@
+--- configure.orig	2018-01-17 21:36:20 UTC
++++ configure
+@@ -12615,23 +12615,11 @@ if test "x$ac_cv_type_unsigned___int128"
+ $as_echo "#define MMDB_UINT128_IS_BYTE_ARRAY 0" >>confdefs.h
+ 
+ else
+-  as_ac_Type=`$as_echo "ac_cv_type_unsigned int __attribute__((mode(TI)))" | $as_tr_sh`
+-ac_fn_c_check_type "$LINENO" "unsigned int __attribute__((mode(TI)))" "$as_ac_Type" "$ac_includes_default"
+-if eval test \"x\$"$as_ac_Type"\" = x"yes"; then :
+-
+-$as_echo "#define MMDB_UINT128_IS_BYTE_ARRAY 0" >>confdefs.h
+-
+-
+-$as_echo "#define MMDB_UINT128_USING_MODE 1" >>confdefs.h
+-
+-else
+ 
+ $as_echo "#define MMDB_UINT128_IS_BYTE_ARRAY 1" >>confdefs.h
+ 
+ fi
+ 
+-fi
+-
+ 
+ ac_fn_c_check_type "$LINENO" "boolean" "ac_cv_type_boolean" "$ac_includes_default"
+ if test "x$ac_cv_type_boolean" = xyes; then :
