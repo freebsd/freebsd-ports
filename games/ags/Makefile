@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ags
-DISTVERSION=	3.4.1.15
-PORTREVISION=	1
+DISTVERSION=	3.4.3.0
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/adventuregamestudio/ags/releases/download/v.${DISTVERSION}/
 DISTNAME=	ags_linux_v.${DISTVERSION}
@@ -32,8 +31,6 @@ PLIST_FILES=	bin/ags
 post-patch:
 	@${REINPLACE_CMD} 's|<endian.h>|<sys/endian.h>|' \
 		${WRKSRC}/Common/core/endianness.h
-	@${REINPLACE_CMD} 's|HWND editor_window_handle = NULL;|HWND editor_window_handle = 0;|g' \
-		${WRKSRC}/Engine/debug/debug.cpp
 	@${REINPLACE_CMD} -e 's|return cd_player|return 0; // cd_player|g' \
 		-e 's|cd_exit|//cd_exit|g' \
 		${WRKSRC}/Engine/platform/linux/acpllnx.cpp
