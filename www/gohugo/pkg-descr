@@ -1,11 +1,11 @@
-Hugo is a general-purpose website framework. Technically speaking, Hugo is a 
-static site generator. Unlike other systems which dynamically build a page 
-every time a visitor requests one, Hugo does the building when you create your 
+Hugo is a general-purpose website framework. Technically speaking, Hugo is a
+static site generator. Unlike other systems which dynamically build a page
+every time a visitor requests one, Hugo does the building when you create your
 content. Since websites are viewed far more often than they are edited, Hugo is
 optimized for website viewing while providing a great writing experience.
 
-Sites built with Hugo are extremely fast and very secure. Hugo sites can be 
-hosted anywhere and run without dependencies on expensive runtimes like Ruby, 
+Sites built with Hugo are extremely fast and very secure. Hugo sites can be
+hosted anywhere and run without dependencies on expensive runtimes like Ruby,
 Python or PHP and without dependencies on any databases.
 
 WWW: https://gohugo.io

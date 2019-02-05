@@ -2,7 +2,7 @@
 
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.53
+DISTVERSION=	0.54.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -22,16 +22,17 @@ GH_TUPLE=	BurntSushi:locker:a6e239e:locker/src/github.com/BurntSushi/locker \
 		PuerkitoBio:purell:v1.1.0:purell/src/github.com/PuerkitoBio/purell \
 		PuerkitoBio:urlesc:de5bf2a:urlesc/src/github.com/PuerkitoBio/urlesc \
 		alecthomas:assert:405dbfe:assert/src/github.com/alecthomas/assert \
-		alecthomas:chroma:v0.6.0:chroma/src/github.com/alecthomas/chroma \
+		alecthomas:chroma:v0.6.2:chroma/src/github.com/alecthomas/chroma \
 		alecthomas:colour:60882d9:colour/src/github.com/alecthomas/colour \
-		alecthomas:repr:117648c:repr/src/github.com/alecthomas/repr \
+		alecthomas:kong:v0.1.15:kong/src/github.com/alecthomas/kong \
+		alecthomas:repr:d37bc2a:repr/src/github.com/alecthomas/repr \
 		armon:consul-api:eb2c6b5:consul_api/src/github.com/armon/consul-api \
 		bep:debounce:v1.1.0:debounce/src/github.com/bep/debounce \
 		bep:gitmap:v1.0.0:gitmap/src/github.com/bep/gitmap \
 		bep:go-tocss:v0.6.0:go_tocss/src/github.com/bep/go-tocss \
 		chaseadamsio:goorgeous:v1.1.0:goorgeous/src/github.com/chaseadamsio/goorgeous \
 		cheekybits:is:68e9c06:cheekybits_is/src/github.com/cheekybits/is \
-		coreos:etcd:v3.3.10:etcd/src/github.com/coreos/etcd \
+		coreos:etcd:v3.3.10:coreos_etcd/src/github.com/coreos/etcd \
 		coreos:go-etcd:v2.0.0:go_etcd/src/github.com/coreos/go-etcd \
 		coreos:go-semver:v0.2.0:go_semver/src/github.com/coreos/go-semver \
 		cpuguy83:go-md2man:v1.0.8:go_md2man/src/github.com/cpuguy83/go-md2man \
@@ -59,6 +60,7 @@ GH_TUPLE=	BurntSushi:locker:a6e239e:locker/src/github.com/BurntSushi/locker \
 		magiconair:properties:v1.8.0:properties/src/github.com/magiconair/properties \
 		markbates:inflect:a12c3ae:inflect/src/github.com/markbates/inflect \
 		matryer:try:9ac251b:try/src/github.com/matryer/try \
+		mattn:go-colorable:v0.0.9:go_colorable/src/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.4:go_isatty/src/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.3:go_runewidth/src/github.com/mattn/go-runewidth \
 		miekg:mmark:v1.3.6:mmark/src/github.com/miekg/mmark \
@@ -75,7 +77,7 @@ GH_TUPLE=	BurntSushi:locker:a6e239e:locker/src/github.com/BurntSushi/locker \
 		sanity-io:litter:v1.1.0:litter/src/github.com/sanity-io/litter \
 		sergi:go-diff:v1.0.0:sergi_go_diff/src/github.com/sergi/go-diff \
 		shurcooL:sanitized_anchor_name:86672fc:sanitized_anchor_name/src/github.com/shurcooL/sanitized_anchor_name \
-		spf13:afero:v1.2.0:afero/src/github.com/spf13/afero \
+		spf13:afero:v1.2.1:afero/src/github.com/spf13/afero \
 		spf13:cast:v1.3.0:cast/src/github.com/spf13/cast \
 		spf13:cobra:v0.0.3:cobra/src/github.com/spf13/cobra \
 		spf13:fsync:12a01e6:fsync/src/github.com/spf13/fsync \
@@ -87,7 +89,7 @@ GH_TUPLE=	BurntSushi:locker:a6e239e:locker/src/github.com/BurntSushi/locker \
 		tdewolff:minify:v2.3.7:minify/src/github.com/tdewolff/minify \
 		tdewolff:parse:v2.3.5:parse/src/github.com/tdewolff/parse \
 		tdewolff:test:v1.0.0:tdewolff_test/src/github.com/tdewolff/test \
-		ugorji:go:d75b2dc:ugorji_go/src/github.com/ugorji/go/codec \
+		ugorji:go:d75b2dc:ugorji_go/src/github.com/ugorji/go \
 		wellington:go-libsass:c636442:go_libsass/src/github.com/wellington/go-libsass \
 		xordataexchange:crypt:b2862e3:xordataexchange_crypt/src/github.com/xordataexchange/crypt \
 		yosssi:ace:v0.0.5:ace/src/github.com/yosssi/ace \
@@ -95,12 +97,12 @@ GH_TUPLE=	BurntSushi:locker:a6e239e:locker/src/github.com/BurntSushi/locker \
 		golang:image:c73c2af:image/src/golang.org/x/image \
 		golang:net:161cd47:net/src/golang.org/x/net \
 		golang:sync:1d60e46:golang_sync/src/golang.org/x/sync \
-		golang:sys:70b957f:sys/src/golang.org/x/sys \
+		golang:sys:b4a75ba:sys/src/golang.org/x/sys \
 		golang:text:v0.3.0:golang_text/src/golang.org/x/text \
-		go-check:check:788fd78:go_check_check/src/gopkg.in/check.v1 \
-		go-yaml:yaml:v2.2.2:go_yaml_yaml/src/gopkg.in/yaml.v2
+		go-check:check:788fd78:check/src/gopkg.in/check.v1 \
+		go-yaml:yaml:v2.2.2:yaml/src/gopkg.in/yaml.v2
 
-COMMIT_ID=	8fc339dc2529ff77e494a1c12cd1ff9fbcb880a4
+COMMIT_ID=	b1a82c61aba067952fdae2f73b826fe7d0f3fc2f
 
 OPTIONS_DEFINE=		MANPAGES EXTENDED
 
