@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qownnotes
-DISTVERSION=	18.07.2
+DISTVERSION=	19.2.0
 PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://download.tuxfamily.org/qownnotes/src/
@@ -11,7 +11,10 @@ COMMENT=	Manage notes using nextcloud and markdown
 
 LICENSE=	GPLv2
 
-USES=		gmake qmake qt:5 tar:xz
-USE_QT=		buildtools_build linguisttools_build core dbus gui network sql svg webkit xml
+RUN_DEPENDS=	git:devel/git
+
+USES=		gl gmake qmake qt:5 tar:xz
+USE_GL=		gl
+USE_QT=		buildtools_build linguisttools_build core dbus declarative gui printsupport network sql svg webkit websockets widgets xml xmlpatterns
 
 .include <bsd.port.mk>
