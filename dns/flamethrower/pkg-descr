@@ -1,0 +1,9 @@
+Flamethrower is a small, fast, configurable tool for functional
+testing, benchmarking, and stress testing DNS servers and networks.
+It supports IPv4, IPv6, UDP and TCP, and has a modular system for
+generating queries used in the tests.
+
+It was built as an alternative to dnsperf, and many of the command
+line options are compatible.
+
+WWW: https://github.com/DNS-OARC/flamethrower
