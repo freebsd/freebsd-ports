@@ -32,6 +32,11 @@ DESCR?=		${.CURDIR}/pkg-descr
 
 NO_ARCH=	yes
 
+.if !defined(PLAT)
+PLAT=		NONE
+IGNORE=		is a metaport; there is nothing to build
+.endif
+
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/share/${PORTNAME}-${PLAT}/
 	${INSTALL_DATA} ${WRKSRC}/build/${PLAT}/release/${BL31} ${STAGEDIR}/${PREFIX}/share/${PORTNAME}-${PLAT}/
