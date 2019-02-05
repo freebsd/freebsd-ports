@@ -14,10 +14,10 @@ COMMENT=	Quake engine with lighting similar to that in Doom III
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gmake dos2unix zip
-USE_GL=		glu
-USE_SDL=	yes
-USE_XORG=	xxf86dga
+USES=		gl gmake dos2unix zip
+USE_GL=		gl glu
+USE_SDL=	sdl
+USE_XORG=	x11 xext xxf86vm xxf86dga
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_0
 BUILD_WRKSRC=	${WRKSRC}/linux
@@ -31,7 +31,7 @@ OPTIONS_DEFAULT_amd64=	ASM
 ASM_MAKE_ENV=	USE_ASM=1
 
 post-patch:
-	${REINPLACE_CMD} -e 's|gray_1_2_4_to_8|expand_&|' \
+	@${REINPLACE_CMD} -e 's|gray_1_2_4_to_8|expand_&|' \
 		${WRKSRC}/gl_warp.c
 
 pre-build:
@@ -42,6 +42,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${Q1DIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/Pak0.pak ${STAGEDIR}${Q1DIR}/${PORTNAME}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${TR} -d '\r' < ${WRKDIR}/Tenebrae_Readme.txt \
 		> ${STAGEDIR}${DOCSDIR}/Tenebrae_Readme.txt
