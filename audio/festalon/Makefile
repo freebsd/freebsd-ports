@@ -11,14 +11,15 @@ MASTER_SITES=	http://projects.raphnet.net/festalon/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command line player for .nsf and .hes audio files
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	amd64
 
-LIB_DEPENDS+=	libsamplerate.so:audio/libsamplerate
+LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 
 USES=		libtool pkgconfig tar:bzip2
-USE_SDL=	yes
+USE_SDL=	sdl
 
 GNU_CONFIGURE=	yes
 
@@ -32,6 +33,8 @@ PORTDOCS=	README
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
