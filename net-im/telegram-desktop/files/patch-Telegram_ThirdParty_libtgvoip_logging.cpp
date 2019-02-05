@@ -1,4 +1,4 @@
---- Telegram/ThirdParty/libtgvoip/logging.cpp.orig	2018-07-17 16:48:21 UTC
+--- Telegram/ThirdParty/libtgvoip/logging.cpp.orig	2018-12-31 01:05:58 UTC
 +++ Telegram/ThirdParty/libtgvoip/logging.cpp
 @@ -13,7 +13,7 @@
  
@@ -9,7 +9,7 @@
  #include <sys/utsname.h>
  #endif
  
-@@ -51,7 +51,7 @@ void tgvoip_log_file_write_header(FILE* 
+@@ -51,7 +51,7 @@ void tgvoip_log_file_write_header(FILE* file){
  #else
  			char* systemVersion="Windows RT";
  #endif

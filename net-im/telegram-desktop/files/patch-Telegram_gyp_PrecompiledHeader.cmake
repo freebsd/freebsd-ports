@@ -1,6 +1,6 @@
---- Telegram/gyp/PrecompiledHeader.cmake.orig	2018-08-04 18:53:40 UTC
+--- Telegram/gyp/PrecompiledHeader.cmake.orig	2019-02-01 12:51:46 UTC
 +++ Telegram/gyp/PrecompiledHeader.cmake
-@@ -81,7 +81,7 @@ function(export_all_flags _filename _sou
+@@ -81,7 +81,7 @@ function(export_all_flags _filename _source_name_for_f
  endfunction()
  
  function(add_precompiled_header _target _input)
@@ -9,7 +9,7 @@
      get_filename_component(_name ${_input} NAME)
      set(_pch_header "${CMAKE_CURRENT_SOURCE_DIR}/${_input}")
      set(_pch_binary_dir "${CMAKE_CURRENT_BINARY_DIR}/${_target}_pch")
-@@ -114,7 +114,7 @@ function(add_precompiled_header _target 
+@@ -114,7 +114,7 @@ function(add_precompiled_header _target _input)
        set(_compiler_FLAGS "@${_pch_c_flags_file}")
        add_custom_command(
          OUTPUT "${_output_c}"
@@ -18,7 +18,7 @@
          DEPENDS "${_pchfile}" "${_pch_c_flags_file}"
          IMPLICIT_DEPENDS C "${_pch_header}"
          COMMENT "Precompiling ${_name} for ${_target} (C)")
-@@ -125,7 +125,7 @@ function(add_precompiled_header _target 
+@@ -125,7 +125,7 @@ function(add_precompiled_header _target _input)
        set(_compiler_FLAGS "@${_pch_cpp_flags_file}")
        add_custom_command(
          OUTPUT "${_output_cxx}"
@@ -27,7 +27,7 @@
          DEPENDS "${_pchfile}" "${_pch_cpp_flags_file}"
          IMPLICIT_DEPENDS CXX "${_pch_header}"
          COMMENT "Precompiling header ${_name} for ${_target} (C++)")
-@@ -163,5 +163,5 @@ function(add_precompiled_header _target 
+@@ -163,5 +163,5 @@ function(add_precompiled_header _target _input)
            OBJECT_DEPENDS "${_object_depends}")
        endif()
      endforeach()

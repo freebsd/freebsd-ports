@@ -1,6 +1,6 @@
---- Telegram/SourceFiles/export/data/export_data_types.cpp.orig	2018-12-24 08:16:05 UTC
+--- Telegram/SourceFiles/export/data/export_data_types.cpp.orig	2019-02-01 12:51:46 UTC
 +++ Telegram/SourceFiles/export/data/export_data_types.cpp
-@@ -366,9 +366,9 @@ QString CleanDocumentName(QString name) 
+@@ -369,9 +369,9 @@ QString CleanDocumentName(QString name) {
  		'|',
  #elif defined Q_OS_MAC // Q_OS_WIN
  		':',

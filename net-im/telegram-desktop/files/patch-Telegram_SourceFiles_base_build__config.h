@@ -1,6 +1,6 @@
---- Telegram/SourceFiles/base/build_config.h.orig	2018-08-04 18:53:40 UTC
+--- Telegram/SourceFiles/base/build_config.h.orig	2019-02-01 12:51:46 UTC
 +++ Telegram/SourceFiles/base/build_config.h
-@@ -13,7 +13,7 @@ https://github.com/telegramdesktop/tdesk
+@@ -13,7 +13,7 @@ https://github.com/telegramdesktop/tdesktop/blob/maste
  
  #if defined(__APPLE__)
  #define OS_MAC 1
