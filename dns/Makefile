@@ -72,6 +72,7 @@
     SUBDIR += ez-ipupdate
     SUBDIR += fastresolve
     SUBDIR += firedns
+    SUBDIR += flamethrower
     SUBDIR += fpdns
     SUBDIR += gdnsd
     SUBDIR += gdnsd2
