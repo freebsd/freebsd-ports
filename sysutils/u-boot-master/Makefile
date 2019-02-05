@@ -24,7 +24,7 @@ BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
 USES=		bison gmake python:2.7,build shebangfix tar:bz2
 BINARY_ALIAS=	bison=${LOCALBASE}/bin/bison dtc=${LOCALBASE}/bin/dtc sed=gsed swig=swig3.0
 
-SHEBANG_FILES=	tools/binman/binman.py
+SHEBANG_FILES=	tools/binman/binman.py arch/arm/mach-rockchip/make_fit_atf.py
 SSP_UNSAFE=	yes
 UBOOT_DIR=	share/u-boot/${PORTNAME}${PKGNAMESUFFIX}
 INST=		${PREFIX}/${UBOOT_DIR}
@@ -89,6 +89,10 @@ UBOOT_METADATA_IMX6_METHOD=	raw
 UBOOT_METADATA_IMX6_RAW_OFFSET=	2
 UBOOT_METADATA_IMX6_RAW_BS=	512
 
+# Override for RK3399 family
+UBOOT_PLIST_RK3399=	idbspl.img u-boot.itb
+UBOOT_ARCH_RK3399=	aarch64
+
 # Uboot variables
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
@@ -127,6 +131,12 @@ UBOOT_MOVE=${UBOOT_MOVE_${FAMILY:tu}}
 .if defined(FAMILY) && ${FAMILY} == allwinner64
 BUILD_DEPENDS+=	${LOCALBASE}/share/atf-sun50i_a64/bl31.bin:sysutils/atf-sun50i_a64
 MAKE_ENV+=	BL31=${LOCALBASE}/share/atf-sun50i_a64/bl31.bin
+.endif
+
+.if defined(FAMILY) && ${FAMILY} == rk3399
+BUILD_DEPENDS+=	${LOCALBASE}/share/atf-rk3399/bl31.elf:sysutils/atf-rk3399 \
+		${PYTHON_PKGNAMEPREFIX}pyelftools>0:devel/py-pyelftools@${PY_FLAVOR}
+MAKE_ENV+=	BL31=${LOCALBASE}/share/atf-rk3399/bl31.elf
 .endif
 
 # Each u-boot family has different files to include, bring them in.
@@ -178,11 +188,18 @@ do-configure:
 	(cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${MAKE_CMD} ${BOARD_CONFIG})
 .endif
 
-.if ${UBOOT_ARCH} == arm
 post-build:
+.if ${UBOOT_ARCH} == arm
 	mkimage -C none -A arm -T script -d ${FILESDIR}/boot.cmd ${WRKSRC}/boot.scr
 .endif
-
+.if defined(UBOOT_EXTRA_TARGETS)
+.for i in ${UBOOT_EXTRA_TARGETS}
+	(cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${i})
+.endfor
+.endif
+.if ${FAMILY} == "rk3399"
+	mkimage -n rk3399 -T rksd -d ${WRKSRC}/spl/u-boot-spl.bin ${WRKSRC}/idbspl.img
+.endif
 # If we need to put anything into WRKSRC, do so now so we can build the PLIST
 # in do-install
 .if defined(UBOOT_MOVE)
