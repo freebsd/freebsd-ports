@@ -1373,6 +1373,7 @@
     SUBDIR += u-boot-cubox-hummingboard
     SUBDIR += u-boot-duovero
     SUBDIR += u-boot-imx-serial-loader
+    SUBDIR += u-boot-firefly-rk3399
     SUBDIR += u-boot-master
     SUBDIR += u-boot-nanopi-a64
     SUBDIR += u-boot-nanopi-m1plus
