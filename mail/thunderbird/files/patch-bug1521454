@@ -1,0 +1,43 @@
+Avoid exception due to bad locale code when appending [-u]-ca-gregory-nu-latn
+
+--- comm/common/bindings/datetimepicker.xml.orig	2019-01-22 19:44:24 UTC
++++ comm/common/bindings/datetimepicker.xml
+@@ -488,7 +488,11 @@
+ 
+             var numberOrder = /^(\D*)\s*(\d+)(\D*)(\d+)(\D*)(\d+)\s*(\D*)$/;
+ 
+-            var locale = Services.locale.getRegionalPrefsLocales()[0] + "-u-ca-gregory-nu-latn";
++            var locale = Services.locale.getRegionalPrefsLocales()[0];
++            if (locale.includes("-u-"))
++              locale += "-ca-gregory-nu-latn";
++            else
++              locale += "-u-ca-gregory-nu-latn";
+             var dtf = new Services.intl.DateTimeFormat(locale, { timeStyle: "long" });
+ 
+             var pmTime = dtf.format(new Date(2000, 0, 1, 16, 7, 9));
+@@ -777,7 +781,11 @@
+ 
+             var numberOrder = /^(\D*)\s*(\d+)(\D*)(\d+)(\D*)(\d+)\s*(\D*)$/;
+ 
+-            var locale = Services.locale.getRegionalPrefsLocales()[0] + "-u-ca-gregory-nu-latn";
++            var locale = Services.locale.getRegionalPrefsLocales()[0];
++            if (locale.includes("-u-"))
++              locale += "-ca-gregory-nu-latn";
++            else
++              locale += "-u-ca-gregory-nu-latn";
+             var dtf = new Services.intl.DateTimeFormat(locale, { dateStyle: "short" });
+ 
+             var dt = dtf.format(new Date(2002, 9, 4));
+@@ -1007,7 +1015,11 @@
+       <method name="_init">
+         <body>
+           <![CDATA[
+-            var locale = Services.locale.getRegionalPrefsLocales()[0] + "-u-ca-gregory";
++            var locale = Services.locale.getRegionalPrefsLocales()[0];
++            if (locale.includes("-u-"))
++              locale += "-ca-gregory";
++            else
++              locale += "-u-ca-gregory";
+             var dtfMonth = new Services.intl.DateTimeFormat(locale, {month: "long", timeZone: "UTC"});
+             var dtfWeekday = new Services.intl.DateTimeFormat(locale, {weekday: "narrow"});
+ 
