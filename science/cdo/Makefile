@@ -22,7 +22,9 @@ HDF5_IMPLIES=	SZIP
 NETCDF_IMPLIES=	HDF5
 UUID_DESC=	UUID support
 
-PORTSCOUT=	site:https://code.zmaw.de/projects/cdo/files
+PORTSCOUT=	site:https://code.mpimet.mpg.de/projects/cdo/files
+
+USES=		compiler:c++11-lib gmake libtool localbase pathfix
 
 CONFIGURE_ARGS=	--disable-data \
 		--disable-extra \
@@ -37,7 +39,6 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	check
-USES=		compiler:c++11-lib gmake libtool localbase pathfix
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
