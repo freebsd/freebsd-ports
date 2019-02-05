@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-Feed
-PORTVERSION=	0.55
+PORTVERSION=	0.57
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,10 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-ErrorHandler>=0:devel/p5-Class-ErrorHandler \
 		p5-DateTime>=0:devel/p5-DateTime \
+		p5-DateTime-Format-Flexible>=0:devel/p5-DateTime-Format-Flexible \
+		p5-DateTime-Format-ISO8601>=0:devel/p5-DateTime-Format-ISO8601 \
 		p5-DateTime-Format-Mail>=0:devel/p5-DateTime-Format-Mail \
+		p5-DateTime-Format-Natural>=0:devel/p5-DateTime-Format-Natural \
 		p5-DateTime-Format-W3CDTF>=0:devel/p5-DateTime-Format-W3CDTF \
 		p5-Feed-Find>=0:www/p5-Feed-Find \
 		p5-HTML-Parser>=0:www/p5-HTML-Parser \
@@ -31,5 +34,7 @@ TEST_DEPENDS=	p5-XML-RSS-LibXML>=0.30.04:textproc/p5-XML-RSS-LibXML
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
