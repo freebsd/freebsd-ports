@@ -10,9 +10,6 @@ COMMENT=	Very fast port scanner
 
 LICENSE=	GPLv3
 
-ONLY_FOR_ARCHS=		i386 amd64
-ONLY_FOR_ARCHS_REASON=	invokes x86 assembler
-
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	robertdavidgraham
