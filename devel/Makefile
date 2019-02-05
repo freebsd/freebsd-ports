@@ -4514,6 +4514,7 @@
     SUBDIR += py-dal
     SUBDIR += py-darcsver
     SUBDIR += py-darts.util.lru
+    SUBDIR += py-datatest
     SUBDIR += py-dateutil
     SUBDIR += py-dateutils
     SUBDIR += py-datrie

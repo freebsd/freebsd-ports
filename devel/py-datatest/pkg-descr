@@ -1,0 +1,8 @@
+Datatest provides testing tools for data validation and analysis. It supports
+both pytest and unittest style testing.
+
+You can use datatest for validation, test driven data-wrangling, auditing,
+logging discrepancies, and checklists for measuring progress. It encourages a
+structured approach for checking and tidying data.
+
+WWW: https://github.com/shawnbrown/datatest
