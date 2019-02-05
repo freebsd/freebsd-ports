@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	dash.el
-PORTVERSION=	2.14.1
-PORTREVISION=   1
+PORTVERSION=	2.15.0
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	yasu@utahime.org
 COMMENT=	Modern list library for Emacs
 
 LICENSE=	GPLv3
