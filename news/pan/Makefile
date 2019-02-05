@@ -46,7 +46,6 @@ GTK3_PREVENTS=		GTKSPELL
 
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
-NLS_CONFIGURE_DISABLE=	nls
 
 post-patch:
 	${REINPLACE_CMD} -e 's|noinst_PROGRAMS = |noinst_PROGRAMS = #|g' \

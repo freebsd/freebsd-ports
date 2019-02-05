@@ -37,7 +37,6 @@ OPTIONS_EXCLUDE_armv7=	DTRACE
 OPTIONS_SUB=		yes
 
 DEBUG_CONFIGURE_ENABLE=	debug debug-symbols
-DEBUG_CONFIGURE_DISABLE=debug
 DTRACE_DESC=		Build with DTrace probes # move to bsd.options.desc.mk
 DTRACE_CONFIGURE_ENABLE=dtrace profiling
 DTRACE_LIBS=		-lelf
