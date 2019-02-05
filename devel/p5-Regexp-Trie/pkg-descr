@@ -1,0 +1,7 @@
+Regexp::Trie is a faster but simpler version of Regexp::Assemble or
+Regexp::Optimizer. It builds a trie-ized regexp as above.
+
+This module is faster than Regexp::Assemble but you can only add literals. a+b
+is treated as a\+b, not "more than one a's followed by b".
+
+WWW: https://metacpan.org/release/Regexp-Trie
