@@ -30,7 +30,7 @@ GH_TAGNAME=	${HASH}
 KSH93_CONFLICTS=	ksh93-*
 KSH_CONFLICTS=		pdksh-*
 
-USES=		meson ninja
+USES=		compiler:c11 meson ninja
 FETCH_ENV=	HTTP_AUTH=basic:*:I\ accept\ www.opensource.org/licenses/cpl:.
 LDFLAGS+=	-lm 
 MESON_BUILD_DIR=	build
