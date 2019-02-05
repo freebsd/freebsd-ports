@@ -279,6 +279,8 @@ CXXFLAGS_WARN=	-Woverloaded-virtual -Wno-unused-parameter -Wno-unused-local-type
 CXXFLAGS_WARN=	-Wshadow -Woverloaded-virtual
 .endif
 
+CXXFLAGS_powerpcspe=	-D__NO_FPRS
+
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 	    ${WRKSRC}/shell/source/unix/exec/shellexec.cxx
