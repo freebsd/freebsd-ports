@@ -1,6 +1,6 @@
---- Telegram/SourceFiles/storage/storage_encrypted_file_tests.cpp.orig	2018-09-28 13:08:38 UTC
+--- Telegram/SourceFiles/storage/storage_encrypted_file_tests.cpp.orig	2019-02-01 12:51:46 UTC
 +++ Telegram/SourceFiles/storage/storage_encrypted_file_tests.cpp
-@@ -21,7 +21,7 @@ https://github.com/telegramdesktop/tdesk
+@@ -21,7 +21,7 @@ https://github.com/telegramdesktop/tdesktop/blob/maste
  #include <thread>
  #ifdef Q_OS_MAC
  #include <mach-o/dyld.h>

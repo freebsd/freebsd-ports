@@ -1,4 +1,4 @@
---- Telegram/ThirdParty/libtgvoip/audio/AudioOutput.cpp.orig	2018-09-18 16:52:01 UTC
+--- Telegram/ThirdParty/libtgvoip/audio/AudioOutput.cpp.orig	2018-12-31 01:05:58 UTC
 +++ Telegram/ThirdParty/libtgvoip/audio/AudioOutput.cpp
 @@ -29,7 +29,7 @@
  #include "../os/windows/AudioOutputWave.h"
@@ -9,7 +9,7 @@
  #ifndef WITHOUT_ALSA
  #include "../os/linux/AudioOutputALSA.h"
  #endif
-@@ -83,7 +83,7 @@ void AudioOutput::EnumerateDevices(std::
+@@ -83,7 +83,7 @@ void AudioOutput::EnumerateDevices(std::vector<AudioOu
  	}
  #endif
  	AudioOutputWASAPI::EnumerateDevices(devs);

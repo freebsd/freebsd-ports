@@ -1,6 +1,6 @@
---- Telegram/SourceFiles/data/data_document.cpp.orig	2018-12-24 08:16:05 UTC
+--- Telegram/SourceFiles/data/data_document.cpp.orig	2019-02-01 12:51:46 UTC
 +++ Telegram/SourceFiles/data/data_document.cpp
-@@ -129,7 +129,7 @@ QString FileNameUnsafe(
+@@ -128,7 +128,7 @@ QString FileNameUnsafe(
  	name = name.replace(QRegularExpression(qsl("[\\\\\\/\\:\\*\\?\\\"\\<\\>\\|]")), qsl("_"));
  #elif defined Q_OS_MAC
  	name = name.replace(QRegularExpression(qsl("[\\:]")), qsl("_"));

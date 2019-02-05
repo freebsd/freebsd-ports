@@ -1,4 +1,4 @@
---- Telegram/gyp/codegen_rules.gypi.orig	2018-12-24 08:16:05 UTC
+--- Telegram/gyp/codegen_rules.gypi.orig	2019-02-01 12:51:46 UTC
 +++ Telegram/gyp/codegen_rules.gypi
 @@ -15,7 +15,7 @@
        '<(SHARED_INTERMEDIATE_DIR)/update_dependent_styles.timestamp',
@@ -25,9 +25,9 @@
        '-o', '<(SHARED_INTERMEDIATE_DIR)/update_dependent_qrc.timestamp',
        '<@(qrc_files)',
      ],
---- Telegram/gyp/lib_export.gyp.orig	2018-12-24 08:16:05 UTC
+--- Telegram/gyp/lib_export.gyp.orig	2019-02-01 12:51:46 UTC
 +++ Telegram/gyp/lib_export.gyp
-@@ -48,7 +48,7 @@
+@@ -46,7 +46,7 @@
      'include_dirs': [
        '<(src_loc)',
        '<(SHARED_INTERMEDIATE_DIR)',
@@ -36,7 +36,7 @@
        '<(submodules_loc)/GSL/include',
        '<(submodules_loc)/variant/include',
        '<(submodules_loc)/crl/src',
---- Telegram/gyp/lib_scheme.gyp.orig	2018-12-24 08:16:05 UTC
+--- Telegram/gyp/lib_scheme.gyp.orig	2019-02-01 12:51:46 UTC
 +++ Telegram/gyp/lib_scheme.gyp
 @@ -48,7 +48,7 @@
          '<(SHARED_INTERMEDIATE_DIR)/scheme.h',
@@ -47,7 +47,7 @@
          '-o', '<(SHARED_INTERMEDIATE_DIR)', '<(res_loc)/scheme.tl',
        ],
        'message': 'codegen_scheme-ing scheme.tl..',
---- Telegram/gyp/qt_moc.gypi.orig	2018-12-24 08:16:05 UTC
+--- Telegram/gyp/qt_moc.gypi.orig	2019-02-01 12:51:46 UTC
 +++ Telegram/gyp/qt_moc.gypi
 @@ -12,12 +12,12 @@
        '<(SHARED_INTERMEDIATE_DIR)/<(_target_name)/moc/moc_<(RULE_INPUT_ROOT).cpp',
@@ -64,7 +64,7 @@
        # '<!@(python -c "for s in \'<@(_include_dirs)\'.split(\' \'): print(\'-I\' + s)")',
        '<(RULE_INPUT_PATH)',
        '-o', '<(SHARED_INTERMEDIATE_DIR)/<(_target_name)/moc/moc_<(RULE_INPUT_ROOT).cpp',
---- Telegram/gyp/qt_rcc.gypi.orig	2018-12-24 08:16:05 UTC
+--- Telegram/gyp/qt_rcc.gypi.orig	2019-02-01 12:51:46 UTC
 +++ Telegram/gyp/qt_rcc.gypi
 @@ -15,7 +15,7 @@
        '<(SHARED_INTERMEDIATE_DIR)/<(_target_name)/qrc/qrc_<(RULE_INPUT_ROOT).cpp',
@@ -75,7 +75,7 @@
        '-name', '<(RULE_INPUT_ROOT)',
        '-no-compress',
        '<(RULE_INPUT_PATH)',
---- Telegram/gyp/qt.gypi.orig	2018-12-24 08:16:05 UTC
+--- Telegram/gyp/qt.gypi.orig	2019-02-01 12:51:46 UTC
 +++ Telegram/gyp/qt.gypi
 @@ -14,25 +14,21 @@
                [ 'build_macold', {
@@ -233,7 +233,7 @@
          '-pthread',
          '-rdynamic',
        ],
---- Telegram/gyp/telegram_linux.gypi.orig	2018-12-24 08:16:05 UTC
+--- Telegram/gyp/telegram_linux.gypi.orig	2019-02-01 12:51:46 UTC
 +++ Telegram/gyp/telegram_linux.gypi
 @@ -10,7 +10,7 @@
        'variables': {
@@ -339,7 +339,7 @@
          ],
        }], ['<!(pkg-config ayatana-appindicator3-0.1; echo $?) == 0', {
          'cflags_cc': [ '<!(pkg-config --cflags ayatana-appindicator3-0.1)' ],
---- Telegram/gyp/Telegram.gyp.orig	2018-12-24 08:16:05 UTC
+--- Telegram/gyp/Telegram.gyp.orig	2019-02-01 12:51:46 UTC
 +++ Telegram/gyp/Telegram.gyp
 @@ -51,7 +51,7 @@
          'pt-BR',
@@ -397,7 +397,7 @@
      ],
      'conditions': [
        [ '"<(official_build_target)" != ""', {
---- Telegram/gyp/tests/tests.gyp.orig	2018-12-24 08:16:05 UTC
+--- Telegram/gyp/tests/tests.gyp.orig	2019-02-01 12:51:46 UTC
 +++ Telegram/gyp/tests/tests.gyp
 @@ -13,7 +13,7 @@
      'src_loc': '../../SourceFiles',
@@ -408,7 +408,7 @@
    },
    'targets': [{
      'target_name': 'tests',
---- Telegram/ThirdParty/libtgvoip/libtgvoip.gyp.orig	2018-11-23 01:03:16 UTC
+--- Telegram/ThirdParty/libtgvoip/libtgvoip.gyp.orig	2018-12-31 01:05:58 UTC
 +++ Telegram/ThirdParty/libtgvoip/libtgvoip.gyp
 @@ -14,11 +14,12 @@
          'variables': {
@@ -424,7 +424,7 @@
          ],
          'direct_dependent_settings': {
            'include_dirs': [
-@@ -739,7 +740,7 @@
+@@ -741,7 +742,7 @@
              },
            ],
            [
@@ -433,7 +433,7 @@
                'sources/': [['exclude', '<(tgvoip_src_loc)/os/linux/']],
              },
            ],
-@@ -864,13 +865,16 @@
+@@ -866,13 +867,16 @@
              },
            ],
            [
