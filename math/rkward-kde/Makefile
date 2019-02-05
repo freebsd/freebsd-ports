@@ -3,7 +3,7 @@
 
 PORTNAME=	rkward
 DISTVERSION=	0.7.0b
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION:C/b//}/src
 PKGNAMESUFFIX=	-kde
@@ -13,11 +13,10 @@ COMMENT=	IDE/GUI for the R-project
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libR.so:math/R \
-		libsoprano.so:textproc/soprano
+LIB_DEPENDS=	libR.so:math/R
 
 USES=		cmake desktop-file-utils gettext fortran kde:5 php:cli qt:5 shared-mime-info
-USE_QT=		buildtools core dbus gui network printsupport qmake script webkit	\
+USE_QT=		buildtools concurrent core dbus gui network printsupport qmake script webkit	\
 		widgets xml
 USE_XORG=	x11
 USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons crash	\
