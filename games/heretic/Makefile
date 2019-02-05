@@ -38,7 +38,7 @@ BINARY=		xaheretic
 .endif
 
 .if ${PORT_OPTIONS:MSDL}
-USE_SDL=	yes
+USE_SDL=	sdl
 ALL_TARGET=	sdl
 BINARY=		sdlheretic
 CFLAGS+=	`${SDL_CONFIG} --cflags`
