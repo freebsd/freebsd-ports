@@ -459,6 +459,7 @@ bin/zsh-%%ZSH_VER%%
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_dns_types
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_doas
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_domains
+%%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_dos2unix
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_drill
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_dsh
 %%DATADIR%%/%%ZSH_VER%%/functions/Completion/Unix/_dtruss
