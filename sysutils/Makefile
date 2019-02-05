@@ -56,6 +56,7 @@
     SUBDIR += asmem
     SUBDIR += asmon
     SUBDIR += asusoled
+    SUBDIR += atf-master
     SUBDIR += atf-sun50i_a64
     SUBDIR += atf-rk3399
     SUBDIR += atitvout
