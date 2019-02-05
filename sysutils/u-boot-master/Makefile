@@ -197,7 +197,7 @@ post-build:
 	(cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${i})
 .endfor
 .endif
-.if ${FAMILY} == "rk3399"
+.if defined(FAMILY) && ${FAMILY} == rk3399
 	mkimage -n rk3399 -T rksd -d ${WRKSRC}/spl/u-boot-spl.bin ${WRKSRC}/idbspl.img
 .endif
 # If we need to put anything into WRKSRC, do so now so we can build the PLIST
