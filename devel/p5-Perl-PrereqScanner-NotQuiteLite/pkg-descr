@@ -1,0 +1,14 @@
+Perl::PrereqScanner::NotQuiteLite is yet another prerequisites scanner. It
+passes almost all the scanning tests for Perl::PrereqScanner and
+Module::ExtractUse (ie. except for a few dubious ones), and runs slightly faster
+than PPI-based Perl::PrereqScanner. However, it doesn't run as fast as
+Perl::PrereqScanner::Lite (which uses an XS lexer).
+
+Perl::PrereqScanner::NotQuiteLite also recognizes eval. Prerequisites in eval
+are not considered as requirements, but you can collect them as suggestions.
+
+Conditional requirements or requirements loaded in a block are treated as
+recommends. Noed modules are stored separately (since 0.94). You may or may not
+need to merge them into requires.
+
+WWW: https://metacpan.org/release/Perl-PrereqScanner-NotQuiteLite
