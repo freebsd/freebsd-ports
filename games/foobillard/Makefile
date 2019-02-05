@@ -39,7 +39,7 @@ DESKTOP_ENTRIES=	"Foobillard" \
 			false
 
 .if ${PORT_OPTIONS:MSDL}
-USE_SDL=	yes
+USE_SDL=	sdl
 CONFIGURE_ARGS+=	--enable-SDL
 .else
 USE_GL=		glut
