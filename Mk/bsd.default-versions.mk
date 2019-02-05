@@ -29,7 +29,7 @@ _l=		${lang:C/=.*//g}
 ${_l:tu}_DEFAULT=	${lang:C/.*=//g}
 .endfor
 
-# Possible values: 2.2, 2.4
+# Possible values: 2.4
 APACHE_DEFAULT?=	2.4
 # Possible values: 48, 5, 6
 BDB_DEFAULT?=		5
