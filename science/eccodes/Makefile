@@ -23,7 +23,7 @@ OPTIONS_SINGLE_JPEG=	JASPER OPENJPEG
 OPTIONS_DEFAULT=OPENJPEG
 AEC_DESC=	Adaptive Entropy Coding support
 
-PORTSCOUT=	site:https://software.ecmwf.int/wiki/display/ECC/Releases
+PORTSCOUT=	site:https://confluence.ecmwf.int/display/ECC/Releases
 
 USES=		cmake shebangfix
 
