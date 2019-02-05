@@ -3,7 +3,7 @@
 
 PORTNAME=	spamassassin
 PORTVERSION=	3.4.2
-PORTREVISION?=	2	# also bump japanese/spamassassin
+PORTREVISION?=	3	# also bump japanese/spamassassin
 CATEGORIES?=	mail perl5
 MASTER_SITES=	APACHE/spamassassin/source CPAN/Mail
 DISTNAME=	Mail-SpamAssassin-${PORTVERSION}
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	p5-Encode-Detect>=0:converters/p5-Encode-Detect \
 		p5-Net-DNS>=0.63:dns/p5-Net-DNS \
 		p5-NetAddr-IP>=4.010:net-mgmt/p5-NetAddr-IP
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
+		p5-Net-CIDR-Lite>=0:net/p5-Net-CIDR-Lite \
 		p5-Net-IDN-Encode>=0:textproc/p5-Net-IDN-Encode \
 		p5-Net-LibIDN>=0:dns/p5-Net-LibIDN \
 		p5-URI>=0:net/p5-URI \
