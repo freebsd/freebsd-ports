@@ -1,12 +1,11 @@
---- Makefile.bsd.orig	2001-11-04 18:09:04 UTC
+--- Makefile.bsd.orig	2001-11-04 17:09:04 UTC
 +++ Makefile.bsd
-@@ -9,7 +9,8 @@
+@@ -9,7 +9,7 @@
  POPT=-O -fomit-frame-pointer
  PLFL=-s
  DEBUG=-g
 -CFLAGS=$(OPT) $(DEBUG) -pipe -fpic -I $$HOME/regina -pipe
 +CFLAGS+=$(OPT) $(DEBUG) -pipe -fpic -I $$HOME/regina -pipe -I/usr/local/include
-+CFLAGS+=-Wno-incompatible-pointer-types
  LDFLAGS=-Bdynamic -Bshareable $(LFL)
  LIBS=-lm
  so=so
