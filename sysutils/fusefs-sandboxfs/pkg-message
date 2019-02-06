@@ -1,0 +1,4 @@
+WARNING: The interaction points with sandboxfs are subject to change
+at this point.  In particular, the command-line interface and the
+data format used to reconfigure sandboxfs while it's running will
+most certainly change.
