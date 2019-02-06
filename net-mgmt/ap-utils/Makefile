@@ -19,7 +19,7 @@ OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
-NLS_CONFIGURE_WITHOUT=	--disable-nls
+NLS_CONFIGURE_OFF=	--disable-nls
 
 .include <bsd.port.options.mk>
 
