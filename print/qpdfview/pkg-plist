@@ -10,7 +10,9 @@ share/icons/hicolor/scalable/apps/qpdfview.svg
 %%DATADIR%%/help.html
 %%DATADIR%%/help_az.html
 %%DATADIR%%/help_bg.html
+%%DATADIR%%/help_ca.html
 %%DATADIR%%/help_cs.html
+%%DATADIR%%/help_da.html
 %%DATADIR%%/help_de.html
 %%DATADIR%%/help_en_GB.html
 %%DATADIR%%/help_es.html
@@ -21,6 +23,7 @@ share/icons/hicolor/scalable/apps/qpdfview.svg
 %%DATADIR%%/help_it.html
 %%DATADIR%%/help_ja.html
 %%DATADIR%%/help_ko.html
+%%DATADIR%%/help_ku.html
 %%DATADIR%%/help_lt.html
 %%DATADIR%%/help_ms.html
 %%DATADIR%%/help_pl.html
@@ -28,10 +31,13 @@ share/icons/hicolor/scalable/apps/qpdfview.svg
 %%DATADIR%%/help_pt_BR.html
 %%DATADIR%%/help_ru.html
 %%DATADIR%%/help_sk.html
+%%DATADIR%%/help_sr.html
 %%DATADIR%%/help_sv.html
+%%DATADIR%%/help_tr.html
 %%DATADIR%%/help_uk.html
 %%DATADIR%%/help_vi.html
 %%DATADIR%%/help_zh_CN.html
+%%DATADIR%%/help_zh_TW.html
 %%DATADIR%%/qpdfview_ast.qm
 %%DATADIR%%/qpdfview_az.qm
 %%DATADIR%%/qpdfview_be.qm

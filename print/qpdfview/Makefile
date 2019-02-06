@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qpdfview
-DISTVERSION=	0.4.17beta1
-PORTREVISION=	5
+DISTVERSION=	0.4.18beta1
 CATEGORIES=	print
 MASTER_SITES=	https://launchpadlibrarian.net/294276875/ \
 		https://launchpad.net/${PORTNAME}/trunk/${DISTVERSION}/+download/
@@ -16,18 +15,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 
-USES=		compiler:c++11-lang desktop-file-utils pkgconfig qmake qt:5
+USES+=		compiler:c++11-lang desktop-file-utils gl pkgconfig qmake qt:5
 USE_LDCONFIG=	yes
-USE_QT=		buildtools_build concurrent imageformats linguisttools printsupport sql sql-sqlite3 svg xml
+USE_QT=		buildtools_build concurrent core dbus gui imageformats linguisttools printsupport sql sql-sqlite3 svg widgets xml
+USE_GL=		gl
+
 QMAKE_SOURCE_PATH=	${PORTNAME}.pro
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
 
-OPTIONS_DEFINE=	CUPS
-OPTIONS_MULTI=	BACKEND
-OPTIONS_MULTI_BACKEND=	DJVU PS
-BACKEND_DESC=	Additional documents support
-OPTIONS_DEFAULT=	CUPS PS
+OPTIONS_DEFINE=	CUPS DJVU PS
+OPTIONS_DEFAULT=	CUPS DJVU PS
 OPTIONS_SUB=	yes
 
 CUPS_QMAKE_OFF=	"CONFIG+=without_cups"
@@ -40,11 +38,6 @@ PS_LIB_DEPENDS=	libspectre.so:print/libspectre
 PS_QMAKE_OFF=	"CONFIG+=without_ps"
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MQT4}
-DEPRECATED=		Qt4 has been EOL since december 2015
-EXPIRATION_DATE=	2019-03-15
-.endif
 
 pre-configure:
 	${REINPLACE_CMD} -e 's#/usr#${PREFIX}#g;s#${PREFIX}/share/man#${PREFIX}/man#g' \
