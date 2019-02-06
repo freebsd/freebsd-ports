@@ -3,7 +3,7 @@
 PORTNAME=	modsecurity
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security www
 MASTER_SITES=	https://github.com/SpiderLabs/ModSecurity/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	3
@@ -14,13 +14,10 @@ COMMENT=	Intrusion detection and prevention engine
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=     Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
-EXPIRATION_DATE=2019-02-15
-
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre.so:devel/pcre \
 		libyajl.so:devel/yajl \
-		libGeoIP.so:net/GeoIP
+		libmaxminddb.so:net/libmaxminddb
 
 USES=		compiler:c++11-lang gmake gnome libtool pkgconfig:build
 USE_GNOME=	libxml2
