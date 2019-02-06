@@ -45,7 +45,6 @@ MSSQL_LIB_DEPENDS=	libsybdb.so:databases/freetds
 SYBASE_LIB_DEPENDS=	libct.so:databases/freetds
 
 NLS_USES=		gettext
-NLS_CONFIGURE_DISABLE=	nls
 
 .include <bsd.port.options.mk>
 
