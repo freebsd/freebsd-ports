@@ -17,7 +17,8 @@
 +	cpu_features.o"
  	;;
  powerpc*)
- 	ARCH_OPTION="-fno-common -faltivec"
+-	ARCH_OPTION="-fno-common -faltivec"
++	ARCH_OPTION="-fno-common -maltivec"
  	MLIBS="viterbi27_av.o viterbi29_av.o viterbi39_av.o viterbi615_av.o \
  	encode_rs_av.o \
 -	dotprod_av.o sumsq_av.o peakval_av.o cpu_mode_ppc.o"

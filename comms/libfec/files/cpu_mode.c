@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include "fec.h"
 #ifdef __VEC__
+#include <sys/types.h>
 #include <sys/sysctl.h>
 #endif
 
@@ -33,15 +34,19 @@ void find_cpu_mode(void){
     Cpu_mode = MMX;
   }
 #endif
-//#ifdef __VEC__
-#if 0
-// This looks very Linux specific
+#ifdef __VEC__
   {
   /* Ask the OS if we have Altivec support */
+#ifdef __APPLE__
   int selectors[2] = { CTL_HW, HW_VECTORUNIT };
+#endif
   int hasVectorUnit = 0;
   size_t length = sizeof(hasVectorUnit);
+#ifdef __APPLE__
   int error = sysctl(selectors, 2, &hasVectorUnit, &length, NULL, 0);
+#elif __FreeBSD__
+  int error = sysctlbyname("hw.altivec", &hasVectorUnit, &length, NULL, 0);
+#endif
   if(0 == error && hasVectorUnit)
     Cpu_mode = ALTIVEC;
   }
