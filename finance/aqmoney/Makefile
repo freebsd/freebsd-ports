@@ -10,6 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manage your credit institute accounts using openhbci
 
 BROKEN=		fails to build
+DEPRECATED=	no longer maintained upstream
+EXPIRATION_DATE=	2019-03-31
 
 LIB_DEPENDS=	libopenhbci.so:finance/openhbci
 
