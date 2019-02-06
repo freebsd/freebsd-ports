@@ -110,6 +110,8 @@
 %%DATADIR%%/library/FPGA_Xilinx_Virtex6.lib
 %%DATADIR%%/library/FPGA_Xilinx_Virtex7.dcm
 %%DATADIR%%/library/FPGA_Xilinx_Virtex7.lib
+%%DATADIR%%/library/Fiber_Optic.dcm
+%%DATADIR%%/library/Fiber_Optic.lib
 %%DATADIR%%/library/Filter.dcm
 %%DATADIR%%/library/Filter.lib
 %%DATADIR%%/library/GPU.dcm
@@ -178,6 +180,8 @@
 %%DATADIR%%/library/MCU_Microchip_PIC24.lib
 %%DATADIR%%/library/MCU_Microchip_PIC32.dcm
 %%DATADIR%%/library/MCU_Microchip_PIC32.lib
+%%DATADIR%%/library/MCU_Microchip_SAMD.dcm
+%%DATADIR%%/library/MCU_Microchip_SAMD.lib
 %%DATADIR%%/library/MCU_Microchip_SAME.dcm
 %%DATADIR%%/library/MCU_Microchip_SAME.lib
 %%DATADIR%%/library/MCU_Microchip_SAML.dcm
@@ -278,6 +282,8 @@
 %%DATADIR%%/library/RF_Bluetooth.lib
 %%DATADIR%%/library/RF_GPS.dcm
 %%DATADIR%%/library/RF_GPS.lib
+%%DATADIR%%/library/RF_GSM.dcm
+%%DATADIR%%/library/RF_GSM.lib
 %%DATADIR%%/library/RF_Mixer.dcm
 %%DATADIR%%/library/RF_Mixer.lib
 %%DATADIR%%/library/RF_Module.dcm
