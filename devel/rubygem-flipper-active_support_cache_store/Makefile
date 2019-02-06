@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flipper-active_support_cache_store
-PORTVERSION=	0.16.0
-PORTREVISION=	1
+PORTVERSION=	0.16.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
